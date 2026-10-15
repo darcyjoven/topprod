@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcg720.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqcr720")
+VBox VBox1
+Grid gr179
+{
+ <G group01                                       >
+  Testing No.         [qsa01               ]
+  Date                [qsa11               ]
+  Vender No           [qsa12               ]
+  Item No             [qsa02               ]
+  Warehouse           [qsa03               ]
+  Patch               [qsa04               ]
+  Loc                 [qsa05               ]
+ <                                                >
+}
+END -- gr179
+Grid gr180
+{
+[more                                     ]
+
+
+}
+END -- gr180
+END -- VBox1
+END -- aqcr720
+
+TABLES
+qsa_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit qsa01=qsa_file.qsa01, action=controlp, tabIndex=1, image="zoom";
+DateEdit qsa11=qsa_file.qsa11, tabIndex=2;
+ButtonEdit qsa12=qsa_file.qsa12, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit qsa02=qsa_file.qsa02, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit qsa03=qsa_file.qsa03, action=controlp, tabIndex=5, image="zoom";
+Edit qsa04=qsa_file.qsa04, tabIndex=6;
+Edit qsa05=qsa_file.qsa05, tabIndex=7;
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(qsa_file.qsa01,qsa_file.qsa11,qsa_file.qsa12,qsa_file.qsa02,qsa_file.qsa03,qsa_file.qsa04,qsa_file.qsa05,formonly.more)
+END -- INSTRUCTIONS
+

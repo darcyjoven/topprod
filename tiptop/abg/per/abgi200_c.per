@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi200_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi200_c")
+VBox VBox1
+Folder pc91
+Page page01(text="Main")
+Grid gr618
+{
+
+ <G group01                                         >
+  Original Ver. [old_ver             ]
+  Year          [oyy       ]
+  Department No.[ogem      ]
+  Account #     [oaag                          ]
+  Project No.    [opja                          ]
+  WBS No.        [opjb                          ]
+  Budget Item    [oazf                          ]
+ <                                                  >
+ <G group02                                         >
+  New Ver.      [new_ver             ]
+  Year          [nyy       ]
+  Department No.[ngem      ]
+  Account #     [naag                          ]
+  Item No.      [npja                          ]
+  WBS No.       [npjb                          ]
+  Budget Item   [nazf                          ]
+ <                                                  >
+}
+END -- gr618
+END -- page01
+END -- pc91
+END -- VBox1
+END -- abgi200_c
+
+ATTRIBUTES
+Group group01:group01;
+Edit old_ver=formonly.old_ver type CHAR, tabIndex=1, noEntry;
+Edit oyy=formonly.oyy type CHAR, tabIndex=2, noEntry;
+Edit ogem=formonly.ogem type CHAR, tabIndex=3, noEntry;
+Edit oaag=formonly.oaag type CHAR, tabIndex=4, noEntry;
+Edit opja=formonly.opja type CHAR, tabIndex=12, noEntry;
+Edit opjb=formonly.opjb type CHAR, tabIndex=13, noEntry;
+Edit oazf=formonly.oazf type CHAR, tabIndex=14, noEntry;
+Group group02:group02;
+Edit new_ver=formonly.new_ver type CHAR, tabIndex=5;
+Edit nyy=formonly.nyy type CHAR, tabIndex=6, not null, required;
+ButtonEdit ngem=formonly.ngem type CHAR, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Dept    ";
+ButtonEdit naag=formonly.naag type CHAR, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry Acc Code";
+ButtonEdit npja=formonly.npja type CHAR, action=controlp, tabIndex=11, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+ButtonEdit npjb=formonly.npjb type CHAR, action=controlp, tabIndex=10, required, image="zoom.png";
+ButtonEdit nazf=formonly.nazf type CHAR, action=controlp, tabIndex=9, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.old_ver,formonly.oyy,formonly.ogem,formonly.oaag,formonly.opja,formonly.opjb,formonly.oazf,formonly.new_ver,formonly.nyy,formonly.ngem,formonly.naag,formonly.npja,formonly.npjb,formonly.nazf)
+END -- INSTRUCTIONS
+

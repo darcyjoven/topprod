@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abai102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                                                                                                                               >
+
+   tc_ibb03      [tc_ibb03             ]         tc_ibb06      [tc_ibb06             ]              tc_ibb22   [tc_ibb22                ]
+   tc_ibb04      [tc_ibb04             ]         ima02         [ima02                ]              tc_ibb22_n [tc_ibb22_n              ]
+   tc_ibb10      [tc_ibb10             ]         ima021        [ima021               ]              tc_ibb07   [tc_ibb07                ]
+
+ <                                                                                                                                                       >
+
+
+}
+END -- Grid1
+Table Table1
+{
+[tc_ibb06_1        |ima02_1         |ima021_1       |ima25         |tc_ibb21         |tc_ibb05        |tc_ibb07_1      ]
+[tc_ibb06_1        |ima02_1         |ima021_1       |ima25         |tc_ibb21         |tc_ibb05        |tc_ibb07_1      ]
+[tc_ibb06_1        |ima02_1         |ima021_1       |ima25         |tc_ibb21         |tc_ibb05        |tc_ibb07_1      ]
+[tc_ibb06_1        |ima02_1         |ima021_1       |ima25         |tc_ibb21         |tc_ibb05        |tc_ibb07_1      ]
+[tc_ibb06_1        |ima02_1         |ima021_1       |ima25         |tc_ibb21         |tc_ibb05        |tc_ibb07_1      ]
+
+
+}
+END -- Table1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+ButtonEdit tc_ibb03=formonly.tc_ibb03, action=controlp, tabIndex=1, image="zoom";
+Edit tc_ibb06=formonly.tc_ibb06, tabIndex=7, noEntry;
+Edit tc_ibb22=formonly.tc_ibb22, tabIndex=11, noEntry;
+Edit tc_ibb04=formonly.tc_ibb04, tabIndex=2, not null, required;
+Edit ima02=formonly.ima02, tabIndex=8, noEntry;
+Edit tc_ibb22_n=formonly.tc_ibb22_n, tabIndex=10, noEntry;
+Edit tc_ibb10=formonly.tc_ibb10, tabIndex=4, not null, required;
+Edit ima021=formonly.ima021, tabIndex=9, noEntry;
+Edit tc_ibb07=formonly.tc_ibb07, tabIndex=3, noEntry;
+Edit tc_ibb06_1=formonly.tc_ibb06_1, tabIndex=5, title=%"tc_ibb06", noEntry;
+Edit ima02_1=formonly.ima02_1, tabIndex=5, title=%"ima02", noEntry;
+Edit ima021_1=formonly.ima021_1, tabIndex=5, title=%"ima021", noEntry;
+Edit ima25=formonly.ima25, tabIndex=6, title=%"ima25", noEntry;
+DateEdit tc_ibb21=formonly.tc_ibb21, tabIndex=5, title=%"tc_ibb21", not null, required;
+Edit tc_ibb05=formonly.tc_ibb05, tabIndex=12, title=%"tc_ibb05", noEntry;
+Edit tc_ibb07_1=formonly.tc_ibb07_1, tabIndex=5, title=%"tc_ibb07";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_ibb03,formonly.tc_ibb04,formonly.tc_ibb07,formonly.tc_ibb10,formonly.tc_ibb06,formonly.ima02,formonly.ima021,formonly.tc_ibb22_n,formonly.tc_ibb22)
+SCREEN RECORD s_tc_ibb(formonly.tc_ibb06_1,formonly.ima02_1,formonly.ima021_1,formonly.ima25,formonly.tc_ibb21,formonly.tc_ibb05,formonly.tc_ibb07_1)
+END -- INSTRUCTIONS
+

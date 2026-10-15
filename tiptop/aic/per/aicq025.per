@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aicq025.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aicq025")
+VBox vb2
+Folder pc2
+Page page01(text="Page01")
+Grid gr3
+{
+  Item#               [ima01                         ]  Inv Unit [ima25     ]
+  Part Name           [ima02                         ]  Spec     [ima021                        ]
+  Program Group       [imaicd11                      ]
+
+ <G group01                                                        ><G group02                                                                ><G group043                     >
+  Available Qty        [avl_stk             ][avl_stk_r           ]         WIP Qty               [qty_2               ][qty_2_r             ]  [ima906             ]
+  MRP Usable           [avl_stk_mpsmrp      ][avl_stk_mpsmrp_r    ]         FQC Qty On Inspection [qty_51              ][qty_51_r            ] <                               >
+  P/R Qty              [qty_3               ][qty_3_r             ]         Allotment Qty         [qty_6               ][qty_6_r             ] <G group044                     >
+  Purchase Qty         [qty_4               ][qty_4_r             ]         Qty Ordered           [qty_1               ][qty_1_r             ]  Second Unit        [ima907    ]
+  IQC Qty on QC        [qty_5               ][qty_5_r             ]         Order Allocation      [qty_7               ][qty_7_r             ]
+ <                                                                 ><                                                                         ><                               >
+
+}
+END -- gr3
+END -- page01
+END -- pc2
+Table s_sr
+{
+[ds_date         |ds_class |ds_no           |ima01_b1         |ima02_b1    |imaicd01     |ima02_b2    |ds_cust     |ds_qlty                |ref_qty       |ds_total           ]
+[ds_date         |ds_class |ds_no           |ima01_b1         |ima02_b1    |imaicd01     |ima02_b2    |ds_cust     |ds_qlty                |ref_qty       |ds_total           ]
+[ds_date         |ds_class |ds_no           |ima01_b1         |ima02_b1    |imaicd01     |ima02_b2    |ds_cust     |ds_qlty                |ref_qty       |ds_total           ]
+[ds_date         |ds_class |ds_no           |ima01_b1         |ima02_b1    |imaicd01     |ima02_b2    |ds_cust     |ds_qlty                |ref_qty       |ds_total           ]
+[ds_date         |ds_class |ds_no           |ima01_b1         |ima02_b1    |imaicd01     |ima02_b2    |ds_cust     |ds_qlty                |ref_qty       |ds_total           ]
+[ds_date         |ds_class |ds_no           |ima01_b1         |ima02_b1    |imaicd01     |ima02_b2    |ds_cust     |ds_qlty                |ref_qty       |ds_total           ]
+[ds_date         |ds_class |ds_no           |ima01_b1         |ima02_b1    |imaicd01     |ima02_b2    |ds_cust     |ds_qlty                |ref_qty       |ds_total           ]
+[ds_date         |ds_class |ds_no           |ima01_b1         |ima02_b1    |imaicd01     |ima02_b2    |ds_cust     |ds_qlty                |ref_qty       |ds_total           ]
+[ds_date         |ds_class |ds_no           |ima01_b1         |ima02_b1    |imaicd01     |ima02_b2    |ds_cust     |ds_qlty                |ref_qty       |ds_total           ]
+[ds_date         |ds_class |ds_no           |ima01_b1         |ima02_b1    |imaicd01     |ima02_b2    |ds_cust     |ds_qlty                |ref_qty       |ds_total           ]
+
+}
+END -- s_sr
+Grid gr4
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4
+END -- vb2
+END -- aicq025
+
+TABLES
+tableAlias1=imaicd_file,
+imaicd_file,
+ima_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima25=ima_file.ima25, tabIndex=2, noEntry;
+Edit ima02=ima_file.ima02, tabIndex=3, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=4, noEntry;
+ComboBox imaicd11=imaicd_file.imaicd11, tabIndex=5, queryEditable, items=(("1", "Wafer"),("2", "CP"),("3", "DS"),("4", "ASS"),("5", "FT"),("6", "TKY"));
+Group group01:group01;
+Edit avl_stk=formonly.avl_stk type DECIMAL, tabIndex=6, not null, required;
+Edit avl_stk_r=formonly.avl_stk_r type CHAR, tabIndex=7;
+Edit avl_stk_mpsmrp=formonly.avl_stk_mpsmrp type DECIMAL, tabIndex=8, not null, required;
+Edit avl_stk_mpsmrp_r=formonly.avl_stk_mpsmrp_r type CHAR, tabIndex=9;
+Edit qty_3=formonly.qty_3 type CHAR, tabIndex=10;
+Edit qty_3_r=formonly.qty_3_r type CHAR, tabIndex=11;
+Edit qty_4=formonly.qty_4 type CHAR, tabIndex=12;
+Edit qty_4_r=formonly.qty_4_r type CHAR, tabIndex=13;
+Edit qty_5=formonly.qty_5 type CHAR, tabIndex=14;
+Edit qty_5_r=formonly.qty_5_r type CHAR, tabIndex=15;
+Group group02:group02;
+Edit qty_2=formonly.qty_2 type CHAR, tabIndex=16;
+Edit qty_2_r=formonly.qty_2_r type CHAR, tabIndex=17;
+Edit qty_51=formonly.qty_51 type CHAR, tabIndex=18;
+Edit qty_51_r=formonly.qty_51_r type CHAR, tabIndex=19;
+Edit qty_6=formonly.qty_6 type CHAR, tabIndex=20;
+Edit qty_6_r=formonly.qty_6_r type CHAR, tabIndex=21;
+Edit qty_1=formonly.qty_1 type CHAR, tabIndex=22;
+Edit qty_1_r=formonly.qty_1_r type CHAR, tabIndex=23;
+Edit qty_7=formonly.qty_7 type CHAR, tabIndex=24;
+Edit qty_7_r=formonly.qty_7_r type CHAR, tabIndex=25;
+Group group043:group043, text="Unit Control";
+RadioGroup ima906=ima_file.ima906, tabIndex=26, not null, required, items=(("1", "Single Unit"),("2", "Child/Parent Unit"),("3", "Reference Unit"));
+Group group044:group044;
+ButtonEdit ima907=ima_file.ima907, action=controlp, tabIndex=27, image="zoom";
+DateEdit ds_date=formonly.ds_date type CHAR, tabIndex=28, title="Demand/Supply Dt";
+Edit ds_class=formonly.ds_class type CHAR, tabIndex=29, title="Category";
+Edit ds_no=formonly.ds_no type CHAR, tabIndex=30, title="Doc#";
+Edit ima01_b1=formonly.ima01_b1 type CHAR, tabIndex=31, title="Item#";
+Edit ima02_b1=formonly.ima02_b1 type CHAR, tabIndex=32, title="Product Name";
+Edit imaicd01=tableAlias1.imaicd01, tabIndex=33, title="Population No.";
+Edit ima02_b2=formonly.ima02_b2 type CHAR, tabIndex=34, title="Product Name";
+Edit ds_cust=formonly.ds_cust type CHAR, tabIndex=35, title="Cust./Supplr";
+Edit ds_qlty=formonly.ds_qlty type CHAR, tabIndex=36, title="(+-)Supply/Demand Qty";
+Edit ref_qty=formonly.ref_qty type CHAR, tabIndex=37, title="ref_qty";
+Edit ds_total=formonly.ds_total type CHAR, tabIndex=38, title="Estimated Balance";
+Edit cnt=formonly.cnt type CHAR, tabIndex=39;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=40;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sr(formonly.ds_date,formonly.ds_class,formonly.ds_no,formonly.ima01_b1,formonly.ima02_b1,tableAlias1.imaicd01,formonly.ima02_b2,formonly.ds_cust,formonly.ds_qlty,formonly.ref_qty,formonly.ds_total)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima25,ima_file.ima02,ima_file.ima021,imaicd_file.imaicd11,formonly.avl_stk,formonly.avl_stk_r,formonly.avl_stk_mpsmrp,formonly.avl_stk_mpsmrp_r,formonly.qty_3,formonly.qty_3_r,formonly.qty_4,formonly.qty_4_r,formonly.qty_5,formonly.qty_5_r,formonly.qty_2,formonly.qty_2_r,formonly.qty_51,formonly.qty_51_r,formonly.qty_6,formonly.qty_6_r,formonly.qty_1,formonly.qty_1_r,formonly.qty_7,formonly.qty_7_r,ima_file.ima906,ima_file.ima907,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

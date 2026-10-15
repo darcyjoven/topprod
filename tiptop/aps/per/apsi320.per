@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi320.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apsi320")
+VBox vb5
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+
+ <G gb1                                                                    >
+  Is Outsource   [vnc06             ]   Resource Type  [vnc07             ]
+  overtime Type  [vnc08             ]   Resource No.   [vnc01             ]
+  Date           [vnc02             ]
+ <                                                                         >
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table tb1
+{
+[vnc031      |vnc041       |vnc03     |vnc04      |vnc05                  ]
+[vnc031      |vnc041       |vnc03     |vnc04      |vnc05                  ]
+[vnc031      |vnc041       |vnc03     |vnc04      |vnc05                  ]
+[vnc031      |vnc041       |vnc03     |vnc04      |vnc05                  ]
+[vnc031      |vnc041       |vnc03     |vnc04      |vnc05                  ]
+[vnc031      |vnc041       |vnc03     |vnc04      |vnc05                  ]
+
+}
+END -- tb1
+Grid gr4
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4
+END -- vb5
+END -- apsi320
+
+TABLES
+vnc_file
+ATTRIBUTES
+Group gb1:gb1;
+ComboBox vnc06=vnc_file.vnc06, tabIndex=3, default = "0", not null, required, items=(("0", "Not Outsource"),("1", "Outsource"));
+ComboBox vnc07=vnc_file.vnc07, tabIndex=2, default = "0", not null, required, items=(("0", "Product Line"),("1", "Machine"),("2", "Outsource Factory"));
+ComboBox vnc08=vnc_file.vnc08, tabIndex=3, not null, required, items=(("0", "Overtime"),("1", "Repair"));
+ButtonEdit vnc01=vnc_file.vnc01, action=controlp, tabIndex=1, not null, required, image="zoom", comment=" <^P>Qry Work Center <^Y>Create Work Center";
+DateEdit vnc02=vnc_file.vnc02, tabIndex=2, not null, required;
+Edit vnc031=vnc_file.vnc031, tabIndex=4, title="vnc031", not null, required, format="XX:XX:XX", picture="XX:XX:XX";
+Edit vnc041=vnc_file.vnc041, tabIndex=5, title="vnc041", not null, required, format="XX:XX:XX", picture="XX:XX:XX";
+Edit vnc03=vnc_file.vnc03, tabIndex=8, title="vnc03", noEntry;
+Edit vnc04=vnc_file.vnc04, tabIndex=7, title="vnc04", noEntry;
+ComboBox vnc05=vnc_file.vnc05, tabIndex=6, title="vnc05", not null, required, items=(("1", "Scheduled, the limit considered"),("0", "Unscheduled, the limit not considered"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vnc(vnc_file.vnc031,vnc_file.vnc041,vnc_file.vnc03,vnc_file.vnc04,vnc_file.vnc05)
+SCREEN RECORD Undefined(vnc_file.vnc06,vnc_file.vnc07,vnc_file.vnc08,vnc_file.vnc01,vnc_file.vnc02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

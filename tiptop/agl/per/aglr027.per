@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr027.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Grid Grid1
+{
+
+ <G group3                                           >
+ [g_chr                                    ]
+ [                                         ]
+ [                                         ]
+ <                                                   >
+ <G group1                                           >
+   [label1      ]  [axf13          ]
+   [label5      ]  [yy          ]
+   [label6      ]  [bm          |lab|em          ]
+ <                                                   >
+ <G group2                                           >
+   [label8      ]  [axb04          ]
+   [label2      ]  [axf16          ]
+   [label3         |axf09          ]
+   [label4      ]  [axf10          ]
+   [more               ]
+ <                                                   >
+
+}
+END -- Grid1
+END -- Form
+
+TABLES
+axf_file,
+axb_file
+ATTRIBUTES
+Group group3:Group3, text=%"Report Item";
+RadioGroup g_chr=formonly.g_chr type CHAR, tabIndex=7, default = "c", not null, required, items=(("1", "Transaction Details for Affiliates in Consolidate Reports"),("2", "Offset A/C Transaction Code"),("3", "Locking Date"));
+Group group1:Group1, text=%"INPUT";
+Label label1:Label1, text=%"Group No.";
+ButtonEdit axf13=axf_file.axf13, action=controlp, tabIndex=8, image="zoom";
+Label label5:Label5, text=%"Fiscal Year";
+Edit yy=formonly.yy type INTEGER, tabIndex=1, not null, required;
+Label label6:Label6, text=%"Period (Start-End)";
+Edit bm=formonly.bm type CHAR, tabIndex=2, not null, required;
+Label lab:Label7, text=%"-";
+Edit em=formonly.em type CHAR, tabIndex=3, not null, required;
+Group group2:Group2, text=%"QBE";
+Label label8:Label8, text=%"Comp. No.";
+ButtonEdit axb04=axb_file.axb04, action=controlp, tabIndex=10, image="zoom";
+Label label2:Label2, text=%"no1";
+ButtonEdit axf16=axf_file.axf16, action=controlp, tabIndex=4, image="zoom";
+Label label3:Label3, text=%"Source Company No.";
+ButtonEdit axf09=axf_file.axf09, action=controlp, tabIndex=5, image="zoom";
+Label label4:Label4, text=%"no2";
+ButtonEdit axf10=axf_file.axf10, action=controlp, tabIndex=6, image="zoom";
+CheckBox more=formonly.more type CHAR, tabIndex=9, text=%"Other Printing Conditions";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.bm,formonly.em,axf_file.axf16,axf_file.axf09,axf_file.axf10,formonly.g_chr,axf_file.axf13,formonly.more,axb_file.axb04)
+END -- INSTRUCTIONS
+

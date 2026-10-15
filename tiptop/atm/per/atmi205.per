@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi205.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi205")
+VBox VBox1
+Folder pc297
+Page page01(text="Page01")
+Table s_top
+{
+[top01      |top02                |top03        |too02                |topacti     ]
+[top01      |top02                |top03        |too02                |topacti     ]
+[top01      |top02                |top03        |too02                |topacti     ]
+[top01      |top02                |top03        |too02                |topacti     ]
+[top01      |top02                |top03        |too02                |topacti     ]
+[top01      |top02                |top03        |too02                |topacti     ]
+[top01      |top02                |top03        |too02                |topacti     ]
+[top01      |top02                |top03        |too02                |topacti     ]
+[top01      |top02                |top03        |too02                |topacti     ]
+[top01      |top02                |top03        |too02                |topacti     ]
+
+}
+END -- s_top
+END -- page01
+END -- pc297
+Grid gr1340
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1340
+END -- VBox1
+END -- atmi205
+
+TABLES
+top_file
+ATTRIBUTES
+Edit top01=top_file.top01, tabIndex=1, title="City NO.", not null, required, comment="KEY Field,No Blank/Repeated!";
+Edit top02=top_file.top02, tabIndex=2, title="City Name", not null, required, comment="No Blank/Repeated!";
+ButtonEdit top03=top_file.top03, action=controlp, tabIndex=3, title="Province No.", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit too02=formonly.too02 type VARCHAR, tabIndex=4, title="Name", noEntry;
+CheckBox topacti=top_file.topacti, tabIndex=5, title="Valid?", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="No Blank/Repeated!";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_top(top_file.top01,top_file.top02,top_file.top03,formonly.too02,top_file.topacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

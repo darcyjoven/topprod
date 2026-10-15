@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi420.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi420")
+VBox VBox1
+Folder pc493
+Page page01(text="Page01")
+Grid gr2099
+{
+ <G group01                                                     >
+  Order No.           [oea01             ]
+  Version             [oea06     ]
+  Order Date          [oea02       ]
+  Accounts Cust       [oea03     ] [oea032    ]
+  Shipping Cust       [oea04     ] [occ02     ]
+ <                                                              >
+ <G group02                                                     >
+  Salesman            [oea14     ] [gen02     ]
+  Sales Class.        [oea25     ] [oab02     ]
+  Currency            [oea23     ]
+  Bf-Tax Amt          [oea61               ]
+ <                                                              >
+ <G group03                                                     >
+  Expiry Date of Release [oea908      ]
+ <                                                              >
+ <G group04                                                     >
+  Confirm             [oeaconf   ] [oea72     ]
+ <                                                              >
+
+}
+END -- gr2099
+END -- page01
+Page info(text="Info")
+Grid gr2100
+{
+ Record Owner        [oeauser   ] Last Modified by    [oeamodu   ]
+ Department          [oeagrup   ] Create/Modify Date  [oeadate     ]
+ Record Orig.        [oeaoriu   ]
+ Dept Orig.          [oeaorig   ]
+}
+END -- gr2100
+END -- info
+END -- pc493
+Grid gr2101
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2101
+END -- VBox1
+END -- axmi420
+
+TABLES
+oea_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit oea01=oea_file.oea01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Documents";
+Edit oea06=oea_file.oea06, tabIndex=2, comment="Enter Modifying Version!";
+DateEdit oea02=oea_file.oea02, tabIndex=3;
+ButtonEdit oea03=oea_file.oea03, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Details <^Y>Customer";
+Edit oea032=oea_file.oea032, tabIndex=5;
+ButtonEdit oea04=oea_file.oea04, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Details <^Y>Customer";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=7, noEntry;
+Group group02:group02;
+ButtonEdit oea14=oea_file.oea14, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Details";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=9, noEntry;
+ButtonEdit oea25=oea_file.oea25, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Details";
+Edit oab02=formonly.oab02 type CHAR, tabIndex=11, noEntry;
+ButtonEdit oea23=oea_file.oea23, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Details";
+Edit oea61=oea_file.oea61, tabIndex=13, noEntry, not null, required;
+Group group03:group03;
+DateEdit oea908=oea_file.oea908, tabIndex=14;
+Group group04:group04;
+Edit oeaconf=oea_file.oeaconf, tabIndex=15, noEntry;
+Edit oea72=oea_file.oea72, tabIndex=16, noEntry;
+Edit oeauser=oea_file.oeauser, tabIndex=17, noEntry;
+Edit oeamodu=oea_file.oeamodu, tabIndex=18, noEntry;
+Edit oeagrup=oea_file.oeagrup, tabIndex=19, noEntry;
+DateEdit oeadate=oea_file.oeadate, tabIndex=20, noEntry;
+Edit oeaoriu=oea_file.oeaoriu, tabIndex=501, noEntry;
+Edit oeaorig=oea_file.oeaorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oea_file.oea01,oea_file.oea06,oea_file.oea02,oea_file.oea03,oea_file.oea032,oea_file.oea04,formonly.occ02,oea_file.oea14,formonly.gen02,oea_file.oea25,formonly.oab02,oea_file.oea23,oea_file.oea61,oea_file.oea908,oea_file.oeaconf,oea_file.oea72,oea_file.oeauser,oea_file.oeamodu,oea_file.oeagrup,oea_file.oeadate,oea_file.oeaoriu,oea_file.oeaorig,formonly.cnt)
+END -- INSTRUCTIONS
+

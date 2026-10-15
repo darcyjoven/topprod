@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi300")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+Grid gr4853
+{
+ Store-in No.   [rvv01            ]
+ Vender No.     [rvv06            ]
+ Store-in Time  [rvv09            ]
+}
+END -- gr4853
+END -- page01
+END -- folder01
+Table s_rvv
+{
+[rvv02|rvv36         |rvv37   |rvv31   |ima02     |ima021        |rvv17        |rvv86          |rvv87             |rvv38     |rvv38t    |rvv39     |rvv39t    |pmm21    |pmm43    ]
+[rvv02|rvv36         |rvv37   |rvv31   |ima02     |ima021        |rvv17        |rvv86          |rvv87             |rvv38     |rvv38t    |rvv39     |rvv39t    |pmm21    |pmm43    ]
+[rvv02|rvv36         |rvv37   |rvv31   |ima02     |ima021        |rvv17        |rvv86          |rvv87             |rvv38     |rvv38t    |rvv39     |rvv39t    |pmm21    |pmm43    ]
+[rvv02|rvv36         |rvv37   |rvv31   |ima02     |ima021        |rvv17        |rvv86          |rvv87             |rvv38     |rvv38t    |rvv39     |rvv39t    |pmm21    |pmm43    ]
+[rvv02|rvv36         |rvv37   |rvv31   |ima02     |ima021        |rvv17        |rvv86          |rvv87             |rvv38     |rvv38t    |rvv39     |rvv39t    |pmm21    |pmm43    ]
+[rvv02|rvv36         |rvv37   |rvv31   |ima02     |ima021        |rvv17        |rvv86          |rvv87             |rvv38     |rvv38t    |rvv39     |rvv39t    |pmm21    |pmm43    ]
+[rvv02|rvv36         |rvv37   |rvv31   |ima02     |ima021        |rvv17        |rvv86          |rvv87             |rvv38     |rvv38t    |rvv39     |rvv39t    |pmm21    |pmm43    ]
+[rvv02|rvv36         |rvv37   |rvv31   |ima02     |ima021        |rvv17        |rvv86          |rvv87             |rvv38     |rvv38t    |rvv39     |rvv39t    |pmm21    |pmm43    ]
+[rvv02|rvv36         |rvv37   |rvv31   |ima02     |ima021        |rvv17        |rvv86          |rvv87             |rvv38     |rvv38t    |rvv39     |rvv39t    |pmm21    |pmm43    ]
+[rvv02|rvv36         |rvv37   |rvv31   |ima02     |ima021        |rvv17        |rvv86          |rvv87             |rvv38     |rvv38t    |rvv39     |rvv39t    |pmm21    |pmm43    ]
+
+}
+END -- s_rvv
+Grid gr4854
+{
+ ---------- Rows [cnt   ]/[cn2       ] ----------
+
+}
+END -- gr4854
+END -- vb3
+END -- apmi300
+
+TABLES
+rvv_file
+ATTRIBUTES
+ButtonEdit rvv01=rvv_file.rvv01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit rvv06=rvv_file.rvv06, action=controlp, tabIndex=2, image="zoom";
+DateEdit rvv09=rvv_file.rvv09, tabIndex=3;
+Edit rvv02=rvv_file.rvv02, tabIndex=4, title="Ln#", noEntry;
+Edit rvv36=rvv_file.rvv36, tabIndex=5, title="P/O No.", noEntry;
+Edit rvv37=rvv_file.rvv37, tabIndex=6, title="P/O Ln#", noEntry;
+Edit rvv31=rvv_file.rvv31, tabIndex=7, title="Item No", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=8, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=9, title="Specification", noEntry;
+Edit rvv17=rvv_file.rvv17, tabIndex=10, title="Store-In Qty", noEntry;
+ButtonEdit rvv86=rvv_file.rvv86, tabIndex=11, title=%"Valuation Unit", image="zoom";
+Edit rvv87=rvv_file.rvv87, tabIndex=12, title=%"Valuation Qty";
+Edit rvv38=rvv_file.rvv38, tabIndex=13, title="U/P", not null, required;
+Edit rvv38t=rvv_file.rvv38t, tabIndex=14, title="Tax U/P", not null, required;
+Edit rvv39=rvv_file.rvv39, tabIndex=15, title="Total", noEntry;
+Edit rvv39t=rvv_file.rvv39t, tabIndex=16, title="Tax Total", noEntry;
+Edit pmm21=formonly.pmm21 type CHAR, tabIndex=17, title="Tax Type", noEntry;
+Edit pmm43=formonly.pmm43 type CHAR, tabIndex=18, title="Tax Rate", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvv(rvv_file.rvv02,rvv_file.rvv36,rvv_file.rvv37,rvv_file.rvv31,formonly.ima02,formonly.ima021,rvv_file.rvv17,rvv_file.rvv86,rvv_file.rvv87,rvv_file.rvv38,rvv_file.rvv38t,rvv_file.rvv39,rvv_file.rvv39t,formonly.pmm21,formonly.pmm43)
+SCREEN RECORD Undefined(rvv_file.rvv01,rvv_file.rvv06,rvv_file.rvv09,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt8001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt8001")
+VBox VBox1
+Grid gr3486
+{
+ <G group01                                                  >
+    Warehouse Keeper    [ima23     ]
+    Warehouse           [img02     ]
+    Location            [img03     ]
+    Lot#                [img04     ]
+    Item No.            [img01                               ]
+    Group Code          [ima06     ]
+ <                                                           >
+
+}
+END -- gr3486
+END -- VBox1
+END -- aimt8001
+
+TABLES
+img_file,
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima23=ima_file.ima23, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit img02=img_file.img02, action=controlp, tabIndex=2, not null, required, image="zoom";
+ButtonEdit img03=img_file.img03, action=controlp, tabIndex=3, not null, required, image="zoom";
+ButtonEdit img04=img_file.img04, action=controlp, tabIndex=4, not null, required, image="zoom";
+ButtonEdit img01=img_file.img01, action=controlp, tabIndex=5, not null, required, image="zoom";
+ButtonEdit ima06=ima_file.ima06, action=controlp, tabIndex=6, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima23,img_file.img02,img_file.img03,img_file.img04,img_file.img01,ima_file.ima06)
+END -- INSTRUCTIONS
+

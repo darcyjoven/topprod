@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_ttcfg1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_ttcfg1")
+VBox VBox1
+Grid gr2
+{
+ <G group01                                                                        >
+  System ID [wso03          ]
+ <                                                                                 >
+
+}
+END -- gr2
+Table tb1
+{
+[wso04     |gaq03                    |wso05          ]
+[wso04     |gaq03                    |wso05          ]
+[wso04     |gaq03                    |wso05          ]
+[wso04     |gaq03                    |wso05          ]
+[wso04     |gaq03                    |wso05          ]
+[wso04     |gaq03                    |wso05          ]
+[wso04     |gaq03                    |wso05          ]
+[wso04     |gaq03                    |wso05          ]
+[wso04     |gaq03                    |wso05          ]
+[wso04     |gaq03                    |wso05          ]
+[wso04     |gaq03                    |wso05          ]
+[wso04     |gaq03                    |wso05          ]
+[wso04     |gaq03                    |wso05          ]
+[wso04     |gaq03                    |wso05          ]
+[wso04     |gaq03                    |wso05          ]
+
+}
+END -- tb1
+Grid gr3
+{
+ ---------- Rows [cnt3  ] / [cnt4  ] ----------
+
+}
+END -- gr3
+END -- VBox1
+END -- aws_ttcfg1
+
+TABLES
+wso_file
+ATTRIBUTES
+Group group01:group01;
+Edit wso03=wso_file.wso03, tabIndex=1, not null, required;
+Edit wso04=wso_file.wso04, tabIndex=2, title="ERP Col", not null, required;
+Edit gaq03=formonly.gaq03 type CHAR, tabIndex=3, title="Column Desc", noEntry;
+Edit wso05=wso_file.wso05, tabIndex=4, title="Mapping Column", not null, required;
+Edit cnt3=formonly.cnt3 type SMALLINT, tabIndex=5, noEntry;
+Edit cnt4=formonly.cnt4 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wso(wso_file.wso04,formonly.gaq03,wso_file.wso05)
+SCREEN RECORD Undefined(wso_file.wso03,formonly.cnt3,formonly.cnt4)
+END -- INSTRUCTIONS
+

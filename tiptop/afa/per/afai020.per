@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai020")
+VBox VBox1
+Folder pc318
+Page page01(text="Main")
+Table s_fac
+{
+[fac01          |fac02            |facact]
+[fac01          |fac02            |facact]
+[fac01          |fac02            |facact]
+[fac01          |fac02            |facact]
+[fac01          |fac02            |facact]
+[fac01          |fac02            |facact]
+[fac01          |fac02            |facact]
+[fac01          |fac02            |facact]
+[fac01          |fac02            |facact]
+[fac01          |fac02            |facact]
+
+}
+END -- s_fac
+END -- page01
+END -- pc318
+Grid gr1797
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1797
+END -- VBox1
+END -- afai020
+
+TABLES
+fac_file
+ATTRIBUTES
+Edit fac01=fac_file.fac01, tabIndex=1, title="Category No.", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit fac02=fac_file.fac02, tabIndex=2, title="Category Desc.";
+CheckBox facact=fac_file.facacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fac(fac_file.fac01,fac_file.fac02,fac_file.facacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

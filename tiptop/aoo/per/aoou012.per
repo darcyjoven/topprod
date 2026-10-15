@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aoou012.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aoou012")
+VBox VBox1
+Folder pc883
+Page page01(text="Page01")
+Table s_pmk
+{
+[choice |pmk01           |pmk02    |pmk04    |pmc03               |pmk22    |pmksign  |pmkdays   |pmkprit       ]
+[choice |pmk01           |pmk02    |pmk04    |pmc03               |pmk22    |pmksign  |pmkdays   |pmkprit       ]
+[choice |pmk01           |pmk02    |pmk04    |pmc03               |pmk22    |pmksign  |pmkdays   |pmkprit       ]
+[choice |pmk01           |pmk02    |pmk04    |pmc03               |pmk22    |pmksign  |pmkdays   |pmkprit       ]
+[choice |pmk01           |pmk02    |pmk04    |pmc03               |pmk22    |pmksign  |pmkdays   |pmkprit       ]
+[choice |pmk01           |pmk02    |pmk04    |pmc03               |pmk22    |pmksign  |pmkdays   |pmkprit       ]
+[choice |pmk01           |pmk02    |pmk04    |pmc03               |pmk22    |pmksign  |pmkdays   |pmkprit       ]
+[choice |pmk01           |pmk02    |pmk04    |pmc03               |pmk22    |pmksign  |pmkdays   |pmkprit       ]
+[choice |pmk01           |pmk02    |pmk04    |pmc03               |pmk22    |pmksign  |pmkdays   |pmkprit       ]
+[choice |pmk01           |pmk02    |pmk04    |pmc03               |pmk22    |pmksign  |pmkdays   |pmkprit       ]
+
+}
+END -- s_pmk
+END -- page01
+END -- pc883
+Grid gr4714
+{
+[select_all    ] [cancel_all  ] Select Counts       [cmt        ]
+ ----------Rows [cnt   ] ----------
+}
+END -- gr4714
+END -- VBox1
+END -- aoou012
+
+TABLES
+pmk_file,
+pmc_file
+ATTRIBUTES
+CheckBox choice=formonly.choice type CHAR, tabIndex=1, title="choice", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmk01=pmk_file.pmk01, tabIndex=2, title="P/R No.", noEntry;
+Edit pmk02=pmk_file.pmk02, tabIndex=3, title="Property", noEntry;
+DateEdit pmk04=pmk_file.pmk04, tabIndex=4, title="P/R Date", noEntry;
+Edit pmc03=pmc_file.pmc03, tabIndex=5, title="Vender Abbreviation", noEntry;
+Edit pmk22=pmk_file.pmk22, tabIndex=6, title="Currency", noEntry;
+Edit pmksign=pmk_file.pmksign, tabIndex=7, title="Approval", noEntry;
+Edit pmkdays=pmk_file.pmkdays, tabIndex=8, title="Rest Days", noEntry;
+Edit pmkprit=pmk_file.pmkprit, tabIndex=9, title="Priority Level", noEntry;
+Button select_all:select_all, comment="Select All";
+Button cancel_all:cancel_all, comment="Cancel All";
+Edit cmt=formonly.cmt type SMALLINT, tabIndex=10, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmk(formonly.choice,pmk_file.pmk01,pmk_file.pmk02,pmk_file.pmk04,pmc_file.pmc03,pmk_file.pmk22,pmk_file.pmksign,pmk_file.pmkdays,pmk_file.pmkprit)
+SCREEN RECORD Undefined(formonly.cmt,formonly.cnt)
+END -- INSTRUCTIONS
+

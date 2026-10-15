@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp502.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmp502")
+Grid gr2188
+{
+ Order No       [oee01     ]
+ Order SN       [oee02     ]
+ Inner Flow     [oee03     ]
+ Plant No       [oee04     ]
+ Delivery Date  [oee05     ]
+}
+END -- gr2188
+END -- axmp502
+
+ATTRIBUTES
+ButtonEdit oee01=formonly.oee01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Salse Order No";
+Edit oee02=formonly.oee02 type CHAR, tabIndex=2;
+ButtonEdit oee03=formonly.oee03 type CHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P> Qry Inner Flow No";
+ButtonEdit oee04=formonly.oee04 type CHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P> Qry Plant No";
+DateEdit oee05=formonly.oee05 type CHAR, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oee01,formonly.oee02,formonly.oee03,formonly.oee04,formonly.oee05)
+END -- INSTRUCTIONS
+

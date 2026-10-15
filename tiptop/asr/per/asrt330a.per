@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asrt330a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asrt330a")
+VBox VBox1
+Grid gr935
+{
+ <G group01                                   >
+   Item No [imk01                            ]
+   Ware    [imk02          ]
+   Loc     [imk03          ]
+   Lot     [imk04                   ]
+
+ <                                            >
+
+}
+END -- gr935
+Grid gr936
+{
+ <G group02                                   >
+   date[date        ] Year[year ] Month[month]
+
+ <                                            >
+
+}
+END -- gr936
+END -- VBox1
+END -- asrt330a
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit imk01=formonly.imk01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="Qry Item Master";
+ButtonEdit imk02=formonly.imk02 type CHAR, action=controlp, tabIndex=2, image="zoom", comment="Qry WareHouse No.";
+Edit imk03=formonly.imk03 type CHAR, tabIndex=3;
+Edit imk04=formonly.imk04 type CHAR, tabIndex=4;
+Group group02:group02, text="Input";
+DateEdit date=formonly.date type CHAR, tabIndex=5, not null, required;
+Edit year=formonly.year type SMALLINT, tabIndex=6, not null, required;
+Edit month=formonly.month type SMALLINT, tabIndex=7, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.imk01,formonly.imk02,formonly.imk03,formonly.imk04,formonly.date,formonly.year,formonly.month)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amri101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amri101")
+VBox VBox1
+Folder pc723
+Page page01(text="Page01")
+Grid gr3925
+{
+ <G group01                            >
+  P/O Type      [msg01     ]
+  Document Name [smydesc             ]
+ <                                     >
+
+}
+END -- gr3925
+END -- page01
+Page info(text="Info")
+Grid gr3926
+{
+ Record Owner        [msguser   ] Last Modified by    [msgmodu   ] Data Valid Code     [msgacti   ]
+ Department          [msggrup   ] Create/Modify Date  [msgdate   ]
+ Record Orig.        [msgoriu   ]
+ Dept Orig.          [msgorig   ]
+}
+END -- gr3926
+END -- info
+END -- pc723
+Grid gr3927
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3927
+END -- VBox1
+END -- amri101
+
+TABLES
+msg_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit msg01=msg_file.msg01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Documents";
+Edit smydesc=formonly.smydesc type VARCHAR, tabIndex=2, noEntry;
+Edit msguser=msg_file.msguser, tabIndex=3, noEntry;
+Edit msgmodu=msg_file.msgmodu, tabIndex=4, noEntry;
+Edit msgacti=msg_file.msgacti, tabIndex=5, noEntry, upShift;
+Edit msggrup=msg_file.msggrup, tabIndex=6, noEntry;
+DateEdit msgdate=msg_file.msgdate, tabIndex=7, noEntry;
+Edit msgoriu=msg_file.msgoriu, tabIndex=501, noEntry;
+Edit msgorig=msg_file.msgorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(msg_file.msg01,formonly.smydesc,msg_file.msguser,msg_file.msgmodu,msg_file.msgacti,msg_file.msggrup,msg_file.msgdate,msg_file.msgoriu,msg_file.msgorig,formonly.cnt)
+END -- INSTRUCTIONS
+

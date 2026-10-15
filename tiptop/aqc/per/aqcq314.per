@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcq314.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aqcq314")
+Folder pc14
+Page page01(text="Page01")
+VBox VBox1
+Grid gr32
+{
+ <G group01                                                               >
+  Vender No.          [qcs03     ] [pmc03     ]
+  QC Date Range       [bdate       ]-[edate       ]
+ <                                                                        >
+ <G group02                              >  <G group03                              >
+  Lots Sent                 [lot       ]     NO-Good Qty               [scqty     ]
+  Qty Sent to QC            [inqty     ]     NO-Good %                 [rate      ]%
+  Qty Passed                [qcs091    ]     CRQty                     [crqty     ]
+                                             MAQty                     [maqty     ]
+                                             MIQty                     [miqty     ]
+
+ <                                       >  <                                       >
+ <G group04                              >  <G group05                              >
+  Lots Passed               [actqty    ]     Lots Returned             [rjqty     ]
+  Lots Rejected             [rejqty    ]     Special Purchase Lot      [spqty     ]
+  Lot Passed %              [actrate   ]%    Returned Lot %            [rjrate    ]%
+  Lot Rejected%             [rejrate   ]%    Special Purchase Lot      [sprate    ]%
+ <                                       >  <                                       >
+ <G group06                                                               >
+  Quality Rating            [score     ]
+ <                                                                        >
+
+}
+END -- gr32
+Grid gr33
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr33
+END -- VBox1
+END -- page01
+END -- pc14
+END -- aqcq314
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit qcs03=formonly.qcs03 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, noEntry;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=3;
+DateEdit edate=formonly.edate type DATE, tabIndex=4;
+Group group02:group02;
+Edit lot=formonly.lot type CHAR, tabIndex=5;
+Edit inqty=formonly.inqty type CHAR, tabIndex=6;
+Edit qcs091=formonly.qcs091 type CHAR, tabIndex=7;
+Group group03:group03;
+Edit scqty=formonly.scqty type CHAR, tabIndex=8;
+Edit rate=formonly.rate type CHAR, tabIndex=9;
+Edit crqty=formonly.crqty type CHAR, tabIndex=10;
+Edit maqty=formonly.maqty type CHAR, tabIndex=11;
+Edit miqty=formonly.miqty type CHAR, tabIndex=12;
+Group group04:group04;
+Edit actqty=formonly.actqty type CHAR, tabIndex=13;
+Edit rejqty=formonly.rejqty type CHAR, tabIndex=14;
+Edit actrate=formonly.actrate type CHAR, tabIndex=15;
+Edit rejrate=formonly.rejrate type CHAR, tabIndex=16;
+Group group05:group05;
+Edit rjqty=formonly.rjqty type CHAR, tabIndex=17;
+Edit spqty=formonly.spqty type CHAR, tabIndex=18;
+Edit rjrate=formonly.rjrate type CHAR, tabIndex=19;
+Edit sprate=formonly.sprate type CHAR, tabIndex=20;
+Group group06:group06;
+Edit score=formonly.score type CHAR, tabIndex=21;
+Edit cnt=formonly.cnt type CHAR, tabIndex=22;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.qcs03,formonly.pmc03,formonly.bdate,formonly.edate,formonly.lot,formonly.inqty,formonly.qcs091,formonly.scqty,formonly.rate,formonly.crqty,formonly.maqty,formonly.miqty,formonly.actqty,formonly.rejqty,formonly.actrate,formonly.rejrate,formonly.rjqty,formonly.spqty,formonly.rjrate,formonly.sprate,formonly.score,formonly.cnt)
+END -- INSTRUCTIONS
+

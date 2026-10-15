@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq622.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"wagt018")
+Folder pc4
+Page Page6(text=%"Report Processing")
+VBox vb2
+Grid gr5
+{
+
+ Report No.   [xsg01             ]   Report Org   [xsg03             ]
+
+ Report Date  [xsg02             ]   status       [xsg09             ]
+
+}
+END -- gr5
+Grid gr6
+{
+
+ FALSIFYING purpose of the org  [xsg04                         ]   Location   [xsg05                 ]
+
+ FALSIFYING Source Org          [xsg06                         ]   Location   [xsg07                 ]
+
+}
+END -- gr6
+Grid gr8
+{
+
+ Detail:
+[xsg08                                                                                                   ]
+[                                                                                                        ]
+[                                                                                                        ]
+[                                                                                                        ]
+
+}
+END -- gr8
+Grid gr12
+{
+
+ Comments:
+[xsg10                                                                                                   ]
+[                                                                                                        ]
+[                                                                                                        ]
+[                                                                                                        ]
+
+}
+END -- gr12
+Grid gr6_
+{
+   ---------- Rows [idx   ]/[cnt   ] ----------
+
+}
+END -- gr6_
+END -- vb2
+END -- Page6
+END -- pc4
+END -- Form5
+
+TABLES
+xsg_file
+ATTRIBUTES
+Edit xsg01=xsg_file.xsg01, tabIndex=1, noEntry;
+Edit xsg03=xsg_file.xsg03, tabIndex=3, noEntry;
+DateEdit xsg02=xsg_file.xsg02, tabIndex=2, noEntry;
+ComboBox xsg09=xsg_file.xsg09, tabIndex=4, noEntry, items=(("0", "Open"),("1", "Report"),("2", "Closed"));
+Edit xsg04=xsg_file.xsg04, tabIndex=5, noEntry;
+Edit xsg05=xsg_file.xsg05, tabIndex=6, noEntry;
+Edit xsg06=xsg_file.xsg06, tabIndex=10, noEntry;
+Edit xsg07=xsg_file.xsg07, tabIndex=7, noEntry;
+TextEdit xsg08=xsg_file.xsg08, tabIndex=8, noEntry;
+TextEdit xsg10=xsg_file.xsg10, tabIndex=9, not null, required;
+Edit idx=formonly.idx type SMALLINT, tabIndex=11, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(xsg_file.xsg01,xsg_file.xsg03,xsg_file.xsg02,xsg_file.xsg09,xsg_file.xsg04,xsg_file.xsg05,xsg_file.xsg06,xsg_file.xsg07,xsg_file.xsg08,xsg_file.xsg10,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

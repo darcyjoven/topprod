@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt1101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Cost Apportionment")
+Group gb1917
+VBox VBox1
+Grid gr2869
+{
+  Apportioned Amount [aba13               ]
+ <G group01                           >
+ [aba14                             ]
+ <                                    >
+
+}
+END -- gr2869
+Grid gr2870
+{
+ Apportionment No.  [aba15         ]
+ Book No.           [aba00  ]
+
+}
+END -- gr2870
+END -- VBox1
+END -- gb1917
+END -- aglt1101
+
+TABLES
+aba_file
+ATTRIBUTES
+Edit aba13=aba_file.aba13, tabIndex=1, not null, required;
+Group group01:group01, text="Apportionment Method";
+RadioGroup aba14=aba_file.aba14, tabIndex=2, not null, required, items=(("1", "Fixed Amount"),("2", "Fixed Ratio"),("3", "Variable Ratio"),("0", "No"));
+ButtonEdit aba15=aba_file.aba15, action=controlp, tabIndex=3, not null, required, image="zoom", comment=" <^P> Qry Apportionment No. ";
+ButtonEdit aba00=aba_file.aba00, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Apportionment Category <^Y>Create Book No";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(aba_file.aba13,aba_file.aba14,aba_file.aba15,aba_file.aba00)
+END -- INSTRUCTIONS
+

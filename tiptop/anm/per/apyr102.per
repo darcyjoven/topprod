@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/apyr102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apyr102")
+VBox vb9
+Grid gr5761
+{
+ <G grpqbe                                                    >
+  Company             [cpf28               ]
+  Logistics           [cpf281              ]
+  Department          [cpf29               ]
+  Position            [cpf31               ]
+ <                                                            >
+
+}
+END -- gr5761
+Group group1(text="Input")
+Grid gr5762
+{
+  Input Count YY/MM   [b         ][c       ]
+
+ <G group2                                                   >
+   [s            ]
+   [             ]
+   [             ]
+   [             ]
+ <                                                           >
+
+}
+END -- gr5762
+END -- group1
+Grid gr5763
+{
+  [more                                 ]
+
+}
+END -- gr5763
+END -- vb9
+END -- apyr102
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+Edit cpf28=formonly.cpf28 type VARCHAR, tabIndex=7;
+Edit cpf281=formonly.cpf281 type VARCHAR, tabIndex=8;
+Edit cpf29=formonly.cpf29 type VARCHAR, tabIndex=1;
+Edit cpf31=formonly.cpf31 type VARCHAR, tabIndex=2;
+Edit b=formonly.b type SMALLINT, tabIndex=3, upShift;
+Edit c=formonly.c type SMALLINT, tabIndex=4, upShift;
+Group group2:group2, text="Sequence";
+RadioGroup s=formonly.s type CHAR, tabIndex=5, items=(("1", "Company"),("2", "Logistics"),("3", "Deptartment No."),("4", "Position Code"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cpf28,formonly.cpf281,formonly.cpf29,formonly.cpf31,formonly.b,formonly.c,formonly.s,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmp101")
+VBox VBox1
+Group g01
+HBox HBox1
+Grid gr840
+{
+ Master Item No.     [bmo01               ]
+ Part Name           [bmq02                         ]
+ Specification       [bmq021                        ]
+ Version             [bmo011    ]
+
+}
+END -- gr840
+Grid gr841
+{
+ Formal No.          [firm                ]
+ Part Name           [ima02                         ]
+ Specification       [ima021                        ]
+ Alternate Code      [bmo06               ]
+
+}
+END -- gr841
+Grid gr842
+{
+ Eff.Date            [bdate       ]
+ Exp.Date            [edate       ]
+ [a                   ]  [d                   ]
+ [b                   ]  [f                   ]
+ [c                   ]  [e                   ]
+}
+END -- gr842
+END -- HBox1
+END -- g01
+Table s_bmp
+{
+[bmp01                |v1      |desc1                    |desc11                   |bmp03                  |v2      |desc2                    |desc22                   |item                 |leve|bmp28                  ]
+[bmp01                |v1      |desc1                    |desc11                   |bmp03                  |v2      |desc2                    |desc22                   |item                 |leve|bmp28                  ]
+[bmp01                |v1      |desc1                    |desc11                   |bmp03                  |v2      |desc2                    |desc22                   |item                 |leve|bmp28                  ]
+[bmp01                |v1      |desc1                    |desc11                   |bmp03                  |v2      |desc2                    |desc22                   |item                 |leve|bmp28                  ]
+[bmp01                |v1      |desc1                    |desc11                   |bmp03                  |v2      |desc2                    |desc22                   |item                 |leve|bmp28                  ]
+[bmp01                |v1      |desc1                    |desc11                   |bmp03                  |v2      |desc2                    |desc22                   |item                 |leve|bmp28                  ]
+[bmp01                |v1      |desc1                    |desc11                   |bmp03                  |v2      |desc2                    |desc22                   |item                 |leve|bmp28                  ]
+[bmp01                |v1      |desc1                    |desc11                   |bmp03                  |v2      |desc2                    |desc22                   |item                 |leve|bmp28                  ]
+[bmp01                |v1      |desc1                    |desc11                   |bmp03                  |v2      |desc2                    |desc22                   |item                 |leve|bmp28                  ]
+[bmp01                |v1      |desc1                    |desc11                   |bmp03                  |v2      |desc2                    |desc22                   |item                 |leve|bmp28                  ]
+
+}
+END -- s_bmp
+END -- VBox1
+END -- abmp101
+
+ATTRIBUTES
+ButtonEdit bmo01=formonly.bmo01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry  Testing Master Item";
+Edit bmq02=formonly.bmq02 type VARCHAR, tabIndex=2;
+Edit bmq021=formonly.bmq021 type VARCHAR, tabIndex=3;
+ButtonEdit bmo011=formonly.bmo011 type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Query Version";
+ButtonEdit firm=formonly.firm type VARCHAR, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Item";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=6;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=7;
+Edit bmo06=formonly.bmo06 type VARCHAR, tabIndex=8;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=9, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=10;
+CheckBox a=formonly.a type VARCHAR, tabIndex=11, text="Desc.Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=12, text="REP/SUB", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=13, text="Locat.of Insert", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type VARCHAR, tabIndex=14, text="Contact Product", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=15, text="Comp.Brand", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=16, text="Open Single Lv.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit bmp01=formonly.bmp01 type VARCHAR, tabIndex=17, title="Up Level Item No.", noEntry;
+Edit v1=formonly.v1 type VARCHAR, tabIndex=18, title="Version", noEntry;
+Edit desc1=formonly.desc1 type VARCHAR, tabIndex=19, title="P/N Specification", noEntry;
+Edit desc11=formonly.desc11 type VARCHAR, tabIndex=20, title="Specification", noEntry;
+Edit bmp03=formonly.bmp03 type VARCHAR, tabIndex=21, title="Current Level Item No.", noEntry;
+Edit v2=formonly.v2 type VARCHAR, tabIndex=22, title="Version", noEntry;
+Edit desc2=formonly.desc2 type VARCHAR, tabIndex=23, title="P/N Specification", noEntry;
+Edit desc22=formonly.desc22 type VARCHAR, tabIndex=24, title="Specification", noEntry;
+ButtonEdit item=formonly.item type VARCHAR, action=controlp, tabIndex=25, title="Formal Item No.", not null, required, image="zoom", comment="<^P>Qry Item # ";
+Edit leve=formonly.levela type VARCHAR, tabIndex=26, title="Lvl", noEntry;
+Edit bmp28=formonly.bmp28 type VARCHAR, tabIndex=27, title="Alternate Code";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmp(formonly.bmp01,formonly.v1,formonly.desc1,formonly.desc11,formonly.bmp03,formonly.v2,formonly.desc2,formonly.desc22,formonly.item,formonly.levela,formonly.bmp28)
+SCREEN RECORD Undefined(formonly.bmo01,formonly.bmq02,formonly.bmq021,formonly.bmo011,formonly.firm,formonly.ima02,formonly.ima021,formonly.bmo06,formonly.bdate,formonly.edate,formonly.a,formonly.d,formonly.b,formonly.f,formonly.c,formonly.e)
+END -- INSTRUCTIONS
+

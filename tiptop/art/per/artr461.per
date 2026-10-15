@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr461.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+ <G group3                                    >
+    Logistics Code[azp01                    ]
+                   [dummy1                    ]
+ <                                            >
+ <G group1                                    >
+   Member No.     [lpk01                    ]
+   Selling Date   [oga02                    ]
+   Member level   [lpf02                   ]
+ <                                            >
+ <G group2                                    >
+    [a                                      ]
+    [                                       ]
+
+    [label1    |slpj14    ]~[elpj14    ]
+    [label2    |slpj07    ]~[elpj07    ]
+    [label3    |slpj15    ]~[elpj15    ]
+ <                                            >
+
+}
+END -- Grid1
+Grid gr132
+{
+[more                                     ]
+
+}
+END -- gr132
+END -- VBox1
+END -- Form
+
+TABLES
+lpk_file,
+azp_file,
+oga_file
+ATTRIBUTES
+Group group3:Group3, text=%"QBE1";
+ButtonEdit azp01=azp_file.azp01, action=controlp, tabIndex=2, not null, required, image="zoom";
+Label dummy1:dummy1, text="LRDMDS,QY\'|\'H\';\'GK";
+Group group1:Group1, text=%"QBE2";
+Edit lpk01=lpk_file.lpk01, tabIndex=1;
+DateEdit oga02=oga_file.oga02, tabIndex=1;
+ComboBox lpf02=formonly.lpf02 type VARCHAR, tabIndex=3;
+Group group2:Group2, text=%"Print Option";
+RadioGroup a=formonly.a type CHAR, tabIndex=1, items=(("1", "Member"),("2", "Member+Operations Center"));
+Label label1:Label1, text=%"Accumulated shopping credits";
+Edit slpj14=formonly.slpj14 type DECIMAL(20,0), tabIndex=4;
+Edit elpj14=formonly.elpj14 type CHAR, tabIndex=5;
+Label label2:Label2, text=%"Accumulative total number";
+Edit slpj07=formonly.slpj07 type CHAR, tabIndex=6;
+Edit elpj07=formonly.elpj07 type CHAR, tabIndex=7;
+Label label3:Label3, text=%"Accumulative total amount\n";
+Edit slpj15=formonly.slpj15 type CHAR, tabIndex=8;
+Edit elpj15=formonly.elpj15 type CHAR, tabIndex=9;
+CheckBox more=formonly.more type CHAR, tabIndex=1, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(azp_file.azp01,lpk_file.lpk01,oga_file.oga02,formonly.a,formonly.more,formonly.lpf02,formonly.slpj14,formonly.elpj14,formonly.slpj07,formonly.elpj07,formonly.slpj15,formonly.elpj15)
+END -- INSTRUCTIONS
+

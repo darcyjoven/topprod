@@ -1,0 +1,178 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt559.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Basic Data")
+Grid ds1
+{
+
+[label1 |lqr01               ]
+[label2 |lqr02     ]                                [label6 |lqrconf   ][imgmksg ]
+[label3 |lqr03     |azf03               ]           [lqrcond|lqrcon1   ][        ]
+[label4 |lqr04     |gen02               ]           [lqrcon2|lqrconu   ][lqrconu_de]
+                                                    [label5 |lqr05     ]
+
+
+
+}
+END -- ds1
+END -- Page1
+Page Page2(text=%"Status")
+Grid ds2
+{
+
+[label12|lqruser   ]      [label9 |lqrmodu   ]      [label7 |lqracti   ]
+[label13|lqrgrup   ]      [label8 |lqrdate   ]
+[label11|lqroriu   ]
+[label10|lqrorig   ]
+
+
+
+}
+END -- ds2
+END -- Page2
+Page Page3(text=%"Page3")
+Grid ds3
+{
+
+[label14|lqrud01             ]             [label20|lqrud07   ]           [label26|lqrud13   ]
+        [                    ]             [label21|lqrud08   ]           [label27|lqrud14   ]
+[label15|lqrud02   ]                       [label22|lqrud09   ]           [label28|lqrud15   ]
+[label16|lqrud03   ]                       [label23|lqrud10   ]
+[label17|lqrud04   ]                       [label24|lqrud11   ]
+[label18|lqrud05   ]                       [label25|lqrud12   ]
+[label19|lqrud06   ]
+
+}
+END -- ds3
+END -- Page3
+END -- Folder1
+ScrollGrid Grid1
+{
+
+ [dummy]         [dumm1]               [dumm2]                  [dumm3]             [dumm4]                   [dumm5]                [dumm6]                [dumm7]
+[lqt02][before ] [lqt03     ][lpk04                          ][lqt04     ][lpc02_1                       ][lqt05               ][lqt06               ][lqt07               ]
+       [after  ]                                              [lqt08     ][lpc02_2                       ]
+[lqt02][before ] [lqt03     ][lpk04                          ][lqt04     ][lpc02_1                       ][lqt05               ][lqt06               ][lqt07               ]
+       [after  ]                                              [lqt08     ][lpc02_2                       ]
+[lqt02][before ] [lqt03     ][lpk04                          ][lqt04     ][lpc02_1                       ][lqt05               ][lqt06               ][lqt07               ]
+       [after  ]                                              [lqt08     ][lpc02_2                       ]
+
+}
+END -- Grid1
+Grid Grid2
+{
+
+    ---[rows|idx ] /[cnt ] ---      ---[item |cn2   ] ---
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+lqt_file,
+lqr_file
+ATTRIBUTES
+Label label1:Label1, text=%"lqr01";
+ButtonEdit lqr01=lqr_file.lqr01, action=controlp, tabIndex=1, not null, required, image="zoom", scroll;
+Label label2:Label2, text=%"lqr02";
+DateEdit lqr02=lqr_file.lqr02, tabIndex=2, not null, required;
+Label label6:Label6, text=%"lqrconf";
+ComboBox lqrconf=lqr_file.lqrconf, tabIndex=7, not null, required, scroll, items=(("Y", "Confirm"),("N", "Not Confirm"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Label label3:Label3, text=%"lqr03";
+ButtonEdit lqr03=lqr_file.lqr03, action=controlp, tabIndex=3, not null, required, image="zoom", scroll;
+Edit azf03=formonly.azf03 type CHAR, tabIndex=4, noEntry;
+Label lqrcond:lqrcond, text=%"lqrcond";
+DateEdit lqrcon1=lqr_file.lqrcond, tabIndex=8, noEntry, not null, required;
+Label label4:Label4, text=%"lqr04";
+ButtonEdit lqr04=lqr_file.lqr04, action=controlp, tabIndex=5, not null, required, image="zoom", scroll;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=6, noEntry;
+Label lqrcon2:lqrconf, text=%"lqrconu";
+ButtonEdit lqrconu=lqr_file.lqrconu, action=controlp, tabIndex=9, noEntry, not null, required, image="zoom";
+Edit lqrconu_de=formonly.lqrconu_desc type CHAR, tabIndex=10, noEntry, not null;
+Label label5:Label5, text=%"lqr05";
+ComboBox lqr05=lqr_file.lqr05, tabIndex=11, not null, required, scroll, items=(("0", "Issue"),("1", "Approved"),("2", "Issued"));
+Label label12:Label12, text=%"Record Owner";
+Edit lqruser=lqr_file.lqruser, tabIndex=12, scroll;
+Label label9:Label9, text=%"Last Modify By";
+Edit lqrmodu=lqr_file.lqrmodu, tabIndex=16, scroll;
+Label label7:Label7, text=%"Date Valid Code";
+Edit lqracti=lqr_file.lqracti, tabIndex=18, not null, scroll;
+Label label13:Label13, text=%"Department";
+Edit lqrgrup=lqr_file.lqrgrup, tabIndex=13, scroll;
+Label label8:Label8, text=%"Modify Date";
+DateEdit lqrdate=lqr_file.lqrdate, tabIndex=17;
+Label label11:Label11, text=%"Record Orig.";
+Edit lqroriu=lqr_file.lqroriu, tabIndex=14, scroll;
+Label label10:Label10, text=%"Dept Orig.";
+Edit lqrorig=lqr_file.lqrorig, tabIndex=15, scroll;
+Label label14:Label14, text=%"lqrud01";
+TextEdit lqrud01=lqr_file.lqrud01, tabIndex=19;
+Label label20:Label20, text=%"lqrud07";
+Edit lqrud07=lqr_file.lqrud07, tabIndex=25, scroll;
+Label label26:Label26, text=%"lqrud13";
+DateEdit lqrud13=lqr_file.lqrud13, tabIndex=31;
+Label label21:Label21, text=%"lqrud08";
+Edit lqrud08=lqr_file.lqrud08, tabIndex=26, scroll;
+Label label27:Label27, text=%"lqrud14";
+DateEdit lqrud14=lqr_file.lqrud14, tabIndex=32;
+Label label15:Label15, text=%"lqrud02";
+Edit lqrud02=lqr_file.lqrud02, tabIndex=20, scroll;
+Label label22:Label22, text=%"lqrud09";
+Edit lqrud09=lqr_file.lqrud09, tabIndex=27, scroll;
+Label label28:Label28, text=%"lqrud15";
+DateEdit lqrud15=lqr_file.lqrud15, tabIndex=33;
+Label label16:Label16, text=%"lqrud03";
+Edit lqrud03=lqr_file.lqrud03, tabIndex=21, scroll;
+Label label23:Label23, text=%"lqrud10";
+Edit lqrud10=lqr_file.lqrud10, tabIndex=28, scroll;
+Label label17:Label17, text=%"lqrud04";
+Edit lqrud04=lqr_file.lqrud04, tabIndex=22, scroll;
+Label label24:Label24, text=%"lqrud11";
+Edit lqrud11=lqr_file.lqrud11, tabIndex=29, scroll;
+Label label18:Label18, text=%"lqrud05";
+Edit lqrud05=lqr_file.lqrud05, tabIndex=23, scroll;
+Label label25:Label25, text=%"lqrud12";
+Edit lqrud12=lqr_file.lqrud12, tabIndex=30;
+Label label19:Label19, text=%"lqrud06";
+Edit lqrud06=lqr_file.lqrud06, tabIndex=24, scroll;
+Label dummy:dummy01, text=%"lqt02";
+Label dumm1:dummy02, text=%"lqt03";
+Label dumm2:dummy03, text=%"lpk04";
+Label dumm3:dummy04, text=%"lqt04";
+Label dumm4:dummy05, text=%"lpf02";
+Label dumm5:dummy06, text=%"lqt05";
+Label dumm6:dummy07, text=%"lqt06";
+Label dumm7:dummy08, text=%"lqt07";
+Edit lqt02=lqt_file.lqt02, tabIndex=34, not null, required, scroll;
+ComboBox before=formonly.before type CHAR, tabIndex=35, noEntry, not null, required, items=(("0", "Oringial:"));
+ButtonEdit lqt03=lqt_file.lqt03, action=controlp, tabIndex=36, not null, required, image="zoom", scroll;
+Edit lpk04=formonly.lpk04 type CHAR, tabIndex=37, noEntry;
+Edit lqt04=lqt_file.lqt04, tabIndex=38, noEntry, scroll;
+Edit lpc02_1=formonly.lpc02_1 type CHAR, tabIndex=39, noEntry;
+Edit lqt05=lqt_file.lqt05, tabIndex=40, noEntry, scroll;
+Edit lqt06=lqt_file.lqt06, tabIndex=41, noEntry, scroll;
+Edit lqt07=lqt_file.lqt07, tabIndex=42, noEntry, scroll;
+ComboBox after=formonly.after type CHAR, tabIndex=43, noEntry, not null, required, items=(("1", "Modify:"));
+Edit lqt08=lqt_file.lqt08, tabIndex=44, noEntry, scroll;
+Edit lpc02_2=formonly.lpc02_2 type CHAR, tabIndex=45, noEntry;
+Label rows:rows, text=%"Rows";
+Edit idx=formonly.idx type CHAR, tabIndex=46;
+Edit cnt=formonly.cnt type CHAR, tabIndex=47;
+Label item:item, text=%"Items";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=48;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(lqr_file.lqr01,lqr_file.lqr02,lqr_file.lqr03,lqr_file.lqr04,lqr_file.lqrconf,lqr_file.lqr05,lqr_file.lqracti,lqr_file.lqrdate,lqr_file.lqrmodu,lqr_file.lqrorig,lqr_file.lqroriu,lqr_file.lqruser,lqr_file.lqrgrup,lqr_file.lqrud01,lqr_file.lqrud02,lqr_file.lqrud03,lqr_file.lqrud04,lqr_file.lqrud05,lqr_file.lqrud06,lqr_file.lqrud07,lqr_file.lqrud08,lqr_file.lqrud09,lqr_file.lqrud10,lqr_file.lqrud11,lqr_file.lqrud13,lqr_file.lqrud14,lqr_file.lqrud15)
+SCREEN RECORD s_lqt(lqt_file.lqt02,formonly.before,lqt_file.lqt03,formonly.lpk04,lqt_file.lqt04,formonly.lpc02_1,lqt_file.lqt05,lqt_file.lqt06,lqt_file.lqt07,formonly.after,lqt_file.lqt08,formonly.lpc02_2)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2,formonly.azf03,formonly.gen02,formonly.imgmksg,lqr_file.lqrud12,lqr_file.lqrcond,lqr_file.lqrconu,formonly.lqrconu_desc)
+END -- INSTRUCTIONS
+

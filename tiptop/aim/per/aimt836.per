@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt836.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt836")
+VBox vb14
+Folder pc622
+Page page01(text="Main")
+Grid gr3508
+{
+  Label No.           [pia01                   ]
+
+ <G group01                                          >
+  Item No.            [pia02                        ]
+  Part Name           [ima02                        ]
+  Warehouse           [pia03     ]
+  Location            [pia04     ]
+  Lot#                [pia05                   ]
+  Inventory Class     [pia06     ]
+  Inventory Unit      [pia09     ]
+  Account             [pia07                   ]
+  type                [pia931                  ]
+ <                                                   >
+ <G group02                                          >
+  User(1)             [pia50     ]/[pia0]
+  User(2)             [pia60     ]/[pia1]
+ <                                                   >
+ <G group03                                          >
+  Adjust Qty          [qty                 ]/[unit]
+  Cost Center         [pia930          |gem02     ]
+  reason code         [pia70               ]
+  explain             [azf03               ]
+ <                                                   >
+
+}
+END -- gr3508
+END -- page01
+END -- pc622
+Grid gr3509
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3509
+END -- vb14
+END -- aimt836
+
+TABLES
+azf_file,
+pia_file
+ATTRIBUTES
+ButtonEdit pia01=pia_file.pia01, action=controlp, tabIndex=1, image="zoom", comment="KEY Field, No Blank/Repeated!";
+Group group01:group01;
+Edit pia02=pia_file.pia02, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=3, noEntry;
+Edit pia03=pia_file.pia03, tabIndex=4, noEntry;
+Edit pia04=pia_file.pia04, tabIndex=5, noEntry;
+Edit pia05=pia_file.pia05, tabIndex=6, noEntry;
+Edit pia06=pia_file.pia06, tabIndex=7, noEntry;
+Edit pia09=pia_file.pia09, tabIndex=8, noEntry;
+Edit pia07=pia_file.pia07, tabIndex=9, noEntry;
+ButtonEdit pia931=pia_file.pia931, action=controlp, tabIndex=19, noEntry, image="zoom.png";
+Group group02:group02;
+Edit pia50=pia_file.pia50, tabIndex=10, noEntry;
+Edit pia0=formonly.pia09_1 type VARCHAR, tabIndex=11;
+Edit pia60=pia_file.pia60, tabIndex=12, noEntry;
+Edit pia1=formonly.pia09_2 type VARCHAR, tabIndex=13;
+Group group03:group03;
+Edit qty=formonly.qty type DECIMAL, tabIndex=14;
+ButtonEdit unit=formonly.unit type VARCHAR, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit   <^U>/<^T>Create Item/ Unit conversion";
+ButtonEdit pia930=pia_file.pia930, action=controlp, tabIndex=16, not null, required, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=17, noEntry;
+ButtonEdit pia70=pia_file.pia70, action=controlp, tabIndex=20, image="zoom";
+Edit azf03=azf_file.azf03, tabIndex=21, noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pia_file.pia01,pia_file.pia02,formonly.ima02,pia_file.pia03,pia_file.pia04,pia_file.pia05,pia_file.pia06,pia_file.pia09,pia_file.pia07,pia_file.pia931,pia_file.pia50,formonly.pia09_1,pia_file.pia60,formonly.pia09_2,formonly.qty,formonly.unit,pia_file.pia930,formonly.gem02,formonly.cnt,pia_file.pia70,azf_file.azf03)
+END -- INSTRUCTIONS
+

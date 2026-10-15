@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmg901.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr901")
+VBox vb3
+Grid gr5209
+{
+ <G group01                                                    >
+  P/O No.       [pmm01               ]
+  Purchase Date [pmm04               ]
+  Vender No.    [pmm09               ]
+ <                                                             >
+}
+END -- gr5209
+Group group02_1(text="INPUT")
+Grid gr5207_1
+{
+[a                                                           ]
+[b                                                           ]
+[d                                                           ]
+ Print Max Rows of latest P/O record [c ]
+}
+END -- gr5207_1
+END -- group02_1
+Grid gr5211
+{
+ [more                                         ]
+
+}
+END -- gr5211
+END -- vb3
+END -- apmr901
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit pmm01=formonly.pmm01 type VARCHAR, tabIndex=1;
+DateEdit pmm04=formonly.pmm04 type DATE, tabIndex=2;
+Edit pmm09=formonly.pmm09 type VARCHAR, tabIndex=3;
+CheckBox a=formonly.a type VARCHAR, tabIndex=5, text="Print P/R note", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=6, text="Print Vender Item No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=8, text="Print Additional Description for Vendor Item No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit c=formonly.c type SMALLINT, tabIndex=7;
+CheckBox more=formonly.more type VARCHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmm01,formonly.pmm04,formonly.pmm09,formonly.a,formonly.b,formonly.d,formonly.c,formonly.more)
+END -- INSTRUCTIONS
+

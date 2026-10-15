@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfq420.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfq420")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr578
+{
+ W/O No.             [sfb01               ]
+ W/O Style           [sfb02     ]
+ W/O Status          [sfb04     ]
+}
+END -- gr578
+Grid gr579
+{
+ Memo MFD Department   [sfb82          ]
+ Initial Complete Date [sfb15       ]
+
+}
+END -- gr579
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_sfb
+{
+[sfb01d          |sfb82d         |gem02          |sfb15d     |sfb05d               |ima02               |ima021              |sfb08d              |sfb09d              ]
+[sfb01d          |sfb82d         |gem02          |sfb15d     |sfb05d               |ima02               |ima021              |sfb08d              |sfb09d              ]
+[sfb01d          |sfb82d         |gem02          |sfb15d     |sfb05d               |ima02               |ima021              |sfb08d              |sfb09d              ]
+[sfb01d          |sfb82d         |gem02          |sfb15d     |sfb05d               |ima02               |ima021              |sfb08d              |sfb09d              ]
+[sfb01d          |sfb82d         |gem02          |sfb15d     |sfb05d               |ima02               |ima021              |sfb08d              |sfb09d              ]
+[sfb01d          |sfb82d         |gem02          |sfb15d     |sfb05d               |ima02               |ima021              |sfb08d              |sfb09d              ]
+[sfb01d          |sfb82d         |gem02          |sfb15d     |sfb05d               |ima02               |ima021              |sfb08d              |sfb09d              ]
+[sfb01d          |sfb82d         |gem02          |sfb15d     |sfb05d               |ima02               |ima021              |sfb08d              |sfb09d              ]
+[sfb01d          |sfb82d         |gem02          |sfb15d     |sfb05d               |ima02               |ima021              |sfb08d              |sfb09d              ]
+[sfb01d          |sfb82d         |gem02          |sfb15d     |sfb05d               |ima02               |ima021              |sfb08d              |sfb09d              ]
+
+}
+END -- s_sfb
+Grid gr580
+{
+ ---------- Rows [cn2    ] ----------
+
+
+}
+END -- gr580
+END -- VBox1
+END -- asfq420
+
+TABLES
+sfb_file
+ATTRIBUTES
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=1, noEntry, image="zoom";
+ComboBox sfb02=sfb_file.sfb02, tabIndex=2, noEntry, comment="1.Gnrl 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm 13.Predic 15.Trial ", items=(("1", "Gnrl"),("5", "Rework"),("7", "Sub."),("8", "Rwrk SUB"),("11", "Disasm"),("13", "Predic"),("15", "Trial"));
+ComboBox sfb04=sfb_file.sfb04, tabIndex=3, noEntry, comment="1.Open 2.Rls 3.Prt 4.Iss.Mat 5.WIP 6.FQC 7.St-i 8.Clos", items=(("1", "Gnrl"),("2", "Rls"),("3", "Prt"),("4", "Iss.Mat"),("5", "WIP"),("6", "FQC"),("7", "St-i"),("8", "Clos"));
+ButtonEdit sfb82=sfb_file.sfb82, action=controlp, tabIndex=4, noEntry, image="zoom";
+DateEdit sfb15=sfb_file.sfb15, tabIndex=5, noEntry;
+Edit sfb01d=formonly.sfb01d type VARCHAR, tabIndex=6, title="W/O No.", noEntry;
+Edit sfb82d=formonly.sfb82d type VARCHAR, tabIndex=7, title="MFD Department", noEntry;
+Edit gem02=formonly.gem02, tabIndex=13, title=%"Department Name", noEntry;
+DateEdit sfb15d=formonly.sfb15d type DATE, tabIndex=8, title="Compl.Date", noEntry;
+Edit sfb05d=formonly.sfb05d type VARCHAR, tabIndex=9, title="Production Item", noEntry;
+Edit ima02=formonly.ima02, tabIndex=14, title=%"Item Name", noEntry;
+Edit ima021=formonly.ima021, tabIndex=15, title=%"Item Specification", noEntry;
+Edit sfb08d=formonly.sfb08d type DECIMAL, tabIndex=10, title="Qty", noEntry;
+Edit sfb09d=formonly.sfb09d type DECIMAL, tabIndex=11, title="St-in Qty", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(formonly.sfb01d,formonly.sfb82d,formonly.gem02,formonly.sfb15d,formonly.sfb05d,formonly.ima02,formonly.ima021,formonly.sfb08d,formonly.sfb09d)
+SCREEN RECORD Undefined(sfb_file.sfb01,sfb_file.sfb02,sfb_file.sfb04,sfb_file.sfb82,sfb_file.sfb15,formonly.cn2)
+END -- INSTRUCTIONS
+

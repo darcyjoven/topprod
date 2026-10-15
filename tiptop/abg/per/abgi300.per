@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi300")
+VBox VBox1
+Folder pc92
+Page page01(text="Main")
+Table s_bhe
+{
+[bhe01               |bhe02        |bhe03       |bhe04       ]
+[bhe01               |bhe02        |bhe03       |bhe04       ]
+[bhe01               |bhe02        |bhe03       |bhe04       ]
+[bhe01               |bhe02        |bhe03       |bhe04       ]
+[bhe01               |bhe02        |bhe03       |bhe04       ]
+[bhe01               |bhe02        |bhe03       |bhe04       ]
+[bhe01               |bhe02        |bhe03       |bhe04       ]
+[bhe01               |bhe02        |bhe03       |bhe04       ]
+[bhe01               |bhe02        |bhe03       |bhe04       ]
+[bhe01               |bhe02        |bhe03       |bhe04       ]
+
+}
+END -- s_bhe
+END -- page01
+END -- pc92
+END -- VBox1
+END -- abgi300
+
+TABLES
+bhe_file
+ATTRIBUTES
+ButtonEdit bhe01=bhe_file.bhe01, action=controlp, tabIndex=1, title="Prod", not null, required, image="zoom", comment="<^P>Qry Item Master   <^E>Qry Prod. Class";
+ButtonEdit bhe02=bhe_file.bhe02, action=controlp, tabIndex=2, title="Sls.Rev", not null, required, image="zoom", comment="<^P>Open Window to Qry Acct";
+ButtonEdit bhe03=bhe_file.bhe03, action=controlp, tabIndex=3, title="Sls.Cost", not null, required, image="zoom", comment="<^P>Open Window to Qry Acct";
+ButtonEdit bhe04=bhe_file.bhe04, action=controlp, tabIndex=4, title="Inv Acct", not null, required, image="zoom", comment="<^P>Open Window to Qry Acct";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bhe(bhe_file.bhe01,bhe_file.bhe02,bhe_file.bhe03,bhe_file.bhe04)
+END -- INSTRUCTIONS
+

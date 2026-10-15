@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afap020")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr78
+{
+ Serial No.          [faj01           ]
+ Assets No.          [faj02           ]
+ Attachment No.      [faj022          ]
+}
+END -- gr78
+END -- page01
+END -- folder01
+Table s_faj
+{
+[faj01b        |faj02b     |faj022b     |faj06                 |faj93           ]
+[faj01b        |faj02b     |faj022b     |faj06                 |faj93           ]
+[faj01b        |faj02b     |faj022b     |faj06                 |faj93           ]
+[faj01b        |faj02b     |faj022b     |faj06                 |faj93           ]
+[faj01b        |faj02b     |faj022b     |faj06                 |faj93           ]
+[faj01b        |faj02b     |faj022b     |faj06                 |faj93           ]
+[faj01b        |faj02b     |faj022b     |faj06                 |faj93           ]
+[faj01b        |faj02b     |faj022b     |faj06                 |faj93           ]
+[faj01b        |faj02b     |faj022b     |faj06                 |faj93           ]
+[faj01b        |faj02b     |faj022b     |faj06                 |faj93           ]
+
+}
+END -- s_faj
+Grid gr79
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr79
+END -- VBox1
+END -- afap020
+
+TABLES
+faj_file
+ATTRIBUTES
+Edit faj01=faj_file.faj01, tabIndex=1;
+ButtonEdit faj02=faj_file.faj02, action=controlp, tabIndex=2, image="zoom";
+Edit faj022=faj_file.faj022, tabIndex=3;
+Edit faj01b=formonly.faj01b type CHAR, tabIndex=4, title="Serial No.", noEntry;
+Edit faj02b=formonly.faj02b type CHAR, tabIndex=5, title="Assets No.", noEntry;
+Edit faj022b=formonly.faj022b type CHAR, tabIndex=6, title="Attachment No.", noEntry;
+Edit faj06=formonly.faj06 type VARCHAR, tabIndex=7, title="Name", noEntry;
+Edit faj93=formonly.faj93 type CHAR, tabIndex=8, title="Group Code";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_faj(formonly.faj01b,formonly.faj02b,formonly.faj022b,formonly.faj06,formonly.faj93)
+SCREEN RECORD Undefined(faj_file.faj01,faj_file.faj02,faj_file.faj022,formonly.cn2)
+END -- INSTRUCTIONS
+

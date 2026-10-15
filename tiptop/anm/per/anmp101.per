@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"anmp101")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Main")
+Grid Grid1
+{
+
+[label4    |type              ]
+[label1    |nme01             ]
+[label2    |nmu01             ]
+
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table s_nag
+{
+[chk1    |nag04     |nag03   |nmu03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+[chk1    |nag04     |nag03   |nmu03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+[chk1    |nag04     |nag03   |nmu03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+[chk1    |nag04     |nag03   |nmu03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+[chk1    |nag04     |nag03   |nmu03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+[chk1    |nag04     |nag03   |nmu03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+[chk1    |nag04     |nag03   |nmu03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+[chk1    |nag04     |nag03   |nmu03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+
+}
+END -- s_nag
+END -- VBox1
+END -- anmp101
+
+TABLES
+nme_file,
+nag_file,
+nmu_file
+ATTRIBUTES
+Label label4:Label4, text=%"Type";
+ComboBox type=formonly.type type CHAR, tabIndex=10, items=(("1", "Comp"),("2", "Bank"));
+Label label1:Label1, text=%"Bank";
+ButtonEdit nme01=nme_file.nme01, action=controlp, tabIndex=11, image="zoom", picture="";
+Label label2:Label2, text=%"Date";
+DateEdit nmu01=nmu_file.nmu01, tabIndex=12;
+CheckBox chk1=formonly.chk1 type VARCHAR, tabIndex=1, title=%"chk1", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox nag04=nag_file.nag04, tabIndex=1, title=%"nag04", noEntry, not null, items=(("1", "Auto"),("2", "Hand"));
+Edit nag03=nag_file.nag03, tabIndex=4, title=%"nag03", noEntry;
+Edit nmu03=nmu_file.nmu03, tabIndex=13, title=%"nmu03", noEntry;
+Edit nag05=nag_file.nag05, tabIndex=1, title=%"nag05", noEntry;
+Edit nag06=nag_file.nag06, tabIndex=1, title=%"nag06", noEntry;
+Edit nme05=nme_file.nme05, tabIndex=1, title=%"nme05", noEntry;
+DateEdit nme16=nme_file.nme16, tabIndex=1, title=%"nme16", noEntry;
+ComboBox dc1=formonly.dc1 type CHAR, tabIndex=1, title=%"dc1", noEntry, not null;
+Edit nme08=nme_file.nme08, tabIndex=1, title=%"nme08", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nag(formonly.chk1,nag_file.nag04,nag_file.nag03,nmu_file.nmu03,nag_file.nag05,nag_file.nag06,nme_file.nme05,nme_file.nme16,formonly.dc1,nme_file.nme08)
+SCREEN RECORD Undefined(formonly.type,nme_file.nme01,nmu_file.nmu01)
+END -- INSTRUCTIONS
+

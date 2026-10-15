@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u53/tiptop/qry/4fd/q_gdy03.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"")
+Grid gr3722
+{
+
+[gdy04                     ]
+ <T s_gdy03                                       >
+ [check     |gdy03           |zw02            ]
+ [check     |gdy03           |zw02            ]
+ [check     |gdy03           |zw02            ]
+ [check     |gdy03           |zw02            ]
+ [check     |gdy03           |zw02            ]
+ [check     |gdy03           |zw02            ]
+ [check     |gdy03           |zw02            ]
+ [check     |gdy03           |zw02            ]
+ [check     |gdy03           |zw02            ]
+ [check     |gdy03           |zw02            ]
+ <                                                >
+
+}
+END -- gr3722
+END -- q_gdy03
+
+TABLES
+zw_file,
+gdy_file
+ATTRIBUTES
+CheckBox gdy04=formonly.gdy04 type like gdy_file.gdy04, tabIndex=12, default = "N", text=%"全部重新產生 (刪除已存在資料)", valueChecked = "Y", valueUnchecked = "N";
+Table s_gdy03:s_gdy03;
+CheckBox check=formonly.check type CHAR, tabIndex=9, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gdy03=formonly.gdy03 type like gdy_file.gdy03, tabIndex=10, title="gdy03", noEntry;
+Edit zw02=zw_file.zw02, tabIndex=11, title="zw02", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gdy03(formonly.check,formonly.gdy03,zw_file.zw02)
+SCREEN RECORD s_gdy03_t(formonly.gdy04)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_dbqry_main.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+TOPMENU TopMenu1
+  GROUP form(text="Form")
+    COMMAND about(text="About")
+    COMMAND exit(text="Exit")
+  END -- form
+  GROUP database(text="DataBase")
+    COMMAND select_db(text="Select a database")
+  END -- database
+  GROUP table(text="Table")
+    COMMAND select_tab(text="Select a table")
+    COMMAND view_tab(text="All records with selected table")
+    COMMAND query_tab(text="Apply filter with selected table")
+  END -- table
+END -- TopMenu1
+
+LAYOUT (spacing=normal, text=%"Simple Database Query for TIPTOP", style="naked")
+VBox VBox1
+Group gb2329(text="Information")
+Grid gr3173
+{
+  Current selected database   [database       ]
+
+
+
+  Current selected table      [table          ]
+}
+END -- gr3173
+END -- gb2329
+END -- VBox1
+END -- p_dbqry_main
+
+ATTRIBUTES
+Edit database=formonly.database type CHAR, tabIndex=1, noEntry;
+Edit table=formonly.table type CHAR, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.database,formonly.table)
+END -- INSTRUCTIONS
+

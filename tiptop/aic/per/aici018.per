@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici018.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aici018")
+VBox vb3
+Folder pc4
+Page page01(text="Main")
+Grid gr44
+{
+ Empl.No             [ics00     ]                               [icspost     ]
+ Name                [ima02     ]
+ Desc                [ima021    ]
+}
+END -- gr44
+END -- page01
+END -- pc4
+Folder pc5
+Page Page14(text="Mask")
+Grid gr24
+{
+ Mask Group          [ics01     ]
+ Body ID             [ics02     ] [ics02_desc]
+ Make ID             [ics03     ]
+ IN bin              [ics04     ]
+ Pro ID              [ics05     ] [ics05_desc          ]
+ Custom              [ics06     ] [ics06_desc          ]
+ Fac ID              [ics20     ] [ics20_desc          ]
+ Mask Fac            [ics07     ] [ics07_desc          ]
+ Add                 [ics08               ]
+ User                [ics09     ]  Fac or custom   [ics10     ] [ics10_desc          ]
+ Mask fee            [ics11               ] Money  [ics12     ]
+ down number         [ics13               ] unit   [ics14     ]
+ true down number    [ics15               ]
+ MakeWay             [ics16     ]
+ About ID            [ics17               ] True ID[ics18               ]
+ Time                [ics19     ]
+
+}
+END -- gr24
+END -- Page14
+END -- pc5
+Grid gr19
+{
+ ---------- Rows [idx   ]/[cnt   ] ----------
+
+
+
+}
+END -- gr19
+END -- vb3
+END -- aici018
+
+TABLES
+ics_file
+ATTRIBUTES
+ButtonEdit ics00=ics_file.ics00, action=controlp, tabIndex=26, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+CheckBox icspost=ics_file.icspost, tabIndex=29, text="End flag", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=27, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=28, noEntry;
+ButtonEdit ics01=ics_file.ics01, action=controlp, tabIndex=3, not null, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+ButtonEdit ics02=ics_file.ics02, action=controlp, tabIndex=7, not null, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Edit ics02_desc=formonly.ics02_desc type VARCHAR, tabIndex=4;
+ButtonEdit ics03=ics_file.ics03, action=controlp, tabIndex=8, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+ButtonEdit ics04=ics_file.ics04, action=controlp, tabIndex=9, not null, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+ButtonEdit ics05=ics_file.ics05, action=controlp, tabIndex=10, not null, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Edit ics05_desc=formonly.ics05_desc type VARCHAR, tabIndex=5, noEntry;
+ButtonEdit ics06=ics_file.ics06, action=controlp, tabIndex=11, not null, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Edit ics06_desc=formonly.ics06_desc type VARCHAR, tabIndex=6;
+ButtonEdit ics20=ics_file.ics20, action=controlp, tabIndex=13, not null, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Edit ics20_desc=formonly.ics20_desc type VARCHAR, tabIndex=14;
+ButtonEdit ics07=ics_file.ics07, action=controlp, tabIndex=12, not null, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Edit ics07_desc=formonly.ics07_desc type DECIMAL, tabIndex=15;
+Edit ics08=ics_file.ics08, tabIndex=16;
+ComboBox ics09=ics_file.ics09, tabIndex=17, not null, items=(("1", "Company"),("2", "Factory"),("3", "Custom"));
+ButtonEdit ics10=ics_file.ics10, action=controlp, tabIndex=32, image="zoom.png";
+Edit ics10_desc=formonly.ics10_desc type VARCHAR, tabIndex=23;
+Edit ics11=ics_file.ics11, tabIndex=18, not null;
+ButtonEdit ics12=ics_file.ics12, action=controlp, tabIndex=31, image="zoom.png";
+Edit ics13=ics_file.ics13, tabIndex=19, not null;
+ButtonEdit ics14=ics_file.ics14, action=controlp, tabIndex=30, image="zoom.png";
+Edit ics15=ics_file.ics15, tabIndex=20, noEntry, not null;
+ComboBox ics16=ics_file.ics16, tabIndex=21, not null, items=(("1", "About Money"),("2", "In time"));
+Edit ics17=ics_file.ics17, tabIndex=22, noEntry;
+Edit ics18=ics_file.ics18, tabIndex=24, noEntry, not null;
+DateEdit ics19=ics_file.ics19, tabIndex=25;
+Edit idx=formonly.idx type SMALLINT, tabIndex=1, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ics_file.ics00,ics_file.icspost,formonly.ima02,formonly.ima021,ics_file.ics01,ics_file.ics02,formonly.ics02_desc,ics_file.ics03,ics_file.ics04,ics_file.ics05,formonly.ics05_desc,ics_file.ics06,formonly.ics06_desc,ics_file.ics20,formonly.ics20_desc,ics_file.ics07,formonly.ics07_desc,ics_file.ics08,ics_file.ics09,ics_file.ics10,formonly.ics10_desc,ics_file.ics11,ics_file.ics12,ics_file.ics13,ics_file.ics14,ics_file.ics15,ics_file.ics16,ics_file.ics17,ics_file.ics18,ics_file.ics19,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

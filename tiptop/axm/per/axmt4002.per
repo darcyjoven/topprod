@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt4002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt4002")
+VBox VBox1
+Folder pc564
+Page page01(text="Main")
+Grid gr2499
+{
+ <G group01                                                                        >
+  Over-Delivery Ratio    [oea09     ]%
+  Sales Classification 2 [oea26     ]
+  Exchange Rate          [oea24     ]
+ <                                                                                 >
+ <G group02                                                                        >
+ [oea18                                                          ]
+ <                                                                                 >
+ <G group03                                                                        >
+  Other Condition     [oea33                                     ]
+  Collecting Customer [oea17     ][oea17_ds  ]
+  Customer Order      [oea10           ]
+  Project#            [oea46     ]
+  Agent               [oea47     ][pmc03     ]
+  Commission Code     [oea48     ][ofs02               ]
+ <                                                                                 >
+ <G group04                        ><G group05                                     >
+  Deposit Ratio       [oea161     ]  Order Amount        [oea61               ]
+  Delivery Ratio      [oea162     ]  Delivery Amount     [oea62               ]
+  Balance Ratio       [oea163     ]  Closing Amount      [oea63               ]
+ <                                 ><                                              >
+ <G group06                                                                        >
+ [oea07                                                             ]
+ <                                                                                 >
+
+}
+END -- gr2499
+END -- page01
+END -- pc564
+END -- VBox1
+END -- axmt4002
+
+TABLES
+oea_file
+ATTRIBUTES
+Group group01:group01;
+Edit oea09=oea_file.oea09, tabIndex=1, not null, required, upShift;
+Edit oea26=oea_file.oea26, tabIndex=2;
+Edit oea24=oea_file.oea24, tabIndex=3;
+Group group02:group02;
+CheckBox oea18=oea_file.oea18, tabIndex=4, text="Enter Account by Exchange Rate of Order", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03;
+Edit oea33=oea_file.oea33, tabIndex=5;
+Edit oea17=oea_file.oea17, tabIndex=6;
+Edit oea17_ds=formonly.oea17_ds type CHAR, tabIndex=7;
+Edit oea10=oea_file.oea10, tabIndex=8;
+Edit oea46=oea_file.oea46, tabIndex=9;
+ButtonEdit oea47=oea_file.oea47, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Details";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=11, noEntry;
+ButtonEdit oea48=oea_file.oea48, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Details";
+Edit ofs02=formonly.ofs02 type CHAR, tabIndex=13, noEntry;
+Group group04:group04;
+Edit oea161=oea_file.oea161, tabIndex=14;
+Edit oea162=oea_file.oea162, tabIndex=15;
+Edit oea163=oea_file.oea163, tabIndex=16, noEntry;
+Group group05:group05;
+Edit oea61=oea_file.oea61, tabIndex=17, noEntry, not null, required;
+Edit oea62=oea_file.oea62, tabIndex=18, noEntry, not null, required;
+Edit oea63=oea_file.oea63, tabIndex=19, noEntry, not null, required;
+Group group06:group06;
+CheckBox oea07=oea_file.oea07, tabIndex=20, text="Count Delivery as Uninvo.Sls Revenue to Rcv", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oea_file.oea09,oea_file.oea26,oea_file.oea24,oea_file.oea18,oea_file.oea33,oea_file.oea17,formonly.oea17_ds,oea_file.oea10,oea_file.oea46,oea_file.oea47,formonly.pmc03,oea_file.oea48,formonly.ofs02,oea_file.oea161,oea_file.oea162,oea_file.oea163,oea_file.oea61,oea_file.oea62,oea_file.oea63,oea_file.oea07)
+END -- INSTRUCTIONS
+

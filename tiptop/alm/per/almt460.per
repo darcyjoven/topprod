@@ -1,0 +1,148 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/alm/4fd/almt460.tmp.per created 2010-10-25T17:54:12
+-- File created from /u3/tiptop/alm/4fd/almt460.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almt460")
+                                                                                                                                         
+     VBox vb7                                                                                                                            
+     Folder pc3                                                                                                                          
+     Page Page5(text=%"Main")                                                                                                            
+     Grid gr9                                                                                                                            
+     {                                                                                                                                   
+                                                                                                                                         
+      lra02    [lra02             ]                       Cedula type[lpk02         ]                                                    
+      lra01    [lra01             ]                       Cedula No. [lpk03                         ]                                    
+      lra03    [lra03                 ]                   lra06      [lra06               ]                                              
+      lra19    [lra19             ]                       lra07      [lra07               ]                                              
+      lra20    [lra20       ][lne05                     ] lra08      [lra08       ]                                                      
+      lra21    [lra21             ]                       lra09      [lra09       ]                                                      
+      lraplant [lraplant    ][lma02                     ] lra10      [lra10               ]                                              
+      lralegal [lralegal    ][azt02                     ] lra11      [lra11               ]                                              
+      Building [lra27       ][lmb03                     ] lra12      [lra12               ]                                              
+      Floor    [lra28       ][lmc04                     ] lra26      [lra26               ]                                              
+      lra22    [lra22       ][tqa02                     ] lra29      [lra29               ]                                              
+      lra25    [lra25       ][oba02                     ] lra13      [lra13       ][imgmksg]                                             
+      lra04    [lra04               ]                     lra14      [lra14       ][       ]                                             
+      lra05    [lra05                 ]                   lra15      [lra15       ]                                                      
+      lpk01    [lpk01           ]                         lra16      [lra16                                  ]                           
+                                                                     [                                       ]                           
+                                                                                                                                         
+                                                                                                                                         
+     }                                                                                                                                   
+     END                                                                                                                                 
+     END -- Page                                                                                                                         
+     Page info(text=%"Info")                                                                                                             
+     Grid gr7                                                                                                                            
+     {                                                                                                                                   
+                                                                                                                                         
+      Data User    [lrauser   ] crat  [lracrat     ] Modify Date[lradate     ]                                                           
+      Data Group   [lragrup   ] Modify[lramodu     ]                                                                                     
+      Record Orig. [lraoriu   ]                                                                                                          
+      Dept Orig.   [lraorig   ]                                                                                                          
+                                                                                                                                         
+                                                                                                                                         
+                                                                                                                                         
+                                                                                                                                         
+                                                                                                                                         
+                                                                                                                                         
+     }                                                                                                                                   
+     END                                                                                                                                 
+                                                                                                                                         
+                                                                                                                                         
+                                                                                                                                         
+                                                                                                                                         
+                                                                                                                                         
+     END -- Page                                                                                                                         
+     END -- Folder                                                                                                                       
+     Table s_lrb                                                                                                                         
+     {                                                                                                                                   
+     [lrb02               |lmu02                         |lrb03     |lrb04               |lrb05               |lrb06               ]     
+     [lrb02               |lmu02                         |lrb03     |lrb04               |lrb05               |lrb06               ]     
+     [lrb02               |lmu02                         |lrb03     |lrb04               |lrb05               |lrb06               ]     
+     [lrb02               |lmu02                         |lrb03     |lrb04               |lrb05               |lrb06               ]     
+     [lrb02               |lmu02                         |lrb03     |lrb04               |lrb05               |lrb06               ]     
+     }                                                                                                                                   
+     END -- Table                                                                                                                        
+     Grid gr8                                                                                                                            
+     {                                                                                                                                   
+      --------Rows[idx   ]/[cnt    ]  ---Details[cn2   ]------                                                                           
+                                                                                                                                         
+                                                                                                                                         
+     }                                                                                                                                   
+     END                                                                                                                                 
+     END -- VBox                                                                                                                         
+END -- Form
+
+TABLES
+lra_file
+lrb_file
+
+ATTRIBUTES
+ComboBox lra02=lra_file.lra02, tabIndex=11, not null, items=(("0", "Normal sales"),("1", "Sales Adjustment"));
+ComboBox lpk02=formonly.lpk02 type VARCHAR, tabIndex=40, noEntry, items=(("0", "id"),("1", "officer"),("2", "other"));
+ButtonEdit lra01=lra_file.lra01, action=controlp, tabIndex=10, not null, required, image="zoom.png";
+Edit lpk03=formonly.lpk03, tabIndex=38, noEntry;
+ButtonEdit lra03=lra_file.lra03, action=controlp, tabIndex=12, not null, image="zoom.png";
+Edit lra06=lra_file.lra06, tabIndex=20;
+ButtonEdit lra19=lra_file.lra19, action=controlp, tabIndex=15, noEntry, image="zoom.png";
+Edit lra07=lra_file.lra07, tabIndex=21;
+ButtonEdit lra20=lra_file.lra20, action=controlp, tabIndex=16, noEntry, image="zoom.png";
+Edit lne05=formonly.lne05, tabIndex=35, noEntry;
+DateEdit lra08=lra_file.lra08, tabIndex=22, not null;
+ButtonEdit lra21=lra_file.lra21, action=controlp, tabIndex=17, noEntry, image="zoom.png";
+Edit lra09=lra_file.lra09, tabIndex=23, noEntry;
+ButtonEdit lraplant=lra_file.lraplant, action=controlp, tabIndex=48, noEntry, image="zoom.png";
+Edit lma02=formonly.lma02, tabIndex=50, noEntry;
+Edit lra10=lra_file.lra10, tabIndex=24, noEntry;
+ButtonEdit lralegal=lra_file.lralegal, action=controlp, tabIndex=49, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02, tabIndex=51, noEntry;
+Edit lra11=lra_file.lra11, tabIndex=25, noEntry;
+ButtonEdit lra27=lra_file.lra27, action=controlp, tabIndex=42, noEntry, image="zoom.png";
+Edit lmb03=formonly.lmb03, tabIndex=44, noEntry;
+Edit lra12=lra_file.lra12, tabIndex=26, noEntry;
+ButtonEdit lra28=lra_file.lra28, action=controlp, tabIndex=43, noEntry, image="zoom.png";
+Edit lmc04=formonly.lmc04, tabIndex=45, noEntry;
+Edit lra26=lra_file.lra26, tabIndex=41, noEntry;
+ButtonEdit lra22=lra_file.lra22, action=controlp, tabIndex=18, noEntry, image="zoom.png";
+Edit tqa02=formonly.tqa02, tabIndex=36, noEntry;
+Edit lra29=lra_file.lra29, tabIndex=46, noEntry;
+ButtonEdit lra25=lra_file.lra25, action=controlp, tabIndex=19, noEntry, image="zoom.png";
+Edit oba02=formonly.oba02, tabIndex=37, noEntry;
+ComboBox lra13=lra_file.lra13, tabIndex=9, noEntry, not null, items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "Void"));
+Image imgmksg=formonly.imgmksg;
+Edit lra04=lra_file.lra04, tabIndex=14;
+Edit lra14=lra_file.lra14, tabIndex=27, noEntry;
+ButtonEdit lra05=lra_file.lra05, action=controlp, tabIndex=13, image="zoom.png";
+DateEdit lra15=lra_file.lra15, tabIndex=28, noEntry;
+Edit lpk01=formonly.lpk01, tabIndex=39, noEntry;
+TextEdit lra16=lra_file.lra16, tabIndex=29;
+Edit lrauser=formonly.lrauser type VARCHAR, tabIndex=1, noEntry;
+DateEdit lracrat=formonly.lracrat type DATE, tabIndex=5, noEntry;
+DateEdit lradate=formonly.lradate type VARCHAR, tabIndex=4, noEntry;
+Edit lragrup=formonly.lragrup type VARCHAR, tabIndex=3, noEntry;
+Edit lramodu=formonly.lramodu type VARCHAR, tabIndex=2, noEntry;
+Edit lraoriu=lra_file.lraoriu, tabIndex=52, noEntry;
+Edit lraorig=lra_file.lraorig, tabIndex=53, noEntry;
+ButtonEdit lrb02=lrb_file.lrb02, action=controlp, tabIndex=30, title="lrb02", not null, required, image="zoom.png";
+Edit lmu02=formonly.lmu02, tabIndex=31, title="lmu02", noEntry;
+Edit lrb03=lrb_file.lrb03, tabIndex=32, title="lrb03";
+Edit lrb04=lrb_file.lrb04, tabIndex=33, title="lrb04";
+Edit lrb05=lrb_file.lrb05, tabIndex=34, title="lrb05", not null;
+Edit lrb06=lrb_file.lrb06, tabIndex=47, title="lrb06", noEntry;
+Edit idx=formonly.idx, tabIndex=6, noEntry;
+Edit cnt=formonly.cnt, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lrb(lrb_file.lrb02, formonly.lmu02, lrb_file.lrb03, lrb_file.lrb04, lrb_file.lrb05, lrb_file.lrb06)
+END -- INSTRUCTIONS
+

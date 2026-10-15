@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi103")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr710
+{
+ Master Item No.     [bmp01                         ]
+ P/N                 [ima02_1                       ]
+ Spec                [ima021_1                      ]
+ Alternate BOM       [bmp28               ]
+ Master Item Version [bmp011    ]
+}
+END -- gr710
+Grid gr711
+{
+ Component No.       [bmp03                         ]
+ P/N                 [ima02_2                       ]
+ Spec                [ima021_2                      ]
+ Ln No.              [bmp0]
+
+}
+END -- gr711
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_bec
+{
+[bec0|bec05        ]
+[bec0|bec05        ]
+[bec0|bec05        ]
+[bec0|bec05        ]
+[bec0|bec05        ]
+[bec0|bec05        ]
+[bec0|bec05        ]
+[bec0|bec05        ]
+[bec0|bec05        ]
+[bec0|bec05        ]
+
+}
+END -- s_bec
+Grid gr712
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr712
+END -- VBox1
+END -- abmi103
+
+TABLES
+bmp_file,
+bec_file
+ATTRIBUTES
+Edit bmp01=bmp_file.bmp01, tabIndex=1, required, comment="Enter Master Item No   ";
+Edit ima02_1=formonly.ima02_1 type CHAR, tabIndex=2, noEntry;
+Edit ima021_1=formonly.ima021_1 type CHAR, tabIndex=3, noEntry;
+Edit bmp28=bmp_file.bmp28, tabIndex=4;
+Edit bmp011=bmp_file.bmp011, tabIndex=5, required, comment="Enter Master Item Version   ";
+Edit bmp03=bmp_file.bmp03, tabIndex=6, required, comment="Please enter Component No.   ";
+Edit ima02_2=formonly.ima02_2 type CHAR, tabIndex=7, noEntry;
+Edit ima021_2=formonly.ima021_2 type CHAR, tabIndex=8, noEntry;
+Edit bmp0=bmp_file.bmp02, tabIndex=9, required, comment="Enter Component Line#       ";
+Edit bec0=bec_file.bec04, tabIndex=10, title="Ln#", not null, required;
+Edit bec05=bec_file.bec05, tabIndex=11, title="Description", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bec(bec_file.bec04,bec_file.bec05)
+SCREEN RECORD Undefined(bmp_file.bmp01,formonly.ima02_1,formonly.ima021_1,bmp_file.bmp28,bmp_file.bmp011,bmp_file.bmp03,formonly.ima02_2,formonly.ima021_2,bmp_file.bmp02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,127 @@
+SCHEMA ds
+
+LAYOUT
+  VBOX
+    FOLDER
+      PAGE page01 (TEXT="Main")
+        GRID
+          {
+           Empl.No             [azb1      ] 
+           Name                [gen02     ]
+           Password            [azb02     ]
+           Department No.      [gen03     ][gem02       ]
+           Position            [gen04               ]
+           Amount              [azb06               ]
+
+          }
+        END --GRID
+      END --PAGE
+      PAGE info (TEXT="Info")
+        GRID
+          {
+           Record Owner        [azbuser   ] Last Modified by    [azbmodu   ] Data Valid Code     [z         ]
+           Department          [grup      ] Create/Modify Date  [azbdat    ]
+          }
+        END --GRID
+      END --PAGE
+    END --FOLDER
+    GRID
+      {
+       ----------Rows [cnt   ] ----------
+      }
+    END --GRID
+  END --VBOX
+END --LAYOUT
+
+TABLES azb_file
+
+ATTRIBUTES
+  BUTTONEDIT azb1    = azb01, ACTION=CONTROLP, IMAGE="zoom" ,
+                       COMMENTS = 'KEY Field, No Blank/Repeated!, <^P>Qry Employee';
+             azb02   = azb02;
+             gen02   = FORMONLY.gen02,NOENTRY;
+             gem02   = FORMONLY.gem02,NOENTRY; 
+             gen03   = FORMONLY.gen03, NOENTRY;
+             gen04   = FORMONLY.gen04, NOENTRY;
+             azb06   = azb06;
+             cnt     = FORMONLY.cnt TYPE SMALLINT, NOENTRY  ;
+             azbuser = azbuser, NOENTRY;
+             grup    = azbgrup, NOENTRY;
+             azbmodu = azbmodu, NOENTRY;
+  DATEEDIT   azbdat  = azbdate, NOENTRY;
+             z       = azbacti, NOENTRY, UPSHIFT;
+END
+▼----------------------------------------------------------------
+#  Per_version = '1.10.02-05.03.31(00000)'   #
+.
+系統名稱
+
+    aoo 整體管理系統
+.
+程式名稱
+
+    aooi010 簽核人員維護作業
+.
+執行指令
+
+    aooi010
+.
+作業目的
+
+    使用本作業可將簽核者的密碼及其它相關資料輸入系統中，並且可查詢
+    、更改、取消簽核者的資料。
+.
+注意事項
+
+    在TIPTOP系統中，如欲使用線上簽核方式則需設定簽核等級資料，本作
+    業則用於在設定簽核人員資料及簽核人員密碼管制資料，以利簽核等級
+    資料的設定，在簽核人員的設定上，簽核人員必須已在公司 [員工姓名
+    資料檔] 中設定。
+.
+操作功能
+    本作業為單檔維護作業, 提供下列功能鍵:
+           A.
+           Q.
+           N.
+           P.
+           U.
+           X.
+           R.
+           H.
+           Es
+.
+欄位說明
+
+    ●人員編號 [azb01] (C06) :
+      －輸入簽核者的員工編號。
+      －輸入時，不得重複且不可為空白。
+      －輸入時，該人員編號需存在於 [員工姓名資料檔] 中。
+      －輸入時，若不知道適當的人員編號，可按 <^P> 鍵在畫面上以視窗
+        方式查詢 [員工姓名資料檔] 的資料，並擷取適當的編號。
+      －輸入後，顯示員工姓名及所屬部門。
+        （員工姓名、所屬部門資料來源 － [員工姓名資料檔] ）。
+
+    ●密碼 [azb02] (C08) :
+      －輸入簽核人員於簽核處理時的管制密碼。
+
+    ●姓名 [gen02] (C08) :
+      －簽核人員姓名。
+      －本欄位不可輸入。
+      －於輸入人員編號後，由 [員工姓名資料檔] 取得。
+
+    ●部門編號 [gen03] (C06) :
+      －簽核人員所屬部門。
+      －本欄位不可輸入。
+      －於輸入部門編號後，由 [員工姓名資料檔] 取得，並顯示部門名稱
+        於後。
+
+    ●職稱 [gen04] (C20) :
+      －簽核人員的職位稱呼。
+      －本欄位不可輸入。
+      －於輸入人員編號後，由 [員工姓名資料檔] 取得。
+
+    ●金額 [azb06] (D13,5) :
+      －簽核人員可允許簽核權限的最大金額。
+      －僅提供作簽核參考。
+.
+

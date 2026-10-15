@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapq001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aapq001")
+VBox VBox1
+Table tb1
+{
+[apa06          |apa07     |apa02          |apb21          |apa01          |apb12          |apb27     |apb09     |apb23   |apb24   |apb08     |apb10             ]
+[apa06          |apa07     |apa02          |apb21          |apa01          |apb12          |apb27     |apb09     |apb23   |apb24   |apb08     |apb10             ]
+[apa06          |apa07     |apa02          |apb21          |apa01          |apb12          |apb27     |apb09     |apb23   |apb24   |apb08     |apb10             ]
+[apa06          |apa07     |apa02          |apb21          |apa01          |apb12          |apb27     |apb09     |apb23   |apb24   |apb08     |apb10             ]
+[apa06          |apa07     |apa02          |apb21          |apa01          |apb12          |apb27     |apb09     |apb23   |apb24   |apb08     |apb10             ]
+[apa06          |apa07     |apa02          |apb21          |apa01          |apb12          |apb27     |apb09     |apb23   |apb24   |apb08     |apb10             ]
+[apa06          |apa07     |apa02          |apb21          |apa01          |apb12          |apb27     |apb09     |apb23   |apb24   |apb08     |apb10             ]
+[apa06          |apa07     |apa02          |apb21          |apa01          |apb12          |apb27     |apb09     |apb23   |apb24   |apb08     |apb10             ]
+[apa06          |apa07     |apa02          |apb21          |apa01          |apb12          |apb27     |apb09     |apb23   |apb24   |apb08     |apb10             ]
+[apa06          |apa07     |apa02          |apb21          |apa01          |apb12          |apb27     |apb09     |apb23   |apb24   |apb08     |apb10             ]
+[apa06          |apa07     |apa02          |apb21          |apa01          |apb12          |apb27     |apb09     |apb23   |apb24   |apb08     |apb10             ]
+[apa06          |apa07     |apa02          |apb21          |apa01          |apb12          |apb27     |apb09     |apb23   |apb24   |apb08     |apb10             ]
+[apa06          |apa07     |apa02          |apb21          |apa01          |apb12          |apb27     |apb09     |apb23   |apb24   |apb08     |apb10             ]
+[apa06          |apa07     |apa02          |apb21          |apa01          |apb12          |apb27     |apb09     |apb23   |apb24   |apb08     |apb10             ]
+}
+END -- tb1
+Grid Grid1
+{
+
+
+  ----------- Rows [cnt   ] -----------
+}
+END -- Grid1
+END -- VBox1
+END -- aapq001
+
+TABLES
+apa_file,
+apb_file
+ATTRIBUTES
+ButtonEdit apa06=apa_file.apa06, action=CONTROLP, tabIndex=1, title="apa06", image="zoom.png";
+Edit apa07=apa_file.apa07, tabIndex=2, title="apa07";
+DateEdit apa02=apa_file.apa02, tabIndex=3, title="apa02";
+ButtonEdit apb21=apb_file.apb21, action=CONTROLP, tabIndex=4, title="apb21", image="zoom.png";
+ButtonEdit apa01=apa_file.apa01, action=CONTROLP, tabIndex=5, title="apa01", image="zoom.png";
+ButtonEdit apb12=apb_file.apb12, action=CONTROLP, tabIndex=6, title="apb12", image="zoom.png";
+Edit apb27=apb_file.apb27, tabIndex=7, title="apb27";
+Edit apb09=apb_file.apb09, tabIndex=8, title="apb09";
+Edit apb23=apb_file.apb23, tabIndex=9, title=%"apb23";
+Edit apb24=apb_file.apb24, tabIndex=10, title=%"apb24";
+Edit apb08=apb_file.apb08, tabIndex=11, title="apb08";
+Edit apb10=apb_file.apb10, tabIndex=12, title="apb10";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apa(apa_file.apa06,apa_file.apa07,apa_file.apa02,apb_file.apb21,apa_file.apa01,apb_file.apb12,apb_file.apb27,apb_file.apb09,apb_file.apb23,apb_file.apb24,apb_file.apb08,apb_file.apb10)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

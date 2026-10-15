@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt370_g1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimt370_g1")
+Grid gr4905
+{
+ <G group01                                           >
+  BOM Item                  [part                 ]
+  Alternate Code            [ima910               ]
+  Production Qty            [qty                  ]
+  Anticipated Stotr-in Date [idate                ]
+  Warehouse                 [img02                ]
+  Location                  [img03                ]
+  Lot No.                   [img04                ]
+  Reason                    [inb15                ]
+  Bond Reason               [inb15_1              ]
+  Cost Center               [inb930               ]
+ [a                                   ]
+ <                                                    >
+
+}
+END -- gr4905
+END -- aimt370_g1
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit part=formonly.part type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit ima910=formonly.ima910 type CHAR, action=controlp, tabIndex=2, image="zoom";
+Edit qty=formonly.qty type DECIMAL, tabIndex=3;
+DateEdit idate=formonly.idate type DATE, tabIndex=4;
+ButtonEdit img02=formonly.img02 type CHAR, action=controlp, tabIndex=10, image="zoom";
+ButtonEdit img03=formonly.img03 type CHAR, action=controlp, tabIndex=9, image="zoom";
+ButtonEdit img04=formonly.img04 type CHAR, action=controlp, tabIndex=11, image="zoom";
+ButtonEdit inb15=formonly.inb15 type CHAR, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+ButtonEdit inb15_1=formonly.inb15_1 type CHAR, action=controlp, tabIndex=6, not null, required, image="zoom";
+ButtonEdit inb930=formonly.inb930 type CHAR, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+CheckBox a=formonly.a type VARCHAR, tabIndex=8, default = "N", text="Explode to Bottom Level?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.part,formonly.ima910,formonly.qty,formonly.idate,formonly.inb15,formonly.inb15_1,formonly.inb930,formonly.a,formonly.img03,formonly.img02,formonly.img04)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apji010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apji100")
+VBox VBox1
+Folder pc891
+Page page01(text="Main")
+Table s_pka
+{
+[pka01        |pka02                     |pkaact]
+[pka01        |pka02                     |pkaact]
+[pka01        |pka02                     |pkaact]
+[pka01        |pka02                     |pkaact]
+[pka01        |pka02                     |pkaact]
+[pka01        |pka02                     |pkaact]
+[pka01        |pka02                     |pkaact]
+[pka01        |pka02                     |pkaact]
+[pka01        |pka02                     |pkaact]
+[pka01        |pka02                     |pkaact]
+
+}
+END -- s_pka
+END -- page01
+END -- pc891
+Grid gr4724
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr4724
+END -- VBox1
+END -- apji010
+
+ATTRIBUTES
+Edit pka01=formonly.pka01 type VARCHAR, tabIndex=1, title="Skill Code", not null, required, comment="";
+Edit pka02=formonly.pka02 type VARCHAR, tabIndex=2, title="Description";
+CheckBox pkaact=formonly.pkaacti type VARCHAR, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pka(formonly.pka01,formonly.pka02,formonly.pkaacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

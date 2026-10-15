@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amrx512.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amrr512")
+VBox VBox1
+Grid gr3852
+{
+ <G group01                                                                             >
+  Item No.            [mss01               ]  Source Code         [ima08               ]
+  Planner             [ima67               ]  Buyer               [ima43               ]
+  Brand               [mss02               ]  Time Bucket Day     [mss03               ]
+ <                                                                                      >
+}
+END -- gr3852
+Group g01(text="INPUT")
+Grid gr3853
+{
+ Simulation Version  [ver_no    ]                 <G group02                       >
+ Master Item#        [part1               ]        [order_way                     ]
+ Component No.       [part2               ]
+[print_adj                                ]
+[print_plp                                ]
+                                                  <                                >
+
+}
+END -- gr3853
+END -- g01
+Grid gr3854
+{
+[more                                                                       ]
+
+
+}
+END -- gr3854
+END -- VBox1
+END -- amrr512
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit mss01=formonly.mss01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit ima08=formonly.ima08 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit ima67=formonly.ima67 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ima43=formonly.ima43 type CHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit mss02=formonly.mss02 type CHAR, action=controlp, tabIndex=5, image="zoom";
+DateEdit mss03=formonly.mss03 type DATE, tabIndex=6;
+Edit ver_no=formonly.ver_no type CHAR, tabIndex=7;
+Group group02:group02, text="Balance Sum Method";
+RadioGroup order_way=formonly.order_way type CHAR, tabIndex=8, default = "1", items=(("1", "Time Bucket"),("2", "Demand/Supply Date"),("3", "detail"));
+ButtonEdit part1=formonly.part1 type CHAR, action=controlp, tabIndex=9, image="zoom", comment="If Item No. entered, print the Master Item BOM Down Level item only";
+ButtonEdit part2=formonly.part2 type CHAR, action=controlp, tabIndex=10, image="zoom", comment="If Item No. entered, Print the component BOM Pegging Item only";
+CheckBox print_adj=formonly.print_adj type CHAR, tabIndex=11, text="Print Delivery Reschedule Suggestion", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox print_plp=formonly.print_plp type CHAR, tabIndex=12, text="Print PLM/PLP Suggestion", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.mss01,formonly.ima08,formonly.ima67,formonly.ima43,formonly.mss02,formonly.mss03,formonly.ver_no,formonly.order_way,formonly.part1,formonly.part2,formonly.print_adj,formonly.print_plp,formonly.more)
+END -- INSTRUCTIONS
+

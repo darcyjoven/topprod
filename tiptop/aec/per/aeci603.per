@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci603.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci603")
+VBox VBox1
+Folder pc262
+Page page01(text="Page01")
+Grid gr1650
+{
+ <G group01                                 >
+  Work Center         [ecc01     ]
+  Description         [eca02               ]
+ <                                          >
+ <G group02                                 >
+  Material Account    [ecc02               ]
+  Labor Account       [ecc03               ]
+  Overhead Account    [ecc04               ]
+  WIP Account         [ecc05               ]
+
+ <                                          >
+
+}
+END -- gr1650
+END -- page01
+Page info(text="Info")
+Grid gr1651
+{
+ Record Owner        [eccuser   ] Last Modified by    [eccmodu   ] Data Valid Code     [eccacti   ]
+ Department          [eccgrup   ] Create/Modify Date  [eccdate     ]
+ Record Orig.        [eccoriu   ]
+ Dept Orig.          [eccorig   ]
+}
+END -- gr1651
+END -- info
+END -- pc262
+Grid gr1652
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1652
+END -- VBox1
+END -- aeci603
+
+TABLES
+eca_file,
+ecc_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit ecc01=ecc_file.ecc01, action=controlp, tabIndex=1, required, image="zoom", comment=" <^P> Qry Work Center Table ";
+Edit eca02=eca_file.eca02, tabIndex=2, noEntry;
+Group group02:group02, text="Account Setting";
+ButtonEdit ecc02=ecc_file.ecc02, action=controlp, tabIndex=3, image="zoom", comment=" <^P> Qry Account      ";
+ButtonEdit ecc03=ecc_file.ecc03, action=controlp, tabIndex=4, image="zoom", comment=" <^P> Qry Account      ";
+ButtonEdit ecc04=ecc_file.ecc04, action=controlp, tabIndex=5, image="zoom", comment=" <^P> Qry Account      ";
+ButtonEdit ecc05=ecc_file.ecc05, action=controlp, tabIndex=6, image="zoom", comment=" <^P> Qry Account      ";
+Edit eccuser=ecc_file.eccuser, tabIndex=7, noEntry;
+Edit eccmodu=ecc_file.eccmodu, tabIndex=8, noEntry;
+Edit eccacti=ecc_file.eccacti, tabIndex=9, noEntry, upShift;
+Edit eccgrup=ecc_file.eccgrup, tabIndex=10, noEntry;
+DateEdit eccdate=ecc_file.eccdate, tabIndex=11, noEntry;
+Edit eccoriu=ecc_file.eccoriu, tabIndex=501, noEntry;
+Edit eccorig=ecc_file.eccorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ecc_file.ecc01,eca_file.eca02,ecc_file.ecc02,ecc_file.ecc03,ecc_file.ecc04,ecc_file.ecc05,ecc_file.eccuser,ecc_file.eccmodu,ecc_file.eccacti,ecc_file.eccgrup,ecc_file.eccdate,ecc_file.eccoriu,ecc_file.eccorig,formonly.cnt)
+END -- INSTRUCTIONS
+

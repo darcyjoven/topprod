@@ -1,0 +1,131 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci721.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci721")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr5415
+{
+
+  Labor No.       [sgx01                     ]    Product No.         [sgx01_sfb05           ]  [sgx01_sfb05_ima02                     ]    Pro rou No.[sgx012               ]
+  Change Date     [sgx06                     ]    Provides the date   [sgx07                 ]   Change #  [sgx03                      ]    Craft #    [sgx02                      ]
+  Change Reason   [sgx04                     ]   [sgx05                                                                                ]    [sgx08               ][sgx09               ]
+
+}
+END -- gr5415
+END -- page01
+Page info(text="Info")
+Grid gr5416
+{
+ Record Owner        [sgxuser   ] Last Modified by    [sgxmodu   ]    Data Valid Code     [sgxacti   ]
+ Department          [sgxgrup   ] Create/Modify Date  [sgxdate     ]
+ Record Orig.        [sgxoriu   ]
+ Dept Orig.          [sgxorig   ]
+}
+END -- gr5416
+END -- info
+END -- folder01
+Group gb3834
+ScrollGrid gr5417
+{
+
+[dummy01     ]      [dummy11     ][dummy02     ][dummy03     ] [dummy04     ] [dummy05     ][dummy06     ][dummy07     |dummy08     |dummy17  |dummy12    |dummy21     |dummy22     |dummy23     ]
+[sgy05            ] [sgy04        |sgyislk01  ] [sgy06        ][sgy07       ] [sgy08       ][sgy09     ]  [sgy10      ] [sgy11      ]  [sg]     [s1]      [sgyislk03]  [sgyislk04 ] [sgyislk05   ]
+                                  [sgyislk06  ] [sgy13        ][sgy14       ] [sgy15       ][sgy16     ]  [sgy17      ] [sgy18      ]  [s2]     [s3]      [sgyislk08]  [sgyislk09 ] [sgyislk10   ]
+[sgy05            ] [sgy04        |sgyislk01  ] [sgy06        ][sgy07       ] [sgy08       ][sgy09     ]  [sgy10      ] [sgy11      ]  [sg]     [s1]      [sgyislk03]  [sgyislk04 ] [sgyislk05   ]
+                                  [sgyislk06  ] [sgy13        ][sgy14       ] [sgy15       ][sgy16     ]  [sgy17      ] [sgy18      ]  [s2]     [s3]      [sgyislk08]  [sgyislk09 ] [sgyislk10   ]
+[sgy05            ] [sgy04        |sgyislk01  ] [sgy06        ][sgy07       ] [sgy08       ][sgy09     ]  [sgy10      ] [sgy11      ]  [sg]     [s1]      [sgyislk03]  [sgyislk04 ] [sgyislk05   ]
+                                  [sgyislk06  ] [sgy13        ][sgy14       ] [sgy15       ][sgy16     ]  [sgy17      ] [sgy18      ]  [s2]     [s3]      [sgyislk08]  [sgyislk09 ] [sgyislk10   ]
+[sgy05            ] [sgy04        |sgyislk01  ] [sgy06        ][sgy07       ] [sgy08       ][sgy09     ]  [sgy10      ] [sgy11      ]  [sg]     [s1]      [sgyislk03]  [sgyislk04 ] [sgyislk05   ]
+                                  [sgyislk06  ] [sgy13        ][sgy14       ] [sgy15       ][sgy16     ]  [sgy17      ] [sgy18      ]  [s2]     [s3]      [sgyislk08]  [sgyislk09 ] [sgyislk10   ]
+
+}
+END -- gr5417
+END -- gb3834
+Grid gr5418
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5418
+END -- VBox1
+END -- aeci721
+
+TABLES
+sgy_file,
+sgx_file,
+sgyi_file
+ATTRIBUTES
+ButtonEdit sgx01=sgx_file.sgx01, action=controlp, tabIndex=10, not null, required, image="zoom.png";
+Edit sgx01_sfb05=formonly.sgx01_sfb05 type VARCHAR, tabIndex=11;
+Edit sgx01_sfb05_ima02=formonly.sgx01_sfb05_ima02 type VARCHAR, tabIndex=44;
+ButtonEdit sgx012=sgx_file.sgx012, action=controlp, tabIndex=503, not null, required, image="zoom.png";
+DateEdit sgx06=sgx_file.sgx06, tabIndex=14, not null;
+DateEdit sgx07=sgx_file.sgx07, tabIndex=15, noEntry;
+Edit sgx03=sgx_file.sgx03, tabIndex=12, noEntry;
+Edit sgx02=sgx_file.sgx02, tabIndex=41;
+ButtonEdit sgx04=sgx_file.sgx04, action=controlp, tabIndex=17, image="zoom.png";
+Edit sgx05=sgx_file.sgx05, tabIndex=18;
+CheckBox sgx08=sgx_file.sgx08, tabIndex=13, text="Verification code ", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sgx09=sgx_file.sgx09, tabIndex=16, text="Provides the code ", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sgxuser=sgx_file.sgxuser, tabIndex=1, noEntry;
+Edit sgxmodu=sgx_file.sgxmodu, tabIndex=2, noEntry;
+Edit sgxacti=sgx_file.sgxacti, tabIndex=3, noEntry, upShift;
+Edit sgxgrup=sgx_file.sgxgrup, tabIndex=4, noEntry;
+DateEdit sgxdate=sgx_file.sgxdate, tabIndex=5, noEntry;
+Edit sgxoriu=sgx_file.sgxoriu, tabIndex=501, noEntry;
+Edit sgxorig=sgx_file.sgxorig, tabIndex=502, noEntry;
+Label dummy01:dummy01, text="Unit No.";
+Label dummy11:dummy11, text="Change way ";
+Label dummy02:dummy02, text="Unit order ";
+Label dummy03:dummy03, text="Components Quantity ";
+Label dummy04:dummy04, text="Unit man-hour";
+Label dummy05:dummy05, text="Cell man-hour\n";
+Label dummy06:dummy06, text="Unit manpower";
+Label dummy07:dummy07, text="Unit machine-hour  ";
+Label dummy08:dummy08, text="Cell machine-hour\n";
+Label dummy17:dummy17, text="Outside ";
+Label dummy12:dummy12, text="Report work";
+Label dummy21:dummy21, text="Reality man-hour";
+Label dummy22:dummy22, text="Standard LaoorCost ";
+Label dummy23:dummy23, text="Reality LaoorCost ";
+ButtonEdit sgy05=sgy_file.sgy05, action=controlp, tabIndex=6, not null, image="zoom.png";
+ComboBox sgy04=sgy_file.sgy04, tabIndex=7, not null, items=(("1", "Add"),("2", "Delete"),("3", "Revision"));
+Edit sgyislk01=sgyi_file.sgyislk01, tabIndex=19, noEntry;
+Edit sgy06=sgy_file.sgy06, tabIndex=21, noEntry;
+Edit sgy07=sgy_file.sgy07, tabIndex=23, noEntry;
+Edit sgy08=sgy_file.sgy08, tabIndex=25, noEntry;
+Edit sgy09=sgy_file.sgy09, tabIndex=24, noEntry;
+Edit sgy10=sgy_file.sgy10, tabIndex=26, noEntry;
+Edit sgy11=sgy_file.sgy11, tabIndex=27, noEntry;
+CheckBox sg=sgy_file.sgy12, tabIndex=28, noEntry, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox s1=sgy_file.sgy20, tabIndex=42, noEntry, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sgyislk03=sgyi_file.sgyislk03, tabIndex=29, noEntry;
+Edit sgyislk04=sgyi_file.sgyislk04, tabIndex=30, noEntry;
+Edit sgyislk05=sgyi_file.sgyislk05, tabIndex=31, noEntry;
+Edit sgyislk06=sgyi_file.sgyislk06, tabIndex=20;
+Edit sgy13=sgy_file.sgy13, tabIndex=22;
+Edit sgy14=sgy_file.sgy14, tabIndex=32;
+Edit sgy15=sgy_file.sgy15, tabIndex=33;
+Edit sgy16=sgy_file.sgy16, tabIndex=34;
+Edit sgy17=sgy_file.sgy17, tabIndex=35;
+Edit sgy18=sgy_file.sgy18, tabIndex=36;
+CheckBox s2=sgy_file.sgy19, tabIndex=37, valueChecked = "Y", valueUnchecked = "N";
+CheckBox s3=sgy_file.sgy21, tabIndex=43, valueChecked = "Y", valueUnchecked = "N";
+Edit sgyislk08=sgyi_file.sgyislk08, tabIndex=38;
+Edit sgyislk09=sgyi_file.sgyislk09, tabIndex=39;
+Edit sgyislk10=sgyi_file.sgyislk10, tabIndex=40;
+Edit cnt=formonly.cnt type CHAR, tabIndex=8;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sgy(sgy_file.sgy05,sgy_file.sgy04,sgyi_file.sgyislk01,sgy_file.sgy06,sgy_file.sgy07,sgy_file.sgy08,sgy_file.sgy09,sgy_file.sgy10,sgy_file.sgy11,sgy_file.sgy12,sgy_file.sgy20,sgyi_file.sgyislk03,sgyi_file.sgyislk04,sgyi_file.sgyislk05,sgyi_file.sgyislk06,sgy_file.sgy13,sgy_file.sgy14,sgy_file.sgy15,sgy_file.sgy16,sgy_file.sgy17,sgy_file.sgy18,sgy_file.sgy19,sgy_file.sgy21,sgyi_file.sgyislk08,sgyi_file.sgyislk09,sgyi_file.sgyislk10)
+SCREEN RECORD Undefined(sgx_file.sgx01,formonly.sgx01_sfb05,formonly.sgx01_sfb05_ima02,sgx_file.sgx012,sgx_file.sgx06,sgx_file.sgx07,sgx_file.sgx03,sgx_file.sgx02,sgx_file.sgx04,sgx_file.sgx05,sgx_file.sgx08,sgx_file.sgx09,sgx_file.sgxuser,sgx_file.sgxmodu,sgx_file.sgxacti,sgx_file.sgxgrup,sgx_file.sgxdate,sgx_file.sgxoriu,sgx_file.sgxorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

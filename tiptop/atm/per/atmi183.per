@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi183.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi183")
+VBox VBox1
+Folder pc311
+Page page01(text="Page01")
+Table s_adj
+{
+[adj01              |adj02               |adjact]
+[adj01              |adj02               |adjact]
+[adj01              |adj02               |adjact]
+[adj01              |adj02               |adjact]
+[adj01              |adj02               |adjact]
+[adj01              |adj02               |adjact]
+[adj01              |adj02               |adjact]
+[adj01              |adj02               |adjact]
+[adj01              |adj02               |adjact]
+[adj01              |adj02               |adjact]
+
+}
+END -- s_adj
+END -- page01
+END -- pc311
+Grid gr1365
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1365
+END -- VBox1
+END -- atmi183
+
+TABLES
+adj_file
+ATTRIBUTES
+Edit adj01=adj_file.adj01, tabIndex=1, title="Dispatch Reason", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ";
+Edit adj02=adj_file.adj02, tabIndex=2, title="Description";
+CheckBox adjact=adj_file.adjacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_adj(adj_file.adj01,adj_file.adj02,adj_file.adjacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

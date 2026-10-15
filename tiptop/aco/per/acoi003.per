@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi003")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+VBox VBox2
+Grid Grid1
+{
+ <G group01                                                                                   >
+  Goods No.           [cnw01          ]                            [cnwconf         ][imgmksg]
+  Part Name           [cob02                                   ]                     [       ]
+  Specification       [cob021                                  ]
+  Register Book No.   [cnw02          ]
+  Year                [cnw03          ]
+  Month               [cnw04          ]
+  Unit                [cnw05          ]
+ <                                                                                            >
+
+}
+END -- Grid1
+Grid Grid2
+{
+ <G group02                                                                                   >
+  Contract forwarding [cnw06          ]
+  Direct Import       [cnw07          ]   Direct Used                   [cnw08          ]
+  Transfer/Import     [cnw09          ]   Transfer/Import Used          [cnw10          ]
+  Local Purchase      [cnw11          ]   Local Purchase Used           [cnw12          ]
+  Scrap               [cnw13          ]
+  Advance Application [cnw14          ]
+ <                                                                                            >
+
+}
+END -- Grid2
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid Grid3
+{
+ Record Owner        [cnwuser   ] Last Modified by    [cnwmodu   ] Data Valid Code     [cnwacti   ]
+ Department          [cnwgrup   ] Create/Modify Date  [cnwdate   ]
+ Record Orig.        [cnworiu   ]
+ Dept Orig.          [cnworig   ]
+}
+END -- Grid3
+END -- info
+END -- Folder1
+Grid Grid4
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- Grid4
+END -- VBox1
+END -- acoi003
+
+TABLES
+cnw_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit cnw01=cnw_file.cnw01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Goods No.";
+CheckBox cnwconf=cnw_file.cnwconf, tabIndex=2, text="Confirm", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Enter Y or N ";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit cob02=formonly.cob02 type CHAR, tabIndex=4, noEntry;
+Edit cob021=formonly.cob021 type CHAR, tabIndex=5, noEntry;
+ButtonEdit cnw02=cnw_file.cnw02, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Register Book No.";
+Edit cnw03=cnw_file.cnw03, tabIndex=7, not null, required;
+Edit cnw04=cnw_file.cnw04, tabIndex=8, not null, required;
+ButtonEdit cnw05=cnw_file.cnw05, action=controlp, tabIndex=9, noEntry, not null, required, image="zoom";
+Group group02:group02;
+Edit cnw06=cnw_file.cnw06, tabIndex=10, not null, required;
+Edit cnw07=cnw_file.cnw07, tabIndex=11, not null, required;
+Edit cnw08=cnw_file.cnw08, tabIndex=12, not null, required;
+Edit cnw09=cnw_file.cnw09, tabIndex=13, not null, required;
+Edit cnw10=cnw_file.cnw10, tabIndex=14, not null, required;
+Edit cnw11=cnw_file.cnw11, tabIndex=15, not null, required;
+Edit cnw12=cnw_file.cnw12, tabIndex=16, not null, required;
+Edit cnw13=cnw_file.cnw13, tabIndex=17, not null, required;
+Edit cnw14=cnw_file.cnw14, tabIndex=18, not null, required;
+Edit cnwuser=cnw_file.cnwuser, tabIndex=19, noEntry;
+Edit cnwmodu=cnw_file.cnwmodu, tabIndex=20, noEntry;
+Edit cnwacti=cnw_file.cnwacti, tabIndex=21, noEntry, upShift;
+Edit cnwgrup=cnw_file.cnwgrup, tabIndex=22, noEntry;
+Edit cnwdate=cnw_file.cnwdate, tabIndex=23, noEntry;
+Edit cnworiu=cnw_file.cnworiu, tabIndex=501, noEntry;
+Edit cnworig=cnw_file.cnworig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cnw_file.cnw01,cnw_file.cnwconf,formonly.imgmksg,formonly.cob02,formonly.cob021,cnw_file.cnw02,cnw_file.cnw03,cnw_file.cnw04,cnw_file.cnw05,cnw_file.cnw06,cnw_file.cnw07,cnw_file.cnw08,cnw_file.cnw09,cnw_file.cnw10,cnw_file.cnw11,cnw_file.cnw12,cnw_file.cnw13,cnw_file.cnw14,cnw_file.cnwuser,cnw_file.cnwmodu,cnw_file.cnwacti,cnw_file.cnwgrup,cnw_file.cnwdate,cnw_file.cnworiu,cnw_file.cnworig,formonly.cnt)
+END -- INSTRUCTIONS
+

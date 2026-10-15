@@ -1,0 +1,100 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdq100.per created Wed Jan 23 05:30:36 2008
+-- File created from axdq100.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdq100")
+-- GRID
+-- GRID
+-- HBOX
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        HBOX 
+          GRID gr7787
+          {
+          <G group01                                   >
+           Customer            [aa0       ][aa1       ]
+           Goods No.           [aa2                 ]
+                               [aa3                 ]
+           Patch               [aa4                 ]
+          <                                            >
+
+
+          }
+          END -- GRID
+          GRID gr7788
+          {
+          <G group02                                   >
+           Initial Date        [aa5       ]
+           Initial Inventory   [aa6                 ]
+           Current Inventory   [aa7                 ]
+           Inventory Unit      [aa8       ]
+          <                                            >
+
+
+          }
+          END -- GRID
+        END -- HBOX
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_adq
+    {
+    [aa9     |ab0              |ab1            |ab2             |ab3             |ab4                         ]
+    [aa9     |ab0              |ab1            |ab2             |ab3             |ab4                         ]
+    [aa9     |ab0              |ab1            |ab2             |ab3             |ab4                         ]
+    [aa9     |ab0              |ab1            |ab2             |ab3             |ab4                         ]
+    [aa9     |ab0              |ab1            |ab2             |ab3             |ab4                         ]
+    [aa9     |ab0              |ab1            |ab2             |ab3             |ab4                         ]
+    [aa9     |ab0              |ab1            |ab2             |ab3             |ab4                         ]
+    [aa9     |ab0              |ab1            |ab2             |ab3             |ab4                         ]
+    [aa9     |ab0              |ab1            |ab2             |ab3             |ab4                         ]
+    [aa9     |ab0              |ab1            |ab2             |ab3             |ab4                         ]
+    }
+    END -- TABLE
+    GRID gr7789
+    {
+     ---------- Rows [ab5   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adp_file,adq_file
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=adp_file.adp01, TABINDEX=1;
+  EDIT aa1=FORMONLY.occ02 TYPE VARCHAR, NOENTRY, TABINDEX=2;
+  EDIT aa2=adp_file.adp02, TABINDEX=3;
+  EDIT aa3=FORMONLY.ima02, NOENTRY, TABINDEX=4;
+  EDIT aa4=adp_file.adp03, TABINDEX=5;
+  GROUP group02 : group02;
+  DATEEDIT aa5=FORMONLY.bdate, COMMENT="Enter the Initial Date", TABINDEX=6;
+  EDIT aa6=FORMONLY.adr09, TABINDEX=7;
+  EDIT aa7=adp_file.adp05, TABINDEX=8;
+  EDIT aa8=adp_file.adp04, TABINDEX=9;
+  DATEEDIT aa9=adq_file.adq04, TABINDEX=10, TITLE="Date";
+  EDIT ab0=adq_file.adq10, TABINDEX=11, TITLE="Planned Period";
+  EDIT ab1=FORMONLY.desc, NOENTRY, TABINDEX=12, TITLE="Description";
+  EDIT ab2=adq_file.adq05, TABINDEX=13, TITLE="Initial No";
+  EDIT ab3=adq_file.adq09, TABINDEX=14, TITLE="Tranfered Qty";
+  EDIT ab4=FORMONLY.tot, NOENTRY, TABINDEX=15, TITLE="Inventory Qty after Transfer";
+  EDIT ab5=FORMONLY.cnt, TABINDEX=16;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adq (adq_file.adq04, adq_file.adq10, FORMONLY.desc, adq_file.adq05, adq_file.adq09, FORMONLY.tot)
+END

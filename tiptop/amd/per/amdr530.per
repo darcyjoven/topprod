@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdr530.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amdr530")
+VBox VBox1
+Grid gr3736
+{
+ <G group01                                                                         >
+  Declaring Department[amd22       ]
+  Data Year/Month     [amd173_b    ]/[amd174_b  ]-[amd174_e  ][dummy01             ]
+  Book no.            [e           ]
+ <                                                                                  >
+
+}
+END -- gr3736
+Grid gr3737
+{
+[more                           ]
+
+}
+END -- gr3737
+END -- VBox1
+END -- amdr530
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+ButtonEdit amd22=formonly.amd22 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit amd173_b=formonly.amd173_b type SMALLINT, tabIndex=2, comment="No Blank Field";
+Edit amd174_b=formonly.amd174_b type SMALLINT, tabIndex=3, comment="No Blank Field";
+Edit amd174_e=formonly.amd174_e type SMALLINT, tabIndex=4, comment="No Blank Field";
+Label dummy01:dummy01, text="(century year)";
+ButtonEdit e=formonly.e type CHAR, action=controlp, tabIndex=5, image="zoom";
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.amd22,formonly.amd173_b,formonly.amd174_b,formonly.amd174_e,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

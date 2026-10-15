@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr620.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr620")
+VBox vb5
+Grid gr1
+{
+ <G group01                                                                                                 >
+  Item No.            [cma01               ]  Cate.               [cma03               ]
+  Price Cate.         [cma05               ]  (I:Pur S:Sell$ B:Bkflsh C:MM Avg)[pc]
+ <                                                                                                          >
+
+}
+END -- gr1
+Group g01(text="INPUT")
+Grid gr2
+{
+ <G group02                       >  <G group03                                                           >
+ [c                            ]      Year/Month             [yy  ]/[mm  ]
+ [                             ]      Calculating Base Date  [cma02       ]
+                                      Idle                   [i10  ]Days - To  [i11       ][dummy01 ]
+                                      Cost Method            [ctype                   ]
+ <                                >  <                                                                    >
+
+}
+END -- gr2
+END -- g01
+Grid gr3
+{
+[more                                                       ]
+
+}
+END -- gr3
+END -- vb5
+END -- axcr620
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit cma01=formonly.cma01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<P>";
+Edit cma03=formonly.cma03 type CHAR, tabIndex=2;
+Edit cma05=formonly.cma05 type CHAR, tabIndex=3;
+LABEL pc=formonly.pc type CHAR;
+Group group02:group02, text="Calculation Base";
+RadioGroup c=formonly.c type CHAR, tabIndex=4, items=(("1", "First In First Out"),("2", "Latest Transaction date"));
+Group group03:group03;
+Edit yy=formonly.yy type SMALLINT, tabIndex=5, not null, required;
+Edit mm=formonly.mm type SMALLINT, tabIndex=6, not null, required;
+DateEdit cma02=formonly.cma02 type DATE, tabIndex=7;
+Edit i10=formonly.i10 type CHAR, tabIndex=8;
+Edit i11=formonly.i11 type CHAR, tabIndex=9;
+Label dummy01:dummy01, text="Days";
+ComboBox ctype=formonly.ctype type VARCHAR, tabIndex=10, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually Batch Cost"),("4", "Identify Manually Item Cost"),("5", "Identify Manually Store Profit Center"));
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cma01,formonly.cma03,formonly.cma05,formonly.pc,formonly.c,formonly.yy,formonly.mm,formonly.cma02,formonly.i10,formonly.i11,formonly.ctype,formonly.more)
+END -- INSTRUCTIONS
+

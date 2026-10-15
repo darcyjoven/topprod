@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_nmy.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Document Type")
+Grid gr3803
+{
+ <T s_nmy                                                                    >
+ [check |nmyslip  |nmydesc             |nmyauno  |nmydmy2          |nmykind ]
+ [check |nmyslip  |nmydesc             |nmyauno  |nmydmy2          |nmykind ]
+ [check |nmyslip  |nmydesc             |nmyauno  |nmydmy2          |nmykind ]
+ [check |nmyslip  |nmydesc             |nmyauno  |nmydmy2          |nmykind ]
+ [check |nmyslip  |nmydesc             |nmyauno  |nmydmy2          |nmykind ]
+ [check |nmyslip  |nmydesc             |nmyauno  |nmydmy2          |nmykind ]
+ [check |nmyslip  |nmydesc             |nmyauno  |nmydmy2          |nmykind ]
+ [check |nmyslip  |nmydesc             |nmyauno  |nmydmy2          |nmykind ]
+ [check |nmyslip  |nmydesc             |nmyauno  |nmydmy2          |nmykind ]
+ [check |nmyslip  |nmydesc             |nmyauno  |nmydmy2          |nmykind ]
+ <                                                                           >
+
+}
+END -- gr3803
+END -- q_nmy
+
+TABLES
+nmy_file
+ATTRIBUTES
+Table s_nmy:s_nmy;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nmyslip=nmy_file.nmyslip, tabIndex=2, title="Document", noEntry;
+Edit nmydesc=nmy_file.nmydesc, tabIndex=3, title="Document Name", noEntry;
+CheckBox nmyauno=nmy_file.nmyauno, tabIndex=4, title="Auto No.", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox nmydmy2=nmy_file.nmydmy2, tabIndex=5, title="Numbering Method", noEntry, queryEditable, items=(("1", %"Serial Number"),("2", %"By Year and Month"),("3", %"By Year and Week"),("4", %"By Year,Month and Day"));
+ComboBox nmykind=nmy_file.nmykind, tabIndex=6, title="Property", noEntry, not null, required, queryEditable, items=(("1", "Drawing Slip No."),("2", "Note Receipt No."),("3", "Income/Expense List No."),("4", "Financing Doc No."),("5", "Loan Contract"),("6", "Interest Payment Slip No."),("7", "Payment Slip No."),("8", "Investment Doc No."),("9", "Exchange Transaction"),("A", "A/P Transaction"),("B", "A/R Transaction"),("C", "Covering Doc"),("D", "Interest Income"),("E", "deposit due"),("F", "Investment buy"),("G", "Fixed Deposit"),("H", "Conglomerate Transfer"),("I", "Conglomerate Transfer Payment"),("J", "Delivery Order No."));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmy(formonly.check,nmy_file.nmyslip,nmy_file.nmydesc,nmy_file.nmyauno,nmy_file.nmydmy2,nmy_file.nmykind)
+END -- INSTRUCTIONS
+

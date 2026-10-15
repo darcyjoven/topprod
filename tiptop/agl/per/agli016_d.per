@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli016_d.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli016_d")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2403
+{
+ Company No.[axy01     ]
+ Book No.   [axy02     ]
+ Year [axy03    ]        Month[axy04    ]
+}
+END -- gr2403
+END -- page01
+END -- folder01
+Table s_axy
+{
+[axy05   |axy06           |axy07|axy08           |axy09           |aag02           |axy10 |axy11       |axy12   |axl02   ]
+[axy05   |axy06           |axy07|axy08           |axy09           |aag02           |axy10 |axy11       |axy12   |axl02   ]
+[axy05   |axy06           |axy07|axy08           |axy09           |aag02           |axy10 |axy11       |axy12   |axl02   ]
+[axy05   |axy06           |axy07|axy08           |axy09           |aag02           |axy10 |axy11       |axy12   |axl02   ]
+[axy05   |axy06           |axy07|axy08           |axy09           |aag02           |axy10 |axy11       |axy12   |axl02   ]
+[axy05   |axy06           |axy07|axy08           |axy09           |aag02           |axy10 |axy11       |axy12   |axl02   ]
+[axy05   |axy06           |axy07|axy08           |axy09           |aag02           |axy10 |axy11       |axy12   |axl02   ]
+[axy05   |axy06           |axy07|axy08           |axy09           |aag02           |axy10 |axy11       |axy12   |axl02   ]
+[axy05   |axy06           |axy07|axy08           |axy09           |aag02           |axy10 |axy11       |axy12   |axl02   ]
+[axy05   |axy06           |axy07|axy08           |axy09           |aag02           |axy10 |axy11       |axy12   |axl02   ]
+
+}
+END -- s_axy
+Grid gr2404
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2404
+END -- VBox1
+END -- agli016_d
+
+TABLES
+axy_file
+ATTRIBUTES
+ButtonEdit axy01=axy_file.axy01, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom", comment="<^P>Company No.";
+Edit axy02=axy_file.axy02, tabIndex=3, noEntry, not null, required;
+Edit axy03=axy_file.axy03, tabIndex=5, noEntry, not null, required;
+Edit axy04=axy_file.axy04, tabIndex=6, noEntry, not null, required;
+DateEdit axy05=axy_file.axy05, tabIndex=7, title="Voucher Date", noEntry, not null, required;
+Edit axy06=axy_file.axy06, tabIndex=8, title="Voucher No.", noEntry, not null, required;
+Edit axy07=axy_file.axy07, tabIndex=9, title="No.", noEntry, not null, required;
+Edit axy08=axy_file.axy08, tabIndex=10, title="Memo", noEntry, not null, required;
+ButtonEdit axy09=axy_file.axy09, action=controlp, tabIndex=11, title="Account No.", noEntry, not null, required, image="zoom", comment="<^P>Account No.";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=11, title="Account Name", noEntry;
+ComboBox axy10=axy_file.axy10, tabIndex=13, title="Dr/Cr", noEntry, not null, required, queryEditable, items=(("1", %"Debit"),("2", %"Credit"));
+Edit axy11=axy_file.axy11, tabIndex=14, title="Amount", noEntry, not null, required;
+ButtonEdit axy12=axy_file.axy12, action=controlp, tabIndex=15, title="Group Code", image="zoom", comment="<^P>Company No.";
+Edit axl02=formonly.axl02 type CHAR, tabIndex=16, title="Description", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axy(axy_file.axy05,axy_file.axy06,axy_file.axy07,axy_file.axy08,axy_file.axy09,formonly.aag02,axy_file.axy10,axy_file.axy11,axy_file.axy12,formonly.axl02)
+SCREEN RECORD Undefined(axy_file.axy01,axy_file.axy02,axy_file.axy03,axy_file.axy04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

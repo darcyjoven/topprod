@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aecu680.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aecu680")
+Folder pc285
+Page page01(text="Main")
+Grid gr1713
+{
+ <G group01                                           >
+  Item Group Code     [ima06               ]
+  Item No.            [ima01                         ]
+ <                                                    >
+ <G group02                                 >
+  Expiry Date         [c           ]
+ <                                          >
+ <G group03                                 >
+ [b                                        ]
+
+ <                                          >
+
+}
+END -- gr1713
+END -- page01
+END -- pc285
+END -- aecu680
+
+ATTRIBUTES
+Group group01:group01, text="<QBE>";
+Edit ima06=formonly.ima06 type CHAR, tabIndex=1, comment="Enter Query Condition by QBE";
+Edit ima01=formonly.ima01 type CHAR, tabIndex=2, comment="Enter Query Condition by QBE";
+Group group02:group02;
+DateEdit c=formonly.c type DATE, tabIndex=3, comment="No Blank,Enter Option";
+Group group03:group03;
+CheckBox b=formonly.b type VARCHAR, tabIndex=4, text="Re-calculate Item Master Lead Time", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima06,formonly.ima01,formonly.c,formonly.b)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,123 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi605.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almi605")
+VBox VBox1
+Folder pc1
+Page main(text="Main")
+Grid gr1
+{
+
+ Store No.  [lrlplant           ][rtz13               ] Project Code              [lrl05           ]
+ Corporation[lrllegal           ][azt02               ]                           [lpq02           ]
+ No         [lrl01              ]                                                 [                ]
+ Card No.   [lrl02              ]                       Exchangeable Scores       [lrl06           ]
+ CardNum    [lrl03              ][lph02               ] L.Num                     [lrl071          ]
+ Lea.ID     [lrl04              ][lpk04               ] Remaining Scores          [lrl10           ]
+                                                        Approval Code             [lrl11           |imgmksg]
+ Tel.       [lpk18              ]                       Approver                  [lrl12           |       ]
+ Address    [lpk15                         ]            Approval Date             [lrl13           ]
+            [                              ]            Sourse No                 [lrl14               ]
+            [                              ]
+
+
+}
+END -- gr1
+END -- main
+Page info(text="Info")
+Grid gr2
+{
+
+ Data Owner [lrluser   ]            Data Creat On     [lrlcrat   ]           Valid Code        [lrlacti   ]
+ Department [lrlgrup   ]            Last Modified By  [lrlmodu   ]           Last Modified On  [lrldate   ]
+ Recd Orig. [lrloriu   ]
+ Dept Orig. [lrlorig   ]
+
+
+
+
+
+
+
+
+
+}
+END -- gr2
+END -- info
+END -- pc1
+Table s_lrg
+{
+[lrg02              |ima02                |lrg03                |lrg04               |lrg05              |lrg06   |gfe02   |lrg07          ]
+[lrg02              |ima02                |lrg03                |lrg04               |lrg05              |lrg06   |gfe02   |lrg07          ]
+[lrg02              |ima02                |lrg03                |lrg04               |lrg05              |lrg06   |gfe02   |lrg07          ]
+[lrg02              |ima02                |lrg03                |lrg04               |lrg05              |lrg06   |gfe02   |lrg07          ]
+[lrg02              |ima02                |lrg03                |lrg04               |lrg05              |lrg06   |gfe02   |lrg07          ]
+[lrg02              |ima02                |lrg03                |lrg04               |lrg05              |lrg06   |gfe02   |lrg07          ]
+
+}
+END -- s_lrg
+Grid gr3
+{
+  -----Rows[idx  ]/[cnt  ]-----  Details[cn2   ]----------
+
+}
+END -- gr3
+END -- VBox1
+END -- almi605
+
+TABLES
+lrl_file,
+lrg_file
+ATTRIBUTES
+ButtonEdit lrlplant=lrl_file.lrlplant, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=2, noEntry;
+ButtonEdit lrl05=lrl_file.lrl05, action=controlp, tabIndex=12, not null, required, image="zoom.png";
+ButtonEdit lrllegal=lrl_file.lrllegal, action=controlp, tabIndex=3, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=4, noEntry;
+TextEdit lpq02=formonly.lpq02 type CHAR, tabIndex=13, noEntry, stretch=NONE;
+ButtonEdit lrl01=lrl_file.lrl01, action=controlp, tabIndex=38, not null, required, image="zoom.png";
+ButtonEdit lrl02=lrl_file.lrl02, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+Edit lrl06=lrl_file.lrl06, tabIndex=14, noEntry;
+Edit lrl03=lrl_file.lrl03, tabIndex=6, noEntry;
+Edit lph02=formonly.lph02 type CHAR, tabIndex=7, noEntry;
+Edit lrl071=lrl_file.lrl071, tabIndex=15, noEntry;
+ButtonEdit lrl04=lrl_file.lrl04, action=controlp, tabIndex=8, noEntry, not null, required, image="zoom.png";
+Edit lpk04=formonly.lpk04 type CHAR, tabIndex=9, noEntry;
+Edit lrl10=lrl_file.lrl10, tabIndex=16, noEntry;
+ComboBox lrl11=lrl_file.lrl11, tabIndex=17, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, width = 10 characters, height = 2 characters;
+Edit lpk18=formonly.lpk18 type CHAR, tabIndex=10, noEntry;
+Edit lrl12=lrl_file.lrl12, tabIndex=18, noEntry;
+TextEdit lpk15=formonly.lpk15 type CHAR, tabIndex=11, noEntry, stretch=NONE;
+DateEdit lrl13=lrl_file.lrl13, tabIndex=19;
+Edit lrl14=lrl_file.lrl14, tabIndex=39;
+Edit lrluser=lrl_file.lrluser, tabIndex=20, noEntry, not null, required;
+DateEdit lrlcrat=lrl_file.lrlcrat, tabIndex=24, noEntry, not null, required;
+Edit lrlacti=lrl_file.lrlacti, tabIndex=26, default = "Y", noEntry, not null, required;
+Edit lrlgrup=lrl_file.lrlgrup, tabIndex=21, noEntry, not null, required;
+Edit lrlmodu=lrl_file.lrlmodu, tabIndex=25, noEntry;
+DateEdit lrldate=lrl_file.lrldate, tabIndex=27, noEntry;
+Edit lrloriu=lrl_file.lrloriu, tabIndex=22, noEntry, not null, required;
+Edit lrlorig=lrl_file.lrlorig, tabIndex=23, noEntry, not null, required;
+ButtonEdit lrg02=lrg_file.lrg02, action=controlp, tabIndex=28, title="lrg02", image="zoom.png";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=29, title="ima02", noEntry;
+Edit lrg03=lrg_file.lrg03, tabIndex=30, title="lrg03", noEntry;
+Edit lrg04=lrg_file.lrg04, tabIndex=31, title="lrg04";
+Edit lrg05=lrg_file.lrg05, tabIndex=32, title="lrg05", noEntry;
+ButtonEdit lrg06=lrg_file.lrg06, action=controlp, tabIndex=36, title=%"Unit", noEntry, image="zoom";
+Edit gfe02=formonly.gfe02 type CHAR, tabIndex=40, title=%"gfe02", noEntry;
+Edit lrg07=lrg_file.lrg07, tabIndex=37, title=%"Qty", not null;
+Edit idx=formonly.idx type SMALLINT, tabIndex=33, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=34, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=35, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lrg(lrg_file.lrg02,formonly.ima02,lrg_file.lrg03,lrg_file.lrg04,lrg_file.lrg05,lrg_file.lrg06,formonly.gfe02,lrg_file.lrg07)
+SCREEN RECORD Undefined(lrl_file.lrlplant,formonly.rtz13,lrl_file.lrl05,lrl_file.lrllegal,formonly.azt02,formonly.lpq02,lrl_file.lrl02,lrl_file.lrl06,lrl_file.lrl03,formonly.lph02,lrl_file.lrl071,lrl_file.lrl04,formonly.lpk04,lrl_file.lrl10,lrl_file.lrl11,formonly.imgmksg,formonly.lpk18,lrl_file.lrl12,formonly.lpk15,lrl_file.lrl13,lrl_file.lrluser,lrl_file.lrlcrat,lrl_file.lrlacti,lrl_file.lrlgrup,lrl_file.lrlmodu,lrl_file.lrldate,lrl_file.lrloriu,lrl_file.lrlorig,formonly.idx,formonly.cnt,formonly.cn2,lrl_file.lrl01,lrl_file.lrl14)
+END -- INSTRUCTIONS
+

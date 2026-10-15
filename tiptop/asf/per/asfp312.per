@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp312.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp312")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+Group g01
+VBox vb4
+Grid gr529
+{
+  Adjust#     [sho01             ]       Date      [sho02       ]
+  WO No.      [sho04             ]       Pro.No.   [sho012          ]
+ <G group01                                                                                 >
+  [sho06             ]
+    Routing Seq [g_z07     ][g_z08     ]
+    Routing Seq [g_s07     ][g_s08     ]  STAGE [g_s09     ]
+    Routing Seq [g_f07     ][g_f08     ]  FLOW  [g_f09     ]  Pro.Rout.No.   [g_f10     ]
+ <                                                                                          >
+
+}
+END -- gr529
+Grid gr530
+{
+[sho12                                           ]
+ Qty           [sho62     ]   Loss Fixed(%)           [sho16     ]
+ Denominator   [sho63     ]   Loss Change Rate(%)     [sho17     ]
+ Loss lot      [sho64     ]
+ Operator      [sho10     ]  [gen02     ]
+ Memo          [sho11                                   ]
+
+}
+END -- gr530
+END -- vb4
+END -- g01
+END -- page01
+END -- folder01
+Table s_ecm
+{
+[ecm03    |ecm04         ]
+[ecm03    |ecm04         ]
+[ecm03    |ecm04         ]
+[ecm03    |ecm04         ]
+[ecm03    |ecm04         ]
+[ecm03    |ecm04         ]
+[ecm03    |ecm04         ]
+[ecm03    |ecm04         ]
+[ecm03    |ecm04         ]
+[ecm03    |ecm04         ]
+
+}
+END -- s_ecm
+Grid gr531
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr531
+END -- vb3
+END -- asfp312
+
+TABLES
+ecm_file,
+sho_file
+ATTRIBUTES
+ButtonEdit sho01=sho_file.sho01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Document Property";
+DateEdit sho02=sho_file.sho02, tabIndex=2;
+ButtonEdit sho04=sho_file.sho04, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Run Card Data ";
+ButtonEdit sho012=sho_file.sho012, action=controlp, tabIndex=20, image="zoom.png";
+Group group01:group01, text="Adjust";
+ComboBox sho06=sho_file.sho06, tabIndex=4, not null, required, queryEditable, comment="1:Delete Sate 2:Insert Sate 3:Insert FLOW Routing", items=(("1", "Delete Stage"),("2", "Insert Stage"),("3", "Insert FLOW  Routing"));
+Edit g_z07=formonly.g_z07 type CHAR, tabIndex=5;
+Edit g_z08=formonly.g_z08 type CHAR, tabIndex=6, noEntry;
+Edit g_s07=formonly.g_s07 type CHAR, tabIndex=7, comment="Insert Point is before This Station";
+Edit g_s08=formonly.g_s08 type CHAR, tabIndex=8, noEntry;
+Edit g_s09=formonly.g_s09 type CHAR, tabIndex=9, not null, required;
+Edit g_f07=formonly.g_f07 type CHAR, tabIndex=10, comment="Insert Point is before This Station";
+Edit g_f08=formonly.g_f08 type CHAR, tabIndex=11, noEntry;
+Edit g_f09=formonly.g_f09 type CHAR, tabIndex=12, not null, required;
+Edit g_f10=formonly.g_f10 type CHAR, tabIndex=21, not null, required;
+CheckBox sho12=sho_file.sho12, tabIndex=13, text="Insert STAGE/FLOW is Rework Routing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sho62=sho_file.sho62, tabIndex=22;
+Edit sho16=sho_file.sho16, tabIndex=25;
+Edit sho63=sho_file.sho63, tabIndex=23;
+Edit sho17=sho_file.sho17, tabIndex=26;
+Edit sho64=sho_file.sho64, tabIndex=24;
+ButtonEdit sho10=sho_file.sho10, action=controlp, tabIndex=14, image="zoom", comment="<^P>Qry Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=15, noEntry;
+Edit sho11=sho_file.sho11, tabIndex=16;
+Edit ecm03=ecm_file.ecm03, tabIndex=17, title="Sequence";
+Edit ecm04=ecm_file.ecm04, tabIndex=18, title="Task No.";
+Edit cnt=formonly.cnt type CHAR, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ecm(ecm_file.ecm03,ecm_file.ecm04)
+SCREEN RECORD Undefined(sho_file.sho01,sho_file.sho02,sho_file.sho04,sho_file.sho012,sho_file.sho06,formonly.g_z07,formonly.g_z08,formonly.g_s07,formonly.g_s08,formonly.g_s09,formonly.g_f07,formonly.g_f08,formonly.g_f09,formonly.g_f10,sho_file.sho12,sho_file.sho62,sho_file.sho16,sho_file.sho63,sho_file.sho17,sho_file.sho64,sho_file.sho10,formonly.gen02,sho_file.sho11,formonly.cnt)
+END -- INSTRUCTIONS
+

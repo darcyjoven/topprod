@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi001")
+VBox vb2
+Folder pc2
+Page main(text=%"main")
+Table s_oay
+{
+[oayslip    |oaydesc              |oaytype           |oayauno  |oayprnt   |oayconf  |oayapr   |oayacti   ]
+[oayslip    |oaydesc              |oaytype           |oayauno  |oayprnt   |oayconf  |oayapr   |oayacti   ]
+[oayslip    |oaydesc              |oaytype           |oayauno  |oayprnt   |oayconf  |oayapr   |oayacti   ]
+[oayslip    |oaydesc              |oaytype           |oayauno  |oayprnt   |oayconf  |oayapr   |oayacti   ]
+[oayslip    |oaydesc              |oaytype           |oayauno  |oayprnt   |oayconf  |oayapr   |oayacti   ]
+[oayslip    |oaydesc              |oaytype           |oayauno  |oayprnt   |oayconf  |oayapr   |oayacti   ]
+[oayslip    |oaydesc              |oaytype           |oayauno  |oayprnt   |oayconf  |oayapr   |oayacti   ]
+[oayslip    |oaydesc              |oaytype           |oayauno  |oayprnt   |oayconf  |oayapr   |oayacti   ]
+[oayslip    |oaydesc              |oaytype           |oayauno  |oayprnt   |oayconf  |oayapr   |oayacti   ]
+[oayslip    |oaydesc              |oaytype           |oayauno  |oayprnt   |oayconf  |oayapr   |oayacti   ]
+[oayslip    |oaydesc              |oaytype           |oayauno  |oayprnt   |oayconf  |oayapr   |oayacti   ]
+
+}
+END -- s_oay
+END -- main
+END -- pc2
+Grid gr1989
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1989
+END -- vb2
+END -- almi001
+
+TABLES
+oay_file
+ATTRIBUTES
+Edit oayslip=oay_file.oayslip, tabIndex=1, title="Doc";
+Edit oaydesc=oay_file.oaydesc, tabIndex=2, title="DocName";
+ComboBox oaytype=oay_file.oaytype, tabIndex=3, title="DocPty", not null, required, items=(("01", "FYD"),("02", "ZCD"),("03", "HTWH"),("04", "JFHQ"),("05", "XSD"),("06", "XTD"),("07", "QDJ"),("08", "QFS"),("09", "QTH"),("10", "QZF"),("11", "CTGX"),("12", "SHYDJ"),("13", "JFHW"),("14", "ZMJBZL"),("15", "DZDJS"),("16", "QZSH"),("18", "HYKFK"),("19", "HYBJF"),("20", "CZKXS"),("21", "CZKCZ"),("22", "CZKTYE"),("23", "ZDQHX"),("24", "ZKFQCX"),("25", "ZJZK"),("26", "FQFXD"),("27", "HDZPCX"),("28", "JKD"),("29", "ZPFF"),("30", "ZPHS"),("31", "PZFF"),("32", "PZZF"),("33", "GGWHT"),("35", "SDFLR"),("36", "QFF"),("37", "QHS"),("38", "kkwh"),("39", "kzf"),("40", "kzx"),("41", "kgs"),("42", "kxq"),("43", "hkzy"),("44", "qxgs"),("45", "kqsx"),("46", "sxfw"));
+CheckBox oayauno=oay_file.oayauno, tabIndex=4, title="NumAuto", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oayprnt=oay_file.oayprnt, tabIndex=5, title="PrtNow", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oayconf=oay_file.oayconf, tabIndex=6, title="AutCnf", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oayapr=oay_file.oayapr, tabIndex=7, title="Approve", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oayacti=oay_file.oayacti, tabIndex=8, default = "Y", title="acti", valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oay(oay_file.oayslip,oay_file.oaydesc,oay_file.oaytype,oay_file.oayauno,oay_file.oayprnt,oay_file.oayconf,oay_file.oayapr,oay_file.oayacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

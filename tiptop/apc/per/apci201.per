@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apci201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Main(text=%"Main")
+Table ds1
+{
+[ryp01                         |ryp01_desc          |ryp02     |ryp03                         |ryp03_desc          |ryp04     |ryp05               |ryp06               |rypacti |ryppos          ]
+[ryp01                         |ryp01_desc          |ryp02     |ryp03                         |ryp03_desc          |ryp04     |ryp05               |ryp06               |rypacti |ryppos          ]
+[ryp01                         |ryp01_desc          |ryp02     |ryp03                         |ryp03_desc          |ryp04     |ryp05               |ryp06               |rypacti |ryppos          ]
+[ryp01                         |ryp01_desc          |ryp02     |ryp03                         |ryp03_desc          |ryp04     |ryp05               |ryp06               |rypacti |ryppos          ]
+[ryp01                         |ryp01_desc          |ryp02     |ryp03                         |ryp03_desc          |ryp04     |ryp05               |ryp06               |rypacti |ryppos          ]
+[ryp01                         |ryp01_desc          |ryp02     |ryp03                         |ryp03_desc          |ryp04     |ryp05               |ryp06               |rypacti |ryppos          ]
+[ryp01                         |ryp01_desc          |ryp02     |ryp03                         |ryp03_desc          |ryp04     |ryp05               |ryp06               |rypacti |ryppos          ]
+[ryp01                         |ryp01_desc          |ryp02     |ryp03                         |ryp03_desc          |ryp04     |ryp05               |ryp06               |rypacti |ryppos          ]
+[ryp01                         |ryp01_desc          |ryp02     |ryp03                         |ryp03_desc          |ryp04     |ryp05               |ryp06               |rypacti |ryppos          ]
+[ryp01                         |ryp01_desc          |ryp02     |ryp03                         |ryp03_desc          |ryp04     |ryp05               |ryp06               |rypacti |ryppos          ]
+
+}
+END -- ds1
+END -- Main
+END -- Folder1
+Grid gr2000
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2000
+END -- VBox1
+END -- Form
+
+TABLES
+ryp_file
+ATTRIBUTES
+ButtonEdit ryp01=ryp_file.ryp01, action=controlp, tabIndex=1, title=%"ryp01", not null, image="zoom.png", scroll;
+Edit ryp01_desc=formonly.ryp01_desc, tabIndex=2, title=%"Edit1", noEntry;
+ComboBox ryp02=ryp_file.ryp02, tabIndex=3, title=%"ryp02", not null, scroll, items=(("1", "1"),("2", "2"));
+ButtonEdit ryp03=ryp_file.ryp03, action=controlp, tabIndex=4, title=%"ryp03", not null, image="zoom.png", scroll;
+Edit ryp03_desc=formonly.ryp03_desc, tabIndex=5, title=%"Edit2", noEntry;
+ComboBox ryp04=ryp_file.ryp04, tabIndex=6, title=%"ryp04", not null, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"));
+Edit ryp05=ryp_file.ryp05, tabIndex=7, title=%"ryp05";
+Edit ryp06=ryp_file.ryp06, tabIndex=8, title=%"ryp06";
+CheckBox rypacti=ryp_file.rypacti, tabIndex=9, title=%"rypacti", not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox ryppos=ryp_file.ryppos, tabIndex=10, title=%"ryppos", noEntry, not null, scroll, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ryp(ryp_file.ryp01,formonly.ryp01_desc,ryp_file.ryp02,ryp_file.ryp03,formonly.ryp03_desc,ryp_file.ryp04,ryp_file.ryp05,ryp_file.ryp06,ryp_file.rypacti,ryp_file.ryppos)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

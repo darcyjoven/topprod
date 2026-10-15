@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt838.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt838")
+VBox vb13
+Folder pc624
+Page page01(text="Main")
+Grid gr3512
+{
+  Label No.           [piaa01          ]
+  Inv Multi Unit      [piaa09          ]
+
+ <G group01                                          >
+  Item No.            [piaa02              ]
+  Part Name           [ima02                        ]
+  Warehouse           [piaa03    ]
+  Location            [piaa04    ]
+  Lot#                [piaa05                  ]
+  Inventory Class     [piaa06    ]
+  Account             [piaa07                  ]
+  type                 [piaa931                 ]
+ <                                                   >
+ <G group02                                          >
+  User(1)             [piaa50    ]
+  User(2)             [piaa60    ]
+ <                                                   >
+ <G group03                                          >
+  reason code          [piaa70              ]
+  explain              [azf03               ]
+  Adjust Qty           [qty                 ]
+ <                                                   >
+
+}
+END -- gr3512
+END -- page01
+END -- pc624
+Grid gr3513
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr3513
+END -- vb13
+END -- aimt838
+
+TABLES
+piaa_file,
+azf_file
+ATTRIBUTES
+Edit piaa01=piaa_file.piaa01, tabIndex=1, comment="KEY Field, No Blank/Repeated!";
+Edit piaa09=piaa_file.piaa09, tabIndex=2;
+Group group01:group01;
+Edit piaa02=piaa_file.piaa02, tabIndex=3, noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=4, noEntry;
+Edit piaa03=piaa_file.piaa03, tabIndex=5, noEntry;
+Edit piaa04=piaa_file.piaa04, tabIndex=6, noEntry;
+Edit piaa05=piaa_file.piaa05, tabIndex=7, noEntry;
+Edit piaa06=piaa_file.piaa06, tabIndex=8, noEntry;
+Edit piaa07=piaa_file.piaa07, tabIndex=9, noEntry;
+ButtonEdit piaa931=piaa_file.piaa931, action=controlp, tabIndex=14, noEntry, image="zoom.png";
+Group group02:group02;
+Edit piaa50=piaa_file.piaa50, tabIndex=10, noEntry;
+Edit piaa60=piaa_file.piaa60, tabIndex=11, noEntry;
+Group group03:group03;
+ButtonEdit piaa70=piaa_file.piaa70, action=controlp, tabIndex=15, image="zoom";
+Edit azf03=azf_file.azf03, tabIndex=16, noEntry;
+Edit qty=formonly.qty type DECIMAL, tabIndex=12;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(piaa_file.piaa01,piaa_file.piaa09,piaa_file.piaa02,formonly.ima02,piaa_file.piaa03,piaa_file.piaa04,piaa_file.piaa05,piaa_file.piaa06,piaa_file.piaa07,piaa_file.piaa931,piaa_file.piaa50,piaa_file.piaa60,formonly.qty,formonly.cnt,piaa_file.piaa70,azf_file.azf03)
+END -- INSTRUCTIONS
+

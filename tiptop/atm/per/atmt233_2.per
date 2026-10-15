@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmt233_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmt233_2")
+VBox VBox1
+Grid grid01
+{
+  Custom No.      [tqy03     ]
+  Sys Cd.         [tqy04     ]
+  Sys. Reg. Cd.   [tqy07     ]
+}
+END -- grid01
+Group g01(text="INPUT")
+Grid gr1108
+{
+  Date          [l_tqy38   ]
+
+}
+END -- gr1108
+END -- g01
+Table s_tqy2
+{
+[a     |tqy02|tqy36a    |tqy03a    |tqy04a    |tqy07a    |tqy05     |tqy06     ]
+[a     |tqy02|tqy36a    |tqy03a    |tqy04a    |tqy07a    |tqy05     |tqy06     ]
+[a     |tqy02|tqy36a    |tqy03a    |tqy04a    |tqy07a    |tqy05     |tqy06     ]
+[a     |tqy02|tqy36a    |tqy03a    |tqy04a    |tqy07a    |tqy05     |tqy06     ]
+[a     |tqy02|tqy36a    |tqy03a    |tqy04a    |tqy07a    |tqy05     |tqy06     ]
+[a     |tqy02|tqy36a    |tqy03a    |tqy04a    |tqy07a    |tqy05     |tqy06     ]
+[a     |tqy02|tqy36a    |tqy03a    |tqy04a    |tqy07a    |tqy05     |tqy06     ]
+[a     |tqy02|tqy36a    |tqy03a    |tqy04a    |tqy07a    |tqy05     |tqy06     ]
+[a     |tqy02|tqy36a    |tqy03a    |tqy04a    |tqy07a    |tqy05     |tqy06     ]
+[a     |tqy02|tqy36a    |tqy03a    |tqy04a    |tqy07a    |tqy05     |tqy06     ]
+
+}
+END -- s_tqy2
+END -- VBox1
+END -- atmt233_2
+
+TABLES
+tqy_file
+ATTRIBUTES
+ButtonEdit tqy03=tqy_file.tqy03, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit tqy04=tqy_file.tqy04, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit tqy07=tqy_file.tqy07, action=controlp, tabIndex=3, image="zoom";
+DateEdit l_tqy38=formonly.l_tqy38 type CHAR, tabIndex=4;
+CheckBox a=formonly.a type CHAR, tabIndex=5, title="Check", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit tqy02=formonly.tqy02 type CHAR, tabIndex=6, title="Seq", noEntry;
+Edit tqy36a=formonly.tqy36a type CHAR, tabIndex=7, title="Dbs", noEntry;
+Edit tqy03a=formonly.tqy03a type CHAR, tabIndex=8, title="Cust.No.", noEntry;
+Edit tqy04a=formonly.tqy04a type CHAR, tabIndex=9, title="Sys Cd.", noEntry;
+Edit tqy07a=formonly.tqy07a type CHAR, tabIndex=10, title="Sys.Reg.", noEntry;
+Edit tqy05=formonly.tqy05 type CHAR, tabIndex=11, title="Cd.", noEntry;
+Edit tqy06=formonly.tqy06 type CHAR, tabIndex=12, title="City", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tqy2(formonly.a,formonly.tqy02,formonly.tqy36a,formonly.tqy03a,formonly.tqy04a,formonly.tqy07a,formonly.tqy05,formonly.tqy06)
+SCREEN RECORD Undefined(tqy_file.tqy03,tqy_file.tqy04,tqy_file.tqy07,formonly.l_tqy38)
+END -- INSTRUCTIONS
+

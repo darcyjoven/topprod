@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_fjh.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Document Property")
+Grid gr3763
+{
+ <T s_fjh                                                                        >
+ [check |fjhslip    |fjhdesc         |fjhauno         |fjhkind         |fjhtype ]
+ [check |fjhslip    |fjhdesc         |fjhauno         |fjhkind         |fjhtype ]
+ [check |fjhslip    |fjhdesc         |fjhauno         |fjhkind         |fjhtype ]
+ [check |fjhslip    |fjhdesc         |fjhauno         |fjhkind         |fjhtype ]
+ [check |fjhslip    |fjhdesc         |fjhauno         |fjhkind         |fjhtype ]
+ [check |fjhslip    |fjhdesc         |fjhauno         |fjhkind         |fjhtype ]
+ [check |fjhslip    |fjhdesc         |fjhauno         |fjhkind         |fjhtype ]
+ [check |fjhslip    |fjhdesc         |fjhauno         |fjhkind         |fjhtype ]
+ [check |fjhslip    |fjhdesc         |fjhauno         |fjhkind         |fjhtype ]
+ [check |fjhslip    |fjhdesc         |fjhauno         |fjhkind         |fjhtype ]
+ <                                                                               >
+
+}
+END -- gr3763
+END -- q_fjh
+
+TABLES
+fjh_file
+ATTRIBUTES
+Table s_fjh:s_fjh;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fjhslip=fjh_file.fjhslip, tabIndex=2, title="Document", noEntry;
+Edit fjhdesc=fjh_file.fjhdesc, tabIndex=3, title="Document Name", noEntry;
+Edit fjhauno=fjh_file.fjhauno, tabIndex=4, title="Automatic No.", noEntry;
+Edit fjhkind=fjh_file.fjhkind, tabIndex=5, title="Automatic Kind", noEntry;
+Edit fjhtype=fjh_file.fjhtype, tabIndex=6, title="Property", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fjh(formonly.check,fjh_file.fjhslip,fjh_file.fjhdesc,fjh_file.fjhauno,fjh_file.fjhkind,fjh_file.fjhtype)
+END -- INSTRUCTIONS
+

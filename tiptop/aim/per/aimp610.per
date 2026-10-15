@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimp610")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                             >
+  Item No.            [img01               ]  Warehouse #         [img02               ]
+  Location #          [img03               ]  Lot#                [img04               ]
+  Warehouse Kpr       [ima23               ]  Source Code         [ima08               ]
+ <                                                                                      >
+ <G group02                                                                             >
+  Year of Last Period [g_yy      ]
+  Last Per/YY         [g_mm      ][dummy01                                   ]
+  [show                          ]
+ <                                                                                      >
+ <G group03                                                                             >
+  [dummy02                                                                   ]
+  [dummy03                                                                   ]
+ <                                                                                      >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[g_bgjob                                 ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- aimp610
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit img01=formonly.img01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit img02=formonly.img02 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit img03=formonly.img03 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit img04=formonly.img04 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit ima23=formonly.ima23 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=6;
+Group group02:group02, text="INPUT";
+Edit g_yy=formonly.g_yy type SMALLINT, tabIndex=7;
+Edit g_mm=formonly.g_mm type SMALLINT, tabIndex=8;
+Label dummy01:dummy01, text="(Correct IMK_FILE End of Period Inventory)";
+CheckBox show=formonly.show type VARCHAR, tabIndex=9, text="Show that carries out course information", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03;
+Label dummy02:dummy02, text="Task Objective: Update img Inventory by Doc Date";
+Label dummy03:dummy03, text="Conf \'imk_file\' Last End of Period Inv.Qty Correct bef run this task";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=10, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.img01,formonly.img02,formonly.img03,formonly.img04,formonly.ima23,formonly.ima08,formonly.g_yy,formonly.g_mm,formonly.show,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

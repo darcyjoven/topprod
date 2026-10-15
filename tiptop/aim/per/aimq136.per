@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq136.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq136")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr3139
+{
+ Item#               [ima01                         ]
+ Part Name           [ima02                         ]
+ Specification       [ima021                        ]
+}
+END -- gr3139
+Grid gr3140
+{
+ Source Code         [ima08     ]
+
+
+}
+END -- gr3140
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_sr
+{
+[sfb01            |sfb|sfb82 |sfb13       |sfb15       |sfb08          |woo_qty        |sub_qty        ]
+[sfb01            |sfb|sfb82 |sfb13       |sfb15       |sfb08          |woo_qty        |sub_qty        ]
+[sfb01            |sfb|sfb82 |sfb13       |sfb15       |sfb08          |woo_qty        |sub_qty        ]
+[sfb01            |sfb|sfb82 |sfb13       |sfb15       |sfb08          |woo_qty        |sub_qty        ]
+[sfb01            |sfb|sfb82 |sfb13       |sfb15       |sfb08          |woo_qty        |sub_qty        ]
+[sfb01            |sfb|sfb82 |sfb13       |sfb15       |sfb08          |woo_qty        |sub_qty        ]
+[sfb01            |sfb|sfb82 |sfb13       |sfb15       |sfb08          |woo_qty        |sub_qty        ]
+[sfb01            |sfb|sfb82 |sfb13       |sfb15       |sfb08          |woo_qty        |sub_qty        ]
+[sfb01            |sfb|sfb82 |sfb13       |sfb15       |sfb08          |woo_qty        |sub_qty        ]
+[sfb01            |sfb|sfb82 |sfb13       |sfb15       |sfb08          |woo_qty        |sub_qty        ]
+
+}
+END -- s_sr
+Grid gr3141
+{
+ ---------- Rows [cnt   ] / [cn2   ] ---------- Production Qty      [sum_qty         ] ---------- WIP W/O             [sum_woo         ] ---------- Sub.WIP             [sum_sub             ] ----------
+
+}
+END -- gr3141
+END -- VBox1
+END -- aimq136
+
+TABLES
+sfb_file,
+ima_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=3, noEntry;
+Edit ima08=ima_file.ima08, tabIndex=4, noEntry;
+Edit sfb01=sfb_file.sfb01, tabIndex=5, title="W/O No.", noEntry;
+Edit sfb=sfb_file.sfb04, tabIndex=6, title="Sts", noEntry;
+Edit sfb82=sfb_file.sfb82, tabIndex=7, title="Dept", noEntry;
+DateEdit sfb13=sfb_file.sfb13, tabIndex=8, title="Operating Dt", noEntry;
+DateEdit sfb15=sfb_file.sfb15, tabIndex=9, title="Complete Dt", noEntry;
+Edit sfb08=sfb_file.sfb08, tabIndex=10, title="Production Qty", noEntry, not null, required;
+Edit woo_qty=formonly.woo_qty type INTEGER, tabIndex=11, title="WIP W/O", noEntry;
+Edit sub_qty=formonly.sub_qty type INTEGER, tabIndex=12, title="Sub.WIP", noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=14, noEntry;
+Edit sum_qty=formonly.sum_qty type INTEGER, tabIndex=15, noEntry;
+Edit sum_woo=formonly.sum_woo type INTEGER, tabIndex=16, noEntry;
+Edit sum_sub=formonly.sum_sub type INTEGER, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sr(sfb_file.sfb01,sfb_file.sfb04,sfb_file.sfb82,sfb_file.sfb13,sfb_file.sfb15,sfb_file.sfb08,formonly.woo_qty,formonly.sub_qty)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,ima_file.ima08,formonly.cnt,formonly.cn2,formonly.sum_qty,formonly.sum_woo,formonly.sum_sub)
+END -- INSTRUCTIONS
+

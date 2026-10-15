@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmr602.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmr602")
+VBox VBox1
+Grid gr924
+{
+ <G group01                                                           >
+  Master Item         [bma01               ]
+  Alternate Code      [bma06               ]
+  Group Code          [ima06               ]
+  Other group code 1  [ima09               ]
+  Other group code 2  [ima10               ]
+  Other group code 3  [ima11               ]
+  Other group code 4  [ima12               ]
+ <                                                                    >
+
+}
+END -- gr924
+Group group02(text="INPUT")
+Grid gr925
+{
+ Version             [revision            ]
+ Expiration Date     [effective           ]
+ Master Item Qty     [a                   ]
+ Sort by             [arrange             ]
+[engine                        ]
+[vender                        ]
+}
+END -- gr925
+END -- group02
+Grid gr926
+{
+[more                                ]
+
+}
+END -- gr926
+END -- VBox1
+END -- abmr602
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit bma01=formonly.bma01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit bma06=formonly.bma06 type VARCHAR, tabIndex=2;
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=3;
+Edit ima09=formonly.ima09 type VARCHAR, tabIndex=4;
+Edit ima10=formonly.ima10 type VARCHAR, tabIndex=5;
+Edit ima11=formonly.ima11 type VARCHAR, tabIndex=6;
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=7;
+Edit revision=formonly.revision type VARCHAR, tabIndex=8;
+DateEdit effective=formonly.effective type DATE, tabIndex=9;
+Edit a=formonly.a type INTEGER, tabIndex=10;
+ComboBox arrange=formonly.arrange type VARCHAR, tabIndex=11, not null, required, items=(("1", "Line No."),("2", "Item No."),("3", "Location of Insert"));
+CheckBox engine=formonly.engine type VARCHAR, tabIndex=12, text="Print Technical Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vender=formonly.vender type VARCHAR, tabIndex=13, text="Print Component Supplier", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bma01,formonly.bma06,formonly.ima06,formonly.ima09,formonly.ima10,formonly.ima11,formonly.ima12,formonly.revision,formonly.effective,formonly.a,formonly.arrange,formonly.engine,formonly.vender,formonly.more)
+END -- INSTRUCTIONS
+

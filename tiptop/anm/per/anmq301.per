@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="anmq301")
+VBox vb1
+Folder pc2
+Page Main(text=%"Main")
+Grid gr13
+{
+ Bank No.          [tma01               ]
+ Bank Account No.  [tma02                         ]               Status [tma07               ]
+ Bank Account Name [tma03                                                                     ]
+ Bank Open No.     [tma04               ]                       Currency [tma06               ]
+ Bank Open Name    [tma05                                                                     ]
+ L.D Balance       [tma08               ]                    L.J Balance [tma09               ]    D.J Balance [tma10               ]
+ K.Y Balance       [tma11               ]                    T.Z Balance [tma12               ]
+ The Last Day      [tma13               ]                   The Rech Day [tma14               ]
+ Rate Kind         [tma15               ]                           Rate [tma16               ]    Period      [tma17               ]
+ Interface Code    [tma18               ]        The Branch Of Bank Code [tma19               ]
+ Memo              [tma20                                               ]
+
+
+}
+END -- gr13
+END -- Main
+END -- pc2
+Grid gr15
+{
+ ------- Rows [cn1   ] /[cn2   ] -------
+
+}
+END -- gr15
+END -- vb1
+END -- anmq301
+
+ATTRIBUTES
+ButtonEdit tma01=formonly.tma01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit tma02=formonly.tma02 type VARCHAR, tabIndex=2;
+Edit tma07=formonly.tma07 type VARCHAR, tabIndex=6;
+Edit tma03=formonly.tma03 type VARCHAR, tabIndex=3;
+ButtonEdit tma04=formonly.tma04 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+Edit tma06=formonly.tma06 type VARCHAR, tabIndex=7;
+Edit tma05=formonly.tma05 type VARCHAR, tabIndex=5;
+Edit tma08=formonly.tma08 type DECIMAL, tabIndex=8;
+Edit tma09=formonly.tma09 type DECIMAL, tabIndex=9;
+Edit tma10=formonly.tma10 type DECIMAL, tabIndex=10;
+Edit tma11=formonly.tma11 type DECIMAL, tabIndex=11;
+Edit tma12=formonly.tma12 type DECIMAL, tabIndex=12;
+Edit tma13=formonly.tma13 type VARCHAR, tabIndex=13;
+Edit tma14=formonly.tma14 type DATE, tabIndex=14;
+Edit tma15=formonly.tma15 type VARCHAR, tabIndex=15;
+Edit tma16=formonly.tma16 type VARCHAR, tabIndex=16;
+Edit tma17=formonly.tma17 type DATE, tabIndex=18;
+Edit tma18=formonly.tma18 type VARCHAR, tabIndex=17;
+Edit tma19=formonly.tma19 type VARCHAR, tabIndex=19;
+Edit tma20=formonly.tma20 type VARCHAR, tabIndex=20;
+Edit cn1=formonly.cn1 type SMALLINT, tabIndex=21;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tma01,formonly.tma02,formonly.tma07,formonly.tma03,formonly.tma04,formonly.tma06,formonly.tma05,formonly.tma08,formonly.tma09,formonly.tma10,formonly.tma11,formonly.tma12,formonly.tma13,formonly.tma14,formonly.tma15,formonly.tma16,formonly.tma17,formonly.tma18,formonly.tma19,formonly.tma20,formonly.cn1,formonly.cn2)
+END -- INSTRUCTIONS
+

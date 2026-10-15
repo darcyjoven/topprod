@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi326.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi326")
+VBox vb2_
+Folder folder01
+Page page01(text="Main")
+Grid gr1633
+{
+
+  Product No.         [ecb01                 ] Routing S/N         [ecb03                 ]
+  Routing Code        [ecb02                 ] Process No.         [ecb012                ]
+
+}
+END -- gr1633
+END -- page01
+END -- folder01
+Table s_vms
+{
+[vms05  |vms06       |vms04               |ecd02              |vms07      |eca02    |vmn081    |vms08     |vmn08     |vms10|vms09 |vms12 |vms11|vms13 ]
+[vms05  |vms06       |vms04               |ecd02              |vms07      |eca02    |vmn081    |vms08     |vmn08     |vms10|vms09 |vms12 |vms11|vms13 ]
+[vms05  |vms06       |vms04               |ecd02              |vms07      |eca02    |vmn081    |vms08     |vmn08     |vms10|vms09 |vms12 |vms11|vms13 ]
+[vms05  |vms06       |vms04               |ecd02              |vms07      |eca02    |vmn081    |vms08     |vmn08     |vms10|vms09 |vms12 |vms11|vms13 ]
+[vms05  |vms06       |vms04               |ecd02              |vms07      |eca02    |vmn081    |vms08     |vmn08     |vms10|vms09 |vms12 |vms11|vms13 ]
+[vms05  |vms06       |vms04               |ecd02              |vms07      |eca02    |vmn081    |vms08     |vmn08     |vms10|vms09 |vms12 |vms11|vms13 ]
+[vms05  |vms06       |vms04               |ecd02              |vms07      |eca02    |vmn081    |vms08     |vmn08     |vms10|vms09 |vms12 |vms11|vms13 ]
+[vms05  |vms06       |vms04               |ecd02              |vms07      |eca02    |vmn081    |vms08     |vmn08     |vms10|vms09 |vms12 |vms11|vms13 ]
+[vms05  |vms06       |vms04               |ecd02              |vms07      |eca02    |vmn081    |vms08     |vmn08     |vms10|vms09 |vms12 |vms11|vms13 ]
+[vms05  |vms06       |vms04               |ecd02              |vms07      |eca02    |vmn081    |vms08     |vmn08     |vms10|vms09 |vms12 |vms11|vms13 ]
+}
+END -- s_vms
+Grid gr1635
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr1635
+END -- vb2_
+END -- apsi326
+
+TABLES
+ecb_file,
+eca_file,
+vms_file,
+vmn_file,
+ecd_file
+ATTRIBUTES
+ButtonEdit ecb01=ecb_file.ecb01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Query Item  ";
+Edit ecb03=ecb_file.ecb03, tabIndex=3;
+Edit ecb02=ecb_file.ecb02, tabIndex=2, comment="Combine Product No. as Key Field,No Blank/Repeated!";
+Edit ecb012=ecb_file.ecb012, tabIndex=20;
+Edit vms05=vms_file.vms05, tabIndex=4, title="Line#", not null, required, comment="Key Field, No Blank/Repeated!   ";
+Edit vms06=vms_file.vms06, tabIndex=5, title="OrderNo", not null, required;
+ButtonEdit vms04=vms_file.vms04, action=controlp, tabIndex=8, title="Operation No.", image="zoom";
+Edit ecd02=ecd_file.ecd02, tabIndex=9, title="Operation Name.", noEntry;
+ButtonEdit vms07=vms_file.vms07, action=controlp, tabIndex=10, title="vms07", not null, required, image="zoom";
+Edit eca02=eca_file.eca02, tabIndex=17, title="eca02", noEntry;
+ButtonEdit vmn081=vmn_file.vmn081, action=controlp, tabIndex=18, title=%"vmn081", image="zoom";
+ButtonEdit vms08=vms_file.vms08, action=controlp, tabIndex=15, title="vms08", image="zoom";
+ButtonEdit vmn08=vmn_file.vmn08, action=controlp, tabIndex=19, title=%"vmn08", image="zoom";
+Edit vms10=vms_file.vms10, tabIndex=13, title="vms10";
+Edit vms09=vms_file.vms09, tabIndex=14, title="vms09";
+Edit vms12=vms_file.vms12, tabIndex=11, title="vms12";
+Edit vms11=vms_file.vms11, tabIndex=12, title="vms11";
+CheckBox vms13=vms_file.vms13, tabIndex=16, title="vms13", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vms(vms_file.vms05,vms_file.vms06,vms_file.vms04,ecd_file.ecd02,vms_file.vms07,eca_file.eca02,vmn_file.vmn081,vms_file.vms08,vmn_file.vmn08,vms_file.vms10,vms_file.vms09,vms_file.vms12,vms_file.vms11,vms_file.vms13)
+SCREEN RECORD Undefined(ecb_file.ecb01,ecb_file.ecb02,ecb_file.ecb03,formonly.cnt,formonly.cn2,ecb_file.ecb012)
+END -- INSTRUCTIONS
+

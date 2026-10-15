@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr341.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmr341")
+VBox VBox1
+Group group01(text="QBE")
+Grid Grid1
+{
+ Bank No.            [nma01               ]
+ Currency            [nma10               ]
+}
+END -- Grid1
+END -- group01
+Group group02(text="INPUT")
+Grid Grid2
+{
+ Year                [g_yyyy              ]
+ Period              [g_mm                ]
+}
+END -- Grid2
+END -- group02
+Grid Grid3
+{
+[more                                                        ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- anmr341
+
+TABLES
+nma_file
+ATTRIBUTES
+Edit nma01=nma_file.nma01, tabIndex=1;
+Edit nma10=nma_file.nma10, tabIndex=2;
+Edit g_yyyy=formonly.g_yyyy type CHAR, tabIndex=3;
+Edit g_mm=formonly.g_mm type CHAR, tabIndex=4;
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nma_file.nma01,nma_file.nma10,formonly.g_yyyy,formonly.g_mm,formonly.more)
+END -- INSTRUCTIONS
+

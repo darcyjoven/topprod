@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/4fd/atmp260.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi100")
+VBox VBox1
+Folder pc913
+Page page01(text="Main")
+Table s_tsc
+{
+[check   |shb16                |shb081  |shb06 |tscud02           |sfb01          |tsc01          |tsc21      |tsc03           |tsc15   |gem02        |tsc16   |gen02   |tsc14             |tsc04  |tsc05        |pnl             ]
+[check   |shb16                |shb081  |shb06 |tscud02           |sfb01          |tsc01          |tsc21      |tsc03           |tsc15   |gem02        |tsc16   |gen02   |tsc14             |tsc04  |tsc05        |pnl             ]
+[check   |shb16                |shb081  |shb06 |tscud02           |sfb01          |tsc01          |tsc21      |tsc03           |tsc15   |gem02        |tsc16   |gen02   |tsc14             |tsc04  |tsc05        |pnl             ]
+[check   |shb16                |shb081  |shb06 |tscud02           |sfb01          |tsc01          |tsc21      |tsc03           |tsc15   |gem02        |tsc16   |gen02   |tsc14             |tsc04  |tsc05        |pnl             ]
+[check   |shb16                |shb081  |shb06 |tscud02           |sfb01          |tsc01          |tsc21      |tsc03           |tsc15   |gem02        |tsc16   |gen02   |tsc14             |tsc04  |tsc05        |pnl             ]
+[check   |shb16                |shb081  |shb06 |tscud02           |sfb01          |tsc01          |tsc21      |tsc03           |tsc15   |gem02        |tsc16   |gen02   |tsc14             |tsc04  |tsc05        |pnl             ]
+[check   |shb16                |shb081  |shb06 |tscud02           |sfb01          |tsc01          |tsc21      |tsc03           |tsc15   |gem02        |tsc16   |gen02   |tsc14             |tsc04  |tsc05        |pnl             ]
+[check   |shb16                |shb081  |shb06 |tscud02           |sfb01          |tsc01          |tsc21      |tsc03           |tsc15   |gem02        |tsc16   |gen02   |tsc14             |tsc04  |tsc05        |pnl             ]
+[check   |shb16                |shb081  |shb06 |tscud02           |sfb01          |tsc01          |tsc21      |tsc03           |tsc15   |gem02        |tsc16   |gen02   |tsc14             |tsc04  |tsc05        |pnl             ]
+[check   |shb16                |shb081  |shb06 |tscud02           |sfb01          |tsc01          |tsc21      |tsc03           |tsc15   |gem02        |tsc16   |gen02   |tsc14             |tsc04  |tsc05        |pnl             ]
+
+}
+END -- s_tsc
+END -- page01
+END -- pc913
+Grid gr4816
+{
+ ---------- Rows [cn1   ]/[cn2   ]---------- PCS [pcs_sum           ]PNL[pnl_sum           ]
+
+}
+END -- gr4816
+END -- VBox1
+END -- atmp260
+
+ATTRIBUTES
+CheckBox check=formonly.check, tabIndex=1, title=%"check", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit shb16=formonly.shb16 type VARCHAR, action=controlp, tabIndex=2, title="shb16", noEntry, image="zoom", comment="Key Field, No Blank/Repeated!    ";
+ButtonEdit shb081=formonly.shb081 type VARCHAR, action=controlp, tabIndex=3, title=%"shb081", noEntry, image="zoom";
+Edit shb06=formonly.shb06 type VARCHAR, tabIndex=4, title=%"shb06", noEntry;
+ButtonEdit tscud02=formonly.tscud02 type VARCHAR, action=controlp, tabIndex=5, title="tscud02", noEntry, image="zoom", comment="1.Check  2.Transfer(TT)  3.LC  4.OA  6.DA  7.DP  8.LLC ";
+Edit sfb01=formonly.sfb01 type VARCHAR, tabIndex=6, title=%"sfb01", noEntry;
+ButtonEdit tsc01=formonly.tsc01 type VARCHAR, action=controlp, tabIndex=7, title="tsc01", noEntry, image="zoom";
+DateEdit tsc21=formonly.tsc21 type DATE, tabIndex=8, title="tsc21", noEntry, comment="";
+ButtonEdit tsc03=formonly.tsc03 type VARCHAR, action=controlp, tabIndex=9, title="tsc03", noEntry, image="zoom", comment="";
+Edit tsc15=formonly.tsc15 type VARCHAR, tabIndex=10, title="tsc15", noEntry, comment="";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=11, title=%"gem02", noEntry;
+Edit tsc16=formonly.tsc16 type VARCHAR, tabIndex=12, title="tsc16", noEntry, comment="Days Plus from Initial Date";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=13, title=%"gen02", noEntry;
+Edit tsc14=formonly.tsc14 type VARCHAR, tabIndex=14, title=%"tsc14", noEntry;
+Edit tsc04=formonly.tsc04 type VARCHAR, tabIndex=15, title=%"tsc04", noEntry;
+Edit tsc05=formonly.tsc05 type DECIMAL, tabIndex=16, title=%"tsc05", noEntry;
+Edit pnl=formonly.pnl type DECIMAL, tabIndex=17, title=%"pnl", noEntry;
+Edit cn1=formonly.cn1 type CHAR, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=18, noEntry;
+Edit pcs_sum=formonly.pcs_sum type CHAR, tabIndex=19, noEntry;
+Edit pnl_sum=formonly.pnl_sum type CHAR, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tsc(formonly.check,formonly.shb16,formonly.shb081,formonly.shb06,formonly.tscud02,formonly.sfb01,formonly.tsc01,formonly.tsc21,formonly.tsc15,formonly.gem02,formonly.tsc16,formonly.gen02,formonly.tsc03,formonly.tsc14,formonly.tsc04,formonly.tsc05,formonly.pnl)
+SCREEN RECORD Undefined(formonly.cn2,formonly.pcs_sum,formonly.pnl_sum,formonly.cn1)
+END -- INSTRUCTIONS
+

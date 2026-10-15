@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abas010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"abas010")
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+  <G group4                    >  <G group1                    >
+     ibd03     [ibd03     ]          ibd07 [ibd07          ]
+     ibd04     [ibd04     ]
+
+  <                            >  <                            >
+
+
+  <G group6                    >  <G group2                   >
+    [ibd02     ]                     ibd08 [ibd08     ]
+    [ibd05     ]                   [ibd09     ]
+     ibd06  [ibd06     ]           [ibd10     ]
+
+  <                            >  <                           >
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- abas010
+
+ATTRIBUTES
+Group group4:Group4, text=%"Ware";
+ButtonEdit ibd03=formonly.ibd03 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit ibd04=formonly.ibd04 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Group group1:Group1, text=%"rep";
+ComboBox ibd07=formonly.ibd07, tabIndex=6, not null, required, items=(("1", "1"),("2", "2"),("3", "3"));
+Group group6:Group6, text=%"Work";
+CheckBox ibd02=formonly.ibd02 type VARCHAR, tabIndex=3, text=%"ibd02", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ibd05=formonly.ibd05 type CHAR, tabIndex=4, text=%"ibd05", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ibd06=formonly.ibd06 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Group group2:Group2, text=%"Barcode";
+ComboBox ibd08=formonly.ibd08, tabIndex=7, not null, required, items=(("1", "Doc. Line No."),("2", "Source Doc. No."));
+CheckBox ibd09=formonly.ibd09, tabIndex=9, text=%"ibd09", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ibd10=formonly.ibd10, tabIndex=8, text=%"ibd10", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ibd03,formonly.ibd04,formonly.ibd02,formonly.ibd05,formonly.ibd06,formonly.ibd07,formonly.ibd08,formonly.ibd09,formonly.ibd10)
+END -- INSTRUCTIONS
+

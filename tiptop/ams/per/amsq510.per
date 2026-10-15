@@ -1,0 +1,115 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsq510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amsq510")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+HBox HBox1
+Grid gr3963
+{
+ Version             [mps_v     ]           Serial No[mps00     ]
+ Item#               [mps01                         ][ima02                         ]
+
+}
+END -- gr3963
+Grid gr3964
+{
+ Time Bucket         [mps03     ]                PLM/PLP             [mps09     ]
+ Act.Day             [mps11     ]
+
+}
+END -- gr3964
+END -- HBox1
+Grid gr3965
+{
+ <G group04                ><G group05             ><G group06                 ><G group07                       >
+  Forecast Qty [mps039    ]  Inventory [mps051    ]  P/R Qty      [mps061     ]  Frozen Qty          [mps06_fz  ]
+  Qty Ordered  [mps041    ]  Qty       [mps052    ]  Qty On Pur.  [mps062     ]  Pull Delivery Date  [mps071    ]
+  Plan.Allot.  [mps043    ]  Sub Qty   [mps053    ]  Qty Out      [mps063     ]  Push Delivery Date  [mps072    ]
+  Allotment    [mps044    ]                          WIP Qty      [mps064     ]  Estimated Balance   [mps08     ]
+                                                     Prod.Qty     [mps065     ]
+ <                         ><                      ><                          ><                                >
+
+}
+END -- gr3965
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_mpt
+{
+[mpt04             |mpt05  |t5_name      |mpt06           |mpt01|mpt06_fz|mpt07             |mpt08           ]
+[mpt04             |mpt05  |t5_name      |mpt06           |mpt01|mpt06_fz|mpt07             |mpt08           ]
+[mpt04             |mpt05  |t5_name      |mpt06           |mpt01|mpt06_fz|mpt07             |mpt08           ]
+[mpt04             |mpt05  |t5_name      |mpt06           |mpt01|mpt06_fz|mpt07             |mpt08           ]
+[mpt04             |mpt05  |t5_name      |mpt06           |mpt01|mpt06_fz|mpt07             |mpt08           ]
+[mpt04             |mpt05  |t5_name      |mpt06           |mpt01|mpt06_fz|mpt07             |mpt08           ]
+[mpt04             |mpt05  |t5_name      |mpt06           |mpt01|mpt06_fz|mpt07             |mpt08           ]
+[mpt04             |mpt05  |t5_name      |mpt06           |mpt01|mpt06_fz|mpt07             |mpt08           ]
+[mpt04             |mpt05  |t5_name      |mpt06           |mpt01|mpt06_fz|mpt07             |mpt08           ]
+[mpt04             |mpt05  |t5_name      |mpt06           |mpt01|mpt06_fz|mpt07             |mpt08           ]
+
+}
+END -- s_mpt
+Grid gr3966
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3966
+END -- VBox1
+END -- amsq510
+
+TABLES
+mpt_file,
+mps_file
+ATTRIBUTES
+Edit mps_v=mps_file.mps_v, tabIndex=1;
+Edit mps00=mps_file.mps00, tabIndex=2;
+Edit mps01=mps_file.mps01, tabIndex=3;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, noEntry;
+Edit mps03=mps_file.mps03, tabIndex=5;
+Edit mps09=mps_file.mps09, tabIndex=6, noEntry;
+Edit mps11=mps_file.mps11, tabIndex=7, noEntry;
+Group group04:group04;
+Edit mps039=mps_file.mps039, tabIndex=8, noEntry;
+Edit mps041=mps_file.mps041, tabIndex=9, noEntry;
+Edit mps043=mps_file.mps043, tabIndex=10, noEntry;
+Edit mps044=mps_file.mps044, tabIndex=11, noEntry;
+Group group05:group05;
+Edit mps051=mps_file.mps051, tabIndex=12, noEntry;
+Edit mps052=mps_file.mps052, tabIndex=13, noEntry;
+Edit mps053=mps_file.mps053, tabIndex=14, noEntry;
+Group group06:group06;
+Edit mps061=mps_file.mps061, tabIndex=15, noEntry;
+Edit mps062=mps_file.mps062, tabIndex=16, noEntry;
+Edit mps063=mps_file.mps063, tabIndex=17, noEntry;
+Edit mps064=mps_file.mps064, tabIndex=18, noEntry;
+Edit mps065=mps_file.mps065, tabIndex=19, noEntry;
+Group group07:group07;
+Edit mps06_fz=mps_file.mps06_fz, tabIndex=20, noEntry;
+Edit mps071=mps_file.mps071, tabIndex=21, noEntry;
+Edit mps072=mps_file.mps072, tabIndex=22, noEntry;
+Edit mps08=mps_file.mps08, tabIndex=23, noEntry;
+Edit mpt04=mpt_file.mpt04, tabIndex=24, title="Demand/Supply Date";
+Edit mpt05=mpt_file.mpt05, tabIndex=25, title="Cate.";
+Edit t5_name=formonly.t5_name type CHAR, tabIndex=26, title="Description";
+Edit mpt06=mpt_file.mpt06, tabIndex=27, title="Source Doc";
+Edit mpt01=mpt_file.mpt061, tabIndex=28, title="Ln#";
+Edit mpt06_fz=mpt_file.mpt06_fz, tabIndex=29, title="Freeze";
+Edit mpt07=mpt_file.mpt07, tabIndex=30, title="Item#";
+Edit mpt08=mpt_file.mpt08, tabIndex=31, title="Qty";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=32, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mpt(mpt_file.mpt04,mpt_file.mpt05,formonly.t5_name,mpt_file.mpt06,mpt_file.mpt061,mpt_file.mpt06_fz,mpt_file.mpt07,mpt_file.mpt08)
+SCREEN RECORD Undefined(mps_file.mps_v,mps_file.mps00,mps_file.mps01,formonly.ima02,mps_file.mps03,mps_file.mps09,mps_file.mps11,mps_file.mps039,mps_file.mps041,mps_file.mps043,mps_file.mps044,mps_file.mps051,mps_file.mps052,mps_file.mps053,mps_file.mps061,mps_file.mps062,mps_file.mps063,mps_file.mps064,mps_file.mps065,mps_file.mps06_fz,mps_file.mps071,mps_file.mps072,mps_file.mps08,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

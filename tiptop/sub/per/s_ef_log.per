@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_ef_log.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_ef_log")
+Grid gr3886
+{
+ <T s_azg                                                                                                   >
+ [azg02            |azg03            |desc            |azg05   |azg06                 |azg07               ]
+ [azg02            |azg03            |desc            |azg05   |azg06                 |azg07               ]
+ [azg02            |azg03            |desc            |azg05   |azg06                 |azg07               ]
+ [azg02            |azg03            |desc            |azg05   |azg06                 |azg07               ]
+ [azg02            |azg03            |desc            |azg05   |azg06                 |azg07               ]
+ [azg02            |azg03            |desc            |azg05   |azg06                 |azg07               ]
+ [azg02            |azg03            |desc            |azg05   |azg06                 |azg07               ]
+ [azg02            |azg03            |desc            |azg05   |azg06                 |azg07               ]
+ [azg02            |azg03            |desc            |azg05   |azg06                 |azg07               ]
+ [azg02            |azg03            |desc            |azg05   |azg06                 |azg07               ]
+ <                                                                                                          >
+
+}
+END -- gr3886
+END -- s_ef_log
+
+TABLES
+azg_file
+ATTRIBUTES
+Table s_azg:s_azg;
+Edit azg02=azg_file.azg02, tabIndex=1, title="Transaction Date";
+Edit azg03=azg_file.azg03, tabIndex=2, title="Transcation Time";
+Edit desc=formonly.desc type VARCHAR, tabIndex=3, title="Approval Status";
+Edit azg05=azg_file.azg05, tabIndex=4, title="Name";
+Edit azg06=azg_file.azg06, tabIndex=5, title="EasyFlow Document No.";
+Edit azg07=azg_file.azg07, tabIndex=6, title="Comments of Approval";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azg(azg_file.azg02,azg_file.azg03,formonly.desc,azg_file.azg05,azg_file.azg06,azg_file.azg07)
+END -- INSTRUCTIONS
+

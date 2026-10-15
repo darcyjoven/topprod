@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq810.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsq810")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr23
+{
+  <G gb8                                                                                    >
+    vob01   [vob01     ]
+    vob02   [vob02     ]
+
+
+  <                                                                                         >
+
+}
+END -- gr23
+END -- page01
+END -- folder01
+Table s_vob
+{
+[vob36 |vob10      |pmc03     |vob07      |ima02      |ima021   |vob11     |vob25     |vob26     |vob15         |vob37        |vob38            |vob33         |vob33_po              |vob14          |vob03    |vob39                 ]
+[vob36 |vob10      |pmc03     |vob07      |ima02      |ima021   |vob11     |vob25     |vob26     |vob15         |vob37        |vob38            |vob33         |vob33_po              |vob14          |vob03    |vob39                 ]
+[vob36 |vob10      |pmc03     |vob07      |ima02      |ima021   |vob11     |vob25     |vob26     |vob15         |vob37        |vob38            |vob33         |vob33_po              |vob14          |vob03    |vob39                 ]
+[vob36 |vob10      |pmc03     |vob07      |ima02      |ima021   |vob11     |vob25     |vob26     |vob15         |vob37        |vob38            |vob33         |vob33_po              |vob14          |vob03    |vob39                 ]
+[vob36 |vob10      |pmc03     |vob07      |ima02      |ima021   |vob11     |vob25     |vob26     |vob15         |vob37        |vob38            |vob33         |vob33_po              |vob14          |vob03    |vob39                 ]
+[vob36 |vob10      |pmc03     |vob07      |ima02      |ima021   |vob11     |vob25     |vob26     |vob15         |vob37        |vob38            |vob33         |vob33_po              |vob14          |vob03    |vob39                 ]
+[vob36 |vob10      |pmc03     |vob07      |ima02      |ima021   |vob11     |vob25     |vob26     |vob15         |vob37        |vob38            |vob33         |vob33_po              |vob14          |vob03    |vob39                 ]
+[vob36 |vob10      |pmc03     |vob07      |ima02      |ima021   |vob11     |vob25     |vob26     |vob15         |vob37        |vob38            |vob33         |vob33_po              |vob14          |vob03    |vob39                 ]
+[vob36 |vob10      |pmc03     |vob07      |ima02      |ima021   |vob11     |vob25     |vob26     |vob15         |vob37        |vob38            |vob33         |vob33_po              |vob14          |vob03    |vob39                 ]
+[vob36 |vob10      |pmc03     |vob07      |ima02      |ima021   |vob11     |vob25     |vob26     |vob15         |vob37        |vob38            |vob33         |vob33_po              |vob14          |vob03    |vob39                 ]
+
+}
+END -- s_vob
+Grid gr4727
+{
+ ----------Rows [cnt   ] /  [cn2   ]    ----------
+
+
+}
+END -- gr4727
+END -- vb2
+END -- apsq810
+
+TABLES
+vob_file
+ATTRIBUTES
+Group gb8:gb8, text="gb8";
+ButtonEdit vob01=vob_file.vob01, action=controlp, tabIndex=12, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Edit vob02=vob_file.vob02, tabIndex=13;
+CheckBox vob36=vob_file.vob36, tabIndex=16, title="vob36", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit vob10=vob_file.vob10, action=controlp, tabIndex=2, title="vob10", noEntry, image="zoom";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=15, title="pmc03", noEntry;
+ButtonEdit vob07=vob_file.vob07, action=controlp, tabIndex=3, title="vob07", noEntry, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, title="ima02", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, title="ima021", noEntry;
+ButtonEdit vob11=vob_file.vob11, action=controlp, tabIndex=7, title="vob11", image="zoom";
+ButtonEdit vob25=vob_file.vob25, action=controlp, tabIndex=19, title="vob25", image="zoom";
+Edit vob26=vob_file.vob26, tabIndex=20, title="vob26";
+DateEdit vob15=vob_file.vob15, tabIndex=8, title="vob15", noEntry;
+Edit vob37=vob_file.vob37, tabIndex=9, title="vob37";
+DateEdit vob38=vob_file.vob38, tabIndex=10, title="vob38";
+Edit vob33=vob_file.vob33, tabIndex=11, title="vob33", noEntry;
+Edit vob33_po=formonly.vob33_po type DECIMAL, tabIndex=21, title="vob33_po";
+DateEdit vob14=vob_file.vob14, tabIndex=6, title="vob14", noEntry;
+Edit vob03=vob_file.vob03, tabIndex=14, title="vob03", noEntry;
+Edit vob39=vob_file.vob39, tabIndex=17, title="vob39";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=1;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vob(vob_file.vob36,vob_file.vob10,formonly.pmc03,vob_file.vob07,formonly.ima02,formonly.ima021,vob_file.vob11,vob_file.vob25,vob_file.vob26,vob_file.vob15,vob_file.vob37,vob_file.vob38,vob_file.vob33,formonly.vob33_po,vob_file.vob14,vob_file.vob03,vob_file.vob39)
+SCREEN RECORD Undefined(vob_file.vob01,vob_file.vob02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

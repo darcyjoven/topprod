@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_load_msg_history.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_load_msg_history")
+VBox VBox1
+Group gb2352
+Grid gr3225
+{
+[display_msg                                                 ]
+[                                                            ]
+[                                                            ]
+[                                                            ]
+[                                                            ]
+[                                                            ]
+[                                                            ]
+[                                                            ]
+                                     [prevdata]  [nextdata]
+}
+END -- gr3225
+END -- gb2352
+Group group01(text="All Message")
+VBox VBox2
+Table s_gar
+{
+[check|gar01|gar04   |gar05               |gar03                                        ]
+[check|gar01|gar04   |gar05               |gar03                                        ]
+[check|gar01|gar04   |gar05               |gar03                                        ]
+[check|gar01|gar04   |gar05               |gar03                                        ]
+[check|gar01|gar04   |gar05               |gar03                                        ]
+[check|gar01|gar04   |gar05               |gar03                                        ]
+[check|gar01|gar04   |gar05               |gar03                                        ]
+[check|gar01|gar04   |gar05               |gar03                                        ]
+[check|gar01|gar04   |gar05               |gar03                                        ]
+[check|gar01|gar04   |gar05               |gar03                                        ]
+[check|gar01|gar04   |gar05               |gar03                                        ]
+
+}
+END -- s_gar
+Grid gr3226
+{
+             [sel_all       ]  [clear     ]        [delete      ]  [exit       ]
+
+}
+END -- gr3226
+END -- VBox2
+END -- group01
+END -- VBox1
+END -- p_load_msg_history
+
+TABLES
+gar_file
+ATTRIBUTES
+TextEdit display_msg=formonly.display_msg type CHAR, tabIndex=1, stretch=both;
+Button prevdata:prevdata, image="prev";
+Button nextdata:nextdata, image="next";
+CheckBox check=formonly.check type CHAR, tabIndex=2, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gar01=gar_file.gar01, tabIndex=3, title="No.", noEntry, hidden;
+Edit gar04=gar_file.gar04, tabIndex=4, title="Sender", noEntry;
+Edit gar05=gar_file.gar05, tabIndex=5, title="Send Time", noEntry;
+TextEdit gar03=gar_file.gar03, tabIndex=6, title="Message", noEntry, stretch=NONE;
+Button sel_all:sel_all, text="Select All";
+Button clear:clear, text="Re-Select";
+Button delete:delete, text="Delete";
+Button exit:exit, text="Exit";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gar(formonly.check,gar_file.gar01,gar_file.gar04,gar_file.gar05,gar_file.gar03)
+SCREEN RECORD Undefined(formonly.display_msg)
+END -- INSTRUCTIONS
+

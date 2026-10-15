@@ -1,0 +1,112 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt201")
+VBox vb4
+Folder pc1
+Page Page1(text=%"Basic Data")
+Grid gr13
+{
+
+    Network Doc No.   [pjk01                ] [pjj02                                 ]  Status [pjk27        ]
+    Promotion Code No.[pjk02                ] [pjk03                                 ]
+ <G gb9                                                                                                                                 > <G gb8                                              >
+   Department                   [pjk05         ][gem02                ]  Promotion Type        [pjk06        ]                             Planned POC Method [pjk09  |pjw02                 ]
+   Progress Confirmation Method [pjk07                                ]  Complete Ratio %      [pjk08 ]                                    Actual POC Method  [pjk10  |pjw02_2               ]
+   Correspond WBS Item          [pjk11         ][pjb03                ]  Promotion Auth Rate   [pjk12 ]
+   Job Director                 [pjk25         ][gen02                ]  Department No.        [pjk26        ][gem02_2                  ]
+  [pjk13                ]
+ <                                                                                                                                      > <                                                   >
+ <G gb10                                                                                                                                                                                       >
+
+    Standard Operation Days       [pjk14                  ] Min. Operation Days        [pjk15                 ]
+    Estimation Start Date         [pjk16                  ] Estimation Ending Date     [pjk17                 ]
+    Actual Start Date             [pjk18                  ] Actual Completion Date     [pjk19                 ]  Actual Input Days              [pjk24               ]
+    Earliest Start Date           [pjk20                  ] Earliest Completion Date   [pjk21                 ]
+    Last Start Date               [pjk22                  ] Last Completion Date       [pjk23                 ]
+    Estimated Progress Update Date[pjk30                  ] Actual Progress Update Date[pjk28                 ] Actual Progress Update Employee [pjk29     ] [gen02_2                     ]
+ <                                                                                                                                                                                             >
+
+}
+END -- gr13
+END -- Page1
+Page Page2(text=%"Info")
+Grid gr9
+{
+ Data Owner       [pjkuser     ] Last Modified by   [pjkmodu      ] Valid Code      [pjkacti   ]
+ Department       [pjkgrup     ] Last Modified On   [pjkdate      ]
+
+}
+END -- gr9
+END -- Page2
+END -- pc1
+Grid gr12
+{
+
+          Rows[idx  ]/[cnt  ]
+
+}
+END -- gr12
+END -- vb4
+END -- apjt201
+
+TABLES
+pjk_file
+ATTRIBUTES
+ButtonEdit pjk01=pjk_file.pjk01, action=controlp, tabIndex=27, noEntry, not null, image="zoom.png";
+Edit pjj02=formonly.pjj02 type VARCHAR, tabIndex=26, noEntry, not null;
+ComboBox pjk27=pjk_file.pjk27, tabIndex=43, noEntry, not null, items=(("0", "Open"),("1", "Approved"),("2", "Gelation"),("3", "completed"),("4", "end a case"));
+ButtonEdit pjk02=pjk_file.pjk02, action=controlp, tabIndex=44, noEntry, not null, image="zoom.png";
+Edit pjk03=pjk_file.pjk03, tabIndex=25, noEntry, not null;
+Group gb9:gb9, text="Basic Data";
+ButtonEdit pjk05=pjk_file.pjk05, action=controlp, tabIndex=12, not null, image="zoom.png";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=15, noEntry, not null;
+ComboBox pjk06=pjk_file.pjk06, tabIndex=24, not null, items=(("1", "Inside Work"),("2", "Exterior Stock Work"),("3", "Service Work"),("4", "Commonly Cost Work"));
+ComboBox pjk07=pjk_file.pjk07, tabIndex=23, default = "'0'", noEntry, not null, items=(("0", "Manpower Validate Maintenance"));
+Edit pjk08=pjk_file.pjk08, tabIndex=18;
+ButtonEdit pjk11=pjk_file.pjk11, action=controlp, tabIndex=16, not null, image="zoom.png";
+Edit pjb03=formonly.pjb03 type VARCHAR, tabIndex=13, noEntry, not null;
+Edit pjk12=pjk_file.pjk12, tabIndex=19, not null;
+ButtonEdit pjk25=pjk_file.pjk25, action=controlp, tabIndex=17, image="zoom.png";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=14, noEntry, not null;
+ButtonEdit pjk26=pjk_file.pjk26, action=controlp, tabIndex=20, image="zoom.png";
+Edit gem02_2=formonly.gem02_2 type VARCHAR, tabIndex=21, noEntry, not null;
+CheckBox pjk13=formonly.pjk13 type VARCHAR, tabIndex=22, default = "N", text="Job Priority ?", not null, valueChecked = "Y", valueUnchecked = "N";
+Group gb8:gb8, text="Get Cost";
+ButtonEdit pjk09=pjk_file.pjk09, action=controlp, tabIndex=8, not null, image="zoom.png";
+Edit pjw02=formonly.pjw02 type VARCHAR, tabIndex=9, noEntry, not null;
+ButtonEdit pjk10=pjk_file.pjk10, action=controlp, tabIndex=10, not null, image="zoom.png";
+Edit pjw02_2=formonly.pjw02_2 type VARCHAR, tabIndex=11, noEntry, not null;
+Group gb10:gb10, text="Planned Parameters";
+Edit pjk14=pjk_file.pjk14, tabIndex=28, not null;
+Edit pjk15=pjk_file.pjk15, tabIndex=29, not null;
+DateEdit pjk16=pjk_file.pjk16, tabIndex=42, not null;
+DateEdit pjk17=pjk_file.pjk17, tabIndex=41, not null;
+DateEdit pjk18=pjk_file.pjk18, tabIndex=39, noEntry;
+DateEdit pjk19=pjk_file.pjk19, tabIndex=40, noEntry;
+Edit pjk24=pjk_file.pjk24, tabIndex=30, noEntry;
+DateEdit pjk20=pjk_file.pjk20, tabIndex=35, noEntry;
+DateEdit pjk21=pjk_file.pjk21, tabIndex=36, noEntry;
+DateEdit pjk22=pjk_file.pjk22, tabIndex=34, noEntry;
+DateEdit pjk23=pjk_file.pjk23, tabIndex=37, noEntry;
+DateEdit pjk30=pjk_file.pjk30, tabIndex=33, noEntry;
+DateEdit pjk28=pjk_file.pjk28, tabIndex=38, noEntry;
+ButtonEdit pjk29=pjk_file.pjk29, action=controlp, tabIndex=32, not null, image="zoom.png";
+Edit gen02_2=formonly.gen02_2 type VARCHAR, tabIndex=31, not null;
+Edit pjkuser=pjk_file.pjkuser, tabIndex=1, noEntry;
+Edit pjkmodu=pjk_file.pjkmodu, tabIndex=2, noEntry;
+Edit pjkacti=pjk_file.pjkacti, tabIndex=3, default = "Y";
+Edit pjkgrup=pjk_file.pjkgrup, tabIndex=4, noEntry, not null;
+DateEdit pjkdate=pjk_file.pjkdate, tabIndex=5, noEntry, not null;
+Edit idx=formonly.idx type SMALLINT, tabIndex=6;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pjk_file.pjk01,formonly.pjj02,pjk_file.pjk27,pjk_file.pjk02,pjk_file.pjk03,pjk_file.pjk05,formonly.gem02,pjk_file.pjk06,pjk_file.pjk07,pjk_file.pjk08,pjk_file.pjk11,formonly.pjb03,pjk_file.pjk12,pjk_file.pjk25,formonly.gen02,pjk_file.pjk26,formonly.gem02_2,formonly.pjk13,pjk_file.pjk09,formonly.pjw02,pjk_file.pjk10,formonly.pjw02_2,pjk_file.pjk14,pjk_file.pjk15,pjk_file.pjk16,pjk_file.pjk17,pjk_file.pjk18,pjk_file.pjk19,pjk_file.pjk24,pjk_file.pjk20,pjk_file.pjk21,pjk_file.pjk22,pjk_file.pjk23,pjk_file.pjk30,pjk_file.pjk28,pjk_file.pjk29,formonly.gen02_2,pjk_file.pjkuser,pjk_file.pjkmodu,pjk_file.pjkacti,pjk_file.pjkgrup,pjk_file.pjkdate,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

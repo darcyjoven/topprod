@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmp100")
+VBox VBox1
+HBox HBox1
+Grid grid01
+{
+ M.Item No.          [bmo01               ]
+ Version             [bmo011    ]
+ Part Name           [bmq02                         ]
+ Specification       [bmq021                        ]
+}
+END -- grid01
+Grid grid02
+{
+ Formal No.          [firm                ]
+ Part Name           [ima02                         ]
+ Specification       [ima021                        ]
+ Alternate Code      [bmo06               ]
+}
+END -- grid02
+Grid grid03
+{
+ Eff.Date            [bdate       ]
+ Exp.Date            [edate       ]
+
+
+}
+END -- grid03
+END -- HBox1
+Table s_bmp
+{
+[bmp03                |descp                          |descp2                         |item                 |bmp28              ]
+[bmp03                |descp                          |descp2                         |item                 |bmp28              ]
+[bmp03                |descp                          |descp2                         |item                 |bmp28              ]
+[bmp03                |descp                          |descp2                         |item                 |bmp28              ]
+[bmp03                |descp                          |descp2                         |item                 |bmp28              ]
+[bmp03                |descp                          |descp2                         |item                 |bmp28              ]
+[bmp03                |descp                          |descp2                         |item                 |bmp28              ]
+[bmp03                |descp                          |descp2                         |item                 |bmp28              ]
+[bmp03                |descp                          |descp2                         |item                 |bmp28              ]
+[bmp03                |descp                          |descp2                         |item                 |bmp28              ]
+
+}
+END -- s_bmp
+END -- VBox1
+END -- abmp100
+
+ATTRIBUTES
+ButtonEdit bmo01=formonly.bmo01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry  Testing Master Item";
+Edit bmo011=formonly.bmo011 type VARCHAR, tabIndex=2, not null, required;
+Edit bmq02=formonly.bmq02 type VARCHAR, tabIndex=3;
+Edit bmq021=formonly.bmq021 type VARCHAR, tabIndex=4;
+ButtonEdit firm=formonly.firm type VARCHAR, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Item No. ";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=6;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=7;
+Edit bmo06=formonly.bmo06 type VARCHAR, tabIndex=8;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=9, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=10;
+Edit bmp03=formonly.bmp03 type VARCHAR, tabIndex=11, title="T.Compo", noEntry;
+Edit descp=formonly.descp type VARCHAR, tabIndex=12, title="P/N Spec", noEntry;
+Edit descp2=formonly.descp2 type VARCHAR, tabIndex=13, title="Spec", noEntry;
+ButtonEdit item=formonly.item type VARCHAR, action=controlp, tabIndex=14, title="Formal No.", not null, required, image="zoom", comment="<^P>Qry Item No. ";
+Edit bmp28=formonly.bmp28 type VARCHAR, tabIndex=15, title="Alternate Code";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmp(formonly.bmp03,formonly.descp,formonly.descp2,formonly.item,formonly.bmp28)
+SCREEN RECORD Undefined(formonly.bmo01,formonly.bmo011,formonly.bmq02,formonly.bmq021,formonly.firm,formonly.ima02,formonly.ima021,formonly.bmo06,formonly.bdate,formonly.edate)
+END -- INSTRUCTIONS
+

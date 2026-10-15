@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cqry/4fd/cq_ogb04.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid2
+{
+
+ [ogb01       |ogb02           ]  [ogb04       |ogb03           ] [ogb12       |ogb11           ]
+ [ogb05       |ogb06           ]  [ogb07       |ogb08           ] [ogb09       |ogb00           ]
+                                  [ima021      |ima022          ] [tot_ogb12   |tot_ogb11       ]
+
+
+}
+END -- Grid2
+Table Table1
+{
+[check1    |img03     |img04     |img09     |img10     |new_ogb12 |img37        ]
+[check1    |img03     |img04     |img09     |img10     |new_ogb12 |img37        ]
+[check1    |img03     |img04     |img09     |img10     |new_ogb12 |img37        ]
+[check1    |img03     |img04     |img09     |img10     |new_ogb12 |img37        ]
+[check1    |img03     |img04     |img09     |img10     |new_ogb12 |img37        ]
+
+}
+END -- Table1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label ogb01:ogb01, text=%"ogb01";
+Edit ogb02=formonly.ogb01, tabIndex=3;
+Label ogb04:ogb04, text=%"ogb04";
+Edit ogb03=formonly.ogb04, tabIndex=5;
+Label ogb12:ogb12, text=%"ogb12";
+Edit ogb11=formonly.ogb12, tabIndex=8;
+Label ogb05:ogb03, text=%"ogb03";
+Edit ogb06=formonly.ogb03, tabIndex=4;
+Label ogb07:ogb06, text=%"ogb06";
+Edit ogb08=formonly.ogb06, tabIndex=6;
+Label ogb09:ogb09, text=%"ogb09";
+Edit ogb00=formonly.ogb09, tabIndex=14, not null, required;
+Label ima021:ima021, text=%"ima021";
+Edit ima022=formonly.ima021, tabIndex=7;
+Label tot_ogb12:tot_ogb12, text=%"tot_ogb12";
+Edit tot_ogb11=formonly.tot_ogb12, tabIndex=9;
+CheckBox check1=formonly.check1, tabIndex=1, title=%"check1", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit img03=formonly.img03, tabIndex=2, title=%"img03", noEntry;
+Edit img04=formonly.img04, tabIndex=10, title=%"img04", noEntry;
+Edit img09=formonly.img09, tabIndex=11, title=%"img09", noEntry;
+Edit img10=formonly.img10, tabIndex=12, title=%"img10", noEntry;
+Edit new_ogb12=formonly.new_ogb12, tabIndex=13, title=%"new_ogb12", not null, required;
+DateEdit img37=formonly.img37 type DATE, tabIndex=15, title=%"img37";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img1(formonly.check1,formonly.img03,formonly.img04,formonly.img09,formonly.img10,formonly.new_ogb12,formonly.img37)
+SCREEN RECORD Undefined(formonly.ogb01,formonly.ogb03,formonly.ogb04,formonly.ogb06,formonly.ima021,formonly.ogb12,formonly.tot_ogb12,formonly.ogb09)
+END -- INSTRUCTIONS
+

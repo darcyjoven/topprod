@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli510")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2416
+{
+ <G group01                                                                                    >
+  Budget No.          [gig01     ][afa02                   ]  Department No.      [gig03     ]
+  Product Class       [gig02     ][oba02                   ]                      [gem02     ]
+  Customer            [gig10     ][occ02   ]                  Year                [gig04     ]
+ <                                                                                             >
+
+}
+END -- gr2416
+END -- page01
+END -- folder01
+Table s_gig
+{
+[gig05  |gig06       |gig07              |gig08             |gig09            ]
+[gig05  |gig06       |gig07              |gig08             |gig09            ]
+[gig05  |gig06       |gig07              |gig08             |gig09            ]
+[gig05  |gig06       |gig07              |gig08             |gig09            ]
+[gig05  |gig06       |gig07              |gig08             |gig09            ]
+[gig05  |gig06       |gig07              |gig08             |gig09            ]
+[gig05  |gig06       |gig07              |gig08             |gig09            ]
+[gig05  |gig06       |gig07              |gig08             |gig09            ]
+[gig05  |gig06       |gig07              |gig08             |gig09            ]
+[gig05  |gig06       |gig07              |gig08             |gig09            ]
+
+}
+END -- s_gig
+Grid gr2417
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2417
+END -- VBox1
+END -- agli510
+
+TABLES
+gig_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit gig01=gig_file.gig01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Budget No.  ";
+Edit afa02=formonly.afa02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit gig03=gig_file.gig03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P> Query Department";
+ButtonEdit gig02=gig_file.gig02, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Product Class.";
+Edit oba02=formonly.oba02 type CHAR, tabIndex=5, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=6, noEntry;
+ButtonEdit gig10=gig_file.gig10, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P> Qry Customer";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=8, noEntry;
+Edit gig04=gig_file.gig04, tabIndex=9, not null, required;
+Edit gig05=gig_file.gig05, tabIndex=10, title="Period", not null, required;
+Edit gig06=gig_file.gig06, tabIndex=11, title="Produce Qty", not null, required;
+Edit gig07=gig_file.gig07, tabIndex=12, title="Unit Material Cost", not null, required;
+Edit gig08=gig_file.gig08, tabIndex=13, title="Unit Direct Labor", not null, required;
+Edit gig09=gig_file.gig09, tabIndex=14, title="Unit Overhead", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gig(gig_file.gig05,gig_file.gig06,gig_file.gig07,gig_file.gig08,gig_file.gig09)
+SCREEN RECORD Undefined(gig_file.gig01,formonly.afa02,gig_file.gig03,gig_file.gig02,formonly.oba02,formonly.gem02,gig_file.gig10,formonly.occ02,gig_file.gig04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

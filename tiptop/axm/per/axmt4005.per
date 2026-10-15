@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt4005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt4005")
+VBox VBox1
+Folder pc567
+Page page01
+Grid gr2502
+{
+ <G group01                                                                    >
+  Destination of Delivery         [oeb18     ][oac02               ]
+  Shipping Type                   [oeb20     ][ged02                         ]
+  Price Terms                     [oeb21     ][oah02                         ]
+
+  Customer Part No.               [oeb11               ]
+  Extra P/N #                     [oeb07     ]
+  Assign delivery warehouse       [oeb09     ]
+  Assign delivery location        [oeb091    ]
+  Assign Delivery Lot#            [oeb092    ]
+  Sales Inventory Conversion Rate [oeb05_fac ]
+  Par/Ref Conversion Rate         [oeb914    ]
+  Chi/Sales Conversion Rate       [oeb911    ]
+  Fitst Unit Price                [oeb17     ]
+ <                                                                             >
+
+}
+END -- gr2502
+END -- page01
+END -- pc567
+END -- VBox1
+END -- axmt4005
+
+TABLES
+oeb_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit oeb18=oeb_file.oeb18, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Destination of Delivery";
+Edit oac02=formonly.oac02 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit oeb20=oeb_file.oeb20, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Shipping Type";
+Edit ged02=formonly.ged02 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit oeb21=oeb_file.oeb21, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Price Terms";
+Edit oah02=formonly.oah02 type VARCHAR, tabIndex=6, noEntry;
+Edit oeb11=oeb_file.oeb11, tabIndex=7;
+Edit oeb07=oeb_file.oeb07, tabIndex=8;
+ButtonEdit oeb09=oeb_file.oeb09, action=controlp, tabIndex=9, image="zoom";
+ButtonEdit oeb091=oeb_file.oeb091, action=controlp, tabIndex=10, image="zoom";
+Edit oeb092=oeb_file.oeb092, tabIndex=11;
+Edit oeb05_fac=oeb_file.oeb05_fac, tabIndex=12, noEntry, not null, required;
+Edit oeb914=oeb_file.oeb914, tabIndex=13;
+Edit oeb911=oeb_file.oeb911, tabIndex=14;
+Edit oeb17=oeb_file.oeb17, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oeb_file.oeb18,formonly.oac02,oeb_file.oeb20,formonly.ged02,oeb_file.oeb21,formonly.oah02,oeb_file.oeb11,oeb_file.oeb07,oeb_file.oeb09,oeb_file.oeb091,oeb_file.oeb092,oeb_file.oeb05_fac,oeb_file.oeb914,oeb_file.oeb911,oeb_file.oeb17)
+END -- INSTRUCTIONS
+

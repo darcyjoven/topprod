@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almi600")
+VBox VBox1
+Folder pc3
+Page page4(text="Main")
+Grid gr10
+{
+ Created Logistics        [lpq13                ][lpq13_desc      ]          Confirmation       [lpq08                   |imgmksg]
+ Exchange source          [lpq00                ]                            Conf Name          [lpq09                   |       ]
+ Plan serial No.          [lpq01                ]                            Conf Date          [lpq10                   ]
+ Program narrative        [lpq02                ]                           [lpq15                   ]
+                          [                     ]                            Issued Date        [lpq16                   ]
+                          [                     ]                            memo               [lpq11                          ]
+ version                  [lpq14                ]                                               [                               ]
+ card plants No.          [lpq03                ]                                               [                               ]
+ card plants name         [lph02                ]                            lpqplant           [lpqplant                ][rtz13               ]
+ Outset date              [lpq04                ]                            lpqlegal           [lpqlegal                ][azt02               ]
+ Expiry date              [lpq05                ]                           [lpqpos                  ]
+ Accumulative total way   [lpq12                ]
+ Exchange restrictions    [lpq17                ]
+ times                    [lpq18                ]
+
+}
+END -- gr10
+END -- page4
+Page info(text="Info")
+Grid gr10_
+{
+ Record Owner   [lpquser   ]   Material foundation date   [lpqcrat         ]     Data Valid Code     [lpqacti   ]
+ Department     [lpqgrup   ]   Last Modified by           [lpqmodu   ]           Create/Modify Date  [lpqdate   ]
+ Record Orig.   [lpqoriu   ]
+ Dept Orig.     [lpqorig   ]
+
+
+}
+END -- gr10_
+END -- info
+END -- pc3
+Table s_lpr
+{
+[lpr06 |lpr02                |lpr07            |lpr03                 |ima02                |ima021            |lpr04     |gfe02   |lpr05          ]
+[lpr06 |lpr02                |lpr07            |lpr03                 |ima02                |ima021            |lpr04     |gfe02   |lpr05          ]
+[lpr06 |lpr02                |lpr07            |lpr03                 |ima02                |ima021            |lpr04     |gfe02   |lpr05          ]
+[lpr06 |lpr02                |lpr07            |lpr03                 |ima02                |ima021            |lpr04     |gfe02   |lpr05          ]
+[lpr06 |lpr02                |lpr07            |lpr03                 |ima02                |ima021            |lpr04     |gfe02   |lpr05          ]
+[lpr06 |lpr02                |lpr07            |lpr03                 |ima02                |ima021            |lpr04     |gfe02   |lpr05          ]
+[lpr06 |lpr02                |lpr07            |lpr03                 |ima02                |ima021            |lpr04     |gfe02   |lpr05          ]
+[lpr06 |lpr02                |lpr07            |lpr03                 |ima02                |ima021            |lpr04     |gfe02   |lpr05          ]
+[lpr06 |lpr02                |lpr07            |lpr03                 |ima02                |ima021            |lpr04     |gfe02   |lpr05          ]
+[lpr06 |lpr02                |lpr07            |lpr03                 |ima02                |ima021            |lpr04     |gfe02   |lpr05          ]
+}
+END -- s_lpr
+Grid gr12
+{
+----------  Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr12
+END -- VBox1
+END -- almi600
+
+TABLES
+lpr_file,
+lpq_file
+ATTRIBUTES
+ButtonEdit lpq13=lpq_file.lpq13, action=controlp, tabIndex=14, noEntry, image="zoom.png";
+Edit lpq13_desc=formonly.lpq13_desc type CHAR, tabIndex=15, noEntry;
+ComboBox lpq08=lpq_file.lpq08, tabIndex=10, noEntry, items=(("N", "Has not verified "),("Y", "Has verified "));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ComboBox lpq00=lpq_file.lpq00, tabIndex=1, items=(("0", "Integral to change things"),("1", "Accumulative total"));
+ButtonEdit lpq09=lpq_file.lpq09, action=controlp, tabIndex=11, noEntry, image="zoom";
+ButtonEdit lpq01=lpq_file.lpq01, action=controlp, tabIndex=2, not null, required, image="zoom";
+DateEdit lpq10=lpq_file.lpq10, tabIndex=12, noEntry;
+TextEdit lpq02=lpq_file.lpq02, tabIndex=3;
+CheckBox lpq15=lpq_file.lpq15, tabIndex=37, text=%"Issued", noEntry, valueChecked = "Y", valueUnchecked = "N";
+DateEdit lpq16=lpq_file.lpq16, tabIndex=38, noEntry;
+TextEdit lpq11=lpq_file.lpq11, tabIndex=13, stretch=NONE;
+Edit lpq14=lpq_file.lpq14, tabIndex=39, noEntry;
+ButtonEdit lpq03=lpq_file.lpq03, action=controlp, tabIndex=4, not null, image="zoom";
+Edit lph02=formonly.lph02 type CHAR, tabIndex=5, noEntry;
+ButtonEdit lpqplant=lpq_file.lpqplant, action=controlp, tabIndex=42, noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=43, noEntry;
+DateEdit lpq04=lpq_file.lpq04, tabIndex=6, not null;
+ButtonEdit lpqlegal=lpq_file.lpqlegal, action=controlp, tabIndex=16, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=17, noEntry;
+DateEdit lpq05=lpq_file.lpq05, tabIndex=7, not null;
+CheckBox lpqpos=lpq_file.lpqpos, tabIndex=9, text=%"POS", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox lpq12=lpq_file.lpq12, tabIndex=8, not null, items=(("0", "Consumption day"),("1", "Member accumulative total spending"),("2", "during the peroid"));
+ComboBox lpq17=lpq_file.lpq17, tabIndex=40, not null, items=(("1", "No Limit"),("2", "During the period"),("3", "Everyday "));
+Edit lpq18=lpq_file.lpq18, tabIndex=41, noEntry;
+Edit lpquser=lpq_file.lpquser, tabIndex=18, noEntry;
+DateEdit lpqcrat=lpq_file.lpqcrat, tabIndex=22, noEntry;
+Edit lpqacti=lpq_file.lpqacti, tabIndex=24, noEntry, upShift;
+Edit lpqgrup=lpq_file.lpqgrup, tabIndex=19, noEntry;
+Edit lpqmodu=lpq_file.lpqmodu, tabIndex=23, noEntry;
+DateEdit lpqdate=lpq_file.lpqdate, tabIndex=25, noEntry;
+Edit lpqoriu=lpq_file.lpqoriu, tabIndex=20, noEntry;
+Edit lpqorig=lpq_file.lpqorig, tabIndex=21, noEntry;
+Edit lpr06=lpr_file.lpr06, tabIndex=26, title=%"Line No.", not null, scroll;
+Edit lpr02=lpr_file.lpr02, tabIndex=27, title="integral reaches", not null, required;
+Edit lpr07=lpr_file.lpr07, tabIndex=28, title=%"Accumulative total", not null;
+ButtonEdit lpr03=lpr_file.lpr03, action=controlp, tabIndex=29, title="Complimentary No.", not null, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=30, title="Complimentary name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=31, title="Specification", noEntry;
+ButtonEdit lpr04=lpr_file.lpr04, action=controlp, tabIndex=32, title="Unit", not null, image="zoom";
+Edit gfe02=formonly.gfe02 type CHAR, tabIndex=33, title=%"gfe02", noEntry;
+Edit lpr05=lpr_file.lpr05, tabIndex=34, title=%"Qty", not null;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=35;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=36;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lpr(lpr_file.lpr06,lpr_file.lpr02,lpr_file.lpr07,lpr_file.lpr03,formonly.ima02,formonly.ima021,lpr_file.lpr04,formonly.gfe02,lpr_file.lpr05)
+SCREEN RECORD Undefined(lpq_file.lpq13,formonly.lpq13_desc,lpq_file.lpqpos,lpq_file.lpqlegal,formonly.azt02,lpq_file.lpq08,formonly.imgmksg,lpq_file.lpq01,lpq_file.lpq09,lpq_file.lpq02,lpq_file.lpq10,lpq_file.lpq11,lpq_file.lpq03,formonly.lph02,lpq_file.lpq04,lpq_file.lpq05,lpq_file.lpquser,lpq_file.lpqcrat,lpq_file.lpqacti,lpq_file.lpqgrup,lpq_file.lpqmodu,lpq_file.lpqdate,lpq_file.lpqoriu,lpq_file.lpqorig,formonly.cnt,formonly.cn2,lpq_file.lpq00,lpq_file.lpq12,lpq_file.lpq15,lpq_file.lpq16,lpq_file.lpq14,lpq_file.lpq17,lpq_file.lpq18,lpq_file.lpqplant,formonly.rtz13)
+END -- INSTRUCTIONS
+

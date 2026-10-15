@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct300")
+VBox vb1
+Folder pc381
+Page page01(text="Main")
+Grid gr1788
+{
+  Year                [cck0]/[cc]
+  Cost Center         [cck_w     ]   [desc        ]
+
+ <G group02                                              >
+  Labor Cost          [cck03       ] DL/Hr [cck06     ]
+  Overhead            [cck04       ] OH/Hr [cck07     ]
+  Total Work Hours    [cck05       ]
+ <                                                       >
+
+}
+END -- gr1788
+END -- page01
+Page info(text="Info")
+Grid gr1789
+{
+ Record Owner        [cckuser   ]   Last Modified by    [cckmodu   ]
+ Department          [cckgrup   ]   Create/Modify Date  [cckdate   ]
+ Record Orig.        [cckoriu   ]
+ Dept Orig.          [cckorig   ]
+}
+END -- gr1789
+END -- info
+END -- pc381
+Grid gr1790
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr1790
+END -- vb1
+END -- axct300
+
+TABLES
+cck_file
+ATTRIBUTES
+Edit cck0=cck_file.cck01, tabIndex=1, not null, required;
+Edit cc=cck_file.cck02, tabIndex=2, not null, required;
+ButtonEdit cck_w=cck_file.cck_w, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P> Qry Related Table";
+Edit desc=formonly.desc type VARCHAR, tabIndex=14, not null, required;
+Group group02:group02;
+Edit cck03=cck_file.cck03, tabIndex=4, not null, required;
+Edit cck06=cck_file.cck06, tabIndex=5, noEntry, not null, required;
+Edit cck04=cck_file.cck04, tabIndex=6, not null, required;
+Edit cck07=cck_file.cck07, tabIndex=7, noEntry, not null, required;
+Edit cck05=cck_file.cck05, tabIndex=8, not null, required;
+Edit cckuser=cck_file.cckuser, tabIndex=9, noEntry;
+Edit cckmodu=cck_file.cckmodu, tabIndex=10, noEntry;
+Edit cckgrup=cck_file.cckgrup, tabIndex=11, noEntry;
+DateEdit cckdate=cck_file.cckdate, tabIndex=12, noEntry;
+Edit cckoriu=cck_file.cckoriu, tabIndex=501, noEntry;
+Edit cckorig=cck_file.cckorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cck_file.cck01,cck_file.cck02,cck_file.cck_w,formonly.desc,cck_file.cck03,cck_file.cck06,cck_file.cck04,cck_file.cck07,cck_file.cck05,cck_file.cckuser,cck_file.cckmodu,cck_file.cckgrup,cck_file.cckdate,cck_file.cckoriu,cck_file.cckorig,formonly.cnt)
+END -- INSTRUCTIONS
+

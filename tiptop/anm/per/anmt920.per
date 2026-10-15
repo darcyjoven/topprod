@@ -1,0 +1,199 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt920.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt920")
+VBox VBox2
+Folder pc822
+Page page01(text="Main")
+VBox VBox1
+HBox HBox1
+Grid Grid2
+{
+
+ Trans-out Note# [nnv01                       ]
+                 [nmydesc                 ]
+ Document Date   [nnv02      ]
+
+}
+END -- Grid2
+Grid Grid3
+{
+
+  Dept       [nnv03       ] [gem02    ]
+  Cash VarCd [nnv04       |nml02      ]
+
+
+}
+END -- Grid3
+Grid Grid1
+{
+
+ Trans-outVoucher#[nnv34           ]
+ Trans-inVoucher# [nnv35           ][imgmksg]
+ Confirm          [nnvconf         ][       ]
+
+}
+END -- Grid1
+END -- HBox1
+Grid gr4586
+{
+
+ <G group02                                               ><G group03                                                                                                          >
+  Trans-out Plant             [nnv05     ][azp02_1      ]   Trans-in Plant              [nnv20     ][azp02_2      ]
+  Trans-out Bank              [nnv06     ][nma02_1      ]   Trans-in Bank               [nnv21     ][nma02_2      ]
+  Trans-out Tran.Cd           [nnv07][nmc02_1    ]          Trans-in Trans.Cd           [nnv22     ][nmc02_2      ]
+  Trans-out Currency/Ex.Rate  [nnv08     ][nnv09         ]  Trans-in Curr Exchange Rate [nnv23     ][nnv24           ]
+  Trans-out O.C               [nnv10        ]               Trans-in O.C                [nnv25          ]
+  Trans-out H.C               [nnv11        ]               Trans-in H.C                [nnv26          ]
+  Trans-out Acct              [nnv12        ][aag02_1    ]  Trans-in Acct               [nnv27          ][aag02_2    ]
+  Trans-out Acct 2            [nnv121       ][aag02_4    ]  Trans-in Acct 2             [nnv271         ][aag02_5    ]
+  Internal Acc. of Tran.-out  [nnv41        ][nnv41_nma02]  Internal Acc. of Tran.-in   [nnv42          ][nnv42_nma02]
+
+  Charge Band                 [nnv13     ][nma02_3    ]     Pay.Int%                    [nnv28     ]
+  Charge Tran.Cd              [nnv14     ][nmc02_3    ]
+  Charge Curr Exchange Rate   [nnv15     ][nnv16         ]  O.C Paid Amt                [nnv29        ]
+  Charge O.C                  [nnv17      ]                 H.C Paid Amt                [nnv30        ]
+  Charge H.C                  [nnv18      ]                 O.C Paid Int.               [nnv31        ]
+  Charge Acct                 [nnv19      ][aag02_3      ]  H.C Paid Int.               [nnv32        ]
+  Charge Acct 2               [nnv191     ][aag02_6      ]  Last In.P.D                 [nnv33    ]
+
+
+ <                                                        ><                                                                                                                   >
+
+}
+END -- gr4586
+END -- VBox1
+END -- page01
+Page info(text="Info")
+Grid gr4587
+{
+ Record Owner        [nnvuser   ] Last Modified by    [nnvmodu   ] Data Valid Code     [nnvacti   ]
+ Department          [nnvgrup   ] Create/Modify Date  [nnvdate   ]
+ Record Orig.        [nnvoriu   ]
+ Dept Orig.          [nnvorig   ]
+}
+END -- gr4587
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[nnvud01                       ] userdefined_field07[nnvud07        ] userdefined_field13[nnvud13        ]
+                    [                              ] userdefined_field08[nnvud08        ] userdefined_field14[nnvud14        ]
+ userdefined_field02[nnvud02        ]                userdefined_field09[nnvud09        ] userdefined_field15[nnvud15        ]
+ userdefined_field03[nnvud03        ]                userdefined_field10[nnvud10        ]
+ userdefined_field04[nnvud04        ]                userdefined_field11[nnvud11        ]
+ userdefined_field05[nnvud05        ]                userdefined_field12[nnvud12        ]
+ userdefined_field06[nnvud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc822
+Grid gr4588
+{
+  ---------- Rows [cnt   ] ----------
+
+}
+END -- gr4588
+END -- VBox2
+END -- anmt920
+
+TABLES
+nnv_file
+ATTRIBUTES
+ButtonEdit nnv01=nnv_file.nnv01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Documents";
+Edit nmydesc=formonly.nmydesc type CHAR, tabIndex=1, noEntry;
+DateEdit nnv02=nnv_file.nnv02, tabIndex=2, not null, required;
+ButtonEdit nnv03=nnv_file.nnv03, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=1, noEntry;
+ButtonEdit nnv04=nnv_file.nnv04, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nml02=formonly.nml02 type CHAR, tabIndex=1, noEntry;
+Edit nnv34=nnv_file.nnv34, tabIndex=500, noEntry;
+Edit nnv35=nnv_file.nnv35, tabIndex=501, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ComboBox nnvconf=nnv_file.nnvconf, tabIndex=502, noEntry, not null, required, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Cancelled"));
+Group group02:group02, text="Trans-Out";
+ButtonEdit nnv05=nnv_file.nnv05, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit azp02_1=formonly.azp02_1 type CHAR, tabIndex=10, noEntry;
+ButtonEdit nnv06=nnv_file.nnv06, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nma02_1=formonly.nma02_1 type CHAR, tabIndex=12, noEntry;
+ButtonEdit nnv07=nnv_file.nnv07, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nmc02_1=formonly.nmc02_1 type CHAR, tabIndex=14, noEntry;
+ButtonEdit nnv08=nnv_file.nnv08, action=controlp, tabIndex=15, noEntry, image="zoom", comment="<^P>Qry Details";
+ButtonEdit nnv09=nnv_file.nnv09, action=controlp, tabIndex=16, not null, required, image="zoom", comment="<^P>Qry Rate";
+Edit nnv10=nnv_file.nnv10, tabIndex=17, not null, required;
+Edit nnv11=nnv_file.nnv11, tabIndex=18, not null, required;
+ButtonEdit nnv12=nnv_file.nnv12, action=controlp, tabIndex=19, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=20, noEntry;
+ButtonEdit nnv121=nnv_file.nnv121, action=controlp, tabIndex=21, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit aag02_4=formonly.aag02_4 type CHAR, tabIndex=22, noEntry;
+ButtonEdit nnv41=nnv_file.nnv41, action=controlp, tabIndex=23, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nnv41_nma02=formonly.nnv41_nma02 type CHAR, tabIndex=24, noEntry;
+ButtonEdit nnv13=nnv_file.nnv13, action=controlp, tabIndex=25, image="zoom", comment="<^P>Qry Details";
+Edit nma02_3=formonly.nma02_3 type CHAR, tabIndex=26, noEntry;
+ButtonEdit nnv14=nnv_file.nnv14, action=controlp, tabIndex=27, image="zoom", comment="<^P>Qry Details";
+Edit nmc02_3=formonly.nmc02_3 type CHAR, tabIndex=28, noEntry;
+ButtonEdit nnv15=nnv_file.nnv15, action=controlp, tabIndex=29, noEntry, image="zoom", comment="<^P>Qry Details";
+ButtonEdit nnv16=nnv_file.nnv16, action=controlp, tabIndex=30, image="zoom", comment="<^P>Qry Rate";
+Edit nnv17=nnv_file.nnv17, tabIndex=31;
+Edit nnv18=nnv_file.nnv18, tabIndex=32;
+ButtonEdit nnv19=nnv_file.nnv19, action=controlp, tabIndex=33, image="zoom", comment="<^P>Qry Details";
+Edit aag02_3=formonly.aag02_3 type CHAR, tabIndex=34, noEntry;
+ButtonEdit nnv191=nnv_file.nnv191, action=controlp, tabIndex=35, image="zoom", comment="<^P>Qry Details";
+Edit aag02_6=formonly.aag02_6 type CHAR, tabIndex=36, noEntry;
+Group group03:group03, text="Trans-in";
+ButtonEdit nnv20=nnv_file.nnv20, action=controlp, tabIndex=37, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit azp02_2=formonly.azp02_2 type CHAR, tabIndex=38, noEntry;
+ButtonEdit nnv21=nnv_file.nnv21, action=controlp, tabIndex=39, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nma02_2=formonly.nma02_2 type CHAR, tabIndex=40, noEntry;
+ButtonEdit nnv22=nnv_file.nnv22, action=controlp, tabIndex=41, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nmc02_2=formonly.nmc02_2 type CHAR, tabIndex=42, noEntry;
+ButtonEdit nnv23=nnv_file.nnv23, action=controlp, tabIndex=43, noEntry, image="zoom", comment="<^P>Qry Details";
+ButtonEdit nnv24=nnv_file.nnv24, action=controlp, tabIndex=44, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nnv25=nnv_file.nnv25, tabIndex=45, noEntry;
+Edit nnv26=nnv_file.nnv26, tabIndex=46, not null, required;
+ButtonEdit nnv27=nnv_file.nnv27, action=controlp, tabIndex=47, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=48, noEntry;
+ButtonEdit nnv271=nnv_file.nnv271, action=controlp, tabIndex=49, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit aag02_5=formonly.aag02_5 type CHAR, tabIndex=50, noEntry;
+ButtonEdit nnv42=nnv_file.nnv42, action=controlp, tabIndex=51, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nnv42_nma02=formonly.nnv42_nma02 type CHAR, tabIndex=52, noEntry;
+Edit nnv28=nnv_file.nnv28, tabIndex=53, not null, required;
+Edit nnv29=nnv_file.nnv29, tabIndex=54, noEntry, not null, required;
+Edit nnv30=nnv_file.nnv30, tabIndex=55, noEntry, not null, required;
+Edit nnv31=nnv_file.nnv31, tabIndex=56, noEntry, not null, required;
+Edit nnv32=nnv_file.nnv32, tabIndex=57, noEntry, not null, required;
+DateEdit nnv33=nnv_file.nnv33, tabIndex=58, noEntry;
+Edit nnvuser=nnv_file.nnvuser, tabIndex=59, noEntry;
+Edit nnvmodu=nnv_file.nnvmodu, tabIndex=60, noEntry;
+Edit nnvacti=nnv_file.nnvacti, tabIndex=61, noEntry, upShift;
+Edit nnvgrup=nnv_file.nnvgrup, tabIndex=62, noEntry;
+DateEdit nnvdate=nnv_file.nnvdate, tabIndex=63, noEntry;
+Edit nnvoriu=nnv_file.nnvoriu, tabIndex=498, noEntry;
+Edit nnvorig=nnv_file.nnvorig, tabIndex=499, noEntry;
+TextEdit nnvud01=nnv_file.nnvud01, tabIndex=66, stretch=NONE;
+Edit nnvud07=nnv_file.nnvud07, tabIndex=67;
+DateEdit nnvud13=nnv_file.nnvud13, tabIndex=68;
+Edit nnvud08=nnv_file.nnvud08, tabIndex=69;
+DateEdit nnvud14=nnv_file.nnvud14, tabIndex=70;
+Edit nnvud02=nnv_file.nnvud02, tabIndex=71;
+Edit nnvud09=nnv_file.nnvud09, tabIndex=72;
+DateEdit nnvud15=nnv_file.nnvud15, tabIndex=73;
+Edit nnvud03=nnv_file.nnvud03, tabIndex=74;
+Edit nnvud10=nnv_file.nnvud10, tabIndex=75;
+Edit nnvud04=nnv_file.nnvud04, tabIndex=76;
+Edit nnvud11=nnv_file.nnvud11, tabIndex=77;
+Edit nnvud05=nnv_file.nnvud05, tabIndex=78;
+Edit nnvud12=nnv_file.nnvud12, tabIndex=79;
+Edit nnvud06=nnv_file.nnvud06, tabIndex=80;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=64, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nnv_file.nnv01,nnv_file.nnv03,formonly.gem02,formonly.nmydesc,nnv_file.nnv04,formonly.nml02,nnv_file.nnv02,nnv_file.nnv05,formonly.azp02_1,nnv_file.nnv06,formonly.nma02_1,nnv_file.nnv07,formonly.nmc02_1,nnv_file.nnv08,nnv_file.nnv09,nnv_file.nnv10,nnv_file.nnv11,nnv_file.nnv12,formonly.aag02_1,nnv_file.nnv121,formonly.aag02_4,nnv_file.nnv41,formonly.nnv41_nma02,nnv_file.nnv13,formonly.nma02_3,nnv_file.nnv14,formonly.nmc02_3,nnv_file.nnv15,nnv_file.nnv16,nnv_file.nnv17,nnv_file.nnv18,nnv_file.nnv19,formonly.aag02_3,nnv_file.nnv191,formonly.aag02_6,nnv_file.nnv20,formonly.azp02_2,nnv_file.nnv21,formonly.nma02_2,nnv_file.nnv22,formonly.nmc02_2,nnv_file.nnv23,nnv_file.nnv24,nnv_file.nnv25,nnv_file.nnv26,nnv_file.nnv27,formonly.aag02_2,nnv_file.nnv271,formonly.aag02_5,nnv_file.nnv42,formonly.nnv42_nma02,nnv_file.nnv28,nnv_file.nnv29,nnv_file.nnv30,nnv_file.nnv31,nnv_file.nnv32,nnv_file.nnv33,nnv_file.nnvuser,nnv_file.nnvmodu,nnv_file.nnvacti,nnv_file.nnvgrup,nnv_file.nnvdate,nnv_file.nnvoriu,nnv_file.nnvorig,nnv_file.nnvud01,nnv_file.nnvud07,nnv_file.nnvud13,nnv_file.nnvud08,nnv_file.nnvud14,nnv_file.nnvud02,nnv_file.nnvud09,nnv_file.nnvud15,nnv_file.nnvud03,nnv_file.nnvud10,nnv_file.nnvud04,nnv_file.nnvud11,nnv_file.nnvud05,nnv_file.nnvud12,nnv_file.nnvud06,formonly.cnt,nnv_file.nnv34,nnv_file.nnv35,nnv_file.nnvconf,formonly.imgmksg)
+END -- INSTRUCTIONS
+

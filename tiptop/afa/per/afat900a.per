@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat900a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat900a")
+Folder folser01
+Page page01(text="Main")
+VBox VBox1
+Table s_fce
+{
+[fceyn |fce03          |fce031    |faj04  |faj25     |fce04               |fce05               |fce06             |fce061 ]
+[fceyn |fce03          |fce031    |faj04  |faj25     |fce04               |fce05               |fce06             |fce061 ]
+[fceyn |fce03          |fce031    |faj04  |faj25     |fce04               |fce05               |fce06             |fce061 ]
+[fceyn |fce03          |fce031    |faj04  |faj25     |fce04               |fce05               |fce06             |fce061 ]
+[fceyn |fce03          |fce031    |faj04  |faj25     |fce04               |fce05               |fce06             |fce061 ]
+[fceyn |fce03          |fce031    |faj04  |faj25     |fce04               |fce05               |fce06             |fce061 ]
+[fceyn |fce03          |fce031    |faj04  |faj25     |fce04               |fce05               |fce06             |fce061 ]
+[fceyn |fce03          |fce031    |faj04  |faj25     |fce04               |fce05               |fce06             |fce061 ]
+[fceyn |fce03          |fce031    |faj04  |faj25     |fce04               |fce05               |fce06             |fce061 ]
+[fceyn |fce03          |fce031    |faj04  |faj25     |fce04               |fce05               |fce06             |fce061 ]
+
+}
+END -- s_fce
+Grid gr2324
+{
+ <G group1                                  >
+  Total               [tot                 ]
+ <                                          >
+
+}
+END -- gr2324
+END -- VBox1
+END -- page01
+END -- folser01
+END -- afat900a
+
+TABLES
+fce_file
+ATTRIBUTES
+CheckBox fceyn=formonly.fceyn type CHAR, tabIndex=1, title="Y/N", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fce03=fce_file.fce03, tabIndex=2, title="Property No.", noEntry;
+Edit fce031=fce_file.fce031, tabIndex=3, title="Add No.", noEntry;
+Edit faj04=formonly.faj04 type CHAR, tabIndex=4, title="Cate", noEntry;
+DateEdit faj25=formonly.faj25 type CHAR, tabIndex=5, title="Acqu.Dt", noEntry;
+Edit fce04=fce_file.fce04, tabIndex=6, title="Book Value", noEntry;
+Edit fce05=fce_file.fce05, tabIndex=7, title="Mortgage Amt";
+Edit fce06=fce_file.fce06, tabIndex=8, title="Combd.Prop. No.";
+Edit fce061=fce_file.fce061, tabIndex=9, title="Add No.";
+Group group1:group1;
+Edit tot=formonly.tot type DECIMAL, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fce(formonly.fceyn,fce_file.fce03,fce_file.fce031,formonly.faj04,formonly.faj25,fce_file.fce04,fce_file.fce05,fce_file.fce06,fce_file.fce061)
+SCREEN RECORD Undefined(formonly.tot)
+END -- INSTRUCTIONS
+

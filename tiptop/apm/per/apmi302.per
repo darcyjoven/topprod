@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi302.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apmi302")
+VBox vb3
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr3
+{
+  MultiM No     [pmv01            ] [pmv01_ima02        ]
+  provoider No  [pmv02            ] [pmv02_pmc03        ]
+ [pmv06     ]
+
+}
+END -- gr3
+END -- Page1
+END -- pc1
+Table s_pmv
+{
+[pmv03          |pmv03_agc02 |pmv04        |pmv07        |pmv05          |pmv08       |pmv09          |pmv10      ]
+[pmv03          |pmv03_agc02 |pmv04        |pmv07        |pmv05          |pmv08       |pmv09          |pmv10      ]
+[pmv03          |pmv03_agc02 |pmv04        |pmv07        |pmv05          |pmv08       |pmv09          |pmv10      ]
+[pmv03          |pmv03_agc02 |pmv04        |pmv07        |pmv05          |pmv08       |pmv09          |pmv10      ]
+[pmv03          |pmv03_agc02 |pmv04        |pmv07        |pmv05          |pmv08       |pmv09          |pmv10      ]
+[pmv03          |pmv03_agc02 |pmv04        |pmv07        |pmv05          |pmv08       |pmv09          |pmv10      ]
+[pmv03          |pmv03_agc02 |pmv04        |pmv07        |pmv05          |pmv08       |pmv09          |pmv10      ]
+[pmv03          |pmv03_agc02 |pmv04        |pmv07        |pmv05          |pmv08       |pmv09          |pmv10      ]
+[pmv03          |pmv03_agc02 |pmv04        |pmv07        |pmv05          |pmv08       |pmv09          |pmv10      ]
+[pmv03          |pmv03_agc02 |pmv04        |pmv07        |pmv05          |pmv08       |pmv09          |pmv10      ]
+
+}
+END -- s_pmv
+Grid gr5
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5
+END -- vb3
+END -- apmi302
+
+TABLES
+pmv_file
+ATTRIBUTES
+ButtonEdit pmv01=pmv_file.pmv01, action=controlp, tabIndex=1, not null, image="zoom.png";
+Edit pmv01_ima02=formonly.pmv01_ima02 type CHAR, tabIndex=2;
+ButtonEdit pmv02=pmv_file.pmv02, action=controlp, tabIndex=4, not null, image="zoom.png";
+Edit pmv02_pmc03=formonly.pmv02_pmc03 type CHAR, tabIndex=3;
+CheckBox pmv06=pmv_file.pmv06, tabIndex=13, text="pmv06", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit pmv03=pmv_file.pmv03, action=controlp, tabIndex=5, title="Atrribute code", not null, image="zoom";
+Edit pmv03_agc02=formonly.pmv03_agc02 type VARCHAR, tabIndex=6, title="AC note", noEntry;
+ButtonEdit pmv04=pmv_file.pmv04, action=controlp, tabIndex=7, title="Atrribute", image="zoom.png";
+Edit pmv07=pmv_file.pmv07, tabIndex=8, title="Atrribute note", noEntry;
+ButtonEdit pmv05=pmv_file.pmv05, action=controlp, tabIndex=9, title="Replaceable Attribute\n", not null, image="zoom.png";
+Edit pmv08=pmv_file.pmv08, tabIndex=10, title="AT note";
+DateEdit pmv09=pmv_file.pmv09, tabIndex=11, title="Active date", not null;
+DateEdit pmv10=pmv_file.pmv10, tabIndex=12, title="Unactive date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=14;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmv(pmv_file.pmv03,formonly.pmv03_agc02,pmv_file.pmv04,pmv_file.pmv07,pmv_file.pmv05,pmv_file.pmv08,pmv_file.pmv09,pmv_file.pmv10)
+SCREEN RECORD Undefined(pmv_file.pmv01,formonly.pmv01_ima02,pmv_file.pmv02,formonly.pmv02_pmc03,pmv_file.pmv06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

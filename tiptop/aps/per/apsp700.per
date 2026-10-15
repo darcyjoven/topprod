@@ -1,0 +1,45 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsp700.per created Wed Dec 31 05:30:03 2008
+-- File created from apsp700.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="PDA Self Tester")
+  VBOX 
+    GROUP gb3( TEXT="Configuration")
+
+      GRID gr3
+      {
+       Web Services URL [aa0                                                     ]
+
+
+      }
+      END -- GRID
+    END -- GROUP
+    GROUP gb4( TEXT="Response Output")
+      GRID gr4
+      {
+      [aa1                                                                      ]
+      [                                                                         ]
+      [                                                                         ]
+      [                                                                         ]
+      [                                                                         ]
+      [                                                                         ]
+      [                                                                         ]
+      [                                                                         ]
+      [                                                                         ]
+      [                                                                         ]
+
+      }
+      END -- GRID
+
+    END -- GROUP
+  END -- VBOX
+END
+ATTRIBUTES
+  EDIT aa0=FORMONLY.url, NOT NULL, REQUIRED, SCROLL, TABINDEX=1;
+  TEXTEDIT aa1=FORMONLY.out, NOENTRY, SCROLLBARS=BOTH, STRETCH=BOTH, TABINDEX=2;
+END

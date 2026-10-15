@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afar450.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"afar350")
+VBox VBox1
+Grid Grid1
+{
+ <G grpqbe                                               >
+   Asset Category               [faj04               ]
+   Sub-Category                 [faj05               ]
+   Property No.                 [faj02               ]
+   Chinese Name                 [faj06               ]
+ <                                                       >
+ <G group01                                              >
+   Department                   [fao06               ]
+   Enter Depreciation YY/MM     [yyyy      ][mm        ]
+ <                                                       >
+ <G group02                                              >
+ [s1                 ] [s2                  ]
+ [t1                 ] [t2                  ]
+ [u1                 ] [u2                  ]
+ <                                                       >
+[more                                         ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- afar350
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+ButtonEdit faj04=formonly.faj04 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit faj05=formonly.faj05 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit faj02=formonly.faj02 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="";
+ButtonEdit faj06=formonly.faj06 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="";
+Group group01:group01, text="INPUT";
+ButtonEdit fao06=formonly.fao06 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit yyyy=formonly.yyyy type CHAR, tabIndex=6;
+Edit mm=formonly.mm type CHAR, tabIndex=7;
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, queryEditable, items=(("1", %"Asset Category"),("2", %"Sub-Category"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=9, queryEditable, items=(("1", %"Asset Category"),("2", %"Sub-Category"));
+CheckBox t1=formonly.t1 type VARCHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type VARCHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type VARCHAR, tabIndex=12, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type VARCHAR, tabIndex=13, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.faj04,formonly.faj05,formonly.faj02,formonly.faj06,formonly.fao06,formonly.yyyy,formonly.mm,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.u1,formonly.u2,formonly.more)
+END -- INSTRUCTIONS
+

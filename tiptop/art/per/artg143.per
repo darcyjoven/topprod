@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artg143.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                                           >
+ [label1    ]  [azw01                ]
+ [label2    ]  [rtz10                ]
+ <                                                                   >
+ <G group2                                                          >
+ [date     ]  [yy       ] /[mm    ]
+ [cb1                               ]
+ [cb2                               ]
+ [cb3                               ]
+ <                                                                  >
+
+}
+END -- Grid1
+Grid Grid4
+{
+ [more                 ]
+
+}
+END -- Grid4
+END -- VBox1
+END -- Form
+
+TABLES
+azw_file,
+rtz_file
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+Label label1:Label1, text=%"Plant";
+ButtonEdit azw01=formonly.azw01 type like azw_file.azw01, action=controlp, tabIndex=1, image="zoom";
+Label label2:Label2, text=%"City";
+ButtonEdit rtz10=formonly.rtz10 type like rtz_file.rtz10, action=controlp, tabIndex=2, image="zoom";
+Group group2:Group2, text=%"Group2";
+Label date:date, text=%"YY/MM";
+Edit yy=formonly.yy type CHAR, tabIndex=3, not null, required;
+Edit mm=formonly.mm type CHAR, tabIndex=4, not null, required;
+CheckBox cb1=formonly.cb1 type CHAR, tabIndex=5, text=%"CheckBox1", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox cb2=formonly.cb2 type CHAR, tabIndex=6, text=%"CheckBox2", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox cb3=formonly.cb3 type CHAR, tabIndex=7, text=%"CheckBox3", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=8, text=%"more", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azw01,formonly.rtz10,formonly.yy,formonly.mm,formonly.cb1,formonly.cb2,formonly.cb3,formonly.more)
+END -- INSTRUCTIONS
+

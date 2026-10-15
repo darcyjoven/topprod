@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr801.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmr811")
+VBox VBox1
+Grid gr5200
+{
+
+ <G group01                                  >
+  Supplier            [rva05               ]
+  Receiving Report No.[rva01               ]
+  Item No.            [rvb05               ]
+  Receipt Date        [rva06               ]
+  PO No               [rvb04               ]
+ <                                           >
+
+ <G group1                                   >
+ [e                                ]
+ <                                           >
+
+
+
+}
+END -- gr5200
+Grid gr5202
+{
+
+ [more                                        ]
+
+
+}
+END -- gr5202
+END -- VBox1
+END -- apmr801
+
+TABLES
+rvb_file,
+rva_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit rva05=rva_file.rva05, action=controlp, tabIndex=1, image="zoom";
+Edit rva01=rva_file.rva01, tabIndex=2;
+ButtonEdit rvb05=rvb_file.rvb05, action=controlp, tabIndex=3, image="zoom";
+DateEdit rva06=rva_file.rva06, tabIndex=4;
+Edit rvb04=rvb_file.rvb04, tabIndex=5;
+Group group1:Group1, text=%"";
+CheckBox e=formonly.e, tabIndex=7, text=%"QC materials and parts to determine whether", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rva_file.rva05,rva_file.rva01,rvb_file.rvb05,rva_file.rva06,rvb_file.rvb04,formonly.more,formonly.e)
+END -- INSTRUCTIONS
+

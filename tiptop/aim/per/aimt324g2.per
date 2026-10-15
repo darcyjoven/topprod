@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt324g2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimt324g2")
+VBox VBox1
+Grid gr3434
+{
+ <G group01                                              >
+ [dummy01]
+    Item No.            [imgg01                        ]
+    Warehouse#          [imgg02                        ]
+    Location#           [imgg03                        ]
+    Lot#                [imgg04                        ]
+    Unit                [imgg09                        ]
+ <                                                       >
+ <G group02                                   >
+ [dummy02]
+   Warehouse#           [t_imgg02  ]
+   Location#            [t_imgg03  ]
+   Lot#                 [t_imgg04  ]
+ <                                            >
+
+}
+END -- gr3434
+END -- VBox1
+END -- aimt324g2
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Label dummy01:dummy01, text="Enter Source of Transfer:";
+Edit imgg01=formonly.imgg01 type CHAR, tabIndex=1;
+Edit imgg02=formonly.imgg02 type CHAR, tabIndex=2;
+Edit imgg03=formonly.imgg03 type CHAR, tabIndex=3;
+Edit imgg04=formonly.imgg04 type CHAR, tabIndex=4;
+Edit imgg09=formonly.imgg09 type CHAR, tabIndex=5;
+Group group02:group02;
+Label dummy02:dummy02, text="Enter Target of Transfer:";
+Edit t_imgg02=formonly.t_imgg02 type CHAR, tabIndex=6, comment="Blank: By Ori.W/H";
+Edit t_imgg03=formonly.t_imgg03 type CHAR, tabIndex=7, comment="Blank: By Ori.Location";
+Edit t_imgg04=formonly.t_imgg04 type CHAR, tabIndex=8, comment="Blank: By Ori.Lot #";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.imgg01,formonly.imgg02,formonly.imgg03,formonly.imgg04,formonly.imgg09,formonly.t_imgg02,formonly.t_imgg03,formonly.t_imgg04)
+END -- INSTRUCTIONS
+

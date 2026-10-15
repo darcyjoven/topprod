@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt420_m.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"apmt420_m")
+VBox vb4
+Grid gr26
+{
+ No.        [pml02       ]
+
+}
+END -- gr26
+Table tb4
+{
+[pmk09       |pmc03   ]
+[pmk09       |pmc03   ]
+[pmk09       |pmc03   ]
+[pmk09       |pmc03   ]
+[pmk09       |pmc03   ]
+
+}
+END -- tb4
+END -- vb4
+END -- Form3
+
+ATTRIBUTES
+Edit pml02=formonly.pml02 type CHAR, tabIndex=1, noEntry;
+ButtonEdit pmk09=formonly.pmk09 type CHAR, action=CONTROLP, tabIndex=2, title="Manufacturer No.", not null, required, image="zoom.png";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=3, title="Manufacturer Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tb4(formonly.pmk09,formonly.pmc03)
+SCREEN RECORD Undefined(formonly.pml02)
+END -- INSTRUCTIONS
+

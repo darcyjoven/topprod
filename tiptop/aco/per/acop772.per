@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acop772.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acop772")
+Folder pc203
+Page page01(text="Main")
+VBox vb4
+Grid gr1309
+{
+ <G group01                                          >
+   Invoice No.      [rva09               ]
+   Delivery Date    [rva06               ]
+   Vendor No.       [rva05               ]
+
+ <                                                   >
+
+}
+END -- gr1309
+Grid gr1310
+{
+[g_bgjob         ]
+
+}
+END -- gr1310
+END -- vb4
+END -- page01
+END -- pc203
+END -- acop772
+
+TABLES
+rva_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit rva09=rva_file.rva09, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Details";
+DateEdit rva06=rva_file.rva06, tabIndex=1, not null, required;
+ButtonEdit rva05=rva_file.rva05, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Details";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=3, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rva_file.rva09,rva_file.rva06,rva_file.rva05,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

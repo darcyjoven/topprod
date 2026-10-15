@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdp100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdp100")
+VBox VBox1
+Grid gr370
+{
+ <G group01                                                  >
+  Item No.            [ima01               ]
+  Group Code 3        [ima11               ]
+  Group Code 4        [ima12               ]
+  Source Code         [ima08               ]
+ <                                                           >
+ <G group02                                                            >
+ [a                  ]  Direct Labor Apportioning Ratio   [sta05     ]
+ [b                  ]  Indirect Overhead Apportion.Ratio [sta06     ]
+ [c                  ]  Standard Labor Hour               [sta03     ]
+ <                                                                     >
+
+}
+END -- gr370
+Grid gr371
+{
+ [g_bgj]
+
+}
+END -- gr371
+END -- VBox1
+END -- asdp100
+
+TABLES
+ima_file,
+sta_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima11=ima_file.ima11, tabIndex=2;
+Edit ima12=ima_file.ima12, tabIndex=3;
+Edit ima08=ima_file.ima08, tabIndex=4;
+Group group02:group02, text="INPUT";
+CheckBox a=formonly.a type CHAR, tabIndex=5, text="Modify This Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sta05=sta_file.sta05, tabIndex=6;
+CheckBox b=formonly.b type CHAR, tabIndex=7, text="Modify This Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sta06=sta_file.sta06, tabIndex=8;
+CheckBox c=formonly.c type CHAR, tabIndex=9, text="Modify This Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sta03=sta_file.sta03, tabIndex=10;
+CheckBox g_bgj=formonly.g_bgjob type CHAR, tabIndex=11, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima11,ima_file.ima12,ima_file.ima08,formonly.a,sta_file.sta05,formonly.b,sta_file.sta06,formonly.c,sta_file.sta03,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

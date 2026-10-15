@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asrp100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asrp100")
+VBox VBox1
+Grid gr985
+{
+ <G group01                                                                                             >
+    Plan Day [sre06b    ]-[sre06e    ]
+    Machine  [sre03     ][eci06               ]  Class [class      ][ecg02            ]     [betran    ]
+ <                                                                                                      >
+
+}
+END -- gr985
+Table s_sre
+{
+[sel |sre06    |sre05   |sre04               |ima02               |ima021              |ima55|sre07   |sre12    ]
+[sel |sre06    |sre05   |sre04               |ima02               |ima021              |ima55|sre07   |sre12    ]
+[sel |sre06    |sre05   |sre04               |ima02               |ima021              |ima55|sre07   |sre12    ]
+[sel |sre06    |sre05   |sre04               |ima02               |ima021              |ima55|sre07   |sre12    ]
+[sel |sre06    |sre05   |sre04               |ima02               |ima021              |ima55|sre07   |sre12    ]
+[sel |sre06    |sre05   |sre04               |ima02               |ima021              |ima55|sre07   |sre12    ]
+[sel |sre06    |sre05   |sre04               |ima02               |ima021              |ima55|sre07   |sre12    ]
+[sel |sre06    |sre05   |sre04               |ima02               |ima021              |ima55|sre07   |sre12    ]
+[sel |sre06    |sre05   |sre04               |ima02               |ima021              |ima55|sre07   |sre12    ]
+[sel |sre06    |sre05   |sre04               |ima02               |ima021              |ima55|sre07   |sre12    ]
+
+}
+END -- s_sre
+Group group03(text="INPUT")
+HBox HBox1
+Grid gr986
+{
+ <G group06                                 >
+  Trans-out Ware [from_w    ]
+  Trans-out Loc. [from_l    ]
+  TrnType        [tr_no     ]
+  Task No        [b_seq     ] - [e_seq     ]
+  WH-Kpr         [b_keeper  ] - [e_keeper  ]
+                 [o]
+                 [m]
+ <                                          >
+
+}
+END -- gr986
+Grid gr987
+{
+ <G group07                                 >
+   Trans-in Ware [to_w      ]
+   Trans-in Loc. [to_l      ]
+   Tran Day      [tr_date   ]
+ <                                          >
+
+
+
+
+
+}
+END -- gr987
+END -- HBox1
+END -- group03
+END -- VBox1
+END -- asrp100
+
+TABLES
+sre_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit sre06b=formonly.sre06b type DATE, tabIndex=1, not null, required;
+DateEdit sre06e=formonly.sre06e type DATE, tabIndex=2, not null, required;
+ButtonEdit sre03=sre_file.sre03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!    <^Y>Enter Item Detail";
+Edit eci06=formonly.eci06 type CHAR, tabIndex=4, noEntry;
+ButtonEdit class=formonly.class type CHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Shift ";
+Edit ecg02=formonly.ecg02 type CHAR, tabIndex=6, noEntry;
+CheckBox betran=formonly.betran type VARCHAR, tabIndex=7, text="Already Trans ?", valueChecked = "Y", valueUnchecked = "N";
+CheckBox sel=formonly.sel type VARCHAR, tabIndex=8, title="sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sre06=sre_file.sre06, tabIndex=9, title="Plan Day", noEntry;
+Edit sre05=sre_file.sre05, tabIndex=10, title="Class", noEntry;
+Edit sre04=sre_file.sre04, tabIndex=11, title="Item No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=12, title="Desc.", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=13, title="Spec.", noEntry;
+Edit ima55=formonly.ima55 type CHAR, tabIndex=14, title="Unit", noEntry;
+Edit sre07=sre_file.sre07, tabIndex=15, title="Pack";
+CheckBox sre12=sre_file.sre12, tabIndex=16, title="Trans", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Group group06:group06;
+ButtonEdit from_w=formonly.from_w type VARCHAR, action=controlp, tabIndex=17, not null, required, image="zoom";
+ButtonEdit from_l=formonly.from_l type VARCHAR, action=controlp, tabIndex=18, image="zoom";
+ButtonEdit tr_no=formonly.tr_no type VARCHAR, action=controlp, tabIndex=19, not null, required, image="zoom";
+ButtonEdit b_seq=formonly.b_seq type CHAR, action=controlp, tabIndex=20, image="zoom";
+ButtonEdit e_seq=formonly.e_seq type CHAR, action=controlp, tabIndex=21, image="zoom";
+ButtonEdit b_keeper=formonly.b_keeper type CHAR, action=controlp, tabIndex=22, image="zoom";
+ButtonEdit e_keeper=formonly.e_keeper type CHAR, action=controlp, tabIndex=23, image="zoom";
+CheckBox o=formonly.order_sw type VARCHAR, tabIndex=24, text="Sequence by W/H Keeper?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox m=formonly.more type CHAR, tabIndex=25, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group07:group07;
+ButtonEdit to_w=formonly.to_w type VARCHAR, action=controlp, tabIndex=26, not null, required, image="zoom";
+ButtonEdit to_l=formonly.to_l type VARCHAR, action=controlp, tabIndex=27, image="zoom";
+DateEdit tr_date=formonly.tr_date type DATE, tabIndex=28, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sre(formonly.sel,sre_file.sre06,sre_file.sre05,sre_file.sre04,formonly.ima02,formonly.ima021,formonly.ima55,sre_file.sre07,sre_file.sre12)
+SCREEN RECORD Undefined(formonly.sre06b,formonly.sre06e,sre_file.sre03,formonly.eci06,formonly.class,formonly.ecg02,formonly.betran,formonly.from_w,formonly.from_l,formonly.tr_no,formonly.b_seq,formonly.e_seq,formonly.b_keeper,formonly.e_keeper,formonly.order_sw,formonly.more,formonly.to_w,formonly.to_l,formonly.tr_date)
+END -- INSTRUCTIONS
+

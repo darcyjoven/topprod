@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_zab.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Report Memo")
+Grid gr3852
+{
+ <T s_zab                                                                                                                               >
+ [zab01      |zab02                         |zab05                                                                                     ]
+ [zab01      |zab02                         |zab05                                                                                     ]
+ [zab01      |zab02                         |zab05                                                                                     ]
+ [zab01      |zab02                         |zab05                                                                                     ]
+ [zab01      |zab02                         |zab05                                                                                     ]
+ [zab01      |zab02                         |zab05                                                                                     ]
+ [zab01      |zab02                         |zab05                                                                                     ]
+ [zab01      |zab02                         |zab05                                                                                     ]
+ [zab01      |zab02                         |zab05                                                                                     ]
+ [zab01      |zab02                         |zab05                                                                                     ]
+ <                                                                                                                                      >
+
+}
+END -- gr3852
+END -- q_zab
+
+TABLES
+zab_file
+ATTRIBUTES
+Table s_zab:s_zab;
+Edit zab01=zab_file.zab01, tabIndex=1, title="Memo Code", noEntry;
+Edit zab02=zab_file.zab02, tabIndex=2, title="Memo Name", noEntry;
+TextEdit zab05=zab_file.zab05, tabIndex=3, title="Memo Contect", noEntry, stretch=NONE;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zab(zab_file.zab01,zab_file.zab02,zab_file.zab05)
+END -- INSTRUCTIONS
+

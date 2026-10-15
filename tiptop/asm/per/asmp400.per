@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asmp400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asmp400")
+VBox VBox1
+Grid gr877
+{
+ <G group01                                      >
+  Set Date Range      [sme01_b     ]
+              To      [sme01_e     ]
+ [c                   ]
+ [d                   ]
+ [e                   ]
+ [f                   ]
+ [g                   ]
+ [h                   ]
+ [i                   ]
+ [j                   ]
+ <                                               >
+
+}
+END -- gr877
+Grid gr878
+{
+ [g_bgjob                          ]
+
+}
+END -- gr878
+END -- VBox1
+END -- asmp400
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+DateEdit sme01_b=formonly.sme01_b type DATE, tabIndex=1;
+DateEdit sme01_e=formonly.sme01_e type DATE, tabIndex=2;
+CheckBox c=formonly.c type VARCHAR, tabIndex=3, text="Work on Monday?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=4, text="Work on Tuesday?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=5, text="Work on Wednesday?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type VARCHAR, tabIndex=6, text="Work on Thursday?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type VARCHAR, tabIndex=7, text="Work on Friday?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type VARCHAR, tabIndex=8, text="Work on Saturday?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox i=formonly.i type VARCHAR, tabIndex=9, text="Work on Sunday?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox j=formonly.j type VARCHAR, tabIndex=10, text="2 Saturday Off?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=11, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sme01_b,formonly.sme01_e,formonly.c,formonly.d,formonly.e,formonly.f,formonly.g,formonly.h,formonly.i,formonly.j,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

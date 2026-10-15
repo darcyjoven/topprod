@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri006_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table s_hrata
+{
+[hrata01   |hrat02        |hrata02  |hrata03  |hrata04             |hrata05   |hrata05_name        |hrata06   |hrata06_name        |hrata07   |hrata08   |hrata08_name        ]
+[hrata01   |hrat02        |hrata02  |hrata03  |hrata04             |hrata05   |hrata05_name        |hrata06   |hrata06_name        |hrata07   |hrata08   |hrata08_name        ]
+[hrata01   |hrat02        |hrata02  |hrata03  |hrata04             |hrata05   |hrata05_name        |hrata06   |hrata06_name        |hrata07   |hrata08   |hrata08_name        ]
+[hrata01   |hrat02        |hrata02  |hrata03  |hrata04             |hrata05   |hrata05_name        |hrata06   |hrata06_name        |hrata07   |hrata08   |hrata08_name        ]
+[hrata01   |hrat02        |hrata02  |hrata03  |hrata04             |hrata05   |hrata05_name        |hrata06   |hrata06_name        |hrata07   |hrata08   |hrata08_name        ]
+[hrata01   |hrat02        |hrata02  |hrata03  |hrata04             |hrata05   |hrata05_name        |hrata06   |hrata06_name        |hrata07   |hrata08   |hrata08_name        ]
+[hrata01   |hrat02        |hrata02  |hrata03  |hrata04             |hrata05   |hrata05_name        |hrata06   |hrata06_name        |hrata07   |hrata08   |hrata08_name        ]
+[hrata01   |hrat02        |hrata02  |hrata03  |hrata04             |hrata05   |hrata05_name        |hrata06   |hrata06_name        |hrata07   |hrata08   |hrata08_name        ]
+[hrata01   |hrat02        |hrata02  |hrata03  |hrata04             |hrata05   |hrata05_name        |hrata06   |hrata06_name        |hrata07   |hrata08   |hrata08_name        ]
+[hrata01   |hrat02        |hrata02  |hrata03  |hrata04             |hrata05   |hrata05_name        |hrata06   |hrata06_name        |hrata07   |hrata08   |hrata08_name        ]
+}
+END -- s_hrata
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+  ---------- cn2[cn2       ]----------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrata01=formonly.hrata01 type VARCHAR, action=controlp, tabIndex=12, title=%"hrata01", image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=13, title=%"hrat02", noEntry;
+DateEdit hrata02=formonly.hrata02 type DATE, tabIndex=1, title=%"hrata02", not null, required;
+DateEdit hrata03=formonly.hrata03 type DATE, tabIndex=2, title=%"hrata03", not null, required;
+Edit hrata04=formonly.hrata04 type VARCHAR, tabIndex=3, title=%"hrata04", not null, required;
+ButtonEdit hrata05=formonly.hrata05 type VARCHAR, action=controlp, tabIndex=5, title=%"hrata05", image="zoom";
+Edit hrata05_name=formonly.hrata05_name type VARCHAR, tabIndex=9, title=%"hrata05_name", noEntry;
+ButtonEdit hrata06=formonly.hrata06 type VARCHAR, action=controlp, tabIndex=6, title=%"hrata06", image="zoom";
+Edit hrata06_name=formonly.hrata06_name type VARCHAR, tabIndex=10, title=%"hrata06_name", noEntry;
+Edit hrata07=formonly.hrata07 type VARCHAR, tabIndex=7, title=%"hrata07";
+ButtonEdit hrata08=formonly.hrata08 type VARCHAR, action=controlp, tabIndex=4, title=%"hrata08", image="zoom";
+Edit hrata08_name=formonly.hrata08_name type VARCHAR, tabIndex=11, title=%"hrata08_name", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrata(formonly.hrata01,formonly.hrat02,formonly.hrata02,formonly.hrata03,formonly.hrata04,formonly.hrata05,formonly.hrata05_name,formonly.hrata06,formonly.hrata06_name,formonly.hrata07,formonly.hrata08,formonly.hrata08_name)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

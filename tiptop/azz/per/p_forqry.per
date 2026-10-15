@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_forqry.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_forqry")
+VBox VBox1
+Grid Grid1
+{
+ Query Name[a                    ]
+ Query Desc[b                    ]
+ [c             ]
+ [d                              ]
+}
+END -- Grid1
+END -- VBox1
+END -- p_forqry
+
+ATTRIBUTES
+Edit a=formonly.a type CHAR, tabIndex=1, not null, required;
+Edit b=formonly.b type CHAR, tabIndex=2;
+CheckBox c=formonly.c type CHAR, tabIndex=3, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type CHAR, tabIndex=4, not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.b,formonly.c,formonly.d)
+END -- INSTRUCTIONS
+

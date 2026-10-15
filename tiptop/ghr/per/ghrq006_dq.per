@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrq006_dq.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrat01    |hrat02     |hrat04     |hrao02  |hrat14  ]
+[hrat01    |hrat02     |hrat04     |hrao02  |hrat14  ]
+[hrat01    |hrat02     |hrat04     |hrao02  |hrat14  ]
+[hrat01    |hrat02     |hrat04     |hrao02  |hrat14  ]
+[hrat01    |hrat02     |hrat04     |hrao02  |hrat14  ]
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+  -----------------[label1][cn2    ] -----------------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrat01=formonly.hrat01 type VARCHAR, action=controlp, tabIndex=1, title=%"hrat01", image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=3, title=%"hrat02";
+Edit hrat04=formonly.hrat04 type VARCHAR, tabIndex=4, title=%"hrat04";
+ButtonEdit hrao02=formonly.hrao02, action=controlp, tabIndex=5, title=%"hrao02", image="zoom";
+DateEdit hrat14=formonly.hrat14, tabIndex=6, title=%"hrat14";
+Label label1:Label1, text=%"cn2";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_dq(formonly.hrat01,formonly.hrat02,formonly.hrat04,formonly.hrao02,formonly.hrat14)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi310")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr731
+{
+ Item No.            [bmj01                         ]
+ P/N Spec            [ima02                         ]
+ Specification       [ima021                        ]
+}
+END -- gr731
+Grid gr732
+{
+ Version             [ima05     ]
+ Source Code         [ima08     ]
+ Pur                 [desc      ]
+}
+END -- gr732
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_bmj
+{
+[bmj02     |mse02     |bmj03     |pmc03     |bmj04              |bmj05     |bmj06     |bmj07   |gen02    |bmj08    |bmj10     |bmj11   |bmj12                         ]
+[bmj02     |mse02     |bmj03     |pmc03     |bmj04              |bmj05     |bmj06     |bmj07   |gen02    |bmj08    |bmj10     |bmj11   |bmj12                         ]
+[bmj02     |mse02     |bmj03     |pmc03     |bmj04              |bmj05     |bmj06     |bmj07   |gen02    |bmj08    |bmj10     |bmj11   |bmj12                         ]
+[bmj02     |mse02     |bmj03     |pmc03     |bmj04              |bmj05     |bmj06     |bmj07   |gen02    |bmj08    |bmj10     |bmj11   |bmj12                         ]
+[bmj02     |mse02     |bmj03     |pmc03     |bmj04              |bmj05     |bmj06     |bmj07   |gen02    |bmj08    |bmj10     |bmj11   |bmj12                         ]
+[bmj02     |mse02     |bmj03     |pmc03     |bmj04              |bmj05     |bmj06     |bmj07   |gen02    |bmj08    |bmj10     |bmj11   |bmj12                         ]
+[bmj02     |mse02     |bmj03     |pmc03     |bmj04              |bmj05     |bmj06     |bmj07   |gen02    |bmj08    |bmj10     |bmj11   |bmj12                         ]
+[bmj02     |mse02     |bmj03     |pmc03     |bmj04              |bmj05     |bmj06     |bmj07   |gen02    |bmj08    |bmj10     |bmj11   |bmj12                         ]
+[bmj02     |mse02     |bmj03     |pmc03     |bmj04              |bmj05     |bmj06     |bmj07   |gen02    |bmj08    |bmj10     |bmj11   |bmj12                         ]
+[bmj02     |mse02     |bmj03     |pmc03     |bmj04              |bmj05     |bmj06     |bmj07   |gen02    |bmj08    |bmj10     |bmj11   |bmj12                         ]
+
+}
+END -- s_bmj
+Grid gr733
+{
+  ---------- Rows [cnt   ] / [cnt2  ] ----------
+
+}
+END -- gr733
+END -- VBox1
+END -- abmi310
+
+TABLES
+bmj_file
+ATTRIBUTES
+ButtonEdit bmj01=bmj_file.bmj01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Query Item   ";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=4, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=5, noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=6, noEntry;
+ButtonEdit bmj02=bmj_file.bmj02, action=controlp, tabIndex=7, title="Maker", not null, required, image="zoom", comment="<^P>Qry Maker      <^Y>Create Brand";
+Edit mse02=formonly.mse02 type CHAR, tabIndex=8, title="Brand", noEntry;
+ButtonEdit bmj03=bmj_file.bmj03, action=controlp, tabIndex=9, title="Supplr#", not null, required, image="zoom", comment="<^P>Qry Supplier  ";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=10, title="Supplr", noEntry;
+Edit bmj04=bmj_file.bmj04, tabIndex=11, title="Ven Item No.", comment="<^Y>Crt Vend Item Ext.Data";
+Edit bmj05=bmj_file.bmj05, tabIndex=12, title="Sample#";
+DateEdit bmj06=bmj_file.bmj06, tabIndex=13, title="Smple Date";
+ButtonEdit bmj07=bmj_file.bmj07, action=controlp, tabIndex=14, title="Sent by", image="zoom", comment="<^P>Qry  Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=15, title="Employee", noEntry;
+ComboBox bmj08=bmj_file.bmj08, tabIndex=16, title="Appr.Sts", not null, required, queryEditable, items=(("0", %"Sent"),("1", %"Testg"),("2", %"Cntsgn"),("3", %"Apprvd"),("4", %"Reject X.N-Sent"));
+Edit bmj10=bmj_file.bmj10, tabIndex=17, title="Appr.No";
+DateEdit bmj11=bmj_file.bmj11, tabIndex=18, title="Appr.Dt";
+Edit bmj12=bmj_file.bmj12, tabIndex=19, title="Memo";
+Edit cnt=formonly.cnt type CHAR, tabIndex=20, noEntry;
+Edit cnt2=formonly.cnt2 type CHAR, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmj(bmj_file.bmj02,formonly.mse02,bmj_file.bmj03,formonly.pmc03,bmj_file.bmj04,bmj_file.bmj05,bmj_file.bmj06,bmj_file.bmj07,formonly.gen02,bmj_file.bmj08,bmj_file.bmj10,bmj_file.bmj11,bmj_file.bmj12)
+SCREEN RECORD Undefined(bmj_file.bmj01,formonly.ima02,formonly.ima021,formonly.ima05,formonly.ima08,formonly.desc,formonly.cnt,formonly.cnt2)
+END -- INSTRUCTIONS
+

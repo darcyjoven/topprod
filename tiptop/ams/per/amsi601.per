@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsi601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amsi601")
+VBox VBox1
+Folder pc726
+Page page01(text="Main")
+Grid gr3934
+{
+ Resource Item       [rpf01     ]
+ Description         [rpf02               ]
+ Work Center         [rpf06     ] [eca02               ]
+[rpf07                                    ]
+ Resource Qty        [rpf04               ]
+ Capacity Unit       [rpf03     ]
+}
+END -- gr3934
+END -- page01
+Page info(text="Info")
+Grid gr3935
+{
+ Record Owner        [rpfuser   ] Last Modified by    [rpfmodu   ] Data Valid Code     [rpfacti   ]
+ Department          [rpfgrup   ] Create/Modify Date  [rpfdate   ]
+ Record Orig.        [rpforiu   ]
+ Dept Orig.          [rpforig   ]
+}
+END -- gr3935
+END -- info
+END -- pc726
+Grid gr3936
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3936
+END -- VBox1
+END -- amsi601
+
+TABLES
+rpf_file
+ATTRIBUTES
+Edit rpf01=rpf_file.rpf01, tabIndex=1, not null, required, comment="Key Field, No Blank/Repeated!    ";
+Edit rpf02=rpf_file.rpf02, tabIndex=2;
+ButtonEdit rpf06=rpf_file.rpf06, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Work Center";
+Edit eca02=formonly.eca02 type CHAR, tabIndex=4, noEntry;
+CheckBox rpf07=rpf_file.rpf07, tabIndex=5, text="Rough Capacity Include", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rpf04=rpf_file.rpf04, tabIndex=6;
+RadioGroup rpf03=rpf_file.rpf03, tabIndex=7, items=(("1", "Labor Hour"),("2", "Machine Time"));
+Edit rpfuser=rpf_file.rpfuser, tabIndex=8, noEntry;
+Edit rpfmodu=rpf_file.rpfmodu, tabIndex=9, noEntry;
+Edit rpfacti=rpf_file.rpfacti, tabIndex=10, noEntry, upShift;
+Edit rpfgrup=rpf_file.rpfgrup, tabIndex=11, noEntry;
+DateEdit rpfdate=rpf_file.rpfdate, tabIndex=12, noEntry;
+Edit rpforiu=rpf_file.rpforiu, tabIndex=501, noEntry;
+Edit rpforig=rpf_file.rpforig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rpf_file.rpf01,rpf_file.rpf02,rpf_file.rpf06,formonly.eca02,rpf_file.rpf07,rpf_file.rpf04,rpf_file.rpf03,rpf_file.rpfuser,rpf_file.rpfmodu,rpf_file.rpfacti,rpf_file.rpfgrup,rpf_file.rpfdate,rpf_file.rpforiu,rpf_file.rpforig,formonly.cnt)
+END -- INSTRUCTIONS
+

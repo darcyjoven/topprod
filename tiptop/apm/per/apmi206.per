@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi206.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi206")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+Grid gr4831
+{
+ Vender No.          [pmc01     ][pmc03     ]
+ Current Status      [pmc05      ]
+}
+END -- gr4831
+END -- page01
+END -- folder01
+Table s_pmf
+{
+[pmf02      |nmt02                   |pmf13        |pmf03                         |pmf04          |pmf08     |pmf09     |pmf14          |pmf15       |pmf12             |pmf11       |pmf06                      |pmf07               |pmf10     |pmf05 |pmfact]
+[pmf02      |nmt02                   |pmf13        |pmf03                         |pmf04          |pmf08     |pmf09     |pmf14          |pmf15       |pmf12             |pmf11       |pmf06                      |pmf07               |pmf10     |pmf05 |pmfact]
+[pmf02      |nmt02                   |pmf13        |pmf03                         |pmf04          |pmf08     |pmf09     |pmf14          |pmf15       |pmf12             |pmf11       |pmf06                      |pmf07               |pmf10     |pmf05 |pmfact]
+[pmf02      |nmt02                   |pmf13        |pmf03                         |pmf04          |pmf08     |pmf09     |pmf14          |pmf15       |pmf12             |pmf11       |pmf06                      |pmf07               |pmf10     |pmf05 |pmfact]
+[pmf02      |nmt02                   |pmf13        |pmf03                         |pmf04          |pmf08     |pmf09     |pmf14          |pmf15       |pmf12             |pmf11       |pmf06                      |pmf07               |pmf10     |pmf05 |pmfact]
+[pmf02      |nmt02                   |pmf13        |pmf03                         |pmf04          |pmf08     |pmf09     |pmf14          |pmf15       |pmf12             |pmf11       |pmf06                      |pmf07               |pmf10     |pmf05 |pmfact]
+[pmf02      |nmt02                   |pmf13        |pmf03                         |pmf04          |pmf08     |pmf09     |pmf14          |pmf15       |pmf12             |pmf11       |pmf06                      |pmf07               |pmf10     |pmf05 |pmfact]
+[pmf02      |nmt02                   |pmf13        |pmf03                         |pmf04          |pmf08     |pmf09     |pmf14          |pmf15       |pmf12             |pmf11       |pmf06                      |pmf07               |pmf10     |pmf05 |pmfact]
+[pmf02      |nmt02                   |pmf13        |pmf03                         |pmf04          |pmf08     |pmf09     |pmf14          |pmf15       |pmf12             |pmf11       |pmf06                      |pmf07               |pmf10     |pmf05 |pmfact]
+[pmf02      |nmt02                   |pmf13        |pmf03                         |pmf04          |pmf08     |pmf09     |pmf14          |pmf15       |pmf12             |pmf11       |pmf06                      |pmf07               |pmf10     |pmf05 |pmfact]
+
+}
+END -- s_pmf
+Grid gr4832
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4832
+END -- vb3
+END -- apmi206
+
+TABLES
+pmf_file,
+pmc_file
+ATTRIBUTES
+Edit pmc01=formonly.pmc01 type CHAR, tabIndex=1;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, noEntry;
+ComboBox pmc05=pmc_file.pmc05, tabIndex=10, noEntry, not null, required, queryEditable, items=(("0", "Issue"),("1", "Confirm"),("2", "Hung"),("3", "Stop"));
+ButtonEdit pmf02=pmf_file.pmf02, action=controlp, tabIndex=3, title="Bank No.", not null, required, image="zoom", comment="<^O>Copy Previous Record!    <^P>Qry All Banks       ";
+Edit nmt02=formonly.nmt02 type CHAR, tabIndex=4, title="Bank Full Name", noEntry;
+Edit pmf13=pmf_file.pmf13, tabIndex=18, title="SWIFT CODE";
+Edit pmf03=pmf_file.pmf03, tabIndex=5, title="Bank Account #", not null, required;
+Edit pmf04=pmf_file.pmf04, tabIndex=6, title="Account Description", not null, required;
+ButtonEdit pmf08=pmf_file.pmf08, action=CONTROLP, tabIndex=15, title="Currency", not null, required, image="zoom";
+Edit pmf09=pmf_file.pmf09, tabIndex=14, title="Account name";
+ButtonEdit pmf14=pmf_file.pmf14, action=controlp, tabIndex=19, title="pmf14", image="zoom";
+ComboBox pmf15=pmf_file.pmf15, tabIndex=20, title="Charge Type", items=(("1", "SHA"),("2", "BEN"),("3", "OUR"));
+ButtonEdit pmf12=pmf_file.pmf12, action=CONTROLP, tabIndex=17, title="Country Code", image="zoom";
+ComboBox pmf11=pmf_file.pmf11, tabIndex=16, title="Extra Code", items=(("1", "Y"));
+Edit pmf06=pmf_file.pmf06, tabIndex=11, title="Account Email";
+Edit pmf07=pmf_file.pmf07, tabIndex=12, title="Add Email";
+Edit pmf10=pmf_file.pmf10, tabIndex=13, title="FAX";
+CheckBox pmf05=pmf_file.pmf05, tabIndex=7, default = "N", title="chief of Bank Account No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pmfact=pmf_file.pmfacti, tabIndex=8, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmf(pmf_file.pmf02,formonly.nmt02,pmf_file.pmf13,pmf_file.pmf03,pmf_file.pmf04,pmf_file.pmf08,pmf_file.pmf09,pmf_file.pmf14,pmf_file.pmf15,pmf_file.pmf12,pmf_file.pmf11,pmf_file.pmf06,pmf_file.pmf07,pmf_file.pmf10,pmf_file.pmf05,pmf_file.pmfacti)
+SCREEN RECORD Undefined(formonly.pmc01,formonly.pmc03,pmc_file.pmc05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

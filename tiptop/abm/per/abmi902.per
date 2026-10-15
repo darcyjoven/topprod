@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi902.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi902")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr835
+{
+ Application Form No.[bms01                   ]
+
+}
+END -- gr835
+END -- page01
+END -- folder01
+Table s_bms
+{
+[bms0|bms03                   ]
+[bms0|bms03                   ]
+[bms0|bms03                   ]
+[bms0|bms03                   ]
+[bms0|bms03                   ]
+[bms0|bms03                   ]
+[bms0|bms03                   ]
+[bms0|bms03                   ]
+[bms0|bms03                   ]
+[bms0|bms03                   ]
+
+}
+END -- s_bms
+Grid gr836
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr836
+END -- VBox1
+END -- abmi902
+
+TABLES
+bms_file
+ATTRIBUTES
+Edit bms01=bms_file.bms01, tabIndex=1, not null, required;
+Edit bms0=bms_file.bms02, tabIndex=2, title="Ln#", not null, required;
+Edit bms03=bms_file.bms03, tabIndex=3, title="Description", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=4, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bms(bms_file.bms02,bms_file.bms03)
+SCREEN RECORD Undefined(bms_file.bms01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

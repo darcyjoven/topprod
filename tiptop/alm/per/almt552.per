@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt552.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"almt552")
+VBox vb6
+Folder pc3
+Page main(text=%"Main")
+Grid gr7
+{
+ Doc No.    [lta01               ]    status    [lta03           |imgmksg]
+ Type       [lta02               ]    checker   [lta04           |       ]
+ memo       [lta06               ]    checkda   [lta05           ]
+            [                    ]
+
+}
+END -- gr7
+END -- main
+Page info(text=%"Info")
+Grid gr5
+{
+ owner [ltauser   ]              modu[ltamodu       ]       acti [ltaacti   ]
+ grup  [ltagrup   ]              date[ltadate       ]       crat [ltacrat   ]
+ Oriu. [ltaoriu   ]              Orig[ltaorig       ]
+
+}
+END -- gr5
+END -- info
+END -- pc3
+Table s_ltb
+{
+[ltb03   |ltb04     |azp02   |ltb05   |ltb06   |ltb07   ]
+[ltb03   |ltb04     |azp02   |ltb05   |ltb06   |ltb07   ]
+[ltb03   |ltb04     |azp02   |ltb05   |ltb06   |ltb07   ]
+[ltb03   |ltb04     |azp02   |ltb05   |ltb06   |ltb07   ]
+[ltb03   |ltb04     |azp02   |ltb05   |ltb06   |ltb07   ]
+}
+END -- s_ltb
+Table s_ltc
+{
+[ltc03   |lph02   ]
+[ltc03   |lph02   ]
+[ltc03   |lph02   ]
+[ltc03   |lph02   ]
+[ltc03   |lph02   ]
+}
+END -- s_ltc
+Grid gr6
+{
+ ------- Rows[idx ]/[cnt  ]---item1[cn2   ]---item2[cn3  ]-----
+
+
+
+
+}
+END -- gr6
+END -- vb6
+END -- Form3
+
+TABLES
+ltc_file,
+ltb_file,
+lta_file
+ATTRIBUTES
+ButtonEdit lta01=lta_file.lta01, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+ComboBox lta03=lta_file.lta03, tabIndex=10, default = "N", noEntry, not null, required, items=(("Y", "checked"),("N", "unchecked"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ComboBox lta02=lta_file.lta02, tabIndex=14, not null, required, items=(("1", "card kind"),("2", "coupon Type"));
+Edit lta04=lta_file.lta04, tabIndex=11, noEntry, not null, required;
+TextEdit lta06=lta_file.lta06, tabIndex=13, stretch=NONE;
+DateEdit lta05=lta_file.lta05, tabIndex=12, noEntry, not null, required;
+Edit ltauser=lta_file.ltauser, tabIndex=1, noEntry;
+Edit ltamodu=lta_file.ltamodu, tabIndex=2, noEntry;
+Edit ltaacti=lta_file.ltaacti, tabIndex=3, default = "Y", noEntry;
+Edit ltagrup=lta_file.ltagrup, tabIndex=4, noEntry;
+DateEdit ltadate=lta_file.ltadate, tabIndex=5, noEntry;
+DateEdit ltacrat=lta_file.ltacrat, tabIndex=6, noEntry;
+Edit ltaoriu=lta_file.ltaoriu, tabIndex=7, noEntry;
+Edit ltaorig=lta_file.ltaorig, tabIndex=8, noEntry;
+Edit ltb03=ltb_file.ltb03, tabIndex=25, title="ltb03", not null, required;
+ButtonEdit ltb04=ltb_file.ltb04, action=controlp, tabIndex=15, title="ltb04", not null, required, image="zoom.png";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=16, title="azp02", noEntry;
+ButtonEdit ltb05=ltb_file.ltb05, action=controlp, tabIndex=17, title="ltb05", not null, image="zoom.png";
+ComboBox ltb06=ltb_file.ltb06, tabIndex=18, title="ltb06", not null, required, items=(("1", "ins"),("2", "upd"));
+CheckBox ltb07=ltb_file.ltb07, tabIndex=19, title="ltb07", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ltc03=ltc_file.ltc03, action=controlp, tabIndex=20, title="ltc03", not null, required, image="zoom.png";
+Edit lph02=formonly.lph02 type CHAR, tabIndex=21, title="lph02", noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=22, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=24, noEntry;
+Edit cn3=formonly.cn3 type DECIMAL, tabIndex=26;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ltb(ltb_file.ltb03,ltb_file.ltb04,formonly.azp02,ltb_file.ltb05,ltb_file.ltb06,ltb_file.ltb07)
+SCREEN RECORD s_ltc(ltc_file.ltc03,formonly.lph02)
+SCREEN RECORD Undefined(lta_file.lta01,lta_file.lta03,formonly.imgmksg,lta_file.lta02,lta_file.lta04,lta_file.lta06,lta_file.lta05,lta_file.ltauser,lta_file.ltamodu,lta_file.ltaacti,lta_file.ltagrup,lta_file.ltadate,lta_file.ltacrat,lta_file.ltaoriu,lta_file.ltaorig,formonly.idx,formonly.cnt,formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

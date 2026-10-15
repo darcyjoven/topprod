@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/acs/42f/acsp101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acsp101")
+Folder pc239
+Page page01(text="main")
+VBox VBox1
+Grid gr1541
+{
+ <G group01                                                   >
+  Simulation Item#              [item_no             ]
+  Simulation Version            [version   ][dummy01   ]
+  Backflush Running Environment [x                           ]
+ <                                                            >
+ <G group02                                                      >
+  Simulation Routing No.    [rout      ][dummy02   ]
+  Expiry Date               [effectiv  ]
+
+ [free_stock                                            ]
+ [m_pur                                                 ]
+ [p_mak                                                 ]
+ [lab_bud                                               ]
+
+ [e                                                     ]
+ [f                                                     ]
+
+  Description [h                                                ]
+
+ <                                                               >
+
+}
+END -- gr1541
+Grid gr1542
+{
+[g_bgj]
+
+}
+END -- gr1542
+END -- VBox1
+END -- page01
+END -- pc239
+END -- acsp101
+
+ATTRIBUTES
+Group group01:group01;
+Edit item_no=formonly.item_no type VARCHAR, tabIndex=1;
+ComboBox version=formonly.version type CHAR, tabIndex=2, not null, required, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"));
+Label dummy01:dummy01, text="(0~9)";
+RadioGroup x=formonly.x type VARCHAR, tabIndex=3, items=(("1", "Others Allowed"),("2", "Others NO"));
+Group group02:group02;
+Edit rout=formonly.rout type VARCHAR, tabIndex=4;
+Label dummy02:dummy02, text="(1:Master Routing)";
+Edit effectiv=formonly.effectiv type DATE, tabIndex=5;
+CheckBox free_stock=formonly.free_stock type VARCHAR, tabIndex=6, text="Including Mass Mat. And MISC Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox m_pur=formonly.m_pur type VARCHAR, tabIndex=7, text="Backflush Manufactured-Item by Purchased-Item Method", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox p_mak=formonly.p_mak type VARCHAR, tabIndex=8, text="Backflush Purchased-Item by Manufactured-Item Method", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lab_bud=formonly.lab_bud type VARCHAR, tabIndex=9, text="Clear Labor/Ovhead of Purd And MISC Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=10, text="Include Wastage Ratio?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type VARCHAR, tabIndex=11, text="Print Cost Variation Report", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit h=formonly.h type VARCHAR, tabIndex=12;
+CheckBox g_bgj=formonly.g_bgjob type CHAR, tabIndex=13, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.item_no,formonly.version,formonly.x,formonly.rout,formonly.effectiv,formonly.free_stock,formonly.m_pur,formonly.p_mak,formonly.lab_bud,formonly.e,formonly.f,formonly.h,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

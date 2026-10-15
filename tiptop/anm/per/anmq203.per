@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq203.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmq203")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr4155
+{
+ Note No.            [nmh31     ]
+ Note Received Date  [nmh04       ]
+ Face Value          [nmh02               ]
+ Note Received H.C $ [nmh32               ]
+ Currency            [nmh03     ]
+}
+END -- gr4155
+Grid gr4156
+{
+ Exchange Rate       [nmh28               ]
+ Note Receipt#       [nmh01           ]
+ Department#         [nmh15     ]
+ Department Name     [gem02     ]
+ Salesman            [nmh16     ]
+}
+END -- gr4156
+Grid gr4157
+{
+ Employee Name           [gen02     ]
+ Customer #              [nmh11     ]
+ Customer Abbreviation   [nmh30     ]
+ Due Date                [nmh05     ]
+ Anticipated Cashing Date[nmh09     ]
+}
+END -- gr4157
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_ooa
+{
+[ooa01           |oob02 |ooa02       |ooa23    |desc  |oob06           |oob14           |oob08             |oob09               |oob10               |oob05   |oob13     ]
+[ooa01           |oob02 |ooa02       |ooa23    |desc  |oob06           |oob14           |oob08             |oob09               |oob10               |oob05   |oob13     ]
+[ooa01           |oob02 |ooa02       |ooa23    |desc  |oob06           |oob14           |oob08             |oob09               |oob10               |oob05   |oob13     ]
+[ooa01           |oob02 |ooa02       |ooa23    |desc  |oob06           |oob14           |oob08             |oob09               |oob10               |oob05   |oob13     ]
+[ooa01           |oob02 |ooa02       |ooa23    |desc  |oob06           |oob14           |oob08             |oob09               |oob10               |oob05   |oob13     ]
+[ooa01           |oob02 |ooa02       |ooa23    |desc  |oob06           |oob14           |oob08             |oob09               |oob10               |oob05   |oob13     ]
+[ooa01           |oob02 |ooa02       |ooa23    |desc  |oob06           |oob14           |oob08             |oob09               |oob10               |oob05   |oob13     ]
+[ooa01           |oob02 |ooa02       |ooa23    |desc  |oob06           |oob14           |oob08             |oob09               |oob10               |oob05   |oob13     ]
+[ooa01           |oob02 |ooa02       |ooa23    |desc  |oob06           |oob14           |oob08             |oob09               |oob10               |oob05   |oob13     ]
+[ooa01           |oob02 |ooa02       |ooa23    |desc  |oob06           |oob14           |oob08             |oob09               |oob10               |oob05   |oob13     ]
+
+}
+END -- s_ooa
+Grid gr4158
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4158
+END -- VBox1
+END -- anmq203
+
+ATTRIBUTES
+Edit nmh31=formonly.nmh31 type CHAR, tabIndex=1;
+DateEdit nmh04=formonly.nmh04 type DATE, tabIndex=2;
+Edit nmh02=formonly.nmh02 type CHAR, tabIndex=3;
+Edit nmh32=formonly.nmh32 type CHAR, tabIndex=4;
+Edit nmh03=formonly.nmh03 type CHAR, tabIndex=5;
+Edit nmh28=formonly.nmh28 type CHAR, tabIndex=6;
+Edit nmh01=formonly.nmh01 type CHAR, tabIndex=7;
+Edit nmh15=formonly.nmh15 type CHAR, tabIndex=8;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=9, noEntry;
+Edit nmh16=formonly.nmh16 type CHAR, tabIndex=10;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=11, noEntry;
+Edit nmh11=formonly.nmh11 type CHAR, tabIndex=12;
+Edit nmh30=formonly.nmh30 type CHAR, tabIndex=13;
+DateEdit nmh05=formonly.nmh05 type DATE, tabIndex=14;
+DateEdit nmh09=formonly.nmh09 type DATE, tabIndex=15;
+Edit ooa01=formonly.ooa01 type CHAR, tabIndex=16, title="Contra Slip#";
+DateEdit oob02=formonly.oob02 type CHAR, tabIndex=17, title="Line#";
+DateEdit ooa02=formonly.ooa02 type DATE, tabIndex=18, title="Contra Date";
+Edit ooa23=formonly.ooa23 type CHAR, tabIndex=19, title="Currency";
+Edit desc=formonly.desc type CHAR, tabIndex=20, title="DESC";
+Edit oob06=formonly.oob06 type CHAR, tabIndex=21, title="Category";
+Edit oob14=formonly.oob14 type CHAR, tabIndex=22, title="Reference Doc#";
+Edit oob08=formonly.oob08 type CHAR, tabIndex=23, title="Ex Rate";
+Edit oob09=formonly.oob09 type CHAR, tabIndex=24, title="O.Currency";
+Edit oob10=formonly.oob10 type CHAR, tabIndex=25, title="H.Currency";
+Edit oob05=formonly.oob05 type CHAR, tabIndex=26, title="Plant";
+Edit oob13=formonly.oob13 type CHAR, tabIndex=27, title="Department";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ooa(formonly.ooa01,formonly.oob02,formonly.ooa02,formonly.ooa23,formonly.desc,formonly.oob06,formonly.oob14,formonly.oob08,formonly.oob09,formonly.oob10,formonly.oob05,formonly.oob13)
+SCREEN RECORD Undefined(formonly.nmh31,formonly.nmh04,formonly.nmh02,formonly.nmh32,formonly.nmh03,formonly.nmh28,formonly.nmh01,formonly.nmh15,formonly.gem02,formonly.nmh16,formonly.gen02,formonly.nmh11,formonly.nmh30,formonly.nmh05,formonly.nmh09,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdi160.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdi160")
+VBox VBox1
+Folder pc88
+Page page01(text="Main")
+Grid gr360
+{
+  Item No.            [stp02                         ]
+  Product Type        [stp021                        ]
+  [dummy01]
+ <G group01                                  >
+ [stp01                          ]
+ <                                           >
+ <G group02                                  >   <G group03                                 >
+  End of Period Qty   [stp03               ]      Doc No.             [stp09     ]
+  Standard U/P        [stp04               ]      Document Line No.   [stp10     ]
+  Standard Cost       [stp05               ]      Transaction Date    [stp11     ]
+  Diff. Apportionment [stp06               ]      Currency            [stp12     ]
+  Replacement U/P     [stp07               ]      F.C U/P             [stp13               ]
+  Replacement Cost    [stp08               ]      Ex.Rate             [stp14               ]
+  LCM Cost            [stp15               ]
+ <                                           >   <                                          >
+
+}
+END -- gr360
+END -- page01
+END -- pc88
+Grid gr361
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr361
+END -- VBox1
+END -- asdi160
+
+TABLES
+stp_file
+ATTRIBUTES
+ButtonEdit stp02=stp_file.stp02, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit stp021=stp_file.stp021, tabIndex=2, upShift;
+Label dummy01:dummy01;
+Group group01:group01, text="Category";
+RadioGroup stp01=stp_file.stp01, tabIndex=3, items=(("1", "Material"),("2", "Finished Product"));
+Group group02:group02;
+Edit stp03=stp_file.stp03, tabIndex=4;
+Edit stp04=stp_file.stp04, tabIndex=5;
+Edit stp05=stp_file.stp05, tabIndex=6;
+Edit stp06=stp_file.stp06, tabIndex=7;
+Edit stp07=stp_file.stp07, tabIndex=8;
+Edit stp08=stp_file.stp08, tabIndex=9;
+Edit stp15=stp_file.stp15, tabIndex=10;
+Group group03:group03;
+Edit stp09=stp_file.stp09, tabIndex=11, upShift;
+Edit stp10=stp_file.stp10, tabIndex=12;
+DateEdit stp11=stp_file.stp11, tabIndex=13;
+ButtonEdit stp12=stp_file.stp12, action=controlp, tabIndex=14, image="zoom", upShift;
+Edit stp13=stp_file.stp13, tabIndex=15;
+ButtonEdit stp14=stp_file.stp14, action=controlp, tabIndex=16, image="zoom";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(stp_file.stp02,stp_file.stp021,stp_file.stp01,stp_file.stp03,stp_file.stp04,stp_file.stp05,stp_file.stp06,stp_file.stp07,stp_file.stp08,stp_file.stp15,stp_file.stp09,stp_file.stp10,stp_file.stp11,stp_file.stp12,stp_file.stp13,stp_file.stp14,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq450.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq450")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2265
+{
+ Item No.            [ima01                         ]
+ Item Desc.          [ima02                         ]
+ Specification       [ima021                        ]
+ Inventory           [avl_stk   ]
+}
+END -- gr2265
+END -- page01
+END -- folder01
+VBox VBox2
+Table s_img
+{
+[img04          |img02     |img03     |img09   |img10         ]
+[img04          |img02     |img03     |img09   |img10         ]
+[img04          |img02     |img03     |img09   |img10         ]
+[img04          |img02     |img03     |img09   |img10         ]
+[img04          |img02     |img03     |img09   |img10         ]
+[img04          |img02     |img03     |img09   |img10         ]
+[img04          |img02     |img03     |img09   |img10         ]
+[img04          |img02     |img03     |img09   |img10         ]
+[img04          |img02     |img03     |img09   |img10         ]
+[img04          |img02     |img03     |img09   |img10         ]
+[img04          |img02     |img03     |img09   |img10         ]
+[img04          |img02     |img03     |img09   |img10         ]
+[img04          |img02     |img03     |img09   |img10         ]
+[img04          |img02     |img03     |img09   |img10         ]
+[img04          |img02     |img03     |img09   |img10         ]
+
+}
+END -- s_img
+Table s_oeb
+{
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+[oeb01            |oea032   |oeb092       |oeb15            |oeb12          |oeb05   |oeb12_1 ]
+
+}
+END -- s_oeb
+END -- VBox2
+Grid gr2266
+{
+ ---------- Rows [cnt   ] ----- Available:[tot1        ]-[tot2        ]=[tot4        ] ------
+
+}
+END -- gr2266
+END -- VBox1
+END -- axmq450
+
+TABLES
+ima_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Please by QBE, Enter Item# to Query";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=3;
+Edit avl_stk=formonly.avl_stk type CHAR, tabIndex=4;
+Edit img04=formonly.img04 type CHAR, tabIndex=5, title="Inventory Lot#";
+Edit img02=formonly.img02 type CHAR, tabIndex=6, title="Warehouse", noEntry;
+Edit img03=formonly.img03 type CHAR, tabIndex=7, title="Location#", noEntry;
+Edit img09=formonly.img09, tabIndex=20, title=%"Unit";
+Edit img10=formonly.img10 type CHAR, tabIndex=8, title="Inventory Qty", noEntry;
+Edit oeb01=formonly.oeb01 type CHAR, tabIndex=9, title="Document #";
+Edit oea032=formonly.oea032 type CHAR, tabIndex=10, title="Customer";
+Edit oeb092=formonly.oeb092 type CHAR, tabIndex=11, title="Lot# Ordered";
+DateEdit oeb15=formonly.oeb15 type CHAR, tabIndex=12, title="Requirement Date";
+Edit oeb12=formonly.oeb12 type CHAR, tabIndex=13, title="Requirement Qty";
+Edit oeb05=formonly.oeb05, tabIndex=18, title=%"Unit";
+Edit oeb12_1=formonly.oeb12_1, tabIndex=19, title=%"Stock Unit Qty";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=14, noEntry;
+Edit tot1=formonly.tot1 type CHAR, tabIndex=15;
+Edit tot2=formonly.tot2 type CHAR, tabIndex=16;
+Edit tot4=formonly.tot4 type CHAR, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(formonly.img04,formonly.img02,formonly.img03,formonly.img09,formonly.img10)
+SCREEN RECORD s_oeb(formonly.oeb01,formonly.oea032,formonly.oeb092,formonly.oeb15,formonly.oeb12,formonly.oeb05,formonly.oeb12_1)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,formonly.avl_stk,formonly.cnt,formonly.tot1,formonly.tot2,formonly.tot4)
+END -- INSTRUCTIONS
+

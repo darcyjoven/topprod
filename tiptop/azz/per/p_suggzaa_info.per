@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_suggzaa_info.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_suggzaa_info")
+VBox VBox1
+Group g01(text="Report Info")
+VBox VBox2
+Table s_zaa_a(wantFixedPageSize)
+{
+[zaasa|zaa01b     |gaz03                         |zaa04     |zaa17     |zaa10 |zaa11          ]
+[zaasa|zaa01b     |gaz03                         |zaa04     |zaa17     |zaa10 |zaa11          ]
+[zaasa|zaa01b     |gaz03                         |zaa04     |zaa17     |zaa10 |zaa11          ]
+[zaasa|zaa01b     |gaz03                         |zaa04     |zaa17     |zaa10 |zaa11          ]
+[zaasa|zaa01b     |gaz03                         |zaa04     |zaa17     |zaa10 |zaa11          ]
+
+}
+END -- s_zaa_a
+Grid gr3288
+{
+ Total Rows [cnt   ]   Updated [cnt2  ]   UnUpdate [cnt3  ]
+
+}
+END -- gr3288
+END -- VBox2
+END -- g01
+Group g02(text="Report Title Column")
+VBox VBox3
+Table s_zaa_b
+{
+[zaa09 |zaa02 |zaa03    |zaa14b    |zaa05  |zaa06  |zaa15 |zaa07   |zaa18   |zaa08                        |memo                                                                                               ]
+[zaa09 |zaa02 |zaa03    |zaa14b    |zaa05  |zaa06  |zaa15 |zaa07   |zaa18   |zaa08                        |memo                                                                                               ]
+[zaa09 |zaa02 |zaa03    |zaa14b    |zaa05  |zaa06  |zaa15 |zaa07   |zaa18   |zaa08                        |memo                                                                                               ]
+[zaa09 |zaa02 |zaa03    |zaa14b    |zaa05  |zaa06  |zaa15 |zaa07   |zaa18   |zaa08                        |memo                                                                                               ]
+[zaa09 |zaa02 |zaa03    |zaa14b    |zaa05  |zaa06  |zaa15 |zaa07   |zaa18   |zaa08                        |memo                                                                                               ]
+[zaa09 |zaa02 |zaa03    |zaa14b    |zaa05  |zaa06  |zaa15 |zaa07   |zaa18   |zaa08                        |memo                                                                                               ]
+
+}
+END -- s_zaa_b
+END -- VBox3
+END -- g02
+Group g03(text="View Report Print")
+VBox VBox4
+Grid gr3289
+{
+[content                                                                                                                                                                                                                            ]
+[                                                                                                                                                                                                                                   ]
+[                                                                                                                                                                                                                                   ]
+[                                                                                                                                                                                                                                   ]
+[                                                                                                                                                                                                                                   ]
+[                                                                                                                                                                                                                                   ]
+[                                                                                                                                                                                                                                   ]
+[                                                                                                                                                                                                                                   ]
+[                                                                                                                                                                                                                                   ]
+[                                                                                                                                                                                                                                   ]
+[                                                                                                                                                                                                                                   ]
+[                                                                                                                                                                                                                                   ]
+}
+END -- gr3289
+END -- VBox4
+END -- g03
+END -- VBox1
+END -- p_suggzaa_info
+
+TABLES
+zaa_file
+ATTRIBUTES
+CheckBox zaasa=formonly.zaasave type CHAR, tabIndex=1, title="Save", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit zaa01b=formonly.zaa01b type CHAR, action=controlp, tabIndex=2, title="Program ID", not null, required, image="zoom", downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=3, title="Program Name";
+ButtonEdit zaa04=zaa_file.zaa04, action=controlp, tabIndex=4, title="User", not null, required, image="zoom", downShift, scroll, comment="KEYField,No Blank/Repeated!";
+ButtonEdit zaa17=zaa_file.zaa17, action=controlp, tabIndex=5, title="Class", not null, required, image="zoom", downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Edit zaa10=zaa_file.zaa10, tabIndex=6, title="Cust.";
+Edit zaa11=zaa_file.zaa11, tabIndex=7, title="Template", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=9, noEntry;
+Edit cnt3=formonly.cnt3 type SMALLINT, tabIndex=10, noEntry;
+ComboBox zaa09=zaa_file.zaa09, tabIndex=11, title="Class", not null, required, items=(("1", %"A:Other"),("2", %"B:Heading"));
+Edit zaa02=zaa_file.zaa02, tabIndex=12, title="No.", not null, required;
+ComboBox zaa03=zaa_file.zaa03, tabIndex=13, title="Language", not null, required, queryEditable;
+ComboBox zaa14b=formonly.zaa14b type CHAR, tabIndex=14, title="Attribute", not null, required, items=(("A", %"Unit Price"),("B", %"Amount"),("C", %"Exchange rate"),("D", %"Total"),("E", %"Quantity"),("F", %"Number"),("G", %"Other"),("H", %"Memo Page"),("I", %"Memo Report"),("J", %"Char"),("K", %"Document No."),("L", %"Multi-Unit"),("M", %"Alternate BOM"),("N", %"Item No."),("O", %"Employee No."),("P", %"Dept. No."),("Q", %"Date"),("R", %"Acct. No."),("S", %"P/N"),("T", %"Spec"));
+Edit zaa05=zaa_file.zaa05, tabIndex=15, title="Width";
+CheckBox zaa06=zaa_file.zaa06, tabIndex=16, title="Hidden", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit zaa15=zaa_file.zaa15, tabIndex=17, title="Line", not null, required;
+Edit zaa07=zaa_file.zaa07, tabIndex=18, title="Seq.", not null, required;
+Edit zaa18=zaa_file.zaa18, tabIndex=19, title="A-line";
+ButtonEdit zaa08=zaa_file.zaa08, action=controlp, tabIndex=20, title="Title", image="zoom", scroll, style="fixedFont";
+TextEdit memo=formonly.memo type CHAR, tabIndex=21, title="Memo", noEntry, stretch=NONE;
+TextEdit content=formonly.content type CHAR, tabIndex=22, noEntry, stretch=both, scrollBars=both, style="fixedFont";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zaa_a(formonly.zaasave,formonly.zaa01b,formonly.gaz03,zaa_file.zaa04,zaa_file.zaa17,zaa_file.zaa10,zaa_file.zaa11)
+SCREEN RECORD s_zaa_b(zaa_file.zaa09,zaa_file.zaa02,zaa_file.zaa03,formonly.zaa14b,zaa_file.zaa05,zaa_file.zaa06,zaa_file.zaa15,zaa_file.zaa07,zaa_file.zaa18,zaa_file.zaa08,formonly.memo)
+SCREEN RECORD Undefined(formonly.cnt,formonly.cnt2,formonly.cnt3,formonly.content)
+END -- INSTRUCTIONS
+

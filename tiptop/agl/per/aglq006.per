@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq006.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq006")
+VBox vb5
+Folder folder01
+Page page01(text="Main")
+HBox hb5
+Grid gr2523
+{
+
+
+ Group No.       [aeii01      ]                Group Book No.     [aeii00     ]
+ Upper Company   [aeii02      ]                Upper Comp Book No [aeii021    ]
+ Under Company   [aeii03      ]                Under Comp Book No [aeii031    ]
+ Year            [aeii09      ]                Currency           [aeii18     ]
+
+
+
+
+}
+END -- gr2523
+Grid gr2524
+{
+
+
+ Account No.         [aeii04                        ]
+ Account Name        [aag02                                             ]
+
+ Trans.Value1        [aeii19         ]  Trans.Value5    [aeii05         ]
+ Trans.Value2        [aeii20         ]  Trans.Value6    [aeii06         ]
+ Trans.Value3        [aeii21         ]  Trans.Value7    [aeii07         ]
+ Trans.Value4        [aeii22         ]  Trans.Value8    [aeii08         ]
+
+}
+END -- gr2524
+END -- hb5
+END -- page01
+END -- folder01
+Table s_axkk
+{
+[seq    |aeii11                |aeii12                 |amt                 ]
+[seq    |aeii11                |aeii12                 |amt                 ]
+[seq    |aeii11                |aeii12                 |amt                 ]
+[seq    |aeii11                |aeii12                 |amt                 ]
+[seq    |aeii11                |aeii12                 |amt                 ]
+[seq    |aeii11                |aeii12                 |amt                 ]
+[seq    |aeii11                |aeii12                 |amt                 ]
+[seq    |aeii11                |aeii12                 |amt                 ]
+[seq    |aeii11                |aeii12                 |amt                 ]
+[seq    |aeii11                |aeii12                 |amt                 ]
+
+
+
+}
+END -- s_axkk
+Grid gr2525
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr2525
+END -- vb5
+END -- aglq006
+
+TABLES
+aeii_file
+ATTRIBUTES
+ButtonEdit aeii01=aeii_file.aeii01, action=controlp, tabIndex=1, image="zoom";
+Edit aeii00=aeii_file.aeii00, tabIndex=5, color = yellow;
+Edit aeii02=aeii_file.aeii02, tabIndex=2;
+Edit aeii021=aeii_file.aeii021, tabIndex=6;
+Edit aeii03=aeii_file.aeii03, tabIndex=3;
+Edit aeii031=aeii_file.aeii031, tabIndex=7;
+Edit aeii09=aeii_file.aeii09, tabIndex=4;
+ButtonEdit aeii18=aeii_file.aeii18, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Details";
+ButtonEdit aeii04=aeii_file.aeii04, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Account # <^Y>Create Account  ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=10, noEntry;
+Edit aeii19=aeii_file.aeii19, tabIndex=11, not null, required;
+Edit aeii05=aeii_file.aeii05, tabIndex=15;
+Edit aeii20=aeii_file.aeii20, tabIndex=12, not null, required;
+Edit aeii06=aeii_file.aeii06, tabIndex=16;
+Edit aeii21=aeii_file.aeii21, tabIndex=13, not null, required;
+Edit aeii07=aeii_file.aeii07, tabIndex=17;
+Edit aeii22=aeii_file.aeii22, tabIndex=14, not null, required;
+Edit aeii08=aeii_file.aeii08, tabIndex=18;
+Edit seq=formonly.seq type CHAR, tabIndex=19, title="Period", noEntry;
+Edit aeii11=aeii_file.aeii11, tabIndex=20, title="Debit Transaction Amt", noEntry;
+Edit aeii12=aeii_file.aeii12, tabIndex=21, title="Credit", noEntry;
+Edit amt=formonly.amt type CHAR, tabIndex=24, title=%"Balance";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aeii(formonly.seq,aeii_file.aeii11,aeii_file.aeii12,formonly.amt)
+SCREEN RECORD Undefined(aeii_file.aeii01,aeii_file.aeii00,aeii_file.aeii02,aeii_file.aeii021,aeii_file.aeii03,aeii_file.aeii031,aeii_file.aeii09,aeii_file.aeii18,aeii_file.aeii04,formonly.aag02,aeii_file.aeii05,aeii_file.aeii07,aeii_file.aeii06,aeii_file.aeii08,formonly.cnt,formonly.cn2,aeii_file.aeii22,aeii_file.aeii21,aeii_file.aeii20,aeii_file.aeii19)
+END -- INSTRUCTIONS
+

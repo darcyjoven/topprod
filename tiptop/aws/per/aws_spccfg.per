@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_spccfg.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_spccfg")
+VBox VBox1
+Folder pc339
+Page page01(text="Main")
+Grid gr1429
+{
+ <G group011                                                                        >
+  Program Code            [wca01     ][zz02                          ]
+  [wca02                             ]
+ <                                                                                  >
+ <G group012                                                                    >
+  Master                  [wcb02          ][zz03                         ]
+  Master No #1            [wcb03     ]
+  Master No #2            [wcb04     ]
+  Master No #3            [wcb05     ]
+  Master No #4            [wcb06     ]
+  Master No #5            [wcb07     ]
+  Appove of Master No.    [wcb08     ]
+  Comfirm of Master No.   [wcb09     ]
+ <                                                                              >
+
+}
+END -- gr1429
+END -- page01
+Page info(text="Info")
+Grid gr1430
+{
+   Record Owner [wcauser   ] Last Modified by    [wcamodu   ] Data Valid Code  [wcaacti   ]
+   Department   [wcagrup   ] Create/Modify Date  [wcadate   ]
+   Record Orig. [wcaoriu   ]
+   Dept Orig.   [wcaorig   ]
+}
+END -- gr1430
+END -- info
+END -- pc339
+Grid gr1431
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1431
+END -- VBox1
+END -- aws_spccfg
+
+TABLES
+wcb_file,
+wca_file
+ATTRIBUTES
+Group group011:group011;
+ButtonEdit wca01=wca_file.wca01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit zz02=formonly.zz02 type CHAR, tabIndex=2, noEntry;
+CheckBox wca02=formonly.wca02 type CHAR, tabIndex=3, text="Is It a Hard-Coding Program?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group012:group012;
+ButtonEdit wcb02=wcb_file.wcb02, action=controlp, tabIndex=4, not null, required, image="zoom";
+Edit zz03=formonly.zz03 type CHAR, tabIndex=5, noEntry;
+ComboBox wcb03=wcb_file.wcb03, tabIndex=6, not null, required, downShift, queryEditable;
+ComboBox wcb04=wcb_file.wcb04, tabIndex=7, downShift, queryEditable;
+ComboBox wcb05=wcb_file.wcb05, tabIndex=8, downShift, queryEditable;
+ComboBox wcb06=wcb_file.wcb06, tabIndex=9, downShift, queryEditable;
+ComboBox wcb07=wcb_file.wcb07, tabIndex=10, downShift, queryEditable;
+ComboBox wcb08=wcb_file.wcb08, tabIndex=11, not null, required, downShift, queryEditable;
+ComboBox wcb09=wcb_file.wcb09, tabIndex=12, not null, required, downShift, queryEditable;
+Edit wcauser=wca_file.wcauser, tabIndex=13, noEntry;
+Edit wcamodu=wca_file.wcamodu, tabIndex=14, noEntry;
+Edit wcaacti=wca_file.wcaacti, tabIndex=15, noEntry, upShift;
+Edit wcagrup=wca_file.wcagrup, tabIndex=16, noEntry;
+Edit wcadate=wca_file.wcadate, tabIndex=17, noEntry;
+Edit wcaoriu=wca_file.wcaoriu, tabIndex=501, noEntry;
+Edit wcaorig=wca_file.wcaorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(wca_file.wca01,formonly.zz02,formonly.wca02,wcb_file.wcb02,formonly.zz03,wcb_file.wcb03,wcb_file.wcb04,wcb_file.wcb05,wcb_file.wcb06,wcb_file.wcb07,wcb_file.wcb08,wcb_file.wcb09,wca_file.wcauser,wca_file.wcamodu,wca_file.wcaacti,wca_file.wcagrup,wca_file.wcadate,wca_file.wcaoriu,wca_file.wcaorig,formonly.cnt)
+END -- INSTRUCTIONS
+

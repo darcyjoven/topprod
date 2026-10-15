@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi702.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi702")
+Folder pc757
+Page page01(text="Main")
+Grid gr4045
+{
+ Interest Exp Acc    [nmq01              ][aag02_1                       ]
+ Other Expense       [nmq02              ][aag02_2                       ]
+ Accrued Int Payable [nmq10              ][aag02_3                       ]
+ Prepaid Expense     [nmq11              ][aag02_4                       ]
+}
+END -- gr4045
+END -- page01
+Page page02(text="Account")
+Grid gr4046
+{
+ Interest Exp Acc2    [nmq011              ][aag02_a1                       ]
+ Other Expense2       [nmq021              ][aag02_a2                       ]
+ Accrued Int Payable2 [nmq101              ][aag02_a3                       ]
+ Prepaid Expense2     [nmq111              ][aag02_a4                       ]
+}
+END -- gr4046
+END -- page02
+END -- pc757
+END -- anmi702
+
+TABLES
+nmq_file
+ATTRIBUTES
+ButtonEdit nmq01=nmq_file.nmq01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=2;
+ButtonEdit nmq02=nmq_file.nmq02, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=4;
+ButtonEdit nmq10=nmq_file.nmq10, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_3=formonly.aag02_3 type CHAR, tabIndex=6;
+ButtonEdit nmq11=nmq_file.nmq11, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_4=formonly.aag02_4 type CHAR, tabIndex=8;
+ButtonEdit nmq011=nmq_file.nmq011, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_a1=formonly.aag02_a1 type CHAR, tabIndex=10;
+ButtonEdit nmq021=nmq_file.nmq021, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_a2=formonly.aag02_a2 type CHAR, tabIndex=12;
+ButtonEdit nmq101=nmq_file.nmq101, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_a3=formonly.aag02_a3 type CHAR, tabIndex=14;
+ButtonEdit nmq111=nmq_file.nmq111, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_a4=formonly.aag02_a4 type CHAR, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nmq_file.nmq01,formonly.aag02_1,nmq_file.nmq02,formonly.aag02_2,nmq_file.nmq10,formonly.aag02_3,nmq_file.nmq11,formonly.aag02_4,nmq_file.nmq011,formonly.aag02_a1,nmq_file.nmq021,formonly.aag02_a2,nmq_file.nmq101,formonly.aag02_a3,nmq_file.nmq111,formonly.aag02_a4)
+END -- INSTRUCTIONS
+

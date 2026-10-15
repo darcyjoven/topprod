@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi400")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr621
+{
+ Version [bgk01     ]
+
+}
+END -- gr621
+END -- page01
+END -- folder01
+Table s_bgk
+{
+[bgk02    |gem02     |bgk03                       |aca02         |bgk04               ]
+[bgk02    |gem02     |bgk03                       |aca02         |bgk04               ]
+[bgk02    |gem02     |bgk03                       |aca02         |bgk04               ]
+[bgk02    |gem02     |bgk03                       |aca02         |bgk04               ]
+[bgk02    |gem02     |bgk03                       |aca02         |bgk04               ]
+[bgk02    |gem02     |bgk03                       |aca02         |bgk04               ]
+[bgk02    |gem02     |bgk03                       |aca02         |bgk04               ]
+[bgk02    |gem02     |bgk03                       |aca02         |bgk04               ]
+[bgk02    |gem02     |bgk03                       |aca02         |bgk04               ]
+[bgk02    |gem02     |bgk03                       |aca02         |bgk04               ]
+
+}
+END -- s_bgk
+Grid gr622
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr622
+END -- VBox1
+END -- abgi400
+
+TABLES
+bgk_file
+ATTRIBUTES
+Edit bgk01=bgk_file.bgk01, tabIndex=1;
+ButtonEdit bgk02=bgk_file.bgk02, action=controlp, tabIndex=2, title="Dept No.", not null, required, image="zoom", comment="<^P>Query Department \"ALL\" means all department";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=3, title="Dept Name", noEntry;
+ButtonEdit bgk03=bgk_file.bgk03, action=controlp, tabIndex=4, title="Apportionment Description", not null, required, image="zoom", comment="<^P>Qry Apportionment Data";
+Edit aca02=formonly.aca02 type VARCHAR, tabIndex=5, title="Category", noEntry;
+Edit bgk04=bgk_file.bgk04, tabIndex=6, title="Amount";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgk(bgk_file.bgk02,formonly.gem02,bgk_file.bgk03,formonly.aca02,bgk_file.bgk04)
+SCREEN RECORD Undefined(bgk_file.bgk01,formonly.cnt)
+END -- INSTRUCTIONS
+

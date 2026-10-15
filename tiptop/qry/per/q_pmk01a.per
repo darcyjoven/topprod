@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_pmk01a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Grid Grid1
+{
+
+  <T s_pmk                                                                                                >
+  [check|pmk01               |pmk04     |pmk09     |pmc03   |pmk12     |gen02     ]
+  [check|pmk01               |pmk04     |pmk09     |pmc03   |pmk12     |gen02     ]
+  [check|pmk01               |pmk04     |pmk09     |pmc03   |pmk12     |gen02     ]
+  [check|pmk01               |pmk04     |pmk09     |pmc03   |pmk12     |gen02     ]
+  [check|pmk01               |pmk04     |pmk09     |pmc03   |pmk12     |gen02     ]
+  [check|pmk01               |pmk04     |pmk09     |pmc03   |pmk12     |gen02     ]
+  [check|pmk01               |pmk04     |pmk09     |pmc03   |pmk12     |gen02     ]
+  [check|pmk01               |pmk04     |pmk09     |pmc03   |pmk12     |gen02     ]
+  [check|pmk01               |pmk04     |pmk09     |pmc03   |pmk12     |gen02     ]
+  [check|pmk01               |pmk04     |pmk09     |pmc03   |pmk12     |gen02     ]
+  [check|pmk01               |pmk04     |pmk09     |pmc03   |pmk12     |gen02     ]
+  [check|pmk01               |pmk04     |pmk09     |pmc03   |pmk12     |gen02     ]
+  [check|pmk01               |pmk04     |pmk09     |pmc03   |pmk12     |gen02     ]
+  [check|pmk01               |pmk04     |pmk09     |pmc03   |pmk12     |gen02     ]
+
+
+
+}
+END -- Grid1
+END -- q_pmk01a
+
+TABLES
+gen_file,
+pmk_file,
+pmc_file
+ATTRIBUTES
+Table s_pmk:s_pmk;
+CheckBox check=formonly.check type VARCHAR, tabIndex=1, title=%"Sel", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmk01=formonly.pmk01 type VARCHAR, tabIndex=2, title=%"pmk01", color = red;
+DateEdit pmk04=pmk_file.pmk04, tabIndex=3, title=%"pmk04", noEntry;
+Edit pmk09=pmk_file.pmk09, tabIndex=4, title=%"pmk09", noEntry;
+Edit pmc03=pmc_file.pmc03, tabIndex=5, title=%"pmc03", noEntry;
+Edit pmk12=pmk_file.pmk12, tabIndex=6, title=%"pmk12", noEntry;
+Edit gen02=gen_file.gen02, tabIndex=7, title=%"gen02", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmk(formonly.check,formonly.pmk01,pmk_file.pmk04,pmk_file.pmk09,pmc_file.pmc03,pmk_file.pmk12,gen_file.gen02)
+END -- INSTRUCTIONS
+

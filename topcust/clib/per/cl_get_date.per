@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/clib/4fd/cl_get_date.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"input date please")
+VBox VBox1
+Grid gr3669
+{
+ <G group01                              >
+  [ze03                               ]
+  [                                   ]
+  [                                   ]
+
+  [todo               ]
+
+                [action_ok]
+ <                                       >
+
+}
+END -- gr3669
+END -- VBox1
+END -- cl_get_date
+
+ATTRIBUTES
+Group group01:group01, text="input date please";
+Edit ze03=formonly.ze03 type VARCHAR, tabIndex=2, noEntry;
+DateEdit todo=formonly.todo type DATE, tabIndex=1;
+Button action_ok:action_ok, text="Ok", image="ok", comment="Press Ok to continue";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ze03,formonly.todo)
+END -- INSTRUCTIONS
+

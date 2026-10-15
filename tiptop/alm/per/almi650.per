@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi650.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi650")
+VBox vb2
+Folder pc2
+Page Page2(text=%"Main")
+Table s_lrz
+{
+[lrz01       |lrz02               |lrz03 ]
+[lrz01       |lrz02               |lrz03 ]
+[lrz01       |lrz02               |lrz03 ]
+[lrz01       |lrz02               |lrz03 ]
+[lrz01       |lrz02               |lrz03 ]
+
+}
+END -- s_lrz
+END -- Page2
+END -- pc2
+Grid gr2
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2
+END -- vb2
+END -- almi650
+
+TABLES
+lrz_file
+ATTRIBUTES
+ButtonEdit lrz01=lrz_file.lrz01, action=controlp, tabIndex=2, title="lrz01", not null, required, image="zoom.png";
+Edit lrz02=lrz_file.lrz02, tabIndex=3, title="lrz02";
+CheckBox lrz03=lrz_file.lrz03, tabIndex=4, default = "Y", title=%"lrz03", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lrz(lrz_file.lrz01,lrz_file.lrz02,lrz_file.lrz03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli0011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli001")
+VBox vb7
+Folder folder01
+Page page01(text="Main")
+Grid gr2327
+{
+ Group No.           [axee13              ]
+ Company No.         [axee01              ]
+ Plant Name          [axz02               ]
+ Logistics code      [axz03               ]
+ Book No             [axee00    ]
+
+
+}
+END -- gr2327
+END -- page01
+END -- folder01
+Table s_axee
+{
+[axee04            |axee05                        |axee06            |aag02                                             |axee11               |axee12               ]
+[axee04            |axee05                        |axee06            |aag02                                             |axee11               |axee12               ]
+[axee04            |axee05                        |axee06            |aag02                                             |axee11               |axee12               ]
+[axee04            |axee05                        |axee06            |aag02                                             |axee11               |axee12               ]
+[axee04            |axee05                        |axee06            |aag02                                             |axee11               |axee12               ]
+[axee04            |axee05                        |axee06            |aag02                                             |axee11               |axee12               ]
+[axee04            |axee05                        |axee06            |aag02                                             |axee11               |axee12               ]
+[axee04            |axee05                        |axee06            |aag02                                             |axee11               |axee12               ]
+[axee04            |axee05                        |axee06            |aag02                                             |axee11               |axee12               ]
+[axee04            |axee05                        |axee06            |aag02                                             |axee11               |axee12               ]
+
+}
+END -- s_axee
+Grid gr2328
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2328
+END -- vb7
+END -- agli0011
+
+TABLES
+axee_file
+ATTRIBUTES
+ButtonEdit axee13=axee_file.axee13, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit axee01=axee_file.axee01, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Query";
+Edit axz02=formonly.axz02 type CHAR, tabIndex=3, noEntry;
+Edit axz03=formonly.axz03 type CHAR, tabIndex=4, noEntry;
+Edit axee00=formonly.axee00 type VARCHAR, tabIndex=5, noEntry, not null, required;
+ButtonEdit axee04=axee_file.axee04, action=controlp, tabIndex=6, title="Company Account #", not null, required, image="zoom", comment="<^P> Qry Account";
+Edit axee05=axee_file.axee05, tabIndex=7, title="Company Account Name";
+ButtonEdit axee06=axee_file.axee06, action=controlp, tabIndex=8, title="After Combine Acct", not null, required, image="zoom", comment="<^P> Qry Account";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=9, title="Account Name", noEntry;
+ComboBox axee11=axee_file.axee11, tabIndex=10, title="Revalue Ex.Rate Type", not null, required, items=(("1", %"Now Ex.Rate"),("2", %"Hist Ex.Rate"),("3", %"Avg Ex.Rate"));
+ComboBox axee12=axee_file.axee12, tabIndex=11, title="Convert Ex.Rate Type", not null, required, items=(("1", %"Now Ex.Rate"),("2", %"Hist Ex.Rate"),("3", %"Avg Ex.Rate"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axee(axee_file.axee04,axee_file.axee05,axee_file.axee06,formonly.aag02,axee_file.axee11,axee_file.axee12)
+SCREEN RECORD Undefined(axee_file.axee13,axee_file.axee01,formonly.axz02,formonly.axz03,formonly.axee00,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

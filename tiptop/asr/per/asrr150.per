@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asrr150.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asrr150")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                       >
+   Item Master    [opc01                         ]
+   Customer       [opc02                         ]
+   Sales          [opc04                         ]
+   Dept No        [opc05                         ]
+ <                                                >
+ <G group02                                       >
+   Date           [bdate     ] - [edate     ]
+   Listing Method [opc06     ]
+   Time Bucket    [opc10     ]
+
+ <                                                >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                  ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- asrr150
+
+TABLES
+opc_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit opc01=opc_file.opc01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit opc02=opc_file.opc02, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit opc04=opc_file.opc04, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit opc05=opc_file.opc05, action=controlp, tabIndex=4, image="zoom";
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=5, not null, required;
+DateEdit edate=formonly.edate type CHAR, tabIndex=6, not null, required;
+ComboBox opc06=opc_file.opc06, tabIndex=7, not null, required, queryEditable, items=(("1", %"By Time Bucket"),("2", %"Day"),("3", %"Week"),("4", %"10-Day"),("5", %"Month"));
+ButtonEdit opc10=opc_file.opc10, action=controlp, tabIndex=8, image="zoom", comment="<^P>Time Bucket # QBE";
+CheckBox more=formonly.more type CHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(opc_file.opc01,opc_file.opc02,opc_file.opc04,opc_file.opc05,formonly.bdate,formonly.edate,opc_file.opc06,opc_file.opc10,formonly.more)
+END -- INSTRUCTIONS
+

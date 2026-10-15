@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt110_2")
+Grid gr343
+{
+ <G group01                                        >
+  Enter Store-in Note# QBE       [rvv01           ]
+  Enter Store-in Date QBE        [rvv09     ]
+  Enter Receiving Report No. QBE [rva01           ]
+  Enter Receiving Date QBE       [rva06     ]
+  Enter Purchase Order# QBE      [rva02           ]
+  Enter Item No. QBE             [rvb05     ]
+ <                                                 >
+
+}
+END -- gr343
+END -- aapt110_2
+
+TABLES
+rvv_file,
+rvb_file,
+rva_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit rvv01=rvv_file.rvv01, tabIndex=1;
+Edit rvv09=rvv_file.rvv09, tabIndex=2;
+Edit rva01=rva_file.rva01, tabIndex=3;
+Edit rva06=rva_file.rva06, tabIndex=4;
+Edit rva02=rva_file.rva02, tabIndex=5;
+Edit rvb05=rvb_file.rvb05, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rvv_file.rvv01,rvv_file.rvv09,rva_file.rva01,rva_file.rva06,rva_file.rva02,rvb_file.rvb05)
+END -- INSTRUCTIONS
+

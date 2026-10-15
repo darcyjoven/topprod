@@ -1,0 +1,104 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemi201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemi201")
+VBox VBox1
+Folder pc296
+Page page01(text="Main")
+HBox HBox1
+Grid gr1739
+{
+ Work No.            [fin01               ]
+ Device No.          [fil03               ]
+                     [fia02                         ]
+ Maintain Item       [fin02     ]
+                     [fio02               ]
+ Type Of Work        [fin03     ] [trw02     ]
+
+}
+END -- gr1739
+Grid gr1740
+{
+ Employee No.        [fin04     ] [gen02     ]
+ Department No.      [fin05     ] [gem02     ]
+ Shift No.           [fin06     ] [cpe02     ]
+ Working Report Date [fin07     ] [fin08     ]
+ Start Date          [fin09     ] [fin10     ]
+ Input Hours         [fin11     ] [dummy1    ]
+
+}
+END -- gr1740
+END -- HBox1
+END -- page01
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[finud01                       ] userdefined_field07[finud07        ] userdefined_field13[finud13        ]
+                    [                              ] userdefined_field08[finud08        ] userdefined_field14[finud14        ]
+ userdefined_field02[finud02        ]                userdefined_field09[finud09        ] userdefined_field15[finud15        ]
+ userdefined_field03[finud03        ]                userdefined_field10[finud10        ]
+ userdefined_field04[finud04        ]                userdefined_field11[finud11        ]
+ userdefined_field05[finud05        ]                userdefined_field12[finud12        ]
+ userdefined_field06[finud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc296
+Grid gr1741
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1741
+END -- VBox1
+END -- aemi201
+
+TABLES
+fin_file
+ATTRIBUTES
+ButtonEdit fin01=fin_file.fin01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit fil03=formonly.fil03 type CHAR, tabIndex=2, noEntry;
+Edit fia02=formonly.fia02 type CHAR, tabIndex=3, noEntry;
+ButtonEdit fin02=fin_file.fin02, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit fio02=formonly.fio02 type CHAR, tabIndex=5, noEntry;
+ButtonEdit fin03=fin_file.fin03, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit trw02=formonly.trw02 type CHAR, tabIndex=7, noEntry;
+ButtonEdit fin04=fin_file.fin04, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=9, noEntry;
+ButtonEdit fin05=fin_file.fin05, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=11, noEntry;
+ButtonEdit fin06=fin_file.fin06, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit cpe02=formonly.cpe02 type CHAR, tabIndex=13, noEntry;
+DateEdit fin07=fin_file.fin07, tabIndex=14;
+Edit fin08=fin_file.fin08, tabIndex=15, format="----";
+DateEdit fin09=fin_file.fin09, tabIndex=16;
+Edit fin10=fin_file.fin10, tabIndex=17, format="----";
+Edit fin11=fin_file.fin11, tabIndex=18;
+Label dummy1:dummy1, text="Hours";
+TextEdit finud01=fin_file.finud01, tabIndex=20, stretch=NONE;
+Edit finud07=fin_file.finud07, tabIndex=21;
+DateEdit finud13=fin_file.finud13, tabIndex=22;
+Edit finud08=fin_file.finud08, tabIndex=23;
+DateEdit finud14=fin_file.finud14, tabIndex=24;
+Edit finud02=fin_file.finud02, tabIndex=25;
+Edit finud09=fin_file.finud09, tabIndex=26;
+DateEdit finud15=fin_file.finud15, tabIndex=27;
+Edit finud03=fin_file.finud03, tabIndex=28;
+Edit finud10=fin_file.finud10, tabIndex=29;
+Edit finud04=fin_file.finud04, tabIndex=30;
+Edit finud11=fin_file.finud11, tabIndex=31;
+Edit finud05=fin_file.finud05, tabIndex=32;
+Edit finud12=fin_file.finud12, tabIndex=33;
+Edit finud06=fin_file.finud06, tabIndex=34;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fin_file.fin01,formonly.fil03,formonly.fia02,fin_file.fin02,formonly.fio02,fin_file.fin03,formonly.trw02,fin_file.fin04,formonly.gen02,fin_file.fin05,formonly.gem02,fin_file.fin06,formonly.cpe02,fin_file.fin07,fin_file.fin08,fin_file.fin09,fin_file.fin10,fin_file.fin11,fin_file.finud01,fin_file.finud07,fin_file.finud13,fin_file.finud08,fin_file.finud14,fin_file.finud02,fin_file.finud09,fin_file.finud15,fin_file.finud03,fin_file.finud10,fin_file.finud04,fin_file.finud11,fin_file.finud05,fin_file.finud12,fin_file.finud06,formonly.cnt)
+END -- INSTRUCTIONS
+

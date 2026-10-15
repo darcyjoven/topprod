@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1149.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="afat1149")
+Folder pc6
+Page Page12(text=%"Main")
+Table s_fby2
+{
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby052        |fby062        |fby072        |fby08         |fby092        |fby102        |fby112        ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby052        |fby062        |fby072        |fby08         |fby092        |fby102        |fby112        ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby052        |fby062        |fby072        |fby08         |fby092        |fby102        |fby112        ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby052        |fby062        |fby072        |fby08         |fby092        |fby102        |fby112        ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby052        |fby062        |fby072        |fby08         |fby092        |fby102        |fby112        ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby052        |fby062        |fby072        |fby08         |fby092        |fby102        |fby112        ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby052        |fby062        |fby072        |fby08         |fby092        |fby102        |fby112        ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby052        |fby062        |fby072        |fby08         |fby092        |fby102        |fby112        ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby052        |fby062        |fby072        |fby08         |fby092        |fby102        |fby112        ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby052        |fby062        |fby072        |fby08         |fby092        |fby102        |fby112        ]
+
+}
+END -- s_fby2
+END -- Page12
+END -- pc6
+END -- afat1149
+
+TABLES
+fby_file
+ATTRIBUTES
+Edit fby02=fby_file.fby02, tabIndex=1, title="Line No.", noEntry;
+ButtonEdit fby03=fby_file.fby03, action=controlp, tabIndex=2, title="Property No.", noEntry, image="zoom", comment="<^P>Qry Asset ";
+Edit fby031=fby_file.fby031, tabIndex=3, title="Add No.", noEntry;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=4, title="Chinese Name", noEntry;
+Edit fby04=fby_file.fby04, tabIndex=5, title="Old Asset Category", noEntry;
+Edit fby052=fby_file.fby052, tabIndex=6, title="Old Asset Account 2", noEntry;
+Edit fby062=fby_file.fby062, tabIndex=7, title="Old Accumulated Depreciation Account 2", noEntry;
+Edit fby072=fby_file.fby072, tabIndex=8, title="Old Depreciation Account 2", noEntry;
+Edit fby08=fby_file.fby08, tabIndex=9, title="New Asset Category 2", noEntry;
+ButtonEdit fby092=fby_file.fby092, tabIndex=10, title="New Asset Account 2", not null, required, image="zoom";
+ButtonEdit fby102=fby_file.fby102, action=controlp, tabIndex=11, title="New Accumulated Depreciation Account 2", not null, required, image="zoom", comment="<^P>Query Department <^T>Qry Apportionment Category <^Y>Apportionment Category";
+ButtonEdit fby112=fby_file.fby112, action=controlp, tabIndex=11, title="New Depreciation Account 2", not null, required, image="zoom", comment="<^P>Qry Account";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fby2(fby_file.fby02,fby_file.fby03,fby_file.fby031,formonly.faj06,fby_file.fby04,fby_file.fby052,fby_file.fby062,fby_file.fby072,fby_file.fby08,fby_file.fby092,fby_file.fby102,fby_file.fby112)
+END -- INSTRUCTIONS
+

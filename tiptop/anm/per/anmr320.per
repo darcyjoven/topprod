@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr320.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmr320")
+VBox vb9
+Group group01(text="QBE")
+Grid gr8
+{
+ Bank No.            [nma01               ]
+ Bank Account NO.    [nma04               ]
+ Currency            [nma10               ]
+}
+END -- gr8
+END -- group01
+Group gorup02(text="INPUT")
+VBox vb10
+Grid gr18
+{
+
+
+
+
+
+ <G gb20                                                                    >
+ [s1                  ][s2                  ][s3                  ]
+ [t1                  ][t2                  ][t3                  ]
+ [u1                  ][u2                  ][u3                  ]
+ <                                                                          >
+}
+END -- gr18
+Grid gr9
+{
+  Initial Date        [bdate               ]
+  Ending Date         [edate               ]
+ [d                                                            ]
+  Count by            [date_sw             ]
+ [e                                                            ]
+
+}
+END -- gr9
+END -- vb10
+END -- gorup02
+Grid gr10
+{
+[more                                                        ]
+
+}
+END -- gr10
+END -- vb9
+END -- anmr320
+
+TABLES
+nma_file
+ATTRIBUTES
+ButtonEdit nma01=nma_file.nma01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit nma04=nma_file.nma04, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit nma10=nma_file.nma10, action=controlp, tabIndex=3, image="zoom";
+Group gb20:gb20, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=13, queryEditable, items=(("1", "Bank No."),("2", "Bank Code."),("3", "Currency"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=14, queryEditable, items=(("1", "Bank No."),("2", "Bank Code"),("3", "Currency"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=15, queryEditable, items=(("1", "Bank No."),("2", "Bank Code"),("3", "Currency"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=16, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=17, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=18, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=19, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=20, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=21, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=22;
+DateEdit edate=formonly.edate type DATE, tabIndex=23;
+CheckBox d=formonly.d type CHAR, tabIndex=24, text="With Adjustment Setting, print?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox date_sw=formonly.date_sw type CHAR, tabIndex=25, not null, required, items=(("1", "Bank Date"),("2", "Accounting Date"));
+CheckBox e=formonly.e type CHAR, tabIndex=27, text="Print Data without Transation", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=26, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nma_file.nma01,nma_file.nma04,nma_file.nma10,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.bdate,formonly.edate,formonly.d,formonly.date_sw,formonly.more,formonly.e)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi000_b2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi000_b2")
+Grid gr4797
+{
+ <T document                                                                                                                                                                                                                               >
+ [poy02_2   |poy03_2    |pmc03_2     |poy34         |poy35            |poy36         |poy47           |poy48       |poy37        |poy38         |poy39   |poy40   |poy41                  |poy42                |poy43        |poy44       ]
+ [poy02_2   |poy03_2    |pmc03_2     |poy34         |poy35            |poy36         |poy47           |poy48       |poy37        |poy38         |poy39   |poy40   |poy41                  |poy42                |poy43        |poy44       ]
+ [poy02_2   |poy03_2    |pmc03_2     |poy34         |poy35            |poy36         |poy47           |poy48       |poy37        |poy38         |poy39   |poy40   |poy41                  |poy42                |poy43        |poy44       ]
+ [poy02_2   |poy03_2    |pmc03_2     |poy34         |poy35            |poy36         |poy47           |poy48       |poy37        |poy38         |poy39   |poy40   |poy41                  |poy42                |poy43        |poy44       ]
+ [poy02_2   |poy03_2    |pmc03_2     |poy34         |poy35            |poy36         |poy47           |poy48       |poy37        |poy38         |poy39   |poy40   |poy41                  |poy42                |poy43        |poy44       ]
+ <                                                                                                                                                                                                                                         >
+
+}
+END -- gr4797
+END -- apmi000_b2
+
+TABLES
+poy_file
+ATTRIBUTES
+Table document:document;
+Edit poy02_2=formonly.poy02_2 type CHAR, tabIndex=1, title="Flow No.", noEntry;
+Edit poy03_2=formonly.poy03_2 type CHAR, tabIndex=2, title="Vender No.", noEntry;
+Edit pmc03_2=formonly.pmc03_2 type CHAR, tabIndex=3, title="Vender Name", noEntry;
+ButtonEdit poy34=poy_file.poy34, action=controlp, tabIndex=4, title="Type of order", image="zoom", comment="Key Field, No Blank/Repeated!,<^P>Qry Document Property";
+ButtonEdit poy35=poy_file.poy35, action=controlp, tabIndex=5, title="Type of Purchase", image="zoom";
+ButtonEdit poy36=poy_file.poy36, action=controlp, tabIndex=6, title="Delivery Note", image="zoom", upShift, comment="<^P>Qry Delivery slip type";
+ButtonEdit poy47=poy_file.poy47, action=controlp, tabIndex=7, title="Delivery Advice", image="zoom", upShift, comment="<^P>Qry Delivery Advice slip type";
+ButtonEdit poy48=poy_file.poy48, action=controlp, tabIndex=8, title=%"Invoice Note", image="zoom";
+ButtonEdit poy37=poy_file.poy37, action=controlp, tabIndex=9, title="Receipt Note", image="zoom", upShift, comment="<^P>Qry Type of Collection statement";
+ButtonEdit poy38=poy_file.poy38, action=controlp, tabIndex=10, title="Store-in Note", image="zoom", upShift, comment="<^P>Qry Store-in Note";
+ButtonEdit poy39=poy_file.poy39, action=controlp, tabIndex=11, title="AR Note", image="zoom", upShift, comment="<^P>Qry AR Note";
+ButtonEdit poy40=poy_file.poy40, action=controlp, tabIndex=12, title="AP Note", image="zoom", upShift, comment="<^P>Qry AP Note";
+ButtonEdit poy41=poy_file.poy41, action=controlp, tabIndex=13, title="Sales Return Note Type", image="zoom", upShift, comment="<^P>Qry Sales Return Note Type";
+ButtonEdit poy42=poy_file.poy42, action=controlp, tabIndex=14, title="W/H Return Note Tpye", image="zoom", upShift, comment="<^P>Qry W/H Return Note Tpye";
+ButtonEdit poy43=poy_file.poy43, action=controlp, tabIndex=15, title="AR Allowance", image="zoom", upShift, comment="<^P>Qry AR Allowance";
+ButtonEdit poy44=poy_file.poy44, action=controlp, tabIndex=16, title="AP Allowance", image="zoom", upShift, comment="<^P>Qry AP Allowance";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_poy2(formonly.poy02_2,formonly.poy03_2,formonly.pmc03_2,poy_file.poy34,poy_file.poy35,poy_file.poy36,poy_file.poy47,poy_file.poy48,poy_file.poy37,poy_file.poy38,poy_file.poy39,poy_file.poy40,poy_file.poy41,poy_file.poy42,poy_file.poy43,poy_file.poy44)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapi104.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapi104")
+VBox VBox1
+Folder pc7
+Page page01(text="Main")
+Table s_apr
+{
+[apr01    |apr02                         |apract]
+[apr01    |apr02                         |apract]
+[apr01    |apr02                         |apract]
+[apr01    |apr02                         |apract]
+[apr01    |apr02                         |apract]
+[apr01    |apr02                         |apract]
+[apr01    |apr02                         |apract]
+[apr01    |apr02                         |apract]
+[apr01    |apr02                         |apract]
+[apr01    |apr02                         |apract]
+
+}
+END -- s_apr
+END -- page01
+END -- pc7
+Grid gr15
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr15
+END -- VBox1
+END -- aapi104
+
+TABLES
+apr_file
+ATTRIBUTES
+Edit apr01=apr_file.apr01, tabIndex=1, title="Category", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit apr02=apr_file.apr02, tabIndex=2, title="Desc.";
+CheckBox apract=apr_file.apracti, tabIndex=3, title="Valid?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apr(apr_file.apr01,apr_file.apr02,apr_file.apracti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

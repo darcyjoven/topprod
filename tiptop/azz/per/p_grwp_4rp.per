@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_grwp_4rp.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (minWidth=70, minHeight=10, spacing=normal, text="cl_gre")
+VBox VBox1
+Grid Grid2
+{
+
+[dummy01                                                                                                                           ]
+
+
+
+}
+END -- Grid2
+Table s_gdw
+{
+[gdw01               |gaz03                     |gdw09                   ]
+[gdw01               |gaz03                     |gdw09                   ]
+[gdw01               |gaz03                     |gdw09                   ]
+[gdw01               |gaz03                     |gdw09                   ]
+[gdw01               |gaz03                     |gdw09                   ]
+[gdw01               |gaz03                     |gdw09                   ]
+[gdw01               |gaz03                     |gdw09                   ]
+
+}
+END -- s_gdw
+Grid Grid1
+{
+ ----------Rows [cn3   ] ----------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- p_grwp_4rp
+
+TABLES
+gaz_file,
+gdw_file
+ATTRIBUTES
+Label dummy01:dummy01, text=%"hint: if modify several reports\'s papersize, you can add a new papersize in program p_grwp first and edit theirs in program p_grw.";
+Edit gdw01=gdw_file.gdw01, tabIndex=1, title=%"FileList", noEntry;
+Edit gaz03=gaz_file.gaz03, tabIndex=1, default = "N", title=%"ProgName";
+Edit gdw09=gdw_file.gdw09, tabIndex=1, title=%"Template Name";
+Phantom formonly.path type VARCHAR;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gdw(gdw_file.gdw01,gaz_file.gaz03,gdw_file.gdw09,formonly.path)
+SCREEN RECORD Undefined(formonly.cn3)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_contview.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Report Viewer")
+VBox vb12
+Grid gr3663
+{
+ [fi][pr][curr ]/[total][ne][la][cancel]
+
+}
+END -- gr3663
+Grid gr3664
+{
+  <G group02                                                      >
+    .
+  <                                                               >
+
+}
+END -- gr3664
+END -- vb12
+END -- cl_contview
+
+ATTRIBUTES
+Button fi:first_page, image="gobegin", comment="First Page";
+Button pr:prev_page, image="prev", comment="Previous Page";
+Edit curr=formonly.curr type CHAR, tabIndex=1;
+Edit total=formonly.total type CHAR, tabIndex=2, noEntry;
+Button ne:next_page, image="next", comment="Next Page";
+Button la:last_page, image="goend", comment="Last Page";
+Button cancel:cancel, text="Exit";
+Group group02:group02;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.curr,formonly.total)
+END -- INSTRUCTIONS
+

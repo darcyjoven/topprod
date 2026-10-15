@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt5001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt5001")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ <G group01                                                 ><G group04                                                    >
+  Bill To       [ofa0351                             ]        Ship To   [ofa0451                             ]
+                [ofa0352                             ]                  [ofa0452                             ]
+ [label1    ]   [ofa0353                             ]       [label2    |ofa0453                             ]
+                [ofa0354                             ]                  [ofa0454                             ]
+                [ofa0355                             ]                  [ofa0455                             ]
+                [ofa0356                             ]                  [ofa0456                             ]
+                [ofa0357                             ]                  [ofa0457                             ]
+
+ <                                                          ><                                                             >
+ <G group02                                                 ><G group03                                                   >
+  Ship From     [ofa41     ][oac02               ]            Price Term     [ofa31     ][oah02                         ]
+  Ship To       [ofa42     ][oac02_2             ]            Payment        [ofa32     ][oag02                         ]
+  Ship By       [ofa43               ]                        Other Term     [ofa33                                   ]
+  Vessel/Voy    [ofa47               ][ofa48               ]  Issue By       [ofa63                                   ]
+  Ship Date     [ofa49       ]
+ <                                                          ><                                                            >
+
+
+
+
+
+}
+END -- gr1
+END -- page01
+END -- pc1
+END -- VBox1
+END -- axmt5001
+
+TABLES
+ofa_file
+ATTRIBUTES
+Group group01:group01;
+Edit ofa0351=ofa_file.ofa0351, tabIndex=1;
+Edit ofa0352=ofa_file.ofa0352, tabIndex=2;
+Label label1:Label1, text=%"Label1";
+Edit ofa0353=ofa_file.ofa0353, tabIndex=3;
+Edit ofa0354=ofa_file.ofa0354, tabIndex=4;
+Edit ofa0355=ofa_file.ofa0355, tabIndex=5;
+Edit ofa0356=ofa_file.ofa0356, tabIndex=26;
+Edit ofa0357=ofa_file.ofa0357, tabIndex=25;
+Group group04:group04;
+Edit ofa0451=ofa_file.ofa0451, tabIndex=6;
+Edit ofa0452=ofa_file.ofa0452, tabIndex=7;
+Label label2:Label2, text=%"Label2";
+Edit ofa0453=ofa_file.ofa0453, tabIndex=8;
+Edit ofa0454=ofa_file.ofa0454, tabIndex=9;
+Edit ofa0455=ofa_file.ofa0455, tabIndex=10;
+Edit ofa0456=ofa_file.ofa0456, tabIndex=28;
+Edit ofa0457=ofa_file.ofa0457, tabIndex=27;
+Group group02:group02;
+ButtonEdit ofa41=ofa_file.ofa41, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Details";
+Edit oac02=formonly.oac02 type CHAR, tabIndex=12, noEntry;
+ButtonEdit ofa42=ofa_file.ofa42, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Details";
+Edit oac02_2=formonly.oac02_2 type CHAR, tabIndex=14, noEntry;
+ButtonEdit ofa43=ofa_file.ofa43, action=controlp, tabIndex=15, image="zoom.png";
+Edit ofa47=ofa_file.ofa47, tabIndex=16;
+Edit ofa48=ofa_file.ofa48, tabIndex=17;
+DateEdit ofa49=ofa_file.ofa49, tabIndex=18;
+Group group03:group03;
+ButtonEdit ofa31=ofa_file.ofa31, action=controlp, tabIndex=19, image="zoom", comment="<^P>Qry Details";
+Edit oah02=formonly.oah02 type CHAR, tabIndex=20, noEntry;
+ButtonEdit ofa32=ofa_file.ofa32, action=controlp, tabIndex=21, image="zoom", comment="<^P>Qry Details";
+Edit oag02=formonly.oag02 type CHAR, tabIndex=22, noEntry;
+Edit ofa33=ofa_file.ofa33, tabIndex=23;
+Edit ofa63=ofa_file.ofa63, tabIndex=24;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ofa_file.ofa0351,ofa_file.ofa0352,ofa_file.ofa0353,ofa_file.ofa0354,ofa_file.ofa0355,ofa_file.ofa0451,ofa_file.ofa0452,ofa_file.ofa0453,ofa_file.ofa0454,ofa_file.ofa0455,ofa_file.ofa41,formonly.oac02,ofa_file.ofa42,formonly.oac02_2,ofa_file.ofa43,ofa_file.ofa47,ofa_file.ofa48,ofa_file.ofa49,ofa_file.ofa31,formonly.oah02,ofa_file.ofa32,formonly.oag02,ofa_file.ofa33,ofa_file.ofa63,ofa_file.ofa0357,ofa_file.ofa0356,ofa_file.ofa0457,ofa_file.ofa0456)
+END -- INSTRUCTIONS
+

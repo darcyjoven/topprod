@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq311.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axcq311")
+VBox vb2
+Folder pc6
+Page Page12(text=%"Main")
+HBox hb2
+Grid gr24_1
+{
+  Cost Calculate Category [cdc11             ]
+  Book No.                [cdc00             ]
+
+
+}
+END -- gr24_1
+Grid gr24
+{
+ Year/Month       [cdc01   ]/ [cdc0]
+ Cost Center      [cdc03           ]
+ Cost Article     [cdc04           ]
+
+}
+END -- gr24
+END -- hb2
+END -- Page12
+Page Page13(text=%"Info")
+Grid gr28
+{
+ Data Owner   [cdcuser          ]                Last Modified by    [cdcmodu        ]
+ Department   [cdcgrup          ]                Last Modified On    [cdcdate        ]
+
+
+}
+END -- gr28
+END -- Page13
+END -- pc6
+Table s_cdc
+{
+[cdc041                      |cdc08              |cdc05                  |cdc06                    |cdc07               ]
+[cdc041                      |cdc08              |cdc05                  |cdc06                    |cdc07               ]
+[cdc041                      |cdc08              |cdc05                  |cdc06                    |cdc07               ]
+[cdc041                      |cdc08              |cdc05                  |cdc06                    |cdc07               ]
+[cdc041                      |cdc08              |cdc05                  |cdc06                    |cdc07               ]
+[cdc041                      |cdc08              |cdc05                  |cdc06                    |cdc07               ]
+[cdc041                      |cdc08              |cdc05                  |cdc06                    |cdc07               ]
+[cdc041                      |cdc08              |cdc05                  |cdc06                    |cdc07               ]
+[cdc041                      |cdc08              |cdc05                  |cdc06                    |cdc07               ]
+
+}
+END -- s_cdc
+Grid gr52
+{
+ ----------  Rows [cnt   ] / [cn2   ] ---------- Total Cost [tot_cdc05                ] Total Target [tot_cdc06                ]
+
+}
+END -- gr52
+END -- vb2
+END -- axcq311
+
+TABLES
+cdc_file
+ATTRIBUTES
+ComboBox cdc11=cdc_file.cdc11, tabIndex=1, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+ButtonEdit cdc00=cdc_file.cdc00, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Department";
+Edit cdc01=cdc_file.cdc01, tabIndex=3, not null, required;
+Edit cdc0=cdc_file.cdc02, tabIndex=4, not null, required;
+ButtonEdit cdc03=cdc_file.cdc03, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+ComboBox cdc04=cdc_file.cdc04, tabIndex=6, not null, required, items=(("1", "Labor"),("2", "Overhead 1"),("3", "Overhead 2"),("4", "Overhead 3"),("5", "Overhead 4"),("6", "Overhead 5"));
+Edit cdcuser=cdc_file.cdcuser, tabIndex=7, noEntry;
+Edit cdcmodu=cdc_file.cdcmodu, tabIndex=9, noEntry;
+Edit cdcgrup=cdc_file.cdcgrup, tabIndex=8, noEntry;
+DateEdit cdcdate=cdc_file.cdcdate, tabIndex=10, noEntry;
+ButtonEdit cdc041=cdc_file.cdc041, tabIndex=11, title="WO No.", not null, required, image="zoom.png";
+ComboBox cdc08=cdc_file.cdc08, tabIndex=12, title="Allocation Method", not null, required, items=(("1", "Actual Labor Hours"),("2", "Standard Labor Hours"),("3", "Standard Machine Hours"),("4", "Output Qty * Distribution Ratio"),("5", "Actual Machine Hours"));
+Edit cdc05=cdc_file.cdc05, tabIndex=13, title="Amount", not null, required;
+Edit cdc06=cdc_file.cdc06, tabIndex=14, title="Target Total", not null, required;
+Edit cdc07=cdc_file.cdc07, tabIndex=15, title="Unit Cost";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+Edit tot_cdc05=formonly.tot_cdc05 type CHAR, tabIndex=18;
+Edit tot_cdc06=formonly.tot_cdc06 type CHAR, tabIndex=19;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cdc(cdc_file.cdc041,cdc_file.cdc08,cdc_file.cdc05,cdc_file.cdc06,cdc_file.cdc07)
+SCREEN RECORD Undefined(cdc_file.cdc11,cdc_file.cdc00,cdc_file.cdc01,cdc_file.cdc02,cdc_file.cdc03,cdc_file.cdc04,cdc_file.cdcuser,cdc_file.cdcmodu,cdc_file.cdcgrup,cdc_file.cdcdate,formonly.cnt,formonly.cn2,formonly.tot_cdc05,formonly.tot_cdc06)
+END -- INSTRUCTIONS
+

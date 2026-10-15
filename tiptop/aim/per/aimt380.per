@@ -1,0 +1,131 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt380.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt380")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr3451
+{
+ Inventory Adjust No.          [imh01             ][smydesc   ]
+ Entry Date                    [imh03     ]
+ Date of Deduction             [imh02     ]
+ Item No.                      [imh04                         ]
+ Part Name                     [ima02                         ]
+ Specification                 [ima021                        ]
+ Unit Use Method               [ima906              ]
+
+}
+END -- gr3451
+Grid gr3452
+{
+ Warehouse                     [imh05     ]
+ Location                      [imh06     ]
+ Lot                           [imh07               ]
+ Inventory Unit                [img09                ]
+ Inventory Qty                 [imh09     ]
+ Memo                          [imh08               ]
+                               [                    ]
+                               [                    ]
+}
+END -- gr3452
+Grid gr3453
+{
+ Confirm Code                  [imhconf][imgmksg]
+                               [imhpost][       ]
+
+
+
+
+
+
+}
+END -- gr3453
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr3454
+{
+ Record Owner        [imhuser   ] Last Modified by    [imhmodu   ]
+ Department          [imhgrup   ] Create/Modify Date  [imhdate   ]
+ Record Orig.        [imhoriu   ]
+ Dept Orig.          [imhorig   ]
+}
+END -- gr3454
+END -- info
+END -- folder01
+Table s_imi
+{
+[imi02    |imi03 |imi04       |imi07      |imi08      |imi07_d    |imi05      |imi06                                                       ]
+[imi02    |imi03 |imi04       |imi07      |imi08      |imi07_d    |imi05      |imi06                                                       ]
+[imi02    |imi03 |imi04       |imi07      |imi08      |imi07_d    |imi05      |imi06                                                       ]
+[imi02    |imi03 |imi04       |imi07      |imi08      |imi07_d    |imi05      |imi06                                                       ]
+[imi02    |imi03 |imi04       |imi07      |imi08      |imi07_d    |imi05      |imi06                                                       ]
+[imi02    |imi03 |imi04       |imi07      |imi08      |imi07_d    |imi05      |imi06                                                       ]
+[imi02    |imi03 |imi04       |imi07      |imi08      |imi07_d    |imi05      |imi06                                                       ]
+[imi02    |imi03 |imi04       |imi07      |imi08      |imi07_d    |imi05      |imi06                                                       ]
+[imi02    |imi03 |imi04       |imi07      |imi08      |imi07_d    |imi05      |imi06                                                       ]
+[imi02    |imi03 |imi04       |imi07      |imi08      |imi07_d    |imi05      |imi06                                                       ]
+
+}
+END -- s_imi
+Grid gr3455
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------- Total Qty Adjust:[imgg10_t         ] Total Qty Not Adjust:[imgg10_t1        ]
+
+}
+END -- gr3455
+END -- VBox1
+END -- aimt380
+
+TABLES
+imi_file,
+imh_file
+ATTRIBUTES
+ButtonEdit imh01=imh_file.imh01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit smydesc=formonly.smydesc type CHAR, tabIndex=2, noEntry;
+DateEdit imh03=imh_file.imh03, tabIndex=3, not null, required;
+DateEdit imh02=imh_file.imh02, tabIndex=4, not null, required;
+ButtonEdit imh04=imh_file.imh04, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=6, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=7, noEntry;
+ComboBox ima906=formonly.ima906 type CHAR, tabIndex=8, noEntry, items=(("1", "Single Unit"),("2", "Child/Parent Unit"),("3", "Reference Unit"));
+ButtonEdit imh05=imh_file.imh05, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit imh06=imh_file.imh06, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Details";
+ButtonEdit imh07=imh_file.imh07, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Details";
+Edit img09=formonly.img09 type CHAR, tabIndex=12, noEntry;
+Edit imh09=imh_file.imh09, tabIndex=13, noEntry, not null, required;
+TextEdit imh08=imh_file.imh08, tabIndex=14, stretch=NONE;
+ComboBox imhconf=imh_file.imhconf, tabIndex=15, noEntry, items=(("N", "Not Posting"),("Y", "Posted"),("X", "Cancelled"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+CheckBox imhpost=imh_file.imhpost, tabIndex=17, noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit imhuser=imh_file.imhuser, tabIndex=18, noEntry;
+Edit imhmodu=imh_file.imhmodu, tabIndex=19, noEntry;
+Edit imhgrup=imh_file.imhgrup, tabIndex=20, noEntry;
+DateEdit imhdate=imh_file.imhdate, tabIndex=21, noEntry;
+Edit imhoriu=imh_file.imhoriu, tabIndex=501, noEntry;
+Edit imhorig=imh_file.imhorig, tabIndex=502, noEntry;
+Edit imi02=imi_file.imi02, tabIndex=22, title="Line No.", not null, required;
+ButtonEdit imi03=imi_file.imi03, action=controlp, tabIndex=23, title="Unit", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit imi04=imi_file.imi04, tabIndex=24, title="Convert Fac", noEntry;
+Edit imi07=imi_file.imi07, tabIndex=25, title="Origin Qty", noEntry, not null, required;
+Edit imi08=imi_file.imi08, tabIndex=26, title="Fact Qty", not null, required;
+Edit imi07_d=formonly.imi07_d type CHAR, tabIndex=27, title="Diff Qty", noEntry;
+Edit imi05=imi_file.imi05, tabIndex=28, title="Adjust Qty", not null, required;
+Edit imi06=imi_file.imi06, tabIndex=29, title="Memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=30, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=31, noEntry;
+Edit imgg10_t=formonly.imgg10_t type CHAR, tabIndex=32, noEntry;
+Edit imgg10_t1=formonly.imgg10_t1 type CHAR, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imi(imi_file.imi02,imi_file.imi03,imi_file.imi04,imi_file.imi07,imi_file.imi08,formonly.imi07_d,imi_file.imi05,imi_file.imi06)
+SCREEN RECORD Undefined(imh_file.imh01,formonly.smydesc,imh_file.imh03,imh_file.imh02,imh_file.imh04,formonly.ima02,formonly.ima021,formonly.ima906,imh_file.imh05,imh_file.imh06,imh_file.imh07,formonly.img09,imh_file.imh09,imh_file.imh08,imh_file.imhconf,formonly.imgmksg,imh_file.imhpost,imh_file.imhuser,imh_file.imhmodu,imh_file.imhgrup,imh_file.imhdate,imh_file.imhoriu,imh_file.imhorig,formonly.cnt,formonly.cn2,formonly.imgg10_t,formonly.imgg10_t1)
+END -- INSTRUCTIONS
+

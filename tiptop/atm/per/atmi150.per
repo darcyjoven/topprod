@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi150.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi150")
+VBox VBox1
+Folder pc324
+Page page01(text="Main")
+Table s_oaj
+{
+[oaj01          |oaj02               |oaj03          |tqe02               |oajacti  ]
+[oaj01          |oaj02               |oaj03          |tqe02               |oajacti  ]
+[oaj01          |oaj02               |oaj03          |tqe02               |oajacti  ]
+[oaj01          |oaj02               |oaj03          |tqe02               |oajacti  ]
+[oaj01          |oaj02               |oaj03          |tqe02               |oajacti  ]
+[oaj01          |oaj02               |oaj03          |tqe02               |oajacti  ]
+[oaj01          |oaj02               |oaj03          |tqe02               |oajacti  ]
+[oaj01          |oaj02               |oaj03          |tqe02               |oajacti  ]
+[oaj01          |oaj02               |oaj03          |tqe02               |oajacti  ]
+[oaj01          |oaj02               |oaj03          |tqe02               |oajacti  ]
+
+}
+END -- s_oaj
+END -- page01
+END -- pc324
+Grid gr1389
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1389
+END -- VBox1
+END -- atmi150
+
+TABLES
+oaj_file
+ATTRIBUTES
+Edit oaj01=oaj_file.oaj01, tabIndex=1, title="Expense Code", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit oaj02=oaj_file.oaj02, tabIndex=2, title="Expense Description", not null, required;
+ButtonEdit oaj03=oaj_file.oaj03, action=controlp, tabIndex=3, title="Reason Code", not null, required, image="zoom";
+Edit tqe02=formonly.tqe02 type VARCHAR, tabIndex=4, title="Reason Name", noEntry;
+CheckBox oajacti=formonly.oajacti type VARCHAR, tabIndex=5, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oaj(oaj_file.oaj01,oaj_file.oaj02,oaj_file.oaj03,formonly.tqe02,formonly.oajacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

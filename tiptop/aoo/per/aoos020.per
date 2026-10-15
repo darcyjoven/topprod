@@ -1,0 +1,148 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aoos020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aoos020")
+VBox VBox1
+Folder pc874
+Page page01(text="Main")
+Grid gr4701
+{
+ <G group01          ><G group02                                   >
+  Year [azm01]         [azm02            ]
+
+ <                   ><                                            >
+ <G group03                                                        >
+  Period[a]  Initial Date[b] Ending Date[c]    Quarter[d]
+    01      [azm011      ]  [azm012      ]    [azm0]
+    02      [azm021      ]  [azm022      ]    [azm1]
+    03      [azm031      ]  [azm032      ]    [azm2]
+    04      [azm041      ]  [azm042      ]    [azm3]
+    05      [azm051      ]  [azm052      ]    [azm4]
+    06      [azm061      ]  [azm062      ]    [azm5]
+    07      [azm071      ]  [azm072      ]    [azm6]
+    08      [azm081      ]  [azm082      ]    [azm7]
+    09      [azm091      ]  [azm092      ]    [azm8]
+    10      [azm101      ]  [azm102      ]    [azm9]
+    11      [azm111      ]  [azm112      ]    [azma]
+    12      [azm121      ]  [azm122      ]    [azmb]
+    13      [azm131      ]  [azm132      ]    [azmc]
+ <                                                                 >
+
+}
+END -- gr4701
+END -- page01
+Page userdefined_field(text=%"User Defined Field")
+Grid Grid1
+{
+ userdefined_field01[azmud01                              ]
+                    [                                     ]
+ userdefined_field02[azmud02              ]
+ userdefined_field03[azmud03              ]
+ userdefined_field04[azmud04              ]
+ userdefined_field05[azmud05              ]
+ userdefined_field06[azmud06              ]
+ userdefined_field07[azmud07              ]
+ userdefined_field08[azmud08              ]
+ userdefined_field09[azmud09              ]
+ userdefined_field10[azmud10              ]
+ userdefined_field11[azmud11              ]
+ userdefined_field12[azmud12              ]
+ userdefined_field13[azmud13              ]
+ userdefined_field14[azmud14              ]
+ userdefined_field15[azmud15              ]
+
+
+
+
+
+}
+END -- Grid1
+END -- userdefined_field
+END -- pc874
+Grid gr4702
+{
+ ----------ROWS [cnt   ]----------
+
+
+}
+END -- gr4702
+END -- VBox1
+END -- aoos020
+
+TABLES
+azm_file
+ATTRIBUTES
+Group group01:group01;
+Edit azm01=azm_file.azm01, tabIndex=1, not null, required, comment="KEY Field, No Blank/Repeated!";
+Group group02:group02, text="Accounting Period Classification Method";
+RadioGroup azm02=azm_file.azm02, tabIndex=2, noEntry, not null, required, items=(("1", "12Period"),("2", "13Period"));
+Group group03:group03;
+LABEL a=formonly.a type VARCHAR;
+LABEL b=formonly.b type VARCHAR;
+LABEL c=formonly.c type VARCHAR;
+LABEL d=formonly.d type VARCHAR;
+DateEdit azm011=azm_file.azm011, tabIndex=7, not null, required;
+DateEdit azm012=azm_file.azm012, tabIndex=8, not null, required;
+Edit azm0=azm_file.azm013, tabIndex=9, comment="Enter 1, 2, 3, 4 ";
+DateEdit azm021=azm_file.azm021, tabIndex=10;
+DateEdit azm022=azm_file.azm022, tabIndex=11;
+Edit azm1=azm_file.azm023, tabIndex=12, comment="Enter 1, 2, 3, 4 ";
+DateEdit azm031=azm_file.azm031, tabIndex=13;
+DateEdit azm032=azm_file.azm032, tabIndex=14;
+Edit azm2=azm_file.azm033, tabIndex=15, comment="Enter 1, 2, 3, 4 ";
+DateEdit azm041=azm_file.azm041, tabIndex=16;
+DateEdit azm042=azm_file.azm042, tabIndex=17;
+Edit azm3=azm_file.azm043, tabIndex=18, comment="Enter 1, 2, 3, 4 ";
+DateEdit azm051=azm_file.azm051, tabIndex=19;
+DateEdit azm052=azm_file.azm052, tabIndex=20;
+Edit azm4=azm_file.azm053, tabIndex=21, comment="Enter 1, 2, 3, 4 ";
+DateEdit azm061=azm_file.azm061, tabIndex=22;
+DateEdit azm062=azm_file.azm062, tabIndex=23;
+Edit azm5=azm_file.azm063, tabIndex=24, comment="Enter 1, 2, 3, 4 ";
+DateEdit azm071=azm_file.azm071, tabIndex=25;
+DateEdit azm072=azm_file.azm072, tabIndex=26;
+Edit azm6=azm_file.azm073, tabIndex=27, comment="Enter 1, 2, 3, 4 ";
+DateEdit azm081=azm_file.azm081, tabIndex=28;
+DateEdit azm082=azm_file.azm082, tabIndex=29;
+Edit azm7=azm_file.azm083, tabIndex=30, comment="Enter 1, 2, 3, 4 ";
+DateEdit azm091=azm_file.azm091, tabIndex=31;
+DateEdit azm092=azm_file.azm092, tabIndex=32;
+Edit azm8=azm_file.azm093, tabIndex=33, comment="Enter 1, 2, 3, 4 ";
+DateEdit azm101=azm_file.azm101, tabIndex=34;
+DateEdit azm102=azm_file.azm102, tabIndex=35;
+Edit azm9=azm_file.azm103, tabIndex=36, comment="Enter 1, 2, 3, 4 ";
+DateEdit azm111=azm_file.azm111, tabIndex=37;
+DateEdit azm112=azm_file.azm112, tabIndex=38;
+Edit azma=azm_file.azm113, tabIndex=39, comment="Enter 1, 2, 3, 4 ";
+DateEdit azm121=azm_file.azm121, tabIndex=40;
+DateEdit azm122=azm_file.azm122, tabIndex=41;
+Edit azmb=azm_file.azm123, tabIndex=42, comment="Enter 1, 2, 3, 4 ";
+DateEdit azm131=azm_file.azm131, tabIndex=43;
+DateEdit azm132=azm_file.azm132, tabIndex=44;
+Edit azmc=azm_file.azm133, tabIndex=45, comment="Enter 1, 2, 3, 4 ";
+TextEdit azmud01=azm_file.azmud01, tabIndex=47;
+Edit azmud02=azm_file.azmud02, tabIndex=48;
+Edit azmud03=azm_file.azmud03, tabIndex=49;
+Edit azmud04=azm_file.azmud04, tabIndex=50;
+Edit azmud05=azm_file.azmud05, tabIndex=51;
+Edit azmud06=azm_file.azmud06, tabIndex=52;
+Edit azmud07=azm_file.azmud07, tabIndex=53;
+Edit azmud08=azm_file.azmud08, tabIndex=54;
+Edit azmud09=azm_file.azmud09, tabIndex=55;
+Edit azmud10=azm_file.azmud10, tabIndex=56;
+Edit azmud11=azm_file.azmud11, tabIndex=57;
+Edit azmud12=azm_file.azmud12, tabIndex=58;
+DateEdit azmud13=azm_file.azmud13, tabIndex=59;
+DateEdit azmud14=azm_file.azmud14, tabIndex=61;
+DateEdit azmud15=azm_file.azmud15, tabIndex=60;
+Edit cnt=formonly.cnt type CHAR, tabIndex=46;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(azm_file.azm01,azm_file.azm02,formonly.a,formonly.b,formonly.c,formonly.d,azm_file.azm011,azm_file.azm012,azm_file.azm013,azm_file.azm021,azm_file.azm022,azm_file.azm023,azm_file.azm031,azm_file.azm032,azm_file.azm033,azm_file.azm041,azm_file.azm042,azm_file.azm043,azm_file.azm051,azm_file.azm052,azm_file.azm053,azm_file.azm061,azm_file.azm062,azm_file.azm063,azm_file.azm071,azm_file.azm072,azm_file.azm073,azm_file.azm081,azm_file.azm082,azm_file.azm083,azm_file.azm091,azm_file.azm092,azm_file.azm093,azm_file.azm101,azm_file.azm102,azm_file.azm103,azm_file.azm111,azm_file.azm112,azm_file.azm113,azm_file.azm121,azm_file.azm122,azm_file.azm123,azm_file.azm131,azm_file.azm132,azm_file.azm133,formonly.cnt,azm_file.azmud01,azm_file.azmud02,azm_file.azmud03,azm_file.azmud04,azm_file.azmud05,azm_file.azmud06,azm_file.azmud07,azm_file.azmud08,azm_file.azmud09,azm_file.azmud10,azm_file.azmud11,azm_file.azmud12,azm_file.azmud13,azm_file.azmud15,azm_file.azmud14)
+END -- INSTRUCTIONS
+

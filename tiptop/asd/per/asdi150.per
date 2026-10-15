@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdi150.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdi150")
+VBox VBox1
+Folder pc87
+Page page01(text="Main")
+Grid gr358
+{
+ Year/Month                 [stj0]/[st]
+ W/O No.                    [stj03             ]
+
+ Adjust Direct Material Amt [stj04               ]
+ Direct Labor Amt           [stj05               ]
+ Overhead Amt 1             [stj06               ]
+ Overhead Amt 2             [stj07               ]
+ Processing Amt             [stj08               ]
+
+}
+END -- gr358
+END -- page01
+END -- pc87
+Grid gr359
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr359
+END -- VBox1
+END -- asdi150
+
+TABLES
+stj_file
+ATTRIBUTES
+Edit stj0=stj_file.stj01, tabIndex=1;
+Edit st=stj_file.stj02, tabIndex=2;
+ButtonEdit stj03=stj_file.stj03, action=controlp, tabIndex=3, image="zoom", upShift, comment="<^P>Query W/O # ";
+Edit stj04=stj_file.stj04, tabIndex=4;
+Edit stj05=stj_file.stj05, tabIndex=5;
+Edit stj06=stj_file.stj06, tabIndex=6;
+Edit stj07=stj_file.stj07, tabIndex=7;
+Edit stj08=stj_file.stj08, tabIndex=8;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(stj_file.stj01,stj_file.stj02,stj_file.stj03,stj_file.stj04,stj_file.stj05,stj_file.stj06,stj_file.stj07,stj_file.stj08,formonly.cnt)
+END -- INSTRUCTIONS
+

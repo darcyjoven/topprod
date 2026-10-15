@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfi010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"csfi010")
+Folder pc64
+Page page01(text="Main")
+VBox VBox1
+Table s_mianji
+{
+[a       |b       |c       |d       |e       |f       ]
+[a       |b       |c       |d       |e       |f       ]
+[a       |b       |c       |d       |e       |f       ]
+[a       |b       |c       |d       |e       |f       ]
+[a       |b       |c       |d       |e       |f       ]
+[a       |b       |c       |d       |e       |f       ]
+[a       |b       |c       |d       |e       |f       ]
+[a       |b       |c       |d       |e       |f       ]
+[a       |b       |c       |d       |e       |f       ]
+[a       |b       |c       |d       |e       |f       ]
+
+}
+END -- s_mianji
+Grid gr231
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr231
+END -- VBox1
+END -- page01
+END -- pc64
+END -- csfi010
+
+ATTRIBUTES
+Edit a=formonly.A type VARCHAR, tabIndex=1, title=%"A";
+Edit b=formonly.B type DECIMAL, tabIndex=2, title=%"B";
+Edit c=formonly.C type DECIMAL(16,0), tabIndex=3, title=%"C";
+Edit d=formonly.D type DECIMAL, tabIndex=4, title=%"D";
+Edit e=formonly.E, tabIndex=5, title=%"E";
+Edit f=formonly.F, tabIndex=6, title=%"F";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mianji(formonly.A,formonly.B,formonly.C,formonly.D,formonly.E,formonly.F)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

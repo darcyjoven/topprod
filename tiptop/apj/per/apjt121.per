@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt121.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt121")
+VBox vb7
+Folder folder01
+Page Page4(text=%"Basic Data\n")
+Grid gr7
+{
+
+   Project No.          [pjb01          ]               Project Name           [pja02                         ]
+   Current WBS Level No.[pjha01                        ]WBS Description        [pjb03                         ]
+   Planned Start Date   [pjb15          ]               Planned Completion Date[pjb16          ]
+
+
+
+}
+END -- gr7
+END -- Page4
+END -- folder01
+Table s_pjha
+{
+[pjha0|pjha03  |pka02                                   |pjx0|pjx03                     |pjha04              |amt                   |pjhaac]
+[pjha0|pjha03  |pka02                                   |pjx0|pjx03                     |pjha04              |amt                   |pjhaac]
+[pjha0|pjha03  |pka02                                   |pjx0|pjx03                     |pjha04              |amt                   |pjhaac]
+[pjha0|pjha03  |pka02                                   |pjx0|pjx03                     |pjha04              |amt                   |pjhaac]
+[pjha0|pjha03  |pka02                                   |pjx0|pjx03                     |pjha04              |amt                   |pjhaac]
+[pjha0|pjha03  |pka02                                   |pjx0|pjx03                     |pjha04              |amt                   |pjhaac]
+[pjha0|pjha03  |pka02                                   |pjx0|pjx03                     |pjha04              |amt                   |pjhaac]
+[pjha0|pjha03  |pka02                                   |pjx0|pjx03                     |pjha04              |amt                   |pjhaac]
+[pjha0|pjha03  |pka02                                   |pjx0|pjx03                     |pjha04              |amt                   |pjhaac]
+[pjha0|pjha03  |pka02                                   |pjx0|pjx03                     |pjha04              |amt                   |pjhaac]
+}
+END -- s_pjha
+Grid gr23
+{
+
+------Rows[idx   ]/[cnt  ]---Item[cn2  ]-------
+
+
+
+}
+END -- gr23
+END -- vb7
+END -- apjt121
+
+ATTRIBUTES
+Edit pjb01=formonly.pjb01 type VARCHAR, tabIndex=7, noEntry;
+Edit pja02=formonly.pja02 type VARCHAR, tabIndex=12, noEntry;
+ButtonEdit pjha01=formonly.pjha01 type VARCHAR, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+Edit pjb03=formonly.pjb03 type VARCHAR, tabIndex=11, noEntry;
+DateEdit pjb15=formonly.pjb15 type DATETIME YEAR TO YEAR, tabIndex=9, noEntry;
+DateEdit pjb16=formonly.pjb16 type DATETIME YEAR TO YEAR, tabIndex=10, noEntry;
+Edit pjha0=formonly.pjha02 type SMALLINT, tabIndex=15, title="Line No.", not null;
+ButtonEdit pjha03=formonly.pjha03 type VARCHAR, action=controlp, tabIndex=16, title="Skill NO.", not null, image="zoom.png";
+Edit pka02=formonly.pka02 type VARCHAR, tabIndex=17, title="Description", noEntry, not null;
+Edit pjx0=formonly.pjx02 type VARCHAR, tabIndex=18, title="Unit", noEntry, not null;
+Edit pjx03=formonly.pjx03 type DECIMAL(20,6), tabIndex=20, title="Unit Expense", noEntry, not null;
+Edit pjha04=formonly.pjha04 type DECIMAL(15,3), tabIndex=19, title="Requirement Qty", not null;
+Edit amt=formonly.amt type DECIMAL, tabIndex=21, title="Requirement Amount", noEntry;
+CheckBox pjhaac=formonly.pjhaacti type VARCHAR, tabIndex=23, title="Valid", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=13, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=14, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=22;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjha(formonly.pjha02,formonly.pjha03,formonly.pka02,formonly.pjx02,formonly.pjx03,formonly.pjha04,formonly.amt,formonly.pjhaacti)
+SCREEN RECORD Undefined(formonly.pjb01,formonly.pja02,formonly.pjha01,formonly.pjb03,formonly.pjb15,formonly.pjb16,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

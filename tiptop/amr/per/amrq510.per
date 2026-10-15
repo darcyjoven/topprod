@@ -1,0 +1,115 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amrq510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amrq510")
+VBox vbox1
+Folder folder01
+Page page01(text=%"Main")
+VBox vbox2
+HBox hbox1
+Grid gr3865
+{
+ Version             [mss_v     ]             S/N    [mss00     ]
+ Item No.            [mss01                         ][ima02                 ]
+ Brand               [mss02               ]          [pmc03                 ]
+}
+END -- gr3865
+Grid gr3866
+{
+ Time Bukt Day       [mss03     ]
+ Act Day             [mss11     ]
+ PLM/PLP             [mss09     ]
+}
+END -- gr3866
+END -- hbox1
+Grid gr3867
+{
+ <G group04                       ><G group05                        ><G group06                        ><G group07                      >
+  Qty Ordered         [mss041    ]  INV                 [mss051    ]   P/R Qty             [mss061    ]   Frozen Qty          [mss06_fz  ]
+  Planned Alo.        [mss043    ]  On QC               [mss052    ]   On Pur              [mss062    ]   Pull Date           [mss071    ]
+  W/O Alo.            [mss044    ]  SUB                 [mss053    ]   Qt Out              [mss063    ]   Push Date           [mss072    ]
+                                                                       WIP Qty             [mss064    ]   Estd.Balance        [mss08     ]
+                                                                       Plan Qty            [mss065    ]
+ <                                ><                                 ><                                 ><                               >
+}
+END -- gr3867
+END -- vbox2
+END -- page01
+END -- folder01
+Table s_mst
+{
+[mst04     |mst05 |t5_name      |mst06            |mst061 |lot_no        |mst06_f|mst07                 |mst08           ]
+[mst04     |mst05 |t5_name      |mst06            |mst061 |lot_no        |mst06_f|mst07                 |mst08           ]
+[mst04     |mst05 |t5_name      |mst06            |mst061 |lot_no        |mst06_f|mst07                 |mst08           ]
+[mst04     |mst05 |t5_name      |mst06            |mst061 |lot_no        |mst06_f|mst07                 |mst08           ]
+[mst04     |mst05 |t5_name      |mst06            |mst061 |lot_no        |mst06_f|mst07                 |mst08           ]
+[mst04     |mst05 |t5_name      |mst06            |mst061 |lot_no        |mst06_f|mst07                 |mst08           ]
+[mst04     |mst05 |t5_name      |mst06            |mst061 |lot_no        |mst06_f|mst07                 |mst08           ]
+[mst04     |mst05 |t5_name      |mst06            |mst061 |lot_no        |mst06_f|mst07                 |mst08           ]
+[mst04     |mst05 |t5_name      |mst06            |mst061 |lot_no        |mst06_f|mst07                 |mst08           ]
+[mst04     |mst05 |t5_name      |mst06            |mst061 |lot_no        |mst06_f|mst07                 |mst08           ]
+}
+END -- s_mst
+Grid gr3868
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3868
+END -- vbox1
+END -- amrq510
+
+TABLES
+mst_file,
+mss_file
+ATTRIBUTES
+Edit mss_v=mss_file.mss_v, tabIndex=1, not null, required;
+Edit mss00=mss_file.mss00, tabIndex=2;
+Edit mss01=mss_file.mss01, tabIndex=3, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, noEntry;
+Edit mss02=mss_file.mss02, tabIndex=5, not null, required;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=6, noEntry;
+DateEdit mss03=mss_file.mss03, tabIndex=7, not null, required;
+DateEdit mss11=mss_file.mss11, tabIndex=8, noEntry;
+Edit mss09=mss_file.mss09, tabIndex=9, noEntry;
+Group group04:group04;
+Edit mss041=mss_file.mss041, tabIndex=10, noEntry;
+Edit mss043=mss_file.mss043, tabIndex=11, noEntry;
+Edit mss044=mss_file.mss044, tabIndex=12, noEntry;
+Group group05:group05;
+Edit mss051=mss_file.mss051, tabIndex=13, noEntry;
+Edit mss052=mss_file.mss052, tabIndex=14, noEntry;
+Edit mss053=mss_file.mss053, tabIndex=15, noEntry;
+Group group06:group06;
+Edit mss061=mss_file.mss061, tabIndex=16, noEntry;
+Edit mss062=mss_file.mss062, tabIndex=17, noEntry;
+Edit mss063=mss_file.mss063, tabIndex=18, noEntry;
+Edit mss064=mss_file.mss064, tabIndex=19, noEntry;
+Edit mss065=mss_file.mss065, tabIndex=20, noEntry;
+Group group07:group07;
+Edit mss06_fz=mss_file.mss06_fz, tabIndex=21, noEntry;
+Edit mss071=mss_file.mss071, tabIndex=22, noEntry;
+Edit mss072=mss_file.mss072, tabIndex=23, noEntry;
+Edit mss08=mss_file.mss08, tabIndex=24, noEntry;
+Edit mst04=mst_file.mst04, tabIndex=25, title=%"D/S Date";
+Edit mst05=mst_file.mst05, tabIndex=26, title=%"Cate";
+Edit t5_name=formonly.t5_name type CHAR, tabIndex=27, title=%"Desc.";
+Edit mst06=mst_file.mst06, tabIndex=28, title=%"Source Doc No";
+Edit mst061=mst_file.mst061, tabIndex=29, title=%"Ln No";
+Edit lot_no=formonly.lot_no type CHAR, tabIndex=30, title=%"LOT. No.";
+Edit mst06_f=mst_file.mst06_fz, tabIndex=31, title=%"Frz.";
+Edit mst07=mst_file.mst07, tabIndex=32, title=%"Up Level Source It No";
+Edit mst08=mst_file.mst08, tabIndex=33, title=%"Qty";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=34, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=35, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mst(mst_file.mst04,mst_file.mst05,formonly.t5_name,mst_file.mst06,mst_file.mst061,formonly.lot_no,mst_file.mst06_fz,mst_file.mst07,mst_file.mst08)
+SCREEN RECORD Undefined(mss_file.mss_v,mss_file.mss00,mss_file.mss01,formonly.ima02,mss_file.mss02,formonly.pmc03,mss_file.mss03,mss_file.mss11,mss_file.mss09,mss_file.mss041,mss_file.mss043,mss_file.mss044,mss_file.mss051,mss_file.mss052,mss_file.mss053,mss_file.mss061,mss_file.mss062,mss_file.mss063,mss_file.mss064,mss_file.mss065,mss_file.mss06_fz,mss_file.mss071,mss_file.mss072,mss_file.mss08,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

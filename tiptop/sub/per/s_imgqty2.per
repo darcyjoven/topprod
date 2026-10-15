@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_imgqty2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_imgqty2")
+VBox VBox1
+Grid gr3905
+{
+ <G group01                                                                >
+  Store-in Item No.   [img01               ][ima02                        ]
+  Store-in Qty        [qty_all             ]
+  Store-in Unit       [unit                ]
+  Balance             [qty_rest            ]
+ <                                                                         >
+
+}
+END -- gr3905
+Table s_img
+{
+[su|img02         |img03      |img04  |img09|exchg               |qty_in              |qty_in2             ]
+[su|img02         |img03      |img04  |img09|exchg               |qty_in              |qty_in2             ]
+[su|img02         |img03      |img04  |img09|exchg               |qty_in              |qty_in2             ]
+[su|img02         |img03      |img04  |img09|exchg               |qty_in              |qty_in2             ]
+[su|img02         |img03      |img04  |img09|exchg               |qty_in              |qty_in2             ]
+[su|img02         |img03      |img04  |img09|exchg               |qty_in              |qty_in2             ]
+[su|img02         |img03      |img04  |img09|exchg               |qty_in              |qty_in2             ]
+[su|img02         |img03      |img04  |img09|exchg               |qty_in              |qty_in2             ]
+[su|img02         |img03      |img04  |img09|exchg               |qty_in              |qty_in2             ]
+[su|img02         |img03      |img04  |img09|exchg               |qty_in              |qty_in2             ]
+
+}
+END -- s_img
+END -- VBox1
+END -- s_imgqty2
+
+TABLES
+img_file
+ATTRIBUTES
+Group group01:group01;
+Edit img01=img_file.img01, tabIndex=1, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit qty_all=formonly.qty_all type DECIMAL, tabIndex=3;
+Edit unit=formonly.unit type VARCHAR, tabIndex=4;
+Edit qty_rest=formonly.qty_rest type DECIMAL, tabIndex=5, noEntry;
+Edit su=formonly.sure type VARCHAR, tabIndex=6, title="X", noEntry, upShift;
+ButtonEdit img02=formonly.img02 type CHAR, action=controlp, tabIndex=7, title="Warehouse No.", image="zoom", comment="<^P>Qry Warehouse <^T>Qry Item/Warehouse Default <^Y>Create Warehouse";
+ButtonEdit img03=formonly.img03 type VARCHAR, action=controlp, tabIndex=8, title="Location", image="zoom", comment="<^P>Qry Location <^Y>Create Location";
+ButtonEdit img04=formonly.img04 type CHAR, action=controlp, tabIndex=9, title="Lot No. Unit", image="zoom", comment="<^P>Qry Lot No. ";
+Edit img09=img_file.img09, tabIndex=10;
+Edit exchg=formonly.exchg type DECIMAL, tabIndex=11, title="Convert Rate";
+Edit qty_in=formonly.qty_in type DECIMAL, tabIndex=12, title="Store-in Qty1(KG)";
+Edit qty_in2=formonly.qty_in2 type DECIMAL, tabIndex=13, title="Store-in Qty2(KG)", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(formonly.sure,formonly.img02,formonly.img03,formonly.img04,img_file.img09,formonly.exchg,formonly.qty_in,formonly.qty_in2)
+SCREEN RECORD Undefined(img_file.img01,formonly.ima02,formonly.qty_all,formonly.unit,formonly.qty_rest)
+END -- INSTRUCTIONS
+

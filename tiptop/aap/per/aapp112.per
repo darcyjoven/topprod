@@ -1,0 +1,104 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapp112.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapp112")
+VBox vb6
+Grid gr58
+{
+ <G group05                                     >
+  Plant      [source    ][azp02               ]
+ <                                              >
+
+
+}
+END -- gr58
+Grid gr59
+{
+ <G group01                                                                              >
+  Accounts #          [apa01               ]   Account Date        [apa02               ]
+  Paying Vender       [apa06               ]   Invoice No.         [apa08               ]
+  Account Employee    [apa21               ]   Accounts Department [apa22               ]
+  plant.QBE           [apa100              ]
+ <                                                                                       >
+}
+END -- gr59
+Group g01(text="INPUT")
+VBox VBox1
+Grid gr60
+{
+ <G group02                                                       >
+ [seperate_sw                                             ]
+ <                                                                >
+
+}
+END -- gr60
+Grid gr61
+{
+ Allowance Note Body Rows [body_no   ]
+ Allowance Note           [to_trtype ]    Account Date        [to_apa02    ]
+ Tax Type                 [to_apa15  ]    Tax Rate %          [to_apa16  ]
+ Account Employee         [to_apa21  ]    Accounts Department [to_apa22  ]
+ Accounts Category        [to_apa36  ]    [apr02                         ]
+}
+END -- gr61
+END -- VBox1
+END -- g01
+Grid gr62
+{
+ <G group03                                                                                      >
+  Start No    [start_no              ]   [dummy01             ]   End No [end_no                ]
+ <                                                                                               >
+
+}
+END -- gr62
+Grid gr63
+{
+[g_bgjob                                                      ]
+
+
+
+}
+END -- gr63
+END -- vb6
+END -- aapp112
+
+TABLES
+apa_file
+ATTRIBUTES
+Group group05:group05, text="INPUT";
+ButtonEdit source=formonly.source type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Documents";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=2, noEntry;
+Group group01:group01, text="QBE";
+ButtonEdit apa01=apa_file.apa01, action=controlp, tabIndex=3, image="zoom";
+DateEdit apa02=apa_file.apa02, tabIndex=4;
+ButtonEdit apa06=apa_file.apa06, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit apa08=apa_file.apa08, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit apa21=apa_file.apa21, action=controlp, tabIndex=7, image="zoom";
+ButtonEdit apa22=apa_file.apa22, action=controlp, tabIndex=8, image="zoom";
+ButtonEdit apa100=apa_file.apa100, action=controlp, tabIndex=22, image="zoom.png";
+Group group02:group02, text="Select";
+RadioGroup seperate_sw=formonly.seperate_sw type CHAR, tabIndex=9, not null, required, items=(("1", "Generate Allowance Note by paying vender"),("2", "Generate Allowance Note by invoice"));
+Edit body_no=formonly.body_no type SMALLINT, tabIndex=10, not null, required;
+ButtonEdit to_trtype=formonly.to_trtype type VARCHAR, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P> Qry Documents";
+DateEdit to_apa02=formonly.to_apa02 type DATE, tabIndex=12, not null, required;
+ButtonEdit to_apa15=formonly.to_apa15 type CHAR, action=controlp, tabIndex=13, not null, required, image="zoom";
+Edit to_apa16=formonly.to_apa16 type CHAR, tabIndex=14, not null, required;
+ButtonEdit to_apa21=formonly.to_apa21 type CHAR, action=controlp, tabIndex=15, not null, required, image="zoom", comment="<^P>Qry Employee";
+ButtonEdit to_apa22=formonly.to_apa22 type CHAR, action=controlp, tabIndex=16, not null, required, image="zoom", comment="<^P>Query Department";
+ButtonEdit to_apa36=formonly.to_apa36 type CHAR, action=controlp, tabIndex=17, not null, required, image="zoom", comment="<^P>Qry Category";
+Edit apr02=formonly.apr02 type CHAR, tabIndex=18, noEntry;
+Group group03:group03, text="Range of generated data";
+Edit start_no=formonly.start_no type CHAR, tabIndex=19, noEntry;
+Label dummy01:dummy01;
+Edit end_no=formonly.end_no type CHAR, tabIndex=20, noEntry;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=21, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.source,formonly.azp02,apa_file.apa01,apa_file.apa02,apa_file.apa06,apa_file.apa08,apa_file.apa21,apa_file.apa22,apa_file.apa100,formonly.seperate_sw,formonly.body_no,formonly.to_trtype,formonly.to_apa02,formonly.to_apa15,formonly.to_apa16,formonly.to_apa21,formonly.to_apa22,formonly.to_apa36,formonly.apr02,formonly.start_no,formonly.end_no,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

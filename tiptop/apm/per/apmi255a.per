@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi255a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi255a")
+Group gb3479
+VBox VBox1
+Grid gr4845
+{
+
+  Item#                [pmh01               ]
+  Vender Item#         [pmh04               ]
+  Currency             [pmh13               ]
+  Approval Status Code [pmh05               ]
+  Approval Date        [pmh06               ]
+  Brand No.            [pmh07               ]
+ [pmh08                           ]
+ <G group01                                   >
+ [pmh09                           ]
+ [                                ]
+ [                                ]
+ <                                            >
+}
+END -- gr4845
+Grid gr4846
+{
+ Exchange Rate         [pmh14               ]
+ Distribution Ratio    [pmh11     ]
+}
+END -- gr4846
+END -- VBox1
+END -- gb3479
+END -- apmi255a
+
+TABLES
+pmh_file
+ATTRIBUTES
+Edit pmh01=pmh_file.pmh01, tabIndex=10, noEntry;
+Edit pmh04=pmh_file.pmh04, tabIndex=1;
+ButtonEdit pmh13=pmh_file.pmh13, action=controlp, tabIndex=2, noEntry, image="zoom", comment="<^P> Qry Currency";
+ComboBox pmh05=pmh_file.pmh05, tabIndex=3, not null, required, queryEditable, items=(("0", "Approved"),("1", "Approving"),("2", "UnApprove"));
+DateEdit pmh06=pmh_file.pmh06, tabIndex=4, comment="<^P> Qry Currency";
+ButtonEdit pmh07=pmh_file.pmh07, action=controlp, tabIndex=5, image="zoom";
+CheckBox pmh08=pmh_file.pmh08, tabIndex=6, text="QC ?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group01:group01, text="QC Degree";
+RadioGroup pmh09=pmh_file.pmh09, tabIndex=7, comment="N.Normal QC T.Strict QC R.Reduced-Qty QC", items=(("N", "Normal QC"),("T", "Strict QC"),("R", "Reduced-Qty QC"));
+ButtonEdit pmh14=pmh_file.pmh14, action=controlp, tabIndex=8, image="zoom";
+Edit pmh11=pmh_file.pmh11, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pmh_file.pmh01,pmh_file.pmh04,pmh_file.pmh13,pmh_file.pmh05,pmh_file.pmh07,pmh_file.pmh08,pmh_file.pmh09,pmh_file.pmh14,pmh_file.pmh11,pmh_file.pmh06)
+END -- INSTRUCTIONS
+

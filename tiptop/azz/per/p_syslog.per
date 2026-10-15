@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_syslog.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid grid1
+{
+
+ <T s_gdp_head                                                                        >
+ [gdp06           |total        |system     |general |detail        ]
+ [gdp06           |total        |system     |general |detail        ]
+ [gdp06           |total        |system     |general |detail        ]
+ [gdp06           |total        |system     |general |detail        ]
+    -----------[lb1        ] ----------------
+ <T s_gdp_datail                                                                                >
+ [gdp05    |gdp01     |gdp02   |gdp03    |gdp04  |gdp07  |gdp09   |gdp10   |gdp11   |gdp08      ]
+ [gdp05    |gdp01     |gdp02   |gdp03    |gdp04  |gdp07  |gdp09   |gdp10   |gdp11   |gdp08      ]
+ [gdp05    |gdp01     |gdp02   |gdp03    |gdp04  |gdp07  |gdp09   |gdp10   |gdp11   |gdp08      ]
+ [gdp05    |gdp01     |gdp02   |gdp03    |gdp04  |gdp07  |gdp09   |gdp10   |gdp11   |gdp08      ]
+ [gdp05    |gdp01     |gdp02   |gdp03    |gdp04  |gdp07  |gdp09   |gdp10   |gdp11   |gdp08      ]
+ [gdp05    |gdp01     |gdp02   |gdp03    |gdp04  |gdp07  |gdp09   |gdp10   |gdp11   |gdp08      ]
+ [gdp05    |gdp01     |gdp02   |gdp03    |gdp04  |gdp07  |gdp09   |gdp10   |gdp11   |gdp08      ]
+ [gdp05    |gdp01     |gdp02   |gdp03    |gdp04  |gdp07  |gdp09   |gdp10   |gdp11   |gdp08      ]
+ [gdp05    |gdp01     |gdp02   |gdp03    |gdp04  |gdp07  |gdp09   |gdp10   |gdp11   |gdp08      ]
+ [gdp05    |gdp01     |gdp02   |gdp03    |gdp04  |gdp07  |gdp09   |gdp10   |gdp11   |gdp08      ]
+}
+END -- grid1
+Grid gr4618
+{
+ ----------Rows [cnt2  ] ----------
+
+}
+END -- gr4618
+END -- VBox1
+END -- p_syslog
+
+TABLES
+gdp_file
+ATTRIBUTES
+Table s_gdp_head:s_gdp_head, width = 69 characters;
+ComboBox gdp06=gdp_file.gdp06, tabIndex=1, title=%"gdp06", not null, required, scroll, items=(("E", %"Error"),("W", %"Worng"),("A", %"Allow"));
+Edit total=formonly.total type CHAR, tabIndex=1, title=%"Total Count";
+Edit system=formonly.system type CHAR, tabIndex=1, title=%"Systmem Layer";
+Edit general=formonly.general type CHAR, tabIndex=1, title=%"General Layer";
+Edit detail=formonly.detail type CHAR, tabIndex=1, title=%"Detail Layer";
+Label lb1:lb1, text=%"Message Detail";
+Table s_gdp_datail:s_gdp_datail, width = 69 characters;
+ComboBox gdp05=gdp_file.gdp05, tabIndex=1, title=%"gdp05", not null, required, scroll, items=(("S", %"System"),("G", %"General"),("D", %"Detail"));
+DateEdit gdp01=gdp_file.gdp01, tabIndex=1, title=%"gdp01", not null, required;
+Edit gdp02=gdp_file.gdp02, tabIndex=1, title=%"gdp02", not null, required, scroll;
+Edit gdp03=gdp_file.gdp03, tabIndex=1, title=%"gdp03", not null, required, scroll;
+Edit gdp04=gdp_file.gdp04, tabIndex=1, title=%"gdp04", not null, required, scroll;
+Edit gdp07=gdp_file.gdp07, tabIndex=1, title=%"gdp07", scroll;
+Edit gdp09=gdp_file.gdp09, tabIndex=3, title=%"gdp09";
+Edit gdp10=gdp_file.gdp10, tabIndex=4, title=%"gdp10";
+Edit gdp11=gdp_file.gdp11, tabIndex=5, title=%"gdp11";
+Edit gdp08=gdp_file.gdp08, tabIndex=1, title=%"gdp08", not null, required, scroll;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.cnt2)
+SCREEN RECORD s_gdp_head(gdp_file.gdp06,formonly.total,formonly.system,formonly.general,formonly.detail)
+SCREEN RECORD s_gdp_detail(gdp_file.gdp05,gdp_file.gdp01,gdp_file.gdp02,gdp_file.gdp03,gdp_file.gdp04,gdp_file.gdp07,gdp_file.gdp09,gdp_file.gdp10,gdp_file.gdp11,gdp_file.gdp08)
+END -- INSTRUCTIONS
+

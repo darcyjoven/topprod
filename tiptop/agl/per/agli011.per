@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli011")
+VBox vb4_
+Folder folder01
+Page page01(text="Main")
+Grid gr2403
+{
+ Group Code [axr01     ]
+ Company No.[axr02     ][axz02               ]
+
+
+
+}
+END -- gr2403
+END -- page01
+END -- folder01
+Table s_axr
+{
+[axr17     |gem02          |axr07            |aag02a             |aag02              |axr03            |axr06             |axr04       |axr05               |axr15               |axr14               |axr16               |axr12        |axr13               ]
+[axr17     |gem02          |axr07            |aag02a             |aag02              |axr03            |axr06             |axr04       |axr05               |axr15               |axr14               |axr16               |axr12        |axr13               ]
+[axr17     |gem02          |axr07            |aag02a             |aag02              |axr03            |axr06             |axr04       |axr05               |axr15               |axr14               |axr16               |axr12        |axr13               ]
+[axr17     |gem02          |axr07            |aag02a             |aag02              |axr03            |axr06             |axr04       |axr05               |axr15               |axr14               |axr16               |axr12        |axr13               ]
+[axr17     |gem02          |axr07            |aag02a             |aag02              |axr03            |axr06             |axr04       |axr05               |axr15               |axr14               |axr16               |axr12        |axr13               ]
+[axr17     |gem02          |axr07            |aag02a             |aag02              |axr03            |axr06             |axr04       |axr05               |axr15               |axr14               |axr16               |axr12        |axr13               ]
+[axr17     |gem02          |axr07            |aag02a             |aag02              |axr03            |axr06             |axr04       |axr05               |axr15               |axr14               |axr16               |axr12        |axr13               ]
+[axr17     |gem02          |axr07            |aag02a             |aag02              |axr03            |axr06             |axr04       |axr05               |axr15               |axr14               |axr16               |axr12        |axr13               ]
+[axr17     |gem02          |axr07            |aag02a             |aag02              |axr03            |axr06             |axr04       |axr05               |axr15               |axr14               |axr16               |axr12        |axr13               ]
+[axr17     |gem02          |axr07            |aag02a             |aag02              |axr03            |axr06             |axr04       |axr05               |axr15               |axr14               |axr16               |axr12        |axr13               ]
+}
+END -- s_axr
+Grid gr2404
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr2404
+END -- vb4_
+END -- agli011
+
+TABLES
+axr_file
+ATTRIBUTES
+ButtonEdit axr01=axr_file.axr01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Group Code";
+ButtonEdit axr02=axr_file.axr02, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Company No.";
+Edit axz02=formonly.axz02 type CHAR, tabIndex=3, noEntry;
+ButtonEdit axr17=axr_file.axr17, action=CONTROLP, tabIndex=16, title=%"Dept.", image="zoom";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=17, title=%"Dept. Name", noEntry;
+ButtonEdit axr07=axr_file.axr07, action=controlp, tabIndex=3, title="Company Account No.", not null, required, image="zoom", comment="<^P>Account No.";
+Edit aag02a=formonly.aag02a type CHAR, tabIndex=3, title="Company Account Name", noEntry;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=5, title="Combined Account Name", noEntry;
+ButtonEdit axr03=axr_file.axr03, action=controlp, tabIndex=4, title="Combined Account No.", noEntry, image="zoom", comment="<^P>Account No.";
+DateEdit axr06=axr_file.axr06, tabIndex=12, title="Transaction Date", not null, required;
+ButtonEdit axr04=axr_file.axr04, action=controlp, tabIndex=6, title="Book Currency", noEntry, image="zoom", comment="<^P>Currency";
+Edit axr05=axr_file.axr05, tabIndex=7, title="Account Amt by Currency", not null, required;
+Edit axr15=axr_file.axr15, tabIndex=14, title="Exch. Rate of Revaluation", not null, required;
+Edit axr14=axr_file.axr14, tabIndex=13, title="Functional Curr.", noEntry, not null, required;
+Edit axr16=axr_file.axr16, tabIndex=15, title="Functional Curr. Amt.", not null, required;
+Edit axr12=axr_file.axr12, tabIndex=10, title="Exchange Rate";
+Edit axr13=axr_file.axr13, tabIndex=11, title="Combined Currency", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axr(axr_file.axr17,formonly.gem02,axr_file.axr07,formonly.aag02a,axr_file.axr03,formonly.aag02,axr_file.axr06,axr_file.axr04,axr_file.axr05,axr_file.axr15,axr_file.axr14,axr_file.axr16,axr_file.axr12,axr_file.axr13)
+SCREEN RECORD Undefined(axr_file.axr01,axr_file.axr02,formonly.axz02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

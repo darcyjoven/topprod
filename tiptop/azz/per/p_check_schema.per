@@ -1,0 +1,96 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_check_schema.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_check_schema")
+VBox vb3
+Folder pc831
+Page page01(action=zta_detail, text="Page01")
+Grid Grid1
+{
+
+[dummy01     ]
+ <T s_zta_schema                                                                     >
+ [sch01|sch0|sch1|sch04  |sch05       |sch06         |sch07          |sch08   |sch09 ]
+ [sch01|sch0|sch1|sch04  |sch05       |sch06         |sch07          |sch08   |sch09 ]
+ [sch01|sch0|sch1|sch04  |sch05       |sch06         |sch07          |sch08   |sch09 ]
+ [sch01|sch0|sch1|sch04  |sch05       |sch06         |sch07          |sch08   |sch09 ]
+ [sch01|sch0|sch1|sch04  |sch05       |sch06         |sch07          |sch08   |sch09 ]
+ [sch01|sch0|sch1|sch04  |sch05       |sch06         |sch07          |sch08   |sch09 ]
+ [sch01|sch0|sch1|sch04  |sch05       |sch06         |sch07          |sch08   |sch09 ]
+ [sch01|sch0|sch1|sch04  |sch05       |sch06         |sch07          |sch08   |sch09 ]
+ [sch01|sch0|sch1|sch04  |sch05       |sch06         |sch07          |sch08   |sch09 ]
+ [sch01|sch0|sch1|sch04  |sch05       |sch06         |sch07          |sch08   |sch09 ]
+ <                                                                                   >
+
+
+
+
+[dummy02     ]
+ <T s_zta_diff                                                                       >
+ [diff01 |diff02              |diff0|diff04                                  ]
+ [diff01 |diff02              |diff0|diff04                                  ]
+ [diff01 |diff02              |diff0|diff04                                  ]
+ [diff01 |diff02              |diff0|diff04                                  ]
+ [diff01 |diff02              |diff0|diff04                                  ]
+ [diff01 |diff02              |diff0|diff04                                  ]
+ [diff01 |diff02              |diff0|diff04                                  ]
+ [diff01 |diff02              |diff0|diff04                                  ]
+ [diff01 |diff02              |diff0|diff04                                  ]
+ [diff01 |diff02              |diff0|diff04                                  ]
+}
+END -- Grid1
+END -- page01
+Page page02(action=db_detail, text="Page02")
+Table s_db_diff
+{
+[db01   |db02                |db03 |db04                                    ]
+[db01   |db02                |db03 |db04                                    ]
+[db01   |db02                |db03 |db04                                    ]
+[db01   |db02                |db03 |db04                                    ]
+[db01   |db02                |db03 |db04                                    ]
+[db01   |db02                |db03 |db04                                    ]
+[db01   |db02                |db03 |db04                                    ]
+[db01   |db02                |db03 |db04                                    ]
+[db01   |db02                |db03 |db04                                    ]
+[db01   |db02                |db03 |db04                                    ]
+}
+END -- s_db_diff
+END -- page02
+END -- pc831
+END -- vb3
+END -- p_check_schema
+
+ATTRIBUTES
+Label dummy01:dummy01, text="dummy01";
+Table s_zta_schema:s_zta_schema;
+Edit sch01=formonly.sch01 type VARCHAR, tabIndex=5, title=%"chk DB", not null, required;
+CheckBox sch0=formonly.sch02 type VARCHAR, tabIndex=5, title="is entity", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sch1=formonly.sch03 type VARCHAR, tabIndex=5, title=%"finance DB";
+Edit sch04=formonly.sch04 type VARCHAR, tabIndex=5, title=%"table cnt";
+Edit sch05=formonly.sch05 type VARCHAR, tabIndex=5, title=%"synonym ds cnt";
+Edit sch06=formonly.sch06 type VARCHAR, tabIndex=5, title=%"synonym finance cnt";
+Edit sch07=formonly.sch07 type VARCHAR, tabIndex=5, title=%"synonym entity cnt";
+Edit sch08=formonly.sch08 type VARCHAR, tabIndex=5, title=%"view cnt";
+Edit sch09=formonly.sch09 type VARCHAR, tabIndex=5, title=%"total";
+Label dummy02:dummy02, text="dummy02";
+Table s_zta_diff:s_zta_diff;
+Edit diff01=formonly.diff01 type VARCHAR, tabIndex=6, title=%"chk DB";
+Edit diff02=formonly.diff02 type VARCHAR, tabIndex=7, title=%"chk type";
+Edit diff0=formonly.diff03 type VARCHAR, tabIndex=9, title="diff cnt", justify=center;
+Edit diff04=formonly.diff04 type VARCHAR, tabIndex=8, title=%"table name";
+Edit db01=formonly.db01 type VARCHAR, tabIndex=10, title=%"chk DB";
+Edit db02=formonly.db02 type VARCHAR, tabIndex=10, title=%"chk type";
+Edit db03=formonly.db03 type VARCHAR, tabIndex=10, title="diff cnt", justify=center;
+Edit db04=formonly.db04 type VARCHAR, tabIndex=10, title=%"table name";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zta_schema(formonly.sch01,formonly.sch02,formonly.sch03,formonly.sch04,formonly.sch05,formonly.sch06,formonly.sch07,formonly.sch08,formonly.sch09)
+SCREEN RECORD s_zta_diff(formonly.diff01,formonly.diff02,formonly.diff03,formonly.diff04)
+SCREEN RECORD s_db_diff(formonly.db01,formonly.db02,formonly.db03,formonly.db04)
+END -- INSTRUCTIONS
+

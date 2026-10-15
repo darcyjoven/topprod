@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp901.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmp901")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                  >
+  Delivery Note Category [oga09           ]
+  Delivery Note No.      [oga01           ]
+ <                                           >
+
+}
+END -- gr1
+Grid gr2
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr2
+END -- VBox1
+END -- axmp901
+
+TABLES
+oga_file
+ATTRIBUTES
+Group group01:group01;
+ComboBox oga09=formonly.oga09 type CHAR, tabIndex=1, not null, required, queryEditable, items=(("4", "Sales"),("6", "SUB P/O"));
+ButtonEdit oga01=oga_file.oga01, action=controlp, tabIndex=2, image="zoom.png";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=3, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oga09,oga_file.oga01,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

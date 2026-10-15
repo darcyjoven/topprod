@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqci100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqci100")
+VBox vb3
+Folder pc6
+Page Page10(text=%"Page01")
+Table s_qca
+{
+[qca01           |qca02          |qca07 |qca03       |qca04                |qca05                |qca06                    ]
+[qca01           |qca02          |qca07 |qca03       |qca04                |qca05                |qca06                    ]
+[qca01           |qca02          |qca07 |qca03       |qca04                |qca05                |qca06                    ]
+[qca01           |qca02          |qca07 |qca03       |qca04                |qca05                |qca06                    ]
+[qca01           |qca02          |qca07 |qca03       |qca04                |qca05                |qca06                    ]
+[qca01           |qca02          |qca07 |qca03       |qca04                |qca05                |qca06                    ]
+[qca01           |qca02          |qca07 |qca03       |qca04                |qca05                |qca06                    ]
+[qca01           |qca02          |qca07 |qca03       |qca04                |qca05                |qca06                    ]
+[qca01           |qca02          |qca07 |qca03       |qca04                |qca05                |qca06                    ]
+[qca01           |qca02          |qca07 |qca03       |qca04                |qca05                |qca06                    ]
+
+}
+END -- s_qca
+END -- Page10
+END -- pc6
+Grid gr4
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4
+END -- vb3
+END -- aqci100
+
+TABLES
+qca_file
+ATTRIBUTES
+Edit qca01=qca_file.qca01, tabIndex=1, title="Initial Lot Qty", not null, required;
+Edit qca02=qca_file.qca02, tabIndex=2, title="Ending Lot Qty", not null, required;
+ComboBox qca07=qca_file.qca07, tabIndex=3, title="Level", not null, required, queryEditable, comment="Enter  1/2/3/4", items=(("1", %"1"),("2", %"2"),("3", %"3"),("4", %"4"));
+Edit qca03=qca_file.qca03, tabIndex=4, title="Sample Code", not null, required, upShift;
+Edit qca04=qca_file.qca04, tabIndex=5, title="Normal QC Sample Qty", not null, required;
+Edit qca05=qca_file.qca05, tabIndex=6, title="Strict QC Sample Qty", not null, required;
+Edit qca06=qca_file.qca06, tabIndex=7, title="Reduced-Qty QC Sample Qty", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qca(qca_file.qca01,qca_file.qca02,qca_file.qca07,qca_file.qca03,qca_file.qca04,qca_file.qca05,qca_file.qca06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

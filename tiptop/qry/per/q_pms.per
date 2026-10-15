@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_pms.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Frequently Used Special Description")
+Grid gr3831
+{
+ <T s_pms                                          >
+ [check  |pms01              |pms02               ]
+ [check  |pms01              |pms02               ]
+ [check  |pms01              |pms02               ]
+ [check  |pms01              |pms02               ]
+ [check  |pms01              |pms02               ]
+ [check  |pms01              |pms02               ]
+ [check  |pms01              |pms02               ]
+ [check  |pms01              |pms02               ]
+ [check  |pms01              |pms02               ]
+ [check  |pms01              |pms02               ]
+ <                                                 >
+
+}
+END -- gr3831
+END -- q_pms
+
+TABLES
+pms_file
+ATTRIBUTES
+Table s_pms:s_pms;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pms01=pms_file.pms01, tabIndex=2, title="Description Code", noEntry;
+Edit pms02=pms_file.pms02, tabIndex=3, title="Memo", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pms(formonly.check,pms_file.pms01,pms_file.pms02)
+END -- INSTRUCTIONS
+

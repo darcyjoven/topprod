@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmr691.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmr691")
+VBox VBox1
+Table s_no
+{
+[bma01                          |bma06               ]
+[bma01                          |bma06               ]
+[bma01                          |bma06               ]
+[bma01                          |bma06               ]
+[bma01                          |bma06               ]
+[bma01                          |bma06               ]
+[bma01                          |bma06               ]
+[bma01                          |bma06               ]
+[bma01                          |bma06               ]
+[bma01                          |bma06               ]
+
+}
+END -- s_no
+Group group02(text="INPUT")
+Grid gr967
+{
+ Expiration Date     [vdate       ]
+ Data Option         [type                ]
+[s_part                        ]
+[e_part                        ]
+[name_p                        ]
+
+}
+END -- gr967
+END -- group02
+Grid gr968
+{
+[more                                ]
+
+}
+END -- gr968
+END -- VBox1
+END -- abmr691
+
+ATTRIBUTES
+ButtonEdit bma01=formonly.bma01 type CHAR, action=controlp, tabIndex=1, title="Master Item", image="zoom", comment="<^P> Query Item, <^Y> Create Item,                       <^O>Crt Compo.Brand  ";
+Edit bma06=formonly.bma06 type VARCHAR, tabIndex=2, title="Alternate Code";
+DateEdit vdate=formonly.vdate type DATE, tabIndex=3;
+ComboBox type=formonly.type type VARCHAR, tabIndex=4, not null, required, items=(("1", "All Items"),("2", "Common Item"),("3", "Different Item"));
+CheckBox s_part=formonly.s_part type VARCHAR, tabIndex=5, text="Print Semi-Product", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e_part=formonly.e_part type VARCHAR, tabIndex=6, text="Print Raw Material", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox name_p=formonly.name_p type VARCHAR, tabIndex=7, text="Print Part Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_no(formonly.bma01,formonly.bma06)
+SCREEN RECORD Undefined(formonly.vdate,formonly.type,formonly.s_part,formonly.e_part,formonly.name_p,formonly.more)
+END -- INSTRUCTIONS
+

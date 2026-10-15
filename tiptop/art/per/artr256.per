@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr256.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                                       >
+  [label1     ]  [ruo01                     ]
+  [label2     ]  [ruo011                    ]
+  [label3     ]  [ruo07                     ]
+ <                                                               >
+ <G group2                                                       >
+  [label4     ]  [type1                     ]
+  [cb1                                 ]
+ <                                                               >
+}
+END -- Grid1
+Grid Grid2
+{
+  [more                                ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+ruo_file
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+Label label1:Label1, text=%"Label1";
+ButtonEdit ruo01=formonly.ruo01 type like ruo_file.ruo01, action=controlp, tabIndex=1, image="zoom";
+Label label2:Label2, text=%"Label2";
+ButtonEdit ruo011=formonly.ruo011 type like ruo_file.ruo011, action=controlp, tabIndex=2, image="zoom";
+Label label3:Label3, text=%"Label3";
+DateEdit ruo07=formonly.ruo07 type like ruo_file.ruo07, tabIndex=3;
+Group group2:Group2, text=%"Group2";
+Label label4:Label4, text=%"Label4";
+ComboBox type1=formonly.type1 type CHAR, tabIndex=4, not null, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"));
+CheckBox cb1=formonly.cb1 type CHAR, tabIndex=5, default = "N", text=%"CheckBox1", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=6, default = "N", text=%"more", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ruo01,formonly.ruo011,formonly.ruo07,formonly.type1,formonly.cb1,formonly.more)
+END -- INSTRUCTIONS
+

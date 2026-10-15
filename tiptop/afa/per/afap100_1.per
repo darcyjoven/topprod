@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap100_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afap100_1")
+Grid gr1899
+{
+ <G group01                       >
+  Rows Generated      [g_cnt     ]
+  Initial Serial No.  [g_start_no]
+  Ending Serial No.   [g_end_no  ]
+ <                                >
+
+}
+END -- gr1899
+END -- afap100_1
+
+ATTRIBUTES
+Group group01:group01;
+Edit g_cnt=formonly.g_cnt type CHAR, tabIndex=1;
+Edit g_start_no=formonly.g_start_no type CHAR, tabIndex=2;
+Edit g_end_no=formonly.g_end_no type CHAR, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_cnt,formonly.g_start_no,formonly.g_end_no)
+END -- INSTRUCTIONS
+

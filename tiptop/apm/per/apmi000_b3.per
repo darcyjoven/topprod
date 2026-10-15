@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi000_b3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi000_b3")
+Grid gr4798
+{
+ <T other                                                                                                          >
+ [poy02_3   |poy03_3    |pmc03_3     |poy10        |poy11     |poy28           |poy31         |poy30     |poy32   ]
+ [poy02_3   |poy03_3    |pmc03_3     |poy10        |poy11     |poy28           |poy31         |poy30     |poy32   ]
+ [poy02_3   |poy03_3    |pmc03_3     |poy10        |poy11     |poy28           |poy31         |poy30     |poy32   ]
+ [poy02_3   |poy03_3    |pmc03_3     |poy10        |poy11     |poy28           |poy31         |poy30     |poy32   ]
+ [poy02_3   |poy03_3    |pmc03_3     |poy10        |poy11     |poy28           |poy31         |poy30     |poy32   ]
+ [poy02_3   |poy03_3    |pmc03_3     |poy10        |poy11     |poy28           |poy31         |poy30     |poy32   ]
+ <                                                                                                                 >
+
+}
+END -- gr4798
+END -- apmi000_b3
+
+TABLES
+poy_file
+ATTRIBUTES
+Table other:other;
+Edit poy02_3=formonly.poy02_3 type CHAR, tabIndex=1, title="Flow No.", noEntry;
+Edit poy03_3=formonly.poy03_3 type CHAR, tabIndex=2, title="Vender No.", noEntry;
+Edit pmc03_3=formonly.pmc03_3 type CHAR, tabIndex=3, title="Vender Name", noEntry;
+ButtonEdit poy10=poy_file.poy10, action=controlp, tabIndex=4, title="Sales Class.", image="zoom", comment="<^P>Qry Sale Class";
+ButtonEdit poy11=poy_file.poy11, action=controlp, tabIndex=5, title="Warehouse", image="zoom", comment="<^P>Qry Warehouse";
+ButtonEdit poy28=poy_file.poy28, action=controlp, tabIndex=6, title="Deliver R. Code", image="zoom";
+ButtonEdit poy31=poy_file.poy31, action=controlp, tabIndex=7, title="RR Code", image="zoom";
+ButtonEdit poy30=poy_file.poy30, action=controlp, tabIndex=8, title="Re R Code", image="zoom";
+ButtonEdit poy32=poy_file.poy32, action=controlp, tabIndex=9, title="TR Code", image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_poy3(formonly.poy02_3,formonly.poy03_3,formonly.pmc03_3,poy_file.poy10,poy_file.poy11,poy_file.poy28,poy_file.poy31,poy_file.poy30,poy_file.poy32)
+END -- INSTRUCTIONS
+

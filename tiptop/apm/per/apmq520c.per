@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq520c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq520c")
+Folder pc965
+Page page01(text="Page01")
+VBox VBox1
+Table s_apb
+{
+[apb01    |apb09    |apg01      |aph03     |aph07    ]
+[apb01    |apb09    |apg01      |aph03     |aph07    ]
+[apb01    |apb09    |apg01      |aph03     |aph07    ]
+[apb01    |apb09    |apg01      |aph03     |aph07    ]
+[apb01    |apb09    |apg01      |aph03     |aph07    ]
+[apb01    |apb09    |apg01      |aph03     |aph07    ]
+[apb01    |apb09    |apg01      |aph03     |aph07    ]
+[apb01    |apb09    |apg01      |aph03     |aph07    ]
+[apb01    |apb09    |apg01      |aph03     |aph07    ]
+[apb01    |apb09    |apg01      |aph03     |aph07    ]
+
+}
+END -- s_apb
+END -- VBox1
+END -- page01
+END -- pc965
+END -- apmq520c
+
+TABLES
+aph_file,
+apg_file,
+apb_file
+ATTRIBUTES
+Edit apb01=apb_file.apb01, tabIndex=1, title="Bill#";
+Edit apb09=apb_file.apb09, tabIndex=2, title="BillQty";
+Edit apg01=apg_file.apg01, tabIndex=3, title="PayNo.";
+Edit aph03=aph_file.aph03, tabIndex=4, title="Property";
+DateEdit aph07=aph_file.aph07, tabIndex=5, title="DueDate.";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apb(apb_file.apb01,apb_file.apb09,apg_file.apg01,aph_file.aph03,aph_file.aph07)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,116 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acot700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acot700")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1507
+{
+ Clearance No.                [cns00             ]
+ Clearance Register Book No.  [cns01          ]
+ Transfer to Register Book No.[cns02          ]
+}
+END -- gr1507
+Grid gr1508
+{
+ Date of Clearance  [cns03       ]
+ Expiry Date        [coc05       ] Currency           [coc02     ] Custom No.         [coc10       ]
+ Expiry Date        [coc05_2     ] Currency           [coc02_2   ] Custom No.         [coc10_2     ]
+}
+END -- gr1508
+Grid gr1509
+{
+ Confirm          [cnsconf              ]
+[imgmksg]
+[       ]
+}
+END -- gr1509
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1510
+{
+ Record Owner        [cnsuser   ] Last Modified by    [cnsmodu   ] Data Valid Code     [cnsacti   ]
+ Department          [cnsgrup   ] Create/Modify Date  [cnsdate   ]
+ Record Orig.        [cnsoriu   ]
+ Dept Orig.          [cnsorig   ]
+}
+END -- gr1510
+END -- info
+END -- folder01
+Table s_cnt
+{
+[cnt02  |cnt03          |cob02                |coe06|cnt05      |cnt051    |cnt06     |cnt061       |cnt062      |cnt07           |cnt08        |cnt09       |cnt10         |cnt11             ]
+[cnt02  |cnt03          |cob02                |coe06|cnt05      |cnt051    |cnt06     |cnt061       |cnt062      |cnt07           |cnt08        |cnt09       |cnt10         |cnt11             ]
+[cnt02  |cnt03          |cob02                |coe06|cnt05      |cnt051    |cnt06     |cnt061       |cnt062      |cnt07           |cnt08        |cnt09       |cnt10         |cnt11             ]
+[cnt02  |cnt03          |cob02                |coe06|cnt05      |cnt051    |cnt06     |cnt061       |cnt062      |cnt07           |cnt08        |cnt09       |cnt10         |cnt11             ]
+[cnt02  |cnt03          |cob02                |coe06|cnt05      |cnt051    |cnt06     |cnt061       |cnt062      |cnt07           |cnt08        |cnt09       |cnt10         |cnt11             ]
+[cnt02  |cnt03          |cob02                |coe06|cnt05      |cnt051    |cnt06     |cnt061       |cnt062      |cnt07           |cnt08        |cnt09       |cnt10         |cnt11             ]
+[cnt02  |cnt03          |cob02                |coe06|cnt05      |cnt051    |cnt06     |cnt061       |cnt062      |cnt07           |cnt08        |cnt09       |cnt10         |cnt11             ]
+[cnt02  |cnt03          |cob02                |coe06|cnt05      |cnt051    |cnt06     |cnt061       |cnt062      |cnt07           |cnt08        |cnt09       |cnt10         |cnt11             ]
+[cnt02  |cnt03          |cob02                |coe06|cnt05      |cnt051    |cnt06     |cnt061       |cnt062      |cnt07           |cnt08        |cnt09       |cnt10         |cnt11             ]
+[cnt02  |cnt03          |cob02                |coe06|cnt05      |cnt051    |cnt06     |cnt061       |cnt062      |cnt07           |cnt08        |cnt09       |cnt10         |cnt11             ]
+
+}
+END -- s_cnt
+Grid gr1511
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1511
+END -- VBox1
+END -- acot700
+
+TABLES
+cnt_file,
+cns_file
+ATTRIBUTES
+ButtonEdit cns00=cns_file.cns00, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Slip Type";
+ButtonEdit cns01=cns_file.cns01, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry No. KEY Field, No Blank/Repeated!";
+ButtonEdit cns02=cns_file.cns02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Slip No.";
+DateEdit cns03=cns_file.cns03, tabIndex=4, not null, required;
+DateEdit coc05=formonly.coc05 type CHAR, tabIndex=5;
+Edit coc02=formonly.coc02 type CHAR, tabIndex=6;
+ButtonEdit coc10=formonly.coc10 type CHAR, action=controlp, tabIndex=7, image="zoom";
+DateEdit coc05_2=formonly.coc05_2 type CHAR, tabIndex=8;
+Edit coc02_2=formonly.coc02_2 type CHAR, tabIndex=9;
+ButtonEdit coc10_2=formonly.coc10_2 type CHAR, action=controlp, tabIndex=10, image="zoom";
+ComboBox cnsconf=cns_file.cnsconf, tabIndex=11, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit cnsuser=cns_file.cnsuser, tabIndex=13, noEntry;
+Edit cnsmodu=cns_file.cnsmodu, tabIndex=14, noEntry;
+Edit cnsacti=cns_file.cnsacti, tabIndex=15, noEntry, upShift;
+Edit cnsgrup=cns_file.cnsgrup, tabIndex=16, noEntry;
+DateEdit cnsdate=cns_file.cnsdate, tabIndex=17, noEntry;
+Edit cnsoriu=cns_file.cnsoriu, tabIndex=501, noEntry;
+Edit cnsorig=cns_file.cnsorig, tabIndex=502, noEntry;
+ButtonEdit cnt02=cnt_file.cnt02, action=controlp, tabIndex=18, title="Serial", not null, required, image="zoom", comment="Enter Bonded Import Material S/N <^P>Qry Related Data";
+Edit cnt03=cnt_file.cnt03, tabIndex=19, title="Goods No.", noEntry;
+Edit cob02=formonly.cob02 type VARCHAR, tabIndex=20, title="P/N";
+Edit coe06=formonly.coe06 type VARCHAR, tabIndex=21, title="Unit", noEntry;
+Edit cnt05=cnt_file.cnt05, tabIndex=22, title="Qty Imp OK", noEntry;
+Edit cnt051=cnt_file.cnt051, tabIndex=23, title="Prod.Equ", noEntry;
+Edit cnt06=cnt_file.cnt06, tabIndex=24, title="Prev.Bond", noEntry;
+Edit cnt061=cnt_file.cnt061, tabIndex=25, title="Transf.Goods", noEntry;
+Edit cnt062=cnt_file.cnt062, tabIndex=26, title="Qty Applied", noEntry;
+Edit cnt07=cnt_file.cnt07, tabIndex=27, title="Prod./Scrap Qty", noEntry;
+Edit cnt08=cnt_file.cnt08, tabIndex=28, title="Returned Qty", noEntry;
+Edit cnt09=cnt_file.cnt09, tabIndex=29, title="Local Sales", not null, required;
+Edit cnt10=cnt_file.cnt10, tabIndex=30, title="Rest Material", not null, required;
+Edit cnt11=cnt_file.cnt11, tabIndex=31, title="Disposed Qty Price", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=32, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cnt(cnt_file.cnt02,cnt_file.cnt03,formonly.cob02,formonly.coe06,cnt_file.cnt05,cnt_file.cnt051,cnt_file.cnt06,cnt_file.cnt061,cnt_file.cnt062,cnt_file.cnt07,cnt_file.cnt08,cnt_file.cnt09,cnt_file.cnt10,cnt_file.cnt11)
+SCREEN RECORD Undefined(cns_file.cns00,cns_file.cns01,cns_file.cns02,cns_file.cns03,formonly.coc05,formonly.coc02,formonly.coc10,formonly.coc05_2,formonly.coc02_2,formonly.coc10_2,cns_file.cnsconf,formonly.imgmksg,cns_file.cnsuser,cns_file.cnsmodu,cns_file.cnsacti,cns_file.cnsgrup,cns_file.cnsdate,cns_file.cnsoriu,cns_file.cnsorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

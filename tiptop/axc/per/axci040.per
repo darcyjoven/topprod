@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci040.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci040")
+VBox vb3
+Folder pc345
+Page page01(text="Main")
+Table s_caa
+{
+[caa01     |caa02     |cab02             |caa04      |caa05       |aag02       |caa06     |caa07       |caa08       |caa09     |caa10     |gem02               ]
+[caa01     |caa02     |cab02             |caa04      |caa05       |aag02       |caa06     |caa07       |caa08       |caa09     |caa10     |gem02               ]
+[caa01     |caa02     |cab02             |caa04      |caa05       |aag02       |caa06     |caa07       |caa08       |caa09     |caa10     |gem02               ]
+[caa01     |caa02     |cab02             |caa04      |caa05       |aag02       |caa06     |caa07       |caa08       |caa09     |caa10     |gem02               ]
+[caa01     |caa02     |cab02             |caa04      |caa05       |aag02       |caa06     |caa07       |caa08       |caa09     |caa10     |gem02               ]
+[caa01     |caa02     |cab02             |caa04      |caa05       |aag02       |caa06     |caa07       |caa08       |caa09     |caa10     |gem02               ]
+[caa01     |caa02     |cab02             |caa04      |caa05       |aag02       |caa06     |caa07       |caa08       |caa09     |caa10     |gem02               ]
+[caa01     |caa02     |cab02             |caa04      |caa05       |aag02       |caa06     |caa07       |caa08       |caa09     |caa10     |gem02               ]
+[caa01     |caa02     |cab02             |caa04      |caa05       |aag02       |caa06     |caa07       |caa08       |caa09     |caa10     |gem02               ]
+[caa01     |caa02     |cab02             |caa04      |caa05       |aag02       |caa06     |caa07       |caa08       |caa09     |caa10     |gem02               ]
+
+}
+END -- s_caa
+END -- page01
+END -- pc345
+Grid gr1449
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr1449
+END -- vb3
+END -- axci040
+
+TABLES
+caa_file
+ATTRIBUTES
+ButtonEdit caa01=caa_file.caa01, action=controlp, tabIndex=1, title="Cost Cnt", not null, required, image="zoom", comment="<^P>Qry Dept No.  <^O>Copy Prev.";
+ButtonEdit caa02=caa_file.caa02, action=controlp, tabIndex=2, title="Cost Itm", not null, required, image="zoom", comment="<^P>Qry Cost Items";
+Edit cab02=formonly.cab02 type CHAR, tabIndex=3, title="Cost Item Desc", noEntry;
+ComboBox caa04=caa_file.caa04, tabIndex=4, title="Cost Type", not null, required, comment="1.Labor Cost  2.Overhead", items=(("1", "Labor Cost"),("2", "Overhead1"),("3", "Overhead2"),("4", "Overhead3"),("5", "Overhead4"),("6", "Overhead5"));
+ButtonEdit caa05=caa_file.caa05, action=controlp, tabIndex=13, title="Account", not null, required, image="zoom", comment="<^P>Qry Account ";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=5, title="Acct Title", noEntry, comment="";
+ComboBox caa06=caa_file.caa06, tabIndex=6, title="Appo.Mtd", not null, required, comment="1.Act.Hour  2.Std.LbHr  3.Output Qty*Apportion.Ratio", items=(("1", "Act.Hour"),("2", "Std.LbHr"),("3", "Standard Machine Hours"),("4", "Output Qty * Distribution Ratio"),("5", "Actual Machine Hours"));
+ComboBox caa07=caa_file.caa07, tabIndex=7, title="Overhead Type", items=(("1", %"Fixed"),("2", %"Vraiable"));
+Edit caa08=caa_file.caa08, tabIndex=8, title="Standard Capacity";
+ComboBox caa09=caa_file.caa09, tabIndex=9, title="Category", not null, required, items=(("1", "One Departement"),("2", "Multi. Department"));
+ButtonEdit caa10=caa_file.caa10, action=controlp, tabIndex=10, title="Dept", image="zoom.png";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=11, title="Dept name", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_caa(caa_file.caa01,caa_file.caa02,formonly.cab02,caa_file.caa04,caa_file.caa05,formonly.aag02,caa_file.caa06,caa_file.caa07,caa_file.caa08,caa_file.caa09,caa_file.caa10,formonly.gem02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

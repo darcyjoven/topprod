@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aoos021.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aoos021")
+VBox vb1
+Folder pc875
+Page page01(text="Main")
+Grid gr4703
+{
+ <G group01           ><G group02                                  >
+  AGL M.B No.[azmm00 ]
+  Year       [azmm01 ]  [azmm02            ]
+
+ <                    ><                                           >
+ <G group03                                                        >
+  Period[a]  Initial Date[b] Ending Date[c]    Quarter[d]
+    01      [azmm011      ]  [azmm012      ]    [azmm]
+    02      [azmm021      ]  [azmm022      ]    [azm1]
+    03      [azmm031      ]  [azmm032      ]    [azm2]
+    04      [azmm041      ]  [azmm042      ]    [azm3]
+    05      [azmm051      ]  [azmm052      ]    [azm4]
+    06      [azmm061      ]  [azmm062      ]    [azm5]
+    07      [azmm071      ]  [azmm072      ]    [azm6]
+    08      [azmm081      ]  [azmm082      ]    [azm7]
+    09      [azmm091      ]  [azmm092      ]    [azm8]
+    10      [azmm101      ]  [azmm102      ]    [azm9]
+    11      [azmm111      ]  [azmm112      ]    [azm0]
+    12      [azmm121      ]  [azmm122      ]    [azma]
+    13      [azmm131      ]  [azmm132      ]    [azmb]
+ <                                                                 >
+
+}
+END -- gr4703
+END -- page01
+END -- pc875
+Grid gr4704
+{
+ ----------ROWS [cnt   ]----------
+
+}
+END -- gr4704
+END -- vb1
+END -- aoos021
+
+TABLES
+azmm_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit azmm00=azmm_file.azmm00, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Details";
+Edit azmm01=azmm_file.azmm01, tabIndex=2, not null, required, comment="KEY Field, No Blank/Repeated!";
+Group group02:group02, text="Accounting Period Classification Method";
+RadioGroup azmm02=azmm_file.azmm02, tabIndex=3, noEntry, not null, required, items=(("1", "12Period"),("2", "13Period"));
+Group group03:group03;
+LABEL a=formonly.a type VARCHAR;
+LABEL b=formonly.b type VARCHAR;
+LABEL c=formonly.c type VARCHAR;
+LABEL d=formonly.d type VARCHAR;
+DateEdit azmm011=azmm_file.azmm011, tabIndex=8, not null, required;
+DateEdit azmm012=azmm_file.azmm012, tabIndex=9, not null, required;
+Edit azmm=azmm_file.azmm013, tabIndex=10, comment="Enter 1, 2, 3, 4 ";
+DateEdit azmm021=azmm_file.azmm021, tabIndex=11;
+DateEdit azmm022=azmm_file.azmm022, tabIndex=12;
+Edit azm1=azmm_file.azmm023, tabIndex=13, comment="Enter 1, 2, 3, 4 ";
+DateEdit azmm031=azmm_file.azmm031, tabIndex=14;
+DateEdit azmm032=azmm_file.azmm032, tabIndex=15;
+Edit azm2=azmm_file.azmm033, tabIndex=16, comment="Enter 1, 2, 3, 4 ";
+DateEdit azmm041=azmm_file.azmm041, tabIndex=17;
+DateEdit azmm042=azmm_file.azmm042, tabIndex=18;
+Edit azm3=azmm_file.azmm043, tabIndex=19, comment="Enter 1, 2, 3, 4 ";
+DateEdit azmm051=azmm_file.azmm051, tabIndex=20;
+DateEdit azmm052=azmm_file.azmm052, tabIndex=21;
+Edit azm4=azmm_file.azmm053, tabIndex=22, comment="Enter 1, 2, 3, 4 ";
+DateEdit azmm061=azmm_file.azmm061, tabIndex=23;
+DateEdit azmm062=azmm_file.azmm062, tabIndex=24;
+Edit azm5=azmm_file.azmm063, tabIndex=25, comment="Enter 1, 2, 3, 4 ";
+DateEdit azmm071=azmm_file.azmm071, tabIndex=26;
+DateEdit azmm072=azmm_file.azmm072, tabIndex=27;
+Edit azm6=azmm_file.azmm073, tabIndex=28, comment="Enter 1, 2, 3, 4 ";
+DateEdit azmm081=azmm_file.azmm081, tabIndex=29;
+DateEdit azmm082=azmm_file.azmm082, tabIndex=30;
+Edit azm7=azmm_file.azmm083, tabIndex=31, comment="Enter 1, 2, 3, 4 ";
+DateEdit azmm091=azmm_file.azmm091, tabIndex=32;
+DateEdit azmm092=azmm_file.azmm092, tabIndex=33;
+Edit azm8=azmm_file.azmm093, tabIndex=34, comment="Enter 1, 2, 3, 4 ";
+DateEdit azmm101=azmm_file.azmm101, tabIndex=35;
+DateEdit azmm102=azmm_file.azmm102, tabIndex=36;
+Edit azm9=azmm_file.azmm103, tabIndex=37, comment="Enter 1, 2, 3, 4 ";
+DateEdit azmm111=azmm_file.azmm111, tabIndex=38;
+DateEdit azmm112=azmm_file.azmm112, tabIndex=39;
+Edit azm0=azmm_file.azmm113, tabIndex=40, comment="Enter 1, 2, 3, 4 ";
+DateEdit azmm121=azmm_file.azmm121, tabIndex=41;
+DateEdit azmm122=azmm_file.azmm122, tabIndex=42;
+Edit azma=azmm_file.azmm123, tabIndex=43, comment="Enter 1, 2, 3, 4 ";
+DateEdit azmm131=azmm_file.azmm131, tabIndex=44;
+DateEdit azmm132=azmm_file.azmm132, tabIndex=45;
+Edit azmb=azmm_file.azmm133, tabIndex=46, comment="Enter 1, 2, 3, 4 ";
+Edit cnt=formonly.cnt type CHAR, tabIndex=47;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(azmm_file.azmm00,azmm_file.azmm01,azmm_file.azmm02,formonly.a,formonly.b,formonly.c,formonly.d,azmm_file.azmm011,azmm_file.azmm012,azmm_file.azmm013,azmm_file.azmm021,azmm_file.azmm022,azmm_file.azmm023,azmm_file.azmm031,azmm_file.azmm032,azmm_file.azmm033,azmm_file.azmm041,azmm_file.azmm042,azmm_file.azmm043,azmm_file.azmm051,azmm_file.azmm052,azmm_file.azmm053,azmm_file.azmm061,azmm_file.azmm062,azmm_file.azmm063,azmm_file.azmm071,azmm_file.azmm072,azmm_file.azmm073,azmm_file.azmm081,azmm_file.azmm082,azmm_file.azmm083,azmm_file.azmm091,azmm_file.azmm092,azmm_file.azmm093,azmm_file.azmm101,azmm_file.azmm102,azmm_file.azmm103,azmm_file.azmm111,azmm_file.azmm112,azmm_file.azmm113,azmm_file.azmm121,azmm_file.azmm122,azmm_file.azmm123,azmm_file.azmm131,azmm_file.azmm132,azmm_file.azmm133,formonly.cnt)
+END -- INSTRUCTIONS
+

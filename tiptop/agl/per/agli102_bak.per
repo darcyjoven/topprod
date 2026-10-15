@@ -1,0 +1,129 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/agl/4fd/agli102_bak.tmp.per created 2010-04-30T13:59:20
+-- File created from /u3/tiptop/agl/4fd/agli102_bak.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text=%"agli102")
+ VBox vb14                                                                                                                 
+ Folder pc441                                                                                                              
+ Page page01(text="Main")                                                                                                  
+  VBox vb13                                                                                                                
+  Grid gr2363                                                                                                              
+  {                                                                                                                        
+   Book No         [aag00    ]                                                                                             
+   Account Code   [aag01                   ]                                         [imgmksg]                             
+   Account Name   [aag02                                             ]               [       ]                             
+   Extra Name     [aag13                                                       ]                                           
+                                                                                                                           
+  }                                                                                                                        
+  END                                                                                                                      
+  Grid gr2364                                                                                                              
+  {                                                                                                                        
+   <G group01                                             >  <G group02                                                >   
+    Property                       [aag03               ]     Control Details        [aag07                         ]      
+    Balance Sheet/Income Statament [aag04               ]     Control Account Code   [aag08                         ]      
+    Balance                        [aag06               ]     Account Level          [aag24     ]                          
+    [aag09               ]                                    [aag05                                    ]                  
+    Counting Unit                  [aag12     ]               [aag21              ]                                        
+    [aag38               ]                                    [aag23              ]                                        
+   <                                                      >  <                                                         >   
+   <G group03                                             >   <G group04                                               >   
+    Expense Gategory             [aag221     ]                 Memo   [aag14                                        ]      
+    Account Gategory 1           [aag223     ]                                                                             
+    Account Gategory 2           [aag224     ]                                                                             
+    Account Gategory 3           [aag225     ]                                                                             
+    Account Gategory 4           [aag226     ]                                                                             
+    Financial Analysis Category  [aag19                  ]                                                                 
+   <                                                      >   <                                                        >   
+  }                                                                                                                        
+  END                                                                                                                      
+  END -- VBox                                                                                                              
+ END -- Page                                                                                                               
+ Page info(text="Info")                                                                                                    
+ Grid gr2365                                                                                                               
+ {                                                                                                                         
+  Record Owner        [aaguser   ]   Last Modified by    [aagmodu   ]   Data Valid Code     [aagacti   ]                   
+  Department          [aaggrup   ]   Create/Modify Date  [aagdate     ]                                                    
+  Record Orig.        [aagoriu   ]                                                                                         
+  Dept Orig.          [aagorig   ]                                                                                         
+ }                                                                                                                         
+ END                                                                                                                       
+                                                                                                                           
+                                                                                                                           
+                                                                                                                           
+                                                                                                                           
+                                                                                                                           
+                                                                                                                           
+                                                                                                                           
+                                                                                                                           
+                                                                                                                           
+                                                                                                                           
+                                                                                                                           
+                                                                                                                           
+                                                                                                                           
+                                                                                                                           
+                                                                                                                           
+                                                                                                                           
+ END -- Page                                                                                                               
+ END -- Folder                                                                                                             
+ Grid gr2366                                                                                                               
+ {                                                                                                                         
+   ---------- Rows [cnt   ] ----------                                                                                     
+                                                                                                                           
+ }                                                                                                                         
+ END                                                                                                                       
+ END -- VBox                                                                                                               
+END -- Form
+
+TABLES
+aag_file
+
+ATTRIBUTES
+ButtonEdit aag00=aag_file.aag00, action=controlp, tabIndex=30, not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+Edit aag01=aag_file.aag01, tabIndex=1, not null, required, comment="Key Field, No Blank/Repeated";
+Image imgmksg=formonly.imgmksg, autoScale;
+ButtonEdit aag02=aag_file.aag02, action=update_name, tabIndex=3, not null, required, image="pen", comment="<^Y> Account Extra Description (FM)";
+ButtonEdit aag13=aag_file.aag13, action=update_name, tabIndex=4, image="pen", comment="Report Structure Extra Desc";
+Group group01:group01, text="Attribute";
+ComboBox aag03=aag_file.aag03, tabIndex=5, not null, required, queryEditable, items=(("2", "Account"),("4", "Carry Forward"));
+ComboBox aag04=aag_file.aag04, tabIndex=6, not null, required, queryEditable, items=(("1", "Balance Sheet"),("2", "Income Statement"));
+ComboBox aag06=aag_file.aag06, tabIndex=7, not null, required, queryEditable, items=(("1", "Debit Balance"),("2", "Credit Balance"));
+CheckBox aag09=aag_file.aag09, tabIndex=8, text="Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit aag12=aag_file.aag12, tabIndex=9;
+CheckBox aag38=aag_file.aag38, tabIndex=10, text="Inter Income Account No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Control";
+ComboBox aag07=aag_file.aag07, tabIndex=11, not null, required, queryEditable, items=(("1", "Control Account"),("2", "Detail Account"),("3", "Independent Account"));
+ButtonEdit aag08=aag_file.aag08, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Account No. ";
+Edit aag24=aag_file.aag24, tabIndex=13, comment="99:Last Level";
+CheckBox aag05=aag_file.aag05, tabIndex=14, text="Department Management", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag21=aag_file.aag21, tabIndex=15, text="Budget Control", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag23=aag_file.aag23, tabIndex=16, text="Project Control", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Category";
+ComboBox aag221=aag_file.aag221, tabIndex=17, queryEditable, items=(("F", "Fixed"),("V", "Variable"));
+ButtonEdit aag223=aag_file.aag223, action=controlp, tabIndex=18, image="zoom", comment="<^P> Qry Account Class.";
+ButtonEdit aag224=aag_file.aag224, action=controlp, tabIndex=19, image="zoom", comment="<^P> Qry Account Class.";
+ButtonEdit aag225=aag_file.aag225, action=controlp, tabIndex=20, image="zoom", comment="<^P> Qry Account Class.";
+ButtonEdit aag226=aag_file.aag226, action=controlp, tabIndex=21, image="zoom", comment="<^P> Qry Account Class.";
+ComboBox aag19=aag_file.aag19, tabIndex=22, not null, required, queryEditable, items=(("1", "Current Assets-Cash"),("2", "Current Assets-Short-Term Investments"),("3", "Current Assets-Accounts Receivable"),("4", "Current Liabilities-Allowance for Uncollectible Accounts-Accounts Receivable"),("5", "Current Assets-Inventory"),("6", "Current Liabilities-Allowance for Reduction of Inventory to Market"),("7", "Current Assets-Prepaid Expenses"),("8", "Current Assets-Others"),("9", "Funds and Long-term Investments-Funds"),("10", "Funds and Long-term Investments-Long-term Investments"),("11", "Funds and Long-term Investments-Long-term Receivables"),("12", "Property, Plant, and Equipments"),("13", "Other Assets"),("14", "Current Liabilities-Short-Term Borrowings"),("15", "Current Liabilities-Accounts Payable"),("16", "Current Liabilities-Advance Receipts"),("17", "Long-Term Liabilities"),("18", "Current Liabilities-Others"),("19", "Capital"),("20", "Surplus From Assets"),("21", "Retained Earnings"),("22", "Cumulative Transation Adjustment"),("23", "Sales Revenue"),("24", "Other Income"),("25", "Cost of Goods Sold"),("26", "Cost of Goods Sold-Other"),("27", "Operation Expenses"),("28", "Non-Operation Revenue and Expenses, Other Income"),("29", "Income Taxes"),("30", "Other"),("31", "Interest Expense"),("32", "Intangible Asset"),("33", "Other Liabilities"),("34", "Unrealize Revaluate Appreciate"),("35", "Long_term Investments"),("36", "Stock"),("37", "Expense"));
+Group group04:group04, text="Memo";
+Edit aag14=aag_file.aag14, tabIndex=23;
+Edit aaguser=aag_file.aaguser, tabIndex=24, noEntry;
+Edit aagmodu=aag_file.aagmodu, tabIndex=25, noEntry;
+Edit aagacti=aag_file.aagacti, tabIndex=26, noEntry;
+Edit aaggrup=aag_file.aaggrup, tabIndex=27, noEntry;
+DateEdit aagdate=aag_file.aagdate, tabIndex=28, noEntry;
+Edit aagoriu=aag_file.aagoriu, tabIndex=501, noEntry;
+Edit aagorig=aag_file.aagorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apci102_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apci102_1")
+VBox vb6
+Folder pc6
+Page Page11(text=%"Basic Data")
+Table s_rwq
+{
+[ryu02          |ryu02_desc          ]
+[ryu02          |ryu02_desc          ]
+[ryu02          |ryu02_desc          ]
+[ryu02          |ryu02_desc          ]
+[ryu02          |ryu02_desc          ]
+
+}
+END -- s_rwq
+END -- Page11
+END -- pc6
+Grid gr16
+{
+
+ --- Items[cn2 ] --------
+
+}
+END -- gr16
+END -- vb6
+END -- artt302_1
+
+TABLES
+ryu_file
+ATTRIBUTES
+ButtonEdit ryu02=ryu_file.ryu02, action=controlp, tabIndex=1, title="Effective Org.", image="zoom.png";
+Edit ryu02_desc=formonly.ryu02_desc type CHAR, tabIndex=2, title="Org.Name", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ryu(ryu_file.ryu02,formonly.ryu02_desc)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

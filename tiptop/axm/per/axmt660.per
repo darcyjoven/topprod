@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt660.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form1")
+Folder pc1
+Page Page1(text=%"sales promotion upholding")
+VBox vb2
+Grid gr1
+{
+
+  open date     [xse03    ]             status    [xse07    ]
+  start date    [xse04    ]             end date  [xse05    ]
+  subject       [xse02    ]
+
+}
+END -- gr1
+Grid gr3
+{
+[xse06                                                                 ]
+[                                                                      ]
+[                                                                      ]
+}
+END -- gr3
+Grid gr2
+{
+ <T s_xsf                                                              >
+ [xsf02      |occ02             ]
+ [xsf02      |occ02             ]
+ <                                                                     >
+}
+END -- gr2
+Grid gr4
+{
+  ------ Rows   [idx  ]  /  [cnt   ]  ----- Details [cn2    ]  -----
+
+}
+END -- gr4
+END -- vb2
+END -- Page1
+END -- pc1
+END -- Form1
+
+TABLES
+xsf_file,
+xse_file,
+occ_file
+ATTRIBUTES
+DateEdit xse03=xse_file.xse03, tabIndex=2, not null, required;
+ComboBox xse07=xse_file.xse07, tabIndex=3, not null, required, items=(("0", "OPEN"),("1", "RELEASE"),("2", "CLOSE"));
+DateEdit xse04=xse_file.xse04, tabIndex=5, not null, required;
+DateEdit xse05=xse_file.xse05, tabIndex=6, not null, required;
+Edit xse02=xse_file.xse02, tabIndex=4, not null, required;
+TextEdit xse06=xse_file.xse06, tabIndex=1, not null, required;
+Table s_xsf:s_xsf;
+ButtonEdit xsf02=xsf_file.xsf02, action=controlp, tabIndex=10, title="xsf02", image="zoom";
+Edit occ02=occ_file.occ02, tabIndex=11, title="occ02", noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=7;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_xsf(xsf_file.xsf02,occ_file.occ02)
+SCREEN RECORD Undefined(xse_file.xse03,xse_file.xse07,xse_file.xse04,xse_file.xse05,xse_file.xse02,xse_file.xse06,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

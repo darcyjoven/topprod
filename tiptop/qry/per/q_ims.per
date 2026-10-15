@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_ims.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Inter-Plant Transfer-out Note")
+Grid gr3772
+{
+ <T s_ims                                                               >
+ [check|ims01              |ims02    |ims03            |ims04          ]
+ [check|ims01              |ims02    |ims03            |ims04          ]
+ [check|ims01              |ims02    |ims03            |ims04          ]
+ [check|ims01              |ims02    |ims03            |ims04          ]
+ [check|ims01              |ims02    |ims03            |ims04          ]
+ [check|ims01              |ims02    |ims03            |ims04          ]
+ [check|ims01              |ims02    |ims03            |ims04          ]
+ [check|ims01              |ims02    |ims03            |ims04          ]
+ [check|ims01              |ims02    |ims03            |ims04          ]
+ [check|ims01              |ims02    |ims03            |ims04          ]
+ <                                                                      >
+
+}
+END -- gr3772
+END -- q_ims
+
+TABLES
+ims_file
+ATTRIBUTES
+Table s_ims:s_ims;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ims01=ims_file.ims01, tabIndex=2, title="Transfer-out Note#", noEntry;
+Edit ims02=ims_file.ims02, tabIndex=3, title="Line No.", noEntry;
+Edit ims03=ims_file.ims03, tabIndex=4, title="Transfer Note#", noEntry;
+Edit ims04=ims_file.ims04, tabIndex=5, title="Transfer Line #", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ims(formonly.check,ims_file.ims01,ims_file.ims02,ims_file.ims03,ims_file.ims04)
+END -- INSTRUCTIONS
+

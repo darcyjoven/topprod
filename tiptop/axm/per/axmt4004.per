@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt4004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt4004")
+VBox VBox1
+Folder pc566
+Page page01(text="Page01")
+Grid gr2501
+{
+ <G group01                                                     >
+  CSDOption          [choice               ]
+
+
+  Product No.                [oea51               ]
+  Expiry Date (BOM)          [oea52       ]
+  Sets                       [oea53     ]
+  O.C Price                  [oea54     ]
+  O.C Amount                 [oea55     ]/[oea61               ]
+  Delivery Plant             [oea56     ]
+  Delivery Warehouse         [oea57     ]
+  Anticipated Delivery Date  [oea59       ]
+ [choice1                               ]
+ <                                                              >
+
+}
+END -- gr2501
+END -- page01
+END -- pc566
+END -- VBox1
+END -- axmt4004
+
+TABLES
+oea_file
+ATTRIBUTES
+Group group01:group01;
+RadioGroup choice=formonly.choice type CHAR, tabIndex=1, not null, required, items=(("1", "CKDBottom Level"),("2", "SKDsingle level"));
+ButtonEdit oea51=oea_file.oea51, action=controlp, tabIndex=2, not null, required, image="zoom";
+DateEdit oea52=oea_file.oea52, tabIndex=3, not null, required;
+Edit oea53=oea_file.oea53, tabIndex=4;
+Edit oea54=oea_file.oea54, tabIndex=5;
+Edit oea55=oea_file.oea55, tabIndex=6;
+Edit oea61=oea_file.oea61, tabIndex=7, noEntry, not null, required;
+Edit oea56=oea_file.oea56, tabIndex=8;
+Edit oea57=oea_file.oea57, tabIndex=9;
+DateEdit oea59=oea_file.oea59, tabIndex=10;
+CheckBox choice1=formonly.choice1 type CHAR, tabIndex=11, text="Body Line No. each Pricing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.choice,oea_file.oea51,oea_file.oea52,oea_file.oea53,oea_file.oea54,oea_file.oea55,oea_file.oea61,oea_file.oea56,oea_file.oea57,oea_file.oea59,formonly.choice1)
+END -- INSTRUCTIONS
+

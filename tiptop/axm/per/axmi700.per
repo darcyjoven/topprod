@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi700")
+VBox VBox1
+Folder pc504
+Page page01(text="Main")
+Table s_ofq
+{
+[ofq01               |ofq02               |ofqacti]
+[ofq01               |ofq02               |ofqacti]
+[ofq01               |ofq02               |ofqacti]
+[ofq01               |ofq02               |ofqacti]
+[ofq01               |ofq02               |ofqacti]
+[ofq01               |ofq02               |ofqacti]
+[ofq01               |ofq02               |ofqacti]
+[ofq01               |ofq02               |ofqacti]
+[ofq01               |ofq02               |ofqacti]
+[ofq01               |ofq02               |ofqacti]
+
+}
+END -- s_ofq
+END -- page01
+END -- pc504
+Grid gr2132
+{
+ ---------- Rows [cnt2   ] -----------
+
+}
+END -- gr2132
+END -- VBox1
+END -- axmi700
+
+TABLES
+ofq_file
+ATTRIBUTES
+Edit ofq01=ofq_file.ofq01, tabIndex=1, title="Potential Cust Src", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit ofq02=ofq_file.ofq02, tabIndex=2, title="Description";
+CheckBox ofqacti=ofq_file.ofqacti, tabIndex=3, title="Valid?", valueChecked = "Y", valueUnchecked = "N";
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ofq(ofq_file.ofq01,ofq_file.ofq02,ofq_file.ofqacti)
+SCREEN RECORD Undefined(formonly.cnt2)
+END -- INSTRUCTIONS
+

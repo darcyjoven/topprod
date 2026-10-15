@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_ttcfg2_col.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_ttcfg2_col")
+VBox VBox1
+Grid gr2
+{
+ <G group01                                                                        >
+  System ID [wss03          ]
+ <                                                                                 >
+
+}
+END -- gr2
+Table tb1
+{
+[wss04          |gaq03_s             |wss05          |wss06          ]
+[wss04          |gaq03_s             |wss05          |wss06          ]
+[wss04          |gaq03_s             |wss05          |wss06          ]
+[wss04          |gaq03_s             |wss05          |wss06          ]
+[wss04          |gaq03_s             |wss05          |wss06          ]
+[wss04          |gaq03_s             |wss05          |wss06          ]
+[wss04          |gaq03_s             |wss05          |wss06          ]
+[wss04          |gaq03_s             |wss05          |wss06          ]
+[wss04          |gaq03_s             |wss05          |wss06          ]
+[wss04          |gaq03_s             |wss05          |wss06          ]
+[wss04          |gaq03_s             |wss05          |wss06          ]
+[wss04          |gaq03_s             |wss05          |wss06          ]
+[wss04          |gaq03_s             |wss05          |wss06          ]
+[wss04          |gaq03_s             |wss05          |wss06          ]
+[wss04          |gaq03_s             |wss05          |wss06          ]
+
+}
+END -- tb1
+Grid gr3
+{
+ ---------- Rows [cnt3  ] / [cnt4  ] ----------
+
+}
+END -- gr3
+END -- VBox1
+END -- aws_ttcfg2_col
+
+TABLES
+wss_file
+ATTRIBUTES
+Group group01:group01;
+Edit wss03=wss_file.wss03, tabIndex=1, not null, required;
+Edit wss04=wss_file.wss04, tabIndex=2, title="ERP Col", not null, required;
+Edit gaq03_s=formonly.gaq03_s type CHAR, tabIndex=3, title="Column Name", noEntry;
+Edit wss05=wss_file.wss05, tabIndex=7, title="Default";
+Edit wss06=wss_file.wss06, tabIndex=4, title="Mapping Column";
+Edit cnt3=formonly.cnt3 type SMALLINT, tabIndex=5, noEntry;
+Edit cnt4=formonly.cnt4 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wsss(wss_file.wss04,formonly.gaq03_s,wss_file.wss05,wss_file.wss06)
+SCREEN RECORD Undefined(wss_file.wss03,formonly.cnt3,formonly.cnt4)
+END -- INSTRUCTIONS
+

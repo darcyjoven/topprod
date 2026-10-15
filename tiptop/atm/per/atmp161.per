@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmp161.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmp161")
+Grid gr1288
+{
+ <G group01                                  >
+  Forecast Ver.       [odb01                ]
+                      [odb02                ]
+ <                                           >
+
+}
+END -- gr1288
+END -- atmp161
+
+TABLES
+odb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit odb01=odb_file.odb01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit odb02=odb_file.odb02, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(odb_file.odb01,odb_file.odb02)
+END -- INSTRUCTIONS
+

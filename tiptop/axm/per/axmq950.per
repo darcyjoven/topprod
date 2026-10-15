@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq950.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq950")
+VBox vb8
+Group group01(text="Order Sheet")
+Table s_imgs
+{
+[imgs01       |ima02  |ima021    |imgs02 |imgs03  |imgs04    |imgs06     |imgs05   |imgs09  |imgs08      |imgs07         ]
+[imgs01       |ima02  |ima021    |imgs02 |imgs03  |imgs04    |imgs06     |imgs05   |imgs09  |imgs08      |imgs07         ]
+[imgs01       |ima02  |ima021    |imgs02 |imgs03  |imgs04    |imgs06     |imgs05   |imgs09  |imgs08      |imgs07         ]
+[imgs01       |ima02  |ima021    |imgs02 |imgs03  |imgs04    |imgs06     |imgs05   |imgs09  |imgs08      |imgs07         ]
+[imgs01       |ima02  |ima021    |imgs02 |imgs03  |imgs04    |imgs06     |imgs05   |imgs09  |imgs08      |imgs07         ]
+[imgs01       |ima02  |ima021    |imgs02 |imgs03  |imgs04    |imgs06     |imgs05   |imgs09  |imgs08      |imgs07         ]
+[imgs01       |ima02  |ima021    |imgs02 |imgs03  |imgs04    |imgs06     |imgs05   |imgs09  |imgs08      |imgs07         ]
+[imgs01       |ima02  |ima021    |imgs02 |imgs03  |imgs04    |imgs06     |imgs05   |imgs09  |imgs08      |imgs07         ]
+[imgs01       |ima02  |ima021    |imgs02 |imgs03  |imgs04    |imgs06     |imgs05   |imgs09  |imgs08      |imgs07         ]
+[imgs01       |ima02  |ima021    |imgs02 |imgs03  |imgs04    |imgs06     |imgs05   |imgs09  |imgs08      |imgs07         ]
+
+}
+END -- s_imgs
+END -- group01
+Group group02(text="Distributed")
+VBox vb7_
+Table s_tlfs
+{
+[name_2      |tlfs10_2           |tlfs11_2  |tlfs111_2      |tlfs13_2 |tlfs08    |tlfs09              ]
+[name_2      |tlfs10_2           |tlfs11_2  |tlfs111_2      |tlfs13_2 |tlfs08    |tlfs09              ]
+[name_2      |tlfs10_2           |tlfs11_2  |tlfs111_2      |tlfs13_2 |tlfs08    |tlfs09              ]
+[name_2      |tlfs10_2           |tlfs11_2  |tlfs111_2      |tlfs13_2 |tlfs08    |tlfs09              ]
+[name_2      |tlfs10_2           |tlfs11_2  |tlfs111_2      |tlfs13_2 |tlfs08    |tlfs09              ]
+[name_2      |tlfs10_2           |tlfs11_2  |tlfs111_2      |tlfs13_2 |tlfs08    |tlfs09              ]
+[name_2      |tlfs10_2           |tlfs11_2  |tlfs111_2      |tlfs13_2 |tlfs08    |tlfs09              ]
+[name_2      |tlfs10_2           |tlfs11_2  |tlfs111_2      |tlfs13_2 |tlfs08    |tlfs09              ]
+[name_2      |tlfs10_2           |tlfs11_2  |tlfs111_2      |tlfs13_2 |tlfs08    |tlfs09              ]
+[name_2      |tlfs10_2           |tlfs11_2  |tlfs111_2      |tlfs13_2 |tlfs08    |tlfs09              ]
+
+}
+END -- s_tlfs
+Grid gr2
+{
+[view     |return   ]
+[         |         ]
+}
+END -- gr2
+END -- vb7_
+END -- group02
+Grid gr2187
+{
+  ---------- Rows [cn2   ]-[cn3   ] ----------
+
+}
+END -- gr2187
+END -- vb8
+END -- axmq950
+
+ATTRIBUTES
+ButtonEdit imgs01=formonly.imgs01 type CHAR, action=controlp, tabIndex=1, title="Item No", image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, title="Part Name";
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, title="spec";
+ButtonEdit imgs02=formonly.imgs02 type CHAR, action=controlp, tabIndex=4, title="Warehouse No.", image="zoom", comment="<^P>Qry Order of Inventory <^T> Qry Warehouse";
+ButtonEdit imgs03=formonly.imgs03 type CHAR, action=controlp, tabIndex=5, title="Location No.", image="zoom", comment="<^P>Qry Order of Inventory <^T> Qry Location";
+ButtonEdit imgs04=formonly.imgs04 type CHAR, action=controlp, tabIndex=6, title="Lot No.", image="zoom", comment="<^P>Qry Order of Inventory";
+Edit imgs06=formonly.imgs06 type CHAR, tabIndex=7, title="Outer Lot No.";
+Edit imgs05=formonly.imgs05 type CHAR, tabIndex=8, title="SN";
+DateEdit imgs09=formonly.imgs09 type DATE, tabIndex=9, title="Date";
+Edit imgs08=formonly.imgs08 type CHAR, tabIndex=10, title="qty";
+Edit imgs07=formonly.imgs07 type CHAR, tabIndex=11, title="Unit";
+Edit name_2=formonly.name_2 type CHAR, tabIndex=12, title="No name";
+Edit tlfs10_2=formonly.tlfs10_2 type CHAR, tabIndex=13, title="Doc No";
+Edit tlfs11_2=formonly.tlfs11_2 type CHAR, tabIndex=14, title="Doc SN";
+DateEdit tlfs111_2=formonly.tlfs111_2 type DATE, tabIndex=15, title="Date";
+Edit tlfs13_2=formonly.tlfs13_2 type CHAR, tabIndex=16, title="qty";
+Edit tlfs08=formonly.tlfs08 type VARCHAR, tabIndex=19, title="tlfs08";
+Edit tlfs09=formonly.tlfs09 type DECIMAL, tabIndex=20, title="tlfs09";
+Button view:view, text="View";
+Button return:return, text="Return";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=17;
+Edit cn3=formonly.cn3 type INTEGER, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imgs(formonly.imgs01,formonly.ima02,formonly.ima021,formonly.imgs02,formonly.imgs03,formonly.imgs04,formonly.imgs06,formonly.imgs05,formonly.imgs09,formonly.imgs08,formonly.imgs07)
+SCREEN RECORD s_tlfs2(formonly.name_2,formonly.tlfs10_2,formonly.tlfs11_2,formonly.tlfs111_2,formonly.tlfs13_2,formonly.tlfs08,formonly.tlfs09)
+SCREEN RECORD Undefined(formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

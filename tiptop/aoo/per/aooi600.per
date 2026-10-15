@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi600")
+VBox VBox1
+Folder pc859
+Page page01(text="Common Data")
+Table s_geu
+{
+[geu00                    |geu01     |geu02               |geuacti]
+[geu00                    |geu01     |geu02               |geuacti]
+[geu00                    |geu01     |geu02               |geuacti]
+[geu00                    |geu01     |geu02               |geuacti]
+[geu00                    |geu01     |geu02               |geuacti]
+[geu00                    |geu01     |geu02               |geuacti]
+[geu00                    |geu01     |geu02               |geuacti]
+[geu00                    |geu01     |geu02               |geuacti]
+[geu00                    |geu01     |geu02               |geuacti]
+[geu00                    |geu01     |geu02               |geuacti]
+
+}
+END -- s_geu
+END -- page01
+END -- pc859
+Grid gr4671
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4671
+END -- VBox1
+END -- aooi600
+
+TABLES
+geu_file
+ATTRIBUTES
+ComboBox geu00=geu_file.geu00, tabIndex=1, title="AXD Category", not null, required, queryEditable, items=(("1", "Data Center"),("2", "Forecast Center"),("3", "Order Center"),("4", "Purchase Center"),("5", "Credit Controller Center"),("6", "Account Center"),("7", "Funds Center"),("8", "Deliver Center"));
+Edit geu01=geu_file.geu01, tabIndex=2, title="AXD Code", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit geu02=geu_file.geu02, tabIndex=3, title="AXD Name";
+CheckBox geuacti=geu_file.geuacti, tabIndex=4, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_geu(geu_file.geu00,geu_file.geu01,geu_file.geu02,geu_file.geuacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,90 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_icdin_rec.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="s_icdin_rec")
+VBox vb4
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr4
+{
+
+ Script No.  [idd10           ]                        Script Item        [idd11]
+ Material No.[idd01                                   ]Name               [ima02                                   ]Speci[ima021                                  ]
+ WarehousType[idd02     ]                              Reserve            [idd03     ]                              Lot #[idd04                   ]
+ Tot         [tot       ]                              Tot_b              [tot_b     ]                              odds [odds      ]
+ Units       [idd0]                                    GROSS DIE(ea) WAFER[imaicd14  ]
+
+}
+END -- gr4
+END -- Page1
+END -- pc1
+Grid gr2
+{
+ <T tb1                                                                                                                                                                                                                                                                           >
+ [idd1|idd06 |idd22    |idd13          |idd26          |idd27          |idd15               |idd16                   |idd18          |idd17               |idd19          |idd20               |idd21  |idd23               |idd24   |idd28       |idd25                         ]
+ [idd1|idd06 |idd22    |idd13          |idd26          |idd27          |idd15               |idd16                   |idd18          |idd17               |idd19          |idd20               |idd21  |idd23               |idd24   |idd28       |idd25                         ]
+ [idd1|idd06 |idd22    |idd13          |idd26          |idd27          |idd15               |idd16                   |idd18          |idd17               |idd19          |idd20               |idd21  |idd23               |idd24   |idd28       |idd25                         ]
+ [idd1|idd06 |idd22    |idd13          |idd26          |idd27          |idd15               |idd16                   |idd18          |idd17               |idd19          |idd20               |idd21  |idd23               |idd24   |idd28       |idd25                         ]
+ [idd1|idd06 |idd22    |idd13          |idd26          |idd27          |idd15               |idd16                   |idd18          |idd17               |idd19          |idd20               |idd21  |idd23               |idd24   |idd28       |idd25                         ]
+ [idd1|idd06 |idd22    |idd13          |idd26          |idd27          |idd15               |idd16                   |idd18          |idd17               |idd19          |idd20               |idd21  |idd23               |idd24   |idd28       |idd25                         ]
+ <                                                                                                                                                                                                                                                                                >
+}
+END -- gr2
+Grid gr2_
+{
+ ----------ROWS[cnt       ]/[cn2       ]----------
+
+
+}
+END -- gr2_
+END -- vb4
+END -- s_icdin_rec
+
+TABLES
+idd_file,
+ima_file
+ATTRIBUTES
+Edit idd10=idd_file.idd10, tabIndex=5, noEntry;
+Edit idd11=idd_file.idd11, tabIndex=10, noEntry;
+Edit idd01=idd_file.idd01, tabIndex=6, noEntry;
+Edit ima02=ima_file.ima02, tabIndex=11, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=15, noEntry;
+Edit idd02=idd_file.idd02, tabIndex=7, noEntry;
+Edit idd03=idd_file.idd03, tabIndex=12, noEntry;
+Edit idd04=idd_file.idd04, tabIndex=16, noEntry;
+Edit tot=formonly.tot type CHAR, tabIndex=8, noEntry;
+Edit tot_b=formonly.tot_b type CHAR, tabIndex=13, noEntry;
+Edit odds=formonly.odds type CHAR, tabIndex=17, noEntry;
+Edit idd0=idd_file.idd07, tabIndex=9, noEntry;
+Edit imaicd14=formonly.imaicd14 type CHAR, tabIndex=14, noEntry;
+Table tb1:tb1;
+Edit idd1=idd_file.idd05, tabIndex=1, title="Car", noEntry, not null, required;
+Edit idd06=idd_file.idd06, tabIndex=2, title="BIN", noEntry, not null, required;
+CheckBox idd22=idd_file.idd22, tabIndex=18, title="PASS BIN", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit idd13=idd_file.idd13, tabIndex=19, title="QUALITY", noEntry, not null, required;
+Edit idd26=idd_file.idd26, tabIndex=20, title="BAD QUALITY", noEntry, not null, required;
+Edit idd27=idd_file.idd27, tabIndex=21, title="INVALID QUALITY", noEntry, not null, required;
+Edit idd15=idd_file.idd15, tabIndex=22, title="Mother Part No.", noEntry;
+Edit idd16=idd_file.idd16, tabIndex=23, title="Mother approved", noEntry;
+Edit idd18=idd_file.idd18, tabIndex=24, title="DIE", noEntry;
+Edit idd17=idd_file.idd17, tabIndex=25, title="DATE CODE", noEntry;
+Edit idd19=idd_file.idd19, tabIndex=26, title="YIELD", noEntry;
+Edit idd20=idd_file.idd20, tabIndex=27, title="TEST#", noEntry;
+Edit idd21=idd_file.idd21, tabIndex=28, title="DEDUCT", noEntry;
+Edit idd23=idd_file.idd23, tabIndex=29, title="Part No. orders", noEntry;
+CheckBox idd24=idd_file.idd24, tabIndex=30, title="Storage", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox idd28=idd_file.idd28, tabIndex=31, title="Into", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idd25=idd_file.idd25, tabIndex=32, title="MEMO", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=3, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_idd(idd_file.idd05,idd_file.idd06,idd_file.idd22,idd_file.idd13,idd_file.idd26,idd_file.idd27,idd_file.idd15,idd_file.idd16,idd_file.idd18,idd_file.idd17,idd_file.idd19,idd_file.idd20,idd_file.idd21,idd_file.idd23,idd_file.idd24,idd_file.idd28,idd_file.idd25)
+SCREEN RECORD Undefined(idd_file.idd10,idd_file.idd11,idd_file.idd01,ima_file.ima02,ima_file.ima021,idd_file.idd02,idd_file.idd03,idd_file.idd04,formonly.tot,formonly.tot_b,formonly.odds,idd_file.idd07,formonly.imaicd14,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

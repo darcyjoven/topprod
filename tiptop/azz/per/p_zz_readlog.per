@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zz_readlog.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Log List")
+VBox VBox1
+Grid greid01
+{
+ Program        [exe_prog          ]
+
+}
+END -- greid01
+Table s_log
+{
+[log_name             |exe_date     |exe_user       ]
+[log_name             |exe_date     |exe_user       ]
+[log_name             |exe_date     |exe_user       ]
+[log_name             |exe_date     |exe_user       ]
+[log_name             |exe_date     |exe_user       ]
+[log_name             |exe_date     |exe_user       ]
+[log_name             |exe_date     |exe_user       ]
+[log_name             |exe_date     |exe_user       ]
+[log_name             |exe_date     |exe_user       ]
+[log_name             |exe_date     |exe_user       ]
+
+}
+END -- s_log
+Grid gr3033
+{
+ Row Counts [cnt      ]
+
+}
+END -- gr3033
+END -- VBox1
+END -- p_zz_readlog
+
+ATTRIBUTES
+Edit exe_prog=formonly.exe_prog type CHAR, tabIndex=1, noEntry;
+Edit log_name=formonly.log_name type CHAR, tabIndex=2, title="File Name", noEntry;
+Edit exe_date=formonly.exe_date type CHAR, tabIndex=3, title="Date", noEntry;
+Edit exe_user=formonly.exe_user type CHAR, tabIndex=4, title="User", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_log(formonly.log_name,formonly.exe_date,formonly.exe_user)
+SCREEN RECORD Undefined(formonly.exe_prog,formonly.cnt)
+END -- INSTRUCTIONS
+

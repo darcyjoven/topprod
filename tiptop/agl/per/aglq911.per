@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq911.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglq911")
+VBox VBox1
+Folder Folder1
+Page Page2(text=%"Page1")
+Grid Grid1
+{
+   [label|aba00          ]    [label2|u            ]    [label3|d            ]
+   [a         |b35       |b36       |b37       |b11       |b12       |b13       |b14       ]
+
+
+}
+END -- Grid1
+END -- Page2
+END -- Folder1
+Table s_aba
+{
+[aba01    |aba02          |aba03         |aba04   |aba05  |abb02   |abb04       |abb03      |aag02        |aag13       |abb03_1        |abb05     |gem02      |abb24        |abb25   |abb06      |abb07        |abb07f     |abb11        |abb12   |abb13   |abb14   |abb35   |abb36   |abb37   |rec_d           |rec_c            |amt_d           |amt_c             |aba24   |gen02       |aba37   |gen02_1     |aba38   |gen02_2     |aba06       |aba07        ]
+[aba01    |aba02          |aba03         |aba04   |aba05  |abb02   |abb04       |abb03      |aag02        |aag13       |abb03_1        |abb05     |gem02      |abb24        |abb25   |abb06      |abb07        |abb07f     |abb11        |abb12   |abb13   |abb14   |abb35   |abb36   |abb37   |rec_d           |rec_c            |amt_d           |amt_c             |aba24   |gen02       |aba37   |gen02_1     |aba38   |gen02_2     |aba06       |aba07        ]
+[aba01    |aba02          |aba03         |aba04   |aba05  |abb02   |abb04       |abb03      |aag02        |aag13       |abb03_1        |abb05     |gem02      |abb24        |abb25   |abb06      |abb07        |abb07f     |abb11        |abb12   |abb13   |abb14   |abb35   |abb36   |abb37   |rec_d           |rec_c            |amt_d           |amt_c             |aba24   |gen02       |aba37   |gen02_1     |aba38   |gen02_2     |aba06       |aba07        ]
+[aba01    |aba02          |aba03         |aba04   |aba05  |abb02   |abb04       |abb03      |aag02        |aag13       |abb03_1        |abb05     |gem02      |abb24        |abb25   |abb06      |abb07        |abb07f     |abb11        |abb12   |abb13   |abb14   |abb35   |abb36   |abb37   |rec_d           |rec_c            |amt_d           |amt_c             |aba24   |gen02       |aba37   |gen02_1     |aba38   |gen02_2     |aba06       |aba07        ]
+[aba01    |aba02          |aba03         |aba04   |aba05  |abb02   |abb04       |abb03      |aag02        |aag13       |abb03_1        |abb05     |gem02      |abb24        |abb25   |abb06      |abb07        |abb07f     |abb11        |abb12   |abb13   |abb14   |abb35   |abb36   |abb37   |rec_d           |rec_c            |amt_d           |amt_c             |aba24   |gen02       |aba37   |gen02_1     |aba38   |gen02_2     |aba06       |aba07        ]
+
+
+}
+END -- s_aba
+Grid gr1
+{
+   ---------- rows [cn2  ]  ----------
+
+
+
+}
+END -- gr1
+END -- VBox1
+END -- aglq911
+
+TABLES
+aag_file,
+abb_file,
+aba_file
+ATTRIBUTES
+Label label:Label1, text=%"Book No.";
+ButtonEdit aba00=formonly.aba00 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Label label2:Label2, text=%"Sum";
+ComboBox u=formonly.u type CHAR, tabIndex=2, items=(("1", "pz"),("2", "bm"),("3", "aag02"));
+Label label3:Label3, text=%"Condition";
+ComboBox d=formonly.d type CHAR, tabIndex=3, items=(("1", "Unposted"),("2", "Posted"),("3", "Unposted"),("4", "Posted"),("5", "All "));
+CheckBox a=formonly.a type CHAR, tabIndex=4, text=%"Amt in Trans.Curr.", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b35=formonly.b35 type CHAR, tabIndex=5, text=%"Trans.Code 9", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b36=formonly.b36 type CHAR, tabIndex=6, text=%"Trans.Code 10", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b37=formonly.b37 type CHAR, tabIndex=7, text=%"abb37", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b11=formonly.b11 type CHAR, tabIndex=8, text=%"Trans.Code 1", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b12=formonly.b12 type CHAR, tabIndex=9, text=%"Trans.Code 2", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b13=formonly.b13 type CHAR, tabIndex=10, text=%"Trans.Code 3", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b14=formonly.b14 type CHAR, tabIndex=11, text=%"Trans.Code 4", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit aba01=aba_file.aba00, tabIndex=12, title="aba00", hidden, invisible;
+ButtonEdit aba02=aba_file.aba01, action=controlp, tabIndex=13, title="aba01", image="zoom";
+DateEdit aba03=aba_file.aba02, tabIndex=14, title="aba02";
+Edit aba04=aba_file.aba03, tabIndex=15, title="aba03";
+Edit aba05=aba_file.aba04, tabIndex=16, title="aba04";
+Edit abb02=abb_file.abb02, tabIndex=17, title="abb02";
+Edit abb04=abb_file.abb04, tabIndex=18, title="abb04";
+ButtonEdit abb03=abb_file.abb03, action=controlp, tabIndex=19, title="abb03", image="zoom";
+Edit aag02=aag_file.aag02, tabIndex=20, title="aag02";
+Edit aag13=aag_file.aag13, tabIndex=21, title="aag13";
+Edit abb03_1=formonly.abb03_1, tabIndex=21, title=%"abb03_1";
+ButtonEdit abb05=abb_file.abb05, action=controlp, tabIndex=22, title="abb05", image="zoom";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=23, title="gem02";
+ButtonEdit abb24=abb_file.abb24, action=controlp, tabIndex=24, title="abb24", image="zoom";
+Edit abb25=abb_file.abb25, tabIndex=25, title=%"abb25";
+ComboBox abb06=abb_file.abb06, tabIndex=26, title="abb06", not null, required, queryEditable, comment=" 1:Debit , 2:Credit", items=(("1", %"Debit"),("2", %"Credit"));
+Edit abb07=abb_file.abb07, tabIndex=27, title="abb07";
+Edit abb07f=abb_file.abb07f, tabIndex=28, title="abb07f";
+ButtonEdit abb11=abb_file.abb11, action=controlp, tabIndex=29, title="abb11", image="zoom";
+ButtonEdit abb12=abb_file.abb12, action=controlp, tabIndex=30, title=%"abb12", image="zoom";
+ButtonEdit abb13=abb_file.abb13, action=controlp, tabIndex=31, title=%"abb13", image="zoom";
+ButtonEdit abb14=abb_file.abb14, action=controlp, tabIndex=32, title=%"abb14", image="zoom";
+ButtonEdit abb35=abb_file.abb35, action=controlp, tabIndex=33, title=%"abb35", image="zoom";
+ButtonEdit abb36=abb_file.abb36, action=controlp, tabIndex=34, title=%"abb36", image="zoom";
+ButtonEdit abb37=abb_file.abb37, action=controlp, tabIndex=35, title=%"abb37", image="zoom";
+Edit rec_d=formonly.rec_d type DECIMAL, tabIndex=36, title=%"rec_d";
+Edit rec_c=formonly.rec_c type DECIMAL, tabIndex=37, title=%"rec_c";
+Edit amt_d=formonly.amt_d type DECIMAL, tabIndex=38, title="amt_d";
+Edit amt_c=formonly.amt_c type DECIMAL, tabIndex=39, title="amt_c";
+ButtonEdit aba24=aba_file.aba24, action=controlp, tabIndex=40, title=%"aba24", image="zoom";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=41, title="gen02";
+ButtonEdit aba37=aba_file.aba37, action=controlp, tabIndex=42, title=%"aba37", image="zoom";
+Edit gen02_1=formonly.gen02_1 type VARCHAR, tabIndex=43, title="gen02_1";
+ButtonEdit aba38=aba_file.aba38, action=controlp, tabIndex=44, title=%"aba38", image="zoom";
+Edit gen02_2=formonly.gen02_2 type VARCHAR, tabIndex=45, title="gen02_2";
+Edit aba06=aba_file.aba06, tabIndex=46, title="aba06";
+Edit aba07=aba_file.aba07, tabIndex=47, title="aba07";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=48;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aba(aba_file.aba00,aba_file.aba01,aba_file.aba02,aba_file.aba03,aba_file.aba04,abb_file.abb02,abb_file.abb04,abb_file.abb03,aag_file.aag02,aag_file.aag13,formonly.abb03_1,abb_file.abb05,formonly.gem02,abb_file.abb24,abb_file.abb25,abb_file.abb06,abb_file.abb07,abb_file.abb07f,abb_file.abb11,abb_file.abb12,abb_file.abb13,abb_file.abb14,abb_file.abb35,abb_file.abb36,abb_file.abb37,formonly.rec_d,formonly.rec_c,formonly.amt_d,formonly.amt_c,aba_file.aba24,formonly.gen02,aba_file.aba37,formonly.gen02_1,aba_file.aba38,formonly.gen02_2,aba_file.aba06,aba_file.aba07)
+SCREEN RECORD Undefined(formonly.aba00,formonly.u,formonly.d,formonly.cn2,formonly.a,formonly.b11,formonly.b12,formonly.b13,formonly.b14,formonly.b35,formonly.b36,formonly.b37)
+END -- INSTRUCTIONS
+

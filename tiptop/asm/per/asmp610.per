@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asmp610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asmp610")
+VBox VBox1
+Grid gr880
+{
+ <G group01                                 >
+  Current YY/MM is    [yy1  ][m1 ]
+  Update              [yy2  ][m2 ]
+
+ [dummy01                                   ]
+ <                                          >
+
+}
+END -- gr880
+Grid gr881
+{
+ [g_bgjob                          ]
+
+}
+END -- gr881
+END -- VBox1
+END -- asmp610
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+Edit yy1=formonly.yy1 type CHAR, tabIndex=1, noEntry;
+Edit m1=formonly.m1 type CHAR, tabIndex=2, noEntry;
+Edit yy2=formonly.yy2 type SMALLINT, tabIndex=3;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=4;
+Label dummy01:dummy01, text="NOTE:Whole task is a Tran., beware Long Tranx.";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=5, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy1,formonly.m1,formonly.yy2,formonly.m2,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

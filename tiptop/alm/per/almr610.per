@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almr610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                          >
+ [label1    ][lqe02                   ]
+ [label2    ][lqe01                   ]
+
+ <                                                  >
+ <G group2                                         >
+ [label3    ][bdate          ]~[edate         ]
+ [label5    ][cb                      ]
+ <                                                 >
+}
+END -- Grid1
+Grid Grid2
+{
+ [more            ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+Label label1:Label1, text=%"lqe02";
+ButtonEdit lqe02=formonly.lqe02 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Label label2:Label2, text=%"lqe01";
+ButtonEdit lqe01=formonly.lqe01 type CHAR, action=controlp, tabIndex=2, image="zoom";
+Group group2:Group2, text=%"Group2";
+Label label3:Label3, text=%"date";
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=3, not null;
+DateEdit edate=formonly.edate type CHAR, tabIndex=4, not null;
+Label label5:Label5, text=%"state";
+ComboBox cb=formonly.cb type CHAR, tabIndex=5, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"));
+CheckBox more=formonly.more type CHAR, tabIndex=6, default = "N", text=%"more", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.lqe02,formonly.lqe01,formonly.bdate,formonly.edate,formonly.cb,formonly.more)
+END -- INSTRUCTIONS
+

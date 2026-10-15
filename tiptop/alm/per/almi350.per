@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi350.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi350")
+VBox VBox1
+Folder pc1
+Page Main(text=%"Main")
+Grid gr1
+{
+
+[label1      |lnl01         |oaj02         ][label15      ][lnl03               ]
+[label2      |lnlstore      |rtz13         ]               [lnl04               ]
+[label3      |lnllegal      |azt02         ]               [lnl05               ]
+                                                           [lnl09               ]
+
+}
+END -- gr1
+END -- Main
+Page info(text=%"Info")
+Grid gr2
+{
+
+[label5       |lnluser   ] [label9           |lnlmodu     ]  [label10    |lnlacti   ]
+[label4       |lnlgrup   ] [label8           |lnldate     ]  [label11    |lnlcrat   ]
+[label6       |lnloriu   ]
+[label7       |lnlorig   ]
+
+}
+END -- gr2
+END -- info
+END -- pc1
+Table ds1
+{
+[lik02 |lik03       |lmb03       |lik04       |lmc04       |lik05       |lmy04       |lik06       |oba02       |lik07       |tqa02       |lik08       |lik09       |lik10       ]
+[lik02 |lik03       |lmb03       |lik04       |lmc04       |lik05       |lmy04       |lik06       |oba02       |lik07       |tqa02       |lik08       |lik09       |lik10       ]
+[lik02 |lik03       |lmb03       |lik04       |lmc04       |lik05       |lmy04       |lik06       |oba02       |lik07       |tqa02       |lik08       |lik09       |lik10       ]
+[lik02 |lik03       |lmb03       |lik04       |lmc04       |lik05       |lmy04       |lik06       |oba02       |lik07       |tqa02       |lik08       |lik09       |lik10       ]
+[lik02 |lik03       |lmb03       |lik04       |lmc04       |lik05       |lmy04       |lik06       |oba02       |lik07       |tqa02       |lik08       |lik09       |lik10       ]
+[lik02 |lik03       |lmb03       |lik04       |lmc04       |lik05       |lmy04       |lik06       |oba02       |lik07       |tqa02       |lik08       |lik09       |lik10       ]
+[lik02 |lik03       |lmb03       |lik04       |lmc04       |lik05       |lmy04       |lik06       |oba02       |lik07       |tqa02       |lik08       |lik09       |lik10       ]
+[lik02 |lik03       |lmb03       |lik04       |lmc04       |lik05       |lmy04       |lik06       |oba02       |lik07       |tqa02       |lik08       |lik09       |lik10       ]
+[lik02 |lik03       |lmb03       |lik04       |lmc04       |lik05       |lmy04       |lik06       |oba02       |lik07       |tqa02       |lik08       |lik09       |lik10       ]
+[lik02 |lik03       |lmb03       |lik04       |lmc04       |lik05       |lmy04       |lik06       |oba02       |lik07       |tqa02       |lik08       |lik09       |lik10       ]
+
+
+}
+END -- ds1
+Grid gr3
+{
+
+  ------[label|idx  |la|cnt   ] ------ [label14|cn2    ]------
+
+}
+END -- gr3
+END -- VBox1
+END -- almi350
+
+TABLES
+lik_file,
+lnl_file
+ATTRIBUTES
+Label label1:Label1, text=%"Det.DocNo.";
+ButtonEdit lnl01=lnl_file.lnl01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=2, noEntry;
+Label label15:Label15, text=%"";
+CheckBox lnl03=lnl_file.lnl03, tabIndex=7, default = "", text="Building No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label2:Label2, text=%"Store No.";
+ButtonEdit lnlstore=lnl_file.lnlstore, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=4, noEntry;
+CheckBox lnl04=lnl_file.lnl04, tabIndex=8, default = "", text="Floor No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label3:Label3, text=%"Corporation";
+ButtonEdit lnllegal=lnl_file.lnllegal, action=controlp, tabIndex=5, noEntry, not null, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=6, noEntry;
+CheckBox lnl05=lnl_file.lnl05, tabIndex=9, default = "", text="Area No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lnl09=lnl_file.lnl09, tabIndex=10, text=%"Minor Category No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label5:Label5, text=%"Data Owner";
+Edit lnluser=lnl_file.lnluser, tabIndex=11, noEntry;
+Label label9:Label9, text=%"Last Modified by";
+Edit lnlmodu=lnl_file.lnlmodu, tabIndex=14, noEntry;
+Label label10:Label10, text=%"Valid Code";
+Edit lnlacti=lnl_file.lnlacti, tabIndex=17, noEntry;
+Label label4:Label4, text=%"Department";
+Edit lnlgrup=lnl_file.lnlgrup, tabIndex=12, noEntry;
+Label label8:Label8, text=%"Last Modified on";
+DateEdit lnldate=lnl_file.lnldate, tabIndex=15, noEntry;
+Label label11:Label11, text=%"create on";
+DateEdit lnlcrat=lnl_file.lnlcrat, tabIndex=18, noEntry;
+Label label6:Label6, text=%"Record Orig.";
+Edit lnloriu=lnl_file.lnloriu, tabIndex=13, noEntry;
+Label label7:Label7, text=%"Dept Orig.";
+Edit lnlorig=lnl_file.lnlorig, tabIndex=16, noEntry;
+Edit lik02=lik_file.lik02, tabIndex=19, title=%"lik02", not null, scroll;
+ButtonEdit lik03=lik_file.lik03, action=controlp, tabIndex=20, title=%"lik03", image="zoom", scroll;
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=32, title=%"lmb03", noEntry;
+ButtonEdit lik04=lik_file.lik04, action=controlp, tabIndex=21, title=%"lik04", image="zoom", scroll;
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=33, title=%"lmc04", noEntry;
+ButtonEdit lik05=lik_file.lik05, action=controlp, tabIndex=22, title=%"lik05", image="zoom", scroll;
+Edit lmy04=formonly.lmy04 type CHAR, tabIndex=34, title=%"lmy04", noEntry;
+ButtonEdit lik06=lik_file.lik06, action=controlp, tabIndex=23, title=%"lik06", image="zoom", scroll;
+Edit oba02=formonly.oba02 type CHAR, tabIndex=35, title=%"oba02", noEntry;
+ButtonEdit lik07=lik_file.lik07, action=controlp, tabIndex=24, title=%"lik07", not null, image="zoom", scroll;
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=25, title=%"tqa02", noEntry;
+ComboBox lik08=lik_file.lik08, tabIndex=26, title=%"lik08", not null, scroll, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"));
+ComboBox lik09=lik_file.lik09, tabIndex=27, title=%"lik09", not null, scroll, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "Proportion"));
+ComboBox lik10=lik_file.lik10, tabIndex=28, title=%"lik10", not null, scroll, items=(("1", "1"),("2", "2"),("3", "3"));
+Label label:Label12, text=%"Rows";
+Edit idx=formonly.idx type SMALLINT, tabIndex=29, noEntry;
+Label la:Label13, text=%"/";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=30, noEntry;
+Label label14:Label14, text=%"Details";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=31;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lnl_file.lnl01,lnl_file.lnl05,formonly.oaj02,lnl_file.lnlstore,formonly.rtz13,lnl_file.lnllegal,lnl_file.lnl09,formonly.azt02,lnl_file.lnl03,lnl_file.lnl04,lnl_file.lnluser,lnl_file.lnlmodu,lnl_file.lnlacti,lnl_file.lnlgrup,lnl_file.lnldate,lnl_file.lnlcrat,lnl_file.lnloriu,lnl_file.lnlorig,formonly.idx,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_lik(lik_file.lik02,lik_file.lik03,formonly.lmb03,lik_file.lik04,formonly.lmc04,lik_file.lik05,formonly.lmy04,lik_file.lik06,formonly.oba02,lik_file.lik07,formonly.tqa02,lik_file.lik08,lik_file.lik09,lik_file.lik10)
+END -- INSTRUCTIONS
+

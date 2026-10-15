@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr330.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr330")
+VBox vb9
+Grid gr9
+{
+ <G group01                                                                             >
+  Item No.            [ima01               ]  Cost Levels         [ima57               ]
+ <                                                                                      >
+
+}
+END -- gr9
+Group g01(text="INPUT")
+Grid gr10
+{
+ Year                     [s_y          ]     Variation Amount    [s_amt    ]
+ Period                   [s_m          ]     Difference %        [s_rat]%
+ Cost Calculation Method  [type         ]
+ <G group02                                                         >
+  [s1           ] [s2            ]
+  [t1]            [t2]
+ <                                                                  >
+
+}
+END -- gr10
+END -- g01
+Grid gr11
+{
+[more                                                              ]
+
+}
+END -- gr11
+END -- vb9
+END -- axcr330
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<P>";
+Edit ima57=formonly.ima57 type CHAR, tabIndex=2;
+Edit s_y=formonly.s_y type CHAR, tabIndex=3;
+Edit s_amt=formonly.s_amt type CHAR, tabIndex=4;
+Edit s_m=formonly.s_m type CHAR, tabIndex=5;
+Edit s_rat=formonly.s_rat type CHAR, tabIndex=6;
+ComboBox type=formonly.type type VARCHAR, tabIndex=12, not null, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=7, queryEditable, items=(("1", "Item No."),("2", "Cost Levels"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=8, queryEditable, items=(("1", "Item No."),("2", "Cost Levels"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima57,formonly.s_y,formonly.s_amt,formonly.s_m,formonly.s_rat,formonly.type,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.more)
+END -- INSTRUCTIONS
+

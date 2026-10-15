@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afap610")
+VBox vb2
+Grid gr1937
+{
+ <G group01                                               >
+  Inventory Taking No    [fca01               ]
+  Inventory Posting Date [posdate     ]
+ [dummy02 ]
+ [dummy01                                                ]
+ <                                                        >
+
+}
+END -- gr1937
+Grid gr1938
+{
+[g_bgjob                                                       ]
+
+}
+END -- gr1938
+END -- vb2
+END -- afap610
+
+TABLES
+fca_file
+ATTRIBUTES
+Group group01:group01, text="Input";
+ButtonEdit fca01=fca_file.fca01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Inventory Taking";
+DateEdit posdate=formonly.posdate type DATE, tabIndex=3;
+Label dummy02:dummy02;
+Label dummy01:dummy01, text="* Confirm Inventory Data (FM) done and no error found *";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=2, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fca_file.fca01,formonly.posdate,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

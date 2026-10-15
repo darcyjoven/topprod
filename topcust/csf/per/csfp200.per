@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfp200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp200")
+VBox VBox1
+Folder pc5
+Page page01(text=%"Main")
+Grid gr10
+{
+
+  ecm01     [ecm01              ]     sfb05[sfb05              ]  ima02     [ima02              ]
+  ecm03     [ecm03           ]        ecm04[ecm04      ]  [ecm45           ]
+
+}
+END -- gr10
+END -- page01
+END -- pc5
+Table s_sfb
+{
+[a       |sgm01      |sgm03         |sgm04      |sgm45     ]
+[a       |sgm01      |sgm03         |sgm04      |sgm45     ]
+[a       |sgm01      |sgm03         |sgm04      |sgm45     ]
+[a       |sgm01      |sgm03         |sgm04      |sgm45     ]
+[a       |sgm01      |sgm03         |sgm04      |sgm45     ]
+[a       |sgm01      |sgm03         |sgm04      |sgm45     ]
+[a       |sgm01      |sgm03         |sgm04      |sgm45     ]
+[a       |sgm01      |sgm03         |sgm04      |sgm45     ]
+[a       |sgm01      |sgm03         |sgm04      |sgm45     ]
+[a       |sgm01      |sgm03         |sgm04      |sgm45     ]
+}
+END -- s_sfb
+Grid gr2187
+{
+  ---------- Rows [cntb  ] ----------
+
+
+
+}
+END -- gr2187
+END -- VBox1
+END -- asfp200
+
+ATTRIBUTES
+ButtonEdit ecm01=formonly.ecm01 type VARCHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit sfb05=formonly.sfb05 type VARCHAR, tabIndex=9;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=10;
+Edit ecm03=formonly.ecm03 type VARCHAR, tabIndex=4;
+Edit ecm04=formonly.ecm04 type VARCHAR, tabIndex=11;
+Edit ecm45=formonly.ecm45 type VARCHAR, tabIndex=12;
+CheckBox a=formonly.a type VARCHAR, tabIndex=2, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sgm01=formonly.sgm01 type CHAR, tabIndex=5, title="sgm01", noEntry;
+DateEdit sgm03=formonly.sgm03 type VARCHAR, tabIndex=6, title="sgm03", noEntry;
+Edit sgm04=formonly.sgm04 type CHAR, tabIndex=7, title="sgm04", noEntry;
+Edit sgm45=formonly.sgm45 type CHAR, tabIndex=8, title="sgm45", noEntry;
+Edit cntb=formonly.cntb type INTEGER, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(formonly.a,formonly.sgm01,formonly.sgm03,formonly.sgm04,formonly.sgm45)
+SCREEN RECORD Undefined(formonly.ecm01,formonly.ecm03,formonly.cntb,formonly.sfb05,formonly.ima02,formonly.ecm04,formonly.ecm45)
+END -- INSTRUCTIONS
+

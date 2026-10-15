@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/clib/4fd/cl_post.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+ [tc_pos03                                  ]  [tc_pos08        ]
+  Label1           [tc_pos01                ]  [tc_pos02        ]
+  Label1           [tc_pos04                ]  [tc_pos04_desc   ]
+  Label1           [tc_pos05                ]  [tc_pos05_desc   ]
+  Label1           [tc_pos06          ]        [tc_pos07        ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+LABEL tc_pos03=formonly.tc_pos03;
+ComboBox tc_pos08=formonly.tc_pos08, tabIndex=7, noEntry;
+Edit tc_pos01=formonly.tc_pos01, tabIndex=1, noEntry;
+Edit tc_pos02=formonly.tc_pos02, tabIndex=2, noEntry;
+ButtonEdit tc_pos04=formonly.tc_pos04 type VARCHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+LABEL tc_pos04_desc=formonly.tc_pos04_desc;
+ButtonEdit tc_pos05=formonly.tc_pos05 type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+LABEL tc_pos05_desc=formonly.tc_pos05_desc;
+DateEdit tc_pos06=formonly.tc_pos06, tabIndex=5, required;
+Edit tc_pos07=formonly.tc_pos07, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_pos02,formonly.tc_pos01,formonly.tc_pos03,formonly.tc_pos04,formonly.tc_pos05,formonly.tc_pos04_desc,formonly.tc_pos05_desc,formonly.tc_pos06,formonly.tc_pos07,formonly.tc_pos08)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zy.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zy")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr3055
+{
+ <G group01                                               >
+  Authorization Category Code        [zy01                ]
+  Authorization Category Description [zw02                ]
+ [zwacti                                                  ]
+ <                                                        >
+
+}
+END -- gr3055
+END -- page01
+END -- folder01
+Table s_zy
+{
+[zy02         |gaz03                       |zy03                       |zy04                           |zy05                                 |zy07       ]
+[zy02         |gaz03                       |zy03                       |zy04                           |zy05                                 |zy07       ]
+[zy02         |gaz03                       |zy03                       |zy04                           |zy05                                 |zy07       ]
+[zy02         |gaz03                       |zy03                       |zy04                           |zy05                                 |zy07       ]
+[zy02         |gaz03                       |zy03                       |zy04                           |zy05                                 |zy07       ]
+[zy02         |gaz03                       |zy03                       |zy04                           |zy05                                 |zy07       ]
+[zy02         |gaz03                       |zy03                       |zy04                           |zy05                                 |zy07       ]
+[zy02         |gaz03                       |zy03                       |zy04                           |zy05                                 |zy07       ]
+[zy02         |gaz03                       |zy03                       |zy04                           |zy05                                 |zy07       ]
+[zy02         |gaz03                       |zy03                       |zy04                           |zy05                                 |zy07       ]
+
+}
+END -- s_zy
+Grid gr3056
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3056
+END -- VBox1
+END -- p_zy
+
+TABLES
+gaz_file,
+zy_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit zy01=zy_file.zy01, action=controlp, tabIndex=1, image="zoom", comment="This Field & Program # are Key, No Blank/Repeated!  <^P>Qry Authorization Category";
+Edit zw02=formonly.zw02 type VARCHAR, tabIndex=2, noEntry;
+CheckBox zwacti=formonly.zwacti type CHAR, tabIndex=3, text="This Authorization Category Code is Active", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit zy02=zy_file.zy02, action=controlp, tabIndex=4, title="Program ID", not null, required, image="zoom", comment="<^P> Qry Program Name ";
+Edit gaz03=gaz_file.gaz03, tabIndex=5, title="Program Name", noEntry;
+Edit zy03=zy_file.zy03, tabIndex=6, title="Available Functions", noEntry, not null, required, scroll, comment="If to Create Table, Enter AQURBCO.. here";
+ComboBox zy04=zy_file.zy04, tabIndex=7, title="Non-self\'s Data Dealing Method", not null, required, queryEditable, comment="Set User\'s Authorization to Access Other Owner\'s Data", items=(("0", %"Can Query,Modify,Delete"),("1", %"Can Query,Modify,But Delete"),("2", %"Can Query,But Modify,Can Delete"),("3", %"Can Query,But Modify,nor Delete"),("4", %"Can't Query,nor Modify,nor Delete"));
+ComboBox zy05=zy_file.zy05, tabIndex=8, title="Non-Same Dept.\'s Data Dealing Method", not null, required, queryEditable, comment="Set User\'s Authorization to Access Other Dept\'s Data(0/1/2/3/4/5/6/7/8)", items=(("0", "Different Dept., Can Query,Modify,Delete"),("1", "Different Dept., Can Query,Modify,But Delete"),("2", "Different Dept., Can Query,But Modify,Can Delete"),("3", "Different Dept., Can Query,But Modify,nor Delete"),("4", "Different Dept., Can't Query,nor Modify,nor Delete"),("5", "In Relative Dept, Can Query,Modify,But Delete"),("6", "In Relative Dept, Can Query,But Modify,Can Delete"),("7", "In Relative Dept, Can Query,But Modify,nor Delete"),("8", "In Relative Dept, Can Query,Modify,Delete"));
+ComboBox zy07=zy_file.zy07, tabIndex=9, title="Detail Auth", noEntry, not null, required, queryEditable, items=(("0", %"Can Insert, Delete"),("1", %"Can Insert,But Delete"),("2", %"Cannot Insert,Can Delete"),("3", %"Cannot Insert,nor Delete"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zy(zy_file.zy02,gaz_file.gaz03,zy_file.zy03,zy_file.zy04,zy_file.zy05,zy_file.zy07)
+SCREEN RECORD Undefined(zy_file.zy01,formonly.zw02,formonly.zwacti,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

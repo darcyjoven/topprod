@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_perscrty.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder folder1
+Page page1(text=%"Page1")
+Grid ds2
+{
+[label1      |gdv01     ]
+[label4      |gaz03               ]
+[label3      |gdv04            ]
+[gdv03                ]
+}
+END -- ds2
+END -- page1
+END -- folder1
+Table ds1
+{
+[gdv02           |gae04      |gdv05            |gdv06              |gdv07                     |gdv08                         ]
+[gdv02           |gae04      |gdv05            |gdv06              |gdv07                     |gdv08                         ]
+[gdv02           |gae04      |gdv05            |gdv06              |gdv07                     |gdv08                         ]
+[gdv02           |gae04      |gdv05            |gdv06              |gdv07                     |gdv08                         ]
+[gdv02           |gae04      |gdv05            |gdv06              |gdv07                     |gdv08                         ]
+[gdv02           |gae04      |gdv05            |gdv06              |gdv07                     |gdv08                         ]
+[gdv02           |gae04      |gdv05            |gdv06              |gdv07                     |gdv08                         ]
+[gdv02           |gae04      |gdv05            |gdv06              |gdv07                     |gdv08                         ]
+[gdv02           |gae04      |gdv05            |gdv06              |gdv07                     |gdv08                         ]
+[gdv02           |gae04      |gdv05            |gdv06              |gdv07                     |gdv08                         ]
+}
+END -- ds1
+Grid gr4676
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4676
+END -- VBox1
+END -- p_perscrty
+
+TABLES
+gaz_file,
+gae_file,
+gdv_file
+ATTRIBUTES
+Label label1:label1, text=%"Form ID";
+ButtonEdit gdv01=gdv_file.gdv01, action=controlp, tabIndex=8, not null, required, image="zoom", downShift, comment=%"KEY Field, No Blank/Repeated!, <^P>Qry Program Name";
+Label label4:label4, text=%"Form Description";
+Edit gaz03=gaz_file.gaz03, tabIndex=7;
+Label label3:label3, text=%"Industry";
+ComboBox gdv04=gdv_file.gdv04, tabIndex=11, not null, required;
+CheckBox gdv03=gdv_file.gdv03, tabIndex=6, text=%"Customerized Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gdv02=gdv_file.gdv02, tabIndex=1, title=%"Field ID", not null, required, scroll;
+Edit gae04=gae_file.gae04, tabIndex=12, title=%"Field Name", noEntry;
+ComboBox gdv05=gdv_file.gdv05, tabIndex=2, title=%"Data Mask Type", not null, required, scroll;
+CheckBox gdv06=gdv_file.gdv06, tabIndex=3, title=%"Is Input ?", text=%"";
+ButtonEdit gdv07=gdv_file.gdv07, action=controlp, tabIndex=4, title=%"Authoritied Operator", image="zoom", scroll;
+ButtonEdit gdv08=gdv_file.gdv08, action=controlp, tabIndex=5, title=%"Authoritied Group", image="zoom", scroll;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD record2(gdv_file.gdv03)
+SCREEN RECORD undefined(gaz_file.gaz03,gdv_file.gdv01,formonly.cnt,formonly.cn2,gdv_file.gdv04)
+SCREEN RECORD s_gdv(gdv_file.gdv02,gae_file.gae04,gdv_file.gdv05,gdv_file.gdv06,gdv_file.gdv07,gdv_file.gdv08)
+END -- INSTRUCTIONS
+

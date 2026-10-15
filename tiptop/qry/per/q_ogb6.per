@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_ogb6.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT 
+Table s_ima
+{
+[ch|oga01    |oga02    |ogb03   |ogb04     |ogb06      |ogb09   |ogb12   |ima02   |oga04   |occ02   |qcs22   ]
+[ch|oga01    |oga02    |ogb03   |ogb04     |ogb06      |ogb09   |ogb12   |ima02   |oga04   |occ02   |qcs22   ]
+[ch|oga01    |oga02    |ogb03   |ogb04     |ogb06      |ogb09   |ogb12   |ima02   |oga04   |occ02   |qcs22   ]
+[ch|oga01    |oga02    |ogb03   |ogb04     |ogb06      |ogb09   |ogb12   |ima02   |oga04   |occ02   |qcs22   ]
+[ch|oga01    |oga02    |ogb03   |ogb04     |ogb06      |ogb09   |ogb12   |ima02   |oga04   |occ02   |qcs22   ]
+[ch|oga01    |oga02    |ogb03   |ogb04     |ogb06      |ogb09   |ogb12   |ima02   |oga04   |occ02   |qcs22   ]
+[ch|oga01    |oga02    |ogb03   |ogb04     |ogb06      |ogb09   |ogb12   |ima02   |oga04   |occ02   |qcs22   ]
+[ch|oga01    |oga02    |ogb03   |ogb04     |ogb06      |ogb09   |ogb12   |ima02   |oga04   |occ02   |qcs22   ]
+[ch|oga01    |oga02    |ogb03   |ogb04     |ogb06      |ogb09   |ogb12   |ima02   |oga04   |occ02   |qcs22   ]
+[ch|oga01    |oga02    |ogb03   |ogb04     |ogb06      |ogb09   |ogb12   |ima02   |oga04   |occ02   |qcs22   ]
+
+}
+END -- s_ima
+END -- q_ima01
+
+TABLES
+qcs_file,
+occ_file,
+ima_file,
+ogb_file,
+oga_file
+ATTRIBUTES
+Edit ch=formonly.check type CHAR, tabIndex=6, title=%"Sel", not null, required;
+Edit oga01=oga_file.oga01, tabIndex=1, title=%"oga01", not null, scroll;
+DateEdit oga02=oga_file.oga02, tabIndex=2, title=%"oga02", not null;
+Edit ogb03=ogb_file.ogb03, tabIndex=3, title=%"ogb03", not null, scroll;
+Edit ogb04=ogb_file.ogb04, tabIndex=4, title=%"ogb04", not null, scroll;
+Edit ogb06=ogb_file.ogb06, tabIndex=5, title=%"ogb06", not null, scroll;
+Edit ogb09=ogb_file.ogb09, tabIndex=7, title=%"ogb09";
+Edit ogb12=ogb_file.ogb12, tabIndex=8, title=%"ogb12";
+Edit ima02=ima_file.ima02, tabIndex=9, title=%"ima02";
+Edit oga04=oga_file.oga04, tabIndex=10, title=%"oga04";
+Edit occ02=occ_file.occ02, tabIndex=11, title=%"occ02";
+Edit qcs22=qcs_file.qcs22, tabIndex=12, title=%"qcs22";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogb(formonly.check,oga_file.oga01,oga_file.oga02,ogb_file.ogb03,ogb_file.ogb04,ogb_file.ogb06,ogb_file.ogb09,ogb_file.ogb12,ima_file.ima02,oga_file.oga04,occ_file.occ02,qcs_file.qcs22)
+END -- INSTRUCTIONS
+

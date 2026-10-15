@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cbm/4fd/cbmp600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+  ecu01         [ecu01                     ]        ecu02           [ecu02           ]
+
+
+}
+END -- Grid1
+Table s_tc_exp
+{
+[check   |tc_exp02         |tc_exp03  |ima02               |ima021              |tc_exp04    |tc_exp05    |tc_exp06    |tc_exp07  |gen02     |tc_exp08  |tc_exp09  ]
+[check   |tc_exp02         |tc_exp03  |ima02               |ima021              |tc_exp04    |tc_exp05    |tc_exp06    |tc_exp07  |gen02     |tc_exp08  |tc_exp09  ]
+[check   |tc_exp02         |tc_exp03  |ima02               |ima021              |tc_exp04    |tc_exp05    |tc_exp06    |tc_exp07  |gen02     |tc_exp08  |tc_exp09  ]
+[check   |tc_exp02         |tc_exp03  |ima02               |ima021              |tc_exp04    |tc_exp05    |tc_exp06    |tc_exp07  |gen02     |tc_exp08  |tc_exp09  ]
+[check   |tc_exp02         |tc_exp03  |ima02               |ima021              |tc_exp04    |tc_exp05    |tc_exp06    |tc_exp07  |gen02     |tc_exp08  |tc_exp09  ]
+[check   |tc_exp02         |tc_exp03  |ima02               |ima021              |tc_exp04    |tc_exp05    |tc_exp06    |tc_exp07  |gen02     |tc_exp08  |tc_exp09  ]
+[check   |tc_exp02         |tc_exp03  |ima02               |ima021              |tc_exp04    |tc_exp05    |tc_exp06    |tc_exp07  |gen02     |tc_exp08  |tc_exp09  ]
+[check   |tc_exp02         |tc_exp03  |ima02               |ima021              |tc_exp04    |tc_exp05    |tc_exp06    |tc_exp07  |gen02     |tc_exp08  |tc_exp09  ]
+[check   |tc_exp02         |tc_exp03  |ima02               |ima021              |tc_exp04    |tc_exp05    |tc_exp06    |tc_exp07  |gen02     |tc_exp08  |tc_exp09  ]
+[check   |tc_exp02         |tc_exp03  |ima02               |ima021              |tc_exp04    |tc_exp05    |tc_exp06    |tc_exp07  |gen02     |tc_exp08  |tc_exp09  ]
+
+
+
+
+
+
+
+
+}
+END -- s_tc_exp
+END -- VBox1
+END -- cbmp600
+
+ATTRIBUTES
+ButtonEdit ecu01=formonly.ecu01, action=controlp, tabIndex=3, image="zoom";
+Edit ecu02=formonly.ecu02, tabIndex=4;
+CheckBox check=formonly.check, tabIndex=1, title=%"check", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_exp02=formonly.tc_exp02, tabIndex=2, title=%"tc_exp02", noEntry;
+Edit tc_exp03=formonly.tc_exp03, tabIndex=7, title=%"tc_exp03", noEntry;
+Edit ima02=formonly.ima02, tabIndex=5, title=%"ima02", noEntry;
+Edit ima021=formonly.ima021, tabIndex=6, title=%"ima021", noEntry;
+Edit tc_exp04=formonly.tc_exp04 type DATETIME YEAR TO YEAR, tabIndex=8, title=%"tc_exp04", noEntry;
+Edit tc_exp05=formonly.tc_exp05, tabIndex=9, title=%"tc_exp05", noEntry;
+Edit tc_exp06=formonly.tc_exp06, tabIndex=10, title=%"tc_exp06", noEntry;
+Edit tc_exp07=formonly.tc_exp07, tabIndex=11, title=%"tc_exp07", noEntry;
+Edit gen02=formonly.gen02, tabIndex=12, title=%"gen02", noEntry;
+ComboBox tc_exp08=formonly.tc_exp08, tabIndex=13, title=%"tc_exp08", noEntry;
+CheckBox tc_exp09=formonly.tc_exp09, tabIndex=14, title=%"tc_exp09", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tc_exp(formonly.check,formonly.tc_exp02,formonly.tc_exp03,formonly.ima02,formonly.ima021,formonly.tc_exp04,formonly.tc_exp05,formonly.tc_exp06,formonly.tc_exp07,formonly.gen02,formonly.tc_exp08,formonly.tc_exp09)
+SCREEN RECORD Undefined(formonly.ecu01,formonly.ecu02)
+END -- INSTRUCTIONS
+

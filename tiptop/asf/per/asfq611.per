@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfq611.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"asfq611")
+VBox VBox1
+Grid Grid1
+{
+
+  [label9           |sie16                   ]                          [label4         ]  [sfb81               ]
+  [label1           |sie05                   |sie15              ]      [label6         ]  [sie11               ]
+  [label3           |sie01                   |ima021             ]
+  [label2           |sfb05                   |ima02              ]
+
+
+
+}
+END -- Grid1
+Grid Grid2
+{
+
+ <T s_sif                                                                                               >
+ [sif10            |smydesc        |sif11         |sif12       |sif09        |sif13         |sif07      ]
+ [sif10            |smydesc        |sif11         |sif12       |sif09        |sif13         |sif07      ]
+ [sif10            |smydesc        |sif11         |sif12       |sif09        |sif13         |sif07      ]
+ [sif10            |smydesc        |sif11         |sif12       |sif09        |sif13         |sif07      ]
+ [sif10            |smydesc        |sif11         |sif12       |sif09        |sif13         |sif07      ]
+ [sif10            |smydesc        |sif11         |sif12       |sif09        |sif13         |sif07      ]
+ [sif10            |smydesc        |sif11         |sif12       |sif09        |sif13         |sif07      ]
+ [sif10            |smydesc        |sif11         |sif12       |sif09        |sif13         |sif07      ]
+ [sif10            |smydesc        |sif11         |sif12       |sif09        |sif13         |sif07      ]
+ [sif10            |smydesc        |sif11         |sif12       |sif09        |sif13         |sif07      ]
+
+
+
+}
+END -- Grid2
+Grid Grid3
+{
+
+  ---------- [label|cnt   |la|cnt1 ] ----------
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- asfq611
+
+TABLES
+smy_file,
+sif_file,
+sie_file,
+sfb_file
+ATTRIBUTES
+Label label9:Label9, text=%"stocks classes";
+ComboBox sie16=sie_file.sie16, tabIndex=17, items=(("1", "WO. stocks"),("3", "order stocks"),("4", "Miscellaneous stocks"),("5", "allot stocks"));
+Label label4:Label4, text=%"Create Date";
+Edit sfb81=sfb_file.sfb81, tabIndex=4, noEntry;
+Label label1:Label1, text=%"stocks No";
+ButtonEdit sie05=sie_file.sie05, action=controlp, tabIndex=1, image="zoom";
+Edit sie15=sie_file.sie15, tabIndex=16;
+Label label6:Label6, text=%"Allocate Qty";
+Edit sie11=sie_file.sie11, tabIndex=5, noEntry;
+Label label3:Label3, text=%"stocks No.";
+Edit sie01=sie_file.sie01, tabIndex=14, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=15, noEntry;
+Label label2:Label2, text=%"WO. No.";
+Edit sfb05=sfb_file.sfb05, tabIndex=2;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=3, noEntry;
+Table s_sif:s_sif;
+Edit sif10=sif_file.sif10, tabIndex=6, title=%"the last modify date";
+Edit smydesc=smy_file.smydesc, tabIndex=7, title=%"Modify Status";
+Edit sif11=sif_file.sif11, tabIndex=8, title=%"the Modfiy No.";
+Edit sif12=sif_file.sif12, tabIndex=9, title=%"Line No.";
+ComboBox sif09=sif_file.sif09, tabIndex=18, title=%"Allocate Type", items=(("1", "Allocate"),("-1", "Return"));
+Edit sif13=sif_file.sif13, tabIndex=10, title=%"Modify Qty";
+Edit sif07=sif_file.sif07, tabIndex=11, title=%"Unit";
+Label label:Label7, text=%"Rows";
+Edit cnt=formonly.cnt type DECIMAL, tabIndex=12;
+Label la:Label8, text=%"/";
+Edit cnt1=formonly.cnt1 type DECIMAL, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sif(sif_file.sif10,smy_file.smydesc,sif_file.sif11,sif_file.sif12,sif_file.sif09,sif_file.sif13,sif_file.sif07)
+SCREEN RECORD Undefined(sie_file.sie05,sfb_file.sfb81,sie_file.sie01,formonly.ima021,sfb_file.sfb05,formonly.ima02,sie_file.sie11,formonly.cnt,formonly.cnt1,sie_file.sie15,sie_file.sie16)
+END -- INSTRUCTIONS
+

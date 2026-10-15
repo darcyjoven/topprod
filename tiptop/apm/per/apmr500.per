@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr500")
+VBox VBox1
+Grid gr5094
+{
+ <G group01                                                                              >
+  P/O No.       [pmm01               ]               Buyer         [pmm12               ]
+  Purchase Date [pmm04               ]               Item No.      [pmn04               ]
+  Vender No.    [pmm09               ]               P/R No.       [pmn24               ]
+
+ <                                                                                       >
+
+}
+END -- gr5094
+Group group02(text="INPUT")
+VBox VBox2
+Grid gr5095
+{
+ <G group03                                                         >
+ [s1                ]  [s2                 ]  [s3                  ]
+ [t1                ]  [t2                 ]  [t3                  ]
+ [u1                ]  [u2                 ]  [u3                  ]
+ <                                                                  >
+ <G group04                                                         >
+  Price source    [x                                               ]
+ [e                                                                ]
+ [z                                                                ]
+  System Date     [vdate       ]
+ <                                                                  >
+
+}
+END -- gr5095
+Grid gr5096
+{
+ <G group05   > <G group06   > <G group07   > <G group08   >
+ [a         ]   [b         ]   [c         ]   [d         ]
+ <            > <            > <            > <            >
+
+}
+END -- gr5096
+END -- VBox2
+END -- group02
+Grid gr5097
+{
+ [more                                                            ]
+
+}
+END -- gr5097
+END -- VBox1
+END -- apmr500
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmm01=formonly.pmm01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit pmm12=formonly.pmm12 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+DateEdit pmm04=formonly.pmm04 type DATE, tabIndex=3;
+ButtonEdit pmn04=formonly.pmn04 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit pmm09=formonly.pmm09 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit pmn24=formonly.pmn24 type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=7, items=(("1", "P/O No."),("2", "Purchase Date"),("3", "Vender No."),("4", "Buyer"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=8, items=(("1", "P/O No."),("2", "Purchase Date"),("3", "Vender No."),("4", "Buyer"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=9, items=(("1", "P/O No."),("2", "Purchase Date"),("3", "Vender No."),("4", "Buyer"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=13, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=15, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="Standard U/P Source Item";
+ComboBox x=formonly.x type VARCHAR, tabIndex=16, items=(("1", "Latest Unit Price"),("2", "Latest Market Price"),("3", "Supplier Unit Price"));
+CheckBox e=formonly.e type VARCHAR, tabIndex=17, text="Inclued Canceled PO", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox z=formonly.z type VARCHAR, tabIndex=18, text="Print PO SubTotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit vdate=formonly.vdate type DATE, tabIndex=19;
+Group group05:group05, text="Data Option1";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=20, items=(("1", "Approved"),("2", "UnApprove"),("3", "All"));
+Group group06:group06, text="Data Option2";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=21, items=(("1", "Frozen"),("2", "Unfrozen"),("3", "All"));
+Group group07:group07, text="Data Option3";
+RadioGroup c=formonly.c type VARCHAR, tabIndex=22, items=(("1", "Expired"),("2", "Active"),("3", "All"));
+Group group08:group08, text="Data Option4";
+RadioGroup d=formonly.d type VARCHAR, tabIndex=23, items=(("1", "Closed"),("2", "Unclosed"),("3", "All"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=24, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmm01,formonly.pmm12,formonly.pmm04,formonly.pmn04,formonly.pmm09,formonly.pmn24,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.x,formonly.e,formonly.z,formonly.vdate,formonly.a,formonly.b,formonly.c,formonly.d,formonly.more)
+END -- INSTRUCTIONS
+

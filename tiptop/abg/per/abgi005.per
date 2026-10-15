@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi005")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr583
+{
+ Version             [bge01     ]
+ Department          [bge02     ] [gem02     ]
+ Year                [bge03     ]
+ Month               [bge04     ]
+}
+END -- gr583
+END -- page01
+END -- folder01
+Table s_bge
+{
+[bge05   |bge06  |bge07          |bge08                 |bge11                   |bge09            |bge10                   |bge12                  |bgeuser    |bgegrup    |bgemodu    |bgedate        ]
+[bge05   |bge06  |bge07          |bge08                 |bge11                   |bge09            |bge10                   |bge12                  |bgeuser    |bgegrup    |bgemodu    |bgedate        ]
+[bge05   |bge06  |bge07          |bge08                 |bge11                   |bge09            |bge10                   |bge12                  |bgeuser    |bgegrup    |bgemodu    |bgedate        ]
+[bge05   |bge06  |bge07          |bge08                 |bge11                   |bge09            |bge10                   |bge12                  |bgeuser    |bgegrup    |bgemodu    |bgedate        ]
+[bge05   |bge06  |bge07          |bge08                 |bge11                   |bge09            |bge10                   |bge12                  |bgeuser    |bgegrup    |bgemodu    |bgedate        ]
+[bge05   |bge06  |bge07          |bge08                 |bge11                   |bge09            |bge10                   |bge12                  |bgeuser    |bgegrup    |bgemodu    |bgedate        ]
+[bge05   |bge06  |bge07          |bge08                 |bge11                   |bge09            |bge10                   |bge12                  |bgeuser    |bgegrup    |bgemodu    |bgedate        ]
+[bge05   |bge06  |bge07          |bge08                 |bge11                   |bge09            |bge10                   |bge12                  |bgeuser    |bgegrup    |bgemodu    |bgedate        ]
+[bge05   |bge06  |bge07          |bge08                 |bge11                   |bge09            |bge10                   |bge12                  |bgeuser    |bgegrup    |bgemodu    |bgedate        ]
+[bge05   |bge06  |bge07          |bge08                 |bge11                   |bge09            |bge10                   |bge12                  |bgeuser    |bgegrup    |bgemodu    |bgedate        ]
+
+}
+END -- s_bge
+Grid gr584
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr584
+END -- vb2
+END -- abgi005
+
+TABLES
+bge_file
+ATTRIBUTES
+Edit bge01=bge_file.bge01, tabIndex=1;
+ButtonEdit bge02=bge_file.bge02, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Dept. Data";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=3;
+Edit bge03=bge_file.bge03, tabIndex=4, not null, required;
+Edit bge04=bge_file.bge04, tabIndex=5, not null, required;
+ButtonEdit bge05=bge_file.bge05, action=controlp, tabIndex=6, title="Class", image="zoom", comment="<^P>Qry Rank & Class Data";
+ButtonEdit bge06=bge_file.bge06, action=controlp, tabIndex=7, title="Rank", image="zoom", comment="<^P>Qry Rank & Class Data";
+Edit bge07=bge_file.bge07, tabIndex=8, title="Direct Labor", not null, required;
+Edit bge08=bge_file.bge08, tabIndex=9, title="Direct Un-Over Hour", not null, required;
+Edit bge11=bge_file.bge11, tabIndex=10, title="Direct Over time Hour", not null, required;
+Edit bge09=bge_file.bge09, tabIndex=11, title="Indirect Labor", not null, required;
+Edit bge10=bge_file.bge10, tabIndex=12, title="Indirect Un-Over Hour", not null, required;
+Edit bge12=bge_file.bge12, tabIndex=13, title="Indirect Over time Hour", not null, required;
+Edit bgeuser=bge_file.bgeuser, tabIndex=16, title="Owner", noEntry;
+Edit bgegrup=bge_file.bgegrup, tabIndex=17, title="Grup", noEntry;
+Edit bgemodu=bge_file.bgemodu, tabIndex=18, title="Modu", noEntry;
+DateEdit bgedate=bge_file.bgedate, tabIndex=19, title="Date", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=14, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bge(bge_file.bge05,bge_file.bge06,bge_file.bge07,bge_file.bge08,bge_file.bge11,bge_file.bge09,bge_file.bge10,bge_file.bge12,bge_file.bgeuser,bge_file.bgegrup,bge_file.bgemodu,bge_file.bgedate)
+SCREEN RECORD Undefined(bge_file.bge01,bge_file.bge02,formonly.gem02,bge_file.bge03,bge_file.bge04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

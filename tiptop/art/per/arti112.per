@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti112.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="arti112")
+VBox vb2
+Folder folder00
+Page Page23(text=%"Basic Data")
+Grid gr33
+{
+
+    Main Goods Code[rtb01                                   ]Main Inventory Unit[rtb02     |rtb02_desc                    ]
+    Main Goods Name[rtb01_desc                              ]Main Product Qty   [rtb03     |rtbpos       ]
+
+
+}
+END -- gr33
+END -- Page23
+Page Page24(text=%"Status")
+Grid gr34
+{
+ Record Owner        [rtbuser   ] Last Modified by    [rtbmodu   ] Data Valid Code     [rtbacti   ]
+ Department          [rtbgrup   ] Modify Date         [rtbdate   ] Create Date         [rtbcrat   ]
+ Record Orig.        [rtboriu   ] Dept Orig.          [rtborig   ]
+
+
+}
+END -- gr34
+END -- Page24
+END -- folder00
+Table s_rtc
+{
+[rtc02                                   |rtc02_desc                              |rtc03     |rtc03_desc          |rtc04   ]
+[rtc02                                   |rtc02_desc                              |rtc03     |rtc03_desc          |rtc04   ]
+[rtc02                                   |rtc02_desc                              |rtc03     |rtc03_desc          |rtc04   ]
+[rtc02                                   |rtc02_desc                              |rtc03     |rtc03_desc          |rtc04   ]
+[rtc02                                   |rtc02_desc                              |rtc03     |rtc03_desc          |rtc04   ]
+[rtc02                                   |rtc02_desc                              |rtc03     |rtc03_desc          |rtc04   ]
+
+}
+END -- s_rtc
+Grid gr5
+{
+
+    ------ Rows[idx     ]/[cnt       ] --- Items[cn2     ] --------
+
+}
+END -- gr5
+END -- vb2
+END -- arti112
+
+TABLES
+rtc_file,
+rtb_file
+ATTRIBUTES
+ButtonEdit rtb01=rtb_file.rtb01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ButtonEdit rtb02=rtb_file.rtb02, action=controlp, tabIndex=2, noEntry, not null, image="zoom.png";
+Edit rtb02_desc=formonly.rtb02_desc type CHAR, tabIndex=16, noEntry;
+Edit rtb01_desc=formonly.rtb01_desc type CHAR, tabIndex=4, noEntry;
+Edit rtb03=rtb_file.rtb03, tabIndex=3, not null;
+CheckBox rtbpos=rtb_file.rtbpos, tabIndex=20, text="Pass POS?", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Edit rtbuser=rtb_file.rtbuser, tabIndex=5, noEntry;
+Edit rtbmodu=rtb_file.rtbmodu, tabIndex=6, noEntry;
+Edit rtbacti=rtb_file.rtbacti, tabIndex=7, noEntry, upShift;
+Edit rtbgrup=rtb_file.rtbgrup, tabIndex=8, noEntry;
+DateEdit rtbdate=rtb_file.rtbdate, tabIndex=10, noEntry;
+DateEdit rtbcrat=rtb_file.rtbcrat, tabIndex=9, noEntry;
+Edit rtboriu=rtb_file.rtboriu, tabIndex=22, noEntry;
+Edit rtborig=rtb_file.rtborig, tabIndex=21, noEntry;
+ButtonEdit rtc02=rtc_file.rtc02, action=controlp, tabIndex=11, title="Sub Goods Code", not null, required, image="zoom.png";
+Edit rtc02_desc=formonly.rtc02_desc type VARCHAR, tabIndex=12, title="Goods Name\n", noEntry;
+ButtonEdit rtc03=rtc_file.rtc03, action=controlp, tabIndex=13, title="Inventory Unit", not null, image="zoom.png";
+Edit rtc03_desc=formonly.rtc03_desc type CHAR, tabIndex=14, title="Unit Name", noEntry;
+Edit rtc04=rtc_file.rtc04, tabIndex=15, title="Qty", not null;
+Edit idx=formonly.idx type CHAR, tabIndex=18, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=19;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rtc(rtc_file.rtc02,formonly.rtc02_desc,rtc_file.rtc03,formonly.rtc03_desc,rtc_file.rtc04)
+SCREEN RECORD Undefined(rtb_file.rtb01,rtb_file.rtb02,formonly.rtb02_desc,formonly.rtb01_desc,rtb_file.rtb03,rtb_file.rtbpos,rtb_file.rtbuser,rtb_file.rtbmodu,rtb_file.rtbacti,rtb_file.rtbgrup,rtb_file.rtbdate,rtb_file.rtbcrat,rtb_file.rtboriu,rtb_file.rtborig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

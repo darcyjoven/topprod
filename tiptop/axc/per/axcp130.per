@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcp130")
+VBox vb10
+Grid gr1490
+{
+ <G group01                                                     >
+  Item No.            [cma01               ]
+
+ <                                                              >
+}
+END -- gr1490
+Group g01(text="INPUT")
+Grid gr1491
+{
+
+ Year/Month    [yy  ]/[mm  ]
+ Calculating   [bdate       ]
+ Transaction   [cmz70       ]
+ Cost Method   [ctype                    ]
+
+ <G gb19                                                      >
+ [b1                               ]
+ [b2                               ]
+ [b3                               ]
+ <                                                            >
+
+}
+END -- gr1491
+END -- g01
+Grid gr1492
+{
+ <G group03                                                      >
+  Rows to Close       [no_tot    ]
+  Closed              [no_ok     ]
+  Item#               [p1        ][p2                  ]
+ <                                                               >
+}
+END -- gr1492
+Grid gr1493
+{
+[g_bgjob                                                      ]
+
+
+}
+END -- gr1493
+END -- vb10
+END -- axcp130
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit cma01=formonly.cma01 type VARCHAR, tabIndex=1;
+Edit yy=formonly.yy type SMALLINT, tabIndex=2, not null, required;
+Edit mm=formonly.mm type SMALLINT, tabIndex=3, not null, required;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=4;
+DateEdit cmz70=formonly.cmz70 type DATE, tabIndex=5, not null, required;
+ComboBox ctype=formonly.ctype type VARCHAR, tabIndex=6, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually Batch Cost"),("4", "Identify Manually Item Cost"),("5", "Identify Manually Store Profit Center"));
+Group gb19:gb19;
+CheckBox b1=formonly.b1 type CHAR, tabIndex=7, text="Normal Stock-in", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b2=formonly.b2 type CHAR, tabIndex=8, text="Misc Stock-in", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b3=formonly.b3 type CHAR, tabIndex=9, text="Other Stock-in", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03;
+Edit no_tot=formonly.no_tot type CHAR, tabIndex=10;
+Edit no_ok=formonly.no_ok type CHAR, tabIndex=11;
+Edit p1=formonly.p1 type CHAR, tabIndex=12;
+Edit p2=formonly.p2 type CHAR, tabIndex=13;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=14, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cma01,formonly.yy,formonly.mm,formonly.bdate,formonly.cmz70,formonly.ctype,formonly.b1,formonly.b2,formonly.b3,formonly.no_tot,formonly.no_ok,formonly.p1,formonly.p2,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

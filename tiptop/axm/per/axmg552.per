@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmg552.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr552")
+VBox vb5
+Group group01(text="QBE")
+Grid gr5
+{
+ Invoice Doc. No.     [ofa01               ]
+ Invoice Date         [ofa02               ]
+}
+END -- gr5
+END -- group01
+Group group02(text="INPUT")
+Grid gr6
+{
+ PRINT Product Name Spec Desc Category [imc02               ]
+[a                   ]
+ Sequence [s                   ]
+[b                                      ]
+[c                                      ]
+}
+END -- gr6
+END -- group02
+Grid gr7
+{
+[more                                      ]
+
+}
+END -- gr7
+END -- vb5
+END -- axmr552
+
+ATTRIBUTES
+ButtonEdit ofa01=formonly.ofa01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit ofa02=formonly.ofa02 type DATE, tabIndex=2;
+Edit imc02=formonly.imc02 type CHAR, tabIndex=3;
+CheckBox a=formonly.a type VARCHAR, tabIndex=4, text="Print customer product number", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox s=formonly.s type CHAR, tabIndex=5, queryEditable, items=(("1", "Item No."),("2", "Box No."));
+CheckBox b=formonly.b type VARCHAR, tabIndex=7, text="Print Full Company Name for Internal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=8, text="Print Full Company Name for External", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ofa01,formonly.ofa02,formonly.imc02,formonly.a,formonly.s,formonly.b,formonly.c,formonly.more)
+END -- INSTRUCTIONS
+

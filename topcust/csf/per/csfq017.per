@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfq017.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfq400")
+VBox vb8
+Folder folder01
+Page page01(text="Main")
+HBox hb3
+Grid gr575
+{
+ riqi       [bdate          ] - [edate           ]
+ ima01      [ima01          ]   ima02  [ima02          ]     ima021  [ima021         ]
+
+}
+END -- gr575
+END -- hb3
+END -- page01
+END -- folder01
+Table s_sfb
+{
+[sfe01         |sfv04           |ima02a              |ima021a             |sfv09   |sfe07               |ima02b              |ima021b             |sfe14   |ecd02   |eca01   |eca02   |sfa16   |sfv09b  |sfe17   |sfe16b  ]
+[sfe01         |sfv04           |ima02a              |ima021a             |sfv09   |sfe07               |ima02b              |ima021b             |sfe14   |ecd02   |eca01   |eca02   |sfa16   |sfv09b  |sfe17   |sfe16b  ]
+[sfe01         |sfv04           |ima02a              |ima021a             |sfv09   |sfe07               |ima02b              |ima021b             |sfe14   |ecd02   |eca01   |eca02   |sfa16   |sfv09b  |sfe17   |sfe16b  ]
+[sfe01         |sfv04           |ima02a              |ima021a             |sfv09   |sfe07               |ima02b              |ima021b             |sfe14   |ecd02   |eca01   |eca02   |sfa16   |sfv09b  |sfe17   |sfe16b  ]
+[sfe01         |sfv04           |ima02a              |ima021a             |sfv09   |sfe07               |ima02b              |ima021b             |sfe14   |ecd02   |eca01   |eca02   |sfa16   |sfv09b  |sfe17   |sfe16b  ]
+[sfe01         |sfv04           |ima02a              |ima021a             |sfv09   |sfe07               |ima02b              |ima021b             |sfe14   |ecd02   |eca01   |eca02   |sfa16   |sfv09b  |sfe17   |sfe16b  ]
+[sfe01         |sfv04           |ima02a              |ima021a             |sfv09   |sfe07               |ima02b              |ima021b             |sfe14   |ecd02   |eca01   |eca02   |sfa16   |sfv09b  |sfe17   |sfe16b  ]
+[sfe01         |sfv04           |ima02a              |ima021a             |sfv09   |sfe07               |ima02b              |ima021b             |sfe14   |ecd02   |eca01   |eca02   |sfa16   |sfv09b  |sfe17   |sfe16b  ]
+[sfe01         |sfv04           |ima02a              |ima021a             |sfv09   |sfe07               |ima02b              |ima021b             |sfe14   |ecd02   |eca01   |eca02   |sfa16   |sfv09b  |sfe17   |sfe16b  ]
+[sfe01         |sfv04           |ima02a              |ima021a             |sfv09   |sfe07               |ima02b              |ima021b             |sfe14   |ecd02   |eca01   |eca02   |sfa16   |sfv09b  |sfe17   |sfe16b  ]
+
+}
+END -- s_sfb
+Grid gr577
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr577
+END -- vb8
+END -- asfq400
+
+ATTRIBUTES
+DateEdit bdate=formonly.bdate type DATE, tabIndex=1, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=2, not null, required;
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ima02=formonly.ima02 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit ima021=formonly.ima021 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Edit sfe01=formonly.sfe01 type VARCHAR, tabIndex=6, title="sfe01";
+Edit sfv04=formonly.sfv04 type VARCHAR, tabIndex=7, title="sfv04";
+Edit ima02a=formonly.ima02a type VARCHAR, tabIndex=8, title="ima02a", noEntry, comment="1.Gnrl 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm 13.Predic 15.Trial ";
+Edit ima021a=formonly.ima021a type VARCHAR, tabIndex=9, title="ima021a", noEntry, comment="1.Open 2.Rls 3.Prt 4.Iss.Mat 5.WIP 6.FQC 7.St-i 8.Clos";
+Edit sfv09=formonly.sfv09 type DECIMAL, tabIndex=10, title="sfv09";
+Edit sfe07=formonly.sfe07 type VARCHAR, tabIndex=11, title="sfe07", noEntry;
+Edit ima02b=formonly.ima02b type VARCHAR, tabIndex=12, title="ima02b", noEntry;
+Edit ima021b=formonly.ima021b type DECIMAL, tabIndex=13, title="ima021b", not null, required;
+Edit sfe14=formonly.sfe14, tabIndex=14, title=%"sfe14";
+Edit ecd02=formonly.ecd02, tabIndex=15, title=%"ecd02";
+Edit eca01=formonly.eca01, tabIndex=16, title=%"eca01";
+Edit eca02=formonly.eca02, tabIndex=17, title=%"eca02";
+Edit sfa16=formonly.sfa16 type DECIMAL, tabIndex=18, title=%"sfa16";
+Edit sfv09b=formonly.sfv09b type DECIMAL, tabIndex=19, title=%"sfv09b";
+Edit sfe17=formonly.sfe17, tabIndex=20, title=%"sfe17";
+Edit sfe16b=formonly.sfe16b type DECIMAL, tabIndex=21, title=%"sfe16b";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tlf1(formonly.sfe01,formonly.sfv04,formonly.ima02a,formonly.ima021a,formonly.sfv09,formonly.sfe07,formonly.ima02b,formonly.ima021b,formonly.sfe14,formonly.ecd02,formonly.eca01,formonly.eca02,formonly.sfa16,formonly.sfv09b,formonly.sfe17,formonly.sfe16b)
+SCREEN RECORD Undefined(formonly.bdate,formonly.ima02,formonly.cn2,formonly.edate,formonly.ima01,formonly.ima021)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/4fd/aqci120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqci120")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr6
+{
+ Item No.            [qcd01                         ]
+ Part Name           [ima02                         ]
+ Specification       [ima021                        ]
+}
+END -- gr6
+END -- page01
+END -- folder01
+Table s_qcd
+{
+[qcd02    |azf03    |qcd08     |qcd03        |qcd05    |qcd04  |qcd061    |qcd062   |qcd07 |qcdud01 ]
+[qcd02    |azf03    |qcd08     |qcd03        |qcd05    |qcd04  |qcd061    |qcd062   |qcd07 |qcdud01 ]
+[qcd02    |azf03    |qcd08     |qcd03        |qcd05    |qcd04  |qcd061    |qcd062   |qcd07 |qcdud01 ]
+[qcd02    |azf03    |qcd08     |qcd03        |qcd05    |qcd04  |qcd061    |qcd062   |qcd07 |qcdud01 ]
+[qcd02    |azf03    |qcd08     |qcd03        |qcd05    |qcd04  |qcd061    |qcd062   |qcd07 |qcdud01 ]
+[qcd02    |azf03    |qcd08     |qcd03        |qcd05    |qcd04  |qcd061    |qcd062   |qcd07 |qcdud01 ]
+[qcd02    |azf03    |qcd08     |qcd03        |qcd05    |qcd04  |qcd061    |qcd062   |qcd07 |qcdud01 ]
+[qcd02    |azf03    |qcd08     |qcd03        |qcd05    |qcd04  |qcd061    |qcd062   |qcd07 |qcdud01 ]
+[qcd02    |azf03    |qcd08     |qcd03        |qcd05    |qcd04  |qcd061    |qcd062   |qcd07 |qcdud01 ]
+[qcd02    |azf03    |qcd08     |qcd03        |qcd05    |qcd04  |qcd061    |qcd062   |qcd07 |qcdud01 ]
+[qcd02    |azf03    |qcd08     |qcd03        |qcd05    |qcd04  |qcd061    |qcd062   |qcd07 |qcdud01 ]
+}
+END -- s_qcd
+Grid gr7
+{
+ ---------- Rows [cnt   ] ----------
+
+
+
+}
+END -- gr7
+END -- VBox1
+END -- aqci120
+
+TABLES
+qcd_file
+ATTRIBUTES
+ButtonEdit qcd01=qcd_file.qcd01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Item No. ";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3;
+ButtonEdit qcd02=qcd_file.qcd02, action=controlp, tabIndex=4, title="QC Items", not null, required, image="zoom", comment="<^P>Qry QC Code";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=5, title="Name", noEntry;
+ComboBox qcd08=qcd_file.qcd08, tabIndex=13, title=%"qcd08", not null, required, items=(("1", "IQC"),("2", "FQC"),("3", "PQC"),("4", "OQC"),("5", "Stock QC"),("9", "general"));
+ComboBox qcd03=qcd_file.qcd03, tabIndex=6, title="Defect Level", not null, required, comment="1:CR  2:MA  3:MI", items=(("1", %"CR"),("2", %"MA"),("3", %"MI"));
+ComboBox qcd05=qcd_file.qcd05, tabIndex=8, title="QC Type", not null, required, comment="1:105D/E  2:C=0", items=(("1", %"105D/E"),("2", %"C=0"),("3", %"1916(count)"),("4", %"1916(measurement)"));
+Edit qcd04=qcd_file.qcd04, tabIndex=7, title="AQL", not null, required;
+Edit qcd061=qcd_file.qcd061, tabIndex=9, title="Low Limit";
+Edit qcd062=qcd_file.qcd062, tabIndex=10, title="Up Limit";
+CheckBox qcd07=qcd_file.qcd07, tabIndex=11, title="QC Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit qcdud01=formonly.qcdud01, tabIndex=14, title=%"qcdud01";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcd(qcd_file.qcd02,formonly.azf03,qcd_file.qcd08,qcd_file.qcd03,qcd_file.qcd05,qcd_file.qcd04,qcd_file.qcd061,qcd_file.qcd062,qcd_file.qcd07,formonly.qcdud01)
+SCREEN RECORD Undefined(qcd_file.qcd01,formonly.ima02,formonly.ima021,formonly.cnt)
+END -- INSTRUCTIONS
+

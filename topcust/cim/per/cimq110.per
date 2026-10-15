@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cim/4fd/cimq110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfq400")
+VBox vb8
+Folder folder01
+Page page01(text="Main")
+HBox hb3
+Grid gr575
+{
+ riqi       [bdate          ] - [edate           ]
+ tlf902     [tlf902         ]         tlf903     [tlf903         ]  tlf01      [tlf01          ]
+
+}
+END -- gr575
+END -- hb3
+END -- page01
+END -- folder01
+Table s_sfb
+{
+[tlf06         |tlf011          |ima02  |ima021  |qichu               |ruku                     |chuku                  |jiecun        |tlf9021 |tlf9031 ]
+[tlf06         |tlf011          |ima02  |ima021  |qichu               |ruku                     |chuku                  |jiecun        |tlf9021 |tlf9031 ]
+[tlf06         |tlf011          |ima02  |ima021  |qichu               |ruku                     |chuku                  |jiecun        |tlf9021 |tlf9031 ]
+[tlf06         |tlf011          |ima02  |ima021  |qichu               |ruku                     |chuku                  |jiecun        |tlf9021 |tlf9031 ]
+[tlf06         |tlf011          |ima02  |ima021  |qichu               |ruku                     |chuku                  |jiecun        |tlf9021 |tlf9031 ]
+[tlf06         |tlf011          |ima02  |ima021  |qichu               |ruku                     |chuku                  |jiecun        |tlf9021 |tlf9031 ]
+[tlf06         |tlf011          |ima02  |ima021  |qichu               |ruku                     |chuku                  |jiecun        |tlf9021 |tlf9031 ]
+[tlf06         |tlf011          |ima02  |ima021  |qichu               |ruku                     |chuku                  |jiecun        |tlf9021 |tlf9031 ]
+[tlf06         |tlf011          |ima02  |ima021  |qichu               |ruku                     |chuku                  |jiecun        |tlf9021 |tlf9031 ]
+[tlf06         |tlf011          |ima02  |ima021  |qichu               |ruku                     |chuku                  |jiecun        |tlf9021 |tlf9031 ]
+
+}
+END -- s_sfb
+Grid gr577
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr577
+END -- vb8
+END -- asfq400
+
+ATTRIBUTES
+DateEdit bdate=formonly.bdate type DATE, tabIndex=1, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=12, not null, required;
+ButtonEdit tlf902=formonly.tlf902 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit tlf903=formonly.tlf903 type VARCHAR, action=controlp, tabIndex=13, image="zoom";
+ButtonEdit tlf01=formonly.tlf01 type VARCHAR, action=controlp, tabIndex=16, image="zoom";
+DateEdit tlf06=formonly.tlf06 type DATE, tabIndex=3, title="tlf06";
+Edit tlf011=formonly.tlf011 type VARCHAR, tabIndex=4, title="tlf011";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=5, title="ima02", noEntry, comment="1.Gnrl 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm 13.Predic 15.Trial ";
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=6, title="ima021", noEntry, comment="1.Open 2.Rls 3.Prt 4.Iss.Mat 5.WIP 6.FQC 7.St-i 8.Clos";
+Edit qichu=formonly.qichu type DECIMAL, tabIndex=7, title="qichu";
+Edit ruku=formonly.ruku type DECIMAL, tabIndex=8, title="ruku", noEntry;
+Edit chuku=formonly.chuku type DECIMAL, tabIndex=9, title="chuku", noEntry;
+Edit jiecun=formonly.jiecun type DECIMAL, tabIndex=10, title="jiecun", not null, required;
+Edit tlf9021=formonly.tlf9021, tabIndex=14, title=%"tlf9021";
+Edit tlf9031=formonly.tlf9031, tabIndex=15, title=%"tlf9031";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tlf1(formonly.tlf06,formonly.tlf011,formonly.ima02,formonly.ima021,formonly.qichu,formonly.ruku,formonly.chuku,formonly.jiecun,formonly.tlf9021,formonly.tlf9031)
+SCREEN RECORD Undefined(formonly.bdate,formonly.tlf902,formonly.cn2,formonly.edate,formonly.tlf903,formonly.tlf01)
+END -- INSTRUCTIONS
+

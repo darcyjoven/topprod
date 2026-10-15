@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_item_set.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_item_set")
+VBox VBox1
+Grid gr3907
+{
+ <G group01                                                                        >
+  Form ID          [gae01               ][zz02                                ]
+  Combox/Radiogroup[gae03_h             ]
+ <                                                                                 >
+
+}
+END -- gr3907
+Table s_item
+{
+[gae03_co        |gae03_t   |gae04                           |gae05                           |gae06                          ]
+[gae03_co        |gae03_t   |gae04                           |gae05                           |gae06                          ]
+[gae03_co        |gae03_t   |gae04                           |gae05                           |gae06                          ]
+[gae03_co        |gae03_t   |gae04                           |gae05                           |gae06                          ]
+[gae03_co        |gae03_t   |gae04                           |gae05                           |gae06                          ]
+[gae03_co        |gae03_t   |gae04                           |gae05                           |gae06                          ]
+[gae03_co        |gae03_t   |gae04                           |gae05                           |gae06                          ]
+[gae03_co        |gae03_t   |gae04                           |gae05                           |gae06                          ]
+[gae03_co        |gae03_t   |gae04                           |gae05                           |gae06                          ]
+[gae03_co        |gae03_t   |gae04                           |gae05                           |gae06                          ]
+
+}
+END -- s_item
+END -- VBox1
+END -- s_item_set
+
+TABLES
+gae_file
+ATTRIBUTES
+Group group01:group01, text="Program";
+ButtonEdit gae01=gae_file.gae01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Enter Program ID";
+Edit zz02=formonly.zz02 type CHAR, tabIndex=2;
+Edit gae03_h=formonly.gae03_h type VARCHAR, tabIndex=3, not null, required;
+Edit gae03_co=formonly.gae03_co type VARCHAR, tabIndex=4, title="Field", noEntry;
+Edit gae03_t=formonly.gae03_t type VARCHAR, tabIndex=5, title="Item TAG", not null, required, scroll;
+Edit gae04=gae_file.gae04, tabIndex=6, title="Traditional Chinese Description", not null, required, scroll;
+Edit gae05=gae_file.gae05, tabIndex=7, title="English Description", not null, required, scroll;
+Edit gae06=gae_file.gae06, tabIndex=8, title="Simplified Chinese Description", scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_item(formonly.gae03_co,formonly.gae03_t,gae_file.gae04,gae_file.gae05,gae_file.gae06)
+SCREEN RECORD Undefined(gae_file.gae01,formonly.zz02,formonly.gae03_h)
+END -- INSTRUCTIONS
+

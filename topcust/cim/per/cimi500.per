@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cim/4fd/cimi500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+    Label1    [yy                    |typ                       ]
+    Label1    [mm                    ]
+
+
+
+
+
+
+}
+END -- Grid1
+Table s_tc_ilb
+{
+[tc_ilb01    |tc_ilb02  |desc        |tc_ilb03       ]
+[tc_ilb01    |tc_ilb02  |desc        |tc_ilb03       ]
+[tc_ilb01    |tc_ilb02  |desc        |tc_ilb03       ]
+[tc_ilb01    |tc_ilb02  |desc        |tc_ilb03       ]
+[tc_ilb01    |tc_ilb02  |desc        |tc_ilb03       ]
+
+
+
+
+
+
+
+
+
+
+}
+END -- s_tc_ilb
+Grid Grid2
+{
+
+   [cnt  ] / [cn2  ]   Label1    [sum                                  ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- cimi500
+
+ATTRIBUTES
+ComboBox yy=formonly.yy type INTEGER, tabIndex=3;
+ComboBox typ=formonly.typ, tabIndex=7, items=(("1", "Text"),("2", "Text"));
+ComboBox mm=formonly.mm type INTEGER, tabIndex=4, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"),("10", "10"),("11", "11"),("12", "12"));
+DateEdit tc_ilb01=formonly.tc_ilb01 type DATE, tabIndex=1, title=%"tc_ilb01", noEntry, not null, required;
+Edit tc_ilb02=formonly.tc_ilb02 type VARCHAR, tabIndex=2, title=%"tc_ilb02", noEntry, not null, required;
+Edit desc=formonly.desc, tabIndex=6, title=%"desc", noEntry;
+Edit tc_ilb03=formonly.tc_ilb03 type DECIMAL, tabIndex=5, title=%"tc_ilb03", not null, required;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=9;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=10;
+Edit sum=formonly.sum type DECIMAL, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tc_ilb(formonly.tc_ilb01,formonly.tc_ilb02,formonly.desc,formonly.tc_ilb03)
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.typ,formonly.sum,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

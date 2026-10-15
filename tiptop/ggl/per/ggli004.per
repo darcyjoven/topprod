@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli004")
+VBox vb4_
+Folder folder01
+Page page01(text="Main")
+Grid gr2403
+{
+ Group Code [asf01      ]
+ Company No.[asf02      |asg02               ]
+
+
+
+}
+END -- gr2403
+END -- page01
+END -- folder01
+Table s_asf
+{
+[asf07            |aag02a             |asf03            |aag02              |asf06             |asf04       |asf05               |asf15               |asf14               |asf16               |asf12        |asf13               ]
+[asf07            |aag02a             |asf03            |aag02              |asf06             |asf04       |asf05               |asf15               |asf14               |asf16               |asf12        |asf13               ]
+[asf07            |aag02a             |asf03            |aag02              |asf06             |asf04       |asf05               |asf15               |asf14               |asf16               |asf12        |asf13               ]
+[asf07            |aag02a             |asf03            |aag02              |asf06             |asf04       |asf05               |asf15               |asf14               |asf16               |asf12        |asf13               ]
+[asf07            |aag02a             |asf03            |aag02              |asf06             |asf04       |asf05               |asf15               |asf14               |asf16               |asf12        |asf13               ]
+[asf07            |aag02a             |asf03            |aag02              |asf06             |asf04       |asf05               |asf15               |asf14               |asf16               |asf12        |asf13               ]
+[asf07            |aag02a             |asf03            |aag02              |asf06             |asf04       |asf05               |asf15               |asf14               |asf16               |asf12        |asf13               ]
+[asf07            |aag02a             |asf03            |aag02              |asf06             |asf04       |asf05               |asf15               |asf14               |asf16               |asf12        |asf13               ]
+[asf07            |aag02a             |asf03            |aag02              |asf06             |asf04       |asf05               |asf15               |asf14               |asf16               |asf12        |asf13               ]
+[asf07            |aag02a             |asf03            |aag02              |asf06             |asf04       |asf05               |asf15               |asf14               |asf16               |asf12        |asf13               ]
+}
+END -- s_asf
+Grid gr2404
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr2404
+END -- vb4_
+END -- ggli004
+
+TABLES
+asf_file
+ATTRIBUTES
+ButtonEdit asf01=asf_file.asf01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Group Code";
+ButtonEdit asf02=asf_file.asf02, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Company No.";
+Edit asg02=formonly.asg02 type CHAR, tabIndex=3, noEntry;
+ButtonEdit asf07=asf_file.asf07, action=controlp, tabIndex=3, title="Company Account No.", not null, required, image="zoom", comment="<^P>Account No.";
+Edit aag02a=formonly.aag02a type CHAR, tabIndex=3, title="Company Account Name", noEntry;
+ButtonEdit asf03=asf_file.asf03, action=controlp, tabIndex=4, title="Combined Account No.", not null, required, image="zoom", comment="<^P>Account No.";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=5, title="Combined Account Name", noEntry;
+DateEdit asf06=asf_file.asf06, tabIndex=12, title="Transaction Date", not null, required;
+ButtonEdit asf04=asf_file.asf04, action=controlp, tabIndex=6, title="Book Currency", noEntry, image="zoom", comment="<^P>Currency";
+Edit asf05=asf_file.asf05, tabIndex=7, title="Account Amt by Currency", not null, required;
+Edit asf15=asf_file.asf15, tabIndex=14, title="Exch. Rate of Revaluation", not null, required;
+Edit asf14=asf_file.asf14, tabIndex=13, title="Functional Curr.", noEntry, not null, required;
+Edit asf16=asf_file.asf16, tabIndex=15, title="Functional Curr. Amt.", not null, required;
+Edit asf12=asf_file.asf12, tabIndex=10, title="Exchange Rate";
+Edit asf13=asf_file.asf13, tabIndex=11, title="Combined Currency", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asf(asf_file.asf07,formonly.aag02a,asf_file.asf03,formonly.aag02,asf_file.asf06,asf_file.asf04,asf_file.asf05,asf_file.asf15,asf_file.asf14,asf_file.asf16,asf_file.asf12,asf_file.asf13)
+SCREEN RECORD Undefined(asf_file.asf01,asf_file.asf02,formonly.asg02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,240 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/4fd/anmt720.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt720")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4540
+{
+ Contra.Number [nng01             ][nng25     ]   Deposit Bank  [nng05               ]              [imgmksg]
+ Comer. Paper  [nng15     ]                       Bank Name     [nma02               ]              [       ]
+ Applying Date [nng02       ]                     Trans. Code   [nng051    ]
+ Date of Use   [nng03       ]                     Interest Type [nng14               ] Confirm      [nngconf   ]
+ Contract No.  [nng52              ]              Interest Pay  [nng16               ] Voucher      [nngglno             ]
+ Credit Bank   [nng04     ]                       pay Interest  [nngud02             ] Lst Int. Pay [nng26       ]
+               [alg02                         ]   Collateral    [nng06               ]
+ Term Loan     [nng24     ][nnn02              ]  Memo          [nngud13        ]
+                                                  Memo          [nng07                         ]
+}
+END -- gr4540
+END -- page01
+Page info(text="Info")
+Grid gr4541
+{
+ Record Owner        [nnguser   ] Last Modified by    [nngmodu   ]
+ Department          [nnggrup   ] Create/Modify Date  [nngdate   ]
+ Record Orig.        [nngoriu   ]
+ Dept Orig.          [nngorig   ]
+}
+END -- gr4541
+END -- info
+END -- folder01
+Folder folder02
+Page page02(text="General")
+Grid gr4542
+{
+ Loan Period    [nng081      ] - [nng082      ]     O.C. Loan   [nng20               ]   Payment      [nng12               ]
+ Payment Period [nng101      ] - [nng102      ]     O.C. Paid   [nng21               ]   Interest%    [nng09          ]%
+ Curr Ex.Rate   [nng18     ][nng19               ]  H.C. Loan   [nng22               ]   Handing%     [nngud07        ]%
+ Limit Ex.Rate  [nngex2          ]                  H.C. Paid   [nng23               ]   Pay.Date     [nng13     ]
+                                                                                         Periods      [nng11     ]
+}
+END -- gr4542
+END -- page02
+Page page03(text="Other")
+Grid gr4543
+{
+ Cash Variation      [nng17     ]             Margin Rate         [nng56     ]%   Margin              [nng57               ]
+ Guaranty Bank       [nng54               ]   Underwriting Rate   [nng58     ]%   Underwriting Fee    [nng59               ]
+ Loan Cost Total     [nng53     ]%            Visa Fee            [nng60     ]%   Visa Amt            [nng61               ]
+ P.N Disc            [nng55               ]
+
+}
+END -- gr4543
+END -- page03
+Page page04(text="Account")
+Grid gr4544
+{
+ Debit Account-1    [nng_d1              ]             Credit Account-1   [nng_c1              ]
+                    [aag02_d1                      ]                      [aag02_c1                      ]
+ Debit Account-2    [nng_d2              ]             Credit Account-2   [nng_c2              ]
+                    [aag02_d2                      ]                      [aag02_c2                      ]
+
+}
+END -- gr4544
+END -- page04
+Page page05(text="Account2")
+Grid gr4545
+{
+ Debit Account2-1   [nng_d11             ]             Credit Account2-1  [nng_c11             ]
+                    [aag02_d11                     ]                      [aag02_c11                     ]
+ Debit Account2-2   [nng_d21             ]             Credit Account2-2  [nng_c21             ]
+                    [aag02_d21                     ]                      [aag02_c21                     ]
+
+}
+END -- gr4545
+END -- page05
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[nngud01                       ] userdefined_field07                  userdefined_field13
+                    [                              ] userdefined_field08[nngud08        ] userdefined_field14[nngud14        ]
+ userdefined_field02                                 userdefined_field09[nngud09        ] userdefined_field15[nngud15        ]
+ userdefined_field03[nngud03        ]                userdefined_field10[nngud10        ]
+ userdefined_field04[nngud04        ]                userdefined_field11[nngud11        ]
+ userdefined_field05[nngud05        ]                userdefined_field12[nngud12        ]
+ userdefined_field06[nngud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder02
+Table s_nnh
+{
+[nnh02 |nnh03     |nnh04f              |nnh04               |nnh05       |nnh06            |nmd02     |nmd12       |nnh07        |nnhud01   |nnhud02   |nnhud03    |nnhud04    |nnhud05    |nnhud06    |nnhud07       |nnhud08    |nnhud09    |nnhud10    |nnhud11   |nnhud12  |nnhud13   |nnhud14   |nnhud15    ]
+[nnh02 |nnh03     |nnh04f              |nnh04               |nnh05       |nnh06            |nmd02     |nmd12       |nnh07        |nnhud01   |nnhud02   |nnhud03    |nnhud04    |nnhud05    |nnhud06    |nnhud07       |nnhud08    |nnhud09    |nnhud10    |nnhud11   |nnhud12  |nnhud13   |nnhud14   |nnhud15    ]
+[nnh02 |nnh03     |nnh04f              |nnh04               |nnh05       |nnh06            |nmd02     |nmd12       |nnh07        |nnhud01   |nnhud02   |nnhud03    |nnhud04    |nnhud05    |nnhud06    |nnhud07       |nnhud08    |nnhud09    |nnhud10    |nnhud11   |nnhud12  |nnhud13   |nnhud14   |nnhud15    ]
+[nnh02 |nnh03     |nnh04f              |nnh04               |nnh05       |nnh06            |nmd02     |nmd12       |nnh07        |nnhud01   |nnhud02   |nnhud03    |nnhud04    |nnhud05    |nnhud06    |nnhud07       |nnhud08    |nnhud09    |nnhud10    |nnhud11   |nnhud12  |nnhud13   |nnhud14   |nnhud15    ]
+[nnh02 |nnh03     |nnh04f              |nnh04               |nnh05       |nnh06            |nmd02     |nmd12       |nnh07        |nnhud01   |nnhud02   |nnhud03    |nnhud04    |nnhud05    |nnhud06    |nnhud07       |nnhud08    |nnhud09    |nnhud10    |nnhud11   |nnhud12  |nnhud13   |nnhud14   |nnhud15    ]
+[nnh02 |nnh03     |nnh04f              |nnh04               |nnh05       |nnh06            |nmd02     |nmd12       |nnh07        |nnhud01   |nnhud02   |nnhud03    |nnhud04    |nnhud05    |nnhud06    |nnhud07       |nnhud08    |nnhud09    |nnhud10    |nnhud11   |nnhud12  |nnhud13   |nnhud14   |nnhud15    ]
+[nnh02 |nnh03     |nnh04f              |nnh04               |nnh05       |nnh06            |nmd02     |nmd12       |nnh07        |nnhud01   |nnhud02   |nnhud03    |nnhud04    |nnhud05    |nnhud06    |nnhud07       |nnhud08    |nnhud09    |nnhud10    |nnhud11   |nnhud12  |nnhud13   |nnhud14   |nnhud15    ]
+
+}
+END -- s_nnh
+Grid gr4546
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------   O.C Amt Total       [nnh04f_t               ] ----- H.C Amt Total       [nnh04_t                ]
+
+}
+END -- gr4546
+END -- VBox1
+END -- anmt720
+
+TABLES
+nng_file,
+nmd_file,
+nnh_file
+ATTRIBUTES
+ButtonEdit nng01=nng_file.nng01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Documents";
+CheckBox nng25=nng_file.nng25, tabIndex=2, text="Open", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit nng05=nng_file.nng05, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Bank Common Data";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ComboBox nng15=nng_file.nng15, tabIndex=5, not null, required, queryEditable, comment="Please Enter 1/2/3", items=(("1", "Actual"),("2", "Phantom"),("3", "No  "));
+Edit nma02=formonly.nma02 type CHAR, tabIndex=6, noEntry;
+DateEdit nng02=nng_file.nng02, tabIndex=7, not null, required;
+ButtonEdit nng051=nng_file.nng051, action=controlp, tabIndex=8, not null, required, image="zoom", comment="Enter CIB Transaction Code <^P>Query";
+DateEdit nng03=nng_file.nng03, tabIndex=9, not null, required;
+ComboBox nng14=nng_file.nng14, tabIndex=10, not null, required, queryEditable, comment="Please Enter 1/2", items=(("1", "Fixed Interest"),("2", "Floating"));
+ComboBox nngconf=nng_file.nngconf, tabIndex=11, noEntry, not null, required, items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "Void"));
+ButtonEdit nng52=nng_file.nng52, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Contract";
+ComboBox nng16=nng_file.nng16, tabIndex=13, not null, required, queryEditable, comment="Please Enter 1/2", items=(("1", "Monthly Pay Interest"),("2", "Pay Principal & Interest"),("3", "Text"),("4", "Text"),("5", "Text"),("6", "Text"));
+Edit nngglno=nng_file.nngglno, tabIndex=14, noEntry;
+ButtonEdit nng04=nng_file.nng04, action=controlp, tabIndex=15, not null, required, image="zoom", comment="<^P>Qry Bank Common Data";
+ComboBox nngud02=nng_file.nngud02, tabIndex=330, not null, required, items=(("1", "Text"),("2", "Text"),("3", "Text"));
+DateEdit nng26=nng_file.nng26, tabIndex=16;
+Edit alg02=formonly.alg02 type CHAR, tabIndex=17, noEntry;
+ComboBox nng06=nng_file.nng06, tabIndex=501, not null, required, queryEditable, comment="Please Enter 1/2", items=(("1", "Monthly Pay Interest"),("2", "Pay Principal & Interest"));
+ButtonEdit nng24=nng_file.nng24, action=controlp, tabIndex=18, not null, required, image="zoom", comment="<^P>Qry Term Loan Type";
+Edit nnn02=formonly.nnn02 type CHAR, tabIndex=19, noEntry;
+DateEdit nngud13=nng_file.nngud13, tabIndex=327;
+Edit nng07=nng_file.nng07, tabIndex=20;
+Edit nnguser=nng_file.nnguser, tabIndex=21, noEntry;
+Edit nngmodu=nng_file.nngmodu, tabIndex=22, noEntry;
+Edit nnggrup=nng_file.nnggrup, tabIndex=23, noEntry;
+DateEdit nngdate=nng_file.nngdate, tabIndex=24, noEntry;
+Edit nngoriu=nng_file.nngoriu, tabIndex=499, noEntry;
+Edit nngorig=nng_file.nngorig, tabIndex=500, noEntry;
+DateEdit nng081=nng_file.nng081, tabIndex=25, not null, required;
+DateEdit nng082=nng_file.nng082, tabIndex=26, not null, required;
+Edit nng20=nng_file.nng20, tabIndex=27, not null, required;
+ComboBox nng12=nng_file.nng12, tabIndex=28, not null, required, queryEditable, comment="Please Enter 1/2/3/4", items=(("1", "Monthly Pay"),("2", "Quarterly Payment"),("3", "Half a Year"),("4", "Yearly Payment"));
+DateEdit nng101=nng_file.nng101, tabIndex=29, not null, required;
+DateEdit nng102=nng_file.nng102, tabIndex=30, not null, required;
+Edit nng21=nng_file.nng21, tabIndex=31, noEntry;
+Edit nng09=nng_file.nng09, tabIndex=32;
+ButtonEdit nng18=nng_file.nng18, action=controlp, tabIndex=33, not null, required, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit nng19=nng_file.nng19, action=controlp, tabIndex=34, not null, required, image="zoom", comment="<^P>Qry Rate";
+Edit nng22=nng_file.nng22, tabIndex=35, not null, required;
+Edit nngud07=nng_file.nngud07, tabIndex=502;
+ButtonEdit nngex2=nng_file.nngex2, action=controlp, tabIndex=37, image="zoom";
+Edit nng23=nng_file.nng23, tabIndex=38, noEntry;
+Edit nng13=nng_file.nng13, tabIndex=36, not null, required;
+Edit nng11=nng_file.nng11, tabIndex=39, not null, required;
+ButtonEdit nng17=nng_file.nng17, action=controlp, tabIndex=40, image="zoom", comment="<^P>Qry Cash Variation Code";
+Edit nng56=nng_file.nng56, tabIndex=41;
+Edit nng57=nng_file.nng57, tabIndex=42;
+ButtonEdit nng54=nng_file.nng54, action=controlp, tabIndex=43, image="zoom", comment="<^P>Qry Bank Common Data";
+Edit nng58=nng_file.nng58, tabIndex=44;
+Edit nng59=nng_file.nng59, tabIndex=45;
+Edit nng53=nng_file.nng53, tabIndex=46;
+Edit nng60=nng_file.nng60, tabIndex=47;
+Edit nng61=nng_file.nng61, tabIndex=48;
+Edit nng55=nng_file.nng55, tabIndex=49;
+ButtonEdit nng_d1=nng_file.nng_d1, action=controlp, tabIndex=50, not null, required, image="zoom", comment="<^P>Open Window to Qry Acct";
+ButtonEdit nng_c1=nng_file.nng_c1, action=controlp, tabIndex=51, not null, required, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_d1=formonly.aag02_d1 type CHAR, tabIndex=52;
+Edit aag02_c1=formonly.aag02_c1 type CHAR, tabIndex=53;
+ButtonEdit nng_d2=nng_file.nng_d2, action=controlp, tabIndex=54, image="zoom", comment="<^P>Open Window to Qry Acct";
+ButtonEdit nng_c2=nng_file.nng_c2, action=controlp, tabIndex=55, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_d2=formonly.aag02_d2 type CHAR, tabIndex=56;
+Edit aag02_c2=formonly.aag02_c2 type CHAR, tabIndex=57;
+ButtonEdit nng_d11=nng_file.nng_d11, action=controlp, tabIndex=58, not null, required, image="zoom", comment="<^P>Open Window to Qry Acct";
+ButtonEdit nng_c11=nng_file.nng_c11, action=controlp, tabIndex=59, not null, required, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_d11=formonly.aag02_d11 type CHAR, tabIndex=60;
+Edit aag02_c11=formonly.aag02_c11 type CHAR, tabIndex=61;
+ButtonEdit nng_d21=nng_file.nng_d21, action=controlp, tabIndex=62, image="zoom", comment="<^P>Open Window to Qry Acct";
+ButtonEdit nng_c21=nng_file.nng_c21, action=controlp, tabIndex=63, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_d21=formonly.aag02_d21 type CHAR, tabIndex=64;
+Edit aag02_c21=formonly.aag02_c21 type CHAR, tabIndex=65;
+TextEdit nngud01=nng_file.nngud01, tabIndex=326, stretch=NONE;
+Edit nngud08=nng_file.nngud08, tabIndex=328;
+DateEdit nngud14=nng_file.nngud14, tabIndex=329;
+Edit nngud09=nng_file.nngud09, tabIndex=331;
+DateEdit nngud15=nng_file.nngud15, tabIndex=332;
+Edit nngud03=nng_file.nngud03, tabIndex=333;
+Edit nngud10=nng_file.nngud10, tabIndex=334;
+Edit nngud04=nng_file.nngud04, tabIndex=335;
+Edit nngud11=nng_file.nngud11, tabIndex=336;
+Edit nngud05=nng_file.nngud05, tabIndex=337;
+Edit nngud12=nng_file.nngud12, tabIndex=338;
+Edit nngud06=nng_file.nngud06, tabIndex=339;
+Edit nnh02=nnh_file.nnh02, tabIndex=66, title="Line#", not null, required, comment="<^Y>Delete Whole Body <^T>Auto Gen Body";
+DateEdit nnh03=nnh_file.nnh03, tabIndex=67, title="Due Date", not null, required;
+Edit nnh04f=nnh_file.nnh04f, tabIndex=68, title="O.C Amt";
+Edit nnh04=nnh_file.nnh04, tabIndex=69, title="H.C Amt";
+Edit nnh05=nnh_file.nnh05, tabIndex=70, title="Paying Bank";
+Edit nnh06=nnh_file.nnh06, tabIndex=71, title="Drawing Slip No.";
+Edit nmd02=nmd_file.nmd02, tabIndex=72, title="Note No.", noEntry;
+Edit nmd12=nmd_file.nmd12, tabIndex=73, title="Note Status", noEntry;
+Edit nnh07=nnh_file.nnh07, tabIndex=74, default = "Y", title="Note Issued?", INCLUDE = ("Y", "N"), comment="\'N\'Draw \'Y\'UnDraw";
+TextEdit nnhud01=nnh_file.nnhud01, tabIndex=324, title="nnhud01", stretch=NONE;
+Edit nnhud02=nnh_file.nnhud02, tabIndex=340, title="nnhud02";
+Edit nnhud03=nnh_file.nnhud03, tabIndex=341, title="nnhud03";
+Edit nnhud04=nnh_file.nnhud04, tabIndex=342, title="nnhud04";
+Edit nnhud05=nnh_file.nnhud05, tabIndex=343, title="nnhud05";
+Edit nnhud06=nnh_file.nnhud06, tabIndex=344, title="nnhud06";
+Edit nnhud07=nnh_file.nnhud07, tabIndex=345, title="nnhud07";
+Edit nnhud08=nnh_file.nnhud08, tabIndex=346, title="nnhud08";
+Edit nnhud09=nnh_file.nnhud09, tabIndex=347, title="nnhud09";
+Edit nnhud10=nnh_file.nnhud10, tabIndex=348, title="nnhud10";
+Edit nnhud11=nnh_file.nnhud11, tabIndex=349, title="nnhud11";
+Edit nnhud12=nnh_file.nnhud12, tabIndex=350, title="nnhud12";
+Edit nnhud13=nnh_file.nnhud13, tabIndex=351, title="nnhud13";
+Edit nnhud14=nnh_file.nnhud14, tabIndex=352, title="nnhud14";
+Edit nnhud15=nnh_file.nnhud15, tabIndex=353, title="nnhud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=75, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=76, noEntry;
+Edit nnh04f_t=formonly.nnh04f_t type CHAR, tabIndex=77;
+Edit nnh04_t=formonly.nnh04_t type CHAR, tabIndex=78;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nnh(nnh_file.nnh02,nnh_file.nnh03,nnh_file.nnh04f,nnh_file.nnh04,nnh_file.nnh05,nnh_file.nnh06,nmd_file.nmd02,nmd_file.nmd12,nnh_file.nnh07,nnh_file.nnhud01,nnh_file.nnhud02,nnh_file.nnhud03,nnh_file.nnhud04,nnh_file.nnhud05,nnh_file.nnhud06,nnh_file.nnhud07,nnh_file.nnhud08,nnh_file.nnhud09,nnh_file.nnhud10,nnh_file.nnhud11,nnh_file.nnhud12,nnh_file.nnhud13,nnh_file.nnhud14,nnh_file.nnhud15)
+SCREEN RECORD Undefined(nng_file.nng01,nng_file.nng25,nng_file.nng05,formonly.imgmksg,nng_file.nng15,formonly.nma02,nng_file.nng02,nng_file.nng051,nng_file.nng03,nng_file.nng14,nng_file.nngconf,nng_file.nng52,nng_file.nng16,nng_file.nngglno,nng_file.nng04,nng_file.nng26,formonly.alg02,nng_file.nng24,formonly.nnn02,nng_file.nng07,nng_file.nnguser,nng_file.nngmodu,nng_file.nnggrup,nng_file.nngdate,nng_file.nngoriu,nng_file.nngorig,nng_file.nng081,nng_file.nng082,nng_file.nng20,nng_file.nng12,nng_file.nng101,nng_file.nng102,nng_file.nng21,nng_file.nng09,nng_file.nng18,nng_file.nng19,nng_file.nng22,nng_file.nng13,nng_file.nngex2,nng_file.nng23,nng_file.nng11,nng_file.nng17,nng_file.nng56,nng_file.nng57,nng_file.nng54,nng_file.nng58,nng_file.nng59,nng_file.nng53,nng_file.nng60,nng_file.nng61,nng_file.nng55,nng_file.nng_d1,nng_file.nng_c1,formonly.aag02_d1,formonly.aag02_c1,nng_file.nng_d2,nng_file.nng_c2,formonly.aag02_d2,formonly.aag02_c2,nng_file.nng_d11,nng_file.nng_c11,formonly.aag02_d11,formonly.aag02_c11,nng_file.nng_d21,nng_file.nng_c21,formonly.aag02_d21,formonly.aag02_c21,nng_file.nngud01,nng_file.nngud13,nng_file.nngud08,nng_file.nngud14,nng_file.nngud02,nng_file.nngud09,nng_file.nngud15,nng_file.nngud03,nng_file.nngud10,nng_file.nngud04,nng_file.nngud11,nng_file.nngud05,nng_file.nngud12,nng_file.nngud06,formonly.cnt,formonly.cn2,formonly.nnh04f_t,formonly.nnh04_t,nng_file.nng06,nng_file.nngud07)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdq102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdq102")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr385
+{
+ W/O No.             [sth03           ]
+ Item No.            [sfb05                         ]
+                     [ima02                         ]
+}
+END -- gr385
+END -- page01
+END -- folder01
+Table s_sth
+{
+[sth01 |sth02  |sth04     |sth05       |sth06       |sth07               ]
+[sth01 |sth02  |sth04     |sth05       |sth06       |sth07               ]
+[sth01 |sth02  |sth04     |sth05       |sth06       |sth07               ]
+[sth01 |sth02  |sth04     |sth05       |sth06       |sth07               ]
+[sth01 |sth02  |sth04     |sth05       |sth06       |sth07               ]
+[sth01 |sth02  |sth04     |sth05       |sth06       |sth07               ]
+[sth01 |sth02  |sth04     |sth05       |sth06       |sth07               ]
+[sth01 |sth02  |sth04     |sth05       |sth06       |sth07               ]
+[sth01 |sth02  |sth04     |sth05       |sth06       |sth07               ]
+[sth01 |sth02  |sth04     |sth05       |sth06       |sth07               ]
+
+}
+END -- s_sth
+Grid gr386
+{
+ ---------- Rows [cnt   ]/[cn2   ] ----------
+
+}
+END -- gr386
+END -- VBox1
+END -- asdq102
+
+TABLES
+sth_file
+ATTRIBUTES
+Edit sth03=sth_file.sth03, tabIndex=1;
+ButtonEdit sfb05=formonly.sfb05 type CHAR, action=controlp, tabIndex=2, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit sth01=sth_file.sth01, tabIndex=4, title="Year";
+Edit sth02=sth_file.sth02, tabIndex=5, title="Month";
+Edit sth04=sth_file.sth04, tabIndex=6, title="Labor";
+Edit sth05=sth_file.sth05, tabIndex=7, title="Overhead 1";
+Edit sth06=sth_file.sth06, tabIndex=8, title="Overhead 2";
+Edit sth07=sth_file.sth07, tabIndex=9, title="Processing Expense";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sth(sth_file.sth01,sth_file.sth02,sth_file.sth04,sth_file.sth05,sth_file.sth06,sth_file.sth07)
+SCREEN RECORD Undefined(sth_file.sth03,formonly.sfb05,formonly.ima02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

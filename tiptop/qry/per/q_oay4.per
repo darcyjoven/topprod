@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_oay4.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Document Property")
+Grid gr3806
+{
+ <T s_oay                                                                                    >
+ [check |oayslip    |oaydesc             |oayauno          |oaytype    |oay11               ]
+ [check |oayslip    |oaydesc             |oayauno          |oaytype    |oay11               ]
+ [check |oayslip    |oaydesc             |oayauno          |oaytype    |oay11               ]
+ [check |oayslip    |oaydesc             |oayauno          |oaytype    |oay11               ]
+ [check |oayslip    |oaydesc             |oayauno          |oaytype    |oay11               ]
+ [check |oayslip    |oaydesc             |oayauno          |oaytype    |oay11               ]
+ [check |oayslip    |oaydesc             |oayauno          |oaytype    |oay11               ]
+ [check |oayslip    |oaydesc             |oayauno          |oaytype    |oay11               ]
+ [check |oayslip    |oaydesc             |oayauno          |oaytype    |oay11               ]
+ [check |oayslip    |oaydesc             |oayauno          |oaytype    |oay11               ]
+ <                                                                                           >
+
+}
+END -- gr3806
+END -- q_oay4
+
+ATTRIBUTES
+Table s_oay:s_oay;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oayslip=formonly.oayslip type CHAR, tabIndex=2, title="Document", noEntry;
+Edit oaydesc=formonly.oaydesc type CHAR, tabIndex=3, title="Doc Name", noEntry;
+Edit oayauno=formonly.oayauno type CHAR, tabIndex=4, title="Auto Numbering", noEntry;
+Edit oaytype=formonly.oaytype type CHAR, tabIndex=5, title="Property", noEntry;
+Edit oay11=formonly.oay11 type CHAR, tabIndex=6, title="Transfer to AR", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oay(formonly.check,formonly.oayslip,formonly.oaydesc,formonly.oayauno,formonly.oaytype,formonly.oay11)
+END -- INSTRUCTIONS
+

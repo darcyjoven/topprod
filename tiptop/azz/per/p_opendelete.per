@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_opendelete.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_opencheck")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+Grid gr574
+{
+ Data Type [zoa01       ]
+
+}
+END -- gr574
+END -- page01
+END -- folder01
+Table s_zoa
+{
+[zoa02   |zoa03          |gaz03               |zoa0|zoa05     |zoa06     |zoa07     ]
+[zoa02   |zoa03          |gaz03               |zoa0|zoa05     |zoa06     |zoa07     ]
+[zoa02   |zoa03          |gaz03               |zoa0|zoa05     |zoa06     |zoa07     ]
+[zoa02   |zoa03          |gaz03               |zoa0|zoa05     |zoa06     |zoa07     ]
+[zoa02   |zoa03          |gaz03               |zoa0|zoa05     |zoa06     |zoa07     ]
+[zoa02   |zoa03          |gaz03               |zoa0|zoa05     |zoa06     |zoa07     ]
+
+}
+END -- s_zoa
+Table s_zob
+{
+[zod01     |zod02       |zod03                         |zod04     |zod05     |zod06     |zod07     |zod08     |zod09     |zod10     |zod11   |zod12   ]
+[zod01     |zod02       |zod03                         |zod04     |zod05     |zod06     |zod07     |zod08     |zod09     |zod10     |zod11   |zod12   ]
+[zod01     |zod02       |zod03                         |zod04     |zod05     |zod06     |zod07     |zod08     |zod09     |zod10     |zod11   |zod12   ]
+[zod01     |zod02       |zod03                         |zod04     |zod05     |zod06     |zod07     |zod08     |zod09     |zod10     |zod11   |zod12   ]
+[zod01     |zod02       |zod03                         |zod04     |zod05     |zod06     |zod07     |zod08     |zod09     |zod10     |zod11   |zod12   ]
+[zod01     |zod02       |zod03                         |zod04     |zod05     |zod06     |zod07     |zod08     |zod09     |zod10     |zod11   |zod12   ]
+
+}
+END -- s_zob
+Grid gr5
+{
+ ---------- Rows [cnt   ] / [cn2   ] / [cn3   ] ----------
+
+}
+END -- gr5
+END -- vb4
+END -- p_opendel
+
+TABLES
+zod_file,
+zoa_file
+ATTRIBUTES
+ComboBox zoa01=zoa_file.zoa01, tabIndex=1, not null, required, items=(("1", "Basic Data"),("2", "Item"),("3", "Balance"));
+CheckBox zoa02=zoa_file.zoa02, tabIndex=2, title="Converge?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit zoa03=zoa_file.zoa03, action=controlp, tabIndex=3, title="Data Code Name", noEntry, not null, required, image="zoom.png", comment="<^P>Qry Logesitc";
+Edit gaz03=formonly.gaz03 type VARCHAR, tabIndex=4, title="Program Name", noEntry;
+Edit zoa0=zoa_file.zoa04, tabIndex=5, title="Bill", noEntry;
+Edit zoa05=zoa_file.zoa05, tabIndex=6, title="Last Converge Date", noEntry, not null;
+Edit zoa06=zoa_file.zoa06, tabIndex=7, title="Converge User", noEntry, not null;
+Edit zoa07=zoa_file.zoa07, tabIndex=8, title="Converge Number", noEntry, not null;
+Edit zod01=zod_file.zod01, tabIndex=23, title=%"Table name", noEntry, not null;
+Edit zod02=zod_file.zod02, tabIndex=9, title="Field No.", noEntry, not null;
+Edit zod03=zod_file.zod03, tabIndex=10, title="Field Name", noEntry;
+Edit zod04=zod_file.zod04, tabIndex=16, title="Export Time", noEntry;
+Edit zod05=zod_file.zod05, tabIndex=17, title="Export User", noEntry;
+Edit zod06=zod_file.zod06, tabIndex=19, title="Export Count", noEntry;
+Edit zod07=zod_file.zod07, tabIndex=18, title="Begin Old No", noEntry;
+Edit zod08=zod_file.zod08, tabIndex=20, title="End Old No", noEntry;
+Edit zod09=zod_file.zod09, tabIndex=21, title="Begin Tp No", noEntry;
+Edit zod10=zod_file.zod10, tabIndex=22, title="End Tp No", noEntry;
+CheckBox zod11=zod_file.zod11, tabIndex=11, title="Remove ?", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox zod12=zod_file.zod12, tabIndex=12, title="Being Check?", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zoa(zoa_file.zoa02,zoa_file.zoa03,formonly.gaz03,zoa_file.zoa04,zoa_file.zoa05,zoa_file.zoa06,zoa_file.zoa07)
+SCREEN RECORD s_zod(zod_file.zod01,zod_file.zod02,zod_file.zod03,zod_file.zod04,zod_file.zod05,zod_file.zod06,zod_file.zod07,zod_file.zod08,zod_file.zod09,zod_file.zod10,zod_file.zod11,zod_file.zod12)
+SCREEN RECORD Undefined(zoa_file.zoa01,formonly.cnt,formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

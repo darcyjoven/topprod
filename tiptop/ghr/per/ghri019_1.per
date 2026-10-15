@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri019_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrbca01 |hrbca02 |hrbca03 |hrbca04   ]
+[hrbca01 |hrbca02 |hrbca03 |hrbca04   ]
+[hrbca01 |hrbca02 |hrbca03 |hrbca04   ]
+[hrbca01 |hrbca02 |hrbca03 |hrbca04   ]
+[hrbca01 |hrbca02 |hrbca03 |hrbca04   ]
+
+
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+ ---------- cn2[cn2]------------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit hrbca01=formonly.hrbca01 type INTEGER, tabIndex=1, title=%"hrbca01", noEntry;
+DateEdit hrbca02=formonly.hrbca02 type DATE, tabIndex=2, title=%"hrbca02", not null, required;
+ComboBox hrbca03=formonly.hrbca03 type VARCHAR, tabIndex=3, title=%"hrbca03", not null, required, items=(("1", "pass"),("2", "no_pass"));
+TextEdit hrbca04=formonly.hrbca04 type VARCHAR, tabIndex=4, title=%"hrbca04";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrbca(formonly.hrbca01,formonly.hrbca02,formonly.hrbca03,formonly.hrbca04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

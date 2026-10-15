@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp920.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimp920")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                  >
+  Label               [pia01               ]
+ <                                           >
+ <G group02                                  >
+ [a                        ]
+ <                                           >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[g_bgjob                  ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- aimp920
+
+TABLES
+pia_file
+ATTRIBUTES
+Group group01:group01;
+Edit pia01=pia_file.pia01, tabIndex=1;
+Group group02:group02, text="Select";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=2, items=(("1", %"Quantity On Hand"),("2", %"WIP W/O"));
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=3, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pia_file.pia01,formonly.a,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

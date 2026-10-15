@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli605.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli605")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2403
+{
+ Company No.[atu01     ][asg02        ]       Year [atu04    ]
+ Book No.   [atu02     ]                      Month[atu05    ]
+ Currency   [atu03     ]
+
+}
+END -- gr2403
+END -- page01
+END -- folder01
+Table s_atu
+{
+[atu06   |atu07           |atu08|atu09           |atu10           |aag02           |atu11 |atu12       |atu13   |atn02   ]
+[atu06   |atu07           |atu08|atu09           |atu10           |aag02           |atu11 |atu12       |atu13   |atn02   ]
+[atu06   |atu07           |atu08|atu09           |atu10           |aag02           |atu11 |atu12       |atu13   |atn02   ]
+[atu06   |atu07           |atu08|atu09           |atu10           |aag02           |atu11 |atu12       |atu13   |atn02   ]
+[atu06   |atu07           |atu08|atu09           |atu10           |aag02           |atu11 |atu12       |atu13   |atn02   ]
+[atu06   |atu07           |atu08|atu09           |atu10           |aag02           |atu11 |atu12       |atu13   |atn02   ]
+[atu06   |atu07           |atu08|atu09           |atu10           |aag02           |atu11 |atu12       |atu13   |atn02   ]
+[atu06   |atu07           |atu08|atu09           |atu10           |aag02           |atu11 |atu12       |atu13   |atn02   ]
+[atu06   |atu07           |atu08|atu09           |atu10           |aag02           |atu11 |atu12       |atu13   |atn02   ]
+[atu06   |atu07           |atu08|atu09           |atu10           |aag02           |atu11 |atu12       |atu13   |atn02   ]
+}
+END -- s_atu
+Grid gr2404
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr2404
+END -- VBox1
+END -- ggli605
+
+TABLES
+atu_file
+ATTRIBUTES
+ButtonEdit atu01=atu_file.atu01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Company No.";
+Edit asg02=formonly.asg02 type CHAR, tabIndex=2, noEntry;
+Edit atu04=atu_file.atu04, tabIndex=5, not null, required;
+Edit atu02=atu_file.atu02, tabIndex=3, noEntry, not null, required;
+Edit atu05=atu_file.atu05, tabIndex=6, not null, required;
+ButtonEdit atu03=atu_file.atu03, action=controlp, tabIndex=4, noEntry, not null, required, image="zoom", comment="<^P>Currency";
+DateEdit atu06=atu_file.atu06, tabIndex=7, title="Voucher Date", not null, required;
+Edit atu07=atu_file.atu07, tabIndex=8, title="Voucher No.", not null, required;
+Edit atu08=atu_file.atu08, tabIndex=9, title="Item No.", not null, required;
+Edit atu09=atu_file.atu09, tabIndex=10, title="Memo", not null, required;
+ButtonEdit atu10=atu_file.atu10, action=controlp, tabIndex=11, title="Account No.", not null, required, image="zoom", comment="<^P>Account No.";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=12, title="Account Name", noEntry;
+ComboBox atu11=atu_file.atu11, tabIndex=13, title="Dr/Cr", not null, required, queryEditable, items=(("1", %"Debit"),("2", %"Credit"));
+Edit atu12=atu_file.atu12, tabIndex=14, title="Amount", not null, required;
+ButtonEdit atu13=atu_file.atu13, action=controlp, tabIndex=15, title="Group Code", image="zoom", comment="<^P>Company No.";
+Edit atn02=formonly.atn02 type CHAR, tabIndex=16, title="Description", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_atu(atu_file.atu06,atu_file.atu07,atu_file.atu08,atu_file.atu09,atu_file.atu10,formonly.aag02,atu_file.atu11,atu_file.atu12,atu_file.atu13,formonly.atn02)
+SCREEN RECORD Undefined(atu_file.atu01,formonly.asg02,atu_file.atu04,atu_file.atu02,atu_file.atu05,atu_file.atu03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

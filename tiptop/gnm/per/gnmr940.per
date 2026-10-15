@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gnm/42f/gnmr940.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gnmr940")
+VBox VBox1
+Group group01(text="INPUT")
+VBox VBox2
+Grid gr3516
+{
+ <G group03                                                          >
+  Report Name          [title                ]
+  Enter Year           [y1                   ]
+  Period (Initial-End) [m1       ]-[m2       ]
+  Amount Unit          [d                    ]
+ [c                         ]
+ <                                                                   >
+
+}
+END -- gr3516
+Grid gr3517
+{
+ <G group06                                                          >
+  [o                                       ]
+  G/L Curr.            [r                    ]
+  Convert Curr.        [p                    ]
+  * Ex.Rate            [q                    ]
+ <                                                                   >
+
+}
+END -- gr3517
+END -- VBox2
+END -- group01
+Grid gr3518
+{
+[more                                                        ]
+
+}
+END -- gr3518
+END -- VBox1
+END -- gnmr940
+
+ATTRIBUTES
+Group group03:group03;
+Edit title=formonly.title type VARCHAR, tabIndex=1, not null, required;
+Edit y1=formonly.y1 type SMALLINT, tabIndex=2, not null, required;
+Edit m1=formonly.m1 type SMALLINT, tabIndex=3, not null, required;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=4, not null, required;
+ComboBox d=formonly.d type CHAR, tabIndex=5, not null, required, queryEditable, comment="Please insert 1/2/3", items=(("1", "DR"),("2", "TH"),("3", "Million"));
+CheckBox c=formonly.c type VARCHAR, tabIndex=6, text="Y N \"Print Balance For Zero\"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group06:group06;
+CheckBox o=formonly.o type VARCHAR, tabIndex=7, text="Y N \"Convert Currency\"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=8, noEntry;
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=9, image="zoom", comment="<^P> Qry Currency ";
+Edit q=formonly.q type DECIMAL, tabIndex=10;
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.title,formonly.y1,formonly.m1,formonly.m2,formonly.d,formonly.c,formonly.o,formonly.r,formonly.p,formonly.q,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt710a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Current Financing Default Account")
+Grid gr4538
+{
+                            [dummy01     ] [dummy02                  ]
+ <G group01                                                           >
+  Debit:Cash In Bank        [nne_d1      ] [aag02_d1                 ]
+  Debit:Prepayment          [nne_d2      ] [aag02_d2                 ]
+  Credit:Notes Payable/Loan [nne_c1      ] [aag02_c1                 ]
+ <                                                                    >
+ <G group02                                                           >
+  Debit:Cash In Bank        [nne_d11     ] [aag02_d11                ]
+  Debit:Prepayment          [nne_d21     ] [aag02_d21                ]
+  Credit:Notes Payable/Loan [nne_c11     ] [aag02_c11                ]
+
+ <                                                                    >
+
+}
+END -- gr4538
+END -- anmt710a
+
+TABLES
+nne_file
+ATTRIBUTES
+Label dummy01:dummy01, text="Account #";
+Label dummy02:dummy02, text="Account Title";
+Group group01:group01;
+ButtonEdit nne_d1=nne_file.nne_d1, action=controlp, tabIndex=1, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_d1=formonly.aag02_d1 type CHAR, tabIndex=2;
+ButtonEdit nne_d2=nne_file.nne_d2, action=controlp, tabIndex=3, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_d2=formonly.aag02_d2 type CHAR, tabIndex=4;
+ButtonEdit nne_c1=nne_file.nne_c1, action=controlp, tabIndex=5, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_c1=formonly.aag02_c1 type CHAR, tabIndex=6;
+Group group02:group02;
+ButtonEdit nne_d11=nne_file.nne_d11, action=controlp, tabIndex=7, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_d11=formonly.aag02_d11 type CHAR, tabIndex=8;
+ButtonEdit nne_d21=nne_file.nne_d21, action=controlp, tabIndex=9, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_d21=formonly.aag02_d21 type CHAR, tabIndex=10;
+ButtonEdit nne_c11=nne_file.nne_c11, action=controlp, tabIndex=11, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_c11=formonly.aag02_c11 type CHAR, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nne_file.nne_d1,formonly.aag02_d1,nne_file.nne_d2,formonly.aag02_d2,nne_file.nne_c1,formonly.aag02_c1,nne_file.nne_d11,formonly.aag02_d11,nne_file.nne_d21,formonly.aag02_d21,nne_file.nne_c11,formonly.aag02_c11)
+END -- INSTRUCTIONS
+

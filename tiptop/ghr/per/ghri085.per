@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri085.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(action=main, text=%"Page1")
+Grid Grid1
+{
+  <G group1                                                                                                >
+    hrdr02[hrdr02              ]  hrat02[hrat02              ]  hrat17[hrat17    ]
+    hrat04[hrat04              ]  hrat05[hrat05              ]  hrat22[hrat22    ]
+    hrat42[hrat42              ]  hrat06[hrat06              ]  hrat66[hrat66    ]
+  <                                                                                                        >
+  <G group2                                                                                                >
+    hrdr03[hrdr03              ]  hrdr04[hrdr04              ]  hrdr05[hrdr05    ]
+    hrdr06[hrdr06              ]  hrdr07[hrdr07              ]
+  <                                                                                                        >
+  <G group3                                                                                                >
+   [hrdr08                                                                       ]
+   [                                                                             ]
+  <                                                                                                        >
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(action=info, text=%"Page2")
+Grid Grid3
+{
+  <G group4                     >  <G group5                     >  <G group6                          >
+    hrdruser[hrdruser  ]             hrdrmodu[hrdrmodu  ]             hrdracti[hrdracti  ]
+    hrdrgrup[hrdrgrup  ]             hrdrdate[hrdrdate  ]
+    hrdroriu[hrdroriu  ]
+    hrdrorig[hrdrorig  ]
+
+
+
+
+
+
+  <                             >  <                             >  <                                  >
+
+}
+END -- Grid3
+END -- Page2
+Page Page3(action=item_list, text=%"Page3")
+Table Table1
+{
+[hrdr02_b|hrat02_b|hrat04_b|hrdr06_b|hrdr07_b|hrdr03_b|hrdr04_b|hrdr05_b|hrdr08_b|hrdr01_b]
+[hrdr02_b|hrat02_b|hrat04_b|hrdr06_b|hrdr07_b|hrdr03_b|hrdr04_b|hrdr05_b|hrdr08_b|hrdr01_b]
+[hrdr02_b|hrat02_b|hrat04_b|hrdr06_b|hrdr07_b|hrdr03_b|hrdr04_b|hrdr05_b|hrdr08_b|hrdr01_b]
+[hrdr02_b|hrat02_b|hrat04_b|hrdr06_b|hrdr07_b|hrdr03_b|hrdr04_b|hrdr05_b|hrdr08_b|hrdr01_b]
+[hrdr02_b|hrat02_b|hrat04_b|hrdr06_b|hrdr07_b|hrdr03_b|hrdr04_b|hrdr05_b|hrdr08_b|hrdr01_b]
+
+
+
+
+
+}
+END -- Table1
+END -- Page3
+END -- Folder1
+Grid Grid2
+{
+  ---------- cnt[cnt   ] ----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+ButtonEdit hrdr02=formonly.hrdr02 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=2, noEntry;
+Edit hrat17=formonly.hrat17 type VARCHAR, tabIndex=3, noEntry;
+Edit hrat04=formonly.hrat04 type VARCHAR, tabIndex=4, noEntry;
+Edit hrat05=formonly.hrat05 type VARCHAR, tabIndex=5, noEntry;
+Edit hrat22=formonly.hrat22 type VARCHAR, tabIndex=6, noEntry;
+Edit hrat42=formonly.hrat42 type VARCHAR, tabIndex=7, noEntry;
+Edit hrat06=formonly.hrat06 type VARCHAR, tabIndex=8, noEntry;
+DateEdit hrat66=formonly.hrat66 type DATE, tabIndex=9, noEntry;
+Group group2:Group2, text=%"Group2";
+ComboBox hrdr03=formonly.hrdr03 type VARCHAR, tabIndex=10, not null, required;
+ComboBox hrdr04=formonly.hrdr04 type VARCHAR, tabIndex=11, not null, required, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"),("10", "10"),("11", "11"),("12", "12"));
+Edit hrdr05=formonly.hrdr05 type INTEGER, tabIndex=12, not null, required;
+ComboBox hrdr06=formonly.hrdr06 type VARCHAR, tabIndex=33, not null, required;
+Edit hrdr07=formonly.hrdr07 type DECIMAL, tabIndex=13, not null, required;
+Group group3:Group3, text=%"Group3";
+TextEdit hrdr08=formonly.hrdr08 type VARCHAR, tabIndex=14;
+Group group4:Group4, text=%"";
+Edit hrdruser=formonly.hrdruser type VARCHAR, tabIndex=16, noEntry;
+Edit hrdrgrup=formonly.hrdrgrup type VARCHAR, tabIndex=17, noEntry;
+Edit hrdroriu=formonly.hrdroriu type VARCHAR, tabIndex=18, noEntry;
+Edit hrdrorig=formonly.hrdrorig type VARCHAR, tabIndex=19, noEntry;
+Group group5:Group5, text=%"";
+Edit hrdrmodu=formonly.hrdrmodu type VARCHAR, tabIndex=20, noEntry;
+DateEdit hrdrdate=formonly.hrdrdate type DATE, tabIndex=21, noEntry;
+Group group6:Group6, text=%"";
+Edit hrdracti=formonly.hrdracti type VARCHAR, tabIndex=22, noEntry;
+Edit hrdr02_b=formonly.hrdr02_b type VARCHAR, tabIndex=23, title=%"hrdr02_b", noEntry;
+Edit hrat02_b=formonly.hrat02_b type VARCHAR, tabIndex=24, title=%"hrat02_b", noEntry;
+Edit hrat04_b=formonly.hrat04_b type VARCHAR, tabIndex=25, title=%"hrat04_b", noEntry;
+ComboBox hrdr06_b=formonly.hrdr06_b type VARCHAR, tabIndex=26, title=%"hrdr06_b", noEntry;
+Edit hrdr07_b=formonly.hrdr07_b type DECIMAL, tabIndex=27, title=%"hrdr07_b", noEntry;
+Edit hrdr03_b=formonly.hrdr03_b type VARCHAR, tabIndex=28, title=%"hrdr03_b", noEntry;
+Edit hrdr04_b=formonly.hrdr04_b type VARCHAR, tabIndex=29, title=%"hrdr04_b", noEntry;
+Edit hrdr05_b=formonly.hrdr05_b type INTEGER, tabIndex=30, title=%"hrdr05_b", noEntry;
+TextEdit hrdr08_b=formonly.hrdr08_b type VARCHAR, tabIndex=31, title=%"hrdr08_b", noEntry;
+Edit hrdr01_b=formonly.hrdr01_b type VARCHAR, tabIndex=32, title=%"hrdr01_b", noEntry, hidden, invisible;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrdr02,formonly.hrat02,formonly.hrat17,formonly.hrat04,formonly.hrat05,formonly.hrat22,formonly.hrat42,formonly.hrat06,formonly.hrat66,formonly.hrdr03,formonly.hrdr04,formonly.hrdr05,formonly.hrdr07,formonly.hrdr08,formonly.cnt,formonly.hrdruser,formonly.hrdrgrup,formonly.hrdroriu,formonly.hrdrorig,formonly.hrdrmodu,formonly.hrdrdate,formonly.hrdracti,formonly.hrdr06)
+SCREEN RECORD s_hrdr(formonly.hrdr02_b,formonly.hrat02_b,formonly.hrat04_b,formonly.hrdr06_b,formonly.hrdr07_b,formonly.hrdr03_b,formonly.hrdr04_b,formonly.hrdr05_b,formonly.hrdr08_b,formonly.hrdr01_b)
+END -- INSTRUCTIONS
+

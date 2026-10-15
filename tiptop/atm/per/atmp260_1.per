@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/4fd/atmp260_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq841_4")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                                       >
+   Prod          [sfb01               ] Prod      [sfb81       ]
+
+   Prod          [sfb05               ] Prod      [sfb06    ]
+   Prod          [sfb071              ] Prod      [sgm03             ]
+   Prod          [sfb08               ] Prod      [sfbud07           ]
+ <                                                                                                >
+
+}
+END -- Grid1
+END -- VBox1
+END -- atmp260_1
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfb01=formonly.sfb01 type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+DateEdit sfb81=formonly.sfb81 type DATE, tabIndex=5, not null, required;
+ButtonEdit sfb05=formonly.sfb05 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit sfb06=formonly.sfb06 type VARCHAR, tabIndex=2, not null, required;
+DateEdit sfb071=formonly.sfb071 type DATE, tabIndex=6, not null, required;
+Edit sgm03=formonly.sgm03 type VARCHAR, tabIndex=3, not null, required;
+Edit sfb08=formonly.sfb08 type DATETIME YEAR TO YEAR, tabIndex=7, noEntry;
+Edit sfbud07=formonly.sfbud07 type DECIMAL, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfb01,formonly.sfb81,formonly.sfb05,formonly.sfb06,formonly.sfb071,formonly.sfb08,formonly.sfbud07,formonly.sgm03)
+END -- INSTRUCTIONS
+

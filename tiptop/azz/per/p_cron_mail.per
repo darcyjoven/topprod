@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/4fd/p_cron_mail.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_addview")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+
+  Label2   [mail                   ]
+  Label2   [subject                                                         ][todaycheck         ]
+  Label2   [mailto                                                          ][addto   ]
+  Label2   [mailcc                                                          ][addcc   ]
+  Label2   [mailbcc                                                         ][addbcc  ]
+           [body_type              ]
+  Label2   [body_content                                                                   ]
+           [                                                                               ]
+           [                                                                               ]
+           [                                                                               ]
+           [                                                                               ]
+           [                                                                               ]
+           [                                                                               ]
+           [                                                                               ]
+           [                                                                               ]
+           [                                                                               ]
+           [                                                                               ]
+
+  Label2   [tables                                                    ]
+  Label2   [crontab                                                   ]    [cronstatus   ]
+  Label2   [conrablable                                                                    ]
+           [                                                                               ]
+}
+END -- Grid1
+END -- page01
+Page info(text="Info")
+Grid Grid2
+{
+ Record Owner[crtuser      ] Record Orig.[moduser        ]
+ Department  [crtdate      ] Dept Orig.  [moddate        ]
+
+
+}
+END -- Grid2
+END -- info
+END -- Folder1
+Grid Grid3
+{
+ --------[cnt  ]--------
+
+}
+END -- Grid3
+END -- VBox1
+END -- p_addview
+
+ATTRIBUTES
+ButtonEdit mail=formonly.mail type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit subject=formonly.subject type VARCHAR, tabIndex=2, not null;
+CheckBox todaycheck=formonly.todaycheck, tabIndex=3, text=%"附上当日日期", not null;
+ButtonEdit mailto=formonly.mailto type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+Button addto:addto, tabIndex=12, text=%"Button1";
+ButtonEdit mailcc=formonly.mailcc type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Button addcc:addcc, tabIndex=13, text=%"Button2";
+ButtonEdit mailbcc=formonly.mailbcc type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+Button addbcc:addbcc, tabIndex=14, text=%"Button3";
+ComboBox body_type=formonly.body_type type VARCHAR, tabIndex=7, default = "text", not null, items=(("text", "纯文本"),("markdown", "markdown格式"),("html", "HTML格式"));
+TextEdit body_content=formonly.body_content type VARCHAR, tabIndex=8, stretch=NONE;
+ButtonEdit tables=formonly.tables type VARCHAR, action=controlp, tabIndex=9, image="zoom";
+Edit crontab=formonly.crontab type VARCHAR, tabIndex=10;
+Label cronstatus:cronstatus, text=%"";
+TextEdit conrablable=formonly.conrablable type VARCHAR, tabIndex=19;
+Edit crtuser=formonly.crtuser type VARCHAR, tabIndex=15, noEntry;
+Edit moduser=formonly.moduser type VARCHAR, tabIndex=17, noEntry;
+Edit crtdate=formonly.crtdate type VARCHAR, tabIndex=16, noEntry;
+Edit moddate=formonly.moddate type VARCHAR, tabIndex=18, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.mail,formonly.mailto,formonly.body_content,formonly.crtuser,formonly.crtdate,formonly.moduser,formonly.moddate,formonly.cnt,formonly.mailcc,formonly.mailbcc,formonly.subject,formonly.todaycheck,formonly.crontab,formonly.body_type,formonly.tables,formonly.conrablable)
+END -- INSTRUCTIONS
+

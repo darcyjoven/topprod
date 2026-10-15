@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_openin.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_openin")
+Folder pc3
+Page page4(text="Main")
+VBox vb5
+Table s_zoa
+{
+[zoa01   |zoa03     |gaz03                |zoa05      |zoa06         ]
+[zoa01   |zoa03     |gaz03                |zoa05      |zoa06         ]
+[zoa01   |zoa03     |gaz03                |zoa05      |zoa06         ]
+[zoa01   |zoa03     |gaz03                |zoa05      |zoa06         ]
+
+}
+END -- s_zoa
+Table s_zob
+{
+[c         |zob02        |gat03                  |count  |f_name              ]
+[c         |zob02        |gat03                  |count  |f_name              ]
+[c         |zob02        |gat03                  |count  |f_name              ]
+[c         |zob02        |gat03                  |count  |f_name              ]
+[c         |zob02        |gat03                  |count  |f_name              ]
+[c         |zob02        |gat03                  |count  |f_name              ]
+[c         |zob02        |gat03                  |count  |f_name              ]
+[c         |zob02        |gat03                  |count  |f_name              ]
+
+}
+END -- s_zob
+Grid gr6
+{
+ ---------- [cn3   ]  / [cn4   ]  ----------
+
+
+
+}
+END -- gr6
+END -- vb5
+END -- page4
+END -- pc3
+END -- p_openin
+
+TABLES
+gaz_file,
+zob_file,
+gat_file,
+zoa_file
+ATTRIBUTES
+ComboBox zoa01=zoa_file.zoa01, tabIndex=1, title="Data Type", not null, required, items=(("1", %"Base Data"),("2", %"Main Data"),("3", %"Balance"));
+Edit zoa03=zoa_file.zoa03, tabIndex=3, title="Data type", noEntry, not null, required;
+Edit gaz03=gaz_file.gaz03, tabIndex=4, title="Col3", noEntry;
+DateEdit zoa05=zoa_file.zoa05, tabIndex=5, title="Col5", noEntry;
+Edit zoa06=zoa_file.zoa06, tabIndex=6, title="Col6", noEntry;
+CheckBox c=formonly.c type VARCHAR, tabIndex=16, title="c", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit zob02=zob_file.zob02, tabIndex=7, title="Col1", noEntry, not null, required;
+Edit gat03=gat_file.gat03, tabIndex=8, title="Col2", noEntry;
+Edit count=formonly.count type SMALLINT, tabIndex=16, noEntry;
+ButtonEdit f_name=formonly.f_name type VARCHAR, action=controlp, tabIndex=11, title="f_name", image="zoom";
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=14, noEntry;
+Edit cn4=formonly.cn4 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zoa(zoa_file.zoa01,zoa_file.zoa03,gaz_file.gaz03,zoa_file.zoa05,zoa_file.zoa06)
+SCREEN RECORD s_zob(formonly.c,zob_file.zob02,gat_file.gat03,formonly.count,formonly.f_name)
+SCREEN RECORD Undefined(formonly.cn3,formonly.cn4)
+END -- INSTRUCTIONS
+

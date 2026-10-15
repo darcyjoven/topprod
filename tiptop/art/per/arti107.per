@@ -1,0 +1,70 @@
+----------------------------------------------------------------------------------
+-- $Id:  arti107.per created 2010-01-11T12:12:49
+-- File created from arti107.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA FORMONLY
+
+LAYOUT( TEXT="apci060")
+  VBOX vb4
+    FOLDER pc1
+      PAGE Page1( TEXT="Info")
+        GRID gr1
+        {
+
+         No.             [aa0       ]
+         Name            [aa1                           ]
+         Organization    [aa2   |aa3                    ]
+         Password        [aa4       ]
+         Opration Class. [aa5       ]
+         zkl             [aa6       |a0]
+
+
+        }
+        END -- GRID
+      END -- PAGE
+      PAGE Page2( TEXT="Status")
+        GRID gr2
+        {
+
+          acti     [a1]               pos      [a2]
+          user     [aa7       ]       modu     [aa8       ]
+          grup     [aa9       ]       date     [ab0       ]
+
+
+
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    GRID gr3
+    {
+     row [ab1 ]/[ab2 ]
+
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  EDIT aa0=FORMONLY.ryi01 TYPE VARCHAR, NOT NULL, REQUIRED, TABINDEX=6;
+  EDIT aa1=FORMONLY.ryi02 TYPE VARCHAR, NOENTRY, TABINDEX=1;
+  EDIT aa2=FORMONLY.ryi00 TYPE VARCHAR, NOENTRY, TABINDEX=2;
+  EDIT aa3=FORMONLY.ryi00_desc TYPE VARCHAR, NOENTRY, TABINDEX=3;
+  EDIT aa4=FORMONLY.ryi03 TYPE VARCHAR, NOT NULL, REQUIRED, TABINDEX=4;
+  COMBOBOX aa5=FORMONLY.ryi04 TYPE VARCHAR, NOT NULL, REQUIRED, TABINDEX=5, ITEMS=(("1","Manager"),("2","zu zhang"),("3","zu yuan"));
+  EDIT aa6=FORMONLY.ryi05 TYPE SMALLINT, NOT NULL, REQUIRED, TABINDEX=15;
+  LABEL a0:dummy1, TEXT="dummy1";
+  EDIT a1=FORMONLY.pcbsacti TYPE VARCHAR, NOENTRY, TABINDEX=7;
+  EDIT a2=FORMONLY.pcbspos TYPE VARCHAR, TABINDEX=8;
+  EDIT aa7=FORMONLY.pcbsuser TYPE VARCHAR, TABINDEX=9;
+  EDIT aa8=FORMONLY.pcbsmodu TYPE VARCHAR, TABINDEX=10;
+  EDIT aa9=FORMONLY.pcbsgrup TYPE VARCHAR, TABINDEX=11;
+  EDIT ab0=FORMONLY.pcbsdate TYPE DATE, TABINDEX=12;
+  EDIT ab1=FORMONLY.idx TYPE INTEGER, TABINDEX=13;
+  EDIT ab2=FORMONLY.cnt TYPE INTEGER, TABINDEX=14;
+END

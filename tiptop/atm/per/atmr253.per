@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmr253.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"atmr253")
+VBox VBox1
+Grid gr1193
+{
+ <G group01                                                               >
+  Application Note No.[tsg01           ] Origin Plant    [tsg06          ]
+  Application Date    [tsg02           ] Request Plant   [tsg03          ]
+  Pre-ship Date       [tsg17           ] Actual Ship Date[tsg18          ]
+  Status              [tsg05           ]
+ <                                                                        >
+
+}
+END -- gr1193
+Grid gr1194
+{
+ [more                                                                ]
+
+}
+END -- gr1194
+END -- VBox1
+END -- atmr253
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit tsg01=formonly.tsg01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit tsg06=formonly.tsg06 type CHAR, action=controlp, tabIndex=2, image="zoom";
+DateEdit tsg02=formonly.tsg02 type DATE, tabIndex=3;
+ButtonEdit tsg03=formonly.tsg03 type CHAR, action=controlp, tabIndex=4, image="zoom";
+DateEdit tsg17=formonly.tsg17 type DATE, tabIndex=5;
+DateEdit tsg18=formonly.tsg18 type DATE, tabIndex=6;
+ComboBox tsg05=formonly.tsg05 type CHAR, tabIndex=7, noEntry, items=(("1", "Issue"),("2", "Confirmed"),("3", "Posted"),("4", "voided"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tsg01,formonly.tsg06,formonly.tsg02,formonly.tsg03,formonly.tsg17,formonly.tsg18,formonly.tsg05,formonly.more)
+END -- INSTRUCTIONS
+

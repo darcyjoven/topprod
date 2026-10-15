@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri056_b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"ghri056_b")
+VBox VBox2
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox1
+Grid Grid1
+{
+ <T table1                                                                                                                                                            >
+ [hrcd01  |hrcd01_name |hrcd11     |hrcd09  |hrcd09_name |hrcd02  |hrcd03  |hrcd04  |hrcd05  |hrcd06  |hrcd07  |hrcd08  |hrcdconf|hrcd10  |hrcd12              ]
+ [hrcd01  |hrcd01_name |hrcd11     |hrcd09  |hrcd09_name |hrcd02  |hrcd03  |hrcd04  |hrcd05  |hrcd06  |hrcd07  |hrcd08  |hrcdconf|hrcd10  |hrcd12              ]
+ [hrcd01  |hrcd01_name |hrcd11     |hrcd09  |hrcd09_name |hrcd02  |hrcd03  |hrcd04  |hrcd05  |hrcd06  |hrcd07  |hrcd08  |hrcdconf|hrcd10  |hrcd12              ]
+ [hrcd01  |hrcd01_name |hrcd11     |hrcd09  |hrcd09_name |hrcd02  |hrcd03  |hrcd04  |hrcd05  |hrcd06  |hrcd07  |hrcd08  |hrcdconf|hrcd10  |hrcd12              ]
+ [hrcd01  |hrcd01_name |hrcd11     |hrcd09  |hrcd09_name |hrcd02  |hrcd03  |hrcd04  |hrcd05  |hrcd06  |hrcd07  |hrcd08  |hrcdconf|hrcd10  |hrcd12              ]
+
+ <                                                                                                                                                                    >
+
+}
+END -- Grid1
+Grid Grid2
+{
+
+ -------- Rows [cnt ] --------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Page1
+END -- Folder1
+END -- VBox2
+END -- ghri056_b
+
+ATTRIBUTES
+Table table1:table1;
+ButtonEdit hrcd01=formonly.hrcd01 type CHAR, action=controlp, tabIndex=1, title=%"hrcd01", not null, required, image="zoom";
+Edit hrcd01_name=formonly.hrcd01_name type CHAR, tabIndex=2, title=%"hrcd01_name", noEntry;
+ComboBox hrcd11=formonly.hrcd11 type CHAR, tabIndex=3, title=%"hrcd11", items=(("1", %"001"),("2", %"002"),("3", %"003"),("4", %"004"));
+ButtonEdit hrcd09=formonly.hrcd09 type CHAR, action=controlp, tabIndex=4, title=%"hrcd09", not null, required, image="zoom";
+Edit hrcd09_name=formonly.hrcd09_name type CHAR, tabIndex=5, title=%"hrcd09_name", noEntry;
+DateEdit hrcd02=formonly.hrcd02 type DATE, tabIndex=6, title=%"hrcd02", not null, required;
+Edit hrcd03=formonly.hrcd03 type CHAR, tabIndex=7, title=%"hrcd03", picture="XX:XX";
+DateEdit hrcd04=formonly.hrcd04 type DATE, tabIndex=8, title=%"hrcd04";
+Edit hrcd05=formonly.hrcd05 type CHAR, tabIndex=9, title=%"hrcd05", picture="XX:XX";
+Edit hrcd06=formonly.hrcd06 type CHAR, tabIndex=10, title=%"hrcd06";
+ComboBox hrcd07=formonly.hrcd07 type CHAR, tabIndex=11, title=%"hrcd07", items=(("001", %"001"),("002", %"002"),("003", %"003"),("004", %"004"),("005", %"005"));
+CheckBox hrcd08=formonly.hrcd08 type CHAR, tabIndex=12, title=%"hrcd08", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox hrcdconf=formonly.hrcdconf type CHAR, tabIndex=13, title=%"hrcdconf", noEntry, items=(("Y", %"Y"),("N", %"N"),("X", %"X"));
+Edit hrcd10=formonly.hrcd10 type CHAR, tabIndex=14, title=%"hrcd10", noEntry, not null, required;
+TextEdit hrcd12=formonly.hrcd12 type CHAR, tabIndex=15, title=%"hrcd12";
+Edit cnt=formonly.cnt type CHAR, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrcd(formonly.hrcd01,formonly.hrcd01_name,formonly.hrcd11,formonly.hrcd09,formonly.hrcd09_name,formonly.hrcd02,formonly.hrcd03,formonly.hrcd04,formonly.hrcd05,formonly.hrcd06,formonly.hrcd07,formonly.hrcd08,formonly.hrcdconf,formonly.hrcd10,formonly.hrcd12)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

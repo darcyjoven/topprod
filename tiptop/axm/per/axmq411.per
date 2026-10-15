@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq411.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axmq411")
+VBox vb2
+Folder Main
+Page Page1(text=%"Main")
+Grid gr1
+{
+ Item No.    [oeb04               ]
+ Source No.  [ima08               ]
+ Item Name   [ima02                         ]
+ Item Spe.   [ima021                        ]
+
+}
+END -- gr1
+END -- Page1
+END -- Main
+Table s_oeb
+{
+[oea01          |oea49        |oea03     |occ02            |oeb15         |oeb05   |oeb12   |oea23    |oea21    |oea211   |oea213|oeb13      |oeb916       |oeb917       ]
+[oea01          |oea49        |oea03     |occ02            |oeb15         |oeb05   |oeb12   |oea23    |oea21    |oea211   |oea213|oeb13      |oeb916       |oeb917       ]
+[oea01          |oea49        |oea03     |occ02            |oeb15         |oeb05   |oeb12   |oea23    |oea21    |oea211   |oea213|oeb13      |oeb916       |oeb917       ]
+[oea01          |oea49        |oea03     |occ02            |oeb15         |oeb05   |oeb12   |oea23    |oea21    |oea211   |oea213|oeb13      |oeb916       |oeb917       ]
+[oea01          |oea49        |oea03     |occ02            |oeb15         |oeb05   |oeb12   |oea23    |oea21    |oea211   |oea213|oeb13      |oeb916       |oeb917       ]
+[oea01          |oea49        |oea03     |occ02            |oeb15         |oeb05   |oeb12   |oea23    |oea21    |oea211   |oea213|oeb13      |oeb916       |oeb917       ]
+[oea01          |oea49        |oea03     |occ02            |oeb15         |oeb05   |oeb12   |oea23    |oea21    |oea211   |oea213|oeb13      |oeb916       |oeb917       ]
+[oea01          |oea49        |oea03     |occ02            |oeb15         |oeb05   |oeb12   |oea23    |oea21    |oea211   |oea213|oeb13      |oeb916       |oeb917       ]
+[oea01          |oea49        |oea03     |occ02            |oeb15         |oeb05   |oeb12   |oea23    |oea21    |oea211   |oea213|oeb13      |oeb916       |oeb917       ]
+[oea01          |oea49        |oea03     |occ02            |oeb15         |oeb05   |oeb12   |oea23    |oea21    |oea211   |oea213|oeb13      |oeb916       |oeb917       ]
+
+}
+END -- s_oeb
+Grid gr2
+{
+
+ ----- Rows  [cnt   ] /  [cn2     ]
+
+}
+END -- gr2
+END -- vb2
+END -- axmq411
+
+TABLES
+occ_file,
+ima_file,
+oeb_file,
+oea_file
+ATTRIBUTES
+ButtonEdit oeb04=oeb_file.oeb04, action=controlp, tabIndex=1, image="zoom.png";
+ComboBox ima08=ima_file.ima08, tabIndex=2, items=(("A", "Family Product"),("C", "Configurable Product"),("D", "Feture"),("K", "Kit"),("M", "Make Product"),("P", "Purchase"),("R", "Routable"),("S", "Subcontract"),("T", "FAS Product"),("U", "Manufactured Mass Item"),("V", "Purchased Mass Item"),("X", "Phantom"),("Z", "Miscellaneous"));
+Edit ima02=ima_file.ima02, tabIndex=3;
+Edit ima021=ima_file.ima021, tabIndex=4;
+Edit oea01=oea_file.oea01, tabIndex=5, title="Order No.";
+ComboBox oea49=oea_file.oea49, tabIndex=6, title="Status", items=(("0", "Open"),("1", "Approved"),("2", "Closing"),("R", "Approving Return"),("S", "Approving"),("W", "Cancel"));
+Edit oea03=oea_file.oea03, tabIndex=7, title="Cust.No.";
+Edit occ02=occ_file.occ02, tabIndex=8, title="Abbr.";
+DateEdit oeb15=oeb_file.oeb15, tabIndex=9, title="Shipping Date";
+Edit oeb05=oeb_file.oeb05, tabIndex=10, title="Unit";
+Edit oeb12=oeb_file.oeb12, tabIndex=11, title="SO Qty";
+Edit oea23=oea_file.oea23, tabIndex=12, title="Currency";
+Edit oea21=oea_file.oea21, tabIndex=13, title="Tax Code";
+Edit oea211=oea_file.oea211, tabIndex=14, title="Tax Rate";
+CheckBox oea213=oea_file.oea213, tabIndex=15, title="Tax?", valueChecked = "Y", valueUnchecked = "N";
+Edit oeb13=oeb_file.oeb13, tabIndex=16, title="Unit Price";
+Edit oeb916=oeb_file.oeb916, tabIndex=17, title="Pricing Unit";
+Edit oeb917=oeb_file.oeb917, tabIndex=18, title="Pricing Qty";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oeb(oea_file.oea01,oea_file.oea49,oea_file.oea03,occ_file.occ02,oeb_file.oeb15,oeb_file.oeb05,oeb_file.oeb12,oea_file.oea23,oea_file.oea21,oea_file.oea211,oea_file.oea213,oeb_file.oeb13,oeb_file.oeb916,oeb_file.oeb917)
+SCREEN RECORD Undefined(oeb_file.oeb04,ima_file.ima08,ima_file.ima02,ima_file.ima021,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

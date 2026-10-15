@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt900_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglt900_1")
+VBox VBox1
+Folder pc791
+Page page01(text="Main")
+HBox HBox1
+Grid gr3469
+{
+ Period QBE   [tia01 ][tia0] - [tia03 ][tia1]
+ Book No.     [tia05     ]
+ D/C          [tia07     ]
+ Titl         [tia06                   ][aag02                        ]
+}
+END -- gr3469
+END -- HBox1
+END -- page01
+END -- pc791
+Table s_tib
+{
+[aba02      |tib06      |tib07  |abb04                   |tib08     |tib09     ]
+[aba02      |tib06      |tib07  |abb04                   |tib08     |tib09     ]
+[aba02      |tib06      |tib07  |abb04                   |tib08     |tib09     ]
+[aba02      |tib06      |tib07  |abb04                   |tib08     |tib09     ]
+[aba02      |tib06      |tib07  |abb04                   |tib08     |tib09     ]
+[aba02      |tib06      |tib07  |abb04                   |tib08     |tib09     ]
+[aba02      |tib06      |tib07  |abb04                   |tib08     |tib09     ]
+[aba02      |tib06      |tib07  |abb04                   |tib08     |tib09     ]
+[aba02      |tib06      |tib07  |abb04                   |tib08     |tib09     ]
+[aba02      |tib06      |tib07  |abb04                   |tib08     |tib09     ]
+
+}
+END -- s_tib
+Grid gr3470
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr3470
+END -- VBox1
+END -- gglt900_1
+
+TABLES
+tib_file,
+abb_file,
+aba_file
+ATTRIBUTES
+Edit tia01=formonly.tia01 type CHAR, tabIndex=1, noEntry;
+Edit tia0=formonly.tia02 type CHAR, tabIndex=2, noEntry;
+Edit tia03=formonly.tia03 type CHAR, tabIndex=3, noEntry;
+Edit tia1=formonly.tia04 type CHAR, tabIndex=4, noEntry;
+Edit tia05=formonly.tia05 type CHAR, tabIndex=5, noEntry;
+Edit tia07=formonly.tia07 type CHAR, tabIndex=6, noEntry;
+Edit tia06=formonly.tia06 type CHAR, tabIndex=7, noEntry;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=8, noEntry;
+Edit aba02=aba_file.aba02, tabIndex=9, title="Vou Date", noEntry;
+Edit tib06=tib_file.tib06, tabIndex=10, title="Voucher#", noEntry;
+Edit tib07=tib_file.tib07, tabIndex=11, title="Ln #", noEntry;
+Edit abb04=abb_file.abb04, tabIndex=12, title="Memo", noEntry;
+Edit tib08=tib_file.tib08, tabIndex=13, title="Amt", noEntry;
+ButtonEdit tib09=tib_file.tib09, action=controlp, tabIndex=14, title="Cash VarCd", image="zoom", comment="<^P>Qry Cash VarCd";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tib(aba_file.aba02,tib_file.tib06,tib_file.tib07,abb_file.abb04,tib_file.tib08,tib_file.tib09)
+SCREEN RECORD Undefined(formonly.tia01,formonly.tia02,formonly.tia03,formonly.tia04,formonly.tia05,formonly.tia07,formonly.tia06,formonly.aag02,formonly.cn2)
+END -- INSTRUCTIONS
+

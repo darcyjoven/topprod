@@ -1,0 +1,33 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armt310_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armt310_g")
+Grid gr251
+{
+ <G group01                                           >
+  RMA No.             [rmd01                         ]
+  RMA Line No.        [rmd02                         ]
+  Item No.            [rmd04                         ]
+ <                                                    >
+
+}
+END -- gr251
+END -- armt310_g
+
+TABLES
+rmd_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit rmd01=rmd_file.rmd01, tabIndex=1;
+Edit rmd02=rmd_file.rmd02, tabIndex=2;
+Edit rmd04=rmd_file.rmd04, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rmd_file.rmd01,rmd_file.rmd02,rmd_file.rmd04)
+END -- INSTRUCTIONS
+

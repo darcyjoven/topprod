@@ -1,0 +1,143 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci110")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1639
+{
+  Product No.         [ecb01                         ]
+  P/N                 [ima02                         ]
+  P/N Desc.           [ima021                        ]
+  Routing Code        [ecb02     ]
+  Process Code        [ecb012    ]
+                      [ecu014                     ]
+
+}
+END -- gr1639
+Grid gr1640
+{
+ Routing S/N         [ecb03     ]
+ Task No.            [ecb06     ]
+ Task Desc.          [ecb17               ]
+ Workstation         [ecb08     ]
+ W/S Desc.           [eca02               ]
+
+
+}
+END -- gr1640
+END -- HBox1
+END -- page01
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[ecbud01                       ] userdefined_field07[ecbud07        ] userdefined_field13[ecbud13        ]
+                    [                              ] userdefined_field08[ecbud08        ] userdefined_field14[ecbud14        ]
+ userdefined_field02[ecbud02        ]                userdefined_field09[ecbud09        ] userdefined_field15[ecbud15        ]
+ userdefined_field03[ecbud03        ]                userdefined_field10[ecbud10        ]
+ userdefined_field04[ecbud04        ]                userdefined_field11[ecbud11        ]
+ userdefined_field05[ecbud05        ]                userdefined_field12[ecbud12        ]
+ userdefined_field06[ecbud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_eco
+{
+[eco04     |rpf02               |rpf07        |eco05      |eco06       |eco07 |eco08     |ecoud01   |ecoud02   |ecoud03    |ecoud04    |ecoud05    |ecoud06    |ecoud07    |ecoud08    |ecoud09    |ecoud10    |ecoud11   |ecoud12  |ecoud13   |ecoud14   |ecoud15    ]
+[eco04     |rpf02               |rpf07        |eco05      |eco06       |eco07 |eco08     |ecoud01   |ecoud02   |ecoud03    |ecoud04    |ecoud05    |ecoud06    |ecoud07    |ecoud08    |ecoud09    |ecoud10    |ecoud11   |ecoud12  |ecoud13   |ecoud14   |ecoud15    ]
+[eco04     |rpf02               |rpf07        |eco05      |eco06       |eco07 |eco08     |ecoud01   |ecoud02   |ecoud03    |ecoud04    |ecoud05    |ecoud06    |ecoud07    |ecoud08    |ecoud09    |ecoud10    |ecoud11   |ecoud12  |ecoud13   |ecoud14   |ecoud15    ]
+[eco04     |rpf02               |rpf07        |eco05      |eco06       |eco07 |eco08     |ecoud01   |ecoud02   |ecoud03    |ecoud04    |ecoud05    |ecoud06    |ecoud07    |ecoud08    |ecoud09    |ecoud10    |ecoud11   |ecoud12  |ecoud13   |ecoud14   |ecoud15    ]
+[eco04     |rpf02               |rpf07        |eco05      |eco06       |eco07 |eco08     |ecoud01   |ecoud02   |ecoud03    |ecoud04    |ecoud05    |ecoud06    |ecoud07    |ecoud08    |ecoud09    |ecoud10    |ecoud11   |ecoud12  |ecoud13   |ecoud14   |ecoud15    ]
+[eco04     |rpf02               |rpf07        |eco05      |eco06       |eco07 |eco08     |ecoud01   |ecoud02   |ecoud03    |ecoud04    |ecoud05    |ecoud06    |ecoud07    |ecoud08    |ecoud09    |ecoud10    |ecoud11   |ecoud12  |ecoud13   |ecoud14   |ecoud15    ]
+[eco04     |rpf02               |rpf07        |eco05      |eco06       |eco07 |eco08     |ecoud01   |ecoud02   |ecoud03    |ecoud04    |ecoud05    |ecoud06    |ecoud07    |ecoud08    |ecoud09    |ecoud10    |ecoud11   |ecoud12  |ecoud13   |ecoud14   |ecoud15    ]
+[eco04     |rpf02               |rpf07        |eco05      |eco06       |eco07 |eco08     |ecoud01   |ecoud02   |ecoud03    |ecoud04    |ecoud05    |ecoud06    |ecoud07    |ecoud08    |ecoud09    |ecoud10    |ecoud11   |ecoud12  |ecoud13   |ecoud14   |ecoud15    ]
+[eco04     |rpf02               |rpf07        |eco05      |eco06       |eco07 |eco08     |ecoud01   |ecoud02   |ecoud03    |ecoud04    |ecoud05    |ecoud06    |ecoud07    |ecoud08    |ecoud09    |ecoud10    |ecoud11   |ecoud12  |ecoud13   |ecoud14   |ecoud15    ]
+[eco04     |rpf02               |rpf07        |eco05      |eco06       |eco07 |eco08     |ecoud01   |ecoud02   |ecoud03    |ecoud04    |ecoud05    |ecoud06    |ecoud07    |ecoud08    |ecoud09    |ecoud10    |ecoud11   |ecoud12  |ecoud13   |ecoud14   |ecoud15    ]
+}
+END -- s_eco
+Grid gr1641
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+
+
+
+
+}
+END -- gr1641
+END -- VBox1
+END -- aeci110
+
+TABLES
+ecb_file,
+eco_file,
+ecu_file
+ATTRIBUTES
+Edit ecb01=ecb_file.ecb01, tabIndex=1, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit ecb02=ecb_file.ecb02, tabIndex=4, not null, required;
+Edit ecb012=ecb_file.ecb012, tabIndex=355, not null, required;
+Edit ecu014=ecu_file.ecu014, tabIndex=356;
+Edit ecb03=ecb_file.ecb03, tabIndex=5, not null, required;
+Edit ecb06=ecb_file.ecb06, tabIndex=6, noEntry;
+Edit ecb17=ecb_file.ecb17, tabIndex=7, noEntry;
+Edit ecb08=ecb_file.ecb08, tabIndex=8, noEntry;
+Edit eca02=formonly.eca02 type CHAR, tabIndex=9, noEntry;
+TextEdit ecbud01=ecb_file.ecbud01, tabIndex=326, stretch=NONE;
+Edit ecbud07=ecb_file.ecbud07, tabIndex=327;
+DateEdit ecbud13=ecb_file.ecbud13, tabIndex=328;
+Edit ecbud08=ecb_file.ecbud08, tabIndex=329;
+DateEdit ecbud14=ecb_file.ecbud14, tabIndex=330;
+Edit ecbud02=ecb_file.ecbud02, tabIndex=331;
+Edit ecbud09=ecb_file.ecbud09, tabIndex=332;
+DateEdit ecbud15=ecb_file.ecbud15, tabIndex=333;
+Edit ecbud03=ecb_file.ecbud03, tabIndex=334;
+Edit ecbud10=ecb_file.ecbud10, tabIndex=335;
+Edit ecbud04=ecb_file.ecbud04, tabIndex=336;
+Edit ecbud11=ecb_file.ecbud11, tabIndex=337;
+Edit ecbud05=ecb_file.ecbud05, tabIndex=338;
+Edit ecbud12=ecb_file.ecbud12, tabIndex=339;
+Edit ecbud06=ecb_file.ecbud06, tabIndex=340;
+ButtonEdit eco04=eco_file.eco04, action=controlp, tabIndex=10, title="Resource#", not null, required, image="zoom", comment="<^P> Qry Resource No. ";
+Edit rpf02=formonly.rpf02 type VARCHAR, tabIndex=11, title="Description", noEntry;
+CheckBox rpf07=formonly.rpf07 type VARCHAR, tabIndex=12, title="Consumption", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit eco05=eco_file.eco05, tabIndex=13, title="Fixed Use", not null, required;
+Edit eco06=eco_file.eco06, tabIndex=14, title="Variable Use", not null, required;
+Edit eco07=eco_file.eco07, tabIndex=15, title="Lots";
+Edit eco08=eco_file.eco08, tabIndex=16, title="Memo";
+TextEdit ecoud01=eco_file.ecoud01, tabIndex=325, title="ecoud01", stretch=NONE;
+Edit ecoud02=eco_file.ecoud02, tabIndex=341, title="ecoud02";
+Edit ecoud03=eco_file.ecoud03, tabIndex=342, title="ecoud03";
+Edit ecoud04=eco_file.ecoud04, tabIndex=343, title="ecoud04";
+Edit ecoud05=eco_file.ecoud05, tabIndex=344, title="ecoud05";
+Edit ecoud06=eco_file.ecoud06, tabIndex=345, title="ecoud06";
+Edit ecoud07=eco_file.ecoud07, tabIndex=346, title="ecoud07";
+Edit ecoud08=eco_file.ecoud08, tabIndex=347, title="ecoud08";
+Edit ecoud09=eco_file.ecoud09, tabIndex=348, title="ecoud09";
+Edit ecoud10=eco_file.ecoud10, tabIndex=349, title="ecoud10";
+Edit ecoud11=eco_file.ecoud11, tabIndex=350, title="ecoud11";
+Edit ecoud12=eco_file.ecoud12, tabIndex=351, title="ecoud12";
+Edit ecoud13=eco_file.ecoud13, tabIndex=352, title="ecoud13";
+Edit ecoud14=eco_file.ecoud14, tabIndex=353, title="ecoud14";
+Edit ecoud15=eco_file.ecoud15, tabIndex=354, title="ecoud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_eco(eco_file.eco04,formonly.rpf02,formonly.rpf07,eco_file.eco05,eco_file.eco06,eco_file.eco07,eco_file.eco08,eco_file.ecoud01,eco_file.ecoud02,eco_file.ecoud03,eco_file.ecoud04,eco_file.ecoud05,eco_file.ecoud06,eco_file.ecoud07,eco_file.ecoud08,eco_file.ecoud09,eco_file.ecoud10,eco_file.ecoud11,eco_file.ecoud12,eco_file.ecoud13,eco_file.ecoud14,eco_file.ecoud15)
+SCREEN RECORD Undefined(ecb_file.ecb01,formonly.ima02,formonly.ima021,ecb_file.ecb02,ecb_file.ecb012,ecu_file.ecu014,ecb_file.ecb03,ecb_file.ecb06,ecb_file.ecb17,ecb_file.ecb08,formonly.eca02,ecb_file.ecbud01,ecb_file.ecbud07,ecb_file.ecbud13,ecb_file.ecbud08,ecb_file.ecbud14,ecb_file.ecbud02,ecb_file.ecbud09,ecb_file.ecbud15,ecb_file.ecbud03,ecb_file.ecbud10,ecb_file.ecbud04,ecb_file.ecbud11,ecb_file.ecbud05,ecb_file.ecbud12,ecb_file.ecbud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

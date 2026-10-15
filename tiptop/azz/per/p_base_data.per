@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_base_data.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi040")
+VBox vb2_
+Folder pc832
+Page page01(text="Page01")
+Table s_azs
+{
+[azs01         |gat03                         |azs02     |azs03     |azs04     ]
+[azs01         |gat03                         |azs02     |azs03     |azs04     ]
+[azs01         |gat03                         |azs02     |azs03     |azs04     ]
+[azs01         |gat03                         |azs02     |azs03     |azs04     ]
+[azs01         |gat03                         |azs02     |azs03     |azs04     ]
+[azs01         |gat03                         |azs02     |azs03     |azs04     ]
+[azs01         |gat03                         |azs02     |azs03     |azs04     ]
+[azs01         |gat03                         |azs02     |azs03     |azs04     ]
+[azs01         |gat03                         |azs02     |azs03     |azs04     ]
+[azs01         |gat03                         |azs02     |azs03     |azs04     ]
+
+}
+END -- s_azs
+END -- page01
+END -- pc832
+Grid gr4618
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4618
+END -- vb2_
+END -- p_base_data
+
+TABLES
+azs_file
+ATTRIBUTES
+ButtonEdit azs01=azs_file.azs01, action=controlp, tabIndex=1, title="Table No.", not null, image="zoom";
+Edit gat03=formonly.gat03 type VARCHAR, tabIndex=2, title="Table Name", noEntry;
+CheckBox azs02=azs_file.azs02, tabIndex=3, title="std", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox azs03=azs_file.azs03, tabIndex=4, title="icd", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox azs04=azs_file.azs04, tabIndex=5, title="slk", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azs(azs_file.azs01,formonly.gat03,azs_file.azs02,azs_file.azs03,azs_file.azs04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

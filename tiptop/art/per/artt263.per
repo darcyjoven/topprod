@@ -1,0 +1,153 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt263.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artt263")
+VBox vb5
+Folder pc3
+Page Page5(text=%"Main")
+HBox hb2
+Grid gr1
+{
+
+ Returning Note No.[ruq01             ]
+ Lending Note No.  [ruq02             ]
+ Lend Date         [ruq03             ]
+ Ruq04             [ruq04             ]
+ By Staff          [ruq05             |ruq05_desc     ]
+
+
+}
+END -- gr1
+Grid gr2
+{
+
+ Customer No.    [ruq11              |ruq11_desc    ]
+ Customer Name   [ruq06              ]
+ Customer TEL    [ruq07              ]
+ Certificate Type[ruq08              ]
+ Certificate No. [ruq09              ]
+
+
+}
+END -- gr2
+Grid gr3
+{
+
+ Approval Code[ruqconf            ][im4     ]
+ Approval Date[ruqcond            ][        ]
+ Approver     [ruqconu            |ruqconu_desc    ]
+ Institution  [ruqplant           |ruqplant_desc   ]
+[ruq12    ]
+ Memo         [ruq10                               ]
+
+}
+END -- gr3
+END -- hb2
+END -- Page5
+Page Page6(text=%"Info")
+Grid gr5
+{
+
+ Record Owner[ruquser   ]  Last Modified by  [ruqmodu     ]  Data Valid Code[ruqacti     ]  Record Orig.[ruqoriu      ]
+ Department  [ruqgrup   ]  Create/Modify Date[ruqdate     ]  Create Date    [ruqcrat     ]  Dept Orig.  [ruqorig      ]
+
+
+
+}
+END -- gr5
+END -- Page6
+END -- pc3
+Table s_rur
+{
+[rur02   |rur03   |rur03_de|rur04   |rur04_de|rur05   |rur06   |rur06_de|rur07   |rur08   |rur09   |rur10   |rur11   |rur12   |rur13   |rur14   |rur15   |rur16  |rur17 |rur18  |rur19 |rur20 |rur21 ]
+[rur02   |rur03   |rur03_de|rur04   |rur04_de|rur05   |rur06   |rur06_de|rur07   |rur08   |rur09   |rur10   |rur11   |rur12   |rur13   |rur14   |rur15   |rur16  |rur17 |rur18  |rur19 |rur20 |rur21 ]
+[rur02   |rur03   |rur03_de|rur04   |rur04_de|rur05   |rur06   |rur06_de|rur07   |rur08   |rur09   |rur10   |rur11   |rur12   |rur13   |rur14   |rur15   |rur16  |rur17 |rur18  |rur19 |rur20 |rur21 ]
+[rur02   |rur03   |rur03_de|rur04   |rur04_de|rur05   |rur06   |rur06_de|rur07   |rur08   |rur09   |rur10   |rur11   |rur12   |rur13   |rur14   |rur15   |rur16  |rur17 |rur18  |rur19 |rur20 |rur21 ]
+[rur02   |rur03   |rur03_de|rur04   |rur04_de|rur05   |rur06   |rur06_de|rur07   |rur08   |rur09   |rur10   |rur11   |rur12   |rur13   |rur14   |rur15   |rur16  |rur17 |rur18  |rur19 |rur20 |rur21 ]
+[rur02   |rur03   |rur03_de|rur04   |rur04_de|rur05   |rur06   |rur06_de|rur07   |rur08   |rur09   |rur10   |rur11   |rur12   |rur13   |rur14   |rur15   |rur16  |rur17 |rur18  |rur19 |rur20 |rur21 ]
+[rur02   |rur03   |rur03_de|rur04   |rur04_de|rur05   |rur06   |rur06_de|rur07   |rur08   |rur09   |rur10   |rur11   |rur12   |rur13   |rur14   |rur15   |rur16  |rur17 |rur18  |rur19 |rur20 |rur21 ]
+[rur02   |rur03   |rur03_de|rur04   |rur04_de|rur05   |rur06   |rur06_de|rur07   |rur08   |rur09   |rur10   |rur11   |rur12   |rur13   |rur14   |rur15   |rur16  |rur17 |rur18  |rur19 |rur20 |rur21 ]
+[rur02   |rur03   |rur03_de|rur04   |rur04_de|rur05   |rur06   |rur06_de|rur07   |rur08   |rur09   |rur10   |rur11   |rur12   |rur13   |rur14   |rur15   |rur16  |rur17 |rur18  |rur19 |rur20 |rur21 ]
+
+}
+END -- s_rur
+Grid gr7
+{
+
+       ---------Rows[idx       ]/[cnt       ]--Item[cn2       ]---------
+
+}
+END -- gr7
+END -- vb5
+END -- Form3
+
+TABLES
+rur_file,
+ruq_file
+ATTRIBUTES
+ButtonEdit ruq01=ruq_file.ruq01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ButtonEdit ruq02=ruq_file.ruq02, action=controlp, tabIndex=49, not null, image="zoom.png";
+DateEdit ruq03=ruq_file.ruq03, tabIndex=2, not null;
+Edit ruq04=ruq_file.ruq04, tabIndex=3, noEntry;
+ButtonEdit ruq05=ruq_file.ruq05, action=controlp, tabIndex=4, image="zoom.png";
+Edit ruq05_desc=formonly.ruq05_desc type VARCHAR, tabIndex=5, noEntry;
+ButtonEdit ruq11=ruq_file.ruq11, action=controlp, tabIndex=11, not null, image="zoom.png";
+Edit ruq11_desc=formonly.ruq11_desc type CHAR, tabIndex=12, noEntry;
+Edit ruq06=ruq_file.ruq06, tabIndex=6;
+Edit ruq07=ruq_file.ruq07, tabIndex=7;
+ComboBox ruq08=ruq_file.ruq08, tabIndex=8;
+Edit ruq09=ruq_file.ruq09, tabIndex=10;
+ComboBox ruqconf=ruq_file.ruqconf, tabIndex=13, default = "N", noEntry;
+IMAGE im4=formonly.im4 type CHAR;
+DateEdit ruqcond=ruq_file.ruqcond, tabIndex=14, noEntry;
+ButtonEdit ruqconu=ruq_file.ruqconu, action=controlp, tabIndex=15, noEntry, image="zoom.png";
+Edit ruqconu_desc=formonly.ruqconu_desc type VARCHAR, tabIndex=16, noEntry;
+ButtonEdit ruqplant=ruq_file.ruqplant, action=controlp, tabIndex=17, image="zoom.png";
+Edit ruqplant_desc=formonly.ruqplant_desc type CHAR, tabIndex=18, noEntry;
+CheckBox ruq12=ruq_file.ruq12, tabIndex=53, default = "N", text="Posted", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit ruq10=ruq_file.ruq10, tabIndex=9;
+Edit ruquser=ruq_file.ruquser, tabIndex=19, noEntry;
+Edit ruqmodu=ruq_file.ruqmodu, tabIndex=21, noEntry;
+Edit ruqacti=ruq_file.ruqacti, tabIndex=24, default = "Y", noEntry;
+Edit ruqoriu=ruq_file.ruqoriu, tabIndex=25, noEntry;
+Edit ruqgrup=ruq_file.ruqgrup, tabIndex=20, noEntry;
+DateEdit ruqdate=ruq_file.ruqdate, tabIndex=22, noEntry;
+DateEdit ruqcrat=ruq_file.ruqcrat, tabIndex=23, noEntry;
+Edit ruqorig=ruq_file.ruqorig, tabIndex=26, noEntry;
+Edit rur02=rur_file.rur02, tabIndex=27, title="Line No.", not null;
+ButtonEdit rur03=rur_file.rur03, tabIndex=28, title="Item No.", image="zoom.png";
+Edit rur03_de=formonly.rur03_desc type VARCHAR, tabIndex=29, title="Product Name", noEntry;
+ButtonEdit rur04=rur_file.rur04, action=controlp, tabIndex=30, title="Inventory Unit", noEntry, image="zoom.png";
+Edit rur04_de=formonly.rur04_desc type VARCHAR, tabIndex=31, title="Dept Name", noEntry;
+Edit rur05=rur_file.rur05, tabIndex=32, title="Product Barcode", not null;
+ButtonEdit rur06=rur_file.rur06, action=controlp, tabIndex=33, title="Rur06", not null, image="zoom.png";
+Edit rur06_de=formonly.rur06_desc type VARCHAR, tabIndex=34, title="Dept Name", noEntry;
+Edit rur07=rur_file.rur07, tabIndex=35, title="Unit Conversion Rate", noEntry;
+Edit rur08=rur_file.rur08, tabIndex=36, title="Unit Price", not null;
+ButtonEdit rur09=rur_file.rur09, action=controlp, tabIndex=37, title="WH", not null, image="zoom.png";
+ButtonEdit rur10=rur_file.rur10, action=controlp, tabIndex=38, title="Location", image="zoom.png";
+ButtonEdit rur11=rur_file.rur11, action=controlp, tabIndex=39, title="Lot No.", image="zoom.png";
+Edit rur12=rur_file.rur12, tabIndex=40, title="Lent Qty", not null;
+Edit rur13=rur_file.rur13, tabIndex=41, title="Paid QTY";
+Edit rur14=rur_file.rur14, tabIndex=54, default = "0", title=%"Rur14", not null;
+Edit rur15=rur_file.rur15, tabIndex=42, title="Amount", noEntry;
+ButtonEdit rur16=rur_file.rur16, action=controlp, tabIndex=43, title="Rur16", image="zoom.png";
+ButtonEdit rur17=rur_file.rur17, action=controlp, tabIndex=44, title="Rur17", image="zoom.png";
+ButtonEdit rur18=rur_file.rur18, action=controlp, tabIndex=45, title="Rur18", image="zoom.png";
+CheckBox rur19=rur_file.rur19, tabIndex=46, title="Closed?", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rur20=rur_file.rur20, action=controlp, tabIndex=47, title="Reason Code", not null, image="zoom.png";
+Edit rur21=rur_file.rur21, tabIndex=48, title="Memo";
+Edit idx=formonly.idx type CHAR, tabIndex=52, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=50, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=51, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rur(rur_file.rur02,rur_file.rur03,formonly.rur03_desc,rur_file.rur04,formonly.rur04_desc,rur_file.rur05,rur_file.rur06,formonly.rur06_desc,rur_file.rur07,rur_file.rur08,rur_file.rur09,rur_file.rur10,rur_file.rur11,rur_file.rur12,rur_file.rur13,rur_file.rur14,rur_file.rur15,rur_file.rur16,rur_file.rur17,rur_file.rur18,rur_file.rur19,rur_file.rur20,rur_file.rur21)
+SCREEN RECORD Undefined(ruq_file.ruq01,ruq_file.ruq02,ruq_file.ruq03,ruq_file.ruq04,ruq_file.ruq05,formonly.ruq05_desc,ruq_file.ruq11,formonly.ruq11_desc,ruq_file.ruq06,ruq_file.ruq07,ruq_file.ruq08,ruq_file.ruq09,ruq_file.ruqconf,formonly.im4,ruq_file.ruqcond,ruq_file.ruqconu,formonly.ruqconu_desc,ruq_file.ruqplant,formonly.ruqplant_desc,ruq_file.ruq12,ruq_file.ruq10,ruq_file.ruquser,ruq_file.ruqmodu,ruq_file.ruqacti,ruq_file.ruqoriu,ruq_file.ruqgrup,ruq_file.ruqdate,ruq_file.ruqcrat,ruq_file.ruqorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

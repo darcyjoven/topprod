@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_loadtodb.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_loadtodb")
+VBox VBox1
+Group group01(text="Table")
+Grid gr3227
+{
+[doc_path                      ] [open_file   ]
+ database        [db_name           ]
+ Table Name      [tab_name          ]
+ Table Used To   [tab_usedto                              ]
+ Upstream File   [up_file                                 ]
+ Downstream File [down_file                               ]
+[file_analyze]
+}
+END -- gr3227
+END -- group01
+Group group02(text="Import Datas")
+Table s_field
+{
+[field_no       |type          |desc                                               ]
+[field_no       |type          |desc                                               ]
+[field_no       |type          |desc                                               ]
+[field_no       |type          |desc                                               ]
+[field_no       |type          |desc                                               ]
+[field_no       |type          |desc                                               ]
+[field_no       |type          |desc                                               ]
+[field_no       |type          |desc                                               ]
+[field_no       |type          |desc                                               ]
+[field_no       |type          |desc                                               ]
+
+}
+END -- s_field
+END -- group02
+END -- VBox1
+END -- p_loadtodb
+
+ATTRIBUTES
+Edit doc_path=formonly.doc_path type CHAR, tabIndex=1, not null, required, scroll;
+Button open_file:open_file, text="Open File";
+ButtonEdit db_name=formonly.db_name type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Database Name";
+ButtonEdit tab_name=formonly.tab_name type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Table Name";
+Edit tab_usedto=formonly.tab_usedto type CHAR, tabIndex=4;
+Edit up_file=formonly.up_file type CHAR, tabIndex=5;
+Edit down_file=formonly.down_file type CHAR, tabIndex=6;
+Button file_analyze:file_analyze, text="File Analyze";
+Edit field_no=formonly.field_no type CHAR, tabIndex=7, title="Field No.", noEntry;
+Edit type=formonly.type type CHAR, tabIndex=8, title="Type", noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=9, title="Description", noEntry, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_field(formonly.field_no,formonly.type,formonly.desc)
+SCREEN RECORD Undefined(formonly.doc_path,formonly.db_name,formonly.tab_name,formonly.tab_usedto,formonly.up_file,formonly.down_file)
+END -- INSTRUCTIONS
+

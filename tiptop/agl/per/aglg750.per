@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglg750.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr750")
+VBox VBox1
+Grid Grid1
+{
+
+ <G group1                                                         >
+  Book No.            [bookno              ]
+ <                                                                 >
+
+}
+END -- Grid1
+Grid gr2753
+{
+ <G group01                                                        >
+  Dept. No.           [abb05               ]
+  Account NO.         [abb03               ]
+  Voucher NO.         [aba01               ]
+ <                                                                 >
+ <G group02                                                        >
+  Voucher Date Period [b_date              ]-[e_date              ]
+ <                                                                 >
+ <G group03                                                        >
+  [a                                                              ]
+  [aag38                                                          ]
+ <                                                                 >
+}
+END -- gr2753
+Grid gr2754
+{
+
+[more                                                        ]
+
+
+}
+END -- gr2754
+END -- VBox1
+END -- aglr750
+
+ATTRIBUTES
+Group group1:Group1, text=%"INPUT";
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Group group01:group01, text="QBE";
+Edit abb05=formonly.abb05 type VARCHAR, tabIndex=1;
+ButtonEdit abb03=formonly.abb03 type VARCHAR, action=controlp, tabIndex=2, required, image="zoom.png";
+Edit aba01=formonly.aba01 type VARCHAR, tabIndex=3;
+Group group02:group02, text="INPUT";
+Edit b_date=formonly.b_date type DATE, tabIndex=4;
+Edit e_date=formonly.e_date type DATE, tabIndex=5;
+Group group03:group03;
+CheckBox a=formonly.a type CHAR, tabIndex=6, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag38=formonly.aag38 type CHAR, tabIndex=8, text="Inter Income Account No.", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,formonly.abb05,formonly.abb03,formonly.aba01,formonly.b_date,formonly.e_date,formonly.a,formonly.aag38,formonly.more)
+END -- INSTRUCTIONS
+

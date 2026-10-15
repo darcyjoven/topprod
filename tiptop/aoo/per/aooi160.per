@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi160.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi160")
+VBox VBox1
+Folder pc845
+Page page01(text="Page01")
+Table s_ged
+{
+[ged01           |ged02                    ]
+[ged01           |ged02                    ]
+[ged01           |ged02                    ]
+[ged01           |ged02                    ]
+[ged01           |ged02                    ]
+[ged01           |ged02                    ]
+[ged01           |ged02                    ]
+[ged01           |ged02                    ]
+[ged01           |ged02                    ]
+[ged01           |ged02                    ]
+
+}
+END -- s_ged
+END -- page01
+END -- pc845
+Grid gr4638
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4638
+END -- VBox1
+END -- aooi160
+
+TABLES
+ged_file
+ATTRIBUTES
+Edit ged01=ged_file.ged01, tabIndex=1, title="Shipping Type", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit ged02=ged_file.ged02, tabIndex=2, title="Shipping Type Desc";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ged(ged_file.ged01,ged_file.ged02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

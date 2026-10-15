@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp307.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimp307")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3070
+{
+ <G group01                                                                     >
+  BR #        [imo01             ]  Vend.Cd             [imo03     ][imo04     ]
+ <                                                                              >
+ <G group02                             ><G group03                             >
+ [a                            ]              [y                            ]
+ <                                      ><                                      >
+
+}
+END -- gr3070
+END -- page01
+END -- folder01
+Table s_imp
+{
+[sure |imp02|imp03                |imp07_d           |qty            ]
+[sure |imp02|imp03                |imp07_d           |qty            ]
+[sure |imp02|imp03                |imp07_d           |qty            ]
+[sure |imp02|imp03                |imp07_d           |qty            ]
+[sure |imp02|imp03                |imp07_d           |qty            ]
+[sure |imp02|imp03                |imp07_d           |qty            ]
+[sure |imp02|imp03                |imp07_d           |qty            ]
+[sure |imp02|imp03                |imp07_d           |qty            ]
+[sure |imp02|imp03                |imp07_d           |qty            ]
+[sure |imp02|imp03                |imp07_d           |qty            ]
+
+}
+END -- s_imp
+Grid gr3071
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3071
+END -- VBox1
+END -- aimp307
+
+TABLES
+imp_file,
+imo_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit imo01=imo_file.imo01, action=controlp, tabIndex=1, image="zoom", comment="Enter a BR No. to Open   <^P> Qry BR no.";
+Edit imo03=formonly.imo03 type CHAR, tabIndex=2, noEntry;
+Edit imo04=formonly.imo04 type CHAR, tabIndex=3, noEntry;
+Group group02:group02;
+CheckBox a=formonly.a type CHAR, tabIndex=4, text="Setting BR been open", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03;
+CheckBox y=formonly.y type CHAR, tabIndex=5, text="Display open data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sure=formonly.sure type VARCHAR, tabIndex=6, title="Sure", color = yellow;
+Edit imp02=imp_file.imp02, tabIndex=7, title="Ln #";
+Edit imp03=imp_file.imp03, tabIndex=8, title="Item #";
+Edit imp07_d=formonly.imp07_d type CHAR, tabIndex=9, title="Cur Sts";
+Edit qty=formonly.qty type CHAR, tabIndex=10, title="Qty of no Rapid";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imp(formonly.sure,imp_file.imp02,imp_file.imp03,formonly.imp07_d,formonly.qty)
+SCREEN RECORD Undefined(imo_file.imo01,formonly.imo03,formonly.imo04,formonly.a,formonly.y,formonly.cn2)
+END -- INSTRUCTIONS
+

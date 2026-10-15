@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_coy.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Document Property Query")
+Grid gr3751
+{
+ <T s_coy                                                                     >
+ [check |coyslip    |coydesc             |coyauno          |coytype          ]
+ [check |coyslip    |coydesc             |coyauno          |coytype          ]
+ [check |coyslip    |coydesc             |coyauno          |coytype          ]
+ [check |coyslip    |coydesc             |coyauno          |coytype          ]
+ [check |coyslip    |coydesc             |coyauno          |coytype          ]
+ [check |coyslip    |coydesc             |coyauno          |coytype          ]
+ [check |coyslip    |coydesc             |coyauno          |coytype          ]
+ [check |coyslip    |coydesc             |coyauno          |coytype          ]
+ [check |coyslip    |coydesc             |coyauno          |coytype          ]
+ [check |coyslip    |coydesc             |coyauno          |coytype          ]
+ <                                                                            >
+
+}
+END -- gr3751
+END -- q_coy
+
+TABLES
+coy_file
+ATTRIBUTES
+Table s_coy:s_coy;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit coyslip=coy_file.coyslip, tabIndex=2, title="Document", noEntry;
+Edit coydesc=coy_file.coydesc, tabIndex=3, title="Document Name", noEntry;
+Edit coyauno=coy_file.coyauno, tabIndex=4, title="Auto Numbering", noEntry;
+Edit coytype=coy_file.coytype, tabIndex=5, title="Document Property", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_coy(formonly.check,coy_file.coyslip,coy_file.coydesc,coy_file.coyauno,coy_file.coytype)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,259 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft720.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft720")
+VBox vb1
+Folder pc168
+Page page01(text="Main")
+HBox hb1
+Grid gr818
+{
+ Register No.        [shh01             ]
+ Register Date       [shh02       ]
+ Register Time       [shh021      ]
+ Location            [shh022      ]
+ Style               [shh08       ]
+ Customer No         [shh04       ]
+ Customer Name       [occ02       ]
+
+
+}
+END -- gr818
+Grid gr819
+{
+ W/O No.       [shh03              ]
+ Product No.   [sfb05                        ]
+ Part Name     [ima02                        ]
+ Spec          [ima021                       ]
+ Process No.   [shh012            ]
+ Task No.      [shh05             |ecm45     ]
+ Routing S/N   [shh06             ]
+
+
+}
+END -- gr819
+Grid gr820
+{
+
+
+ Machine#            [shh07     ]
+ On-Hold             [shh061]
+ On-Hold Desc        [sgg02               ]
+ Confirm             [shh14     ]
+                     [imgmksg]
+                     [       ]
+
+}
+END -- gr820
+END -- hb1
+END -- page01
+Page info(text="Info")
+Grid gr821
+{
+ Record Owner        [shhuser   ]   Last Modified by    [shhmodu   ]
+ Department          [shhgrup   ]   Create/Modify Date  [shhdate   ]
+ Record Orig.        [shhoriu   ]
+ Dept Orig.          [shhorig   ]
+}
+END -- gr821
+END -- info
+END -- pc168
+Folder pc169
+Page page02(text="Error Description")
+Grid gr822
+{
+ <G group01                                                               >
+ [shh111                                                                ]
+ [shh112                                                                ]
+ [shh113                                                                ]
+ <                                                                        >
+ <G group02                                                               >
+  By Employee         [shh101    ]
+  Name                [gen02_1   ]
+  By Department       [shh10     ]
+  Dept Name           [gem02_1   ]
+
+
+ <                                                                        >
+
+}
+END -- gr822
+END -- page02
+Page page03(text="Judge")
+Grid gr823
+{
+ <G group03                                                               >
+ [shh131                                                                ]
+ [shh132                                                                ]
+ <                                                                        >
+ <G group04                                                               >
+  Judged Employee     [shh121    ]
+  Name                [gen02_2   ]
+  Judging Department  [shh12     ]
+  Dept Name           [gem02_2   ]
+
+
+ <                                                                        >
+
+}
+END -- gr823
+END -- page03
+Page page04(text="Confirm Tracing")
+Grid gr824
+{
+ <G group05                                                               >
+ [shh151                                                                ]
+ [shh152                                                                ]
+ <                                                                        >
+ <G group06                                                               >
+  Confirmed By        [shh141    ]
+  Name                [gen02_3   ]
+  Confirmed Date      [shh142    ]
+  Confirmed Time      [shh143    ]
+
+
+ <                                                                        >
+
+}
+END -- gr824
+END -- page04
+Page page05(text="Solution")
+Grid gr825
+{
+ <G group07                                                               >
+ [shh161                                                                ]
+ [shh162                                                                ]
+ [shh163                                                                ]
+ [shh164                                                                ]
+ [shh165                                                                ]
+ <                                                                        >
+ <G group08                                                               >
+ [shh171                                                                ]
+ [shh172                                                                ]
+ [shh173                                                                ]
+ [shh174                                                                ]
+ [shh175                                                                ]
+
+
+ <                                                                        >
+
+}
+END -- gr825
+END -- page05
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[shhud01                       ] userdefined_field07[shhud07        ] userdefined_field13[shhud13        ]
+                    [                              ] userdefined_field08[shhud08        ] userdefined_field14[shhud14        ]
+ userdefined_field02[shhud02        ]                userdefined_field09[shhud09        ] userdefined_field15[shhud15        ]
+ userdefined_field03[shhud03        ]                userdefined_field10[shhud10        ]
+ userdefined_field04[shhud04        ]                userdefined_field11[shhud11        ]
+ userdefined_field05[shhud05        ]                userdefined_field12[shhud12        ]
+ userdefined_field06[shhud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc169
+Grid gr826
+{
+ ---------- Rows [cnt   ] ----------
+
+
+}
+END -- gr826
+END -- vb1
+END -- asft720
+
+TABLES
+shh_file
+ATTRIBUTES
+ButtonEdit shh01=shh_file.shh01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Document Property";
+DateEdit shh02=shh_file.shh02, tabIndex=2, not null, required;
+Edit shh021=shh_file.shh021, tabIndex=3, not null, required, picture="XX:XX:XX";
+Edit shh022=shh_file.shh022, tabIndex=4;
+ComboBox shh08=shh_file.shh08, tabIndex=5, not null, required, comment="1.Check in           2.Check out", items=(("1", "Check in"),("2", "Check out"));
+ButtonEdit shh04=shh_file.shh04, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Customer #";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=7, noEntry;
+ButtonEdit shh03=shh_file.shh03, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Query W/O No.";
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=9, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=10, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=11, noEntry;
+ButtonEdit shh012=formonly.shh012 type CHAR, action=controlp, tabIndex=503, image="zoom";
+ButtonEdit shh05=shh_file.shh05, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Task #  ";
+Edit ecm45=formonly.ecm45 type CHAR, tabIndex=13, noEntry;
+ButtonEdit shh06=shh_file.shh06, action=controlp, tabIndex=14, not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit shh07=shh_file.shh07, tabIndex=15, noEntry;
+ButtonEdit shh061=shh_file.shh061, action=controlp, tabIndex=16, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit sgg02=formonly.sgg02 type CHAR, tabIndex=17, noEntry;
+ComboBox shh14=shh_file.shh14, tabIndex=18, noEntry, not null, required, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit shhuser=shh_file.shhuser, tabIndex=20, noEntry;
+Edit shhmodu=shh_file.shhmodu, tabIndex=21, noEntry;
+Edit shhgrup=shh_file.shhgrup, tabIndex=22, noEntry;
+DateEdit shhdate=shh_file.shhdate, tabIndex=23, noEntry;
+Edit shhoriu=shh_file.shhoriu, tabIndex=501, noEntry;
+Edit shhorig=shh_file.shhorig, tabIndex=502, noEntry;
+Group group01:group01;
+Edit shh111=shh_file.shh111, tabIndex=24;
+Edit shh112=shh_file.shh112, tabIndex=25;
+Edit shh113=shh_file.shh113, tabIndex=26;
+Group group02:group02;
+ButtonEdit shh101=shh_file.shh101, action=controlp, tabIndex=27, image="zoom", comment="<^P>Qry Employee";
+Edit gen02_1=formonly.gen02_1 type CHAR, tabIndex=28;
+ButtonEdit shh10=shh_file.shh10, action=controlp, tabIndex=29, image="zoom", comment="<^P>Query Department";
+Edit gem02_1=formonly.gem02_1 type CHAR, tabIndex=30;
+Group group03:group03;
+Edit shh131=shh_file.shh131, tabIndex=31;
+Edit shh132=shh_file.shh132, tabIndex=32;
+Group group04:group04;
+ButtonEdit shh121=shh_file.shh121, action=controlp, tabIndex=33, image="zoom", comment="<^P>Qry Employee";
+Edit gen02_2=formonly.gen02_2 type CHAR, tabIndex=34;
+ButtonEdit shh12=shh_file.shh12, action=controlp, tabIndex=35, image="zoom", comment="<^P>Query Department";
+Edit gem02_2=formonly.gem02_2 type CHAR, tabIndex=36;
+Group group05:group05;
+Edit shh151=shh_file.shh151, tabIndex=37;
+Edit shh152=shh_file.shh152, tabIndex=38;
+Group group06:group06;
+Edit shh141=shh_file.shh141, tabIndex=39, noEntry;
+Edit gen02_3=formonly.gen02_3 type CHAR, tabIndex=40;
+DateEdit shh142=shh_file.shh142, tabIndex=41, noEntry;
+Edit shh143=shh_file.shh143, tabIndex=42, noEntry, picture="XX:XX:XX";
+Group group07:group07, text="Temporary Solution";
+Edit shh161=shh_file.shh161, tabIndex=43;
+Edit shh162=shh_file.shh162, tabIndex=44;
+Edit shh163=shh_file.shh163, tabIndex=45;
+Edit shh164=shh_file.shh164, tabIndex=46;
+Edit shh165=shh_file.shh165, tabIndex=47;
+Group group08:group08, text="Prevention Solution";
+Edit shh171=shh_file.shh171, tabIndex=48;
+Edit shh172=shh_file.shh172, tabIndex=49;
+Edit shh173=shh_file.shh173, tabIndex=50;
+Edit shh174=shh_file.shh174, tabIndex=51;
+Edit shh175=shh_file.shh175, tabIndex=52;
+TextEdit shhud01=shh_file.shhud01, tabIndex=55, stretch=NONE;
+Edit shhud07=shh_file.shhud07, tabIndex=56;
+DateEdit shhud13=shh_file.shhud13, tabIndex=57;
+Edit shhud08=shh_file.shhud08, tabIndex=58;
+DateEdit shhud14=shh_file.shhud14, tabIndex=59;
+Edit shhud02=shh_file.shhud02, tabIndex=60;
+Edit shhud09=shh_file.shhud09, tabIndex=61;
+DateEdit shhud15=shh_file.shhud15, tabIndex=62;
+Edit shhud03=shh_file.shhud03, tabIndex=63;
+Edit shhud10=shh_file.shhud10, tabIndex=64;
+Edit shhud04=shh_file.shhud04, tabIndex=65;
+Edit shhud11=shh_file.shhud11, tabIndex=66;
+Edit shhud05=shh_file.shhud05, tabIndex=67;
+Edit shhud12=shh_file.shhud12, tabIndex=68;
+Edit shhud06=shh_file.shhud06, tabIndex=69;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=53, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(shh_file.shh01,shh_file.shh02,shh_file.shh021,shh_file.shh022,shh_file.shh08,shh_file.shh04,formonly.occ02,shh_file.shh03,formonly.sfb05,formonly.ima02,formonly.ima021,formonly.shh012,shh_file.shh05,formonly.ecm45,shh_file.shh06,shh_file.shh07,shh_file.shh061,formonly.sgg02,shh_file.shh14,formonly.imgmksg,shh_file.shhuser,shh_file.shhmodu,shh_file.shhgrup,shh_file.shhdate,shh_file.shhoriu,shh_file.shhorig,shh_file.shh111,shh_file.shh112,shh_file.shh113,shh_file.shh101,formonly.gen02_1,shh_file.shh10,formonly.gem02_1,shh_file.shh131,shh_file.shh132,shh_file.shh121,formonly.gen02_2,shh_file.shh12,formonly.gem02_2,shh_file.shh151,shh_file.shh152,shh_file.shh141,formonly.gen02_3,shh_file.shh142,shh_file.shh143,shh_file.shh161,shh_file.shh162,shh_file.shh163,shh_file.shh164,shh_file.shh165,shh_file.shh171,shh_file.shh172,shh_file.shh173,shh_file.shh174,shh_file.shh175,shh_file.shhud01,shh_file.shhud07,shh_file.shhud13,shh_file.shhud08,shh_file.shhud14,shh_file.shhud02,shh_file.shhud09,shh_file.shhud15,shh_file.shhud03,shh_file.shhud10,shh_file.shhud04,shh_file.shhud11,shh_file.shhud05,shh_file.shhud12,shh_file.shhud06,formonly.cnt)
+END -- INSTRUCTIONS
+

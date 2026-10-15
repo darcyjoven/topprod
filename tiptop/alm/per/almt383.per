@@ -1,0 +1,144 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt383.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid ds1
+{
+
+[label1  |lja01               ]                          [label17 |lja14               ]
+[label2  |lja03               ]                          [label18 |lja15               ]
+[label3  |lja04               |gen02                    ][label19 |lja16               ]
+[label31 |ljaplant            |rtz13                    ][label20 |lja17               ]
+[label29 |ljalegal            |azt02                    ][label21 |lja18               ]
+[label4  |lja05               ]                          [label13 |lja19               ]
+[label5  |lja06               ]                                   [ljamksg             ]
+[label14 |lja12               |lne05                    ][label24 |lja21               |imgmksg]
+[label6  |lja07               |oba02                    ][label26 |ljaconf             |       ]
+[label15 |lja13               |tqa02                    ][label28 |ljaconu             |gen02_1             ]
+[label7  |lja08               ]                          [label25 |ljacond             |ljacont             ]
+[label9  |lja09               ]                          [label23 |lja20                                    ]
+[label11 |lja10               ]                                   [                                         ]
+
+
+
+
+}
+END -- ds1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid ds2
+{
+
+[label36|ljauser   ]             [label33|ljamodu   ]           [label16|ljaacti   ]
+[label32|ljagrup   ]             [label27|ljadate   ]           [label22|ljacrat   ]
+[label35|ljaoriu   ]             [label34|ljaorig   ]
+
+
+}
+END -- ds2
+END -- Page2
+END -- Folder1
+Grid Grid1
+{
+
+     ----- [label|idx  |lab|cnt  ] -----
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+lja_file
+ATTRIBUTES
+Label label1:Label1, text=%"lja01";
+ButtonEdit lja01=lja_file.lja01, action=controlp, tabIndex=1, not null, image="zoom.png", scroll;
+Label label17:Label17, text=%"lja14";
+DateEdit lja14=lja_file.lja14, tabIndex=20, noEntry, not null;
+Label label2:Label2, text=%"lja03";
+DateEdit lja03=lja_file.lja03, tabIndex=2, not null;
+Label label18:Label18, text=%"lja15";
+DateEdit lja15=lja_file.lja15, tabIndex=21, noEntry, not null;
+Label label3:Label3, text=%"lja04";
+ButtonEdit lja04=lja_file.lja04, action=controlp, tabIndex=3, not null, image="zoom.png", scroll;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=4, noEntry;
+Label label19:Label19, text=%"lja16";
+Edit lja16=lja_file.lja16, tabIndex=22, noEntry, not null, scroll;
+Label label31:Label31, text=%"ljaplant";
+ButtonEdit ljaplant=lja_file.ljaplant, action=controlp, tabIndex=5, noEntry, not null, image="zoom.png", scroll;
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=6, noEntry;
+Label label20:Label20, text=%"lja17";
+DateEdit lja17=lja_file.lja17, tabIndex=23, noEntry, not null;
+Label label29:Label29, text=%"ljalegal";
+ButtonEdit ljalegal=lja_file.ljalegal, action=controlp, tabIndex=7, noEntry, not null, image="zoom.png", scroll;
+Edit azt02=formonly.azt02 type CHAR, tabIndex=8, noEntry;
+Label label21:Label21, text=%"lja18";
+DateEdit lja18=lja_file.lja18, tabIndex=24, noEntry, not null;
+Label label4:Label4, text=%"lja05";
+ButtonEdit lja05=lja_file.lja05, action=controlp, tabIndex=9, not null, image="zoom.png", scroll;
+Label label13:Label13, text=%"lja19";
+DateEdit lja19=lja_file.lja19, tabIndex=25, not null;
+Label label5:Label5, text=%"lja06";
+ButtonEdit lja06=lja_file.lja06, action=controlp, tabIndex=10, noEntry, not null, image="zoom.png", scroll;
+CheckBox ljamksg=lja_file.ljamksg, tabIndex=26, text=%"lja_file.ljamksg", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Label label14:Label14, text=%"lja12";
+ButtonEdit lja12=lja_file.lja12, action=controlp, tabIndex=11, noEntry, not null, image="zoom.png", scroll;
+Edit lne05=formonly.lne05 type CHAR, tabIndex=12, noEntry;
+Label label24:Label24, text=%"lja21";
+ComboBox lja21=lja_file.lja21, tabIndex=27, noEntry, not null, scroll, items=(("0", "Text"),("1", "Text"),("S", "Text"),("W", "Text"),("R", "Text"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Label label6:Label6, text=%"lja07";
+ButtonEdit lja07=lja_file.lja07, action=controlp, tabIndex=13, noEntry, image="zoom.png", scroll;
+Edit oba02=formonly.oba02 type CHAR, tabIndex=14, noEntry;
+Label label26:Label26, text=%"ljaconf";
+ComboBox ljaconf=lja_file.ljaconf, tabIndex=28, noEntry, not null, scroll, items=(("Y", "Confirmed"),("N", "Unconfirmed"));
+Label label15:Label15, text=%"lja13";
+ButtonEdit lja13=lja_file.lja13, action=controlp, tabIndex=15, noEntry, image="zoom.png", scroll;
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=16, noEntry;
+Label label28:Label28, text=%"ljaconu";
+ButtonEdit ljaconu=lja_file.ljaconu, action=controlp, tabIndex=29, noEntry, image="zoom.png", scroll;
+Edit gen02_1=formonly.gen02_1 type CHAR, tabIndex=30, noEntry;
+Label label7:Label7, text=%"lja08";
+Edit lja08=lja_file.lja08, tabIndex=17, noEntry, scroll;
+Label label25:Label25, text=%"ljacond";
+DateEdit ljacond=lja_file.ljacond, tabIndex=31, noEntry;
+TimeEdit ljacont=lja_file.ljacont, tabIndex=32, noEntry, scroll;
+Label label9:Label9, text=%"lja09";
+Edit lja09=lja_file.lja09, tabIndex=18, noEntry, scroll;
+Label label23:Label23, text=%"lja20";
+TextEdit lja20=lja_file.lja20, tabIndex=33;
+Label label11:Label11, text=%"lja10";
+Edit lja10=lja_file.lja10, tabIndex=19, noEntry, scroll;
+Label label36:Label36, text=%"ljauser";
+Edit ljauser=lja_file.ljauser, tabIndex=34, noEntry, scroll;
+Label label33:Label33, text=%"ljamodu";
+Edit ljamodu=lja_file.ljamodu, tabIndex=38, noEntry, scroll;
+Label label16:Label16, text=%"ljaacti";
+Edit ljaacti=lja_file.ljaacti, tabIndex=40, noEntry, not null, scroll;
+Label label32:Label32, text=%"ljagrup";
+Edit ljagrup=lja_file.ljagrup, tabIndex=35, noEntry, scroll;
+Label label27:Label27, text=%"ljadate";
+DateEdit ljadate=lja_file.ljadate, tabIndex=37, noEntry;
+Label label22:Label22, text=%"ljacrat";
+DateEdit ljacrat=lja_file.ljacrat, tabIndex=41, noEntry;
+Label label35:Label35, text=%"ljaoriu";
+Edit ljaoriu=lja_file.ljaoriu, tabIndex=36, noEntry, scroll;
+Label label34:Label34, text=%"ljaorig";
+Edit ljaorig=lja_file.ljaorig, tabIndex=39, noEntry, scroll;
+Label label:Label37, text=%"cnt";
+Edit idx=formonly.idx type CHAR, tabIndex=42, noEntry;
+Label lab:Label38, text=%"/";
+Edit cnt=formonly.cnt type CHAR, tabIndex=43, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(lja_file.lja01,lja_file.lja03,lja_file.lja04,lja_file.lja05,lja_file.lja06,lja_file.lja07,lja_file.lja08,lja_file.lja09,lja_file.lja10,lja_file.lja19,lja_file.lja12,lja_file.lja13,lja_file.lja14,lja_file.lja15,lja_file.lja16,lja_file.lja17,lja_file.lja18,lja_file.lja20,lja_file.lja21,lja_file.ljacond,lja_file.ljaconf,lja_file.ljacont,lja_file.ljaconu,lja_file.ljalegal,lja_file.ljamksg,lja_file.ljaplant,formonly.gen02,formonly.rtz13,formonly.azt02,formonly.lne05,formonly.oba02,formonly.tqa02,formonly.gen02_1,formonly.imgmksg,formonly.idx,formonly.cnt)
+SCREEN RECORD Record2(lja_file.ljaacti,lja_file.ljacrat,lja_file.ljadate,lja_file.ljagrup,lja_file.ljamodu,lja_file.ljaorig,lja_file.ljaoriu,lja_file.ljauser)
+END -- INSTRUCTIONS
+

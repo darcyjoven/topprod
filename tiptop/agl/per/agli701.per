@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli701")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+Grid gr2435
+{
+ Book No.             [ahc00]
+ Original No.         [ahc01     ]
+ Line No.             [ahc02   ]
+ Property             [ahc000  ]
+}
+END -- gr2435
+END -- page01
+END -- folder01
+Table s_ahc
+{
+[ahc0|ahc04                         ]
+[ahc0|ahc04                         ]
+[ahc0|ahc04                         ]
+[ahc0|ahc04                         ]
+[ahc0|ahc04                         ]
+[ahc0|ahc04                         ]
+[ahc0|ahc04                         ]
+[ahc0|ahc04                         ]
+[ahc0|ahc04                         ]
+[ahc0|ahc04                         ]
+
+}
+END -- s_ahc
+Grid gr2436
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2436
+END -- vb6
+END -- agli701
+
+TABLES
+ahc_file
+ATTRIBUTES
+Edit ahc00=formonly.ahc00 type CHAR, tabIndex=8, comment="Key Field, No Blank/Repeated    ";
+Edit ahc01=formonly.ahc01 type CHAR, tabIndex=1, comment="Key Field, No Blank/Repeated    ";
+Edit ahc02=formonly.ahc02 type SMALLINT, tabIndex=2;
+Edit ahc000=formonly.ahc000 type VARCHAR, tabIndex=3;
+Edit ahc0=ahc_file.ahc03, tabIndex=4, title="Ln#", not null, required, comment="Key Field, No Blank/Repeated    ";
+Edit ahc04=ahc_file.ahc04, tabIndex=5, title="Extra Memo", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ahc(ahc_file.ahc03,ahc_file.ahc04)
+SCREEN RECORD Undefined(formonly.ahc00,formonly.ahc01,formonly.ahc02,formonly.ahc000,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apci060_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Grid Grid1
+{
+ [label1    ]      [ryi01                    ]   [gen02          ]
+ [label2    ]      [passwd1                  ]
+ [label3    ]      [passwd2                  ]
+ [label4    ]      [passwd3                  ]
+
+}
+END -- Grid1
+END -- Form
+
+TABLES
+ryi_file,
+gen_file
+ATTRIBUTES
+Label label1:Label1, text=%"POS User";
+Edit ryi01=ryi_file.ryi01, tabIndex=5, not null, scroll;
+Edit gen02=gen_file.gen02, tabIndex=4;
+Label label2:Label2, text=%"Passwd1";
+Edit passwd1=formonly.passwd1, tabIndex=1, invisible;
+Label label3:Label3, text=%"Passwd2";
+Edit passwd2=formonly.passwd2, tabIndex=2, not null, required, invisible;
+Label label4:Label4, text=%"Passwd3";
+Edit passwd3=formonly.passwd3, tabIndex=3, not null, required, invisible;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.passwd1,formonly.passwd2,formonly.passwd3,gen_file.gen02,ryi_file.ryi01)
+END -- INSTRUCTIONS
+

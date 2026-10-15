@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi040.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi040")
+VBox vb7
+Folder pc832
+Page page01(text="Page01")
+Table s_gen
+{
+[gen01         |gen02     |gen03        |gem02           |gen07         |gen07_desc   |gen04               |gen05     |gen06                         |gen08                 |genac|genpos  ]
+[gen01         |gen02     |gen03        |gem02           |gen07         |gen07_desc   |gen04               |gen05     |gen06                         |gen08                 |genac|genpos  ]
+[gen01         |gen02     |gen03        |gem02           |gen07         |gen07_desc   |gen04               |gen05     |gen06                         |gen08                 |genac|genpos  ]
+[gen01         |gen02     |gen03        |gem02           |gen07         |gen07_desc   |gen04               |gen05     |gen06                         |gen08                 |genac|genpos  ]
+[gen01         |gen02     |gen03        |gem02           |gen07         |gen07_desc   |gen04               |gen05     |gen06                         |gen08                 |genac|genpos  ]
+[gen01         |gen02     |gen03        |gem02           |gen07         |gen07_desc   |gen04               |gen05     |gen06                         |gen08                 |genac|genpos  ]
+[gen01         |gen02     |gen03        |gem02           |gen07         |gen07_desc   |gen04               |gen05     |gen06                         |gen08                 |genac|genpos  ]
+[gen01         |gen02     |gen03        |gem02           |gen07         |gen07_desc   |gen04               |gen05     |gen06                         |gen08                 |genac|genpos  ]
+[gen01         |gen02     |gen03        |gem02           |gen07         |gen07_desc   |gen04               |gen05     |gen06                         |gen08                 |genac|genpos  ]
+[gen01         |gen02     |gen03        |gem02           |gen07         |gen07_desc   |gen04               |gen05     |gen06                         |gen08                 |genac|genpos  ]
+
+}
+END -- s_gen
+END -- page01
+END -- pc832
+Grid gr4618
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr4618
+END -- vb7
+END -- aooi040
+
+TABLES
+gen_file
+ATTRIBUTES
+Edit gen01=gen_file.gen01, tabIndex=1, title="Employee No.", not null, required, comment="KEY Field, No Blank/Repeated!";
+ButtonEdit gen02=gen_file.gen02, action=update_item, tabIndex=2, title="Name", image="pen", comment="Maintain field data in Multi. Language";
+ButtonEdit gen03=gen_file.gen03, action=controlp, tabIndex=3, title="Department #", image="zoom", comment="<^P>Query Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=4, title="Department Name", noEntry;
+ButtonEdit gen07=gen_file.gen07, action=controlp, tabIndex=11, title=%"Plant", not null, required, image="zoom";
+Edit gen07_desc=formonly.gen07_desc type VARCHAR, tabIndex=12, title=%"Plant Name", noEntry;
+Edit gen04=gen_file.gen04, tabIndex=5, title="Position";
+Edit gen05=gen_file.gen05, tabIndex=6, title="Extension";
+Edit gen06=gen_file.gen06, tabIndex=7, title="E-Mail";
+Edit gen08=gen_file.gen08, tabIndex=13, title=%"Mobile Phone";
+CheckBox genac=gen_file.genacti, tabIndex=8, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox genpos=gen_file.genpos, tabIndex=10, default = "", title="POS?", noEntry, not null, items=(("1", "1"),("2", "2"),("3", "3"));
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gen(gen_file.gen01,gen_file.gen02,gen_file.gen03,formonly.gem02,gen_file.gen07,formonly.gen07_desc,gen_file.gen04,gen_file.gen05,gen_file.gen06,gen_file.gen08,gen_file.genacti,gen_file.genpos)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxi070.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxi070")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+VBox VBox2
+Grid gr1
+{
+ <G group01                                               > <G group02                                                                                   >
+  Item No.               [ima01                         ]    Group Code  [ima06     ][imgmksg]
+  P/N                    [ima02                         ]    Source Code [ima08     ][       ]
+  Spec                   [ima021                        ]    [dummy01            ][dummy02             ][dummy03            ][dummy04  ][dummy05         ]
+  nv.Ut                  [ima25      ]       [ima15     ]    [ima1916            ][bxe02               ][bxe03              ][bxe04    ][bxe05           ]
+ <                                                        > <                                                                                            >
+ <G group03                                                                                                                                              >
+  Category                             [ima19     ]
+  Inventory Difference Allowance Ratio [ima20     ]
+  Tariff No.                           [ima21     ]
+  Tax Revamped Rate                    [ima22     ]
+  Item Type                            [ima106                        ]
+  Bonded Differentiate                 [ima1911 ]
+  Bonded Unit Price                    [ima95               ]
+  Country of Origin                    [ima1912           ]
+  Popularize Trade Service Charge      [ima1913           ]
+  Tax Regulations                      [ima1914           ]
+  Accounts Card No.                    [ima1915           ]
+  [ima1919]
+ <                                                                                                                                                       >
+
+}
+END -- gr1
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr2
+{
+ Record Owner        [imauser   ] Last Modified by    [imamodu   ] Data Valid Code     [imaacti   ]
+ Department          [imagrup   ] Create/Modify Date  [imadate   ]
+ Record Orig.        [imaoriu   ]
+ Dept Orig.          [imaorig   ]
+}
+END -- gr2
+END -- info
+END -- pc1
+Grid gr3
+{
+  ----------Rows [cnt   ] ----------
+
+}
+END -- gr3
+END -- VBox1
+END -- abxi070
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:group01;
+Edit ima01=ima_file.ima01, tabIndex=1, not null, required, comment="Key Field, No Blank!";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=3, noEntry;
+Edit ima25=ima_file.ima25, tabIndex=4, noEntry;
+CheckBox ima15=ima_file.ima15, tabIndex=5, text="Bonded", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02;
+Edit ima06=ima_file.ima06, tabIndex=6, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit ima08=ima_file.ima08, tabIndex=8, noEntry;
+Label dummy01:dummy01, text="Bond Group";
+Label dummy02:dummy02, text="Group Desc";
+Label dummy03:dummy03, text="Group Spec";
+Label dummy04:dummy04, text="Group Unit";
+Label dummy05:dummy05, text="Group Card No.";
+ButtonEdit ima1916=ima_file.ima1916, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Bond Group No.";
+Edit bxe02=formonly.bxe02 type CHAR, tabIndex=10;
+Edit bxe03=formonly.bxe03 type CHAR, tabIndex=11;
+Edit bxe04=formonly.bxe04 type CHAR, tabIndex=12;
+Edit bxe05=formonly.bxe05 type CHAR, tabIndex=13;
+Group group03:group03;
+Edit ima19=ima_file.ima19, tabIndex=14;
+Edit ima20=ima_file.ima20, tabIndex=15;
+Edit ima21=ima_file.ima21, tabIndex=16;
+Edit ima22=ima_file.ima22, tabIndex=17;
+ComboBox ima106=ima_file.ima106, tabIndex=18, queryEditable, items=(("1", "Material"),("2", "Semi-Product"),("3", "Finished Product"),("5", "Materiel and Supplies"),("6", "Customer Supply"),("7", "Products for Transport"));
+ComboBox ima1911=ima_file.ima1911, tabIndex=19, queryEditable, items=(("1", "Boned Master-Product"),("2", "Boned Sub-Product"),("3", "Other"));
+Edit ima95=ima_file.ima95, tabIndex=20;
+Edit ima1912=ima_file.ima1912, tabIndex=21;
+Edit ima1913=ima_file.ima1913, tabIndex=22;
+Edit ima1914=ima_file.ima1914, tabIndex=23;
+Edit ima1915=ima_file.ima1915, tabIndex=24;
+CheckBox ima1919=ima_file.ima1919, tabIndex=25, text="manufacture", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit imauser=ima_file.imauser, tabIndex=26, noEntry;
+Edit imamodu=ima_file.imamodu, tabIndex=27, noEntry;
+Edit imaacti=ima_file.imaacti, tabIndex=28, noEntry, upShift;
+Edit imagrup=ima_file.imagrup, tabIndex=29, noEntry;
+DateEdit imadate=ima_file.imadate, tabIndex=30, noEntry;
+Edit imaoriu=ima_file.imaoriu, tabIndex=501, noEntry;
+Edit imaorig=ima_file.imaorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=31;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,ima_file.ima25,ima_file.ima15,ima_file.ima06,formonly.imgmksg,ima_file.ima08,ima_file.ima1916,formonly.bxe02,formonly.bxe03,formonly.bxe04,formonly.bxe05,ima_file.ima19,ima_file.ima20,ima_file.ima21,ima_file.ima22,ima_file.ima106,ima_file.ima1911,ima_file.ima95,ima_file.ima1912,ima_file.ima1913,ima_file.ima1914,ima_file.ima1915,ima_file.ima1919,ima_file.imauser,ima_file.imamodu,ima_file.imaacti,ima_file.imagrup,ima_file.imadate,ima_file.imaoriu,ima_file.imaorig,formonly.cnt)
+END -- INSTRUCTIONS
+

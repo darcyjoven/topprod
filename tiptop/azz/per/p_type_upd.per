@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_type_upd.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_type_upd")
+VBox vb2
+Folder pc734
+Page page01(text="Main")
+Table s_gaq
+{
+[gaq01    |gaq03                  |ztb04     |length    |gaq07      |gck02           |gck03           ]
+[gaq01    |gaq03                  |ztb04     |length    |gaq07      |gck02           |gck03           ]
+[gaq01    |gaq03                  |ztb04     |length    |gaq07      |gck02           |gck03           ]
+[gaq01    |gaq03                  |ztb04     |length    |gaq07      |gck02           |gck03           ]
+[gaq01    |gaq03                  |ztb04     |length    |gaq07      |gck02           |gck03           ]
+[gaq01    |gaq03                  |ztb04     |length    |gaq07      |gck02           |gck03           ]
+[gaq01    |gaq03                  |ztb04     |length    |gaq07      |gck02           |gck03           ]
+[gaq01    |gaq03                  |ztb04     |length    |gaq07      |gck02           |gck03           ]
+[gaq01    |gaq03                  |ztb04     |length    |gaq07      |gck02           |gck03           ]
+[gaq01    |gaq03                  |ztb04     |length    |gaq07      |gck02           |gck03           ]
+
+}
+END -- s_gaq
+END -- page01
+END -- pc734
+Grid gr3143
+{
+  ROWS [cn     ]
+
+}
+END -- gr3143
+END -- vb2
+END -- p_type_upd
+
+TABLES
+gaq_file
+ATTRIBUTES
+Edit gaq01=gaq_file.gaq01, tabIndex=1, title="Field ID";
+Edit gaq03=gaq_file.gaq03, tabIndex=2, title="Field Name Description";
+Edit ztb04=formonly.ztb04 type CHAR, tabIndex=12, title="Data Type", noEntry;
+Edit length=formonly.length type CHAR, tabIndex=11, title="Data Length", noEntry;
+ButtonEdit gaq07=gaq_file.gaq07, action=controlp, tabIndex=3, title="Field Type", image="zoom";
+Edit gck02=formonly.gck02 type CHAR, tabIndex=4, title="Attribute Shortname";
+Edit gck03=formonly.gck03 type CHAR, tabIndex=13, title=" Data Type(Attribute)", noEntry;
+Edit cn=formonly.cn type CHAR, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gaq(gaq_file.gaq01,gaq_file.gaq03,formonly.ztb04,formonly.length,gaq_file.gaq07,formonly.gck02,formonly.gck03)
+SCREEN RECORD Undefined(formonly.cn)
+END -- INSTRUCTIONS
+

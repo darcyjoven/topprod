@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq235.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq235")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+Grid gr4982
+{
+ Vender No.[pmc01               ][pmc03     ]
+
+}
+END -- gr4982
+END -- page01
+END -- folder01
+Table s_apa
+{
+[apa00|apa01     |apa02   |apa12   |apa08           |apa13|apa34f    |apa35f   |amt1        |apa34     |apa35    |amt2      ]
+[apa00|apa01     |apa02   |apa12   |apa08           |apa13|apa34f    |apa35f   |amt1        |apa34     |apa35    |amt2      ]
+[apa00|apa01     |apa02   |apa12   |apa08           |apa13|apa34f    |apa35f   |amt1        |apa34     |apa35    |amt2      ]
+[apa00|apa01     |apa02   |apa12   |apa08           |apa13|apa34f    |apa35f   |amt1        |apa34     |apa35    |amt2      ]
+[apa00|apa01     |apa02   |apa12   |apa08           |apa13|apa34f    |apa35f   |amt1        |apa34     |apa35    |amt2      ]
+[apa00|apa01     |apa02   |apa12   |apa08           |apa13|apa34f    |apa35f   |amt1        |apa34     |apa35    |amt2      ]
+[apa00|apa01     |apa02   |apa12   |apa08           |apa13|apa34f    |apa35f   |amt1        |apa34     |apa35    |amt2      ]
+[apa00|apa01     |apa02   |apa12   |apa08           |apa13|apa34f    |apa35f   |amt1        |apa34     |apa35    |amt2      ]
+[apa00|apa01     |apa02   |apa12   |apa08           |apa13|apa34f    |apa35f   |amt1        |apa34     |apa35    |amt2      ]
+[apa00|apa01     |apa02   |apa12   |apa08           |apa13|apa34f    |apa35f   |amt1        |apa34     |apa35    |amt2      ]
+
+}
+END -- s_apa
+Grid gr4983
+{
+ ----------Rows [cnt   ] ------[dummy01][tot01          ]-----[dummy02][tot02          ]
+
+}
+END -- gr4983
+END -- vb4
+END -- apmq235
+
+TABLES
+apa_file
+ATTRIBUTES
+ButtonEdit pmc01=formonly.pmc01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, noEntry;
+Edit apa00=apa_file.apa00, tabIndex=3, title="Cate.", comment="11.Receive 12.MISC 15.Prepay 16.Billing Payment 17.Advance Payment 21.Receipt Allowance 22.D.M. ";
+Edit apa01=apa_file.apa01, tabIndex=4, title="Accounts#";
+Edit apa02=apa_file.apa02, tabIndex=5, title="Acc.Dt";
+Edit apa12=apa_file.apa12, tabIndex=6, title="Pay.Dt";
+Edit apa08=apa_file.apa08, tabIndex=7, title="Invoice#";
+Edit apa13=apa_file.apa13, tabIndex=8, title="Curr.";
+Edit apa34f=apa_file.apa34f, tabIndex=9, title="Payable$", not null, required;
+Edit apa35f=apa_file.apa35f, tabIndex=10, title="Paided$", not null, required;
+Edit amt1=formonly.amt1 type DECIMAL, tabIndex=16, title=%"amt1";
+Edit apa34=apa_file.apa34, tabIndex=11, title="Payable$", not null, required;
+Edit apa35=apa_file.apa35, tabIndex=12, title="Paided$", not null, required;
+Edit amt2=formonly.amt2 type DECIMAL, tabIndex=17, title=%"amt2";
+Edit cnt=formonly.cnt type CHAR, tabIndex=13;
+Label dummy01:dummy01, text="Payable$ Total";
+Edit tot01=formonly.tot01 type CHAR, tabIndex=14, noEntry;
+Label dummy02:dummy02, text="Paided$ Total";
+Edit tot02=formonly.tot02 type CHAR, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apa(apa_file.apa00,apa_file.apa01,apa_file.apa02,apa_file.apa12,apa_file.apa08,apa_file.apa13,apa_file.apa34f,apa_file.apa35f,formonly.amt1,apa_file.apa34,apa_file.apa35,formonly.amt2)
+SCREEN RECORD Undefined(formonly.pmc01,formonly.pmc03,formonly.cnt,formonly.tot01,formonly.tot02)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli901_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group Group1(text=%"Input")
+Grid Grid1
+{
+
+   abo01  [abo01       ][dummy01    ]  [e           ]
+
+}
+END -- Grid1
+END -- Group1
+Group Group2(text=%"Result")
+Grid Grid2
+{
+  [msg                                       ]
+  [                                          ]
+  [                                          ]
+
+}
+END -- Grid2
+END -- Group2
+END -- VBox1
+END -- Form
+
+TABLES
+abo_file
+ATTRIBUTES
+ButtonEdit abo01=abo_file.abo01, action=controlp, tabIndex=1, not null, image="zoom";
+Label dummy01:dummy01, text=%"Label1";
+ComboBox e=formonly.e, tabIndex=2, not null, items=(("+", "+"),("-", "-"),("*", "*"),("/", "/"),("(", "("),(")", ")"));
+TextEdit msg=formonly.msg, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(abo_file.abo01,formonly.e,formonly.msg)
+END -- INSTRUCTIONS
+

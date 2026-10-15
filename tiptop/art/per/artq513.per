@@ -1,0 +1,145 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq513.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"artq513")
+VBox vb8
+Folder folder01
+Page page01(text="Main")
+VBox vb7
+HBox HBox1
+Grid gr4945
+{
+ Receipt#/Line No.   [rva01           ][rvb02       ]
+ P/O#/Line No.       [rvb04           ][rvb03       ]
+ Item#/Unit          [rvb05                         ][pmn07     ]
+ P/N Spec            [pmn041                        ]
+ Spec                [ima021                        ]
+
+
+}
+END -- gr4945
+Grid gr4946
+{
+ Vender No.          [rva05     ][pmc03     ]
+ Receipt Date        [rva06       ]
+ Property            [rv][desc      ]
+ Status              [r1][explan    ]
+ Qry Org             [rvaplant      ]
+
+
+}
+END -- gr4946
+END -- HBox1
+HBox hb11
+Grid gr4947
+{
+ <G group01                                >
+  Rept.Qty            [rvb08               ]
+  Repd Qty            [rvb07               ]
+  Store-in Qty        [rvb30               ]
+ <                                         >
+
+}
+END -- gr4947
+Grid gr4948
+{
+ <G group02                                 >
+  Qty on QC           [rest                ]
+  QC/Return Qty       [rvb29               ]
+  W/H Returned Qty    [rvv17_s       ]
+ <                                          >
+
+}
+END -- gr4948
+Grid gr4949
+{
+ <G group03                                 >
+  Billed Qty          [rvb06               ]
+ <                                          >
+
+
+
+}
+END -- gr4949
+END -- hb11
+END -- vb7
+END -- page01
+END -- folder01
+Table s_rvv
+{
+[rvu03   |rvu01            |rvv02|str  |rvv17     |rvv32     |rvv33           |rvv34          |rvv25 ]
+[rvu03   |rvu01            |rvv02|str  |rvv17     |rvv32     |rvv33           |rvv34          |rvv25 ]
+[rvu03   |rvu01            |rvv02|str  |rvv17     |rvv32     |rvv33           |rvv34          |rvv25 ]
+[rvu03   |rvu01            |rvv02|str  |rvv17     |rvv32     |rvv33           |rvv34          |rvv25 ]
+[rvu03   |rvu01            |rvv02|str  |rvv17     |rvv32     |rvv33           |rvv34          |rvv25 ]
+[rvu03   |rvu01            |rvv02|str  |rvv17     |rvv32     |rvv33           |rvv34          |rvv25 ]
+[rvu03   |rvu01            |rvv02|str  |rvv17     |rvv32     |rvv33           |rvv34          |rvv25 ]
+[rvu03   |rvu01            |rvv02|str  |rvv17     |rvv32     |rvv33           |rvv34          |rvv25 ]
+[rvu03   |rvu01            |rvv02|str  |rvv17     |rvv32     |rvv33           |rvv34          |rvv25 ]
+}
+END -- s_rvv
+Grid gr4950
+{
+  ------ Rows[cnt1  ]/[cnt   ]----[cn2   ]
+
+
+}
+END -- gr4950
+END -- vb8
+END -- artq513
+
+TABLES
+rvv_file,
+rvu_file,
+rvb_file,
+rva_file
+ATTRIBUTES
+Edit rva01=rva_file.rva01, tabIndex=1, upShift;
+Edit rvb02=rvb_file.rvb02, tabIndex=2;
+Edit rvb04=rvb_file.rvb04, tabIndex=3;
+Edit rvb03=rvb_file.rvb03, tabIndex=4;
+ButtonEdit rvb05=rvb_file.rvb05, action=controlp, tabIndex=5, image="zoom";
+Edit pmn07=formonly.pmn07 type CHAR, tabIndex=6;
+Edit pmn041=formonly.pmn041 type CHAR, tabIndex=7, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=8, noEntry;
+Edit rva05=rva_file.rva05, tabIndex=9;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=10, noEntry;
+DateEdit rva06=rva_file.rva06, tabIndex=11;
+Edit rv=rvb_file.rvb19, tabIndex=12, noEntry;
+Edit desc=formonly.desc type VARCHAR, tabIndex=13, noEntry;
+Edit r1=rvb_file.rvb18, tabIndex=14, noEntry;
+Edit explan=formonly.explan type CHAR, tabIndex=15, noEntry;
+ButtonEdit rvaplant=formonly.rvaplant type CHAR, action=controlp, tabIndex=34, image="zoom.png";
+Group group01:group01;
+Edit rvb08=rvb_file.rvb08, tabIndex=16, not null, required;
+Edit rvb07=rvb_file.rvb07, tabIndex=17, not null, required;
+Edit rvb30=rvb_file.rvb30, tabIndex=18, not null, required;
+Group group02:group02;
+Edit rest=formonly.rest type DECIMAL, tabIndex=19;
+Edit rvb29=rvb_file.rvb29, tabIndex=20, not null, required;
+Edit rvv17_s=formonly.rvv17_s type CHAR, tabIndex=21;
+Group group03:group03;
+Edit rvb06=rvb_file.rvb06, tabIndex=22, not null, required;
+DateEdit rvu03=rvu_file.rvu03, tabIndex=23, title="Date";
+Edit rvu01=rvu_file.rvu01, tabIndex=24, title="Doc#";
+Edit rvv02=rvv_file.rvv02, tabIndex=25, title="Ln#";
+Edit str=formonly.str type VARCHAR, tabIndex=26, title="Cate.";
+Edit rvv17=rvv_file.rvv17, tabIndex=27, title="Qty";
+Edit rvv32=rvv_file.rvv32, tabIndex=28, title="Warehouse";
+Edit rvv33=rvv_file.rvv33, tabIndex=29, title="Location";
+Edit rvv34=rvv_file.rvv34, tabIndex=30, title="Lot#";
+Edit rvv25=rvv_file.rvv25, tabIndex=31, title="Sample";
+Edit cnt1=formonly.cnt1 type SMALLINT, tabIndex=35, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=32, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvv(rvu_file.rvu03,rvu_file.rvu01,rvv_file.rvv02,formonly.str,rvv_file.rvv17,rvv_file.rvv32,rvv_file.rvv33,rvv_file.rvv34,rvv_file.rvv25)
+SCREEN RECORD Undefined(rva_file.rva01,rvb_file.rvb02,rvb_file.rvb04,rvb_file.rvb03,rvb_file.rvb05,formonly.pmn07,formonly.pmn041,formonly.ima021,rva_file.rva05,formonly.pmc03,rva_file.rva06,rvb_file.rvb19,formonly.desc,rvb_file.rvb18,formonly.explan,formonly.rvaplant,rvb_file.rvb08,rvb_file.rvb07,rvb_file.rvb30,formonly.rest,rvb_file.rvb29,formonly.rvv17_s,rvb_file.rvb06,formonly.cnt1,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

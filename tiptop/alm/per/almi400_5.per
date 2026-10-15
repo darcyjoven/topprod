@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi400_5.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox1
+Table ds1
+{
+[liv03 |liv04     |liv05     |oaj02   |liv06                 |liv07               |liv071|liv08        |liv09        |liv02 ]
+[liv03 |liv04     |liv05     |oaj02   |liv06                 |liv07               |liv071|liv08        |liv09        |liv02 ]
+[liv03 |liv04     |liv05     |oaj02   |liv06                 |liv07               |liv071|liv08        |liv09        |liv02 ]
+[liv03 |liv04     |liv05     |oaj02   |liv06                 |liv07               |liv071|liv08        |liv09        |liv02 ]
+[liv03 |liv04     |liv05     |oaj02   |liv06                 |liv07               |liv071|liv08        |liv09        |liv02 ]
+
+}
+END -- ds1
+Grid Grid1
+{
+
+[label1    |liv06_c             ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- Page1
+END -- Folder1
+END -- Form
+
+TABLES
+liv_file
+ATTRIBUTES
+Edit liv03=liv_file.liv03, tabIndex=1, title=%"liv03", noEntry, not null, scroll;
+Edit liv04=liv_file.liv04, tabIndex=2, title=%"liv04", noEntry, scroll;
+Edit liv05=liv_file.liv05, tabIndex=3, title=%"liv05", noEntry, scroll;
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=11, title=%"oaj02", noEntry;
+Edit liv06=liv_file.liv06, tabIndex=4, title=%"liv06", not null, scroll;
+Edit liv07=liv_file.liv07, tabIndex=5, title=%"liv07", noEntry, scroll;
+Edit liv071=liv_file.liv071, tabIndex=6, title=%"liv071", noEntry, scroll;
+ComboBox liv08=liv_file.liv08, tabIndex=7, title=%"liv08", noEntry, not null, scroll, items=(("1", "standard"),("2", "preferential"),("3", "termination"),("4", "MaLing"));
+ComboBox liv09=liv_file.liv09, tabIndex=8, title=%"liv09", noEntry, not null, scroll, items=(("0", "null"),("1", "Favorable rent
+"),("2", "Area preferential"),("3", "Lease preferential"),("4", "Unit price preferential"));
+Edit liv02=liv_file.liv02, tabIndex=9, title=%"liv02", noEntry, scroll;
+Label label1:Label1, text=%"Label1";
+Edit liv06_c=formonly.liv06_c type CHAR, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_liv(liv_file.liv03,liv_file.liv04,liv_file.liv05,formonly.oaj02,liv_file.liv06,liv_file.liv07,liv_file.liv071,liv_file.liv08,liv_file.liv09,liv_file.liv02)
+SCREEN RECORD Undefined(formonly.liv06_c)
+END -- INSTRUCTIONS
+

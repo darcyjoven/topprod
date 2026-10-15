@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi980.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi980")
+VBox vb3
+Folder pc3
+Page Main(text=%"Main")
+Grid gr5
+{
+ <G gb3                              >
+  Category           [azf02     ]
+ <                                   >
+
+}
+END -- gr5
+END -- Main
+END -- pc3
+Table s_azf
+{
+[azf01   |azf03   |azfacti   ]
+[azf01   |azf03   |azfacti   ]
+[azf01   |azf03   |azfacti   ]
+[azf01   |azf03   |azfacti   ]
+[azf01   |azf03   |azfacti   ]
+
+}
+END -- s_azf
+Grid gr6
+{
+  ---------- Rows[cn2   ]----------
+
+}
+END -- gr6
+END -- vb3
+END -- almi980
+
+TABLES
+azf_file
+ATTRIBUTES
+Group gb3:gb3;
+ComboBox azf02=azf_file.azf02, tabIndex=1, noEntry, comment="No Blank  , Enter 2 5 6 8 A D E F G", items=(("3", "pinpaibianhao"),("4", "liyoubianhao"),("5", "koujianxiang"));
+ButtonEdit azf01=azf_file.azf01, action=controlp, tabIndex=2, title="azf01", not null, required, image="zoom.png";
+Edit azf03=azf_file.azf03, tabIndex=3, title="azf03";
+CheckBox azfacti=azf_file.azfacti, tabIndex=5, title="azfacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azf(azf_file.azf01,azf_file.azf03,azf_file.azfacti)
+SCREEN RECORD Undefined(azf_file.azf02,formonly.cn2)
+END -- INSTRUCTIONS
+

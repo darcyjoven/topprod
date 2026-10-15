@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt7104.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt7104")
+VBox VBox1
+Folder folder04
+Page page01(text="Page01")
+HBox HBox1
+Grid gr2630
+{
+ Customer Complaint Note [ohf01           ]
+ Category                [ohf02           ]
+
+}
+END -- gr2630
+Grid gr2631
+{
+ Auditing                [ohf04     ]
+ Auditing Name           [gen02_2   ]
+
+}
+END -- gr2631
+END -- HBox1
+END -- page01
+END -- folder04
+Table s_ohg
+{
+[ohg03   |ohg04                                                                 ]
+[ohg03   |ohg04                                                                 ]
+[ohg03   |ohg04                                                                 ]
+[ohg03   |ohg04                                                                 ]
+[ohg03   |ohg04                                                                 ]
+[ohg03   |ohg04                                                                 ]
+[ohg03   |ohg04                                                                 ]
+[ohg03   |ohg04                                                                 ]
+[ohg03   |ohg04                                                                 ]
+[ohg03   |ohg04                                                                 ]
+
+}
+END -- s_ohg
+Grid gr2632
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2632
+END -- VBox1
+END -- axmt7104
+
+TABLES
+ohg_file,
+ohf_file
+ATTRIBUTES
+Edit ohf01=ohf_file.ohf01, tabIndex=1, noEntry;
+Edit ohf02=ohf_file.ohf02, tabIndex=2, noEntry;
+ButtonEdit ohf04=ohf_file.ohf04, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Employee";
+Edit gen02_2=formonly.gen02_2 type VARCHAR, tabIndex=4, noEntry;
+Edit ohg03=ohg_file.ohg03, tabIndex=5, title="Line No", not null, required;
+Edit ohg04=ohg_file.ohg04, tabIndex=6, title="Review", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ohg(ohg_file.ohg03,ohg_file.ohg04)
+SCREEN RECORD Undefined(ohf_file.ohf01,ohf_file.ohf02,ohf_file.ohf04,formonly.gen02_2,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

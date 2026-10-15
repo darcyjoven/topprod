@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt803.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Main")
+Grid ds1
+{
+
+ rcd01     [rcd01                 ]                [rcd04           ]
+ rcdplant  [rcdplant        |rcdplant_desc     ]    rcdconf      [rcdconf         ]
+ rcd02     [rcd02           ]                       rcdcond      [rcdcond         |rcdcont         ]
+ rcd03     [rcd03                              ]    rcdconu      [rcdconu         ]
+
+}
+END -- ds1
+END -- Page1
+Page Page2(text=%"States")
+Grid ds2
+{
+
+   rcduser   [rcduser       ]   rcdmodu   [rcdmodu       ]   rcdacti   [rcdacti       ]
+   rcdgrup   [rcdgrup       ]   rcddate   [rcddate       ]   rcdcrat   [rcdcrat       ]
+   rcdoriu   [rcdoriu       ]   rcdorig   [rcdorig       ]
+
+
+}
+END -- ds2
+END -- Page2
+END -- Folder1
+Table ds3
+{
+[rce02   |rce03           |rce03_desc          |rce06             |rce04             |rce05             |amountdif         ]
+[rce02   |rce03           |rce03_desc          |rce06             |rce04             |rce05             |amountdif         ]
+[rce02   |rce03           |rce03_desc          |rce06             |rce04             |rce05             |amountdif         ]
+[rce02   |rce03           |rce03_desc          |rce06             |rce04             |rce05             |amountdif         ]
+[rce02   |rce03           |rce03_desc          |rce06             |rce04             |rce05             |amountdif         ]
+}
+END -- ds3
+Grid gr15
+{
+
+  ------ Rows[idx     ]/[cnt       ]--- Items[cn2     ] --------
+}
+END -- gr15
+END -- VBox1
+END -- Form
+
+TABLES
+rce_file,
+rcd_file
+ATTRIBUTES
+ButtonEdit rcd01=rcd_file.rcd01, action=controlp, tabIndex=1, not null, required, image="zoom", scroll;
+CheckBox rcd04=rcd_file.rcd04, tabIndex=4, text=%"rcd_file.rcd04", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rcdplant=rcd_file.rcdplant, action=controlp, tabIndex=9, noEntry, not null, required, image="zoom", scroll;
+Edit rcdplant_desc=formonly.rcdplant_desc type CHAR, tabIndex=10, noEntry;
+ComboBox rcdconf=rcd_file.rcdconf, tabIndex=6, noEntry, not null, scroll, items=(("N", "NonConfirm"),("Y", "Confirm"),("X", "Invalid"));
+DateEdit rcd02=rcd_file.rcd02, tabIndex=2;
+DateEdit rcdcond=rcd_file.rcdcond, tabIndex=5, noEntry;
+TimeEdit rcdcont=rcd_file.rcdcont, tabIndex=7, noEntry, scroll;
+Edit rcd03=rcd_file.rcd03, tabIndex=3, scroll;
+ButtonEdit rcdconu=rcd_file.rcdconu, action=controlp, tabIndex=8, noEntry, image="zoom", scroll;
+Edit rcduser=rcd_file.rcduser, tabIndex=18, noEntry, scroll;
+Edit rcdmodu=rcd_file.rcdmodu, tabIndex=15, noEntry, scroll;
+Edit rcdacti=rcd_file.rcdacti, tabIndex=11, noEntry, not null, scroll;
+Edit rcdgrup=rcd_file.rcdgrup, tabIndex=14, noEntry, scroll;
+DateEdit rcddate=rcd_file.rcddate, tabIndex=13, noEntry;
+DateEdit rcdcrat=rcd_file.rcdcrat, tabIndex=12, noEntry;
+Edit rcdoriu=rcd_file.rcdoriu, tabIndex=17, noEntry, scroll;
+Edit rcdorig=rcd_file.rcdorig, tabIndex=16, noEntry, scroll;
+Edit rce02=rce_file.rce02, tabIndex=19, title=%"rce02", not null, scroll;
+ButtonEdit rce03=rce_file.rce03, action=controlp, tabIndex=20, title=%"rce03", not null, required, image="zoom", scroll;
+Edit rce03_desc=formonly.rce03_desc type CHAR, tabIndex=27, title=%"rce03_desc", noEntry;
+Edit rce06=rce_file.rce06, tabIndex=21, title=%"rce06", not null, scroll;
+Edit rce04=rce_file.rce04, tabIndex=22, title=%"rce04", noEntry, not null, scroll;
+Edit rce05=rce_file.rce05, tabIndex=23, title=%"rce05", noEntry, not null, scroll;
+Edit amountdif=formonly.amountdif type CHAR, tabIndex=28, title=%"amountdif", noEntry;
+Edit idx=formonly.idx type CHAR, tabIndex=24, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=25, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=26;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(rcd_file.rcd01,rcd_file.rcd02,rcd_file.rcd03,rcd_file.rcd04,rcd_file.rcdcond,rcd_file.rcdconf,rcd_file.rcdcont,rcd_file.rcdconu,rcd_file.rcdplant)
+SCREEN RECORD Undefined(formonly.rcdplant_desc,formonly.idx,formonly.cnt,formonly.cn2)
+SCREEN RECORD Record2(rcd_file.rcdacti,rcd_file.rcdcrat,rcd_file.rcddate,rcd_file.rcdgrup,rcd_file.rcdmodu,rcd_file.rcdorig,rcd_file.rcdoriu,rcd_file.rcduser)
+SCREEN RECORD s_rce(rce_file.rce02,rce_file.rce03,formonly.rce03_desc,rce_file.rce06,rce_file.rce04,rce_file.rce05,formonly.amountdif)
+END -- INSTRUCTIONS
+

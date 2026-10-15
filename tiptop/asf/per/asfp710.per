@@ -1,0 +1,90 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp710.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp710")
+VBox vb4
+Grid gr565
+{
+ <G group01                                                                               ><G group02                                                                              >
+  tc_pmm07    [tc_pmm07     ][pmc03_1     ]     Run Card        [key01                 ]    P/O Type            [pmm01             ]     Currency            [pmm22     ]
+  tc_pmm01    [tc_pmm01                   ]     Task No.        [key05                 ]    Purchase Date       [pmm04       ]           Ex.Rate             [pmm42               ]
+                                                Process No.     [key06                 ]    Buyer               [pmm12       ]
+                                                Routing S/N     [key02                 ]    Buyer Name          [gen02       ]
+
+                                                                                           <                                                                                       >
+ <                                                                                        >
+}
+END -- gr565
+Table s_pmn
+{
+[sgm01              |sgm02           |sgm45      |sgm012    |ecu014         |sgm03 |sgm03_par       |ima02           |ima021                 |subqty   |pmm09      |pmc03        |pmn20     |pmn33       |pmn31               |pmn31t              |pmc47    |gec04    |tc_pmm01_1   |tc_pmmud10 ]
+[sgm01              |sgm02           |sgm45      |sgm012    |ecu014         |sgm03 |sgm03_par       |ima02           |ima021                 |subqty   |pmm09      |pmc03        |pmn20     |pmn33       |pmn31               |pmn31t              |pmc47    |gec04    |tc_pmm01_1   |tc_pmmud10 ]
+[sgm01              |sgm02           |sgm45      |sgm012    |ecu014         |sgm03 |sgm03_par       |ima02           |ima021                 |subqty   |pmm09      |pmc03        |pmn20     |pmn33       |pmn31               |pmn31t              |pmc47    |gec04    |tc_pmm01_1   |tc_pmmud10 ]
+[sgm01              |sgm02           |sgm45      |sgm012    |ecu014         |sgm03 |sgm03_par       |ima02           |ima021                 |subqty   |pmm09      |pmc03        |pmn20     |pmn33       |pmn31               |pmn31t              |pmc47    |gec04    |tc_pmm01_1   |tc_pmmud10 ]
+[sgm01              |sgm02           |sgm45      |sgm012    |ecu014         |sgm03 |sgm03_par       |ima02           |ima021                 |subqty   |pmm09      |pmc03        |pmn20     |pmn33       |pmn31               |pmn31t              |pmc47    |gec04    |tc_pmm01_1   |tc_pmmud10 ]
+[sgm01              |sgm02           |sgm45      |sgm012    |ecu014         |sgm03 |sgm03_par       |ima02           |ima021                 |subqty   |pmm09      |pmc03        |pmn20     |pmn33       |pmn31               |pmn31t              |pmc47    |gec04    |tc_pmm01_1   |tc_pmmud10 ]
+[sgm01              |sgm02           |sgm45      |sgm012    |ecu014         |sgm03 |sgm03_par       |ima02           |ima021                 |subqty   |pmm09      |pmc03        |pmn20     |pmn33       |pmn31               |pmn31t              |pmc47    |gec04    |tc_pmm01_1   |tc_pmmud10 ]
+[sgm01              |sgm02           |sgm45      |sgm012    |ecu014         |sgm03 |sgm03_par       |ima02           |ima021                 |subqty   |pmm09      |pmc03        |pmn20     |pmn33       |pmn31               |pmn31t              |pmc47    |gec04    |tc_pmm01_1   |tc_pmmud10 ]
+[sgm01              |sgm02           |sgm45      |sgm012    |ecu014         |sgm03 |sgm03_par       |ima02           |ima021                 |subqty   |pmm09      |pmc03        |pmn20     |pmn33       |pmn31               |pmn31t              |pmc47    |gec04    |tc_pmm01_1   |tc_pmmud10 ]
+[sgm01              |sgm02           |sgm45      |sgm012    |ecu014         |sgm03 |sgm03_par       |ima02           |ima021                 |subqty   |pmm09      |pmc03        |pmn20     |pmn33       |pmn31               |pmn31t              |pmc47    |gec04    |tc_pmm01_1   |tc_pmmud10 ]
+}
+END -- s_pmn
+Grid Grid1
+{
+  tot_sum         [tot_sum               ]
+
+}
+END -- Grid1
+END -- vb4
+END -- asfp710
+
+TABLES
+sgm_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit tc_pmm07=formonly.tc_pmm07, action=controlp, tabIndex=29, image="zoom";
+Edit pmc03_1=formonly.pmc03_1, tabIndex=31;
+ButtonEdit key01=formonly.key01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit tc_pmm01=formonly.tc_pmm01, action=controlp, tabIndex=30, image="zoom";
+ButtonEdit key05=formonly.key05 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit key06=formonly.key06 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit key02=formonly.key02 type CHAR, action=controlp, tabIndex=4, image="zoom";
+Group group02:group02, text="Input";
+ButtonEdit pmm01=formonly.pmm01 type CHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry  P/O Type ";
+ButtonEdit pmm22=formonly.pmm22 type CHAR, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Currency";
+DateEdit pmm04=formonly.pmm04 type DATE, tabIndex=7, not null, required;
+ButtonEdit pmm42=formonly.pmm42 type CHAR, action=controlp, tabIndex=8, not null, required, image="zoom";
+ButtonEdit pmm12=formonly.pmm12 type CHAR, action=controlp, tabIndex=9, not null, required, image="zoom";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=10, noEntry;
+Edit sgm01=formonly.sgm01 type CHAR, tabIndex=11, title="RunCard", noEntry;
+Edit sgm02=formonly.sgm02 type CHAR, tabIndex=12, title="W/O#", noEntry;
+Edit sgm45=formonly.sgm45 type CHAR, tabIndex=13, title="TaskName", noEntry;
+Edit sgm012=sgm_file.sgm012, tabIndex=14, title=%"Process No.", noEntry;
+Edit ecu014=formonly.ecu014 type CHAR, tabIndex=15, title=%"Process No. Name", noEntry;
+Edit sgm03=formonly.sgm03 type CHAR, tabIndex=16, title="S/N", noEntry;
+Edit sgm03_par=formonly.sgm03_par type CHAR, tabIndex=17, title="Item No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=18, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=19, title="Specification", noEntry;
+Edit subqty=formonly.subqty type CHAR, tabIndex=20, title="SUB Qty", noEntry;
+ButtonEdit pmm09=formonly.pmm09 type CHAR, action=controlp, tabIndex=21, title="Vender#", image="zoom", comment="<^P>Qry Vender No.";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=22, title="Abbreviation", noEntry;
+Edit pmn20=formonly.pmn20 type CHAR, tabIndex=23, title="Qty";
+DateEdit pmn33=formonly.pmn33 type DATE, tabIndex=24, title="Deliv.Date";
+Edit pmn31=formonly.pmn31 type CHAR, tabIndex=25, title="Unit Price";
+Edit pmn31t=formonly.pmn31t type CHAR, tabIndex=26, title="Tax Price";
+Edit pmc47=formonly.pmc47 type CHAR, tabIndex=27, title="Tax Type", noEntry;
+Edit gec04=formonly.gec04 type CHAR, tabIndex=28, title="Tax Rate", noEntry;
+Edit tc_pmm01_1=formonly.tc_pmm01_1, tabIndex=32, title=%"tc_pmm01_1", noEntry;
+Edit tc_pmmud10=formonly.tc_pmmud10, tabIndex=33, title=%"tc_pmmud10", noEntry;
+Edit tot_sum=formonly.tot_sum, tabIndex=34;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmn(formonly.sgm01,formonly.sgm02,formonly.sgm45,sgm_file.sgm012,formonly.ecu014,formonly.sgm03,formonly.sgm03_par,formonly.ima02,formonly.ima021,formonly.subqty,formonly.pmm09,formonly.pmc03,formonly.pmn20,formonly.pmn33,formonly.pmn31,formonly.pmn31t,formonly.pmc47,formonly.gec04,formonly.tc_pmm01_1,formonly.tc_pmmud10)
+SCREEN RECORD Undefined(formonly.key01,formonly.key05,formonly.key06,formonly.key02,formonly.pmm01,formonly.pmm22,formonly.pmm04,formonly.pmm42,formonly.pmm12,formonly.gen02,formonly.tc_pmm07,formonly.tc_pmm01,formonly.pmc03_1,formonly.tot_sum)
+END -- INSTRUCTIONS
+

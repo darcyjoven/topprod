@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt300_detai.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page detail_tax(text=%"Main")
+Table ds1
+{
+[oml02|oml03|oml0|gec02               |oml05     |oml06     |oml07     |oml08     |oml08t    |oml09     ]
+[oml02|oml03|oml0|gec02               |oml05     |oml06     |oml07     |oml08     |oml08t    |oml09     ]
+[oml02|oml03|oml0|gec02               |oml05     |oml06     |oml07     |oml08     |oml08t    |oml09     ]
+[oml02|oml03|oml0|gec02               |oml05     |oml06     |oml07     |oml08     |oml08t    |oml09     ]
+[oml02|oml03|oml0|gec02               |oml05     |oml06     |oml07     |oml08     |oml08t    |oml09     ]
+}
+END -- ds1
+END -- detail_tax
+END -- Folder1
+Grid gr1
+{
+
+   ---------- Rows[cn2       ] ----------
+
+}
+END -- gr1
+END -- VBox1
+END -- Form
+
+TABLES
+oml_file
+ATTRIBUTES
+Edit oml02=oml_file.oml02, tabIndex=1, title=%"oml02", not null, scroll;
+Edit oml03=oml_file.oml03, tabIndex=2, title=%"oml03", not null, scroll;
+Edit oml0=oml_file.oml04, tabIndex=3, title=%"oml04", not null, scroll;
+Edit gec02=formonly.gec02 type CHAR, tabIndex=10, title=%"gec02";
+Edit oml05=oml_file.oml05, tabIndex=4, title=%"oml05", not null, scroll;
+Edit oml06=oml_file.oml06, tabIndex=5, title=%"oml06", not null, scroll;
+Edit oml07=oml_file.oml07, tabIndex=6, title=%"oml07", not null, scroll;
+Edit oml08=oml_file.oml08, tabIndex=7, title=%"oml08", not null, scroll;
+Edit oml08t=oml_file.oml08t, tabIndex=8, title=%"oml08t", not null, scroll;
+Edit oml09=oml_file.oml09, tabIndex=9, title=%"oml09", not null, scroll;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oml(oml_file.oml02,oml_file.oml03,oml_file.oml04,formonly.gec02,oml_file.oml05,oml_file.oml06,oml_file.oml07,oml_file.oml08,oml_file.oml08t,oml_file.oml09)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

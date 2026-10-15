@@ -1,0 +1,213 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglt110")
+VBox vb9
+Folder folder01
+Page page01(text="Main")
+Grid gr2859
+{
+  <G gb7                                >    <G gb8                                 >  <G gb9                                 > <G gb10                                   >
+   BookNo          [g_bookno  |aba00  ]       Year/Period    [aba03 ][aba0]             Confirm   [aba19      ]                  Status          [aba20   ]  [imgmksg]
+   Voucher#        [aba01             ]       SourceCode     [aba06     ]               [aac13               ][abapost   ]                       [abamksg   ][       ]
+   Voucher Date    [aba02       ]             General No.    [aba11     ]               [aba35     ]                             Approval Level  [abasign ]
+  <                                     >    <                                      >                                           <                                         >
+                                                                                       <                                      >
+
+}
+END -- gr2859
+END -- page01
+Page page02(text="Other")
+Grid gr2862
+{
+  <G gb1                                   >    <G gb3                                                     >   <G gb6                                 >
+    Input Date    [aba05       ]                 I/E Account       [aba10               ]                       Balance Type         [aba31      ]
+                                                 Account Name      [aag021              ]                       Note Category        [aba32      ]
+    Applicant     [aba24     ][gen02    ]        Attachment Pcs    [aba21     ]                                 Note No.             [aba33      ]
+    Version       [aba18     ]                   Memo              [aba07                                ]      Note Date            [aba34      ]
+                                                 Print No.         [abaprno ]
+  <                                        >    <                                                          >   <                                      >
+
+}
+END -- gr2862
+END -- page02
+Page info(text="Info")
+Grid gr2863
+{
+ Department          [abagrup   ]   Create/Modify Date  [abadate    ]
+ Last Modified by    [abamodu   ]   Data Valid Code     [abaacti   ]
+ Record Orig.        [abaoriu   ]
+ Create Dept         [abaorig   ]
+
+}
+END -- gr2863
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[abaud01                       ] userdefined_field07[abaud07        ] userdefined_field13[abaud13       ]
+                    [                              ] userdefined_field08[abaud08        ] userdefined_field14[abaud14       ]
+ userdefined_field02[abaud02        ]                userdefined_field09[abaud09        ] userdefined_field15[abaud15       ]
+ userdefined_field03[abaud03        ]                userdefined_field10[abaud10        ]
+ userdefined_field04[abaud04        ]                userdefined_field11[abaud11        ]
+ userdefined_field05[abaud05        ]                userdefined_field12[abaud12        ]
+ userdefined_field06[abaud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_abb(wantFixedPageSize, height = 10 lines)
+{
+[abb02 |abb03       |aag02                                             |abb24    |abb25               |abb07df             |abb07d              |abb07cf             |abb07c              |abb04                            ]
+[abb02 |abb03       |aag02                                             |abb24    |abb25               |abb07df             |abb07d              |abb07cf             |abb07c              |abb04                            ]
+[abb02 |abb03       |aag02                                             |abb24    |abb25               |abb07df             |abb07d              |abb07cf             |abb07c              |abb04                            ]
+[abb02 |abb03       |aag02                                             |abb24    |abb25               |abb07df             |abb07d              |abb07cf             |abb07c              |abb04                            ]
+[abb02 |abb03       |aag02                                             |abb24    |abb25               |abb07df             |abb07d              |abb07cf             |abb07c              |abb04                            ]
+[abb02 |abb03       |aag02                                             |abb24    |abb25               |abb07df             |abb07d              |abb07cf             |abb07c              |abb04                            ]
+[abb02 |abb03       |aag02                                             |abb24    |abb25               |abb07df             |abb07d              |abb07cf             |abb07c              |abb04                            ]
+[abb02 |abb03       |aag02                                             |abb24    |abb25               |abb07df             |abb07d              |abb07cf             |abb07c              |abb04                            ]
+[abb02 |abb03       |aag02                                             |abb24    |abb25               |abb07df             |abb07d              |abb07cf             |abb07c              |abb04                            ]
+[abb02 |abb03       |aag02                                             |abb24    |abb25               |abb07df             |abb07d              |abb07cf             |abb07c              |abb04                            ]
+}
+END -- s_abb
+Grid gr2864
+{
+ Chinese Amount   [tot                 ]      [lb3_12    ]     Debit Amount     [aba08               ]   [lb3_13    ]   Credit Amount          [aba09               ]
+ Att1             [att1      ]   [lb3_3     ]  Att2           [att2      ]      [lb3_4     ]     Att3    [att3      ]  [lb3_5     ]    Att4    [att4      ]
+ Att5             [att5      ]   [lb3_6     ]  Att6           [att6      ]      [lb3_7     ]     Att7    [att7      ]  [lb3_8     ]    Att8    [att8      ]
+ Att9             [att9      ]   [lb3_9     ]  Att10          [att10     ]      [lb3_10    ]     Att11   [att11     ]  [lb3_11    ]    Att12   [att12     ]
+ Entered By       [abauser   ]   [lb3       ]  Confd.By       [aba37     ]      [lb3_1     ]     Post By [aba38     ]  [lb3_2     ]    Cashier [aba36     ]
+
+}
+END -- gr2864
+Grid gr30
+{
+
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr30
+END -- vb9
+END -- aglt110
+
+TABLES
+abb_file,
+aba_file
+ATTRIBUTES
+Group gb7:gb7;
+Edit g_bookno=formonly.g_bookno type CHAR, tabIndex=1;
+Edit aba00=aba_file.aba00, tabIndex=2;
+ButtonEdit aba01=aba_file.aba01, action=controlp, tabIndex=3, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Documents";
+DateEdit aba02=aba_file.aba02, tabIndex=4, not null, required;
+Group gb8:gb8;
+Edit aba03=aba_file.aba03, tabIndex=5, noEntry;
+Edit aba0=aba_file.aba04, tabIndex=6, noEntry;
+Edit aba06=aba_file.aba06, tabIndex=7, noEntry, not null, required;
+Edit aba11=aba_file.aba11, tabIndex=8;
+Group gb9:gb9;
+ComboBox aba19=aba_file.aba19, tabIndex=9, noEntry, not null, required, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+CheckBox aac13=formonly.aac13 type VARCHAR, tabIndex=10, text="Foreign Currency", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox abapost=aba_file.abapost, tabIndex=11, text="Posting Code", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aba35=aba_file.aba35, tabIndex=12, text="Cashier", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb10:gb10;
+ComboBox aba20=aba_file.aba20, tabIndex=13, noEntry, not null, required, items=(("0", "Open"),("1", "Approved"),("S", "Approving"),("R", "Approving Return"),("W", "Cancel"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 41 pixels, height = 41 pixels;
+CheckBox abamksg=aba_file.abamksg, tabIndex=14, text="Approve", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit abasign=aba_file.abasign, tabIndex=15, noEntry;
+Group gb1:gb1;
+DateEdit aba05=aba_file.aba05, tabIndex=16, noEntry;
+ButtonEdit aba24=aba_file.aba24, action=controlp, tabIndex=17, not null, required, image="zoom";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=18, not null, required;
+Edit aba18=aba_file.aba18, tabIndex=19, noEntry, comment="Enter Version!";
+Group gb3:gb3;
+ButtonEdit aba10=aba_file.aba10, action=controlp, tabIndex=20, image="zoom", picture="XXXXXXXXXXXXXXXX", comment="<^P>Qry Account # <^Y>Create Account  ";
+Edit aag021=formonly.aag021 type CHAR, tabIndex=21, noEntry;
+Edit aba21=aba_file.aba21, tabIndex=22;
+Edit aba07=aba_file.aba07, tabIndex=23;
+Edit abaprno=aba_file.abaprno, tabIndex=24, noEntry;
+Group gb6:gb6;
+Edit aba31=aba_file.aba31, tabIndex=25;
+Edit aba32=aba_file.aba32, tabIndex=26;
+Edit aba33=aba_file.aba33, tabIndex=27;
+DateEdit aba34=aba_file.aba34, tabIndex=28;
+Edit abagrup=aba_file.abagrup, tabIndex=29, noEntry;
+DateEdit abadate=aba_file.abadate, tabIndex=33, noEntry;
+Edit abamodu=aba_file.abamodu, tabIndex=30, noEntry;
+Edit abaacti=aba_file.abaacti, tabIndex=34, noEntry, upShift;
+Edit abaoriu=aba_file.abaoriu, tabIndex=31, noEntry;
+Edit abaorig=aba_file.abaorig, tabIndex=32, noEntry;
+TextEdit abaud01=aba_file.abaud01, tabIndex=35, stretch=NONE;
+Edit abaud07=aba_file.abaud07, tabIndex=41;
+DateEdit abaud13=aba_file.abaud13, tabIndex=47;
+Edit abaud08=aba_file.abaud08, tabIndex=42;
+DateEdit abaud14=aba_file.abaud14, tabIndex=48;
+Edit abaud02=aba_file.abaud02, tabIndex=36;
+Edit abaud09=aba_file.abaud09, tabIndex=43;
+DateEdit abaud15=aba_file.abaud15, tabIndex=49;
+Edit abaud03=aba_file.abaud03, tabIndex=37;
+Edit abaud10=aba_file.abaud10, tabIndex=44;
+Edit abaud04=aba_file.abaud04, tabIndex=38;
+Edit abaud11=aba_file.abaud11, tabIndex=45;
+Edit abaud05=aba_file.abaud05, tabIndex=39;
+Edit abaud12=aba_file.abaud12, tabIndex=46;
+Edit abaud06=aba_file.abaud06, tabIndex=40;
+Edit abb02=abb_file.abb02, tabIndex=69, title="Line#", not null, required, comment="<^T>Contra Details <^U> All plus 1 from current Line <^O>Copy Previous Row Body <^E>Cost Apportionment";
+ButtonEdit abb03=abb_file.abb03, action=controlp, tabIndex=70, title="Account No", not null, required, image="zoom", comment="<^P>Qry Account # <^Y>Create Account  ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=71, title="Account Title", noEntry;
+ButtonEdit abb24=abb_file.abb24, action=controlp, tabIndex=72, title="Currency", not null, required, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit abb25=abb_file.abb25, action=controlp, tabIndex=73, title="Ex. Rate", not null, required, image="zoom";
+Edit abb07df=formonly.abb07df type CHAR, tabIndex=74, title="O.C.Debit Amount";
+Edit abb07d=formonly.abb07d type CHAR, tabIndex=75, title="Debit Amount";
+Edit abb07cf=formonly.abb07cf type CHAR, tabIndex=76, title="O.C.Credit Amount";
+Edit abb07c=formonly.abb07c type CHAR, tabIndex=77, title="Credit Amount";
+ButtonEdit abb04=abb_file.abb04, action=controlp, tabIndex=78, title="Memo", image="zoom", comment="<^Y>Create Voucher Extra Memo<^P>Qry Frequently Used Memo<.####>Dir Access Memo<^O>Copy Prev.Memo";
+Edit tot=formonly.tot type DECIMAL, tabIndex=50;
+Label lb3_12:lb3_12;
+Edit aba08=aba_file.aba08, tabIndex=51;
+Label lb3_13:lb3_13;
+Edit aba09=aba_file.aba09, tabIndex=52;
+Edit att1=formonly.att1 type VARCHAR, tabIndex=53;
+Label lb3_3:lb3_3;
+Edit att2=formonly.att2 type VARCHAR, tabIndex=54;
+Label lb3_4:lb3_4;
+Edit att3=formonly.att3 type VARCHAR, tabIndex=55;
+Label lb3_5:lb3_5;
+Edit att4=formonly.att4 type VARCHAR, tabIndex=56;
+Edit att5=formonly.att5 type VARCHAR, tabIndex=57;
+Label lb3_6:lb3_6;
+Edit att6=formonly.att6 type VARCHAR, tabIndex=58;
+Label lb3_7:lb3_7;
+Edit att7=formonly.att7 type VARCHAR, tabIndex=59;
+Label lb3_8:lb3_8;
+Edit att8=formonly.att8 type VARCHAR, tabIndex=60;
+Edit att9=formonly.att9 type VARCHAR, tabIndex=61;
+Label lb3_9:lb3_9;
+Edit att10=formonly.att10 type VARCHAR, tabIndex=62;
+Label lb3_10:lb3_10;
+Edit att11=formonly.att11 type VARCHAR, tabIndex=63;
+Label lb3_11:lb3_11;
+Edit att12=formonly.att12 type VARCHAR, tabIndex=64;
+Edit abauser=aba_file.abauser, tabIndex=65, noEntry;
+Label lb3:lb3;
+Edit aba37=aba_file.aba37, tabIndex=66, noEntry;
+Label lb3_1:lb3_1;
+Edit aba38=aba_file.aba38, tabIndex=67, noEntry;
+Label lb3_2:lb3_2;
+Edit aba36=aba_file.aba36, tabIndex=68, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=79, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=80, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abb(abb_file.abb02,abb_file.abb03,formonly.aag02,abb_file.abb24,abb_file.abb25,formonly.abb07df,formonly.abb07d,formonly.abb07cf,formonly.abb07c,abb_file.abb04)
+SCREEN RECORD Undefined(formonly.g_bookno,aba_file.aba00,aba_file.aba01,aba_file.aba02,aba_file.aba03,aba_file.aba04,aba_file.aba06,aba_file.aba11,formonly.aac13,aba_file.abapost,aba_file.aba19,aba_file.aba35,aba_file.aba20,formonly.imgmksg,aba_file.abamksg,aba_file.abasign,aba_file.aba05,aba_file.aba24,formonly.gen02,aba_file.aba18,aba_file.aba10,formonly.aag021,aba_file.aba21,aba_file.aba07,aba_file.abaprno,aba_file.aba31,aba_file.aba32,aba_file.aba33,aba_file.aba34,aba_file.abagrup,aba_file.abadate,aba_file.abamodu,aba_file.abaacti,aba_file.abaoriu,aba_file.abaorig,aba_file.abaud01,aba_file.abaud07,aba_file.abaud13,aba_file.abaud08,aba_file.abaud14,aba_file.abaud02,aba_file.abaud09,aba_file.abaud15,aba_file.abaud03,aba_file.abaud10,aba_file.abaud04,aba_file.abaud11,aba_file.abaud05,aba_file.abaud12,aba_file.abaud06,formonly.tot,aba_file.aba08,aba_file.aba09,formonly.att1,formonly.att2,formonly.att3,formonly.att4,formonly.att5,formonly.att6,formonly.att7,formonly.att8,formonly.att9,formonly.att10,formonly.att11,formonly.att12,aba_file.abauser,aba_file.aba37,aba_file.aba38,aba_file.aba36,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

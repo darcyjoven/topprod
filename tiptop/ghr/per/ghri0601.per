@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri0601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ghri0601")
+VBox vbox1
+Folder pc566
+Page page01(text=%"Page01")
+Grid gr2501
+{
+ <G group01                                                       >
+   hrct01 [hrct01    ]    hrct02 [hrct02    ]
+   hrct07 [hrct07    ]    hrct03 [hrct03    ][hraa12              ]
+   hrct04 [hrct04    ]    hrct05 [hrct05    ]
+   hrct12 [hrct12    ]
+          [          ]
+
+ <                                                                >
+
+}
+END -- gr2501
+END -- page01
+END -- pc566
+END -- vbox1
+END -- ghri0601
+
+ATTRIBUTES
+Group group01:group01;
+Edit hrct01=formonly.hrct01 type VARCHAR, tabIndex=3, not null, required;
+ComboBox hrct02=formonly.hrct02 type VARCHAR, tabIndex=4, not null, required, items=(("1", %"1"),("2", %"2"),("3", %"3"),("4", %"4"),("5", %"5"),("6", %"6"),("7", %"7"),("8", %"8"),("9", %"9"),("10", %"10"),("11", %"11"),("12", %"12"));
+DateEdit hrct07=formonly.hrct07 type VARCHAR, tabIndex=2, not null, required;
+ButtonEdit hrct03=formonly.hrct03 type VARCHAR, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit hraa12=formonly.hraa12 type VARCHAR, tabIndex=6, noEntry;
+ButtonEdit hrct04=formonly.hrct04 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit hrct05=formonly.hrct05 type VARCHAR, action=controlp, tabIndex=7, not null, required, image="zoom";
+TextEdit hrct12=formonly.hrct12 type VARCHAR, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.hrct01,formonly.hrct02,formonly.hrct07,formonly.hrct03,formonly.hraa12,formonly.hrct04,formonly.hrct05,formonly.hrct12)
+END -- INSTRUCTIONS
+

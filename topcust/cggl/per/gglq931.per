@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cggl/4fd/gglq931.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Main")
+Grid Grid1
+{
+
+  a         [a                 ]   b  [b                           ]        [d                       ]
+  yy        [yy        ]           c  [c                           ]
+  mm        [mm        ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table s_xx
+{
+[km           |kmm          |cyye         |cbye             |zyye            |zbye            |yce         |bce          |bz      ]
+[km           |kmm          |cyye         |cbye             |zyye            |zbye            |yce         |bce          |bz      ]
+[km           |kmm          |cyye         |cbye             |zyye            |zbye            |yce         |bce          |bz      ]
+[km           |kmm          |cyye         |cbye             |zyye            |zbye            |yce         |bce          |bz      ]
+[km           |kmm          |cyye         |cbye             |zyye            |zbye            |yce         |bce          |bz      ]
+}
+END -- s_xx
+Table s_b_xx
+{
+[b_km         |b_kmm        |b_c_s     |b_c_sm              |b_cyye       |b_cbye          |b_zyye          |b_zbye          |b_yce       |b_bce       |b_bz    ]
+[b_km         |b_kmm        |b_c_s     |b_c_sm              |b_cyye       |b_cbye          |b_zyye          |b_zbye          |b_yce       |b_bce       |b_bz    ]
+[b_km         |b_kmm        |b_c_s     |b_c_sm              |b_cyye       |b_cbye          |b_zyye          |b_zbye          |b_yce       |b_bce       |b_bz    ]
+[b_km         |b_kmm        |b_c_s     |b_c_sm              |b_cyye       |b_cbye          |b_zyye          |b_zbye          |b_yce       |b_bce       |b_bz    ]
+[b_km         |b_kmm        |b_c_s     |b_c_sm              |b_cyye       |b_cbye          |b_zyye          |b_zbye          |b_yce       |b_bce       |b_bz    ]
+}
+END -- s_b_xx
+Grid Grid2
+{
+
+    ---------- [cn2       ] ----------[cn3       ]
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+ComboBox b=formonly.b type CHAR, tabIndex=6, not null, required, items=(("1", "1"),("2", "2"),("3", "3"));
+CheckBox d=formonly.d type CHAR, tabIndex=8, text=%"d", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit yy=formonly.yy type CHAR, tabIndex=4, not null, required;
+ComboBox c=formonly.c type CHAR, tabIndex=7, not null, required, items=(("1", "1"),("2", "2"));
+Edit mm=formonly.mm type CHAR, tabIndex=5, not null, required;
+Edit km=formonly.km type CHAR, tabIndex=1, title=%"km";
+Edit kmm=formonly.kmm type CHAR, tabIndex=2, title=%"kmm";
+Edit cyye=formonly.cyye type DECIMAL, tabIndex=9, title=%"cyye";
+Edit cbye=formonly.cbye type DECIMAL, tabIndex=10, title=%"cbye";
+Edit zyye=formonly.zyye type DECIMAL, tabIndex=11, title=%"zyye";
+Edit zbye=formonly.zbye type DECIMAL, tabIndex=12, title=%"zbye";
+Edit yce=formonly.yce type DECIMAL, tabIndex=13, title=%"yce";
+Edit bce=formonly.bce type DECIMAL, tabIndex=14, title=%"bce";
+Edit bz=formonly.bz type CHAR, tabIndex=15, title=%"bz";
+Edit b_km=formonly.b_km type CHAR, tabIndex=17, title=%"km";
+Edit b_kmm=formonly.b_kmm type CHAR, tabIndex=18, title=%"kmm";
+Edit b_c_s=formonly.b_c_s type CHAR, tabIndex=19, title=%"c_s";
+Edit b_c_sm=formonly.b_c_sm type CHAR, tabIndex=20, title=%"c_sm";
+Edit b_cyye=formonly.b_cyye type DECIMAL, tabIndex=21, title=%"cyye";
+Edit b_cbye=formonly.b_cbye type DECIMAL, tabIndex=22, title=%"cybe";
+Edit b_zyye=formonly.b_zyye type DECIMAL, tabIndex=23, title=%"zyye";
+Edit b_zbye=formonly.b_zbye type DECIMAL, tabIndex=24, title=%"zbye";
+Edit b_yce=formonly.b_yce type DECIMAL, tabIndex=25, title=%"yce";
+Edit b_bce=formonly.b_bce type DECIMAL, tabIndex=26, title=%"bce";
+Edit b_bz=formonly.b_bz type CHAR, tabIndex=27, title=%"bz";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=16;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_xx(formonly.km,formonly.kmm,formonly.cyye,formonly.cbye,formonly.zyye,formonly.zbye,formonly.yce,formonly.bce,formonly.bz)
+SCREEN RECORD Undefined(formonly.a,formonly.yy,formonly.mm,formonly.b,formonly.c,formonly.d,formonly.cn2,formonly.cn3)
+SCREEN RECORD s_b_xx(formonly.b_km,formonly.b_kmm,formonly.b_c_s,formonly.b_c_sm,formonly.b_cyye,formonly.b_cbye,formonly.b_zyye,formonly.b_zbye,formonly.b_yce,formonly.b_bce,formonly.b_bz)
+END -- INSTRUCTIONS
+

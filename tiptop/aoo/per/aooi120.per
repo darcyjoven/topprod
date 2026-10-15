@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aooi120")
+VBox vb2
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+
+  Year     [tag01     ]        Using         [tag06     ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table s_tag
+{
+[tag04          |tag05          |aag022              |tag02          |tag03          |aag021              |tagacti ]
+[tag04          |tag05          |aag022              |tag02          |tag03          |aag021              |tagacti ]
+[tag04          |tag05          |aag022              |tag02          |tag03          |aag021              |tagacti ]
+[tag04          |tag05          |aag022              |tag02          |tag03          |aag021              |tagacti ]
+[tag04          |tag05          |aag022              |tag02          |tag03          |aag021              |tagacti ]
+[tag04          |tag05          |aag022              |tag02          |tag03          |aag021              |tagacti ]
+[tag04          |tag05          |aag022              |tag02          |tag03          |aag021              |tagacti ]
+[tag04          |tag05          |aag022              |tag02          |tag03          |aag021              |tagacti ]
+[tag04          |tag05          |aag022              |tag02          |tag03          |aag021              |tagacti ]
+[tag04          |tag05          |aag022              |tag02          |tag03          |aag021              |tagacti ]
+[tag04          |tag05          |aag022              |tag02          |tag03          |aag021              |tagacti ]
+}
+END -- s_tag
+Grid gr4
+{
+
+ ---------- Rows[cnt  ]/[cn2  ] ----------
+
+
+}
+END -- gr4
+END -- vb2
+END -- aooi120
+
+TABLES
+tag_file
+ATTRIBUTES
+Edit tag01=tag_file.tag01, tabIndex=1, not null, required;
+ComboBox tag06=tag_file.tag06, tabIndex=11, default = "1", not null, required, items=(("1", "1"),("2", "2"));
+ButtonEdit tag04=tag_file.tag04, action=controlp, tabIndex=4, title="New Book", image="zoom.png";
+ButtonEdit tag05=tag_file.tag05, action=controlp, tabIndex=5, title="New Account", image="zoom.png";
+Edit aag022=formonly.aag022 type CHAR, tabIndex=6, title="Account Name", noEntry;
+ButtonEdit tag02=tag_file.tag02, action=controlp, tabIndex=2, title="Former Book", image="zoom.png";
+ButtonEdit tag03=tag_file.tag03, action=controlp, tabIndex=3, title="Former Account", not null, required, image="zoom.png";
+Edit aag021=formonly.aag021 type CHAR, tabIndex=7, title="Account Name", noEntry;
+CheckBox tagacti=tag_file.tagacti, tabIndex=10, default = "Y", title=%"Valid or Not", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type CHAR, tabIndex=8;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tag(tag_file.tag04,tag_file.tag05,formonly.aag022,tag_file.tag02,tag_file.tag03,formonly.aag021,tag_file.tagacti)
+SCREEN RECORD Undefined(tag_file.tag01,formonly.cnt,formonly.cn2,tag_file.tag06)
+END -- INSTRUCTIONS
+

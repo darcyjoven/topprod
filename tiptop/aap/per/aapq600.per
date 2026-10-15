@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapq600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapq600")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr165
+{
+
+ Vend [pmc01     ][pmc03   ]                      H.C      [aza1]
+
+}
+END -- gr165
+END -- page01
+END -- folder01
+Table s_apa
+{
+[plant      |apa02    |apa01           |apa13|apa34f              |amt_1               |amt_2               |apa08     |apa00]
+[plant      |apa02    |apa01           |apa13|apa34f              |amt_1               |amt_2               |apa08     |apa00]
+[plant      |apa02    |apa01           |apa13|apa34f              |amt_1               |amt_2               |apa08     |apa00]
+[plant      |apa02    |apa01           |apa13|apa34f              |amt_1               |amt_2               |apa08     |apa00]
+[plant      |apa02    |apa01           |apa13|apa34f              |amt_1               |amt_2               |apa08     |apa00]
+[plant      |apa02    |apa01           |apa13|apa34f              |amt_1               |amt_2               |apa08     |apa00]
+[plant      |apa02    |apa01           |apa13|apa34f              |amt_1               |amt_2               |apa08     |apa00]
+[plant      |apa02    |apa01           |apa13|apa34f              |amt_1               |amt_2               |apa08     |apa00]
+[plant      |apa02    |apa01           |apa13|apa34f              |amt_1               |amt_2               |apa08     |apa00]
+[plant      |apa02    |apa01           |apa13|apa34f              |amt_1               |amt_2               |apa08     |apa00]
+
+}
+END -- s_apa
+Grid gr166
+{
+                                               Total [tot_1     ][tot_2     ]
+
+}
+END -- gr166
+Grid gr167
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr167
+END -- VBox1
+END -- aapq600
+
+TABLES
+apa_file
+ATTRIBUTES
+Edit pmc01=formonly.pmc01 type CHAR, tabIndex=1;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2;
+Edit aza1=formonly.aza17 type CHAR, tabIndex=3, noEntry;
+Edit plant=formonly.plant type CHAR, tabIndex=4, title="Plant #", noEntry;
+Edit apa02=apa_file.apa02, tabIndex=5, title="En.Ac.Dt";
+Edit apa01=apa_file.apa01, tabIndex=6, title="E.Ac.Nt#";
+Edit apa13=apa_file.apa13, tabIndex=7, title="Curr";
+Edit apa34f=apa_file.apa34f, tabIndex=8, title="O.C Payb", not null, required;
+Edit amt_1=formonly.amt_1 type CHAR, tabIndex=9, title="H.C Payb", noEntry;
+Edit amt_2=formonly.amt_2 type CHAR, tabIndex=10, title="H.C Paid", noEntry;
+Edit apa08=apa_file.apa08, tabIndex=11, title="Invoice#";
+Edit apa00=apa_file.apa00, tabIndex=12, title="cate.";
+Edit tot_1=formonly.tot_1 type CHAR, tabIndex=13, noEntry;
+Edit tot_2=formonly.tot_2 type CHAR, tabIndex=14, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apa(formonly.plant,apa_file.apa02,apa_file.apa01,apa_file.apa13,apa_file.apa34f,formonly.amt_1,formonly.amt_2,apa_file.apa08,apa_file.apa00)
+SCREEN RECORD Undefined(formonly.pmc01,formonly.pmc03,formonly.aza17,formonly.tot_1,formonly.tot_2,formonly.cnt)
+END -- INSTRUCTIONS
+

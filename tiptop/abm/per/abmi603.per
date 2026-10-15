@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi603.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi603")
+VBox vb8
+Folder folder01
+Page page01(text="Main")
+HBox hb8
+Grid gr757
+{
+ Master Item #       [bmb01                         ]
+ Part Name           [ima02_1                       ]
+ Specification       [ima021_1                      ]
+ Alternate BOM       [bmb29               ]
+ Line No.            [bmb02     ]
+}
+END -- gr757
+Grid gr758
+{
+ Component No.       [bmb03                         ]
+ Part Name           [ima02_2                       ]
+ Specification       [ima021_2                      ]
+ Eff.Date            [bmb04       ]
+
+}
+END -- gr758
+END -- hb8
+END -- page01
+END -- folder01
+Table s_bmc
+{
+[bmc0|bmc05      ]
+[bmc0|bmc05      ]
+[bmc0|bmc05      ]
+[bmc0|bmc05      ]
+[bmc0|bmc05      ]
+[bmc0|bmc05      ]
+[bmc0|bmc05      ]
+[bmc0|bmc05      ]
+[bmc0|bmc05      ]
+[bmc0|bmc05      ]
+
+}
+END -- s_bmc
+Grid gr759
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr759
+END -- vb8
+END -- abmi603
+
+TABLES
+bmc_file,
+bmb_file
+ATTRIBUTES
+ButtonEdit bmb01=bmb_file.bmb01, action=controlp, tabIndex=1, image="zoom";
+Edit ima02_1=formonly.ima02_1 type CHAR, tabIndex=2, noEntry;
+Edit ima021_1=formonly.ima021_1 type CHAR, tabIndex=3, noEntry;
+Edit bmb29=bmb_file.bmb29, tabIndex=4, required;
+Edit bmb02=bmb_file.bmb02, tabIndex=5, required, comment="Enter Component Line#       ";
+Edit bmb03=bmb_file.bmb03, tabIndex=6, required, comment="Please enter Component No.   ";
+Edit ima02_2=formonly.ima02_2 type CHAR, tabIndex=7, noEntry;
+Edit ima021_2=formonly.ima021_2 type CHAR, tabIndex=8, noEntry;
+DateEdit bmb04=bmb_file.bmb04, tabIndex=9, required, comment="Enter Effective Date       ";
+Edit bmc0=bmc_file.bmc04, tabIndex=10, title="Ln#", not null, required;
+Edit bmc05=bmc_file.bmc05, tabIndex=11, title="Description", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmc(bmc_file.bmc04,bmc_file.bmc05)
+SCREEN RECORD Undefined(bmb_file.bmb01,formonly.ima02_1,formonly.ima021_1,bmb_file.bmb29,bmb_file.bmb02,bmb_file.bmb03,formonly.ima02_2,formonly.ima021_2,bmb_file.bmb04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

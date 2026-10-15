@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/acs/42f/acsr103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"acsr103")
+VBox VBox1
+Grid Grid1
+{
+ <G grpqbe                                  >
+  Item Group Code     [ima06               ]
+  Item No.            [ima01               ]
+ <                                          >
+
+}
+END -- Grid1
+Group group00(text="INPUT")
+Grid Grid2
+{
+ <G group01                                                                   >
+ [a                             ]  [dummy01]  [b                             ]
+
+
+ <                                                                            >
+
+}
+END -- Grid2
+END -- group00
+Grid Grid3
+{
+ <G group02                                     >
+ [more                                         ]
+ <                                              >
+
+}
+END -- Grid3
+END -- VBox1
+END -- acsr103
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+Edit ima06=formonly.ima06 type CHAR, tabIndex=1;
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Group group01:group01, text="Diffenence Analysis";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=3, items=(("1", %"Standard Cost"),("2", %"Current Cost"),("3", %"Default Cost"));
+Label dummy01:dummy01, text="AND";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=4, items=(("1", %"Standard Cost"),("2", %"Current Cost"),("3", %"Default Cost"));
+Group group02:group02;
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima06,formonly.ima01,formonly.a,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

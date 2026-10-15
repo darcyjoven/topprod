@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_obw.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_obw")
+VBox VBox1
+Folder pc845
+Page page01(text="Page01")
+Table s_obw
+{
+[check |obw01      |obw02  |obw05  |obw03         |obw04         |obw13      |obw20     |obw06 ]
+[check |obw01      |obw02  |obw05  |obw03         |obw04         |obw13      |obw20     |obw06 ]
+[check |obw01      |obw02  |obw05  |obw03         |obw04         |obw13      |obw20     |obw06 ]
+[check |obw01      |obw02  |obw05  |obw03         |obw04         |obw13      |obw20     |obw06 ]
+[check |obw01      |obw02  |obw05  |obw03         |obw04         |obw13      |obw20     |obw06 ]
+[check |obw01      |obw02  |obw05  |obw03         |obw04         |obw13      |obw20     |obw06 ]
+[check |obw01      |obw02  |obw05  |obw03         |obw04         |obw13      |obw20     |obw06 ]
+[check |obw01      |obw02  |obw05  |obw03         |obw04         |obw13      |obw20     |obw06 ]
+[check |obw01      |obw02  |obw05  |obw03         |obw04         |obw13      |obw20     |obw06 ]
+[check |obw01      |obw02  |obw05  |obw03         |obw04         |obw13      |obw20     |obw06 ]
+
+}
+END -- s_obw
+END -- page01
+END -- pc845
+Grid gr3807
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3807
+END -- VBox1
+END -- q_obw
+
+TABLES
+obw_file
+ATTRIBUTES
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit obw01=obw_file.obw01, tabIndex=2, title="Vehl No.", noEntry;
+Edit obw02=obw_file.obw02, tabIndex=3, title="Cate", noEntry;
+Edit obw05=obw_file.obw05, tabIndex=4, title="Levl", noEntry;
+Edit obw03=obw_file.obw03, tabIndex=5, title="Brand", noEntry;
+Edit obw04=obw_file.obw04, tabIndex=6, title="Vehl Type", noEntry;
+Edit obw13=obw_file.obw13, tabIndex=7, title="Mile Drd", noEntry;
+Edit obw20=obw_file.obw20, tabIndex=8, title="Veh Grp", noEntry;
+Edit obw06=obw_file.obw06, tabIndex=9, title="Ownrsh", noEntry, comment="1.Possess 2.Lease";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_obw(formonly.check,obw_file.obw01,obw_file.obw02,obw_file.obw05,obw_file.obw03,obw_file.obw04,obw_file.obw13,obw_file.obw20,obw_file.obw06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

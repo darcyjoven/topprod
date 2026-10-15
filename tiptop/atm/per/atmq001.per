@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmq001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"csfq666")
+VBox VBox1
+Folder pc465
+Page page01(text=%"Main")
+Table s_tc_zpp
+{
+[ibb01        |ibb02           |ibb03       |ibb04      |ibb06   |ima02   |ima021  |ibb07       |ibbacti   ]
+[ibb01        |ibb02           |ibb03       |ibb04      |ibb06   |ima02   |ima021  |ibb07       |ibbacti   ]
+[ibb01        |ibb02           |ibb03       |ibb04      |ibb06   |ima02   |ima021  |ibb07       |ibbacti   ]
+[ibb01        |ibb02           |ibb03       |ibb04      |ibb06   |ima02   |ima021  |ibb07       |ibbacti   ]
+[ibb01        |ibb02           |ibb03       |ibb04      |ibb06   |ima02   |ima021  |ibb07       |ibbacti   ]
+[ibb01        |ibb02           |ibb03       |ibb04      |ibb06   |ima02   |ima021  |ibb07       |ibbacti   ]
+[ibb01        |ibb02           |ibb03       |ibb04      |ibb06   |ima02   |ima021  |ibb07       |ibbacti   ]
+[ibb01        |ibb02           |ibb03       |ibb04      |ibb06   |ima02   |ima021  |ibb07       |ibbacti   ]
+[ibb01        |ibb02           |ibb03       |ibb04      |ibb06   |ima02   |ima021  |ibb07       |ibbacti   ]
+[ibb01        |ibb02           |ibb03       |ibb04      |ibb06   |ima02   |ima021  |ibb07       |ibbacti   ]
+}
+END -- s_tc_zpp
+END -- page01
+END -- pc465
+Grid gr2425
+{
+  ---------- Rows [cn2    ] ----------
+
+}
+END -- gr2425
+END -- VBox1
+END -- ctmq001
+
+ATTRIBUTES
+Edit ibb01=formonly.ibb01 type VARCHAR, tabIndex=1, title=%"ibb01", not null, required;
+ComboBox ibb02=formonly.ibb02 type VARCHAR, tabIndex=2, title=%"ibb02", items=(("A", "Work order"),("B", "FQC Quality records"),("C", "Job production"),("D", "Daily production report"),("E", "Purchasing system"),("F", "Purchase order"),("G", "Outsourcing procurement list"),("H", "Order packing list"),("I", "aimt302"),("J", "abat630"),("K", "apmt110"),("L", "aqct110"));
+Edit ibb03=formonly.ibb03 type VARCHAR, tabIndex=3, title=%"ibb03", not null, required;
+Edit ibb04=formonly.ibb04 type VARCHAR, tabIndex=4, title=%"ibb04";
+ButtonEdit ibb06=formonly.ibb06, action=controlp, tabIndex=5, title=%"ibb06", image="zoom";
+Edit ima02=formonly.ima02, tabIndex=6, title=%"ima02";
+Edit ima021=formonly.ima021, tabIndex=7, title=%"ima021";
+Edit ibb07=formonly.ibb07 type SMALLINT, tabIndex=8, title=%"ibb07";
+Edit ibbacti=formonly.ibbacti type VARCHAR, tabIndex=9, title=%"ibbacti";
+Edit cn2=formonly.cn2, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ibb(formonly.ibb01,formonly.ibb02,formonly.ibb03,formonly.ibb04,formonly.ibb06,formonly.ima02,formonly.ima021,formonly.ibb07,formonly.ibbacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

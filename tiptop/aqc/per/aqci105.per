@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqci105.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqci105")
+VBox vb5
+Folder pc9
+Page Page16(text=%"Page01")
+Table s_qdg
+{
+[qdg01     |qdg02   |qdg03       |qdg04              |qdg05        |qdg06       ]
+[qdg01     |qdg02   |qdg03       |qdg04              |qdg05        |qdg06       ]
+[qdg01     |qdg02   |qdg03       |qdg04              |qdg05        |qdg06       ]
+[qdg01     |qdg02   |qdg03       |qdg04              |qdg05        |qdg06       ]
+[qdg01     |qdg02   |qdg03       |qdg04              |qdg05        |qdg06       ]
+[qdg01     |qdg02   |qdg03       |qdg04              |qdg05        |qdg06       ]
+[qdg01     |qdg02   |qdg03       |qdg04              |qdg05        |qdg06       ]
+[qdg01     |qdg02   |qdg03       |qdg04              |qdg05        |qdg06       ]
+[qdg01     |qdg02   |qdg03       |qdg04              |qdg05        |qdg06       ]
+[qdg01     |qdg02   |qdg03       |qdg04              |qdg05        |qdg06       ]
+
+}
+END -- s_qdg
+END -- Page16
+END -- pc9
+Grid gr11
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr11
+END -- vb5
+END -- aqci105
+
+TABLES
+qdg_file
+ATTRIBUTES
+ComboBox qdg01=qdg_file.qdg01, tabIndex=1, title="QC Degree", not null, required, upShift, items=(("3", "1916(count)"),("4", "1916(measurement)"));
+ComboBox qdg02=qdg_file.qdg02, tabIndex=2, title="AQL", not null, required, items=(("1", "Normal/Special/1916"),("2", "Normal/Special/1916"),("3", "Normal/Special/1916"),("4", "Special/1916"),("5", "1916"),("6", "1916"),("7", "1916"),("R", "Reduced-Qty QC"),("T", "Strict QC"));
+Edit qdg03=qdg_file.qdg03, tabIndex=3, title="Sample Code", not null, required, upShift;
+Edit qdg04=qdg_file.qdg04, tabIndex=4, title="Adjust Sample Code", not null, required, upShift;
+Edit qdg05=qdg_file.qdg05, tabIndex=5, title="Accept";
+Edit qdg06=qdg_file.qdg06, tabIndex=6, title="Reject";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qdg(qdg_file.qdg01,qdg_file.qdg02,qdg_file.qdg03,qdg_file.qdg04,qdg_file.qdg05,qdg_file.qdg06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

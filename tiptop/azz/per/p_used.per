@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_used.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_used")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr3140
+{
+ <G group01                             >
+  Program ID       [zu01        ]
+  Program Name     [gaz03               ]
+ <                                      >
+
+}
+END -- gr3140
+END -- page01
+END -- folder01
+Table s_zu
+{
+[zu02     |zu03         |zu04           |zu05                     ]
+[zu02     |zu03         |zu04           |zu05                     ]
+[zu02     |zu03         |zu04           |zu05                     ]
+[zu02     |zu03         |zu04           |zu05                     ]
+[zu02     |zu03         |zu04           |zu05                     ]
+[zu02     |zu03         |zu04           |zu05                     ]
+[zu02     |zu03         |zu04           |zu05                     ]
+[zu02     |zu03         |zu04           |zu05                     ]
+[zu02     |zu03         |zu04           |zu05                     ]
+[zu02     |zu03         |zu04           |zu05                     ]
+[zu02     |zu03         |zu04           |zu05                     ]
+
+}
+END -- s_zu
+Grid gr3141
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3141
+END -- VBox1
+END -- p_used
+
+TABLES
+zu_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit zu01=zu_file.zu01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Value";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=2, noEntry;
+Edit zu02=zu_file.zu02, tabIndex=3, title="Date", not null, required, scroll;
+Edit zu03=zu_file.zu03, tabIndex=4, title="Time", noEntry;
+Edit zu04=zu_file.zu04, tabIndex=5, title="User ID";
+Edit zu05=zu_file.zu05, tabIndex=6, title="Minutes";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zu(zu_file.zu02,zu_file.zu03,zu_file.zu04,zu_file.zu05)
+SCREEN RECORD Undefined(zu_file.zu01,formonly.gaz03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

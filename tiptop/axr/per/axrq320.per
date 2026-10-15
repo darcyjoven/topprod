@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrq320.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrq320")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+Grid gr2913
+{
+ Customer        [occ01           |occ02     ]
+ Contact             [link                           ]
+}
+END -- gr2913
+END -- page01
+END -- folder01
+Table s_oma
+{
+[oma00 |oma01            |oma02    |oma11    |oma16            |oma23     |oma54t         |oma55          |balance           |oma56t      |oma57        |balance1          |omacon|oma66     |oma10     |oma67      ]
+[oma00 |oma01            |oma02    |oma11    |oma16            |oma23     |oma54t         |oma55          |balance           |oma56t      |oma57        |balance1          |omacon|oma66     |oma10     |oma67      ]
+[oma00 |oma01            |oma02    |oma11    |oma16            |oma23     |oma54t         |oma55          |balance           |oma56t      |oma57        |balance1          |omacon|oma66     |oma10     |oma67      ]
+[oma00 |oma01            |oma02    |oma11    |oma16            |oma23     |oma54t         |oma55          |balance           |oma56t      |oma57        |balance1          |omacon|oma66     |oma10     |oma67      ]
+[oma00 |oma01            |oma02    |oma11    |oma16            |oma23     |oma54t         |oma55          |balance           |oma56t      |oma57        |balance1          |omacon|oma66     |oma10     |oma67      ]
+[oma00 |oma01            |oma02    |oma11    |oma16            |oma23     |oma54t         |oma55          |balance           |oma56t      |oma57        |balance1          |omacon|oma66     |oma10     |oma67      ]
+[oma00 |oma01            |oma02    |oma11    |oma16            |oma23     |oma54t         |oma55          |balance           |oma56t      |oma57        |balance1          |omacon|oma66     |oma10     |oma67      ]
+[oma00 |oma01            |oma02    |oma11    |oma16            |oma23     |oma54t         |oma55          |balance           |oma56t      |oma57        |balance1          |omacon|oma66     |oma10     |oma67      ]
+[oma00 |oma01            |oma02    |oma11    |oma16            |oma23     |oma54t         |oma55          |balance           |oma56t      |oma57        |balance1          |omacon|oma66     |oma10     |oma67      ]
+[oma00 |oma01            |oma02    |oma11    |oma16            |oma23     |oma54t         |oma55          |balance           |oma56t      |oma57        |balance1          |omacon|oma66     |oma10     |oma67      ]
+
+}
+END -- s_oma
+Grid gr2914
+{
+ ---------- Rows [cnt       ] ---------- A/R Amount Total    [tot01               ] ---------- Contra\'d Amount Total [tot02               ] ----------
+
+}
+END -- gr2914
+END -- vb6
+END -- axrq320
+
+TABLES
+oma_file
+ATTRIBUTES
+ButtonEdit occ01=formonly.occ01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=2, noEntry;
+Edit link=formonly.link type CHAR, tabIndex=3, noEntry;
+Edit oma00=oma_file.oma00, tabIndex=4, title="Class", comment="11.Deposit Receivable 12.Delivery A/R 13.Balance 14.MISC 21.Allowance 22.Account To Offset 23.Advance Receive 24.Suspense Credit";
+Edit oma01=oma_file.oma01, tabIndex=5, title="Accounts #";
+DateEdit oma02=oma_file.oma02, tabIndex=6, title="Acc Date";
+DateEdit oma11=oma_file.oma11, tabIndex=7, title="A/R Date";
+Edit oma16=oma_file.oma16, tabIndex=8, title="Referen Doc#";
+Edit oma23=oma_file.oma23, tabIndex=9, title="Currency";
+Edit oma54t=oma_file.oma54t, tabIndex=10, title="A/R Amount", not null, required;
+Edit oma55=oma_file.oma55, tabIndex=11, title="Contra\'d Amt", not null, required;
+Edit balance=formonly.balance type DECIMAL, tabIndex=21, title="Unreceived$ Original Currency";
+Edit oma56t=oma_file.oma56t, tabIndex=12, title="A/R Amount", not null, required;
+Edit oma57=oma_file.oma57, tabIndex=13, title="Contra\'d Amt", not null, required;
+Edit balance1=formonly.balance1 type DECIMAL, tabIndex=22, title="Unreceived$ Home Currency";
+CheckBox omacon=oma_file.omaconf, tabIndex=14, title="Confirm", valueChecked = "Y", valueUnchecked = "N";
+Edit oma66=oma_file.oma66, tabIndex=15, title="Source";
+Edit oma10=oma_file.oma10, tabIndex=16, title="Invoice#";
+Edit oma67=oma_file.oma67, tabIndex=17, title="INVOICE No.";
+Edit cnt=formonly.cnt type CHAR, tabIndex=18;
+Edit tot01=formonly.tot01 type CHAR, tabIndex=19, noEntry;
+Edit tot02=formonly.tot02 type CHAR, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oma(oma_file.oma00,oma_file.oma01,oma_file.oma02,oma_file.oma11,oma_file.oma16,oma_file.oma23,oma_file.oma54t,oma_file.oma55,formonly.balance,oma_file.oma56t,oma_file.oma57,formonly.balance1,oma_file.omaconf,oma_file.oma66,oma_file.oma10,oma_file.oma67)
+SCREEN RECORD Undefined(formonly.occ01,formonly.occ02,formonly.link,formonly.cnt,formonly.tot01,formonly.tot02)
+END -- INSTRUCTIONS
+

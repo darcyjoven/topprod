@@ -1,0 +1,63 @@
+----------------------------------------------------------------------------------
+-- File created from /u53/tiptop/atm/42f/atmi301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="atmi301")
+
+
+   VBox vb2
+   Folder pc1
+   Page Page1(text=%"Page0")
+
+    Table tb1
+    {
+    [vih01           |vih02            |vih03       |vih04        |vih05      |vih06   |vih07    |vihacti   ]
+    [vih01           |vih02            |vih03       |vih04        |vih05      |vih06   |vih07    |vihacti   ]
+    [vih01           |vih02            |vih03       |vih04        |vih05      |vih06   |vih07    |vihacti   ]
+    [vih01           |vih02            |vih03       |vih04        |vih05      |vih06   |vih07    |vihacti   ]
+    [vih01           |vih02            |vih03       |vih04        |vih05      |vih06   |vih07    |vihacti   ]
+    [vih01           |vih02            |vih03       |vih04        |vih05      |vih06   |vih07    |vihacti   ]
+    [vih01           |vih02            |vih03       |vih04        |vih05      |vih06   |vih07    |vihacti   ]
+    [vih01           |vih02            |vih03       |vih04        |vih05      |vih06   |vih07    |vihacti   ]
+    [vih01           |vih02            |vih03       |vih04        |vih05      |vih06   |vih07    |vihacti   ]
+    [vih01           |vih02            |vih03       |vih04        |vih05      |vih06   |vih07    |vihacti   ]
+    [vih01           |vih02            |vih03       |vih04        |vih05      |vih06   |vih07    |vihacti   ]
+
+    }
+    END -- Table
+   END -- Page
+   END -- Folder
+   Grid gr3
+   {
+    ----------Rows [cn2   ] ----------
+
+   }
+   END
+   END -- VBox
+END -- Form
+
+TABLES
+vih_file
+
+ATTRIBUTES
+Edit vih01=vih_file.vih01, tabIndex=1, title="vih01", not null;
+Edit vih02=vih_file.vih02, tabIndex=2, title="vih02", not null;
+DateEdit vih03=vih_file.vih03, tabIndex=3, title="vih03", not null, required;
+DateEdit vih04=vih_file.vih04, tabIndex=4, title="vih04";
+Edit vih05=vih_file.vih05, tabIndex=5, title="vih05", not null, required;
+Edit vih06=vih_file.vih06, tabIndex=6, title="vih06", not null, required;
+ButtonEdit vih07=vih_file.vih07, action=controlp, tabIndex=7, title="vih07", not null, required, image="zoom.png";
+CheckBox vihacti=vih_file.vihacti, tabIndex=8, title="vihacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tb1(vih_file.vih01, vih_file.vih02, vih_file.vih03, vih_file.vih04, vih_file.vih05, vih_file.vih06, vih_file.vih07, vih_file.vihacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi224.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi224")
+Folder pc483
+Page page01(text="Customer Remark")
+ScrollGrid gr2068
+{
+
+[dummy1 ][dummy2                                                      ]
+[oci03  ][oci11                                                       ]
+         [oci12                                                       ]
+         [oci13                                                       ]
+         [oci14                                                       ]
+         [oci15                                                       ]
+         [oci16                                                       ]
+         [oci17                                                       ]
+         [oci18                                                       ]
+[oci03  ][oci11                                                       ]
+         [oci12                                                       ]
+         [oci13                                                       ]
+         [oci14                                                       ]
+         [oci15                                                       ]
+         [oci16                                                       ]
+         [oci17                                                       ]
+         [oci18                                                       ]
+
+}
+END -- gr2068
+END -- page01
+END -- pc483
+END -- axmi224
+
+TABLES
+oci_file
+ATTRIBUTES
+Label dummy1:dummy1, text="Serial #";
+Label dummy2:dummy2, text="Description";
+Edit oci03=oci_file.oci03, tabIndex=1, not null, required;
+Edit oci11=oci_file.oci11, tabIndex=2, not null, required;
+Edit oci12=oci_file.oci12, tabIndex=3;
+Edit oci13=oci_file.oci13, tabIndex=4;
+Edit oci14=oci_file.oci14, tabIndex=5;
+Edit oci15=oci_file.oci15, tabIndex=6;
+Edit oci16=oci_file.oci16, tabIndex=7;
+Edit oci17=oci_file.oci17, tabIndex=8;
+Edit oci18=oci_file.oci18, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oci(oci_file.oci03,oci_file.oci11,oci_file.oci12,oci_file.oci13,oci_file.oci14,oci_file.oci15,oci_file.oci16,oci_file.oci17,oci_file.oci18)
+END -- INSTRUCTIONS
+

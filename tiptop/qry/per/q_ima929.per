@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_ima929.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_ima\n")
+Grid gr3714
+{
+ <T s_ima                                                 >
+ [check |ima01       |ima02               |ima021        ]
+ [check |ima01       |ima02               |ima021        ]
+ [check |ima01       |ima02               |ima021        ]
+ [check |ima01       |ima02               |ima021        ]
+ [check |ima01       |ima02               |ima021        ]
+ [check |ima01       |ima02               |ima021        ]
+ [check |ima01       |ima02               |ima021        ]
+ [check |ima01       |ima02               |ima021        ]
+ [check |ima01       |ima02               |ima021        ]
+ [check |ima01       |ima02               |ima021        ]
+ <                                                        >
+
+}
+END -- gr3714
+END -- q_aac
+
+TABLES
+ima_file
+ATTRIBUTES
+Table s_ima:s_ima;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ima01=ima_file.ima01, tabIndex=2, title="Item No.", noEntry;
+Edit ima02=ima_file.ima02, tabIndex=3, title="Item Name", noEntry;
+Edit ima021=ima_file.ima021, tabIndex=4, title="Item Specification", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ima(formonly.check,ima_file.ima01,ima_file.ima02,ima_file.ima021)
+END -- INSTRUCTIONS
+

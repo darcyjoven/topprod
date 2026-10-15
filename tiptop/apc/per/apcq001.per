@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apcq001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table s_plg
+{
+[ryl01         |ryl02   |ryl03   |ryl04   |ryl05    |ryl06   |ryl07   |ryl08   |ryl09   |ryl10   |ryl11   |ryl12   |ryl13   |ryl14   |ryl15   |ryl16   ]
+[ryl01         |ryl02   |ryl03   |ryl04   |ryl05    |ryl06   |ryl07   |ryl08   |ryl09   |ryl10   |ryl11   |ryl12   |ryl13   |ryl14   |ryl15   |ryl16   ]
+[ryl01         |ryl02   |ryl03   |ryl04   |ryl05    |ryl06   |ryl07   |ryl08   |ryl09   |ryl10   |ryl11   |ryl12   |ryl13   |ryl14   |ryl15   |ryl16   ]
+[ryl01         |ryl02   |ryl03   |ryl04   |ryl05    |ryl06   |ryl07   |ryl08   |ryl09   |ryl10   |ryl11   |ryl12   |ryl13   |ryl14   |ryl15   |ryl16   ]
+[ryl01         |ryl02   |ryl03   |ryl04   |ryl05    |ryl06   |ryl07   |ryl08   |ryl09   |ryl10   |ryl11   |ryl12   |ryl13   |ryl14   |ryl15   |ryl16   ]
+
+
+
+
+}
+END -- s_plg
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+ ------- Rows  [cnt       ] ----------
+
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit ryl01=formonly.ryl01 type VARCHAR, action=controlp, tabIndex=1, title=%"trans_no", not null, required, image="zoom";
+ButtonEdit ryl02=formonly.ryl02 type VARCHAR, action=controlp, tabIndex=2, title=%"shop", not null, required, image="zoom";
+Edit ryl03=formonly.ryl03 type VARCHAR, tabIndex=3, title=%"fno", not null, required;
+ComboBox ryl04=formonly.ryl04 type VARCHAR, tabIndex=4, title=%"ucode", not null, items=(("01", "01"),("02", "02"),("03", "03"),("04", "04"),("05", "05"),("06", "06"));
+ButtonEdit ryl05=formonly.ryl05 type VARCHAR, action=controlp, tabIndex=5, title=%"tbname", image="zoom";
+ButtonEdit ryl06=formonly.ryl06 type VARCHAR, action=controlp, tabIndex=6, title=%"err_no", image="zoom";
+Edit ryl07=formonly.ryl07 type VARCHAR, tabIndex=7, title=%"err_msg";
+ComboBox ryl08=formonly.ryl08 type VARCHAR, tabIndex=8, title=%"trans_type", not null, items=(("0", "shangchuan"),("1", "xiachuan"));
+ComboBox ryl09=formonly.ryl09 type VARCHAR, tabIndex=9, title=%"trans_flg", not null, items=(("N", "No"),("Y", "Yes"),("X", "X"));
+DateEdit ryl10=formonly.ryl10 type DATE, tabIndex=10, title=%"trans_date";
+TimeEdit ryl11=formonly.ryl11 type VARCHAR, tabIndex=11, title=%"trans_time";
+ButtonEdit ryl12=formonly.ryl12 type VARCHAR, action=controlp, tabIndex=12, title=%"creator", image="zoom";
+Edit ryl13=formonly.ryl13 type VARCHAR, tabIndex=13, title=%"memo";
+Edit ryl14=formonly.ryl14 type VARCHAR, tabIndex=14, title=%"und01";
+Edit ryl15=formonly.ryl15 type VARCHAR, tabIndex=16, title=%"und02";
+Edit ryl16=formonly.ryl16 type VARCHAR, tabIndex=17, title=%"und03";
+Edit cnt=formonly.cnt type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_plg(formonly.ryl01,formonly.ryl02,formonly.ryl03,formonly.ryl04,formonly.ryl05,formonly.ryl06,formonly.ryl07,formonly.ryl08,formonly.ryl09,formonly.ryl10,formonly.ryl11,formonly.ryl12,formonly.ryl13,formonly.ryl14,formonly.ryl15,formonly.ryl16)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

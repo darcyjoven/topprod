@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri113.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid2
+{
+ <G group1                                        >   <G group2                                        >
+   hrbs05[hrbs05    |hrbs05_desc         ]               hrbs03[hrbs03    |hrbs03_desc         ]
+   hrbs01[hrbs01                         ]               hrbs04[hrbs04                         ]
+   hrbs02[hrbs02                         ]
+ <                                                >   <                                                >
+}
+END -- Grid2
+END -- Page1
+END -- Folder1
+Table Table1
+{
+[hrbs06  |hrbs07  |hrbsa03 |hrbs08  |hrbs09  |hrbs10  |hrbs11  |hrbs12  |hrbs13  |hrbs14  |hrbs15  |hrbsacti]
+[hrbs06  |hrbs07  |hrbsa03 |hrbs08  |hrbs09  |hrbs10  |hrbs11  |hrbs12  |hrbs13  |hrbs14  |hrbs15  |hrbsacti]
+[hrbs06  |hrbs07  |hrbsa03 |hrbs08  |hrbs09  |hrbs10  |hrbs11  |hrbs12  |hrbs13  |hrbs14  |hrbs15  |hrbsacti]
+[hrbs06  |hrbs07  |hrbsa03 |hrbs08  |hrbs09  |hrbs10  |hrbs11  |hrbs12  |hrbs13  |hrbs14  |hrbs15  |hrbsacti]
+[hrbs06  |hrbs07  |hrbsa03 |hrbs08  |hrbs09  |hrbs10  |hrbs11  |hrbs12  |hrbs13  |hrbs14  |hrbs15  |hrbsacti]
+
+}
+END -- Table1
+Grid Grid1
+{
+ -------- cnt[cnt ]cn2[cn2 ]------------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"";
+ButtonEdit hrbs05=formonly.hrbs05 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrbs05_desc=formonly.hrbs05_desc type VARCHAR, tabIndex=2, noEntry;
+Edit hrbs01=formonly.hrbs01 type VARCHAR, tabIndex=5, not null, required;
+Edit hrbs02=formonly.hrbs02 type VARCHAR, tabIndex=6, not null, required;
+Group group2:Group2, text=%"";
+ButtonEdit hrbs03=formonly.hrbs03 type VARCHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit hrbs03_desc=formonly.hrbs03_desc type VARCHAR, tabIndex=4, noEntry;
+ComboBox hrbs04=formonly.hrbs04 type VARCHAR, tabIndex=7, not null, required, items=(("1", "xzzz"),("2", "dljj"),("3", "gdzz"));
+Edit hrbs06=formonly.hrbs06 type INTEGER, tabIndex=8, title=%"hrbs06", noEntry;
+ButtonEdit hrbs07=formonly.hrbs07 type VARCHAR, action=controlp, tabIndex=9, title=%"hrbs07", not null, required, image="zoom";
+Edit hrbsa03=formonly.hrbsa03 type VARCHAR, tabIndex=10, title=%"hrbsa03", noEntry;
+Edit hrbs08=formonly.hrbs08 type INTEGER, tabIndex=11, title=%"hrbs08", not null, required;
+CheckBox hrbs09=formonly.hrbs09 type VARCHAR, tabIndex=12, title=%"hrbsa09", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox hrbs10=formonly.hrbs10 type VARCHAR, tabIndex=13, title=%"hrbs10", not null, required, items=(("1", "zifu"),("2", "shuzi"));
+Edit hrbs11=formonly.hrbs11 type INTEGER, tabIndex=14, title=%"hrbs11", not null, required;
+CheckBox hrbs12=formonly.hrbs12 type VARCHAR, tabIndex=15, title=%"hrbs12", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrbs13=formonly.hrbs13 type VARCHAR, tabIndex=16, title=%"hrbs13", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox hrbs14=formonly.hrbs14 type VARCHAR, tabIndex=17, title=%"hrbs14", not null, required, items=(("1", "L"),("2", "C"),("3", "R"));
+ComboBox hrbs15=formonly.hrbs15 type VARCHAR, tabIndex=18, title=%"hrbs15", not null, required, items=(("1", "kg"),("2", "0"),("3", "xhx"));
+CheckBox hrbsacti=formonly.hrbsacti type VARCHAR, tabIndex=19, title=%"hrbsacti", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrbs05,formonly.hrbs05_desc,formonly.hrbs03,formonly.hrbs03_desc,formonly.hrbs01,formonly.hrbs02,formonly.hrbs04,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_hrbs(formonly.hrbs06,formonly.hrbs07,formonly.hrbsa03,formonly.hrbs08,formonly.hrbs09,formonly.hrbs10,formonly.hrbs11,formonly.hrbs12,formonly.hrbs13,formonly.hrbs14,formonly.hrbs15,formonly.hrbsacti)
+END -- INSTRUCTIONS
+

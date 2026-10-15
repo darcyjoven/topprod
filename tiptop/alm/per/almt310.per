@@ -1,0 +1,279 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almt310")
+VBox VBox1
+Folder pc1
+Page main(text="Basic Data")
+Grid gr1
+{
+
+[label1    |lue01              ]                               [label20  |lue14                 ]                  [lue60          ]
+[label2    |lue02              ]                               [label19  |lue15                 ]                  [lue55          ]
+[label3    |lue03              ]                               [label18  |lue16                 ]        [label31  |lue36          ][imgmksg ]
+[label4    |lue04              |rtz13                 ]        [label17  |lue17                 ]        [label30  |lue37          ][        ]
+[label5    |lue05              ]                               [label16  |lue18                 ]        [label29  |lue38          ]
+[label6    |lue06                                     ]        [label15  |lue19                 ]        [label28  |lue39                    ]
+[label7    |lue07              ]                               [label22  |lue20                 ]                  [                         ]
+[label8    |lue61              |lue61_n               ]        [label21  |lue21                 ]        [label36  |lue32          ]
+[label9    |lue62              |lue62_n               ]        [label23  |lue22                 ]        [label33  |lue33          ]
+[label10   |lue08              |tqa02                 ]        [label26  |lue28                 ]                  [lue31          ]
+[label11   |lue09              |geo02                 ]        [label24  |lue23                 ]                  [lue34          ]
+[label12   |lue10              ]                               [label25  |lue24                 ]        [label32  |lue35          ]
+[label13   |lue12              ]                               [label27  |lue29                 ]
+[label14   |lue13              ]                               [label37  |lue56                 ]
+
+
+}
+END -- gr1
+END -- main
+Page kuaiji(text="Acco.Info")
+Grid gr2
+{
+
+  Tax Code[lue40             ][gec02                 ]    Inv.Code        [lue48          ]
+  Tax l   [gec04             ]                            Inv.Add.        [lue49          ]
+          [gec07             ]                                            [               ]
+  Inv.Type[lue41             ]                            Decimals        [lue59          ]
+  Pay.Term[lue42             ][oag02                 ]    BankCode        [lue50          ]
+  Style   [lue57             ][ool02                 ]    BankName        [lue51          ]
+  Bibie   [lue58             ][azi02                 ]    BankACC.        [lue52          ]
+  Name    [lue43             ]                            Acc.Name        [lue53                                 ]
+  Tel     [lue44             ]                            Customer Type   [lue63          ]
+  Email   [lue45             ]                            Payer           [lue64          |lue64_n               ]
+  ZipCode [lue46             ]                            Default Language[lue66          ]
+  Addr.   [lue47             ]                            Memo            [lue54          ]
+          [                  ]                                            [               ]
+
+
+
+}
+END -- gr2
+END -- kuaiji
+Page info(text="Info")
+Grid gr3
+{
+
+  Data Owner  [lueuser       ]  Create on       [luecrat       ]     Last modified on[luedate       ]
+  Department  [luegrup       ]  Last modified by[luemodu       ]
+  Recd Orig.  [lueoriu       ]
+  Dept Orig.  [lueorig       ]
+
+
+
+
+
+}
+END -- gr3
+END -- info
+END -- pc1
+Folder Folder1
+Page manage(text=%"Manage")
+Table s_lug
+{
+[lug03     |tqa02_3       |lug04     |lug05     |lug06         |lug07        ]
+[lug03     |tqa02_3       |lug04     |lug05     |lug06         |lug07        ]
+[lug03     |tqa02_3       |lug04     |lug05     |lug06         |lug07        ]
+[lug03     |tqa02_3       |lug04     |lug05     |lug06         |lug07        ]
+[lug03     |tqa02_3       |lug04     |lug05     |lug06         |lug07        ]
+
+}
+END -- s_lug
+END -- manage
+Page brand(text=%"Other Brand")
+Table s_luf
+{
+[luf03        |tqa02_2    |luf04        |geo02_2    ]
+[luf03        |tqa02_2    |luf04        |geo02_2    ]
+[luf03        |tqa02_2    |luf04        |geo02_2    ]
+[luf03        |tqa02_2    |luf04        |geo02_2    ]
+[luf03        |tqa02_2    |luf04        |geo02_2    ]
+
+}
+END -- s_luf
+END -- brand
+Page state(text=%"Store State")
+Table s_luh
+{
+[luhstore     |rtz13_2          |luhlegal    |azt02     |luh04         |luh05        |luh06     |luh07      ]
+[luhstore     |rtz13_2          |luhlegal    |azt02     |luh04         |luh05        |luh06     |luh07      ]
+[luhstore     |rtz13_2          |luhlegal    |azt02     |luh04         |luh05        |luh06     |luh07      ]
+[luhstore     |rtz13_2          |luhlegal    |azt02     |luh04         |luh05        |luh06     |luh07      ]
+[luhstore     |rtz13_2          |luhlegal    |azt02     |luh04         |luh05        |luh06     |luh07      ]
+
+}
+END -- s_luh
+END -- state
+END -- Folder1
+Grid gr4
+{
+
+ -----[label|idx    |la|cn2    ]  ------  [label38   |cn3       ]  ------  [label39   |cn4       ]  ------  [label70   |cn5       ]  ------
+
+}
+END -- gr4
+END -- VBox1
+END -- almt310
+
+TABLES
+luh_file,
+lug_file,
+luf_file,
+lue_file
+ATTRIBUTES
+Label label1:Label1, text=%"Mer.No.";
+ButtonEdit lue01=lue_file.lue01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Label label20:Label20, text=%"Dir.";
+Edit lue14=lue_file.lue14, tabIndex=13;
+CheckBox lue60=lue_file.lue60, tabIndex=65, text=%"lue60", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Label label2:Label2, text=%"Version";
+Edit lue02=lue_file.lue02, tabIndex=2, noEntry, not null, required;
+Label label19:Label19, text=%"D.Tel.";
+Edit lue15=lue_file.lue15, tabIndex=17;
+CheckBox lue55=lue_file.lue55, tabIndex=59, default = "N", text="send", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Label label3:Label3, text=%"Hid.B.No";
+ButtonEdit lue03=lue_file.lue03, action=controlp, tabIndex=3, noEntry, not null, required, image="zoom.png";
+Label label18:Label18, text=%"Repr.";
+Edit lue16=lue_file.lue16, tabIndex=18;
+Label label31:Label31, text=%"Appr.No.";
+ComboBox lue36=lue_file.lue36, tabIndex=34, default = "N", noEntry, not null, required, items=(("N", "uncheckecd"),("Y", "checked"),("X", "abandon"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, width = 9 characters, height = 2 characters;
+Label label4:Label4, text=%"S.D.N";
+ButtonEdit lue04=lue_file.lue04, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=14, noEntry;
+Label label17:Label17, text=%"Re.Tel.";
+Edit lue17=lue_file.lue17, tabIndex=19;
+Label label30:Label30, text=%"Approver";
+Edit lue37=lue_file.lue37, tabIndex=35, noEntry, not null, required;
+Label label5:Label5, text=%"Forshort";
+Edit lue05=lue_file.lue05, tabIndex=5, not null, required;
+Label label16:Label16, text=%"Oper.";
+Edit lue18=lue_file.lue18, tabIndex=20;
+Label label29:Label29, text=%"Appr.on";
+DateEdit lue38=lue_file.lue38, tabIndex=36, noEntry, not null, required;
+Label label6:Label6, text=%"Forfull";
+Edit lue06=lue_file.lue06, tabIndex=6;
+Label label15:Label15, text=%"Oper.Tel";
+Edit lue19=lue_file.lue19, tabIndex=21;
+Label label28:Label28, text=%"Memo";
+TextEdit lue39=lue_file.lue39, tabIndex=60, stretch=NONE;
+Label label7:Label7, text=%"Quality";
+ComboBox lue07=lue_file.lue07, tabIndex=7, not null, required, items=(("1", "ming"),("2", "guo"),("3", "si"),("4", "he"),("5", "du"));
+Label label22:Label22, text=%"Email";
+Edit lue20=lue_file.lue20, tabIndex=22;
+Label label8:Label8, text=%"Logistics";
+ButtonEdit lue61=lue_file.lue61, action=controlp, tabIndex=496, image="zoom.png";
+Edit lue61_n=formonly.lue61_n type CHAR, tabIndex=496, noEntry;
+Label label21:Label21, text=%"Websit";
+Edit lue21=lue_file.lue21, tabIndex=23;
+Label label36:Label36, text=%"Store";
+Edit lue32=lue_file.lue32, tabIndex=30, noEntry;
+Label label9:Label9, text=%"Category";
+ButtonEdit lue62=lue_file.lue62, action=controlp, tabIndex=496, image="zoom.png";
+Edit lue62_n=formonly.lue62_n type CHAR, tabIndex=496, noEntry;
+Label label23:Label23, text=%"Fax";
+Edit lue22=lue_file.lue22, tabIndex=24;
+Label label33:Label33, text=%"Stall";
+Edit lue33=lue_file.lue33, tabIndex=31, noEntry;
+Label label10:Label10, text=%"MainBra.";
+ButtonEdit lue08=lue_file.lue08, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=15, noEntry;
+Label label26:Label26, text=%"O.Style";
+ComboBox lue28=lue_file.lue28, tabIndex=27, not null, required, items=(("0", "0"),("1", "1"));
+CheckBox lue31=lue_file.lue31, tabIndex=29, text="Ally?", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Label label11:Label11, text=%"PlaceNum";
+ButtonEdit lue09=lue_file.lue09, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Edit geo02=formonly.geo02 type CHAR, tabIndex=16, noEntry;
+Label label24:Label24, text=%"Regis.";
+Edit lue23=lue_file.lue23, tabIndex=25;
+CheckBox lue34=lue_file.lue34, tabIndex=32, default = "N", text="Approval?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label12:Label12, text=%"Ope.Area";
+Edit lue10=lue_file.lue10, tabIndex=10;
+Label label25:Label25, text=%"HireA.";
+Edit lue24=lue_file.lue24, tabIndex=26;
+Label label32:Label32, text=%"Sta.";
+ComboBox lue35=lue_file.lue35, tabIndex=33, default = "0", noEntry, not null, required, items=(("0", "kaili"),("1", "checked"),("S", "sending"),("W", "chodan"),("R", "back"));
+Label label13:Label13, text=%"Manager";
+Edit lue12=lue_file.lue12, tabIndex=11;
+Label label27:Label27, text=%"Reg";
+Edit lue29=lue_file.lue29, tabIndex=28;
+Label label14:Label14, text=%"Z.Tel.";
+Edit lue13=lue_file.lue13, tabIndex=12;
+Label label37:Label37, text=%"ID";
+Edit lue56=lue_file.lue56, tabIndex=524;
+ButtonEdit lue40=lue_file.lue40, action=controlp, tabIndex=37, not null, required, image="zoom.png";
+Edit gec02=formonly.gec02 type CHAR, tabIndex=45, noEntry;
+Edit lue48=lue_file.lue48, tabIndex=47;
+Edit gec04=formonly.gec04 type CHAR, tabIndex=63, noEntry;
+TextEdit lue49=lue_file.lue49, tabIndex=48, stretch=NONE;
+CheckBox gec07=formonly.gec07 type CHAR, tabIndex=64, text="ch9", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit lue41=lue_file.lue41, tabIndex=38;
+ComboBox lue59=lue_file.lue59, tabIndex=70, items=(("0", "0"),("1", "1"),("2", "2"));
+ButtonEdit lue42=lue_file.lue42, action=controlp, tabIndex=40, not null, required, image="zoom.png";
+Edit oag02=formonly.oag02 type CHAR, tabIndex=46, noEntry;
+ButtonEdit lue50=lue_file.lue50, action=controlp, tabIndex=49, image="zoom.png";
+ButtonEdit lue57=lue_file.lue57, action=controlp, tabIndex=66, not null, required, image="zoom.png";
+Edit ool02=formonly.ool02 type CHAR, tabIndex=68, noEntry;
+Edit lue51=lue_file.lue51, tabIndex=50, noEntry;
+ButtonEdit lue58=lue_file.lue58, action=controlp, tabIndex=67, not null, required, image="zoom.png";
+Edit azi02=formonly.azi02 type CHAR, tabIndex=69, noEntry;
+Edit lue52=lue_file.lue52, tabIndex=51;
+Edit lue43=lue_file.lue43, tabIndex=39;
+Edit lue53=lue_file.lue53, tabIndex=52;
+Edit lue44=lue_file.lue44, tabIndex=41;
+ComboBox lue63=lue_file.lue63, tabIndex=499, not null, required, items=(("1", "All"),("2", "Delivery customers"));
+Edit lue45=lue_file.lue45, tabIndex=42;
+ButtonEdit lue64=lue_file.lue64, action=controlp, tabIndex=497, not null, required, image="zoom.png";
+Edit lue64_n=formonly.lue64_n type CHAR, tabIndex=498, noEntry;
+Edit lue46=lue_file.lue46, tabIndex=43;
+ComboBox lue66=lue_file.lue66, tabIndex=500, not null, required;
+TextEdit lue47=lue_file.lue47, tabIndex=44, stretch=NONE;
+TextEdit lue54=lue_file.lue54, tabIndex=53, stretch=NONE;
+Edit lueuser=lue_file.lueuser, tabIndex=54, noEntry;
+DateEdit luecrat=lue_file.luecrat, tabIndex=56, noEntry;
+DateEdit luedate=lue_file.luedate, tabIndex=58, noEntry;
+Edit luegrup=lue_file.luegrup, tabIndex=55, noEntry;
+Edit luemodu=lue_file.luemodu, tabIndex=57, noEntry;
+Edit lueoriu=lue_file.lueoriu, tabIndex=494, noEntry;
+Edit lueorig=lue_file.lueorig, tabIndex=495, noEntry;
+ButtonEdit lug03=lug_file.lug03, action=controlp, tabIndex=501, title="Cert.No", not null, required, image="zoom";
+Edit tqa02_3=formonly.tqa02_3 type CHAR, tabIndex=518, title=%"Cert.Name", noEntry;
+Edit lug04=lug_file.lug04, tabIndex=502, title="Cert.num.", not null, required;
+Edit lug05=lug_file.lug05, tabIndex=503, title="Operator";
+DateEdit lug06=lug_file.lug06, tabIndex=504, title="Val.date from";
+DateEdit lug07=lug_file.lug07, tabIndex=505, title="Val.date to";
+ButtonEdit luf03=luf_file.luf03, action=controlp, tabIndex=506, title="Brand Doc.No.", not null, required, image="zoom.png";
+Edit tqa02_2=formonly.tqa02_2 type CHAR, tabIndex=507, title="Brand Name", noEntry;
+ButtonEdit luf04=luf_file.luf04, action=controlp, tabIndex=508, title="Pla.O.DocNo.", not null, required, image="zoom.png";
+Edit geo02_2=formonly.geo02_2 type CHAR, tabIndex=509, title="Pla.O.Name", noEntry;
+ButtonEdit luhstore=luh_file.luhstore, action=controlp, tabIndex=510, title="Store No.", noEntry, image="zoom.png";
+Edit rtz13_2=formonly.rtz13_2 type CHAR, tabIndex=511, title="Store Name", noEntry;
+ButtonEdit luhlegal=luh_file.luhlegal, action=controlp, tabIndex=512, title=%"Corporation", noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=513, title=%"Corporation Title", noEntry;
+ComboBox luh04=luh_file.luh04, tabIndex=514, title="Corporation Initial Status", noEntry, items=(("0", "unchecked"),("1", "keqianye"),("2", "clear"));
+ComboBox luh05=luh_file.luh05, tabIndex=515, title="Expected Change Status", not null, items=(("0", "uncheck"),("1", "keqiny"),("2", "clear"));
+CheckBox luh06=luh_file.luh06, tabIndex=516, default = "N", title="Approval Result", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox luh07=luh_file.luh07, tabIndex=517, title="Corporation Status", noEntry, items=(("0", "uncheck"),("1", "qian"),("2", "clear"));
+Label label:Label34, text=%"Rows";
+Edit idx=formonly.idx type SMALLINT, tabIndex=519, noEntry;
+Label la:Label35, text=%"/";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=520, noEntry;
+Label label38:Label38, text=%"detail1";
+Edit cn3=formonly.cn3 type CHAR, tabIndex=521;
+Label label39:Label39, text=%"detail2";
+Edit cn4=formonly.cn4 type CHAR, tabIndex=522;
+Label label70:Label70, text=%"detail3";
+Edit cn5=formonly.cn5 type CHAR, tabIndex=523;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lue_file.lue01,lue_file.lue14,lue_file.lue02,lue_file.lue15,lue_file.lue03,lue_file.lue16,lue_file.lue04,formonly.rtz13,lue_file.lue17,lue_file.lue05,lue_file.lue18,lue_file.lue31,lue_file.lue06,lue_file.lue19,lue_file.lue32,lue_file.lue07,lue_file.lue20,lue_file.lue33,lue_file.lue61,formonly.lue61_n,lue_file.lue21,lue_file.lue34,lue_file.lue62,formonly.lue62_n,lue_file.lue22,lue_file.lue35,lue_file.lue08,formonly.tqa02,lue_file.lue23,lue_file.lue36,formonly.imgmksg,lue_file.lue09,formonly.geo02,lue_file.lue24,lue_file.lue37,lue_file.lue10,lue_file.lue38,lue_file.lue12,lue_file.lue28,lue_file.lue60,lue_file.lue55,lue_file.lue13,lue_file.lue29,lue_file.lue39,lue_file.lue40,formonly.gec02,lue_file.lue48,formonly.gec04,lue_file.lue49,formonly.gec07,lue_file.lue41,lue_file.lue59,lue_file.lue42,formonly.oag02,lue_file.lue50,lue_file.lue57,formonly.ool02,lue_file.lue51,lue_file.lue58,formonly.azi02,lue_file.lue52,lue_file.lue43,lue_file.lue53,lue_file.lue44,lue_file.lue63,lue_file.lue45,lue_file.lue64,formonly.lue64_n,lue_file.lue46,lue_file.lue66,lue_file.lue47,lue_file.lue54,lue_file.lueuser,lue_file.luecrat,lue_file.luedate,lue_file.luegrup,lue_file.luemodu,lue_file.lueoriu,lue_file.lueorig,formonly.idx,formonly.cn2,formonly.cn3,formonly.cn4,formonly.cn5,lue_file.lue56)
+SCREEN RECORD s_lug(lug_file.lug03,formonly.tqa02_3,lug_file.lug04,lug_file.lug05,lug_file.lug06,lug_file.lug07)
+SCREEN RECORD s_luf(luf_file.luf03,formonly.tqa02_2,luf_file.luf04,formonly.geo02_2)
+SCREEN RECORD s_luh(luh_file.luhstore,formonly.rtz13_2,luh_file.luhlegal,formonly.azt02,luh_file.luh04,luh_file.luh05,luh_file.luh06,luh_file.luh07)
+END -- INSTRUCTIONS
+

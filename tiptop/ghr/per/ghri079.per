@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri079.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox1
+Grid Grid3
+{
+ <G group1                                                                                                   >
+   <T table1                                                                                              >
+   [hrdl01  |hrdl02  |hrdl03  |hrdl03_d|hrdl04  |hrdl05  |hrdl06  |hrdl07  |hrdl08  |hrdl09  |hrdl10  ]
+   [hrdl01  |hrdl02  |hrdl03  |hrdl03_d|hrdl04  |hrdl05  |hrdl06  |hrdl07  |hrdl08  |hrdl09  |hrdl10  ]
+   [hrdl01  |hrdl02  |hrdl03  |hrdl03_d|hrdl04  |hrdl05  |hrdl06  |hrdl07  |hrdl08  |hrdl09  |hrdl10  ]
+   [hrdl01  |hrdl02  |hrdl03  |hrdl03_d|hrdl04  |hrdl05  |hrdl06  |hrdl07  |hrdl08  |hrdl09  |hrdl10  ]
+   [hrdl01  |hrdl02  |hrdl03  |hrdl03_d|hrdl04  |hrdl05  |hrdl06  |hrdl07  |hrdl08  |hrdl09  |hrdl10  ]
+   <                                                                                                      >
+ <                                                                                                           >
+}
+END -- Grid3
+Grid Grid1
+{
+ ---------- cnt[cnt ]----------
+
+}
+END -- Grid1
+Grid Grid4
+{
+  <G group2                                                                                                   >
+    <T table2                                                                                              >
+    [hrdla03 |hrdla02 |hrdk03  |hrdk08  |hrdk07  |hrdk09  ]
+    [hrdla03 |hrdla02 |hrdk03  |hrdk08  |hrdk07  |hrdk09  ]
+    [hrdla03 |hrdla02 |hrdk03  |hrdk08  |hrdk07  |hrdk09  ]
+    [hrdla03 |hrdla02 |hrdk03  |hrdk08  |hrdk07  |hrdk09  ]
+    [hrdla03 |hrdla02 |hrdk03  |hrdk08  |hrdk07  |hrdk09  ]
+  <                                                                                                           >
+}
+END -- Grid4
+Grid Grid2
+{
+ ---------- cn2[cn2 ]----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+Table table1:Table1;
+Edit hrdl01=formonly.hrdl01 type VARCHAR, tabIndex=1, title=%"hrdl01", not null, required;
+Edit hrdl02=formonly.hrdl02 type VARCHAR, tabIndex=2, title=%"hrdl02", not null, required;
+ButtonEdit hrdl03=formonly.hrdl03 type VARCHAR, action=controlp, tabIndex=7, title=%"hrdl03", not null, required, image="zoom";
+Edit hrdl03_d=formonly.hrdl03_desc type VARCHAR, tabIndex=8, title=%"hrdl03_desc", noEntry;
+ComboBox hrdl04=formonly.hrdl04 type VARCHAR, tabIndex=9, title=%"hrdl04", not null, required;
+ComboBox hrdl05=formonly.hrdl05 type VARCHAR, tabIndex=10, title=%"hrdl05", not null, required;
+ComboBox hrdl06=formonly.hrdl06 type VARCHAR, tabIndex=11, title=%"hrdl06", not null, required;
+ButtonEdit hrdl07=formonly.hrdl07 type DECIMAL, action=controlp, tabIndex=12, title=%"hrdl07", not null, required, image="zoom";
+CheckBox hrdl08=formonly.hrdl08 type VARCHAR, tabIndex=13, title=%"hrdl08", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrdl09=formonly.hrdl09 type VARCHAR, tabIndex=14, title=%"hrdl09", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+TextEdit hrdl10=formonly.hrdl10 type VARCHAR, tabIndex=15, title=%"hrdl10";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=5, noEntry;
+Group group2:Group2, text=%"Group2";
+Table table2:Table2;
+Edit hrdla03=formonly.hrdla03 type INTEGER, tabIndex=3, title=%"hrdla03", not null, required;
+ButtonEdit hrdla02=formonly.hrdla02 type VARCHAR, action=controlp, tabIndex=4, title=%"hrdla02", not null, required, image="zoom";
+Edit hrdk03=formonly.hrdk03 type VARCHAR, tabIndex=16, title=%"hrdk03", noEntry;
+CheckBox hrdk08=formonly.hrdk08 type VARCHAR, tabIndex=17, title=%"hrdk08", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrdk07=formonly.hrdk07 type VARCHAR, tabIndex=18, title=%"hrdk07", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrdk09=formonly.hrdk09 type VARCHAR, tabIndex=19, title=%"hrdk09", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrdl(formonly.hrdl01,formonly.hrdl02,formonly.hrdl03,formonly.hrdl03_desc,formonly.hrdl04,formonly.hrdl05,formonly.hrdl06,formonly.hrdl07,formonly.hrdl08,formonly.hrdl09,formonly.hrdl10)
+SCREEN RECORD s_hrdla(formonly.hrdla03,formonly.hrdla02,formonly.hrdk03,formonly.hrdk08,formonly.hrdk07,formonly.hrdk09)
+SCREEN RECORD Undefined(formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

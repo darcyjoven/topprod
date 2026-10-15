@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq620.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq620")
+VBox vb69
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2278
+{
+ Doc Type              [oga09       ]
+ Delivery Note #       [oga01           ]
+ Delivery Date         [oga02       ]
+ Accounts Customer     [oga03     ][oga032    ]
+ Shipping Customer     [oga04     ][occ02     ]
+}
+END -- gr2278
+Grid gr2279
+{
+ Employee              [oga14     ]
+ Sales Departmen       [oga15     ]
+ [ogaconf           ]
+ [ogapost           ]
+
+}
+END -- gr2279
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_ogb
+{
+[ogb0|ogb04         |ogb092     |ogb09 |ogb091|ogb15|ogb16        |img10               |ogb913        |ogb915       |ogb910            |ogb912            |error]
+[ogb0|ogb04         |ogb092     |ogb09 |ogb091|ogb15|ogb16        |img10               |ogb913        |ogb915       |ogb910            |ogb912            |error]
+[ogb0|ogb04         |ogb092     |ogb09 |ogb091|ogb15|ogb16        |img10               |ogb913        |ogb915       |ogb910            |ogb912            |error]
+[ogb0|ogb04         |ogb092     |ogb09 |ogb091|ogb15|ogb16        |img10               |ogb913        |ogb915       |ogb910            |ogb912            |error]
+[ogb0|ogb04         |ogb092     |ogb09 |ogb091|ogb15|ogb16        |img10               |ogb913        |ogb915       |ogb910            |ogb912            |error]
+[ogb0|ogb04         |ogb092     |ogb09 |ogb091|ogb15|ogb16        |img10               |ogb913        |ogb915       |ogb910            |ogb912            |error]
+[ogb0|ogb04         |ogb092     |ogb09 |ogb091|ogb15|ogb16        |img10               |ogb913        |ogb915       |ogb910            |ogb912            |error]
+[ogb0|ogb04         |ogb092     |ogb09 |ogb091|ogb15|ogb16        |img10               |ogb913        |ogb915       |ogb910            |ogb912            |error]
+[ogb0|ogb04         |ogb092     |ogb09 |ogb091|ogb15|ogb16        |img10               |ogb913        |ogb915       |ogb910            |ogb912            |error]
+[ogb0|ogb04         |ogb092     |ogb09 |ogb091|ogb15|ogb16        |img10               |ogb913        |ogb915       |ogb910            |ogb912            |error]
+
+}
+END -- s_ogb
+Grid gr2280
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2280
+END -- vb69
+END -- axmq620
+
+TABLES
+ogb_file,
+oga_file
+ATTRIBUTES
+ComboBox oga09=oga_file.oga09, tabIndex=1, not null, required, queryEditable, items=(("1", "Delivery Advice"),("2", "Delivery Note"));
+Edit oga01=oga_file.oga01, tabIndex=2;
+DateEdit oga02=oga_file.oga02, tabIndex=3;
+ButtonEdit oga03=formonly.oga03 type CHAR, action=controlp, tabIndex=4, image="zoom";
+Edit oga032=oga_file.oga032, tabIndex=5, noEntry;
+ButtonEdit oga04=formonly.oga04 type CHAR, action=controlp, tabIndex=6, image="zoom";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=7, noEntry;
+ButtonEdit oga14=formonly.oga14 type CHAR, action=controlp, tabIndex=8, image="zoom";
+ButtonEdit oga15=formonly.oga15 type CHAR, action=controlp, tabIndex=9, image="zoom";
+CheckBox ogaconf=oga_file.ogaconf, tabIndex=10, text="Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ogapost=oga_file.ogapost, tabIndex=11, text="Deduct Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ogb0=ogb_file.ogb03, tabIndex=12, title="Ln#";
+Edit ogb04=ogb_file.ogb04, tabIndex=13, title="Product No.";
+Edit ogb092=ogb_file.ogb092, tabIndex=14, title="Lot#";
+Edit ogb09=ogb_file.ogb09, tabIndex=15, title="WH";
+Edit ogb091=ogb_file.ogb091, tabIndex=16, title="Loc.";
+Edit ogb15=ogb_file.ogb15, tabIndex=17, title="Unit";
+Edit ogb16=ogb_file.ogb16, tabIndex=18, title="Del.Qty", not null, required;
+Edit img10=formonly.img10 type DECIMAL, tabIndex=19, title="Inventory qty";
+Edit ogb913=ogb_file.ogb913, tabIndex=20, title="Par/Ref Unit";
+Edit ogb915=ogb_file.ogb915, tabIndex=21, title="Par/Ref Qty";
+Edit ogb910=ogb_file.ogb910, tabIndex=22, title="Chi/Deliver Unit";
+Edit ogb912=ogb_file.ogb912, tabIndex=23, title="Chi/Deliver Qty";
+Edit error=formonly.error type VARCHAR, tabIndex=24, title="Error";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=26, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogb(ogb_file.ogb03,ogb_file.ogb04,ogb_file.ogb092,ogb_file.ogb09,ogb_file.ogb091,ogb_file.ogb15,ogb_file.ogb16,formonly.img10,ogb_file.ogb913,ogb_file.ogb915,ogb_file.ogb910,ogb_file.ogb912,formonly.error)
+SCREEN RECORD Undefined(oga_file.oga09,oga_file.oga01,oga_file.oga02,formonly.oga03,oga_file.oga032,formonly.oga04,formonly.occ02,formonly.oga14,formonly.oga15,oga_file.ogaconf,oga_file.ogapost,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

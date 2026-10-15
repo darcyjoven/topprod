@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gap/42f/gapq600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gapq600")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+Grid gr3308
+{
+ [g_detail                           ]      Year            [oox01   ]
+                                            Month           [oox02     ]
+}
+END -- gr3308
+END -- page01
+Page Page1(text=%"Info")
+Grid ds1
+{
+
+ ooxuser[ooxuser     ]   ooxmodu[ooxmodu     ]     ooxacti[ooxacti     ]
+ ooxgrup[ooxgrup     ]   ooxdate[ooxdate     ]     ooxcrat[ooxcrat     ]
+ ooxoriu[ooxoriu     ]
+ ooxorig[ooxorig     ]
+
+}
+END -- ds1
+END -- Page1
+END -- folder01
+Table s_oox
+{
+[oox03v |oox03           |oox041    |apa05     |pmc03          |oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03v |oox03           |oox041    |apa05     |pmc03          |oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03v |oox03           |oox041    |apa05     |pmc03          |oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03v |oox03           |oox041    |apa05     |pmc03          |oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03v |oox03           |oox041    |apa05     |pmc03          |oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03v |oox03           |oox041    |apa05     |pmc03          |oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03v |oox03           |oox041    |apa05     |pmc03          |oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03v |oox03           |oox041    |apa05     |pmc03          |oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03v |oox03           |oox041    |apa05     |pmc03          |oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03v |oox03           |oox041    |apa05     |pmc03          |oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+
+}
+END -- s_oox
+Grid gr3309
+{
+ ---------- Total               [g_tot               ]----------
+
+}
+END -- gr3309
+Grid gr3310
+{
+ ---------rows  [cnt   ]----------
+
+}
+END -- gr3310
+END -- vb4
+END -- gapq600
+
+TABLES
+apa_file,
+oox_file
+ATTRIBUTES
+CheckBox g_detail=formonly.g_detail type CHAR, tabIndex=16, text="Qry Detailed Special          ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oox01=oox_file.oox01, tabIndex=1;
+Edit oox02=oox_file.oox02, tabIndex=2;
+Edit ooxuser=oox_file.ooxuser, tabIndex=24, scroll;
+Edit ooxmodu=oox_file.ooxmodu, tabIndex=21, scroll;
+Edit ooxacti=oox_file.ooxacti, tabIndex=17, not null, scroll;
+Edit ooxgrup=oox_file.ooxgrup, tabIndex=20, scroll;
+DateEdit ooxdate=oox_file.ooxdate, tabIndex=19;
+DateEdit ooxcrat=oox_file.ooxcrat, tabIndex=18;
+Edit ooxoriu=oox_file.ooxoriu, tabIndex=23, scroll;
+Edit ooxorig=oox_file.ooxorig, tabIndex=22, scroll;
+Edit oox03v=oox_file.oox03v, tabIndex=3, title="Type";
+ButtonEdit oox03=oox_file.oox03, action=controlp, tabIndex=4, title="Acct No.", image="zoom";
+Edit oox041=oox_file.oox041, tabIndex=5, title="Multi_Acct Ln#";
+Edit apa05=apa_file.apa05, tabIndex=14, title="Apply";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=15, title="Apply Name";
+Edit oox05=oox_file.oox05, tabIndex=6, title="Curr";
+Edit oox06=oox_file.oox06, tabIndex=7, title="LM ExRt";
+Edit oox07=oox_file.oox07, tabIndex=8, title="Rval.ExR";
+Edit oox11=oox_file.oox11, tabIndex=25, title="UnCn T.c";
+Edit oox08=oox_file.oox08, tabIndex=9, title="UnCn H.c";
+Edit oox09=oox_file.oox09, tabIndex=10, title="R-Va H.C";
+Edit oox10=oox_file.oox10, tabIndex=11, title="Ex.Pr/Lo";
+Edit g_tot=formonly.g_tot type CHAR, tabIndex=12;
+Edit cnt=formonly.cnt type CHAR, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oox(oox_file.oox03v,oox_file.oox03,oox_file.oox041,apa_file.apa05,formonly.pmc03,oox_file.oox05,oox_file.oox06,oox_file.oox07,oox_file.oox11,oox_file.oox08,oox_file.oox09,oox_file.oox10)
+SCREEN RECORD Undefined(formonly.g_detail,oox_file.oox01,oox_file.oox02,formonly.g_tot,formonly.cnt)
+SCREEN RECORD Record1(oox_file.ooxacti,oox_file.ooxcrat,oox_file.ooxdate,oox_file.ooxgrup,oox_file.ooxmodu,oox_file.ooxorig,oox_file.ooxoriu,oox_file.ooxuser)
+END -- INSTRUCTIONS
+

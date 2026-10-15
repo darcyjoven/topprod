@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi002c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Copy Data")
+Grid gr4805
+{
+ <G group01                             >
+  Flow Code      [pow01     ]
+  Effective Date [pow02       ]
+  Plant No.      [pow03     ]
+ <                                      >
+ <G group02                             >
+  Flow Code      [pow01_e   ]
+  Effective Date [pow02_e     ]
+  Plant No.      [pow03_e   ]
+ <                                      >
+ <G group03                             >
+  U/P Difference [diff_price          ]
+ <                                      >
+
+}
+END -- gr4805
+END -- apmi002c
+
+TABLES
+pow_file
+ATTRIBUTES
+Group group01:group01, text="Old";
+Edit pow01=pow_file.pow01, tabIndex=1, noEntry, not null, required;
+DateEdit pow02=pow_file.pow02, tabIndex=2, noEntry, not null, required;
+Edit pow03=pow_file.pow03, tabIndex=3, noEntry, not null, required;
+Group group02:group02, text="New";
+ButtonEdit pow01_e=formonly.pow01_e type CHAR, action=controlp, tabIndex=4, image="zoom";
+DateEdit pow02_e=formonly.pow02_e type DATE, tabIndex=5;
+ButtonEdit pow03_e=formonly.pow03_e type CHAR, action=controlp, tabIndex=6, image="zoom";
+Group group03:group03;
+Edit diff_price=formonly.diff_price type CHAR, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pow_file.pow01,pow_file.pow02,pow_file.pow03,formonly.pow01_e,formonly.pow02_e,formonly.pow03_e,formonly.diff_price)
+END -- INSTRUCTIONS
+

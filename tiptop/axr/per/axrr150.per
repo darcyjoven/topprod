@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrr150.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr150")
+VBox vb21
+Grid gr28
+{
+ <G group01                                                           >
+  Accounts Customer   [oma03               ]
+ <                                                                    >
+
+}
+END -- gr28
+Group group02(text="INPUT")
+VBox vb22
+Grid gr29
+{
+
+
+
+
+
+ <G group04                                                          >
+ [s                                                  ]
+ <                                                                   >
+
+}
+END -- gr29
+Grid gr30
+{
+ <G group05                                                          >
+  Invoice Ending Date [rdate               ]
+  Data Ending Date    [sdate               ]
+  Overdue Base Date   [base                ]
+ <                                                                   >
+
+}
+END -- gr30
+END -- vb22
+END -- group02
+Grid gr31
+{
+[more                                              ]
+
+}
+END -- gr31
+END -- vb21
+END -- axrr150
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit oma03=formonly.oma03 type CHAR, tabIndex=1;
+Group group04:group04, text="Sequence";
+RadioGroup s=formonly.s type VARCHAR, tabIndex=4, items=(("1", "Actg  "),("2", "Crediting"),("3", "Business"));
+Group group05:group05;
+DateEdit rdate=formonly.rdate type DATE, tabIndex=5;
+DateEdit sdate=formonly.sdate type DATE, tabIndex=6;
+DateEdit base=formonly.base type DATE, tabIndex=7;
+CheckBox more=formonly.more type CHAR, tabIndex=2, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oma03,formonly.s,formonly.rdate,formonly.sdate,formonly.base,formonly.more)
+END -- INSTRUCTIONS
+

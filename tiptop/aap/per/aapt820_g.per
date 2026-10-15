@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt820_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Generate Financing Data")
+Grid gr555
+{
+ <G group01                                 >
+  Financing Doc#      [nne01             ]
+  Change Date         [l_date      ]
+  Gen Date            [l_date1     ]
+  Payment Date        [l_date2     ]
+ <                                          >
+
+}
+END -- gr555
+END -- aapt820_g
+
+TABLES
+nne_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit nne01=nne_file.nne01, action=controlp, tabIndex=1, image="zoom", comment="Press <^P> to Qry Doc Type, If to Auto Numbering, Enter only Doc Type";
+DateEdit l_date=formonly.l_date type DATE, tabIndex=2;
+DateEdit l_date1=formonly.l_date1 type DATE, tabIndex=3;
+Edit l_date2=formonly.l_date2 type CHAR, tabIndex=4, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nne_file.nne01,formonly.l_date,formonly.l_date1,formonly.l_date2)
+END -- INSTRUCTIONS
+

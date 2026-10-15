@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi060.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi060")
+VBox VBox1
+Folder pc834
+Page page01(text="Page01")
+Grid gr4620
+{
+  Currency                        [azj01     ] [azi02               ]
+  Year Month                      [azj02     ]
+ <G group01                                                           >
+  Bank Buying ExRt                [azj03               ]
+  Bank Selling ExRt               [azj04               ]
+  Bank Average ExRt               [azj041              ]
+  Customs Buying ExRt             [azj051              ]
+  Customs Selling ExRt            [azj052              ]
+  End of Month Rev.Exc.Rate       [azj07               ]
+ <                                                                    >
+
+}
+END -- gr4620
+END -- page01
+Page info(text="Info")
+Grid gr4621
+{
+ Record Owner        [azjuser   ] Last Modified by    [azjmodu   ] Data Valid Code     [azjacti   ]
+ Department          [azjgrup   ] Create/Modify Date  [azjdate   ]
+ Record Orig.        [azjoriu   ]
+ Dept Orig.          [azjorig   ]
+}
+END -- gr4621
+END -- info
+END -- pc834
+Grid gr4622
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4622
+END -- VBox1
+END -- aooi060
+
+TABLES
+azj_file
+ATTRIBUTES
+ButtonEdit azj01=azj_file.azj01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Currency";
+Edit azi02=formonly.azi02 type CHAR, tabIndex=2, noEntry;
+Edit azj02=azj_file.azj02, tabIndex=3, not null, required, comment="KEY Field, No Blank/Repeated!";
+Group group01:group01;
+ButtonEdit azj03=azj_file.azj03, action=controlp, tabIndex=4, not null, required, image="zoom";
+ButtonEdit azj04=azj_file.azj04, action=controlp, tabIndex=5, not null, required, image="zoom";
+ButtonEdit azj041=azj_file.azj041, action=controlp, tabIndex=6, not null, required, image="zoom";
+ButtonEdit azj051=azj_file.azj051, action=controlp, tabIndex=7, not null, required, image="zoom";
+ButtonEdit azj052=azj_file.azj052, action=controlp, tabIndex=8, not null, required, image="zoom";
+Edit azj07=azj_file.azj07, tabIndex=9;
+Edit azjuser=azj_file.azjuser, tabIndex=10, noEntry;
+Edit azjmodu=azj_file.azjmodu, tabIndex=11, noEntry;
+Edit azjacti=azj_file.azjacti, tabIndex=12, noEntry, upShift;
+Edit azjgrup=azj_file.azjgrup, tabIndex=13, noEntry;
+DateEdit azjdate=azj_file.azjdate, tabIndex=14, noEntry;
+Edit azjoriu=azj_file.azjoriu, tabIndex=501, noEntry;
+Edit azjorig=azj_file.azjorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(azj_file.azj01,formonly.azi02,azj_file.azj02,azj_file.azj03,azj_file.azj04,azj_file.azj041,azj_file.azj051,azj_file.azj052,azj_file.azj07,azj_file.azjuser,azj_file.azjmodu,azj_file.azjacti,azj_file.azjgrup,azj_file.azjdate,azj_file.azjoriu,azj_file.azjorig,formonly.cnt)
+END -- INSTRUCTIONS
+

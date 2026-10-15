@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_aay.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_aay")
+Grid gr3857
+{
+ <T s_aay               >
+ [aay02     |zx02      ]
+ [aay02     |zx02      ]
+ [aay02     |zx02      ]
+ [aay02     |zx02      ]
+ [aay02     |zx02      ]
+ [aay02     |zx02      ]
+ <                      >
+
+}
+END -- gr3857
+END -- s_aay
+
+TABLES
+aay_file
+ATTRIBUTES
+Table s_aay:s_aay;
+ButtonEdit aay02=aay_file.aay02, action=controlp, tabIndex=1, title="User ID", not null, required, image="zoom", comment="<^P> Qry User ID";
+Edit zx02=formonly.zx02 type CHAR, tabIndex=2, title="Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aay(aay_file.aay02,formonly.zx02)
+END -- INSTRUCTIONS
+

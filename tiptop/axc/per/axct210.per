@@ -1,0 +1,146 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct210")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1777
+{
+ Date                [cal01     ]
+ Cost Cnt            [cal02     ]
+                     [gem02     ]
+
+}
+END -- gr1777
+Grid gr1778
+{
+ Memo                [cal03                         ] [imgmksg]
+ Confirm             [calfirm          ]              [       ]
+
+
+}
+END -- gr1778
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1779
+{
+ Record Owner        [caluser   ]   Last Modified by    [calmodu   ]
+ Department          [calgrup   ]   Create/Modify Date  [caldate   ]
+ Record Orig.        [caloriu   ]
+ Dept Orig.          [calorig   ]
+}
+END -- gr1779
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[calud01                       ] userdefined_field07[calud07        ] userdefined_field13[calud13        ]
+                    [                              ] userdefined_field08[calud08        ] userdefined_field14[calud14        ]
+ userdefined_field02[calud02        ]                userdefined_field09[calud09        ] userdefined_field15[calud15        ]
+ userdefined_field03[calud03        ]                userdefined_field10[calud10        ]
+ userdefined_field04[calud04        ]                userdefined_field11[calud11        ]
+ userdefined_field05[calud05        ]                userdefined_field12[calud12        ]
+ userdefined_field06[calud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_cam
+{
+[cam|cam04             |cam012  |cam06   |ecm04     |cam07     |cam08    |cam081         |cam10       |cam11       |camud01   |camud02   |camud03    |camud04    |camud05    |camud06    |camud07    |camud08    |camud09    |camud10    |camud11   |camud12  |camud13   |camud14   |camud15    ]
+[cam|cam04             |cam012  |cam06   |ecm04     |cam07     |cam08    |cam081         |cam10       |cam11       |camud01   |camud02   |camud03    |camud04    |camud05    |camud06    |camud07    |camud08    |camud09    |camud10    |camud11   |camud12  |camud13   |camud14   |camud15    ]
+[cam|cam04             |cam012  |cam06   |ecm04     |cam07     |cam08    |cam081         |cam10       |cam11       |camud01   |camud02   |camud03    |camud04    |camud05    |camud06    |camud07    |camud08    |camud09    |camud10    |camud11   |camud12  |camud13   |camud14   |camud15    ]
+[cam|cam04             |cam012  |cam06   |ecm04     |cam07     |cam08    |cam081         |cam10       |cam11       |camud01   |camud02   |camud03    |camud04    |camud05    |camud06    |camud07    |camud08    |camud09    |camud10    |camud11   |camud12  |camud13   |camud14   |camud15    ]
+[cam|cam04             |cam012  |cam06   |ecm04     |cam07     |cam08    |cam081         |cam10       |cam11       |camud01   |camud02   |camud03    |camud04    |camud05    |camud06    |camud07    |camud08    |camud09    |camud10    |camud11   |camud12  |camud13   |camud14   |camud15    ]
+[cam|cam04             |cam012  |cam06   |ecm04     |cam07     |cam08    |cam081         |cam10       |cam11       |camud01   |camud02   |camud03    |camud04    |camud05    |camud06    |camud07    |camud08    |camud09    |camud10    |camud11   |camud12  |camud13   |camud14   |camud15    ]
+[cam|cam04             |cam012  |cam06   |ecm04     |cam07     |cam08    |cam081         |cam10       |cam11       |camud01   |camud02   |camud03    |camud04    |camud05    |camud06    |camud07    |camud08    |camud09    |camud10    |camud11   |camud12  |camud13   |camud14   |camud15    ]
+[cam|cam04             |cam012  |cam06   |ecm04     |cam07     |cam08    |cam081         |cam10       |cam11       |camud01   |camud02   |camud03    |camud04    |camud05    |camud06    |camud07    |camud08    |camud09    |camud10    |camud11   |camud12  |camud13   |camud14   |camud15    ]
+[cam|cam04             |cam012  |cam06   |ecm04     |cam07     |cam08    |cam081         |cam10       |cam11       |camud01   |camud02   |camud03    |camud04    |camud05    |camud06    |camud07    |camud08    |camud09    |camud10    |camud11   |camud12  |camud13   |camud14   |camud15    ]
+[cam|cam04             |cam012  |cam06   |ecm04     |cam07     |cam08    |cam081         |cam10       |cam11       |camud01   |camud02   |camud03    |camud04    |camud05    |camud06    |camud07    |camud08    |camud09    |camud10    |camud11   |camud12  |camud13   |camud14   |camud15    ]
+}
+END -- s_cam
+Grid gr1780
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------       Total Hr            [cal05     ]
+
+
+
+}
+END -- gr1780
+END -- VBox1
+END -- axct210
+
+TABLES
+cam_file,
+cal_file
+ATTRIBUTES
+DateEdit cal01=cal_file.cal01, tabIndex=1, not null, required;
+ButtonEdit cal02=cal_file.cal02, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Query Cost Cnt Data";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=3;
+Edit cal03=cal_file.cal03, tabIndex=4;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ComboBox calfirm=cal_file.calfirm, tabIndex=5, not null, required, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+Edit caluser=cal_file.caluser, tabIndex=6, noEntry;
+Edit calmodu=cal_file.calmodu, tabIndex=7, noEntry;
+Edit calgrup=cal_file.calgrup, tabIndex=8, noEntry;
+DateEdit caldate=cal_file.caldate, tabIndex=9, noEntry;
+Edit caloriu=cal_file.caloriu, tabIndex=53, noEntry;
+Edit calorig=cal_file.calorig, tabIndex=54, noEntry;
+TextEdit calud01=cal_file.calud01, tabIndex=24, stretch=NONE;
+Edit calud07=cal_file.calud07, tabIndex=25;
+DateEdit calud13=cal_file.calud13, tabIndex=26;
+Edit calud08=cal_file.calud08, tabIndex=27;
+DateEdit calud14=cal_file.calud14, tabIndex=28;
+Edit calud02=cal_file.calud02, tabIndex=29;
+Edit calud09=cal_file.calud09, tabIndex=30;
+DateEdit calud15=cal_file.calud15, tabIndex=31;
+Edit calud03=cal_file.calud03, tabIndex=32;
+Edit calud10=cal_file.calud10, tabIndex=33;
+Edit calud04=cal_file.calud04, tabIndex=34;
+Edit calud11=cal_file.calud11, tabIndex=35;
+Edit calud05=cal_file.calud05, tabIndex=36;
+Edit calud12=cal_file.calud12, tabIndex=37;
+Edit calud06=cal_file.calud06, tabIndex=38;
+Edit cam=cam_file.cam03, tabIndex=10, title="S/N", not null, required;
+ButtonEdit cam04=cam_file.cam04, action=controlp, tabIndex=11, title="WO No.", not null, required, image="zoom", comment="<^P> Query Work Order Data";
+ButtonEdit cam012=cam_file.cam012, action=controlp, tabIndex=12, title=%"cam012", not null, required, image="zoom";
+Edit cam06=cam_file.cam06, tabIndex=13, title="Rou.SN", not null, required;
+Edit ecm04=formonly.ecm04 type CHAR, tabIndex=14, title="Task No.", noEntry;
+Edit cam07=cam_file.cam07, tabIndex=15, title="Equi Qty", not null, required;
+Edit cam08=cam_file.cam08, tabIndex=16, title="Input Hr";
+Edit cam081=cam_file.cam081, tabIndex=17, title=%"Input MH";
+Edit cam10=cam_file.cam10, tabIndex=18, title="Input S.L.H";
+Edit cam11=cam_file.cam11, tabIndex=19, title="Input S.M.H";
+TextEdit camud01=cam_file.camud01, tabIndex=23, title="camud01", stretch=NONE;
+Edit camud02=cam_file.camud02, tabIndex=39, title="camud02";
+Edit camud03=cam_file.camud03, tabIndex=40, title="camud03";
+Edit camud04=cam_file.camud04, tabIndex=41, title="camud04";
+Edit camud05=cam_file.camud05, tabIndex=42, title="camud05";
+Edit camud06=cam_file.camud06, tabIndex=43, title="camud06";
+Edit camud07=cam_file.camud07, tabIndex=44, title="camud07";
+Edit camud08=cam_file.camud08, tabIndex=45, title="camud08";
+Edit camud09=cam_file.camud09, tabIndex=46, title="camud09";
+Edit camud10=cam_file.camud10, tabIndex=47, title="camud10";
+Edit camud11=cam_file.camud11, tabIndex=48, title="camud11";
+Edit camud12=cam_file.camud12, tabIndex=49, title="camud12";
+Edit camud13=cam_file.camud13, tabIndex=50, title="camud13";
+Edit camud14=cam_file.camud14, tabIndex=51, title="camud14";
+Edit camud15=cam_file.camud15, tabIndex=52, title="camud15";
+Edit cnt=formonly.cnt type CHAR, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=21, noEntry;
+Edit cal05=cal_file.cal05, tabIndex=22, noEntry, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cam(cam_file.cam03,cam_file.cam04,cam_file.cam012,cam_file.cam06,formonly.ecm04,cam_file.cam07,cam_file.cam08,cam_file.cam081,cam_file.cam10,cam_file.cam11,cam_file.camud01,cam_file.camud02,cam_file.camud03,cam_file.camud04,cam_file.camud05,cam_file.camud06,cam_file.camud07,cam_file.camud08,cam_file.camud09,cam_file.camud10,cam_file.camud11,cam_file.camud12,cam_file.camud13,cam_file.camud14,cam_file.camud15)
+SCREEN RECORD Undefined(cal_file.cal01,cal_file.cal02,formonly.gem02,cal_file.cal03,formonly.imgmksg,cal_file.calfirm,cal_file.caluser,cal_file.calmodu,cal_file.calgrup,cal_file.caldate,cal_file.caloriu,cal_file.calorig,cal_file.calud01,cal_file.calud07,cal_file.calud13,cal_file.calud08,cal_file.calud14,cal_file.calud02,cal_file.calud09,cal_file.calud15,cal_file.calud03,cal_file.calud10,cal_file.calud04,cal_file.calud11,cal_file.calud05,cal_file.calud12,cal_file.calud06,formonly.cnt,formonly.cn2,cal_file.cal05)
+END -- INSTRUCTIONS
+

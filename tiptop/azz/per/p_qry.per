@@ -1,0 +1,99 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_qry.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_qry")
+VBox vb3
+Folder folder01
+Page page01(text="Page01")
+Grid gr3270
+{
+ <G group01                                     ><G group02                                     >
+  Query Function ID [gab01                      ][gab02                                         ]
+  Title             [gae04               ][modif][                                              ]
+ [gab07                                         ]<                                              >
+                                                 <G group03                                     >
+ [gab08                                         ][gab05                                         ]
+ [gab11                                         ][                                              ]
+                                                 <                                              >
+ <                                              ><G group05                                     >
+ <G group04                                     > Joint Tables [gab03                         ]
+ [gab06                                         ]<                                              >
+ [                                              ]<G group06                                     >
+ [                                              ][gab04                                         ]
+ <                                              ><                                              >
+
+}
+END -- gr3270
+END -- page01
+END -- folder01
+Table s_gac
+{
+[gac02  |gac05   |gac06   |gaq03          |gac09 |gac10  |gac07|gac11|gac13            |gac15     ]
+[gac02  |gac05   |gac06   |gaq03          |gac09 |gac10  |gac07|gac11|gac13            |gac15     ]
+[gac02  |gac05   |gac06   |gaq03          |gac09 |gac10  |gac07|gac11|gac13            |gac15     ]
+[gac02  |gac05   |gac06   |gaq03          |gac09 |gac10  |gac07|gac11|gac13            |gac15     ]
+[gac02  |gac05   |gac06   |gaq03          |gac09 |gac10  |gac07|gac11|gac13            |gac15     ]
+[gac02  |gac05   |gac06   |gaq03          |gac09 |gac10  |gac07|gac11|gac13            |gac15     ]
+[gac02  |gac05   |gac06   |gaq03          |gac09 |gac10  |gac07|gac11|gac13            |gac15     ]
+[gac02  |gac05   |gac06   |gaq03          |gac09 |gac10  |gac07|gac11|gac13            |gac15     ]
+[gac02  |gac05   |gac06   |gaq03          |gac09 |gac10  |gac07|gac11|gac13            |gac15     ]
+[gac02  |gac05   |gac06   |gaq03          |gac09 |gac10  |gac07|gac11|gac13            |gac15     ]
+}
+END -- s_gac
+Grid gr3271
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr3271
+END -- vb3
+END -- p_qry
+
+TABLES
+gae_file,
+gac_file,
+gab_file,
+gaq_file
+ATTRIBUTES
+Group group01:group01, text="Basic Condiction";
+ButtonEdit gab01=gab_file.gab01, action=controlp, tabIndex=1, image="zoom";
+Edit gae04=gae_file.gae04, tabIndex=2, noEntry;
+Button modif:modify_program_name, text="Update";
+CheckBox gab07=gab_file.gab07, tabIndex=3, text="It Is a Hard-Coding Program", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="It Must Been Checked if it is Hard-Code";
+CheckBox gab08=gab_file.gab08, tabIndex=4, default = "N", text="Detail Records Should Be UnLocked And Can Be Modified.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gab11=gab_file.gab11, tabIndex=5, default = "N", text="Customerlized", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Input Mode \'WHERE\'";
+TextEdit gab02=gab_file.gab02, tabIndex=6, stretch=NONE;
+Group group03:group03, text="Construct Mode \'WHERE\'";
+TextEdit gab05=gab_file.gab05, tabIndex=7, stretch=NONE;
+Group group05:group05;
+Edit gab03=gab_file.gab03, tabIndex=9, comment="When \'Construct\' Mode, Requred \'Using Joint Table Name\'";
+Group group04:group04, text="Memo";
+TextEdit gab06=gab_file.gab06, tabIndex=8, stretch=NONE;
+Group group06:group06, text="Using Unique Setting";
+CheckBox gab04=gab_file.gab04, tabIndex=10, default = "N", text="Been Queried Data Has Several Key Rows, Might Using \'DISTINCT\'", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="If Chioce Data Appear Key Duplicate, CHOOSE \'Y\'";
+Edit gac02=gac_file.gac02, tabIndex=11, title="No.", comment="If FIELD_NAME is \'title\',modify value to \'-1\'";
+ButtonEdit gac05=gac_file.gac05, action=controlp, tabIndex=12, title="Table", image="zoom", scroll, comment="Linking Table Name";
+ButtonEdit gac06=gac_file.gac06, action=controlp, tabIndex=13, title="Field", image="zoom", scroll, comment="Linking Field Name or \'title\' (DownShift)";
+Edit gaq03=gaq_file.gaq03, tabIndex=14, title="Desc", noEntry;
+Edit gac09=gac_file.gac09, tabIndex=15, title="Width", scroll, comment="Field Width";
+CheckBox gac10=gac_file.gac10, tabIndex=16, title="Return", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Field Value is Returned.";
+ComboBox gac07=gac_file.gac07, tabIndex=17, title="Type", items=(("0", %"Edit"),("1", %"CheckBox"),("2", %"DateEdit"),("3", %"ComboBox"));
+CheckBox gac11=gac_file.gac11, tabIndex=18, title="Outer", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="This Table Has been OUTER.";
+Edit gac13=gac_file.gac13, tabIndex=19, title="Input Constraint", scroll, comment="If Have Any Input Constraints, Put Here!";
+ButtonEdit gac15=gac_file.gac15, action=controlp, tabIndex=22, title="Connect to", image="zoom";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gac(gac_file.gac02,gac_file.gac05,gac_file.gac06,gaq_file.gaq03,gac_file.gac09,gac_file.gac10,gac_file.gac07,gac_file.gac11,gac_file.gac13,gac_file.gac15)
+SCREEN RECORD Undefined(gab_file.gab01,gae_file.gae04,gab_file.gab07,gab_file.gab08,gab_file.gab11,gab_file.gab02,gab_file.gab05,gab_file.gab03,gab_file.gab06,gab_file.gab04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

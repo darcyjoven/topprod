@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt111.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt111")
+VBox vb4
+Folder pc1
+Page Page1(text=%"Basic Data")
+Grid gr4
+{
+
+    Project No   [pjb01           ] [pja02           ]
+
+    WBS No       [pjc01            ]
+
+    WBS Name     [pjb03                              ]
+
+}
+END -- gr4
+END -- Page1
+END -- pc1
+Table s_pjc
+{
+[pjc02          |pjc03                                             ]
+[pjc02          |pjc03                                             ]
+[pjc02          |pjc03                                             ]
+[pjc02          |pjc03                                             ]
+[pjc02          |pjc03                                             ]
+
+}
+END -- s_pjc
+Grid gr6
+{
+
+   ----------Rows [cn2       ]----------
+}
+END -- gr6
+END -- vb4
+END -- apjt111
+
+TABLES
+pjc_file,
+pjb_file,
+pja_file
+ATTRIBUTES
+Edit pjb01=pjb_file.pjb01, tabIndex=1;
+Edit pja02=pja_file.pja02, tabIndex=2;
+ButtonEdit pjc01=pjc_file.pjc01, action=controlp, tabIndex=7, not null, image="zoom.png";
+Edit pjb03=pjb_file.pjb03, tabIndex=3;
+Edit pjc02=pjc_file.pjc02, tabIndex=4, title="Order", not null;
+Edit pjc03=pjc_file.pjc03, tabIndex=5, title="Instruction", not null;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjc(pjc_file.pjc02,pjc_file.pjc03)
+SCREEN RECORD Undefined(pjb_file.pjb01,pja_file.pja02,pjc_file.pjc01,pjb_file.pjb03,formonly.cn2)
+END -- INSTRUCTIONS
+

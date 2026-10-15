@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amm/42f/ammt200_b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ammt200_b")
+VBox VBox1
+Folder pc702
+Page page01(text="Main")
+Table s_mmb1
+{
+[mmb02 |mmb03          |mmb04   |mmb05      |mmc02               |mmb06                     |mmb07  |mmb08          |pmc03     |mmb09  |mmb13 |mmb14         |mmbact]
+[mmb02 |mmb03          |mmb04   |mmb05      |mmc02               |mmb06                     |mmb07  |mmb08          |pmc03     |mmb09  |mmb13 |mmb14         |mmbact]
+[mmb02 |mmb03          |mmb04   |mmb05      |mmc02               |mmb06                     |mmb07  |mmb08          |pmc03     |mmb09  |mmb13 |mmb14         |mmbact]
+[mmb02 |mmb03          |mmb04   |mmb05      |mmc02               |mmb06                     |mmb07  |mmb08          |pmc03     |mmb09  |mmb13 |mmb14         |mmbact]
+[mmb02 |mmb03          |mmb04   |mmb05      |mmc02               |mmb06                     |mmb07  |mmb08          |pmc03     |mmb09  |mmb13 |mmb14         |mmbact]
+[mmb02 |mmb03          |mmb04   |mmb05      |mmc02               |mmb06                     |mmb07  |mmb08          |pmc03     |mmb09  |mmb13 |mmb14         |mmbact]
+[mmb02 |mmb03          |mmb04   |mmb05      |mmc02               |mmb06                     |mmb07  |mmb08          |pmc03     |mmb09  |mmb13 |mmb14         |mmbact]
+[mmb02 |mmb03          |mmb04   |mmb05      |mmc02               |mmb06                     |mmb07  |mmb08          |pmc03     |mmb09  |mmb13 |mmb14         |mmbact]
+[mmb02 |mmb03          |mmb04   |mmb05      |mmc02               |mmb06                     |mmb07  |mmb08          |pmc03     |mmb09  |mmb13 |mmb14         |mmbact]
+[mmb02 |mmb03          |mmb04   |mmb05      |mmc02               |mmb06                     |mmb07  |mmb08          |pmc03     |mmb09  |mmb13 |mmb14         |mmbact]
+
+}
+END -- s_mmb1
+END -- page01
+END -- pc702
+Grid gr3798
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3798
+END -- VBox1
+END -- ammt200_b
+
+TABLES
+mmb_file
+ATTRIBUTES
+Edit mmb02=mmb_file.mmb02, tabIndex=1, title="Line#", noEntry;
+Edit mmb03=mmb_file.mmb03, tabIndex=2, title="Drw#", noEntry;
+Edit mmb04=mmb_file.mmb04, tabIndex=3, title="Version", noEntry;
+ButtonEdit mmb05=mmb_file.mmb05, action=controlp, tabIndex=4, title="Processing", noEntry, image="zoom", comment="<^P>Qry Processing Code; <^I>MF Processing Code";
+Edit mmc02=formonly.mmc02 type CHAR, tabIndex=5, title="Process Description", noEntry;
+Edit mmb06=mmb_file.mmb06, tabIndex=6, title="Specification Description", noEntry;
+ComboBox mmb07=mmb_file.mmb07, tabIndex=7, title="Source", noEntry, queryEditable, items=(("P", %"Purchase"),("M", %"Manufactured"),("S", %"Subcontracting"));
+ButtonEdit mmb08=mmb_file.mmb08, action=controlp, tabIndex=8, title="Vender Or Dept", noEntry, image="zoom", comment="<^P>Vender/Department No.";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=9, title="Name", noEntry;
+Edit mmb09=mmb_file.mmb09, tabIndex=10, title="Qty", noEntry;
+ComboBox mmb13=mmb_file.mmb13, tabIndex=11, title="Print", noEntry, queryEditable, items=(("0", %"May not the series printing"),("1", %"Print"),("2", %"Printed"));
+Edit mmb14=mmb_file.mmb14, tabIndex=12, title="Carry Forward", noEntry;
+ComboBox mmbact=mmb_file.mmbacti, tabIndex=13, title="Valid", not null, required, queryEditable, items=(("Y", %"Valid"),("X", %"Void"));
+Edit cn2=formonly.cn2 type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mmb1(mmb_file.mmb02,mmb_file.mmb03,mmb_file.mmb04,mmb_file.mmb05,formonly.mmc02,mmb_file.mmb06,mmb_file.mmb07,mmb_file.mmb08,formonly.pmc03,mmb_file.mmb09,mmb_file.mmb13,mmb_file.mmb14,mmb_file.mmbacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

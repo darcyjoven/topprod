@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi004")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr580
+{
+ Version [bgd01     ]
+
+}
+END -- gr580
+END -- page01
+END -- folder01
+Table s_bgd
+{
+[bgd02   |bgd03  |bgd04               |bgd05              |bgdac]
+[bgd02   |bgd03  |bgd04               |bgd05              |bgdac]
+[bgd02   |bgd03  |bgd04               |bgd05              |bgdac]
+[bgd02   |bgd03  |bgd04               |bgd05              |bgdac]
+[bgd02   |bgd03  |bgd04               |bgd05              |bgdac]
+[bgd02   |bgd03  |bgd04               |bgd05              |bgdac]
+[bgd02   |bgd03  |bgd04               |bgd05              |bgdac]
+[bgd02   |bgd03  |bgd04               |bgd05              |bgdac]
+[bgd02   |bgd03  |bgd04               |bgd05              |bgdac]
+[bgd02   |bgd03  |bgd04               |bgd05              |bgdac]
+
+}
+END -- s_bgd
+Grid gr581
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr581
+END -- VBox1
+END -- abgi004
+
+TABLES
+bgd_file
+ATTRIBUTES
+Edit bgd01=bgd_file.bgd01, tabIndex=1;
+Edit bgd02=bgd_file.bgd02, tabIndex=2, title="Class", not null, required;
+Edit bgd03=bgd_file.bgd03, tabIndex=3, title="Rank", not null, required;
+Edit bgd04=bgd_file.bgd04, tabIndex=4, title="Standard Base Pay", not null, required;
+Edit bgd05=bgd_file.bgd05, tabIndex=5, title="Insurance Salary", not null, required;
+CheckBox bgdac=bgd_file.bgdacti, tabIndex=6, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgd(bgd_file.bgd02,bgd_file.bgd03,bgd_file.bgd04,bgd_file.bgd05,bgd_file.bgdacti)
+SCREEN RECORD Undefined(bgd_file.bgd01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

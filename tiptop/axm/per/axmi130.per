@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi130")
+VBox VBox1
+Folder pc459
+Page page01(text="Main")
+Table s_obe
+{
+[obe01          |obe02                         |obe28          |obe11     |obe12           |obe13         |obe21     |obe22             |obe23         |obe251    |obe252    |obe253    |obe24       |obe26           |obe291    |obe292    |obe293    |obe30         ]
+[obe01          |obe02                         |obe28          |obe11     |obe12           |obe13         |obe21     |obe22             |obe23         |obe251    |obe252    |obe253    |obe24       |obe26           |obe291    |obe292    |obe293    |obe30         ]
+[obe01          |obe02                         |obe28          |obe11     |obe12           |obe13         |obe21     |obe22             |obe23         |obe251    |obe252    |obe253    |obe24       |obe26           |obe291    |obe292    |obe293    |obe30         ]
+[obe01          |obe02                         |obe28          |obe11     |obe12           |obe13         |obe21     |obe22             |obe23         |obe251    |obe252    |obe253    |obe24       |obe26           |obe291    |obe292    |obe293    |obe30         ]
+[obe01          |obe02                         |obe28          |obe11     |obe12           |obe13         |obe21     |obe22             |obe23         |obe251    |obe252    |obe253    |obe24       |obe26           |obe291    |obe292    |obe293    |obe30         ]
+[obe01          |obe02                         |obe28          |obe11     |obe12           |obe13         |obe21     |obe22             |obe23         |obe251    |obe252    |obe253    |obe24       |obe26           |obe291    |obe292    |obe293    |obe30         ]
+[obe01          |obe02                         |obe28          |obe11     |obe12           |obe13         |obe21     |obe22             |obe23         |obe251    |obe252    |obe253    |obe24       |obe26           |obe291    |obe292    |obe293    |obe30         ]
+[obe01          |obe02                         |obe28          |obe11     |obe12           |obe13         |obe21     |obe22             |obe23         |obe251    |obe252    |obe253    |obe24       |obe26           |obe291    |obe292    |obe293    |obe30         ]
+[obe01          |obe02                         |obe28          |obe11     |obe12           |obe13         |obe21     |obe22             |obe23         |obe251    |obe252    |obe253    |obe24       |obe26           |obe291    |obe292    |obe293    |obe30         ]
+[obe01          |obe02                         |obe28          |obe11     |obe12           |obe13         |obe21     |obe22             |obe23         |obe251    |obe252    |obe253    |obe24       |obe26           |obe291    |obe292    |obe293    |obe30         ]
+
+}
+END -- s_obe
+END -- page01
+END -- pc459
+Grid gr2025
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2025
+END -- VBox1
+END -- axmi130
+
+TABLES
+obe_file
+ATTRIBUTES
+Edit obe01=obe_file.obe01, tabIndex=1, title="Pack_Type No.", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit obe02=obe_file.obe02, tabIndex=2, title="Packing Description";
+Edit obe28=obe_file.obe28, tabIndex=3, title="Out_P/Bar Code";
+ButtonEdit obe11=obe_file.obe11, action=controlp, tabIndex=4, title="Inner_Uit", image="zoom";
+Edit obe12=obe_file.obe12, tabIndex=5, title="Inner Pack Qty";
+Edit obe13=obe_file.obe13, tabIndex=6, title="I_Weight(Kg)";
+ButtonEdit obe21=obe_file.obe21, action=controlp, tabIndex=7, title="Out_Unit", image="zoom";
+Edit obe22=obe_file.obe22, tabIndex=8, title="Innerin Outer Qty";
+Edit obe23=obe_file.obe23, tabIndex=9, title="OutWeight(Kg)";
+Edit obe251=obe_file.obe251, tabIndex=10, title="O_Ln.(ft)";
+Edit obe252=obe_file.obe252, tabIndex=11, title="O_Wi.(ft)";
+Edit obe253=obe_file.obe253, tabIndex=12, title="O_He.(ft)";
+Edit obe24=obe_file.obe24, tabIndex=13, title="Qt in Outer", noEntry;
+Edit obe26=obe_file.obe26, tabIndex=14, title="O_Volume (Cuft)";
+Edit obe291=obe_file.obe291, tabIndex=15, title="I_Ln.(ft)";
+Edit obe292=obe_file.obe292, tabIndex=16, title="I_Wi.(ft)";
+Edit obe293=obe_file.obe293, tabIndex=17, title="I_He.(ft)";
+Edit obe30=obe_file.obe30, tabIndex=18, title="I_Volume (Cuft)";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_obe(obe_file.obe01,obe_file.obe02,obe_file.obe28,obe_file.obe11,obe_file.obe12,obe_file.obe13,obe_file.obe21,obe_file.obe22,obe_file.obe23,obe_file.obe251,obe_file.obe252,obe_file.obe253,obe_file.obe24,obe_file.obe26,obe_file.obe291,obe_file.obe292,obe_file.obe293,obe_file.obe30)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

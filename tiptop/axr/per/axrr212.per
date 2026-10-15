@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrr212.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr212")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                           >
+  L/C Receipt No.     [olc29               ]
+  Times               [olc28               ]
+  INVOICE No.         [olc01               ]
+  L/C No.             [olc04               ]
+ <                                                                    >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                              ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- axrr212
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit olc29=formonly.olc29 type CHAR, tabIndex=1, upShift;
+Edit olc28=formonly.olc28 type CHAR, tabIndex=2;
+Edit olc01=formonly.olc01 type CHAR, tabIndex=3, upShift;
+Edit olc04=formonly.olc04 type CHAR, tabIndex=4, upShift;
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.olc29,formonly.olc28,formonly.olc01,formonly.olc04,formonly.more)
+END -- INSTRUCTIONS
+

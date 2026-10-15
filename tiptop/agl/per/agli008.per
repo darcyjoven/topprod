@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli008.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli008")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2345
+{
+ Year                    [axp01   ]              [c         ]
+ Source Company Currency:[axp03   ]               Transfer:    [axp04   ]
+ Company No              [axp08               ]   Account Code [axp09               ]
+}
+END -- gr2345
+END -- page01
+END -- folder01
+Table s_axp
+{
+[axp02 |axp05     |axp06     |axp07     ]
+[axp02 |axp05     |axp06     |axp07     ]
+[axp02 |axp05     |axp06     |axp07     ]
+[axp02 |axp05     |axp06     |axp07     ]
+[axp02 |axp05     |axp06     |axp07     ]
+[axp02 |axp05     |axp06     |axp07     ]
+[axp02 |axp05     |axp06     |axp07     ]
+[axp02 |axp05     |axp06     |axp07     ]
+[axp02 |axp05     |axp06     |axp07     ]
+
+}
+END -- s_axp
+Grid gr2346
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2346
+END -- VBox1
+END -- agli008
+
+TABLES
+axp_file
+ATTRIBUTES
+Edit axp01=axp_file.axp01, tabIndex=1, not null, required;
+CheckBox c=formonly.c type CHAR, tabIndex=2, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit axp03=axp_file.axp03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit axp04=axp_file.axp04, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit axp08=axp_file.axp08, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Company";
+ButtonEdit axp09=axp_file.axp09, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Account";
+Edit axp02=axp_file.axp02, tabIndex=7, title="Per.", not null, required;
+Edit axp05=axp_file.axp05, tabIndex=8, title="Cur.ExRt", not null, required;
+Edit axp06=axp_file.axp06, tabIndex=9, title="Hist.ExRt", not null, required;
+Edit axp07=axp_file.axp07, tabIndex=10, title="Avg.ExRt", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axp(axp_file.axp02,axp_file.axp05,axp_file.axp06,axp_file.axp07)
+SCREEN RECORD Undefined(axp_file.axp01,formonly.c,axp_file.axp03,axp_file.axp08,axp_file.axp04,axp_file.axp09,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

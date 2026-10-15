@@ -1,0 +1,133 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti132.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="arti132")
+VBox vb5
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+ Prom Agre No.     [rtu01             ]                          Promotion Type        [rtu07     ]         Signer(Supplier)[rtu14       |rtu14_desc          ]
+ Signed Agency     [rtu02             |rtu02_desc              ] Promotion No.         [rtu08             ] Signer(Inside)  [rtu15       |rtu15_desc          ]
+ Document No.      [rtu03             ]                          Begin Date            [rtu09       ]       Audit Code      [rtuconf     |imgmksg]
+ Purchase Agree No.[rtu04             ]                          End Date              [rtu10       ]       Audit Date      [rtucond     |       ]
+ Supplier No.      [rtu05             |rtu05_desc              ] Invalid Date          [rtu11       ]       Auditer         [rtuconu     |rtuconu_desc        ]
+ Business Way      [rtu06     ]                                  Default Discount Ratio[rtu12]              Memo            [rtu16                             ]
+ Agency No.        [rtuplant          |rtuplant_desc           ] Default Share Ratio   [rtu13]
+ Tax Type          [rtu17     |rtu18][gec07                     ]
+}
+END -- gr1
+END -- Page1
+Page Page2(text=%"Memo")
+Grid gr2
+{
+ Data Owner [rtuuser   ]      Data Modu  [rtumodu   ]       Data Acti  [rtuacti   ]        Record Orig. [rtuoriu     ]
+ Data Grup  [rtugrup   ]      Modify Date[rtudate   ]       Create Date[rtucrat   ]        Dept Orig.   [rtuorig     ]
+
+
+}
+END -- gr2
+END -- Page2
+END -- pc1
+Table tb1
+{
+[rtv03|rtv04                 |ima02               |ima021              |ima1004   |ima1005   |ima1009   |ima1007   |rtv05      |rtv05_desc                    |rtv14           |rtv14_desc                    |rtv06          |rtv07               |rtv07t              |rtv08      |rtv09      |rtv10      |rtv11     |rtv12     |rtv13         ]
+[rtv03|rtv04                 |ima02               |ima021              |ima1004   |ima1005   |ima1009   |ima1007   |rtv05      |rtv05_desc                    |rtv14           |rtv14_desc                    |rtv06          |rtv07               |rtv07t              |rtv08      |rtv09      |rtv10      |rtv11     |rtv12     |rtv13         ]
+[rtv03|rtv04                 |ima02               |ima021              |ima1004   |ima1005   |ima1009   |ima1007   |rtv05      |rtv05_desc                    |rtv14           |rtv14_desc                    |rtv06          |rtv07               |rtv07t              |rtv08      |rtv09      |rtv10      |rtv11     |rtv12     |rtv13         ]
+[rtv03|rtv04                 |ima02               |ima021              |ima1004   |ima1005   |ima1009   |ima1007   |rtv05      |rtv05_desc                    |rtv14           |rtv14_desc                    |rtv06          |rtv07               |rtv07t              |rtv08      |rtv09      |rtv10      |rtv11     |rtv12     |rtv13         ]
+[rtv03|rtv04                 |ima02               |ima021              |ima1004   |ima1005   |ima1009   |ima1007   |rtv05      |rtv05_desc                    |rtv14           |rtv14_desc                    |rtv06          |rtv07               |rtv07t              |rtv08      |rtv09      |rtv10      |rtv11     |rtv12     |rtv13         ]
+[rtv03|rtv04                 |ima02               |ima021              |ima1004   |ima1005   |ima1009   |ima1007   |rtv05      |rtv05_desc                    |rtv14           |rtv14_desc                    |rtv06          |rtv07               |rtv07t              |rtv08      |rtv09      |rtv10      |rtv11     |rtv12     |rtv13         ]
+[rtv03|rtv04                 |ima02               |ima021              |ima1004   |ima1005   |ima1009   |ima1007   |rtv05      |rtv05_desc                    |rtv14           |rtv14_desc                    |rtv06          |rtv07               |rtv07t              |rtv08      |rtv09      |rtv10      |rtv11     |rtv12     |rtv13         ]
+[rtv03|rtv04                 |ima02               |ima021              |ima1004   |ima1005   |ima1009   |ima1007   |rtv05      |rtv05_desc                    |rtv14           |rtv14_desc                    |rtv06          |rtv07               |rtv07t              |rtv08      |rtv09      |rtv10      |rtv11     |rtv12     |rtv13         ]
+[rtv03|rtv04                 |ima02               |ima021              |ima1004   |ima1005   |ima1009   |ima1007   |rtv05      |rtv05_desc                    |rtv14           |rtv14_desc                    |rtv06          |rtv07               |rtv07t              |rtv08      |rtv09      |rtv10      |rtv11     |rtv12     |rtv13         ]
+[rtv03|rtv04                 |ima02               |ima021              |ima1004   |ima1005   |ima1009   |ima1007   |rtv05      |rtv05_desc                    |rtv14           |rtv14_desc                    |rtv06          |rtv07               |rtv07t              |rtv08      |rtv09      |rtv10      |rtv11     |rtv12     |rtv13         ]
+}
+END -- tb1
+Grid gr3
+{
+
+---------- Count[cnt   ]/[cn2   ] ----------
+
+
+
+}
+END -- gr3
+END -- vb5
+END -- arti132
+
+TABLES
+rtv_file,
+rtu_file
+ATTRIBUTES
+ButtonEdit rtu01=rtu_file.rtu01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ComboBox rtu07=rtu_file.rtu07, tabIndex=11, items=(("1", "Normal Promotion"),("2", "Portfolio Promotion"),("3", "Full Promotion"));
+ButtonEdit rtu14=rtu_file.rtu14, action=controlp, tabIndex=18, image="zoom.png";
+Edit rtu14_desc=formonly.rtu14_desc type CHAR, tabIndex=19, noEntry;
+ButtonEdit rtu02=rtu_file.rtu02, action=controlp, tabIndex=2, noEntry, not null, required, image="zoom.png";
+Edit rtu02_desc=formonly.rtu02_desc type CHAR, tabIndex=3, noEntry;
+ButtonEdit rtu08=rtu_file.rtu08, action=controlp, tabIndex=12, not null, image="zoom.png";
+ButtonEdit rtu15=rtu_file.rtu15, action=controlp, tabIndex=20, image="zoom.png";
+Edit rtu15_desc=formonly.rtu15_desc type CHAR, tabIndex=21, noEntry;
+Edit rtu03=rtu_file.rtu03, tabIndex=4;
+DateEdit rtu09=rtu_file.rtu09, tabIndex=13, not null, required;
+ComboBox rtuconf=rtu_file.rtuconf, tabIndex=22, noEntry, items=(("Y", "Audited"),("N", "Not Audit"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit rtu04=rtu_file.rtu04, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+DateEdit rtu10=rtu_file.rtu10, tabIndex=14, not null, required;
+DateEdit rtucond=rtu_file.rtucond, tabIndex=23, noEntry;
+Edit rtu05=rtu_file.rtu05, tabIndex=6, noEntry, not null, required;
+Edit rtu05_desc=formonly.rtu05_desc type CHAR, tabIndex=7, noEntry;
+DateEdit rtu11=rtu_file.rtu11, tabIndex=15, noEntry;
+ButtonEdit rtuconu=rtu_file.rtuconu, action=controlp, tabIndex=24, noEntry, image="zoom.png";
+Edit rtuconu_desc=formonly.rtuconu_desc type CHAR, tabIndex=52, noEntry;
+ComboBox rtu06=rtu_file.rtu06, tabIndex=8, noEntry, not null, required, items=(("1", "Distribution"),("2", "Cost of sales agency"),("3", "Deduction rate of sales agency"),("4", "Joint Venture"));
+Edit rtu12=rtu_file.rtu12, tabIndex=16;
+Edit rtu16=rtu_file.rtu16, tabIndex=25;
+ButtonEdit rtuplant=rtu_file.rtuplant, action=controlp, tabIndex=9, image="zoom.png";
+Edit rtuplant_desc=formonly.rtuplant_desc type CHAR, tabIndex=10, noEntry;
+Edit rtu13=rtu_file.rtu13, tabIndex=17;
+ButtonEdit rtu17=rtu_file.rtu17, action=controlp, tabIndex=55, not null, required, image="zoom.png";
+Edit rtu18=rtu_file.rtu18, tabIndex=56, noEntry;
+CheckBox gec07=formonly.gec07 type VARCHAR, tabIndex=57, text="Unit Price Include Tax", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rtuuser=rtu_file.rtuuser, tabIndex=26, noEntry;
+Edit rtumodu=rtu_file.rtumodu, tabIndex=28, noEntry;
+Edit rtuacti=rtu_file.rtuacti, tabIndex=30, noEntry;
+Edit rtuoriu=rtu_file.rtuoriu, tabIndex=59, noEntry;
+Edit rtugrup=rtu_file.rtugrup, tabIndex=27, noEntry;
+DateEdit rtudate=rtu_file.rtudate, tabIndex=29, noEntry;
+DateEdit rtucrat=rtu_file.rtucrat, tabIndex=31, noEntry;
+Edit rtuorig=rtu_file.rtuorig, tabIndex=60, noEntry;
+Edit rtv03=rtv_file.rtv03, tabIndex=32, title="Item";
+ButtonEdit rtv04=rtv_file.rtv04, action=controlp, tabIndex=33, title="Goods Code", not null, required, image="zoom.png";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=34, title="Goods Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=35, title="Specificate", noEntry;
+Edit ima1004=formonly.ima1004 type CHAR, tabIndex=36, title="Kinds", noEntry;
+Edit ima1005=formonly.ima1005 type CHAR, tabIndex=37, title="Brand", noEntry;
+Edit ima1009=formonly.ima1009 type CHAR, tabIndex=38, title="Fancy", noEntry;
+Edit ima1007=formonly.ima1007 type CHAR, tabIndex=39, title="Size", noEntry;
+ButtonEdit rtv05=rtv_file.rtv05, action=controlp, tabIndex=40, title="Store Unit", noEntry, image="zoom.png";
+Edit rtv05_desc=formonly.rtv05_desc type CHAR, tabIndex=41, title="Unit Name", noEntry;
+ButtonEdit rtv14=rtv_file.rtv14, action=controlp, tabIndex=53, title="Defau.Purc.Unit", noEntry, image="zoom.png";
+Edit rtv14_desc=formonly.rtv14_desc type CHAR, tabIndex=54, title="Unit Name", noEntry;
+Edit rtv06=rtv_file.rtv06, tabIndex=42, title="Discount Ratio", not null, required;
+Edit rtv07=rtv_file.rtv07, tabIndex=43, title="Prom Purc Pric", not null, required;
+Edit rtv07t=rtv_file.rtv07t, tabIndex=58, title="With Tax", not null, required;
+Edit rtv08=rtv_file.rtv08, tabIndex=44, title="Purc Quan ";
+Edit rtv09=rtv_file.rtv09, tabIndex=45, title="Purc Amou";
+Edit rtv10=rtv_file.rtv10, tabIndex=46, title="Matc Quan";
+Edit rtv11=rtv_file.rtv11, tabIndex=47, title="Discount", not null, required;
+Edit rtv12=rtv_file.rtv12, tabIndex=48, title="Clear", not null, required;
+Edit rtv13=rtv_file.rtv13, tabIndex=49, title="Share", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=50, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=51, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rtv(rtv_file.rtv03,rtv_file.rtv04,formonly.ima02,formonly.ima021,formonly.ima1004,formonly.ima1005,formonly.ima1009,formonly.ima1007,rtv_file.rtv05,formonly.rtv05_desc,rtv_file.rtv14,formonly.rtv14_desc,rtv_file.rtv06,rtv_file.rtv07,rtv_file.rtv07t,rtv_file.rtv08,rtv_file.rtv09,rtv_file.rtv10,rtv_file.rtv11,rtv_file.rtv12,rtv_file.rtv13)
+SCREEN RECORD Undefined(rtu_file.rtu01,rtu_file.rtu07,rtu_file.rtu14,formonly.rtu14_desc,rtu_file.rtu02,formonly.rtu02_desc,rtu_file.rtu08,rtu_file.rtu15,formonly.rtu15_desc,rtu_file.rtu03,rtu_file.rtu09,rtu_file.rtuconf,formonly.imgmksg,rtu_file.rtu04,rtu_file.rtu10,rtu_file.rtucond,rtu_file.rtu05,formonly.rtu05_desc,rtu_file.rtu11,rtu_file.rtuconu,formonly.rtuconu_desc,rtu_file.rtu06,rtu_file.rtu12,rtu_file.rtu16,rtu_file.rtuplant,formonly.rtuplant_desc,rtu_file.rtu13,rtu_file.rtu17,rtu_file.rtu18,formonly.gec07,rtu_file.rtuuser,rtu_file.rtumodu,rtu_file.rtuacti,rtu_file.rtuoriu,rtu_file.rtugrup,rtu_file.rtudate,rtu_file.rtucrat,rtu_file.rtuorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

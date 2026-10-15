@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrp601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group QBE1(text=%"QBE")
+Grid ds1
+{
+[label1 |azp01               ]
+
+}
+END -- ds1
+END -- QBE1
+Group QBE2(text=%"QBE")
+Grid ds2
+{
+
+[label2 |lua01               ]
+[label3 |lua06               ]
+[label4 |lua09               ]
+
+
+
+
+}
+END -- ds2
+END -- QBE2
+Group Group1(text=%"Group1")
+Grid ds3
+{
+
+[label5 |lub09               ]
+[label6 |ar_slip             ]
+[yy     |y1                  ]
+[mm     |m1                  ]
+
+}
+END -- ds3
+END -- Group1
+END -- VBox1
+END -- Form
+
+TABLES
+lua_file,
+azp_file,
+lub_file
+ATTRIBUTES
+Label label1:Label1, text=%"azp01";
+ButtonEdit azp01=azp_file.azp01, action=controlp, tabIndex=1, not null, image="zoom", scroll;
+Label label2:Label2, text=%"lua01";
+ButtonEdit lua01=lua_file.lua01, action=controlp, tabIndex=2, image="zoom", scroll;
+Label label3:Label3, text=%"lua06";
+ButtonEdit lua06=lua_file.lua06, action=controlp, tabIndex=3, image="zoom", scroll;
+Label label4:Label4, text=%"lua09";
+DateEdit lua09=lua_file.lua09, tabIndex=4;
+Label label5:Label5, text=%"lub09";
+ComboBox lub09=lub_file.lub09, tabIndex=5, scroll, items=(("01", "1"),("02", "2"));
+Label label6:Label6, text=%"ar_slip";
+ButtonEdit ar_slip=formonly.ar_slip type CHAR, action=controlp, tabIndex=6, image="zoom", scroll;
+Label yy:yy, text=%"yy";
+Edit y1=formonly.yy type CHAR, tabIndex=7, scroll;
+Label mm:mm, text=%"mm";
+Edit m1=formonly.mm type CHAR, tabIndex=8, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(azp_file.azp01)
+SCREEN RECORD Record2(lua_file.lua01,lua_file.lua06,lua_file.lua09)
+SCREEN RECORD Record3(lub_file.lub09,formonly.ar_slip,formonly.yy,formonly.mm)
+END -- INSTRUCTIONS
+

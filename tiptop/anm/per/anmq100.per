@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"anmq100")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid ds1
+{
+ naf03[naf03     ]                                              nma04[nma04                         ]
+ naf04[naf04     ]                                              nma02[nma02                         ]
+ zo12 [zo12                          ]
+}
+END -- ds1
+END -- Page1
+END -- Folder1
+Table Table1
+{
+[month_1 |date_1  |nmu12_1 |nmu10_1        |month_2 |date_2  |nmu12_2 |nmu10_2        |month_3 |date_3  |nme12_1 |nmu12_3 |nmu10_3          |month_4 |date_4  |nme12_2 |nmu12_4 |nmu10_4         ]
+[month_1 |date_1  |nmu12_1 |nmu10_1        |month_2 |date_2  |nmu12_2 |nmu10_2        |month_3 |date_3  |nme12_1 |nmu12_3 |nmu10_3          |month_4 |date_4  |nme12_2 |nmu12_4 |nmu10_4         ]
+[month_1 |date_1  |nmu12_1 |nmu10_1        |month_2 |date_2  |nmu12_2 |nmu10_2        |month_3 |date_3  |nme12_1 |nmu12_3 |nmu10_3          |month_4 |date_4  |nme12_2 |nmu12_4 |nmu10_4         ]
+[month_1 |date_1  |nmu12_1 |nmu10_1        |month_2 |date_2  |nmu12_2 |nmu10_2        |month_3 |date_3  |nme12_1 |nmu12_3 |nmu10_3          |month_4 |date_4  |nme12_2 |nmu12_4 |nmu10_4         ]
+[month_1 |date_1  |nmu12_1 |nmu10_1        |month_2 |date_2  |nmu12_2 |nmu10_2        |month_3 |date_3  |nme12_1 |nmu12_3 |nmu10_3          |month_4 |date_4  |nme12_2 |nmu12_4 |nmu10_4         ]
+
+}
+END -- Table1
+Grid Grid1
+{
+ nmp16[nmp16                      ]+  a1 [a1                        ]-  b1[b1                        ]=  c1[c1                        ]
+ nmu11[nmu11                      ]+  a2 [a2                        ]-  b2[b2                        ]=  c2[c2                        ]
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit naf03=formonly.naf03 type CHAR, tabIndex=4, noEntry;
+Edit nma04=formonly.nma04 type VARCHAR, tabIndex=3, noEntry, scroll;
+Edit naf04=formonly.naf04 type CHAR, tabIndex=5, noEntry;
+Edit nma02=formonly.nma02 type VARCHAR, tabIndex=2, noEntry, scroll;
+Edit zo12=formonly.zo12 type VARCHAR, tabIndex=1, noEntry, scroll;
+Edit month_1=formonly.month_1 type CHAR, tabIndex=6, title=%"month", noEntry;
+Edit date_1=formonly.date_1 type CHAR, tabIndex=7, title=%"date", noEntry;
+Edit nmu12_1=formonly.nmu12_1 type CHAR, tabIndex=8, title=%"nmu12", noEntry;
+Edit nmu10_1=formonly.nmu10_1 type CHAR, tabIndex=9, title=%"nmu10", noEntry;
+Edit month_2=formonly.month_2 type CHAR, tabIndex=10, title=%"month", noEntry;
+Edit date_2=formonly.date_2 type CHAR, tabIndex=11, title=%"date", noEntry;
+Edit nmu12_2=formonly.nmu12_2 type CHAR, tabIndex=12, title=%"nmu12", noEntry;
+Edit nmu10_2=formonly.nmu10_2 type CHAR, tabIndex=13, title=%"nmu10", noEntry;
+Edit month_3=formonly.month_3 type CHAR, tabIndex=14, title=%"month", noEntry;
+Edit date_3=formonly.date_3 type CHAR, tabIndex=15, title=%"date", noEntry;
+Edit nme12_1=formonly.nme12_1 type CHAR, tabIndex=16, title=%"nme12";
+Edit nmu12_3=formonly.nmu12_3 type CHAR, tabIndex=17, title=%"nmu12", noEntry;
+Edit nmu10_3=formonly.nmu10_3 type CHAR, tabIndex=18, title=%"nmu10", noEntry;
+Edit month_4=formonly.month_4 type CHAR, tabIndex=19, title=%"month", noEntry;
+Edit date_4=formonly.date_4 type CHAR, tabIndex=20, title=%"date", noEntry;
+Edit nme12_2=formonly.nme12_2 type CHAR, tabIndex=21, title=%"nme12";
+Edit nmu12_4=formonly.nmu12_4 type CHAR, tabIndex=22, title=%"nmu12", noEntry;
+Edit nmu10_4=formonly.nmu10_4 type CHAR, tabIndex=23, title=%"nmu10", noEntry;
+Edit nmp16=formonly.nmp16 type CHAR, tabIndex=28, noEntry;
+Edit a1=formonly.a1 type CHAR, tabIndex=25, noEntry;
+Edit b1=formonly.b1 type CHAR, tabIndex=26, noEntry;
+Edit c1=formonly.c1 type CHAR, tabIndex=27, noEntry;
+Edit nmu11=formonly.nmu11 type CHAR, tabIndex=24, noEntry;
+Edit a2=formonly.a2 type CHAR, tabIndex=29, noEntry;
+Edit b2=formonly.b2 type CHAR, tabIndex=30, noEntry;
+Edit c2=formonly.c2 type CHAR, tabIndex=31, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(formonly.zo12,formonly.nma02,formonly.nma04)
+SCREEN RECORD Undefined(formonly.naf03,formonly.naf04,formonly.nmu11,formonly.a1,formonly.b1,formonly.c1,formonly.nmp16,formonly.a2,formonly.b2,formonly.c2)
+SCREEN RECORD s_nmu(formonly.month_1,formonly.date_1,formonly.nmu12_1,formonly.nmu10_1,formonly.month_2,formonly.date_2,formonly.nmu12_2,formonly.nmu10_2,formonly.month_3,formonly.date_3,formonly.nme12_1,formonly.nmu12_3,formonly.nmu10_3,formonly.month_4,formonly.date_4,formonly.nme12_2,formonly.nmu12_4,formonly.nmu10_4)
+END -- INSTRUCTIONS
+

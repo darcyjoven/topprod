@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cxm/4fd/cxmr021.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+HBox HBox1
+Grid Grid1
+{
+
+
+  Label1           [begin_yy            ]  [begin_mm    ]
+  Label1           [end_yy              ]  [end_mm      ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- HBox1
+END -- cxmr021
+
+ATTRIBUTES
+Edit begin_yy=formonly.begin_yy type INTEGER, tabIndex=1;
+Edit begin_mm=formonly.begin_mm type INTEGER, tabIndex=3;
+Edit end_yy=formonly.end_yy type INTEGER, tabIndex=2;
+Edit end_mm=formonly.end_mm type INTEGER, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.begin_yy,formonly.end_yy,formonly.begin_mm,formonly.end_mm)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,127 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri046.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+ <G group7                               >      <G group8                               >
+  hrcf01 [hrcf01    |hrcf01_name         ]       hrcf02 [hrcf02    |hrcf02_name         ]
+ <                                       >      <                                       >
+ <G group1                               >      <G group2                               >
+  hrcf03 [hrcf03                         ]       hrcf18 [hrcf18                         ]
+         [hrcf04                         ]       hrcf19 [hrcf19                         ]
+  hrcf06 [hrcf06                         ]       hrcf20 [hrcf20    |hrcf20_name         ]
+         [hrcf05                         ]              [hrcf16                         ]
+         [hrcf07                         ]              [hrcf17                         ]
+ <                                       >              [hrcf21                         ]
+ <G group3                               >              [hrcf22                         ]
+  hrcf08 [hrcf08                         ]      <                                       >
+  hrcf09 [hrcf09    |hrcf09_name         ]      <G group4                               >
+  hrcf10 [hrcf10                         ]              [hrcf23                         ]
+  hrcf11 [hrcf11                         ]              [hrcf24                         ]
+  hrcf12 [hrcf12                         ]              [hrcf25                         ]
+  hrcf13 [hrcf13                         ]              [hrcf26                         ]
+  hrcf14 [hrcf14                         ]              [hrcf27                         ]
+  hrcf15 [hrcf15                         ]              [hrcf28                         ]
+ <                                       >       hrcf29 [hrcf29    |hrcf29_name         ]
+                                                <                                       >
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid2
+{
+ <G group5               > <G group6               >
+  hrcforiu [hrcforiu  ]     hrcforig [hrcforig  ]
+  hrcfuser [hrcfuser  ]     hrcfgrup [hrcfgrup  ]
+  hrcfmodu [hrcfmodu  ]     hrcfdate [hrcfdate  ]
+ <                       > <                       >
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid2
+END -- Page2
+END -- Folder1
+Grid Grid3
+{
+
+  ------- idx[idx   ]/[cnt       ]-------
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group7:Group7, text=%"";
+ButtonEdit hrcf01=formonly.hrcf01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrcf01_name=formonly.hrcf01_name type CHAR, tabIndex=2, noEntry;
+Group group8:Group8, text=%"";
+ButtonEdit hrcf02=formonly.hrcf02 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Edit hrcf02_name=formonly.hrcf02_name type CHAR, tabIndex=4, noEntry;
+Group group1:Group1, text=%"Group1";
+ComboBox hrcf03=formonly.hrcf03 type CHAR, tabIndex=5, not null, required, items=(("001", "Text"),("002", "Text"),("003", "Text"),("004", "Text"),("005", "Text"));
+CheckBox hrcf04=formonly.hrcf04 type CHAR, tabIndex=6, text=%"hrcf04", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox hrcf06=formonly.hrcf06 type CHAR, tabIndex=28, not null, required, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"),("10", "10"),("11", "11"),("12", "12"),("13", "13"),("14", "14"),("15", "15"),("16", "16"),("17", "17"),("18", "18"),("19", "19"),("20", "20"),("21", "21"),("22", "22"),("23", "23"),("24", "24"),("25", "25"),("26", "26"),("27", "27"),("28", "28"),("29", "29"),("30", "30"),("31", "31"));
+CheckBox hrcf05=formonly.hrcf05 type CHAR, tabIndex=7, text=%"hrcf05", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrcf07=formonly.hrcf07 type CHAR, tabIndex=8, text=%"hrcf07", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group2:Group2, text=%"Group2";
+ComboBox hrcf18=formonly.hrcf18 type CHAR, tabIndex=29, not null, required, items=(("001", "Text"),("002", "Text"));
+Edit hrcf19=formonly.hrcf19 type CHAR, tabIndex=42, not null, required;
+ButtonEdit hrcf20=formonly.hrcf20 type CHAR, action=controlp, tabIndex=38, not null, required, image="zoom";
+Edit hrcf20_name=formonly.hrcf20_name type CHAR, tabIndex=39, noEntry;
+CheckBox hrcf16=formonly.hrcf16 type CHAR, tabIndex=9, text=%"hrcf16", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrcf17=formonly.hrcf17 type CHAR, tabIndex=10, text=%"hrcf17", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrcf21=formonly.hrcf21 type CHAR, tabIndex=11, text=%"hrcf21", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrcf22=formonly.hrcf22 type CHAR, tabIndex=12, text=%"hrcf22", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group3:Group3, text=%"Group3";
+Edit hrcf08=formonly.hrcf08 type CHAR, tabIndex=13, not null, required;
+ButtonEdit hrcf09=formonly.hrcf09 type CHAR, action=controlp, tabIndex=19, image="zoom";
+Edit hrcf09_name=formonly.hrcf09_name type CHAR, tabIndex=20, noEntry;
+Edit hrcf10=formonly.hrcf10 type CHAR, tabIndex=14, not null, required;
+Edit hrcf11=formonly.hrcf11 type CHAR, tabIndex=15, not null, required;
+Edit hrcf12=formonly.hrcf12 type CHAR, tabIndex=16, not null, required;
+Edit hrcf13=formonly.hrcf13 type CHAR, tabIndex=17, not null, required;
+Edit hrcf14=formonly.hrcf14 type CHAR, tabIndex=18, not null, required;
+Edit hrcf15=formonly.hrcf15 type CHAR, tabIndex=21, not null, required;
+Group group4:Group4, text=%"Group4";
+CheckBox hrcf23=formonly.hrcf23 type CHAR, tabIndex=22, text=%"hrcf23", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrcf24=formonly.hrcf24 type CHAR, tabIndex=23, text=%"hrcf24", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrcf25=formonly.hrcf25 type CHAR, tabIndex=24, text=%"hrcf25", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrcf26=formonly.hrcf26 type CHAR, tabIndex=25, text=%"hrcf26", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrcf27=formonly.hrcf27 type CHAR, tabIndex=26, text=%"hrcf27", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrcf28=formonly.hrcf28 type CHAR, tabIndex=27, text=%"hrcf28", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit hrcf29=formonly.hrcf29 type CHAR, action=controlp, tabIndex=40, not null, required, image="zoom";
+Edit hrcf29_name=formonly.hrcf29_name type CHAR, tabIndex=41, noEntry;
+Group group5:Group5, text=%"";
+Edit hrcforiu=formonly.hrcforiu type CHAR, tabIndex=32, noEntry;
+Edit hrcfuser=formonly.hrcfuser type CHAR, tabIndex=33, noEntry;
+Edit hrcfmodu=formonly.hrcfmodu type CHAR, tabIndex=34, noEntry;
+Group group6:Group6, text=%"";
+Edit hrcforig=formonly.hrcforig type CHAR, tabIndex=35, noEntry;
+Edit hrcfgrup=formonly.hrcfgrup type CHAR, tabIndex=36, noEntry;
+DateEdit hrcfdate=formonly.hrcfdate type CHAR, tabIndex=37, noEntry;
+Edit idx=formonly.idx type CHAR, tabIndex=30, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=31, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrcf01,formonly.hrcf01_name,formonly.hrcf02,formonly.hrcf02_name,formonly.hrcf03,formonly.hrcf04,formonly.hrcf05,formonly.hrcf07,formonly.hrcf16,formonly.hrcf17,formonly.hrcf21,formonly.hrcf22,formonly.hrcf08,formonly.hrcf10,formonly.hrcf11,formonly.hrcf12,formonly.hrcf13,formonly.hrcf14,formonly.hrcf09,formonly.hrcf09_name,formonly.hrcf15,formonly.hrcf23,formonly.hrcf24,formonly.hrcf25,formonly.hrcf26,formonly.hrcf27,formonly.hrcf28,formonly.hrcf06,formonly.hrcf18,formonly.idx,formonly.cnt,formonly.hrcforiu,formonly.hrcfuser,formonly.hrcfmodu,formonly.hrcforig,formonly.hrcfgrup,formonly.hrcfdate,formonly.hrcf20,formonly.hrcf20_name,formonly.hrcf29,formonly.hrcf29_name,formonly.hrcf19)
+END -- INSTRUCTIONS
+

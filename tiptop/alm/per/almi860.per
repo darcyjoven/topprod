@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi860.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi860")
+VBox vb2
+Folder main
+Page Page1(text=%"main")
+Grid gr17
+{
+
+  lsb01    [lsb01            ]                                           lsb12     [lsb12                  ]
+  lsbstore [lsbstore         ]  [rtz13               ]                             [                       ]
+  lsblegal [lsblegal         ]  [azt02               ]
+  lsb03    [lsb03            ]  [lmb03               ]                   lsb13     [lsb13                  ]
+  lsb04    [lsb04            ]  [lmc04               ]                             [                       ]
+  lsb05    [lsb05            ]
+  lsb06    [lsb06            ]                                           lsb16     [lsb16                   ][imgmksg]
+  lsb07    [lsb07            ]                                           lsb17     [lsb17                   ][       ]
+  lsb08    [lsb08            ]                                           lsb18     [lsb18                   ]
+  lsb09    [lsb09            ]
+  lsb10    [lsb10            ]
+  lsb11    [lsb11            ]
+
+}
+END -- gr17
+END -- Page1
+Page info(text=%"Info")
+Grid gr7
+{
+ Record Owner              [lsbuser   ]  Create Date              [lsbcrat     ]     Data Valid Code     [lsbacti   ]
+ Department                [lsbgrup   ]  Last Modified by        [lsbmodu     ]      Modify Date         [lsbdate   ]
+ Record Orig.              [lsboriu   ]
+ Dept Orig.                [lsborig   ]
+
+
+}
+END -- gr7
+END -- info
+END -- main
+Grid gr8
+{
+  ---------- Rows[idx   ]/[cnt   ] ----------
+
+
+}
+END -- gr8
+END -- vb2
+END -- almi860
+
+TABLES
+lsb_file
+ATTRIBUTES
+ButtonEdit lsb01=lsb_file.lsb01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+TextEdit lsb12=lsb_file.lsb12, tabIndex=17;
+ButtonEdit lsbstore=lsb_file.lsbstore, action=controlp, tabIndex=2, noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=3;
+ButtonEdit lsblegal=lsb_file.lsblegal, action=controlp, tabIndex=4, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=5;
+ButtonEdit lsb03=lsb_file.lsb03, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=7, noEntry;
+TextEdit lsb13=lsb_file.lsb13, tabIndex=18;
+ButtonEdit lsb04=lsb_file.lsb04, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=9, noEntry;
+ComboBox lsb05=lsb_file.lsb05, tabIndex=10, items=(("0", "Inside"),("1", "Outside"),("2", "Rest"));
+ComboBox lsb06=lsb_file.lsb06, tabIndex=11, items=(("0", "east"),("1", "south"),("2", "west"),("3", "north"));
+ComboBox lsb16=lsb_file.lsb16, tabIndex=19, items=(("N", "Unconfirmed"),("Y", "Confirm"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit lsb07=lsb_file.lsb07, tabIndex=12;
+Edit lsb17=lsb_file.lsb17, tabIndex=20, noEntry;
+Edit lsb08=lsb_file.lsb08, tabIndex=13;
+Edit lsb18=lsb_file.lsb18, tabIndex=21, noEntry;
+Edit lsb09=lsb_file.lsb09, tabIndex=14;
+Edit lsb10=lsb_file.lsb10, tabIndex=15;
+Edit lsb11=lsb_file.lsb11, tabIndex=16;
+Edit lsbuser=lsb_file.lsbuser, tabIndex=22, noEntry;
+DateEdit lsbcrat=lsb_file.lsbcrat, tabIndex=24, noEntry;
+Edit lsbacti=lsb_file.lsbacti, tabIndex=26, noEntry, upShift;
+Edit lsbgrup=lsb_file.lsbgrup, tabIndex=23, noEntry;
+Edit lsbmodu=lsb_file.lsbmodu, tabIndex=25, noEntry;
+DateEdit lsbdate=lsb_file.lsbdate, tabIndex=27, noEntry;
+Edit lsboriu=lsb_file.lsboriu, tabIndex=31, noEntry;
+Edit lsborig=lsb_file.lsborig, tabIndex=30, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=29, noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lsb_file.lsb01,lsb_file.lsb12,lsb_file.lsbstore,formonly.rtz13,lsb_file.lsblegal,formonly.azt02,lsb_file.lsb03,formonly.lmb03,lsb_file.lsb13,lsb_file.lsb04,formonly.lmc04,lsb_file.lsb05,lsb_file.lsb06,lsb_file.lsb16,formonly.imgmksg,lsb_file.lsb07,lsb_file.lsb17,lsb_file.lsb08,lsb_file.lsb18,lsb_file.lsb09,lsb_file.lsb10,lsb_file.lsb11,lsb_file.lsbuser,lsb_file.lsbcrat,lsb_file.lsbacti,lsb_file.lsbgrup,lsb_file.lsbmodu,lsb_file.lsbdate,lsb_file.lsboriu,lsb_file.lsborig,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

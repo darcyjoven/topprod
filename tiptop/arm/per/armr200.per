@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armr200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armr200")
+VBox VBox1
+Grid gr324
+{
+ <G group01                                             >
+  Item No.            [inb04               ]
+  Warehouse No.       [inb05               ]
+ <                                                      >
+ <G group02                                             >
+  Receipt/Issue Date  [bdate       ] - [edate       ]
+ <                                                      >
+
+}
+END -- gr324
+Grid gr325
+{
+[more                                     ]
+
+}
+END -- gr325
+END -- VBox1
+END -- armr200
+
+TABLES
+inb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit inb04=inb_file.inb04, action=controlp, tabIndex=1, image="zoom";
+Edit inb05=inb_file.inb05, tabIndex=2;
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=3;
+DateEdit edate=formonly.edate type DATE, tabIndex=4;
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(inb_file.inb04,inb_file.inb05,formonly.bdate,formonly.edate,formonly.more)
+END -- INSTRUCTIONS
+

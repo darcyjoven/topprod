@@ -1,0 +1,100 @@
+----------------------------------------------------------------------------------
+-- cpms010.per  采购参数作业(示例作业)画面档
+-- 与 topcust/cpm/4gl/cpms010.4gl 配套;结构参照 tiptop/asm/per/asms112.per
+-- and01~and20 为画面可见参数;andud01~andud15 为隐藏的自订预留字段
+-- (本文件为手写来源档,直接以 fglform 编译即可,未经 Genero Studio 导出)
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"cpms010")
+VBox VBox1
+Folder pc194
+Page page01(text="Main")
+Grid gr907
+{
+ <G group01                                                            >
+  参数1     [and01       ]
+  参数2     [and02       ]
+  参数3     [and03       ]
+  参数4     [and04       ]
+  参数5     [and05       ]
+  参数6     [and06       ]
+  参数7     [and07       ]
+  参数8     [and08       ]
+  参数9     [and09       ]
+  参数10    [and10       ]
+  参数11    [and11  ]
+  参数12    [and12  ]
+  参数13    [and13  ]
+  参数14    [and14  ]
+  参数15    [and15       ]
+  参数16    [and16       ]
+  参数17    [and17       ]
+  参数18    [and18                                                  ]
+  参数19    [and19                                                  ]
+  参数20    [and20                                                  ]
+  --自订预留字段:画面隐藏,随参数一起保存(INPUT BY NAME g_and.* 需要)
+  [andud01 ][andud02 ][andud03 ][andud04 ][andud05 ]
+  [andud06 ][andud07 ][andud08 ][andud09 ][andud10 ]
+  [andud11 ][andud12 ][andud13 ][andud14 ][andud15 ]
+ <                                                                     >
+}
+END -- gr907
+END -- page01
+END -- pc194
+END -- VBox1
+END -- cpms010
+
+TABLES
+and_file
+ATTRIBUTES
+Group group01:group01;
+Edit and01=and_file.and01, tabIndex=1;
+Edit and02=and_file.and02, tabIndex=2;
+Edit and03=and_file.and03, tabIndex=3;
+Edit and04=and_file.and04, tabIndex=4;
+Edit and05=and_file.and05, tabIndex=5;
+Edit and06=and_file.and06, tabIndex=6;
+DateEdit and07=and_file.and07, tabIndex=7;
+DateEdit and08=and_file.and08, tabIndex=8;
+DateEdit and09=and_file.and09, tabIndex=9;
+DateEdit and10=and_file.and10, tabIndex=10;
+Edit and11=and_file.and11, tabIndex=11;
+Edit and12=and_file.and12, tabIndex=12;
+Edit and13=and_file.and13, tabIndex=13;
+Edit and14=and_file.and14, tabIndex=14;
+Edit and15=and_file.and15, tabIndex=15;
+Edit and16=and_file.and16, tabIndex=16;
+Edit and17=and_file.and17, tabIndex=17;
+Edit and18=and_file.and18, tabIndex=18;
+Edit and19=and_file.and19, tabIndex=19;
+Edit and20=and_file.and20, tabIndex=20;
+--自订预留字段(隐藏)
+Edit andud01=and_file.andud01, tabIndex=21, hidden;
+Edit andud02=and_file.andud02, tabIndex=22, hidden;
+Edit andud03=and_file.andud03, tabIndex=23, hidden;
+Edit andud04=and_file.andud04, tabIndex=24, hidden;
+Edit andud05=and_file.andud05, tabIndex=25, hidden;
+Edit andud06=and_file.andud06, tabIndex=26, hidden;
+Edit andud07=and_file.andud07, tabIndex=27, hidden;
+Edit andud08=and_file.andud08, tabIndex=28, hidden;
+Edit andud09=and_file.andud09, tabIndex=29, hidden;
+Edit andud10=and_file.andud10, tabIndex=30, hidden;
+Edit andud11=and_file.andud11, tabIndex=31, hidden;
+Edit andud12=and_file.andud12, tabIndex=32, hidden;
+DateEdit andud13=and_file.andud13, tabIndex=33, hidden;
+DateEdit andud14=and_file.andud14, tabIndex=34, hidden;
+DateEdit andud15=and_file.andud15, tabIndex=35, hidden;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(and_file.and01,and_file.and02,and_file.and03,and_file.and04,
+and_file.and05,and_file.and06,and_file.and07,and_file.and08,and_file.and09,
+and_file.and10,and_file.and11,and_file.and12,and_file.and13,and_file.and14,
+and_file.and15,and_file.and16,and_file.and17,and_file.and18,and_file.and19,
+and_file.and20,and_file.andud01,and_file.andud02,and_file.andud03,and_file.andud04,
+and_file.andud05,and_file.andud06,and_file.andud07,and_file.andud08,and_file.andud09,
+and_file.andud10,and_file.andud11,and_file.andud12,and_file.andud13,and_file.andud14,
+and_file.andud15)
+END -- INSTRUCTIONS

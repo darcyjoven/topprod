@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_axa4.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Company Basic Data Query")
+Grid gr3735
+{
+ <T q_axa4                                                                       >
+ [check|axa02          |axa03            |axb04            |axb05                ]
+ [check|axa02          |axa03            |axb04            |axb05                ]
+ [check|axa02          |axa03            |axb04            |axb05                ]
+ [check|axa02          |axa03            |axb04            |axb05                ]
+ [check|axa02          |axa03            |axb04            |axb05                ]
+ [check|axa02          |axa03            |axb04            |axb05                ]
+ [check|axa02          |axa03            |axb04            |axb05                ]
+ [check|axa02          |axa03            |axb04            |axb05                ]
+ [check|axa02          |axa03            |axb04            |axb05                ]
+ [check|axa02          |axa03            |axb04            |axb05                ]
+ <                                                                               >
+
+}
+END -- gr3735
+END -- q_axa4
+
+TABLES
+axb_file,
+axa_file
+ATTRIBUTES
+Table q_axa4:q_axa4;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit axa02=axa_file.axa02, tabIndex=2, title="Parent Company", noEntry;
+Edit axa03=axa_file.axa03, tabIndex=3, title="Parent Company A/C", noEntry;
+Edit axb04=axb_file.axb04, tabIndex=4, title=%"Subsidiary Company";
+Edit axb05=axb_file.axb05, tabIndex=5, title=%"Subsidiary Company A/C";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axa4(formonly.check,axa_file.axa02,axa_file.axa03,axb_file.axb04,axb_file.axb05)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi760.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="acoi760")
+VBox vb2
+Folder pc1
+Page Page1(text=%"Page0")
+Table tb1
+{
+[cei02    |cei03            |ima02          |ima021         |ima901    |cei07       |cei05    |cei06     |cei11     |cei12          |cei13         |cei04     |cei14     |cei08       |cei19               |cei09       |cei10             |cei17       |cei18             |cei20               |cei15    |cei21                      |cei22     |ceiacti   ]
+[cei02    |cei03            |ima02          |ima021         |ima901    |cei07       |cei05    |cei06     |cei11     |cei12          |cei13         |cei04     |cei14     |cei08       |cei19               |cei09       |cei10             |cei17       |cei18             |cei20               |cei15    |cei21                      |cei22     |ceiacti   ]
+[cei02    |cei03            |ima02          |ima021         |ima901    |cei07       |cei05    |cei06     |cei11     |cei12          |cei13         |cei04     |cei14     |cei08       |cei19               |cei09       |cei10             |cei17       |cei18             |cei20               |cei15    |cei21                      |cei22     |ceiacti   ]
+[cei02    |cei03            |ima02          |ima021         |ima901    |cei07       |cei05    |cei06     |cei11     |cei12          |cei13         |cei04     |cei14     |cei08       |cei19               |cei09       |cei10             |cei17       |cei18             |cei20               |cei15    |cei21                      |cei22     |ceiacti   ]
+[cei02    |cei03            |ima02          |ima021         |ima901    |cei07       |cei05    |cei06     |cei11     |cei12          |cei13         |cei04     |cei14     |cei08       |cei19               |cei09       |cei10             |cei17       |cei18             |cei20               |cei15    |cei21                      |cei22     |ceiacti   ]
+[cei02    |cei03            |ima02          |ima021         |ima901    |cei07       |cei05    |cei06     |cei11     |cei12          |cei13         |cei04     |cei14     |cei08       |cei19               |cei09       |cei10             |cei17       |cei18             |cei20               |cei15    |cei21                      |cei22     |ceiacti   ]
+[cei02    |cei03            |ima02          |ima021         |ima901    |cei07       |cei05    |cei06     |cei11     |cei12          |cei13         |cei04     |cei14     |cei08       |cei19               |cei09       |cei10             |cei17       |cei18             |cei20               |cei15    |cei21                      |cei22     |ceiacti   ]
+[cei02    |cei03            |ima02          |ima021         |ima901    |cei07       |cei05    |cei06     |cei11     |cei12          |cei13         |cei04     |cei14     |cei08       |cei19               |cei09       |cei10             |cei17       |cei18             |cei20               |cei15    |cei21                      |cei22     |ceiacti   ]
+[cei02    |cei03            |ima02          |ima021         |ima901    |cei07       |cei05    |cei06     |cei11     |cei12          |cei13         |cei04     |cei14     |cei08       |cei19               |cei09       |cei10             |cei17       |cei18             |cei20               |cei15    |cei21                      |cei22     |ceiacti   ]
+[cei02    |cei03            |ima02          |ima021         |ima901    |cei07       |cei05    |cei06     |cei11     |cei12          |cei13         |cei04     |cei14     |cei08       |cei19               |cei09       |cei10             |cei17       |cei18             |cei20               |cei15    |cei21                      |cei22     |ceiacti   ]
+
+}
+END -- tb1
+END -- Page1
+END -- pc1
+Grid gr1
+{
+-----cnt[cn2   ]-----
+
+}
+END -- gr1
+END -- vb2
+END -- acoi760
+
+TABLES
+cei_file
+ATTRIBUTES
+Edit cei02=cei_file.cei02, tabIndex=1, title="Sequential No.", not null, required;
+ButtonEdit cei03=cei_file.cei03, action=controlp, tabIndex=2, title="In-House Item No.", not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, title="Item No", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=4, title="Item Spec", noEntry;
+DateEdit ima901=formonly.ima901 type CHAR, tabIndex=5, title="ima901", noEntry;
+ButtonEdit cei07=cei_file.cei07, action=controlp, tabIndex=6, title="In-House Unit ", not null, required, image="zoom.png";
+ButtonEdit cei05=cei_file.cei05, action=controlp, tabIndex=7, title="Currency", not null, required, image="zoom.png";
+Edit cei06=cei_file.cei06, tabIndex=8, title="Unit Price bef Merged", not null, required;
+ButtonEdit cei11=cei_file.cei11, action=controlp, tabIndex=9, title="S/N aft Merged", not null, required, image="zoom.png";
+Edit cei12=cei_file.cei12, tabIndex=10, title="Item Name aft Merged", noEntry;
+Edit cei13=cei_file.cei13, tabIndex=11, title="Spec. aft Merged", noEntry;
+ButtonEdit cei04=cei_file.cei04, action=controlp, tabIndex=12, title="Customs Commodity Code", noEntry, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit cei14=cei_file.cei14, tabIndex=13, title="Unit Price aft Merged", noEntry;
+ButtonEdit cei08=cei_file.cei08, action=controlp, tabIndex=14, title="Decl Measure Unit", noEntry, image="zoom.png";
+Edit cei19=cei_file.cei19, tabIndex=15, title="Decl Unit Conv Rate", not null, required;
+ButtonEdit cei09=cei_file.cei09, action=controlp, tabIndex=16, title="Legal Measure Unit", noEntry, image="zoom.png";
+Edit cei10=cei_file.cei10, tabIndex=17, title="Legal Measure Unit Conv Rate", noEntry;
+ButtonEdit cei17=cei_file.cei17, action=controlp, tabIndex=18, title="Second Legal Unit", noEntry, image="zoom";
+Edit cei18=cei_file.cei18, tabIndex=19, title="Second Unit Conv Rate", noEntry;
+Edit cei20=cei_file.cei20, tabIndex=20, title="Item No. aft Merged", noEntry;
+ComboBox cei15=cei_file.cei15, tabIndex=21, title="Approval Status", noEntry, items=(("N", "Not Confrim"),("Y", "Confirmed"));
+Edit cei21=cei_file.cei21, tabIndex=22, title="Memo Description";
+ButtonEdit cei22=cei_file.cei22, action=controlp, tabIndex=24, title="Currency aft Merged", image="zoom";
+CheckBox ceiacti=cei_file.ceiacti, tabIndex=25, title="Valid Code", valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=23;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cei(cei_file.cei02,cei_file.cei03,formonly.ima02,formonly.ima021,formonly.ima901,cei_file.cei07,cei_file.cei05,cei_file.cei06,cei_file.cei11,cei_file.cei12,cei_file.cei13,cei_file.cei04,cei_file.cei14,cei_file.cei08,cei_file.cei19,cei_file.cei09,cei_file.cei10,cei_file.cei17,cei_file.cei18,cei_file.cei20,cei_file.cei15,cei_file.cei21,cei_file.cei22,cei_file.ceiacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

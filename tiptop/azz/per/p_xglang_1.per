@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_xglang_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_replang")
+VBox VBox1
+Folder folder01
+Page Page1(text="main")
+Grid gr3257
+{
+
+[label5    ]   [gds18     ]
+[label8    ]   [gds19             ]
+
+}
+END -- gr3257
+END -- Page1
+END -- folder01
+Table s_sub_gds
+{
+[gds0|gds03           |gds04               |gds14 |gds1|gds2|gds09   |gds10   |gds11   |gds20   |gds13   |gds23 |gds16 |gds28   |gds17 |gds15 ]
+[gds0|gds03           |gds04               |gds14 |gds1|gds2|gds09   |gds10   |gds11   |gds20   |gds13   |gds23 |gds16 |gds28   |gds17 |gds15 ]
+[gds0|gds03           |gds04               |gds14 |gds1|gds2|gds09   |gds10   |gds11   |gds20   |gds13   |gds23 |gds16 |gds28   |gds17 |gds15 ]
+[gds0|gds03           |gds04               |gds14 |gds1|gds2|gds09   |gds10   |gds11   |gds20   |gds13   |gds23 |gds16 |gds28   |gds17 |gds15 ]
+[gds0|gds03           |gds04               |gds14 |gds1|gds2|gds09   |gds10   |gds11   |gds20   |gds13   |gds23 |gds16 |gds28   |gds17 |gds15 ]
+[gds0|gds03           |gds04               |gds14 |gds1|gds2|gds09   |gds10   |gds11   |gds20   |gds13   |gds23 |gds16 |gds28   |gds17 |gds15 ]
+[gds0|gds03           |gds04               |gds14 |gds1|gds2|gds09   |gds10   |gds11   |gds20   |gds13   |gds23 |gds16 |gds28   |gds17 |gds15 ]
+[gds0|gds03           |gds04               |gds14 |gds1|gds2|gds09   |gds10   |gds11   |gds20   |gds13   |gds23 |gds16 |gds28   |gds17 |gds15 ]
+[gds0|gds03           |gds04               |gds14 |gds1|gds2|gds09   |gds10   |gds11   |gds20   |gds13   |gds23 |gds16 |gds28   |gds17 |gds15 ]
+[gds0|gds03           |gds04               |gds14 |gds1|gds2|gds09   |gds10   |gds11   |gds20   |gds13   |gds23 |gds16 |gds28   |gds17 |gds15 ]
+
+
+}
+END -- s_sub_gds
+Grid gr3258
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr3258
+END -- VBox1
+END -- p_xglang
+
+TABLES
+gds_file
+ATTRIBUTES
+Label label5:Label5, text=%"SubRepID";
+Edit gds18=gds_file.gds18, tabIndex=13, noEntry;
+Label label8:Label8, text=%"SubRepName";
+Edit gds19=gds_file.gds19, tabIndex=1, not null, required;
+Edit gds0=gds_file.gds01, tabIndex=2, title=%"Sequence", noEntry;
+Edit gds03=gds_file.gds03, tabIndex=3, title="Field", noEntry, scroll;
+Edit gds04=gds_file.gds04, tabIndex=4, title="Description", not null, required, scroll, comment="IF Field Name is \'wintitle\', Then This Field is \'NO Entry\'! Using \'Update\' Function!";
+CheckBox gds14=gds_file.gds14, tabIndex=5, title=%"Display", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gds1=gds_file.gds05, tabIndex=6, title=%"Line No.", not null, required;
+Edit gds2=gds_file.gds06, tabIndex=7, title=%"Column Seq", not null, required;
+CheckBox gds09=gds_file.gds09, tabIndex=17, title=%"Pv-X", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gds10=gds_file.gds10, tabIndex=19, title=%"Pv-Y", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gds11=gds_file.gds11, tabIndex=18, title=%"Pv Seq";
+ComboBox gds20=gds_file.gds20, tabIndex=20, title=%"Edit1", items=(("0", "Sum"),("1", "Min"),("2", "Max"),("3", "Count"),("4", "Average"));
+ComboBox gds13=gds_file.gds13, tabIndex=8, title=%"Edit1";
+CheckBox gds23=gds_file.gds23, tabIndex=16, title=%"Edit1", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gds16=gds_file.gds16, tabIndex=9, title=%"Edit1", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox gds28=gds_file.gds28, tabIndex=15, title=%"Edit1";
+ComboBox gds17=gds_file.gds17, tabIndex=14, title=%"Edit1", not null, required, items=(("1", "left"),("2", "right"),("3", "center"));
+Edit gds15=gds_file.gds15, tabIndex=10, title=%"Type", noEntry, hidden;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sub_gds(gds_file.gds01,gds_file.gds03,gds_file.gds04,gds_file.gds14,gds_file.gds05,gds_file.gds06,gds_file.gds09,gds_file.gds10,gds_file.gds11,gds_file.gds20,gds_file.gds13,gds_file.gds23,gds_file.gds16,gds_file.gds28,gds_file.gds17,gds_file.gds15)
+SCREEN RECORD Undefined(formonly.cnt,formonly.cn2,gds_file.gds19,gds_file.gds18)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gis/42f/gisr110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gisr110")
+VBox VBox1
+Grid gr3487
+{
+ <G group01                                 >
+  Accounts No.        [isa04               ]
+  Customer No.        [isa05               ]
+  Invoice Type        [isa062              ]
+  Data Source         [isa00               ]
+ <                                          >
+
+}
+END -- gr3487
+Grid gr3488
+{
+[more                                 ]
+
+}
+END -- gr3488
+END -- VBox1
+END -- gisr110
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit isa04=formonly.isa04 type CHAR, tabIndex=1;
+Edit isa05=formonly.isa05 type CHAR, tabIndex=2;
+ComboBox isa062=formonly.isa062 type CHAR, tabIndex=3, queryEditable, items=(("A", "Appreciate Tax Invoice"),("B", "Normal Invoice"),("C", "Exempt Invoice"));
+Edit isa00=formonly.isa00 type CHAR, tabIndex=4;
+CheckBox more=formonly.more type VARCHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.isa04,formonly.isa05,formonly.isa062,formonly.isa00,formonly.more)
+END -- INSTRUCTIONS
+

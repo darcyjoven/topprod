@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapq1052.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Print A/P Employee Record")
+Grid gr111
+{
+ <G group01                       >
+  Initial/End Date [apa02        ]
+  Employee No.     [apa07        ]
+ <                                >
+
+}
+END -- gr111
+END -- aapq1052
+
+TABLES
+apa_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit apa02=apa_file.apa02, tabIndex=1, comment="Enter Date QBE yymmdd:yymmdd";
+Edit apa07=apa_file.apa07, tabIndex=2, comment="Enter *,?,|,:";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(apa_file.apa02,apa_file.apa07)
+END -- INSTRUCTIONS
+

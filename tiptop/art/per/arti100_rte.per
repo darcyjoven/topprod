@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti100_rte.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid ds1
+{
+
+[label1     |rtd01                 ]
+[label2     |rtd02                 ]
+[label3     |rtd05                 ]
+            [                      ]
+
+
+
+}
+END -- ds1
+END -- VBox1
+END -- arti100_rte
+
+TABLES
+rtd_file
+ATTRIBUTES
+Label label1:Label1, text=%"rtd01";
+Edit rtd01=rtd_file.rtd01, tabIndex=1, noEntry, not null, scroll;
+Label label2:Label2, text=%"rtd02";
+Edit rtd02=rtd_file.rtd02, tabIndex=2, not null, scroll;
+Label label3:Label3, text=%"rtd05";
+Edit rtd05=rtd_file.rtd05, tabIndex=3, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(rtd_file.rtd01,rtd_file.rtd02,rtd_file.rtd05)
+END -- INSTRUCTIONS
+

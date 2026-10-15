@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afax620.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afar620")
+VBox VBox1
+Grid gr6
+{
+ <G grpqbe                                                                                                   >
+  Inventory Taking No.[fca01                    ]     Keeping Department[fca05                    ]
+  Asset Category      [faj04                    ]     Keeper            [fca06                    ]
+  Property No.        [fca03                    ]     Storing Location  [fca07                    ]
+ <                                                                                                           >
+
+}
+END -- gr6
+Group group02(text="INPUT")
+Grid gr7
+{
+ [diff                                                  ]
+
+ <G group01                                                           >
+ [s1                  ] [s2                   ] [s3                  ]
+ [t1                  ] [t2                   ] [t3                  ]
+ <                                                                    >
+
+}
+END -- gr7
+END -- group02
+Grid gr8
+{
+[more                                         ]
+
+}
+END -- gr8
+END -- VBox1
+END -- afar620
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+ButtonEdit fca01=formonly.fca01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit fca05=formonly.fca05 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit faj04=formonly.faj04 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit fca06=formonly.fca06 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit fca03=formonly.fca03 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit fca07=formonly.fca07 type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+CheckBox diff=formonly.diff type VARCHAR, tabIndex=7, text="Print Inventory Taking with Difference only", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group01:group01, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, queryEditable, items=(("1", "Inventory Taking No."),("2", "Asset Category"),("3", "Property No."),("4", "Keeping Dept."),("5", "Keeper"),("6", "Storing Location"),("7", "Group"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=9, queryEditable, items=(("1", "Inventory Taking No."),("2", "Asset Category"),("3", "Property No."),("4", "Keeping Dept."),("5", "Keeper"),("6", "Storing Location"),("7", "Group"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=10, queryEditable, items=(("1", "Inventory Taking No."),("2", "Asset Category"),("3", "Property No."),("4", "Keeping Dept."),("5", "Keeper"),("6", "Storing Location"),("7", "Group"));
+CheckBox t1=formonly.t1 type VARCHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type VARCHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type VARCHAR, tabIndex=13, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.fca01,formonly.fca05,formonly.faj04,formonly.fca06,formonly.fca03,formonly.fca07,formonly.diff,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.more)
+END -- INSTRUCTIONS
+

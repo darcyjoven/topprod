@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat710.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat710")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2302
+{
+ Application No.     [fcj01             ]
+ Applying Date       [fcb02       ]
+
+}
+END -- gr2302
+Grid gr2303
+{
+ Author. Appr. Date  [fcb03       ] Doc No.             [fcb04               ]
+ IRA Approval date   [fcb05       ] Doc No.             [fcb06               ]
+
+}
+END -- gr2303
+Grid gr2304
+{
+[fcjconf                        ]  [imgmksg]
+                                   [       ]
+
+}
+END -- gr2304
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_fcj
+{
+[fcj02      |fcj03          |fcj031    |fcj04                    |fcj05                         |faj04      |fcj06 |fcj07  |fcj08         |faj49        |faj51           |faj26           |fcj09               |fcj10  |fcj11               ]
+[fcj02      |fcj03          |fcj031    |fcj04                    |fcj05                         |faj04      |fcj06 |fcj07  |fcj08         |faj49        |faj51           |faj26           |fcj09               |fcj10  |fcj11               ]
+[fcj02      |fcj03          |fcj031    |fcj04                    |fcj05                         |faj04      |fcj06 |fcj07  |fcj08         |faj49        |faj51           |faj26           |fcj09               |fcj10  |fcj11               ]
+[fcj02      |fcj03          |fcj031    |fcj04                    |fcj05                         |faj04      |fcj06 |fcj07  |fcj08         |faj49        |faj51           |faj26           |fcj09               |fcj10  |fcj11               ]
+[fcj02      |fcj03          |fcj031    |fcj04                    |fcj05                         |faj04      |fcj06 |fcj07  |fcj08         |faj49        |faj51           |faj26           |fcj09               |fcj10  |fcj11               ]
+[fcj02      |fcj03          |fcj031    |fcj04                    |fcj05                         |faj04      |fcj06 |fcj07  |fcj08         |faj49        |faj51           |faj26           |fcj09               |fcj10  |fcj11               ]
+[fcj02      |fcj03          |fcj031    |fcj04                    |fcj05                         |faj04      |fcj06 |fcj07  |fcj08         |faj49        |faj51           |faj26           |fcj09               |fcj10  |fcj11               ]
+[fcj02      |fcj03          |fcj031    |fcj04                    |fcj05                         |faj04      |fcj06 |fcj07  |fcj08         |faj49        |faj51           |faj26           |fcj09               |fcj10  |fcj11               ]
+[fcj02      |fcj03          |fcj031    |fcj04                    |fcj05                         |faj04      |fcj06 |fcj07  |fcj08         |faj49        |faj51           |faj26           |fcj09               |fcj10  |fcj11               ]
+[fcj02      |fcj03          |fcj031    |fcj04                    |fcj05                         |faj04      |fcj06 |fcj07  |fcj08         |faj49        |faj51           |faj26           |fcj09               |fcj10  |fcj11               ]
+
+}
+END -- s_fcj
+Grid gr2305
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2305
+END -- VBox1
+END -- afat710
+
+TABLES
+fcj_file
+ATTRIBUTES
+ButtonEdit fcj01=fcj_file.fcj01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Credit Application";
+DateEdit fcb02=formonly.fcb02 type CHAR, tabIndex=2, noEntry;
+DateEdit fcb03=formonly.fcb03 type DATE, tabIndex=3, noEntry;
+Edit fcb04=formonly.fcb04 type CHAR, tabIndex=4, noEntry;
+DateEdit fcb05=formonly.fcb05 type DATE, tabIndex=5, noEntry;
+Edit fcb06=formonly.fcb06 type CHAR, tabIndex=6, noEntry;
+CheckBox fcjconf=fcj_file.fcjconf, tabIndex=7, text="Confirm", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit fcj02=fcj_file.fcj02, tabIndex=9, title="Line No.", not null, required;
+ButtonEdit fcj03=fcj_file.fcj03, action=controlp, tabIndex=10, title="Property No.", not null, required, image="zoom", comment="<^P>Qry Asset ";
+Edit fcj031=fcj_file.fcj031, tabIndex=11, title="Add No.";
+Edit fcj04=fcj_file.fcj04, tabIndex=12, title="Chinese Name";
+Edit fcj05=fcj_file.fcj05, tabIndex=13, title="English Name";
+Edit faj04=formonly.faj04 type CHAR, tabIndex=14, title="Category", noEntry;
+Edit fcj06=fcj_file.fcj06, tabIndex=15, title="Qty";
+Edit fcj07=fcj_file.fcj07, tabIndex=16, title="Unit";
+Edit fcj08=fcj_file.fcj08, tabIndex=17, title="Vender Name";
+Edit faj49=formonly.faj49 type CHAR, tabIndex=18, title="Import No.", noEntry;
+Edit faj51=formonly.faj51 type CHAR, tabIndex=19, title="Invoice No.", noEntry;
+DateEdit faj26=formonly.faj26 type CHAR, tabIndex=20, title="Date Recorded", noEntry;
+Edit fcj09=fcj_file.fcj09, tabIndex=21, title="O.C Cost";
+Edit fcj10=fcj_file.fcj10, tabIndex=22, title="Curr";
+Edit fcj11=fcj_file.fcj11, tabIndex=23, title="H.C Cost";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fcj(fcj_file.fcj02,fcj_file.fcj03,fcj_file.fcj031,fcj_file.fcj04,fcj_file.fcj05,formonly.faj04,fcj_file.fcj06,fcj_file.fcj07,fcj_file.fcj08,formonly.faj49,formonly.faj51,formonly.faj26,fcj_file.fcj09,fcj_file.fcj10,fcj_file.fcj11)
+SCREEN RECORD Undefined(fcj_file.fcj01,formonly.fcb02,formonly.fcb03,formonly.fcb04,formonly.fcb05,formonly.fcb06,fcj_file.fcjconf,formonly.imgmksg,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi051.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi051")
+VBox VBox1
+Folder folder01
+Page page01(text="main")
+Grid gr1996
+{
+  Upper Collection Terms No.[oas01             ]      Category[oas02 ]
+  Description               [oag02_1                                 ]
+}
+END -- gr1996
+END -- page01
+Page page02(text="info")
+Grid gr1997
+{
+  Record Owner[oasuser   ]  Latest Modified User[oasmodu   ]  Valid[oasacti   ]
+  Department  [oasgrup   ]  Latest Modified Date[oasdate   ]
+}
+END -- gr1997
+END -- page02
+END -- folder01
+Table s_oas
+{
+[oas03   |oas04                |oag02_2               |oas05                 ]
+[oas03   |oas04                |oag02_2               |oas05                 ]
+[oas03   |oas04                |oag02_2               |oas05                 ]
+[oas03   |oas04                |oag02_2               |oas05                 ]
+[oas03   |oas04                |oag02_2               |oas05                 ]
+[oas03   |oas04                |oag02_2               |oas05                 ]
+[oas03   |oas04                |oag02_2               |oas05                 ]
+[oas03   |oas04                |oag02_2               |oas05                 ]
+[oas03   |oas04                |oag02_2               |oas05                 ]
+[oas03   |oas04                |oag02_2               |oas05                 ]
+
+}
+END -- s_oas
+Grid gr1998
+{
+  -------Rows[cnt] ---------
+
+}
+END -- gr1998
+END -- VBox1
+END -- axmi051
+
+TABLES
+oas_file
+ATTRIBUTES
+ButtonEdit oas01=oas_file.oas01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Documents";
+ComboBox oas02=oas_file.oas02, tabIndex=2, not null, required, queryEditable, items=(("1", "by rate"),("2", " by User-defined"));
+Edit oag02_1=formonly.oag02_1 type CHAR, tabIndex=3, noEntry;
+Edit oasuser=oas_file.oasuser, tabIndex=4, noEntry;
+Edit oasmodu=oas_file.oasmodu, tabIndex=5, noEntry;
+Edit oasacti=oas_file.oasacti, tabIndex=6, noEntry;
+Edit oasgrup=oas_file.oasgrup, tabIndex=7, noEntry;
+DateEdit oasdate=oas_file.oasdate, tabIndex=8, noEntry;
+Edit oas03=oas_file.oas03, tabIndex=9, title="Line No. Collection Terms No.", not null, required;
+ButtonEdit oas04=oas_file.oas04, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry Documents";
+Edit oag02_2=formonly.oag02_2 type CHAR, tabIndex=11, title="Description", noEntry;
+Edit oas05=oas_file.oas05, tabIndex=12, title="Collection Ratio%";
+Edit cnt=formonly.cnt type CHAR, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oas(oas_file.oas03,oas_file.oas04,formonly.oag02_2,oas_file.oas05)
+SCREEN RECORD Undefined(oas_file.oas01,oas_file.oas02,formonly.oag02_1,oas_file.oasuser,oas_file.oasmodu,oas_file.oasacti,oas_file.oasgrup,oas_file.oasdate,formonly.cnt)
+END -- INSTRUCTIONS
+

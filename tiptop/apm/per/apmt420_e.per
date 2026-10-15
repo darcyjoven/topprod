@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt420_e.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"apmt420_e")
+Grid gr25
+{
+  <T tb3                                                                        >
+  [ch  |wpc10      |pml33   |pml02   |pml04   |pml041    |pml07    |pml20       ]
+  [ch  |wpc10      |pml33   |pml02   |pml04   |pml041    |pml07    |pml20       ]
+  [ch  |wpc10      |pml33   |pml02   |pml04   |pml041    |pml07    |pml20       ]
+  [ch  |wpc10      |pml33   |pml02   |pml04   |pml041    |pml07    |pml20       ]
+  [ch  |wpc10      |pml33   |pml02   |pml04   |pml041    |pml07    |pml20       ]
+  <                                                                             >
+
+}
+END -- gr25
+END -- Form3
+
+TABLES
+wpc_file,
+pml_file
+ATTRIBUTES
+Table tb3:tb3;
+CheckBox ch=formonly.ch type CHAR, tabIndex=1, title="Choose", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit wpc10=wpc_file.wpc10, tabIndex=2, title="End date", not null, required;
+DateEdit pml33=pml_file.pml33, tabIndex=8, title=%"pml33";
+Edit pml02=pml_file.pml02, tabIndex=3, title="Item", noEntry;
+Edit pml04=pml_file.pml04, tabIndex=4, title="Item No.", noEntry;
+Edit pml041=pml_file.pml041, tabIndex=5, title="Item/Spec.", noEntry;
+Edit pml07=pml_file.pml07, tabIndex=6, title="PR Unit", noEntry;
+Edit pml20=pml_file.pml20, tabIndex=7, title="Order Qty", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tb3(formonly.ch,wpc_file.wpc10,pml_file.pml33,pml_file.pml02,pml_file.pml04,pml_file.pml041,pml_file.pml07,pml_file.pml20)
+END -- INSTRUCTIONS
+

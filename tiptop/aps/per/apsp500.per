@@ -1,0 +1,119 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsp500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsp500")
+Group gb40
+VBox vb2
+Grid gr10
+{
+
+  <G group02                                                                                              >
+   APS Version        [vlb01                  ]  vla02         [vla02                  ]
+   Save Version       [vlb02                  ]  Execute user  [vlb03                  ]
+   Limited Version    [vlz70                  ]  Execute Date  [vlb04                  ]
+   Start Date         [g_vlz03_dd             ]  Data Date QBE [vlb07     ] [vlb08     ]
+   Start Time         [g_vlz03_tt             ]  Pre St DTime  [preddtt                ]
+                      [flow_datachk           ]
+  <                                                                                                       >
+
+  <G gb41                                               > <G gb40_1                                        >
+    [vlb11     ]      [vlb25     ]                          [vlb33     ]
+    [vlb12     ]      [vlb26     ]                          [vlb34     ]
+    [vlb13     ]      [vlb27     ]                          [vlb36     ]
+    [vlb14     ]      [vlb28     ]                        <                                                >
+    [vlb15     ]      [vlb29     ]                        <G gb4                                           >
+    [vlb16     ]      [vlb30     ]                          [vlb22     ]
+    [vlb17     ]      [vlb31     ]                          [vlb35     ]
+    [vlb18     ]      [vlb32     ]                          [vlb38     ]
+    [vlb19     ]      [vlb37     ]                          [vlb39     ]
+    [vlb20     ]      [vlb40     ]                        <                                                >
+    [vlb21     ]      [vlb41     ]                        <G gb5                                           >
+    [vlb23     ]      [vlb10     ]                          [vlb42     ]
+    [vlb24     ]      [vlb47     ]                          [vlb43     ]
+                      [vlb09     ]                          [vlb44     ]
+                                                            [vlb45     ]
+                                                            [vlb46     ]
+  <                                                     > <                                                >
+
+}
+END -- gr10
+Grid gr5439
+{
+
+[g_bgjob      ]
+}
+END -- gr5439
+END -- vb2
+END -- gb40
+END -- apsp500
+
+TABLES
+vlb_file
+ATTRIBUTES
+Group group02:group02;
+ButtonEdit vlb01=vlb_file.vlb01, action=controlp, tabIndex=31, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+DateEdit vla02=formonly.vla02 type DATE, tabIndex=50, noEntry;
+Edit vlb02=vlb_file.vlb02, tabIndex=29;
+Edit vlb03=formonly.vlb03 type VARCHAR, tabIndex=44, noEntry;
+Edit vlz70=formonly.vlz70 type VARCHAR, tabIndex=47, noEntry;
+DateEdit vlb04=vlb_file.vlb04, tabIndex=30, noEntry;
+DateEdit g_vlz03_dd=formonly.g_vlz03_dd type DATE, tabIndex=48, not null, required;
+DateEdit vlb07=vlb_file.vlb07, tabIndex=32, noEntry;
+DateEdit vlb08=vlb_file.vlb08, tabIndex=33, noEntry;
+Edit g_vlz03_tt=formonly.g_vlz03_tt type VARCHAR, tabIndex=49, not null, required, format="XX:XX", picture="XX:XX";
+Edit preddtt=formonly.preddtt type VARCHAR, tabIndex=51, noEntry;
+CheckBox flow_datachk=formonly.flow_datachk type CHAR, tabIndex=52, text="flow_datachk", not null, valueChecked = "Y", valueUnchecked = "N";
+Group gb41:gb41, text="Common Data";
+CheckBox vlb11=vlb_file.vlb11, tabIndex=43, text="vlb11", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb25=vlb_file.vlb25, tabIndex=16, text="vlb25", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb12=vlb_file.vlb12, tabIndex=4, text="vlb12", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb26=vlb_file.vlb26, tabIndex=17, text="vlb26", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb13=vlb_file.vlb13, tabIndex=5, text="vlb13", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb27=vlb_file.vlb27, tabIndex=18, text="vlb27", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb14=vlb_file.vlb14, tabIndex=6, text="vlb14", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb28=vlb_file.vlb28, tabIndex=19, text="vlb28", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb15=vlb_file.vlb15, tabIndex=7, text="vlb15", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb29=vlb_file.vlb29, tabIndex=20, text="vlb29", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb16=vlb_file.vlb16, tabIndex=8, text="vlb16", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb30=vlb_file.vlb30, tabIndex=21, text="vlb30", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb17=vlb_file.vlb17, tabIndex=9, text="vlb17", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb31=vlb_file.vlb31, tabIndex=22, text="vlb31", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb18=vlb_file.vlb18, tabIndex=10, text="vlb18", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb32=vlb_file.vlb32, tabIndex=23, text="vlb32", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb19=vlb_file.vlb19, tabIndex=11, text="vlb19", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb37=vlb_file.vlb37, tabIndex=24, text="vlb37", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb20=vlb_file.vlb20, tabIndex=12, text="vlb20", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb40=vlb_file.vlb40, tabIndex=25, text="vlb40", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb21=vlb_file.vlb21, tabIndex=13, text="vlb21", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb41=vlb_file.vlb41, tabIndex=26, text="vlb41", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb23=vlb_file.vlb23, tabIndex=14, text="vlb23", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb10=vlb_file.vlb10, tabIndex=28, text="vlb10", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb24=vlb_file.vlb24, tabIndex=15, text="vlb24", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb47=vlb_file.vlb47, tabIndex=46, text="vlb47", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb09=vlb_file.vlb09, tabIndex=27, text="vlb09", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb40_1:gb40_1, text="gb3";
+CheckBox vlb33=vlb_file.vlb33, tabIndex=1, text="vlb33", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb34=vlb_file.vlb34, tabIndex=2, text="vlb34", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb36=vlb_file.vlb36, tabIndex=3, text="vlb36", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb4:gb4, text="gb4";
+CheckBox vlb22=vlb_file.vlb22, tabIndex=34, text="vlb22", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb35=vlb_file.vlb35, tabIndex=35, text="vlb35", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb38=vlb_file.vlb38, tabIndex=36, text="vlb38", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb39=vlb_file.vlb39, tabIndex=37, text="vlb39", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb5:gb5, text="gb5";
+CheckBox vlb42=vlb_file.vlb42, tabIndex=38, text="vlb42", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb43=vlb_file.vlb43, tabIndex=39, text="vlb43", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb44=vlb_file.vlb44, tabIndex=42, text="vlb44", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb45=vlb_file.vlb45, tabIndex=40, text="vlb45", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vlb46=vlb_file.vlb46, tabIndex=41, text="vlb46", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=45, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vlb_file.vlb01,formonly.vla02,vlb_file.vlb02,formonly.vlb03,formonly.vlz70,vlb_file.vlb04,formonly.g_vlz03_dd,vlb_file.vlb07,vlb_file.vlb08,formonly.g_vlz03_tt,formonly.preddtt,formonly.flow_datachk,vlb_file.vlb11,vlb_file.vlb25,vlb_file.vlb12,vlb_file.vlb26,vlb_file.vlb13,vlb_file.vlb27,vlb_file.vlb14,vlb_file.vlb28,vlb_file.vlb15,vlb_file.vlb29,vlb_file.vlb16,vlb_file.vlb30,vlb_file.vlb17,vlb_file.vlb31,vlb_file.vlb18,vlb_file.vlb32,vlb_file.vlb19,vlb_file.vlb37,vlb_file.vlb20,vlb_file.vlb40,vlb_file.vlb21,vlb_file.vlb41,vlb_file.vlb23,vlb_file.vlb10,vlb_file.vlb24,vlb_file.vlb47,vlb_file.vlb09,vlb_file.vlb33,vlb_file.vlb34,vlb_file.vlb36,vlb_file.vlb22,vlb_file.vlb35,vlb_file.vlb38,vlb_file.vlb39,vlb_file.vlb42,vlb_file.vlb43,vlb_file.vlb44,vlb_file.vlb45,vlb_file.vlb46,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

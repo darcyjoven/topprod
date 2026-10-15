@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr521.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr521")
+VBox VBox1
+Grid gr3296
+{
+ <G group01                                                           >
+  Item No.            [ima01               ]
+  ABC Code            [ima07               ]
+  Group Code          [ima06               ]
+  Other group code 1  [ima09               ]
+  Other group code 2  [ima10               ]
+  Other group code 3  [ima11               ]
+  Other group code 4  [ima12               ]
+  Warehouse No.       [img02               ]
+  Location            [img03               ]
+ <                                                                    >
+
+}
+END -- gr3296
+Group group02(text="INPUT")
+Grid gr3297
+{
+ <G group03                       ><G group04                       >
+ [b                             ]  [y                             ]
+ <                                >
+ <G group05                       >
+ [s1                            ]
+ [s2                            ]
+ [s3                            ]
+ <                                ><                                >
+
+}
+END -- gr3297
+END -- group02
+Grid gr3298
+{
+[more                                    ]
+
+}
+END -- gr3298
+END -- VBox1
+END -- aimr521
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit ima07=formonly.ima07 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit ima06=formonly.ima06 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ima09=formonly.ima09 type CHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit ima10=formonly.ima10 type CHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit ima11=formonly.ima11 type CHAR, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit ima12=formonly.ima12 type CHAR, action=controlp, tabIndex=7, image="zoom";
+ButtonEdit img02=formonly.img02 type VARCHAR, action=controlp, tabIndex=8, image="zoom";
+ButtonEdit img03=formonly.img03 type VARCHAR, action=controlp, tabIndex=9, image="zoom";
+Group group03:group03, text="Print Data";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=10, items=(("1", "Surplus inventory"),("2", "Short inventory"),("3", "All "));
+Group group04:group04, text="Group Code Sequence Option";
+RadioGroup y=formonly.y type VARCHAR, tabIndex=11, items=(("0", "Group Code"),("1", "Other group code 1"),("2", "Other group code 2"),("3", "Other group code 3"),("4", "Other group code 4"));
+Group group05:group05, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=12, queryEditable, items=(("1", "Item No."),("2", "ABCCode"),("3", "Group Code"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=13, queryEditable, items=(("1", "Item No."),("2", "ABCCode"),("3", "Group Code"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=14, queryEditable, items=(("1", "Item No."),("2", "ABCCode"),("3", "Group Code"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=15, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima07,formonly.ima06,formonly.ima09,formonly.ima10,formonly.ima11,formonly.ima12,formonly.img02,formonly.img03,formonly.b,formonly.y,formonly.s1,formonly.s2,formonly.s3,formonly.more)
+END -- INSTRUCTIONS
+

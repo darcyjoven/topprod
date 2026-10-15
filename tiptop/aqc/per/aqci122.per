@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqci122.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqci122")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr10
+{
+ Material Category   [qck01     ][azf03_1                       ]
+[qck09                                          ]
+}
+END -- gr10
+END -- page01
+END -- folder01
+Table s_qck
+{
+[qck02    |azf03    |ta_qck01|qck08     |qck03        |qck05    |qck04  |qck061    |qck062   |qck07 ]
+[qck02    |azf03    |ta_qck01|qck08     |qck03        |qck05    |qck04  |qck061    |qck062   |qck07 ]
+[qck02    |azf03    |ta_qck01|qck08     |qck03        |qck05    |qck04  |qck061    |qck062   |qck07 ]
+[qck02    |azf03    |ta_qck01|qck08     |qck03        |qck05    |qck04  |qck061    |qck062   |qck07 ]
+[qck02    |azf03    |ta_qck01|qck08     |qck03        |qck05    |qck04  |qck061    |qck062   |qck07 ]
+[qck02    |azf03    |ta_qck01|qck08     |qck03        |qck05    |qck04  |qck061    |qck062   |qck07 ]
+[qck02    |azf03    |ta_qck01|qck08     |qck03        |qck05    |qck04  |qck061    |qck062   |qck07 ]
+[qck02    |azf03    |ta_qck01|qck08     |qck03        |qck05    |qck04  |qck061    |qck062   |qck07 ]
+[qck02    |azf03    |ta_qck01|qck08     |qck03        |qck05    |qck04  |qck061    |qck062   |qck07 ]
+[qck02    |azf03    |ta_qck01|qck08     |qck03        |qck05    |qck04  |qck061    |qck062   |qck07 ]
+}
+END -- s_qck
+Grid gr11
+{
+ --------- Rows [cnt   ] ----------
+
+}
+END -- gr11
+END -- VBox1
+END -- aqci122
+
+TABLES
+qck_file
+ATTRIBUTES
+ButtonEdit qck01=qck_file.qck01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Material Cate No.";
+Edit azf03_1=formonly.azf03_1 type CHAR, tabIndex=2, noEntry;
+CheckBox qck09=qck_file.qck09, tabIndex=13, default = "N", text=%"QC materials and parts to determine whether", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit qck02=qck_file.qck02, action=controlp, tabIndex=3, title="QC Items", not null, required, image="zoom", comment="<^P>Qry QC Code";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=4, title="Name", noEntry;
+ButtonEdit ta_qck01=formonly.ta_qck01, action=controlp, tabIndex=14, title=%"Unit", image="zoom";
+ComboBox qck08=qck_file.qck08, tabIndex=12, title="qck08", not null, required, items=(("1", "IQC"),("2", "FQC"),("3", "PQC"),("4", "OQC"),("5", "Stock QC"),("9", "General"));
+ComboBox qck03=qck_file.qck03, tabIndex=5, title="Defect Level", not null, required, comment="1:CR  2:MA  3:MI", items=(("1", %"CR"),("2", %"MA"),("3", %"MI"));
+ComboBox qck05=qck_file.qck05, tabIndex=7, title="QC Type", not null, required, comment="1:105D/E  2:C=0", items=(("1", %"105D/E"),("2", %"C=0"),("3", %"1916(count)"),("4", %"1916(measurement)"));
+Edit qck04=qck_file.qck04, tabIndex=6, title="AQL", not null, required;
+Edit qck061=qck_file.qck061, tabIndex=8, title="Low Limit";
+Edit qck062=qck_file.qck062, tabIndex=9, title="Up Limit";
+CheckBox qck07=qck_file.qck07, tabIndex=10, title="QC Qty", required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qck(qck_file.qck02,formonly.azf03,formonly.ta_qck01,qck_file.qck08,qck_file.qck03,qck_file.qck05,qck_file.qck04,qck_file.qck061,qck_file.qck062,qck_file.qck07)
+SCREEN RECORD Undefined(qck_file.qck01,formonly.azf03_1,formonly.cnt,qck_file.qck09)
+END -- INSTRUCTIONS
+

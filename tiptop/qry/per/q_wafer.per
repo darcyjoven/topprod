@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_wafer.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Wafer P/O Data Query")
+Grid gr1
+{
+ <T tb1                                                                                                                              >
+ [check |pmm01           |pmn02   |pmm09        |pmc03         |pmn04            |pmn041   |pmn20        |pmn82         |qty         ]
+ [check |pmm01           |pmn02   |pmm09        |pmc03         |pmn04            |pmn041   |pmn20        |pmn82         |qty         ]
+ [check |pmm01           |pmn02   |pmm09        |pmc03         |pmn04            |pmn041   |pmn20        |pmn82         |qty         ]
+ [check |pmm01           |pmn02   |pmm09        |pmc03         |pmn04            |pmn041   |pmn20        |pmn82         |qty         ]
+ [check |pmm01           |pmn02   |pmm09        |pmc03         |pmn04            |pmn041   |pmn20        |pmn82         |qty         ]
+ [check |pmm01           |pmn02   |pmm09        |pmc03         |pmn04            |pmn041   |pmn20        |pmn82         |qty         ]
+ [check |pmm01           |pmn02   |pmm09        |pmc03         |pmn04            |pmn041   |pmn20        |pmn82         |qty         ]
+ [check |pmm01           |pmn02   |pmm09        |pmc03         |pmn04            |pmn041   |pmn20        |pmn82         |qty         ]
+ [check |pmm01           |pmn02   |pmm09        |pmc03         |pmn04            |pmn041   |pmn20        |pmn82         |qty         ]
+ [check |pmm01           |pmn02   |pmm09        |pmc03         |pmn04            |pmn041   |pmn20        |pmn82         |qty         ]
+ <                                                                                                                                   >
+
+}
+END -- gr1
+END -- q_wafer
+
+TABLES
+pmn_file,
+pmm_file,
+pmc_file
+ATTRIBUTES
+Table tb1:tb1;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmm01=pmm_file.pmm01, tabIndex=2, title="PO No.", noEntry, not null, required;
+Edit pmn02=pmn_file.pmn02, tabIndex=3, title="Line No.", noEntry, not null, required;
+Edit pmm09=pmm_file.pmm09, tabIndex=4, title="Vendor", noEntry;
+Edit pmc03=pmc_file.pmc03, tabIndex=5, title="Inquiry  No.", noEntry;
+Edit pmn04=pmn_file.pmn04, tabIndex=6, title="Item No.", noEntry;
+Edit pmn041=pmn_file.pmn041, tabIndex=7, title="Item Description", noEntry;
+Edit pmn20=pmn_file.pmn20, tabIndex=8, title="Purchase Qty", noEntry, not null, required;
+Edit pmn82=pmn_file.pmn82, tabIndex=9, title="Unit 1 quantity", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=10, title="Purchase Qty", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wafer(formonly.check,pmm_file.pmm01,pmn_file.pmn02,pmm_file.pmm09,pmc_file.pmc03,pmn_file.pmn04,pmn_file.pmn041,pmn_file.pmn20,pmn_file.pmn82,formonly.qty)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_chart_attr.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Grid Grid1
+{
+
+ [gfa01_lb  |s_gfm01         |chart_img                  ]
+ [gfa02_lb  |s_gfm02         |                           ]
+                             [                           ]
+                             [                           ]
+                             [                           ]
+                             [                           ]
+                             [                           ]
+
+ <T s_gfm                                                           >
+ [gfm03   |gfm04   |gfm05   |gfm06   |gfm07   ]
+ [gfm03   |gfm04   |gfm05   |gfm06   |gfm07   ]
+ [gfm03   |gfm04   |gfm05   |gfm06   |gfm07   ]
+ [gfm03   |gfm04   |gfm05   |gfm06   |gfm07   ]
+ [gfm03   |gfm04   |gfm05   |gfm06   |gfm07   ]
+
+}
+END -- Grid1
+END -- Form
+
+ATTRIBUTES
+Label gfa01_lb:gfa01_lb, text=%"圖表代碼";
+Edit s_gfm01=formonly.s_gfm01 type CHAR, tabIndex=1, not null;
+IMAGE chart_img=formonly.chart_img type CHAR, autoScale, sizePolicy=fixed;
+Label gfa02_lb:gfa02_lb, text=%"圖表類型";
+ComboBox s_gfm02=formonly.s_gfm02 type CHAR, tabIndex=2, not null, items=(("1", "單一數列"),("2", "多數列"));
+Table s_gfm:s_gfm;
+Edit gfm03=formonly.gfm03 type VARCHAR, tabIndex=3, title=%"gfm03", scroll;
+Edit gfm04=formonly.gfm04 type CHAR, tabIndex=4, title=%"gfm04", scroll;
+ComboBox gfm05=formonly.gfm05 type CHAR, tabIndex=5, title=%"gfm05", scroll, items=(("1", "基本"),("2", "陣列資料"),("3", "特殊"));
+Edit gfm06=formonly.gfm06 type VARCHAR, tabIndex=6, title=%"gfm06", scroll;
+ComboBox gfm07=formonly.gfm07 type CHAR, tabIndex=7, title=%"gfm07", items=(("0", %"Traditional Chinese"),("1", %"English"),("2", %"Simplified Chinese"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.s_gfm01,formonly.s_gfm02,formonly.chart_img)
+SCREEN RECORD s_gfm(formonly.gfm03,formonly.gfm04,formonly.gfm05,formonly.gfm06,formonly.gfm07)
+END -- INSTRUCTIONS
+

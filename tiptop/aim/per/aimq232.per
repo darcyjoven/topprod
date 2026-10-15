@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq232.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq232")
+VBox vb8
+Folder folder01
+Page page01(text="Main")
+Grid gr3153
+{
+  Item No.            [img01                         ]                     Warehouse           [img02     ]
+  Part Name           [ima02                         ]                     Location            [img03     ]
+  Specification       [ima021                        ]                     Lot#                [img04     ]
+  Source Code         [ima08     ]                                         Inventory Unit      [img09     ]
+ <G group01                                                            >   <G group02                                        >
+  Year                [yy          ] Cost Method[type               ]       Inv of the beginning of period [imk09          ]
+  Period              [mm          ]                                        Current Inv                    [img10          ]
+ <                                                                     >   <                                                 >
+
+}
+END -- gr3153
+END -- page01
+END -- folder01
+Table s_tlf
+{
+[tlfcost                  |tlf06   |cond                |tlf026           |tlf10          |tlf11|ccc23               |tlf21               |tlf024         ]
+[tlfcost                  |tlf06   |cond                |tlf026           |tlf10          |tlf11|ccc23               |tlf21               |tlf024         ]
+[tlfcost                  |tlf06   |cond                |tlf026           |tlf10          |tlf11|ccc23               |tlf21               |tlf024         ]
+[tlfcost                  |tlf06   |cond                |tlf026           |tlf10          |tlf11|ccc23               |tlf21               |tlf024         ]
+[tlfcost                  |tlf06   |cond                |tlf026           |tlf10          |tlf11|ccc23               |tlf21               |tlf024         ]
+[tlfcost                  |tlf06   |cond                |tlf026           |tlf10          |tlf11|ccc23               |tlf21               |tlf024         ]
+[tlfcost                  |tlf06   |cond                |tlf026           |tlf10          |tlf11|ccc23               |tlf21               |tlf024         ]
+[tlfcost                  |tlf06   |cond                |tlf026           |tlf10          |tlf11|ccc23               |tlf21               |tlf024         ]
+[tlfcost                  |tlf06   |cond                |tlf026           |tlf10          |tlf11|ccc23               |tlf21               |tlf024         ]
+[tlfcost                  |tlf06   |cond                |tlf026           |tlf10          |tlf11|ccc23               |tlf21               |tlf024         ]
+}
+END -- s_tlf
+Grid gr3154
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr3154
+END -- vb8
+END -- aimq232
+
+TABLES
+tlf_file,
+img_file
+ATTRIBUTES
+ButtonEdit img01=img_file.img01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit img02=img_file.img02, tabIndex=2, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit img03=img_file.img03, tabIndex=4, not null, required;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, noEntry;
+Edit img04=img_file.img04, tabIndex=6, not null, required;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=7, noEntry;
+Edit img09=img_file.img09, tabIndex=8, noEntry;
+Group group01:group01;
+Edit yy=formonly.yy type SMALLINT, tabIndex=23;
+ComboBox type=formonly.type type CHAR, tabIndex=9, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+Edit mm=formonly.mm type SMALLINT, tabIndex=24;
+Group group02:group02;
+Edit imk09=formonly.imk09 type CHAR, tabIndex=10;
+Edit img10=img_file.img10, tabIndex=11, not null, required;
+Edit tlfcost=tlf_file.tlfcost, tabIndex=12, title="Category No.";
+Edit tlf06=tlf_file.tlf06, tabIndex=13, title="Doc Dt", format="YYMMDD";
+Edit cond=formonly.cond type CHAR, tabIndex=14, title="Description";
+Edit tlf026=tlf_file.tlf026, tabIndex=15, title="Src Doc#";
+Edit tlf10=tlf_file.tlf10, tabIndex=16, title="Transaction Qty";
+Edit tlf11=tlf_file.tlf11, tabIndex=17, title="Unit";
+Edit ccc23=formonly.ccc23 type CHAR, tabIndex=18, title="Cost U/Price";
+Edit tlf21=tlf_file.tlf21, tabIndex=19, title="Transaction $";
+Edit tlf024=tlf_file.tlf024, tabIndex=20, title="Inv After Tran";
+Edit cnt=formonly.cnt type CHAR, tabIndex=21;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=22;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tlf(tlf_file.tlfcost,tlf_file.tlf06,formonly.cond,tlf_file.tlf026,tlf_file.tlf10,tlf_file.tlf11,formonly.ccc23,tlf_file.tlf21,tlf_file.tlf024)
+SCREEN RECORD Undefined(img_file.img01,img_file.img02,formonly.ima02,img_file.img03,formonly.ima021,img_file.img04,formonly.ima08,img_file.img09,formonly.type,formonly.imk09,img_file.img10,formonly.cnt,formonly.cn2,formonly.yy,formonly.mm)
+END -- INSTRUCTIONS
+

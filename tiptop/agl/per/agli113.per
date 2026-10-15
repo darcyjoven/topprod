@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli113.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli113")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2389
+{
+ Group No.           [abe01       ]
+ Group Name          [abe02       ]
+}
+END -- gr2389
+END -- page01
+END -- folder01
+Table s_abe
+{
+[abe0|abe03      |gem02   ]
+[abe0|abe03      |gem02   ]
+[abe0|abe03      |gem02   ]
+[abe0|abe03      |gem02   ]
+[abe0|abe03      |gem02   ]
+[abe0|abe03      |gem02   ]
+[abe0|abe03      |gem02   ]
+[abe0|abe03      |gem02   ]
+[abe0|abe03      |gem02   ]
+[abe0|abe03      |gem02   ]
+
+}
+END -- s_abe
+Grid gr2390
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2390
+END -- VBox1
+END -- agli113
+
+TABLES
+abe_file
+ATTRIBUTES
+Edit abe01=abe_file.abe01, tabIndex=1, not null, required;
+Edit abe02=abe_file.abe02, tabIndex=2;
+Edit abe0=abe_file.abe04, tabIndex=3, title="Ln#", not null, required;
+ButtonEdit abe03=abe_file.abe03, action=controlp, tabIndex=4, title="Print Dept", not null, required, image="zoom", comment="<^P>Query Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=5, title="Desc.", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abe(abe_file.abe04,abe_file.abe03,formonly.gem02)
+SCREEN RECORD Undefined(abe_file.abe01,abe_file.abe02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

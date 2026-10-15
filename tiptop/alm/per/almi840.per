@@ -1,0 +1,166 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi840.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page page01(text=%"Basic Data")
+Grid Grid1
+{
+  <G group1                                                                                   > <G group2                            >
+   Product No.       [ima01                         ]                                           [ima04                       ]
+   Item Name         [ima02                                   ]                                 [                            ]
+   Item Specification[ima021                                  ]                                 [                            ]
+   Sales Unit        [ima31                 ]                                                   [                            ]
+   Sales Price       [ima128                ]                                                   [                            ]
+   Status            [ima1010   ]                                                               [                            ]
+   Data Source       [ima916         ]                                                          [                            ]
+
+                                                                                                [upda]
+                                                                                                [imgmksg]
+                                                                                                [       ]
+  <                                                                                           > <                                    >
+
+}
+END -- Grid1
+END -- page01
+Page Status(text=%"Status")
+Grid gr40
+{
+ Record Owner        [imauser   ] Last Modified by    [imamodu   ] Data Valid Code     [imaacti   ]
+ Department          [imagrup   ] Create/Modify Date  [imadate   ]
+ Record Orig.        [imaoriu   ]
+ Dept Orig.          [imaorig   ]
+
+
+
+
+
+}
+END -- gr40
+END -- Status
+END -- Folder1
+Folder Folder2
+Page page02(text=%"Product Information")
+HBox HBox1
+Group Group3
+Grid gr2011
+{
+ Product Type #1     [ima1005 ][tqa02               ]
+ Product Type #2     [ima1006 ][tqa02a              ]
+ Product Type #3     [ima1004 ][tqa02b              ]
+ Product Type #4     [ima1007 ][tqa02c              ]
+ Product Type #5     [ima1008 ][tqa02d              ]
+ Product Type #6     [ima1009 ][tqa02e              ]
+
+}
+END -- gr2011
+END -- Group3
+Group Group4
+Grid gr2012
+{
+ Product Type #7     [ima131  ][oba02               ]
+ Product Type #8     [ima09   ][azf03               ]
+ Product Type #9     [ima10   ][azf03a              ]
+ Product Type #10    [ima11   ][azf03b              ]
+
+
+
+}
+END -- gr2012
+END -- Group4
+END -- HBox1
+END -- page02
+Page userdefined_field(text=%"User Defined Field")
+Grid gr47
+{
+ userdefined_field01 [imaud01           ]         userdefined_field07 [imaud07           ]     userdefined_field10 [imaud10           ]
+                                                  userdefined_field08 [imaud08           ]     userdefined_field11 [imaud11           ]
+ userdefined_field02 [imaud02           ]         userdefined_field09 [imaud09           ]     userdefined_field12 [imaud12           ]
+ userdefined_field03 [imaud03           ]                                                      userdefined_field13 [imaud13           ]
+ userdefined_field04 [imaud04           ]                                                      userdefined_field14 [imaud14           ]
+ userdefined_field05 [imaud05           ]                                                      userdefined_field15 [imaud15           ]
+ userdefined_field06 [imaud06           ]
+
+}
+END -- gr47
+END -- userdefined_field
+END -- Folder2
+Grid Grid2
+{
+  ---------- Rows[cnt     ]-------------
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group1:Group1;
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=2;
+Edit ima021=ima_file.ima021, tabIndex=3;
+ButtonEdit ima31=ima_file.ima31, action=controlp, tabIndex=4, not null, image="zoom";
+Edit ima128=ima_file.ima128, tabIndex=5;
+ComboBox ima1010=ima_file.ima1010, tabIndex=7, not null, items=(("0", %"Create"),("1", "Confirmation"));
+Edit ima916=ima_file.ima916, tabIndex=6, noEntry, not null;
+Group group2:Group2;
+IMAGE ima04=formonly.ima04 type CHAR, sizePolicy=fixed, width = 300 pixels, height = 140 pixels;
+Button upda:update, text="Update";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, sizePolicy=dynamic, width = 36 pixels, height = 36 pixels;
+Edit imauser=ima_file.imauser, tabIndex=12, noEntry;
+Edit imamodu=ima_file.imamodu, tabIndex=12, noEntry;
+Edit imaacti=ima_file.imaacti, tabIndex=12, noEntry, upShift;
+Edit imagrup=ima_file.imagrup, tabIndex=12, noEntry;
+DateEdit imadate=ima_file.imadate, tabIndex=12, noEntry;
+Edit imaoriu=ima_file.imaoriu, tabIndex=12, noEntry;
+Edit imaorig=ima_file.imaorig, tabIndex=12, noEntry;
+ButtonEdit ima1005=ima_file.ima1005, action=controlp, tabIndex=8, image="zoom";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=8, noEntry;
+ButtonEdit ima1006=ima_file.ima1006, action=controlp, tabIndex=8, image="zoom";
+Edit tqa02a=formonly.tqa02a type CHAR, tabIndex=8, noEntry;
+ButtonEdit ima1004=ima_file.ima1004, action=controlp, tabIndex=8, image="zoom";
+Edit tqa02b=formonly.tqa02b type CHAR, tabIndex=8, noEntry;
+ButtonEdit ima1007=ima_file.ima1007, action=controlp, tabIndex=8, image="zoom";
+Edit tqa02c=formonly.tqa02c type CHAR, tabIndex=8, noEntry;
+ButtonEdit ima1008=ima_file.ima1008, action=controlp, tabIndex=8, image="zoom";
+Edit tqa02d=formonly.tqa02d type CHAR, tabIndex=8, noEntry;
+ButtonEdit ima1009=ima_file.ima1009, action=controlp, tabIndex=8, image="zoom";
+Edit tqa02e=formonly.tqa02e type CHAR, tabIndex=8, noEntry;
+ButtonEdit ima131=ima_file.ima131, action=controlp, tabIndex=10, not null, image="zoom";
+Edit oba02=formonly.oba02 type CHAR, tabIndex=11;
+ButtonEdit ima09=ima_file.ima09, action=controlp, tabIndex=9, image="zoom";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=9, noEntry;
+ButtonEdit ima10=ima_file.ima10, action=controlp, tabIndex=9, image="zoom";
+Edit azf03a=formonly.azf03a type CHAR, tabIndex=9, noEntry;
+ButtonEdit ima11=ima_file.ima11, action=controlp, tabIndex=9, image="zoom";
+Edit azf03b=formonly.azf03b type CHAR, tabIndex=9, noEntry;
+TextEdit imaud01=ima_file.imaud01, tabIndex=13, stretch=NONE;
+Edit imaud07=ima_file.imaud07, tabIndex=13, scroll;
+Edit imaud10=ima_file.imaud10, tabIndex=13, scroll;
+Edit imaud08=ima_file.imaud08, tabIndex=13, scroll;
+Edit imaud11=ima_file.imaud11, tabIndex=13, scroll;
+Edit imaud02=ima_file.imaud02, tabIndex=13;
+Edit imaud09=ima_file.imaud09, tabIndex=13, scroll;
+Edit imaud12=ima_file.imaud12, tabIndex=13, scroll;
+Edit imaud03=ima_file.imaud03, tabIndex=13;
+DateEdit imaud13=ima_file.imaud13, tabIndex=13;
+Edit imaud04=ima_file.imaud04, tabIndex=13;
+DateEdit imaud14=ima_file.imaud14, tabIndex=13;
+Edit imaud05=ima_file.imaud05, tabIndex=13;
+DateEdit imaud15=ima_file.imaud15, tabIndex=13;
+Edit imaud06=ima_file.imaud06, tabIndex=13;
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,ima_file.ima31,ima_file.ima128,ima_file.ima1010,ima_file.ima916,formonly.ima04,formonly.imgmksg,ima_file.imauser,ima_file.imamodu,ima_file.imaacti,ima_file.imagrup,ima_file.imadate,ima_file.imaoriu,ima_file.imaorig,ima_file.ima1005,formonly.tqa02,ima_file.ima1006,formonly.tqa02a,ima_file.ima1004,formonly.tqa02b,ima_file.ima1007,formonly.tqa02c,ima_file.ima1008,formonly.tqa02d,ima_file.ima1009,formonly.tqa02e,ima_file.ima131,formonly.oba02,ima_file.ima09,formonly.azf03,ima_file.ima10,formonly.azf03a,ima_file.ima11,formonly.azf03b,ima_file.imaud01,ima_file.imaud07,ima_file.imaud10,ima_file.imaud08,ima_file.imaud11,ima_file.imaud02,ima_file.imaud09,ima_file.imaud12,ima_file.imaud03,ima_file.imaud13,ima_file.imaud04,ima_file.imaud14,ima_file.imaud05,ima_file.imaud15,ima_file.imaud06,formonly.cnt)
+END -- INSTRUCTIONS
+

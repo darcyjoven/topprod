@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp730.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmp730")
+VBox VBox1
+Grid gr4111
+{
+ <G group01                                                        >
+  Financing Doc#      [nne01                         ]
+ [dummy01                                   ]
+  Credit Bank         [nne04                ]
+ <                                                                 >
+
+}
+END -- gr4111
+Group g01(text="INPUT")
+VBox VBox2
+Grid gr4112
+{
+ Exchange Rate Date  [bdate       ]
+ Interest Year/Month [yy  ]/[mm ]
+}
+END -- gr4112
+Grid gr4113
+{
+ <G group02                           >
+ [a                  ]
+ <                                    >
+
+}
+END -- gr4113
+Grid gr4114
+{
+ [g_bgjob                                                      ]
+
+}
+END -- gr4114
+END -- VBox2
+END -- g01
+END -- VBox1
+END -- anmp730
+
+TABLES
+nne_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit nne01=nne_file.nne01, tabIndex=1;
+Label dummy01:dummy01;
+Edit nne04=nne_file.nne04, tabIndex=2;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=3;
+Edit yy=formonly.yy type CHAR, tabIndex=4, not null, required;
+Edit mm=formonly.mm type CHAR, tabIndex=5, not null, required;
+Group group02:group02, text="Data Option";
+RadioGroup a=formonly.a type CHAR, tabIndex=6, not null, required, items=(("1", "Financing Type"),("2", "Medium-Term Loan"));
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=7, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nne_file.nne01,nne_file.nne04,formonly.bdate,formonly.yy,formonly.mm,formonly.a,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

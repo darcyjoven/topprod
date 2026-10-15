@@ -1,0 +1,112 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq411.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq411")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr3175
+{
+ Item No.            [ima01                         ]
+ Part Name Spec      [ima02                         ]
+ Specification       [ima021                        ]
+ Ver                 [ima05     ]
+}
+END -- gr3175
+Grid gr3176
+{
+ Src Cd              [ima08     ]
+ Group Cd            [ima06     ]
+ ABC Cd              [ima07     ]
+
+}
+END -- gr3176
+Grid gr3177
+{
+  Inv.Ut              [ima25               ]
+  MRP Available Inv   [avl_stk_mpsmrp      ]
+  Available Inv       [avl_stk             ]
+  Unusable Inv Qty    [unavl_stk           ]
+}
+END -- gr3177
+END -- hb2
+END -- page01
+END -- folder01
+Table s_img
+{
+[plant     |img02     |img03     |img04       |img23  |imgg10_1         |imgg10_2         |imgg10_3         |imgg10_4         |imgg10_5         |imgg10_6         |imgg10_7         |imgg10_8         |imgg10_9         |imgg10_10        ]
+[plant     |img02     |img03     |img04       |img23  |imgg10_1         |imgg10_2         |imgg10_3         |imgg10_4         |imgg10_5         |imgg10_6         |imgg10_7         |imgg10_8         |imgg10_9         |imgg10_10        ]
+[plant     |img02     |img03     |img04       |img23  |imgg10_1         |imgg10_2         |imgg10_3         |imgg10_4         |imgg10_5         |imgg10_6         |imgg10_7         |imgg10_8         |imgg10_9         |imgg10_10        ]
+[plant     |img02     |img03     |img04       |img23  |imgg10_1         |imgg10_2         |imgg10_3         |imgg10_4         |imgg10_5         |imgg10_6         |imgg10_7         |imgg10_8         |imgg10_9         |imgg10_10        ]
+[plant     |img02     |img03     |img04       |img23  |imgg10_1         |imgg10_2         |imgg10_3         |imgg10_4         |imgg10_5         |imgg10_6         |imgg10_7         |imgg10_8         |imgg10_9         |imgg10_10        ]
+[plant     |img02     |img03     |img04       |img23  |imgg10_1         |imgg10_2         |imgg10_3         |imgg10_4         |imgg10_5         |imgg10_6         |imgg10_7         |imgg10_8         |imgg10_9         |imgg10_10        ]
+[plant     |img02     |img03     |img04       |img23  |imgg10_1         |imgg10_2         |imgg10_3         |imgg10_4         |imgg10_5         |imgg10_6         |imgg10_7         |imgg10_8         |imgg10_9         |imgg10_10        ]
+[plant     |img02     |img03     |img04       |img23  |imgg10_1         |imgg10_2         |imgg10_3         |imgg10_4         |imgg10_5         |imgg10_6         |imgg10_7         |imgg10_8         |imgg10_9         |imgg10_10        ]
+[plant     |img02     |img03     |img04       |img23  |imgg10_1         |imgg10_2         |imgg10_3         |imgg10_4         |imgg10_5         |imgg10_6         |imgg10_7         |imgg10_8         |imgg10_9         |imgg10_10        ]
+[plant     |img02     |img03     |img04       |img23  |imgg10_1         |imgg10_2         |imgg10_3         |imgg10_4         |imgg10_5         |imgg10_6         |imgg10_7         |imgg10_8         |imgg10_9         |imgg10_10        ]
+
+}
+END -- s_img
+Grid gr3178
+{
+  ---------- Rows [cnt   ] / [cn2   ] --------------------  [dummy01]  Unit 1  [imgg10_1_tot ]   Unit 2  [imgg10_2_tot ]   Unit 3  [imgg10_3_tot ]   Unit 4  [imgg10_4_tot ]   Unit 5  [imgg10_5_tot ]   Unit 6  [imgg10_6_tot ]   Unit 7  [imgg10_7_tot ]   Unit 8  [imgg10_8_tot ]   Unit 9  [imgg10_9_tot ]   Unit 10  [imgg10_10_tot ]
+
+}
+END -- gr3178
+END -- vb4
+END -- aimq411
+
+TABLES
+ima_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Please by QBE, Enter Item# to Query";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=3, noEntry;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=4, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=5, noEntry;
+Edit ima06=formonly.ima06 type CHAR, tabIndex=6, noEntry;
+Edit ima07=formonly.ima07 type CHAR, tabIndex=7, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=8, noEntry;
+Edit avl_stk_mpsmrp=formonly.avl_stk_mpsmrp type CHAR, tabIndex=9;
+Edit avl_stk=formonly.avl_stk type CHAR, tabIndex=10;
+Edit unavl_stk=formonly.unavl_stk type CHAR, tabIndex=11;
+Edit plant=formonly.plant type CHAR, tabIndex=12, title="Plant No.";
+Edit img02=formonly.img02 type CHAR, tabIndex=13, title="Warehouse";
+Edit img03=formonly.img03 type CHAR, tabIndex=14, title="Location";
+Edit img04=formonly.img04 type CHAR, tabIndex=15, title="Lot#";
+Edit img23=formonly.img23 type CHAR, tabIndex=16, title="Usable";
+Edit imgg10_1=formonly.imgg10_1 type CHAR, tabIndex=17, title="Inventory Unit 1";
+Edit imgg10_2=formonly.imgg10_2 type CHAR, tabIndex=18, title="Inventory Unit 2";
+Edit imgg10_3=formonly.imgg10_3 type CHAR, tabIndex=19, title="Inventory Unit 3";
+Edit imgg10_4=formonly.imgg10_4 type CHAR, tabIndex=20, title="Inventory Unit 4";
+Edit imgg10_5=formonly.imgg10_5 type CHAR, tabIndex=21, title="Inventory Unit 5";
+Edit imgg10_6=formonly.imgg10_6 type CHAR, tabIndex=22, title="Inventory Unit 6";
+Edit imgg10_7=formonly.imgg10_7 type CHAR, tabIndex=23, title="Inventory Unit 7";
+Edit imgg10_8=formonly.imgg10_8 type CHAR, tabIndex=24, title="Inventory Unit 8";
+Edit imgg10_9=formonly.imgg10_9 type CHAR, tabIndex=25, title="Inventory Unit 9";
+Edit imgg10_10=formonly.imgg10_10 type CHAR, tabIndex=26, title="Inventory Unit 10";
+Edit cnt=formonly.cnt type CHAR, tabIndex=27;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=28;
+Label dummy01:dummy01, text="Total:";
+Edit imgg10_1_tot=formonly.imgg10_1_tot type CHAR, tabIndex=29;
+Edit imgg10_2_tot=formonly.imgg10_2_tot type CHAR, tabIndex=30;
+Edit imgg10_3_tot=formonly.imgg10_3_tot type CHAR, tabIndex=31;
+Edit imgg10_4_tot=formonly.imgg10_4_tot type CHAR, tabIndex=32;
+Edit imgg10_5_tot=formonly.imgg10_5_tot type CHAR, tabIndex=33;
+Edit imgg10_6_tot=formonly.imgg10_6_tot type CHAR, tabIndex=34;
+Edit imgg10_7_tot=formonly.imgg10_7_tot type CHAR, tabIndex=35;
+Edit imgg10_8_tot=formonly.imgg10_8_tot type CHAR, tabIndex=36;
+Edit imgg10_9_tot=formonly.imgg10_9_tot type CHAR, tabIndex=37;
+Edit imgg10_10_tot=formonly.imgg10_10_tot type CHAR, tabIndex=38;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(formonly.plant,formonly.img02,formonly.img03,formonly.img04,formonly.img23,formonly.imgg10_1,formonly.imgg10_2,formonly.imgg10_3,formonly.imgg10_4,formonly.imgg10_5,formonly.imgg10_6,formonly.imgg10_7,formonly.imgg10_8,formonly.imgg10_9,formonly.imgg10_10)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,formonly.ima05,formonly.ima08,formonly.ima06,formonly.ima07,formonly.ima25,formonly.avl_stk_mpsmrp,formonly.avl_stk,formonly.unavl_stk,formonly.cnt,formonly.cn2,formonly.imgg10_1_tot,formonly.imgg10_2_tot,formonly.imgg10_3_tot,formonly.imgg10_4_tot,formonly.imgg10_5_tot,formonly.imgg10_6_tot,formonly.imgg10_7_tot,formonly.imgg10_8_tot,formonly.imgg10_9_tot,formonly.imgg10_10_tot)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,118 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi011")
+VBox VBox1
+Folder pc757
+Page page01(text="Main")
+Grid Grid1
+{
+
+ Interface Code           [noa01              ] [noc02             ]              <G group1                                                              >
+ Trans_type               [noa05              ] [azf03             ]               File_sep           [noa08               ]
+ Version                  [noa02              ] [noa03             |noa13     ]    File prefix        [noa09               ]
+ trans_format             [noa06              ]   Separator [noa07     ]           File Code          [noa10               ]
+ Mess_type                [noa14              ]                                    File format        [noa11               ]
+                                                                                   Rep_path           [noa12                         ][browse    ]
+                                                                                  <                                                                      >
+
+}
+END -- Grid1
+END -- page01
+Page Page2(text=%"Status")
+Grid gr5
+{
+
+    Record Owner    [noauser        ] Last Modified by[noamodu        ]
+    Department      [noagrup        ] Modify Date     [noadate        ]
+    Record Orig.    [noaoriu        ] Data Valid Code [noaacti        ]
+    Dept Orig.      [noaorig        ]
+
+}
+END -- gr5
+END -- Page2
+END -- pc757
+Folder Folder1
+Page Page1(text=%" Details")
+Table ds2
+{
+[nob05   |nob06          |nob07          |nob08       |nob09           |nob10       |nob11     |nob12        |nob13     |nob14  |nob15    |nob16  |nob17   |nob18    |nob19  |nob20   |nob21    |nob22   |nob23                         ]
+[nob05   |nob06          |nob07          |nob08       |nob09           |nob10       |nob11     |nob12        |nob13     |nob14  |nob15    |nob16  |nob17   |nob18    |nob19  |nob20   |nob21    |nob22   |nob23                         ]
+[nob05   |nob06          |nob07          |nob08       |nob09           |nob10       |nob11     |nob12        |nob13     |nob14  |nob15    |nob16  |nob17   |nob18    |nob19  |nob20   |nob21    |nob22   |nob23                         ]
+[nob05   |nob06          |nob07          |nob08       |nob09           |nob10       |nob11     |nob12        |nob13     |nob14  |nob15    |nob16  |nob17   |nob18    |nob19  |nob20   |nob21    |nob22   |nob23                         ]
+[nob05   |nob06          |nob07          |nob08       |nob09           |nob10       |nob11     |nob12        |nob13     |nob14  |nob15    |nob16  |nob17   |nob18    |nob19  |nob20   |nob21    |nob22   |nob23                         ]
+}
+END -- ds2
+END -- Page1
+END -- Folder1
+Grid gr3239
+{
+ ---------- Rows [idx   ] / [cnt   ] ----- Items [cn2   ]----------
+
+}
+END -- gr3239
+END -- VBox1
+END -- anmi011
+
+TABLES
+nob_file,
+noa_file
+ATTRIBUTES
+ButtonEdit noa01=noa_file.noa01, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit noc02=formonly.noc02 type CHAR, tabIndex=4, noEntry;
+Group group1:Group1, text=%"Landing Format";
+Edit noa08=formonly.noa08 type VARCHAR, tabIndex=13;
+Edit noa09=noa_file.noa09, tabIndex=14;
+ComboBox noa10=noa_file.noa10, tabIndex=15, not null, required, items=(("1", "Pre+YYYYMMDD+'_'+Num"),("2", "Pre+YYYYMM+'_'+Num"),("3", "Pre+'_'+Num"));
+ComboBox noa11=noa_file.noa11, tabIndex=16, not null, required, items=(("1", "txt"),("2", "dat"),("3", "rpt"),("4", "act"),("5", "csv"));
+Edit noa12=noa_file.noa12, tabIndex=17;
+Button browse:browse, text="Browse";
+ButtonEdit noa05=noa_file.noa05, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=6, noEntry;
+Edit noa02=noa_file.noa02, tabIndex=7, not null, required;
+Edit noa03=noa_file.noa03, tabIndex=8;
+CheckBox noa13=noa_file.noa13, tabIndex=9, text=%"Default", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox noa06=noa_file.noa06, tabIndex=10, not null, required, items=(("1", "XML"),("2", "Separator"));
+Edit noa07=noa_file.noa07, tabIndex=11;
+ComboBox noa14=noa_file.noa14, tabIndex=12, not null, required, items=(("1", "Request"),("2", "Response
+"));
+Edit noauser=noa_file.noauser, tabIndex=37, noEntry;
+Edit noamodu=noa_file.noamodu, tabIndex=40, noEntry;
+Edit noagrup=noa_file.noagrup, tabIndex=39, noEntry;
+DateEdit noadate=noa_file.noadate, tabIndex=41, noEntry;
+Edit noaoriu=noa_file.noaoriu, tabIndex=38, noEntry;
+Edit noaacti=noa_file.noaacti, tabIndex=42, noEntry, upShift;
+Edit noaorig=noa_file.noaorig, tabIndex=43, noEntry;
+Edit nob05=nob_file.nob05, tabIndex=18, title=%"nob05", not null, required, scroll;
+Edit nob06=nob_file.nob06, tabIndex=19, title=%"nob06", not null, required, scroll;
+Edit nob07=nob_file.nob07, tabIndex=20, title=%"nob07", scroll;
+ComboBox nob08=nob_file.nob08, tabIndex=21, title=%"nob08", not null, required, scroll, items=(("1", "Fixed value"),("2", "From TIPTOP"),("3", "Sequence num"),("4", "From pic"),("5", "String"),("6", "Today"),("7", "Time"));
+Edit nob09=nob_file.nob09, tabIndex=22, title=%"nob09", scroll;
+Edit nob10=nob_file.nob10, tabIndex=23, title=%"nob10", scroll;
+Edit nob11=nob_file.nob11, tabIndex=24, title=%"nob11", scroll;
+Edit nob12=nob_file.nob12, tabIndex=25, title=%"nob12", scroll;
+ButtonEdit nob13=nob_file.nob13, action=controlp, tabIndex=26, title=%"nob13", image="zoom", scroll;
+CheckBox nob14=nob_file.nob14, tabIndex=27, title=%"nob14", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nob15=nob_file.nob15, tabIndex=28, title=%"nob15", scroll;
+CheckBox nob16=nob_file.nob16, tabIndex=29, title=%"nob16", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nob17=nob_file.nob17, tabIndex=30, title=%"nob17", scroll;
+ComboBox nob18=nob_file.nob18, tabIndex=31, title=%"nob18", scroll, items=(("01", "Left"),("02", "Right"));
+CheckBox nob19=nob_file.nob19, tabIndex=32, title=%"nob19", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nob20=nob_file.nob20, tabIndex=33, title=%"nob20", scroll;
+CheckBox nob21=nob_file.nob21, tabIndex=34, title=%"nob21", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nob22=nob_file.nob22, tabIndex=35, title=%"nob22", not null, scroll;
+Edit nob23=nob_file.nob23, tabIndex=36, title=%"nob23", scroll;
+Edit idx=formonly.idx type SMALLINT, tabIndex=2, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=1, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=44, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,noa_file.noa01,formonly.noc02,noa_file.noa05,formonly.azf03,noa_file.noa06,noa_file.noa07,noa_file.noa14,formonly.noa08,noa_file.noa09,noa_file.noa10,noa_file.noa11,noa_file.noauser,noa_file.noaoriu,noa_file.noagrup,noa_file.noamodu,noa_file.noadate,noa_file.noaacti,noa_file.noaorig,formonly.cn2,noa_file.noa12,noa_file.noa02,noa_file.noa03,noa_file.noa13)
+SCREEN RECORD s_nob(nob_file.nob05,nob_file.nob06,nob_file.nob07,nob_file.nob08,nob_file.nob09,nob_file.nob10,nob_file.nob11,nob_file.nob12,nob_file.nob13,nob_file.nob14,nob_file.nob15,nob_file.nob16,nob_file.nob17,nob_file.nob18,nob_file.nob19,nob_file.nob20,nob_file.nob21,nob_file.nob22,nob_file.nob23)
+END -- INSTRUCTIONS
+

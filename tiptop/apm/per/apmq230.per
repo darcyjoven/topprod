@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq230.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq230")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4972
+{
+ Vender No.          [pmc01     ][pmc03     ]
+
+}
+END -- gr4972
+END -- page01
+END -- folder01
+Table s_pmn
+{
+[pmn01     |pmn04             |pmn07|pmn20  |pmn86      |pmn87         |pmn31               |pmn31t              |tot                 |tott                |pmn33       ]
+[pmn01     |pmn04             |pmn07|pmn20  |pmn86      |pmn87         |pmn31               |pmn31t              |tot                 |tott                |pmn33       ]
+[pmn01     |pmn04             |pmn07|pmn20  |pmn86      |pmn87         |pmn31               |pmn31t              |tot                 |tott                |pmn33       ]
+[pmn01     |pmn04             |pmn07|pmn20  |pmn86      |pmn87         |pmn31               |pmn31t              |tot                 |tott                |pmn33       ]
+[pmn01     |pmn04             |pmn07|pmn20  |pmn86      |pmn87         |pmn31               |pmn31t              |tot                 |tott                |pmn33       ]
+[pmn01     |pmn04             |pmn07|pmn20  |pmn86      |pmn87         |pmn31               |pmn31t              |tot                 |tott                |pmn33       ]
+[pmn01     |pmn04             |pmn07|pmn20  |pmn86      |pmn87         |pmn31               |pmn31t              |tot                 |tott                |pmn33       ]
+[pmn01     |pmn04             |pmn07|pmn20  |pmn86      |pmn87         |pmn31               |pmn31t              |tot                 |tott                |pmn33       ]
+[pmn01     |pmn04             |pmn07|pmn20  |pmn86      |pmn87         |pmn31               |pmn31t              |tot                 |tott                |pmn33       ]
+[pmn01     |pmn04             |pmn07|pmn20  |pmn86      |pmn87         |pmn31               |pmn31t              |tot                 |tott                |pmn33       ]
+
+}
+END -- s_pmn
+Grid gr4973
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4973
+END -- VBox1
+END -- apmq230
+
+ATTRIBUTES
+Edit pmc01=formonly.pmc01 type CHAR, tabIndex=1;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, noEntry;
+Edit pmn01=formonly.pmn01 type CHAR, tabIndex=3, title="P/O No.";
+Edit pmn04=formonly.pmn04 type CHAR, tabIndex=4, title="Item No.";
+Edit pmn07=formonly.pmn07 type CHAR, tabIndex=5, title="Unit";
+Edit pmn20=formonly.pmn20 type CHAR, tabIndex=6, title="Qty";
+Edit pmn86=formonly.pmn86 type CHAR, tabIndex=7, title="Price Unit";
+Edit pmn87=formonly.pmn87 type CHAR, tabIndex=8, title="Price Qty";
+Edit pmn31=formonly.pmn31 type CHAR, tabIndex=9, title="U/P";
+Edit pmn31t=formonly.pmn31t type CHAR, tabIndex=10, title="Tax U/P";
+Edit tot=formonly.tot type CHAR, tabIndex=11, title="Amount";
+Edit tott=formonly.tott type CHAR, tabIndex=12, title="Tax Amount";
+DateEdit pmn33=formonly.pmn33 type CHAR, tabIndex=13, title="Deliver Date";
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmn(formonly.pmn01,formonly.pmn04,formonly.pmn07,formonly.pmn20,formonly.pmn86,formonly.pmn87,formonly.pmn31,formonly.pmn31t,formonly.tot,formonly.tott,formonly.pmn33)
+SCREEN RECORD Undefined(formonly.pmc01,formonly.pmc03,formonly.cnt)
+END -- INSTRUCTIONS
+

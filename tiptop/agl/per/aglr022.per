@@ -1,0 +1,132 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr022.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglr022")
+VBox vb3
+Grid gr2622
+{
+
+ <G group02_1                                                        >
+  [rtype                                                       ]
+ <                                                                   >
+
+
+}
+END -- gr2622
+Grid gr2764
+{
+ <G group01                                                          >
+  [s  ]   Dimenstion 1  [aeii19                          ]
+  [   ]   Dimenstion 2  [aeii20                          ]
+  [   ]   Dimenstion 3  [aeii21                          ]
+  [   ]   Dimenstion 4  [aeii22                          ]
+  [   ]   Dimenstion 5  [aeii05                          ]
+  [   ]   Dimenstion 6  [aeii06                          ]
+  [   ]   Dimenstion 7  [aeii07                          ]
+  [   ]   Dimenstion 8  [aeii08                          ]
+ <                                                                   >
+
+
+}
+END -- gr2764
+Grid gr2765
+{
+
+ <G group02                                                                 >
+      Group No.             [axa01               ]
+      Parent Company        [axa02               ]
+      axa06                 [axa06               ]
+      Book No.              [axa03               ]
+      Report Structure No.  [a                   ]
+      Book No.              [b                   ]
+                                [dummy01         ]    [dummy02        ]
+      Enter Year            [yy1                 ][yy2                 ]
+      Start Period          [bm1                 ][bm2                 ]
+      End Period            [em1                 ][em2                 ]
+      Start Quarter         [bq1                 ][bq2                 ]
+      End Quarter           [q1                  ][q2                  ]
+      Start Half-year       [bh1                 ][bh2                 ]
+      End Half-year         [h1                  ][h2                  ]
+
+      Decimal Digits        [e                   ]
+      Print Minimum Level#  [f                   ]
+      Amount Unit           [d                   ]
+      [c                             ]
+      [h                             ]
+ <                                                                          >
+ <G group06                                                                 >
+  [o                                       ]
+   G/L Curr.           [r                   ]
+   Convert Curr.       [p                   ]
+   * Ex.Rate           [q                   ]
+ <                                                                          >
+
+}
+END -- gr2765
+Grid gr2766
+{
+
+[more                                                        ]
+
+}
+END -- gr2766
+END -- vb3
+END -- aglr022
+
+ATTRIBUTES
+Group group02_1:group02_1, text="Report Type";
+RadioGroup rtype=formonly.rtype type CHAR, tabIndex=3, items=(("1", "Balance Sheet"),("2", "Income statement"));
+Group group01:group01, text="INPUT1";
+RadioGroup s=formonly.s type CHAR, tabIndex=10, items=(("5", ""),("6", ""),("7", ""),("8", ""),("1", ""),("2", ""),("3", ""),("4", ""));
+Edit aeii19=formonly.aeii19 type VARCHAR, tabIndex=37;
+Edit aeii20=formonly.aeii20 type VARCHAR, tabIndex=38;
+Edit aeii21=formonly.aeii21 type VARCHAR, tabIndex=39;
+Edit aeii22=formonly.aeii22 type VARCHAR, tabIndex=40;
+Edit aeii05=formonly.aeii05 type VARCHAR, tabIndex=1;
+Edit aeii06=formonly.aeii06 type VARCHAR, tabIndex=4;
+Edit aeii07=formonly.aeii07 type VARCHAR, tabIndex=5;
+Edit aeii08=formonly.aeii08 type VARCHAR, tabIndex=36;
+Group group02:group02, text="INPUT";
+ButtonEdit axa01=formonly.axa01 type CHAR, action=controlp, tabIndex=16, image="zoom";
+ButtonEdit axa02=formonly.axa02 type CHAR, action=controlp, tabIndex=17, image="zoom";
+ComboBox axa06=formonly.axa06 type VARCHAR, tabIndex=21, items=(("1", "Month"),("2", "Quarter"),("3", "Half a Year"),("4", "Year"));
+Edit axa03=formonly.axa03 type CHAR, tabIndex=18, noEntry;
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=19, image="zoom";
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=20, noEntry, image="zoom";
+Label dummy01:dummy01, text="1st Period";
+Label dummy02:dummy02, text="2st Period";
+Edit yy1=formonly.yy1 type SMALLINT, tabIndex=22, not null, required;
+Edit yy2=formonly.yy2 type SMALLINT, tabIndex=35, not null, required;
+Edit bm1=formonly.bm1 type SMALLINT, tabIndex=34;
+Edit bm2=formonly.bm2 type SMALLINT, tabIndex=33;
+Edit em1=formonly.em1 type SMALLINT, tabIndex=23;
+Edit em2=formonly.em2 type SMALLINT, tabIndex=24;
+ComboBox bq1=formonly.bq1 type VARCHAR, tabIndex=31, not null, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox bq2=formonly.bq2 type VARCHAR, tabIndex=32, not null, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox q1=formonly.q1 type VARCHAR, tabIndex=25, not null, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox q2=formonly.q2 type VARCHAR, tabIndex=27, not null, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox bh1=formonly.bh1 type VARCHAR, tabIndex=29, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+ComboBox bh2=formonly.bh2 type VARCHAR, tabIndex=30, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+ComboBox h1=formonly.h1 type VARCHAR, tabIndex=26, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+ComboBox h2=formonly.h2 type VARCHAR, tabIndex=28, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+Edit e=formonly.e type CHAR, tabIndex=11;
+Edit f=formonly.f type SMALLINT, tabIndex=12;
+ComboBox d=formonly.d type CHAR, tabIndex=13, not null, required, queryEditable, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+CheckBox c=formonly.c type CHAR, tabIndex=14, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=15, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group06:group06;
+CheckBox o=formonly.o type CHAR, tabIndex=6, text="Convert Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=7, noEntry;
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=8, image="zoom";
+Edit q=formonly.q type DECIMAL, tabIndex=9;
+CheckBox more=formonly.more type CHAR, tabIndex=2, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rtype,formonly.s,formonly.aeii05,formonly.aeii06,formonly.aeii07,formonly.axa01,formonly.axa02,formonly.axa06,formonly.axa03,formonly.a,formonly.b,formonly.yy1,formonly.yy2,formonly.bm1,formonly.bm2,formonly.em1,formonly.em2,formonly.bq1,formonly.bq2,formonly.q1,formonly.q2,formonly.bh1,formonly.bh2,formonly.h1,formonly.h2,formonly.e,formonly.f,formonly.d,formonly.c,formonly.h,formonly.o,formonly.r,formonly.p,formonly.q,formonly.more,formonly.aeii08,formonly.aeii19,formonly.aeii20,formonly.aeii21,formonly.aeii22)
+END -- INSTRUCTIONS
+

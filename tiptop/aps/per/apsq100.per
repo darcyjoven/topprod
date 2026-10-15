@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsq100")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+Grid gr878
+{
+ APS Version [vzu01                     ]      Save Version [vzu02     ]
+
+
+
+}
+END -- gr878
+END -- page01
+END -- folder01
+Table s_vzv
+{
+[vzu03       |vzu04            |vzu05                       |vzu06                    |vzu07         |vzu08      ]
+[vzu03       |vzu04            |vzu05                       |vzu06                    |vzu07         |vzu08      ]
+[vzu03       |vzu04            |vzu05                       |vzu06                    |vzu07         |vzu08      ]
+[vzu03       |vzu04            |vzu05                       |vzu06                    |vzu07         |vzu08      ]
+[vzu03       |vzu04            |vzu05                       |vzu06                    |vzu07         |vzu08      ]
+[vzu03       |vzu04            |vzu05                       |vzu06                    |vzu07         |vzu08      ]
+[vzu03       |vzu04            |vzu05                       |vzu06                    |vzu07         |vzu08      ]
+[vzu03       |vzu04            |vzu05                       |vzu06                    |vzu07         |vzu08      ]
+[vzu03       |vzu04            |vzu05                       |vzu06                    |vzu07         |vzu08      ]
+[vzu03       |vzu04            |vzu05                       |vzu06                    |vzu07         |vzu08      ]
+
+}
+END -- s_vzv
+Grid gr881
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr881
+END -- vb6
+END -- apsq100
+
+TABLES
+vzu_file
+ATTRIBUTES
+ButtonEdit vzu01=vzu_file.vzu01, action=controlp, tabIndex=9, image="zoom";
+Edit vzu02=vzu_file.vzu02, tabIndex=10;
+Edit vzu03=vzu_file.vzu03, tabIndex=1, title="Program ID";
+Edit vzu04=vzu_file.vzu04, tabIndex=2, title="Program Name";
+Edit vzu05=vzu_file.vzu05, tabIndex=3, title="Start(Date)", noEntry;
+Edit vzu06=vzu_file.vzu06, tabIndex=4, title="End(Date)", noEntry;
+ComboBox vzu07=vzu_file.vzu07, tabIndex=5, title="Status", items=(("Y", "Success"),("N", "Undo"),("F", "False"),("C", "Exit"),("R", "Doing"));
+ComboBox vzu08=vzu_file.vzu08, tabIndex=6, title="vzu08", items=(("1", "MP"),("2", "MCP"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vzu(vzu_file.vzu03,vzu_file.vzu04,vzu_file.vzu05,vzu_file.vzu06,vzu_file.vzu07,vzu_file.vzu08)
+SCREEN RECORD Undefined(vzu_file.vzu01,vzu_file.vzu02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

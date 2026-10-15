@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi185.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi185")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1361
+{
+ Vehicle No.         [adn01     ]
+ Init Date           [adn02     ]
+ End Date            [adn03     ]
+}
+END -- gr1361
+END -- page01
+END -- folder01
+Table s_adn
+{
+[adn04     |adn05    |gen02  |adn06             |adn07    |adn08         |adn09         |adn10          |adn11         |adn12                         |adnac]
+[adn04     |adn05    |gen02  |adn06             |adn07    |adn08         |adn09         |adn10          |adn11         |adn12                         |adnac]
+[adn04     |adn05    |gen02  |adn06             |adn07    |adn08         |adn09         |adn10          |adn11         |adn12                         |adnac]
+[adn04     |adn05    |gen02  |adn06             |adn07    |adn08         |adn09         |adn10          |adn11         |adn12                         |adnac]
+[adn04     |adn05    |gen02  |adn06             |adn07    |adn08         |adn09         |adn10          |adn11         |adn12                         |adnac]
+[adn04     |adn05    |gen02  |adn06             |adn07    |adn08         |adn09         |adn10          |adn11         |adn12                         |adnac]
+[adn04     |adn05    |gen02  |adn06             |adn07    |adn08         |adn09         |adn10          |adn11         |adn12                         |adnac]
+[adn04     |adn05    |gen02  |adn06             |adn07    |adn08         |adn09         |adn10          |adn11         |adn12                         |adnac]
+[adn04     |adn05    |gen02  |adn06             |adn07    |adn08         |adn09         |adn10          |adn11         |adn12                         |adnac]
+[adn04     |adn05    |gen02  |adn06             |adn07    |adn08         |adn09         |adn10          |adn11         |adn12                         |adnac]
+
+}
+END -- s_adn
+Grid gr1362
+{
+ ----------Rows [cnt   ]----------
+
+}
+END -- gr1362
+END -- VBox1
+END -- atmi185
+
+TABLES
+adn_file
+ATTRIBUTES
+ButtonEdit adn01=adn_file.adn01, action=controlp, tabIndex=1, not null, required, color = black reverse, image="zoom", comment="<^P>Qry Detail";
+DateEdit adn02=adn_file.adn02, tabIndex=2, not null, required;
+DateEdit adn03=adn_file.adn03, tabIndex=3, not null, required;
+Edit adn04=adn_file.adn04, tabIndex=4, title="Line no", not null, required;
+ButtonEdit adn05=adn_file.adn05, action=controlp, tabIndex=5, title="Driver", not null, required, color = black reverse, image="zoom", comment="<^P>Qry Detail";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=6, title="Name", noEntry;
+ButtonEdit adn06=adn_file.adn06, action=controlp, tabIndex=7, title="Dispatch No.", color = black reverse, image="zoom", comment="<^P>Qry Detail";
+Edit adn07=adn_file.adn07, tabIndex=8, title="Reason";
+DateEdit adn08=adn_file.adn08, tabIndex=9, title="Return Date";
+Edit adn09=adn_file.adn09, tabIndex=10, title="Return Time";
+Edit adn10=adn_file.adn10, tabIndex=11, title="Init Mileage", not null, required;
+Edit adn11=adn_file.adn11, tabIndex=12, title="END Mileage", not null, required;
+Edit adn12=adn_file.adn12, tabIndex=13, title="Memo";
+CheckBox adnac=adn_file.adnacti, tabIndex=14, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_adn(adn_file.adn04,adn_file.adn05,formonly.gen02,adn_file.adn06,adn_file.adn07,adn_file.adn08,adn_file.adn09,adn_file.adn10,adn_file.adn11,adn_file.adn12,adn_file.adnacti)
+SCREEN RECORD Undefined(adn_file.adn01,adn_file.adn02,adn_file.adn03,formonly.cnt)
+END -- INSTRUCTIONS
+

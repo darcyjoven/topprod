@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp305.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcp305")
+VBox VBox1
+Grid gr1506
+{
+ <G group01                                                   >
+  Cur Cal Year/Per    [yy   ][mm ]
+  AGL Plant No.       [p_plant   ]
+  AGL Book No.        [e         ]
+ <                                                            >
+ <G group02                                                   >
+  [dummy01                                                   ]
+
+ <                                                            >
+
+}
+END -- gr1506
+Grid gr1507
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr1507
+END -- VBox1
+END -- axcp305
+
+ATTRIBUTES
+Group group01:group01;
+Edit yy=formonly.yy type CHAR, tabIndex=1;
+Edit mm=formonly.mm type CHAR, tabIndex=2;
+Edit p_plant=formonly.p_plant type CHAR, tabIndex=3;
+Edit e=formonly.e type CHAR, tabIndex=4;
+Group group02:group02;
+Label dummy01:dummy01, text="NOTE: This Program Run Will Update cae_file.cae05/cad_file";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=5, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.p_plant,formonly.e,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

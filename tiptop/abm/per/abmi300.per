@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi300")
+VBox VBox1
+Folder pc111
+Page page01(text="Main")
+Table s_bmi
+{
+[bmi01|bmi02             |bmiact]
+[bmi01|bmi02             |bmiact]
+[bmi01|bmi02             |bmiact]
+[bmi01|bmi02             |bmiact]
+[bmi01|bmi02             |bmiact]
+[bmi01|bmi02             |bmiact]
+[bmi01|bmi02             |bmiact]
+[bmi01|bmi02             |bmiact]
+[bmi01|bmi02             |bmiact]
+[bmi01|bmi02             |bmiact]
+
+}
+END -- s_bmi
+END -- page01
+END -- pc111
+Grid gr730
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr730
+END -- VBox1
+END -- abmi300
+
+TABLES
+bmi_file
+ATTRIBUTES
+Edit bmi01=bmi_file.bmi01, tabIndex=1, title="Model", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit bmi02=bmi_file.bmi02, tabIndex=2, title="Model Description";
+CheckBox bmiact=bmi_file.bmiacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmi(bmi_file.bmi01,bmi_file.bmi02,bmi_file.bmiacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,143 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armt170.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armt170")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr284
+{
+ RMA No.             [rml01             ]
+ Lot No.             [rml03     ]
+ Customer #          [rma03     ][rma04     ]
+
+}
+END -- gr284
+Grid gr285
+{
+ Sales/Return        [rml04           ]   [imgmksg]
+ Sales/Return Date   [rml02     ]         [       ]
+ Confirm             [rmlconf   ]
+
+}
+END -- gr285
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr286
+{
+ Record Owner        [rmluser   ] Last Modified by    [rmlmodu   ] Data Valid Code     [rmlvoid   ]
+ Department          [rmlgrup   ] Create/Modify Date  [rmldate   ]
+ Record Orig.        [rmloriu   ]
+ Dept Orig.          [rmlorig   ]
+}
+END -- gr286
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[rmlud01                       ] userdefined_field07[rmlud07        ] userdefined_field13[rmlud13        ]
+                    [                              ] userdefined_field08[rmlud08        ] userdefined_field14[rmlud14        ]
+ userdefined_field02[rmlud02        ]                userdefined_field09[rmlud09        ] userdefined_field15[rmlud15        ]
+ userdefined_field03[rmlud03        ]                userdefined_field10[rmlud10        ]
+ userdefined_field04[rmlud04        ]                userdefined_field11[rmlud11        ]
+ userdefined_field05[rmlud05        ]                userdefined_field12[rmlud12        ]
+ userdefined_field06[rmlud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_rmp
+{
+[rmp0|rmp06|rmp11               |rmp13                         |rmp12|rmp07     |rmpud01   |rmpud02   |rmpud03    |rmpud04    |rmpud05    |rmpud06    |rmpud07    |rmpud08    |rmpud09    |rmpud10    |rmpud11   |rmpud12  |rmpud13   |rmpud14   |rmpud15    ]
+[rmp0|rmp06|rmp11               |rmp13                         |rmp12|rmp07     |rmpud01   |rmpud02   |rmpud03    |rmpud04    |rmpud05    |rmpud06    |rmpud07    |rmpud08    |rmpud09    |rmpud10    |rmpud11   |rmpud12  |rmpud13   |rmpud14   |rmpud15    ]
+[rmp0|rmp06|rmp11               |rmp13                         |rmp12|rmp07     |rmpud01   |rmpud02   |rmpud03    |rmpud04    |rmpud05    |rmpud06    |rmpud07    |rmpud08    |rmpud09    |rmpud10    |rmpud11   |rmpud12  |rmpud13   |rmpud14   |rmpud15    ]
+[rmp0|rmp06|rmp11               |rmp13                         |rmp12|rmp07     |rmpud01   |rmpud02   |rmpud03    |rmpud04    |rmpud05    |rmpud06    |rmpud07    |rmpud08    |rmpud09    |rmpud10    |rmpud11   |rmpud12  |rmpud13   |rmpud14   |rmpud15    ]
+[rmp0|rmp06|rmp11               |rmp13                         |rmp12|rmp07     |rmpud01   |rmpud02   |rmpud03    |rmpud04    |rmpud05    |rmpud06    |rmpud07    |rmpud08    |rmpud09    |rmpud10    |rmpud11   |rmpud12  |rmpud13   |rmpud14   |rmpud15    ]
+[rmp0|rmp06|rmp11               |rmp13                         |rmp12|rmp07     |rmpud01   |rmpud02   |rmpud03    |rmpud04    |rmpud05    |rmpud06    |rmpud07    |rmpud08    |rmpud09    |rmpud10    |rmpud11   |rmpud12  |rmpud13   |rmpud14   |rmpud15    ]
+[rmp0|rmp06|rmp11               |rmp13                         |rmp12|rmp07     |rmpud01   |rmpud02   |rmpud03    |rmpud04    |rmpud05    |rmpud06    |rmpud07    |rmpud08    |rmpud09    |rmpud10    |rmpud11   |rmpud12  |rmpud13   |rmpud14   |rmpud15    ]
+[rmp0|rmp06|rmp11               |rmp13                         |rmp12|rmp07     |rmpud01   |rmpud02   |rmpud03    |rmpud04    |rmpud05    |rmpud06    |rmpud07    |rmpud08    |rmpud09    |rmpud10    |rmpud11   |rmpud12  |rmpud13   |rmpud14   |rmpud15    ]
+[rmp0|rmp06|rmp11               |rmp13                         |rmp12|rmp07     |rmpud01   |rmpud02   |rmpud03    |rmpud04    |rmpud05    |rmpud06    |rmpud07    |rmpud08    |rmpud09    |rmpud10    |rmpud11   |rmpud12  |rmpud13   |rmpud14   |rmpud15    ]
+[rmp0|rmp06|rmp11               |rmp13                         |rmp12|rmp07     |rmpud01   |rmpud02   |rmpud03    |rmpud04    |rmpud05    |rmpud06    |rmpud07    |rmpud08    |rmpud09    |rmpud10    |rmpud11   |rmpud12  |rmpud13   |rmpud14   |rmpud15    ]
+
+}
+END -- s_rmp
+Grid gr287
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr287
+END -- VBox1
+END -- armt170
+
+TABLES
+rml_file,
+rmp_file
+ATTRIBUTES
+ButtonEdit rml01=rml_file.rml01, action=controlp, tabIndex=1, not null, required, image="zoom", upShift, comment="No Blank/Repeated <^P>Qry RMA #  ";
+Edit rml03=rml_file.rml03, tabIndex=2, not null, required, comment="No Blank/Repeated ";
+Edit rma03=formonly.rma03 type CHAR, tabIndex=3, noEntry;
+Edit rma04=formonly.rma04 type CHAR, tabIndex=4, noEntry;
+Edit rml04=rml_file.rml04, tabIndex=5, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+DateEdit rml02=rml_file.rml02, tabIndex=7;
+Edit rmlconf=rml_file.rmlconf, tabIndex=8, noEntry;
+Edit rmluser=rml_file.rmluser, tabIndex=9, noEntry;
+Edit rmlmodu=rml_file.rmlmodu, tabIndex=10, noEntry;
+Edit rmlvoid=rml_file.rmlvoid, tabIndex=11, noEntry;
+Edit rmlgrup=rml_file.rmlgrup, tabIndex=12, noEntry;
+DateEdit rmldate=rml_file.rmldate, tabIndex=13, noEntry;
+Edit rmloriu=rml_file.rmloriu, tabIndex=501, noEntry;
+Edit rmlorig=rml_file.rmlorig, tabIndex=502, noEntry;
+TextEdit rmlud01=rml_file.rmlud01, tabIndex=327, stretch=NONE;
+Edit rmlud07=rml_file.rmlud07, tabIndex=328;
+DateEdit rmlud13=rml_file.rmlud13, tabIndex=329;
+Edit rmlud08=rml_file.rmlud08, tabIndex=330;
+DateEdit rmlud14=rml_file.rmlud14, tabIndex=331;
+Edit rmlud02=rml_file.rmlud02, tabIndex=332;
+Edit rmlud09=rml_file.rmlud09, tabIndex=333;
+DateEdit rmlud15=rml_file.rmlud15, tabIndex=334;
+Edit rmlud03=rml_file.rmlud03, tabIndex=335;
+Edit rmlud10=rml_file.rmlud10, tabIndex=336;
+Edit rmlud04=rml_file.rmlud04, tabIndex=337;
+Edit rmlud11=rml_file.rmlud11, tabIndex=338;
+Edit rmlud05=rml_file.rmlud05, tabIndex=339;
+Edit rmlud12=rml_file.rmlud12, tabIndex=340;
+Edit rmlud06=rml_file.rmlud06, tabIndex=341;
+Edit rmp0=rmp_file.rmp02, tabIndex=14, title="Ln#", not null, required;
+ButtonEdit rmp06=rmp_file.rmp06, action=controlp, tabIndex=15, title="RET#", not null, required, image="zoom", comment="No Blank/Repeated <^P>Qry RMA S/N    ";
+Edit rmp11=rmp_file.rmp11, tabIndex=16, title="Item No.", noEntry;
+Edit rmp13=rmp_file.rmp13, tabIndex=17, title="Part Name Specification", noEntry;
+Edit rmp12=rmp_file.rmp12, tabIndex=18, title="Unit", noEntry;
+Edit rmp07=rmp_file.rmp07, tabIndex=19, title="Qty", noEntry, not null, required;
+TextEdit rmpud01=rmp_file.rmpud01, tabIndex=325, title="rmpud01", stretch=NONE;
+Edit rmpud02=rmp_file.rmpud02, tabIndex=342, title="rmpud02";
+Edit rmpud03=rmp_file.rmpud03, tabIndex=343, title="rmpud03";
+Edit rmpud04=rmp_file.rmpud04, tabIndex=344, title="rmpud04";
+Edit rmpud05=rmp_file.rmpud05, tabIndex=345, title="rmpud05";
+Edit rmpud06=rmp_file.rmpud06, tabIndex=346, title="rmpud06";
+Edit rmpud07=rmp_file.rmpud07, tabIndex=347, title="rmpud07";
+Edit rmpud08=rmp_file.rmpud08, tabIndex=348, title="rmpud08";
+Edit rmpud09=rmp_file.rmpud09, tabIndex=349, title="rmpud09";
+Edit rmpud10=rmp_file.rmpud10, tabIndex=350, title="rmpud10";
+Edit rmpud11=rmp_file.rmpud11, tabIndex=351, title="rmpud11";
+Edit rmpud12=rmp_file.rmpud12, tabIndex=352, title="rmpud12";
+Edit rmpud13=rmp_file.rmpud13, tabIndex=353, title="rmpud13";
+Edit rmpud14=rmp_file.rmpud14, tabIndex=354, title="rmpud14";
+Edit rmpud15=rmp_file.rmpud15, tabIndex=355, title="rmpud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rmp(rmp_file.rmp02,rmp_file.rmp06,rmp_file.rmp11,rmp_file.rmp13,rmp_file.rmp12,rmp_file.rmp07,rmp_file.rmpud01,rmp_file.rmpud02,rmp_file.rmpud03,rmp_file.rmpud04,rmp_file.rmpud05,rmp_file.rmpud06,rmp_file.rmpud07,rmp_file.rmpud08,rmp_file.rmpud09,rmp_file.rmpud10,rmp_file.rmpud11,rmp_file.rmpud12,rmp_file.rmpud13,rmp_file.rmpud14,rmp_file.rmpud15)
+SCREEN RECORD Undefined(rml_file.rml01,rml_file.rml03,formonly.rma03,formonly.rma04,rml_file.rml04,formonly.imgmksg,rml_file.rml02,rml_file.rmlconf,rml_file.rmluser,rml_file.rmlmodu,rml_file.rmlvoid,rml_file.rmlgrup,rml_file.rmldate,rml_file.rmloriu,rml_file.rmlorig,rml_file.rmlud01,rml_file.rmlud07,rml_file.rmlud13,rml_file.rmlud08,rml_file.rmlud14,rml_file.rmlud02,rml_file.rmlud09,rml_file.rmlud15,rml_file.rmlud03,rml_file.rmlud10,rml_file.rmlud04,rml_file.rmlud11,rml_file.rmlud05,rml_file.rmlud12,rml_file.rmlud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

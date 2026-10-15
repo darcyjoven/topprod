@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp703.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimp703")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                              >
+  Transfer Note#      [imm01               ]  Transfer Date       [imm02               ]
+  Applicant           [imm09               ]
+ <                                                                                       >
+
+}
+END -- Grid1
+Group g01(text="INPUT")
+VBox VBox2
+Grid Grid2
+{
+ <G group02                                                               >
+ [download            ]      File Name           [file_name ]_[file_exten]
+ <                                                                        >
+
+}
+END -- Grid2
+Group g02
+HBox HBox1
+Grid Grid3
+{
+[backup              ]
+
+
+
+
+}
+END -- Grid3
+Grid Grid4
+{
+ <G group03                       >
+ [backup_device       ]
+ <                                >
+
+
+}
+END -- Grid4
+END -- HBox1
+END -- g02
+Grid Grid5
+{
+[cleanup                                          ]
+
+}
+END -- Grid5
+END -- VBox2
+END -- g01
+Grid Grid6
+{
+[more                                             ]
+
+}
+END -- Grid6
+END -- VBox1
+END -- aimp703
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit imm01=formonly.imm01 type VARCHAR, tabIndex=1;
+DateEdit imm02=formonly.imm02 type DATE, tabIndex=2;
+Edit imm09=formonly.imm09 type VARCHAR, tabIndex=3;
+Group group02:group02;
+CheckBox download=formonly.download type VARCHAR, tabIndex=4, text="Download", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit file_name=formonly.file_name type VARCHAR, tabIndex=5, default = "imm", comment="Enter File Name";
+Edit file_exten=formonly.file_extension type DATE, tabIndex=6, default = "TODAY", format="YYMMDD", comment="Enter File Extension,can be Remarked by Date";
+CheckBox backup=formonly.backup type VARCHAR, tabIndex=7, text="Back up", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Backup Device";
+RadioGroup backup_device=formonly.backup_device type VARCHAR, tabIndex=8, items=(("1", %"Tape"),("2", %"Floppy"));
+CheckBox cleanup=formonly.cleanup type VARCHAR, tabIndex=9, text="Clear ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=10, text="Run Now ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.imm01,formonly.imm02,formonly.imm09,formonly.download,formonly.file_name,formonly.file_extension,formonly.backup,formonly.backup_device,formonly.cleanup,formonly.more)
+END -- INSTRUCTIONS
+

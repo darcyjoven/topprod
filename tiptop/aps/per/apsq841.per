@@ -1,0 +1,160 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq841.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apsq841")
+VBox vb2
+Folder folder01
+Page page01(text="Page01")
+Grid gr32
+{
+ <G gb6                                                                                                                           >
+   APS Version  [vzy01          ]         Save Version [vzy02      ]      Version Confirmed at [vzy12      ]
+ <                                                                                                                                >
+}
+END -- gr32
+END -- page01
+END -- folder01
+Folder pc6
+Page Page14(text=%"Page0")
+Grid gr34_1
+{
+
+ Item#                 [ima01                            ]           IQC Time(Day)          [ima491                       ]
+ Part Name             [ima02                            ]           Fixed Lead Time        [ima59                        ]
+ Spec Info             [ima021                           ]           QC Lead Time           [ima61                        ]
+ Source Code           [ima08                            ]           Safety Stock           [ima27                        ]
+ Inv Unit              [ima25              ]  [ima24     ]           Purchase Unit Lot Size [ima45                        ]
+ Planner               [ima67              ][planername  ]           Min Purchase Qty       [ima46                        ]
+ Poer                  [ima43              ][poername    ]           Prod Multiple(s)       [ima56                        ]
+ Purchase Safety Period[ima48                            ]           Min. Production Qty    [ima561                       ]
+
+}
+END -- gr34_1
+END -- Page14
+Page Page15(text=%"Page1")
+HBox hb2
+Grid gr6
+{
+
+  Available Qty          [ima262                       ]
+  MRP Usable             [ima26                        ]
+  P/R Qty                [qty_3                        ]
+  Purchase Qty           [qty_4                        ]
+  IQC Qty on QC          [qty_5                        ]
+  PO Qty on PLAN         [qty_8                        ]
+  Need Qty on IND        [qty_10                       ]
+
+
+
+
+}
+END -- gr6
+Grid gr7
+{
+
+ WIP Qty                 [qty_2                        ]
+ FQC Qty On Inspection   [qty_51                       ]
+ Allotment Qty           [qty_6                        ]
+ Qty Ordered             [qty_1                        ]
+ Order Allocation        [qty_7                        ]
+ PROD QTY ON PLAN        [qty_9                        ]
+ PROD BKQTY ON PLAN      [qty_11                       ]
+ MOV IO STK QTY          [qty_tlf907                   ]
+
+
+
+}
+END -- gr7
+END -- hb2
+END -- Page15
+END -- pc6
+Table s_sr
+{
+[ds_date         |ds_class |ds_no           |ima54       |vod20        |vod04        |vod21     |vod09     |ds_qlty         |ds_total      ]
+[ds_date         |ds_class |ds_no           |ima54       |vod20        |vod04        |vod21     |vod09     |ds_qlty         |ds_total      ]
+[ds_date         |ds_class |ds_no           |ima54       |vod20        |vod04        |vod21     |vod09     |ds_qlty         |ds_total      ]
+[ds_date         |ds_class |ds_no           |ima54       |vod20        |vod04        |vod21     |vod09     |ds_qlty         |ds_total      ]
+[ds_date         |ds_class |ds_no           |ima54       |vod20        |vod04        |vod21     |vod09     |ds_qlty         |ds_total      ]
+[ds_date         |ds_class |ds_no           |ima54       |vod20        |vod04        |vod21     |vod09     |ds_qlty         |ds_total      ]
+[ds_date         |ds_class |ds_no           |ima54       |vod20        |vod04        |vod21     |vod09     |ds_qlty         |ds_total      ]
+[ds_date         |ds_class |ds_no           |ima54       |vod20        |vod04        |vod21     |vod09     |ds_qlty         |ds_total      ]
+[ds_date         |ds_class |ds_no           |ima54       |vod20        |vod04        |vod21     |vod09     |ds_qlty         |ds_total      ]
+[ds_date         |ds_class |ds_no           |ima54       |vod20        |vod04        |vod21     |vod09     |ds_qlty         |ds_total      ]
+
+}
+END -- s_sr
+Grid gr3190
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3190
+END -- vb2
+END -- apsq841
+
+TABLES
+vod_file,
+vzy_file,
+ima_file
+ATTRIBUTES
+Group gb6:gb6, text="gb1";
+ButtonEdit vzy01=vzy_file.vzy01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit vzy02=vzy_file.vzy02, tabIndex=2;
+Edit vzy12=vzy_file.vzy12, tabIndex=3, noEntry;
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=16, not null, required, image="zoom";
+Edit ima491=ima_file.ima491, tabIndex=24, noEntry;
+Edit ima02=ima_file.ima02, tabIndex=18, noEntry;
+Edit ima59=ima_file.ima59, tabIndex=25, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=19, noEntry;
+Edit ima61=ima_file.ima61, tabIndex=33, noEntry;
+ComboBox ima08=ima_file.ima08, tabIndex=49, not null, required, queryEditable, comment="Enter  C/T/D/A/M/P/X/K/U/V/R/Z/S", items=(("C", "Configurable Product"),("T", "FAS Product"),("D", "Feture"),("A", "Family Product"),("M", "Make Product"),("P", "Purchase"),("X", "Phantom"),("K", "Kit"),("U", "Manufactured Mass Item"),("V", "Purchased Mass Item"),("R", "Routable"),("Z", "Miscellaneous"),("S", "Subcontract"));
+Edit ima27=ima_file.ima27, tabIndex=26, noEntry;
+Edit ima25=ima_file.ima25, tabIndex=17, noEntry;
+CheckBox ima24=ima_file.ima24, tabIndex=20, text="ima24", valueChecked = "Y", valueUnchecked = "N";
+Edit ima45=ima_file.ima45, tabIndex=29, noEntry;
+ButtonEdit ima67=ima_file.ima67, action=controlp, tabIndex=21, not null, required, image="zoom";
+Edit planername=formonly.planername type CHAR, tabIndex=27, noEntry;
+Edit ima46=ima_file.ima46, tabIndex=30, noEntry;
+ButtonEdit ima43=ima_file.ima43, action=controlp, tabIndex=22, not null, required, image="zoom";
+Edit poername=formonly.poername type CHAR, tabIndex=28, noEntry;
+Edit ima56=ima_file.ima56, tabIndex=31, noEntry;
+Edit ima48=ima_file.ima48, tabIndex=23, noEntry;
+Edit ima561=ima_file.ima561, tabIndex=32, noEntry;
+Edit ima262=ima_file.ima262, tabIndex=34, not null, required;
+Edit ima26=ima_file.ima26, tabIndex=35, not null, required;
+Edit qty_3=formonly.qty_3 type CHAR, tabIndex=36;
+Edit qty_4=formonly.qty_4 type CHAR, tabIndex=37;
+Edit qty_5=formonly.qty_5 type CHAR, tabIndex=38;
+Edit qty_8=formonly.qty_8 type CHAR, tabIndex=39;
+Edit qty_10=formonly.qty_10 type CHAR, tabIndex=40;
+Edit qty_2=formonly.qty_2 type CHAR, tabIndex=41;
+Edit qty_51=formonly.qty_51 type CHAR, tabIndex=42;
+Edit qty_6=formonly.qty_6 type CHAR, tabIndex=43;
+Edit qty_1=formonly.qty_1 type CHAR, tabIndex=44;
+Edit qty_7=formonly.qty_7 type CHAR, tabIndex=45;
+Edit qty_9=formonly.qty_9 type CHAR, tabIndex=46;
+Edit qty_11=formonly.qty_11 type CHAR, tabIndex=47;
+Edit qty_tlf907=formonly.qty_tlf907 type CHAR, tabIndex=48, noEntry;
+DateEdit ds_date=formonly.ds_date type CHAR, tabIndex=4, title="Demand/Supply Dt";
+Edit ds_class=formonly.ds_class type CHAR, tabIndex=5, title="Category";
+Edit ds_no=formonly.ds_no type CHAR, tabIndex=6, title="Doc#";
+Edit ima54=ima_file.ima54, tabIndex=7, title="Cust./Supplr";
+Edit vod20=vod_file.vod20, tabIndex=8, title="MO Demand No.";
+Edit vod04=vod_file.vod04, tabIndex=9, title="Requirement Qty";
+Edit vod21=vod_file.vod21, tabIndex=10, title="MO No. in Last Stage of the MO";
+Edit vod09=vod_file.vod09, tabIndex=11, title="Finished Product No.";
+Edit ds_qlty=formonly.ds_qlty type CHAR, tabIndex=12, title="(+-)Supply/Demand Qty";
+Edit ds_total=formonly.ds_total type CHAR, tabIndex=13, title="Estimated Balance";
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sr(formonly.ds_date,formonly.ds_class,formonly.ds_no,ima_file.ima54,vod_file.vod20,vod_file.vod04,vod_file.vod21,vod_file.vod09,formonly.ds_qlty,formonly.ds_total)
+SCREEN RECORD Undefined(vzy_file.vzy01,vzy_file.vzy02,vzy_file.vzy12,ima_file.ima01,ima_file.ima491,ima_file.ima02,ima_file.ima59,ima_file.ima021,ima_file.ima61,ima_file.ima08,ima_file.ima27,ima_file.ima25,ima_file.ima24,ima_file.ima45,ima_file.ima67,formonly.planername,ima_file.ima46,ima_file.ima43,formonly.poername,ima_file.ima56,ima_file.ima48,ima_file.ima561,ima_file.ima262,ima_file.ima26,formonly.qty_3,formonly.qty_4,formonly.qty_5,formonly.qty_8,formonly.qty_10,formonly.qty_2,formonly.qty_51,formonly.qty_6,formonly.qty_1,formonly.qty_7,formonly.qty_9,formonly.qty_11,formonly.qty_tlf907,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

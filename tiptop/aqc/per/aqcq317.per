@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcq317.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aqcq317")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr38
+{
+ <G group01                                            >
+  Item No.            [qcs021                        ]
+  Specification       [ima02                         ]
+  QC Date Range       [bdate       ]-[edate       ]
+ <                                                     >
+
+}
+END -- gr38
+END -- page01
+END -- folder01
+Table s_qct
+{
+[qcs01            |qcs04       |qcs03      |pmc03       |qct04    |azf03     |qct11  |qct07       |rate      |qct08]
+[qcs01            |qcs04       |qcs03      |pmc03       |qct04    |azf03     |qct11  |qct07       |rate      |qct08]
+[qcs01            |qcs04       |qcs03      |pmc03       |qct04    |azf03     |qct11  |qct07       |rate      |qct08]
+[qcs01            |qcs04       |qcs03      |pmc03       |qct04    |azf03     |qct11  |qct07       |rate      |qct08]
+[qcs01            |qcs04       |qcs03      |pmc03       |qct04    |azf03     |qct11  |qct07       |rate      |qct08]
+[qcs01            |qcs04       |qcs03      |pmc03       |qct04    |azf03     |qct11  |qct07       |rate      |qct08]
+[qcs01            |qcs04       |qcs03      |pmc03       |qct04    |azf03     |qct11  |qct07       |rate      |qct08]
+[qcs01            |qcs04       |qcs03      |pmc03       |qct04    |azf03     |qct11  |qct07       |rate      |qct08]
+[qcs01            |qcs04       |qcs03      |pmc03       |qct04    |azf03     |qct11  |qct07       |rate      |qct08]
+[qcs01            |qcs04       |qcs03      |pmc03       |qct04    |azf03     |qct11  |qct07       |rate      |qct08]
+
+}
+END -- s_qct
+Grid gr39
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr39
+END -- VBox1
+END -- aqcq317
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit qcs021=formonly.qcs021 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=3;
+DateEdit edate=formonly.edate type CHAR, tabIndex=4;
+Edit qcs01=formonly.qcs01 type CHAR, tabIndex=5, title="QC Note No";
+DateEdit qcs04=formonly.qcs04 type DATE, tabIndex=6, title="QC Date";
+Edit qcs03=formonly.qcs03 type CHAR, tabIndex=7, title="Vender No.";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=8, title="Vender Name", noEntry;
+Edit qct04=formonly.qct04 type CHAR, tabIndex=9, title="QC Items";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=10, title="QC Name";
+Edit qct11=formonly.qct11 type CHAR, tabIndex=11, title="QC Qty";
+Edit qct07=formonly.qct07 type CHAR, tabIndex=12, title="NO-Good Qty";
+Edit rate=formonly.rate type CHAR, tabIndex=13, title="NO-Good %";
+Edit qct08=formonly.qct08 type CHAR, tabIndex=14, title="Judge";
+Edit cnt=formonly.cnt type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qct(formonly.qcs01,formonly.qcs04,formonly.qcs03,formonly.pmc03,formonly.qct04,formonly.azf03,formonly.qct11,formonly.qct07,formonly.rate,formonly.qct08)
+SCREEN RECORD Undefined(formonly.qcs021,formonly.ima02,formonly.bdate,formonly.edate,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt71041.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt71041")
+Grid gr494
+{
+ <G group01                                           >
+  Advance Purchase Order No. QBE [ala01           ]
+  Opening Property QBE           [ala02     ]
+  Open L/C Date QBE              [ala08       ]
+  Open L/C Currency QBE          [ala20     ]
+  Accounts Department QBE        [ala04     ]
+ <                                                    >
+ <G group02                                           >
+  General Ledger Voucher No.     [l_no               ]
+  General Ledger Voucher Date    [l_date      ]
+
+ <                                                    >
+
+}
+END -- gr494
+END -- aapt71041
+
+TABLES
+ala_file
+ATTRIBUTES
+Group group01:group01, text="Enter Condition to Carry G/L Entry:";
+Edit ala01=ala_file.ala01, tabIndex=1;
+Edit ala02=ala_file.ala02, tabIndex=2;
+DateEdit ala08=ala_file.ala08, tabIndex=3;
+Edit ala20=ala_file.ala20, tabIndex=4;
+Edit ala04=ala_file.ala04, tabIndex=5;
+Group group02:group02;
+Edit l_no=formonly.l_no type VARCHAR, tabIndex=6;
+DateEdit l_date=formonly.l_date type DATE, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ala_file.ala01,ala_file.ala02,ala_file.ala08,ala_file.ala20,ala_file.ala04,formonly.l_no,formonly.l_date)
+END -- INSTRUCTIONS
+

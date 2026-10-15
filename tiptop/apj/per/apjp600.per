@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjp600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (image="zoom.png", spacing=normal, text="apjp600")
+VBox vb2
+Grid gr3
+{
+ <G qbe                                     >
+
+   Project No.    [pjb01              ]
+   WBS No.        [pjb02              ]
+
+
+
+
+ <                                          >
+}
+END -- gr3
+Grid gr4
+{
+[g_bgjob                                     ]
+
+}
+END -- gr4
+END -- vb2
+END -- apjp600
+
+TABLES
+pjb_file
+ATTRIBUTES
+Group qbe:QBE, text="QBE";
+ButtonEdit pjb01=pjb_file.pjb01, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit pjb02=pjb_file.pjb02, action=controlp, tabIndex=3, image="zoom.png";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=1, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pjb_file.pjb01,pjb_file.pjb02,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

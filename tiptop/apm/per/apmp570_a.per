@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp570_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp570_a")
+VBox VBox1
+Grid gr4935
+{
+ <G group01                                                                            >
+  P/R No.             [pmk01               ]  P/R Date            [pmk04               ]
+  P/R S/N             [pml02               ]  Store-in Date       [pml35               ]
+  Make No.            [pmlislk01           ]
+ <                                                                                     >
+}
+END -- gr4935
+Group g01(text="INPUT")
+Grid gr4936
+{
+  Buyer               [purpeo    ][gen02     ]  Arriving Date       [deldate     ]
+ <G group02                                                    >
+ [a                                                      ]
+ <                                                             >
+ <G group03                                                    >
+ [d                                                      ]
+  Supplier            [pmc01     ][pmc03     ]
+ <                                                             >
+
+}
+END -- gr4936
+END -- g01
+END -- VBox1
+END -- apmp570_a
+
+TABLES
+pmli_file,
+pml_file,
+pmk_file,
+pmc_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmk01=pmk_file.pmk01, action=controlp, tabIndex=1, image="zoom";
+DateEdit pmk04=pmk_file.pmk04, tabIndex=4;
+Edit pml02=pml_file.pml02, tabIndex=2;
+DateEdit pml35=pml_file.pml35, tabIndex=5;
+ButtonEdit pmlislk01=pmli_file.pmlislk01, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Employee";
+ButtonEdit purpeo=formonly.purpeo type VARCHAR, action=controlp, tabIndex=6, required, image="zoom", comment="<^P>Qry Employee";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=7, noEntry;
+DateEdit deldate=formonly.deldate type DATE, tabIndex=8;
+Group group02:group02;
+CheckBox a=formonly.a type VARCHAR, tabIndex=9, text="By Purchase Employeea", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Distribution condition";
+RadioGroup d=formonly.d type VARCHAR, tabIndex=10, items=(("1", "by Item Main Supplier"),("2", "by item vender ratio(Excluding 0)"),("3", "by item vender ratio(Including 0)"),("4", "by input"));
+ButtonEdit pmc01=pmc_file.pmc01, action=controlp, tabIndex=11, color = yellow, image="zoom", comment="<^P>Qry Item Supplier";
+Edit pmc03=pmc_file.pmc03, tabIndex=12, noEntry, color = yellow;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pmk_file.pmk01,pmk_file.pmk04,pml_file.pml02,pml_file.pml35,pmli_file.pmlislk01,formonly.purpeo,formonly.gen02,formonly.deldate,formonly.a,formonly.d,pmc_file.pmc01,pmc_file.pmc03)
+END -- INSTRUCTIONS
+

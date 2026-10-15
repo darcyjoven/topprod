@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aicp047.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aicp047")
+VBox vb3
+HBox hb2_
+Grid gr1
+{
+   <G qbe                                    >
+    Note No.  [rvu01                         ]
+    Date      [rvu03        ]
+    Vender    [rvu04                         ]
+    Inter Body[rvviicd03                     ]
+    Item No.  [rvv31                         ]
+
+
+   <                                         >
+
+
+
+
+}
+END -- gr1
+Grid gr2
+{
+ <G input                                                      >
+  Purchase No. [g_t1           ]  Currency     [pmm22          ]
+  Purchase Date[pmm04          ]  Exchange Rate[pmm42          ]
+  Purchase Man [pmm12          ][gen02                         ]
+  Purchase Dep.[pmm13          ]
+  Issue No.    [g_t2           ]
+  Note. Date   [sfp03          ]
+
+
+
+
+ <                                                             >
+
+}
+END -- gr2
+END -- hb2_
+Grid gr3881
+{
+[g_bgjob                                               ]
+
+}
+END -- gr3881
+END -- vb3
+END -- aicp047
+
+TABLES
+rvv_file,
+rvu_file,
+pmm_file,
+sfp_file,
+rvvi_file
+ATTRIBUTES
+Group qbe:qbe, text="QBE";
+ButtonEdit rvu01=rvu_file.rvu01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+DateEdit rvu03=rvu_file.rvu03, tabIndex=2, not null, required;
+ButtonEdit rvu04=rvu_file.rvu04, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+ButtonEdit rvviicd03=rvvi_file.rvviicd03, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+ButtonEdit rvv31=rvv_file.rvv31, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+Group input:input, text="INPUT";
+ButtonEdit g_t1=formonly.g_t1 type VARCHAR, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+ButtonEdit pmm22=pmm_file.pmm22, action=controlp, tabIndex=7, image="zoom.png";
+DateEdit pmm04=pmm_file.pmm04, tabIndex=8, not null, required;
+Edit pmm42=pmm_file.pmm42, tabIndex=9;
+ButtonEdit pmm12=pmm_file.pmm12, action=controlp, tabIndex=10, not null, required, image="zoom.png";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=11, noEntry;
+ButtonEdit pmm13=pmm_file.pmm13, action=controlp, tabIndex=12, not null, required, image="zoom.png";
+ButtonEdit g_t2=formonly.g_t2 type VARCHAR, action=controlp, tabIndex=13, not null, required, image="zoom.png";
+DateEdit sfp03=sfp_file.sfp03, tabIndex=14, not null, required;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=15, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rvu_file.rvu01,rvu_file.rvu03,rvu_file.rvu04,rvvi_file.rvviicd03,rvv_file.rvv31,formonly.g_t1,pmm_file.pmm22,pmm_file.pmm04,pmm_file.pmm42,pmm_file.pmm12,formonly.gen02,pmm_file.pmm13,formonly.g_t2,sfp_file.sfp03,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

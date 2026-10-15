@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_d.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Mantain Multi-Invoice")
+VBox vb3
+Table s_apk
+{
+[apk0|apk11    |apk17|apk12|apk13|apk05     |apk03           |apk04               |apk14|apk15               |apk08f              |apk07f              |apk06f              |apk08               |apk07               |apk06               |apk32             ]
+[apk0|apk11    |apk17|apk12|apk13|apk05     |apk03           |apk04               |apk14|apk15               |apk08f              |apk07f              |apk06f              |apk08               |apk07               |apk06               |apk32             ]
+[apk0|apk11    |apk17|apk12|apk13|apk05     |apk03           |apk04               |apk14|apk15               |apk08f              |apk07f              |apk06f              |apk08               |apk07               |apk06               |apk32             ]
+[apk0|apk11    |apk17|apk12|apk13|apk05     |apk03           |apk04               |apk14|apk15               |apk08f              |apk07f              |apk06f              |apk08               |apk07               |apk06               |apk32             ]
+[apk0|apk11    |apk17|apk12|apk13|apk05     |apk03           |apk04               |apk14|apk15               |apk08f              |apk07f              |apk06f              |apk08               |apk07               |apk06               |apk32             ]
+[apk0|apk11    |apk17|apk12|apk13|apk05     |apk03           |apk04               |apk14|apk15               |apk08f              |apk07f              |apk06f              |apk08               |apk07               |apk06               |apk32             ]
+[apk0|apk11    |apk17|apk12|apk13|apk05     |apk03           |apk04               |apk14|apk15               |apk08f              |apk07f              |apk06f              |apk08               |apk07               |apk06               |apk32             ]
+[apk0|apk11    |apk17|apk12|apk13|apk05     |apk03           |apk04               |apk14|apk15               |apk08f              |apk07f              |apk06f              |apk08               |apk07               |apk06               |apk32             ]
+[apk0|apk11    |apk17|apk12|apk13|apk05     |apk03           |apk04               |apk14|apk15               |apk08f              |apk07f              |apk06f              |apk08               |apk07               |apk06               |apk32             ]
+[apk0|apk11    |apk17|apk12|apk13|apk05     |apk03           |apk04               |apk14|apk15               |apk08f              |apk07f              |apk06f              |apk08               |apk07               |apk06               |apk32             ]
+}
+END -- s_apk
+Grid gr354
+{
+ <G group01                                                                                  >  <G group02                >
+  H.C b-tax [l_tot1              ] H.C tax[l_tot2             ] H.C sum[l_tot3             ]     [l_tot28             ]
+
+ <                                                                                           >  <                         >
+
+
+}
+END -- gr354
+END -- vb3
+END -- aapt110_d
+
+TABLES
+apk_file
+ATTRIBUTES
+Edit apk0=apk_file.apk02, tabIndex=1, title="Ln#";
+ButtonEdit apk11=apk_file.apk11, action=controlp, tabIndex=2, title="Tax Type", image="zoom", comment="<^P>Qry Tax Type";
+Edit apk17=apk_file.apk171, tabIndex=3, title="Form", noEntry;
+ComboBox apk12=apk_file.apk17, tabIndex=4, title="Ded.", queryEditable, items=(("1", %"Deductible Cost and Expense"),("2", %"Creditable Fixed Asset"),("3", %"No deductible Cost and Expense"),("4", %"No Creditable Fixed Asset"));
+ComboBox apk13=apk_file.apk172, tabIndex=5, title="Tax", noEntry, comment="1.Taxable  2.Zero Tax Rate  3.Tax-Free", items=(("1", %"Taxable"),("2", %"0-Tax Rate"),("3", %"Exempted"));
+DateEdit apk05=apk_file.apk05, tabIndex=6, title="Invo.Date";
+Edit apk03=apk_file.apk03, tabIndex=7, title="Invoice No.", upShift, comment="Enter Tax Receipt when Declaration Format is 28";
+Edit apk04=apk_file.apk04, tabIndex=8, title="Uniform No.";
+ButtonEdit apk14=apk_file.apk12, action=controlp, tabIndex=9, title="Curr", image="zoom", comment="<^P>Qry Currency";
+ButtonEdit apk15=apk_file.apk13, action=controlp, tabIndex=10, title="Ex Rate", not null, required, image="zoom";
+Edit apk08f=apk_file.apk08f, tabIndex=11, title="F.C B-Tax", comment="Enter Tax Principal when Declaration Format is 28";
+Edit apk07f=apk_file.apk07f, tabIndex=12, title="F.C Tax";
+Edit apk06f=apk_file.apk06f, tabIndex=13, title="F.C Sum", noEntry;
+Edit apk08=apk_file.apk08, tabIndex=14, title="H.C B-Tax", not null, required, comment="Enter Tax Principal when Declaration Format is 28";
+Edit apk07=apk_file.apk07, tabIndex=15, title="H.C Tax", not null, required;
+Edit apk06=apk_file.apk06, tabIndex=16, title="H.C Sum", noEntry, not null, required;
+ButtonEdit apk32=apk_file.apk32, action=controlp, tabIndex=21, title="Declaration No.", not null, image="zoom";
+Group group01:group01, text="H.C Total";
+Edit l_tot1=formonly.l_tot1 type CHAR, tabIndex=17;
+Edit l_tot2=formonly.l_tot2 type CHAR, tabIndex=18;
+Edit l_tot3=formonly.l_tot3 type CHAR, tabIndex=19;
+Group group02:group02, text="Tax Principal";
+Edit l_tot28=formonly.l_tot28 type CHAR, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apk(apk_file.apk02,apk_file.apk11,apk_file.apk171,apk_file.apk17,apk_file.apk172,apk_file.apk05,apk_file.apk03,apk_file.apk04,apk_file.apk12,apk_file.apk13,apk_file.apk08f,apk_file.apk07f,apk_file.apk06f,apk_file.apk08,apk_file.apk07,apk_file.apk06,apk_file.apk32)
+SCREEN RECORD Undefined(formonly.l_tot1,formonly.l_tot2,formonly.l_tot3,formonly.l_tot28)
+END -- INSTRUCTIONS
+

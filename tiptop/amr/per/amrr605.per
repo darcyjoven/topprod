@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amrr605.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amrr605")
+VBox VBox1
+Grid gr3809
+{
+ <G group01                                                                             >
+  Action Day [msu11               ]  Item No.        [msu01               ]
+  Brand      [msu02               ]  Requirement Date[msu03               ]
+ <                                                                                      >
+
+}
+END -- gr3809
+Group g01(text="INPUT")
+Grid gr3810
+{
+ Version    [msu000    ]
+
+ <G group03                                                       >
+ [s1           ]     [s2            ]     [s3             ]
+ [t1           ]     [t2            ]     [t3             ]
+ <                                                                >
+
+}
+END -- gr3810
+END -- g01
+Grid gr3811
+{
+[more                                                            ]
+
+}
+END -- gr3811
+END -- VBox1
+END -- amrr605
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit msu11=formonly.msu11 type DATE, tabIndex=1;
+ButtonEdit msu01=formonly.msu01 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit msu02=formonly.msu02 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+DateEdit msu03=formonly.msu03 type DATE, tabIndex=4;
+Edit msu000=formonly.msu000 type VARCHAR, tabIndex=5, not null, required;
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=6, queryEditable, items=(("1", "Action Day"),("2", "Item No."),("3", "Vendor"),("4", "Time Bucket day"),("5", "Plant"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=7, queryEditable, items=(("1", "Action Day"),("2", "Item No."),("3", "Vendor"),("4", "Time Bucket day"),("5", "Plant"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=8, queryEditable, items=(("1", "Action Day"),("2", "Item No."),("3", "Vendor"),("4", "Time Bucket day"),("5", "Plant"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.msu11,formonly.msu01,formonly.msu02,formonly.msu03,formonly.msu000,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.more)
+END -- INSTRUCTIONS
+

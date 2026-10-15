@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr901.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr901")
+VBox vb3
+Grid gr2793
+{
+ <G group01                                         >
+  Current Accounting Year-Period     [aaa0] - [aaa1]
+ <                                                  >
+
+}
+END -- gr2793
+Group group02(text="INPUT")
+Grid gr2794
+{
+ Book No.                      [bookno             ]
+ Accounting Year               [y1                 ]
+ Period                        [m2                 ]
+ Voucher Initial Date          [bdate              ]
+ Voucher Ending date           [edate              ]
+ Entered By                    [pers               ]
+
+[b                             ]
+[g_xx                          ]
+[z                             ]
+}
+END -- gr2794
+END -- group02
+Grid gr2795
+{
+[more                                                       ]
+
+}
+END -- gr2795
+END -- vb3
+END -- aglr901
+
+ATTRIBUTES
+Group group01:group01;
+Edit aaa0=formonly.aaa04 type CHAR, tabIndex=1, noEntry;
+Edit aaa1=formonly.aaa05 type CHAR, tabIndex=2, noEntry;
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+Edit y1=formonly.y1 type SMALLINT, tabIndex=3;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=4;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=5;
+DateEdit edate=formonly.edate type DATE, tabIndex=6;
+ButtonEdit pers=formonly.pers type VARCHAR, action=controlp, tabIndex=7, image="zoom";
+CheckBox b=formonly.b type CHAR, tabIndex=8, text="Check Voucher Body", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_xx=formonly.g_xx type CHAR, tabIndex=9, text="Check missing Voucher No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox z=formonly.z type CHAR, tabIndex=10, text="Print Voucher Unconfirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aaa04,formonly.aaa05,formonly.bookno,formonly.y1,formonly.m2,formonly.bdate,formonly.edate,formonly.pers,formonly.b,formonly.g_xx,formonly.z,formonly.more)
+END -- INSTRUCTIONS
+

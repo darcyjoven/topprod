@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi200_5.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi200_5")
+VBox VBox1
+Folder pc303
+Page page01(text="Main")
+HBox HBox1
+Grid gr1345
+{
+ <G group01                                                          >
+  Customer #            [occ01          ]
+  Cust Abbr.            [occ02                         ]
+  Current Status        [occ1004   ] [imgmksg]
+                                     [       ]
+  Tax Regi#             [occ1017        ]
+  Tax Regi Valid Dt.FR  [occ1018        ]    TO [occ1019        ]
+  Taxpayer Idnt Cd      [occ1020        ]
+  Full Invoice Name     [occ1021                                 ]
+ <                                                                   >
+
+}
+END -- gr1345
+Grid gr1346
+{
+ <G group02                                                       >
+  Customer Property   [occ06]
+  Invoice Cust        [occ1022   ] [occ02a              ]
+  OutStanding Cust    [occ1024   ] [tqb02               ]
+  Cost Cust           [occ1025   ] [tqb02a              ]
+  CK Account Date     [occ1026   ]
+  MAX Discount Ratio  [occ1028   ]%
+ <                                                                >
+
+
+
+}
+END -- gr1346
+END -- HBox1
+END -- page01
+END -- pc303
+END -- VBox1
+END -- atmi200_5
+
+TABLES
+occ_file
+ATTRIBUTES
+Group group01:group01;
+Edit occ01=occ_file.occ01, tabIndex=1, noEntry, not null, required;
+Edit occ02=occ_file.occ02, tabIndex=2, noEntry, not null, required;
+ComboBox occ1004=occ_file.occ1004, tabIndex=3, noEntry, not null, required, items=(("1", "Open"),("2", "Approving"),("3", "Confirm"),("4", "Suspended"),("5", "Cancel"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit occ1017=occ_file.occ1017, tabIndex=5;
+DateEdit occ1018=occ_file.occ1018, tabIndex=6;
+DateEdit occ1019=occ_file.occ1019, tabIndex=7;
+Edit occ1020=occ_file.occ1020, tabIndex=8;
+Edit occ1021=occ_file.occ1021, tabIndex=9, not null, required;
+Group group02:group02;
+ComboBox occ06=occ_file.occ06, tabIndex=10, noEntry, not null, required, queryEditable, items=(("1", "Dealing Customer"),("2", "Shipping Customer"),("3", "Invoice Customer"),("4", "Collecting Customer"));
+ButtonEdit occ1022=occ_file.occ1022, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Qry Customs #";
+Edit occ02a=formonly.occ02a type CHAR, tabIndex=12, noEntry;
+ButtonEdit occ1024=occ_file.occ1024, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P>Qry Organize #";
+Edit tqb02=formonly.tqb02 type CHAR, tabIndex=14, noEntry;
+ButtonEdit occ1025=occ_file.occ1025, action=controlp, tabIndex=15, not null, required, image="zoom", comment="<^P>Qry Organize #";
+Edit tqb02a=formonly.tqb02a type CHAR, tabIndex=16, noEntry;
+Edit occ1026=occ_file.occ1026, tabIndex=17;
+Edit occ1028=occ_file.occ1028, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(occ_file.occ01,occ_file.occ02,occ_file.occ1004,formonly.imgmksg,occ_file.occ1017,occ_file.occ1018,occ_file.occ1019,occ_file.occ1020,occ_file.occ1021,occ_file.occ06,occ_file.occ1022,formonly.occ02a,occ_file.occ1024,formonly.tqb02,occ_file.occ1025,formonly.tqb02a,occ_file.occ1026,occ_file.occ1028)
+END -- INSTRUCTIONS
+

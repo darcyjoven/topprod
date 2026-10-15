@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt7101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Generate Note Payable")
+VBox VBox1
+Table s_nnf
+{
+[nnf02 |nnf08            |nnf03     |nnf04f              |nnf04               |nnf05       |nnf06          |nmd02     ]
+[nnf02 |nnf08            |nnf03     |nnf04f              |nnf04               |nnf05       |nnf06          |nmd02     ]
+[nnf02 |nnf08            |nnf03     |nnf04f              |nnf04               |nnf05       |nnf06          |nmd02     ]
+[nnf02 |nnf08            |nnf03     |nnf04f              |nnf04               |nnf05       |nnf06          |nmd02     ]
+[nnf02 |nnf08            |nnf03     |nnf04f              |nnf04               |nnf05       |nnf06          |nmd02     ]
+[nnf02 |nnf08            |nnf03     |nnf04f              |nnf04               |nnf05       |nnf06          |nmd02     ]
+[nnf02 |nnf08            |nnf03     |nnf04f              |nnf04               |nnf05       |nnf06          |nmd02     ]
+[nnf02 |nnf08            |nnf03     |nnf04f              |nnf04               |nnf05       |nnf06          |nmd02     ]
+[nnf02 |nnf08            |nnf03     |nnf04f              |nnf04               |nnf05       |nnf06          |nmd02     ]
+[nnf02 |nnf08            |nnf03     |nnf04f              |nnf04               |nnf05       |nnf06          |nmd02     ]
+
+}
+END -- s_nnf
+Grid gr4536
+{
+ <G group01                       >  <G group02                     >
+  [nnf04f_t                 ]         [nnf04_t                ]
+ <                                >  <                              >
+
+}
+END -- gr4536
+END -- VBox1
+END -- anmt7101
+
+TABLES
+nnf_file
+ATTRIBUTES
+Edit nnf02=nnf_file.nnf02, tabIndex=1, title="Line#", not null, required;
+ComboBox nnf08=nnf_file.nnf08, tabIndex=2, title="Check/Commercial", queryEditable, comment="1.Check 2.Commercial Paper ", items=(("1", %"Check"),("2", %"Commercial Paper"));
+DateEdit nnf03=nnf_file.nnf03, tabIndex=3, title="Due Date";
+Edit nnf04f=nnf_file.nnf04f, tabIndex=4, title="O.C Amt";
+Edit nnf04=nnf_file.nnf04, tabIndex=5, title="H.C Amt", not null, required;
+ButtonEdit nnf05=nnf_file.nnf05, action=controlp, tabIndex=6, title="Paying Bank", image="zoom", comment="<^P>Qry Bank    ";
+Edit nnf06=nnf_file.nnf06, tabIndex=7, title="Drawing Slip#", noEntry;
+Edit nmd02=formonly.nmd02 type CHAR, tabIndex=8, title="Note No.", noEntry;
+Group group01:group01, text="O.C Amt Total";
+Edit nnf04f_t=formonly.nnf04f_t type CHAR, tabIndex=9;
+Group group02:group02, text="H.C Amt Total";
+Edit nnf04_t=formonly.nnf04_t type CHAR, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nnf(nnf_file.nnf02,nnf_file.nnf08,nnf_file.nnf03,nnf_file.nnf04f,nnf_file.nnf04,nnf_file.nnf05,nnf_file.nnf06,formonly.nmd02)
+SCREEN RECORD Undefined(formonly.nnf04f_t,formonly.nnf04_t)
+END -- INSTRUCTIONS
+

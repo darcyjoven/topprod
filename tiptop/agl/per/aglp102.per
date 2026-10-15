@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglp102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglp102")
+VBox vb11
+Grid gr2480
+{
+ <G group01                                  >
+  Entered By          [abauser             ]
+ <                                           >
+}
+END -- gr2480
+Group g01(text="INPUT")
+Grid gr2481
+{
+ Book No.            [bookn]
+ Initial Voc. date   [bdate       ]
+ Ending Voc.Date     [edate       ]
+ Initial Voc. No.    [aba01_1             ]
+ Ending Voc.No.      [aba01_2             ]
+}
+END -- gr2481
+END -- g01
+Grid gr2482
+{
+ [g_bgj]
+
+
+}
+END -- gr2482
+END -- vb11
+END -- aglp102
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit abauser=formonly.abauser type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit bookn=formonly.bookno type CHAR, action=controlp, tabIndex=7, not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=2;
+DateEdit edate=formonly.edate type DATE, tabIndex=3;
+Edit aba01_1=formonly.aba01_1 type VARCHAR, tabIndex=4;
+Edit aba01_2=formonly.aba01_2 type VARCHAR, tabIndex=5;
+CheckBox g_bgj=formonly.g_bgjob type CHAR, tabIndex=6, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.abauser,formonly.bookno,formonly.bdate,formonly.edate,formonly.aba01_1,formonly.aba01_2,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

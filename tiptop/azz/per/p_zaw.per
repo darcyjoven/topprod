@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zaw.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zaw")
+VBox vb2
+Folder pc726
+Page page01(text="Main")
+Grid gr3119
+{
+ Program Code  [zaw01             ][gaz03                           ]
+ Template Code [zaw02             ]
+ Program User  [zaw05             ][zx02                            ]
+ Program Class [zaw04             ][zw02                            ]
+ Industry      [zaw10          ]
+[zaw03                               ]
+ Time Out      [zaw11 ]
+ filename      [filename                                                               ]
+[zaw12        ] txt_zaw13 [zaw13              ]
+
+}
+END -- gr3119
+END -- page01
+END -- pc726
+Table s_zaw
+{
+[zaw0|zaw06   |zaw08          |zaw09                 |paper   |custompa|zaw14   |zaw15   |zawuser |zawgrup|zawmodu |zawdate |zaworiu |zaworig     ]
+[zaw0|zaw06   |zaw08          |zaw09                 |paper   |custompa|zaw14   |zaw15   |zawuser |zawgrup|zawmodu |zawdate |zaworiu |zaworig     ]
+[zaw0|zaw06   |zaw08          |zaw09                 |paper   |custompa|zaw14   |zaw15   |zawuser |zawgrup|zawmodu |zawdate |zaworiu |zaworig     ]
+[zaw0|zaw06   |zaw08          |zaw09                 |paper   |custompa|zaw14   |zaw15   |zawuser |zawgrup|zawmodu |zawdate |zaworiu |zaworig     ]
+[zaw0|zaw06   |zaw08          |zaw09                 |paper   |custompa|zaw14   |zaw15   |zawuser |zawgrup|zawmodu |zawdate |zaworiu |zaworig     ]
+[zaw0|zaw06   |zaw08          |zaw09                 |paper   |custompa|zaw14   |zaw15   |zawuser |zawgrup|zawmodu |zawdate |zaworiu |zaworig     ]
+[zaw0|zaw06   |zaw08          |zaw09                 |paper   |custompa|zaw14   |zaw15   |zawuser |zawgrup|zawmodu |zawdate |zaworiu |zaworig     ]
+[zaw0|zaw06   |zaw08          |zaw09                 |paper   |custompa|zaw14   |zaw15   |zawuser |zawgrup|zawmodu |zawdate |zaworiu |zaworig     ]
+[zaw0|zaw06   |zaw08          |zaw09                 |paper   |custompa|zaw14   |zaw15   |zawuser |zawgrup|zawmodu |zawdate |zaworiu |zaworig     ]
+[zaw0|zaw06   |zaw08          |zaw09                 |paper   |custompa|zaw14   |zaw15   |zawuser |zawgrup|zawmodu |zawdate |zaworiu |zaworig     ]
+}
+END -- s_zaw
+Grid gr3120
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr3120
+END -- vb2
+END -- p_zaw
+
+TABLES
+zaw_file
+ATTRIBUTES
+ButtonEdit zaw01=zaw_file.zaw01, action=controlp, tabIndex=1, not null, required, image="zoom", downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=2;
+Edit zaw02=zaw_file.zaw02, tabIndex=3;
+ButtonEdit zaw05=zaw_file.zaw05, action=controlp, tabIndex=4, not null, required, image="zoom", scroll;
+Edit zx02=formonly.zx02 type CHAR, tabIndex=5;
+ButtonEdit zaw04=zaw_file.zaw04, action=controlp, tabIndex=6, not null, required, image="zoom", scroll;
+Edit zw02=formonly.zw02 type CHAR, tabIndex=7;
+ComboBox zaw10=zaw_file.zaw10, tabIndex=8;
+CheckBox zaw03=zaw_file.zaw03, tabIndex=9, text="Editing a Customerlized Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit zaw11=zaw_file.zaw11, tabIndex=10;
+Edit filename=formonly.filename type CHAR, tabIndex=11;
+CheckBox zaw12=zaw_file.zaw12, tabIndex=26, default = "N", text="zaw12", valueChecked = "Y", valueUnchecked = "N";
+RadioGroup zaw13=zaw_file.zaw13, tabIndex=27, default = "1", noEntry, not null, orientation=horizontal, items=(("1", "Every Page"),("2", "Last Page"));
+Edit zaw0=zaw_file.zaw07, tabIndex=12, title="Paper";
+ComboBox zaw06=zaw_file.zaw06, tabIndex=13, title="Language", items=(("0", "Traditional Chinese Description"),("1", "English Description"),("2", "Simplified Chinese Description"),("3", "Complete English"));
+Edit zaw08=zaw_file.zaw08, tabIndex=14, title="CR Template Name";
+Edit zaw09=zaw_file.zaw09, tabIndex=15, title="CR Template Desc";
+ComboBox paper=formonly.Paper type CHAR, tabIndex=16, title="Paper", not null, required, items=(("1", "A4"),("2", "A3"),("3", "A2"),("4", "A1"),("5", "A0"),("6", "s0"),("7", "s1"),("8", "x0"),("9", "y0"),("10", "Letter"),("11", "US Std Fanfold"),("12", "21.59*13.97"),("13", "Other"));
+Edit custompa=formonly.custompaper type VARCHAR, tabIndex=17, title="Custom Paper";
+Edit zaw14=zaw_file.zaw14, tabIndex=25, title="zaw14", hidden;
+ComboBox zaw15=zaw_file.zaw15, tabIndex=18, title="Paper Orientation", items=(("P", "Portrait"),("L", "Landscape"));
+Edit zawuser=zaw_file.zawuser, tabIndex=19, title="Record Owner", noEntry;
+Edit zawgrup=zaw_file.zawgrup, tabIndex=20, title="Department", noEntry;
+Edit zawmodu=zaw_file.zawmodu, tabIndex=21, title="Last Modified by", noEntry;
+DateEdit zawdate=zaw_file.zawdate, tabIndex=22, title="Create/Modify Date", noEntry;
+Edit zaworiu=zaw_file.zaworiu, tabIndex=28, title="Record Orig.", noEntry;
+Edit zaworig=zaw_file.zaworig, tabIndex=29, title=%"Dept Orig.", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zaw(zaw_file.zaw07,zaw_file.zaw06,zaw_file.zaw08,zaw_file.zaw09,formonly.Paper,formonly.custompaper,zaw_file.zaw14,zaw_file.zaw15,zaw_file.zawuser,zaw_file.zawgrup,zaw_file.zawmodu,zaw_file.zawdate,zaw_file.zaworiu,zaw_file.zaworig)
+SCREEN RECORD Undefined(zaw_file.zaw01,formonly.gaz03,zaw_file.zaw02,zaw_file.zaw05,formonly.zx02,zaw_file.zaw04,formonly.zw02,zaw_file.zaw10,zaw_file.zaw03,zaw_file.zaw11,formonly.filename,zaw_file.zaw12,zaw_file.zaw13,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp930_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Document Property")
+Grid gr4133
+{
+ <T s_plant                                                                                                                                                                                                   >
+ [p_plant                    |gl_dbs   |p_bookno               |gl_no                        |p_bookno1              |gl_no1                       |gl_date                      |yy    |mm                  ]
+ [p_plant                    |gl_dbs   |p_bookno               |gl_no                        |p_bookno1              |gl_no1                       |gl_date                      |yy    |mm                  ]
+ [p_plant                    |gl_dbs   |p_bookno               |gl_no                        |p_bookno1              |gl_no1                       |gl_date                      |yy    |mm                  ]
+ [p_plant                    |gl_dbs   |p_bookno               |gl_no                        |p_bookno1              |gl_no1                       |gl_date                      |yy    |mm                  ]
+ [p_plant                    |gl_dbs   |p_bookno               |gl_no                        |p_bookno1              |gl_no1                       |gl_date                      |yy    |mm                  ]
+ [p_plant                    |gl_dbs   |p_bookno               |gl_no                        |p_bookno1              |gl_no1                       |gl_date                      |yy    |mm                  ]
+ [p_plant                    |gl_dbs   |p_bookno               |gl_no                        |p_bookno1              |gl_no1                       |gl_date                      |yy    |mm                  ]
+ [p_plant                    |gl_dbs   |p_bookno               |gl_no                        |p_bookno1              |gl_no1                       |gl_date                      |yy    |mm                  ]
+ [p_plant                    |gl_dbs   |p_bookno               |gl_no                        |p_bookno1              |gl_no1                       |gl_date                      |yy    |mm                  ]
+ [p_plant                    |gl_dbs   |p_bookno               |gl_no                        |p_bookno1              |gl_no1                       |gl_date                      |yy    |mm                  ]
+ <                                                                                                                                                                                                            >
+
+}
+END -- gr4133
+END -- anmp930_a
+
+ATTRIBUTES
+Table s_plant:s_plant;
+Edit p_plant=formonly.p_plant type VARCHAR, tabIndex=1, title="General Ledger Plant No.", noEntry, not null, required;
+Edit gl_dbs=formonly.gl_dbs type VARCHAR, tabIndex=2, title="dbs name", noEntry, not null, required;
+ButtonEdit p_bookno=formonly.p_bookno type VARCHAR, action=controlp, tabIndex=3, title="General Ledger No.", not null, required, image="zoom", comment="Qry bookno";
+ButtonEdit gl_no=formonly.gl_no type VARCHAR, action=controlp, tabIndex=4, title="General Ledger Voucher Type", not null, required, image="zoom", comment="Qry Documents";
+ButtonEdit p_bookno1=formonly.p_bookno1 type VARCHAR, action=controlp, tabIndex=5, title="General Ledger No.2", not null, required, image="zoom", comment="Qry bookno";
+ButtonEdit gl_no1=formonly.gl_no1 type VARCHAR, action=controlp, tabIndex=6, title="General Ledger Voucher Type2", not null, required, image="zoom", comment="Qry Documents";
+DateEdit gl_date=formonly.gl_date type DATE, tabIndex=7, title="General Ledger Voucher Date", not null, required;
+Edit yy=formonly.yy type SMALLINT, tabIndex=8, title="YEAR", noEntry, not null, required;
+Edit mm=formonly.mm type SMALLINT, tabIndex=9, title="MONTH", noEntry, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_plant(formonly.p_plant,formonly.gl_dbs,formonly.p_bookno,formonly.gl_no,formonly.p_bookno1,formonly.gl_no1,formonly.gl_date,formonly.yy,formonly.mm)
+END -- INSTRUCTIONS
+

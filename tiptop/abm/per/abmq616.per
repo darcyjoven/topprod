@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmq616.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmq616")
+VBox VBox1
+Grid gr900
+{
+ <G group01                                        >
+  Master Item No.  [bmb01                         ]
+  Component No.    [bmb03                         ]
+  Inst.Loc         [bmb13               ]
+  Alternate Code   [bmb29               ]
+ <                                                 >
+ <G group02                              >
+  Sort by          [s           ]
+  Expired Date     [edate       ]
+ <                                       >
+
+}
+END -- gr900
+Grid gr901
+{
+ [more                                 ]
+
+}
+END -- gr901
+END -- VBox1
+END -- abmq616
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit bmb01=formonly.bmb01 type VARCHAR, tabIndex=1;
+Edit bmb03=formonly.bmb03 type VARCHAR, tabIndex=2;
+Edit bmb13=formonly.bmb13 type VARCHAR, tabIndex=3;
+Edit bmb29=formonly.bmb29 type VARCHAR, tabIndex=4;
+Group group02:group02, text="INPUT";
+ComboBox s=formonly.s type VARCHAR, tabIndex=5, not null, required, comment="1 \"Line No.\" 2 \"Component\" 3 \"Location of Insert\"", items=(("1", "Line No."),("2", "Component"),("3", "Location of Insert"));
+DateEdit edate=formonly.edate type DATE, tabIndex=6;
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bmb01,formonly.bmb03,formonly.bmb13,formonly.bmb29,formonly.s,formonly.edate,formonly.more)
+END -- INSTRUCTIONS
+

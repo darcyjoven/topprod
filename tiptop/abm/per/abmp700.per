@@ -1,0 +1,111 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmp700")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+Grid gr574
+{
+ Data Center [gev04         ][geu02               ]
+
+}
+END -- gr574
+END -- page01
+END -- folder01
+Table s_bmx
+{
+[sel  |bmx01               |bmx07                  |bmx10       |bmx05    |bmg03                ]
+[sel  |bmx01               |bmx07                  |bmx10       |bmx05    |bmg03                ]
+[sel  |bmx01               |bmx07                  |bmx10       |bmx05    |bmg03                ]
+[sel  |bmx01               |bmx07                  |bmx10       |bmx05    |bmg03                ]
+[sel  |bmx01               |bmx07                  |bmx10       |bmx05    |bmg03                ]
+
+}
+END -- s_bmx
+Table s_bmz
+{
+[bmz02       |ima02_1             |ima021_1            |bmz04       |bmz03      ]
+[bmz02       |ima02_1             |ima021_1            |bmz04       |bmz03      ]
+[bmz02       |ima02_1             |ima021_1            |bmz04       |bmz03      ]
+[bmz02       |ima02_1             |ima021_1            |bmz04       |bmz03      ]
+
+}
+END -- s_bmz
+Table s_bmy
+{
+[bmy02|bmy03      |bmy19        |bmy04  |bmy05              |ima02          |ima021   |bmy27               |ima02n        |ima021n        |bmy16    |bmy06   |bmy30                 |bmy07   |bmy22           ]
+[bmy02|bmy03      |bmy19        |bmy04  |bmy05              |ima02          |ima021   |bmy27               |ima02n        |ima021n        |bmy16    |bmy06   |bmy30                 |bmy07   |bmy22           ]
+[bmy02|bmy03      |bmy19        |bmy04  |bmy05              |ima02          |ima021   |bmy27               |ima02n        |ima021n        |bmy16    |bmy06   |bmy30                 |bmy07   |bmy22           ]
+[bmy02|bmy03      |bmy19        |bmy04  |bmy05              |ima02          |ima021   |bmy27               |ima02n        |ima021n        |bmy16    |bmy06   |bmy30                 |bmy07   |bmy22           ]
+[bmy02|bmy03      |bmy19        |bmy04  |bmy05              |ima02          |ima021   |bmy27               |ima02n        |ima021n        |bmy16    |bmy06   |bmy30                 |bmy07   |bmy22           ]
+[bmy02|bmy03      |bmy19        |bmy04  |bmy05              |ima02          |ima021   |bmy27               |ima02n        |ima021n        |bmy16    |bmy06   |bmy30                 |bmy07   |bmy22           ]
+[bmy02|bmy03      |bmy19        |bmy04  |bmy05              |ima02          |ima021   |bmy27               |ima02n        |ima021n        |bmy16    |bmy06   |bmy30                 |bmy07   |bmy22           ]
+[bmy02|bmy03      |bmy19        |bmy04  |bmy05              |ima02          |ima021   |bmy27               |ima02n        |ima021n        |bmy16    |bmy06   |bmy30                 |bmy07   |bmy22           ]
+[bmy02|bmy03      |bmy19        |bmy04  |bmy05              |ima02          |ima021   |bmy27               |ima02n        |ima021n        |bmy16    |bmy06   |bmy30                 |bmy07   |bmy22           ]
+[bmy02|bmy03      |bmy19        |bmy04  |bmy05              |ima02          |ima021   |bmy27               |ima02n        |ima021n        |bmy16    |bmy06   |bmy30                 |bmy07   |bmy22           ]
+
+}
+END -- s_bmy
+Grid gr1292
+{
+  ---------- Rows [cnt   ] / [cn2   ] / [cn3   ] ----------
+
+
+}
+END -- gr1292
+END -- vb3
+END -- abmp700
+
+TABLES
+bmz_file,
+bmy_file,
+bmx_file,
+bmg_file,
+gev_file,
+geu_file
+ATTRIBUTES
+ButtonEdit gev04=gev_file.gev04, action=controlp, tabIndex=1, image="zoom.png", comment="<^P>Qry Logestic No";
+Edit geu02=geu_file.geu02, tabIndex=2;
+CheckBox sel=formonly.sel type CHAR, tabIndex=10, title="sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit bmx01=bmx_file.bmx01, action=controlp, tabIndex=3, title="ECN No.  ", image="zoom.png";
+Edit bmx07=bmx_file.bmx07, tabIndex=4, title="ECN Effective Date ", noEntry;
+ButtonEdit bmx10=bmx_file.bmx10, action=controlp, tabIndex=5, title="Applicant ", image="zoom.png";
+ButtonEdit bmx05=bmx_file.bmx05, action=controlp, tabIndex=6, title="ECR NO", image="zoom.png";
+Edit bmg03=bmg_file.bmg03, tabIndex=7, title="Line Description", noEntry;
+Edit bmz02=bmz_file.bmz02, tabIndex=11, title="Master Item No.", noEntry;
+Edit ima02_1=formonly.ima02_1 type VARCHAR, tabIndex=12, title="Item Description", noEntry;
+Edit ima021_1=formonly.ima021_1 type VARCHAR, tabIndex=13, title="Item Specification", noEntry;
+Edit bmz04=bmz_file.bmz04, tabIndex=14, title="Original Version", noEntry;
+Edit bmz03=bmz_file.bmz03, tabIndex=15, title="Version", comment=" Version";
+Edit bmy02=bmy_file.bmy02, tabIndex=16, title="Ln#", noEntry, comment="<^Y>Mtnt New Compo.Dtl <^T>Mul-Insert Loc <^E>Mntn Desc   ";
+Edit bmy03=bmy_file.bmy03, tabIndex=17, title="Chg.Tp";
+Edit bmy19=bmy_file.bmy19, tabIndex=18, title="Chng.Mtd", noEntry;
+Edit bmy04=bmy_file.bmy04, tabIndex=19, title="BOM Line No.", noEntry, comment="NOTE: If Item with Mul-lines in BOM, No Blank Field  ";
+Edit bmy05=bmy_file.bmy05, tabIndex=20, title="Component No.", noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=21, title="Item Description", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=22, title="Item Specification", noEntry;
+Edit bmy27=bmy_file.bmy27, tabIndex=23, title="Replaced Item", noEntry;
+Edit ima02n=formonly.ima02n type VARCHAR, tabIndex=24, title="New Compo# P/N", noEntry;
+Edit ima021n=formonly.ima021n type VARCHAR, tabIndex=25, title="New Compo# Spec.", noEntry;
+ComboBox bmy16=bmy_file.bmy16, tabIndex=26, title="SUB Feature", items=(("0", "No REP/SUB"),("1", "Replacement"),("2", "Substitute"),("5", "SET Substitue"));
+Edit bmy06=bmy_file.bmy06, tabIndex=28, title="QPA", noEntry;
+Edit bmy30=bmy_file.bmy30, tabIndex=27, title="Calculation Type";
+Edit bmy07=bmy_file.bmy07, tabIndex=29, title="Denm", noEntry;
+Edit bmy22=bmy_file.bmy22, tabIndex=30, title="Memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=31, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmx(formonly.sel,bmx_file.bmx01,bmx_file.bmx07,bmx_file.bmx10,bmx_file.bmx05,bmg_file.bmg03)
+SCREEN RECORD s_bmz(bmz_file.bmz02,formonly.ima02_1,formonly.ima021_1,bmz_file.bmz04,bmz_file.bmz03)
+SCREEN RECORD s_bmy(bmy_file.bmy02,bmy_file.bmy03,bmy_file.bmy19,bmy_file.bmy04,bmy_file.bmy05,formonly.ima02,formonly.ima021,bmy_file.bmy27,formonly.ima02n,formonly.ima021n,bmy_file.bmy16,bmy_file.bmy06,bmy_file.bmy30,bmy_file.bmy07,bmy_file.bmy22)
+SCREEN RECORD Undefined(gev_file.gev04,geu_file.geu02,formonly.cnt,formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

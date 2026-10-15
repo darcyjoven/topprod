@@ -1,0 +1,112 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghri081.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(action=main, text=%"Page1")
+Grid Grid1
+{
+  <G group1                                  >  <G group2                                       >
+   hrdn02[hrdn02    |hrdn02_desc         ]        hrdn03[hrdn03    |hrdn03_desc         ]
+   hrdn05[hrdn05                         ]        hrdn04[hrdn04    |hrdn04_desc         ]
+   hrdn09[hrdn09                         ]        hrdn08[hrdn08                         ]
+   hrdn10[hrdn10                         ]       [hrdn13    ]
+   hrdn12[hrdn12                         ]        hrdn07[hrdn07    ]
+         [                               ]
+  <                                          >  <                                               >
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(action=info, text=%"Page2")
+Grid Grid2
+{
+ <G group3                   > <G group4                    > <G group5                     >
+  hrdnuser[hrdnuser  ]           hrdnmodu[hrdnmodu  ]           hrdnacti[hrdnacti  ]
+  hrdngrup[hrdngrup  ]           hrdndate[hrdndate  ]
+  hrdnoriu[hrdnoriu  ]
+  hrdnorig[hrdnorig  ]
+
+ <                           > <                            > <                             >
+
+}
+END -- Grid2
+END -- Page2
+Page Page3(action=item_list, text=%"Page3")
+Table Table1
+{
+[hrdn02_b|hrat02_b|hrat04_b|hrat05_b|hrat66_b|hrat19_b|hrdn03_b|hrdn04_b|hrdn05_b|hrdn08_b|hrdn07_b|hrdn09_b|hrdn10_b|hrdn12_b|hrdn01_b]
+[hrdn02_b|hrat02_b|hrat04_b|hrat05_b|hrat66_b|hrat19_b|hrdn03_b|hrdn04_b|hrdn05_b|hrdn08_b|hrdn07_b|hrdn09_b|hrdn10_b|hrdn12_b|hrdn01_b]
+[hrdn02_b|hrat02_b|hrat04_b|hrat05_b|hrat66_b|hrat19_b|hrdn03_b|hrdn04_b|hrdn05_b|hrdn08_b|hrdn07_b|hrdn09_b|hrdn10_b|hrdn12_b|hrdn01_b]
+[hrdn02_b|hrat02_b|hrat04_b|hrat05_b|hrat66_b|hrat19_b|hrdn03_b|hrdn04_b|hrdn05_b|hrdn08_b|hrdn07_b|hrdn09_b|hrdn10_b|hrdn12_b|hrdn01_b]
+[hrdn02_b|hrat02_b|hrat04_b|hrat05_b|hrat66_b|hrat19_b|hrdn03_b|hrdn04_b|hrdn05_b|hrdn08_b|hrdn07_b|hrdn09_b|hrdn10_b|hrdn12_b|hrdn01_b]
+
+
+
+}
+END -- Table1
+END -- Page3
+END -- Folder1
+Grid Grid3
+{
+  ---------- cnt[cnt ]----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"";
+ButtonEdit hrdn02=formonly.hrdn02 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrdn02_desc=formonly.hrdn02_desc type VARCHAR, tabIndex=2, noEntry;
+Edit hrdn05=formonly.hrdn05 type VARCHAR, tabIndex=3, not null, required;
+ButtonEdit hrdn09=formonly.hrdn09 type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+ButtonEdit hrdn10=formonly.hrdn10 type VARCHAR, action=controlp, tabIndex=5, not null, required, image="zoom";
+TextEdit hrdn12=formonly.hrdn12 type VARCHAR, tabIndex=11;
+Group group2:Group2, text=%"";
+ButtonEdit hrdn03=formonly.hrdn03 type VARCHAR, action=controlp, tabIndex=6, not null, required, image="zoom";
+Edit hrdn03_desc=formonly.hrdn03_desc type VARCHAR, tabIndex=7, noEntry;
+ButtonEdit hrdn04=formonly.hrdn04 type VARCHAR, action=controlp, tabIndex=8, not null, required, image="zoom";
+Edit hrdn04_desc=formonly.hrdn04_desc type VARCHAR, tabIndex=9, noEntry;
+ComboBox hrdn08=formonly.hrdn08 type VARCHAR, tabIndex=32, not null, required;
+CheckBox hrdn13=formonly.hrdn13, tabIndex=36, text=%"hrdn13", not null, valueChecked = "Y", valueUnchecked = "N";
+DateEdit hrdn07=formonly.hrdn07 type DATE, tabIndex=10, not null, required;
+Group group3:Group3, text=%"";
+Edit hrdnuser=formonly.hrdnuser type VARCHAR, tabIndex=12, noEntry;
+Edit hrdngrup=formonly.hrdngrup type VARCHAR, tabIndex=13, noEntry;
+Edit hrdnoriu=formonly.hrdnoriu type VARCHAR, tabIndex=14, noEntry;
+Edit hrdnorig=formonly.hrdnorig type VARCHAR, tabIndex=15, noEntry;
+Group group4:Group4, text=%"";
+Edit hrdnmodu=formonly.hrdnmodu type VARCHAR, tabIndex=16, noEntry;
+DateEdit hrdndate=formonly.hrdndate type VARCHAR, tabIndex=33, noEntry;
+Group group5:Group5, text=%"";
+Edit hrdnacti=formonly.hrdnacti type VARCHAR, tabIndex=17, noEntry;
+Edit hrdn02_b=formonly.hrdn02_b type VARCHAR, tabIndex=18, title=%"hrdn02_b", noEntry;
+Edit hrat02_b=formonly.hrat02_b type VARCHAR, tabIndex=19, title=%"hrat02_b", noEntry;
+Edit hrat04_b=formonly.hrat04_b type VARCHAR, tabIndex=20, title=%"hrat04_b", noEntry;
+Edit hrat05_b=formonly.hrat05_b type VARCHAR, tabIndex=21, title=%"hrat05_b", noEntry;
+DateEdit hrat66_b=formonly.hrat66_b type DATE, tabIndex=22, title=%"hrat66_b", noEntry;
+Edit hrat19_b=formonly.hrat19_b type VARCHAR, tabIndex=23, title=%"hrat19_b", noEntry;
+Edit hrdn03_b=formonly.hrdn03_b type VARCHAR, tabIndex=24, title=%"hrdn03_b", noEntry;
+Edit hrdn04_b=formonly.hrdn04_b type VARCHAR, tabIndex=25, title=%"hrdn04_b", noEntry;
+Edit hrdn05_b=formonly.hrdn05_b type VARCHAR, tabIndex=26, title=%"hrdn05_b", noEntry;
+ComboBox hrdn08_b=formonly.hrdn08_b type VARCHAR, tabIndex=27, title=%"hrdn08_b", noEntry;
+DateEdit hrdn07_b=formonly.hrdn07_b type DATE, tabIndex=28, title=%"hrdn07_b", noEntry;
+Edit hrdn09_b=formonly.hrdn09_b type VARCHAR, tabIndex=29, title=%"hrdn09_b", noEntry;
+Edit hrdn10_b=formonly.hrdn10_b type VARCHAR, tabIndex=30, title=%"hrdn10_b", noEntry;
+TextEdit hrdn12_b=formonly.hrdn12_b type VARCHAR, tabIndex=31, title=%"hrdn12_b", noEntry;
+Edit hrdn01_b=formonly.hrdn01_b type VARCHAR, tabIndex=35, title=%"hrdn01_b", noEntry, hidden, invisible;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=34, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrdn02,formonly.hrdn02_desc,formonly.hrdn05,formonly.hrdn09,formonly.hrdn10,formonly.hrdn03,formonly.hrdn03_desc,formonly.hrdn04,formonly.hrdn04_desc,formonly.hrdn07,formonly.hrdn12,formonly.hrdnuser,formonly.hrdngrup,formonly.hrdnoriu,formonly.hrdnorig,formonly.hrdnmodu,formonly.hrdnacti,formonly.hrdn08,formonly.hrdndate,formonly.cnt,formonly.hrdn13)
+SCREEN RECORD s_hrdn(formonly.hrdn02_b,formonly.hrat02_b,formonly.hrat04_b,formonly.hrat05_b,formonly.hrat66_b,formonly.hrat19_b,formonly.hrdn03_b,formonly.hrdn04_b,formonly.hrdn05_b,formonly.hrdn08_b,formonly.hrdn07_b,formonly.hrdn09_b,formonly.hrdn10_b,formonly.hrdn12_b,formonly.hrdn01_b)
+END -- INSTRUCTIONS
+

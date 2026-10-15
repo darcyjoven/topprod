@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_g_ogb1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"s_g_ogb1")
+VBox vb4
+Folder folder01
+Page page01(text="Page01")
+Grid gr3899
+{
+ <G group01                                                              >
+  Advice #            [ogb01           ][og]
+  Order #             [ogb31           ][o1]
+  DN #                [ship_no         ][sh]
+  Itm#                [ogb04               ]
+  W/H                 [ogb09     ]
+ <                                                                       >
+ <G group04                                                                 >
+  Par/Ref Unit        [ogb913    ]     Chi/Deliver Unit        [ogb910    ]
+  Par/Ref Qty         [ogb915    ]     Chi/Deliver Qty         [ogb912    ]
+  Par/Ref Transed Qty [a_ogb915  ]     Chi/Deliver Transed Qty [a_ogb912  ]
+  Par/Ref Untrans Qty [n_ogb915  ]     Chi/Deliver Untrans Qty [n_ogb912  ]
+ <                                                                          >
+
+}
+END -- gr3899
+END -- page01
+Page info(text="Info")
+Grid gr3900
+{
+ <G grpinfo                                      >
+  Detail Counts       [cn2       ]
+ <                                               >
+
+}
+END -- gr3900
+END -- info
+END -- folder01
+Table s_imgg
+{
+[status    |imgg02    |imgg03    |imgg04     |imgg09 |imgg10 |alocat  |atp     |shipqty         ]
+[status    |imgg02    |imgg03    |imgg04     |imgg09 |imgg10 |alocat  |atp     |shipqty         ]
+[status    |imgg02    |imgg03    |imgg04     |imgg09 |imgg10 |alocat  |atp     |shipqty         ]
+[status    |imgg02    |imgg03    |imgg04     |imgg09 |imgg10 |alocat  |atp     |shipqty         ]
+[status    |imgg02    |imgg03    |imgg04     |imgg09 |imgg10 |alocat  |atp     |shipqty         ]
+[status    |imgg02    |imgg03    |imgg04     |imgg09 |imgg10 |alocat  |atp     |shipqty         ]
+[status    |imgg02    |imgg03    |imgg04     |imgg09 |imgg10 |alocat  |atp     |shipqty         ]
+[status    |imgg02    |imgg03    |imgg04     |imgg09 |imgg10 |alocat  |atp     |shipqty         ]
+[status    |imgg02    |imgg03    |imgg04     |imgg09 |imgg10 |alocat  |atp     |shipqty         ]
+[status    |imgg02    |imgg03    |imgg04     |imgg09 |imgg10 |alocat  |atp     |shipqty         ]
+
+}
+END -- s_imgg
+Grid gr3901
+{
+ <G group03                                                              >
+  Par/Ref Qty Total      [imgg10_t_2][alocat_t_2][atp_t_2   ][shipqty_t_]
+  Chi/Deliver Qty Total  [imgg10_t_1][alocat_t_1][atp_t_1   ][shipqty_t1]
+ <                                                                       >
+
+}
+END -- gr3901
+END -- vb4
+END -- s_g_ogb1
+
+ATTRIBUTES
+Group group01:group01;
+Edit ogb01=formonly.ogb01 type CHAR, tabIndex=1;
+Edit og=formonly.ogb03 type CHAR, tabIndex=2;
+Edit ogb31=formonly.ogb31 type CHAR, tabIndex=3;
+Edit o1=formonly.ogb32 type CHAR, tabIndex=4;
+Edit ship_no=formonly.ship_no type CHAR, tabIndex=5;
+Edit sh=formonly.ship_seq type CHAR, tabIndex=6;
+Edit ogb04=formonly.ogb04 type CHAR, tabIndex=7;
+Edit ogb09=formonly.ogb09 type CHAR, tabIndex=8;
+Group group04:group04;
+Edit ogb913=formonly.ogb913 type CHAR, tabIndex=9;
+Edit ogb910=formonly.ogb910 type CHAR, tabIndex=10;
+Edit ogb915=formonly.ogb915 type CHAR, tabIndex=11;
+Edit ogb912=formonly.ogb912 type CHAR, tabIndex=12;
+Edit a_ogb915=formonly.a_ogb915 type CHAR, tabIndex=13;
+Edit a_ogb912=formonly.a_ogb912 type CHAR, tabIndex=14;
+Edit n_ogb915=formonly.n_ogb915 type CHAR, tabIndex=15;
+Edit n_ogb912=formonly.n_ogb912 type CHAR, tabIndex=16;
+Group grpinfo:grpinfo;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=17;
+Edit status=formonly.status type CHAR, tabIndex=34, title=%"Unit", noEntry;
+Edit imgg02=formonly.imgg02 type CHAR, tabIndex=18, title="W/H", noEntry;
+Edit imgg03=formonly.imgg03 type CHAR, tabIndex=19, title="Loc", noEntry;
+Edit imgg04=formonly.imgg04 type CHAR, tabIndex=20, title="Lot#", noEntry;
+Edit imgg09=formonly.imgg09 type CHAR, tabIndex=21, title="Unit", noEntry;
+Edit imgg10=formonly.imgg10 type CHAR, tabIndex=22, title="Inv.Qt", noEntry;
+Edit alocat=formonly.alocat type CHAR, tabIndex=23, title="To Del", noEntry;
+Edit atp=formonly.atp type CHAR, tabIndex=24, title="A.T.P.", noEntry;
+Edit shipqty=formonly.shipqty type CHAR, tabIndex=25, title="Del.Qt";
+Group group03:group03;
+Edit imgg10_t_2=formonly.imgg10_t_2 type CHAR, tabIndex=26;
+Edit alocat_t_2=formonly.alocat_t_2 type CHAR, tabIndex=27;
+Edit atp_t_2=formonly.atp_t_2 type CHAR, tabIndex=28;
+Edit shipqty_t_=formonly.shipqty_t_2 type CHAR, tabIndex=29;
+Edit imgg10_t_1=formonly.imgg10_t_1 type CHAR, tabIndex=30;
+Edit alocat_t_1=formonly.alocat_t_1 type CHAR, tabIndex=31;
+Edit atp_t_1=formonly.atp_t_1 type CHAR, tabIndex=32;
+Edit shipqty_t1=formonly.shipqty_t_1 type CHAR, tabIndex=33;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imgg(formonly.status,formonly.imgg02,formonly.imgg03,formonly.imgg04,formonly.imgg09,formonly.imgg10,formonly.alocat,formonly.atp,formonly.shipqty)
+SCREEN RECORD Undefined(formonly.ogb01,formonly.ogb03,formonly.ogb31,formonly.ogb32,formonly.ship_no,formonly.ship_seq,formonly.ogb04,formonly.ogb09,formonly.ogb913,formonly.ogb910,formonly.ogb915,formonly.ogb912,formonly.a_ogb915,formonly.a_ogb912,formonly.n_ogb915,formonly.n_ogb912,formonly.cn2,formonly.imgg10_t_2,formonly.alocat_t_2,formonly.atp_t_2,formonly.shipqty_t_2,formonly.imgg10_t_1,formonly.alocat_t_1,formonly.atp_t_1,formonly.shipqty_t_1)
+END -- INSTRUCTIONS
+

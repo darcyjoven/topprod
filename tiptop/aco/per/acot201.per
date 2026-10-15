@@ -1,0 +1,160 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acot201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acot201")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr1460
+{
+ Simulation No  [cng01                   ]
+ Application No.[cng10               ]
+
+
+}
+END -- gr1460
+Grid gr1461
+{
+ Customs No.         [cng12       ]
+ Register Book No.   [cng03               ]
+ Bonded No.          [cng04               ]
+
+}
+END -- gr1461
+Grid gr1462
+{
+ Expiry Date         [cng05       ]
+ Review Date         [cng06       ]
+ Date of Clearance   [cng07       ]
+
+}
+END -- gr1462
+Grid gr1463
+{
+ [cngconf            ]
+ [imgmksg]
+ [       ]
+
+}
+END -- gr1463
+END -- hb1
+END -- page01
+Page info(text="Info")
+Grid gr1464
+{
+ Record Owner        [cnguser   ] Last Modified by    [cngmodu   ] Data Valid Code     [cngacti   ]
+ Department          [cnggrup   ] Create/Modify Date  [cngdate     ]
+ Record Orig.        [cngoriu   ]
+ Dept Orig.          [cngorig   ]
+}
+END -- gr1464
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[cngud01                       ] userdefined_field07[cngud07        ] userdefined_field13[cngud13        ]
+                    [                              ] userdefined_field08[cngud08        ] userdefined_field14[cngud14        ]
+ userdefined_field02[cngud02        ]                userdefined_field09[cngud09        ] userdefined_field15[cngud15        ]
+ userdefined_field03[cngud03        ]                userdefined_field10[cngud10        ]
+ userdefined_field04[cngud04        ]                userdefined_field11[cngud11        ]
+ userdefined_field05[cngud05        ]                userdefined_field12[cngud12        ]
+ userdefined_field06[cngud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_cnj
+{
+[cnj02    |cnj03               |ima02                         |cnj05       |cnj06  |cnjud01   |cnjud02   |cnjud03    |cnjud04    |cnjud05    |cnjud06    |cnjud07    |cnjud08    |cnjud09    |cnjud10    |cnjud11   |cnjud12  |cnjud13   |cnjud14   |cnjud15     ]
+[cnj02    |cnj03               |ima02                         |cnj05       |cnj06  |cnjud01   |cnjud02   |cnjud03    |cnjud04    |cnjud05    |cnjud06    |cnjud07    |cnjud08    |cnjud09    |cnjud10    |cnjud11   |cnjud12  |cnjud13   |cnjud14   |cnjud15     ]
+[cnj02    |cnj03               |ima02                         |cnj05       |cnj06  |cnjud01   |cnjud02   |cnjud03    |cnjud04    |cnjud05    |cnjud06    |cnjud07    |cnjud08    |cnjud09    |cnjud10    |cnjud11   |cnjud12  |cnjud13   |cnjud14   |cnjud15     ]
+[cnj02    |cnj03               |ima02                         |cnj05       |cnj06  |cnjud01   |cnjud02   |cnjud03    |cnjud04    |cnjud05    |cnjud06    |cnjud07    |cnjud08    |cnjud09    |cnjud10    |cnjud11   |cnjud12  |cnjud13   |cnjud14   |cnjud15     ]
+[cnj02    |cnj03               |ima02                         |cnj05       |cnj06  |cnjud01   |cnjud02   |cnjud03    |cnjud04    |cnjud05    |cnjud06    |cnjud07    |cnjud08    |cnjud09    |cnjud10    |cnjud11   |cnjud12  |cnjud13   |cnjud14   |cnjud15     ]
+[cnj02    |cnj03               |ima02                         |cnj05       |cnj06  |cnjud01   |cnjud02   |cnjud03    |cnjud04    |cnjud05    |cnjud06    |cnjud07    |cnjud08    |cnjud09    |cnjud10    |cnjud11   |cnjud12  |cnjud13   |cnjud14   |cnjud15     ]
+[cnj02    |cnj03               |ima02                         |cnj05       |cnj06  |cnjud01   |cnjud02   |cnjud03    |cnjud04    |cnjud05    |cnjud06    |cnjud07    |cnjud08    |cnjud09    |cnjud10    |cnjud11   |cnjud12  |cnjud13   |cnjud14   |cnjud15     ]
+[cnj02    |cnj03               |ima02                         |cnj05       |cnj06  |cnjud01   |cnjud02   |cnjud03    |cnjud04    |cnjud05    |cnjud06    |cnjud07    |cnjud08    |cnjud09    |cnjud10    |cnjud11   |cnjud12  |cnjud13   |cnjud14   |cnjud15     ]
+[cnj02    |cnj03               |ima02                         |cnj05       |cnj06  |cnjud01   |cnjud02   |cnjud03    |cnjud04    |cnjud05    |cnjud06    |cnjud07    |cnjud08    |cnjud09    |cnjud10    |cnjud11   |cnjud12  |cnjud13   |cnjud14   |cnjud15     ]
+[cnj02    |cnj03               |ima02                         |cnj05       |cnj06  |cnjud01   |cnjud02   |cnjud03    |cnjud04    |cnjud05    |cnjud06    |cnjud07    |cnjud08    |cnjud09    |cnjud10    |cnjud11   |cnjud12  |cnjud13   |cnjud14   |cnjud15     ]
+
+}
+END -- s_cnj
+Grid gr1465
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1465
+END -- vb1
+END -- acot201
+
+TABLES
+cnj_file,
+cng_file
+ATTRIBUTES
+ButtonEdit cng01=cng_file.cng01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Documents";
+Edit cng10=cng_file.cng10, tabIndex=2, noEntry;
+Edit cng12=cng_file.cng12, tabIndex=3, noEntry;
+Edit cng03=cng_file.cng03, tabIndex=4, noEntry;
+Edit cng04=cng_file.cng04, tabIndex=5, noEntry;
+DateEdit cng05=cng_file.cng05, tabIndex=6, noEntry;
+DateEdit cng06=cng_file.cng06, tabIndex=7, noEntry;
+DateEdit cng07=cng_file.cng07, tabIndex=8, noEntry;
+CheckBox cngconf=cng_file.cngconf, tabIndex=9, noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Enter Y or N ";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit cnguser=cng_file.cnguser, tabIndex=11, noEntry;
+Edit cngmodu=cng_file.cngmodu, tabIndex=12, noEntry;
+Edit cngacti=cng_file.cngacti, tabIndex=13, noEntry, upShift;
+Edit cnggrup=cng_file.cnggrup, tabIndex=14, noEntry;
+DateEdit cngdate=cng_file.cngdate, tabIndex=15, noEntry;
+Edit cngoriu=cng_file.cngoriu, tabIndex=501, noEntry;
+Edit cngorig=cng_file.cngorig, tabIndex=502, noEntry;
+TextEdit cngud01=cng_file.cngud01, tabIndex=327, stretch=NONE;
+Edit cngud07=cng_file.cngud07, tabIndex=328;
+DateEdit cngud13=cng_file.cngud13, tabIndex=329;
+Edit cngud08=cng_file.cngud08, tabIndex=330;
+DateEdit cngud14=cng_file.cngud14, tabIndex=331;
+Edit cngud02=cng_file.cngud02, tabIndex=332;
+Edit cngud09=cng_file.cngud09, tabIndex=333;
+DateEdit cngud15=cng_file.cngud15, tabIndex=334;
+Edit cngud03=cng_file.cngud03, tabIndex=335;
+Edit cngud10=cng_file.cngud10, tabIndex=336;
+Edit cngud04=cng_file.cngud04, tabIndex=337;
+Edit cngud11=cng_file.cngud11, tabIndex=338;
+Edit cngud05=cng_file.cngud05, tabIndex=339;
+Edit cngud12=cng_file.cngud12, tabIndex=340;
+Edit cngud06=cng_file.cngud06, tabIndex=341;
+Edit cnj02=cnj_file.cnj02, tabIndex=16, title="Ln No.", not null, required;
+ButtonEdit cnj03=cnj_file.cnj03, action=controlp, tabIndex=17, title="Product No.", not null, required, image="zoom", comment="<^P>Query Item  ";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=18, title="Part Name Specification", noEntry;
+Edit cnj05=cnj_file.cnj05, tabIndex=19, title="Qty", not null, required;
+ButtonEdit cnj06=cnj_file.cnj06, action=controlp, tabIndex=20, title="Unit", not null, required, image="zoom", comment="<^P>Qry Unit";
+TextEdit cnjud01=cnj_file.cnjud01, tabIndex=325, title="cnjud01", stretch=NONE;
+Edit cnjud02=cnj_file.cnjud02, tabIndex=342, title="cnjud02";
+Edit cnjud03=cnj_file.cnjud03, tabIndex=343, title="cnjud03";
+Edit cnjud04=cnj_file.cnjud04, tabIndex=344, title="cnjud04";
+Edit cnjud05=cnj_file.cnjud05, tabIndex=345, title="cnjud05";
+Edit cnjud06=cnj_file.cnjud06, tabIndex=346, title="cnjud06";
+Edit cnjud07=cnj_file.cnjud07, tabIndex=347, title="cnjud07";
+Edit cnjud08=cnj_file.cnjud08, tabIndex=348, title="cnjud08";
+Edit cnjud09=cnj_file.cnjud09, tabIndex=349, title="cnjud09";
+Edit cnjud10=cnj_file.cnjud10, tabIndex=350, title="cnjud10";
+Edit cnjud11=cnj_file.cnjud11, tabIndex=351, title="cnjud11";
+Edit cnjud12=cnj_file.cnjud12, tabIndex=352, title="cnjud12";
+Edit cnjud13=cnj_file.cnjud13, tabIndex=353, title="cnjud13";
+Edit cnjud14=cnj_file.cnjud14, tabIndex=354, title="cnjud14";
+Edit cnjud15=cnj_file.cnjud15, tabIndex=355, title="cnjud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cnj(cnj_file.cnj02,cnj_file.cnj03,formonly.ima02,cnj_file.cnj05,cnj_file.cnj06,cnj_file.cnjud01,cnj_file.cnjud02,cnj_file.cnjud03,cnj_file.cnjud04,cnj_file.cnjud05,cnj_file.cnjud06,cnj_file.cnjud07,cnj_file.cnjud08,cnj_file.cnjud09,cnj_file.cnjud10,cnj_file.cnjud11,cnj_file.cnjud12,cnj_file.cnjud13,cnj_file.cnjud14,cnj_file.cnjud15)
+SCREEN RECORD Undefined(cng_file.cng01,cng_file.cng10,cng_file.cng12,cng_file.cng03,cng_file.cng04,cng_file.cng05,cng_file.cng06,cng_file.cng07,cng_file.cngconf,formonly.imgmksg,cng_file.cnguser,cng_file.cngmodu,cng_file.cngacti,cng_file.cnggrup,cng_file.cngdate,cng_file.cngoriu,cng_file.cngorig,cng_file.cngud01,cng_file.cngud07,cng_file.cngud13,cng_file.cngud08,cng_file.cngud14,cng_file.cngud02,cng_file.cngud09,cng_file.cngud15,cng_file.cngud03,cng_file.cngud10,cng_file.cngud04,cng_file.cngud11,cng_file.cngud05,cng_file.cngud12,cng_file.cngud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

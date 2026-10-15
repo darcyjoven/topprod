@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_lang.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_lang")
+VBox VBox1
+Folder pc753
+Page page01(text="Main")
+Table s_gay
+{
+[gay01       |gay03                    |gayacti   ]
+[gay01       |gay03                    |gayacti   ]
+[gay01       |gay03                    |gayacti   ]
+[gay01       |gay03                    |gayacti   ]
+[gay01       |gay03                    |gayacti   ]
+[gay01       |gay03                    |gayacti   ]
+[gay01       |gay03                    |gayacti   ]
+[gay01       |gay03                    |gayacti   ]
+[gay01       |gay03                    |gayacti   ]
+[gay01       |gay03                    |gayacti   ]
+
+}
+END -- s_gay
+END -- page01
+END -- pc753
+Grid gr3219
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3219
+END -- VBox1
+END -- p_lang
+
+TABLES
+gay_file
+ATTRIBUTES
+Edit gay01=gay_file.gay01, tabIndex=1, title="Language ID", not null, required, comment="Key,No Blank/Repeated!";
+Edit gay03=gay_file.gay03, tabIndex=2, title="Language Name", not null, required, scroll;
+CheckBox gayacti=gay_file.gayacti, tabIndex=4, title="Active Code", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gay(gay_file.gay01,gay_file.gay03,gay_file.gayacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

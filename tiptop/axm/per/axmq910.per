@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq910.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq910")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2290
+{
+ Delivery Date        [oga02       ]
+ Advice No.           [ogb01           ]
+ Line No.             [ogb03       ]
+ Sales Unit           [ogb05       ]
+}
+END -- gr2290
+Grid gr2291
+{
+ Customer No.         [oga03     ]
+ Shipping Cust        [oga04     ]
+ Product No.          [ogb04                         ]
+ Actual Delivery Qty  [ogb12                         ]
+}
+END -- gr2291
+Grid gr2292
+{
+ Shipping Type        [oga43     ]
+ Salesman             [oga14     ]
+
+
+}
+END -- gr2292
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_oze
+{
+[oze03 |ozf07             |ozf08       |ozf09        ]
+[oze03 |ozf07             |ozf08       |ozf09        ]
+[oze03 |ozf07             |ozf08       |ozf09        ]
+[oze03 |ozf07             |ozf08       |ozf09        ]
+[oze03 |ozf07             |ozf08       |ozf09        ]
+[oze03 |ozf07             |ozf08       |ozf09        ]
+[oze03 |ozf07             |ozf08       |ozf09        ]
+[oze03 |ozf07             |ozf08       |ozf09        ]
+[oze03 |ozf07             |ozf08       |ozf09        ]
+[oze03 |ozf07             |ozf08       |ozf09        ]
+
+}
+END -- s_oze
+Grid gr2293
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2293
+END -- VBox1
+END -- axmq910
+
+ATTRIBUTES
+DateEdit oga02=formonly.oga02 type DATE, tabIndex=1;
+ButtonEdit ogb01=formonly.ogb01 type CHAR, action=controlp, tabIndex=2, image="zoom";
+Edit ogb03=formonly.ogb03 type CHAR, tabIndex=3;
+ButtonEdit ogb05=formonly.ogb05 type CHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit oga03=formonly.oga03 type CHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit oga04=formonly.oga04 type CHAR, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit ogb04=formonly.ogb04 type CHAR, action=controlp, tabIndex=7, image="zoom";
+Edit ogb12=formonly.ogb12 type CHAR, tabIndex=8;
+Edit oga43=formonly.oga43 type CHAR, tabIndex=9;
+ButtonEdit oga14=formonly.oga14 type CHAR, action=controlp, tabIndex=10, image="zoom";
+Edit oze03=formonly.oze03 type CHAR, tabIndex=11, title="S/N";
+Edit ozf07=formonly.ozf07 type CHAR, tabIndex=12, title="Goods Information";
+Edit ozf08=formonly.ozf08 type CHAR, tabIndex=13, title="Goods Place";
+Edit ozf09=formonly.ozf09 type CHAR, tabIndex=14, title="Arrival Time";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oze(formonly.oze03,formonly.ozf07,formonly.ozf08,formonly.ozf09)
+SCREEN RECORD Undefined(formonly.oga02,formonly.ogb01,formonly.ogb03,formonly.ogb05,formonly.oga03,formonly.oga04,formonly.ogb04,formonly.ogb12,formonly.oga43,formonly.oga14,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/4fd/asfp310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp310")
+VBox vbox1
+HBox hbox1
+Grid grid01
+{
+ W/O#                [g_sfb01               ]
+ Item#               [sfb05               ]
+ Part Name           [ima02                         ]
+ Specification       [ima021                        ]
+
+
+
+}
+END -- grid01
+Grid grid02
+{
+ Operating           [sfb13       ]
+ Complete            [sfb15       ]
+ Prod.Qty            [sfb08       ]
+ Production Unit     [ima55       ]
+
+
+
+}
+END -- grid02
+Grid Grid1
+{
+  ynum1           [ynum1       ]
+  num2            [num2        ]
+ [isatmt260          ]
+  type        [tc_sma04            ]
+
+
+
+}
+END -- Grid1
+Grid grid03
+{
+ Lot Size            [g_lot     ]
+ Run Card            [g_slip    ]
+ Plan Lot No.        [sfb919                        ]
+ imaud10             [imaud10            ]
+
+
+
+}
+END -- grid03
+END -- hbox1
+Table s_new
+{
+[seq      |shm18               |woqty         ]
+[seq      |shm18               |woqty         ]
+[seq      |shm18               |woqty         ]
+[seq      |shm18               |woqty         ]
+[seq      |shm18               |woqty         ]
+[seq      |shm18               |woqty         ]
+[seq      |shm18               |woqty         ]
+[seq      |shm18               |woqty         ]
+[seq      |shm18               |woqty         ]
+[seq      |shm18               |woqty         ]
+
+
+
+}
+END -- s_new
+END -- vbox1
+END -- asfp310
+
+ATTRIBUTES
+ButtonEdit g_sfb01=formonly.g_sfb01 type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment=%"<^P>Query W/O   ";
+Edit sfb05=formonly.sfb05 type VARCHAR, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=3, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=4, noEntry;
+DateEdit sfb13=formonly.sfb13 type DATE, tabIndex=5, noEntry;
+DateEdit sfb15=formonly.sfb15 type DATE, tabIndex=6, noEntry;
+Edit sfb08=formonly.sfb08 type VARCHAR, tabIndex=7, noEntry;
+Edit ima55=formonly.ima55 type VARCHAR, tabIndex=8, noEntry;
+Edit ynum1=formonly.ynum1, tabIndex=9, noEntry;
+Edit num2=formonly.num2, tabIndex=10;
+CheckBox isatmt260=formonly.isatmt260, tabIndex=18, text=%"isatmt260", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox tc_sma04=formonly.tc_sma04, tabIndex=19;
+Edit g_lot=formonly.g_lot type VARCHAR, tabIndex=11;
+ButtonEdit g_slip=formonly.g_slip type VARCHAR, action=controlp, tabIndex=12, required, image="zoom", comment=%"<^P>Qry Document Property";
+Edit sfb919=formonly.sfb919 type VARCHAR, tabIndex=13;
+Edit imaud10=formonly.imaud10, tabIndex=17;
+Edit seq=formonly.seq type VARCHAR, tabIndex=14, title=%"Ln#";
+Edit shm18=formonly.shm18 type VARCHAR, tabIndex=15, title=%"Machine No.";
+Edit woqty=formonly.woqty type VARCHAR, tabIndex=16, title=%"Production Qty";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_new(formonly.seq,formonly.shm18,formonly.woqty)
+SCREEN RECORD Undefined(formonly.g_sfb01,formonly.sfb05,formonly.ima02,formonly.ima021,formonly.sfb13,formonly.sfb15,formonly.sfb08,formonly.ima55,formonly.g_lot,formonly.g_slip,formonly.sfb919,formonly.ynum1,formonly.num2,formonly.imaud10,formonly.isatmt260,formonly.tc_sma04)
+END -- INSTRUCTIONS
+

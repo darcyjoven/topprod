@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr003")
+VBox vb3
+Grid gr1563
+{
+ <G group01                                                                             >
+  Item No.            [ima01               ]  Group Code 2        [ima10               ]
+  Account             [ima39               ]  Group Code 3        [ima11               ]
+  Source              [ima08               ]  Group Code 4        [ima12               ]
+  Main Grp Code       [ima06               ]  Source Doc#         [tlf026              ]
+  Group Code 1        [ima09               ]  Target Doc No#      [tlf036              ]
+ <                                                                                      >
+
+}
+END -- gr1563
+Group g01(text="INPUT")
+Grid gr1564
+{
+ Year/Month              [yy        ][mm     ]
+ Cost Calculation Method [type               ]
+  <G group02                                                   >
+  [o                                                           ]
+  [                                                            ]
+  [                                                            ]
+  [                                                            ]
+  <                                                            >
+
+}
+END -- gr1564
+END -- g01
+Grid gr1565
+{
+[more                                                      ]
+
+}
+END -- gr1565
+END -- vb3
+END -- axcr003
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima10=formonly.ima10 type VARCHAR, tabIndex=2;
+Edit ima39=formonly.ima39 type VARCHAR, tabIndex=3;
+Edit ima11=formonly.ima11 type VARCHAR, tabIndex=4;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=5, comment="After Enter, Add     * ";
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=6;
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=7;
+Edit tlf026=formonly.tlf026 type VARCHAR, tabIndex=8;
+Edit ima09=formonly.ima09 type VARCHAR, tabIndex=9;
+Edit tlf036=formonly.tlf036 type VARCHAR, tabIndex=10;
+Edit yy=formonly.yy type SMALLINT, tabIndex=11;
+Edit mm=formonly.mm type SMALLINT, tabIndex=12;
+ComboBox type=formonly.type type CHAR, tabIndex=13, not null, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+Group group02:group02, text="Option";
+RadioGroup o=formonly.o type VARCHAR, tabIndex=14, items=(("1", "W/O Withdraw"),("2", "MISC Withdrawal"),("3", "Other Adjust"),("4", "Sales Store-out"),("5", "Rework Withdraw"));
+CheckBox more=formonly.more type CHAR, tabIndex=15, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima10,formonly.ima39,formonly.ima11,formonly.ima08,formonly.ima12,formonly.ima06,formonly.tlf026,formonly.ima09,formonly.tlf036,formonly.yy,formonly.mm,formonly.type,formonly.o,formonly.more)
+END -- INSTRUCTIONS
+

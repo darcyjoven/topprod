@@ -1,0 +1,121 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cpm/4fd/cpmq001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox3
+Folder Folder1
+Page Page3(text=%"Page3")
+Grid Grid1
+{
+                                                                                                            [imgmks]
+  tc_mss01  [tc_mss01                      ]   tc_mss19   [tc_mss19      ]   tc_mss21 [tc_mss21      ]      [      ]    [tc_mss18    ] [filter1       ]
+
+}
+END -- Grid1
+END -- Page3
+END -- Folder1
+Folder Folder2
+Page page2(action=page2, text=%"page2")
+VBox VBox2
+Table s_oga_1
+{
+[sel1 |tc_mss02    |tc_mss03  |tc_mss04  |imz01     |imz02       |tc_mss05  |tc_mss06   |tc_mss07    |tc_mss08  |tc_mss09    |tc_mss10   |tc_mss11    |tc_mss12    |tc_mss13     |tc_mss14    |tc_mss15   |tc_mss16    |tc_mss17     ]
+[sel1 |tc_mss02    |tc_mss03  |tc_mss04  |imz01     |imz02       |tc_mss05  |tc_mss06   |tc_mss07    |tc_mss08  |tc_mss09    |tc_mss10   |tc_mss11    |tc_mss12    |tc_mss13     |tc_mss14    |tc_mss15   |tc_mss16    |tc_mss17     ]
+[sel1 |tc_mss02    |tc_mss03  |tc_mss04  |imz01     |imz02       |tc_mss05  |tc_mss06   |tc_mss07    |tc_mss08  |tc_mss09    |tc_mss10   |tc_mss11    |tc_mss12    |tc_mss13     |tc_mss14    |tc_mss15   |tc_mss16    |tc_mss17     ]
+[sel1 |tc_mss02    |tc_mss03  |tc_mss04  |imz01     |imz02       |tc_mss05  |tc_mss06   |tc_mss07    |tc_mss08  |tc_mss09    |tc_mss10   |tc_mss11    |tc_mss12    |tc_mss13     |tc_mss14    |tc_mss15   |tc_mss16    |tc_mss17     ]
+[sel1 |tc_mss02    |tc_mss03  |tc_mss04  |imz01     |imz02       |tc_mss05  |tc_mss06   |tc_mss07    |tc_mss08  |tc_mss09    |tc_mss10   |tc_mss11    |tc_mss12    |tc_mss13     |tc_mss14    |tc_mss15   |tc_mss16    |tc_mss17     ]
+
+
+
+}
+END -- s_oga_1
+Grid Grid3
+{
+
+                           ----------- cnt [curs_i] /[cnt   ] ----------- Rows[cnt2  ]-----------
+
+
+}
+END -- Grid3
+END -- VBox2
+END -- page2
+Page page1(action=page1, text=%"page1")
+VBox VBox1
+Table s_oga
+{
+[tc_mst08  |tc_mst03   |tc_mst02       |tc_mst09|ima02   |ima021  |tc_mst04    |tc_mst05        |tc_mst06       |tc_mst07      ]
+[tc_mst08  |tc_mst03   |tc_mst02       |tc_mst09|ima02   |ima021  |tc_mst04    |tc_mst05        |tc_mst06       |tc_mst07      ]
+[tc_mst08  |tc_mst03   |tc_mst02       |tc_mst09|ima02   |ima021  |tc_mst04    |tc_mst05        |tc_mst06       |tc_mst07      ]
+[tc_mst08  |tc_mst03   |tc_mst02       |tc_mst09|ima02   |ima021  |tc_mst04    |tc_mst05        |tc_mst06       |tc_mst07      ]
+[tc_mst08  |tc_mst03   |tc_mst02       |tc_mst09|ima02   |ima021  |tc_mst04    |tc_mst05        |tc_mst06       |tc_mst07      ]
+
+
+
+}
+END -- s_oga
+Grid Grid4
+{
+
+  ----------- Rows [cnt2a ] -----------
+
+
+}
+END -- Grid4
+END -- VBox1
+END -- page1
+END -- Folder2
+END -- VBox3
+END -- cpmq001
+
+ATTRIBUTES
+IMAGE imgmks=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit tc_mss01=formonly.tc_mss01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+DateEdit tc_mss19=formonly.tc_mss19 type VARCHAR, tabIndex=3, not null, required;
+Edit tc_mss21=formonly.tc_mss21 type VARCHAR, tabIndex=4, not null, required;
+CheckBox tc_mss18=formonly.tc_mss18 type VARCHAR, tabIndex=2, text=%"tc_mss18", valueChecked = "Y", valueUnchecked = "N";
+CheckBox filter1=formonly.filter1, tabIndex=38, text=%"filter1", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sel1=formonly.sel1, tabIndex=5, title=%"select", text=%"", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit tc_mss02=formonly.tc_mss02 type VARCHAR, action=controlp, tabIndex=6, title=%"tc_mss02", image="zoom", scroll;
+Edit tc_mss03=formonly.tc_mss03 type VARCHAR, tabIndex=7, title=%"tc_mss03";
+Edit tc_mss04=formonly.tc_mss04 type DATE, tabIndex=8, title=%"tc_mss04";
+ButtonEdit imz01=formonly.imz01 type VARCHAR, action=controlp, tabIndex=9, title=%"imz01", image="zoom", scroll, picture="zoom";
+Edit imz02=formonly.imz02 type VARCHAR, tabIndex=10, title=%"imz02", scroll;
+Edit tc_mss05=formonly.tc_mss05 type VARCHAR, tabIndex=11, title=%"tc_mss05";
+Edit tc_mss06=formonly.tc_mss06 type VARCHAR, tabIndex=12, title=%"tc_mss06";
+Edit tc_mss07=formonly.tc_mss07 type VARCHAR, tabIndex=13, title=%"tc_mss07", scroll;
+Edit tc_mss08=formonly.tc_mss08 type VARCHAR, tabIndex=14, title=%"tc_mss08", scroll;
+Edit tc_mss09=formonly.tc_mss09 type VARCHAR, tabIndex=15, title=%"tc_mss09", scroll;
+Edit tc_mss10=formonly.tc_mss10 type VARCHAR, tabIndex=16, title=%"tc_mss10", scroll;
+Edit tc_mss11=formonly.tc_mss11 type VARCHAR, tabIndex=17, title=%"tc_mss11", scroll;
+Edit tc_mss12=formonly.tc_mss12 type VARCHAR, tabIndex=18, title=%"tc_mss12", scroll;
+Edit tc_mss13=formonly.tc_mss13 type VARCHAR, tabIndex=19, title=%"tc_mss13", scroll;
+Edit tc_mss14=formonly.tc_mss14 type VARCHAR, tabIndex=20, title=%"tc_mss14", scroll;
+Edit tc_mss15=formonly.tc_mss15 type VARCHAR, tabIndex=21, title=%"tc_mss15";
+Edit tc_mss16=formonly.tc_mss16 type VARCHAR, tabIndex=22, title=%"tc_mss16";
+Edit tc_mss17=formonly.tc_mss17 type VARCHAR, tabIndex=23, title=%"tc_mss17", scroll;
+Edit curs_i=formonly.curs_index type SMALLINT, tabIndex=34, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=37, noEntry;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=24, noEntry;
+ComboBox tc_mst08=formonly.tc_mst08, tabIndex=35, title=%"tc_mst08", items=(("1", "1"),("2", "2"),("3", "3"));
+Edit tc_mst03=formonly.tc_mst03 type VARCHAR, tabIndex=25, title=%"tc_mst03", scroll;
+Edit tc_mst02=formonly.tc_mst02 type VARCHAR, tabIndex=26, title=%"tc_mst02", scroll;
+Edit tc_mst09=formonly.tc_mst09, tabIndex=36, title=%"tc_mst09";
+Edit ima02=formonly.ima02, tabIndex=27, title=%"ima02";
+Edit ima021=formonly.ima021, tabIndex=28, title=%"ima021";
+Edit tc_mst04=formonly.tc_mst04 type SMALLINT, tabIndex=29, title=%"tc_mst04", scroll;
+Edit tc_mst05=formonly.tc_mst05 type VARCHAR, tabIndex=30, title=%"tc_mst05", scroll;
+DateEdit tc_mst06=formonly.tc_mst06 type VARCHAR, tabIndex=31, title=%"tc_mst06";
+ComboBox tc_mst07=formonly.tc_mst07 type VARCHAR, tabIndex=32, title=%"tc_mst07", scroll, items=(("1", "1"),("9", "9"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"));
+Edit cnt2a=formonly.cnt2a type SMALLINT, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_mss01,formonly.imgmksg,formonly.tc_mss18,formonly.tc_mss19,formonly.tc_mss21,formonly.cnt2,formonly.cnt2a,formonly.curs_index,formonly.cnt,formonly.filter1)
+SCREEN RECORD s_tc_mss(formonly.sel1,formonly.tc_mss02,formonly.tc_mss03,formonly.tc_mss04,formonly.imz01,formonly.imz02,formonly.tc_mss05,formonly.tc_mss06,formonly.tc_mss07,formonly.tc_mss08,formonly.tc_mss09,formonly.tc_mss10,formonly.tc_mss11,formonly.tc_mss12,formonly.tc_mss13,formonly.tc_mss14,formonly.tc_mss15,formonly.tc_mss16,formonly.tc_mss17)
+SCREEN RECORD s_tc_mst(formonly.tc_mst08,formonly.tc_mst03,formonly.tc_mst02,formonly.tc_mst09,formonly.ima02,formonly.ima021,formonly.tc_mst04,formonly.tc_mst05,formonly.tc_mst06,formonly.tc_mst07)
+END -- INSTRUCTIONS
+

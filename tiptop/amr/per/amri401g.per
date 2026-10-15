@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amri401g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amri401g")
+VBox vb6
+Grid gr2
+{
+
+  SO Material NO.    [m                   ]
+
+
+}
+END -- gr2
+Grid gr1
+{
+ <G group01                                >
+  SO NO. QBE          [oea01               ]
+  Custom No. QBE      [oea03               ]
+  SO Date QBE         [oea02               ]
+ <                                         >
+}
+END -- gr1
+END -- vb6
+END -- amri401g
+
+TABLES
+oea_file
+ATTRIBUTES
+Edit m=formonly.m type CHAR, tabIndex=1;
+Group group01:group01, text="QBE";
+ButtonEdit oea01=oea_file.oea01, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit oea03=oea_file.oea03, action=controlp, tabIndex=3, image="zoom";
+DateEdit oea02=oea_file.oea02, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.m,oea_file.oea01,oea_file.oea03,oea_file.oea02)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,214 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agls103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agls103")
+Folder page5
+Page page01(text="Main")
+VBox VBox1
+Grid gr2838
+{
+  Default Book No     [aaz64     ]
+  [aaz69                                             ]
+
+ <G group01                                           >
+  [aaz72                                             ]
+
+
+ <                                                    >
+
+}
+END -- gr2838
+Grid gr2839
+{
+  [aaz77                                             ]
+  [aaz85                                             ]
+
+ <G group02                                           >
+  [aaz84                                             ]
+ <                                                    >
+ <G group03                                           >
+  [aaz71                                             ]
+
+
+ <                                                    >
+
+}
+END -- gr2839
+Grid gr2840
+{
+ [aaz81                                             ]
+ [aaz78                                             ]
+ [aaz82                                             ]
+ [aaz80                                             ]
+ [aaz51                                             ]
+ [aaz83                                             ]
+ [aaz119                            ]
+ [aaz115                    ]
+ [aaz116                                           ]
+ [aaz132                             ]
+
+}
+END -- gr2840
+END -- VBox1
+END -- page01
+Page page02(text="General")
+Grid gr2841
+{
+ Current Period Profit/Loss(Income Statement)Account Code [aaz31               ]
+ Current Period Profit/Loss(Balance Sheet)Account Code    [aaz32               ]
+ Accumulated Earning/Loss Account Code                    [aaz33               ]
+ Voucher for End of Period Carry Forward                  [aaz65     ]
+ Voucher for End of Period Accurual Adjustment            [aaz68     ]
+ aaz126                                                   [aaz126    ]
+ aaz127                                                   [aaz127    ]
+
+ <G gb28                                                                      >
+  Length of First Acct No. [aaz107               ]
+  Length of Other Acct No. [aaz108               ]
+ <                                                                            >
+
+}
+END -- gr2841
+END -- page02
+Page page03(text="Budget")
+Grid gr2842
+{
+ Quarterly Budget 1st-Per Weights [aaz61     ]
+ Quarterly Budget 2nd-Per Weights [aaz62     ]
+ Quarterly Budget 3rd-Per Weights [aaz63     ]
+
+}
+END -- gr2842
+END -- page03
+Page page05(text="Profit Center")
+Grid gr2844
+{
+ [aaz90                       ]
+ Cost Account No. Of Profit Center [aaz91          ]
+ Inter Account No. Of Profit Center[aaz92          ]
+
+}
+END -- gr2844
+END -- page05
+Page Page1(text=%"Dimension (Fixed) Control")
+Grid gr8
+{
+ Account Use Dimension No.    [aaz88     ]
+[label1                   ]   [aaz125    ]
+ Dimension 5 Type[aaz121        ] Dimension 5 Name[ahe02_1             ] Dimension 5 Control[aaz1211           ]
+ Dimension 6 Type[aaz122        ] Dimension 6 Name[ahe02_2             ] Dimension 6 Control[aaz1221           ]
+ Dimension 7 Type[aaz123        ] Dimension 7 Name[ahe02_3             ] Dimension 7 Control[aaz1231           ]
+ Dimension 8 Type[aaz124        ] Dimension 8 Name[ahe02_4             ] Dimension 8 Control[aaz1241           ]
+
+
+
+}
+END -- gr8
+END -- Page1
+Page userdefined_field(text=%"User Defined Field")
+VBox VBox2
+Grid Grid1
+{
+ userdefined_field01[aazud01                              ] userdefined_field08[aazud08              ]
+                    [                                     ] userdefined_field09[aazud09              ]
+ userdefined_field02[aazud02              ]                 userdefined_field10[aazud10              ]
+ userdefined_field03[aazud03              ]                 userdefined_field11[aazud11              ]
+ userdefined_field04[aazud04              ]                 userdefined_field12[aazud12              ]
+ userdefined_field05[aazud05              ]                 userdefined_field13[aazud13              ]
+ userdefined_field06[aazud06              ]                 userdefined_field14[aazud14              ]
+ userdefined_field07[aazud07              ]                 userdefined_field15[aazud15              ]
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- VBox2
+END -- userdefined_field
+END -- page5
+END -- agls103
+
+TABLES
+aaz_file
+ATTRIBUTES
+ButtonEdit aaz64=aaz_file.aaz64, action=controlp, tabIndex=1, not null, required, image="zoom";
+CheckBox aaz69=aaz_file.aaz69, tabIndex=2, text="Show Account Type In Screen", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group01:group01, text="Account Department Control Method";
+RadioGroup aaz72=aaz_file.aaz72, tabIndex=3, items=(("1", "Department Rejected"),("2", "Department Allowed  "));
+CheckBox aaz77=aaz_file.aaz77, tabIndex=4, text="Print Report Name In Report Structure Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aaz85=aaz_file.aaz85, tabIndex=5, text="Auto Confirm When Voucher Comfirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Voucher Carry Return Method";
+RadioGroup aaz84=aaz_file.aaz84, tabIndex=6, not null, required, items=(("1", "Delete"),("2", "Void"));
+Group group03:group03, text="If Dr<>Cr when enter Voucher";
+RadioGroup aaz71=aaz_file.aaz71, tabIndex=7, not null, required, items=(("1", "Input To Debit/Credit Balance"),("2", "Warning but Acceptable"));
+CheckBox aaz81=aaz_file.aaz81, tabIndex=8, text="Voucher Input Can Modify General No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aaz78=aaz_file.aaz78, tabIndex=9, text="Vocher Can Query Post Vocher", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aaz82=aaz_file.aaz82, tabIndex=10, text="Sequence In Debit/Credit", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aaz80=aaz_file.aaz80, tabIndex=11, text="Unprint Vocher Can Post", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aaz51=aaz_file.aaz51, tabIndex=12, text="Vocher Post Make Day Balance", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aaz83=aaz_file.aaz83, tabIndex=13, text="Vocher Post Make Foreign Currency Balance", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aaz119=aaz_file.aaz119, tabIndex=27, text="Show Dimension\'s Name", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aaz115=aaz_file.aaz115, tabIndex=28, text=%"get missing no", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aaz116=aaz_file.aaz116, tabIndex=48, default = "", text=%"When Creating a Voucher, Auto Query", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aaz132=aaz_file.aaz132, tabIndex=49, text=%"Audit Certificate Permissions Control", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit aaz31=aaz_file.aaz31, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+ButtonEdit aaz32=aaz_file.aaz32, action=controlp, tabIndex=15, not null, required, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+ButtonEdit aaz33=aaz_file.aaz33, action=controlp, tabIndex=16, not null, required, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+ButtonEdit aaz65=aaz_file.aaz65, action=controlp, tabIndex=17, image="zoom", comment="Voucher Property = \"0\" OR \"7\"";
+ButtonEdit aaz68=aaz_file.aaz68, action=controlp, tabIndex=18, image="zoom", comment="Voucher Property = \"0\" OR \"4\"";
+ButtonEdit aaz126=aaz_file.aaz126, action=controlp, tabIndex=31, image="zoom", scroll;
+ButtonEdit aaz127=aaz_file.aaz127, action=controlp, tabIndex=32, image="zoom", scroll;
+Group gb28:gb28, text="Account Setup Rules";
+Edit aaz107=aaz_file.aaz107, tabIndex=19;
+Edit aaz108=aaz_file.aaz108, tabIndex=20;
+Edit aaz61=aaz_file.aaz61, tabIndex=21, not null, required;
+Edit aaz62=aaz_file.aaz62, tabIndex=22, not null, required;
+Edit aaz63=aaz_file.aaz63, tabIndex=23, not null, required;
+CheckBox aaz90=aaz_file.aaz90, tabIndex=24, text="Use Profit Center", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit aaz91=aaz_file.aaz91, action=controlp, tabIndex=25, image="zoom", comment="<^P>Qry Account No.";
+ButtonEdit aaz92=aaz_file.aaz92, action=controlp, tabIndex=26, image="zoom", comment="<^P>Qry Account No.";
+Edit aaz88=aaz_file.aaz88, tabIndex=29, not null, required;
+Label label1:Label1, text=%"Operating department information revealed use reshuffled code number (5-8)";
+Edit aaz125=aaz_file.aaz125, tabIndex=30, not null, required, scroll;
+ButtonEdit aaz121=aaz_file.aaz121, action=controlp, tabIndex=29, image="zoom";
+Edit ahe02_1=formonly.ahe02_1 type VARCHAR, tabIndex=29, noEntry;
+ComboBox aaz1211=formonly.aaz1211 type VARCHAR, tabIndex=29, items=(("1", "Can Be Input, May Be Blank"),("2", "Must Be Entered Without Inspection"),("3", "Must Be Input, The Necessary Checks"));
+ButtonEdit aaz122=aaz_file.aaz122, action=controlp, tabIndex=29, image="zoom";
+Edit ahe02_2=formonly.ahe02_2 type VARCHAR, tabIndex=29, noEntry;
+ComboBox aaz1221=formonly.aaz1221 type VARCHAR, tabIndex=29, items=(("1", "Can Be Input, May Be Blank"),("2", "Must Be Entered Without Inspection"),("3", "Must Be Input, The Necessary Checks"));
+ButtonEdit aaz123=aaz_file.aaz123, action=controlp, tabIndex=29, image="zoom";
+Edit ahe02_3=formonly.ahe02_3 type VARCHAR, tabIndex=29, noEntry;
+ComboBox aaz1231=formonly.aaz1231 type VARCHAR, tabIndex=29, items=(("1", "Can Be Input, May Be Blank"),("2", "Must Be Entered Without Inspection"),("3", "Must Be Input, The Necessary Checks"));
+ButtonEdit aaz124=aaz_file.aaz124, action=controlp, tabIndex=29, image="zoom";
+Edit ahe02_4=formonly.ahe02_4 type VARCHAR, tabIndex=29, noEntry;
+ComboBox aaz1241=formonly.aaz1241 type VARCHAR, tabIndex=29, items=(("1", "Can Be Input, May Be Blank"),("2", "Must Be Entered Without Inspection"),("3", "Must Be Input, The Necessary Checks"));
+TextEdit aazud01=aaz_file.aazud01, tabIndex=33;
+Edit aazud08=aaz_file.aazud08, tabIndex=40;
+Edit aazud09=aaz_file.aazud09, tabIndex=41;
+Edit aazud02=aaz_file.aazud02, tabIndex=34;
+Edit aazud10=aaz_file.aazud10, tabIndex=42;
+Edit aazud03=aaz_file.aazud03, tabIndex=35;
+Edit aazud11=aaz_file.aazud11, tabIndex=43;
+Edit aazud04=aaz_file.aazud04, tabIndex=36;
+Edit aazud12=aaz_file.aazud12, tabIndex=44;
+Edit aazud05=aaz_file.aazud05, tabIndex=37;
+DateEdit aazud13=aaz_file.aazud13, tabIndex=47;
+Edit aazud06=aaz_file.aazud06, tabIndex=38;
+DateEdit aazud14=aaz_file.aazud14, tabIndex=46;
+Edit aazud07=aaz_file.aazud07, tabIndex=39;
+DateEdit aazud15=aaz_file.aazud15, tabIndex=45;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(aaz_file.aaz64,aaz_file.aaz69,aaz_file.aaz72,aaz_file.aaz77,aaz_file.aaz85,aaz_file.aaz84,aaz_file.aaz71,aaz_file.aaz81,aaz_file.aaz78,aaz_file.aaz82,aaz_file.aaz80,aaz_file.aaz51,aaz_file.aaz83,aaz_file.aaz119,aaz_file.aaz115,aaz_file.aaz116,aaz_file.aaz31,aaz_file.aaz32,aaz_file.aaz33,aaz_file.aaz65,aaz_file.aaz68,aaz_file.aaz107,aaz_file.aaz108,aaz_file.aaz61,aaz_file.aaz62,aaz_file.aaz63,aaz_file.aaz90,aaz_file.aaz91,aaz_file.aaz92,aaz_file.aaz88,aaz_file.aaz121,formonly.ahe02_1,formonly.aaz1211,aaz_file.aaz122,formonly.ahe02_2,formonly.aaz1221,aaz_file.aaz123,formonly.ahe02_3,formonly.aaz1231,aaz_file.aaz124,formonly.ahe02_4,formonly.aaz1241,aaz_file.aaz125,aaz_file.aazud01,aaz_file.aazud02,aaz_file.aazud03,aaz_file.aazud04,aaz_file.aazud05,aaz_file.aazud06,aaz_file.aazud07,aaz_file.aazud08,aaz_file.aazud09,aaz_file.aazud10,aaz_file.aazud11,aaz_file.aazud12,aaz_file.aazud15,aaz_file.aazud14,aaz_file.aazud13,aaz_file.aaz132)
+SCREEN RECORD Record2(aaz_file.aaz126,aaz_file.aaz127)
+END -- INSTRUCTIONS
+

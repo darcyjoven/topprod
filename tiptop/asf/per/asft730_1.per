@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft730_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft730_1")
+Grid gr941
+{
+ <G group01                                 >
+             [choice1   ]
+   FQC No.   [shb22             ]
+   check date[dt1       ]
+   check emp [emp       ][gen02           ]
+             [choice2   ]
+             [choice3   ]
+   Gen.WO    [shb21     ]
+   store date[dt2       ]
+   ware      [wh1       ]
+   loc       [wh2       ]
+   lot       [wh3                         ]
+ <                                          >
+}
+END -- gr941
+END -- asft730_1
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+CheckBox choice1=formonly.choice1 type CHAR, tabIndex=1, text="gent fqc", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit shb22=formonly.shb22 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry FQC No.";
+DateEdit dt1=formonly.dt1 type CHAR, tabIndex=3;
+ButtonEdit emp=formonly.emp type CHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=5, noEntry;
+CheckBox choice2=formonly.choice2 type CHAR, tabIndex=6, text="gent store", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox choice3=formonly.choice3 type CHAR, tabIndex=12, text="QC gent store", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit shb21=formonly.shb21 type CHAR, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Doc";
+DateEdit dt2=formonly.dt2 type CHAR, tabIndex=8, not null, required;
+ButtonEdit wh1=formonly.wh1 type CHAR, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Warehouse";
+Edit wh2=formonly.wh2 type CHAR, tabIndex=10;
+Edit wh3=formonly.wh3 type CHAR, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.choice1,formonly.shb22,formonly.dt1,formonly.emp,formonly.gen02,formonly.choice2,formonly.shb21,formonly.dt2,formonly.wh1,formonly.wh2,formonly.wh3,formonly.choice3)
+END -- INSTRUCTIONS
+

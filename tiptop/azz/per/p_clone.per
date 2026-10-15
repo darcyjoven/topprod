@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_clone.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="p_clone")
+Grid gr1
+{
+
+[dummy9                                                        ]
+[dummy10                                                       ]
+[dummy11                                                       ]
+
+ <G gb1                                                                                                         >
+ [checkbox_]Default DS will be selected .
+ [buttonedit_db            ][dummy2     ]                            [dummy3        ]
+ [dummy7                  ]  Hostname:          [edit_sdb_host ]      Hostname:          [edit_tdb_host ]
+ [edit_dump_path           ] Connect String:    [edit_sdb_conn      ] Connect String:    [edit_tdb_conn      ]
+                             Password of SYS:   [edit_sdb_passwd    ] Password of SYS:   [edit_tdb_passwd    ]
+ <                                                                                                              >
+ <G gb1_1                                                                                                       >
+ [dummy8         ]
+ [checkbox_clap            ] [dummy1     ]                           [dummy4     ]
+ [buttonedit_ap            ]  Hostname:      [edit_sap_host ]         Hostname:         [edit_tap_host ]
+ [checkbox_clap_cust        ] Path of $TOP:  [edit_sap_top        ]   Path of $TOP:     [edit_tap_top        ]
+ [buttonedit_ap_cust       ]  Path of $CUST: [edit_sap_cust       ]   Path of $CUST:    [edit_tap_cust       ]
+
+ <                                                                                                              >
+
+}
+END -- gr1
+END -- p_clone
+
+ATTRIBUTES
+Label dummy9:dummy9, text=%"This program will clone AP or DB from [topprod] to [toptest].";
+Label dummy10:dummy10, text=%"WARNING! If executed, programs or data in [toptest] would be overwrited.";
+Label dummy11:dummy11, text=%"Before execute this cloning program, please take a backup of [toptest] if neceressary.";
+Group gb1:gb1;
+CheckBox checkbox_=formonly.CheckBox_cldb type CHAR, tabIndex=1, text="CLone DB", not null;
+ButtonEdit buttonedit_db=formonly.ButtonEdit_db type CHAR, action=controlpdb, tabIndex=2, image="zoom", scroll;
+Label dummy2:dummy2, text=%"SOURCE Node";
+Label dummy3:dummy3, text=%"TARGET Node";
+Label dummy7:dummy7, text=%"Path for data dump file";
+Edit edit_sdb_host=formonly.Edit_sdb_host type CHAR, tabIndex=4;
+Edit edit_tdb_host=formonly.Edit_tdb_host type CHAR, tabIndex=7, noEntry;
+TextEdit edit_dump_path=formonly.Edit_dump_path type CHAR, tabIndex=3, noEntry;
+Edit edit_sdb_conn=formonly.Edit_sdb_conn type CHAR, tabIndex=5;
+Edit edit_tdb_conn=formonly.Edit_tdb_conn type CHAR, tabIndex=8;
+Edit edit_sdb_passwd=formonly.Edit_sdb_passwd type CHAR, tabIndex=6, invisible;
+Edit edit_tdb_passwd=formonly.Edit_tdb_passwd type CHAR, tabIndex=9, invisible;
+Group gb1_1:gb1_1;
+Label dummy8:dummy8, text=%"Clone AP";
+CheckBox checkbox_clap=formonly.CheckBox_clap type CHAR, tabIndex=14, text="Clone Standard (Default all Module)", not null;
+Label dummy1:dummy1, text=%"SOURCE Node";
+Label dummy4:dummy4, text=%"TARGET Node";
+ButtonEdit buttonedit_ap=formonly.ButtonEdit_ap type CHAR, action=controlpap, tabIndex=10, image="zoom", scroll;
+Edit edit_sap_host=formonly.Edit_SAP_HOST type CHAR, tabIndex=11;
+Edit edit_tap_host=formonly.Edit_tap_host type CHAR, tabIndex=13, noEntry;
+CheckBox checkbox_clap_cust=formonly.CheckBox_clap_cust type CHAR, tabIndex=19, text="Clone Customize (Default all Module)";
+TextEdit edit_sap_top=formonly.Edit_sap_top type CHAR, tabIndex=12;
+TextEdit edit_tap_top=formonly.Edit_tap_top type CHAR, tabIndex=15;
+ButtonEdit buttonedit_ap_cust=formonly.ButtonEdit_ap_cust type CHAR, action=controlpap_cust, tabIndex=18, image="zoom", scroll;
+TextEdit edit_sap_cust=formonly.Edit_sap_cust type CHAR, tabIndex=16;
+TextEdit edit_tap_cust=formonly.Edit_tap_cust type CHAR, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.CheckBox_cldb,formonly.ButtonEdit_db,formonly.Edit_sdb_host,formonly.Edit_tdb_host,formonly.Edit_dump_path,formonly.Edit_sdb_conn,formonly.Edit_tdb_conn,formonly.Edit_sdb_passwd,formonly.Edit_tdb_passwd,formonly.CheckBox_clap,formonly.ButtonEdit_ap,formonly.Edit_SAP_HOST,formonly.Edit_tap_host,formonly.CheckBox_clap_cust,formonly.Edit_sap_top,formonly.Edit_tap_top,formonly.ButtonEdit_ap_cust,formonly.Edit_sap_cust,formonly.Edit_tap_cust)
+END -- INSTRUCTIONS
+

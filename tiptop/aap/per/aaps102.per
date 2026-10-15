@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aaps102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aaps102")
+Folder Folder1
+Page page01(text="Main")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                              > <G group02                                       >
+  On-Hold Reason Code for Invo!=Receiving $ [apz12     ]   [apz08                               ]
+ <                                                       > <                                                >
+ <G group03                                              > <G group04                                       >
+ [apz13                                         ]          [apz60                                         ]
+ [apz14                                         ]          [apz06                                         ]
+ [apz15                                         ]          [apz05                                         ]
+ [apz16                                         ]          <                                                >
+ [apz23                                         ]          <G group05                                       >
+ [apz24                                         ]          [apz27                                         ]
+ [apz26                                         ]           End of Month Revaluation Year/Month [apz2][ap]
+ <                                                       >
+ <G group06                                              >
+  A/P Aging 1/2/3/4th Section Days [apz][ap1][ap2][ap3]
+ [apz59                                         ]
+
+ <                                                       > <                                                >
+
+}
+END -- Grid1
+END -- VBox1
+END -- page01
+END -- Folder1
+END -- aaps102
+
+TABLES
+apz_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit apz12=apz_file.apz12, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry On-Hold Code";
+Group group02:group02, text="Update Amt aft Multi-Invoice Entered";
+RadioGroup apz08=apz_file.apz08, tabIndex=2, items=(("1", %"Update Now"),("2", %"Query"),("3", %"No Update"));
+Group group03:group03;
+CheckBox apz13=apz_file.apz13, tabIndex=3, text="Separate Default Acct by Department", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz14=apz_file.apz14, tabIndex=4, text="Check Business Uniform No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz15=apz_file.apz15, tabIndex=5, text="Receipt > Invoice Amt Allowed", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz16=apz_file.apz16, tabIndex=6, text="Modf Pur.U/P when Pur.Invo Billing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz23=apz_file.apz23, tabIndex=7, text="Allow Multi-Plant Accounts on a Payment Slip", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz24=apz_file.apz24, tabIndex=8, text="Allow to Amend Carried Voucher", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz26=apz_file.apz26, tabIndex=9, text="Enter Plant No. in Payment task?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04;
+CheckBox apz60=apz_file.apz60, tabIndex=10, text="Auto Generate Billing Allowance When Confirm Purchase Invoice", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz06=apz_file.apz06, tabIndex=11, text="When payment ,contra AP un-carry Voc.", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz05=apz_file.apz05, tabIndex=12, text="When payment ,contra the AP un-comfirm", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05;
+CheckBox apz27=apz_file.apz27, tabIndex=13, text="Spread Approved in End of Month Revaluation,Un-Next Month", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit apz2=apz_file.apz21, tabIndex=14;
+Edit ap=apz_file.apz22, tabIndex=15;
+Group group06:group06;
+Edit apz=apz_file.apz45, tabIndex=16;
+Edit ap1=apz_file.apz46, tabIndex=17;
+Edit ap2=apz_file.apz47, tabIndex=18;
+Edit ap3=apz_file.apz48, tabIndex=19;
+CheckBox apz59=apz_file.apz59, tabIndex=20, text="Enter MISC in Misc Billing Note Body", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(apz_file.apz12,apz_file.apz08,apz_file.apz13,apz_file.apz14,apz_file.apz15,apz_file.apz16,apz_file.apz23,apz_file.apz24,apz_file.apz26,apz_file.apz60,apz_file.apz06,apz_file.apz05,apz_file.apz27,apz_file.apz21,apz_file.apz22,apz_file.apz45,apz_file.apz46,apz_file.apz47,apz_file.apz48,apz_file.apz59)
+END -- INSTRUCTIONS
+

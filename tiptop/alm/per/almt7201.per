@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt7201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt7201")
+VBox vb3
+Folder pc1
+Page Main(text=%"Main")
+Table s_lqh
+{
+[lqh03     |lqh04        |lqh05        |lqh06        ]
+[lqh03     |lqh04        |lqh05        |lqh06        ]
+[lqh03     |lqh04        |lqh05        |lqh06        ]
+[lqh03     |lqh04        |lqh05        |lqh06        ]
+[lqh03     |lqh04        |lqh05        |lqh06        ]
+
+}
+END -- s_lqh
+END -- Main
+END -- pc1
+Grid gr4
+{
+
+ ------Rows [cnt    ] -------
+
+}
+END -- gr4
+END -- vb3
+END -- almt7201
+
+TABLES
+lqh_file
+ATTRIBUTES
+Edit lqh03=lqh_file.lqh03, tabIndex=1, title="Seri.num.", not null, required;
+Edit lqh04=lqh_file.lqh04, tabIndex=2, title="Money from", not null, required;
+Edit lqh05=lqh_file.lqh05, tabIndex=3, title="Money to", not null, required;
+Edit lqh06=lqh_file.lqh06, tabIndex=4, title="Amort.ratio", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lqh(lqh_file.lqh03,lqh_file.lqh04,lqh_file.lqh05,lqh_file.lqh06)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,24 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_prt_length.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"INPUT")
+Grid Grid1
+{
+[a                     ]
+
+}
+END -- Grid1
+END -- cl_prt_length
+
+ATTRIBUTES
+RadioGroup a=formonly.a type CHAR, tabIndex=1, not null, required, items=(("1", %"80 column"),("2", %"132 column"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a)
+END -- INSTRUCTIONS
+

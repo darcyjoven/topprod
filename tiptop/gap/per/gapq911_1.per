@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gap/42f/gapq911_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gapq911_1")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+Grid gr5447
+{
+ Book No.            [o         ]             Year                 [yy        ]              [b                          ]
+ Month               [m1        ]              --                  [m2        ]              [e                            ]
+
+
+}
+END -- gr5447
+END -- page01
+END -- folder01
+Table s_npr
+{
+[npr00          |aag02               |npr01                     |npr02                       |npr11     |pb_dc     |pb_balf                |npr11_pb         |pb_bal                 |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr00          |aag02               |npr01                     |npr02                       |npr11     |pb_dc     |pb_balf                |npr11_pb         |pb_bal                 |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr00          |aag02               |npr01                     |npr02                       |npr11     |pb_dc     |pb_balf                |npr11_pb         |pb_bal                 |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr00          |aag02               |npr01                     |npr02                       |npr11     |pb_dc     |pb_balf                |npr11_pb         |pb_bal                 |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr00          |aag02               |npr01                     |npr02                       |npr11     |pb_dc     |pb_balf                |npr11_pb         |pb_bal                 |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr00          |aag02               |npr01                     |npr02                       |npr11     |pb_dc     |pb_balf                |npr11_pb         |pb_bal                 |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr00          |aag02               |npr01                     |npr02                       |npr11     |pb_dc     |pb_balf                |npr11_pb         |pb_bal                 |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr00          |aag02               |npr01                     |npr02                       |npr11     |pb_dc     |pb_balf                |npr11_pb         |pb_bal                 |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr00          |aag02               |npr01                     |npr02                       |npr11     |pb_dc     |pb_balf                |npr11_pb         |pb_bal                 |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr00          |aag02               |npr01                     |npr02                       |npr11     |pb_dc     |pb_balf                |npr11_pb         |pb_bal                 |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+}
+END -- s_npr
+Grid gr5449
+{
+ ----------- Rows [cnt   ] -----------
+
+}
+END -- gr5449
+END -- vb4
+END -- gapq911_1
+
+ATTRIBUTES
+ButtonEdit o=formonly.o type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit yy=formonly.yy type VARCHAR, tabIndex=2;
+CheckBox b=formonly.b type VARCHAR, tabIndex=5, text="Print Original Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit m1=formonly.m1 type VARCHAR, tabIndex=3;
+Edit m2=formonly.m2 type CHAR, tabIndex=4;
+CheckBox e=formonly.e type VARCHAR, tabIndex=6, text="Page-Break by Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit npr00=formonly.npr00 type VARCHAR, action=controlp, tabIndex=7, title=%"Account No.", image="zoom";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=8, title=%"Edit2", noEntry;
+ButtonEdit npr01=formonly.npr01 type VARCHAR, action=controlp, tabIndex=9, title="Vendor No.", image="zoom";
+Edit npr02=formonly.npr02 type VARCHAR, tabIndex=10, title="Vendor Abbreviation";
+Edit npr11=formonly.npr11 type VARCHAR, tabIndex=11, title="Currency";
+Edit pb_dc=formonly.pb_dc type CHAR, tabIndex=12, title="DC(BOP)";
+Edit pb_balf=formonly.pb_balf type CHAR, tabIndex=13, title="Balance T.C Amt(BOP)";
+Edit npr11_pb=formonly.npr11_pb type CHAR, tabIndex=14, title="Exchange Rate";
+Edit pb_bal=formonly.pb_bal type CHAR, tabIndex=15, title="Balance L.C Amt(BOP)";
+Edit df=formonly.df type CHAR, tabIndex=16, title="Debit Amount (Trans. Curr.)";
+Edit npr11_d=formonly.npr11_d type DECIMAL, tabIndex=17, title="Exchange Rate";
+Edit d=formonly.d type CHAR, tabIndex=18, title="Debit Amount (Local. Curr.)";
+Edit cf=formonly.cf type CHAR, tabIndex=19, title="Credit Amount (Trans. Curr.)";
+Edit npr11_c=formonly.npr11_c type CHAR, tabIndex=20, title="Exchange Rate";
+Edit c=formonly.c type CHAR, tabIndex=21, title="Credit Amount (Local. Curr.)";
+Edit dc=formonly.dc type CHAR, tabIndex=22, title="D/C";
+Edit balf=formonly.balf type CHAR, tabIndex=23, title="Balance T.C Amt";
+Edit npr11_bal=formonly.npr11_bal type CHAR, tabIndex=24, title="Exchange Rate";
+Edit bal=formonly.bal type CHAR, tabIndex=25, title="Balance L.C Amt";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=26, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_npr(formonly.npr00,formonly.aag02,formonly.npr01,formonly.npr02,formonly.npr11,formonly.pb_dc,formonly.pb_balf,formonly.npr11_pb,formonly.pb_bal,formonly.df,formonly.npr11_d,formonly.d,formonly.cf,formonly.npr11_c,formonly.c,formonly.dc,formonly.balf,formonly.npr11_bal,formonly.bal)
+SCREEN RECORD Undefined(formonly.o,formonly.yy,formonly.m1,formonly.cnt,formonly.b,formonly.e,formonly.m2)
+END -- INSTRUCTIONS
+

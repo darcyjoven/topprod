@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abaq100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+HBox HBox1
+Table s_iba
+{
+[iba01  |iba02   |iba03   |iba04   |iba05   |iba06   |iba07   |iba08   |iba09   |iba10   |iba11   ]
+[iba01  |iba02   |iba03   |iba04   |iba05   |iba06   |iba07   |iba08   |iba09   |iba10   |iba11   ]
+[iba01  |iba02   |iba03   |iba04   |iba05   |iba06   |iba07   |iba08   |iba09   |iba10   |iba11   ]
+[iba01  |iba02   |iba03   |iba04   |iba05   |iba06   |iba07   |iba08   |iba09   |iba10   |iba11   ]
+[iba01  |iba02   |iba03   |iba04   |iba05   |iba06   |iba07   |iba08   |iba09   |iba10   |iba11   ]
+[iba01  |iba02   |iba03   |iba04   |iba05   |iba06   |iba07   |iba08   |iba09   |iba10   |iba11   ]
+[iba01  |iba02   |iba03   |iba04   |iba05   |iba06   |iba07   |iba08   |iba09   |iba10   |iba11   ]
+[iba01  |iba02   |iba03   |iba04   |iba05   |iba06   |iba07   |iba08   |iba09   |iba10   |iba11   ]
+[iba01  |iba02   |iba03   |iba04   |iba05   |iba06   |iba07   |iba08   |iba09   |iba10   |iba11   ]
+[iba01  |iba02   |iba03   |iba04   |iba05   |iba06   |iba07   |iba08   |iba09   |iba10   |iba11   ]
+[iba01  |iba02   |iba03   |iba04   |iba05   |iba06   |iba07   |iba08   |iba09   |iba10   |iba11   ]
+[iba01  |iba02   |iba03   |iba04   |iba05   |iba06   |iba07   |iba08   |iba09   |iba10   |iba11   ]
+}
+END -- s_iba
+Table s_ibb
+{
+[ibb01     |ibb02   |ibb03   |ibb04   |ibb05   |ibb06      |ima02       |ima021      |ibb07   |ibb08   |ibb09   |ibb10   |ibb11   |ibb12   |ibb13   |ibbacti ]
+[ibb01     |ibb02   |ibb03   |ibb04   |ibb05   |ibb06      |ima02       |ima021      |ibb07   |ibb08   |ibb09   |ibb10   |ibb11   |ibb12   |ibb13   |ibbacti ]
+[ibb01     |ibb02   |ibb03   |ibb04   |ibb05   |ibb06      |ima02       |ima021      |ibb07   |ibb08   |ibb09   |ibb10   |ibb11   |ibb12   |ibb13   |ibbacti ]
+[ibb01     |ibb02   |ibb03   |ibb04   |ibb05   |ibb06      |ima02       |ima021      |ibb07   |ibb08   |ibb09   |ibb10   |ibb11   |ibb12   |ibb13   |ibbacti ]
+[ibb01     |ibb02   |ibb03   |ibb04   |ibb05   |ibb06      |ima02       |ima021      |ibb07   |ibb08   |ibb09   |ibb10   |ibb11   |ibb12   |ibb13   |ibbacti ]
+[ibb01     |ibb02   |ibb03   |ibb04   |ibb05   |ibb06      |ima02       |ima021      |ibb07   |ibb08   |ibb09   |ibb10   |ibb11   |ibb12   |ibb13   |ibbacti ]
+[ibb01     |ibb02   |ibb03   |ibb04   |ibb05   |ibb06      |ima02       |ima021      |ibb07   |ibb08   |ibb09   |ibb10   |ibb11   |ibb12   |ibb13   |ibbacti ]
+[ibb01     |ibb02   |ibb03   |ibb04   |ibb05   |ibb06      |ima02       |ima021      |ibb07   |ibb08   |ibb09   |ibb10   |ibb11   |ibb12   |ibb13   |ibbacti ]
+[ibb01     |ibb02   |ibb03   |ibb04   |ibb05   |ibb06      |ima02       |ima021      |ibb07   |ibb08   |ibb09   |ibb10   |ibb11   |ibb12   |ibb13   |ibbacti ]
+[ibb01     |ibb02   |ibb03   |ibb04   |ibb05   |ibb06      |ima02       |ima021      |ibb07   |ibb08   |ibb09   |ibb10   |ibb11   |ibb12   |ibb13   |ibbacti ]
+[ibb01     |ibb02   |ibb03   |ibb04   |ibb05   |ibb06      |ima02       |ima021      |ibb07   |ibb08   |ibb09   |ibb10   |ibb11   |ibb12   |ibb13   |ibbacti ]
+[ibb01     |ibb02   |ibb03   |ibb04   |ibb05   |ibb06      |ima02       |ima021      |ibb07   |ibb08   |ibb09   |ibb10   |ibb11   |ibb12   |ibb13   |ibbacti ]
+}
+END -- s_ibb
+END -- HBox1
+END -- Page1
+END -- Folder1
+END -- Form
+
+TABLES
+ibb_file,
+iba_file
+ATTRIBUTES
+Edit iba01=iba_file.iba01, tabIndex=1, title=%"barcode no", not null, required;
+ComboBox iba02=iba_file.iba02, tabIndex=2, title=%"barcode1", queryEditable, items=(("5", "Production lot"),("6", "Serial Number"),("D", "Order packing slip"),("E", "abat630"),("F", "Barcode batch number-item"),("G", "Barcode batch number-work order"),("H", "packet nu."),("X", "Production lot-Manual"),("Y", "Serial Number-Manual"),("Z", "Production lot&Serial Number"));
+Edit iba03=iba_file.iba03, tabIndex=3, title=%"barcode2";
+Edit iba04=iba_file.iba04, tabIndex=4, title=%"barcode3";
+Edit iba05=iba_file.iba05, tabIndex=5, title=%"barcode4";
+Edit iba06=iba_file.iba06, tabIndex=6, title=%"barcode5";
+Edit iba07=iba_file.iba07, tabIndex=7, title=%"barcode6";
+Edit iba08=iba_file.iba08, tabIndex=8, title=%"barcode7";
+Edit iba09=iba_file.iba09, tabIndex=9, title=%"barcode8";
+Edit iba10=iba_file.iba10, tabIndex=10, title=%"barcode9";
+Edit iba11=iba_file.iba11, tabIndex=11, title=%"barcode10";
+Edit ibb01=ibb_file.ibb01, tabIndex=12, title=%"barcode", not null, required;
+ComboBox ibb02=ibb_file.ibb02, tabIndex=13, title=%"Opportunity", not null, required, queryEditable, items=(("A", "work order(asfi301)"),("B", "FQC recode(aqct410)"),("C", "Work order production reported work order(asft300)"),("D", "Production Daily(asft700)"),("E", "Procurement of storage(apmt720)"),("F", "Purchase Order(apmt540)"),("G", "Outsourcing purchase order(apmt590)"),("H", "Order packing slip(abai140)"),("I", "I"),("J", "J"),("K", "apmt110"),("L", "aqct110"));
+Edit ibb03=ibb_file.ibb03, tabIndex=14, title=%"no#", not null, required;
+Edit ibb04=ibb_file.ibb04, tabIndex=15, title=%"Source Item", not null, required;
+Edit ibb05=ibb_file.ibb05, tabIndex=16, title=%"packet", not null, required;
+Edit ibb06=ibb_file.ibb06, tabIndex=17, title=%"item no.";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=18, title=%"item name";
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=19, title=%"Specification";
+Edit ibb07=ibb_file.ibb07, tabIndex=20, title=%"number";
+Edit ibb08=ibb_file.ibb08, tabIndex=21, title=%"packet style";
+Edit ibb09=ibb_file.ibb09, tabIndex=22, title=%"packet link";
+Edit ibb10=ibb_file.ibb10, tabIndex=23, title=%"count";
+CheckBox ibb11=ibb_file.ibb11, tabIndex=24, title=%"If used", text=%"", valueChecked = "Y", valueUnchecked = "N", justify=center;
+Edit ibb12=ibb_file.ibb12, tabIndex=25, title=%"Printed Times";
+Edit ibb13=ibb_file.ibb13, tabIndex=27, title=%"Inspect Lot No.", not null, required;
+CheckBox ibbacti=ibb_file.ibbacti, tabIndex=26, title=%"Data Valid Code", text=%"", valueChecked = "Y", valueUnchecked = "N", justify=center;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_iba(iba_file.iba01,iba_file.iba02,iba_file.iba03,iba_file.iba04,iba_file.iba05,iba_file.iba06,iba_file.iba07,iba_file.iba08,iba_file.iba09,iba_file.iba10,iba_file.iba11)
+SCREEN RECORD s_ibb(ibb_file.ibb01,ibb_file.ibb02,ibb_file.ibb03,ibb_file.ibb04,ibb_file.ibb05,ibb_file.ibb06,formonly.ima02,formonly.ima021,ibb_file.ibb07,ibb_file.ibb08,ibb_file.ibb09,ibb_file.ibb10,ibb_file.ibb11,ibb_file.ibb12,ibb_file.ibb13,ibb_file.ibbacti)
+END -- INSTRUCTIONS
+

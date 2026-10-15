@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdr270.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdr270")
+VBox VBox1
+Grid gr415
+{
+ <G group01                                                                             >
+  W/O No.             [stg04               ]  Product Type        [ima12               ]
+  Master Routing      [sta07               ]  Item No.            [sfb05               ]
+ <                                                                                      >
+ <G group02                                                                             >
+  Cost year/month     [yea ]/[mo]
+ <                                                                                      >
+
+}
+END -- gr415
+Grid gr416
+{
+[more                                                             ]
+
+}
+END -- gr416
+END -- VBox1
+END -- asdr270
+
+TABLES
+sfb_file,
+stg_file,
+ima_file,
+sta_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit stg04=stg_file.stg04, tabIndex=1, upShift;
+Edit ima12=ima_file.ima12, tabIndex=2, upShift;
+Edit sta07=sta_file.sta07, tabIndex=3, upShift;
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=4, image="zoom", upShift, comment="<P>";
+Group group02:group02, text="INPUT";
+Edit yea=formonly.yea type SMALLINT, tabIndex=5;
+Edit mo=formonly.mo type SMALLINT, tabIndex=6;
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(stg_file.stg04,ima_file.ima12,sta_file.sta07,sfb_file.sfb05,formonly.yea,formonly.mo,formonly.more)
+END -- INSTRUCTIONS
+

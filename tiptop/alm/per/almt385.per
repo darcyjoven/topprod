@@ -1,0 +1,213 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt385.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid ds1
+{
+
+[label1  |lje01               ]                       [label12 |lje12               ]                              [ljemksg              ]
+[label2  |lje02               ]                       [label13 |lje13               ]                      [label25 |lje25               |imgmksg]
+[label3  |lje03               ]                       [label14 |lje14               ]                      [label27 |ljeconf             |       ]
+[label32 |ljeplant            |rtz13                 ][label18 |lje18               ]                      [label29 |ljeconu             |gen02_1             ]
+[label30 |ljelegal            |azt02                 ][label19 |lje19               ]                      [label33 |ljecond             |ljecont             ]
+[label4  |lje04               ]                       [label20 |lje20               ]                      [label26 |lje26                                    ]
+[label5  |lje05               ]                       [label21 |lje21               |oaj02                 ]        [                                         ]
+[label6  |lje06               |lne05                 ][label15 |lje15               ]
+[label7  |lje07               |oba02                 ][label16 |lje16               ]
+[label8  |lje08               |tqa02                 ][label17 |lje17               ]
+[label9  |lje09               ]                       [label22 |lje22               ]
+[label10 |lje10               ]                       [label23 |lje23               |gen02                 ]
+[label11 |lje11               ]                       [label24 |lje24               |gem02                 ]
+
+}
+END -- ds1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid ds2
+{
+
+[label28|ljeuser             ] [label35|ljemodu             ] [label39|ljeacti             ]
+[label36|ljegrup             ] [label37|ljedate             ] [label38|ljecrat             ]
+[label31|ljeoriu             ] [label34|ljeorig             ]
+
+
+}
+END -- ds2
+END -- Page2
+END -- Folder1
+Folder Folder2
+Page Page3(text=%"Page3")
+Table ds3
+{
+[ljg02 |ljg03               |oaj01               |oaj05               |ljg04                         ]
+[ljg02 |ljg03               |oaj01               |oaj05               |ljg04                         ]
+[ljg02 |ljg03               |oaj01               |oaj05               |ljg04                         ]
+[ljg02 |ljg03               |oaj01               |oaj05               |ljg04                         ]
+[ljg02 |ljg03               |oaj01               |oaj05               |ljg04                         ]
+[ljg02 |ljg03               |oaj01               |oaj05               |ljg04                         ]
+[ljg02 |ljg03               |oaj01               |oaj05               |ljg04                         ]
+[ljg02 |ljg03               |oaj01               |oaj05               |ljg04                         ]
+[ljg02 |ljg03               |oaj01               |oaj05               |ljg04                         ]
+[ljg02 |ljg03               |oaj01               |oaj05               |ljg04                         ]
+
+}
+END -- ds3
+END -- Page3
+Page Page4(text=%"Page4")
+Table ds4
+{
+[ljh02 |ljh03               |oaj03               |oaj04               |ljh04                         ]
+[ljh02 |ljh03               |oaj03               |oaj04               |ljh04                         ]
+[ljh02 |ljh03               |oaj03               |oaj04               |ljh04                         ]
+[ljh02 |ljh03               |oaj03               |oaj04               |ljh04                         ]
+[ljh02 |ljh03               |oaj03               |oaj04               |ljh04                         ]
+[ljh02 |ljh03               |oaj03               |oaj04               |ljh04                         ]
+[ljh02 |ljh03               |oaj03               |oaj04               |ljh04                         ]
+[ljh02 |ljh03               |oaj03               |oaj04               |ljh04                         ]
+[ljh02 |ljh03               |oaj03               |oaj04               |ljh04                         ]
+[ljh02 |ljh03               |oaj03               |oaj04               |ljh04                         ]
+
+}
+END -- ds4
+END -- Page4
+END -- Folder2
+Grid Grid1
+{
+
+   -----[label|idx  |la|cnt  ]-----[labe1|cn1  ]-----
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+ljg_file,
+oaj_file,
+lje_file,
+oaj_file1=oaj_file,
+ljh_file
+ATTRIBUTES
+Label label1:Label1, text=%"lje01";
+ButtonEdit lje01=lje_file.lje01, action=controlp, tabIndex=1, not null, image="zoom.png", scroll;
+Label label12:Label12, text=%"lje12";
+DateEdit lje12=lje_file.lje12, tabIndex=12, noEntry;
+CheckBox ljemksg=lje_file.ljemksg, tabIndex=31, text=%"lje_file.ljemksg", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Label label2:Label2, text=%"lje02";
+DateEdit lje02=lje_file.lje02, tabIndex=2;
+Label label13:Label13, text=%"lje13";
+DateEdit lje13=lje_file.lje13, tabIndex=13, noEntry;
+Label label25:Label25, text=%"lje25";
+ComboBox lje25=lje_file.lje25, tabIndex=25, noEntry, not null, scroll, items=(("0", "Open"),("1", "Text"),("S", "Text"),("W", "Text"),("R", "Text"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Label label3:Label3, text=%"lje03";
+ComboBox lje03=lje_file.lje03, tabIndex=3, not null, scroll, items=(("1", "Text"),("2", "Text"),("3", "Text"),("4", "Text"),("5", "Text"));
+Label label14:Label14, text=%"lje14";
+DateEdit lje14=lje_file.lje14, tabIndex=14, not null;
+Label label27:Label27, text=%"ljeconf";
+ComboBox ljeconf=lje_file.ljeconf, tabIndex=27, noEntry, not null, scroll, items=(("Y", "Confirmed"),("N", "Unconfirmed"));
+Label label32:Label32, text=%"ljeplant";
+ButtonEdit ljeplant=lje_file.ljeplant, action=controlp, tabIndex=32, noEntry, not null, image="zoom.png", scroll;
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=34, noEntry;
+Label label18:Label18, text=%"lje18";
+ComboBox lje18=lje_file.lje18, tabIndex=18, not null, scroll, items=(("1", "Text"),("2", "Text"));
+Label label29:Label29, text=%"ljeconu";
+ButtonEdit ljeconu=lje_file.ljeconu, action=controlp, tabIndex=29, noEntry, image="zoom.png", scroll;
+Edit gen02_1=formonly.gen02_1 type CHAR, tabIndex=50, noEntry;
+Label label30:Label30, text=%"ljelegal";
+ButtonEdit ljelegal=lje_file.ljelegal, action=controlp, tabIndex=30, noEntry, not null, image="zoom.png", scroll;
+Edit azt02=formonly.azt02 type CHAR, tabIndex=35, noEntry;
+Label label19:Label19, text=%"lje19";
+Edit lje19=lje_file.lje19, tabIndex=19, scroll;
+Label label33:Label33, text=%"ljecond";
+DateEdit ljecond=lje_file.ljecond, tabIndex=33, noEntry;
+TimeEdit ljecont=lje_file.ljecont, tabIndex=28, noEntry, scroll;
+Label label4:Label4, text=%"lje04";
+ButtonEdit lje04=lje_file.lje04, action=controlp, tabIndex=4, not null, image="zoom.png", scroll;
+Label label20:Label20, text=%"lje20";
+Edit lje20=lje_file.lje20, tabIndex=20, scroll;
+Label label26:Label26, text=%"lje26";
+TextEdit lje26=lje_file.lje26, tabIndex=26;
+Label label5:Label5, text=%"lje05";
+ButtonEdit lje05=lje_file.lje05, action=controlp, tabIndex=5, noEntry, image="zoom.png", scroll;
+Label label21:Label21, text=%"lje21";
+ButtonEdit lje21=lje_file.lje21, action=controlp, tabIndex=21, image="zoom.png", scroll;
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=39;
+Label label6:Label6, text=%"lje06";
+ButtonEdit lje06=lje_file.lje06, action=controlp, tabIndex=6, noEntry, image="zoom.png", scroll;
+Edit lne05=formonly.lne05 type CHAR, tabIndex=36, noEntry;
+Label label15:Label15, text=%"lje15";
+Edit lje15=lje_file.lje15, tabIndex=15, noEntry, scroll;
+Label label7:Label7, text=%"lje07";
+ButtonEdit lje07=lje_file.lje07, action=controlp, tabIndex=7, noEntry, image="zoom.png", scroll;
+Edit oba02=formonly.oba02 type CHAR, tabIndex=37, noEntry;
+Label label16:Label16, text=%"lje16";
+Edit lje16=lje_file.lje16, tabIndex=16, noEntry, scroll;
+Label label8:Label8, text=%"lje08";
+ButtonEdit lje08=lje_file.lje08, action=controlp, tabIndex=8, noEntry, image="zoom.png", scroll;
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=38, noEntry;
+Label label17:Label17, text=%"lje17";
+Edit lje17=lje_file.lje17, tabIndex=17, noEntry, scroll;
+Label label9:Label9, text=%"lje09";
+Edit lje09=lje_file.lje09, tabIndex=9, noEntry, scroll;
+Label label22:Label22, text=%"lje22";
+Edit lje22=lje_file.lje22, tabIndex=22, noEntry, scroll;
+Label label10:Label10, text=%"lje10";
+Edit lje10=lje_file.lje10, tabIndex=10, noEntry, scroll;
+Label label23:Label23, text=%"lje23";
+ButtonEdit lje23=lje_file.lje23, action=controlp, tabIndex=23, not null, image="zoom.png", scroll;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=40;
+Label label11:Label11, text=%"lje11";
+Edit lje11=lje_file.lje11, tabIndex=11, noEntry, scroll;
+Label label24:Label24, text=%"lje24";
+ButtonEdit lje24=lje_file.lje24, action=controlp, tabIndex=24, not null, image="zoom.png", scroll;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=41;
+Label label28:Label28, text=%"ljeuser";
+Edit ljeuser=lje_file.ljeuser, tabIndex=42, noEntry, scroll;
+Label label35:Label35, text=%"ljemodu";
+Edit ljemodu=lje_file.ljemodu, tabIndex=45, noEntry, scroll;
+Label label39:Label39, text=%"ljeacti";
+Edit ljeacti=lje_file.ljeacti, tabIndex=49, noEntry, not null, scroll;
+Label label36:Label36, text=%"ljegrup";
+Edit ljegrup=lje_file.ljegrup, tabIndex=46, noEntry, scroll;
+Label label37:Label37, text=%"ljedate";
+DateEdit ljedate=lje_file.ljedate, tabIndex=47, noEntry;
+Label label38:Label38, text=%"ljecrat";
+DateEdit ljecrat=lje_file.ljecrat, tabIndex=48, noEntry;
+Label label31:Label31, text=%"ljeoriu";
+Edit ljeoriu=lje_file.ljeoriu, tabIndex=43, noEntry, scroll;
+Label label34:Label34, text=%"ljeorig";
+Edit ljeorig=lje_file.ljeorig, tabIndex=44, noEntry, scroll;
+Edit ljg02=ljg_file.ljg02, tabIndex=51, title=%"ljg02", noEntry, scroll;
+ButtonEdit ljg03=ljg_file.ljg03, action=controlp, tabIndex=52, title=%"ljg03", noEntry, image="zoom.png", scroll;
+Edit oaj01=oaj_file.oaj02, tabIndex=53, title=%"oaj02", noEntry, scroll;
+ComboBox oaj05=oaj_file.oaj05, tabIndex=54, title=%"oaj05", noEntry, scroll, items=(("01", "Text"),("02", "Text"),("10", "Text"));
+Edit ljg04=ljg_file.ljg04, tabIndex=55, title=%"ljg04", noEntry, scroll;
+Edit ljh02=ljh_file.ljh02, tabIndex=56, title=%"ljh02", noEntry, scroll;
+ButtonEdit ljh03=ljh_file.ljh03, action=controlp, tabIndex=57, title=%"ljh03", noEntry, image="zoom.png", scroll;
+Edit oaj03=oaj_file1.oaj02, tabIndex=58, title=%"oaj02", noEntry, scroll;
+ComboBox oaj04=oaj_file1.oaj05, tabIndex=59, title=%"oaj05", noEntry, scroll, items=(("01", "Text"),("02", "Text"),("10", "Text"));
+Edit ljh04=ljh_file.ljh04, tabIndex=60, title=%"ljh04", noEntry, scroll;
+Label label:Label40, text=%"cnt";
+Edit idx=formonly.idx type CHAR, tabIndex=61;
+Label la:Label41, text=%"/";
+Edit cnt=formonly.cnt type CHAR, tabIndex=62;
+Label labe1:Label42, text=%"cnt1";
+Edit cn1=formonly.cn1 type CHAR, tabIndex=63;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(lje_file.lje01,lje_file.lje02,lje_file.lje03,lje_file.lje04,lje_file.lje05,lje_file.lje06,lje_file.lje07,lje_file.lje08,lje_file.lje09,lje_file.lje10,lje_file.lje11,lje_file.lje12,lje_file.lje13,lje_file.lje14,lje_file.lje15,lje_file.lje16,lje_file.lje17,lje_file.lje18,lje_file.lje19,lje_file.lje20,lje_file.lje21,lje_file.lje22,lje_file.lje23,lje_file.lje24,lje_file.lje25,lje_file.lje26,lje_file.ljeconf,lje_file.ljecont,lje_file.ljeconu,lje_file.ljelegal,lje_file.ljemksg,lje_file.ljeplant,lje_file.ljecond,formonly.rtz13,formonly.azt02,formonly.lne05,formonly.oaj02,formonly.oba02,formonly.gen02_1,formonly.gem02,formonly.gen02,formonly.tqa02)
+SCREEN RECORD Record2(lje_file.ljeuser,lje_file.ljeoriu,lje_file.ljeorig,lje_file.ljemodu,lje_file.ljegrup,lje_file.ljedate,lje_file.ljecrat,lje_file.ljeacti)
+SCREEN RECORD s_ljg(ljg_file.ljg02,ljg_file.ljg03,oaj_file.oaj02,oaj_file.oaj05,ljg_file.ljg04)
+SCREEN RECORD s_ljh(ljh_file.ljh02,ljh_file.ljh03,oaj_file1.oaj02,oaj_file1.oaj05,ljh_file.ljh04)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn1,formonly.imgmksg)
+END -- INSTRUCTIONS
+

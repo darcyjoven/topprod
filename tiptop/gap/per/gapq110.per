@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gap/42f/gapq110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gapq110")
+VBox vb105
+Folder pc773
+Page page01(text="Main")
+Table s_apk
+{
+[apk01           |apk02 |apa06          |pmc03  |apk05     |apk03     |apk11     |apk29    |apk08       |apk07       |apk06       ]
+[apk01           |apk02 |apa06          |pmc03  |apk05     |apk03     |apk11     |apk29    |apk08       |apk07       |apk06       ]
+[apk01           |apk02 |apa06          |pmc03  |apk05     |apk03     |apk11     |apk29    |apk08       |apk07       |apk06       ]
+[apk01           |apk02 |apa06          |pmc03  |apk05     |apk03     |apk11     |apk29    |apk08       |apk07       |apk06       ]
+[apk01           |apk02 |apa06          |pmc03  |apk05     |apk03     |apk11     |apk29    |apk08       |apk07       |apk06       ]
+[apk01           |apk02 |apa06          |pmc03  |apk05     |apk03     |apk11     |apk29    |apk08       |apk07       |apk06       ]
+[apk01           |apk02 |apa06          |pmc03  |apk05     |apk03     |apk11     |apk29    |apk08       |apk07       |apk06       ]
+[apk01           |apk02 |apa06          |pmc03  |apk05     |apk03     |apk11     |apk29    |apk08       |apk07       |apk06       ]
+[apk01           |apk02 |apa06          |pmc03  |apk05     |apk03     |apk11     |apk29    |apk08       |apk07       |apk06       ]
+[apk01           |apk02 |apa06          |pmc03  |apk05     |apk03     |apk11     |apk29    |apk08       |apk07       |apk06       ]
+
+}
+END -- s_apk
+END -- page01
+END -- pc773
+Grid gr3307
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr3307
+END -- vb105
+END -- gapq110
+
+TABLES
+apa_file,
+apk_file
+ATTRIBUTES
+ButtonEdit apk01=apk_file.apk01, action=controlp, tabIndex=1, title="Accounts", image="zoom", comment="<^P> Qry Details ";
+Edit apk02=apk_file.apk02, tabIndex=2, title="Ln#";
+ButtonEdit apa06=apa_file.apa06, action=controlp, tabIndex=3, title="Vender No", image="zoom", comment="<^P> Qry Details ";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=4, title="Vender";
+DateEdit apk05=apk_file.apk05, tabIndex=5, title="Invo Date";
+Edit apk03=formonly.apk03 type CHAR, tabIndex=12, title="Invo No";
+ButtonEdit apk11=apk_file.apk11, action=controlp, tabIndex=6, title="Tax", image="zoom", comment="<^P> Qry Details ";
+Edit apk29=apk_file.apk29, tabIndex=7, title="Tax Rate";
+Edit apk08=apk_file.apk08, tabIndex=8, title="H.C B-Tax", not null, required;
+Edit apk07=apk_file.apk07, tabIndex=9, title="H.C Tax", not null, required;
+Edit apk06=apk_file.apk06, tabIndex=10, title="H.C Sum", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apk(apk_file.apk01,apk_file.apk02,apa_file.apa06,formonly.pmc03,apk_file.apk05,formonly.apk03,apk_file.apk11,apk_file.apk29,apk_file.apk08,apk_file.apk07,apk_file.apk06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

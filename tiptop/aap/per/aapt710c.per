@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt710c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Advance Purchase Accounting")
+Grid gr497
+{
+ <G group01                                                                >
+  CIB Account         [ala43              ][aag02_1                       ]
+  CIB Account 2       [ala431             ][aag02_2                       ]
+  Payment Voucher     [ala73              ]
+
+ <                                                                         >
+
+}
+END -- gr497
+END -- aapt710c
+
+TABLES
+ala_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit ala43=ala_file.ala43, action=controlp, tabIndex=1, image="zoom";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=2;
+ButtonEdit ala431=ala_file.ala431, action=controlp, tabIndex=3, image="zoom";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=4;
+Edit ala73=ala_file.ala73, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ala_file.ala43,formonly.aag02_1,ala_file.ala431,formonly.aag02_2,ala_file.ala73)
+END -- INSTRUCTIONS
+

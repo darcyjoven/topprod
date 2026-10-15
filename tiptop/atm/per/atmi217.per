@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi217.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi217")
+VBox VBox1
+Folder pc285
+Page page01(text="Main")
+Table s_tqe
+{
+[tqe01     |tqe02               |tqe03     |tqe04     |tqe05     |tqe11     |tqe12     |tqe06               |aag02               |tqe09               |tqe07               |aag02a              |tqe10              |tqe08     |tqeacti   ]
+[tqe01     |tqe02               |tqe03     |tqe04     |tqe05     |tqe11     |tqe12     |tqe06               |aag02               |tqe09               |tqe07               |aag02a              |tqe10              |tqe08     |tqeacti   ]
+[tqe01     |tqe02               |tqe03     |tqe04     |tqe05     |tqe11     |tqe12     |tqe06               |aag02               |tqe09               |tqe07               |aag02a              |tqe10              |tqe08     |tqeacti   ]
+[tqe01     |tqe02               |tqe03     |tqe04     |tqe05     |tqe11     |tqe12     |tqe06               |aag02               |tqe09               |tqe07               |aag02a              |tqe10              |tqe08     |tqeacti   ]
+[tqe01     |tqe02               |tqe03     |tqe04     |tqe05     |tqe11     |tqe12     |tqe06               |aag02               |tqe09               |tqe07               |aag02a              |tqe10              |tqe08     |tqeacti   ]
+[tqe01     |tqe02               |tqe03     |tqe04     |tqe05     |tqe11     |tqe12     |tqe06               |aag02               |tqe09               |tqe07               |aag02a              |tqe10              |tqe08     |tqeacti   ]
+[tqe01     |tqe02               |tqe03     |tqe04     |tqe05     |tqe11     |tqe12     |tqe06               |aag02               |tqe09               |tqe07               |aag02a              |tqe10              |tqe08     |tqeacti   ]
+[tqe01     |tqe02               |tqe03     |tqe04     |tqe05     |tqe11     |tqe12     |tqe06               |aag02               |tqe09               |tqe07               |aag02a              |tqe10              |tqe08     |tqeacti   ]
+[tqe01     |tqe02               |tqe03     |tqe04     |tqe05     |tqe11     |tqe12     |tqe06               |aag02               |tqe09               |tqe07               |aag02a              |tqe10              |tqe08     |tqeacti   ]
+[tqe01     |tqe02               |tqe03     |tqe04     |tqe05     |tqe11     |tqe12     |tqe06               |aag02               |tqe09               |tqe07               |aag02a              |tqe10              |tqe08     |tqeacti   ]
+[tqe01     |tqe02               |tqe03     |tqe04     |tqe05     |tqe11     |tqe12     |tqe06               |aag02               |tqe09               |tqe07               |aag02a              |tqe10              |tqe08     |tqeacti   ]
+
+}
+END -- s_tqe
+END -- page01
+END -- pc285
+Grid gr1307
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1307
+END -- VBox1
+END -- atmi217
+
+TABLES
+tqe_file
+ATTRIBUTES
+Edit tqe01=tqe_file.tqe01, tabIndex=1, title="Reason.Cd", not null, required;
+Edit tqe02=tqe_file.tqe02, tabIndex=2, title="Description", not null, required;
+ComboBox tqe03=tqe_file.tqe03, tabIndex=3, title="For Order", not null, required, items=(("1", %"Shipment"),("2", %"Disposal"),("3", %"Discount"),("4", %"Other"),("5", %"warehouse out"),("6", %"transfer"));
+CheckBox tqe04=tqe_file.tqe04, tabIndex=4, title="Present", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tqe05=tqe_file.tqe05, tabIndex=5, title="For Outs.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tqe11=tqe_file.tqe11, tabIndex=6, title="Aff.Id.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox tqe12=tqe_file.tqe12, tabIndex=7, title="Help Pro.", items=(("1", %"Addition"),("2", %"Purchase"),("3", %"Other"));
+ButtonEdit tqe06=tqe_file.tqe06, action=controlp, tabIndex=8, title="Account No.", not null, required, image="zoom";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=9, title="Account Name", noEntry;
+Edit tqe09=tqe_file.tqe09, tabIndex=10, title="FI Account Desc.", not null, required;
+ButtonEdit tqe07=tqe_file.tqe07, action=controlp, tabIndex=11, title="Account No.", image="zoom";
+Edit aag02a=formonly.aag02a type CHAR, tabIndex=12, title="Account Name", noEntry;
+Edit tqe10=tqe_file.tqe10, tabIndex=13, title="MA Account Desc.";
+CheckBox tqe08=tqe_file.tqe08, tabIndex=14, title="Refuse", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tqeacti=tqe_file.tqeacti, tabIndex=15, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tqe(tqe_file.tqe01,tqe_file.tqe02,tqe_file.tqe03,tqe_file.tqe04,tqe_file.tqe05,tqe_file.tqe11,tqe_file.tqe12,tqe_file.tqe06,formonly.aag02,tqe_file.tqe09,tqe_file.tqe07,formonly.aag02a,tqe_file.tqe10,tqe_file.tqe08,tqe_file.tqeacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

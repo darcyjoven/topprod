@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asms280.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asms280")
+VBox vb4
+Folder pc202
+Page page01(text="Main")
+Grid gr919
+{
+ <G group01                                     >
+ [sma54                                   ]
+ [sma541                          ]
+
+ [sma542                        ]
+
+ <                                              >
+ <G group02                                     >
+ [sma28                                   ]
+ <                                              >
+ <G group03                                     >
+ [sma26                                       ]
+ <                                              >
+ <G group04                                     >
+ [sma55                                     ]
+  Man Daily Work Time (minute) [sma551    ]
+ [sma59                                     ]
+ [sma897                                    ]
+ <                                              >
+ <G gb5                                         >
+ [sma131                                    ]
+ [sma126                                     ]
+ <                                              >
+}
+END -- gr919
+END -- page01
+END -- pc202
+END -- vb4
+END -- asms280
+
+TABLES
+sma_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox sma54=sma_file.sma54, tabIndex=1, text="Use Routing ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma541=sma_file.sma541, tabIndex=9, text="user Paral Routing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma542=sma_file.sma542, tabIndex=10, text="user Routing bom", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="W/O Scheduling Method";
+RadioGroup sma28=sma_file.sma28, tabIndex=2, required, items=(("1", "Time Bucket Scheduling"),("2", "Routing Schedule"));
+Group group03:group03, text="Routing Tracing Setting";
+RadioGroup sma26=sma_file.sma26, tabIndex=3, required, items=(("1", "No Routing Tracing"),("2", "Generate Routing Tracing when Enter W/O"),("3", "Generate Routing Tracing when Release W/O"));
+Group group04:group04;
+CheckBox sma55=sma_file.sma55, tabIndex=4, text="Routing Cell Management?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sma551=sma_file.sma551, tabIndex=5, not null, required;
+CheckBox sma59=sma_file.sma59, tabIndex=6, text="Use Workstation calendar?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma897=sma_file.sma897, tabIndex=7, text="Transfer by Batch?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb5:gb5;
+CheckBox sma131=sma_file.sma131, tabIndex=8, text="autoyizhuan", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma126=sma_file.sma126, tabIndex=11, text="Transfer processes at the inspection unit", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sma_file.sma54,sma_file.sma541,sma_file.sma542,sma_file.sma28,sma_file.sma26,sma_file.sma55,sma_file.sma551,sma_file.sma59,sma_file.sma897,sma_file.sma131,sma_file.sma126)
+END -- INSTRUCTIONS
+

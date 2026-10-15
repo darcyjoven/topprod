@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici013.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aici013")
+VBox vb3
+Folder pc1
+Page Main(text=%"Main")
+Grid gr1
+{
+
+    text1          [icm01                  ]
+    text2          [ima02             ]
+ <T s_icm                                                                                               >
+ [icm02                   |icm02_desc           |icm03               ]
+ [icm02                   |icm02_desc           |icm03               ]
+ [icm02                   |icm02_desc           |icm03               ]
+ [icm02                   |icm02_desc           |icm03               ]
+ [icm02                   |icm02_desc           |icm03               ]
+ [icm02                   |icm02_desc           |icm03               ]
+ [icm02                   |icm02_desc           |icm03               ]
+ [icm02                   |icm02_desc           |icm03               ]
+ [icm02                   |icm02_desc           |icm03               ]
+ [icm02                   |icm02_desc           |icm03               ]
+ <                                                                                                      >
+}
+END -- gr1
+END -- Main
+Page Info(text=%"Info")
+Grid gr6
+{
+
+ Record Owner   [icmuser      ]  Last Modified by      [icmmodu     ]   Data Valid Code    [icmacti   ]
+ Department     [icmgrup      ]  Create/Modify Date    [icmdate          ]
+
+}
+END -- gr6
+END -- Info
+END -- pc1
+Grid gr2
+{
+
+      --------Rows [cnt     ]/ [cn2     ] --------
+
+}
+END -- gr2
+END -- vb3
+END -- aici013
+
+TABLES
+icm_file
+ATTRIBUTES
+ButtonEdit icm01=icm_file.icm01, action=controlp, tabIndex=1, not null, image="zoom.png";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Table s_icm:s_icm;
+ButtonEdit icm02=icm_file.icm02, action=controlp, tabIndex=3, title="icm02", not null, image="zoom.png";
+Edit icm02_desc=formonly.icm02_desc type CHAR, tabIndex=5, title="icm02_desc", noEntry;
+Edit icm03=icm_file.icm03, tabIndex=4, title="icm03";
+Edit icmuser=icm_file.icmuser, tabIndex=8;
+Edit icmmodu=icm_file.icmmodu, tabIndex=9;
+Edit icmacti=icm_file.icmacti, tabIndex=10;
+Edit icmgrup=icm_file.icmgrup, tabIndex=11;
+DateEdit icmdate=icm_file.icmdate, tabIndex=12;
+Edit cnt=formonly.cnt type CHAR, tabIndex=6;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_icm(icm_file.icm02,formonly.icm02_desc,icm_file.icm03)
+SCREEN RECORD Undefined(icm_file.icm01,formonly.ima02,icm_file.icmuser,icm_file.icmmodu,icm_file.icmacti,icm_file.icmgrup,icm_file.icmdate,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

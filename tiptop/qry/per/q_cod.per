@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_cod.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Bonded Exported Product Data Query")
+VBox VBox1
+Grid gr3745
+{
+ Bonded No.          [coc04               ]
+ Guide No.           [coc03               ]
+}
+END -- gr3745
+Table s_cod
+{
+[check |cod02      |cod03          |cod041              |cob02                                   |cod05         |cod06   |cod07               |cod08               ]
+[check |cod02      |cod03          |cod041              |cob02                                   |cod05         |cod06   |cod07               |cod08               ]
+[check |cod02      |cod03          |cod041              |cob02                                   |cod05         |cod06   |cod07               |cod08               ]
+[check |cod02      |cod03          |cod041              |cob02                                   |cod05         |cod06   |cod07               |cod08               ]
+[check |cod02      |cod03          |cod041              |cob02                                   |cod05         |cod06   |cod07               |cod08               ]
+[check |cod02      |cod03          |cod041              |cob02                                   |cod05         |cod06   |cod07               |cod08               ]
+[check |cod02      |cod03          |cod041              |cob02                                   |cod05         |cod06   |cod07               |cod08               ]
+[check |cod02      |cod03          |cod041              |cob02                                   |cod05         |cod06   |cod07               |cod08               ]
+[check |cod02      |cod03          |cod041              |cob02                                   |cod05         |cod06   |cod07               |cod08               ]
+[check |cod02      |cod03          |cod041              |cob02                                   |cod05         |cod06   |cod07               |cod08               ]
+
+}
+END -- s_cod
+END -- VBox1
+END -- q_cod
+
+TABLES
+cod_file,
+coc_file
+ATTRIBUTES
+Edit coc04=coc_file.coc04, tabIndex=1;
+Edit coc03=coc_file.coc03, tabIndex=2;
+CheckBox check=formonly.check type CHAR, tabIndex=3, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cod02=cod_file.cod02, tabIndex=4, title="Serial No.", noEntry;
+Edit cod03=cod_file.cod03, tabIndex=5, title="Goods No.", noEntry;
+Edit cod041=cod_file.cod041, tabIndex=6, title="Version", noEntry;
+Edit cob02=formonly.cob02 type VARCHAR, tabIndex=7, title="Part Name Specification", noEntry;
+Edit cod05=cod_file.cod05, tabIndex=8, title="Qty Applied", noEntry;
+Edit cod06=cod_file.cod06, tabIndex=9, title="Unit", noEntry;
+Edit cod07=cod_file.cod07, tabIndex=10, title="Unit price", noEntry;
+Edit cod08=cod_file.cod08, tabIndex=11, title="Amount", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cod(formonly.check,cod_file.cod02,cod_file.cod03,cod_file.cod041,formonly.cob02,cod_file.cod05,cod_file.cod06,cod_file.cod07,cod_file.cod08)
+SCREEN RECORD Undefined(coc_file.coc04,coc_file.coc03)
+END -- INSTRUCTIONS
+

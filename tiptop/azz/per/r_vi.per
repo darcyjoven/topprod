@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/r_vi.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"r_vi")
+VBox VBox1
+Grid gr3027
+{
+ <G gb2244                                   >
+  Path [path                                ]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ <                                           >
+
+}
+END -- gr3027
+Table s_file
+{
+[x  |filename     ]
+[x  |filename     ]
+[x  |filename     ]
+[x  |filename     ]
+[x  |filename     ]
+[x  |filename     ]
+[x  |filename     ]
+[x  |filename     ]
+[x  |filename     ]
+[x  |filename     ]
+
+}
+END -- s_file
+END -- VBox1
+END -- r_vi
+
+ATTRIBUTES
+Group gb2244:gb2244, text="group01";
+Edit path=formonly.path type CHAR, tabIndex=1;
+Edit x=formonly.x type SMALLINT, tabIndex=2, title="X";
+Edit filename=formonly.filename type CHAR, tabIndex=3, title="Table Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_file(formonly.x,formonly.filename)
+SCREEN RECORD Undefined(formonly.path)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfr007.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+
+  [sfp01           ]    [sfp02               ]
+
+  [sfq02           ]    [sfq01               ]
+
+                        [more                      ]
+
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Label sfp01:sfp01, text=%"sfp01";
+ButtonEdit sfp02=formonly.sfp01, action=controlp, tabIndex=1, image="zoom";
+Label sfq02:sfq02, text=%"sfq02";
+ButtonEdit sfq01=formonly.sfq02, action=controlp, tabIndex=2, image="zoom";
+ComboBox more=formonly.more type VARCHAR, tabIndex=3, not null, required, items=(("1", "生产发料单"),("2", "超领发料单"),("3", "欠料补料单"),("6", "成套退料单"),("8", "一般退料单"),("7", "超领退料单"),("9", "工单领退料"),("10", "其它"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfp01,formonly.sfq02,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr256.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr256")
+VBox vb6
+Grid gr5057
+{
+ <G group01                            >
+  Appraisal List# [pmi01               ]
+  Appr.Date       [pmi02               ]
+  Vender#         [pmi03               ]
+ <                                     >
+
+}
+END -- gr5057
+Group group02(text="INPUT")
+Grid gr5059
+{
+ <G group03                                                         >
+ [s1                  ] [s2                  ] [s3                  ]
+ [t1                  ] [t2                  ] [t3                  ]
+ <                                                                  >
+ <G group04                                                         >
+  [b                                                    ]
+ <                                                                  >
+ <G pricetype                                                       >
+  [type                                                 ]
+  [                                                     ]
+ <                                                                  >
+
+}
+END -- gr5059
+END -- group02
+Grid gr5060
+{
+[more                                                      ]
+
+}
+END -- gr5060
+END -- vb6
+END -- apmr256
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmi01=formonly.pmi01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit pmi02=formonly.pmi02 type DATE, tabIndex=2;
+ButtonEdit pmi03=formonly.pmi03 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=4, items=(("1", "Appraisal List"),("2", "Date of Appraisal"),("3", "Vender No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=5, items=(("1", "Appraisal List"),("2", "Date of Appraisal"),("3", "Vender No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=6, items=(("1", "Appraisal List"),("2", "Date of Appraisal"),("3", "Vender No."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=7, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=8, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="Print Data";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=10, items=(("1", "Confirmed"),("2", "UnConfirmed"),("3", "All"));
+Group pricetype:PriceType, text="PriceType";
+RadioGroup type=formonly.type type CHAR, tabIndex=12, items=(("1", "General"),("2", "Subcontracting"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmi01,formonly.pmi02,formonly.pmi03,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.b,formonly.type,formonly.more)
+END -- INSTRUCTIONS
+

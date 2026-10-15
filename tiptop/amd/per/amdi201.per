@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdi201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (minWidth=1, minHeight=1, spacing=normal, text=%"aooi300")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Main")
+Grid Grid1
+{
+
+ Main Store Number         [amh01     ]
+
+ Classification Method     [amh02     ]
+
+ Memo                      [amh03                                                       ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table s_amh
+{
+[amh04           |occ02    |amh05             |azf03            |amh06   |amh07   |amhacti ]
+[amh04           |occ02    |amh05             |azf03            |amh06   |amh07   |amhacti ]
+[amh04           |occ02    |amh05             |azf03            |amh06   |amh07   |amhacti ]
+[amh04           |occ02    |amh05             |azf03            |amh06   |amh07   |amhacti ]
+[amh04           |occ02    |amh05             |azf03            |amh06   |amh07   |amhacti ]
+[amh04           |occ02    |amh05             |azf03            |amh06   |amh07   |amhacti ]
+[amh04           |occ02    |amh05             |azf03            |amh06   |amh07   |amhacti ]
+[amh04           |occ02    |amh05             |azf03            |amh06   |amh07   |amhacti ]
+[amh04           |occ02    |amh05             |azf03            |amh06   |amh07   |amhacti ]
+[amh04           |occ02    |amh05             |azf03            |amh06   |amh07   |amhacti ]
+}
+END -- s_amh
+Grid gr4644
+{
+
+  ---------- ROWS [cn2   ]/[cn1   ] ----------
+
+}
+END -- gr4644
+END -- VBox1
+END -- amdi201
+
+TABLES
+amh_file
+ATTRIBUTES
+ButtonEdit amh01=amh_file.amh01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ComboBox amh02=amh_file.amh02, tabIndex=2, not null, required, items=(("D", "Othr Group Code 1"),("E", "Othr Group Code 2"),("F", "Othr Group Code 3"),("M", "Main Group Code"),("P", "Product Classification"));
+Edit amh03=amh_file.amh03, tabIndex=3;
+ButtonEdit amh04=amh_file.amh04, action=controlp, tabIndex=4, title="Store Code", not null, required, image="zoom";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=5, title="Customer Abbr.", noEntry;
+ButtonEdit amh05=amh_file.amh05, action=controlp, tabIndex=6, title=%"Product Category No.", not null, required, image="zoom";
+Edit azf03=formonly.azf03 type VARCHAR, tabIndex=7, title=%"Item Category No.", noEntry;
+Edit amh06=amh_file.amh06, tabIndex=8, title=%"Matched Store Code";
+Edit amh07=amh_file.amh07, tabIndex=9, title=%"Vendor Code";
+CheckBox amhacti=amh_file.amhacti, tabIndex=10, default = "Y", title=%"Validity? (y/n)", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+Edit cn1=formonly.cn1 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_amh(amh_file.amh04,formonly.occ02,amh_file.amh05,formonly.azf03,amh_file.amh06,amh_file.amh07,amh_file.amhacti)
+SCREEN RECORD Undefined(amh_file.amh01,amh_file.amh02,amh_file.amh03,formonly.cn2,formonly.cn1)
+END -- INSTRUCTIONS
+

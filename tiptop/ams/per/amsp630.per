@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsp630.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amsp630")
+VBox VBox1
+Grid gr3952
+{
+ <G group01                                            >
+  Item No.            [mps01                         ]
+  Source Code         [ima08                         ]
+  Planner             [ima67                         ]
+  Require.Date        [mps03                         ]
+  Action Day          [mps11                         ]
+ <                                                     >
+ <G group02                                            >
+  Simulation Version  [ver_no    ]
+  MPS Plan No.        [msb01               ]
+ <                                                     >
+
+}
+END -- gr3952
+Grid gr3953
+{
+  [g_bgjob                                                       ]
+
+}
+END -- gr3953
+END -- VBox1
+END -- amsp630
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit mps01=formonly.mps01 type CHAR, tabIndex=1;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=2, upShift;
+Edit ima67=formonly.ima67 type CHAR, tabIndex=3;
+DateEdit mps03=formonly.mps03 type DATE, tabIndex=4;
+DateEdit mps11=formonly.mps11 type DATE, tabIndex=5;
+Group group02:group02, text="INPUT";
+Edit ver_no=formonly.ver_no type CHAR, tabIndex=6;
+ButtonEdit msb01=formonly.msb01 type CHAR, action=controlp, tabIndex=7, image="zoom";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=8, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.mps01,formonly.ima08,formonly.ima67,formonly.mps03,formonly.mps11,formonly.ver_no,formonly.msb01,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

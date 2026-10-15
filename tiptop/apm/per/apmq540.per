@@ -1,0 +1,126 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq540.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq540")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr5012
+{
+ P/R No.             [pml01           ]
+ Line No.            [pml02           ]
+ P/R Item#           [pml04                         ]
+ P/N Spec            [pml041                        ]
+ Specification       [ima021                        ]
+}
+END -- gr5012
+Grid gr5013
+{
+ Document Property   [pml011    ]
+ P/R Date            [pmk04       ]
+ Status              [pml16     ]
+
+
+}
+END -- gr5013
+Grid gr5014
+{
+ P/R Unit            [pml07     ]
+ P/R Qty             [pml20     ]
+ Transferred Qty     [pml21     ]
+ Qty Untransferred   [rest      ]
+
+}
+END -- gr5014
+Grid gr5015
+{
+ Par/Ref Unit           [pml83               ]
+ Par/Ref Qty            [pml85               ]
+ Chi/Pre-Purchase Unit  [pml80               ]
+ Chi/Pre-Purchase Qty   [pml82               ]
+
+}
+END -- gr5015
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_pmn
+{
+[pmm04   |pmn01            |pmn|pmc03   |pmn04           |pmn041              |ima021_p            |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   |pmn919          |pmn42 |pmn62 |pmn61           |ima02_s             |ima021_s            ]
+[pmm04   |pmn01            |pmn|pmc03   |pmn04           |pmn041              |ima021_p            |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   |pmn919          |pmn42 |pmn62 |pmn61           |ima02_s             |ima021_s            ]
+[pmm04   |pmn01            |pmn|pmc03   |pmn04           |pmn041              |ima021_p            |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   |pmn919          |pmn42 |pmn62 |pmn61           |ima02_s             |ima021_s            ]
+[pmm04   |pmn01            |pmn|pmc03   |pmn04           |pmn041              |ima021_p            |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   |pmn919          |pmn42 |pmn62 |pmn61           |ima02_s             |ima021_s            ]
+[pmm04   |pmn01            |pmn|pmc03   |pmn04           |pmn041              |ima021_p            |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   |pmn919          |pmn42 |pmn62 |pmn61           |ima02_s             |ima021_s            ]
+[pmm04   |pmn01            |pmn|pmc03   |pmn04           |pmn041              |ima021_p            |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   |pmn919          |pmn42 |pmn62 |pmn61           |ima02_s             |ima021_s            ]
+[pmm04   |pmn01            |pmn|pmc03   |pmn04           |pmn041              |ima021_p            |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   |pmn919          |pmn42 |pmn62 |pmn61           |ima02_s             |ima021_s            ]
+[pmm04   |pmn01            |pmn|pmc03   |pmn04           |pmn041              |ima021_p            |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   |pmn919          |pmn42 |pmn62 |pmn61           |ima02_s             |ima021_s            ]
+[pmm04   |pmn01            |pmn|pmc03   |pmn04           |pmn041              |ima021_p            |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   |pmn919          |pmn42 |pmn62 |pmn61           |ima02_s             |ima021_s            ]
+[pmm04   |pmn01            |pmn|pmc03   |pmn04           |pmn041              |ima021_p            |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   |pmn919          |pmn42 |pmn62 |pmn61           |ima02_s             |ima021_s            ]
+}
+END -- s_pmn
+Grid gr5016
+{
+  ---------- Rows [cnt   ] / [cn2   ] --------------------------------------------Pur.Qty Total       [sum                 ]
+
+}
+END -- gr5016
+END -- VBox1
+END -- apmq540
+
+TABLES
+pmn_file,
+pml_file,
+pmk_file
+ATTRIBUTES
+ButtonEdit pml01=pml_file.pml01, action=controlp, tabIndex=1, image="zoom.png";
+Edit pml02=pml_file.pml02, tabIndex=2;
+Edit pml04=pml_file.pml04, tabIndex=3, noEntry;
+Edit pml041=pml_file.pml041, tabIndex=4, noEntry;
+Edit ima021=formonly.ima021, tabIndex=36, noEntry;
+Edit pml011=pml_file.pml011, tabIndex=5, noEntry;
+DateEdit pmk04=pmk_file.pmk04, tabIndex=6, noEntry;
+ComboBox pml16=pml_file.pml16, tabIndex=7, noEntry, queryEditable, items=(("X", "Planning Order Enter"),("0", "Open"),("1", "Approved"),("2", "Issueed P/O"),("6", "Close-Normal"),("7", "Close-OverReceived"),("8", "Close-Shortage"),("9", "Cancel"));
+Edit pml07=pml_file.pml07, tabIndex=8, noEntry;
+Edit pml20=pml_file.pml20, tabIndex=9, noEntry;
+Edit pml21=pml_file.pml21, tabIndex=10, noEntry;
+Edit rest=formonly.rest type CHAR, tabIndex=11, noEntry;
+Edit pml83=pml_file.pml83, tabIndex=12;
+Edit pml85=pml_file.pml85, tabIndex=13;
+Edit pml80=pml_file.pml80, tabIndex=14;
+Edit pml82=pml_file.pml82, tabIndex=15;
+DateEdit pmm04=formonly.pmm04 type DATE, tabIndex=16, title="Date";
+Edit pmn01=pmn_file.pmn01, tabIndex=17, title="P/O No.";
+Edit pmn=pmn_file.pmn02, tabIndex=18, title="Ln#";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=19, title="Vender#";
+Edit pmn04=pmn_file.pmn04, tabIndex=20, title="Purchased Item#";
+Edit pmn041=formonly.pmn041, tabIndex=37, title=%"Purchased Desc", noEntry;
+Edit ima021_p=formonly.ima021_p, tabIndex=38, title=%"Purchase Spec.";
+Edit pmn20=pmn_file.pmn20, tabIndex=21, title="Pur.Qty", not null, required;
+Edit pmn07=pmn_file.pmn07, tabIndex=22, title="Unit";
+Edit pmn83=pmn_file.pmn83, tabIndex=23, title="Par/Ref Unit";
+Edit pmn85=pmn_file.pmn85, tabIndex=24, title="Par/Ref Qty";
+Edit pmn80=pmn_file.pmn80, tabIndex=25, title="Chi/P/O Unit";
+Edit pmn82=pmn_file.pmn82, tabIndex=26, title="Chi/P/O Qty";
+ComboBox pm=pmn_file.pmn16, tabIndex=27, title="Sts", queryEditable, items=(("X", %"Planning Order Enter"),("0", %"Open"),("1", %"Approved"),("2", %"Issueed P/O"),("6", %"Close-Normal"),("7", %"Close-OverReceived"),("8", %"Close-Shortage"),("9", %"Cancel"));
+DateEdit pmn33=pmn_file.pmn33, tabIndex=28, title="Date";
+Edit pmn919=pmn_file.pmn919, tabIndex=29, title=%"Lot Plan";
+ComboBox pmn42=pmn_file.pmn42, tabIndex=30, title="sub cd", not null, required, queryEditable, items=(("0", %"Origianl Item Can't be substituted"),("1", %"Origianl Item Can be substituted"),("2", %"Origianl Item Been substituted"),("S", %"SUB Item"),("U", %"REP Item"));
+Edit pmn62=pmn_file.pmn62, tabIndex=31, title="Ratio", not null, required;
+Edit pmn61=pmn_file.pmn61, tabIndex=32, title="Item#", not null, required;
+Edit ima02_s=formonly.ima02_s, tabIndex=39, title=%"Sub Desc.", noEntry;
+Edit ima021_s=formonly.ima021_s, tabIndex=40, title=%"Sub Spec.", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=33;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=34;
+Edit sum=formonly.sum type CHAR, tabIndex=35;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmn(formonly.pmm04,pmn_file.pmn01,pmn_file.pmn02,formonly.pmc03,pmn_file.pmn04,formonly.pmn041,formonly.ima021_p,pmn_file.pmn20,pmn_file.pmn07,pmn_file.pmn83,pmn_file.pmn85,pmn_file.pmn80,pmn_file.pmn82,pmn_file.pmn16,pmn_file.pmn33,pmn_file.pmn919,pmn_file.pmn42,pmn_file.pmn62,pmn_file.pmn61,formonly.ima02_s,formonly.ima021_s)
+SCREEN RECORD Undefined(pml_file.pml01,pml_file.pml02,pml_file.pml04,pml_file.pml041,pml_file.pml011,pmk_file.pmk04,pml_file.pml16,pml_file.pml07,pml_file.pml20,pml_file.pml21,formonly.rest,pml_file.pml83,pml_file.pml85,pml_file.pml80,pml_file.pml82,formonly.cnt,formonly.cn2,formonly.sum,formonly.ima021)
+END -- INSTRUCTIONS
+

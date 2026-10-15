@@ -1,0 +1,51 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsi214.per created Wed Dec 31 05:29:41 2008
+-- File created from apsi214.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsi204")
+-- GRID
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX vb2
+    FOLDER pc4
+      PAGE page01( TEXT="Page01")
+        GRID gr7
+        {
+        <G group01                                       >
+         Purchas Order Id       [aa0                 ]
+         Is Hold                [aa1                 ]
+         Supply Rule Id         [aa2                 ]
+        <                                                >
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    GRID gr8
+    {
+     ----------Rows [aa3   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES aps_spm
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=aps_spm.po_id, NOT NULL, NOENTRY, REQUIRED, TABINDEX=1;
+  COMBOBOX aa1=aps_spm.is_hold, COMMENT="Enter  0/1", QUERYEDITABLE, TABINDEX=2, ITEMS=(("0","False"),("1","True"));
+  EDIT aa2=aps_spm.sply_rid, TABINDEX=4;
+  EDIT aa3=FORMONLY.cnt, NOENTRY, TABINDEX=3;
+END

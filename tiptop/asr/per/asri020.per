@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asri020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asri020")
+VBox VBox1
+Folder pc227
+Page page01(text="Main")
+Table s_eca
+{
+[eca01     |eca02               |eca03      |gem02             |eca06    |eca55   |ecaacti ]
+[eca01     |eca02               |eca03      |gem02             |eca06    |eca55   |ecaacti ]
+[eca01     |eca02               |eca03      |gem02             |eca06    |eca55   |ecaacti ]
+[eca01     |eca02               |eca03      |gem02             |eca06    |eca55   |ecaacti ]
+[eca01     |eca02               |eca03      |gem02             |eca06    |eca55   |ecaacti ]
+[eca01     |eca02               |eca03      |gem02             |eca06    |eca55   |ecaacti ]
+[eca01     |eca02               |eca03      |gem02             |eca06    |eca55   |ecaacti ]
+[eca01     |eca02               |eca03      |gem02             |eca06    |eca55   |ecaacti ]
+[eca01     |eca02               |eca03      |gem02             |eca06    |eca55   |ecaacti ]
+[eca01     |eca02               |eca03      |gem02             |eca06    |eca55   |ecaacti ]
+
+}
+END -- s_eca
+END -- page01
+END -- pc227
+Grid gr1000
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1000
+END -- VBox1
+END -- asri020
+
+TABLES
+eca_file
+ATTRIBUTES
+ButtonEdit eca01=eca_file.eca01, action=controlp, tabIndex=1, title="WkCNo.", not null, required, image="zoom", comment="Key Field, No Blank/Repeated!    <^Y>Enter Item Detail";
+Edit eca02=eca_file.eca02, tabIndex=2, title="WK Description", not null, required;
+ButtonEdit eca03=eca_file.eca03, action=controlp, tabIndex=3, title="Deptno", not null, required, image="zoom", comment=" <^P>Qry Work Center  <^Y>Create Work Center";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=4, title="Description", noEntry;
+ComboBox eca06=eca_file.eca06, tabIndex=5, title="Cap Type", not null, required, queryEditable, items=(("1", %"Machine Capacity"),("2", %"Labor Capacity"));
+ButtonEdit eca55=eca_file.eca55, action=controlp, tabIndex=6, title="Wk Cail", not null, required, image="zoom", comment="<^P>Query Work Calendar,<^Y>Create Work Calendar ";
+CheckBox ecaacti=eca_file.ecaacti, tabIndex=7, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_eca(eca_file.eca01,eca_file.eca02,eca_file.eca03,formonly.gem02,eca_file.eca06,eca_file.eca55,eca_file.ecaacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

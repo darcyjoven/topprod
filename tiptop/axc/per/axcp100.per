@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axcp100")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr1
+{
+
+ yy[yy        ]mm[mm        ]   cap15   [cap15            ]   cap16   [cap16     |gen02     ]   cap17   [cap17          ]        [label1    ] [nppglno                ]
+
+}
+END -- gr1
+END -- page01
+END -- folder01
+Table tot
+{
+[t01              |ima02    |ima021   |ima39           |aag02               |t02                 |t03                 |t04                 |t05                 |t06                 |t07                 |t08                 ]
+[t01              |ima02    |ima021   |ima39           |aag02               |t02                 |t03                 |t04                 |t05                 |t06                 |t07                 |t08                 ]
+[t01              |ima02    |ima021   |ima39           |aag02               |t02                 |t03                 |t04                 |t05                 |t06                 |t07                 |t08                 ]
+[t01              |ima02    |ima021   |ima39           |aag02               |t02                 |t03                 |t04                 |t05                 |t06                 |t07                 |t08                 ]
+[t01              |ima02    |ima021   |ima39           |aag02               |t02                 |t03                 |t04                 |t05                 |t06                 |t07                 |t08                 ]
+}
+END -- tot
+Grid gr2
+{
+
+  tot_amount[tot_amount          ]
+  ------------------------------------------------------
+  ----------  rows[cn        ]/[cnt       ]  ----------
+
+
+}
+END -- gr2
+END -- VBox1
+END -- axcp100
+
+ATTRIBUTES
+Edit yy=formonly.yy type DECIMAL, tabIndex=1, not null, required;
+Edit mm=formonly.mm type DECIMAL, tabIndex=2, not null, required;
+ComboBox cap15=formonly.cap15 type VARCHAR, tabIndex=3, items=(("Y", "done"),("N", "not_do"));
+Edit cap16=formonly.cap16 type VARCHAR, tabIndex=4;
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=5;
+DateEdit cap17=formonly.cap17 type DATE, tabIndex=6;
+Label label1:Label1, text=%"Label1";
+Edit nppglno=formonly.nppglno, tabIndex=22, noEntry;
+Edit t01=formonly.t01 type VARCHAR, tabIndex=7, title="t01";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=8, title="ima02";
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=9, title="ima021";
+Edit ima39=formonly.ima39 type CHAR, tabIndex=10, title=%"ima39";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=11, title=%"aag02";
+Edit t02=formonly.t02 type DECIMAL, tabIndex=12, title="t02";
+Edit t03=formonly.t03 type DECIMAL, tabIndex=13, title="t03";
+Edit t04=formonly.t04 type DECIMAL, tabIndex=14, title="t04";
+Edit t05=formonly.t05 type DECIMAL, tabIndex=15, title="t05";
+Edit t06=formonly.t06 type DECIMAL, tabIndex=16, title="t06";
+Edit t07=formonly.t07 type DECIMAL, tabIndex=17, title="t07";
+Edit t08=formonly.t08 type DECIMAL, tabIndex=18, title="t08";
+Edit tot_amount=formonly.tot_amount type DECIMAL, tabIndex=19;
+Edit cn=formonly.cn type INTEGER, tabIndex=20;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=21;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tot(formonly.t01,formonly.ima02,formonly.ima021,formonly.ima39,formonly.aag02,formonly.t02,formonly.t03,formonly.t04,formonly.t05,formonly.t06,formonly.t07,formonly.t08)
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.cap15,formonly.cap16,formonly.gen02,formonly.cap17,formonly.tot_amount,formonly.cn,formonly.cnt,formonly.nppglno)
+END -- INSTRUCTIONS
+

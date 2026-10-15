@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/4fd/p_param.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+HBox HBox1
+Grid Grid1
+{
+
+
+
+     [label1                ]             [buttonedit1                             ]
+     [label2                ]             [buttonedit2                             ]
+     [label3                ]             [buttonedit3                             ]
+     [label4                ]             [buttonedit4                             ]
+     [label5                ]             [buttonedit5                             ]
+     [label6                ]             [buttonedit6                             ]
+                                          [                                        ]
+                                          [                                        ]
+     [label7                ]             [buttonedit7                             ]
+     [label8                ]             [buttonedit8                             ]
+     [label9                ]
+     [buttonedit9                                                                   ]
+     [                                                                              ]
+     [                                                                              ]
+     [                                                                              ]
+     [                                                                              ]
+     [label10                                                                       ]
+      ------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- HBox1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"Label1";
+ButtonEdit buttonedit1=formonly.ButtonEdit1 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Label label2:Label2, text=%"Label1";
+Edit buttonedit2=formonly.ButtonEdit2 type DECIMAL, tabIndex=2;
+Label label3:Label3, text=%"Label1";
+DateEdit buttonedit3=formonly.ButtonEdit3 type DATE, tabIndex=3;
+Label label4:Label4, text=%"Label1";
+CheckBox buttonedit4=formonly.ButtonEdit4, tabIndex=4, text=%"ButtonEdit4", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label5:Label5, text=%"Label1";
+ComboBox buttonedit5=formonly.ButtonEdit5, tabIndex=5, items=(("1", "1"),("2", "2"));
+Label label6:Label6, text=%"Label1";
+RadioGroup buttonedit6=formonly.ButtonEdit6, tabIndex=6, items=(("1", "1"),("2", "2"),("3", "3"));
+Label label7:Label7, text=%"Label1";
+Slider buttonedit7=formonly.ButtonEdit7 type INTEGER, tabIndex=7, default = "20", valueMin=0, valueMax=100, step=9;
+Label label8:Label8, text=%"Label1";
+SpinEdit buttonedit8=formonly.ButtonEdit8 type DECIMAL(15,3), tabIndex=8, step=3;
+Label label9:Label9, text=%"Label1";
+TextEdit buttonedit9=formonly.ButtonEdit9 type VARCHAR, tabIndex=9;
+Label label10:Label10, text=%"Label1";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ButtonEdit1,formonly.ButtonEdit2,formonly.ButtonEdit3,formonly.ButtonEdit4,formonly.ButtonEdit5,formonly.ButtonEdit6,formonly.ButtonEdit7,formonly.ButtonEdit8,formonly.ButtonEdit9)
+END -- INSTRUCTIONS
+

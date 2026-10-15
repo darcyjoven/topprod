@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmr700")
+VBox VBox1
+Group Group1
+Grid Grid1
+{
+ <G group01                                                         >
+  Contract No.        [nno01               ]
+  Credit Bank         [nno02               ]
+ <                                                                  >
+ <G group02                                                         >
+  Ending Date         [edate               ]
+ <                                                                  >
+
+}
+END -- Grid1
+END -- Group1
+Grid Grid2
+{
+[more                                                        ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- anmr700
+
+TABLES
+nno_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit nno01=nno_file.nno01, tabIndex=1;
+Edit nno02=nno_file.nno02, tabIndex=2;
+Group group02:group02, text="Sequence";
+DateEdit edate=formonly.edate type DATE, tabIndex=3;
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nno_file.nno01,nno_file.nno02,formonly.edate,formonly.more)
+END -- INSTRUCTIONS
+

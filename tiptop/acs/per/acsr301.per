@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/acs/42f/acsr301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"acsr301")
+VBox VBox1
+Grid Grid1
+{
+ <G grpqbe                                  >
+  Item Group Code     [csf01               ]
+ <                                          >
+
+}
+END -- Grid1
+Grid Grid2
+{
+ <G group01                                     >
+ [more                                         ]
+ <                                              >
+
+}
+END -- Grid2
+END -- VBox1
+END -- acsr301
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+Edit csf01=formonly.csf01 type CHAR, tabIndex=1;
+Group group01:group01;
+CheckBox more=formonly.more type CHAR, tabIndex=2, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.csf01,formonly.more)
+END -- INSTRUCTIONS
+

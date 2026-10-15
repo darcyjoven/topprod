@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt676.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="almt676")
+VBox vb5
+Folder folder01
+Page Page35(text=%"Basic Data")
+Grid gr42
+{
+  Org#[org           |org_desc       ]
+  Date[date      ]
+
+
+}
+END -- gr42
+END -- Page35
+END -- folder01
+Folder pc11
+Page Page37(text=%"Detail Msg")
+VBox vb3
+Table s_b1
+{
+[type      |type_desc      |count     |count2    ]
+[type      |type_desc      |count     |count2    ]
+[type      |type_desc      |count     |count2    ]
+[type      |type_desc      |count     |count2    ]
+[type      |type_desc      |count     |count2    ]
+}
+END -- s_b1
+Grid gr2_1
+{
+[view1     ]
+
+
+}
+END -- gr2_1
+END -- vb3
+END -- Page37
+END -- pc11
+Folder pc12
+Page Page39(text=%"Error Msg")
+VBox vb4
+Table s_b2
+{
+[no                  |msg            ]
+[no                  |msg            ]
+[no                  |msg            ]
+[no                  |msg            ]
+[no                  |msg            ]
+}
+END -- s_b2
+Grid gr2
+{
+[view2     ]
+
+
+}
+END -- gr2
+END -- vb4
+END -- Page39
+END -- pc12
+END -- vb5
+END -- almt676
+
+ATTRIBUTES
+ButtonEdit org=formonly.org type CHAR, action=controlp, tabIndex=1, not null, image="zoom";
+Edit org_desc=formonly.org_desc type CHAR, tabIndex=2, noEntry;
+DateEdit date=formonly.date type CHAR, tabIndex=3, not null;
+Edit type=formonly.type type CHAR, tabIndex=4, title="Coupon Type";
+Edit type_desc=formonly.type_desc type CHAR, tabIndex=5, title="Coupon Name";
+Edit count=formonly.count type CHAR, tabIndex=6, title="Count";
+Edit count2=formonly.count2 type CHAR, tabIndex=7, title="Cancel Count";
+Button view1:view1, text="view";
+Edit no=formonly.no type CHAR, tabIndex=8, title="Coupon No.";
+ComboBox msg=formonly.msg type CHAR, tabIndex=9, title="Msg", items=(("0", "Register"),("1", "Put On Sale"),("2", "Withdrawl"),("3", "Cancel"),("4", "Used"),("5", "Grant"),("6", "Recycling"),("7", "Vertification"));
+Button view2:view2, text="view";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_b1(formonly.type,formonly.type_desc,formonly.count,formonly.count2)
+SCREEN RECORD s_b2(formonly.no,formonly.msg)
+SCREEN RECORD Undefined(formonly.org,formonly.org_desc,formonly.date)
+END -- INSTRUCTIONS
+

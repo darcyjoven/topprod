@@ -1,0 +1,49 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsi213.per created Wed Dec 31 05:29:40 2008
+-- File created from apsi213.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsi204")
+-- GRID
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX vb5
+    FOLDER pc4
+      PAGE page01( TEXT="Page01")
+        GRID gr7
+        {
+        <G group01                                       >
+         Mfg Order Id           [aa0                 ]
+         Supply Rule Id         [aa1                 ]
+        <                                                >
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    GRID gr8
+    {
+     ----------Rows [aa2   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES aps_smm
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=aps_smm.mo_id, NOT NULL, NOENTRY, REQUIRED, TABINDEX=1;
+  EDIT aa1=aps_smm.sply_rid, TABINDEX=3;
+  EDIT aa2=FORMONLY.cnt, NOENTRY, TABINDEX=2;
+END

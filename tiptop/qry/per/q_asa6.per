@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u53/tiptop/qry/4fd/q_asa6.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Grid gr3738
+{
+ <T s_asa                                                              >
+ [check   |asa01     |asa02     |asg02                         |asa03  ]
+ [check   |asa01     |asa02     |asg02                         |asa03  ]
+ [check   |asa01     |asa02     |asg02                         |asa03  ]
+ [check   |asa01     |asa02     |asg02                         |asa03  ]
+ [check   |asa01     |asa02     |asg02                         |asa03  ]
+
+
+
+
+
+
+
+ <                                                                     >
+
+}
+END -- gr3738
+END -- q_asa6
+
+TABLES
+asa_file,
+asg_file
+ATTRIBUTES
+Table s_asa:s_asa;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title=%"Sel", text=%"";
+Edit asa01=asa_file.asa01, tabIndex=2, title=%"Population No.", not null, scroll;
+Edit asa02=asa_file.asa02, tabIndex=3, title=%"Plant No.", not null, scroll;
+Edit asg02=asg_file.asg02, tabIndex=4, title=%"Plant Name", scroll;
+Edit asa03=asa_file.asa03, tabIndex=5, title=%"Account No.", not null, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asa(formonly.check,asa_file.asa01,asa_file.asa02,asg_file.asg02,asa_file.asa03)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi400")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr1289
+{
+ <G group01                          >
+  Category  [tqa03          ]
+ <                                   >
+
+}
+END -- gr1289
+END -- page01
+END -- folder01
+Table s_tqa
+{
+[tqa01     |tqa02                     |tqa04     |tqa05      |tqa06   |tqa07           |tqa02_n1     |tqa08          |tqa02_n2     |tqa09          |tqa02_n3     |tqaacti|tqapos  ]
+[tqa01     |tqa02                     |tqa04     |tqa05      |tqa06   |tqa07           |tqa02_n1     |tqa08          |tqa02_n2     |tqa09          |tqa02_n3     |tqaacti|tqapos  ]
+[tqa01     |tqa02                     |tqa04     |tqa05      |tqa06   |tqa07           |tqa02_n1     |tqa08          |tqa02_n2     |tqa09          |tqa02_n3     |tqaacti|tqapos  ]
+[tqa01     |tqa02                     |tqa04     |tqa05      |tqa06   |tqa07           |tqa02_n1     |tqa08          |tqa02_n2     |tqa09          |tqa02_n3     |tqaacti|tqapos  ]
+[tqa01     |tqa02                     |tqa04     |tqa05      |tqa06   |tqa07           |tqa02_n1     |tqa08          |tqa02_n2     |tqa09          |tqa02_n3     |tqaacti|tqapos  ]
+[tqa01     |tqa02                     |tqa04     |tqa05      |tqa06   |tqa07           |tqa02_n1     |tqa08          |tqa02_n2     |tqa09          |tqa02_n3     |tqaacti|tqapos  ]
+[tqa01     |tqa02                     |tqa04     |tqa05      |tqa06   |tqa07           |tqa02_n1     |tqa08          |tqa02_n2     |tqa09          |tqa02_n3     |tqaacti|tqapos  ]
+[tqa01     |tqa02                     |tqa04     |tqa05      |tqa06   |tqa07           |tqa02_n1     |tqa08          |tqa02_n2     |tqa09          |tqa02_n3     |tqaacti|tqapos  ]
+[tqa01     |tqa02                     |tqa04     |tqa05      |tqa06   |tqa07           |tqa02_n1     |tqa08          |tqa02_n2     |tqa09          |tqa02_n3     |tqaacti|tqapos  ]
+[tqa01     |tqa02                     |tqa04     |tqa05      |tqa06   |tqa07           |tqa02_n1     |tqa08          |tqa02_n2     |tqa09          |tqa02_n3     |tqaacti|tqapos  ]
+
+}
+END -- s_tqa
+Grid gr1290
+{
+  ---------- Rows [cn2   ] ----------
+
+
+}
+END -- gr1290
+END -- VBox1
+END -- atmi400
+
+TABLES
+tqa_file
+ATTRIBUTES
+Group group01:group01;
+ComboBox tqa03=tqa_file.tqa03, tabIndex=1, noEntry, comment="No Blank, Enter 1--20", items=(("1", "Item Type"),("2", "Item Brand"),("3", "Series"),("4", "Item Model"),("5", "Spec"),("6", "Property"),("7", "Expenses Payment Mode"),("8", "Expenses Payment Object"),("9", "Balance Type"),("10", "System Code"),("11", "System Area Code"),("12", "Customer Type"),("13", "Bonded Type"),("14", "Inst Type"),("15", "Promotion Type"),("16", "Exhibit Type"),("17", "Period Type"),("18", "Promotion Category"),("19", "Channel Description"),("20", "Crediter's Description"),("21", "21"),("22", "22"),("23", "23"),("24", "24"),("25", "Color"),("26", "Size"),("27", "Price"),("28", "28"),("29", "Commission Key"),("30", "sta.Usage"),("31", "Intention Product Type"),("32", "Product Type Level"),("33", "Corporation Level"));
+Edit tqa01=tqa_file.tqa01, tabIndex=2, title="Code", not null, required, comment="No Blank  ";
+Edit tqa02=tqa_file.tqa02, tabIndex=3, title="Desc";
+Edit tqa04=tqa_file.tqa04, tabIndex=4, title="tqa04";
+Edit tqa05=tqa_file.tqa05, tabIndex=5, title=%"Starting Price", not null, required;
+Edit tqa06=tqa_file.tqa06, tabIndex=6, title=%"Ending Price", not null, required;
+ButtonEdit tqa07=tqa_file.tqa07, action=controlp, tabIndex=7, title=%"tqa07", not null, image="zoom.png";
+Edit tqa02_n1=formonly.tqa02_n1 type VARCHAR, tabIndex=8, title=%"tqa02_n1", noEntry;
+ButtonEdit tqa08=tqa_file.tqa08, action=controlp, tabIndex=9, title=%"tqa08", image="zoom.png";
+Edit tqa02_n2=formonly.tqa02_n2 type VARCHAR, tabIndex=10, title=%"tqa02_n2", noEntry;
+ButtonEdit tqa09=tqa_file.tqa09, action=controlp, tabIndex=11, title=%"tqa09", image="zoom";
+Edit tqa02_n3=formonly.tqa02_n3 type CHAR, tabIndex=12, title=%"tqa02_n3", noEntry;
+CheckBox tqaacti=tqa_file.tqaacti, tabIndex=13, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox tqapos=tqa_file.tqapos, tabIndex=14, title=%"pass pos", noEntry, not null, required, items=(("1", "Add-No passed"),("2", "Modify-No passed"),("3", "Passed"),("4", "Modifying-No passed"));
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tqa(tqa_file.tqa01,tqa_file.tqa02,tqa_file.tqa04,tqa_file.tqa05,tqa_file.tqa06,tqa_file.tqa07,formonly.tqa02_n1,tqa_file.tqa08,formonly.tqa02_n2,tqa_file.tqa09,formonly.tqa02_n3,tqa_file.tqaacti,tqa_file.tqapos)
+SCREEN RECORD Undefined(tqa_file.tqa03,formonly.cn2)
+END -- INSTRUCTIONS
+

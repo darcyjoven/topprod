@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi180.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi180")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2038
+{
+ Product Type        [opm01       ]
+ Type Desc           [oba02                   ]
+
+}
+END -- gr2038
+Grid gr2039
+{
+ Version             [opm02     ]
+ Year                [opm03     ]
+
+}
+END -- gr2039
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_opn
+{
+[opn04  |opn05          ]
+[opn04  |opn05          ]
+[opn04  |opn05          ]
+[opn04  |opn05          ]
+[opn04  |opn05          ]
+[opn04  |opn05          ]
+[opn04  |opn05          ]
+[opn04  |opn05          ]
+[opn04  |opn05          ]
+[opn04  |opn05          ]
+
+}
+END -- s_opn
+Grid gr2040
+{
+ ---------- Rows [cnt   ] / [cn2       ] --------  Total [sum                 ]
+
+}
+END -- gr2040
+END -- VBox1
+END -- axmi180
+
+TABLES
+opn_file,
+opm_file
+ATTRIBUTES
+ButtonEdit opm01=opm_file.opm01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Product Class.";
+Edit oba02=formonly.oba02 type VARCHAR, tabIndex=2, noEntry;
+Edit opm02=opm_file.opm02, tabIndex=3, not null, required;
+Edit opm03=opm_file.opm03, tabIndex=4, not null, required;
+Edit opn04=opn_file.opn04, tabIndex=5, title="Month", not null, required;
+Edit opn05=opn_file.opn05, tabIndex=6, title="Production Qty", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=8, noEntry;
+Edit sum=formonly.sum type CHAR, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_opn(opn_file.opn04,opn_file.opn05)
+SCREEN RECORD Undefined(opm_file.opm01,formonly.oba02,opm_file.opm02,opm_file.opm03,formonly.cnt,formonly.cn2,formonly.sum)
+END -- INSTRUCTIONS
+

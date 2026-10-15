@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglg008.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr008")
+VBox vb1
+Group group01(text="INPUT")
+Grid gr2590
+{
+ <G group02                                                         >
+  Group No.           [axa01               ]
+  Source Company No.  [axa02               ] Book No. [axa03       ]
+  Enter Year          [yy                  ]
+  Period (Initial-End)[bm                  ]-[em                   ]
+ <                                                                  >
+ <G group03                                                         >
+  [d                             ]
+ <                                                                  >
+ <G group04                                                         >
+ [e                             ]
+ <                                                                  >
+
+}
+END -- gr2590
+END -- group01
+Grid gr2591
+{
+
+[more                                                        ]
+}
+END -- gr2591
+END -- vb1
+END -- aglr008
+
+ATTRIBUTES
+Group group02:group02;
+ButtonEdit axa01=formonly.axa01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit axa02=formonly.axa02 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Query";
+ButtonEdit axa03=formonly.axa03 type CHAR, action=controlp, tabIndex=3, noEntry, not null, required, image="zoom", comment="<^P>Qry Book#";
+Edit yy=formonly.yy type SMALLINT, tabIndex=4;
+Edit bm=formonly.bm type SMALLINT, tabIndex=5, not null, required;
+Edit em=formonly.em type SMALLINT, tabIndex=6, not null, required;
+Group group03:group03, text="Amount Unit";
+RadioGroup d=formonly.d type CHAR, tabIndex=7, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+Group group04:group04;
+CheckBox e=formonly.e type CHAR, tabIndex=9, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.axa01,formonly.axa02,formonly.axa03,formonly.yy,formonly.bm,formonly.em,formonly.d,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

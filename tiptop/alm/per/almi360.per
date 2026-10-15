@@ -1,0 +1,224 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi360.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+[label1       ][lil00               ]                    [label11      ][lil08              ][lil08_desc       ]               [lilmksg                  ]
+[label2       ][lil01               ]                    [label12      ][lil09              ][lil09_desc       ][label21      ][lil17             ][imgmksg]
+[label3       ][lil02   ]                                [label13      ][lil10              ]                   [label22      ][lilconf           ][       ]
+[label4       ][lil03               ]                    [label14      ][lil11              ]                   [label23      ][lilconu           ][lilconu_desc   ]
+[label5       ][lil04               ][lil04_desc        ][label15      ][lil12              ]                   [label24      ][lilcond           ][lilcont        ]
+[label6       ][lilplant            ][lilplant_desc     ][label16      ][lil13              ]                   [label25      ][lil18             ][lil18_desc     ]
+[label7       ][lillegal            ][lillegal_desc     ]               [lil14                     ]            [label26      ][lil19             ]
+[label8       ][lil05               ][lil05_desc        ][label18      ][lil15              ][lil15_desc       ][label27      ][lil20                              ]
+[label9       ][lil06               ][lil06_desc        ][label19      ][lil16              ]                                  [                                   ]
+[label10      ][lil07               ][lil07_desc        ]                                                                      [                                   ]
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid2
+{
+
+[label28     ][liluser        ]  [label31     ] [lilmodu        ] [label34     ][lilacti        ]
+[label29     ][lilgrup        ]  [label32     ] [lildate        ] [label35     ][lilcrat        ]
+[label30     ][liloriu        ]  [label33     ] [lilorig        ]
+
+
+
+
+
+}
+END -- Grid2
+END -- Page2
+END -- Folder1
+Folder Folder2
+Page Page3(action=dinge, text=%"Page3")
+Table Table1
+{
+[lim02_1   |lim03_1     |lim04_1    |lim05               |lim051  ]
+[lim02_1   |lim03_1     |lim04_1    |lim05               |lim051  ]
+[lim02_1   |lim03_1     |lim04_1    |lim05               |lim051  ]
+[lim02_1   |lim03_1     |lim04_1    |lim05               |lim051  ]
+[lim02_1   |lim03_1     |lim04_1    |lim05               |lim051  ]
+
+
+
+
+
+}
+END -- Table1
+END -- Page3
+Page Page4(action=bili, text=%"Page4")
+Table Table2
+{
+[lim02_2     |lim03_2   |lim04_2     |lim06          |lim063              |lim064              |lim061              |lim062              ]
+[lim02_2     |lim03_2   |lim04_2     |lim06          |lim063              |lim064              |lim061              |lim062              ]
+[lim02_2     |lim03_2   |lim04_2     |lim06          |lim063              |lim064              |lim061              |lim062              ]
+[lim02_2     |lim03_2   |lim04_2     |lim06          |lim063              |lim064              |lim061              |lim062              ]
+[lim02_2     |lim03_2   |lim04_2     |lim06          |lim063              |lim064              |lim061              |lim062              ]
+
+
+
+
+
+}
+END -- Table2
+END -- Page4
+Page Page5(action=fenduan, text=%"Page5")
+Table Table3
+{
+[lim02_3      |lim03_3      |lim04_3       |lim07        |lim071              |lim072              |lim073              ]
+[lim02_3      |lim03_3      |lim04_3       |lim07        |lim071              |lim072              |lim073              ]
+[lim02_3      |lim03_3      |lim04_3       |lim07        |lim071              |lim072              |lim073              ]
+[lim02_3      |lim03_3      |lim04_3       |lim07        |lim071              |lim072              |lim073              ]
+[lim02_3      |lim03_3      |lim04_3       |lim07        |lim071              |lim072              |lim073              ]
+
+
+
+
+
+
+}
+END -- Table3
+END -- Page5
+END -- Folder2
+Grid Grid3
+{
+ ----------[label17   |idx       ][label20   |cnt     ] ------[label36   |c1        ]------------
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+TABLES
+lil_file
+ATTRIBUTES
+Label label1:Label1, text=%"lil00";
+ComboBox lil00=formonly.lil00 type like lil_file.lil00, tabIndex=1, not null, items=(("1", "1"),("2", "2"),("3", "3"));
+Label label11:Label11, text=%"lil08";
+ButtonEdit lil08=formonly.lil08 type like lil_file.lil08, action=controlp, tabIndex=17, not null, required, image="zoom";
+Edit lil08_desc=formonly.lil08_desc type CHAR, tabIndex=18, noEntry;
+CheckBox lilmksg=formonly.lilmksg type like lil_file.lilmksg, tabIndex=29, text=%"lilmksg", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Label label2:Label2, text=%"lil01";
+ButtonEdit lil01=formonly.lil01 type like lil_file.lil01, action=controlp, tabIndex=2, not null, required, image="zoom";
+Label label12:Label12, text=%"lil09";
+ButtonEdit lil09=formonly.lil09 type like lil_file.lil09, action=controlp, tabIndex=19, not null, required, image="zoom";
+Edit lil09_desc=formonly.lil09_desc type CHAR, tabIndex=20, noEntry;
+Label label21:Label21, text=%"lil17";
+ComboBox lil17=formonly.lil17 type like lil_file.lil17, tabIndex=30, noEntry, not null, items=(("0", "0"),("1", "1"),("S", "S"),("W", "W"),("R", "R"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Label label3:Label3, text=%"lil02";
+Edit lil02=formonly.lil02 type like lil_file.lil02, tabIndex=3, noEntry, not null;
+Label label13:Label13, text=%"lil10";
+ComboBox lil10=formonly.lil10 type like lil_file.lil10, tabIndex=21, not null, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"));
+Label label22:Label22, text=%"lilconf";
+ComboBox lilconf=formonly.lilconf type like lil_file.lilconf, tabIndex=31, noEntry, not null, items=(("Y", "Y"),("N", "N"),("S", "S"));
+Label label4:Label4, text=%"lil03";
+DateEdit lil03=formonly.lil03 type like lil_file.lil03, tabIndex=4, not null;
+Label label14:Label14, text=%"lil11";
+ComboBox lil11=formonly.lil11 type like lil_file.lil11, tabIndex=22, not null, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "Proportion"));
+Label label23:Label23, text=%"lilconu";
+ButtonEdit lilconu=formonly.lilconu type like lil_file.lilconu, action=controlp, tabIndex=32, noEntry, image="zoom";
+Edit lilconu_desc=formonly.lilconu_desc type CHAR, tabIndex=33, noEntry;
+Label label5:Label5, text=%"lil04";
+ButtonEdit lil04=formonly.lil04 type like lil_file.lil04, action=controlp, tabIndex=5, not null, image="zoom";
+Edit lil04_desc=formonly.lil04_desc type CHAR, tabIndex=6, noEntry;
+Label label15:Label15, text=%"lil12";
+DateEdit lil12=formonly.lil12 type like lil_file.lil12, tabIndex=23, not null;
+Label label24:Label24, text=%"lilcond";
+DateEdit lilcond=formonly.lilcond type like lil_file.lilcond, tabIndex=34, noEntry;
+TimeEdit lilcont=formonly.lilcont type like lil_file.lilcont, tabIndex=35, noEntry;
+Label label6:Label6, text=%"lilplant";
+ButtonEdit lilplant=formonly.lilplant type like lil_file.lilplant, action=controlp, tabIndex=7, noEntry, not null, image="zoom";
+Edit lilplant_desc=formonly.lilplant_desc type CHAR, tabIndex=8, noEntry;
+Label label16:Label16, text=%"lil13";
+DateEdit lil13=formonly.lil13 type like lil_file.lil13, tabIndex=24, not null;
+Label label25:Label25, text=%"lil18";
+ButtonEdit lil18=formonly.lil18 type like lil_file.lil18, action=controlp, tabIndex=36, noEntry, image="zoom";
+Edit lil18_desc=formonly.lil18_desc type CHAR, tabIndex=37, noEntry;
+Label label7:Label7, text=%"lillegal";
+ButtonEdit lillegal=formonly.lillegal type like lil_file.lillegal, action=controlp, tabIndex=9, noEntry, not null, image="zoom";
+Edit lillegal_desc=formonly.lillegal_desc type CHAR, tabIndex=10, noEntry;
+CheckBox lil14=formonly.lil14 type like lil_file.lil14, tabIndex=25, text=%"lil14", not null, valueChecked = "Y", valueUnchecked = "N";
+Label label26:Label26, text=%"lil19";
+DateEdit lil19=formonly.lil19 type CHAR, tabIndex=38, noEntry;
+Label label8:Label8, text=%"lil05";
+ButtonEdit lil05=formonly.lil05 type like lil_file.lil05, action=controlp, tabIndex=11, not null, required, image="zoom";
+Edit lil05_desc=formonly.lil05_desc type CHAR, tabIndex=12, noEntry;
+Label label18:Label18, text=%"lil15";
+ButtonEdit lil15=formonly.lil15 type like lil_file.lil15, action=controlp, tabIndex=26, image="zoom";
+Edit lil15_desc=formonly.lil15_desc type CHAR, tabIndex=27, noEntry;
+Label label27:Label27, text=%"lil20";
+TextEdit lil20=formonly.lil20 type like lil_file.lil20, tabIndex=39;
+Label label9:Label9, text=%"lil06";
+ButtonEdit lil06=formonly.lil06 type like lil_file.lil06, action=controlp, tabIndex=13, not null, required, image="zoom";
+Edit lil06_desc=formonly.lil06_desc type CHAR, tabIndex=14, noEntry;
+Label label19:Label19, text=%"lil16";
+DateEdit lil16=formonly.lil16 type like lil_file.lil16, tabIndex=28;
+Label label10:Label10, text=%"lil07";
+ButtonEdit lil07=formonly.lil07 type like lil_file.lil07, action=controlp, tabIndex=15, not null, required, image="zoom";
+Edit lil07_desc=formonly.lil07_desc type CHAR, tabIndex=16, noEntry;
+Label label28:Label28, text=%"liluser";
+Edit liluser=formonly.liluser type like lil_file.liluser, tabIndex=40, noEntry;
+Label label31:Label31, text=%"lilmodu";
+Edit lilmodu=formonly.lilmodu type like lil_file.lilmodu, tabIndex=43, noEntry;
+Label label34:Label34, text=%"lilacti";
+Edit lilacti=formonly.lilacti type like lil_file.lilacti, tabIndex=46, noEntry;
+Label label29:Label29, text=%"lilgrup";
+Edit lilgrup=formonly.lilgrup type like lil_file.lilgrup, tabIndex=41, noEntry;
+Label label32:Label32, text=%"lildate";
+DateEdit lildate=formonly.lildate type like lil_file.lildate, tabIndex=44, noEntry;
+Label label35:Label35, text=%"lilcrat";
+DateEdit lilcrat=formonly.lilcrat type like lil_file.lilcrat, tabIndex=47, noEntry;
+Label label30:Label30, text=%"liloriu";
+Edit liloriu=formonly.liloriu type like lil_file.liloriu, tabIndex=42, noEntry;
+Label label33:Label33, text=%"lilorig";
+Edit lilorig=formonly.lilorig type like lil_file.lilorig, tabIndex=45, noEntry;
+Edit lim02_1=formonly.lim02_1 type SMALLINT, tabIndex=48, title=%"lim02_1", not null;
+DateEdit lim03_1=formonly.lim03_1 type DATE, tabIndex=49, title=%"lim03_1", not null;
+DateEdit lim04_1=formonly.lim04_1 type DATE, tabIndex=50, title=%"lim04_1", not null;
+Edit lim05=formonly.lim05 type DECIMAL(20,6), tabIndex=51, title=%"lim05", not null;
+Edit lim051=formonly.lim051 type SMALLINT, tabIndex=52, title=%"lim051", not null;
+Edit lim02_2=formonly.lim02_2 type CHAR, tabIndex=53, title=%"lim02_2", not null;
+DateEdit lim03_2=formonly.lim03_2 type CHAR, tabIndex=54, title=%"lim03_2", not null;
+DateEdit lim04_2=formonly.lim04_2 type CHAR, tabIndex=55, title=%"lim04_2", not null;
+ComboBox lim06=formonly.lim06 type CHAR, tabIndex=56, title=%"lim06", not null, items=(("1", "1"));
+Edit lim063=formonly.lim063 type CHAR, tabIndex=57, title=%"lim063";
+Edit lim064=formonly.lim064 type CHAR, tabIndex=58, title=%"lim064";
+Edit lim061=formonly.lim061 type CHAR, tabIndex=59, title=%"lim061", not null;
+Edit lim062=formonly.lim062 type CHAR, tabIndex=60, title=%"lim062", not null;
+Edit lim02_3=formonly.lim02_3 type CHAR, tabIndex=61, title=%"lim02_3", not null;
+DateEdit lim03_3=formonly.lim03_3 type CHAR, tabIndex=62, title=%"lim03_3", not null;
+DateEdit lim04_3=formonly.lim04_3 type CHAR, tabIndex=63, title=%"lim04_3", not null;
+ComboBox lim07=formonly.lim07 type CHAR, tabIndex=64, title=%"lim07", not null, items=(("1", "1"));
+Edit lim071=formonly.lim071 type CHAR, tabIndex=65, title=%"lim071", not null;
+Edit lim072=formonly.lim072 type CHAR, tabIndex=66, title=%"lim072", not null;
+Edit lim073=formonly.lim073 type CHAR, tabIndex=67, title=%"lim073", not null;
+Label label17:Label17, text=%"Label33";
+Edit idx=formonly.idx type CHAR, tabIndex=68, noEntry;
+Label label20:Label20, text=%"Label34";
+Edit cnt=formonly.cnt type CHAR, tabIndex=69, noEntry;
+Label label36:Label36, text=%"Label35";
+Edit c1=formonly.c1 type CHAR, tabIndex=70, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.lil00,formonly.lil01,formonly.lil02,formonly.lil03,formonly.lil04,formonly.lil04_desc,formonly.lilplant,formonly.lilplant_desc,formonly.lillegal,formonly.lillegal_desc,formonly.lil05,formonly.lil05_desc,formonly.lil06,formonly.lil06_desc,formonly.lil07,formonly.lil07_desc,formonly.lil08,formonly.lil08_desc,formonly.lil09,formonly.lil09_desc,formonly.lil10,formonly.lil11,formonly.lil12,formonly.lil13,formonly.lil14,formonly.lil15,formonly.lil15_desc,formonly.lil16,formonly.lilmksg,formonly.lil17,formonly.lilconf,formonly.lilconu,formonly.lilconu_desc,formonly.lilcond,formonly.lilcont,formonly.lil18,formonly.lil18_desc,formonly.lil19,formonly.lil20,formonly.liluser,formonly.lilgrup,formonly.liloriu,formonly.lilmodu,formonly.lilorig,formonly.lilacti,formonly.lildate,formonly.lilcrat,formonly.imgmksg,formonly.idx,formonly.cnt,formonly.c1)
+SCREEN RECORD s_lim1(formonly.lim02_1,formonly.lim03_1,formonly.lim04_1,formonly.lim05,formonly.lim051)
+SCREEN RECORD s_lim2(formonly.lim02_2,formonly.lim03_2,formonly.lim04_2,formonly.lim06,formonly.lim063,formonly.lim064,formonly.lim061,formonly.lim062)
+SCREEN RECORD s_lim3(formonly.lim02_3,formonly.lim03_3,formonly.lim04_3,formonly.lim07,formonly.lim071,formonly.lim072,formonly.lim073)
+END -- INSTRUCTIONS
+

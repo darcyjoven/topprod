@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="arti120")
+VBox vb3
+Folder pc1
+Page Page1(text=%"Page0")
+Grid gr4
+{
+ Game Code[rtd01            ]                     Memo     [rtd05                         ]
+ Name     [rtd02            ]                     Confirm  [rtdconf         |imgmksg ]
+ Org Code [rtd03            ][rtd03_desc      ]   Conf Date[rtdcond         |        ]
+ NO.      [rtd04            ]                     Admin    [rtdconu         |rtdconu_desc ]
+
+}
+END -- gr4
+END -- Page1
+Page Page2(text=%"Page1")
+Grid gr5
+{
+ user         [rtduser       ]  modify     [rtdmodu       ]  acti  [rtdacti       ]
+ grup         [rtdgrup       ]  date       [rtddate       ]  crate [rtdcrat       ]
+ Record Orig. [rtdoriu       ]  Dept Orig. [rtdorig       ]
+
+
+}
+END -- gr5
+END -- Page2
+END -- pc1
+Table s_rte
+{
+[rte02   |rte03   |rte03_de|rte08     |taxtype   |rte04   |rte05   |rte06   |rte07   |rtepos  ]
+[rte02   |rte03   |rte03_de|rte08     |taxtype   |rte04   |rte05   |rte06   |rte07   |rtepos  ]
+[rte02   |rte03   |rte03_de|rte08     |taxtype   |rte04   |rte05   |rte06   |rte07   |rtepos  ]
+[rte02   |rte03   |rte03_de|rte08     |taxtype   |rte04   |rte05   |rte06   |rte07   |rtepos  ]
+[rte02   |rte03   |rte03_de|rte08     |taxtype   |rte04   |rte05   |rte06   |rte07   |rtepos  ]
+}
+END -- s_rte
+Grid gr6
+{
+ ----------Rows[idx  ]/[cnt  ]----------Details[cn2   ]----------
+
+
+
+
+}
+END -- gr6
+END -- vb3
+END -- arti120
+
+TABLES
+rte_file,
+rtd_file,
+tableAlias1=rte_file
+ATTRIBUTES
+ButtonEdit rtd01=rtd_file.rtd01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit rtd05=rtd_file.rtd05, tabIndex=5;
+Edit rtd02=rtd_file.rtd02, tabIndex=2, not null, required;
+ComboBox rtdconf=rtd_file.rtdconf, tabIndex=6, noEntry, items=(("N", "Unconfirm"),("Y", "Confirm"),("X", "void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit rtd03=rtd_file.rtd03, action=controlp, tabIndex=3, noEntry, not null, required, image="zoom";
+Edit rtd03_desc=formonly.rtd03_desc type VARCHAR, tabIndex=31, noEntry;
+DateEdit rtdcond=rtd_file.rtdcond, tabIndex=7, noEntry;
+Edit rtd04=rtd_file.rtd04, tabIndex=4, noEntry;
+ButtonEdit rtdconu=rtd_file.rtdconu, action=controlp, tabIndex=8, image="zoom";
+Edit rtdconu_desc=formonly.rtdconu_desc type VARCHAR, tabIndex=9;
+Edit rtduser=rtd_file.rtduser, tabIndex=10, noEntry;
+Edit rtdmodu=rtd_file.rtdmodu, tabIndex=13, noEntry;
+Edit rtdacti=rtd_file.rtdacti, tabIndex=16, noEntry;
+Edit rtdgrup=rtd_file.rtdgrup, tabIndex=11, noEntry;
+DateEdit rtddate=rtd_file.rtddate, tabIndex=14, noEntry;
+DateEdit rtdcrat=rtd_file.rtdcrat, tabIndex=17, noEntry;
+Edit rtdoriu=rtd_file.rtdoriu, tabIndex=12, noEntry;
+Edit rtdorig=rtd_file.rtdorig, tabIndex=15, noEntry;
+Edit rte02=rte_file.rte02, tabIndex=18, title="No.", not null, required;
+ButtonEdit rte03=rte_file.rte03, action=controlp, tabIndex=19, title="Code", not null, required, image="zoom";
+Edit rte03_de=formonly.rte03_desc type VARCHAR, tabIndex=20, title="Name", noEntry;
+ButtonEdit rte08=rte_file.rte08, action=controlp, tabIndex=21, title="TaxCode", not null, image="zoom.png";
+Edit taxtype=formonly.TaxType type CHAR, tabIndex=22, title="TaxType", noEntry;
+CheckBox rte04=rte_file.rte04, tabIndex=23, default = "Y", title="stock", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rte05=rte_file.rte05, tabIndex=24, default = "Y", title="Sell", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rte06=tableAlias1.rte06, tabIndex=25, title="cancel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rte07=rte_file.rte07, tabIndex=26, title="availability", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rtepos=rte_file.rtepos, tabIndex=27, title="pass", noEntry, not null, required, items=(("1", "Add-No passed"),("2", "Modify-No passed"),("3", "Passed"));
+Edit idx=formonly.idx type INTEGER, tabIndex=28;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=29;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=30;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rte(rte_file.rte02,rte_file.rte03,formonly.rte03_desc,rte_file.rte08,formonly.TaxType,rte_file.rte04,rte_file.rte05,tableAlias1.rte06,rte_file.rte07,rte_file.rtepos)
+SCREEN RECORD Undefined(rtd_file.rtd01,rtd_file.rtd05,rtd_file.rtd02,rtd_file.rtdconf,formonly.imgmksg,rtd_file.rtd03,formonly.rtd03_desc,rtd_file.rtdcond,rtd_file.rtd04,rtd_file.rtdconu,formonly.rtdconu_desc,rtd_file.rtduser,rtd_file.rtdmodu,rtd_file.rtdacti,rtd_file.rtdgrup,rtd_file.rtddate,rtd_file.rtdcrat,rtd_file.rtdoriu,rtd_file.rtdorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

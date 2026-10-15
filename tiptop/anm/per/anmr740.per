@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr740.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmr740")
+VBox VBox1
+Group Group1
+Grid Grid1
+{
+ <G group01                                                          >
+  Payment Slip NO.    [nni01               ]
+  Payment Date        [nni02               ]
+  Payment Currency    [nni04               ]
+ <                                                                   >
+ <G group02                                                          >
+  [n                                                                ]
+ <                                                                   >
+
+}
+END -- Grid1
+END -- Group1
+Grid Grid2
+{
+[more                                                        ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- anmr740
+
+TABLES
+nni_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit nni01=nni_file.nni01, tabIndex=1;
+DateEdit nni02=nni_file.nni02, tabIndex=2;
+Edit nni04=nni_file.nni04, tabIndex=3;
+Group group02:group02;
+RadioGroup n=formonly.n type CHAR, tabIndex=4, items=(("1", %"Confirmed"),("2", %"UnConfirmed"),("3", %"All "));
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nni_file.nni01,nni_file.nni02,nni_file.nni04,formonly.n,formonly.more)
+END -- INSTRUCTIONS
+

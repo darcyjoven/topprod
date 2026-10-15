@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrr031.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+[label1    |hrct03    |hraa12              ]
+[label3    |hrct04                         ]
+[label4    |hrct05                         ]
+[label2    |hrdxa04                        ]
+
+
+[more              ]
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- VBox1
+END -- ghrr031
+
+ATTRIBUTES
+Label label1:Label1, text=%"hrat03";
+ButtonEdit hrct03=formonly.hrct03, action=controlp, tabIndex=2, color = black, image="zoom";
+Edit hraa12=formonly.hraa12, tabIndex=3;
+Label label3:Label3, text=%"hrct04";
+Edit hrct04=formonly.hrct04, tabIndex=5, color = black;
+Label label4:Label4, text=%"hrct05";
+Edit hrct05=formonly.hrct05 type INTEGER, tabIndex=6, color = black;
+Label label2:Label2, text=%"hrat04";
+ButtonEdit hrdxa04=formonly.hrdxa04, action=controlp, tabIndex=4, image="zoom";
+CheckBox more=formonly.more, tabIndex=1, text=%"more", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.more,formonly.hrct03,formonly.hraa12,formonly.hrdxa04,formonly.hrct04,formonly.hrct05)
+END -- INSTRUCTIONS
+

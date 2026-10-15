@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp630a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmp630a")
+VBox VBox1
+Grid grid01
+{
+ <G group01                                                  >
+  Config/Feature Master Item [rpi04               ]
+  Part Name                  [ima02                         ]
+  Level                      [level     ]
+ <                                                           >
+
+}
+END -- grid01
+Table s_rpi
+{
+[rpi0|rpi07|rpi05          |ima02b         |ima021              |rpi08|rpi09     |rpi1]
+[rpi0|rpi07|rpi05          |ima02b         |ima021              |rpi08|rpi09     |rpi1]
+[rpi0|rpi07|rpi05          |ima02b         |ima021              |rpi08|rpi09     |rpi1]
+[rpi0|rpi07|rpi05          |ima02b         |ima021              |rpi08|rpi09     |rpi1]
+[rpi0|rpi07|rpi05          |ima02b         |ima021              |rpi08|rpi09     |rpi1]
+[rpi0|rpi07|rpi05          |ima02b         |ima021              |rpi08|rpi09     |rpi1]
+[rpi0|rpi07|rpi05          |ima02b         |ima021              |rpi08|rpi09     |rpi1]
+[rpi0|rpi07|rpi05          |ima02b         |ima021              |rpi08|rpi09     |rpi1]
+[rpi0|rpi07|rpi05          |ima02b         |ima021              |rpi08|rpi09     |rpi1]
+[rpi0|rpi07|rpi05          |ima02b         |ima021              |rpi08|rpi09     |rpi1]
+
+}
+END -- s_rpi
+Grid gr867
+{
+  ---------- Select Component:[ict     ] ----------
+
+}
+END -- gr867
+END -- VBox1
+END -- abmp630a
+
+TABLES
+rpi_file
+ATTRIBUTES
+Group group01:group01;
+Edit rpi04=rpi_file.rpi04, tabIndex=1, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit level=formonly.level type CHAR, tabIndex=3, noEntry;
+Edit rpi0=rpi_file.rpi06, tabIndex=4, title="Y/N", upShift, comment="Use [  Enter], [^P], [^O], [Esc]Keys";
+Edit rpi07=rpi_file.rpi07, tabIndex=5, title="Comb", noEntry;
+Edit rpi05=rpi_file.rpi05, tabIndex=6, title="Component No.", noEntry;
+Edit ima02b=formonly.ima02b type CHAR, tabIndex=7, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=8, title="Specification", noEntry;
+Edit rpi08=rpi_file.rpi08, tabIndex=9, title="Must", noEntry;
+Edit rpi09=rpi_file.rpi09, tabIndex=10, title="QPA", noEntry;
+Edit rpi1=rpi_file.rpi10, tabIndex=11, title="Unit", noEntry;
+Edit ict=formonly.ict type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rpi(rpi_file.rpi06,rpi_file.rpi07,rpi_file.rpi05,formonly.ima02b,formonly.ima021,rpi_file.rpi08,rpi_file.rpi09,rpi_file.rpi10)
+SCREEN RECORD Undefined(rpi_file.rpi04,formonly.ima02,formonly.level,formonly.ict)
+END -- INSTRUCTIONS
+

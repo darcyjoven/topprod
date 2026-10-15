@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt1104.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Group Group1(text=%"")
+Grid ds1
+{
+
+ aba01[aba01               ]
+      [a                  ]
+      [                   ]
+
+}
+END -- ds1
+END -- Group1
+END -- Form
+
+TABLES
+aba_file
+ATTRIBUTES
+ButtonEdit aba01=aba_file.aba01, action=controlp, tabIndex=1, not null, image="zoom", scroll;
+RadioGroup a=formonly.a, tabIndex=2, not null, required, items=(("1", "1"),("2", "2"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(aba_file.aba01,formonly.a)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt1101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt1101")
+Folder pc39
+Page page01(text="Main")
+Grid gr368
+{
+ <G group01                                                           >
+  Allowance Note       [to_trtype   ]
+  Account Date         [to_apa02    ]
+  Allowance Invoice#.  [inv_no      ]
+  Tax Type             [to_apa15    ]
+  Tax Rate             [to_apa16    ]%
+  Account Employee     [to_apa21    ]
+  Accounts Dept.       [to_apa22    ]
+  Accounts Category    [to_apa36    ][apr02                         ]
+  O.C After-Tax Amount [to_amt              ]
+ <                                                                    >
+
+}
+END -- gr368
+END -- page01
+END -- pc39
+END -- aapt1101
+
+ATTRIBUTES
+Group group01:group01, text="Enter Default to Generate Billing Allowance Note";
+ButtonEdit to_trtype=formonly.to_trtype type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Documents";
+DateEdit to_apa02=formonly.to_apa02 type DATE, tabIndex=2;
+ButtonEdit inv_no=formonly.inv_no type CHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Invoice ";
+ButtonEdit to_apa15=formonly.to_apa15 type CHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Tax Type";
+Edit to_apa16=formonly.to_apa16 type CHAR, tabIndex=5;
+ButtonEdit to_apa21=formonly.to_apa21 type CHAR, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Employee";
+ButtonEdit to_apa22=formonly.to_apa22 type CHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P>Query Department";
+ButtonEdit to_apa36=formonly.to_apa36 type CHAR, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Category";
+Edit apr02=formonly.apr02 type CHAR, tabIndex=9;
+Edit to_amt=formonly.to_amt type CHAR, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.to_trtype,formonly.to_apa02,formonly.inv_no,formonly.to_apa15,formonly.to_apa16,formonly.to_apa21,formonly.to_apa22,formonly.to_apa36,formonly.apr02,formonly.to_amt)
+END -- INSTRUCTIONS
+

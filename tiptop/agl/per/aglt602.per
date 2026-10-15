@@ -1,0 +1,116 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt602.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglt602")
+VBox vb5
+Folder pc1
+Page Page1(text=%"Basic Data")
+Grid gr6
+{
+
+     Date for Add   [pnu01     ]  [pnuconf       ]
+     Records for Add[pnu02     ]
+
+  <G gb8                                                                                 >
+     Book No.     [pnu037    ]
+     Acount code  [pnu032              |aag02                         ]
+     Budget Dept. [pnu033              |gem02                         ]
+     Budget No.   [pnu031              |azf03                         ]
+     Project No.  [pnu038              |pja02                         ]
+     WBS No.      [pnu036              ]
+     Year         [pnu034    ]
+     Period       [pnu035    ]
+  <                                                                                      >
+
+  <G gb10                                                                                >
+     Add Amount         [pnu04               ]
+  <                                                                                      >
+
+  <G gb9                                                                                 >
+
+     Orig. Budget Amount[afc06_1             ]
+     Shift Amount       [afc08_1             ]
+     Add Amount         [afc09_1             ]
+     Total Budget Amount[afc_tot_1           ]
+
+
+  <                                                                                      >
+
+}
+END -- gr6
+END -- Page1
+Page Page3(text=%"Status")
+Grid gr5
+{
+
+    Data Owner        [pnuuser     ]   Data Modified By    [pnumodu      ] Data Valid Code[pnuact]
+    Data of Department[pnugrup     ]   Latest Modified Date[pnudate      ]
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr5
+END -- Page3
+END -- pc1
+Grid gr6_
+{
+
+   ------ Rows[idx       ]/[cnt       ] ---
+
+}
+END -- gr6_
+END -- vb5
+END -- aglt602
+
+TABLES
+pnu_file
+ATTRIBUTES
+DateEdit pnu01=pnu_file.pnu01, tabIndex=19, not null, required;
+CheckBox pnuconf=pnu_file.pnuconf, tabIndex=20, text="Confirm\n", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Edit pnu02=pnu_file.pnu02, tabIndex=21, not null, required;
+Group gb8:gb8;
+Edit pnu037=pnu_file.pnu037, tabIndex=6, not null;
+ButtonEdit pnu032=pnu_file.pnu032, action=controlp, tabIndex=9, not null, image="zoom.png";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=22, noEntry;
+ButtonEdit pnu033=pnu_file.pnu033, action=controlp, tabIndex=10, image="zoom.png";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=23, noEntry;
+ButtonEdit pnu031=pnu_file.pnu031, action=controlp, tabIndex=11, not null, image="zoom.png";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=24, noEntry;
+ButtonEdit pnu038=pnu_file.pnu038, action=controlp, tabIndex=12, image="zoom.png";
+Edit pja02=formonly.pja02 type CHAR, tabIndex=25, noEntry;
+ButtonEdit pnu036=pnu_file.pnu036, action=controlp, tabIndex=13, image="zoom.png";
+Edit pnu034=pnu_file.pnu034, tabIndex=7, not null;
+Edit pnu035=pnu_file.pnu035, tabIndex=8, not null;
+Group gb10:gb10;
+Edit pnu04=pnu_file.pnu04, tabIndex=14, not null;
+Group gb9:gb9;
+Edit afc06_1=formonly.afc06_1 type CHAR, tabIndex=15, noEntry;
+Edit afc08_1=formonly.afc08_1 type CHAR, tabIndex=16, noEntry;
+Edit afc09_1=formonly.afc09_1 type CHAR, tabIndex=17, noEntry;
+Edit afc_tot_1=formonly.afc_tot_1 type CHAR, tabIndex=18, noEntry;
+Edit pnuuser=pnu_file.pnuuser, tabIndex=1, noEntry, not null;
+Edit pnumodu=pnu_file.pnumodu, tabIndex=3, noEntry, not null;
+Edit pnuact=pnu_file.pnuacti, tabIndex=5, noEntry, not null;
+Edit pnugrup=pnu_file.pnugrup, tabIndex=2, noEntry, not null;
+DateEdit pnudate=pnu_file.pnudate, tabIndex=4, noEntry, not null;
+Edit idx=formonly.idx type CHAR, tabIndex=26, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pnu_file.pnu01,pnu_file.pnuconf,pnu_file.pnu02,pnu_file.pnu037,pnu_file.pnu032,formonly.aag02,pnu_file.pnu033,formonly.gem02,pnu_file.pnu031,formonly.azf03,pnu_file.pnu038,formonly.pja02,pnu_file.pnu036,pnu_file.pnu034,pnu_file.pnu035,pnu_file.pnu04,formonly.afc06_1,formonly.afc08_1,formonly.afc09_1,formonly.afc_tot_1,pnu_file.pnuuser,pnu_file.pnumodu,pnu_file.pnuacti,pnu_file.pnugrup,pnu_file.pnudate,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

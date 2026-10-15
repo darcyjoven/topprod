@@ -1,0 +1,172 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt612.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+[label1        ][luk01               ]                    [label14       ][luk10               ]
+[label2        ][luk02               ]                    [label15       ][luk11               ]
+[label3        ][luk03               ]                    [label16       ][luk12               ]
+[label6        ][luk04               ]                    [label17       ][amt                 ]
+[label7        ][luk05               ]                    [label18       ][luk13               |gen02             ]
+[label4        ][lukplant            |rtz13             ] [label19       ][luk14               |gem02             ]
+[label5        ][luklegal            |azt02             ] [label13       ][luk16               |imgmksg  ]
+[label8        ][luk06               |luk06_desc        ] [label22       ][lukconf             |         ]
+[label9        ][luk07               ]                    [label23       ][lukconu             |gen02_1           ]
+[label10       ][luk08               ]                    [label24       ][lukcond             |lukcont           ]
+[label11       ][luk09               ]                    [label25       ][luk15                                  ]
+[label12       ][lnt30               |tqa02             ]                 [                                       ]
+
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid2
+{
+
+[label26     ][lukuser        ]  [label29     ][lukmodu        ]   [label32     ][lukacti        ]
+[label27     ][lukgrup        ]  [label30     ][lukdate        ]   [label33     ][lukcrat        ]
+[label28     ][lukoriu        ]  [label31     ][lukorig        ]
+
+
+}
+END -- Grid2
+END -- Page2
+END -- Folder1
+Table Table1
+{
+[lul02   |lul03               |lul04   |lul05       |oaj02             |oaj05   |lul06        |lul07        |lul08        |amt_1        |oaj04             |aag02               |oaj041            |aag02_1             ]
+[lul02   |lul03               |lul04   |lul05       |oaj02             |oaj05   |lul06        |lul07        |lul08        |amt_1        |oaj04             |aag02               |oaj041            |aag02_1             ]
+[lul02   |lul03               |lul04   |lul05       |oaj02             |oaj05   |lul06        |lul07        |lul08        |amt_1        |oaj04             |aag02               |oaj041            |aag02_1             ]
+[lul02   |lul03               |lul04   |lul05       |oaj02             |oaj05   |lul06        |lul07        |lul08        |amt_1        |oaj04             |aag02               |oaj041            |aag02_1             ]
+[lul02   |lul03               |lul04   |lul05       |oaj02             |oaj05   |lul06        |lul07        |lul08        |amt_1        |oaj04             |aag02               |oaj041            |aag02_1             ]
+[lul02   |lul03               |lul04   |lul05       |oaj02             |oaj05   |lul06        |lul07        |lul08        |amt_1        |oaj04             |aag02               |oaj041            |aag02_1             ]
+[lul02   |lul03               |lul04   |lul05       |oaj02             |oaj05   |lul06        |lul07        |lul08        |amt_1        |oaj04             |aag02               |oaj041            |aag02_1             ]
+[lul02   |lul03               |lul04   |lul05       |oaj02             |oaj05   |lul06        |lul07        |lul08        |amt_1        |oaj04             |aag02               |oaj041            |aag02_1             ]
+[lul02   |lul03               |lul04   |lul05       |oaj02             |oaj05   |lul06        |lul07        |lul08        |amt_1        |oaj04             |aag02               |oaj041            |aag02_1             ]
+[lul02   |lul03               |lul04   |lul05       |oaj02             |oaj05   |lul06        |lul07        |lul08        |amt_1        |oaj04             |aag02               |oaj041            |aag02_1             ]
+
+
+}
+END -- Table1
+Grid Grid3
+{
+
+  ----------[label0|idx       |lab|cnt       ]   ----------[label36 |cn2       ]   ----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+TABLES
+lul_file,
+luk_file
+ATTRIBUTES
+Label label1:Label1, text=%"luk01";
+ButtonEdit luk01=luk_file.luk01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Label label14:Label14, text=%"luk10";
+Edit luk10=luk_file.luk10, tabIndex=17, noEntry;
+Label label2:Label2, text=%"luk02";
+DateEdit luk02=luk_file.luk02, tabIndex=2, not null;
+Label label15:Label15, text=%"luk11";
+Edit luk11=luk_file.luk11, tabIndex=18, noEntry;
+Label label3:Label3, text=%"luk03";
+DateEdit luk03=luk_file.luk03, tabIndex=3, not null;
+Label label16:Label16, text=%"luk12";
+Edit luk12=luk_file.luk12, tabIndex=19, noEntry;
+Label label6:Label6, text=%"luk04";
+ComboBox luk04=luk_file.luk04, tabIndex=4, default = "1", not null, items=(("1", "Payment list"),("2", "Refund policy"),("3", "Be worth change order"));
+Label label17:Label17, text=%"amt";
+Edit amt=formonly.amt type DATE, tabIndex=20, noEntry;
+Label label7:Label7, text=%"luk05";
+ButtonEdit luk05=luk_file.luk05, action=controlp, tabIndex=5, not null, image="zoom.png";
+Label label18:Label18, text=%"luk13";
+ButtonEdit luk13=luk_file.luk13, action=controlp, tabIndex=21, not null, image="zoom.png";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=22, noEntry;
+Label label4:Label4, text=%"ljaplant";
+ButtonEdit lukplant=luk_file.lukplant, action=controlp, tabIndex=6, noEntry, not null, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=7, noEntry;
+Label label19:Label19, text=%"luk14";
+ButtonEdit luk14=luk_file.luk14, action=controlp, tabIndex=23, not null, image="zoom.png";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=24, noEntry;
+Label label5:Label5, text=%"ljalegal";
+ButtonEdit luklegal=luk_file.luklegal, action=controlp, tabIndex=8, noEntry, not null, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=9, noEntry;
+Label label13:Label13, text=%"luk16";
+Edit luk16=luk_file.luk16, tabIndex=56, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Label label8:Label8, text=%"luk06";
+ButtonEdit luk06=luk_file.luk06, action=controlp, tabIndex=10, not null, image="zoom.png";
+Edit luk06_desc=formonly.luk06_desc type CHAR, tabIndex=11, noEntry;
+Label label22:Label22, text=%"lukconf";
+ComboBox lukconf=luk_file.lukconf, tabIndex=25, default = "N", noEntry, not null, items=(("Y", "confirm"),("N", "unconfirm"));
+Label label9:Label9, text=%"luk07";
+ButtonEdit luk07=luk_file.luk07, action=controlp, tabIndex=12, noEntry, image="zoom.png";
+Label label23:Label23, text=%"lukconu";
+ButtonEdit lukconu=luk_file.lukconu, action=controlp, tabIndex=26, noEntry, image="zoom.png";
+Edit gen02_1=formonly.gen02_1 type CHAR, tabIndex=27, noEntry;
+Label label10:Label10, text=%"luk08";
+ButtonEdit luk08=luk_file.luk08, action=controlp, tabIndex=13, noEntry, image="zoom.png";
+Label label24:Label24, text=%"lukcond";
+DateEdit lukcond=luk_file.lukcond, tabIndex=28, noEntry;
+TimeEdit lukcont=luk_file.lukcont, tabIndex=29, noEntry;
+Label label11:Label11, text=%"luk09";
+Edit luk09=luk_file.luk09, tabIndex=14, noEntry;
+Label label25:Label25, text=%"luk15";
+TextEdit luk15=luk_file.luk15, tabIndex=30;
+Label label12:Label12, text=%"lnt30";
+Edit lnt30=formonly.lnt30 type DECIMAL(20,6), tabIndex=15, noEntry;
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=16, noEntry;
+Label label26:Label26, text=%"lukuser";
+Edit lukuser=luk_file.lukuser, tabIndex=31, noEntry;
+Label label29:Label29, text=%"lukmodu";
+Edit lukmodu=luk_file.lukmodu, tabIndex=34, noEntry;
+Label label32:Label32, text=%"lukacti";
+Edit lukacti=luk_file.lukacti, tabIndex=37, noEntry;
+Label label27:Label27, text=%"lukgrup";
+Edit lukgrup=luk_file.lukgrup, tabIndex=32, noEntry;
+Label label30:Label30, text=%"lukdate";
+DateEdit lukdate=luk_file.lukdate, tabIndex=35, noEntry;
+Label label33:Label33, text=%"lukcrat";
+DateEdit lukcrat=luk_file.lukcrat, tabIndex=38, noEntry;
+Label label28:Label28, text=%"lukoriu";
+Edit lukoriu=luk_file.lukoriu, tabIndex=33, noEntry;
+Label label31:Label31, text=%"lukorig";
+Edit lukorig=luk_file.lukorig, tabIndex=36, noEntry;
+Edit lul02=lul_file.lul02, tabIndex=39, title=%"lul02", not null, required;
+ButtonEdit lul03=lul_file.lul03, action=controlp, tabIndex=40, title=%"lul03", not null, image="zoom.png";
+Edit lul04=lul_file.lul04, tabIndex=41, title=%"luk04", not null;
+ButtonEdit lul05=lul_file.lul05, action=controlp, tabIndex=42, title=%"lul05", not null, image="zoom.png";
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=43, title=%"oaj02", noEntry;
+ComboBox oaj05=formonly.oaj05 type CHAR, tabIndex=44, title=%"oaj05", items=(("01", "01"),("02", "02"),("10", "10"));
+Edit lul06=lul_file.lul06, tabIndex=45, title=%"lul06";
+Edit lul07=lul_file.lul07, tabIndex=46, title=%"lul07", noEntry;
+Edit lul08=lul_file.lul08, tabIndex=47, title=%"lul08", noEntry;
+Edit amt_1=formonly.amt_1 type CHAR, tabIndex=48, title=%"amt_1", noEntry;
+Edit oaj04=formonly.oaj04 type CHAR, tabIndex=49, title=%"oaj04", noEntry;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=50, title=%"aag02", noEntry;
+Edit oaj041=formonly.oaj041 type CHAR, tabIndex=51, title=%"oaj041", noEntry;
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=52, title=%"aag02_1", noEntry;
+Label label0:Label34, text=%"Rows";
+Edit idx=formonly.idx type CHAR, tabIndex=53;
+Label lab:Label35, text=%"/";
+Edit cnt=formonly.cnt type CHAR, tabIndex=54;
+Label label36:Label36, text=%"Details";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=55;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(luk_file.luk01,luk_file.luk02,luk_file.luk03,luk_file.luk04,formonly.rtz13,luk_file.luk05,formonly.azt02,luk_file.lukplant,luk_file.luklegal,luk_file.luk06,formonly.luk06_desc,luk_file.luk07,luk_file.luk08,luk_file.luk09,formonly.lnt30,luk_file.luk10,luk_file.luk11,luk_file.luk12,formonly.amt,luk_file.luk13,luk_file.luk14,luk_file.lukconf,luk_file.lukconu,formonly.gen02_1,luk_file.lukcond,luk_file.lukcont,luk_file.luk15,luk_file.lukuser,luk_file.lukgrup,luk_file.lukoriu,luk_file.lukmodu,luk_file.lukdate,luk_file.lukorig,luk_file.lukacti,luk_file.lukcrat,formonly.idx,formonly.cnt,formonly.cn2,formonly.imgmksg,formonly.tqa02,formonly.gen02,formonly.gem02,luk_file.luk16)
+SCREEN RECORD s_lul(lul_file.lul02,lul_file.lul03,lul_file.lul04,lul_file.lul05,formonly.oaj02,formonly.oaj05,lul_file.lul06,lul_file.lul07,lul_file.lul08,formonly.amt_1,formonly.oaj04,formonly.aag02,formonly.oaj041,formonly.aag02_1)
+END -- INSTRUCTIONS
+

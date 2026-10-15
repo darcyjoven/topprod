@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_act_def.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"s_act_def")
+Grid gr3861
+{
+ <T s_act                                                                                 >
+ [sel |act_name            |act_desc            |detail_ins          |detail_del         ]
+ [sel |act_name            |act_desc            |detail_ins          |detail_del         ]
+ [sel |act_name            |act_desc            |detail_ins          |detail_del         ]
+ [sel |act_name            |act_desc            |detail_ins          |detail_del         ]
+ [sel |act_name            |act_desc            |detail_ins          |detail_del         ]
+ [sel |act_name            |act_desc            |detail_ins          |detail_del         ]
+ [sel |act_name            |act_desc            |detail_ins          |detail_del         ]
+ [sel |act_name            |act_desc            |detail_ins          |detail_del         ]
+ [sel |act_name            |act_desc            |detail_ins          |detail_del         ]
+ [sel |act_name            |act_desc            |detail_ins          |detail_del         ]
+ <                                                                                        >
+
+}
+END -- gr3861
+END -- s_act_def
+
+ATTRIBUTES
+Table s_act:s_act;
+CheckBox sel=formonly.sel type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit act_name=formonly.act_name type CHAR, tabIndex=2, title="Action name", noEntry;
+Edit act_desc=formonly.act_desc type CHAR, tabIndex=3, title="Action Description", noEntry;
+CheckBox detail_ins=formonly.detail_ins type CHAR, tabIndex=4, title="Detail:allow insert", not null, required, valueChecked = "y", valueUnchecked = "n";
+CheckBox detail_del=formonly.detail_del type CHAR, tabIndex=5, title="Detail:allow delete", not null, required, valueChecked = "y", valueUnchecked = "n";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_act(formonly.sel,formonly.act_name,formonly.act_desc,formonly.detail_ins,formonly.detail_del)
+END -- INSTRUCTIONS
+

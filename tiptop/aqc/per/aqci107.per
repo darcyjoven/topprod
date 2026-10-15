@@ -1,0 +1,101 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqci107.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page(text=%"Main")
+VBox VBox2
+Grid Grid1
+{
+  [label1        ]   [qco01                  ]
+  [label2       ]    [qco02     ]
+  [label3           ][qco05     ]
+
+
+}
+END -- Grid1
+Table ds1
+{
+[qco04        |qco03     |qcl02         |qco06                         |ima02             |ima021          |qco07          |qco08     |qco09                   |qco10  |qco11            |qco13  |qco15            |qco16 |qco18            |qco19                 |qco20            ]
+[qco04        |qco03     |qcl02         |qco06                         |ima02             |ima021          |qco07          |qco08     |qco09                   |qco10  |qco11            |qco13  |qco15            |qco16 |qco18            |qco19                 |qco20            ]
+[qco04        |qco03     |qcl02         |qco06                         |ima02             |ima021          |qco07          |qco08     |qco09                   |qco10  |qco11            |qco13  |qco15            |qco16 |qco18            |qco19                 |qco20            ]
+[qco04        |qco03     |qcl02         |qco06                         |ima02             |ima021          |qco07          |qco08     |qco09                   |qco10  |qco11            |qco13  |qco15            |qco16 |qco18            |qco19                 |qco20            ]
+[qco04        |qco03     |qcl02         |qco06                         |ima02             |ima021          |qco07          |qco08     |qco09                   |qco10  |qco11            |qco13  |qco15            |qco16 |qco18            |qco19                 |qco20            ]
+[qco04        |qco03     |qcl02         |qco06                         |ima02             |ima021          |qco07          |qco08     |qco09                   |qco10  |qco11            |qco13  |qco15            |qco16 |qco18            |qco19                 |qco20            ]
+[qco04        |qco03     |qcl02         |qco06                         |ima02             |ima021          |qco07          |qco08     |qco09                   |qco10  |qco11            |qco13  |qco15            |qco16 |qco18            |qco19                 |qco20            ]
+[qco04        |qco03     |qcl02         |qco06                         |ima02             |ima021          |qco07          |qco08     |qco09                   |qco10  |qco11            |qco13  |qco15            |qco16 |qco18            |qco19                 |qco20            ]
+[qco04        |qco03     |qcl02         |qco06                         |ima02             |ima021          |qco07          |qco08     |qco09                   |qco10  |qco11            |qco13  |qco15            |qco16 |qco18            |qco19                 |qco20            ]
+[qco04        |qco03     |qcl02         |qco06                         |ima02             |ima021          |qco07          |qco08     |qco09                   |qco10  |qco11            |qco13  |qco15            |qco16 |qco18            |qco19                 |qco20            ]
+
+}
+END -- ds1
+Grid Grid2
+{
+
+                                                        [label4  |unit   ]   [label5      |sum              ]  [label6      ][diffqty          ]
+
+}
+END -- Grid2
+END -- VBox2
+END -- Page
+END -- Folder1
+Grid gr3
+{
+
+
+ -------  Rows  [cnt   ] /  [cn2   ]  --------
+
+}
+END -- gr3
+END -- VBox1
+END -- Form
+
+TABLES
+qco_file,
+ima_file,
+qcl_file
+ATTRIBUTES
+Label label1:Label1, text=%"Sheet Number";
+ButtonEdit qco01=qco_file.qco01, action=controlp, tabIndex=1, image="zoom";
+Label label2:Label2, text=%"Line No";
+Edit qco02=qco_file.qco02, tabIndex=2;
+Label label3:Label3, text=%"Inspect Lot No.";
+Edit qco05=qco_file.qco05, tabIndex=3;
+Edit qco04=qco_file.qco04, tabIndex=4, title=%"qco04", not null, scroll;
+ButtonEdit qco03=qco_file.qco03, action=controlp, tabIndex=5, title=%"qco03", not null, image="zoom", scroll;
+Edit qcl02=qcl_file.qcl02, tabIndex=6, title=%"Edit1", noEntry;
+ButtonEdit qco06=qco_file.qco06, action=controlp, tabIndex=7, title=%"qco06", not null, image="zoom", scroll;
+Edit ima02=ima_file.ima02, tabIndex=8, title=%"ima02", noEntry;
+Edit ima021=ima_file.ima021, tabIndex=9, title=%"Edit3", noEntry;
+ButtonEdit qco07=qco_file.qco07, action=controlp, tabIndex=10, title=%"qco07", not null, image="zoom", scroll;
+Edit qco08=qco_file.qco08, tabIndex=11, title=%"qco08", scroll;
+Edit qco09=qco_file.qco09, tabIndex=12, title=%"qco09", scroll;
+Edit qco10=qco_file.qco10, tabIndex=13, title=%"qco10", noEntry, scroll;
+Edit qco11=qco_file.qco11, tabIndex=14, title=%"qco11", not null, scroll;
+Edit qco13=qco_file.qco13, tabIndex=15, title=%"qco13", noEntry, scroll;
+Edit qco15=qco_file.qco15, tabIndex=16, title=%"qco15", not null, scroll;
+Edit qco16=qco_file.qco16, tabIndex=17, title=%"qco16", noEntry, scroll;
+Edit qco18=qco_file.qco18, tabIndex=18, title=%"qco18", not null, scroll;
+Edit qco19=qco_file.qco19, tabIndex=19, title=%"qco19", noEntry, scroll;
+Edit qco20=qco_file.qco20, tabIndex=20, title=%"qco20", noEntry, scroll;
+Label label4:Label4, text=%"Unit";
+Edit unit=formonly.unit type VARCHAR, tabIndex=23;
+Label label5:Label5, text=%"T.Sum";
+Edit sum=formonly.sum type DECIMAL, tabIndex=24;
+Label label6:Label6, text=%"Diff Qty";
+Edit diffqty=formonly.diffqty type DECIMAL, tabIndex=25;
+Edit cnt=formonly.cnt type CHAR, tabIndex=21;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=22;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefine(qco_file.qco01,qco_file.qco02,qco_file.qco05)
+SCREEN RECORD s_qco(qco_file.qco04,qco_file.qco03,qcl_file.qcl02,qco_file.qco06,ima_file.ima02,ima_file.ima021,qco_file.qco07,qco_file.qco08,qco_file.qco09,qco_file.qco10,qco_file.qco11,qco_file.qco13,qco_file.qco15,qco_file.qco16,qco_file.qco18,qco_file.qco19,qco_file.qco20)
+SCREEN RECORD Undefined(formonly.cnt,formonly.cn2,formonly.unit,formonly.sum,formonly.diffqty)
+END -- INSTRUCTIONS
+

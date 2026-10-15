@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_opentb.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="p_opentablele")
+VBox vb3
+Folder pc2
+Page Page2(text="Page01")
+Grid gr4
+{
+ <G gb3                                                                                                                            >
+  Record ID    [zoc01          ]
+  Table Name   [gat03                                           ]
+
+ <                                                                                                                                 >
+
+}
+END -- gr4
+END -- Page2
+END -- pc2
+Table tb3
+{
+[zoc02      |gaq03         |gaq05  |zoc03    |zoc04   |zoc12     |zoc13         |zoc05      |zoc06         |zoc07       |zoc08     |zoc09     |zoc10     |zoc11     ]
+[zoc02      |gaq03         |gaq05  |zoc03    |zoc04   |zoc12     |zoc13         |zoc05      |zoc06         |zoc07       |zoc08     |zoc09     |zoc10     |zoc11     ]
+[zoc02      |gaq03         |gaq05  |zoc03    |zoc04   |zoc12     |zoc13         |zoc05      |zoc06         |zoc07       |zoc08     |zoc09     |zoc10     |zoc11     ]
+[zoc02      |gaq03         |gaq05  |zoc03    |zoc04   |zoc12     |zoc13         |zoc05      |zoc06         |zoc07       |zoc08     |zoc09     |zoc10     |zoc11     ]
+[zoc02      |gaq03         |gaq05  |zoc03    |zoc04   |zoc12     |zoc13         |zoc05      |zoc06         |zoc07       |zoc08     |zoc09     |zoc10     |zoc11     ]
+[zoc02      |gaq03         |gaq05  |zoc03    |zoc04   |zoc12     |zoc13         |zoc05      |zoc06         |zoc07       |zoc08     |zoc09     |zoc10     |zoc11     ]
+[zoc02      |gaq03         |gaq05  |zoc03    |zoc04   |zoc12     |zoc13         |zoc05      |zoc06         |zoc07       |zoc08     |zoc09     |zoc10     |zoc11     ]
+[zoc02      |gaq03         |gaq05  |zoc03    |zoc04   |zoc12     |zoc13         |zoc05      |zoc06         |zoc07       |zoc08     |zoc09     |zoc10     |zoc11     ]
+[zoc02      |gaq03         |gaq05  |zoc03    |zoc04   |zoc12     |zoc13         |zoc05      |zoc06         |zoc07       |zoc08     |zoc09     |zoc10     |zoc11     ]
+[zoc02      |gaq03         |gaq05  |zoc03    |zoc04   |zoc12     |zoc13         |zoc05      |zoc06         |zoc07       |zoc08     |zoc09     |zoc10     |zoc11     ]
+}
+END -- tb3
+Grid gr5
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr5
+END -- vb3
+END -- p_opentb
+
+TABLES
+zoc_file
+ATTRIBUTES
+Group gb3:gb3, text="Program";
+Edit zoc01=zoc_file.zoc01, tabIndex=6, noEntry, not null;
+Edit gat03=formonly.gat03 type VARCHAR, tabIndex=1, noEntry, not null;
+Edit zoc02=zoc_file.zoc02, tabIndex=2, title="Filed No.", noEntry, not null, scroll;
+Edit gaq03=formonly.gaq03 type VARCHAR, tabIndex=7, title="Filed Name", noEntry, not null;
+TextEdit gaq05=formonly.gaq05 type CHAR, tabIndex=8, title="Additional Description", noEntry;
+ComboBox zoc03=zoc_file.zoc03, tabIndex=3, title="Configuration", noEntry, not null, items=(("VARCHAR2", "VARCHAR2"),("NUMBER", "NUMBER"),("DATE", "DATE"),("BLOB", "BLOB"));
+Edit zoc04=zoc_file.zoc04, tabIndex=9, title="Length", noEntry, not null;
+CheckBox zoc12=zoc_file.zoc12, tabIndex=17, default = "N", title=%"NOT NULL", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox zoc13=zoc_file.zoc13, tabIndex=18, default = "N", title=%"Primary Key", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox zoc05=zoc_file.zoc05, tabIndex=10, title="Data Type", not null, items=(("0", "Rengongshuru"),("1", "Yushezhi"),("2", "Danjubianhao"),("3", "Yusheguanlian"),("4", "Jisuantiaojian"),("5", "Jiuxitongdanhao"),("6", "Cunfanghrxh"),("7", "zhuanquzhudangdanhao"));
+Edit zoc06=zoc_file.zoc06, tabIndex=11, title="Data Default";
+ButtonEdit zoc07=zoc_file.zoc07, action=controlp, tabIndex=12, title="Data PdFile", not null, image="zoom.png";
+ButtonEdit zoc08=zoc_file.zoc08, action=controlp, tabIndex=13, title="Data Pdzd", not null, image="zoom.png";
+Edit zoc09=zoc_file.zoc09, tabIndex=14, title="Relating KEY";
+TextEdit zoc10=zoc_file.zoc10, tabIndex=15, title="Data Jhlj", not null;
+TextEdit zoc11=zoc_file.zoc11, tabIndex=16, title="Data Explain";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=4, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tb3(zoc_file.zoc02,formonly.gaq03,formonly.gaq05,zoc_file.zoc03,zoc_file.zoc04,zoc_file.zoc12,zoc_file.zoc13,zoc_file.zoc05,zoc_file.zoc06,zoc_file.zoc07,zoc_file.zoc08,zoc_file.zoc09,zoc_file.zoc10,zoc_file.zoc11)
+SCREEN RECORD Undefined(zoc_file.zoc01,formonly.gat03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

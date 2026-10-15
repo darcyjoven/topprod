@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_grw_gcw.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zaw_gcw")
+Folder pc727
+Page page01(text="Main")
+Grid gr3119
+{
+ Program Code  [gdw01             ][gaz03                           ]
+ Template Code [gdw02             ]
+ Program User  [gdw05             ][zx02                            ]
+ Program Class [gdw04             ][zw02                            ]
+ Industry      [gdw06          ]
+[gcw11  ]
+
+ <G gb2                                                                                     >
+  [dummy01                          ]
+   file name 1[gcw05                 ]
+   file name 2[gcw06                 ]
+   file name 3[gcw07                 ]
+   file name 4[gcw08                 ]
+   file name 5[gcw09                 ]
+   file name 6[gcw10                 ]
+ <                                                                                          >
+}
+END -- gr3119
+END -- page01
+END -- pc727
+END -- p_zaw
+
+TABLES
+gcw_file,
+gdw_file
+ATTRIBUTES
+ButtonEdit gdw01=gdw_file.gdw01, action=controlp, tabIndex=1, not null, required, image="zoom", downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Edit gaz03=formonly.gaz03 type VARCHAR, tabIndex=2;
+Edit gdw02=gdw_file.gdw02, tabIndex=3;
+ButtonEdit gdw05=gdw_file.gdw05, action=controlp, tabIndex=4, not null, required, image="zoom", scroll;
+Edit zx02=formonly.zx02 type VARCHAR, tabIndex=5;
+ButtonEdit gdw04=gdw_file.gdw04, action=controlp, tabIndex=6, not null, required, image="zoom", scroll;
+Edit zw02=formonly.zw02 type VARCHAR, tabIndex=7;
+ComboBox gdw06=gdw_file.gdw06, tabIndex=8;
+CheckBox gcw11=gcw_file.gcw11, tabIndex=9, default = "Y", text="gcw11", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb2:gb2, text="gb2";
+Label dummy01:dummy01, text="dummy01";
+ComboBox gcw05=gcw_file.gcw05, tabIndex=10, items=(("1", "程式代號"),("2", "程式名稱"),("3", "營運中心編號"),("4", "營運中心名稱"),("5", "使用者代號"),("6", "使用者名稱"),("7", "日期"),("8", "時間"));
+ComboBox gcw06=gcw_file.gcw06, tabIndex=11, items=(("1", "程式代號"),("2", "程式名稱"),("3", "營運中心編號"),("4", "營運中心名稱"),("5", "使用者代號"),("6", "使用者名稱"),("7", "日期"),("8", "時間"));
+ComboBox gcw07=gcw_file.gcw07, tabIndex=12, items=(("1", "程式代號"),("2", "程式名稱"),("3", "營運中心編號"),("4", "營運中心名稱"),("5", "使用者代號"),("6", "使用者名稱"),("7", "日期"),("8", "時間"));
+ComboBox gcw08=gcw_file.gcw08, tabIndex=13, items=(("1", "程式代號"),("2", "程式名稱"),("3", "營運中心編號"),("4", "營運中心名稱"),("5", "使用者代號"),("6", "使用者名稱"),("7", "日期"),("8", "時間"));
+ComboBox gcw09=gcw_file.gcw09, tabIndex=14, items=(("1", "程式代號"),("2", "程式名稱"),("3", "營運中心編號"),("4", "營運中心名稱"),("5", "使用者代號"),("6", "使用者名稱"),("7", "日期"),("8", "時間"));
+ComboBox gcw10=gcw_file.gcw10, tabIndex=15, items=(("1", "程式代號"),("2", "程式名稱"),("3", "營運中心編號"),("4", "營運中心名稱"),("5", "使用者代號"),("6", "使用者名稱"),("7", "日期"),("8", "時間"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gdw_file.gdw01,formonly.gaz03,gdw_file.gdw02,gdw_file.gdw05,formonly.zx02,gdw_file.gdw04,formonly.zw02,gdw_file.gdw06,gcw_file.gcw11,gcw_file.gcw05,gcw_file.gcw06,gcw_file.gcw07,gcw_file.gcw08,gcw_file.gcw09,gcw_file.gcw10)
+END -- INSTRUCTIONS
+

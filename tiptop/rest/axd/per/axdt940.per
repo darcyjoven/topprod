@@ -1,0 +1,96 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdt940.per created Wed Jan 23 05:30:48 2008
+-- File created from axdt940.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdt940")
+-- GRID
+-- GRID
+-- GRID
+-- HBOX
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        HBOX 
+          GRID gr7884
+          {
+           Slip Type            [aa0       ]
+           Trans-Out No.        [aa1               ]
+           Line No.             [aa2       ]
+
+          }
+          END -- GRID
+          GRID gr7885
+          {
+           Trans-In Plant       [aa3       ]
+           Product No.          [aa4                 ]
+
+          }
+          END -- GRID
+          GRID gr7886
+          {
+           Operator             [aa5       ]
+           Transfer Flow        [aa6       ]
+
+          }
+          END -- GRID
+        END -- HBOX
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_oze
+    {
+    [aa7   |aa8                 |aa9          |ab0                 |ab1               |ab2               ]
+    [aa7   |aa8                 |aa9          |ab0                 |ab1               |ab2               ]
+    [aa7   |aa8                 |aa9          |ab0                 |ab1               |ab2               ]
+    [aa7   |aa8                 |aa9          |ab0                 |ab1               |ab2               ]
+    [aa7   |aa8                 |aa9          |ab0                 |ab1               |ab2               ]
+    [aa7   |aa8                 |aa9          |ab0                 |ab1               |ab2               ]
+    [aa7   |aa8                 |aa9          |ab0                 |ab1               |ab2               ]
+    [aa7   |aa8                 |aa9          |ab0                 |ab1               |ab2               ]
+    [aa7   |aa8                 |aa9          |ab0                 |ab1               |ab2               ]
+    [aa7   |aa8                 |aa9          |ab0                 |ab1               |ab2               ]
+    }
+    END -- TABLE
+    GRID gr7887
+    {
+     ---------- Rows [ab3   ] / [ab4   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adf_file,adg_file,oze_file
+
+ATTRIBUTES
+  COMBOBOX aa0=adf_file.adf00, NOENTRY, TABINDEX=1, ITEMS=(("1","In Tran"),("2","Out Tran"),("3","Out Retn"));
+  BUTTONEDIT aa1=adg_file.adg01, ACTION=controlp, COMMENT="<^P>Qry Tr-out No.", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=2;
+  EDIT aa2=adg_file.adg02, NOT NULL, REQUIRED, TABINDEX=3;
+  BUTTONEDIT aa3=adg_file.adg09, ACTION=controlp, IMAGE="zoom", TABINDEX=4;
+  BUTTONEDIT aa4=adg_file.adg05, ACTION=controlp, IMAGE="zoom", TABINDEX=5;
+  BUTTONEDIT aa5=adf_file.adf03, ACTION=controlp, IMAGE="zoom", TABINDEX=6;
+  BUTTONEDIT aa6=adf_file.adf05, ACTION=controlp, IMAGE="zoom", TABINDEX=7;
+  EDIT aa7=oze_file.oze03, NOT NULL, REQUIRED, TABINDEX=8, TITLE="S/N";
+  COMBOBOX aa8=oze_file.oze04, NOT NULL, REQUIRED, QUERYEDITABLE, TABINDEX=9, TITLE="Transportation Type", ITEMS=(("O","Ocean"),("C","Container"),("H","House"),("A","Air"),("E","Express"));
+  EDIT aa9=oze_file.oze05, NOT NULL, REQUIRED, TABINDEX=10, TITLE="Freight Code";
+  BUTTONEDIT ab0=oze_file.oze06, ACTION=controlp, IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=11, TITLE="Transportation Code";
+  EDIT ab1=oze_file.oze07, NOT NULL, REQUIRED, TABINDEX=12, TITLE="Port of Departure";
+  EDIT ab2=oze_file.oze08, NOT NULL, REQUIRED, TABINDEX=13, TITLE="Port of Unloading";
+  EDIT ab3=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=14;
+  EDIT ab4=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=15;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_oze (oze_file.oze03, oze_file.oze04, oze_file.oze05, oze_file.oze06, oze_file.oze07, oze_file.oze08)
+END

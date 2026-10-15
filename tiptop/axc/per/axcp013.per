@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp013.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcp013")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1475
+{
+
+ Ending Date         [ccz01     ][ccz02     ][e_date      ]
+
+}
+END -- gr1475
+END -- page01
+END -- folder01
+Table s_sfb
+{
+[sfb01           |sfb81       |sfb02  |sfb04         |sfb05                |ima02                      |sfb08                   |ok_qty                |ok_qty2              |sfb99  |sfb38       ]
+[sfb01           |sfb81       |sfb02  |sfb04         |sfb05                |ima02                      |sfb08                   |ok_qty                |ok_qty2              |sfb99  |sfb38       ]
+[sfb01           |sfb81       |sfb02  |sfb04         |sfb05                |ima02                      |sfb08                   |ok_qty                |ok_qty2              |sfb99  |sfb38       ]
+[sfb01           |sfb81       |sfb02  |sfb04         |sfb05                |ima02                      |sfb08                   |ok_qty                |ok_qty2              |sfb99  |sfb38       ]
+[sfb01           |sfb81       |sfb02  |sfb04         |sfb05                |ima02                      |sfb08                   |ok_qty                |ok_qty2              |sfb99  |sfb38       ]
+[sfb01           |sfb81       |sfb02  |sfb04         |sfb05                |ima02                      |sfb08                   |ok_qty                |ok_qty2              |sfb99  |sfb38       ]
+[sfb01           |sfb81       |sfb02  |sfb04         |sfb05                |ima02                      |sfb08                   |ok_qty                |ok_qty2              |sfb99  |sfb38       ]
+[sfb01           |sfb81       |sfb02  |sfb04         |sfb05                |ima02                      |sfb08                   |ok_qty                |ok_qty2              |sfb99  |sfb38       ]
+[sfb01           |sfb81       |sfb02  |sfb04         |sfb05                |ima02                      |sfb08                   |ok_qty                |ok_qty2              |sfb99  |sfb38       ]
+[sfb01           |sfb81       |sfb02  |sfb04         |sfb05                |ima02                      |sfb08                   |ok_qty                |ok_qty2              |sfb99  |sfb38       ]
+
+}
+END -- s_sfb
+Grid gr1476
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr1476
+END -- VBox1
+END -- axcp013
+
+TABLES
+sfb_file
+ATTRIBUTES
+Edit ccz01=formonly.ccz01 type CHAR, tabIndex=1, noEntry;
+Edit ccz02=formonly.ccz02 type CHAR, tabIndex=2, noEntry;
+DateEdit e_date=formonly.e_date type DATE, tabIndex=3, noEntry;
+Edit sfb01=sfb_file.sfb01, tabIndex=4, title="W/O No.", noEntry;
+Edit sfb81=sfb_file.sfb81, tabIndex=5, title="Issue Date", noEntry;
+Edit sfb02=sfb_file.sfb02, tabIndex=6, title="Style", noEntry;
+Edit sfb04=sfb_file.sfb04, tabIndex=7, title="Status", noEntry;
+Edit sfb05=sfb_file.sfb05, tabIndex=8, title="Item#", noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=9, title="Part Name Specification", noEntry;
+Edit sfb08=sfb_file.sfb08, tabIndex=10, title="Esitmated Prod. Qty", noEntry, not null, required;
+Edit ok_qty=formonly.ok_qty type CHAR, tabIndex=11, title="Curr.MM St-in Qty", noEntry;
+Edit ok_qty2=formonly.ok_qty2 type CHAR, tabIndex=12, title="EoM Accu. St-in Qty", noEntry;
+CheckBox sfb99=sfb_file.sfb99, tabIndex=13, title="Rework", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sfb38=sfb_file.sfb38, tabIndex=14, title="Closing Date";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(sfb_file.sfb01,sfb_file.sfb81,sfb_file.sfb02,sfb_file.sfb04,sfb_file.sfb05,formonly.ima02,sfb_file.sfb08,formonly.ok_qty,formonly.ok_qty2,sfb_file.sfb99,sfb_file.sfb38)
+SCREEN RECORD Undefined(formonly.ccz01,formonly.ccz02,formonly.e_date,formonly.cn2)
+END -- INSTRUCTIONS
+

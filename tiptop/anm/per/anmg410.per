@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmg410.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmr410")
+VBox VBox1
+Group Group1
+Grid Grid1
+{
+ <G group01                                                          >
+  Transaction Doc NO. [gxe01               ]
+  Transaction Property[gxe02               ]
+  Accepting Bank      [gxe07               ]
+  Accepting Date      [gxe03               ]
+  Value Date          [gxe04               ]
+ <                                                                   >
+
+}
+END -- Grid1
+END -- Group1
+Grid Grid2
+{
+[more                                                        ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- anmr410
+
+TABLES
+gxe_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit gxe01=gxe_file.gxe01, tabIndex=1;
+Edit gxe02=gxe_file.gxe02, tabIndex=2;
+Edit gxe07=gxe_file.gxe07, tabIndex=3;
+DateEdit gxe03=gxe_file.gxe03, tabIndex=4;
+DateEdit gxe04=gxe_file.gxe04, tabIndex=5;
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gxe_file.gxe01,gxe_file.gxe02,gxe_file.gxe07,gxe_file.gxe03,gxe_file.gxe04,formonly.more)
+END -- INSTRUCTIONS
+

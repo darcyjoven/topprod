@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aect001b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aect001b")
+VBox VBox1
+Grid gr4
+{
+ <G group01                                                              >
+  PBI NO            [sfb85              ]
+  WORK NO           [sfb01              ]
+  Routing Code      [ecm03              ]
+ <                                                                       >
+
+}
+END -- gr4
+Table s_new
+{
+[x    |sgdslk05 |sgd05     |sga02   |sgd05a    |sga02_1   |sgdslk02   |sgdslk02a   |sgdslk04  |sgdslk04a  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgd05a    |sga02_1   |sgdslk02   |sgdslk02a   |sgdslk04  |sgdslk04a  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgd05a    |sga02_1   |sgdslk02   |sgdslk02a   |sgdslk04  |sgdslk04a  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgd05a    |sga02_1   |sgdslk02   |sgdslk02a   |sgdslk04  |sgdslk04a  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgd05a    |sga02_1   |sgdslk02   |sgdslk02a   |sgdslk04  |sgdslk04a  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgd05a    |sga02_1   |sgdslk02   |sgdslk02a   |sgdslk04  |sgdslk04a  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgd05a    |sga02_1   |sgdslk02   |sgdslk02a   |sgdslk04  |sgdslk04a  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgd05a    |sga02_1   |sgdslk02   |sgdslk02a   |sgdslk04  |sgdslk04a  ]
+
+}
+END -- s_new
+Grid gr5
+{
+
+   [select_all    ] [cancel_all  ]
+
+}
+END -- gr5
+END -- VBox1
+END -- aect001b
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfb85=formonly.sfb85 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit sfb01=formonly.sfb01 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit ecm03=formonly.ecm03 type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+CheckBox x=formonly.x type CHAR, tabIndex=4, title="Trans", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sgdslk05=formonly.sgdslk05 type CHAR, tabIndex=5, title="Ln#", noEntry;
+Edit sgd05=formonly.sgd05 type CHAR, tabIndex=6, title="R-Detail", noEntry;
+Edit sga02=formonly.sga02 type CHAR, tabIndex=7, title="sga02", noEntry;
+ButtonEdit sgd05a=formonly.sgd05a type CHAR, action=controlp, tabIndex=8, title="R-Detail-A sga02_1", image="zoom";
+Edit sga02_1=formonly.sga02_1 type CHAR, tabIndex=9, noEntry;
+Edit sgdslk02=formonly.sgdslk02 type CHAR, tabIndex=10, title="R-Hour-B", noEntry;
+Edit sgdslk02a=formonly.sgdslk02a type CHAR, tabIndex=11, title="R-Hour-A";
+Edit sgdslk04=formonly.sgdslk04 type CHAR, tabIndex=12, title="R-Price-B", noEntry;
+Edit sgdslk04a=formonly.sgdslk04a type CHAR, tabIndex=13, title="R-Price-B";
+Button select_all:select_all, comment="Select All";
+Button cancel_all:cancel_all, comment="Cancel All";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_new(formonly.x,formonly.sgdslk05,formonly.sgd05,formonly.sga02,formonly.sgd05a,formonly.sga02_1,formonly.sgdslk02,formonly.sgdslk02a,formonly.sgdslk04,formonly.sgdslk04a)
+SCREEN RECORD Undefined(formonly.sfb85,formonly.sfb01,formonly.ecm03)
+END -- INSTRUCTIONS
+

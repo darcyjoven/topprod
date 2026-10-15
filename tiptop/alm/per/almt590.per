@@ -1,0 +1,128 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt590.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almi590")
+VBox VBox1
+Folder pc3
+Page page4(text="Main")
+Grid gr10
+{
+
+ Created Logistics     [lsu11                 |lsu11_desc          ]  Confirmation   [lsu06                ][imgmksg]
+ Exchange source       [lsu00                 ]                       Conf Name      [lsu07                ][       ]
+ Plan serial No.       [lsu01                 ]                       Conf Date      [lsu08                ]
+ Program narrative     [lsu01_desc            ]                       memo           [lsu09                                ]
+                       [                      ]                                      [                                     ]
+ version               [lsu12                 ]                                      [                                     ]
+ card plants No.       [lsu02                 ]                       lsuplant       [lsuplant            ][rtz13          ]
+ card plants name      [lph02                 ]                       lsulegal       [lsulegal            ][azt02          ]
+ Outset date           [lsu03                 ]
+ Expiry date           [lsu04                 ]
+ Returns ticket way    [lsu05                 ]
+ Accumulative total way[lsu10                 ]
+ Exchange restrictions [lsu13                 ]
+ times                 [lsu14                 ]
+
+}
+END -- gr10
+END -- page4
+Page info(text="Info")
+Grid gr10_
+{
+ Record Owner[lsuuser   ]   Material foundation date[lsucrat      ]  Data Valid Code   [lsuacti   ]
+ Department  [lsugrup   ]   Last Modified by        [lsumodu      ]  Create/Modify Date[lsudate   ]
+ Record Orig.[lsuoriu   ]
+ Dept Orig.  [lsuorig   ]
+
+
+}
+END -- gr10_
+END -- info
+END -- pc3
+Table s_lss
+{
+[lsv02            |lsv03            |lsv04                 |lsv05              ]
+[lsv02            |lsv03            |lsv04                 |lsv05              ]
+[lsv02            |lsv03            |lsv04                 |lsv05              ]
+[lsv02            |lsv03            |lsv04                 |lsv05              ]
+[lsv02            |lsv03            |lsv04                 |lsv05              ]
+[lsv02            |lsv03            |lsv04                 |lsv05              ]
+}
+END -- s_lss
+Table lsr
+{
+[lsw02            |lpx02_1           ]
+[lsw02            |lpx02_1           ]
+[lsw02            |lpx02_1           ]
+[lsw02            |lpx02_1           ]
+[lsw02            |lpx02_1           ]
+
+}
+END -- lsr
+Grid gr12
+{
+---------- Rows [cnt   ] / [cn2   ][cn3   ] ----------
+
+
+}
+END -- gr12
+END -- VBox1
+END -- almi590
+
+TABLES
+lsw_file,
+lsv_file,
+lsu_file
+ATTRIBUTES
+ButtonEdit lsu11=lsu_file.lsu11, action=controlp, tabIndex=35, not null, required, image="zoom";
+Edit lsu11_desc=formonly.lsu11_desc, tabIndex=36, noEntry;
+ComboBox lsu06=lsu_file.lsu06, tabIndex=12, noEntry, items=(("N", "Has not verified "),("Y", "Has verified "));
+IMAGE imgmksg=formonly.imgmksg;
+ComboBox lsu00=lsu_file.lsu00, tabIndex=32, noEntry, items=(("0", "Integral to change coupons"),("1", "Cumulative change coupons"));
+ButtonEdit lsu07=lsu_file.lsu07, action=controlp, tabIndex=13, noEntry, image="zoom";
+ButtonEdit lsu01=lsu_file.lsu01, action=controlp, tabIndex=5, not null, required, image="zoom";
+DateEdit lsu08=lsu_file.lsu08, tabIndex=14, noEntry;
+TextEdit lsu01_desc=formonly.lsu01_desc type VARCHAR, tabIndex=6, noEntry;
+TextEdit lsu09=lsu_file.lsu09, tabIndex=15, stretch=NONE;
+Edit lsu12=lsu_file.lsu12, tabIndex=37, noEntry;
+ButtonEdit lsu02=lsu_file.lsu02, action=controlp, tabIndex=7, not null, image="zoom";
+ButtonEdit lsuplant=lsu_file.lsuplant, action=controlp, tabIndex=1, noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13, tabIndex=2, noEntry;
+Edit lph02=formonly.lph02, tabIndex=8, noEntry;
+ButtonEdit lsulegal=lsu_file.lsulegal, action=controlp, tabIndex=3, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02, tabIndex=4, noEntry;
+DateEdit lsu03=lsu_file.lsu03, tabIndex=9, not null;
+DateEdit lsu04=lsu_file.lsu04, tabIndex=10, not null;
+ComboBox lsu05=lsu_file.lsu05, tabIndex=11, not null, items=(("0", "0"),("1", "1"));
+ComboBox lsu10=lsu_file.lsu10, tabIndex=33, not null, items=(("0", "Consumption day"),("1", "Member accumulative total spending"),("2", "During the period"));
+ComboBox lsu13=lsu_file.lsu13, tabIndex=38, not null, items=(("1", "No Limit"),("2", "During the period Once"),("3", "Everyday Once"));
+Edit lsu14=lsu_file.lsu14, tabIndex=39, not null;
+Edit lsuuser=lsu_file.lsuuser, tabIndex=23, noEntry;
+DateEdit lsucrat=lsu_file.lsucrat, tabIndex=24, noEntry;
+Edit lsuacti=lsu_file.lsuacti, tabIndex=25, noEntry, upShift;
+Edit lsugrup=lsu_file.lsugrup, tabIndex=26, noEntry;
+Edit lsumodu=lsu_file.lsumodu, tabIndex=27, noEntry;
+DateEdit lsudate=lsu_file.lsudate, tabIndex=28, noEntry;
+Edit lsuoriu=lsu_file.lsuoriu, tabIndex=29, noEntry;
+Edit lsuorig=lsu_file.lsuorig, tabIndex=30, noEntry;
+Edit lsv02=lsv_file.lsv02, tabIndex=16, title="Outset integral", not null, required;
+Edit lsv03=lsv_file.lsv03, tabIndex=34, title=%"Accumulative total", not null;
+Edit lsv04=lsv_file.lsv04, tabIndex=17, title="Exchange cardinal\n\n", not null;
+Edit lsv05=lsv_file.lsv05, tabIndex=18, title="Exchange cardinal Amount", not null;
+ButtonEdit lsw02=lsw_file.lsw02, action=controlp, tabIndex=19, title="lsw02", not null, required, image="zoom.png";
+Edit lpx02_1=formonly.lpx02_1, tabIndex=20, title="lpx02_1", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=31;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lsv(lsv_file.lsv02,lsv_file.lsv03,lsv_file.lsv04,lsv_file.lsv05)
+SCREEN RECORD s_lsw(lsw_file.lsw02,formonly.lpx02_1)
+SCREEN RECORD Undefined(lsu_file.lsuplant,formonly.rtz13,lsu_file.lsulegal,formonly.azt02,lsu_file.lsu06,formonly.imgmksg,lsu_file.lsu01,lsu_file.lsu07,formonly.lsu01_desc,lsu_file.lsu08,lsu_file.lsu09,lsu_file.lsu02,formonly.lph02,lsu_file.lsu03,lsu_file.lsu04,lsu_file.lsu05,lsu_file.lsuuser,lsu_file.lsucrat,lsu_file.lsuacti,lsu_file.lsugrup,lsu_file.lsumodu,lsu_file.lsudate,lsu_file.lsuoriu,lsu_file.lsuorig,formonly.cnt,formonly.cn2,formonly.cn3,lsu_file.lsu00,lsu_file.lsu10,lsu_file.lsu11,formonly.lsu11_desc,lsu_file.lsu12,lsu_file.lsu13,lsu_file.lsu14)
+END -- INSTRUCTIONS
+

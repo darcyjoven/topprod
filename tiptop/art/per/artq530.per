@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq530.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"artq530")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4951
+{
+ Supplier            [pmm09     ][pmc03     ]   Org#  [pmmplant        ]
+ Sequence            [choice    ]
+
+}
+END -- gr4951
+END -- page01
+END -- folder01
+Table s_pmn
+{
+[pmn01     |pmn04               |pmn33   |pmn20     |pmn83         |pmn85        |pmn80         |pmn82        |rest     |pmn0]
+[pmn01     |pmn04               |pmn33   |pmn20     |pmn83         |pmn85        |pmn80         |pmn82        |rest     |pmn0]
+[pmn01     |pmn04               |pmn33   |pmn20     |pmn83         |pmn85        |pmn80         |pmn82        |rest     |pmn0]
+[pmn01     |pmn04               |pmn33   |pmn20     |pmn83         |pmn85        |pmn80         |pmn82        |rest     |pmn0]
+[pmn01     |pmn04               |pmn33   |pmn20     |pmn83         |pmn85        |pmn80         |pmn82        |rest     |pmn0]
+[pmn01     |pmn04               |pmn33   |pmn20     |pmn83         |pmn85        |pmn80         |pmn82        |rest     |pmn0]
+[pmn01     |pmn04               |pmn33   |pmn20     |pmn83         |pmn85        |pmn80         |pmn82        |rest     |pmn0]
+[pmn01     |pmn04               |pmn33   |pmn20     |pmn83         |pmn85        |pmn80         |pmn82        |rest     |pmn0]
+[pmn01     |pmn04               |pmn33   |pmn20     |pmn83         |pmn85        |pmn80         |pmn82        |rest     |pmn0]
+[pmn01     |pmn04               |pmn33   |pmn20     |pmn83         |pmn85        |pmn80         |pmn82        |rest     |pmn0]
+
+}
+END -- s_pmn
+Grid gr4952
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4952
+END -- VBox1
+END -- artq530
+
+TABLES
+pmm_file
+ATTRIBUTES
+ButtonEdit pmm09=pmm_file.pmm09, action=controlp, tabIndex=1, image="zoom";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, noEntry;
+ButtonEdit pmmplant=pmm_file.pmmplant, action=controlp, tabIndex=16, image="zoom";
+ComboBox choice=formonly.choice type CHAR, tabIndex=3, queryEditable, items=(("1", " Document No."),("2", "Item#"),("3", "Delivery Date"));
+Edit pmn01=formonly.pmn01 type CHAR, tabIndex=4, title="P/O No.", noEntry;
+Edit pmn04=formonly.pmn04 type CHAR, tabIndex=5, title="Item No.", noEntry;
+DateEdit pmn33=formonly.pmn33 type CHAR, tabIndex=6, title="Del.Dt", noEntry;
+Edit pmn20=formonly.pmn20 type CHAR, tabIndex=7, title="Qty", noEntry;
+Edit pmn83=formonly.pmn83 type CHAR, tabIndex=8, title="Par/Ref Unit", noEntry;
+Edit pmn85=formonly.pmn85 type CHAR, tabIndex=9, title="Par/Ref Qty", noEntry;
+Edit pmn80=formonly.pmn80 type CHAR, tabIndex=10, title="Chi/P/O Unit", noEntry;
+Edit pmn82=formonly.pmn82 type CHAR, tabIndex=11, title="Chi/P/O Qty", noEntry;
+Edit rest=formonly.rest type CHAR, tabIndex=12, title="Qty-Out", noEntry;
+Edit pmn0=formonly.pmn07 type CHAR, tabIndex=13, title="Unit", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmn(formonly.pmn01,formonly.pmn04,formonly.pmn33,formonly.pmn20,formonly.pmn83,formonly.pmn85,formonly.pmn80,formonly.pmn82,formonly.rest,formonly.pmn07)
+SCREEN RECORD Undefined(pmm_file.pmm09,formonly.pmc03,pmm_file.pmmplant,formonly.choice,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

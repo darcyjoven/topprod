@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt210")
+VBox vb7
+Folder pc1
+Page Page1(text=%"Page0")
+Grid gr5
+{
+ <G gb1                                                                                              >
+   rus01[rus01                ]                                                 [ruspos            ]
+   rus02[rus02                                 ]                                [rus16        ]
+   rus03[rus03           ]                               rus900  [rus900        ]
+   rus04[rus04           ]                               rusplant[rusplant      |rusplant_desc  ]
+   rus05[rus05                                       ]   rusconf [rusconf       |imgmksg ]
+   rus14[rus14                                       ]   ruscond [ruscond       |        ]
+        [                                            ]   rusconu [rusconu       |rusconu_desc   ]
+        [                                            ]   ruscont [ruscont   ]
+
+ <                                                                                                   >
+ <G gb2                                                                                              >
+  [ru][rus07                                  ]  [r1][rus11                                  ]
+  [r2][rus09                                  ]  [r3][rus13                                  ]
+ <                                                                                                   >
+
+}
+END -- gr5
+END -- Page1
+Page Page2(text=%"Page1")
+Grid gr6
+{
+ rususer     [rususer   ]  rusmodu   [rusmodu     ] rusacti[rusacti    ]
+ rusgrup     [rusgrup   ]  rusdate   [rusdate     ] ruscrat[ruscrat    ]
+ Record Orig.[rusoriu   ]  Dept Orig.[rusorig     ]
+
+
+}
+END -- gr6
+END -- Page2
+END -- pc1
+Grid gr4
+{
+ ----------------Rows[idx  ]/ [cnt  ]-----------------
+
+
+}
+END -- gr4
+END -- vb7
+END -- artt210
+
+TABLES
+rus_file
+ATTRIBUTES
+Group gb1:gb1;
+ButtonEdit rus01=rus_file.rus01, action=controlp, tabIndex=2, not null, image="zoom";
+CheckBox ruspos=rus_file.ruspos, tabIndex=32, default = "N", text="ruspos", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rus02=rus_file.rus02, tabIndex=3;
+CheckBox rus16=rus_file.rus16, tabIndex=15, text="ch8", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit rus03=rus_file.rus03, tabIndex=4;
+ComboBox rus900=rus_file.rus900, tabIndex=16, noEntry, items=(("0", "open"),("1", "confirm"),("2", "create pan"));
+DateEdit rus04=rus_file.rus04, tabIndex=5, not null, required;
+ButtonEdit rusplant=rus_file.rusplant, action=controlp, tabIndex=20, noEntry, not null, required, image="zoom.png";
+Edit rusplant_desc=formonly.rusplant_desc type VARCHAR, tabIndex=23, noEntry;
+ButtonEdit rus05=rus_file.rus05, action=controlp, tabIndex=6, not null, required, image="zoom";
+ComboBox rusconf=rus_file.rusconf, tabIndex=17, noEntry, items=(("Y", "confirm"),("N", "un_confirm"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+TextEdit rus14=rus_file.rus14, tabIndex=21;
+DateEdit ruscond=rus_file.ruscond, tabIndex=18, noEntry;
+ButtonEdit rusconu=rus_file.rusconu, action=controlp, tabIndex=19, noEntry, image="zoom";
+Edit rusconu_desc=formonly.rusconu_desc type VARCHAR, tabIndex=22, noEntry;
+TimeEdit ruscont=rus_file.ruscont, tabIndex=31, noEntry;
+Group gb2:gb2, text="gb2";
+CheckBox ru=rus_file.rus06, tabIndex=7, text="c", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rus07=rus_file.rus07, action=controlp, tabIndex=8, not null, required, image="zoom";
+CheckBox r1=rus_file.rus10, tabIndex=11, text="c", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rus11=rus_file.rus11, action=controlp, tabIndex=12, not null, required, image="zoom";
+CheckBox r2=rus_file.rus08, tabIndex=9, text="c", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rus09=rus_file.rus09, action=controlp, tabIndex=10, not null, required, image="zoom";
+CheckBox r3=rus_file.rus12, tabIndex=13, text="c", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rus13=rus_file.rus13, action=controlp, tabIndex=14, not null, required, image="zoom";
+Edit rususer=rus_file.rususer, tabIndex=24, noEntry;
+Edit rusmodu=rus_file.rusmodu, tabIndex=25, noEntry;
+Edit rusacti=rus_file.rusacti, tabIndex=26, noEntry;
+Edit rusgrup=rus_file.rusgrup, tabIndex=27, noEntry;
+DateEdit rusdate=rus_file.rusdate, tabIndex=28, noEntry;
+DateEdit ruscrat=rus_file.ruscrat, tabIndex=29, noEntry;
+Edit rusoriu=rus_file.rusoriu, tabIndex=34, noEntry;
+Edit rusorig=rus_file.rusorig, tabIndex=33, noEntry;
+Edit idx=formonly.idx type INTEGER, tabIndex=1;
+Edit cnt=formonly.cnt type CHAR, tabIndex=30;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rus_file.rus01,rus_file.ruspos,rus_file.rus02,rus_file.rus16,rus_file.rus03,rus_file.rus900,rus_file.rus04,rus_file.rusplant,formonly.rusplant_desc,rus_file.rus05,rus_file.rusconf,formonly.imgmksg,rus_file.rus14,rus_file.ruscond,rus_file.rusconu,formonly.rusconu_desc,rus_file.ruscont,rus_file.rus06,rus_file.rus07,rus_file.rus10,rus_file.rus11,rus_file.rus08,rus_file.rus09,rus_file.rus12,rus_file.rus13,rus_file.rususer,rus_file.rusmodu,rus_file.rusacti,rus_file.rusgrup,rus_file.rusdate,rus_file.ruscrat,rus_file.rusoriu,rus_file.rusorig,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

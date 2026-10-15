@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi186.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi186")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1357
+{
+ Dispatch No.                  [adk01           ]
+ Date                          [adk02     ]
+ Leave Date/Time               [adk04     ] [adk05     ]
+ Estimative Return Dare/Time   [adk06     ] [adk07     ]
+
+}
+END -- gr1357
+Grid gr1358
+{
+ Vehicle No.         [adk08     ]
+ Person of Dispatch  [adk13     ] [gen02     ]
+ Department          [adk14     ] [gem02     ]
+ Transfer Flow       [adk15     ]
+ Confirm             [adkconf      ]
+}
+END -- gr1358
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1359
+{
+ Record Owner        [adkuser   ]   Last Modified by    [adkmodu   ]   Data Valid Code     [adkacti   ]
+ Department          [adkgrup   ]   Create/Modify Date  [adkdate   ]
+ Record Orig.        [adkoriu   ]
+ Dept Orig.          [adkorig   ]
+}
+END -- gr1359
+END -- info
+END -- folder01
+Table s_adm
+{
+[adm02     |adm03      |desc          |adm04   |adm05               |adm06    |gen02a  |adm08         |adm07            ]
+[adm02     |adm03      |desc          |adm04   |adm05               |adm06    |gen02a  |adm08         |adm07            ]
+[adm02     |adm03      |desc          |adm04   |adm05               |adm06    |gen02a  |adm08         |adm07            ]
+[adm02     |adm03      |desc          |adm04   |adm05               |adm06    |gen02a  |adm08         |adm07            ]
+[adm02     |adm03      |desc          |adm04   |adm05               |adm06    |gen02a  |adm08         |adm07            ]
+[adm02     |adm03      |desc          |adm04   |adm05               |adm06    |gen02a  |adm08         |adm07            ]
+[adm02     |adm03      |desc          |adm04   |adm05               |adm06    |gen02a  |adm08         |adm07            ]
+[adm02     |adm03      |desc          |adm04   |adm05               |adm06    |gen02a  |adm08         |adm07            ]
+[adm02     |adm03      |desc          |adm04   |adm05               |adm06    |gen02a  |adm08         |adm07            ]
+[adm02     |adm03      |desc          |adm04   |adm05               |adm06    |gen02a  |adm08         |adm07            ]
+
+}
+END -- s_adm
+Grid gr1360
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1360
+END -- VBox1
+END -- atmi186
+
+TABLES
+adk_file,
+adm_file
+ATTRIBUTES
+Edit adk01=adk_file.adk01, tabIndex=1, comment="Qry of Dipatching No.(QBE)";
+Edit adk02=adk_file.adk02, tabIndex=2, noEntry;
+Edit adk04=adk_file.adk04, tabIndex=3, noEntry;
+Edit adk05=adk_file.adk05, tabIndex=4, noEntry;
+Edit adk06=adk_file.adk06, tabIndex=5, noEntry;
+Edit adk07=adk_file.adk07, tabIndex=6, noEntry;
+Edit adk08=adk_file.adk08, tabIndex=7, noEntry;
+Edit adk13=adk_file.adk13, tabIndex=8, noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=9, noEntry;
+Edit adk14=adk_file.adk14, tabIndex=10, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=11, noEntry;
+Edit adk15=adk_file.adk15, tabIndex=12, noEntry, color = yellow;
+ComboBox adkconf=adk_file.adkconf, tabIndex=13, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+Edit adkuser=adk_file.adkuser, tabIndex=14, noEntry;
+Edit adkmodu=adk_file.adkmodu, tabIndex=15, noEntry;
+Edit adkacti=adk_file.adkacti, tabIndex=16, noEntry, upShift;
+Edit adkgrup=adk_file.adkgrup, tabIndex=17, noEntry;
+DateEdit adkdate=adk_file.adkdate, tabIndex=18;
+Edit adkoriu=adk_file.adkoriu, tabIndex=501, noEntry;
+Edit adkorig=adk_file.adkorig, tabIndex=502, noEntry;
+Edit adm02=adm_file.adm02, tabIndex=19, title="Line No", not null, required;
+ComboBox adm03=adm_file.adm03, tabIndex=20, title="Category", not null, required, items=(("1", %"Letter"),("2", %"Goods"));
+Edit desc=formonly.desc type CHAR, tabIndex=21, title="Description", noEntry;
+Edit adm04=adm_file.adm04, tabIndex=22, title="Piece";
+Edit adm05=adm_file.adm05, tabIndex=23, title="Description";
+ButtonEdit adm06=adm_file.adm06, action=controlp, tabIndex=24, title="Client", image="zoom", comment="<^P>Qry Detail";
+Edit gen02a=formonly.gen02a type CHAR, tabIndex=25, title="Name", noEntry;
+Edit adm08=adm_file.adm08, tabIndex=26, title="Consignee";
+Edit adm07=adm_file.adm07, tabIndex=27, title="Consignee Company";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_adm(adm_file.adm02,adm_file.adm03,formonly.desc,adm_file.adm04,adm_file.adm05,adm_file.adm06,formonly.gen02a,adm_file.adm08,adm_file.adm07)
+SCREEN RECORD Undefined(adk_file.adk01,adk_file.adk02,adk_file.adk04,adk_file.adk05,adk_file.adk06,adk_file.adk07,adk_file.adk08,adk_file.adk13,formonly.gen02,adk_file.adk14,formonly.gem02,adk_file.adk15,adk_file.adkconf,adk_file.adkuser,adk_file.adkmodu,adk_file.adkacti,adk_file.adkgrup,adk_file.adkdate,adk_file.adkoriu,adk_file.adkorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

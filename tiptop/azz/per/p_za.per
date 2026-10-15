@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_za.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_za")
+VBox VBox1
+Folder pc730
+Page page01(text="Page01")
+Grid gr3128
+{
+ <G group01                                                                        >
+  Program Code            [za01                ]
+  Program Name            [gaz03               ]
+ <                                                                                 >
+
+}
+END -- gr3128
+END -- page01
+Page info(text="Info")
+Grid gr3129
+{
+ <G grpinfo                      >
+  Retrive Counts     [cnt       ]
+  Data Detail Rows   [cn2       ]
+ <                               >
+
+}
+END -- gr3129
+END -- info
+END -- pc730
+Table s_za
+{
+[za02       |za03     |za05                                    |za04                  ]
+[za02       |za03     |za05                                    |za04                  ]
+[za02       |za03     |za05                                    |za04                  ]
+[za02       |za03     |za05                                    |za04                  ]
+[za02       |za03     |za05                                    |za04                  ]
+[za02       |za03     |za05                                    |za04                  ]
+[za02       |za03     |za05                                    |za04                  ]
+[za02       |za03     |za05                                    |za04                  ]
+[za02       |za03     |za05                                    |za04                  ]
+[za02       |za03     |za05                                    |za04                  ]
+
+}
+END -- s_za
+END -- VBox1
+END -- p_za
+
+TABLES
+za_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit za01=za_file.za01, action=controlp, tabIndex=1, not null, required, image="zoom", downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=2;
+Group grpinfo:grpinfo;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=3, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+Edit za02=za_file.za02, tabIndex=5, title="Serial No.", not null, required;
+ComboBox za03=za_file.za03, tabIndex=6, title="Language", not null, required, queryEditable;
+Edit za05=za_file.za05, tabIndex=7, title="Content";
+Edit za04=za_file.za04, tabIndex=8, title="Memo";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_za(za_file.za02,za_file.za03,za_file.za05,za_file.za04)
+SCREEN RECORD Undefined(za_file.za01,formonly.gaz03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

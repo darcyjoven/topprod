@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asms300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="asms300")
+Grid gr5
+{
+
+   <G gb2                                                     >
+
+               bb1               [pjz01        ]
+               bb2               [pjz02        ]
+               bb3               [pjz03        ]
+
+   <                                                          >
+   <G gb3                                                     >
+
+               bb4            [pjz04         ]
+               bb5            [pjz05         ]
+
+   <                                                          >
+
+
+}
+END -- gr5
+END -- asms300
+
+TABLES
+pjz_file
+ATTRIBUTES
+Group gb2:gb2, text="aa01";
+Edit pjz01=pjz_file.pjz01, tabIndex=1, not null;
+Edit pjz02=pjz_file.pjz02, tabIndex=2, not null;
+Edit pjz03=pjz_file.pjz03, tabIndex=3, not null;
+Group gb3:gb3, text="aa01";
+Edit pjz04=pjz_file.pjz04, tabIndex=4, not null;
+Edit pjz05=pjz_file.pjz05, tabIndex=5, not null;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pjz_file.pjz01,pjz_file.pjz02,pjz_file.pjz03,pjz_file.pjz04,pjz_file.pjz05)
+END -- INSTRUCTIONS
+

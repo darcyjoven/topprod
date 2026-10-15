@@ -1,0 +1,62 @@
+----------------------------------------------------------------------------------
+-- File created from /u53/tiptop/atm/42f/atmq304.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="atmq304")
+
+
+     VBox vb2
+     Folder pc1
+     Page Page1(text=%"Page0")
+
+        Table tb1
+        {
+        [viq01              |viq02                |viq03                   |viq04                       |viq05                  ]
+        [viq01              |viq02                |viq03                   |viq04                       |viq05                  ]
+        [viq01              |viq02                |viq03                   |viq04                       |viq05                  ]
+        [viq01              |viq02                |viq03                   |viq04                       |viq05                  ]
+        [viq01              |viq02                |viq03                   |viq04                       |viq05                  ]
+        [viq01              |viq02                |viq03                   |viq04                       |viq05                  ]
+        [viq01              |viq02                |viq03                   |viq04                       |viq05                  ]
+        [viq01              |viq02                |viq03                   |viq04                       |viq05                  ]
+        [viq01              |viq02                |viq03                   |viq04                       |viq05                  ]
+        [viq01              |viq02                |viq03                   |viq04                       |viq05                  ]
+        [viq01              |viq02                |viq03                   |viq04                       |viq05                  ]
+        [viq01              |viq02                |viq03                   |viq04                       |viq05                  ]
+        [viq01              |viq02                |viq03                   |viq04                       |viq05                  ]
+
+        }
+        END -- Table
+     END -- Page
+     END -- Folder
+     Grid gr2
+     {
+       ---------- Row [cnt   ] ----------
+
+     }
+     END
+     END -- VBox
+END -- Form
+
+TABLES
+viq_file
+
+ATTRIBUTES
+ButtonEdit viq01=viq_file.viq01, action=controlp, tabIndex=1, title="viq01", image="zoom.png";
+DateEdit viq02=viq_file.viq02, tabIndex=2, title="viq02";
+ButtonEdit viq03=viq_file.viq03, action=controlp, tabIndex=3, title="viq03", image="zoom.png";
+Edit viq04=viq_file.viq04, tabIndex=4, title="viq04";
+Edit viq05=viq_file.viq05, tabIndex=5, title="viq05";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tb1(viq_file.viq01, viq_file.viq02, viq_file.viq03, viq_file.viq04, viq_file.viq05)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

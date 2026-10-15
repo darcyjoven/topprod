@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gglq701")
+VBox VBox1
+Group g01(text=%"INPUT1")
+Grid Grid1
+{
+ Book No.            [o             ]
+
+}
+END -- Grid1
+END -- g01
+Grid gr16
+{
+  <G group01                                                      >
+   Account Title No.   [aag01               ]
+
+  <                                                               >
+  <G group02                                                      >
+   Year                [yy        ]
+   Period              [m1  ]-[m2 ]
+   Dimension Sequence  [a         ]  [dummy0]
+                       [b                                       ]
+                       [c                               ]
+                       [d                        ]
+                       [aag09                          ]
+                       [aag38                          ]
+  <                                                               >
+}
+END -- gr16
+Grid gr2777
+{
+[more                                          ]
+
+
+}
+END -- gr2777
+END -- VBox1
+END -- gglq701
+
+ATTRIBUTES
+ButtonEdit o=formonly.o type CHAR, action=controlp, tabIndex=5, image="zoom";
+Group group01:group01, text="QBE";
+ButtonEdit aag01=formonly.aag01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Account No.";
+Group group02:group02, text="Input";
+Edit yy=formonly.yy type SMALLINT, tabIndex=2;
+Edit m1=formonly.m1 type SMALLINT, tabIndex=3;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=4;
+Edit a=formonly.a type CHAR, tabIndex=7;
+Label dummy0:dummy01, text="(1~11)";
+CheckBox b=formonly.b type CHAR, tabIndex=8, text="Include Unposted Voucher", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type CHAR, tabIndex=9, text="Print Foreign Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type CHAR, tabIndex=10, text="Aggregated By Curr.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag09=formonly.aag09 type CHAR, tabIndex=11, default = "N", text="Monetary Account", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag38=formonly.aag38 type CHAR, tabIndex=12, default = "N", text="Inter Income Account No.", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other Condition to Print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.o,formonly.aag01,formonly.yy,formonly.m1,formonly.m2,formonly.a,formonly.b,formonly.c,formonly.d,formonly.aag09,formonly.aag38,formonly.more)
+END -- INSTRUCTIONS
+

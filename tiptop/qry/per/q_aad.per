@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_aad.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Frequently Used Memo")
+VBox VBox1
+Table s_aad
+{
+[check|aad01      |aad02                         ]
+[check|aad01      |aad02                         ]
+[check|aad01      |aad02                         ]
+[check|aad01      |aad02                         ]
+[check|aad01      |aad02                         ]
+[check|aad01      |aad02                         ]
+[check|aad01      |aad02                         ]
+[check|aad01      |aad02                         ]
+[check|aad01      |aad02                         ]
+[check|aad01      |aad02                         ]
+
+}
+END -- s_aad
+Grid gr3715
+{
+ Brief Description after Combination [b                             ]
+
+}
+END -- gr3715
+END -- VBox1
+END -- q_aad
+
+TABLES
+aad_file
+ATTRIBUTES
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit aad01=aad_file.aad01, tabIndex=2, title="No.", noEntry;
+Edit aad02=aad_file.aad02, tabIndex=3, title="Memo", noEntry;
+Edit b=formonly.b type CHAR, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aad(formonly.check,aad_file.aad01,aad_file.aad02)
+SCREEN RECORD Undefined(formonly.b)
+END -- INSTRUCTIONS
+

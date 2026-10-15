@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq025.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="gglq025")
+VBox vb1
+HBox hb4
+Grid gr1
+{
+
+  Year          [aed03     ]
+  Comp_A        [asg01_a   ] [asg02_a           ]
+  Acct No._A    [aag01_a   ]
+
+}
+END -- gr1
+Grid gr2
+{
+
+  Month         [aed04     ]
+  Comp_B        [asg01_b   ] [asg02_b           ]
+  Acct No._B    [aag01_b   ]
+
+}
+END -- gr2
+END -- hb4
+HBox hb5
+Table s_aed_1
+{
+[aag01_1 |aag02_de|aed02_1 |amt1_1  |amt2_1d   |amt2_1c   |amt3_1  ]
+[aag01_1 |aag02_de|aed02_1 |amt1_1  |amt2_1d   |amt2_1c   |amt3_1  ]
+[aag01_1 |aag02_de|aed02_1 |amt1_1  |amt2_1d   |amt2_1c   |amt3_1  ]
+[aag01_1 |aag02_de|aed02_1 |amt1_1  |amt2_1d   |amt2_1c   |amt3_1  ]
+[aag01_1 |aag02_de|aed02_1 |amt1_1  |amt2_1d   |amt2_1c   |amt3_1  ]
+[aag01_1 |aag02_de|aed02_1 |amt1_1  |amt2_1d   |amt2_1c   |amt3_1  ]
+[aag01_1 |aag02_de|aed02_1 |amt1_1  |amt2_1d   |amt2_1c   |amt3_1  ]
+[aag01_1 |aag02_de|aed02_1 |amt1_1  |amt2_1d   |amt2_1c   |amt3_1  ]
+
+}
+END -- s_aed_1
+Table s_aed_2
+{
+[aag01_2 |aag02_d1|aed02_2 |amt1_2  |amt2_2d |amt2_2c   |amt3_2  ]
+[aag01_2 |aag02_d1|aed02_2 |amt1_2  |amt2_2d |amt2_2c   |amt3_2  ]
+[aag01_2 |aag02_d1|aed02_2 |amt1_2  |amt2_2d |amt2_2c   |amt3_2  ]
+[aag01_2 |aag02_d1|aed02_2 |amt1_2  |amt2_2d |amt2_2c   |amt3_2  ]
+[aag01_2 |aag02_d1|aed02_2 |amt1_2  |amt2_2d |amt2_2c   |amt3_2  ]
+[aag01_2 |aag02_d1|aed02_2 |amt1_2  |amt2_2d |amt2_2c   |amt3_2  ]
+[aag01_2 |aag02_d1|aed02_2 |amt1_2  |amt2_2d |amt2_2c   |amt3_2  ]
+[aag01_2 |aag02_d1|aed02_2 |amt1_2  |amt2_2d |amt2_2c   |amt3_2  ]
+
+}
+END -- s_aed_2
+END -- hb5
+Grid gr3
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr3
+END -- vb1
+END -- gglq025
+
+TABLES
+aed_file
+ATTRIBUTES
+Edit aed03=aed_file.aed03, tabIndex=1, not null, required;
+ButtonEdit asg01_a=formonly.asg01_a type VARCHAR, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Edit asg02_a=formonly.asg02_a type VARCHAR, tabIndex=21, noEntry;
+ButtonEdit aag01_a=formonly.aag01_a type VARCHAR, action=controlp, tabIndex=5, image="zoom.png";
+Edit aed04=aed_file.aed04, tabIndex=2, not null, required;
+ButtonEdit asg01_b=formonly.asg01_b type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit asg02_b=formonly.asg02_b type VARCHAR, tabIndex=22, noEntry;
+ButtonEdit aag01_b=formonly.aag01_b type VARCHAR, action=controlp, tabIndex=6, image="zoom.png";
+Edit aag01_1=formonly.aag01_1 type VARCHAR, tabIndex=7, title="aag01_1";
+Edit aag02_de=formonly.aag02_desc1 type VARCHAR, tabIndex=18, title="aag02_desc1";
+Edit aed02_1=formonly.aed02_1 type VARCHAR, tabIndex=8, title="aed02_1";
+Edit amt1_1=formonly.amt1_1 type DECIMAL, tabIndex=9, title="amt1_1";
+Edit amt2_1d=formonly.amt2_1d type DECIMAL, tabIndex=19, title=%"amt2_1d";
+Edit amt2_1c=formonly.amt2_1c type DECIMAL, tabIndex=10, title="amt2_1c";
+Edit amt3_1=formonly.amt3_1 type DECIMAL, tabIndex=11, title="amt3_1";
+Edit aag01_2=formonly.aag01_2 type VARCHAR, tabIndex=12, title="aag01_2";
+Edit aag02_d1=formonly.aag02_desc2 type VARCHAR, tabIndex=13, title="aag02_desc2";
+Edit aed02_2=formonly.aed02_2 type VARCHAR, tabIndex=14, title="aed02_2";
+Edit amt1_2=formonly.amt1_2 type DECIMAL, tabIndex=15, title="amt1_2";
+Edit amt2_2d=formonly.amt2_2d type DECIMAL, tabIndex=16, title="amt2_2d";
+Edit amt2_2c=formonly.amt2_2c type DECIMAL, tabIndex=20, title=%"amt2_2c";
+Edit amt3_2=formonly.amt3_2 type DECIMAL, tabIndex=17, title="amt3_2";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aed_1(formonly.aag01_1,formonly.aag02_desc1,formonly.aed02_1,formonly.amt1_1,formonly.amt2_1d,formonly.amt2_1c,formonly.amt3_1)
+SCREEN RECORD s_aed_2(formonly.aag01_2,formonly.aag02_desc2,formonly.aed02_2,formonly.amt1_2,formonly.amt2_2d,formonly.amt2_2c,formonly.amt3_2)
+SCREEN RECORD Undefined(aed_file.aed03,formonly.asg01_a,formonly.asg02_a,formonly.aag01_a,aed_file.aed04,formonly.asg01_b,formonly.asg02_b,formonly.aag01_b,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

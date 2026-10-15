@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_spccfg_plant.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"SPC Station Config")
+VBox VBox1
+Grid gr1434
+{
+ <G group01                                                                              >
+  Plant No.                          [wce06          ]
+  EasyFlow station name              [wce04               ]
+  EasyFlow station IP address        [wce02          ]
+  EasyFlow SOAP Services URL         [wce03                                             ]
+
+
+ <                                                                                       >
+
+}
+END -- gr1434
+Table s_bwce
+{
+[bwce06       |bwce04              |bwce02         |bwce03                                            ]
+[bwce06       |bwce04              |bwce02         |bwce03                                            ]
+[bwce06       |bwce04              |bwce02         |bwce03                                            ]
+[bwce06       |bwce04              |bwce02         |bwce03                                            ]
+[bwce06       |bwce04              |bwce02         |bwce03                                            ]
+
+}
+END -- s_bwce
+END -- VBox1
+END -- aws_spccfg_plant
+
+TABLES
+wce_file
+ATTRIBUTES
+Group group01:group01, text="Exception Station Setting";
+ButtonEdit wce06=wce_file.wce06, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit wce04=wce_file.wce04, tabIndex=2, not null, required;
+Edit wce02=wce_file.wce02, tabIndex=3, not null, required;
+Edit wce03=wce_file.wce03, tabIndex=4, not null, required, scroll;
+Edit bwce06=formonly.bwce06 type CHAR, tabIndex=5, title="Plant No.", noEntry;
+Edit bwce04=formonly.bwce04 type CHAR, tabIndex=6, title="Station name", noEntry;
+Edit bwce02=formonly.bwce02 type CHAR, tabIndex=7, title="IP address", noEntry;
+Edit bwce03=formonly.bwce03 type CHAR, tabIndex=8, title="SOAP Services URL", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bwce(formonly.bwce06,formonly.bwce04,formonly.bwce02,formonly.bwce03)
+SCREEN RECORD Undefined(wce_file.wce06,wce_file.wce04,wce_file.wce02,wce_file.wce03)
+END -- INSTRUCTIONS
+

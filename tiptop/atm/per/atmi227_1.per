@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi227_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi227_1")
+VBox VBox1
+Folder pc281
+Page page01(text="Main")
+VBox VBox2
+Grid gr1296
+{
+ <G group01                                  >
+  Item No.            [ima01          ]
+  Product Serial No.  [ima135         ]
+  Group Code          [ima06          ]
+  Brand Class         [ima1004        ]
+  Brand               [ima1005        ]
+  Serious             [ima1006        ]
+  Type                [ima1007        ]
+  Spec.               [ima1008        ]
+  Attribute           [ima1009        ]
+ <                                           >
+
+}
+END -- gr1296
+Grid gr1297
+{
+ <G group02                                  >
+  Pricing Method      [e              ]
+  V/C rate            [f              ]
+  Unit                [a              ]
+  Unit Before Tax     [b              ]
+  Effective Date      [c              ]
+  Deffective Date     [d              ]
+ <                                           >
+
+}
+END -- gr1297
+END -- VBox2
+END -- page01
+END -- pc281
+END -- VBox1
+END -- atmi227_1
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima135=ima_file.ima135, tabIndex=2;
+ButtonEdit ima06=ima_file.ima06, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ima1004=ima_file.ima1004, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit ima1005=ima_file.ima1005, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit ima1006=ima_file.ima1006, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit ima1007=ima_file.ima1007, action=controlp, tabIndex=7, image="zoom";
+ButtonEdit ima1008=ima_file.ima1008, action=controlp, tabIndex=8, image="zoom";
+ButtonEdit ima1009=ima_file.ima1009, action=controlp, tabIndex=9, image="zoom";
+Group group02:group02, text="INPUT";
+ComboBox e=formonly.e type CHAR, tabIndex=10, not null, required, items=(("0", "Enter"),("1", "By Standard Cost"),("2", "By Current Cost"),("3", "By Goal Cost"));
+Edit f=formonly.f type CHAR, tabIndex=11;
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=12, not null, required, image="zoom";
+Edit b=formonly.b type CHAR, tabIndex=13, not null, required;
+DateEdit c=formonly.c type CHAR, tabIndex=14, not null, required;
+DateEdit d=formonly.d type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima135,ima_file.ima06,ima_file.ima1004,ima_file.ima1005,ima_file.ima1006,ima_file.ima1007,ima_file.ima1008,ima_file.ima1009,formonly.e,formonly.f,formonly.a,formonly.b,formonly.c,formonly.d)
+END -- INSTRUCTIONS
+

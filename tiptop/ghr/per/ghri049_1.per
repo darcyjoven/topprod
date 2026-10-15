@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri049_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+ <G group1                             > <G group2                             >
+ [ac        ]                            [cc         ][yt        ]
+ [bc        ]   tt[tt        ]           [dc         ][jt        ]
+ <                                     >
+                                         <                                     >
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table s_hrcm
+{
+[sure      |hrat01  |hrat02  |hrat04  |hrat05  |hrcn02  |hrci08    |hrcm03              |hrcn04    |hrcn05    |hrcn06    |hrcn07    |hrcn09    |hrci05    |t_time    |hrci10    ]
+[sure      |hrat01  |hrat02  |hrat04  |hrat05  |hrcn02  |hrci08    |hrcm03              |hrcn04    |hrcn05    |hrcn06    |hrcn07    |hrcn09    |hrci05    |t_time    |hrci10    ]
+[sure      |hrat01  |hrat02  |hrat04  |hrat05  |hrcn02  |hrci08    |hrcm03              |hrcn04    |hrcn05    |hrcn06    |hrcn07    |hrcn09    |hrci05    |t_time    |hrci10    ]
+[sure      |hrat01  |hrat02  |hrat04  |hrat05  |hrcn02  |hrci08    |hrcm03              |hrcn04    |hrcn05    |hrcn06    |hrcn07    |hrcn09    |hrci05    |t_time    |hrci10    ]
+[sure      |hrat01  |hrat02  |hrat04  |hrat05  |hrcn02  |hrci08    |hrcm03              |hrcn04    |hrcn05    |hrcn06    |hrcn07    |hrcn09    |hrci05    |t_time    |hrci10    ]
+[sure      |hrat01  |hrat02  |hrat04  |hrat05  |hrcn02  |hrci08    |hrcm03              |hrcn04    |hrcn05    |hrcn06    |hrcn07    |hrcn09    |hrci05    |t_time    |hrci10    ]
+[sure      |hrat01  |hrat02  |hrat04  |hrat05  |hrcn02  |hrci08    |hrcm03              |hrcn04    |hrcn05    |hrcn06    |hrcn07    |hrcn09    |hrci05    |t_time    |hrci10    ]
+[sure      |hrat01  |hrat02  |hrat04  |hrat05  |hrcn02  |hrci08    |hrcm03              |hrcn04    |hrcn05    |hrcn06    |hrcn07    |hrcn09    |hrci05    |t_time    |hrci10    ]
+[sure      |hrat01  |hrat02  |hrat04  |hrat05  |hrcn02  |hrci08    |hrcm03              |hrcn04    |hrcn05    |hrcn06    |hrcn07    |hrcn09    |hrci05    |t_time    |hrci10    ]
+[sure      |hrat01  |hrat02  |hrat04  |hrat05  |hrcn02  |hrci08    |hrcm03              |hrcn04    |hrcn05    |hrcn06    |hrcn07    |hrcn09    |hrci05    |t_time    |hrci10    ]
+}
+END -- s_hrcm
+Grid Grid2
+{
+
+ ----------[label|cn22      ]----------
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+CheckBox ac=formonly.ac type CHAR, tabIndex=1, text=%"CheckBox1", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bc=formonly.bc type CHAR, tabIndex=2, text=%"CheckBox1", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit tt=formonly.tt type CHAR, tabIndex=3;
+Group group2:Group2, text=%"Group1";
+CheckBox cc=formonly.cc type CHAR, tabIndex=4, text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox yt=formonly.yt type VARCHAR, tabIndex=5, items=(("001", "Text"),("002", "Text"),("003", "Text"),("004", "Text"),("005", "Text"));
+CheckBox dc=formonly.dc type CHAR, tabIndex=20, text=%" ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit jt=formonly.jt type CHAR, tabIndex=6;
+CheckBox sure=formonly.sure type CHAR, tabIndex=7, default = "Y", title=%"sure", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit hrat01=formonly.hrat01 type CHAR, action=controlp, tabIndex=21, title=%"hrat01", image="zoom", picture="";
+Edit hrat02=formonly.hrat02 type CHAR, tabIndex=22, title=%"hrat02";
+ButtonEdit hrat04=formonly.hrat04 type CHAR, action=controlp, tabIndex=23, title=%"hrat04", image="zoom", picture="";
+ButtonEdit hrat05=formonly.hrat05 type CHAR, action=controlp, tabIndex=24, title=%"hrat05", image="zoom", picture="";
+Edit hrcn02=formonly.hrcn02 type CHAR, tabIndex=19, title=%"hrcn02", noEntry;
+Edit hrci08=formonly.hrci08 type CHAR, tabIndex=8, title=%"hrci08", noEntry;
+ButtonEdit hrcm03=formonly.hrcm03 type CHAR, action=controlp, tabIndex=9, title=%"hrcm03", noEntry, image="zoom";
+DateEdit hrcn04=formonly.hrcn04 type CHAR, tabIndex=10, title=%"hrcn04", noEntry;
+Edit hrcn05=formonly.hrcn05 type CHAR, tabIndex=11, title=%"hrcn05", noEntry;
+DateEdit hrcn06=formonly.hrcn06 type CHAR, tabIndex=12, title=%"hrcn06", noEntry;
+Edit hrcn07=formonly.hrcn07 type CHAR, tabIndex=13, title=%"hrcn07", noEntry;
+ButtonEdit hrcn09=formonly.hrcn09 type CHAR, action=controlp, tabIndex=14, title=%"hrcn09", noEntry, image="zoom";
+Edit hrci05=formonly.hrci05 type CHAR, tabIndex=15, title=%"hrci05", noEntry;
+Edit t_time=formonly.t_time type CHAR, tabIndex=16, title=%"t_time", not null, required;
+DateEdit hrci10=formonly.hrci10 type CHAR, tabIndex=17, title=%"hrci10", not null, required;
+Label label:Label1, text=%"cn22";
+Edit cn22=formonly.cn22 type CHAR, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ac,formonly.bc,formonly.tt,formonly.cc,formonly.yt,formonly.jt,formonly.cn22,formonly.dc)
+SCREEN RECORD s_hrcm(formonly.sure,formonly.hrat01,formonly.hrat02,formonly.hrat04,formonly.hrat05,formonly.hrcn02,formonly.hrci08,formonly.hrcm03,formonly.hrcn04,formonly.hrcn05,formonly.hrcn06,formonly.hrcn07,formonly.hrcn09,formonly.hrci05,formonly.t_time,formonly.hrci10)
+END -- INSTRUCTIONS
+

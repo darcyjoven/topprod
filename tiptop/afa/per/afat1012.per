@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1012.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat1012")
+VBox VBox1
+Grid gr2198
+{
+ <G group1                                             >
+  Serial No.          [faj01     ]
+  Group No.           [faj93     ]
+  Property No.        [faj02     ]
+  Prop. Additional No.[faj022    ]
+  Voucher No.         [faj52               ]
+  Invoice No.         [faj51           ]
+  Accounts No.        [faj45           ]
+  P/O No.             [faj47           ]
+  Asset Account       [faj53                         ]
+  Date of Acquisition [faj25       ]
+  Date Recorded       [faj26       ]
+ <                                                     >
+ <G group2                                             >
+  Asset        [far07         ]
+  leizhe       [far08         ]
+  zhejiu       [far11         ]
+ <                                                     >
+
+}
+END -- gr2198
+END -- VBox1
+END -- afat1012
+
+ATTRIBUTES
+Group group1:group1, text="INPUT";
+Edit faj01=formonly.faj01 type VARCHAR, tabIndex=1, not null, required;
+Edit faj93=formonly.faj93 type CHAR, tabIndex=11;
+Edit faj02=formonly.faj02 type VARCHAR, tabIndex=2, not null, required;
+Edit faj022=formonly.faj022 type VARCHAR, tabIndex=3, not null, required;
+Edit faj52=formonly.faj52 type VARCHAR, tabIndex=4;
+Edit faj51=formonly.faj51 type VARCHAR, tabIndex=5;
+Edit faj45=formonly.faj45 type VARCHAR, tabIndex=6;
+Edit faj47=formonly.faj47 type VARCHAR, tabIndex=7;
+Edit faj53=formonly.faj53 type VARCHAR, tabIndex=8;
+DateEdit faj25=formonly.faj25 type DATE, tabIndex=9;
+DateEdit faj26=formonly.faj26 type DATE, tabIndex=10;
+Group group2:group2, text=%"Input1";
+ButtonEdit far07=formonly.far07 type VARCHAR, action=controlp, tabIndex=12, image="zoom";
+ButtonEdit far08=formonly.far08 type VARCHAR, action=controlp, tabIndex=13, image="zoom";
+ButtonEdit far11=formonly.far11 type VARCHAR, action=controlp, tabIndex=14, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.faj01,formonly.faj02,formonly.faj022,formonly.faj52,formonly.faj51,formonly.faj45,formonly.faj47,formonly.faj53,formonly.faj25,formonly.faj26,formonly.faj93,formonly.far07,formonly.far08,formonly.far11)
+END -- INSTRUCTIONS
+

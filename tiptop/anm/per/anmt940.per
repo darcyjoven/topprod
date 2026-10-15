@@ -1,0 +1,147 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt940.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt940")
+VBox VBox1
+Folder pc825
+Page page01(text="Main")
+Grid gr4595
+{
+ <G group01                                                                                                                                                                                                        >
+  Pay.Slp#        [nnw01          ][nmydesc    ]  Dept       [nnw03  ][gem02    ]  Trans-outVoucher#[nnw28           ][imgmksg]
+  Document Date   [nnw02      ]                   Cash VarCd [nnw04][nml02      ]  Trans-inVoucher# [nnw29           ][       ]
+  Trans-out Plant [nnw05     ][azp02_1      ]                                      Confirm          [nnwconf         ]
+  Trans-in Plant  [nnw20     ][azp02_2      ]
+ <                                                                                                                                                                                                                 >
+ <G group02                                                         ><G group03                                                         ><G group04                                                                >
+  Trans-out Bank              [nnw06     ][nma02_1      ]             Charge Band                 [nnw13     ][nma02_3    ]               Trans-in Plan               [nnw21     ][nma02_2      ]
+  Trans-out Tran.Cd           [nnw07][nmc02_1    ]                    Charge Tran.Cd              [nnw14     ][nmc02_3    ]               Trans-in Trans.Cd           [nnw22     ][nmc02_2      ]
+  Trans-out Currency/Ex.Rate  [nnw08     ][nnw09                   ]  Charge Curr Exchange Rate   [nnw15     ][nnw16                   ]  Trans-in Curr Exchange Rate [nnw23     ][nnw24                   ]
+  Trans-out O.C               [nnw10        ]                         Charge O.C                  [nnw17      ]                           Trans-in O.C                [nnw25          ]
+  Trans-out H.C               [nnw11        ]                         Charge H.C                  [nnw18      ]                           Trans-in H.C                [nnw26          ]
+  Trans-out Acct              [nnw12        ][aag02_1      ]          Charge Acct                 [nnw19      ][aag02_3      ]            Trans-in Acct               [nnw27          ][aag02_2     ]
+ <                                                                  ><                                                                  ><                                                                         >
+
+}
+END -- gr4595
+END -- page01
+Page info(text="Info")
+Grid gr4596
+{
+ Record Owner        [nnwuser   ] Last Modified by    [nnwmodu   ] Data Valid Code     [nnwacti   ]
+ Department          [nnwgrup   ] Create/Modify Date  [nnwdate   ]
+ Record Orig.        [nnworiu   ]
+ Dept Orig.          [nnworig   ]
+}
+END -- gr4596
+END -- info
+END -- pc825
+Table s_nnx
+{
+[nnx02|nnx03            |nnx04     |nnx05          |nnx06      |nnx07         |nnx08         |nnx09         |nnx10          |nnx11           |nnx12           |nnx13      ]
+[nnx02|nnx03            |nnx04     |nnx05          |nnx06      |nnx07         |nnx08         |nnx09         |nnx10          |nnx11           |nnx12           |nnx13      ]
+[nnx02|nnx03            |nnx04     |nnx05          |nnx06      |nnx07         |nnx08         |nnx09         |nnx10          |nnx11           |nnx12           |nnx13      ]
+[nnx02|nnx03            |nnx04     |nnx05          |nnx06      |nnx07         |nnx08         |nnx09         |nnx10          |nnx11           |nnx12           |nnx13      ]
+[nnx02|nnx03            |nnx04     |nnx05          |nnx06      |nnx07         |nnx08         |nnx09         |nnx10          |nnx11           |nnx12           |nnx13      ]
+[nnx02|nnx03            |nnx04     |nnx05          |nnx06      |nnx07         |nnx08         |nnx09         |nnx10          |nnx11           |nnx12           |nnx13      ]
+[nnx02|nnx03            |nnx04     |nnx05          |nnx06      |nnx07         |nnx08         |nnx09         |nnx10          |nnx11           |nnx12           |nnx13      ]
+[nnx02|nnx03            |nnx04     |nnx05          |nnx06      |nnx07         |nnx08         |nnx09         |nnx10          |nnx11           |nnx12           |nnx13      ]
+[nnx02|nnx03            |nnx04     |nnx05          |nnx06      |nnx07         |nnx08         |nnx09         |nnx10          |nnx11           |nnx12           |nnx13      ]
+[nnx02|nnx03            |nnx04     |nnx05          |nnx06      |nnx07         |nnx08         |nnx09         |nnx10          |nnx11           |nnx12           |nnx13      ]
+
+}
+END -- s_nnx
+Grid gr4597
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4597
+END -- VBox1
+END -- anmt940
+
+TABLES
+nnx_file,
+nnw_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit nnw01=nnw_file.nnw01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Documents";
+Edit nmydesc=formonly.nmydesc type CHAR, tabIndex=2, noEntry;
+ButtonEdit nnw03=nnw_file.nnw03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=4, noEntry;
+Edit nnw28=nnw_file.nnw28, tabIndex=5, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+DateEdit nnw02=nnw_file.nnw02, tabIndex=7, not null, required;
+ButtonEdit nnw04=nnw_file.nnw04, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nml02=formonly.nml02 type CHAR, tabIndex=9, noEntry;
+Edit nnw29=nnw_file.nnw29, tabIndex=10, noEntry;
+ButtonEdit nnw05=nnw_file.nnw05, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit azp02_1=formonly.azp02_1 type CHAR, tabIndex=12, noEntry;
+ComboBox nnwconf=nnw_file.nnwconf, tabIndex=13, noEntry, not null, required, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Cancelled"));
+ButtonEdit nnw20=nnw_file.nnw20, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit azp02_2=formonly.azp02_2 type CHAR, tabIndex=15, noEntry;
+Group group02:group02;
+ButtonEdit nnw06=nnw_file.nnw06, action=controlp, tabIndex=16, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nma02_1=formonly.nma02_1 type CHAR, tabIndex=17, noEntry;
+ButtonEdit nnw07=nnw_file.nnw07, action=controlp, tabIndex=18, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nmc02_1=formonly.nmc02_1 type CHAR, tabIndex=19, noEntry;
+ButtonEdit nnw08=nnw_file.nnw08, action=controlp, tabIndex=20, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit nnw09=nnw_file.nnw09, action=controlp, tabIndex=21, not null, required, image="zoom", comment="<^P>Qry Rate";
+Edit nnw10=nnw_file.nnw10, tabIndex=22, noEntry;
+Edit nnw11=nnw_file.nnw11, tabIndex=23, noEntry;
+ButtonEdit nnw12=nnw_file.nnw12, action=controlp, tabIndex=24, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=25, noEntry;
+Group group03:group03;
+ButtonEdit nnw13=nnw_file.nnw13, action=controlp, tabIndex=26, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nma02_3=formonly.nma02_3 type CHAR, tabIndex=27, noEntry;
+ButtonEdit nnw14=nnw_file.nnw14, action=controlp, tabIndex=28, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nmc02_3=formonly.nmc02_3 type CHAR, tabIndex=29, noEntry;
+ButtonEdit nnw15=nnw_file.nnw15, action=controlp, tabIndex=30, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit nnw16=nnw_file.nnw16, action=controlp, tabIndex=31, not null, required, image="zoom", comment="<^P>Qry Rate";
+Edit nnw17=nnw_file.nnw17, tabIndex=32, not null, required;
+Edit nnw18=nnw_file.nnw18, tabIndex=33, not null, required;
+ButtonEdit nnw19=nnw_file.nnw19, action=controlp, tabIndex=34, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit aag02_3=formonly.aag02_3 type CHAR, tabIndex=35, noEntry;
+Group group04:group04;
+ButtonEdit nnw21=nnw_file.nnw21, action=controlp, tabIndex=36, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nma02_2=formonly.nma02_2 type CHAR, tabIndex=37, noEntry;
+ButtonEdit nnw22=nnw_file.nnw22, action=controlp, tabIndex=38, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nmc02_2=formonly.nmc02_2 type CHAR, tabIndex=39, noEntry;
+ButtonEdit nnw23=nnw_file.nnw23, action=controlp, tabIndex=40, noEntry, image="zoom", comment="<^P>Qry Details";
+ButtonEdit nnw24=nnw_file.nnw24, action=controlp, tabIndex=41, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nnw25=nnw_file.nnw25, tabIndex=42, noEntry;
+Edit nnw26=nnw_file.nnw26, tabIndex=43, not null, required;
+ButtonEdit nnw27=nnw_file.nnw27, action=controlp, tabIndex=44, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=45, noEntry;
+Edit nnwuser=nnw_file.nnwuser, tabIndex=46, noEntry;
+Edit nnwmodu=nnw_file.nnwmodu, tabIndex=47, noEntry;
+Edit nnwacti=nnw_file.nnwacti, tabIndex=48, noEntry, upShift;
+Edit nnwgrup=nnw_file.nnwgrup, tabIndex=49, noEntry;
+DateEdit nnwdate=nnw_file.nnwdate, tabIndex=50, noEntry;
+Edit nnworiu=nnw_file.nnworiu, tabIndex=501, noEntry;
+Edit nnworig=nnw_file.nnworig, tabIndex=502, noEntry;
+Edit nnx02=nnx_file.nnx02, tabIndex=51, title="S/N", not null, required;
+ButtonEdit nnx03=nnx_file.nnx03, action=controlp, tabIndex=52, title="Trans-out Note#", not null, required, image="zoom", comment="<^P>Qry Documents";
+DateEdit nnx04=nnx_file.nnx04, tabIndex=53, title="Doc.Date", noEntry, not null, required;
+ButtonEdit nnx05=nnx_file.nnx05, action=controlp, tabIndex=54, title="Currency Loan", noEntry, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit nnx06=nnx_file.nnx06, tabIndex=55, title="Loan ExRt", noEntry, not null, required;
+Edit nnx07=nnx_file.nnx07, tabIndex=56, title="O.C Loan", noEntry, not null, required;
+Edit nnx08=nnx_file.nnx08, tabIndex=57, title="H.C Loan", noEntry, not null, required;
+Edit nnx09=nnx_file.nnx09, tabIndex=58, title="O.C Paid Amt", noEntry, not null, required;
+Edit nnx10=nnx_file.nnx10, tabIndex=59, title="H.C Paid Amt", noEntry, not null, required;
+Edit nnx11=nnx_file.nnx11, tabIndex=60, title="O.C Actual Amt", not null, required;
+Edit nnx12=nnx_file.nnx12, tabIndex=61, title="O.C Actual Amt", noEntry, not null, required;
+Edit nnx13=nnx_file.nnx13, tabIndex=62, title="Spread", noEntry, not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=63, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=64, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nnx(nnx_file.nnx02,nnx_file.nnx03,nnx_file.nnx04,nnx_file.nnx05,nnx_file.nnx06,nnx_file.nnx07,nnx_file.nnx08,nnx_file.nnx09,nnx_file.nnx10,nnx_file.nnx11,nnx_file.nnx12,nnx_file.nnx13)
+SCREEN RECORD Undefined(nnw_file.nnw01,formonly.nmydesc,nnw_file.nnw03,formonly.gem02,nnw_file.nnw28,formonly.imgmksg,nnw_file.nnw02,nnw_file.nnw04,formonly.nml02,nnw_file.nnw29,nnw_file.nnw05,formonly.azp02_1,nnw_file.nnwconf,nnw_file.nnw20,formonly.azp02_2,nnw_file.nnw06,formonly.nma02_1,nnw_file.nnw07,formonly.nmc02_1,nnw_file.nnw08,nnw_file.nnw09,nnw_file.nnw10,nnw_file.nnw11,nnw_file.nnw12,formonly.aag02_1,nnw_file.nnw13,formonly.nma02_3,nnw_file.nnw14,formonly.nmc02_3,nnw_file.nnw15,nnw_file.nnw16,nnw_file.nnw17,nnw_file.nnw18,nnw_file.nnw19,formonly.aag02_3,nnw_file.nnw21,formonly.nma02_2,nnw_file.nnw22,formonly.nmc02_2,nnw_file.nnw23,nnw_file.nnw24,nnw_file.nnw25,nnw_file.nnw26,nnw_file.nnw27,formonly.aag02_2,nnw_file.nnwuser,nnw_file.nnwmodu,nnw_file.nnwacti,nnw_file.nnwgrup,nnw_file.nnwdate,nnw_file.nnworiu,nnw_file.nnworig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

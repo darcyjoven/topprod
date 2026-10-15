@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli605_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Add Extra Name")
+Grid gr2367
+{
+ <G group01                                 >
+  Group No.           [a                   ]
+  Parent Company      [b                   ]
+  Enter Year          [y                   ]
+  Period               [m                   ]
+
+ <                                          >
+
+}
+END -- gr2367
+END -- ggli605_g
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit b=formonly.b type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Company Data";
+Edit y=formonly.y type SMALLINT, tabIndex=3, not null, required;
+Edit m=formonly.m type SMALLINT, tabIndex=4, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.b,formonly.y,formonly.m)
+END -- INSTRUCTIONS
+

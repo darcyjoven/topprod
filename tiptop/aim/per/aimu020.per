@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimu020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimu020")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+Grid gr3537
+{
+ Item No.            [img01                         ]
+ Item Name           [ima02                         ]
+ Spc                 [ima021                        ]
+ Source Code         [ima08     ]
+ Current version     [ima05     ]
+}
+END -- gr3537
+END -- page01
+END -- folder01
+Table s_img
+{
+[img02     |imd02   |img03     |ime03   |img04               |img09    |img10     |img18      |img38                         ]
+[img02     |imd02   |img03     |ime03   |img04               |img09    |img10     |img18      |img38                         ]
+[img02     |imd02   |img03     |ime03   |img04               |img09    |img10     |img18      |img38                         ]
+[img02     |imd02   |img03     |ime03   |img04               |img09    |img10     |img18      |img38                         ]
+[img02     |imd02   |img03     |ime03   |img04               |img09    |img10     |img18      |img38                         ]
+[img02     |imd02   |img03     |ime03   |img04               |img09    |img10     |img18      |img38                         ]
+[img02     |imd02   |img03     |ime03   |img04               |img09    |img10     |img18      |img38                         ]
+[img02     |imd02   |img03     |ime03   |img04               |img09    |img10     |img18      |img38                         ]
+[img02     |imd02   |img03     |ime03   |img04               |img09    |img10     |img18      |img38                         ]
+[img02     |imd02   |img03     |ime03   |img04               |img09    |img10     |img18      |img38                         ]
+}
+END -- s_img
+Grid gr3538
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3538
+END -- vb3
+END -- aimu020
+
+TABLES
+img_file,
+ime_file,
+imd_file,
+ima_file
+ATTRIBUTES
+ButtonEdit img01=img_file.img01, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom", comment="Enter Item No. QBE to Qry ";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=14, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=3, noEntry;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=4, noEntry;
+Edit img02=img_file.img02, tabIndex=5, title="Warehouse#", noEntry, not null, required, comment="Enter Querying Warehouse# QBE";
+Edit imd02=imd_file.imd02, tabIndex=15, title=%"Edit1", noEntry;
+Edit img03=img_file.img03, tabIndex=6, title="Location", noEntry, not null, required, comment="Enter Querying Location QBE";
+Edit ime03=ime_file.ime03, tabIndex=16, title=%"Edit2", noEntry;
+Edit img04=img_file.img04, tabIndex=7, title="Lot#", noEntry, not null, required, comment="Enter Querying Lot# QBE";
+Edit img09=img_file.img09, tabIndex=8, title="Inv Unit", noEntry, comment="Enter Querying Inventory Unit QBE";
+Edit img10=img_file.img10, tabIndex=9, title="Inv Qty", noEntry, not null, required, comment="Enter Querying Inventory Qty QBE";
+DateEdit img18=img_file.img18, tabIndex=10, title="Expiry Date";
+Edit img38=img_file.img38, tabIndex=11, title="Remark";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(img_file.img02,imd_file.imd02,img_file.img03,ime_file.ime03,img_file.img04,img_file.img09,img_file.img10,img_file.img18,img_file.img38)
+SCREEN RECORD Undefined(img_file.img01,formonly.ima02,formonly.ima08,formonly.ima05,formonly.cnt,formonly.cn2,ima_file.ima021)
+END -- INSTRUCTIONS
+

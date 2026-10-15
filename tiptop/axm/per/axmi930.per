@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi930.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi930")
+VBox VBox1
+Folder pc517
+Page page01(text="Main")
+Table s_ozg
+{
+[ozg01                        |ozg02                         |ozgacti   ]
+[ozg01                        |ozg02                         |ozgacti   ]
+[ozg01                        |ozg02                         |ozgacti   ]
+[ozg01                        |ozg02                         |ozgacti   ]
+[ozg01                        |ozg02                         |ozgacti   ]
+[ozg01                        |ozg02                         |ozgacti   ]
+[ozg01                        |ozg02                         |ozgacti   ]
+[ozg01                        |ozg02                         |ozgacti   ]
+[ozg01                        |ozg02                         |ozgacti   ]
+[ozg01                        |ozg02                         |ozgacti   ]
+
+}
+END -- s_ozg
+END -- page01
+END -- pc517
+Grid gr2165
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr2165
+END -- VBox1
+END -- axmi930
+
+TABLES
+ozg_file
+ATTRIBUTES
+Edit ozg01=ozg_file.ozg01, tabIndex=1, title="Other Transportantion Code", not null, required;
+Edit ozg02=ozg_file.ozg02, tabIndex=2, title="Other Transportantion Desc", not null, required;
+CheckBox ozgacti=ozg_file.ozgacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ozg(ozg_file.ozg01,ozg_file.ozg02,ozg_file.ozgacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

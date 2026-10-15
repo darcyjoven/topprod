@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi030.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi030")
+VBox VBox1
+Folder pc439
+Page page01(text="Main")
+Table s_oac
+{
+[oac01          |oac02                  ]
+[oac01          |oac02                  ]
+[oac01          |oac02                  ]
+[oac01          |oac02                  ]
+[oac01          |oac02                  ]
+[oac01          |oac02                  ]
+[oac01          |oac02                  ]
+[oac01          |oac02                  ]
+[oac01          |oac02                  ]
+[oac01          |oac02                  ]
+
+}
+END -- s_oac
+END -- page01
+END -- pc439
+Grid gr1991
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1991
+END -- VBox1
+END -- axmi030
+
+TABLES
+oac_file
+ATTRIBUTES
+Edit oac01=oac_file.oac01, tabIndex=1, title="Location Code", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit oac02=oac_file.oac02, tabIndex=2, title="Shipping Location Desc";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oac(oac_file.oac01,oac_file.oac02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

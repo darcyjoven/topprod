@@ -1,0 +1,56 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdr206.per created Wed Jan 23 05:30:40 2008
+-- File created from axdr206.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdr206")
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID 
+    {
+     <G group01                                                      >
+      Appliction No.      [aa0             ]
+      Appliction Date     [aa1       ]
+      Applicant           [aa2       ]
+      Department          [aa3       ]
+     <                                                               >
+     <G group02                                                     >
+      Transfer Category   [aa4       ]
+      Status Code         [aa5       ]
+      Close               [aa6       ]
+                          [aa7                                     ]
+     <                                                              >
+
+
+    }
+    END -- GRID
+    GRID 
+    {
+     [aa8                     ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  EDIT aa0=FORMONLY.add01, TABINDEX=1;
+  DATEEDIT aa1=FORMONLY.add02 TYPE DATE, TABINDEX=2;
+  EDIT aa2=FORMONLY.add03, TABINDEX=3;
+  EDIT aa3=FORMONLY.add04, TABINDEX=4;
+  GROUP group02 : group02, TEXT="INPUT";
+  COMBOBOX aa4=FORMONLY.a, COMMENT="Please insert 1/2/3/4", NOT NULL, REQUIRED, QUERYEDITABLE, TABINDEX=5, ITEMS=(("1","In Tran"),("2","Out Tran"),("3","Out Retn"),("4","All"));
+  COMBOBOX aa5=FORMONLY.b, COMMENT="Please insert 0/1/2/3/4/5", NOT NULL, REQUIRED, QUERYEDITABLE, TABINDEX=6, ITEMS=(("0","Open"),("1","Approved"),("2","Appr Sent"),("3","Appr Rejected"),("4","Appr Withdrawn"),("5","All"));
+  COMBOBOX aa6=FORMONLY.c, COMMENT="Please insert 1/2/3", NOT NULL, REQUIRED, QUERYEDITABLE, TABINDEX=7, ITEMS=(("1","Approved"),("2","Non Close"),("3","All"));
+  CHECKBOX aa7=FORMONLY.d TYPE VARCHAR, TEXT="Print App Note Detail Data", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=8;
+  CHECKBOX aa8=FORMONLY.more TYPE VARCHAR, TEXT="Other condition to print", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=9;
+END

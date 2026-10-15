@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmq501")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr878
+{
+ Master Item No.  [bma01                          ]
+ Item Name        [ima02                          ]
+ Specification    [ima021                         ]
+ Expired Date     [g_vdate   ]
+}
+END -- gr878
+Grid gr879
+{
+ Current Version    [ima05     ]
+ Source Code        [ima08     ]
+ Pro Unit           [ima55     ]
+ Alternate Code     [bma06               ]
+}
+END -- gr879
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr880
+{
+ Record Owner        [bmauser   ] Last Modified by    [bmamodu   ] Data Valid Code     [bmaacti   ]
+ Department          [bmagrup   ] Create/Modify Date  [bmadate   ]
+
+
+
+}
+END -- gr880
+END -- info
+END -- folder01
+Table s_bmb
+{
+[level|bmb0|bmb03          |ima02_b                       |ima021_b                      |bmb06           |bmb10|bmb13   |ima01     |totime  |ima50   |ima48     |ima49     |ima491    |ima59     |ima61     ]
+[level|bmb0|bmb03          |ima02_b                       |ima021_b                      |bmb06           |bmb10|bmb13   |ima01     |totime  |ima50   |ima48     |ima49     |ima491    |ima59     |ima61     ]
+[level|bmb0|bmb03          |ima02_b                       |ima021_b                      |bmb06           |bmb10|bmb13   |ima01     |totime  |ima50   |ima48     |ima49     |ima491    |ima59     |ima61     ]
+[level|bmb0|bmb03          |ima02_b                       |ima021_b                      |bmb06           |bmb10|bmb13   |ima01     |totime  |ima50   |ima48     |ima49     |ima491    |ima59     |ima61     ]
+[level|bmb0|bmb03          |ima02_b                       |ima021_b                      |bmb06           |bmb10|bmb13   |ima01     |totime  |ima50   |ima48     |ima49     |ima491    |ima59     |ima61     ]
+[level|bmb0|bmb03          |ima02_b                       |ima021_b                      |bmb06           |bmb10|bmb13   |ima01     |totime  |ima50   |ima48     |ima49     |ima491    |ima59     |ima61     ]
+[level|bmb0|bmb03          |ima02_b                       |ima021_b                      |bmb06           |bmb10|bmb13   |ima01     |totime  |ima50   |ima48     |ima49     |ima491    |ima59     |ima61     ]
+[level|bmb0|bmb03          |ima02_b                       |ima021_b                      |bmb06           |bmb10|bmb13   |ima01     |totime  |ima50   |ima48     |ima49     |ima491    |ima59     |ima61     ]
+[level|bmb0|bmb03          |ima02_b                       |ima021_b                      |bmb06           |bmb10|bmb13   |ima01     |totime  |ima50   |ima48     |ima49     |ima491    |ima59     |ima61     ]
+[level|bmb0|bmb03          |ima02_b                       |ima021_b                      |bmb06           |bmb10|bmb13   |ima01     |totime  |ima50   |ima48     |ima49     |ima491    |ima59     |ima61     ]
+
+}
+END -- s_bmb
+Grid gr881
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr881
+END -- vb4
+END -- apsq501
+
+TABLES
+ima_file,
+bmb_file,
+bma_file
+ATTRIBUTES
+ButtonEdit bma01=bma_file.bma01, action=controlp, tabIndex=1, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+DateEdit g_vdate=formonly.g_vdate type DATE, tabIndex=4;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=5, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=6, noEntry;
+Edit ima55=formonly.ima55 type CHAR, tabIndex=7, noEntry;
+Edit bma06=bma_file.bma06, tabIndex=8;
+Edit bmauser=bma_file.bmauser, tabIndex=9, noEntry;
+Edit bmamodu=bma_file.bmamodu, tabIndex=10, noEntry;
+Edit bmaacti=bma_file.bmaacti, tabIndex=11, noEntry;
+Edit bmagrup=bma_file.bmagrup, tabIndex=12, noEntry;
+DateEdit bmadate=bma_file.bmadate, tabIndex=13, noEntry;
+Edit level=formonly.level type CHAR, tabIndex=14, title="Lvls";
+Edit bmb0=bmb_file.bmb02, tabIndex=15, title="Ln#";
+Edit bmb03=bmb_file.bmb03, tabIndex=16, title="Component No.";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=17, title="Part Name", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=18, title="Specification", noEntry;
+Edit bmb06=bmb_file.bmb06, tabIndex=19, title="QPA";
+Edit bmb10=bmb_file.bmb10, tabIndex=20, title="Unit";
+Edit bmb13=bmb_file.bmb13, tabIndex=21, title="Inst.Loc";
+Edit ima01=ima_file.ima08, tabIndex=31, title=%"Source Code", noEntry;
+Edit totime=formonly.totime type CHAR, tabIndex=30, title="Total Time", noEntry;
+Edit ima50=ima_file.ima50, tabIndex=22, title="Paper Tm", noEntry;
+Edit ima48=ima_file.ima48, tabIndex=23, title="DeliveryleadTm", noEntry;
+Edit ima49=ima_file.ima49, tabIndex=24, title="ArrivingLeadTm", noEntry;
+Edit ima491=ima_file.ima491, tabIndex=25, title="StoreinLeadTm", noEntry;
+Edit ima59=ima_file.ima59, tabIndex=26, title="Fixed Lead Time", noEntry;
+Edit ima61=ima_file.ima61, tabIndex=27, title="QC Lead Time", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmb(formonly.level,bmb_file.bmb02,bmb_file.bmb03,formonly.ima02_b,formonly.ima021_b,bmb_file.bmb06,bmb_file.bmb10,bmb_file.bmb13,ima_file.ima08,formonly.totime,ima_file.ima50,ima_file.ima48,ima_file.ima49,ima_file.ima491,ima_file.ima59,ima_file.ima61)
+SCREEN RECORD Undefined(bma_file.bma01,formonly.ima02,formonly.ima021,formonly.g_vdate,formonly.ima05,formonly.ima08,formonly.ima55,bma_file.bma06,bma_file.bmauser,bma_file.bmamodu,bma_file.bmaacti,bma_file.bmagrup,bma_file.bmadate,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

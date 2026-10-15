@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcq400")
+VBox vb27
+Folder folder01
+Page page01(text="Main")
+HBox hb8
+Grid gr1537
+{
+ Master Item#            [ccg04                         ]
+                         [ima02                         ]
+ WO No.                  [ccg01           ]
+ YY/MM                   [ccg0]/[cc]
+ Cost Calculation Method [ccg06  ] Category No.   [ccg07                             ]
+
+}
+END -- gr1537
+Grid gr1538
+{
+ Unit                [ima25     ]
+
+
+
+
+
+}
+END -- gr1538
+END -- hb8
+END -- page01
+END -- folder01
+Table s_cai
+{
+[cai05     |cai06      |cab02                 |cai08       |cai07               ]
+[cai05     |cai06      |cab02                 |cai08       |cai07               ]
+[cai05     |cai06      |cab02                 |cai08       |cai07               ]
+[cai05     |cai06      |cab02                 |cai08       |cai07               ]
+[cai05     |cai06      |cab02                 |cai08       |cai07               ]
+[cai05     |cai06      |cab02                 |cai08       |cai07               ]
+[cai05     |cai06      |cab02                 |cai08       |cai07               ]
+[cai05     |cai06      |cab02                 |cai08       |cai07               ]
+
+}
+END -- s_cai
+Grid gr1539
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1539
+END -- vb27
+END -- axcq400
+
+TABLES
+cai_file,
+ccg_file
+ATTRIBUTES
+ButtonEdit ccg04=ccg_file.ccg04, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ccg01=ccg_file.ccg01, tabIndex=3, not null, required;
+Edit ccg0=ccg_file.ccg02, tabIndex=4, not null, required;
+Edit cc=ccg_file.ccg03, tabIndex=5, not null, required;
+ComboBox ccg06=ccg_file.ccg06, tabIndex=14, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually�飽�嗥�蝜��飽蝧蒼tch Cost"),("4", "Identify Manually�飽�嗥�蝜���飽蝪泱em Cost"),("5", "Identify Manually�飽�嗥�蝜����廠ore Profit Center"));
+ButtonEdit ccg07=ccg_file.ccg07, action=controlp, tabIndex=15, not null, required, image="zoom.png";
+Edit ima25=formonly.ima25 type CHAR, tabIndex=6, noEntry;
+Edit cai05=cai_file.cai05, tabIndex=7, title="Cost Cnt", noEntry;
+Edit cai06=cai_file.cai06, tabIndex=8, title="Cost Item", noEntry;
+Edit cab02=formonly.cab02 type CHAR, tabIndex=9, title="Cost Item Desc", noEntry;
+ComboBox cai08=cai_file.cai08, tabIndex=10, title="Cost Type", noEntry, items=(("1", "Labor Cost"),("2", "Overghead1"),("3", "Overghead2"),("4", "Overghead3"),("5", "Overghead4"),("6", "Overghead5"));
+Edit cai07=cai_file.cai07, tabIndex=11, title="CM Input Amt", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cai(cai_file.cai05,cai_file.cai06,formonly.cab02,cai_file.cai08,cai_file.cai07)
+SCREEN RECORD Undefined(ccg_file.ccg04,formonly.ima02,ccg_file.ccg01,ccg_file.ccg02,ccg_file.ccg03,ccg_file.ccg06,ccg_file.ccg07,formonly.ima25,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

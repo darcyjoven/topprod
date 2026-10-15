@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_tool_syn.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"List Of Synonym Table")
+Grid gr3145
+{
+ <T s_synonym                >
+ [tab       |ex_tab         ]
+ [tab       |ex_tab         ]
+ [tab       |ex_tab         ]
+ [tab       |ex_tab         ]
+ [tab       |ex_tab         ]
+ [tab       |ex_tab         ]
+ [tab       |ex_tab         ]
+ [tab       |ex_tab         ]
+ [tab       |ex_tab         ]
+ [tab       |ex_tab         ]
+ <                           >
+
+}
+END -- gr3145
+END -- p_tool_syn
+
+ATTRIBUTES
+Table s_synonym:s_synonym, unhidableColumns;
+Edit tab=formonly.tab type CHAR, tabIndex=1, title="Table";
+Edit ex_tab=formonly.ex_tab type CHAR, tabIndex=2, title="External Source";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_synonym(formonly.tab,formonly.ex_tab)
+END -- INSTRUCTIONS
+

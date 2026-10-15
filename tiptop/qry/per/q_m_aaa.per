@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_m_aaa.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Query Book")
+Grid gr3777
+{
+ <T s_aaa                                                                                    >
+ [check |aaa01   |aaa02                                   |aaa03    |aaa04                  ]
+ [check |aaa01   |aaa02                                   |aaa03    |aaa04                  ]
+ [check |aaa01   |aaa02                                   |aaa03    |aaa04                  ]
+ [check |aaa01   |aaa02                                   |aaa03    |aaa04                  ]
+ [check |aaa01   |aaa02                                   |aaa03    |aaa04                  ]
+ [check |aaa01   |aaa02                                   |aaa03    |aaa04                  ]
+ [check |aaa01   |aaa02                                   |aaa03    |aaa04                  ]
+ [check |aaa01   |aaa02                                   |aaa03    |aaa04                  ]
+ [check |aaa01   |aaa02                                   |aaa03    |aaa04                  ]
+ [check |aaa01   |aaa02                                   |aaa03    |aaa04                  ]
+ <                                                                                           >
+
+}
+END -- gr3777
+END -- q_m_aaa
+
+TABLES
+aaa_file
+ATTRIBUTES
+Table s_aaa:s_aaa;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit aaa01=aaa_file.aaa01, tabIndex=2, title="Book No. Book No. Desc";
+Edit aaa02=aaa_file.aaa02, tabIndex=3;
+Edit aaa03=aaa_file.aaa03, tabIndex=4, title="Currency";
+Edit aaa04=aaa_file.aaa04, tabIndex=5, title="Current Accounting Year";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aaa(formonly.check,aaa_file.aaa01,aaa_file.aaa02,aaa_file.aaa03,aaa_file.aaa04)
+END -- INSTRUCTIONS
+

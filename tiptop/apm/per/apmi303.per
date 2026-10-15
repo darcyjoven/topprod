@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi303.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi303")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+Grid gr4850
+{
+ Item No.            [pnc01     ]                        Item Description [pnc01_ima0]
+ Vendor No.          [pnc02     ]                        Vendor Abbr.     [pnc02_pmc0]
+
+}
+END -- gr4850
+END -- page01
+END -- folder01
+Table s_pnc
+{
+[pnc03                    |pnc03_ima02             |pnc03_im|pnc04         |pnc05         ]
+[pnc03                    |pnc03_ima02             |pnc03_im|pnc04         |pnc05         ]
+[pnc03                    |pnc03_ima02             |pnc03_im|pnc04         |pnc05         ]
+[pnc03                    |pnc03_ima02             |pnc03_im|pnc04         |pnc05         ]
+[pnc03                    |pnc03_ima02             |pnc03_im|pnc04         |pnc05         ]
+[pnc03                    |pnc03_ima02             |pnc03_im|pnc04         |pnc05         ]
+[pnc03                    |pnc03_ima02             |pnc03_im|pnc04         |pnc05         ]
+[pnc03                    |pnc03_ima02             |pnc03_im|pnc04         |pnc05         ]
+[pnc03                    |pnc03_ima02             |pnc03_im|pnc04         |pnc05         ]
+[pnc03                    |pnc03_ima02             |pnc03_im|pnc04         |pnc05         ]
+}
+END -- s_pnc
+Grid gr4852
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr4852
+END -- vb6
+END -- apmi303
+
+TABLES
+pnc_file
+ATTRIBUTES
+ButtonEdit pnc01=pnc_file.pnc01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Vender    <^Y>Create Vender,Key Field, No Blank/Repeated!    ,";
+Edit pnc01_ima0=formonly.pnc01_ima02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit pnc02=pnc_file.pnc02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Vender    <^Y>Create Vender,Key Field, No Blank/Repeated!    ,";
+Edit pnc02_pmc0=formonly.pnc02_pmc03 type CHAR, tabIndex=4, noEntry;
+ButtonEdit pnc03=pnc_file.pnc03, action=controlp, tabIndex=5, title="Substitute Item No.", not null, required, image="zoom", comment="<^P>Qry Item Master  ";
+Edit pnc03_ima02=formonly.pnc03_ima02 type CHAR, tabIndex=6, title="Item Description", noEntry;
+Edit pnc03_im=formonly.pnc03_ima021 type CHAR, tabIndex=11, title=%"Item Specification", noEntry;
+DateEdit pnc04=pnc_file.pnc04, tabIndex=7, title="Effective Date", not null, required;
+DateEdit pnc05=pnc_file.pnc05, tabIndex=8, title="Expired Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pnc(pnc_file.pnc03,formonly.pnc03_ima02,formonly.pnc03_ima021,pnc_file.pnc04,pnc_file.pnc05)
+SCREEN RECORD Undefined(pnc_file.pnc01,formonly.pnc01_ima02,pnc_file.pnc02,formonly.pnc02_pmc03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

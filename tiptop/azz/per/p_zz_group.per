@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zz_group.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zz_group")
+VBox VBox1
+Folder pc699
+Page page01(text="Main")
+Table s_gaw
+{
+[gaw01     |gaw02                       ]
+[gaw01     |gaw02                       ]
+[gaw01     |gaw02                       ]
+[gaw01     |gaw02                       ]
+[gaw01     |gaw02                       ]
+[gaw01     |gaw02                       ]
+[gaw01     |gaw02                       ]
+[gaw01     |gaw02                       ]
+[gaw01     |gaw02                       ]
+[gaw01     |gaw02                       ]
+
+}
+END -- s_gaw
+END -- page01
+END -- pc699
+Grid gr3038
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3038
+END -- VBox1
+END -- p_zz_group
+
+TABLES
+gaw_file
+ATTRIBUTES
+Edit gaw01=gaw_file.gaw01, tabIndex=1, title="Group ID", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit gaw02=gaw_file.gaw02, tabIndex=2, title="Description of Program Group";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gaw(gaw_file.gaw01,gaw_file.gaw02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

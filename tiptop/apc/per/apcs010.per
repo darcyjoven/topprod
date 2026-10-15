@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apcs010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"apcs010")
+Folder pc1
+Page Page1(text=%"Basic Setting")
+Grid gr29
+{
+
+  <G gb1                                                                 >
+   [ryz08                   ]
+    ryz02       [ryz02      ]
+   [ryz09                                          ]
+   [label1  |ryz11             ]
+  <                                                                      >
+  <G gb2                                                                 >
+   [ryz10              ]
+   [ryz07                                    ]   Code Length [ryz03 ]
+  <                                                                      >
+  <G gb27                                                                >
+    Document No.   [ryz04                             ]
+    Serial No.     [ryz05                             ]
+    Encode Method  [ryz06                             ]
+    Encode Result  [result1                           ]
+  <                                                                      >
+
+}
+END -- gr29
+END -- Page1
+END -- pc1
+END -- Form1
+
+TABLES
+ryz_file
+ATTRIBUTES
+Group gb1:gb1, fontPitch=variable;
+CheckBox ryz08=ryz_file.ryz08, tabIndex=8, default = "N", text=%"Upload Members Infor", not null, valueChecked = "Y", valueUnchecked = "N", color = black, fontPitch=variable, justify=left, sizePolicy=initial;
+ComboBox ryz02=ryz_file.ryz02, tabIndex=1, not null, required, items=(("1", "Total"),("2", "Detail"));
+CheckBox ryz09=ryz_file.ryz09, tabIndex=9, text=%"Upload Order Auto Generate Request Y/N?\n ", not null, valueChecked = "Y", valueUnchecked = "N";
+Label label1:Label1, text=%"ryz11";
+Edit ryz11=ryz_file.ryz11, tabIndex=11, scroll;
+Group gb2:gb2, text="Document No. Setting";
+CheckBox ryz10=ryz_file.ryz10, tabIndex=10, text=%"Separate Up", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ryz07=ryz_file.ryz07, tabIndex=7, text="Add Plant Code ?", valueChecked = "Y", valueUnchecked = "N";
+Edit ryz03=ryz_file.ryz03, tabIndex=2;
+Group gb27:gb27, text="System Code Rule";
+ComboBox ryz04=ryz_file.ryz04, tabIndex=3, not null, required, items=(("1", "3"),("2", "4"),("3", "5"));
+ComboBox ryz05=ryz_file.ryz05, tabIndex=4, not null, required, items=(("1", "8"),("2", "9"),("3", "10"));
+ComboBox ryz06=ryz_file.ryz06, tabIndex=5, not null, required, items=(("1", "By SN"),("2", "By Month"),("3", "By Week"),("4", "By Day"),("5", "By Time"));
+Edit result1=formonly.result1 type CHAR, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ryz_file.ryz02,ryz_file.ryz07,ryz_file.ryz03,ryz_file.ryz04,ryz_file.ryz05,ryz_file.ryz06,formonly.result1,ryz_file.ryz08,ryz_file.ryz09,ryz_file.ryz10)
+SCREEN RECORD Record1(ryz_file.ryz11)
+END -- INSTRUCTIONS
+

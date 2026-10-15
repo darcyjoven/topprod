@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp302_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="anmp302_c")
+VBox vb2
+Grid gr1
+{
+ Source Type [nme22_q        ]
+ Bank No.    [nme01_q        ]
+ Refer No.   [nme12_q        ]
+ Refer #     [nme21_q        ]
+ Account No. [nme16_q        ]
+}
+END -- gr1
+Table s_nme
+{
+[a   |nme01      |nma02               |nme22       |nme12           |nme21|nme04        |nma1|nme1|nml02               |nme03 |nmc02               |nme25          |nme13               |nme16   |nme05               ]
+[a   |nme01      |nma02               |nme22       |nme12           |nme21|nme04        |nma1|nme1|nml02               |nme03 |nmc02               |nme25          |nme13               |nme16   |nme05               ]
+[a   |nme01      |nma02               |nme22       |nme12           |nme21|nme04        |nma1|nme1|nml02               |nme03 |nmc02               |nme25          |nme13               |nme16   |nme05               ]
+[a   |nme01      |nma02               |nme22       |nme12           |nme21|nme04        |nma1|nme1|nml02               |nme03 |nmc02               |nme25          |nme13               |nme16   |nme05               ]
+[a   |nme01      |nma02               |nme22       |nme12           |nme21|nme04        |nma1|nme1|nml02               |nme03 |nmc02               |nme25          |nme13               |nme16   |nme05               ]
+[a   |nme01      |nma02               |nme22       |nme12           |nme21|nme04        |nma1|nme1|nml02               |nme03 |nmc02               |nme25          |nme13               |nme16   |nme05               ]
+
+}
+END -- s_nme
+END -- vb2
+END -- anmp302_c
+
+ATTRIBUTES
+ComboBox nme22_q=formonly.nme22_q type CHAR, tabIndex=1, queryEditable, items=(("01", "Payment"),("02", "Spent Payment"),("03", "Pay Direct"),("04", "Spent Pay Direct"),("05", "Pay for Company Transfer"),("06", "Pay Principal And Interest of Group"),("07", "Bank Income/Expense"));
+ButtonEdit nme01_q=formonly.nme01_q type CHAR, action=controlp, tabIndex=2, image="zoom";
+Edit nme12_q=formonly.nme12_q type CHAR, tabIndex=3;
+Edit nme21_q=formonly.nme21_q type CHAR, tabIndex=4;
+DateEdit nme16_q=formonly.nme16_q type CHAR, tabIndex=5;
+CheckBox a=formonly.a type CHAR, tabIndex=6, default = "N", title="Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nme01=formonly.nme01 type CHAR, tabIndex=7, title="Bank No.", noEntry;
+Edit nma02=formonly.nma02 type CHAR, tabIndex=8, title="Bank Name", noEntry;
+Edit nme22=formonly.nme22 type CHAR, tabIndex=9, title="Source Type", noEntry;
+Edit nme12=formonly.nme12 type CHAR, tabIndex=10, title="Refer No.", noEntry;
+Edit nme21=formonly.nme21 type CHAR, tabIndex=11, title="Refer #", noEntry;
+Edit nme04=formonly.nme04 type CHAR, tabIndex=12, title="Amt", noEntry;
+Edit nma1=formonly.nma10 type CHAR, tabIndex=15, title="Currency", noEntry;
+Edit nme1=formonly.nme14 type CHAR, tabIndex=13, title="Cash Transaction Code", noEntry;
+Edit nml02=formonly.nml02 type CHAR, tabIndex=14, title="Transaction Code Name", noEntry;
+Edit nme03=formonly.nme03 type CHAR, tabIndex=16, title="Bank Tran Code", noEntry;
+Edit nmc02=formonly.nmc02 type CHAR, tabIndex=17, title="Code Name", noEntry;
+Edit nme25=formonly.nme25 type CHAR, tabIndex=18, title="Income Obiect No.", noEntry;
+Edit nme13=formonly.nme13 type CHAR, tabIndex=19, title="Income Object Name", noEntry;
+Edit nme16=formonly.nme16 type CHAR, tabIndex=20, title="Account Date", noEntry;
+Edit nme05=formonly.nme05 type CHAR, tabIndex=21, title="Memo", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nme(formonly.a,formonly.nme01,formonly.nma02,formonly.nme22,formonly.nme12,formonly.nme21,formonly.nme04,formonly.nma10,formonly.nme14,formonly.nml02,formonly.nme03,formonly.nmc02,formonly.nme25,formonly.nme13,formonly.nme16,formonly.nme05)
+SCREEN RECORD Undefined(formonly.nme22_q,formonly.nme01_q,formonly.nme12_q,formonly.nme21_q,formonly.nme16_q)
+END -- INSTRUCTIONS
+

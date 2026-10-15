@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/aski002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aski002")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+Grid gr6425
+{
+ Department No.     [skk01             ] Department Name     [gem02                                     ]
+ Type               [skk04     ]
+
+}
+END -- gr6425
+END -- page01
+END -- folder01
+Table s_skk
+{
+[skk02    |skk03                |skk05                |skk06                |skkacti             ]
+[skk02    |skk03                |skk05                |skk06                |skkacti             ]
+[skk02    |skk03                |skk05                |skk06                |skkacti             ]
+[skk02    |skk03                |skk05                |skk06                |skkacti             ]
+[skk02    |skk03                |skk05                |skk06                |skkacti             ]
+[skk02    |skk03                |skk05                |skk06                |skkacti             ]
+[skk02    |skk03                |skk05                |skk06                |skkacti             ]
+[skk02    |skk03                |skk05                |skk06                |skkacti             ]
+[skk02    |skk03                |skk05                |skk06                |skkacti             ]
+[skk02    |skk03                |skk05                |skk06                |skkacti             ]
+
+}
+END -- s_skk
+Grid gr6426
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr6426
+END -- vb1
+END -- aski002
+
+TABLES
+skk_file
+ATTRIBUTES
+ButtonEdit skk01=skk_file.skk01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^Y>Create department No.";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=8, noEntry;
+ComboBox skk04=skk_file.skk04, tabIndex=9, not null, required, items=(("1", "up to snuff"),("2", "unconventionality"));
+Edit skk02=skk_file.skk02, tabIndex=2, title="Year";
+Edit skk03=skk_file.skk03, tabIndex=3, title="Month", not null, required;
+Edit skk05=skk_file.skk05, tabIndex=4, title="Coefficient", not null, required;
+Edit skk06=skk_file.skk06, tabIndex=10, title=%"Explain";
+CheckBox skkacti=skk_file.skkacti, tabIndex=5, title="Availability", valueChecked = "Y";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_skk(skk_file.skk02,skk_file.skk03,skk_file.skk05,skk_file.skk06,skk_file.skkacti)
+SCREEN RECORD Undefined(skk_file.skk01,formonly.gem02,skk_file.skk04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

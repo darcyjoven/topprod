@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_sopno.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_sopno")
+VBox vb1
+Folder folder01
+Page page01(text="Page01")
+Grid gr3283
+{
+ <G group01                                                                              >
+  SOP Code            [gbb01     ][gbb01_desc          ]
+  Action#             [gbb02     ][gbb02_desc          ]
+  Version             [gbb03     ]
+  Language            [gbb04     ]
+
+
+
+ <                                                                                       >
+
+}
+END -- gr3283
+END -- page01
+END -- folder01
+Table s_gbb
+{
+[gbb05   |gbb06     |gbb07     |gbb08       |gaz03                         |gbb09                                    |gbb10      |gem02      |gbb11      |gbb12                         |gbb13                         |gbb14                         |gbb15               ]
+[gbb05   |gbb06     |gbb07     |gbb08       |gaz03                         |gbb09                                    |gbb10      |gem02      |gbb11      |gbb12                         |gbb13                         |gbb14                         |gbb15               ]
+[gbb05   |gbb06     |gbb07     |gbb08       |gaz03                         |gbb09                                    |gbb10      |gem02      |gbb11      |gbb12                         |gbb13                         |gbb14                         |gbb15               ]
+[gbb05   |gbb06     |gbb07     |gbb08       |gaz03                         |gbb09                                    |gbb10      |gem02      |gbb11      |gbb12                         |gbb13                         |gbb14                         |gbb15               ]
+[gbb05   |gbb06     |gbb07     |gbb08       |gaz03                         |gbb09                                    |gbb10      |gem02      |gbb11      |gbb12                         |gbb13                         |gbb14                         |gbb15               ]
+[gbb05   |gbb06     |gbb07     |gbb08       |gaz03                         |gbb09                                    |gbb10      |gem02      |gbb11      |gbb12                         |gbb13                         |gbb14                         |gbb15               ]
+[gbb05   |gbb06     |gbb07     |gbb08       |gaz03                         |gbb09                                    |gbb10      |gem02      |gbb11      |gbb12                         |gbb13                         |gbb14                         |gbb15               ]
+[gbb05   |gbb06     |gbb07     |gbb08       |gaz03                         |gbb09                                    |gbb10      |gem02      |gbb11      |gbb12                         |gbb13                         |gbb14                         |gbb15               ]
+[gbb05   |gbb06     |gbb07     |gbb08       |gaz03                         |gbb09                                    |gbb10      |gem02      |gbb11      |gbb12                         |gbb13                         |gbb14                         |gbb15               ]
+[gbb05   |gbb06     |gbb07     |gbb08       |gaz03                         |gbb09                                    |gbb10      |gem02      |gbb11      |gbb12                         |gbb13                         |gbb14                         |gbb15               ]
+
+}
+END -- s_gbb
+Grid gr3284
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3284
+END -- vb1
+END -- p_sopno
+
+TABLES
+gbb_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit gbb01=gbb_file.gbb01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit gbb01_desc=formonly.gbb01_desc type CHAR, tabIndex=2, noEntry;
+ButtonEdit gbb02=gbb_file.gbb02, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit gbb02_desc=formonly.gbb02_desc type CHAR, tabIndex=4, noEntry;
+ButtonEdit gbb03=gbb_file.gbb03, action=controlp, tabIndex=5, not null, required, image="zoom";
+ComboBox gbb04=gbb_file.gbb04, tabIndex=6, not null, required, queryEditable;
+Edit gbb05=gbb_file.gbb05, tabIndex=7, title="Line No", not null, required;
+Edit gbb06=gbb_file.gbb06, tabIndex=8, title="Flow#";
+ComboBox gbb07=gbb_file.gbb07, tabIndex=9, title="Kind", items=(("E", %"Entry Transactions"),("P", %"Batch Process"),("M", %"Manual Process"),("D", %"Document"),("R", %"Report"),("Q", %"Query"),("C", %"Check Point"),("V", %"Check Value"),("B", %"Base Data"),("A", %"Pre-Procedure"),("F", %"Flow"));
+ButtonEdit gbb08=gbb_file.gbb08, action=controlp, tabIndex=10, title="Program#", image="zoom", comment="<^P> Query Program No.";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=11, title="Program Name", noEntry, hidden;
+Edit gbb09=gbb_file.gbb09, tabIndex=12, title="Description";
+ButtonEdit gbb10=gbb_file.gbb10, action=controlp, tabIndex=13, title="Dept.", image="zoom", comment="<^P> Query Department No.";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=14, title="Dept Name", noEntry;
+Edit gbb11=gbb_file.gbb11, tabIndex=15, title="Next Flow#";
+Edit gbb12=gbb_file.gbb12, tabIndex=16, title="WHEN";
+Edit gbb13=gbb_file.gbb13, tabIndex=17, title="WHAT";
+Edit gbb14=gbb_file.gbb14, tabIndex=18, title="HOW";
+Edit gbb15=gbb_file.gbb15, tabIndex=19, title="Reference#";
+Edit cnt=formonly.cnt type CHAR, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gbb(gbb_file.gbb05,gbb_file.gbb06,gbb_file.gbb07,gbb_file.gbb08,formonly.gaz03,gbb_file.gbb09,gbb_file.gbb10,formonly.gem02,gbb_file.gbb11,gbb_file.gbb12,gbb_file.gbb13,gbb_file.gbb14,gbb_file.gbb15)
+SCREEN RECORD Undefined(gbb_file.gbb01,formonly.gbb01_desc,gbb_file.gbb02,formonly.gbb02_desc,gbb_file.gbb03,gbb_file.gbb04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

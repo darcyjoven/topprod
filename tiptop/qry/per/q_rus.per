@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_rus.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Grid gr3757
+{
+    <T s_rus                                                                       >
+    [check |rus01                 |rus02                |rusplant              ]
+    [check |rus01                 |rus02                |rusplant              ]
+    [check |rus01                 |rus02                |rusplant              ]
+    [check |rus01                 |rus02                |rusplant              ]
+    [check |rus01                 |rus02                |rusplant              ]
+    [check |rus01                 |rus02                |rusplant              ]
+    [check |rus01                 |rus02                |rusplant              ]
+    [check |rus01                 |rus02                |rusplant              ]
+    [check |rus01                 |rus02                |rusplant              ]
+    [check |rus01                 |rus02                |rusplant              ]
+    <                                                                              >
+
+}
+END -- gr3757
+END -- Form
+
+TABLES
+rus_file
+ATTRIBUTES
+Table s_rus:s_rus;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rus01=rus_file.rus01, tabIndex=2, title="Inventory Plans No.", noEntry;
+Edit rus02=rus_file.rus02, tabIndex=3, title="Inventory Plans Name", noEntry;
+Edit rusplant=rus_file.rusplant, tabIndex=4, title="Logistics Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rus(formonly.check,rus_file.rus01,rus_file.rus02,rus_file.rusplant)
+END -- INSTRUCTIONS
+

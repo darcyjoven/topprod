@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_mdmcfg.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_mdmcfg")
+VBox VBox1
+Folder pc323
+Page page01(text="Main")
+Table s_wsv1
+{
+[chk0|wsv01           |gaz03                                   ]
+[chk0|wsv01           |gaz03                                   ]
+[chk0|wsv01           |gaz03                                   ]
+[chk0|wsv01           |gaz03                                   ]
+[chk0|wsv01           |gaz03                                   ]
+[chk0|wsv01           |gaz03                                   ]
+[chk0|wsv01           |gaz03                                   ]
+[chk0|wsv01           |gaz03                                   ]
+[chk0|wsv01           |gaz03                                   ]
+[chk0|wsv01           |gaz03                                   ]
+
+}
+END -- s_wsv1
+END -- page01
+END -- pc323
+END -- VBox1
+END -- aws_mdmcfg
+
+ATTRIBUTES
+CheckBox chk0=formonly.chk01 type CHAR, tabIndex=1, title="Option", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit wsv01=formonly.wsv01 type CHAR, tabIndex=2, title="Program ID", noEntry;
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=3, title="Program Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wsv1(formonly.chk01,formonly.wsv01,formonly.gaz03)
+END -- INSTRUCTIONS
+

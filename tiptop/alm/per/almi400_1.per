@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi400_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi400_1")
+VBox vb6
+Folder pc1
+Page Main(text=%"Contract Fare Standard")
+Table s_lnv
+{
+[lnv03  |lnv04       |oaj02               |lnv05  |lnv06  |lnv07               |lnv08     |lnv09               |lnv10                 |lnv12               |lnv11               |lnv15               |lnv13            |lnv16          |lnv17                |lnv14                         ]
+[lnv03  |lnv04       |oaj02               |lnv05  |lnv06  |lnv07               |lnv08     |lnv09               |lnv10                 |lnv12               |lnv11               |lnv15               |lnv13            |lnv16          |lnv17                |lnv14                         ]
+[lnv03  |lnv04       |oaj02               |lnv05  |lnv06  |lnv07               |lnv08     |lnv09               |lnv10                 |lnv12               |lnv11               |lnv15               |lnv13            |lnv16          |lnv17                |lnv14                         ]
+[lnv03  |lnv04       |oaj02               |lnv05  |lnv06  |lnv07               |lnv08     |lnv09               |lnv10                 |lnv12               |lnv11               |lnv15               |lnv13            |lnv16          |lnv17                |lnv14                         ]
+[lnv03  |lnv04       |oaj02               |lnv05  |lnv06  |lnv07               |lnv08     |lnv09               |lnv10                 |lnv12               |lnv11               |lnv15               |lnv13            |lnv16          |lnv17                |lnv14                         ]
+
+}
+END -- s_lnv
+END -- Main
+END -- pc1
+Grid gr1
+{
+  ---- Rows [cnt   ] ------
+
+}
+END -- gr1
+END -- vb6
+END -- almi400_1
+
+TABLES
+oaj_file,
+lnv_file
+ATTRIBUTES
+Edit lnv03=lnv_file.lnv03, tabIndex=1, title="Line#", not null, required;
+ButtonEdit lnv04=lnv_file.lnv04, action=controlp, tabIndex=2, title="Fare No.", image="zoom.png";
+Edit oaj02=oaj_file.oaj02, tabIndex=3, title="Fare Name", noEntry;
+Edit lnv05=lnv_file.lnv05, tabIndex=4, title="Year";
+Edit lnv06=lnv_file.lnv06, tabIndex=5, title="Month";
+Edit lnv07=lnv_file.lnv07, tabIndex=6, title="Standare Fare", noEntry;
+Edit lnv08=lnv_file.lnv08, tabIndex=7, title="Persons";
+Edit lnv09=lnv_file.lnv09, tabIndex=8, title="Total Fare", noEntry;
+Edit lnv10=lnv_file.lnv10, tabIndex=9, title="Original Adjusted Fare", noEntry;
+Edit lnv12=lnv_file.lnv12, tabIndex=10, title="Base Sum", not null, required;
+Edit lnv11=lnv_file.lnv11, tabIndex=11, title="Adjusted Fare", not null, required;
+ComboBox lnv15=lnv_file.lnv15, tabIndex=12, title="Amount Belongs to", noEntry, items=(("0", "Accrual System"),("1", "Receipt & Payment System "));
+ComboBox lnv13=lnv_file.lnv13, tabIndex=13, title="Charge Type", not null, required, items=(("0", "one-off"),("1", "By Month"));
+DateEdit lnv16=lnv_file.lnv16, tabIndex=14, title="Effected Date", not null, required;
+DateEdit lnv17=lnv_file.lnv17, tabIndex=15, title=%"Expired Date";
+Edit lnv14=lnv_file.lnv14, tabIndex=16, title="Memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lnv(lnv_file.lnv03,lnv_file.lnv04,oaj_file.oaj02,lnv_file.lnv05,lnv_file.lnv06,lnv_file.lnv07,lnv_file.lnv08,lnv_file.lnv09,lnv_file.lnv10,lnv_file.lnv12,lnv_file.lnv11,lnv_file.lnv15,lnv_file.lnv13,lnv_file.lnv16,lnv_file.lnv17,lnv_file.lnv14)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

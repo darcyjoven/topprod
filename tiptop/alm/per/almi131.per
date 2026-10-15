@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi131.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi130")
+VBox VBox1
+Folder pc2
+Page Main(text=%"Main")
+Grid gr1
+{
+
+[label8     ] [lmd01             ]                    [label9    |lmd07         ]
+[label1     ] [lmd16             ]                    [label10   |lmd10         |imgmksg]
+[label7     ] [lmdstore          |rtz13             ] [label11   |lmd11         |       ]
+[label6     ] [lmdlegal          |azt02             ] [label12   |lmd12         ]
+[label5     ] [lmd03             |lmb03             ] [label13   |lmd13                   ]
+[label4     ] [lmd04             |lmc04             ]            [                        ]
+[label22    ] [lmd14             |lmy04             ]
+[label2     ] [lmd06             ]
+[label23    ] [lmd15             ]
+[label3     ] [lmd05             ]
+
+}
+END -- gr1
+END -- Main
+Page info(text=%"Info")
+Grid gr2
+{
+
+[label14     |lmduser      ][label19           ][lmdmodu     ]  [label20     |lmdacti     ]
+[label15     |lmdgrup      ][label18           ][lmddate     ]  [label21     |lmdcrat     ]
+[label16     |lmdoriu      ]
+[label17     |lmdorig      ]
+
+
+}
+END -- gr2
+END -- info
+END -- pc2
+Grid gr3
+{
+  ------- Rows [idx  ] /  [cnt  ] --------
+
+}
+END -- gr3
+END -- VBox1
+END -- almi130
+
+TABLES
+lmd_file
+ATTRIBUTES
+Label label8:Label8, text=%"Fie.DocNo.";
+ButtonEdit lmd01=lmd_file.lmd01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Label label9:Label9, text=%"Fie.Stat.";
+ComboBox lmd07=lmd_file.lmd07, tabIndex=7, noEntry, not null, required, items=(("Y", "Used"),("N", "Unused"));
+Label label1:Label1, text=%"Version No.";
+Edit lmd16=lmd_file.lmd16, tabIndex=27, noEntry, scroll;
+Label label10:Label10, text=%"Appr.No.";
+ComboBox lmd10=lmd_file.lmd10, tabIndex=11, default = "N", noEntry, not null, required, items=(("Y", "CHECK"),("N", "uncheck"),("X", "void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Label label7:Label7, text=%"Store No.";
+ButtonEdit lmdstore=lmd_file.lmdstore, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=8, noEntry;
+Label label11:Label11, text=%"Approver";
+Edit lmd11=lmd_file.lmd11, tabIndex=12;
+Label label6:Label6, text=%"Corporation";
+ButtonEdit lmdlegal=lmd_file.lmdlegal, action=controlp, tabIndex=23, noEntry, not null, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=24, noEntry;
+Label label12:Label12, text=%"Appr.on";
+DateEdit lmd12=lmd_file.lmd12, tabIndex=21;
+Label label5:Label5, text=%"Bui.DocNo.";
+ButtonEdit lmd03=lmd_file.lmd03, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=9, noEntry;
+Label label13:Label13, text=%"memo";
+TextEdit lmd13=lmd_file.lmd13, tabIndex=13;
+Label label4:Label4, text=%"Flo.DocNo.";
+ButtonEdit lmd04=lmd_file.lmd04, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=10, noEntry;
+Label label22:Label22, text=%"Area No.";
+ButtonEdit lmd14=lmd_file.lmd14, action=controlp, tabIndex=29, image="zoom", scroll;
+Edit lmy04=formonly.lmy04 type CHAR, tabIndex=30, noEntry;
+Label label2:Label2, text=%"Busi.area";
+Edit lmd06=lmd_file.lmd06, tabIndex=6, noEntry, not null, required;
+Label label23:Label23, text=%"Meas.area";
+Edit lmd15=lmd_file.lmd15, tabIndex=28, scroll;
+Label label3:Label3, text=%"Const.area";
+Edit lmd05=lmd_file.lmd05, tabIndex=5, not null, required;
+Label label14:Label14, text=%"Data Owner";
+Edit lmduser=lmd_file.lmduser, tabIndex=14, noEntry;
+Label label19:Label19, text=%"Last Modified by";
+Edit lmdmodu=lmd_file.lmdmodu, tabIndex=16, noEntry;
+Label label20:Label20, text=%"Valid Code";
+Edit lmdacti=lmd_file.lmdacti, tabIndex=18, default = "Y", noEntry;
+Label label15:Label15, text=%"Department";
+Edit lmdgrup=lmd_file.lmdgrup, tabIndex=15, noEntry;
+Label label18:Label18, text=%"Last Modified On";
+DateEdit lmddate=lmd_file.lmddate, tabIndex=17;
+Label label21:Label21, text=%"create on";
+DateEdit lmdcrat=lmd_file.lmdcrat, tabIndex=22, noEntry;
+Label label16:Label16, text=%"Record Orig.";
+Edit lmdoriu=lmd_file.lmdoriu, tabIndex=26, noEntry;
+Label label17:Label17, text=%"Dept Orig.";
+Edit lmdorig=lmd_file.lmdorig, tabIndex=25, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=19, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lmd_file.lmd01,lmd_file.lmd07,lmd_file.lmdstore,formonly.rtz13,lmd_file.lmd10,formonly.imgmksg,lmd_file.lmdlegal,formonly.azt02,lmd_file.lmd11,lmd_file.lmd03,formonly.lmb03,lmd_file.lmd12,lmd_file.lmd04,formonly.lmc04,lmd_file.lmd13,lmd_file.lmd05,lmd_file.lmd06,lmd_file.lmduser,lmd_file.lmdmodu,lmd_file.lmdacti,lmd_file.lmdgrup,lmd_file.lmddate,lmd_file.lmdcrat,lmd_file.lmdoriu,lmd_file.lmdorig,formonly.idx,formonly.cnt,lmd_file.lmd16,lmd_file.lmd15,lmd_file.lmd14,formonly.lmy04)
+END -- INSTRUCTIONS
+

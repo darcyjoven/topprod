@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp500s.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmp500s")
+VBox VBox1
+Grid grid01
+{
+ <G group01                                            >
+  Line No.            [old_seq   ]
+  Pur Qty             [old_qty   ][old_pmn07 ]
+  Purchased Item      [old_part            ]
+                      [old_pmn041                    ]
+ <                                                     >
+}
+END -- grid01
+Table s_new
+{
+[new_part             |ima02                          |unit |new_ra|new_|new_qty |price               |price_t             |price_o             |new_qty3      ]
+[new_part             |ima02                          |unit |new_ra|new_|new_qty |price               |price_t             |price_o             |new_qty3      ]
+[new_part             |ima02                          |unit |new_ra|new_|new_qty |price               |price_t             |price_o             |new_qty3      ]
+[new_part             |ima02                          |unit |new_ra|new_|new_qty |price               |price_t             |price_o             |new_qty3      ]
+[new_part             |ima02                          |unit |new_ra|new_|new_qty |price               |price_t             |price_o             |new_qty3      ]
+[new_part             |ima02                          |unit |new_ra|new_|new_qty |price               |price_t             |price_o             |new_qty3      ]
+[new_part             |ima02                          |unit |new_ra|new_|new_qty |price               |price_t             |price_o             |new_qty3      ]
+[new_part             |ima02                          |unit |new_ra|new_|new_qty |price               |price_t             |price_o             |new_qty3      ]
+[new_part             |ima02                          |unit |new_ra|new_|new_qty |price               |price_t             |price_o             |new_qty3      ]
+[new_part             |ima02                          |unit |new_ra|new_|new_qty |price               |price_t             |price_o             |new_qty3      ]
+}
+END -- s_new
+Grid gr4911
+{
+ <G group02                             >
+ [l_tot ]
+ <                                      >
+
+
+
+}
+END -- gr4911
+END -- VBox1
+END -- apmp500s
+
+ATTRIBUTES
+Group group01:group01;
+Edit old_seq=formonly.old_seq type CHAR, tabIndex=1;
+Edit old_qty=formonly.old_qty type CHAR, tabIndex=2;
+Edit old_pmn07=formonly.old_pmn07 type CHAR, tabIndex=3;
+Edit old_part=formonly.old_part type CHAR, tabIndex=4;
+Edit old_pmn041=formonly.old_pmn041 type CHAR, tabIndex=5;
+Edit new_part=formonly.new_part type CHAR, tabIndex=6, title="Substitute Item#", not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=7, title="Part Name Specification", noEntry;
+Edit unit=formonly.unit type CHAR, tabIndex=8, title="Unit", noEntry;
+Edit new_ra=formonly.new_rate type CHAR, tabIndex=9, title="Ratio", noEntry;
+CheckBox new_=formonly.new_yes type CHAR, tabIndex=10, title="Y/N", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit new_qty=formonly.new_qty type CHAR, tabIndex=11, title="Sub Qty";
+Edit price=formonly.price type CHAR, tabIndex=12, title="U/P";
+Edit price_t=formonly.price_t type CHAR, tabIndex=13, title="Tax U/P";
+Edit price_o=formonly.price_o type CHAR, tabIndex=15, title="Def Price", noEntry;
+Edit new_qty3=formonly.new_qty3 type CHAR, tabIndex=14, title="Equivalent Amt", noEntry;
+Group group02:group02, text="Total";
+Edit l_tot=formonly.l_tot type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_new(formonly.new_part,formonly.ima02,formonly.unit,formonly.new_rate,formonly.new_yes,formonly.new_qty,formonly.price,formonly.price_t,formonly.price_o,formonly.new_qty3)
+SCREEN RECORD Undefined(formonly.old_seq,formonly.old_qty,formonly.old_pmn07,formonly.old_part,formonly.old_pmn041,formonly.l_tot)
+END -- INSTRUCTIONS
+

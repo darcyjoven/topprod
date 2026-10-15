@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci120_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aeci120_1")
+Table s_sfb
+{
+[sel     |sfb01       |ima01       |ima25     |sfb08     |sfb13     |sfb04          ]
+[sel     |sfb01       |ima01       |ima25     |sfb08     |sfb13     |sfb04          ]
+[sel     |sfb01       |ima01       |ima25     |sfb08     |sfb13     |sfb04          ]
+[sel     |sfb01       |ima01       |ima25     |sfb08     |sfb13     |sfb04          ]
+[sel     |sfb01       |ima01       |ima25     |sfb08     |sfb13     |sfb04          ]
+[sel     |sfb01       |ima01       |ima25     |sfb08     |sfb13     |sfb04          ]
+[sel     |sfb01       |ima01       |ima25     |sfb08     |sfb13     |sfb04          ]
+[sel     |sfb01       |ima01       |ima25     |sfb08     |sfb13     |sfb04          ]
+[sel     |sfb01       |ima01       |ima25     |sfb08     |sfb13     |sfb04          ]
+
+}
+END -- s_sfb
+END -- aeci120_1
+
+TABLES
+sfb_file,
+ima_file
+ATTRIBUTES
+Edit sel=formonly.sel type CHAR, tabIndex=7, title=%"sel", not null, required;
+Edit sfb01=sfb_file.sfb01, tabIndex=6, title=%"WO", noEntry;
+Edit ima01=ima_file.ima01, tabIndex=5, title=%"Item No.", noEntry;
+Edit ima25=ima_file.ima25, tabIndex=4, title=%"Unit", noEntry;
+Edit sfb08=sfb_file.sfb08, tabIndex=3, title=%"Pro.Qty", noEntry;
+DateEdit sfb13=sfb_file.sfb13, tabIndex=1, title="bdate";
+ComboBox sfb04=sfb_file.sfb04, tabIndex=2, title="Status", noEntry, items=(("1", "Gnrl"),("2", "Rls"),("3", "Prt"),("4", "Iss.Mat"),("5", "WIP"),("6", "FQC"),("7", "St-i"),("8", "Clos"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(formonly.sel,sfb_file.sfb01,ima_file.ima01,ima_file.ima25,sfb_file.sfb08,sfb_file.sfb13,sfb_file.sfb04)
+END -- INSTRUCTIONS
+

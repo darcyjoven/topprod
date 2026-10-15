@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci060.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci060")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1451
+{
+ Prod Cls            [cak01     ][oba02                         ]
+
+}
+END -- gr1451
+END -- page01
+END -- folder01
+Table s_cak
+{
+[cak02     |cak03     |cab02               ]
+[cak02     |cak03     |cab02               ]
+[cak02     |cak03     |cab02               ]
+[cak02     |cak03     |cab02               ]
+[cak02     |cak03     |cab02               ]
+[cak02     |cak03     |cab02               ]
+[cak02     |cak03     |cab02               ]
+[cak02     |cak03     |cab02               ]
+
+}
+END -- s_cak
+Grid gr1452
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1452
+END -- VBox1
+END -- axci060
+
+TABLES
+cak_file
+ATTRIBUTES
+ButtonEdit cak01=cak_file.cak01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Product Class.";
+Edit oba02=formonly.oba02 type VARCHAR, tabIndex=2;
+ButtonEdit cak02=cak_file.cak02, action=controlp, tabIndex=3, title="Cost Cnt", not null, required, image="zoom", comment="<^P>Qry Dept No.  <^O>Copy Prev.";
+ButtonEdit cak03=cak_file.cak03, action=controlp, tabIndex=4, title="Cost Itm", not null, required, image="zoom", comment="<^P>Qry Cost Items";
+Edit cab02=formonly.cab02 type VARCHAR, tabIndex=5, title="Cost Item Desc";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cak(cak_file.cak02,cak_file.cak03,formonly.cab02)
+SCREEN RECORD Undefined(cak_file.cak01,formonly.oba02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

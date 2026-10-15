@@ -1,0 +1,169 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt614.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Main(text=%"Main")
+Grid ds1
+{
+
+[label1    |luo01                 ]                    [label11 |luo09               |label14   |luo12          |gen02          ]
+[label2    |luo02                 ]                    [label12 |luo10               |label15   |luo13          |gem02          ]
+[label3    |luo03                 ]                    [label21 |amt                 ]          [luomksg        ]
+[label4    |luo04                 ]                    [label13 |luo11               |label17   |luo15          |imgmksg]
+[label5    |luoplant              |rtz13               ]                             [label18   |luoconf        |       ]
+[label6    |luolegal              |azt02               ]                             [label19   |luoconu        |gen02_1        ]
+[label7    |luo05                 |luo05_desc          ]                             [label20   |luocond        |luocont        ]
+[label8    |luo06                 ]                                                  [label22   |luo14                          ]
+[label9    |luo07                 ]                                                             [                               ]
+[label10   |luo08                 ]
+[label16   |lnt30                 |tqa02               ]
+
+}
+END -- ds1
+END -- Main
+Page Info(text=%"Info")
+Grid ds2
+{
+
+[label23  |luouser        |label26  |luomodu        |label29  |luoacti        ]
+[label24  |luogrup        |label27  |luodate        |label30  |luocrat        ]
+[label25  |luooriu        |label28  |luoorig        ]
+
+}
+END -- ds2
+END -- Info
+END -- Folder1
+Table ds3
+{
+[lup02|lup03               |lup04|lup05     |oaj02               |oaj05|amt1                |lup06                 |lup07                 |amt_1               |lup08               |oaj04                   |aag02               |oaj041                  |aag02_1             |lup09               ]
+[lup02|lup03               |lup04|lup05     |oaj02               |oaj05|amt1                |lup06                 |lup07                 |amt_1               |lup08               |oaj04                   |aag02               |oaj041                  |aag02_1             |lup09               ]
+[lup02|lup03               |lup04|lup05     |oaj02               |oaj05|amt1                |lup06                 |lup07                 |amt_1               |lup08               |oaj04                   |aag02               |oaj041                  |aag02_1             |lup09               ]
+[lup02|lup03               |lup04|lup05     |oaj02               |oaj05|amt1                |lup06                 |lup07                 |amt_1               |lup08               |oaj04                   |aag02               |oaj041                  |aag02_1             |lup09               ]
+[lup02|lup03               |lup04|lup05     |oaj02               |oaj05|amt1                |lup06                 |lup07                 |amt_1               |lup08               |oaj04                   |aag02               |oaj041                  |aag02_1             |lup09               ]
+[lup02|lup03               |lup04|lup05     |oaj02               |oaj05|amt1                |lup06                 |lup07                 |amt_1               |lup08               |oaj04                   |aag02               |oaj041                  |aag02_1             |lup09               ]
+[lup02|lup03               |lup04|lup05     |oaj02               |oaj05|amt1                |lup06                 |lup07                 |amt_1               |lup08               |oaj04                   |aag02               |oaj041                  |aag02_1             |lup09               ]
+[lup02|lup03               |lup04|lup05     |oaj02               |oaj05|amt1                |lup06                 |lup07                 |amt_1               |lup08               |oaj04                   |aag02               |oaj041                  |aag02_1             |lup09               ]
+[lup02|lup03               |lup04|lup05     |oaj02               |oaj05|amt1                |lup06                 |lup07                 |amt_1               |lup08               |oaj04                   |aag02               |oaj041                  |aag02_1             |lup09               ]
+[lup02|lup03               |lup04|lup05     |oaj02               |oaj05|amt1                |lup06                 |lup07                 |amt_1               |lup08               |oaj04                   |aag02               |oaj041                  |aag02_1             |lup09               ]
+
+}
+END -- ds3
+Grid gr3
+{
+
+ ------ indx [idx   ]/ [cnt    ] -------[label70  |cn2    ]----------
+
+}
+END -- gr3
+END -- VBox1
+END -- Form
+
+TABLES
+lup_file,
+luo_file
+ATTRIBUTES
+Label label1:Label1, text=%"luo01";
+ButtonEdit luo01=luo_file.luo01, action=controlp, tabIndex=1, not null, image="zoom.png", scroll;
+Label label11:Label11, text=%"luo09";
+Edit luo09=luo_file.luo09, tabIndex=11, noEntry, scroll;
+Label label14:Label14, text=%"luo12";
+ButtonEdit luo12=luo_file.luo12, action=controlp, tabIndex=14, not null, image="zoom.png", scroll;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=29, noEntry;
+Label label2:Label2, text=%"luo02";
+DateEdit luo02=luo_file.luo02, tabIndex=2, not null;
+Label label12:Label12, text=%"luo10";
+Edit luo10=luo_file.luo10, tabIndex=12, noEntry, scroll;
+Label label15:Label15, text=%"luo13";
+ButtonEdit luo13=luo_file.luo13, action=controlp, tabIndex=15, not null, image="zoom.png", scroll;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=30, noEntry;
+Label label3:Label3, text=%"luo03";
+ComboBox luo03=luo_file.luo03, tabIndex=3, not null, scroll, items=(("1", "1"),("2", "2"));
+Label label21:Label21, text=%"amt";
+Edit amt=formonly.amt type CHAR, tabIndex=28, noEntry;
+CheckBox luomksg=luo_file.luomksg, tabIndex=16, default = "N", text=%"luo_file.luomksg", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Label label4:Label4, text=%"luo04";
+ButtonEdit luo04=luo_file.luo04, action=controlp, tabIndex=4, image="zoom.png", scroll;
+Label label13:Label13, text=%"luo11";
+Edit luo11=luo_file.luo11, tabIndex=13, noEntry, scroll;
+Label label17:Label17, text=%"luo15";
+ComboBox luo15=luo_file.luo15, tabIndex=17, noEntry, not null, scroll, items=(("0", "0"),("1", "1"),("2", "2"),("S", "S"),("W", "W"),("R", "R"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Label label5:Label5, text=%"luoplant";
+ButtonEdit luoplant=luo_file.luoplant, action=controlp, tabIndex=5, noEntry, not null, image="zoom.png", scroll;
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=23, noEntry;
+Label label18:Label18, text=%"luoconf";
+ComboBox luoconf=luo_file.luoconf, tabIndex=18, noEntry, not null, scroll, items=(("Y", "Y"),("N", "N"),("X", "Voided"));
+Label label6:Label6, text=%"luolegal";
+ButtonEdit luolegal=luo_file.luolegal, action=controlp, tabIndex=6, noEntry, not null, image="zoom.png", scroll;
+Edit azt02=formonly.azt02 type CHAR, tabIndex=24, noEntry;
+Label label19:Label19, text=%"luoconu";
+ButtonEdit luoconu=luo_file.luoconu, action=controlp, tabIndex=19, noEntry, image="zoom.png", scroll;
+Edit gen02_1=formonly.gen02_1 type CHAR, tabIndex=31, noEntry;
+Label label7:Label7, text=%"luo05";
+ButtonEdit luo05=luo_file.luo05, action=controlp, tabIndex=7, not null, image="zoom.png", scroll;
+Edit luo05_desc=formonly.luo05_desc type CHAR, tabIndex=25, noEntry;
+Label label20:Label20, text=%"luocond";
+DateEdit luocond=luo_file.luocond, tabIndex=20, noEntry;
+TimeEdit luocont=luo_file.luocont, tabIndex=21, noEntry, scroll;
+Label label8:Label8, text=%"luo06";
+ButtonEdit luo06=luo_file.luo06, action=controlp, tabIndex=8, image="zoom.png", scroll;
+Label label22:Label22, text=%"luo14";
+TextEdit luo14=luo_file.luo14, tabIndex=22;
+Label label9:Label9, text=%"luo07";
+ButtonEdit luo07=luo_file.luo07, action=controlp, tabIndex=9, image="zoom.png", scroll;
+Label label10:Label10, text=%"luo08";
+Edit luo08=luo_file.luo08, tabIndex=10, noEntry, scroll;
+Label label16:Label16, text=%"lnt30";
+Edit lnt30=formonly.lnt30 type CHAR, tabIndex=26, noEntry;
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=27, noEntry;
+Label label23:Label23, text=%"luouser";
+Edit luouser=luo_file.luouser, tabIndex=32, noEntry, scroll;
+Label label26:Label26, text=%"luomodu";
+Edit luomodu=luo_file.luomodu, tabIndex=35, noEntry, scroll;
+Label label29:Label29, text=%"luoacti";
+Edit luoacti=luo_file.luoacti, tabIndex=38, noEntry, not null, scroll;
+Label label24:Label24, text=%"luogrup";
+Edit luogrup=luo_file.luogrup, tabIndex=33, noEntry, scroll;
+Label label27:Label27, text=%"luodate";
+DateEdit luodate=luo_file.luodate, tabIndex=36, noEntry;
+Label label30:Label30, text=%"luocrat";
+DateEdit luocrat=luo_file.luocrat, tabIndex=39, noEntry;
+Label label25:Label25, text=%"luooriu";
+Edit luooriu=luo_file.luooriu, tabIndex=34, noEntry, scroll;
+Label label28:Label28, text=%"luoorig";
+Edit luoorig=luo_file.luoorig, tabIndex=37, noEntry, scroll;
+Edit lup02=lup_file.lup02, tabIndex=40, title=%"lup02", not null, scroll;
+ButtonEdit lup03=lup_file.lup03, action=controlp, tabIndex=41, title=%"lup03", not null, image="zoom.png", scroll;
+Edit lup04=lup_file.lup04, tabIndex=42, title=%"lup04", not null, scroll;
+ButtonEdit lup05=lup_file.lup05, action=controlp, tabIndex=43, title=%"lup05", noEntry, not null, image="zoom.png", scroll;
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=48, title=%"oaj02", noEntry;
+ComboBox oaj05=formonly.oaj05 type CHAR, tabIndex=49, title=%"oaj05", noEntry, items=(("10", "10"),("01", "01"),("02", "02"));
+Edit amt1=formonly.amt1 type CHAR, tabIndex=50, title=%"amt1", noEntry;
+Edit lup06=lup_file.lup06, tabIndex=44, title=%"lup06", not null, scroll;
+Edit lup07=lup_file.lup07, tabIndex=45, title=%"lup07", noEntry, scroll;
+Edit amt_1=formonly.amt_1 type CHAR, tabIndex=51, title=%"amt", noEntry;
+Edit lup08=lup_file.lup08, tabIndex=46, title=%"lup08", noEntry, scroll;
+Edit oaj04=formonly.oaj04 type CHAR, tabIndex=52, title=%"oaj04", noEntry;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=53, title=%"aag02", noEntry;
+Edit oaj041=formonly.oaj041 type CHAR, tabIndex=54, title=%"oaj041", noEntry;
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=55, title=%"aag02_1", noEntry;
+Edit lup09=lup_file.lup09, tabIndex=47, title=%"lup09", noEntry, scroll;
+Edit idx=formonly.idx type SMALLINT, tabIndex=56, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=57, noEntry;
+Label label70:Label70, text=%"Label1";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=58, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(luo_file.luo01,luo_file.luo02,luo_file.luo03,luo_file.luo04,luo_file.luoplant,luo_file.luolegal,luo_file.luo05,luo_file.luo06,luo_file.luo07,luo_file.luo08,luo_file.luo09,luo_file.luo10,luo_file.luo11,luo_file.luo12,luo_file.luo13,luo_file.luomksg,luo_file.luo15,luo_file.luoconf,luo_file.luoconu,luo_file.luocond,luo_file.luocont,luo_file.luo14)
+SCREEN RECORD Undefined(formonly.rtz13,formonly.azt02,formonly.luo05_desc,formonly.tqa02,formonly.lnt30,formonly.amt,formonly.imgmksg,formonly.gen02,formonly.gem02,formonly.gen02_1,formonly.idx,formonly.cnt,formonly.cn2)
+SCREEN RECORD Record2(luo_file.luouser,luo_file.luogrup,luo_file.luooriu,luo_file.luomodu,luo_file.luodate,luo_file.luoorig,luo_file.luoacti,luo_file.luocrat)
+SCREEN RECORD s_lup(lup_file.lup02,lup_file.lup03,lup_file.lup04,lup_file.lup05,formonly.oaj02,formonly.oaj05,formonly.amt1,lup_file.lup06,lup_file.lup07,formonly.amt_1,lup_file.lup08,formonly.oaj04,formonly.aag02,formonly.oaj041,formonly.aag02_1,lup_file.lup09)
+END -- INSTRUCTIONS
+

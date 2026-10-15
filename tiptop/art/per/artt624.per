@@ -1,0 +1,130 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt624.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artt615")
+VBox vb2
+Folder pc2
+Page Page3(text=%"Main")
+HBox hb1
+Grid gr4
+{
+
+ Document             [rxr00              ]
+ Rxr01                [rxr01                   ]
+ Source Doc. No.      [rxr02                   ]
+ Rxr03                [rxr03                   ]
+ Advance Receipt Doc. [rxr04                   ]
+ Rxr05                [rxr05              ]
+ Customer Name        [rxr06              ]
+ Customer TEL         [rxr07              ]
+
+
+
+}
+END -- gr4
+Grid gr11
+{
+
+  Certificate Type [rxr08          ]
+  Certificate No.  [rxr09          ]
+  by Staff         [rxr10          ][rxr10_desc    ]
+  Rxr11            [rxr11          ]
+  Rxr12            [rxr12          ]
+  Rxr13            [rxr13          ]
+  Reason Code      [rxr14          ]
+  rxr16            [rxr16                    ]
+
+
+
+}
+END -- gr11
+Grid gr10
+{
+
+  Memo          [rxr15                           ]
+                [                                ]
+
+  Approval Code [rxrconf         ] [imgmksg ]
+                                   [        ]
+  Approval Date [rxrcond         ]
+  Approver      [rxrconu         ][rxrconu_desc  ]
+  Institution   [rxrplant        ][rxrplant_desc ]
+
+
+
+}
+END -- gr10
+END -- hb1
+END -- Page3
+Page info(text=%"Info")
+Grid gr5
+{
+
+ Record Owner [rxruser      ]   Last Modified by   [rxrmodu      ]   Data Valid Code [rxracti      ]  Record Orig. [rxroriu      ]
+ Department   [rxrgrup      ]   Create/Modify Date [rxrdate      ]   Create Date     [rxrcrat      ]  Dept Orig.   [rxrorig      ]
+
+
+
+
+}
+END -- gr5
+END -- info
+END -- pc2
+Grid gr12
+{
+   --------- Rows [idx    ] / [cnt    ] ---------
+
+
+}
+END -- gr12
+END -- vb2
+END -- Form2
+
+TABLES
+rxr_file
+ATTRIBUTES
+ComboBox rxr00=rxr_file.rxr00, tabIndex=1, default = "1", noEntry, not null, items=(("1", "Collection"),("2", "Refund"));
+ButtonEdit rxr01=rxr_file.rxr01, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+ButtonEdit rxr02=rxr_file.rxr02, action=controlp, tabIndex=3, image="zoom.png";
+ButtonEdit rxr03=rxr_file.rxr03, action=controlp, tabIndex=4, image="zoom.png";
+Edit rxr04=rxr_file.rxr04, tabIndex=5;
+DateEdit rxr05=rxr_file.rxr05, tabIndex=6, not null, required;
+Edit rxr06=rxr_file.rxr06, tabIndex=7;
+Edit rxr07=rxr_file.rxr07, tabIndex=8;
+ComboBox rxr08=rxr_file.rxr08, tabIndex=9, not null, required, items=(("1", "ID"),("2", "Student_ID"),("3", "Police_ID"),("4", "Officer_ID"),("5", "Passport"),("6", "Other"));
+Edit rxr09=rxr_file.rxr09, tabIndex=10;
+ButtonEdit rxr10=rxr_file.rxr10, action=controlp, tabIndex=11, image="zoom.png";
+Edit rxr10_desc=formonly.rxr10_desc type CHAR, tabIndex=12, noEntry;
+Edit rxr11=rxr_file.rxr11, tabIndex=13, default = "0", not null, required;
+Edit rxr12=rxr_file.rxr12, tabIndex=14, default = "0", not null, required;
+Edit rxr13=rxr_file.rxr13, tabIndex=15, default = "0", not null, required;
+ButtonEdit rxr14=rxr_file.rxr14, action=controlp, tabIndex=16, image="zoom.png";
+ButtonEdit rxr16=rxr_file.rxr16, action=controlp, tabIndex=34, image="zoom.png";
+TextEdit rxr15=rxr_file.rxr15, tabIndex=17;
+ComboBox rxrconf=rxr_file.rxrconf, tabIndex=18, default = "N", noEntry, items=(("N", "Unconfirmed"),("Y", "Confirmed"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+DateEdit rxrcond=rxr_file.rxrcond, tabIndex=19, noEntry;
+ButtonEdit rxrconu=rxr_file.rxrconu, action=controlp, tabIndex=20, noEntry, image="zoom.png";
+Edit rxrconu_desc=formonly.rxrconu_desc type CHAR, tabIndex=21, noEntry;
+ButtonEdit rxrplant=rxr_file.rxrplant, action=controlp, tabIndex=22, noEntry, image="zoom.png";
+Edit rxrplant_desc=formonly.rxrplant_desc type CHAR, tabIndex=23, noEntry;
+Edit rxruser=rxr_file.rxruser, tabIndex=24, noEntry;
+Edit rxrmodu=rxr_file.rxrmodu, tabIndex=26, noEntry;
+Edit rxracti=rxr_file.rxracti, tabIndex=28, noEntry;
+Edit rxroriu=rxr_file.rxroriu, tabIndex=30, noEntry;
+Edit rxrgrup=rxr_file.rxrgrup, tabIndex=25, noEntry;
+DateEdit rxrdate=rxr_file.rxrdate, tabIndex=27, noEntry;
+DateEdit rxrcrat=rxr_file.rxrcrat, tabIndex=29, noEntry;
+Edit rxrorig=rxr_file.rxrorig, tabIndex=31, noEntry;
+Edit idx=formonly.idx type CHAR, tabIndex=32;
+Edit cnt=formonly.cnt type CHAR, tabIndex=33;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rxr_file.rxr00,rxr_file.rxr01,rxr_file.rxr02,rxr_file.rxr03,rxr_file.rxr04,rxr_file.rxr05,rxr_file.rxr06,rxr_file.rxr07,rxr_file.rxr08,rxr_file.rxr09,rxr_file.rxr10,formonly.rxr10_desc,rxr_file.rxr11,rxr_file.rxr12,rxr_file.rxr13,rxr_file.rxr14,rxr_file.rxr16,rxr_file.rxr15,rxr_file.rxrconf,formonly.imgmksg,rxr_file.rxrcond,rxr_file.rxrconu,formonly.rxrconu_desc,rxr_file.rxrplant,formonly.rxrplant_desc,rxr_file.rxruser,rxr_file.rxrmodu,rxr_file.rxracti,rxr_file.rxroriu,rxr_file.rxrgrup,rxr_file.rxrdate,rxr_file.rxrcrat,rxr_file.rxrorig,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

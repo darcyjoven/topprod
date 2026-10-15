@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armt205.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armt205")
+VBox VBox1
+Folder pc73
+Page page01(text="Page01")
+Grid gr274
+{
+ <G group01                                           > <G group02                                         >
+  Re-Del. No.         [rme01           ]                 Profit Margin       [rme30     ]
+  Re-Del.Date         [rme021    ]                       O.C Receivable      [rme18     ]
+  RMA No.             [rme011          ]                                           [rme181    ][rme182    ]
+  Customer Return     [rme03     ][rme04     ]           H.C A/R             [rme19     ]
+  Salesman            [rme12     ][gen02     ]                               [rme191    ][rme192    ]
+  Sales Dept          [rme13     ][gem02     ]           Curr Exchange Rt    [rme16     ][rme17     ]
+  Local/Export Sls    [rme29     ]                       Tax Rate            [rme15     ][rm][r1][r2]
+  Ent Account Nt#     [rme10           ]                 Confirm             [rmeconf   ]
+  Invoice #           [oma10           ]
+ <                                                    > <                                                  >
+
+}
+END -- gr274
+END -- page01
+END -- pc73
+Table s_body
+{
+[seq |partno              |ima02                         |ima021                        |qty        |costs               |rmc09 ]
+[seq |partno              |ima02                         |ima021                        |qty        |costs               |rmc09 ]
+[seq |partno              |ima02                         |ima021                        |qty        |costs               |rmc09 ]
+[seq |partno              |ima02                         |ima021                        |qty        |costs               |rmc09 ]
+[seq |partno              |ima02                         |ima021                        |qty        |costs               |rmc09 ]
+[seq |partno              |ima02                         |ima021                        |qty        |costs               |rmc09 ]
+[seq |partno              |ima02                         |ima021                        |qty        |costs               |rmc09 ]
+[seq |partno              |ima02                         |ima021                        |qty        |costs               |rmc09 ]
+[seq |partno              |ima02                         |ima021                        |qty        |costs               |rmc09 ]
+[seq |partno              |ima02                         |ima021                        |qty        |costs               |rmc09 ]
+
+}
+END -- s_body
+Grid gr275
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr275
+END -- VBox1
+END -- armt205
+
+TABLES
+rme_file
+ATTRIBUTES
+Group group01:group01;
+Edit rme01=rme_file.rme01, tabIndex=1, upShift;
+Edit rme021=rme_file.rme021, tabIndex=2;
+Edit rme011=rme_file.rme011, tabIndex=3, noEntry;
+ButtonEdit rme03=rme_file.rme03, action=controlp, tabIndex=4, image="zoom", upShift, comment="<^P>Qry Customer";
+Edit rme04=rme_file.rme04, tabIndex=5, noEntry;
+ButtonEdit rme12=rme_file.rme12, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Details";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=7, noEntry;
+ButtonEdit rme13=rme_file.rme13, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Details";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=9, noEntry;
+ComboBox rme29=rme_file.rme29, tabIndex=10, not null, required, queryEditable, items=(("1", "Local Sales"),("2", "Export"));
+Edit rme10=rme_file.rme10, tabIndex=11, noEntry;
+Edit oma10=formonly.oma10 type CHAR, tabIndex=12, noEntry;
+Group group02:group02;
+Edit rme30=rme_file.rme30, tabIndex=13;
+Edit rme18=rme_file.rme18, tabIndex=14;
+Edit rme181=rme_file.rme181, tabIndex=15, noEntry;
+Edit rme182=rme_file.rme182, tabIndex=16, noEntry;
+Edit rme19=rme_file.rme19, tabIndex=17, noEntry;
+Edit rme191=rme_file.rme191, tabIndex=18, noEntry;
+Edit rme192=rme_file.rme192, tabIndex=19, noEntry;
+Edit rme16=rme_file.rme16, tabIndex=20, color = yellow, comment="<^P>Qry Details";
+Edit rme17=rme_file.rme17, tabIndex=21, noEntry;
+Edit rme15=rme_file.rme15, tabIndex=22, comment="<^P>Qry Details";
+Edit rm=rme_file.rme151, tabIndex=23, noEntry;
+Edit r1=rme_file.rme152, tabIndex=24, noEntry;
+Edit r2=rme_file.rme153, tabIndex=25, noEntry;
+Edit rmeconf=rme_file.rmeconf, tabIndex=26, noEntry;
+Edit seq=formonly.seq type CHAR, tabIndex=27, title="Ln#", noEntry;
+Edit partno=formonly.partno type CHAR, tabIndex=28, title="Product No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=29, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=30, title="Specification", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=31, title="Qty", noEntry;
+Edit costs=formonly.costs type CHAR, tabIndex=32, title="Material Labor Cost", noEntry;
+Edit rmc09=formonly.rmc09 type CHAR, tabIndex=33, title="Charge", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=34, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=35, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_body(formonly.seq,formonly.partno,formonly.ima02,formonly.ima021,formonly.qty,formonly.costs,formonly.rmc09)
+SCREEN RECORD Undefined(rme_file.rme01,rme_file.rme021,rme_file.rme011,rme_file.rme03,rme_file.rme04,rme_file.rme12,formonly.gen02,rme_file.rme13,formonly.gem02,rme_file.rme29,rme_file.rme10,formonly.oma10,rme_file.rme30,rme_file.rme18,rme_file.rme181,rme_file.rme182,rme_file.rme19,rme_file.rme191,rme_file.rme192,rme_file.rme16,rme_file.rme17,rme_file.rme15,rme_file.rme151,rme_file.rme152,rme_file.rme153,rme_file.rmeconf,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

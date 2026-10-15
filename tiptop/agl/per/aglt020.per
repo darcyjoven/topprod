@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglt020")
+VBox vb6
+Folder pc1
+Page Page1(text=%"Page0")
+VBox vb5
+Grid gr2
+{
+  aet01     [aet01            ]   aet02     [aet02            ]
+  aet01_1   [aet01_1          ]   aet03     [aet03            ]
+  aet01_2   [aet01_2          ]
+
+}
+END -- gr2
+Table tb2
+{
+[aet04        |aet05         |aet05_1     |aet06    |aet07     |aet08     |aet09   ]
+[aet04        |aet05         |aet05_1     |aet06    |aet07     |aet08     |aet09   ]
+[aet04        |aet05         |aet05_1     |aet06    |aet07     |aet08     |aet09   ]
+[aet04        |aet05         |aet05_1     |aet06    |aet07     |aet08     |aet09   ]
+[aet04        |aet05         |aet05_1     |aet06    |aet07     |aet08     |aet09   ]
+
+}
+END -- tb2
+END -- vb5
+END -- Page1
+END -- pc1
+Grid gr10
+{
+   ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr10
+END -- vb6
+END -- aglt020
+
+TABLES
+aet_file
+ATTRIBUTES
+ButtonEdit aet01=aet_file.aet01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit aet02=aet_file.aet02, tabIndex=4, not null, required;
+Edit aet01_1=formonly.aet01_1 type CHAR, tabIndex=3;
+Edit aet03=aet_file.aet03, tabIndex=5, not null, required;
+Edit aet01_2=formonly.aet01_2 type CHAR, tabIndex=2;
+ButtonEdit aet04=aet_file.aet04, action=controlp, tabIndex=7, title="aet04", not null, required, image="zoom";
+ButtonEdit aet05=aet_file.aet05, action=controlp, tabIndex=9, title="aet05", not null, required, image="zoom";
+Edit aet05_1=formonly.aet05_1 type CHAR, tabIndex=12, title="aet05_1", noEntry;
+ComboBox aet06=aet_file.aet06, tabIndex=10, title="aet06", not null, required, items=(("+", "add"),("-", "decrease
+"));
+Edit aet07=aet_file.aet07, tabIndex=6, title="aet07";
+ButtonEdit aet08=aet_file.aet08, action=controlp, tabIndex=8, title="aet08", not null, required, image="zoom";
+Edit aet09=aet_file.aet09, tabIndex=11, title="aet09";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aet1(aet_file.aet04,aet_file.aet05,formonly.aet05_1,aet_file.aet06,aet_file.aet07,aet_file.aet08,aet_file.aet09)
+SCREEN RECORD Undefined(aet_file.aet01,aet_file.aet02,formonly.aet01_1,aet_file.aet03,formonly.aet01_2,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi920.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi920")
+VBox VBox1
+Folder pc516
+Page page01(text="Main")
+Table s_ozc
+{
+[ozc02                              |ozc01               |ozcacti   ]
+[ozc02                              |ozc01               |ozcacti   ]
+[ozc02                              |ozc01               |ozcacti   ]
+[ozc02                              |ozc01               |ozcacti   ]
+[ozc02                              |ozc01               |ozcacti   ]
+[ozc02                              |ozc01               |ozcacti   ]
+[ozc02                              |ozc01               |ozcacti   ]
+[ozc02                              |ozc01               |ozcacti   ]
+[ozc02                              |ozc01               |ozcacti   ]
+[ozc02                              |ozc01               |ozcacti   ]
+
+}
+END -- s_ozc
+END -- page01
+END -- pc516
+Grid gr2164
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr2164
+END -- VBox1
+END -- axmi920
+
+TABLES
+ozc_file
+ATTRIBUTES
+Edit ozc02=ozc_file.ozc02, tabIndex=1, title="Transportantion Type Desc", not null, required;
+ComboBox ozc01=ozc_file.ozc01, tabIndex=2, title="Transportantion Type", not null, required, queryEditable, items=(("O", %"Ocean"),("C", %"Container"),("H", %"House"),("A", %"Air"),("E", %"Express"));
+CheckBox ozcacti=ozc_file.ozcacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ozc(ozc_file.ozc02,ozc_file.ozc01,ozc_file.ozcacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

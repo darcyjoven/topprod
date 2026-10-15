@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq803.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq803")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr3364
+{
+ Account NO.        [ted01                         ]
+ Account Name       [aag02                                             ]
+ Book No.           [ted00]
+ Year               [ted03     ]
+}
+END -- gr3364
+Grid gr3365
+{
+ Trans.Code         [ted011    ] [aee04              ]
+ Transaction Type   [ted012    ] [ahe02   ]
+ Trans.Code Value   [ted02              ]
+ Currency           [ted09     ]
+}
+END -- gr3365
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_ted(unsortableColumns)
+{
+[seq       |ted10                 |ted11                   |summ                ]
+[seq       |ted10                 |ted11                   |summ                ]
+[seq       |ted10                 |ted11                   |summ                ]
+[seq       |ted10                 |ted11                   |summ                ]
+[seq       |ted10                 |ted11                   |summ                ]
+[seq       |ted10                 |ted11                   |summ                ]
+[seq       |ted10                 |ted11                   |summ                ]
+[seq       |ted10                 |ted11                   |summ                ]
+[seq       |ted10                 |ted11                   |summ                ]
+[seq       |ted10                 |ted11                   |summ                ]
+}
+END -- s_ted
+Grid gr3366
+{
+ ---------- Rows [cnt   ] ----------
+
+
+
+}
+END -- gr3366
+END -- VBox1
+END -- gglq803
+
+TABLES
+ted_file
+ATTRIBUTES
+Edit ted01=ted_file.ted01, tabIndex=1;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+Edit ted00=ted_file.ted00, tabIndex=15;
+Edit ted03=ted_file.ted03, tabIndex=3;
+Edit ted011=ted_file.ted011, tabIndex=4;
+Edit aee04=formonly.aee04 type CHAR, tabIndex=5, noEntry;
+ButtonEdit ted012=ted_file.ted012, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+Edit ahe02=formonly.ahe02 type CHAR, tabIndex=7, noEntry;
+Edit ted02=ted_file.ted02, tabIndex=8;
+Edit ted09=ted_file.ted09, tabIndex=9;
+Edit seq=formonly.seq type CHAR, tabIndex=10, title="Period", noEntry;
+Edit ted10=ted_file.ted10, tabIndex=11, title="Debit Trans.Amt", noEntry;
+Edit ted11=ted_file.ted11, tabIndex=12, title="Credit Trans.Amt", noEntry;
+Edit summ=formonly.summ type CHAR, tabIndex=13, title="Balance", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ted(formonly.seq,ted_file.ted10,ted_file.ted11,formonly.summ)
+SCREEN RECORD Undefined(ted_file.ted01,formonly.aag02,ted_file.ted00,ted_file.ted03,ted_file.ted011,formonly.aee04,ted_file.ted012,formonly.ahe02,ted_file.ted02,ted_file.ted09,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi503_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aooi503_1")
+VBox VBox1
+Grid gr4668
+{
+ <G group01                         >
+  Attribute  [att                 ]
+  Parameter  [par                 ]
+  Function   [fun                 ]
+  Expession  [exp                 ]
+
+ <                                  >
+
+}
+END -- gr4668
+Grid gr4669
+{
+ <G group02                                >
+ [add  ][minus][multi][divid][k1   ][k2   ]
+
+ <                                         >
+
+}
+END -- gr4669
+Grid gr4670
+{
+ <G group03                                >
+ [text                                    ]
+ [                                        ]
+ [                                        ]
+ [                                        ]
+
+ <                                         >
+
+}
+END -- gr4670
+END -- VBox1
+END -- aooi503_1
+
+ATTRIBUTES
+Group group01:group01, text="Items";
+ComboBox att=formonly.att type CHAR, tabIndex=1;
+ComboBox par=formonly.par type CHAR, tabIndex=2;
+ComboBox fun=formonly.fun type CHAR, tabIndex=3;
+ComboBox exp=formonly.exp type CHAR, tabIndex=4;
+Group group02:group02, text="Operation";
+Button add:add, text="+";
+Button minus:minus, text="-";
+Button multi:multi, text="*";
+Button divid:divid, text="/";
+Button k1:k1, text="(";
+Button k2:k2, text=")";
+Group group03:group03, text="Showresult";
+TextEdit text=formonly.text type CHAR, tabIndex=5, stretch=NONE;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.att,formonly.par,formonly.fun,formonly.exp,formonly.text)
+END -- INSTRUCTIONS
+

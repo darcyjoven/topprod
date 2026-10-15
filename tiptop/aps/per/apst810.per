@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apst810.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apst810")
+VBox vb3
+Grid gr5444
+{
+ <G group01                                                                                                                                                                                                                                      >
+  APS Version   [vob01               ]
+  Save Version  [vob02               ]
+ <                                                                                                                                                                                                                                               >
+ <T s_vob                                                                                                                                                                                                                                        >
+ [vob36    |status  |vaz24     |vob13   |gen0|pmc01|vaz23   |vob07   |ima02   |vob11   |ischang|vob08               |unst_qty            |vob33               |qty                 |vob04     |sdate     |vob03 |vob20 |voc05 |vob14     ]
+ [vob36    |status  |vaz24     |vob13   |gen0|pmc01|vaz23   |vob07   |ima02   |vob11   |ischang|vob08               |unst_qty            |vob33               |qty                 |vob04     |sdate     |vob03 |vob20 |voc05 |vob14     ]
+ [vob36    |status  |vaz24     |vob13   |gen0|pmc01|vaz23   |vob07   |ima02   |vob11   |ischang|vob08               |unst_qty            |vob33               |qty                 |vob04     |sdate     |vob03 |vob20 |voc05 |vob14     ]
+ [vob36    |status  |vaz24     |vob13   |gen0|pmc01|vaz23   |vob07   |ima02   |vob11   |ischang|vob08               |unst_qty            |vob33               |qty                 |vob04     |sdate     |vob03 |vob20 |voc05 |vob14     ]
+ [vob36    |status  |vaz24     |vob13   |gen0|pmc01|vaz23   |vob07   |ima02   |vob11   |ischang|vob08               |unst_qty            |vob33               |qty                 |vob04     |sdate     |vob03 |vob20 |voc05 |vob14     ]
+ [vob36    |status  |vaz24     |vob13   |gen0|pmc01|vaz23   |vob07   |ima02   |vob11   |ischang|vob08               |unst_qty            |vob33               |qty                 |vob04     |sdate     |vob03 |vob20 |voc05 |vob14     ]
+ [vob36    |status  |vaz24     |vob13   |gen0|pmc01|vaz23   |vob07   |ima02   |vob11   |ischang|vob08               |unst_qty            |vob33               |qty                 |vob04     |sdate     |vob03 |vob20 |voc05 |vob14     ]
+ [vob36    |status  |vaz24     |vob13   |gen0|pmc01|vaz23   |vob07   |ima02   |vob11   |ischang|vob08               |unst_qty            |vob33               |qty                 |vob04     |sdate     |vob03 |vob20 |voc05 |vob14     ]
+ [vob36    |status  |vaz24     |vob13   |gen0|pmc01|vaz23   |vob07   |ima02   |vob11   |ischang|vob08               |unst_qty            |vob33               |qty                 |vob04     |sdate     |vob03 |vob20 |voc05 |vob14     ]
+ [vob36    |status  |vaz24     |vob13   |gen0|pmc01|vaz23   |vob07   |ima02   |vob11   |ischang|vob08               |unst_qty            |vob33               |qty                 |vob04     |sdate     |vob03 |vob20 |voc05 |vob14     ]
+ <                                                                                                                                                                                                                                               >
+
+
+}
+END -- gr5444
+Grid gr881
+{
+ ----------  Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr881
+END -- vb3
+END -- apst810
+
+TABLES
+gen_file,
+vob_file,
+pmc_file
+ATTRIBUTES
+Group group01:group01, text="Basic Data";
+ButtonEdit vob01=formonly.vob01 type VARCHAR, action=controlp, tabIndex=18, image="zoom", comment="Assign Add/Query Item#";
+Edit vob02=formonly.vob02 type CHAR, tabIndex=10;
+Table s_vob:s_vob;
+CheckBox vob36=vob_file.vob36, tabIndex=2, title="vob36", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox status=formonly.status type CHAR, tabIndex=1, title="status", noEntry, items=(("A", "請購調整"),("B", "採購單調整"),("C", "採購單變更"),("D", "不可調整"));
+ComboBox vaz24=formonly.vaz24 type CHAR, tabIndex=12, title="Doc. Type", noEntry, items=(("0", "請購單"),("1", "採購單"));
+Edit vob13=formonly.vob13 type CHAR, tabIndex=3, title="Source Doc. No.", noEntry;
+ButtonEdit gen0=gen_file.gen01, action=controlp, tabIndex=24, title="gen01", image="zoom";
+ButtonEdit pmc01=pmc_file.pmc01, action=controlp, tabIndex=25, title="pmc01", image="zoom";
+Edit vaz23=formonly.vaz23 type CHAR, tabIndex=4, title="Line No", noEntry;
+ButtonEdit vob07=formonly.vob07 type CHAR, action=controlp, tabIndex=5, title="Item No.", image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=6, title="Item No.", noEntry;
+ButtonEdit vob11=formonly.vob11 type CHAR, action=controlp, tabIndex=7, title="Purchase Unit", image="zoom";
+CheckBox ischang=formonly.IsChange type CHAR, tabIndex=19, title="IsChange", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit vob08=vob_file.vob08, tabIndex=20, title="vob08", noEntry;
+Edit unst_qty=formonly.unst_qty type CHAR, tabIndex=8, title="unst_qty", noEntry;
+Edit vob33=vob_file.vob33, tabIndex=9, title="vob33", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=13, title="qty", noEntry;
+DateEdit vob04=vob_file.vob04, tabIndex=11, title="vob04", noEntry, format="yyyy/mm/dd";
+DateEdit sdate=formonly.sdate type DATE, tabIndex=14, title="Orig. Delivery Date", noEntry, format="yyyy/mm/dd";
+Edit vob03=formonly.vob03 type CHAR, tabIndex=17, title="vob03", noEntry;
+Edit vob20=formonly.vob20 type CHAR, tabIndex=21, title="vob20", noEntry;
+Edit voc05=formonly.voc05 type CHAR, tabIndex=22, title="voc05", noEntry;
+Edit vob14=formonly.vob14 type CHAR, tabIndex=23, title="vob14";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vob(vob_file.vob36,formonly.status,formonly.vaz24,formonly.vob13,gen_file.gen01,pmc_file.pmc01,formonly.vaz23,formonly.vob07,formonly.ima02,formonly.vob11,formonly.IsChange,vob_file.vob08,formonly.unst_qty,vob_file.vob33,formonly.qty,vob_file.vob04,formonly.sdate,formonly.vob03,formonly.vob20,formonly.voc05,formonly.vob14)
+SCREEN RECORD Undefined(formonly.vob01,formonly.vob02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

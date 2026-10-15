@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr151.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr151")
+VBox vb2
+Grid gr7
+{
+ <G group02                                                                           >
+  Item No.            [ima01               ] Other Group 3     [ima11               ]
+  Main Group Code     [ima06               ] Cost Group        [ima12               ]
+  Other Group 1       [ima09               ] Product Class     [ima131              ]
+  Other Group 2       [ima10               ]
+
+ <                                                                                    >
+
+}
+END -- gr7
+Group group03(text="INPUT")
+Grid gr8
+{
+ <G group04                                                                                         >
+ [s1                  ]
+ [t1                  ]
+ [u1                  ]
+ <                                                                                                  >
+ <G group05                                                                                         >
+  Year       [yy  ]   Month   [mm]   Idle Days [tt       ] Cost Method  [ctype                    ]
+ [a                                                  ]
+ [c                                                  ]
+
+ <                                                                                                  >
+ <G group07                                                                                         >
+  [d                  ]
+  [                   ]
+ <                                                                                                  >
+ <G group06                                                                                         >
+ [o                                                  ]
+  Account Curr  [a_curr]  Trans Curr  [t_curr]  Rate  [rate         ]
+ <                                                                                                  >
+ <G gb14                                                                                            >
+ [p                     ]
+  Plant No. [plant_1   ][plant_2   ][plant_3   ][plant_4   ]
+            [plant_5   ][plant_6   ][plant_7   ][plant_8   ]
+ <                                                                                                  >
+
+}
+END -- gr8
+END -- group03
+Grid gr9
+{
+[more                                                ]
+
+}
+END -- gr9
+END -- vb2
+END -- axcr151
+
+ATTRIBUTES
+Group group02:group02, text="QBE1";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ima11=formonly.ima11 type VARCHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ima06=formonly.ima06 type VARCHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ima12=formonly.ima12 type VARCHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ima09=formonly.ima09 type VARCHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ima131=formonly.ima131 type VARCHAR, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ima10=formonly.ima10 type VARCHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Details";
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, queryEditable, items=(("1", "Main Group Code"),("2", "Other Group 1"),("3", "Other Group 2"),("4", "Other Group 3"),("5", "Cost Group"),("6", "Product Class"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=10, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05;
+Edit yy=formonly.yy type SMALLINT, tabIndex=11, not null, required;
+Edit mm=formonly.mm type SMALLINT, tabIndex=12, not null, required;
+Edit tt=formonly.tt type SMALLINT, tabIndex=13;
+ComboBox ctype=formonly.ctype type VARCHAR, tabIndex=14, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually Batch Cost"),("4", "Identify Manually Item Cost"),("5", "Identify Manually Store Profit Center"));
+CheckBox a=formonly.a type VARCHAR, tabIndex=15, text="Print Item Details", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=21, text="Print Over Price Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group07:group07, text=%"Calculation Base";
+RadioGroup d=formonly.d type CHAR, tabIndex=31, items=(("1", "First In First Out"),("2", "Transaction date"));
+Group group06:group06;
+CheckBox o=formonly.o type VARCHAR, tabIndex=16, text="Trans Of Curr", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit a_curr=formonly.a_curr type VARCHAR, action=controlp, tabIndex=17, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit t_curr=formonly.t_curr type VARCHAR, action=controlp, tabIndex=18, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit rate=formonly.rate type SMALLINT, tabIndex=19, not null, required;
+Group gb14:gb14;
+CheckBox p=formonly.p type CHAR, tabIndex=30, text="Multi-logistics", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit plant_1=formonly.plant_1 type CHAR, action=controlp, tabIndex=22, image="zoom";
+ButtonEdit plant_2=formonly.plant_2 type CHAR, action=controlp, tabIndex=23, image="zoom";
+ButtonEdit plant_3=formonly.plant_3 type CHAR, action=controlp, tabIndex=24, image="zoom";
+ButtonEdit plant_4=formonly.plant_4 type CHAR, action=controlp, tabIndex=25, image="zoom";
+ButtonEdit plant_5=formonly.plant_5 type CHAR, action=controlp, tabIndex=26, image="zoom";
+ButtonEdit plant_6=formonly.plant_6 type CHAR, action=controlp, tabIndex=27, image="zoom";
+ButtonEdit plant_7=formonly.plant_7 type CHAR, action=controlp, tabIndex=28, image="zoom";
+ButtonEdit plant_8=formonly.plant_8 type CHAR, action=controlp, tabIndex=29, image="zoom";
+CheckBox more=formonly.more type VARCHAR, tabIndex=20, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima11,formonly.ima06,formonly.ima12,formonly.ima09,formonly.ima131,formonly.ima10,formonly.s1,formonly.t1,formonly.u1,formonly.yy,formonly.mm,formonly.tt,formonly.ctype,formonly.a,formonly.c,formonly.o,formonly.a_curr,formonly.t_curr,formonly.rate,formonly.p,formonly.plant_1,formonly.plant_2,formonly.plant_3,formonly.plant_4,formonly.plant_5,formonly.plant_6,formonly.plant_7,formonly.plant_8,formonly.more,formonly.d)
+END -- INSTRUCTIONS
+

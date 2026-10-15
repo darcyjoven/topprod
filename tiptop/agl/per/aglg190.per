@@ -1,0 +1,96 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglg190.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr190")
+VBox vb7
+Group group01(text="INPUT")
+VBox vb6
+Grid gr2670
+{
+ <G group02                                                        >
+ [rtype                                                       ]
+ <                                                                 >
+
+
+}
+END -- gr2670
+Grid gr2671
+{
+ Book No.            [b                   ]
+ Report Structure No.[a                   ]
+ Group No.           [abe01               ]
+ Enter Year          [yy                  ]
+ Period (Initial-End)[bm                  ]-[em                  ]
+ Decimal Digits      [e                   ]
+ Print Minimum Level#[f                   ]
+}
+END -- gr2671
+Grid gr2672
+{
+ <G group03                       >
+  [d                             ]
+ <                                >
+
+}
+END -- gr2672
+Grid gr2673
+{
+[c                             ]
+[h                             ]
+[aag38                                        ]
+
+}
+END -- gr2673
+Grid gr2674
+{
+ <G group04                                  >
+  [o                                       ]
+   G/L Curr.           [r                   ]
+   Convert Curr.       [p                   ]
+   * Ex.Rate           [q                   ]
+ <                                           >
+}
+END -- gr2674
+END -- vb6
+END -- group01
+Grid gr2675
+{
+[more                                                        ]
+
+}
+END -- gr2675
+END -- vb7
+END -- aglr190
+
+ATTRIBUTES
+Group group02:group02, text="Report Type";
+RadioGroup rtype=formonly.rtype type CHAR, tabIndex=1, items=(("1", "Balance Sheet"),("2", "Income statement"));
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit abe01=formonly.abe01 type SMALLINT, action=controlp, tabIndex=4, image="zoom";
+Edit yy=formonly.yy type SMALLINT, tabIndex=5;
+Edit bm=formonly.bm type SMALLINT, tabIndex=6;
+Edit em=formonly.em type SMALLINT, tabIndex=7;
+Edit e=formonly.e type CHAR, tabIndex=8;
+Edit f=formonly.f type SMALLINT, tabIndex=9;
+Group group03:group03, text="Amount Unit";
+RadioGroup d=formonly.d type CHAR, tabIndex=10, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+CheckBox c=formonly.c type CHAR, tabIndex=11, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=12, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag38=formonly.aag38 type CHAR, tabIndex=18, text="Inter Income Account No.", not null, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04;
+CheckBox o=formonly.o type CHAR, tabIndex=13, text="Convert Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=14, noEntry;
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=15, image="zoom";
+Edit q=formonly.q type DECIMAL, tabIndex=16;
+CheckBox more=formonly.more type CHAR, tabIndex=17, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rtype,formonly.b,formonly.a,formonly.abe01,formonly.yy,formonly.bm,formonly.em,formonly.e,formonly.f,formonly.d,formonly.c,formonly.h,formonly.aag38,formonly.o,formonly.r,formonly.p,formonly.q,formonly.more)
+END -- INSTRUCTIONS
+

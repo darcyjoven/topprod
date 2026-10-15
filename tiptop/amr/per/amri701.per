@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amri701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amri701")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr3891
+{
+[dummy01                        ]
+ Ver No.             [msp01     ]
+ choice              [msp10     ]
+}
+END -- gr3891
+END -- page01
+END -- folder01
+Table s_msp
+{
+[msp02 |msp03      |imd02               |msp04  |smydesc     |msp05       ]
+[msp02 |msp03      |imd02               |msp04  |smydesc     |msp05       ]
+[msp02 |msp03      |imd02               |msp04  |smydesc     |msp05       ]
+[msp02 |msp03      |imd02               |msp04  |smydesc     |msp05       ]
+[msp02 |msp03      |imd02               |msp04  |smydesc     |msp05       ]
+[msp02 |msp03      |imd02               |msp04  |smydesc     |msp05       ]
+[msp02 |msp03      |imd02               |msp04  |smydesc     |msp05       ]
+[msp02 |msp03      |imd02               |msp04  |smydesc     |msp05       ]
+[msp02 |msp03      |imd02               |msp04  |smydesc     |msp05       ]
+[msp02 |msp03      |imd02               |msp04  |smydesc     |msp05       ]
+
+}
+END -- s_msp
+Grid gr3892
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3892
+END -- vb2
+END -- amri701
+
+TABLES
+msp_file
+ATTRIBUTES
+Label dummy01:dummy01;
+Edit msp01=msp_file.msp01, tabIndex=1, not null, required, comment="Key Field, No Blank/Repeated!    ";
+ComboBox msp10=msp_file.msp10, tabIndex=10, default = "0", not null, required, items=(("0", "upright"),("1", "contrary"));
+Edit msp02=msp_file.msp02, tabIndex=2, title="Ln#", not null, required;
+ButtonEdit msp03=msp_file.msp03, action=controlp, tabIndex=3, title="Warehouse", image="zoom", comment="<^P>Qry Warehouse #,Enter MRP Add Warehouse#";
+Edit imd02=formonly.imd02 type CHAR, tabIndex=4, title="WareHouse Name", noEntry;
+ButtonEdit msp04=msp_file.msp04, action=controlp, tabIndex=5, title="Doc.", image="zoom", comment="<^P>Qry Documents,Enter MRP Add Document OR MPS Last Code No.";
+Edit smydesc=formonly.smydesc type CHAR, tabIndex=6, title="Doc.Name", noEntry;
+ButtonEdit msp05=msp_file.msp05, action=controlp, tabIndex=7, title="Address", image="zoom", comment="<^P>Qry Add,Enter MRP Add P/R & P/O Delivery Add.";
+Edit cnt=formonly.cnt type CHAR, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_msp(msp_file.msp02,msp_file.msp03,formonly.imd02,msp_file.msp04,formonly.smydesc,msp_file.msp05)
+SCREEN RECORD Undefined(msp_file.msp01,msp_file.msp10,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

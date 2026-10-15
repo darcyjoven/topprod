@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi120")
+VBox VBox1
+Folder pc541
+Page page01(text="Main")
+VBox VBox2
+Table s_imz
+{
+[imz01   |imz02                         |imzac]
+[imz01   |imz02                         |imzac]
+[imz01   |imz02                         |imzac]
+[imz01   |imz02                         |imzac]
+[imz01   |imz02                         |imzac]
+[imz01   |imz02                         |imzac]
+[imz01   |imz02                         |imzac]
+[imz01   |imz02                         |imzac]
+[imz01   |imz02                         |imzac]
+[imz01   |imz02                         |imzac]
+
+}
+END -- s_imz
+END -- VBox2
+END -- page01
+END -- pc541
+Grid gr2998
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2998
+END -- VBox1
+END -- aimi120
+
+TABLES
+imz_file
+ATTRIBUTES
+Edit imz01=imz_file.imz01, tabIndex=1, title="Group Cd", not null, required, comment="Assign Add/Query Item Group Code";
+Edit imz02=imz_file.imz02, tabIndex=2, title="Description";
+CheckBox imzac=imz_file.imzacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imz(imz_file.imz01,imz_file.imz02,imz_file.imzacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

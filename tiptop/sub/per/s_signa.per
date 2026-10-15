@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_signa.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_signa")
+Grid gr3923
+{
+ <G group01                                        >
+  Approval Level       [pmmsign    ]
+  Days of Approval Done[pmmdays    ]
+  Approval Priority    [pmmprit    ]
+  Approval Amount Range[azt03      ]-[azt04       ]
+ <                                                 >
+ <G group02                ><G group03             >
+   To-Approve [pm]           Approved [p1]
+   [ac3_m1  ]                [ac3_s1  ]
+   [ac3_m2  ]                [ac3_s2  ]
+   [ac3_m3  ]                [ac3_s3  ]
+   [ac3_m4  ]                [ac3_s4  ]
+   [ac3_m5  ]                [ac3_s5  ]
+   [ac3_m6  ]                [ac3_s6  ]
+ <                         ><                      >
+
+}
+END -- gr3923
+END -- s_signa
+
+TABLES
+pmm_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit pmmsign=pmm_file.pmmsign, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Level No.";
+Edit pmmdays=pmm_file.pmmdays, tabIndex=2;
+Edit pmmprit=pmm_file.pmmprit, tabIndex=3;
+Edit azt03=formonly.azt03 type CHAR, tabIndex=4, noEntry;
+Edit azt04=formonly.azt04 type CHAR, tabIndex=5, noEntry;
+Group group02:group02;
+Edit pm=pmm_file.pmmsmax, tabIndex=6, noEntry;
+Edit ac3_m1=formonly.ac3_m1 type VARCHAR, tabIndex=7;
+Edit ac3_m2=formonly.ac3_m2 type VARCHAR, tabIndex=8;
+Edit ac3_m3=formonly.ac3_m3 type VARCHAR, tabIndex=9;
+Edit ac3_m4=formonly.ac3_m4 type VARCHAR, tabIndex=10;
+Edit ac3_m5=formonly.ac3_m5 type VARCHAR, tabIndex=11;
+Edit ac3_m6=formonly.ac3_m6 type VARCHAR, tabIndex=12;
+Group group03:group03;
+Edit p1=pmm_file.pmmsseq, tabIndex=13, noEntry;
+Edit ac3_s1=formonly.ac3_s1 type VARCHAR, tabIndex=14;
+Edit ac3_s2=formonly.ac3_s2 type VARCHAR, tabIndex=15;
+Edit ac3_s3=formonly.ac3_s3 type VARCHAR, tabIndex=16;
+Edit ac3_s4=formonly.ac3_s4 type VARCHAR, tabIndex=17;
+Edit ac3_s5=formonly.ac3_s5 type VARCHAR, tabIndex=18;
+Edit ac3_s6=formonly.ac3_s6 type VARCHAR, tabIndex=19;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pmm_file.pmmsign,pmm_file.pmmdays,pmm_file.pmmprit,formonly.azt03,formonly.azt04,pmm_file.pmmsmax,formonly.ac3_m1,formonly.ac3_m2,formonly.ac3_m3,formonly.ac3_m4,formonly.ac3_m5,formonly.ac3_m6,pmm_file.pmmsseq,formonly.ac3_s1,formonly.ac3_s2,formonly.ac3_s3,formonly.ac3_s4,formonly.ac3_s5,formonly.ac3_s6)
+END -- INSTRUCTIONS
+

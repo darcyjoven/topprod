@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrr622.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr622")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                                                                            >
+  Department No.      [oma15               ]
+  Employee No.        [oma14               ]
+  customer cate       [occ03               ]
+  Customer No.        [oma03               ]
+  Account No.         [oma18               ]
+ <                                                                                                     >
+
+}
+END -- gr1
+Group group02(text="INPUT")
+Grid gr11
+{
+  Aging Cate                 [omi01     ]
+  A/R Enter Account Deadline [edate       ]
+  Aging Section              [a1        ][a2        ][a3        ][a4        ][a5        ][a6        ]
+ [detail                            ]
+ [e                                 ]
+ <G group05                                                                                         >
+ [type                ]
+
+ <                                                                                                  >
+ <G group03                                                                                         >
+  [s1                   ][s2                   ][s3                   ]
+  [t1                   ][t2                  ] [t3                  ]
+  [u1                   ][u2                  ] [u3                  ]
+
+ <                                                                                                  >
+
+}
+END -- gr11
+END -- group02
+Grid gr2
+{
+[more                                             ]
+
+}
+END -- gr2
+END -- VBox1
+END -- axrr622
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oma15=formonly.oma15 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit oma14=formonly.oma14 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit occ03=formonly.occ03 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit oma03=formonly.oma03 type CHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit oma18=formonly.oma18 type CHAR, action=controlp, tabIndex=26, image="zoom";
+ButtonEdit omi01=formonly.omi01 type CHAR, action=controlp, tabIndex=5, image="zoom.png";
+DateEdit edate=formonly.edate type DATE, tabIndex=6;
+Edit a1=formonly.a1 type SMALLINT, tabIndex=7;
+Edit a2=formonly.a2 type SMALLINT, tabIndex=8;
+Edit a3=formonly.a3 type SMALLINT, tabIndex=9;
+Edit a4=formonly.a4 type SMALLINT, tabIndex=10;
+Edit a5=formonly.a5 type SMALLINT, tabIndex=11;
+Edit a6=formonly.a6 type SMALLINT, tabIndex=12;
+CheckBox detail=formonly.detail type CHAR, tabIndex=13, text="Print Detailed Account?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=14, text="Deduct Allowance Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05, text="Data Contents";
+RadioGroup type=formonly.type type VARCHAR, tabIndex=16, items=(("1", "Affiliate"),("2", "Not Affiliate"),("3", "All "));
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=17, queryEditable, items=(("1", "Department No."),("2", "Employee No."),("3", "Customer cate"),("4", "Customer No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=24, queryEditable, items=(("1", "Department No."),("2", "Employee No."),("3", "Customer cate"),("4", "Customer No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=25, queryEditable, items=(("1", "Department No."),("2", "Employee No."),("3", "Customer cate"),("4", "Customer No."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=18, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=19, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=20, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=21, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=22, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=23, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=15, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oma15,formonly.oma14,formonly.occ03,formonly.oma03,formonly.omi01,formonly.edate,formonly.a1,formonly.a2,formonly.a3,formonly.a4,formonly.a5,formonly.a6,formonly.detail,formonly.e,formonly.type,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.more,formonly.oma18)
+END -- INSTRUCTIONS
+

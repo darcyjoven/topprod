@@ -1,0 +1,28 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapt110_1")
+Grid gr342
+{
+ <G group01                                 >
+ [body_sw                                  ]
+
+ <                                          >
+
+}
+END -- gr342
+END -- aapt110_1
+
+ATTRIBUTES
+Group group01:group01, text="Select Body Entering Method";
+RadioGroup body_sw=formonly.body_sw type CHAR, tabIndex=1, items=(("1", "Access Store-in Note by Invoice No."),("2", "Access St-in Note by Condition"),("3", "Manually Enter St-in Note"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.body_sw)
+END -- INSTRUCTIONS
+

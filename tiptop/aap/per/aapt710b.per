@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt710b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt710b")
+VBox VBox1
+Table s_alh
+{
+[alh01           |alh30           |alh02        |alh12               |payd     ]
+[alh01           |alh30           |alh02        |alh12               |payd     ]
+[alh01           |alh30           |alh02        |alh12               |payd     ]
+[alh01           |alh30           |alh02        |alh12               |payd     ]
+[alh01           |alh30           |alh02        |alh12               |payd     ]
+[alh01           |alh30           |alh02        |alh12               |payd     ]
+[alh01           |alh30           |alh02        |alh12               |payd     ]
+[alh01           |alh30           |alh02        |alh12               |payd     ]
+[alh01           |alh30           |alh02        |alh12               |payd     ]
+[alh01           |alh30           |alh02        |alh12               |payd     ]
+
+}
+END -- s_alh
+Grid gr496
+{
+ <G group01                >
+  [alh12_t             ]
+
+ <                         >
+
+}
+END -- gr496
+END -- VBox1
+END -- aapt710b
+
+TABLES
+alh_file
+ATTRIBUTES
+Edit alh01=alh_file.alh01, tabIndex=1, title="Arriving Note";
+Edit alh30=alh_file.alh30, tabIndex=2, title="Arrvl.No.";
+DateEdit alh02=alh_file.alh02, tabIndex=3, title="Interest Dt.";
+Edit alh12=alh_file.alh12, tabIndex=4, title="Amt";
+Edit payd=formonly.payd type CHAR, tabIndex=5, title="Paid Date";
+Group group01:group01;
+Edit alh12_t=formonly.alh12_t type CHAR, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_alh(alh_file.alh01,alh_file.alh30,alh_file.alh02,alh_file.alh12,formonly.payd)
+SCREEN RECORD Undefined(formonly.alh12_t)
+END -- INSTRUCTIONS
+

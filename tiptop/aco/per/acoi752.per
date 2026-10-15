@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi752.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi752")
+VBox vb2
+Folder pc883
+Page page01(text="Main")
+Table s_cec
+{
+[cec01               |cec02               |cecacti  ]
+[cec01               |cec02               |cecacti  ]
+[cec01               |cec02               |cecacti  ]
+[cec01               |cec02               |cecacti  ]
+[cec01               |cec02               |cecacti  ]
+[cec01               |cec02               |cecacti  ]
+[cec01               |cec02               |cecacti  ]
+[cec01               |cec02               |cecacti  ]
+[cec01               |cec02               |cecacti  ]
+[cec01               |cec02               |cecacti  ]
+
+}
+END -- s_cec
+END -- page01
+END -- pc883
+Grid gr4740
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4740
+END -- vb2
+END -- acoi752
+
+TABLES
+cec_file
+ATTRIBUTES
+Edit cec01=cec_file.cec01, tabIndex=1, title="Usage Code";
+Edit cec02=cec_file.cec02, tabIndex=2, title="Usage Desc.", not null, required;
+CheckBox cecacti=cec_file.cecacti, tabIndex=3, title="Valid Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cec(cec_file.cec01,cec_file.cec02,cec_file.cecacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

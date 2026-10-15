@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apss305.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"APS Station Config")
+VBox VBox1
+Grid gr1426
+{
+ <G group01                                                                              >
+  Plant No.                          [vlg01          ]     [azp02                      ]
+  GPM station name                   [vlg02               ]
+  GPM station IP address             [vlg03          ]
+  GPM SOAP Services URL              [vlg04                                             ]
+
+ <                                                                                       >
+
+}
+END -- gr1426
+Table s_bvlg
+{
+[bvlg01       |bvlg02              |bvlg03         |bvlg04                                            ]
+[bvlg01       |bvlg02              |bvlg03         |bvlg04                                            ]
+[bvlg01       |bvlg02              |bvlg03         |bvlg04                                            ]
+[bvlg01       |bvlg02              |bvlg03         |bvlg04                                            ]
+[bvlg01       |bvlg02              |bvlg03         |bvlg04                                            ]
+
+}
+END -- s_bvlg
+END -- VBox1
+END -- apss305
+
+TABLES
+vlg_file
+ATTRIBUTES
+Group group01:group01, text="APS Station Setting";
+ButtonEdit vlg01=vlg_file.vlg01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit azp02=formonly.azp02 type VARCHAR, tabIndex=10, noEntry;
+Edit vlg02=vlg_file.vlg02, tabIndex=2, not null, required;
+Edit vlg03=vlg_file.vlg03, tabIndex=3, not null, required;
+Edit vlg04=vlg_file.vlg04, tabIndex=4, not null, required, scroll;
+Edit bvlg01=formonly.bvlg01 type CHAR, tabIndex=6, title="Plant No.", noEntry;
+Edit bvlg02=formonly.bvlg02 type CHAR, tabIndex=7, title="Station name", noEntry;
+Edit bvlg03=formonly.bvlg03 type CHAR, tabIndex=8, title="IP address", noEntry;
+Edit bvlg04=formonly.bvlg04 type CHAR, tabIndex=9, title="SOAP Services URL", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bvlg(formonly.bvlg01,formonly.bvlg02,formonly.bvlg03,formonly.bvlg04)
+SCREEN RECORD Undefined(vlg_file.vlg01,vlg_file.vlg02,vlg_file.vlg03,vlg_file.vlg04,formonly.azp02)
+END -- INSTRUCTIONS
+

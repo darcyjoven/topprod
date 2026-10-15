@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_gae_wintitle.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_gae_wintitle")
+VBox VBox1
+Grid gr3201
+{
+ <G group01                      >
+  Form ID  [sgae01               ]
+ <                               >
+
+}
+END -- gr3201
+Table sub_gae
+{
+[sgae03     |sgae04                    |sgae11        ]
+[sgae03     |sgae04                    |sgae11        ]
+[sgae03     |sgae04                    |sgae11        ]
+[sgae03     |sgae04                    |sgae11        ]
+[sgae03     |sgae04                    |sgae11        ]
+
+}
+END -- sub_gae
+END -- VBox1
+END -- p_gae_wintitle
+
+ATTRIBUTES
+Group group01:group01;
+Edit sgae01=formonly.sgae01 type CHAR, tabIndex=1, not null, required, comment="Key,No Blank/Repeated!";
+ComboBox sgae03=formonly.sgae03 type CHAR, tabIndex=2, title="Language", not null, required, queryEditable;
+Edit sgae04=formonly.sgae04 type CHAR, tabIndex=3, title="Window Title";
+CheckBox sgae11=formonly.sgae11 type CHAR, tabIndex=4, title="Customized", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD sub_gae(formonly.sgae03,formonly.sgae04,formonly.sgae11)
+SCREEN RECORD Undefined(formonly.sgae01)
+END -- INSTRUCTIONS
+

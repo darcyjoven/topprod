@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="anmq011")
+VBox vb2
+Table s_nps
+{
+[nme27   |nps01           |nme22               |nme13               |nps03     |nps05          |nps14       |nps07          |nps08               |nps09               |nps26          |nps10           |nps11               |nps27               |nps12       |nps13     |nps20|nps15               |nps16               |nps17     ]
+[nme27   |nps01           |nme22               |nme13               |nps03     |nps05          |nps14       |nps07          |nps08               |nps09               |nps26          |nps10           |nps11               |nps27               |nps12       |nps13     |nps20|nps15               |nps16               |nps17     ]
+[nme27   |nps01           |nme22               |nme13               |nps03     |nps05          |nps14       |nps07          |nps08               |nps09               |nps26          |nps10           |nps11               |nps27               |nps12       |nps13     |nps20|nps15               |nps16               |nps17     ]
+[nme27   |nps01           |nme22               |nme13               |nps03     |nps05          |nps14       |nps07          |nps08               |nps09               |nps26          |nps10           |nps11               |nps27               |nps12       |nps13     |nps20|nps15               |nps16               |nps17     ]
+[nme27   |nps01           |nme22               |nme13               |nps03     |nps05          |nps14       |nps07          |nps08               |nps09               |nps26          |nps10           |nps11               |nps27               |nps12       |nps13     |nps20|nps15               |nps16               |nps17     ]
+[nme27   |nps01           |nme22               |nme13               |nps03     |nps05          |nps14       |nps07          |nps08               |nps09               |nps26          |nps10           |nps11               |nps27               |nps12       |nps13     |nps20|nps15               |nps16               |nps17     ]
+[nme27   |nps01           |nme22               |nme13               |nps03     |nps05          |nps14       |nps07          |nps08               |nps09               |nps26          |nps10           |nps11               |nps27               |nps12       |nps13     |nps20|nps15               |nps16               |nps17     ]
+[nme27   |nps01           |nme22               |nme13               |nps03     |nps05          |nps14       |nps07          |nps08               |nps09               |nps26          |nps10           |nps11               |nps27               |nps12       |nps13     |nps20|nps15               |nps16               |nps17     ]
+[nme27   |nps01           |nme22               |nme13               |nps03     |nps05          |nps14       |nps07          |nps08               |nps09               |nps26          |nps10           |nps11               |nps27               |nps12       |nps13     |nps20|nps15               |nps16               |nps17     ]
+[nme27   |nps01           |nme22               |nme13               |nps03     |nps05          |nps14       |nps07          |nps08               |nps09               |nps26          |nps10           |nps11               |nps27               |nps12       |nps13     |nps20|nps15               |nps16               |nps17     ]
+[nme27   |nps01           |nme22               |nme13               |nps03     |nps05          |nps14       |nps07          |nps08               |nps09               |nps26          |nps10           |nps11               |nps27               |nps12       |nps13     |nps20|nps15               |nps16               |nps17     ]
+}
+END -- s_nps
+Grid gr1
+{
+  Rows [cnt             ]
+
+
+}
+END -- gr1
+END -- vb2
+END -- anmq011
+
+TABLES
+nme_file,
+nps_file
+ATTRIBUTES
+Edit nme27=nme_file.nme27, tabIndex=2, title=%"serial No";
+ButtonEdit nps01=nps_file.nps01, action=controlp, tabIndex=1, title="Transaction Reference No.", noEntry, not null, image="ZOOM";
+ComboBox nme22=formonly.nme22 type CHAR, tabIndex=3, title="Transaction Document Type", noEntry, not null, queryEditable, items=(("01", "Payment"),("02", "Spent Payment"),("03", "Pay Direct"),("04", "Spent Pay Direct"),("05", "Pay for Company Transfer"),("06", "Pay Principal And Interest of Group"),("07", "Bank Income/Expense"));
+Edit nme13=formonly.nme13 type CHAR, tabIndex=19, title="Payment Object", noEntry;
+Edit nps03=nps_file.nps03, tabIndex=4, title="Transaction Type", not null;
+ButtonEdit nps05=nps_file.nps05, action=controlp, tabIndex=5, title="Payer\'s Bank Account", noEntry, not null, image="zoom";
+ComboBox nps14=nps_file.nps14, tabIndex=6, title="Balance Method", queryEditable, items=(("1", "normal"),("2", "fast"),("Item1", ""));
+ButtonEdit nps07=nps_file.nps07, action=controlp, tabIndex=7, title="Payee\'s Bank Account", image="zoom";
+Edit nps08=nps_file.nps08, tabIndex=8, title="Payee\'s Account Name", noEntry;
+ButtonEdit nps09=nps_file.nps09, action=controlp, tabIndex=9, title="Payee\'s Opening Bank", noEntry, image="zoom";
+ButtonEdit nps26=nps_file.nps26, action=controlp, tabIndex=20, title="Payee Country", image="zoom.png";
+ButtonEdit nps10=nps_file.nps10, action=controlp, tabIndex=10, title="Payee\'s Province", noEntry, image="zoom";
+ButtonEdit nps11=nps_file.nps11, action=controlp, tabIndex=11, title="Payee\'s City", noEntry, image="zoom";
+ComboBox nps27=nps_file.nps27, tabIndex=21, title="Expenses Pay Method", not null, items=(("OUR", "Payer"),("BEN", "Payee"),("SHA", "Both Sides"));
+Edit nps12=nps_file.nps12, tabIndex=12, title="Transaction Money", noEntry, not null;
+ButtonEdit nps13=nps_file.nps13, action=controlp, tabIndex=13, title="Currency", noEntry, not null, image="zoom";
+Edit nps20=nps_file.nps20, tabIndex=14, title="Total Count", noEntry;
+Edit nps15=nps_file.nps15, tabIndex=15, title="Purpose", not null, required;
+Edit nps16=nps_file.nps16, tabIndex=16, title="Transaction Abstract";
+ComboBox nps17=nps_file.nps17, tabIndex=17, title="Payment Status", noEntry, queryEditable, items=(("0", "Landing Sucessful"),("1", "Internet Bank payment Defeat"),("2", "Internet Bank Payment Had Not Determined"),("3", "Internet Bank Submits Successful"),("4", "Internet Bank Transfers Accounts Successful"),("5", "Turn Pay"),("9", "No Pay"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nps(nme_file.nme27,nps_file.nps01,formonly.nme22,formonly.nme13,nps_file.nps03,nps_file.nps05,nps_file.nps14,nps_file.nps07,nps_file.nps08,nps_file.nps09,nps_file.nps26,nps_file.nps10,nps_file.nps11,nps_file.nps27,nps_file.nps12,nps_file.nps13,nps_file.nps20,nps_file.nps15,nps_file.nps16,nps_file.nps17)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

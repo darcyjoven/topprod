@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_spccfg_field.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Form Integration Field Config")
+VBox VBox1
+Table s_wcc
+{
+[wcc02      |gae04        |wcc03 ]
+[wcc02      |gae04        |wcc03 ]
+[wcc02      |gae04        |wcc03 ]
+[wcc02      |gae04        |wcc03 ]
+[wcc02      |gae04        |wcc03 ]
+[wcc02      |gae04        |wcc03 ]
+[wcc02      |gae04        |wcc03 ]
+[wcc02      |gae04        |wcc03 ]
+[wcc02      |gae04        |wcc03 ]
+[wcc02      |gae04        |wcc03 ]
+
+}
+END -- s_wcc
+Grid gr1433
+{
+ ----------Rows [cn2] ----------
+
+}
+END -- gr1433
+END -- VBox1
+END -- aws_spccfg_field
+
+TABLES
+wcc_file
+ATTRIBUTES
+Edit wcc02=wcc_file.wcc02, tabIndex=1, title="Field Name", not null, required;
+Edit gae04=formonly.gae04 type CHAR, tabIndex=2, title="Field Memo", noEntry;
+CheckBox wcc03=wcc_file.wcc03, tabIndex=3, title="ifupd", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wcc(wcc_file.wcc02,formonly.gae04,wcc_file.wcc03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

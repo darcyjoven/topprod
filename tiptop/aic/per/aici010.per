@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aici010")
+VBox vb22
+Folder pc2
+Page Page3(text=%"Basic Data")
+Grid gr5
+{
+
+  iBody[ick01                     ][ick01_desc                ]
+
+}
+END -- gr5
+END -- Page3
+END -- pc2
+Table s_ick
+{
+[ick02           |ick02_desc      |ick09         |pmc03          |ick03      |ick05          |ick06           |ick07        |ick08     |ick10         |ick04     ]
+[ick02           |ick02_desc      |ick09         |pmc03          |ick03      |ick05          |ick06           |ick07        |ick08     |ick10         |ick04     ]
+[ick02           |ick02_desc      |ick09         |pmc03          |ick03      |ick05          |ick06           |ick07        |ick08     |ick10         |ick04     ]
+[ick02           |ick02_desc      |ick09         |pmc03          |ick03      |ick05          |ick06           |ick07        |ick08     |ick10         |ick04     ]
+[ick02           |ick02_desc      |ick09         |pmc03          |ick03      |ick05          |ick06           |ick07        |ick08     |ick10         |ick04     ]
+[ick02           |ick02_desc      |ick09         |pmc03          |ick03      |ick05          |ick06           |ick07        |ick08     |ick10         |ick04     ]
+[ick02           |ick02_desc      |ick09         |pmc03          |ick03      |ick05          |ick06           |ick07        |ick08     |ick10         |ick04     ]
+[ick02           |ick02_desc      |ick09         |pmc03          |ick03      |ick05          |ick06           |ick07        |ick08     |ick10         |ick04     ]
+[ick02           |ick02_desc      |ick09         |pmc03          |ick03      |ick05          |ick06           |ick07        |ick08     |ick10         |ick04     ]
+
+}
+END -- s_ick
+Grid gr15
+{
+
+ --------------- ROWS[cnt ] / [cn2 ] -------
+
+}
+END -- gr15
+END -- vb22
+END -- aici010
+
+TABLES
+ick_file
+ATTRIBUTES
+ButtonEdit ick01=ick_file.ick01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit ick01_desc=formonly.ick01_desc type VARCHAR, tabIndex=2, not null, required;
+ButtonEdit ick02=ick_file.ick02, action=controlp, tabIndex=8, title="Product Type", not null, required, image="zoom.png", comment="<^P> Query Material";
+Edit ick02_desc=formonly.ick02_desc type VARCHAR, tabIndex=9, title="Product Name", noEntry;
+ButtonEdit ick09=ick_file.ick09, action=controlp, tabIndex=10, title="FT Vendor", not null, required, image="zoom.png";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=11, title="Simple Name", noEntry;
+Edit ick03=ick_file.ick03, tabIndex=12, title="ECN No", not null, required;
+CheckBox ick05=ick_file.ick05, tabIndex=13, default = "N", title="Finish Program", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ick06=ick_file.ick06, tabIndex=14, title="Program Edition", not null, required;
+DateEdit ick07=ick_file.ick07, tabIndex=15, title="Publish Date";
+Edit ick08=ick_file.ick08, tabIndex=16, title="Warning", not null, required;
+Edit ick10=ick_file.ick10, tabIndex=17, title="Holding Yield(%)", not null, required;
+Edit ick04=ick_file.ick04, tabIndex=18, title="Remark";
+Edit cnt=formonly.cnt type CHAR, tabIndex=19;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ick(ick_file.ick02,formonly.ick02_desc,ick_file.ick09,formonly.pmc03,ick_file.ick03,ick_file.ick05,ick_file.ick06,ick_file.ick07,ick_file.ick08,ick_file.ick10,ick_file.ick04)
+SCREEN RECORD Undefined(ick_file.ick01,formonly.ick01_desc,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

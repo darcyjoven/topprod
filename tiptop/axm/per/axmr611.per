@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmr611.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr611")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                                 >
+  Delivery             [oga00               ]    From                 [oga41               ]
+  Delivery Date        [oga02               ]    Destination          [oga42               ]
+  Arrn.Seq             [oga17               ]    Doc Property         [oga09               ]
+  Delivery Note No.    [oga01               ]
+
+ <                                                                                          >
+}
+END -- Grid1
+Group g01(text="INPUT")
+VBox VBox2
+Grid Grid2
+{
+ <G group02                             >  <G group03                 >
+  [a                                   ]    [c                       ]
+  [b                                   ]
+  [d                                   ]
+  [e                                   ]
+ <                                      >  <                          >
+
+}
+END -- Grid2
+END -- VBox2
+END -- g01
+Grid Grid3
+{
+[more                                              ]
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- axmr611
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ComboBox oga00=formonly.oga00 type CHAR, tabIndex=1, items=(("1", %"Normal Delivery"),("2", %"Exchange and Deliver"));
+Edit oga41=formonly.oga41 type CHAR, tabIndex=2;
+DateEdit oga02=formonly.oga02 type DATE, tabIndex=3;
+Edit oga42=formonly.oga42 type CHAR, tabIndex=4;
+Edit oga17=formonly.oga17 type DECIMAL, tabIndex=5;
+Edit oga09=formonly.oga09 type CHAR, tabIndex=6, comment="1.Shipping Notice, 2.Normal Shipment,3.No-order Shipment,4.Mult-trade Shipment,5.Mult-trade Shipping Notice,6.Drop Ship";
+Edit oga01=formonly.oga01 type CHAR, tabIndex=7;
+Group group02:group02, text="Print Data";
+CheckBox a=formonly.a type VARCHAR, tabIndex=8, text="Prt Assigned location Delivery Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=9, text="Prt Every W/H Loc Curr Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=10, text="Print Shipping Address", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=13, text="Print Lot No And Serial No", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Sequence";
+RadioGroup c=formonly.c type VARCHAR, tabIndex=11, items=(("1", %"Document No."),("2", %"Location"),("3", %"Sequence"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oga00,formonly.oga41,formonly.oga02,formonly.oga42,formonly.oga17,formonly.oga09,formonly.oga01,formonly.a,formonly.b,formonly.d,formonly.c,formonly.more,formonly.e)
+END -- INSTRUCTIONS
+

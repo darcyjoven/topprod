@@ -1,0 +1,127 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft801.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft801")
+VBox VBox1
+Folder pc176
+Page page01(text="Main")
+VBox VBox2
+HBox HBox1
+Grid gr847
+{
+ Change Type         [snb04          ]
+ W/O No.             [snb01             ]
+ W/O Style           [sfb02          ]
+ W/O Status          [sfb04          ]
+ Change Date         [snb022      ]
+}
+END -- gr847
+Grid gr848
+{
+ Change S/N          [snb02     ]                     [imgmksg]
+ Item No.            [sfb05                         ] [       ]
+ Part Name           [ima02                         ]
+ Specification       [ima021                        ]
+ Issue               [snbconf   ]
+}
+END -- gr848
+END -- HBox1
+HBox HBox2
+Grid gr849
+{
+ <G group03                                              >
+  Production Qty                   [snb08b    ]
+
+  Anticipated Operating Date       [snb13b      ]
+
+  Anticipated Closing Date         [snb15b      ]
+
+  Manufacturing Dept/Subcontractor [snb82b    ]
+
+  Cost Center                      [snb98b    ]
+ <                                                       >
+
+}
+END -- gr849
+Grid gr850
+{
+ <G group04                                             >
+  Production Qty                    [snb08a    ]
+
+  Anticipated Operating Date        [snb13a    ]
+
+  Anticipated Closing Date          [snb15a    ]
+
+  Manufacturing Dept/Subcontractor  [snb82a    ]
+
+  Cost Center                       [snb98a    ]
+ <                                                      >
+
+}
+END -- gr850
+END -- HBox2
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr851
+{
+ Record Owner        [snbuser   ]   Last Modified by    [snbmodu   ]
+ Department          [snbgrup   ]   Create/Modify Date  [snbdate   ]
+ Record Orig.        [snboriu   ]
+ Dept Orig.          [snborig   ]
+}
+END -- gr851
+END -- info
+END -- pc176
+Grid gr852
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr852
+END -- VBox1
+END -- asft801
+
+TABLES
+snb_file
+ATTRIBUTES
+ComboBox snb04=snb_file.snb04, tabIndex=1, noEntry, comment="1.Change Head 2.Change Detail  ", items=(("1", "Change Head"),("2", "Change Detail"));
+ButtonEdit snb01=snb_file.snb01, action=controlp, tabIndex=2, image="zoom", comment="<^P>Query W/O No";
+ComboBox sfb02=formonly.sfb02 type CHAR, tabIndex=3, noEntry, comment="1.Gnrl 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm 13.Predic 15.Trial ", items=(("1", "Gnrl"),("5", "Rework"),("7", "Sub."),("8", "Rwrk SUB"),("11", "Disasm"),("13", "Predic"),("15", "Trial"));
+ComboBox sfb04=formonly.sfb04 type CHAR, tabIndex=4, noEntry, comment="1.Open 2.Rls 3.Prt 4.Iss.Mat 5.WIP 6.FQC 7.St-i 8.Clos", items=(("1", "Gnrl"),("2", "Rls"),("3", "Prt"),("4", "Iss.Mat"),("5", "WIP"),("6", "FQC"),("7", "St-i"),("8", "Clos"));
+DateEdit snb022=snb_file.snb022, tabIndex=5;
+Edit snb02=snb_file.snb02, tabIndex=6;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=8, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=9, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=10, noEntry;
+ComboBox snbconf=snb_file.snbconf, tabIndex=11, noEntry, items=(("Y", "Issueed"),("N", "Issueed Return"),("X", "Void"));
+Group group03:group03, text="Before Change";
+Edit snb08b=snb_file.snb08b, tabIndex=12, noEntry;
+DateEdit snb13b=snb_file.snb13b, tabIndex=13, noEntry;
+DateEdit snb15b=snb_file.snb15b, tabIndex=14, noEntry;
+ButtonEdit snb82b=snb_file.snb82b, action=controlp, tabIndex=15, noEntry, image="zoom", comment="<P>Qry Department/Vender";
+Edit snb98b=snb_file.snb98b, tabIndex=16, noEntry;
+Group group04:group04, text="After Change";
+Edit snb08a=snb_file.snb08a, tabIndex=17;
+DateEdit snb13a=snb_file.snb13a, tabIndex=18;
+DateEdit snb15a=snb_file.snb15a, tabIndex=19;
+ButtonEdit snb82a=snb_file.snb82a, action=controlp, tabIndex=20, image="zoom", comment="<P>Qry Department/Vender";
+ButtonEdit snb98a=snb_file.snb98a, action=controlp, tabIndex=21, image="zoom", comment="<^P>Query Cost Center";
+Edit snbuser=snb_file.snbuser, tabIndex=22, noEntry;
+Edit snbmodu=snb_file.snbmodu, tabIndex=23, noEntry;
+Edit snbgrup=snb_file.snbgrup, tabIndex=24, noEntry;
+DateEdit snbdate=snb_file.snbdate, tabIndex=25, noEntry;
+Edit snboriu=snb_file.snboriu, tabIndex=501, noEntry;
+Edit snborig=snb_file.snborig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=26, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(snb_file.snb04,snb_file.snb01,formonly.sfb02,formonly.sfb04,snb_file.snb022,snb_file.snb02,formonly.imgmksg,formonly.sfb05,formonly.ima02,formonly.ima021,snb_file.snbconf,snb_file.snb08b,snb_file.snb13b,snb_file.snb15b,snb_file.snb82b,snb_file.snb98b,snb_file.snb08a,snb_file.snb13a,snb_file.snb15a,snb_file.snb82a,snb_file.snb98a,snb_file.snbuser,snb_file.snbmodu,snb_file.snbgrup,snb_file.snbdate,snb_file.snboriu,snb_file.snborig,formonly.cnt)
+END -- INSTRUCTIONS
+

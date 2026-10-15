@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt611.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"almt611")
+VBox vb5
+Folder pc1
+Page Main(text=%"Main")
+Grid gr1
+{
+ Store No.    [lrsplant          |rtz13             ] Approval Code[lrs03           |imgmksg ]
+ Corporation  [lrslegal          |azt02             ] Approver     [lrs04           |        ]
+ Doc No.      [lrs01             ]                    Approval Date[lrs05           ]
+ Document Date[lrs02       ]                          Remark       [lrs06                         ]
+                                                                   [                              ]
+
+}
+END -- gr1
+END -- Main
+Page info(text=%"Info")
+Grid gr3
+{
+
+ Data Owner  [lrsuser   ] Last Modified by   [lrsmodu       ]    Create on   [lrscrat     ]
+ Department  [lrsgrup   ] Last Modified on   [lrsdate       ]    Acti        [lrsacti     ]
+ Record Orig.[lrsoriu   ]
+ Dept Orig.  [lrsorig   ]
+
+}
+END -- gr3
+END -- info
+END -- pc1
+Table s_lrt
+{
+[lrt02   |lrt03             |lph32     |lph33     |lph34     |lph35     |lrt04                         |lrt05                         ]
+[lrt02   |lrt03             |lph32     |lph33     |lph34     |lph35     |lrt04                         |lrt05                         ]
+[lrt02   |lrt03             |lph32     |lph33     |lph34     |lph35     |lrt04                         |lrt05                         ]
+[lrt02   |lrt03             |lph32     |lph33     |lph34     |lph35     |lrt04                         |lrt05                         ]
+[lrt02   |lrt03             |lph32     |lph33     |lph34     |lph35     |lrt04                         |lrt05                         ]
+}
+END -- s_lrt
+Grid gr4
+{
+
+ ------- Rows [idx ]/ [cnt  ]---item [cn2   ]-------
+
+
+
+}
+END -- gr4
+END -- vb5
+END -- Form5
+
+TABLES
+lrt_file,
+lrs_file
+ATTRIBUTES
+ButtonEdit lrsplant=lrs_file.lrsplant, action=controlp, tabIndex=1, noEntry, not null, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=3, noEntry;
+ComboBox lrs03=lrs_file.lrs03, tabIndex=6, default = "N", noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit lrslegal=lrs_file.lrslegal, action=controlp, tabIndex=8, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=9, noEntry;
+Edit lrs04=lrs_file.lrs04, tabIndex=5, noEntry;
+ButtonEdit lrs01=lrs_file.lrs01, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+DateEdit lrs05=lrs_file.lrs05, tabIndex=4, noEntry;
+DateEdit lrs02=lrs_file.lrs02, tabIndex=10, noEntry;
+TextEdit lrs06=lrs_file.lrs06, tabIndex=7;
+Edit lrsuser=lrs_file.lrsuser, tabIndex=11, noEntry;
+Edit lrsmodu=lrs_file.lrsmodu, tabIndex=13, noEntry;
+DateEdit lrscrat=lrs_file.lrscrat, tabIndex=15, noEntry;
+Edit lrsgrup=lrs_file.lrsgrup, tabIndex=12, noEntry;
+DateEdit lrsdate=lrs_file.lrsdate, tabIndex=14, noEntry;
+Edit lrsacti=lrs_file.lrsacti, tabIndex=18, noEntry;
+Edit lrsoriu=lrs_file.lrsoriu, tabIndex=16, noEntry;
+Edit lrsorig=lrs_file.lrsorig, tabIndex=17, noEntry;
+Edit lrt02=lrt_file.lrt02, tabIndex=29, title="lrt02", not null, required;
+ButtonEdit lrt03=lrt_file.lrt03, action=controlp, tabIndex=19, title="lrt03", not null, image="zoom.png";
+Edit lph32=formonly.lph32 type CHAR, tabIndex=23, title="lph32", noEntry;
+Edit lph33=formonly.lph33 type CHAR, tabIndex=24, title="lph33", noEntry;
+Edit lph34=formonly.lph34 type CHAR, tabIndex=25, title="lph34", noEntry;
+Edit lph35=formonly.lph35 type CHAR, tabIndex=26, title="lph35", noEntry;
+Edit lrt04=lrt_file.lrt04, tabIndex=27, title="lrt04", not null, required;
+Edit lrt05=lrt_file.lrt05, tabIndex=28, title="lrt05", not null, required;
+Edit idx=formonly.idx type SMALLINT, tabIndex=20, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lrt(lrt_file.lrt02,lrt_file.lrt03,formonly.lph32,formonly.lph33,formonly.lph34,formonly.lph35,lrt_file.lrt04,lrt_file.lrt05)
+SCREEN RECORD Undefined(lrs_file.lrsplant,formonly.rtz13,lrs_file.lrs03,formonly.imgmksg,lrs_file.lrslegal,formonly.azt02,lrs_file.lrs04,lrs_file.lrs01,lrs_file.lrs05,lrs_file.lrs02,lrs_file.lrs06,lrs_file.lrsuser,lrs_file.lrsmodu,lrs_file.lrscrat,lrs_file.lrsgrup,lrs_file.lrsdate,lrs_file.lrsacti,lrs_file.lrsoriu,lrs_file.lrsorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

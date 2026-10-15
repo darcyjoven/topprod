@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi221_22.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi221_22")
+VBox VBox1
+Folder pc474
+Page page01(text="Page01")
+Table s_oce
+{
+[oce02                   |oce03                               |oce04                  |oce07                  |oce08                  |oce05                         |oce09                                  |oce10                                  ]
+[oce02                   |oce03                               |oce04                  |oce07                  |oce08                  |oce05                         |oce09                                  |oce10                                  ]
+[oce02                   |oce03                               |oce04                  |oce07                  |oce08                  |oce05                         |oce09                                  |oce10                                  ]
+[oce02                   |oce03                               |oce04                  |oce07                  |oce08                  |oce05                         |oce09                                  |oce10                                  ]
+[oce02                   |oce03                               |oce04                  |oce07                  |oce08                  |oce05                         |oce09                                  |oce10                                  ]
+[oce02                   |oce03                               |oce04                  |oce07                  |oce08                  |oce05                         |oce09                                  |oce10                                  ]
+[oce02                   |oce03                               |oce04                  |oce07                  |oce08                  |oce05                         |oce09                                  |oce10                                  ]
+[oce02                   |oce03                               |oce04                  |oce07                  |oce08                  |oce05                         |oce09                                  |oce10                                  ]
+[oce02                   |oce03                               |oce04                  |oce07                  |oce08                  |oce05                         |oce09                                  |oce10                                  ]
+[oce02                   |oce03                               |oce04                  |oce07                  |oce08                  |oce05                         |oce09                                  |oce10                                  ]
+
+}
+END -- s_oce
+END -- page01
+END -- pc474
+Grid gr2061
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2061
+END -- VBox1
+END -- axmi221_22
+
+TABLES
+oce_file
+ATTRIBUTES
+Edit oce02=oce_file.oce02, tabIndex=1, title="Position";
+Edit oce03=oce_file.oce03, tabIndex=2, title="Contact Name", not null, required;
+Edit oce04=oce_file.oce04, tabIndex=3, title="Telephone1";
+Edit oce07=oce_file.oce07, tabIndex=4, title="Telephone2";
+Edit oce08=oce_file.oce08, tabIndex=5, title="Fax";
+Edit oce05=oce_file.oce05, tabIndex=6, title="E-mail Address";
+Edit oce09=oce_file.oce09, tabIndex=7, title="Identity Card Address";
+Edit oce10=oce_file.oce10, tabIndex=8, title="Identity Card No.";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry, color = yellow;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oce(oce_file.oce02,oce_file.oce03,oce_file.oce04,oce_file.oce07,oce_file.oce08,oce_file.oce05,oce_file.oce09,oce_file.oce10)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

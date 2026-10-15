@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcr552.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqcr552")
+VBox VBox1
+Grid gr167
+{
+ <G group01                                                           >
+  PQC Document No.    [qcm01               ]
+  Run Card            [qcm03               ]
+  Work/Order No.      [qcm02               ]
+  Item No.            [qcm021              ]
+  Routing S/N         [qcm05               ]
+  QC Date             [qcm04               ]
+  Inspector           [qcm13               ]
+ <                                                                    >
+
+}
+END -- gr167
+Grid gr168
+{
+[more                                     ]
+
+}
+END -- gr168
+END -- VBox1
+END -- aqcr552
+
+TABLES
+qcm_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit qcm01=qcm_file.qcm01, tabIndex=1;
+Edit qcm03=qcm_file.qcm03, tabIndex=2;
+Edit qcm02=qcm_file.qcm02, tabIndex=3;
+ButtonEdit qcm021=qcm_file.qcm021, action=controlp, tabIndex=4, image="zoom", comment="<P>";
+Edit qcm05=qcm_file.qcm05, tabIndex=5;
+DateEdit qcm04=qcm_file.qcm04, tabIndex=6;
+Edit qcm13=qcm_file.qcm13, tabIndex=7;
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(qcm_file.qcm01,qcm_file.qcm03,qcm_file.qcm02,qcm_file.qcm021,qcm_file.qcm05,qcm_file.qcm04,qcm_file.qcm13,formonly.more)
+END -- INSTRUCTIONS
+

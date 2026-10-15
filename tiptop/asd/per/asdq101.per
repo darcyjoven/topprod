@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdq101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdq101")
+VBox VBox1
+Folder pc93
+Page page01(text="Main")
+Grid gr383
+{
+  Work Order Category [stg01     ]
+  W/O No.             [stg04           ]
+  Item No.            [sfb05                         ]
+                      [ima02                         ]
+  Year/Month          [stg0]/[st]
+
+ <G group01                                >   <G group02                                 >
+  Store-in Note#      [stg05           ]        Curr.               [stg21               ]
+  Ln#                 [stg051    ]              Ex.Rate             [stg22               ]
+  Store-in Date       [stg06     ]              F.C U/P             [stg23               ]
+  Qty                 [stg07     ]              H.C U/P             [stg24               ]
+  Warehouse           [stg20     ]              Subcontrac Amt      [stg25               ]
+ <                                         >   <                                          >
+ <G group03                                                                                >
+                      [dummy01               ]   [dummy02     ]     [dummy03              ]
+  Material            [stg16               ] [stg12               ] [stg08               ]
+  Labor               [stg17               ] [stg13               ] [stg09               ]
+  Overhead 1          [stg18               ] [stg14               ] [stg10               ]
+  Overhead 2          [stg19               ] [stg15               ] [stg11               ]
+ <                                                                                         >
+
+}
+END -- gr383
+END -- page01
+END -- pc93
+Grid gr384
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr384
+END -- VBox1
+END -- asdq101
+
+TABLES
+stg_file
+ATTRIBUTES
+ComboBox stg01=stg_file.stg01, tabIndex=1, not null, required, items=(("1", "Gnrl"),("5", "Rework"),("7", "Sub"),("8", "Rwrk Sub"),("11", "Disasm"),("13", "Predic"),("15", "Trial"));
+Edit stg04=stg_file.stg04, tabIndex=2;
+ButtonEdit sfb05=formonly.sfb05 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, noEntry;
+Edit stg0=stg_file.stg02, tabIndex=5;
+Edit st=stg_file.stg03, tabIndex=6;
+Group group01:group01;
+Edit stg05=stg_file.stg05, tabIndex=7;
+Edit stg051=stg_file.stg051, tabIndex=8;
+DateEdit stg06=stg_file.stg06, tabIndex=9;
+Edit stg07=stg_file.stg07, tabIndex=10;
+Edit stg20=stg_file.stg20, tabIndex=11;
+Group group02:group02;
+Edit stg21=stg_file.stg21, tabIndex=12;
+Edit stg22=stg_file.stg22, tabIndex=13;
+Edit stg23=stg_file.stg23, tabIndex=14;
+Edit stg24=stg_file.stg24, tabIndex=15;
+Edit stg25=stg_file.stg25, tabIndex=16;
+Group group03:group03;
+Label dummy01:dummy01, text="Single-Level Unit Cost";
+Label dummy02:dummy02, text="Standard Cost";
+Label dummy03:dummy03, text="Accumulatedt Unit Cost";
+Edit stg16=stg_file.stg16, tabIndex=17;
+Edit stg12=stg_file.stg12, tabIndex=18;
+Edit stg08=stg_file.stg08, tabIndex=19;
+Edit stg17=stg_file.stg17, tabIndex=20;
+Edit stg13=stg_file.stg13, tabIndex=21;
+Edit stg09=stg_file.stg09, tabIndex=22;
+Edit stg18=stg_file.stg18, tabIndex=23;
+Edit stg14=stg_file.stg14, tabIndex=24;
+Edit stg10=stg_file.stg10, tabIndex=25;
+Edit stg19=stg_file.stg19, tabIndex=26;
+Edit stg15=stg_file.stg15, tabIndex=27;
+Edit stg11=stg_file.stg11, tabIndex=28;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(stg_file.stg01,stg_file.stg04,formonly.sfb05,formonly.ima02,stg_file.stg02,stg_file.stg03,stg_file.stg05,stg_file.stg051,stg_file.stg06,stg_file.stg07,stg_file.stg20,stg_file.stg21,stg_file.stg22,stg_file.stg23,stg_file.stg24,stg_file.stg25,stg_file.stg16,stg_file.stg12,stg_file.stg08,stg_file.stg17,stg_file.stg13,stg_file.stg09,stg_file.stg18,stg_file.stg14,stg_file.stg10,stg_file.stg19,stg_file.stg15,stg_file.stg11,formonly.cnt)
+END -- INSTRUCTIONS
+

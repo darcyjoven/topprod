@@ -1,0 +1,57 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi107.per created Wed Jan 23 05:30:30 2008
+-- File created from axdi107.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi107")
+-- TABLE
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1553
+      PAGE page01( TEXT="Page01")
+        TABLE   s_obr
+        {
+        [aa0     |aa1                           |aa2   ]
+        [aa0     |aa1                           |aa2   ]
+        [aa0     |aa1                           |aa2   ]
+        [aa0     |aa1                           |aa2   ]
+        [aa0     |aa1                           |aa2   ]
+        [aa0     |aa1                           |aa2   ]
+        [aa0     |aa1                           |aa2   ]
+        [aa0     |aa1                           |aa2   ]
+        [aa0     |aa1                           |aa2   ]
+        [aa0     |aa1                           |aa2   ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr7742
+    {
+     ----------Rows [aa3   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES obr_file
+
+ATTRIBUTES
+  EDIT aa0=obr_file.obr01, COMMENT="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ", NOT NULL, REQUIRED, TABINDEX=1, TITLE="Level";
+  EDIT aa1=obr_file.obr02, TABINDEX=2, TITLE="Description";
+  CHECKBOX aa2=obr_file.obracti, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=3, TITLE="Valid?";
+  EDIT aa3=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=4;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_obr (obr_file.obr01, obr_file.obr02, obr_file.obracti)
+END

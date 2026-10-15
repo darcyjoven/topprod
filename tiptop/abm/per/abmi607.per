@@ -1,0 +1,106 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi607.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi607")
+VBox vb10
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr778
+{
+ Master Item         [bma01                         ]
+ Part Name           [ima02_h                       ]
+ Specification       [ima021_h                      ]
+ Alternate Code      [bma06               ]
+
+}
+END -- gr778
+Grid gr779
+{
+ Group Code          [ima06               ]
+ Other group code 1  [ima09               ]
+ Other group code 2  [ima10               ]
+ Other group code 3  [ima11               ]
+ Other group code 4  [ima12               ]
+}
+END -- gr779
+Grid gr780
+{
+ Version             [revision    ]
+ Expiry Date         [effective   ]
+
+
+
+}
+END -- gr780
+END -- hb1
+END -- page01
+END -- folder01
+Table s_bmb
+{
+[seq |ima01               |ima02                         |ima021                        |ima103          |qpa                 |ima63        |ima44         |ima53               |imb218              |ima531              |ima532    ]
+[seq |ima01               |ima02                         |ima021                        |ima103          |qpa                 |ima63        |ima44         |ima53               |imb218              |ima531              |ima532    ]
+[seq |ima01               |ima02                         |ima021                        |ima103          |qpa                 |ima63        |ima44         |ima53               |imb218              |ima531              |ima532    ]
+[seq |ima01               |ima02                         |ima021                        |ima103          |qpa                 |ima63        |ima44         |ima53               |imb218              |ima531              |ima532    ]
+[seq |ima01               |ima02                         |ima021                        |ima103          |qpa                 |ima63        |ima44         |ima53               |imb218              |ima531              |ima532    ]
+[seq |ima01               |ima02                         |ima021                        |ima103          |qpa                 |ima63        |ima44         |ima53               |imb218              |ima531              |ima532    ]
+[seq |ima01               |ima02                         |ima021                        |ima103          |qpa                 |ima63        |ima44         |ima53               |imb218              |ima531              |ima532    ]
+[seq |ima01               |ima02                         |ima021                        |ima103          |qpa                 |ima63        |ima44         |ima53               |imb218              |ima531              |ima532    ]
+[seq |ima01               |ima02                         |ima021                        |ima103          |qpa                 |ima63        |ima44         |ima53               |imb218              |ima531              |ima532    ]
+[seq |ima01               |ima02                         |ima021                        |ima103          |qpa                 |ima63        |ima44         |ima53               |imb218              |ima531              |ima532    ]
+
+}
+END -- s_bmb
+Grid gr781
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------Local purchase cost  [cost1               ]----------Foreign purchase cost[cost2               ]----------Other Cost[cost3               ]----------
+
+}
+END -- gr781
+END -- vb10
+END -- abmi607
+
+TABLES
+imb_file,
+ima_file,
+bma_file
+ATTRIBUTES
+ButtonEdit bma01=bma_file.bma01, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom";
+Edit ima02_h=formonly.ima02_h type VARCHAR, tabIndex=2, noEntry;
+Edit ima021_h=formonly.ima021_h type VARCHAR, tabIndex=3, noEntry;
+Edit bma06=bma_file.bma06, tabIndex=4;
+ButtonEdit ima06=formonly.ima06 type CHAR, action=controlp, tabIndex=5, noEntry, image="zoom";
+ButtonEdit ima09=formonly.ima09 type CHAR, action=controlp, tabIndex=6, noEntry, image="zoom";
+ButtonEdit ima10=formonly.ima10 type CHAR, action=controlp, tabIndex=7, noEntry, image="zoom";
+ButtonEdit ima11=formonly.ima11 type CHAR, action=controlp, tabIndex=8, noEntry, image="zoom";
+ButtonEdit ima12=formonly.ima12 type CHAR, action=controlp, tabIndex=9, noEntry, image="zoom";
+Edit revision=formonly.revision type VARCHAR, tabIndex=10;
+DateEdit effective=formonly.effective type DATE, tabIndex=11;
+Edit seq=formonly.seq type INTEGER, tabIndex=12, title="Ln#", noEntry;
+Edit ima01=ima_file.ima01, tabIndex=13, title="Item No.", noEntry, not null, required;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=14, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=15, title="Specification", noEntry;
+ComboBox ima103=formonly.ima103 type CHAR, tabIndex=16, title="Purchase Feature", noEntry, queryEditable, items=(("0", %"Local purchase"),("1", %"Foreign purchase"),("2", %"Other"));
+Edit qpa=formonly.qpa type DECIMAL, tabIndex=17, title="QPA", noEntry;
+Edit ima63=ima_file.ima63, tabIndex=18, title="Issuing Unit", noEntry;
+Edit ima44=ima_file.ima44, tabIndex=19, title="Purchase Unit", noEntry;
+Edit ima53=ima_file.ima53, tabIndex=20, title="Latest PO U/P", noEntry;
+Edit imb218=imb_file.imb218, tabIndex=21, title="Avg U/P", noEntry, not null, required;
+Edit ima531=ima_file.ima531, tabIndex=22, title="Market Price";
+DateEdit ima532=ima_file.ima532, tabIndex=23, title="Tran.Date", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+Edit cost1=formonly.cost1 type DECIMAL, tabIndex=26;
+Edit cost2=formonly.cost2 type DECIMAL, tabIndex=27;
+Edit cost3=formonly.cost3 type DECIMAL, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmb(formonly.seq,ima_file.ima01,formonly.ima02,formonly.ima021,formonly.ima103,formonly.qpa,ima_file.ima63,ima_file.ima44,ima_file.ima53,imb_file.imb218,ima_file.ima531,ima_file.ima532)
+SCREEN RECORD Undefined(bma_file.bma01,formonly.ima02_h,formonly.ima021_h,bma_file.bma06,formonly.ima06,formonly.ima09,formonly.ima10,formonly.ima11,formonly.ima12,formonly.revision,formonly.effective,formonly.cnt,formonly.cn2,formonly.cost1,formonly.cost2,formonly.cost3)
+END -- INSTRUCTIONS
+

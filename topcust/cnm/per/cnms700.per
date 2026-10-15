@@ -1,0 +1,175 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cnm/4fd/cnms700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid2
+{
+
+   Label1         [cur_dat             ]
+  <G group1                                                                                                        >
+        Label1    [credit_limit    ]万元     Label1    [used_limit      ]万元        [credit_bar          |credi]%
+        Label1    [loan_amount     ]万元     Label1    [repaid_bala     ]万元        [loan_bar            |loan_]%
+  <                                                                                                                >
+  <G group2                                                                         >
+        Label1    [last_bala           ]     Label1    [last_inter          ]
+
+        Label1    [to_bala            ]                [pay_bala                ]
+        Label1    [to_inter           ]                [pay_inter               ]
+  <                                                                                 >
+
+
+
+
+
+}
+END -- Grid2
+Folder Folder1
+Page Page1(text=%"ToPay")
+VBox VBox2
+Grid Grid1
+{
+
+   Label1    [remainings         ] Label1  [bank01                  ]  [re_search     ]
+
+}
+END -- Grid1
+Table s_topay
+{
+[chk01   |typ01       |nne04     |alg02           |nne01           |nne111      |nne112      |nne14       |nne16   |nne17           |nne12         |nne19         |nne27           |nne20           |nnh03       |nnh04f      |nnh04       ]
+[chk01   |typ01       |nne04     |alg02           |nne01           |nne111      |nne112      |nne14       |nne16   |nne17           |nne12         |nne19         |nne27           |nne20           |nnh03       |nnh04f      |nnh04       ]
+[chk01   |typ01       |nne04     |alg02           |nne01           |nne111      |nne112      |nne14       |nne16   |nne17           |nne12         |nne19         |nne27           |nne20           |nnh03       |nnh04f      |nnh04       ]
+[chk01   |typ01       |nne04     |alg02           |nne01           |nne111      |nne112      |nne14       |nne16   |nne17           |nne12         |nne19         |nne27           |nne20           |nnh03       |nnh04f      |nnh04       ]
+[chk01   |typ01       |nne04     |alg02           |nne01           |nne111      |nne112      |nne14       |nne16   |nne17           |nne12         |nne19         |nne27           |nne20           |nnh03       |nnh04f      |nnh04       ]
+
+
+
+
+
+
+}
+END -- s_topay
+END -- VBox2
+END -- Page1
+Page Page2(text=%"History")
+VBox VBox3
+Grid Grid3
+{
+
+  Label1   [start       ] ~ [end         ] Label1   [bank02                  ] [refresh       ]
+
+}
+END -- Grid3
+Table s_history
+{
+[typ02       |nng04     |alg02_1         |nng01           |nng081      |nng082      |nng09           |nng18   |nng20           |nng22           |nng21           |nng23           |typ03       |nnl01           |nnl02   |nnlud13     |nnk02       |nnk09           |nnlud07         |nnl12           |nnl14           |nnl15           |nnl17           ]
+[typ02       |nng04     |alg02_1         |nng01           |nng081      |nng082      |nng09           |nng18   |nng20           |nng22           |nng21           |nng23           |typ03       |nnl01           |nnl02   |nnlud13     |nnk02       |nnk09           |nnlud07         |nnl12           |nnl14           |nnl15           |nnl17           ]
+[typ02       |nng04     |alg02_1         |nng01           |nng081      |nng082      |nng09           |nng18   |nng20           |nng22           |nng21           |nng23           |typ03       |nnl01           |nnl02   |nnlud13     |nnk02       |nnk09           |nnlud07         |nnl12           |nnl14           |nnl15           |nnl17           ]
+[typ02       |nng04     |alg02_1         |nng01           |nng081      |nng082      |nng09           |nng18   |nng20           |nng22           |nng21           |nng23           |typ03       |nnl01           |nnl02   |nnlud13     |nnk02       |nnk09           |nnlud07         |nnl12           |nnl14           |nnl15           |nnl17           ]
+[typ02       |nng04     |alg02_1         |nng01           |nng081      |nng082      |nng09           |nng18   |nng20           |nng22           |nng21           |nng23           |typ03       |nnl01           |nnl02   |nnlud13     |nnk02       |nnk09           |nnlud07         |nnl12           |nnl14           |nnl15           |nnl17           ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- s_history
+END -- VBox3
+END -- Page2
+END -- Folder1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+DateEdit cur_dat=formonly.cur_dat type DATE, tabIndex=47;
+Group group1:Group1, text=%"Summary";
+Edit credit_limit=formonly.credit_limit type DECIMAL, tabIndex=48;
+Edit used_limit=formonly.used_limit type DECIMAL, tabIndex=49;
+ProgressBar credit_bar=formonly.credit_bar type DECIMAL;
+Edit credi=formonly.credit_per type DECIMAL, tabIndex=59;
+Edit loan_amount=formonly.loan_amount type DECIMAL, tabIndex=50;
+Edit repaid_bala=formonly.repaid_bala type DECIMAL, tabIndex=51;
+ProgressBar loan_bar=formonly.loan_bar type DECIMAL;
+Edit loan_=formonly.loan_per type DECIMAL, tabIndex=60;
+Group group2:Group2, text=%"Current";
+DateEdit last_bala=formonly.last_bala, tabIndex=52;
+DateEdit last_inter=formonly.last_inter, tabIndex=53;
+Edit to_bala=formonly.to_bala, tabIndex=54;
+Button pay_bala:pay_bala, tabIndex=56, text=%"pay_bala";
+Edit to_inter=formonly.to_inter, tabIndex=55;
+Button pay_inter:pay_inter, tabIndex=57, text=%"pay_inter";
+SpinEdit remainings=formonly.remainings type INTEGER, tabIndex=1, not null;
+ComboBox bank01=formonly.bank01, tabIndex=2;
+Button re_search:re_search, tabIndex=3, text=%"re_search";
+CheckBox chk01=formonly.chk01, tabIndex=58, title=%"chk01", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit typ01=formonly.typ01, tabIndex=6, title=%"typ01", noEntry;
+Edit nne04=formonly.nne04, tabIndex=36, title=%"nne04", noEntry;
+Edit alg02=formonly.alg02, tabIndex=35, title=%"alg02", noEntry;
+Edit nne01=formonly.nne01, tabIndex=7, title=%"nne01", noEntry;
+DateEdit nne111=formonly.nne111 type DATE, tabIndex=8, title=%"nne111", noEntry;
+DateEdit nne112=formonly.nne112 type DATE, tabIndex=9, title=%"nne112", noEntry;
+Edit nne14=formonly.nne14 type DECIMAL, tabIndex=10, title=%"nne14", noEntry;
+Edit nne16=formonly.nne16, tabIndex=11, title=%"nne16", noEntry;
+Edit nne17=formonly.nne17 type DECIMAL, tabIndex=12, title=%"nne17", noEntry;
+Edit nne12=formonly.nne12 type DECIMAL, tabIndex=13, title=%"nne12", noEntry;
+Edit nne19=formonly.nne19 type DECIMAL, tabIndex=14, title=%"nne19", noEntry;
+Edit nne27=formonly.nne27 type FLOAT, tabIndex=15, title=%"nne27", noEntry;
+Edit nne20=formonly.nne20 type FLOAT, tabIndex=16, title=%"nne20", noEntry;
+DateEdit nnh03=formonly.nnh03 type DATE, tabIndex=17, title=%"nnh03", noEntry;
+Edit nnh04f=formonly.nnh04f type DECIMAL, tabIndex=5, title=%"nnh04f", noEntry;
+Edit nnh04=formonly.nnh04 type DECIMAL, tabIndex=4, title=%"nnh04", noEntry;
+DateEdit start=formonly.start, tabIndex=18;
+DateEdit end=formonly.end, tabIndex=19;
+ComboBox bank02=formonly.bank02, tabIndex=20;
+Button refresh:refresh, tabIndex=21, text=%"refresh";
+Edit typ02=formonly.typ02, tabIndex=31, title=%"typ02";
+Edit nng04=formonly.nng04, tabIndex=32, title=%"nng01";
+Edit alg02_1=formonly.alg02_1, tabIndex=33, title=%"alg02_1";
+Edit nng01=formonly.nng01, tabIndex=34, title=%"nng01";
+DateEdit nng081=formonly.nng081 type DATE, tabIndex=27, title=%"nng081";
+DateEdit nng082=formonly.nng082 type DATE, tabIndex=28, title=%"nng082";
+Edit nng09=formonly.nng09 type DECIMAL, tabIndex=29, title=%"nng09";
+Edit nng18=formonly.nng18, tabIndex=46, title=%"nng18";
+Edit nng20=formonly.nng20 type DECIMAL, tabIndex=30, title=%"nng20";
+Edit nng22=formonly.nng22 type DECIMAL, tabIndex=23, title=%"nng22";
+Edit nng21=formonly.nng21 type DECIMAL, tabIndex=24, title=%"nng21";
+Edit nng23=formonly.nng23 type DECIMAL, tabIndex=25, title=%"nng23";
+Edit typ03=formonly.typ03, tabIndex=26, title=%"typ03";
+Edit nnl01=formonly.nnl01, tabIndex=22, title=%"nnl01";
+Edit nnl02=formonly.nnl02 type INTEGER, tabIndex=40, title=%"nnl02";
+DateEdit nnlud13=formonly.nnlud13 type DATE, tabIndex=41, title=%"nnlud13";
+DateEdit nnk02=formonly.nnk02 type DATE, tabIndex=42, title=%"nnk02";
+Edit nnk09=formonly.nnk09 type DECIMAL, tabIndex=45, title=%"nnk09";
+Edit nnlud07=formonly.nnlud07 type DECIMAL, tabIndex=37, title=%"nnlud07";
+Edit nnl12=formonly.nnl12 type DECIMAL, tabIndex=44, title=%"nnl12";
+Edit nnl14=formonly.nnl14 type DECIMAL, tabIndex=38, title=%"nnl14";
+Edit nnl15=formonly.nnl15 type DECIMAL, tabIndex=43, title=%"nnl15";
+Edit nnl17=formonly.nnl17 type DECIMAL, tabIndex=39, title=%"nnl17";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_topay(formonly.chk01,formonly.typ01,formonly.nne04,formonly.alg02,formonly.nne01,formonly.nne111,formonly.nne112,formonly.nne14,formonly.nne16,formonly.nne17,formonly.nne12,formonly.nne19,formonly.nne27,formonly.nne20,formonly.nnh03,formonly.nnh04f,formonly.nnh04)
+SCREEN RECORD Undefined(formonly.remainings,formonly.bank01,formonly.start,formonly.end,formonly.bank02,formonly.cur_dat,formonly.credit_limit,formonly.used_limit,formonly.credit_bar,formonly.loan_amount,formonly.repaid_bala,formonly.loan_bar,formonly.last_bala,formonly.last_inter,formonly.to_bala,formonly.to_inter,formonly.credit_per,formonly.loan_per)
+SCREEN RECORD s_history(formonly.typ02,formonly.nng04,formonly.alg02_1,formonly.nng01,formonly.nng081,formonly.nng082,formonly.nng09,formonly.nng18,formonly.nng20,formonly.nng22,formonly.nng21,formonly.nng23,formonly.typ03,formonly.nnl01,formonly.nnl02,formonly.nnlud13,formonly.nnk02,formonly.nnk09,formonly.nnlud07,formonly.nnl12,formonly.nnl14,formonly.nnl15,formonly.nnl17)
+END -- INSTRUCTIONS
+

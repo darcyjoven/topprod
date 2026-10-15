@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxi040.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxi040")
+VBox VBox1
+Folder pc151
+Page page01(text="Main")
+Table s_bnh
+{
+[bnh01       |bnh02        |bnh03         |ima02                         |bnh04    ]
+[bnh01       |bnh02        |bnh03         |ima02                         |bnh04    ]
+[bnh01       |bnh02        |bnh03         |ima02                         |bnh04    ]
+[bnh01       |bnh02        |bnh03         |ima02                         |bnh04    ]
+[bnh01       |bnh02        |bnh03         |ima02                         |bnh04    ]
+[bnh01       |bnh02        |bnh03         |ima02                         |bnh04    ]
+[bnh01       |bnh02        |bnh03         |ima02                         |bnh04    ]
+[bnh01       |bnh02        |bnh03         |ima02                         |bnh04    ]
+[bnh01       |bnh02        |bnh03         |ima02                         |bnh04    ]
+[bnh01       |bnh02        |bnh03         |ima02                         |bnh04    ]
+
+}
+END -- s_bnh
+END -- page01
+END -- pc151
+Grid gr1008
+{
+  ----------Rows [cn2   ] ----------
+
+}
+END -- gr1008
+END -- VBox1
+END -- abxi040
+
+TABLES
+bnh_file
+ATTRIBUTES
+ComboBox bnh01=bnh_file.bnh01, tabIndex=1, title="Sale Type", noEntry, not null, required, comment="Sale Type: 1.Local Sales", items=(("1", %"Local Sales"));
+DateEdit bnh02=bnh_file.bnh02, tabIndex=2, title="Sales Date", not null, required;
+ButtonEdit bnh03=bnh_file.bnh03, action=controlp, tabIndex=3, title="Item No.", not null, required, image="zoom", comment=" <^P> Qry Item No.";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=4, title="Part Name Specification", noEntry;
+Edit bnh04=bnh_file.bnh04, tabIndex=5, title="Qty", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bnh(bnh_file.bnh01,bnh_file.bnh02,bnh_file.bnh03,formonly.ima02,bnh_file.bnh04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai902.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai900")
+VBox VBox1
+Folder pc346
+Page page01(text="Main")
+HBox HBox1
+VBox VBox2
+Grid gr1887
+{
+ <G group01                                 >
+  [fbn041                                  ]
+
+ <                                          >
+
+
+}
+END -- gr1887
+Grid gr1888
+{
+  Asset No                 [fbn01               ]
+                           [faj06                         ]
+                           [faj061                        ]
+  Additional No            [fbn02     ]
+  Yesr                     [fbn03     ]
+  Month                    [fbn04     ]
+
+ <G group02                                                 >
+  [fbn05                                   ]
+
+ <                                                          >
+}
+END -- gr1888
+END -- VBox2
+Grid gr1889
+{
+       Dept No                              [fbn06     ][gem02_1   ]
+       ShareDept#                           [fbn09     ][gem02_2   ]
+       Asset Type                           [fbn10     ]
+       Proportion Type                      [fbn13     ]
+       Depreciation Cost                    [fbn07                 ]
+       Current Period Acc.Depr.             [fbn08                 ]
+       Cost                                 [fbn14                 ]
+       Accumulated Depreciation             [fbn15                 ]
+       Deduction Preparation                [fbn17                 ]
+       Yearly Depreciation                  [faj1082               ]
+       Share Rate                           [fbn16     ]
+       Asset Acoount No                     [fbn11                 ][aag02_1                       ]
+       Depr. Account No                     [fbn12                 ][aag02_2                       ]
+       Acc. Depr. Account                   [fbn20                 ][aag02_5                       ]
+
+
+
+
+
+}
+END -- gr1889
+END -- HBox1
+END -- page01
+END -- pc346
+Grid gr1890
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1890
+END -- VBox1
+END -- afai900
+
+TABLES
+faj_file,
+fbn_file
+ATTRIBUTES
+Group group01:group01, text="Source Code";
+RadioGroup fbn041=fbn_file.fbn041, tabIndex=1, noEntry, items=(("0", "Open"),("1", "Calculate"),("2", "Adjust"));
+ButtonEdit fbn01=fbn_file.fbn01, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Asset Code";
+LABEL faj06=formonly.faj06 type VARCHAR;
+LABEL faj061=formonly.faj061 type VARCHAR;
+Edit fbn02=fbn_file.fbn02, tabIndex=5;
+Edit fbn03=fbn_file.fbn03, tabIndex=6;
+Edit fbn04=fbn_file.fbn04, tabIndex=7;
+Group group02:group02, text="Proportion";
+RadioGroup fbn05=fbn_file.fbn05, tabIndex=8, items=(("1", "Single"),("2", "Mulit"),("3", "Share"));
+ButtonEdit fbn06=fbn_file.fbn06, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Dept Code";
+LABEL gem02_1=formonly.gem02_1 type VARCHAR;
+ButtonEdit fbn09=fbn_file.fbn09, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Dept Code";
+LABEL gem02_2=formonly.gem02_2 type VARCHAR;
+ComboBox fbn10=fbn_file.fbn10, tabIndex=13, queryEditable, items=(("0", "Acquire"),("1", "Capitalization"),("2", "In Depreication"),("3", "Send"),("4", "Depreciated"),("7", "Re-Amortize"),("8", "Improve"),("9", "Revaluate"),("X", "Capitalized"));
+ButtonEdit fbn13=fbn_file.fbn13, action=controlp, tabIndex=14, image="zoom", comment="<^P>Qry Data";
+Edit fbn07=fbn_file.fbn07, tabIndex=15;
+Edit fbn08=fbn_file.fbn08, tabIndex=16;
+Edit fbn14=fbn_file.fbn14, tabIndex=17;
+Edit fbn15=fbn_file.fbn15, tabIndex=18;
+Edit fbn17=fbn_file.fbn17, tabIndex=19;
+Edit faj1082=faj_file.faj1082, tabIndex=20;
+Edit fbn16=fbn_file.fbn16, tabIndex=21;
+ButtonEdit fbn11=fbn_file.fbn11, action=controlp, tabIndex=22, not null, required, image="zoom", comment="<^P>Qry Account Code";
+LABEL aag02_1=formonly.aag02_1 type VARCHAR;
+ButtonEdit fbn12=fbn_file.fbn12, action=controlp, tabIndex=24, not null, required, image="zoom", comment="<^P>Qry Account Code";
+LABEL aag02_2=formonly.aag02_2 type VARCHAR;
+ButtonEdit fbn20=fbn_file.fbn20, action=controlp, tabIndex=31, not null, required, image="zoom", comment="<^P>Qry Account Code";
+LABEL aag02_5=formonly.aag02_5 type VARCHAR;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=30, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fbn_file.fbn041,fbn_file.fbn01,formonly.faj06,formonly.faj061,fbn_file.fbn02,fbn_file.fbn03,fbn_file.fbn04,fbn_file.fbn05,fbn_file.fbn06,formonly.gem02_1,fbn_file.fbn09,formonly.gem02_2,fbn_file.fbn10,fbn_file.fbn13,fbn_file.fbn07,fbn_file.fbn08,fbn_file.fbn14,fbn_file.fbn15,fbn_file.fbn17,faj_file.faj1082,fbn_file.fbn16,fbn_file.fbn11,formonly.aag02_1,fbn_file.fbn12,formonly.aag02_2,formonly.cnt,fbn_file.fbn20,formonly.aag02_5)
+END -- INSTRUCTIONS
+

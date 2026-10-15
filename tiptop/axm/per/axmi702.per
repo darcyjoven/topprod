@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi702.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi702")
+VBox VBox1
+Folder pc509
+Page page01(text="Main")
+Table s_ofc
+{
+[ofc01          |ofc02       |ofc03      |ofc04      |ofc05    |ofc06      |ofc07   |ofc08     |ofc09    |ofc10      |ofcact]
+[ofc01          |ofc02       |ofc03      |ofc04      |ofc05    |ofc06      |ofc07   |ofc08     |ofc09    |ofc10      |ofcact]
+[ofc01          |ofc02       |ofc03      |ofc04      |ofc05    |ofc06      |ofc07   |ofc08     |ofc09    |ofc10      |ofcact]
+[ofc01          |ofc02       |ofc03      |ofc04      |ofc05    |ofc06      |ofc07   |ofc08     |ofc09    |ofc10      |ofcact]
+[ofc01          |ofc02       |ofc03      |ofc04      |ofc05    |ofc06      |ofc07   |ofc08     |ofc09    |ofc10      |ofcact]
+[ofc01          |ofc02       |ofc03      |ofc04      |ofc05    |ofc06      |ofc07   |ofc08     |ofc09    |ofc10      |ofcact]
+[ofc01          |ofc02       |ofc03      |ofc04      |ofc05    |ofc06      |ofc07   |ofc08     |ofc09    |ofc10      |ofcact]
+[ofc01          |ofc02       |ofc03      |ofc04      |ofc05    |ofc06      |ofc07   |ofc08     |ofc09    |ofc10      |ofcact]
+[ofc01          |ofc02       |ofc03      |ofc04      |ofc05    |ofc06      |ofc07   |ofc08     |ofc09    |ofc10      |ofcact]
+[ofc01          |ofc02       |ofc03      |ofc04      |ofc05    |ofc06      |ofc07   |ofc08     |ofc09    |ofc10      |ofcact]
+
+}
+END -- s_ofc
+END -- page01
+END -- pc509
+Grid gr2146
+{
+ Detail Counts   [cnt2       ]
+
+}
+END -- gr2146
+END -- VBox1
+END -- axmi702
+
+TABLES
+ofc_file
+ATTRIBUTES
+Edit ofc01=ofc_file.ofc01, tabIndex=1, title="Customer Level", not null, required;
+Edit ofc02=ofc_file.ofc02, tabIndex=2, title="Description";
+CheckBox ofc03=ofc_file.ofc03, tabIndex=3, title="Regul Vist", valueChecked = "Y", valueUnchecked = "N";
+Edit ofc04=ofc_file.ofc04, tabIndex=4, title="Prid Month";
+Edit ofc05=ofc_file.ofc05, tabIndex=5, title="Prid Day";
+Edit ofc06=ofc_file.ofc06, tabIndex=6, title="Vist Times";
+CheckBox ofc07=ofc_file.ofc07, tabIndex=7, title="DM Sale", valueChecked = "Y", valueUnchecked = "N";
+CheckBox ofc08=ofc_file.ofc08, tabIndex=8, title="FAX Sale", valueChecked = "Y", valueUnchecked = "N";
+CheckBox ofc09=ofc_file.ofc09, tabIndex=9, title="MAIL Sale", valueChecked = "Y", valueUnchecked = "N";
+CheckBox ofc10=ofc_file.ofc10, tabIndex=10, title="Phone Sale", valueChecked = "Y", valueUnchecked = "N";
+CheckBox ofcact=ofc_file.ofcacti, tabIndex=11, title="Valid", valueChecked = "Y", valueUnchecked = "N";
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ofc(ofc_file.ofc01,ofc_file.ofc02,ofc_file.ofc03,ofc_file.ofc04,ofc_file.ofc05,ofc_file.ofc06,ofc_file.ofc07,ofc_file.ofc08,ofc_file.ofc09,ofc_file.ofc10,ofc_file.ofcacti)
+SCREEN RECORD Undefined(formonly.cnt2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp810.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimp810")
+VBox vb2
+Grid gr1
+{
+ <G group01                                                       > <G group02                                                       >
+ [a                                  ]                              [e                                  ]
+
+  Label         [stk             ][smydesc1                      ]   Label         [wip             ][smydesc2                      ]
+
+  Generating Pages    [paper1    ]                                   Generating Pages    [paper2    ]
+
+
+ <                                                                > <                                                                >
+
+}
+END -- gr1
+Grid gr2
+{
+[g_bgjob                                 ]
+
+}
+END -- gr2
+END -- vb2
+END -- aimp810
+
+ATTRIBUTES
+Group group01:group01;
+CheckBox a=formonly.a type VARCHAR, tabIndex=1, text="Gen (Qty On Hand) Inv Taking Data?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit stk=formonly.stk type VARCHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry  Label  <^Y>Create Label Type";
+Edit smydesc1=formonly.smydesc1 type VARCHAR, tabIndex=3, noEntry;
+Edit paper1=formonly.paper1 type INTEGER, tabIndex=4;
+Group group02:group02;
+CheckBox e=formonly.e type VARCHAR, tabIndex=5, text="Gen (IP W/O) Inv Taking Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit wip=formonly.wip type VARCHAR, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry  Label  <^Y>Create Label Type";
+Edit smydesc2=formonly.smydesc2 type VARCHAR, tabIndex=7, noEntry;
+Edit paper2=formonly.paper2 type INTEGER, tabIndex=8;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=9, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.stk,formonly.smydesc1,formonly.paper1,formonly.e,formonly.wip,formonly.smydesc2,formonly.paper2,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

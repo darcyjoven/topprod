@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr040.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxr040")
+VBox VBox1
+Grid gr1105
+{
+ <G group01                                                >
+  Subcontracting W/O              [sfb01                  ]
+  Subcontracting W/O Closing Date [sfb36          ]
+
+ <                                                         >
+
+}
+END -- gr1105
+Grid gr1106
+{
+[more                          ]
+[dummy01                                                          ]
+
+}
+END -- gr1106
+END -- VBox1
+END -- abxr040
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit sfb01=formonly.sfb01 type CHAR, tabIndex=1, upShift;
+DateEdit sfb36=formonly.sfb36 type DATE, tabIndex=2;
+CheckBox more=formonly.more type CHAR, tabIndex=3, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="Description:\nData Source is W/O Table sfb_fileand Inventory tlf_file.";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfb01,formonly.sfb36,formonly.more)
+END -- INSTRUCTIONS
+

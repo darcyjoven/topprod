@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmg558.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr550")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                                   >
+  Invoice Document No. [ofa01             ]
+  Invoice Date         [ofa02             ]
+ <                                                            >
+
+}
+END -- gr1
+Grid gr2
+{
+[more                                   ]
+
+}
+END -- gr2
+END -- VBox1
+END -- axmr558
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ofa01=formonly.ofa01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit ofa02=formonly.ofa02 type DATE, tabIndex=2;
+CheckBox more=formonly.more type VARCHAR, tabIndex=3, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ofa01,formonly.ofa02,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglg304.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglr304")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                  >
+  Voucher NO.         [aba01               ]
+  Voucher Date.       [aba02               ]
+  Source              [aba06               ]
+ <                                           >
+
+}
+END -- gr1
+Group g01(text="INPUT")
+Grid gr2
+{
+   Book No.            [bookno             ]
+   Enter user QBE      [b_user    ] -[e_user    ]
+
+ <G group02                                 >
+ [t                                        ]
+ <                                          >
+ <G group03                                 >
+ [u                                        ]
+ <                                          >
+ <G group04                                 >
+ [w                                        ]
+ <                                          >
+ <G group06                                 >
+ [h                                     ]
+ [e                                        ]
+ <                                          >
+
+}
+END -- gr2
+END -- g01
+Grid gr3
+{
+[m                                   ]
+
+}
+END -- gr3
+END -- VBox1
+END -- gglr304
+
+TABLES
+aba_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit aba01=aba_file.aba01, action=controlp, tabIndex=1, image="zoom";
+DateEdit aba02=aba_file.aba02, tabIndex=2;
+ComboBox aba06=aba_file.aba06, tabIndex=3, not null, required, items=(("GL", "GL"),("RV", "RV"),("AC", "AC"),("RA", "RA"),("FA", "FA"),("FC", "FC"),("FP", "FP"),("VP", "VP"),("NM", "NM"),("AP", "AP"),("AR", "AR"),("CE", "CE"),("CP", "CP"),("LC", "LC"),("GF", "GF"),("AD", "AD"));
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Edit b_user=formonly.b_user type CHAR, tabIndex=11, not null, required;
+Edit e_user=formonly.e_user type CHAR, tabIndex=12, not null, required;
+Group group02:group02, text="Date Option 1";
+RadioGroup t=formonly.t type CHAR, tabIndex=4, items=(("1", "Unposted"),("2", "Posted"),("3", "All "));
+Group group03:group03, text="Date Option 2";
+RadioGroup u=formonly.u type CHAR, tabIndex=5, items=(("1", "Valid"),("2", "Void"),("3", "All "));
+Group group04:group04, text="Date Option 3";
+RadioGroup w=formonly.w type CHAR, tabIndex=6, items=(("1", "Unprinted"),("2", "Printed"),("3", "All "));
+Group group06:group06;
+CheckBox h=formonly.h type CHAR, tabIndex=10, text="Monetary Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=7, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox m=formonly.m type VARCHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(aba_file.aba01,aba_file.aba02,aba_file.aba06,formonly.bookno,formonly.t,formonly.u,formonly.w,formonly.h,formonly.e,formonly.m,formonly.b_user,formonly.e_user)
+END -- INSTRUCTIONS
+

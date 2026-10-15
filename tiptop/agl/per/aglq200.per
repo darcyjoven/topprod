@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq200")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+HBox hb4
+Grid gr2540
+{
+ Voucher#            [aba01        ]
+ Voucher Date        [aba02        ]
+ General No.         [aba11        ]
+
+}
+END -- gr2540
+Grid gr2541
+{
+ Book No.            [aba00     ]
+ Source Code         [aba06     ]
+ Debit Amount        [aba08            ]
+ Credit Amount       [aba09            ]
+}
+END -- gr2541
+Grid gr2542
+{
+
+[abapost   ]
+
+
+}
+END -- gr2542
+END -- hb4
+END -- page01
+END -- folder01
+Table s_aba
+{
+[plant     |npp01           |npp02         |desc                                    ]
+[plant     |npp01           |npp02         |desc                                    ]
+[plant     |npp01           |npp02         |desc                                    ]
+[plant     |npp01           |npp02         |desc                                    ]
+[plant     |npp01           |npp02         |desc                                    ]
+[plant     |npp01           |npp02         |desc                                    ]
+[plant     |npp01           |npp02         |desc                                    ]
+[plant     |npp01           |npp02         |desc                                    ]
+[plant     |npp01           |npp02         |desc                                    ]
+[plant     |npp01           |npp02         |desc                                    ]
+
+}
+END -- s_aba
+Grid gr2543
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2543
+END -- vb6
+END -- aglq200
+
+TABLES
+aba_file
+ATTRIBUTES
+Edit aba01=aba_file.aba01, tabIndex=1;
+DateEdit aba02=aba_file.aba02, tabIndex=2;
+Edit aba11=aba_file.aba11, tabIndex=3;
+ButtonEdit aba00=formonly.aba00 type VARCHAR, action=controlp, tabIndex=14, not null, required, image="zoom.png";
+Edit aba06=aba_file.aba06, tabIndex=4, not null, required;
+Edit aba08=aba_file.aba08, tabIndex=5, color = yellow;
+Edit aba09=aba_file.aba09, tabIndex=6, color = yellow;
+CheckBox abapost=aba_file.abapost, tabIndex=7, text="Post", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit plant=formonly.plant type CHAR, tabIndex=8, title="Plant No.", noEntry;
+Edit npp01=formonly.npp01 type CHAR, tabIndex=9, title="Voucher #", noEntry;
+Edit npp02=formonly.npp02 type CHAR, tabIndex=10, title="Voucher Date", noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=11, title="Memo", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aba(formonly.plant,formonly.npp01,formonly.npp02,formonly.desc)
+SCREEN RECORD Undefined(aba_file.aba01,aba_file.aba02,aba_file.aba11,formonly.aba00,aba_file.aba06,aba_file.aba08,aba_file.aba09,aba_file.abapost,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

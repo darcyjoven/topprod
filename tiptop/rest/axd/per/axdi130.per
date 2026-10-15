@@ -1,0 +1,121 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi130.per created Wed Jan 23 05:30:34 2008
+-- File created from axdi130.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi130")
+-- GRID
+-- GRID
+-- GRID
+-- HBOX
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- GRID
+-- HBOX
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        HBOX 
+          GRID gr7768
+          {
+           Item No.            [aa0                           ]
+                               [aa1                           ]
+           Schedule Person     [aa2       ][aa3       ]
+           Department          [aa4       ][aa5       ]
+
+          }
+          END -- GRID
+          GRID gr7769
+          {
+           Inventory Unit      [aa6       ]
+           Initial Period      [aa7       ][aa8       ]
+           Number of Generated [aa9       ]
+
+          }
+          END -- GRID
+          GRID gr7770
+          {
+                               [ab0       ][ab1    ]
+                               [ab2       ][       ]
+
+          }
+          END -- GRID
+        END -- HBOX
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_obd
+    {
+    [ab3       |ab4                |ab5          |ab6         |ab7              |ab8              |ab9              |ac0              |ac1          ]
+    [ab3       |ab4                |ab5          |ab6         |ab7              |ab8              |ab9              |ac0              |ac1          ]
+    [ab3       |ab4                |ab5          |ab6         |ab7              |ab8              |ab9              |ac0              |ac1          ]
+    [ab3       |ab4                |ab5          |ab6         |ab7              |ab8              |ab9              |ac0              |ac1          ]
+    [ab3       |ab4                |ab5          |ab6         |ab7              |ab8              |ab9              |ac0              |ac1          ]
+    [ab3       |ab4                |ab5          |ab6         |ab7              |ab8              |ab9              |ac0              |ac1          ]
+    [ab3       |ab4                |ab5          |ab6         |ab7              |ab8              |ab9              |ac0              |ac1          ]
+    [ab3       |ab4                |ab5          |ab6         |ab7              |ab8              |ab9              |ac0              |ac1          ]
+    [ab3       |ab4                |ab5          |ab6         |ab7              |ab8              |ab9              |ac0              |ac1          ]
+    [ab3       |ab4                |ab5          |ab6         |ab7              |ab8              |ab9              |ac0              |ac1          ]
+    }
+    END -- TABLE
+    HBOX 
+      GRID gr7771
+      {
+       total         [ac2         ] [ac3          ] [ac4          ]  [ac5          ]
+
+      }
+      END -- GRID
+      GRID gr7772
+      {
+       ---------- Rows [ac6   ] / [ac7   ] ----------
+
+      }
+      END -- GRID
+    END -- HBOX
+  END -- VBOX
+END
+TABLES obc_file,obd_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=obc_file.obc01, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=1;
+  EDIT aa1=FORMONLY.ima02 TYPE VARCHAR, NOENTRY, TABINDEX=2;
+  BUTTONEDIT aa2=obc_file.obc04, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=3;
+  EDIT aa3=FORMONLY.gen02 TYPE VARCHAR, NOENTRY, TABINDEX=4;
+  BUTTONEDIT aa4=obc_file.obc05, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=5;
+  EDIT aa5=FORMONLY.gem02 TYPE VARCHAR, NOENTRY, TABINDEX=6;
+  EDIT aa6=obc_file.obc07, NOENTRY, TABINDEX=7;
+  EDIT aa7=obc_file.obc02, COMMENT="1.Year+Month 2.Year+Week 3.Year+Month+Ten Days", NOENTRY, TABINDEX=8;
+  EDIT aa8=obc_file.obc021, NOT NULL, REQUIRED, TABINDEX=9;
+  EDIT aa9=obc_file.obc03, NOENTRY, TABINDEX=10;
+  CHECKBOX ab0=obc_file.obcconf, TEXT="Confirm", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=11;
+  IMAGE ab1=FORMONLY.imgmksg, AUTOSCALE, WIDTH=7 CHARACTERS, HEIGHT=2 CHARACTERS;
+  CHECKBOX ab2=obc_file.obc06, TEXT="Fetch? ", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=13;
+  EDIT ab3=obd_file.obd03, NOT NULL, REQUIRED, TABINDEX=14, TITLE="Line No";
+  EDIT ab4=obd_file.obd04, NOENTRY, TABINDEX=15, TITLE="Scheduled Period";
+  EDIT ab5=obd_file.obd06, NOT NULL, REQUIRED, TABINDEX=16, TITLE="Unit Price";
+  EDIT ab6=obd_file.obd07, NOENTRY, TABINDEX=17, TITLE="Total Sum";
+  EDIT ab7=obd_file.obd08, NOT NULL, REQUIRED, TABINDEX=18, TITLE="Own Demand Qty";
+  EDIT ab8=obd_file.obd09, NOENTRY, TABINDEX=19, TITLE="Own Adjust Qty";
+  EDIT ab9=obd_file.obd10, NOENTRY, TABINDEX=20, TITLE="Sub Demand Qty";
+  EDIT ac0=obd_file.obd11, NOENTRY, TABINDEX=21, TITLE="Sub Adjust Qty";
+  EDIT ac1=obd_file.obd12, NOENTRY, TABINDEX=22, TITLE="Total";
+  EDIT ac2=FORMONLY.obd07t, NOENTRY, TABINDEX=23;
+  EDIT ac3=FORMONLY.obd08t, NOENTRY, TABINDEX=24;
+  EDIT ac4=FORMONLY.obd10t, NOENTRY, TABINDEX=25;
+  EDIT ac5=FORMONLY.obd12t, NOENTRY, TABINDEX=26;
+  EDIT ac6=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=27;
+  EDIT ac7=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=28;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_obd (obd_file.obd03, obd_file.obd04, obd_file.obd06, obd_file.obd07, obd_file.obd08, obd_file.obd09, obd_file.obd10, obd_file.obd11, obd_file.obd12)
+END

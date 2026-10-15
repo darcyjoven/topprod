@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri080.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+ <G group1                                   >         <G group2                         >
+   hrdm02[hrdm02                         ]               hrat02 [hrat02              ]
+   hrdm08[hrdm08                         ]               hrat04 [hrat04              ]
+  [hrdm13                                ]               hrat05 [hrat05              ]
+   hrdm03[hrdm03    |hrdl02              ]               hrat19 [hrat19              ]
+   hrdm04[hrdm04                         ]               hrat66 [hrat66    ]
+   hrdm05[hrdm05                         ]               hrdm07 [hrdm07    ]
+   hrdm11[hrdm11                         ]
+         [                               ]             <                                 >
+ <                                           >
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Grid Grid2
+{
+  ---------- cnt[cnt ] ----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"";
+ButtonEdit hrdm02=formonly.hrdm02 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrdm08=formonly.hrdm08 type INTEGER, tabIndex=6, not null, required;
+CheckBox hrdm13=formonly.hrdm13 type VARCHAR, tabIndex=15, text=%"CheckBox1", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit hrdm03=formonly.hrdm03 type VARCHAR, action=controlp, tabIndex=8, not null, required, image="zoom";
+Edit hrdl02=formonly.hrdl02 type VARCHAR, tabIndex=9, noEntry;
+ButtonEdit hrdm04=formonly.hrdm04 type VARCHAR, action=controlp, tabIndex=10, not null, required, image="zoom";
+ButtonEdit hrdm05=formonly.hrdm05 type VARCHAR, action=controlp, tabIndex=11, not null, required, image="zoom";
+TextEdit hrdm11=formonly.hrdm11 type VARCHAR, tabIndex=13;
+Group group2:Group2, text=%"";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=2, noEntry;
+Edit hrat04=formonly.hrat04 type VARCHAR, tabIndex=4, noEntry;
+Edit hrat05=formonly.hrat05 type VARCHAR, tabIndex=3, noEntry;
+Edit hrat19=formonly.hrat19 type VARCHAR, tabIndex=7, noEntry;
+DateEdit hrat66=formonly.hrat66 type DATE, tabIndex=5, noEntry;
+DateEdit hrdm07=formonly.hrdm07 type DATE, tabIndex=12, not null, required;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrdm02,formonly.hrat02,formonly.hrat05,formonly.hrat04,formonly.hrat66,formonly.hrdm08,formonly.hrat19,formonly.hrdm03,formonly.hrdl02,formonly.hrdm04,formonly.hrdm05,formonly.hrdm07,formonly.hrdm11,formonly.cnt,formonly.hrdm13)
+END -- INSTRUCTIONS
+

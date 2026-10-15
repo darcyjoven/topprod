@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/udmenu3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"udmenu3")
+VBox VBox1
+Grid gr3009
+{
+[logo      ]
+
+}
+END -- gr3009
+Folder pc691
+Page page01(text="Main")
+Table s_udm
+{
+[m1                                                          |n       ]
+[m1                                                          |n       ]
+[m1                                                          |n       ]
+[m1                                                          |n       ]
+[m1                                                          |n       ]
+[m1                                                          |n       ]
+[m1                                                          |n       ]
+[m1                                                          |n       ]
+[m1                                                          |n       ]
+[m1                                                          |n       ]
+
+}
+END -- s_udm
+END -- page01
+Page Page1023(text="My Favor")
+Table s_udm2
+{
+[m2                                                          |n2      ]
+[m2                                                          |n2      ]
+[m2                                                          |n2      ]
+[m2                                                          |n2      ]
+[m2                                                          |n2      ]
+[m2                                                          |n2      ]
+[m2                                                          |n2      ]
+[m2                                                          |n2      ]
+[m2                                                          |n2      ]
+[m2                                                          |n2      ]
+
+}
+END -- s_udm2
+END -- Page1023
+Page Page1024(text="Billboard")
+Table s_msg
+{
+[msg_date         |msg                                                                                     ]
+[msg_date         |msg                                                                                     ]
+[msg_date         |msg                                                                                     ]
+[msg_date         |msg                                                                                     ]
+[msg_date         |msg                                                                                     ]
+[msg_date         |msg                                                                                     ]
+[msg_date         |msg                                                                                     ]
+[msg_date         |msg                                                                                     ]
+[msg_date         |msg                                                                                     ]
+[msg_date         |msg                                                                                     ]
+
+}
+END -- s_msg
+END -- Page1024
+END -- pc691
+END -- VBox1
+END -- udmenu3
+
+ATTRIBUTES
+Button logo:logo, text="logo.bmp F35";
+Edit m1=formonly.m1 type CHAR, tabIndex=1, title="System";
+Edit n=formonly.n type CHAR, tabIndex=2, title="n";
+Edit m2=formonly.m2 type CHAR, tabIndex=3, title="System";
+Edit n2=formonly.n2 type CHAR, tabIndex=4, title="n2";
+Edit msg_date=formonly.msg_date type CHAR, tabIndex=5, title="Date";
+Edit msg=formonly.msg type CHAR, tabIndex=6, title="Message";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_udm(formonly.m1,formonly.n)
+SCREEN RECORD s_udm2(formonly.m2,formonly.n2)
+SCREEN RECORD s_msg(formonly.msg_date,formonly.msg)
+END -- INSTRUCTIONS
+

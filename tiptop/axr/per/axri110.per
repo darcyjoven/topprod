@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axri110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Table ds1
+{
+[ooh01     |ooh02                         |oohacti |oohpos         ]
+[ooh01     |ooh02                         |oohacti |oohpos         ]
+[ooh01     |ooh02                         |oohacti |oohpos         ]
+[ooh01     |ooh02                         |oohacti |oohpos         ]
+[ooh01     |ooh02                         |oohacti |oohpos         ]
+[ooh01     |ooh02                         |oohacti |oohpos         ]
+[ooh01     |ooh02                         |oohacti |oohpos         ]
+[ooh01     |ooh02                         |oohacti |oohpos         ]
+[ooh01     |ooh02                         |oohacti |oohpos         ]
+}
+END -- ds1
+Grid Grid1
+{
+
+ ------ rowcnt  [cnt       ] /[cn2       ]------
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+ooh_file
+ATTRIBUTES
+Edit ooh01=ooh_file.ooh01, tabIndex=1, title=%"ooh01", not null, required, scroll;
+Edit ooh02=ooh_file.ooh02, tabIndex=2, title=%"ooh02", not null, required, scroll;
+CheckBox oohacti=ooh_file.oohacti, tabIndex=3, default = "Y", title=%"oohacti", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox oohpos=ooh_file.oohpos, tabIndex=4, default = "1", title=%"oohpos", noEntry, not null, required, scroll, items=(("1", "Add-No passed"),("2", "Modify-No passed"),("3", "Passed"));
+Edit cnt=formonly.cnt, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cnt,formonly.cn2)
+SCREEN RECORD s_ooh(ooh_file.ooh01,ooh_file.ooh02,ooh_file.oohacti,ooh_file.oohpos)
+END -- INSTRUCTIONS
+

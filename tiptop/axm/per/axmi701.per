@@ -1,0 +1,208 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi701")
+VBox VBox1
+Folder pc505
+Page page01(text="Main")
+HBox HBox1
+Grid gr2133
+{
+ Customer #          [ofd01     ]
+ Customer Abbr       [ofd02     ]
+ Customer Src        [ofd03     |ofq02              ]
+ Customer cate       [ofd04     |oca02              ]
+ Area Code           [ofd05     |gea02              ]
+}
+END -- gr2133
+Grid gr2134
+{
+ Status            [ofd22     ][ofd22_ds  ]                [imgmksg]
+ Company Name      [ofd17                               ]  [       ]
+                   [ofd171                              ]
+ Company Tel       [ofd37               ]
+ Company FAX       [ofd38               ]
+}
+END -- gr2134
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr2135
+{
+ Record Owner        [ofduser   ] Last Modified by    [ofdmodu   ] Data Valid Code     [ofdacti   ]
+ Department          [ofdgrup   ] Create/Modify Date  [ofddate     ]
+ Record Orig.        [ofdoriu   ]
+ Dept Orig.          [ofdorig   ]
+}
+END -- gr2135
+END -- info
+END -- pc505
+Folder pc506
+Page page02(text="Company Data")
+VBox VBox2
+HBox HBox2
+Group gb1483
+Grid gr2136
+{
+ In Charge           [ofd13               ]
+ ID Number           [ofd14               ]
+ Uniform#            [ofd15               ]
+ Business Item       [ofd16                               ]
+                     [ofd161                              ]
+                     [ofd162                              ]
+}
+END -- gr2136
+END -- gb1483
+Group gb1484
+Grid gr2137
+{
+ Initial Date        [ofd06       ]
+ Captlz Amount       [ofd07               ]
+ Annual Revenue      [ofd08               ]
+ Employees           [ofd09               ]
+ Customer Level      [ofd10     ]
+}
+END -- gr2137
+END -- gb1484
+END -- HBox2
+HBox HBox3
+Group gb1485
+Grid gr2138
+{
+
+ Salesman            [ofd23     ][gen02     ]
+ Allot Date          [ofd24       ]
+ Contact Date        [ofd25       ]
+ Track Date          [ofd26       ]
+}
+END -- gr2138
+END -- gb1485
+Group gb1486
+Grid gr2139
+{
+ Ant. Cont Date      [ofd27     ]
+ Est. Deal Amt       [ofd28               ]
+ Deal Pos%           [ofd29     ]
+ Formal Cust.#       [ofd30     ]
+}
+END -- gr2139
+END -- gb1486
+END -- HBox3
+END -- VBox2
+END -- page02
+Page page03(text="Address & Contact")
+VBox VBox3
+Group gb1487
+Grid gr2140
+{
+ Contact             [ofd31               ]
+ Position            [ofd32               ]
+ TEL                 [ofd33               ]
+ Email               [ofd34               ]
+ FAX                 [ofd35               ]
+}
+END -- gr2140
+END -- gb1487
+Group gb1488
+Grid gr2141
+{
+ ZIP Code            [ofd36     ]
+ Mail Address        [ofd18                               ]
+                     [ofd19                               ]
+                     [ofd20                               ]
+                     [ofd21                               ]
+}
+END -- gr2141
+END -- gb1488
+END -- VBox3
+END -- page03
+Page page04(text="Other")
+Group gb1489
+Grid gr2142
+{
+ Closing Date                 [ofd39       ]
+ Deal Competition Vendor No.# [ofd40       ]
+ Vender Abbreviation          [ofd41       ]
+}
+END -- gr2142
+END -- gb1489
+END -- page04
+END -- pc506
+Grid gr2143
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2143
+END -- VBox1
+END -- axmi701
+
+TABLES
+ofd_file
+ATTRIBUTES
+ButtonEdit ofd01=ofd_file.ofd01, action=controlp, tabIndex=1, image="zoom";
+Edit ofd02=ofd_file.ofd02, tabIndex=2;
+ButtonEdit ofd03=ofd_file.ofd03, action=controlp, tabIndex=3, image="zoom", upShift, comment="<^P>Qry Details";
+Edit ofq02=formonly.ofq02, tabIndex=505;
+ButtonEdit ofd04=ofd_file.ofd04, action=controlp, tabIndex=4, image="zoom", upShift, comment="<^P>Qry Details";
+Edit oca02=formonly.oca02, tabIndex=504;
+ButtonEdit ofd05=ofd_file.ofd05, action=controlp, tabIndex=5, image="zoom", upShift, comment="<^P>Qry Details";
+Edit gea02=formonly.gea02, tabIndex=503;
+ComboBox ofd22=ofd_file.ofd22, tabIndex=6, noEntry, queryEditable, items=(("0", "Register"),("1", "Assign"),("2", "Open"),("3", "Deal"),("4", "Close"));
+Edit ofd22_ds=formonly.ofd22_ds type VARCHAR, tabIndex=7, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit ofd17=ofd_file.ofd17, tabIndex=9;
+Edit ofd171=ofd_file.ofd171, tabIndex=10;
+Edit ofd37=ofd_file.ofd37, tabIndex=11;
+Edit ofd38=ofd_file.ofd38, tabIndex=12;
+Edit ofduser=ofd_file.ofduser, tabIndex=13, noEntry;
+Edit ofdmodu=ofd_file.ofdmodu, tabIndex=14, noEntry;
+Edit ofdacti=ofd_file.ofdacti, tabIndex=15, noEntry, upShift;
+Edit ofdgrup=ofd_file.ofdgrup, tabIndex=16, noEntry;
+DateEdit ofddate=ofd_file.ofddate, tabIndex=17, noEntry;
+Edit ofdoriu=ofd_file.ofdoriu, tabIndex=501, noEntry;
+Edit ofdorig=ofd_file.ofdorig, tabIndex=502, noEntry;
+Edit ofd13=ofd_file.ofd13, tabIndex=18;
+Edit ofd14=ofd_file.ofd14, tabIndex=19;
+Edit ofd15=ofd_file.ofd15, tabIndex=20;
+Edit ofd16=ofd_file.ofd16, tabIndex=21;
+Edit ofd161=ofd_file.ofd161, tabIndex=22;
+Edit ofd162=ofd_file.ofd162, tabIndex=23;
+DateEdit ofd06=ofd_file.ofd06, tabIndex=24;
+Edit ofd07=ofd_file.ofd07, tabIndex=25;
+Edit ofd08=ofd_file.ofd08, tabIndex=26;
+Edit ofd09=ofd_file.ofd09, tabIndex=27;
+ButtonEdit ofd10=ofd_file.ofd10, action=controlp, tabIndex=28, noEntry, image="zoom", upShift, comment="<^P>Qry Details";
+ButtonEdit ofd23=ofd_file.ofd23, action=controlp, tabIndex=29, noEntry, image="zoom", comment="<^P>Qry Details";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=30, noEntry;
+DateEdit ofd24=ofd_file.ofd24, tabIndex=31, noEntry;
+DateEdit ofd25=ofd_file.ofd25, tabIndex=32;
+DateEdit ofd26=ofd_file.ofd26, tabIndex=33;
+DateEdit ofd27=ofd_file.ofd27, tabIndex=34;
+Edit ofd28=ofd_file.ofd28, tabIndex=35;
+Edit ofd29=ofd_file.ofd29, tabIndex=36;
+Edit ofd30=ofd_file.ofd30, tabIndex=37, noEntry;
+Edit ofd31=ofd_file.ofd31, tabIndex=38;
+Edit ofd32=ofd_file.ofd32, tabIndex=39;
+Edit ofd33=ofd_file.ofd33, tabIndex=40;
+Edit ofd34=ofd_file.ofd34, tabIndex=41;
+Edit ofd35=ofd_file.ofd35, tabIndex=42;
+Edit ofd36=ofd_file.ofd36, tabIndex=43;
+Edit ofd18=ofd_file.ofd18, tabIndex=44;
+Edit ofd19=ofd_file.ofd19, tabIndex=45;
+Edit ofd20=ofd_file.ofd20, tabIndex=46;
+Edit ofd21=ofd_file.ofd21, tabIndex=47;
+DateEdit ofd39=ofd_file.ofd39, tabIndex=48;
+ButtonEdit ofd40=ofd_file.ofd40, action=controlp, tabIndex=49, image="zoom", comment="<^P>Qry Details";
+Edit ofd41=ofd_file.ofd41, tabIndex=50;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=51, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ofd_file.ofd01,ofd_file.ofd02,ofd_file.ofd03,formonly.ofq02,ofd_file.ofd04,formonly.oca02,ofd_file.ofd05,formonly.gea02,ofd_file.ofd22,formonly.ofd22_ds,formonly.imgmksg,ofd_file.ofd17,ofd_file.ofd171,ofd_file.ofd37,ofd_file.ofd38,ofd_file.ofduser,ofd_file.ofdmodu,ofd_file.ofdacti,ofd_file.ofdgrup,ofd_file.ofddate,ofd_file.ofdoriu,ofd_file.ofdorig,ofd_file.ofd13,ofd_file.ofd14,ofd_file.ofd15,ofd_file.ofd16,ofd_file.ofd161,ofd_file.ofd162,ofd_file.ofd06,ofd_file.ofd07,ofd_file.ofd08,ofd_file.ofd09,ofd_file.ofd10,ofd_file.ofd23,formonly.gen02,ofd_file.ofd24,ofd_file.ofd25,ofd_file.ofd26,ofd_file.ofd27,ofd_file.ofd28,ofd_file.ofd29,ofd_file.ofd30,ofd_file.ofd31,ofd_file.ofd32,ofd_file.ofd33,ofd_file.ofd34,ofd_file.ofd35,ofd_file.ofd36,ofd_file.ofd18,ofd_file.ofd19,ofd_file.ofd20,ofd_file.ofd21,ofd_file.ofd39,ofd_file.ofd40,ofd_file.ofd41,formonly.cnt)
+END -- INSTRUCTIONS
+

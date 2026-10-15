@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt3371.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt3371")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                           >
+  Multi Inventory Unit/Inventory Unit Conversion Rate [ima25_fac ][ima2]
+  Multi Inventory Unit/Inventory Unit Conversion Rate [img09_fac ][img0]
+  Account of Warehouse/Location                       [imgg26                        ]
+  Inventory Class                                     [imgg19    ]
+  Look Code                                           [imgg36    ]
+  Issuing priority                                    [imgg27    ]
+  Sales priority                                      [imgg28    ]
+  Project#                                            [imgg35_2  ]
+ <                                                                                    >
+
+}
+END -- Grid1
+END -- VBox1
+END -- aimt3371
+
+TABLES
+imgg_file,
+ima_file
+ATTRIBUTES
+Group group01:group01;
+Edit ima25_fac=formonly.ima25_fac type SMALLINT, tabIndex=1;
+Edit ima2=ima_file.ima25, tabIndex=2, noEntry;
+Edit img09_fac=formonly.img09_fac type SMALLINT, tabIndex=3;
+Edit img0=formonly.img09 type CHAR, tabIndex=4, noEntry;
+ButtonEdit imgg26=imgg_file.imgg26, action=controlp, tabIndex=5, image="zoom", comment="Press <^P>Qry Account ";
+Edit imgg19=imgg_file.imgg19, tabIndex=6;
+Edit imgg36=imgg_file.imgg36, tabIndex=7;
+Edit imgg27=imgg_file.imgg27, tabIndex=8;
+Edit imgg28=imgg_file.imgg28, tabIndex=9;
+ButtonEdit imgg35_2=formonly.imgg35_2 type CHAR, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Project #, <^Y>Project     ";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima25_fac,ima_file.ima25,formonly.img09_fac,formonly.img09,imgg_file.imgg26,imgg_file.imgg19,imgg_file.imgg36,imgg_file.imgg27,imgg_file.imgg28,formonly.imgg35_2)
+END -- INSTRUCTIONS
+

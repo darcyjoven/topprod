@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_rvv4.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Store-in/Return after Receiving")
+Grid gr3841
+{
+ <T s_rvv                                                                                         >
+ [check|rvv09   |rvv01        |rvv0|rvv31     |rvv031    |rvv17  |rvv36     |rvv3|rvv04     |rvv1]
+ [check|rvv09   |rvv01        |rvv0|rvv31     |rvv031    |rvv17  |rvv36     |rvv3|rvv04     |rvv1]
+ [check|rvv09   |rvv01        |rvv0|rvv31     |rvv031    |rvv17  |rvv36     |rvv3|rvv04     |rvv1]
+ [check|rvv09   |rvv01        |rvv0|rvv31     |rvv031    |rvv17  |rvv36     |rvv3|rvv04     |rvv1]
+ [check|rvv09   |rvv01        |rvv0|rvv31     |rvv031    |rvv17  |rvv36     |rvv3|rvv04     |rvv1]
+ [check|rvv09   |rvv01        |rvv0|rvv31     |rvv031    |rvv17  |rvv36     |rvv3|rvv04     |rvv1]
+ [check|rvv09   |rvv01        |rvv0|rvv31     |rvv031    |rvv17  |rvv36     |rvv3|rvv04     |rvv1]
+ [check|rvv09   |rvv01        |rvv0|rvv31     |rvv031    |rvv17  |rvv36     |rvv3|rvv04     |rvv1]
+ [check|rvv09   |rvv01        |rvv0|rvv31     |rvv031    |rvv17  |rvv36     |rvv3|rvv04     |rvv1]
+ [check|rvv09   |rvv01        |rvv0|rvv31     |rvv031    |rvv17  |rvv36     |rvv3|rvv04     |rvv1]
+ <                                                                                                >
+
+}
+END -- gr3841
+END -- q_rvv4
+
+TABLES
+rvv_file
+ATTRIBUTES
+Table s_rvv:s_rvv;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rvv09=rvv_file.rvv09, tabIndex=2, title="Date", noEntry, color = yellow;
+Edit rvv01=rvv_file.rvv01, tabIndex=3, title="Document No.", noEntry, color = yellow;
+Edit rvv0=rvv_file.rvv02, tabIndex=4, title="LN.", noEntry, color = yellow;
+Edit rvv31=rvv_file.rvv31, tabIndex=5, title="Category", noEntry, color = yellow;
+Edit rvv031=rvv_file.rvv031, tabIndex=6, title="Name", noEntry, color = yellow;
+Edit rvv17=rvv_file.rvv17, tabIndex=7, title="Qty", noEntry, color = yellow;
+Edit rvv36=rvv_file.rvv36, tabIndex=8, title="P/O N.", noEntry, color = yellow;
+Edit rvv3=rvv_file.rvv37, tabIndex=9, title="Ln#", noEntry, color = yellow;
+Edit rvv04=rvv_file.rvv04, tabIndex=10, title="Receipt#", noEntry, color = yellow;
+Edit rvv1=rvv_file.rvv05, tabIndex=11, title="Ln#", noEntry, color = yellow;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvv(formonly.check,rvv_file.rvv09,rvv_file.rvv01,rvv_file.rvv02,rvv_file.rvv31,rvv_file.rvv031,rvv_file.rvv17,rvv_file.rvv36,rvv_file.rvv37,rvv_file.rvv04,rvv_file.rvv05)
+END -- INSTRUCTIONS
+

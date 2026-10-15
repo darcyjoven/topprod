@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsq501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amsq501")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3957
+{
+[dummy01                        ]
+ Version             [mps_v     ]
+ Item#               [mps01                         ][ima02                         ]
+[dummy02                        ]
+}
+END -- gr3957
+END -- page01
+END -- folder01
+ScrollGrid gr3958
+{
+
+ Seq#              [mps0]         [mps0]         [mps0]         [mps0]         [mps0]         [mps0]
+ Time Bucket Day   [mps03       ] [mps03       ] [mps03       ] [mps03       ] [mps03       ] [mps03       ]
+ ------------------------------------------------------------------------------------------------------------
+ Forecast Qty      [mps039      ] [mps039      ] [mps039      ] [mps039      ] [mps039      ] [mps039      ]
+ Qty Ordered       [mps041      ] [mps041      ] [mps041      ] [mps041      ] [mps041      ] [mps041      ]
+ Other Require.    [mps043      ] [mps043      ] [mps043      ] [mps043      ] [mps043      ] [mps043      ]
+ Net Supply        [mps051      ] [mps051      ] [mps051      ] [mps051      ] [mps051      ] [mps051      ]
+ ------------------------------------------------------------------------------------------------------------
+ Estimat.Balance   [bal         ] [bal         ] [bal         ] [bal         ] [bal         ] [bal         ]
+ Resched.Deliver   [mps07       ] [mps07       ] [mps07       ] [mps07       ] [mps07       ] [mps07       ]
+ Estimat.Balance   [mps08       ] [mps08       ] [mps08       ] [mps08       ] [mps08       ] [mps08       ]
+ ------------------------------------------------------------------------------------------------------------
+ PLM/PLP           [mps09       ] [mps09       ] [mps09       ] [mps09       ] [mps09       ] [mps09       ]
+
+}
+END -- gr3958
+Grid gr3959
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3959
+END -- VBox1
+END -- amsq501
+
+TABLES
+mps_file
+ATTRIBUTES
+Label dummy01:dummy01;
+Edit mps_v=mps_file.mps_v, tabIndex=1;
+Edit mps01=mps_file.mps01, tabIndex=2;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Label dummy02:dummy02;
+Edit mps0=mps_file.mps00, tabIndex=4;
+Edit mps03=mps_file.mps03, tabIndex=5;
+Edit mps039=mps_file.mps039, tabIndex=6, noEntry;
+Edit mps041=mps_file.mps041, tabIndex=7, noEntry;
+Edit mps043=mps_file.mps043, tabIndex=8, noEntry;
+Edit mps051=mps_file.mps051, tabIndex=9, noEntry;
+Edit bal=formonly.bal type CHAR, tabIndex=10, noEntry;
+Edit mps07=formonly.mps07 type CHAR, tabIndex=11, noEntry;
+Edit mps08=mps_file.mps08, tabIndex=12, noEntry;
+Edit mps09=mps_file.mps09, tabIndex=13, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=14, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mps(mps_file.mps00,mps_file.mps03,mps_file.mps039,mps_file.mps041,mps_file.mps043,mps_file.mps051,formonly.bal,formonly.mps07,mps_file.mps08,mps_file.mps09)
+SCREEN RECORD Undefined(mps_file.mps_v,mps_file.mps01,formonly.ima02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

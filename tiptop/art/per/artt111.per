@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt111.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt111")
+VBox vb3
+Folder folder01
+Page Page1(text=%"Basic Data")
+Grid gr2
+{
+ Modify No.[rym01               ]     Status        [rym900       ]
+ Book Date [rym02     ]               Confirm       [rymconf      ]        [imgmksg]
+ Memo      [rym03                   ] Confirmed Date[rymcond   ]           [       ]
+           [                        ] Confirmed By  [rymconu        |rymconu_desc  ]
+           [                        ] Org.          [rymplant       |rymplant_desc ]
+
+}
+END -- gr2
+END -- Page1
+Page Page2(text=%"Info")
+Grid gr4
+{
+
+ rymuser   [rymuser       ]  rymmodu[rymmodu      ] rymcrat     [rymcrat        ]
+ rymgrup   [rymgrup       ]  rymdate[rymdate      ] Record Orig.[rymoriu        ]
+ Dept Orig.[rymorig       ]
+
+}
+END -- gr4
+END -- Page2
+END -- folder01
+Table s_ryn
+{
+[ryn02   |ryn03     |ryn03_desc|ryn04     |ryn04_desc|ryn01|ryn05     |ryn06   |ryn06_de|ryn07     |ryn08     |ryn09|ryn10     |ryn11     |ryn12     |ryn13     |ryn15   |ryn15_de|ryn1]
+[ryn02   |ryn03     |ryn03_desc|ryn04     |ryn04_desc|ryn01|ryn05     |ryn06   |ryn06_de|ryn07     |ryn08     |ryn09|ryn10     |ryn11     |ryn12     |ryn13     |ryn15   |ryn15_de|ryn1]
+[ryn02   |ryn03     |ryn03_desc|ryn04     |ryn04_desc|ryn01|ryn05     |ryn06   |ryn06_de|ryn07     |ryn08     |ryn09|ryn10     |ryn11     |ryn12     |ryn13     |ryn15   |ryn15_de|ryn1]
+[ryn02   |ryn03     |ryn03_desc|ryn04     |ryn04_desc|ryn01|ryn05     |ryn06   |ryn06_de|ryn07     |ryn08     |ryn09|ryn10     |ryn11     |ryn12     |ryn13     |ryn15   |ryn15_de|ryn1]
+[ryn02   |ryn03     |ryn03_desc|ryn04     |ryn04_desc|ryn01|ryn05     |ryn06   |ryn06_de|ryn07     |ryn08     |ryn09|ryn10     |ryn11     |ryn12     |ryn13     |ryn15   |ryn15_de|ryn1]
+[ryn02   |ryn03     |ryn03_desc|ryn04     |ryn04_desc|ryn01|ryn05     |ryn06   |ryn06_de|ryn07     |ryn08     |ryn09|ryn10     |ryn11     |ryn12     |ryn13     |ryn15   |ryn15_de|ryn1]
+}
+END -- s_ryn
+Grid gr11
+{
+
+ ----------Rows[idx     ]/[cnt     ]-----Details[cn2     ]----------
+
+
+
+}
+END -- gr11
+END -- vb3
+END -- artt111
+
+TABLES
+ryn_file,
+rym_file
+ATTRIBUTES
+ButtonEdit rym01=rym_file.rym01, action=controlp, tabIndex=3, not null, required, image="zoom";
+ComboBox rym900=rym_file.rym900, tabIndex=39, noEntry, not null, items=(("0", "0"),("1", "1"),("2", "2"));
+DateEdit rym02=rym_file.rym02, tabIndex=1, not null, required;
+ComboBox rymconf=rym_file.rymconf, tabIndex=6, noEntry, items=(("Y", "Confirm"),("N", "Un_confirm"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+TextEdit rym03=rym_file.rym03, tabIndex=4;
+DateEdit rymcond=rym_file.rymcond, tabIndex=2, noEntry;
+ButtonEdit rymconu=rym_file.rymconu, action=controlp, tabIndex=7, noEntry, image="zoom";
+Edit rymconu_desc=formonly.rymconu_desc type VARCHAR, tabIndex=9, noEntry;
+ButtonEdit rymplant=rym_file.rymplant, action=controlp, tabIndex=5, noEntry, image="zoom.png";
+Edit rymplant_desc=formonly.rymplant_desc type VARCHAR, tabIndex=8, noEntry;
+Edit rymuser=rym_file.rymuser, tabIndex=10, noEntry;
+Edit rymmodu=rym_file.rymmodu, tabIndex=11, noEntry;
+DateEdit rymcrat=rym_file.rymcrat, tabIndex=14, noEntry;
+Edit rymgrup=rym_file.rymgrup, tabIndex=12, noEntry;
+DateEdit rymdate=rym_file.rymdate, tabIndex=13, noEntry;
+Edit rymoriu=rym_file.rymoriu, tabIndex=38, noEntry;
+Edit rymorig=rym_file.rymorig, tabIndex=37, noEntry;
+ComboBox ryn02=ryn_file.ryn02, tabIndex=15, title="Modify Type", not null, items=(("1", "Modify"),("2", "Add"));
+ButtonEdit ryn03=ryn_file.ryn03, action=controlp, tabIndex=27, title="Modify Org.", not null, image="zoom.png";
+Edit ryn03_desc=formonly.ryn03_desc type CHAR, tabIndex=28, title="Org. Name", noEntry;
+ButtonEdit ryn04=ryn_file.ryn04, action=controlp, tabIndex=16, title="Item", not null, image="zoom";
+Edit ryn04_desc=formonly.ryn04_desc type CHAR, tabIndex=22, title="Item Name", noEntry;
+Edit ryn01=formonly.ryn04_desc1 type CHAR, tabIndex=29, title="Item Class", noEntry;
+ComboBox ryn05=ryn_file.ryn05, tabIndex=30, title="Purchase Type", not null, items=(("1", "Self-defined"),("2", "PO"),("3", "Provider"),("4", "Purchase"));
+ButtonEdit ryn06=ryn_file.ryn06, action=controlp, tabIndex=17, title="Department", image="zoom";
+Edit ryn06_de=formonly.ryn06_desc type CHAR, tabIndex=23, title="Dept Name", noEntry;
+ButtonEdit ryn07=ryn_file.ryn07, action=controlp, tabIndex=18, title="Main Provider", not null, image="zoom.png";
+ComboBox ryn08=ryn_file.ryn08, tabIndex=31, title="Business Method", noEntry, items=(("1", "Sell"),("2", "Cost Sell"),("3", "Discount Rate Sell"),("4", "Unite Sell"));
+Edit ryn09=formonly.ryn09 type CHAR, tabIndex=32, title="Rate%";
+Edit ryn10=formonly.ryn10 type CHAR, tabIndex=33, title="Safe Inventories";
+Edit ryn11=formonly.ryn11 type CHAR, tabIndex=34, title="Added";
+ButtonEdit ryn12=ryn_file.ryn12, action=controlp, tabIndex=35, title="PO Trade Flow", image="zoom.png";
+ButtonEdit ryn13=ryn_file.ryn13, action=controlp, tabIndex=19, title="Return Trade Flow", image="zoom.png";
+ButtonEdit ryn15=ryn_file.ryn15, action=controlp, tabIndex=21, title="PO Center", image="zoom.png";
+Edit ryn15_de=formonly.ryn15_desc type CHAR, tabIndex=36, title="Center Name", noEntry;
+CheckBox ryn1=ryn_file.ryn14, tabIndex=20, title="invalid?", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type INTEGER, tabIndex=24;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=25;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=26;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ryn(ryn_file.ryn02,ryn_file.ryn03,formonly.ryn03_desc,ryn_file.ryn04,formonly.ryn04_desc,formonly.ryn04_desc1,ryn_file.ryn05,ryn_file.ryn06,formonly.ryn06_desc,ryn_file.ryn07,ryn_file.ryn08,formonly.ryn09,formonly.ryn10,formonly.ryn11,ryn_file.ryn12,ryn_file.ryn13,ryn_file.ryn15,formonly.ryn15_desc,ryn_file.ryn14)
+SCREEN RECORD Undefined(rym_file.rym01,rym_file.rym900,rym_file.rym02,rym_file.rymconf,formonly.imgmksg,rym_file.rym03,rym_file.rymcond,rym_file.rymconu,formonly.rymconu_desc,rym_file.rymplant,formonly.rymplant_desc,rym_file.rymuser,rym_file.rymmodu,rym_file.rymcrat,rym_file.rymgrup,rym_file.rymdate,rym_file.rymoriu,rym_file.rymorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

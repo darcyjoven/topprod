@@ -1,0 +1,155 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aici002")
+VBox vb2
+Folder pc2
+Page page9(text="Page0")
+Grid gr11
+{
+ icc01 [icc01             ]
+ <G gb20                                                                                                                  >
+  icc04            [icc04          ]                             icc06          [icc06          ]
+  icc05            [icc05          ]                             icc07          [icc07          ]
+  icc09            [icc09          ]                             icc08          [icc08          ][icc08_desc          ]
+  icc11            [icc11          |icc11_desc          ]        icc27          [icc27          ]
+  icc12            [icc12          ]                             icc13          [icc13          ]
+  icc14            [icc14          ]                             icc15          [icc15          ]
+  icc10            [icc10                                                                                     ]
+ <                                                                                                                        >
+ <G gb21                                                                                                                  >
+  icc16             [icc16               ]                  icc19            [icc19               ]
+  icc17             [icc17               ]                  icc20            [icc20               ]
+  icc18             [icc18               ]                  icc33            [icc33               ]
+ [icc30                                   ]
+  icc32             [icc32               ]
+  icc34             [icc34               ]                  icc35            [icc35               ]
+  icc36             [icc36               ]                  icc37            [icc37               ]
+  icc38             [icc38               ]
+
+ <                                                                                                                        >
+
+}
+END -- gr11
+END -- page9
+Page page10(text="Page1")
+Grid gr12
+{
+ icc21        [icc21               ]
+ icc22        [icc22               ]
+ icc23        [icc23               ]
+ icc25        [icc25               ]
+ icc26        [icc26               ]
+
+}
+END -- gr12
+END -- page10
+Page page11(text="Page2")
+Grid gr13
+{
+ iccuser       [iccuser             ]  iccmodu       [iccmodu             ]  iccgrup       [iccgrup             ]
+ iccdate       [iccdate             ]  iccacti       [iccacti             ]
+ Record Orig.  [iccoriu             ]  Dept Orig.    [iccorig             ]
+
+
+
+
+}
+END -- gr13
+END -- page11
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[iccud01                       ] userdefined_field07[iccud07        ] userdefined_field13[iccud13        ]
+                    [                              ] userdefined_field08[iccud08        ] userdefined_field14[iccud14        ]
+ userdefined_field02[iccud02        ]                userdefined_field09[iccud09        ] userdefined_field15[iccud15        ]
+ userdefined_field03[iccud03        ]                userdefined_field10[iccud10        ]
+ userdefined_field04[iccud04        ]                userdefined_field11[iccud11        ]
+ userdefined_field05[iccud05        ]                userdefined_field12[iccud12        ]
+ userdefined_field06[iccud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc2
+Grid gr4
+{
+ ----- Rows[cnt  ]-----
+
+}
+END -- gr4
+END -- vb2
+END -- aici002
+
+TABLES
+icc_file
+ATTRIBUTES
+ButtonEdit icc01=icc_file.icc01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Group gb20:gb20;
+Edit icc04=icc_file.icc04, tabIndex=2;
+ComboBox icc06=icc_file.icc06, tabIndex=8, not null, required, items=(("1", "RP"),("2", "HOLD"),("3", "NG"),("4", "CLOSE"));
+Edit icc05=icc_file.icc05, tabIndex=3;
+ButtonEdit icc07=icc_file.icc07, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+ButtonEdit icc09=icc_file.icc09, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+ButtonEdit icc08=icc_file.icc08, action=controlp, tabIndex=10, image="zoom.png";
+Edit icc08_desc=formonly.icc08_desc type CHAR, tabIndex=11, noEntry;
+ButtonEdit icc11=icc_file.icc11, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit icc11_desc=formonly.icc11_desc type VARCHAR, tabIndex=7, noEntry;
+Edit icc27=icc_file.icc27, tabIndex=12;
+ButtonEdit icc12=icc_file.icc12, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+Edit icc13=icc_file.icc13, tabIndex=13;
+ButtonEdit icc14=icc_file.icc14, action=controlp, tabIndex=14, not null, required, image="zoom.png";
+ButtonEdit icc15=icc_file.icc15, action=controlp, tabIndex=15, not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit icc10=icc_file.icc10, tabIndex=40;
+Group gb21:gb21;
+Edit icc16=icc_file.icc16, tabIndex=17;
+Edit icc19=icc_file.icc19, tabIndex=24;
+Edit icc17=icc_file.icc17, tabIndex=18;
+Edit icc20=icc_file.icc20, tabIndex=25;
+Edit icc18=icc_file.icc18, tabIndex=19;
+DateEdit icc33=icc_file.icc33, tabIndex=26;
+CheckBox icc30=icc_file.icc30, tabIndex=16, default = "N", text="icc30", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit icc32=icc_file.icc32, tabIndex=20;
+DateEdit icc34=icc_file.icc34, tabIndex=21;
+DateEdit icc35=icc_file.icc35, tabIndex=27;
+Edit icc36=icc_file.icc36, tabIndex=22;
+Edit icc37=icc_file.icc37, tabIndex=28;
+Edit icc38=icc_file.icc38, tabIndex=23;
+Edit icc21=icc_file.icc21, tabIndex=29;
+Edit icc22=icc_file.icc22, tabIndex=30;
+DateEdit icc23=icc_file.icc23, tabIndex=31;
+Edit icc25=icc_file.icc25, tabIndex=33;
+Edit icc26=icc_file.icc26, tabIndex=32;
+Edit iccuser=icc_file.iccuser, tabIndex=35;
+Edit iccmodu=icc_file.iccmodu, tabIndex=37;
+Edit iccgrup=icc_file.iccgrup, tabIndex=34;
+DateEdit iccdate=icc_file.iccdate, tabIndex=38;
+Edit iccacti=icc_file.iccacti, tabIndex=36;
+Edit iccoriu=icc_file.iccoriu, tabIndex=56, noEntry;
+Edit iccorig=icc_file.iccorig, tabIndex=57, noEntry;
+TextEdit iccud01=icc_file.iccud01, tabIndex=41, stretch=NONE;
+Edit iccud07=icc_file.iccud07, tabIndex=42;
+DateEdit iccud13=icc_file.iccud13, tabIndex=43;
+Edit iccud08=icc_file.iccud08, tabIndex=44;
+DateEdit iccud14=icc_file.iccud14, tabIndex=45;
+Edit iccud02=icc_file.iccud02, tabIndex=46;
+Edit iccud09=icc_file.iccud09, tabIndex=47;
+DateEdit iccud15=icc_file.iccud15, tabIndex=48;
+Edit iccud03=icc_file.iccud03, tabIndex=49;
+Edit iccud10=icc_file.iccud10, tabIndex=50;
+Edit iccud04=icc_file.iccud04, tabIndex=51;
+Edit iccud11=icc_file.iccud11, tabIndex=52;
+Edit iccud05=icc_file.iccud05, tabIndex=53;
+Edit iccud12=icc_file.iccud12, tabIndex=54;
+Edit iccud06=icc_file.iccud06, tabIndex=55;
+Edit cnt=formonly.cnt type CHAR, tabIndex=39, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(icc_file.icc01,icc_file.icc04,icc_file.icc06,icc_file.icc05,icc_file.icc07,icc_file.icc09,icc_file.icc08,formonly.icc08_desc,icc_file.icc11,formonly.icc11_desc,icc_file.icc27,icc_file.icc12,icc_file.icc13,icc_file.icc14,icc_file.icc15,icc_file.icc10,icc_file.icc16,icc_file.icc19,icc_file.icc17,icc_file.icc20,icc_file.icc18,icc_file.icc33,icc_file.icc30,icc_file.icc32,icc_file.icc34,icc_file.icc35,icc_file.icc36,icc_file.icc37,icc_file.icc38,icc_file.icc21,icc_file.icc22,icc_file.icc23,icc_file.icc25,icc_file.icc26,icc_file.iccuser,icc_file.iccmodu,icc_file.iccgrup,icc_file.iccdate,icc_file.iccacti,icc_file.iccoriu,icc_file.iccorig,icc_file.iccud01,icc_file.iccud07,icc_file.iccud13,icc_file.iccud08,icc_file.iccud14,icc_file.iccud02,icc_file.iccud09,icc_file.iccud15,icc_file.iccud03,icc_file.iccud10,icc_file.iccud04,icc_file.iccud11,icc_file.iccud05,icc_file.iccud12,icc_file.iccud06,formonly.cnt)
+END -- INSTRUCTIONS
+

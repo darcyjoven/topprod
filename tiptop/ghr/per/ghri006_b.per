@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri006_b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table s_hratb
+{
+[hratb01   |hrat02        |hratb02  |hratb03  |hratb04       |hratb05       |hratb06       |hratb07       |hratb08       ]
+[hratb01   |hrat02        |hratb02  |hratb03  |hratb04       |hratb05       |hratb06       |hratb07       |hratb08       ]
+[hratb01   |hrat02        |hratb02  |hratb03  |hratb04       |hratb05       |hratb06       |hratb07       |hratb08       ]
+[hratb01   |hrat02        |hratb02  |hratb03  |hratb04       |hratb05       |hratb06       |hratb07       |hratb08       ]
+[hratb01   |hrat02        |hratb02  |hratb03  |hratb04       |hratb05       |hratb06       |hratb07       |hratb08       ]
+[hratb01   |hrat02        |hratb02  |hratb03  |hratb04       |hratb05       |hratb06       |hratb07       |hratb08       ]
+[hratb01   |hrat02        |hratb02  |hratb03  |hratb04       |hratb05       |hratb06       |hratb07       |hratb08       ]
+[hratb01   |hrat02        |hratb02  |hratb03  |hratb04       |hratb05       |hratb06       |hratb07       |hratb08       ]
+[hratb01   |hrat02        |hratb02  |hratb03  |hratb04       |hratb05       |hratb06       |hratb07       |hratb08       ]
+[hratb01   |hrat02        |hratb02  |hratb03  |hratb04       |hratb05       |hratb06       |hratb07       |hratb08       ]
+}
+END -- s_hratb
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+  ---------- cn2[cn2       ]----------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hratb01=formonly.hratb01 type VARCHAR, action=controlp, tabIndex=9, title=%"hratb01", image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=10, title=%"hrat02", noEntry;
+DateEdit hratb02=formonly.hratb02 type VARCHAR, tabIndex=1, title=%"hratb02", not null, required;
+DateEdit hratb03=formonly.hratb03 type VARCHAR, tabIndex=2, title=%"hratb03", not null, required;
+Edit hratb04=formonly.hratb04 type VARCHAR, tabIndex=3, title=%"hratb04", not null, required;
+Edit hratb05=formonly.hratb05 type VARCHAR, tabIndex=5, title=%"hratb05";
+Edit hratb06=formonly.hratb06 type VARCHAR, tabIndex=6, title=%"hratb06";
+Edit hratb07=formonly.hratb07 type VARCHAR, tabIndex=7, title=%"hratb07";
+Edit hratb08=formonly.hratb08 type VARCHAR, tabIndex=4, title=%"hratb08";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hratb(formonly.hratb01,formonly.hrat02,formonly.hratb02,formonly.hratb03,formonly.hratb04,formonly.hratb05,formonly.hratb06,formonly.hratb07,formonly.hratb08)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

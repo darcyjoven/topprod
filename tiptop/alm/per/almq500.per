@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almq500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                         >
+  lpl01     [t_lpl01                    ]
+  lplplant  [t_lplplant                 ]
+  lpl02     [t_lpl02                    ]
+ <                                                 >
+
+}
+END -- Grid1
+Table s_lpl
+{
+[lpl01              |lpl02     |lplplant   |rtz13   |lpl03               |lpl04     |lne05   |lpl05               |ima02   |lpl06        |lpl07            |lpl08                 ]
+[lpl01              |lpl02     |lplplant   |rtz13   |lpl03               |lpl04     |lne05   |lpl05               |ima02   |lpl06        |lpl07            |lpl08                 ]
+[lpl01              |lpl02     |lplplant   |rtz13   |lpl03               |lpl04     |lne05   |lpl05               |ima02   |lpl06        |lpl07            |lpl08                 ]
+[lpl01              |lpl02     |lplplant   |rtz13   |lpl03               |lpl04     |lne05   |lpl05               |ima02   |lpl06        |lpl07            |lpl08                 ]
+[lpl01              |lpl02     |lplplant   |rtz13   |lpl03               |lpl04     |lne05   |lpl05               |ima02   |lpl06        |lpl07            |lpl08                 ]
+
+}
+END -- s_lpl
+Grid Grid2
+{
+
+ ------[label1|cn2      ]-------
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+lpl_file
+ATTRIBUTES
+Group group1:Group1, text=%"";
+ButtonEdit t_lpl01=formonly.t_lpl01 type VARCHAR, action=controlp, tabIndex=1, not null, image="zoom.png";
+ButtonEdit t_lplplant=formonly.t_lplplant type VARCHAR, action=controlp, tabIndex=2, image="zoom.png";
+DateEdit t_lpl02=formonly.t_lpl02 type DATE, tabIndex=3;
+Edit lpl01=lpl_file.lpl01, tabIndex=4, title=%"lpl01", not null, scroll;
+Edit lpl02=lpl_file.lpl02, tabIndex=5, title=%"lpl02", not null, scroll;
+Edit lplplant=lpl_file.lplplant, tabIndex=12, title=%"lplplant", not null, scroll;
+Edit rtz13=formonly.rtz13 type VARCHAR, tabIndex=13, title=%"rtz13";
+Edit lpl03=lpl_file.lpl03, tabIndex=6, title=%"lpl03", not null, scroll;
+Edit lpl04=lpl_file.lpl04, tabIndex=7, title=%"lpl04", not null, scroll;
+Edit lne05=formonly.lne05 type VARCHAR, tabIndex=15, title=%"lne05";
+Edit lpl05=lpl_file.lpl05, tabIndex=8, title=%"lpl05", not null, scroll;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=14, title=%"ima02";
+Edit lpl06=lpl_file.lpl06, tabIndex=9, title=%"lpl06", not null, scroll;
+Edit lpl07=lpl_file.lpl07, tabIndex=10, title=%"lpl07", not null, scroll;
+Edit lpl08=lpl_file.lpl08, tabIndex=11, title=%"lpl08", not null, scroll;
+Label label1:Label1, text=%"Rows";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.t_lpl01,formonly.t_lplplant,formonly.t_lpl02,formonly.cn2)
+SCREEN RECORD s_lpl(lpl_file.lpl01,lpl_file.lpl02,lpl_file.lplplant,formonly.rtz13,lpl_file.lpl03,lpl_file.lpl04,formonly.lne05,lpl_file.lpl05,formonly.ima02,lpl_file.lpl06,lpl_file.lpl07,lpl_file.lpl08)
+END -- INSTRUCTIONS
+

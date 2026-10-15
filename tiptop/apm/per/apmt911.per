@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt911.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt911")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr5420
+{
+ <G group01                               >  <G group02                      >
+  P/O NO             [pna01             ]     Change S/N         [pna02     ]
+  Date of Change     [pna04       ]           Release            [pnaconf   ]
+  Confirm            [pna05     ]
+
+ <                                        >  <                               >
+
+}
+END -- gr5420
+END -- page01
+END -- folder01
+Table s_pnb
+{
+[pnb0|pnb04b          |pnb041b                      |ima021b                      |pnb20b     |pnb31b          |totb       |pnb33b               |pnb20a     |pnb31a         |tota      |pnb33a              |pnb50                                   ]
+[pnb0|pnb04b          |pnb041b                      |ima021b                      |pnb20b     |pnb31b          |totb       |pnb33b               |pnb20a     |pnb31a         |tota      |pnb33a              |pnb50                                   ]
+[pnb0|pnb04b          |pnb041b                      |ima021b                      |pnb20b     |pnb31b          |totb       |pnb33b               |pnb20a     |pnb31a         |tota      |pnb33a              |pnb50                                   ]
+[pnb0|pnb04b          |pnb041b                      |ima021b                      |pnb20b     |pnb31b          |totb       |pnb33b               |pnb20a     |pnb31a         |tota      |pnb33a              |pnb50                                   ]
+[pnb0|pnb04b          |pnb041b                      |ima021b                      |pnb20b     |pnb31b          |totb       |pnb33b               |pnb20a     |pnb31a         |tota      |pnb33a              |pnb50                                   ]
+[pnb0|pnb04b          |pnb041b                      |ima021b                      |pnb20b     |pnb31b          |totb       |pnb33b               |pnb20a     |pnb31a         |tota      |pnb33a              |pnb50                                   ]
+[pnb0|pnb04b          |pnb041b                      |ima021b                      |pnb20b     |pnb31b          |totb       |pnb33b               |pnb20a     |pnb31a         |tota      |pnb33a              |pnb50                                   ]
+[pnb0|pnb04b          |pnb041b                      |ima021b                      |pnb20b     |pnb31b          |totb       |pnb33b               |pnb20a     |pnb31a         |tota      |pnb33a              |pnb50                                   ]
+[pnb0|pnb04b          |pnb041b                      |ima021b                      |pnb20b     |pnb31b          |totb       |pnb33b               |pnb20a     |pnb31a         |tota      |pnb33a              |pnb50                                   ]
+[pnb0|pnb04b          |pnb041b                      |ima021b                      |pnb20b     |pnb31b          |totb       |pnb33b               |pnb20a     |pnb31a         |tota      |pnb33a              |pnb50                                   ]
+
+}
+END -- s_pnb
+Grid gr5421
+{
+ ----------Rows [g_cnt ] ----------
+
+}
+END -- gr5421
+END -- VBox1
+END -- apmt911
+
+TABLES
+pnb_file,
+pna_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit pna01=pna_file.pna01, action=controlp, tabIndex=1, image="zoom", comment="Enter P/O # to Query,Press ^P Qry PO # ";
+DateEdit pna04=pna_file.pna04, tabIndex=2;
+Edit pna05=pna_file.pna05, tabIndex=3;
+Group group02:group02;
+Edit pna02=pna_file.pna02, tabIndex=4, not null, required;
+CheckBox pnaconf=pna_file.pnaconf, tabIndex=5, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pnb0=pnb_file.pnb03, tabIndex=6, title="Ln#", not null, required;
+Edit pnb04b=pnb_file.pnb04b, tabIndex=7, title="Before Part#", noEntry;
+Edit pnb041b=pnb_file.pnb041b, tabIndex=8, title="Before Part Name", noEntry;
+Edit ima021b=formonly.ima021b type CHAR, tabIndex=9, title="Before Specification", noEntry;
+Edit pnb20b=pnb_file.pnb20b, tabIndex=10, title="Before Qty", noEntry;
+Edit pnb31b=pnb_file.pnb31b, tabIndex=11, title="Before Ut Price", noEntry;
+Edit totb=formonly.totb type CHAR, tabIndex=12, title="Before Amt", noEntry;
+DateEdit pnb33b=pnb_file.pnb33b, tabIndex=13, title="Before Delivery Date", noEntry;
+Edit pnb20a=pnb_file.pnb20a, tabIndex=14, title="After Qty";
+Edit pnb31a=pnb_file.pnb31a, tabIndex=15, title="After Ut Price", noEntry;
+Edit tota=formonly.tota type CHAR, tabIndex=16, title="After Amt", noEntry;
+DateEdit pnb33a=pnb_file.pnb33a, tabIndex=17, title="After Delivery Date";
+Edit pnb50=pnb_file.pnb50, tabIndex=18, title="Memo";
+Edit g_cnt=formonly.g_cnt type CHAR, tabIndex=19;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pnb(pnb_file.pnb03,pnb_file.pnb04b,pnb_file.pnb041b,formonly.ima021b,pnb_file.pnb20b,pnb_file.pnb31b,formonly.totb,pnb_file.pnb33b,pnb_file.pnb20a,pnb_file.pnb31a,formonly.tota,pnb_file.pnb33a,pnb_file.pnb50)
+SCREEN RECORD Undefined(pna_file.pna01,pna_file.pna04,pna_file.pna05,pna_file.pna02,pna_file.pnaconf,formonly.g_cnt)
+END -- INSTRUCTIONS
+

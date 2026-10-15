@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi340.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi340")
+VBox vb2
+Folder pc2
+Page Main(text=%"Main")
+Table s_oaj
+{
+[oaj01      |oaj02       |oaj031      |lnj02      |oaj04       |aag02     |oaj041     |aag021    |oaj05      |oaj06          |oaj07      |oajacti  |oajpos    ]
+[oaj01      |oaj02       |oaj031      |lnj02      |oaj04       |aag02     |oaj041     |aag021    |oaj05      |oaj06          |oaj07      |oajacti  |oajpos    ]
+[oaj01      |oaj02       |oaj031      |lnj02      |oaj04       |aag02     |oaj041     |aag021    |oaj05      |oaj06          |oaj07      |oajacti  |oajpos    ]
+[oaj01      |oaj02       |oaj031      |lnj02      |oaj04       |aag02     |oaj041     |aag021    |oaj05      |oaj06          |oaj07      |oajacti  |oajpos    ]
+[oaj01      |oaj02       |oaj031      |lnj02      |oaj04       |aag02     |oaj041     |aag021    |oaj05      |oaj06          |oaj07      |oajacti  |oajpos    ]
+
+}
+END -- s_oaj
+END -- Main
+END -- pc2
+Grid gr2
+{
+
+  ------ Rows [cn2       ] -------
+
+}
+END -- gr2
+END -- vb2
+END -- almi340
+
+TABLES
+oaj_file
+ATTRIBUTES
+ButtonEdit oaj01=oaj_file.oaj01, action=controlp, tabIndex=1, title="Det.DocNo", not null, required, image="zoom.png";
+Edit oaj02=oaj_file.oaj02, tabIndex=2, title="Det.Name";
+ButtonEdit oaj031=oaj_file.oaj031, action=controlp, tabIndex=3, title="ClassDocNo.", not null, required, image="zoom.png";
+Edit lnj02=formonly.lnj02 type CHAR, tabIndex=9, title="ClassName", noEntry;
+ButtonEdit oaj04=oaj_file.oaj04, action=controlp, tabIndex=4, title="Acc.Sub.", not null, required, image="zoom.png";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=10, title="Subject1", noEntry;
+ButtonEdit oaj041=oaj_file.oaj041, action=controlp, tabIndex=5, title="Acc.Sub.2", not null, image="zoom.png";
+Edit aag021=formonly.aag021 type CHAR, tabIndex=11, title="Subject2", noEntry;
+ComboBox oaj05=oaj_file.oaj05, tabIndex=6, title="Mode", not null, required, items=(("01", "dingya"),("02", "zushou"),("10", "feiyong"));
+ComboBox oaj06=oaj_file.oaj06, tabIndex=7, title="Money Style", not null, required, items=(("0", "zu"),("1", "wuyeguanli"),("2", "guanggao "),("3", "lvyue"),("4", "zhiliang"),("5", "shichang"),("6", "gongzhuang"),("7", "kongtiao"),("8", "gongz"),("9", "gongsh"),("A", "other"));
+ComboBox oaj07=oaj_file.oaj07, tabIndex=6, title="Exp.Style", not null, required, items=(("0", "di"),("1", "fg"));
+CheckBox oajacti=oaj_file.oajacti, tabIndex=8, default = "Y", title="valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oajpos=oaj_file.oajpos, tabIndex=13, title="pos", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oaj(oaj_file.oaj01,oaj_file.oaj02,oaj_file.oaj031,formonly.lnj02,oaj_file.oaj04,formonly.aag02,oaj_file.oaj041,formonly.aag021,oaj_file.oaj05,oaj_file.oaj06,oaj_file.oaj07,oaj_file.oajacti,oaj_file.oajpos)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

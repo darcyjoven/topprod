@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi710e.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi710e")
+VBox VBox1
+Table s_bmf
+{
+[bmf0|bmf04       ]
+[bmf0|bmf04       ]
+[bmf0|bmf04       ]
+[bmf0|bmf04       ]
+[bmf0|bmf04       ]
+[bmf0|bmf04       ]
+[bmf0|bmf04       ]
+[bmf0|bmf04       ]
+[bmf0|bmf04       ]
+[bmf0|bmf04       ]
+
+}
+END -- s_bmf
+END -- VBox1
+END -- abmi710e
+
+TABLES
+bmf_file
+ATTRIBUTES
+Edit bmf0=bmf_file.bmf03, tabIndex=1, title="Ln#", not null, required, comment="<^Y>Access Original Data";
+Edit bmf04=bmf_file.bmf04, tabIndex=2, title="Description";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmf(bmf_file.bmf03,bmf_file.bmf04)
+END -- INSTRUCTIONS
+

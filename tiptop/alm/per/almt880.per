@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt880.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt880")
+VBox vb5
+Folder pc1
+Page main(text=%"main")
+Grid gr1
+{
+
+     lsd01   [lsd01               ]                        lsd05  [lsd05              ]
+     lsdplant[lsdplant            ][rtz13                ] lsd06  [lsd06              ]
+     lsdlegal[lsdlegal            ][azt02                ] lne14  [lne14              ]
+     lsd02   [lsd02               ]                        lne47  [lne47                            ]
+     lsd03   [lsd03               ]                        lne15  [lne15              ]
+     lne05   [lne05                      ]                 lsd07  [lsd07              ]
+     lsd19   [lsd19               ][gec02                ] lsd08  [lsd08              ]
+     lsd20   [lsd20               ] [lsd21     ]           lsd09  [lsd09              ]
+     lsd04   [lsd04               ]                               [lsd12              ]
+     lsb03   [lsb03               ]                        lsd13  [lsd13              ][imgmksg]
+     lmb03   [lmb03               ]                        lsd14  [lsd14              ][       ]
+     lsb04   [lsb04               ]                        lsd15  [lsd15              ]
+     lmc04   [lmc04               ]                        lsd16  [lsd16              ]
+     lsb05   [lsb05               ]                               [lsd18     ]
+     lsb06   [lsb06               ]
+     lsb07   [lsb07               ]
+     lsb08   [lsb08               ]
+
+}
+END -- gr1
+END -- main
+Page info(text=%"info")
+Grid gr5
+{
+ Record Owner              [lsduser   ]  Create Date             [lsdcrat     ]      Modify Date         [lsddate   ]
+ Department                [lsdgrup   ]  Last Modified by        [lsdmodu     ]
+ Record Orig.              [lsdoriu   ]
+ Dept Orig.                [lsdorig   ]
+
+
+
+
+}
+END -- gr5
+END -- info
+END -- pc1
+Grid gr6
+{
+  ---------- Rows[idx   ]/[cnt   ] ----------
+
+
+}
+END -- gr6
+END -- vb5
+END -- almt880
+
+TABLES
+lsd_file
+ATTRIBUTES
+ButtonEdit lsd01=lsd_file.lsd01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+DateEdit lsd05=lsd_file.lsd05, tabIndex=22, noEntry;
+ButtonEdit lsdplant=lsd_file.lsdplant, action=controlp, tabIndex=2, noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=3;
+DateEdit lsd06=lsd_file.lsd06, tabIndex=23, noEntry;
+ButtonEdit lsdlegal=lsd_file.lsdlegal, action=controlp, tabIndex=4, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=5;
+Edit lne14=formonly.lne14 type CHAR, tabIndex=24, noEntry;
+Edit lsd02=lsd_file.lsd02, tabIndex=6;
+Edit lne47=formonly.lne47 type CHAR, tabIndex=25, noEntry;
+ButtonEdit lsd03=lsd_file.lsd03, action=controlp, tabIndex=7, noEntry, image="zoom.png";
+Edit lne15=formonly.lne15 type CHAR, tabIndex=26, noEntry;
+Edit lne05=formonly.lne05 type CHAR, tabIndex=8, noEntry;
+DateEdit lsd07=lsd_file.lsd07, tabIndex=27, not null, required;
+ButtonEdit lsd19=lsd_file.lsd19, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Edit gec02=formonly.gec02 type CHAR, tabIndex=10, noEntry;
+Edit lsd08=lsd_file.lsd08, tabIndex=28;
+ButtonEdit lsd20=lsd_file.lsd20, action=controlp, tabIndex=11, not null, required, image="zoom.png";
+CheckBox lsd21=lsd_file.lsd21, tabIndex=12, text="ch5", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit lsd09=lsd_file.lsd09, tabIndex=29;
+ButtonEdit lsd04=lsd_file.lsd04, action=controlp, tabIndex=13, noEntry, image="zoom.png";
+CheckBox lsd12=lsd_file.lsd12, tabIndex=30, text="ch2", valueChecked = "Y", valueUnchecked = "N";
+Edit lsb03=formonly.lsb03 type CHAR, tabIndex=14, noEntry;
+ComboBox lsd13=lsd_file.lsd13, tabIndex=31, items=(("0", "Open "),("1", "Approved"),("S", "Approving"),("W", "Withdraw"),("R", "Rejected"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=15, noEntry;
+ComboBox lsd14=lsd_file.lsd14, tabIndex=32, items=(("N", "Unconfirmed"),("Y", "Confirm"),("X", "Void"),("S", "termination"));
+Edit lsb04=formonly.lsb04 type CHAR, tabIndex=16, noEntry;
+Edit lsd15=lsd_file.lsd15, tabIndex=33, noEntry;
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=17, noEntry;
+DateEdit lsd16=lsd_file.lsd16, tabIndex=34, noEntry;
+ComboBox lsb05=formonly.lsb05 type CHAR, tabIndex=18, noEntry, items=(("0", "Inside"),("1", "Outside"),("2", "Rest"));
+CheckBox lsd18=lsd_file.lsd18, tabIndex=35, text="ch2", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox lsb06=formonly.lsb06 type CHAR, tabIndex=19, noEntry, items=(("0", "east"),("1", "south"),("2", "west"),("3", "north"));
+Edit lsb07=formonly.lsb07 type CHAR, tabIndex=20, noEntry;
+Edit lsb08=formonly.lsb08 type CHAR, tabIndex=21, noEntry;
+Edit lsduser=lsd_file.lsduser, tabIndex=36, noEntry;
+DateEdit lsdcrat=lsd_file.lsdcrat, tabIndex=39, noEntry;
+DateEdit lsddate=lsd_file.lsddate, tabIndex=40, noEntry;
+Edit lsdgrup=lsd_file.lsdgrup, tabIndex=38, noEntry;
+Edit lsdmodu=lsd_file.lsdmodu, tabIndex=37, noEntry;
+Edit lsdoriu=lsd_file.lsdoriu, tabIndex=501, noEntry;
+Edit lsdorig=lsd_file.lsdorig, tabIndex=502, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=42, noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=41;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lsd_file.lsd01,lsd_file.lsd05,lsd_file.lsdplant,formonly.rtz13,lsd_file.lsd06,lsd_file.lsdlegal,formonly.azt02,formonly.lne14,lsd_file.lsd02,formonly.lne47,lsd_file.lsd03,formonly.lne15,formonly.lne05,lsd_file.lsd07,lsd_file.lsd19,formonly.gec02,lsd_file.lsd08,lsd_file.lsd20,lsd_file.lsd21,lsd_file.lsd09,lsd_file.lsd04,lsd_file.lsd12,formonly.lsb03,lsd_file.lsd13,formonly.imgmksg,formonly.lmb03,lsd_file.lsd14,formonly.lsb04,lsd_file.lsd15,formonly.lmc04,lsd_file.lsd16,formonly.lsb05,lsd_file.lsd18,formonly.lsb06,formonly.lsb07,formonly.lsb08,lsd_file.lsduser,lsd_file.lsdcrat,lsd_file.lsddate,lsd_file.lsdgrup,lsd_file.lsdmodu,lsd_file.lsdoriu,lsd_file.lsdorig,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_oeb.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Order")
+VBox VBox1
+Grid gr3812
+{
+ Accounts Customer [oea03     ]
+
+
+}
+END -- gr3812
+Table s_oeb
+{
+[check|oea01            |oea02   |oeb03 |oeb04                      |oeb06                     |ima021                  |oeb091   |oeb12       |oeb24          |oeb25          |oeb12a              |oeb15           ]
+[check|oea01            |oea02   |oeb03 |oeb04                      |oeb06                     |ima021                  |oeb091   |oeb12       |oeb24          |oeb25          |oeb12a              |oeb15           ]
+[check|oea01            |oea02   |oeb03 |oeb04                      |oeb06                     |ima021                  |oeb091   |oeb12       |oeb24          |oeb25          |oeb12a              |oeb15           ]
+[check|oea01            |oea02   |oeb03 |oeb04                      |oeb06                     |ima021                  |oeb091   |oeb12       |oeb24          |oeb25          |oeb12a              |oeb15           ]
+[check|oea01            |oea02   |oeb03 |oeb04                      |oeb06                     |ima021                  |oeb091   |oeb12       |oeb24          |oeb25          |oeb12a              |oeb15           ]
+[check|oea01            |oea02   |oeb03 |oeb04                      |oeb06                     |ima021                  |oeb091   |oeb12       |oeb24          |oeb25          |oeb12a              |oeb15           ]
+[check|oea01            |oea02   |oeb03 |oeb04                      |oeb06                     |ima021                  |oeb091   |oeb12       |oeb24          |oeb25          |oeb12a              |oeb15           ]
+[check|oea01            |oea02   |oeb03 |oeb04                      |oeb06                     |ima021                  |oeb091   |oeb12       |oeb24          |oeb25          |oeb12a              |oeb15           ]
+[check|oea01            |oea02   |oeb03 |oeb04                      |oeb06                     |ima021                  |oeb091   |oeb12       |oeb24          |oeb25          |oeb12a              |oeb15           ]
+[check|oea01            |oea02   |oeb03 |oeb04                      |oeb06                     |ima021                  |oeb091   |oeb12       |oeb24          |oeb25          |oeb12a              |oeb15           ]
+}
+END -- s_oeb
+END -- VBox1
+END -- q_oeb
+
+TABLES
+ima_file,
+oeb_file,
+oea_file
+ATTRIBUTES
+Edit oea03=oea_file.oea03, tabIndex=1, noEntry;
+CheckBox check=formonly.check type CHAR, tabIndex=2, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oea01=oea_file.oea01, tabIndex=3, title="Order No.", noEntry;
+DateEdit oea02=oea_file.oea02, tabIndex=4, title="Date", noEntry;
+Edit oeb03=oeb_file.oeb03, tabIndex=5, title="Line#", noEntry;
+Edit oeb04=oeb_file.oeb04, tabIndex=6, title="Product No", noEntry;
+Edit oeb06=oeb_file.oeb06, tabIndex=13, title=%"Part Name Specification";
+Edit ima021=ima_file.ima021, tabIndex=14, title=%"Specification";
+Edit oeb091=oeb_file.oeb091, tabIndex=7, title="Location", noEntry;
+Edit oeb12=oeb_file.oeb12, tabIndex=8, title="Quantity", noEntry, not null, required;
+Edit oeb24=oeb_file.oeb24, tabIndex=10, title="Shipped Qty", noEntry;
+Edit oeb25=oeb_file.oeb25, tabIndex=11, title="Sales Return Qty", noEntry;
+Edit oeb12a=formonly.oeb12a type DECIMAL, tabIndex=12, title="Deliverable Qty", noEntry;
+Edit oeb15=oeb_file.oeb15, tabIndex=9, title="Agreed Shipping Date", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oeb(formonly.check,oea_file.oea01,oea_file.oea02,oeb_file.oeb03,oeb_file.oeb04,oeb_file.oeb06,ima_file.ima021,oeb_file.oeb091,oeb_file.oeb12,oeb_file.oeb24,oeb_file.oeb25,formonly.oeb12a,oeb_file.oeb15)
+SCREEN RECORD Undefined(oea_file.oea03)
+END -- INSTRUCTIONS
+

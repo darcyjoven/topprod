@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxs020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxs020")
+Folder pc174
+Page page01(text="Main")
+VBox vb12
+Grid gr1223
+{
+ <G group01                                        >
+  [bxz01                                          ]
+ <                                                 >
+ <G group02                                                           >
+  Bonded Supervise Department         [bxz100 ]  Manager[bxz104 ]
+  Customs Supervises Department       [bxz101 ]  Sales  [bxz105 ]
+  Bonded Type                         [bxz102 ]
+  Transport Reason Code               [bxz103 ] [reason    ]
+  Estimated Tax Deposit               [bxz05     ]
+  Current Closing Year(Century)       [bxz06     ]
+  CurrentInitial Closing Date         [bxz07     ]
+  Current Ending Closing Date         [bxz08     ]
+  Account Locking Date                [bxz09     ]
+  Default Material Warehouse #        [bxz11     ]
+  Default Semi-Product Warehouse #    [bxz12     ]
+  Default Finished Product Warehouse #[bxz13     ]
+  Default Scrap Warehouse #           [bxz14     ]
+  Local Sales Bonded Reason Code      [bxz25     ]
+  Export Bonded Reason Code           [bxz26     ]
+ <                                                                    >
+
+}
+END -- gr1223
+END -- vb12
+END -- page01
+END -- pc174
+END -- abxs020
+
+TABLES
+bxz_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox bxz01=bxz_file.bxz01, tabIndex=1, text="Open AFA Module to Users", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y.Normal use,N.For Qry Printing only, No Add, Modify, Delete, Qry";
+Group group02:group02;
+Edit bxz100=bxz_file.bxz100, tabIndex=2;
+Edit bxz104=bxz_file.bxz104, tabIndex=3;
+Edit bxz101=bxz_file.bxz101, tabIndex=4;
+Edit bxz105=bxz_file.bxz105, tabIndex=5;
+Edit bxz102=bxz_file.bxz102, tabIndex=6;
+ButtonEdit bxz103=bxz_file.bxz103, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry reason";
+Edit reason=formonly.reason type CHAR, tabIndex=8, noEntry;
+Edit bxz05=bxz_file.bxz05, tabIndex=9;
+Edit bxz06=bxz_file.bxz06, tabIndex=10;
+DateEdit bxz07=bxz_file.bxz07, tabIndex=11;
+DateEdit bxz08=bxz_file.bxz08, tabIndex=12;
+DateEdit bxz09=bxz_file.bxz09, tabIndex=13;
+Edit bxz11=bxz_file.bxz11, tabIndex=14;
+Edit bxz12=bxz_file.bxz12, tabIndex=15;
+Edit bxz13=bxz_file.bxz13, tabIndex=16;
+Edit bxz14=bxz_file.bxz14, tabIndex=17;
+Edit bxz25=bxz_file.bxz25, tabIndex=18;
+Edit bxz26=bxz_file.bxz26, tabIndex=19;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bxz_file.bxz01,bxz_file.bxz100,bxz_file.bxz104,bxz_file.bxz101,bxz_file.bxz105,bxz_file.bxz102,bxz_file.bxz103,formonly.reason,bxz_file.bxz05,bxz_file.bxz06,bxz_file.bxz07,bxz_file.bxz08,bxz_file.bxz09,bxz_file.bxz11,bxz_file.bxz12,bxz_file.bxz13,bxz_file.bxz14,bxz_file.bxz25,bxz_file.bxz26)
+END -- INSTRUCTIONS
+

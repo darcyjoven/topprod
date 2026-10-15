@@ -1,0 +1,51 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdr209.per created Wed Jan 23 05:30:41 2008
+-- File created from axdr209.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdr209")
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID 
+    {
+     <G group01                                                 >
+      Dispatch No.        [aa0             ]
+      Dispatch Date       [aa1       ]
+      Person of Dispatch  [aa2       ]
+      Vehicle No.         [aa3       ]
+     <                                                          >
+     <G group02                                                 >
+      Status Code         [aa4       ]
+
+     <                                                          >
+
+
+    }
+    END -- GRID
+    GRID 
+    {
+     [aa5                     ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  EDIT aa0=FORMONLY.adk01, TABINDEX=1;
+  DATEEDIT aa1=FORMONLY.adk02 TYPE DATE, TABINDEX=2;
+  EDIT aa2=FORMONLY.adk13, TABINDEX=3;
+  EDIT aa3=FORMONLY.adk08, TABINDEX=4;
+  GROUP group02 : group02, TEXT="INPUT";
+  COMBOBOX aa4=FORMONLY.a, COMMENT="Please insert 0/1/2/3/4/5", NOT NULL, REQUIRED, QUERYEDITABLE, TABINDEX=5, ITEMS=(("0","Open"),("1","Approved"),("2","Appr Sent"),("3","Appr Rejected"),("4","Appr Withdrawn"),("5","All"));
+  CHECKBOX aa5=FORMONLY.more TYPE VARCHAR, TEXT="Other condition to print", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=6;
+END

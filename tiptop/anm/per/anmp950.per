@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp950.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmp950")
+VBox VBox1
+Grid gr4136
+{
+ <G group01                     >
+  Bank No.     [nac01         ]
+  Deposit Cur. [nac04         ]
+ <                              >
+
+}
+END -- gr4136
+Grid gr4137
+{
+ <G group02                                          >
+  Accrual Begin [g_nae04   ] Accrual End [g_nae05   ]
+  Accrual Type  [g_nae02                            ]
+ <                                                   >
+
+}
+END -- gr4137
+Grid gr4138
+{
+ [g_bgjob                 ]
+
+}
+END -- gr4138
+END -- VBox1
+END -- anmp950
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit nac01=formonly.nac01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Book No.";
+ButtonEdit nac04=formonly.nac04 type CHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P> Qry Deposit Currency";
+Group group02:group02, text="INPUT";
+DateEdit g_nae04=formonly.g_nae04 type DATE, tabIndex=3, not null, required;
+DateEdit g_nae05=formonly.g_nae05 type DATE, tabIndex=4, not null, required;
+ComboBox g_nae02=formonly.g_nae02 type CHAR, tabIndex=5, not null, required, queryEditable, items=(("0", "0.Current"),("1", "1.One year fixed deposit"),("2", "2.Two years fixed deposit"),("3", "3.Three years fixed deposit"),("4", "4.Five years fixed deposit"));
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=6, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nac01,formonly.nac04,formonly.g_nae04,formonly.g_nae05,formonly.g_nae02,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

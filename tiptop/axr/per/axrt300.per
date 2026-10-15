@@ -1,0 +1,363 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/4fd/axrt300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt300")
+Folder Folder1
+Page page_main(action=page_main, text=%"Page1")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2742
+{
+ Accounts Category  [oma00     ]            Voucher             [oma33               ]               [oma][om1][om2][imgmksg]
+ Bill No.           [oma01             ]    Plant               [oma66     ]  [azp02     ]           Status[oma64 ] [       ]
+ Local/Export Sales [oma08       ]          Customer #          [oma03       ][oma032              ] Source[oma70 ]
+ Account Date       [oma02       ]          Collecting Cust. #  [oma68       ][oma69               ] Iss   [oma76              ]
+
+}
+END -- gr2742
+END -- page01
+Page info(text="Info")
+Grid gr2743
+{
+ Record Owner        [omauser   ]   Last Modified by    [omamodu   ]
+ Department          [omagrup   ]   Create/Modify Date  [omadate   ]
+ Record Orig.        [omaoriu   ]
+ Dept Orig.          [omaorig   ]
+}
+END -- gr2743
+END -- info
+END -- folder01
+Folder folder02
+Page page02(text="General")
+VBox vb10
+Grid gr2744
+{
+ <G group01                                        ><G group02                                         ><G group03                                     >
+  Collection Terms No.  [oma32       ]               Currency                    [oma23               ]  Acc. Exchange Rate      [oma24               ]
+  Date of Acc.Rece/Dedu.[oma11       ]               Original Currency Deposit   [oma52               ]  Home Currency Deposit   [oma53               ]
+  Note Due Date Allowed [oma12       ]               Original Currency Agency    [oma73f              ]  Home Currency Agency    [oma73               ]
+  Category              [oma13       ]               Original Currency Before Tax[oma54               ]  Home Currency Before Tax[oma56               ]
+  Account Classifica    [ool02                  ]    Original Currency Tax       [oma54x              ]  Home Currency Tax       [oma56x              ]
+                        [                       ]    Original Currency Contra    [oma51f              ]  Home Currency Contra    [oma51               ]
+                        [                       ]    Original Currency With Tax  [oma54t              ]  Home Currency With Tax  [oma56t              ]
+  Receivment            [oma65     ]                 Original Currency Contra\'d  [oma55               ]  Home Currency Contra\'d  [oma57               ]
+  userdefined_field02   [omaud02           ]         Un-Receiver Orig. Currency  [oma55_u             ]  Un-Rec Home Currency    [oma57_u             ]
+
+
+ <                                                 ><                                                  ><                                              >
+
+}
+END -- gr2744
+END -- vb10
+END -- page02
+Page page05(text="Cash Info")
+Grid gr2745
+{
+ <G group09                                                               >
+  Account #  [oma18       ][aag02                                        ]
+  Account #2 [oma181      ][aag02_2                                      ]
+
+
+
+ <                                                                        >
+
+}
+END -- gr2745
+END -- page05
+Page page03(text="Other")
+VBox vb11
+Grid gr2746
+{
+ <G group04                                     >     <G group06                                   >
+  Employee               [oma14     ][gen02     ]      Invoice No.           [oma67               ]
+  Department             [oma15     ][gem02     ]      Sales Classification1 [oma25     ]
+  Dept No.               [oma930    ][gem02a    ]      Sales Classification2 [oma26   ]
+                                                       Project NO            [oma63         ]
+  Reference Doc #        [oma16            ]           Spread                [net                 ]
+  Period                 [oma165 ]                     [oma40                                    ]
+  Advance Receipt No.    [oma19            ]           Print                 [omaprsw   ]
+  Mul trade No.          [oma99            ]
+  Group Gathering No.    [oma992           ]
+
+
+
+
+ <                                              >     <                                            >
+
+}
+END -- gr2746
+END -- vb11
+END -- page03
+Page page04(text="Invoice")
+Grid gr2747
+{
+ <G group07                                 ><G group11                         ><G group08                                          >
+  Invoice Date             [oma09       ]     Tax Type[oma21     ][gec02       ]  Inv. Exchange Rate           [oma58               ]
+  Invoice                  [oma05     ]       Tax Rate[om3]                       Home Curr Invoice            [oma59               ]
+  Invoice Code             [oma75           ] Copies  [om4]                       Home Curr Inovice Tax Amt    [oma59x              ]
+  Invoice #                [oma10           ] [oma213          ]                  Home Curr Invoice Aft-Tax Amt[oma59t              ]
+  Invoice Customer No.     [oma04          ]   Type   [oma74 ]
+  Invoice Customer Name    [occ18          ]
+  Declaration No.          [oma71           ]
+
+ <                                          ><                                  ><                                                   >
+
+}
+END -- gr2747
+END -- page04
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[omaud01                       ] userdefined_field07[omaud07        ] userdefined_field13[omaud13        ]
+                    [                              ] userdefined_field08[omaud08        ] userdefined_field14[omaud14        ]
+                                                     userdefined_field09[omaud09        ] userdefined_field15[omaud15        ]
+ userdefined_field03[omaud03        ]                userdefined_field10[omaud10        ]
+ userdefined_field04[omaud04        ]                userdefined_field11[omaud11        ]
+ userdefined_field05[omaud05        ]                userdefined_field12[omaud12        ]
+ userdefined_field06[omaud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder02
+Table s_omb
+{
+[omb03    |omb38     |omb44       |omb31             |omb32         |omb39     |omb04              |omb06                          |omb45        |omb47             |omb40       |omb05      |omb12     |omb41      |omb42        |omb33     |omb331     |omb13                        |omb14                               |omb14t                             |omb15                    |omb16                           |omb16t                        |omb17              |omb18                     |omb18t                  |omb930      |gem02c      |omb48       |ombud01   |ombud02   |ombud03    |ombud04    |ombud05    |ombud06    |ombud07    |ombud08    |ombud09    |ombud10    |ombud11   |ombud12  |ombud13   |ombud14   |ombud15    ]
+[omb03    |omb38     |omb44       |omb31             |omb32         |omb39     |omb04              |omb06                          |omb45        |omb47             |omb40       |omb05      |omb12     |omb41      |omb42        |omb33     |omb331     |omb13                        |omb14                               |omb14t                             |omb15                    |omb16                           |omb16t                        |omb17              |omb18                     |omb18t                  |omb930      |gem02c      |omb48       |ombud01   |ombud02   |ombud03    |ombud04    |ombud05    |ombud06    |ombud07    |ombud08    |ombud09    |ombud10    |ombud11   |ombud12  |ombud13   |ombud14   |ombud15    ]
+[omb03    |omb38     |omb44       |omb31             |omb32         |omb39     |omb04              |omb06                          |omb45        |omb47             |omb40       |omb05      |omb12     |omb41      |omb42        |omb33     |omb331     |omb13                        |omb14                               |omb14t                             |omb15                    |omb16                           |omb16t                        |omb17              |omb18                     |omb18t                  |omb930      |gem02c      |omb48       |ombud01   |ombud02   |ombud03    |ombud04    |ombud05    |ombud06    |ombud07    |ombud08    |ombud09    |ombud10    |ombud11   |ombud12  |ombud13   |ombud14   |ombud15    ]
+[omb03    |omb38     |omb44       |omb31             |omb32         |omb39     |omb04              |omb06                          |omb45        |omb47             |omb40       |omb05      |omb12     |omb41      |omb42        |omb33     |omb331     |omb13                        |omb14                               |omb14t                             |omb15                    |omb16                           |omb16t                        |omb17              |omb18                     |omb18t                  |omb930      |gem02c      |omb48       |ombud01   |ombud02   |ombud03    |ombud04    |ombud05    |ombud06    |ombud07    |ombud08    |ombud09    |ombud10    |ombud11   |ombud12  |ombud13   |ombud14   |ombud15    ]
+[omb03    |omb38     |omb44       |omb31             |omb32         |omb39     |omb04              |omb06                          |omb45        |omb47             |omb40       |omb05      |omb12     |omb41      |omb42        |omb33     |omb331     |omb13                        |omb14                               |omb14t                             |omb15                    |omb16                           |omb16t                        |omb17              |omb18                     |omb18t                  |omb930      |gem02c      |omb48       |ombud01   |ombud02   |ombud03    |ombud04    |ombud05    |ombud06    |ombud07    |ombud08    |ombud09    |ombud10    |ombud11   |ombud12  |ombud13   |ombud14   |ombud15    ]
+[omb03    |omb38     |omb44       |omb31             |omb32         |omb39     |omb04              |omb06                          |omb45        |omb47             |omb40       |omb05      |omb12     |omb41      |omb42        |omb33     |omb331     |omb13                        |omb14                               |omb14t                             |omb15                    |omb16                           |omb16t                        |omb17              |omb18                     |omb18t                  |omb930      |gem02c      |omb48       |ombud01   |ombud02   |ombud03    |ombud04    |ombud05    |ombud06    |ombud07    |ombud08    |ombud09    |ombud10    |ombud11   |ombud12  |ombud13   |ombud14   |ombud15    ]
+[omb03    |omb38     |omb44       |omb31             |omb32         |omb39     |omb04              |omb06                          |omb45        |omb47             |omb40       |omb05      |omb12     |omb41      |omb42        |omb33     |omb331     |omb13                        |omb14                               |omb14t                             |omb15                    |omb16                           |omb16t                        |omb17              |omb18                     |omb18t                  |omb930      |gem02c      |omb48       |ombud01   |ombud02   |ombud03    |ombud04    |ombud05    |ombud06    |ombud07    |ombud08    |ombud09    |ombud10    |ombud11   |ombud12  |ombud13   |ombud14   |ombud15    ]
+[omb03    |omb38     |omb44       |omb31             |omb32         |omb39     |omb04              |omb06                          |omb45        |omb47             |omb40       |omb05      |omb12     |omb41      |omb42        |omb33     |omb331     |omb13                        |omb14                               |omb14t                             |omb15                    |omb16                           |omb16t                        |omb17              |omb18                     |omb18t                  |omb930      |gem02c      |omb48       |ombud01   |ombud02   |ombud03    |ombud04    |ombud05    |ombud06    |ombud07    |ombud08    |ombud09    |ombud10    |ombud11   |ombud12  |ombud13   |ombud14   |ombud15    ]
+[omb03    |omb38     |omb44       |omb31             |omb32         |omb39     |omb04              |omb06                          |omb45        |omb47             |omb40       |omb05      |omb12     |omb41      |omb42        |omb33     |omb331     |omb13                        |omb14                               |omb14t                             |omb15                    |omb16                           |omb16t                        |omb17              |omb18                     |omb18t                  |omb930      |gem02c      |omb48       |ombud01   |ombud02   |ombud03    |ombud04    |ombud05    |ombud06    |ombud07    |ombud08    |ombud09    |ombud10    |ombud11   |ombud12  |ombud13   |ombud14   |ombud15    ]
+[omb03    |omb38     |omb44       |omb31             |omb32         |omb39     |omb04              |omb06                          |omb45        |omb47             |omb40       |omb05      |omb12     |omb41      |omb42        |omb33     |omb331     |omb13                        |omb14                               |omb14t                             |omb15                    |omb16                           |omb16t                        |omb17              |omb18                     |omb18t                  |omb930      |gem02c      |omb48       |ombud01   |ombud02   |ombud03    |ombud04    |ombud05    |ombud06    |ombud07    |ombud08    |ombud09    |ombud10    |ombud11   |ombud12  |ombud13   |ombud14   |ombud15    ]
+
+}
+END -- s_omb
+Grid gr2748
+{
+ ------ Rows[idx   ]/ [cnt   ] -- [label1 |cn2   ]----[lb1                        ] ----- Total1  [tot_amt1                ] -----  Total2  [tot_amt2                  ] ----
+
+
+}
+END -- gr2748
+END -- VBox1
+END -- page_main
+Page page_info(action=page_info, text=%"Page2")
+Table Table1
+{
+[oma00_1        |oma01_1           |oma08_01          |oma02_1           |oma03_1          |oma032_1          |oma68_1            |oma69_1             |oma32_1          |oag02_1              |oma11_1             |oma13_1        |ool02_1               |oma54t_1     |oma55_1      |oma56t_1    |oma57_1       |oma18_1         |oma10_1       |oma33_1           |oma64_01          |omaconf_]
+[oma00_1        |oma01_1           |oma08_01          |oma02_1           |oma03_1          |oma032_1          |oma68_1            |oma69_1             |oma32_1          |oag02_1              |oma11_1             |oma13_1        |ool02_1               |oma54t_1     |oma55_1      |oma56t_1    |oma57_1       |oma18_1         |oma10_1       |oma33_1           |oma64_01          |omaconf_]
+[oma00_1        |oma01_1           |oma08_01          |oma02_1           |oma03_1          |oma032_1          |oma68_1            |oma69_1             |oma32_1          |oag02_1              |oma11_1             |oma13_1        |ool02_1               |oma54t_1     |oma55_1      |oma56t_1    |oma57_1       |oma18_1         |oma10_1       |oma33_1           |oma64_01          |omaconf_]
+[oma00_1        |oma01_1           |oma08_01          |oma02_1           |oma03_1          |oma032_1          |oma68_1            |oma69_1             |oma32_1          |oag02_1              |oma11_1             |oma13_1        |ool02_1               |oma54t_1     |oma55_1      |oma56t_1    |oma57_1       |oma18_1         |oma10_1       |oma33_1           |oma64_01          |omaconf_]
+[oma00_1        |oma01_1           |oma08_01          |oma02_1           |oma03_1          |oma032_1          |oma68_1            |oma69_1             |oma32_1          |oag02_1              |oma11_1             |oma13_1        |ool02_1               |oma54t_1     |oma55_1      |oma56t_1    |oma57_1       |oma18_1         |oma10_1       |oma33_1           |oma64_01          |omaconf_]
+
+}
+END -- Table1
+END -- page_info
+END -- Folder1
+END -- axrt300
+
+TABLES
+gec_file,
+omb_file,
+oma_file
+ATTRIBUTES
+ComboBox oma00=oma_file.oma00, tabIndex=1, not null, required, queryEditable, comment="11.Deposit12.Delivery13.Balance14.MISC21.Allowance 22.Account To Offset23.Advance Receive24.Suspense Credit25.Discount31.Non-A/R Invoice", items=(("10", "Text"),("11", "11.Deposit"),("12", "12.Delivery"),("13", "13.Balance"),("14", "14.MISC"),("15", "15.Deposit"),("16", "16.Receipts "),("17", "17.AR"),("19", "19.Receipts "),("20", "20:TO be Accounted deduction "),("21", "21.Allowance"),("22", "22.Account To Offset"),("23", "23.Advance Receive00"),("24", "24.Suspense Credit"),("25", "25.Discount"),("26", "26.Advance Receipt"),("27", "27.daishou"),("28", "28.daitui"),("31", "31.Non-A/R Invoice"));
+Edit oma33=oma_file.oma33, tabIndex=2, noEntry;
+CheckBox oma=oma_file.omaconf, tabIndex=3, text="Confirm", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox om1=oma_file.omavoid, tabIndex=4, text="Void", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox om2=oma_file.omamksg, tabIndex=5, text="Approve?", noEntry, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit oma01=oma_file.oma01, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit oma66=oma_file.oma66, action=controlp, tabIndex=54, image="zoom", comment="<^P> Qry Details";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=55, noEntry;
+ComboBox oma64=oma_file.oma64, tabIndex=9, noEntry, queryEditable, items=(("0", "Issue"),("1", "Approved"),("S", "Approving"),("R", "Approval rejected!"),("W", "Withdraw"),("9", "Void"));
+ComboBox oma08=oma_file.oma08, tabIndex=10, not null, required, comment="1.Local Sales 2.Export", items=(("1", "Local Sales"),("2", "Export"),("3", "As Export (for ACO System)"));
+ButtonEdit oma03=oma_file.oma03, action=controlp, tabIndex=7, not null, required, image="zoom", comment="Enter Customer Numbe , MISC =MISC Customer,<^P>Qry Details";
+Edit oma032=oma_file.oma032, tabIndex=8, not null, required;
+ComboBox oma70=oma_file.oma70, tabIndex=353, noEntry, items=(("1", "System"),("2", "Manual Entry"),("3", "POS Transaction"));
+DateEdit oma02=oma_file.oma02, tabIndex=13, not null, required;
+ButtonEdit oma68=oma_file.oma68, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P> Qry Collecting Customer";
+Edit oma69=oma_file.oma69, tabIndex=12, not null, required;
+ButtonEdit oma76=oma_file.oma76, action=controlp, tabIndex=507, noEntry, image="zoom";
+Edit omauser=oma_file.omauser, tabIndex=14, noEntry;
+Edit omamodu=oma_file.omamodu, tabIndex=15, noEntry;
+Edit omagrup=oma_file.omagrup, tabIndex=16, noEntry;
+DateEdit omadate=oma_file.omadate, tabIndex=17, noEntry;
+Edit omaoriu=oma_file.omaoriu, tabIndex=498, noEntry;
+Edit omaorig=oma_file.omaorig, tabIndex=499, noEntry;
+Group group01:group01;
+ButtonEdit oma32=oma_file.oma32, action=controlp, tabIndex=18, not null, required, image="zoom", comment="Enter Collection Ter  ,<^P>Qry Details";
+DateEdit oma11=oma_file.oma11, tabIndex=19, not null, required, comment="Enter A/R Date";
+DateEdit oma12=oma_file.oma12, tabIndex=20, not null, required, comment="Enter Maturity Date(Cash In )";
+ButtonEdit oma13=oma_file.oma13, action=controlp, tabIndex=21, not null, required, image="zoom", comment="<^P>Qry Details";
+TextEdit ool02=formonly.ool02 type CHAR, tabIndex=22, noEntry;
+ComboBox oma65=oma_file.oma65, tabIndex=23, noEntry, queryEditable, comment="1.Transfer AR. 2.Receive Direct.", items=(("1", "Transfer AR."),("2", "Receive Direct."));
+ButtonEdit omaud02=oma_file.omaud02, action=control, tabIndex=535, image="zoom";
+Group group02:group02, text="Original Currency";
+ButtonEdit oma23=oma_file.oma23, action=controlp, tabIndex=24, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oma52=oma_file.oma52, tabIndex=25, noEntry, not null, required;
+Edit oma73f=oma_file.oma73f, tabIndex=501, noEntry, not null, required;
+Edit oma54=oma_file.oma54, tabIndex=26, noEntry, not null, required;
+Edit oma54x=oma_file.oma54x, tabIndex=27, not null, required;
+Edit oma51f=oma_file.oma51f, tabIndex=28, noEntry;
+Edit oma54t=oma_file.oma54t, tabIndex=29, noEntry, not null, required;
+Edit oma55=oma_file.oma55, tabIndex=30, noEntry, not null, required;
+Edit oma55_u=formonly.oma55_u type CHAR, tabIndex=31, noEntry;
+Group group03:group03, text="Home Currency";
+ButtonEdit oma24=oma_file.oma24, action=controlp, tabIndex=32, not null, required, image="zoom";
+Edit oma53=oma_file.oma53, tabIndex=33, noEntry, not null, required;
+Edit oma73=oma_file.oma73, tabIndex=502, noEntry, not null, required;
+Edit oma56=oma_file.oma56, tabIndex=34, noEntry, not null, required;
+Edit oma56x=oma_file.oma56x, tabIndex=35, not null, required;
+Edit oma51=oma_file.oma51, tabIndex=36, noEntry;
+Edit oma56t=oma_file.oma56t, tabIndex=37, noEntry, not null, required;
+Edit oma57=oma_file.oma57, tabIndex=38, noEntry, not null, required;
+Edit oma57_u=formonly.oma57_u type CHAR, tabIndex=39, noEntry;
+Group group09:group09;
+ButtonEdit oma18=oma_file.oma18, action=controlp, tabIndex=40, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=41, noEntry;
+ButtonEdit oma181=oma_file.oma181, action=controlp, tabIndex=42, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=43, noEntry;
+Group group04:group04;
+ButtonEdit oma14=oma_file.oma14, action=controlp, tabIndex=44, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=45, noEntry;
+ButtonEdit oma15=oma_file.oma15, action=controlp, tabIndex=46, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=47, noEntry;
+ButtonEdit oma930=oma_file.oma930, action=controlp, tabIndex=48, not null, required, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02a=formonly.gem02a type CHAR, tabIndex=49, noEntry;
+Edit oma16=oma_file.oma16, tabIndex=50;
+Edit oma165=oma_file.oma165, tabIndex=50;
+Edit oma19=oma_file.oma19, tabIndex=51, noEntry;
+Edit oma99=oma_file.oma99, tabIndex=52, noEntry;
+Edit oma992=oma_file.oma992, tabIndex=53, noEntry;
+Group group06:group06;
+Edit oma67=oma_file.oma67, tabIndex=56;
+ButtonEdit oma25=oma_file.oma25, action=controlp, tabIndex=57, image="zoom", comment="<^P> Qry Details";
+ButtonEdit oma26=oma_file.oma26, action=controlp, tabIndex=58, image="zoom", comment="<^P> Qry Details";
+ButtonEdit oma63=oma_file.oma63, action=controlp, tabIndex=59, image="zoom", comment="<^P> Qry Project NO.";
+Edit net=formonly.net type CHAR, tabIndex=60;
+CheckBox oma40=oma_file.oma40, tabIndex=61, text="Affiliate", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit omaprsw=oma_file.omaprsw, tabIndex=62, noEntry;
+Group group07:group07;
+DateEdit oma09=oma_file.oma09, tabIndex=63;
+Edit oma05=oma_file.oma05, tabIndex=64, comment="Enter Invoice Type to Issue!";
+Edit oma75=oma_file.oma75, tabIndex=506;
+Edit oma10=oma_file.oma10, tabIndex=65;
+ButtonEdit oma04=oma_file.oma04, action=controlp, tabIndex=101, image="zoom";
+Edit occ18=formonly.occ18 type VARCHAR, tabIndex=102, noEntry;
+Edit oma71=oma_file.oma71, tabIndex=354, noEntry, not null, required;
+Group group11:group11;
+ButtonEdit oma21=oma_file.oma21, action=controlp, tabIndex=66, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit gec02=formonly.gec02 type like gec_file.gec02, tabIndex=534, noEntry;
+Edit om3=oma_file.oma211, tabIndex=67, noEntry;
+Edit om4=oma_file.oma212, tabIndex=68, noEntry;
+CheckBox oma213=oma_file.oma213, tabIndex=69, text="With Tax", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox oma74=oma_file.oma74, tabIndex=505, noEntry, items=(("1", "Shopping malls ballot"),("2", "Commercial Invoice"));
+Group group08:group08;
+ButtonEdit oma58=oma_file.oma58, action=controlp, tabIndex=70, not null, required, image="zoom";
+Edit oma59=oma_file.oma59, tabIndex=71, noEntry;
+Edit oma59x=oma_file.oma59x, tabIndex=72;
+Edit oma59t=oma_file.oma59t, tabIndex=73, noEntry;
+TextEdit omaud01=oma_file.omaud01, tabIndex=325;
+Edit omaud07=oma_file.omaud07, tabIndex=326;
+DateEdit omaud13=oma_file.omaud13, tabIndex=327;
+Edit omaud08=oma_file.omaud08, tabIndex=328;
+DateEdit omaud14=oma_file.omaud14, tabIndex=329;
+Edit omaud09=oma_file.omaud09, tabIndex=330;
+DateEdit omaud15=oma_file.omaud15, tabIndex=331;
+Edit omaud03=oma_file.omaud03, tabIndex=332;
+Edit omaud10=oma_file.omaud10, tabIndex=333;
+Edit omaud04=oma_file.omaud04, tabIndex=334;
+Edit omaud11=oma_file.omaud11, tabIndex=335;
+Edit omaud05=oma_file.omaud05, tabIndex=336;
+Edit omaud12=oma_file.omaud12, tabIndex=337;
+Edit omaud06=oma_file.omaud06, tabIndex=338;
+Edit omb03=omb_file.omb03, tabIndex=74, title="Line No.", not null, required, comment="<^Y> Maint Other Data";
+ComboBox omb38=omb_file.omb38, tabIndex=75, title="Type", not null, required, queryEditable, items=(("1", %"Order"),("2", %"Delivery"),("3", %"Sales/Return"),("4", %"Return Benefit of Delivery"),("5", %"Return Benefit of Sales/Return"),("99", %"Other"));
+ButtonEdit omb44=omb_file.omb44, action=controlp, tabIndex=500, title="plant", not null, required, image="zoom";
+ButtonEdit omb31=omb_file.omb31, action=controlp, tabIndex=76, title="Delivery Note", image="zoom", comment="<^P> Qry Details";
+Edit omb32=omb_file.omb32, tabIndex=77, title="Delivery Ln #";
+CheckBox omb39=omb_file.omb39, tabIndex=78, title="Present", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit omb04=omb_file.omb04, action=controlp, tabIndex=79, title="Product No.", image="zoom";
+Edit omb06=omb_file.omb06, tabIndex=80, title="Part Name Specification";
+Edit omb45=omb_file.omb45, tabIndex=503, title=%"Merchant No.", noEntry;
+ButtonEdit omb47=omb_file.omb47, action=controlp, tabIndex=504, title=%"Doc No.", noEntry, image="zoom";
+ButtonEdit omb40=omb_file.omb40, action=controlp, tabIndex=81, title="Reason Code", noEntry, image="zoom";
+ButtonEdit omb05=omb_file.omb05, action=controlp, tabIndex=82, title="Sales Unit", image="zoom", comment="<^P>Qry Details";
+Edit omb12=omb_file.omb12, tabIndex=83, title="Qty", not null, required;
+ButtonEdit omb41=omb_file.omb41, action=controlp, tabIndex=84, title="Project No.", image="zoom";
+ButtonEdit omb42=omb_file.omb42, action=controlp, tabIndex=85, title="WBS No.", image="zoom";
+ButtonEdit omb33=omb_file.omb33, action=controlp, tabIndex=86, title="Account #", image="zoom", comment="<^P>Qry Details";
+ButtonEdit omb331=omb_file.omb331, action=controlp, tabIndex=87, title="Account #2", image="zoom", comment="<^P>Qry Details";
+Edit omb13=omb_file.omb13, tabIndex=88, title="Original Currency Unit Price", not null, required;
+Edit omb14=omb_file.omb14, tabIndex=89, title="Original Currency Before-Tax Amount", not null, required;
+Edit omb14t=omb_file.omb14t, tabIndex=90, title="Original Currency After-Tax Amount", not null, required;
+Edit omb15=omb_file.omb15, tabIndex=91, title="Home Currency Unit Price", not null, required;
+Edit omb16=omb_file.omb16, tabIndex=92, title="Home Currency Before-Tax Amount", not null, required;
+Edit omb16t=omb_file.omb16t, tabIndex=93, title="Home Currency With-Tax Amount", not null, required;
+Edit omb17=omb_file.omb17, tabIndex=94, title="Invoice Unit Price", not null, required;
+Edit omb18=omb_file.omb18, tabIndex=95, title="Invoice Before-Tax Amount", not null, required;
+Edit omb18t=omb_file.omb18t, tabIndex=96, title="Invoice With-Tax Amount", not null, required;
+ButtonEdit omb930=omb_file.omb930, action=controlp, tabIndex=97, title="Cost Center", not null, required, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02c=formonly.gem02c type CHAR, tabIndex=98, title="Desc", noEntry;
+Edit omb48=omb_file.omb48, tabIndex=533, title=%"Already invoice amount", noEntry;
+TextEdit ombud01=omb_file.ombud01, tabIndex=323, title="ombud01";
+Edit ombud02=omb_file.ombud02, tabIndex=339, title="ombud02";
+Edit ombud03=omb_file.ombud03, tabIndex=340, title="ombud03";
+Edit ombud04=omb_file.ombud04, tabIndex=341, title="ombud04";
+Edit ombud05=omb_file.ombud05, tabIndex=342, title="ombud05";
+Edit ombud06=omb_file.ombud06, tabIndex=343, title="ombud06";
+Edit ombud07=omb_file.ombud07, tabIndex=344, title="ombud07";
+Edit ombud08=omb_file.ombud08, tabIndex=345, title="ombud08";
+Edit ombud09=omb_file.ombud09, tabIndex=346, title="ombud09";
+Edit ombud10=omb_file.ombud10, tabIndex=347, title="ombud10";
+Edit ombud11=omb_file.ombud11, tabIndex=348, title="ombud11";
+Edit ombud12=omb_file.ombud12, tabIndex=349, title="ombud12";
+Edit ombud13=omb_file.ombud13, tabIndex=350, title="ombud13";
+Edit ombud14=omb_file.ombud14, tabIndex=351, title="ombud14";
+Edit ombud15=omb_file.ombud15, tabIndex=352, title="ombud15";
+Edit idx=formonly.idx type CHAR, tabIndex=530;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=531, noEntry;
+Label label1:Label1, text=%"detail";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=532, noEntry;
+Label lb1:lb1;
+Edit tot_amt1=formonly.tot_amt1 type SMALLINT, tabIndex=99, noEntry;
+Edit tot_amt2=formonly.tot_amt2 type SMALLINT, tabIndex=100, noEntry;
+ComboBox oma00_1=formonly.oma00_1 type CHAR, tabIndex=508, title=%"oma00", items=(("10", "Text"),("11", "Text"),("12", "Text"),("13", "Text"),("14", "Text"),("15", "Text"),("16", "Text"),("17", "Text"),("18", "Text"),("19", "Text"),("20", "text"),("21", "Text"),("22", "Text"),("23", "Text"),("24", "Text"),("25", "Text"),("26", "Text"),("27", "Text"),("28", "Text"),("31", "Text"));
+Edit oma01_1=formonly.oma01_1 type CHAR, tabIndex=509, title=%"oma01";
+ComboBox oma08_01=formonly.oma08_01 type CHAR, tabIndex=510, title=%"oma08", items=(("1", "Text"),("2", "Text"),("3", "Text"));
+Edit oma02_1=formonly.oma02_1 type CHAR, tabIndex=511, title=%"oma02";
+Edit oma03_1=formonly.oma03_1 type CHAR, tabIndex=512, title=%"oma03";
+Edit oma032_1=formonly.oma032_1 type CHAR, tabIndex=513, title=%"oma032";
+Edit oma68_1=formonly.oma68_1 type CHAR, tabIndex=514, title=%"oma68";
+Edit oma69_1=formonly.oma69_1 type CHAR, tabIndex=515, title=%"om69";
+Edit oma32_1=formonly.oma32_1 type CHAR, tabIndex=516, title=%"oma32";
+Edit oag02_1=formonly.oag02_1 type CHAR, tabIndex=517, title=%"oag02";
+Edit oma11_1=formonly.oma11_1 type CHAR, tabIndex=518, title=%"oma11";
+Edit oma13_1=formonly.oma13_1 type CHAR, tabIndex=519, title=%"oma13";
+Edit ool02_1=formonly.ool02_1 type CHAR, tabIndex=520, title=%"ool02";
+Edit oma54t_1=formonly.oma54t_1 type CHAR, tabIndex=521, title=%"oma54t";
+Edit oma55_1=formonly.oma55_1 type CHAR, tabIndex=522, title=%"oma55";
+Edit oma56t_1=formonly.oma56t_1 type CHAR, tabIndex=523, title=%"oma56t";
+Edit oma57_1=formonly.oma57_1 type CHAR, tabIndex=524, title=%"oma57";
+Edit oma18_1=formonly.oma18_1 type CHAR, tabIndex=525, title=%"oma18";
+Edit oma10_1=formonly.oma10_1 type CHAR, tabIndex=526, title=%"oma10";
+Edit oma33_1=formonly.oma33_1 type CHAR, tabIndex=527, title=%"oma33";
+ComboBox oma64_01=formonly.oma64_01 type CHAR, tabIndex=528, title=%"oma64", items=(("0", "Text"),("1", "Text"),("R", "Text"),("S", "Text"),("W", "Text"),("9", "Text"));
+CheckBox omaconf_=formonly.omaconf_1 type CHAR, tabIndex=529, title=%"omaconf", valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_omb(omb_file.omb03,omb_file.omb38,omb_file.omb44,omb_file.omb31,omb_file.omb32,omb_file.omb39,omb_file.omb04,omb_file.omb06,omb_file.omb45,omb_file.omb47,omb_file.omb40,omb_file.omb05,omb_file.omb12,omb_file.omb41,omb_file.omb42,omb_file.omb33,omb_file.omb331,omb_file.omb13,omb_file.omb14,omb_file.omb14t,omb_file.omb15,omb_file.omb16,omb_file.omb16t,omb_file.omb17,omb_file.omb18,omb_file.omb18t,omb_file.omb930,formonly.gem02c,omb_file.omb48,omb_file.ombud01,omb_file.ombud02,omb_file.ombud03,omb_file.ombud04,omb_file.ombud05,omb_file.ombud06,omb_file.ombud07,omb_file.ombud08,omb_file.ombud09,omb_file.ombud10,omb_file.ombud11,omb_file.ombud12,omb_file.ombud13,omb_file.ombud14,omb_file.ombud15)
+SCREEN RECORD Undefined(oma_file.oma00,oma_file.oma33,oma_file.omaconf,oma_file.omavoid,oma_file.omamksg,formonly.imgmksg,oma_file.oma01,oma_file.oma66,formonly.azp02,oma_file.oma64,oma_file.oma08,oma_file.oma03,oma_file.oma032,oma_file.oma70,oma_file.oma02,oma_file.oma68,oma_file.oma69,oma_file.omauser,oma_file.omamodu,oma_file.omagrup,oma_file.omadate,oma_file.omaoriu,oma_file.omaorig,oma_file.oma32,oma_file.oma11,oma_file.oma12,oma_file.oma13,formonly.ool02,oma_file.oma65,oma_file.oma23,oma_file.oma52,oma_file.oma73f,oma_file.oma54,oma_file.oma54x,oma_file.oma51f,oma_file.oma54t,oma_file.oma55,formonly.oma55_u,oma_file.oma24,oma_file.oma53,oma_file.oma73,oma_file.oma56,oma_file.oma56x,oma_file.oma51,oma_file.oma56t,oma_file.oma57,formonly.oma57_u,oma_file.oma18,formonly.aag02,oma_file.oma181,formonly.aag02_2,oma_file.oma14,formonly.gen02,oma_file.oma15,formonly.gem02,oma_file.oma930,formonly.gem02a,oma_file.oma16,oma_file.oma165,oma_file.oma19,oma_file.oma99,oma_file.oma992,oma_file.oma67,oma_file.oma25,oma_file.oma26,oma_file.oma63,formonly.net,oma_file.oma40,oma_file.omaprsw,oma_file.oma09,oma_file.oma05,oma_file.oma10,oma_file.oma04,formonly.occ18,oma_file.oma71,oma_file.oma21,oma_file.oma211,oma_file.oma212,oma_file.oma213,oma_file.oma74,oma_file.oma58,oma_file.oma59,oma_file.oma59x,oma_file.oma59t,oma_file.omaud01,oma_file.omaud07,oma_file.omaud13,oma_file.omaud08,oma_file.omaud14,oma_file.omaud09,oma_file.omaud15,oma_file.omaud03,oma_file.omaud10,oma_file.omaud04,oma_file.omaud11,oma_file.omaud05,oma_file.omaud12,oma_file.omaud06,formonly.tot_amt1,formonly.tot_amt2,oma_file.oma75,oma_file.oma76,formonly.idx,formonly.cnt,formonly.cn2,formonly.gec02,oma_file.omaud02)
+SCREEN RECORD s_oma(formonly.oma00_1,formonly.oma01_1,formonly.oma08_01,formonly.oma02_1,formonly.oma03_1,formonly.oma032_1,formonly.oma68_1,formonly.oma69_1,formonly.oma32_1,formonly.oag02_1,formonly.oma11_1,formonly.oma13_1,formonly.ool02_1,formonly.oma54t_1,formonly.oma55_1,formonly.oma56t_1,formonly.oma57_1,formonly.oma18_1,formonly.oma10_1,formonly.oma33_1,formonly.oma64_01,formonly.omaconf_1)
+END -- INSTRUCTIONS
+

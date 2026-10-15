@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi5199.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfi5199")
+VBox VBox1
+Folder pc119
+Page page01(text="Page01")
+Grid gr502
+{
+ <G group01                                                                                                         >
+  Trans-out W/H       [from_w    ]        Location    [from_loc  ]        Lot No.  [from_lot                      ]
+
+  Trans-in W/H        [to_w      ]        Location    [to_loc    ]        Lot No.  [to_lot                        ]
+
+  Trans-Note          [tr_no     ]
+
+  Trans-Date          [tr_date     ]
+ <                                                                                                                  >
+
+}
+END -- gr502
+END -- page01
+END -- pc119
+END -- VBox1
+END -- asfi5199
+
+ATTRIBUTES
+Group group01:group01, text="Generate Transfer before Issuing Material";
+ButtonEdit from_w=formonly.from_w type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry";
+ButtonEdit from_loc=formonly.from_loc type CHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry";
+Edit from_lot=formonly.from_lot type CHAR, tabIndex=3, upShift;
+ButtonEdit to_w=formonly.to_w type CHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry";
+ButtonEdit to_loc=formonly.to_loc type CHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry";
+Edit to_lot=formonly.to_lot type CHAR, tabIndex=6, upShift;
+ButtonEdit tr_no=formonly.tr_no type CHAR, action=controlp, tabIndex=7, image="zoom", upShift, comment="<^P>Qry Documents Enter Doc to Generate Trnasfer Note,Blank: generate no transfer note";
+DateEdit tr_date=formonly.tr_date type CHAR, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.from_w,formonly.from_loc,formonly.from_lot,formonly.to_w,formonly.to_loc,formonly.to_lot,formonly.tr_no,formonly.tr_date)
+END -- INSTRUCTIONS
+

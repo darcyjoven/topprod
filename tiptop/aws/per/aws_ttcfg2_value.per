@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_ttcfg2_value.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_ttcfg2_value")
+VBox VBox1
+Grid gr4
+{
+ <G group01                                                                        >
+  System ID [wst03          ]
+ <                                                                                 >
+
+}
+END -- gr4
+Table tb2
+{
+[wst04          |gaq03_t             |wst05               |wst06               ]
+[wst04          |gaq03_t             |wst05               |wst06               ]
+[wst04          |gaq03_t             |wst05               |wst06               ]
+[wst04          |gaq03_t             |wst05               |wst06               ]
+[wst04          |gaq03_t             |wst05               |wst06               ]
+[wst04          |gaq03_t             |wst05               |wst06               ]
+[wst04          |gaq03_t             |wst05               |wst06               ]
+[wst04          |gaq03_t             |wst05               |wst06               ]
+[wst04          |gaq03_t             |wst05               |wst06               ]
+[wst04          |gaq03_t             |wst05               |wst06               ]
+[wst04          |gaq03_t             |wst05               |wst06               ]
+[wst04          |gaq03_t             |wst05               |wst06               ]
+[wst04          |gaq03_t             |wst05               |wst06               ]
+[wst04          |gaq03_t             |wst05               |wst06               ]
+[wst04          |gaq03_t             |wst05               |wst06               ]
+
+}
+END -- tb2
+Grid gr5
+{
+ ---------- Rows [cnt3  ] / [cnt4  ] ----------
+
+}
+END -- gr5
+END -- VBox1
+END -- aws_ttcfg2_value
+
+TABLES
+wst_file
+ATTRIBUTES
+Group group01:group01;
+Edit wst03=wst_file.wst03, tabIndex=1, not null, required;
+Edit wst04=wst_file.wst04, tabIndex=2, title="ERP Column", not null, required;
+Edit gaq03_t=formonly.gaq03_t type CHAR, tabIndex=7, title="Column Name", noEntry;
+Edit wst05=wst_file.wst05, tabIndex=3, title="Column Value";
+TextEdit wst06=wst_file.wst06, tabIndex=4, title="Mapping Value", stretch=NONE;
+Edit cnt3=formonly.cnt3 type SMALLINT, tabIndex=5, noEntry;
+Edit cnt4=formonly.cnt4 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wst(wst_file.wst04,formonly.gaq03_t,wst_file.wst05,wst_file.wst06)
+SCREEN RECORD Undefined(wst_file.wst03,formonly.cnt3,formonly.cnt4)
+END -- INSTRUCTIONS
+

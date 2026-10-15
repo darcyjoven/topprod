@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt7103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt7103")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+HBox HBox1
+Grid gr2633
+{
+ Customer Complaint Note [ohf01           ]
+ Category                [ohf02           ]
+
+}
+END -- gr2633
+Grid gr2634
+{
+ Charge                  [ohf03     ]
+ Charge Name             [gen02_1   ]
+
+}
+END -- gr2634
+Grid gr2635
+{
+ Review                  [ohf04     ]
+ Review Name             [gen02_2   ]
+
+}
+END -- gr2635
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_ohg
+{
+[ohg03  |ohg04                                                                 ]
+[ohg03  |ohg04                                                                 ]
+[ohg03  |ohg04                                                                 ]
+[ohg03  |ohg04                                                                 ]
+[ohg03  |ohg04                                                                 ]
+[ohg03  |ohg04                                                                 ]
+[ohg03  |ohg04                                                                 ]
+[ohg03  |ohg04                                                                 ]
+[ohg03  |ohg04                                                                 ]
+[ohg03  |ohg04                                                                 ]
+
+}
+END -- s_ohg
+Grid gr2636
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2636
+END -- VBox1
+END -- axmt7103
+
+TABLES
+ohg_file,
+ohf_file
+ATTRIBUTES
+Edit ohf01=ohf_file.ohf01, tabIndex=1, noEntry;
+Edit ohf02=ohf_file.ohf02, tabIndex=2, noEntry;
+ButtonEdit ohf03=ohf_file.ohf03, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Employee";
+Edit gen02_1=formonly.gen02_1 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit ohf04=ohf_file.ohf04, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Employee";
+Edit gen02_2=formonly.gen02_2 type VARCHAR, tabIndex=6, noEntry;
+Edit ohg03=ohg_file.ohg03, tabIndex=7, title="Line#", not null, required;
+Edit ohg04=ohg_file.ohg04, tabIndex=8, title="Processed Counterplan and Meliorative Counterplan", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ohg(ohg_file.ohg03,ohg_file.ohg04)
+SCREEN RECORD Undefined(ohf_file.ohf01,ohf_file.ohf02,ohf_file.ohf03,formonly.gen02_1,ohf_file.ohf04,formonly.gen02_2,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

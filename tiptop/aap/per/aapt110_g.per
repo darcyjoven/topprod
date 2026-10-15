@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapt110_g")
+Grid gr357
+{
+ <G group01                     > <G group02                                        >
+  Invoice ID   [apa46      ]
+  Invoice #    [apa08           ]  Uniform# [apa18               ]
+  Invoice Date [apa09       ]      Format   [apa171    ]
+ <                              > <                                                 >
+ <G group03                                                                         >
+  Deduct/Offset [apa17                                                             ]
+ <                                                                                  >
+ <G group04                     > <G group05                                        >
+ [apa172                  ]        Declaring Year (Century) [apa173    ]
+                                   Declaring Month          [apa174    ]
+
+ <                              > <                                                 >
+
+}
+END -- gr357
+END -- aapt110_g
+
+ATTRIBUTES
+Group group01:group01;
+Edit apa46=formonly.apa46 type CHAR, tabIndex=1;
+Edit apa08=formonly.apa08 type CHAR, tabIndex=2, noEntry, upShift;
+DateEdit apa09=formonly.apa09 type DATE, tabIndex=3;
+Group group02:group02;
+Edit apa18=formonly.apa18 type CHAR, tabIndex=4;
+ComboBox apa171=formonly.apa171 type CHAR, tabIndex=5, not null, required, queryEditable, items=(("21", "Purchase-Triplicate Calculator"),("22", "Other Voucher with tax"),("23", "Triplicate,Return Allowance"),("24", "Duplicate"),("25", "Cash Register"),("26", "Purchase-Triplicate,Caculator which the amount of tax is under 500"),("27", "Purchase-Duplicate,Electronic Receipt with tax Invoice no. which ammount of tax is under 500"),("28", "The purchase business tax prepaid by customs receipt"),("XX", "No Declartion"));
+Group group03:group03;
+ComboBox apa17=formonly.apa17 type CHAR, tabIndex=6, queryEditable, items=(("1", "Deductible Cost and Expense"),("2", "Creditable Fixed Asset"),("3", "No deductible Cost and Expense"),("4", "No Creditable Fixed Asset"));
+Group group04:group04, text="Tax Type";
+RadioGroup apa172=formonly.apa172 type CHAR, tabIndex=7, items=(("1", "Taxable"),("2", "Zero Tax Rate"),("3", "Tax-Free"));
+Group group05:group05;
+Edit apa173=formonly.apa173 type CHAR, tabIndex=8, noEntry;
+Edit apa174=formonly.apa174 type CHAR, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apa46,formonly.apa08,formonly.apa09,formonly.apa18,formonly.apa171,formonly.apa17,formonly.apa172,formonly.apa173,formonly.apa174)
+END -- INSTRUCTIONS
+

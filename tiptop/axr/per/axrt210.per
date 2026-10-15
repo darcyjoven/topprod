@@ -1,0 +1,181 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt210")
+VBox vb6
+Folder pc662
+Page page01(text="Main")
+VBox vb5
+HBox hb2
+Grid gr2750
+{
+ L/C Receipt#  [olc29             ]
+ Times         [olc28       ]
+ Department    [olc32     ][gem02a    ]
+ Cost Center   [olc930    ][gem02b    ]
+
+}
+END -- gr2750
+Grid gr2751
+{
+ Voucher No.   [olc23               ]
+ Voucher Date  [olc24       ]
+
+
+
+}
+END -- gr2751
+Grid gr2752
+{
+[olcconf     ]
+ Confirmed By  [olc30       ]
+
+
+
+}
+END -- gr2752
+Grid gr2753
+{
+ [imgmksg]
+ [       ]
+
+
+
+}
+END -- gr2753
+END -- hb2
+Grid gr2754
+{
+ <G group01                                                       ><G group02                                             >
+    Invoice#            [olc01             ]                        L/C No               [olc04               ]
+    Delivery Date       [olc02     ]                                Order Type           [olc03     ]
+    Delivery Amount     [olc09               ]                      Collection Terms     [olc06     ]
+    Other Amount        [olc10               ]                                           [oag02                          ]
+ <                                                                > Customer             [olc05     ]
+ <G group05                                                       > Customer Abbreviation[occ02     ]
+  Negotiation Date      [olc12     ]                                L/C Available Balanc [net_amt             ]
+  Negotiating Amount    [olc11               ]                      L.Ship.Dt            [olc07     ]
+  Negotiating Bank      [olc13               ]                      Expiry Date          [olc08     ]
+  No-Negotiation Reason [olc141                                  ] <                                                      >
+                        [                                        ] <G group06                                             >
+ <                                                                > Payment Acceptance Received Date         [olc15     ]
+ <G group07                                                       > Date of Air Bill of Lading Received      [olc16     ]
+  Acceptance Date     [olc19     ]                                  Goods Report Receiving Date              [olc17     ]
+  Inward Date         [olc20     ]                                  Receiving Report Received Date           [olc18     ]
+
+
+
+ <                                                                ><                                                      >
+
+}
+END -- gr2754
+END -- vb5
+END -- page01
+Page info(text="Info")
+Grid gr2755
+{
+ Record Owner        [olcuser   ] Last Modified by    [olcmodu   ]
+ Department          [olcgrup   ] Create/Modify Date  [olcdate   ]
+ Record Orig.        [olcoriu   ]
+ Dept Orig.          [olcorig   ]
+}
+END -- gr2755
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[olcud01                       ] userdefined_field07[olcud07        ] userdefined_field13[olcud13        ]
+                    [                              ] userdefined_field08[olcud08        ] userdefined_field14[olcud14        ]
+ userdefined_field02[olcud02        ]                userdefined_field09[olcud09        ] userdefined_field15[olcud15        ]
+ userdefined_field03[olcud03        ]                userdefined_field10[olcud10        ]
+ userdefined_field04[olcud04        ]                userdefined_field11[olcud11        ]
+ userdefined_field05[olcud05        ]                userdefined_field12[olcud12        ]
+ userdefined_field06[olcud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc662
+Grid gr2756
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2756
+END -- vb6
+END -- axrt210
+
+TABLES
+olc_file
+ATTRIBUTES
+ButtonEdit olc29=olc_file.olc29, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry LC Receipt #";
+Edit olc28=olc_file.olc28, tabIndex=2, noEntry;
+ButtonEdit olc32=olc_file.olc32, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P> Qry Department";
+Edit gem02a=formonly.gem02a type CHAR, tabIndex=4, noEntry;
+ButtonEdit olc930=olc_file.olc930, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02b=formonly.gem02b type CHAR, tabIndex=6, noEntry;
+Edit olc23=olc_file.olc23, tabIndex=7, noEntry;
+DateEdit olc24=olc_file.olc24, tabIndex=8;
+CheckBox olcconf=olc_file.olcconf, tabIndex=9, text="Confirm", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit olc30=olc_file.olc30, tabIndex=10, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Group group01:group01;
+ButtonEdit olc01=olc_file.olc01, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Invoice #     ";
+DateEdit olc02=olc_file.olc02, tabIndex=13;
+Edit olc09=olc_file.olc09, tabIndex=14, not null, required;
+Edit olc10=olc_file.olc10, tabIndex=15, not null, required;
+Group group02:group02;
+Edit olc04=olc_file.olc04, tabIndex=16, noEntry;
+ComboBox olc03=olc_file.olc03, tabIndex=17, items=(("1", "Local Sales"),("2", "Export"));
+ButtonEdit olc06=olc_file.olc06, action=controlp, tabIndex=18, noEntry, image="zoom", comment="<^P>Qry Details";
+Edit oag02=formonly.oag02 type CHAR, tabIndex=19, noEntry;
+ButtonEdit olc05=olc_file.olc05, action=controlp, tabIndex=20, noEntry, image="zoom", comment="<^P>Qry Details";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=21, noEntry;
+Edit net_amt=formonly.net_amt type CHAR, tabIndex=22, noEntry;
+DateEdit olc07=olc_file.olc07, tabIndex=23, noEntry;
+DateEdit olc08=olc_file.olc08, tabIndex=24, noEntry;
+Group group05:group05;
+DateEdit olc12=olc_file.olc12, tabIndex=25, comment="<^O>Default Date";
+Edit olc11=olc_file.olc11, tabIndex=26, noEntry, not null, required;
+Edit olc13=olc_file.olc13, tabIndex=27;
+TextEdit olc141=olc_file.olc141, tabIndex=28, stretch=NONE;
+Group group06:group06;
+DateEdit olc15=olc_file.olc15, tabIndex=29, comment="<^O>Default Date";
+DateEdit olc16=olc_file.olc16, tabIndex=30, comment="<^O>Default Date";
+DateEdit olc17=olc_file.olc17, tabIndex=31, comment="<^O>Default Date";
+DateEdit olc18=olc_file.olc18, tabIndex=32, comment="<^O>Default Date";
+Group group07:group07;
+DateEdit olc19=olc_file.olc19, tabIndex=33, comment="<^O>Default Date";
+DateEdit olc20=olc_file.olc20, tabIndex=34, comment="<^O>Default Date";
+Edit olcuser=olc_file.olcuser, tabIndex=35, noEntry;
+Edit olcmodu=olc_file.olcmodu, tabIndex=36, noEntry;
+Edit olcgrup=olc_file.olcgrup, tabIndex=37, noEntry;
+DateEdit olcdate=olc_file.olcdate, tabIndex=38, noEntry;
+Edit olcoriu=olc_file.olcoriu, tabIndex=501, noEntry;
+Edit olcorig=olc_file.olcorig, tabIndex=502, noEntry;
+TextEdit olcud01=olc_file.olcud01, tabIndex=41, stretch=NONE;
+Edit olcud07=olc_file.olcud07, tabIndex=42;
+DateEdit olcud13=olc_file.olcud13, tabIndex=43;
+Edit olcud08=olc_file.olcud08, tabIndex=44;
+DateEdit olcud14=olc_file.olcud14, tabIndex=45;
+Edit olcud02=olc_file.olcud02, tabIndex=46;
+Edit olcud09=olc_file.olcud09, tabIndex=47;
+DateEdit olcud15=olc_file.olcud15, tabIndex=48;
+Edit olcud03=olc_file.olcud03, tabIndex=49;
+Edit olcud10=olc_file.olcud10, tabIndex=50;
+Edit olcud04=olc_file.olcud04, tabIndex=51;
+Edit olcud11=olc_file.olcud11, tabIndex=52;
+Edit olcud05=olc_file.olcud05, tabIndex=53;
+Edit olcud12=olc_file.olcud12, tabIndex=54;
+Edit olcud06=olc_file.olcud06, tabIndex=55;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=39, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(olc_file.olc29,olc_file.olc28,olc_file.olc32,formonly.gem02a,olc_file.olc930,formonly.gem02b,olc_file.olc23,olc_file.olc24,olc_file.olcconf,olc_file.olc30,formonly.imgmksg,olc_file.olc01,olc_file.olc02,olc_file.olc09,olc_file.olc10,olc_file.olc04,olc_file.olc03,olc_file.olc06,formonly.oag02,olc_file.olc05,formonly.occ02,formonly.net_amt,olc_file.olc07,olc_file.olc08,olc_file.olc12,olc_file.olc11,olc_file.olc13,olc_file.olc141,olc_file.olc15,olc_file.olc16,olc_file.olc17,olc_file.olc18,olc_file.olc19,olc_file.olc20,olc_file.olcuser,olc_file.olcmodu,olc_file.olcgrup,olc_file.olcdate,olc_file.olcoriu,olc_file.olcorig,olc_file.olcud01,olc_file.olcud07,olc_file.olcud13,olc_file.olcud08,olc_file.olcud14,olc_file.olcud02,olc_file.olcud09,olc_file.olcud15,olc_file.olcud03,olc_file.olcud10,olc_file.olcud04,olc_file.olcud11,olc_file.olcud05,olc_file.olcud12,olc_file.olcud06,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrp500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrp500")
+VBox VBox1
+Grid gr2929
+{
+ <G group01                                                           >
+  Closing Year        [g_yy      ]
+  Period              [g_mm      ]
+ [dummy01                                                             ]
+ [dummy02                                                             ]
+ [dummy03                                                             ]
+ [dummy04                                                             ]
+ <                                                                    >
+
+}
+END -- gr2929
+Grid gr2930
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr2930
+END -- VBox1
+END -- axrp500
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit g_yy=formonly.g_yy type CHAR, tabIndex=1;
+Edit g_mm=formonly.g_mm type CHAR, tabIndex=2;
+Label dummy01:dummy01, text="1.For Correct Result, Lock Account till End of Period before Closing";
+Label dummy02:dummy02, text="2.If any Transaction in Current Period, Redo this task";
+Label dummy03:dummy03, text="3.If it\'s the Last Period, Redo End of Year Carry forward";
+Label dummy04:dummy04, text="4.Close Only Confirmed & Entry Sheet Generated";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=3, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_yy,formonly.g_mm,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

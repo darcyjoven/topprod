@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi500")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+Grid gr2403
+{
+ Forcaste No. [odf01           ][odb02         ]
+ Org No.      [odf02           ][tqb02         ]
+ Product Group[odf03           ][oba02         ]
+
+
+}
+END -- gr2403
+END -- page01
+END -- folder01
+ScrollGrid gr2621
+{
+
+ [dummy01            ][dummy02   ][dummy03   ][dummy04   ]
+ [odf04              ][odf05     ][odf06     ][odf07     ]
+ [odf04              ][odf05     ][odf06     ][odf07     ]
+ [odf04              ][odf05     ][odf06     ][odf07     ]
+ [odf04              ][odf05     ][odf06     ][odf07     ]
+ [odf04              ][odf05     ][odf06     ][odf07     ]
+ [odf04              ][odf05     ][odf06     ][odf07     ]
+ [odf04              ][odf05     ][odf06     ][odf07     ]
+ [odf04              ][odf05     ][odf06     ][odf07     ]
+ [odf04              ][odf05     ][odf06     ][odf07     ]
+ [odf04              ][odf05     ][odf06     ][odf07     ]
+
+}
+END -- gr2621
+Grid gr2404
+{
+ ---------- Rows [cnt   ] / [cn2    ] ----------
+
+}
+END -- gr2404
+END -- vb4
+END -- atmi500
+
+TABLES
+odf_file
+ATTRIBUTES
+ButtonEdit odf01=odf_file.odf01, action=controlp, tabIndex=1, not null, required, image="zoom.png", comment="<^P>Qry Forcaste No.";
+Edit odb02=formonly.odb02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit odf02=odf_file.odf02, action=controlp, tabIndex=2, not null, required, image="zoom.png", comment="<^P>Qry Org No.";
+Edit tqb02=formonly.tqb02 type CHAR, tabIndex=5, noEntry;
+ButtonEdit odf03=odf_file.odf03, action=controlp, tabIndex=3, not null, required, image="zoom.png", comment="<^P>Qry Produce Group.";
+Edit oba02=formonly.oba02 type CHAR, tabIndex=6, noEntry;
+Label dummy01:dummy01, text="Range";
+Label dummy02:dummy02, text="Season";
+Label dummy03:dummy03, text="Market";
+Label dummy04:dummy04, text="Sales";
+DateEdit odf04=odf_file.odf04, tabIndex=7, not null, required;
+Edit odf05=odf_file.odf05, tabIndex=8, not null, required;
+Edit odf06=odf_file.odf06, tabIndex=9, not null, required;
+Edit odf07=odf_file.odf07, tabIndex=10, not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_odf(odf_file.odf04,odf_file.odf05,odf_file.odf06,odf_file.odf07)
+SCREEN RECORD Undefined(odf_file.odf01,formonly.odb02,odf_file.odf02,formonly.tqb02,odf_file.odf03,formonly.oba02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_efcfg1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_efcfg1")
+VBox VBox1
+Table s_wsb
+{
+[wsb03        |wsb04           ]
+[wsb03        |wsb04           ]
+[wsb03        |wsb04           ]
+[wsb03        |wsb04           ]
+[wsb03        |wsb04           ]
+
+}
+END -- s_wsb
+Grid gr1416
+{
+ ----------Rows [cn2] ----------
+
+}
+END -- gr1416
+END -- VBox1
+END -- aws_efcfg1
+
+TABLES
+wsb_file
+ATTRIBUTES
+Edit wsb03=wsb_file.wsb03, tabIndex=1, title="Field Name", comment="Enters field name,blank is not allowed!";
+Edit wsb04=wsb_file.wsb04, tabIndex=2, title="Reference Field", comment="IF the filed-value references other field, please enters reference field ";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry, color = magenta;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wsb(wsb_file.wsb03,wsb_file.wsb04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

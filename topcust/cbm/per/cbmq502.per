@@ -1,0 +1,104 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cbm/4fd/cbmq502.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmq501")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr878
+{
+ Master Item No.  [bma01                          ]
+ Item Name        [ima02                          ]
+ Specification    [ima021                         ]
+
+}
+END -- gr878
+Grid gr879
+{
+ Current Version    [ima05     ]
+ Source Code        [ima08     ]
+ Pro Unit           [ima55     ]
+ Alternate Code     [bma06               ]
+}
+END -- gr879
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr880
+{
+ Record Owner        [bmauser   ] Last Modified by    [bmamodu   ] Data Valid Code     [bmaacti   ]
+ Department          [bmagrup   ] Create/Modify Date  [bmadate   ]
+ Record Orig.        [bmaoriu   ]
+ Dept Orig.          [bmaorig   ]
+}
+END -- gr880
+END -- info
+END -- folder01
+Table s_bmb
+{
+[level|bmb01                   |bmbud02 |ecb03   |bmb09       |bmb02   |bmb03                   |ima02_b           |ima021_b          |bmb10   |bmb06               |qpa                 ]
+[level|bmb01                   |bmbud02 |ecb03   |bmb09       |bmb02   |bmb03                   |ima02_b           |ima021_b          |bmb10   |bmb06               |qpa                 ]
+[level|bmb01                   |bmbud02 |ecb03   |bmb09       |bmb02   |bmb03                   |ima02_b           |ima021_b          |bmb10   |bmb06               |qpa                 ]
+[level|bmb01                   |bmbud02 |ecb03   |bmb09       |bmb02   |bmb03                   |ima02_b           |ima021_b          |bmb10   |bmb06               |qpa                 ]
+[level|bmb01                   |bmbud02 |ecb03   |bmb09       |bmb02   |bmb03                   |ima02_b           |ima021_b          |bmb10   |bmb06               |qpa                 ]
+[level|bmb01                   |bmbud02 |ecb03   |bmb09       |bmb02   |bmb03                   |ima02_b           |ima021_b          |bmb10   |bmb06               |qpa                 ]
+[level|bmb01                   |bmbud02 |ecb03   |bmb09       |bmb02   |bmb03                   |ima02_b           |ima021_b          |bmb10   |bmb06               |qpa                 ]
+[level|bmb01                   |bmbud02 |ecb03   |bmb09       |bmb02   |bmb03                   |ima02_b           |ima021_b          |bmb10   |bmb06               |qpa                 ]
+[level|bmb01                   |bmbud02 |ecb03   |bmb09       |bmb02   |bmb03                   |ima02_b           |ima021_b          |bmb10   |bmb06               |qpa                 ]
+[level|bmb01                   |bmbud02 |ecb03   |bmb09       |bmb02   |bmb03                   |ima02_b           |ima021_b          |bmb10   |bmb06               |qpa                 ]
+
+}
+END -- s_bmb
+Grid gr881
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr881
+END -- VBox1
+END -- cbmq502
+
+TABLES
+bmb_file,
+bma_file
+ATTRIBUTES
+ButtonEdit bma01=bma_file.bma01, action=controlp, tabIndex=1, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=4, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=5, noEntry;
+Edit ima55=formonly.ima55 type CHAR, tabIndex=6, noEntry;
+Edit bma06=bma_file.bma06, tabIndex=7;
+Edit bmauser=bma_file.bmauser, tabIndex=8, noEntry;
+Edit bmamodu=bma_file.bmamodu, tabIndex=9, noEntry;
+Edit bmaacti=bma_file.bmaacti, tabIndex=10, noEntry;
+Edit bmagrup=bma_file.bmagrup, tabIndex=11, noEntry;
+DateEdit bmadate=bma_file.bmadate, tabIndex=12, noEntry;
+Edit bmaoriu=bma_file.bmaoriu, tabIndex=26, noEntry;
+Edit bmaorig=bma_file.bmaorig, tabIndex=27, noEntry;
+Edit level=formonly.level type CHAR, tabIndex=13, title="Lvls";
+Edit bmb01=formonly.bmb01 type VARCHAR, tabIndex=14, title=%"bmb01";
+Edit bmbud02=formonly.bmbud02, tabIndex=15, title=%"bmbud02";
+Edit ecb03=formonly.ecb03 type INTEGER, tabIndex=28, title=%"ecb03";
+Edit bmb09=formonly.bmb09, tabIndex=16, title=%"bmb09";
+Edit bmb02=bmb_file.bmb02, tabIndex=17, title="Ln#";
+Edit bmb03=bmb_file.bmb03, tabIndex=18, title="Component No.";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=19, title="Part Name", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=20, title="Specification", noEntry;
+Edit bmb10=formonly.bmb10, tabIndex=21, title=%"bmb10";
+Edit bmb06=formonly.bmb06 type DECIMAL, tabIndex=22, title=%"bmb06";
+Edit qpa=formonly.qpa type DECIMAL, tabIndex=23, title=%"qpa";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmb(formonly.level,formonly.bmb01,formonly.bmbud02,formonly.ecb03,formonly.bmb09,bmb_file.bmb02,bmb_file.bmb03,formonly.ima02_b,formonly.ima021_b,formonly.bmb10,formonly.bmb06,formonly.qpa)
+SCREEN RECORD Undefined(bma_file.bma01,formonly.ima02,formonly.ima021,formonly.ima05,formonly.ima08,formonly.ima55,bma_file.bma06,bma_file.bmauser,bma_file.bmamodu,bma_file.bmaacti,bma_file.bmagrup,bma_file.bmadate,bma_file.bmaoriu,bma_file.bmaorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

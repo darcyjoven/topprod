@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti162.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="arti162")
+VBox vb3
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr3
+{
+
+  Shipping Center  [rvk01     ][rvk01_desc          ]
+
+}
+END -- gr3
+END -- Page1
+END -- pc1
+Table s_rvk
+{
+[rvk04     |rvk04_desc|rvk02     |rvk02_desc     |rvk03     |rvk03_desc     |rvkacti ]
+[rvk04     |rvk04_desc|rvk02     |rvk02_desc     |rvk03     |rvk03_desc     |rvkacti ]
+[rvk04     |rvk04_desc|rvk02     |rvk02_desc     |rvk03     |rvk03_desc     |rvkacti ]
+[rvk04     |rvk04_desc|rvk02     |rvk02_desc     |rvk03     |rvk03_desc     |rvkacti ]
+[rvk04     |rvk04_desc|rvk02     |rvk02_desc     |rvk03     |rvk03_desc     |rvkacti ]
+}
+END -- s_rvk
+Grid gr8
+{
+ ----------count[cnt       ]/[cn2       ]----------
+
+
+
+
+}
+END -- gr8
+END -- vb3
+END -- arti162
+
+TABLES
+rvk_file
+ATTRIBUTES
+ButtonEdit rvk01=rvk_file.rvk01, action=controlp, tabIndex=1, not null, image="zoom.png";
+Edit rvk01_desc=formonly.rvk01_desc type CHAR, tabIndex=2, noEntry;
+ButtonEdit rvk04=rvk_file.rvk04, action=controlp, tabIndex=10, title="rvk04", not null, image="zoom.png";
+Edit rvk04_desc=formonly.rvk04_desc type CHAR, tabIndex=11, title="rvk04_desc", noEntry;
+ButtonEdit rvk02=rvk_file.rvk02, action=controlp, tabIndex=3, title="rvk02", not null, image="zoom.png";
+Edit rvk02_desc=formonly.rvk02_desc type CHAR, tabIndex=4, title="rvk02_desc", noEntry;
+ButtonEdit rvk03=rvk_file.rvk03, action=controlp, tabIndex=5, title="rvk03", not null, image="zoom.png";
+Edit rvk03_desc=formonly.rvk03_desc type CHAR, tabIndex=6, title="rvk03_desc", noEntry;
+CheckBox rvkacti=rvk_file.rvkacti, tabIndex=7, default = "Y", title="rvkacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type CHAR, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvk(rvk_file.rvk04,formonly.rvk04_desc,rvk_file.rvk02,formonly.rvk02_desc,rvk_file.rvk03,formonly.rvk03_desc,rvk_file.rvkacti)
+SCREEN RECORD Undefined(rvk_file.rvk01,formonly.rvk01_desc,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

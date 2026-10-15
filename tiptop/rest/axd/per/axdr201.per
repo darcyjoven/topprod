@@ -1,0 +1,56 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdr201.per created Wed Jan 23 05:30:39 2008
+-- File created from axdr201.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdr201")
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID gr7817
+    {
+     <G group01                                                     >
+      Transfer-Out NO.              [aa0             ]
+      Item NO.                      [aa1       ]
+      WIP                           [aa2       ]
+      Transfer-Out Warehouse        [aa3       ]
+      Location                      [aa4       ]
+     <                                                              >
+     <G group02                                                     >
+      Transfer-Out Plant            [aa5       ]
+      Transfer Category             [aa6       ]
+                                    [aa7                           ]
+     <                                                              >
+
+
+    }
+    END -- GRID
+    GRID gr7818
+    {
+     [aa8                     ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  EDIT aa0=FORMONLY.adf01, TABINDEX=1;
+  BUTTONEDIT aa1=FORMONLY.adg05, ACTION=controlp, IMAGE="zoom", TABINDEX=2;
+  EDIT aa2=FORMONLY.adf07, TABINDEX=3;
+  EDIT aa3=FORMONLY.adg06, TABINDEX=4;
+  EDIT aa4=FORMONLY.adg07, TABINDEX=5;
+  GROUP group02 : group02, TEXT="INPUT";
+  EDIT aa5=FORMONLY.ada01, COMMENT="<^P>Qry Plnt", TABINDEX=6;
+  COMBOBOX aa6=FORMONLY.a, COMMENT="Please insert 1/2/3/4", NOT NULL, REQUIRED, QUERYEDITABLE, TABINDEX=7, ITEMS=(("1","In Tran"),("2","Out Tran"),("3","Out Retn"),("4","All"));
+  CHECKBOX aa7=FORMONLY.b TYPE VARCHAR, TEXT="Next page by In-Plant", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=8;
+  CHECKBOX aa8=FORMONLY.more TYPE VARCHAR, TEXT="Other condition to print", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=9;
+END

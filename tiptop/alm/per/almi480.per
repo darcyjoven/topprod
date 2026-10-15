@@ -1,0 +1,53 @@
+----------------------------------------------------------------------------------
+-- File created from /u53/tiptop/alm/42f/almi480.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almi480")
+Folder pc4
+Page Main(text=%"Main")
+VBox vb4
+Table s_lpa
+{
+[lpa01   |lpa02   |lpa03   |lpapos  ]
+[lpa01   |lpa02   |lpa03   |lpapos  ]
+[lpa01   |lpa02   |lpa03   |lpapos  ]
+[lpa01   |lpa02   |lpa03   |lpapos  ]
+}
+END -- Table
+Grid gr4
+{
+ ----------Rows[cn2   ]----------
+
+
+}
+END
+END -- VBox
+END -- Page
+END -- Folder
+
+
+
+
+END -- Form
+
+TABLES
+lpa_file
+
+ATTRIBUTES
+ButtonEdit lpa01=lpa_file.lpa01, action=controlp, tabIndex=1, title="lpa01", not null, required, image="zoom.png";
+Edit lpa02=lpa_file.lpa02, tabIndex=2, title="lpa02";
+CheckBox lpa03=lpa_file.lpa03, tabIndex=3, title="lpa03", valueChecked = "Y", valueUnchecked = "N";
+CheckBox lpapos=lpa_file.lpapos, tabIndex=5, title=%"lpapos", text=%"POS", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lpa(lpa_file.lpa01, lpa_file.lpa02, lpa_file.lpa03, lpa_file.lpapos)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

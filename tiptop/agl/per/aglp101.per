@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglp101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglp301")
+VBox vb5
+Grid gr2505
+{
+ <G group01                                            >
+  Group No.               [axa01     ]
+  Book No.                [bookn]
+  Account Locking Date    [aaz642      ]
+
+ <                                                     >
+}
+END -- gr2505
+Grid gr2506
+{
+ [g_bgj]
+
+
+}
+END -- gr2506
+END -- vb5
+END -- aglp301
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit axa01=formonly.axa01 type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Query Group Data";
+Edit bookn=formonly.bookno type VARCHAR, tabIndex=3, noEntry, comment="<^P> Qry Book No.";
+DateEdit aaz642=formonly.aaz642 type DATE, tabIndex=1, not null, required;
+CheckBox g_bgj=formonly.g_bgjob type CHAR, tabIndex=2, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,formonly.aaz642,formonly.g_bgjob,formonly.axa01)
+END -- INSTRUCTIONS
+

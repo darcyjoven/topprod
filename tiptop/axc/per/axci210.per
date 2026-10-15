@@ -1,0 +1,173 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci210")
+VBox vb11
+Folder folder01
+Page page01(text="Main")
+HBox hb3
+Grid gr1458
+{
+
+ <G gb30                                       >
+  Master Item# [cma01                         ]
+               [ima02                         ]
+  Year/Month   [cma0]/[cma1]
+  Base Date    [cma02     ]
+  Tran.Date    [cma16     ]
+  Cost Method  [cma07                   ]
+  Category No. [cma08                         ]
+ <                                             >
+ <G gb29                                       >
+  Cost Grp     [ima12     ]
+  Source Code  [ima08     ]
+  Prod.Class   [ima131    ]
+
+
+ <                                             >
+
+}
+END -- gr1458
+Grid gr1459
+{
+ <G group02                                                 >
+  Category            [cma03                         ]
+  Pricing Method      [cma05                         ]
+  Receipt Unit price  [cma11               ]
+  Sale Unit Price     [cma12               ]
+  RollupUnit Price    [cma13               ]
+  Monthly Avg. U/P    [cma14               ]
+ <                                                          >
+ <G gb24                                                   >
+  Fee Rate            [cma32               ]
+  NRV Price           [cma25               ]
+  Reference No        [cma27               ]
+  Reference No        [cma28               ]
+  Product No          [cma29               ]
+
+
+ <                                                         >
+
+}
+END -- gr1459
+END -- hb3
+END -- page01
+Page info(text="Info")
+Grid gr1460
+{
+ Record Owner        [cmauser   ]   Last Modified by    [cmamodu   ]
+ Department          [cmagrup   ]   Create/Modify Date  [cmadate   ]
+ Record Orig.        [cmaoriu   ]
+ Dept Orig.          [cmaorig   ]
+}
+END -- gr1460
+END -- info
+END -- folder01
+Folder folder02
+Page d_page1(action=d_page1, text="Doc.Data")
+Table s_cmg
+{
+[cmg04  |cmg03                              |cmg05     |cmg06           |cmg07   |cmg09     |cmg08               |cmg10          |cmg11     ]
+[cmg04  |cmg03                              |cmg05     |cmg06           |cmg07   |cmg09     |cmg08               |cmg10          |cmg11     ]
+[cmg04  |cmg03                              |cmg05     |cmg06           |cmg07   |cmg09     |cmg08               |cmg10          |cmg11     ]
+[cmg04  |cmg03                              |cmg05     |cmg06           |cmg07   |cmg09     |cmg08               |cmg10          |cmg11     ]
+[cmg04  |cmg03                              |cmg05     |cmg06           |cmg07   |cmg09     |cmg08               |cmg10          |cmg11     ]
+[cmg04  |cmg03                              |cmg05     |cmg06           |cmg07   |cmg09     |cmg08               |cmg10          |cmg11     ]
+[cmg04  |cmg03                              |cmg05     |cmg06           |cmg07   |cmg09     |cmg08               |cmg10          |cmg11     ]
+[cmg04  |cmg03                              |cmg05     |cmg06           |cmg07   |cmg09     |cmg08               |cmg10          |cmg11     ]
+
+}
+END -- s_cmg
+END -- d_page1
+Page d_page2(action=d_page2, text="LCM Data")
+Table s_cmb
+{
+[cmb02  |cmb03             |cmb04            |cmb05   |cmb06               ]
+[cmb02  |cmb03             |cmb04            |cmb05   |cmb06               ]
+[cmb02  |cmb03             |cmb04            |cmb05   |cmb06               ]
+[cmb02  |cmb03             |cmb04            |cmb05   |cmb06               ]
+[cmb02  |cmb03             |cmb04            |cmb05   |cmb06               ]
+[cmb02  |cmb03             |cmb04            |cmb05   |cmb06               ]
+[cmb02  |cmb03             |cmb04            |cmb05   |cmb06               ]
+[cmb02  |cmb03             |cmb04            |cmb05   |cmb06               ]
+
+}
+END -- s_cmb
+END -- d_page2
+END -- folder02
+Grid gr1461
+{
+ ---------- Rows [cnt   ] / [cn2   ] / [cn3   ] ----------
+
+}
+END -- gr1461
+END -- vb11
+END -- axci210
+
+TABLES
+cmg_file,
+cmb_file,
+cma_file,
+ima_file
+ATTRIBUTES
+Group gb30:gb30;
+ButtonEdit cma01=cma_file.cma01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Item Master ";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit cma0=cma_file.cma021, tabIndex=3, not null, required;
+Edit cma1=cma_file.cma022, tabIndex=4, not null, required;
+DateEdit cma02=cma_file.cma02, tabIndex=5;
+Edit cma16=cma_file.cma16, tabIndex=505, noEntry;
+ComboBox cma07=cma_file.cma07, tabIndex=6, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually Batch Cost"),("4", "Identify Manually Item Cost"),("5", "Identify Manually Store Profit Center"));
+ButtonEdit cma08=cma_file.cma08, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+Group gb29:gb29;
+ButtonEdit ima12=ima_file.ima12, action=controlp, tabIndex=8, noEntry, image="zoom", comment="<^P> Qry Grp.Cd    <^U> Qry Itm with Other Grp.  <^Y> Crt Grp.Cd ";
+ComboBox ima08=ima_file.ima08, tabIndex=9, noEntry, queryEditable, comment="Enter  C/T/D/A/M/P/X/K/U/V/R/Z/S", items=(("C", "Configurable Product"),("T", "FAS Product"),("D", "Feture"),("A", "Family Product"),("M", "Make Product"),("P", "Purchase"),("X", "Phantom"),("K", "Kit"),("U", "Manufactured Mass Item"),("V", "Purchased Mass Item"),("R", "Routable"),("Z", "Miscellaneous"),("S", "Subcontract"));
+ButtonEdit ima131=ima_file.ima131, action=controlp, tabIndex=10, noEntry, image="zoom", upShift, comment="<^P>Qry Product Category";
+Group group02:group02, text="Replace";
+RadioGroup cma03=cma_file.cma03, tabIndex=11, not null, required, items=(("0", "Material"),("2", "Finished Product"));
+ComboBox cma05=cma_file.cma05, tabIndex=12, not null, required, items=(("I", "Purchase Price"),("S", "Sale"),("C", "Cost"),("B", "Bom Rollup"));
+Edit cma11=cma_file.cma11, tabIndex=13, not null, required;
+Edit cma12=cma_file.cma12, tabIndex=14, not null, required;
+Edit cma13=cma_file.cma13, tabIndex=15, not null, required;
+Edit cma14=cma_file.cma14, tabIndex=16;
+Group gb24:gb24, text="NRV";
+Edit cma32=cma_file.cma32, tabIndex=17, not null, required;
+Edit cma25=cma_file.cma25, tabIndex=18, not null, required;
+Edit cma27=cma_file.cma27, tabIndex=19, not null, required;
+Edit cma28=cma_file.cma28, tabIndex=20, not null, required;
+Edit cma29=cma_file.cma29, tabIndex=21, not null, required;
+Edit cmauser=cma_file.cmauser, tabIndex=22, noEntry;
+Edit cmamodu=cma_file.cmamodu, tabIndex=23, noEntry;
+Edit cmagrup=cma_file.cmagrup, tabIndex=24, noEntry;
+DateEdit cmadate=cma_file.cmadate, tabIndex=25, noEntry;
+Edit cmaoriu=cma_file.cmaoriu, tabIndex=503, noEntry;
+Edit cmaorig=cma_file.cmaorig, tabIndex=504, noEntry;
+Edit cmg04=cmg_file.cmg04, tabIndex=26, title="Line#", noEntry, not null, required;
+ButtonEdit cmg03=cmg_file.cmg03, action=controlp, tabIndex=42, title="Item no.", noEntry, image="zoom";
+ComboBox cmg05=cmg_file.cmg05, tabIndex=27, title="Doc.Type", noEntry, items=(("1", %"Account Receivable"),("2", %"Sales Order"),("3", %"Customers' Contracts"),("4", %"Accounts Payable"),("5", %"Purchase Order"));
+Edit cmg06=cmg_file.cmg06, tabIndex=28, title="Doc.No", noEntry;
+Edit cmg07=cmg_file.cmg07, tabIndex=29, title="Doc#", noEntry;
+DateEdit cmg09=cmg_file.cmg09, tabIndex=30, title="Doc.Date", noEntry;
+Edit cmg08=cmg_file.cmg08, tabIndex=31, title="Price", noEntry;
+Edit cmg10=cmg_file.cmg10, tabIndex=40, title="Quantity", noEntry;
+Edit cmg11=cmg_file.cmg11, tabIndex=41, title="Unit", noEntry;
+Edit cmb02=cmb_file.cmb02, tabIndex=32, title="Line#", noEntry, not null, required;
+Edit cmb03=cmb_file.cmb03, tabIndex=33, title="Transaction Cate", noEntry;
+Edit cmb04=cmb_file.cmb04, tabIndex=34, title="Trans. Dt From", noEntry;
+Edit cmb05=cmb_file.cmb05, tabIndex=35, title="To", noEntry;
+Edit cmb06=cmb_file.cmb06, tabIndex=36, title="Trans. U/P", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=37, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=38, noEntry;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=39, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cmg(cmg_file.cmg04,cmg_file.cmg03,cmg_file.cmg05,cmg_file.cmg06,cmg_file.cmg07,cmg_file.cmg09,cmg_file.cmg08,cmg_file.cmg10,cmg_file.cmg11)
+SCREEN RECORD s_cmb(cmb_file.cmb02,cmb_file.cmb03,cmb_file.cmb04,cmb_file.cmb05,cmb_file.cmb06)
+SCREEN RECORD Undefined(cma_file.cma01,ima_file.ima02,cma_file.cma021,cma_file.cma022,cma_file.cma02,cma_file.cma07,cma_file.cma08,ima_file.ima12,ima_file.ima08,ima_file.ima131,cma_file.cma03,cma_file.cma05,cma_file.cma11,cma_file.cma12,cma_file.cma13,cma_file.cma14,cma_file.cma32,cma_file.cma25,cma_file.cma27,cma_file.cma28,cma_file.cma29,cma_file.cmauser,cma_file.cmamodu,cma_file.cmagrup,cma_file.cmadate,cma_file.cmaoriu,cma_file.cmaorig,formonly.cnt,formonly.cn2,formonly.cn3,cma_file.cma16)
+END -- INSTRUCTIONS
+

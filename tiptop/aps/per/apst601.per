@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apst601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apst601")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+Grid gr878
+{
+ APS Version [vzu01                     ]      Save Version [vzu02     ]
+
+[ch1       ]
+
+
+}
+END -- gr878
+END -- page01
+END -- folder01
+Grid gr881
+{
+
+
+}
+END -- gr881
+END -- vb6
+END -- apst601
+
+TABLES
+vzu_file
+ATTRIBUTES
+ButtonEdit vzu01=vzu_file.vzu01, action=controlp, tabIndex=7, not null, required, image="zoom";
+ButtonEdit vzu02=vzu_file.vzu02, action=controlp, tabIndex=8, image="zoom";
+CheckBox ch1=formonly.ch1 type CHAR, tabIndex=9, text="APS Job", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vzu_file.vzu01,vzu_file.vzu02,formonly.ch1)
+END -- INSTRUCTIONS
+

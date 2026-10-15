@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci310")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+Grid gr1462
+{
+ Year     [cme01     ]
+ Month    [cme02     ]
+ Item Type[cme06            ]
+
+}
+END -- gr1462
+END -- page01
+END -- folder01
+Table s_cme
+{
+[cme03        |cme031       |cme04          |cme05         ]
+[cme03        |cme031       |cme04          |cme05         ]
+[cme03        |cme031       |cme04          |cme05         ]
+[cme03        |cme031       |cme04          |cme05         ]
+[cme03        |cme031       |cme04          |cme05         ]
+[cme03        |cme031       |cme04          |cme05         ]
+[cme03        |cme031       |cme04          |cme05         ]
+[cme03        |cme031       |cme04          |cme05         ]
+}
+END -- s_cme
+Grid gr1464
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr1464
+END -- vb4
+END -- axci310
+
+TABLES
+cme_file
+ATTRIBUTES
+Edit cme01=cme_file.cme01, tabIndex=1, not null, required;
+Edit cme02=cme_file.cme02, tabIndex=2, not null, required;
+ComboBox cme06=cme_file.cme06, tabIndex=9, not null, required, items=(("1", "1.Main Group Code"),("2", "2.Group Code 1"),("3", "3.Group Code 2"),("4", "4.Group Code 3"),("5", "5.Costing Group"),("6", "6.Product Classification"));
+ButtonEdit cme03=cme_file.cme03, action=controlp, tabIndex=3, title="Group Code", not null, required, image="zoom", comment="Key Field, No Blank/Repeated!     <^P> Qry Group Code";
+ButtonEdit cme031=cme_file.cme031, action=controlp, tabIndex=4, title="Product Classification", image="zoom";
+Edit cme04=cme_file.cme04, tabIndex=5, title="Expense Ratio", not null, required;
+Edit cme05=cme_file.cme05, tabIndex=6, title="Gross Margin", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cme(cme_file.cme03,cme_file.cme031,cme_file.cme04,cme_file.cme05)
+SCREEN RECORD Undefined(cme_file.cme01,cme_file.cme02,cme_file.cme06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

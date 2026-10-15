@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi530_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi530")
+Folder pc11
+Page Page16(text=%"Main")
+VBox vb12
+Table s_lqq
+{
+[lqq01      |lqq02   |lqq03   |lqq04   |lqq05   ]
+[lqq01      |lqq02   |lqq03   |lqq04   |lqq05   ]
+[lqq01      |lqq02   |lqq03   |lqq04   |lqq05   ]
+[lqq01      |lqq02   |lqq03   |lqq04   |lqq05   ]
+[lqq01      |lqq02   |lqq03   |lqq04   |lqq05   ]
+}
+END -- s_lqq
+Grid gr12
+{
+
+
+
+}
+END -- gr12
+END -- vb12
+END -- Page16
+END -- pc11
+END -- almi530_a
+
+TABLES
+lqq_file
+ATTRIBUTES
+Edit lqq01=lqq_file.lqq01, tabIndex=1, title="lqq01", noEntry, not null, required;
+ComboBox lqq02=lqq_file.lqq02, tabIndex=2, title="lqq02", items=(("1", "Cumulative Points"),("2", "Total amount"),("3", "Cumulative  Consumer"));
+ComboBox lqq03=lqq_file.lqq03, tabIndex=3, title="lqq03", not null, required, items=(("AND", "AND"),("OR", "OR"));
+Edit lqq04=lqq_file.lqq04, tabIndex=4, title=%"lqq04";
+Edit lqq05=lqq_file.lqq05, tabIndex=5, title=%"lqq05";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lqq(lqq_file.lqq01,lqq_file.lqq02,lqq_file.lqq03,lqq_file.lqq04,lqq_file.lqq05)
+END -- INSTRUCTIONS
+

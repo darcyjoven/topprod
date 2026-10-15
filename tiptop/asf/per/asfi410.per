@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi410.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfi410")
+VBox vb2
+Folder pc112
+Page page01(text="Main")
+Grid gr485
+{
+ PBI#                [sfc01                 ]
+ Document Name       [d1                  ]
+ Description         [sfc02                                                       ]
+ Produceorder No.    [sfcislk01                ] [sfcislk01_skd03          ]
+[sfcislk04 ]
+ estimated full date [sfcislk02               ]
+ Actual full date    [sfcislk03               ]        [imgmksg]
+[sfcislk05 ]                                           [       ]
+ Status              [a1        ]
+
+
+
+
+}
+END -- gr485
+END -- page01
+Page info(text="Info")
+Grid gr486
+{
+ Record Owner        [sfcuser   ]   Last Modified by    [sfcmodu   ]   Data Valid Code     [sfcacti   ]
+ Department          [sfcgrup   ]   Create/Modify Date  [sfcdate   ]
+ Record Orig.        [sfcoriu   ]
+ Dept Orig.          [sfcorig   ]
+}
+END -- gr486
+END -- info
+END -- pc112
+Grid gr487
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr487
+END -- vb2
+END -- asfi410
+
+TABLES
+sfc_file,
+sfci_file
+ATTRIBUTES
+ButtonEdit sfc01=sfc_file.sfc01, action=controlp, tabIndex=1, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Document Property <^Y>Create Doc Property";
+Edit d1=formonly.d1 type VARCHAR, tabIndex=2;
+Edit sfc02=sfc_file.sfc02, tabIndex=3;
+ButtonEdit sfcislk01=sfci_file.sfcislk01, action=controlp, tabIndex=10, image="zoom.png";
+ButtonEdit sfcislk01_skd03=formonly.sfcislk01_skd03 type CHAR, action=controlp, tabIndex=11, image="zoom.png";
+CheckBox sfcislk04=sfci_file.sfcislk04, tabIndex=12, text="Version", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit sfcislk02=sfci_file.sfcislk02, tabIndex=13;
+DateEdit sfcislk03=sfci_file.sfcislk03, tabIndex=14;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 60 pixels, height = 47 pixels;
+CheckBox sfcislk05=sfci_file.sfcislk05, tabIndex=15, text="Confirm", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox a1=formonly.a1 type CHAR, tabIndex=16, items=(("0", "created"),("1", "confirmed"),("2", "Issued"),("3", "In production"),("4", "Stock in"));
+Edit sfcuser=sfc_file.sfcuser, tabIndex=4, noEntry;
+Edit sfcmodu=sfc_file.sfcmodu, tabIndex=5, noEntry;
+Edit sfcacti=sfc_file.sfcacti, tabIndex=6, noEntry, upShift;
+Edit sfcgrup=sfc_file.sfcgrup, tabIndex=7, noEntry;
+DateEdit sfcdate=sfc_file.sfcdate, tabIndex=8, noEntry;
+Edit sfcoriu=sfc_file.sfcoriu, tabIndex=501, noEntry;
+Edit sfcorig=sfc_file.sfcorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfc_file.sfc01,formonly.d1,sfc_file.sfc02,sfci_file.sfcislk01,formonly.sfcislk01_skd03,sfci_file.sfcislk04,sfci_file.sfcislk02,sfci_file.sfcislk03,formonly.imgmksg,sfci_file.sfcislk05,formonly.a1,sfc_file.sfcuser,sfc_file.sfcmodu,sfc_file.sfcacti,sfc_file.sfcgrup,sfc_file.sfcdate,sfc_file.sfcoriu,sfc_file.sfcorig,formonly.cnt)
+END -- INSTRUCTIONS
+

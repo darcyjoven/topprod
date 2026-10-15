@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi800")
+VBox vb3
+Folder pc560
+Page page01(text="Main")
+Grid gr3063
+{
+ Inventory Taking Label [pib01     ]
+ Memo Description       [pib02                                   ]
+ Current Serial number  [pib03     ]
+ Generation Method      [pib04     ]
+ type                    [pib05     ]
+}
+END -- gr3063
+END -- page01
+Page info(text="Info")
+Grid gr3064
+{
+ Record Owner        [pibuser   ] Last Modified by    [pibmodu   ] Data Valid Code     [pibacti   ]
+ Department          [pibgrup   ] Create/Modify Date  [pibdate   ]
+ Record Orig.        [piboriu   ]
+ Dept Orig.          [piborig   ]
+}
+END -- gr3064
+END -- info
+END -- pc560
+Grid gr3065
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3065
+END -- vb3
+END -- aimi800
+
+TABLES
+pib_file
+ATTRIBUTES
+Edit pib01=pib_file.pib01, tabIndex=1, not null, required, comment="Assign Add/Query [Label Type]";
+Edit pib02=pib_file.pib02, tabIndex=2;
+Edit pib03=pib_file.pib03, tabIndex=3;
+ComboBox pib04=pib_file.pib04, tabIndex=4, noEntry, items=(("1", "Auto Produce"),("2", "User Import"));
+ComboBox pib05=pib_file.pib05, tabIndex=11, not null, required, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"));
+Edit pibuser=pib_file.pibuser, tabIndex=5, noEntry;
+Edit pibmodu=pib_file.pibmodu, tabIndex=6, noEntry;
+Edit pibacti=pib_file.pibacti, tabIndex=7, noEntry, upShift;
+Edit pibgrup=pib_file.pibgrup, tabIndex=8, noEntry;
+DateEdit pibdate=pib_file.pibdate, tabIndex=9, noEntry;
+Edit piboriu=pib_file.piboriu, tabIndex=501, noEntry;
+Edit piborig=pib_file.piborig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pib_file.pib01,pib_file.pib02,pib_file.pib03,pib_file.pib04,pib_file.pib05,pib_file.pibuser,pib_file.pibmodu,pib_file.pibacti,pib_file.pibgrup,pib_file.pibdate,pib_file.piboriu,pib_file.piborig,formonly.cnt)
+END -- INSTRUCTIONS
+

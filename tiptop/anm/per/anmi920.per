@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi920.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi920")
+VBox VBox1
+Table s_nqd
+{
+[nqd01        |nqd02                   |nqd03          ]
+[nqd01        |nqd02                   |nqd03          ]
+[nqd01        |nqd02                   |nqd03          ]
+[nqd01        |nqd02                   |nqd03          ]
+[nqd01        |nqd02                   |nqd03          ]
+[nqd01        |nqd02                   |nqd03          ]
+[nqd01        |nqd02                   |nqd03          ]
+[nqd01        |nqd02                   |nqd03          ]
+[nqd01        |nqd02                   |nqd03          ]
+[nqd01        |nqd02                   |nqd03          ]
+
+}
+END -- s_nqd
+Grid gr4068
+{
+[dummy01   ]     [dummy02   ]     [dummy03   ]
+   [dummy000  ]     [dummy200  ]     [dummy300  ]
+   [dummy100  ]     [dummy201  ]     [dummy301  ]
+   [dummy101  ]     [dummy202  ]     [dummy302  ]
+   [dummy102  ]     [dummy203  ]     [dummy303  ]
+   [dummy103  ]     [dummy204  ]     [dummy304  ]
+   [dummy104  ]     [dummy205  ]
+   [dummy105  ]
+   [dummy106  ]
+   [dummy107  ]
+   [dummy108  ]
+   [dummy109  ]
+   [dummy110  ]
+   [dummy111  ]
+   [dummy112  ]
+   [dummy113  ]
+   [dummy114  ]
+}
+END -- gr4068
+Grid gr4069
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr4069
+END -- VBox1
+END -- anmi920
+
+TABLES
+nqd_file
+ATTRIBUTES
+Edit nqd01=nqd_file.nqd01, tabIndex=1, title="Category No", not null, required;
+Edit nqd02=nqd_file.nqd02, tabIndex=2, title="Category Name", not null, required;
+ComboBox nqd03=nqd_file.nqd03, tabIndex=3, title="Variance Class", not null, required, queryEditable, items=(("1", %"Business Activity"),("2", %"Investment"),("3", %"Financial Activity"));
+Label dummy01:dummy01, text="Business Activity";
+Label dummy02:dummy02, text="Investment Activity";
+Label dummy03:dummy03, text="Financial Activity";
+Label dummy000:dummy000, text="Cash";
+Label dummy200:dummy200, text="Budget";
+Label dummy300:dummy300, text="Receivable";
+Label dummy100:dummy100, text="Sales Order";
+Label dummy201:dummy201, text="Investments";
+Label dummy301:dummy301, text="Short Financing";
+Label dummy101:dummy101, text="S/O";
+Label dummy202:dummy202, text="Case Inves";
+Label dummy302:dummy302, text="Extend Financing";
+Label dummy102:dummy102, text="A/R";
+Label dummy203:dummy203, text="Exchange";
+Label dummy303:dummy303, text="Payable";
+Label dummy103:dummy103, text="N/R";
+Label dummy204:dummy204, text="Investment";
+Label dummy304:dummy304, text="Other";
+Label dummy104:dummy104, text="P/O";
+Label dummy205:dummy205, text="Other";
+Label dummy105:dummy105, text="Store_in No";
+Label dummy106:dummy106, text="A/P";
+Label dummy107:dummy107, text="N/P";
+Label dummy108:dummy108, text="LC";
+Label dummy109:dummy109, text="Labor";
+Label dummy110:dummy110, text="Overhead";
+Label dummy111:dummy111, text="Administration";
+Label dummy112:dummy112, text="Sales Expense";
+Label dummy113:dummy113, text="Research";
+Label dummy114:dummy114, text="Other";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nqd(nqd_file.nqd01,nqd_file.nqd02,nqd_file.nqd03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

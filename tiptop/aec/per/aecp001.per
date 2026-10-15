@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aecp001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aecp001")
+Grid gr1
+{
+  <G group01                                                    >
+      oebislk01          [oebislk01                ]
+      Item No.           [ecb01                    ]
+      wk seq             [ecb03                    ]
+  <                                                             >
+
+}
+END -- gr1
+END -- aecp001
+
+ATTRIBUTES
+Group group01:group01, text="input";
+Edit oebislk01=formonly.oebislk01 type CHAR, tabIndex=1, not null, required;
+Edit ecb01=formonly.ecb01 type CHAR, tabIndex=2, not null, required;
+Edit ecb03=formonly.ecb03 type CHAR, tabIndex=3, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oebislk01,formonly.ecb01,formonly.ecb03)
+END -- INSTRUCTIONS
+

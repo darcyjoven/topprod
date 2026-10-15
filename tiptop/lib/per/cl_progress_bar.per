@@ -1,0 +1,33 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_progress_bar.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"cl_progress_bar")
+Grid gr3684
+{
+ <G group01                                   >
+ [proc                                       ]
+ [progbar                                    ]
+  Current:[curr   ]  Total:[total  ]    [p  ]%
+ <                                            >
+
+}
+END -- gr3684
+END -- cl_progress_bar
+
+ATTRIBUTES
+Group group01:group01;
+Edit proc=formonly.proc type CHAR, tabIndex=1, noEntry;
+ProgressBar progbar=formonly.progbar type CHAR;
+Edit curr=formonly.curr type CHAR, tabIndex=3, noEntry;
+Edit total=formonly.total type CHAR, tabIndex=4, noEntry;
+Edit p=formonly.p type CHAR, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.proc,formonly.progbar,formonly.curr,formonly.total,formonly.p)
+END -- INSTRUCTIONS
+

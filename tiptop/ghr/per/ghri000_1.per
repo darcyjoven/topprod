@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri000_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Table s_hrab
+{
+[hrab02    |hrab03    |hrab04  |hrab05  |hrab06  |hrab07    |hrab08    |hrab09    |hrab10    |hrab11    |hrab12    |hrabacti  ]
+[hrab02    |hrab03    |hrab04  |hrab05  |hrab06  |hrab07    |hrab08    |hrab09    |hrab10    |hrab11    |hrab12    |hrabacti  ]
+[hrab02    |hrab03    |hrab04  |hrab05  |hrab06  |hrab07    |hrab08    |hrab09    |hrab10    |hrab11    |hrab12    |hrabacti  ]
+[hrab02    |hrab03    |hrab04  |hrab05  |hrab06  |hrab07    |hrab08    |hrab09    |hrab10    |hrab11    |hrab12    |hrabacti  ]
+[hrab02    |hrab03    |hrab04  |hrab05  |hrab06  |hrab07    |hrab08    |hrab09    |hrab10    |hrab11    |hrab12    |hrabacti  ]
+[hrab02    |hrab03    |hrab04  |hrab05  |hrab06  |hrab07    |hrab08    |hrab09    |hrab10    |hrab11    |hrab12    |hrabacti  ]
+[hrab02    |hrab03    |hrab04  |hrab05  |hrab06  |hrab07    |hrab08    |hrab09    |hrab10    |hrab11    |hrab12    |hrabacti  ]
+[hrab02    |hrab03    |hrab04  |hrab05  |hrab06  |hrab07    |hrab08    |hrab09    |hrab10    |hrab11    |hrab12    |hrabacti  ]
+
+}
+END -- s_hrab
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit hrab02=formonly.hrab02 type SMALLINT, tabIndex=1, title=%"hrab02", noEntry, scroll;
+Edit hrab03=formonly.hrab03 type VARCHAR, tabIndex=2, default = "1", title=%"hrab03", required, scroll;
+Edit hrab04=formonly.hrab04 type VARCHAR, tabIndex=3, title=%"hrab04", required, scroll;
+Edit hrab05=formonly.hrab05 type VARCHAR, tabIndex=4, title=%"hrab05", required, scroll;
+Edit hrab06=formonly.hrab06 type VARCHAR, tabIndex=5, default = "1", title=%"hrab06", scroll;
+Edit hrab07=formonly.hrab07 type VARCHAR, tabIndex=12, title=%"hrab07", scroll;
+Edit hrab08=formonly.hrab08 type VARCHAR, tabIndex=11, title=%"hrab08", scroll;
+Edit hrab09=formonly.hrab09 type VARCHAR, tabIndex=10, title=%"hrab09", scroll;
+Edit hrab10=formonly.hrab10 type VARCHAR, tabIndex=9, title=%"hrab10", scroll;
+DateEdit hrab11=formonly.hrab11 type VARCHAR, tabIndex=8, title=%"hrab11";
+DateEdit hrab12=formonly.hrab12 type VARCHAR, tabIndex=7, title=%"hrab12";
+CheckBox hrabacti=formonly.hrabacti type VARCHAR, tabIndex=6, title=%"hrabacti", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrab(formonly.hrab02,formonly.hrab03,formonly.hrab04,formonly.hrab05,formonly.hrab06,formonly.hrab07,formonly.hrab08,formonly.hrab09,formonly.hrab10,formonly.hrab11,formonly.hrab12,formonly.hrabacti)
+END -- INSTRUCTIONS
+

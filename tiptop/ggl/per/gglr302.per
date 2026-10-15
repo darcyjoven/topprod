@@ -1,0 +1,90 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglr302.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglr302")
+VBox VBox1
+Grid gr4
+{
+ <G group01                                  >
+  Voucher NO.         [aba01               ]
+  Voucher Date.       [aba02               ]
+  Source              [aba06               ]
+ <                                           >
+}
+END -- gr4
+Group g01(text="INPUT")
+Grid gr5
+{
+
+    Book.No       [bookno      ]
+ <G group02                                  >
+ [t                                        ]
+ [                                         ]
+ [                                         ]
+ <                                           >
+ <G group03                                  >
+ [u                                        ]
+ [                                         ]
+ [                                         ]
+ <                                           >
+ <G group04                                  >
+ [w                                        ]
+ [                                         ]
+ [                                         ]
+ <                                           >
+ <G group05                                  >
+ [n                                        ]
+ <                                           >
+ <G group06                                  >
+ [e                                        ]
+
+ <                                           >
+ <G gb86                                     >
+ [h                                     ]
+ <                                           >
+}
+END -- gr5
+END -- g01
+Grid gr6
+{
+
+[m                                    ]
+
+
+
+}
+END -- gr6
+END -- VBox1
+END -- gglr302
+
+TABLES
+aba_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit aba01=aba_file.aba01, tabIndex=1;
+DateEdit aba02=aba_file.aba02, tabIndex=2;
+Edit aba06=aba_file.aba06, tabIndex=3, not null, required;
+ButtonEdit bookno=formonly.bookno type CHAR, action=controlp, tabIndex=4, image="zoom.png";
+Group group02:group02, text="Date Option 1";
+RadioGroup t=formonly.t type CHAR, tabIndex=5, items=(("1", "Unposted"),("2", "Posted"),("3", "All "));
+Group group03:group03, text="Date Option 2";
+RadioGroup u=formonly.u type CHAR, tabIndex=6, items=(("1", "Valid"),("2", "Void"),("3", "All "));
+Group group04:group04, text="Date Option 3";
+RadioGroup w=formonly.w type CHAR, tabIndex=7, items=(("1", "Unprinted"),("2", "Printed"),("3", "All "));
+Group group05:group05, text="Date Option 4";
+CheckBox n=formonly.n type CHAR, tabIndex=8, text="Print Foreign Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group06:group06;
+CheckBox e=formonly.e type CHAR, tabIndex=9, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb86:gb86;
+CheckBox h=formonly.h type CHAR, tabIndex=10, text="Monetary Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox m=formonly.m type VARCHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(aba_file.aba01,aba_file.aba02,aba_file.aba06,formonly.bookno,formonly.t,formonly.u,formonly.w,formonly.n,formonly.e,formonly.h,formonly.m)
+END -- INSTRUCTIONS
+

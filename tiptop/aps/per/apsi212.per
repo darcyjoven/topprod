@@ -1,0 +1,76 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsi212.per created Wed Dec 31 05:29:40 2008
+-- File created from apsi212.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsi204")
+-- GRID
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX vb3
+    FOLDER pc4
+      PAGE page01( TEXT="Page01")
+        GRID gr7
+        {
+
+         <G group01                                         >
+          Route Id                    [aa0                 ]
+          Sequ Num                    [aa1                 ]
+          Operation Id                [aa2                 ]
+          Equip Group Id              [aa3                 ]
+          Is Batch                    [aa4                 ]
+          Pre Process Time            [aa5                 ]
+          Lot Post Op Time            [aa6                 ]
+          Equip Post Op Time          [aa7                 ]
+          Transfer Batch Size         [aa8                 ]
+          Base Qty                    [aa9                 ]
+          Max Equip Num               [ab0                 ]
+          Min Parallel Economic Qty   [ab1                 ]
+          Alt Op Priority             [ab2                 ]
+          Max Batch Size              [ab3                 ]
+          Min Batch Size              [ab4                 ]
+         <                                                  >
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    GRID gr8
+    {
+     ----------Rows [ab5   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES aps_ecb
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=aps_ecb.route_id, NOT NULL, NOENTRY, REQUIRED, TABINDEX=1;
+  EDIT aa1=aps_ecb.sequ_num, NOT NULL, NOENTRY, REQUIRED, TABINDEX=4;
+  EDIT aa2=aps_ecb.op_id, NOT NULL, NOENTRY, REQUIRED, TABINDEX=5;
+  EDIT aa3=aps_ecb.eqg_id, NOT NULL, NOENTRY, REQUIRED, TABINDEX=6;
+  COMBOBOX aa4=aps_ecb.is_batch, COMMENT="Enter  0/1", QUERYEDITABLE, TABINDEX=2, ITEMS=(("0","False"),("1","True"));
+  EDIT aa5=aps_ecb.pre_ps_t, TABINDEX=7;
+  EDIT aa6=aps_ecb.lotpos_t, TABINDEX=8;
+  EDIT aa7=aps_ecb.eqpos_t, TABINDEX=9;
+  EDIT aa8=aps_ecb.trans_qty, TABINDEX=10;
+  EDIT aa9=aps_ecb.base_qty, TABINDEX=11;
+  EDIT ab0=aps_ecb.max_eqnm, TABINDEX=12;
+  EDIT ab1=aps_ecb.min_emq, TABINDEX=13;
+  EDIT ab2=aps_ecb.altop_p, TABINDEX=14;
+  EDIT ab3=aps_ecb.max_bsiz, TABINDEX=15;
+  EDIT ab4=aps_ecb.min_bsiz, TABINDEX=16;
+  EDIT ab5=FORMONLY.cnt, NOENTRY, TABINDEX=3;
+END

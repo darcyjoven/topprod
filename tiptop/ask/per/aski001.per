@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/aski001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aski001")
+VBox VBox1
+Folder pc560
+Page page01(text="Main")
+Grid gr3063
+{
+ Draw No.               [skd01               ]
+ Reference Quantity     [skd02               ]
+ Draw Explain           [skd03                                  ]
+[skd04                 ]
+
+}
+END -- gr3063
+END -- page01
+Page info(text="Info")
+Grid gr3064
+{
+ Record Owner        [skduser   ] Last Modified by    [skdmodu   ] Data Valid Code     [skdacti   ]
+ Department          [skdgrup   ] Create/Modify Date  [skddate   ]
+ Record Orig.        [skdoriu   ]
+ Dept Orig.          [skdorig   ]
+}
+END -- gr3064
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[skdud01                       ] userdefined_field07[skdud07        ] userdefined_field13[skdud13        ]
+                    [                              ] userdefined_field08[skdud08        ] userdefined_field14[skdud14        ]
+ userdefined_field02[skdud02        ]                userdefined_field09[skdud09        ] userdefined_field15[skdud15        ]
+ userdefined_field03[skdud03        ]                userdefined_field10[skdud10        ]
+ userdefined_field04[skdud04        ]                userdefined_field11[skdud11        ]
+ userdefined_field05[skdud05        ]                userdefined_field12[skdud12        ]
+ userdefined_field06[skdud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc560
+Grid gr3065
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3065
+END -- VBox1
+END -- aski001
+
+TABLES
+skd_file
+ATTRIBUTES
+Edit skd01=skd_file.skd01, tabIndex=1, not null, required, comment="\'KEY Field!\'";
+Edit skd02=skd_file.skd02, tabIndex=2;
+Edit skd03=skd_file.skd03, tabIndex=3;
+CheckBox skd04=skd_file.skd04, tabIndex=10, text="Confirm", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit skduser=skd_file.skduser, tabIndex=4, noEntry;
+Edit skdmodu=skd_file.skdmodu, tabIndex=5, noEntry;
+Edit skdacti=skd_file.skdacti, tabIndex=6, noEntry, upShift;
+Edit skdgrup=skd_file.skdgrup, tabIndex=7, noEntry;
+DateEdit skddate=skd_file.skddate, tabIndex=8, noEntry;
+Edit skdoriu=skd_file.skdoriu, tabIndex=501, noEntry;
+Edit skdorig=skd_file.skdorig, tabIndex=502, noEntry;
+TextEdit skdud01=skd_file.skdud01, tabIndex=11, stretch=NONE;
+Edit skdud07=skd_file.skdud07, tabIndex=12;
+DateEdit skdud13=skd_file.skdud13, tabIndex=13;
+Edit skdud08=skd_file.skdud08, tabIndex=14;
+DateEdit skdud14=skd_file.skdud14, tabIndex=15;
+Edit skdud02=skd_file.skdud02, tabIndex=16;
+Edit skdud09=skd_file.skdud09, tabIndex=17;
+DateEdit skdud15=skd_file.skdud15, tabIndex=18;
+Edit skdud03=skd_file.skdud03, tabIndex=19;
+Edit skdud10=skd_file.skdud10, tabIndex=20;
+Edit skdud04=skd_file.skdud04, tabIndex=21;
+Edit skdud11=skd_file.skdud11, tabIndex=22;
+Edit skdud05=skd_file.skdud05, tabIndex=23;
+Edit skdud12=skd_file.skdud12, tabIndex=24;
+Edit skdud06=skd_file.skdud06, tabIndex=25;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(skd_file.skd01,skd_file.skd02,skd_file.skd03,skd_file.skd04,skd_file.skduser,skd_file.skdmodu,skd_file.skdacti,skd_file.skdgrup,skd_file.skddate,skd_file.skdoriu,skd_file.skdorig,skd_file.skdud01,skd_file.skdud07,skd_file.skdud13,skd_file.skdud08,skd_file.skdud14,skd_file.skdud02,skd_file.skdud09,skd_file.skdud15,skd_file.skdud03,skd_file.skdud10,skd_file.skdud04,skd_file.skdud11,skd_file.skdud05,skd_file.skdud12,skd_file.skdud06,formonly.cnt)
+END -- INSTRUCTIONS
+

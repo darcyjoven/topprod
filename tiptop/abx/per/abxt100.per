@@ -1,0 +1,195 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxt100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxt100")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1229
+{
+ Receipt No.         [bxb01             ]
+ Document Date       [bxb02  ]
+ Subcont Vender No.  [bxb03  ][pmc03    ]
+ W/O No.             [bxb16             ]
+ Subcont Store-in No.[bxb04             ]
+ Item                [bxb05             ]
+ Employee No.        [bxb14  ][gen02    ]
+ Department No.      [bxb13  ][gem02    ]
+
+}
+END -- gr1229
+Grid gr1230
+{
+ Receipt Date        [bxb08  ]
+ Product No.         [bxb06                        ]
+ Part Name           [ima02a                          ]
+ Specification       [ima021a                         ]
+ Warehouse           [bxb10  ]  Patch   [bxb11  ]
+ Unit                [ima55     ]  Rec Qty [bxb07  ]
+ Memo                [bxb15                        ]
+ Appr. No            [bxb18                        ]
+
+}
+END -- gr1230
+Grid gr1231
+{
+ Back EndDate[bxb17  ]
+ Confirmed by[bxb09  ]
+             [zx02      ]
+ Confirm     [bxbconf   ]
+ Loc         [bxb12  ]
+
+             [imgmksg]
+             [       ]
+
+}
+END -- gr1231
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1232
+{
+ Record Owner        [bxbuser   ]  Last Modified by    [bxbmodu   ]
+ Department          [bxbgrup   ]  Create/Modify Date  [bxbdate     ]
+ Record Orig.        [bxboriu   ]
+ Dept Orig.          [bxborig   ]
+}
+END -- gr1232
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[bxbud01                       ] userdefined_field07[bxbud07        ] userdefined_field13[bxbud13        ]
+                    [                              ] userdefined_field08[bxbud08        ] userdefined_field14[bxbud14        ]
+ userdefined_field02[bxbud02        ]                userdefined_field09[bxbud09        ] userdefined_field15[bxbud15        ]
+ userdefined_field03[bxbud03        ]                userdefined_field10[bxbud10        ]
+ userdefined_field04[bxbud04        ]                userdefined_field11[bxbud11        ]
+ userdefined_field05[bxbud05        ]                userdefined_field12[bxbud12        ]
+ userdefined_field06[bxbud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_bxc
+{
+[bxc02|bxc03        |ima02     |ima021        |ima63|bxc07    |bxc08            |bxc09                |bxc11        |bxc04              |bxc05          |bxc06        |bxc10              |bxc12              |bxc13          |bxc14        |bxc15|bxcud01   |bxcud02   |bxcud03    |bxcud04    |bxcud05    |bxcud06    |bxcud07    |bxcud08    |bxcud09    |bxcud10    |bxcud11   |bxcud12  |bxcud13   |bxcud14   |bxcud15    ]
+[bxc02|bxc03        |ima02     |ima021        |ima63|bxc07    |bxc08            |bxc09                |bxc11        |bxc04              |bxc05          |bxc06        |bxc10              |bxc12              |bxc13          |bxc14        |bxc15|bxcud01   |bxcud02   |bxcud03    |bxcud04    |bxcud05    |bxcud06    |bxcud07    |bxcud08    |bxcud09    |bxcud10    |bxcud11   |bxcud12  |bxcud13   |bxcud14   |bxcud15    ]
+[bxc02|bxc03        |ima02     |ima021        |ima63|bxc07    |bxc08            |bxc09                |bxc11        |bxc04              |bxc05          |bxc06        |bxc10              |bxc12              |bxc13          |bxc14        |bxc15|bxcud01   |bxcud02   |bxcud03    |bxcud04    |bxcud05    |bxcud06    |bxcud07    |bxcud08    |bxcud09    |bxcud10    |bxcud11   |bxcud12  |bxcud13   |bxcud14   |bxcud15    ]
+[bxc02|bxc03        |ima02     |ima021        |ima63|bxc07    |bxc08            |bxc09                |bxc11        |bxc04              |bxc05          |bxc06        |bxc10              |bxc12              |bxc13          |bxc14        |bxc15|bxcud01   |bxcud02   |bxcud03    |bxcud04    |bxcud05    |bxcud06    |bxcud07    |bxcud08    |bxcud09    |bxcud10    |bxcud11   |bxcud12  |bxcud13   |bxcud14   |bxcud15    ]
+[bxc02|bxc03        |ima02     |ima021        |ima63|bxc07    |bxc08            |bxc09                |bxc11        |bxc04              |bxc05          |bxc06        |bxc10              |bxc12              |bxc13          |bxc14        |bxc15|bxcud01   |bxcud02   |bxcud03    |bxcud04    |bxcud05    |bxcud06    |bxcud07    |bxcud08    |bxcud09    |bxcud10    |bxcud11   |bxcud12  |bxcud13   |bxcud14   |bxcud15    ]
+[bxc02|bxc03        |ima02     |ima021        |ima63|bxc07    |bxc08            |bxc09                |bxc11        |bxc04              |bxc05          |bxc06        |bxc10              |bxc12              |bxc13          |bxc14        |bxc15|bxcud01   |bxcud02   |bxcud03    |bxcud04    |bxcud05    |bxcud06    |bxcud07    |bxcud08    |bxcud09    |bxcud10    |bxcud11   |bxcud12  |bxcud13   |bxcud14   |bxcud15    ]
+[bxc02|bxc03        |ima02     |ima021        |ima63|bxc07    |bxc08            |bxc09                |bxc11        |bxc04              |bxc05          |bxc06        |bxc10              |bxc12              |bxc13          |bxc14        |bxc15|bxcud01   |bxcud02   |bxcud03    |bxcud04    |bxcud05    |bxcud06    |bxcud07    |bxcud08    |bxcud09    |bxcud10    |bxcud11   |bxcud12  |bxcud13   |bxcud14   |bxcud15    ]
+[bxc02|bxc03        |ima02     |ima021        |ima63|bxc07    |bxc08            |bxc09                |bxc11        |bxc04              |bxc05          |bxc06        |bxc10              |bxc12              |bxc13          |bxc14        |bxc15|bxcud01   |bxcud02   |bxcud03    |bxcud04    |bxcud05    |bxcud06    |bxcud07    |bxcud08    |bxcud09    |bxcud10    |bxcud11   |bxcud12  |bxcud13   |bxcud14   |bxcud15    ]
+[bxc02|bxc03        |ima02     |ima021        |ima63|bxc07    |bxc08            |bxc09                |bxc11        |bxc04              |bxc05          |bxc06        |bxc10              |bxc12              |bxc13          |bxc14        |bxc15|bxcud01   |bxcud02   |bxcud03    |bxcud04    |bxcud05    |bxcud06    |bxcud07    |bxcud08    |bxcud09    |bxcud10    |bxcud11   |bxcud12  |bxcud13   |bxcud14   |bxcud15    ]
+[bxc02|bxc03        |ima02     |ima021        |ima63|bxc07    |bxc08            |bxc09                |bxc11        |bxc04              |bxc05          |bxc06        |bxc10              |bxc12              |bxc13          |bxc14        |bxc15|bxcud01   |bxcud02   |bxcud03    |bxcud04    |bxcud05    |bxcud06    |bxcud07    |bxcud08    |bxcud09    |bxcud10    |bxcud11   |bxcud12  |bxcud13   |bxcud14   |bxcud15    ]
+
+}
+END -- s_bxc
+Grid gr1233
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1233
+END -- VBox1
+END -- abxt100
+
+TABLES
+bxc_file,
+bxb_file
+ATTRIBUTES
+ButtonEdit bxb01=bxb_file.bxb01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry  Doc Type";
+DateEdit bxb02=bxb_file.bxb02, tabIndex=2, not null, required;
+ButtonEdit bxb03=bxb_file.bxb03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry  Vender No";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=4, noEntry;
+ButtonEdit bxb16=bxb_file.bxb16, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry W/O";
+ButtonEdit bxb04=bxb_file.bxb04, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry  Store-in No";
+Edit bxb05=bxb_file.bxb05, tabIndex=7, not null, required;
+ButtonEdit bxb14=bxb_file.bxb14, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry  Employee No";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=9, noEntry;
+ButtonEdit bxb13=bxb_file.bxb13, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry  Department No";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=11, noEntry;
+DateEdit bxb08=bxb_file.bxb08, tabIndex=12, noEntry;
+Edit bxb06=bxb_file.bxb06, tabIndex=13, noEntry;
+Edit ima02a=formonly.ima02a type CHAR, tabIndex=14, noEntry;
+Edit ima021a=formonly.ima021a type CHAR, tabIndex=15, noEntry;
+ButtonEdit bxb10=bxb_file.bxb10, action=controlp, tabIndex=16, not null, required, image="zoom", comment="<^P>Qry Warehouse,                          <^A>Qry Default Warehouse/Loc ,                          <^B>Create Warehouse ,                          <^C>Qry Warehouse";
+ButtonEdit bxb11=bxb_file.bxb11, action=controlp, tabIndex=17, not null, required, image="zoom", comment="<^P>Qry Patch,                          <^B>Create Warehouse ,                          <^C>Qry Warehouse";
+Edit ima55=formonly.ima55 type CHAR, tabIndex=18, noEntry;
+Edit bxb07=bxb_file.bxb07, tabIndex=19;
+Edit bxb15=bxb_file.bxb15, tabIndex=20;
+Edit bxb18=bxb_file.bxb18, tabIndex=21, noEntry;
+DateEdit bxb17=bxb_file.bxb17, tabIndex=22;
+Edit bxb09=bxb_file.bxb09, tabIndex=23, noEntry;
+Edit zx02=formonly.zx02 type CHAR, tabIndex=24, noEntry;
+ComboBox bxbconf=bxb_file.bxbconf, tabIndex=25, noEntry, items=(("Y", "Confirmed"),("N", "Not Confirm"),("X", "Void"));
+ButtonEdit bxb12=bxb_file.bxb12, action=controlp, tabIndex=26, not null, required, image="zoom", comment="<^P>Qry Loc";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit bxbuser=bxb_file.bxbuser, tabIndex=27, noEntry;
+Edit bxbmodu=bxb_file.bxbmodu, tabIndex=29, noEntry;
+Edit bxbgrup=bxb_file.bxbgrup, tabIndex=28, noEntry;
+DateEdit bxbdate=bxb_file.bxbdate, tabIndex=30, noEntry;
+Edit bxboriu=bxb_file.bxboriu, tabIndex=501, noEntry;
+Edit bxborig=bxb_file.bxborig, tabIndex=502, noEntry;
+TextEdit bxbud01=bxb_file.bxbud01, tabIndex=31, stretch=NONE;
+Edit bxbud07=bxb_file.bxbud07, tabIndex=37;
+DateEdit bxbud13=bxb_file.bxbud13, tabIndex=43;
+Edit bxbud08=bxb_file.bxbud08, tabIndex=38;
+DateEdit bxbud14=bxb_file.bxbud14, tabIndex=44;
+Edit bxbud02=bxb_file.bxbud02, tabIndex=32;
+Edit bxbud09=bxb_file.bxbud09, tabIndex=39;
+DateEdit bxbud15=bxb_file.bxbud15, tabIndex=45;
+Edit bxbud03=bxb_file.bxbud03, tabIndex=33;
+Edit bxbud10=bxb_file.bxbud10, tabIndex=40;
+Edit bxbud04=bxb_file.bxbud04, tabIndex=34;
+Edit bxbud11=bxb_file.bxbud11, tabIndex=41;
+Edit bxbud05=bxb_file.bxbud05, tabIndex=35;
+Edit bxbud12=bxb_file.bxbud12, tabIndex=42;
+Edit bxbud06=bxb_file.bxbud06, tabIndex=36;
+Edit bxc02=bxc_file.bxc02, tabIndex=46, title="Item", not null, required;
+Edit bxc03=bxc_file.bxc03, tabIndex=47, title="Material No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=48, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=49, title="Specification", noEntry;
+Edit ima63=formonly.ima63 type CHAR, tabIndex=50, title="Unit", noEntry;
+Edit bxc07=bxc_file.bxc07, tabIndex=51, title="Unit Qty", noEntry;
+Edit bxc08=bxc_file.bxc08, tabIndex=52, title="Use Material Qty", not null, required;
+Edit bxc09=bxc_file.bxc09, tabIndex=53, title="Consumption/loss Qty", not null, required;
+Edit bxc11=bxc_file.bxc11, tabIndex=54, title="Material Qty", not null, required;
+ButtonEdit bxc04=bxc_file.bxc04, action=controlp, tabIndex=55, title="Material Warehouse", not null, required, image="zoom", comment="<^P>Qry Warehouse,                          <^A>Qry Default Warehouse/Loc ,                          <^B>Create Warehouse ,                          <^C>Qry Warehouse";
+ButtonEdit bxc05=bxc_file.bxc05, action=controlp, tabIndex=56, title="Material Patch", image="zoom", comment="<^P>Qry Patch,                          <^B>Create Warehouse ,                          <^C>Qry Warehouse";
+ButtonEdit bxc06=bxc_file.bxc06, action=controlp, tabIndex=57, title="Material Loc", image="zoom", comment="<^P>Qry Loc";
+Edit bxc10=bxc_file.bxc10, tabIndex=58, title="Arisings St-in Qty", not null, required;
+ButtonEdit bxc12=bxc_file.bxc12, action=controlp, tabIndex=59, title="Arisings Warehouse", image="zoom", comment="<^P>Qry Warehouse,                          <^A>Qry Default Warehouse/Loc ,                          <^B>Create Warehouse ,                          <^C>Qry Warehouse";
+ButtonEdit bxc13=bxc_file.bxc13, action=controlp, tabIndex=60, title="Arisings Patch", image="zoom", comment="<^P>Qry Patch,                          <^B>Create Warehouse ,                          <^C>Qry Warehouse";
+ButtonEdit bxc14=bxc_file.bxc14, action=controlp, tabIndex=61, title="Arisings Loc", image="zoom", comment="<^P>Qry Loc";
+Edit bxc15=bxc_file.bxc15, tabIndex=62, title="Memo";
+TextEdit bxcud01=bxc_file.bxcud01, tabIndex=63, title="bxcud01", stretch=NONE;
+Edit bxcud02=bxc_file.bxcud02, tabIndex=64, title="bxcud02";
+Edit bxcud03=bxc_file.bxcud03, tabIndex=65, title="bxcud03";
+Edit bxcud04=bxc_file.bxcud04, tabIndex=66, title="bxcud04";
+Edit bxcud05=bxc_file.bxcud05, tabIndex=67, title="bxcud05";
+Edit bxcud06=bxc_file.bxcud06, tabIndex=68, title="bxcud06";
+Edit bxcud07=bxc_file.bxcud07, tabIndex=69, title="bxcud07";
+Edit bxcud08=bxc_file.bxcud08, tabIndex=70, title="bxcud08";
+Edit bxcud09=bxc_file.bxcud09, tabIndex=71, title="bxcud09";
+Edit bxcud10=bxc_file.bxcud10, tabIndex=72, title="bxcud10";
+Edit bxcud11=bxc_file.bxcud11, tabIndex=73, title="bxcud11";
+Edit bxcud12=bxc_file.bxcud12, tabIndex=74, title="bxcud12";
+Edit bxcud13=bxc_file.bxcud13, tabIndex=75, title="bxcud13";
+Edit bxcud14=bxc_file.bxcud14, tabIndex=79, title="bxcud14";
+Edit bxcud15=bxc_file.bxcud15, tabIndex=76, title="bxcud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=77;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=78;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bxc(bxc_file.bxc02,bxc_file.bxc03,formonly.ima02,formonly.ima021,formonly.ima63,bxc_file.bxc07,bxc_file.bxc08,bxc_file.bxc09,bxc_file.bxc11,bxc_file.bxc04,bxc_file.bxc05,bxc_file.bxc06,bxc_file.bxc10,bxc_file.bxc12,bxc_file.bxc13,bxc_file.bxc14,bxc_file.bxc15,bxc_file.bxcud01,bxc_file.bxcud02,bxc_file.bxcud03,bxc_file.bxcud04,bxc_file.bxcud05,bxc_file.bxcud06,bxc_file.bxcud07,bxc_file.bxcud08,bxc_file.bxcud09,bxc_file.bxcud10,bxc_file.bxcud11,bxc_file.bxcud12,bxc_file.bxcud13,bxc_file.bxcud14,bxc_file.bxcud15)
+SCREEN RECORD Undefined(bxb_file.bxb01,bxb_file.bxb02,bxb_file.bxb03,formonly.pmc03,bxb_file.bxb16,bxb_file.bxb04,bxb_file.bxb05,bxb_file.bxb14,formonly.gen02,bxb_file.bxb13,formonly.gem02,bxb_file.bxb08,bxb_file.bxb06,formonly.ima02a,formonly.ima021a,bxb_file.bxb10,bxb_file.bxb11,formonly.ima55,bxb_file.bxb07,bxb_file.bxb15,bxb_file.bxb18,bxb_file.bxb17,bxb_file.bxb09,formonly.zx02,bxb_file.bxbconf,bxb_file.bxb12,formonly.imgmksg,bxb_file.bxbuser,bxb_file.bxbmodu,bxb_file.bxbgrup,bxb_file.bxbdate,bxb_file.bxboriu,bxb_file.bxborig,bxb_file.bxbud01,bxb_file.bxbud07,bxb_file.bxbud13,bxb_file.bxbud08,bxb_file.bxbud14,bxb_file.bxbud02,bxb_file.bxbud09,bxb_file.bxbud15,bxb_file.bxbud03,bxb_file.bxbud10,bxb_file.bxbud04,bxb_file.bxbud11,bxb_file.bxbud05,bxb_file.bxbud12,bxb_file.bxbud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

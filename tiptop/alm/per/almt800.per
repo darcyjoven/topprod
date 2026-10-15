@@ -1,0 +1,105 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/alm/4fd/almt800.tmp.per created 2010-10-25T17:56:41
+-- File created from /u3/tiptop/alm/4fd/almt800.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almt800")
+   VBox vb4                                                                                                                      
+   Folder pc1                                                                                                                    
+   Page main(text=%"main")                                                                                                       
+                                                                                                                                 
+       Grid gr2                                                                                                                  
+       {                                                                                                                         
+                                                                                                                                 
+           lsh01    [lsh01             ]                             lsh07   [lsh07             ]                                
+           lshplant [lshplant          ] [lma02                ]     lsh08   [lsh08             ]                                
+           lshlegal [lshlegal          ] [azt02                ]             [lsh09            ]                                 
+           lsh02    [lsh02             ]                             lsh10   [lsh10             ]                                
+           lsh03    [lsh03             ]                             lsh11   [lsh11             ][imgmksg]                       
+           lne05    [lne05             ]                             lsh12   [lsh12             ][       ]                       
+           lsh04    [lsh04             ]                             lsh13   [lsh13             ]                                
+           lsh05    [lsh05             ]                             lsh14   [lsh14             ]                                
+           lsh06    [lsh06             ]                                     [                  ]                                
+           c        [c                 ]                                                                                         
+           d        [d                 ]                                                                                         
+                                                                                                                                 
+       }                                                                                                                         
+       END                                                                                                                       
+   END -- Page                                                                                                                   
+   Page info(text=%"info")                                                                                                       
+                                                                                                                                 
+    Grid gr6                                                                                                                     
+    {                                                                                                                            
+     Record Owner              [lshuser   ]  Create Date             [lshcrat     ]      Data Valid Code     [lshacti   ]        
+     Department                [lshgrup   ]  Last Modified by        [lshmodu     ]      Modify Date         [lshdate   ]        
+     Record Orig.              [lshoriu   ]                                                                                      
+     Dept Orig.                [lshorig   ]                                                                                      
+                                                                                                                                 
+                                                                                                                                 
+                                                                                                                                 
+    }                                                                                                                            
+    END                                                                                                                          
+                                                                                                                                 
+                                                                                                                                 
+                                                                                                                                 
+   END -- Page                                                                                                                   
+   END -- Folder                                                                                                                 
+   Grid gr7                                                                                                                      
+   {                                                                                                                             
+     ---------- Rows[idx   ]/[cnt   ] ----------                                                                                 
+                                                                                                                                 
+                                                                                                                                 
+   }                                                                                                                             
+   END                                                                                                                           
+   END -- VBox                                                                                                                   
+END -- Form
+
+TABLES
+lsh_file
+tableAlias1=lsh_file
+
+ATTRIBUTES
+ButtonEdit lsh01=lsh_file.lsh01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ButtonEdit lsh07=lsh_file.lsh07, action=controlp, tabIndex=12, not null, required, image="zoom.png";
+ButtonEdit lshplant=lsh_file.lshplant, action=controlp, tabIndex=2, noEntry, image="zoom.png";
+Edit lma02=formonly.lma02, tabIndex=28;
+Edit lsh08=lsh_file.lsh08, tabIndex=13, not null, required;
+ButtonEdit lshlegal=lsh_file.lshlegal, action=controlp, tabIndex=3, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02, tabIndex=29;
+CheckBox lsh09=lsh_file.lsh09, tabIndex=14, text="ch1", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit lsh02=lsh_file.lsh02, action=controlp, tabIndex=4, noEntry, image="zoom.png";
+DateEdit lsh10=lsh_file.lsh10, tabIndex=15, not null, required;
+ButtonEdit lsh03=tableAlias1.lsh03, action=controlp, tabIndex=5, noEntry, image="zoom.png";
+ComboBox lsh11=lsh_file.lsh11, tabIndex=16, noEntry, not null, items=(("N", "Unconfirmed"),("Y", "Confirm"));
+Image imgmksg=formonly.imgmksg;
+Edit lne05=formonly.lne05, tabIndex=6, noEntry;
+Edit lsh12=lsh_file.lsh12, tabIndex=17, noEntry, not null;
+ButtonEdit lsh04=lsh_file.lsh04, action=controlp, tabIndex=7, noEntry, image="zoom.png";
+DateEdit lsh13=lsh_file.lsh13, tabIndex=18, noEntry;
+ButtonEdit lsh05=lsh_file.lsh05, action=controlp, tabIndex=8, noEntry, image="zoom.png";
+TextEdit lsh14=lsh_file.lsh14, tabIndex=19;
+Edit lsh06=lsh_file.lsh06, tabIndex=9, noEntry;
+Edit c=formonly.c, tabIndex=10, noEntry;
+Edit d=formonly.d, tabIndex=11, noEntry;
+Edit lshuser=lsh_file.lshuser, tabIndex=20, noEntry;
+DateEdit lshcrat=lsh_file.lshcrat, tabIndex=24, noEntry;
+Edit lshacti=lsh_file.lshacti, tabIndex=22, noEntry, upShift;
+Edit lshgrup=lsh_file.lshgrup, tabIndex=23, noEntry;
+Edit lshmodu=lsh_file.lshmodu, tabIndex=21, noEntry;
+DateEdit lshdate=lsh_file.lshdate, tabIndex=25, noEntry;
+Edit lshoriu=lsh_file.lshoriu, tabIndex=501, noEntry;
+Edit lshorig=lsh_file.lshorig, tabIndex=502, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=27, noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=26, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

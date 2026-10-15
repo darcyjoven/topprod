@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zxy_bc.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zxy_bc")
+Grid gr3070
+{
+ <T s_zx                                           >
+ [select |zx01      |zx02                          ]
+ [select |zx01      |zx02                          ]
+ [select |zx01      |zx02                          ]
+ [select |zx01      |zx02                          ]
+ [select |zx01      |zx02                          ]
+ [select |zx01      |zx02                          ]
+ [select |zx01      |zx02                          ]
+ [select |zx01      |zx02                          ]
+ [select |zx01      |zx02                          ]
+ [select |zx01      |zx02                          ]
+ [select |zx01      |zx02                          ]
+ [select |zx01      |zx02                          ]
+ <                                                 >
+
+}
+END -- gr3070
+END -- p_zxy_bc
+
+TABLES
+zx_file
+ATTRIBUTES
+Table s_zx:s_zx, width = 57 characters, height = 14 characters;
+CheckBox select=formonly.select type CHAR, tabIndex=1, title="Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit zx01=zx_file.zx01, tabIndex=2, title="User Code", noEntry, not null, required;
+Edit zx02=zx_file.zx02, tabIndex=3, title="User Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zx(formonly.select,zx_file.zx01,zx_file.zx02)
+END -- INSTRUCTIONS
+

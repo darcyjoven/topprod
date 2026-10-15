@@ -1,0 +1,171 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt801.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Main")
+Grid ds1
+{
+
+ rch01     [rch01                 ]                    rch07     [rch07             ]        rchconf    [rchconf           ]
+ rch02     [rch02             ]                        rch071    [rch071    ][rch073  ]      rchcond    [rchcond           |rchcont           ]
+ rch03     [rch03     ] / [rch04     ]                 rch072    [rch072            ]        rchconu    [rchconu           ]
+ rch05     [rch05             |rch05_desc        ]     rch08     [rch08             ]        rch10      [rch10             ]
+ rch06     [rch06             |rch06_desc        ]     rch09     [rch09             ]        rch11      [rch11             ]
+
+}
+END -- ds1
+END -- Page1
+Page Page2(text=%"Status")
+Grid ds2
+{
+
+ rchuser  [rchuser       ]         rchmodu  [rchmodu       ]    rchacti  [rchacti       ]
+ rchgrup  [rchgrup       ]         rchdate  [rchdate       ]    rchcrat  [rchcrat       ]
+ rchoriu  [rchoriu       ]         rchorig  [rchorig       ]
+
+}
+END -- ds2
+END -- Page2
+END -- Folder1
+Folder Folder2
+Page Page3(text=%"Sale Info")
+VBox VBox2
+Table ds3
+{
+[rci03   |rci04         |rci04_desc      |rci05       |rci06           |rci07             |rci08             |rci09             ]
+[rci03   |rci04         |rci04_desc      |rci05       |rci06           |rci07             |rci08             |rci09             ]
+[rci03   |rci04         |rci04_desc      |rci05       |rci06           |rci07             |rci08             |rci09             ]
+[rci03   |rci04         |rci04_desc      |rci05       |rci06           |rci07             |rci08             |rci09             ]
+[rci03   |rci04         |rci04_desc      |rci05       |rci06           |rci07             |rci08             |rci09             ]
+
+}
+END -- ds3
+Table ds5
+{
+[rce01               |rcd02       |rce02   |rce06             |rce04             |rce05             ]
+[rce01               |rcd02       |rce02   |rce06             |rce04             |rce05             ]
+[rce01               |rcd02       |rce02   |rce06             |rce04             |rce05             ]
+[rce01               |rcd02       |rce02   |rce06             |rce04             |rce05             ]
+[rce01               |rcd02       |rce02   |rce06             |rce04             |rce05             ]
+
+}
+END -- ds5
+END -- VBox2
+END -- Page3
+Page Page4(text=%"Expenses Info")
+VBox VBox3
+Table ds4
+{
+[item1   |rci10         |rci10_desc      |rci11             |rci12             ]
+[item1   |rci10         |rci10_desc      |rci11             |rci12             ]
+[item1   |rci10         |rci10_desc      |rci11             |rci12             ]
+[item1   |rci10         |rci10_desc      |rci11             |rci12             ]
+[item1   |rci10         |rci10_desc      |rci11             |rci12             ]
+
+}
+END -- ds4
+Table ds6
+{
+[lua01               |lua09     |item2   |lub03         |lub03_desc    |lub04             |lub04t            ]
+[lua01               |lua09     |item2   |lub03         |lub03_desc    |lub04             |lub04t            ]
+[lua01               |lua09     |item2   |lub03         |lub03_desc    |lub04             |lub04t            ]
+[lua01               |lua09     |item2   |lub03         |lub03_desc    |lub04             |lub04t            ]
+[lua01               |lua09     |item2   |lub03         |lub03_desc    |lub04             |lub04t            ]
+
+}
+END -- ds6
+END -- VBox3
+END -- Page4
+END -- Folder2
+Grid gr15
+{
+
+  ------ Rows[idx     ]/[cnt       ]--- Items[cn2     ] --------
+}
+END -- gr15
+END -- VBox1
+END -- Form
+
+TABLES
+lua_file,
+rci_file,
+rch_file,
+rce_file,
+lub_file
+ATTRIBUTES
+ButtonEdit rch01=rch_file.rch01, action=controlp, tabIndex=1, not null, image="zoom", scroll;
+ButtonEdit rch07=rch_file.rch07, action=controlp, tabIndex=7, image="zoom", scroll;
+ComboBox rchconf=rch_file.rchconf, tabIndex=16, not null, scroll, items=(("N", "NonConfirm"),("Y", "Confirm"));
+DateEdit rch02=rch_file.rch02, tabIndex=2;
+Edit rch071=rch_file.rch071, tabIndex=8, scroll;
+CheckBox rch073=rch_file.rch073, tabIndex=10, text=%"rch_file.rch073", not null, valueChecked = "Y", valueUnchecked = "N";
+DateEdit rchcond=rch_file.rchcond, tabIndex=15;
+TimeEdit rchcont=rch_file.rchcont, tabIndex=57, scroll;
+Edit rch03=rch_file.rch03, tabIndex=3, scroll;
+Edit rch04=rch_file.rch04, tabIndex=4, scroll;
+ComboBox rch072=rch_file.rch072, tabIndex=9, not null, scroll, items=(("0", "0"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("X", "X"));
+Edit rchconu=rch_file.rchconu, tabIndex=17, scroll;
+ButtonEdit rch05=rch_file.rch05, action=controlp, tabIndex=5, image="zoom", scroll;
+Edit rch05_desc=formonly.rch05_desc type CHAR, tabIndex=18;
+Edit rch08=rch_file.rch08, tabIndex=11, not null, scroll;
+Edit rch10=rch_file.rch10, tabIndex=13, not null, scroll;
+ButtonEdit rch06=rch_file.rch06, action=controlp, tabIndex=6, image="zoom", scroll;
+Edit rch06_desc=formonly.rch06_desc type CHAR, tabIndex=19;
+Edit rch09=rch_file.rch09, tabIndex=12, not null, scroll;
+Edit rch11=rch_file.rch11, tabIndex=14, not null, scroll;
+Edit rchuser=rch_file.rchuser, tabIndex=27, scroll;
+Edit rchmodu=rch_file.rchmodu, tabIndex=24, scroll;
+Edit rchacti=rch_file.rchacti, tabIndex=20, not null, scroll;
+Edit rchgrup=rch_file.rchgrup, tabIndex=23, scroll;
+DateEdit rchdate=rch_file.rchdate, tabIndex=22;
+DateEdit rchcrat=rch_file.rchcrat, tabIndex=21;
+Edit rchoriu=rch_file.rchoriu, tabIndex=26, scroll;
+Edit rchorig=rch_file.rchorig, tabIndex=25, scroll;
+Edit rci03=rci_file.rci03, tabIndex=28, title=%"rci03", not null, scroll;
+ButtonEdit rci04=rci_file.rci04, action=controlp, tabIndex=29, title=%"rci04", image="zoom", scroll;
+Edit rci04_desc=formonly.rci04_desc type CHAR, tabIndex=35, title=%"rci04_desc";
+Edit rci05=rci_file.rci05, tabIndex=30, title=%"rci05", scroll;
+CheckBox rci06=rci_file.rci06, tabIndex=31, title=%"rci06", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit rci07=rci_file.rci07, tabIndex=32, title=%"rci07", not null, scroll;
+Edit rci08=rci_file.rci08, tabIndex=33, title=%"rci08", not null, scroll;
+Edit rci09=rci_file.rci09, tabIndex=34, title=%"rci09", not null, scroll;
+Edit rce01=rce_file.rce01, tabIndex=41, title=%"rce01", not null, scroll;
+Edit rcd02=formonly.rcd02 type CHAR, tabIndex=46, title=%"rcd02";
+Edit rce02=rce_file.rce02, tabIndex=42, title=%"rce02", not null, scroll;
+Edit rce06=rce_file.rce06, tabIndex=43, title=%"rce06", not null, scroll;
+Edit rce04=rce_file.rce04, tabIndex=44, title=%"rce04", not null, scroll;
+Edit rce05=rce_file.rce05, tabIndex=45, title=%"rce05", not null, scroll;
+Edit item1=formonly.item1 type CHAR, tabIndex=39, title=%"item";
+ButtonEdit rci10=rci_file.rci10, action=controlp, tabIndex=36, title=%"rci10", image="zoom", scroll;
+Edit rci10_desc=formonly.rci10_desc type CHAR, tabIndex=40, title=%"rci10_desc";
+Edit rci11=rci_file.rci11, tabIndex=37, title=%"rci11", not null, scroll;
+Edit rci12=rci_file.rci12, tabIndex=38, title=%"rci12", not null, scroll;
+Edit lua01=lua_file.lua01, tabIndex=47, title=%"lua01", not null, scroll;
+DateEdit lua09=lua_file.lua09, tabIndex=48, title=%"lua09";
+Edit item2=formonly.item2 type CHAR, tabIndex=52, title=%"item";
+Edit lub03=lub_file.lub03, tabIndex=49, title=%"lub03", scroll;
+Edit lub03_desc=formonly.lub03_desc type CHAR, tabIndex=53, title=%"lub03_desc";
+Edit lub04=lub_file.lub04, tabIndex=50, title=%"lub04", not null, scroll;
+Edit lub04t=lub_file.lub04t, tabIndex=51, title=%"lub04t", not null, scroll;
+Edit idx=formonly.idx type CHAR, tabIndex=54, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=55, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=56;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(rch_file.rch01,rch_file.rch02,rch_file.rch03,rch_file.rch04,rch_file.rch05,rch_file.rch06,rch_file.rch07,rch_file.rch071,rch_file.rch072,rch_file.rch073,rch_file.rch08,rch_file.rch09,rch_file.rch10,rch_file.rch11,rch_file.rchcond,rch_file.rchconf,rch_file.rchconu)
+SCREEN RECORD Undefined(formonly.rch05_desc,formonly.rch06_desc,formonly.idx,formonly.cnt,formonly.cn2)
+SCREEN RECORD Record2(rch_file.rchacti,rch_file.rchcrat,rch_file.rchdate,rch_file.rchgrup,rch_file.rchmodu,rch_file.rchorig,rch_file.rchoriu,rch_file.rchuser)
+SCREEN RECORD s_rci1(rci_file.rci03,rci_file.rci04,formonly.rci04_desc,rci_file.rci05,rci_file.rci06,rci_file.rci07,rci_file.rci08,rci_file.rci09)
+SCREEN RECORD s_rci2(formonly.item1,rci_file.rci10,formonly.rci10_desc,rci_file.rci11,rci_file.rci12)
+SCREEN RECORD s_rce(rce_file.rce01,formonly.rcd02,rce_file.rce02,rce_file.rce06,rce_file.rce04,rce_file.rce05)
+SCREEN RECORD s_lua(lua_file.lua01,lua_file.lua09,formonly.item2,lub_file.lub03,formonly.lub03_desc,lub_file.lub04,lub_file.lub04t)
+SCREEN RECORD Record3(rch_file.rchcont)
+END -- INSTRUCTIONS
+

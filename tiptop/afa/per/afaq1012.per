@@ -1,0 +1,127 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afaq1012.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afaq1012")
+Folder Folder1
+Page page01(text="Main")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                               >
+  Depreciation Method [fap51     ]
+  Apportionment Mtd.  [fap61     ][desc                ]
+  Apportioning Dept.  [fap62               ]
+ <                                                       >
+ <G group2                                  ><G group3                                    >
+  Rest Life           [fap52     ][dummy01 ]  Qty                 [fap66               ]
+  Home Currency Cost  [fap661              ]  Charge off Qty      [fap67               ]
+  Charge off Cost     [fap56               ]  Keeping Department  [fap63     ][gem02     ]
+  Char.Off Accu. Depr [fap57               ]  Employee            [fap64     ][gen02     ]
+  Default Res. Value  [fap53               ]  Location            [fap65     ]
+  Adjustment Cost     [fap54               ]
+  Accumulated Depr.   [fap55               ]
+
+ <                                          ><                                            >
+
+}
+END -- Grid1
+END -- VBox1
+END -- page01
+Page page02(text="Main2")
+VBox VBox2
+Grid Grid3
+{
+ <G group6                                               >
+  Depreciation Method [fap512    ]
+  Apportionment Mtd.  [fap612    ][desc2               ]
+  Apportioning Dept.  [fap622              ]
+ <                                                       >
+ <G group7                                  ><G group8                                    >
+  Rest Life           [fap522    ][dummy02 ]
+  Home Currency Cost  [fap6612             ]  Charge off Qty      [fap672              ]
+  Charge off Cost     [fap562              ]
+  Char.Off Accu. Depr [fap572              ]
+  Default Res. Value  [fap532              ]
+  Adjustment Cost     [fap542              ]
+  Accumulated Depr.   [fap552              ]
+
+ <                                          ><                                            >
+
+}
+END -- Grid3
+END -- VBox2
+END -- page02
+Page page03(text="Acct Info")
+Grid Grid2
+{
+ <G group4                                  ><G group5                                   >
+  Asset Account       [fap58               ]  Asset Account2       [fap581              ]
+  Accu. Depr. Account [fap59               ]  Accu. Depr. Account2 [fap591              ]
+  Depreciation Account[fap60               ]  Depreciation Account2[fap601              ]
+ <                                          ><                                           >
+
+}
+END -- Grid2
+END -- page03
+END -- Folder1
+END -- afaq1012
+
+TABLES
+fap_file
+ATTRIBUTES
+Group group1:group1;
+Edit fap51=fap_file.fap51, tabIndex=1, noEntry;
+Edit fap61=fap_file.fap61, tabIndex=2, noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=3, noEntry;
+Edit fap62=fap_file.fap62, tabIndex=4, noEntry;
+Group group2:group2;
+Edit fap52=fap_file.fap52, tabIndex=5, noEntry;
+Label dummy01:dummy01, text="Month";
+Edit fap661=fap_file.fap661, tabIndex=6, noEntry;
+Edit fap56=fap_file.fap56, tabIndex=7, noEntry;
+Edit fap57=fap_file.fap57, tabIndex=8, noEntry;
+Edit fap53=fap_file.fap53, tabIndex=9, noEntry;
+Edit fap54=fap_file.fap54, tabIndex=10, noEntry;
+Edit fap55=fap_file.fap55, tabIndex=11, noEntry;
+Group group3:group3;
+Edit fap66=fap_file.fap66, tabIndex=12, noEntry;
+Edit fap67=fap_file.fap67, tabIndex=13, noEntry;
+Edit fap63=fap_file.fap63, tabIndex=14, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=15;
+Edit fap64=fap_file.fap64, tabIndex=16, noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=17;
+Edit fap65=fap_file.fap65, tabIndex=18, noEntry;
+Group group6:group6;
+Edit fap512=fap_file.fap512, tabIndex=25, noEntry;
+Edit fap612=fap_file.fap612, tabIndex=26, noEntry;
+Edit desc2=formonly.desc2 type CHAR, tabIndex=27, noEntry;
+Edit fap622=fap_file.fap622, tabIndex=28, noEntry;
+Group group7:group7;
+Edit fap522=fap_file.fap522, tabIndex=29, noEntry;
+Label dummy02:dummy02, text="Month";
+Edit fap6612=fap_file.fap6612, tabIndex=30, noEntry;
+Edit fap562=fap_file.fap562, tabIndex=31, noEntry;
+Edit fap572=fap_file.fap572, tabIndex=32, noEntry;
+Edit fap532=fap_file.fap532, tabIndex=33, noEntry;
+Edit fap542=fap_file.fap542, tabIndex=34, noEntry;
+Edit fap552=fap_file.fap552, tabIndex=35, noEntry;
+Group group8:group8;
+Edit fap672=fap_file.fap672, tabIndex=36, noEntry;
+Group group4:group4;
+Edit fap58=fap_file.fap58, tabIndex=19, noEntry;
+Edit fap59=fap_file.fap59, tabIndex=20, noEntry;
+Edit fap60=fap_file.fap60, tabIndex=21, noEntry;
+Group group5:group5;
+Edit fap581=fap_file.fap581, tabIndex=22, noEntry;
+Edit fap591=fap_file.fap591, tabIndex=23, noEntry;
+Edit fap601=fap_file.fap601, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fap_file.fap51,fap_file.fap61,formonly.desc,fap_file.fap62,fap_file.fap52,fap_file.fap661,fap_file.fap56,fap_file.fap57,fap_file.fap53,fap_file.fap54,fap_file.fap55,fap_file.fap66,fap_file.fap67,fap_file.fap63,formonly.gem02,fap_file.fap64,formonly.gen02,fap_file.fap65,fap_file.fap58,fap_file.fap59,fap_file.fap60,fap_file.fap581,fap_file.fap591,fap_file.fap601,fap_file.fap512,fap_file.fap612,formonly.desc2,fap_file.fap622,fap_file.fap522,fap_file.fap6612,fap_file.fap562,fap_file.fap572,fap_file.fap532,fap_file.fap542,fap_file.fap552,fap_file.fap672)
+END -- INSTRUCTIONS
+

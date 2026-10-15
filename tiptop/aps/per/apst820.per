@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apst820.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apst820")
+VBox vb2
+Grid gr5444
+{
+ <G group01                                                                       >
+  APS Version   [vod01           ]
+  Save Version  [vod02       ]
+ <                                                                                >
+}
+END -- gr5444
+Table s_voa1
+{
+[vod37  |fsb04     |voh07            |isoutsourc|vod05     |vod09           |ima02                          |chang       |vod06           |vod10          |vod04           |vod35           |qty        |vod03     |vod39     ]
+[vod37  |fsb04     |voh07            |isoutsourc|vod05     |vod09           |ima02                          |chang       |vod06           |vod10          |vod04           |vod35           |qty        |vod03     |vod39     ]
+[vod37  |fsb04     |voh07            |isoutsourc|vod05     |vod09           |ima02                          |chang       |vod06           |vod10          |vod04           |vod35           |qty        |vod03     |vod39     ]
+[vod37  |fsb04     |voh07            |isoutsourc|vod05     |vod09           |ima02                          |chang       |vod06           |vod10          |vod04           |vod35           |qty        |vod03     |vod39     ]
+[vod37  |fsb04     |voh07            |isoutsourc|vod05     |vod09           |ima02                          |chang       |vod06           |vod10          |vod04           |vod35           |qty        |vod03     |vod39     ]
+[vod37  |fsb04     |voh07            |isoutsourc|vod05     |vod09           |ima02                          |chang       |vod06           |vod10          |vod04           |vod35           |qty        |vod03     |vod39     ]
+[vod37  |fsb04     |voh07            |isoutsourc|vod05     |vod09           |ima02                          |chang       |vod06           |vod10          |vod04           |vod35           |qty        |vod03     |vod39     ]
+[vod37  |fsb04     |voh07            |isoutsourc|vod05     |vod09           |ima02                          |chang       |vod06           |vod10          |vod04           |vod35           |qty        |vod03     |vod39     ]
+[vod37  |fsb04     |voh07            |isoutsourc|vod05     |vod09           |ima02                          |chang       |vod06           |vod10          |vod04           |vod35           |qty        |vod03     |vod39     ]
+[vod37  |fsb04     |voh07            |isoutsourc|vod05     |vod09           |ima02                          |chang       |vod06           |vod10          |vod04           |vod35           |qty        |vod03     |vod39     ]
+
+}
+END -- s_voa1
+Grid gr881
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr881
+END -- vb2
+END -- apst820
+
+TABLES
+voh_file,
+vod_file
+ATTRIBUTES
+Group group01:group01, text="Basic Data";
+ButtonEdit vod01=vod_file.vod01, action=controlp, tabIndex=1, image="zoom";
+Edit vod02=vod_file.vod02, tabIndex=2;
+CheckBox vod37=formonly.vod37 type VARCHAR, tabIndex=3, title="change", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox fsb04=formonly.fsb04 type VARCHAR, tabIndex=5, title="Status", items=(("A", "WO Adjustment"),("B", "WO Change"),("C", "Denied Adjustment"));
+ComboBox voh07=voh_file.voh07, tabIndex=4, title="WO Change Code", noEntry, items=(("0", "No Change"),("1", "Inner WO To Outsourcing"),("2", "Outsourcing To Inner WO"),("3", "Outsourcing WO Change Vendor"),("4", "Operation No. To Outsourcing "),("5", "Outsourcing To Inner"),("6", "Outsourcing Change Vendor"),("7", "WO Routing Change"),("8", "Operation No. Change"));
+CheckBox isoutsourc=formonly.IsOutSource type CHAR, tabIndex=19, title="IsOutSource", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit vod05=vod_file.vod05, tabIndex=6, title="WO No.", noEntry;
+ButtonEdit vod09=vod_file.vod09, action=controlp, tabIndex=7, title="Item No.", image="zoom";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=8, title="Item Name", noEntry;
+CheckBox chang=formonly.chang type VARCHAR, tabIndex=16, title="Source Is changed", valueChecked = "Y", valueUnchecked = "N";
+DateEdit vod06=vod_file.vod06, tabIndex=9, title="Expected Compleion Date";
+DateEdit vod10=vod_file.vod10, tabIndex=10, title="Default Expected Finish";
+Edit vod04=vod_file.vod04, tabIndex=11, title="Production Qty", noEntry;
+Edit vod35=vod_file.vod35, tabIndex=14, title="Suggested Issue Qty";
+Edit qty=formonly.qty type CHAR, tabIndex=17, title="Just qty";
+Edit vod03=vod_file.vod03, tabIndex=15, title="vod03";
+ComboBox vod39=vod_file.vod39, tabIndex=18, title="vod39", items=(("0", "Not Has Route"),("1", "Has Route"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vod(formonly.vod37,formonly.fsb04,voh_file.voh07,formonly.IsOutSource,vod_file.vod05,vod_file.vod09,formonly.ima02,formonly.chang,vod_file.vod06,vod_file.vod10,vod_file.vod04,vod_file.vod35,formonly.qty,vod_file.vod03,vod_file.vod39)
+SCREEN RECORD Undefined(vod_file.vod01,vod_file.vod02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

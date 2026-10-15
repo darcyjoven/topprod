@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi100_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi100_c")
+VBox VBox1
+Grid gr600
+{
+ <G group01                                                 >
+  Original Ver. [old_ver             ]
+  Year          [oyy       ]
+  Currency      [obgm016   ]
+  Customer #    [obgm014   ][occ02   ]
+  Area Code     [obgm012   ]
+  Dept. No.     [obgm015   ][gem02   ]
+  Product Type  [obgm017          ]
+  Sls.Unit      [obgm08    ]
+  Conv.Rt.      [obgm08_fac]
+ <                                                          >
+ <G group02                                                 >
+  New Ver. [new_ver             ]
+  Year     [nyy ]
+ <                                                          >
+
+}
+END -- gr600
+END -- VBox1
+END -- abgi100_c
+
+ATTRIBUTES
+Group group01:group01;
+Edit old_ver=formonly.old_ver type CHAR, tabIndex=1;
+Edit oyy=formonly.oyy type CHAR, tabIndex=2;
+ButtonEdit obgm016=formonly.obgm016 type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Curr.";
+ButtonEdit obgm014=formonly.obgm014 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Cus.";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=5;
+ButtonEdit obgm012=formonly.obgm012 type CHAR, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Area";
+ButtonEdit obgm015=formonly.obgm015 type CHAR, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Dept.";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=8;
+ButtonEdit obgm017=formonly.obgm017 type CHAR, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Itm.Mstr <^E>Qry Prod. Cls";
+ButtonEdit obgm08=formonly.obgm08 type CHAR, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry Unit";
+Edit obgm08_fac=formonly.obgm08_fac type CHAR, tabIndex=11, noEntry;
+Group group02:group02;
+Edit new_ver=formonly.new_ver type CHAR, tabIndex=12;
+Edit nyy=formonly.nyy type CHAR, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.old_ver,formonly.oyy,formonly.obgm016,formonly.obgm014,formonly.occ02,formonly.obgm012,formonly.obgm015,formonly.gem02,formonly.obgm017,formonly.obgm08,formonly.obgm08_fac,formonly.new_ver,formonly.nyy)
+END -- INSTRUCTIONS
+

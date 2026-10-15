@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci670.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci670")
+VBox VBox1
+Folder pc271
+Page page01(text="Main")
+VBox VBox2
+Grid gr1672
+{
+ Machine#            [eci01     ]
+ Description         [eci06                                        ]
+ Label No.           [eci02               ]
+ Work Center         [eci03     ][eca02               ]
+
+}
+END -- gr1672
+Group gb1152
+Grid gr1673
+{
+ Machine Cost Rate($/Hour)  [eci04     ]
+ Machine Capacity(Hour/Day) [eci05     ]
+ Person Num                 [eci10          ]
+ Production Labors          [eci07     ]
+ Sequence                   [eci08     ]
+}
+END -- gr1673
+END -- gb1152
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr1674
+{
+ Record Owner        [eciuser   ] Last Modified by    [ecimodu   ] Data Valid Code     [eciacti   ]
+ Department          [ecigrup   ] Create/Modify Date  [ecidate     ]
+ Record Orig.        [ecioriu   ]
+ Dept Orig.          [eciorig   ]
+}
+END -- gr1674
+END -- info
+END -- pc271
+Grid gr1675
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr1675
+END -- VBox1
+END -- aeci670
+
+TABLES
+eci_file
+ATTRIBUTES
+Edit eci01=eci_file.eci01, tabIndex=1, not null, required;
+Edit eci06=eci_file.eci06, tabIndex=2;
+Edit eci02=eci_file.eci02, tabIndex=3;
+ButtonEdit eci03=eci_file.eci03, action=controlp, tabIndex=4, not null, required, image="zoom", comment=" <^P>Qry Work Center <^Y>Create Work Center";
+Edit eca02=formonly.eca02 type SMALLINT, tabIndex=5, noEntry;
+Edit eci04=eci_file.eci04, tabIndex=6, not null, required;
+Edit eci05=eci_file.eci05, tabIndex=7, not null, required;
+Edit eci10=eci_file.eci10, tabIndex=503;
+Edit eci07=eci_file.eci07, tabIndex=8, not null, required;
+Edit eci08=eci_file.eci08, tabIndex=9, not null, required;
+Edit eciuser=eci_file.eciuser, tabIndex=10, noEntry;
+Edit ecimodu=eci_file.ecimodu, tabIndex=11, noEntry;
+Edit eciacti=eci_file.eciacti, tabIndex=12, noEntry, upShift;
+Edit ecigrup=eci_file.ecigrup, tabIndex=13, noEntry;
+DateEdit ecidate=eci_file.ecidate, tabIndex=14, noEntry;
+Edit ecioriu=eci_file.ecioriu, tabIndex=501, noEntry;
+Edit eciorig=eci_file.eciorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(eci_file.eci01,eci_file.eci06,eci_file.eci02,eci_file.eci03,formonly.eca02,eci_file.eci04,eci_file.eci05,eci_file.eci10,eci_file.eci07,eci_file.eci08,eci_file.eciuser,eci_file.ecimodu,eci_file.eciacti,eci_file.ecigrup,eci_file.ecidate,eci_file.ecioriu,eci_file.eciorig,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimp401")
+VBox VBox1
+Folder pc13
+Page page01(text="main")
+Grid gr36
+{
+ <G group01                                                                                      >
+  Trsf.Nt#         [imm01               ]             Applicnt     [imm09   ][gen02   ]
+  Trs.Date         [imm02   ]                   Dept         [gen03 ]  [gem02   ]
+  Prt Times/Dat    [imm]/[imm08   ]
+ <                                                                                               >
+ <G group02                                                                                      >
+  Ln #:            [imn02]                      Item #       [imn03               ] [im][i]
+                                                             [ima02                         ]
+ <                                                                                               >
+ <G group03                                   ><G group04                                        >
+  Confd.Dt        [imn14   ]                    Confd.Dt     [cdate   ][x]
+  W/H No.         [imn04     ]                               [imn15     ]
+  Loc             [imn05     ]                               [imn16     ]
+  Lot#            [imn06                   ]                 [imn17                   ]
+  Account         [imn07                   ]                 [imn18                   ]
+  Project#        [imn08     ]                               [imn19     ]
+  Inv.Ut          [imn0]                                     [imn2]
+  Inv Ut Conv.Rt  [imn21    ]
+  Ant./Actl:      [imn10      ]/[imn11      ]                [imn22      ] /[number              ]
+ <                                            ><                                                 >
+
+}
+END -- gr36
+END -- page01
+END -- pc13
+Grid gr37
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr37
+END -- VBox1
+END -- aimp401
+
+TABLES
+imn_file,
+imm_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit imm01=imm_file.imm01, action=controlp, tabIndex=1, image="zoom", comment="Enter Query Condition by QBE";
+Edit imm09=imm_file.imm09, tabIndex=2;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=3, noEntry;
+Edit imm02=imm_file.imm02, tabIndex=4, comment="Enter Query Condition by QBE";
+Edit gen03=formonly.gen03 type CHAR, tabIndex=5, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=6, noEntry;
+Edit imm=imm_file.imm07, tabIndex=7;
+Edit imm08=imm_file.imm08, tabIndex=8;
+Group group02:group02;
+Edit imn02=imn_file.imn02, tabIndex=9;
+ButtonEdit imn03=imn_file.imn03, action=controlp, tabIndex=10, noEntry, image="zoom";
+Edit im=formonly.ima05 type CHAR, tabIndex=11, noEntry;
+Edit i=formonly.ima08 type CHAR, tabIndex=12, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=13, noEntry;
+Group group03:group03, text="(Tr-o)";
+Edit imn14=imn_file.imn14, tabIndex=14, noEntry;
+Edit imn04=imn_file.imn04, tabIndex=15, noEntry;
+Edit imn05=imn_file.imn05, tabIndex=16, noEntry;
+Edit imn06=imn_file.imn06, tabIndex=17, noEntry;
+Edit imn07=imn_file.imn07, tabIndex=18, noEntry;
+Edit imn08=imn_file.imn08, tabIndex=19, noEntry;
+Edit imn0=imn_file.imn09, tabIndex=20, noEntry;
+Edit imn21=imn_file.imn21, tabIndex=21, noEntry;
+Edit imn10=imn_file.imn10, tabIndex=22, noEntry;
+Edit imn11=imn_file.imn11, tabIndex=23, noEntry;
+Group group04:group04, text="(Tr-i)";
+Edit cdate=formonly.cdate type DATE, tabIndex=24;
+Edit x=formonly.x type VARCHAR, tabIndex=25, noEntry;
+Edit imn15=imn_file.imn15, tabIndex=26, noEntry;
+Edit imn16=imn_file.imn16, tabIndex=27, noEntry;
+Edit imn17=imn_file.imn17, tabIndex=28, noEntry;
+Edit imn18=imn_file.imn18, tabIndex=29, noEntry;
+Edit imn19=imn_file.imn19, tabIndex=30, noEntry;
+Edit imn2=imn_file.imn20, tabIndex=31, noEntry;
+Edit imn22=imn_file.imn22, tabIndex=32, noEntry;
+Edit number=formonly.number type DECIMAL, tabIndex=33;
+Edit cnt=formonly.cnt type CHAR, tabIndex=34, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(imm_file.imm01,imm_file.imm09,formonly.gen02,imm_file.imm02,formonly.gen03,formonly.gem02,imm_file.imm07,imm_file.imm08,imn_file.imn02,imn_file.imn03,formonly.ima05,formonly.ima08,formonly.ima02,imn_file.imn14,imn_file.imn04,imn_file.imn05,imn_file.imn06,imn_file.imn07,imn_file.imn08,imn_file.imn09,imn_file.imn21,imn_file.imn10,imn_file.imn11,formonly.cdate,formonly.x,imn_file.imn15,imn_file.imn16,imn_file.imn17,imn_file.imn18,imn_file.imn19,imn_file.imn20,imn_file.imn22,formonly.number,formonly.cnt)
+END -- INSTRUCTIONS
+

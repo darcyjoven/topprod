@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi910r.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi910r")
+Grid gr4067
+{
+ Logistics Curr       [nqc2      ][azi2      ]
+ Prioed               [y1  ][m1]~[y2  ][m2]
+ Rate                 [rate      ]
+}
+END -- gr4067
+END -- anmi910r
+
+ATTRIBUTES
+ButtonEdit nqc2=formonly.nqc2 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit azi2=formonly.azi2 type CHAR, tabIndex=2, noEntry;
+Edit y1=formonly.y1 type SMALLINT, tabIndex=3, not null, required;
+Edit m1=formonly.m1 type SMALLINT, tabIndex=4, not null, required;
+Edit y2=formonly.y2 type SMALLINT, tabIndex=5, not null, required;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=6, not null, required;
+Edit rate=formonly.rate type CHAR, tabIndex=7, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nqc2,formonly.azi2,formonly.y1,formonly.m1,formonly.y2,formonly.m2,formonly.rate)
+END -- INSTRUCTIONS
+

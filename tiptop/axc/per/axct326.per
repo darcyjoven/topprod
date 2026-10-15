@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct326.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct326")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr462
+{
+ Cost Calculate Category  [cdm04                 ]
+ Book No.                 [cdm01   ]
+ Legal                    [cdmlegal][azt02        ]
+
+
+
+}
+END -- gr462
+Grid gr463
+{
+ Year   [cdm0]    Month   [cd]
+ Entry  [cdm10               ]                   [imgmksg]
+ glno   [nppglno             ]     [cdmconf  ]   [       ]
+
+
+
+}
+END -- gr463
+END -- hb2
+END -- page01
+END -- folder01
+Table s_cdm
+{
+[cdm05         |cdm11          |cdm06          |ima02     |cdm07               |aag02          |cdm09        ]
+[cdm05         |cdm11          |cdm06          |ima02     |cdm07               |aag02          |cdm09        ]
+[cdm05         |cdm11          |cdm06          |ima02     |cdm07               |aag02          |cdm09        ]
+}
+END -- s_cdm
+Grid gr467
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr467
+END -- vb2
+END -- axct326
+
+TABLES
+aag_file,
+npp_file,
+cdm_file,
+azt_file
+ATTRIBUTES
+ComboBox cdm04=cdm_file.cdm04, tabIndex=1, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+ButtonEdit cdm01=cdm_file.cdm01, action=controlp, tabIndex=2, image="zoom";
+Edit cdmlegal=cdm_file.cdmlegal, tabIndex=3;
+Edit azt02=azt_file.azt02, tabIndex=4;
+Edit cdm0=cdm_file.cdm02, tabIndex=5;
+Edit cd=cdm_file.cdm03, tabIndex=6;
+Edit cdm10=cdm_file.cdm10, tabIndex=7;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit nppglno=npp_file.nppglno, tabIndex=8;
+CheckBox cdmconf=cdm_file.cdmconf, tabIndex=9, text="Confirm", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit cdm05=cdm_file.cdm05, tabIndex=10, title="Type Code", noEntry;
+Edit cdm11=cdm_file.cdm11, tabIndex=11, title=%"Ref No.";
+Edit cdm06=cdm_file.cdm06, tabIndex=12, title="Main Item", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=13, title="ima02";
+ButtonEdit cdm07=cdm_file.cdm07, action=controlp, tabIndex=14, title="Cost Acc", image="zoom";
+Edit aag02=aag_file.aag02, tabIndex=15, title="Acc Name", noEntry;
+Edit cdm09=cdm_file.cdm09, tabIndex=16, title="Amt", noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=17;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cdm(cdm_file.cdm05,cdm_file.cdm11,cdm_file.cdm06,formonly.ima02,cdm_file.cdm07,aag_file.aag02,cdm_file.cdm09)
+SCREEN RECORD Undefined(cdm_file.cdm04,cdm_file.cdm01,cdm_file.cdmlegal,azt_file.azt02,cdm_file.cdm02,cdm_file.cdm03,cdm_file.cdm10,npp_file.nppglno,cdm_file.cdmconf,formonly.imgmksg,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gxr/42f/gxrq600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gxrq600")
+VBox vb2
+Folder folder01
+Page page01(text="Page01")
+Grid gr3646
+{
+ <G group01                      >
+ [g_detail                     ]
+  Year                [oox01    ]
+  Monthly             [oox02    ]
+ <                               >
+}
+END -- gr3646
+END -- page01
+Page Page1(text=%"Info")
+Grid ds1
+{
+
+ ooxuser[ooxuser     ]   ooxmodu[ooxmodu     ]     ooxacti[ooxacti     ]
+ ooxgrup[ooxgrup     ]   ooxdate[ooxdate     ]     ooxcrat[ooxcrat     ]
+ ooxoriu[ooxoriu     ]
+ ooxorig[ooxorig     ]
+
+}
+END -- ds1
+END -- Page1
+END -- folder01
+Table s_oox
+{
+[oox03v|oox03     |oox04 |oox041    |oma03     |oma032    |oox05|oox06             |oox07                |oox11               |oox08               |oox09              |oox10               ]
+[oox03v|oox03     |oox04 |oox041    |oma03     |oma032    |oox05|oox06             |oox07                |oox11               |oox08               |oox09              |oox10               ]
+[oox03v|oox03     |oox04 |oox041    |oma03     |oma032    |oox05|oox06             |oox07                |oox11               |oox08               |oox09              |oox10               ]
+[oox03v|oox03     |oox04 |oox041    |oma03     |oma032    |oox05|oox06             |oox07                |oox11               |oox08               |oox09              |oox10               ]
+[oox03v|oox03     |oox04 |oox041    |oma03     |oma032    |oox05|oox06             |oox07                |oox11               |oox08               |oox09              |oox10               ]
+[oox03v|oox03     |oox04 |oox041    |oma03     |oma032    |oox05|oox06             |oox07                |oox11               |oox08               |oox09              |oox10               ]
+[oox03v|oox03     |oox04 |oox041    |oma03     |oma032    |oox05|oox06             |oox07                |oox11               |oox08               |oox09              |oox10               ]
+[oox03v|oox03     |oox04 |oox041    |oma03     |oma032    |oox05|oox06             |oox07                |oox11               |oox08               |oox09              |oox10               ]
+[oox03v|oox03     |oox04 |oox041    |oma03     |oma032    |oox05|oox06             |oox07                |oox11               |oox08               |oox09              |oox10               ]
+[oox03v|oox03     |oox04 |oox041    |oma03     |oma032    |oox05|oox06             |oox07                |oox11               |oox08               |oox09              |oox10               ]
+
+}
+END -- s_oox
+Grid gr3647
+{
+ Total [g_tot               ]
+
+}
+END -- gr3647
+Grid gr3648
+{
+ --------- Rows [cnt   ]----------
+
+}
+END -- gr3648
+END -- vb2
+END -- gxrq600
+
+TABLES
+oox_file,
+oma_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox g_detail=formonly.g_detail type CHAR, tabIndex=17, text="Qry Detailed Special          ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oox01=oox_file.oox01, tabIndex=1;
+Edit oox02=oox_file.oox02, tabIndex=2;
+Edit ooxuser=oox_file.ooxuser, tabIndex=18, scroll;
+Edit ooxmodu=oox_file.ooxmodu, tabIndex=19, scroll;
+Edit ooxacti=oox_file.ooxacti, tabIndex=20, not null, scroll;
+Edit ooxgrup=oox_file.ooxgrup, tabIndex=21, scroll;
+DateEdit ooxdate=oox_file.ooxdate, tabIndex=22;
+DateEdit ooxcrat=oox_file.ooxcrat, tabIndex=23;
+Edit ooxoriu=oox_file.ooxoriu, tabIndex=24, scroll;
+Edit ooxorig=oox_file.ooxorig, tabIndex=25, scroll;
+Edit oox03v=oox_file.oox03v, tabIndex=3, title="Cate";
+Edit oox03=oox_file.oox03, tabIndex=4, title="Bill No.";
+Edit oox04=oox_file.oox04, tabIndex=5, title="Ln #";
+Edit oox041=oox_file.oox041, tabIndex=6, title="Multi_Acct Ln#";
+Edit oma03=oma_file.oma03, tabIndex=15, title="Cust.";
+Edit oma032=oma_file.oma032, tabIndex=16, title="Cust Name";
+Edit oox05=oox_file.oox05, tabIndex=7, title="Curr";
+Edit oox06=oox_file.oox06, tabIndex=8, title="LM ExRt";
+Edit oox07=oox_file.oox07, tabIndex=9, title="Rval.ExR";
+Edit oox11=oox_file.oox11, tabIndex=26, title="UnCn T.c";
+Edit oox08=oox_file.oox08, tabIndex=10, title="UnCn H.C";
+Edit oox09=oox_file.oox09, tabIndex=11, title="R-Va H.C";
+Edit oox10=oox_file.oox10, tabIndex=12, title="Ex.Pr/Lo";
+Edit g_tot=formonly.g_tot type CHAR, tabIndex=13;
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oox(oox_file.oox03v,oox_file.oox03,oox_file.oox04,oox_file.oox041,oma_file.oma03,oma_file.oma032,oox_file.oox05,oox_file.oox06,oox_file.oox07,oox_file.oox11,oox_file.oox08,oox_file.oox09,oox_file.oox10)
+SCREEN RECORD Undefined(formonly.g_detail,oox_file.oox01,oox_file.oox02,formonly.g_tot,formonly.cnt,oox_file.ooxuser,oox_file.ooxmodu,oox_file.ooxacti,oox_file.ooxgrup,oox_file.ooxdate,oox_file.ooxcrat,oox_file.ooxoriu,oox_file.ooxorig)
+END -- INSTRUCTIONS
+

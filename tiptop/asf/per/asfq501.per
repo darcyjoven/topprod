@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfq501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfq501")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr589
+{
+ S/N                 [sfn01     ]
+
+
+}
+END -- gr589
+Grid gr590
+{
+ Shift Type            [sfm10     ][type      ]
+
+
+}
+END -- gr590
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_sfn
+{
+[sfn02    |sfn03                             |sfn04               |sfn06        |sfn07                                 |sfn08                           |sfn15               |sfn12     |sfn13         |sfn14                   |sfn10         |sfn11   |sfn05    ]
+[sfn02    |sfn03                             |sfn04               |sfn06        |sfn07                                 |sfn08                           |sfn15               |sfn12     |sfn13         |sfn14                   |sfn10         |sfn11   |sfn05    ]
+[sfn02    |sfn03                             |sfn04               |sfn06        |sfn07                                 |sfn08                           |sfn15               |sfn12     |sfn13         |sfn14                   |sfn10         |sfn11   |sfn05    ]
+[sfn02    |sfn03                             |sfn04               |sfn06        |sfn07                                 |sfn08                           |sfn15               |sfn12     |sfn13         |sfn14                   |sfn10         |sfn11   |sfn05    ]
+[sfn02    |sfn03                             |sfn04               |sfn06        |sfn07                                 |sfn08                           |sfn15               |sfn12     |sfn13         |sfn14                   |sfn10         |sfn11   |sfn05    ]
+[sfn02    |sfn03                             |sfn04               |sfn06        |sfn07                                 |sfn08                           |sfn15               |sfn12     |sfn13         |sfn14                   |sfn10         |sfn11   |sfn05    ]
+[sfn02    |sfn03                             |sfn04               |sfn06        |sfn07                                 |sfn08                           |sfn15               |sfn12     |sfn13         |sfn14                   |sfn10         |sfn11   |sfn05    ]
+[sfn02    |sfn03                             |sfn04               |sfn06        |sfn07                                 |sfn08                           |sfn15               |sfn12     |sfn13         |sfn14                   |sfn10         |sfn11   |sfn05    ]
+[sfn02    |sfn03                             |sfn04               |sfn06        |sfn07                                 |sfn08                           |sfn15               |sfn12     |sfn13         |sfn14                   |sfn10         |sfn11   |sfn05    ]
+[sfn02    |sfn03                             |sfn04               |sfn06        |sfn07                                 |sfn08                           |sfn15               |sfn12     |sfn13         |sfn14                   |sfn10         |sfn11   |sfn05    ]
+
+}
+END -- s_sfn
+Grid gr591
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr591
+END -- VBox1
+END -- asfq501
+
+TABLES
+sfn_file
+ATTRIBUTES
+Edit sfn01=sfn_file.sfn01, tabIndex=1, noEntry;
+Edit sfm10=formonly.sfm10 type CHAR, tabIndex=2, noEntry;
+Edit type=formonly.type type CHAR, tabIndex=3, noEntry;
+Edit sfn02=sfn_file.sfn02, tabIndex=4, title="Line No.", noEntry;
+Edit sfn03=sfn_file.sfn03, tabIndex=5, title="Work Order No.(One Item Shifting)", noEntry;
+Edit sfn04=sfn_file.sfn04, tabIndex=6, title="Item No.", noEntry;
+Edit sfn06=sfn_file.sfn06, tabIndex=7, title="Issuing Unit", noEntry;
+Edit sfn07=sfn_file.sfn07, tabIndex=8, title="Source Qty Due Return(One Item/Batch)", noEntry;
+Edit sfn08=sfn_file.sfn08, tabIndex=9, title="Qty Due Return(One Item/Batch)", noEntry;
+Edit sfn15=sfn_file.sfn15, tabIndex=10, title="Qty Over-Withdrawn", noEntry;
+Edit sfn12=sfn_file.sfn12, tabIndex=11, title="W/H No.", noEntry;
+Edit sfn13=sfn_file.sfn13, tabIndex=12, title="Location No.", noEntry;
+Edit sfn14=sfn_file.sfn14, tabIndex=13, title="Lot No.", noEntry;
+Edit sfn10=sfn_file.sfn10, tabIndex=14, title="Transfer Qty", noEntry;
+ComboBox sfn11=sfn_file.sfn11, tabIndex=15, title="Status", noEntry, items=(("1", %"Common Item"),("2", %"Source Item"),("3", %"Target Item"));
+Edit sfn05=sfn_file.sfn05, tabIndex=16, title="Task No.", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfn(sfn_file.sfn02,sfn_file.sfn03,sfn_file.sfn04,sfn_file.sfn06,sfn_file.sfn07,sfn_file.sfn08,sfn_file.sfn15,sfn_file.sfn12,sfn_file.sfn13,sfn_file.sfn14,sfn_file.sfn10,sfn_file.sfn11,sfn_file.sfn05)
+SCREEN RECORD Undefined(sfn_file.sfn01,formonly.sfm10,formonly.type,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

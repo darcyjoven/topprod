@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli203.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli203")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2334
+{
+  Group Code        [asq13       ] Merge Belong        [asq16       ]
+  Source Comp.ID    [asq09       ] Source Book No.     [asq00       ]
+  Contra\'d Comp.ID  [asq10       ] Contra\'d Book No.   [asq12       ]
+}
+END -- gr2334
+END -- page01
+END -- folder01
+Table s_asq
+{
+[asq14     |asq15         |asq01               |asq01_desc          |asq17               |asq02               |asq02_desc              |as|asq18   |asq04                   |asq04_desc              |asqac]
+[asq14     |asq15         |asq01               |asq01_desc          |asq17               |asq02               |asq02_desc              |as|asq18   |asq04                   |asq04_desc              |asqac]
+[asq14     |asq15         |asq01               |asq01_desc          |asq17               |asq02               |asq02_desc              |as|asq18   |asq04                   |asq04_desc              |asqac]
+[asq14     |asq15         |asq01               |asq01_desc          |asq17               |asq02               |asq02_desc              |as|asq18   |asq04                   |asq04_desc              |asqac]
+[asq14     |asq15         |asq01               |asq01_desc          |asq17               |asq02               |asq02_desc              |as|asq18   |asq04                   |asq04_desc              |asqac]
+[asq14     |asq15         |asq01               |asq01_desc          |asq17               |asq02               |asq02_desc              |as|asq18   |asq04                   |asq04_desc              |asqac]
+[asq14     |asq15         |asq01               |asq01_desc          |asq17               |asq02               |asq02_desc              |as|asq18   |asq04                   |asq04_desc              |asqac]
+[asq14     |asq15         |asq01               |asq01_desc          |asq17               |asq02               |asq02_desc              |as|asq18   |asq04                   |asq04_desc              |asqac]
+[asq14     |asq15         |asq01               |asq01_desc          |asq17               |asq02               |asq02_desc              |as|asq18   |asq04                   |asq04_desc              |asqac]
+[asq14     |asq15         |asq01               |asq01_desc          |asq17               |asq02               |asq02_desc              |as|asq18   |asq04                   |asq04_desc              |asqac]
+}
+END -- s_asq
+Grid gr2335
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr2335
+END -- VBox1
+END -- ggli203
+
+TABLES
+asq_file
+ATTRIBUTES
+ButtonEdit asq13=asq_file.asq13, action=controlp, tabIndex=15, image="zoom";
+ButtonEdit asq16=asq_file.asq16, action=controlp, tabIndex=18, not null, required, image="zoom";
+ButtonEdit asq09=asq_file.asq09, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Query Combined Report Company ID";
+ButtonEdit asq00=asq_file.asq00, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P>Query Book No.";
+ButtonEdit asq10=asq_file.asq10, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Query Combined Report Company ID";
+ButtonEdit asq12=asq_file.asq12, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P>Query Book No.";
+CheckBox asq14=asq_file.asq14, tabIndex=17, title="Capital Stock", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox asq15=asq_file.asq15, tabIndex=16, title="Source of Account Balance", not null, required, items=(("1", "Period Blance Before Combined"),("2", "Account Transaction Code Contra Balance Before Combined"));
+ButtonEdit asq01=asq_file.asq01, action=controlp, tabIndex=3, title="Source Acct Code", not null, required, image="zoom", comment="Key Field, No Blank/Repeated! <^P>Query Account Data";
+Edit asq01_desc=formonly.asq01_desc type CHAR, tabIndex=4, title="Descriptopn", noEntry;
+ComboBox asq17=asq_file.asq17, tabIndex=19, title=%"Source of Account Balance", not null, required, items=(("1", "Period Blance Before Combined(asr_file)"),("2", "Account Transaction Code Contra Balance Before Combined(ass_file)"));
+ButtonEdit asq02=asq_file.asq02, action=controlp, tabIndex=5, title="Contra\'d Acct.Code", not null, required, image="zoom", comment="<^P>Query Account Data";
+Edit asq02_desc=formonly.asq02_desc type CHAR, tabIndex=6, title="Description", noEntry;
+CheckBox as=asq_file.asq03, tabIndex=7, title="%", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox asq18=asq_file.asq18, tabIndex=20, title=%"Differential treatment", not null, required, items=(("1", "Text"),("2", "Text"),("3", "Text"));
+ButtonEdit asq04=asq_file.asq04, action=controlp, tabIndex=8, title="Odds Homologous Acc.", image="zoom", comment="<^P>Query Account Data";
+Edit asq04_desc=formonly.asq04_desc type CHAR, tabIndex=9, title="Description", noEntry;
+CheckBox asqac=asq_file.asqacti, tabIndex=10, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asq(asq_file.asq14,asq_file.asq15,asq_file.asq01,formonly.asq01_desc,asq_file.asq17,asq_file.asq02,formonly.asq02_desc,asq_file.asq03,asq_file.asq18,asq_file.asq04,formonly.asq04_desc,asq_file.asqacti)
+SCREEN RECORD Undefined(asq_file.asq13,asq_file.asq16,asq_file.asq09,asq_file.asq00,asq_file.asq10,asq_file.asq12,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

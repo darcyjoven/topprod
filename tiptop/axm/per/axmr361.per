@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmr361.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr361")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                               >
+  Quotation No.        [oqt01               ]  Product No.          [oqu03               ]
+  Quot.Date            [oqt02               ]  Dept No.             [oqt06               ]
+  Customer No.         [oqt04               ]  Slsman No.           [oqt07               ]
+ <                                                                                        >
+ <G group02                                                                               >
+  Quotation Method             [b                    ]
+  P/N Spec Extra Desc Category [a                    ]
+  Print Method                 [c                    ]
+  [d                                                 ]
+
+
+
+
+ <                                                                                        >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                              ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- axmr361
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit oqt01=formonly.oqt01 type CHAR, tabIndex=1;
+Edit oqu03=formonly.oqu03 type CHAR, tabIndex=2;
+DateEdit oqt02=formonly.oqt02 type DATE, tabIndex=3;
+Edit oqt06=formonly.oqt06 type CHAR, tabIndex=4;
+Edit oqt04=formonly.oqt04 type CHAR, tabIndex=5;
+Edit oqt07=formonly.oqt07 type CHAR, tabIndex=6;
+Group group02:group02, text="INPUT";
+ComboBox b=formonly.b type VARCHAR, tabIndex=7, not null, required, queryEditable, items=(("Y", %"Pricing by Qty"),("N", %"General"));
+Edit a=formonly.a type VARCHAR, tabIndex=8, upShift;
+RadioGroup c=formonly.c type VARCHAR, tabIndex=9, items=(("1", %"Confirm"),("2", %"UnConfirmed"),("3", %"Void"),("4", %"All"));
+CheckBox d=formonly.d type VARCHAR, tabIndex=10, text="print CUST ITEM NO.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oqt01,formonly.oqu03,formonly.oqt02,formonly.oqt06,formonly.oqt04,formonly.oqt07,formonly.b,formonly.a,formonly.c,formonly.d,formonly.more)
+END -- INSTRUCTIONS
+

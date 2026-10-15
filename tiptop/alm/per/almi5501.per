@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi5501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="s_alm_effect")
+VBox vb3
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr5
+{
+
+  Version No.[lni01             ]
+  Category   [lni02       ]
+
+}
+END -- gr5
+END -- Page3
+END -- pc2
+Table s_lni
+{
+[lni03|lniplant    |lma02               |lnilegal    |azt02               |lni05       |lmi02               |lni06       |lmj02               |lni07       |lmk02               |lni08               |lni09       |lni10       |lni11     |lni12       ]
+[lni03|lniplant    |lma02               |lnilegal    |azt02               |lni05       |lmi02               |lni06       |lmj02               |lni07       |lmk02               |lni08               |lni09       |lni10       |lni11     |lni12       ]
+[lni03|lniplant    |lma02               |lnilegal    |azt02               |lni05       |lmi02               |lni06       |lmj02               |lni07       |lmk02               |lni08               |lni09       |lni10       |lni11     |lni12       ]
+[lni03|lniplant    |lma02               |lnilegal    |azt02               |lni05       |lmi02               |lni06       |lmj02               |lni07       |lmk02               |lni08               |lni09       |lni10       |lni11     |lni12       ]
+[lni03|lniplant    |lma02               |lnilegal    |azt02               |lni05       |lmi02               |lni06       |lmj02               |lni07       |lmk02               |lni08               |lni09       |lni10       |lni11     |lni12       ]
+
+}
+END -- s_lni
+Grid gr4
+{
+ --------Rows[idx   ]/[cnt    ]  ---Details[cn2   ]------
+
+}
+END -- gr4
+END -- vb3
+END -- almi5501
+
+TABLES
+lni_file
+ATTRIBUTES
+ButtonEdit lni01=lni_file.lni01, action=controlp, tabIndex=12, not null, required, image="zoom.png";
+ComboBox lni02=lni_file.lni02, tabIndex=13, not null, items=(("0", "Discount Return Certificates"),("1", "Direct discount"),("2", "Discount Return Cash"),("3", "Activities gifts"),("4", "Card"),("5", "Certificates"));
+Edit lni03=lni_file.lni03, tabIndex=19, title="Version", noEntry;
+ButtonEdit lniplant=lni_file.lniplant, action=controlp, tabIndex=4, title="Shop No.", not null, image="zoom.png";
+Edit lma02=formonly.lma02 type CHAR, tabIndex=5, title="Shop Name", noEntry;
+ButtonEdit lnilegal=lni_file.lnilegal, tabIndex=20, title=%"Corporation", noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=21, title=%"Corporate Title", noEntry;
+ButtonEdit lni05=lni_file.lni05, action=controlp, tabIndex=6, title="Major categories No.", not null, image="zoom.png";
+Edit lmi02=formonly.lmi02 type CHAR, tabIndex=14, title="Major categories Name", noEntry;
+ButtonEdit lni06=lni_file.lni06, action=controlp, tabIndex=7, title="Category No.", not null, image="zoom.png";
+Edit lmj02=formonly.lmj02 type CHAR, tabIndex=15, title="Category Name", noEntry;
+ButtonEdit lni07=lni_file.lni07, action=controlp, tabIndex=8, title="Small Categories No.", not null, image="zoom.png";
+Edit lmk02=formonly.lmk02 type CHAR, tabIndex=16, title="Small Categories Name", noEntry;
+ButtonEdit lni08=lni_file.lni08, action=controlp, tabIndex=9, title="Stalls No.", not null, required, image="zoom.png";
+DateEdit lni09=lni_file.lni09, tabIndex=10, title="Commencement";
+DateEdit lni10=lni_file.lni10, tabIndex=11, title="Expiry date";
+Edit lni11=lni_file.lni11, tabIndex=17, title="Modify", noEntry;
+DateEdit lni12=lni_file.lni12, tabIndex=18, title="Modify Date", noEntry;
+Edit idx=formonly.idx type CHAR, tabIndex=1, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=3, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lni(lni_file.lni03,lni_file.lniplant,formonly.lma02,lni_file.lnilegal,formonly.azt02,lni_file.lni05,formonly.lmi02,lni_file.lni06,formonly.lmj02,lni_file.lni07,formonly.lmk02,lni_file.lni08,lni_file.lni09,lni_file.lni10,lni_file.lni11,lni_file.lni12)
+SCREEN RECORD Undefined(lni_file.lni01,lni_file.lni02,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

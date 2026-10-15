@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_query_replace.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="p_query_replace")
+Table tb6
+{
+[zay04     |zay05          |zay06     |zay07          |memo                                    ]
+[zay04     |zay05          |zay06     |zay07          |memo                                    ]
+[zay04     |zay05          |zay06     |zay07          |memo                                    ]
+[zay04     |zay05          |zay06     |zay07          |memo                                    ]
+[zay04     |zay05          |zay06     |zay07          |memo                                    ]
+[zay04     |zay05          |zay06     |zay07          |memo                                    ]
+[zay04     |zay05          |zay06     |zay07          |memo                                    ]
+[zay04     |zay05          |zay06     |zay07          |memo                                    ]
+[zay04     |zay05          |zay06     |zay07          |memo                                    ]
+[zay04     |zay05          |zay06     |zay07          |memo                                    ]
+
+}
+END -- tb6
+END -- p_query_replace
+
+TABLES
+zay_file
+ATTRIBUTES
+ComboBox zay04=zay_file.zay04, tabIndex=1, title="Replace Item", not null, required, items=(("1", "Single"),("2", "Other"));
+Edit zay05=zay_file.zay05, tabIndex=2, title="Old Value";
+ComboBox zay06=zay_file.zay06, tabIndex=3, title="Type", not null, required, items=(("1", "Static"),("2", "p_ze"));
+ButtonEdit zay07=zay_file.zay07, action=controlp, tabIndex=4, title="Replace Value", image="zoom.png";
+Edit memo=formonly.memo type VARCHAR, tabIndex=5, title=%"Memo", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zay(zay_file.zay04,zay_file.zay05,zay_file.zay06,zay_file.zay07,formonly.memo)
+END -- INSTRUCTIONS
+

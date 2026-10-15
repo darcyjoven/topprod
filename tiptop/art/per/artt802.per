@@ -1,0 +1,157 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt802.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artt802")
+VBox vb2
+Folder pc4
+Page Page5(text=%"Basic Data")
+Grid gr4
+{
+
+    Rab01   [rab01            ][rab01_desc  ]     [rab04                  ]           Rab900 [rab900        ] [imgmksg]
+    Rab02   [rab02            ]                   [rab05                   ]          Rabconf[rabconf       ] [       ]
+    Rab03   [rab03            ][rab03_desc  ]     [rab06                   ]          Rabcond[rabcond       ]
+    Rabplant[rabplant         ][rabplant_des]     [rabmksg               ]            Rabcont[rabcont       ]
+    Rab11   [rab11                          ]                                         Rabconu[rabconu       ][rabconu_desc]
+
+
+}
+END -- gr4
+END -- Page5
+Page Page6(text=%"Advanced Setting")
+Grid gr5
+{
+
+              [rab07                                               ]
+              [rab08                                               ]
+              [rab09                                               ]
+              [rab10                                               ]
+
+
+
+}
+END -- gr5
+END -- Page6
+Page Page11(text=%"Info")
+Grid gr6
+{
+
+    Record Owner        [rabuser   ] Last Modified by    [rabmodu   ] Data Valid Code     [rabacti   ]
+    Department          [rabgrup   ] Modify Date         [rabdate   ] Create Date         [rabcrat   ]
+    Record Orig.        [raboriu   ] Dept Orig.          [raborig   ]
+
+
+}
+END -- gr6
+END -- Page11
+END -- pc4
+Table s_rac(height = 7 lines)
+{
+[rac03   |rac04   |rac05   |rac06   |rac07   |rac08   |rac09   |rac10   |rac11   |rac12   |rac14   |rac13   |rac15   |racacti |racpos  ]
+[rac03   |rac04   |rac05   |rac06   |rac07   |rac08   |rac09   |rac10   |rac11   |rac12   |rac14   |rac13   |rac15   |racacti |racpos  ]
+[rac03   |rac04   |rac05   |rac06   |rac07   |rac08   |rac09   |rac10   |rac11   |rac12   |rac14   |rac13   |rac15   |racacti |racpos  ]
+[rac03   |rac04   |rac05   |rac06   |rac07   |rac08   |rac09   |rac10   |rac11   |rac12   |rac14   |rac13   |rac15   |racacti |racpos  ]
+[rac03   |rac04   |rac05   |rac06   |rac07   |rac08   |rac09   |rac10   |rac11   |rac12   |rac14   |rac13   |rac15   |racacti |racpos  ]
+
+
+
+}
+END -- s_rac
+Table s_rad
+{
+[rad03   |rad04   |rad05   |rad05_de|rad06   |rad06_de|radacti ]
+[rad03   |rad04   |rad05   |rad05_de|rad06   |rad06_de|radacti ]
+[rad03   |rad04   |rad05   |rad05_de|rad06   |rad06_de|radacti ]
+[rad03   |rad04   |rad05   |rad05_de|rad06   |rad06_de|radacti ]
+[rad03   |rad04   |rad05   |rad05_de|rad06   |rad06_de|radacti ]
+[rad03   |rad04   |rad05   |rad05_de|rad06   |rad06_de|radacti ]
+[rad03   |rad04   |rad05   |rad05_de|rad06   |rad06_de|radacti ]
+
+}
+END -- s_rad
+Grid gr36
+{
+
+
+  ------ Rows[idx    ]/[cnt       ]  ----- Items[cn2        ]--------
+
+
+
+}
+END -- gr36
+END -- vb2
+END -- Form2
+
+TABLES
+rad_file,
+rac_file,
+rab_file
+ATTRIBUTES
+ButtonEdit rab01=rab_file.rab01, action=controlp, tabIndex=1, noEntry, not null, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rab01_desc=formonly.rab01_desc type CHAR, tabIndex=11, noEntry;
+CheckBox rab04=rab_file.rab04, tabIndex=5, default = "N", text=%"Rab04", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rab900=rab_file.rab900, tabIndex=12, noEntry, not null, items=(("0", "Issue"),("1", "Approved"),("9", "Voided"),("R", "Transfer for Approval"),("S", "Rejected"),("W", "Withdraw"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit rab02=rab_file.rab02, action=controlp, tabIndex=2, not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+CheckBox rab05=rab_file.rab05, tabIndex=6, default = "N", text=%"Rab05", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rabconf=rab_file.rabconf, tabIndex=13, noEntry, not null, items=(("Y", "Approved"),("N", "Unapproved"),("X", "Voided"));
+ButtonEdit rab03=rab_file.rab03, action=controlp, tabIndex=3, not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rab03_desc=formonly.rab03_desc type CHAR, tabIndex=9, noEntry;
+CheckBox rab06=rab_file.rab06, tabIndex=18, default = "Y", text=%"Rab06", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit rabcond=rab_file.rabcond, tabIndex=7, noEntry, century="";
+ButtonEdit rabplant=rab_file.rabplant, action=controlp, tabIndex=4, not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rabplant_des=formonly.rabplant_desc type CHAR, tabIndex=10, noEntry;
+CheckBox rabmksg=rab_file.rabmksg, tabIndex=19, default = "N", text=%"Rabmksg", not null, required, valueChecked = "Y", valueUnchecked = "N";
+TimeEdit rabcont=rab_file.rabcont, tabIndex=17;
+Edit rab11=rab_file.rab11, tabIndex=14;
+ButtonEdit rabconu=rab_file.rabconu, action=controlp, tabIndex=8, noEntry, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rabconu_desc=formonly.rabconu_desc type CHAR, tabIndex=15, noEntry;
+CheckBox rab07=rab_file.rab07, tabIndex=16, default = "N", text=%"Rab07", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rab08=rab_file.rab08, tabIndex=22, default = "N", text=%"Rab08", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rab09=rab_file.rab09, tabIndex=21, default = "N", text=%"Rab09", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rab10=rab_file.rab10, tabIndex=20, default = "N", text=%"Rab10", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rabuser=rab_file.rabuser, tabIndex=26, noEntry;
+Edit rabmodu=rab_file.rabmodu, tabIndex=25, noEntry;
+Edit rabacti=rab_file.rabacti, tabIndex=24, noEntry, upShift;
+Edit rabgrup=rab_file.rabgrup, tabIndex=23, noEntry;
+DateEdit rabdate=rab_file.rabdate, tabIndex=30, noEntry;
+DateEdit rabcrat=rab_file.rabcrat, tabIndex=27, noEntry;
+Edit raboriu=rab_file.raboriu, tabIndex=28, noEntry;
+Edit raborig=rab_file.raborig, tabIndex=29, noEntry;
+Edit rac03=rac_file.rac03, tabIndex=31, title="rac03", not null, required;
+ComboBox rac04=rac_file.rac04, tabIndex=32, title="rac04", not null, required, items=(("1", "temai"),("2", "zhekou"),("3", "zherang"));
+Edit rac05=rac_file.rac05, tabIndex=33, title="rac05", not null, required;
+Edit rac06=rac_file.rac06, tabIndex=34, title="rac06", not null, required;
+Edit rac07=rac_file.rac07, tabIndex=35, title="rac07", not null, required;
+CheckBox rac08=rac_file.rac08, tabIndex=36, default = "N", title="rac08", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rac09=rac_file.rac09, tabIndex=37, title="rac09", not null, required;
+Edit rac10=rac_file.rac10, tabIndex=38, title="rac10", not null, required;
+Edit rac11=rac_file.rac11, tabIndex=39, title="rac11", not null, required;
+DateEdit rac12=rac_file.rac12, tabIndex=40, title="rac12", not null, required;
+TimeEdit rac14=rac_file.rac14, tabIndex=41, title="rac14", not null, required;
+DateEdit rac13=rac_file.rac13, tabIndex=42, title="rac13", not null, required;
+TimeEdit rac15=rac_file.rac15, tabIndex=43, title="rac15", not null, required;
+CheckBox racacti=rac_file.racacti, tabIndex=44, default = "Y", title="racacti", not null, required, valueChecked = "Y";
+CheckBox racpos=rac_file.racpos, tabIndex=45, title="racpos", noEntry;
+Edit rad03=rad_file.rad03, tabIndex=46, title="rad03", not null, required;
+ComboBox rad04=rad_file.rad04, tabIndex=47, title="rad04", not null, required, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"));
+ButtonEdit rad05=rad_file.rad05, action=controlp, tabIndex=48, title="rad05", not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rad05_de=formonly.rad05_desc type CHAR, tabIndex=49, title="rad05_desc", noEntry;
+ButtonEdit rad06=rad_file.rad06, action=controlp, tabIndex=50, title="rad06", not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rad06_de=formonly.rad06_desc type CHAR, tabIndex=51, title="rad06_desc", noEntry;
+CheckBox radacti=rad_file.radacti, tabIndex=52, default = "Y", title="radacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=53, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=54, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=55;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rac(rac_file.rac03,rac_file.rac04,rac_file.rac05,rac_file.rac06,rac_file.rac07,rac_file.rac08,rac_file.rac09,rac_file.rac10,rac_file.rac11,rac_file.rac12,rac_file.rac14,rac_file.rac13,rac_file.rac15,rac_file.racacti,rac_file.racpos)
+SCREEN RECORD s_rad(rad_file.rad03,rad_file.rad04,rad_file.rad05,formonly.rad05_desc,rad_file.rad06,formonly.rad06_desc,rad_file.radacti)
+SCREEN RECORD Undefined(rab_file.rab01,formonly.rab01_desc,rab_file.rab04,rab_file.rab900,formonly.imgmksg,rab_file.rab02,rab_file.rab05,rab_file.rabconf,rab_file.rab03,formonly.rab03_desc,rab_file.rab06,rab_file.rabcond,rab_file.rabplant,formonly.rabplant_desc,rab_file.rabmksg,rab_file.rabcont,rab_file.rab11,rab_file.rabconu,formonly.rabconu_desc,rab_file.rab07,rab_file.rab08,rab_file.rab09,rab_file.rab10,rab_file.rabuser,rab_file.rabmodu,rab_file.rabacti,rab_file.rabgrup,rab_file.rabdate,rab_file.rabcrat,rab_file.raboriu,rab_file.raborig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

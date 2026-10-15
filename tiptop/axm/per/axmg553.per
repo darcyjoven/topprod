@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmg553.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr553")
+VBox vb4
+Grid gr8
+{
+ <G group01                                      >
+  Invoice Doc. No.     [ofa01               ]
+  Invoice Date         [ofa02               ]
+  Advice No.           [ofa011              ]
+ <                                               >
+ <G group02                                      >
+  [d                                        ]
+  [b                                        ]
+  [a                                      ]
+  [c                                      ]
+  [e                                          ]
+ <                                               >
+}
+END -- gr8
+Grid gr9
+{
+[more                                      ]
+
+}
+END -- gr9
+END -- vb4
+END -- axmr553
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ofa01=formonly.ofa01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit ofa02=formonly.ofa02 type DATE, tabIndex=2;
+Edit ofa011=formonly.ofa011 type VARCHAR, tabIndex=3;
+Group group02:group02, text="INPUT";
+CheckBox d=formonly.d type VARCHAR, tabIndex=4, text="Print Cust Item No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=5, text="Print Remarks", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox a=formonly.a type VARCHAR, tabIndex=7, text="Print Full Company Name for Internal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=8, text="Print Full Company Name for External", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=9, text="Print Additional Description Category", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ofa01,formonly.ofa02,formonly.ofa011,formonly.d,formonly.b,formonly.a,formonly.c,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

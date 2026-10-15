@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti111_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"arti111_a")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"QBE Condition")
+Grid Grid1
+{
+ Item No.     [ima01             ]      Type         [ima1007          ]
+ Category     [ima1004           ]      Spec         [ima1008          ]
+ Brand        [ima1005           ]      Attribute    [ima1009          ]
+ Catena       [ima1006           ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Folder Folder2
+Page Page3(text=%"Input Condition")
+Grid Grid3
+{
+
+  The type of barcode  [rta04                 ]
+  Unit                 [rta03                 ]
+
+}
+END -- Grid3
+END -- Page3
+END -- Folder2
+Folder Folder3
+Page Page5(text=%"Encoding ")
+Grid Grid2
+{
+
+  [radio                                             ]
+  [                                                  ]
+  [                                                  ]
+   The nature of encoding    [geh01                   ]
+   The type of encoding      [gei01                   ]
+
+}
+END -- Grid2
+END -- Page5
+END -- Folder3
+END -- VBox1
+END -- arti111_a
+
+ATTRIBUTES
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=3, image="zoom.png";
+ButtonEdit ima1007=formonly.ima1007 type VARCHAR, action=controlp, tabIndex=8, image="zoom.png";
+ButtonEdit ima1004=formonly.ima1004 type VARCHAR, action=controlp, tabIndex=4, image="zoom.png";
+ButtonEdit ima1008=formonly.ima1008 type VARCHAR, action=controlp, tabIndex=7, image="zoom.png";
+ButtonEdit ima1005=formonly.ima1005 type VARCHAR, action=controlp, tabIndex=5, image="zoom.png";
+ButtonEdit ima1009=formonly.ima1009 type VARCHAR, action=controlp, tabIndex=9, image="zoom.png";
+ButtonEdit ima1006=formonly.ima1006 type VARCHAR, action=controlp, tabIndex=6, image="zoom.png";
+ComboBox rta04=formonly.rta04 type VARCHAR, tabIndex=1, not null, items=(("1", %"before codebar"),("2", %"owner encoding"));
+ComboBox rta03=formonly.rta03 type CHAR, tabIndex=2, not null, items=(("1", %"Sales Unit"),("2", %"Inventory Unit"));
+RadioGroup radio=formonly.radio type VARCHAR, tabIndex=12, required, items=(("1", "Consistent with the Item No."),("2", "In accordance with the principles of encoding"));
+ButtonEdit geh01=formonly.geh01 type VARCHAR, action=controlp, tabIndex=10, image="zoom.png";
+ButtonEdit gei01=formonly.gei01 type VARCHAR, action=controlp, tabIndex=11, image="zoom.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima1007,formonly.ima1004,formonly.ima1008,formonly.ima1005,formonly.ima1009,formonly.ima1006,formonly.rta04,formonly.rta03,formonly.radio,formonly.geh01,formonly.gei01)
+END -- INSTRUCTIONS
+

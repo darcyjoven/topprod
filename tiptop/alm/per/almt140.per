@@ -1,0 +1,188 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt140.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+[label1        |lib01                 ]                  [label11    |lib09           ]                  [label19    ] [lib14           ]
+[label2        |lib02                 ]                  [label12    |lib10           ]                                [libmksg                     ]
+[label3        |lib03                 ]                  [label13    |lib11           ]                  [label20     ][lib16          ][imgmksg]
+[label4        |lib04                 ]                  [label14    |lib091          ]                  [label21     ][libconf        ][       ]
+[label5        |lib05                 ]                  [label15    |lib101          ]                  [label22     ][libconu        ][libconu_desc]
+[label6        |lib06                 ]                  [label16    |lib111          ]                  [label23     ][libcond        ]
+[label7        |libplant              |libplant_desc     |label17    |lib12           |lib12_desc       ][label24     ][lib15                        ]
+[label8        |liblegal              |liblegal_desc     |label18    |lib13                             ]              [                             ]
+[label9        |lib07                 |lib07_desc        ]           [                                  ]              [                             ]
+[label10       |lib08                 |lib08_desc        ]
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid2
+{
+
+[label25   ][libuser      ] [label28   ] [libmodu       ] [label31   ][libacti        ]
+[label26   ][libgrup      ] [label29   ] [libdate       ] [label32   ][libcrat        ]
+[label27   ][liboriu      ] [label30   ] [liborig       ]
+
+
+
+
+
+
+
+}
+END -- Grid2
+END -- Page2
+END -- Folder1
+Folder Folder2
+Page Page3(action=changdi, text=%"Page3")
+Table Table1
+{
+[lic02       |lic03             |lic04      |lic04_desc    |lic05        |lic05_desc    |lic06        |lic07     |lic08      |licacti ]
+[lic02       |lic03             |lic04      |lic04_desc    |lic05        |lic05_desc    |lic06        |lic07     |lic08      |licacti ]
+[lic02       |lic03             |lic04      |lic04_desc    |lic05        |lic05_desc    |lic06        |lic07     |lic08      |licacti ]
+[lic02       |lic03             |lic04      |lic04_desc    |lic05        |lic05_desc    |lic06        |lic07     |lic08      |licacti ]
+[lic02       |lic03             |lic04      |lic04_desc    |lic05        |lic05_desc    |lic06        |lic07     |lic08      |licacti ]
+
+}
+END -- Table1
+END -- Page3
+Page Page4(action=xiaolei, text=%"Page4")
+Table Table2
+{
+[lid02        |lid03         |lid03_desc     |lidacti        ]
+[lid02        |lid03         |lid03_desc     |lidacti        ]
+[lid02        |lid03         |lid03_desc     |lidacti        ]
+[lid02        |lid03         |lid03_desc     |lidacti        ]
+[lid02        |lid03         |lid03_desc     |lidacti        ]
+}
+END -- Table2
+END -- Page4
+END -- Folder2
+Grid Grid3
+{
+ ----------[label33   |idx       ][label34   |cnt     ] ------[label35   |c1        |label36   |c2        ]------------
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+TABLES
+lic_file,
+lib_file,
+lid_file
+ATTRIBUTES
+Label label1:Label1, text=%"lib01";
+ButtonEdit lib01=formonly.lib01 type like lib_file.lib01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Label label11:Label11, text=%"lib09";
+Edit lib09=formonly.lib09 type like lib_file.lib09, tabIndex=15, noEntry;
+Label label19:Label19, text=%"lib14";
+ComboBox lib14=formonly.lib14 type like lib_file.lib14, tabIndex=23, noEntry, not null, items=(("1", "1"),("2", "2"),("3", "3"));
+Label label2:Label2, text=%"lib02";
+DateEdit lib02=formonly.lib02 type like lib_file.lib02, tabIndex=2, not null, required;
+Label label12:Label12, text=%"lib10";
+Edit lib10=formonly.lib10 type like lib_file.lib10, tabIndex=16, noEntry;
+CheckBox libmksg=formonly.libmksg type CHAR, tabIndex=24, text=%"CheckBox1", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Label label3:Label3, text=%"lib03";
+ComboBox lib03=formonly.lib03 type like lib_file.lib03, tabIndex=3, not null, required, items=(("1", "1"),("2", "2"),("3", "3"));
+Label label13:Label13, text=%"lib11";
+Edit lib11=formonly.lib11 type like lib_file.lib11, tabIndex=17, noEntry;
+Label label20:Label20, text=%"lib16";
+ComboBox lib16=formonly.lib16 type CHAR, tabIndex=25, noEntry, not null, items=(("0", "0"),("1", "1"),("2", "2"),("S", "S"),("W", "W"),("R", "R"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Label label4:Label4, text=%"lib04";
+ButtonEdit lib04=formonly.lib04 type like lib_file.lib04, action=controlp, tabIndex=4, image="zoom";
+Label label14:Label14, text=%"lib091";
+Edit lib091=formonly.lib091 type like lib_file.lib091, tabIndex=18, noEntry;
+Label label21:Label21, text=%"libconf";
+ComboBox libconf=formonly.libconf type like lib_file.libconf, tabIndex=26, noEntry, not null, items=(("N", "N"),("Y", "Y"));
+Label label5:Label5, text=%"lib05";
+ButtonEdit lib05=formonly.lib05 type like lib_file.lib05, action=controlp, tabIndex=5, not null, required, image="zoom";
+Label label15:Label15, text=%"lib101";
+Edit lib101=formonly.lib101 type like lib_file.lib101, tabIndex=19, noEntry;
+Label label22:Label22, text=%"libconu";
+ButtonEdit libconu=formonly.libconu type like lib_file.libconu, action=controlp, tabIndex=27, noEntry, image="zoom";
+Edit libconu_desc=formonly.libconu_desc type CHAR, tabIndex=28, noEntry;
+Label label6:Label6, text=%"lib06";
+Edit lib06=formonly.lib06 type like lib_file.lib06, tabIndex=6, noEntry;
+Label label16:Label16, text=%"lib111";
+Edit lib111=formonly.lib111 type like lib_file.lib111, tabIndex=20, noEntry;
+Label label23:Label23, text=%"libcond";
+DateEdit libcond=formonly.libcond type like lib_file.libcond, tabIndex=29, noEntry;
+Label label7:Label7, text=%"libplant";
+ButtonEdit libplant=formonly.libplant type like lib_file.libplant, action=controlp, tabIndex=7, noEntry, image="zoom";
+Edit libplant_desc=formonly.libplant_desc type CHAR, tabIndex=8, noEntry;
+Label label17:Label17, text=%"lib12";
+ButtonEdit lib12=formonly.lib12 type like lib_file.lib12, action=controlp, tabIndex=21, not null, required, image="zoom";
+Edit lib12_desc=formonly.lib12_desc type CHAR, tabIndex=57, noEntry;
+Label label24:Label24, text=%"lib15";
+TextEdit lib15=formonly.lib15 type like lib_file.lib15, tabIndex=30;
+Label label8:Label8, text=%"liblegal";
+ButtonEdit liblegal=formonly.liblegal type like lib_file.liblegal, action=controlp, tabIndex=9, noEntry, image="zoom";
+Edit liblegal_desc=formonly.liblegal_desc type CHAR, tabIndex=10, noEntry;
+Label label18:Label18, text=%"lib13";
+TextEdit lib13=formonly.lib13 type like lib_file.lib13, tabIndex=22;
+Label label9:Label9, text=%"lib07";
+ButtonEdit lib07=formonly.lib07 type like lib_file.lib07, action=controlp, tabIndex=11, not null, required, image="zoom";
+Edit lib07_desc=formonly.lib07_desc type CHAR, tabIndex=12, noEntry;
+Label label10:Label10, text=%"lib08";
+ButtonEdit lib08=formonly.lib08 type like lib_file.lib08, action=controlp, tabIndex=13, not null, required, image="zoom";
+Edit lib08_desc=formonly.lib08_desc type CHAR, tabIndex=14, noEntry;
+Label label25:Label25, text=%"libuser";
+Edit libuser=formonly.libuser type like lib_file.libuser, tabIndex=31, noEntry;
+Label label28:Label28, text=%"libmodu";
+Edit libmodu=formonly.libmodu type like lib_file.libmodu, tabIndex=34, noEntry;
+Label label31:Label31, text=%"libacti";
+Edit libacti=formonly.libacti type like lib_file.libacti, tabIndex=37, noEntry;
+Label label26:Label26, text=%"libgrup";
+Edit libgrup=formonly.libgrup type like lib_file.libgrup, tabIndex=32, noEntry;
+Label label29:Label29, text=%"libdate";
+Edit libdate=formonly.libdate type like lib_file.libdate, tabIndex=35, noEntry;
+Label label32:Label32, text=%"libcrat";
+Edit libcrat=formonly.libcrat type like lib_file.libcrat, tabIndex=38, noEntry;
+Label label27:Label27, text=%"liboriu";
+Edit liboriu=formonly.liboriu type like lib_file.liboriu, tabIndex=33, noEntry;
+Label label30:Label30, text=%"liborig";
+Edit liborig=formonly.liborig type like lib_file.liborig, tabIndex=36, noEntry;
+ComboBox lic02=lic_file.lic02, tabIndex=39, title=%"lic02", noEntry, not null, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"));
+ButtonEdit lic03=lic_file.lic03, action=controlp, tabIndex=40, title=%"lic03", not null, required, image="zoom";
+ButtonEdit lic04=lic_file.lic04, action=controlp, tabIndex=43, title=%"lic04", noEntry, image="zoom";
+Edit lic04_desc=formonly.lic04_desc type CHAR, tabIndex=44, title=%"lic04_desc", noEntry;
+ButtonEdit lic05=lic_file.lic05, action=controlp, tabIndex=45, title=%"lic05", noEntry, image="zoom";
+Edit lic05_desc=formonly.lic05_desc type CHAR, tabIndex=46, title=%"lic05_desc", noEntry;
+Edit lic06=lic_file.lic06, tabIndex=47, title=%"lic06", noEntry, not null;
+Edit lic07=lic_file.lic07, tabIndex=48, title=%"lic07", noEntry;
+Edit lic08=lic_file.lic08, tabIndex=49, title=%"lic08", noEntry;
+CheckBox licacti=lic_file.licacti, tabIndex=50, title=%"licacti", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox lid02=lid_file.lid02, tabIndex=41, title=%"lid02", noEntry, not null, items=(("0", "0"),("1", "1"),("3", "3"));
+ButtonEdit lid03=lid_file.lid03, action=controlp, tabIndex=42, title=%"lid03", not null, required, image="zoom";
+Edit lid03_desc=formonly.lid03_desc type CHAR, tabIndex=51, title=%"lid03_desc", noEntry;
+CheckBox lidacti=lid_file.lidacti, tabIndex=52, title=%"lidacti", text=%"", valueChecked = "Y", valueUnchecked = "N";
+Label label33:Label33, text=%"Label33";
+Edit idx=formonly.idx type CHAR, tabIndex=53, noEntry;
+Label label34:Label34, text=%"Label34";
+Edit cnt=formonly.cnt type CHAR, tabIndex=54, noEntry;
+Label label35:Label35, text=%"Label35";
+Edit c1=formonly.c1 type CHAR, tabIndex=55, noEntry;
+Label label36:Label36, text=%"Label36";
+Edit c2=formonly.c2 type CHAR, tabIndex=56, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.lib01,formonly.lib02,formonly.lib03,formonly.lib04,formonly.lib05,formonly.lib06,formonly.libplant,formonly.libplant_desc,formonly.liblegal,formonly.liblegal_desc,formonly.lib07,formonly.lib07_desc,formonly.lib08,formonly.lib08_desc,formonly.lib09,formonly.lib10,formonly.lib11,formonly.lib091,formonly.lib101,formonly.lib111,formonly.lib12,formonly.lib13,formonly.lib14,formonly.libmksg,formonly.lib16,formonly.libconf,formonly.libconu,formonly.libconu_desc,formonly.libcond,formonly.lib15,formonly.libuser,formonly.libgrup,formonly.liboriu,formonly.libmodu,formonly.libdate,formonly.liborig,formonly.libacti,formonly.libcrat,formonly.idx,formonly.cnt,formonly.c1,formonly.c2,formonly.lib12_desc,formonly.imgmksg)
+SCREEN RECORD s_lic(lic_file.lic02,lic_file.lic03,lic_file.lic04,formonly.lic04_desc,lic_file.lic05,formonly.lic05_desc,lic_file.lic06,lic_file.lic07,lic_file.lic08,lic_file.licacti)
+SCREEN RECORD s_lid(lid_file.lid02,lid_file.lid03,formonly.lid03_desc,lid_file.lidacti)
+END -- INSTRUCTIONS
+

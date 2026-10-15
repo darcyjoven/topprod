@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox vbox1
+Folder folder1
+Page page1(text=%"Page1")
+Grid grid1
+{
+
+  hrap01 [hrap01              ] hrap02[hrap02                ]
+
+[label2] [hrap13             |label1   |hrap14                ]   [label3       ] [hrap15             ]
+
+}
+END -- grid1
+END -- page1
+END -- folder1
+Table table1
+{
+[hrap04  |hrap05        |hrap06           |hrap07  |hrap08  |hrap09         |hrap10        |hrap11       |hrap12         |hrapacti  ]
+[hrap04  |hrap05        |hrap06           |hrap07  |hrap08  |hrap09         |hrap10        |hrap11       |hrap12         |hrapacti  ]
+[hrap04  |hrap05        |hrap06           |hrap07  |hrap08  |hrap09         |hrap10        |hrap11       |hrap12         |hrapacti  ]
+[hrap04  |hrap05        |hrap06           |hrap07  |hrap08  |hrap09         |hrap10        |hrap11       |hrap12         |hrapacti  ]
+[hrap04  |hrap05        |hrap06           |hrap07  |hrap08  |hrap09         |hrap10        |hrap11       |hrap12         |hrapacti  ]
+}
+END -- table1
+Grid grid2
+{
+
+  ---------[cnt   ]/[cn2  ]----------------
+}
+END -- grid2
+END -- vbox1
+END -- ghri002
+
+ATTRIBUTES
+ButtonEdit hrap01=formonly.hrap01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrap02=formonly.hrap02 type VARCHAR, tabIndex=2, noEntry;
+Label label2:label2, text=%"hrap13";
+Edit hrap13=formonly.hrap13 type CHAR, tabIndex=13;
+Label label1:label1, text=%"hrap14";
+Edit hrap14=formonly.hrap14 type CHAR, tabIndex=12;
+Label label3:label3, text=%"hrap15";
+Edit hrap15=formonly.hrap15 type CHAR, tabIndex=14;
+Edit hrap04=formonly.hrap04 type INTEGER, tabIndex=3, title=%"hrap04", not null, required;
+ButtonEdit hrap05=formonly.hrap05 type VARCHAR, action=controlp, tabIndex=4, title=%"hrap05", not null, required, image="zoom";
+Edit hrap06=formonly.hrap06 type VARCHAR, tabIndex=7, title=%"hrap06", noEntry;
+CheckBox hrap07=formonly.hrap07 type VARCHAR, tabIndex=8, title=%"hrap07", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrap08=formonly.hrap08 type VARCHAR, tabIndex=9, title=%"hrap08", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit hrap09=formonly.hrap09 type VARCHAR, action=controlp, tabIndex=10, title=%"hrap09", image="zoom";
+Edit hrap10=formonly.hrap10 type CHAR, tabIndex=15, title=%"hrap10";
+Edit hrap11=formonly.hrap11 type CHAR, tabIndex=16, title=%"hrap11";
+Edit hrap12=formonly.hrap12 type CHAR, tabIndex=17, title=%"hrap12";
+CheckBox hrapacti=formonly.hrapacti type VARCHAR, tabIndex=11, title=%"hrapacti", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.hrap01,formonly.hrap02,formonly.cnt,formonly.cn2,formonly.hrap14,formonly.hrap13,formonly.hrap15)
+SCREEN RECORD s_hrap(formonly.hrap04,formonly.hrap05,formonly.hrap06,formonly.hrap07,formonly.hrap08,formonly.hrap09,formonly.hrap10,formonly.hrap11,formonly.hrap12,formonly.hrapacti)
+END -- INSTRUCTIONS
+

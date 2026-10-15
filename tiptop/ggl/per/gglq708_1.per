@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq708_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq708_1")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+Grid gr5447
+{
+
+ Account No.         [ted02                   ][ted02_d                                 ]          Dimension Sequence  [a         ]
+
+}
+END -- gr5447
+END -- page01
+END -- folder01
+Table s_abb
+{
+[aag01     |aag02     |yy        |mm        |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01     |aag02     |yy        |mm        |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01     |aag02     |yy        |mm        |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01     |aag02     |yy        |mm        |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01     |aag02     |yy        |mm        |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01     |aag02     |yy        |mm        |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01     |aag02     |yy        |mm        |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01     |aag02     |yy        |mm        |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01     |aag02     |yy        |mm        |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01     |aag02     |yy        |mm        |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+
+}
+END -- s_abb
+Grid gr5449
+{
+ ----------- Rows [cnt   ] -----------
+
+}
+END -- gr5449
+END -- vb3
+END -- gglq7021_1
+
+TABLES
+abb_file,
+aba_file
+ATTRIBUTES
+Edit ted02=formonly.ted02 type VARCHAR, tabIndex=1;
+Edit ted02_d=formonly.ted02_d type VARCHAR, tabIndex=3;
+Edit a=formonly.a type VARCHAR, tabIndex=18;
+Edit aag01=formonly.aag01 type VARCHAR, tabIndex=4, title="aag01";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=5, title="aag02";
+Edit yy=formonly.yy type CHAR, tabIndex=6, title="yy";
+Edit mm=formonly.mm type CHAR, tabIndex=7, title="mm";
+DateEdit aba02=aba_file.aba02, tabIndex=8, title="Voucher Date";
+Edit aba01=aba_file.aba01, tabIndex=9, title="Voucher No.";
+Edit abb04=abb_file.abb04, tabIndex=10, title="Memo";
+Edit abb24=abb_file.abb24, tabIndex=11, title="Currency";
+Edit df=formonly.df type CHAR, tabIndex=12, title="Debit Amount (Trans. Curr.)";
+Edit abb25_d=formonly.abb25_d type DECIMAL, tabIndex=13, title="Exchange Rate";
+Edit d=formonly.d type CHAR, tabIndex=14, title="Debit Amount (Local. Curr.)";
+Edit cf=formonly.cf type CHAR, tabIndex=15, title="Credit Amount (Trans. Curr.)";
+Edit abb25_c=formonly.abb25_c type CHAR, tabIndex=16, title="Exchange Rate";
+Edit c=formonly.c type CHAR, tabIndex=17, title="Credit Amount (Local. Curr.)";
+Edit dc=formonly.dc type CHAR, tabIndex=18, title="D/C";
+Edit balf=formonly.balf type CHAR, tabIndex=19, title="Balance T.C Amt";
+Edit abb25_bal=formonly.abb25_bal type CHAR, tabIndex=20, title="Exchange Rate";
+Edit bal=formonly.bal type CHAR, tabIndex=21, title="Balance L.C Amt";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abb(formonly.aag01,formonly.aag02,formonly.yy,formonly.mm,aba_file.aba02,aba_file.aba01,abb_file.abb04,abb_file.abb24,formonly.df,formonly.abb25_d,formonly.d,formonly.cf,formonly.abb25_c,formonly.c,formonly.dc,formonly.balf,formonly.abb25_bal,formonly.bal)
+SCREEN RECORD Undefined(formonly.ted02,formonly.ted02_d,formonly.a,formonly.cnt)
+END -- INSTRUCTIONS
+

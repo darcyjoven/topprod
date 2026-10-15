@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_j.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt110_j")
+VBox vb3
+Table s_apk
+{
+[apk0|apk11    |apk|apk28       |apk03           |apk04               |apl02                         |apk05     |apk29|apk08f                  |apk08               |apk07f                |apk07             |apk06f                     |apk06                  |apk1|apk30     |apk32        ]
+[apk0|apk11    |apk|apk28       |apk03           |apk04               |apl02                         |apk05     |apk29|apk08f                  |apk08               |apk07f                |apk07             |apk06f                     |apk06                  |apk1|apk30     |apk32        ]
+[apk0|apk11    |apk|apk28       |apk03           |apk04               |apl02                         |apk05     |apk29|apk08f                  |apk08               |apk07f                |apk07             |apk06f                     |apk06                  |apk1|apk30     |apk32        ]
+[apk0|apk11    |apk|apk28       |apk03           |apk04               |apl02                         |apk05     |apk29|apk08f                  |apk08               |apk07f                |apk07             |apk06f                     |apk06                  |apk1|apk30     |apk32        ]
+[apk0|apk11    |apk|apk28       |apk03           |apk04               |apl02                         |apk05     |apk29|apk08f                  |apk08               |apk07f                |apk07             |apk06f                     |apk06                  |apk1|apk30     |apk32        ]
+[apk0|apk11    |apk|apk28       |apk03           |apk04               |apl02                         |apk05     |apk29|apk08f                  |apk08               |apk07f                |apk07             |apk06f                     |apk06                  |apk1|apk30     |apk32        ]
+[apk0|apk11    |apk|apk28       |apk03           |apk04               |apl02                         |apk05     |apk29|apk08f                  |apk08               |apk07f                |apk07             |apk06f                     |apk06                  |apk1|apk30     |apk32        ]
+[apk0|apk11    |apk|apk28       |apk03           |apk04               |apl02                         |apk05     |apk29|apk08f                  |apk08               |apk07f                |apk07             |apk06f                     |apk06                  |apk1|apk30     |apk32        ]
+[apk0|apk11    |apk|apk28       |apk03           |apk04               |apl02                         |apk05     |apk29|apk08f                  |apk08               |apk07f                |apk07             |apk06f                     |apk06                  |apk1|apk30     |apk32        ]
+[apk0|apk11    |apk|apk28       |apk03           |apk04               |apl02                         |apk05     |apk29|apk08f                  |apk08               |apk07f                |apk07             |apk06f                     |apk06                  |apk1|apk30     |apk32        ]
+}
+END -- s_apk
+Grid gr360
+{
+ <G group01                                                                  >
+  [l_tot1f   ][l_tot1    ][l_tot2f ][l_tot2  ][l_tot3f   ][l_tot3    ]
+
+ <                                                                           >
+
+
+}
+END -- gr360
+END -- vb3
+END -- aapt110_j
+
+TABLES
+apk_file
+ATTRIBUTES
+Edit apk0=apk_file.apk02, tabIndex=1, title="Ln#", not null, required, comment="Assign Bill No. Line No.  ";
+ButtonEdit apk11=apk_file.apk11, action=controlp, tabIndex=24, title=%"Tax Type", image="zoom";
+ComboBox apk=apk_file.apk172, tabIndex=15, title="Ded", queryEditable, items=(("A", "Agric Purchase Voucher"),("T", "Transportation Invoice"),("W", "Abolish Goods Purchase Evidence"),("Z", "Other"),("S", "Withhold Invoice"),("N", "Non-Credit Invoice"),("G", "Customhouse Impose duty-paid proof"),("X", "No application"));
+Edit apk28=apk_file.apk28, tabIndex=2, title="Invo. Code";
+Edit apk03=apk_file.apk03, tabIndex=3, title="Invo. No.", upShift;
+Edit apk04=apk_file.apk04, tabIndex=4, title="Uniform#";
+Edit apl02=formonly.apl02 type CHAR, tabIndex=5, title="Vender", noEntry;
+DateEdit apk05=apk_file.apk05, tabIndex=6, title="Invo.Date";
+Edit apk29=apk_file.apk29, tabIndex=7, title="TxRa";
+Edit apk08f=apk_file.apk08f, tabIndex=8, title="Original Currency B-Tax";
+Edit apk08=apk_file.apk08, tabIndex=9, title="Home Currency B-Tax", not null, required;
+Edit apk07f=apk_file.apk07f, tabIndex=10, title="Original Currency Tax";
+Edit apk07=apk_file.apk07, tabIndex=11, title="Home Currency Tax", not null, required;
+Edit apk06f=apk_file.apk06f, tabIndex=12, title="Original Currency With-Tax", noEntry;
+Edit apk06=apk_file.apk06, tabIndex=13, title="Home Currency With-Tax", noEntry, not null, required;
+Edit apk1=apk_file.apk171, tabIndex=14, title="Form", noEntry;
+Edit apk30=apk_file.apk30, tabIndex=16, title="Qty", comment="Please Input QTY.";
+ButtonEdit apk32=apk_file.apk32, action=controlp, tabIndex=23, title="Declaration No.", image="zoom";
+Group group01:group01, text="Total";
+Edit l_tot1f=formonly.l_tot1f type CHAR, tabIndex=17;
+Edit l_tot1=formonly.l_tot1 type CHAR, tabIndex=18;
+Edit l_tot2f=formonly.l_tot2f type CHAR, tabIndex=19;
+Edit l_tot2=formonly.l_tot2 type CHAR, tabIndex=20;
+Edit l_tot3f=formonly.l_tot3f type CHAR, tabIndex=21;
+Edit l_tot3=formonly.l_tot3 type CHAR, tabIndex=22;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apk(apk_file.apk02,apk_file.apk11,apk_file.apk172,apk_file.apk28,apk_file.apk03,apk_file.apk04,formonly.apl02,apk_file.apk05,apk_file.apk29,apk_file.apk08f,apk_file.apk08,apk_file.apk07f,apk_file.apk07,apk_file.apk06f,apk_file.apk06,apk_file.apk171,apk_file.apk30,apk_file.apk32)
+SCREEN RECORD Undefined(formonly.l_tot1f,formonly.l_tot1,formonly.l_tot2f,formonly.l_tot2,formonly.l_tot3f,formonly.l_tot3)
+END -- INSTRUCTIONS
+

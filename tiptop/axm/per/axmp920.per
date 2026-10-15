@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp920.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmp920")
+Grid Grid1
+{
+ <G group01                                                      >
+  Item No.            [ima01               ]
+  Source Code         [ima08               ]
+  Period              [bdate      ]-[edate     ]
+
+ [dummy03    ]        [dummy01                                   ]
+                      [dummy02                                   ]
+ <                                                               >
+
+}
+END -- Grid1
+END -- axmp920
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:group01;
+Edit ima01=ima_file.ima01, tabIndex=1, not null, required;
+Edit ima08=ima_file.ima08, tabIndex=2;
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=3;
+DateEdit edate=formonly.edate type CHAR, tabIndex=4;
+Label dummy03:dummy03, text="Note";
+Label dummy01:dummy01, text="1.It\'ll Collect Period Sales Order Item Price and Calculate and Update to Item Master";
+Label dummy02:dummy02, text="2.Convert Foreign Currency U/P to Home Currency then Update it";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima08,formonly.bdate,formonly.edate)
+END -- INSTRUCTIONS
+

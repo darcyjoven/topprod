@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjp200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjp200")
+VBox vb3
+Grid gr1
+{
+ <G qbe                                       >
+
+      Job Item Code   [pjj04             ]
+      Network No.     [pjj01             ]
+      Default Date    [d_date            ]
+
+ <                                            >
+}
+END -- gr1
+Grid gr6
+{
+ [g_bgjob                                     ]
+
+}
+END -- gr6
+END -- vb3
+END -- apjp200
+
+ATTRIBUTES
+Group qbe:QBE, text="QBE";
+ButtonEdit pjj04=formonly.pjj04 type VARCHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit pjj01=formonly.pjj01 type VARCHAR, action=controlp, tabIndex=2, image="zoom.png";
+DateEdit d_date=formonly.d_date type DATE, tabIndex=3;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=4, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pjj04,formonly.pjj01,formonly.d_date,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

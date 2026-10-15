@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq520b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq520b")
+Folder pc964
+Page page01(text="Page01")
+VBox VBox1
+Table s_rvv
+{
+[rvv09   |rvv01     |rvv04     |rvb22           |rvv17    |apb01     |apb02     |apb09   ]
+[rvv09   |rvv01     |rvv04     |rvb22           |rvv17    |apb01     |apb02     |apb09   ]
+[rvv09   |rvv01     |rvv04     |rvb22           |rvv17    |apb01     |apb02     |apb09   ]
+[rvv09   |rvv01     |rvv04     |rvb22           |rvv17    |apb01     |apb02     |apb09   ]
+[rvv09   |rvv01     |rvv04     |rvb22           |rvv17    |apb01     |apb02     |apb09   ]
+[rvv09   |rvv01     |rvv04     |rvb22           |rvv17    |apb01     |apb02     |apb09   ]
+[rvv09   |rvv01     |rvv04     |rvb22           |rvv17    |apb01     |apb02     |apb09   ]
+[rvv09   |rvv01     |rvv04     |rvb22           |rvv17    |apb01     |apb02     |apb09   ]
+[rvv09   |rvv01     |rvv04     |rvb22           |rvv17    |apb01     |apb02     |apb09   ]
+[rvv09   |rvv01     |rvv04     |rvb22           |rvv17    |apb01     |apb02     |apb09   ]
+
+}
+END -- s_rvv
+END -- VBox1
+END -- page01
+END -- pc964
+END -- apmq520b
+
+TABLES
+rvv_file,
+rvb_file,
+apb_file
+ATTRIBUTES
+DateEdit rvv09=rvv_file.rvv09, tabIndex=1, title="St-in Dt";
+Edit rvv01=rvv_file.rvv01, tabIndex=2, title="Store-in#";
+Edit rvv04=rvv_file.rvv04, tabIndex=3, title="Receipt#";
+Edit rvb22=rvb_file.rvb22, tabIndex=4, title="Invoice#";
+Edit rvv17=rvv_file.rvv17, tabIndex=5, title="St-in Qty";
+Edit apb01=apb_file.apb01, tabIndex=6, title="Bill#";
+Edit apb02=apb_file.apb02, tabIndex=8, title=%"Bill Ln#";
+Edit apb09=apb_file.apb09, tabIndex=7, title="Bill.Qty";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvv(rvv_file.rvv09,rvv_file.rvv01,rvv_file.rvv04,rvb_file.rvb22,rvv_file.rvv17,apb_file.apb01,apb_file.apb02,apb_file.apb09)
+END -- INSTRUCTIONS
+

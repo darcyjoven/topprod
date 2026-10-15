@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli102_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Add Extra Name")
+Grid gr2367
+{
+ <G group01                                 >
+ [only_one                               ]
+ <                                          >
+ <G group02                                >
+  Book No                  [aag00     ]
+  Payment Slip# QBE       [aag01          ]
+
+ <                                         >
+
+
+}
+END -- gr2367
+END -- agli102_1
+
+TABLES
+aag_file
+ATTRIBUTES
+Group group01:group01, text="Add Extra Name Condition";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, items=(("1", "Add by this Subject only"),("2", "Add  by QBE Condition"));
+Group group02:group02, text="Enter Condition to Add Name:";
+ButtonEdit aag00=aag_file.aag00, action=controlp, tabIndex=3, image="zoom.png", comment="<^P> Qry Book No.";
+ButtonEdit aag01=aag_file.aag01, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Account No. ";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,aag_file.aag00,aag_file.aag01)
+END -- INSTRUCTIONS
+

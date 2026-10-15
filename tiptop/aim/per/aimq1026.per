@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq1026.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq1026")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3121
+{
+ Item No.            [imgs01                                                  ]
+ Wh                  [imgs02                                                  ]
+ Lot                 [imgs03                                                  ]
+ Loe                 [imgs04    ]
+}
+END -- gr3121
+END -- page01
+END -- folder01
+Table s_imgs
+{
+[imgs05    |imgs06    |imgs07 |imgs08 |imgs09 |imgs10 |imgs11   |att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[imgs05    |imgs06    |imgs07 |imgs08 |imgs09 |imgs10 |imgs11   |att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[imgs05    |imgs06    |imgs07 |imgs08 |imgs09 |imgs10 |imgs11   |att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[imgs05    |imgs06    |imgs07 |imgs08 |imgs09 |imgs10 |imgs11   |att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[imgs05    |imgs06    |imgs07 |imgs08 |imgs09 |imgs10 |imgs11   |att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[imgs05    |imgs06    |imgs07 |imgs08 |imgs09 |imgs10 |imgs11   |att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[imgs05    |imgs06    |imgs07 |imgs08 |imgs09 |imgs10 |imgs11   |att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[imgs05    |imgs06    |imgs07 |imgs08 |imgs09 |imgs10 |imgs11   |att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[imgs05    |imgs06    |imgs07 |imgs08 |imgs09 |imgs10 |imgs11   |att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[imgs05    |imgs06    |imgs07 |imgs08 |imgs09 |imgs10 |imgs11   |att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+
+}
+END -- s_imgs
+END -- VBox1
+END -- aimq1026
+
+TABLES
+imgs_file
+ATTRIBUTES
+Edit imgs01=imgs_file.imgs01, tabIndex=2, not null, required;
+Edit imgs02=imgs_file.imgs02, tabIndex=2, not null, required;
+Edit imgs03=imgs_file.imgs03, tabIndex=3, noEntry, not null, required;
+Edit imgs04=imgs_file.imgs04, tabIndex=4, noEntry, not null, required;
+Edit imgs05=imgs_file.imgs05, tabIndex=5, title="Serial No.", noEntry, not null, required;
+Edit imgs06=imgs_file.imgs06, tabIndex=6, title="Serial No.", noEntry, not null, required;
+Edit imgs07=imgs_file.imgs07, tabIndex=7, title="Unit", noEntry;
+Edit imgs08=imgs_file.imgs08, tabIndex=8, title="Qty", noEntry;
+DateEdit imgs09=imgs_file.imgs09, tabIndex=9, title="Manufactured on";
+ComboBox imgs10=imgs_file.imgs10, tabIndex=10, title="Type", noEntry, queryEditable, items=(("1", %"Order"),("2", %"Work Order"),("3", %"Project"));
+Edit imgs11=imgs_file.imgs11, tabIndex=11, title="Document No.", noEntry, not null, required;
+Edit att01=formonly.att01 type CHAR, tabIndex=12, title=%"att01";
+Edit att02=formonly.att02 type CHAR, tabIndex=13, title=%"att02";
+Edit att03=formonly.att03 type CHAR, tabIndex=14, title=%"att03";
+Edit att04=formonly.att04 type CHAR, tabIndex=15, title=%"att04";
+Edit att05=formonly.att05 type CHAR, tabIndex=16, title=%"att05";
+Edit att06=formonly.att06 type CHAR, tabIndex=17, title=%"att06";
+Edit att07=formonly.att07 type CHAR, tabIndex=18, title=%"att07";
+Edit att08=formonly.att08 type CHAR, tabIndex=19, title=%"att08";
+Edit att09=formonly.att09 type CHAR, tabIndex=20, title=%"att09";
+Edit att10=formonly.att10 type CHAR, tabIndex=21, title=%"att10";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imgs(imgs_file.imgs05,imgs_file.imgs06,imgs_file.imgs07,imgs_file.imgs08,imgs_file.imgs09,imgs_file.imgs10,imgs_file.imgs11,formonly.att01,formonly.att02,formonly.att03,formonly.att04,formonly.att05,formonly.att06,formonly.att07,formonly.att08,formonly.att09,formonly.att10)
+SCREEN RECORD Undefined(imgs_file.imgs01,imgs_file.imgs02,imgs_file.imgs03,imgs_file.imgs04)
+END -- INSTRUCTIONS
+

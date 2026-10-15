@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_auto_doc.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_auto_doc")
+VBox vb2
+Folder pc708
+Page page01(text="Main")
+Table s_gfa
+{
+[gfa01       |gfa02    |desc       |gfa03   |zz02    |gfa04     |gfa05     |desc2     |gfa06  |gfa07  |gfaact]
+[gfa01       |gfa02    |desc       |gfa03   |zz02    |gfa04     |gfa05     |desc2     |gfa06  |gfa07  |gfaact]
+[gfa01       |gfa02    |desc       |gfa03   |zz02    |gfa04     |gfa05     |desc2     |gfa06  |gfa07  |gfaact]
+[gfa01       |gfa02    |desc       |gfa03   |zz02    |gfa04     |gfa05     |desc2     |gfa06  |gfa07  |gfaact]
+[gfa01       |gfa02    |desc       |gfa03   |zz02    |gfa04     |gfa05     |desc2     |gfa06  |gfa07  |gfaact]
+[gfa01       |gfa02    |desc       |gfa03   |zz02    |gfa04     |gfa05     |desc2     |gfa06  |gfa07  |gfaact]
+[gfa01       |gfa02    |desc       |gfa03   |zz02    |gfa04     |gfa05     |desc2     |gfa06  |gfa07  |gfaact]
+[gfa01       |gfa02    |desc       |gfa03   |zz02    |gfa04     |gfa05     |desc2     |gfa06  |gfa07  |gfaact]
+[gfa01       |gfa02    |desc       |gfa03   |zz02    |gfa04     |gfa05     |desc2     |gfa06  |gfa07  |gfaact]
+[gfa01       |gfa02    |desc       |gfa03   |zz02    |gfa04     |gfa05     |desc2     |gfa06  |gfa07  |gfaact]
+
+}
+END -- s_gfa
+END -- page01
+END -- pc708
+Grid gr3067
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr3067
+END -- vb2
+END -- p_auto_doc
+
+TABLES
+gfa_file
+ATTRIBUTES
+ComboBox gfa01=gfa_file.gfa01, tabIndex=1, title="Document Property", not null, required, items=(("1", %"Sales Order"),("2", %"Delivery Advice"),("3", %"Purchase Requisite"));
+ButtonEdit gfa02=gfa_file.gfa02, action=controlp, tabIndex=3, title="Doc", not null, required, image="zoom", scroll;
+Edit desc=formonly.desc type VARCHAR, tabIndex=2, title="Cate Desc", noEntry;
+ComboBox gfa03=gfa_file.gfa03, tabIndex=4, title="Auto Generate Task", not null, required, items=(("apmt420", %"apmt420"),("apmt540", %"apmt540"),("asfi301", %"asfi301"),("axmt610", %"axmt610"),("axmt620", %"axmt620"));
+Edit zz02=formonly.zz02 type SMALLINT, tabIndex=5, title="Task Name", noEntry;
+ComboBox gfa04=gfa_file.gfa04, tabIndex=8, title="Generation Method", not null, required, items=(("1", %"Auto Gen"),("2", %"Ask Gen"));
+ButtonEdit gfa05=gfa_file.gfa05, action=controlp, tabIndex=9, title="Auto Gen Doc", not null, required, image="zoom";
+Edit desc2=formonly.desc2 type CHAR, tabIndex=10, title="Gen Cate Desc", noEntry;
+CheckBox gfa06=gfa_file.gfa06, tabIndex=12, title="Auto Conf", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gfa07=gfa_file.gfa07, tabIndex=11, title="Connect p_flow?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gfaact=gfa_file.gfaacti, tabIndex=6, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gfa(gfa_file.gfa01,gfa_file.gfa02,formonly.desc,gfa_file.gfa03,formonly.zz02,gfa_file.gfa04,gfa_file.gfa05,formonly.desc2,gfa_file.gfa06,gfa_file.gfa07,gfa_file.gfaacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

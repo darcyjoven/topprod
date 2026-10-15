@@ -1,0 +1,235 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cec/4fd/ceci120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci100")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1628
+{
+ Product No.         [tc_ceu01                      ]
+ Product Name        [ima02                         ]
+ Specification       [ima021                        ]
+ imaud07             [imaud07                       ]
+ imaud10             [imaud10                       ]
+ tc_ceuud10          [tc_ceuud10        ]     tc_ceuud11 [tc_ceuud11   ]
+
+}
+END -- gr1628
+Grid gr1629
+{
+ Routing Code/Desc             [tc_ceu02  |tc_ceu03                ]
+ Fr/To Rou#                    [tc_ceu04  ]-[tc_ceu05  ]
+ Process No./Desc              [tc_ceu012 |tc_ceu014               ]
+ Under Pro. No./Desc           [tc_ceu015 |ecr02                   ]
+
+
+
+}
+END -- gr1629
+Grid Grid1
+{
+  tc_ecn04    [tc_ecn04              ]
+  tc_ecn05    [tc_ecn05              ]
+  tc_ecn06    [tc_ecn06              ]
+  tc_ecn07    [tc_ecn07              ]
+  tc_ecnud06  [tc_ecnud06            ]
+  tc_ecn08    [tc_ecn08              ]
+
+}
+END -- Grid1
+Grid gr10
+{
+                 [tc_ceu10  ]  [imgmksg]
+                 [tc_ceuud02]  [       ]
+ Version         [tc_ceu11  ]
+
+
+
+
+}
+END -- gr10
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1630
+{
+ Record Owner        [tc_ceuuser] Last Modified by    [tc_ceumodu] Data Valid Code     [tc_ceuacti]
+ Department          [tc_ceugrup] Create/Modify Date  [tc_ceudate  ]
+ Record Orig.        [tc_ceuoriu]
+ Dept Orig.          [tc_ceuorig]
+}
+END -- gr1630
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[tc_ceuud01                    ] userdefined_field07[tc_ceuud07          ]       userdefined_field13[tc_ceuud13     ]
+                    [                              ] userdefined_field08[tc_ceuud08          ]       userdefined_field14[tc_ceuud14     ]
+                                                     userdefined_field09[tc_ceuud09          ]       userdefined_field15[tc_ceuud15     ]
+ userdefined_field03[tc_ceuud03     ]
+ userdefined_field04[tc_ceuud04     ]
+ userdefined_field05[tc_ceuud05     ]                userdefined_field12[tc_ceuud12          ]
+ userdefined_field06[tc_ceuud06     ]
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+HBox HBox2(splitter)
+Tree tree(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file")
+{
+[name                             ]
+[name                             ]
+[name                             ]
+[name                             ]
+[name                             ]
+
+
+
+}
+END -- tree
+Table s_ecb
+{
+[tc_c|tc_ceb06 |tc_ceb17      |tc_ceb08     |eca02               |vmn081    |tc_ceb07  |vmn08     |tc_ceb38            |tc_ceb04            |tc_ceb19            |tc_ceb18            |tc_ceb21    |tc_ceb20       |tc_cebslk05         |tc_cebslk04         |tc_cebslk02         |tc_cebsl|tc_ceb66|tc_1|tc_ceb25    |tc_2|tc_cebud02 |tc_cebud03  |tc_cebud04  |tc_ceb41  |tc_ceb42     |tc_ceb43      |tc_ceb45   |tc_ceb46     |tc_ceb51      |tc_ceb14    |tc_ceb52|tc_ceb53|tc_ceb48            |tc_cebud01|tc_cebud05 |tc_cebud06 |tc_cebud0|tc_cebud1|tc_cebud2|tc_cebud10 |tc_cebud11|tc_cebud3|tc_cebud13|tc_cebud14|tc_cebud15 ]
+[tc_c|tc_ceb06 |tc_ceb17      |tc_ceb08     |eca02               |vmn081    |tc_ceb07  |vmn08     |tc_ceb38            |tc_ceb04            |tc_ceb19            |tc_ceb18            |tc_ceb21    |tc_ceb20       |tc_cebslk05         |tc_cebslk04         |tc_cebslk02         |tc_cebsl|tc_ceb66|tc_1|tc_ceb25    |tc_2|tc_cebud02 |tc_cebud03  |tc_cebud04  |tc_ceb41  |tc_ceb42     |tc_ceb43      |tc_ceb45   |tc_ceb46     |tc_ceb51      |tc_ceb14    |tc_ceb52|tc_ceb53|tc_ceb48            |tc_cebud01|tc_cebud05 |tc_cebud06 |tc_cebud0|tc_cebud1|tc_cebud2|tc_cebud10 |tc_cebud11|tc_cebud3|tc_cebud13|tc_cebud14|tc_cebud15 ]
+[tc_c|tc_ceb06 |tc_ceb17      |tc_ceb08     |eca02               |vmn081    |tc_ceb07  |vmn08     |tc_ceb38            |tc_ceb04            |tc_ceb19            |tc_ceb18            |tc_ceb21    |tc_ceb20       |tc_cebslk05         |tc_cebslk04         |tc_cebslk02         |tc_cebsl|tc_ceb66|tc_1|tc_ceb25    |tc_2|tc_cebud02 |tc_cebud03  |tc_cebud04  |tc_ceb41  |tc_ceb42     |tc_ceb43      |tc_ceb45   |tc_ceb46     |tc_ceb51      |tc_ceb14    |tc_ceb52|tc_ceb53|tc_ceb48            |tc_cebud01|tc_cebud05 |tc_cebud06 |tc_cebud0|tc_cebud1|tc_cebud2|tc_cebud10 |tc_cebud11|tc_cebud3|tc_cebud13|tc_cebud14|tc_cebud15 ]
+[tc_c|tc_ceb06 |tc_ceb17      |tc_ceb08     |eca02               |vmn081    |tc_ceb07  |vmn08     |tc_ceb38            |tc_ceb04            |tc_ceb19            |tc_ceb18            |tc_ceb21    |tc_ceb20       |tc_cebslk05         |tc_cebslk04         |tc_cebslk02         |tc_cebsl|tc_ceb66|tc_1|tc_ceb25    |tc_2|tc_cebud02 |tc_cebud03  |tc_cebud04  |tc_ceb41  |tc_ceb42     |tc_ceb43      |tc_ceb45   |tc_ceb46     |tc_ceb51      |tc_ceb14    |tc_ceb52|tc_ceb53|tc_ceb48            |tc_cebud01|tc_cebud05 |tc_cebud06 |tc_cebud0|tc_cebud1|tc_cebud2|tc_cebud10 |tc_cebud11|tc_cebud3|tc_cebud13|tc_cebud14|tc_cebud15 ]
+[tc_c|tc_ceb06 |tc_ceb17      |tc_ceb08     |eca02               |vmn081    |tc_ceb07  |vmn08     |tc_ceb38            |tc_ceb04            |tc_ceb19            |tc_ceb18            |tc_ceb21    |tc_ceb20       |tc_cebslk05         |tc_cebslk04         |tc_cebslk02         |tc_cebsl|tc_ceb66|tc_1|tc_ceb25    |tc_2|tc_cebud02 |tc_cebud03  |tc_cebud04  |tc_ceb41  |tc_ceb42     |tc_ceb43      |tc_ceb45   |tc_ceb46     |tc_ceb51      |tc_ceb14    |tc_ceb52|tc_ceb53|tc_ceb48            |tc_cebud01|tc_cebud05 |tc_cebud06 |tc_cebud0|tc_cebud1|tc_cebud2|tc_cebud10 |tc_cebud11|tc_cebud3|tc_cebud13|tc_cebud14|tc_cebud15 ]
+[tc_c|tc_ceb06 |tc_ceb17      |tc_ceb08     |eca02               |vmn081    |tc_ceb07  |vmn08     |tc_ceb38            |tc_ceb04            |tc_ceb19            |tc_ceb18            |tc_ceb21    |tc_ceb20       |tc_cebslk05         |tc_cebslk04         |tc_cebslk02         |tc_cebsl|tc_ceb66|tc_1|tc_ceb25    |tc_2|tc_cebud02 |tc_cebud03  |tc_cebud04  |tc_ceb41  |tc_ceb42     |tc_ceb43      |tc_ceb45   |tc_ceb46     |tc_ceb51      |tc_ceb14    |tc_ceb52|tc_ceb53|tc_ceb48            |tc_cebud01|tc_cebud05 |tc_cebud06 |tc_cebud0|tc_cebud1|tc_cebud2|tc_cebud10 |tc_cebud11|tc_cebud3|tc_cebud13|tc_cebud14|tc_cebud15 ]
+
+
+}
+END -- s_ecb
+END -- HBox2
+Grid gr1631
+{
+               Standard Labor Hour  [tc_ceu19s      ]              Fixed Labor Time    [tc_ceu18s      ]           Uint Labor           [tc_ceu38s      ]
+               Standard Machine Hour[tc_ceu21s      ]              Fixed Machine Time  [tc_ceu20s      ]
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr1631
+END -- VBox1
+END -- aeci100
+
+ATTRIBUTES
+ButtonEdit tc_ceu01=formonly.tc_ceu01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Query Item  ";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit imaud07=formonly.imaud07, tabIndex=87, not null, required;
+Edit imaud10=formonly.imaud10, tabIndex=88, not null, required;
+ComboBox tc_ceuud10=formonly.tc_ceuud10 type INTEGER, tabIndex=96, not null, required, items=(("1", "1"),("2", "2"));
+Edit tc_ceuud11=formonly.tc_ceuud11 type INTEGER, tabIndex=97, not null, required;
+Edit tc_ceu02=formonly.tc_ceu02 type VARCHAR, tabIndex=4, not null, required, comment="Combine Product No. as Key Field,No Blank/Repeated!";
+Edit tc_ceu03=formonly.tc_ceu03 type VARCHAR, tabIndex=5;
+Edit tc_ceu04=formonly.tc_ceu04 type SMALLINT, tabIndex=6, noEntry;
+Edit tc_ceu05=formonly.tc_ceu05 type SMALLINT, tabIndex=7, noEntry;
+ButtonEdit tc_ceu012=formonly.tc_ceu012 type VARCHAR, action=controlp, tabIndex=8, not null, required, image="zoom";
+Edit tc_ceu014=formonly.tc_ceu014 type VARCHAR, tabIndex=9;
+ButtonEdit tc_ceu015=formonly.tc_ceu015 type VARCHAR, action=controlp, tabIndex=10, image="zoom";
+Edit ecr02=formonly.ecr02 type VARCHAR, tabIndex=11, noEntry;
+Edit tc_ecn04=formonly.tc_ecn04, tabIndex=90;
+Edit tc_ecn05=formonly.tc_ecn05, tabIndex=91;
+Edit tc_ecn06=formonly.tc_ecn06, tabIndex=92;
+Edit tc_ecn07=formonly.tc_ecn07, tabIndex=93;
+Edit tc_ecnud06=formonly.tc_ecnud06, tabIndex=94;
+Edit tc_ecn08=formonly.tc_ecn08, tabIndex=95;
+CheckBox tc_ceu10=formonly.tc_ceu10 type VARCHAR, tabIndex=12, text="Confirmation", not null, required, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+CheckBox tc_ceuud02=formonly.tc_ceuud02, tabIndex=89, text=%"tc_ceuud02", valueChecked = "Y", valueUnchecked = "N";
+Edit tc_ceu11=formonly.tc_ceu11 type SMALLINT, tabIndex=13;
+Edit tc_ceuuser=formonly.tc_ceuuser type VARCHAR, tabIndex=14, noEntry;
+Edit tc_ceumodu=formonly.tc_ceumodu type VARCHAR, tabIndex=15, noEntry;
+Edit tc_ceuacti=formonly.tc_ceuacti type VARCHAR, tabIndex=16, noEntry;
+Edit tc_ceugrup=formonly.tc_ceugrup type VARCHAR, tabIndex=17, noEntry;
+DateEdit tc_ceudate=formonly.tc_ceudate type DATE, tabIndex=18, noEntry;
+Edit tc_ceuoriu=formonly.tc_ceuoriu type VARCHAR, tabIndex=85, noEntry;
+Edit tc_ceuorig=formonly.tc_ceuorig type VARCHAR, tabIndex=86, noEntry;
+TextEdit tc_ceuud01=formonly.tc_ceuud01 type VARCHAR, tabIndex=73, stretch=NONE;
+Edit tc_ceuud07=formonly.tc_ceuud07 type DECIMAL, tabIndex=74;
+DateEdit tc_ceuud13=formonly.tc_ceuud13 type DATE, tabIndex=75;
+Edit tc_ceuud08=formonly.tc_ceuud08 type DECIMAL, tabIndex=76;
+DateEdit tc_ceuud14=formonly.tc_ceuud14 type DATE, tabIndex=77;
+Edit tc_ceuud09=formonly.tc_ceuud09 type DECIMAL, tabIndex=78;
+DateEdit tc_ceuud15=formonly.tc_ceuud15 type DATE, tabIndex=79;
+Edit tc_ceuud03=formonly.tc_ceuud03 type VARCHAR, tabIndex=80;
+Edit tc_ceuud04=formonly.tc_ceuud04 type VARCHAR, tabIndex=81;
+Edit tc_ceuud05=formonly.tc_ceuud05 type VARCHAR, tabIndex=82;
+Edit tc_ceuud12=formonly.tc_ceuud12 type INTEGER, tabIndex=83;
+Edit tc_ceuud06=formonly.tc_ceuud06 type VARCHAR, tabIndex=84;
+LABEL name=formonly.name type CHAR, title=%"stree";
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.desc type CHAR;
+Phantom formonly.chk type VARCHAR;
+Edit tc_c=formonly.tc_ceb03 type SMALLINT, tabIndex=19, title="S/N", not null, required, comment="No Blank/Repeated Field";
+ButtonEdit tc_ceb06=formonly.tc_ceb06 type VARCHAR, action=controlp, tabIndex=20, title="TaskNo.", not null, required, image="zoom", comment="No Blank Field <^P>Open window to Qry";
+Edit tc_ceb17=formonly.tc_ceb17 type VARCHAR, tabIndex=21, title="Task Name", comment="<^T>Product Routing Desc";
+ButtonEdit tc_ceb08=formonly.tc_ceb08 type VARCHAR, action=controlp, tabIndex=22, title="W/C", not null, required, image="zoom", comment="<^P>Open window to Qry Workstation ";
+Edit eca02=formonly.eca02 type CHAR, tabIndex=23, title="Name", noEntry;
+ButtonEdit vmn081=formonly.vmn081 type VARCHAR, action=controlp, tabIndex=24, title="vmn081", image="zoom";
+ButtonEdit tc_ceb07=formonly.tc_ceb07 type VARCHAR, action=controlp, tabIndex=25, title="Machine#", image="zoom", comment="<^P>Query Machine No.";
+ButtonEdit vmn08=formonly.vmn08 type VARCHAR, action=controlp, tabIndex=26, title="vmn08", image="zoom";
+Edit tc_ceb38=formonly.tc_ceb38 type DECIMAL, tabIndex=27, title="Unit Labor";
+Edit tc_ceb04=formonly.tc_ceb04 type DECIMAL, tabIndex=28, title="Completion Ratio%", not null, required, comment="Enter Complete %";
+Edit tc_ceb19=formonly.tc_ceb19 type DECIMAL, tabIndex=29, title="Std.Labor";
+Edit tc_ceb18=formonly.tc_ceb18 type DECIMAL, tabIndex=30, title="Fixed Labor";
+Edit tc_ceb21=formonly.tc_ceb21 type DECIMAL, tabIndex=31, title="Std.Machine";
+Edit tc_ceb20=formonly.tc_ceb20 type DECIMAL, tabIndex=32, title="Fixed Machine";
+Edit tc_cebslk05=formonly.tc_cebslk05 type DECIMAL, tabIndex=33, title="Current Labor Cost";
+Edit tc_cebslk04=formonly.tc_cebslk04 type DECIMAL, tabIndex=34, title="Std. Labor Cost";
+Edit tc_cebslk02=formonly.tc_cebslk02 type DECIMAL, tabIndex=35, title="Current Labor Hour";
+CheckBox tc_cebsl=formonly.tc_cebslk01 type VARCHAR, tabIndex=36, title=%"Pieces Management", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tc_ceb66=formonly.tc_ceb66 type VARCHAR, tabIndex=37, title="Reported work sites", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tc_1=formonly.tc_ceb39 type VARCHAR, tabIndex=38, title="Sub", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit tc_ceb25=formonly.tc_ceb25 type VARCHAR, action=controlp, tabIndex=39, title=%"Subcont Vender", image="zoom";
+CheckBox tc_2=formonly.tc_ceb40 type VARCHAR, tabIndex=40, title="PQC", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_cebud02=formonly.tc_cebud02 type VARCHAR, tabIndex=41, title="tc_cebud02";
+Edit tc_cebud03=formonly.tc_cebud03 type VARCHAR, tabIndex=42, title="tc_cebud03";
+Edit tc_cebud04=formonly.tc_cebud04 type VARCHAR, tabIndex=43, title="tc_cebud04";
+CheckBox tc_ceb41=formonly.tc_ceb41 type VARCHAR, tabIndex=44, title="Check in", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit tc_ceb42=formonly.tc_ceb42 type VARCHAR, action=controlp, tabIndex=45, title="Chk-in Hold", image="zoom", comment="<^P>Qry On-Hold Reason";
+ButtonEdit tc_ceb43=formonly.tc_ceb43 type VARCHAR, action=controlp, tabIndex=46, title="Chk-out Hold", image="zoom", comment="<^P>Qry On-Hold Reason";
+ButtonEdit tc_ceb45=formonly.tc_ceb45 type VARCHAR, action=controlp, tabIndex=47, title="Tr-o Unit", not null, required, image="zoom", comment="<^P>Qry Unit    ";
+Edit tc_ceb46=formonly.tc_ceb46 type DECIMAL, tabIndex=48, title="Conversion%", not null, required;
+Edit tc_ceb51=formonly.tc_ceb51 type DECIMAL(16,8), tabIndex=49, title=%"Denominator", not null, required;
+Edit tc_ceb14=formonly.tc_ceb14 type DECIMAL(9,4), tabIndex=50, title=%"Loss Change ", not null, required;
+Edit tc_ceb52=formonly.tc_ceb52 type DECIMAL(15,3), tabIndex=51, title=%"Loss Fixed", not null, required;
+Edit tc_ceb53=formonly.tc_ceb53 type DECIMAL(15,3), tabIndex=52, title=%"Loss Lot.", not null, required;
+Edit tc_ceb48=formonly.tc_ceb48 type DECIMAL(20,6), tabIndex=53, title="Unit Subcontract";
+TextEdit tc_cebud01=formonly.tc_cebud01 type VARCHAR, tabIndex=54, title="tc_cebud01", stretch=NONE;
+Edit tc_cebud05=formonly.tc_cebud05 type VARCHAR, tabIndex=55, title="ecbud05";
+Edit tc_cebud06=formonly.tc_cebud06 type VARCHAR, tabIndex=56, title="ecbud06";
+Edit tc_cebud0=formonly.tc_cebud07 type DECIMAL, tabIndex=57, title="ecbud07";
+Edit tc_cebud1=formonly.tc_cebud08 type DECIMAL, tabIndex=58, title="tc_cebud08";
+Edit tc_cebud2=formonly.tc_cebud09 type DECIMAL, tabIndex=59, title="tc_cebud09";
+Edit tc_cebud10=formonly.tc_cebud10 type INTEGER, tabIndex=60, title="tc_cebud10";
+Edit tc_cebud11=formonly.tc_cebud11 type INTEGER, tabIndex=61, title="tc_cebud11";
+Edit tc_cebud3=formonly.tc_cebud12 type INTEGER, tabIndex=62, title="tc_cebud12";
+Edit tc_cebud13=formonly.tc_cebud13 type DATE, tabIndex=63, title="tc_cebud13";
+Edit tc_cebud14=formonly.tc_cebud14 type DATE, tabIndex=64, title="tc_cebud14";
+Edit tc_cebud15=formonly.tc_cebud15 type DATE, tabIndex=65, title="tc_cebud15";
+Edit tc_ceu19s=formonly.tc_ceu19s type CHAR, tabIndex=66, noEntry;
+Edit tc_ceu18s=formonly.tc_ceu18s type CHAR, tabIndex=67, noEntry;
+Edit tc_ceu38s=formonly.tc_ceu38s type CHAR, tabIndex=68, noEntry;
+Edit tc_ceu21s=formonly.tc_ceu21s type CHAR, tabIndex=69, noEntry;
+Edit tc_ceu20s=formonly.tc_ceu20s type CHAR, tabIndex=70, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=71, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=72, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tc_ceb(formonly.tc_ceb03,formonly.tc_ceb06,formonly.tc_ceb17,formonly.tc_ceb08,formonly.eca02,formonly.vmn081,formonly.tc_ceb07,formonly.vmn08,formonly.tc_ceb38,formonly.tc_ceb04,formonly.tc_ceb19,formonly.tc_ceb18,formonly.tc_ceb21,formonly.tc_ceb20,formonly.tc_cebslk05,formonly.tc_cebslk04,formonly.tc_cebslk02,formonly.tc_cebslk01,formonly.tc_ceb66,formonly.tc_ceb39,formonly.tc_ceb25,formonly.tc_ceb40,formonly.tc_cebud02,formonly.tc_cebud03,formonly.tc_cebud04,formonly.tc_ceb41,formonly.tc_ceb42,formonly.tc_ceb43,formonly.tc_ceb45,formonly.tc_ceb46,formonly.tc_ceb51,formonly.tc_ceb14,formonly.tc_ceb52,formonly.tc_ceb53,formonly.tc_ceb48,formonly.tc_cebud01,formonly.tc_cebud05,formonly.tc_cebud06,formonly.tc_cebud07,formonly.tc_cebud08,formonly.tc_cebud09,formonly.tc_cebud10,formonly.tc_cebud11,formonly.tc_cebud12,formonly.tc_cebud13,formonly.tc_cebud14,formonly.tc_cebud15)
+SCREEN RECORD Undefined(formonly.tc_ceu01,formonly.ima02,formonly.ima021,formonly.tc_ceu02,formonly.tc_ceu03,formonly.tc_ceu04,formonly.tc_ceu05,formonly.tc_ceu012,formonly.tc_ceu014,formonly.tc_ceu015,formonly.ecr02,formonly.tc_ceu10,formonly.imgmksg,formonly.tc_ceu11,formonly.tc_ceuuser,formonly.tc_ceumodu,formonly.tc_ceuacti,formonly.tc_ceugrup,formonly.tc_ceudate,formonly.tc_ceuoriu,formonly.tc_ceuorig,formonly.tc_ceuud01,formonly.tc_ceuud07,formonly.tc_ceuud13,formonly.tc_ceuud08,formonly.tc_ceuud14,formonly.tc_ceuud09,formonly.tc_ceuud15,formonly.tc_ceuud03,formonly.tc_ceuud04,formonly.tc_ceuud05,formonly.tc_ceuud12,formonly.tc_ceuud06,formonly.tc_ceu19s,formonly.tc_ceu18s,formonly.tc_ceu38s,formonly.tc_ceu21s,formonly.tc_ceu20s,formonly.cnt,formonly.cn2,formonly.imaud07,formonly.imaud10,formonly.tc_ceuud02,formonly.tc_ecn04,formonly.tc_ecn05,formonly.tc_ecn06,formonly.tc_ecn07,formonly.tc_ecnud06,formonly.tc_ecn08,formonly.tc_ceuud10,formonly.tc_ceuud11)
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.desc,formonly.chk)
+END -- INSTRUCTIONS
+

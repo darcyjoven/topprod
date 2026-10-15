@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gfa/42f/gfat1201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gfat1201")
+VBox VBox1
+Folder pc777
+Page page01(text="Main")
+Grid gr3339
+{
+
+         Undepreciated-Tax Amount [fbt11            ]
+ Listed-Tax Deduction Preparation [fbt12            ]
+                  Tax Transaction [fbt1]
+      Taxed Deduction Preparation [fbt14            ]
+}
+END -- gr3339
+END -- page01
+END -- pc777
+END -- VBox1
+END -- gfat1201
+
+TABLES
+fbt_file
+ATTRIBUTES
+Edit fbt11=fbt_file.fbt11, tabIndex=1, noEntry;
+Edit fbt12=fbt_file.fbt12, tabIndex=2, noEntry;
+ComboBox fbt1=fbt_file.fbt13, tabIndex=3, not null, required, queryEditable, items=(("1", "Increase"),("2", "Deduct"));
+Edit fbt14=fbt_file.fbt14, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fbt_file.fbt11,fbt_file.fbt12,fbt_file.fbt13,fbt_file.fbt14)
+END -- INSTRUCTIONS
+

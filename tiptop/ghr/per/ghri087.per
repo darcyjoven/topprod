@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghri087.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrdt01  |hrdt02  |hrdt03  |hrdt04  ]
+[hrdt01  |hrdt02  |hrdt03  |hrdt04  ]
+[hrdt01  |hrdt02  |hrdt03  |hrdt04  ]
+[hrdt01  |hrdt02  |hrdt03  |hrdt04  ]
+[hrdt01  |hrdt02  |hrdt03  |hrdt04  ]
+
+
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+  -----------  cn2[cn2 ] ------------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit hrdt01=formonly.hrdt01 type VARCHAR, tabIndex=1, title=%"hrdt01", not null, required;
+Edit hrdt02=formonly.hrdt02 type VARCHAR, tabIndex=2, title=%"hrdt02", not null, required;
+ComboBox hrdt03=formonly.hrdt03 type VARCHAR, tabIndex=3, title=%"hrdt03", not null, required;
+TextEdit hrdt04=formonly.hrdt04 type VARCHAR, tabIndex=4, title=%"hrdt04";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrdt(formonly.hrdt01,formonly.hrdt02,formonly.hrdt03,formonly.hrdt04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

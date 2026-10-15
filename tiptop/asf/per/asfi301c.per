@@ -1,0 +1,90 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi301c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Query W/O Allotment")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr472
+{
+ Item No.          [old_part                      ]
+ Part Name         [ima02                         ]
+ Specification     [ima021                        ]
+ Process No.       [old_sfa012] [old_ecu014                    ]
+ Routing Sequence  [old_sfa013]
+}
+END -- gr472
+Grid gr473
+{
+ Task No.            [old_sfa08  ]
+ Substitute code     [sfa26               ]
+ UnIssQ              [old_qty    ][sfa12  ]
+
+
+}
+END -- gr473
+END -- hb2
+END -- page01
+END -- folder01
+Table s_new
+{
+[new_part             |ima02_1                       |ima021_1                      |new_rate |new_yes|new_qty              |new_qty3    |avl_stk       |new_qty4        |new_qty5        |new_qty6         |new_qty7   |new_qty8   ]
+[new_part             |ima02_1                       |ima021_1                      |new_rate |new_yes|new_qty              |new_qty3    |avl_stk       |new_qty4        |new_qty5        |new_qty6         |new_qty7   |new_qty8   ]
+[new_part             |ima02_1                       |ima021_1                      |new_rate |new_yes|new_qty              |new_qty3    |avl_stk       |new_qty4        |new_qty5        |new_qty6         |new_qty7   |new_qty8   ]
+[new_part             |ima02_1                       |ima021_1                      |new_rate |new_yes|new_qty              |new_qty3    |avl_stk       |new_qty4        |new_qty5        |new_qty6         |new_qty7   |new_qty8   ]
+[new_part             |ima02_1                       |ima021_1                      |new_rate |new_yes|new_qty              |new_qty3    |avl_stk       |new_qty4        |new_qty5        |new_qty6         |new_qty7   |new_qty8   ]
+[new_part             |ima02_1                       |ima021_1                      |new_rate |new_yes|new_qty              |new_qty3    |avl_stk       |new_qty4        |new_qty5        |new_qty6         |new_qty7   |new_qty8   ]
+[new_part             |ima02_1                       |ima021_1                      |new_rate |new_yes|new_qty              |new_qty3    |avl_stk       |new_qty4        |new_qty5        |new_qty6         |new_qty7   |new_qty8   ]
+[new_part             |ima02_1                       |ima021_1                      |new_rate |new_yes|new_qty              |new_qty3    |avl_stk       |new_qty4        |new_qty5        |new_qty6         |new_qty7   |new_qty8   ]
+[new_part             |ima02_1                       |ima021_1                      |new_rate |new_yes|new_qty              |new_qty3    |avl_stk       |new_qty4        |new_qty5        |new_qty6         |new_qty7   |new_qty8   ]
+[new_part             |ima02_1                       |ima021_1                      |new_rate |new_yes|new_qty              |new_qty3    |avl_stk       |new_qty4        |new_qty5        |new_qty6         |new_qty7   |new_qty8   ]
+
+}
+END -- s_new
+Grid gr474
+{
+ ---------- Rows   [rec       ]----------                               Equivalent Qty Total [l_tot          ]
+
+}
+END -- gr474
+END -- vb4
+END -- asfi301c
+
+ATTRIBUTES
+ButtonEdit old_part=formonly.old_part type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Item No.";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3;
+ButtonEdit old_sfa012=formonly.old_sfa012 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+Edit old_ecu014=formonly.old_ecu014 type CHAR, tabIndex=5, noEntry;
+ButtonEdit old_sfa013=formonly.old_sfa013 type CHAR, action=controlp, tabIndex=6, not null, required, image="zoom";
+Edit old_sfa08=formonly.old_sfa08 type CHAR, tabIndex=7;
+ComboBox sfa26=formonly.sfa26 type CHAR, tabIndex=8, not null, required, queryEditable, items=(("0", "No REP/SUB"),("1", "Old"),("2", "M.It"),("3", "Old(with New)"),("4", "M.It(Sb-Itm)"),("5", "M.It,SUB with SE"),("6", "M.It,SET SUB"),("U", "REP Item"),("S", "SUB Item"),("T", "SET SUB Item"));
+Edit old_qty=formonly.old_qty type CHAR, tabIndex=9;
+Edit sfa12=formonly.sfa12 type CHAR, tabIndex=10;
+Edit new_part=formonly.new_part type CHAR, tabIndex=11, title="Substitute Item No.", noEntry;
+Edit ima02_1=formonly.ima02_1 type CHAR, tabIndex=12, title="P/N", noEntry;
+Edit ima021_1=formonly.ima021_1 type CHAR, tabIndex=13, title="Spec.", noEntry;
+Edit new_rate=formonly.new_rate type CHAR, tabIndex=14, title="Sub Rate", noEntry;
+CheckBox new_yes=formonly.new_yes type CHAR, tabIndex=15, title="Choose", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit new_qty=formonly.new_qty type CHAR, tabIndex=16, title="Substitute add/Minus";
+Edit new_qty3=formonly.new_qty3 type CHAR, tabIndex=17, title="Equivalent", noEntry;
+Edit avl_stk=formonly.avl_stk type CHAR, tabIndex=18, title="Inventory Qty", noEntry;
+Edit new_qty4=formonly.new_qty4 type CHAR, tabIndex=19, title="Substitute Qty", noEntry;
+Edit new_qty5=formonly.new_qty5 type CHAR, tabIndex=20, title="Transit(Supply)", noEntry;
+Edit new_qty6=formonly.new_qty6 type CHAR, tabIndex=21, title="Transit(Require)", noEntry;
+Edit new_qty7=formonly.new_qty7 type CHAR, tabIndex=22, title="Allocate", noEntry;
+Edit new_qty8=formonly.new_qty8 type CHAR, tabIndex=23, title="Avail.Qty", noEntry;
+Edit rec=formonly.rec type CHAR, tabIndex=24, noEntry;
+Edit l_tot=formonly.l_tot type CHAR, tabIndex=25;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_new(formonly.new_part,formonly.ima02_1,formonly.ima021_1,formonly.new_rate,formonly.new_yes,formonly.new_qty,formonly.new_qty3,formonly.avl_stk,formonly.new_qty4,formonly.new_qty5,formonly.new_qty6,formonly.new_qty7,formonly.new_qty8)
+SCREEN RECORD Undefined(formonly.old_part,formonly.ima02,formonly.ima021,formonly.old_sfa012,formonly.old_ecu014,formonly.old_sfa013,formonly.old_sfa08,formonly.sfa26,formonly.old_qty,formonly.sfa12,formonly.rec,formonly.l_tot)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrq011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+[label1  |date           ][label5    ]      [label3  |hrca04    ]
+
+[label2  |hrca02         ][label6    ]      [label4  |hrca05    ]
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table Table1
+{
+[hrca02_m|hrca14  |hrca15  |hrca03  |hrca04_m|hrbo03  |hrca05_m|hrbp03  |hrca11  |hrca12  ]
+[hrca02_m|hrca14  |hrca15  |hrca03  |hrca04_m|hrbo03  |hrca05_m|hrbp03  |hrca11  |hrca12  ]
+[hrca02_m|hrca14  |hrca15  |hrca03  |hrca04_m|hrbo03  |hrca05_m|hrbp03  |hrca11  |hrca12  ]
+[hrca02_m|hrca14  |hrca15  |hrca03  |hrca04_m|hrbo03  |hrca05_m|hrbp03  |hrca11  |hrca12  ]
+[hrca02_m|hrca14  |hrca15  |hrca03  |hrca04_m|hrbo03  |hrca05_m|hrbp03  |hrca11  |hrca12  ]
+
+}
+END -- Table1
+Grid Grid2
+{
+
+   ----------[label7 |cnt     ]----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"Label1", justify=right;
+DateEdit date=formonly.date type CHAR, tabIndex=9, not null, required;
+Label label5:Label5, text=%"";
+Label label3:Label3, text=%"Label3", justify=right;
+ButtonEdit hrca04=formonly.hrca04 type CHAR, action=controlp, tabIndex=10, image="zoom";
+Label label2:Label2, text=%"Label2", justify=right;
+ComboBox hrca02=formonly.hrca02 type CHAR, tabIndex=11, not null, required, items=(("1", "Text"),("2", "Text"),("3", "Text"),("4", "Text"));
+Label label6:Label6, text=%"";
+Label label4:Label4, text=%"Label4", justify=right;
+ButtonEdit hrca05=formonly.hrca05 type CHAR, action=controlp, tabIndex=12, image="zoom";
+ComboBox hrca02_m=formonly.hrca02_m type CHAR, tabIndex=1, title=%"hrca02_1", items=(("1", "Text"),("2", "Text"),("3", "Text"),("4", "Text"));
+Edit hrca14=formonly.hrca14 type CHAR, tabIndex=2, title=%"hrca14";
+Edit hrca15=formonly.hrca15 type CHAR, tabIndex=3, title=%"hrca15";
+ComboBox hrca03=formonly.hrca03 type CHAR, tabIndex=4, title=%"hrca03", items=(("1", "Text"),("2", "Text"));
+Edit hrca04_m=formonly.hrca04_m type CHAR, tabIndex=5, title=%"hrca04_1";
+Edit hrbo03=formonly.hrbo03 type CHAR, tabIndex=6, title=%"hrbo03";
+Edit hrca05_m=formonly.hrca05_m type CHAR, tabIndex=14, title=%"hrca05_1";
+Edit hrbp03=formonly.hrbp03 type CHAR, tabIndex=15, title=%"hrbp03";
+DateEdit hrca11=formonly.hrca11 type CHAR, tabIndex=7, title=%"hrca11";
+DateEdit hrca12=formonly.hrca12 type CHAR, tabIndex=8, title=%"hrca12";
+Label label7:Label7, text=%"Label7";
+Edit cnt=formonly.cnt type CHAR, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrca(formonly.hrca02_m,formonly.hrca14,formonly.hrca15,formonly.hrca03,formonly.hrca04_m,formonly.hrbo03,formonly.hrca05_m,formonly.hrbp03,formonly.hrca11,formonly.hrca12)
+SCREEN RECORD Undefined(formonly.date,formonly.hrca04,formonly.hrca02,formonly.hrca05,formonly.cnt)
+END -- INSTRUCTIONS
+

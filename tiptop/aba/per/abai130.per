@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abai130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"cxmi130")
+VBox VBox1
+Grid Grid1
+{
+
+      ibc00    [ibc00         ]
+      ibc01    [ibc01                            ]     ima02     [ima02                       ]   ima021    [ima021                    ]  ibc03     [ibc03     ]  ibc07      [ibc07     ]
+                                                                 [                            ]             [                          ]
+
+}
+END -- Grid1
+HBox HBox1(splitter)
+Tree tree(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file", width = 21 characters)
+{
+[name                            ]
+[name                            ]
+[name                            ]
+[name                            ]
+[name                            ]
+[name                            ]
+[name                            ]
+[name                            ]
+[name                            ]
+[name                            ]
+
+}
+END -- tree
+Table s_ibc
+{
+[ibc02       |ibc04              |ima02_desc                                   |ibc06   |ibc05     ]
+[ibc02       |ibc04              |ima02_desc                                   |ibc06   |ibc05     ]
+[ibc02       |ibc04              |ima02_desc                                   |ibc06   |ibc05     ]
+[ibc02       |ibc04              |ima02_desc                                   |ibc06   |ibc05     ]
+[ibc02       |ibc04              |ima02_desc                                   |ibc06   |ibc05     ]
+
+
+
+
+
+
+}
+END -- s_ibc
+END -- HBox1
+Grid Grid2
+{
+
+  ---- Rows  [idx   ]/ [cnt    ]---------  count  [cn2    ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- cxmi130
+
+TABLES
+ibc_file,
+ima_file
+ATTRIBUTES
+ComboBox ibc00=formonly.ibc00 type CHAR, tabIndex=1, noEntry, items=(("1", "Material"),("2", "Order"));
+ButtonEdit ibc01=ibc_file.ibc01, action=controlp, tabIndex=2, image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=3, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=4, noEntry;
+Edit ibc03=ibc_file.ibc03, tabIndex=5;
+Edit ibc07=ibc_file.ibc07, tabIndex=6;
+LABEL name=formonly.name type CHAR, title=%"stree";
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.desc type CHAR;
+Phantom formonly.bmb06 type DECIMAL;
+Edit ibc02=ibc_file.ibc02, tabIndex=7, title=%"ibc02", not null, required;
+ButtonEdit ibc04=ibc_file.ibc04, action=controlp, tabIndex=8, title=%"ibc04", image="zoom";
+Edit ima02_desc=formonly.ima02_desc type VARCHAR, tabIndex=9, title=%"ima02_desc", noEntry;
+Edit ibc06=ibc_file.ibc06, tabIndex=10, title=%"ibc06";
+Edit ibc05=ibc_file.ibc05, tabIndex=11, title=%"ibc05", not null, required;
+Edit idx=formonly.idx type CHAR, tabIndex=12;
+Edit cnt=formonly.cnt type CHAR, tabIndex=13;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.desc,formonly.bmb06)
+SCREEN RECORD s_ibc(ibc_file.ibc02,ibc_file.ibc04,formonly.ima02_desc,ibc_file.ibc06,ibc_file.ibc05)
+SCREEN RECORD Undefined(ibc_file.ibc01,ima_file.ima02,ima_file.ima021,ibc_file.ibc03,ibc_file.ibc07,formonly.idx,formonly.cnt,formonly.cn2,formonly.ibc00)
+END -- INSTRUCTIONS
+

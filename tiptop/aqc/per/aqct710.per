@@ -1,0 +1,159 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqct710.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqct710")
+VBox VBox1
+Folder pc61
+Page page01(text="Main")
+HBox HBox1
+Grid gr225
+{
+ <G group01                                                                                   >
+  Check No.           [qsa01             ]
+  Date                [qsa11     ]
+  Item No.            [qsa02              ]
+  Part Name           [ima02              ]
+  Specification       [ima021             ]
+  Warehouse           [qsa03     ]
+  Patch               [qsa04     ]
+  Loc                 [qsa05     ]
+                      [qsa10     ]
+  Vender No.          [qsa12     ][pmc03     ][pmh05    ]
+
+
+ <                                                                                            >
+
+
+
+
+
+
+}
+END -- gr225
+HBox HBox2
+Grid gr226
+{
+ <G group02                                                                                   >
+  Confirmation Code             [qsa08     ][imgmksg   ]
+  SPC Code                      [qsaspc    ][          ]
+  Type of material              [ima109    ][azf03     ]
+  Keep Tax                      [ima15     ]
+  Unit                          [img09     ]
+  Need Chenk Qty.               [qsa06     ]
+  Par/Ref Unit                  [qsa33     ]
+  Par/Ref Conversion Rate       [qsa34     ]
+  Par/Ref Qty                   [qsa35     ]
+  Chi/Sales Unit                [qsa30     ]
+  Chi/Sales Conversion Rate     [qsa31     ]
+  Chi/Sales Qty                 [qsa32     ]
+  Memo                          [qsa07               ]
+                                [                    ]
+                                [                    ]
+
+
+ <                                                                                            >
+
+}
+END -- gr226
+END -- HBox2
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr227
+{
+ Record Owner        [qsauser   ] Last Modified by    [qsamodu   ] Data Valid Code     [qsaacti   ]
+ Department          [qsagrup   ] Create/Modify Date  [qsadate   ]
+ Record Orig.        [qsaoriu   ]
+ Dept Orig.          [qsaorig   ]
+}
+END -- gr227
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[qsaud01                       ] userdefined_field07[qsaud07        ] userdefined_field13[qsaud13        ]
+                    [                              ] userdefined_field08[qsaud08        ] userdefined_field14[qsaud14        ]
+ userdefined_field02[qsaud02        ]                userdefined_field09[qsaud09        ] userdefined_field15[qsaud15        ]
+ userdefined_field03[qsaud03        ]                userdefined_field10[qsaud10        ]
+ userdefined_field04[qsaud04        ]                userdefined_field11[qsaud11        ]
+ userdefined_field05[qsaud05        ]                userdefined_field12[qsaud12        ]
+ userdefined_field06[qsaud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc61
+Grid gr228
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr228
+END -- VBox1
+END -- aqct710
+
+TABLES
+qsa_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit qsa01=qsa_file.qsa01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Test No.";
+DateEdit qsa11=qsa_file.qsa11, tabIndex=2, not null, required;
+ButtonEdit qsa02=qsa_file.qsa02, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5;
+ButtonEdit qsa03=qsa_file.qsa03, action=controlp, tabIndex=6, not null, required, image="zoom";
+ButtonEdit qsa04=qsa_file.qsa04, action=controlp, tabIndex=7, image="zoom";
+ButtonEdit qsa05=qsa_file.qsa05, action=controlp, tabIndex=8, image="zoom";
+CheckBox qsa10=qsa_file.qsa10, tabIndex=9, not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Enter Y or N ";
+ButtonEdit qsa12=qsa_file.qsa12, action=controlp, tabIndex=10, image="zoom";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=11;
+Edit pmh05=formonly.pmh05 type CHAR, tabIndex=12;
+Group group02:group02;
+ComboBox qsa08=qsa_file.qsa08, tabIndex=13, noEntry, not null, required, queryEditable, items=(("Y", "CONFIRM"),("N", "UNCONFIRM"),("X", "UNVALID"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 10 characters, height = 2 characters;
+ComboBox qsaspc=qsa_file.qsaspc, tabIndex=15, noEntry, not null, required, items=(("0", "Untransmit"),("1", "Transmit Success"),("2", "Transmit Failed"),("3", "Partial Transmit"));
+Edit ima109=formonly.ima109 type CHAR, tabIndex=16;
+Edit azf03=formonly.azf03 type CHAR, tabIndex=17;
+Edit ima15=formonly.ima15 type CHAR, tabIndex=18;
+Edit img09=formonly.img09 type CHAR, tabIndex=19;
+Edit qsa06=qsa_file.qsa06, tabIndex=20, not null, required;
+ButtonEdit qsa33=qsa_file.qsa33, action=controlp, tabIndex=21, image="zoom", comment="<^P>Qry Details";
+Edit qsa34=qsa_file.qsa34, tabIndex=22;
+Edit qsa35=qsa_file.qsa35, tabIndex=23;
+ButtonEdit qsa30=qsa_file.qsa30, action=controlp, tabIndex=24, image="zoom", comment="<^P>Qry Details";
+Edit qsa31=qsa_file.qsa31, tabIndex=25;
+Edit qsa32=qsa_file.qsa32, tabIndex=26;
+TextEdit qsa07=qsa_file.qsa07, tabIndex=27, required, stretch=NONE;
+Edit qsauser=qsa_file.qsauser, tabIndex=28, noEntry;
+Edit qsamodu=qsa_file.qsamodu, tabIndex=29, noEntry;
+Edit qsaacti=qsa_file.qsaacti, tabIndex=30, noEntry, upShift;
+Edit qsagrup=qsa_file.qsagrup, tabIndex=31, noEntry;
+DateEdit qsadate=qsa_file.qsadate, tabIndex=32;
+Edit qsaoriu=qsa_file.qsaoriu, tabIndex=501, noEntry;
+Edit qsaorig=qsa_file.qsaorig, tabIndex=502, noEntry;
+TextEdit qsaud01=qsa_file.qsaud01, tabIndex=35, stretch=NONE;
+Edit qsaud07=qsa_file.qsaud07, tabIndex=36;
+DateEdit qsaud13=qsa_file.qsaud13, tabIndex=37;
+Edit qsaud08=qsa_file.qsaud08, tabIndex=38;
+DateEdit qsaud14=qsa_file.qsaud14, tabIndex=39;
+Edit qsaud02=qsa_file.qsaud02, tabIndex=40;
+Edit qsaud09=qsa_file.qsaud09, tabIndex=41;
+DateEdit qsaud15=qsa_file.qsaud15, tabIndex=42;
+Edit qsaud03=qsa_file.qsaud03, tabIndex=43;
+Edit qsaud10=qsa_file.qsaud10, tabIndex=44;
+Edit qsaud04=qsa_file.qsaud04, tabIndex=45;
+Edit qsaud11=qsa_file.qsaud11, tabIndex=46;
+Edit qsaud05=qsa_file.qsaud05, tabIndex=47;
+Edit qsaud12=qsa_file.qsaud12, tabIndex=48;
+Edit qsaud06=qsa_file.qsaud06, tabIndex=49;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(qsa_file.qsa01,qsa_file.qsa11,qsa_file.qsa02,formonly.ima02,formonly.ima021,qsa_file.qsa03,qsa_file.qsa04,qsa_file.qsa05,qsa_file.qsa10,qsa_file.qsa12,formonly.pmc03,formonly.pmh05,qsa_file.qsa08,formonly.imgmksg,qsa_file.qsaspc,formonly.ima109,formonly.azf03,formonly.ima15,formonly.img09,qsa_file.qsa06,qsa_file.qsa33,qsa_file.qsa34,qsa_file.qsa35,qsa_file.qsa30,qsa_file.qsa31,qsa_file.qsa32,qsa_file.qsa07,qsa_file.qsauser,qsa_file.qsamodu,qsa_file.qsaacti,qsa_file.qsagrup,qsa_file.qsadate,qsa_file.qsaoriu,qsa_file.qsaorig,qsa_file.qsaud01,qsa_file.qsaud07,qsa_file.qsaud13,qsa_file.qsaud08,qsa_file.qsaud14,qsa_file.qsaud02,qsa_file.qsaud09,qsa_file.qsaud15,qsa_file.qsaud03,qsa_file.qsaud10,qsa_file.qsaud04,qsa_file.qsaud11,qsa_file.qsaud05,qsa_file.qsaud12,qsa_file.qsaud06,formonly.cnt)
+END -- INSTRUCTIONS
+

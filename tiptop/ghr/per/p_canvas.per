@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/p_canvas.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Grid Grid1
+{
+
+
+
+                                                                           <S scrollgrid2                          >   <S scrollgrid1              >
+                                                                             <T param_table                     >       <T table1               >
+         [editor                                                  ]          [name                |type         ]       [name2   ]
+         [                                                        ]          [name                |type         ]       [name2   ]
+         [                                                        ]          [name                |type         ]       [name2   ]
+         [                                                        ]          [name                |type         ]       [name2   ]
+         [                                                        ]          [name                |type         ]       [name2   ]
+         [                                                        ]
+         [                                                        ]
+         [                                                        ]
+         [                                                        ]
+         [                                                        ]
+         [                                                        ]
+                                                                                                                        <                       >
+     <G control_i>                                                                                                     <                           >
+       [b_if    ]   [b_equal   ]  [b_del     ] [b_n7|b_n8|b_n9][b_plus]
+       [b_then  ]                              [b_n4|b_n5|b_n6][b_minu]
+       [b_else  ]   [b_equals  ]  [b_backspac] [b_n1|b_n2|b_n3][b_mult]
+       [b_end   ]                                   [b_n0]     [b_divi]
+     <           >
+                                               [b_space   ][b_wrap    ]      <                                  >
+     <G group1             >                                               <                                       >
+                                                 [b_up    ]
+                                     [b_left    ][b_down  ][b_right   ]
+     <                     >
+
+}
+END -- Grid1
+END -- Canvas
+
+ATTRIBUTES
+ScrollGrid scrollgrid2:ScrollGrid2;
+Table param_table:param_table;
+Edit name=formonly.name, tabIndex=28, title=%"Parameters";
+Edit type=formonly.type, tabIndex=31, title=%"Type";
+ScrollGrid scrollgrid1:ScrollGrid1;
+Table table1:Table1;
+Edit name2=formonly.name2, tabIndex=30, title=%"Edit1";
+Canvas editor:editor;
+Group control_i:CONTROL_IF, text=%"IF-ELSE语句";
+Button b_if:b_IF, tabIndex=1, text=%"如果";
+Button b_then:b_THEN, tabIndex=2, text=%"那么";
+Button b_else:b_ELSE, tabIndex=3, text=%"否则";
+Button b_end:b_END, tabIndex=4, text=%"结束";
+Button b_equal:b_equal, tabIndex=29, text=%"=";
+Button b_del:b_DEL, tabIndex=7, text=%"DEL";
+Button b_n7:b_n7, tabIndex=14, text=%"7";
+Button b_n8:b_n8, tabIndex=15, text=%"8";
+Button b_n9:b_n9, tabIndex=19, text=%"9";
+Button b_plus:b_plus, tabIndex=24, text=%"+";
+Button b_n4:b_n4, tabIndex=16, text=%"4";
+Button b_n5:b_n5, tabIndex=18, text=%"5";
+Button b_n6:b_n6, tabIndex=23, text=%"6";
+Button b_minu:b_minus, tabIndex=25, text=%"-";
+Button b_equals:b_equals, tabIndex=5, text=%"==";
+Button b_backspac:b_BACKSPACE, tabIndex=6, text=%"Backspace";
+Button b_n1:b_n1, tabIndex=17, text=%"1";
+Button b_n2:b_n2, tabIndex=21, text=%"2";
+Button b_n3:b_n3, tabIndex=22, text=%"3";
+Button b_mult:b_multiply, tabIndex=26, text=%"*";
+Button b_n0:b_n0, tabIndex=20, text=%"0";
+Button b_divi:b_dividedby, tabIndex=27, text=%"/";
+Button b_space:b_SPACE, tabIndex=8, text=%"空格";
+Button b_wrap:b_WRAP, tabIndex=9, text=%"Enter";
+Group group1:Group1, text=%"函数";
+Button b_up:b_UP, tabIndex=10, text=%"Up";
+Button b_left:b_LEFT, tabIndex=12, text=%"Left";
+Button b_down:b_DOWN, tabIndex=11, text=%"Down";
+Button b_right:b_RIGHT, tabIndex=13, text=%"Right";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_para(formonly.name,formonly.type)
+SCREEN RECORD s_include(formonly.name2)
+END -- INSTRUCTIONS
+

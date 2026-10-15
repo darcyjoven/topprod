@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asrr110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asrr110")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                   >
+  Line No #      [srb02     ]
+  Repair Labor # [srb06   ]
+ <                            >
+ <G group02                                          >
+  Date Range          [bdate       ] - [edate       ]
+ <                                                   >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                     ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- asrr110
+
+TABLES
+srb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit srb02=srb_file.srb02, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit srb06=srb_file.srb06, action=controlp, tabIndex=2, image="zoom";
+Group group02:group02, text="DATE RANGE";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=3;
+DateEdit edate=formonly.edate type DATE, tabIndex=4;
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(srb_file.srb02,srb_file.srb06,formonly.bdate,formonly.edate,formonly.more)
+END -- INSTRUCTIONS
+

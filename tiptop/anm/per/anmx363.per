@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmx363.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr363")
+VBox VBox1
+Group group01(text="QBE")
+Grid Grid1
+{
+ Bank Currency             [nma10                   ]
+ Bank Category             [nma09                   ]
+ Bank No.                  [nma01                   ]
+}
+END -- Grid1
+END -- group01
+Group group02(text="INPUT")
+Grid Grid2
+{
+ Revaluating Year        [yy  ]
+ Month                   [mm  ]
+ Ex.Rate Op    [rate_op       ]
+[detail                                                  ]
+[c                             ]
+}
+END -- Grid2
+END -- group02
+Grid Grid3
+{
+[more                                                        ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- anmr363
+
+ATTRIBUTES
+ButtonEdit nma10=formonly.nma10 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit nma09=formonly.nma09 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit nma01=formonly.nma01 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Edit yy=formonly.yy type CHAR, tabIndex=4;
+Edit mm=formonly.mm type CHAR, tabIndex=5;
+ComboBox rate_op=formonly.rate_op type CHAR, tabIndex=6, queryEditable, items=(("B", %"Bank Buying"),("S", %"Bank Selling"),("C", %"Customs Buy"),("D", %"Customs Sell"),("R", %"EoM Rev Exate"));
+CheckBox detail=formonly.detail type CHAR, tabIndex=7, text="Print Account Detail List", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type CHAR, tabIndex=9, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nma10,formonly.nma09,formonly.nma01,formonly.yy,formonly.mm,formonly.rate_op,formonly.detail,formonly.more,formonly.c)
+END -- INSTRUCTIONS
+

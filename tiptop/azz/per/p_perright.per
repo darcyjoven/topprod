@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_perright.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_perright")
+VBox vb3
+Folder folder01
+Page page01(text="Page01")
+Grid gr3260
+{
+ <G group01                                      >
+  Form ID      [gaj01               ]
+  Window Title [gaz03                            ]
+  Industry     [gaj11       ]
+ <                                               >
+
+}
+END -- gr3260
+END -- page01
+END -- folder01
+Table s_gaj
+{
+[gaj12        |gaj02        |gaj03               |gaj04               |gaj05               |gaj06               ]
+[gaj12        |gaj02        |gaj03               |gaj04               |gaj05               |gaj06               ]
+[gaj12        |gaj02        |gaj03               |gaj04               |gaj05               |gaj06               ]
+[gaj12        |gaj02        |gaj03               |gaj04               |gaj05               |gaj06               ]
+[gaj12        |gaj02        |gaj03               |gaj04               |gaj05               |gaj06               ]
+[gaj12        |gaj02        |gaj03               |gaj04               |gaj05               |gaj06               ]
+[gaj12        |gaj02        |gaj03               |gaj04               |gaj05               |gaj06               ]
+[gaj12        |gaj02        |gaj03               |gaj04               |gaj05               |gaj06               ]
+[gaj12        |gaj02        |gaj03               |gaj04               |gaj05               |gaj06               ]
+
+}
+END -- s_gaj
+Grid gr3261
+{
+ ---------- Rows [cnt   ] / [cnt2  ] ----------
+
+}
+END -- gr3261
+END -- vb3
+END -- p_perright
+
+TABLES
+gaj_file,
+gaz_file
+ATTRIBUTES
+Group group01:group01, text="Program";
+ButtonEdit gaj01=gaj_file.gaj01, action=controlp, tabIndex=1, required, image="zoom";
+Edit gaz03=gaz_file.gaz03, tabIndex=2, noEntry;
+ComboBox gaj11=gaj_file.gaj11, tabIndex=10, not null;
+CheckBox gaj12=gaj_file.gaj12, tabIndex=3, title="HideData", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit gaj02=gaj_file.gaj02, action=controlp, tabIndex=4, title="Field Name", not null, required, image="zoom", scroll;
+ButtonEdit gaj03=gaj_file.gaj03, action=controlp, tabIndex=5, title="Visible Group", image="zoom", scroll;
+ButtonEdit gaj04=gaj_file.gaj04, action=controlp, tabIndex=6, title="Hide Group", image="zoom", scroll;
+ButtonEdit gaj05=gaj_file.gaj05, action=controlp, tabIndex=7, title="Visible User", image="zoom", scroll;
+ButtonEdit gaj06=gaj_file.gaj06, action=controlp, tabIndex=8, title="Hide User", image="zoom", scroll;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gaj(gaj_file.gaj12,gaj_file.gaj02,gaj_file.gaj03,gaj_file.gaj04,gaj_file.gaj05,gaj_file.gaj06)
+SCREEN RECORD Undefined(gaj_file.gaj01,gaz_file.gaz03,gaj_file.gaj11,formonly.cnt,formonly.cnt2)
+END -- INSTRUCTIONS
+

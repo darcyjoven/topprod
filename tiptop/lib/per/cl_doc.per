@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_doc.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Document Reference")
+VBox VBox1
+Folder pc842
+Page page01(text="Browser")
+Table s_doc
+{
+[a06|b02           |b05                                ]
+[a06|b02           |b05                                ]
+[a06|b02           |b05                                ]
+[a06|b02           |b05                                ]
+[a06|b02           |b05                                ]
+
+}
+END -- s_doc
+END -- page01
+END -- pc842
+Folder pc843
+Page page02(text="Detail")
+Grid gr3666
+{
+ <G group01           > <G group02                                       >
+  Type    [gcb02     ]   Short [gcb05                                   ]
+  Part    [gcb03     ]   Long  [gcb06                                   ]
+  Version [gcb]                [                                        ]
+                               [                                        ]
+                               [                                        ]
+                               [                                        ]
+ <                    > <                                                >
+ <G group03           > <G group04                                       >
+  [gcb11     ]           [gcb12     ]
+ <                    > <                                                >
+ <G group05           > <G group06                                       >
+  User  [gcb13     ]     User  [gcb16     ]
+  Group [gcb14 ]         Group [gcb17 ]
+  Date  [gcb15     ]     Date  [gcb18     ]
+ <                    > <                                                >
+
+}
+END -- gr3666
+END -- page02
+END -- pc843
+END -- VBox1
+END -- cl_doc
+
+TABLES
+gcb_file
+ATTRIBUTES
+Edit a06=formonly.a06 type CHAR, tabIndex=1, not null, required;
+ComboBox b02=formonly.b02 type CHAR, tabIndex=2, title="Document Type", not null, required, items=(("DOC", %"Document"),("URL", %"Hyper Link"),("TXT", %"Memo"));
+Edit b05=formonly.b05 type CHAR, tabIndex=3, title="Document Description";
+Group group01:group01, text="Information";
+ComboBox gcb02=gcb_file.gcb02, tabIndex=4, not null, required, items=(("DOC", "Document"),("URL", "Hyper Link"),("TXT", "Memo"));
+Edit gcb03=gcb_file.gcb03, tabIndex=5, noEntry, not null, required;
+Edit gcb=gcb_file.gcb04, tabIndex=6, noEntry, not null, required;
+Group group02:group02, text="Description";
+Edit gcb05=gcb_file.gcb05, tabIndex=7, not null, required, scroll;
+TextEdit gcb06=gcb_file.gcb06, tabIndex=8, stretch=NONE, scrollBars=both;
+Group group03:group03, text="Read Permission";
+RadioGroup gcb11=gcb_file.gcb11, tabIndex=9, not null, required, items=(("U", "Owner"),("G", "Group"),("O", "All"));
+Group group04:group04, text="Write Permission";
+RadioGroup gcb12=gcb_file.gcb12, tabIndex=10, not null, required, items=(("U", "Owner"),("G", "Group"),("O", "All"));
+Group group05:group05, text="Create By";
+Edit gcb13=gcb_file.gcb13, tabIndex=11, noEntry;
+Edit gcb14=gcb_file.gcb14, tabIndex=12, noEntry;
+Edit gcb15=gcb_file.gcb15, tabIndex=13, noEntry;
+Group group06:group06, text="Last Modify";
+Edit gcb16=gcb_file.gcb16, tabIndex=14, noEntry;
+Edit gcb17=gcb_file.gcb17, tabIndex=15, noEntry;
+Edit gcb18=gcb_file.gcb18, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_doc(formonly.a06,formonly.b02,formonly.b05)
+SCREEN RECORD Undefined(gcb_file.gcb02,gcb_file.gcb03,gcb_file.gcb04,gcb_file.gcb05,gcb_file.gcb06,gcb_file.gcb11,gcb_file.gcb12,gcb_file.gcb13,gcb_file.gcb14,gcb_file.gcb15,gcb_file.gcb16,gcb_file.gcb17,gcb_file.gcb18)
+END -- INSTRUCTIONS
+

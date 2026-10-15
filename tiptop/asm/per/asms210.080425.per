@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asms210.080425.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asms210")
+VBox VBox1
+Folder pc197
+Page page01(text="Main")
+Grid gr912
+{
+ <G group01                                                                                                                    >
+  System Status                       [d1                  ]
+  Current Working Day                 [sma30       ]
+  Current Accounting Period           [sma5]-[sma]
+  Cost Accounting Locking Date        [sma53   ]
+ <                                                                                                                             >
+ <G group02                                               ><G group03                                                          >
+ [sma02                                ]                   [g_sma894_1                                        ]
+ [sma03                                ]                   [g_sma894_2                                        ]
+ [sma10                                                 ]  [g_sma894_3                                        ]
+ [sma04                                ]                   [g_sma894_4                                        ]
+ [sma24                                ]                   [g_sma894_5                                        ]
+ [sma07                                ]                   [g_sma894_6                                                         ]
+ [sma79                                                 ]  [g_sma894_7                                        ]
+ [sma901                                                ]  [g_sma894_8                                        ]
+ <                                                        ><                                                                   >
+
+}
+END -- gr912
+END -- page01
+END -- pc197
+END -- VBox1
+END -- asms210
+
+TABLES
+sma_file
+ATTRIBUTES
+Group group01:group01;
+Edit d1=formonly.d1 type CHAR, tabIndex=1, noEntry;
+DateEdit sma30=sma_file.sma30, tabIndex=2, required;
+Edit sma5=sma_file.sma51, tabIndex=3, required;
+Edit sma=sma_file.sma52, tabIndex=4, required;
+Edit sma53=sma_file.sma53, tabIndex=5, not null, required;
+Group group02:group02;
+CheckBox sma02=sma_file.sma02, tabIndex=6, text="Link to AXM Module?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma03=sma_file.sma03, tabIndex=7, text="Link to AGL Module", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma10=sma_file.sma10, tabIndex=8, text="Account must exist in AGL Acct Master? ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma04=sma_file.sma04, tabIndex=9, text="Link to AAP Module ?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma24=sma_file.sma24, tabIndex=10, text="Use Standard Cost?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma07=sma_file.sma07, tabIndex=11, text="Link to Bar Code Module?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma79=sma_file.sma79, tabIndex=12, text="Activate ABX?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma901=sma_file.sma901, tabIndex=13, text="Connect with APS Module", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03;
+CheckBox g_sma894_1=formonly.g_sma894_1 type CHAR, tabIndex=14, text="Allow MISC Issuing & Scrap if Inventory Short?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_sma894_2=formonly.g_sma894_2 type CHAR, tabIndex=15, text="Allow Delivery/Deduction if Inventory Short", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_sma894_3=formonly.g_sma894_3 type CHAR, tabIndex=16, text="Allow W/O issue if Inventory Short?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_sma894_4=formonly.g_sma894_4 type CHAR, tabIndex=17, text="Allow Transfer-out if Inventory Short?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_sma894_5=formonly.g_sma894_5 type CHAR, tabIndex=18, text="Repay/Store-out if Inventory Short?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_sma894_6=formonly.g_sma894_6 type CHAR, tabIndex=19, text="Post Purchase Store/Return and Unod Return/Posting for Short Inv", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_sma894_7=formonly.g_sma894_7 type CHAR, tabIndex=20, text="Undo Sales/Return/Posting if Inventory Short", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_sma894_8=formonly.g_sma894_8 type CHAR, tabIndex=21, text="Allow Inventory Posted can be (-)?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.d1,sma_file.sma30,sma_file.sma51,sma_file.sma52,sma_file.sma53,sma_file.sma02,sma_file.sma03,sma_file.sma10,sma_file.sma04,sma_file.sma24,sma_file.sma07,sma_file.sma79,sma_file.sma901,formonly.g_sma894_1,formonly.g_sma894_2,formonly.g_sma894_3,formonly.g_sma894_4,formonly.g_sma894_5,formonly.g_sma894_6,formonly.g_sma894_7,formonly.g_sma894_8)
+END -- INSTRUCTIONS
+

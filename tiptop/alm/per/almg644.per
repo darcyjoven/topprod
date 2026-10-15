@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almg644.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+   <G group1                                              >
+
+       [labe]                   [ltv01]/[ltv0]
+       [label1              ]   [value            ]
+
+   <                                                      >
+
+
+  [more                            ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+ltv_file
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+Label labe:Label3, text=%"Date";
+Edit ltv01=ltv_file.ltv01, tabIndex=2, not null, required;
+Edit ltv0=ltv_file.ltv02, tabIndex=3, not null, required;
+Label label1:Label1, text=%"Value";
+Edit value=formonly.value type CHAR, tabIndex=1;
+CheckBox more=formonly.more type CHAR, tabIndex=4, text=%"more", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.value,ltv_file.ltv01,ltv_file.ltv02,formonly.more)
+END -- INSTRUCTIONS
+

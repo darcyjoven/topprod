@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt900_g1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglt900_g1")
+VBox VBox1
+Folder pc792
+Page page01(text="Page01")
+Table s_abb
+{
+[sel    |aba02      |abb01      |abb02    |abb04             |abb07   |aba0|tib09     ]
+[sel    |aba02      |abb01      |abb02    |abb04             |abb07   |aba0|tib09     ]
+[sel    |aba02      |abb01      |abb02    |abb04             |abb07   |aba0|tib09     ]
+[sel    |aba02      |abb01      |abb02    |abb04             |abb07   |aba0|tib09     ]
+[sel    |aba02      |abb01      |abb02    |abb04             |abb07   |aba0|tib09     ]
+[sel    |aba02      |abb01      |abb02    |abb04             |abb07   |aba0|tib09     ]
+[sel    |aba02      |abb01      |abb02    |abb04             |abb07   |aba0|tib09     ]
+[sel    |aba02      |abb01      |abb02    |abb04             |abb07   |aba0|tib09     ]
+[sel    |aba02      |abb01      |abb02    |abb04             |abb07   |aba0|tib09     ]
+[sel    |aba02      |abb01      |abb02    |abb04             |abb07   |aba0|tib09     ]
+
+}
+END -- s_abb
+END -- page01
+END -- pc792
+Grid gr3471
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3471
+END -- VBox1
+END -- gglt900_g1
+
+TABLES
+abb_file,
+aba_file
+ATTRIBUTES
+CheckBox sel=formonly.sel type CHAR, tabIndex=1, title="Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit aba02=aba_file.aba02, tabIndex=2, title="Vou Date", noEntry;
+Edit abb01=abb_file.abb01, tabIndex=3, title="Voucher#", noEntry;
+Edit abb02=abb_file.abb02, tabIndex=4, title="Ln #", noEntry;
+Edit abb04=abb_file.abb04, tabIndex=5, title="Memo", noEntry;
+Edit abb07=abb_file.abb07, tabIndex=6, title="Amt", noEntry, not null, required;
+Edit aba0=aba_file.aba06, tabIndex=7, title="Src", noEntry, not null, required;
+ButtonEdit tib09=formonly.tib09 type CHAR, action=controlp, tabIndex=8, title="Cash VarCd", image="zoom", comment="<^P>Cash VarCd";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abb(formonly.sel,aba_file.aba02,abb_file.abb01,abb_file.abb02,abb_file.abb04,abb_file.abb07,aba_file.aba06,formonly.tib09)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

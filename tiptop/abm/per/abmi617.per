@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi617.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi617")
+VBox vb5
+Folder folder01
+Page page01(text="Main")
+Grid gr5415
+{
+
+ SO No.              [bog01             ]  Confirm          [bog03       ]
+ Change Date         [bog02       ]        Issue Date       [bog05       ]                     [bog04       ]
+ Remark              [bog06       ]
+}
+END -- gr5415
+END -- page01
+Page info(text="Info")
+Grid gr5416
+{
+ Record Owner        [boguser   ] Last Modified by    [bogmodu   ]    Data Valid Code     [bogacti   ]
+ Department          [boggrup   ] Create/Modify Date  [bogdate     ]
+ Record Orig.        [bogoriu   ]
+ Dept Orig.          [bogorig   ]
+}
+END -- gr5416
+END -- info
+END -- folder01
+Group gb3834
+ScrollGrid gr5417
+{
+
+[dummy01      |dummy11         |dummy02           |dummy03             |dummy04           ] [dummy06             |dummy05               |dummy83                |dummy85        |dummy09      ]
+[boh03        |boh04           |boh05             |boh02               |boh11             ] [boh06               |boh10                 |boh07                  |boh08          |boh09        ]
+                                                                                                                 [boh15                 |boh12                  |boh13          |boh14        ]
+[boh03        |boh04           |boh05             |boh02               |boh11             ] [boh06               |boh10                 |boh07                  |boh08          |boh09        ]
+                                                                                                                 [boh15                 |boh12                  |boh13          |boh14        ]
+[boh03        |boh04           |boh05             |boh02               |boh11             ] [boh06               |boh10                 |boh07                  |boh08          |boh09        ]
+                                                                                                                 [boh15                 |boh12                  |boh13          |boh14        ]
+[boh03        |boh04           |boh05             |boh02               |boh11             ] [boh06               |boh10                 |boh07                  |boh08          |boh09        ]
+                                                                                                                 [boh15                 |boh12                  |boh13          |boh14        ]
+
+}
+END -- gr5417
+END -- gb3834
+Grid gr5418
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr5418
+END -- vb5
+END -- abmi617
+
+TABLES
+boh_file,
+bog_file
+ATTRIBUTES
+ButtonEdit bog01=bog_file.bog01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Enter P/O # to Query,Press ^P Qry PO # ";
+ComboBox bog03=bog_file.bog03, tabIndex=5, noEntry, not null, required, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+DateEdit bog02=bog_file.bog02, tabIndex=2, not null, required;
+DateEdit bog05=bog_file.bog05, tabIndex=4;
+CheckBox bog04=bog_file.bog04, tabIndex=6, text="issue", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit bog06=bog_file.bog06, tabIndex=3;
+Edit boguser=bog_file.boguser, tabIndex=7, noEntry;
+Edit bogmodu=bog_file.bogmodu, tabIndex=8, noEntry;
+Edit bogacti=bog_file.bogacti, tabIndex=9, noEntry, upShift;
+Edit boggrup=bog_file.boggrup, tabIndex=10, noEntry;
+DateEdit bogdate=bog_file.bogdate, tabIndex=11, noEntry;
+Edit bogoriu=bog_file.bogoriu, tabIndex=501, noEntry;
+Edit bogorig=bog_file.bogorig, tabIndex=502, noEntry;
+Label dummy01:dummy01, text="Host design";
+Label dummy11:dummy11, text="Alternate Code";
+Label dummy02:dummy02, text="Part design";
+Label dummy03:dummy03, text="Fixed Attribute No.";
+Label dummy04:dummy04, text="Change Method";
+Label dummy06:dummy06, text="Attribute Name";
+Label dummy05:dummy05, text="Fixed  Attribute Type";
+Label dummy83:dummy83, text="Fixed  Attribute Value";
+Label dummy85:dummy85, text="Effective Date";
+Label dummy09:dummy09, text="Expired Date";
+ButtonEdit boh03=boh_file.boh03, action=controlp, tabIndex=12, not null, required, image="zoom";
+ButtonEdit boh04=boh_file.boh04, action=controlp, tabIndex=13, not null, required, image="zoom";
+ButtonEdit boh05=boh_file.boh05, action=controlp, tabIndex=14, not null, required, image="zoom";
+Edit boh02=boh_file.boh02, tabIndex=15, not null, required;
+ComboBox boh11=boh_file.boh11, tabIndex=16, not null, required, items=(("1", "modify"),("2", "insert"),("3", "delete"));
+ButtonEdit boh06=boh_file.boh06, action=controlp, tabIndex=17, not null, required, image="zoom";
+ComboBox boh10=boh_file.boh10, tabIndex=18, noEntry, items=(("1", "zj"),("2", "zdy"));
+ButtonEdit boh07=boh_file.boh07, action=controlp, tabIndex=19, noEntry, image="zoom";
+DateEdit boh08=boh_file.boh08, tabIndex=20, noEntry;
+DateEdit boh09=boh_file.boh09, tabIndex=21, noEntry;
+ComboBox boh15=boh_file.boh15, tabIndex=22, items=(("1", "zj"),("2", "zdy"));
+ButtonEdit boh12=boh_file.boh12, action=controlp, tabIndex=23, image="zoom";
+DateEdit boh13=boh_file.boh13, tabIndex=24;
+DateEdit boh14=boh_file.boh14, tabIndex=25;
+Edit cnt=formonly.cnt type CHAR, tabIndex=26;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_boh(boh_file.boh03,boh_file.boh04,boh_file.boh05,boh_file.boh02,boh_file.boh11,boh_file.boh06,boh_file.boh10,boh_file.boh07,boh_file.boh08,boh_file.boh09,boh_file.boh15,boh_file.boh12,boh_file.boh13,boh_file.boh14)
+SCREEN RECORD Undefined(bog_file.bog01,bog_file.bog03,bog_file.bog02,bog_file.bog05,bog_file.bog04,bog_file.bog06,bog_file.boguser,bog_file.bogmodu,bog_file.bogacti,bog_file.boggrup,bog_file.bogdate,bog_file.bogoriu,bog_file.bogorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt800")
+Folder pc612
+Page page01(text=%"Main")
+Grid gr3485
+{
+ <G group01                                                      > <G group02                                                     >
+ [stk                               ]                              [wip                               ]
+  Label Type  [tag1            ][smydesc1                      ]    Label Type   [tag2            |smydesc3                      ]
+ <                                                               > <                                                              >
+ <G group03                                                      > <G group04                                                     >
+ [noinv1                           ]
+ [spcg1                            ]                               [spcg2                               ]
+  Label Type  [spc1            ][smydesc2                      ]    Label Type  [spc2            ][smydesc4                      ]
+  Generating Pages [qty1      ]                                     Generating Pages     [qty2      ]
+ [label1    ]     [edate      ]
+ <                                                               > <                                                              >
+
+ <G group05                                                      > <G group06                                                     >
+ [o1                     ]                                         [k1                     ]
+ [o2                     ]                                         [k2                     ]
+ [o3                     ]                                         [k3                     ]
+ [o4                     ]                                         [k4                     ]
+ [o5                     ]                                         [k5                     ]
+ [o6                     ]                                         [k6                     ]
+  Group Code Option   [class1    ]
+ [stk_q]                                                           [wip_q]
+ <                                                               > <                                                              >
+
+ <G group07                                                               >
+  Date                [exedate ]
+ <                                                                        >
+}
+END -- gr3485
+END -- page01
+END -- pc612
+END -- aimt800
+
+ATTRIBUTES
+Group group01:group01, text=%"Stock Generate";
+CheckBox stk=formonly.stk type VARCHAR, tabIndex=1, text=%"(Qty On Hand) Inv Taking Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit tag1=formonly.tag1 type VARCHAR, action=controlp, tabIndex=2, image="zoom", comment=%"<^P>Qry  Label  <^Y>Create Label Type";
+Edit smydesc1=formonly.smydesc1 type VARCHAR, tabIndex=3, noEntry;
+Group group02:group02, text=%"WIP Generate";
+CheckBox wip=formonly.wip type VARCHAR, tabIndex=4, text=%"(IP W/O) Inv Taking Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit tag2=formonly.tag2 type VARCHAR, action=controlp, tabIndex=5, image="zoom", comment=%"<^P>Qry  Label  <^Y>Create Label Type";
+Edit smydesc3=formonly.smydesc3 type VARCHAR, tabIndex=6, noEntry;
+Group group03:group03;
+CheckBox noinv1=formonly.noinv1 type VARCHAR, tabIndex=7, text=%"Include (None QOH) Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox spcg1=formonly.spcg1 type VARCHAR, tabIndex=8, text=%"Generate Blank Label", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit spc1=formonly.spc1 type VARCHAR, action=controlp, tabIndex=9, image="zoom", comment=%"<^P>Qry  Label  <^Y>Create Label Type";
+Edit smydesc2=formonly.smydesc2 type VARCHAR, tabIndex=10, noEntry;
+Edit qty1=formonly.qty1 type INTEGER, tabIndex=11;
+Label label1:Label1, text=%"Ending Date";
+DateEdit edate=formonly.edate, tabIndex=32, not null, required;
+Group group04:group04;
+CheckBox spcg2=formonly.spcg2 type VARCHAR, tabIndex=12, text=%"Generate Blank Label", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit spc2=formonly.spc2 type VARCHAR, action=controlp, tabIndex=13, image="zoom", comment=%"<^P>Qry  Label  <^Y>Create Label Type";
+Edit smydesc4=formonly.smydesc4 type VARCHAR, tabIndex=14, noEntry;
+Edit qty2=formonly.qty2 type INTEGER, tabIndex=15;
+Group group05:group05, text=%"Data Sequence";
+ComboBox o1=formonly.o1 type VARCHAR, tabIndex=16, not null, required, queryEditable, items=(("1", %"Warehouse Keeper"),("2", %"Warehouse"),("3", %"Location"),("4", %"Lot No."),("5", %"Item No."),("6", %"Group Code"));
+ComboBox o2=formonly.o2 type VARCHAR, tabIndex=17, not null, required, queryEditable, items=(("1", %"Warehouse Keeper"),("2", %"Warehouse"),("3", %"Location"),("4", %"Lot No."),("5", %"Item No."),("6", %"Group Code"));
+ComboBox o3=formonly.o3 type VARCHAR, tabIndex=18, not null, required, queryEditable, items=(("1", %"Warehouse Keeper"),("2", %"Warehouse"),("3", %"Location"),("4", %"Lot No."),("5", %"Item No."),("6", %"Group Code"));
+ComboBox o4=formonly.o4 type VARCHAR, tabIndex=19, not null, required, queryEditable, items=(("1", %"Warehouse Keeper"),("2", %"Warehouse"),("3", %"Location"),("4", %"Lot No."),("5", %"Item No."),("6", %"Group Code"));
+ComboBox o5=formonly.o5 type VARCHAR, tabIndex=20, not null, required, queryEditable, items=(("1", %"Warehouse Keeper"),("2", %"Warehouse"),("3", %"Location"),("4", %"Lot No."),("5", %"Item No."),("6", %"Group Code"));
+ComboBox o6=formonly.o6 type VARCHAR, tabIndex=21, not null, required, queryEditable, items=(("1", %"Warehouse Keeper"),("2", %"Warehouse"),("3", %"Location"),("4", %"Lot No."),("5", %"Item No."),("6", %"Group Code"));
+ComboBox class1=formonly.class1 type VARCHAR, tabIndex=22, not null, required, queryEditable, items=(("0", %"0"),("1", %"1"),("2", %"2"),("3", %"3"),("4", %"4"));
+Button stk_q:stk_qbe, tabIndex=30, text=%"INPUT QBE";
+Group group06:group06, text=%"Data Sequence";
+ComboBox k1=formonly.k1 type CHAR, tabIndex=23, not null, required, queryEditable, items=(("1", %"Production Item No."),("2", %"Complete Date"),("3", %"Status"),("4", %"Style"),("5", %"W/O No. "),("6", %"Manufacturing Dept"));
+ComboBox k2=formonly.k2 type CHAR, tabIndex=24, not null, required, queryEditable, items=(("1", %"Production Item No."),("2", %"Complete Date"),("3", %"Status"),("4", %"Style"),("5", %"W/O No. "),("6", %"Manufacturing Dept"));
+ComboBox k3=formonly.k3 type CHAR, tabIndex=25, not null, required, queryEditable, items=(("1", %"Production Item No."),("2", %"Complete Date"),("3", %"Status"),("4", %"Style"),("5", %"W/O No. "),("6", %"Manufacturing Dept"));
+ComboBox k4=formonly.k4 type CHAR, tabIndex=26, not null, required, queryEditable, items=(("1", %"Production Item No."),("2", %"Complete Date"),("3", %"Status"),("4", %"Style"),("5", %"W/O No. "),("6", %"Manufacturing Dept"));
+ComboBox k5=formonly.k5 type CHAR, tabIndex=27, not null, required, queryEditable, items=(("1", %"Production Item No."),("2", %"Complete Date"),("3", %"Status"),("4", %"Style"),("5", %"W/O No. "),("6", %"Manufacturing Dept"));
+ComboBox k6=formonly.k6 type CHAR, tabIndex=28, not null, required, queryEditable, items=(("1", %"Production Item No."),("2", %"Complete Date"),("3", %"Status"),("4", %"Style"),("5", %"W/O No. "),("6", %"Manufacturing Dept"));
+Button wip_q:wip_qbe, tabIndex=31, text=%"INPUT QBE";
+Group group07:group07;
+DateEdit exedate=formonly.exedate type DATE, tabIndex=29;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.stk,formonly.tag1,formonly.smydesc1,formonly.wip,formonly.tag2,formonly.smydesc3,formonly.noinv1,formonly.spcg1,formonly.spc1,formonly.smydesc2,formonly.qty1,formonly.spcg2,formonly.spc2,formonly.smydesc4,formonly.qty2,formonly.o1,formonly.o2,formonly.o3,formonly.o4,formonly.o5,formonly.o6,formonly.class1,formonly.k1,formonly.k2,formonly.k3,formonly.k4,formonly.k5,formonly.k6,formonly.exedate,formonly.edate)
+END -- INSTRUCTIONS
+

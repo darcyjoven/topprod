@@ -1,0 +1,132 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct401")
+VBox vb6
+Folder pc385
+Page page01(text="Main")
+Grid gr1803
+{
+ Adjustment Type             [ccl00     ]
+ W/O No.                     [ccl01           ]
+ Product Item#               [sfb05                         ]
+                             [ima02                         ]
+ Unit                        [ima25     ]
+ Year/Month                  [ccl02     ]/[cc]
+ Cost Calculation Method     [ccl06     ]Category No.   [ccl07                       ]
+ Adjust Desc.                [ccl05               ]
+ Refer. Doc#                 [ccl04           ]
+
+ <G group02                                                               >
+     Current month Adjusting quantity [ccl21               ]
+  -  Material                         [ccl22a              ]
+  -  Labor                            [ccl22b              ]
+  -  Overhead 1                       [ccl22c              ]
+  -  Processing                       [ccl22d              ]
+  -  Overhead 2                       [ccl22e              ]
+  -  Overhead 3                       [ccl22f              ]
+  -  Overhead 4                       [ccl22g              ]
+  -  Overhead 5                       [ccl22h              ]
+   ----------------------------------------------------------
+     Total Amount                     [ccl22               ]
+
+
+ <                                                                        >
+
+}
+END -- gr1803
+END -- page01
+Page info(text="Info")
+Grid gr1804
+{
+ Record Owner        [ccluser   ]   Last Modified by    [cclmodu   ]
+ Department          [cclgrup   ]   Create/Modify Date  [ccldate   ]
+ Record Orig         [ccloriu  ]    Dept Orig           [cclorig     ]
+
+
+
+
+}
+END -- gr1804
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[cclud01                       ] userdefined_field07[cclud07        ] userdefined_field13[cclud13        ]
+                    [                              ] userdefined_field08[cclud08        ] userdefined_field14[cclud14        ]
+ userdefined_field02[cclud02        ]                userdefined_field09[cclud09        ] userdefined_field15[cclud15        ]
+ userdefined_field03[cclud03        ]                userdefined_field10[cclud10        ]
+ userdefined_field04[cclud04        ]                userdefined_field11[cclud11        ]
+ userdefined_field05[cclud05        ]                userdefined_field12[cclud12        ]
+ userdefined_field06[cclud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc385
+Grid gr1805
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr1805
+END -- vb6
+END -- axct401
+
+TABLES
+ccl_file
+ATTRIBUTES
+ComboBox ccl00=ccl_file.ccl00, tabIndex=1, noEntry, items=(("1", "Actual Cost"),("2", "Product Cost"));
+ButtonEdit ccl01=ccl_file.ccl01, action=controlp, tabIndex=2, not null, required, image="zoom", comment="Assign Add/Query Item#";
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=3, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=5, noEntry;
+Edit ccl02=ccl_file.ccl02, tabIndex=6, not null, required;
+Edit cc=ccl_file.ccl03, tabIndex=7, not null, required;
+ComboBox ccl06=ccl_file.ccl06, tabIndex=22, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually???????¯§?????????????¯ch Cost"),("4", "Identify Manually???????¯§??????????????m Cost"),("5", "Identify Manually???????¯§????????μ??§?°?re Profit Center"));
+ButtonEdit ccl07=ccl_file.ccl07, action=controlp, tabIndex=23, not null, required, image="zoom.png";
+Edit ccl05=ccl_file.ccl05, tabIndex=8;
+Edit ccl04=ccl_file.ccl04, tabIndex=9, not null, required;
+Group group02:group02;
+Edit ccl21=ccl_file.ccl21, tabIndex=10;
+Edit ccl22a=ccl_file.ccl22a, tabIndex=11, not null, required;
+Edit ccl22b=ccl_file.ccl22b, tabIndex=12, not null, required;
+Edit ccl22c=ccl_file.ccl22c, tabIndex=13, not null, required;
+Edit ccl22d=ccl_file.ccl22d, tabIndex=14, not null, required;
+Edit ccl22e=ccl_file.ccl22e, tabIndex=15, not null, required;
+Edit ccl22f=ccl_file.ccl22f, tabIndex=24, not null, required;
+Edit ccl22g=ccl_file.ccl22g, tabIndex=25, not null, required;
+Edit ccl22h=ccl_file.ccl22h, tabIndex=26, not null, required;
+Edit ccl22=ccl_file.ccl22, tabIndex=16, noEntry, not null, required;
+Edit ccluser=ccl_file.ccluser, tabIndex=17, noEntry;
+Edit cclmodu=ccl_file.cclmodu, tabIndex=18, noEntry;
+Edit cclgrup=ccl_file.cclgrup, tabIndex=19, noEntry;
+DateEdit ccldate=ccl_file.ccldate, tabIndex=20, noEntry;
+Edit ccloriu=ccl_file.ccloriu, tabIndex=42;
+Edit cclorig=ccl_file.cclorig, tabIndex=43;
+TextEdit cclud01=ccl_file.cclud01, tabIndex=27, stretch=NONE;
+Edit cclud07=ccl_file.cclud07, tabIndex=28;
+DateEdit cclud13=ccl_file.cclud13, tabIndex=29;
+Edit cclud08=ccl_file.cclud08, tabIndex=30;
+DateEdit cclud14=ccl_file.cclud14, tabIndex=31;
+Edit cclud02=ccl_file.cclud02, tabIndex=32;
+Edit cclud09=ccl_file.cclud09, tabIndex=33;
+DateEdit cclud15=ccl_file.cclud15, tabIndex=34;
+Edit cclud03=ccl_file.cclud03, tabIndex=35;
+Edit cclud10=ccl_file.cclud10, tabIndex=36;
+Edit cclud04=ccl_file.cclud04, tabIndex=37;
+Edit cclud11=ccl_file.cclud11, tabIndex=38;
+Edit cclud05=ccl_file.cclud05, tabIndex=39;
+Edit cclud12=ccl_file.cclud12, tabIndex=40;
+Edit cclud06=ccl_file.cclud06, tabIndex=41;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ccl_file.ccl00,ccl_file.ccl01,formonly.sfb05,formonly.ima02,formonly.ima25,ccl_file.ccl02,ccl_file.ccl03,ccl_file.ccl06,ccl_file.ccl07,ccl_file.ccl05,ccl_file.ccl04,ccl_file.ccl21,ccl_file.ccl22a,ccl_file.ccl22b,ccl_file.ccl22c,ccl_file.ccl22d,ccl_file.ccl22e,ccl_file.ccl22f,ccl_file.ccl22g,ccl_file.ccl22h,ccl_file.ccl22,ccl_file.ccluser,ccl_file.cclmodu,ccl_file.cclgrup,ccl_file.ccldate,ccl_file.ccloriu,ccl_file.cclorig,ccl_file.cclud01,ccl_file.cclud07,ccl_file.cclud13,ccl_file.cclud08,ccl_file.cclud14,ccl_file.cclud02,ccl_file.cclud09,ccl_file.cclud15,ccl_file.cclud03,ccl_file.cclud10,ccl_file.cclud04,ccl_file.cclud11,ccl_file.cclud05,ccl_file.cclud12,ccl_file.cclud06,formonly.cnt)
+END -- INSTRUCTIONS
+

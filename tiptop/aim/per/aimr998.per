@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr998.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr998")
+VBox VBox1
+Grid gr3402
+{
+ <G group01                                >   <G group02                                 >
+  Item No.          [pia02              ]       Lot No.    [pia05               ]
+  Warehouse No.     [pia03              ]       Location   [pia04               ]
+  Cost Group        [ima12              ]       Label No.  [pia01               ]
+                                                Type       [pia931              ]
+ <                                         >   <                                          >
+}
+END -- gr3402
+Group group03(text="INPUT")
+Grid gr3403
+{
+ <G group04                                                                             >
+  Pricing Year Month            [yy1       ][mm1       ] [dummy02                     ]
+  Cost Method                   [ctype                 ]
+ <                                                                                      >
+  <G group05                        > <G group06                                        >
+  [e                   ]              [s                   ]
+  <                                 > <                                                 >
+  <G group07                                                                            >
+  [z                             ]
+  [b                             ]
+  [c                             ]
+  [d                             ]
+  [f                             ]
+  [w                             ]
+  <                                                                                     >
+
+}
+END -- gr3403
+END -- group03
+Grid gr3404
+{
+[more                                  ]
+
+}
+END -- gr3404
+END -- VBox1
+END -- aimr998
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pia02=formonly.pia02 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit pia03=formonly.pia03 type VARCHAR, tabIndex=2;
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=3;
+Group group02:group02, text="QBE";
+Edit pia05=formonly.pia05 type VARCHAR, tabIndex=4;
+Edit pia04=formonly.pia04 type VARCHAR, tabIndex=5;
+Edit pia01=formonly.pia01 type VARCHAR, tabIndex=6;
+Edit pia931=formonly.pia931 type VARCHAR, tabIndex=7, default = "1", noEntry, not null;
+Group group04:group04;
+Edit yy1=formonly.yy1 type SMALLINT, tabIndex=8;
+Edit mm1=formonly.mm1 type SMALLINT, tabIndex=9;
+Label dummy02:dummy02, text="Blank:Current Period Price";
+ComboBox ctype=formonly.ctype type VARCHAR, tabIndex=10, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually Batch Cost"),("4", "Identify Manually Item Cost"),("5", "Identify Manually Store Profit Center"));
+Group group05:group05, text="Qty Decimal";
+RadioGroup e=formonly.e type VARCHAR, tabIndex=11, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"));
+Group group06:group06, text="Sequence";
+RadioGroup s=formonly.s type VARCHAR, tabIndex=12, items=(("1", "Item No."),("3", "Warehouse"));
+Group group07:group07, text="Print Data";
+CheckBox z=formonly.z type VARCHAR, tabIndex=13, text="Print Item No. Detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=14, text="Print Warehouse Detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=15, text="Print Location Detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=16, text="Print if no Inv Difference", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type VARCHAR, tabIndex=17, text="Print Item  No. total", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox w=formonly.w type VARCHAR, tabIndex=18, text="Print Part Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=19, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pia02,formonly.pia03,formonly.ima12,formonly.pia05,formonly.pia04,formonly.pia01,formonly.pia931,formonly.yy1,formonly.mm1,formonly.ctype,formonly.e,formonly.s,formonly.z,formonly.b,formonly.c,formonly.d,formonly.f,formonly.w,formonly.more)
+END -- INSTRUCTIONS
+

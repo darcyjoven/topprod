@@ -1,0 +1,38 @@
+----------------------------------------------------------------------------------
+-- $Id:  apmi600_web.per created 2009-12-11T21:30:13
+-- File created from apmi600_web.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="Form3")
+  GRID gr12
+  {
+
+    [aa0                                           ]
+     WEB User        [aa1                 ]
+     WEB Password    [aa2                 ]
+     WEB Inquiry.    [aa3           ]
+     WEB Price       [aa4           ]
+     WEB Purchase    [aa5           ]
+     WEB Receiving   [aa6           ]
+
+
+  }
+  END -- GRID
+END
+TABLES wpa_file
+
+ATTRIBUTES
+  CHECKBOX aa0=wpa_file.wpa02, TEXT="Electron procurement system ", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=1;
+  EDIT aa1=wpa_file.wpa03, NOT NULL, REQUIRED, TABINDEX=2;
+  EDIT aa2=wpa_file.wpa04, FORMAT="*", NOT NULL, REQUIRED, TABINDEX=3;
+  BUTTONEDIT aa3=wpa_file.wpa05, IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=4;
+  BUTTONEDIT aa4=wpa_file.wpa06, IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=5;
+  BUTTONEDIT aa5=wpa_file.wpa07, IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=6;
+  BUTTONEDIT aa6=wpa_file.wpa08, IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=7;
+END
+▼--------------------------------------------------------------------------
+# Per_version = '5.30.01-11.07.23(00002)'   #

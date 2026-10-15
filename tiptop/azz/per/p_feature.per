@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_feature.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_feature")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr3190
+{
+ <G group01                                              >
+  Program ID [gbf01       ][gaz03                       ]
+ <                                                       >
+
+}
+END -- gr3190
+END -- page01
+Page info(text="Info")
+Grid gr3191
+{
+ Record Owner        [gbfuser   ]   Last Modified By    [gbfmodu   ]
+ Department          [gbfgrup   ]   Create/Modify Date  [gbfdate   ]
+ Record Orig.        [gbforiu   ]
+ Dept Orig.          [gbforig   ]
+}
+END -- gr3191
+END -- info
+END -- folder01
+Table s_gbf
+{
+[gbf02    |gbf03     |gbf04    |gbf05                                                 ]
+[gbf02    |gbf03     |gbf04    |gbf05                                                 ]
+[gbf02    |gbf03     |gbf04    |gbf05                                                 ]
+[gbf02    |gbf03     |gbf04    |gbf05                                                 ]
+[gbf02    |gbf03     |gbf04    |gbf05                                                 ]
+[gbf02    |gbf03     |gbf04    |gbf05                                                 ]
+[gbf02    |gbf03     |gbf04    |gbf05                                                 ]
+[gbf02    |gbf03     |gbf04    |gbf05                                                 ]
+[gbf02    |gbf03     |gbf04    |gbf05                                                 ]
+[gbf02    |gbf03     |gbf04    |gbf05                                                 ]
+
+}
+END -- s_gbf
+Grid gr3192
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3192
+END -- VBox1
+END -- p_feature
+
+TABLES
+gaz_file,
+gbf_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit gbf01=gbf_file.gbf01, action=controlp, tabIndex=1, not null, required, image="zoom";
+LABEL gaz03=gaz_file.gaz03;
+Edit gbfuser=gbf_file.gbfuser, tabIndex=3, noEntry;
+Edit gbfmodu=gbf_file.gbfmodu, tabIndex=4, noEntry;
+Edit gbfgrup=gbf_file.gbfgrup, tabIndex=5, noEntry;
+DateEdit gbfdate=gbf_file.gbfdate, tabIndex=6, noEntry;
+Edit gbforiu=gbf_file.gbforiu, tabIndex=501, noEntry;
+Edit gbforig=gbf_file.gbforig, tabIndex=502, noEntry;
+ComboBox gbf02=gbf_file.gbf02, tabIndex=7, title="Language", not null, required, queryEditable;
+Edit gbf03=gbf_file.gbf03, tabIndex=8, title="Main Line", not null, required;
+Edit gbf04=gbf_file.gbf04, tabIndex=9, title="Sub Line", not null, required;
+Edit gbf05=gbf_file.gbf05, tabIndex=10, title="Task Feature";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gbf(gbf_file.gbf02,gbf_file.gbf03,gbf_file.gbf04,gbf_file.gbf05)
+SCREEN RECORD Undefined(gbf_file.gbf01,gaz_file.gaz03,gbf_file.gbfuser,gbf_file.gbfmodu,gbf_file.gbfgrup,gbf_file.gbfdate,gbf_file.gbforiu,gbf_file.gbforig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

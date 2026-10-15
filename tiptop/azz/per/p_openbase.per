@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_openbase.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_openbase")
+VBox vb4
+Table s_zoa
+{
+[zoa01   |zoa03          |gaz03               |zoa04 |zoa05     |zoa06     |zoa07     ]
+[zoa01   |zoa03          |gaz03               |zoa04 |zoa05     |zoa06     |zoa07     ]
+[zoa01   |zoa03          |gaz03               |zoa04 |zoa05     |zoa06     |zoa07     ]
+[zoa01   |zoa03          |gaz03               |zoa04 |zoa05     |zoa06     |zoa07     ]
+[zoa01   |zoa03          |gaz03               |zoa04 |zoa05     |zoa06     |zoa07     ]
+[zoa01   |zoa03          |gaz03               |zoa04 |zoa05     |zoa06     |zoa07     ]
+
+}
+END -- s_zoa
+Table s_zob
+{
+[zob02                       |gat03                         |zob05            |zob06            ]
+[zob02                       |gat03                         |zob05            |zob06            ]
+[zob02                       |gat03                         |zob05            |zob06            ]
+[zob02                       |gat03                         |zob05            |zob06            ]
+[zob02                       |gat03                         |zob05            |zob06            ]
+[zob02                       |gat03                         |zob05            |zob06            ]
+
+}
+END -- s_zob
+Grid gr5
+{
+ ---------- [cn2   ] / [cn3   ] ----------
+
+}
+END -- gr5
+END -- vb4
+END -- p_openbase
+
+TABLES
+zob_file,
+zoa_file
+ATTRIBUTES
+ComboBox zoa01=zoa_file.zoa01, tabIndex=1, title="Data Type", not null, required, items=(("1", %"Basic Data"),("2", %"Item"),("3", %"Balance"));
+ButtonEdit zoa03=zoa_file.zoa03, action=controlp, tabIndex=3, title="Data Code Name", not null, required, comment="<^P>Qry Logesitc";
+Edit gaz03=formonly.gaz03 type VARCHAR, tabIndex=4, title="Program Name", noEntry;
+Edit zoa04=zoa_file.zoa04, tabIndex=5, title="Bill";
+Edit zoa05=zoa_file.zoa05, tabIndex=6, title="Last Converge Date", noEntry, not null, required;
+Edit zoa06=zoa_file.zoa06, tabIndex=7, title="Converge User", noEntry, not null, required;
+Edit zoa07=zoa_file.zoa07, tabIndex=8, title="Converge Number", noEntry, not null, required;
+Edit zob02=zob_file.zob02, tabIndex=9, title="Field Code", not null, required;
+Edit gat03=formonly.gat03 type VARCHAR, tabIndex=10, title="Field Name", noEntry;
+CheckBox zob05=zob_file.zob05, tabIndex=13, title="Only Manpower?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit zob06=zob_file.zob06, tabIndex=16, title="error cnt", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zoa(zoa_file.zoa01,zoa_file.zoa03,formonly.gaz03,zoa_file.zoa04,zoa_file.zoa05,zoa_file.zoa06,zoa_file.zoa07)
+SCREEN RECORD s_zob(zob_file.zob02,formonly.gat03,zob_file.zob05,zob_file.zob06)
+SCREEN RECORD Undefined(formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

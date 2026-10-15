@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi411.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Basic Data")
+Grid Grid1
+{
+
+  [label4            ]   [odu01            ]       [label5             ]    [odu02         ]
+
+  [label6            ]   [odu03            ]       [tqa02              ]
+
+  [label7            ]   [odu04            ]       [tqa02_b            ]
+
+
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table s_odv(tag="s_odv")
+{
+[odv02   |tqa02_c |odv03   ]
+[odv02   |tqa02_c |odv03   ]
+[odv02   |tqa02_c |odv03   ]
+[odv02   |tqa02_c |odv03   ]
+[odv02   |tqa02_c |odv03   ]
+
+}
+END -- s_odv
+Grid Grid2
+{
+
+    ----[label1|idx    ][la][cnt    ] --- [label3][cni    ] ----
+
+
+
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+odv_file,
+odu_file
+ATTRIBUTES
+Label label4:Label4, text=%"Ratio Version";
+ButtonEdit odu01=odu_file.odu01, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+Label label5:Label5, text=%"Ratio Description";
+Edit odu02=odu_file.odu02, tabIndex=8;
+Label label6:Label6, text=%"For Product Type";
+ButtonEdit odu03=odu_file.odu03, action=controlp, tabIndex=9, image="zoom.png";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=10, noEntry;
+Label label7:Label7, text=%"For Sales Area";
+ButtonEdit odu04=odu_file.odu04, action=controlp, tabIndex=11, image="zoom.png";
+Edit tqa02_b=formonly.tqa02_b type CHAR, tabIndex=12, noEntry;
+ButtonEdit odv02=odv_file.odv02, action=controlp, tabIndex=1, title=%"Size", not null, required, image="zoom.png";
+Edit tqa02_c=formonly.tqa02_c type CHAR, tabIndex=2, title=%"Name", noEntry;
+Edit odv03=odv_file.odv03, tabIndex=3, title=%"Radio%";
+Label label1:Label1, text=%"Rows";
+Edit idx=formonly.idx type CHAR, tabIndex=4, noEntry;
+Label la:Label2, text=%"/";
+Edit cnt=formonly.cnt type CHAR, tabIndex=5, noEntry;
+Label label3:Label3, text=%"Items";
+Edit cni=formonly.cni type CHAR, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_odv(odv_file.odv02,formonly.tqa02_c,odv_file.odv03)
+SCREEN RECORD Undefined(odu_file.odu01,odu_file.odu02,odu_file.odu03,formonly.tqa02,odu_file.odu04,formonly.tqa02_b,formonly.idx,formonly.cnt,formonly.cni)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp302_e.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="anmp302_e")
+VBox vb1
+Table s_msg
+{
+[nps03      |nps01        |chr37                                   ]
+[nps03      |nps01        |chr37                                   ]
+[nps03      |nps01        |chr37                                   ]
+[nps03      |nps01        |chr37                                   ]
+[nps03      |nps01        |chr37                                   ]
+
+}
+END -- s_msg
+Grid gr1
+{
+ ------- Rows [cnt3  ] -------
+
+}
+END -- gr1
+END -- vb1
+END -- anmp302_e
+
+TABLES
+nps_file,
+type_file
+ATTRIBUTES
+Edit nps03=nps_file.nps03, tabIndex=1, title="Transaction Type";
+Edit nps01=nps_file.nps01, tabIndex=2, title="Transaction Reference No.";
+Edit chr37=type_file.chr37, tabIndex=3, title="errtxt";
+Edit cnt3=formonly.cnt3 type CHAR, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_msg(nps_file.nps03,nps_file.nps01,type_file.chr37)
+SCREEN RECORD Undefined(formonly.cnt3)
+END -- INSTRUCTIONS
+

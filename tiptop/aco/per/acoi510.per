@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi510")
+VBox VBox1
+Folder pc196
+Page page01(text="Main")
+Grid gr1293
+{
+ Document Type          [cor00     ]
+ Document No.           [cor01           ]
+ Line No.               [cor02     ]
+ Document Date          [cor03     ]
+ Vender No.             [cor07     ]                     Abbreviation[cor08       ]
+ Item No.               [cor04                         ]
+                        [ima02                         ]
+ Transaction Qty        [cor09          ]   [cor10     ]
+ Bonded No.             [cor12          ]   [cor13     ] Conv.R      [cor11       ]
+
+
+ ---------------------------------------------------------------------------------
+ Goods No.              [cor05     ]                     Customs No. [cor06       ]
+ Transaction Method     [cor14          ]                W/O No.     [cor15           ]
+
+}
+END -- gr1293
+END -- page01
+Page info(text="Info")
+Grid gr1294
+{
+ Record Owner        [coruser   ] Last Modified by    [cormodu   ] Data Valid Code     [coracti   ]
+ Department          [corgrup   ] Create/Modify Date  [cordate     ]
+ Record Orig.        [cororiu   ]
+ Dept Orig.          [cororig   ]
+}
+END -- gr1294
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[corud01                       ] userdefined_field07[corud07        ] userdefined_field13[corud13        ]
+                    [                              ] userdefined_field08[corud08        ] userdefined_field14[corud14        ]
+ userdefined_field02[corud02        ]                userdefined_field09[corud09        ] userdefined_field15[corud15        ]
+ userdefined_field03[corud03        ]                userdefined_field10[corud10        ]
+ userdefined_field04[corud04        ]                userdefined_field11[corud11        ]
+ userdefined_field05[corud05        ]                userdefined_field12[corud12        ]
+ userdefined_field06[corud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc196
+Grid gr1295
+{
+  ----------Rows [cnt   ] ----------
+
+}
+END -- gr1295
+END -- VBox1
+END -- acoi510
+
+TABLES
+cor_file
+ATTRIBUTES
+ComboBox cor00=cor_file.cor00, tabIndex=1, not null, required, queryEditable, items=(("1", "Product"),("2", "Item"));
+Edit cor01=cor_file.cor01, tabIndex=2, not null, required;
+Edit cor02=cor_file.cor02, tabIndex=3, not null, required;
+DateEdit cor03=cor_file.cor03, tabIndex=4;
+Edit cor07=cor_file.cor07, tabIndex=5;
+Edit cor08=cor_file.cor08, tabIndex=6;
+Edit cor04=cor_file.cor04, tabIndex=7;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=8, noEntry;
+Edit cor09=cor_file.cor09, tabIndex=9;
+Edit cor10=cor_file.cor10, tabIndex=10;
+Edit cor12=cor_file.cor12, tabIndex=11;
+Edit cor13=cor_file.cor13, tabIndex=12;
+Edit cor11=cor_file.cor11, tabIndex=13;
+ButtonEdit cor05=cor_file.cor05, action=controlp, tabIndex=14, image="zoom", comment="<^P>Goods No.";
+ButtonEdit cor06=cor_file.cor06, action=controlp, tabIndex=16, image="zoom", comment="<^P>Customs No.";
+ComboBox cor14=cor_file.cor14, tabIndex=15, queryEditable;
+Edit cor15=cor_file.cor15, tabIndex=17;
+Edit coruser=cor_file.coruser, tabIndex=18, noEntry;
+Edit cormodu=cor_file.cormodu, tabIndex=20, noEntry;
+Edit coracti=cor_file.coracti, tabIndex=22, noEntry, upShift;
+Edit corgrup=cor_file.corgrup, tabIndex=19, noEntry;
+DateEdit cordate=cor_file.cordate, tabIndex=21, noEntry;
+Edit cororiu=cor_file.cororiu, tabIndex=501, noEntry;
+Edit cororig=cor_file.cororig, tabIndex=502, noEntry;
+TextEdit corud01=cor_file.corud01, tabIndex=23, stretch=NONE;
+Edit corud07=cor_file.corud07, tabIndex=29;
+DateEdit corud13=cor_file.corud13, tabIndex=35;
+Edit corud08=cor_file.corud08, tabIndex=30;
+DateEdit corud14=cor_file.corud14, tabIndex=36;
+Edit corud02=cor_file.corud02, tabIndex=24;
+Edit corud09=cor_file.corud09, tabIndex=31;
+DateEdit corud15=cor_file.corud15, tabIndex=37;
+Edit corud03=cor_file.corud03, tabIndex=25;
+Edit corud10=cor_file.corud10, tabIndex=32;
+Edit corud04=cor_file.corud04, tabIndex=26;
+Edit corud11=cor_file.corud11, tabIndex=33;
+Edit corud05=cor_file.corud05, tabIndex=27;
+Edit corud12=cor_file.corud12, tabIndex=34;
+Edit corud06=cor_file.corud06, tabIndex=28;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=38, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cor_file.cor00,cor_file.cor01,cor_file.cor02,cor_file.cor03,cor_file.cor07,cor_file.cor08,cor_file.cor04,formonly.ima02,cor_file.cor09,cor_file.cor10,cor_file.cor12,cor_file.cor13,cor_file.cor11,cor_file.cor05,cor_file.cor06,cor_file.cor14,cor_file.cor15,cor_file.coruser,cor_file.cormodu,cor_file.coracti,cor_file.corgrup,cor_file.cordate,cor_file.cororiu,cor_file.cororig,cor_file.corud01,cor_file.corud07,cor_file.corud13,cor_file.corud08,cor_file.corud14,cor_file.corud02,cor_file.corud09,cor_file.corud15,cor_file.corud03,cor_file.corud10,cor_file.corud04,cor_file.corud11,cor_file.corud05,cor_file.corud12,cor_file.corud06,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdp140.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asdp140")
+VBox VBox1
+Grid gr374
+{
+ <G group01                                                  >
+  Cost year/month     [yea  ]/[mo]
+ <                                                           >
+ <G group02                                                  >
+ [a1        ][a2        ][a3        ][a4        ][a5        ]
+ [a6        ][a7        ][a8        ][a9        ][a10       ]
+ <                                                           >
+
+}
+END -- gr374
+Grid gr375
+{
+ [g_bgj]
+
+}
+END -- gr375
+END -- VBox1
+END -- asdp140
+
+ATTRIBUTES
+Group group01:group01;
+Edit yea=formonly.yea type SMALLINT, tabIndex=1;
+Edit mo=formonly.mo type SMALLINT, tabIndex=2;
+Group group02:group02, text="Delete Sales Classification";
+Edit a1=formonly.a1 type CHAR, tabIndex=3, upShift;
+Edit a2=formonly.a2 type CHAR, tabIndex=4, upShift;
+Edit a3=formonly.a3 type CHAR, tabIndex=5, upShift;
+Edit a4=formonly.a4 type CHAR, tabIndex=6, upShift;
+Edit a5=formonly.a5 type CHAR, tabIndex=7, upShift;
+Edit a6=formonly.a6 type CHAR, tabIndex=8, upShift;
+Edit a7=formonly.a7 type CHAR, tabIndex=9, upShift;
+Edit a8=formonly.a8 type CHAR, tabIndex=10, upShift;
+Edit a9=formonly.a9 type CHAR, tabIndex=11, upShift;
+Edit a10=formonly.a10 type CHAR, tabIndex=12, upShift;
+CheckBox g_bgj=formonly.g_bgjob type CHAR, tabIndex=13, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yea,formonly.mo,formonly.a1,formonly.a2,formonly.a3,formonly.a4,formonly.a5,formonly.a6,formonly.a7,formonly.a8,formonly.a9,formonly.a10,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

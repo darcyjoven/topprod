@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gis/42f/gisp120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gisp120")
+Folder pc798
+Page page01(text="Main")
+VBox VBox1
+Grid gr3481
+{
+ <G group01                                           >
+  Issue Sales Invoice File      [g_txt1              ]
+  Void Invoice File             [g_txt2              ]
+ [dummy01                                           ]
+ <                                                    >
+
+}
+END -- gr3481
+Grid gr3482
+{
+ <G group02                                                    >
+  Issue Sales Invoice File      [g_fileloc           ][update]
+ [dummy02                                           ]
+ <                                                             >
+
+}
+END -- gr3482
+END -- VBox1
+END -- page01
+END -- pc798
+END -- gisp120
+
+ATTRIBUTES
+Group group01:group01;
+Edit g_txt1=formonly.g_txt1 type CHAR, tabIndex=1;
+Edit g_txt2=formonly.g_txt2 type CHAR, tabIndex=2;
+Label dummy01:dummy01, text="dummy";
+Group group02:group02;
+Edit g_fileloc=formonly.g_fileloc type CHAR, tabIndex=3;
+Button update:update, text="Update";
+Label dummy02:dummy02, text="dummy";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_txt1,formonly.g_txt2,formonly.g_fileloc)
+END -- INSTRUCTIONS
+

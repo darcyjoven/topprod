@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt620_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axmt620_a")
+VBox vb10
+Folder pc1
+Page Page1(text=%"Actual Trading Tax Code Detail")
+Table tb2
+{
+[ogh02|ogh0|gec02               |ogh04     |ogh05     |ogh06     |ogh07     |ogh07t    |ogh08     ]
+[ogh02|ogh0|gec02               |ogh04     |ogh05     |ogh06     |ogh07     |ogh07t    |ogh08     ]
+[ogh02|ogh0|gec02               |ogh04     |ogh05     |ogh06     |ogh07     |ogh07t    |ogh08     ]
+[ogh02|ogh0|gec02               |ogh04     |ogh05     |ogh06     |ogh07     |ogh07t    |ogh08     ]
+[ogh02|ogh0|gec02               |ogh04     |ogh05     |ogh06     |ogh07     |ogh07t    |ogh08     ]
+[ogh02|ogh0|gec02               |ogh04     |ogh05     |ogh06     |ogh07     |ogh07t    |ogh08     ]
+[ogh02|ogh0|gec02               |ogh04     |ogh05     |ogh06     |ogh07     |ogh07t    |ogh08     ]
+[ogh02|ogh0|gec02               |ogh04     |ogh05     |ogh06     |ogh07     |ogh07t    |ogh08     ]
+[ogh02|ogh0|gec02               |ogh04     |ogh05     |ogh06     |ogh07     |ogh07t    |ogh08     ]
+
+}
+END -- tb2
+END -- Page1
+END -- pc1
+Grid gr1
+{
+
+   ---------- Rows[cn2       ] ----------
+
+}
+END -- gr1
+END -- vb10
+END -- axmt620_a
+
+TABLES
+ogh_file,
+gec_file,
+tableAlias1=ogh_file
+ATTRIBUTES
+Edit ogh02=ogh_file.ogh02, tabIndex=1, title="Serial No.", noEntry;
+Edit ogh0=ogh_file.ogh03, tabIndex=2, title="Sales Tax Code", noEntry;
+Edit gec02=gec_file.gec02, tabIndex=3, title="Sales Tax Name", noEntry;
+Edit ogh04=ogh_file.ogh04, tabIndex=4, title="Tax Rate", noEntry;
+Edit ogh05=tableAlias1.ogh05, tabIndex=5, title="Fixed Tax Amount", noEntry;
+CheckBox ogh06=ogh_file.ogh06, tabIndex=6, title="Include Tax", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit ogh07=ogh_file.ogh07, tabIndex=7, title="Amt Excl. Tax", noEntry;
+Edit ogh07t=ogh_file.ogh07t, tabIndex=8, title="Amt Incl. Tax", noEntry;
+Edit ogh08=ogh_file.ogh08, tabIndex=9, title="Tax", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogh(ogh_file.ogh02,ogh_file.ogh03,gec_file.gec02,ogh_file.ogh04,tableAlias1.ogh05,ogh_file.ogh06,ogh_file.ogh07,ogh_file.ogh07t,ogh_file.ogh08)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,106 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amrq550.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amrq550")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+VBox vb1
+HBox hb1
+Grid gr3861
+{
+ MPS Plan No.        [msa01           ] [msa02     ]
+ Seq.                [msb02     ]
+ Production Item#    [msb03                         ]
+                     [ima02                         ]
+                     [ima021                        ]
+
+}
+END -- gr3861
+Grid gr3862
+{
+ Complete Date       [msb04        ]
+ Planning Qty        [msb05        ]
+ Original Qty        [msb08        ]
+ Master Item#        [msb06                         ]
+
+
+}
+END -- gr3862
+Grid gr3863
+{
+[msa03                      ]
+ Closing Date    [msa04     ]
+
+
+
+
+}
+END -- gr3863
+END -- hb1
+END -- vb1
+END -- page01
+END -- folder01
+Table s_sfb
+{
+[sfb01            |sfb04_d |sfb13                  |sfb15                 |sfb08            |sfb081      |sfb09           |sfb82     ]
+[sfb01            |sfb04_d |sfb13                  |sfb15                 |sfb08            |sfb081      |sfb09           |sfb82     ]
+[sfb01            |sfb04_d |sfb13                  |sfb15                 |sfb08            |sfb081      |sfb09           |sfb82     ]
+[sfb01            |sfb04_d |sfb13                  |sfb15                 |sfb08            |sfb081      |sfb09           |sfb82     ]
+[sfb01            |sfb04_d |sfb13                  |sfb15                 |sfb08            |sfb081      |sfb09           |sfb82     ]
+[sfb01            |sfb04_d |sfb13                  |sfb15                 |sfb08            |sfb081      |sfb09           |sfb82     ]
+[sfb01            |sfb04_d |sfb13                  |sfb15                 |sfb08            |sfb081      |sfb09           |sfb82     ]
+[sfb01            |sfb04_d |sfb13                  |sfb15                 |sfb08            |sfb081      |sfb09           |sfb82     ]
+[sfb01            |sfb04_d |sfb13                  |sfb15                 |sfb08            |sfb081      |sfb09           |sfb82     ]
+[sfb01            |sfb04_d |sfb13                  |sfb15                 |sfb08            |sfb081      |sfb09           |sfb82     ]
+
+}
+END -- s_sfb
+Grid gr3864
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3864
+END -- vb2
+END -- amrq550
+
+TABLES
+sfb_file,
+msb_file,
+msa_file,
+ima_file
+ATTRIBUTES
+Edit msa01=msa_file.msa01, tabIndex=1;
+Edit msa02=msa_file.msa02, tabIndex=2;
+Edit msb02=msb_file.msb02, tabIndex=3;
+Edit msb03=msb_file.msb03, tabIndex=4;
+Edit ima02=ima_file.ima02, tabIndex=5, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=6;
+DateEdit msb04=msb_file.msb04, tabIndex=7;
+Edit msb05=msb_file.msb05, tabIndex=8;
+Edit msb08=msb_file.msb08, tabIndex=9;
+Edit msb06=msb_file.msb06, tabIndex=10;
+CheckBox msa03=msa_file.msa03, tabIndex=11, text="Close", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit msa04=msa_file.msa04, tabIndex=12;
+Edit sfb01=sfb_file.sfb01, tabIndex=13, title="W/O No.";
+Edit sfb04_d=formonly.sfb04_d type CHAR, tabIndex=14, title="Status";
+Edit sfb13=sfb_file.sfb13, tabIndex=15, title="Anticipated Operating";
+Edit sfb15=sfb_file.sfb15, tabIndex=16, title="Anticipated Complete";
+Edit sfb08=sfb_file.sfb08, tabIndex=17, title="Production Sets", not null, required;
+Edit sfb081=sfb_file.sfb081, tabIndex=18, title="Issued Qty", not null, required;
+Edit sfb09=sfb_file.sfb09, tabIndex=19, title="Completed Sets", not null, required;
+Edit sfb82=sfb_file.sfb82, tabIndex=20, title="Dept.";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(sfb_file.sfb01,formonly.sfb04_d,sfb_file.sfb13,sfb_file.sfb15,sfb_file.sfb08,sfb_file.sfb081,sfb_file.sfb09,sfb_file.sfb82)
+SCREEN RECORD Undefined(msa_file.msa01,msa_file.msa02,msb_file.msb02,msb_file.msb03,ima_file.ima02,ima_file.ima021,msb_file.msb04,msb_file.msb05,msb_file.msb08,msb_file.msb06,msa_file.msa03,msa_file.msa04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

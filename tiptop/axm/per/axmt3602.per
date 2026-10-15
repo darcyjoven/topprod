@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt3602.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt3602")
+VBox VBox1
+Folder pc562
+Page page01(text="Page01")
+Grid gr2497
+{
+ <G group01                             ><G group02                                           >
+  Quotation No.       [oqv01           ]  Item No.            [oqu03                         ]
+  Line No.            [oqv02           ]  Part Name           [oqu031                        ]
+  Currency            [oqt09           ]  Specification       [oqu032                        ]
+ <                                      ><                                                    >
+
+}
+END -- gr2497
+END -- page01
+END -- pc562
+Table s_oqv
+{
+[oqv03        |oqv04          |oqv05       ]
+[oqv03        |oqv04          |oqv05       ]
+[oqv03        |oqv04          |oqv05       ]
+[oqv03        |oqv04          |oqv05       ]
+[oqv03        |oqv04          |oqv05       ]
+[oqv03        |oqv04          |oqv05       ]
+[oqv03        |oqv04          |oqv05       ]
+[oqv03        |oqv04          |oqv05       ]
+[oqv03        |oqv04          |oqv05       ]
+[oqv03        |oqv04          |oqv05       ]
+
+}
+END -- s_oqv
+END -- VBox1
+END -- axmt3602
+
+TABLES
+oqv_file
+ATTRIBUTES
+Group group01:group01;
+Edit oqv01=oqv_file.oqv01, tabIndex=1, noEntry;
+Edit oqv02=oqv_file.oqv02, tabIndex=2, not null, required, comment="Enter Line# to Qry";
+Edit oqt09=formonly.oqt09 type CHAR, tabIndex=3, noEntry;
+Group group02:group02;
+Edit oqu03=formonly.oqu03 type CHAR, tabIndex=4, noEntry;
+Edit oqu031=formonly.oqu031 type CHAR, tabIndex=5, noEntry;
+Edit oqu032=formonly.oqu032 type CHAR, tabIndex=6, noEntry;
+Edit oqv03=oqv_file.oqv03, tabIndex=7, title="Initial Qty", not null, required;
+Edit oqv04=oqv_file.oqv04, tabIndex=8, title="- Ending Qty", not null, required;
+Edit oqv05=oqv_file.oqv05, tabIndex=9, title="Unit Price";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oqv(oqv_file.oqv03,oqv_file.oqv04,oqv_file.oqv05)
+SCREEN RECORD Undefined(oqv_file.oqv01,oqv_file.oqv02,formonly.oqt09,formonly.oqu03,formonly.oqu031,formonly.oqu032)
+END -- INSTRUCTIONS
+

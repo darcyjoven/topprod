@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt430.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"apmt430")
+VBox vb3
+Folder pc1
+Page Page1(text=%"main")
+Grid gr7
+{
+ Materials no.      [wpb01           ]
+ Name               [ima02           ]
+ Specifications     [ima021          ]
+ Demand date        [wpb02           ]
+ Demand unit        [ima44           ]
+ Demand quantity    [wpb03           ]
+                    [wpb04           ]
+ E-procurement no.  [wpb05           ]
+
+}
+END -- gr7
+END -- Page1
+END -- pc1
+Grid gr10
+{
+
+ --------- Rows [cnt      ] ---------------
+
+}
+END -- gr10
+END -- vb3
+END -- Form1
+
+TABLES
+wpb_file
+ATTRIBUTES
+ButtonEdit wpb01=wpb_file.wpb01, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=4, noEntry;
+DateEdit wpb02=wpb_file.wpb02, tabIndex=9, not null, required;
+ButtonEdit ima44=formonly.ima44 type CHAR, action=controlp, tabIndex=5, noEntry, image="zoom.png";
+Edit wpb03=wpb_file.wpb03, tabIndex=6, not null, required;
+CheckBox wpb04=wpb_file.wpb04, tabIndex=7, text="wpb04", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit wpb05=wpb_file.wpb05, tabIndex=8, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(wpb_file.wpb01,formonly.ima02,formonly.ima021,wpb_file.wpb02,formonly.ima44,wpb_file.wpb03,wpb_file.wpb04,wpb_file.wpb05,formonly.cnt)
+END -- INSTRUCTIONS
+

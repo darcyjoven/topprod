@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooq010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooq010")
+VBox VBox1
+Folder pc865
+Page page01(text="Page01")
+Table s_azn
+{
+[azn05 |azn01_b      |azn01_e     |azn02 |azn03   |azn04  ]
+[azn05 |azn01_b      |azn01_e     |azn02 |azn03   |azn04  ]
+[azn05 |azn01_b      |azn01_e     |azn02 |azn03   |azn04  ]
+[azn05 |azn01_b      |azn01_e     |azn02 |azn03   |azn04  ]
+[azn05 |azn01_b      |azn01_e     |azn02 |azn03   |azn04  ]
+[azn05 |azn01_b      |azn01_e     |azn02 |azn03   |azn04  ]
+[azn05 |azn01_b      |azn01_e     |azn02 |azn03   |azn04  ]
+[azn05 |azn01_b      |azn01_e     |azn02 |azn03   |azn04  ]
+[azn05 |azn01_b      |azn01_e     |azn02 |azn03   |azn04  ]
+[azn05 |azn01_b      |azn01_e     |azn02 |azn03   |azn04  ]
+
+}
+END -- s_azn
+END -- page01
+END -- pc865
+END -- VBox1
+END -- aooq010
+
+TABLES
+azn_file
+ATTRIBUTES
+Edit azn05=azn_file.azn05, tabIndex=1, title="Week", noEntry;
+DateEdit azn01_b=formonly.azn01_b type DATE, tabIndex=2, title="Initial Date", noEntry;
+DateEdit azn01_e=formonly.azn01_e type DATE, tabIndex=3, title="Ending Date", noEntry;
+Edit azn02=azn_file.azn02, tabIndex=4, title="Year", noEntry;
+Edit azn03=azn_file.azn03, tabIndex=5, title="Quarter", noEntry;
+Edit azn04=azn_file.azn04, tabIndex=6, title="Period", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azn(azn_file.azn05,formonly.azn01_b,formonly.azn01_e,azn_file.azn02,azn_file.azn03,azn_file.azn04)
+END -- INSTRUCTIONS
+

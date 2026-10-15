@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt82041.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt82041")
+Grid gr557
+{
+ <G group01                                            >
+  Arriving Notify No. QBE        [alh01           ]
+  Initial Interest Date QBE      [alh02       ]
+  Advance Purchase Order No. QBE [alh03           ]
+  Accounts Department QBE        [alh04     ]
+ <                                                     >
+ <G group02                                            >
+  General Ledger Voucher No.     [l_no                ]
+  General Ledger Voucher Date    [l_date        ]
+
+ <                                                     >
+
+}
+END -- gr557
+END -- aapt82041
+
+TABLES
+alh_file
+ATTRIBUTES
+Group group01:group01, text="Enter Condition to Carry G/L Entry:";
+Edit alh01=alh_file.alh01, tabIndex=1;
+DateEdit alh02=alh_file.alh02, tabIndex=2;
+Edit alh03=alh_file.alh03, tabIndex=3;
+Edit alh04=alh_file.alh04, tabIndex=4;
+Group group02:group02;
+Edit l_no=formonly.l_no type VARCHAR, tabIndex=5;
+DateEdit l_date=formonly.l_date type DATE, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(alh_file.alh01,alh_file.alh02,alh_file.alh03,alh_file.alh04,formonly.l_no,formonly.l_date)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi110")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2
+{
+
+    Trade Terms No.[pnz01          ]
+    Description    [pnz02                         ]
+[pnz04                     |pnz07                         ][pnz06                      ][pnz05                 ]  [pnz08               ]
+
+}
+END -- gr2
+END -- page01
+END -- folder01
+Table s_pnq
+{
+[pnq04     |pnq02      |pnq03         |type           ]
+[pnq04     |pnq02      |pnq03         |type           ]
+[pnq04     |pnq02      |pnq03         |type           ]
+[pnq04     |pnq02      |pnq03         |type           ]
+[pnq04     |pnq02      |pnq03         |type           ]
+[pnq04     |pnq02      |pnq03         |type           ]
+[pnq04     |pnq02      |pnq03         |type           ]
+[pnq04     |pnq02      |pnq03         |type           ]
+[pnq04     |pnq02      |pnq03         |type           ]
+[pnq04     |pnq02      |pnq03         |type           ]
+
+}
+END -- s_pnq
+Grid gr4823
+{
+
+ -----Rows[idx    ]/[cnt    ]-----Rows[cn2    ]-----
+
+}
+END -- gr4823
+END -- VBox1
+END -- apmi110
+
+TABLES
+pnq_file,
+pnz_file
+ATTRIBUTES
+Edit pnz01=pnz_file.pnz01, tabIndex=8;
+Edit pnz02=pnz_file.pnz02, tabIndex=9;
+CheckBox pnz04=pnz_file.pnz04, tabIndex=6, text="Input When not fetch price", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pnz07=pnz_file.pnz07, tabIndex=13, text="Take that prices are allowed to change", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pnz06=pnz_file.pnz06, tabIndex=12, text="Group AND Type Price Mutex", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pnz05=pnz_file.pnz05, tabIndex=7, text="Not By Sequence", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pnz08=pnz_file.pnz08, tabIndex=14, text="Zero Price", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit pnq04=pnq_file.pnq04, tabIndex=1, title="Groud ID", not null, required;
+Edit pnq02=pnq_file.pnq02, tabIndex=2, title="Sequence", not null;
+ComboBox pnq03=pnq_file.pnq03, tabIndex=3, title="Trade No.", not null, items=(("A1", %"aimi103"),("A2", %"aimi103"),("A3", %"apmi254"),("A4", "apmi255"),("A5", "body"),("A6", "arti131"),("C1", "apmi270/apmi271"),("C2", "apmi272/apmi273"));
+ComboBox type=formonly.type type VARCHAR, tabIndex=4, title="Price Type", noEntry, items=(("A", "Base Price"),("B", "You Hui"),("C", "Scale"));
+Edit idx=formonly.idx type CHAR, tabIndex=10;
+Edit cnt=formonly.cnt type CHAR, tabIndex=11;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pnq(pnq_file.pnq04,pnq_file.pnq02,pnq_file.pnq03,formonly.type)
+SCREEN RECORD Undefined(pnz_file.pnz01,pnz_file.pnz02,pnz_file.pnz04,pnz_file.pnz06,pnz_file.pnz05,formonly.idx,formonly.cnt,formonly.cn2,pnz_file.pnz07,pnz_file.pnz08)
+END -- INSTRUCTIONS
+

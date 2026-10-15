@@ -1,0 +1,183 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt820.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt820")
+VBox VBox1
+Folder pc68
+Page page01(text="Main")
+Grid gr549
+{
+ Arriving No.  [alh01           ]        Arriving Date          [alh021      ]          [alh45                            ]    [imgmksg]
+ Payment Terms [alh10     ]              Initial Interest Date  [alh02       ]           Account Voucher[alh72                 |       ]
+                                         Payment Method         [alh44               ]   Confirm?       [alhfirm           ]
+
+}
+END -- gr549
+END -- page01
+Page info(text="Info")
+Grid gr550
+{
+ Record Owner        [alhuser   ] Last Modified by    [alhmodu     ]
+ Department          [alhgrup   ] Create/Modify Date  [alhdate     ]
+ Record Orig.        [alhoriu   ]
+ Dept Orig.          [alhorig   ]
+}
+END -- gr550
+END -- info
+END -- pc68
+Folder pc69
+Page page02(text="General")
+Grid gr551
+{
+ [alh52                                              ] Financing/A/P No.   [l_no            ]
+ <G group01                                          ><G group02                                        >
+  L/C No.             [alh03                 ]         Credit Bank         [alh06      ][pmc03b    ]
+  Margin Rate         [alh50     ]%                    Repaying Days       [alh07      ]
+  Ex. Rate            [alh18               ]           Date Payable        [alh08      ]
+  Vender No.          [alh05     ][pmc03     ]         Interest Rate       [alh09      ]
+  Dept.               [alh04     ][gem02     ]         Interest Payment    [alh51      ]
+  Cost Center         [alh930    ][gem02b    ]         Change Credit Status[alh75      ][alh74     ]
+ <                                                   ><                                                 >
+ <G group03                                                                                             >
+  Paid F.C            [alh76     ]                     Paid H.C            [alh77      ]
+
+
+
+ <                                                                                                      >
+
+}
+END -- gr551
+END -- page02
+Page page03(text="Data Information")
+Grid gr552
+{
+ <G group04                                    > <G group05                                    >
+  Arriving Curr.     [alh11     ]                 Arrival No.         [alh30             ]
+  Arriving F.C.      [alh12               ]       Arrival Date        [alh31       ]
+  Deduction Margin   [alh13               ]       Arrival F.C.        [alk13                 ]
+  F.C to Repay       [alh14               ]       F.C to Repay        [alh32                 ]
+  Arriving Ex. Rate  [alh15               ]       Arrival Ex.Rate     [alh35                 ]
+  H.C Payable        [alh16               ]       H.C Payable         [alh36                 ]
+  Prepaid H.C        [alh19               ]       Account Variation   [alh37                 ]
+  Late Arrival Amt   [alh17               ]       Spread Loss         [alh38                 ]
+
+
+ <                                             > <                                             >
+
+}
+END -- gr552
+END -- page03
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[alhud01                       ] userdefined_field07[alhud07        ] userdefined_field13[alhud13        ]
+                    [                              ] userdefined_field08[alhud08        ] userdefined_field14[alhud14        ]
+ userdefined_field02[alhud02        ]                userdefined_field09[alhud09        ] userdefined_field15[alhud15        ]
+ userdefined_field03[alhud03        ]                userdefined_field10[alhud10        ]
+ userdefined_field04[alhud04        ]                userdefined_field11[alhud11        ]
+ userdefined_field05[alhud05        ]                userdefined_field12[alhud12        ]
+ userdefined_field06[alhud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc69
+Grid gr553
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+}
+END -- gr553
+END -- VBox1
+END -- aapt820
+
+TABLES
+alk_file,
+alh_file,
+pmc_file
+ATTRIBUTES
+Edit alh01=alh_file.alh01, tabIndex=1, not null, required, comment="Key Field, No Blank/Repeated!";
+DateEdit alh021=alh_file.alh021, tabIndex=2;
+CheckBox alh45=alh_file.alh45, tabIndex=3, text="Gen Direct Debit", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit alh10=alh_file.alh10, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Data";
+DateEdit alh02=alh_file.alh02, tabIndex=6;
+Edit alh72=alh_file.alh72, tabIndex=7, noEntry;
+ComboBox alh44=alh_file.alh44, tabIndex=8, not null, required, queryEditable, comment="1.Dute Pay 2.Transfer Financing", items=(("1", "Dute Pay"),("2", "Transfer Financing"));
+Edit alhfirm=alh_file.alhfirm, tabIndex=9, noEntry;
+Edit alhuser=alh_file.alhuser, tabIndex=10, noEntry;
+Edit alhmodu=alh_file.alhmodu, tabIndex=11, noEntry;
+Edit alhgrup=alh_file.alhgrup, tabIndex=12, noEntry;
+DateEdit alhdate=alh_file.alhdate, tabIndex=13, noEntry;
+Edit alhoriu=alh_file.alhoriu, tabIndex=501, noEntry;
+Edit alhorig=alh_file.alhorig, tabIndex=502, noEntry;
+CheckBox alh52=alh_file.alh52, tabIndex=14, text="System Operating Prior History Data?(Y/Blank), If Enter Y, No Checking LC No. ", valueChecked = "Y", valueUnchecked = "N";
+Edit l_no=formonly.l_no type CHAR, tabIndex=15, noEntry, color = yellow;
+Group group01:group01;
+ButtonEdit alh03=alh_file.alh03, action=controlp, tabIndex=16, image="zoom", comment="<^P>Query L/C Data";
+Edit alh50=alh_file.alh50, tabIndex=17, comment="Enter Margin Rt ";
+ButtonEdit alh18=alh_file.alh18, action=controlp, tabIndex=18, not null, required, image="zoom", comment="Enter Credit Line Exchange Rate";
+ButtonEdit alh05=alh_file.alh05, action=controlp, tabIndex=19, image="zoom", comment="<^P>Qry Vender   ";
+Edit pmc03=pmc_file.pmc03, tabIndex=20, noEntry;
+ButtonEdit alh04=alh_file.alh04, action=controlp, tabIndex=21, image="zoom", comment="<^P>Query Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=22, noEntry;
+ButtonEdit alh930=alh_file.alh930, action=controlp, tabIndex=23, noEntry, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02b=formonly.gem02b type CHAR, tabIndex=24, noEntry;
+Group group02:group02;
+ButtonEdit alh06=alh_file.alh06, action=controlp, tabIndex=25, not null, required, image="zoom", comment="<^P>Qry Bank/Vender  ";
+Edit pmc03b=formonly.pmc03b type CHAR, tabIndex=26, noEntry;
+Edit alh07=alh_file.alh07, tabIndex=27;
+Edit alh08=alh_file.alh08, tabIndex=28;
+Edit alh09=alh_file.alh09, tabIndex=29;
+ComboBox alh51=alh_file.alh51, tabIndex=30, items=(("1", "MM Pay Int"),("2", "Pay Principal & Int."));
+ComboBox alh75=alh_file.alh75, tabIndex=31, noEntry, items=(("0", "Unchanged"),("1", "Changed"));
+DateEdit alh74=alh_file.alh74, tabIndex=32, noEntry;
+Group group03:group03;
+Edit alh76=alh_file.alh76, tabIndex=33, noEntry;
+Edit alh77=alh_file.alh77, tabIndex=34, noEntry;
+Group group04:group04;
+ButtonEdit alh11=alh_file.alh11, action=controlp, tabIndex=35, image="zoom", comment="<^P>Qry Currency";
+Edit alh12=alh_file.alh12, tabIndex=36;
+Edit alh13=alh_file.alh13, tabIndex=37;
+Edit alh14=alh_file.alh14, tabIndex=38;
+ButtonEdit alh15=alh_file.alh15, action=controlp, tabIndex=39, not null, required, image="zoom";
+Edit alh16=alh_file.alh16, tabIndex=40;
+Edit alh19=alh_file.alh19, tabIndex=41;
+Edit alh17=alh_file.alh17, tabIndex=42, noEntry;
+Group group05:group05;
+ButtonEdit alh30=alh_file.alh30, action=controlp, tabIndex=43, image="zoom", comment="<^P>Query L/C Arrivals";
+DateEdit alh31=alh_file.alh31, tabIndex=44;
+Edit alk13=alk_file.alk13, tabIndex=45;
+Edit alh32=alh_file.alh32, tabIndex=46;
+ButtonEdit alh35=alh_file.alh35, action=controlp, tabIndex=47, not null, required, image="zoom";
+Edit alh36=alh_file.alh36, tabIndex=48;
+Edit alh37=alh_file.alh37, tabIndex=49;
+Edit alh38=alh_file.alh38, tabIndex=50;
+TextEdit alhud01=alh_file.alhud01, tabIndex=53, stretch=NONE;
+Edit alhud07=alh_file.alhud07, tabIndex=54;
+DateEdit alhud13=alh_file.alhud13, tabIndex=55;
+Edit alhud08=alh_file.alhud08, tabIndex=56;
+DateEdit alhud14=alh_file.alhud14, tabIndex=57;
+Edit alhud02=alh_file.alhud02, tabIndex=58;
+Edit alhud09=alh_file.alhud09, tabIndex=59;
+DateEdit alhud15=alh_file.alhud15, tabIndex=60;
+Edit alhud03=alh_file.alhud03, tabIndex=61;
+Edit alhud10=alh_file.alhud10, tabIndex=62;
+Edit alhud04=alh_file.alhud04, tabIndex=63;
+Edit alhud11=alh_file.alhud11, tabIndex=64;
+Edit alhud05=alh_file.alhud05, tabIndex=65;
+Edit alhud12=alh_file.alhud12, tabIndex=66;
+Edit alhud06=alh_file.alhud06, tabIndex=67;
+Edit cnt=formonly.cnt type CHAR, tabIndex=51;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(alh_file.alh01,alh_file.alh021,alh_file.alh45,formonly.imgmksg,alh_file.alh10,alh_file.alh02,alh_file.alh72,alh_file.alh44,alh_file.alhfirm,alh_file.alhuser,alh_file.alhmodu,alh_file.alhgrup,alh_file.alhdate,alh_file.alhoriu,alh_file.alhorig,alh_file.alh52,formonly.l_no,alh_file.alh03,alh_file.alh50,alh_file.alh18,alh_file.alh05,pmc_file.pmc03,alh_file.alh04,formonly.gem02,alh_file.alh930,formonly.gem02b,alh_file.alh06,formonly.pmc03b,alh_file.alh07,alh_file.alh08,alh_file.alh09,alh_file.alh51,alh_file.alh75,alh_file.alh74,alh_file.alh76,alh_file.alh77,alh_file.alh11,alh_file.alh12,alh_file.alh13,alh_file.alh14,alh_file.alh15,alh_file.alh16,alh_file.alh19,alh_file.alh17,alh_file.alh30,alh_file.alh31,alk_file.alk13,alh_file.alh32,alh_file.alh35,alh_file.alh36,alh_file.alh37,alh_file.alh38,alh_file.alhud01,alh_file.alhud07,alh_file.alhud13,alh_file.alhud08,alh_file.alhud14,alh_file.alhud02,alh_file.alhud09,alh_file.alhud15,alh_file.alhud03,alh_file.alhud10,alh_file.alhud04,alh_file.alhud11,alh_file.alhud05,alh_file.alhud12,alh_file.alhud06,formonly.cnt)
+END -- INSTRUCTIONS
+

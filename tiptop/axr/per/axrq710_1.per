@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrq710_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrr710")
+VBox vb2_
+Folder folder01
+Page page01(text="Main")
+Grid gr5447
+{
+ Customer No#        [npq21     ]              [npq22                                        ]  Currency         [npq241                                         ]
+ Account No.         [npq03     ]              [aag02                                        ]
+ Year                [yy        ]               Month               [mm                                              ]
+
+}
+END -- gr5447
+END -- page01
+END -- folder01
+Table s_npq
+{
+[npp02          |npp01           |npp00  |nppsys |nppglno                     |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno                     |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno                     |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno                     |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno                     |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno                     |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno                     |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno                     |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno                     |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno                     |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+}
+END -- s_npq
+Grid gr5449
+{
+ ----------- Rows [cnt   ] -----------
+
+
+
+}
+END -- gr5449
+END -- vb2_
+END -- axrq710_1
+
+TABLES
+aag_file
+ATTRIBUTES
+Edit npq21=formonly.npq21 type VARCHAR, tabIndex=32;
+Edit npq22=formonly.npq22 type VARCHAR, tabIndex=33;
+Edit npq241=formonly.npq241 type VARCHAR, tabIndex=36;
+Edit npq03=formonly.npq03 type VARCHAR, tabIndex=1;
+Edit aag02=aag_file.aag02, tabIndex=5;
+Edit yy=formonly.yy type VARCHAR, tabIndex=2;
+Edit mm=formonly.mm type VARCHAR, tabIndex=3;
+DateEdit npp02=formonly.npp02 type DATE, tabIndex=6, title="Voucher Date";
+Edit npp01=formonly.npp01 type VARCHAR, tabIndex=7, title="Voucher No.";
+Edit npp00=formonly.npp00 type CHAR, tabIndex=35, title="npp00";
+Edit nppsys=formonly.nppsys type CHAR, tabIndex=34, title="nppsys";
+Edit nppglno=formonly.nppglno type VARCHAR, tabIndex=8, title="Memo";
+Edit npq24=formonly.npq24 type VARCHAR, tabIndex=9, title="Currency";
+Edit df=formonly.df type CHAR, tabIndex=11, title="Debit Amount (Trans. Curr.)";
+Edit npq25_d=formonly.npq25_d type DECIMAL, tabIndex=10, title="Exchange Rate";
+Edit d=formonly.d type CHAR, tabIndex=17, title="Debit Amount (Local. Curr.)";
+Edit cf=formonly.cf type CHAR, tabIndex=16, title="Credit Amount (Trans. Curr.)";
+Edit npq25_c=formonly.npq25_c type CHAR, tabIndex=30, title="Exchange Rate";
+Edit c=formonly.c type CHAR, tabIndex=15, title="Credit Amount (Local. Curr.)";
+Edit dc=formonly.dc type CHAR, tabIndex=14, title="D/C";
+Edit balf=formonly.balf type CHAR, tabIndex=13, title="Balance T.C Amt";
+Edit npq25_bal=formonly.npq25_bal type CHAR, tabIndex=31, title="Exchange Rate";
+Edit bal=formonly.bal type CHAR, tabIndex=12, title="Balance L.C Amt";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_npq(formonly.npp02,formonly.npp01,formonly.npp00,formonly.nppsys,formonly.nppglno,formonly.npq24,formonly.df,formonly.npq25_d,formonly.d,formonly.cf,formonly.npq25_c,formonly.c,formonly.dc,formonly.balf,formonly.npq25_bal,formonly.bal)
+SCREEN RECORD Undefined(formonly.npq21,formonly.npq22,formonly.npq241,formonly.npq03,aag_file.aag02,formonly.yy,formonly.mm,formonly.cnt)
+END -- INSTRUCTIONS
+

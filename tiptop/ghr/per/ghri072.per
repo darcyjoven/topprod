@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri072.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(action=pg1, text=%"Page1")
+VBox VBox1
+Folder Folder2
+Page Page3(text=%"Page3")
+Grid Grid1
+{
+
+  hrde01 [hrde01              ]            hrde04[hrde04                         ]
+  hrde02 [hrde02              ]            hrde03[hrde03    |hrde03_desc         ]
+
+
+}
+END -- Grid1
+END -- Page3
+END -- Folder2
+Table Table1
+{
+[hrde05  |hrde06  |hrde07  ]
+[hrde05  |hrde06  |hrde07  ]
+[hrde05  |hrde06  |hrde07  ]
+[hrde05  |hrde06  |hrde07  ]
+[hrde05  |hrde06  |hrde07  ]
+
+}
+END -- Table1
+Grid Grid3
+{
+ ---------- cnt [cnt ]cn2 [cn2 ]----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- Page1
+Page Page2(action=pg2, text=%"Page2")
+VBox VBox2
+Grid Grid2
+{
+
+  name [name                  ]
+
+
+}
+END -- Grid2
+Table Table2
+{
+[col1    |col2    |col3    |col4    |col5    |col6    |col7    |col8    |col9    |col10   |col11   |col12   |col13   |col14   |col15   |col16   |col17   |col18   |col19   |col20   ]
+[col1    |col2    |col3    |col4    |col5    |col6    |col7    |col8    |col9    |col10   |col11   |col12   |col13   |col14   |col15   |col16   |col17   |col18   |col19   |col20   ]
+[col1    |col2    |col3    |col4    |col5    |col6    |col7    |col8    |col9    |col10   |col11   |col12   |col13   |col14   |col15   |col16   |col17   |col18   |col19   |col20   ]
+[col1    |col2    |col3    |col4    |col5    |col6    |col7    |col8    |col9    |col10   |col11   |col12   |col13   |col14   |col15   |col16   |col17   |col18   |col19   |col20   ]
+[col1    |col2    |col3    |col4    |col5    |col6    |col7    |col8    |col9    |col10   |col11   |col12   |col13   |col14   |col15   |col16   |col17   |col18   |col19   |col20   ]
+
+}
+END -- Table2
+END -- VBox2
+END -- Page2
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Edit hrde01=formonly.hrde01 type VARCHAR, tabIndex=5, not null, required;
+RadioGroup hrde04=formonly.hrde04, tabIndex=6, not null, required, orientation=horizontal, items=(("0", "zhiwu"),("1", "zhiwei"),("2", "qita"));
+Edit hrde02=formonly.hrde02 type VARCHAR, tabIndex=7, not null, required;
+ButtonEdit hrde03=formonly.hrde03 type VARCHAR, action=controlp, tabIndex=8, not null, required, image="zoom";
+Edit hrde03_desc=formonly.hrde03_desc type VARCHAR, tabIndex=9, noEntry;
+Edit hrde05=formonly.hrde05 type VARCHAR, tabIndex=1, title=%"hrde05", noEntry;
+Edit hrde06=formonly.hrde06 type DECIMAL, tabIndex=2, title=%"hrde06", not null, required;
+TextEdit hrde07=formonly.hrde07 type VARCHAR, tabIndex=11, title=%"hrde07";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=13, noEntry;
+ComboBox name=formonly.name type VARCHAR, tabIndex=10;
+Edit col1=formonly.col1 type VARCHAR, tabIndex=3, title=%"col1";
+Edit col2=formonly.col2 type DECIMAL, tabIndex=4, title=%"col2";
+Edit col3=formonly.col3 type DECIMAL, tabIndex=14, title=%"col3";
+Edit col4=formonly.col4 type DECIMAL, tabIndex=15, title=%"col4";
+Edit col5=formonly.col5 type DECIMAL, tabIndex=16, title=%"col5";
+Edit col6=formonly.col6 type DECIMAL, tabIndex=17, title=%"col6";
+Edit col7=formonly.col7 type DECIMAL, tabIndex=18, title=%"col7";
+Edit col8=formonly.col8 type DECIMAL, tabIndex=19, title=%"col8";
+Edit col9=formonly.col9 type DECIMAL, tabIndex=20, title=%"col9";
+Edit col10=formonly.col10 type DECIMAL, tabIndex=21, title=%"col10";
+Edit col11=formonly.col11 type DECIMAL, tabIndex=22, title=%"col11";
+Edit col12=formonly.col12 type DECIMAL, tabIndex=23, title=%"col12";
+Edit col13=formonly.col13 type DECIMAL, tabIndex=24, title=%"col13";
+Edit col14=formonly.col14 type DECIMAL, tabIndex=25, title=%"col14";
+Edit col15=formonly.col15 type DECIMAL, tabIndex=26, title=%"col15";
+Edit col16=formonly.col16 type DECIMAL, tabIndex=27, title=%"col16";
+Edit col17=formonly.col17 type DECIMAL, tabIndex=28, title=%"col17";
+Edit col18=formonly.col18 type DECIMAL, tabIndex=29, title=%"col18";
+Edit col19=formonly.col19 type DECIMAL, tabIndex=30, title=%"col19";
+Edit col20=formonly.col20 type DECIMAL, tabIndex=31, title=%"col20";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrde01,formonly.hrde04,formonly.hrde02,formonly.hrde03,formonly.hrde03_desc,formonly.name,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_hrde(formonly.hrde05,formonly.hrde06,formonly.hrde07)
+SCREEN RECORD s_col(formonly.col1,formonly.col2,formonly.col3,formonly.col4,formonly.col5,formonly.col6,formonly.col7,formonly.col8,formonly.col9,formonly.col10,formonly.col11,formonly.col12,formonly.col13,formonly.col14,formonly.col15,formonly.col16,formonly.col17,formonly.col18,formonly.col19,formonly.col20)
+END -- INSTRUCTIONS
+

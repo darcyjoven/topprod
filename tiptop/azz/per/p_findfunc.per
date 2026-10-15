@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_findfunc.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_findfunc")
+VBox VBox1
+ScrollGrid gr2
+{
+
+[dummy01    |hjb01                                                       |dummy06                                                     ]
+[dummy02    |hjb02                                                       |hjb07                                                       ]
+[dummy03    |hjb04                                                       |                                                            ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+[dummy04    |hjb05                                                       |                                                            ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+[dummy05    |hjb06                                                       |dummy07                                                     ]
+[           |                                                            |hjb08                                                       ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+[dummy01_1  |hjb01                                                       |dummy06_1                                                   ]
+[dummy02_1  |hjb02                                                       |hjb07                                                       ]
+[dummy03_1  |hjb04                                                       |                                                            ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+[dummy04_1  |hjb05                                                       |                                                            ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+[dummy05_1  |hjb06                                                       |dummy07_1                                                   ]
+[           |                                                            |hjb08                                                       ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+[           |                                                            |                                                            ]
+
+
+}
+END -- gr2
+Grid gr4618
+{
+
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4618
+END -- VBox1
+END -- p_findfunc
+
+TABLES
+hjb_file
+ATTRIBUTES
+Label dummy01:dummy01, text=%"Program ID", color = black, justify=left;
+TextEdit hjb01=hjb_file.hjb01, tabIndex=9, scrollBars=none;
+Label dummy06:dummy06, text=%"Usage", color = black, justify=left;
+Label dummy02:dummy02, text=%"Function ID", color = black, justify=left;
+TextEdit hjb02=hjb_file.hjb02, tabIndex=9, scrollBars=none;
+TextEdit hjb07=hjb_file.hjb07, tabIndex=9;
+Label dummy03:dummy03, text=%"Descriptions", color = black, justify=left;
+TextEdit hjb04=hjb_file.hjb04, tabIndex=9;
+Label dummy04:dummy04, text=%"Input Parameters", color = black, justify=left;
+TextEdit hjb05=hjb_file.hjb05, tabIndex=9, scrollBars=vertical;
+Label dummy05:dummy05, text=%"Return Code", color = black, justify=left;
+TextEdit hjb06=hjb_file.hjb06, tabIndex=9, scrollBars=vertical;
+Label dummy07:dummy07, text=%"Memo", color = black, justify=left;
+TextEdit hjb08=hjb_file.hjb08, tabIndex=9, scrollBars=none;
+Label dummy01_1:dummy01_1, text=%"Program ID", color = black, justify=left;
+Label dummy06_1:dummy06_1, text=%"Usage", color = black, justify=left;
+Label dummy02_1:dummy02_1, text=%"Function ID", color = black, justify=left;
+Label dummy03_1:dummy03_1, text=%"Descriptions", color = black, justify=left;
+Label dummy04_1:dummy04_1, text=%"Input Parameters", color = black, justify=left;
+Label dummy05_1:dummy05_1, text=%"Return Code", color = black, justify=left;
+Label dummy07_1:dummy07_1, text=%"Memo", color = black, justify=left;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hjb(hjb_file.hjb01,hjb_file.hjb02,hjb_file.hjb04,hjb_file.hjb05,hjb_file.hjb06,hjb_file.hjb07,hjb_file.hjb08)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

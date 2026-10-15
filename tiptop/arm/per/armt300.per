@@ -1,0 +1,118 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armt300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armt300")
+VBox VBox1
+Folder pc68
+Page page01(text="Main")
+VBox VBox2
+Grid gr258
+{
+ Data Year           [rmh01     ]/[rmh02     ]
+ Item No.            [rmh03                         ]
+                     [ima02                         ]
+ Inv Unit            [rmh08     ]
+ Warehouse           [rmh04     ]
+ Location            [rmh05     ]
+ Lot#                [rmh06     ]
+
+}
+END -- gr258
+HBox HBox1
+Group gb223
+Grid gr259
+{
+ Inv Qty             [rmh07               ]
+ Transaction Qty     [tqty                ]
+ Material Qty        [rmh10               ]
+ Inv Qty             [rmh09               ]
+ Inv Taking Employee [rmh14     ][gen02     ]
+
+}
+END -- gr259
+END -- gb223
+Group gb224
+Grid gr260
+{
+ Inv Taking Date     [rmh15     ]
+ Carry date          [rmh11     ]
+ Receipt/Issue doc#  [rmh12           ]
+ Ln#                 [rmh13     ]
+
+}
+END -- gr260
+END -- gb224
+END -- HBox1
+END -- VBox2
+END -- page01
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[rmhud01                       ] userdefined_field07[rmhud07        ] userdefined_field13[rmhud13        ]
+                    [                              ] userdefined_field08[rmhud08        ] userdefined_field14[rmhud14        ]
+ userdefined_field02[rmhud02        ]                userdefined_field09[rmhud09        ] userdefined_field15[rmhud15        ]
+ userdefined_field03[rmhud03        ]                userdefined_field10[rmhud10        ]
+ userdefined_field04[rmhud04        ]                userdefined_field11[rmhud11        ]
+ userdefined_field05[rmhud05        ]                userdefined_field12[rmhud12        ]
+ userdefined_field06[rmhud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc68
+Grid gr261
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr261
+END -- VBox1
+END -- armt300
+
+TABLES
+rmh_file
+ATTRIBUTES
+Edit rmh01=rmh_file.rmh01, tabIndex=1, not null, required;
+Edit rmh02=rmh_file.rmh02, tabIndex=2, not null, required;
+Edit rmh03=rmh_file.rmh03, tabIndex=3, not null, required;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=4, noEntry;
+Edit rmh08=rmh_file.rmh08, tabIndex=5;
+Edit rmh04=rmh_file.rmh04, tabIndex=6, not null, required;
+Edit rmh05=rmh_file.rmh05, tabIndex=7, not null, required;
+Edit rmh06=rmh_file.rmh06, tabIndex=8;
+Edit rmh07=rmh_file.rmh07, tabIndex=9;
+Edit tqty=formonly.tqty type DECIMAL, tabIndex=10;
+Edit rmh10=rmh_file.rmh10, tabIndex=11;
+Edit rmh09=rmh_file.rmh09, tabIndex=12;
+ButtonEdit rmh14=rmh_file.rmh14, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry  Employee    ";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=14, noEntry;
+DateEdit rmh15=rmh_file.rmh15, tabIndex=15;
+DateEdit rmh11=rmh_file.rmh11, tabIndex=16;
+Edit rmh12=rmh_file.rmh12, tabIndex=17;
+Edit rmh13=rmh_file.rmh13, tabIndex=18;
+TextEdit rmhud01=rmh_file.rmhud01, tabIndex=20, stretch=NONE;
+Edit rmhud07=rmh_file.rmhud07, tabIndex=21;
+DateEdit rmhud13=rmh_file.rmhud13, tabIndex=22;
+Edit rmhud08=rmh_file.rmhud08, tabIndex=23;
+DateEdit rmhud14=rmh_file.rmhud14, tabIndex=24;
+Edit rmhud02=rmh_file.rmhud02, tabIndex=25;
+Edit rmhud09=rmh_file.rmhud09, tabIndex=26;
+DateEdit rmhud15=rmh_file.rmhud15, tabIndex=27;
+Edit rmhud03=rmh_file.rmhud03, tabIndex=28;
+Edit rmhud10=rmh_file.rmhud10, tabIndex=29;
+Edit rmhud04=rmh_file.rmhud04, tabIndex=30;
+Edit rmhud11=rmh_file.rmhud11, tabIndex=31;
+Edit rmhud05=rmh_file.rmhud05, tabIndex=32;
+Edit rmhud12=rmh_file.rmhud12, tabIndex=33;
+Edit rmhud06=rmh_file.rmhud06, tabIndex=34;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rmh_file.rmh01,rmh_file.rmh02,rmh_file.rmh03,formonly.ima02,rmh_file.rmh08,rmh_file.rmh04,rmh_file.rmh05,rmh_file.rmh06,rmh_file.rmh07,formonly.tqty,rmh_file.rmh10,rmh_file.rmh09,rmh_file.rmh14,formonly.gen02,rmh_file.rmh15,rmh_file.rmh11,rmh_file.rmh12,rmh_file.rmh13,rmh_file.rmhud01,rmh_file.rmhud07,rmh_file.rmhud13,rmh_file.rmhud08,rmh_file.rmhud14,rmh_file.rmhud02,rmh_file.rmhud09,rmh_file.rmhud15,rmh_file.rmhud03,rmh_file.rmhud10,rmh_file.rmhud04,rmh_file.rmhud11,rmh_file.rmhud05,rmh_file.rmhud12,rmh_file.rmhud06,formonly.cnt)
+END -- INSTRUCTIONS
+

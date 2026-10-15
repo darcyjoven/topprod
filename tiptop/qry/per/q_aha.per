@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_aha.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Apportionment No.")
+Grid gr3722
+{
+ <T s_aha                                                                                 >
+ [check |aha01               |actno                                                      ]
+ [check |aha01               |actno                                                      ]
+ [check |aha01               |actno                                                      ]
+ [check |aha01               |actno                                                      ]
+ [check |aha01               |actno                                                      ]
+ [check |aha01               |actno                                                      ]
+ [check |aha01               |actno                                                      ]
+ [check |aha01               |actno                                                      ]
+ [check |aha01               |actno                                                      ]
+ [check |aha01               |actno                                                      ]
+ <                                                                                        >
+
+}
+END -- gr3722
+END -- q_aha
+
+TABLES
+aha_file
+ATTRIBUTES
+Table s_aha:s_aha;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit aha01=aha_file.aha01, tabIndex=2, title="Apportionment No.", noEntry;
+Edit actno=formonly.actno type CHAR, tabIndex=3, title="Apportioned Account", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aha(formonly.check,aha_file.aha01,formonly.actno)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxi910.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxi910")
+VBox vb8
+Folder pc169
+Page page01(text="Main")
+Grid gr1058
+{
+  Year                [bwh01     ]
+  Item No.            [bwh02                         ]          Style               [ima106    ]
+  Specification       [ima02                         ]          [ima15     ]
+
+ <G group01                                                     > <G group02                                                             >
+  Beginning of Period Bonded Balance     [bwh03               ]    Inventory Qty                          [bwh11               ]
+  Beginning of Period Non-Bonded Balance [bwh04               ]    Profit/Loss Qty                        [bwh12               ]
+  Current Period Bonded Received Qty     [bwh05               ]    Inventory Difference Allowance Qty     [bwh13               ]
+  Current Period Non-Bonded Received Qty [bwh06               ]    Inventory Difference Overdue Tax Qty   [bwh14               ]
+ <                                                              > <                                                                      >
+ <G group03                                                    >  <G group04                                                             >
+  Export Use Qty      [bwh07               ]                       End of Period Bonded Qt to Carry forward        [bwh15               ]
+  Qty Sent            [bwh09               ]                       End of Period Non-Bonded Qt to Carry forward    [bwh16               ]
+  Local Sales Use Qty [bwh08               ]
+  Scrap Qty           [bwh10               ]
+
+ <                                                             >  <                                                                      >
+
+}
+END -- gr1058
+END -- page01
+END -- pc169
+Grid gr1059
+{
+  ----------Rows [cnt   ] ----------
+
+}
+END -- gr1059
+END -- vb8
+END -- abxi910
+
+TABLES
+bwh_file
+ATTRIBUTES
+Edit bwh01=bwh_file.bwh01, tabIndex=1;
+ButtonEdit bwh02=bwh_file.bwh02, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Item No.";
+ComboBox ima106=formonly.ima106 type CHAR, tabIndex=3, items=(("1", "Material"),("2", "Semi-Product"),("3", "Finished Product"),("5", "Materiel and Supplies"),("6", "Customer Supply"),("7", "Products for Transport"));
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, noEntry;
+CheckBox ima15=formonly.ima15 type CHAR, tabIndex=5, text="Bonded", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group01:group01;
+Edit bwh03=bwh_file.bwh03, tabIndex=6;
+Edit bwh04=bwh_file.bwh04, tabIndex=7;
+Edit bwh05=bwh_file.bwh05, tabIndex=8;
+Edit bwh06=bwh_file.bwh06, tabIndex=9;
+Group group02:group02;
+Edit bwh11=bwh_file.bwh11, tabIndex=10;
+Edit bwh12=bwh_file.bwh12, tabIndex=11, comment=" LP Non-bonded Bal + C.P Non-bonded Rcv.Qty - Equiv.Q to C.P L.Sls ";
+Edit bwh13=bwh_file.bwh13, tabIndex=12;
+Edit bwh14=bwh_file.bwh14, tabIndex=13;
+Group group03:group03;
+Edit bwh07=bwh_file.bwh07, tabIndex=14;
+Edit bwh09=bwh_file.bwh09, tabIndex=15, comment=" Total of Bond Tran Reason Code = A2 ";
+Edit bwh08=bwh_file.bwh08, tabIndex=16, comment=" Total of Bond Tran Reason Code = A1 ";
+Edit bwh10=bwh_file.bwh10, tabIndex=17;
+Group group04:group04;
+Edit bwh15=bwh_file.bwh15, tabIndex=18;
+Edit bwh16=bwh_file.bwh16, tabIndex=19;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bwh_file.bwh01,bwh_file.bwh02,formonly.ima106,formonly.ima02,formonly.ima15,bwh_file.bwh03,bwh_file.bwh04,bwh_file.bwh05,bwh_file.bwh06,bwh_file.bwh11,bwh_file.bwh12,bwh_file.bwh13,bwh_file.bwh14,bwh_file.bwh07,bwh_file.bwh09,bwh_file.bwh08,bwh_file.bwh10,bwh_file.bwh15,bwh_file.bwh16,formonly.cnt)
+END -- INSTRUCTIONS
+

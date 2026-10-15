@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt402_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artt402_1")
+VBox vb7
+Folder pc3
+Page Page3(text=%"WorkPlantAlteration")
+ScrollGrid gr10
+{
+
+  [dummy01  ]              [dummy02       ] [dummy03              ] [dummy1        ][dummy04  ]  [dummy05  ]
+  [type     ][before      ][rbq07_1       ] [rbq07_1_desc         ] [rbq09_1       ][rbq08_1  ]  [rbqacti_1]
+             [after       ][rbq07         ] [rbq07_desc           ] [rbq09         ][rbq08    ]  [rbqacti  ]
+
+  [type     ][before      ][rbq07_1       ] [rbq07_1_desc         ] [rbq09_1       ][rbq08_1  ]  [rbqacti_1]
+             [after       ][rbq07         ] [rbq07_desc           ] [rbq09         ][rbq08    ]  [rbqacti  ]
+
+  [type     ][before      ][rbq07_1       ] [rbq07_1_desc         ] [rbq09_1       ][rbq08_1  ]  [rbqacti_1]
+             [after       ][rbq07         ] [rbq07_desc           ] [rbq09         ][rbq08    ]  [rbqacti  ]
+
+}
+END -- gr10
+END -- Page3
+END -- pc3
+Grid gr16
+{
+
+ --- Items[cn2 ] --------
+
+}
+END -- gr16
+END -- vb7
+END -- Form3
+
+TABLES
+rbq_file
+ATTRIBUTES
+Label dummy01:dummy01, text="type";
+Label dummy02:dummy02, text="rbq07";
+Label dummy03:dummy03, text="rbq07_desc";
+Label dummy1:dummy1, text="rbq09";
+Label dummy04:dummy04, text="rbq08";
+Label dummy05:dummy05, text="rbqacti";
+ComboBox type=formonly.type type CHAR, tabIndex=1, noEntry, items=(("0", "Add"),("1", "Modify"));
+ComboBox before=formonly.before type CHAR, tabIndex=2, noEntry, items=(("0", "Original:"));
+ButtonEdit rbq07_1=formonly.rbq07_1 type CHAR, action=controlp, tabIndex=3, noEntry, image="zoom";
+Edit rbq07_1_desc=formonly.rbq07_1_desc type CHAR, tabIndex=4, noEntry;
+ButtonEdit rbq09_1=formonly.rbq09_1 type CHAR, action=controlp, tabIndex=5, noEntry, image="zoom";
+CheckBox rbq08_1=formonly.rbq08_1 type CHAR, tabIndex=6, default = "Y", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rbqacti_1=formonly.rbqacti_1 type CHAR, tabIndex=7, default = "Y", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox after=formonly.after type CHAR, tabIndex=8, noEntry, items=(("1", "Modify:"));
+ButtonEdit rbq07=rbq_file.rbq07, action=controlp, tabIndex=9, not null, required, image="zoom";
+Edit rbq07_desc=formonly.rbq07_desc type CHAR, tabIndex=10, noEntry;
+ButtonEdit rbq09=rbq_file.rbq09, action=controlp, tabIndex=11, image="zoom";
+CheckBox rbq08=rbq_file.rbq08, tabIndex=12, default = "Y", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rbqacti=rbq_file.rbqacti, tabIndex=13, default = "Y", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rbq(formonly.type,formonly.before,formonly.rbq07_1,formonly.rbq07_1_desc,formonly.rbq09_1,formonly.rbq08_1,formonly.rbqacti_1,formonly.after,rbq_file.rbq07,formonly.rbq07_desc,rbq_file.rbq09,rbq_file.rbq08,rbq_file.rbqacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

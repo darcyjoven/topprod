@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apcq070.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_process")
+VBox VBox1
+Folder pc761
+Page page01(text="Process")
+VBox VBox2
+Table s_process
+{
+[p01       |user_name|mail    |p02        |p03      |p10     |p04        |p05      |p06      |p07      |p08     |p09        |gen05   |gen08   ]
+[p01       |user_name|mail    |p02        |p03      |p10     |p04        |p05      |p06      |p07      |p08     |p09        |gen05   |gen08   ]
+[p01       |user_name|mail    |p02        |p03      |p10     |p04        |p05      |p06      |p07      |p08     |p09        |gen05   |gen08   ]
+[p01       |user_name|mail    |p02        |p03      |p10     |p04        |p05      |p06      |p07      |p08     |p09        |gen05   |gen08   ]
+[p01       |user_name|mail    |p02        |p03      |p10     |p04        |p05      |p06      |p07      |p08     |p09        |gen05   |gen08   ]
+[p01       |user_name|mail    |p02        |p03      |p10     |p04        |p05      |p06      |p07      |p08     |p09        |gen05   |gen08   ]
+[p01       |user_name|mail    |p02        |p03      |p10     |p04        |p05      |p06      |p07      |p08     |p09        |gen05   |gen08   ]
+[p01       |user_name|mail    |p02        |p03      |p10     |p04        |p05      |p06      |p07      |p08     |p09        |gen05   |gen08   ]
+[p01       |user_name|mail    |p02        |p03      |p10     |p04        |p05      |p06      |p07      |p08     |p09        |gen05   |gen08   ]
+[p01       |user_name|mail    |p02        |p03      |p10     |p04        |p05      |p06      |p07      |p08     |p09        |gen05   |gen08   ]
+
+}
+END -- s_process
+END -- VBox2
+END -- page01
+END -- pc761
+Grid gr3266
+{
+ ----------Rows [cnt   ] ----------[dummy02                       ][dummy01                     ]
+
+}
+END -- gr3266
+END -- VBox1
+END -- p_process
+
+ATTRIBUTES
+Edit p01=formonly.p01 type CHAR, tabIndex=1, title="Login User", noEntry;
+Edit user_name=formonly.user_name type CHAR, tabIndex=2, title="User Name", noEntry;
+Edit mail=formonly.mail, tabIndex=12, title=%"mail";
+Edit p02=formonly.p02 type CHAR, tabIndex=3, title="Program ID", noEntry;
+Edit p03=formonly.p03 type CHAR, tabIndex=4, title="Process ID", noEntry;
+Edit p10=formonly.p10, tabIndex=15, title=%"IP";
+Edit p04=formonly.p04 type CHAR, tabIndex=5, title="Department", noEntry;
+Edit p05=formonly.p05 type CHAR, tabIndex=6, title="Start Time", noEntry;
+Edit p06=formonly.p06 type CHAR, tabIndex=7, title="Current Time", noEntry;
+Edit p07=formonly.p07 type CHAR, tabIndex=8, title="Duration Time", noEntry;
+Edit p08=formonly.p08 type CHAR, tabIndex=9, title="Database/Last Database", noEntry;
+Edit p09=formonly.p09 type CHAR, tabIndex=11, title=%"AP Server";
+Edit gen05=formonly.gen05, tabIndex=13, title=%"Extesion NO";
+Edit gen08=formonly.gen08, tabIndex=14, title=%"Mobile Phone";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10, noEntry;
+Label dummy02:dummy02;
+Label dummy01:dummy01, text="Update process every 10 seconds";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_process(formonly.p01,formonly.user_name,formonly.mail,formonly.p02,formonly.p03,formonly.p10,formonly.p04,formonly.p05,formonly.p06,formonly.p07,formonly.p08,formonly.p09,formonly.gen05,formonly.gen08)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp850.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimp850")
+VBox vb3
+Grid gr2
+{
+ <G group01                                       ><G group02                                       >
+ [stkyn                                  ]         [wipyn                                  ]
+ <                                                ><                                                >
+ <G group03                                       ><G group04                                       >
+  [stk_q]                                           [wip_q]
+  -------------------------------------------       -------------------------------------------
+  [a                           ]                    [c                            ]
+  -------------------------------------------       -------------------------------------------
+  [b                           ]                    [d                            ]
+  [dummy05                     ]                    [dummy06                      ]
+  DownLoad Name       [name1             ]          DownLoad Name       [name2             ]
+  [dummy11                     ]                    [dummy07                      ]
+  DownLoad Name       [name4             ]          DownLoad Name       [name3             ]
+  [dummy12                     ]                   <                                                >
+  DownLoad Name       [name5             ]
+  [dummy13                     ]
+  DownLoad Name       [name6             ]
+ <                                                >
+}
+END -- gr2
+Grid gr3
+{
+ <G group05                                                                                         >
+  PS [dummy08                                                                                      ]
+     [dummy09                                                                                      ]
+     [dummy10                                                                                      ]
+ <                                                                                                  >
+}
+END -- gr3
+Grid gr4
+{
+[g_bgjob                                   ]
+
+
+}
+END -- gr4
+END -- vb3
+END -- aimp850
+
+ATTRIBUTES
+Group group01:group01, text="On Hand Stock";
+CheckBox stkyn=formonly.stkyn type VARCHAR, tabIndex=1, text="Run On Hand Stock Inv.Label File Transaction", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="WIP W/O";
+CheckBox wipyn=formonly.wipyn type VARCHAR, tabIndex=2, text="Run WIP W/O Inv.Label File Transaction", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03;
+Button stk_q:stk_qbe, text="INPUT QBE";
+CheckBox a=formonly.a type VARCHAR, tabIndex=3, text="Delete Inventory Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=4, text="Download Inventory Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy05:dummy05, text="On Hand Stock Inv.Label File";
+Edit name1=formonly.name1 type VARCHAR, tabIndex=5, noEntry;
+Label dummy11:dummy11, text="On Hand Stock Multi Unit Inv.Label File";
+Edit name4=formonly.name4 type VARCHAR, tabIndex=6, noEntry;
+Label dummy12:dummy12, text="On Hand Stock Counting of Lot/Serial No.";
+Edit name5=formonly.name5 type VARCHAR, tabIndex=12, noEntry;
+Label dummy13:dummy13, text="On Hand Stock Mark/BIN Stock-in Detail";
+Edit name6=formonly.name6 type VARCHAR, tabIndex=13, noEntry;
+Group group04:group04;
+Button wip_q:wip_qbe, text="INPUT QBE";
+CheckBox c=formonly.c type VARCHAR, tabIndex=7, text="Delete Inventory Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=8, text="Download Inventory Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy06:dummy06, text="WIP W/O Inv.Label File";
+Edit name2=formonly.name2 type VARCHAR, tabIndex=9, noEntry;
+Label dummy07:dummy07, text="WIP W/O Inv.Label(Dn.LvMat)Detal";
+Edit name3=formonly.name3 type VARCHAR, tabIndex=10, noEntry;
+Group group05:group05;
+Label dummy08:dummy08, text="(1)If Wanting to Delete Inventory Data, Confirm it Been Backed up.";
+Label dummy09:dummy09, text="(2)If the VTCP User Want to Download Data, Confirm c:/\tiptop/ Existed.";
+Label dummy10:dummy10, text="Files Will Download to c:/\tiptop/ Automatically.";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=11, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.stkyn,formonly.wipyn,formonly.a,formonly.b,formonly.name1,formonly.name4,formonly.name5,formonly.c,formonly.d,formonly.name2,formonly.name3,formonly.g_bgjob,formonly.name6)
+END -- INSTRUCTIONS
+

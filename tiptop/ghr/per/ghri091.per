@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghri091.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrdw01  |hrat02  |hrat04  |hrat05  |hrdw04          |hrdw05          |hrdw03  |hrdw06          |hrdw07          |hrdw08  |hrdw02  ]
+[hrdw01  |hrat02  |hrat04  |hrat05  |hrdw04          |hrdw05          |hrdw03  |hrdw06          |hrdw07          |hrdw08  |hrdw02  ]
+[hrdw01  |hrat02  |hrat04  |hrat05  |hrdw04          |hrdw05          |hrdw03  |hrdw06          |hrdw07          |hrdw08  |hrdw02  ]
+[hrdw01  |hrat02  |hrat04  |hrat05  |hrdw04          |hrdw05          |hrdw03  |hrdw06          |hrdw07          |hrdw08  |hrdw02  ]
+[hrdw01  |hrat02  |hrat04  |hrat05  |hrdw04          |hrdw05          |hrdw03  |hrdw06          |hrdw07          |hrdw08  |hrdw02  ]
+
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+  ----------  cn2[cn2 ]----------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrdw01=formonly.hrdw01 type VARCHAR, action=controlp, tabIndex=1, title=%"hrdw01", noEntry, image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=2, title=%"hrat02", noEntry;
+Edit hrat04=formonly.hrat04 type VARCHAR, tabIndex=3, title=%"hrat04", noEntry;
+Edit hrat05=formonly.hrat05 type VARCHAR, tabIndex=4, title=%"hrat05", noEntry;
+Edit hrdw04=formonly.hrdw04 type DECIMAL, tabIndex=5, title=%"hrdw04", noEntry;
+Edit hrdw05=formonly.hrdw05 type DECIMAL, tabIndex=6, title=%"hrdw05", noEntry;
+ButtonEdit hrdw03=formonly.hrdw03 type VARCHAR, action=controlp, tabIndex=7, title=%"hrdw03", noEntry, image="zoom";
+Edit hrdw06=formonly.hrdw06 type DECIMAL, tabIndex=8, title=%"hrdw06", noEntry;
+Edit hrdw07=formonly.hrdw07 type DECIMAL, tabIndex=9, title=%"hrdw07", noEntry;
+TextEdit hrdw08=formonly.hrdw08 type VARCHAR, tabIndex=10, title=%"hrdw08", noEntry;
+ComboBox hrdw02=formonly.hrdw02 type VARCHAR, tabIndex=11, title=%"hrdw02", noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrdw(formonly.hrdw01,formonly.hrat02,formonly.hrat04,formonly.hrat05,formonly.hrdw04,formonly.hrdw05,formonly.hrdw03,formonly.hrdw06,formonly.hrdw07,formonly.hrdw08,formonly.hrdw02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

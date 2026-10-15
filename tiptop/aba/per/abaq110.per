@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abaq110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abaq110")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr3157
+{
+ Item No.            [ima01                         ]
+ Part Name Spec      [ima02                         ]
+ Specification       [ima021                        ]
+
+}
+END -- gr3157
+Grid gr3158
+{
+  [ima930       ]
+   Generation time [ima932         ]
+
+
+}
+END -- gr3158
+END -- hb1
+END -- page01
+END -- folder01
+HBox HBox1
+Table s_img
+{
+[img02     |img09|img10          ]
+[img02     |img09|img10          ]
+[img02     |img09|img10          ]
+[img02     |img09|img10          ]
+[img02     |img09|img10          ]
+[img02     |img09|img10          ]
+[img02     |img09|img10          ]
+[img02     |img09|img10          ]
+[img02     |img09|img10          ]
+[img02     |img09|img10          ]
+
+}
+END -- s_img
+Table Table1
+{
+[imgb01         |ibb05   |imgb02  |imgb03  |imgb05  ]
+[imgb01         |ibb05   |imgb02  |imgb03  |imgb05  ]
+[imgb01         |ibb05   |imgb02  |imgb03  |imgb05  ]
+[imgb01         |ibb05   |imgb02  |imgb03  |imgb05  ]
+[imgb01         |ibb05   |imgb02  |imgb03  |imgb05  ]
+[imgb01         |ibb05   |imgb02  |imgb03  |imgb05  ]
+[imgb01         |ibb05   |imgb02  |imgb03  |imgb05  ]
+[imgb01         |ibb05   |imgb02  |imgb03  |imgb05  ]
+[imgb01         |ibb05   |imgb02  |imgb03  |imgb05  ]
+[imgb01         |ibb05   |imgb02  |imgb03  |imgb05  ]
+
+}
+END -- Table1
+END -- HBox1
+Grid gr3160
+{
+  ---------- Rows [cnt   ] / [cn2   ] --------------------------------------------------------------------Inventory Qty Total [tot                 ]
+
+
+}
+END -- gr3160
+END -- VBox1
+END -- abaq110
+
+TABLES
+imgb_file,
+ibb_file,
+ima_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Please by QBE, Enter Item# to Query";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=3, noEntry;
+CheckBox ima930=formonly.ima930 type CHAR, tabIndex=4, text=%"ima930", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox ima932=ima_file.ima932, tabIndex=5, queryEditable, items=(("A", "Work order"),("B", "FQC Quality records"),("C", "Job production"),("D", "Daily production report"),("E", "Purchasing system"),("F", "Purchase order"),("G", "Outsourcing procurement list"),("H", "Order packing list"));
+Edit img02=formonly.img02 type CHAR, tabIndex=6, title="Warehouse";
+Edit img09=formonly.img09 type CHAR, tabIndex=7, title="Unit";
+Edit img10=formonly.img10 type CHAR, tabIndex=8, title="Inventory Qty";
+Edit imgb01=imgb_file.imgb01, tabIndex=9, title=%"imgb01";
+Edit ibb05=ibb_file.ibb05, tabIndex=10, title=%"ibb05";
+Edit imgb02=imgb_file.imgb02, tabIndex=11, title=%"imgb02";
+Edit imgb03=imgb_file.imgb03, tabIndex=12, title=%"imgb03";
+Edit imgb05=imgb_file.imgb05, tabIndex=13, title=%"imgb05";
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=15;
+Edit tot=formonly.tot type CHAR, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(formonly.img02,formonly.img09,formonly.img10)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,formonly.ima930,formonly.cnt,formonly.cn2,formonly.tot,ima_file.ima932)
+SCREEN RECORD s_imgb(imgb_file.imgb01,ibb_file.ibb05,imgb_file.imgb02,imgb_file.imgb03,imgb_file.imgb05)
+END -- INSTRUCTIONS
+

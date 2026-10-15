@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqci106.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Table s_qcl
+{
+[qcl01     |qcl02                             |qcl05            |qcl|qcl04|qcl06         |qcl07        ]
+[qcl01     |qcl02                             |qcl05            |qcl|qcl04|qcl06         |qcl07        ]
+[qcl01     |qcl02                             |qcl05            |qcl|qcl04|qcl06         |qcl07        ]
+[qcl01     |qcl02                             |qcl05            |qcl|qcl04|qcl06         |qcl07        ]
+[qcl01     |qcl02                             |qcl05            |qcl|qcl04|qcl06         |qcl07        ]
+[qcl01     |qcl02                             |qcl05            |qcl|qcl04|qcl06         |qcl07        ]
+[qcl01     |qcl02                             |qcl05            |qcl|qcl04|qcl06         |qcl07        ]
+[qcl01     |qcl02                             |qcl05            |qcl|qcl04|qcl06         |qcl07        ]
+[qcl01     |qcl02                             |qcl05            |qcl|qcl04|qcl06         |qcl07        ]
+[qcl01     |qcl02                             |qcl05            |qcl|qcl04|qcl06         |qcl07        ]
+
+}
+END -- s_qcl
+Grid gr1
+{
+      --------- cnt  [cnt   ]  ---------
+
+}
+END -- gr1
+END -- VBox1
+END -- Form
+
+TABLES
+qcl_file
+ATTRIBUTES
+Edit qcl01=qcl_file.qcl01, tabIndex=1, title=%"qcl01", not null, scroll;
+Edit qcl02=qcl_file.qcl02, tabIndex=2, title=%"qcl02", scroll;
+ComboBox qcl05=qcl_file.qcl05, tabIndex=3, default = "0", title=%"qcl05", not null, scroll, items=(("0", ""),("1", ""),("2", ""),("3", ""));
+CheckBox qcl=qcl_file.qcl03, tabIndex=4, default = "Y", title=%"qcl03", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox qcl04=qcl_file.qcl04, tabIndex=5, default = "Y", title=%"qcl04", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit qcl06=qcl_file.qcl06, action=controlp, tabIndex=6, title=%"qcl06", not null, image="zoom", scroll;
+Edit qcl07=qcl_file.qcl07, tabIndex=7, title=%"qcl07", scroll;
+Edit cnt=formonly.cnt type CHAR, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcl(qcl_file.qcl01,qcl_file.qcl02,qcl_file.qcl05,qcl_file.qcl03,qcl_file.qcl04,qcl_file.qcl06,qcl_file.qcl07)
+SCREEN RECORD s_cnt(formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,115 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq450.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcq450")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+Grid gr1554
+{
+ WO No.                        [ccg01           ]
+ YY/MM                         [ccg0] /            [cc]
+ Cost Calculation Method        [ccg06               ]                   Category No.  [ccg07                         ]
+ Master Item                   [ccg04               ] [ima02a                        ] [ima021a                       ]
+
+
+}
+END -- gr1554
+END -- page01
+Page info(text="Info")
+Grid gr1555
+{
+ Department          [ccguser   ]   Data Valid Code     [ccgtime   ]
+ Create/Modify Date  [ccgdate   ]
+ Record Orig         [ccgoriu  ]
+}
+END -- gr1555
+END -- info
+END -- folder01
+Table s_cce
+{
+[cce04           |ima02b               |ima021b          |ima25 |cce21     |cce22a              |cce22b              |cce22c              |cce22d              |cce22e              |cce22f              |cce22g              |cce22h              |cce22               ]
+[cce04           |ima02b               |ima021b          |ima25 |cce21     |cce22a              |cce22b              |cce22c              |cce22d              |cce22e              |cce22f              |cce22g              |cce22h              |cce22               ]
+[cce04           |ima02b               |ima021b          |ima25 |cce21     |cce22a              |cce22b              |cce22c              |cce22d              |cce22e              |cce22f              |cce22g              |cce22h              |cce22               ]
+[cce04           |ima02b               |ima021b          |ima25 |cce21     |cce22a              |cce22b              |cce22c              |cce22d              |cce22e              |cce22f              |cce22g              |cce22h              |cce22               ]
+[cce04           |ima02b               |ima021b          |ima25 |cce21     |cce22a              |cce22b              |cce22c              |cce22d              |cce22e              |cce22f              |cce22g              |cce22h              |cce22               ]
+[cce04           |ima02b               |ima021b          |ima25 |cce21     |cce22a              |cce22b              |cce22c              |cce22d              |cce22e              |cce22f              |cce22g              |cce22h              |cce22               ]
+[cce04           |ima02b               |ima021b          |ima25 |cce21     |cce22a              |cce22b              |cce22c              |cce22d              |cce22e              |cce22f              |cce22g              |cce22h              |cce22               ]
+[cce04           |ima02b               |ima021b          |ima25 |cce21     |cce22a              |cce22b              |cce22c              |cce22d              |cce22e              |cce22f              |cce22g              |cce22h              |cce22               ]
+[cce04           |ima02b               |ima021b          |ima25 |cce21     |cce22a              |cce22b              |cce22c              |cce22d              |cce22e              |cce22f              |cce22g              |cce22h              |cce22               ]
+[cce04           |ima02b               |ima021b          |ima25 |cce21     |cce22a              |cce22b              |cce22c              |cce22d              |cce22e              |cce22f              |cce22g              |cce22h              |cce22               ]
+[cce04           |ima02b               |ima021b          |ima25 |cce21     |cce22a              |cce22b              |cce22c              |cce22d              |cce22e              |cce22f              |cce22g              |cce22h              |cce22               ]
+
+}
+END -- s_cce
+Grid gr1556
+{
+                                               [dummy01   ]  [dummy02           ]  [dummy03           ]  [dummy04           ]  [dummy05           ]  [dummy06           ]  [dummy08           ]  [dummy09           ]   [dummy10         ]  [dummy07           ]
+ ---------- Rows [cnt   ] ----------  Total   [tot21      ][tot22a              ][tot22b              ][tot22c              ][tot22d              ][tot22e              ][tot22f              ][tot22g              ][tot22h             ][tot22               ]----------
+}
+END -- gr1556
+END -- vb6
+END -- axcq450
+
+TABLES
+cce_file,
+ccg_file
+ATTRIBUTES
+Edit ccg01=ccg_file.ccg01, tabIndex=1, not null, required;
+Edit ccg0=ccg_file.ccg02, tabIndex=2, not null, required;
+Edit cc=ccg_file.ccg03, tabIndex=3, not null, required;
+ComboBox ccg06=ccg_file.ccg06, tabIndex=4, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manuallyéåç¦çµÑç²é´ç³åæ¤¤Ñç¡re Profit Center"));
+ButtonEdit ccg07=ccg_file.ccg07, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+ButtonEdit ccg04=ccg_file.ccg04, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit ima02a=formonly.ima02a type CHAR, tabIndex=6, noEntry;
+Edit ima021a=formonly.ima021a type CHAR, tabIndex=8, noEntry;
+Edit ccguser=ccg_file.ccguser, tabIndex=7, noEntry;
+Edit ccgtime=ccg_file.ccgtime, tabIndex=8, noEntry;
+DateEdit ccgdate=ccg_file.ccgdate, tabIndex=9, noEntry;
+Edit ccgoriu=ccg_file.ccgoriu, tabIndex=37;
+ButtonEdit cce04=cce_file.cce04, action=controlp, tabIndex=9, title="Tran Item", not null, required, image="zoom";
+Edit ima02b=formonly.ima02b type CHAR, tabIndex=10, title="P/N Spec.", noEntry;
+Edit ima021b=formonly.ima021b type CHAR, tabIndex=11, title="Spec.", noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=12, title="Unit", noEntry;
+Edit cce21=cce_file.cce21, tabIndex=13, title="Tr-o Qty", not null, required;
+Edit cce22a=cce_file.cce22a, tabIndex=14, title="Mat.", not null, required;
+Edit cce22b=cce_file.cce22b, tabIndex=15, title="Lbr", not null, required;
+Edit cce22c=cce_file.cce22c, tabIndex=16, title="Ovhd 1", not null, required;
+Edit cce22d=cce_file.cce22d, tabIndex=17, title="Prcs", not null, required;
+Edit cce22e=cce_file.cce22e, tabIndex=18, title="Ovhd 2", not null, required;
+Edit cce22f=cce_file.cce22f, tabIndex=19, default = "0", title="Ovhd 3", not null, required;
+Edit cce22g=cce_file.cce22g, tabIndex=20, default = "0", title="Ovhd 4", not null, required;
+Edit cce22h=cce_file.cce22h, tabIndex=21, default = "0", title="Ovhd 5", not null, required;
+Edit cce22=cce_file.cce22, tabIndex=22, title="SubTot", noEntry, not null, required;
+Label dummy01:dummy01, text="Tr-o Qty";
+Label dummy02:dummy02, text="Mat.";
+Label dummy03:dummy03, text="Lbr";
+Label dummy04:dummy04, text="Ovhd 1";
+Label dummy05:dummy05, text="Prcs";
+Label dummy06:dummy06, text="Ovhd 2";
+Label dummy08:dummy08, text="Ovhd 3";
+Label dummy09:dummy09, text="Ovhd 4";
+Label dummy10:dummy10, text="Ovhd 5";
+Label dummy07:dummy07, text="SubTot";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit tot21=formonly.tot21 type CHAR, tabIndex=22, noEntry;
+Edit tot22a=formonly.tot22a type CHAR, tabIndex=23, noEntry;
+Edit tot22b=formonly.tot22b type CHAR, tabIndex=24, noEntry;
+Edit tot22c=formonly.tot22c type CHAR, tabIndex=25, noEntry;
+Edit tot22d=formonly.tot22d type CHAR, tabIndex=26, noEntry;
+Edit tot22e=formonly.tot22e type CHAR, tabIndex=27, noEntry;
+Edit tot22f=formonly.tot22f type CHAR, tabIndex=34;
+Edit tot22g=formonly.tot22g type CHAR, tabIndex=35;
+Edit tot22h=formonly.tot22h type CHAR, tabIndex=36;
+Edit tot22=formonly.tot22 type CHAR, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cce(cce_file.cce04,formonly.ima02b,formonly.ima021b,formonly.ima25,cce_file.cce21,cce_file.cce22a,cce_file.cce22b,cce_file.cce22c,cce_file.cce22d,cce_file.cce22e,cce_file.cce22f,cce_file.cce22g,cce_file.cce22h,cce_file.cce22)
+SCREEN RECORD Undefined(ccg_file.ccg01,ccg_file.ccg02,ccg_file.ccg03,ccg_file.ccg06,ccg_file.ccg07,ccg_file.ccg04,formonly.ima02a,formonly.ima021a,ccg_file.ccguser,ccg_file.ccgtime,ccg_file.ccgdate,ccg_file.ccgoriu,formonly.cnt,formonly.tot21,formonly.tot22a,formonly.tot22b,formonly.tot22c,formonly.tot22d,formonly.tot22e,formonly.tot22f,formonly.tot22g,formonly.tot22h,formonly.tot22)
+END -- INSTRUCTIONS
+

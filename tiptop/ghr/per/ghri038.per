@@ -1,0 +1,108 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri038.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ghri038")
+Folder pc1
+Page page111(action=main, text=%"page111")
+VBox vb1
+Folder pc2
+Page page01(text=%"page01")
+Grid gr1
+{
+
+  hrbx01 [hrbx01          ]           hrbx02 [hrbx02          ]  [hrbx02_desc  ]
+  hrbx03 [hrbx03          ]           hrbx04 [hrbx04          ]  [hrbx04_desc  ]
+  hrbx07 [hrbx07          ]           hrbx08 [hrbx08         ]   [hrbx05       ]
+  hrbx06 [hrbx06                                                               ]
+         [                                                                     ]
+
+}
+END -- gr1
+END -- page01
+Page page02(text=%"page02")
+Grid gr2
+{
+
+ hrbxuser    [hrbxuser  ]          hrbxdate      [hrbxdate  ]
+ hrbxgrup    [hrbxgrup  ]          hrbxoriu      [hrbxoriu  ]
+ hrbxmodu    [hrbxmodu  ]          hrbxorig      [hrbxorig  ]
+
+
+
+}
+END -- gr2
+END -- page02
+END -- pc2
+Grid grid3
+{
+  ---------- cnt[cnt]----------
+
+
+
+
+}
+END -- grid3
+END -- vb1
+END -- page111
+Page page112(action=item_list, text=%"page112")
+Table s_hrby
+{
+[hrby02      |hrby03      |hrby04     |hrby05       |hrby06      |hrby07      |hrby08       |hrat02       |hrby10      |hrby11     |hrby13      |hrbyacti   ]
+[hrby02      |hrby03      |hrby04     |hrby05       |hrby06      |hrby07      |hrby08       |hrat02       |hrby10      |hrby11     |hrby13      |hrbyacti   ]
+[hrby02      |hrby03      |hrby04     |hrby05       |hrby06      |hrby07      |hrby08       |hrat02       |hrby10      |hrby11     |hrby13      |hrbyacti   ]
+[hrby02      |hrby03      |hrby04     |hrby05       |hrby06      |hrby07      |hrby08       |hrat02       |hrby10      |hrby11     |hrby13      |hrbyacti   ]
+[hrby02      |hrby03      |hrby04     |hrby05       |hrby06      |hrby07      |hrby08       |hrat02       |hrby10      |hrby11     |hrby13      |hrbyacti   ]
+[hrby02      |hrby03      |hrby04     |hrby05       |hrby06      |hrby07      |hrby08       |hrat02       |hrby10      |hrby11     |hrby13      |hrbyacti   ]
+[hrby02      |hrby03      |hrby04     |hrby05       |hrby06      |hrby07      |hrby08       |hrat02       |hrby10      |hrby11     |hrby13      |hrbyacti   ]
+[hrby02      |hrby03      |hrby04     |hrby05       |hrby06      |hrby07      |hrby08       |hrat02       |hrby10      |hrby11     |hrby13      |hrbyacti   ]
+[hrby02      |hrby03      |hrby04     |hrby05       |hrby06      |hrby07      |hrby08       |hrat02       |hrby10      |hrby11     |hrby13      |hrbyacti   ]
+[hrby02      |hrby03      |hrby04     |hrby05       |hrby06      |hrby07      |hrby08       |hrat02       |hrby10      |hrby11     |hrby13      |hrbyacti   ]
+}
+END -- s_hrby
+END -- page112
+END -- pc1
+END -- ghri038
+
+ATTRIBUTES
+ButtonEdit hrbx01=formonly.hrbx01 type VARCHAR, action=controlp, tabIndex=1, noEntry, image="zoom";
+ButtonEdit hrbx02=formonly.hrbx02 type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit hrbx02_desc=formonly.hrbx02_desc type VARCHAR, tabIndex=3, noEntry;
+DateEdit hrbx03=formonly.hrbx03 type DATE, tabIndex=4, not null, required;
+ButtonEdit hrbx04=formonly.hrbx04 type VARCHAR, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit hrbx04_desc=formonly.hrbx04_desc type VARCHAR, tabIndex=6, noEntry;
+Edit hrbx07=formonly.hrbx07 type VARCHAR, tabIndex=7, noEntry;
+Edit hrbx08=formonly.hrbx08 type DECIMAL, tabIndex=8, noEntry;
+CheckBox hrbx05=formonly.hrbx05 type VARCHAR, tabIndex=9, text=%"hrbx05", not null, required, valueChecked = "Y", valueUnchecked = "N";
+TextEdit hrbx06=formonly.hrbx06 type VARCHAR, tabIndex=10;
+Edit hrbxuser=formonly.hrbxuser type VARCHAR, tabIndex=12, noEntry;
+DateEdit hrbxdate=formonly.hrbxdate type DATE, tabIndex=13, noEntry;
+Edit hrbxgrup=formonly.hrbxgrup type VARCHAR, tabIndex=14, noEntry;
+Edit hrbxoriu=formonly.hrbxoriu type VARCHAR, tabIndex=15, noEntry;
+Edit hrbxmodu=formonly.hrbxmodu type VARCHAR, tabIndex=16, noEntry;
+Edit hrbxorig=formonly.hrbxorig type VARCHAR, tabIndex=17, noEntry, upShift;
+Edit cnt=formonly.cnt type DECIMAL, tabIndex=11, noEntry;
+Edit hrby02=formonly.hrby02 type DECIMAL, tabIndex=18, title=%"hrby02", noEntry;
+Edit hrby03=formonly.hrby03 type VARCHAR, tabIndex=19, title=%"hrby03", noEntry;
+Edit hrby04=formonly.hrby04 type VARCHAR, tabIndex=20, title=%"hrby04", noEntry;
+DateEdit hrby05=formonly.hrby05 type DATE, tabIndex=21, title=%"hrby05", noEntry;
+Edit hrby06=formonly.hrby06 type VARCHAR, tabIndex=22, title=%"hrby06", noEntry;
+Edit hrby07=formonly.hrby07 type VARCHAR, tabIndex=23, title=%"hrby07", noEntry;
+Edit hrby08=formonly.hrby08 type VARCHAR, tabIndex=24, title=%"hrby08", noEntry;
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=25, title=%"hrat02", noEntry;
+Edit hrby10=formonly.hrby10 type VARCHAR, tabIndex=26, title=%"hrby10", noEntry;
+Edit hrby11=formonly.hrby11 type VARCHAR, tabIndex=27, title=%"hrby11", noEntry;
+Edit hrby13=formonly.hrby13 type VARCHAR, tabIndex=28, title=%"hrby13", noEntry;
+CheckBox hrbyacti=formonly.hrbyacti type VARCHAR, tabIndex=29, title=%"hrbyacti", noEntry, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD page01(formonly.hrbx01,formonly.hrbx04_desc,formonly.hrbx02,formonly.hrbx03,formonly.hrbx04,formonly.hrbx08,formonly.hrbx07,formonly.hrbx02_desc,formonly.hrbx06)
+SCREEN RECORD page02(formonly.hrbxoriu,formonly.hrbxorig,formonly.hrbxuser,formonly.hrbxdate,formonly.hrbxgrup,formonly.hrbxmodu)
+SCREEN RECORD s_hrby(formonly.hrby02,formonly.hrby03,formonly.hrby04,formonly.hrby05,formonly.hrby06,formonly.hrby07,formonly.hrby08,formonly.hrat02,formonly.hrby10,formonly.hrby11,formonly.hrby13,formonly.hrbyacti)
+SCREEN RECORD Undefined(formonly.hrbx05,formonly.cnt)
+END -- INSTRUCTIONS
+

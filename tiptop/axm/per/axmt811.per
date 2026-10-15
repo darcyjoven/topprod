@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt811.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt811")
+VBox VBox1
+Folder pc612
+Page page01(text="Page01")
+Grid gr2618
+{
+ <G group01                                  > <G group04                                                      >
+  Order No.           [oed01               ]    Remark              [oe][o1]
+  FORWARDER           [oed021              ]    [oed051                                                      ]
+                      [oed022              ]    [oed052                                                      ]
+                      [oed023              ]    [oed053                                                      ]
+ <                                           >  [oed054                                                      ]
+ <G group02                                  >  [oed055                                                      ]
+  Consignee           [o2][o3]                  [oed056                                                      ]
+  [oed031                              ]        [oed057                                                      ]
+  [oed032                              ]        [oed058                                                      ]
+  [oed033                              ]
+  [oed034                              ]
+ <                                           >
+ <G group03                                  >
+  Notify              [o4][o5]
+  [oed041                              ]
+  [oed042                              ]
+  [oed043                              ]
+  [oed044                              ]
+
+ <                                           > <                                                               >
+
+}
+END -- gr2618
+END -- page01
+END -- pc612
+END -- VBox1
+END -- axmt811
+
+TABLES
+oed_file
+ATTRIBUTES
+Group group01:group01;
+Edit oed01=oed_file.oed01, tabIndex=1, noEntry;
+Edit oed021=oed_file.oed021, tabIndex=2, color = yellow;
+Edit oed022=oed_file.oed022, tabIndex=3, color = yellow;
+Edit oed023=oed_file.oed023, tabIndex=4, color = yellow;
+Group group04:group04;
+Edit oe=oed_file.oed05, tabIndex=5, noEntry, comment="Category: 10-Remark  50-Shipping Mark 90-Notify 99-Consignee";
+ButtonEdit o1=oed_file.oed050, action=controlp, tabIndex=6, image="zoom", comment="<^P> Qry Data";
+Edit oed051=oed_file.oed051, tabIndex=7;
+Edit oed052=oed_file.oed052, tabIndex=8;
+Edit oed053=oed_file.oed053, tabIndex=9;
+Edit oed054=oed_file.oed054, tabIndex=10;
+Edit oed055=oed_file.oed055, tabIndex=11;
+Edit oed056=oed_file.oed056, tabIndex=12;
+Edit oed057=oed_file.oed057, tabIndex=13;
+Edit oed058=oed_file.oed058, tabIndex=14;
+Group group02:group02;
+Edit o2=oed_file.oed03, tabIndex=15, noEntry, comment="Category: 10-Remark  50-Shipping Mark 90-Notify 99-Consignee";
+ButtonEdit o3=oed_file.oed030, action=controlp, tabIndex=16, image="zoom", comment="<^P> Qry Data";
+Edit oed031=oed_file.oed031, tabIndex=17;
+Edit oed032=oed_file.oed032, tabIndex=18;
+Edit oed033=oed_file.oed033, tabIndex=19;
+Edit oed034=oed_file.oed034, tabIndex=20;
+Group group03:group03;
+Edit o4=oed_file.oed04, tabIndex=21, noEntry, comment="Category: 10-Remark  50-Shipping Mark 90-Notify 99-Consignee";
+ButtonEdit o5=oed_file.oed040, action=controlp, tabIndex=22, image="zoom", comment="<^P> Qry Data";
+Edit oed041=oed_file.oed041, tabIndex=23;
+Edit oed042=oed_file.oed042, tabIndex=24;
+Edit oed043=oed_file.oed043, tabIndex=25;
+Edit oed044=oed_file.oed044, tabIndex=26;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oed_file.oed01,oed_file.oed021,oed_file.oed022,oed_file.oed023,oed_file.oed05,oed_file.oed050,oed_file.oed051,oed_file.oed052,oed_file.oed053,oed_file.oed054,oed_file.oed055,oed_file.oed056,oed_file.oed057,oed_file.oed058,oed_file.oed03,oed_file.oed030,oed_file.oed031,oed_file.oed032,oed_file.oed033,oed_file.oed034,oed_file.oed04,oed_file.oed040,oed_file.oed041,oed_file.oed042,oed_file.oed043,oed_file.oed044)
+END -- INSTRUCTIONS
+

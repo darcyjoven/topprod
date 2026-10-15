@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrr372.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr372")
+VBox VBox1
+Group group01(text="INPUT")
+VBox VBox2
+Grid Grid1
+{
+                <G group02     >
+ [dummy01]      [a             ]
+                [b             ]
+                [c             ]
+                <              >
+
+}
+END -- Grid1
+Grid Grid2
+{
+
+ Enter Account Date  [bdate               ]-[edate               ]
+}
+END -- Grid2
+END -- VBox2
+END -- group01
+Grid Grid3
+{
+[more                                                            ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- axrr372
+
+ATTRIBUTES
+Group group02:group02;
+Edit a=formonly.a type VARCHAR, tabIndex=1;
+Edit b=formonly.b type VARCHAR, tabIndex=2;
+Edit c=formonly.c type VARCHAR, tabIndex=3;
+Label dummy01:dummy01, text="Invoice";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=4;
+DateEdit edate=formonly.edate type DATE, tabIndex=5;
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.b,formonly.c,formonly.bdate,formonly.edate,formonly.more)
+END -- INSTRUCTIONS
+

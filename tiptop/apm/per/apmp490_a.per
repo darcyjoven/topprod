@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp490_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp490_a")
+VBox vbox1
+Grid grid1
+{
+ <G group01                                                                             >
+  OrderNO1            [oebislk01           ]  Work No             [bmb09    ]
+  Item NO.            [bmb03               ]
+  S/O No.             [oeb01               ]  S/O No. Line        [oeb03    ]
+ <                                                                                      >
+}
+END -- grid1
+Grid grid2
+{
+  Store-in Default Date [bdate       ]Supply Ending Date  [sudate      ]
+ <G group02                                                             >
+ [a                              ] [b                               ]
+ [c                              ] [d                               ]
+ [e                              ] [f                               ]
+ <                                                                      >
+}
+END -- grid2
+Grid grid3
+{
+[g                                                          ]
+[k                                                          ]
+[add                                                        ]
+}
+END -- grid3
+END -- vbox1
+END -- apmp490_a
+
+TABLES
+oebi_file,
+oeb_file
+ATTRIBUTES
+Group group01:group01, text=%"QBE";
+ButtonEdit oebislk01=oebi_file.oebislk01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit bmb09=formonly.bmb09 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit bmb03=formonly.bmb03 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit oeb01=oeb_file.oeb01, action=controlp, tabIndex=4, not null, required, image="zoom";
+Edit oeb03=oeb_file.oeb03, tabIndex=5, not null, required;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=6;
+DateEdit sudate=formonly.sudate type DATE, tabIndex=7;
+Group group02:group02, text=%"Print Data";
+CheckBox a=formonly.a type VARCHAR, tabIndex=8, text=%"Available Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=9, text=%"QC Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=10, text=%"P/R Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=11, text=%"Purchase Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=12, text=%"WIP Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type VARCHAR, tabIndex=13, text=%"Allotted Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type VARCHAR, tabIndex=14, text=%"Suggested amount include safety stock?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox k=formonly.k type VARCHAR, tabIndex=15, text=%"JCBL", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox add=formonly.add type VARCHAR, tabIndex=16, text=%"Add", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oebi_file.oebislk01,formonly.bmb09,formonly.bmb03,oeb_file.oeb01,oeb_file.oeb03,formonly.bdate,formonly.sudate,formonly.a,formonly.b,formonly.c,formonly.d,formonly.e,formonly.f,formonly.g,formonly.k,formonly.add)
+END -- INSTRUCTIONS
+

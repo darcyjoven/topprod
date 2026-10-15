@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxi502.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxi502")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1031
+{
+  Inventory S/N Used     [bze01  ]
+  Inventory Taking Date  [bze02  ]
+  Inventory Taking Year  [bze04  ]
+  Memo                   [bze03                                                    ]
+}
+END -- gr1031
+Grid gr1032
+{
+ Confirmed BY    [bze05  ]  [gen021    ]
+ Confirmed Date  [bze06  ]  [imgmksg]
+ Confirm         [bze07  ]  [       ]
+
+}
+END -- gr1032
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1033
+{
+  Record Owner      [bzeuser ]   Department          [bzegrup ]   Data Vaild Code  [bzeacti ]
+  Last Modified by  [bzemodu ]   Create/Modify Date  [bzedate   ]
+  Record Orig.      [bzeoriu ]
+                                 Dept Orig.          [bzeorig ]
+}
+END -- gr1033
+END -- info
+END -- folder01
+Table s_bzf
+{
+[bzf02|bzf03                |bzf04     |bzb03              |gem02         |bzb04   |gen02   |bza02                         |bza03                      |bza04                      |bza05 |bza08|bzf05            |bzf06       |bzf07          |bzf08                                                    ]
+[bzf02|bzf03                |bzf04     |bzb03              |gem02         |bzb04   |gen02   |bza02                         |bza03                      |bza04                      |bza05 |bza08|bzf05            |bzf06       |bzf07          |bzf08                                                    ]
+[bzf02|bzf03                |bzf04     |bzb03              |gem02         |bzb04   |gen02   |bza02                         |bza03                      |bza04                      |bza05 |bza08|bzf05            |bzf06       |bzf07          |bzf08                                                    ]
+[bzf02|bzf03                |bzf04     |bzb03              |gem02         |bzb04   |gen02   |bza02                         |bza03                      |bza04                      |bza05 |bza08|bzf05            |bzf06       |bzf07          |bzf08                                                    ]
+[bzf02|bzf03                |bzf04     |bzb03              |gem02         |bzb04   |gen02   |bza02                         |bza03                      |bza04                      |bza05 |bza08|bzf05            |bzf06       |bzf07          |bzf08                                                    ]
+[bzf02|bzf03                |bzf04     |bzb03              |gem02         |bzb04   |gen02   |bza02                         |bza03                      |bza04                      |bza05 |bza08|bzf05            |bzf06       |bzf07          |bzf08                                                    ]
+[bzf02|bzf03                |bzf04     |bzb03              |gem02         |bzb04   |gen02   |bza02                         |bza03                      |bza04                      |bza05 |bza08|bzf05            |bzf06       |bzf07          |bzf08                                                    ]
+[bzf02|bzf03                |bzf04     |bzb03              |gem02         |bzb04   |gen02   |bza02                         |bza03                      |bza04                      |bza05 |bza08|bzf05            |bzf06       |bzf07          |bzf08                                                    ]
+[bzf02|bzf03                |bzf04     |bzb03              |gem02         |bzb04   |gen02   |bza02                         |bza03                      |bza04                      |bza05 |bza08|bzf05            |bzf06       |bzf07          |bzf08                                                    ]
+[bzf02|bzf03                |bzf04     |bzb03              |gem02         |bzb04   |gen02   |bza02                         |bza03                      |bza04                      |bza05 |bza08|bzf05            |bzf06       |bzf07          |bzf08                                                    ]
+
+}
+END -- s_bzf
+Grid gr1034
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1034
+END -- VBox1
+END -- abxi502
+
+TABLES
+bzf_file,
+bze_file
+ATTRIBUTES
+Edit bze01=bze_file.bze01, tabIndex=1, not null, required;
+DateEdit bze02=bze_file.bze02, tabIndex=2, not null, required;
+Edit bze04=bze_file.bze04, tabIndex=3, not null, required;
+Edit bze03=bze_file.bze03, tabIndex=4;
+ButtonEdit bze05=bze_file.bze05, action=controlp, tabIndex=5, not null, required, image="zoom", comment="Qry Empoylee";
+Edit gen021=formonly.gen021 type CHAR, tabIndex=6, noEntry;
+DateEdit bze06=bze_file.bze06, tabIndex=7, not null, required;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ComboBox bze07=bze_file.bze07, tabIndex=9, noEntry, not null, required, items=(("Y", "CONFIRM"),("N", "NOT CONFIRM"),("X", "VOID"));
+Edit bzeuser=bze_file.bzeuser, tabIndex=10, noEntry;
+Edit bzegrup=bze_file.bzegrup, tabIndex=11, noEntry;
+Edit bzeacti=bze_file.bzeacti, tabIndex=12, noEntry;
+Edit bzemodu=bze_file.bzemodu, tabIndex=13, noEntry;
+DateEdit bzedate=bze_file.bzedate, tabIndex=14, noEntry;
+Edit bzeoriu=bze_file.bzeoriu, tabIndex=501, noEntry;
+Edit bzeorig=bze_file.bzeorig, tabIndex=502, noEntry;
+Edit bzf02=bzf_file.bzf02, tabIndex=15, title="Ln#", not null, required;
+ButtonEdit bzf03=bzf_file.bzf03, action=controlp, tabIndex=16, title="Machine Equipment No", not null, required, image="zoom", comment="<^P>Qry Machine Equipment No";
+ButtonEdit bzf04=bzf_file.bzf04, action=controlp, tabIndex=17, title="Serial No", not null, required, image="zoom", comment="<^P>Qry Serial No";
+Edit bzb03=formonly.bzb03 type CHAR, tabIndex=18, title="Keeping Department", noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=19, title="Department No", noEntry;
+Edit bzb04=formonly.bzb04 type CHAR, tabIndex=20, title="Keeper", noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=21, title="Name", noEntry;
+Edit bza02=formonly.bza02 type CHAR, tabIndex=22, title="Machine Chinese Name", noEntry;
+Edit bza03=formonly.bza03 type CHAR, tabIndex=23, title="Machine English Name", noEntry;
+Edit bza04=formonly.bza04 type CHAR, tabIndex=24, title="Machine Specification", noEntry;
+Edit bza05=formonly.bza05 type CHAR, tabIndex=25, title="Style", noEntry;
+Edit bza08=formonly.bza08 type CHAR, tabIndex=26, title="Unit", noEntry;
+Edit bzf05=bzf_file.bzf05, tabIndex=27, title="Book Surplus Qty", noEntry, not null, required;
+Edit bzf06=bzf_file.bzf06, tabIndex=28, title="Snd Qty", noEntry, not null, required;
+Edit bzf07=bzf_file.bzf07, tabIndex=29, title="Inventory Qty", not null, required;
+Edit bzf08=bzf_file.bzf08, tabIndex=30, title="Memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=31, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=32, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bzf(bzf_file.bzf02,bzf_file.bzf03,bzf_file.bzf04,formonly.bzb03,formonly.gem02,formonly.bzb04,formonly.gen02,formonly.bza02,formonly.bza03,formonly.bza04,formonly.bza05,formonly.bza08,bzf_file.bzf05,bzf_file.bzf06,bzf_file.bzf07,bzf_file.bzf08)
+SCREEN RECORD Undefined(bze_file.bze01,bze_file.bze02,bze_file.bze04,bze_file.bze03,bze_file.bze05,formonly.gen021,bze_file.bze06,formonly.imgmksg,bze_file.bze07,bze_file.bzeuser,bze_file.bzegrup,bze_file.bzeacti,bze_file.bzemodu,bze_file.bzedate,bze_file.bzeoriu,bze_file.bzeorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

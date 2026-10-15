@@ -1,0 +1,108 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zba.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zba")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+ Document No.        [zba01     ]
+ Date                [zba02     ]
+ Customer            [zba][zba04          ]
+ Command             [zba05     ]
+ Requirement         [zba061                                  ]
+                     [                                        ]
+                     [                                        ]
+ Enter               [zba08     ]
+ Status              [zba07               ]
+                     (Open,Hold,Accept,Work,Finish,Reject,Close)
+}
+END -- Grid1
+END -- page01
+END -- Folder1
+Folder Folder2
+Page page02(text="Page02")
+HBox HBox1
+Grid Grid2
+{
+ Reply                [zba111                                  ]
+                      [zba112                                  ]
+                      [zba113                                  ]
+ Requirement Category [zba14     ]
+ Judgement            [zba15     ]
+ Estimated Hour       [zba16     ]
+
+}
+END -- Grid2
+Grid Grid3
+{
+ Confirmed By         [zba12     ]
+ Co-Signor            [zba122    ]
+ Confirmed Date       [zba13     ]
+ Anticipated Operating[zba17     ]
+ Anticipated Complete [zba18     ]
+ In Charge            [zba19     ]
+
+}
+END -- Grid3
+END -- HBox1
+END -- page02
+Page page03(text="Page03")
+Grid Grid4
+{
+ Actual Hour         [zba21     ]
+ Actual Operating    [zba22     ]
+ Actual Complete     [zba23     ]
+ Result              [zba24                                   ]
+}
+END -- Grid4
+END -- page03
+END -- Folder2
+Grid Grid5
+{
+  ---------- Rows [cnt   ] ----------
+
+}
+END -- Grid5
+END -- VBox1
+END -- p_zba
+
+TABLES
+zba_file
+ATTRIBUTES
+Edit zba01=zba_file.zba01, tabIndex=1, not null, required, upShift, comment="Enter Customer # to 1st 3 Codes";
+Edit zba02=zba_file.zba02, tabIndex=2;
+Edit zba=zba_file.zba03, tabIndex=3, comment="Enter Customer Number";
+ButtonEdit zba04=zba_file.zba04, action=controlp, tabIndex=4, not null, required, image="zoom", comment="Enter who Requests, <^P> (IQ)";
+ButtonEdit zba05=zba_file.zba05, action=controlp, tabIndex=5, image="zoom", downShift, comment="<^P> (IQ)";
+TextEdit zba061=zba_file.zba061, tabIndex=6, stretch=NONE;
+Edit zba08=zba_file.zba08, tabIndex=7, downShift;
+Edit zba07=zba_file.zba07, tabIndex=8, noEntry, comment="(Open,Hold,Accept,Work,Finish,Reject,Close)";
+ButtonEdit zba111=zba_file.zba111, action=controlp, tabIndex=9, image="zoom", comment="<^P> (IQ)";
+Edit zba112=zba_file.zba112, tabIndex=10;
+Edit zba113=zba_file.zba113, tabIndex=11;
+Edit zba14=zba_file.zba14, tabIndex=12, upShift, comment="BUG/NR/SR/OT";
+Edit zba15=zba_file.zba15, tabIndex=13, comment="Hold/Accept/Reject/Close";
+Edit zba16=zba_file.zba16, tabIndex=14;
+Edit zba12=zba_file.zba12, tabIndex=15, downShift;
+Edit zba122=zba_file.zba122, tabIndex=16, downShift;
+Edit zba13=zba_file.zba13, tabIndex=17;
+Edit zba17=zba_file.zba17, tabIndex=18;
+Edit zba18=zba_file.zba18, tabIndex=19;
+Edit zba19=zba_file.zba19, tabIndex=20, downShift;
+Edit zba21=zba_file.zba21, tabIndex=21;
+Edit zba22=zba_file.zba22, tabIndex=22;
+Edit zba23=zba_file.zba23, tabIndex=23;
+Edit zba24=zba_file.zba24, tabIndex=24;
+Edit cnt=formonly.cnt type CHAR, tabIndex=25;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(zba_file.zba01,zba_file.zba02,zba_file.zba03,zba_file.zba04,zba_file.zba05,zba_file.zba061,zba_file.zba08,zba_file.zba07,zba_file.zba111,zba_file.zba112,zba_file.zba113,zba_file.zba14,zba_file.zba15,zba_file.zba16,zba_file.zba12,zba_file.zba122,zba_file.zba13,zba_file.zba17,zba_file.zba18,zba_file.zba19,zba_file.zba21,zba_file.zba22,zba_file.zba23,zba_file.zba24,formonly.cnt)
+END -- INSTRUCTIONS
+

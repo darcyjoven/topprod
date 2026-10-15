@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"apmq800")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Basic Data")
+Grid Grid2
+{
+ <T table1                                                                                                                                       ><TREE tree                             >
+ [pmm01      |pmm04           |pmm02      |pmm09         |pmc02          |pmm12   |gen02         |pmm18   |pmn02     |pmn04      |pmn041         ][name                              ]
+ [pmm01      |pmm04           |pmm02      |pmm09         |pmc02          |pmm12   |gen02         |pmm18   |pmn02     |pmn04      |pmn041         ][name                              ]
+ [pmm01      |pmm04           |pmm02      |pmm09         |pmc02          |pmm12   |gen02         |pmm18   |pmn02     |pmn04      |pmn041         ][name                              ]
+ [pmm01      |pmm04           |pmm02      |pmm09         |pmc02          |pmm12   |gen02         |pmm18   |pmn02     |pmn04      |pmn041         ][name                              ]
+ [pmm01      |pmm04           |pmm02      |pmm09         |pmc02          |pmm12   |gen02         |pmm18   |pmn02     |pmn04      |pmn041         ][name                              ]
+
+
+
+
+
+
+
+
+
+
+
+ <                                                                                                                                               ><                                      >
+}
+END -- Grid2
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+ ------------ Rows[cnt    ]-----------------------
+
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- apmq800
+
+TABLES
+gen_file,
+pmn_file,
+pmm_file,
+pmc_file
+ATTRIBUTES
+Table table1:Table1;
+ButtonEdit pmm01=pmm_file.pmm01, action=CONTROLP, tabIndex=1, title=%"PO No.", noEntry, not null, image="zoom";
+DateEdit pmm04=pmm_file.pmm04, tabIndex=2, title=%"Purchase Date";
+ComboBox pmm02=pmm_file.pmm02, tabIndex=3, title=%"Type", items=(("CAP", "CAP"),("EXP", "EXP"),("REG", "REG"),("SUB", "SUB"),("TAP", "TAP"),("TRI", "TRI"),("WBO", "WBO"));
+ButtonEdit pmm09=pmm_file.pmm09, action=CONTROLP, tabIndex=4, title=%"Vendor No.", image="zoom";
+Edit pmc02=pmc_file.pmc02, tabIndex=5, title=%"Supplier Abbr.";
+ButtonEdit pmm12=pmm_file.pmm12, action=CONTROLP, tabIndex=6, title=%"Buyer", image="zoom";
+Edit gen02=gen_file.gen02, tabIndex=7, title=%"Buyer Name";
+ComboBox pmm18=pmm_file.pmm18, tabIndex=8, title=%"Status", items=(("P", "P"),("N", "N"),("X", "X"),("Y", "Y"),("-", "-"));
+Edit pmn02=pmn_file.pmn02, tabIndex=9, title=%"Line No.";
+ButtonEdit pmn04=pmn_file.pmn04, action=CONTROLP, tabIndex=10, title=%"Item No.", image="zoom";
+Edit pmn041=pmn_file.pmn041, tabIndex=11, title=%"Item Name";
+Tree tree:Tree, parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file";
+LABEL name=formonly.name type CHAR, unsortable;
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.path type CHAR;
+Phantom formonly.treekey1 type CHAR;
+Phantom formonly.treekey2 type CHAR;
+Edit cnt=formonly.cnt type CHAR, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmm(pmm_file.pmm01,pmm_file.pmm04,pmm_file.pmm02,pmm_file.pmm09,pmc_file.pmc02,pmm_file.pmm12,gen_file.gen02,pmm_file.pmm18,pmn_file.pmn02,pmn_file.pmn04,pmn_file.pmn041)
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.path,formonly.treekey1,formonly.treekey2)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

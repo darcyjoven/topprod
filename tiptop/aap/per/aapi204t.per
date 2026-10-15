@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapi204t.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapi204t")
+VBox VBox1
+Folder pc15
+Page page01(text="Main")
+Table s_apw
+{
+[apw01    |apw02         |apw03     |aag02                                             ]
+[apw01    |apw02         |apw03     |aag02                                             ]
+[apw01    |apw02         |apw03     |aag02                                             ]
+[apw01    |apw02         |apw03     |aag02                                             ]
+[apw01    |apw02         |apw03     |aag02                                             ]
+[apw01    |apw02         |apw03     |aag02                                             ]
+[apw01    |apw02         |apw03     |aag02                                             ]
+[apw01    |apw02         |apw03     |aag02                                             ]
+[apw01    |apw02         |apw03     |aag02                                             ]
+[apw01    |apw02         |apw03     |aag02                                             ]
+
+}
+END -- s_apw
+END -- page01
+END -- pc15
+Grid gr31
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr31
+END -- VBox1
+END -- aapi204t
+
+TABLES
+aag_file,
+apw_file
+ATTRIBUTES
+Edit apw01=apw_file.apw01, tabIndex=1, title="Category", not null, required, comment="Enter a-z or A-Z  A:Charge  B:Transfer  C:Paying T.T  Z:Suspense Debit";
+Edit apw02=apw_file.apw02, tabIndex=2, title="Category Desc";
+ButtonEdit apw03=apw_file.apw03, action=controlp, tabIndex=3, title="Acct.Code", image="zoom", comment="<^P> Qry Account #";
+Edit aag02=aag_file.aag02, tabIndex=4, title="Account Title", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apw(apw_file.apw01,apw_file.apw02,apw_file.apw03,aag_file.aag02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

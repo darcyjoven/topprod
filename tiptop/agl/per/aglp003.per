@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglp003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"aglp003")
+VBox vb8
+Grid gr2476
+{
+   <G group01                              >
+    Group No.           [axa01         ]
+    Parent Company      [axa02         ]
+    Carry forward Year  [aaa04         ]
+    Period              [aaa05         ]
+    Book No.            [aaz641        ]
+   <                                       >
+}
+END -- gr2476
+Grid gr2477
+{
+ [g_bgjob                                 ]
+
+}
+END -- gr2477
+END -- vb8
+END -- aglp003
+
+ATTRIBUTES
+Group group01:group01, text=%"INPUT";
+ButtonEdit axa01=formonly.axa01 type CHAR, action=controlp, tabIndex=5, not null, required, image="zoom";
+ButtonEdit axa02=formonly.axa02 type CHAR, action=controlp, tabIndex=6, not null, required, image="zoom";
+Edit aaa04=formonly.aaa04 type SMALLINT, tabIndex=1, not null, required;
+Edit aaa05=formonly.aaa05 type SMALLINT, tabIndex=2, noEntry, not null, required;
+Edit aaz641=formonly.aaz641 type CHAR, tabIndex=4, noEntry;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=3, text=%"Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.axa01,formonly.axa02,formonly.aaa04,formonly.aaa05,formonly.aaz641,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi176.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi176")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1379
+{
+ Vehicle Brand    [obt01           ][obs02                         ]
+
+}
+END -- gr1379
+END -- page01
+END -- folder01
+Table s_obt
+{
+[obt02               |obt03                         ]
+[obt02               |obt03                         ]
+[obt02               |obt03                         ]
+[obt02               |obt03                         ]
+[obt02               |obt03                         ]
+[obt02               |obt03                         ]
+[obt02               |obt03                         ]
+[obt02               |obt03                         ]
+[obt02               |obt03                         ]
+[obt02               |obt03                         ]
+
+}
+END -- s_obt
+Grid gr1380
+{
+ ----------Rows [cnt   ]----------
+
+}
+END -- gr1380
+END -- VBox1
+END -- atmi176
+
+TABLES
+obt_file,
+obs_file
+ATTRIBUTES
+ButtonEdit obt01=obt_file.obt01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit obs02=obs_file.obs02, tabIndex=2, noEntry;
+Edit obt02=obt_file.obt02, tabIndex=3, title="Vehicle Model", not null, required;
+Edit obt03=obt_file.obt03, tabIndex=4, title="Description";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_obt(obt_file.obt02,obt_file.obt03)
+SCREEN RECORD Undefined(obt_file.obt01,obs_file.obs02,formonly.cnt)
+END -- INSTRUCTIONS
+

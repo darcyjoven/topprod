@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglr601")
+VBox VBox1
+Group Group1(text=%"INPUT")
+Grid Grid1
+{
+   Book No.        [bookno              ]
+
+}
+END -- Grid1
+END -- Group1
+Group gb1(text="QBE-1")
+Grid gr1
+{
+   Budget Item     [abb36               ]
+   Acct No.        [abb03               ]
+   Dept No.        [abb05               ]
+
+}
+END -- gr1
+END -- gb1
+Group gb2(text="INPUT")
+Grid gr2
+{
+
+   Year            [yy        ]
+   Period          [m1]-[m2]
+   Transaction Code[a |dummy01   ]
+
+}
+END -- gr2
+END -- gb2
+Group gb3(text="gb3")
+Grid gr5
+{
+  The Value of Dimension[abbx      ]
+
+}
+END -- gr5
+END -- gb3
+END -- VBox1
+END -- aglr601
+
+ATTRIBUTES
+ButtonEdit bookno=formonly.bookno type CHAR, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Edit abb36=formonly.abb36 type VARCHAR, tabIndex=1;
+ButtonEdit abb03=formonly.abb03 type VARCHAR, action=controlp, tabIndex=2, required, image="zoom.png";
+Edit abb05=formonly.abb05 type VARCHAR, tabIndex=3;
+Edit yy=formonly.yy type CHAR, tabIndex=4, not null, required;
+Edit m1=formonly.m1 type CHAR, tabIndex=5, not null, required;
+Edit m2=formonly.m2 type CHAR, tabIndex=8, not null, required;
+Edit a=formonly.a type CHAR, tabIndex=6, not null, required;
+Label dummy01:dummy01, text="(1-8)";
+Edit abbx=formonly.abbx type CHAR, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,formonly.abb36,formonly.abb03,formonly.abb05,formonly.yy,formonly.m1,formonly.m2,formonly.a,formonly.abbx)
+END -- INSTRUCTIONS
+

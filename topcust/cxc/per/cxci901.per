@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cxc/4fd/cxci901.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"cxci901")
+VBox VBox1
+Folder Folder01
+Page Page1(text=%"Main")
+Grid ds1
+{
+
+[label1    ][ta_ccu01]
+[label2    ][ta_ccu02]
+
+}
+END -- ds1
+END -- Page1
+END -- Folder01
+Table s_ta_ccu
+{
+[ta_ccu03          |ima02                         |ima021                        |ta_ccu04             |ima02_1                       |ima021_1                      ]
+[ta_ccu03          |ima02                         |ima021                        |ta_ccu04             |ima02_1                       |ima021_1                      ]
+[ta_ccu03          |ima02                         |ima021                        |ta_ccu04             |ima02_1                       |ima021_1                      ]
+[ta_ccu03          |ima02                         |ima021                        |ta_ccu04             |ima02_1                       |ima021_1                      ]
+[ta_ccu03          |ima02                         |ima021                        |ta_ccu04             |ima02_1                       |ima021_1                      ]
+[ta_ccu03          |ima02                         |ima021                        |ta_ccu04             |ima02_1                       |ima021_1                      ]
+[ta_ccu03          |ima02                         |ima021                        |ta_ccu04             |ima02_1                       |ima021_1                      ]
+[ta_ccu03          |ima02                         |ima021                        |ta_ccu04             |ima02_1                       |ima021_1                      ]
+[ta_ccu03          |ima02                         |ima021                        |ta_ccu04             |ima02_1                       |ima021_1                      ]
+[ta_ccu03          |ima02                         |ima021                        |ta_ccu04             |ima02_1                       |ima021_1                      ]
+
+}
+END -- s_ta_ccu
+Grid gr4835
+{
+  ---------- Rows [idx    ]/[cnt    ]  ---  Details  [cn2     ]----------
+
+}
+END -- gr4835
+END -- VBox1
+END -- cxci901
+
+TABLES
+ta_ccu_file
+ATTRIBUTES
+Label label1:Label1, text=%"ta_ccu01";
+Edit ta_ccu01=formonly.ta_ccu01 type SMALLINT, tabIndex=1, not null, required, scroll;
+Label label2:Label2, text=%"ta_ccu02";
+Edit ta_ccu02=formonly.ta_ccu02 type SMALLINT, tabIndex=2, not null, required, scroll;
+ButtonEdit ta_ccu03=ta_ccu_file.ta_ccu03, action=controlp, tabIndex=3, title=%"ta_ccu03", not null, required, image="zoom", scroll;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=4, title=%"ima02", noEntry, scroll;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=5, title=%"ima021", noEntry, scroll;
+ButtonEdit ta_ccu04=ta_ccu_file.ta_ccu04, action=controlp, tabIndex=6, title=%"ta_ccu04", not null, required, image="zoom", scroll;
+Edit ima02_1=formonly.ima02_1 type VARCHAR, tabIndex=7, title=%"ima02_1", noEntry, scroll;
+Edit ima021_1=formonly.ima021_1 type VARCHAR, tabIndex=8, title=%"ima021_1", noEntry, scroll;
+Edit idx=formonly.idx type INTEGER, tabIndex=9, noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ta_ccu(ta_ccu_file.ta_ccu03,formonly.ima02,formonly.ima021,ta_ccu_file.ta_ccu04,formonly.ima02_1,formonly.ima021_1)
+SCREEN RECORD Undefined(formonly.ta_ccu01,formonly.ta_ccu02,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

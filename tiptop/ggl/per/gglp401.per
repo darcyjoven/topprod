@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglp401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="gglp401")
+VBox VBox1
+Grid gr6
+{
+ <G gb4                                         >
+   Plant       [a              ]
+   zuqun       [b              ]
+   zhangtao    [c              ]
+   Comp.No     [h              ]
+
+ <                                              >
+
+}
+END -- gr6
+Grid gr25
+{
+ <G gb3                                         >
+   Year        [d              ]
+   Month       [e              ]
+   renyuan     [f              ]
+   renzu       [g              ]
+ <                                              >
+
+}
+END -- gr25
+Grid gr24
+{
+[g_bgjob                               ]
+
+}
+END -- gr24
+END -- VBox1
+END -- gglp401
+
+ATTRIBUTES
+Group gb4:gb4, text="shangceng";
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ButtonEdit b=formonly.b type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment="";
+Edit c=formonly.c type CHAR, tabIndex=3, noEntry, not null, required;
+Edit h=formonly.h type CHAR, tabIndex=9, not null, required;
+Group gb3:gb3, text="xiaceng";
+Edit d=formonly.d type CHAR, tabIndex=4, not null, required;
+Edit e=formonly.e type CHAR, tabIndex=5, not null, required;
+Edit f=formonly.f type CHAR, tabIndex=6;
+Edit g=formonly.g type CHAR, tabIndex=7, not null, required;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=8, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.b,formonly.c,formonly.h,formonly.d,formonly.e,formonly.f,formonly.g,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

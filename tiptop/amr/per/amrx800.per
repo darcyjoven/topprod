@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amrx800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amrr800")
+VBox VBox1
+Grid gr3806
+{
+ <G group01                                                                             >
+  Item No.            [mss01               ]  Source Code         [ima08               ]
+  Planner             [ima67               ]  Buyer               [ima43               ]
+  Warehouse Keeper    [ima23               ]
+ <                                                                                      >
+}
+END -- gr3806
+Group g01(text="INPU")
+Grid gr3807
+{
+  Version                      [ver_no    ]             <G group02                        >
+  Ending Date                  [edate       ]           [order                         ]
+  Select Printing Supply Qty \> [maxqty    ]
+ [l_sw                                    ]
+                                                        <                                 >
+
+}
+END -- gr3807
+END -- g01
+Grid gr3808
+{
+[more                                                            ]
+
+
+}
+END -- gr3808
+END -- VBox1
+END -- amrr800
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit mss01=formonly.mss01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit ima08=formonly.ima08 type CHAR, action=controlp, tabIndex=2, noEntry, not null, image="zoom";
+ButtonEdit ima67=formonly.ima67 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ima43=formonly.ima43 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit ima23=formonly.ima23 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Edit ver_no=formonly.ver_no type CHAR, tabIndex=6;
+Group group02:group02, text="Select Sequence";
+RadioGroup order=formonly.order type CHAR, tabIndex=7, default = "1", items=(("1", "Warehouse Keeper"),("2", "Planner"),("3", "Buyer "),("4", "Item#"));
+DateEdit edate=formonly.edate type DATE, tabIndex=8;
+Edit maxqty=formonly.maxqty type DECIMAL, tabIndex=9;
+CheckBox l_sw=formonly.l_sw type CHAR, tabIndex=10, text="Print only Potential Idle Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.mss01,formonly.ima08,formonly.ima67,formonly.ima43,formonly.ima23,formonly.ver_no,formonly.order,formonly.edate,formonly.maxqty,formonly.l_sw,formonly.more)
+END -- INSTRUCTIONS
+

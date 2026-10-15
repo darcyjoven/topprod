@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq320.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmq320")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4162
+{
+ <G group01                                        ><G group02                             >
+  Bank                [nmp01      ]                  [date_sw                  ]
+  Bank Abbreviation   [exp             ]
+  Currency            [nma10     ]
+  Year                [nmp02     ]
+ <                                                 ><                                      >
+
+}
+END -- gr4162
+END -- page01
+END -- folder01
+Table s_nmp
+{
+[nmp03 |nmp04                          |nmp05                           |nmp06                                |nmp07                          |nmp08                           |nmp09                         ]
+[nmp03 |nmp04                          |nmp05                           |nmp06                                |nmp07                          |nmp08                           |nmp09                         ]
+[nmp03 |nmp04                          |nmp05                           |nmp06                                |nmp07                          |nmp08                           |nmp09                         ]
+[nmp03 |nmp04                          |nmp05                           |nmp06                                |nmp07                          |nmp08                           |nmp09                         ]
+[nmp03 |nmp04                          |nmp05                           |nmp06                                |nmp07                          |nmp08                           |nmp09                         ]
+[nmp03 |nmp04                          |nmp05                           |nmp06                                |nmp07                          |nmp08                           |nmp09                         ]
+[nmp03 |nmp04                          |nmp05                           |nmp06                                |nmp07                          |nmp08                           |nmp09                         ]
+[nmp03 |nmp04                          |nmp05                           |nmp06                                |nmp07                          |nmp08                           |nmp09                         ]
+[nmp03 |nmp04                          |nmp05                           |nmp06                                |nmp07                          |nmp08                           |nmp09                         ]
+[nmp03 |nmp04                          |nmp05                           |nmp06                                |nmp07                          |nmp08                           |nmp09                         ]
+
+}
+END -- s_nmp
+Grid gr4163
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4163
+END -- VBox1
+END -- anmq320
+
+TABLES
+nmp_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit nmp01=nmp_file.nmp01, tabIndex=1;
+Edit exp=formonly.exp type CHAR, tabIndex=2, noEntry;
+Edit nma10=formonly.nma10 type CHAR, tabIndex=3, noEntry;
+Edit nmp02=nmp_file.nmp02, tabIndex=4;
+Group group02:group02, text="Bank Date/Accounting Date";
+RadioGroup date_sw=formonly.date_sw type CHAR, tabIndex=5, items=(("1", "Bank Date"),("2", "Accounting Date"));
+Edit nmp03=nmp_file.nmp03, tabIndex=6, title="Month";
+Edit nmp04=nmp_file.nmp04, tabIndex=7, title="Origignal Curr Deposit", not null, required;
+Edit nmp05=nmp_file.nmp05, tabIndex=8, title="Original Curr Withdraw", not null, required;
+Edit nmp06=nmp_file.nmp06, tabIndex=9, title="Original Curr Credit Balance", not null, required;
+Edit nmp07=nmp_file.nmp07, tabIndex=10, title="Home Currency Deposit", not null, required;
+Edit nmp08=nmp_file.nmp08, tabIndex=11, title="Home Currency Withdrawal", not null, required;
+Edit nmp09=nmp_file.nmp09, tabIndex=12, title="Home Currency Balance", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmp(nmp_file.nmp03,nmp_file.nmp04,nmp_file.nmp05,nmp_file.nmp06,nmp_file.nmp07,nmp_file.nmp08,nmp_file.nmp09)
+SCREEN RECORD Undefined(nmp_file.nmp01,formonly.exp,formonly.nma10,nmp_file.nmp02,formonly.date_sw,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

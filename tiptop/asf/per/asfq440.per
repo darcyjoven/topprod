@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfq440.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfq440")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr585
+{
+ Item No.                 [ima01                          ]
+ Part Name Specification  [ima02                          ]
+ Specification            [ima021                         ]
+}
+END -- gr585
+Grid gr586
+{
+ Source Code              [ima08  ]    Active Version    [ima05   ]
+ Available Qty            [avl_stk                 ]
+ Qty in Need              [qty                     ]
+}
+END -- gr586
+END -- hb1
+END -- page01
+END -- folder01
+Table s_sfa
+{
+[sfa01         |sfa05        |sfa06        |sfa062             |sfa25       |sfa07     |unqty   |sfa012  |ecu014   |sfa013    |sfa08     ]
+[sfa01         |sfa05        |sfa06        |sfa062             |sfa25       |sfa07     |unqty   |sfa012  |ecu014   |sfa013    |sfa08     ]
+[sfa01         |sfa05        |sfa06        |sfa062             |sfa25       |sfa07     |unqty   |sfa012  |ecu014   |sfa013    |sfa08     ]
+[sfa01         |sfa05        |sfa06        |sfa062             |sfa25       |sfa07     |unqty   |sfa012  |ecu014   |sfa013    |sfa08     ]
+[sfa01         |sfa05        |sfa06        |sfa062             |sfa25       |sfa07     |unqty   |sfa012  |ecu014   |sfa013    |sfa08     ]
+[sfa01         |sfa05        |sfa06        |sfa062             |sfa25       |sfa07     |unqty   |sfa012  |ecu014   |sfa013    |sfa08     ]
+[sfa01         |sfa05        |sfa06        |sfa062             |sfa25       |sfa07     |unqty   |sfa012  |ecu014   |sfa013    |sfa08     ]
+[sfa01         |sfa05        |sfa06        |sfa062             |sfa25       |sfa07     |unqty   |sfa012  |ecu014   |sfa013    |sfa08     ]
+[sfa01         |sfa05        |sfa06        |sfa062             |sfa25       |sfa07     |unqty   |sfa012  |ecu014   |sfa013    |sfa08     ]
+[sfa01         |sfa05        |sfa06        |sfa062             |sfa25       |sfa07     |unqty   |sfa012  |ecu014   |sfa013    |sfa08     ]
+
+}
+END -- s_sfa
+Grid gr587
+{
+ ---------- Rows [cnt   ] / [cn2    ] ----------
+
+}
+END -- gr587
+END -- vb2
+END -- asfq440
+
+TABLES
+sfa_file,
+ima_file,
+ecu_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=3, noEntry;
+Edit ima08=ima_file.ima08, tabIndex=4, noEntry;
+Edit ima05=ima_file.ima05, tabIndex=5, noEntry;
+Edit avl_stk=formonly.avl_stk type DECIMAL, tabIndex=6, not null, required;
+Edit qty=formonly.qty type DECIMAL, tabIndex=7, noEntry;
+Edit sfa01=sfa_file.sfa01, tabIndex=8, title="W/O No.";
+Edit sfa05=sfa_file.sfa05, tabIndex=9, title="Issue Qty", not null, required;
+Edit sfa06=sfa_file.sfa06, tabIndex=10, title="Issued Qty", not null, required;
+Edit sfa062=sfa_file.sfa062, tabIndex=11, title="Over-Withdrawn Qty", not null, required;
+Edit sfa25=sfa_file.sfa25, tabIndex=12, title="Unallotted", not null, required;
+Edit sfa07=sfa_file.sfa07, tabIndex=13, title="Short Qty", not null, required;
+Edit unqty=formonly.unqty type DECIMAL, tabIndex=14, title="Unissued Qty", noEntry;
+Edit sfa012=sfa_file.sfa012, tabIndex=17, title=%"Process Section No", noEntry;
+Edit ecu014=ecu_file.ecu014, tabIndex=18, title=%"Process Section Description", noEntry;
+Edit sfa013=sfa_file.sfa013, tabIndex=19, title=%"Process No", noEntry;
+Edit sfa08=sfa_file.sfa08, tabIndex=20, title=%"Operation No", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfa(sfa_file.sfa01,sfa_file.sfa05,sfa_file.sfa06,sfa_file.sfa062,sfa_file.sfa25,sfa_file.sfa07,formonly.unqty,sfa_file.sfa012,ecu_file.ecu014,sfa_file.sfa013,sfa_file.sfa08)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,ima_file.ima08,ima_file.ima05,formonly.avl_stk,formonly.qty,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

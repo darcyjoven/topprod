@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hraq01  |hraq02        |hraq03        |hraqacti]
+[hraq01  |hraq02        |hraq03        |hraqacti]
+[hraq01  |hraq02        |hraq03        |hraqacti]
+[hraq01  |hraq02        |hraq03        |hraqacti]
+[hraq01  |hraq02        |hraq03        |hraqacti]
+
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+  ---------- cn2[cn2 ]------------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit hraq01=formonly.hraq01 type INTEGER, tabIndex=1, title=%"hraq01", noEntry;
+Edit hraq02=formonly.hraq02 type VARCHAR, tabIndex=2, title=%"hraq02", not null, required;
+Edit hraq03=formonly.hraq03 type VARCHAR, tabIndex=4, title=%"hraq03";
+CheckBox hraqacti=formonly.hraqacti type VARCHAR, tabIndex=5, title=%"hraqacti", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hraq(formonly.hraq01,formonly.hraq02,formonly.hraq03,formonly.hraqacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

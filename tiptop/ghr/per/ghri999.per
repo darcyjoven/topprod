@@ -1,0 +1,108 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri999.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Grid Grid1
+{
+
+    [hrdk15                                                            ]  [label1              ]                 <G group2                               >
+    [                                                                  ]  [keyword                             ]  [description                         ]
+    [                                                                  ]  -------------------------------------   [                                    ]
+    [                                                                  ]   <T param_table                     >   [                                    ]
+    [                                                                  ]   [name                |type         ]   [                                    ]
+    [                                                                  ]   [name                |type         ]   [                                    ]
+    [                                                                  ]   [name                |type         ]   [                                    ]
+    [                                                                  ]   [name                |type         ]   [                                    ]
+    [                                                                  ]   [name                |type         ]   [                                    ]
+    [                                                                  ]                                          [                                    ]
+    [                                                                  ]                                          [                                    ]
+    [                                                                  ]                                          [                                    ]
+    [                                                                  ]                                          [                                    ]
+
+                              [label2    |c_ln    |label3|t_ln    |label]
+     <G group1   >
+     [fun_num   ]                             [____      ] [b_plus    ]
+     [fun_date  ]      [b_n7|b_n8|b_n9]       [___1      ] [b_minus   ]
+     [v_lmth    ]      [b_n4|b_n5|b_n6]       [b_more    ] [b_multiply]
+     [v_grup    ]      [b_n1|b_n2|b_n3]       [b_less    ] [b_dividedb]
+     [v_getsum  ]      [b_n0|b_po|b_co]       [___       ] [l_bracket ]
+     <           >                                         [r_bracket ]
+     [b_space   ]      [b_back][s_quot]       [b_left    ] [b_right   ]
+     [b_wrap    ]      [b_del ][b_semi]       [b_up      ] [b_down    ]    <                                  >  <                                       >
+
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- Canvas
+
+ATTRIBUTES
+TextEdit hrdk15=formonly.hrdk15 type VARCHAR, tabIndex=27, color = red;
+Label label1:Label1, text=%"参数首字母查询区";
+Group group2:Group2, text=%"说明";
+TextEdit description=formonly.description type VARCHAR, tabIndex=29, noEntry;
+Edit keyword=formonly.keyword type VARCHAR, tabIndex=28, noEntry;
+Table param_table:param_table;
+Edit name=formonly.name, tabIndex=24, title=%"Parameters";
+Edit type=formonly.type, tabIndex=25, title=%"Type";
+Label label2:Label2, text=%"现在位于";
+Edit c_ln=formonly.c_ln, tabIndex=39;
+Label label3:Label3, text=%"行/共";
+Edit t_ln=formonly.t_ln, tabIndex=40;
+Label label:Label4, text=%"行";
+Group group1:Group1, text=%"函数";
+Button fun_num:fun_num, tabIndex=37, text=%"数值函数";
+Button fun_date:fun_date, tabIndex=38, text=%"日期函数";
+Button v_lmth:v_lmth, tabIndex=43, text=%"取上月值";
+Button v_grup:v_grup, tabIndex=44, text=%"取部门值";
+Button v_getsum:v_getsum, tabIndex=45, text=%"取累计值";
+Button ____:逻辑等于, tabIndex=25, text=%"=";
+Button b_plus:b_plus, tabIndex=20, text=%"+";
+Button b_n7:b_n7, tabIndex=10, text=%"7";
+Button b_n8:b_n8, tabIndex=11, text=%"8";
+Button b_n9:b_n9, tabIndex=15, text=%"9";
+Button ___1:赋值等于, tabIndex=1, text=%":=";
+Button b_minus:b_minus, tabIndex=21, text=%"-";
+Button b_n4:b_n4, tabIndex=12, text=%"4";
+Button b_n5:b_n5, tabIndex=14, text=%"5";
+Button b_n6:b_n6, tabIndex=19, text=%"6";
+Button b_more:b_more, tabIndex=30, text=%">";
+Button b_multiply:b_multiply, tabIndex=22, text=%"*";
+Button b_n1:b_n1, tabIndex=13, text=%"1";
+Button b_n2:b_n2, tabIndex=17, text=%"2";
+Button b_n3:b_n3, tabIndex=18, text=%"3";
+Button b_less:b_less, tabIndex=31, text=%"<";
+Button b_dividedb:b_dividedby, tabIndex=23, text=%"/";
+Button b_n0:b_n0, tabIndex=16, text=%"0";
+Button b_po:b_point, tabIndex=41, text=%".";
+Button b_co:b_comma, tabIndex=36, text=%",";
+Button ___:不等于, tabIndex=42, text=%"<>";
+Button l_bracket:l_bracket, tabIndex=34, text=%"(";
+Button r_bracket:r_bracket, tabIndex=35, text=%")";
+Button b_space:b_SPACE, tabIndex=4, text=%"空格";
+Button b_back:b_BACKSPACE, tabIndex=2, text=%"左删除";
+Button s_quot:s_quotes, tabIndex=32, text=%"\'";
+Button b_left:b_LEFT, tabIndex=8, text=%"光标左移";
+Button b_right:b_RIGHT, tabIndex=9, text=%"光标右移";
+Button b_wrap:b_WRAP, tabIndex=5, text=%"回车";
+Button b_del:b_DEL, tabIndex=3, text=%"右删除";
+Button b_semi:b_semicolon, tabIndex=33, text=%";";
+Button b_up:b_UP, tabIndex=6, text=%"光标上移";
+Button b_down:b_DOWN, tabIndex=7, text=%"光标下移";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_para(formonly.name,formonly.type)
+SCREEN RECORD Undefined(formonly.hrdk15,formonly.keyword,formonly.description,formonly.c_ln,formonly.t_ln)
+END -- INSTRUCTIONS
+

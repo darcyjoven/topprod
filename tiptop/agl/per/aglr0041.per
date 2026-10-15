@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr0041.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr0041")
+VBox vb4_
+Group group01(text="INPUT")
+VBox vb3_
+Grid gr2580
+{
+ <G group02                                                         >
+  Book No.                      [axz05               ]
+  Input Report Sturcture        [axm01               ]
+ <                                                                  >
+
+}
+END -- gr2580
+Grid gr2581
+{
+ <G group03                                                          >
+  Select Variable Comparint         [a   ]
+  Input Current Perirod Year        [yy  ]
+                        Quarter     [q1]
+                        Month       [mm]
+                        Helf a year [h1            ]
+            Last Period Year        [py  ]
+                        Quarter     [q2]
+                        Month       [pm]
+                        Helf a year [h2            ]
+ <                                                                   >
+
+}
+END -- gr2581
+Grid gr2582
+{
+ <G group04                                                          >
+    Amount Unit      [d   ]
+    Decimal Digits   [e   ]
+   [c         ]
+ <                                                                   >
+}
+END -- gr2582
+END -- vb3_
+END -- group01
+Grid gr2583
+{
+[more                                                        ]
+
+}
+END -- gr2583
+END -- vb4_
+END -- aglr0041
+
+ATTRIBUTES
+Group group02:group02;
+ButtonEdit axz05=formonly.axz05 type CHAR, action=controlp, tabIndex=12, not null, required, image="zoom";
+ButtonEdit axm01=formonly.axm01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Group group03:group03;
+ComboBox a=formonly.a type CHAR, tabIndex=2, not null, required, items=(("1", "Year"),("2", "Quarter"),("3", "Month"),("4", "Helf a year"));
+Edit yy=formonly.yy type CHAR, tabIndex=3, not null, required;
+Edit q1=formonly.q1 type CHAR, tabIndex=4, not null, required;
+Edit mm=formonly.mm type CHAR, tabIndex=5, not null, required;
+ComboBox h1=formonly.h1 type CHAR, tabIndex=6, items=(("1", "End of June 60"),("2", "End of Dec.31"));
+Edit py=formonly.py type CHAR, tabIndex=7, noEntry, not null, required;
+Edit q2=formonly.q2 type CHAR, tabIndex=8, noEntry, not null, required;
+Edit pm=formonly.pm type CHAR, tabIndex=9, noEntry, not null, required;
+ComboBox h2=formonly.h2 type CHAR, tabIndex=10, noEntry, items=(("1", "End of June 60"),("2", "End of Dec.31"));
+Group group04:group04;
+ComboBox d=formonly.d type CHAR, tabIndex=14, not null, required, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+Edit e=formonly.e type CHAR, tabIndex=13;
+CheckBox c=formonly.c, tabIndex=15, text=%"c", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.axz05,formonly.axm01,formonly.a,formonly.yy,formonly.q1,formonly.mm,formonly.h1,formonly.py,formonly.q2,formonly.pm,formonly.h2,formonly.d,formonly.e,formonly.more,formonly.c)
+END -- INSTRUCTIONS
+

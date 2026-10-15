@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artp101_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artp101_1")
+Table s_rti
+{
+[status  |rti01           |rti02       |rti03         |rtiplant          |azp02         ]
+[status  |rti01           |rti02       |rti03         |rtiplant          |azp02         ]
+[status  |rti01           |rti02       |rti03         |rtiplant          |azp02         ]
+[status  |rti01           |rti02       |rti03         |rtiplant          |azp02         ]
+[status  |rti01           |rti02       |rti03         |rtiplant          |azp02         ]
+
+}
+END -- s_rti
+END -- artp101_1
+
+TABLES
+rti_file,
+azp_file
+ATTRIBUTES
+CheckBox status=formonly.status type VARCHAR, tabIndex=1, title="status", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rti01=rti_file.rti01, tabIndex=2, title="rti01", noEntry;
+ComboBox rti02=rti_file.rti02, tabIndex=3, title="rti02", noEntry, items=(("1", "at once"),("2", "date"));
+Edit rti03=rti_file.rti03, tabIndex=4, title="rti03", noEntry;
+Edit rtiplant=rti_file.rtiplant, tabIndex=5, title="rtiplant", noEntry;
+Edit azp02=azp_file.azp02, tabIndex=6, title="azp02", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rti(formonly.status,rti_file.rti01,rti_file.rti02,rti_file.rti03,rti_file.rtiplant,azp_file.azp02)
+END -- INSTRUCTIONS
+

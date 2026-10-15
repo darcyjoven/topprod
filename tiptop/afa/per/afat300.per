@@ -1,0 +1,163 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat300")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox hb5
+Grid gr2277
+{
+ Withdrawal Slip No. [fec01             ]
+ Withdrawal Date     [fec02       ]
+ Applicant           [fec07            ][gen02     ]
+
+
+
+}
+END -- gr2277
+Grid gr2278
+{
+ <G group01            >
+ [fec05               ]
+
+
+ <                     >
+
+}
+END -- gr2278
+Grid gr2279
+{
+ Dept./Vender No.    [fec03     ][gem02     ]  [imgmksg]
+ Memo                [fec04               ]    [       ]
+ conf                [fecconf             ]
+ status              [fec06     ]        [fecmksg   ]
+
+
+}
+END -- gr2279
+END -- hb5
+END -- page01
+Page info(text="Info")
+Grid gr2280
+{
+ Record Owner       [fecuser   ] Last Modified by   [fecmodu   ] Active Code         [fecacti   ]
+ Department         [fecgrup   ] Create/Modify Date [fecdate   ]
+ Record Orig.       [fecoriu   ]
+ Dept Orig.         [fecorig   ]
+}
+END -- gr2280
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[fecud01                       ] userdefined_field07[fecud07        ] userdefined_field13[fecud13        ]
+                    [                              ] userdefined_field08[fecud08        ] userdefined_field14[fecud14        ]
+ userdefined_field02[fecud02        ]                userdefined_field09[fecud09        ] userdefined_field15[fecud15        ]
+ userdefined_field03[fecud03        ]                userdefined_field10[fecud10        ]
+ userdefined_field04[fecud04        ]                userdefined_field11[fecud11        ]
+ userdefined_field05[fecud05        ]                userdefined_field12[fecud12        ]
+ userdefined_field06[fecud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_fed
+{
+[fed02        |fed03           |fea02               |fed04 |fed05             |fed06      |ecd02               |fedud01   |fedud02   |fedud03    |fedud04    |fedud05    |fedud06    |fedud07    |fedud08    |fedud09    |fedud10    |fedud11   |fedud12  |fedud13   |fedud14   |fedud15    ]
+[fed02        |fed03           |fea02               |fed04 |fed05             |fed06      |ecd02               |fedud01   |fedud02   |fedud03    |fedud04    |fedud05    |fedud06    |fedud07    |fedud08    |fedud09    |fedud10    |fedud11   |fedud12  |fedud13   |fedud14   |fedud15    ]
+[fed02        |fed03           |fea02               |fed04 |fed05             |fed06      |ecd02               |fedud01   |fedud02   |fedud03    |fedud04    |fedud05    |fedud06    |fedud07    |fedud08    |fedud09    |fedud10    |fedud11   |fedud12  |fedud13   |fedud14   |fedud15    ]
+[fed02        |fed03           |fea02               |fed04 |fed05             |fed06      |ecd02               |fedud01   |fedud02   |fedud03    |fedud04    |fedud05    |fedud06    |fedud07    |fedud08    |fedud09    |fedud10    |fedud11   |fedud12  |fedud13   |fedud14   |fedud15    ]
+[fed02        |fed03           |fea02               |fed04 |fed05             |fed06      |ecd02               |fedud01   |fedud02   |fedud03    |fedud04    |fedud05    |fedud06    |fedud07    |fedud08    |fedud09    |fedud10    |fedud11   |fedud12  |fedud13   |fedud14   |fedud15    ]
+[fed02        |fed03           |fea02               |fed04 |fed05             |fed06      |ecd02               |fedud01   |fedud02   |fedud03    |fedud04    |fedud05    |fedud06    |fedud07    |fedud08    |fedud09    |fedud10    |fedud11   |fedud12  |fedud13   |fedud14   |fedud15    ]
+[fed02        |fed03           |fea02               |fed04 |fed05             |fed06      |ecd02               |fedud01   |fedud02   |fedud03    |fedud04    |fedud05    |fedud06    |fedud07    |fedud08    |fedud09    |fedud10    |fedud11   |fedud12  |fedud13   |fedud14   |fedud15    ]
+[fed02        |fed03           |fea02               |fed04 |fed05             |fed06      |ecd02               |fedud01   |fedud02   |fedud03    |fedud04    |fedud05    |fedud06    |fedud07    |fedud08    |fedud09    |fedud10    |fedud11   |fedud12  |fedud13   |fedud14   |fedud15    ]
+[fed02        |fed03           |fea02               |fed04 |fed05             |fed06      |ecd02               |fedud01   |fedud02   |fedud03    |fedud04    |fedud05    |fedud06    |fedud07    |fedud08    |fedud09    |fedud10    |fedud11   |fedud12  |fedud13   |fedud14   |fedud15    ]
+[fed02        |fed03           |fea02               |fed04 |fed05             |fed06      |ecd02               |fedud01   |fedud02   |fedud03    |fedud04    |fedud05    |fedud06    |fedud07    |fedud08    |fedud09    |fedud10    |fedud11   |fedud12  |fedud13   |fedud14   |fedud15    ]
+
+}
+END -- s_fed
+Grid gr2281
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2281
+END -- VBox1
+END -- afat300
+
+TABLES
+fed_file,
+fec_file
+ATTRIBUTES
+ButtonEdit fec01=fec_file.fec01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Documents";
+DateEdit fec02=fec_file.fec02, tabIndex=2, not null, required;
+ButtonEdit fec07=fec_file.fec07, action=controlp, tabIndex=359, not null, required, image="zoom";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=360, not null, required;
+Group group01:group01, text="Category";
+RadioGroup fec05=fec_file.fec05, tabIndex=3, items=(("1", "Department"),("2", "Vender"));
+ButtonEdit fec03=fec_file.fec03, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=5, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit fec04=fec_file.fec04, tabIndex=7;
+ComboBox fecconf=fec_file.fecconf, tabIndex=356, noEntry, not null, required, items=(("Y", "Confirm"),("N", "Not Confirm"),("X", "Voided"));
+ComboBox fec06=fec_file.fec06, tabIndex=358, noEntry, not null, required, items=(("0", "Open"),("1", "Approved"),("S", "Approving"),("R", "Approving Return"),("W", "Withdraw"));
+CheckBox fecmksg=fec_file.fecmksg, tabIndex=357, text="Approve", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fecuser=fec_file.fecuser, tabIndex=8, noEntry;
+Edit fecmodu=fec_file.fecmodu, tabIndex=9, noEntry;
+Edit fecacti=fec_file.fecacti, tabIndex=10, noEntry, upShift;
+Edit fecgrup=fec_file.fecgrup, tabIndex=11, noEntry;
+DateEdit fecdate=fec_file.fecdate, tabIndex=12, noEntry;
+Edit fecoriu=fec_file.fecoriu, tabIndex=501, noEntry;
+Edit fecorig=fec_file.fecorig, tabIndex=502, noEntry;
+TextEdit fecud01=fec_file.fecud01, tabIndex=327, stretch=NONE;
+Edit fecud07=fec_file.fecud07, tabIndex=328;
+DateEdit fecud13=fec_file.fecud13, tabIndex=329;
+Edit fecud08=fec_file.fecud08, tabIndex=330;
+DateEdit fecud14=fec_file.fecud14, tabIndex=331;
+Edit fecud02=fec_file.fecud02, tabIndex=332;
+Edit fecud09=fec_file.fecud09, tabIndex=333;
+DateEdit fecud15=fec_file.fecud15, tabIndex=334;
+Edit fecud03=fec_file.fecud03, tabIndex=335;
+Edit fecud10=fec_file.fecud10, tabIndex=336;
+Edit fecud04=fec_file.fecud04, tabIndex=337;
+Edit fecud11=fec_file.fecud11, tabIndex=338;
+Edit fecud05=fec_file.fecud05, tabIndex=339;
+Edit fecud12=fec_file.fecud12, tabIndex=340;
+Edit fecud06=fec_file.fecud06, tabIndex=341;
+Edit fed02=fed_file.fed02, tabIndex=13, title="Serial No.", not null, required;
+ButtonEdit fed03=fed_file.fed03, action=controlp, tabIndex=14, title="Mold No. Name", not null, required, image="zoom", comment="<^P>Qry Mold ";
+Edit fea02=formonly.fea02 type CHAR, tabIndex=15, title="Mold Name", noEntry;
+Edit fed04=fed_file.fed04, tabIndex=16, title="Qty", not null, required;
+ButtonEdit fed05=fed_file.fed05, action=controlp, tabIndex=17, title="W/O No.", image="zoom", comment="<^P>Qry W/O ";
+ButtonEdit fed06=fed_file.fed06, action=controlp, tabIndex=18, title="Task No.", image="zoom", comment="<^P>Qry W/O Task No. ";
+Edit ecd02=formonly.ecd02 type CHAR, tabIndex=19, title="Task Name", noEntry;
+TextEdit fedud01=fed_file.fedud01, tabIndex=325, title="fedud01", stretch=NONE;
+Edit fedud02=fed_file.fedud02, tabIndex=342, title="fedud02";
+Edit fedud03=fed_file.fedud03, tabIndex=343, title="fedud03";
+Edit fedud04=fed_file.fedud04, tabIndex=344, title="fedud04";
+Edit fedud05=fed_file.fedud05, tabIndex=345, title="fedud05";
+Edit fedud06=fed_file.fedud06, tabIndex=346, title="fedud06";
+Edit fedud07=fed_file.fedud07, tabIndex=347, title="fedud07";
+Edit fedud08=fed_file.fedud08, tabIndex=348, title="fedud08";
+Edit fedud09=fed_file.fedud09, tabIndex=349, title="fedud09";
+Edit fedud10=fed_file.fedud10, tabIndex=350, title="fedud10";
+Edit fedud11=fed_file.fedud11, tabIndex=351, title="fedud11";
+Edit fedud12=fed_file.fedud12, tabIndex=352, title="fedud12";
+Edit fedud13=fed_file.fedud13, tabIndex=353, title="fedud13";
+Edit fedud14=fed_file.fedud14, tabIndex=354, title="fedud14";
+Edit fedud15=fed_file.fedud15, tabIndex=355, title="fedud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fed(fed_file.fed02,fed_file.fed03,formonly.fea02,fed_file.fed04,fed_file.fed05,fed_file.fed06,formonly.ecd02,fed_file.fedud01,fed_file.fedud02,fed_file.fedud03,fed_file.fedud04,fed_file.fedud05,fed_file.fedud06,fed_file.fedud07,fed_file.fedud08,fed_file.fedud09,fed_file.fedud10,fed_file.fedud11,fed_file.fedud12,fed_file.fedud13,fed_file.fedud14,fed_file.fedud15)
+SCREEN RECORD Undefined(fec_file.fec01,fec_file.fec02,fec_file.fec07,formonly.gen02,fec_file.fec05,fec_file.fec03,formonly.gem02,formonly.imgmksg,fec_file.fec04,fec_file.fecconf,fec_file.fec06,fec_file.fecmksg,fec_file.fecuser,fec_file.fecmodu,fec_file.fecacti,fec_file.fecgrup,fec_file.fecdate,fec_file.fecoriu,fec_file.fecorig,fec_file.fecud01,fec_file.fecud07,fec_file.fecud13,fec_file.fecud08,fec_file.fecud14,fec_file.fecud02,fec_file.fecud09,fec_file.fecud15,fec_file.fecud03,fec_file.fecud10,fec_file.fecud04,fec_file.fecud11,fec_file.fecud05,fec_file.fecud12,fec_file.fecud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

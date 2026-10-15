@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq322.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmq322")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4164
+{
+ Years     [nmp02     ] Month  [nmp03     ]
+ Logistics [azp01     ][azp02             ]
+}
+END -- gr4164
+END -- page01
+END -- folder01
+Table s_nmp
+{
+[nmp01     |nmp01_nma02         |nma10|nmp06b              |nmp09b              |nmp04               |nmp07               |nmp05               |nmp08               |nmp06               |nmp09               ]
+[nmp01     |nmp01_nma02         |nma10|nmp06b              |nmp09b              |nmp04               |nmp07               |nmp05               |nmp08               |nmp06               |nmp09               ]
+[nmp01     |nmp01_nma02         |nma10|nmp06b              |nmp09b              |nmp04               |nmp07               |nmp05               |nmp08               |nmp06               |nmp09               ]
+[nmp01     |nmp01_nma02         |nma10|nmp06b              |nmp09b              |nmp04               |nmp07               |nmp05               |nmp08               |nmp06               |nmp09               ]
+[nmp01     |nmp01_nma02         |nma10|nmp06b              |nmp09b              |nmp04               |nmp07               |nmp05               |nmp08               |nmp06               |nmp09               ]
+[nmp01     |nmp01_nma02         |nma10|nmp06b              |nmp09b              |nmp04               |nmp07               |nmp05               |nmp08               |nmp06               |nmp09               ]
+[nmp01     |nmp01_nma02         |nma10|nmp06b              |nmp09b              |nmp04               |nmp07               |nmp05               |nmp08               |nmp06               |nmp09               ]
+[nmp01     |nmp01_nma02         |nma10|nmp06b              |nmp09b              |nmp04               |nmp07               |nmp05               |nmp08               |nmp06               |nmp09               ]
+[nmp01     |nmp01_nma02         |nma10|nmp06b              |nmp09b              |nmp04               |nmp07               |nmp05               |nmp08               |nmp06               |nmp09               ]
+[nmp01     |nmp01_nma02         |nma10|nmp06b              |nmp09b              |nmp04               |nmp07               |nmp05               |nmp08               |nmp06               |nmp09               ]
+
+}
+END -- s_nmp
+Grid gr4165
+{
+  Sum(H.Curr Amount) [tot1                ]  Sum(H.Curr Dep Amount) [tot2                ]  Sum(H.Curr Out Amount) [tot3                ]  Sum(H.Curr Bal Amount) [tot4                ]
+
+}
+END -- gr4165
+END -- VBox1
+END -- anmq322
+
+TABLES
+nmp_file,
+azp_file
+ATTRIBUTES
+Edit nmp02=nmp_file.nmp02, tabIndex=1;
+Edit nmp03=nmp_file.nmp03, tabIndex=2;
+ButtonEdit azp01=azp_file.azp01, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=4, noEntry;
+Edit nmp01=nmp_file.nmp01, tabIndex=5, title="Bank No.";
+Edit nmp01_nma02=formonly.nmp01_nma02 type CHAR, tabIndex=6, title="Bank Name", noEntry;
+Edit nma10=formonly.nma10 type CHAR, tabIndex=7, title="Curr", noEntry;
+Edit nmp06b=formonly.nmp06b type CHAR, tabIndex=8, title="Sum(O.Curr Amount)", noEntry;
+Edit nmp09b=formonly.nmp09b type CHAR, tabIndex=9, title="Sum(H.Curr Amount)", noEntry;
+Edit nmp04=nmp_file.nmp04, tabIndex=10, title="O.Curr Dep Amount", not null, required;
+Edit nmp07=nmp_file.nmp07, tabIndex=11, title="H.Curr Dep Amount", not null, required;
+Edit nmp05=nmp_file.nmp05, tabIndex=12, title="O.Curr Out Amount", not null, required;
+Edit nmp08=nmp_file.nmp08, tabIndex=13, title="H.Curr Out Amount", not null, required;
+Edit nmp06=nmp_file.nmp06, tabIndex=14, title="O.Curr Bal Amount", not null, required;
+Edit nmp09=nmp_file.nmp09, tabIndex=15, title="H.Curr Bal Amout", not null, required;
+Edit tot1=formonly.tot1 type CHAR, tabIndex=16, noEntry;
+Edit tot2=formonly.tot2 type CHAR, tabIndex=17, noEntry;
+Edit tot3=formonly.tot3 type CHAR, tabIndex=18, noEntry;
+Edit tot4=formonly.tot4 type CHAR, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmp(nmp_file.nmp01,formonly.nmp01_nma02,formonly.nma10,formonly.nmp06b,formonly.nmp09b,nmp_file.nmp04,nmp_file.nmp07,nmp_file.nmp05,nmp_file.nmp08,nmp_file.nmp06,nmp_file.nmp09)
+SCREEN RECORD Undefined(nmp_file.nmp02,nmp_file.nmp03,azp_file.azp01,formonly.azp02,formonly.tot1,formonly.tot2,formonly.tot3,formonly.tot4)
+END -- INSTRUCTIONS
+

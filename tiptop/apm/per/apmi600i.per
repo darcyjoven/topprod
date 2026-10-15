@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi600i.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apmi600i")
+Folder group01
+Page Page5(text=%"Main")
+HBox hb3
+Grid gr11
+{
+
+ Vendor No.                 [pov02          |pmc03          ]
+ Default PO Doc. Type       [pov14          |smydesc_1      ]
+ Default Receipt Doc.       [pov16          |smydesc_2      ]
+ Default Stock-in Doc. Type [pov17          |smydesc_3      ]
+ Default Return Doc. Tpye   [pov21          |smydesc_4      ]
+ Default WH                 [pov04          |imd02          ]
+ Target Logistic Customer   [pov27          |occ02          ]
+
+
+}
+END -- gr11
+Grid gr11_1
+{
+
+ Logistics code             [pov03          |azp02          ]
+ Default AP Doc.            [pov19          |apydesc_1      ]
+ Default AP Allowance       [pov23          |apydesc_2      ]
+ Default AP Account Type    [pov07          ]
+ Default Department         [pov09          |gem02          ]
+ Default Cost Center        [pov25          |gem02_1        ]
+
+
+
+}
+END -- gr11_1
+END -- hb3
+END -- Page5
+END -- group01
+END -- apmi600i
+
+TABLES
+imd_file,
+occ_file,
+pov_file,
+pmc_file
+ATTRIBUTES
+ButtonEdit pov02=pov_file.pov02, action=controlp, tabIndex=1, noEntry, image="zoom", comment="<^P>Query Plant No.";
+Edit pmc03=pmc_file.pmc03, tabIndex=14, noEntry;
+ButtonEdit pov14=pov_file.pov14, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit smydesc_1=formonly.smydesc_1 type VARCHAR, tabIndex=15, noEntry;
+ButtonEdit pov16=pov_file.pov16, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit smydesc_2=formonly.smydesc_2 type VARCHAR, tabIndex=16, noEntry;
+ButtonEdit pov17=pov_file.pov17, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit smydesc_3=formonly.smydesc_3 type VARCHAR, tabIndex=17, noEntry;
+ButtonEdit pov21=pov_file.pov21, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit smydesc_4=formonly.smydesc_4 type VARCHAR, tabIndex=18, noEntry;
+ButtonEdit pov04=pov_file.pov04, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit imd02=imd_file.imd02, tabIndex=19, noEntry;
+ButtonEdit pov27=pov_file.pov27, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit occ02=occ_file.occ02, tabIndex=20, noEntry;
+ButtonEdit pov03=pov_file.pov03, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=21, noEntry;
+ButtonEdit pov19=pov_file.pov19, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit apydesc_1=formonly.apydesc_1 type VARCHAR, tabIndex=22, noEntry;
+ButtonEdit pov23=pov_file.pov23, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit apydesc_2=formonly.apydesc_2 type VARCHAR, tabIndex=23, noEntry;
+ButtonEdit pov07=pov_file.pov07, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Query Plant No.";
+ButtonEdit pov09=pov_file.pov09, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=24, noEntry;
+ButtonEdit pov25=pov_file.pov25, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit gem02_1=formonly.gem02_1 type VARCHAR, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pov_file.pov02,pmc_file.pmc03,pov_file.pov14,formonly.smydesc_1,pov_file.pov16,formonly.smydesc_2,pov_file.pov17,formonly.smydesc_3,pov_file.pov21,formonly.smydesc_4,pov_file.pov04,imd_file.imd02,pov_file.pov27,occ_file.occ02,pov_file.pov03,formonly.azp02,pov_file.pov19,formonly.apydesc_1,pov_file.pov23,formonly.apydesc_2,pov_file.pov07,pov_file.pov09,formonly.gem02,pov_file.pov25,formonly.gem02_1)
+END -- INSTRUCTIONS
+

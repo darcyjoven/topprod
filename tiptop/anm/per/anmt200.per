@@ -1,0 +1,211 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/4fd/anmt200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt200")
+VBox VBox1
+Folder pc789
+Page page01(text="Main")
+HBox HBox1
+Grid gr4461
+{
+ Note Receipt#             [nmh01             ]
+ Note No.                  [nmh31       ]
+
+ Note Received Date        [nmh04       ]
+ Due Date                  [nmh05       ][date1     ]
+ Currency / Exchange Rate  [nmh03       ][nmh28               ]
+ Original Curr. Amt        [nmh02               ]
+ Home Curr. Amt            [nmh32               ]
+ Paying Bank               [nmh06                            ]
+                           [nmt02               ]
+ userdefined_field03       [nmhud03           ]
+}
+END -- gr4461
+Grid gr4462
+{
+ Account No.              [nmh07                         ]
+ Days Recorded            [nmh08       ]              [imgmksg]
+ Anticipated Cashing Date [nmh09       ][date2     ]  [       ]
+ Notes Type 1             [nmh10       ][w1        ]
+ Notes Type 2             [nmh29       ][w2        ]
+ Customer No.             [nmh11       ][nmh30     ]
+[nmh41                                             ]
+[nmh13                                             ]
+ Drawer                   [nmh14               ]
+ userdefined_field02      [nmhud02                       ]
+ Variable Code            [nmh12       ][nml02           ]
+}
+END -- gr4462
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr4463
+{
+ Record Owner        [nmhuser   ] Last Modified by    [nmhmodu   ]
+ Department          [nmhgrup   ] Create/Modify Date  [nmhdate   ]
+ Record Orig.        [nmhoriu   ]
+ Dept Orig.          [nmhorig   ]
+}
+END -- gr4463
+END -- info
+END -- pc789
+Folder pc790
+Page page02(text="General")
+HBox hb2
+Grid gr4464
+{
+ Department           [nmh15       ]
+ Dept Name            [gem02                                   ]
+ Salesman             [nmh16       ]
+ Name                 [gen02       ]
+ Ven. of Trans        [nmh22       ]
+ Vener Name           [nmh23       ]
+
+}
+END -- gr4464
+Grid gr4465
+{
+ Collection/Remitting [nmh19       ]
+ Remitting            [nmh20       ]
+ Remitting Bank       [nmh21               ]
+ Bank Name            [nma02_1             ]
+
+
+
+}
+END -- gr4465
+Grid gr4466
+{
+ Confirm              [nmh38               ]
+ Note Status          [nmh24               ]
+ Contra\'d Amt         [nmh17               ]
+ Turn Amt             [nmh42               ]
+ Transaction Date     [nmh25       ]
+ Closing Date         [nmh35       ]
+ Memo                 [nmh18                         ]
+}
+END -- gr4466
+END -- hb2
+END -- page02
+Page page03(text="Account")
+Grid gr4467
+{
+ Note Account        [nmh26          |nmh26_name          ]     Note Account 2         [nmh261              ]
+ Counterpart Account [nmh27          |nmh27_name          ]     Counterpart Account 2  [nmh271              ]
+ Note Receipt Voc.   [nmh33               ]
+ Voc. Date           [nmh34     ]
+
+}
+END -- gr4467
+END -- page03
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[nmhud01                       ] userdefined_field07[nmhud07        ] userdefined_field13   [nmhud13     ]
+                    [                              ] userdefined_field08[nmhud08        ] userdefined_field14[nmhud14        ]
+                                                     userdefined_field09[nmhud09        ] userdefined_field15[nmhud15        ]
+                                                     userdefined_field10[nmhud10        ]
+ userdefined_field04[nmhud04        ]                userdefined_field11[nmhud11        ]
+ userdefined_field05[nmhud05        ]                userdefined_field12[nmhud12        ]
+ userdefined_field06[nmhud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc790
+Grid gr4468
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4468
+END -- VBox1
+END -- anmt200
+
+TABLES
+nmh_file
+ATTRIBUTES
+ButtonEdit nmh01=nmh_file.nmh01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Documents";
+Edit nmh31=nmh_file.nmh31, tabIndex=2, not null, required, comment="KEY Field, No Blank/Repeated!";
+DateEdit nmh04=nmh_file.nmh04, tabIndex=4, not null, required;
+DateEdit nmh05=nmh_file.nmh05, tabIndex=5, not null, required;
+Edit date1=formonly.date1 type CHAR, tabIndex=6, noEntry;
+ButtonEdit nmh03=nmh_file.nmh03, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Currency # <^Y>Create Currency";
+ButtonEdit nmh28=nmh_file.nmh28, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry Rate";
+Edit nmh02=nmh_file.nmh02, tabIndex=9, not null, required;
+Edit nmh32=nmh_file.nmh32, tabIndex=10;
+Edit nmh06=nmh_file.nmh06, tabIndex=11, not null, required, comment="<^P> Qry All Bank No. <^Y>Create All Bank #";
+Edit nmt02=formonly.nmt02 type CHAR, tabIndex=12, noEntry;
+ButtonEdit nmhud03=nmh_file.nmhud03, action=controlp, tabIndex=61, image="zoom";
+Edit nmh07=nmh_file.nmh07, tabIndex=13;
+Edit nmh08=nmh_file.nmh08, tabIndex=14;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+DateEdit nmh09=nmh_file.nmh09, tabIndex=15, not null, required;
+Edit date2=formonly.date2 type CHAR, tabIndex=16, noEntry;
+ButtonEdit nmh10=nmh_file.nmh10, action=controlp, tabIndex=17, not null, required, image="zoom", comment="<^P> Qry Notes";
+Edit w1=formonly.w1 type VARCHAR, tabIndex=18, noEntry;
+ButtonEdit nmh29=nmh_file.nmh29, action=controlp, tabIndex=19, image="zoom", comment="<^P> Qry Notes";
+Edit w2=formonly.w2 type VARCHAR, tabIndex=20, noEntry;
+ButtonEdit nmh11=nmh_file.nmh11, action=controlp, tabIndex=21, not null, required, image="zoom", comment="<^P> Qry Customer # <^Y>Create Customer ,  MISC MISC Customer";
+Edit nmh30=nmh_file.nmh30, tabIndex=22;
+CheckBox nmh41=nmh_file.nmh41, tabIndex=68, text="nmh41", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y:3rd-Party\'s Note or N:Not 3rd-Party Note";
+CheckBox nmh13=nmh_file.nmh13, tabIndex=23, text="Customer Note", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y:3rd-Party\'s Note or N:Not 3rd-Party Note";
+Edit nmh14=nmh_file.nmh14, tabIndex=24;
+Edit nmhud02=nmh_file.nmhud02, tabIndex=25;
+ButtonEdit nmh12=nmh_file.nmh12, action=controlp, tabIndex=26, image="zoom", comment="<^P> Qry Variation Code ";
+Edit nml02=formonly.nml02 type CHAR, tabIndex=27, noEntry;
+Edit nmhuser=nmh_file.nmhuser, tabIndex=28, noEntry;
+Edit nmhmodu=nmh_file.nmhmodu, tabIndex=29, noEntry;
+Edit nmhgrup=nmh_file.nmhgrup, tabIndex=30, noEntry;
+DateEdit nmhdate=nmh_file.nmhdate, tabIndex=31, noEntry;
+Edit nmhoriu=nmh_file.nmhoriu, tabIndex=69, noEntry;
+Edit nmhorig=nmh_file.nmhorig, tabIndex=70, noEntry;
+ButtonEdit nmh15=nmh_file.nmh15, action=controlp, tabIndex=32, image="zoom", comment="<^P> Qry Department # <^Y>Create Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=33, noEntry;
+ButtonEdit nmh16=nmh_file.nmh16, action=controlp, tabIndex=34, image="zoom", comment="<^P> Qry Employee # <^Y>Create Employee ";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=35, noEntry;
+Edit nmh22=nmh_file.nmh22, tabIndex=36, noEntry;
+Edit nmh23=nmh_file.nmh23, tabIndex=37, noEntry;
+ComboBox nmh19=nmh_file.nmh19, tabIndex=38, noEntry, not null, required, queryEditable, items=(("2", "Collection"),("3", "Pledge"),("4", "Note Discount"));
+DateEdit nmh20=nmh_file.nmh20, tabIndex=39;
+ButtonEdit nmh21=nmh_file.nmh21, action=controlp, tabIndex=40, image="zoom", comment="<^P> Qry Bank No. <^Y>Create Bank Basic";
+Edit nma02_1=formonly.nma02_1 type CHAR, tabIndex=41;
+ComboBox nmh38=nmh_file.nmh38, tabIndex=42, noEntry, not null, required, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Cancelled"));
+ComboBox nmh24=nmh_file.nmh24, tabIndex=43, noEntry, not null, required, queryEditable, items=(("1", "Untransaction"),("2", "Collection Discount"),("3", "Pledge"),("4", "Note discount"),("5", "Transfer"),("6", "Withdraw"),("7", "Note Returned"),("8", "Cash"),("9", "Transfer payment refund"));
+Edit nmh17=nmh_file.nmh17, tabIndex=44, noEntry;
+Edit nmh42=nmh_file.nmh42, tabIndex=71, not null;
+DateEdit nmh25=nmh_file.nmh25, tabIndex=45, noEntry;
+DateEdit nmh35=nmh_file.nmh35, tabIndex=46, noEntry;
+Edit nmh18=nmh_file.nmh18, tabIndex=47;
+ButtonEdit nmh26=nmh_file.nmh26, action=controlp, tabIndex=48, image="zoom", comment="<^P> Qry Account     ";
+Edit nmh26_name=formonly.nmh26_name type VARCHAR, tabIndex=72, noEntry;
+ButtonEdit nmh261=nmh_file.nmh261, action=controlp, tabIndex=49, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nmh27=nmh_file.nmh27, action=controlp, tabIndex=50, image="zoom", comment="Note Received Credit Account,<^P> Qry Account     ";
+Edit nmh27_name=formonly.nmh27_name type VARCHAR, tabIndex=73, noEntry;
+ButtonEdit nmh271=nmh_file.nmh271, action=controlp, tabIndex=51, image="zoom", comment="Note Received Credit Account,<^P> Qry Account     ";
+Edit nmh33=nmh_file.nmh33, tabIndex=52, noEntry;
+DateEdit nmh34=nmh_file.nmh34, tabIndex=53, noEntry;
+TextEdit nmhud01=nmh_file.nmhud01, tabIndex=55, stretch=NONE;
+Edit nmhud07=nmh_file.nmhud07, tabIndex=56;
+DateEdit nmhud13=nmh_file.nmhud13, tabIndex=3;
+Edit nmhud08=nmh_file.nmhud08, tabIndex=57;
+DateEdit nmhud14=nmh_file.nmhud14, tabIndex=58;
+Edit nmhud09=nmh_file.nmhud09, tabIndex=59;
+DateEdit nmhud15=nmh_file.nmhud15, tabIndex=60;
+Edit nmhud10=nmh_file.nmhud10, tabIndex=62;
+Edit nmhud04=nmh_file.nmhud04, tabIndex=63;
+Edit nmhud11=nmh_file.nmhud11, tabIndex=64;
+Edit nmhud05=nmh_file.nmhud05, tabIndex=65;
+Edit nmhud12=nmh_file.nmhud12, tabIndex=66;
+Edit nmhud06=nmh_file.nmhud06, tabIndex=67;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=54, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nmh_file.nmh01,nmh_file.nmh31,nmh_file.nmhud13,nmh_file.nmh04,nmh_file.nmh05,formonly.date1,nmh_file.nmh03,nmh_file.nmh28,nmh_file.nmh02,nmh_file.nmh32,nmh_file.nmh06,formonly.nmt02,nmh_file.nmh07,nmh_file.nmh08,formonly.imgmksg,nmh_file.nmh09,formonly.date2,nmh_file.nmh10,formonly.w1,nmh_file.nmh29,formonly.w2,nmh_file.nmh11,nmh_file.nmh30,nmh_file.nmh41,nmh_file.nmh13,nmh_file.nmh14,nmh_file.nmh12,formonly.nml02,nmh_file.nmhuser,nmh_file.nmhmodu,nmh_file.nmhgrup,nmh_file.nmhdate,nmh_file.nmhoriu,nmh_file.nmhorig,nmh_file.nmh15,formonly.gem02,nmh_file.nmh16,formonly.gen02,nmh_file.nmh22,nmh_file.nmh23,nmh_file.nmh19,nmh_file.nmh20,nmh_file.nmh21,formonly.nma02_1,nmh_file.nmh38,nmh_file.nmh24,nmh_file.nmh17,nmh_file.nmh42,nmh_file.nmh25,nmh_file.nmh35,nmh_file.nmh18,nmh_file.nmh26,nmh_file.nmh261,nmh_file.nmh27,nmh_file.nmh271,nmh_file.nmh33,nmh_file.nmh34,nmh_file.nmhud01,nmh_file.nmhud07,nmh_file.nmhud08,nmh_file.nmhud14,nmh_file.nmhud02,nmh_file.nmhud09,nmh_file.nmhud15,nmh_file.nmhud03,nmh_file.nmhud10,nmh_file.nmhud04,nmh_file.nmhud11,nmh_file.nmhud05,nmh_file.nmhud12,nmh_file.nmhud06,formonly.cnt,formonly.nmh26_name,formonly.nmh27_name)
+END -- INSTRUCTIONS
+

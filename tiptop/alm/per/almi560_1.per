@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi560_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Grid Grid1
+{
+ <G group1                                                                                                            >
+   lva02[lva02         ] lva03[lva03           ] lva04[lva04                     ] lva01[lva01                       ]
+
+  [lva04_1                                                                                                            ]
+ <                                                                                                                    >
+
+}
+END -- Grid1
+END -- Form
+
+TABLES
+lva_file
+ATTRIBUTES
+Group group1:Group1, text=%"";
+ComboBox lva02=lva_file.lva02, tabIndex=1, not null, required;
+ComboBox lva03=lva_file.lva03, tabIndex=2, not null, required;
+ComboBox lva04=lva_file.lva04, tabIndex=3, not null, required;
+ComboBox lva01=lva_file.lva01, tabIndex=5, not null, required;
+Edit lva04_1=formonly.lva04_1 type CHAR, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lva_file.lva02,lva_file.lva03,lva_file.lva04,formonly.lva04_1,lva_file.lva01)
+END -- INSTRUCTIONS
+

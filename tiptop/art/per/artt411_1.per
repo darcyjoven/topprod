@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt411_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt411_1")
+VBox vb5
+Folder pc3
+Page Page4(text=%"Basic Data")
+Table s_posdi
+{
+[item |paykind   |dtlno               |paysernum           |billdate  |cobank        |pay                 |extra       |changed         |pcnf12    |poutyp|poundage  ]
+[item |paykind   |dtlno               |paysernum           |billdate  |cobank        |pay                 |extra       |changed         |pcnf12    |poutyp|poundage  ]
+[item |paykind   |dtlno               |paysernum           |billdate  |cobank        |pay                 |extra       |changed         |pcnf12    |poutyp|poundage  ]
+[item |paykind   |dtlno               |paysernum           |billdate  |cobank        |pay                 |extra       |changed         |pcnf12    |poutyp|poundage  ]
+[item |paykind   |dtlno               |paysernum           |billdate  |cobank        |pay                 |extra       |changed         |pcnf12    |poutyp|poundage  ]
+
+}
+END -- s_posdi
+END -- Page4
+END -- pc3
+Grid gr5
+{
+ --------Details[cn2   ]------
+
+}
+END -- gr5
+END -- vb5
+END -- artt411_1
+
+ATTRIBUTES
+Edit item=formonly.item type SMALLINT, tabIndex=16, title="Line No.", not null, required;
+ComboBox paykind=formonly.paykind type VARCHAR, tabIndex=17, title="Contributions Type", not null, required, items=(("01", "Cash"),("02", "UnionPay cards"),("03", "Cheque"),("04", "Coupon"),("05", "Union Card"),("06", "Stored-value Cards"),("07", "Advance"),("08", "Manual Transfers"));
+Edit dtlno=formonly.dtlno type DECIMAL, tabIndex=18, title="Amount";
+Edit paysernum=formonly.paysernum type VARCHAR, tabIndex=19, title="Number/votes/Account";
+DateEdit billdate=formonly.billdate type DATE, tabIndex=20, title="Charges Rate";
+Edit cobank=formonly.cobank type VARCHAR, tabIndex=21, title="Charges";
+Edit pay=formonly.pay type DECIMAL, tabIndex=22, title="Cheque Denomination";
+Edit extra=formonly.extra type DECIMAL, tabIndex=23, title="Invoice Date";
+Edit changed=formonly.changed type DECIMAL, tabIndex=24, title="Units";
+Edit pcnf12=formonly.pcnf12 type DECIMAL, tabIndex=25, title="Card Voucher Category No. ";
+ComboBox poutyp=formonly.poutype type VARCHAR, tabIndex=26, title="Coupon Denominations", items=(("1", "20"),("2", "0.005"),("3", "0.006"),("4", "0.025"),("5", "0.032"));
+Edit poundage=formonly.poundage type DECIMAL, tabIndex=28, title="poundage", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_posdi(formonly.item,formonly.paykind,formonly.dtlno,formonly.paysernum,formonly.billdate,formonly.cobank,formonly.pay,formonly.extra,formonly.changed,formonly.pcnf12,formonly.poutype,formonly.poundage)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

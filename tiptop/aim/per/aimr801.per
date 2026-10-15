@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr801.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr801")
+VBox VBox1
+Grid gr3328
+{
+ <G group01                                                           >
+  Workstation         [pie05               ]
+  Work/Order No.      [pid02               ]
+  Initial Label No.   [pid01               ]
+ <                                                                    >
+}
+END -- gr3328
+Group group02(text="INPUT")
+Grid gr3329
+{
+ <G group03                                                           >
+  Year Identification [yearstr   ]
+
+ <                                                                    >
+
+ <G group04                                                           >
+ [s1                ] [s2                ] [s3                ]
+ <                                                                    >
+ <G group05                                                           >
+ [a                                       ]
+ [b                                       ]
+ [t                                       ]
+ [e                                       ]
+ [f                                       ]
+ [code                                    ]
+ [size                                    ]
+ [c                                        ]
+ <                                                                    >
+
+}
+END -- gr3329
+END -- group02
+Grid gr3330
+{
+[more                                  ]
+
+
+
+}
+END -- gr3330
+END -- VBox1
+END -- aimr801
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit pie05=formonly.pie05 type VARCHAR, tabIndex=1;
+Edit pid02=formonly.pid02 type VARCHAR, tabIndex=2;
+ButtonEdit pid01=formonly.pid01 type VARCHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Label Table";
+Group group03:group03;
+Edit yearstr=formonly.yearstr type VARCHAR, tabIndex=4;
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=5, queryEditable, items=(("1", "Label Code"),("2", "Work/Order No."),("3", "Workstation"),("4", "Task Serial Number"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=6, queryEditable, items=(("1", "Label Code"),("2", "Work/Order No."),("3", "Workstation"),("4", "Task Serial Number"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=7, queryEditable, items=(("1", "Label Code"),("2", "Work/Order No."),("3", "Workstation"),("4", "Task Serial Number"));
+Group group05:group05;
+CheckBox a=formonly.a type VARCHAR, tabIndex=8, text="Print Part Name Spec", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=9, text="Line Break after an Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t=formonly.t type VARCHAR, tabIndex=10, text="Next Page by workstation", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=11, text="print Consumption item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type VARCHAR, tabIndex=12, text="Print Mass Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox code=formonly.code type VARCHAR, tabIndex=13, text="Print bar code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox size=formonly.size type VARCHAR, tabIndex=14, text="Use Pattern Label", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=16, text="Print Qty to be Counted", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=15, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pie05,formonly.pid02,formonly.pid01,formonly.yearstr,formonly.s1,formonly.s2,formonly.s3,formonly.a,formonly.b,formonly.t,formonly.e,formonly.f,formonly.code,formonly.size,formonly.c,formonly.more)
+END -- INSTRUCTIONS
+

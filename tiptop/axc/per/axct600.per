@@ -1,0 +1,164 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct600")
+VBox vb16
+Folder pc8
+Page page01(text="Main")
+Grid gr21
+{
+ Master Item#               [cct04                         ]     Unit                [ima25     ]
+                            [ima02                         ]
+ W/O No.                    [cct01           ]
+ YY/MM                      [cct02     ]/[cc]
+ Cost Calculation Method    [cct06     ]Category No.  [cct07                                    ]
+ Disassembly Sets           [sfb08     ]
+
+ <G group02                                                                                                              >
+               [dummy01            ]+[dummy02            ]+[dummy03         ]+[dummy07            ]=[dummy08           ]
+  Work hour                         [cct20               ]
+  Material    [cct12a              ][cct22a              ][cct32a           ][cct42a              ][cct92a             ]
+  Labor       [cct12b              ][cct22b              ][cct32b           ][cct42b              ][cct92b             ]
+  Overhead 1  [cct12c              ][cct22c              ][cct32c           ][cct42c              ][cct92c             ]
+  Process     [cct12d              ][cct22d              ][cct32d           ][cct42d              ][cct92d             ]
+  Overhead 2  [cct12e              ][cct22e              ][cct32e           ][cct42e              ][cct92e             ]
+  Overhead 3  [cct12f              ][cct22f              ][cct32f           ][cct42f              ][cct92f             ]
+  Overhead 4  [cct12g              ][cct22g              ][cct32g           ][cct42g              ][cct92g             ]
+  Overhead 5  [cct12h              ][cct22h              ][cct32h           ][cct42h              ][cct92h             ]
+
+  Total       [cct12               ][cct22               ][cct32            ][cct42               ][cct92              ]
+
+
+
+ <                                                                                                                       >
+
+}
+END -- gr21
+END -- page01
+Page info(text="Info")
+Grid gr22
+{
+ Record Owner        [cctuser   ]   Data Valid Code     [ccttime   ]
+ Create/Modify Date  [cctdate   ]
+ Record Orig.        [cctoriu   ]
+}
+END -- gr22
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[cctud01                       ] userdefined_field07[cctud07        ] userdefined_field13[cctud13        ]
+                    [                              ] userdefined_field08[cctud08        ] userdefined_field14[cctud14        ]
+ userdefined_field02[cctud02        ]                userdefined_field09[cctud09        ] userdefined_field15[cctud15        ]
+ userdefined_field03[cctud03        ]                userdefined_field10[cctud10        ]
+ userdefined_field04[cctud04        ]                userdefined_field11[cctud11        ]
+ userdefined_field05[cctud05        ]                userdefined_field12[cctud12        ]
+ userdefined_field06[cctud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc8
+Grid gr23
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr23
+END -- vb16
+END -- axct600
+
+TABLES
+cct_file
+ATTRIBUTES
+ButtonEdit cct04=cct_file.cct04, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima25=formonly.ima25 type CHAR, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit cct01=cct_file.cct01, tabIndex=4, not null, required;
+Edit cct02=cct_file.cct02, tabIndex=5, not null, required;
+Edit cc=cct_file.cct03, tabIndex=6, not null, required;
+ComboBox cct06=cct_file.cct06, tabIndex=43, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Specific-Batch Cost"),("4", "Individual-Item Cost"),("5", "Specific Identification-Cost by Store(Profit Center)"));
+ButtonEdit cct07=cct_file.cct07, action=controlp, tabIndex=44, not null, required, image="zoom.png";
+Edit sfb08=formonly.sfb08 type CHAR, tabIndex=7, noEntry;
+Group group02:group02;
+Label dummy01:dummy01, text="Last Month Balance";
+Label dummy02:dummy02, text="Current Month Item";
+Label dummy03:dummy03, text="Current Month Component";
+Label dummy07:dummy07, text="Diff.";
+Label dummy08:dummy08, text="EoM Balance";
+Edit cct20=cct_file.cct20, tabIndex=8, not null, required;
+Edit cct12a=cct_file.cct12a, tabIndex=9, not null, required;
+Edit cct22a=cct_file.cct22a, tabIndex=10, not null, required;
+Edit cct32a=cct_file.cct32a, tabIndex=11, not null, required;
+Edit cct42a=cct_file.cct42a, tabIndex=12, not null, required;
+Edit cct92a=cct_file.cct92a, tabIndex=13, noEntry, not null, required;
+Edit cct12b=cct_file.cct12b, tabIndex=14, not null, required;
+Edit cct22b=cct_file.cct22b, tabIndex=15, not null, required;
+Edit cct32b=cct_file.cct32b, tabIndex=16, not null, required;
+Edit cct42b=cct_file.cct42b, tabIndex=17, not null, required;
+Edit cct92b=cct_file.cct92b, tabIndex=18, noEntry, not null, required;
+Edit cct12c=cct_file.cct12c, tabIndex=19, not null, required;
+Edit cct22c=cct_file.cct22c, tabIndex=20, not null, required;
+Edit cct32c=cct_file.cct32c, tabIndex=21, not null, required;
+Edit cct42c=cct_file.cct42c, tabIndex=22, not null, required;
+Edit cct92c=cct_file.cct92c, tabIndex=23, noEntry, not null, required;
+Edit cct12d=cct_file.cct12d, tabIndex=24, not null, required;
+Edit cct22d=cct_file.cct22d, tabIndex=25, not null, required;
+Edit cct32d=cct_file.cct32d, tabIndex=26, not null, required;
+Edit cct42d=cct_file.cct42d, tabIndex=27, not null, required;
+Edit cct92d=cct_file.cct92d, tabIndex=28, noEntry, not null, required;
+Edit cct12e=cct_file.cct12e, tabIndex=29, not null, required;
+Edit cct22e=cct_file.cct22e, tabIndex=30, not null, required;
+Edit cct32e=cct_file.cct32e, tabIndex=31, not null, required;
+Edit cct42e=cct_file.cct42e, tabIndex=32, not null, required;
+Edit cct92e=cct_file.cct92e, tabIndex=33, noEntry, not null, required;
+Edit cct12f=cct_file.cct12f, tabIndex=45, not null, required;
+Edit cct22f=cct_file.cct22f, tabIndex=48, not null, required;
+Edit cct32f=cct_file.cct32f, tabIndex=51, not null, required;
+Edit cct42f=cct_file.cct42f, tabIndex=54, not null, required;
+Edit cct92f=cct_file.cct92f, tabIndex=57, not null, required;
+Edit cct12g=cct_file.cct12g, tabIndex=46, not null, required;
+Edit cct22g=cct_file.cct22g, tabIndex=49, not null, required;
+Edit cct32g=cct_file.cct32g, tabIndex=52, not null, required;
+Edit cct42g=cct_file.cct42g, tabIndex=55, not null, required;
+Edit cct92g=cct_file.cct92g, tabIndex=58, not null, required;
+Edit cct12h=cct_file.cct12h, tabIndex=47, not null, required;
+Edit cct22h=cct_file.cct22h, tabIndex=50, not null, required;
+Edit cct32h=cct_file.cct32h, tabIndex=53, not null, required;
+Edit cct42h=cct_file.cct42h, tabIndex=56, not null, required;
+Edit cct92h=cct_file.cct92h, tabIndex=59, not null, required;
+Edit cct12=cct_file.cct12, tabIndex=34, noEntry, not null, required;
+Edit cct22=cct_file.cct22, tabIndex=35, noEntry, not null, required;
+Edit cct32=cct_file.cct32, tabIndex=36, noEntry, not null, required;
+Edit cct42=cct_file.cct42, tabIndex=37, noEntry, not null, required;
+Edit cct92=cct_file.cct92, tabIndex=38, noEntry, not null, required;
+Edit cctuser=cct_file.cctuser, tabIndex=39, noEntry;
+Edit ccttime=cct_file.ccttime, tabIndex=40, noEntry;
+DateEdit cctdate=cct_file.cctdate, tabIndex=41, noEntry;
+Edit cctoriu=cct_file.cctoriu, tabIndex=501, noEntry;
+TextEdit cctud01=cct_file.cctud01, tabIndex=60, stretch=NONE;
+Edit cctud07=cct_file.cctud07, tabIndex=61;
+DateEdit cctud13=cct_file.cctud13, tabIndex=62;
+Edit cctud08=cct_file.cctud08, tabIndex=63;
+DateEdit cctud14=cct_file.cctud14, tabIndex=64;
+Edit cctud02=cct_file.cctud02, tabIndex=65;
+Edit cctud09=cct_file.cctud09, tabIndex=66;
+DateEdit cctud15=cct_file.cctud15, tabIndex=67;
+Edit cctud03=cct_file.cctud03, tabIndex=68;
+Edit cctud10=cct_file.cctud10, tabIndex=69;
+Edit cctud04=cct_file.cctud04, tabIndex=70;
+Edit cctud11=cct_file.cctud11, tabIndex=71;
+Edit cctud05=cct_file.cctud05, tabIndex=72;
+Edit cctud12=cct_file.cctud12, tabIndex=73;
+Edit cctud06=cct_file.cctud06, tabIndex=74;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=42, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cct_file.cct04,formonly.ima25,formonly.ima02,cct_file.cct01,cct_file.cct02,cct_file.cct03,cct_file.cct06,cct_file.cct07,formonly.sfb08,cct_file.cct20,cct_file.cct12a,cct_file.cct22a,cct_file.cct32a,cct_file.cct42a,cct_file.cct92a,cct_file.cct12b,cct_file.cct22b,cct_file.cct32b,cct_file.cct42b,cct_file.cct92b,cct_file.cct12c,cct_file.cct22c,cct_file.cct32c,cct_file.cct42c,cct_file.cct92c,cct_file.cct12d,cct_file.cct22d,cct_file.cct32d,cct_file.cct42d,cct_file.cct92d,cct_file.cct12e,cct_file.cct22e,cct_file.cct32e,cct_file.cct42e,cct_file.cct92e,cct_file.cct12f,cct_file.cct22f,cct_file.cct32f,cct_file.cct42f,cct_file.cct92f,cct_file.cct12g,cct_file.cct22g,cct_file.cct32g,cct_file.cct42g,cct_file.cct92g,cct_file.cct12h,cct_file.cct22h,cct_file.cct32h,cct_file.cct42h,cct_file.cct92h,cct_file.cct12,cct_file.cct22,cct_file.cct32,cct_file.cct42,cct_file.cct92,cct_file.cctuser,cct_file.ccttime,cct_file.cctdate,cct_file.cctoriu,cct_file.cctud01,cct_file.cctud07,cct_file.cctud13,cct_file.cctud08,cct_file.cctud14,cct_file.cctud02,cct_file.cctud09,cct_file.cctud15,cct_file.cctud03,cct_file.cctud10,cct_file.cctud04,cct_file.cctud11,cct_file.cctud05,cct_file.cctud12,cct_file.cctud06,formonly.cnt)
+END -- INSTRUCTIONS
+

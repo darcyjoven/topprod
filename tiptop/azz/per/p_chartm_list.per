@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_chartm_list.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi030")
+VBox vb3
+Folder pc831
+Page page01(text="Page01")
+Table s_gem
+{
+[gdk01          |gfp04_na|gfn02                |gfp04_desc   |gdk02             |gdk03        ]
+[gdk01          |gfp04_na|gfn02                |gfp04_desc   |gdk02             |gdk03        ]
+[gdk01          |gfp04_na|gfn02                |gfp04_desc   |gdk02             |gdk03        ]
+[gdk01          |gfp04_na|gfn02                |gfp04_desc   |gdk02             |gdk03        ]
+[gdk01          |gfp04_na|gfn02                |gfp04_desc   |gdk02             |gdk03        ]
+[gdk01          |gfp04_na|gfn02                |gfp04_desc   |gdk02             |gdk03        ]
+[gdk01          |gfp04_na|gfn02                |gfp04_desc   |gdk02             |gdk03        ]
+[gdk01          |gfp04_na|gfn02                |gfp04_desc   |gdk02             |gdk03        ]
+[gdk01          |gfp04_na|gfn02                |gfp04_desc   |gdk02             |gdk03        ]
+[gdk01          |gfp04_na|gfn02                |gfp04_desc   |gdk02             |gdk03        ]
+
+}
+END -- s_gem
+END -- page01
+END -- pc831
+Grid gr4617
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr4617
+END -- vb3
+END -- aooi030
+
+TABLES
+gfn_file,
+gdk_file
+ATTRIBUTES
+ButtonEdit gdk01=gdk_file.gdk01, action=controlp, tabIndex=1, title="Chart No.", not null, required, scroll, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit gfp04_na=formonly.gfp04_name type CHAR, tabIndex=6, title=%"Chart Name", noEntry;
+Edit gfn02=gfn_file.gfn02, tabIndex=2, title="Chart Type", noEntry;
+Edit gfp04_desc=formonly.gfp04_desc type CHAR, tabIndex=7, title=%"Chart Description", noEntry;
+Edit gdk02=gdk_file.gdk02, tabIndex=3, title="Condition 1";
+Edit gdk03=gdk_file.gdk03, tabIndex=4, title="Condition 2";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gdk(gdk_file.gdk01,formonly.gfp04_name,gfn_file.gfn02,formonly.gfp04_desc,gdk_file.gdk02,gdk_file.gdk03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

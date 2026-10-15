@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq907.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq907")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+Grid gr2570
+{
+ Acct No.              [aag01          ]
+ Acct Title            [aag02                         ]
+ Entry Type            [g_npptype ]
+ Start Date            [bdate                         ]
+ End Date              [edate                         ]
+
+}
+END -- gr2570
+END -- page01
+END -- folder01
+Table s_npp
+{
+[npp03        |npp02      |nppglno     |npq04             |npq07_1             |npq07_2             |b                 |npq24     |npq07f_1            |npq07f_2            ]
+[npp03        |npp02      |nppglno     |npq04             |npq07_1             |npq07_2             |b                 |npq24     |npq07f_1            |npq07f_2            ]
+[npp03        |npp02      |nppglno     |npq04             |npq07_1             |npq07_2             |b                 |npq24     |npq07f_1            |npq07f_2            ]
+[npp03        |npp02      |nppglno     |npq04             |npq07_1             |npq07_2             |b                 |npq24     |npq07f_1            |npq07f_2            ]
+[npp03        |npp02      |nppglno     |npq04             |npq07_1             |npq07_2             |b                 |npq24     |npq07f_1            |npq07f_2            ]
+[npp03        |npp02      |nppglno     |npq04             |npq07_1             |npq07_2             |b                 |npq24     |npq07f_1            |npq07f_2            ]
+[npp03        |npp02      |nppglno     |npq04             |npq07_1             |npq07_2             |b                 |npq24     |npq07f_1            |npq07f_2            ]
+[npp03        |npp02      |nppglno     |npq04             |npq07_1             |npq07_2             |b                 |npq24     |npq07f_1            |npq07f_2            ]
+[npp03        |npp02      |nppglno     |npq04             |npq07_1             |npq07_2             |b                 |npq24     |npq07f_1            |npq07f_2            ]
+[npp03        |npp02      |nppglno     |npq04             |npq07_1             |npq07_2             |b                 |npq24     |npq07f_1            |npq07f_2            ]
+
+
+}
+END -- s_npp
+Grid gr2571
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2571
+END -- vb4
+END -- aglq907
+
+TABLES
+npq_file,
+npp_file
+ATTRIBUTES
+ButtonEdit aag01=formonly.aag01 type CHAR, action=controlp, tabIndex=17, image="zoom";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=1, noEntry;
+ComboBox g_npptype=formonly.g_npptype type VARCHAR, tabIndex=2, not null, items=(("0", "Book No.1"),("1", "Book No.2"));
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=3;
+DateEdit edate=formonly.edate type CHAR, tabIndex=4;
+DateEdit npp03=npp_file.npp03, tabIndex=5, title="Voucher Date";
+DateEdit npp02=formonly.npp02 type CHAR, tabIndex=6, title="Transaction Date", noEntry;
+Edit nppglno=formonly.nppglno type CHAR, tabIndex=7, title="Voucher No.", noEntry;
+Edit npq04=formonly.npq04 type CHAR, tabIndex=8, title="Memo", noEntry;
+Edit npq07_1=formonly.npq07_1 type CHAR, tabIndex=9, title="Debit Amt. (Local Curr. )", noEntry;
+Edit npq07_2=formonly.npq07_2 type CHAR, tabIndex=10, title="Credit Amt. (Local Curr.)", noEntry;
+Edit b=formonly.b type CHAR, tabIndex=11, title="Total Amt. (Local Curr.)", noEntry;
+Edit npq24=npq_file.npq24, tabIndex=12, title="Currency", noEntry;
+Edit npq07f_1=formonly.npq07f_1 type CHAR, tabIndex=13, title="Debit Amt. (Trans.Curr.)", noEntry;
+Edit npq07f_2=formonly.npq07f_2 type CHAR, tabIndex=14, title="Credit Amt. (Trans. Curr.)", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_npp(npp_file.npp03,formonly.npp02,formonly.nppglno,formonly.npq04,formonly.npq07_1,formonly.npq07_2,formonly.b,npq_file.npq24,formonly.npq07f_1,formonly.npq07f_2)
+SCREEN RECORD Undefined(formonly.aag02,formonly.bdate,formonly.edate,formonly.cnt,formonly.cn2,formonly.aag01,formonly.g_npptype)
+END -- INSTRUCTIONS
+

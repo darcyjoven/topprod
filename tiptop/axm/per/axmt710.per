@@ -1,0 +1,182 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt710.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt710")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2646
+{
+ Cust Complt Note    [ohc01                    ]
+ Original DN         [ohc04                    ]
+ Line#               [ohc041      ]
+ Ori Sls Daily       [ohc05       ]
+ Invo No.            [ohc07                    ]
+ Order No.           [ohc09                    ]
+ Customer No.        [ohc06       ]
+ Customer Name       [ohc061      ]
+
+
+
+
+
+}
+END -- gr2646
+Grid gr2647
+{
+ Product No.         [ohc08                     ]
+ P/N Description     [ohc081                    ]
+ Specification       [ima021                    ]
+ Customer Complt Qty [ohc18       ]
+ Cust Complaint Date [ohc02       ]
+ Salesman            [ohc10       ][gen02_1     ]
+ Processed by        [ohc11       ][gen02_2     ]
+ Proc of Cover       [ohc13       ]
+ Closing Date        [ohc14       ]
+
+
+
+
+}
+END -- gr2647
+Grid gr2648
+{
+ Curr                [ohc15     ]
+ Exchange Rate       [ohc16               ]
+ Unit Price          [ohc17               ]
+ Cover Goods Qty     [ohc181         ]
+ Goods Exchange      [ohc182         ]
+ Sales Returned      [ohc183         ]
+ Allowance Amount    [ohc184              ]
+
+ Curr Status         [ohc03     ] [imgmksg]
+ Confirm             [ohcconf   ] [       ]
+
+
+
+}
+END -- gr2648
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr2649
+{
+ Record Owner        [ohcuser   ] Last Modified by    [ohcmodu   ]
+ Department          [ohcgrup   ] Create/Modify Date  [ohcdate     ]
+ Record Orig.        [ohcoriu   ]
+ Dept Orig.          [ohcorig   ]
+
+}
+END -- gr2649
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[ohcud01                       ] userdefined_field07[ohcud07        ] userdefined_field13[ohcud13        ]
+                    [                              ] userdefined_field08[ohcud08        ] userdefined_field14[ohcud14        ]
+ userdefined_field02[ohcud02        ]                userdefined_field09[ohcud09        ] userdefined_field15[ohcud15        ]
+ userdefined_field03[ohcud03        ]                userdefined_field10[ohcud10        ]
+ userdefined_field04[ohcud04        ]                userdefined_field11[ohcud11        ]
+ userdefined_field05[ohcud05        ]                userdefined_field12[ohcud12        ]
+ userdefined_field06[ohcud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_ohd
+{
+[ohd02    |ohd03                                                                 ]
+[ohd02    |ohd03                                                                 ]
+[ohd02    |ohd03                                                                 ]
+[ohd02    |ohd03                                                                 ]
+[ohd02    |ohd03                                                                 ]
+[ohd02    |ohd03                                                                 ]
+[ohd02    |ohd03                                                                 ]
+[ohd02    |ohd03                                                                 ]
+[ohd02    |ohd03                                                                 ]
+[ohd02    |ohd03                                                                 ]
+
+}
+END -- s_ohd
+Grid gr2650
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr2650
+END -- VBox1
+END -- axmt710
+
+TABLES
+ohd_file,
+ohc_file
+ATTRIBUTES
+ButtonEdit ohc01=ohc_file.ohc01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Document Property";
+ButtonEdit ohc04=ohc_file.ohc04, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Delivery Note#";
+Edit ohc041=ohc_file.ohc041, tabIndex=3, comment="Enter Line #";
+DateEdit ohc05=ohc_file.ohc05, tabIndex=4;
+Edit ohc07=ohc_file.ohc07, tabIndex=5;
+ButtonEdit ohc09=ohc_file.ohc09, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit ohc06=ohc_file.ohc06, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Customer #";
+Edit ohc061=ohc_file.ohc061, tabIndex=8;
+ButtonEdit ohc08=ohc_file.ohc08, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Details";
+Edit ohc081=ohc_file.ohc081, tabIndex=10;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=11, noEntry;
+Edit ohc18=ohc_file.ohc18, tabIndex=12;
+DateEdit ohc02=ohc_file.ohc02, tabIndex=13;
+ButtonEdit ohc10=ohc_file.ohc10, action=controlp, tabIndex=14, image="zoom";
+Edit gen02_1=formonly.gen02_1 type CHAR, tabIndex=15, noEntry;
+ButtonEdit ohc11=ohc_file.ohc11, action=controlp, tabIndex=16, image="zoom";
+Edit gen02_2=formonly.gen02_2 type CHAR, tabIndex=17, noEntry;
+DateEdit ohc13=ohc_file.ohc13, tabIndex=18, not null, required;
+DateEdit ohc14=ohc_file.ohc14, tabIndex=19, noEntry;
+ButtonEdit ohc15=ohc_file.ohc15, action=controlp, tabIndex=20, image="zoom";
+ButtonEdit ohc16=ohc_file.ohc16, action=controlp, tabIndex=21, image="zoom";
+Edit ohc17=ohc_file.ohc17, tabIndex=22;
+Edit ohc181=ohc_file.ohc181, tabIndex=23;
+Edit ohc182=ohc_file.ohc182, tabIndex=24;
+Edit ohc183=ohc_file.ohc183, tabIndex=25;
+Edit ohc184=ohc_file.ohc184, tabIndex=26;
+ComboBox ohc03=ohc_file.ohc03, tabIndex=27, noEntry, not null, required, items=(("0", "UnTreat"),("1", "Process"),("2", "Close"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ComboBox ohcconf=ohc_file.ohcconf, tabIndex=29, noEntry, not null, required, items=(("Y", "Confirmed"),("N", "UnConfirm"),("X", "Void"));
+Edit ohcuser=ohc_file.ohcuser, tabIndex=30, noEntry;
+Edit ohcmodu=ohc_file.ohcmodu, tabIndex=31, noEntry;
+Edit ohcgrup=ohc_file.ohcgrup, tabIndex=32, noEntry;
+DateEdit ohcdate=ohc_file.ohcdate, tabIndex=33, noEntry;
+Edit ohcoriu=ohc_file.ohcoriu, tabIndex=501, noEntry;
+Edit ohcorig=ohc_file.ohcorig, tabIndex=502, noEntry;
+TextEdit ohcud01=ohc_file.ohcud01, tabIndex=39, stretch=NONE;
+Edit ohcud07=ohc_file.ohcud07, tabIndex=40;
+DateEdit ohcud13=ohc_file.ohcud13, tabIndex=41;
+Edit ohcud08=ohc_file.ohcud08, tabIndex=42;
+DateEdit ohcud14=ohc_file.ohcud14, tabIndex=43;
+Edit ohcud02=ohc_file.ohcud02, tabIndex=44;
+Edit ohcud09=ohc_file.ohcud09, tabIndex=45;
+DateEdit ohcud15=ohc_file.ohcud15, tabIndex=46;
+Edit ohcud03=ohc_file.ohcud03, tabIndex=47;
+Edit ohcud10=ohc_file.ohcud10, tabIndex=48;
+Edit ohcud04=ohc_file.ohcud04, tabIndex=49;
+Edit ohcud11=ohc_file.ohcud11, tabIndex=50;
+Edit ohcud05=ohc_file.ohcud05, tabIndex=51;
+Edit ohcud12=ohc_file.ohcud12, tabIndex=52;
+Edit ohcud06=ohc_file.ohcud06, tabIndex=53;
+Edit ohd02=ohd_file.ohd02, tabIndex=34, title="Line No.", not null, required;
+Edit ohd03=ohd_file.ohd03, tabIndex=35, title="Description", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=36, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=37, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ohd(ohd_file.ohd02,ohd_file.ohd03)
+SCREEN RECORD Undefined(ohc_file.ohc01,ohc_file.ohc04,ohc_file.ohc041,ohc_file.ohc05,ohc_file.ohc07,ohc_file.ohc09,ohc_file.ohc06,ohc_file.ohc061,ohc_file.ohc08,ohc_file.ohc081,formonly.ima021,ohc_file.ohc18,ohc_file.ohc02,ohc_file.ohc10,formonly.gen02_1,ohc_file.ohc11,formonly.gen02_2,ohc_file.ohc13,ohc_file.ohc14,ohc_file.ohc15,ohc_file.ohc16,ohc_file.ohc17,ohc_file.ohc181,ohc_file.ohc182,ohc_file.ohc183,ohc_file.ohc184,ohc_file.ohc03,formonly.imgmksg,ohc_file.ohcconf,ohc_file.ohcuser,ohc_file.ohcmodu,ohc_file.ohcgrup,ohc_file.ohcdate,ohc_file.ohcoriu,ohc_file.ohcorig,ohc_file.ohcud01,ohc_file.ohcud07,ohc_file.ohcud13,ohc_file.ohcud08,ohc_file.ohcud14,ohc_file.ohcud02,ohc_file.ohcud09,ohc_file.ohcud15,ohc_file.ohcud03,ohc_file.ohcud10,ohc_file.ohcud04,ohc_file.ohcud11,ohc_file.ohcud05,ohc_file.ohcud12,ohc_file.ohcud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

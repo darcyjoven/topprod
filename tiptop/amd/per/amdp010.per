@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdp010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amdp010")
+VBox vb31
+Grid gr3680
+{
+ <G group01                                            >
+  Invoice             [ome05               ]
+  Invoice Number      [ome01               ]
+ <                                                     >
+ <G group03                                            >
+  Invoice Date        [ome02               ]
+  Accounts #          [ome16               ]
+ <                                                     >
+}
+END -- gr3680
+Group g01
+Grid gr3681
+{
+  Dept Declaring Tax  [amd22     ] [dummy01   ]
+ <G group02                                            >
+ [plant_1   ][plant_2   ][plant_3   ][plant_4   ]
+ [plant_5   ][plant_6   ][plant_7   ][plant_8   ]
+ <                                                     >
+
+}
+END -- gr3681
+END -- g01
+Grid gr3682
+{
+[g_bgjob                                       ]
+
+
+}
+END -- gr3682
+END -- vb31
+END -- amdp010
+
+TABLES
+amd_file,
+ome_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ome05=ome_file.ome05, tabIndex=1;
+Edit ome01=ome_file.ome01, tabIndex=2;
+Group group03:group03, text="QBE";
+DateEdit ome02=ome_file.ome02, tabIndex=3;
+Edit ome16=ome_file.ome16, tabIndex=4;
+ButtonEdit amd22=amd_file.amd22, action=controlp, tabIndex=5, image="zoom";
+Label dummy01:dummy01, text="ALL";
+Group group02:group02, text="Plant No.";
+Edit plant_1=formonly.plant_1 type VARCHAR, tabIndex=6;
+Edit plant_2=formonly.plant_2 type VARCHAR, tabIndex=7;
+Edit plant_3=formonly.plant_3 type VARCHAR, tabIndex=8;
+Edit plant_4=formonly.plant_4 type VARCHAR, tabIndex=9;
+Edit plant_5=formonly.plant_5 type VARCHAR, tabIndex=10;
+Edit plant_6=formonly.plant_6 type VARCHAR, tabIndex=11;
+Edit plant_7=formonly.plant_7 type VARCHAR, tabIndex=12;
+Edit plant_8=formonly.plant_8 type VARCHAR, tabIndex=13;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=14, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ome_file.ome05,ome_file.ome01,ome_file.ome02,ome_file.ome16,amd_file.amd22,formonly.plant_1,formonly.plant_2,formonly.plant_3,formonly.plant_4,formonly.plant_5,formonly.plant_6,formonly.plant_7,formonly.plant_8,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

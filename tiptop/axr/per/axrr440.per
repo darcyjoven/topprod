@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrr440.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr440")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                              >
+  Adjust Slip No.     [ooa01               ]
+  Adjust Date         [ooa02               ]
+  Accounts Customer   [ooa03               ]
+  Department          [ooa15               ]
+  Transfer-to Customer[oob24               ]
+
+ <                                                                       >
+ <G group02                           >
+  Print Option   [n                   ]
+ <                                    >
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                             ]
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- axrr440
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ooa01=formonly.ooa01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit ooa02=formonly.ooa02 type DATE, tabIndex=2;
+ButtonEdit ooa03=formonly.ooa03 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ooa15=formonly.ooa15 type CHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit oob24=formonly.oob24 type CHAR, action=controlp, tabIndex=7, image="zoom";
+Group group02:group02, text="INPUT";
+ComboBox n=formonly.n type CHAR, tabIndex=5, not null, required, items=(("1", %"Confirmed"),("2", %"UnConfirmed"),("3", %"All "));
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ooa01,formonly.ooa02,formonly.ooa03,formonly.ooa15,formonly.oob24,formonly.n,formonly.more)
+END -- INSTRUCTIONS
+

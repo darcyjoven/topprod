@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt3005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt3005")
+VBox VBox1
+Folder pc654
+Page page01(text="Main")
+Grid gr2732
+{
+ <G group01                                      >
+  Product No.         [omb04               ]
+ <                                               >
+
+}
+END -- gr2732
+END -- page01
+END -- pc654
+END -- VBox1
+END -- axrt3005
+
+TABLES
+omb_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit omb04=omb_file.omb04, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Details";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(omb_file.omb04)
+END -- INSTRUCTIONS
+

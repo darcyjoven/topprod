@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt301")
+VBox vb6
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr23
+{
+
+ Enacting Institution  [raa01       ][raa01_desc     ] Sales Promotion Order  [raa07     ]
+ Campaign No.          [raa02       ]                 [dummy01                                                                            ]
+ Campaign Short Name   [raa03       ]                  Auditing Code          [raaconf     ][imgmksg   ]
+ Campaign Name         [raa04          ]               Auditing Date          [raacond     ][          ]
+ Campaign Begin Date   [raa05       ]                  Auditing Personnel     [raaconu     ]
+ Campaign End Date     [raa06       ]                  Memo                   [raa08               ]
+
+}
+END -- gr23
+END -- Page1
+Page Page2(text=%"Info")
+Grid gr26
+{
+
+ Record Owner [raauser   ]    Record Modify User [raamodu   ]   Record Acti       [raaacti   ]
+ Record Group [raagrup   ]    Last Modified Date [raadate   ]   Record Creat Date [raacrat   ]
+ Record Orig. [raaoriu   ]    Dept Orig.         [raaorig   ]
+
+}
+END -- gr26
+END -- Page2
+END -- pc1
+Grid gr25
+{
+  ----------Count[cnt       ]----------
+
+
+
+}
+END -- gr25
+END -- vb6
+END -- artt301
+
+TABLES
+raa_file
+ATTRIBUTES
+Edit raa01=raa_file.raa01, tabIndex=1, noEntry, not null, required;
+Edit raa01_desc=formonly.raa01_desc type CHAR, tabIndex=2, noEntry;
+Edit raa07=raa_file.raa07, tabIndex=19, default = "123", not null, required;
+Edit raa02=raa_file.raa02, tabIndex=3, not null, required;
+Label dummy01:dummy01, text="1.Merchandise Special Offer 2.Category Special Offer 3.Part of Price Special Offer \n4.Assembly Promotion 5.Promotion for Full Quota";
+Edit raa03=raa_file.raa03, tabIndex=4;
+ComboBox raaconf=raa_file.raaconf, tabIndex=8, default = "N", noEntry, items=(("Y", "Auditinged"),("N", "Not Auditinged"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit raa04=raa_file.raa04, tabIndex=5;
+DateEdit raacond=raa_file.raacond, tabIndex=9, noEntry;
+DateEdit raa05=raa_file.raa05, tabIndex=6, not null, required;
+ButtonEdit raaconu=raa_file.raaconu, action=controlp, tabIndex=10, noEntry, image="zoom.png";
+DateEdit raa06=raa_file.raa06, tabIndex=7, not null, required;
+Edit raa08=raa_file.raa08, tabIndex=11;
+Edit raauser=raa_file.raauser, tabIndex=12, noEntry;
+Edit raamodu=raa_file.raamodu, tabIndex=14, noEntry;
+Edit raaacti=raa_file.raaacti, tabIndex=16, noEntry;
+Edit raagrup=raa_file.raagrup, tabIndex=13, noEntry;
+DateEdit raadate=raa_file.raadate, tabIndex=15, noEntry;
+DateEdit raacrat=raa_file.raacrat, tabIndex=17, noEntry;
+Edit raaoriu=raa_file.raaoriu, tabIndex=21, noEntry;
+Edit raaorig=raa_file.raaorig, tabIndex=20, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(raa_file.raa01,formonly.raa01_desc,raa_file.raa07,raa_file.raa02,raa_file.raa03,raa_file.raaconf,formonly.imgmksg,raa_file.raa04,raa_file.raacond,raa_file.raa05,raa_file.raaconu,raa_file.raa06,raa_file.raa08,raa_file.raauser,raa_file.raamodu,raa_file.raaacti,raa_file.raagrup,raa_file.raadate,raa_file.raacrat,raa_file.raaoriu,raa_file.raaorig,formonly.cnt)
+END -- INSTRUCTIONS
+

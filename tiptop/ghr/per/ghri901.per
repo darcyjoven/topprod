@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri901.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+HBox HBox1
+Grid ds1
+{
+
+ hrzx01[hrzx01     ][hrzx01_n       ]
+ hrzx02[hrzx02     ][hrzx02_n       ]
+[hrzx04  ]                 [hrzx05  ]
+ hrzx03[hrzx03                     ]
+       [                           ]
+
+}
+END -- ds1
+END -- HBox1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid ds2
+{
+
+ hrzxuser[hrzxuser  ]hrzxmodu[hrzxmodu  ]
+ hrzxgrup[hrzxgrup  ]hrzxdate[hrzxdate  ]
+ hrzxoriu[hrzxoriu  ]
+ hrzxorig[hrzxorig  ]
+
+
+}
+END -- ds2
+END -- Page2
+END -- Folder1
+Folder Folder2
+Page Page3(action=xiangxi, text=%"Page3")
+Table ds3
+{
+[hrzxa02 |hrzxa03   |hrzxa04   |hrzxa04_|hrzxa05   |hrzxa06               ]
+[hrzxa02 |hrzxa03   |hrzxa04   |hrzxa04_|hrzxa05   |hrzxa06               ]
+[hrzxa02 |hrzxa03   |hrzxa04   |hrzxa04_|hrzxa05   |hrzxa06               ]
+[hrzxa02 |hrzxa03   |hrzxa04   |hrzxa04_|hrzxa05   |hrzxa06               ]
+[hrzxa02 |hrzxa03   |hrzxa04   |hrzxa04_|hrzxa05   |hrzxa06               ]
+}
+END -- ds3
+END -- Page3
+END -- Folder2
+Grid Grid1
+{
+  ---------- Rows [idx   ]/[cnt   ]  ---  Details [cn2           ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrzx01=formonly.hrzx01 type VARCHAR, action=controlp, tabIndex=1, not null, image="zoom", scroll;
+Edit hrzx01_n=formonly.hrzx01_n, tabIndex=19, noEntry;
+ButtonEdit hrzx02=formonly.hrzx02 type VARCHAR, action=controlp, tabIndex=2, image="zoom", scroll;
+Edit hrzx02_n=formonly.hrzx02_n, tabIndex=18, noEntry;
+CheckBox hrzx04=formonly.hrzx04, tabIndex=21, text=%"hrzx04", valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrzx05=formonly.hrzx05, tabIndex=22, text=%"hrzx05", valueChecked = "Y", valueUnchecked = "N";
+Edit hrzx03=formonly.hrzx03 type VARCHAR, tabIndex=1;
+Edit hrzxuser=formonly.hrzxuser type VARCHAR, tabIndex=3, scroll;
+Edit hrzxmodu=formonly.hrzxmodu type VARCHAR, tabIndex=5, scroll;
+Edit hrzxgrup=formonly.hrzxgrup type VARCHAR, tabIndex=4, scroll;
+Edit hrzxdate=formonly.hrzxdate type DATE, tabIndex=6, scroll;
+Edit hrzxoriu=formonly.hrzxoriu type VARCHAR, tabIndex=7, scroll;
+Edit hrzxorig=formonly.hrzxorig type VARCHAR, tabIndex=8, scroll;
+Edit hrzxa02=formonly.hrzxa02 type INTEGER, tabIndex=10, title=%"hrzxa02", not null, scroll;
+ComboBox hrzxa03=formonly.hrzxa03 type VARCHAR, tabIndex=11, title=%"hrzxa03", scroll, items=(("1", "1"),("2", "2"));
+ButtonEdit hrzxa04=formonly.hrzxa04 type DECIMAL(15,3), action=controlp, tabIndex=12, title=%"hrzxa04", image="zoom", scroll;
+Edit hrzxa04_=formonly.hrzxa04_n, tabIndex=20, title=%"hrzxa04_n", noEntry;
+CheckBox hrzxa05=formonly.hrzxa05 type VARCHAR, tabIndex=13, title=%"hrzxa05", text=%"", valueChecked = "Y", valueUnchecked = "N";
+Edit hrzxa06=formonly.hrzxa06 type DECIMAL(15,3), tabIndex=14, title=%"hrzxa06", scroll;
+Edit idx=formonly.idx type SMALLINT, tabIndex=15, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrzx01,formonly.hrzx03,formonly.hrzxuser,formonly.hrzxgrup,formonly.hrzxmodu,formonly.hrzxdate,formonly.hrzxoriu,formonly.hrzxorig,formonly.hrzx02,formonly.idx,formonly.cnt,formonly.cn2,formonly.hrzx02_n,formonly.hrzx01_n,formonly.hrzx04,formonly.hrzx05)
+SCREEN RECORD s_hrzxa(formonly.hrzxa02,formonly.hrzxa03,formonly.hrzxa04,formonly.hrzxa04_n,formonly.hrzxa05,formonly.hrzxa06)
+END -- INSTRUCTIONS
+

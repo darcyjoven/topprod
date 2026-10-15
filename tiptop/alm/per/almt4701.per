@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt4701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt4701")
+VBox vb7
+Folder pc6
+Page Page10(text=%"Basic Date")
+Table s_lqo
+{
+[lqo02       |azf03                         |lqo03               ]
+[lqo02       |azf03                         |lqo03               ]
+[lqo02       |azf03                         |lqo03               ]
+[lqo02       |azf03                         |lqo03               ]
+[lqo02       |azf03                         |lqo03               ]
+
+}
+END -- s_lqo
+END -- Page10
+END -- pc6
+Grid gr15
+{
+ --------Details[cn2   ]------
+
+}
+END -- gr15
+END -- vb7
+END -- almt4701
+
+TABLES
+lqo_file
+ATTRIBUTES
+ButtonEdit lqo02=lqo_file.lqo02, action=controlp, tabIndex=1, title="Deduction No.", not null, required, image="zoom.png";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=2, title="Deduction Name", noEntry;
+Edit lqo03=lqo_file.lqo03, tabIndex=3, title="Amount", not null;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lqo(lqo_file.lqo02,formonly.azf03,lqo_file.lqo03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

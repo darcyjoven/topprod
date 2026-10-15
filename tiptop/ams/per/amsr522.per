@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsr522.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amsr522")
+VBox VBox1
+Grid gr122
+{
+ <G group01                                                                             >
+  Action Day          [mps11               ]  Planner             [ima67               ]
+  Item No.            [mps01               ]  Buyer               [ima43               ]
+  Source Code         [ima08               ]  Require.Date        [mps03               ]
+ <                                                                                      >
+
+}
+END -- gr122
+Group g01(text="INPUT")
+Grid gr123
+{
+ Version     [ver_no    ]
+ <G group02                                                           >
+  [s1                ] [s2                 ] [s3                  ]
+  [t1                ] [t2                 ] [t3                  ]
+ <                                                                    >
+
+}
+END -- gr123
+END -- g01
+Grid gr124
+{
+[more                                                 ]
+
+}
+END -- gr124
+END -- VBox1
+END -- amsr522
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit mps11=formonly.mps11 type DATE, tabIndex=1;
+Edit ima67=formonly.ima67 type CHAR, tabIndex=2;
+ButtonEdit mps01=formonly.mps01 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Edit ima43=formonly.ima43 type CHAR, tabIndex=4;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=5;
+DateEdit mps03=formonly.mps03 type DATE, tabIndex=6;
+Edit ver_no=formonly.ver_no type CHAR, tabIndex=7;
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, queryEditable, items=(("1", "Action Day"),("2", "Item No."),("3", "Source Code"),("4", "Planner"),("5", "Buyer "),("6", "Requirement Date"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=9, queryEditable, items=(("1", "Action Day"),("2", "Item No."),("3", "Source Code"),("4", "Planner"),("5", "Buyer "),("6", "Requirement Date"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=10, queryEditable, items=(("1", "Action Day"),("2", "Item No."),("3", "Source Code"),("4", "Planner"),("5", "Buyer "),("6", "Requirement Date"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=13, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.mps11,formonly.ima67,formonly.mps01,formonly.ima43,formonly.ima08,formonly.mps03,formonly.ver_no,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.more)
+END -- INSTRUCTIONS
+

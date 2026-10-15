@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfr100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr400")
+VBox VBox1
+Grid gr5075
+{
+ <G group01                                                     >
+
+
+
+  P/R No.       [bom_ver             ]
+
+
+ <                                                              >
+
+
+}
+END -- gr5075
+END -- VBox1
+END -- apmr400
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit bom_ver=formonly.bom_ver type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bom_ver)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapq700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapq700")
+VBox vb8
+Folder folder01
+Page page01(text="Main")
+Grid gr168
+{
+ L/C NO.            [all01               ]
+ Times of Amendment [all00     ]
+ Date               [all_date    ]
+}
+END -- gr168
+END -- page01
+END -- folder01
+Table s_all
+{
+[all0|all44   |all04           |all1|all11               |pmn041                        |all83        |all85       |all80        |all82       |pmn07|all06               |all07   |all08               ]
+[all0|all44   |all04           |all1|all11               |pmn041                        |all83        |all85       |all80        |all82       |pmn07|all06               |all07   |all08               ]
+[all0|all44   |all04           |all1|all11               |pmn041                        |all83        |all85       |all80        |all82       |pmn07|all06               |all07   |all08               ]
+[all0|all44   |all04           |all1|all11               |pmn041                        |all83        |all85       |all80        |all82       |pmn07|all06               |all07   |all08               ]
+[all0|all44   |all04           |all1|all11               |pmn041                        |all83        |all85       |all80        |all82       |pmn07|all06               |all07   |all08               ]
+[all0|all44   |all04           |all1|all11               |pmn041                        |all83        |all85       |all80        |all82       |pmn07|all06               |all07   |all08               ]
+[all0|all44   |all04           |all1|all11               |pmn041                        |all83        |all85       |all80        |all82       |pmn07|all06               |all07   |all08               ]
+[all0|all44   |all04           |all1|all11               |pmn041                        |all83        |all85       |all80        |all82       |pmn07|all06               |all07   |all08               ]
+[all0|all44   |all04           |all1|all11               |pmn041                        |all83        |all85       |all80        |all82       |pmn07|all06               |all07   |all08               ]
+[all0|all44   |all04           |all1|all11               |pmn041                        |all83        |all85       |all80        |all82       |pmn07|all06               |all07   |all08               ]
+}
+END -- s_all
+Grid gr169
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------  Total Amount       [tot2                ] ------------
+
+
+
+}
+END -- gr169
+END -- vb8
+END -- aapq700
+
+TABLES
+all_file
+ATTRIBUTES
+ButtonEdit all01=all_file.all01, action=controlp, tabIndex=1, image="zoom";
+Edit all00=all_file.all00, tabIndex=2;
+DateEdit all_date=formonly.all_date type DATE, tabIndex=3;
+Edit all0=all_file.all02, tabIndex=4, title="Ln#";
+ButtonEdit all44=all_file.all44, action=controlp, tabIndex=20, title="Plant", image="zoom.png";
+Edit all04=all_file.all04, tabIndex=5, title="P/O";
+Edit all1=all_file.all05, tabIndex=6, title="Ln#";
+Edit all11=all_file.all11, tabIndex=7, title="Item No.";
+Edit pmn041=formonly.pmn041 type CHAR, tabIndex=8, title="Part Name", noEntry;
+Edit all83=all_file.all83, tabIndex=9, title="Par/Ref Unit";
+Edit all85=all_file.all85, tabIndex=10, title="Par/Ref Qty";
+Edit all80=all_file.all80, tabIndex=11, title="Chi/P/O Unit";
+Edit all82=all_file.all82, tabIndex=12, title="Chi/P/O Qty";
+Edit pmn07=formonly.pmn07 type CHAR, tabIndex=13, title="Unit", noEntry;
+Edit all06=all_file.all06, tabIndex=14, title="U/P";
+Edit all07=all_file.all07, tabIndex=15, title="Qty";
+Edit all08=all_file.all08, tabIndex=16, title="Amount", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+Edit tot2=formonly.tot2 type CHAR, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_all(all_file.all02,all_file.all44,all_file.all04,all_file.all05,all_file.all11,formonly.pmn041,all_file.all83,all_file.all85,all_file.all80,all_file.all82,formonly.pmn07,all_file.all06,all_file.all07,all_file.all08)
+SCREEN RECORD Undefined(all_file.all01,all_file.all00,formonly.all_date,formonly.cnt,formonly.cn2,formonly.tot2)
+END -- INSTRUCTIONS
+

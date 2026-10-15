@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr834.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxr834")
+VBox VBox1
+Grid gr1196
+{
+ <G group01                                 >
+  Inventory Label     [bwb01               ]
+
+ <                                          >
+
+}
+END -- gr1196
+Group g01(text="INPUT")
+VBox VBox2
+Grid gr1197
+{
+ Year                [yy  ]
+ <G group02       >  <G group03          >
+  [ima15         ]    [a                ]
+ <                >  <                   >
+ <G group04                             >
+ [b                                     ]
+
+ <                                      >
+
+}
+END -- gr1197
+END -- VBox2
+END -- g01
+END -- VBox1
+END -- abxr834
+
+TABLES
+bwb_file,
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit bwb01=bwb_file.bwb01, tabIndex=1;
+Edit yy=formonly.yy type CHAR, tabIndex=2;
+Group group02:group02, text="Bonded";
+RadioGroup ima15=ima_file.ima15, tabIndex=3, default = "2", items=(("1", "Bonded"),("2", "All"));
+Group group03:group03, text="Item Style";
+RadioGroup a=formonly.a type CHAR, tabIndex=4, items=(("1", "Material"),("2", "Semi-Product"),("3", "Finished Product"),("4", "All"));
+Group group04:group04, text="Print Data";
+CheckBox b=formonly.b type CHAR, tabIndex=5, text="Print UnBond BOM", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bwb_file.bwb01,formonly.yy,ima_file.ima15,formonly.a,formonly.b)
+END -- INSTRUCTIONS
+

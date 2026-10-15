@@ -1,0 +1,119 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti008.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder pc1
+Page main(text=%"Main")
+Grid gr1
+{
+
+[label1    ][imz01                 ]                           [label11   ][imz54                 ]
+[label2    ][imz02                 ]                           [label12   ][imz72                 ]
+[label3    ][imz08                 ]                           [label13   ][imz45                 ]
+[label4    ][imz131                ][oba02               ]     [label14   ][imz46                 ]
+[label5    ][imz25                 ]                           [label15   ][imz47                 ]
+[label6    ][imz44                 ][imz44_fac           ]     [label16   ][imz12                 ]
+[label7    ][imz31                 ][imz31_fac           ]     [label17   ][imz39                 ]
+[label8    ][imz09                 ][azf03_1             ]     [label18   ][imz73                 ]
+[label9    ][imz10                 ][azf03_2             ]
+[label10   ][imz11                 ][azf03_3             ]
+
+}
+END -- gr1
+END -- main
+Page info(text=%"Info")
+Grid Grid1
+{
+
+ [label19   ][imzuser        ]    [label22   ][imzmodu        ]      [label25   ][imzacti        ]
+ [label20   ][imzgrup        ]    [label23   ][imzdate        ]
+ [label21   ][imzoriu        ]    [label24   ][imzorig        ]
+
+}
+END -- Grid1
+END -- info
+END -- pc1
+Grid gr3
+{
+
+  ------[label|idx  |la|cnt   ]
+
+}
+END -- gr3
+END -- VBox1
+END -- arti008
+
+TABLES
+imz_file
+ATTRIBUTES
+Label label1:Label1, text=%"imz01";
+ButtonEdit imz01=imz_file.imz01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Label label11:Label11, text=%"imz54";
+ButtonEdit imz54=imz_file.imz54, action=controlp, tabIndex=17, image="zoom.png";
+Label label2:Label2, text=%"imz02";
+Edit imz02=imz_file.imz02, tabIndex=2;
+Label label12:Label12, text=%"imz72";
+ComboBox imz72=imz_file.imz72, tabIndex=18, default = "0", not null, items=(("0", "No control"),("1", "Requisition for control"),("2", "Purchase order to control"),("3", "Both of them need to control"));
+Label label3:Label3, text=%"imz08";
+ComboBox imz08=imz_file.imz08, tabIndex=3, default = "P", noEntry, not null, items=(("A", "Group member"),("C", "Specifications of component"),("D", "Properties of materials"),("K", "Virtual materials accessories"),("M", "Home-made parts"),("P", "Procurement of materials"),("R", "In the preparation of road materials"),("S", "Outsourcing processing parts"),("T", "Final specifications materials"),("U", "Homemade bulk materials"),("V", "Procurement of bulk materials"),("X", "Virtual materials"),("Z", "Miscellaneous pieces"));
+Label label13:Label13, text=%"imz45";
+Edit imz45=imz_file.imz45, tabIndex=19, default = "1";
+Label label4:Label4, text=%"imz131";
+ButtonEdit imz131=imz_file.imz131, action=controlp, tabIndex=4, image="zoom.png";
+Edit oba02=formonly.oba02 type CHAR, tabIndex=5, noEntry;
+Label label14:Label14, text=%"imz46";
+Edit imz46=imz_file.imz46, tabIndex=20, default = "0";
+Label label5:Label5, text=%"imz25";
+ButtonEdit imz25=imz_file.imz25, action=controlp, tabIndex=6, not null, image="zoom.png";
+Label label15:Label15, text=%"imz47";
+Edit imz47=imz_file.imz47, tabIndex=21, default = "0";
+Label label6:Label6, text=%"imz44";
+ButtonEdit imz44=imz_file.imz44, action=controlp, tabIndex=7, image="zoom.png";
+Edit imz44_fac=formonly.imz44_fac type CHAR, tabIndex=8, noEntry;
+Label label16:Label16, text=%"imz12";
+ButtonEdit imz12=imz_file.imz12, action=controlp, tabIndex=22, image="zoom.png";
+Label label7:Label7, text=%"imz31";
+ButtonEdit imz31=imz_file.imz31, action=controlp, tabIndex=9, image="zoom.png";
+Edit imz31_fac=formonly.imz31_fac type CHAR, tabIndex=10, noEntry;
+Label label17:Label17, text=%"imz39";
+ButtonEdit imz39=imz_file.imz39, action=controlp, tabIndex=23, image="zoom.png";
+Label label8:Label8, text=%"imz09";
+ButtonEdit imz09=imz_file.imz09, action=controlp, tabIndex=11, image="zoom.png";
+Edit azf03_1=formonly.azf03_1 type CHAR, tabIndex=12, noEntry;
+Label label18:Label18, text=%"imz73";
+ButtonEdit imz73=imz_file.imz73, action=controlp, tabIndex=24, image="zoom.png";
+Label label9:Label9, text=%"imz10";
+ButtonEdit imz10=imz_file.imz10, action=controlp, tabIndex=13, image="zoom.png";
+Edit azf03_2=formonly.azf03_2 type CHAR, tabIndex=14, noEntry;
+Label label10:Label10, text=%"imz11";
+ButtonEdit imz11=imz_file.imz11, action=controlp, tabIndex=15, image="zoom.png";
+Edit azf03_3=formonly.azf03_3 type CHAR, tabIndex=16, noEntry;
+Label label19:Label19, text=%"imzuser";
+Edit imzuser=imz_file.imzuser, tabIndex=25, noEntry;
+Label label22:Label22, text=%"imzmodu";
+Edit imzmodu=imz_file.imzmodu, tabIndex=28, noEntry;
+Label label25:Label25, text=%"imzacti";
+Edit imzacti=imz_file.imzacti, tabIndex=31, noEntry;
+Label label20:Label20, text=%"imzgrup";
+Edit imzgrup=imz_file.imzgrup, tabIndex=26, noEntry;
+Label label23:Label23, text=%"imzdate";
+DateEdit imzdate=imz_file.imzdate, tabIndex=29, noEntry;
+Label label21:Label21, text=%"imzoriu";
+Edit imzoriu=imz_file.imzoriu, tabIndex=27, noEntry;
+Label label24:Label24, text=%"imzorig";
+Edit imzorig=imz_file.imzorig, tabIndex=30, noEntry;
+Label label:Label26, text=%"Rows";
+Edit idx=formonly.idx type SMALLINT, tabIndex=32, noEntry;
+Label la:Label27, text=%"/";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,imz_file.imzgrup,imz_file.imzoriu,imz_file.imzuser,imz_file.imzmodu,imz_file.imzdate,imz_file.imzorig,imz_file.imzacti,imz_file.imz01,imz_file.imz02,imz_file.imz08,imz_file.imz131,imz_file.imz25,imz_file.imz44,imz_file.imz31,imz_file.imz09,imz_file.imz10,imz_file.imz11,imz_file.imz54,imz_file.imz72,imz_file.imz45,imz_file.imz46,imz_file.imz47,imz_file.imz12,imz_file.imz39,imz_file.imz73,formonly.oba02,formonly.imz44_fac,formonly.imz31_fac,formonly.azf03_1,formonly.azf03_2,formonly.azf03_3)
+END -- INSTRUCTIONS
+

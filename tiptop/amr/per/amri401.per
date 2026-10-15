@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amri401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amri401")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+Grid gr3917
+{
+ [dummy01                         ]
+ SO Material NO. [msj01           ]
+ [dummy02                         ]
+}
+END -- gr3917
+END -- page01
+END -- folder01
+Table s_msj
+{
+[msj02               |oea03               |oea02        ]
+[msj02               |oea03               |oea02        ]
+[msj02               |oea03               |oea02        ]
+[msj02               |oea03               |oea02        ]
+[msj02               |oea03               |oea02        ]
+[msj02               |oea03               |oea02        ]
+[msj02               |oea03               |oea02        ]
+[msj02               |oea03               |oea02        ]
+[msj02               |oea03               |oea02        ]
+[msj02               |oea03               |oea02        ]
+
+}
+END -- s_msj
+Grid gr3918
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3918
+END -- vb4
+END -- amri401
+
+TABLES
+msj_file,
+oea_file
+ATTRIBUTES
+Label dummy01:dummy01;
+Edit msj01=msj_file.msj01, tabIndex=1, not null, required;
+Label dummy02:dummy02;
+ButtonEdit msj02=msj_file.msj02, action=controlp, tabIndex=2, title="SO No.", image="zoom", comment="<^P> Query W/O #   ";
+Edit oea03=oea_file.oea03, tabIndex=3, title="Custom No.", noEntry;
+DateEdit oea02=oea_file.oea02, tabIndex=3, title="WO Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=4;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_msj(msj_file.msj02,oea_file.oea03,oea_file.oea02)
+SCREEN RECORD Undefined(msj_file.msj01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

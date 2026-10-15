@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csub/4fd/cs_csmi113.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid2
+{
+
+       基础资料  -------------------------------------------------------------------------------------------------
+       料件编号[ima01               ]订单数量[oeb12             ] 备品   [bei               ]
+       PNL排版 [pnls          ]      SET排版 [sets           ]    宽幅   [kuan           ]
+       匹配排版资料  ---------------------------------------------------------------------------------------------
+       市场类型[tc_sma02            ]宽幅      [tc_sma04        ]层数    [tc_sma07      ]料号     [tc_sma09      ]
+       良率    [tc_sma10            ]出货资料数[tc_sma12        ]最低投料数[tc_sma13        ]
+       首件损耗[tc_sma15            ]阻抗损耗  [im][tc_sma16    ]卷料损耗[ro][tc_sma18  ]辅料损耗 [tc_sma19      ]
+
+       结果[btn       ] ------------------------------------------------------------------------------------------
+      [pcs                                                                               ]   =    [pnl           ]
+       +首件损耗  [first                   ]
+       +阻抗损耗  [impedance               ]
+       +卷料损耗  [roll                    ]
+       主板PNL    [main                    ]   辅材PNL    [sub                     ]
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit ima01=formonly.ima01, action=controlp, tabIndex=1, image="zoom";
+Edit oeb12=formonly.oeb12 type INTEGER, tabIndex=2, not null, required;
+Edit bei=formonly.bei type INTEGER, tabIndex=3, not null, required;
+LABEL pnls=formonly.pnls type INTEGER;
+LABEL sets=formonly.sets type INTEGER;
+LABEL kuan=formonly.kuan type INTEGER;
+LABEL tc_sma02=formonly.tc_sma02 type INTEGER;
+LABEL tc_sma04=formonly.tc_sma04 type INTEGER;
+LABEL tc_sma07=formonly.tc_sma07 type INTEGER;
+LABEL tc_sma09=formonly.tc_sma09 type INTEGER;
+Edit tc_sma10=formonly.tc_sma10 type INTEGER, tabIndex=8;
+Edit tc_sma12=formonly.tc_sma12 type INTEGER, tabIndex=4;
+LABEL tc_sma13=formonly.tc_sma13 type INTEGER;
+LABEL tc_sma15=formonly.tc_sma15 type INTEGER;
+CheckBox im=formonly.impedancechk, tabIndex=5, default = "N", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+LABEL tc_sma16=formonly.tc_sma16 type INTEGER;
+CheckBox ro=formonly.rollchk, tabIndex=6, default = "N", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+LABEL tc_sma18=formonly.tc_sma18 type INTEGER;
+LABEL tc_sma19=formonly.tc_sma19 type INTEGER;
+Button btn:btn, tabIndex=7, text=%"刷新";
+LABEL pcs=formonly.pcs;
+LABEL pnl=formonly.pnl;
+LABEL first=formonly.first;
+LABEL impedance=formonly.impedance;
+LABEL roll=formonly.roll;
+LABEL main=formonly.main;
+LABEL sub=formonly.sub;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pcs,formonly.pnl,formonly.first,formonly.impedance,formonly.roll,formonly.main,formonly.sub,formonly.ima01,formonly.oeb12,formonly.sets,formonly.pnls,formonly.tc_sma02,formonly.tc_sma04,formonly.tc_sma13,formonly.tc_sma07,formonly.tc_sma09,formonly.tc_sma19,formonly.tc_sma15,formonly.tc_sma12,formonly.tc_sma16,formonly.tc_sma18,formonly.impedancechk,formonly.rollchk,formonly.bei,formonly.kuan,formonly.tc_sma10)
+END -- INSTRUCTIONS
+

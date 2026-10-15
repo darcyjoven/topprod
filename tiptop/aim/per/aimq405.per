@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/4fd/aimq405.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq401")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3161
+{
+ Warehouse #         [imd01     ]
+ Name                [imd02               ]          [chk1      ]
+}
+END -- gr3161
+END -- page01
+END -- folder01
+Table s_img
+{
+[img01               |ima02               |ima021               |imaud10       |img03     |ime03   |img04                  |img09|img10          |img10_1       |img19     |img36  |img37   |img18   |gen01   |gen02      |gem01   |gem02       |pmk04     ]
+[img01               |ima02               |ima021               |imaud10       |img03     |ime03   |img04                  |img09|img10          |img10_1       |img19     |img36  |img37   |img18   |gen01   |gen02      |gem01   |gem02       |pmk04     ]
+[img01               |ima02               |ima021               |imaud10       |img03     |ime03   |img04                  |img09|img10          |img10_1       |img19     |img36  |img37   |img18   |gen01   |gen02      |gem01   |gem02       |pmk04     ]
+[img01               |ima02               |ima021               |imaud10       |img03     |ime03   |img04                  |img09|img10          |img10_1       |img19     |img36  |img37   |img18   |gen01   |gen02      |gem01   |gem02       |pmk04     ]
+[img01               |ima02               |ima021               |imaud10       |img03     |ime03   |img04                  |img09|img10          |img10_1       |img19     |img36  |img37   |img18   |gen01   |gen02      |gem01   |gem02       |pmk04     ]
+[img01               |ima02               |ima021               |imaud10       |img03     |ime03   |img04                  |img09|img10          |img10_1       |img19     |img36  |img37   |img18   |gen01   |gen02      |gem01   |gem02       |pmk04     ]
+[img01               |ima02               |ima021               |imaud10       |img03     |ime03   |img04                  |img09|img10          |img10_1       |img19     |img36  |img37   |img18   |gen01   |gen02      |gem01   |gem02       |pmk04     ]
+[img01               |ima02               |ima021               |imaud10       |img03     |ime03   |img04                  |img09|img10          |img10_1       |img19     |img36  |img37   |img18   |gen01   |gen02      |gem01   |gem02       |pmk04     ]
+[img01               |ima02               |ima021               |imaud10       |img03     |ime03   |img04                  |img09|img10          |img10_1       |img19     |img36  |img37   |img18   |gen01   |gen02      |gem01   |gem02       |pmk04     ]
+[img01               |ima02               |ima021               |imaud10       |img03     |ime03   |img04                  |img09|img10          |img10_1       |img19     |img36  |img37   |img18   |gen01   |gen02      |gem01   |gem02       |pmk04     ]
+
+}
+END -- s_img
+Grid gr3162
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3162
+END -- VBox1
+END -- aimq405
+
+TABLES
+img_file,
+imd_file,
+ima_file
+ATTRIBUTES
+ButtonEdit imd01=imd_file.imd01, action=controlp, tabIndex=1, image="zoom.png";
+Edit imd02=imd_file.imd02, tabIndex=2, noEntry;
+CheckBox chk1=formonly.chk1, tabIndex=18, text=%"chk1", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit img01=img_file.img01, action=controlp, tabIndex=3, title="Item No.", not null, required, image="zoom", comment="Please by QBE, Enter Item# to Query";
+Edit ima02=ima_file.ima02, tabIndex=4, title="P/N";
+Edit ima021=ima_file.ima021, tabIndex=5, title="Spec.";
+Edit imaud10=formonly.imaud10, tabIndex=17, title=%"imaud10";
+ButtonEdit img03=img_file.img03, action=controlp, tabIndex=6, title="Location", image="zoom.png";
+Edit ime03=formonly.ime03, tabIndex=15, title=%"ime03", noEntry;
+Edit img04=img_file.img04, tabIndex=7, title="Lot#";
+Edit img09=img_file.img09, tabIndex=8, title="Unit";
+Edit img10=img_file.img10, tabIndex=9, title="Inventory Qty", not null, required;
+Edit img10_1=formonly.img10_1, tabIndex=16, title=%"img10_1";
+Edit img19=img_file.img19, tabIndex=10, title="Inv Class";
+Edit img36=img_file.img36, tabIndex=11, title="Lock Cd";
+DateEdit img37=img_file.img37, tabIndex=12, title="Idle Dt";
+DateEdit img18=img_file.img18, tabIndex=19, title=%"Valid Date";
+Edit gen01=formonly.gen01, tabIndex=20, title=%"gen01";
+Edit gen02=formonly.gen02, tabIndex=21, title=%"gen02";
+Edit gem01=formonly.gem01, tabIndex=22, title=%"gem01";
+Edit gem02=formonly.gem02, tabIndex=23, title=%"gem02";
+Edit pmk04=formonly.pmk04 type DATE, tabIndex=24, title=%"pmk04";
+Edit cnt=formonly.cnt type CHAR, tabIndex=13;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(img_file.img01,ima_file.ima02,ima_file.ima021,formonly.imaud10,img_file.img03,formonly.ime03,img_file.img04,img_file.img09,img_file.img10,formonly.img10_1,img_file.img19,img_file.img36,img_file.img37,img_file.img18,formonly.gen01,formonly.gen02,formonly.gem01,formonly.gem02,formonly.pmk04)
+SCREEN RECORD Undefined(imd_file.imd01,imd_file.imd02,formonly.cnt,formonly.cn2,formonly.chk1)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi712.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi712")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr4052
+{
+ Contract No.         [nnq01     ]
+ Line No.             [nnq02     ]
+}
+END -- gr4052
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_nnq
+{
+[nnq0|nnq04                                             |nnq05                                             ]
+[nnq0|nnq04                                             |nnq05                                             ]
+[nnq0|nnq04                                             |nnq05                                             ]
+[nnq0|nnq04                                             |nnq05                                             ]
+[nnq0|nnq04                                             |nnq05                                             ]
+[nnq0|nnq04                                             |nnq05                                             ]
+[nnq0|nnq04                                             |nnq05                                             ]
+[nnq0|nnq04                                             |nnq05                                             ]
+[nnq0|nnq04                                             |nnq05                                             ]
+[nnq0|nnq04                                             |nnq05                                             ]
+
+}
+END -- s_nnq
+Grid gr4053
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4053
+END -- VBox1
+END -- anmi712
+
+TABLES
+nnq_file
+ATTRIBUTES
+ButtonEdit nnq01=nnq_file.nnq01, action=controlp, tabIndex=1, image="zoom", comment="Key Field, No Blank/Repeated!     <^P> Qry Contract # ";
+Edit nnq02=nnq_file.nnq02, tabIndex=2, comment="Comb. with [Doc#] as Key Field ";
+Edit nnq0=nnq_file.nnq03, tabIndex=3, title="Ln#", not null, required;
+Edit nnq04=nnq_file.nnq04, tabIndex=4, title="Proviso", not null, required;
+Edit nnq05=nnq_file.nnq05, tabIndex=5, title="Memo Property";
+Edit cnt=formonly.cnt type CHAR, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nnq(nnq_file.nnq03,nnq_file.nnq04,nnq_file.nnq05)
+SCREEN RECORD Undefined(nnq_file.nnq01,nnq_file.nnq02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

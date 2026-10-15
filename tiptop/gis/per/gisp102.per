@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gis/42f/gisp102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Form")
+Folder folder1
+Page page1(text=%"Page1")
+VBox vbox1
+Group group1(text=%"Group1")
+Grid ds1
+{
+
+[omf05   |omg04                  ]
+[omf13   |omg14                  ]
+[omf03   |omg03                  ]
+[omf01   |omg01                  ]
+
+}
+END -- ds1
+END -- group1
+Grid grid2
+{
+[a                                   ]
+
+}
+END -- grid2
+Grid grid1
+{
+[bgjob                             ]
+
+}
+END -- grid1
+END -- vbox1
+END -- page1
+END -- folder1
+END -- gisp101.tmp
+
+TABLES
+omg_file
+ATTRIBUTES
+Label omf05:omf05, text=%"omg04";
+ButtonEdit omg04=omg_file.omg04, action=controlp, tabIndex=1, image="zoom", scroll;
+Label omf13:omf13, text=%"omg14";
+ButtonEdit omg14=omg_file.omg14, action=controlp, tabIndex=2, image="zoom", scroll;
+Label omf03:omf03, text=%"omg03";
+DateEdit omg03=omg_file.omg03, tabIndex=3;
+Label omf01:omf01, text=%"omg01";
+ButtonEdit omg01=omg_file.omg01, action=controlp, tabIndex=4, not null, required, image="zoom", scroll;
+CheckBox a=formonly.a type CHAR, tabIndex=6, default = "N", text="Exist,Re-Generate?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bgjob=formonly.bgjob type CHAR, tabIndex=5, default = "N", text=%"backgroup", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD record1(omg_file.omg04,omg_file.omg14,omg_file.omg03,omg_file.omg01)
+SCREEN RECORD undefined(formonly.bgjob,formonly.a)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_xlsstyle_oper.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_xlsstyle_oper")
+Grid gr3131
+{
+ <T s_gce                                              >
+ [gce03               |oper_sign    |value            ]
+ [gce03               |oper_sign    |value            ]
+ [gce03               |oper_sign    |value            ]
+ [gce03               |oper_sign    |value            ]
+ [gce03               |oper_sign    |value            ]
+ <                                                     >
+
+}
+END -- gr3131
+END -- p_xlsstyle_oper
+
+TABLES
+gce_file
+ATTRIBUTES
+Table s_gce:s_gce;
+Edit gce03=gce_file.gce03, tabIndex=1, title="Field Name", not null, required;
+ComboBox oper_sign=formonly.oper_sign type VARCHAR, tabIndex=2, title="Operational", not null, required, items=(("=", %"="),("<", %"<"),(">", %">"),("<>", %"<>"));
+Edit value=formonly.value type VARCHAR, tabIndex=3, title="Value";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gce(gce_file.gce03,formonly.oper_sign,formonly.value)
+END -- INSTRUCTIONS
+

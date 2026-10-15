@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi322.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi322")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr5423
+{
+ <G group01                                            >
+  Equipment Group Code [vmp01                         ]
+ <                                                     >
+
+}
+END -- gr5423
+END -- page01
+END -- folder01
+Table s_vmp
+{
+[vmp02         |eca02           ]
+[vmp02         |eca02           ]
+[vmp02         |eca02           ]
+[vmp02         |eca02           ]
+[vmp02         |eca02           ]
+[vmp02         |eca02           ]
+[vmp02         |eca02           ]
+[vmp02         |eca02           ]
+[vmp02         |eca02           ]
+[vmp02         |eca02           ]
+
+}
+END -- s_vmp
+Grid gr5424
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5424
+END -- VBox1
+END -- apsi322
+
+TABLES
+vmp_file
+ATTRIBUTES
+Group group01:group01;
+Edit vmp01=vmp_file.vmp01, tabIndex=1, not null, required;
+ButtonEdit vmp02=vmp_file.vmp02, action=controlp, tabIndex=2, title="Equipment No.", not null, required, image="zoom", comment="<^P>Query Equipment No.";
+Edit eca02=formonly.eca02 type VARCHAR, tabIndex=3, title="Name", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=4, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vmp(vmp_file.vmp02,formonly.eca02)
+SCREEN RECORD Undefined(vmp_file.vmp01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

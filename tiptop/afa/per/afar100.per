@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afar100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"afar100")
+VBox VBox1
+Grid gr1991
+{
+ <G grpqbe                                  >
+  Account             [fak53               ]
+  Lot No.             [fak00               ]
+ <                                          >
+
+}
+END -- gr1991
+Group group01(text="Page01")
+VBox VBox2
+Grid gr1992
+{
+ <G group02                                     >
+ [s1                  ]  [s2                  ]
+ [t1                  ]  [t2                  ]
+ <                                              >
+
+}
+END -- gr1992
+Grid gr1993
+{
+[sum                                              ]
+
+}
+END -- gr1993
+END -- VBox2
+END -- group01
+Grid gr1994
+{
+ [more                                         ]
+
+}
+END -- gr1994
+END -- VBox1
+END -- afar100
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+ButtonEdit fak53=formonly.fak53 type CHAR, action=CONTROLP, tabIndex=1, image="zoom";
+Edit fak00=formonly.fak00 type CHAR, tabIndex=2;
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=3, queryEditable, items=(("1", "Account"),("2", "Lot No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=4, queryEditable, items=(("1", "Account"),("2", "Lot No."));
+CheckBox t1=formonly.t1 type VARCHAR, tabIndex=5, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type VARCHAR, tabIndex=6, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sum=formonly.sum type VARCHAR, tabIndex=7, text="Convert Origianl Currency to Home Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.fak53,formonly.fak00,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.sum,formonly.more)
+END -- INSTRUCTIONS
+

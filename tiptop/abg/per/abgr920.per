@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgr920.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgr920")
+VBox VBox1
+Grid gr17
+{
+ <G group01                                                                       >
+  Classification (1 )[aag223    ](2 )[aag224    ](3 )[aag225    ](4 )[aag226    ]
+ <                                                                                >
+ <G group02                                                            >
+  Book No.              [bookno    ]
+  title number          [azh01     ] [azh02                         ]
+  Year of Current Period[yy1       ]  Year of Last Period[yy2       ]
+  Period  [m1        ]--[m2        ]  Period[m3        ]-[m4        ]
+  Budget Item           [budget    ]
+  Decimal Digits        [dec       ]
+ <                                                                     >
+}
+END -- gr17
+Grid gr18
+{
+ [s1                  ]   [s2                  ]
+ [t1                  ]   [t2                  ]
+}
+END -- gr18
+Grid gr19
+{
+[choice              ]
+[cd                            ]
+[more                                              ]
+}
+END -- gr19
+END -- VBox1
+END -- abgr920
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit aag223=formonly.aag223 type VARCHAR, tabIndex=1;
+Edit aag224=formonly.aag224 type VARCHAR, tabIndex=2;
+Edit aag225=formonly.aag225 type VARCHAR, tabIndex=3;
+Edit aag226=formonly.aag226 type VARCHAR, tabIndex=4;
+Group group02:group02, text="INPUT";
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=21, not null, required, image="zoom", comment="<^P> Qry Title No.";
+ButtonEdit azh01=formonly.azh01 type VARCHAR, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P> Qry Title No.";
+Edit azh02=formonly.azh02 type VARCHAR, tabIndex=6;
+Edit yy1=formonly.yy1 type SMALLINT, tabIndex=7, not null, required;
+Edit yy2=formonly.yy2 type SMALLINT, tabIndex=8, not null, required;
+Edit m1=formonly.m1 type SMALLINT, tabIndex=9, not null, required;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=10, not null, required;
+Edit m3=formonly.m3 type SMALLINT, tabIndex=11, not null, required;
+Edit m4=formonly.m4 type SMALLINT, tabIndex=12, not null, required;
+ButtonEdit budget=formonly.budget type CHAR, action=controlp, tabIndex=22, image="zoom.png";
+Edit dec=formonly.dec type SMALLINT, tabIndex=13;
+ComboBox s1=formonly.s1 type CHAR, tabIndex=14, queryEditable, items=(("1", "Class.QBE(1 )"),("2", "Class.QBE(2 )"),("3", "Class.QBE(3 )"),("4", "Class.QBE(4)"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=15, queryEditable, items=(("1", "Class.QBE(1 )"),("2", "Class.QBE(2 )"),("3", "Class.QBE(3 )"),("4", "Class.QBE(4)"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=16, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=17, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox choice=formonly.choice type VARCHAR, tabIndex=18, text="Print Transaction Amount Be Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox cd=formonly.cd type VARCHAR, tabIndex=19, text="          ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=20, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aag223,formonly.aag224,formonly.aag225,formonly.aag226,formonly.bookno,formonly.azh01,formonly.azh02,formonly.yy1,formonly.yy2,formonly.m1,formonly.m2,formonly.m3,formonly.m4,formonly.budget,formonly.dec,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.choice,formonly.cd,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr103")
+VBox VBox1
+Grid gr3209
+{
+ <G group01                                                            >
+  Item No.            [ima01               ]
+  Version             [ima05               ]
+  Group Code          [ima06               ]
+  Other group code 1  [ima09               ]
+  Other group code 2  [ima10               ]
+  Other group code 3  [ima11               ]
+  Other group code 4  [ima12               ]
+  Source Code         [ima08               ]
+ <                                                                     >
+
+}
+END -- gr3209
+Group group02(text="INPUT")
+Grid gr3210
+{
+ <G group03                                                          >
+ [s1                  ] [s2                  ] [s3                  ]
+ <                                                                   >
+ <G group04                                                          >
+ [y                              ]
+ <                                                                   >
+
+}
+END -- gr3210
+END -- group02
+Grid gr3211
+{
+[more                                    ]
+
+}
+END -- gr3211
+END -- VBox1
+END -- aimr103
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima05=formonly.ima05 type CHAR, tabIndex=2;
+Edit ima06=formonly.ima06 type CHAR, tabIndex=3;
+Edit ima09=formonly.ima09 type CHAR, tabIndex=4;
+Edit ima10=formonly.ima10 type CHAR, tabIndex=5;
+Edit ima11=formonly.ima11 type CHAR, tabIndex=6;
+Edit ima12=formonly.ima12 type CHAR, tabIndex=7;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=8;
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=9, queryEditable, items=(("1", "Item No."),("2", "Version"),("3", "Group Code"),("4", "Other Group code"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=10, queryEditable, items=(("1", "Item No."),("2", "Version"),("3", "Group Code"),("4", "Other Group code"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=11, queryEditable, items=(("1", "Item No."),("2", "Version"),("3", "Group Code"),("4", "Other Group code"));
+Group group04:group04, text="Group Code Sequence Option";
+RadioGroup y=formonly.y type VARCHAR, tabIndex=12, items=(("0", "Group Code"),("1", "Other group code 1"),("2", "Other group code 2"),("3", "Other group code 3"),("4", "Other group code 4"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima05,formonly.ima06,formonly.ima09,formonly.ima10,formonly.ima11,formonly.ima12,formonly.ima08,formonly.s1,formonly.s2,formonly.s3,formonly.y,formonly.more)
+END -- INSTRUCTIONS
+

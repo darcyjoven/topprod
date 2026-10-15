@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci501")
+VBox vb1
+Folder pc355
+Page page01(text="Main")
+Table s_tc_jcf
+{
+[tc_jcf01  |tc_jcf02    |imd02       ]
+[tc_jcf01  |tc_jcf02    |imd02       ]
+[tc_jcf01  |tc_jcf02    |imd02       ]
+[tc_jcf01  |tc_jcf02    |imd02       ]
+[tc_jcf01  |tc_jcf02    |imd02       ]
+[tc_jcf01  |tc_jcf02    |imd02       ]
+[tc_jcf01  |tc_jcf02    |imd02       ]
+[tc_jcf01  |tc_jcf02    |imd02       ]
+[tc_jcf01  |tc_jcf02    |imd02       ]
+[tc_jcf01  |tc_jcf02    |imd02       ]
+
+}
+END -- s_tc_jcf
+END -- page01
+END -- pc355
+Grid gr1472
+{
+ ---------- Rows [cn2   ] ----------
+
+
+}
+END -- gr1472
+END -- vb1
+END -- axci501
+
+ATTRIBUTES
+Edit tc_jcf01=formonly.tc_jcf01 type VARCHAR, tabIndex=1, title="Cost W/H", not null, required;
+ButtonEdit tc_jcf02=formonly.tc_jcf02 type VARCHAR, action=controlp, tabIndex=2, title="Warehouse#", not null, required, image="zoom", comment="<^P>Qry Warehouse #";
+Edit imd02=formonly.imd02, tabIndex=4, title=%"Name", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tc_jcf(formonly.tc_jcf01,formonly.tc_jcf02,formonly.imd02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

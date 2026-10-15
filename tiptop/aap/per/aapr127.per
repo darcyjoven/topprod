@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr127.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr127")
+VBox VBox1
+Grid gr210
+{
+ <G group01                                                                               >
+  Supplier            [apa06               ]   Account Employee    [apa21               ]
+  Accounts NO.        [apa01               ]   Currency            [apa13               ]
+  Account Date        [apa02               ]
+
+ <                                                                                        >
+
+}
+END -- gr210
+Group group02(text="INPUT")
+Grid gr211
+{
+
+ <G group03                 ><G group04                      >
+  [a                   ]      [h                      ]
+ <                          ><                               >
+
+ <G group05                                                   >
+  [s1           ]     [s2            ]     [s3             ]
+  [t1           ]     [t2            ]     [t3             ]
+  [u1           ]     [u2            ]     [u3             ]
+ <                                                            >
+
+}
+END -- gr211
+END -- group02
+Grid gr212
+{
+[more                                                        ]
+
+}
+END -- gr212
+END -- VBox1
+END -- aapr127
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit apa06=formonly.apa06 type VARCHAR, tabIndex=1;
+Edit apa21=formonly.apa21 type VARCHAR, tabIndex=2;
+Edit apa01=formonly.apa01 type VARCHAR, tabIndex=3;
+Edit apa13=formonly.apa13 type VARCHAR, tabIndex=4;
+DateEdit apa02=formonly.apa02 type DATE, tabIndex=5;
+Group group03:group03, text="Data Option 1";
+RadioGroup a=formonly.a type CHAR, tabIndex=6, default = "1", items=(("1", "Payable "),("2", "All "));
+Group group04:group04, text="Data Option 2";
+RadioGroup h=formonly.h type CHAR, tabIndex=7, default = "1", items=(("1", "Confirmed"),("2", "UnConfirmed"),("3", "All "));
+Group group05:group05, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, queryEditable, items=(("1", "Supplier"),("2", "Acct No."),("3", "Acct Dt "),("4", "Ac.Empl "),("5", "Ac.Curr "));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=9, queryEditable, items=(("1", "Supplier"),("2", "Acct No."),("3", "Acct Dt "),("4", "Ac.Empl "),("5", "Ac.Curr "));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=10, queryEditable, items=(("1", "Supplier"),("2", "Acct No."),("3", "Acct Dt "),("4", "Ac.Empl "),("5", "Ac.Curr "));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=13, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=15, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=16, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=17, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apa06,formonly.apa21,formonly.apa01,formonly.apa13,formonly.apa02,formonly.a,formonly.h,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.more)
+END -- INSTRUCTIONS
+

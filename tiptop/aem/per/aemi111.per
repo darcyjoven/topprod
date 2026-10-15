@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemi111.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemi111")
+VBox VBox1
+Folder pc302
+Page page01(text="Main")
+Table s_fja
+{
+[fja01   |fja02          |fjaact]
+[fja01   |fja02          |fjaact]
+[fja01   |fja02          |fjaact]
+[fja01   |fja02          |fjaact]
+[fja01   |fja02          |fjaact]
+[fja01   |fja02          |fjaact]
+[fja01   |fja02          |fjaact]
+[fja01   |fja02          |fjaact]
+[fja01   |fja02          |fjaact]
+[fja01   |fja02          |fjaact]
+
+}
+END -- s_fja
+END -- page01
+END -- pc302
+Grid gr1753
+{
+  ----------Rows [cn2   ]----------
+
+}
+END -- gr1753
+END -- VBox1
+END -- aemi111
+
+TABLES
+fja_file
+ATTRIBUTES
+Edit fja01=fja_file.fja01, tabIndex=1, title="Scope", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ";
+Edit fja02=fja_file.fja02, tabIndex=2, title="Description";
+CheckBox fjaact=fja_file.fjaacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fja(fja_file.fja01,fja_file.fja02,fja_file.fjaacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/adm/42f/admr132.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"admr132")
+VBox VBox1
+Grid gr1616
+{
+ <G group01                                                                             >
+  Accounts #          [apa01               ]   Account Date        [apa02             ]
+  Paying Vender       [apa06               ]   Payment Method      [apa11             ]
+ <                                                                                      >
+ <G group02                                                                             >
+ [a                                                               ]
+ [b                                                               ]
+ [c                                                               ]
+ [d                                                               ]
+ [e                                                               ]
+ <                                                                                      >
+
+}
+END -- gr1616
+Grid gr1617
+{
+[more                                                             ]
+
+}
+END -- gr1617
+END -- VBox1
+END -- admr132
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit apa01=formonly.apa01 type VARCHAR, tabIndex=1;
+DateEdit apa02=formonly.apa02 type DATE, tabIndex=2;
+Edit apa06=formonly.apa06 type VARCHAR, tabIndex=3;
+Edit apa11=formonly.apa11 type VARCHAR, tabIndex=4;
+Group group02:group02, text="INPUT";
+CheckBox a=formonly.a type VARCHAR, tabIndex=5, text="PO Payment Terms AP is different", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=6, text="Payment Terms The institute promotes the pay date Above is different", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=7, text="Payment Terms The institute promotes the designated date Above diff", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=8, text="The paying date shifts to AP an earlier time", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=9, text="Police message Whether differently jumps", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=10, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apa01,formonly.apa02,formonly.apa06,formonly.apa11,formonly.a,formonly.b,formonly.c,formonly.d,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

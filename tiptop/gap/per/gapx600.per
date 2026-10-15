@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gap/42f/gapx600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gapr600")
+VBox VBox1
+Grid gr3314
+{
+ <G group01                                 >
+  Tran.Note No.       [oox03               ]
+  Cate                [oox03v              ]
+ <                                          >
+}
+END -- gr3314
+Group group03(text="Input")
+Grid gr3315
+{
+ YEAR                [yy      ]
+ Period              [m1]--[m2]
+ <G group02                     >
+ [b                             ]
+ <                              >
+
+}
+END -- gr3315
+END -- group03
+Grid gr3316
+{
+ [more                                                        ]
+
+
+}
+END -- gr3316
+END -- VBox1
+END -- gapr600
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oox03=formonly.oox03 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ComboBox oox03v=formonly.oox03v type CHAR, tabIndex=2, queryEditable, items=(("Item1", ""),("1*", "Enter Account"),("2*", "Account To Offset"));
+Edit yy=formonly.yy type SMALLINT, tabIndex=3;
+Edit m1=formonly.m1 type SMALLINT, tabIndex=4;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=5;
+Group group02:group02, text="Report Type";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=6, items=(("1", "Statistics"),("2", "detail"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oox03,formonly.oox03v,formonly.yy,formonly.m1,formonly.m2,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

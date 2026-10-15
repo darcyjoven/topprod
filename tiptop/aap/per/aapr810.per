@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr810.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr810")
+VBox VBox1
+Grid gr301
+{
+ <G group01                                                       >
+  Arrival Notify No.             [alk01               ]
+  Arrival Date                   [alk02               ]
+  Arrival Curr.                  [alk11               ]
+  Vender No.                     [alk05               ]
+  L/C                            [alk10               ]
+  Dept. No.                      [alk04               ]
+  APO#                           [alk03               ]
+ <                                                                >
+ <G group02                                                       >
+  [s1           ]      [s2            ]      [s3             ]
+  [t1           ]      [t2            ]      [t3             ]
+  [u1           ]      [u2            ]      [u3             ]
+ <                                                                >
+
+}
+END -- gr301
+Grid gr302
+{
+[more                                                        ]
+
+}
+END -- gr302
+END -- VBox1
+END -- aapr810
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit alk01=formonly.alk01 type VARCHAR, tabIndex=1;
+DateEdit alk02=formonly.alk02 type DATE, tabIndex=2;
+Edit alk11=formonly.alk11 type VARCHAR, tabIndex=3;
+Edit alk05=formonly.alk05 type VARCHAR, tabIndex=4;
+Edit alk10=formonly.alk10 type VARCHAR, tabIndex=5;
+Edit alk04=formonly.alk04 type VARCHAR, tabIndex=6;
+Edit alk03=formonly.alk03 type VARCHAR, tabIndex=7;
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, queryEditable, items=(("1", "AR No."),("2", "Arrvl.Dt"),("3", "Arvl.Cur"),("4", "Vender#"),("5", "Open L/C"),("6", "Dept No."),("7", "APO#"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=9, queryEditable, items=(("1", "AR No."),("2", "Arrvl.Dt"),("3", "Arvl.Cur"),("4", "Vender#"),("5", "Open L/C"),("6", "Dept No."),("7", "APO#"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=10, queryEditable, items=(("1", "AR No."),("2", "Arrvl.Dt"),("3", "Arvl.Cur"),("4", "Vender#"),("5", "Open L/C"),("6", "Dept No."),("7", "APO#"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=13, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=15, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=16, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=17, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.alk01,formonly.alk02,formonly.alk11,formonly.alk05,formonly.alk10,formonly.alk04,formonly.alk03,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.more)
+END -- INSTRUCTIONS
+

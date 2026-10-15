@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artp101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artp101")
+VBox VBox1
+Grid gr4
+{
+
+     date [date             ]
+     plant[plant            ]
+     No   [rti01            ]
+     Dno  [rtm01            ]
+
+
+}
+END -- gr4
+Grid gr1
+{
+
+  [g_bgjob           ]
+
+}
+END -- gr1
+END -- VBox1
+END -- artp101
+
+ATTRIBUTES
+DateEdit date=formonly.date type DATETIME YEAR TO YEAR, tabIndex=1, not null, required;
+ButtonEdit plant=formonly.plant type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+ButtonEdit rti01=formonly.rti01 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit rtm01=formonly.rtm01 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=5, text="Background Job", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.date,formonly.plant,formonly.rti01,formonly.rtm01,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

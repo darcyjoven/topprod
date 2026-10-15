@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi600_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi600_2")
+VBox VBox1
+Grid gr742
+{
+ Part Number         [bma01                         ]
+                     [ima02                         ]
+}
+END -- gr742
+Table s_bmb
+{
+[bmb02     |bmb03               |ima02_b                       |bmb06     |bmb08    ]
+[bmb02     |bmb03               |ima02_b                       |bmb06     |bmb08    ]
+[bmb02     |bmb03               |ima02_b                       |bmb06     |bmb08    ]
+[bmb02     |bmb03               |ima02_b                       |bmb06     |bmb08    ]
+[bmb02     |bmb03               |ima02_b                       |bmb06     |bmb08    ]
+[bmb02     |bmb03               |ima02_b                       |bmb06     |bmb08    ]
+[bmb02     |bmb03               |ima02_b                       |bmb06     |bmb08    ]
+[bmb02     |bmb03               |ima02_b                       |bmb06     |bmb08    ]
+[bmb02     |bmb03               |ima02_b                       |bmb06     |bmb08    ]
+[bmb02     |bmb03               |ima02_b                       |bmb06     |bmb08    ]
+
+}
+END -- s_bmb
+END -- VBox1
+END -- abmi600_2
+
+TABLES
+bmb_file
+ATTRIBUTES
+Edit bma01=formonly.bma01 type CHAR, tabIndex=1, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit bmb02=formonly.bmb02 type CHAR, tabIndex=3, title="Line#";
+ButtonEdit bmb03=bmb_file.bmb03, action=controlp, tabIndex=4, title="Component Part No", not null, required, image="zoom";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=5, title="Part Name", noEntry;
+Edit bmb06=bmb_file.bmb06, tabIndex=6, title="QPA";
+Edit bmb08=bmb_file.bmb08, tabIndex=7, title="Wastg.%";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmb(formonly.bmb02,bmb_file.bmb03,formonly.ima02_b,bmb_file.bmb06,bmb_file.bmb08)
+SCREEN RECORD Undefined(formonly.bma01,formonly.ima02)
+END -- INSTRUCTIONS
+

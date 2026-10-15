@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt310_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Maintain Labor Overhead Estimate")
+Folder pc557
+Page page01(text="Page01")
+VBox VBox1
+Table s_oqc
+{
+[oqc0|oqc03    |oqc031                |oqc04            |oqc05     |oqc06       |oqc07           |oqc08          |oqc09     |oqc10    |oqc11               |oqc12               |oqc13               |oqc14               |oqc15                          ]
+[oqc0|oqc03    |oqc031                |oqc04            |oqc05     |oqc06       |oqc07           |oqc08          |oqc09     |oqc10    |oqc11               |oqc12               |oqc13               |oqc14               |oqc15                          ]
+[oqc0|oqc03    |oqc031                |oqc04            |oqc05     |oqc06       |oqc07           |oqc08          |oqc09     |oqc10    |oqc11               |oqc12               |oqc13               |oqc14               |oqc15                          ]
+[oqc0|oqc03    |oqc031                |oqc04            |oqc05     |oqc06       |oqc07           |oqc08          |oqc09     |oqc10    |oqc11               |oqc12               |oqc13               |oqc14               |oqc15                          ]
+[oqc0|oqc03    |oqc031                |oqc04            |oqc05     |oqc06       |oqc07           |oqc08          |oqc09     |oqc10    |oqc11               |oqc12               |oqc13               |oqc14               |oqc15                          ]
+[oqc0|oqc03    |oqc031                |oqc04            |oqc05     |oqc06       |oqc07           |oqc08          |oqc09     |oqc10    |oqc11               |oqc12               |oqc13               |oqc14               |oqc15                          ]
+[oqc0|oqc03    |oqc031                |oqc04            |oqc05     |oqc06       |oqc07           |oqc08          |oqc09     |oqc10    |oqc11               |oqc12               |oqc13               |oqc14               |oqc15                          ]
+[oqc0|oqc03    |oqc031                |oqc04            |oqc05     |oqc06       |oqc07           |oqc08          |oqc09     |oqc10    |oqc11               |oqc12               |oqc13               |oqc14               |oqc15                          ]
+[oqc0|oqc03    |oqc031                |oqc04            |oqc05     |oqc06       |oqc07           |oqc08          |oqc09     |oqc10    |oqc11               |oqc12               |oqc13               |oqc14               |oqc15                          ]
+[oqc0|oqc03    |oqc031                |oqc04            |oqc05     |oqc06       |oqc07           |oqc08          |oqc09     |oqc10    |oqc11               |oqc12               |oqc13               |oqc14               |oqc15                          ]
+
+}
+END -- s_oqc
+END -- VBox1
+END -- page01
+END -- pc557
+END -- axmt310_1
+
+TABLES
+oqc_file
+ATTRIBUTES
+Edit oqc0=oqc_file.oqc02, tabIndex=1, title="S/N", not null, required;
+ButtonEdit oqc03=oqc_file.oqc03, action=controlp, tabIndex=2, title="Task No.", not null, required, image="zoom", comment="<^P>Qry Task No. ";
+Edit oqc031=oqc_file.oqc031, tabIndex=3, title="Task Name";
+ButtonEdit oqc04=oqc_file.oqc04, action=controlp, tabIndex=4, title="Production Item#", not null, required, image="zoom", comment="<^P>Query Item  ";
+Edit oqc05=oqc_file.oqc05, tabIndex=5, title="Pro.Qty", not null, required;
+ButtonEdit oqc06=oqc_file.oqc06, action=controlp, tabIndex=6, title="Work Center", not null, required, image="zoom", comment="<^P>Qry Work Center ";
+Edit oqc07=oqc_file.oqc07, tabIndex=7, title="Estimate Lbr.Hr", not null, required;
+Edit oqc08=oqc_file.oqc08, tabIndex=8, title="Estimate Mc.Hr", not null, required;
+Edit oqc09=oqc_file.oqc09, tabIndex=9, title="Wage Rate", not null, required;
+Edit oqc10=oqc_file.oqc10, tabIndex=10, title="Apport.%", not null, required;
+Edit oqc11=oqc_file.oqc11, tabIndex=11, title="Wage H.C Amt", not null, required;
+Edit oqc12=oqc_file.oqc12, tabIndex=12, title="Apport H.C Amt", not null, required;
+Edit oqc13=oqc_file.oqc13, tabIndex=13, title="Wage Est.Amt", not null, required;
+Edit oqc14=oqc_file.oqc14, tabIndex=14, title="Apport Est.Amt", not null, required;
+Edit oqc15=oqc_file.oqc15, tabIndex=15, title="Memo";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oqc(oqc_file.oqc02,oqc_file.oqc03,oqc_file.oqc031,oqc_file.oqc04,oqc_file.oqc05,oqc_file.oqc06,oqc_file.oqc07,oqc_file.oqc08,oqc_file.oqc09,oqc_file.oqc10,oqc_file.oqc11,oqc_file.oqc12,oqc_file.oqc13,oqc_file.oqc14,oqc_file.oqc15)
+END -- INSTRUCTIONS
+

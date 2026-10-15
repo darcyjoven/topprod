@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aici004")
+VBox vb1
+Folder folder01
+Page page01(text="Page01")
+Grid gr3257
+{
+ <G group01                                                                                            >
+  Layer Group    [ice01               ]    matrix           [ice02               |ice02_desc          ]
+  Make ID        [ice03               ]    matrix bin       [ice14               ]
+  Body Mask ID   [ice13               ]
+ <                                                                                                     >
+}
+END -- gr3257
+END -- page01
+END -- folder01
+Table s_ice
+{
+[ice04  |ice05      |ice06             |ice07       |ice08         |ice15         |ice16          ]
+[ice04  |ice05      |ice06             |ice07       |ice08         |ice15         |ice16          ]
+[ice04  |ice05      |ice06             |ice07       |ice08         |ice15         |ice16          ]
+[ice04  |ice05      |ice06             |ice07       |ice08         |ice15         |ice16          ]
+[ice04  |ice05      |ice06             |ice07       |ice08         |ice15         |ice16          ]
+[ice04  |ice05      |ice06             |ice07       |ice08         |ice15         |ice16          ]
+[ice04  |ice05      |ice06             |ice07       |ice08         |ice15         |ice16          ]
+[ice04  |ice05      |ice06             |ice07       |ice08         |ice15         |ice16          ]
+[ice04  |ice05      |ice06             |ice07       |ice08         |ice15         |ice16          ]
+[ice04  |ice05      |ice06             |ice07       |ice08         |ice15         |ice16          ]
+[ice04  |ice05      |ice06             |ice07       |ice08         |ice15         |ice16          ]
+
+}
+END -- s_ice
+Grid gr3258
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3258
+END -- vb1
+END -- aici004
+
+TABLES
+ice_file
+ATTRIBUTES
+Group group01:group01, text="Program";
+Edit ice01=ice_file.ice01, tabIndex=10, not null;
+ButtonEdit ice02=ice_file.ice02, action=controlp, tabIndex=1, not null, image="zoom.png";
+Edit ice02_desc=formonly.ice02_desc type VARCHAR, tabIndex=11, noEntry;
+ButtonEdit ice03=ice_file.ice03, action=controlp, tabIndex=12, not null, image="zoom.png";
+Edit ice14=ice_file.ice14, tabIndex=2, not null;
+Edit ice13=ice_file.ice13, tabIndex=13, noEntry;
+Edit ice04=ice_file.ice04, tabIndex=3, title="Field", not null, required, scroll;
+ButtonEdit ice05=ice_file.ice05, action=controlp, tabIndex=4, title="Language", not null, image="zoom.png";
+Edit ice06=ice_file.ice06, tabIndex=5, title="Description", not null, scroll, comment="IF Field Name is \'wintitle\', Then This Field is \'NO Entry\'! Using \'Update\' Function!";
+CheckBox ice07=ice_file.ice07, tabIndex=6, title="Modi date", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ice08=ice_file.ice08, tabIndex=7, title="Comments", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit ice15=ice_file.ice15, tabIndex=19, title="ice15", noEntry;
+Edit ice16=ice_file.ice16, tabIndex=20, title="ice16", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ice(ice_file.ice04,ice_file.ice05,ice_file.ice06,ice_file.ice07,ice_file.ice08,ice_file.ice15,ice_file.ice16)
+SCREEN RECORD Undefined(ice_file.ice01,ice_file.ice02,formonly.ice02_desc,ice_file.ice03,ice_file.ice14,ice_file.ice13,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

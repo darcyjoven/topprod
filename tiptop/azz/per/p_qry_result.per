@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_qry_result.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_qry_result")
+VBox VBox1
+Group group01(text="Dynamic Query Function Parameters")
+Grid gr3274
+{
+  Query Function         [q_form                           ]
+ [dummy01               ][q_stat                           ]
+ [dummy02               ][q_cons                           ]
+  Where Condiction(sys)  [q_swhere                         ]
+  Where Condiction(prog) [q_where                          ]
+  Maximun Rows in a Page [q_page                           ]
+  Default Values
+ [q_default                                                ]
+  Argement Values
+ [q_arg                                                    ]
+ <G group02                                                >
+  Return Item Index      [q_multidx                        ]
+ <                                                         >
+
+}
+END -- gr3274
+END -- group01
+Group group03(text="Dynamic Query Function Returning Values")
+Table s_qry_result
+{
+[no           |rtn                                            ]
+[no           |rtn                                            ]
+[no           |rtn                                            ]
+[no           |rtn                                            ]
+[no           |rtn                                            ]
+
+}
+END -- s_qry_result
+END -- group03
+Grid gr3275
+{
+ [yes_i_see  ]
+
+}
+END -- gr3275
+END -- VBox1
+END -- p_qry_result
+
+ATTRIBUTES
+Edit q_form=formonly.q_form type CHAR, tabIndex=1;
+Label dummy01:dummy01, text="Testing Mode";
+RadioGroup q_stat=formonly.q_stat type CHAR, tabIndex=2, orientation=horizontal, items=(("c", "Construct Mode"),("i", "Input Mode"));
+Label dummy02:dummy02, text="Test Re-Construct";
+RadioGroup q_cons=formonly.q_cons type CHAR, tabIndex=3, orientation=horizontal, items=(("Y", "Yes"),("N", "No"));
+Edit q_swhere=formonly.q_swhere type CHAR, tabIndex=4;
+Edit q_where=formonly.q_where type CHAR, tabIndex=5;
+Edit q_page=formonly.q_page type CHAR, tabIndex=6;
+Edit q_default=formonly.q_default type CHAR, tabIndex=7;
+Edit q_arg=formonly.q_arg type CHAR, tabIndex=8;
+Group group02:group02, text="Construct Mode Parameters";
+Edit q_multidx=formonly.q_multidx type CHAR, tabIndex=9;
+Edit no=formonly.no type CHAR, tabIndex=10, title="Item No.";
+Edit rtn=formonly.rtn type CHAR, tabIndex=11, title="Returning Value";
+Button yes_i_see:yes_i_see, text="OK! I See";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qry_result(formonly.no,formonly.rtn)
+SCREEN RECORD Undefined(formonly.q_form,formonly.q_stat,formonly.q_cons,formonly.q_swhere,formonly.q_where,formonly.q_page,formonly.q_default,formonly.q_arg,formonly.q_multidx)
+END -- INSTRUCTIONS
+

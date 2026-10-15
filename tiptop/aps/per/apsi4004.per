@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi4004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apsi4004 料號優先序制定")
+Folder pc5
+Page Page7(text=%"Page0")
+Grid gr8
+{
+
+ <T sales_w                                                           >
+ [seq   |ima01         |ima02         |ima131         |oba02          ]
+ [seq   |ima01         |ima02         |ima131         |oba02          ]
+ [seq   |ima01         |ima02         |ima131         |oba02          ]
+ [seq   |ima01         |ima02         |ima131         |oba02          ]
+ [seq   |ima01         |ima02         |ima131         |oba02          ]
+ [seq   |ima01         |ima02         |ima131         |oba02          ]
+ [seq   |ima01         |ima02         |ima131         |oba02          ]
+ <                                                                    >
+
+}
+END -- gr8
+END -- Page7
+END -- pc5
+END -- apsi4004
+
+TABLES
+oba_file,
+ima_file
+ATTRIBUTES
+Table sales_w:sales_w;
+Edit seq=formonly.seq type INTEGER, tabIndex=1, title="seq", not null, required;
+Edit ima01=ima_file.ima01, tabIndex=2, title="ima01", noEntry;
+Edit ima02=ima_file.ima02, tabIndex=4, title="ima02", noEntry;
+Edit ima131=ima_file.ima131, tabIndex=3, title="ima131", noEntry;
+Edit oba02=oba_file.oba02, tabIndex=5, title="oba02", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD part_w(formonly.seq,ima_file.ima01,ima_file.ima02,ima_file.ima131,oba_file.oba02)
+END -- INSTRUCTIONS
+

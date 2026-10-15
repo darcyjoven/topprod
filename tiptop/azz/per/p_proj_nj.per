@@ -1,0 +1,91 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/top/azz/4fd/p_proj_nj.tmp.per created 2010-12-28T21:53:19
+-- File created from /u3/top/azz/4fd/p_proj_nj.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="p_proj_nj")
+                                                                                                                                     
+     VBox vb2                                                                                                                        
+     Folder folder01                                                                                                                 
+     Page Page3(text=%"Basic Data")                                                                                                  
+                                                                                                                                     
+      Grid gr5                                                                                                                       
+      {                                                                                                                              
+                                                                                                                                     
+       Item No.        [kpj01       ]         SD            [kpj11      |gen02_sd] PR                [kpj21      |gen02_pr]          
+       Item Name       [kpj02       ]         SD Hours      [kpj12       ]         PR Hours          [kpj22       ]                  
+       Item Begin Date [kpj03       ]         SD Begin Date [kpj13       ]         Coding Begin Date [kpj23       ]                  
+       Item Finish Date[kpj04       ]         SD Finish Date[kpj14       ]         Coding Finish Date[kpj24       ]                  
+       Item SA         [kpj05      |gen02   ] SD Done No.   [sd_cnt      ]         Coding Done No.   [coding_cnt  ]                  
+                                              SD Done %     [sd_rate     ]         Coding Done %     [coding_rate ]                  
+                                                                                                                                     
+      }                                                                                                                              
+      END                                                                                                                            
+     END -- Page                                                                                                                     
+     END -- Folder                                                                                                                   
+     Table s_kpk                                                                                                                     
+     {                                                                                                                               
+     [kpk02     |kpk03                         |kpk04               |kpk05  |kpk06               |kpk07  ]                           
+     [kpk02     |kpk03                         |kpk04               |kpk05  |kpk06               |kpk07  ]                           
+     [kpk02     |kpk03                         |kpk04               |kpk05  |kpk06               |kpk07  ]                           
+     [kpk02     |kpk03                         |kpk04               |kpk05  |kpk06               |kpk07  ]                           
+     [kpk02     |kpk03                         |kpk04               |kpk05  |kpk06               |kpk07  ]                           
+     }                                                                                                                               
+     END -- Table                                                                                                                    
+     Grid gr6                                                                                                                        
+     {                                                                                                                               
+       ----------count[cnt       ]/[cn2   ]----------                                                                                
+                                                                                                                                     
+                                                                                                                                     
+                                                                                                                                     
+     }                                                                                                                               
+     END                                                                                                                             
+     END -- VBox                                                                                                                     
+END -- Form
+
+TABLES
+kpj_file
+kpk_file
+
+ATTRIBUTES
+Edit kpj01=kpj_file.kpj01, tabIndex=17, not null;
+ButtonEdit kpj11=kpj_file.kpj11, action=controlp, tabIndex=19, not null, image="zoom.png";
+Edit gen02_sd=formonly.gen02_sd type VARCHAR, tabIndex=14, noEntry;
+ButtonEdit kpj21=kpj_file.kpj21, action=controlp, tabIndex=20, not null, image="zoom.png";
+Edit gen02_pr=formonly.gen02_pr type VARCHAR, tabIndex=16, noEntry;
+Edit kpj02=kpj_file.kpj02, tabIndex=1, not null;
+Edit kpj12=kpj_file.kpj12, tabIndex=4, not null;
+Edit kpj22=kpj_file.kpj22, tabIndex=8, not null;
+DateEdit kpj03=kpj_file.kpj03, tabIndex=2;
+DateEdit kpj13=kpj_file.kpj13, tabIndex=5;
+DateEdit kpj23=kpj_file.kpj23, tabIndex=9;
+DateEdit kpj04=kpj_file.kpj04, tabIndex=3;
+DateEdit kpj14=kpj_file.kpj14, tabIndex=6;
+DateEdit kpj24=kpj_file.kpj24, tabIndex=10;
+ButtonEdit kpj05=kpj_file.kpj05, action=controlp, tabIndex=18, not null, image="zoom.png";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=13, noEntry;
+Edit sd_cnt=formonly.sd_cnt, tabIndex=7, noEntry;
+Edit coding_cnt=formonly.coding_cnt, tabIndex=11, noEntry;
+Edit sd_rate=formonly.sd_rate, tabIndex=12, noEntry;
+Edit coding_rate=formonly.coding_rate, tabIndex=15, noEntry;
+ButtonEdit kpk02=kpk_file.kpk02, action=controlp, tabIndex=21, title="Prog No.", image="zoom.png";
+Edit kpk03=kpk_file.kpk03, tabIndex=22, title="Prog Name";
+Edit kpk04=kpk_file.kpk04, tabIndex=23, title="SD Standard Hours";
+ComboBox kpk05=kpk_file.kpk05, tabIndex=24, title="SD Status", items=(("1", "Not Begin"),("2", "Doing"),("3", "Finished"));
+Edit kpk06=kpk_file.kpk06, tabIndex=25, title="Coding Standard Hours";
+ComboBox kpk07=kpk_file.kpk07, tabIndex=26, title="Coding Status", items=(("1", "Not Begin"),("2", "Doing"),("3", "Finished"));
+Edit cnt=formonly.cnt, tabIndex=27;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_kpk(kpk_file.kpk02, kpk_file.kpk03, kpk_file.kpk04, kpk_file.kpk05, kpk_file.kpk06, kpk_file.kpk07)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgp200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abgp200")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                   >
+  Department No. [bgk02     ]
+ <                                                            >
+ <G group02                                                   >
+  Version        [bgq01     ]
+  Enter Year     [bgq02     ]
+ <                                                            >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[g_bgjob   ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- abgp200
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit bgk02=formonly.bgk02 type VARCHAR, tabIndex=1;
+Group group02:group02, text="INPUT";
+Edit bgq01=formonly.bgq01 type VARCHAR, tabIndex=2;
+Edit bgq02=formonly.bgq02 type SMALLINT, tabIndex=3, not null, required;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=4, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bgk02,formonly.bgq01,formonly.bgq02,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

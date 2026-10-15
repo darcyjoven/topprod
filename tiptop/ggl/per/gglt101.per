@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglt101")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2856
+{
+ Group No.           [asi01     ]
+ Under Company       [asi04     ]              Under Comp Book No  [asi041    ]
+ Year                [asi06     ]              Period              [asi07     ]              Currency[asi12     ]
+
+}
+END -- gr2856
+END -- page01
+END -- folder01
+Table s_asi
+{
+[asi05                   |asi051                                            |asi13     |asi08                 |asi09                 |asi14                             |asi15                             |asi16                             |asi17                             |asi18     |asi19     |asi20     |asi21     |asi22     |asi23     |asi24     ]
+[asi05                   |asi051                                            |asi13     |asi08                 |asi09                 |asi14                             |asi15                             |asi16                             |asi17                             |asi18     |asi19     |asi20     |asi21     |asi22     |asi23     |asi24     ]
+[asi05                   |asi051                                            |asi13     |asi08                 |asi09                 |asi14                             |asi15                             |asi16                             |asi17                             |asi18     |asi19     |asi20     |asi21     |asi22     |asi23     |asi24     ]
+[asi05                   |asi051                                            |asi13     |asi08                 |asi09                 |asi14                             |asi15                             |asi16                             |asi17                             |asi18     |asi19     |asi20     |asi21     |asi22     |asi23     |asi24     ]
+[asi05                   |asi051                                            |asi13     |asi08                 |asi09                 |asi14                             |asi15                             |asi16                             |asi17                             |asi18     |asi19     |asi20     |asi21     |asi22     |asi23     |asi24     ]
+[asi05                   |asi051                                            |asi13     |asi08                 |asi09                 |asi14                             |asi15                             |asi16                             |asi17                             |asi18     |asi19     |asi20     |asi21     |asi22     |asi23     |asi24     ]
+[asi05                   |asi051                                            |asi13     |asi08                 |asi09                 |asi14                             |asi15                             |asi16                             |asi17                             |asi18     |asi19     |asi20     |asi21     |asi22     |asi23     |asi24     ]
+[asi05                   |asi051                                            |asi13     |asi08                 |asi09                 |asi14                             |asi15                             |asi16                             |asi17                             |asi18     |asi19     |asi20     |asi21     |asi22     |asi23     |asi24     ]
+[asi05                   |asi051                                            |asi13     |asi08                 |asi09                 |asi14                             |asi15                             |asi16                             |asi17                             |asi18     |asi19     |asi20     |asi21     |asi22     |asi23     |asi24     ]
+[asi05                   |asi051                                            |asi13     |asi08                 |asi09                 |asi14                             |asi15                             |asi16                             |asi17                             |asi18     |asi19     |asi20     |asi21     |asi22     |asi23     |asi24     ]
+}
+END -- s_asi
+Grid gr2857
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------                      Debit Amount        [sumasi08            ]                          Credit Amount       [sumasi09            ]
+
+}
+END -- gr2857
+END -- VBox1
+END -- gglt101
+
+TABLES
+asi_file
+ATTRIBUTES
+ButtonEdit asi01=asi_file.asi01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit asi04=asi_file.asi04, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Query";
+ButtonEdit asi041=asi_file.asi041, action=controlp, tabIndex=3, noEntry, not null, required, image="zoom", comment="<^P>Qry Book#";
+Edit asi06=asi_file.asi06, tabIndex=4;
+Edit asi07=asi_file.asi07, tabIndex=5;
+Edit asi12=asi_file.asi12, tabIndex=6, noEntry;
+Edit asi05=asi_file.asi05, tabIndex=7, title="Account No.";
+Edit asi051=asi_file.asi051, tabIndex=8, title="Account Name";
+ButtonEdit asi13=asi_file.asi13, action=controlp, tabIndex=9, title="Affiliate", image="zoom", comment="<^P>Qry Details";
+Edit asi08=asi_file.asi08, tabIndex=10, title="Debit Transaction Amt";
+Edit asi09=asi_file.asi09, tabIndex=11, title="Credit Transaction Amt";
+ButtonEdit asi14=asi_file.asi14, action=controlp, tabIndex=16, title="Dimension 5", image="zoom";
+ButtonEdit asi15=asi_file.asi15, action=controlp, tabIndex=17, title="Dimension 6", image="zoom";
+ButtonEdit asi16=asi_file.asi16, action=controlp, tabIndex=18, title="Dimension 7", image="zoom";
+ButtonEdit asi17=asi_file.asi17, action=controlp, tabIndex=19, title="Dimension 8", image="zoom";
+Edit asi18=asi_file.asi18, tabIndex=20, title=%"asi18";
+Edit asi19=asi_file.asi19, tabIndex=21, title=%"asi19";
+Edit asi20=asi_file.asi20, tabIndex=22, title=%"asi20";
+Edit asi21=asi_file.asi21, tabIndex=23, title=%"asi21";
+Edit asi22=asi_file.asi22, tabIndex=24, title=%"asi22";
+Edit asi23=asi_file.asi23, tabIndex=25, title=%"asi23";
+Edit asi24=asi_file.asi24, tabIndex=26, title=%"asi24";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+Edit sumasi08=formonly.sumasi08 type DECIMAL, tabIndex=14, noEntry;
+Edit sumasi09=formonly.sumasi09 type DECIMAL, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asi(asi_file.asi05,asi_file.asi051,asi_file.asi13,asi_file.asi08,asi_file.asi09,asi_file.asi14,asi_file.asi15,asi_file.asi16,asi_file.asi17,asi_file.asi18,asi_file.asi19,asi_file.asi20,asi_file.asi21,asi_file.asi22,asi_file.asi23,asi_file.asi24)
+SCREEN RECORD Undefined(asi_file.asi01,asi_file.asi04,asi_file.asi041,asi_file.asi06,asi_file.asi07,asi_file.asi12,formonly.cnt,formonly.cn2,formonly.sumasi08,formonly.sumasi09)
+END -- INSTRUCTIONS
+

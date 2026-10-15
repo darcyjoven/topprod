@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt4007.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt4007")
+Folder pc640
+Page page01(text="Main")
+VBox VBox1
+Table s_omab
+{
+[sel   |omb01       |omc02    |omb04                         |omb06                         |omb03    |oma10           |oma67     |oma23     |omb14t              |omb16t              ]
+[sel   |omb01       |omc02    |omb04                         |omb06                         |omb03    |oma10           |oma67     |oma23     |omb14t              |omb16t              ]
+[sel   |omb01       |omc02    |omb04                         |omb06                         |omb03    |oma10           |oma67     |oma23     |omb14t              |omb16t              ]
+[sel   |omb01       |omc02    |omb04                         |omb06                         |omb03    |oma10           |oma67     |oma23     |omb14t              |omb16t              ]
+[sel   |omb01       |omc02    |omb04                         |omb06                         |omb03    |oma10           |oma67     |oma23     |omb14t              |omb16t              ]
+[sel   |omb01       |omc02    |omb04                         |omb06                         |omb03    |oma10           |oma67     |oma23     |omb14t              |omb16t              ]
+[sel   |omb01       |omc02    |omb04                         |omb06                         |omb03    |oma10           |oma67     |oma23     |omb14t              |omb16t              ]
+[sel   |omb01       |omc02    |omb04                         |omb06                         |omb03    |oma10           |oma67     |oma23     |omb14t              |omb16t              ]
+[sel   |omb01       |omc02    |omb04                         |omb06                         |omb03    |oma10           |oma67     |oma23     |omb14t              |omb16t              ]
+[sel   |omb01       |omc02    |omb04                         |omb06                         |omb03    |oma10           |oma67     |oma23     |omb14t              |omb16t              ]
+
+}
+END -- s_omab
+Grid gr2707
+{
+ <G group01                                                                                      ><G group02                                                                                    >
+   O.C Uncol.Ac Total [t14t                ]  H.C Uncol.Ac Total To Contra [t16t                ]  O.C Uncol.Ac Total     [p14t                 ] H.C Uncol.Ac To Contra [p16t                 ]
+
+ <                                                                                               ><                                                                                             >
+
+}
+END -- gr2707
+END -- VBox1
+END -- page01
+END -- pc640
+END -- axrt4007
+
+TABLES
+omc_file,
+omb_file,
+oma_file
+ATTRIBUTES
+CheckBox sel=formonly.sel type CHAR, tabIndex=1, title="Select", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Check:To Contra Blank:Not  ";
+Edit omb01=omb_file.omb01, tabIndex=2, title="Accounts #", noEntry;
+Edit omc02=omc_file.omc02, tabIndex=3, title="Line No.", noEntry;
+Edit omb04=omb_file.omb04, tabIndex=4, title="Product No.", noEntry;
+Edit omb06=omb_file.omb06, tabIndex=5, title="Part Name Specification", noEntry;
+Edit omb03=omb_file.omb03, tabIndex=6, title="Line No.", noEntry;
+Edit oma10=oma_file.oma10, tabIndex=7, title="Invoice #", noEntry;
+Edit oma67=formonly.oma67 type CHAR, tabIndex=15, title=%"Invoice No", noEntry;
+Edit oma23=oma_file.oma23, tabIndex=8, title="Currency", noEntry;
+Edit omb14t=omb_file.omb14t, tabIndex=9, title="O.C Uncol.Ac", noEntry, not null, required;
+Edit omb16t=omb_file.omb16t, tabIndex=10, title="H.C Uncol.Ac", noEntry, not null, required;
+Group group01:group01;
+Edit t14t=formonly.t14t type CHAR, tabIndex=11, noEntry;
+Edit t16t=formonly.t16t type CHAR, tabIndex=12, noEntry;
+Group group02:group02;
+Edit p14t=formonly.p14t type CHAR, tabIndex=13, noEntry;
+Edit p16t=formonly.p16t type CHAR, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_omab(formonly.sel,omb_file.omb01,omc_file.omc02,omb_file.omb04,omb_file.omb06,omb_file.omb03,oma_file.oma10,formonly.oma67,oma_file.oma23,omb_file.omb14t,omb_file.omb16t)
+SCREEN RECORD Undefined(formonly.t14t,formonly.t16t,formonly.p14t,formonly.p16t)
+END -- INSTRUCTIONS
+

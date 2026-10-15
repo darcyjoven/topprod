@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acop400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acop400")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1307
+{
+  Simulation No.      [cng01             ]
+  Currency            [curr        ]
+ <G group04                                 >
+ [choice                                   ]
+ <                                          >
+
+}
+END -- gr1307
+Grid gr1308
+{
+ Application No.     [coc01             ]
+ Customs No.         [coc10       ]
+ Register Book No.   [coc03          ]
+ Bonded No.          [coc04          ]
+ Expiry Date         [coc05          ]
+ Review Date         [coc06          ]
+}
+END -- gr1308
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_cnh
+{
+[cnh02|cnh03               |ima02                      |cnh05    |cnh06  |a              |d                          |ver              |c                   |e   ]
+[cnh02|cnh03               |ima02                      |cnh05    |cnh06  |a              |d                          |ver              |c                   |e   ]
+[cnh02|cnh03               |ima02                      |cnh05    |cnh06  |a              |d                          |ver              |c                   |e   ]
+[cnh02|cnh03               |ima02                      |cnh05    |cnh06  |a              |d                          |ver              |c                   |e   ]
+[cnh02|cnh03               |ima02                      |cnh05    |cnh06  |a              |d                          |ver              |c                   |e   ]
+[cnh02|cnh03               |ima02                      |cnh05    |cnh06  |a              |d                          |ver              |c                   |e   ]
+[cnh02|cnh03               |ima02                      |cnh05    |cnh06  |a              |d                          |ver              |c                   |e   ]
+[cnh02|cnh03               |ima02                      |cnh05    |cnh06  |a              |d                          |ver              |c                   |e   ]
+[cnh02|cnh03               |ima02                      |cnh05    |cnh06  |a              |d                          |ver              |c                   |e   ]
+[cnh02|cnh03               |ima02                      |cnh05    |cnh06  |a              |d                          |ver              |c                   |e   ]
+
+}
+END -- s_cnh
+Grid gr1309
+{
+  ----------Rows [cn2   ] ----------
+
+}
+END -- gr1309
+END -- VBox1
+END -- acop400
+
+TABLES
+cnh_file,
+cng_file,
+coc_file
+ATTRIBUTES
+ButtonEdit cng01=cng_file.cng01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Simulation No";
+ButtonEdit curr=formonly.curr type CHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Details";
+Group group04:group04, text="Transfer Mode";
+RadioGroup choice=formonly.choice type CHAR, tabIndex=3, items=(("1", "New Bond"),("2", "Add Bond"));
+ButtonEdit coc01=coc_file.coc01, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Documents";
+ButtonEdit coc10=coc_file.coc10, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Custom";
+ButtonEdit coc03=coc_file.coc03, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit coc04=coc_file.coc04, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Details";
+DateEdit coc05=coc_file.coc05, tabIndex=8;
+DateEdit coc06=coc_file.coc06, tabIndex=9;
+Edit cnh02=cnh_file.cnh02, tabIndex=10, title="Ln", noEntry;
+Edit cnh03=cnh_file.cnh03, tabIndex=11, title="Product No.", noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=12, title="Part Name Specification", noEntry;
+Edit cnh05=cnh_file.cnh05, tabIndex=13, title="Qty", noEntry;
+Edit cnh06=cnh_file.cnh06, tabIndex=14, title="Unit", noEntry;
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=15, title="Goods No.", noEntry, image="zoom", comment="<^P>Qry Details";
+Edit d=formonly.d type CHAR, tabIndex=16, title="Part Name Speccification", noEntry;
+ButtonEdit ver=formonly.ver type CHAR, action=controlp, tabIndex=17, title="Version", image="zoom", comment="<^P>Qry Details";
+Edit c=formonly.c type DECIMAL, tabIndex=18, title="Qty", noEntry;
+Edit e=formonly.e type CHAR, tabIndex=19, title="Unit", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cnh(cnh_file.cnh02,cnh_file.cnh03,formonly.ima02,cnh_file.cnh05,cnh_file.cnh06,formonly.a,formonly.d,formonly.ver,formonly.c,formonly.e)
+SCREEN RECORD Undefined(cng_file.cng01,formonly.curr,formonly.choice,coc_file.coc01,coc_file.coc10,coc_file.coc03,coc_file.coc04,coc_file.coc05,coc_file.coc06,formonly.cn2)
+END -- INSTRUCTIONS
+

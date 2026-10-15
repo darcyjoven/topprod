@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqci140.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqci140")
+VBox vb16
+Folder folder01
+Page page01(text="Main")
+Grid gr14
+{
+ Item No.            [pmh01                         ]
+ Price Type          [pmh22               ]
+                     [                    ]               [imaud04            ]
+ Part Name           [ima02                         ]
+ Specification       [ima021                        ]    check materials[imaud03     ]月
+ Purchase            [desc      ]
+
+}
+END -- gr14
+END -- page01
+END -- folder01
+Table s_pmh
+{
+[pmh02      |pmc03               |pmh21     |pmh05              |pmh06         |pmh08|pmh09     |pmh15    |pmh16    |ta_pmh01|ta_pmh02|ta_pmh03]
+[pmh02      |pmc03               |pmh21     |pmh05              |pmh06         |pmh08|pmh09     |pmh15    |pmh16    |ta_pmh01|ta_pmh02|ta_pmh03]
+[pmh02      |pmc03               |pmh21     |pmh05              |pmh06         |pmh08|pmh09     |pmh15    |pmh16    |ta_pmh01|ta_pmh02|ta_pmh03]
+[pmh02      |pmc03               |pmh21     |pmh05              |pmh06         |pmh08|pmh09     |pmh15    |pmh16    |ta_pmh01|ta_pmh02|ta_pmh03]
+[pmh02      |pmc03               |pmh21     |pmh05              |pmh06         |pmh08|pmh09     |pmh15    |pmh16    |ta_pmh01|ta_pmh02|ta_pmh03]
+[pmh02      |pmc03               |pmh21     |pmh05              |pmh06         |pmh08|pmh09     |pmh15    |pmh16    |ta_pmh01|ta_pmh02|ta_pmh03]
+[pmh02      |pmc03               |pmh21     |pmh05              |pmh06         |pmh08|pmh09     |pmh15    |pmh16    |ta_pmh01|ta_pmh02|ta_pmh03]
+[pmh02      |pmc03               |pmh21     |pmh05              |pmh06         |pmh08|pmh09     |pmh15    |pmh16    |ta_pmh01|ta_pmh02|ta_pmh03]
+[pmh02      |pmc03               |pmh21     |pmh05              |pmh06         |pmh08|pmh09     |pmh15    |pmh16    |ta_pmh01|ta_pmh02|ta_pmh03]
+[pmh02      |pmc03               |pmh21     |pmh05              |pmh06         |pmh08|pmh09     |pmh15    |pmh16    |ta_pmh01|ta_pmh02|ta_pmh03]
+}
+END -- s_pmh
+Grid gr15
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr15
+END -- vb16
+END -- aqci140
+
+TABLES
+pmh_file
+ATTRIBUTES
+Edit pmh01=pmh_file.pmh01, tabIndex=1, not null, required, comment="Key Field, No Blank <P>Qry Item Master  ";
+RadioGroup pmh22=pmh_file.pmh22, tabIndex=2, noEntry, items=(("1", "General"),("2", "Subcontracting"));
+CheckBox imaud04=formonly.imaud04, tabIndex=6, text=%"check materials", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=3, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=4, noEntry;
+Edit imaud03=formonly.imaud03, tabIndex=7;
+Edit desc=formonly.desc type VARCHAR, tabIndex=5, noEntry;
+ButtonEdit pmh02=pmh_file.pmh02, action=controlp, tabIndex=8, title="Vender No.", not null, required, image="zoom", comment="<^P>Qry Vender #";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=9, title="Vender Abbreviation", noEntry;
+Edit pmh21=pmh_file.pmh21, tabIndex=18, title="Operation No.";
+Edit pmh05=formonly.pmh05 type VARCHAR, tabIndex=10, title="Approbation Status", noEntry;
+DateEdit pmh06=formonly.pmh06 type VARCHAR, tabIndex=11, title="Approval Date", noEntry;
+CheckBox pmh08=formonly.pmh08 type VARCHAR, tabIndex=12, title="QC", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox pmh09=formonly.pmh09 type CHAR, tabIndex=13, title="QC Degree", not null, required, queryEditable, comment="N.Normal QC T.Strict QC R.Reduced-Qty QC", items=(("N", %"Normal"),("R", %"Reduced-Qty"),("T", %"Strict"));
+ComboBox pmh15=formonly.pmh15 type VARCHAR, tabIndex=14, title="QC Class", comment="1.General     2.Special", items=(("1", "General"),("2", "Special"),("3", "1916(count)"),("4", "1916(measurement)"));
+ComboBox pmh16=formonly.pmh16 type CHAR, tabIndex=15, title="Level", not null, required, queryEditable, comment="General:1/2/3   Special:1/2/3/4", items=(("1", %"General/Special/1916"),("2", %"General/Special/1916"),("3", %"General/Special/1916"),("4", %"Special/1916"),("5", "1916"),("6", "1916"),("7", "1916"));
+CheckBox ta_pmh01=formonly.ta_pmh01, tabIndex=19, title=%"SPEC", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ta_pmh02=formonly.ta_pmh02, tabIndex=20, title=%"SGS", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ta_pmh03=formonly.ta_pmh03, tabIndex=21, title=%"MSDS", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmh(pmh_file.pmh02,formonly.pmc03,pmh_file.pmh21,formonly.pmh05,formonly.pmh06,formonly.pmh08,formonly.pmh09,formonly.pmh15,formonly.pmh16,formonly.ta_pmh01,formonly.ta_pmh02,formonly.ta_pmh03)
+SCREEN RECORD Undefined(pmh_file.pmh01,pmh_file.pmh22,formonly.ima02,formonly.ima021,formonly.desc,formonly.cnt,formonly.cn2,formonly.imaud04,formonly.imaud03)
+END -- INSTRUCTIONS
+

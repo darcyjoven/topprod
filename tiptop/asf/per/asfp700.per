@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp700")
+VBox VBox1
+Grid gr564
+{
+  <G gb6                        > <G group01                             ><G group02                                                                               >
+    [a1        ]                   PBI           [key04             ]      P/O Type            [pmm01             ]       Currency            [pmm22     ]
+                                   W/O No.       [key01                ]   Purchase Date       [pmm04       ]             Ex.Rate             [pmm42               ]
+                                   Task No.      [key05             ]      Buyer               [pmm12       ]
+                                   Process No.   [key06             ]      Buyer Name          [gen02       ]
+                                   Routing S/N   [key02             ]
+  <                             >  Unit code     [key03             ]     <                                                                                        >
+                                  <                                      >
+
+}
+END -- gr564
+Table s_pmn
+{
+[chk |ecm01                 |ecm45             |ecm012      |ecu014              |ecm03       |sgd05        |sgd05_sga02     |ecm03_par            |ima02                |ima021                 |pmn33       |subqty      |pmm09      |pmc03        |pmn20     |pmn31               |pmn31t              |pmc47    |gec04    ]
+[chk |ecm01                 |ecm45             |ecm012      |ecu014              |ecm03       |sgd05        |sgd05_sga02     |ecm03_par            |ima02                |ima021                 |pmn33       |subqty      |pmm09      |pmc03        |pmn20     |pmn31               |pmn31t              |pmc47    |gec04    ]
+[chk |ecm01                 |ecm45             |ecm012      |ecu014              |ecm03       |sgd05        |sgd05_sga02     |ecm03_par            |ima02                |ima021                 |pmn33       |subqty      |pmm09      |pmc03        |pmn20     |pmn31               |pmn31t              |pmc47    |gec04    ]
+[chk |ecm01                 |ecm45             |ecm012      |ecu014              |ecm03       |sgd05        |sgd05_sga02     |ecm03_par            |ima02                |ima021                 |pmn33       |subqty      |pmm09      |pmc03        |pmn20     |pmn31               |pmn31t              |pmc47    |gec04    ]
+[chk |ecm01                 |ecm45             |ecm012      |ecu014              |ecm03       |sgd05        |sgd05_sga02     |ecm03_par            |ima02                |ima021                 |pmn33       |subqty      |pmm09      |pmc03        |pmn20     |pmn31               |pmn31t              |pmc47    |gec04    ]
+[chk |ecm01                 |ecm45             |ecm012      |ecu014              |ecm03       |sgd05        |sgd05_sga02     |ecm03_par            |ima02                |ima021                 |pmn33       |subqty      |pmm09      |pmc03        |pmn20     |pmn31               |pmn31t              |pmc47    |gec04    ]
+[chk |ecm01                 |ecm45             |ecm012      |ecu014              |ecm03       |sgd05        |sgd05_sga02     |ecm03_par            |ima02                |ima021                 |pmn33       |subqty      |pmm09      |pmc03        |pmn20     |pmn31               |pmn31t              |pmc47    |gec04    ]
+[chk |ecm01                 |ecm45             |ecm012      |ecu014              |ecm03       |sgd05        |sgd05_sga02     |ecm03_par            |ima02                |ima021                 |pmn33       |subqty      |pmm09      |pmc03        |pmn20     |pmn31               |pmn31t              |pmc47    |gec04    ]
+[chk |ecm01                 |ecm45             |ecm012      |ecu014              |ecm03       |sgd05        |sgd05_sga02     |ecm03_par            |ima02                |ima021                 |pmn33       |subqty      |pmm09      |pmc03        |pmn20     |pmn31               |pmn31t              |pmc47    |gec04    ]
+[chk |ecm01                 |ecm45             |ecm012      |ecu014              |ecm03       |sgd05        |sgd05_sga02     |ecm03_par            |ima02                |ima021                 |pmn33       |subqty      |pmm09      |pmc03        |pmn20     |pmn31               |pmn31t              |pmc47    |gec04    ]
+}
+END -- s_pmn
+END -- VBox1
+END -- asfp700
+
+ATTRIBUTES
+Group gb6:gb6, text="Sub. condition";
+CheckBox a1=formonly.a1 type CHAR, tabIndex=24, text="Unit Sub. ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group01:group01, text="QBE";
+ButtonEdit key04=formonly.key04 type CHAR, action=controlp, tabIndex=28, image="zoom.png";
+ButtonEdit key01=formonly.key01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="Enter W/O No. QBE ";
+ButtonEdit key05=formonly.key05 type CHAR, action=controlp, tabIndex=29, image="zoom", comment="Enter Task No QBE";
+ButtonEdit key06=formonly.key06 type CHAR, action=controlp, tabIndex=30, image="zoom", comment="Enter Process No QBE";
+ButtonEdit key02=formonly.key02 type CHAR, action=controlp, tabIndex=2, image="zoom", comment="Enter Routing S/N QBE";
+ButtonEdit key03=formonly.key03 type VARCHAR, action=controlp, tabIndex=25, image="zoom.png";
+Group group02:group02, text="Input";
+ButtonEdit pmm01=formonly.pmm01 type CHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry  P/O Type ";
+ButtonEdit pmm22=formonly.pmm22 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Currency";
+DateEdit pmm04=formonly.pmm04 type DATE, tabIndex=5;
+ButtonEdit pmm42=formonly.pmm42 type CHAR, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit pmm12=formonly.pmm12 type CHAR, action=controlp, tabIndex=7, image="zoom";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=8, noEntry;
+CheckBox chk=formonly.chk, tabIndex=33, title=%"chk", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ecm01=formonly.ecm01 type CHAR, tabIndex=9, title="W/O#", noEntry;
+Edit ecm45=formonly.ecm45 type CHAR, tabIndex=10, title="TaskName", noEntry;
+Edit ecm012=formonly.ecm012 type CHAR, tabIndex=31, title=%"Process No.", noEntry;
+Edit ecu014=formonly.ecu014 type CHAR, tabIndex=32, title=%"Process No. Name", noEntry;
+Edit ecm03=formonly.ecm03 type CHAR, tabIndex=11, title="Routing S/N", noEntry;
+Edit sgd05=formonly.sgd05 type CHAR, tabIndex=26, title="Unit No.", noEntry;
+Edit sgd05_sga02=formonly.sgd05_sga02 type CHAR, tabIndex=27, title="Unit desc", noEntry;
+Edit ecm03_par=formonly.ecm03_par type CHAR, tabIndex=12, title="Item#", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=13, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=14, title="Specification", noEntry;
+DateEdit pmn33=formonly.pmn33 type DATE, tabIndex=15, title="Delivr.Date";
+Edit subqty=formonly.subqty type CHAR, tabIndex=16, title="SUB Qty", noEntry;
+ButtonEdit pmm09=formonly.pmm09 type CHAR, action=controlp, tabIndex=17, title="Vender#", image="zoom", comment="<^P>Qry Vender No.";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=18, title="Abbreviation", noEntry;
+Edit pmn20=formonly.pmn20 type CHAR, tabIndex=19, title="Qty";
+Edit pmn31=formonly.pmn31 type CHAR, tabIndex=20, title="Unit Price";
+Edit pmn31t=formonly.pmn31t type CHAR, tabIndex=21, title="Tax Price";
+Edit pmc47=formonly.pmc47 type CHAR, tabIndex=22, title="Tax Type", noEntry;
+Edit gec04=formonly.gec04 type CHAR, tabIndex=23, title="Tax Rate", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmn(formonly.chk,formonly.ecm01,formonly.ecm45,formonly.ecm012,formonly.ecu014,formonly.ecm03,formonly.sgd05,formonly.sgd05_sga02,formonly.ecm03_par,formonly.ima02,formonly.ima021,formonly.pmn33,formonly.subqty,formonly.pmm09,formonly.pmc03,formonly.pmn20,formonly.pmn31,formonly.pmn31t,formonly.pmc47,formonly.gec04)
+SCREEN RECORD Undefined(formonly.a1,formonly.key04,formonly.key01,formonly.key05,formonly.key06,formonly.key02,formonly.key03,formonly.pmm01,formonly.pmm22,formonly.pmm04,formonly.pmm42,formonly.pmm12,formonly.gen02)
+END -- INSTRUCTIONS
+

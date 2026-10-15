@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglt010")
+VBox vb6
+Folder pc1
+Page Page1(text=%"Page0")
+VBox vb5
+Grid gr2
+{
+ Group number  [aeq01            ]   aeq04  [aeq04            ]
+ Top Companies [aeq01_1          ]   aeq05  [aeq05            ]
+ Set of books  [aeq01_2          ]
+
+}
+END -- gr2
+Table tb2
+{
+[aeq02        |aeq06         |aeq06_1     |aeq07    |aeq08     |aeq03     |aeq09   |aeq09_1  |aeq10     |aeq11     ]
+[aeq02        |aeq06         |aeq06_1     |aeq07    |aeq08     |aeq03     |aeq09   |aeq09_1  |aeq10     |aeq11     ]
+[aeq02        |aeq06         |aeq06_1     |aeq07    |aeq08     |aeq03     |aeq09   |aeq09_1  |aeq10     |aeq11     ]
+[aeq02        |aeq06         |aeq06_1     |aeq07    |aeq08     |aeq03     |aeq09   |aeq09_1  |aeq10     |aeq11     ]
+[aeq02        |aeq06         |aeq06_1     |aeq07    |aeq08     |aeq03     |aeq09   |aeq09_1  |aeq10     |aeq11     ]
+
+}
+END -- tb2
+END -- vb5
+END -- Page1
+END -- pc1
+Grid gr10
+{
+   ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr10
+END -- vb6
+END -- aglt010
+
+TABLES
+aeq_file
+ATTRIBUTES
+ButtonEdit aeq01=aeq_file.aeq01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit aeq04=aeq_file.aeq04, tabIndex=4, not null, required;
+Edit aeq01_1=formonly.aeq01_1 type CHAR, tabIndex=3;
+Edit aeq05=aeq_file.aeq05, tabIndex=5, not null, required;
+Edit aeq01_2=formonly.aeq01_2 type CHAR, tabIndex=2;
+ButtonEdit aeq02=aeq_file.aeq02, action=controlp, tabIndex=11, title="aeq02", not null, required, image="zoom";
+ButtonEdit aeq06=aeq_file.aeq06, action=controlp, tabIndex=13, title="aeq06", not null, required, image="zoom";
+Edit aeq06_1=formonly.aeq06_1 type CHAR, tabIndex=18, title="aeq06_1", noEntry;
+ComboBox aeq07=aeq_file.aeq07, tabIndex=14, title="aeq07", items=(("+", "add"),("-", "decrease
+"));
+Edit aeq08=aeq_file.aeq08, tabIndex=10, title="aep08";
+ButtonEdit aeq03=aeq_file.aeq03, action=controlp, tabIndex=12, title="aeq03", not null, required, image="zoom";
+ButtonEdit aeq09=aeq_file.aeq09, action=controlp, tabIndex=15, title="aeq09", not null, required, image="zoom";
+Edit aeq09_1=formonly.aeq09_1 type CHAR, tabIndex=19, title="aeq09_1", noEntry;
+ComboBox aeq10=aeq_file.aeq10, tabIndex=16, title="aeq10", items=(("+", "add"),("-", "decrease
+"));
+Edit aeq11=aeq_file.aeq11, tabIndex=17, title="aeq11";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aeq1(aeq_file.aeq02,aeq_file.aeq06,formonly.aeq06_1,aeq_file.aeq07,aeq_file.aeq08,aeq_file.aeq03,aeq_file.aeq09,formonly.aeq09_1,aeq_file.aeq10,aeq_file.aeq11)
+SCREEN RECORD Undefined(aeq_file.aeq01,aeq_file.aeq04,formonly.aeq01_1,aeq_file.aeq05,formonly.aeq01_2,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

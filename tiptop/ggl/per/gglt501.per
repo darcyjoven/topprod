@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="gglt501")
+VBox VBox1
+Folder pc1
+Page Page1(text=%"Page0")
+VBox vb2
+Grid gr2
+{
+ Group number  [atd01            ]   atd02  [atd02            ]   atd07  [atd07         ]  atd11   [atd11       ]
+ Top Companies [atd01_1          ]   atd03  [atd03            ]   atd10  [atd10         ]  atd14   [atd14       ]
+ Set of books  [atd01_2          ]   atd04  [atd04            ]   atd08  [atd08         ]  atd15   [atd15       ]
+
+}
+END -- gr2
+Table s_atd1
+{
+[atd05   |atd16   |atd17     |atd09             |atd13                |atd06                     |atd12               ]
+[atd05   |atd16   |atd17     |atd09             |atd13                |atd06                     |atd12               ]
+[atd05   |atd16   |atd17     |atd09             |atd13                |atd06                     |atd12               ]
+[atd05   |atd16   |atd17     |atd09             |atd13                |atd06                     |atd12               ]
+
+}
+END -- s_atd1
+END -- vb2
+END -- Page1
+END -- pc1
+Grid gr1
+{
+   ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1
+END -- VBox1
+END -- gglt501
+
+TABLES
+atd_file
+ATTRIBUTES
+ButtonEdit atd01=atd_file.atd01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit atd02=atd_file.atd02, action=controlp, tabIndex=4, not null, required, image="zoom";
+ButtonEdit atd07=atd_file.atd07, action=controlp, tabIndex=7, image="zoom";
+ComboBox atd11=atd_file.atd11, tabIndex=10, items=(("1", "huiru"),("2", "luru"));
+Edit atd01_1=formonly.atd01_1 type CHAR, tabIndex=3;
+Edit atd03=atd_file.atd03, tabIndex=5, not null, required;
+ButtonEdit atd10=atd_file.atd10, action=controlp, tabIndex=9, not null, required, image="zoom";
+ButtonEdit atd14=atd_file.atd14, action=controlp, tabIndex=16, image="zoom.png";
+Edit atd01_2=formonly.atd01_2 type CHAR, tabIndex=2;
+Edit atd04=atd_file.atd04, tabIndex=6, not null, required;
+Edit atd08=atd_file.atd08, tabIndex=8;
+Edit atd15=atd_file.atd15, tabIndex=17;
+ButtonEdit atd05=atd_file.atd05, action=controlp, tabIndex=11, title="atd05", not null, required, image="zoom";
+Edit atd16=atd_file.atd16, tabIndex=12, title="atd16";
+ComboBox atd17=atd_file.atd17, tabIndex=19, title=%"atd17", items=(("10", %"Business Activity Income"),("11", %"Business Activity Expenditure"),("20", %"Investment Income"),("21", %"Investment Expenditure"),("30", %"Financial Activity"),("31", %"Financial Activity"),("40", %"Influence"));
+Edit atd09=atd_file.atd09, tabIndex=14, title="atd09";
+Edit atd13=atd_file.atd13, tabIndex=18, title=%"atd13";
+Edit atd06=atd_file.atd06, tabIndex=13, title="atd06";
+ButtonEdit atd12=atd_file.atd12, action=controlp, tabIndex=15, title="atd12", image="zoom.png";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_atd1(atd_file.atd05,atd_file.atd16,atd_file.atd17,atd_file.atd09,atd_file.atd13,atd_file.atd06,atd_file.atd12)
+SCREEN RECORD Undefined(atd_file.atd01,atd_file.atd02,atd_file.atd07,atd_file.atd11,formonly.atd01_1,atd_file.atd03,atd_file.atd10,atd_file.atd14,formonly.atd01_2,atd_file.atd04,atd_file.atd08,atd_file.atd15,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

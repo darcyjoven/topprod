@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almp430.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almp430")
+VBox vb2
+Grid gr6502
+{
+ <G group01                                     >
+  Contract No.        [lnt01                 ]
+  Sign Date           [lnt03       ]
+  Tenant No.          [lnt04                 ]
+  Payment Tenant No.  [lnt12                 ]
+ <                                              >
+
+ <G group02                                     >
+  Year                [year      ]
+  Month               [month     ]
+  Document            [g_slip        ]
+  Note Date           [dd            ]
+ [a                                         ]
+ <                                              >
+}
+END -- gr6502
+Grid gr3
+{
+ <G gb3                                                               >
+  From No. [start_no            ]     To No. [end_no              ]
+ <                                                                    >
+}
+END -- gr3
+Grid gr2482
+{
+[g_bgjob                                ]
+
+}
+END -- gr2482
+END -- vb2
+END -- almp430
+
+TABLES
+lnt_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit lnt01=lnt_file.lnt01, action=controlp, tabIndex=1, image="zoom.png";
+DateEdit lnt03=lnt_file.lnt03, tabIndex=2;
+ButtonEdit lnt04=lnt_file.lnt04, action=controlp, tabIndex=3, image="zoom.png";
+ButtonEdit lnt12=lnt_file.lnt12, action=controlp, tabIndex=4, image="zoom.png";
+Group group02:group02, text="Input";
+Edit year=formonly.year type CHAR, tabIndex=5;
+Edit month=formonly.month type CHAR, tabIndex=6;
+ButtonEdit g_slip=formonly.g_slip type CHAR, action=controlp, tabIndex=7, required, image="zoom.png";
+DateEdit dd=formonly.dd type CHAR, tabIndex=8, not null, required;
+CheckBox a=formonly.a type CHAR, tabIndex=9, text="Regenerate Current Period Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb3:gb3, text="Generated Data Range";
+Edit start_no=formonly.start_no type CHAR, tabIndex=10;
+Edit end_no=formonly.end_no type CHAR, tabIndex=11;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=12, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lnt_file.lnt01,lnt_file.lnt03,lnt_file.lnt04,lnt_file.lnt12,formonly.year,formonly.month,formonly.g_slip,formonly.dd,formonly.a,formonly.start_no,formonly.end_no,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

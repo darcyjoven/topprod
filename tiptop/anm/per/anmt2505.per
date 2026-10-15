@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt2505.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Enter Note Withdraw/Return Account")
+VBox VBox1
+Grid gr4457
+{
+ <G group01                                  >
+  Transaction Note No. [npn01               ]
+  Transaction Date     [npn02               ]
+ <                                           >
+ <G group02                                  >
+  Bill                 [ap_slip   ]
+  Account Category     [ap_type   ]
+ <                                           >
+
+}
+END -- gr4457
+END -- VBox1
+END -- anmt1502
+
+TABLES
+npn_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit npn01=npn_file.npn01, tabIndex=1;
+DateEdit npn02=npn_file.npn02, tabIndex=2;
+Group group02:group02, text="Input";
+ButtonEdit ap_slip=formonly.ap_slip type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ap_type=formonly.ap_type type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Details";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(npn_file.npn01,npn_file.npn02,formonly.ap_slip,formonly.ap_type)
+END -- INSTRUCTIONS
+

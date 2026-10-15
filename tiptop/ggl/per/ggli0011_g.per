@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli0011_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Batch Generate Account")
+VBox vb3
+Grid gr2329
+{
+ <G group01                                    >
+  Account Title Range [aag01               ]
+
+ <                                             >
+
+}
+END -- gr2329
+Grid gr2330
+{
+ <G group02                                   >
+  Group No.           [ashh13              ]
+  Company No.         [ashh01              ]
+  Plant Name          [asg02               ]
+  Logistics code      [asg03               ]
+  Book No             [ashh00     ]
+ [y                   ]
+                      [dummy01               ]
+ <                                            >
+}
+END -- gr2330
+END -- vb3
+END -- ggli0011_g
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit aag01=formonly.aag01 type CHAR, tabIndex=1;
+Group group02:group02;
+ButtonEdit ashh13=formonly.ashh13 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+ButtonEdit ashh01=formonly.ashh01 type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Query";
+Edit asg02=formonly.asg02 type CHAR, tabIndex=4, noEntry;
+Edit asg03=formonly.asg03 type CHAR, tabIndex=5, noEntry;
+Edit ashh00=formonly.ashh00 type CHAR, tabIndex=6;
+CheckBox y=formonly.y type CHAR, tabIndex=8, text="Default Account Title", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="Assert don\'t Update";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aag01,formonly.ashh13,formonly.ashh01,formonly.asg02,formonly.asg03,formonly.ashh00,formonly.y)
+END -- INSTRUCTIONS
+

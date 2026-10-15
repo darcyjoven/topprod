@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt511.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt511")
+VBox VBox1
+Group group01
+Grid gr5286
+{
+ P/O Center   [pny01     ][geu02     ]
+ Data Source  [pny02                 ]
+ Flow No      [pny03_1               ]
+ MRP Version  [pny03_2   ]
+}
+END -- gr5286
+END -- group01
+Group group02
+Table s_pny
+{
+[sel     |pnx03    |pnx04     |azp02       |pnx05      |pnx06|pnx07       |ima02             |pnx09   |pnx16   |pnx18       |pny07     |pny08              |pny09              |pny10     |pny16     |pny13     |pny19     |pny20       |pny24       |pny21     |pny22   ]
+[sel     |pnx03    |pnx04     |azp02       |pnx05      |pnx06|pnx07       |ima02             |pnx09   |pnx16   |pnx18       |pny07     |pny08              |pny09              |pny10     |pny16     |pny13     |pny19     |pny20       |pny24       |pny21     |pny22   ]
+[sel     |pnx03    |pnx04     |azp02       |pnx05      |pnx06|pnx07       |ima02             |pnx09   |pnx16   |pnx18       |pny07     |pny08              |pny09              |pny10     |pny16     |pny13     |pny19     |pny20       |pny24       |pny21     |pny22   ]
+[sel     |pnx03    |pnx04     |azp02       |pnx05      |pnx06|pnx07       |ima02             |pnx09   |pnx16   |pnx18       |pny07     |pny08              |pny09              |pny10     |pny16     |pny13     |pny19     |pny20       |pny24       |pny21     |pny22   ]
+[sel     |pnx03    |pnx04     |azp02       |pnx05      |pnx06|pnx07       |ima02             |pnx09   |pnx16   |pnx18       |pny07     |pny08              |pny09              |pny10     |pny16     |pny13     |pny19     |pny20       |pny24       |pny21     |pny22   ]
+[sel     |pnx03    |pnx04     |azp02       |pnx05      |pnx06|pnx07       |ima02             |pnx09   |pnx16   |pnx18       |pny07     |pny08              |pny09              |pny10     |pny16     |pny13     |pny19     |pny20       |pny24       |pny21     |pny22   ]
+[sel     |pnx03    |pnx04     |azp02       |pnx05      |pnx06|pnx07       |ima02             |pnx09   |pnx16   |pnx18       |pny07     |pny08              |pny09              |pny10     |pny16     |pny13     |pny19     |pny20       |pny24       |pny21     |pny22   ]
+[sel     |pnx03    |pnx04     |azp02       |pnx05      |pnx06|pnx07       |ima02             |pnx09   |pnx16   |pnx18       |pny07     |pny08              |pny09              |pny10     |pny16     |pny13     |pny19     |pny20       |pny24       |pny21     |pny22   ]
+[sel     |pnx03    |pnx04     |azp02       |pnx05      |pnx06|pnx07       |ima02             |pnx09   |pnx16   |pnx18       |pny07     |pny08              |pny09              |pny10     |pny16     |pny13     |pny19     |pny20       |pny24       |pny21     |pny22   ]
+[sel     |pnx03    |pnx04     |azp02       |pnx05      |pnx06|pnx07       |ima02             |pnx09   |pnx16   |pnx18       |pny07     |pny08              |pny09              |pny10     |pny16     |pny13     |pny19     |pny20       |pny24       |pny21     |pny22   ]
+
+}
+END -- s_pny
+END -- group02
+Grid gr5287
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr5287
+END -- VBox1
+END -- apmt511
+
+ATTRIBUTES
+ButtonEdit pny01=formonly.pny01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit geu02=formonly.geu02 type CHAR, tabIndex=2;
+ComboBox pny02=formonly.pny02 type CHAR, tabIndex=3, queryEditable, items=(("1", "P/R"),("2", "MRP"));
+Edit pny03_1=formonly.pny03_1 type CHAR, tabIndex=4;
+Edit pny03_2=formonly.pny03_2 type CHAR, tabIndex=5;
+CheckBox sel=formonly.sel type CHAR, tabIndex=6, title="Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pnx03=formonly.pnx03 type CHAR, tabIndex=7, title="Flow No", noEntry;
+ButtonEdit pnx04=formonly.pnx04 type CHAR, action=controlp, tabIndex=8, title="Plant No", noEntry, image="zoom";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=9, title="Plant Name", noEntry;
+Edit pnx05=formonly.pnx05 type CHAR, tabIndex=10, title="P/R No", noEntry;
+Edit pnx06=formonly.pnx06 type CHAR, tabIndex=11, title="SN", noEntry;
+ButtonEdit pnx07=formonly.pnx07 type CHAR, action=controlp, tabIndex=12, title="Item No", noEntry, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=13, title="Spec", noEntry;
+DateEdit pnx09=formonly.pnx09 type DATE, tabIndex=14, title="Date", noEntry;
+Edit pnx16=formonly.pnx16 type CHAR, tabIndex=15, title="Unit", noEntry;
+Edit pnx18=formonly.pnx18 type CHAR, tabIndex=16, title="Qty", noEntry;
+ComboBox pny07=formonly.pny07 type CHAR, tabIndex=17, title="Category", noEntry, queryEditable, items=(("1", %"Transfer"),("2", %"P/O"),("3", %"Manual P/O"));
+ButtonEdit pny08=formonly.pny08 type CHAR, action=controlp, tabIndex=18, title="Transfer-out Plant", noEntry, image="zoom";
+ButtonEdit pny09=formonly.pny09 type CHAR, action=controlp, tabIndex=19, title="Transfer-in Plant", noEntry, image="zoom";
+DateEdit pny10=formonly.pny10 type DATE, tabIndex=20, title="Date", noEntry;
+Edit pny16=formonly.pny16 type CHAR, tabIndex=21, title="Qty2", noEntry;
+Edit pny13=formonly.pny13 type CHAR, tabIndex=22, title="Qty1", noEntry;
+Edit pny19=formonly.pny19 type CHAR, tabIndex=23, title="Dis Qty", noEntry;
+ButtonEdit pny20=formonly.pny20 type CHAR, action=controlp, tabIndex=24, title="Flow No", noEntry, image="zoom";
+ButtonEdit pny24=formonly.pny24 type CHAR, action=controlp, tabIndex=25, title="Supplier", noEntry, image="zoom";
+Edit pny21=formonly.pny21 type CHAR, tabIndex=26, title="Note", noEntry;
+Edit pny22=formonly.pny22 type CHAR, tabIndex=27, title="SN", noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pny(formonly.sel,formonly.pnx03,formonly.pnx04,formonly.azp02,formonly.pnx05,formonly.pnx06,formonly.pnx07,formonly.ima02,formonly.pnx09,formonly.pnx16,formonly.pnx18,formonly.pny07,formonly.pny08,formonly.pny09,formonly.pny10,formonly.pny16,formonly.pny13,formonly.pny19,formonly.pny20,formonly.pny24,formonly.pny21,formonly.pny22)
+SCREEN RECORD Undefined(formonly.pny01,formonly.geu02,formonly.pny02,formonly.pny03_1,formonly.pny03_2,formonly.cn2)
+END -- INSTRUCTIONS
+

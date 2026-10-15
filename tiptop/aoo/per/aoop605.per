@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aoop605.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aoop605")
+VBox vb7
+Folder folder01
+Page page01(text="Main")
+Grid gr3
+{
+ Data Type   [gev01     ]
+ Data Center [gev04         ][geu02               ]
+ File        [file                                     ] [browse   ][add_body      ]
+
+}
+END -- gr3
+END -- page01
+END -- folder01
+Table s_tables
+{
+[zr02        |gat03                          |prog         |gaz03                        |txt                                 ]
+[zr02        |gat03                          |prog         |gaz03                        |txt                                 ]
+[zr02        |gat03                          |prog         |gaz03                        |txt                                 ]
+[zr02        |gat03                          |prog         |gaz03                        |txt                                 ]
+[zr02        |gat03                          |prog         |gaz03                        |txt                                 ]
+[zr02        |gat03                          |prog         |gaz03                        |txt                                 ]
+[zr02        |gat03                          |prog         |gaz03                        |txt                                 ]
+[zr02        |gat03                          |prog         |gaz03                        |txt                                 ]
+[zr02        |gat03                          |prog         |gaz03                        |txt                                 ]
+[zr02        |gat03                          |prog         |gaz03                        |txt                                 ]
+
+}
+END -- s_tables
+Grid gr7
+{
+[dummy01                                                                                   ]
+[dummy02                                                                                   ]
+[dummy02_1                                                                                 ]
+[dummy02_4                                                                                 ]
+[dummy02_2                                                                                 ]
+[dummy02_3                                                                                 ]
+[dummy02_5                                                                                 ]
+[dummy02_6                                                                                                         ]
+[dummy02_7                                                                                 ]
+[dummy02_8                                                                                 ]
+[dummy02_9                                                                                 ]
+
+}
+END -- gr7
+END -- vb7
+END -- aoop605
+
+TABLES
+gev_file,
+geu_file
+ATTRIBUTES
+ComboBox gev01=gev_file.gev01, tabIndex=1, not null, required, items=(("0", "Basic Data"),("1", "Item"),("2", "BOM"),("3", "ECN"),("4", "Customer"),("5", "Vendor"),("6", "Account"),("7", "Price"));
+ButtonEdit gev04=gev_file.gev04, action=controlp, tabIndex=2, not null, required, image="zoom.png", comment="<^P>Qry of Data Center No.";
+Edit geu02=geu_file.geu02, tabIndex=3;
+Edit file=formonly.file type CHAR, tabIndex=4, not null, required;
+Button browse:browse, text="Browse";
+Button add_body:add_body, text="Add To Body";
+Edit zr02=formonly.zr02 type CHAR, tabIndex=5, title="Table Id", noEntry;
+Edit gat03=formonly.gat03 type CHAR, tabIndex=6, title="Table Name", noEntry;
+Edit prog=formonly.prog type VARCHAR, tabIndex=7, title="Program Id", noEntry;
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=8, title="Program Name", noEntry;
+Edit txt=formonly.txt type CHAR, tabIndex=9, title="Upload File";
+Label dummy01:dummy01, text=" ";
+Label dummy02:dummy02, text="File Sample:c:/tiptop/aooi030_gem_file_0.txt";
+Label dummy02_1:dummy02_1, text="prog name: aooi030  table name: gem_file    data type:0.basic data";
+Label dummy02_4:dummy02_4, text="Notice:";
+Label dummy02_2:dummy02_2, text="Item:ima_file/imc_file/smd_file/imaicd_file";
+Label dummy02_3:dummy02_3, text="BOM:bma_file/bmb_file/bmc_file/bmd_file/bmt_file/bml_file/boa_file/bob_file";
+Label dummy02_5:dummy02_5, text="ECN:bmx_file/bmy_file/bmz_file/bmf_file/bmg_file/bmw_file";
+Label dummy02_6:dummy02_6, text="Customer:occ_file/ocd_file/oce_file/oci_file/ocj_file/tql_file/tqk_file/tqo_file/tqm_file/tqn_file/pov_file/occg_file";
+Label dummy02_7:dummy02_7, text="Vendor:pmc_file/pnp_file/pmf_file/pmd_file/pov_file/pmg_file";
+Label dummy02_8:dummy02_8, text="Account:aag_file or giu_file";
+Label dummy02_9:dummy02_9, text="Price:tqm_file/tqn_file";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tables(formonly.zr02,formonly.gat03,formonly.prog,formonly.gaz03,formonly.txt)
+SCREEN RECORD Undefined(gev_file.gev01,gev_file.gev04,geu_file.geu02,formonly.file)
+END -- INSTRUCTIONS
+

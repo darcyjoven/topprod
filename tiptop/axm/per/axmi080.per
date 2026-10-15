@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi080.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi080")
+VBox VBox1
+Folder pc446
+Page page01(text="Main")
+Table s_oak
+{
+[oak01                |oak02           |oak03   ]
+[oak01                |oak02           |oak03   ]
+[oak01                |oak02           |oak03   ]
+[oak01                |oak02           |oak03   ]
+[oak01                |oak02           |oak03   ]
+[oak01                |oak02           |oak03   ]
+[oak01                |oak02           |oak03   ]
+[oak01                |oak02           |oak03   ]
+[oak01                |oak02           |oak03   ]
+[oak01                |oak02           |oak03   ]
+
+}
+END -- s_oak
+END -- page01
+END -- pc446
+Grid gr2001
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2001
+END -- VBox1
+END -- axmi080
+
+TABLES
+oak_file
+ATTRIBUTES
+Edit oak01=oak_file.oak01, tabIndex=1, title="On-Hold Reason Code", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit oak02=oak_file.oak02, tabIndex=2, title="Description";
+ComboBox oak03=oak_file.oak03, tabIndex=3, title="Code", not null, required, queryEditable, items=(("1", %"On-Hold Code"));
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oak(oak_file.oak01,oak_file.oak02,oak_file.oak03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

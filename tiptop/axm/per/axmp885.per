@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp885.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmp885")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                   >
+  Sls/Rtr Note#       [oha01               ]
+  Sls/Rtn Date        [oha02               ]
+  Tax Type            [oha21               ]
+  Dept No.            [oha15               ]
+ <                                                            >
+ <G group02                                                   >
+  Rejest Type         [g_oha05           ]
+ <                                                            >
+ <G group03                                                   >
+  Accounts Receivable Enter Account Date [g_date      ]
+                                   [dummy01           ]
+ <                                                            >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[g_bgjob                                                      ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- axmp885
+
+ATTRIBUTES
+Group group01:group01;
+Edit oha01=formonly.oha01 type CHAR, tabIndex=1, upShift;
+DateEdit oha02=formonly.oha02 type DATE, tabIndex=2;
+Edit oha21=formonly.oha21 type CHAR, tabIndex=3;
+Edit oha15=formonly.oha15 type CHAR, tabIndex=4;
+Group group02:group02;
+ComboBox g_oha05=formonly.g_oha05 type CHAR, tabIndex=5, not null, required, items=(("2", %"Buyer reject No"),("3", %"Agent reject No"));
+Group group03:group03;
+DateEdit g_date=formonly.g_date type DATE, tabIndex=6;
+Label dummy01:dummy01, text="(By Original Doc.date if blank)";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=7, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oha01,formonly.oha02,formonly.oha21,formonly.oha15,formonly.g_oha05,formonly.g_date,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

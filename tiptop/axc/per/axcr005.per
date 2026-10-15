@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr005")
+VBox VBox1
+Grid gr1568
+{
+ <G group01                                                                             >
+  Trans Vender/Cust No./Dep No. [tlf19               ]
+  Reason Code                   [tlf14               ]
+  Item No.                      [ima01               ]
+  Account                       [ima39               ]
+ <                                                                                      >
+
+}
+END -- gr1568
+Group g01(text="INPUT")
+Grid gr1569
+{
+ Year/Month          [yy        ][mm        ]
+ <G group02                                 >
+ [o                              ]
+ <                                          >
+ <G group03                                 >
+ [a                              ]
+ [b                              ]
+ [c                              ]
+ <                                          >
+ <G group03_1                               >
+ [stock                      ]
+ [                           ]
+ [                           ]
+ [                           ]
+ <                                          >
+
+}
+END -- gr1569
+END -- g01
+Grid gr1570
+{
+[more                                                                    ]
+
+}
+END -- gr1570
+END -- VBox1
+END -- axcr005
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit tlf19=formonly.tlf19 type VARCHAR, tabIndex=1;
+Edit tlf14=formonly.tlf14 type VARCHAR, tabIndex=2;
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Edit ima39=formonly.ima39 type VARCHAR, tabIndex=4;
+Edit yy=formonly.yy type SMALLINT, tabIndex=5;
+Edit mm=formonly.mm type SMALLINT, tabIndex=6;
+Group group02:group02, text="Option";
+RadioGroup o=formonly.o type VARCHAR, tabIndex=7, items=(("1", "W/O Withdraw"),("2", "MISC Withdrawal"),("3", "Other Adjust"),("4", "Sales Store-out"));
+Group group03:group03;
+CheckBox a=formonly.a type VARCHAR, tabIndex=8, text="Statistics by department?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=9, text="Statistics by reason ?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=10, text="Print Item number detail ?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03_1:group03_1, text=%"";
+RadioGroup stock=formonly.stock type CHAR, tabIndex=12, not null, required, items=(("1", "Not Include Direct Suspend"),("2", "Include Direct Suspend"),("3", "Only Direct Suspend"));
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tlf19,formonly.tlf14,formonly.ima01,formonly.ima39,formonly.yy,formonly.mm,formonly.o,formonly.a,formonly.b,formonly.c,formonly.more,formonly.stock)
+END -- INSTRUCTIONS
+

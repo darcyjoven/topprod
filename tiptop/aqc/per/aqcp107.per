@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcp107.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+  <G group1                                                           >
+    [label1          ] [type_no            ]
+    [label2          ] [smyslip1           ]
+    [label3          ] [smyslip2           ]
+    [label4          ] [smydate            ]
+    [label5          ] [code               ]
+    [label6          ] [cost               ]
+
+  <                                                                   >
+
+  <G group2                                                           >
+    [label7           ] [doc_no            ]
+    [label8           ] [item_no           ]
+  <                                                                   >
+
+}
+END -- Grid1
+Grid Grid2
+{
+  [g_bgjob          ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+smy_file
+ATTRIBUTES
+Group group1:Group1, text=%"Conditions Options\n\n";
+Label label1:Label1, text=%"Data Type";
+ComboBox type_no=formonly.type_no type VARCHAR, tabIndex=1, default = "1", not null, required, items=(("1", %"IQC"),("2", %"FQC"),("3", %"QC"));
+Label label2:Label2, text=%"Smyslip1";
+ButtonEdit smyslip1=formonly.smyslip1 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Label label3:Label3, text=%"Smyslip2";
+ButtonEdit smyslip2=formonly.smyslip2 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Label label4:Label4, text=%"Documents date";
+DateEdit smydate=smy_file.smydate, tabIndex=4, not null, required;
+Label label5:Label5, text=%"Resoncode";
+ButtonEdit code=formonly.code type CHAR, action=controlp, tabIndex=5, image="zoom";
+Label label6:Label6, text=%"Costcenter";
+ButtonEdit cost=formonly.cost type CHAR, action=controlp, tabIndex=6, image="zoom";
+Group group2:Group2, text=%"QBE";
+Label label7:Label7, text=%"Documents Numbers";
+ButtonEdit doc_no=formonly.doc_no type VARCHAR, action=controlp, tabIndex=7, image="zoom";
+Label label8:Label8, text=%"Item Numbers";
+ButtonEdit item_no=formonly.item_no type VARCHAR, action=controlp, tabIndex=8, image="zoom";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=9, text=%"Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.type_no,formonly.smyslip1,formonly.smyslip2,smy_file.smydate,formonly.code,formonly.cost,formonly.g_bgjob,formonly.doc_no,formonly.item_no)
+END -- INSTRUCTIONS
+

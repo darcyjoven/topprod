@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abai160.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abai160")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+ oaybslip            [oaybslip     ][oaydesc     ]
+ oayb01              [oayb01       ][oaydesc2    ]
+
+
+
+
+
+}
+END -- Grid1
+END -- page01
+END -- Folder1
+Grid Grid3
+{
+ ---------- Rows [idx   ]/[cnt   ] ----------
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- abai160
+
+TABLES
+oayb_file
+ATTRIBUTES
+ButtonEdit oaybslip=oayb_file.oaybslip, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit oaydesc=formonly.oaydesc type CHAR, tabIndex=2, noEntry;
+ButtonEdit oayb01=oayb_file.oayb01, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit oaydesc2=formonly.oaydesc2 type CHAR, tabIndex=4, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=5, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oaydesc,formonly.idx,formonly.cnt,oayb_file.oaybslip,oayb_file.oayb01,formonly.oaydesc2)
+END -- INSTRUCTIONS
+

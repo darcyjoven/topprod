@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq232.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq232")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4976
+{
+ Vender No.          [pmc01     ] [pmc03     ]
+
+}
+END -- gr4976
+END -- page01
+END -- folder01
+Table s_rvv
+{
+[rvu03      |rvu00  |desc    |rvu01     |rvu02     |rvv36     |rvv31              |rvv031                        |rvv17   ]
+[rvu03      |rvu00  |desc    |rvu01     |rvu02     |rvv36     |rvv31              |rvv031                        |rvv17   ]
+[rvu03      |rvu00  |desc    |rvu01     |rvu02     |rvv36     |rvv31              |rvv031                        |rvv17   ]
+[rvu03      |rvu00  |desc    |rvu01     |rvu02     |rvv36     |rvv31              |rvv031                        |rvv17   ]
+[rvu03      |rvu00  |desc    |rvu01     |rvu02     |rvv36     |rvv31              |rvv031                        |rvv17   ]
+[rvu03      |rvu00  |desc    |rvu01     |rvu02     |rvv36     |rvv31              |rvv031                        |rvv17   ]
+[rvu03      |rvu00  |desc    |rvu01     |rvu02     |rvv36     |rvv31              |rvv031                        |rvv17   ]
+[rvu03      |rvu00  |desc    |rvu01     |rvu02     |rvv36     |rvv31              |rvv031                        |rvv17   ]
+[rvu03      |rvu00  |desc    |rvu01     |rvu02     |rvv36     |rvv31              |rvv031                        |rvv17   ]
+[rvu03      |rvu00  |desc    |rvu01     |rvu02     |rvv36     |rvv31              |rvv031                        |rvv17   ]
+
+}
+END -- s_rvv
+Grid gr4977
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4977
+END -- VBox1
+END -- apmq232
+
+ATTRIBUTES
+ButtonEdit pmc01=formonly.pmc01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, noEntry;
+DateEdit rvu03=formonly.rvu03 type CHAR, tabIndex=3, title="Trans.Date";
+Edit rvu00=formonly.rvu00 type CHAR, tabIndex=4, title="Type", comment="1.Store-in 2.QC/Return 3.Warehouse Return";
+Edit desc=formonly.desc type VARCHAR, tabIndex=5, title="Note";
+Edit rvu01=formonly.rvu01 type CHAR, tabIndex=6, title="No.";
+Edit rvu02=formonly.rvu02 type CHAR, tabIndex=7, title="Receipt#";
+Edit rvv36=formonly.rvv36 type CHAR, tabIndex=8, title="P/O No.";
+Edit rvv31=formonly.rvv31 type CHAR, tabIndex=9, title="Item No.";
+Edit rvv031=formonly.rvv031 type CHAR, tabIndex=10, title="Part Name";
+Edit rvv17=formonly.rvv17 type CHAR, tabIndex=11, title="Qty";
+Edit cnt=formonly.cnt type CHAR, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvv(formonly.rvu03,formonly.rvu00,formonly.desc,formonly.rvu01,formonly.rvu02,formonly.rvv36,formonly.rvv31,formonly.rvv031,formonly.rvv17)
+SCREEN RECORD Undefined(formonly.pmc01,formonly.pmc03,formonly.cnt)
+END -- INSTRUCTIONS
+

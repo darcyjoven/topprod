@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apji300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apji300")
+VBox vb6
+Folder pc2
+Page Page1(text=%"Page1")
+Table s_pjq(width = 4 characters)
+{
+[pjq01                         |pjq02                                   |pjqacti             ]
+[pjq01                         |pjq02                                   |pjqacti             ]
+[pjq01                         |pjq02                                   |pjqacti             ]
+[pjq01                         |pjq02                                   |pjqacti             ]
+[pjq01                         |pjq02                                   |pjqacti             ]
+
+}
+END -- s_pjq
+END -- Page1
+END -- pc2
+Grid gr3
+{
+  ----------Amount[cn2       ]----------
+
+}
+END -- gr3
+END -- vb6
+END -- apji300
+
+TABLES
+pjq_file
+ATTRIBUTES
+Edit pjq01=pjq_file.pjq01, tabIndex=1, title="Category No.", not null;
+Edit pjq02=pjq_file.pjq02, tabIndex=2, title="Description", not null;
+CheckBox pjqacti=pjq_file.pjqacti, tabIndex=3, default = "Y", title="Valid Code", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjq(pjq_file.pjq01,pjq_file.pjq02,pjq_file.pjqacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

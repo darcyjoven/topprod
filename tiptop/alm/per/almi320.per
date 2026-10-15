@@ -1,0 +1,131 @@
+----------------------------------------------------------------------------------
+-- File created from /u53/tiptop/alm/42f/almi320.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almi320")
+
+   VBox vb3
+   Folder pc1
+   Page Page1(text=%"Main")
+   Grid gr1
+   {
+
+     luistore [luistore    |rtz13                         ]  lui12     [lui12       ]
+     luilegal [luilegal    |azt02                         ]  lui13     [lui13       ][oaj02_3             ]
+     lui02    [lui02       ]                                 lui14     [lui14       ][oaj02_4             ]
+     lui03    [lui03       ]                                 lui15     [lui15       ][oaj02_5             ]
+     lui04    [lui04     ]                                   lui16     [lui16       ][oaj02_6             ]
+     lui05    [lui05     ]                                   lui17     [lui17       ][oaj02_7             ]
+     lui06    [lui06       ]                                 lui18     [lui18     ]
+     lui07    [lui07     ]                                   lui19     [lui19       ][oaj02_8             ]
+     lui08    [lui08     ]                                   lui20     [lui20     ]
+     lui09    [lui09     ]                                   lui21     [lui21       ]
+     lui10    [lui10       ][oaj02_1             ]           lui22     [lui22     ]
+     lui11    [lui11       ][oaj02_2             ]
+
+   }
+   END
+   END -- Page
+   Page info(text=%"Info")
+   Grid gr11
+   {
+
+    Data User   [luiuser   ] crat  [luicrat     ] acti       [luiacti   ]
+    Data Group  [luigrup   ] Modify[luimodu     ] Modify Date[luidate     ]
+    Record Orig.[luioriu   ]
+    Dept Orig.  [luiorig   ]
+
+
+
+   }
+   END
+
+
+
+
+   END -- Page
+   END -- Folder
+   Table s_luj
+   {
+   [luj02       |oaj02_b             |luj03     |lnj02               |luj04     ]
+   [luj02       |oaj02_b             |luj03     |lnj02               |luj04     ]
+   [luj02       |oaj02_b             |luj03     |lnj02               |luj04     ]
+   [luj02       |oaj02_b             |luj03     |lnj02               |luj04     ]
+
+   }
+   END -- Table
+   Grid gr5
+   {
+    --------Rows[idx   ]/[cnt    ]  ---Details[cn2   ]------
+
+   }
+   END
+   END -- VBox
+END -- Form
+
+TABLES
+lui_file
+luj_file
+
+ATTRIBUTES
+ButtonEdit luistore=lui_file.luistore, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13, tabIndex=17, noEntry;
+ComboBox lui12=lui_file.lui12, tabIndex=20, not null, items=(("0", "One Decimal"),("1", "Two Decimal"));
+ButtonEdit luilegal=lui_file.luilegal, action=controlp, tabIndex=46, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02, tabIndex=47, noEntry;
+ButtonEdit lui13=lui_file.lui13, action=controlp, tabIndex=21, not null, image="zoom.png";
+Edit oaj02_3=formonly.oaj02_3, tabIndex=31, noEntry;
+ComboBox lui02=lui_file.lui02, tabIndex=8, not null, items=(("1", "Anti-push method"),("2", "Pushing law"));
+ButtonEdit lui14=lui_file.lui14, action=controlp, tabIndex=22, not null, image="zoom.png";
+Edit oaj02_4=formonly.oaj02_4, tabIndex=32, noEntry;
+ComboBox lui03=lui_file.lui03, tabIndex=9, not null, items=(("0", "Automatic"),("1", "Manual"));
+ButtonEdit lui15=lui_file.lui15, action=controlp, tabIndex=23, not null, image="zoom.png";
+Edit oaj02_5=formonly.oaj02_5, tabIndex=33, noEntry;
+Edit lui04=lui_file.lui04, tabIndex=6, not null;
+ButtonEdit lui16=lui_file.lui16, action=controlp, tabIndex=24, not null, image="zoom.png";
+Edit oaj02_6=formonly.oaj02_6, tabIndex=34, noEntry;
+Edit lui05=lui_file.lui05, tabIndex=11, not null;
+ButtonEdit lui17=lui_file.lui17, action=controlp, tabIndex=25, not null, image="zoom.png";
+Edit oaj02_7=formonly.oaj02_7, tabIndex=35, noEntry;
+ComboBox lui06=lui_file.lui06, tabIndex=10, not null, items=(("0", "Automatic"),("1", "Manual"));
+Edit lui18=lui_file.lui18, tabIndex=28, not null;
+Edit lui07=lui_file.lui07, tabIndex=14;
+ButtonEdit lui19=lui_file.lui19, action=controlp, tabIndex=26, image="zoom.png";
+Edit oaj02_8=formonly.oaj02_8, tabIndex=36, noEntry;
+Edit lui08=lui_file.lui08, tabIndex=15;
+Edit lui20=lui_file.lui20, tabIndex=29;
+Edit lui09=lui_file.lui09, tabIndex=16, not null;
+ComboBox lui21=lui_file.lui21, tabIndex=27, not null, items=(("0", "Inward-free"),("1", "Outward-free"));
+ButtonEdit lui10=lui_file.lui10, action=controlp, tabIndex=12, not null, image="zoom.png";
+Edit oaj02_1=formonly.oaj02_1, tabIndex=18, noEntry;
+Edit lui22=lui_file.lui22, tabIndex=30;
+ButtonEdit lui11=lui_file.lui11, action=controlp, tabIndex=13, not null, image="zoom.png";
+Edit oaj02_2=formonly.oaj02_2, tabIndex=19, noEntry;
+Edit luiuser=formonly.luiuser type VARCHAR, tabIndex=40, noEntry;
+DateEdit luicrat=formonly.luicrat type DATE, tabIndex=45, noEntry;
+Edit luiacti=formonly.luiacti type VARCHAR, tabIndex=42, noEntry;
+Edit luigrup=formonly.luigrup type VARCHAR, tabIndex=43, noEntry;
+Edit luimodu=formonly.luimodu type VARCHAR, tabIndex=41, noEntry;
+DateEdit luidate=formonly.luidate type VARCHAR, tabIndex=44, noEntry;
+Edit luioriu=lui_file.luioriu, tabIndex=49, noEntry;
+Edit luiorig=lui_file.luiorig, tabIndex=48, noEntry;
+ButtonEdit luj02=luj_file.luj02, action=controlp, tabIndex=1, title="luj02", not null, required, image="zoom.png";
+Edit oaj02_b=formonly.oaj02_b, tabIndex=2, title="lnk02_b", noEntry;
+Edit luj03=luj_file.luj03, tabIndex=3, title="luj03", noEntry;
+Edit lnj02=formonly.lnj02, tabIndex=4, title="lnj02", noEntry;
+ComboBox luj04=luj_file.luj04, tabIndex=5, title="luj04", not null, items=(("1", "zhm Offers"),("2", "Chain offers"),("3", "Payment Offers"));
+Edit idx=formonly.idx, tabIndex=37, noEntry;
+Edit cnt=formonly.cnt, tabIndex=39, noEntry;
+Edit cn2=formonly.cn2, tabIndex=38, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_luj(luj_file.luj02, formonly.oaj02_b, luj_file.luj03, formonly.lnj02, luj_file.luj04)
+SCREEN RECORD Undefined(lui_file.luistore, formonly.rtz13, lui_file.lui12, lui_file.luilegal, formonly.azt02, lui_file.lui13, formonly.oaj02_3, lui_file.lui02, lui_file.lui14, formonly.oaj02_4, lui_file.lui03, lui_file.lui15, formonly.oaj02_5, lui_file.lui04, lui_file.lui16, formonly.oaj02_6, lui_file.lui05, lui_file.lui17, formonly.oaj02_7, lui_file.lui06, lui_file.lui18, lui_file.lui07, lui_file.lui19, formonly.oaj02_8, lui_file.lui08, lui_file.lui20, lui_file.lui09, lui_file.lui21, lui_file.lui10, formonly.oaj02_1, lui_file.lui22, lui_file.lui11, formonly.oaj02_2, formonly.luiuser, formonly.luicrat, formonly.luiacti, formonly.luigrup, formonly.luimodu, formonly.luidate, lui_file.luioriu, lui_file.luiorig, formonly.idx, formonly.cnt, formonly.cn2)
+END -- INSTRUCTIONS
+

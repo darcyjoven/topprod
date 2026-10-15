@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi1002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi1002")
+VBox VBox1
+Table s_ind
+{
+[ind|ind03                                                            ]
+[ind|ind03                                                            ]
+[ind|ind03                                                            ]
+[ind|ind03                                                            ]
+[ind|ind03                                                            ]
+[ind|ind03                                                            ]
+[ind|ind03                                                            ]
+[ind|ind03                                                            ]
+[ind|ind03                                                            ]
+[ind|ind03                                                            ]
+
+}
+END -- s_ind
+END -- VBox1
+END -- aimi1002
+
+TABLES
+ind_file
+ATTRIBUTES
+Edit ind=ind_file.ind02, tabIndex=1, title="Ln#", not null, required, comment="<^T>Open File";
+Edit ind03=ind_file.ind03, tabIndex=2, title="Documents Name & Path", not null, required, comment="Example c:/tiptop/Y001.pdf";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ind(ind_file.ind02,ind_file.ind03)
+END -- INSTRUCTIONS
+

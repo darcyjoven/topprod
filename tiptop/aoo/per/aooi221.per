@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi221.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox1
+Table Table1
+{
+[ggd01               |ggd02                         |ggdacti        ]
+[ggd01               |ggd02                         |ggdacti        ]
+[ggd01               |ggd02                         |ggdacti        ]
+[ggd01               |ggd02                         |ggdacti        ]
+[ggd01               |ggd02                         |ggdacti        ]
+
+}
+END -- Table1
+Grid Grid1
+{
+
+  ----------   rows [cn   ]  --------
+}
+END -- Grid1
+END -- VBox1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Edit ggd01=formonly.ggd01 type VARCHAR, tabIndex=1, title=%"ggd01", not null, required;
+Edit ggd02=formonly.ggd02 type VARCHAR, tabIndex=2, title=%"ggd02";
+CheckBox ggdacti=formonly.ggdacti type VARCHAR, tabIndex=3, default = "Y", title=%"ggdacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn=formonly.cn, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ggd(formonly.ggd01,formonly.ggd02,formonly.ggdacti)
+SCREEN RECORD Undefined(formonly.cn)
+END -- INSTRUCTIONS
+

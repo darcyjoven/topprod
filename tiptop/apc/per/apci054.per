@@ -1,0 +1,154 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apci054.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox2
+Folder tb01
+Page Main(text=%"Main")
+Grid Grid4
+{
+
+ Scheme No.   [rzi01               ]     Main_col_row     [rzi03          |rzi04          ] [imgmksg     ]
+ Scheme       [rzi02               ]     Item_col_row     [rzi05          |rzi06          ] [            ]
+ source       [rzi09               ]     Product_col_row  [rzi07          |rzi08          ] [            ]
+ POS?         [rzipos              ]
+
+}
+END -- Grid4
+END -- Main
+Page Info(text=%"Info")
+Grid gr11
+{
+
+ Record Owner [rziuser       ] Created Date     [rzicrat      ] Data Valid Code [rziacti      ]
+ Department   [rzigrup       ] Last Modified by [rzimodu      ] Modify Date     [rzidate      ]
+ Record Orig. [rzioriu       ] Dept Orig.       [rziorig      ]
+
+}
+END -- gr11
+END -- Info
+END -- tb01
+HBox HBox1
+VBox VBox1
+Grid Grid1
+{
+
+      <G item_group                                   >
+
+
+
+      <                                               >
+
+}
+END -- Grid1
+Grid Grid2
+{
+
+      <G product_group                                 >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <                                                >
+}
+END -- Grid2
+END -- VBox1
+Grid Grid3
+{
+
+       <G main_group   >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       <               >
+
+}
+END -- Grid3
+END -- HBox1
+Grid gr6
+{
+ ------- Rows[idx ]/[cnt  ]---- main[cn1   ]----- item[cn2   ]----- product[cn3   ]-----
+
+
+}
+END -- gr6
+END -- VBox2
+END -- Form
+
+TABLES
+rzi_file
+ATTRIBUTES
+ButtonEdit rzi01=rzi_file.rzi01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit rzi03=rzi_file.rzi03, tabIndex=4, not null;
+Edit rzi04=rzi_file.rzi04, tabIndex=5, not null;
+IMAGE imgmksg=formonly.imgmksg type VARCHAR, autoScale, sizePolicy=dynamic, width = 40 pixels, height = 40 pixels;
+Edit rzi02=rzi_file.rzi02, tabIndex=2;
+Edit rzi05=rzi_file.rzi05, tabIndex=6, not null;
+Edit rzi06=rzi_file.rzi06, tabIndex=7, not null;
+ComboBox rzi09=rzi_file.rzi09, tabIndex=23, noEntry, not null, required, items=(("1", "1"),("2", "2"));
+Edit rzi07=rzi_file.rzi07, tabIndex=8, not null;
+Edit rzi08=rzi_file.rzi08, tabIndex=9, not null;
+ComboBox rzipos=rzi_file.rzipos, tabIndex=3, noEntry, not null, items=(("1", "Text"),("2", "Text"),("3", "Text"),("4", "Text"));
+Edit rziuser=rzi_file.rziuser, tabIndex=10, noEntry;
+DateEdit rzicrat=rzi_file.rzicrat, tabIndex=11, noEntry;
+Edit rziacti=rzi_file.rziacti, tabIndex=12, noEntry;
+Edit rzigrup=rzi_file.rzigrup, tabIndex=13, noEntry;
+Edit rzimodu=rzi_file.rzimodu, tabIndex=14, noEntry;
+DateEdit rzidate=rzi_file.rzidate, tabIndex=15, noEntry;
+Edit rzioriu=rzi_file.rzioriu, tabIndex=16, noEntry;
+Edit rziorig=rzi_file.rziorig, tabIndex=17, noEntry;
+Group item_group:item_group, text=%"Item Category";
+Group product_group:product_group, text=%"product Category";
+Group main_group:main_group, text=%"Main Category";
+Edit idx=formonly.idx type SMALLINT, tabIndex=18, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn1=formonly.cn1 type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rzi_file.rzi03,rzi_file.rzi04,rzi_file.rzi05,rzi_file.rzi06,rzi_file.rzi07,rzi_file.rzi08,rzi_file.rziuser,rzi_file.rzicrat,rzi_file.rziacti,rzi_file.rzigrup,rzi_file.rzimodu,rzi_file.rzidate,rzi_file.rzioriu,rzi_file.rziorig,rzi_file.rzi01,rzi_file.rzi02,rzi_file.rzipos,formonly.idx,formonly.cnt,formonly.cn1,formonly.cn2,formonly.cn3,rzi_file.rzi09,formonly.imgmksg)
+END -- INSTRUCTIONS
+

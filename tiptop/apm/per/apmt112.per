@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt112.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt112")
+Folder pc977
+Page page01(text="Page01")
+VBox VBox1
+Grid gr5245
+{
+ <G group01                            >
+  Also Print Short W/O   [rva20     ]
+  Deadline of Short WO   [rva21       ]
+  Print short Sale/Order [rva22     ]
+  Deadline               [rva23     ]
+ <                                     >
+ <G group02                            >
+  Printed Times          [rvaprno   ]
+  Last Printing Date     [rva28       ]
+
+ <                                     >
+
+}
+END -- gr5245
+END -- VBox1
+END -- page01
+END -- pc977
+END -- apmt112
+
+TABLES
+rva_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox rva20=rva_file.rva20, tabIndex=1, not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit rva21=rva_file.rva21, tabIndex=2;
+CheckBox rva22=rva_file.rva22, tabIndex=3, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rva23=rva_file.rva23, tabIndex=4;
+Group group02:group02;
+Edit rvaprno=rva_file.rvaprno, tabIndex=5, noEntry;
+DateEdit rva28=rva_file.rva28, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rva_file.rva20,rva_file.rva21,rva_file.rva22,rva_file.rva23,rva_file.rvaprno,rva_file.rva28)
+END -- INSTRUCTIONS
+

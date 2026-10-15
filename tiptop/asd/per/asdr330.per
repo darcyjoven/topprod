@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdr330.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdr330")
+VBox VBox1
+Grid gr423
+{
+ <G group01                                                                             >
+  Product Type        [stl03               ]
+ <                                                                                      >
+
+}
+END -- gr423
+Group g01(text="INPUT")
+Grid gr424
+{
+ <G group02                                                                           >
+  Print Year          [yea ]
+
+ <                                                                                    >
+ <G group03                                                                           >
+ [type                                      ]
+ <                                                                                    >
+
+}
+END -- gr424
+END -- g01
+Grid gr425
+{
+[more                                                ]
+
+}
+END -- gr425
+END -- VBox1
+END -- asdr330
+
+TABLES
+stl_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit stl03=stl_file.stl03, tabIndex=1, upShift;
+Group group02:group02;
+Edit yea=formonly.yea type SMALLINT, tabIndex=2;
+Group group03:group03, text="Print";
+RadioGroup type=formonly.type type CHAR, tabIndex=3, items=(("1", "Gross Sales Amount"),("2", "Sales Returned"),("3", "Net Sales Amount"));
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(stl_file.stl03,formonly.yea,formonly.type,formonly.more)
+END -- INSTRUCTIONS
+

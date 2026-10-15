@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axmq800")
+VBox VBox1
+Grid Grid1
+{
+ <T s_oea                                                                                                                              ><TREE tree                                         >
+ [oea01     |oea02     |oea00     |oea08      |oea03     |occ02       |oea14     |gen02     |oeaconf |oeb03      |oeb04      |oeb06    ][name                      ]
+ [oea01     |oea02     |oea00     |oea08      |oea03     |occ02       |oea14     |gen02     |oeaconf |oeb03      |oeb04      |oeb06    ][name                      ]
+ [oea01     |oea02     |oea00     |oea08      |oea03     |occ02       |oea14     |gen02     |oeaconf |oeb03      |oeb04      |oeb06    ][name                      ]
+ [oea01     |oea02     |oea00     |oea08      |oea03     |occ02       |oea14     |gen02     |oeaconf |oeb03      |oeb04      |oeb06    ][name                      ]
+ [oea01     |oea02     |oea00     |oea08      |oea03     |occ02       |oea14     |gen02     |oeaconf |oeb03      |oeb04      |oeb06    ][name                      ]
+ [oea01     |oea02     |oea00     |oea08      |oea03     |occ02       |oea14     |gen02     |oeaconf |oeb03      |oeb04      |oeb06    ][name                      ]
+ [oea01     |oea02     |oea00     |oea08      |oea03     |occ02       |oea14     |gen02     |oeaconf |oeb03      |oeb04      |oeb06    ][name                      ]
+ [oea01     |oea02     |oea00     |oea08      |oea03     |occ02       |oea14     |gen02     |oeaconf |oeb03      |oeb04      |oeb06    ][name                      ]
+ [oea01     |oea02     |oea00     |oea08      |oea03     |occ02       |oea14     |gen02     |oeaconf |oeb03      |oeb04      |oeb06    ][name                      ]
+ [oea01     |oea02     |oea00     |oea08      |oea03     |occ02       |oea14     |gen02     |oeaconf |oeb03      |oeb04      |oeb06    ][name                      ]
+ [oea01     |oea02     |oea00     |oea08      |oea03     |occ02       |oea14     |gen02     |oeaconf |oeb03      |oeb04      |oeb06    ][name                      ]
+ [oea01     |oea02     |oea00     |oea08      |oea03     |occ02       |oea14     |gen02     |oeaconf |oeb03      |oeb04      |oeb06    ][name                      ]
+}
+END -- Grid1
+Grid gr8
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+
+}
+END -- gr8
+END -- VBox1
+END -- axmq800
+
+TABLES
+oeb_file,
+oea_file
+ATTRIBUTES
+Table s_oea:s_oea;
+ButtonEdit oea01=oea_file.oea01, action=controlp, tabIndex=1, title="oea01", image="zoom.png";
+DateEdit oea02=oea_file.oea02, tabIndex=2, title="oea02";
+ComboBox oea00=oea_file.oea00, tabIndex=3, title=%"oea00", items=(("0", "heyue"),("1", "zcdd"),("2", "hhdd"),("3", "czjwc"),("4", "jwcch"),("5", "BUjxs"),("6", "dhdd"),("7", "jxdd"),("A", "jhch"),("B", "jhch"));
+ComboBox oea08=oea_file.oea08, tabIndex=4, title=%"oea08", items=(("1", "nx"),("2", "wx"),("3", "stwxdd"));
+ButtonEdit oea03=oea_file.oea03, action=controlp, tabIndex=5, title=%"oea03", image="zoom.png";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=6, title=%"occ02", noEntry;
+ButtonEdit oea14=oea_file.oea14, action=controlp, tabIndex=7, title=%"oea14", image="zoom.png";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=8, title=%"gen02", noEntry;
+CheckBox oeaconf=oea_file.oeaconf, tabIndex=9, title=%"oeaconf", valueChecked = "Y", valueUnchecked = "N";
+Edit oeb03=oeb_file.oeb03, tabIndex=10, title=%"oeb03";
+ButtonEdit oeb04=oeb_file.oeb04, action=controlp, tabIndex=11, title=%"oeb04", image="zoom.png";
+Edit oeb06=oeb_file.oeb06, tabIndex=12, title=%"oeb06";
+Tree tree:tree, parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file";
+LABEL name=formonly.name type CHAR, unsortable;
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.path type CHAR;
+Phantom formonly.treekey1 type CHAR;
+Phantom formonly.treekey2 type CHAR;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oea(oea_file.oea01,oea_file.oea02,oea_file.oea00,oea_file.oea08,oea_file.oea03,formonly.occ02,oea_file.oea14,formonly.gen02,oea_file.oeaconf,oeb_file.oeb03,oeb_file.oeb04,oeb_file.oeb06)
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.path,formonly.treekey1,formonly.treekey2)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp866.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmp866")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                 >
+  Sales Return Type [oha05              ]
+
+  Sales Return No.  [oha01              ]
+ <                                          >
+
+}
+END -- Grid1
+END -- VBox1
+END -- axmp866
+
+TABLES
+oha_file
+ATTRIBUTES
+Group group01:group01;
+ComboBox oha05=formonly.oha05 type CHAR, tabIndex=1, default = "2", not null, required, queryEditable, items=(("2", %"Tri. Sls/R"),("3", %"Sub-PO Sls/R"));
+Edit oha01=oha_file.oha01, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oha05,oha_file.oha01)
+END -- INSTRUCTIONS
+

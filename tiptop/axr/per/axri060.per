@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axri060.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="arti105")
+VBox vb6
+Folder page0
+Page Page13(text=%"Page0")
+Table s_ooe
+{
+[ooe01     |ooe02     |ooe02_desc  ]
+[ooe01     |ooe02     |ooe02_desc  ]
+[ooe01     |ooe02     |ooe02_desc  ]
+[ooe01     |ooe02     |ooe02_desc  ]
+[ooe01     |ooe02     |ooe02_desc  ]
+
+}
+END -- s_ooe
+END -- Page13
+END -- page0
+Grid gr17
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr17
+END -- vb6
+END -- arti105
+
+ATTRIBUTES
+ComboBox ooe01=formonly.ooe01 type VARCHAR, tabIndex=1, title="ooe01", not null, required, items=(("01", "Cash"),("02", "UnionPay Card"),("03", "Check"),("04", "Certificate"),("05", "Certificate"),("06", "Stored-value Card"),("07", "Chong Advance"),("08", "Handwork Virement"));
+ButtonEdit ooe02=formonly.ooe02 type VARCHAR, action=controlp, tabIndex=2, title="ooe02", image="zoom.png";
+Edit ooe02_desc=formonly.ooe02_desc type CHAR, tabIndex=3, title="ooe02_desc", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ooe(formonly.ooe01,formonly.ooe02,formonly.ooe02_desc)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

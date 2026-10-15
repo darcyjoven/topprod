@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zaa_d.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zaa_d")
+VBox VBox1
+Folder pc728
+Page page01(text="MAIN")
+Grid gr3123
+{
+ <G group01                                                                                  >
+  Program Code    [zaa01     ] [gaz03                                ]
+  Program User    [zaa04     ]           Serial No. [zaa02     ] [zaa10                     ]
+  Program Class   [zaa17     ]           Language   [zaa03                      ]
+  Report Template [zaa11               ] Title      [zaa08                      ]
+ <                                                                                           >
+
+}
+END -- gr3123
+END -- page01
+END -- pc728
+Table s_zad
+{
+[zad08    |zad09    |zad10         |memo                       |zad11                              ]
+[zad08    |zad09    |zad10         |memo                       |zad11                              ]
+[zad08    |zad09    |zad10         |memo                       |zad11                              ]
+[zad08    |zad09    |zad10         |memo                       |zad11                              ]
+[zad08    |zad09    |zad10         |memo                       |zad11                              ]
+[zad08    |zad09    |zad10         |memo                       |zad11                              ]
+[zad08    |zad09    |zad10         |memo                       |zad11                              ]
+[zad08    |zad09    |zad10         |memo                       |zad11                              ]
+[zad08    |zad09    |zad10         |memo                       |zad11                              ]
+[zad08    |zad09    |zad10         |memo                       |zad11                              ]
+
+}
+END -- s_zad
+END -- VBox1
+END -- p_zaa_d
+
+TABLES
+zad_file
+ATTRIBUTES
+Group group01:group01;
+Edit zaa01=formonly.zaa01 type CHAR, tabIndex=1, noEntry;
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=2, noEntry;
+Edit zaa04=formonly.zaa04 type CHAR, tabIndex=3, noEntry;
+Edit zaa02=formonly.zaa02 type CHAR, tabIndex=4, noEntry;
+CheckBox zaa10=formonly.zaa10 type CHAR, tabIndex=5, text="Editing a Customerlized PER-File Data", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit zaa17=formonly.zaa17 type CHAR, tabIndex=6, noEntry;
+Edit zaa03=formonly.zaa03 type CHAR, tabIndex=7, noEntry;
+Edit zaa11=formonly.zaa11 type CHAR, tabIndex=8, noEntry;
+Edit zaa08=formonly.zaa08 type CHAR, tabIndex=9, noEntry;
+Edit zad08=zad_file.zad08, tabIndex=10, title="Line Seq.", not null, required;
+ComboBox zad09=zad_file.zad09, tabIndex=11, title="Language", not null, required, items=(("1", %"1"),("2", %"2"));
+ButtonEdit zad10=zad_file.zad10, action=controlp, tabIndex=12, title="Memo Content", not null, required, image="zoom", downShift, scroll;
+TextEdit memo=formonly.memo type CHAR, tabIndex=13, title="Memo", noEntry, stretch=NONE;
+Edit zad11=zad_file.zad11, tabIndex=14, title="relative prg.";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zad(zad_file.zad08,zad_file.zad09,zad_file.zad10,formonly.memo,zad_file.zad11)
+SCREEN RECORD Undefined(formonly.zaa01,formonly.gaz03,formonly.zaa04,formonly.zaa02,formonly.zaa10,formonly.zaa17,formonly.zaa03,formonly.zaa11,formonly.zaa08)
+END -- INSTRUCTIONS
+

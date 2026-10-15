@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmr720.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr720")
+VBox vb2
+Grid gr1
+{
+ <G group01                                                                              >
+  Sls/Rtrn Nt No.         [oha01               ]
+  Sls/Rtn Dt              [oha02               ]
+  Department              [oha15               ]
+  Sls Class               [oha25               ]
+  Local Sls 2Ex           [oha08               ]
+  Main Group Code         [ima06               ]
+  Customer Class.         [occ03               ]
+  Product Classification  [ima131              ]
+ <                                                                                       >
+
+}
+END -- gr1
+Group g01(text="INPUT")
+Grid gr2
+{
+ <G group02                                                                               >
+ [s                                  ]
+
+
+
+ <                                                                                        >
+
+}
+END -- gr2
+END -- g01
+Grid gr3
+{
+[more                                              ]
+
+}
+END -- gr3
+END -- vb2
+END -- axmr720
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oha01=formonly.oha01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit oha02=formonly.oha02 type DATE, tabIndex=2;
+ButtonEdit oha15=formonly.oha15 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit oha25=formonly.oha25 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ComboBox oha08=formonly.oha08 type VARCHAR, tabIndex=5, not null, required, items=(("1", "Local Order"),("2", "Export Order"),("3", "As Export Order(ACO System)"));
+ButtonEdit ima06=formonly.ima06 type VARCHAR, action=controlp, tabIndex=8, image="zoom";
+ButtonEdit occ03=formonly.occ03 type VARCHAR, action=controlp, tabIndex=9, image="zoom";
+ButtonEdit ima131=formonly.ima131 type VARCHAR, action=controlp, tabIndex=10, image="zoom";
+Group group02:group02, text="Sequence";
+RadioGroup s=formonly.s type VARCHAR, tabIndex=6, items=(("1", "Sales/Return Rows"),("2", "Sales/Return Amount"),("3", "Reason code"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oha01,formonly.oha02,formonly.oha15,formonly.oha25,formonly.oha08,formonly.ima06,formonly.occ03,formonly.ima131,formonly.s,formonly.more)
+END -- INSTRUCTIONS
+

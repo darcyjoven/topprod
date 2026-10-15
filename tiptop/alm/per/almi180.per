@@ -1,0 +1,54 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/alm/4fd/almi180.tmp.per created 2010-10-12T06:28:27
+-- File created from /u3/tiptop/alm/4fd/almi180.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almi180")
+                                                                                                                    
+ Folder pc13                                                                                                        
+ Page Main(text=%"Main")                                                                                            
+  VBox vb10                                                                                                         
+  Table s_lmj                                                                                                       
+  {                                                                                                                 
+  [lmj01   |lmj02   |lmj03   |lmi02   |lmj04   ]                                                                    
+  [lmj01   |lmj02   |lmj03   |lmi02   |lmj04   ]                                                                    
+  [lmj01   |lmj02   |lmj03   |lmi02   |lmj04   ]                                                                    
+  [lmj01   |lmj02   |lmj03   |lmi02   |lmj04   ]                                                                    
+  [lmj01   |lmj02   |lmj03   |lmi02   |lmj04   ]                                                                    
+  }                                                                                                                 
+  END -- Table                                                                                                      
+  Grid gr11                                                                                                         
+  {                                                                                                                 
+   ----------Rows[cn2   ]----------                                                                                 
+                                                                                                                    
+                                                                                                                    
+  }                                                                                                                 
+  END                                                                                                               
+  END -- VBox                                                                                                       
+ END -- Page                                                                                                        
+ END -- Folder                                                                                                      
+END -- Form
+
+TABLES
+lmj_file
+
+ATTRIBUTES
+ButtonEdit lmj01=lmj_file.lmj01, action=controlp, tabIndex=1, title="lmj01", not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit lmj02=lmj_file.lmj02, tabIndex=2, title="lmj02";
+ButtonEdit lmj03=lmj_file.lmj03, action=controlp, tabIndex=3, title="lmj03", not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit lmi02=formonly.lmi02 type VARCHAR, tabIndex=4, title="lmi02", noEntry;
+CheckBox lmj04=lmj_file.lmj04, tabIndex=5, title="lmj04", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lmj(lmj_file.lmj01, lmj_file.lmj02, lmj_file.lmj03, formonly.lmi02, lmj_file.lmj04)
+END -- INSTRUCTIONS
+

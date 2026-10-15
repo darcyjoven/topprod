@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_base_act.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_base_act")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr3152
+{
+ <G group01                                                         >
+  Program ID  [gap01               ][gaz03                         ]
+
+
+
+
+
+ <                                                                  >
+
+}
+END -- gr3152
+END -- page01
+END -- folder01
+Table s_gap
+{
+[gap03      |gbd06    |gap02       |gbd04                  |gbd05                    |gap04  |gap05   |gbd04_s                |gbd05_s                    |gap08                     ]
+[gap03      |gbd06    |gap02       |gbd04                  |gbd05                    |gap04  |gap05   |gbd04_s                |gbd05_s                    |gap08                     ]
+[gap03      |gbd06    |gap02       |gbd04                  |gbd05                    |gap04  |gap05   |gbd04_s                |gbd05_s                    |gap08                     ]
+[gap03      |gbd06    |gap02       |gbd04                  |gbd05                    |gap04  |gap05   |gbd04_s                |gbd05_s                    |gap08                     ]
+[gap03      |gbd06    |gap02       |gbd04                  |gbd05                    |gap04  |gap05   |gbd04_s                |gbd05_s                    |gap08                     ]
+[gap03      |gbd06    |gap02       |gbd04                  |gbd05                    |gap04  |gap05   |gbd04_s                |gbd05_s                    |gap08                     ]
+[gap03      |gbd06    |gap02       |gbd04                  |gbd05                    |gap04  |gap05   |gbd04_s                |gbd05_s                    |gap08                     ]
+[gap03      |gbd06    |gap02       |gbd04                  |gbd05                    |gap04  |gap05   |gbd04_s                |gbd05_s                    |gap08                     ]
+[gap03      |gbd06    |gap02       |gbd04                  |gbd05                    |gap04  |gap05   |gbd04_s                |gbd05_s                    |gap08                     ]
+[gap03      |gbd06    |gap02       |gbd04                  |gbd05                    |gap04  |gap05   |gbd04_s                |gbd05_s                    |gap08                     ]
+
+}
+END -- s_gap
+Grid gr3153
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr3153
+END -- VBox1
+END -- p_base_act
+
+TABLES
+gaz_file,
+gbd_file,
+gap_file
+ATTRIBUTES
+Group group01:group01, text="Program";
+ButtonEdit gap01=gap_file.gap01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Value";
+Edit gaz03=gaz_file.gaz03, tabIndex=2, noEntry;
+CheckBox gap03=gap_file.gap03, tabIndex=3, title="UserDefine", noEntry, valueChecked = "Y", valueUnchecked = "N", comment="Is The Action Belongs USER-DEFINE";
+CheckBox gbd06=gbd_file.gbd06, tabIndex=4, title="Std Act", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit gap02=gap_file.gap02, tabIndex=5, title="Action ID", not null, required, scroll;
+Edit gbd04=gbd_file.gbd04, tabIndex=6, title="General Action Name", noEntry;
+Edit gbd05=gbd_file.gbd05, tabIndex=7, title="General Action Comments", noEntry;
+CheckBox gap04=gap_file.gap04, tabIndex=8, title="Detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gap05=gap_file.gap05, tabIndex=9, title="TopMenu", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gbd04_s=formonly.gbd04_s type VARCHAR, tabIndex=10, title="Action Name By Program";
+Edit gbd05_s=formonly.gbd05_s type VARCHAR, tabIndex=11, title="Action Comments By Program";
+Edit gap08=gap_file.gap08, tabIndex=12, title="Hot Key", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gap(gap_file.gap03,gbd_file.gbd06,gap_file.gap02,gbd_file.gbd04,gbd_file.gbd05,gap_file.gap04,gap_file.gap05,formonly.gbd04_s,formonly.gbd05_s,gap_file.gap08)
+SCREEN RECORD Undefined(gap_file.gap01,gaz_file.gaz03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

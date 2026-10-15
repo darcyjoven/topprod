@@ -1,0 +1,278 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_per_prog_chk.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_per_prog_chk")
+VBox vb2
+Group group08
+HBox hb1
+Grid gr1
+{
+ Form ID  [gav01               ]
+ Field ID [gav02               ]
+
+}
+END -- gr1
+Grid gr2
+{
+ Industry [gav11               ]
+[gav08                         ]
+
+}
+END -- gr2
+END -- hb1
+END -- group08
+Folder pc1
+Page page01(text="Setting Related to Form")
+Grid gr3
+{
+ <G group01                                                       >
+ [gav10                                                          ]
+ [gav09                                                          ]
+ <                                                                >
+ <G group03                                                       >
+ [gav17                                                          ]
+ <                                                                >
+ <G group02                                                       >
+ [gav18                                                          ]
+ [gav24                                                          ]
+ [dummy04             ]
+ [gav25                                                          ]
+ [                                                               ]
+ [                                                               ]
+ <                                                                >
+ <G gb16                                                          >
+ [gav33                                                         ]
+ [dummy02                                          ]
+ <                                                                >
+ <G group04                                                       >
+  Input Status    [gav19     ][param_setting|gae04_1             ]
+  Construct Status[gav39     ][param_settin1|gae04_2             ]
+ [dummy01                                                        ]
+ <                                                                >
+
+
+
+}
+END -- gr3
+END -- page01
+Page page02(text="The Basic Check")
+Grid gr4
+{
+ [gav28                                             ][fun_cite_datacheck    ]
+ ----------------------------------------------------------------------------
+ <G grp_datacheck_dym                                                       >
+  Table and Field Checked [gav20_table         ].[gav20_field         ]
+ <                                                                          >
+ <G grp_datacheck_sql                                                       >
+ [dummy21_1][gav21_table        ]
+ [dummy21_2][gav21_where                                                    ]
+                                                              [gav21_sql_ex ]
+ <                                                                          >
+ <G grp_datacheck_fun                                                       >
+ [gav21_fun_s                                                               ]
+ [dummy21_3]
+ [gav21                                                                     ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [dummy21_4]
+                                                              [gav21_fun_ex ]
+ <                                                                          >
+
+}
+END -- gr4
+END -- page02
+Page page03(text="The Repeated Check")
+Grid gr5
+{
+ [gav30                                             ][fun_cite_rptcheck     ]
+ ----------------------------------------------------------------------------
+ <G grp_rptcheck_dym                                                        >
+  Table and Field Checked [gav26_table         ].[gav26_field         ]
+ <                                                                          >
+ <G grp_rptcheck_sql                                                        >
+ [dummy27_1][gav27_table        ]
+ [dummy27_2][gav27_where                                                    ]
+                                                              [gav27_sql_ex ]
+ <                                                                          >
+ <G grp_rptcheck_fun                                                        >
+ [gav27_fun_s                                                               ]
+ [dummy27_3]
+ [gav27                                                                     ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [dummy27_4]
+                                                              [gav27_fun_ex ]
+
+
+ <                                                                          >
+
+}
+END -- gr5
+END -- page03
+Page page04(text="The Reference Field Setting")
+Grid gr6
+{
+ [gav29                                             ][fun_cite_reference    ]
+ ----------------------------------------------------------------------------
+ <G grp_reference_field                                                     >
+  Referenced Field          [gav31               ][gav36                   ]
+  Field Horizontal threshold[gav37               ]
+ [dummy03                                                                ]
+ <                                                                          >
+ <G grp_reference_dym                                                       >
+  Related Table and Field [gav22_table         ].[gav22_field         ]
+ <                                                                          >
+ <G grp_reference_sql                                                       >
+ [dummy23_1][gav23_field        ][dummy23_2][gav23_table        ]
+ [dummy23_3][gav23_where                                                    ]
+                                                              [gav23_sql_ex ]
+ <                                                                          >
+ <G grp_reference_fun                                                       >
+ [gav23_fun_s                                                               ]
+ [dummy23_4                                                                 ]
+ [gav23                                                                     ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [                                                                          ]
+ [dummy23_5]
+                                                              [gav23_fun_ex ]
+ <                                                                          >
+
+}
+END -- gr6
+END -- page04
+END -- pc1
+END -- vb2
+END -- p_per_prog_chk
+
+TABLES
+gav_file
+ATTRIBUTES
+Edit gav01=gav_file.gav01, tabIndex=1, noEntry;
+Edit gav02=gav_file.gav02, tabIndex=3, noEntry;
+Edit gav11=gav_file.gav11, tabIndex=2, noEntry, not null, required;
+CheckBox gav08=gav_file.gav08, tabIndex=4, text="Editing a Customized PER-File Data", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Group group01:group01, text="Check Null";
+CheckBox gav10=gav_file.gav10, tabIndex=5, text="Check Null", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gav09=gav_file.gav09, tabIndex=6, text="The Field Can be Hidden", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Default";
+Edit gav17=gav_file.gav17, tabIndex=7, scroll;
+Group group02:group02, text="Field Limit";
+Edit gav18=gav_file.gav18, tabIndex=8, scroll;
+CheckBox gav24=gav_file.gav24, tabIndex=9, text="Change Limited Field into ComboBox", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy04:dummy04, text="Multi-Language";
+TextEdit gav25=gav_file.gav25, tabIndex=10, stretch=NONE;
+Group gb16:gb16, text="CheckBox Setting";
+CheckBox gav33=gav_file.gav33, tabIndex=11, text="Change Field into CheckBox", not null, valueChecked = "Y", valueUnchecked = "N";
+Label dummy02:dummy02, text="* Field value must be \"Y\" and \"N\"";
+Group group04:group04, text="Field Query";
+ButtonEdit gav19=gav_file.gav19, action=controlp, tabIndex=12, image="zoom";
+Button param_setting:param_setting_i, text="Parameter Setting";
+Edit gae04_1=formonly.gae04_1 type CHAR, tabIndex=36, noEntry;
+ButtonEdit gav39=gav_file.gav39, action=controlp, tabIndex=13, image="zoom";
+Button param_settin1:param_setting_c, text="Parameter Setting";
+Edit gae04_2=formonly.gae04_2 type CHAR, tabIndex=37, noEntry;
+Label dummy01:dummy01, text="* Just Use Dynamic Query";
+RadioGroup gav28=gav_file.gav28, tabIndex=14, not null, required, orientation=horizontal, items=(("1", "Dynamic Setting"),("2", "SQL Setting"),("3", "Add Function"),("4", "Related Function"));
+Button fun_cite_datacheck:fun_cite_datacheck, text="Function Cite";
+Group grp_datacheck_dym:grp_datacheck_dym;
+ButtonEdit gav20_table=formonly.gav20_table type CHAR, action=controlp, tabIndex=15, image="zoom";
+ButtonEdit gav20_field=formonly.gav20_field type CHAR, action=controlp, tabIndex=16, image="zoom";
+Group grp_datacheck_sql:grp_datacheck_sql;
+Label dummy21_1:dummy21_1, text="SELECT COUNT(*) FROM", style="prog_chk";
+Edit gav21_table=formonly.gav21_table type CHAR, tabIndex=17;
+Label dummy21_2:dummy21_2, text="WHERE", style="prog_chk";
+Edit gav21_where=formonly.gav21_where type CHAR, tabIndex=18, scroll;
+Button gav21_sql_ex:gav21_sql_ex, text="Example";
+Group grp_datacheck_fun:grp_datacheck_fun;
+LABEL gav21_fun_s=formonly.gav21_fun_s type CHAR, style="prog_chk";
+Label dummy21_3:dummy21_3, text="DEFINE   ps_value   STRING\nDEFINE   li_result   LIKE type_file.num5", style="prog_chk";
+TextEdit gav21=gav_file.gav21, tabIndex=19, stretch=both, scrollBars=both;
+Label dummy21_4:dummy21_4, text="RETURN li_result\nEND FUNCTION", style="prog_chk";
+Button gav21_fun_ex:gav21_fun_ex, text="Example";
+RadioGroup gav30=gav_file.gav30, tabIndex=20, not null, required, orientation=horizontal, items=(("1", "Dynamic Setting"),("2", "SQL Setting"),("3", "Add Function"),("4", "Related Function"));
+Button fun_cite_rptcheck:fun_cite_rptcheck, text="Function Cite";
+Group grp_rptcheck_dym:grp_rptcheck_dym;
+ButtonEdit gav26_table=formonly.gav26_table type CHAR, action=controlp, tabIndex=21, image="zoom";
+ButtonEdit gav26_field=formonly.gav26_field type CHAR, action=controlp, tabIndex=22, image="zoom";
+Group grp_rptcheck_sql:grp_rptcheck_sql;
+Label dummy27_1:dummy27_1, text="SELECT COUNT(*) FROM", style="prog_chk";
+Edit gav27_table=formonly.gav27_table type CHAR, tabIndex=23;
+Label dummy27_2:dummy27_2, text="WHERE", style="prog_chk";
+Edit gav27_where=formonly.gav27_where type CHAR, tabIndex=24, scroll;
+Button gav27_sql_ex:gav27_sql_ex, text="Example";
+Group grp_rptcheck_fun:grp_rptcheck_fun;
+LABEL gav27_fun_s=formonly.gav27_fun_s type CHAR, style="prog_chk";
+Label dummy27_3:dummy27_3, text="DEFINE   ps_value   STRING\nDEFINE   li_result   LIKE type_file.num5", style="prog_chk";
+TextEdit gav27=gav_file.gav27, tabIndex=25, stretch=both, scrollBars=both;
+Label dummy27_4:dummy27_4, text="RETURN li_result\nEND FUNCTION", style="prog_chk";
+Button gav27_fun_ex:gav27_fun_ex, text="Example";
+RadioGroup gav29=gav_file.gav29, tabIndex=26, not null, required, orientation=horizontal, items=(("1", "Dynamic Setting"),("2", "SQL Setting"),("3", "Add Function"),("4", "Related Function"));
+Button fun_cite_reference:fun_cite_reference, text="Function Cite";
+Group grp_reference_field:grp_reference_field;
+Edit gav31=gav_file.gav31, tabIndex=27;
+CheckBox gav36=gav_file.gav36, tabIndex=28, text="Automatically increase reference field", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit gav37=gav_file.gav37, tabIndex=29;
+Label dummy03:dummy03, text="* When use automatic increase reference field, can\'t use \'Dynamic Setting\'";
+Group grp_reference_dym:grp_reference_dym;
+ButtonEdit gav22_table=formonly.gav22_table type CHAR, action=controlp, tabIndex=30, image="zoom";
+ButtonEdit gav22_field=formonly.gav22_field type CHAR, action=controlp, tabIndex=31, image="zoom";
+Group grp_reference_sql:grp_reference_sql;
+Label dummy23_1:dummy23_1, text="SELECT", style="prog_chk";
+Edit gav23_field=formonly.gav23_field type CHAR, tabIndex=32;
+Label dummy23_2:dummy23_2, text="FROM", style="prog_chk";
+Edit gav23_table=formonly.gav23_table type CHAR, tabIndex=33;
+Label dummy23_3:dummy23_3, text="WHERE", style="prog_chk";
+Edit gav23_where=formonly.gav23_where type CHAR, tabIndex=34, scroll;
+Button gav23_sql_ex:gav23_sql_ex, text="Example";
+Group grp_reference_fun:grp_reference_fun;
+LABEL gav23_fun_s=formonly.gav23_fun_s type CHAR, style="prog_chk";
+Label dummy23_4:dummy23_4, text="DEFINE   ps_value   STRING", style="prog_chk";
+TextEdit gav23=gav_file.gav23, tabIndex=35, stretch=both, scrollBars=both;
+Label dummy23_5:dummy23_5, text="RETURN TRUE\nEND FUNCTION", style="prog_chk";
+Button gav23_fun_ex:gav23_fun_ex, text="Example";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gav_file.gav01,gav_file.gav02,gav_file.gav11,gav_file.gav08,gav_file.gav10,gav_file.gav09,gav_file.gav17,gav_file.gav18,gav_file.gav24,gav_file.gav25,gav_file.gav33,gav_file.gav19,formonly.gae04_1,gav_file.gav39,formonly.gae04_2,gav_file.gav28,formonly.gav20_table,formonly.gav20_field,formonly.gav21_table,formonly.gav21_where,formonly.gav21_fun_s,gav_file.gav21,gav_file.gav30,formonly.gav26_table,formonly.gav26_field,formonly.gav27_table,formonly.gav27_where,formonly.gav27_fun_s,gav_file.gav27,gav_file.gav29,gav_file.gav31,gav_file.gav36,gav_file.gav37,formonly.gav22_table,formonly.gav22_field,formonly.gav23_field,formonly.gav23_table,formonly.gav23_where,formonly.gav23_fun_s,gav_file.gav23)
+END -- INSTRUCTIONS
+

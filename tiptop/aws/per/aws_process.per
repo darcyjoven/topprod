@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_process.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmp640")
+VBox VBox1
+Grid gr2193
+{
+
+ <G group01                        >
+  XML Date QBE   [wcf02     ]
+ <                                 >
+
+  Primary Key [wcf01               ]
+  Data Key    [wcf06               ]
+
+ <G group02                        >
+ [wcf09_1                     ]
+ [wcf09_2                     ]
+ [wcf09_3                     ]
+ [wcf09_4                     ]
+ [wcf09_5                     ]
+ <                                 >
+
+}
+END -- gr2193
+Grid gr2194
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr2194
+END -- VBox1
+END -- aws_process
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit wcf02=formonly.wcf02 type DATE, tabIndex=1;
+Edit wcf01=formonly.wcf01 type CHAR, tabIndex=8;
+Edit wcf06=formonly.wcf06 type CHAR, tabIndex=9;
+Group group02:group02, text="ServiceChoice";
+CheckBox wcf09_1=formonly.wcf09_1 type CHAR, tabIndex=3, text=%"CreateItemMasterData", valueChecked = "Y", valueUnchecked = "N";
+CheckBox wcf09_2=formonly.wcf09_2 type CHAR, tabIndex=4, text=%"CreateRepSubPBOMData", valueChecked = "Y", valueUnchecked = "N";
+CheckBox wcf09_3=formonly.wcf09_3 type CHAR, tabIndex=5, text=%"CreateItemApprovalData", valueChecked = "Y", valueUnchecked = "N";
+CheckBox wcf09_4=formonly.wcf09_4 type CHAR, tabIndex=6, text=%"CreatePLMBOMData", valueChecked = "Y", valueUnchecked = "N";
+CheckBox wcf09_5=formonly.wcf09_5 type CHAR, tabIndex=7, text=%"CreateSupplierItemData", valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=2, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.wcf02,formonly.g_bgjob,formonly.wcf09_1,formonly.wcf09_2,formonly.wcf09_3,formonly.wcf09_4,formonly.wcf09_5,formonly.wcf01,formonly.wcf06)
+END -- INSTRUCTIONS
+

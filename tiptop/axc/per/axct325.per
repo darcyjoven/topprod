@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct325.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct325")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr462
+{
+ Cost Calculate Category  [cdl04                 ]
+ Book No.                 [cdl01   ]
+ Legal                    [cdllegal][azt02        ]
+
+
+
+}
+END -- gr462
+Grid gr463
+{
+ Year   [cdl0]    Month   [cd]
+ Entry  [cdl12               ]                     [imgmksg]
+ glno   [nppglno             ]     [cdlconf1 ]     [       ]
+
+
+
+}
+END -- gr463
+END -- hb2
+END -- page01
+END -- folder01
+Table s_cdl
+{
+[cdl13           |cdl06         |azf03          |cdl05        |gem02         |cdl16       |gem02_1     |cdl07          |ima02                |cdl09          |aag02          |cdl10              |sum1             |diff             ]
+[cdl13           |cdl06         |azf03          |cdl05        |gem02         |cdl16       |gem02_1     |cdl07          |ima02                |cdl09          |aag02          |cdl10              |sum1             |diff             ]
+[cdl13           |cdl06         |azf03          |cdl05        |gem02         |cdl16       |gem02_1     |cdl07          |ima02                |cdl09          |aag02          |cdl10              |sum1             |diff             ]
+[cdl13           |cdl06         |azf03          |cdl05        |gem02         |cdl16       |gem02_1     |cdl07          |ima02                |cdl09          |aag02          |cdl10              |sum1             |diff             ]
+[cdl13           |cdl06         |azf03          |cdl05        |gem02         |cdl16       |gem02_1     |cdl07          |ima02                |cdl09          |aag02          |cdl10              |sum1             |diff             ]
+}
+END -- s_cdl
+Grid gr467
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+
+}
+END -- gr467
+END -- vb1
+END -- axct325
+
+TABLES
+gem_file,
+azf_file,
+npp_file,
+azt_file,
+cdl_file
+ATTRIBUTES
+ComboBox cdl04=cdl_file.cdl04, tabIndex=1, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+ButtonEdit cdl01=cdl_file.cdl01, action=controlp, tabIndex=2, image="zoom";
+Edit cdllegal=cdl_file.cdllegal, tabIndex=3;
+Edit azt02=azt_file.azt02, tabIndex=4;
+Edit cdl0=cdl_file.cdl02, tabIndex=5;
+Edit cd=cdl_file.cdl03, tabIndex=6;
+Edit cdl12=cdl_file.cdl12, tabIndex=7;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit nppglno=npp_file.nppglno, tabIndex=8;
+CheckBox cdlconf1=cdl_file.cdlconf1, tabIndex=9, text="cdlconf1", valueChecked = "Y", valueUnchecked = "N";
+Edit cdl13=formonly.cdl13 type CHAR, tabIndex=10, title="Type Code", noEntry;
+Edit cdl06=cdl_file.cdl06, tabIndex=11, title="Reson Code", noEntry;
+Edit azf03=azf_file.azf03, tabIndex=12, title="Desc", noEntry;
+Edit cdl05=cdl_file.cdl05, tabIndex=13, title="Dept No.", noEntry;
+Edit gem02=gem_file.gem02, tabIndex=14, title="Name", noEntry;
+Edit cdl16=cdl_file.cdl16, tabIndex=24, title=%"Cost Dept", noEntry;
+Edit gem02_1=formonly.gem02_1 type VARCHAR, tabIndex=25, title=%"Name2", noEntry;
+Edit cdl07=cdl_file.cdl07, tabIndex=15, title="Item No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=16, title="Item Name";
+ButtonEdit cdl09=cdl_file.cdl09, action=controlp, tabIndex=17, title="Store Acc", not null, image="zoom";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=18, title="Acc Name", noEntry;
+Edit cdl10=cdl_file.cdl10, tabIndex=19, title="Org. Amt", noEntry;
+Edit sum1=formonly.sum1 type CHAR, tabIndex=20, title="sum1", noEntry;
+Edit diff=formonly.diff type CHAR, tabIndex=21, title="diff", noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=22;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=23;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cdl(formonly.cdl13,cdl_file.cdl06,azf_file.azf03,cdl_file.cdl05,gem_file.gem02,cdl_file.cdl16,formonly.gem02_1,cdl_file.cdl07,formonly.ima02,cdl_file.cdl09,formonly.aag02,cdl_file.cdl10,formonly.sum1,formonly.diff)
+SCREEN RECORD Undefined(cdl_file.cdl04,cdl_file.cdl01,cdl_file.cdllegal,azt_file.azt02,cdl_file.cdl02,cdl_file.cdl03,cdl_file.cdl12,formonly.imgmksg,npp_file.nppglno,cdl_file.cdlconf1,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

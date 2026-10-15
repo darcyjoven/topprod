@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_gr_savetmp.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"儲存樣板")
+VBox VBox1
+Grid gr_savetmp
+{
+
+ [label1          |s_name               ]
+ [label2          |s_desc               ]
+ [s_multi               ][s_overwrite           ]
+ [dummy02                                                 ]
+ [dummy01                                                 ]
+
+}
+END -- gr_savetmp
+END -- VBox1
+END -- cl_gr_save
+
+TABLES
+gdw_file
+ATTRIBUTES
+Label label1:Label1, text=%"New template name";
+Edit s_name=formonly.s_name type VARCHAR, tabIndex=1, not null, required, downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Label label2:Label2, text=%"Template description";
+Edit s_desc=formonly.s_desc type like gdw_file.gdw05, tabIndex=2, not null, required, downShift, scroll, comment="KEYField,No Blank/Repeated!";
+CheckBox s_multi=formonly.s_multi type VARCHAR, tabIndex=3, default = "Y", text="Save multilingual template", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox s_overwrite=formonly.s_overwrite type VARCHAR, tabIndex=4, default = "N", text="Overwrite exists template", not null, valueChecked = "Y", valueUnchecked = "N", hidden;
+Label dummy02:dummy02, text=%"Save multilingual template:use current template overwrite each mulitilingual template.";
+Label dummy01:dummy01, text=%"Overwrite exists template:use current template overwrite original template.";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_save(formonly.s_name,formonly.s_desc,formonly.s_multi,formonly.s_overwrite)
+END -- INSTRUCTIONS
+

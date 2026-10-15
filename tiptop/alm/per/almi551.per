@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi551.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"almi551")
+VBox vb7
+Folder pc6
+Page main(text=%"Main")
+Table s_lnk
+{
+[lnk03   |azp02   |lnk04   |oba01   |oba02   |lnk05   ]
+[lnk03   |azp02   |lnk04   |oba01   |oba02   |lnk05   ]
+[lnk03   |azp02   |lnk04   |oba01   |oba02   |lnk05   ]
+[lnk03   |azp02   |lnk04   |oba01   |oba02   |lnk05   ]
+[lnk03   |azp02   |lnk04   |oba01   |oba02   |lnk05   ]
+
+}
+END -- s_lnk
+END -- main
+END -- pc6
+Grid gr2
+{
+ ----------Rows[cn2   ]----------
+
+}
+END -- gr2
+END -- vb7
+END -- Form6
+
+TABLES
+lnk_file
+ATTRIBUTES
+ButtonEdit lnk03=lnk_file.lnk03, action=controlp, tabIndex=2, title="lnk03", not null, required, image="zoom.png";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=3, title="azp02", noEntry;
+ButtonEdit lnk04=lnk_file.lnk04, action=controlp, tabIndex=5, title="lnk04", not null, required, image="zoom.png";
+Edit oba01=formonly.oba01 type CHAR, tabIndex=4, title="oba01", noEntry;
+Edit oba02=formonly.oba02 type CHAR, tabIndex=6, title="oba02", noEntry;
+CheckBox lnk05=lnk_file.lnk05, tabIndex=7, title="lnk05", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lnk(lnk_file.lnk03,formonly.azp02,lnk_file.lnk04,formonly.oba01,formonly.oba02,lnk_file.lnk05)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

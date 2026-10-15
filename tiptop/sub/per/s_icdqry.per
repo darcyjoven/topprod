@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_icdqry.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="s_icdqry")
+VBox vb2_
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr1
+{
+
+ Doc No   [idd10              ]   Line No    [idd11               ]
+ Item No  [idd01              ]   Item Des   [ima02                                     ]
+ WH       [idd02              ]   Location   [idd03               ] Lot No      [idd04               ]
+ Unit     [idd07              ]   Sum        [idd13s              ] GROSS DIE   [icb05               ]
+
+}
+END -- gr1
+END -- Page3
+END -- pc2
+Table s_idd
+{
+[idd05      |idd06     |idd22     |idd13     |idd15     |idd16     |idd18      |idd17     |idd19    |idd20    |idd21   |idd25     ]
+[idd05      |idd06     |idd22     |idd13     |idd15     |idd16     |idd18      |idd17     |idd19    |idd20    |idd21   |idd25     ]
+[idd05      |idd06     |idd22     |idd13     |idd15     |idd16     |idd18      |idd17     |idd19    |idd20    |idd21   |idd25     ]
+[idd05      |idd06     |idd22     |idd13     |idd15     |idd16     |idd18      |idd17     |idd19    |idd20    |idd21   |idd25     ]
+[idd05      |idd06     |idd22     |idd13     |idd15     |idd16     |idd18      |idd17     |idd19    |idd20    |idd21   |idd25     ]
+[idd05      |idd06     |idd22     |idd13     |idd15     |idd16     |idd18      |idd17     |idd19    |idd20    |idd21   |idd25     ]
+[idd05      |idd06     |idd22     |idd13     |idd15     |idd16     |idd18      |idd17     |idd19    |idd20    |idd21   |idd25     ]
+[idd05      |idd06     |idd22     |idd13     |idd15     |idd16     |idd18      |idd17     |idd19    |idd20    |idd21   |idd25     ]
+[idd05      |idd06     |idd22     |idd13     |idd15     |idd16     |idd18      |idd17     |idd19    |idd20    |idd21   |idd25     ]
+[idd05      |idd06     |idd22     |idd13     |idd15     |idd16     |idd18      |idd17     |idd19    |idd20    |idd21   |idd25     ]
+
+}
+END -- s_idd
+Grid gr2
+{
+
+  -----Rows  [cnt    ]/ [cn2    ]------
+
+}
+END -- gr2
+END -- vb2_
+END -- s_icdqry
+
+TABLES
+idd_file
+ATTRIBUTES
+Edit idd10=idd_file.idd10, tabIndex=1, noEntry;
+Edit idd11=idd_file.idd11, tabIndex=5, noEntry;
+Edit idd01=idd_file.idd01, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=6, noEntry;
+Edit idd02=idd_file.idd02, tabIndex=3, noEntry;
+Edit idd03=idd_file.idd03, tabIndex=7, noEntry;
+Edit idd04=idd_file.idd04, tabIndex=9, noEntry;
+Edit idd07=idd_file.idd07, tabIndex=4, noEntry;
+Edit idd13s=formonly.idd13s type CHAR, tabIndex=8, noEntry;
+Edit icb05=formonly.icb05 type DECIMAL, tabIndex=10, noEntry;
+Edit idd05=idd_file.idd05, tabIndex=11, title="Carved", noEntry;
+Edit idd06=idd_file.idd06, tabIndex=12, title="BIN", noEntry;
+CheckBox idd22=idd_file.idd22, tabIndex=13, title="PASS BIN", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idd13=idd_file.idd13, tabIndex=14, title="Number", noEntry;
+Edit idd15=idd_file.idd15, tabIndex=15, title="Body", noEntry;
+Edit idd16=idd_file.idd16, tabIndex=16, title="BodyP", noEntry;
+Edit idd18=idd_file.idd18, tabIndex=17, title="DIE#", noEntry;
+Edit idd17=idd_file.idd17, tabIndex=18, title="DATECODE", noEntry;
+Edit idd19=idd_file.idd19, tabIndex=19, title="YIELD", noEntry;
+Edit idd20=idd_file.idd20, tabIndex=20, title="TEST", noEntry;
+Edit idd21=idd_file.idd21, tabIndex=21, title="DEDUCT", noEntry;
+Edit idd25=idd_file.idd25, tabIndex=22, title="Memo", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_idd(idd_file.idd05,idd_file.idd06,idd_file.idd22,idd_file.idd13,idd_file.idd15,idd_file.idd16,idd_file.idd18,idd_file.idd17,idd_file.idd19,idd_file.idd20,idd_file.idd21,idd_file.idd25)
+SCREEN RECORD Undefined(idd_file.idd10,idd_file.idd11,idd_file.idd01,formonly.ima02,idd_file.idd02,idd_file.idd03,idd_file.idd04,idd_file.idd07,formonly.idd13s,formonly.icb05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

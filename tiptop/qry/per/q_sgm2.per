@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_sgm2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"RUN CARD Qry Routing ")
+Grid gr3845
+{
+ <T s_sgm                                                                        >
+ [check  |sgm01       |sgm04       |sgm45            |wipqty    |sgm06          ]
+ [check  |sgm01       |sgm04       |sgm45            |wipqty    |sgm06          ]
+ [check  |sgm01       |sgm04       |sgm45            |wipqty    |sgm06          ]
+ [check  |sgm01       |sgm04       |sgm45            |wipqty    |sgm06          ]
+ [check  |sgm01       |sgm04       |sgm45            |wipqty    |sgm06          ]
+ [check  |sgm01       |sgm04       |sgm45            |wipqty    |sgm06          ]
+ [check  |sgm01       |sgm04       |sgm45            |wipqty    |sgm06          ]
+ [check  |sgm01       |sgm04       |sgm45            |wipqty    |sgm06          ]
+ [check  |sgm01       |sgm04       |sgm45            |wipqty    |sgm06          ]
+ [check  |sgm01       |sgm04       |sgm45            |wipqty    |sgm06          ]
+ <                                                                               >
+
+}
+END -- gr3845
+END -- q_sgm2
+
+TABLES
+sgm_file
+ATTRIBUTES
+Table s_sgm:s_sgm;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sgm01=sgm_file.sgm01, tabIndex=2, title="Run Card", noEntry;
+Edit sgm04=sgm_file.sgm04, tabIndex=3, title="Task No.", noEntry;
+Edit sgm45=sgm_file.sgm45, tabIndex=4, title="Task Name", noEntry;
+Edit wipqty=formonly.wipqty type CHAR, tabIndex=5, title="WIP Qty", noEntry;
+Edit sgm06=sgm_file.sgm06, tabIndex=6, title="Work center No.", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sgm(formonly.check,sgm_file.sgm01,sgm_file.sgm04,sgm_file.sgm45,formonly.wipqty,sgm_file.sgm06)
+END -- INSTRUCTIONS
+

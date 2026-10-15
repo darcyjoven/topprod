@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr190.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr190")
+VBox VBox1
+Grid gr235
+{
+ <G group01                                               >
+  Department                      [apa22               ]
+  Employee No.                    [apa21               ]
+  Vender No.                      [apa06               ]
+ <                                                        >
+
+}
+END -- gr235
+Group group02(text="INPUT")
+Grid gr236
+{
+ Aging Section                   [a1      ][a2      ][a3      ][a4      ]
+ A/P Entering Acct Ending Date   [edate       ]
+[detail                                               ]
+}
+END -- gr236
+END -- group02
+Grid gr237
+{
+[more                                                        ]
+
+}
+END -- gr237
+END -- VBox1
+END -- aapr190
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit apa22=formonly.apa22 type CHAR, tabIndex=1;
+Edit apa21=formonly.apa21 type CHAR, tabIndex=2;
+Edit apa06=formonly.apa06 type CHAR, tabIndex=3;
+Edit a1=formonly.a1 type SMALLINT, tabIndex=4;
+Edit a2=formonly.a2 type SMALLINT, tabIndex=5;
+Edit a3=formonly.a3 type SMALLINT, tabIndex=6;
+Edit a4=formonly.a4 type SMALLINT, tabIndex=7;
+DateEdit edate=formonly.edate type DATE, tabIndex=8;
+CheckBox detail=formonly.detail type CHAR, tabIndex=9, text="Print Detail Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=10, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apa22,formonly.apa21,formonly.apa06,formonly.a1,formonly.a2,formonly.a3,formonly.a4,formonly.edate,formonly.detail,formonly.more)
+END -- INSTRUCTIONS
+

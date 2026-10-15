@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gis/42f/gisp200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gisp200")
+Folder pc799
+Page page01(text="Main")
+VBox VBox1
+Grid gr3483
+{
+ <G group01                                                  >
+  Accounts Property    [apa00               ]
+  Accounts No.         [apa01               ]
+  Account Date         [apa02               ]
+  Vender No.           [apa05               ]
+  Item No.             [apb12               ]
+ <                                                           >
+ <G group02                                                  >
+             [plant     ][plant     ][plant     ][plant     ]
+             [plant     ][plant     ][plant     ][plant     ]
+             [plant     ][plant     ][plant     ][plant     ]
+ [a                                       ]
+ <                                                           >
+
+}
+END -- gr3483
+END -- VBox1
+END -- page01
+END -- pc799
+END -- gisp200
+
+TABLES
+apa_file,
+apb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit apa00=apa_file.apa00, tabIndex=1;
+Edit apa01=apa_file.apa01, tabIndex=2;
+Edit apa02=apa_file.apa02, tabIndex=3;
+Edit apa05=apa_file.apa05, tabIndex=4;
+Edit apb12=apb_file.apb12, tabIndex=5;
+Group group02:group02, text="Plant No.";
+Edit plant=formonly.plant type CHAR, tabIndex=6;
+CheckBox a=formonly.a type CHAR, tabIndex=7, text="Exist,Re-Generate?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_plant(formonly.plant)
+SCREEN RECORD Undefined(apa_file.apa00,apa_file.apa01,apa_file.apa02,apa_file.apa05,apb_file.apb12,formonly.a)
+END -- INSTRUCTIONS
+

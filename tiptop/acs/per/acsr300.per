@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/acs/42f/acsr300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"acsr300")
+VBox VBox1
+Grid Grid1
+{
+ <G grpqbe                                  >
+  Item Group Code     [ima06               ]
+  Item No.            [csd01               ]
+ <                                          >
+
+}
+END -- Grid1
+Grid Grid2
+{
+ <G group01                                     >
+ [more                                         ]
+ <                                              >
+
+}
+END -- Grid2
+END -- VBox1
+END -- acsr300
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+Edit ima06=formonly.ima06 type CHAR, tabIndex=1;
+ButtonEdit csd01=formonly.csd01 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Group group01:group01;
+CheckBox more=formonly.more type CHAR, tabIndex=3, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima06,formonly.csd01,formonly.more)
+END -- INSTRUCTIONS
+

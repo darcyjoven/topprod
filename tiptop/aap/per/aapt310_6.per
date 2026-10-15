@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt310_6.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Confirm")
+Grid gr459
+{
+ <G group01                                       >
+ [only_one                               ]
+ <                                                >
+ <G group02                                       >
+  Voucher# QBE            [apf44     ]
+  Payment Slip# QBE       [apf01           ]
+  Paying Date QBE         [apf02       ]
+  Account Employee QBE    [apf04     ]
+  Accounts Department QBE [apf05     ]
+ <                                                >
+ <G group03                                       >
+  Confirmed Total Payment [l_amt               ]
+
+ <                                                >
+
+}
+END -- gr459
+END -- aapt310_6
+
+TABLES
+apf_file
+ATTRIBUTES
+Group group01:group01, text="Confirm Condition";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, items=(("1", "Confirm this Accounts only"),("2", "Confirm by QBE Condition"));
+Group group02:group02, text="Enter Accounts Condition to Confirm:";
+Edit apf44=apf_file.apf44, tabIndex=2;
+Edit apf01=apf_file.apf01, tabIndex=3;
+DateEdit apf02=apf_file.apf02, tabIndex=4;
+Edit apf04=apf_file.apf04, tabIndex=5;
+Edit apf05=apf_file.apf05, tabIndex=6;
+Group group03:group03;
+Edit l_amt=formonly.l_amt type DECIMAL, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,apf_file.apf44,apf_file.apf01,apf_file.apf02,apf_file.apf04,apf_file.apf05,formonly.l_amt)
+END -- INSTRUCTIONS
+

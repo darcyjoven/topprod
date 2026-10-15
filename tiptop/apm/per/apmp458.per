@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp458.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp458")
+VBox VBox1
+Group g01
+VBox VBox2
+Grid gr4896
+{
+ <G group02                                  >
+ [dummy01                                  ]
+  P/O No.             [pom01               ]
+  Purchase Date       [pom04          ]
+  Buyer               [pom12          ]
+ <                                           >
+
+}
+END -- gr4896
+Grid gr4897
+{
+ <G group03                                  >
+  P/O No.             [a                   ]
+  Date                [b              ]
+  Buyer               [c              ]
+ <                                           >
+
+}
+END -- gr4897
+END -- VBox2
+END -- g01
+Grid gr4898
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr4898
+END -- VBox1
+END -- apmp458
+
+TABLES
+pom_file
+ATTRIBUTES
+Group group02:group02, text="QBE";
+Label dummy01:dummy01, text="Enter Batch Closing Data QBE";
+ButtonEdit pom01=pom_file.pom01, action=controlp, tabIndex=1, image="zoom.png", comment="<^P> Qry pom01";
+DateEdit pom04=pom_file.pom04, tabIndex=2;
+Edit pom12=pom_file.pom12, tabIndex=3;
+Group group03:group03, text="STATUS";
+Edit a=formonly.a type CHAR, tabIndex=4;
+DateEdit b=formonly.b type DATE, tabIndex=5;
+Edit c=formonly.c type CHAR, tabIndex=6;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=7, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pom_file.pom01,pom_file.pom04,pom_file.pom12,formonly.a,formonly.b,formonly.c,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

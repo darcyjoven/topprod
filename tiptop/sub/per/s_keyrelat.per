@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_keyrelat.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_keyrelat")
+Grid gr3908
+{
+ <T s_keyrelat                                                >
+ [gae01        |gae03      |gae04            |keysts         ]
+ [gae01        |gae03      |gae04            |keysts         ]
+ [gae01        |gae03      |gae04            |keysts         ]
+ [gae01        |gae03      |gae04            |keysts         ]
+ [gae01        |gae03      |gae04            |keysts         ]
+ [gae01        |gae03      |gae04            |keysts         ]
+ [gae01        |gae03      |gae04            |keysts         ]
+ [gae01        |gae03      |gae04            |keysts         ]
+ [gae01        |gae03      |gae04            |keysts         ]
+ [gae01        |gae03      |gae04            |keysts         ]
+ <                                                            >
+
+}
+END -- gr3908
+END -- s_keyrelat
+
+TABLES
+gae_file
+ATTRIBUTES
+Table s_keyrelat:s_keyrelat;
+Edit gae01=gae_file.gae01, tabIndex=1, title="Progarm Name", noEntry;
+Edit gae03=gae_file.gae03, tabIndex=2, title="Field Name", noEntry;
+Edit gae04=gae_file.gae04, tabIndex=3, title="Tri.Chinese Desc", noEntry;
+Edit keysts=formonly.keysts type VARCHAR, tabIndex=4, title="Key Mode", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_keyrelat(gae_file.gae01,gae_file.gae03,gae_file.gae04,formonly.keysts)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp200")
+VBox vb6
+Folder pc5
+Page page01(text=%"Main")
+Grid gr10
+{
+
+  Cost Center   [sfb98              ]
+  Department    [sfb82              ]
+
+}
+END -- gr10
+END -- page01
+END -- pc5
+Table s_sfb
+{
+[a  |sfb01      |sfb81         |sfb02      |sfb221    |sfb05         |ima02            |ima021          |sfb08   |sfb13      |sfb15     |sfb25     |sfb081 |sfb09   |sfb12 |sfb87  |sfb04  ]
+[a  |sfb01      |sfb81         |sfb02      |sfb221    |sfb05         |ima02            |ima021          |sfb08   |sfb13      |sfb15     |sfb25     |sfb081 |sfb09   |sfb12 |sfb87  |sfb04  ]
+[a  |sfb01      |sfb81         |sfb02      |sfb221    |sfb05         |ima02            |ima021          |sfb08   |sfb13      |sfb15     |sfb25     |sfb081 |sfb09   |sfb12 |sfb87  |sfb04  ]
+[a  |sfb01      |sfb81         |sfb02      |sfb221    |sfb05         |ima02            |ima021          |sfb08   |sfb13      |sfb15     |sfb25     |sfb081 |sfb09   |sfb12 |sfb87  |sfb04  ]
+[a  |sfb01      |sfb81         |sfb02      |sfb221    |sfb05         |ima02            |ima021          |sfb08   |sfb13      |sfb15     |sfb25     |sfb081 |sfb09   |sfb12 |sfb87  |sfb04  ]
+[a  |sfb01      |sfb81         |sfb02      |sfb221    |sfb05         |ima02            |ima021          |sfb08   |sfb13      |sfb15     |sfb25     |sfb081 |sfb09   |sfb12 |sfb87  |sfb04  ]
+[a  |sfb01      |sfb81         |sfb02      |sfb221    |sfb05         |ima02            |ima021          |sfb08   |sfb13      |sfb15     |sfb25     |sfb081 |sfb09   |sfb12 |sfb87  |sfb04  ]
+[a  |sfb01      |sfb81         |sfb02      |sfb221    |sfb05         |ima02            |ima021          |sfb08   |sfb13      |sfb15     |sfb25     |sfb081 |sfb09   |sfb12 |sfb87  |sfb04  ]
+[a  |sfb01      |sfb81         |sfb02      |sfb221    |sfb05         |ima02            |ima021          |sfb08   |sfb13      |sfb15     |sfb25     |sfb081 |sfb09   |sfb12 |sfb87  |sfb04  ]
+[a  |sfb01      |sfb81         |sfb02      |sfb221    |sfb05         |ima02            |ima021          |sfb08   |sfb13      |sfb15     |sfb25     |sfb081 |sfb09   |sfb12 |sfb87  |sfb04  ]
+
+}
+END -- s_sfb
+Grid gr2187
+{
+  ---------- Rows [cntb  ] ----------
+
+}
+END -- gr2187
+END -- vb6
+END -- asfp200
+
+ATTRIBUTES
+ButtonEdit sfb98=formonly.sfb98 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit sfb82=formonly.sfb82 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+CheckBox a=formonly.a type VARCHAR, tabIndex=2, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sfb01=formonly.sfb01 type CHAR, action=controlp, tabIndex=5, title="W/O No.", noEntry, image="zoom";
+DateEdit sfb81=formonly.sfb81 type CHAR, tabIndex=6, title="W/O. Dt", noEntry;
+ComboBox sfb02=formonly.sfb02 type CHAR, tabIndex=7, title="W/O Type", noEntry, items=(("1", "Gnrl"),("5", "Rework"),("7", "Sub."),("8", "Rwrk SUB"),("11", "Disasm"),("13", "Predic"),("15", "Trial"));
+Edit sfb221=formonly.sfb221 type CHAR, tabIndex=8, title="S/O Line", noEntry;
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=9, title="Item No", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=10, title="Item Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=11, title="Desc", noEntry;
+Edit sfb08=formonly.sfb08 type CHAR, tabIndex=12, title="Production Qty", noEntry;
+DateEdit sfb13=formonly.sfb13 type CHAR, tabIndex=13, title="Forecasted Initial Production Date", noEntry;
+DateEdit sfb15=formonly.sfb15 type CHAR, tabIndex=14, title="Forecasted Ending Production Date", noEntry;
+DateEdit sfb25=formonly.sfb25 type CHAR, tabIndex=15, title="Actual Operating Date", noEntry;
+Edit sfb081=formonly.sfb081 type CHAR, tabIndex=16, title="Sets of Material Issued", noEntry;
+Edit sfb09=formonly.sfb09 type CHAR, tabIndex=17, title="Cmoplete/Store-in Qty", noEntry;
+Edit sfb12=formonly.sfb12 type CHAR, tabIndex=18, title="Scrap Qty", noEntry;
+ComboBox sfb87=formonly.sfb87 type CHAR, tabIndex=19, title="confirm", noEntry, items=(("N", "Not Confirm"),("X", "Void"),("Y", "Confirmed"));
+ComboBox sfb04=formonly.sfb04 type CHAR, tabIndex=20, title="status", noEntry, items=(("1", "Gnrl"),("2", "Rls"),("3", "Prt"),("4", "Iss.Mat"),("5", "WIP"),("6", "FQC"),("7", "St-i"),("8", "Close"));
+Edit cntb=formonly.cntb type INTEGER, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(formonly.a,formonly.sfb01,formonly.sfb81,formonly.sfb02,formonly.sfb221,formonly.sfb05,formonly.ima02,formonly.ima021,formonly.sfb08,formonly.sfb13,formonly.sfb15,formonly.sfb25,formonly.sfb081,formonly.sfb09,formonly.sfb12,formonly.sfb87,formonly.sfb04)
+SCREEN RECORD Undefined(formonly.sfb98,formonly.sfb82,formonly.cntb)
+END -- INSTRUCTIONS
+

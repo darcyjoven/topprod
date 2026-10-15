@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt603.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglt603")
+VBox vb3
+Folder pc1
+Page Page1(text=%"Main")
+HBox hb1
+Grid gr1
+{
+
+ Bookno          [aff00]
+ Year            [aff01     ]
+ Budget Item     [aff02             ][azf03     ]
+ Account Code    [aff03             ][aag02     ]
+ Budget Dept.    [aff04             ][gem02     ]
+ Dimension       [aff05             ]
+ Dimension Value [aff06             ]
+
+
+
+
+}
+END -- gr1
+Grid gr2
+{
+
+ By Unit                     [aff07       ]
+                             [            ]
+                             [            ]
+ Budget Distribution Method  [aff08                    ]
+                             [                         ]
+ Yearly Budget               [aff09                    ]
+ Budget-1st Quarter          [aff10                    ]
+ Budget-2nd Quarter          [aff11                    ]
+ Budget-3rd Quarter          [aff12                    ]
+ Budget-4th Quarter          [aff13                    ]
+
+}
+END -- gr2
+END -- hb1
+END -- Page1
+Page Page2(text=%"Info")
+Grid gr14
+{
+ Data Owner        [affuser     ]   Data Modified By    [affmodu      ] Data Valid Code[affact]
+ Data of Department[affgrup     ]   Latest Modified Date[affdate      ]
+ Record Orig.      [afforiu     ]
+ Create Dept       [afforig     ]
+
+}
+END -- gr14
+END -- Page2
+END -- pc1
+Table s_afg
+{
+[afg07   |afg08                 ]
+[afg07   |afg08                 ]
+[afg07   |afg08                 ]
+[afg07   |afg08                 ]
+[afg07   |afg08                 ]
+[afg07   |afg08                 ]
+[afg07   |afg08                 ]
+[afg07   |afg08                 ]
+}
+END -- s_afg
+Grid gr7
+{
+
+  ------ Rows[cnt       ]/[idx       ] --- Items[cn2       ]--------
+
+
+
+}
+END -- gr7
+END -- vb3
+END -- aglt603
+
+TABLES
+afg_file,
+aff_file
+ATTRIBUTES
+Edit aff00=aff_file.aff00, tabIndex=3, not null, required;
+Edit aff01=aff_file.aff01, tabIndex=4, not null, required;
+ButtonEdit aff02=aff_file.aff02, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=10, noEntry;
+ButtonEdit aff03=aff_file.aff03, action=controlp, tabIndex=6, image="zoom.png";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=11;
+ButtonEdit aff04=aff_file.aff04, action=controlp, tabIndex=7, image="zoom.png";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=12;
+Edit aff05=aff_file.aff05, tabIndex=8;
+Edit aff06=aff_file.aff06, tabIndex=9;
+RadioGroup aff07=aff_file.aff07, tabIndex=13, default = "1", items=(("1", "Period"),("2", "Quarter"),("3", "Year"));
+RadioGroup aff08=aff_file.aff08, tabIndex=14, default = "2", items=(("1", "Set a Module Parameter"),("2", "Share Alike"));
+Edit aff09=aff_file.aff09, tabIndex=15;
+Edit aff10=aff_file.aff10, tabIndex=16;
+Edit aff11=aff_file.aff11, tabIndex=17;
+Edit aff12=aff_file.aff12, tabIndex=18;
+Edit aff13=aff_file.aff13, tabIndex=19;
+Edit affuser=aff_file.affuser, tabIndex=23, noEntry, not null;
+Edit affmodu=aff_file.affmodu, tabIndex=25, noEntry, not null;
+Edit affact=aff_file.affacti, tabIndex=27, noEntry, not null;
+Edit affgrup=aff_file.affgrup, tabIndex=24, noEntry, not null;
+DateEdit affdate=aff_file.affdate, tabIndex=26, noEntry, not null;
+Edit afforiu=aff_file.afforiu, tabIndex=28, noEntry;
+Edit afforig=aff_file.afforig, tabIndex=29, noEntry;
+Edit afg07=afg_file.afg07, tabIndex=1, title="Period";
+Edit afg08=afg_file.afg08, tabIndex=2, title="Budget Amt";
+Edit cnt=formonly.cnt type CHAR, tabIndex=21, noEntry;
+Edit idx=formonly.idx type CHAR, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=22;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_afg(afg_file.afg07,afg_file.afg08)
+SCREEN RECORD Undefined(aff_file.aff00,aff_file.aff01,aff_file.aff02,formonly.azf03,aff_file.aff03,formonly.aag02,aff_file.aff04,formonly.gem02,aff_file.aff05,aff_file.aff06,aff_file.aff07,aff_file.aff08,aff_file.aff09,aff_file.aff10,aff_file.aff11,aff_file.aff12,aff_file.aff13,aff_file.affuser,aff_file.affmodu,aff_file.affacti,aff_file.affgrup,aff_file.affdate,aff_file.afforiu,aff_file.afforig,formonly.cnt,formonly.idx,formonly.cn2)
+END -- INSTRUCTIONS
+

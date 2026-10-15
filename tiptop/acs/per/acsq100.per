@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/acs/42f/acsq100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acsq100")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+VBox VBox2
+Grid Grid1
+{
+ <G group01                                         >
+  Cost Simulation Version # [csc01     ][dummy01   ]
+
+  Simulation Cost Method    [csc02               ]
+ <                                                  >
+ <G group02                                         >
+  Simulation Date         [csc03     ]
+  Simulation Initial Time [csc04     ]-[csc05     ]
+  Simulation User         [csc06     ][d01       ]
+  Simulation Item#        [csc07               ]
+  Expiry Date             [csc08     ]
+  Simulation Routing No.  [csc09     ]
+ <                                                  >
+ <G group03                                                                   >
+ [csc10                                                              ]
+ [csc11                                                              ]
+ [csc12                                                              ]
+ [csc13                                                              ]
+
+  Simulation Ver. Desc    [csc16                                             ]
+ <                                                                            >
+
+}
+END -- Grid1
+END -- VBox2
+END -- page01
+END -- Folder1
+Grid Grid2
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- acsq100
+
+TABLES
+csc_file
+ATTRIBUTES
+Group group01:group01;
+Edit csc01=csc_file.csc01, tabIndex=1;
+Label dummy01:dummy01, text="(0-9)";
+RadioGroup csc02=csc_file.csc02, tabIndex=2, items=(("1", %"Standard Cost"),("2", %"Current Cost"),("3", %"Default Cost"));
+Group group02:group02;
+Edit csc03=csc_file.csc03, tabIndex=3;
+Edit csc04=csc_file.csc04, tabIndex=4;
+Edit csc05=csc_file.csc05, tabIndex=5;
+Edit csc06=csc_file.csc06, tabIndex=6;
+Edit d01=formonly.d01 type CHAR, tabIndex=7;
+Edit csc07=csc_file.csc07, tabIndex=8;
+Edit csc08=csc_file.csc08, tabIndex=9;
+Edit csc09=csc_file.csc09, tabIndex=10;
+Group group03:group03;
+CheckBox csc10=csc_file.csc10, tabIndex=11, text="Including Mass Mat. And MISC Item?", valueChecked = "Y", valueUnchecked = "N";
+CheckBox csc11=csc_file.csc11, tabIndex=12, text="Use Purd-Item Calculation on Mfd-Item?", valueChecked = "Y", valueUnchecked = "N";
+CheckBox csc12=csc_file.csc12, tabIndex=13, text="Use Mfd-Item Calculation on Purd-Item?", valueChecked = "Y", valueUnchecked = "N";
+CheckBox csc13=csc_file.csc13, tabIndex=14, text="Clear Labor/Ovhead of Purd And MISC Item?", valueChecked = "Y", valueUnchecked = "N";
+Edit csc16=csc_file.csc16, tabIndex=15;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(csc_file.csc01,csc_file.csc02,csc_file.csc03,csc_file.csc04,csc_file.csc05,csc_file.csc06,formonly.d01,csc_file.csc07,csc_file.csc08,csc_file.csc09,csc_file.csc10,csc_file.csc11,csc_file.csc12,csc_file.csc13,csc_file.csc16,formonly.cnt)
+END -- INSTRUCTIONS
+

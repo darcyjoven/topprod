@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri001_zb.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+
+
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit edit1=formonly.Edit1, tabIndex=1, title=%"Edit1";
+Edit edit2=formonly.Edit2, tabIndex=2, title=%"Edit2";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record5(formonly.Edit1,formonly.Edit2)
+END -- INSTRUCTIONS
+

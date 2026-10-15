@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmq617.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmq617")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr889
+{
+ Description         [desc      ]
+ Expried Date        [vdate       ]
+
+
+}
+END -- gr889
+Grid gr890
+{
+ Master Item(1)      [part1               ]
+ Part Name           [ima02_1                       ]
+ Specification       [ima021_1                      ]
+ Alternate Code      [bma06_1             ]
+}
+END -- gr890
+Grid gr891
+{
+ Master Item(2)      [part2               ]
+ Part Name           [ima02_2                       ]
+ Specification       [ima021_2                      ]
+ Alternate Code      [bma06_2             ]
+}
+END -- gr891
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_bmb
+{
+[bmb13     |bmb03               |ima02                       |ima021                      |bmb06_1             |bmb06_2             ]
+[bmb13     |bmb03               |ima02                       |ima021                      |bmb06_1             |bmb06_2             ]
+[bmb13     |bmb03               |ima02                       |ima021                      |bmb06_1             |bmb06_2             ]
+[bmb13     |bmb03               |ima02                       |ima021                      |bmb06_1             |bmb06_2             ]
+[bmb13     |bmb03               |ima02                       |ima021                      |bmb06_1             |bmb06_2             ]
+[bmb13     |bmb03               |ima02                       |ima021                      |bmb06_1             |bmb06_2             ]
+[bmb13     |bmb03               |ima02                       |ima021                      |bmb06_1             |bmb06_2             ]
+[bmb13     |bmb03               |ima02                       |ima021                      |bmb06_1             |bmb06_2             ]
+[bmb13     |bmb03               |ima02                       |ima021                      |bmb06_1             |bmb06_2             ]
+[bmb13     |bmb03               |ima02                       |ima021                      |bmb06_1             |bmb06_2             ]
+
+}
+END -- s_bmb
+Grid gr892
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr892
+END -- VBox1
+END -- abmq617
+
+ATTRIBUTES
+Edit desc=formonly.desc type VARCHAR, tabIndex=1;
+DateEdit vdate=formonly.vdate type DATE, tabIndex=2;
+Edit part1=formonly.part1 type VARCHAR, tabIndex=3;
+Edit ima02_1=formonly.ima02_1 type VARCHAR, tabIndex=4;
+Edit ima021_1=formonly.ima021_1 type VARCHAR, tabIndex=5;
+Edit bma06_1=formonly.bma06_1 type VARCHAR, tabIndex=6;
+Edit part2=formonly.part2 type VARCHAR, tabIndex=7;
+Edit ima02_2=formonly.ima02_2 type VARCHAR, tabIndex=8;
+Edit ima021_2=formonly.ima021_2 type VARCHAR, tabIndex=9;
+Edit bma06_2=formonly.bma06_2 type VARCHAR, tabIndex=10;
+Edit bmb13=formonly.bmb13 type VARCHAR, tabIndex=11, title="Inst.Loc", noEntry;
+Edit bmb03=formonly.bmb03 type VARCHAR, tabIndex=12, title="Component No.", noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=13, title="Part Name Specification", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=14, title="Specification", noEntry;
+Edit bmb06_1=formonly.bmb06_1 type VARCHAR, tabIndex=15, title="Master Item(1)", noEntry;
+Edit bmb06_2=formonly.bmb06_2 type VARCHAR, tabIndex=16, title="Master Item(2)", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmb(formonly.bmb13,formonly.bmb03,formonly.ima02,formonly.ima021,formonly.bmb06_1,formonly.bmb06_2)
+SCREEN RECORD Undefined(formonly.desc,formonly.vdate,formonly.part1,formonly.ima02_1,formonly.ima021_1,formonly.bma06_1,formonly.part2,formonly.ima02_2,formonly.ima021_2,formonly.bma06_2,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1079.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat1079")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Table s_fbd
+{
+[fbd02      |fbd03          |fbd031    |faj06           |fbd042             |fbd092     |fbd052                     |fbd102    |fbd062    |fbd112  |fbd072     |fbd122     ]
+[fbd02      |fbd03          |fbd031    |faj06           |fbd042             |fbd092     |fbd052                     |fbd102    |fbd062    |fbd112  |fbd072     |fbd122     ]
+[fbd02      |fbd03          |fbd031    |faj06           |fbd042             |fbd092     |fbd052                     |fbd102    |fbd062    |fbd112  |fbd072     |fbd122     ]
+[fbd02      |fbd03          |fbd031    |faj06           |fbd042             |fbd092     |fbd052                     |fbd102    |fbd062    |fbd112  |fbd072     |fbd122     ]
+[fbd02      |fbd03          |fbd031    |faj06           |fbd042             |fbd092     |fbd052                     |fbd102    |fbd062    |fbd112  |fbd072     |fbd122     ]
+[fbd02      |fbd03          |fbd031    |faj06           |fbd042             |fbd092     |fbd052                     |fbd102    |fbd062    |fbd112  |fbd072     |fbd122     ]
+[fbd02      |fbd03          |fbd031    |faj06           |fbd042             |fbd092     |fbd052                     |fbd102    |fbd062    |fbd112  |fbd072     |fbd122     ]
+[fbd02      |fbd03          |fbd031    |faj06           |fbd042             |fbd092     |fbd052                     |fbd102    |fbd062    |fbd112  |fbd072     |fbd122     ]
+[fbd02      |fbd03          |fbd031    |faj06           |fbd042             |fbd092     |fbd052                     |fbd102    |fbd062    |fbd112  |fbd072     |fbd122     ]
+[fbd02      |fbd03          |fbd031    |faj06           |fbd042             |fbd092     |fbd052                     |fbd102    |fbd062    |fbd112  |fbd072     |fbd122     ]
+
+}
+END -- s_fbd
+END -- page01
+END -- folder01
+Grid gr2242
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2242
+END -- VBox1
+END -- afat1079
+
+TABLES
+fbd_file
+ATTRIBUTES
+Edit fbd02=fbd_file.fbd02, tabIndex=1, title="Line No.", noEntry;
+Edit fbd03=fbd_file.fbd03, tabIndex=2, title="Property No.", noEntry;
+Edit fbd031=fbd_file.fbd031, tabIndex=3, title="Add No.", noEntry;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=4, title="Chinese Name", noEntry;
+Edit fbd042=fbd_file.fbd042, tabIndex=5, title="Acquisition Cost", noEntry, not null, required;
+Edit fbd092=fbd_file.fbd092, tabIndex=6, title="After", not null, required;
+Edit fbd052=fbd_file.fbd052, tabIndex=7, title="Accumulated Depreciation", noEntry, not null, required;
+Edit fbd102=fbd_file.fbd102, tabIndex=8, title="After", not null, required;
+Edit fbd062=fbd_file.fbd062, tabIndex=9, title="Rest Lf", noEntry, not null, required;
+Edit fbd112=fbd_file.fbd112, tabIndex=10, title="After", not null, required;
+Edit fbd072=fbd_file.fbd072, tabIndex=11, title="Est.Rsdl", noEntry, not null, required;
+Edit fbd122=fbd_file.fbd122, tabIndex=12, title="After", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fbd2(fbd_file.fbd02,fbd_file.fbd03,fbd_file.fbd031,formonly.faj06,fbd_file.fbd042,fbd_file.fbd092,fbd_file.fbd052,fbd_file.fbd102,fbd_file.fbd062,fbd_file.fbd112,fbd_file.fbd072,fbd_file.fbd122)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

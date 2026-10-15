@@ -1,0 +1,64 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsi109.per created Wed Dec 31 05:29:34 2008
+-- File created from apsi109.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsi109")
+-- GRIDPAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX vb13
+    FOLDER pc1046
+      PAGE page01( TEXT="Page01")
+        GRID gr5427
+        {
+         <G group01                                              >
+          Item No.            [aa0                             ]
+          Manufacturing Order [aa1                             ]
+          Warehouse No.       [aa2                             ]
+          Stock location      [aa3                            ]
+          Location            [aa4                            ]
+          Distributed Qty     [aa5            ]
+          Requirement Qty     [aa6            ]
+          Is Material         [aa7                 ]
+          Is Lock             [aa8                 ]
+          Is Demand Order     [aa9                 ]
+         <                                                       >
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    GRID gr5428
+    {
+     ----------Rows [ab0   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES aps_saj
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  BUTTONEDIT aa0=aps_saj.pid, ACTION=controlp, COMMENT="<^P>Qry Item No.", IMAGE="zoom", TABINDEX=1;
+  EDIT aa1=aps_saj.oid, TABINDEX=2;
+  BUTTONEDIT aa2=aps_saj.wh_id, ACTION=controlp, COMMENT="<^P>Qry Warehouse No.", IMAGE="zoom", TABINDEX=3;
+  EDIT aa3=aps_saj.stk_loc, TABINDEX=8;
+  EDIT aa4=aps_saj.location, TABINDEX=4;
+  EDIT aa5=aps_saj.fed_qty, TABINDEX=5;
+  EDIT aa6=aps_saj.dm_qty, TABINDEX=6;
+  COMBOBOX aa7=aps_saj.is_mt, NOT NULL, REQUIRED, TABINDEX=9, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX aa8=aps_saj.is_lock, NOT NULL, REQUIRED, TABINDEX=10, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX aa9=aps_saj.is_do, NOT NULL, NOENTRY, REQUIRED, TABINDEX=11, ITEMS=(("0","W/O"));
+  EDIT ab0=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=7;
+END

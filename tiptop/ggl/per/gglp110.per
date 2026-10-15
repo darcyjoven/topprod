@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglp110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglp110")
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+ <G group01                                >
+  Book No.           [aba00               ]
+  Voucher NO.        [aba01               ]
+  Voucher Date       [aba02               ]
+  Source Code        [aba06               ]
+ <                                         >
+ <G group02                                >
+ [a                                       ]
+ <                                         >
+ <G group03                                >
+ [b                                       ]
+ <                                         >
+ <G group04                                >
+  NOTE.File Save Path $TEMPDIR/UFERPM8.TXT
+ <                                         >
+
+}
+END -- Grid1
+END -- page01
+END -- Folder1
+END -- gglp110
+
+TABLES
+aba_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit aba00=aba_file.aba00, tabIndex=1;
+Edit aba01=aba_file.aba01, tabIndex=2;
+DateEdit aba02=aba_file.aba02, tabIndex=3;
+Edit aba06=aba_file.aba06, tabIndex=4, not null, required, comment="GL/RV/AC/RA/FA/FC/FP/VP/NM/AP/AR/CE/CP/LC/GF";
+Group group02:group02, text="Data Option 1";
+RadioGroup a=formonly.a type CHAR, tabIndex=5, items=(("1", %"Confirmed"),("2", %"UnConfirmed"),("3", %"All"));
+Group group03:group03, text="Data Option 2";
+RadioGroup b=formonly.b type CHAR, tabIndex=6, items=(("1", %"Posted"),("2", %"Unposted"),("3", %"All"));
+Group group04:group04;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(aba_file.aba00,aba_file.aba01,aba_file.aba02,aba_file.aba06,formonly.a,formonly.b)
+END -- INSTRUCTIONS
+

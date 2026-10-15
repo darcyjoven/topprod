@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_rate.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"s_rate")
+Grid gr3915
+{
+ <G group01                                    >
+ [r1     ][d1         ]   [r2     ][d2         ]
+ [a1                  ] : [a2                  ]
+
+ [azi10                                        ]
+ <                                             >
+
+}
+END -- gr3915
+END -- s_rate
+
+ATTRIBUTES
+Group group01:group01;
+Edit r1=formonly.r1 type CHAR, tabIndex=1;
+Edit d1=formonly.d1 type CHAR, tabIndex=2;
+Edit r2=formonly.r2 type CHAR, tabIndex=3;
+Edit d2=formonly.d2 type CHAR, tabIndex=4;
+Edit a1=formonly.a1 type CHAR, tabIndex=5;
+Edit a2=formonly.a2 type CHAR, tabIndex=6;
+ComboBox azi10=formonly.azi10 type CHAR, tabIndex=7, items=(("1", "Calculate By Multiplication Method"),("2", "Calculate By Division Method"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.r1,formonly.d1,formonly.r2,formonly.d2,formonly.a1,formonly.a2,formonly.azi10)
+END -- INSTRUCTIONS
+

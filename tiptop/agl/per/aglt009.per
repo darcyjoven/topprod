@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt009.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglt009")
+VBox VBox1
+Folder pc1
+Page Page1(text=%"Page0")
+VBox vb2
+Grid gr2
+{
+ Group number  [aep01            ]   aep02  [aep02            ]   aep07  [aep07         ]  aep11   [aep11       ]
+ Top Companies [aep01_1          ]   aep03  [aep03            ]   aep10  [aep10         ]  aep14   [aep14       ]
+ Set of books  [aep01_2          ]   aep04  [aep04            ]   aep08  [aep08         ]  aep15   [aep15       ]
+
+}
+END -- gr2
+Table s_aep1
+{
+[aep05   |aep16   |aep17     |aep09             |aep13                |aep06                     |aep12               ]
+[aep05   |aep16   |aep17     |aep09             |aep13                |aep06                     |aep12               ]
+[aep05   |aep16   |aep17     |aep09             |aep13                |aep06                     |aep12               ]
+[aep05   |aep16   |aep17     |aep09             |aep13                |aep06                     |aep12               ]
+
+}
+END -- s_aep1
+END -- vb2
+END -- Page1
+END -- pc1
+Grid gr1
+{
+   ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1
+END -- VBox1
+END -- aglt009
+
+TABLES
+aep_file
+ATTRIBUTES
+ButtonEdit aep01=aep_file.aep01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit aep02=aep_file.aep02, action=controlp, tabIndex=4, not null, required, image="zoom";
+ButtonEdit aep07=aep_file.aep07, action=controlp, tabIndex=7, image="zoom";
+ComboBox aep11=aep_file.aep11, tabIndex=10, items=(("1", "huiru"),("2", "luru"));
+Edit aep01_1=formonly.aep01_1 type CHAR, tabIndex=3;
+Edit aep03=aep_file.aep03, tabIndex=5, not null, required;
+ButtonEdit aep10=aep_file.aep10, action=controlp, tabIndex=9, not null, required, image="zoom";
+ButtonEdit aep14=aep_file.aep14, action=controlp, tabIndex=16, image="zoom.png";
+Edit aep01_2=formonly.aep01_2 type CHAR, tabIndex=2;
+Edit aep04=aep_file.aep04, tabIndex=6, not null, required;
+Edit aep08=aep_file.aep08, tabIndex=8;
+Edit aep15=aep_file.aep15, tabIndex=17;
+ButtonEdit aep05=aep_file.aep05, action=controlp, tabIndex=11, title="aep05", not null, required, image="zoom";
+Edit aep16=aep_file.aep16, tabIndex=12, title="aep16";
+ComboBox aep17=aep_file.aep17, tabIndex=19, title=%"aep17", items=(("10", %"Business Activity Income"),("11", %"Business Activity Expenditure"),("20", %"Investment Income"),("21", %"Investment Expenditure"),("30", %"Financial Activity"),("31", %"Financial Activity"),("40", %"Influence"));
+Edit aep09=aep_file.aep09, tabIndex=14, title="aep09";
+Edit aep13=aep_file.aep13, tabIndex=18, title=%"aep13";
+Edit aep06=aep_file.aep06, tabIndex=13, title="aep06";
+ButtonEdit aep12=aep_file.aep12, action=controlp, tabIndex=15, title="aep12", image="zoom.png";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aep1(aep_file.aep05,aep_file.aep16,aep_file.aep17,aep_file.aep09,aep_file.aep13,aep_file.aep06,aep_file.aep12)
+SCREEN RECORD Undefined(aep_file.aep01,aep_file.aep02,aep_file.aep07,aep_file.aep11,formonly.aep01_1,aep_file.aep03,aep_file.aep10,aep_file.aep14,formonly.aep01_2,aep_file.aep04,aep_file.aep08,aep_file.aep15,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

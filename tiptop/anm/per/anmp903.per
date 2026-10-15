@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp903.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmp903")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4125
+{
+ <G group01                                                      >
+  Bank No.                   [nma01     ][nma02               ]
+  Last Account Checking Date [nma21       ]
+  Bank Account #             [nma04                         ]
+ <                                                               >
+
+}
+END -- gr4125
+END -- page01
+END -- folder01
+Table s_npc
+{
+[npc02            |npc03 |npc04          |npc06     |npc05               |npc07            |npc08                          ]
+[npc02            |npc03 |npc04          |npc06     |npc05               |npc07            |npc08                          ]
+[npc02            |npc03 |npc04          |npc06     |npc05               |npc07            |npc08                          ]
+[npc02            |npc03 |npc04          |npc06     |npc05               |npc07            |npc08                          ]
+[npc02            |npc03 |npc04          |npc06     |npc05               |npc07            |npc08                          ]
+[npc02            |npc03 |npc04          |npc06     |npc05               |npc07            |npc08                          ]
+[npc02            |npc03 |npc04          |npc06     |npc05               |npc07            |npc08                          ]
+[npc02            |npc03 |npc04          |npc06     |npc05               |npc07            |npc08                          ]
+[npc02            |npc03 |npc04          |npc06     |npc05               |npc07            |npc08                          ]
+[npc02            |npc03 |npc04          |npc06     |npc05               |npc07            |npc08                          ]
+
+}
+END -- s_npc
+Grid gr4126
+{
+  ---------- Rows [cnt   ] / [cn3   ] ----------
+
+}
+END -- gr4126
+END -- VBox1
+END -- anmp903
+
+TABLES
+nma_file,
+npc_file
+ATTRIBUTES
+Group group01:group01;
+Edit nma01=nma_file.nma01, tabIndex=1, comment="Enter Bank No.";
+Edit nma02=nma_file.nma02, tabIndex=2, noEntry;
+DateEdit nma21=nma_file.nma21, tabIndex=3, noEntry;
+Edit nma04=nma_file.nma04, tabIndex=4, noEntry;
+DateEdit npc02=npc_file.npc02, tabIndex=5, title="Transaction Date", noEntry, comment="Enter From/To Date QBE";
+Edit npc03=npc_file.npc03, tabIndex=6, title="Memo", noEntry;
+ComboBox npc04=npc_file.npc04, tabIndex=7, title="Income/Expense", noEntry, queryEditable, comment="1:Income 2:Expense", items=(("1", %"Income"),("2", %"Expense"));
+Edit npc06=npc_file.npc06, tabIndex=8, title="Note#", noEntry;
+Edit npc05=npc_file.npc05, tabIndex=9, title="Amount", noEntry;
+ComboBox npc07=npc_file.npc07, tabIndex=10, title="Account Checking", INCLUDE = (1, 2), queryEditable, comment="1:Account Checked 2:Unchecked", items=(("1", %"Account Checked"),("2", %"Unchecked"));
+Edit npc08=npc_file.npc08, tabIndex=11, title="Code Account Checking Computer#", comment="Enter PC# Matched to Company Account";
+Edit cnt=formonly.cnt type CHAR, tabIndex=12;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_npc(npc_file.npc02,npc_file.npc03,npc_file.npc04,npc_file.npc06,npc_file.npc05,npc_file.npc07,npc_file.npc08)
+SCREEN RECORD Undefined(nma_file.nma01,nma_file.nma02,nma_file.nma21,nma_file.nma04,formonly.cnt,formonly.cn3)
+END -- INSTRUCTIONS
+

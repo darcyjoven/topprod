@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat720.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat720")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2306
+{
+ Application No.     [fcm01               ]
+ Applying Date       [fcb02       ]
+ Crediting Year      [fcm05     ]
+
+}
+END -- gr2306
+Grid gr2307
+{
+ Authority Approval Date [fcb03       ]
+ Doc No.                 [fcb04               ]
+ IRA Approval date       [fcb05       ]
+ Doc No.                 [fcb06               ]
+}
+END -- gr2307
+Grid gr2308
+{
+[fcmconf                        ]     [imgmksg]
+                                      [       ]
+
+
+}
+END -- gr2308
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_fcm
+{
+[fcm02      |fcc03          |fcc031    |cost                |fcc15  |amt1                 |amt2                |fcm04               |fcm03 ]
+[fcm02      |fcc03          |fcc031    |cost                |fcc15  |amt1                 |amt2                |fcm04               |fcm03 ]
+[fcm02      |fcc03          |fcc031    |cost                |fcc15  |amt1                 |amt2                |fcm04               |fcm03 ]
+[fcm02      |fcc03          |fcc031    |cost                |fcc15  |amt1                 |amt2                |fcm04               |fcm03 ]
+[fcm02      |fcc03          |fcc031    |cost                |fcc15  |amt1                 |amt2                |fcm04               |fcm03 ]
+[fcm02      |fcc03          |fcc031    |cost                |fcc15  |amt1                 |amt2                |fcm04               |fcm03 ]
+[fcm02      |fcc03          |fcc031    |cost                |fcc15  |amt1                 |amt2                |fcm04               |fcm03 ]
+[fcm02      |fcc03          |fcc031    |cost                |fcc15  |amt1                 |amt2                |fcm04               |fcm03 ]
+[fcm02      |fcc03          |fcc031    |cost                |fcc15  |amt1                 |amt2                |fcm04               |fcm03 ]
+[fcm02      |fcc03          |fcc031    |cost                |fcc15  |amt1                 |amt2                |fcm04               |fcm03 ]
+
+}
+END -- s_fcm
+Grid gr2309
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2309
+END -- VBox1
+END -- afat720
+
+TABLES
+fcm_file
+ATTRIBUTES
+ButtonEdit fcm01=fcm_file.fcm01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Credit Application";
+DateEdit fcb02=formonly.fcb02 type DATE, tabIndex=2, not null, required;
+Edit fcm05=fcm_file.fcm05, tabIndex=3;
+DateEdit fcb03=formonly.fcb03 type DATE, tabIndex=4;
+Edit fcb04=formonly.fcb04 type CHAR, tabIndex=5, noEntry;
+DateEdit fcb05=formonly.fcb05 type DATE, tabIndex=6, not null, required;
+Edit fcb06=formonly.fcb06 type CHAR, tabIndex=7, noEntry;
+CheckBox fcmconf=fcm_file.fcmconf, tabIndex=8, text="Confirm", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit fcm02=fcm_file.fcm02, tabIndex=10, title="Line No.", not null, required;
+Edit fcc03=formonly.fcc03 type CHAR, tabIndex=11, title="Property No.", noEntry;
+Edit fcc031=formonly.fcc031 type CHAR, tabIndex=12, title="Add No.", noEntry;
+Edit cost=formonly.cost type CHAR, tabIndex=13, title="Cost", noEntry;
+Edit fcc15=formonly.fcc15 type CHAR, tabIndex=14, title="Cr.%", noEntry;
+Edit amt1=formonly.amt1 type CHAR, tabIndex=15, title="Application Credit", noEntry;
+Edit amt2=formonly.amt2 type CHAR, tabIndex=16, title="Uncredited Amt", noEntry;
+Edit fcm04=fcm_file.fcm04, tabIndex=17, title="Crediting Amt";
+Edit fcm03=fcm_file.fcm03, tabIndex=18, title="Settle", upShift;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fcm(fcm_file.fcm02,formonly.fcc03,formonly.fcc031,formonly.cost,formonly.fcc15,formonly.amt1,formonly.amt2,fcm_file.fcm04,fcm_file.fcm03)
+SCREEN RECORD Undefined(fcm_file.fcm01,formonly.fcb02,fcm_file.fcm05,formonly.fcb03,formonly.fcb04,formonly.fcb05,formonly.fcb06,fcm_file.fcmconf,formonly.imgmksg,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

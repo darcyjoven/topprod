@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjp100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjp100")
+VBox vb2
+Grid gr11
+{
+ <G gb4                                           >
+    Project No.           [pja01             ]
+    Project Created Date  [pja05             ]
+    Project Leader        [pja08             ]
+ <                                                >
+ <G input                                         >
+    Version               [a                 ]
+
+
+ <                                                >
+}
+END -- gr11
+Grid gr12
+{
+[g_bgjob                                         ]
+
+}
+END -- gr12
+END -- vb2
+END -- apjp100
+
+ATTRIBUTES
+Group gb4:gb4, text="QBE";
+ButtonEdit pja01=formonly.pja01 type VARCHAR, action=controlp, tabIndex=3, image="zoom.png";
+DateEdit pja05=formonly.pja05 type VARCHAR, tabIndex=1;
+ButtonEdit pja08=formonly.pja08 type VARCHAR, action=controlp, tabIndex=2, image="zoom.png";
+Group input:INPUT, text="INPUT";
+Edit a=formonly.a type CHAR, tabIndex=5, not null, required;
+CheckBox g_bgjob=formonly.g_bgjob type VARCHAR, tabIndex=4, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pja01,formonly.pja05,formonly.pja08,formonly.a,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

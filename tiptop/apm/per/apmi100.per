@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi100")
+VBox VBox1
+Folder pc913
+Page page01(text="Main")
+Table s_pma
+{
+[pma01           |pma11    |pma02               |pma03                  |pma09    |pma08  |pma12                 |pma13    |pma10  |pma04         |pmaacti    ]
+[pma01           |pma11    |pma02               |pma03                  |pma09    |pma08  |pma12                 |pma13    |pma10  |pma04         |pmaacti    ]
+[pma01           |pma11    |pma02               |pma03                  |pma09    |pma08  |pma12                 |pma13    |pma10  |pma04         |pmaacti    ]
+[pma01           |pma11    |pma02               |pma03                  |pma09    |pma08  |pma12                 |pma13    |pma10  |pma04         |pmaacti    ]
+[pma01           |pma11    |pma02               |pma03                  |pma09    |pma08  |pma12                 |pma13    |pma10  |pma04         |pmaacti    ]
+[pma01           |pma11    |pma02               |pma03                  |pma09    |pma08  |pma12                 |pma13    |pma10  |pma04         |pmaacti    ]
+[pma01           |pma11    |pma02               |pma03                  |pma09    |pma08  |pma12                 |pma13    |pma10  |pma04         |pmaacti    ]
+[pma01           |pma11    |pma02               |pma03                  |pma09    |pma08  |pma12                 |pma13    |pma10  |pma04         |pmaacti    ]
+[pma01           |pma11    |pma02               |pma03                  |pma09    |pma08  |pma12                 |pma13    |pma10  |pma04         |pmaacti    ]
+[pma01           |pma11    |pma02               |pma03                  |pma09    |pma08  |pma12                 |pma13    |pma10  |pma04         |pmaacti    ]
+
+}
+END -- s_pma
+END -- page01
+END -- pc913
+Grid gr4816
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4816
+END -- VBox1
+END -- apmi100
+
+TABLES
+pma_file
+ATTRIBUTES
+Edit pma01=pma_file.pma01, tabIndex=1, title="Payment Method", not null, required, comment="Key Field, No Blank/Repeated!    ";
+ComboBox pma11=pma_file.pma11, tabIndex=2, title="Category", not null, required, queryEditable, comment="1.Check  2.Transfer(TT)  3.LC  4.OA  6.DA  7.DP  8.LLC ", items=(("1", %"Check"),("2", %"Transfer(TT)"),("3", %"LC"),("4", %"OA"),("6", %"DA"),("7", %"DP"),("8", %"LLC"),("C", %"TT"));
+Edit pma02=pma_file.pma02, tabIndex=3, title="Description";
+ComboBox pma03=pma_file.pma03, tabIndex=4, title="A/P Date Initail Base", not null, required, queryEditable, comment="2.Invoice Date 3.Account Date 5.Beginning of Next Month of Invoice Date 6.Beginning of Next Month of Account Date", items=(("2", %"Invoice Date"),("3", %"Account Date"),("5", %"Beginning of Next Month of Invoice Date"),("6", %"Beginning of Next Month of Account Date"));
+Edit pma09=pma_file.pma09, tabIndex=5, title="+ Months", comment="Months Plus from Initial Date";
+Edit pma08=pma_file.pma08, tabIndex=6, title="+ Days", comment="Days Plus from Initial Date";
+ComboBox pma12=pma_file.pma12, tabIndex=7, title="N/P Date Initial Base", not null, required, queryEditable, comment="2.Invoice Date 3.Account Date 5.Beginning of Next Month of Invoice Date 6.Beginning of Next Month of Account Date 7.Accounts Payable Date 8.Beginning of Next Month of A/P Date", items=(("2", %"Invoice Date"),("3", %"Account Date"),("5", %"Beginning of Next Month of Invoice Date"),("6", %"Beginning of Next Month of Account Date"),("7", %"Accounts Payable Date"),("8", %"Beginning of Next Month of A/P Date"));
+Edit pma13=pma_file.pma13, tabIndex=8, title="+ Months", comment="Month Plus From N/R Date Base";
+Edit pma10=pma_file.pma10, tabIndex=9, title="+ Days", comment="Days Plus From N/R Date Base";
+Edit pma04=pma_file.pma04, tabIndex=10, title="Cash Discount";
+CheckBox pmaacti=pma_file.pmaacti, tabIndex=11, title="Valid Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pma(pma_file.pma01,pma_file.pma11,pma_file.pma02,pma_file.pma03,pma_file.pma09,pma_file.pma08,pma_file.pma12,pma_file.pma13,pma_file.pma10,pma_file.pma04,pma_file.pmaacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

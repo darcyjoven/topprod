@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli004")
+Folder pc432
+Page page01(text="Main")
+VBox VBox1
+Table s_axl
+{
+[axl01      |axl02                         |axl03                               ]
+[axl01      |axl02                         |axl03                               ]
+[axl01      |axl02                         |axl03                               ]
+[axl01      |axl02                         |axl03                               ]
+[axl01      |axl02                         |axl03                               ]
+[axl01      |axl02                         |axl03                               ]
+[axl01      |axl02                         |axl03                               ]
+[axl01      |axl02                         |axl03                               ]
+[axl01      |axl02                         |axl03                               ]
+[axl01      |axl02                         |axl03                               ]
+
+}
+END -- s_axl
+Grid gr2336
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr2336
+END -- VBox1
+END -- page01
+END -- pc432
+END -- agli004
+
+TABLES
+axl_file
+ATTRIBUTES
+Edit axl01=axl_file.axl01, tabIndex=1, title="Group Code", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit axl02=axl_file.axl02, tabIndex=2, title="Description";
+ComboBox axl03=axl_file.axl03, tabIndex=3, title="Class", not null, required, queryEditable, items=(("1", "Capital"),("2", "Capital Deposit"),("3", "Legal Rest Deposit"),("4", "Unset Rest"),("5", "Accumulated Conversion Adjust Qty"),("6", "Unputative Pension Cost Dead Loss"));
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axl(axl_file.axl01,axl_file.axl02,axl_file.axl03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

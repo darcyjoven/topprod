@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi001")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4801
+{
+ Flow Code           [pox01     ]
+ Description         [poz02                         ]
+ Effective Date      [pox02       ]
+ Pricing Base        [pox03               ]
+}
+END -- gr4801
+END -- page01
+END -- folder01
+Table s_pox
+{
+[pox04    |poy03             |pmc03        |pox05          |pox06        ]
+[pox04    |poy03             |pmc03        |pox05          |pox06        ]
+[pox04    |poy03             |pmc03        |pox05          |pox06        ]
+[pox04    |poy03             |pmc03        |pox05          |pox06        ]
+[pox04    |poy03             |pmc03        |pox05          |pox06        ]
+[pox04    |poy03             |pmc03        |pox05          |pox06        ]
+[pox04    |poy03             |pmc03        |pox05          |pox06        ]
+[pox04    |poy03             |pmc03        |pox05          |pox06        ]
+[pox04    |poy03             |pmc03        |pox05          |pox06        ]
+[pox04    |poy03             |pmc03        |pox05          |pox06        ]
+
+}
+END -- s_pox
+Grid gr4802
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr4802
+END -- VBox1
+END -- apmi001
+
+TABLES
+pox_file
+ATTRIBUTES
+ButtonEdit pox01=pox_file.pox01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Enter Code,No Blank. <^P>Qry Flow Code";
+Edit poz02=formonly.poz02 type CHAR, tabIndex=2, noEntry;
+DateEdit pox02=pox_file.pox02, tabIndex=3, not null, required, comment="Enter this Pricing Effective Date";
+RadioGroup pox03=pox_file.pox03, tabIndex=4, comment="1 \"Source Plant\"  2 \"By Upstream Vender\"                                  3,\"End Plant\" 4,\"By Downstream Vender\"", items=(("1", "Source Plant"),("2", "By Upstream Vender"),("3", "End Plant"),("4", "By Downstream Vender"));
+Edit pox04=pox_file.pox04, tabIndex=5, title="Flow No.", noEntry, not null, required;
+Edit poy03=formonly.poy03 type CHAR, tabIndex=6, title="Downstream Vender", noEntry;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=7, title="Abbreviation", noEntry;
+ComboBox pox05=pox_file.pox05, tabIndex=8, title="Pricing Method", not null, required, queryEditable, comment="1:by Ratio 2:By Transfer Unit Price 3:0 if Unit Price =0, or same as 2:", items=(("1", %"By Ratio"),("2", %"By Transfer Unit Price"),("3", %"0 if Unit Price =0, or same as 2:"));
+Edit pox06=pox_file.pox06, tabIndex=9, title="Pricing Ratio", comment="Enter Percentage";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pox(pox_file.pox04,formonly.poy03,formonly.pmc03,pox_file.pox05,pox_file.pox06)
+SCREEN RECORD Undefined(pox_file.pox01,formonly.poz02,pox_file.pox02,pox_file.pox03,formonly.cnt)
+END -- INSTRUCTIONS
+

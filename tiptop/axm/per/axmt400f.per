@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt400f.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmt400f")
+VBox VBox1
+Folder pc572
+Page page01(text="Page01")
+Grid gr2506
+{
+ <G group01                            >
+  Order Line#     [oeb03              ]
+ <                                     >
+ <G group02                            >
+  Enter Purchase Requisite [slip      ]
+ <                                     >
+
+}
+END -- gr2506
+END -- page01
+END -- pc572
+END -- VBox1
+END -- axmt400f
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit oeb03=formonly.oeb03 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Order Line# ";
+Group group02:group02;
+ButtonEdit slip=formonly.slip type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Qry PR Type  ";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oeb03,formonly.slip)
+END -- INSTRUCTIONS
+

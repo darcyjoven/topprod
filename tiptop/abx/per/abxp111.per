@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxp111.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxp111")
+VBox VBox1
+Grid gr1069
+{
+ <G group01                                          >
+  Master Item         [bma01                         ]
+  Group Code          [ima06               ]
+ <                                                   >
+
+}
+END -- gr1069
+Group group02(text="INPUT")
+Grid gr1070
+{
+ Appr No             [bnd04                       ]
+ Expiration Date     [bnd02     ]
+ Levels              [x         ]
+}
+END -- gr1070
+END -- group02
+END -- VBox1
+END -- abxp111
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit bma01=formonly.bma01 type VARCHAR, tabIndex=1;
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=2;
+Edit bnd04=formonly.bnd04 type VARCHAR, tabIndex=3;
+DateEdit bnd02=formonly.bnd02 type DATE, tabIndex=4;
+Edit x=formonly.x type SMALLINT, tabIndex=5, comment="Levels (at least 1)";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bma01,formonly.ima06,formonly.bnd04,formonly.bnd02,formonly.x)
+END -- INSTRUCTIONS
+

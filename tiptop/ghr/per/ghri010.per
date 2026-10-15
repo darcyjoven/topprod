@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page page1(text=%"Main")
+Table ds1(width = 0 characters, height = 0 characters)
+{
+[sel     |hrat01   |hrat02          |hraa12     |hrao02  |hras04     |hrat25    |hrat02_1  |hrat26    |hrat19  ]
+[sel     |hrat01   |hrat02          |hraa12     |hrao02  |hras04     |hrat25    |hrat02_1  |hrat26    |hrat19  ]
+[sel     |hrat01   |hrat02          |hraa12     |hrao02  |hras04     |hrat25    |hrat02_1  |hrat26    |hrat19  ]
+[sel     |hrat01   |hrat02          |hraa12     |hrao02  |hras04     |hrat25    |hrat02_1  |hrat26    |hrat19  ]
+[sel     |hrat01   |hrat02          |hraa12     |hrao02  |hras04     |hrat25    |hrat02_1  |hrat26    |hrat19  ]
+
+}
+END -- ds1
+END -- page1
+END -- Folder1
+Grid Grid1
+{
+
+ ---------- [label1    |cnt1      |lab|label3    |cnt2      ] ----------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+hrat_file,
+hras_file,
+hraa_file,
+hrao_file
+ATTRIBUTES
+CheckBox sel=formonly.sel type CHAR, tabIndex=1, default = "N", title=%"sel", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit hrat01=hrat_file.hrat01, action=controlp, tabIndex=11, title=%"hrat01", noEntry;
+Edit hrat02=hrat_file.hrat02, tabIndex=2, title=%"hrat02", noEntry, scroll;
+Edit hraa12=hraa_file.hraa12, tabIndex=3, title=%"hraa12", noEntry;
+Edit hrao02=hrao_file.hrao02, tabIndex=4, title=%"hrao02", noEntry;
+Edit hras04=hras_file.hras04, tabIndex=5, title=%"hras04", noEntry;
+DateEdit hrat25=hrat_file.hrat25, tabIndex=6, title=%"hrat25", noEntry;
+Edit hrat02_1=formonly.hrat02_1 type VARCHAR, tabIndex=7, title=%"hrat02_1", noEntry;
+DateEdit hrat26=hrat_file.hrat26, tabIndex=8, title=%"hrat26", noEntry;
+Edit hrat19=formonly.hrat19 type VARCHAR, tabIndex=12, title=%"hrat19", noEntry;
+Label label1:Label1, text=%"Count", sizePolicy=initial;
+Edit cnt1=formonly.cnt1, tabIndex=9;
+Label lab:Label2, text=%"/";
+Label label3:Label3, text=%"Selected";
+Edit cnt2=formonly.cnt2, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hray(formonly.sel,hrat_file.hrat01,hrat_file.hrat02,hraa_file.hraa12,hrao_file.hrao02,hras_file.hras04,hrat_file.hrat25,formonly.hrat02_1,hrat_file.hrat26,formonly.hrat19)
+SCREEN RECORD Undefined(formonly.cnt1,formonly.cnt2)
+END -- INSTRUCTIONS
+

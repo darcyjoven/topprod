@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/awsi009.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"awsi009")
+VBox VBox1
+Grid gr8
+{
+
+   Company ID      [wak01                  ]
+   Company TBName  [wak02                  ]
+   Field Name      [wak03                  ]
+
+}
+END -- gr8
+Table s_wak
+{
+[wak04           |wak05                                       ]
+[wak04           |wak05                                       ]
+[wak04           |wak05                                       ]
+[wak04           |wak05                                       ]
+[wak04           |wak05                                       ]
+}
+END -- s_wak
+Grid gr9
+{
+
+ ---------- Rows [cnt     ]/[cnt1    ]/[cnt2    ] ----------------
+
+
+
+}
+END -- gr9
+END -- VBox1
+END -- awsi009
+
+TABLES
+wak_file
+ATTRIBUTES
+ButtonEdit wak01=wak_file.wak01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit wak02=wak_file.wak02, action=controlp, tabIndex=2, not null, required, image="zoom";
+ButtonEdit wak03=wak_file.wak03, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit wak04=wak_file.wak04, tabIndex=4, title="Values", not null, required;
+Edit wak05=wak_file.wak05, tabIndex=5, title="Describe", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=6;
+Edit cnt1=formonly.cnt1 type CHAR, tabIndex=7;
+Edit cnt2=formonly.cnt2 type CHAR, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wak(wak_file.wak04,wak_file.wak05)
+SCREEN RECORD Undefined(wak_file.wak01,wak_file.wak02,wak_file.wak03,formonly.cnt,formonly.cnt1,formonly.cnt2)
+END -- INSTRUCTIONS
+

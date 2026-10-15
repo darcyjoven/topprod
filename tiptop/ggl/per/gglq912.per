@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq912.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gglq912")
+VBox vb2
+Grid gr3378
+{
+  <G group01                                                               >
+   Book No.             [b           ]
+   Parent Company       [axa02       ]
+   Group No.            [axa01       ]
+   Report Structure No. [a           ]
+   Enter Year           [yy        ]
+   Initial Period       [bm        ]
+   Ending Period        [em        ]
+                        [c                                           ]
+  <                                                                        >
+
+  <G group02                                                               >
+  [d                                           ]
+  <                                                                        >
+
+  <G group03                                                               >
+   Decimal Digits       [e         ]
+   Print Minimum Level# [f         ]
+                        [h                                           ]
+                        [i                                     ]
+  <                                                                        >
+ <G group04                                                               >
+                       [o                                           ]
+  G/L Currency         [r         ]
+  Convert Currency     [p         ]
+  Ex.Rate              [q                   ]
+ <                                                                        >
+
+}
+END -- gr3378
+Grid gr3379
+{
+[more                                 ]
+
+}
+END -- gr3379
+END -- vb2
+END -- gglq912
+
+ATTRIBUTES
+Group group01:group01, text="Input";
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Query Book No.";
+ButtonEdit axa02=formonly.axa02 type VARCHAR, action=controlp, tabIndex=17, image="zoom", comment="<^P> Query Book No.";
+ButtonEdit axa01=formonly.axa01 type VARCHAR, action=controlp, tabIndex=18, image="zoom", comment="<^P> Query Book No.";
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P> Qry Report No.";
+Edit yy=formonly.yy type SMALLINT, tabIndex=3;
+Edit bm=formonly.bm type SMALLINT, tabIndex=4;
+Edit em=formonly.em type SMALLINT, tabIndex=5;
+CheckBox c=formonly.c type VARCHAR, tabIndex=6, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Amount Unit";
+RadioGroup d=formonly.d type VARCHAR, tabIndex=7, items=(("1", "DR"),("2", "TH"),("3", "Ten TH"),("4", "Million"));
+Group group03:group03;
+Edit e=formonly.e type CHAR, tabIndex=8;
+Edit f=formonly.f type SMALLINT, tabIndex=9;
+CheckBox h=formonly.h type VARCHAR, tabIndex=10, text="Print by Acct Extra Desc", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox i=formonly.i type CHAR, tabIndex=11, text="Monetary Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="Convert Currency";
+CheckBox o=formonly.o type VARCHAR, tabIndex=12, text="Convert Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=13, noEntry;
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=14, image="zoom", comment="<^P> Qry Currency";
+Edit q=formonly.q type DECIMAL, tabIndex=15;
+CheckBox more=formonly.more type VARCHAR, tabIndex=16, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.b,formonly.axa02,formonly.axa01,formonly.a,formonly.yy,formonly.bm,formonly.em,formonly.c,formonly.d,formonly.e,formonly.f,formonly.h,formonly.i,formonly.o,formonly.r,formonly.p,formonly.q,formonly.more)
+END -- INSTRUCTIONS
+

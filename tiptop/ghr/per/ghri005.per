@@ -1,0 +1,112 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox vbox1
+Folder folder1
+Page page1(action=main, text=%"Page1")
+Grid grid2
+{
+ <G group1                                          > <G group2                                          >
+   hras02[hras02    |hras02_1            ]              hras08[hras08    |hras08_1            ]
+   hras03[hras03    |hras03_1            ]              hras09[hras09                         ]
+   hras01[hras01                         ]              hras10[hras10                         ]
+   hras04[hras04                         ]              hras11[hras11                         ]
+   hras05[hras05    ]                                   hras12[hras12                         ]
+   hras06[hras06                         ]              hras13[hras13                         ]
+   hras07[hras07                         ]              hras13[hrasud02                       ]
+         [                               ]             [hrasud01                       ]
+
+ <                                                  > <                                                  >
+
+}
+END -- grid2
+END -- page1
+Page page2(action=info, text=%"Page2")
+Grid grid3
+{
+ hrasuser[hrasuser  ]  hrasmodu [hrasmodu  ]  hrasacti[hrasacti  ]
+ hrasgrup[hrasgrup  ]  hrasdate [hrasdate  ]
+ hrasoriu[hrasoriu  ]
+ hrasorig[hrasorig  ]
+
+
+
+
+
+
+}
+END -- grid3
+END -- page2
+Page page3(action=item_list, text=%"Page3")
+Table table1
+{
+[hras02_b   |hras02_1_b     |hras01_b   |hras04_b       |hras06_b  |hras13_b  |hras05_b  |hras12_b   |hras07_b       |hrasud03|hrasacti_]
+[hras02_b   |hras02_1_b     |hras01_b   |hras04_b       |hras06_b  |hras13_b  |hras05_b  |hras12_b   |hras07_b       |hrasud03|hrasacti_]
+[hras02_b   |hras02_1_b     |hras01_b   |hras04_b       |hras06_b  |hras13_b  |hras05_b  |hras12_b   |hras07_b       |hrasud03|hrasacti_]
+[hras02_b   |hras02_1_b     |hras01_b   |hras04_b       |hras06_b  |hras13_b  |hras05_b  |hras12_b   |hras07_b       |hrasud03|hrasacti_]
+[hras02_b   |hras02_1_b     |hras01_b   |hras04_b       |hras06_b  |hras13_b  |hras05_b  |hras12_b   |hras07_b       |hrasud03|hrasacti_]
+}
+END -- table1
+END -- page3
+END -- folder1
+Grid grid1
+{
+  ----------- cnt[cnt ]-------------
+
+}
+END -- grid1
+END -- vbox1
+END -- ghri005
+
+ATTRIBUTES
+Group group1:group1, text=%"Group1";
+ButtonEdit hras02=formonly.hras02 type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit hras02_1=formonly.hras02_1 type VARCHAR, tabIndex=3, noEntry;
+ButtonEdit hras03=formonly.hras03 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+Edit hras03_1=formonly.hras03_1 type VARCHAR, tabIndex=5, noEntry;
+Edit hras01=formonly.hras01 type VARCHAR, tabIndex=6, not null, required;
+Edit hras04=formonly.hras04 type VARCHAR, tabIndex=7, not null, required;
+DateEdit hras05=formonly.hras05 type VARCHAR, tabIndex=8, not null, required;
+Edit hras06=formonly.hras06 type VARCHAR, tabIndex=9;
+TextEdit hras07=formonly.hras07 type VARCHAR, tabIndex=10;
+Group group2:group2, text=%"Group2";
+ButtonEdit hras08=formonly.hras08 type VARCHAR, action=controlp, tabIndex=11, image="zoom";
+Edit hras08_1=formonly.hras08_1 type VARCHAR, tabIndex=12, noEntry;
+ComboBox hras09=formonly.hras09 type VARCHAR, tabIndex=13, items=(("1", %"No limit"),("2", %"<30"),("3", %"30~40"),("4", %">40"));
+ComboBox hras10=formonly.hras10 type VARCHAR, tabIndex=14, items=(("1", %"No limit"),("2", %"male"),("3", %"female"));
+Edit hras11=formonly.hras11 type VARCHAR, tabIndex=15;
+Edit hras12=formonly.hras12 type VARCHAR, tabIndex=16;
+Edit hras13=formonly.hras13 type VARCHAR, tabIndex=17;
+Edit hrasud02=formonly.hrasud02 type VARCHAR, tabIndex=37;
+CheckBox hrasud01=formonly.hrasud01 type VARCHAR, tabIndex=35, text=%"hrasud01", valueChecked = "Y", valueUnchecked = "N";
+Edit hrasuser=formonly.hrasuser type VARCHAR, tabIndex=18, noEntry;
+Edit hrasmodu=formonly.hrasmodu type VARCHAR, tabIndex=22, noEntry;
+Edit hrasacti=formonly.hrasacti type VARCHAR, tabIndex=23, noEntry;
+Edit hrasgrup=formonly.hrasgrup type VARCHAR, tabIndex=19, noEntry;
+DateEdit hrasdate=formonly.hrasdate type DATE, tabIndex=34, noEntry;
+Edit hrasoriu=formonly.hrasoriu type VARCHAR, tabIndex=20, noEntry;
+Edit hrasorig=formonly.hrasorig type VARCHAR, tabIndex=21, noEntry;
+Edit hras02_b=formonly.hras02_b type VARCHAR, tabIndex=24, title=%"hras02_b", noEntry;
+Edit hras02_1_b=formonly.hras02_1_b type VARCHAR, tabIndex=25, title=%"hras02_1_b", noEntry;
+Edit hras01_b=formonly.hras01_b type VARCHAR, tabIndex=26, title=%"hras01_b", noEntry;
+Edit hras04_b=formonly.hras04_b type VARCHAR, tabIndex=27, title=%"hras04_b", noEntry;
+Edit hras06_b=formonly.hras06_b type VARCHAR, tabIndex=28, title=%"hras06_b", noEntry;
+Edit hras13_b=formonly.hras13_b type VARCHAR, tabIndex=29, title=%"hras13_b", noEntry;
+DateEdit hras05_b=formonly.hras05_b type DATE, tabIndex=30, title=%"hras05_b", noEntry;
+Edit hras12_b=formonly.hras12_b type VARCHAR, tabIndex=31, title=%"hras12_b", noEntry;
+Edit hras07_b=formonly.hras07_b type VARCHAR, tabIndex=32, title=%"hras07_b";
+CheckBox hrasud03=formonly.hrasud01_b type CHAR, tabIndex=36, title=%"hrasud01_b", text=%"hrasud01", valueChecked = "Y", valueUnchecked = "N";
+Edit hrasacti_=formonly.hrasacti_b type VARCHAR, tabIndex=33, title=%"hrasacti_b";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.cnt,formonly.hras02,formonly.hras02_1,formonly.hras03,formonly.hras03_1,formonly.hras01,formonly.hras04,formonly.hras05,formonly.hras06,formonly.hras07,formonly.hras08,formonly.hras08_1,formonly.hras09,formonly.hras10,formonly.hras11,formonly.hras12,formonly.hras13,formonly.hrasuser,formonly.hrasgrup,formonly.hrasoriu,formonly.hrasorig,formonly.hrasmodu,formonly.hrasacti,formonly.hrasdate,formonly.hrasud01,formonly.hrasud02)
+SCREEN RECORD s_hras_b(formonly.hras02_b,formonly.hras02_1_b,formonly.hras01_b,formonly.hras04_b,formonly.hras06_b,formonly.hras13_b,formonly.hras05_b,formonly.hras12_b,formonly.hras07_b,formonly.hrasud01_b,formonly.hrasacti_b)
+END -- INSTRUCTIONS
+

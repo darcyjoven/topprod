@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli1022_p.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="agli1022_p")
+VBox vb2
+Folder pc2
+Page Page4(text=%"Main")
+Table tb1
+{
+[sel  |aag00     |aag01                       |aag02               |aag31               |ahe02_1             |aag311              |aag32               |ahe02_2             |aag321              |aag33               |ahe02_3             |aag331              |aag34               |ahe02_4             |aag341              ]
+[sel  |aag00     |aag01                       |aag02               |aag31               |ahe02_1             |aag311              |aag32               |ahe02_2             |aag321              |aag33               |ahe02_3             |aag331              |aag34               |ahe02_4             |aag341              ]
+[sel  |aag00     |aag01                       |aag02               |aag31               |ahe02_1             |aag311              |aag32               |ahe02_2             |aag321              |aag33               |ahe02_3             |aag331              |aag34               |ahe02_4             |aag341              ]
+[sel  |aag00     |aag01                       |aag02               |aag31               |ahe02_1             |aag311              |aag32               |ahe02_2             |aag321              |aag33               |ahe02_3             |aag331              |aag34               |ahe02_4             |aag341              ]
+[sel  |aag00     |aag01                       |aag02               |aag31               |ahe02_1             |aag311              |aag32               |ahe02_2             |aag321              |aag33               |ahe02_3             |aag331              |aag34               |ahe02_4             |aag341              ]
+
+}
+END -- tb1
+END -- Page4
+END -- pc2
+Grid gr1
+{
+
+---------- count[cnt   ]     ----------
+
+
+}
+END -- gr1
+END -- vb2
+END -- agli1022_p
+
+ATTRIBUTES
+CheckBox sel=formonly.sel type CHAR, tabIndex=1, title="Choice", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit aag00=formonly.aag00 type CHAR, action=controlp, tabIndex=2, title="Book No.", image="zoom";
+ButtonEdit aag01=formonly.aag01 type CHAR, action=controlp, tabIndex=3, title="Subjects", image="zoom";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=4, title="Subjects Name";
+ButtonEdit aag31=formonly.aag31 type CHAR, action=controlp, tabIndex=5, title="Dimension 5 Type", image="zoom";
+Edit ahe02_1=formonly.ahe02_1 type CHAR, tabIndex=6, title="Demension 5 Name", noEntry;
+ComboBox aag311=formonly.aag311 type CHAR, tabIndex=7, title="Dimension 5 Control", items=(("1", "Can Be Input, May Be Blank"),("2", "Must Be Entered Without Inspection"),("3", "Must Be Input, The Necessary Checks"));
+ButtonEdit aag32=formonly.aag32 type CHAR, action=controlp, tabIndex=8, title="Dimension 6 Type", image="zoom";
+Edit ahe02_2=formonly.ahe02_2 type CHAR, tabIndex=9, title="Dimension 6 Name", noEntry;
+ComboBox aag321=formonly.aag321 type CHAR, tabIndex=10, title="Dimension 6 Controlp", items=(("1", "Can Be Input, May Be Blank"),("2", "Must Be Entered Without Inspection"),("3", "Must Be Input, The Necessary Checks"));
+ButtonEdit aag33=formonly.aag33 type CHAR, action=controlp, tabIndex=11, title="Dimension 7 Type", image="zoom";
+Edit ahe02_3=formonly.ahe02_3 type CHAR, tabIndex=12, title="Dimension 7 Name", noEntry;
+ComboBox aag331=formonly.aag331 type CHAR, tabIndex=13, title="Dimension 7 Control", items=(("1", "Can Be Input, May Be Blank"),("2", "Must Be Entered Without Inspection"),("3", "Must Be Input, The Necessary Checks"));
+ButtonEdit aag34=formonly.aag34 type CHAR, action=controlp, tabIndex=14, title="Dimension 8 Type", image="zoom";
+Edit ahe02_4=formonly.ahe02_4 type CHAR, tabIndex=15, title="Dimension 8 Name", noEntry;
+ComboBox aag341=formonly.aag341 type CHAR, tabIndex=16, title="Dimension 8 Controlp", items=(("1", "Can Be Input, May Be Blank"),("2", "Must Be Entered Without Inspection"),("3", "Must Be Input, The Necessary Checks"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aag_u(formonly.sel,formonly.aag00,formonly.aag01,formonly.aag02,formonly.aag31,formonly.ahe02_1,formonly.aag311,formonly.aag32,formonly.ahe02_2,formonly.aag321,formonly.aag33,formonly.ahe02_3,formonly.aag331,formonly.aag34,formonly.ahe02_4,formonly.aag341)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

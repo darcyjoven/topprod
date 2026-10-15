@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi177.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi177")
+VBox VBox1
+Folder pc317
+Page page01(text="Main")
+Grid gr1376
+{
+  Maintainment Item   [obu01     ] [obu02               ]
+  Category            [obu03     ] [desc      ]
+
+ <G group01                                                      >
+  Maintainment Content [obu04                                   ]
+                       [obu05                                   ]
+                       [obu06                                   ]
+                       [obu07                                   ]
+
+ <                                                               >
+
+}
+END -- gr1376
+END -- page01
+Page info(text="Info")
+Grid gr1377
+{
+ Record Owner        [obuuser   ] Last Modified by    [obumodu   ] Data Valid Code     [obuacti   ]
+ Department          [obugrup   ] Create/Modify Date  [obudate   ]
+ Record Orig.        [obuoriu   ]
+ Dept Orig.          [obuorig   ]
+}
+END -- gr1377
+END -- info
+END -- pc317
+Grid gr1378
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr1378
+END -- VBox1
+END -- atmi177
+
+TABLES
+obu_file
+ATTRIBUTES
+Edit obu01=obu_file.obu01, tabIndex=1, not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit obu02=obu_file.obu02, tabIndex=2;
+ComboBox obu03=obu_file.obu03, tabIndex=3, not null, required, items=(("1", "Maintain"),("2", "Repair"));
+Edit desc=formonly.desc type CHAR, tabIndex=4, noEntry;
+Group group01:group01;
+Edit obu04=obu_file.obu04, tabIndex=5;
+Edit obu05=obu_file.obu05, tabIndex=6;
+Edit obu06=obu_file.obu06, tabIndex=7;
+Edit obu07=obu_file.obu07, tabIndex=8;
+Edit obuuser=obu_file.obuuser, tabIndex=9, noEntry;
+Edit obumodu=obu_file.obumodu, tabIndex=10, noEntry;
+Edit obuacti=obu_file.obuacti, tabIndex=11, noEntry;
+Edit obugrup=obu_file.obugrup, tabIndex=12, noEntry;
+DateEdit obudate=obu_file.obudate, tabIndex=13, noEntry;
+Edit obuoriu=obu_file.obuoriu, tabIndex=501, noEntry;
+Edit obuorig=obu_file.obuorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(obu_file.obu01,obu_file.obu02,obu_file.obu03,formonly.desc,obu_file.obu04,obu_file.obu05,obu_file.obu06,obu_file.obu07,obu_file.obuuser,obu_file.obumodu,obu_file.obuacti,obu_file.obugrup,obu_file.obudate,obu_file.obuoriu,obu_file.obuorig,formonly.cnt)
+END -- INSTRUCTIONS
+

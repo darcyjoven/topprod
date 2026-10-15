@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_replang.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="p_replang")
+VBox VBox1
+Folder folder01
+Page Page1(text="main")
+Grid gr3257
+{
+[label1      ] [gdw01             ][gaz03                           ]
+[label2       ][gdw02             ]
+[label3      ] [gdw05             ][zx02                            ]
+[label4       ][gdw04             ][zw02                            ]
+[label5  ]     [gdw06          ]
+[label6        |gdw09             ][gdw03                               ]
+[label7    ]   [gdm03     ]        [label8      |papersize          |orientatio]
+}
+END -- gr3257
+END -- Page1
+END -- folder01
+Table s_gdm
+{
+[gdm02    |gdm04  |gdm23                           |gdm05     |gdm06     |gdm07   |gdm08   |gdm09 |gdm10 |gdm11 |gdm12 |gdm13|gdm14 |gdm15   |gdm16 |gdm17 |gdm18|gdm19 |gdm20|gdm21|gdm22 |gdm24   |gdm25   |gdm26           |gdm27                 ]
+[gdm02    |gdm04  |gdm23                           |gdm05     |gdm06     |gdm07   |gdm08   |gdm09 |gdm10 |gdm11 |gdm12 |gdm13|gdm14 |gdm15   |gdm16 |gdm17 |gdm18|gdm19 |gdm20|gdm21|gdm22 |gdm24   |gdm25   |gdm26           |gdm27                 ]
+[gdm02    |gdm04  |gdm23                           |gdm05     |gdm06     |gdm07   |gdm08   |gdm09 |gdm10 |gdm11 |gdm12 |gdm13|gdm14 |gdm15   |gdm16 |gdm17 |gdm18|gdm19 |gdm20|gdm21|gdm22 |gdm24   |gdm25   |gdm26           |gdm27                 ]
+[gdm02    |gdm04  |gdm23                           |gdm05     |gdm06     |gdm07   |gdm08   |gdm09 |gdm10 |gdm11 |gdm12 |gdm13|gdm14 |gdm15   |gdm16 |gdm17 |gdm18|gdm19 |gdm20|gdm21|gdm22 |gdm24   |gdm25   |gdm26           |gdm27                 ]
+[gdm02    |gdm04  |gdm23                           |gdm05     |gdm06     |gdm07   |gdm08   |gdm09 |gdm10 |gdm11 |gdm12 |gdm13|gdm14 |gdm15   |gdm16 |gdm17 |gdm18|gdm19 |gdm20|gdm21|gdm22 |gdm24   |gdm25   |gdm26           |gdm27                 ]
+[gdm02    |gdm04  |gdm23                           |gdm05     |gdm06     |gdm07   |gdm08   |gdm09 |gdm10 |gdm11 |gdm12 |gdm13|gdm14 |gdm15   |gdm16 |gdm17 |gdm18|gdm19 |gdm20|gdm21|gdm22 |gdm24   |gdm25   |gdm26           |gdm27                 ]
+[gdm02    |gdm04  |gdm23                           |gdm05     |gdm06     |gdm07   |gdm08   |gdm09 |gdm10 |gdm11 |gdm12 |gdm13|gdm14 |gdm15   |gdm16 |gdm17 |gdm18|gdm19 |gdm20|gdm21|gdm22 |gdm24   |gdm25   |gdm26           |gdm27                 ]
+[gdm02    |gdm04  |gdm23                           |gdm05     |gdm06     |gdm07   |gdm08   |gdm09 |gdm10 |gdm11 |gdm12 |gdm13|gdm14 |gdm15   |gdm16 |gdm17 |gdm18|gdm19 |gdm20|gdm21|gdm22 |gdm24   |gdm25   |gdm26           |gdm27                 ]
+[gdm02    |gdm04  |gdm23                           |gdm05     |gdm06     |gdm07   |gdm08   |gdm09 |gdm10 |gdm11 |gdm12 |gdm13|gdm14 |gdm15   |gdm16 |gdm17 |gdm18|gdm19 |gdm20|gdm21|gdm22 |gdm24   |gdm25   |gdm26           |gdm27                 ]
+[gdm02    |gdm04  |gdm23                           |gdm05     |gdm06     |gdm07   |gdm08   |gdm09 |gdm10 |gdm11 |gdm12 |gdm13|gdm14 |gdm15   |gdm16 |gdm17 |gdm18|gdm19 |gdm20|gdm21|gdm22 |gdm24   |gdm25   |gdm26           |gdm27                 ]
+
+}
+END -- s_gdm
+Grid gr3258
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr3258
+END -- VBox1
+END -- p_replang
+
+TABLES
+gdm_file,
+gdw_file
+ATTRIBUTES
+Label label1:Label1, text="Program Code";
+ButtonEdit gdw01=gdw_file.gdw01, action=controlp, tabIndex=15, not null, required, image="zoom", downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Edit gaz03=formonly.gaz03 type VARCHAR, tabIndex=22, noEntry;
+Label label2:Label2, text="Template Code";
+Edit gdw02=gdw_file.gdw02, tabIndex=16;
+Label label3:Label3, text="Program User";
+ButtonEdit gdw05=gdw_file.gdw05, action=controlp, tabIndex=17, not null, required, image="zoom", scroll;
+Edit zx02=formonly.zx02 type VARCHAR, tabIndex=23, noEntry;
+Label label4:Label4, text="Program Class";
+ButtonEdit gdw04=gdw_file.gdw04, action=controlp, tabIndex=18, not null, required, image="zoom", scroll;
+Edit zw02=formonly.zw02 type VARCHAR, tabIndex=24, noEntry;
+Label label5:Label5, text="Industry";
+ComboBox gdw06=gdw_file.gdw06, tabIndex=19;
+Label label6:Label6, text="Template Name";
+Edit gdw09=gdw_file.gdw09, tabIndex=21;
+CheckBox gdw03=gdw_file.gdw03, tabIndex=20, text="Editing a Customerlized Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label7:Label7, text="Lang";
+ComboBox gdm03=gdm_file.gdm03, tabIndex=28;
+Label label8:Label8, text="Paper Size";
+ButtonEdit papersize=formonly.papersize type VARCHAR, action=controlp, tabIndex=35, not null, required, image="zoom";
+ComboBox orientatio=formonly.orientation type VARCHAR, tabIndex=36, default = "P", not null, items=(("P", "Portrait"),("L", "Landscape"));
+Edit gdm02=gdm_file.gdm02, tabIndex=3, title="Sequence", not null, required;
+Edit gdm04=gdm_file.gdm04, tabIndex=1, title="Field", not null, required, scroll;
+Edit gdm23=gdm_file.gdm23, tabIndex=2, title="Description", scroll, comment="IF Field Name is \'wintitle\', Then This Field is \'NO Entry\'! Using \'Update\' Function!";
+ComboBox gdm05=gdm_file.gdm05, tabIndex=4, title="Category", items=(("1", "Head"),("2", "Body"),("3", "Other"),("4", "Group Header"),("5", "Group Footer"));
+ComboBox gdm06=gdm_file.gdm06, tabIndex=5, title="Attribute", items=(("A", "UnitPrice"),("B", "Amount"),("C", "Exchange rate"),("D", "Total"),("E", "Quantity"),("F", "Number"),("G", "Other"),("H", "Memo Page"),("I", "Memo Report"),("J", "Char"),("K", "Document No."),("L", "Multi-Unit"),("M", "Alternate BOM"),("N", "Item No."),("O", "Employee No."),("P", "Dept. No."),("Q", "Date"),("R", "Acct. No."),("S", "P/N"),("T", "Spec"));
+Edit gdm07=gdm_file.gdm07, tabIndex=27, title="Point";
+Edit gdm08=gdm_file.gdm08, tabIndex=6, title="Field Width";
+Edit gdm09=gdm_file.gdm09, tabIndex=7, title="Line No.";
+Edit gdm10=gdm_file.gdm10, tabIndex=8, title="Field Sequence";
+Edit gdm11=gdm_file.gdm11, tabIndex=9, title="Font";
+Edit gdm12=gdm_file.gdm12, tabIndex=10, title="Font Size";
+CheckBox gdm13=gdm_file.gdm13, tabIndex=11, default = "N", title="Bold", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit gdm14=gdm_file.gdm14, action=controlp, tabIndex=12, title="Color";
+Edit gdm15=gdm_file.gdm15, tabIndex=29, title="Title Width";
+Edit gdm16=gdm_file.gdm16, tabIndex=30, title="Title Font";
+Edit gdm17=gdm_file.gdm17, tabIndex=31, title="Title Font Size";
+CheckBox gdm18=gdm_file.gdm18, tabIndex=32, default = "N", title="Title Bold", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit gdm19=gdm_file.gdm19, action=controlp, tabIndex=33, title="Title Color";
+CheckBox gdm20=gdm_file.gdm20, tabIndex=13, default = "Y", title="Wrap", valueChecked = "Y", valueUnchecked = "N";
+CheckBox gdm21=gdm_file.gdm21, tabIndex=14, default = "N", title="Hide", valueChecked = "Y", valueUnchecked = "N";
+CheckBox gdm22=gdm_file.gdm22, tabIndex=34, default = "N", title="Title Hide", valueChecked = "Y", valueUnchecked = "N";
+ComboBox gdm24=gdm_file.gdm24, tabIndex=37, title="Align", not null, required, items=(("L", "Left"),("R", "Right"),("C", "Center"));
+ComboBox gdm25=gdm_file.gdm25, tabIndex=38, title="Title Align", not null, required, items=(("L", "Left"),("R", "Right"),("C", "Center"));
+Edit gdm26=gdm_file.gdm26, tabIndex=39, title=%"Control Hide", noEntry;
+Edit gdm27=gdm_file.gdm27, tabIndex=40, title=%"Description Hide", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=26, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gdm(gdm_file.gdm02,gdm_file.gdm04,gdm_file.gdm23,gdm_file.gdm05,gdm_file.gdm06,gdm_file.gdm07,gdm_file.gdm08,gdm_file.gdm09,gdm_file.gdm10,gdm_file.gdm11,gdm_file.gdm12,gdm_file.gdm13,gdm_file.gdm14,gdm_file.gdm15,gdm_file.gdm16,gdm_file.gdm17,gdm_file.gdm18,gdm_file.gdm19,gdm_file.gdm20,gdm_file.gdm21,gdm_file.gdm22,gdm_file.gdm24,gdm_file.gdm25,gdm_file.gdm26,gdm_file.gdm27)
+SCREEN RECORD s_gdw(gdw_file.gdw01,gdw_file.gdw02,gdw_file.gdw05,gdw_file.gdw04,gdw_file.gdw06,gdw_file.gdw03,gdw_file.gdw09)
+SCREEN RECORD Undefined(formonly.gaz03,formonly.zx02,formonly.zw02,formonly.cnt,formonly.cn2,gdm_file.gdm03,formonly.papersize,formonly.orientation)
+END -- INSTRUCTIONS
+

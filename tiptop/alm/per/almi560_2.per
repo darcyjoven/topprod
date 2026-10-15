@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi560_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="apcp200")
+VBox VBox1
+Grid gr20
+{
+
+ <G trans                            >
+ [label1   ] [l_name    ]
+ <                                   >
+[dummy                          ]
+
+}
+END -- gr20
+Grid gr3
+{
+
+
+}
+END -- gr3
+END -- VBox1
+END -- apcp200
+
+ATTRIBUTES
+Group trans:trans, text="Input";
+Label label1:Label1, text=%"name";
+Edit l_name=formonly.l_name type CHAR, tabIndex=1, not null, required;
+Label dummy:dummy, text=%"It will download to c:\\\\tiptop\\";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.l_name)
+END -- INSTRUCTIONS
+

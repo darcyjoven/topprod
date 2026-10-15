@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt200_d.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt200_d")
+VBox VBox1
+Folder pc668
+Page page01(text="Main")
+Grid gr2765
+{
+ <G group01                                       >
+ [ola16                                        ]
+ [ola17                                        ]
+ [ola18                                        ]
+ <                                                >
+ <G group02                                       >
+ [ola19                                        ]
+
+
+ <                                                >
+ <G group03                                       >
+ [ola20                                        ]
+
+ <                                                >
+
+}
+END -- gr2765
+END -- page01
+END -- pc668
+END -- VBox1
+END -- axrt200_d
+
+TABLES
+ola_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox ola16=ola_file.ola16, tabIndex=1, text="Payer is Bank ? ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ola17=ola_file.ola17, tabIndex=2, text="Negotiation Doc Ready", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ola18=ola_file.ola18, tabIndex=3, text="Accept Special Terms ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Sales Dept Conclusion";
+RadioGroup ola19=ola_file.ola19, tabIndex=4, items=(("1", "Accept L/C"),("2", "NO Accept L/C"),("3", "Modify L/C"));
+Group group03:group03, text="Import/Export Dept Concl";
+RadioGroup ola20=ola_file.ola20, tabIndex=5, items=(("1", "Accept L/C"),("2", "NO Accept L/C"),("3", "Modify L/C"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ola_file.ola16,ola_file.ola17,ola_file.ola18,ola_file.ola19,ola_file.ola20)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,134 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi100_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi100_2")
+Folder pc5
+Page page01(text="Page01")
+Grid gr18
+{
+ <G group01                                           ><G group02                                                        >
+  Item No.             [ima01                        ]  Menu No.           [ima03               ]
+  Group Code           [ima0]                           Account            [ima39               ]
+  Current version      [im]                             Configuration Item [ima13                         ]
+  Source Code          [i1]                             Engineering Drawing[ima04               ]
+  Part Name Specificat [ima02                         ]
+  Specification        [ima021                        ]
+ <                                                    ><                                                                 >
+ <G group03                                           ><G group04                                                        >
+ [ima14       ] [ima70        ] [ima107     ]           1  [ima1] 2  [ima2] 3  [ima3]
+ [ima15       ] [ima105       ] [ima24      ]           Cost Group   [ima4]
+ <                                                    ><                                                                 >
+ <G group05                                           ><G group06                      ><G group07                       >
+  ABCCode           [ima07]                             Inventory Unit   [ima5]          Safety Inventory[ima27  ]
+  Material Category [ima10]                             Main Warehouse   [ima35     ]    Safety Period   [ima28  ]
+                                                        Main Location    [ima36     ]    Max Stock       [ima271 ]
+                                                        Warehouse Keeper [ima23   ]      Active Days     [ima71  ]
+ <                                                    ><                               ><                                >
+ <G group08                                           ><G group09                      ><G group10                       >
+    Covering Policy      [ima37_d   ]                   1st Table Date       [ima901  ]  Latest Store-out Dat  [ima74   ]
+    Economic Order Quant [ima51     ]                   Idle Date            [ima902  ]  Latest Transaction dat[ima29   ]
+                         [ima37       ]                 Latest purchase date [ima881  ]  Latest Inventory Tak  [ima30   ]
+    Avg.Order Qty        [ima52     ]                   Latest Store-in Date [ima73   ]
+ <                                                    ><                               ><                                >
+ <G group11                                           ><G group12                                                        >
+  Transaction Status [i2]                               [ima140      ]
+ <                                                    ><                                                                 >
+
+}
+END -- gr18
+END -- page01
+Page info(text="Info")
+Grid gr19
+{
+
+   Data Rows      [cnt  ]
+   Low Level Code [i3]
+   Handling Status [ima93   ]
+   Record Owner    [imauser   ]   Data Valid Code       [i4]
+   Department      [imagru]
+   Last Modified by[imamodu   ]   Create/Modify Date   [imadate ]
+   Record Orig     [imaoriu   ]   Dept Orig             [imaori]
+}
+END -- gr19
+END -- info
+END -- pc5
+END -- aimi100_2
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:group01;
+Edit ima01=ima_file.ima01, tabIndex=1, not null, required, comment="Assign Add/Query Item No.";
+ButtonEdit ima0=ima_file.ima06, action=controlp, tabIndex=2, image="zoom", comment="Get Default Value af <^P>Query Group Code <^Y>Create Item Grouping";
+Edit im=ima_file.ima05, tabIndex=3;
+Edit i1=ima_file.ima08, tabIndex=4, upShift, comment="Enter  C/T/D/A/M/P/X/K/U/V/Z/S Press <^F> Qry Source Code Desc";
+Edit ima02=ima_file.ima02, tabIndex=5, comment="<^Y> Extra Part Name Spec";
+Edit ima021=ima_file.ima021, tabIndex=6;
+Group group02:group02;
+Edit ima03=ima_file.ima03, tabIndex=7, comment="<^U> Query Used Menu No.";
+ButtonEdit ima39=ima_file.ima39, action=controlp, tabIndex=8, image="zoom", comment="<^P> Qry Account";
+ButtonEdit ima13=ima_file.ima13, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Configuration It";
+Edit ima04=ima_file.ima04, tabIndex=10;
+Group group03:group03;
+CheckBox ima14=ima_file.ima14, tabIndex=11, not null, required, valueChecked = "N", valueUnchecked = "Y";
+CheckBox ima70=ima_file.ima70, tabIndex=12, not null, required, valueChecked = "N", valueUnchecked = "Y";
+CheckBox ima107=ima_file.ima107, tabIndex=13, not null, required, valueChecked = "N", valueUnchecked = "Y";
+CheckBox ima15=ima_file.ima15, tabIndex=14, not null, required, valueChecked = "N", valueUnchecked = "Y";
+CheckBox ima105=ima_file.ima105, tabIndex=15, not null, required, valueChecked = "N", valueUnchecked = "Y";
+CheckBox ima24=ima_file.ima24, tabIndex=16, not null, required, valueChecked = "N", valueUnchecked = "Y";
+Group group04:group04, text="Other Group code";
+ButtonEdit ima1=ima_file.ima09, action=controlp, tabIndex=17, image="zoom", comment="<^P> Qry Group Code   <^U> Qry Item with other             <^Y> Create Grouping Code";
+ButtonEdit ima2=ima_file.ima10, action=controlp, tabIndex=18, image="zoom", comment="<^P> Qry Group Code   <^U> Qry Item with other             <^Y> Create Grouping Code";
+ButtonEdit ima3=ima_file.ima11, action=controlp, tabIndex=19, image="zoom", comment="<^P> Qry Group Code   <^U> Qry Item with other             <^Y> Create Grouping Code";
+ButtonEdit ima4=ima_file.ima12, action=controlp, tabIndex=20, image="zoom", comment="<^P> Qry Group Code   <^U> Qry Item with other             <^Y> Create Grouping Code";
+Group group05:group05;
+ComboBox ima07=ima_file.ima07, tabIndex=21, not null, required, queryEditable, items=(("A", "A"),("B", "B"),("C", "C"));
+ButtonEdit ima10=ima_file.ima109, action=controlp, tabIndex=22, image="zoom", comment="<^P>Qry Code(Material Ca  <^Y> Crt Code (Material C";
+Group group06:group06;
+ButtonEdit ima5=ima_file.ima25, action=controlp, tabIndex=23, image="zoom", comment="<^P>Qry  Unit  <^Y>Create Unit    <^U>/<^T>Create Item/Unit conversion";
+ButtonEdit ima35=ima_file.ima35, action=controlp, tabIndex=24, image="zoom", comment="<^P> Qry Warehouse";
+ButtonEdit ima36=ima_file.ima36, action=controlp, tabIndex=25, image="zoom", comment="<^P> Qry Warehouse/Location Data";
+ButtonEdit ima23=ima_file.ima23, action=controlp, tabIndex=26, image="zoom", comment="<^P> Qry Employee Common";
+Group group07:group07;
+Edit ima27=ima_file.ima27, tabIndex=27;
+Edit ima28=ima_file.ima28, tabIndex=28;
+Edit ima271=ima_file.ima271, tabIndex=29;
+Edit ima71=ima_file.ima71, tabIndex=30;
+Group group08:group08;
+Edit ima37_d=formonly.ima37_d type CHAR, tabIndex=31, noEntry;
+Edit ima51=ima_file.ima51, tabIndex=32;
+Edit ima37=ima_file.ima37, tabIndex=33, comment="Reorder point";
+Edit ima52=ima_file.ima52, tabIndex=34;
+Group group09:group09;
+Edit ima901=ima_file.ima901, tabIndex=35, noEntry;
+Edit ima902=ima_file.ima902, tabIndex=36, noEntry;
+Edit ima881=ima_file.ima881, tabIndex=37, noEntry;
+Edit ima73=ima_file.ima73, tabIndex=38, noEntry;
+Group group10:group10;
+Edit ima74=ima_file.ima74, tabIndex=39, noEntry;
+Edit ima29=ima_file.ima29, tabIndex=40, noEntry;
+Edit ima30=ima_file.ima30, tabIndex=41, noEntry;
+Group group11:group11;
+Edit i2=ima_file.ima146, tabIndex=42, noEntry, comment="[Y].BOM with Transaction [0].BOM with Transaction";
+Group group12:group12;
+CheckBox ima140=ima_file.ima140, tabIndex=43, not null, required, valueChecked = "N", valueUnchecked = "Y";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=44;
+Edit i3=ima_file.ima16, tabIndex=45, noEntry;
+Edit ima93=ima_file.ima93, tabIndex=46, noEntry, upShift;
+Edit imauser=ima_file.imauser, tabIndex=47, noEntry;
+Edit i4=ima_file.imaacti, tabIndex=50, noEntry, upShift;
+Edit imagru=ima_file.imagrup, tabIndex=48, noEntry;
+Edit imamodu=ima_file.imamodu, tabIndex=49, noEntry;
+DateEdit imadate=ima_file.imadate, tabIndex=51, noEntry;
+Edit imaoriu=ima_file.imaoriu, tabIndex=53, noEntry;
+Edit imaori=ima_file.imaorig, tabIndex=52, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima06,ima_file.ima05,ima_file.ima08,ima_file.ima02,ima_file.ima021,ima_file.ima03,ima_file.ima39,ima_file.ima13,ima_file.ima04,ima_file.ima14,ima_file.ima70,ima_file.ima107,ima_file.ima15,ima_file.ima105,ima_file.ima24,ima_file.ima09,ima_file.ima10,ima_file.ima11,ima_file.ima12,ima_file.ima07,ima_file.ima109,ima_file.ima25,ima_file.ima35,ima_file.ima36,ima_file.ima23,ima_file.ima27,ima_file.ima28,ima_file.ima271,ima_file.ima71,formonly.ima37_d,ima_file.ima51,ima_file.ima37,ima_file.ima52,ima_file.ima901,ima_file.ima902,ima_file.ima881,ima_file.ima73,ima_file.ima74,ima_file.ima29,ima_file.ima30,ima_file.ima146,ima_file.ima140,formonly.cnt,ima_file.ima16,ima_file.ima93,ima_file.imauser,ima_file.imaacti,ima_file.imagrup,ima_file.imamodu,ima_file.imadate,ima_file.imaoriu,ima_file.imaorig)
+END -- INSTRUCTIONS
+

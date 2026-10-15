@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr1001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Print Item Master - Common")
+Grid gr3202
+{
+ <G gb2233                                         >
+  1.Item No. QBE             [ima01                ]
+  2.Version QBE              [im]
+  3.group code QBE           [ima0]
+    Other group code 1       [ima1]
+    Other group code 2       [ima2]
+    Other group code 3       [ima3]
+    Other group code 4       [ima4]
+  4.Source Code QBE          [i]
+ <                                                 >
+ <G gb2234                                         >
+  5.(1,2,3,4)Terms:                 [s  ]
+  6.Group Code Option Terms:        [y] (0/1/2/3/4)
+  7.Other condition to print Terms: [m] (N/Y)
+ <                                                 >
+
+}
+END -- gr3202
+END -- aimr1001
+
+ATTRIBUTES
+Group gb2233:gb2233, text="group01";
+Edit ima01=formonly.ima01 type CHAR, tabIndex=1;
+Edit im=formonly.ima05 type CHAR, tabIndex=2;
+Edit ima0=formonly.ima06 type CHAR, tabIndex=3;
+Edit ima1=formonly.ima09 type CHAR, tabIndex=4;
+Edit ima2=formonly.ima10 type CHAR, tabIndex=5;
+Edit ima3=formonly.ima11 type CHAR, tabIndex=6;
+Edit ima4=formonly.ima12 type CHAR, tabIndex=7;
+Edit i=formonly.ima08 type CHAR, tabIndex=8;
+Group gb2234:gb2234, text="group02";
+Edit s=formonly.s type VARCHAR, tabIndex=9, comment="Decide all Sequence Combinations, Max. 3";
+Edit y=formonly.y type VARCHAR, tabIndex=10, comment="Group Code for Sequence 0.Grp Cd 1-4.other group code 1-4";
+Edit m=formonly.more type VARCHAR, tabIndex=11, upShift;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima05,formonly.ima06,formonly.ima09,formonly.ima10,formonly.ima11,formonly.ima12,formonly.ima08,formonly.s,formonly.y,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci651.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci651")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1670
+{
+ [dummy01                        ]
+ Date            [sge01          ]
+ [dummy02                        ]
+
+}
+END -- gr1670
+END -- page01
+END -- folder01
+Table s_sge
+{
+[sge02      |gen02     |sge03                 ]
+[sge02      |gen02     |sge03                 ]
+[sge02      |gen02     |sge03                 ]
+[sge02      |gen02     |sge03                 ]
+[sge02      |gen02     |sge03                 ]
+[sge02      |gen02     |sge03                 ]
+[sge02      |gen02     |sge03                 ]
+[sge02      |gen02     |sge03                 ]
+[sge02      |gen02     |sge03                 ]
+[sge02      |gen02     |sge03                 ]
+
+}
+END -- s_sge
+Grid gr1671
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1671
+END -- VBox1
+END -- aeci651
+
+TABLES
+sge_file
+ATTRIBUTES
+Label dummy01:dummy01;
+DateEdit sge01=sge_file.sge01, tabIndex=1, not null, required;
+Label dummy02:dummy02;
+ButtonEdit sge02=sge_file.sge02, action=controlp, tabIndex=2, title="Employee#", not null, required, image="zoom", comment="<^P>Qry Data";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=3, title="Name", noEntry;
+Edit sge03=sge_file.sge03, tabIndex=4, title="Due Input Hours(Hour)", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sge(sge_file.sge02,formonly.gen02,sge_file.sge03)
+SCREEN RECORD Undefined(sge_file.sge01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr515.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr515")
+VBox VBox1
+Grid gr5120
+{
+ <G group01                                                     >
+  Receipt No.  [rva01               ]
+  Vender No.   [rva05               ]
+  Receipt Date [rva06               ]
+  P/O No.      [rvb04               ]
+  Item No.     [rvb05               ]
+ <                                                              >
+
+}
+END -- gr5120
+Group group02(text="INPUT")
+Grid gr5121
+{
+ <G group03                                                     >
+ [s1              ]  [s2                 ]  [s3                ]
+ <                                                              >
+ <G group04                                                     >
+ [sub                                                          ]
+ <                                                              >
+ <G group05                                                     >
+ [b                                                            ]
+ <                                                              >
+
+}
+END -- gr5121
+END -- group02
+Grid gr5122
+{
+ [more                                                            ]
+
+}
+END -- gr5122
+END -- VBox1
+END -- apmr515
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit rva01=formonly.rva01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit rva05=formonly.rva05 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+DateEdit rva06=formonly.rva06 type DATE, tabIndex=3;
+ButtonEdit rvb04=formonly.rvb04 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit rvb05=formonly.rvb05 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=6, items=(("1", "Vender No."),("2", "Receipt Date"),("3", "Receipt No."),("4", "P/O No."),("5", "Item No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=7, items=(("1", "Vender No."),("2", "Receipt Date"),("3", "Receipt No."),("4", "P/O No."),("5", "Item No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=8, items=(("1", "Vender No."),("2", "Receipt Date"),("3", "Receipt No."),("4", "P/O No."),("5", "Item No."));
+Group group04:group04, text="Data Type";
+RadioGroup sub=formonly.sub type VARCHAR, tabIndex=9, items=(("1", "General"),("2", "Indent"),("3", "All"));
+Group group05:group05, text="Data Option";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=10, items=(("1", "Confirmed"),("2", "UnConfirmed"),("3", "All"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rva01,formonly.rva05,formonly.rva06,formonly.rvb04,formonly.rvb05,formonly.s1,formonly.s2,formonly.s3,formonly.sub,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,137 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq821.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsq821")
+VBox vb3
+Folder pc3
+Page page01(text=%"Main")
+Grid gr8
+{
+
+  APS Version  [vod01               ]        APS Change Code [voh07               ]
+  Save Version [vod02       ]                WO Date         [sfb81               ]              Confirm   [sfb87         ]
+  WO No.       [vod05               ]        WO Type         [sfb02               ]              Status    [sfb04         ]
+
+}
+END -- gr8
+END -- page01
+END -- pc3
+Folder pc4
+Page page02(text=%"WO Data")
+Grid gr9
+{
+
+  Item No.        [vod09               ]                    Production Qty       [sfb08     ]     Suggested Issue Qty     [vod35     ]
+  Item Name       [ima02                               ]    Est. Complete Date   [sfb15     ]     Default Expected Finish [vod10     ]
+                                                            Issued Qty           [sfb081    ]
+ [sfb93        ]  Routing Code [sfb06     ]                 Completed Qty        [sfb09     ]
+                                                            Scrap Qty            [sfb12     ]
+
+}
+END -- gr9
+END -- page02
+Page page03(text=%"Outsourcing Data")
+Grid gr20
+{
+
+   Subcontractor No.    [voo04               ]      Start(Date)          [voo06               ]
+   WO Type              [voo05               ]      End(Date)            [voo07               ]
+   Scheduled?           [voo09               ]      Operation Time(s)    [voo08               ]
+
+
+
+}
+END -- gr20
+END -- page03
+END -- pc4
+Table s_sfa
+{
+[sfa27                |sfa08     |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa161     |sfa100                   |sfa05        |sfa065             |sfa06      |sfa062             |short_qty |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa27                |sfa08     |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa161     |sfa100                   |sfa05        |sfa065             |sfa06      |sfa062             |short_qty |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa27                |sfa08     |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa161     |sfa100                   |sfa05        |sfa065             |sfa06      |sfa062             |short_qty |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa27                |sfa08     |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa161     |sfa100                   |sfa05        |sfa065             |sfa06      |sfa062             |short_qty |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa27                |sfa08     |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa161     |sfa100                   |sfa05        |sfa065             |sfa06      |sfa062             |short_qty |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa27                |sfa08     |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa161     |sfa100                   |sfa05        |sfa065             |sfa06      |sfa062             |short_qty |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa27                |sfa08     |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa161     |sfa100                   |sfa05        |sfa065             |sfa06      |sfa062             |short_qty |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa27                |sfa08     |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa161     |sfa100                   |sfa05        |sfa065             |sfa06      |sfa062             |short_qty |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa27                |sfa08     |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa161     |sfa100                   |sfa05        |sfa065             |sfa06      |sfa062             |short_qty |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa27                |sfa08     |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa161     |sfa100                   |sfa05        |sfa065             |sfa06      |sfa062             |short_qty |sfa063    |sfa064             |sfa30            |sfa31           ]
+
+}
+END -- s_sfa
+Grid gr881
+{
+
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+}
+END -- gr881
+END -- vb3
+END -- apsq821
+
+TABLES
+voh_file,
+vod_file,
+sfb_file,
+sfa_file,
+voo_file
+ATTRIBUTES
+ButtonEdit vod01=vod_file.vod01, action=controlp, tabIndex=27, image="zoom";
+ComboBox voh07=voh_file.voh07, tabIndex=6, items=(("0", "No Change"),("1", "Inner WO To Outsourcing"),("2", "Outsourcing To Inner WO"),("3", "Outsourcing WO Change Vendor"),("4", "Operation No. To Outsourcing "),("5", "Outsourcing Operation To Inner"),("6", "Outsourcing Change Vendor"),("7", "WO Routing Change"),("8", "Operation No. Change"));
+Edit vod02=vod_file.vod02, tabIndex=26;
+DateEdit sfb81=sfb_file.sfb81, tabIndex=4;
+ComboBox sfb87=sfb_file.sfb87, tabIndex=5, items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "Cancel"));
+ButtonEdit vod05=vod_file.vod05, action=controlp, tabIndex=3, image="zoom";
+ComboBox sfb02=sfb_file.sfb02, tabIndex=7, items=(("1", "General WO"),("11", "Disassembly WO"),("13", "Forecast WO"),("15", "Sampling WO"),("5", "Rework WO"),("7", "Sub. Order"),("8", "Rework Sub. WO"));
+ComboBox sfb04=sfb_file.sfb04, tabIndex=8, items=(("1", "Create"),("2", "Release"),("3", "Picking List Printed"),("4", "Issuing"),("5", "WIP"),("6", "FQC"),("7", "Stock-in"),("8", "Closing"));
+ButtonEdit vod09=vod_file.vod09, action=controlp, tabIndex=9, image="zoom";
+Edit sfb08=sfb_file.sfb08, tabIndex=13, not null, required;
+Edit vod35=vod_file.vod35, tabIndex=18, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=10;
+DateEdit sfb15=sfb_file.sfb15, tabIndex=14, not null, required;
+DateEdit vod10=vod_file.vod10, tabIndex=19, not null, required;
+Edit sfb081=sfb_file.sfb081, tabIndex=15, noEntry, not null, required;
+CheckBox sfb93=sfb_file.sfb93, tabIndex=11, text="Routing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sfb06=sfb_file.sfb06, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Routing No.";
+Edit sfb09=sfb_file.sfb09, tabIndex=16, noEntry, not null, required;
+Edit sfb12=sfb_file.sfb12, tabIndex=17, noEntry, not null, required;
+Edit voo04=voo_file.voo04, tabIndex=20, not null, required;
+Edit voo06=voo_file.voo06, tabIndex=23, not null, required;
+ComboBox voo05=voo_file.voo05, tabIndex=21, items=(("1", "Fixed Time"),("2", "Fixed Start-End Time"));
+Edit voo07=voo_file.voo07, tabIndex=24, not null, required;
+ComboBox voo09=voo_file.voo09, tabIndex=22, items=(("0", "Scheduled"),("1", "UnScheduled"));
+Edit voo08=voo_file.voo08, tabIndex=25, not null, required;
+ButtonEdit sfa27=formonly.sfa27 type CHAR, action=controlp, tabIndex=28, title="BOM Item No.", not null, required, image="zoom", comment="<^P>Qry Item #  , <^T>BOM Itm/Compo";
+ButtonEdit sfa08=formonly.sfa08 type CHAR, action=controlp, tabIndex=29, title="Task No.", image="zoom", comment="<^P>Qry Task No.";
+ComboBox sfa26=formonly.sfa26 type CHAR, tabIndex=30, title="Substitute code", not null, required, queryEditable, items=(("0", %"No REP/SUB"),("1", %"Old"),("2", %"M.It"),("3", %"Old(with New)"),("4", %"M.It(Sb-Itm)"),("5", %"M.It,SUB with SE"),("6", %"M.It,SET SUB"),("U", %"REP Item"),("S", %"SUB Item"),("T", %"SET SUB Item"));
+Edit sfa28=formonly.sfa28 type CHAR, tabIndex=31, title="Substitution Ratio", not null, required, comment="Ori Mstr.Itm to SUB Itm Conv.R!(Enter Only if Code=\'S/U\'    )";
+ButtonEdit sfa03=formonly.sfa03 type CHAR, action=controlp, tabIndex=32, title="Issuing Item No.", not null, required, image="zoom", comment="<^P>Qry Item No.";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=33, title="Part Name", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=34, title="Specification", noEntry;
+ComboBox ima08_b=formonly.ima08_b type CHAR, tabIndex=35, title="Source Code", noEntry, queryEditable, comment="Enter  C/T/D/A/M/P/X/K/U/V/R/Z/S", items=(("C", %"Configurable Product"),("T", %"FAS Product"),("D", %"Feture"),("A", %"Family Product"),("M", %"Make Product"),("P", %"Purchase"),("X", %"Phantom"),("K", %"Kit"),("U", %"Manufactured Mass Item"),("V", %"Purchased Mass Item"),("R", %"Routable"),("Z", %"Miscellaneous"),("S", %"Subcontract"));
+ButtonEdit sfa12=formonly.sfa12 type CHAR, action=controlp, tabIndex=36, title="Issuing Unit", not null, required, image="zoom", comment="<^P>Query Unit";
+Edit sfa13=formonly.sfa13 type CHAR, tabIndex=37, title="Conversion Rate", noEntry;
+ComboBox sfa11=formonly.sfa11 type CHAR, tabIndex=38, title="Flag", not null, required, queryEditable, items=(("N", %"General Item"),("E", %"Consumable Item"),("V", %"Mass Manufactured-Item"),("U", %"Mass Manufactured-Item"),("R", %"WIP Item"));
+Edit sfa161=formonly.sfa161 type CHAR, tabIndex=39, title="Actual QPA", not null, required;
+Edit sfa100=formonly.sfa100 type CHAR, tabIndex=40, title="Issuing difference ratio", comment="Issuing difference ratio";
+Edit sfa05=formonly.sfa05 type CHAR, tabIndex=41, title="Qty To Issue";
+Edit sfa065=formonly.sfa065 type CHAR, tabIndex=42, title="Inventory Loss Qty";
+Edit sfa06=formonly.sfa06 type CHAR, tabIndex=43, title="Issued Qty", noEntry;
+Edit sfa062=formonly.sfa062 type CHAR, tabIndex=44, title="Qty Over-withdrawn", noEntry;
+Edit short_qty=formonly.short_qty type CHAR, tabIndex=45, title="Short Qty", noEntry;
+Edit sfa063=formonly.sfa063 type CHAR, tabIndex=46, title="Scrap Qty", noEntry;
+Edit sfa064=formonly.sfa064 type CHAR, tabIndex=47, title="Inventory Loss Qty", noEntry;
+ButtonEdit sfa30=sfa_file.sfa30, action=controlp, tabIndex=48, title="Assign Warehouse", image="zoom", comment="<^P>Qry Warehouse";
+ButtonEdit sfa31=sfa_file.sfa31, action=controlp, tabIndex=49, title="Assign Location", image="zoom", comment="<^P>Qry Warehouse";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=1, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfa(formonly.sfa27,formonly.sfa08,formonly.sfa26,formonly.sfa28,formonly.sfa03,formonly.ima02_b,formonly.ima021_b,formonly.ima08_b,formonly.sfa12,formonly.sfa13,formonly.sfa11,formonly.sfa161,formonly.sfa100,formonly.sfa05,formonly.sfa065,formonly.sfa06,formonly.sfa062,formonly.short_qty,formonly.sfa063,formonly.sfa064,sfa_file.sfa30,sfa_file.sfa31)
+SCREEN RECORD Undefined(vod_file.vod01,voh_file.voh07,vod_file.vod02,sfb_file.sfb81,sfb_file.sfb87,vod_file.vod05,sfb_file.sfb02,sfb_file.sfb04,vod_file.vod09,sfb_file.sfb08,vod_file.vod35,formonly.ima02,sfb_file.sfb15,vod_file.vod10,sfb_file.sfb081,sfb_file.sfb93,sfb_file.sfb06,sfb_file.sfb09,sfb_file.sfb12,voo_file.voo04,voo_file.voo06,voo_file.voo05,voo_file.voo07,voo_file.voo09,voo_file.voo08,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

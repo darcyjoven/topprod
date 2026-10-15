@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asms260.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asms260")
+Folder pc204
+Page page01(text="Main")
+Grid gr922
+{
+ <G group01                                                     >
+  Last date Simulating MRP  [sma21     ]
+ <                                                              >
+ <G group02                                                     >
+ [sma22                                      ]
+
+
+
+
+ <                                                              >
+ <G group03                                                     >
+ [sma56                                      ]
+
+
+ <                                                              >
+ <G group04                                                     >
+ [sma57                                      ]
+
+ <                                                              >
+ <G gb5                                                         >
+ [sma1301             ]
+ [                    ]
+    [sma1302                                    ]
+    [                                           ]
+ <                                                              >
+}
+END -- gr922
+END -- page01
+END -- pc204
+END -- asms260
+
+TABLES
+sma_file
+ATTRIBUTES
+Group group01:group01;
+Edit sma21=sma_file.sma21, tabIndex=1, noEntry, comment="This Para will be Auto set by MRP Simulation Task (No Amendment)";
+Group group02:group02, text="Planned Order & W/O Time Bucket";
+RadioGroup sma22=sma_file.sma22, tabIndex=2, required, items=(("1", "No Time Bucket (By Row)"),("2", "Time Bucket by Day(Daily Summary)"),("3", "Time Bucket by Week(Weekly Summary)"),("4", "Time Bucket by 10-Day (10-Day Summary)"),("5", "Time Bucket by Month(Daily Summary)"));
+Group group03:group03, text="Consider P/R Qty to MRP Simulation";
+RadioGroup sma56=sma_file.sma56, tabIndex=3, required, items=(("1", "All As Supply Qty"),("2", "Approved as Supply Qty"),("3", "All Not As Supply Qty"));
+Group group04:group04, text="Consider P/O Qty to MRP Simulation";
+RadioGroup sma57=sma_file.sma57, tabIndex=4, required, items=(("1", "All As Supply Qty"),("2", "Approved as Supply Qty "));
+Group gb5:gb5, text="MRP";
+RadioGroup sma1301=formonly.sma1301 type VARCHAR, tabIndex=5, items=(("0", "No Amortization"),("1", "Amortization"));
+RadioGroup sma1302=formonly.sma1302 type VARCHAR, tabIndex=6, items=(("1", "Amortization For From/To Date"),("2", "Amortization For From/To Date(Integer)"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sma_file.sma21,sma_file.sma22,sma_file.sma56,sma_file.sma57,formonly.sma1301,formonly.sma1302)
+END -- INSTRUCTIONS
+

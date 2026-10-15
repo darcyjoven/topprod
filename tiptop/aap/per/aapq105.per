@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapq105.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapq105")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr109
+{
+ Employee No.        [gen01     ]
+ Name                [gen02     ]
+ Department No.      [gen03     ] [gem02     ]
+ Bank Account No.    [cpf44                       ]
+}
+END -- gr109
+END -- page01
+END -- folder01
+Table s_pmc
+{
+[apa01           |apf02    |apa34               |aph05               |apa19   |apo02               |apa100    ]
+[apa01           |apf02    |apa34               |aph05               |apa19   |apo02               |apa100    ]
+[apa01           |apf02    |apa34               |aph05               |apa19   |apo02               |apa100    ]
+[apa01           |apf02    |apa34               |aph05               |apa19   |apo02               |apa100    ]
+[apa01           |apf02    |apa34               |aph05               |apa19   |apo02               |apa100    ]
+[apa01           |apf02    |apa34               |aph05               |apa19   |apo02               |apa100    ]
+[apa01           |apf02    |apa34               |aph05               |apa19   |apo02               |apa100    ]
+[apa01           |apf02    |apa34               |aph05               |apa19   |apo02               |apa100    ]
+[apa01           |apf02    |apa34               |aph05               |apa19   |apo02               |apa100    ]
+[apa01           |apf02    |apa34               |aph05               |apa19   |apo02               |apa100    ]
+}
+END -- s_pmc
+Grid gr110
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr110
+END -- VBox1
+END -- aapq105
+
+TABLES
+gen_file
+ATTRIBUTES
+ButtonEdit gen01=gen_file.gen01, action=controlp, tabIndex=1, image="zoom";
+Edit gen02=gen_file.gen02, tabIndex=2;
+ButtonEdit gen03=formonly.gen03 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=4, noEntry;
+Edit cpf44=formonly.cpf44 type VARCHAR, tabIndex=5;
+Edit apa01=formonly.apa01 type CHAR, tabIndex=6, title="Acct No.", noEntry;
+DateEdit apf02=formonly.apf02 type CHAR, tabIndex=7, title="Pay Date", noEntry;
+Edit apa34=formonly.apa34 type CHAR, tabIndex=8, title="Amt Payable", noEntry;
+Edit aph05=formonly.aph05 type CHAR, tabIndex=9, title="Transfer Amt", noEntry;
+Edit apa19=formonly.apa19 type CHAR, tabIndex=10, title="On-Hold", noEntry;
+Edit apo02=formonly.apo02 type CHAR, tabIndex=11, title="Reason", noEntry;
+Edit apa100=formonly.apa100 type CHAR, tabIndex=12, title="Source", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmc(formonly.apa01,formonly.apf02,formonly.apa34,formonly.aph05,formonly.apa19,formonly.apo02,formonly.apa100)
+SCREEN RECORD Undefined(gen_file.gen01,gen_file.gen02,formonly.gen03,formonly.gem02,formonly.cpf44,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

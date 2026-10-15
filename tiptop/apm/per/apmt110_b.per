@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt110_b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"apmt110_b")
+Grid gr3
+{
+ <T s_pmn2                                                                                  >
+ [sel_all |pmn01              |pmn02    |pmm04            |pmn33             |pmn50_55    ]
+ [sel_all |pmn01              |pmn02    |pmm04            |pmn33             |pmn50_55    ]
+ [sel_all |pmn01              |pmn02    |pmm04            |pmn33             |pmn50_55    ]
+ [sel_all |pmn01              |pmn02    |pmm04            |pmn33             |pmn50_55    ]
+ [sel_all |pmn01              |pmn02    |pmm04            |pmn33             |pmn50_55    ]
+ <                                                                                          >
+
+
+
+
+}
+END -- gr3
+END -- Form2
+
+TABLES
+pmn_file,
+pmm_file
+ATTRIBUTES
+Table s_pmn2:s_pmn2;
+CheckBox sel_all=formonly.sel_all type CHAR, tabIndex=1, title="sel_all", valueChecked = "Y", valueUnchecked = "N";
+Edit pmn01=pmn_file.pmn01, tabIndex=2, title="PO No.", noEntry;
+Edit pmn02=pmn_file.pmn02, tabIndex=3, title="Line No.", noEntry;
+Edit pmm04=pmm_file.pmm04, tabIndex=4, title="Purchase Date", noEntry;
+Edit pmn33=pmn_file.pmn33, tabIndex=5, title="Orig. Arrival  Date", noEntry;
+Edit pmn50_55=formonly.pmn50_55 type DECIMAL, tabIndex=6, title="qty", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmn2(formonly.sel_all,pmn_file.pmn01,pmn_file.pmn02,pmm_file.pmm04,pmn_file.pmn33,formonly.pmn50_55)
+END -- INSTRUCTIONS
+

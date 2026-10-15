@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cqry/4fd/q_oea12.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Query Order")
+Grid gr3810
+{
+ <T s_oea                                                                                                                                                                                   >
+ [check |oea10   |oea01       |oea00      |oea02        |oea032              |oea14      |oeb04_1                    |oeb04_2                                                               ]
+ [check |oea10   |oea01       |oea00      |oea02        |oea032              |oea14      |oeb04_1                    |oeb04_2                                                               ]
+ [check |oea10   |oea01       |oea00      |oea02        |oea032              |oea14      |oeb04_1                    |oeb04_2                                                               ]
+ [check |oea10   |oea01       |oea00      |oea02        |oea032              |oea14      |oeb04_1                    |oeb04_2                                                               ]
+ [check |oea10   |oea01       |oea00      |oea02        |oea032              |oea14      |oeb04_1                    |oeb04_2                                                               ]
+ [check |oea10   |oea01       |oea00      |oea02        |oea032              |oea14      |oeb04_1                    |oeb04_2                                                               ]
+ [check |oea10   |oea01       |oea00      |oea02        |oea032              |oea14      |oeb04_1                    |oeb04_2                                                               ]
+ [check |oea10   |oea01       |oea00      |oea02        |oea032              |oea14      |oeb04_1                    |oeb04_2                                                               ]
+ [check |oea10   |oea01       |oea00      |oea02        |oea032              |oea14      |oeb04_1                    |oeb04_2                                                               ]
+ [check |oea10   |oea01       |oea00      |oea02        |oea032              |oea14      |oeb04_1                    |oeb04_2                                                               ]
+ <                                                                                                                                                                                          >
+
+}
+END -- gr3810
+END -- q_oea12
+
+TABLES
+oea_file
+ATTRIBUTES
+Table s_oea:s_oea;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oea10=formonly.oea10, tabIndex=9, title=%"oea10";
+Edit oea01=oea_file.oea01, tabIndex=2, title="Order No.";
+Edit oea00=oea_file.oea00, tabIndex=3, title="Property";
+Edit oea02=oea_file.oea02, tabIndex=4, title="Order Date";
+Edit oea032=oea_file.oea032, tabIndex=5, title="Accounts Customer";
+Edit oea14=oea_file.oea14, tabIndex=6, title="Salesman";
+Edit oeb04_1=formonly.oeb04_1 type CHAR, tabIndex=7, title="Order Product 1";
+Edit oeb04_2=formonly.oeb04_2 type CHAR, tabIndex=8, title="Order Product 2";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oea(formonly.check,formonly.oea10,oea_file.oea01,oea_file.oea00,oea_file.oea02,oea_file.oea032,oea_file.oea14,formonly.oeb04_1,formonly.oeb04_2)
+END -- INSTRUCTIONS
+

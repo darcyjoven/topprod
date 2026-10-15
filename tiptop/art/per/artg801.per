@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artg801.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Grid Grid1
+{
+ <G group1                                                        >
+  [label1    ]  [rch01                    ]
+  [label2    ]  [rch05                    ]
+ <                                                                >
+ <G group2                                                         >
+  [label3     ] [yy        ] / [mm        ]
+  [label4     ] [type1          ]
+  [cb                                      ]
+ <                                                                 >
+  [more                ]
+
+
+}
+END -- Grid1
+END -- Form
+
+TABLES
+rch_file
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+Label label1:Label1, text=%"No.";
+ButtonEdit rch01=formonly.rch01 type like rch_file.rch01, action=controlp, tabIndex=1, image="zoom";
+Label label2:Label2, text=%"Plant";
+ButtonEdit rch05=formonly.rch05 type like rch_file.rch05, action=controlp, tabIndex=2, image="zoom";
+Group group2:Group2, text=%"Group2";
+Label label3:Label3, text=%"YYMM";
+Edit yy=formonly.yy type CHAR, tabIndex=3;
+Edit mm=formonly.mm type CHAR, tabIndex=4;
+Label label4:Label4, text=%"State";
+ComboBox type1=formonly.type1 type CHAR, tabIndex=5, not null, items=(("Y", "Y"),("N", "N"));
+CheckBox cb=formonly.cb type CHAR, tabIndex=6, default = "N", text=%"Whether containing costs", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=7, default = "N", text=%"more", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rch01,formonly.rch05,formonly.yy,formonly.mm,formonly.type1,formonly.cb,formonly.more)
+END -- INSTRUCTIONS
+

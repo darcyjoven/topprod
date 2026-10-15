@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gap/42f/gapr911.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gapr911")
+VBox VBox1
+Grid gr3321
+{
+ <G group01                                       >
+  Vender No. QBE [apm01     ]
+ <                                                >
+
+}
+END -- gr3321
+Grid gr3322
+{
+ <G group02                                       >
+  Book No.         [o   ]
+  Account Title No.[a                   ]
+  Year             [yy        ]
+  Period           [m1  ]-[m2 ]
+ [b                                             ]
+  Currency         [c   ]
+ [d                                             ]
+ [e                                             ]
+ <                                                >
+}
+END -- gr3322
+Grid gr3323
+{
+[more                                          ]
+
+
+}
+END -- gr3323
+END -- VBox1
+END -- gapr911
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit apm01=formonly.apm01 type CHAR, tabIndex=1;
+Group group02:group02, text="Input";
+Edit o=formonly.o type CHAR, tabIndex=6;
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P> Qry Account No.";
+Edit yy=formonly.yy type SMALLINT, tabIndex=3;
+Edit m1=formonly.m1 type SMALLINT, tabIndex=4;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=5;
+CheckBox b=formonly.b type CHAR, tabIndex=7, text="Print Original Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit c=formonly.c type CHAR, action=controlp, tabIndex=8, image="zoom", upShift, comment="<^P> Qry Currency No.";
+CheckBox d=formonly.d type CHAR, tabIndex=9, text="Print BoP=0 and without changed vender in current period", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=10, text="Next Page By Vender", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other Condition to Print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apm01,formonly.o,formonly.a,formonly.yy,formonly.m1,formonly.m2,formonly.b,formonly.c,formonly.d,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

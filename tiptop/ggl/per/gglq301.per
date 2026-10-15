@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglr301")
+VBox VBox1
+Folder folder01
+Page page01(text=%"Main")
+Grid gr5447
+{
+
+ Book.No[bookno           ]   Initial Date[bdate       ]   [a                  ]               [e                                  ]       [h                             ]       [label3|k            ]
+ Year   [yy               ]   Ending Date [edate       ]   [d1                           ]     [n                          ]                Level[lvl         ]                   [b         ]
+
+
+
+
+
+
+
+}
+END -- gr5447
+END -- page01
+END -- folder01
+Table s_abb
+{
+[aea05   |aag02   |aea02          |aea03           |aba11    |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea05   |aag02   |aea02          |aea03           |aba11    |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea05   |aag02   |aea02          |aea03           |aba11    |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea05   |aag02   |aea02          |aea03           |aba11    |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea05   |aag02   |aea02          |aea03           |aba11    |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea05   |aag02   |aea02          |aea03           |aba11    |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea05   |aag02   |aea02          |aea03           |aba11    |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea05   |aag02   |aea02          |aea03           |aba11    |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea05   |aag02   |aea02          |aea03           |aba11    |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea05   |aag02   |aea02          |aea03           |aba11    |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+}
+END -- s_abb
+Grid gr5449
+{
+ ----------- Rows [cnt   ] -----------
+
+}
+END -- gr5449
+END -- VBox1
+END -- gglq301
+
+TABLES
+abb_file,
+aea_file
+ATTRIBUTES
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=1, image="zoom.png";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=3, comment=%"Enter Initial Date !!";
+CheckBox a=formonly.a type CHAR, tabIndex=5, default = "N", text=%"Pagination", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=7, text=%"Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type VARCHAR, tabIndex=9, text=%"Monetary Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label3:Label3, text=%"Condition";
+ComboBox k=formonly.k type CHAR, tabIndex=11, items=(("1", "All "),("2", "Posted1"));
+Edit yy=formonly.yy type VARCHAR, tabIndex=2;
+DateEdit edate=formonly.edate type DATE, tabIndex=4;
+CheckBox d1=formonly.d1 type VARCHAR, tabIndex=6, text=%"Page-Break by Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox n=formonly.n type VARCHAR, tabIndex=8, text=%"Print Foreign Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit lvl=formonly.lvl type VARCHAR, tabIndex=10;
+CheckBox b=formonly.b type VARCHAR, tabIndex=30, text=%"b", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit aea05=aea_file.aea05, action=controlp, tabIndex=12, title=%"aea05", image="zoom";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=13, title=%"aag02";
+DateEdit aea02=aea_file.aea02, tabIndex=14, title=%"Voucher Date";
+ButtonEdit aea03=aea_file.aea03, action=controlp, tabIndex=15, title=%"Voucher No.", not null, required, image="zoom";
+Edit aba11=formonly.aba11 type DECIMAL, tabIndex=16, title=%"aba11";
+Edit abb04=abb_file.abb04, tabIndex=17, title=%"Memo";
+Edit abb24=abb_file.abb24, tabIndex=18, title=%"Currency";
+Edit df=formonly.df type VARCHAR, tabIndex=19, title=%"Debit Amount (Trans. Curr.)";
+Edit abb25_d=formonly.abb25_d type DECIMAL, tabIndex=20, title=%"Exchange Rate";
+Edit d=formonly.d type VARCHAR, tabIndex=21, title=%"Debit Amount (Local. Curr.)";
+Edit cf=formonly.cf type VARCHAR, tabIndex=22, title=%"Credit Amount (Trans. Curr.)";
+Edit abb25_c=formonly.abb25_c type VARCHAR, tabIndex=23, title=%"Exchange Rate";
+Edit c=formonly.c type VARCHAR, tabIndex=24, title=%"Credit Amount (Local. Curr.)";
+Edit dc=formonly.dc type VARCHAR, tabIndex=25, title=%"D/C";
+Edit balf=formonly.balf type VARCHAR, tabIndex=26, title=%"Balance T.C Amt";
+Edit abb25_bal=formonly.abb25_bal type VARCHAR, tabIndex=27, title=%"Exchange Rate";
+Edit bal=formonly.bal type VARCHAR, tabIndex=28, title=%"Balance L.C Amt";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abb(aea_file.aea05,formonly.aag02,aea_file.aea02,aea_file.aea03,formonly.aba11,abb_file.abb04,abb_file.abb24,formonly.df,formonly.abb25_d,formonly.d,formonly.cf,formonly.abb25_c,formonly.c,formonly.dc,formonly.balf,formonly.abb25_bal,formonly.bal)
+SCREEN RECORD Undefined(formonly.bookno,formonly.bdate,formonly.edate,formonly.k,formonly.n,formonly.d1,formonly.e,formonly.h,formonly.lvl,formonly.a,formonly.yy,formonly.cnt,formonly.b)
+END -- INSTRUCTIONS
+

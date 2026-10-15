@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt6103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt6103")
+VBox vb5
+Folder pc5
+Page Main(text=%"Main")
+Grid gr9
+{
+
+ Receivable bala   [amt            ]
+
+
+}
+END -- gr9
+END -- Main
+END -- pc5
+Table s_rxy
+{
+[rxy02     |rxy06   |rxy09   |rxy10   |rxy11   |rxy05   |rxy17   ]
+[rxy02     |rxy06   |rxy09   |rxy10   |rxy11   |rxy05   |rxy17   ]
+[rxy02     |rxy06   |rxy09   |rxy10   |rxy11   |rxy05   |rxy17   ]
+[rxy02     |rxy06   |rxy09   |rxy10   |rxy11   |rxy05   |rxy17   ]
+[rxy02     |rxy06   |rxy09   |rxy10   |rxy11   |rxy05   |rxy17   ]
+}
+END -- s_rxy
+Grid gr10
+{
+ ----------Rows[idx   ]----------
+
+
+
+}
+END -- gr10
+END -- vb5
+END -- almt6103
+
+TABLES
+rxy_file
+ATTRIBUTES
+Edit amt=formonly.amt type CHAR, tabIndex=5, noEntry;
+Edit rxy02=rxy_file.rxy02, tabIndex=8, title="rxy02", not null, required;
+Edit rxy06=rxy_file.rxy06, tabIndex=1, title="rxy06", not null, required;
+Edit rxy09=rxy_file.rxy09, tabIndex=2, title="rxy09", not null, required;
+DateEdit rxy10=rxy_file.rxy10, tabIndex=3, title="rxy10", not null, required;
+Edit rxy11=rxy_file.rxy11, tabIndex=4, title="rxy11", not null, required;
+Edit rxy05=rxy_file.rxy05, tabIndex=6, title="rxy05", noEntry;
+Edit rxy17=rxy_file.rxy17, tabIndex=9, title=%"rxy17", noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rxy(rxy_file.rxy02,rxy_file.rxy06,rxy_file.rxy09,rxy_file.rxy10,rxy_file.rxy11,rxy_file.rxy05,rxy_file.rxy17)
+SCREEN RECORD Undefined(formonly.amt,formonly.idx)
+END -- INSTRUCTIONS
+

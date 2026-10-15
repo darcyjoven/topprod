@@ -1,0 +1,144 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armt230.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armt230")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr264
+{
+ Doc #               [rmn01             ]
+ RMA No.             [rmn05             ]
+ Date of Issue       [rmn06     ]
+
+}
+END -- gr264
+Grid gr265
+{
+ Customer #          [rmn02     ][rmn03     ][rmn04     ]  [imgmksg]
+ Reply Date          [rmn07     ]                          [       ]
+ Confirm             [rmnconf   ]
+
+}
+END -- gr265
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr266
+{
+ Record Owner        [rmnuser   ] Last Modified by    [rmnmodu   ] Data Valid Code     [rmnvoid   ]
+ Department          [rmngrup   ] Create/Modify Date  [rmndate   ]
+ Record Orig.        [rmnoriu   ]
+ Dept Orig.          [rmnorig   ]
+}
+END -- gr266
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[rmnud01                       ] userdefined_field07[rmnud07        ] userdefined_field13[rmnud13        ]
+                    [                              ] userdefined_field08[rmnud08        ] userdefined_field14[rmnud14        ]
+ userdefined_field02[rmnud02        ]                userdefined_field09[rmnud09        ] userdefined_field15[rmnud15        ]
+ userdefined_field03[rmnud03        ]                userdefined_field10[rmnud10        ]
+ userdefined_field04[rmnud04        ]                userdefined_field11[rmnud11        ]
+ userdefined_field05[rmnud05        ]                userdefined_field12[rmnud12        ]
+ userdefined_field06[rmnud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_rmo
+{
+[rmo0|rmo04|rmo05               |rmo06                    |rmo07|rmo08   |rmoud01   |rmoud02   |rmoud03    |rmoud04    |rmoud05    |rmoud06    |rmoud07    |rmoud08    |rmoud09    |rmoud10    |rmoud11   |rmoud12  |rmoud13   |rmoud14   |rmoud15    ]
+[rmo0|rmo04|rmo05               |rmo06                    |rmo07|rmo08   |rmoud01   |rmoud02   |rmoud03    |rmoud04    |rmoud05    |rmoud06    |rmoud07    |rmoud08    |rmoud09    |rmoud10    |rmoud11   |rmoud12  |rmoud13   |rmoud14   |rmoud15    ]
+[rmo0|rmo04|rmo05               |rmo06                    |rmo07|rmo08   |rmoud01   |rmoud02   |rmoud03    |rmoud04    |rmoud05    |rmoud06    |rmoud07    |rmoud08    |rmoud09    |rmoud10    |rmoud11   |rmoud12  |rmoud13   |rmoud14   |rmoud15    ]
+[rmo0|rmo04|rmo05               |rmo06                    |rmo07|rmo08   |rmoud01   |rmoud02   |rmoud03    |rmoud04    |rmoud05    |rmoud06    |rmoud07    |rmoud08    |rmoud09    |rmoud10    |rmoud11   |rmoud12  |rmoud13   |rmoud14   |rmoud15    ]
+[rmo0|rmo04|rmo05               |rmo06                    |rmo07|rmo08   |rmoud01   |rmoud02   |rmoud03    |rmoud04    |rmoud05    |rmoud06    |rmoud07    |rmoud08    |rmoud09    |rmoud10    |rmoud11   |rmoud12  |rmoud13   |rmoud14   |rmoud15    ]
+[rmo0|rmo04|rmo05               |rmo06                    |rmo07|rmo08   |rmoud01   |rmoud02   |rmoud03    |rmoud04    |rmoud05    |rmoud06    |rmoud07    |rmoud08    |rmoud09    |rmoud10    |rmoud11   |rmoud12  |rmoud13   |rmoud14   |rmoud15    ]
+[rmo0|rmo04|rmo05               |rmo06                    |rmo07|rmo08   |rmoud01   |rmoud02   |rmoud03    |rmoud04    |rmoud05    |rmoud06    |rmoud07    |rmoud08    |rmoud09    |rmoud10    |rmoud11   |rmoud12  |rmoud13   |rmoud14   |rmoud15    ]
+[rmo0|rmo04|rmo05               |rmo06                    |rmo07|rmo08   |rmoud01   |rmoud02   |rmoud03    |rmoud04    |rmoud05    |rmoud06    |rmoud07    |rmoud08    |rmoud09    |rmoud10    |rmoud11   |rmoud12  |rmoud13   |rmoud14   |rmoud15    ]
+[rmo0|rmo04|rmo05               |rmo06                    |rmo07|rmo08   |rmoud01   |rmoud02   |rmoud03    |rmoud04    |rmoud05    |rmoud06    |rmoud07    |rmoud08    |rmoud09    |rmoud10    |rmoud11   |rmoud12  |rmoud13   |rmoud14   |rmoud15    ]
+[rmo0|rmo04|rmo05               |rmo06                    |rmo07|rmo08   |rmoud01   |rmoud02   |rmoud03    |rmoud04    |rmoud05    |rmoud06    |rmoud07    |rmoud08    |rmoud09    |rmoud10    |rmoud11   |rmoud12  |rmoud13   |rmoud14   |rmoud15    ]
+
+}
+END -- s_rmo
+Grid gr267
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr267
+END -- VBox1
+END -- armt230
+
+TABLES
+rmo_file,
+rmn_file
+ATTRIBUTES
+ButtonEdit rmn01=rmn_file.rmn01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="No Blank/Repeated Field  <^P>Qry Documents";
+ButtonEdit rmn05=rmn_file.rmn05, action=controlp, tabIndex=2, not null, required, image="zoom", upShift, comment="<^P>Qry RMA #  ";
+DateEdit rmn06=rmn_file.rmn06, tabIndex=3, not null, required;
+ButtonEdit rmn02=rmn_file.rmn02, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Customer #";
+Edit rmn03=rmn_file.rmn03, tabIndex=5, noEntry;
+Edit rmn04=rmn_file.rmn04, tabIndex=6, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+DateEdit rmn07=rmn_file.rmn07, tabIndex=8, not null, required;
+ComboBox rmnconf=rmn_file.rmnconf, tabIndex=9, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+Edit rmnuser=rmn_file.rmnuser, tabIndex=10, noEntry;
+Edit rmnmodu=rmn_file.rmnmodu, tabIndex=11, noEntry;
+Edit rmnvoid=rmn_file.rmnvoid, tabIndex=12, noEntry;
+Edit rmngrup=rmn_file.rmngrup, tabIndex=13, noEntry;
+DateEdit rmndate=rmn_file.rmndate, tabIndex=14, noEntry;
+Edit rmnoriu=rmn_file.rmnoriu, tabIndex=501, noEntry;
+Edit rmnorig=rmn_file.rmnorig, tabIndex=502, noEntry;
+TextEdit rmnud01=rmn_file.rmnud01, tabIndex=327, stretch=NONE;
+Edit rmnud07=rmn_file.rmnud07, tabIndex=328;
+DateEdit rmnud13=rmn_file.rmnud13, tabIndex=329;
+Edit rmnud08=rmn_file.rmnud08, tabIndex=330;
+DateEdit rmnud14=rmn_file.rmnud14, tabIndex=331;
+Edit rmnud02=rmn_file.rmnud02, tabIndex=332;
+Edit rmnud09=rmn_file.rmnud09, tabIndex=333;
+DateEdit rmnud15=rmn_file.rmnud15, tabIndex=334;
+Edit rmnud03=rmn_file.rmnud03, tabIndex=335;
+Edit rmnud10=rmn_file.rmnud10, tabIndex=336;
+Edit rmnud04=rmn_file.rmnud04, tabIndex=337;
+Edit rmnud11=rmn_file.rmnud11, tabIndex=338;
+Edit rmnud05=rmn_file.rmnud05, tabIndex=339;
+Edit rmnud12=rmn_file.rmnud12, tabIndex=340;
+Edit rmnud06=rmn_file.rmnud06, tabIndex=341;
+Edit rmo0=rmo_file.rmo02, tabIndex=15, title="Ln#", not null, required;
+Edit rmo04=rmo_file.rmo04, tabIndex=16, title="RET#", not null, required;
+Edit rmo05=rmo_file.rmo05, tabIndex=17, title="Product No.", noEntry;
+Edit rmo06=rmo_file.rmo06, tabIndex=18, title="Part Name", noEntry;
+Edit rmo07=rmo_file.rmo07, tabIndex=19, title="Unit", noEntry;
+Edit rmo08=rmo_file.rmo08, tabIndex=20, title="Qty", noEntry;
+TextEdit rmoud01=rmo_file.rmoud01, tabIndex=325, title="rmoud01", stretch=NONE;
+Edit rmoud02=rmo_file.rmoud02, tabIndex=342, title="rmoud02";
+Edit rmoud03=rmo_file.rmoud03, tabIndex=343, title="rmoud03";
+Edit rmoud04=rmo_file.rmoud04, tabIndex=344, title="rmoud04";
+Edit rmoud05=rmo_file.rmoud05, tabIndex=345, title="rmoud05";
+Edit rmoud06=rmo_file.rmoud06, tabIndex=346, title="rmoud06";
+Edit rmoud07=rmo_file.rmoud07, tabIndex=347, title="rmoud07";
+Edit rmoud08=rmo_file.rmoud08, tabIndex=348, title="rmoud08";
+Edit rmoud09=rmo_file.rmoud09, tabIndex=349, title="rmoud09";
+Edit rmoud10=rmo_file.rmoud10, tabIndex=350, title="rmoud10";
+Edit rmoud11=rmo_file.rmoud11, tabIndex=351, title="rmoud11";
+Edit rmoud12=rmo_file.rmoud12, tabIndex=352, title="rmoud12";
+Edit rmoud13=rmo_file.rmoud13, tabIndex=353, title="rmoud13";
+Edit rmoud14=rmo_file.rmoud14, tabIndex=354, title="rmoud14";
+Edit rmoud15=rmo_file.rmoud15, tabIndex=355, title="rmoud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rmo(rmo_file.rmo02,rmo_file.rmo04,rmo_file.rmo05,rmo_file.rmo06,rmo_file.rmo07,rmo_file.rmo08,rmo_file.rmoud01,rmo_file.rmoud02,rmo_file.rmoud03,rmo_file.rmoud04,rmo_file.rmoud05,rmo_file.rmoud06,rmo_file.rmoud07,rmo_file.rmoud08,rmo_file.rmoud09,rmo_file.rmoud10,rmo_file.rmoud11,rmo_file.rmoud12,rmo_file.rmoud13,rmo_file.rmoud14,rmo_file.rmoud15)
+SCREEN RECORD Undefined(rmn_file.rmn01,rmn_file.rmn05,rmn_file.rmn06,rmn_file.rmn02,rmn_file.rmn03,rmn_file.rmn04,formonly.imgmksg,rmn_file.rmn07,rmn_file.rmnconf,rmn_file.rmnuser,rmn_file.rmnmodu,rmn_file.rmnvoid,rmn_file.rmngrup,rmn_file.rmndate,rmn_file.rmnoriu,rmn_file.rmnorig,rmn_file.rmnud01,rmn_file.rmnud07,rmn_file.rmnud13,rmn_file.rmnud08,rmn_file.rmnud14,rmn_file.rmnud02,rmn_file.rmnud09,rmn_file.rmnud15,rmn_file.rmnud03,rmn_file.rmnud10,rmn_file.rmnud04,rmn_file.rmnud11,rmn_file.rmnud05,rmn_file.rmnud12,rmn_file.rmnud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

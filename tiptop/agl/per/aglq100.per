@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglq100")
+VBox vb2_
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+ aep01  [aep01       ]  axa02  [axa02       ]   aaz641 [aaz641]
+ aep03  [aep03 ]        aep04  [aep04 ]
+ aep02  [aep02       ]  aep02_1[aep02_1                       ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Group source(text="source")
+Table tb1
+{
+[aep05     |nml02     |aep06     ]
+[aep05     |nml02     |aep06     ]
+[aep05     |nml02     |aep06     ]
+[aep05     |nml02     |aep06     ]
+[aep05     |nml02     |aep06     ]
+
+}
+END -- tb1
+END -- source
+Group hedging(text="hedging")
+Table tb1_1
+{
+[aep05_1   |nml02_1   |aep06_1   ]
+[aep05_1   |nml02_1   |aep06_1   ]
+[aep05_1   |nml02_1   |aep06_1   ]
+[aep05_1   |nml02_1   |aep06_1   ]
+[aep05_1   |nml02_1   |aep06_1   ]
+
+}
+END -- tb1_1
+END -- hedging
+Grid gr2
+{
+ -----[cnt  ] -----[cn1  ] / [cn2  ]
+
+}
+END -- gr2
+END -- vb2_
+END -- aglq100
+
+ATTRIBUTES
+ButtonEdit aep01=formonly.aep01 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Edit axa02=formonly.axa02 type VARCHAR, tabIndex=6;
+Edit aaz641=formonly.aaz641 type VARCHAR, tabIndex=7;
+Edit aep03=formonly.aep03 type SMALLINT, tabIndex=1;
+Edit aep04=formonly.aep04 type SMALLINT, tabIndex=2;
+ButtonEdit aep02=formonly.aep02 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+Edit aep02_1=formonly.aep02_1 type VARCHAR, tabIndex=5;
+Edit aep05=formonly.aep05 type VARCHAR, tabIndex=9, title="aep05";
+Edit nml02=formonly.nml02 type VARCHAR, tabIndex=10, title="nml02";
+Edit aep06=formonly.aep06 type DECIMAL, tabIndex=8, title="aep06";
+Edit aep05_1=formonly.aep05_1 type VARCHAR, tabIndex=12, title="aep05_1";
+Edit nml02_1=formonly.nml02_1 type VARCHAR, tabIndex=13, title="nml02_1";
+Edit aep06_1=formonly.aep06_1 type DECIMAL, tabIndex=11, title="aep06_1";
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+Edit cn1=formonly.cn1 type CHAR, tabIndex=15;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aep1(formonly.aep05,formonly.nml02,formonly.aep06)
+SCREEN RECORD s_aep2(formonly.aep05_1,formonly.nml02_1,formonly.aep06_1)
+SCREEN RECORD Undefined(formonly.aep01,formonly.axa02,formonly.aaz641,formonly.aep03,formonly.aep04,formonly.aep02,formonly.aep02_1,formonly.cnt,formonly.cn1,formonly.cn2)
+END -- INSTRUCTIONS
+

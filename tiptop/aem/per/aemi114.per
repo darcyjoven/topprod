@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemi114.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemi114")
+VBox VBox1
+Folder pc299
+Page page01(text="Page01")
+Table s_fka
+{
+[fka01             |fka02      |fka03          |azp02     |fkaacti ]
+[fka01             |fka02      |fka03          |azp02     |fkaacti ]
+[fka01             |fka02      |fka03          |azp02     |fkaacti ]
+[fka01             |fka02      |fka03          |azp02     |fkaacti ]
+[fka01             |fka02      |fka03          |azp02     |fkaacti ]
+[fka01             |fka02      |fka03          |azp02     |fkaacti ]
+[fka01             |fka02      |fka03          |azp02     |fkaacti ]
+[fka01             |fka02      |fka03          |azp02     |fkaacti ]
+[fka01             |fka02      |fka03          |azp02     |fkaacti ]
+[fka01             |fka02      |fka03          |azp02     |fkaacti ]
+
+}
+END -- s_fka
+END -- page01
+END -- pc299
+Grid gr1750
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1750
+END -- VBox1
+END -- aemi114
+
+TABLES
+fka_file
+ATTRIBUTES
+Edit fka01=fka_file.fka01, tabIndex=1, title="Stored Location", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ";
+Edit fka02=fka_file.fka02, tabIndex=2, title="Name";
+ButtonEdit fka03=fka_file.fka03, action=controlp, tabIndex=3, title="Stored Plant", not null, required, image="zoom", comment="<^P> Qry Detail";
+Edit azp02=formonly.azp02 type VARCHAR, tabIndex=4, title="Name", noEntry;
+CheckBox fkaacti=fka_file.fkaacti, tabIndex=5, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fka(fka_file.fka01,fka_file.fka02,fka_file.fka03,formonly.azp02,fka_file.fkaacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

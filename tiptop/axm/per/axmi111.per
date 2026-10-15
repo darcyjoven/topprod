@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi111.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi111")
+VBox VBox1
+Folder pc452
+Page page01(text="Main")
+Table s_obb
+{
+[obb01          |obb02              ]
+[obb01          |obb02              ]
+[obb01          |obb02              ]
+[obb01          |obb02              ]
+[obb01          |obb02              ]
+[obb01          |obb02              ]
+[obb01          |obb02              ]
+[obb01          |obb02              ]
+[obb01          |obb02              ]
+[obb01          |obb02              ]
+
+}
+END -- s_obb
+END -- page01
+END -- pc452
+Grid gr2008
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2008
+END -- VBox1
+END -- axmi111
+
+TABLES
+obb_file
+ATTRIBUTES
+Edit obb01=obb_file.obb01, tabIndex=1, title="Main Category", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit obb02=obb_file.obb02, tabIndex=2, title="Main Category Name";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_obb(obb_file.obb01,obb_file.obb02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

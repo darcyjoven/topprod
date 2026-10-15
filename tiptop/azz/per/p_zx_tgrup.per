@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zx_tgrup.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zx_tgrup")
+VBox VBox1
+Grid gr3061
+{
+ <G group01                          >
+  User ID      [zx01      ]
+  User Name    [zx02                 ]
+ <                                   >
+
+}
+END -- gr3061
+Table azz_zyw
+{
+[zyw01             |zyw02            |zyw03        |gem02           ]
+[zyw01             |zyw02            |zyw03        |gem02           ]
+[zyw01             |zyw02            |zyw03        |gem02           ]
+[zyw01             |zyw02            |zyw03        |gem02           ]
+[zyw01             |zyw02            |zyw03        |gem02           ]
+[zyw01             |zyw02            |zyw03        |gem02           ]
+[zyw01             |zyw02            |zyw03        |gem02           ]
+[zyw01             |zyw02            |zyw03        |gem02           ]
+[zyw01             |zyw02            |zyw03        |gem02           ]
+[zyw01             |zyw02            |zyw03        |gem02           ]
+
+}
+END -- azz_zyw
+Grid gr3062
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3062
+END -- VBox1
+END -- p_zx_tgrup
+
+TABLES
+zx_file,
+zyw_file
+ATTRIBUTES
+Group group01:group01;
+Edit zx01=zx_file.zx01, tabIndex=1, not null, required, comment="Key Value";
+Edit zx02=zx_file.zx02, tabIndex=2, not null, required, scroll;
+ButtonEdit zyw01=zyw_file.zyw01, action=controlp, tabIndex=3, title="Relative Group ID", not null, required, image="zoom", scroll;
+Edit zyw02=formonly.zyw02 type CHAR, tabIndex=4, title="Description", noEntry;
+Edit zyw03=formonly.zyw03 type CHAR, tabIndex=5, title="Department #", noEntry, scroll;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=6, title="Department Name", noEntry, scroll;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD azz_zyw(zyw_file.zyw01,formonly.zyw02,formonly.zyw03,formonly.gem02)
+SCREEN RECORD Undefined(zx_file.zx01,zx_file.zx02,formonly.cn2)
+END -- INSTRUCTIONS
+

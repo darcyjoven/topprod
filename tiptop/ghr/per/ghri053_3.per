@@ -1,0 +1,113 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri053_3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+   hrcm01 [hrcm01    |hrcm01_desc        ]hrcm02 [hrcm02                      ]  [hrcma04  ][hrcma01     ]  [hrcma05     ]
+   hrcm03 [hrcm03                        ]       [hrcm05    ]    [hrcmconf    ]  [hrcma06  ][hrcma02     ]  [hrcma07     ]
+   hrcm04 [hrcm04                                                             ]  [hrcma08  ][hrcma03     ]
+          [                                                                   ]  [hrcma09  ][hrcma00      ] [hrbm04      ]
+          [                                                                   ]  [hrcma10  ][hrcma11     ]
+                                                                                            [hrcma12   ]
+   hrcm06 [hrcm06                                                             ]
+          [                                                                   ]
+          [                                                                   ]
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid2
+{
+
+    hrcmuser[hrcmuser          ]     hrcrmodu[hrcmmodu            ]   hrcmacti[hrcmacti            ]
+    hrcmgrup[hrcmgrup          ]     hrcmdate[hrcmdate            ]
+    hrcmorig[hrcmorig          ]
+    hrcmoriu[hrcmoriu          ]
+
+
+
+
+
+
+}
+END -- Grid2
+END -- Page2
+END -- Folder1
+Table s_hrcma
+{
+[hrcma0a |hrcma0b    |hrat02      |hrat04     |hrat20    |hrat25   |hrcma14 |hrcma15 |hrcma16 ]
+[hrcma0a |hrcma0b    |hrat02      |hrat04     |hrat20    |hrat25   |hrcma14 |hrcma15 |hrcma16 ]
+[hrcma0a |hrcma0b    |hrat02      |hrat04     |hrat20    |hrat25   |hrcma14 |hrcma15 |hrcma16 ]
+[hrcma0a |hrcma0b    |hrat02      |hrat04     |hrat20    |hrat25   |hrcma14 |hrcma15 |hrcma16 ]
+[hrcma0a |hrcma0b    |hrat02      |hrat04     |hrat20    |hrat25   |hrcma14 |hrcma15 |hrcma16 ]
+
+}
+END -- s_hrcma
+Grid Grid3
+{
+  ---------- Rows  [idx       ] /  [cnt       ]-[cn2       ]----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrcm01=formonly.hrcm01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrcm01_desc=formonly.hrcm01_desc, tabIndex=2;
+Edit hrcm02=formonly.hrcm02, tabIndex=4, not null, required;
+Label hrcma04:hrcma04, text=%"hrcma04";
+DateEdit hrcma01=formonly.hrcma04, tabIndex=1, not null, required, picture="";
+Edit hrcma05=formonly.hrcma05, tabIndex=1, not null, required, picture="XX:XX";
+Edit hrcm03=formonly.hrcm03, tabIndex=3, not null, required;
+CheckBox hrcm05=formonly.hrcm05, tabIndex=5, text=%"hrcm05", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrcmconf=formonly.hrcmconf, tabIndex=6, text=%"hrcmconf", valueChecked = "Y", valueUnchecked = "N";
+Label hrcma06:hrcma06, text=%"hrcma06";
+DateEdit hrcma02=formonly.hrcma06, tabIndex=1, not null, required;
+Edit hrcma07=formonly.hrcma07, tabIndex=10, not null, required, picture="XX:XX";
+TextEdit hrcm04=formonly.hrcm04, tabIndex=7, not null, required;
+Label hrcma08:hrcma08, text=%"hrcma08";
+Edit hrcma03=formonly.hrcma08, tabIndex=9, not null, required;
+Label hrcma09:hrcma09, text=%"hrcma09";
+ButtonEdit hrcma00=formonly.hrcma09, action=controlp, tabIndex=8, not null, required, image="zoom";
+Edit hrbm04=formonly.hrbm04, tabIndex=17;
+Label hrcma10:hrcma10, text=%"hrcma09";
+Edit hrcma11=formonly.hrcma10, tabIndex=19;
+CheckBox hrcma12=formonly.hrcma12, tabIndex=1, text=%"hrcma12", valueChecked = "Y", valueUnchecked = "N";
+TextEdit hrcm06=formonly.hrcm06, tabIndex=16;
+Edit hrcmuser=formonly.hrcmuser, tabIndex=1;
+Edit hrcmmodu=formonly.hrcmmodu, tabIndex=1;
+Edit hrcmacti=formonly.hrcmacti, tabIndex=12;
+Edit hrcmgrup=formonly.hrcmgrup, tabIndex=1;
+Edit hrcmdate=formonly.hrcmdate, tabIndex=1;
+Edit hrcmorig=formonly.hrcmorig, tabIndex=1;
+Edit hrcmoriu=formonly.hrcmoriu, tabIndex=1;
+Edit hrcma0a=formonly.hrcma01, tabIndex=15, title=%"hrcma01", hidden;
+ButtonEdit hrcma0b=formonly.hrcma03, action=controlp, tabIndex=1, title=%"hrcma03", not null, required, image="zoom";
+Edit hrat02=formonly.hrat02, tabIndex=1, title=%"hrat02", noEntry;
+Edit hrat04=formonly.hrat04, tabIndex=1, title=%"hrat04", noEntry;
+Edit hrat20=formonly.hrat20, tabIndex=1, title=%"hrat20", noEntry;
+Edit hrat25=formonly.hrat25, tabIndex=1, title=%"hrat25", noEntry;
+Edit hrcma14=formonly.hrcma14, tabIndex=13, title=%"hrcma14", hidden;
+Edit hrcma15=formonly.hrcma15, tabIndex=14, title=%"hrcma15", hidden;
+CheckBox hrcma16=formonly.hrcma16, tabIndex=18, title=%"hrcma16", text=%"", valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx, tabIndex=1;
+Edit cnt=formonly.cnt, tabIndex=1;
+Edit cn2=formonly.cn2, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrcm01,formonly.idx,formonly.cnt,formonly.hrcmuser,formonly.hrcmgrup,formonly.hrcmorig,formonly.hrcmoriu,formonly.hrcmmodu,formonly.hrcmdate,formonly.hrcm01_desc,formonly.hrcm03,formonly.hrcm02,formonly.hrcm05,formonly.hrcmconf,formonly.hrcm04,formonly.cn2,formonly.hrcmacti,formonly.hrcm06,formonly.hrcma04,formonly.hrcma05,formonly.hrcma06,formonly.hrcma07,formonly.hrcma09,formonly.hrcma08,formonly.hrbm04,formonly.hrcma12,formonly.hrcma10)
+SCREEN RECORD s_hrcma(formonly.hrcma01,formonly.hrcma03,formonly.hrat02,formonly.hrat04,formonly.hrat20,formonly.hrat25,formonly.hrcma14,formonly.hrcma15,formonly.hrcma16)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi999.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi999")
+VBox VBox1
+Folder pc864
+Page page01(text="Page01")
+Grid gr4677
+{
+ Program ID                [mlj01     ][gaz03                       ]
+[mlj07                                                              ]
+[mlj02                                                              ]
+[def                                                                ]
+ <G gb6                                                            >
+  MAIL SERVER IP            [mlj03                         ]
+ [mlj10                  ]  [mlj11      ]
+  MAIL SERVER Port          [mlj04     ]
+  MAIL SERVER User          [mlj05                         ]
+  MAIL SERVER User Password [mlj06                         ]
+ [mlj08                                               ]
+ [mlj09                 ]
+ <                                                                 >
+}
+END -- gr4677
+END -- page01
+Page info(text="Info")
+Grid gr4678
+{
+ Record Owner        [mljuser   ] Last Modified by    [mljmodu   ]
+ Department          [mljgrup   ] Create/Modify Date  [mljdate   ]
+ Record Orig.        [mljoriu   ]
+ Dept Orig.          [mljorig   ]
+}
+END -- gr4678
+END -- info
+END -- pc864
+Grid gr4679
+{
+ ----------Rows [cnt   ]  ----------
+
+
+}
+END -- gr4679
+END -- VBox1
+END -- aooi999
+
+TABLES
+mlj_file
+ATTRIBUTES
+ButtonEdit mlj01=mlj_file.mlj01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Program Code";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=2;
+CheckBox mlj07=mlj_file.mlj07, tabIndex=3, text="Allow Execute JavaMail ", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y:Allow Execute JavaMail N:Set To Void";
+RadioGroup mlj02=mlj_file.mlj02, tabIndex=4, items=(("1", "Fixed.ProgramID.Xml"),("2", "Variable.$PID.Xml"));
+CheckBox def=formonly.def type CHAR, tabIndex=5, text="User define Mail Sever data", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y:User define Mail Sever data N:Using DEFAULT";
+Group gb6:gb6, text="mail server info";
+Edit mlj03=mlj_file.mlj03, tabIndex=6, comment="Enter Mail Server IP or DSN (Domain Name)";
+CheckBox mlj10=mlj_file.mlj10, tabIndex=504, text="Encrypt", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y:User define Mail Sever data N:Using DEFAULT";
+RadioGroup mlj11=mlj_file.mlj11, tabIndex=503, orientation=horizontal, items=(("S", %"SSL"),("T", %"TLS"));
+Edit mlj04=mlj_file.mlj04, tabIndex=7, comment="Enter Sendmail Port (1-65535, Default 25 )";
+Edit mlj05=mlj_file.mlj05, tabIndex=8, comment="Enter Sender ID";
+Edit mlj06=mlj_file.mlj06, tabIndex=9, invisible, comment="Enter Sender Password";
+CheckBox mlj08=mlj_file.mlj08, tabIndex=10, text="My server requires authentication", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox mlj09=mlj_file.mlj09, tabIndex=16, text="Mail sender", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit mljuser=mlj_file.mljuser, tabIndex=11, noEntry;
+Edit mljmodu=mlj_file.mljmodu, tabIndex=12, noEntry;
+Edit mljgrup=mlj_file.mljgrup, tabIndex=13, noEntry;
+DateEdit mljdate=mlj_file.mljdate, tabIndex=14, noEntry;
+Edit mljoriu=mlj_file.mljoriu, tabIndex=501, noEntry;
+Edit mljorig=mlj_file.mljorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(mlj_file.mlj01,formonly.gaz03,mlj_file.mlj07,mlj_file.mlj02,formonly.def,mlj_file.mlj03,mlj_file.mlj04,mlj_file.mlj05,mlj_file.mlj06,mlj_file.mlj08,mlj_file.mlj09,mlj_file.mljuser,mlj_file.mljmodu,mlj_file.mljgrup,mlj_file.mljdate,mlj_file.mljoriu,mlj_file.mljorig,formonly.cnt,mlj_file.mlj11,mlj_file.mlj10)
+END -- INSTRUCTIONS
+

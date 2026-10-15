@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_gcx03.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Approval ID")
+Grid gr3722
+{
+
+ <T s_gcx                                                                                           >
+ [check     |gdx01           |approval        ]
+ [check     |gdx01           |approval        ]
+ [check     |gdx01           |approval        ]
+ [check     |gdx01           |approval        ]
+ [check     |gdx01           |approval        ]
+ [check     |gdx01           |approval        ]
+ [check     |gdx01           |approval        ]
+ [check     |gdx01           |approval        ]
+ [check     |gdx01           |approval        ]
+ [check     |gdx01           |approval        ]
+ <                                                                                                  >
+
+
+}
+END -- gr3722
+END -- q_gcx03
+
+TABLES
+gdx_file
+ATTRIBUTES
+Table s_gcx:s_gcx;
+CheckBox check=formonly.check type CHAR, tabIndex=9, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gdx01=formonly.gdx01 type like gdx_file.gdx01, tabIndex=10, title="gdx01", noEntry;
+Edit approval=formonly.approval type CHAR, tabIndex=11, title="Approval";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gcx(formonly.check,formonly.gdx01,formonly.approval)
+END -- INSTRUCTIONS
+

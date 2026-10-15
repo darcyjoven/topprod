@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi255c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Pricing By Qty")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4848
+{
+ <G group01                                            >
+  Appraisal List #    [pmj01           ]
+  Line No.            [pmj02           ]
+  Item No.            [pmj03                         ]
+  Part Name           [pmj031                        ]
+  Specification       [pmj032                        ]
+  Task No             [pmj10                         ]
+  Currency            [pmj05     ]
+ <                                                     >
+
+}
+END -- gr4848
+END -- page01
+END -- folder01
+Table s_pmr
+{
+[pmr03       |pmr04       |pmr05               |pmr05t              ]
+[pmr03       |pmr04       |pmr05               |pmr05t              ]
+[pmr03       |pmr04       |pmr05               |pmr05t              ]
+[pmr03       |pmr04       |pmr05               |pmr05t              ]
+[pmr03       |pmr04       |pmr05               |pmr05t              ]
+[pmr03       |pmr04       |pmr05               |pmr05t              ]
+[pmr03       |pmr04       |pmr05               |pmr05t              ]
+[pmr03       |pmr04       |pmr05               |pmr05t              ]
+[pmr03       |pmr04       |pmr05               |pmr05t              ]
+[pmr03       |pmr04       |pmr05               |pmr05t              ]
+
+}
+END -- s_pmr
+Grid gr4849
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4849
+END -- VBox1
+END -- apmi255c
+
+TABLES
+pmr_file
+ATTRIBUTES
+Group group01:group01;
+Edit pmj01=formonly.pmj01 type CHAR, tabIndex=1, noEntry;
+Edit pmj02=formonly.pmj02 type CHAR, tabIndex=2, comment="Enter Line# to Qry";
+Edit pmj03=formonly.pmj03 type CHAR, tabIndex=3, noEntry;
+Edit pmj031=formonly.pmj031 type CHAR, tabIndex=4, noEntry;
+Edit pmj032=formonly.pmj032 type CHAR, tabIndex=5, noEntry;
+Edit pmj10=formonly.pmj10 type CHAR, tabIndex=6, noEntry;
+Edit pmj05=formonly.pmj05 type CHAR, tabIndex=7, noEntry;
+Edit pmr03=pmr_file.pmr03, tabIndex=8, title="Initial Qty", noEntry;
+Edit pmr04=pmr_file.pmr04, tabIndex=9, title="Ending Qty", not null, required;
+Edit pmr05=pmr_file.pmr05, tabIndex=10, title="Unit Price", not null, required;
+Edit pmr05t=pmr_file.pmr05t, tabIndex=11, title="Tax Price", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmr(pmr_file.pmr03,pmr_file.pmr04,pmr_file.pmr05,pmr_file.pmr05t)
+SCREEN RECORD Undefined(formonly.pmj01,formonly.pmj02,formonly.pmj03,formonly.pmj031,formonly.pmj032,formonly.pmj10,formonly.pmj05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armr300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"armr300")
+VBox VBox1
+Grid gr319
+{
+ <G group01                                                 >
+  Doc Category        [ina00               ]
+  [dummy01          ][dummy03          ][dummy05          ]
+  [dummy02          ][dummy04          ][dummy06          ]
+
+  Doc No.             [ina01               ]
+  Department No.      [ina04               ]
+  Doc Date            [ina02               ]
+ <                                                          >
+
+}
+END -- gr319
+Group group02(text="INPUT")
+Grid gr320
+{
+ <G group03           ><G group04                       >
+ [a                   ][b                             ]
+ <                    ><                                >
+
+}
+END -- gr320
+END -- group02
+Grid gr321
+{
+[more                                     ]
+
+}
+END -- gr321
+END -- VBox1
+END -- armr300
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ina00=formonly.ina00 type VARCHAR, tabIndex=1, comment="1.Misc Issue  2.WIP Misc Issue 3.MISC Receipt  4.WIP Misc Receipt 5.MISC Scrap 6.WIP Retire";
+Label dummy01:dummy01, text="1.Misc Issue";
+Label dummy03:dummy03, text="3.MISC Receipt";
+Label dummy05:dummy05, text="5.MISC Scrap";
+Label dummy02:dummy02, text="2.WIP Misc Issue";
+Label dummy04:dummy04, text="4.WIP Misc Receipt";
+Label dummy06:dummy06, text="6.WIP Retire";
+Edit ina01=formonly.ina01 type VARCHAR, tabIndex=2;
+Edit ina04=formonly.ina04 type VARCHAR, tabIndex=3;
+DateEdit ina02=formonly.ina02 type DATE, tabIndex=4;
+Group group03:group03, text="Data Option(1)";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=5, items=(("1", "Printed"),("2", "Unprinted"),("3", "All "));
+Group group04:group04, text="Data Option(2)";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=6, items=(("1", " Posted"),("2", "Unposted"),("3", "All "));
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ina00,formonly.ina01,formonly.ina04,formonly.ina02,formonly.a,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

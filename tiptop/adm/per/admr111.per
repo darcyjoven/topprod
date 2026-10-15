@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/adm/42f/admr111.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"admr111")
+VBox vb2
+Grid gr1595
+{
+ <G group01                                                                             >
+  Product Type        [opm01               ]
+ <                                                                                      >
+ <G group02                                                                             >
+  Version             [opm02     ]
+  Year/Month          [yy   ][mm1 ] - [mm2  ]
+  [ch                                                           ]
+ <                                                                                      >
+
+}
+END -- gr1595
+Grid gr1596
+{
+[more                                                         ]
+
+}
+END -- gr1596
+END -- vb2
+END -- admr111
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit opm01=formonly.opm01 type VARCHAR, tabIndex=1;
+Group group02:group02, text="INPUT";
+Edit opm02=formonly.opm02 type VARCHAR, tabIndex=2;
+Edit yy=formonly.yy type SMALLINT, tabIndex=3, not null;
+Edit mm1=formonly.mm1 type SMALLINT, tabIndex=4, not null;
+Edit mm2=formonly.mm2 type SMALLINT, tabIndex=5, not null;
+CheckBox ch=formonly.ch type CHAR, tabIndex=6, text="Contains treats quantity", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.opm01,formonly.opm02,formonly.yy,formonly.mm1,formonly.mm2,formonly.ch,formonly.more)
+END -- INSTRUCTIONS
+

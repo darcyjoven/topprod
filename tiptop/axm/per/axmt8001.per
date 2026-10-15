@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt8001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt8001")
+VBox VBox1
+Folder pc613
+Page page01(text="Page01")
+VBox VBox2
+Table s_oer
+{
+[oer03|oer04                                                                 ]
+[oer03|oer04                                                                 ]
+[oer03|oer04                                                                 ]
+[oer03|oer04                                                                 ]
+[oer03|oer04                                                                 ]
+[oer03|oer04                                                                 ]
+[oer03|oer04                                                                 ]
+[oer03|oer04                                                                 ]
+[oer03|oer04                                                                 ]
+[oer03|oer04                                                                 ]
+
+}
+END -- s_oer
+END -- VBox2
+END -- page01
+END -- pc613
+END -- VBox1
+END -- axmt8001
+
+TABLES
+oer_file
+ATTRIBUTES
+Edit oer03=oer_file.oer03, tabIndex=1, title="S/N";
+Edit oer04=oer_file.oer04, tabIndex=2, title="Memo";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oer(oer_file.oer03,oer_file.oer04)
+END -- INSTRUCTIONS
+

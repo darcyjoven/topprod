@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gap/42f/gapq920_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrr710")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr5447
+{
+ Customer No#        [npq21                   ][npq22                                   ]       Currency  [npq24c    ]
+ Account No.         [npq03                   ][aag02                                   ]
+ Year                [yy        ]               Month               [mm        ]
+
+}
+END -- gr5447
+END -- page01
+END -- folder01
+Table s_npq
+{
+[npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+
+}
+END -- s_npq
+Grid gr5449
+{
+ ----------- Rows [cnt   ] -----------
+
+}
+END -- gr5449
+END -- vb2
+END -- gapq920_1
+
+TABLES
+aag_file
+ATTRIBUTES
+Edit npq21=formonly.npq21 type VARCHAR, tabIndex=1;
+Edit npq22=formonly.npq22 type VARCHAR, tabIndex=2;
+Edit npq24c=formonly.npq24c type VARCHAR, tabIndex=7;
+Edit npq03=formonly.npq03 type VARCHAR, tabIndex=3;
+Edit aag02=aag_file.aag02, tabIndex=4;
+Edit yy=formonly.yy type VARCHAR, tabIndex=5;
+Edit mm=formonly.mm type VARCHAR, tabIndex=6;
+DateEdit npp02=formonly.npp02 type DATE, tabIndex=9, title="Voucher Date";
+Edit npp01=formonly.npp01 type VARCHAR, tabIndex=10, title="Voucher No.";
+Edit npp00=formonly.npp00 type CHAR, tabIndex=11, title="npp00";
+Edit nppsys=formonly.nppsys type CHAR, tabIndex=12, title="nppsys";
+Edit nppglno=formonly.nppglno type VARCHAR, tabIndex=13, title="Carried Voucher No.";
+Edit npq04=formonly.npq04 type CHAR, tabIndex=14, title="Memo";
+Edit npq24=formonly.npq24 type VARCHAR, tabIndex=15, title="Currency";
+Edit df=formonly.df type CHAR, tabIndex=16, title="Debit Amount (Trans. Curr.)";
+Edit npq25_d=formonly.npq25_d type DECIMAL, tabIndex=17, title="Exchange Rate";
+Edit d=formonly.d type CHAR, tabIndex=18, title="Debit Amount (Local. Curr.)";
+Edit cf=formonly.cf type CHAR, tabIndex=19, title="Credit Amount (Trans. Curr.)";
+Edit npq25_c=formonly.npq25_c type CHAR, tabIndex=20, title="Exchange Rate";
+Edit c=formonly.c type CHAR, tabIndex=21, title="Credit Amount (Local. Curr.)";
+Edit dc=formonly.dc type CHAR, tabIndex=22, title="D/C";
+Edit balf=formonly.balf type CHAR, tabIndex=23, title="Balance T.C Amt";
+Edit npq25_bal=formonly.npq25_bal type CHAR, tabIndex=24, title="Exchange Rate";
+Edit bal=formonly.bal type CHAR, tabIndex=25, title="Balance L.C Amt";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_npq(formonly.npp02,formonly.npp01,formonly.npp00,formonly.nppsys,formonly.nppglno,formonly.npq04,formonly.npq24,formonly.df,formonly.npq25_d,formonly.d,formonly.cf,formonly.npq25_c,formonly.c,formonly.dc,formonly.balf,formonly.npq25_bal,formonly.bal)
+SCREEN RECORD Undefined(formonly.npq21,formonly.npq22,formonly.npq24c,formonly.npq03,aag_file.aag02,formonly.yy,formonly.mm,formonly.cnt)
+END -- INSTRUCTIONS
+

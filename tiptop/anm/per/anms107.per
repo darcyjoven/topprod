@@ -1,0 +1,129 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anms107.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anms107")
+Folder Folder1
+Page page01(text="Main")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                                     >
+  Forward Exchange Receivable      [gxd01                   ] [aag02_1                       ]
+  Buying Forward Exchange Payable  [gxd02                   ] [aag02_2                       ]
+  Buying Forward Exchange Overage  [gxd03                   ] [aag02_3                       ]
+  Buying Forward Exchange Discount [gxd04                   ] [aag02_4                       ]
+ <                                                                                              >
+ <G group02                                                                                     >
+  Sale Forward Exchange Receivable [gxd05                   ] [aag02_5                       ]
+  Forward Exchange Payable         [gxd06                   ] [aag02_6                       ]
+  Offer Forward Exchange Overage   [gxd07                   ] [aag02_7                       ]
+  Offer Forward Exchange Discount  [gxd08                   ] [aag02_8                       ]
+  Exchange Profit                  [gxd09                   ] [aag02_9                       ]
+  Exchange Loss                    [gxd10                   ] [aag02_10                      ]
+ <                                                                                              >
+ <G group03                                                                                     >
+  Certificate Of Deposit Pledge    [gxd11                   ] [aag02_11                      ]
+  Timing Deposit                   [gxd12                   ] [aag02_12                      ]
+ <                                                                                              >
+
+}
+END -- Grid1
+END -- VBox1
+END -- page01
+Page page02(text="Account")
+VBox VBox2
+Grid Grid2
+{
+ <G group04                                                                                     >
+  Forward Exchange Receivable      [gxd011                  ] [aag02_a1                      ]
+  Buying Forward Exchange Payable  [gxd021                  ] [aag02_a2                      ]
+  Buying Forward Exchange Overage  [gxd031                  ] [aag02_a3                      ]
+  Buying Forward Exchange Discount [gxd041                  ] [aag02_a4                      ]
+ <                                                                                              >
+ <G group05                                                                                     >
+  Sale Forward Exchange Receivable [gxd051                  ] [aag02_a5                      ]
+  Forward Exchange Payable         [gxd061                  ] [aag02_a6                      ]
+  Offer Forward Exchange Overage   [gxd071                  ] [aag02_a7                      ]
+  Offer Forward Exchange Discount  [gxd081                  ] [aag02_a8                      ]
+  Exchange Profit                  [gxd091                  ] [aag02_a9                      ]
+  Exchange Loss                    [gxd101                  ] [aag02_a10                     ]
+ <                                                                                              >
+ <G group06                                                                                     >
+  Certificate Of Deposit Pledge    [gxd111                  ] [aag02_a11                     ]
+  Timing Deposit                   [gxd121                  ] [aag02_a12                     ]
+ <                                                                                              >
+
+}
+END -- Grid2
+END -- VBox2
+END -- page02
+END -- Folder1
+END -- anms107
+
+TABLES
+gxd_file
+ATTRIBUTES
+Group group01:group01, text="Exchange Transaction(Advance Purchase Number-Account)";
+ButtonEdit gxd01=gxd_file.gxd01, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=2, noEntry;
+ButtonEdit gxd02=gxd_file.gxd02, action=controlp, tabIndex=3, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=4, noEntry;
+ButtonEdit gxd03=gxd_file.gxd03, action=controlp, tabIndex=5, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_3=formonly.aag02_3 type CHAR, tabIndex=6, noEntry;
+ButtonEdit gxd04=gxd_file.gxd04, action=controlp, tabIndex=7, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_4=formonly.aag02_4 type CHAR, tabIndex=8, noEntry;
+Group group02:group02, text="Exchange Transaction(Advance Sale-Account)";
+ButtonEdit gxd05=gxd_file.gxd05, action=controlp, tabIndex=9, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_5=formonly.aag02_5 type CHAR, tabIndex=10, noEntry;
+ButtonEdit gxd06=gxd_file.gxd06, action=controlp, tabIndex=11, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_6=formonly.aag02_6 type CHAR, tabIndex=12, noEntry;
+ButtonEdit gxd07=gxd_file.gxd07, action=controlp, tabIndex=13, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_7=formonly.aag02_7 type CHAR, tabIndex=14, noEntry;
+ButtonEdit gxd08=gxd_file.gxd08, action=controlp, tabIndex=15, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_8=formonly.aag02_8 type CHAR, tabIndex=16, noEntry;
+ButtonEdit gxd09=gxd_file.gxd09, action=controlp, tabIndex=17, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_9=formonly.aag02_9 type CHAR, tabIndex=18, noEntry;
+ButtonEdit gxd10=gxd_file.gxd10, action=controlp, tabIndex=19, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_10=formonly.aag02_10 type CHAR, tabIndex=20;
+Group group03:group03, text="Deposit Control(Tran-Account ) ";
+ButtonEdit gxd11=gxd_file.gxd11, action=controlp, tabIndex=21, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_11=formonly.aag02_11 type CHAR, tabIndex=22;
+ButtonEdit gxd12=gxd_file.gxd12, action=controlp, tabIndex=23, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_12=formonly.aag02_12 type CHAR, tabIndex=24;
+Group group04:group04, text="Exchange Transaction(Advance Purchase Number-Account)2";
+ButtonEdit gxd011=gxd_file.gxd011, action=controlp, tabIndex=25, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_a1=formonly.aag02_a1 type CHAR, tabIndex=26, noEntry;
+ButtonEdit gxd021=gxd_file.gxd021, action=controlp, tabIndex=27, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_a2=formonly.aag02_a2 type CHAR, tabIndex=28, noEntry;
+ButtonEdit gxd031=gxd_file.gxd031, action=controlp, tabIndex=29, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_a3=formonly.aag02_a3 type CHAR, tabIndex=30, noEntry;
+ButtonEdit gxd041=gxd_file.gxd041, action=controlp, tabIndex=31, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_a4=formonly.aag02_a4 type CHAR, tabIndex=32, noEntry;
+Group group05:group05, text="Exchange Transaction(Advance Sale-Account)2";
+ButtonEdit gxd051=gxd_file.gxd051, action=controlp, tabIndex=33, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_a5=formonly.aag02_a5 type CHAR, tabIndex=34, noEntry;
+ButtonEdit gxd061=gxd_file.gxd061, action=controlp, tabIndex=35, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_a6=formonly.aag02_a6 type CHAR, tabIndex=36, noEntry;
+ButtonEdit gxd071=gxd_file.gxd071, action=controlp, tabIndex=37, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_a7=formonly.aag02_a7 type CHAR, tabIndex=38, noEntry;
+ButtonEdit gxd081=gxd_file.gxd081, action=controlp, tabIndex=39, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_a8=formonly.aag02_a8 type CHAR, tabIndex=40, noEntry;
+ButtonEdit gxd091=gxd_file.gxd091, action=controlp, tabIndex=41, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_a9=formonly.aag02_a9 type CHAR, tabIndex=42, noEntry;
+ButtonEdit gxd101=gxd_file.gxd101, action=controlp, tabIndex=43, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_a10=formonly.aag02_a10 type CHAR, tabIndex=44;
+Group group06:group06, text="Deposit Control(Tran-Account )2 ";
+ButtonEdit gxd111=gxd_file.gxd111, action=controlp, tabIndex=45, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_a11=formonly.aag02_a11 type CHAR, tabIndex=46;
+ButtonEdit gxd121=gxd_file.gxd121, action=controlp, tabIndex=47, image="zoom", comment="<^P> Qry Account     ";
+Edit aag02_a12=formonly.aag02_a12 type CHAR, tabIndex=48;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gxd_file.gxd01,formonly.aag02_1,gxd_file.gxd02,formonly.aag02_2,gxd_file.gxd03,formonly.aag02_3,gxd_file.gxd04,formonly.aag02_4,gxd_file.gxd05,formonly.aag02_5,gxd_file.gxd06,formonly.aag02_6,gxd_file.gxd07,formonly.aag02_7,gxd_file.gxd08,formonly.aag02_8,gxd_file.gxd09,formonly.aag02_9,gxd_file.gxd10,formonly.aag02_10,gxd_file.gxd11,formonly.aag02_11,gxd_file.gxd12,formonly.aag02_12,gxd_file.gxd011,formonly.aag02_a1,gxd_file.gxd021,formonly.aag02_a2,gxd_file.gxd031,formonly.aag02_a3,gxd_file.gxd041,formonly.aag02_a4,gxd_file.gxd051,formonly.aag02_a5,gxd_file.gxd061,formonly.aag02_a6,gxd_file.gxd071,formonly.aag02_a7,gxd_file.gxd081,formonly.aag02_a8,gxd_file.gxd091,formonly.aag02_a9,gxd_file.gxd101,formonly.aag02_a10,gxd_file.gxd111,formonly.aag02_a11,gxd_file.gxd121,formonly.aag02_a12)
+END -- INSTRUCTIONS
+

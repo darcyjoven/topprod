@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr104.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxr104")
+VBox vb3
+Grid gr1128
+{
+ <G group01                                                                                >
+  Exit Reason         [pmm09               ]     Exit Date           [bnb02     ]
+  Charge Off Date     [sfb81     ]               Subcontracting W/O  [sfb01               ]
+  Approval No.        [bnb90            ]
+ <                                                                                         >
+
+}
+END -- gr1128
+Grid gr1129
+{
+[more                                            ]
+[n                                               ]
+}
+END -- gr1129
+END -- vb3
+END -- abxr104
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmm09=formonly.pmm09 type CHAR, action=controlp, tabIndex=1, image="zoom", comment=" <^P> Qry Dept Vender";
+DateEdit bnb02=formonly.bnb02 type DATE, tabIndex=2;
+DateEdit sfb81=formonly.sfb81 type DATE, tabIndex=3;
+ButtonEdit sfb01=formonly.sfb01 type CHAR, action=controlp, tabIndex=4, image="zoom", comment=" <^P> Qry WO";
+ButtonEdit bnb90=formonly.bnb90 type CHAR, action=controlp, tabIndex=5, image="zoom", comment=" <^P> Qry Approval No.";
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox n=formonly.n type CHAR, tabIndex=7, text="W/O print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmm09,formonly.bnb02,formonly.sfb81,formonly.sfb01,formonly.bnb90,formonly.more,formonly.n)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi000_b1_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi000_b2_1")
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+  Station            [poy02_2           ]
+  Company No.        [poy03_2           ]    Company                 [pmc03_2              ]
+
+  PO                                         SO
+  Source             [poy02_3           ]    Destination             [poy02_4              ]
+  ---------------------------------------    -----------------------------------------------
+  AR Department      [poy18             ]    AP Department           [poy19                ]
+
+  Invoice Type       [poy12             ]
+  Collection terms   [poy07             ]    Payment terms           [poy06                ]
+
+  SO Type            [poy08             ]    PO Type                 [poy09                ]
+  AR Subject         [poy16             ]    AP Subject              [poy17                ]
+
+  PO Cost Centre     [poy46             ]    SO Cost Centre          [poy45                ]
+
+
+}
+END -- gr1
+END -- page01
+END -- pc1
+END -- apmi000_b1_1
+
+TABLES
+poy_file
+ATTRIBUTES
+Edit poy02_2=formonly.poy02_2 type CHAR, tabIndex=1;
+Edit poy03_2=formonly.poy03_2 type CHAR, tabIndex=2;
+Edit pmc03_2=formonly.pmc03_2 type CHAR, tabIndex=16;
+Edit poy02_3=formonly.poy02_3 type CHAR, tabIndex=3;
+Edit poy02_4=formonly.poy02_4 type CHAR, tabIndex=4;
+ButtonEdit poy18=poy_file.poy18, action=controlp, tabIndex=5, image="zoom.png";
+ButtonEdit poy19=poy_file.poy19, action=controlp, tabIndex=6, image="zoom.png";
+ButtonEdit poy12=poy_file.poy12, action=controlp, tabIndex=7, image="zoom.png";
+ButtonEdit poy07=poy_file.poy07, action=controlp, tabIndex=8, image="zoom.png";
+ButtonEdit poy06=poy_file.poy06, action=controlp, tabIndex=12, image="zoom.png";
+ButtonEdit poy08=poy_file.poy08, action=controlp, tabIndex=9, image="zoom.png";
+ButtonEdit poy09=poy_file.poy09, action=controlp, tabIndex=13, image="zoom.png";
+ButtonEdit poy16=poy_file.poy16, action=controlp, tabIndex=10, image="zoom.png";
+ButtonEdit poy17=poy_file.poy17, action=controlp, tabIndex=14, image="zoom.png";
+ButtonEdit poy46=poy_file.poy46, action=controlp, tabIndex=11, image="zoom.png";
+ButtonEdit poy45=poy_file.poy45, action=controlp, tabIndex=15, image="zoom.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.poy02_2,formonly.poy03_2,formonly.pmc03_2,formonly.poy02_3,formonly.poy02_4,poy_file.poy18,poy_file.poy19,poy_file.poy12,poy_file.poy07,poy_file.poy06,poy_file.poy08,poy_file.poy09,poy_file.poy16,poy_file.poy17,poy_file.poy46,poy_file.poy45)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aoou023.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aoou023")
+VBox VBox1
+Folder pc888
+Page page01(text="Page01")
+Table s_oep
+{
+[oep01           |oep02             |oep04          |oea032                |oea23    |oepsign  |oepdays   |oepprit       ]
+[oep01           |oep02             |oep04          |oea032                |oea23    |oepsign  |oepdays   |oepprit       ]
+[oep01           |oep02             |oep04          |oea032                |oea23    |oepsign  |oepdays   |oepprit       ]
+[oep01           |oep02             |oep04          |oea032                |oea23    |oepsign  |oepdays   |oepprit       ]
+[oep01           |oep02             |oep04          |oea032                |oea23    |oepsign  |oepdays   |oepprit       ]
+[oep01           |oep02             |oep04          |oea032                |oea23    |oepsign  |oepdays   |oepprit       ]
+[oep01           |oep02             |oep04          |oea032                |oea23    |oepsign  |oepdays   |oepprit       ]
+[oep01           |oep02             |oep04          |oea032                |oea23    |oepsign  |oepdays   |oepprit       ]
+[oep01           |oep02             |oep04          |oea032                |oea23    |oepsign  |oepdays   |oepprit       ]
+[oep01           |oep02             |oep04          |oea032                |oea23    |oepsign  |oepdays   |oepprit       ]
+
+}
+END -- s_oep
+END -- page01
+END -- pc888
+Grid gr4719
+{
+ ----------Rows [cmt   ] ----------
+
+}
+END -- gr4719
+END -- VBox1
+END -- aoou023
+
+TABLES
+oea_file,
+oep_file
+ATTRIBUTES
+Edit oep01=oep_file.oep01, tabIndex=1, title="Order No.", noEntry;
+Edit oep02=oep_file.oep02, tabIndex=2, title="Change Serial No.", noEntry;
+DateEdit oep04=oep_file.oep04, tabIndex=3, title="Date of Change", noEntry;
+Edit oea032=oea_file.oea032, tabIndex=4, title="Customer Abbreviation", noEntry;
+Edit oea23=oea_file.oea23, tabIndex=5, title="Currency", noEntry;
+Edit oepsign=oep_file.oepsign, tabIndex=6, title="Approval", noEntry;
+Edit oepdays=oep_file.oepdays, tabIndex=7, title="Rest Days", noEntry;
+Edit oepprit=oep_file.oepprit, tabIndex=8, title="Priority Level", noEntry;
+Edit cmt=formonly.cmt type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oep(oep_file.oep01,oep_file.oep02,oep_file.oep04,oea_file.oea032,oea_file.oea23,oep_file.oepsign,oep_file.oepdays,oep_file.oepprit)
+SCREEN RECORD Undefined(formonly.cmt)
+END -- INSTRUCTIONS
+

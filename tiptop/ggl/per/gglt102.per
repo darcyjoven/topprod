@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="gglt102")
+VBox vb2_
+HBox hb2_
+Grid gr1
+{
+
+ Year          [aso01           ]
+ Month         [aso02           ]
+ Group Code    [aso03           ]
+ comp          [aso05           ]
+
+}
+END -- gr1
+Grid gr3
+{
+
+  bibie      [aso09              ]
+  topest     [aso04              ]
+  Book No.   [aso11              ]
+  No.        [aso10              ]
+
+}
+END -- gr3
+END -- hb2_
+Table s_aso
+{
+[aso06        |aso07       |aso08             ]
+[aso06        |aso07       |aso08             ]
+[aso06        |aso07       |aso08             ]
+[aso06        |aso07       |aso08             ]
+[aso06        |aso07       |aso08             ]
+
+}
+END -- s_aso
+Table s_asp
+{
+[asp06      |asp06_desc|asp08      |asp07     |asp09   |asp10           |asp19          |asp11   |asp12   |asp13           |asp20           |asp14_1   |asp14   |asp15      |asp16             |asp21            |asp17      |asp22     ]
+[asp06      |asp06_desc|asp08      |asp07     |asp09   |asp10           |asp19          |asp11   |asp12   |asp13           |asp20           |asp14_1   |asp14   |asp15      |asp16             |asp21            |asp17      |asp22     ]
+[asp06      |asp06_desc|asp08      |asp07     |asp09   |asp10           |asp19          |asp11   |asp12   |asp13           |asp20           |asp14_1   |asp14   |asp15      |asp16             |asp21            |asp17      |asp22     ]
+[asp06      |asp06_desc|asp08      |asp07     |asp09   |asp10           |asp19          |asp11   |asp12   |asp13           |asp20           |asp14_1   |asp14   |asp15      |asp16             |asp21            |asp17      |asp22     ]
+[asp06      |asp06_desc|asp08      |asp07     |asp09   |asp10           |asp19          |asp11   |asp12   |asp13           |asp20           |asp14_1   |asp14   |asp15      |asp16             |asp21            |asp17      |asp22     ]
+
+}
+END -- s_asp
+Grid gr3_
+{
+
+  ---------- Rows [cnt       ]
+
+}
+END -- gr3_
+END -- vb2_
+END -- gglt102
+
+TABLES
+asp_file,
+aso_file
+ATTRIBUTES
+Edit aso01=aso_file.aso01, tabIndex=1, not null, required;
+Edit aso02=aso_file.aso02, tabIndex=2, not null, required;
+ButtonEdit aso03=aso_file.aso03, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+ButtonEdit aso05=aso_file.aso05, action=controlp, tabIndex=23, not null, required, image="zoom.png";
+Edit aso09=aso_file.aso09, tabIndex=24, noEntry;
+ButtonEdit aso04=aso_file.aso04, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+Edit aso11=aso_file.aso11, tabIndex=21, noEntry;
+Edit aso10=aso_file.aso10, tabIndex=3, noEntry;
+ButtonEdit aso06=aso_file.aso06, action=controlp, tabIndex=6, title="aso06", not null, required, image="zoom.png";
+ButtonEdit aso07=aso_file.aso07, action=controlp, tabIndex=7, title="aso07", not null, required, image="zoom.png";
+Edit aso08=aso_file.aso08, tabIndex=8, title="aso08", not null, required;
+ButtonEdit asp06=asp_file.asp06, action=controlp, tabIndex=9, title="asp06", not null, required, image="zoom.png";
+Edit asp06_desc=formonly.asp06_desc type VARCHAR, tabIndex=22, title="asp06_desc", noEntry;
+ButtonEdit asp08=asp_file.asp08, action=controlp, tabIndex=10, title="asp08", image="zoom.png";
+ButtonEdit asp07=asp_file.asp07, action=controlp, tabIndex=11, title="asp07", image="zoom.png";
+Edit asp09=asp_file.asp09, tabIndex=12, title="asp09", noEntry;
+Edit asp10=asp_file.asp10, tabIndex=13, title="asp10", noEntry;
+Edit asp19=asp_file.asp19, tabIndex=26, title="asp19", noEntry;
+Edit asp11=asp_file.asp11, tabIndex=14, title="asp11";
+Edit asp12=asp_file.asp12, tabIndex=15, title="asp12";
+Edit asp13=asp_file.asp13, tabIndex=16, title="asp13", noEntry;
+Edit asp20=asp_file.asp20, tabIndex=27, title="asp20", noEntry;
+Edit asp14_1=formonly.asp14_1 type DECIMAL, tabIndex=30, title=%"asp14_1", noEntry;
+Edit asp14=asp_file.asp14, tabIndex=17, title="asp14";
+ButtonEdit asp15=asp_file.asp15, action=controlp, tabIndex=18, title="asp15", image="zoom.png";
+Edit asp16=asp_file.asp16, tabIndex=19, title="asp16", noEntry;
+Edit asp21=asp_file.asp21, tabIndex=28, title="asp21", noEntry;
+ButtonEdit asp17=asp_file.asp17, action=controlp, tabIndex=20, title="asp17", image="zoom.png";
+ButtonEdit asp22=asp_file.asp22, action=controlp, tabIndex=29, title="asp22", image="zoom.png";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aso(aso_file.aso06,aso_file.aso07,aso_file.aso08)
+SCREEN RECORD s_asp(asp_file.asp06,formonly.asp06_desc,asp_file.asp08,asp_file.asp07,asp_file.asp09,asp_file.asp10,asp_file.asp19,asp_file.asp11,asp_file.asp12,asp_file.asp13,asp_file.asp20,formonly.asp14_1,asp_file.asp14,asp_file.asp15,asp_file.asp16,asp_file.asp21,asp_file.asp17,asp_file.asp22)
+SCREEN RECORD Undefined(aso_file.aso01,aso_file.aso02,aso_file.aso03,aso_file.aso05,aso_file.aso09,aso_file.aso04,aso_file.aso11,aso_file.aso10,formonly.cnt)
+END -- INSTRUCTIONS
+

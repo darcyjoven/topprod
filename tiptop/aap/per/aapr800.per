@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr800")
+VBox VBox1
+Grid gr289
+{
+ <G group01                                                      >
+  Arrival Notify No.  [als01               ]
+  B/L Date            [als02               ]
+ <                                                               >
+ <G group02                                                      >
+  [price                                                       ]
+ <                                                               >
+
+}
+END -- gr289
+Grid gr290
+{
+[more                                                        ]
+
+}
+END -- gr290
+END -- VBox1
+END -- aapr800
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit als01=formonly.als01 type VARCHAR, tabIndex=1;
+DateEdit als02=formonly.als02 type DATE, tabIndex=2;
+Group group02:group02, text="INPUT";
+CheckBox price=formonly.price type CHAR, tabIndex=3, text="Print unit price", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.als01,formonly.als02,formonly.price,formonly.more)
+END -- INSTRUCTIONS
+

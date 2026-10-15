@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt100_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form1")
+VBox vb3
+Folder pc2
+Page Page3(text=%"Tax Code Detail")
+Table s_ruh_a
+{
+[ruh03   |ruh04     |gec02   |gec04   |ruh06   ]
+[ruh03   |ruh04     |gec02   |gec04   |ruh06   ]
+[ruh03   |ruh04     |gec02   |gec04   |ruh06   ]
+[ruh03   |ruh04     |gec02   |gec04   |ruh06   ]
+[ruh03   |ruh04     |gec02   |gec04   |ruh06   ]
+[ruh03   |ruh04     |gec02   |gec04   |ruh06   ]
+
+}
+END -- s_ruh_a
+END -- Page3
+END -- pc2
+Grid gr7
+{
+------ Rows [cnt  ] -------
+
+
+}
+END -- gr7
+END -- vb3
+END -- Form1
+
+TABLES
+ruh_file
+ATTRIBUTES
+Edit ruh03=ruh_file.ruh03, tabIndex=1, title="ruh03";
+ButtonEdit ruh04=ruh_file.ruh04, action=controlp, tabIndex=2, title="ruh04", not null, image="zoom.png";
+Edit gec02=formonly.gec02 type CHAR, tabIndex=3, title="gec02", noEntry;
+Edit gec04=formonly.gec04 type CHAR, tabIndex=4, title="gec04", noEntry;
+Edit ruh06=ruh_file.ruh06, tabIndex=5, title="ruh06", not null;
+Edit cnt=formonly.cnt type CHAR, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ruh_a(ruh_file.ruh03,ruh_file.ruh04,formonly.gec02,formonly.gec04,ruh_file.ruh06)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

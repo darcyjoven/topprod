@@ -1,0 +1,239 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt110_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglt110")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr2859
+{
+ BookNo              [g_bookno  |aba00  ]
+ Voucher#            [aba01             ]
+ Voucher Date        [aba02       ]
+ Year/Period         [aba03 ][aba0]
+ Input Date          [aba05       ]
+ Entered By          [abauser   ]
+ Applicant           [aba24     ][gen02    ]
+ Version             [aba18     ]
+
+}
+END -- gr2859
+Grid gr2860
+{
+[label1    ]               [aba16               ]
+ Source order              [aba17               ]
+ I/E Account               [aba10               ]
+ Account Name              [aag021              ]
+ SourceCode                [aba06     ]
+ Attachment Pcs            [aba21     ]
+ Memo                      [aba07                                ]
+ General No.               [aba11     ]
+
+}
+END -- gr2860
+Grid gr2861
+{
+ Print No.         [abaprno ]  [imgmksg]
+ Status            [aba20   ]  [       ]
+ [abamksg                   ]
+ Approval Level     [abasign ]
+ [aba35   ]Cashier [aba36     ]
+ Confirm           [aba19     ]
+ Confd.By          [aba37     ]
+ [abapost ]Post By [aba38     ]
+
+}
+END -- gr2861
+END -- hb1
+END -- page01
+Page page02(text="Other")
+Grid gr2862
+{
+ Balance Type         [aba31      ]
+ Note Category        [aba32      ]
+ Note No.             [aba33      ]
+ Note Date            [aba34      ]
+
+}
+END -- gr2862
+END -- page02
+Page info(text="Info")
+Grid gr2863
+{
+ Department          [abagrup   ]   Create/Modify Date  [abadate     ]
+ Last Modified by    [abamodu   ]   Data Valid Code     [abaacti   ]
+ Record Orig.        [abaoriu   ]
+ Create Dept         [abaorig   ]
+
+}
+END -- gr2863
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[abaud01                       ] userdefined_field07[abaud07        ] userdefined_field13[abaud13        ]
+                    [                              ] userdefined_field08[abaud08        ] userdefined_field14[abaud14        ]
+ userdefined_field02[abaud02        ]                userdefined_field09[abaud09        ] userdefined_field15[abaud15        ]
+ userdefined_field03[abaud03        ]                userdefined_field10[abaud10        ]
+ userdefined_field04[abaud04        ]                userdefined_field11[abaud11        ]
+ userdefined_field05[abaud05        ]                userdefined_field12[abaud12        ]
+ userdefined_field06[abaud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_abb
+{
+[abb02 |abb03       |aag02                                             |abb05    |gem02     |abb06 |abb24    |abb25               |abb07f              |abb07               |abb08    |abb35          |name09              |abb36           |name10              |abb11          |name01              |abb12           |name02              |abb13          |name03              |abb14          |name04              |abb31          |name05              |abb32          |name06              |abb33          |name07              |abb34          |name08              |abb37           |name11              |abb04                            |abbud01   |abbud02   |abbud03    |abbud04    |abbud05    |abbud06    |abbud07    |abbud08    |abbud09    |abbud10    |abbud11   |abbud12  |abbud13   |abbud14   |abbud15    ]
+[abb02 |abb03       |aag02                                             |abb05    |gem02     |abb06 |abb24    |abb25               |abb07f              |abb07               |abb08    |abb35          |name09              |abb36           |name10              |abb11          |name01              |abb12           |name02              |abb13          |name03              |abb14          |name04              |abb31          |name05              |abb32          |name06              |abb33          |name07              |abb34          |name08              |abb37           |name11              |abb04                            |abbud01   |abbud02   |abbud03    |abbud04    |abbud05    |abbud06    |abbud07    |abbud08    |abbud09    |abbud10    |abbud11   |abbud12  |abbud13   |abbud14   |abbud15    ]
+[abb02 |abb03       |aag02                                             |abb05    |gem02     |abb06 |abb24    |abb25               |abb07f              |abb07               |abb08    |abb35          |name09              |abb36           |name10              |abb11          |name01              |abb12           |name02              |abb13          |name03              |abb14          |name04              |abb31          |name05              |abb32          |name06              |abb33          |name07              |abb34          |name08              |abb37           |name11              |abb04                            |abbud01   |abbud02   |abbud03    |abbud04    |abbud05    |abbud06    |abbud07    |abbud08    |abbud09    |abbud10    |abbud11   |abbud12  |abbud13   |abbud14   |abbud15    ]
+[abb02 |abb03       |aag02                                             |abb05    |gem02     |abb06 |abb24    |abb25               |abb07f              |abb07               |abb08    |abb35          |name09              |abb36           |name10              |abb11          |name01              |abb12           |name02              |abb13          |name03              |abb14          |name04              |abb31          |name05              |abb32          |name06              |abb33          |name07              |abb34          |name08              |abb37           |name11              |abb04                            |abbud01   |abbud02   |abbud03    |abbud04    |abbud05    |abbud06    |abbud07    |abbud08    |abbud09    |abbud10    |abbud11   |abbud12  |abbud13   |abbud14   |abbud15    ]
+[abb02 |abb03       |aag02                                             |abb05    |gem02     |abb06 |abb24    |abb25               |abb07f              |abb07               |abb08    |abb35          |name09              |abb36           |name10              |abb11          |name01              |abb12           |name02              |abb13          |name03              |abb14          |name04              |abb31          |name05              |abb32          |name06              |abb33          |name07              |abb34          |name08              |abb37           |name11              |abb04                            |abbud01   |abbud02   |abbud03    |abbud04    |abbud05    |abbud06    |abbud07    |abbud08    |abbud09    |abbud10    |abbud11   |abbud12  |abbud13   |abbud14   |abbud15    ]
+[abb02 |abb03       |aag02                                             |abb05    |gem02     |abb06 |abb24    |abb25               |abb07f              |abb07               |abb08    |abb35          |name09              |abb36           |name10              |abb11          |name01              |abb12           |name02              |abb13          |name03              |abb14          |name04              |abb31          |name05              |abb32          |name06              |abb33          |name07              |abb34          |name08              |abb37           |name11              |abb04                            |abbud01   |abbud02   |abbud03    |abbud04    |abbud05    |abbud06    |abbud07    |abbud08    |abbud09    |abbud10    |abbud11   |abbud12  |abbud13   |abbud14   |abbud15    ]
+[abb02 |abb03       |aag02                                             |abb05    |gem02     |abb06 |abb24    |abb25               |abb07f              |abb07               |abb08    |abb35          |name09              |abb36           |name10              |abb11          |name01              |abb12           |name02              |abb13          |name03              |abb14          |name04              |abb31          |name05              |abb32          |name06              |abb33          |name07              |abb34          |name08              |abb37           |name11              |abb04                            |abbud01   |abbud02   |abbud03    |abbud04    |abbud05    |abbud06    |abbud07    |abbud08    |abbud09    |abbud10    |abbud11   |abbud12  |abbud13   |abbud14   |abbud15    ]
+[abb02 |abb03       |aag02                                             |abb05    |gem02     |abb06 |abb24    |abb25               |abb07f              |abb07               |abb08    |abb35          |name09              |abb36           |name10              |abb11          |name01              |abb12           |name02              |abb13          |name03              |abb14          |name04              |abb31          |name05              |abb32          |name06              |abb33          |name07              |abb34          |name08              |abb37           |name11              |abb04                            |abbud01   |abbud02   |abbud03    |abbud04    |abbud05    |abbud06    |abbud07    |abbud08    |abbud09    |abbud10    |abbud11   |abbud12  |abbud13   |abbud14   |abbud15    ]
+[abb02 |abb03       |aag02                                             |abb05    |gem02     |abb06 |abb24    |abb25               |abb07f              |abb07               |abb08    |abb35          |name09              |abb36           |name10              |abb11          |name01              |abb12           |name02              |abb13          |name03              |abb14          |name04              |abb31          |name05              |abb32          |name06              |abb33          |name07              |abb34          |name08              |abb37           |name11              |abb04                            |abbud01   |abbud02   |abbud03    |abbud04    |abbud05    |abbud06    |abbud07    |abbud08    |abbud09    |abbud10    |abbud11   |abbud12  |abbud13   |abbud14   |abbud15    ]
+[abb02 |abb03       |aag02                                             |abb05    |gem02     |abb06 |abb24    |abb25               |abb07f              |abb07               |abb08    |abb35          |name09              |abb36           |name10              |abb11          |name01              |abb12           |name02              |abb13          |name03              |abb14          |name04              |abb31          |name05              |abb32          |name06              |abb33          |name07              |abb34          |name08              |abb37           |name11              |abb04                            |abbud01   |abbud02   |abbud03    |abbud04    |abbud05    |abbud06    |abbud07    |abbud08    |abbud09    |abbud10    |abbud11   |abbud12  |abbud13   |abbud14   |abbud15    ]
+
+
+
+}
+END -- s_abb
+Grid gr2864
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------                      Debit Amount        [aba08               ]                          Credit Amount       [aba09               ]
+
+
+
+
+}
+END -- gr2864
+END -- vb4
+END -- aglt110
+
+TABLES
+abb_file,
+aba_file
+ATTRIBUTES
+Edit g_bookno=formonly.g_bookno type CHAR, tabIndex=1;
+Edit aba00=aba_file.aba00, tabIndex=2;
+ButtonEdit aba01=aba_file.aba01, action=controlp, tabIndex=3, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Documents";
+DateEdit aba02=aba_file.aba02, tabIndex=4, not null, required;
+Edit aba03=aba_file.aba03, tabIndex=5, noEntry;
+Edit aba0=aba_file.aba04, tabIndex=6, noEntry;
+DateEdit aba05=aba_file.aba05, tabIndex=7, noEntry;
+Edit abauser=aba_file.abauser, tabIndex=8, noEntry;
+ButtonEdit aba24=aba_file.aba24, action=controlp, tabIndex=9, not null, required, image="zoom";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=10, not null, required;
+Edit aba18=aba_file.aba18, tabIndex=11, noEntry, comment="Enter Version!";
+Label label1:Label1, text=%"Set of Book";
+Edit aba16=aba_file.aba16, tabIndex=12;
+Edit aba17=aba_file.aba17, tabIndex=13, noEntry;
+ButtonEdit aba10=aba_file.aba10, action=controlp, tabIndex=14, image="zoom", picture="XXXXXXXXXXXXXXXX", comment="<^P>Qry Account # <^Y>Create Account  ";
+Edit aag021=formonly.aag021 type CHAR, tabIndex=15, noEntry;
+Edit aba06=aba_file.aba06, tabIndex=16, noEntry, not null, required;
+Edit aba21=formonly.aba21 type SMALLINT, tabIndex=17;
+Edit aba07=aba_file.aba07, tabIndex=18;
+Edit aba11=aba_file.aba11, tabIndex=19;
+Edit abaprno=aba_file.abaprno, tabIndex=20, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 41 pixels, height = 41 pixels;
+ComboBox aba20=aba_file.aba20, tabIndex=21, noEntry, not null, required, items=(("0", "Open"),("1", "Approved"),("S", "Approving"),("R", "Approving Return"),("W", "Cancel"));
+CheckBox abamksg=aba_file.abamksg, tabIndex=22, text="Approve", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit abasign=aba_file.abasign, tabIndex=23, noEntry;
+CheckBox aba35=aba_file.aba35, tabIndex=24, text="Cashier", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit aba36=aba_file.aba36, tabIndex=25, noEntry;
+ComboBox aba19=aba_file.aba19, tabIndex=26, noEntry, not null, required, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+Edit aba37=aba_file.aba37, tabIndex=27, noEntry;
+CheckBox abapost=aba_file.abapost, tabIndex=28, text="Posting Code", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit aba38=aba_file.aba38, tabIndex=29, noEntry;
+Edit aba31=aba_file.aba31, tabIndex=30;
+Edit aba32=aba_file.aba32, tabIndex=31;
+Edit aba33=aba_file.aba33, tabIndex=32;
+DateEdit aba34=aba_file.aba34, tabIndex=33;
+Edit abagrup=aba_file.abagrup, tabIndex=34, noEntry;
+DateEdit abadate=aba_file.abadate, tabIndex=35, noEntry;
+Edit abamodu=aba_file.abamodu, tabIndex=36, noEntry;
+Edit abaacti=aba_file.abaacti, tabIndex=37, noEntry, upShift;
+Edit abaoriu=aba_file.abaoriu, tabIndex=38, noEntry;
+Edit abaorig=aba_file.abaorig, tabIndex=39, noEntry;
+TextEdit abaud01=aba_file.abaud01, tabIndex=40, stretch=NONE;
+Edit abaud07=aba_file.abaud07, tabIndex=46;
+DateEdit abaud13=aba_file.abaud13, tabIndex=52;
+Edit abaud08=aba_file.abaud08, tabIndex=47;
+DateEdit abaud14=aba_file.abaud14, tabIndex=53;
+Edit abaud02=aba_file.abaud02, tabIndex=41;
+Edit abaud09=aba_file.abaud09, tabIndex=48;
+DateEdit abaud15=aba_file.abaud15, tabIndex=54;
+Edit abaud03=aba_file.abaud03, tabIndex=42;
+Edit abaud10=aba_file.abaud10, tabIndex=49;
+Edit abaud04=aba_file.abaud04, tabIndex=43;
+Edit abaud11=aba_file.abaud11, tabIndex=50;
+Edit abaud05=aba_file.abaud05, tabIndex=44;
+Edit abaud12=aba_file.abaud12, tabIndex=51;
+Edit abaud06=aba_file.abaud06, tabIndex=45;
+Edit abb02=abb_file.abb02, tabIndex=55, title="Line#", not null, required, comment="<^T>Contra Details <^U> All plus 1 from current Line <^O>Copy Previous Row Body <^E>Cost Apportionment";
+ButtonEdit abb03=abb_file.abb03, action=controlp, tabIndex=56, title="Account No", not null, required, image="zoom", comment="<^P>Qry Account # <^Y>Create Account  ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=57, title="Account Title", noEntry;
+ButtonEdit abb05=abb_file.abb05, action=controlp, tabIndex=58, title="Dept No.", image="zoom", comment="<^P>Qry Department No. <^Y>Create Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=59, title="Dept Name", noEntry;
+ComboBox abb06=abb_file.abb06, tabIndex=60, title="Dr/Cr", not null, required, queryEditable, comment=" 1:Debit , 2:Credit", items=(("1", %"Debit"),("2", %"Credit"));
+ButtonEdit abb24=abb_file.abb24, action=controlp, tabIndex=61, title="Currency", not null, required, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit abb25=abb_file.abb25, action=controlp, tabIndex=62, title="Ex. Rate", not null, required, image="zoom";
+Edit abb07f=formonly.abb07f type CHAR, tabIndex=63, title="O.C.Amount", not null, required;
+Edit abb07=formonly.abb07 type CHAR, tabIndex=64, title="Amount", not null, required;
+ButtonEdit abb08=abb_file.abb08, action=controlp, tabIndex=65, title="Project#", not null, required, image="zoom", comment="Enter project number, <^P>Qry Project No.";
+ButtonEdit abb35=abb_file.abb35, action=controlp, tabIndex=66, title="Trans.Code 9", image="zoom", comment="Enter Transaction Code-9, <^P>Qry Transaction Code <^Y>Create transaction code";
+Edit name09=formonly.name09 type CHAR, tabIndex=67, title="name09", noEntry;
+ButtonEdit abb36=abb_file.abb36, action=controlp, tabIndex=68, title="Trans.Code 10", image="zoom", comment="Enter Transaction Code-10, <^P>Qry Transaction Code <^Y>Create transaction code";
+Edit name10=formonly.name10 type CHAR, tabIndex=69, title="name10", noEntry;
+ButtonEdit abb11=abb_file.abb11, action=controlp, tabIndex=70, title="Trans.Code 1", image="zoom", comment="Enter Transaction Code-1, <^P>Qry Transaction Code <^Y>Create transaction code";
+Edit name01=formonly.name01 type CHAR, tabIndex=71, title="name01", noEntry;
+ButtonEdit abb12=abb_file.abb12, action=controlp, tabIndex=72, title="Trans.Code 2", image="zoom", comment="Enter Transaction Code-2, <^P>Qry Transaction Code <^Y>Create transaction code";
+Edit name02=formonly.name02 type CHAR, tabIndex=73, title="name02", noEntry;
+ButtonEdit abb13=abb_file.abb13, action=controlp, tabIndex=74, title="Trans.Code 3", image="zoom", comment="Enter Transaction Code-3, <^P>Qry Transaction Code <^Y>Create transaction code";
+Edit name03=formonly.name03 type CHAR, tabIndex=75, title="name03", noEntry;
+ButtonEdit abb14=abb_file.abb14, action=controlp, tabIndex=76, title="Trans.Code 4", image="zoom", comment="Enter Transaction Code-4, <^P>Qry Transaction Code <^Y>Create transaction code";
+Edit name04=formonly.name04 type CHAR, tabIndex=77, title="name04", noEntry;
+ButtonEdit abb31=abb_file.abb31, action=controlp, tabIndex=78, title="Trans.Code 5", image="zoom", comment="Enter Transaction Code-5, <^P>Qry Transaction Code <^Y>Create transaction code";
+Edit name05=formonly.name05 type CHAR, tabIndex=79, title="name05", noEntry;
+ButtonEdit abb32=abb_file.abb32, action=controlp, tabIndex=80, title="Trans.Code 6", image="zoom", comment="Enter Transaction Code-6, <^P>Qry Transaction Code <^Y>Create transaction code";
+Edit name06=formonly.name06 type CHAR, tabIndex=81, title="name06", noEntry;
+ButtonEdit abb33=abb_file.abb33, action=controlp, tabIndex=82, title="Trans.Code 7", image="zoom", comment="Enter Transaction Code-7, <^P>Qry Transaction Code <^Y>Create transaction code";
+Edit name07=formonly.name07 type CHAR, tabIndex=83, title="name07", noEntry;
+ButtonEdit abb34=abb_file.abb34, action=controlp, tabIndex=84, title="Trans.Code 8", image="zoom", comment="Enter Transaction Code-8, <^P>Qry Transaction Code <^Y>Create transaction code";
+Edit name08=formonly.name08 type CHAR, tabIndex=85, title="name08", noEntry;
+ButtonEdit abb37=abb_file.abb37, action=controlp, tabIndex=86, title="Trans.Code 11", image="zoom", comment="Enter Affiliate Transaction Code, <^P>Qry Transaction Code <^Y>Create transaction code";
+Edit name11=formonly.name11 type CHAR, tabIndex=87, title="name11", noEntry;
+ButtonEdit abb04=abb_file.abb04, action=controlp, tabIndex=88, title="Memo", image="zoom", comment="<^Y>Create Voucher Extra Memo<^P>Qry Frequently Used Memo<.####>Dir Access Memo<^O>Copy Prev.Memo";
+TextEdit abbud01=abb_file.abbud01, tabIndex=89, title="abbud01", stretch=NONE;
+Edit abbud02=abb_file.abbud02, tabIndex=90, title="abbud02";
+Edit abbud03=abb_file.abbud03, tabIndex=91, title="abbud03";
+Edit abbud04=abb_file.abbud04, tabIndex=92, title="abbud04";
+Edit abbud05=abb_file.abbud05, tabIndex=93, title="abbud05";
+Edit abbud06=abb_file.abbud06, tabIndex=94, title="abbud06";
+Edit abbud07=abb_file.abbud07, tabIndex=95, title="abbud07";
+Edit abbud08=abb_file.abbud08, tabIndex=96, title="abbud08";
+Edit abbud09=abb_file.abbud09, tabIndex=97, title="abbud09";
+Edit abbud10=abb_file.abbud10, tabIndex=98, title="abbud10";
+Edit abbud11=abb_file.abbud11, tabIndex=99, title="abbud11";
+Edit abbud12=abb_file.abbud12, tabIndex=100, title="abbud12";
+Edit abbud13=abb_file.abbud13, tabIndex=101, title="abbud13";
+Edit abbud14=abb_file.abbud14, tabIndex=102, title="abbud14";
+Edit abbud15=abb_file.abbud15, tabIndex=103, title="abbud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=104, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=105, noEntry;
+Edit aba08=aba_file.aba08, tabIndex=106;
+Edit aba09=aba_file.aba09, tabIndex=107;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abb(abb_file.abb02,abb_file.abb04,abb_file.abb03,formonly.aag02,abb_file.abb05,formonly.gem02,abb_file.abb06,abb_file.abb24,abb_file.abb25,formonly.abb07f,formonly.abb07,abb_file.abb08,abb_file.abb35,formonly.name09,abb_file.abb36,formonly.name10,abb_file.abb11,formonly.name01,abb_file.abb12,formonly.name02,abb_file.abb13,formonly.name03,abb_file.abb14,formonly.name04,abb_file.abb31,formonly.name05,abb_file.abb32,formonly.name06,abb_file.abb33,formonly.name07,abb_file.abb34,formonly.name08,abb_file.abb37,formonly.name11,abb_file.abbud01,abb_file.abbud02,abb_file.abbud03,abb_file.abbud04,abb_file.abbud05,abb_file.abbud06,abb_file.abbud07,abb_file.abbud08,abb_file.abbud09,abb_file.abbud10,abb_file.abbud11,abb_file.abbud12,abb_file.abbud13,abb_file.abbud14,abb_file.abbud15)
+SCREEN RECORD Undefined(formonly.g_bookno,aba_file.aba00,aba_file.aba01,aba_file.aba02,aba_file.aba03,aba_file.aba04,aba_file.aba05,aba_file.abauser,aba_file.aba24,formonly.gen02,aba_file.aba18,aba_file.aba10,formonly.aag021,aba_file.aba06,formonly.aba21,aba_file.aba07,aba_file.aba11,aba_file.abaprno,formonly.imgmksg,aba_file.aba20,aba_file.abamksg,aba_file.abasign,aba_file.aba35,aba_file.aba36,aba_file.aba19,aba_file.aba37,aba_file.abapost,aba_file.aba38,aba_file.aba31,aba_file.aba32,aba_file.aba33,aba_file.aba34,aba_file.abagrup,aba_file.abadate,aba_file.abamodu,aba_file.abaacti,aba_file.abaoriu,aba_file.abaorig,aba_file.abaud01,aba_file.abaud07,aba_file.abaud13,aba_file.abaud08,aba_file.abaud14,aba_file.abaud02,aba_file.abaud09,aba_file.abaud15,aba_file.abaud03,aba_file.abaud10,aba_file.abaud04,aba_file.abaud11,aba_file.abaud05,aba_file.abaud12,aba_file.abaud06,formonly.cnt,formonly.cn2,aba_file.aba08,aba_file.aba09,aba_file.aba17,aba_file.aba16)
+END -- INSTRUCTIONS
+

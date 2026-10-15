@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi002")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+VBox VBox2
+Grid Grid1
+{
+ <G group01                                                                                   >
+  Goods No.           [cnx01          ]                            [cnxconf         ][imgmksg]
+  Part Name           [cob02                                   ]                     [       ]
+  Specification       [cob021                                  ]
+  Register Book No.   [cnx02          ]
+  Year                [cnx03          ]
+  Month               [cnx04          ]
+  Unit                [cnx05          ]
+ <                                                                                            >
+
+}
+END -- Grid1
+HBox HBox1
+Grid Grid2
+{
+ <G group02                                                                                   >
+  Direct Export       [cnx06          ]
+  Transfer/Export     [cnx07          ]
+  Local Sales         [cnx08          ]
+  Advance Application [cnx09          ]
+ <                                                                                            >
+
+
+}
+END -- Grid2
+END -- HBox1
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid Grid3
+{
+ Record Owner        [cnxuser   ] Last Modified by    [cnxmodu   ] Data Valid Code     [cnxacti   ]
+ Department          [cnxgrup   ] Create/Modify Date  [cnxdate   ]
+ Record Orig.        [cnxoriu   ]
+ Dept Orig.          [cnxorig   ]
+}
+END -- Grid3
+END -- info
+END -- Folder1
+Grid Grid4
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- Grid4
+END -- VBox1
+END -- acoi002
+
+TABLES
+cnx_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit cnx01=cnx_file.cnx01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Goods No.";
+CheckBox cnxconf=cnx_file.cnxconf, tabIndex=2, text="Confirm", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Enter Y or N ";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit cob02=formonly.cob02 type CHAR, tabIndex=4, noEntry;
+Edit cob021=formonly.cob021 type CHAR, tabIndex=5, noEntry;
+ButtonEdit cnx02=cnx_file.cnx02, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Register Book No.";
+Edit cnx03=cnx_file.cnx03, tabIndex=7, not null, required;
+Edit cnx04=cnx_file.cnx04, tabIndex=8, not null, required;
+ButtonEdit cnx05=cnx_file.cnx05, action=controlp, tabIndex=9, noEntry, image="zoom";
+Group group02:group02, text="Application";
+Edit cnx06=cnx_file.cnx06, tabIndex=10, not null, required;
+Edit cnx07=cnx_file.cnx07, tabIndex=11, not null, required;
+Edit cnx08=cnx_file.cnx08, tabIndex=12, not null, required;
+Edit cnx09=cnx_file.cnx09, tabIndex=13, not null, required;
+Edit cnxuser=cnx_file.cnxuser, tabIndex=14, noEntry;
+Edit cnxmodu=cnx_file.cnxmodu, tabIndex=15, noEntry;
+Edit cnxacti=cnx_file.cnxacti, tabIndex=16, noEntry, upShift;
+Edit cnxgrup=cnx_file.cnxgrup, tabIndex=17, noEntry;
+Edit cnxdate=cnx_file.cnxdate, tabIndex=18, noEntry;
+Edit cnxoriu=cnx_file.cnxoriu, tabIndex=501, noEntry;
+Edit cnxorig=cnx_file.cnxorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cnx_file.cnx01,cnx_file.cnxconf,formonly.imgmksg,formonly.cob02,formonly.cob021,cnx_file.cnx02,cnx_file.cnx03,cnx_file.cnx04,cnx_file.cnx05,cnx_file.cnx06,cnx_file.cnx07,cnx_file.cnx08,cnx_file.cnx09,cnx_file.cnxuser,cnx_file.cnxmodu,cnx_file.cnxacti,cnx_file.cnxgrup,cnx_file.cnxdate,cnx_file.cnxoriu,cnx_file.cnxorig,formonly.cnt)
+END -- INSTRUCTIONS
+

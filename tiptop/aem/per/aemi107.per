@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemi107.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemi107")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr1757
+{
+ Serial No.                    [fii01                         ]
+ Model                         [fii02                         ]
+ Security Illustration         [fii03                                   ]
+                               [                                        ]
+                               [                                        ]
+                               [                                        ]
+                               [                                        ]
+                               [                                        ]
+}
+END -- gr1757
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr1758
+{
+  Record Owner        [fiiuser   ]   Last Modified by    [fiimodu   ]   Data Valid Code     [fiiacti   ]
+  Department          [fiigrup   ]   Create/Modify Date  [fiidate   ]
+  Record Orig.        [fiioriu   ]
+  Dept Orig.          [fiiorig   ]
+}
+END -- gr1758
+END -- info
+END -- folder01
+Table s_fjd
+{
+[fjd03      |fjd04                                                            ]
+[fjd03      |fjd04                                                            ]
+[fjd03      |fjd04                                                            ]
+[fjd03      |fjd04                                                            ]
+[fjd03      |fjd04                                                            ]
+[fjd03      |fjd04                                                            ]
+[fjd03      |fjd04                                                            ]
+[fjd03      |fjd04                                                            ]
+[fjd03      |fjd04                                                            ]
+[fjd03      |fjd04                                                            ]
+
+}
+END -- s_fjd
+Grid gr1759
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1759
+END -- VBox1
+END -- aemi107
+
+TABLES
+fjd_file,
+fii_file
+ATTRIBUTES
+Edit fii01=fii_file.fii01, tabIndex=1, not null, required;
+Edit fii02=fii_file.fii02, tabIndex=2, not null, required;
+TextEdit fii03=fii_file.fii03, tabIndex=3, stretch=NONE;
+Edit fiiuser=fii_file.fiiuser, tabIndex=4, noEntry;
+Edit fiimodu=fii_file.fiimodu, tabIndex=5, noEntry;
+Edit fiiacti=fii_file.fiiacti, tabIndex=6, noEntry, upShift;
+Edit fiigrup=fii_file.fiigrup, tabIndex=7, noEntry;
+DateEdit fiidate=fii_file.fiidate, tabIndex=8, noEntry;
+Edit fiioriu=fii_file.fiioriu, tabIndex=501, noEntry;
+Edit fiiorig=fii_file.fiiorig, tabIndex=502, noEntry;
+Edit fjd03=fjd_file.fjd03, tabIndex=9, title="Line No.", not null, required;
+Edit fjd04=fjd_file.fjd04, tabIndex=10, title="File Access Path", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fjd(fjd_file.fjd03,fjd_file.fjd04)
+SCREEN RECORD Undefined(fii_file.fii01,fii_file.fii02,fii_file.fii03,fii_file.fiiuser,fii_file.fiimodu,fii_file.fiiacti,fii_file.fiigrup,fii_file.fiidate,fii_file.fiioriu,fii_file.fiiorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

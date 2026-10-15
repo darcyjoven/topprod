@@ -1,0 +1,99 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsq110.080710.per created 2010-04-26T11:15:02
+-- File created from apsq110.080710.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsq110")
+-- GRID
+--  GRID
+--  HBOX
+--  PAGE
+--  GRID
+--  PAGE
+--  FOLDER
+--  TABLE
+--  GRID
+--  VBOX
+--  LAYOUT
+-- 
+
+  VBOX vb3_
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        GRID gr878
+        {
+         APS Version [aa0                       ]      Save Version [aa1       ]
+
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    GRID gr881
+    {
+    [aa2            ]
+    [               ]
+
+    [aa3            ]  [aa4             ]   [aa5             ]   [aa6            ]    [aa7            ]   [aa8          ]
+    [               ]->[                ]-> [                ] ->[               ] -> [               ] ->[             ]
+     <G gb1          >  <G gb1_1        >    <G gb1_2        >   <G gb1_3        >    <G gb1_4        >    <G gb1_5       >
+     [aa9           ]   [ab0           ]     [ab1           ]    [ab2           ]     [ab3           ]     [ab4           ]
+
+
+
+
+
+
+
+
+
+
+
+     <               >  <               >    <               >   <               >    <               >    <              >
+
+
+
+
+
+
+    }
+    END -- GRID
+    GRID gr881_1
+    {
+      ---------- Rows [ab5   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES vzu_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=vzu_file.vzu01, ACTION=controlp, IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=9;
+  EDIT aa1=vzu_file.vzu02, NOT NULL, REQUIRED, TABINDEX=10;
+  BUTTON aa2 : bt01, TEXT="Restart";
+  BUTTON aa3 : bt10, TEXT="TP to Temp", IMAGE="http://10.40.40.30/cgi-bin/fglccgi/top3o/tiptop/pic/greenLight.jpg";
+  BUTTON aa4 : bt20, TEXT="Temp to APS", IMAGE="http://10.40.40.30/cgi-bin/fglccgi/top3o/tiptop/pic/greenLight.jpg";
+  BUTTON aa5 : bt30, TEXT="APS planning", IMAGE="http://10.40.40.30/cgi-bin/fglccgi/top3o/tiptop/pic/greenLight.jpg";
+  BUTTON aa6 : bt40, TEXT="Plan confirm", IMAGE="http://10.40.40.30/cgi-bin/fglccgi/top3o/tiptop/pic/greenLight.jpg";
+  BUTTON aa7 : bt50, TEXT="APS to Temp", IMAGE="http://10.40.40.30/cgi-bin/fglccgi/top3o/tiptop/pic/greenLight.jpg";
+  BUTTON aa8 : bt60, TEXT="APS  adjustment", IMAGE="http://10.40.40.30/cgi-bin/fglccgi/top3o/tiptop/pic/greenLight.jpg";
+  GROUP gb1 : gb1;
+  GROUP gb1_1 : gb1_1;
+  GROUP gb1_2 : gb1_2;
+  GROUP gb1_3 : gb1_3;
+  GROUP gb1_4 : gb1_4;
+  GROUP gb1_5 : gb1_5;
+  LABEL aa9=FORMONLY.text10;
+  LABEL ab0=FORMONLY.text20;
+  LABEL ab1=FORMONLY.text30;
+  LABEL ab2=FORMONLY.text40;
+  LABEL ab3=FORMONLY.text50;
+  LABEL ab4=FORMONLY.text60;
+  EDIT ab5=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=11;
+END

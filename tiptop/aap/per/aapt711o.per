@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt711o.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt711o")
+VBox vb7
+Folder pc59
+Page page01(text="Page01")
+Grid gr506
+{
+ <G gb375                                                                          >
+  L/C Plant           [ala97     ]             L/C Confirm [al]
+  APO No.             [ala01               ]   Close       [a1]
+  L/C Date            [ala08       ]           Pay Confirm [a2]
+  Currency            [ala20     ]
+  Exchange Rate       [ala51     ]
+  F.C L/C  $          [ala23     ]
+  Down Payment %      [ala21     ] %
+  F.C Margin          [ala34      ]
+ <                                                                                 >
+ <G gb376                                     ><G gb377                            >
+  Margin Pay.Method   [ala80                ]   CIB Trn.Code    [a3]  [nmc02     ]
+  Bank Pay F.C        [ala81      ]             Payt.Voucher    [ala74           ]
+  Cate                [ala82     ]              Bank Pay H.C    [ala91      ]
+  Outward Acct.ExRt   [ala84     ]              Cate            [a4]
+  H.C Margin          [ala85     ]              Drawing Slip No.[ala931            ]
+                                                Check No.       [ala932    ]
+                                                Check.Book No.  [a5]
+                                                Pay.ExchangeRate[ala94     ]
+                                                H.C Margin      [ala951    ]
+ <                                            > H.C Charge      [ala952    ]
+ <G gb378                                     > H.C Post. & Tel [ala953    ]
+  Total Sum           [tot       ]              Total           [ala95     ]
+ <                                            ><                                   >
+
+}
+END -- gr506
+END -- page01
+END -- pc59
+Grid gr507
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr507
+END -- vb7
+END -- aapt711o
+
+TABLES
+ala_file
+ATTRIBUTES
+Group gb375:gb375, text="group01";
+Edit ala97=ala_file.ala97, tabIndex=1;
+Edit al=ala_file.alafirm, tabIndex=2, noEntry, upShift;
+Edit ala01=ala_file.ala01, tabIndex=3, upShift;
+Edit a1=ala_file.alaclos, tabIndex=4, noEntry, upShift;
+DateEdit ala08=ala_file.ala08, tabIndex=5, comment="No Blank Field";
+Edit a2=ala_file.ala78, tabIndex=6, noEntry, upShift;
+Edit ala20=ala_file.ala20, tabIndex=7;
+Edit ala51=ala_file.ala51, tabIndex=8;
+Edit ala23=ala_file.ala23, tabIndex=9;
+Edit ala21=ala_file.ala21, tabIndex=10;
+Edit ala34=ala_file.ala34, tabIndex=11;
+Group gb376:gb376, text="group02";
+RadioGroup ala80=ala_file.ala80, tabIndex=12, items=(("0", "Home Currency"),("1", "Original Currency"));
+ButtonEdit ala81=ala_file.ala81, action=controlp, tabIndex=13, image="zoom", comment="<^P> Qry Bank";
+Edit ala82=ala_file.ala82, tabIndex=14, comment="Enter Bank Account Cate 1.Ck 2.Savg 0.Othr";
+Edit ala84=ala_file.ala84, tabIndex=15;
+Edit ala85=ala_file.ala85, tabIndex=16;
+Group gb377:gb377, text="group03";
+ButtonEdit a3=ala_file.ala96, action=controlp, tabIndex=17, image="zoom", comment="<^P>Qry Bnak Transaction Code";
+Edit nmc02=formonly.nmc02 type VARCHAR, tabIndex=18, noEntry;
+Edit ala74=ala_file.ala74, tabIndex=19, upShift;
+ButtonEdit ala91=ala_file.ala91, action=controlp, tabIndex=20, image="zoom", comment="<^P> Qry Bank";
+Edit a4=ala_file.ala92, tabIndex=21, noEntry, comment="Ent Bank Ac Cate 1.Ck 2.Savg 0.Othr";
+ButtonEdit ala931=ala_file.ala931, action=controlp, tabIndex=22, image="zoom", comment="If Auto Draw.Slip#,Enter 3-Dgt Draw.Slip ,<^P> Qry Doc";
+Edit ala932=ala_file.ala932, tabIndex=23;
+Edit a5=ala_file.ala76, tabIndex=24;
+Edit ala94=ala_file.ala94, tabIndex=25;
+Edit ala951=ala_file.ala951, tabIndex=26;
+Edit ala952=ala_file.ala952, tabIndex=27;
+Edit ala953=ala_file.ala953, tabIndex=28;
+Edit ala95=ala_file.ala95, tabIndex=29;
+Group gb378:gb378, text="group02";
+Edit tot=formonly.tot type CHAR, tabIndex=30;
+Edit cnt=formonly.cnt type CHAR, tabIndex=31, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ala_file.ala97,ala_file.alafirm,ala_file.ala01,ala_file.alaclos,ala_file.ala08,ala_file.ala78,ala_file.ala20,ala_file.ala51,ala_file.ala23,ala_file.ala21,ala_file.ala34,ala_file.ala80,ala_file.ala81,ala_file.ala82,ala_file.ala84,ala_file.ala85,ala_file.ala96,formonly.nmc02,ala_file.ala74,ala_file.ala91,ala_file.ala92,ala_file.ala931,ala_file.ala932,ala_file.ala76,ala_file.ala94,ala_file.ala951,ala_file.ala952,ala_file.ala953,ala_file.ala95,formonly.tot,formonly.cnt)
+END -- INSTRUCTIONS
+

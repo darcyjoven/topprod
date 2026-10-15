@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr201")
+VBox vb2
+Grid gr621
+{
+ <G group01                                                                     >
+  PBI NO.             [g_sfc01             ]
+ <                                                                              >
+ <G group02                                                                                                        >
+  Work/Order No.      [sfb01               ]  [sfb01               ]  [sfb01               ]  [sfb01               ]
+                      [sfb01               ]  [sfb01               ]  [sfb01               ]  [sfb01               ]
+                      [sfb01               ]  [sfb01               ]  [sfb01               ]  [sfb01               ]
+                      [sfb01               ]  [sfb01               ]  [sfb01               ]  [sfb01               ]
+                      [sfb01               ]  [sfb01               ]  [sfb01               ]  [sfb01               ]
+ <                                                                                                                 >
+}
+END -- gr621
+Group QBE(text="QBE")
+Grid gr4
+{
+
+ Task No.        [sfa08     ]
+ W/H Keeper      [ima23     ]
+
+}
+END -- gr4
+END -- QBE
+Group group03(text="INPUT")
+Grid gr622
+{
+ <G group04                                    ><G group05                   >
+ [order_sw               ]                      [sub_flag                  ]
+ [qvl_flag               ]
+ <                                             ><                            >
+}
+END -- gr622
+END -- group03
+Grid gr623
+{
+[more                                         ]
+
+
+}
+END -- gr623
+END -- vb2
+END -- asfr201
+
+TABLES
+sfb_file,
+sfa_file,
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit g_sfc01=formonly.g_sfc01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Group group02:group02;
+Edit sfb01=sfb_file.sfb01, tabIndex=2, comment="<^Y>Auto Generate";
+Edit sfa08=sfa_file.sfa08, tabIndex=3;
+Edit ima23=ima_file.ima23, tabIndex=4, upShift;
+Group group04:group04;
+CheckBox order_sw=formonly.order_sw type CHAR, tabIndex=5, text="Sequence by W/H Keeper?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox qvl_flag=formonly.qvl_flag type CHAR, tabIndex=6, text="Print QVL.Data  ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05, text="SUB Item Method";
+RadioGroup sub_flag=formonly.sub_flag type CHAR, tabIndex=7, items=(("1", "None"),("2", "All Print"),("3", "Print if Inventory Short"));
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_no(sfb_file.sfb01)
+SCREEN RECORD Undefined(formonly.g_sfc01,sfa_file.sfa08,ima_file.ima23,formonly.order_sw,formonly.qvl_flag,formonly.sub_flag,formonly.more)
+END -- INSTRUCTIONS
+

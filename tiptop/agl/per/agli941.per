@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli941.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli941")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr2466
+{
+ Book No.            [giw00     ]
+ Group Code          [giw01     ]
+ Group Desc          [giq02                  ]
+}
+END -- gr2466
+END -- page01
+END -- folder01
+Table s_giw
+{
+[giw02                     |aag02                                             |giw03      |giw04    ]
+[giw02                     |aag02                                             |giw03      |giw04    ]
+[giw02                     |aag02                                             |giw03      |giw04    ]
+[giw02                     |aag02                                             |giw03      |giw04    ]
+[giw02                     |aag02                                             |giw03      |giw04    ]
+[giw02                     |aag02                                             |giw03      |giw04    ]
+[giw02                     |aag02                                             |giw03      |giw04    ]
+[giw02                     |aag02                                             |giw03      |giw04    ]
+[giw02                     |aag02                                             |giw03      |giw04    ]
+[giw02                     |aag02                                             |giw03      |giw04    ]
+
+}
+END -- s_giw
+Grid gr2467
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2467
+END -- vb2
+END -- agli941
+
+TABLES
+aag_file,
+giw_file
+ATTRIBUTES
+ButtonEdit giw00=giw_file.giw00, action=controlp, tabIndex=9, image="zoom", comment="<^P>Query Group Code";
+ButtonEdit giw01=giw_file.giw01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Query Group Code";
+Edit giq02=formonly.giq02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit giw02=giw_file.giw02, action=controlp, tabIndex=3, title="Account No.", not null, required, image="zoom", comment="<^P>Qry Account # ";
+Edit aag02=aag_file.aag02, tabIndex=4, title="Account Title", noEntry;
+ComboBox giw03=giw_file.giw03, tabIndex=5, title="Add/Deduct", not null, required, queryEditable, items=(("+", %"Total(+)"),("-", %"Total(-)"));
+ComboBox giw04=giw_file.giw04, tabIndex=6, title="Tran.Type", not null, required, queryEditable, items=(("1", "Variation"),("2", "Beginning of Period"),("4", "Manually"),("5", "Debit Transaction"),("6", "Credit Transaction"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_giw(giw_file.giw02,aag_file.aag02,giw_file.giw03,giw_file.giw04)
+SCREEN RECORD Undefined(giw_file.giw00,giw_file.giw01,formonly.giq02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

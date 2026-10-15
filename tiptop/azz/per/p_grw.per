@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_grw.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page main(text=%"main")
+Grid Grid1
+{
+[label1      ] [gdw01             ][gaz03                           ]
+[label2       ][gdw02             ]
+[label3      ] [gdw05             ][zx02                            ]
+[label4       ][gdw04             ][zw02                            ]
+[label5  ]     [gdw06          ]
+[gdw03                               ]
+[label9      ] [gdw16     ]
+[gdw14        ][label8             |gdw15              ]
+
+}
+END -- Grid1
+END -- main
+END -- Folder1
+Table Table1
+{
+[gdw07   |gdw09       |gdw17   |gfs03     |gdw11   |gdw12   |gdw13   |gdwdate |gdwgrup |gdwmodu |gdworig |gdwuser |gdworiu ]
+[gdw07   |gdw09       |gdw17   |gfs03     |gdw11   |gdw12   |gdw13   |gdwdate |gdwgrup |gdwmodu |gdworig |gdwuser |gdworiu ]
+[gdw07   |gdw09       |gdw17   |gfs03     |gdw11   |gdw12   |gdw13   |gdwdate |gdwgrup |gdwmodu |gdworig |gdwuser |gdworiu ]
+[gdw07   |gdw09       |gdw17   |gfs03     |gdw11   |gdw12   |gdw13   |gdwdate |gdwgrup |gdwmodu |gdworig |gdwuser |gdworiu ]
+[gdw07   |gdw09       |gdw17   |gfs03     |gdw11   |gdw12   |gdw13   |gdwdate |gdwgrup |gdwmodu |gdworig |gdwuser |gdworiu ]
+}
+END -- Table1
+Grid Grid2
+{
+ ----------[labe][cnt   ][l][cn2   ] ----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+gdw_file
+ATTRIBUTES
+Label label1:Label1, text=%"Program Code";
+ButtonEdit gdw01=gdw_file.gdw01, action=controlp, tabIndex=1, not null, required, image="zoom", downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=7, noEntry;
+Label label2:Label2, text=%"Template Code";
+Edit gdw02=gdw_file.gdw02, tabIndex=2;
+Label label3:Label3, text=%"Program User";
+ButtonEdit gdw05=gdw_file.gdw05, action=controlp, tabIndex=3, not null, required, image="zoom", scroll;
+Edit zx02=formonly.zx02 type CHAR, tabIndex=8, noEntry;
+Label label4:Label4, text=%"Program Class";
+ButtonEdit gdw04=gdw_file.gdw04, action=controlp, tabIndex=4, not null, required, image="zoom", scroll;
+Edit zw02=formonly.zw02 type CHAR, tabIndex=9, noEntry;
+Label label5:Label5, text=%"Industry";
+ComboBox gdw06=gdw_file.gdw06, tabIndex=5;
+CheckBox gdw03=gdw_file.gdw03, tabIndex=6, default = "N", text="Editing a Customerlized Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label9:Label9, text=%"Time Out";
+Edit gdw16=gdw_file.gdw16, tabIndex=26;
+CheckBox gdw14=gdw_file.gdw14, tabIndex=25, default = "N", text="Print Approbation", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label8:Label8, text=%"Location of Print Approbation";
+RadioGroup gdw15=gdw_file.gdw15, tabIndex=24, default = "1", noEntry, not null, orientation=horizontal, items=(("1", "Every Page"),("2", "Last Page"));
+Edit gdw07=gdw_file.gdw07, tabIndex=10, title=%"No.";
+Phantom gdw_file.gdw08;
+Edit gdw09=gdw_file.gdw09, tabIndex=11, title=%"Template Name";
+CheckBox gdw17=gdw_file.gdw17, tabIndex=27, title=%"default", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit gfs03=formonly.gfs03 type VARCHAR, action=controlp, tabIndex=12, title=%"Template Desc", image="zoom";
+CheckBox gdw11=gdw_file.gdw11, tabIndex=13, title=%"Label", hidden;
+Edit gdw12=gdw_file.gdw12, tabIndex=14, title=%"Label X", hidden;
+Edit gdw13=gdw_file.gdw13, tabIndex=15, title=%"Label Y", hidden;
+Edit gdwdate=gdw_file.gdwdate, tabIndex=16, title=%"Create/Modify Date", noEntry;
+Edit gdwgrup=gdw_file.gdwgrup, tabIndex=17, title=%"Department", noEntry;
+Edit gdwmodu=gdw_file.gdwmodu, tabIndex=18, title=%"Last Modified by", noEntry;
+Edit gdworig=gdw_file.gdworig, tabIndex=20, title=%"Record Orig.", noEntry;
+Edit gdwuser=gdw_file.gdwuser, tabIndex=19, title=%"Record Owner", noEntry;
+Edit gdworiu=gdw_file.gdworiu, tabIndex=21, title=%"Dept Orig.", noEntry;
+Label labe:Label6, text=%"Rows";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+Label l:Label7, text=%"/";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gdw_file.gdw01,formonly.gaz03,gdw_file.gdw02,gdw_file.gdw05,formonly.zx02,gdw_file.gdw04,formonly.zw02,gdw_file.gdw06,gdw_file.gdw03,formonly.cn2,formonly.cnt,gdw_file.gdw15,gdw_file.gdw16,gdw_file.gdw14)
+SCREEN RECORD s_gdw(gdw_file.gdw07,gdw_file.gdw08,gdw_file.gdw09,gdw_file.gdw17,formonly.gfs03,gdw_file.gdw11,gdw_file.gdw12,gdw_file.gdw13,gdw_file.gdwdate,gdw_file.gdwgrup,gdw_file.gdwmodu,gdw_file.gdwuser,gdw_file.gdworig,gdw_file.gdworiu)
+END -- INSTRUCTIONS
+

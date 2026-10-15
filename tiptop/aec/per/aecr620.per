@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aecr620.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aecr620")
+VBox VBox1
+Grid gr1702
+{
+ <G group01                                                                             >
+  Item No.            [ecb01             ]  Item Group Code     [ima06             ]
+  Other group code 1  [ima09             ]  Other group code 2  [ima10             ]
+  Other group code 3  [ima11             ]  Other group code 4  [ima12             ]
+  Routing Code        [ecb02             ]
+ <                                                                                      >
+
+}
+END -- gr1702
+Group g01(text="INPUT")
+Grid gr1703
+{
+ <G group02              > <G group03                    > <G gb5                  >
+ [b                      ] [c                          ]   [g                     ]
+                           [d                         ]
+                           [e                          ]
+ <                       > <                             > <                       >
+
+}
+END -- gr1703
+END -- g01
+Grid gr1704
+{
+[more                                  ]
+
+}
+END -- gr1704
+END -- VBox1
+END -- aecr620
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ecb01=formonly.ecb01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="Enter Query Condition by QBE";
+Edit ima06=formonly.ima06 type CHAR, tabIndex=2, comment="Enter Query Condition by QBE";
+Edit ima09=formonly.ima09 type CHAR, tabIndex=3, comment="Enter Query Condition by QBE";
+Edit ima10=formonly.ima10 type CHAR, tabIndex=4, comment="Enter Query Condition by QBE";
+Edit ima11=formonly.ima11 type CHAR, tabIndex=5, comment="Enter Query Condition by QBE";
+Edit ima12=formonly.ima12 type CHAR, tabIndex=6, comment="Enter Query Condition by QBE";
+Edit ecb02=formonly.ecb02 type CHAR, tabIndex=7, comment="Enter Query Condition by QBE";
+Group group02:group02;
+CheckBox b=formonly.b type VARCHAR, tabIndex=8, text="Print Master Routing only", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Time Option";
+CheckBox c=formonly.c type VARCHAR, tabIndex=9, text="Standard Time", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=10, text="Schedule Time", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=11, text="Default Time", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb5:gb5;
+CheckBox g=formonly.g type CHAR, tabIndex=13, text="Maintain Description", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ecb01,formonly.ima06,formonly.ima09,formonly.ima10,formonly.ima11,formonly.ima12,formonly.ecb02,formonly.b,formonly.c,formonly.d,formonly.e,formonly.g,formonly.more)
+END -- INSTRUCTIONS
+

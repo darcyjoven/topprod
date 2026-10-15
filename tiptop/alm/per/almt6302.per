@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt6302.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"almt6302")
+Folder pc3
+Page main(text=%"main")
+Grid gr5
+{
+ Receivable balance    [amt            ]
+ Card no.              [rxy06          ]
+ Cash                  [rxy05          ]
+
+
+
+}
+END -- gr5
+END -- main
+END -- pc3
+END -- Form3
+
+TABLES
+rxy_file
+ATTRIBUTES
+Edit amt=formonly.amt type CHAR, tabIndex=1, noEntry;
+Edit rxy06=rxy_file.rxy06, tabIndex=3, not null, required;
+Edit rxy05=rxy_file.rxy05, tabIndex=2, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.amt,rxy_file.rxy06,rxy_file.rxy05)
+END -- INSTRUCTIONS
+

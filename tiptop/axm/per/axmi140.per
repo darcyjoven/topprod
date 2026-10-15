@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi140.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi140")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr2026
+{
+ Product Class           [obf01               ]
+ Product Name            [oba02                         ]
+
+}
+END -- gr2026
+Grid gr2027
+{
+ Product No.             [obf02               ]
+ Part Name               [ima02                         ]
+ Specification           [ima021                        ]
+}
+END -- gr2027
+END -- hb1
+END -- page01
+END -- folder01
+Table s_obg
+{
+[obg03|obg04           |obg05        |obg06     |obg22   |obg07    |obg08  |obg09    |obg10       |obg21               |obguser  |gen02     |obgdate ]
+[obg03|obg04           |obg05        |obg06     |obg22   |obg07    |obg08  |obg09    |obg10       |obg21               |obguser  |gen02     |obgdate ]
+[obg03|obg04           |obg05        |obg06     |obg22   |obg07    |obg08  |obg09    |obg10       |obg21               |obguser  |gen02     |obgdate ]
+[obg03|obg04           |obg05        |obg06     |obg22   |obg07    |obg08  |obg09    |obg10       |obg21               |obguser  |gen02     |obgdate ]
+[obg03|obg04           |obg05        |obg06     |obg22   |obg07    |obg08  |obg09    |obg10       |obg21               |obguser  |gen02     |obgdate ]
+[obg03|obg04           |obg05        |obg06     |obg22   |obg07    |obg08  |obg09    |obg10       |obg21               |obguser  |gen02     |obgdate ]
+[obg03|obg04           |obg05        |obg06     |obg22   |obg07    |obg08  |obg09    |obg10       |obg21               |obguser  |gen02     |obgdate ]
+[obg03|obg04           |obg05        |obg06     |obg22   |obg07    |obg08  |obg09    |obg10       |obg21               |obguser  |gen02     |obgdate ]
+[obg03|obg04           |obg05        |obg06     |obg22   |obg07    |obg08  |obg09    |obg10       |obg21               |obguser  |gen02     |obgdate ]
+[obg03|obg04           |obg05        |obg06     |obg22   |obg07    |obg08  |obg09    |obg10       |obg21               |obguser  |gen02     |obgdate ]
+}
+END -- s_obg
+Grid gr2028
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+
+
+}
+END -- gr2028
+END -- vb1
+END -- axmi140
+
+TABLES
+obg_file,
+obf_file
+ATTRIBUTES
+ButtonEdit obf01=obf_file.obf01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oba02=formonly.oba02 type CHAR, tabIndex=2;
+ButtonEdit obf02=obf_file.obf02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Product No.";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5;
+ButtonEdit obg03=obg_file.obg03, action=controlp, tabIndex=6, title="Unit", not null, required, image="zoom", comment="<^P>Qry Details <^O>Copy Prev.Line";
+ButtonEdit obg04=obg_file.obg04, action=controlp, tabIndex=7, title="Classi-fication", not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit obg05=obg_file.obg05, action=controlp, tabIndex=8, title="Price Terms", not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit obg06=obg_file.obg06, action=controlp, tabIndex=9, title="Customer", not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit obg22=obg_file.obg22, action=controlp, tabIndex=10, title="Local", not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit obg07=obg_file.obg07, action=controlp, tabIndex=11, title="Country", not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit obg08=obg_file.obg08, action=controlp, tabIndex=12, title="Area", not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit obg09=obg_file.obg09, action=controlp, tabIndex=13, title="Currency", not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit obg10=obg_file.obg10, action=controlp, tabIndex=14, title="Tax Type", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit obg21=formonly.obg21 type CHAR, tabIndex=15, title="Price", not null, required;
+ButtonEdit obguser=obg_file.obguser, action=controlp, tabIndex=16, title="Appraiser Name", not null, required, image="zoom";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=17, noEntry;
+DateEdit obgdate=obg_file.obgdate, tabIndex=19, title=%"Quotation Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_obg(obg_file.obg03,obg_file.obg04,obg_file.obg05,obg_file.obg06,obg_file.obg22,obg_file.obg07,obg_file.obg08,obg_file.obg09,obg_file.obg10,formonly.obg21,obg_file.obguser,formonly.gen02,obg_file.obgdate)
+SCREEN RECORD Undefined(obf_file.obf01,formonly.oba02,obf_file.obf02,formonly.ima02,formonly.ima021,formonly.cnt)
+END -- INSTRUCTIONS
+

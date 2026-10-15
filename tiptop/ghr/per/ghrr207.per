@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrr207.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group Group1(text=%"QBE")
+Grid Grid1
+{
+
+   [label2    ][hrat01              ]
+   [label7    ][hrat04              ]
+   [label1    ][hraoud02            ]
+
+}
+END -- Grid1
+END -- Group1
+Group Group2(text=%"INPUT")
+Grid Grid2
+{
+
+   [label3    ][l_hrbl02            ]
+
+
+}
+END -- Grid2
+END -- Group2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label label2:Label2, text=%"imzud02";
+ButtonEdit hrat01=formonly.hrat01 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Label label7:Label7, text=%"imzud02";
+ButtonEdit hrat04=formonly.hrat04 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Label label1:Label1, text=%"imzud02";
+ButtonEdit hraoud02=formonly.hraoud02 type CHAR, action=controlp, tabIndex=2, image="zoom";
+Label label3:Label3, text=%"imzud02";
+ButtonEdit l_hrbl02=formonly.l_hrbl02 type CHAR, action=controlp, tabIndex=4, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tm(formonly.hrat04,formonly.hraoud02,formonly.hrat01,formonly.l_hrbl02)
+END -- INSTRUCTIONS
+

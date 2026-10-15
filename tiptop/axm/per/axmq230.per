@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq230.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq230")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2242
+{
+ Customer            [occ01     ][occ02                          ]
+ Contact             [link                                       ]
+}
+END -- gr2242
+END -- page01
+END -- folder01
+Table s_ogb
+{
+[oga02         |oga08      |oga01             |oga23   |oga21   |ogb31            |ogb04               |ima02         |ima021    |ogb092|ogb05   |ogb12        |ogb63           |ogb37   |ogb13   |ogb14t  ]
+[oga02         |oga08      |oga01             |oga23   |oga21   |ogb31            |ogb04               |ima02         |ima021    |ogb092|ogb05   |ogb12        |ogb63           |ogb37   |ogb13   |ogb14t  ]
+[oga02         |oga08      |oga01             |oga23   |oga21   |ogb31            |ogb04               |ima02         |ima021    |ogb092|ogb05   |ogb12        |ogb63           |ogb37   |ogb13   |ogb14t  ]
+[oga02         |oga08      |oga01             |oga23   |oga21   |ogb31            |ogb04               |ima02         |ima021    |ogb092|ogb05   |ogb12        |ogb63           |ogb37   |ogb13   |ogb14t  ]
+[oga02         |oga08      |oga01             |oga23   |oga21   |ogb31            |ogb04               |ima02         |ima021    |ogb092|ogb05   |ogb12        |ogb63           |ogb37   |ogb13   |ogb14t  ]
+[oga02         |oga08      |oga01             |oga23   |oga21   |ogb31            |ogb04               |ima02         |ima021    |ogb092|ogb05   |ogb12        |ogb63           |ogb37   |ogb13   |ogb14t  ]
+[oga02         |oga08      |oga01             |oga23   |oga21   |ogb31            |ogb04               |ima02         |ima021    |ogb092|ogb05   |ogb12        |ogb63           |ogb37   |ogb13   |ogb14t  ]
+[oga02         |oga08      |oga01             |oga23   |oga21   |ogb31            |ogb04               |ima02         |ima021    |ogb092|ogb05   |ogb12        |ogb63           |ogb37   |ogb13   |ogb14t  ]
+[oga02         |oga08      |oga01             |oga23   |oga21   |ogb31            |ogb04               |ima02         |ima021    |ogb092|ogb05   |ogb12        |ogb63           |ogb37   |ogb13   |ogb14t  ]
+[oga02         |oga08      |oga01             |oga23   |oga21   |ogb31            |ogb04               |ima02         |ima021    |ogb092|ogb05   |ogb12        |ogb63           |ogb37   |ogb13   |ogb14t  ]
+
+}
+END -- s_ogb
+Grid gr2243
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2243
+END -- VBox1
+END -- axmq230
+
+TABLES
+ima_file,
+ogb_file,
+oga_file
+ATTRIBUTES
+ButtonEdit occ01=formonly.occ01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=2;
+Edit link=formonly.link type CHAR, tabIndex=3, noEntry;
+DateEdit oga02=oga_file.oga02, tabIndex=4, title="Delivery Date";
+ComboBox oga08=oga_file.oga08, tabIndex=5, title="Sales Type", items=(("1", %"Local Sales"),("2", %"Export"));
+ButtonEdit oga01=oga_file.oga01, action=controlp, tabIndex=6, title="Delivery Note No.", image="zoom";
+Edit oga23=oga_file.oga23, tabIndex=13, title=%"oga23";
+Edit oga21=oga_file.oga21, tabIndex=14, title=%"oga21";
+ButtonEdit ogb31=ogb_file.ogb31, action=controlp, tabIndex=7, title="Order No.", image="zoom";
+ButtonEdit ogb04=ogb_file.ogb04, action=controlp, tabIndex=8, title="Product No.", image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=19, title=%"ima02", noEntry;
+Edit ima021=ima_file.ima021, tabIndex=20, title=%"ima021", noEntry;
+Edit ogb092=ogb_file.ogb092, tabIndex=9, title="Lot#";
+Edit ogb05=ogb_file.ogb05, tabIndex=18, title=%"ogb05";
+Edit ogb12=ogb_file.ogb12, tabIndex=10, title="Delivery Qty", not null, required;
+Edit ogb63=ogb_file.ogb63, tabIndex=11, title="Sales/return Qty", not null, required;
+Edit ogb37=ogb_file.ogb37, tabIndex=15, title=%"ogb37";
+Edit ogb13=ogb_file.ogb13, tabIndex=16, title=%"ogb13";
+Edit ogb14t=ogb_file.ogb14t, tabIndex=17, title=%"ogb14t";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogb(oga_file.oga02,oga_file.oga08,oga_file.oga01,oga_file.oga23,oga_file.oga21,ogb_file.ogb31,ogb_file.ogb04,ima_file.ima02,ima_file.ima021,ogb_file.ogb092,ogb_file.ogb05,ogb_file.ogb12,ogb_file.ogb63,ogb_file.ogb37,ogb_file.ogb13,ogb_file.ogb14t)
+SCREEN RECORD Undefined(formonly.occ01,formonly.occ02,formonly.link,formonly.cnt)
+END -- INSTRUCTIONS
+

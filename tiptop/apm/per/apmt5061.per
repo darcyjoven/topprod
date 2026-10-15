@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt5061.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmt5061")
+Folder pc996
+Page page01(text="Page01")
+Grid gr5283
+{
+ <G group01                                                >
+  P/R Curr. [pmk22     ]   Ex.Rate [pmk42               ]
+  P/O Curr. [pmm22     ]   Ex.Rate [pmm42               ]
+
+ <                                                         >
+
+}
+END -- gr5283
+END -- page01
+END -- pc996
+END -- apmt5061
+
+ATTRIBUTES
+Group group01:group01;
+Edit pmk22=formonly.pmk22 type VARCHAR, tabIndex=1;
+Edit pmk42=formonly.pmk42 type DECIMAL, tabIndex=2;
+Edit pmm22=formonly.pmm22 type VARCHAR, tabIndex=3;
+Edit pmm42=formonly.pmm42 type DECIMAL, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmk22,formonly.pmk42,formonly.pmm22,formonly.pmm42)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt8002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt8002")
+VBox VBox1
+Grid gr3487
+{
+ <G group01                                            >
+    W/O No.                  [sfa01                    ]
+    Manufacturing Department [sfb82                    ]
+ <                                                     >
+
+}
+END -- gr3487
+END -- VBox1
+END -- aimt8002
+
+TABLES
+sfb_file,
+sfa_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfa01=sfa_file.sfa01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit sfb82=sfb_file.sfb82, action=controlp, tabIndex=2, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfa_file.sfa01,sfb_file.sfb82)
+END -- INSTRUCTIONS
+

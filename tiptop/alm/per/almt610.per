@@ -1,0 +1,125 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almt610")
+VBox vb2
+Folder pc2
+Page main(text="Main")
+Grid gr4
+{
+ Store No.    [lpsplant              |rtz13               ]  lps08              [lps08               |azf03               ]
+ Legal        [lpslegal              |azt02               ]  Accounts No.       [lps14               ]
+ Doc No.      [lps01                 ]                       Delivery No.       [lps17               ]
+ Document Date[lps03                 ]                       lps18              [lps18               ]
+ lsp04        [lps04                 ]                       status             [lps09           ][imgmksg]
+ lps16        [lps16                 ]                       checker            [lps10           ][       ]
+ lps05        [lps05                 ]                       checkda            [lps11           ]
+ lps07        [lps07                 ]                       memo               [lps12               ]
+ lps13        [lps13                 ]                                          [                    ]
+
+}
+END -- gr4
+END -- main
+Page info(text="Info")
+Grid gr5
+{
+
+ owner [lpsuser   ]              mody [lpsmodu       ]        acti [lpsacti   ]
+ grup  [lpsgrup   ]              data [lpsdate       ]        crat [lpscrat   ]
+ oriu. [lpsoriu   ]
+ Orig  [lpsorig   ]
+
+
+
+
+
+}
+END -- gr5
+END -- info
+END -- pc2
+Table s_lpt
+{
+[lpt02               |lpt021              |lpj26                                   |lpt15             |lpt03             |lpt04     |lpt05     |lpt06     |lpt07     |lpt08     |lpt09     |lpt10     |lpt11   |lpt12     |lpt17   |lpt13     |lpt14       |lpt16       ]
+[lpt02               |lpt021              |lpj26                                   |lpt15             |lpt03             |lpt04     |lpt05     |lpt06     |lpt07     |lpt08     |lpt09     |lpt10     |lpt11   |lpt12     |lpt17   |lpt13     |lpt14       |lpt16       ]
+[lpt02               |lpt021              |lpj26                                   |lpt15             |lpt03             |lpt04     |lpt05     |lpt06     |lpt07     |lpt08     |lpt09     |lpt10     |lpt11   |lpt12     |lpt17   |lpt13     |lpt14       |lpt16       ]
+[lpt02               |lpt021              |lpj26                                   |lpt15             |lpt03             |lpt04     |lpt05     |lpt06     |lpt07     |lpt08     |lpt09     |lpt10     |lpt11   |lpt12     |lpt17   |lpt13     |lpt14       |lpt16       ]
+[lpt02               |lpt021              |lpj26                                   |lpt15             |lpt03             |lpt04     |lpt05     |lpt06     |lpt07     |lpt08     |lpt09     |lpt10     |lpt11   |lpt12     |lpt17   |lpt13     |lpt14       |lpt16       ]
+}
+END -- s_lpt
+Grid gr6
+{
+ ------- Rows[idx ]/[cnt  ]---item[cn2   ]-------
+
+
+}
+END -- gr6
+END -- vb2
+END -- almt610
+
+TABLES
+lpj_file,
+lpt_file,
+lps_file
+ATTRIBUTES
+ButtonEdit lpsplant=lps_file.lpsplant, action=controlp, tabIndex=1, noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=2, noEntry;
+ButtonEdit lps08=lps_file.lps08, action=controlp, tabIndex=12, image="zoom.png";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=13, noEntry;
+ButtonEdit lpslegal=lps_file.lpslegal, action=controlp, tabIndex=3, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=4, noEntry;
+Edit lps14=lps_file.lps14, tabIndex=14, noEntry;
+ButtonEdit lps01=lps_file.lps01, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+Edit lps17=lps_file.lps17, tabIndex=15, noEntry;
+DateEdit lps03=lps_file.lps03, tabIndex=7;
+Edit lps18=lps_file.lps18, tabIndex=16, scroll;
+Edit lps04=lps_file.lps04, tabIndex=6, noEntry;
+ComboBox lps09=lps_file.lps09, tabIndex=17, default = "N", noEntry, not null, required, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit lps16=lps_file.lps16, tabIndex=8, noEntry;
+Edit lps10=lps_file.lps10, tabIndex=18, noEntry, not null, required;
+Edit lps05=lps_file.lps05, tabIndex=9, noEntry;
+DateEdit lps11=lps_file.lps11, tabIndex=19, noEntry, not null, required;
+Edit lps07=lps_file.lps07, tabIndex=10, not null, required;
+TextEdit lps12=lps_file.lps12, tabIndex=20, stretch=NONE;
+Edit lps13=lps_file.lps13, tabIndex=11, not null, required;
+Edit lpsuser=lps_file.lpsuser, tabIndex=21, noEntry;
+Edit lpsmodu=lps_file.lpsmodu, tabIndex=25, noEntry;
+Edit lpsacti=lps_file.lpsacti, tabIndex=27, default = "Y", noEntry;
+Edit lpsgrup=lps_file.lpsgrup, tabIndex=22, noEntry;
+DateEdit lpsdate=lps_file.lpsdate, tabIndex=26, noEntry;
+DateEdit lpscrat=lps_file.lpscrat, tabIndex=28, noEntry;
+Edit lpsoriu=lps_file.lpsoriu, tabIndex=23, noEntry;
+Edit lpsorig=lps_file.lpsorig, tabIndex=24, noEntry;
+ButtonEdit lpt02=lpt_file.lpt02, action=controlp, tabIndex=29, title="lpt02", not null, required, image="zoom.png";
+ButtonEdit lpt021=lpt_file.lpt021, tabIndex=30, title="lpt021", not null, required, image="zoom.png";
+Edit lpj26=lpj_file.lpj26, tabIndex=31, title=%"lpj26", noEntry, invisible;
+ButtonEdit lpt15=lpt_file.lpt15, action=controlp, tabIndex=32, title="lpt15", image="zoom.png";
+ButtonEdit lpt03=lpt_file.lpt03, action=controlp, tabIndex=33, title="lpt03", noEntry, image="zoom.png";
+ComboBox lpt04=lpt_file.lpt04, tabIndex=34, title="lpt04", noEntry, not null, items=(("0", "send"),("1", "pay"));
+Edit lpt05=lpt_file.lpt05, tabIndex=35, title="lpt05", noEntry;
+Edit lpt06=lpt_file.lpt06, tabIndex=36, title="lpt06", noEntry;
+Edit lpt07=lpt_file.lpt07, tabIndex=37, title="lpt07", noEntry;
+Edit lpt08=lpt_file.lpt08, tabIndex=38, title="lpt08", noEntry;
+Edit lpt09=lpt_file.lpt09, tabIndex=39, title="lpt09";
+Edit lpt10=lpt_file.lpt10, tabIndex=40, title="lpt10", noEntry;
+Edit lpt11=lpt_file.lpt11, tabIndex=41, title="lpt11";
+Edit lpt12=lpt_file.lpt12, tabIndex=42, title="lpt12", noEntry;
+Edit lpt17=lpt_file.lpt17, tabIndex=43, title=%"lpt17", noEntry;
+Edit lpt13=lpt_file.lpt13, tabIndex=44, title="lpt13", noEntry;
+DateEdit lpt14=lpt_file.lpt14, tabIndex=45, title="lpt14";
+DateEdit lpt16=lpt_file.lpt16, tabIndex=46, title=%"lpt16";
+Edit idx=formonly.idx type SMALLINT, tabIndex=47, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=48, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=49, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lpt(lpt_file.lpt02,lpt_file.lpt021,lpj_file.lpj26,lpt_file.lpt15,lpt_file.lpt03,lpt_file.lpt04,lpt_file.lpt05,lpt_file.lpt06,lpt_file.lpt07,lpt_file.lpt08,lpt_file.lpt09,lpt_file.lpt10,lpt_file.lpt11,lpt_file.lpt12,lpt_file.lpt17,lpt_file.lpt13,lpt_file.lpt14,lpt_file.lpt16)
+SCREEN RECORD Undefined(lps_file.lpsplant,formonly.rtz13,lps_file.lps03,lps_file.lpslegal,formonly.azt02,lps_file.lps08,formonly.azf03,lps_file.lps01,lps_file.lps14,lps_file.lps04,lps_file.lps09,formonly.imgmksg,lps_file.lps16,lps_file.lps10,lps_file.lps05,lps_file.lps11,lps_file.lps07,lps_file.lps12,lps_file.lps13,lps_file.lpsuser,lps_file.lpsmodu,lps_file.lpsacti,lps_file.lpsgrup,lps_file.lpsdate,lps_file.lpscrat,lps_file.lpsoriu,lps_file.lpsorig,formonly.idx,formonly.cnt,formonly.cn2,lps_file.lps17)
+SCREEN RECORD Record1(lps_file.lps18)
+END -- INSTRUCTIONS
+

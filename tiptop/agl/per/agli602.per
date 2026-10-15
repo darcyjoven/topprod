@@ -1,0 +1,124 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli602.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli602")
+VBox VBox1
+Folder pc466
+Page page01(text="Main")
+Grid gr2426
+{
+ Book No.          [afb00]                                 Account Code [afb02                   ]                           [imgmksg]
+ Budget No.        [afb01     ]                            Account Name [aag02                                             ] [       ]
+ Budget Desc       [afa02                           ]      <G group01                                                                >
+ Account Year      [afb03     ]                                         [dummy01]            [dummy02]              [dummy03]
+                                                                1.[afc06_1             ]                      [afc07_1            ]
+                                                                2.[afc06_2             ]                      [afc07_2            ]
+                                                                3.[afc06_3             ][afb11               ][afc07_3            ]
+ <G group02                                              >      4.[afc06_4             ]                      [afc07_4            ]
+ [afb07                               ]                         5.[afc06_5             ]                      [afc07_5            ]
+ <                                                       >      6.[afc06_6             ][afb12               ][afc07_6            ]
+ <G group03                                              >      7.[afc06_7             ]                      [afc07_7            ]
+ [afb09                                               ]         8.[afc06_8             ]                      [afc07_8            ]
+ <                                                       >      9.[afc06_9             ][afb13               ][afc07_9            ]
+ <G group04                > <G group05                  >     10.[afc06_10            ]                      [afc07_10           ]
+ [afb05                 ]    [afb06                   ]        11.[afc06_11            ]                      [afc07_11           ]
+                                                               12.[afc06_12            ]                      [afc07_12           ]
+                                                               13.[afc06_13            ][afb14               ][afc07_13           ]
+
+                                                                       Total    [afb10                          ]
+ <                         > <                           > <                                                                         >
+
+}
+END -- gr2426
+END -- page01
+Page info(text="Info")
+Grid gr2427
+{
+ Record Owner        [afbuser   ]   Last Modified by    [afbmodu   ]   Data Valid Code     [afbacti   ]
+ Department          [afbgrup   ]   Create/Modify Date  [afbdate     ]
+ Record Orig.        [afboriu   ]
+ Dept Orig.          [afborig   ]
+}
+END -- gr2427
+END -- info
+END -- pc466
+Grid gr2428
+{
+  ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2428
+END -- VBox1
+END -- agli602
+
+TABLES
+afb_file
+ATTRIBUTES
+ButtonEdit afb00=afb_file.afb00, action=controlp, tabIndex=48, not null, required, image="zoom", comment="Key Field, No Blank,         <^P> Qry Book No.";
+ButtonEdit afb02=afb_file.afb02, action=controlp, tabIndex=2, not null, required, image="zoom", comment="Key Field,        No Blank, Press <^P> Qry Account ";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit afb01=afb_file.afb01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank,         <^P> Qry Budget  ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=5, noEntry;
+Edit afa02=formonly.afa02 type CHAR, tabIndex=4, noEntry;
+Group group01:group01;
+Label dummy01:dummy01, text="Period";
+Label dummy02:dummy02, text="Quarter";
+Label dummy03:dummy03, text="Used";
+Edit afc06_1=formonly.afc06_1 type CHAR, tabIndex=7, not null, required;
+Edit afc07_1=formonly.afc07_1 type CHAR, tabIndex=8, not null, required;
+Edit afc06_2=formonly.afc06_2 type CHAR, tabIndex=9, not null, required;
+Edit afc07_2=formonly.afc07_2 type CHAR, tabIndex=10, not null, required;
+Edit afc06_3=formonly.afc06_3 type CHAR, tabIndex=11, not null, required;
+Edit afb11=afb_file.afb11, tabIndex=12, not null, required;
+Edit afc07_3=formonly.afc07_3 type CHAR, tabIndex=13, not null, required;
+Edit afc06_4=formonly.afc06_4 type CHAR, tabIndex=14, not null, required;
+Edit afc07_4=formonly.afc07_4 type CHAR, tabIndex=15, not null, required;
+Edit afc06_5=formonly.afc06_5 type CHAR, tabIndex=16, not null, required;
+Edit afc07_5=formonly.afc07_5 type CHAR, tabIndex=17, not null, required;
+Edit afc06_6=formonly.afc06_6 type CHAR, tabIndex=18, not null, required;
+Edit afb12=afb_file.afb12, tabIndex=19, not null, required;
+Edit afc07_6=formonly.afc07_6 type CHAR, tabIndex=20, not null, required;
+Edit afc06_7=formonly.afc06_7 type CHAR, tabIndex=21, not null, required;
+Edit afc07_7=formonly.afc07_7 type CHAR, tabIndex=22, not null, required;
+Edit afc06_8=formonly.afc06_8 type CHAR, tabIndex=23, not null, required;
+Edit afc07_8=formonly.afc07_8 type CHAR, tabIndex=24, not null, required;
+Edit afc06_9=formonly.afc06_9 type CHAR, tabIndex=25, not null, required;
+Edit afb13=afb_file.afb13, tabIndex=26, not null, required;
+Edit afc07_9=formonly.afc07_9 type CHAR, tabIndex=27, not null, required;
+Edit afc06_10=formonly.afc06_10 type CHAR, tabIndex=28, not null, required;
+Edit afc07_10=formonly.afc07_10 type CHAR, tabIndex=29, not null, required;
+Edit afc06_11=formonly.afc06_11 type CHAR, tabIndex=30, not null, required;
+Edit afc07_11=formonly.afc07_11 type CHAR, tabIndex=31, not null, required;
+Edit afc06_12=formonly.afc06_12 type CHAR, tabIndex=32, not null, required;
+Edit afc07_12=formonly.afc07_12 type CHAR, tabIndex=33, not null, required;
+Edit afc06_13=formonly.afc06_13 type CHAR, tabIndex=34, not null, required;
+Edit afb14=afb_file.afb14, tabIndex=35, not null, required;
+Edit afc07_13=formonly.afc07_13 type CHAR, tabIndex=36, not null, required;
+Edit afb10=afb_file.afb10, tabIndex=37, not null, required;
+Edit afb03=afb_file.afb03, tabIndex=6, not null, required, comment="Key Field,        No Blank";
+Group group02:group02, text="Budget Over-Limit Ctrl.Mtd when Enter Vou";
+RadioGroup afb07=afb_file.afb07, tabIndex=38, not null, required, items=(("1", "NO Control"),("2", "Warning If Over Budget"),("3", "Reject if Over-Limit"));
+Group group03:group03;
+CheckBox afb09=afb_file.afb09, tabIndex=39, text="Bedget Upper Period Unconsumption Is Defer Next Period", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="Maintain Unit";
+RadioGroup afb05=afb_file.afb05, tabIndex=40, not null, required, items=(("1", "Period"),("2", "Quarter"),("3", "Year"));
+Group group05:group05, text="Period Budget Applied";
+RadioGroup afb06=afb_file.afb06, tabIndex=41, not null, required, items=(("1", "Module Parameter Weight Setting"),("2", "Evenly"));
+Edit afbuser=afb_file.afbuser, tabIndex=42, noEntry;
+Edit afbmodu=afb_file.afbmodu, tabIndex=43, noEntry;
+Edit afbacti=afb_file.afbacti, tabIndex=44, noEntry;
+Edit afbgrup=afb_file.afbgrup, tabIndex=45, noEntry;
+DateEdit afbdate=afb_file.afbdate, tabIndex=46, noEntry;
+Edit afboriu=afb_file.afboriu, tabIndex=501, noEntry;
+Edit afborig=afb_file.afborig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=47;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(afb_file.afb00,afb_file.afb02,formonly.imgmksg,afb_file.afb01,formonly.aag02,formonly.afa02,formonly.afc06_1,formonly.afc07_1,formonly.afc06_2,formonly.afc07_2,formonly.afc06_3,afb_file.afb11,formonly.afc07_3,formonly.afc06_4,formonly.afc07_4,formonly.afc06_5,formonly.afc07_5,formonly.afc06_6,afb_file.afb12,formonly.afc07_6,formonly.afc06_7,formonly.afc07_7,formonly.afc06_8,formonly.afc07_8,formonly.afc06_9,afb_file.afb13,formonly.afc07_9,formonly.afc06_10,formonly.afc07_10,formonly.afc06_11,formonly.afc07_11,formonly.afc06_12,formonly.afc07_12,formonly.afc06_13,afb_file.afb14,formonly.afc07_13,afb_file.afb10,afb_file.afb03,afb_file.afb07,afb_file.afb09,afb_file.afb05,afb_file.afb06,afb_file.afbuser,afb_file.afbmodu,afb_file.afbacti,afb_file.afbgrup,afb_file.afbdate,afb_file.afboriu,afb_file.afborig,formonly.cnt)
+END -- INSTRUCTIONS
+

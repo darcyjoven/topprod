@@ -1,0 +1,50 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdr100.per created Wed Jan 23 05:30:38 2008
+-- File created from axdr100.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdr100")
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID gr7807
+    {
+     <G group01                                                   >
+      Customer No.        [aa0       ]
+      Goods No.           [aa1                   ]
+      Lot No.             [aa2                   ]
+     <                                                            >
+     <G group02                                                   >
+      Date                [aa3       ]-[aa4       ]
+
+     <                                                            >
+
+
+    }
+    END -- GRID
+    GRID gr7808
+    {
+     [aa5                                     ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  EDIT aa0=FORMONLY.adq01, TABINDEX=1;
+  EDIT aa1=FORMONLY.adq02, TABINDEX=2;
+  EDIT aa2=FORMONLY.adq03, TABINDEX=3;
+  GROUP group02 : group02, TEXT="INPUT";
+  DATEEDIT aa3=FORMONLY.bdate TYPE DATE, TABINDEX=4;
+  DATEEDIT aa4=FORMONLY.edate TYPE DATE, TABINDEX=5;
+  CHECKBOX aa5=FORMONLY.more TYPE VARCHAR, TEXT="Other conditionto print", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=6;
+END

@@ -1,0 +1,59 @@
+----------------------------------------------------------------------------------
+-- $Id:  arti020.per created 2010-01-11T12:12:47
+-- File created from arti020.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="arti020")
+-- TABLE
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc812
+      PAGE page01( TEXT="Page01")
+        TABLE   s_ryb
+        {
+        [aa0          |aa1            |aa2          |aa3              |aa4     ]
+        [aa0          |aa1            |aa2          |aa3              |aa4     ]
+        [aa0          |aa1            |aa2          |aa3              |aa4     ]
+        [aa0          |aa1            |aa2          |aa3              |aa4     ]
+        [aa0          |aa1            |aa2          |aa3              |aa4     ]
+        [aa0          |aa1            |aa2          |aa3              |aa4     ]
+        [aa0          |aa1            |aa2          |aa3              |aa4     ]
+        [aa0          |aa1            |aa2          |aa3              |aa4     ]
+        [aa0          |aa1            |aa2          |aa3              |aa4     ]
+        [aa0          |aa1            |aa2          |aa3              |aa4     ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr4558
+    {
+     ----------Rows [aa5   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES ryb_file
+
+ATTRIBUTES
+  EDIT aa0=ryb_file.ryb01, COMMENT="KEY Field, No Blank/Repeated!", NOT NULL, REQUIRED, TABINDEX=1, TITLE="City No";
+  EDIT aa1=ryb_file.ryb02, TABINDEX=2, TITLE="City Name";
+  BUTTONEDIT aa2=ryb_file.ryb03, ACTION=controlp, COMMENT="<^P> Query Local ", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=3, TITLE="Province Code";
+  EDIT aa3=FORMONLY.ryb03_desc TYPE VARCHAR, NOENTRY, TABINDEX=4, TITLE="Province Name";
+  CHECKBOX aa4=ryb_file.rybacti, DEFAULT="Y", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=5, TITLE="Valid";
+  EDIT aa5=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=6;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_ryb (ryb_file.ryb01, ryb_file.ryb02, ryb_file.ryb03, FORMONLY.ryb03_desc, ryb_file.rybacti)
+END

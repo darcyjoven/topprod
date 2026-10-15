@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmp320.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmp320")
+VBox VBox1
+Grid gr1279
+{
+ <G group01                                  >
+  Agent Cust          [oea1015          ]
+  Order Date          [oea02            ]
+  Agent Cust W/H      [tuo03            ]
+  Agent Cust Loc      [tuo031           ]
+ <                                           >
+ <G group02                                  >
+  Transfer-out W/H    [from_w           ]
+  Transfer-out Loc    [from_l           ]
+  Transfer Note       [trn              ]
+  Transfer Date       [tr_date          ]
+  [more                                    ]
+
+ <                                           >
+
+}
+END -- gr1279
+END -- VBox1
+END -- atmp320
+
+TABLES
+tuo_file,
+oea_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oea1015=oea_file.oea1015, action=controlp, tabIndex=1, image="zoom";
+DateEdit oea02=oea_file.oea02, tabIndex=2;
+ButtonEdit tuo03=tuo_file.tuo03, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit tuo031=tuo_file.tuo031, action=controlp, tabIndex=4, image="zoom";
+Group group02:group02, text="INPUT";
+ButtonEdit from_w=formonly.from_w type VARCHAR, action=controlp, tabIndex=5, not null, image="zoom";
+ButtonEdit from_l=formonly.from_l type CHAR, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit trn=formonly.trn type VARCHAR, action=controlp, tabIndex=7, not null, required, image="zoom";
+DateEdit tr_date=formonly.tr_date type DATE, tabIndex=8, not null, required;
+CheckBox more=formonly.more type CHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oea_file.oea1015,oea_file.oea02,tuo_file.tuo03,tuo_file.tuo031,formonly.from_w,formonly.from_l,formonly.trn,formonly.tr_date,formonly.more)
+END -- INSTRUCTIONS
+

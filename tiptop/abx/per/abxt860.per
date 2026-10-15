@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxt860.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxt860")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1241
+{
+ Inventory Label   [bwb01           ]                                Inventory Year[bwb011 ]
+ W/O No.           [bwb02           ]                                W/O Type      [sfb02     ][bwb07 ]
+ Finished Product #[bwb03                         ]                  Desc          [ima02_h                                 ]
+ Unstored-in Qty   [bwb04     ]                                      Spec          [ima021_h                                ]
+}
+END -- gr1241
+END -- page01
+END -- folder01
+Table s_bwc
+{
+[bwc02   |bwc03                         |ima02                         |ima021                        |ima25           |bwc04              |bwc05                        ]
+[bwc02   |bwc03                         |ima02                         |ima021                        |ima25           |bwc04              |bwc05                        ]
+[bwc02   |bwc03                         |ima02                         |ima021                        |ima25           |bwc04              |bwc05                        ]
+[bwc02   |bwc03                         |ima02                         |ima021                        |ima25           |bwc04              |bwc05                        ]
+[bwc02   |bwc03                         |ima02                         |ima021                        |ima25           |bwc04              |bwc05                        ]
+[bwc02   |bwc03                         |ima02                         |ima021                        |ima25           |bwc04              |bwc05                        ]
+[bwc02   |bwc03                         |ima02                         |ima021                        |ima25           |bwc04              |bwc05                        ]
+[bwc02   |bwc03                         |ima02                         |ima021                        |ima25           |bwc04              |bwc05                        ]
+[bwc02   |bwc03                         |ima02                         |ima021                        |ima25           |bwc04              |bwc05                        ]
+[bwc02   |bwc03                         |ima02                         |ima021                        |ima25           |bwc04              |bwc05                        ]
+
+}
+END -- s_bwc
+Grid gr1242
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1242
+END -- VBox1
+END -- abxt860
+
+TABLES
+sfb_file,
+bwc_file,
+bwb_file
+ATTRIBUTES
+Edit bwb01=bwb_file.bwb01, tabIndex=1, not null, required;
+Edit bwb011=bwb_file.bwb011, tabIndex=2, not null, required;
+Edit bwb02=bwb_file.bwb02, tabIndex=3, not null, required;
+ComboBox sfb02=sfb_file.sfb02, tabIndex=4, not null, required, queryEditable, comment="1.Gnrl 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm 13.Predic 15.Trial ", items=(("1", "Gnrl"),("5", "Rework"),("7", "Sub."),("8", "Rwrk SUB"),("11", "Disasm"),("13", "Predic"),("15", "Trial"));
+CheckBox bwb07=bwb_file.bwb07, tabIndex=5, text="OUTER", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit bwb03=bwb_file.bwb03, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Query Item No.";
+Edit ima02_h=formonly.ima02_h type CHAR, tabIndex=7, noEntry;
+Edit bwb04=bwb_file.bwb04, tabIndex=8;
+Edit ima021_h=formonly.ima021_h type CHAR, tabIndex=9, noEntry;
+Edit bwc02=bwc_file.bwc02, tabIndex=10, title="Serial#", not null, required;
+ButtonEdit bwc03=bwc_file.bwc03, action=controlp, tabIndex=11, title="Item No.", not null, required, image="zoom", comment="<^P>Query Item No.";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=12, title="Specification", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=13, title="Product Name", noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=14, title="Inventory Unit", noEntry;
+Edit bwc04=bwc_file.bwc04, tabIndex=15, title="Task Serial Number";
+Edit bwc05=bwc_file.bwc05, tabIndex=16, title="Physical Inventory Taking Qty", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bwc(bwc_file.bwc02,bwc_file.bwc03,formonly.ima02,formonly.ima021,formonly.ima25,bwc_file.bwc04,bwc_file.bwc05)
+SCREEN RECORD Undefined(bwb_file.bwb01,bwb_file.bwb011,bwb_file.bwb02,sfb_file.sfb02,bwb_file.bwb07,bwb_file.bwb03,formonly.ima02_h,bwb_file.bwb04,formonly.ima021_h,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

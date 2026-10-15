@@ -1,0 +1,121 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq810.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq810")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr2557
+{
+ Book No.            [abg00                         ]
+ Account #           [abg03                         ]
+ Account Name        [aag02                         ]
+ Voucher#            [abg01          ] -   [abg02       ]
+ Voucher Date        [abg06       ]
+ Department          [abg05     ][gem02     ]
+
+}
+END -- gr2557
+Grid gr2558
+{
+ Trans.Cd 1  [abg11               ] Trans.Cd 6  [abg32               ]
+ Trans.Cd 2  [abg12               ] Trans.Cd 7  [abg33               ]
+ Trans.Cd 3  [abg13               ] Trans.Cd 8  [abg34               ]
+ Trans.Cd 4  [abg14               ] Trans.Cd 9  [abg35               ]
+ Trans.Cd 5  [abg31               ] Trans.Cd 10 [abg36               ]
+ Memo        [abg04                         ]
+
+}
+END -- gr2558
+END -- hb2
+END -- page01
+END -- folder01
+Table s_abh
+{
+[abh021       |abh01       |abh02    |abh05      |abh09               |gen02     |abaconf  |abh04                    ]
+[abh021       |abh01       |abh02    |abh05      |abh09               |gen02     |abaconf  |abh04                    ]
+[abh021       |abh01       |abh02    |abh05      |abh09               |gen02     |abaconf  |abh04                    ]
+[abh021       |abh01       |abh02    |abh05      |abh09               |gen02     |abaconf  |abh04                    ]
+[abh021       |abh01       |abh02    |abh05      |abh09               |gen02     |abaconf  |abh04                    ]
+[abh021       |abh01       |abh02    |abh05      |abh09               |gen02     |abaconf  |abh04                    ]
+[abh021       |abh01       |abh02    |abh05      |abh09               |gen02     |abaconf  |abh04                    ]
+[abh021       |abh01       |abh02    |abh05      |abh09               |gen02     |abaconf  |abh04                    ]
+[abh021       |abh01       |abh02    |abh05      |abh09               |gen02     |abaconf  |abh04                    ]
+[abh021       |abh01       |abh02    |abh05      |abh09               |gen02     |abaconf  |abh04                    ]
+
+}
+END -- s_abh
+Grid gr2559
+{
+                             Sum Of Contra Amount[tot                 ]
+ <G group01                                                                                                 >
+                                         Contra\'d  [abg072              ]
+                                       + To-Contra [abg073              ]
+                                      ------------------------------------
+  Enter Acct [abg071              ] - Total Contra [tot2                ] = UnContra [unpay               ]
+ <                                                                                                          >
+
+}
+END -- gr2559
+Grid gr2560
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2560
+END -- vb2
+END -- aglq810
+
+TABLES
+abh_file,
+abg_file
+ATTRIBUTES
+ButtonEdit abg00=abg_file.abg00, action=CONTROLP, tabIndex=35, image="zoom.png";
+ButtonEdit abg03=abg_file.abg03, action=controlp, tabIndex=1, noEntry, image="zoom";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=36, noEntry;
+Edit abg01=abg_file.abg01, tabIndex=3;
+Edit abg02=abg_file.abg02, tabIndex=4, color = yellow;
+DateEdit abg06=abg_file.abg06, tabIndex=5;
+Edit abg05=abg_file.abg05, tabIndex=6;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=7, noEntry;
+Edit abg11=abg_file.abg11, tabIndex=8;
+Edit abg32=abg_file.abg32, tabIndex=9;
+Edit abg12=abg_file.abg12, tabIndex=10;
+Edit abg33=abg_file.abg33, tabIndex=11;
+Edit abg13=abg_file.abg13, tabIndex=12;
+Edit abg34=abg_file.abg34, tabIndex=13;
+Edit abg14=abg_file.abg14, tabIndex=14;
+Edit abg35=abg_file.abg35, tabIndex=15;
+Edit abg31=abg_file.abg31, tabIndex=16;
+Edit abg36=abg_file.abg36, tabIndex=17;
+Edit abg04=abg_file.abg04, tabIndex=18;
+DateEdit abh021=abh_file.abh021, tabIndex=19, title="Voucher Date";
+Edit abh01=abh_file.abh01, tabIndex=20, title="Voucher#";
+Edit abh02=abh_file.abh02, tabIndex=21, title="Line No.";
+Edit abh05=abh_file.abh05, tabIndex=22, title="Department";
+Edit abh09=abh_file.abh09, tabIndex=23, title="Contra Amount", not null, required;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=24, title="Issued By";
+Edit abaconf=formonly.abaconf type CHAR, tabIndex=25, title="Confirm", upShift;
+Edit abh04=abh_file.abh04, tabIndex=26, title="Memo";
+Edit tot=formonly.tot type CHAR, tabIndex=27;
+Group group01:group01;
+Edit abg072=abg_file.abg072, tabIndex=28, not null, required;
+Edit abg073=abg_file.abg073, tabIndex=29, not null, required;
+Edit abg071=abg_file.abg071, tabIndex=30, not null, required;
+Edit tot2=formonly.tot2 type CHAR, tabIndex=31;
+Edit unpay=formonly.unpay type CHAR, tabIndex=32;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=33, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=34, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abh(abh_file.abh021,abh_file.abh01,abh_file.abh02,abh_file.abh05,abh_file.abh09,formonly.gen02,formonly.abaconf,abh_file.abh04)
+SCREEN RECORD Undefined(abg_file.abg00,abg_file.abg03,formonly.aag02,abg_file.abg01,abg_file.abg02,abg_file.abg06,abg_file.abg05,formonly.gem02,abg_file.abg11,abg_file.abg32,abg_file.abg12,abg_file.abg33,abg_file.abg13,abg_file.abg34,abg_file.abg14,abg_file.abg35,abg_file.abg31,abg_file.abg36,abg_file.abg04,formonly.tot,abg_file.abg072,abg_file.abg073,abg_file.abg071,formonly.tot2,formonly.unpay,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi6043.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="abmi6043")
+VBox vb2
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+ Component Item   [bon01             ]   Inventory Unit   [ima25     ]
+ Item Name        [ima02        ]        Source Code      [ima08     ]
+ Specification    [ima021       ]        Mat. Type        [ima109    ]
+ text4            [ima022       ]        Primary Vendor   [ima54     ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table s_bon
+{
+[bon03   |bon02     |ima02_b |ima021_b |bon04       |bon05       |bon06      |bon07      |bon08       |bon09     |bon10     |bon11     |bon12     |bonacti  |bondate   |bongrup   |bonuser   |bonmodu   ]
+[bon03   |bon02     |ima02_b |ima021_b |bon04       |bon05       |bon06      |bon07      |bon08       |bon09     |bon10     |bon11     |bon12     |bonacti  |bondate   |bongrup   |bonuser   |bonmodu   ]
+[bon03   |bon02     |ima02_b |ima021_b |bon04       |bon05       |bon06      |bon07      |bon08       |bon09     |bon10     |bon11     |bon12     |bonacti  |bondate   |bongrup   |bonuser   |bonmodu   ]
+[bon03   |bon02     |ima02_b |ima021_b |bon04       |bon05       |bon06      |bon07      |bon08       |bon09     |bon10     |bon11     |bon12     |bonacti  |bondate   |bongrup   |bonuser   |bonmodu   ]
+[bon03   |bon02     |ima02_b |ima021_b |bon04       |bon05       |bon06      |bon07      |bon08       |bon09     |bon10     |bon11     |bon12     |bonacti  |bondate   |bongrup   |bonuser   |bonmodu   ]
+}
+END -- s_bon
+Grid gr2
+{
+
+  ----- Rows  [cnt   ] /  [cn2   ] --------
+
+
+
+}
+END -- gr2
+END -- vb2
+END -- abmi6043
+
+TABLES
+bon_file
+ATTRIBUTES
+ButtonEdit bon01=bon_file.bon01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit ima25=formonly.ima25 type CHAR, tabIndex=5, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=6, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit ima109=formonly.ima109 type CHAR, tabIndex=7, noEntry;
+Edit ima022=formonly.ima022 type CHAR, tabIndex=4, noEntry;
+Edit ima54=formonly.ima54 type CHAR, tabIndex=8, noEntry;
+Edit bon03=bon_file.bon03, tabIndex=9, title=%"Line No.", not null, required;
+ButtonEdit bon02=bon_file.bon02, action=controlp, tabIndex=10, title=%"Master Item No.", not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=25, title=%"Item Name", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=26, title=%"Specification", noEntry;
+Edit bon04=bon_file.bon04, tabIndex=11, title=%"Initial Quantifying Spec", not null, required;
+Edit bon05=bon_file.bon05, tabIndex=12, title=%"To Quantifying Unit", not null, required;
+ButtonEdit bon06=bon_file.bon06, action=controlp, tabIndex=13, title=%"Quantifying Spec Unit", not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+ButtonEdit bon07=bon_file.bon07, action=controlp, tabIndex=14, title=%"Material Type", image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+ButtonEdit bon08=bon_file.bon08, action=controlp, tabIndex=15, title=%"Main Vendor", image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+DateEdit bon09=bon_file.bon09, tabIndex=16, title=%"Effective Date";
+DateEdit bon10=bon_file.bon10, tabIndex=17, title=%"Expired Date";
+Edit bon11=bon_file.bon11, tabIndex=18, title=%"REP/SUB Qty", not null, required;
+DateEdit bon12=bon_file.bon12, tabIndex=19, title=%"Actual Rep. Date/Latest Sub. Date";
+CheckBox bonacti=bon_file.bonacti, tabIndex=20, default = "Y", title=%"Data Validity Code", valueChecked = "Y", valueUnchecked = "N";
+DateEdit bondate=bon_file.bondate, tabIndex=21, title=%"Last Modified Date", noEntry;
+Edit bongrup=bon_file.bongrup, tabIndex=22, title=%"Owned by (Dept)", noEntry;
+Edit bonuser=bon_file.bonuser, tabIndex=23, title=%"Owned by", noEntry;
+Edit bonmodu=bon_file.bonmodu, tabIndex=24, title=%"Modified by", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=27, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bon(bon_file.bon03,bon_file.bon02,formonly.ima02_b,formonly.ima021_b,bon_file.bon04,bon_file.bon05,bon_file.bon06,bon_file.bon07,bon_file.bon08,bon_file.bon09,bon_file.bon10,bon_file.bon11,bon_file.bon12,bon_file.bonacti,bon_file.bondate,bon_file.bongrup,bon_file.bonuser,bon_file.bonmodu)
+SCREEN RECORD Undefined(bon_file.bon01,formonly.ima25,formonly.ima02,formonly.ima08,formonly.ima021,formonly.ima109,formonly.ima022,formonly.ima54,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

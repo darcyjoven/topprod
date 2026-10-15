@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi703.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi703")
+VBox VBox1
+Folder pc510
+Page page01(text="Main")
+Grid gr2147
+{
+ Potential Customer No. [off01       ][ofd02       ]
+ Line No.               [off02     ]
+ Competitive Vender No. [off03       ][off04       ]
+
+
+ Compet Process         [off05                                                       ]
+                        [off051                                                      ]
+                        [off052                                                      ]
+                        [off053                                                      ]
+                        [off054                                                      ]
+ Advantage              [off06                                                       ]
+                        [off061                                                      ]
+ Inferiority            [off07                                                       ]
+                        [off071                                                      ]
+}
+END -- gr2147
+END -- page01
+Page info(text="Info")
+Grid gr2148
+{
+ Record Owner        [offuser   ] Last Modified by    [offmodu   ] Data Valid Code     [offacti   ]
+ Department          [offgrup   ] Create/Modify Date  [offdate     ]
+ Record Orig.        [offoriu   ]
+ Dept Orig.          [offorig   ]
+}
+END -- gr2148
+END -- info
+END -- pc510
+Grid gr2149
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2149
+END -- VBox1
+END -- axmi703
+
+TABLES
+off_file
+ATTRIBUTES
+ButtonEdit off01=off_file.off01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Details";
+Edit ofd02=formonly.ofd02 type CHAR, tabIndex=2, noEntry;
+Edit off02=off_file.off02, tabIndex=3;
+ButtonEdit off03=off_file.off03, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Details";
+Edit off04=off_file.off04, tabIndex=5, noEntry;
+Edit off05=off_file.off05, tabIndex=6;
+Edit off051=off_file.off051, tabIndex=7;
+Edit off052=off_file.off052, tabIndex=8;
+Edit off053=off_file.off053, tabIndex=9;
+Edit off054=off_file.off054, tabIndex=10;
+Edit off06=off_file.off06, tabIndex=11;
+Edit off061=off_file.off061, tabIndex=12;
+Edit off07=off_file.off07, tabIndex=13;
+Edit off071=off_file.off071, tabIndex=14;
+Edit offuser=off_file.offuser, tabIndex=15, noEntry;
+Edit offmodu=off_file.offmodu, tabIndex=16, noEntry;
+Edit offacti=off_file.offacti, tabIndex=17, noEntry, upShift;
+Edit offgrup=off_file.offgrup, tabIndex=18, noEntry;
+DateEdit offdate=off_file.offdate, tabIndex=19, noEntry;
+Edit offoriu=off_file.offoriu, tabIndex=501, noEntry;
+Edit offorig=off_file.offorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(off_file.off01,formonly.ofd02,off_file.off02,off_file.off03,off_file.off04,off_file.off05,off_file.off051,off_file.off052,off_file.off053,off_file.off054,off_file.off06,off_file.off061,off_file.off07,off_file.off071,off_file.offuser,off_file.offmodu,off_file.offacti,off_file.offgrup,off_file.offdate,off_file.offoriu,off_file.offorig,formonly.cnt)
+END -- INSTRUCTIONS
+

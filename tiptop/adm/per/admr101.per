@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/adm/42f/admr101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"admr101")
+VBox VBox1
+Grid gr1586
+{
+ <G group01                                                                             >
+  Customer #          [oea03               ]  Department          [oea15               ]
+  Salesman            [oea14               ]  Order Date          [oea02               ]
+ <                                                                                      >
+
+}
+END -- gr1586
+Group g01(text="INPUT")
+Grid gr1587
+{
+ <G group02                                                                           >
+  Aging Cate          [omi0]
+  Aging Section       [a1 ][a2 ][a3 ][a4 ][a5 ][a6 ]
+ <                                                                                    >
+ <G group03                                                                           >
+ [aa                        ]
+ <                                                                                    >
+
+}
+END -- gr1587
+END -- g01
+Grid gr1588
+{
+[more                                                   ]
+
+}
+END -- gr1588
+END -- VBox1
+END -- admr101
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit oea03=formonly.oea03 type VARCHAR, tabIndex=1;
+Edit oea15=formonly.oea15 type VARCHAR, tabIndex=2;
+Edit oea14=formonly.oea14 type VARCHAR, tabIndex=3;
+DateEdit oea02=formonly.oea02 type DATE, tabIndex=4;
+Group group02:group02;
+Edit omi0=formonly.omi01 type CHAR, tabIndex=5;
+Edit a1=formonly.a1 type SMALLINT, tabIndex=6;
+Edit a2=formonly.a2 type SMALLINT, tabIndex=7;
+Edit a3=formonly.a3 type SMALLINT, tabIndex=8;
+Edit a4=formonly.a4 type SMALLINT, tabIndex=9;
+Edit a5=formonly.a5 type SMALLINT, tabIndex=10;
+Edit a6=formonly.a6 type SMALLINT, tabIndex=11;
+Group group03:group03, text="Sequence";
+RadioGroup aa=formonly.aa type VARCHAR, tabIndex=12, default = "1", items=(("1", "By Customer"),("2", "According to day"));
+CheckBox more=formonly.more type CHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oea03,formonly.oea15,formonly.oea14,formonly.oea02,formonly.omi01,formonly.a1,formonly.a2,formonly.a3,formonly.a4,formonly.a5,formonly.a6,formonly.aa,formonly.more)
+END -- INSTRUCTIONS
+

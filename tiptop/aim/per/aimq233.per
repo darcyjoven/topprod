@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq233.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq233")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3155
+{
+  Item No.            [imgg01                        ]  Warehouse           [imgg02    ]
+  Part Name           [ima02                         ]  Location            [imgg03    ]
+  Specification       [ima021                        ]  Lot#                [imgg04    ]
+  Source Code         [ima08     ]                      Inventory Unit      [imgg09    ]
+ <G group01                                           ><G group02                                            >
+  Year                [yy          ]                    Inv of the beginning of period [imkk09              ]
+  Period              [mm          ]                    Current Inv                    [imgg10              ]
+ <                                                    ><                                                     >
+
+}
+END -- gr3155
+END -- page01
+END -- folder01
+Table s_tlff
+{
+[tlff06 |cond            |tlff026          |tlff036          |tlff10           |tlff1|tlff024               ]
+[tlff06 |cond            |tlff026          |tlff036          |tlff10           |tlff1|tlff024               ]
+[tlff06 |cond            |tlff026          |tlff036          |tlff10           |tlff1|tlff024               ]
+[tlff06 |cond            |tlff026          |tlff036          |tlff10           |tlff1|tlff024               ]
+[tlff06 |cond            |tlff026          |tlff036          |tlff10           |tlff1|tlff024               ]
+[tlff06 |cond            |tlff026          |tlff036          |tlff10           |tlff1|tlff024               ]
+[tlff06 |cond            |tlff026          |tlff036          |tlff10           |tlff1|tlff024               ]
+[tlff06 |cond            |tlff026          |tlff036          |tlff10           |tlff1|tlff024               ]
+[tlff06 |cond            |tlff026          |tlff036          |tlff10           |tlff1|tlff024               ]
+[tlff06 |cond            |tlff026          |tlff036          |tlff10           |tlff1|tlff024               ]
+
+}
+END -- s_tlff
+Grid gr3156
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3156
+END -- VBox1
+END -- aimq233
+
+TABLES
+imgg_file,
+tlff_file
+ATTRIBUTES
+ButtonEdit imgg01=imgg_file.imgg01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit imgg02=imgg_file.imgg02, tabIndex=2, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit imgg03=imgg_file.imgg03, tabIndex=4, not null, required;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, noEntry;
+Edit imgg04=imgg_file.imgg04, tabIndex=6, not null, required;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=7, noEntry;
+Edit imgg09=imgg_file.imgg09, tabIndex=8, noEntry;
+Group group01:group01;
+Edit yy=formonly.yy type SMALLINT, tabIndex=9;
+Edit mm=formonly.mm type SMALLINT, tabIndex=10;
+Group group02:group02;
+Edit imkk09=formonly.imkk09 type DECIMAL, tabIndex=11;
+Edit imgg10=imgg_file.imgg10, tabIndex=12, not null, required;
+DateEdit tlff06=tlff_file.tlff06, tabIndex=13, title="Doc Dt";
+Edit cond=formonly.cond type CHAR, tabIndex=14, title="Transaction Sts";
+Edit tlff026=tlff_file.tlff026, tabIndex=15, title="Src Doc#";
+Edit tlff036=tlff_file.tlff036, tabIndex=16, title="Target Doc#";
+Edit tlff10=tlff_file.tlff10, tabIndex=17, title="Transaction Qty";
+Edit tlff1=tlff_file.tlff11, tabIndex=18, title="Unit";
+Edit tlff024=tlff_file.tlff024, tabIndex=19, title="Inv After Transaction";
+Edit cnt=formonly.cnt type CHAR, tabIndex=20;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=21;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tlff(tlff_file.tlff06,formonly.cond,tlff_file.tlff026,tlff_file.tlff036,tlff_file.tlff10,tlff_file.tlff11,tlff_file.tlff024)
+SCREEN RECORD Undefined(imgg_file.imgg01,imgg_file.imgg02,formonly.ima02,imgg_file.imgg03,formonly.ima021,imgg_file.imgg04,formonly.ima08,imgg_file.imgg09,formonly.yy,formonly.mm,formonly.imkk09,imgg_file.imgg10,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

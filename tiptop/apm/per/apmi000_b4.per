@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi000_b4.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi000_b4")
+Grid gr4799
+{
+ <T delivery                                                                                             >
+ [poy02_4   |poy03_4    |pmc03_4     |poy26 |poy27     |tqb02     |poy33      |poy29      |occ02        ]
+ [poy02_4   |poy03_4    |pmc03_4     |poy26 |poy27     |tqb02     |poy33      |poy29      |occ02        ]
+ [poy02_4   |poy03_4    |pmc03_4     |poy26 |poy27     |tqb02     |poy33      |poy29      |occ02        ]
+ [poy02_4   |poy03_4    |pmc03_4     |poy26 |poy27     |tqb02     |poy33      |poy29      |occ02        ]
+ [poy02_4   |poy03_4    |pmc03_4     |poy26 |poy27     |tqb02     |poy33      |poy29      |occ02        ]
+ <                                                                                                       >
+
+}
+END -- gr4799
+END -- apmi000_b4
+
+TABLES
+poy_file
+ATTRIBUTES
+Table delivery:delivery;
+Edit poy02_4=formonly.poy02_4 type CHAR, tabIndex=1, title="Flow No.", noEntry;
+Edit poy03_4=formonly.poy03_4 type CHAR, tabIndex=2, title="Vender No.", noEntry;
+Edit pmc03_4=formonly.pmc03_4 type CHAR, tabIndex=3, title="Vender Name", noEntry;
+CheckBox poy26=poy_file.poy26, tabIndex=4, title="Arch.", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit poy27=poy_file.poy27, action=controlp, tabIndex=5, title="Belong to", image="zoom";
+Edit tqb02=formonly.tqb02 type CHAR, tabIndex=6, title="Inst Desc", noEntry;
+ButtonEdit poy33=poy_file.poy33, action=controlp, tabIndex=7, title="Credit No.", image="zoom";
+ButtonEdit poy29=poy_file.poy29, action=controlp, tabIndex=8, title="Agent Cust", image="zoom";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=9, title="Customer Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_poy4(formonly.poy02_4,formonly.poy03_4,formonly.pmc03_4,poy_file.poy26,poy_file.poy27,formonly.tqb02,poy_file.poy33,poy_file.poy29,formonly.occ02)
+END -- INSTRUCTIONS
+

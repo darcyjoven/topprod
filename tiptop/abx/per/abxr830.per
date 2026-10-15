@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr830.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxr830")
+VBox VBox1
+Grid gr1186
+{
+ <G group01                            >
+  Item No.        [ima01               ]
+  Bond Group      [ima1916             ]
+  Inventory Label [bwa01               ]
+
+ <                                     >
+
+}
+END -- gr1186
+Group group04(text="INPUT")
+VBox VBox2
+Grid gr1187
+{
+ <G group02                    ><G group03                          >
+  Year               [yy  ]      [s1              ][s2             ]
+                                 [u1              ][u2             ]
+ <                             ><                                   >
+
+}
+END -- gr1187
+Grid gr1188
+{
+ [x                    ]
+ Bonded Item Stytle [ima106         ]
+}
+END -- gr1188
+END -- VBox2
+END -- group04
+END -- VBox1
+END -- abxr830
+
+TABLES
+bwa_file,
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<P>Qry Item Master";
+ButtonEdit ima1916=ima_file.ima1916, action=controlp, tabIndex=2, image="zoom", comment="<P>Qry Bond Group";
+Edit bwa01=bwa_file.bwa01, tabIndex=3;
+Group group02:group02, text="Print Data";
+Edit yy=formonly.yy type SMALLINT, tabIndex=4;
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=5, items=(("1", "Item No."),("2", "Bonded Group Code"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=6, items=(("1", "Item No."),("2", "Bonded Group Code"));
+CheckBox u1=formonly.u1 type CHAR, tabIndex=7, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=8, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox x=formonly.x type CHAR, tabIndex=9, text="Print Qty Be Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox ima106=ima_file.ima106, tabIndex=10, not null, required, items=(("1", "Material"),("2", "Semi-Product"),("3", "Product"),("5", "Stockage"),("6", "Cust-Material"),("7", "Transport-Product"),("0", "All"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima1916,bwa_file.bwa01,formonly.yy,formonly.s1,formonly.s2,formonly.u1,formonly.u2,formonly.x,ima_file.ima106)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/awsi003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"awsi003")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+VBox VBox2
+Table s_wac
+{
+[wac01      |wac02    |gat03       |wac03   |gaq03     |wac04     |wac05     |wac06     |wac07     |wac08     |wac09     |wac10    |wac11     |wac12     |wac13          |wac15     ]
+[wac01      |wac02    |gat03       |wac03   |gaq03     |wac04     |wac05     |wac06     |wac07     |wac08     |wac09     |wac10    |wac11     |wac12     |wac13          |wac15     ]
+[wac01      |wac02    |gat03       |wac03   |gaq03     |wac04     |wac05     |wac06     |wac07     |wac08     |wac09     |wac10    |wac11     |wac12     |wac13          |wac15     ]
+[wac01      |wac02    |gat03       |wac03   |gaq03     |wac04     |wac05     |wac06     |wac07     |wac08     |wac09     |wac10    |wac11     |wac12     |wac13          |wac15     ]
+[wac01      |wac02    |gat03       |wac03   |gaq03     |wac04     |wac05     |wac06     |wac07     |wac08     |wac09     |wac10    |wac11     |wac12     |wac13          |wac15     ]
+[wac01      |wac02    |gat03       |wac03   |gaq03     |wac04     |wac05     |wac06     |wac07     |wac08     |wac09     |wac10    |wac11     |wac12     |wac13          |wac15     ]
+[wac01      |wac02    |gat03       |wac03   |gaq03     |wac04     |wac05     |wac06     |wac07     |wac08     |wac09     |wac10    |wac11     |wac12     |wac13          |wac15     ]
+[wac01      |wac02    |gat03       |wac03   |gaq03     |wac04     |wac05     |wac06     |wac07     |wac08     |wac09     |wac10    |wac11     |wac12     |wac13          |wac15     ]
+[wac01      |wac02    |gat03       |wac03   |gaq03     |wac04     |wac05     |wac06     |wac07     |wac08     |wac09     |wac10    |wac11     |wac12     |wac13          |wac15     ]
+[wac01      |wac02    |gat03       |wac03   |gaq03     |wac04     |wac05     |wac06     |wac07     |wac08     |wac09     |wac10    |wac11     |wac12     |wac13          |wac15     ]
+
+}
+END -- s_wac
+END -- VBox2
+END -- page01
+END -- pc1
+Grid gr1
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1
+END -- VBox1
+END -- awsi003
+
+TABLES
+wac_file
+ATTRIBUTES
+ButtonEdit wac01=wac_file.wac01, action=controlp, tabIndex=1, title="ObjiecID", not null, required, image="zoom";
+ButtonEdit wac02=wac_file.wac02, action=controlp, tabIndex=2, title="Table", not null, required, image="zoom";
+Edit gat03=formonly.gat03 type CHAR, tabIndex=3, title="TableName", noEntry;
+Edit wac03=wac_file.wac03, tabIndex=4, title="Field", not null, required;
+Edit gaq03=formonly.gaq03 type CHAR, tabIndex=5, title="FieldName", noEntry;
+Edit wac04=wac_file.wac04, tabIndex=6, title="property", not null, required;
+Edit wac05=wac_file.wac05, tabIndex=7, title="Field Des";
+ComboBox wac06=wac_file.wac06, tabIndex=8, title="Type", not null, required, items=(("C", %"C"),("D", %"D"),("N", %"N"));
+Edit wac07=wac_file.wac07, tabIndex=9, title="Length", not null, required;
+CheckBox wac08=wac_file.wac08, tabIndex=10, title="Key", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox wac09=wac_file.wac09, tabIndex=11, title="Required", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox wac10=wac_file.wac10, tabIndex=12, title="Change", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit wac11=wac_file.wac11, tabIndex=13, title="Des";
+Edit wac12=wac_file.wac12, tabIndex=14, title="Begin";
+Edit wac13=wac_file.wac13, tabIndex=15, title="End";
+Edit wac15=wac_file.wac15, tabIndex=16, title="Fault";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wac(wac_file.wac01,wac_file.wac02,formonly.gat03,wac_file.wac03,formonly.gaq03,wac_file.wac04,wac_file.wac05,wac_file.wac06,wac_file.wac07,wac_file.wac08,wac_file.wac09,wac_file.wac10,wac_file.wac11,wac_file.wac12,wac_file.wac13,wac_file.wac15)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

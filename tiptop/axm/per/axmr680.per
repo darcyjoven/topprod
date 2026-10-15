@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmr680.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"axmr680")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                            >
+    [omf00     ][omf01                       ]
+    [omf05     ][omf02                       ]
+    [omf03     ][omf04                       ]
+ <                                                    >
+
+}
+END -- Grid1
+END -- VBox1
+END -- axmr680
+
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+Label omf00:omf00, text=%"omf00";
+ButtonEdit omf01=formonly.omf00 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Label omf05:omf05, text=%"omf05";
+ButtonEdit omf02=formonly.omf05 type CHAR, action=controlp, tabIndex=2, image="zoom";
+Label omf03:omf03, text=%"omf03";
+DateEdit omf04=formonly.omf03 type DATE, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.omf00,formonly.omf05,formonly.omf03)
+END -- INSTRUCTIONS
+

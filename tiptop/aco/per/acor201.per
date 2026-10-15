@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acor201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acor201")
+VBox VBox1
+Grid gr1379
+{
+ <G group01                                                     >
+  Application No.     [coc01               ]
+  Bonded No.          [coc04               ]
+  Customs No.         [coc10               ]
+  Register Book No.   [coc03               ]
+ <                                                              >
+ <G group02                                                     >
+  [y                                                           ]
+  [choice                                                      ]
+ <                                                              >
+
+}
+END -- gr1379
+Grid gr1380
+{
+ [more                                                        ]
+
+}
+END -- gr1380
+END -- VBox1
+END -- acor201
+
+TABLES
+coc_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit coc01=coc_file.coc01, tabIndex=1;
+Edit coc04=coc_file.coc04, tabIndex=2;
+Edit coc10=coc_file.coc10, tabIndex=3;
+Edit coc03=coc_file.coc03, tabIndex=4;
+Group group02:group02, text="Input";
+CheckBox y=formonly.y type VARCHAR, tabIndex=5, text="Convert HS Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox choice=formonly.choice type VARCHAR, tabIndex=6, text="Print Details Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(coc_file.coc01,coc_file.coc04,coc_file.coc10,coc_file.coc03,formonly.y,formonly.choice,formonly.more)
+END -- INSTRUCTIONS
+

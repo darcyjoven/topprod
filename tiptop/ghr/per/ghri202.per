@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri202.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zxy")
+VBox vb1
+Folder folder01
+Page page01(text="Page01")
+Grid gr3057
+{
+ <G group01                     >
+  User ID        [tc_hraa01     ]
+  User Name      [tc_hraa02     ]
+ <                              >
+
+}
+END -- gr3057
+END -- page01
+END -- folder01
+Table s_zxy
+{
+[tc_hraa03    |gem02             ]
+[tc_hraa03    |gem02             ]
+[tc_hraa03    |gem02             ]
+[tc_hraa03    |gem02             ]
+[tc_hraa03    |gem02             ]
+[tc_hraa03    |gem02             ]
+[tc_hraa03    |gem02             ]
+[tc_hraa03    |gem02             ]
+[tc_hraa03    |gem02             ]
+[tc_hraa03    |gem02             ]
+
+}
+END -- s_zxy
+Grid gr3058
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3058
+END -- vb1
+END -- ghri202
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit tc_hraa01=formonly.tc_hraa01 type VARCHAR, action=controlp, tabIndex=1, required, image="zoom";
+Edit tc_hraa02=formonly.tc_hraa02 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit tc_hraa03=formonly.tc_hraa03 type VARCHAR, action=controlp, tabIndex=3, title="Plant No.", not null, required, image="zoom";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=4, title="Plant Name", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tc_hraa(formonly.tc_hraa03,formonly.gem02)
+SCREEN RECORD Undefined(formonly.tc_hraa01,formonly.tc_hraa02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

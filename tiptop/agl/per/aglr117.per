@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr117.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr017")
+VBox VBox2
+Group group01(text="INPUT")
+VBox VBox1
+Grid gr2631
+{
+ <G group02                                                          >
+  [rtype                                                       ]
+  [                                                            ]
+ <                                                                   >
+
+
+}
+END -- gr2631
+Grid Grid1
+{
+    ROC Book No.        [b                   ]
+    IFRS Book No.       [b1                  ]
+    Report Structure No.[a                   ]
+ <G group1                                                               >
+    Enter Year       [yy          ]
+    Start Period     [bm          ]
+    End Period       [em          ]
+ <                                                                       >
+
+}
+END -- Grid1
+Grid gr2634
+{
+   Decimal Digits      [e                   ]
+   Print Minimum Level#[f                   ]
+   Amount Unit         [d                   ]
+  [c                             ]
+  [h                             ]
+
+ <G group08                                                         >
+  [o                                       ]
+   G/L Curr.          [r                   ]
+   Convert Curr.      [p                   ]
+   * Ex.Rate          [q                   ]
+ <                                                                  >
+
+}
+END -- gr2634
+END -- VBox1
+END -- group01
+Grid gr2635
+{
+[more                                                        ]
+
+}
+END -- gr2635
+END -- VBox2
+END -- aglr117
+
+ATTRIBUTES
+Group group02:group02, text="Report Type";
+RadioGroup rtype=formonly.rtype type CHAR, tabIndex=1, not null, items=(("1", "Balance Sheet"),("2", "Income statement"));
+ButtonEdit b=formonly.b type CHAR, action=controlp, tabIndex=15, not null, required, image="zoom";
+ButtonEdit b1=formonly.b1 type CHAR, action=controlp, tabIndex=16, not null, required, image="zoom";
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=17, not null, required, image="zoom";
+Group group1:Group1, text=%"";
+Edit yy=formonly.yy type CHAR, tabIndex=12, not null, required;
+Edit bm=formonly.bm type CHAR, tabIndex=13, not null, required;
+Edit em=formonly.em type CHAR, tabIndex=14, not null, required;
+Edit e=formonly.e type CHAR, tabIndex=2;
+Edit f=formonly.f type SMALLINT, tabIndex=3, not null, required;
+ComboBox d=formonly.d type CHAR, tabIndex=4, not null, required, queryEditable, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+CheckBox c=formonly.c type CHAR, tabIndex=5, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=6, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group08:group08;
+CheckBox o=formonly.o type CHAR, tabIndex=7, text="Convert Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=8, noEntry;
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=9, image="zoom";
+Edit q=formonly.q type DECIMAL, tabIndex=10, not null, required;
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.e,formonly.f,formonly.d,formonly.c,formonly.h,formonly.o,formonly.r,formonly.p,formonly.q,formonly.rtype,formonly.more,formonly.yy,formonly.bm,formonly.em,formonly.b,formonly.b1,formonly.a)
+END -- INSTRUCTIONS
+

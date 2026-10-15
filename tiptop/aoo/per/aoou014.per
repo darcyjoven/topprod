@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aoou014.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aoou014")
+VBox VBox1
+Folder pc885
+Page page01(text="Page01")
+Table s_aba
+{
+[aba01           |aba06  |aba02        |aba05       |aba08          |abasign        |abadays   |abaprit        ]
+[aba01           |aba06  |aba02        |aba05       |aba08          |abasign        |abadays   |abaprit        ]
+[aba01           |aba06  |aba02        |aba05       |aba08          |abasign        |abadays   |abaprit        ]
+[aba01           |aba06  |aba02        |aba05       |aba08          |abasign        |abadays   |abaprit        ]
+[aba01           |aba06  |aba02        |aba05       |aba08          |abasign        |abadays   |abaprit        ]
+[aba01           |aba06  |aba02        |aba05       |aba08          |abasign        |abadays   |abaprit        ]
+[aba01           |aba06  |aba02        |aba05       |aba08          |abasign        |abadays   |abaprit        ]
+[aba01           |aba06  |aba02        |aba05       |aba08          |abasign        |abadays   |abaprit        ]
+[aba01           |aba06  |aba02        |aba05       |aba08          |abasign        |abadays   |abaprit        ]
+[aba01           |aba06  |aba02        |aba05       |aba08          |abasign        |abadays   |abaprit        ]
+
+}
+END -- s_aba
+END -- page01
+END -- pc885
+Grid gr4716
+{
+ ----------Rows [cmt   ] ----------
+
+}
+END -- gr4716
+END -- VBox1
+END -- aoou014
+
+TABLES
+aba_file
+ATTRIBUTES
+Edit aba01=aba_file.aba01, tabIndex=1, title="Voucher No.", noEntry;
+Edit aba06=aba_file.aba06, tabIndex=2, title="Source", noEntry, not null, required;
+DateEdit aba02=aba_file.aba02, tabIndex=3, title="Voucher Date", noEntry;
+DateEdit aba05=aba_file.aba05, tabIndex=4, title="Entry Date", noEntry;
+Edit aba08=aba_file.aba08, tabIndex=5, title="Amount", noEntry;
+Edit abasign=aba_file.abasign, tabIndex=6, title="Approval Level", noEntry;
+Edit abadays=aba_file.abadays, tabIndex=7, title="Rest Days", noEntry;
+Edit abaprit=aba_file.abaprit, tabIndex=8, title="Priority Level", noEntry;
+Edit cmt=formonly.cmt type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aba(aba_file.aba01,aba_file.aba06,aba_file.aba02,aba_file.aba05,aba_file.aba08,aba_file.abasign,aba_file.abadays,aba_file.abaprit)
+SCREEN RECORD Undefined(formonly.cmt)
+END -- INSTRUCTIONS
+

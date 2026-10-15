@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt260.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="anmt260")
+VBox vb13
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr1
+{
+
+  Bank Code                  [nsg01                   ]           Debit Amt        [nsg06                   ]
+
+  Bank Account               [nsg02                   ]           Credit Amount    [nsg07                   ]
+
+  Tran. Date                 [nsg03              ]                Balance          [nsg08                   ]
+
+  Transaction Serial No.     [nsg04                   ]           Cheque No.       [nsg09                   ]
+
+  Currency                   [nsg05                   ]           Tran. Code       [nsg10                   ]
+
+  Remark                     [nsg11                                                                         ]
+
+}
+END -- gr1
+END -- Page3
+END -- pc2
+Grid gr2
+{
+  ----------Rows  [cnt       ]----------
+
+}
+END -- gr2
+END -- vb13
+END -- anmt260
+
+TABLES
+nsg_file
+ATTRIBUTES
+Edit nsg01=nsg_file.nsg01, tabIndex=1, not null;
+Edit nsg06=nsg_file.nsg06, tabIndex=5;
+Edit nsg02=nsg_file.nsg02, tabIndex=2, not null;
+Edit nsg07=nsg_file.nsg07, tabIndex=6;
+DateEdit nsg03=nsg_file.nsg03, tabIndex=12, required;
+Edit nsg08=nsg_file.nsg08, tabIndex=7;
+Edit nsg04=nsg_file.nsg04, tabIndex=3, not null;
+Edit nsg09=nsg_file.nsg09, tabIndex=8;
+Edit nsg05=nsg_file.nsg05, tabIndex=4;
+Edit nsg10=nsg_file.nsg10, tabIndex=9;
+Edit nsg11=nsg_file.nsg11, tabIndex=10;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nsg_file.nsg01,nsg_file.nsg06,nsg_file.nsg02,nsg_file.nsg07,nsg_file.nsg03,nsg_file.nsg08,nsg_file.nsg04,nsg_file.nsg09,nsg_file.nsg05,nsg_file.nsg10,nsg_file.nsg11,formonly.cnt)
+END -- INSTRUCTIONS
+

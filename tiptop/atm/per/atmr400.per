@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmr400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"atmr400")
+VBox VBox1
+Grid gr1171
+{
+ <G group01                                        >
+  Category             [tqa03               ]
+
+ <                                                 >
+
+}
+END -- gr1171
+Grid gr1172
+{
+[more                                              ]
+
+}
+END -- gr1172
+END -- VBox1
+END -- atmr400
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ComboBox tqa03=formonly.tqa03 type CHAR, tabIndex=1, required, queryEditable, comment="No Blank, Enter 1--20", items=(("1", "Item Type"),("2", "Item Brand"),("3", "Series"),("4", "Item Model"),("5", "Spec"),("6", "Property"),("7", "Expenses Payment Mode"),("8", "Expenses Payment Object"),("9", "Balance Type"),("10", "System Code"),("11", "System Area Code"),("12", "Customer Type"),("13", "Bonded Type"),("14", "Inst Type"),("15", "Promotion Type"),("16", "Exhibit Type"),("17", "Period Type"),("18", "Promotion Category"),("19", "Channel Description"),("20", "Crediter's Description"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=2, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tqa03,formonly.more)
+END -- INSTRUCTIONS
+

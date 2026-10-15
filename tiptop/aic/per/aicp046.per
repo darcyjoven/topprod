@@ -1,0 +1,151 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aicp046.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aicp046")
+VBox vb2
+HBox hb2
+Grid gr1
+{
+   <G qbe                                    >
+    Note No.  [rvu01                         ]
+    Date      [rvu03        ]
+    Vender    [rvu04                         ]
+    Inter Body[rvviicd03                     ]
+    Item No.  [rvv31                         ]
+
+
+   <                                         >
+
+
+
+
+}
+END -- gr1
+Grid gr2
+{
+ <G input                                                      >
+  Purchase No. [g_t1           ]  Currency     [pmm22          ]
+  Purchase Date[pmm04          ]  Exchange Rate[pmm42          ]
+  Purchase Man [pmm12          ][gen02                         ]
+  Purchase Dep.[pmm13          ]
+  Issue No.    [g_t2           ]
+  Note. Date   [sfp03          ]
+
+
+
+
+ <                                                             >
+
+}
+END -- gr2
+END -- hb2
+Table tb1
+{
+[sel |rvv01           |rvv02|rvv31_b                                 |rvv031                        |imaicd04|rvv32     |rvv33     |rvv34                   |pmn63   |sfbiicd10  |pmniicd12   |sfbiicd07                               |rvv17          |rvv85             |icb05                 |sfbiicd14                               |sfbiicd09     |sfb05                                      |sfbiicd08                               |sfb82         |pmc03_1             |sfb08          |sfbiicd06         |sfb15       |sfbiicd02     |sfbiicd03        |sfb06               |sfbiicd01     |pmc03_2             |sfbiicd13               |memo                               ]
+[sel |rvv01           |rvv02|rvv31_b                                 |rvv031                        |imaicd04|rvv32     |rvv33     |rvv34                   |pmn63   |sfbiicd10  |pmniicd12   |sfbiicd07                               |rvv17          |rvv85             |icb05                 |sfbiicd14                               |sfbiicd09     |sfb05                                      |sfbiicd08                               |sfb82         |pmc03_1             |sfb08          |sfbiicd06         |sfb15       |sfbiicd02     |sfbiicd03        |sfb06               |sfbiicd01     |pmc03_2             |sfbiicd13               |memo                               ]
+[sel |rvv01           |rvv02|rvv31_b                                 |rvv031                        |imaicd04|rvv32     |rvv33     |rvv34                   |pmn63   |sfbiicd10  |pmniicd12   |sfbiicd07                               |rvv17          |rvv85             |icb05                 |sfbiicd14                               |sfbiicd09     |sfb05                                      |sfbiicd08                               |sfb82         |pmc03_1             |sfb08          |sfbiicd06         |sfb15       |sfbiicd02     |sfbiicd03        |sfb06               |sfbiicd01     |pmc03_2             |sfbiicd13               |memo                               ]
+[sel |rvv01           |rvv02|rvv31_b                                 |rvv031                        |imaicd04|rvv32     |rvv33     |rvv34                   |pmn63   |sfbiicd10  |pmniicd12   |sfbiicd07                               |rvv17          |rvv85             |icb05                 |sfbiicd14                               |sfbiicd09     |sfb05                                      |sfbiicd08                               |sfb82         |pmc03_1             |sfb08          |sfbiicd06         |sfb15       |sfbiicd02     |sfbiicd03        |sfb06               |sfbiicd01     |pmc03_2             |sfbiicd13               |memo                               ]
+[sel |rvv01           |rvv02|rvv31_b                                 |rvv031                        |imaicd04|rvv32     |rvv33     |rvv34                   |pmn63   |sfbiicd10  |pmniicd12   |sfbiicd07                               |rvv17          |rvv85             |icb05                 |sfbiicd14                               |sfbiicd09     |sfb05                                      |sfbiicd08                               |sfb82         |pmc03_1             |sfb08          |sfbiicd06         |sfb15       |sfbiicd02     |sfbiicd03        |sfb06               |sfbiicd01     |pmc03_2             |sfbiicd13               |memo                               ]
+
+}
+END -- tb1
+Table tb2
+{
+[sel2 |item |idc05  |idc06 |icf03                                                                                                                   |icf05|qty1           |qty2           |ima01                                       |ima02                                                       |sfbiicd08_b                                 ]
+[sel2 |item |idc05  |idc06 |icf03                                                                                                                   |icf05|qty1           |qty2           |ima01                                       |ima02                                                       |sfbiicd08_b                                 ]
+[sel2 |item |idc05  |idc06 |icf03                                                                                                                   |icf05|qty1           |qty2           |ima01                                       |ima02                                                       |sfbiicd08_b                                 ]
+[sel2 |item |idc05  |idc06 |icf03                                                                                                                   |icf05|qty1           |qty2           |ima01                                       |ima02                                                       |sfbiicd08_b                                 ]
+[sel2 |item |idc05  |idc06 |icf03                                                                                                                   |icf05|qty1           |qty2           |ima01                                       |ima02                                                       |sfbiicd08_b                                 ]
+
+}
+END -- tb2
+END -- vb2
+END -- aicp046
+
+TABLES
+rvv_file,
+rvu_file,
+pmn_file,
+sfbi_file,
+sfb_file,
+icf_file,
+pmm_file,
+pmni_file,
+sfp_file,
+imaicd_file,
+icb_file,
+idc_file,
+rvvi_file,
+ima_file
+ATTRIBUTES
+Group qbe:qbe, text="QBE";
+ButtonEdit rvu01=rvu_file.rvu01, action=controlp, tabIndex=46, not null, required, image="zoom.png";
+DateEdit rvu03=rvu_file.rvu03, tabIndex=47, not null, required;
+ButtonEdit rvu04=rvu_file.rvu04, action=controlp, tabIndex=48, not null, required, image="zoom.png";
+ButtonEdit rvviicd03=rvvi_file.rvviicd03, action=controlp, tabIndex=49, not null, required, image="zoom.png";
+ButtonEdit rvv31=rvv_file.rvv31, action=controlp, tabIndex=50, not null, required, image="zoom.png";
+Group input:input, text="INPUT";
+ButtonEdit g_t1=formonly.g_t1 type VARCHAR, action=controlp, tabIndex=51, not null, required, image="zoom.png";
+ButtonEdit pmm22=pmm_file.pmm22, action=controlp, tabIndex=57, image="zoom.png";
+DateEdit pmm04=pmm_file.pmm04, tabIndex=52, not null, required;
+Edit pmm42=pmm_file.pmm42, tabIndex=1;
+ButtonEdit pmm12=pmm_file.pmm12, action=controlp, tabIndex=53, not null, required, image="zoom.png";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit pmm13=pmm_file.pmm13, action=controlp, tabIndex=54, not null, required, image="zoom.png";
+ButtonEdit g_t2=formonly.g_t2 type VARCHAR, action=controlp, tabIndex=55, not null, required, image="zoom.png";
+DateEdit sfp03=sfp_file.sfp03, tabIndex=56, not null, required;
+CheckBox sel=formonly.sel type CHAR, tabIndex=3, title="Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rvv01=rvv_file.rvv01, tabIndex=4, default = "N", title="Stock-in No.", noEntry, not null, required;
+Edit rvv02=rvv_file.rvv02, tabIndex=5, title="Item", noEntry, not null, required;
+Edit rvv31_b=formonly.rvv31_b type CHAR, tabIndex=6, title="Item No.", noEntry;
+Edit rvv031=rvv_file.rvv031, tabIndex=7, title="Desc", noEntry;
+ComboBox imaicd04=imaicd_file.imaicd04, tabIndex=8, title="Item type", noEntry, items=(("0", %"BODY"),("1", %"WAFER 1"),("2", %"WAFER 2"),("3", %"IC 3"),("4", %"IC 4"),("9", %"Other"));
+Edit rvv32=rvv_file.rvv32, tabIndex=9, title="Stock", noEntry;
+Edit rvv33=rvv_file.rvv33, tabIndex=10, title="Loc", noEntry;
+Edit rvv34=rvv_file.rvv34, tabIndex=11, title="Lot", noEntry;
+CheckBox pmn63=pmn_file.pmn63, tabIndex=12, title="Emergent", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sfbiicd10=sfbi_file.sfbiicd10, tabIndex=13, title="Mutli-Die", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit pmniicd12=pmni_file.pmniicd12, tabIndex=14, title="WAFER SITE", noEntry;
+Edit sfbiicd07=sfbi_file.sfbiicd07, tabIndex=15, title="Date Code", noEntry;
+Edit rvv17=rvv_file.rvv17, tabIndex=16, title="Qty", noEntry;
+Edit rvv85=rvv_file.rvv85, tabIndex=17, title="Unit II Quality", noEntry;
+Edit icb05=icb_file.icb05, tabIndex=18, title="GROSS DIE(ea) WAFER", noEntry;
+Edit sfbiicd14=sfbi_file.sfbiicd14, tabIndex=19, title="Body No.", noEntry;
+ButtonEdit sfbiicd09=sfbi_file.sfbiicd09, action=controlp, tabIndex=20, title="Work No.", image="zoom.png";
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=21, title="Item No.", not null, required, image="zoom.png";
+ButtonEdit sfbiicd08=sfbi_file.sfbiicd08, action=controlp, tabIndex=22, title="Finished No.", image="zoom.png";
+ButtonEdit sfb82=sfb_file.sfb82, action=controlp, tabIndex=23, title="Product Deptno.", not null, required, image="zoom.png";
+Edit pmc03_1=formonly.pmc03_1 type VARCHAR, tabIndex=24, title="Vendor name", noEntry;
+Edit sfb08=sfb_file.sfb08, tabIndex=25, title="Product Quality", not null, required;
+Edit sfbiicd06=sfbi_file.sfbiicd06, tabIndex=26, title="Made Quality Ref.", noEntry;
+Edit sfb15=sfb_file.sfb15, tabIndex=27, title="Final Date";
+ButtonEdit sfbiicd02=sfbi_file.sfbiicd02, action=controlp, tabIndex=28, title="Wafer Vendor", image="zoom.png";
+ButtonEdit sfbiicd03=sfbi_file.sfbiicd03, action=controlp, tabIndex=29, title="Wafer Vendor site", image="zoom.png";
+ButtonEdit sfb06=sfb_file.sfb06, action=controlp, tabIndex=30, title="Routing No.", image="zoom.png";
+ButtonEdit sfbiicd01=sfbi_file.sfbiicd01, action=controlp, tabIndex=31, title="Next Process Vendor", image="zoom.png";
+Edit pmc03_2=formonly.pmc03_2 type CHAR, tabIndex=32, title="Desc", noEntry;
+Edit sfbiicd13=sfbi_file.sfbiicd13, tabIndex=33, title="Return No.";
+Edit memo=formonly.memo type CHAR, tabIndex=34, title="Memo";
+CheckBox sel2=formonly.sel2 type CHAR, tabIndex=35, title="Selected", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit item=formonly.item type CHAR, tabIndex=36, title="Item", noEntry;
+Edit idc05=idc_file.idc05, tabIndex=37, title="Mark", noEntry, not null, required;
+Edit idc06=idc_file.idc06, tabIndex=38, title="BIN", noEntry, not null, required;
+Edit icf03=icf_file.icf03, tabIndex=39, title="Bin desc", noEntry;
+Edit icf05=icf_file.icf05, tabIndex=40, title="Bin type", noEntry;
+Edit qty1=formonly.qty1 type CHAR, tabIndex=41, title="qty1", noEntry;
+Edit qty2=formonly.qty2 type CHAR, tabIndex=42, title="qty2", noEntry;
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=43, title="Item No.", not null, required, image="zoom.png";
+Edit ima02=ima_file.ima02, tabIndex=44, title="Desc", noEntry;
+ButtonEdit sfbiicd08_b=formonly.sfbiicd08_b type CHAR, action=controlp, tabIndex=45, title="Fin. Item No.", image="zoom.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_data(formonly.sel,rvv_file.rvv01,rvv_file.rvv02,formonly.rvv31_b,rvv_file.rvv031,imaicd_file.imaicd04,rvv_file.rvv32,rvv_file.rvv33,rvv_file.rvv34,pmn_file.pmn63,sfbi_file.sfbiicd10,pmni_file.pmniicd12,sfbi_file.sfbiicd07,rvv_file.rvv17,rvv_file.rvv85,icb_file.icb05,sfbi_file.sfbiicd14,sfbi_file.sfbiicd09,sfb_file.sfb05,sfbi_file.sfbiicd08,sfb_file.sfb82,formonly.pmc03_1,sfb_file.sfb08,sfbi_file.sfbiicd06,sfb_file.sfb15,sfbi_file.sfbiicd02,sfbi_file.sfbiicd03,sfb_file.sfb06,sfbi_file.sfbiicd01,formonly.pmc03_2,sfbi_file.sfbiicd13,formonly.memo)
+SCREEN RECORD s_idc(formonly.sel2,formonly.item,idc_file.idc05,idc_file.idc06,icf_file.icf03,icf_file.icf05,formonly.qty1,formonly.qty2,ima_file.ima01,ima_file.ima02,formonly.sfbiicd08_b)
+SCREEN RECORD Undefined(rvu_file.rvu01,rvu_file.rvu03,rvu_file.rvu04,rvvi_file.rvviicd03,rvv_file.rvv31,formonly.g_t1,pmm_file.pmm22,pmm_file.pmm04,pmm_file.pmm42,pmm_file.pmm12,formonly.gen02,pmm_file.pmm13,formonly.g_t2,sfp_file.sfp03)
+END -- INSTRUCTIONS
+

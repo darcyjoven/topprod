@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct211_t.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct211_t")
+Grid gr1786
+{
+ <G group01               >
+  Title [aao01     ]
+  Dept  [aao02     ]
+ <                        >
+ <G group02                                 >
+  Year               [cmi0]
+  Period             [cm]
+  Work Center        [cmi03 ]
+  Book No.           [cmi00 ]
+  Allocation Method  [cmi12          ]
+  Cate               [cmi04     ]
+ <                                          >
+
+}
+END -- gr1786
+END -- axct211_t
+
+TABLES
+cmi_file,
+aao_file
+ATTRIBUTES
+Group group01:group01;
+Edit aao01=aao_file.aao01, tabIndex=1;
+Edit aao02=aao_file.aao02, tabIndex=2;
+Group group02:group02;
+Edit cmi0=cmi_file.cmi01, tabIndex=3, not null, required;
+Edit cm=cmi_file.cmi02, tabIndex=4, not null, required;
+Edit cmi03=cmi_file.cmi03, tabIndex=5;
+Edit cmi00=cmi_file.cmi00, tabIndex=6;
+ComboBox cmi12=cmi_file.cmi12, tabIndex=8, not null, required, items=(("1", "Actual Labor Hours"),("2", "Standard Labor Hours"),("3", "Standard Machine Hours"),("4", "Output Qty * Distribution Ratio"),("5", "Actual Machine Hours"));
+RadioGroup cmi04=cmi_file.cmi04, tabIndex=7, not null, required, items=(("1", "Labor"),("2", "Overhead1"),("3", "Overhead2"),("4", "Overhead3"),("5", "Overhead4"),("6", "Overhead5"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(aao_file.aao01,aao_file.aao02,cmi_file.cmi01,cmi_file.cmi02,cmi_file.cmi03,cmi_file.cmi00,cmi_file.cmi12,cmi_file.cmi04)
+END -- INSTRUCTIONS
+

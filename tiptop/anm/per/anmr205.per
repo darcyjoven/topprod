@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr205.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr205")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                          >
+  Received Date       [nmh04               ]
+  Due Date            [nmh05               ]
+  Anticiptd Cashing Dt[nmh09               ]
+  Customer NO.        [nmh11               ]
+  Note Receipt NO.    [nmh01               ]
+  Remitting Bank      [nmh21               ]
+  Note Status         [nmh24               ]
+ <                                                                   >
+
+}
+END -- Grid1
+Group group02(text="INPUT")
+Grid Grid2
+{
+  Cash Currency       [a1                  ]
+  Cash Exchange Rate  [a2                  ]
+
+ <G group03                                                          >
+  [s1                            ][s2                            ]
+  [t1                            ][t2                            ]
+  [u1                            ][u2                            ]
+ <                                                                   >
+
+}
+END -- Grid2
+END -- group02
+Grid Grid3
+{
+[more                                                        ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- anmr205
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit nmh04=formonly.nmh04 type DATE, tabIndex=1;
+DateEdit nmh05=formonly.nmh05 type DATE, tabIndex=2;
+DateEdit nmh09=formonly.nmh09 type DATE, tabIndex=3;
+Edit nmh11=formonly.nmh11 type VARCHAR, tabIndex=4;
+Edit nmh01=formonly.nmh01 type VARCHAR, tabIndex=5;
+Edit nmh21=formonly.nmh21 type VARCHAR, tabIndex=6;
+Edit nmh24=formonly.nmh24 type VARCHAR, tabIndex=7;
+ButtonEdit a1=formonly.a1 type VARCHAR, action=controlp, tabIndex=8, image="zoom";
+Edit a2=formonly.a2 type DECIMAL, tabIndex=9, format="###.#####";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=10, queryEditable, items=(("1", %"Received Date"),("2", %"Due Date"),("3", %"Anticipated Cashing Date"),("4", %"Customer #"),("5", %"Note Receipt#"),("6", %"Remitting Bank"),("7", %"Note Status"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=11, queryEditable, items=(("1", %"Received Date"),("2", %"Due Date"),("3", %"Anticipated Cashing Date"),("4", %"Customer #"),("5", %"Note Receipt#"),("6", %"Remitting Bank"),("7", %"Note Status"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=13, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=15, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=16, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nmh04,formonly.nmh05,formonly.nmh09,formonly.nmh11,formonly.nmh01,formonly.nmh21,formonly.nmh24,formonly.a1,formonly.a2,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.u1,formonly.u2,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_gzl_pack.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"INPUT")
+VBox VBox1
+Grid gr3208
+{
+ Confirm No    [gzl00                   ]
+ Item          [gzl01                   ]
+                       [view_list       ]
+ Path  [path                            ]
+[dummy1                                 ]
+[dummy2                                 ]
+[com_dt                                 ]
+}
+END -- gr3208
+Group group01(text="Check List")
+Table s_item
+{
+[bugno        |item |ver    ]
+[bugno        |item |ver    ]
+[bugno        |item |ver    ]
+[bugno        |item |ver    ]
+[bugno        |item |ver    ]
+[bugno        |item |ver    ]
+[bugno        |item |ver    ]
+[bugno        |item |ver    ]
+[bugno        |item |ver    ]
+[bugno        |item |ver    ]
+
+}
+END -- s_item
+END -- group01
+END -- VBox1
+END -- p_gzl_pack
+
+ATTRIBUTES
+Edit gzl00=formonly.gzl00 type CHAR, tabIndex=1;
+Edit gzl01=formonly.gzl01 type CHAR, tabIndex=2;
+Button view_list:view_list, text="View List";
+Edit path=formonly.path type CHAR, tabIndex=3, not null, required, scroll;
+Label dummy1:dummy1, text="ex. /u1/topprod/tiptop";
+Label dummy2:dummy2, text="ex. /u1/topprod/topcust";
+CheckBox com_dt=formonly.com_dt type CHAR, tabIndex=4, text="Pack Common Data?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit bugno=formonly.bugno type CHAR, tabIndex=5, title="But No.", noEntry;
+Edit item=formonly.item type CHAR, tabIndex=6, title="Item", noEntry;
+Edit ver=formonly.ver type CHAR, tabIndex=7, title="Version", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_item(formonly.bugno,formonly.item,formonly.ver)
+SCREEN RECORD Undefined(formonly.gzl00,formonly.gzl01,formonly.path,formonly.com_dt)
+END -- INSTRUCTIONS
+

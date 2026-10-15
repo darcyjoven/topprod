@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdr390.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdr390")
+VBox VBox1
+Grid gr435
+{
+ <G group01                                                                             >
+  W/O No.             [ste04               ]  Item No.            [sfb05               ]
+  Cost Group          [ima12               ]  Product Class       [ima131              ]
+  Source Code         [ima08               ]  Main Group Code     [ima06               ]
+ <                                                                                      >
+
+}
+END -- gr435
+Group g01(text="INPUT")
+Grid gr436
+{
+ <G group02                                                                           >
+  Cost year/month     [yea ]/[mo]
+ <                                                                                    >
+ <G group03                                                                           >
+ [sw                                                      ]
+ <                                                                                    >
+
+}
+END -- gr436
+END -- g01
+Grid gr437
+{
+[more                                                    ]
+
+}
+END -- gr437
+END -- VBox1
+END -- asdr390
+
+TABLES
+ste_file,
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ste04=ste_file.ste04, tabIndex=1;
+ButtonEdit sfb05=formonly.sfb05 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit ima12=ima_file.ima12, tabIndex=3;
+Edit ima131=ima_file.ima131, tabIndex=4;
+Edit ima08=ima_file.ima08, tabIndex=5;
+Edit ima06=ima_file.ima06, tabIndex=6;
+Group group02:group02;
+Edit yea=formonly.yea type SMALLINT, tabIndex=7;
+Edit mo=formonly.mo type SMALLINT, tabIndex=8;
+Group group03:group03;
+CheckBox sw=formonly.sw type CHAR, tabIndex=9, text="Print Down Level Material Diff=0", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=10, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ste_file.ste04,formonly.sfb05,ima_file.ima12,ima_file.ima131,ima_file.ima08,ima_file.ima06,formonly.yea,formonly.mo,formonly.sw,formonly.more)
+END -- INSTRUCTIONS
+

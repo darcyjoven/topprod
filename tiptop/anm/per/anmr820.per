@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr820.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr820")
+VBox VBox1
+Group Group1
+Grid Grid1
+{
+ <G group01                                                         >
+  Original Bank                 [gxf02               ]
+  Original Deposit Date         [gxf03               ]
+ <                                                                  >
+ <G group02                                                         >
+  Ending Date                   [bdate               ]
+ <                                                                  >
+
+}
+END -- Grid1
+END -- Group1
+Grid Grid2
+{
+[more                                                        ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- anmr820
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit gxf02=formonly.gxf02 type CHAR, tabIndex=1;
+DateEdit gxf03=formonly.gxf03 type DATE, tabIndex=2;
+Group group02:group02;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=3;
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.gxf02,formonly.gxf03,formonly.bdate,formonly.more)
+END -- INSTRUCTIONS
+

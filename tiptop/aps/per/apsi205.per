@@ -1,0 +1,73 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsi205.per created Wed Dec 31 05:29:37 2008
+-- File created from apsi205.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsi205")
+-- TABLE
+-- PAGE
+-- GRID
+-- PAGE
+-- FOLDER
+-- LAYOUT
+-- 
+
+  FOLDER pc1048
+    PAGE page01( TEXT="Page01")
+      TABLE   s_aps
+      {
+      [aa0                 |aa1                 |aa2                 |aa3                 |aa4                 |aa5                 |aa6                 |aa7                 |aa8                 |aa9                 |ab0                 |ab1                 |ab2                 |ab3                 |ab4                  ]
+      [aa0                 |aa1                 |aa2                 |aa3                 |aa4                 |aa5                 |aa6                 |aa7                 |aa8                 |aa9                 |ab0                 |ab1                 |ab2                 |ab3                 |ab4                  ]
+      [aa0                 |aa1                 |aa2                 |aa3                 |aa4                 |aa5                 |aa6                 |aa7                 |aa8                 |aa9                 |ab0                 |ab1                 |ab2                 |ab3                 |ab4                  ]
+      [aa0                 |aa1                 |aa2                 |aa3                 |aa4                 |aa5                 |aa6                 |aa7                 |aa8                 |aa9                 |ab0                 |ab1                 |ab2                 |ab3                 |ab4                  ]
+      [aa0                 |aa1                 |aa2                 |aa3                 |aa4                 |aa5                 |aa6                 |aa7                 |aa8                 |aa9                 |ab0                 |ab1                 |ab2                 |ab3                 |ab4                  ]
+      [aa0                 |aa1                 |aa2                 |aa3                 |aa4                 |aa5                 |aa6                 |aa7                 |aa8                 |aa9                 |ab0                 |ab1                 |ab2                 |ab3                 |ab4                  ]
+      [aa0                 |aa1                 |aa2                 |aa3                 |aa4                 |aa5                 |aa6                 |aa7                 |aa8                 |aa9                 |ab0                 |ab1                 |ab2                 |ab3                 |ab4                  ]
+      [aa0                 |aa1                 |aa2                 |aa3                 |aa4                 |aa5                 |aa6                 |aa7                 |aa8                 |aa9                 |ab0                 |ab1                 |ab2                 |ab3                 |ab4                  ]
+      [aa0                 |aa1                 |aa2                 |aa3                 |aa4                 |aa5                 |aa6                 |aa7                 |aa8                 |aa9                 |ab0                 |ab1                 |ab2                 |ab3                 |ab4                  ]
+      [aa0                 |aa1                 |aa2                 |aa3                 |aa4                 |aa5                 |aa6                 |aa7                 |aa8                 |aa9                 |ab0                 |ab1                 |ab2                 |ab3                 |ab4                  ]
+      }
+      END -- TABLE
+    END -- PAGE
+    PAGE info( TEXT="Info")
+      GRID gr5431
+      {
+      <G grpinfo                     >
+       Detail Counts      [ab5       ]
+      <                              >
+
+
+      }
+      END -- GRID
+    END -- PAGE
+  END -- FOLDER
+END
+TABLES aps_wcm
+
+ATTRIBUTES
+  EDIT aa0=aps_wcm.wcaln_id, NOT NULL, REQUIRED, TABINDEX=1, TITLE="Week Calendar";
+  EDIT aa1=aps_wcm.mon_wmid, TABINDEX=2, TITLE="Mon work model";
+  EDIT aa2=aps_wcm.tue_wmid, TABINDEX=3, TITLE="Tue work model";
+  EDIT aa3=aps_wcm.wed_wmid, TABINDEX=4, TITLE="Wed work model";
+  EDIT aa4=aps_wcm.thu_wmid, TABINDEX=5, TITLE="Thu work model";
+  EDIT aa5=aps_wcm.fri_wmid, TABINDEX=6, TITLE="Fri work model";
+  EDIT aa6=aps_wcm.sat_wmid, TABINDEX=7, TITLE="Sat work model";
+  EDIT aa7=aps_wcm.sun_wmid, TABINDEX=8, TITLE="Sun work model";
+  EDIT aa8=aps_wcm.mon_exhr, TABINDEX=9, TITLE="Mon hr";
+  EDIT aa9=aps_wcm.tue_exhr, TABINDEX=10, TITLE="Tue hr";
+  EDIT ab0=aps_wcm.wed_exhr, TABINDEX=11, TITLE="Wed hr";
+  EDIT ab1=aps_wcm.thu_exhr, TABINDEX=12, TITLE="Thu hr";
+  EDIT ab2=aps_wcm.fri_exhr, TABINDEX=13, TITLE="Fri hr";
+  EDIT ab3=aps_wcm.sat_exhr, TABINDEX=14, TITLE="Sat hr";
+  EDIT ab4=aps_wcm.sun_exhr, TABINDEX=15, TITLE="Sun hr";
+  GROUP grpinfo : grpinfo;
+  EDIT ab5=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=16;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_aps (aps_wcm.wcaln_id, aps_wcm.mon_wmid, aps_wcm.tue_wmid, aps_wcm.wed_wmid, aps_wcm.thu_wmid, aps_wcm.fri_wmid, aps_wcm.sat_wmid, aps_wcm.sun_wmid, aps_wcm.mon_exhr, aps_wcm.tue_exhr, aps_wcm.wed_exhr, aps_wcm.thu_exhr, aps_wcm.fri_exhr, aps_wcm.sat_exhr, aps_wcm.sun_exhr)
+END

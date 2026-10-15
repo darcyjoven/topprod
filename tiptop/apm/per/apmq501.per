@@ -1,0 +1,136 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq501")
+VBox VBox1
+Folder pc961
+Page page01(text="Main")
+VBox VBox2
+HBox HBox1
+Grid gr4995
+{
+ P/O No.             [pmn01             ]
+ Purchase Ln#        [pmn02     ]
+ Doc.Property        [pmn011    ]
+ Supplier            [pmm09     ]
+ Supplier Abbr.      [pmc03     ]
+}
+END -- gr4995
+Grid gr4996
+{
+ Item#               [pmn04                         ]
+ P/N Spec            [pmn041                        ]
+ Spec                [ima021                        ]
+ Unit                [pmn07     ]
+
+}
+END -- gr4996
+Grid gr4997
+{
+ Currency            [pmm22     ]
+ Exchange Rate       [pmm42               ]
+ Unit Price          [pmn31               ]
+ Home Curr U/P       [pmn44               ]
+
+}
+END -- gr4997
+END -- HBox1
+HBox HBox2
+Grid gr4998
+{
+ <G group01                                          >
+  Order Qty           [pmn20               ]
+  Delivered Qty       [pmn50               ]
+  IQC Qty             [pmn51               ]
+  Store-in Qty        [pmn53               ]
+  Qty Returned        [pmn55               ]
+  Undelivered Qty     [rest                ]
+ <                                                   >
+
+}
+END -- gr4998
+Grid gr4999
+{
+ <G group02                                          >
+  Delivery Date        [pmn33       ]
+  Arriving Date        [pmn34       ]
+  Store Date           [pmn35       ]
+  Last Arriving Date   [pmn37       ]
+  Latest Confirmed Date[pmn36       ]
+ <                                                   >
+
+
+}
+END -- gr4999
+Grid gr5000
+{
+ <G group03                                          >
+  Par/Ref Unit        [pmn83               ]
+  Par/Ref Qty         [pmn85               ]
+  Chi/P/O Unit        [pmn80               ]
+  Chi/P/O Qty         [pmn82               ]
+ <                                                   >
+
+
+
+}
+END -- gr5000
+END -- HBox2
+END -- VBox2
+END -- page01
+END -- pc961
+Grid gr5001
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr5001
+END -- VBox1
+END -- apmq501
+
+TABLES
+pmn_file,
+pmm_file
+ATTRIBUTES
+ButtonEdit pmn01=pmn_file.pmn01, action=controlp, tabIndex=1, image="zoom", comment="  Enter P/O # to Query    , <^P>Query P/O     , <DEL>End     ";
+Edit pmn02=pmn_file.pmn02, tabIndex=2;
+Edit pmn011=pmn_file.pmn011, tabIndex=3, noEntry;
+Edit pmm09=pmm_file.pmm09, tabIndex=4, noEntry;
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=5, noEntry;
+Edit pmn04=pmn_file.pmn04, tabIndex=6, noEntry;
+Edit pmn041=pmn_file.pmn041, tabIndex=7, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=8, noEntry;
+Edit pmn07=pmn_file.pmn07, tabIndex=9, noEntry;
+Edit pmm22=pmm_file.pmm22, tabIndex=10;
+Edit pmm42=pmm_file.pmm42, tabIndex=11;
+Edit pmn31=pmn_file.pmn31, tabIndex=12, not null, required;
+Edit pmn44=pmn_file.pmn44, tabIndex=13;
+Group group01:group01;
+Edit pmn20=pmn_file.pmn20, tabIndex=14, not null, required;
+Edit pmn50=pmn_file.pmn50, tabIndex=15, not null, required;
+Edit pmn51=pmn_file.pmn51, tabIndex=16, not null, required;
+Edit pmn53=pmn_file.pmn53, tabIndex=17, not null, required;
+Edit pmn55=pmn_file.pmn55, tabIndex=18, not null, required;
+Edit rest=formonly.rest type VARCHAR, tabIndex=19;
+Group group02:group02;
+DateEdit pmn33=pmn_file.pmn33, tabIndex=20;
+DateEdit pmn34=pmn_file.pmn34, tabIndex=21;
+DateEdit pmn35=pmn_file.pmn35, tabIndex=22;
+DateEdit pmn37=pmn_file.pmn37, tabIndex=23;
+DateEdit pmn36=pmn_file.pmn36, tabIndex=24;
+Group group03:group03;
+Edit pmn83=pmn_file.pmn83, tabIndex=25;
+Edit pmn85=pmn_file.pmn85, tabIndex=26;
+Edit pmn80=pmn_file.pmn80, tabIndex=27;
+Edit pmn82=pmn_file.pmn82, tabIndex=28;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pmn_file.pmn01,pmn_file.pmn02,pmn_file.pmn011,pmm_file.pmm09,formonly.pmc03,pmn_file.pmn04,pmn_file.pmn041,formonly.ima021,pmn_file.pmn07,pmm_file.pmm22,pmm_file.pmm42,pmn_file.pmn31,pmn_file.pmn44,pmn_file.pmn20,pmn_file.pmn50,pmn_file.pmn51,pmn_file.pmn53,pmn_file.pmn55,formonly.rest,pmn_file.pmn33,pmn_file.pmn34,pmn_file.pmn35,pmn_file.pmn37,pmn_file.pmn36,pmn_file.pmn83,pmn_file.pmn85,pmn_file.pmn80,pmn_file.pmn82,formonly.cnt)
+END -- INSTRUCTIONS
+

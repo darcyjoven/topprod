@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsq502.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amsq502")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3960
+{
+ Product No.         [partno              ][ima02                         ]
+ Qty                 [qty                 ]
+ Delivery Date       [atpdate     ]
+ Description         [desc                                                            ]
+}
+END -- gr3960
+END -- page01
+END -- folder01
+ScrollGrid gr3961
+{
+
+ Period          [seq ]        [seq ]        [seq ]        [seq ]        [seq ]        [seq ]
+ Time Bucket Day [mpk_d       ][mpk_d       ][mpk_d       ][mpk_d       ][mpk_d       ][mpk_d       ]
+ Qty Ordered     [order_qty   ][order_qty   ][order_qty   ][order_qty   ][order_qty   ][order_qty   ]
+ (Last)Inventory [invqty      ][invqty      ][invqty      ][invqty      ][invqty      ][invqty      ]
+ M P S           [mps_qty     ][mps_qty     ][mps_qty     ][mps_qty     ][mps_qty     ][mps_qty     ]
+ A T P           [atp         ][atp         ][atp         ][atp         ][atp         ][atp         ]
+ C A T P         [catp        ][catp        ][catp        ][catp        ][catp        ][catp        ]
+
+}
+END -- gr3961
+Grid gr3962
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3962
+END -- VBox1
+END -- amsq502
+
+TABLES
+mpk_file
+ATTRIBUTES
+Edit partno=formonly.partno type CHAR, tabIndex=1;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=3;
+DateEdit atpdate=formonly.atpdate type DATE, tabIndex=4;
+Edit desc=formonly.desc type CHAR, tabIndex=5;
+Edit seq=formonly.seq type CHAR, tabIndex=6;
+Edit mpk_d=mpk_file.mpk_d, tabIndex=7;
+Edit order_qty=formonly.order_qty type CHAR, tabIndex=8, noEntry;
+Edit invqty=formonly.invqty type CHAR, tabIndex=9, noEntry;
+Edit mps_qty=formonly.mps_qty type CHAR, tabIndex=10, noEntry;
+Edit atp=formonly.atp type CHAR, tabIndex=11, noEntry;
+Edit catp=formonly.catp type CHAR, tabIndex=12, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mps(formonly.seq,mpk_file.mpk_d,formonly.order_qty,formonly.invqty,formonly.mps_qty,formonly.atp,formonly.catp)
+SCREEN RECORD Undefined(formonly.partno,formonly.ima02,formonly.qty,formonly.atpdate,formonly.desc,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

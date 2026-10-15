@@ -1,0 +1,158 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq801.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apsq801")
+VBox vb9
+HBox hb3
+Folder pc4
+Page Page26(text=%"Quary")
+Grid gr7
+{
+
+ APS  [vzu01           ]
+ Save [vzu02  ]
+
+
+}
+END -- gr7
+END -- Page26
+END -- pc4
+Grid gr6
+{
+
+
+
+
+
+
+
+}
+END -- gr6
+END -- hb3
+Folder pc3
+Page Page1(action=info, text=%"info")
+Table s_arr1
+{
+[vol08     |vol09     |vol03   |vol10     |vol04      |vol05         |vol06         |vol07         ]
+[vol08     |vol09     |vol03   |vol10     |vol04      |vol05         |vol06         |vol07         ]
+
+}
+END -- s_arr1
+END -- Page1
+Page Page2(action=lock_sys, text=%"lock_sys")
+Table s_arr2
+{
+[vom03   |vom04   |vom05   |vom06   |vom07   |vom08 |vom09         |vom10         |vom11  |vom12   ]
+[vom03   |vom04   |vom05   |vom06   |vom07   |vom08 |vom09         |vom10         |vom11  |vom12   ]
+[vom03   |vom04   |vom05   |vom06   |vom07   |vom08 |vom09         |vom10         |vom11  |vom12   ]
+
+}
+END -- s_arr2
+END -- Page2
+Page Page3(action=lock_equ, text=%"lock_equ")
+Table s_arr3
+{
+[von03   |von04   |von05   |von06   |von07   |von08   |von09       ]
+
+}
+END -- s_arr3
+END -- Page3
+Page Page4(action=outsource, text=%"outsource")
+Table s_arry4
+{
+[voo03   |voo04     |voo05   |voo06         |voo07         |voo08   |voo09     ]
+
+}
+END -- s_arry4
+END -- Page4
+Page Page5(action=out_pro, text=%"out_pro")
+Table s_arr5
+{
+[vop03   |vop04   |vop05   |vop06   |vop07     |vop08   |vop09         |vop10         |vop11   |vop12|vop13     |vop14   ]
+[vop03   |vop04   |vop05   |vop06   |vop07     |vop08   |vop09         |vop10         |vop11   |vop12|vop13     |vop14   ]
+[vop03   |vop04   |vop05   |vop06   |vop07     |vop08   |vop09         |vop10         |vop11   |vop12|vop13     |vop14   ]
+
+}
+END -- s_arr5
+END -- Page5
+END -- pc3
+Grid gr571
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr571
+END -- vb9
+END -- apsq801
+
+TABLES
+vop_file,
+vzu_file,
+voo_file,
+von_file,
+vom_file,
+vol_file
+ATTRIBUTES
+ButtonEdit vzu01=vzu_file.vzu01, action=controlp, tabIndex=129, not null, required, image="zoom", comment="<^P>Query Vender Classification Code";
+Edit vzu02=vzu_file.vzu02, tabIndex=130, noEntry, not null;
+ComboBox vol08=vol_file.vol08, tabIndex=132, title="Is Outsource", items=(("0", "Not Outsource"),("1", "Outsource"));
+ComboBox vol09=vol_file.vol09, tabIndex=131, title="Resource Type", items=(("1", "Machine"),("2", "Outsource Factory"),("0", "Product Line"));
+Edit vol03=vol_file.vol03, tabIndex=1, title="equip_id";
+ComboBox vol10=vol_file.vol10, tabIndex=133, title="overtime Type", items=(("0", "Overtime"),("1", "Repair"));
+Edit vol04=vol_file.vol04, tabIndex=4, title="calendar_date";
+Edit vol05=vol_file.vol05, tabIndex=5, title="start_time";
+Edit vol06=vol_file.vol06, tabIndex=3, title="end_time";
+ComboBox vol07=vol_file.vol07, tabIndex=2, title="is_scheduled", items=(("0", "Unscheduled, the limit not considered"),("1", "Scheduled, with limitation"));
+Edit vom03=vom_file.vom03, tabIndex=13, title="mfg_order_id";
+Edit vom04=vom_file.vom04, tabIndex=12, title="route_id";
+Edit vom05=vom_file.vom05, tabIndex=11, title="sequ_num";
+Edit vom06=vom_file.vom06, tabIndex=10, title="operation_id";
+Edit vom07=vom_file.vom07, tabIndex=9, title="equip_id";
+ComboBox vom08=vom_file.vom08, tabIndex=8, title="firm_code", items=(("0", "UnLock Time"),("1", "Lock Start time"),("2", "Lock End Time"),("3", "Lock Start and End time"));
+Edit vom09=vom_file.vom09, tabIndex=6, title="start_time";
+Edit vom10=vom_file.vom10, tabIndex=14, title="end_time";
+ComboBox vom11=vom_file.vom11, tabIndex=15, title="is_scheduled", items=(("0", "Unscheduled, the limit not considered"),("1", "Scheduled, with limitation"));
+ComboBox vom12=vom_file.vom12, tabIndex=7, title="is_parallel", items=(("0", "N"),("1", "Y"));
+Edit von03=von_file.von03, tabIndex=22, title="mfg_order_id";
+Edit von04=von_file.von04, tabIndex=21, title="route_id";
+Edit von05=von_file.von05, tabIndex=20, title="sequ_num";
+Edit von06=von_file.von06, tabIndex=19, title="operation_id";
+Edit von07=von_file.von07, tabIndex=18, title="equip_id";
+Edit von08=von_file.von08, tabIndex=16, title="qty";
+ComboBox von09=von_file.von09, tabIndex=17, title="is_scheduled", items=(("0", "Unscheduled, the limit not considered"),("1", "Scheduled, with limitation"));
+Edit voo03=voo_file.voo03, tabIndex=23, title="mfg_order_id";
+Edit voo04=voo_file.voo04, tabIndex=24, title="outsource_id";
+ComboBox voo05=voo_file.voo05, tabIndex=25, title="type", items=(("1", "Fixed Time"),("2", "Fixed Start and End Time"));
+Edit voo06=voo_file.voo06, tabIndex=26, title="start_time";
+Edit voo07=voo_file.voo07, tabIndex=27, title="end_time";
+Edit voo08=voo_file.voo08, tabIndex=28, title="process_time";
+ComboBox voo09=voo_file.voo09, tabIndex=29, title="is_scheduled", items=(("0", "Unscheduled, the limit not considered"),("1", "Scheduled, with limitation"));
+Edit vop03=vop_file.vop03, tabIndex=30, title="mfg_order_id";
+Edit vop04=vop_file.vop04, tabIndex=31, title="route_id";
+Edit vop05=vop_file.vop05, tabIndex=32, title="sequ_num";
+Edit vop06=vop_file.vop06, tabIndex=40, title="operation_id";
+Edit vop07=vop_file.vop07, tabIndex=41, title="outsource_id";
+ComboBox vop08=vop_file.vop08, tabIndex=33, title="type", items=(("1", "Fixed Time"),("2", "Fixed Start and End Time"));
+Edit vop09=vop_file.vop09, tabIndex=34, title="start_time";
+Edit vop10=vop_file.vop10, tabIndex=35, title="end_time";
+Edit vop11=vop_file.vop11, tabIndex=36, title="process_time";
+ComboBox vop12=vop_file.vop12, tabIndex=37, title="is_scheduled", items=(("0", "Unscheduled, the limit not considered"),("1", "Scheduled, with limitation"));
+Edit vop13=vop_file.vop13, tabIndex=38, title="outsource_sequ";
+Edit vop14=vop_file.vop14, tabIndex=39, title="qty";
+Edit cnt=formonly.cnt type CHAR, tabIndex=127;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=128;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_arr1(vol_file.vol08,vol_file.vol09,vol_file.vol03,vol_file.vol10,vol_file.vol04,vol_file.vol05,vol_file.vol06,vol_file.vol07)
+SCREEN RECORD s_arr2(vom_file.vom03,vom_file.vom04,vom_file.vom05,vom_file.vom06,vom_file.vom07,vom_file.vom08,vom_file.vom09,vom_file.vom10,vom_file.vom11,vom_file.vom12)
+SCREEN RECORD s_arr3(von_file.von03,von_file.von04,von_file.von05,von_file.von06,von_file.von07,von_file.von08,von_file.von09)
+SCREEN RECORD s_arr4(voo_file.voo03,voo_file.voo04,voo_file.voo05,voo_file.voo06,voo_file.voo07,voo_file.voo08,voo_file.voo09)
+SCREEN RECORD s_arr5(vop_file.vop03,vop_file.vop04,vop_file.vop05,vop_file.vop06,vop_file.vop07,vop_file.vop08,vop_file.vop09,vop_file.vop10,vop_file.vop11,vop_file.vop12,vop_file.vop13,vop_file.vop14)
+SCREEN RECORD Undefined(vzu_file.vzu01,vzu_file.vzu02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

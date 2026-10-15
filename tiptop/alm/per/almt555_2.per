@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt555_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"almi555")
+Folder Folder1
+Page Page1(text=%"Effective Plants")
+Table s_lso
+{
+[ltn04       |azp02               |ltn07   ]
+[ltn04       |azp02               |ltn07   ]
+[ltn04       |azp02               |ltn07   ]
+[ltn04       |azp02               |ltn07   ]
+[ltn04       |azp02               |ltn07   ]
+}
+END -- s_lso
+END -- Page1
+END -- Folder1
+END -- Form2
+
+TABLES
+ltn_file
+ATTRIBUTES
+ButtonEdit ltn04=ltn_file.ltn04, action=controlp, tabIndex=1, title=%"Plant Code", not null, required, image="zoom";
+Edit azp02=formonly.azp02, tabIndex=2, title=%"Plant Name", noEntry;
+CheckBox ltn07=ltn_file.ltn07, tabIndex=3, default = "Y", title=%"Active", text=%"", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ltn(ltn_file.ltn04,formonly.azp02,ltn_file.ltn07)
+END -- INSTRUCTIONS
+

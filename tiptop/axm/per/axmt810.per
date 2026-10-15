@@ -1,0 +1,301 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt810.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt810")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr149
+{
+ Order Type[oea00       ]       Data Source   [oea11     ][oea12        ] Employee      [oea14     ][gen02      ]
+           [oea08             ] Customer #    [oea03     ][oea032       ] Department    [oea15     ][gem02      ]
+ Order No. [oea01             ] Ship To       [oea04     ][occ02        ]
+           [oaydesc           ] Invoice To    [oea17     ][oea17_ds     ]
+ Version   [oea06       ]       Transfer Cust.[oea1004   ][occ02_a      ]
+ Order Date[oea02       ]       Agent Cust.   [oea1015   ][oea1015_occ02]
+}
+END -- gr149
+END -- page01
+Page info(text="Info")
+Grid gr150
+{
+ Record Owner[oeauser   ]   Last Modified by  [oeamodu   ]
+ Department  [oeagrup   ]   Create/Modify Date[oeadate     ]
+}
+END -- gr150
+END -- info
+END -- folder01
+Folder folder02
+Page page02(text="Trade Data")
+Grid gr151
+{
+ Customer Order[oea10           ]                                 [oea37     ][oeamksg   ]  [imgmksg]
+ Currency      [oea23     ][oea24                   ]             [oea50     ]              [       ]
+ Tax Type      [oea21     ][oe]%[oea212 ][oea213    ] On-Hold Code[oeahold   ][oak02     ]
+ Price         [oea31     ][oah02                   ] Confirm     [oeaconf   ][oea72     ]
+ Collection    [oea32     ][oag02                   ] Status      [oea49     ]
+}
+END -- gr151
+END -- page02
+Page page03(text="Deliver Data")
+Grid gr152
+{
+ Address Code[oea044   ]                     From         [oea41    ][oac02             ] Other Condition    [oea33                       ]
+ Address     [oap041                       ] Destination  [oea42    ][oac02_2           ] Over-Delivery Ratio[oea09    ]%
+             [oap042                       ] Shipping Type[oea43    ]
+             [oap043                       ] Mark Number  [oea44    ]
+}
+END -- gr152
+END -- page03
+Page page04(text="Accounting")
+Grid gr153
+{
+ Deposit Ratio [oea161     ]%               Invoice[oea05     ]                               Delivery Amount[oea62     ]
+ Delivery Ratio[oea162     ]%               [oea18                                          ] Closing Amount [oea63     ]
+ Balance Ratio [oea163     ]%               [oea07                                          ] [oea65              ]
+}
+END -- gr153
+END -- page04
+Page page05(text="Other Data")
+Grid gr154
+{
+ Sales Class  [oea25     ][oab02             ] Agent          [oea47     ][pmc03            ] [oea905                                   ]
+ Sales Class 2[oea26     ][oab02_2           ] Commission Code[oea48     ][ofs02            ] Mutl. Trad. Workflow S/N [oea99           ]
+ Project#     [oea46     ]
+ Collection Dep[oea80    ][oag02_1                 ]
+ Collection Bla[oea81    ][oag02_2                 ]
+}
+END -- gr154
+END -- page05
+Page givefield(text="givefield")
+Grid gr155
+{
+ givefield01[oeaud01                                            ]
+            [                                                   ]
+ givefield02[oeaud02           ]
+ givefield03[oeaud03           ]
+ givefield04[oeaud04           ]
+ givefield05[oeaud05           ]
+ givefield06[oeaud06           ]
+ givefield07[oeaud07           ]
+ givefield08[oeaud08           ]
+ givefield09[oeaud09           ]
+ givefield10[oeaud10           ]
+ givefield11[oeaud11           ]
+ givefield12[oeaud12           ]
+ givefield13[oeaud13           ]
+ givefield14[oeaud14           ]
+ givefield15[oeaud15           ]
+}
+END -- gr155
+END -- givefield
+END -- folder02
+Folder pc60
+Page page06(action=deliver, text="Deliver")
+VBox VBox2
+Table s_oeb
+{
+[oeb03  |oeb04              |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |oeb06                       |ima021                      |ima1002        |ima135              |oeb11               |oeb71     |oeb1001   |oeb1012  |oeb906 |oeb092 |oeb15    |oeb05|oeb12           |oeb913 |oeb914            |oeb915            |oeb910 |oeb911            |oeb912            |oeb916         |oeb917            |oeb24        |oeb27        |oeb28               |oeb1004   |oeb1002   |oeb13      |oeb1006             |oeb14       |oeb14t      |oeb09     |oeb091     |oeb930      |gem02c      |oeb908            |oeb22|oeb19    |oeb70 |ima15  |oeb16           ]
+[oeb03  |oeb04              |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |oeb06                       |ima021                      |ima1002        |ima135              |oeb11               |oeb71     |oeb1001   |oeb1012  |oeb906 |oeb092 |oeb15    |oeb05|oeb12           |oeb913 |oeb914            |oeb915            |oeb910 |oeb911            |oeb912            |oeb916         |oeb917            |oeb24        |oeb27        |oeb28               |oeb1004   |oeb1002   |oeb13      |oeb1006             |oeb14       |oeb14t      |oeb09     |oeb091     |oeb930      |gem02c      |oeb908            |oeb22|oeb19    |oeb70 |ima15  |oeb16           ]
+[oeb03  |oeb04              |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |oeb06                       |ima021                      |ima1002        |ima135              |oeb11               |oeb71     |oeb1001   |oeb1012  |oeb906 |oeb092 |oeb15    |oeb05|oeb12           |oeb913 |oeb914            |oeb915            |oeb910 |oeb911            |oeb912            |oeb916         |oeb917            |oeb24        |oeb27        |oeb28               |oeb1004   |oeb1002   |oeb13      |oeb1006             |oeb14       |oeb14t      |oeb09     |oeb091     |oeb930      |gem02c      |oeb908            |oeb22|oeb19    |oeb70 |ima15  |oeb16           ]
+[oeb03  |oeb04              |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |oeb06                       |ima021                      |ima1002        |ima135              |oeb11               |oeb71     |oeb1001   |oeb1012  |oeb906 |oeb092 |oeb15    |oeb05|oeb12           |oeb913 |oeb914            |oeb915            |oeb910 |oeb911            |oeb912            |oeb916         |oeb917            |oeb24        |oeb27        |oeb28               |oeb1004   |oeb1002   |oeb13      |oeb1006             |oeb14       |oeb14t      |oeb09     |oeb091     |oeb930      |gem02c      |oeb908            |oeb22|oeb19    |oeb70 |ima15  |oeb16           ]
+[oeb03  |oeb04              |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |oeb06                       |ima021                      |ima1002        |ima135              |oeb11               |oeb71     |oeb1001   |oeb1012  |oeb906 |oeb092 |oeb15    |oeb05|oeb12           |oeb913 |oeb914            |oeb915            |oeb910 |oeb911            |oeb912            |oeb916         |oeb917            |oeb24        |oeb27        |oeb28               |oeb1004   |oeb1002   |oeb13      |oeb1006             |oeb14       |oeb14t      |oeb09     |oeb091     |oeb930      |gem02c      |oeb908            |oeb22|oeb19    |oeb70 |ima15  |oeb16           ]
+[oeb03  |oeb04              |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |oeb06                       |ima021                      |ima1002        |ima135              |oeb11               |oeb71     |oeb1001   |oeb1012  |oeb906 |oeb092 |oeb15    |oeb05|oeb12           |oeb913 |oeb914            |oeb915            |oeb910 |oeb911            |oeb912            |oeb916         |oeb917            |oeb24        |oeb27        |oeb28               |oeb1004   |oeb1002   |oeb13      |oeb1006             |oeb14       |oeb14t      |oeb09     |oeb091     |oeb930      |gem02c      |oeb908            |oeb22|oeb19    |oeb70 |ima15  |oeb16           ]
+[oeb03  |oeb04              |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |oeb06                       |ima021                      |ima1002        |ima135              |oeb11               |oeb71     |oeb1001   |oeb1012  |oeb906 |oeb092 |oeb15    |oeb05|oeb12           |oeb913 |oeb914            |oeb915            |oeb910 |oeb911            |oeb912            |oeb916         |oeb917            |oeb24        |oeb27        |oeb28               |oeb1004   |oeb1002   |oeb13      |oeb1006             |oeb14       |oeb14t      |oeb09     |oeb091     |oeb930      |gem02c      |oeb908            |oeb22|oeb19    |oeb70 |ima15  |oeb16           ]
+[oeb03  |oeb04              |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |oeb06                       |ima021                      |ima1002        |ima135              |oeb11               |oeb71     |oeb1001   |oeb1012  |oeb906 |oeb092 |oeb15    |oeb05|oeb12           |oeb913 |oeb914            |oeb915            |oeb910 |oeb911            |oeb912            |oeb916         |oeb917            |oeb24        |oeb27        |oeb28               |oeb1004   |oeb1002   |oeb13      |oeb1006             |oeb14       |oeb14t      |oeb09     |oeb091     |oeb930      |gem02c      |oeb908            |oeb22|oeb19    |oeb70 |ima15  |oeb16           ]
+[oeb03  |oeb04              |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |oeb06                       |ima021                      |ima1002        |ima135              |oeb11               |oeb71     |oeb1001   |oeb1012  |oeb906 |oeb092 |oeb15    |oeb05|oeb12           |oeb913 |oeb914            |oeb915            |oeb910 |oeb911            |oeb912            |oeb916         |oeb917            |oeb24        |oeb27        |oeb28               |oeb1004   |oeb1002   |oeb13      |oeb1006             |oeb14       |oeb14t      |oeb09     |oeb091     |oeb930      |gem02c      |oeb908            |oeb22|oeb19    |oeb70 |ima15  |oeb16           ]
+[oeb03  |oeb04              |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |oeb06                       |ima021                      |ima1002        |ima135              |oeb11               |oeb71     |oeb1001   |oeb1012  |oeb906 |oeb092 |oeb15    |oeb05|oeb12           |oeb913 |oeb914            |oeb915            |oeb910 |oeb911            |oeb912            |oeb916         |oeb917            |oeb24        |oeb27        |oeb28               |oeb1004   |oeb1002   |oeb13      |oeb1006             |oeb14       |oeb14t      |oeb09     |oeb091     |oeb930      |gem02c      |oeb908            |oeb22|oeb19    |oeb70 |ima15  |oeb16           ]
+
+}
+END -- s_oeb
+END -- VBox2
+END -- page06
+END -- pc60
+Grid gr156
+{
+ - Rows[cnt   ] / [cn2   ] - Before-Tax Amount[oea61    ]
+
+}
+END -- gr156
+END -- VBox1
+END -- axmt810
+
+TABLES
+oap_file,
+oeb_file,
+oea_file
+ATTRIBUTES
+ComboBox oea00=oea_file.oea00, tabIndex=1, not null, required, queryEditable, items=(("1", "General Order"),("2", "Exchange Order"),("3", "to Offs.WH"),("4", "fr Off.WH"),("6", "Transfer Order"),("7", "Consigned Order"));
+ComboBox oea11=oea_file.oea11, tabIndex=2, not null, required, queryEditable, items=(("1", "Enter"),("2", "Ret/Cover"),("3", "fr Cont"),("4", "fr Est."),("5", "fr Quot."),("6", "Mult.Trade"),("7", "From Triangle Trade"),("A", "Order Sheet"));
+ButtonEdit oea12=oea_file.oea12, action=controlp, tabIndex=3, image="zoom", comment="<^P> Query Sales/Return Note /Contract /Estimate #/Quotation No./To Offshore W.H";
+ButtonEdit oea14=oea_file.oea14, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=5, noEntry;
+ComboBox oea08=oea_file.oea08, tabIndex=6, not null, required, queryEditable, items=(("1", "Local Order"),("2", "Export Order"),("3", "As Export Order(ACO System)"));
+ButtonEdit oea03=oea_file.oea03, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Details <^Y>Customer";
+Edit oea032=oea_file.oea032, tabIndex=8, not null, required;
+ButtonEdit oea15=oea_file.oea15, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=10, noEntry;
+ButtonEdit oea01=oea_file.oea01, action=controlp, tabIndex=11, not null, required, image="zoom", upShift, comment="<^P>Qry Documents";
+ButtonEdit oea04=oea_file.oea04, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Details <^Y>Customer";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=13, noEntry;
+Edit oaydesc=formonly.oaydesc type CHAR, tabIndex=14;
+ButtonEdit oea17=oea_file.oea17, action=controlp, tabIndex=15, image="zoom";
+Edit oea17_ds=formonly.oea17_ds type CHAR, tabIndex=16;
+Edit oea06=oea_file.oea06, tabIndex=17, noEntry, comment="Enter Modifying Version!";
+ButtonEdit oea1004=oea_file.oea1004, action=controlp, tabIndex=18, image="zoom", comment="<^P>Qry Details";
+Edit occ02_a=formonly.occ02_a type CHAR, tabIndex=19, noEntry;
+DateEdit oea02=oea_file.oea02, tabIndex=20, not null, required;
+ButtonEdit oea1015=oea_file.oea1015, action=controlp, tabIndex=21, image="zoom";
+Edit oea1015_occ02=formonly.oea1015_occ02 type CHAR, tabIndex=22;
+Edit oeauser=oea_file.oeauser, tabIndex=23, noEntry;
+Edit oeamodu=oea_file.oeamodu, tabIndex=24, noEntry;
+Edit oeagrup=oea_file.oeagrup, tabIndex=25, noEntry;
+DateEdit oeadate=oea_file.oeadate, tabIndex=26, noEntry;
+Edit oea10=oea_file.oea10, tabIndex=27;
+CheckBox oea37=oea_file.oea37, tabIndex=28, text="Distribution", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oeamksg=oea_file.oeamksg, tabIndex=29, text="Approve?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit oea23=oea_file.oea23, action=controlp, tabIndex=31, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit oea24=oea_file.oea24, action=controlp, tabIndex=32, not null, required, image="zoom";
+CheckBox oea50=oea_file.oea50, tabIndex=33, text="CSD Product", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="CSD Product";
+ButtonEdit oea21=oea_file.oea21, action=controlp, tabIndex=34, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oe=oea_file.oea211, tabIndex=35, noEntry;
+ComboBox oea212=oea_file.oea212, tabIndex=36, noEntry, items=(("0", "Receipt of Park"),("2", "Duplicate"),("3", "Triplicate"),("X", "No"));
+CheckBox oea213=oea_file.oea213, tabIndex=37, text="with Tax", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oeahold=oea_file.oeahold, action=controlp, tabIndex=38, image="zoom", comment="<^P>Qry Details";
+Edit oak02=formonly.oak02 type CHAR, tabIndex=39, noEntry;
+ButtonEdit oea31=oea_file.oea31, action=controlp, tabIndex=40, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oah02=formonly.oah02 type CHAR, tabIndex=41, noEntry;
+ComboBox oeaconf=oea_file.oeaconf, tabIndex=42, noEntry, not null, required, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Void"));
+Edit oea72=oea_file.oea72, tabIndex=43, noEntry;
+ButtonEdit oea32=oea_file.oea32, action=controlp, tabIndex=44, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oag02=formonly.oag02 type CHAR, tabIndex=45, noEntry;
+ComboBox oea49=oea_file.oea49, tabIndex=46, noEntry, not null, required, items=(("0", "Open"),("1", "Approved"),("S", "Approving"),("R", "Approving Return"),("W", "Cancel"));
+ButtonEdit oea044=oea_file.oea044, action=controlp, tabIndex=47, image="zoom", comment="<^P>Qry Details";
+ButtonEdit oea41=oea_file.oea41, action=controlp, tabIndex=48, image="zoom", comment="<^P>Qry Details";
+Edit oac02=formonly.oac02 type CHAR, tabIndex=49, noEntry;
+Edit oea33=oea_file.oea33, tabIndex=50;
+Edit oap041=oap_file.oap041, tabIndex=51;
+ButtonEdit oea42=oea_file.oea42, action=controlp, tabIndex=52, image="zoom", comment="<^P>Qry Details";
+Edit oac02_2=formonly.oac02_2 type CHAR, tabIndex=53, noEntry;
+Edit oea09=oea_file.oea09, tabIndex=54, not null, required, upShift;
+Edit oap042=oap_file.oap042, tabIndex=55;
+ButtonEdit oea43=oea_file.oea43, action=controlp, tabIndex=56, image="zoom", comment="<^P>Qry Details";
+Edit oap043=oap_file.oap043, tabIndex=57;
+ButtonEdit oea44=oea_file.oea44, action=controlp, tabIndex=58, image="zoom", comment="<^P>Qry Details";
+Edit oea161=oea_file.oea161, tabIndex=59, not null, required;
+Edit oea05=oea_file.oea05, tabIndex=60, not null, required;
+Edit oea62=oea_file.oea62, tabIndex=61, noEntry, not null, required;
+Edit oea162=oea_file.oea162, tabIndex=62, not null, required;
+CheckBox oea18=oea_file.oea18, tabIndex=63, text="Enter Account by Exchange Rate of Order", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oea63=oea_file.oea63, tabIndex=64, noEntry, not null, required;
+Edit oea163=oea_file.oea163, tabIndex=65, noEntry, not null, required;
+CheckBox oea07=oea_file.oea07, tabIndex=66, text="Count Delivery as Uninvo.Sls Revenue to Rcv", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oea65=oea_file.oea65, tabIndex=67, text="Delivery QC", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oea25=oea_file.oea25, action=controlp, tabIndex=68, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oab02=formonly.oab02 type CHAR, tabIndex=69, noEntry;
+ButtonEdit oea47=oea_file.oea47, action=controlp, tabIndex=70, image="zoom", comment="<^P>Qry Details";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=71, noEntry;
+CheckBox oea905=oea_file.oea905, tabIndex=72, text="Carry Triangle Trade?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oea26=oea_file.oea26, action=controlp, tabIndex=73, image="zoom", comment="<^P>Qry Details";
+Edit oab02_2=formonly.oab02_2 type CHAR, tabIndex=74, noEntry;
+ButtonEdit oea48=oea_file.oea48, action=controlp, tabIndex=75, image="zoom", comment="<^P>Qry Details";
+Edit ofs02=formonly.ofs02 type CHAR, tabIndex=76, noEntry;
+Edit oea99=oea_file.oea99, tabIndex=77, noEntry;
+ButtonEdit oea46=oea_file.oea46, action=controlp, tabIndex=78, image="zoom", comment="<^P>Qry Details";
+ButtonEdit oea80=oea_file.oea80, action=controlp, tabIndex=79, image="zoom", comment="<^P>Qry Details";
+Edit oag02_1=formonly.oag02_1 type CHAR, tabIndex=80, noEntry;
+ButtonEdit oea81=oea_file.oea81, action=controlp, tabIndex=81, image="zoom", comment="<^P>Qry Details";
+Edit oag02_2=formonly.oag02_2 type CHAR, tabIndex=82, noEntry;
+TextEdit oeaud01=oea_file.oeaud01, tabIndex=83, stretch=NONE;
+Edit oeaud02=oea_file.oeaud02, tabIndex=84, scroll;
+Edit oeaud03=oea_file.oeaud03, tabIndex=85, scroll;
+Edit oeaud04=oea_file.oeaud04, tabIndex=86, scroll;
+Edit oeaud05=oea_file.oeaud05, tabIndex=87, scroll;
+Edit oeaud06=oea_file.oeaud06, tabIndex=88, scroll;
+Edit oeaud07=oea_file.oeaud07, tabIndex=89, scroll;
+Edit oeaud08=oea_file.oeaud08, tabIndex=90, scroll;
+Edit oeaud09=oea_file.oeaud09, tabIndex=91, scroll;
+Edit oeaud10=oea_file.oeaud10, tabIndex=92, scroll;
+Edit oeaud11=oea_file.oeaud11, tabIndex=93, scroll;
+Edit oeaud12=oea_file.oeaud12, tabIndex=94, scroll;
+DateEdit oeaud13=oea_file.oeaud13, tabIndex=95;
+DateEdit oeaud14=oea_file.oeaud14, tabIndex=96;
+DateEdit oeaud15=oea_file.oeaud15, tabIndex=97;
+Edit oeb03=oeb_file.oeb03, tabIndex=98, title="Line #", not null, required, comment="<^Y>Maint Other Data <^T>Maint Accessory/Spares";
+ButtonEdit oeb04=oeb_file.oeb04, action=controlp, tabIndex=99, title="Product No.", not null, required, image="zoom", comment="<^P>Qry Details <^T>Maint Accessory/Spares <^E>FAS Prod.Comb.";
+ButtonEdit att00=formonly.att00 type CHAR, action=controlp, tabIndex=100, title="Parent No.", not null, required, image="zoom", comment="<^P>Qry Details <^T>Maint Accessory/Spares <^E>FAS Prod.Comb.";
+Edit att01=formonly.att01 type CHAR, tabIndex=101, title="att01";
+ComboBox att01_c=formonly.att01_c type CHAR, tabIndex=102, title="att01_c", queryEditable;
+Edit att02=formonly.att02 type CHAR, tabIndex=103, title="att02";
+ComboBox att02_c=formonly.att02_c type CHAR, tabIndex=104, title="att02_c", queryEditable;
+Edit att03=formonly.att03 type CHAR, tabIndex=105, title="att03";
+ComboBox att03_c=formonly.att03_c type CHAR, tabIndex=106, title="att03_c", queryEditable;
+Edit att04=formonly.att04 type CHAR, tabIndex=107, title="att04";
+ComboBox att04_c=formonly.att04_c type CHAR, tabIndex=108, title="att04_c", queryEditable;
+Edit att05=formonly.att05 type CHAR, tabIndex=109, title="att05";
+ComboBox att05_c=formonly.att05_c type CHAR, tabIndex=110, title="att05_c", queryEditable;
+Edit att06=formonly.att06 type CHAR, tabIndex=111, title="att06";
+ComboBox att06_c=formonly.att06_c type CHAR, tabIndex=112, title="att06_c", queryEditable;
+Edit att07=formonly.att07 type CHAR, tabIndex=113, title="att07";
+ComboBox att07_c=formonly.att07_c type CHAR, tabIndex=114, title="att07_c", queryEditable;
+Edit att08=formonly.att08 type CHAR, tabIndex=115, title="att08";
+ComboBox att08_c=formonly.att08_c type CHAR, tabIndex=116, title="att08_c", queryEditable;
+Edit att09=formonly.att09 type CHAR, tabIndex=117, title="att09";
+ComboBox att09_c=formonly.att09_c type CHAR, tabIndex=118, title="att09_c", queryEditable;
+Edit att10=formonly.att10 type CHAR, tabIndex=119, title="att10";
+ComboBox att10_c=formonly.att10_c type CHAR, tabIndex=120, title="att10_c", queryEditable;
+Edit oeb06=oeb_file.oeb06, tabIndex=121, title="Specification";
+Edit ima021=formonly.ima021 type CHAR, tabIndex=122, title="Part Name", noEntry;
+Edit ima1002=formonly.ima1002 type CHAR, tabIndex=123, title="English Name", noEntry;
+Edit ima135=formonly.ima135 type CHAR, tabIndex=124, title="Prod. Barcd. No.", noEntry;
+Edit oeb11=oeb_file.oeb11, tabIndex=125, title="Cust Product No.";
+Edit oeb71=oeb_file.oeb71, tabIndex=126, title="Item No.", comment="Contract/Estimate/Quotation Line # (Enter when from Contract/Estimate/Quotation)";
+ButtonEdit oeb1001=oeb_file.oeb1001, action=controlp, tabIndex=127, title="Rea. Code", not null, required, image="zoom";
+CheckBox oeb1012=oeb_file.oeb1012, tabIndex=128, title="Present", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oeb906=oeb_file.oeb906, tabIndex=129, title="Check", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oeb092=oeb_file.oeb092, tabIndex=130, title="Lot No";
+DateEdit oeb15=oeb_file.oeb15, tabIndex=131, title="Del Date", not null, required;
+ButtonEdit oeb05=oeb_file.oeb05, action=controlp, tabIndex=132, title="Unit", not null, required, image="zoom";
+Edit oeb12=oeb_file.oeb12, tabIndex=133, title="Qty", not null, required, comment="<^I>QR";
+ButtonEdit oeb913=oeb_file.oeb913, action=controlp, tabIndex=134, title="Unit 2", image="zoom", comment="<^P>Qry Details";
+Edit oeb914=oeb_file.oeb914, tabIndex=135, title="Conversion Rate 2";
+Edit oeb915=oeb_file.oeb915, tabIndex=136, title="Transaction Qty 2";
+ButtonEdit oeb910=oeb_file.oeb910, action=controlp, tabIndex=137, title="Unit 1", image="zoom", comment="<^P>Qry Details";
+Edit oeb911=oeb_file.oeb911, tabIndex=138, title="Conversion Rate 1";
+Edit oeb912=oeb_file.oeb912, tabIndex=139, title="Transaction Qty 1";
+ButtonEdit oeb916=oeb_file.oeb916, action=controlp, tabIndex=140, title="Valuation Unit", image="zoom", comment="<^P>Qry Details";
+Edit oeb917=oeb_file.oeb917, tabIndex=141, title="Valuation Qty";
+Edit oeb24=oeb_file.oeb24, tabIndex=142, title="Qty Order", noEntry, not null, required;
+Edit oeb27=oeb_file.oeb27, tabIndex=143, title="P/R No.", noEntry;
+Edit oeb28=oeb_file.oeb28, tabIndex=144, title="Transfer to P/R Qty", noEntry;
+ButtonEdit oeb1004=oeb_file.oeb1004, action=controlp, tabIndex=145, title="Pro. Code", image="zoom";
+Edit oeb1002=oeb_file.oeb1002, tabIndex=146, title="Price Cd.", noEntry;
+Edit oeb13=oeb_file.oeb13, tabIndex=147, title="Unit Price", not null, required;
+Edit oeb1006=oeb_file.oeb1006, tabIndex=148, title="Price Discount rate";
+Edit oeb14=oeb_file.oeb14, tabIndex=149, title="Bef-Tax Amt", not null, required, comment="Enter Amount before Tax";
+Edit oeb14t=oeb_file.oeb14t, tabIndex=150, title="Wth-Tax Amt", not null, required, comment="Enter Amount after Tax";
+ButtonEdit oeb09=oeb_file.oeb09, action=controlp, tabIndex=151, title="Del. W/H", not null, required, image="zoom";
+ButtonEdit oeb091=oeb_file.oeb091, action=controlp, tabIndex=152, title="Del. Loc.", image="zoom";
+ButtonEdit oeb930=oeb_file.oeb930, action=controlp, tabIndex=153, title="Cost Center", not null, required, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02c=formonly.gem02c type CHAR, tabIndex=154, title="Desc", noEntry;
+ButtonEdit oeb908=oeb_file.oeb908, action=controlp, tabIndex=155, title="Register Book No.", image="zoom", comment="Enter Customs Register Book No <^P>Qry Details";
+Edit oeb22=oeb_file.oeb22, tabIndex=156, title="Ver.";
+CheckBox oeb19=oeb_file.oeb19, tabIndex=157, title="Allocate", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oeb70=oeb_file.oeb70, tabIndex=158, title="Clos", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ima15=formonly.ima15 type CHAR, tabIndex=159, title="Bond", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit oeb16=oeb_file.oeb16, tabIndex=160, title="Delivery Schedule", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=161, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=162, noEntry;
+Edit oea61=oea_file.oea61, tabIndex=163, noEntry, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oeb(oeb_file.oeb03,oeb_file.oeb04,formonly.att00,formonly.att01,formonly.att01_c,formonly.att02,formonly.att02_c,formonly.att03,formonly.att03_c,formonly.att04,formonly.att04_c,formonly.att05,formonly.att05_c,formonly.att06,formonly.att06_c,formonly.att07,formonly.att07_c,formonly.att08,formonly.att08_c,formonly.att09,formonly.att09_c,formonly.att10,formonly.att10_c,oeb_file.oeb06,formonly.ima021,formonly.ima1002,formonly.ima135,oeb_file.oeb11,oeb_file.oeb71,oeb_file.oeb1001,oeb_file.oeb1012,oeb_file.oeb906,oeb_file.oeb092,oeb_file.oeb15,oeb_file.oeb05,oeb_file.oeb12,oeb_file.oeb913,oeb_file.oeb914,oeb_file.oeb915,oeb_file.oeb910,oeb_file.oeb911,oeb_file.oeb912,oeb_file.oeb916,oeb_file.oeb917,oeb_file.oeb24,oeb_file.oeb27,oeb_file.oeb28,oeb_file.oeb1004,oeb_file.oeb1002,oeb_file.oeb13,oeb_file.oeb1006,oeb_file.oeb14,oeb_file.oeb14t,oeb_file.oeb09,oeb_file.oeb091,oeb_file.oeb930,formonly.gem02c,oeb_file.oeb908,oeb_file.oeb22,oeb_file.oeb19,oeb_file.oeb70,formonly.ima15,oeb_file.oeb16)
+SCREEN RECORD Undefined(oea_file.oea00,oea_file.oea11,oea_file.oea12,oea_file.oea14,formonly.gen02,oea_file.oea08,oea_file.oea03,oea_file.oea032,oea_file.oea15,formonly.gem02,oea_file.oea01,oea_file.oea04,formonly.occ02,formonly.oaydesc,oea_file.oea17,formonly.oea17_ds,oea_file.oea06,oea_file.oea1004,formonly.occ02_a,oea_file.oea02,oea_file.oea1015,formonly.oea1015_occ02,oea_file.oeauser,oea_file.oeamodu,oea_file.oeagrup,oea_file.oeadate,oea_file.oea10,oea_file.oea37,oea_file.oeamksg,formonly.imgmksg,oea_file.oea23,oea_file.oea24,oea_file.oea50,oea_file.oea21,oea_file.oea211,oea_file.oea212,oea_file.oea213,oea_file.oeahold,formonly.oak02,oea_file.oea31,formonly.oah02,oea_file.oeaconf,oea_file.oea72,oea_file.oea32,formonly.oag02,oea_file.oea49,oea_file.oea044,oea_file.oea41,formonly.oac02,oea_file.oea33,oap_file.oap041,oea_file.oea42,formonly.oac02_2,oea_file.oea09,oap_file.oap042,oea_file.oea43,oap_file.oap043,oea_file.oea44,oea_file.oea161,oea_file.oea05,oea_file.oea62,oea_file.oea162,oea_file.oea18,oea_file.oea63,oea_file.oea163,oea_file.oea07,oea_file.oea65,oea_file.oea25,formonly.oab02,oea_file.oea47,formonly.pmc03,oea_file.oea905,oea_file.oea26,formonly.oab02_2,oea_file.oea48,formonly.ofs02,oea_file.oea99,oea_file.oea46,oea_file.oea80,formonly.oag02_1,oea_file.oea81,formonly.oag02_2,oea_file.oeaud01,oea_file.oeaud02,oea_file.oeaud03,oea_file.oeaud04,oea_file.oeaud05,oea_file.oeaud06,oea_file.oeaud07,oea_file.oeaud08,oea_file.oeaud09,oea_file.oeaud10,oea_file.oeaud11,oea_file.oeaud12,oea_file.oeaud13,oea_file.oeaud14,oea_file.oeaud15,formonly.cnt,formonly.cn2,oea_file.oea61)
+END -- INSTRUCTIONS
+

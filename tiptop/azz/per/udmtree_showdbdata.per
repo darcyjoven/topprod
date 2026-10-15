@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/udmtree_showdbdata.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"udmtree_search_showdata")
+Grid gr3006
+{
+ <T s_showdata                                                        >
+ [gaq01            |gaq03           |value                           ]
+ [gaq01            |gaq03           |value                           ]
+ [gaq01            |gaq03           |value                           ]
+ [gaq01            |gaq03           |value                           ]
+ [gaq01            |gaq03           |value                           ]
+ [gaq01            |gaq03           |value                           ]
+ [gaq01            |gaq03           |value                           ]
+ [gaq01            |gaq03           |value                           ]
+ [gaq01            |gaq03           |value                           ]
+ [gaq01            |gaq03           |value                           ]
+ <                                                                    >
+
+}
+END -- gr3006
+END -- udmtree_search_showdata
+
+ATTRIBUTES
+Table s_showdata:s_showdata;
+Edit gaq01=formonly.gaq01 type CHAR, tabIndex=1, title="Field Id", noEntry, scroll;
+Edit gaq03=formonly.gaq03 type CHAR, tabIndex=2, title="Field Name", noEntry, scroll;
+Edit value=formonly.value type CHAR, tabIndex=3, title="Value", noEntry, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_showdata(formonly.gaq01,formonly.gaq03,formonly.value)
+END -- INSTRUCTIONS
+

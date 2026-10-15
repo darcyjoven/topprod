@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt140-1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+  [check                                        ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+RadioGroup check=formonly.check type CHAR, tabIndex=1, default = "1", items=(("1", "1"),("2", "2"),("3", "3"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.check)
+END -- INSTRUCTIONS
+

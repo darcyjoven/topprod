@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_4.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapt110_4")
+VBox VBox1
+Table s_ape
+{
+[no              |sq  |amtf                |amt                 |nmd02     |nmd05   |nmd04              ]
+[no              |sq  |amtf                |amt                 |nmd02     |nmd05   |nmd04              ]
+[no              |sq  |amtf                |amt                 |nmd02     |nmd05   |nmd04              ]
+[no              |sq  |amtf                |amt                 |nmd02     |nmd05   |nmd04              ]
+[no              |sq  |amtf                |amt                 |nmd02     |nmd05   |nmd04              ]
+[no              |sq  |amtf                |amt                 |nmd02     |nmd05   |nmd04              ]
+[no              |sq  |amtf                |amt                 |nmd02     |nmd05   |nmd04              ]
+[no              |sq  |amtf                |amt                 |nmd02     |nmd05   |nmd04              ]
+[no              |sq  |amtf                |amt                 |nmd02     |nmd05   |nmd04              ]
+[no              |sq  |amtf                |amt                 |nmd02     |nmd05   |nmd04              ]
+
+}
+END -- s_ape
+Grid gr344
+{
+ <G group01                >    <G group02                >
+  [totf      ]                   [tot       ]
+
+ <                         >    <                         >
+
+}
+END -- gr344
+END -- VBox1
+END -- aapt110_4
+
+ATTRIBUTES
+Edit no=formonly.no type CHAR, tabIndex=1, title="Doc#";
+Edit sq=formonly.sq type CHAR, tabIndex=2, title="Ln#";
+Edit amtf=formonly.amtf type CHAR, tabIndex=3, title="Cn. O.C.";
+Edit amt=formonly.amt type CHAR, tabIndex=4, title="Cn. H.C.";
+Edit nmd02=formonly.nmd02 type CHAR, tabIndex=5, title="Check #";
+Edit nmd05=formonly.nmd05 type CHAR, tabIndex=6, title="Due Dt";
+Edit nmd04=formonly.nmd04 type CHAR, tabIndex=7, title="Face Val";
+Group group01:group01, text="Cn. O.C Tot.";
+Edit totf=formonly.totf type CHAR, tabIndex=8;
+Group group02:group02, text="Cn. H.C Tot.";
+Edit tot=formonly.tot type CHAR, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ape(formonly.no,formonly.sq,formonly.amtf,formonly.amt,formonly.nmd02,formonly.nmd05,formonly.nmd04)
+SCREEN RECORD Undefined(formonly.totf,formonly.tot)
+END -- INSTRUCTIONS
+

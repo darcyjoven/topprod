@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi173.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi173")
+VBox VBox1
+Folder pc321
+Page page01(text="Page01")
+Table s_obq
+{
+[obq01           |obq02               |obqact]
+[obq01           |obq02               |obqact]
+[obq01           |obq02               |obqact]
+[obq01           |obq02               |obqact]
+[obq01           |obq02               |obqact]
+[obq01           |obq02               |obqact]
+[obq01           |obq02               |obqact]
+[obq01           |obq02               |obqact]
+[obq01           |obq02               |obqact]
+[obq01           |obq02               |obqact]
+
+}
+END -- s_obq
+END -- page01
+END -- pc321
+Grid gr1383
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1383
+END -- VBox1
+END -- atmi173
+
+TABLES
+obq_file
+ATTRIBUTES
+Edit obq01=obq_file.obq01, tabIndex=1, title="Vehicle Type", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ";
+Edit obq02=obq_file.obq02, tabIndex=2, title="Description";
+CheckBox obqact=obq_file.obqacti, tabIndex=3, title="Valid?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_obq(obq_file.obq01,obq_file.obq02,obq_file.obqacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

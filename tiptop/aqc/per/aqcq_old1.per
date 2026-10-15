@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcq_old1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aqcq_old1")
+Folder pc1201
+Page page01(text="Page01")
+Grid gr6018
+{
+ <G group01                                                                                                    >
+  Vender No.           [qcs03     ][pmc03     ]     QC Date Range       [bdate         ]-[edate         ]
+  Lots Sent            [lot       ]     Qty Sent to QC       [inqty     ]     Qty Passed          [qcs091    ]
+  -----------------------------------------------------------------------------------------------------------
+  QC Qty               [qcs06     ]     NO-Good Qty          [scqty     ]     NO-Good %           [rate      ]%
+  CRQty                [crqty     ]     MAQty                [maqty     ]     MIQty               [miqty     ]
+  -----------------------------------------------------------------------------------------------------------
+  Lots Passed          [actqty    ]     Lot Passed %         [actrate   ]%
+  Lots Rejected        [rejqty    ]     Lot Rejected%        [rejrate   ]%
+  -----------------------------------------------------------------------------------------------------------
+  Lots Returned        [rjqty     ]     Returned Lot %       [rjrate    ]%
+  Special Purchase Lot [spqty     ]     Special Purchase Lot [sprate    ]%
+ <                                                                                                             >
+ <G group02                                                                                                    >
+  Quality Rating      [score     ]
+ <                                                                                                             >
+
+}
+END -- gr6018
+END -- page01
+Page info(text="Info")
+Grid gr6019
+{
+ <G grpinfo                       >
+  Retrieve Rows       [cnt       ]
+ <                                >
+
+}
+END -- gr6019
+END -- info
+END -- pc1201
+END -- aqcq_old1
+
+ATTRIBUTES
+Group group01:group01;
+Edit qcs03=formonly.qcs03 type CHAR, tabIndex=1;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, noEntry;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=3;
+DateEdit edate=formonly.edate type DATE, tabIndex=4;
+Edit lot=formonly.lot type CHAR, tabIndex=5;
+Edit inqty=formonly.inqty type CHAR, tabIndex=6;
+Edit qcs091=formonly.qcs091 type CHAR, tabIndex=7;
+Edit qcs06=formonly.qcs06 type CHAR, tabIndex=8;
+Edit scqty=formonly.scqty type CHAR, tabIndex=9;
+Edit rate=formonly.rate type CHAR, tabIndex=10;
+Edit crqty=formonly.crqty type CHAR, tabIndex=11;
+Edit maqty=formonly.maqty type CHAR, tabIndex=12;
+Edit miqty=formonly.miqty type CHAR, tabIndex=13;
+Edit actqty=formonly.actqty type CHAR, tabIndex=14;
+Edit actrate=formonly.actrate type CHAR, tabIndex=15;
+Edit rejqty=formonly.rejqty type CHAR, tabIndex=16;
+Edit rejrate=formonly.rejrate type CHAR, tabIndex=17;
+Edit rjqty=formonly.rjqty type CHAR, tabIndex=18;
+Edit rjrate=formonly.rjrate type CHAR, tabIndex=19;
+Edit spqty=formonly.spqty type CHAR, tabIndex=20;
+Edit sprate=formonly.sprate type CHAR, tabIndex=21;
+Group group02:group02;
+Edit score=formonly.score type CHAR, tabIndex=22;
+Group grpinfo:grpinfo;
+Edit cnt=formonly.cnt type CHAR, tabIndex=23;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.qcs03,formonly.pmc03,formonly.bdate,formonly.edate,formonly.lot,formonly.inqty,formonly.qcs091,formonly.qcs06,formonly.scqty,formonly.rate,formonly.crqty,formonly.maqty,formonly.miqty,formonly.actqty,formonly.actrate,formonly.rejqty,formonly.rejrate,formonly.rjqty,formonly.rjrate,formonly.spqty,formonly.sprate,formonly.score,formonly.cnt)
+END -- INSTRUCTIONS
+

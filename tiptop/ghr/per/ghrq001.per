@@ -1,0 +1,112 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghrq001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+HBox HBox1(splitter)
+Tree tree(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children)
+{
+[name             ]
+[name             ]
+[name             ]
+[name             ]
+[name             ]
+
+
+
+
+
+
+
+
+
+
+}
+END -- tree
+Folder Folder1
+Page Page1(action=page1, text=%"Page1")
+Table Table1
+{
+[chk     |hrao01   |hrao02    |hrao03    |hrao06  |hrao06_d|hrao00     |hraa12  |hrao10    |hrao10_des|hrao09       |hrao13                             ]
+[chk     |hrao01   |hrao02    |hrao03    |hrao06  |hrao06_d|hrao00     |hraa12  |hrao10    |hrao10_des|hrao09       |hrao13                             ]
+[chk     |hrao01   |hrao02    |hrao03    |hrao06  |hrao06_d|hrao00     |hraa12  |hrao10    |hrao10_des|hrao09       |hrao13                             ]
+[chk     |hrao01   |hrao02    |hrao03    |hrao06  |hrao06_d|hrao00     |hraa12  |hrao10    |hrao10_des|hrao09       |hrao13                             ]
+[chk     |hrao01   |hrao02    |hrao03    |hrao06  |hrao06_d|hrao00     |hraa12  |hrao10    |hrao10_des|hrao09       |hrao13                             ]
+
+
+
+
+
+
+
+
+}
+END -- Table1
+END -- Page1
+Page Page2(action=page2, text=%"Page2")
+Table Table2
+{
+[hrao01_1  |hrao02_1   |hrao03_1    |hrao06_1  |hrao06_1_de|hrao00_1   |hraa12_1  |hrao10_1    |hrao10_1_desc|hrao09_1     |hrao13_1                     ]
+[hrao01_1  |hrao02_1   |hrao03_1    |hrao06_1  |hrao06_1_de|hrao00_1   |hraa12_1  |hrao10_1    |hrao10_1_desc|hrao09_1     |hrao13_1                     ]
+[hrao01_1  |hrao02_1   |hrao03_1    |hrao06_1  |hrao06_1_de|hrao00_1   |hraa12_1  |hrao10_1    |hrao10_1_desc|hrao09_1     |hrao13_1                     ]
+[hrao01_1  |hrao02_1   |hrao03_1    |hrao06_1  |hrao06_1_de|hrao00_1   |hraa12_1  |hrao10_1    |hrao10_1_desc|hrao09_1     |hrao13_1                     ]
+[hrao01_1  |hrao02_1   |hrao03_1    |hrao06_1  |hrao06_1_de|hrao00_1   |hraa12_1  |hrao10_1    |hrao10_1_desc|hrao09_1     |hrao13_1                     ]
+
+
+
+
+
+
+
+
+}
+END -- Table2
+END -- Page2
+END -- Folder1
+END -- HBox1
+END -- ghrq000
+
+ATTRIBUTES
+Edit name=formonly.name, tabIndex=1, title=%"Edit1", imageColumn=img;
+Phantom formonly.img;
+Phantom formonly.pid;
+Phantom formonly.id;
+Phantom formonly.has_children;
+Phantom formonly.expanded;
+Phantom formonly.level;
+Phantom formonly.treekey1;
+Phantom formonly.treekey2;
+CheckBox chk=formonly.chk, tabIndex=24, title=%"chk", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit hrao01=formonly.hrao01 type VARCHAR, tabIndex=2, title=%"hrao01", noEntry;
+Edit hrao02=formonly.hrao02 type VARCHAR, tabIndex=3, title=%"hrao02", noEntry;
+Edit hrao03=formonly.hrao03 type VARCHAR, tabIndex=4, title=%"hrao03", noEntry;
+Edit hrao06=formonly.hrao06 type VARCHAR, tabIndex=5, title=%"hrao06", noEntry;
+Edit hrao06_d=formonly.hrao06_desc type VARCHAR, tabIndex=18, title=%"hrao06_desc", noEntry;
+Edit hrao00=formonly.hrao00 type VARCHAR, tabIndex=6, title=%"hrao00", noEntry;
+Edit hraa12=formonly.hraa12 type VARCHAR, tabIndex=19, title=%"hraa12", noEntry;
+Edit hrao10=formonly.hrao10 type VARCHAR, tabIndex=7, title=%"hrao10", noEntry;
+Edit hrao10_des=formonly.hrao10_desc type VARCHAR, tabIndex=20, title=%"hrao10_desc", noEntry;
+Edit hrao09=formonly.hrao09 type VARCHAR, tabIndex=8, title=%"hrao09", noEntry;
+TextEdit hrao13=formonly.hrao13 type VARCHAR, tabIndex=9, title=%"hrao13", noEntry;
+Edit hrao01_1=formonly.hrao01_1 type VARCHAR, tabIndex=10, title=%"hrao01_1";
+Edit hrao02_1=formonly.hrao02_1 type VARCHAR, tabIndex=11, title=%"hrao02_1";
+Edit hrao03_1=formonly.hrao03_1 type VARCHAR, tabIndex=12, title=%"hrao03_1";
+Edit hrao06_1=formonly.hrao06_1 type VARCHAR, tabIndex=13, title=%"hrao06_1";
+Edit hrao06_1_de=formonly.hrao06_1_desc type VARCHAR, tabIndex=21, title=%"hrao06_1_desc";
+Edit hrao00_1=formonly.hrao00_1 type VARCHAR, tabIndex=14, title=%"hrao00_1";
+Edit hraa12_1=formonly.hraa12_1 type VARCHAR, tabIndex=22, title=%"hraa12_1";
+Edit hrao10_1=formonly.hrao10_1 type VARCHAR, tabIndex=15, title=%"hrao10_1";
+Edit hrao10_1_desc=formonly.hrao10_1_desc type VARCHAR, tabIndex=23, title=%"hrao10_1_desc";
+Edit hrao09_1=formonly.hrao09_1 type VARCHAR, tabIndex=16, title=%"hrao09_1";
+TextEdit hrao13_1=formonly.hrao13_1 type VARCHAR, tabIndex=17, title=%"hrao13_1";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tree(formonly.name,formonly.img,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.treekey1,formonly.treekey2)
+SCREEN RECORD s_hrao(formonly.chk,formonly.hrao01,formonly.hrao02,formonly.hrao03,formonly.hrao06,formonly.hrao06_desc,formonly.hrao00,formonly.hraa12,formonly.hrao10,formonly.hrao10_desc,formonly.hrao09,formonly.hrao13)
+SCREEN RECORD s_hrao1(formonly.hrao01_1,formonly.hrao02_1,formonly.hrao03_1,formonly.hrao06_1,formonly.hrao06_1_desc,formonly.hrao00_1,formonly.hraa12_1,formonly.hrao10_1,formonly.hrao10_1_desc,formonly.hrao09_1,formonly.hrao13_1)
+END -- INSTRUCTIONS
+

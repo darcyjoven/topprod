@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmp500")
+VBox vb7
+Grid gr4097
+{
+ <G group01                                                                            >
+  Voucher No.         [apf44               ]Payment Property    [apf00               ]
+  Payment Date        [apf02               ]Paying Vender       [apf03               ]
+  Payment Slip #      [apf01               ]Drawing Bank        [aph08               ]
+  Accounts Department [apf05               ]Payment Currency    [apf06               ]
+  Account Employee    [apf04               ]
+ [dummy01                                  ]
+ <                                                                                     >
+
+}
+END -- gr4097
+Group g01(text="INPUT")
+Grid gr4099
+{
+ Enter Generate Data Type [z0        ]
+ Enter Drawing Slip       [tr_type1  ]
+ Input Drawing Date       [g_nmd07   ][dummy02               ]
+ Default Note 1           [z1        ][nmo02     ]
+ Notes type 2             [z2        ][nmo02_2   ]
+ Department               [z3        ][gem02     ]
+ Cash Variation           [z4        ][nml02               ]
+ Reason for Payment       [z5        ][azf03                         ]
+}
+END -- gr4099
+END -- g01
+Grid gr4100
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr4100
+END -- vb7
+END -- anmp500
+
+TABLES
+aph_file,
+apf_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit apf44=apf_file.apf44, action=controlp, tabIndex=1, image="zoom";
+ComboBox apf00=apf_file.apf00, tabIndex=23, queryEditable, items=(("11", %"Please rush estimated AP"),("16", %"Request directly."),("33", %"Payment operations"),("34", %"Petty cash payment work"));
+DateEdit apf02=apf_file.apf02, tabIndex=2;
+ButtonEdit apf03=apf_file.apf03, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit apf01=apf_file.apf01, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit aph08=aph_file.aph08, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit apf05=apf_file.apf05, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit apf06=apf_file.apf06, action=controlp, tabIndex=7, image="zoom";
+ButtonEdit apf04=apf_file.apf04, action=controlp, tabIndex=8, image="zoom";
+Label dummy01:dummy01, text="NOTE: Must Confirm Paytment Slip to Gen Check";
+ComboBox z0=formonly.z0 type VARCHAR, tabIndex=9, not null, required, items=(("1", "Payt.Check"),("2", "TT"),("3", "ALL"));
+ButtonEdit tr_type1=formonly.tr_type1 type CHAR, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry  Doc Type";
+DateEdit g_nmd07=formonly.g_nmd07 type DATE, tabIndex=11;
+Label dummy02:dummy02, text="(Dafault Paying Date)";
+ButtonEdit z1=formonly.z1 type CHAR, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Notes";
+Edit nmo02=formonly.nmo02 type CHAR, tabIndex=13, noEntry;
+ButtonEdit z2=formonly.z2 type CHAR, action=controlp, tabIndex=14, image="zoom", comment="<^P>Qry Notes";
+Edit nmo02_2=formonly.nmo02_2 type CHAR, tabIndex=15, noEntry;
+ButtonEdit z3=formonly.z3 type CHAR, action=controlp, tabIndex=16, image="zoom", comment="<^P>Qry Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=17, noEntry;
+ButtonEdit z4=formonly.z4 type CHAR, action=controlp, tabIndex=18, image="zoom", comment="<^P>Qry Cash Variation Code";
+Edit nml02=formonly.nml02 type CHAR, tabIndex=19, noEntry;
+ButtonEdit z5=formonly.z5 type CHAR, action=controlp, tabIndex=20, image="zoom", comment="<^P> Qry Reason Code";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=21, noEntry;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=22, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(apf_file.apf44,apf_file.apf02,apf_file.apf03,apf_file.apf01,aph_file.aph08,apf_file.apf05,apf_file.apf06,apf_file.apf04,formonly.z0,formonly.tr_type1,formonly.g_nmd07,formonly.z1,formonly.nmo02,formonly.z2,formonly.nmo02_2,formonly.z3,formonly.gem02,formonly.z4,formonly.nml02,formonly.z5,formonly.azf03,formonly.g_bgjob,apf_file.apf00)
+END -- INSTRUCTIONS
+

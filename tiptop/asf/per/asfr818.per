@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr818.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr818")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                             >
+  Run Card            [shm01               ]
+  Work/Order No.      [shm012              ]
+  Production Item     [shm05               ]
+  Complete Date       [shm15               ]
+ <                                                      >
+
+}
+END -- Grid1
+Group group011(text="INPUT")
+VBox VBox2
+Grid Grid2
+{
+ <G group02                                             >
+ [s1                  ]  [s2                  ]
+ [t1                  ]  [t2                  ]
+ <                                                      >
+
+}
+END -- Grid2
+END -- VBox2
+END -- group011
+Grid Grid3
+{
+[more                                      ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- asfr818
+
+TABLES
+shm_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit shm01=shm_file.shm01, tabIndex=1;
+Edit shm012=shm_file.shm012, tabIndex=2;
+Edit shm05=shm_file.shm05, tabIndex=3;
+DateEdit shm15=shm_file.shm15, tabIndex=4;
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=5, queryEditable, items=(("1", %"Run Card"),("2", %"Work/Order No. "),("3", %"Production Item"),("4", %"Complete Date"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=6, queryEditable, items=(("1", %"Run Card"),("2", %"Work/Order No. "),("3", %"Production Item"),("4", %"Complete Date"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=7, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=8, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(shm_file.shm01,shm_file.shm012,shm_file.shm05,shm_file.shm15,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.more)
+END -- INSTRUCTIONS
+

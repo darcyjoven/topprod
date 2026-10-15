@@ -1,0 +1,121 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/4fd/cnms700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group Group1(text=%"Group1")
+Grid Grid2
+{
+
+                 Label1  [fflabel1          ]
+                 Label1  [fflabel2          ]   [button8          ]
+                 Label1  [fflabel3          ]   [button9          ]
+
+
+
+
+
+
+}
+END -- Grid2
+END -- Group1
+Group Group2(text=%"Group2")
+Grid Grid3
+{
+
+           [button1          ][button4          ]     [button5          ]  [button6          ]
+           [button2          ][button3          ]     [button7          ]
+
+
+
+
+
+
+
+
+}
+END -- Grid3
+END -- Group2
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox2
+Grid Grid1
+{
+
+   Label1    [remainings         ]   Label1      [bank                 ]     [re_search     ]
+
+}
+END -- Grid1
+Table Table1
+{
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+
+
+
+
+
+
+}
+END -- Table1
+END -- VBox2
+END -- Page1
+Page Page2(text=%"Page2")
+Table Table2
+{
+[edit3   |edit4   ]
+[edit3   |edit4   ]
+[edit3   |edit4   ]
+[edit3   |edit4   ]
+[edit3   |edit4   ]
+
+
+
+
+
+
+
+
+
+}
+END -- Table2
+END -- Page2
+END -- Folder1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+LABEL fflabel1=formonly.FFLabel1;
+LABEL fflabel2=formonly.FFLabel2;
+Button button8:Button8, tabIndex=15, text=%"Button1";
+LABEL fflabel3=formonly.FFLabel3;
+Button button9:Button9, tabIndex=16, text=%"Button1";
+Button button1:Button1, tabIndex=8, text=%"Button1";
+Button button4:Button4, tabIndex=11, text=%"Button2";
+Button button5:Button5, tabIndex=12, text=%"Button2";
+Button button6:Button6, tabIndex=13, text=%"Button2";
+Button button2:Button2, tabIndex=9, text=%"Button2";
+Button button3:Button3, tabIndex=10, text=%"Button2";
+Button button7:Button7, tabIndex=14, text=%"Button2";
+SpinEdit remainings=formonly.remainings type INTEGER, tabIndex=3, not null;
+ComboBox bank=formonly.bank, tabIndex=4;
+Button re_search:re_search, tabIndex=5, text=%"re_search";
+Edit edit1=formonly.Edit1, tabIndex=1, title=%"Edit1";
+Edit edit2=formonly.Edit2, tabIndex=2, title=%"Edit2";
+Edit edit3=formonly.Edit3, tabIndex=6, title=%"Edit3";
+Edit edit4=formonly.Edit4, tabIndex=7, title=%"Edit4";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(formonly.Edit1,formonly.Edit2)
+SCREEN RECORD Undefined(formonly.remainings,formonly.bank,formonly.FFLabel1,formonly.FFLabel2,formonly.FFLabel3)
+SCREEN RECORD Record2(formonly.Edit3,formonly.Edit4)
+END -- INSTRUCTIONS
+

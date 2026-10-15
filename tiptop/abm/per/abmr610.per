@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmr610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmr610")
+VBox VBox1
+Grid gr927
+{
+ <G group01                                                           >
+  Component No.       [bmb03               ]
+  Component Group Code[ima06               ]
+  Other group code 1  [ima09               ]
+  Other group code 2  [ima10               ]
+  Other group code 3  [ima11               ]
+  Other group code 4  [ima12               ]
+ <                                                                    >
+
+}
+END -- gr927
+Group group02(text="INPUT")
+Grid gr928
+{
+ Expiration Date     [effective   ]
+ Sort by             [arrange     ]
+[engine                        ]
+[blow                          ]
+}
+END -- gr928
+END -- group02
+Grid gr929
+{
+[more                                ]
+
+}
+END -- gr929
+END -- VBox1
+END -- abmr610
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit bmb03=formonly.bmb03 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=2;
+Edit ima09=formonly.ima09 type VARCHAR, tabIndex=3;
+Edit ima10=formonly.ima10 type VARCHAR, tabIndex=4;
+Edit ima11=formonly.ima11 type VARCHAR, tabIndex=5;
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=6;
+DateEdit effective=formonly.effective type DATE, tabIndex=7;
+ComboBox arrange=formonly.arrange type VARCHAR, tabIndex=8, not null, required, items=(("1", "By Master Item No."),("2", "by Line No."));
+CheckBox engine=formonly.engine type VARCHAR, tabIndex=9, text="Print Technique", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox blow=formonly.blow type VARCHAR, tabIndex=10, text="Level up if Master Item is phantom", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bmb03,formonly.ima06,formonly.ima09,formonly.ima10,formonly.ima11,formonly.ima12,formonly.effective,formonly.arrange,formonly.engine,formonly.blow,formonly.more)
+END -- INSTRUCTIONS
+

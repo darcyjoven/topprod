@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi753.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi753")
+VBox vb2
+Folder pc883
+Page page01(text="Main")
+Table s_ced
+{
+[ced01        |ced02               |cedacti  ]
+[ced01        |ced02               |cedacti  ]
+[ced01        |ced02               |cedacti  ]
+[ced01        |ced02               |cedacti  ]
+[ced01        |ced02               |cedacti  ]
+[ced01        |ced02               |cedacti  ]
+[ced01        |ced02               |cedacti  ]
+[ced01        |ced02               |cedacti  ]
+[ced01        |ced02               |cedacti  ]
+[ced01        |ced02               |cedacti  ]
+
+}
+END -- s_ced
+END -- page01
+END -- pc883
+Grid gr4740
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4740
+END -- vb2
+END -- acoi753
+
+TABLES
+ced_file
+ATTRIBUTES
+Edit ced01=ced_file.ced01, tabIndex=1, title="Deal Method";
+Edit ced02=ced_file.ced02, tabIndex=2, title="Description", not null, required;
+CheckBox cedacti=ced_file.cedacti, tabIndex=3, title="Valid Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ced(ced_file.ced01,ced_file.ced02,ced_file.cedacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

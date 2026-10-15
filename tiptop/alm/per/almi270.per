@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi270.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi270")
+VBox vb9
+Folder pc8
+Page Main(text=%"Main")
+Grid gr22
+{
+ Category               [lmt01          ]
+ Arithmetic             [lmt02          ]
+ Mem                    [lmt03          ]
+
+}
+END -- gr22
+END -- Main
+Page info(text=%"Info")
+Grid gr23
+{
+ Record Owner        [lmtuser   ] Last Modified by    [lmtmodu   ] Data Valid Code     [lmtacti   ]
+ Department          [lmtgrup   ] Create/Modify Date  [lmtdate   ] Create Date         [lmtcrat   ]
+ Record Orig.        [lmtoriu   ]
+ Dept Orig.          [lmtorig   ]
+}
+END -- gr23
+END -- info
+END -- pc8
+Grid gr24
+{
+ ---------- Rows[cnt   ]----------
+
+
+}
+END -- gr24
+END -- vb9
+END -- almi270
+
+TABLES
+lmt_file
+ATTRIBUTES
+ComboBox lmt01=lmt_file.lmt01, tabIndex=8, items=(("0", "Alliance"),("1", "Not Alliance"));
+ButtonEdit lmt02=lmt_file.lmt02, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit lmt03=lmt_file.lmt03, tabIndex=2;
+Edit lmtuser=lmt_file.lmtuser, tabIndex=9, noEntry;
+Edit lmtmodu=lmt_file.lmtmodu, tabIndex=3, noEntry;
+Edit lmtacti=lmt_file.lmtacti, tabIndex=4, noEntry, upShift;
+Edit lmtgrup=lmt_file.lmtgrup, tabIndex=5, noEntry;
+DateEdit lmtdate=lmt_file.lmtdate, tabIndex=6, noEntry;
+DateEdit lmtcrat=lmt_file.lmtcrat, tabIndex=10, noEntry;
+Edit lmtoriu=lmt_file.lmtoriu, tabIndex=12, noEntry;
+Edit lmtorig=lmt_file.lmtorig, tabIndex=11, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lmt_file.lmt01,lmt_file.lmt02,lmt_file.lmt03,lmt_file.lmtuser,lmt_file.lmtmodu,lmt_file.lmtacti,lmt_file.lmtgrup,lmt_file.lmtdate,lmt_file.lmtcrat,lmt_file.lmtoriu,lmt_file.lmtorig,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/aski004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aski004")
+VBox vb2
+Folder pc3
+Page Page4(text=%"Main")
+Grid gr10
+{
+ Labor No          [skn01                   ]  [imgmksg ]
+ Confirmation Code [skn02              ]       [        ]
+
+}
+END -- gr10
+END -- Page4
+Page Page5(text=%"Info")
+Grid gr10_
+{
+ Record Owner  [sknuser   ]    Last Modified by   [sknmodu   ]  Data Valid Code  [sknacti   ]
+ Department    [skngrup   ]    Create/Modify Date [skndate   ]
+
+
+}
+END -- gr10_
+END -- Page5
+END -- pc3
+Table s_sko
+{
+[sko02          |skl02           |sko03              |sko04         |sko05         ]
+[sko02          |skl02           |sko03              |sko04         |sko05         ]
+[sko02          |skl02           |sko03              |sko04         |sko05         ]
+[sko02          |skl02           |sko03              |sko04         |sko05         ]
+[sko02          |skl02           |sko03              |sko04         |sko05         ]
+[sko02          |skl02           |sko03              |sko04         |sko05         ]
+[sko02          |skl02           |sko03              |sko04         |sko05         ]
+[sko02          |skl02           |sko03              |sko04         |sko05         ]
+[sko02          |skl02           |sko03              |sko04         |sko05         ]
+[sko02          |skl02           |sko03              |sko04         |sko05         ]
+
+}
+END -- s_sko
+Grid gr12
+{
+----------  Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr12
+END -- vb2
+END -- aski004
+
+TABLES
+tableAlias1=skn_file,
+sko_file,
+skn_file
+ATTRIBUTES
+ButtonEdit skn01=skn_file.skn01, action=controlp, tabIndex=13, not null, required, image="zoom.png";
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ComboBox skn02=tableAlias1.skn02, tabIndex=14, not null, items=(("N", "Un Confirmed"),("Y", "Confirmation Code"));
+Edit sknuser=skn_file.sknuser, tabIndex=8, noEntry;
+Edit sknmodu=skn_file.sknmodu, tabIndex=9, noEntry;
+Edit sknacti=skn_file.sknacti, tabIndex=10, noEntry, upShift;
+Edit skngrup=skn_file.skngrup, tabIndex=11, noEntry;
+DateEdit skndate=skn_file.skndate, tabIndex=12, noEntry;
+ButtonEdit sko02=sko_file.sko02, action=controlp, tabIndex=1, title="Group No.", not null, image="zoom.png";
+Edit skl02=formonly.skl02 type VARCHAR, tabIndex=2, title="Group Name", noEntry;
+Edit sko03=sko_file.sko03, tabIndex=3, title="Estimate quantity", not null;
+DateEdit sko04=sko_file.sko04, tabIndex=4, title="Begins Date", not null;
+DateEdit sko05=sko_file.sko05, tabIndex=5, title="Finishes Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sko(sko_file.sko02,formonly.skl02,sko_file.sko03,sko_file.sko04,sko_file.sko05)
+SCREEN RECORD Undefined(skn_file.skn01,formonly.imgmksg,tableAlias1.skn02,skn_file.sknuser,skn_file.sknmodu,skn_file.sknacti,skn_file.skngrup,skn_file.skndate,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

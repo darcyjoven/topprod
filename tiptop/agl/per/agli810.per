@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli810.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli810")
+VBox VBox1
+Folder pc474
+Page page01(text="Main")
+Grid gr2462
+{
+  Book No.                [abg00     ]
+  Voucher No.             [abg01               ]
+  Line No.                [abg02     ]
+  Voucher Date            [abg06       ]
+  Account #               [abg03                         ]
+                          [aag02                         ]
+  Department              [abg05     ] [gem02   ]
+  Transaction Code-1      [abg11                ]Transaction Code-6      [abg32                ]
+  Transaction Code-2      [abg12                ]Transaction Code-7      [abg33                ]
+  Transaction Code-3      [abg13                ]Transaction Code-8      [abg34                ]
+  Transaction Code-4      [abg14                ]Transaction Code-9      [abg35                ]
+  Transaction Code-5      [abg31                ]Transaction Code-10     [abg36                ]
+  Entering Account Amount [abg071               ]
+  Memo                    [abg04                         ]
+
+ <G group01                                                  >
+ [dummy01                                                   ]
+ <                                                           >
+
+}
+END -- gr2462
+END -- page01
+END -- pc474
+Grid gr2463
+{
+  ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2463
+END -- VBox1
+END -- agli810
+
+TABLES
+abg_file
+ATTRIBUTES
+ButtonEdit abg00=abg_file.abg00, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Book#";
+Edit abg01=abg_file.abg01, tabIndex=2;
+Edit abg02=abg_file.abg02, tabIndex=3;
+DateEdit abg06=abg_file.abg06, tabIndex=4;
+ButtonEdit abg03=abg_file.abg03, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Account #";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=6, noEntry;
+ButtonEdit abg05=abg_file.abg05, action=controlp, tabIndex=7, image="zoom", comment="<^P>Query Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=8, noEntry;
+ButtonEdit abg11=abg_file.abg11, action=controlp, tabIndex=9, image="zoom", comment="Enter Transaction Code-1, <^P>Qry Transaction Code <^Y>Create transaction code";
+ButtonEdit abg32=abg_file.abg32, action=controlp, tabIndex=10, image="zoom", comment="Enter Transaction Code-6, <^P>Qry Transaction Code <^Y>Create transaction code";
+ButtonEdit abg12=abg_file.abg12, action=controlp, tabIndex=11, image="zoom", comment="Enter Transaction Code-2, <^P>Qry Transaction Code <^Y>Create transaction code";
+ButtonEdit abg33=abg_file.abg33, action=controlp, tabIndex=12, image="zoom", comment="Enter Transaction Code-7, <^P>Qry Transaction Code <^Y>Create transaction code";
+ButtonEdit abg13=abg_file.abg13, action=controlp, tabIndex=13, image="zoom", comment="Enter Transaction Code-3, <^P>Qry Transaction Code <^Y>Create transaction code";
+ButtonEdit abg34=abg_file.abg34, action=controlp, tabIndex=14, image="zoom", comment="Enter Transaction Code-8, <^P>Qry Transaction Code <^Y>Create transaction code";
+ButtonEdit abg14=abg_file.abg14, action=controlp, tabIndex=15, image="zoom", comment="Enter Transaction Code-4, <^P>Qry Transaction Code <^Y>Create transaction code";
+ButtonEdit abg35=abg_file.abg35, action=controlp, tabIndex=16, image="zoom", comment="Enter Transaction Code-9, <^P>Qry Transaction Code <^Y>Create transaction code";
+ButtonEdit abg31=abg_file.abg31, action=controlp, tabIndex=17, image="zoom", comment="Enter Transaction Code-5, <^P>Qry Transaction Code <^Y>Create transaction code";
+ButtonEdit abg36=abg_file.abg36, action=controlp, tabIndex=18, image="zoom", comment="Enter Transaction Code-10, <^P>Qry Transaction Code <^Y>Create transaction code";
+Edit abg071=abg_file.abg071, tabIndex=19, not null, required;
+Edit abg04=abg_file.abg04, tabIndex=20;
+Group group01:group01;
+Label dummy01:dummy01, text="NOTE:Voucher # Entered here cannot exist in Voucher Table";
+Edit cnt=formonly.cnt type CHAR, tabIndex=21;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(abg_file.abg00,abg_file.abg01,abg_file.abg02,abg_file.abg06,abg_file.abg03,formonly.aag02,abg_file.abg05,formonly.gem02,abg_file.abg11,abg_file.abg32,abg_file.abg12,abg_file.abg33,abg_file.abg13,abg_file.abg34,abg_file.abg14,abg_file.abg35,abg_file.abg31,abg_file.abg36,abg_file.abg071,abg_file.abg04,formonly.cnt)
+END -- INSTRUCTIONS
+

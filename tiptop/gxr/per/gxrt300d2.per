@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gxr/42f/gxrt300d2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gxrt300d2")
+VBox VBox1
+Table s_omad
+{
+[sel |oma01     |oma23  |oma54       |oma54x    |oma54t         |oma56        |oma56x     |oma56t       ]
+[sel |oma01     |oma23  |oma54       |oma54x    |oma54t         |oma56        |oma56x     |oma56t       ]
+[sel |oma01     |oma23  |oma54       |oma54x    |oma54t         |oma56        |oma56x     |oma56t       ]
+[sel |oma01     |oma23  |oma54       |oma54x    |oma54t         |oma56        |oma56x     |oma56t       ]
+[sel |oma01     |oma23  |oma54       |oma54x    |oma54t         |oma56        |oma56x     |oma56t       ]
+[sel |oma01     |oma23  |oma54       |oma54x    |oma54t         |oma56        |oma56x     |oma56t       ]
+[sel |oma01     |oma23  |oma54       |oma54x    |oma54t         |oma56        |oma56x     |oma56t       ]
+[sel |oma01     |oma23  |oma54       |oma54x    |oma54t         |oma56        |oma56x     |oma56t       ]
+[sel |oma01     |oma23  |oma54       |oma54x    |oma54t         |oma56        |oma56x     |oma56t       ]
+[sel |oma01     |oma23  |oma54       |oma54x    |oma54t         |oma56        |oma56x     |oma56t       ]
+
+}
+END -- s_omad
+Grid gr3654
+{
+ <G group01                                                   >
+  Total               [t56         ][t56x      ][t56t        ]
+  To Drawing Total    [p56         ][p56x      ][p56t        ]
+ <                                                            >
+
+}
+END -- gr3654
+END -- VBox1
+END -- gxrt300d2
+
+ATTRIBUTES
+CheckBox sel=formonly.sel type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oma01=formonly.oma01 type CHAR, tabIndex=2, title="Accounts#", noEntry;
+Edit oma23=formonly.oma23 type CHAR, tabIndex=3, title="Curr.", noEntry;
+Edit oma54=formonly.oma54 type CHAR, tabIndex=4, title="F.C B-Tax", noEntry;
+Edit oma54x=formonly.oma54x type CHAR, tabIndex=5, title="F.C Tax", noEntry;
+Edit oma54t=formonly.oma54t type CHAR, tabIndex=6, title="F.C After-Tax", noEntry;
+Edit oma56=formonly.oma56 type CHAR, tabIndex=7, title="H.C B-Tax", noEntry;
+Edit oma56x=formonly.oma56x type CHAR, tabIndex=8, title="H.C Tax", noEntry;
+Edit oma56t=formonly.oma56t type CHAR, tabIndex=9, title="H.C After-Tax", noEntry;
+Group group01:group01;
+Edit t56=formonly.t56 type CHAR, tabIndex=10, noEntry;
+Edit t56x=formonly.t56x type CHAR, tabIndex=11, noEntry;
+Edit t56t=formonly.t56t type CHAR, tabIndex=12, noEntry;
+Edit p56=formonly.p56 type CHAR, tabIndex=13, noEntry;
+Edit p56x=formonly.p56x type CHAR, tabIndex=14, noEntry;
+Edit p56t=formonly.p56t type CHAR, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_omad(formonly.sel,formonly.oma01,formonly.oma23,formonly.oma54,formonly.oma54x,formonly.oma54t,formonly.oma56,formonly.oma56x,formonly.oma56t)
+SCREEN RECORD Undefined(formonly.t56,formonly.t56x,formonly.t56t,formonly.p56,formonly.p56x,formonly.p56t)
+END -- INSTRUCTIONS
+

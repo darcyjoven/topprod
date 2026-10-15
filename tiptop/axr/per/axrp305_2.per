@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrp305_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrp400_2")
+Grid gr239
+{
+ <G group01                                          >
+  Receving Slip Rows Generated [g_cnt               ]
+  Initial Payment Slip#        [g_start_no          ]
+  Ending Payment Slip#         [g_end_no            ]
+ <                                                   >
+
+}
+END -- gr239
+END -- axrp400_2
+
+ATTRIBUTES
+Group group01:group01;
+Edit g_cnt=formonly.g_cnt type SMALLINT, tabIndex=1;
+Edit g_start_no=formonly.g_start_no type VARCHAR, tabIndex=2;
+Edit g_end_no=formonly.g_end_no type VARCHAR, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_cnt,formonly.g_start_no,formonly.g_end_no)
+END -- INSTRUCTIONS
+

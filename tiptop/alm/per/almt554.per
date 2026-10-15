@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt554.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"almt554")
+VBox vb19
+Folder pc3
+Page main(text=%"Main")
+Grid gr7
+{
+ plant    [lteplant          |azp02             ]   status   [lte03           |imgmksg]
+ legal    [ltelegal          |azt02             ]   checker  [lte04           |       ]
+ Doc No.  [lte01             ]                      checkda  [lte05           ]
+ Type     [lte02             ]                      memo     [lte06           ]
+                                                             [                ]
+
+}
+END -- gr7
+END -- main
+Page info(text=%"Info")
+Grid gr5
+{
+ owner [lteuser       ]          modu[ltemodu       ]       acti [lteacti       ]
+ grup  [ltegrup       ]          date[ltedate       ]       crat [ltecrat       ]
+ Oriu. [lteoriu       ]          Orig[lteorig       ]
+
+}
+END -- gr5
+END -- info
+END -- pc3
+Table s_ltf
+{
+[ltf03   |ltf04     |azp02_1 |ltf05   |ltf06   |ltf07   ]
+[ltf03   |ltf04     |azp02_1 |ltf05   |ltf06   |ltf07   ]
+[ltf03   |ltf04     |azp02_1 |ltf05   |ltf06   |ltf07   ]
+[ltf03   |ltf04     |azp02_1 |ltf05   |ltf06   |ltf07   ]
+[ltf03   |ltf04     |azp02_1 |ltf05   |ltf06   |ltf07   ]
+
+}
+END -- s_ltf
+Table s_ltg
+{
+[ltg03   |ltg03_de]
+[ltg03   |ltg03_de]
+[ltg03   |ltg03_de]
+[ltg03   |ltg03_de]
+[ltg03   |ltg03_de]
+
+}
+END -- s_ltg
+Grid gr6
+{
+ ------- Rows[idx ]/[cnt  ]---item1[cn2 ]----item2[cn3 ]
+
+
+}
+END -- gr6
+END -- vb19
+END -- Form3
+
+TABLES
+ltg_file,
+ltf_file,
+lte_file
+ATTRIBUTES
+ButtonEdit lteplant=lte_file.lteplant, action=controlp, tabIndex=20, noEntry, image="zoom.png";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=29;
+ComboBox lte03=lte_file.lte03, tabIndex=9, default = "N", noEntry, not null, required, items=(("Y", "checked"),("N", "unchecked"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit ltelegal=lte_file.ltelegal, action=controlp, tabIndex=21, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=30;
+Edit lte04=lte_file.lte04, tabIndex=10, noEntry, not null, required;
+ButtonEdit lte01=lte_file.lte01, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+DateEdit lte05=lte_file.lte05, tabIndex=11, noEntry, not null, required;
+ComboBox lte02=lte_file.lte02, tabIndex=13, not null, required, items=(("1", "Points for tickets"),("2", "Points for material"),("3", "Discountfor tickets"),("4", "Direct Discount"),("5", "Back Cash"),("6", "Gifts"));
+TextEdit lte06=lte_file.lte06, tabIndex=12, stretch=NONE;
+Edit lteuser=lte_file.lteuser, tabIndex=1, noEntry;
+Edit ltemodu=lte_file.ltemodu, tabIndex=2, noEntry;
+Edit lteacti=lte_file.lteacti, tabIndex=22, noEntry;
+Edit ltegrup=lte_file.ltegrup, tabIndex=3, noEntry;
+DateEdit ltedate=lte_file.ltedate, tabIndex=4, noEntry;
+DateEdit ltecrat=lte_file.ltecrat, tabIndex=5, noEntry;
+Edit lteoriu=lte_file.lteoriu, tabIndex=6, noEntry;
+Edit lteorig=lte_file.lteorig, tabIndex=7, noEntry;
+Edit ltf03=ltf_file.ltf03, tabIndex=19, title="ltf03", not null, required;
+ButtonEdit ltf04=ltf_file.ltf04, action=controlp, tabIndex=14, title="ltf04", not null, required, image="zoom.png";
+Edit azp02_1=formonly.azp02_1 type CHAR, tabIndex=23, title="azp02_1", noEntry;
+ButtonEdit ltf05=ltf_file.ltf05, action=controlp, tabIndex=15, title="ltf05", not null, required, image="zoom.png";
+ComboBox ltf06=ltf_file.ltf06, tabIndex=16, title="ltf06", not null, required, items=(("1", "ins"),("2", "upd"));
+CheckBox ltf07=ltf_file.ltf07, tabIndex=17, title="ltf07", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ltg03=ltg_file.ltg03, action=controlp, tabIndex=18, title="ltg03", not null, required, image="zoom.png";
+Edit ltg03_de=formonly.ltg03_desc type CHAR, tabIndex=24, title="ltg03_desc", noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=25, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=26, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=28;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ltf(ltf_file.ltf03,ltf_file.ltf04,formonly.azp02_1,ltf_file.ltf05,ltf_file.ltf06,ltf_file.ltf07)
+SCREEN RECORD s_ltg(ltg_file.ltg03,formonly.ltg03_desc)
+SCREEN RECORD Undefined(lte_file.lteplant,formonly.azp02,lte_file.lte03,formonly.imgmksg,lte_file.ltelegal,formonly.azt02,lte_file.lte04,lte_file.lte01,lte_file.lte05,lte_file.lte02,lte_file.lte06,lte_file.lteuser,lte_file.ltemodu,lte_file.lteacti,lte_file.ltegrup,lte_file.ltedate,lte_file.ltecrat,lte_file.lteoriu,lte_file.lteorig,formonly.idx,formonly.cnt,formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

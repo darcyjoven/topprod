@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt503.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt503")
+VBox vb3
+Grid gr1
+{
+  WBS No.     [pjb02                         ]             WBS Name    [pjb03                                   ]
+  Project No. [pjb01     ]                                 Project Name[pja02                                   ]
+  Confirmed By[pjb22     ][gen02                         ] Status Code [pjb21     ]
+  Update      [pjb23        ]
+  Complete Progress % [pjb14          ]
+}
+END -- gr1
+Group gb1(text="Progress Message")
+Grid gr2
+{
+                      [dummy01   ]     [dummy02         |dummy03          ]
+    Planning Progress [pjb15        ]  [pjb16        ]
+    Estimated Progress[pjb17        ]  [pjb18        ]
+    Actual Progress   [pjb19        ]  [pjb20        ]  [pjb12          ]
+
+  --- [dummy04     ]--------------------------------------------------------------------------
+    Actual Progress   [pjb19a       ]  [pjb20a       ]  [pjb12a              ]
+
+}
+END -- gr2
+END -- gb1
+Grid gr6
+{
+ ------count[idx    ]/  [cnt    ] -------
+
+
+}
+END -- gr6
+END -- vb3
+END -- apjt503
+
+TABLES
+pjb_file
+ATTRIBUTES
+ButtonEdit pjb02=pjb_file.pjb02, action=controlp, tabIndex=1, noEntry, not null, image="zoom.png";
+Edit pjb03=pjb_file.pjb03, tabIndex=7, noEntry, not null, required;
+ButtonEdit pjb01=pjb_file.pjb01, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Edit pja02=formonly.pja02 type CHAR, tabIndex=8, not null, required;
+ButtonEdit pjb22=pjb_file.pjb22, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=4, noEntry;
+ComboBox pjb21=pjb_file.pjb21, tabIndex=9, not null, required, items=(("0", %"Open"),("1", %"Approved"),("2", %"Frozen"),("3", %"Finish"),("4", %"Closing"));
+DateEdit pjb23=pjb_file.pjb23, tabIndex=5, not null, required;
+Edit pjb14=pjb_file.pjb14, tabIndex=6, not null, required;
+Label dummy01:dummy01, text="Start Date";
+Label dummy02:dummy02, text="Completion Date";
+Label dummy03:dummy03, text="Actual Hour Input";
+DateEdit pjb15=pjb_file.pjb15, tabIndex=10, noEntry, not null;
+DateEdit pjb16=pjb_file.pjb16, tabIndex=13, noEntry, not null;
+DateEdit pjb17=pjb_file.pjb17, tabIndex=11, noEntry, not null;
+DateEdit pjb18=pjb_file.pjb18, tabIndex=14, noEntry, not null;
+DateEdit pjb19=pjb_file.pjb19, tabIndex=15, noEntry, not null;
+DateEdit pjb20=pjb_file.pjb20, tabIndex=12, noEntry, not null;
+Edit pjb12=pjb_file.pjb12, tabIndex=16, noEntry, not null;
+Label dummy04:dummy04, text="Confirmation";
+DateEdit pjb19a=formonly.pjb19a type DATE, tabIndex=17;
+DateEdit pjb20a=formonly.pjb20a type DATE, tabIndex=18;
+Edit pjb12a=formonly.pjb12a type DECIMAL, tabIndex=19;
+Edit idx=formonly.idx type CHAR, tabIndex=21;
+Edit cnt=formonly.cnt type CHAR, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pjb_file.pjb02,pjb_file.pjb03,pjb_file.pjb01,formonly.pja02,pjb_file.pjb22,formonly.gen02,pjb_file.pjb21,pjb_file.pjb23,pjb_file.pjb14,pjb_file.pjb15,pjb_file.pjb16,pjb_file.pjb17,pjb_file.pjb18,pjb_file.pjb19,pjb_file.pjb20,pjb_file.pjb12,formonly.pjb19a,formonly.pjb20a,formonly.pjb12a,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

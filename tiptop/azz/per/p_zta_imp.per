@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zta_imp.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_zta_imp")
+Folder pc710
+Page page01(text="SELECT DB")
+Grid gr3072
+{
+ <G group01                                   >
+ [welcome                                     ]
+ <                                            >
+ <G group02                                    >
+  Slect DataBase.    [dbname    ]
+ <                                             >
+
+}
+END -- gr3072
+END -- page01
+END -- pc710
+END -- p_zta_imp
+
+ATTRIBUTES
+Group group01:group01, text="Welcome";
+TextEdit welcome=formonly.welcome type CHAR, tabIndex=1, stretch=NONE;
+Group group02:group02, text="DataBase Name";
+ButtonEdit dbname=formonly.dbname type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.welcome,formonly.dbname)
+END -- INSTRUCTIONS
+

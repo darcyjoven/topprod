@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi300")
+VBox VBox1
+Folder folder01
+Page Page859(text="Main")
+VBox VBox2
+Grid gr3054
+{
+  Attribute Code   [agc01      ]
+  Description      [agc02                      ]
+  Digits           [agc03      ]
+  Digits           [agc07       ]
+
+
+}
+END -- gr3054
+Group group01(text="Use Method")
+Grid gr3055
+{
+
+ [agc04                 ]
+ [                      ]
+ [                      ]
+ [                      |agc05               ]-[agc06               ]
+
+}
+END -- gr3055
+END -- group01
+END -- VBox2
+END -- Page859
+Page Page11(text=%"Info")
+Grid gr3048
+{
+ Record Owner        [agcuser   ] Last Modified by    [agcmodu   ] Data Valid Code     [agcacti   ]
+ Department          [agcgrup   ] Create/Modify Date  [agcdate   ]
+ Record Orig.        [agcoriu   ]
+ Dept Orig.          [agcorig   ]
+
+}
+END -- gr3048
+END -- Page11
+END -- folder01
+Table s_agd
+{
+[agd02           |agd03             |agd04   ]
+[agd02           |agd03             |agd04   ]
+[agd02           |agd03             |agd04   ]
+[agd02           |agd03             |agd04   ]
+[agd02           |agd03             |agd04   ]
+[agd02           |agd03             |agd04   ]
+}
+END -- s_agd
+Grid gr3057
+{
+  -------- Rows [cnt  ]/[cn2  ] ---------
+
+
+}
+END -- gr3057
+END -- VBox1
+END -- aimi300
+
+TABLES
+agd_file,
+agc_file
+ATTRIBUTES
+ButtonEdit agc01=agc_file.agc01, action=controlp, tabIndex=13, image="zoom.png";
+Edit agc02=agc_file.agc02, tabIndex=13, not null, required;
+Edit agc03=agc_file.agc03, tabIndex=13, not null, required;
+ComboBox agc07=formonly.agc07 type CHAR, tabIndex=13, items=(("1", "顏色"),("2", "尺寸"));
+RadioGroup agc04=agc_file.agc04, tabIndex=2, not null, required, items=(("1", "Dynamic entry"),("2", "Pre-define value"),("3", "Pre-define range"));
+Edit agc05=agc_file.agc05, tabIndex=14;
+Edit agc06=agc_file.agc06, tabIndex=14;
+Edit agcuser=agc_file.agcuser, tabIndex=3, noEntry;
+Edit agcmodu=agc_file.agcmodu, tabIndex=3, noEntry;
+Edit agcacti=agc_file.agcacti, tabIndex=4, noEntry;
+Edit agcgrup=agc_file.agcgrup, tabIndex=5, noEntry;
+DateEdit agcdate=agc_file.agcdate, tabIndex=6, noEntry;
+Edit agcoriu=agc_file.agcoriu, tabIndex=7, noEntry;
+Edit agcorig=agc_file.agcorig, tabIndex=8, noEntry;
+ButtonEdit agd02=agd_file.agd02, action=controlp, tabIndex=9, title="Attribute Value", not null, required, image="zoom.png";
+Edit agd03=agd_file.agd03, tabIndex=10, title="Description", not null, required;
+Edit agd04=agd_file.agd04, tabIndex=15, title=%"Order";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_agd(agd_file.agd02,agd_file.agd03,agd_file.agd04)
+SCREEN RECORD Undefined(agc_file.agc01,agc_file.agc02,agc_file.agc03,formonly.agc07,agc_file.agc04,agc_file.agc05,agc_file.agc06,agc_file.agcuser,agc_file.agcmodu,agc_file.agcacti,agc_file.agcgrup,agc_file.agcdate,agc_file.agcoriu,agc_file.agcorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

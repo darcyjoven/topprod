@@ -1,0 +1,71 @@
+----------------------------------------------------------------------------------
+-- $Id:  axds020.per created Wed Jan 23 05:30:44 2008
+-- File created from axds020.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axds020")
+-- TABLE
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1578
+      PAGE page01( TEXT="Page01")
+        TABLE   s_adv
+        {
+        [aa0                 |aa1               |aa2                    |aa3     |aa4        |aa5     |aa6           |aa7    |aa8        |aa9        |ab0      |ab1         |ab2        |ab3             |ab4       |ab5            |ab6   ]
+        [aa0                 |aa1               |aa2                    |aa3     |aa4        |aa5     |aa6           |aa7    |aa8        |aa9        |ab0      |ab1         |ab2        |ab3             |ab4       |ab5            |ab6   ]
+        [aa0                 |aa1               |aa2                    |aa3     |aa4        |aa5     |aa6           |aa7    |aa8        |aa9        |ab0      |ab1         |ab2        |ab3             |ab4       |ab5            |ab6   ]
+        [aa0                 |aa1               |aa2                    |aa3     |aa4        |aa5     |aa6           |aa7    |aa8        |aa9        |ab0      |ab1         |ab2        |ab3             |ab4       |ab5            |ab6   ]
+        [aa0                 |aa1               |aa2                    |aa3     |aa4        |aa5     |aa6           |aa7    |aa8        |aa9        |ab0      |ab1         |ab2        |ab3             |ab4       |ab5            |ab6   ]
+        [aa0                 |aa1               |aa2                    |aa3     |aa4        |aa5     |aa6           |aa7    |aa8        |aa9        |ab0      |ab1         |ab2        |ab3             |ab4       |ab5            |ab6   ]
+        [aa0                 |aa1               |aa2                    |aa3     |aa4        |aa5     |aa6           |aa7    |aa8        |aa9        |ab0      |ab1         |ab2        |ab3             |ab4       |ab5            |ab6   ]
+        [aa0                 |aa1               |aa2                    |aa3     |aa4        |aa5     |aa6           |aa7    |aa8        |aa9        |ab0      |ab1         |ab2        |ab3             |ab4       |ab5            |ab6   ]
+        [aa0                 |aa1               |aa2                    |aa3     |aa4        |aa5     |aa6           |aa7    |aa8        |aa9        |ab0      |ab1         |ab2        |ab3             |ab4       |ab5            |ab6   ]
+        [aa0                 |aa1               |aa2                    |aa3     |aa4        |aa5     |aa6           |aa7    |aa8        |aa9        |ab0      |ab1         |ab2        |ab3             |ab4       |ab5            |ab6   ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr7849
+    {
+     ----------Rows [ab7   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adv_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=adv_file.adv01, ACTION=controlp, COMMENT="KEY Field,No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=1, TITLE="Transfer-in Plant";
+  BUTTONEDIT aa1=adv_file.adv02, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=2, TITLE="Delivery Slip";
+  BUTTONEDIT aa2=adv_file.adv03, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=3, TITLE="Sales Classification";
+  EDIT aa3=FORMONLY.oab02 TYPE VARCHAR, NOENTRY, TABINDEX=4, TITLE="Name";
+  BUTTONEDIT aa4=adv_file.adv04, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=5, TITLE="Salesman";
+  EDIT aa5=FORMONLY.gen02 TYPE VARCHAR, NOENTRY, TABINDEX=6, TITLE="Name";
+  BUTTONEDIT aa6=adv_file.adv05, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=7, TITLE="Department";
+  EDIT aa7=FORMONLY.gem02 TYPE VARCHAR, NOENTRY, TABINDEX=8, TITLE="Name";
+  BUTTONEDIT aa8=adv_file.adv06, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=9, TITLE="Tax Type";
+  EDIT aa9=adv_file.adv07, NOENTRY, TABINDEX=10, TITLE="TaxRate%";
+  EDIT ab0=adv_file.adv08, NOENTRY, TABINDEX=11, TITLE="Copies";
+  CHECKBOX ab1=adv_file.adv09, NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=12, TITLE="with Tax?";
+  BUTTONEDIT ab2=adv_file.adv10, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=13, TITLE="Currency";
+  BUTTONEDIT ab3=adv_file.adv11, ACTION=controlp, IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=14, TITLE="Exchange Rate";
+  EDIT ab4=adv_file.adv12, NOT NULL, REQUIRED, TABINDEX=15, TITLE="Invoice";
+  BUTTONEDIT ab5=adv_file.adv13, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", REVERSE, TABINDEX=16, TITLE="Account Type";
+  CHECKBOX ab6=adv_file.advacti, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=17, TITLE="Valid?";
+  EDIT ab7=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=18;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adv (adv_file.adv01, adv_file.adv02, adv_file.adv03, FORMONLY.oab02, adv_file.adv04, FORMONLY.gen02, adv_file.adv05, FORMONLY.gem02, adv_file.adv06, adv_file.adv07, adv_file.adv08, adv_file.adv09, adv_file.adv10, adv_file.adv11, adv_file.adv12, adv_file.adv13, adv_file.advacti)
+END

@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt410_4.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt410_4")
+VBox vb5
+Folder pc1
+Page Main(text=%"Other Brand")
+Table s_lof
+{
+[lof03              |tqa02                        ]
+[lof03              |tqa02                        ]
+[lof03              |tqa02                        ]
+[lof03              |tqa02                        ]
+[lof03              |tqa02                        ]
+
+}
+END -- s_lof
+END -- Main
+END -- pc1
+Grid gr1
+{
+  ---- Rows [cnt   ] ------
+
+
+}
+END -- gr1
+END -- vb5
+END -- almt410_4
+
+TABLES
+lof_file
+ATTRIBUTES
+ButtonEdit lof03=lof_file.lof03, action=controlp, tabIndex=1, title="Brand No.", not null, required, image="zoom.png";
+Edit tqa02=formonly.tqa02 type VARCHAR, tabIndex=2, title="Brand Name", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lof(lof_file.lof03,formonly.tqa02)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

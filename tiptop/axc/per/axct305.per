@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct305.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct305")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1791
+{
+ Borrowing Note No.  [imo01             ]
+ Date Borrwed        [imo02     ]
+ Vender#             [imo03     ][imo04     ]
+ Borrower            [imo06     ][gen02     ]
+ Credit              [imo05       ]
+}
+END -- gr1791
+Grid gr1792
+{
+
+
+ Confirm             [imoconf       ]  [imgmksg]
+[imopost             ]                 [       ]
+[imo07               ]
+}
+END -- gr1792
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1793
+{
+ Record Owner        [imouser   ]   Last Modified by    [imomodu   ]
+ Department          [imogrup   ]   Create/Modify Date  [imodate   ]
+ Record Orig.        [imooriu   ]
+ Dept Orig.          [imoorig   ]
+}
+END -- gr1793
+END -- info
+END -- folder01
+Table s_imp
+{
+[imp0|imp03               |ima02              |imp13   |imp11      |imp12   |imp05   |imp14   |imp14_fac           |imp04       |imp09               |imp10               ]
+[imp0|imp03               |ima02              |imp13   |imp11      |imp12   |imp05   |imp14   |imp14_fac           |imp04       |imp09               |imp10               ]
+[imp0|imp03               |ima02              |imp13   |imp11      |imp12   |imp05   |imp14   |imp14_fac           |imp04       |imp09               |imp10               ]
+[imp0|imp03               |ima02              |imp13   |imp11      |imp12   |imp05   |imp14   |imp14_fac           |imp04       |imp09               |imp10               ]
+[imp0|imp03               |ima02              |imp13   |imp11      |imp12   |imp05   |imp14   |imp14_fac           |imp04       |imp09               |imp10               ]
+[imp0|imp03               |ima02              |imp13   |imp11      |imp12   |imp05   |imp14   |imp14_fac           |imp04       |imp09               |imp10               ]
+[imp0|imp03               |ima02              |imp13   |imp11      |imp12   |imp05   |imp14   |imp14_fac           |imp04       |imp09               |imp10               ]
+[imp0|imp03               |ima02              |imp13   |imp11      |imp12   |imp05   |imp14   |imp14_fac           |imp04       |imp09               |imp10               ]
+[imp0|imp03               |ima02              |imp13   |imp11      |imp12   |imp05   |imp14   |imp14_fac           |imp04       |imp09               |imp10               ]
+[imp0|imp03               |ima02              |imp13   |imp11      |imp12   |imp05   |imp14   |imp14_fac           |imp04       |imp09               |imp10               ]
+
+}
+END -- s_imp
+Grid gr1794
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1794
+END -- VBox1
+END -- axct305
+
+TABLES
+imp_file,
+imo_file
+ATTRIBUTES
+ButtonEdit imo01=imo_file.imo01, action=controlp, tabIndex=1, color = green, image="zoom", comment="<^P>Qry Details";
+DateEdit imo02=imo_file.imo02, tabIndex=2, noEntry, color = yellow;
+Edit imo03=imo_file.imo03, tabIndex=3, noEntry, color = yellow;
+Edit imo04=imo_file.imo04, tabIndex=4, noEntry;
+Edit imo06=imo_file.imo06, tabIndex=5, noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=6, noEntry;
+Edit imo05=imo_file.imo05, tabIndex=7, noEntry;
+ComboBox imoconf=imo_file.imoconf, tabIndex=8, noEntry, items=(("Y", "Confirm"),("N", "Cancel"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+CheckBox imopost=imo_file.imopost, tabIndex=10, text="Post", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox imo07=imo_file.imo07, tabIndex=11, text="Close", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit imouser=imo_file.imouser, tabIndex=12, noEntry;
+Edit imomodu=imo_file.imomodu, tabIndex=13, noEntry;
+Edit imogrup=imo_file.imogrup, tabIndex=14, noEntry;
+DateEdit imodate=imo_file.imodate, tabIndex=15, noEntry;
+Edit imooriu=imo_file.imooriu, tabIndex=501, noEntry;
+Edit imoorig=imo_file.imoorig, tabIndex=502, noEntry;
+Edit imp0=imp_file.imp02, tabIndex=16, title="Ln#", noEntry;
+ButtonEdit imp03=imp_file.imp03, action=controlp, tabIndex=17, title="Item No.", noEntry, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=18, title="P/N Spec.", noEntry;
+Edit imp13=imp_file.imp13, tabIndex=19, title="Lot#", noEntry, color = yellow;
+Edit imp11=imp_file.imp11, tabIndex=20, title="WareHouse", noEntry, color = yellow;
+Edit imp12=imp_file.imp12, tabIndex=21, title="Loc", noEntry, color = yellow;
+Edit imp05=imp_file.imp05, tabIndex=22, title="Borr.Ut.", noEntry, color = yellow;
+Edit imp14=imp_file.imp14, tabIndex=23, title="Inv.Ut.", noEntry, color = yellow;
+Edit imp14_fac=imp_file.imp14_fac, tabIndex=24, title="Borr.for Inv Conv.%", noEntry;
+Edit imp04=imp_file.imp04, tabIndex=25, title="Qty Brrw", noEntry, color = yellow;
+Edit imp09=imp_file.imp09, tabIndex=26, title="U/P", not null, required, color = yellow;
+Edit imp10=formonly.imp10 type CHAR, tabIndex=27, title="Amt", color = yellow;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imp(imp_file.imp02,imp_file.imp03,formonly.ima02,imp_file.imp13,imp_file.imp11,imp_file.imp12,imp_file.imp05,imp_file.imp14,imp_file.imp14_fac,imp_file.imp04,imp_file.imp09,formonly.imp10)
+SCREEN RECORD Undefined(imo_file.imo01,imo_file.imo02,imo_file.imo03,imo_file.imo04,imo_file.imo06,formonly.gen02,imo_file.imo05,imo_file.imoconf,formonly.imgmksg,imo_file.imopost,imo_file.imo07,imo_file.imouser,imo_file.imomodu,imo_file.imogrup,imo_file.imodate,imo_file.imooriu,imo_file.imoorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

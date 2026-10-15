@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi222.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+  Mould Numbers  [gge01                    ]         explain   [gge02                                                       ]
+                                                               [                                                            ]
+                                                               [                                                            ]
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table ds1
+{
+[gge03          |gge04          |gge05          |ggd02                    |gge06          |azf03                    |ggeacti        ]
+[gge03          |gge04          |gge05          |ggd02                    |gge06          |azf03                    |ggeacti        ]
+[gge03          |gge04          |gge05          |ggd02                    |gge06          |azf03                    |ggeacti        ]
+[gge03          |gge04          |gge05          |ggd02                    |gge06          |azf03                    |ggeacti        ]
+[gge03          |gge04          |gge05          |ggd02                    |gge06          |azf03                    |ggeacti        ]
+
+}
+END -- ds1
+Grid Grid2
+{
+
+   ------------   rows [indx]/[cnt ]  -------   details  [cn2 ]   -------------
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+azf_file,
+gge_file,
+ggd_file
+ATTRIBUTES
+ButtonEdit gge01=gge_file.gge01, action=controlp, tabIndex=1, not null, required, image="zoom";
+TextEdit gge02=gge_file.gge02, tabIndex=2;
+Edit gge03=gge_file.gge03, tabIndex=3, title=%"Serial number", not null, required, scroll;
+ComboBox gge04=gge_file.gge04, tabIndex=4, title=%"outbound/warehousing", not null, required, scroll, items=(("0", "0"),("1", "1"));
+ButtonEdit gge05=gge_file.gge05, action=controlp, tabIndex=5, title=%"Different dynamic category", not null, required, image="zoom", scroll;
+Edit ggd02=ggd_file.ggd02, tabIndex=8, title=%"Category description", noEntry;
+ButtonEdit gge06=gge_file.gge06, action=controlp, tabIndex=6, title=%"Reason code", not null, required, image="zoom", scroll;
+Edit azf03=azf_file.azf03, tabIndex=9, title=%"Reason code description", noEntry;
+CheckBox ggeacti=gge_file.ggeacti, tabIndex=7, default = "Y", title=%"Effective code", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit indx=formonly.indx, tabIndex=10;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=11;
+Edit cn2=formonly.cn2, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gge_file.gge01,gge_file.gge02,formonly.indx,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_gge(gge_file.gge03,gge_file.gge04,gge_file.gge05,ggd_file.ggd02,gge_file.gge06,azf_file.azf03,gge_file.ggeacti)
+END -- INSTRUCTIONS
+

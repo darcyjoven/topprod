@@ -1,0 +1,143 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat112.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat112")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2266
+{
+ Transfer Note       [fbo01             ]
+ Transfer Date       [fbo02       ]
+
+
+
+}
+END -- gr2266
+Grid gr2267
+{
+ Applicant           [fbo03     ][gen02     ]
+ Applying Dept.      [fbo04     ][gem02     ]
+ Applying Date       [fbo05       ]
+
+
+}
+END -- gr2267
+Grid gr2268
+{
+ Confirm             [fboconf   ]  [imgmksg]
+[fbopost                        ]  [       ]
+[fbomksg                        ]
+ Status              [fbo06     ]
+
+}
+END -- gr2268
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr2269
+{
+ Record Owner       [fbouser   ] Last Modified by   [fbomodu   ]
+ Department         [fbogrup   ] Create/Modify Date [fbodate   ]
+ Record Orig.       [fbooriu   ]
+ Dept Orig.         [fboorig   ]
+
+}
+END -- gr2269
+END -- info
+Page userdefined(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[fboud01                       ] userdefined_field07[fboud07        ] userdefined_field13[fboud13        ]
+                    [                              ] userdefined_field08[fboud08        ] userdefined_field14[fboud14        ]
+ userdefined_field02[fboud02        ]                userdefined_field09[fboud09        ] userdefined_field15[fboud15        ]
+ userdefined_field03[fboud03        ]                userdefined_field10[fboud10        ]
+ userdefined_field04[fboud04        ]                userdefined_field11[fboud11        ]
+ userdefined_field05[fboud05        ]                userdefined_field12[fboud12        ]
+ userdefined_field06[fboud06        ]
+
+}
+END -- gru47
+END -- userdefined
+END -- folder01
+Table s_fbp
+{
+[fbp02      |fbp03          |fbp031    |faj06                    |fbp04             |fbp05             ]
+[fbp02      |fbp03          |fbp031    |faj06                    |fbp04             |fbp05             ]
+[fbp02      |fbp03          |fbp031    |faj06                    |fbp04             |fbp05             ]
+[fbp02      |fbp03          |fbp031    |faj06                    |fbp04             |fbp05             ]
+[fbp02      |fbp03          |fbp031    |faj06                    |fbp04             |fbp05             ]
+[fbp02      |fbp03          |fbp031    |faj06                    |fbp04             |fbp05             ]
+[fbp02      |fbp03          |fbp031    |faj06                    |fbp04             |fbp05             ]
+[fbp02      |fbp03          |fbp031    |faj06                    |fbp04             |fbp05             ]
+[fbp02      |fbp03          |fbp031    |faj06                    |fbp04             |fbp05             ]
+[fbp02      |fbp03          |fbp031    |faj06                    |fbp04             |fbp05             ]
+
+}
+END -- s_fbp
+Grid gr2270
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2270
+END -- VBox1
+END -- afat112
+
+TABLES
+fbp_file,
+fbo_file
+ATTRIBUTES
+ButtonEdit fbo01=fbo_file.fbo01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Documents";
+DateEdit fbo02=fbo_file.fbo02, tabIndex=2, not null, required;
+ButtonEdit fbo03=fbo_file.fbo03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=4;
+ButtonEdit fbo04=fbo_file.fbo04, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=6;
+DateEdit fbo05=fbo_file.fbo05, tabIndex=7;
+ComboBox fboconf=fbo_file.fboconf, tabIndex=8, noEntry, not null, required, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+CheckBox fbopost=fbo_file.fbopost, tabIndex=9, text="Posting Code", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox fbomksg=fbo_file.fbomksg, tabIndex=10, text="Approve?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox fbo06=fbo_file.fbo06, tabIndex=11, noEntry, not null, required, items=(("0", "Open"),("1", "Approved"),("9", "Void"),("S", "Approving"),("R", "Approving Return"),("W", "Cancel"));
+Edit fbouser=fbo_file.fbouser, tabIndex=12, noEntry;
+Edit fbomodu=fbo_file.fbomodu, tabIndex=13, noEntry;
+Edit fbogrup=fbo_file.fbogrup, tabIndex=14, noEntry;
+DateEdit fbodate=fbo_file.fbodate, tabIndex=15, noEntry;
+Edit fbooriu=fbo_file.fbooriu, tabIndex=328, noEntry;
+Edit fboorig=fbo_file.fboorig, tabIndex=327, noEntry;
+TextEdit fboud01=fbo_file.fboud01, tabIndex=23, stretch=NONE;
+Edit fboud07=fbo_file.fboud07, tabIndex=24;
+DateEdit fboud13=fbo_file.fboud13, tabIndex=25;
+Edit fboud08=fbo_file.fboud08, tabIndex=26;
+DateEdit fboud14=fbo_file.fboud14, tabIndex=27;
+Edit fboud02=fbo_file.fboud02, tabIndex=28;
+Edit fboud09=fbo_file.fboud09, tabIndex=29;
+DateEdit fboud15=fbo_file.fboud15, tabIndex=30;
+Edit fboud03=fbo_file.fboud03, tabIndex=31;
+Edit fboud10=fbo_file.fboud10, tabIndex=32;
+Edit fboud04=fbo_file.fboud04, tabIndex=33;
+Edit fboud11=fbo_file.fboud11, tabIndex=34;
+Edit fboud05=fbo_file.fboud05, tabIndex=35;
+Edit fboud12=fbo_file.fboud12, tabIndex=36;
+Edit fboud06=fbo_file.fboud06, tabIndex=37;
+Edit fbp02=fbp_file.fbp02, tabIndex=16, title="Line No.", not null, required;
+ButtonEdit fbp03=fbp_file.fbp03, action=controlp, tabIndex=17, title="Property No.", not null, required, image="zoom", comment="<^P>Qry Asset  ";
+Edit fbp031=fbp_file.fbp031, tabIndex=18, title="Add No.", not null, required;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=19, title="Chinese Name", noEntry;
+Edit fbp04=fbp_file.fbp04, tabIndex=20, title="Old Group Code", noEntry;
+Edit fbp05=fbp_file.fbp05, tabIndex=38, title="NewGroupCode", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fbp(fbp_file.fbp02,fbp_file.fbp03,fbp_file.fbp031,formonly.faj06,fbp_file.fbp04,fbp_file.fbp05)
+SCREEN RECORD Undefined(fbo_file.fbo01,fbo_file.fbo02,fbo_file.fbo03,formonly.gen02,fbo_file.fbo04,formonly.gem02,fbo_file.fbo05,fbo_file.fboconf,formonly.imgmksg,fbo_file.fbopost,fbo_file.fbomksg,fbo_file.fbo06,fbo_file.fbouser,fbo_file.fbomodu,fbo_file.fbogrup,fbo_file.fbodate,fbo_file.fbooriu,fbo_file.fboorig,fbo_file.fboud01,fbo_file.fboud07,fbo_file.fboud13,fbo_file.fboud08,fbo_file.fboud14,fbo_file.fboud02,fbo_file.fboud09,fbo_file.fboud15,fbo_file.fboud03,fbo_file.fboud10,fbo_file.fboud04,fbo_file.fboud11,fbo_file.fboud05,fbo_file.fboud12,fbo_file.fboud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

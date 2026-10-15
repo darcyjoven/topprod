@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri088.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+HBox HBox1(splitter)
+Tree tree(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file")
+{
+[name             ]
+[name             ]
+[name             ]
+[name             ]
+[name             ]
+
+
+
+
+
+
+
+
+
+
+}
+END -- tree
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrdta02 |hrds02  |hrdta03 |hrdta04 |hrdta05 |hrdk03  |hrdta06 |hrdta07 |hrdta08 |hrdta09 |hrdta10 |hrdta11 |hrdta12 |hrdta13 ]
+[hrdta02 |hrds02  |hrdta03 |hrdta04 |hrdta05 |hrdk03  |hrdta06 |hrdta07 |hrdta08 |hrdta09 |hrdta10 |hrdta11 |hrdta12 |hrdta13 ]
+[hrdta02 |hrds02  |hrdta03 |hrdta04 |hrdta05 |hrdk03  |hrdta06 |hrdta07 |hrdta08 |hrdta09 |hrdta10 |hrdta11 |hrdta12 |hrdta13 ]
+[hrdta02 |hrds02  |hrdta03 |hrdta04 |hrdta05 |hrdk03  |hrdta06 |hrdta07 |hrdta08 |hrdta09 |hrdta10 |hrdta11 |hrdta12 |hrdta13 ]
+[hrdta02 |hrds02  |hrdta03 |hrdta04 |hrdta05 |hrdk03  |hrdta06 |hrdta07 |hrdta08 |hrdta09 |hrdta10 |hrdta11 |hrdta12 |hrdta13 ]
+
+
+
+
+
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+END -- HBox1
+END -- Form
+
+ATTRIBUTES
+Edit name=formonly.name, tabIndex=1, title=%"Edit1";
+Phantom formonly.pid;
+Phantom formonly.id;
+Phantom formonly.has_children;
+Phantom formonly.expanded;
+Phantom formonly.level;
+Phantom formonly.treekey1;
+Phantom formonly.treekey2;
+ButtonEdit hrdta02=formonly.hrdta02 type VARCHAR, action=controlp, tabIndex=2, title=%"hrdta02", not null, required, image="zoom";
+Edit hrds02=formonly.hrds02 type VARCHAR, tabIndex=3, title=%"hrds02", noEntry;
+ComboBox hrdta03=formonly.hrdta03 type VARCHAR, tabIndex=4, title=%"hrdta03", not null, required;
+Edit hrdta04=formonly.hrdta04 type DECIMAL, tabIndex=5, title=%"hrdta04";
+ButtonEdit hrdta05=formonly.hrdta05 type VARCHAR, action=controlp, tabIndex=6, title=%"hrdta05", image="zoom";
+Edit hrdk03=formonly.hrdk03 type VARCHAR, tabIndex=7, title=%"hrdk03", noEntry;
+ComboBox hrdta06=formonly.hrdta06 type VARCHAR, tabIndex=8, title=%"hrdta06", not null, required;
+Edit hrdta07=formonly.hrdta07 type INTEGER, tabIndex=9, title=%"hrdta07", not null, required;
+Edit hrdta08=formonly.hrdta08 type DECIMAL, tabIndex=10, title=%"hrdta08", not null, required;
+Edit hrdta09=formonly.hrdta09 type DECIMAL, tabIndex=11, title=%"hrdta09", not null, required;
+Edit hrdta10=formonly.hrdta10 type DECIMAL, tabIndex=12, title=%"hrdta10", not null, required;
+Edit hrdta11=formonly.hrdta11 type DECIMAL, tabIndex=13, title=%"hrdta11", not null, required;
+Edit hrdta12=formonly.hrdta12 type DECIMAL, tabIndex=14, title=%"hrdta12", not null, required;
+Edit hrdta13=formonly.hrdta13 type DECIMAL, tabIndex=15, title=%"hrdta13", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.treekey1,formonly.treekey2)
+SCREEN RECORD s_hrdta(formonly.hrdta02,formonly.hrds02,formonly.hrdta03,formonly.hrdta04,formonly.hrdta05,formonly.hrdk03,formonly.hrdta06,formonly.hrdta07,formonly.hrdta08,formonly.hrdta09,formonly.hrdta10,formonly.hrdta11,formonly.hrdta12,formonly.hrdta13)
+END -- INSTRUCTIONS
+

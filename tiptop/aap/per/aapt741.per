@@ -1,0 +1,186 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt741.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt741")
+VBox vb11
+Folder pc63
+Page page01(text="Main")
+VBox vb10
+Grid gr523
+{
+ L/C Plant         [ala97               ]   Amend.Date [alc08      ]Times  [al]     Modify Confirm [alcfirm     ] [imgmksg]
+ APO #             [alc01               ]   Curr       [ala20      ]                Pay Confirm    [alc78       ] [       ]
+ Dept No.          [ala04     ][gem02   ]   Ex.Rate    [alc51      ]                Payt.Voucher   [alc74           ]
+ Cost Center       [ala930    ][gem02b  ]   Pay Date   [alc79      ]                Down Payment   [ala]%
+ Amount            [alc24               ]
+ Margin Pay.Method [alc80               ]
+
+
+
+}
+END -- gr523
+HBox hb14
+Grid gr524
+{
+ <G group01                                   >
+  Bank Pay F.C        [alc81                ]
+  Bank Cate           [alc82                ]
+  Outward Acct.ExRt   [alc84                ]
+  F.C Margin          [alc34                ]
+  H.C Margin          [alc85                ]
+
+
+
+ <                                            >
+
+
+
+}
+END -- gr524
+Grid gr525
+{
+ <G group04                                   >
+  Bank Pay H.C        [alc91               ]
+  Cate                [alc92               ]
+  Pay.ExRt            [alc94               ]
+  Margin              [alc951              ]
+  Charge              [alc952              ]
+  Post.Post.&Tel Tel  [alc953              ]
+  ---------------------------------
+  Total               [alc95               ]
+  T.Sum               [tot                 ]
+
+
+ <                                            >
+}
+END -- gr525
+END -- hb14
+HBox hb15
+Grid gr526
+{
+ <G group02                           >
+  Trn.Code            [a1][nmc02     ]
+  Serial              [alc83     ]
+
+
+ <                                    >
+
+
+
+}
+END -- gr526
+Grid gr527
+{
+ <G group03                               >
+  Drawing Slip No     [alc931            ]
+  Check.Book#         [alc76     ]
+  Check No.           [alc932    ]
+  Serial              [alc93     ]
+
+
+ <                                        >
+
+}
+END -- gr527
+END -- hb15
+END -- vb10
+END -- page01
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[alcud01                       ] userdefined_field07[alcud07        ] userdefined_field13[alcud13        ]
+                    [                              ] userdefined_field08[alcud08        ] userdefined_field14[alcud14        ]
+ userdefined_field02[alcud02        ]                userdefined_field09[alcud09        ] userdefined_field15[alcud15        ]
+ userdefined_field03[alcud03        ]                userdefined_field10[alcud10        ]
+ userdefined_field04[alcud04        ]                userdefined_field11[alcud11        ]
+ userdefined_field05[alcud05        ]                userdefined_field12[alcud12        ]
+ userdefined_field06[alcud06        ]
+
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc63
+Grid gr528
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+}
+END -- gr528
+END -- vb11
+END -- aapt741
+
+TABLES
+alc_file,
+ala_file
+ATTRIBUTES
+Edit ala97=ala_file.ala97, tabIndex=1;
+DateEdit alc08=alc_file.alc08, tabIndex=2, comment="No Blank Field";
+Edit al=alc_file.alc02, tabIndex=3, not null, required;
+Edit alcfirm=alc_file.alcfirm, tabIndex=4, noEntry, upShift;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit alc01=alc_file.alc01, action=controlp, tabIndex=6, not null, required, image="zoom";
+Edit ala20=ala_file.ala20, tabIndex=7;
+Edit alc78=alc_file.alc78, tabIndex=8, noEntry, upShift;
+ButtonEdit ala04=ala_file.ala04, action=controlp, tabIndex=9, noEntry, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=10, noEntry;
+Edit alc51=alc_file.alc51, tabIndex=11;
+Edit alc74=alc_file.alc74, tabIndex=12;
+ButtonEdit ala930=ala_file.ala930, action=controlp, tabIndex=13, noEntry, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02b=formonly.gem02b type CHAR, tabIndex=14, noEntry;
+DateEdit alc79=alc_file.alc79, tabIndex=15;
+Edit ala=ala_file.ala21, tabIndex=16;
+Edit alc24=alc_file.alc24, tabIndex=17;
+ComboBox alc80=alc_file.alc80, tabIndex=18, queryEditable, items=(("0", "Home Currency"),("1", "Original Currency"));
+Group group01:group01, text="FC";
+ButtonEdit alc81=alc_file.alc81, action=controlp, tabIndex=19, image="zoom", comment="<^P> Qry Bank";
+ComboBox alc82=alc_file.alc82, tabIndex=20, noEntry, queryEditable, items=(("1", "Ckg"),("2", "Savgs"),("0", "Othr"));
+ButtonEdit alc84=alc_file.alc84, action=controlp, tabIndex=21, not null, required, image="zoom";
+Edit alc34=alc_file.alc34, tabIndex=22;
+Edit alc85=alc_file.alc85, tabIndex=23;
+Group group04:group04, text="HC";
+ButtonEdit alc91=alc_file.alc91, action=controlp, tabIndex=24, not null, required, image="zoom", comment="<^P> Qry Bank    ";
+ComboBox alc92=alc_file.alc92, tabIndex=25, noEntry, queryEditable, items=(("1", "Ckg"),("2", "Savgs"),("0", "Othr"));
+ButtonEdit alc94=alc_file.alc94, action=controlp, tabIndex=26, not null, required, image="zoom";
+Edit alc951=alc_file.alc951, tabIndex=27, not null, required;
+Edit alc952=alc_file.alc952, tabIndex=28, not null, required;
+Edit alc953=alc_file.alc953, tabIndex=29, not null, required;
+Edit alc95=alc_file.alc95, tabIndex=30;
+Edit tot=formonly.tot type CHAR, tabIndex=31;
+Group group02:group02, text="Bank Deposit";
+ButtonEdit a1=alc_file.alc96, action=controlp, tabIndex=32, image="zoom", comment="<^P>Qry Transaction Code";
+Edit nmc02=formonly.nmc02 type VARCHAR, tabIndex=33, noEntry;
+Edit alc83=alc_file.alc83, tabIndex=34, noEntry;
+Group group03:group03, text="Check";
+ButtonEdit alc931=alc_file.alc931, action=controlp, tabIndex=35, image="zoom", comment="If Auto Draw.Slip#,Enter 3-Dgt Draw.Slip ,<^P> Qry Doc     ";
+Edit alc76=alc_file.alc76, tabIndex=36;
+Edit alc932=alc_file.alc932, tabIndex=37;
+Edit alc93=alc_file.alc93, tabIndex=38, noEntry;
+TextEdit alcud01=alc_file.alcud01, tabIndex=41, stretch=NONE;
+Edit alcud07=alc_file.alcud07, tabIndex=42;
+DateEdit alcud13=alc_file.alcud13, tabIndex=43;
+Edit alcud08=alc_file.alcud08, tabIndex=44;
+DateEdit alcud14=alc_file.alcud14, tabIndex=45;
+Edit alcud02=alc_file.alcud02, tabIndex=46;
+Edit alcud09=alc_file.alcud09, tabIndex=47;
+DateEdit alcud15=alc_file.alcud15, tabIndex=48;
+Edit alcud03=alc_file.alcud03, tabIndex=49;
+Edit alcud10=alc_file.alcud10, tabIndex=50;
+Edit alcud04=alc_file.alcud04, tabIndex=51;
+Edit alcud11=alc_file.alcud11, tabIndex=52;
+Edit alcud05=alc_file.alcud05, tabIndex=53;
+Edit alcud12=alc_file.alcud12, tabIndex=54;
+Edit alcud06=alc_file.alcud06, tabIndex=55;
+Edit cnt=formonly.cnt type CHAR, tabIndex=39, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ala_file.ala97,alc_file.alc08,alc_file.alc02,alc_file.alcfirm,formonly.imgmksg,alc_file.alc01,ala_file.ala20,alc_file.alc78,ala_file.ala04,formonly.gem02,alc_file.alc51,alc_file.alc74,ala_file.ala930,formonly.gem02b,alc_file.alc79,ala_file.ala21,alc_file.alc24,alc_file.alc80,alc_file.alc81,alc_file.alc82,alc_file.alc84,alc_file.alc34,alc_file.alc85,alc_file.alc91,alc_file.alc92,alc_file.alc94,alc_file.alc951,alc_file.alc952,alc_file.alc953,alc_file.alc95,formonly.tot,alc_file.alc96,formonly.nmc02,alc_file.alc83,alc_file.alc931,alc_file.alc76,alc_file.alc932,alc_file.alc93,alc_file.alcud01,alc_file.alcud07,alc_file.alcud13,alc_file.alcud08,alc_file.alcud14,alc_file.alcud02,alc_file.alcud09,alc_file.alcud15,alc_file.alcud03,alc_file.alcud10,alc_file.alcud04,alc_file.alcud11,alc_file.alcud05,alc_file.alcud12,alc_file.alcud06,formonly.cnt)
+END -- INSTRUCTIONS
+

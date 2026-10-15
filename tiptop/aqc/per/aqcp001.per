@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcp001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqcp001")
+VBox VBox1
+Grid gr1523
+{
+
+ <G group01                                                                >
+  shouhuodanhao       [rva01               ]
+  date                [rva06               ]
+  NO.                 [qcs02               ]
+  changshangbianhao   [qcs03               ]
+  liaojianbianhao     [qcs021              ]
+ <                                                                         >
+ <G group1                                                                 >
+ [qc        ]
+
+
+
+ <                                                                         >
+}
+END -- gr1523
+END -- VBox1
+END -- aqcp001
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit rva01=formonly.RVA01 type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<^W>Task Description";
+DateEdit rva06=formonly.rva06 type CHAR, tabIndex=2;
+Edit qcs02=formonly.qcs02 type VARCHAR, tabIndex=3;
+ButtonEdit qcs03=formonly.qcs03 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit qcs021=formonly.qcs021 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Group group1:Group1, text=%"Conditions of options";
+CheckBox qc=formonly.qc type VARCHAR, tabIndex=6, text=%"QC", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.RVA01,formonly.rva06,formonly.qcs02,formonly.qcs03,formonly.qcs021,formonly.qc)
+END -- INSTRUCTIONS
+

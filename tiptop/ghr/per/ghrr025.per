@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrr025.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+HBox HBox1
+Grid Grid1
+{
+
+       <G group1                                   >
+
+        [hrat03 |hrat01    |hrat03_name         ]
+
+        [hrat2  |hrat04                         ]
+
+        [year   |byear                          ]
+
+        [month  |bmonth                         ]
+
+
+       <                                           >
+
+       [more                                     ]
+
+
+
+
+}
+END -- Grid1
+END -- HBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+Label hrat03:hrat03, text=%"hrat03";
+ButtonEdit hrat01=formonly.hrat03, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrat03_name=formonly.hrat03_name, tabIndex=4, noEntry;
+Label hrat2:hrat2, text=%"hrat04";
+ButtonEdit hrat04=formonly.hrat04, action=controlp, tabIndex=6, image="zoom";
+Label year:year, text=%"byear";
+Edit byear=formonly.byear, tabIndex=2, not null, required;
+Label month:month, text=%"bmonth";
+Edit bmonth=formonly.bmonth, tabIndex=3, not null, required;
+CheckBox more=formonly.more, tabIndex=5, default = "N", text=%"其他特殊打印条件\n", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrat03,formonly.byear,formonly.bmonth,formonly.hrat03_name,formonly.more,formonly.hrat04)
+END -- INSTRUCTIONS
+

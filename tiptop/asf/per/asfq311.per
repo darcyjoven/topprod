@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfq311.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfq311")
+VBox VBox2
+Folder folder01
+Page page01(text="Main")
+Group g01
+VBox VBox1
+Grid gr572
+{
+  Adjust#             [sho01             ]      Date   [sho02       ]
+  Run Card            [sho03             ]      Pro.No.[sho012            ]
+
+
+ <G group01                                                                                  >
+  [sho06             ]
+    Routing Seq [g_z07     |g_z08     ]
+    Routing Seq [g_s07     |g_s08     ] STAGE [g_s09     ]
+    Routing Seq [g_f07     |g_f08     ] FLOW  [g_f09     ] Pro.Rout.No.[g_f10     ]
+ <                                                                                           >
+}
+END -- gr572
+Grid gr573
+{
+[sho12                                           ]
+[sho52                            ] Qty        [sho62     ] Loss Fixed(%)    [sho16     ]
+[sho53                            ] Denominator[sho63     ] Loss Chan Rate(%)[sho17     ]
+[sho54                            ] Loss Lot   [sho64     ]
+
+ Operator            [sho10     ][gen02     ]
+ Memo                [sho11                                  ]
+
+
+
+}
+END -- gr573
+END -- VBox1
+END -- g01
+END -- page01
+END -- folder01
+Table s_sgm
+{
+[sgm03    |sgm04   ]
+[sgm03    |sgm04   ]
+[sgm03    |sgm04   ]
+[sgm03    |sgm04   ]
+[sgm03    |sgm04   ]
+[sgm03    |sgm04   ]
+[sgm03    |sgm04   ]
+[sgm03    |sgm04   ]
+[sgm03    |sgm04   ]
+[sgm03    |sgm04   ]
+}
+END -- s_sgm
+Grid gr574
+{
+ ----------Rows [cnt   ] / [cn2   ]----------
+
+
+
+
+
+}
+END -- gr574
+END -- VBox2
+END -- asfq311
+
+TABLES
+sho_file,
+sgm_file
+ATTRIBUTES
+ButtonEdit sho01=sho_file.sho01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Document Property";
+DateEdit sho02=sho_file.sho02, tabIndex=2;
+ButtonEdit sho03=sho_file.sho03, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Run Card Data ";
+ButtonEdit sho012=sho_file.sho012, action=controlp, tabIndex=24, image="zoom";
+Group group01:group01, text="Adjust";
+ComboBox sho06=sho_file.sho06, tabIndex=4, queryEditable, comment="1:Delete Sate 2:Insert Sate 3:Insert FLOW Routing", items=(("1", "Delete Stage"),("2", "Insert Stage"),("3", "Insert FLOW  Routing"),("4", "Insert Routing"));
+Edit g_z07=formonly.g_z07 type CHAR, tabIndex=5;
+Edit g_z08=formonly.g_z08 type CHAR, tabIndex=6, noEntry;
+Edit g_s07=formonly.g_s07 type CHAR, tabIndex=7, comment="Insert Point is before This Station";
+Edit g_s08=formonly.g_s08 type CHAR, tabIndex=8, noEntry;
+Edit g_s09=formonly.g_s09 type CHAR, tabIndex=9, not null, required, upShift;
+Edit g_f07=formonly.g_f07 type CHAR, tabIndex=10, comment="Insert Point is before This Station";
+Edit g_f08=formonly.g_f08 type CHAR, tabIndex=11, noEntry;
+Edit g_f09=formonly.g_f09 type CHAR, tabIndex=12, not null, required, upShift;
+Edit g_f10=formonly.g_f10 type CHAR, tabIndex=30, upShift;
+CheckBox sho12=sho_file.sho12, tabIndex=13, text="Insert STAGE/FLOW is Rework Routing", valueChecked = "Y", valueUnchecked = "N";
+CheckBox sho52=sho_file.sho52, tabIndex=21, text="outside", valueChecked = "Y", valueUnchecked = "N";
+Edit sho62=sho_file.sho62, tabIndex=25;
+Edit sho16=sho_file.sho16, tabIndex=28;
+CheckBox sho53=sho_file.sho53, tabIndex=22, text="PQC", valueChecked = "Y", valueUnchecked = "N";
+Edit sho63=sho_file.sho63, tabIndex=26;
+Edit sho17=sho_file.sho17, tabIndex=29;
+CheckBox sho54=sho_file.sho54, tabIndex=23, text="Check in", valueChecked = "Y", valueUnchecked = "N";
+Edit sho64=sho_file.sho64, tabIndex=27;
+ButtonEdit sho10=sho_file.sho10, action=controlp, tabIndex=14, image="zoom", comment="<^P>Qry Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=15, noEntry;
+Edit sho11=sho_file.sho11, tabIndex=16;
+Edit sgm03=sgm_file.sgm03, tabIndex=17, title="Sequence";
+Edit sgm04=sgm_file.sgm04, tabIndex=18, title="Task No.";
+Edit cnt=formonly.cnt type CHAR, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sgm(sgm_file.sgm03,sgm_file.sgm04)
+SCREEN RECORD Undefined(sho_file.sho01,sho_file.sho02,sho_file.sho03,sho_file.sho012,sho_file.sho06,formonly.g_z07,formonly.g_z08,formonly.g_s07,formonly.g_s08,formonly.g_s09,formonly.g_f07,formonly.g_f08,formonly.g_f09,formonly.g_f10,sho_file.sho12,sho_file.sho52,sho_file.sho62,sho_file.sho16,sho_file.sho53,sho_file.sho63,sho_file.sho17,sho_file.sho54,sho_file.sho64,sho_file.sho10,formonly.gen02,sho_file.sho11,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almr141.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group Group1(text=%"Group1")
+Grid Grid1
+{
+
+  Store No.     [lmfstore          ]
+  Building No.  [lmf03             ]
+  Floor No.     [lmf04             ]
+  Booth No.     [lmf01             ]
+}
+END -- Grid1
+END -- Group1
+Group Group2(text=%"Group2")
+Grid Grid2
+{
+
+  Booth status:   [lmf05                           ]
+                  [                                ]
+                  [                                ]
+ [subt          ]
+}
+END -- Grid2
+END -- Group2
+Grid Grid3
+{
+   [more      ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+TABLES
+lmf_file
+ATTRIBUTES
+ButtonEdit lmfstore=lmf_file.lmfstore, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit lmf03=lmf_file.lmf03, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit lmf04=lmf_file.lmf04, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit lmf01=lmf_file.lmf01, action=controlp, tabIndex=4, image="zoom";
+RadioGroup lmf05=lmf_file.lmf05, tabIndex=5, items=(("0", "All"),("1", "It has not been leased"),("2", "It has been leased"),("3", "It has been pre-leasing"));
+CheckBox subt=formonly.subt, tabIndex=6, text=%"Subtotal", valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more, tabIndex=7, text=%"More", valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lmf_file.lmfstore,lmf_file.lmf04,lmf_file.lmf03,lmf_file.lmf01,lmf_file.lmf05,formonly.subt,formonly.more)
+END -- INSTRUCTIONS
+

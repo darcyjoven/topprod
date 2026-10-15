@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcr711.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aqcr711")
+VBox VBox1
+Grid gr177
+{
+ <G group01                                                           >
+  QC Apply For Doc #  [qsa01               ]
+  Date                [qsa11               ]
+  Vender No.          [qsa12               ]
+  Item Code           [qsa02               ]
+  Warehouse           [qsa03               ]
+  Location            [qsa04               ]
+  Lot #               [qsa05               ]
+ <                                                                    >
+ <G group02                                                           >
+  QC Date             [bdate       ] - [edate       ]
+ <                                                                    >
+ <G group03                                                           >
+ [s1                  ]  [s2                  ]
+ [t1                  ]  [t2                  ]
+ <                                                                    >
+
+}
+END -- gr177
+Grid gr178
+{
+[more                                     ]
+
+}
+END -- gr178
+END -- VBox1
+END -- aqcr711
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit qsa01=formonly.qsa01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit qsa11=formonly.qsa11 type DATE, tabIndex=2;
+ButtonEdit qsa12=formonly.qsa12 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit qsa02=formonly.qsa02 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit qsa03=formonly.qsa03 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Edit qsa04=formonly.qsa04 type VARCHAR, tabIndex=6;
+Edit qsa05=formonly.qsa05 type VARCHAR, tabIndex=7;
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=8;
+DateEdit edate=formonly.edate type DATE, tabIndex=9;
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=10, queryEditable, items=(("1", "QC Apply For Doc #"),("2", "Date"),("3", "Vender No."),("4", "Item Code"),("5", "Warehouse"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=11, queryEditable, items=(("1", "QC Apply For Doc #"),("2", "Date"),("3", "Vender No."),("4", "Item Code"),("5", "Warehouse"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=13, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.qsa01,formonly.qsa11,formonly.qsa12,formonly.qsa02,formonly.qsa03,formonly.qsa04,formonly.qsa05,formonly.bdate,formonly.edate,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.more)
+END -- INSTRUCTIONS
+

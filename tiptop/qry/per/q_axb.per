@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_axb.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Corelation Complany Under Group No. Query")
+Grid gr3734
+{
+ <T s_axb                                                                               >
+ [check|axb04              |azp02                     |axb05  |axb07  |axb08           ]
+ [check|axb04              |azp02                     |axb05  |axb07  |axb08           ]
+ [check|axb04              |azp02                     |axb05  |axb07  |axb08           ]
+ [check|axb04              |azp02                     |axb05  |axb07  |axb08           ]
+ [check|axb04              |azp02                     |axb05  |axb07  |axb08           ]
+ [check|axb04              |azp02                     |axb05  |axb07  |axb08           ]
+ [check|axb04              |azp02                     |axb05  |axb07  |axb08           ]
+ [check|axb04              |azp02                     |axb05  |axb07  |axb08           ]
+ [check|axb04              |azp02                     |axb05  |axb07  |axb08           ]
+ [check|axb04              |azp02                     |axb05  |axb07  |axb08           ]
+ <                                                                                      >
+
+}
+END -- gr3734
+END -- q_axb
+
+TABLES
+axb_file
+ATTRIBUTES
+Table s_axb:s_axb;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit axb04=axb_file.axb04, tabIndex=2, title="Under Company Code", noEntry;
+Edit azp02=formonly.azp02 type CHAR, tabIndex=3, title="Under Company Name";
+Edit axb05=axb_file.axb05, tabIndex=4, title="Hoding", noEntry;
+Edit axb07=axb_file.axb07, tabIndex=5, title="Ratio", noEntry;
+Edit axb08=axb_file.axb08, tabIndex=6, title="Transaction Date", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axb(formonly.check,axb_file.axb04,formonly.azp02,axb_file.axb05,axb_file.axb07,axb_file.axb08)
+END -- INSTRUCTIONS
+

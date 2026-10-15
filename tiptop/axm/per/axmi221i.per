@@ -1,0 +1,90 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi221i.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axmi221i")
+Folder group01
+Page Page5(text=%"Main")
+HBox hb3
+Grid gr11
+{
+
+ Customer No.                   [pov02          |occ02          ]
+ Default Order Doc. Type        [pov13          |oaydesc_1      ]
+ Default Shipping Notice        [pov26          |oaydesc_2      ]
+ Default Shipping Order Doc.    [pov15          |oaydesc_3      ]
+ Default Sales Return Doc. Type [pov20          |oaydesc_4      ]
+ Default WH                     [pov04          |imd02          ]
+ TR Code                        [pov12          |azf03          ]
+ Declare Method                 [pov10                          ]
+ Default Target Logistic Vendor [pov28          |pmc03          ]
+
+}
+END -- gr11
+Grid gr11_1
+{
+
+ Logistics code             [pov03          |azp02          ]
+ Default AR Doc.            [pov18          |ooydesc_1      ]
+ Default AR Allowance       [pov22          |ooydesc_2      ]
+ Default AR Account Type    [pov06          |ool02          ]
+ Default Department         [pov09          |gem02          ]
+ Default Cost Center        [pov25          |gem02_1        ]
+[pov11                                                       ]
+
+
+
+}
+END -- gr11_1
+END -- hb3
+END -- Page5
+END -- group01
+END -- axmi221i
+
+TABLES
+ool_file,
+imd_file,
+azf_file,
+occ_file,
+pov_file,
+pmc_file
+ATTRIBUTES
+ButtonEdit pov02=pov_file.pov02, action=controlp, tabIndex=1, noEntry, image="zoom", comment="<^P>Query Plant No.";
+Edit occ02=occ_file.occ02, tabIndex=17, noEntry;
+ButtonEdit pov13=pov_file.pov13, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit oaydesc_1=formonly.oaydesc_1 type VARCHAR, tabIndex=19, noEntry;
+ButtonEdit pov26=pov_file.pov26, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit oaydesc_2=formonly.oaydesc_2 type VARCHAR, tabIndex=20, noEntry;
+ButtonEdit pov15=pov_file.pov15, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit oaydesc_3=formonly.oaydesc_3 type VARCHAR, tabIndex=21, noEntry;
+ButtonEdit pov20=pov_file.pov20, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit oaydesc_4=formonly.oaydesc_4 type VARCHAR, tabIndex=22, noEntry;
+ButtonEdit pov04=pov_file.pov04, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit imd02=imd_file.imd02, tabIndex=23, noEntry;
+ButtonEdit pov12=pov_file.pov12, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit azf03=azf_file.azf03, tabIndex=29, noEntry;
+ComboBox pov10=pov_file.pov10, tabIndex=9, not null, required, queryEditable, items=(("1", "Total Amount for Declaration"),("2", "Decalaration for Discrepancy"),("3", "No Declaration"));
+ButtonEdit pov28=pov_file.pov28, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit pmc03=pmc_file.pmc03, tabIndex=24, noEntry;
+ButtonEdit pov03=pov_file.pov03, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=18, noEntry;
+ButtonEdit pov18=pov_file.pov18, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit ooydesc_1=formonly.ooydesc_1 type VARCHAR, tabIndex=25, noEntry;
+ButtonEdit pov22=pov_file.pov22, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit ooydesc_2=formonly.ooydesc_2 type VARCHAR, tabIndex=26, noEntry;
+ButtonEdit pov06=pov_file.pov06, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit ool02=ool_file.ool02, tabIndex=30, noEntry;
+ButtonEdit pov09=pov_file.pov09, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=27, noEntry;
+ButtonEdit pov25=pov_file.pov25, action=controlp, tabIndex=15, not null, required, image="zoom", comment="<^P>Query Plant No.";
+Edit gem02_1=formonly.gem02_1 type VARCHAR, tabIndex=28, noEntry;
+CheckBox pov11=pov_file.pov11, tabIndex=16, text="pov11", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pov_file.pov02,occ_file.occ02,pov_file.pov13,formonly.oaydesc_1,pov_file.pov26,formonly.oaydesc_2,pov_file.pov15,formonly.oaydesc_3,pov_file.pov20,formonly.oaydesc_4,pov_file.pov04,imd_file.imd02,pov_file.pov12,azf_file.azf03,pov_file.pov10,pov_file.pov28,pmc_file.pmc03,pov_file.pov03,formonly.azp02,pov_file.pov18,formonly.ooydesc_1,pov_file.pov22,formonly.ooydesc_2,pov_file.pov06,ool_file.ool02,pov_file.pov09,formonly.gem02,pov_file.pov25,formonly.gem02_1,pov_file.pov11)
+END -- INSTRUCTIONS
+

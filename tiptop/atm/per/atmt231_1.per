@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmt231_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="atmt231_1")
+VBox vb5
+Folder pc4
+Page Page01(text="Page01")
+Table s_tqv
+{
+[tqv02 |tqv03 |tqv04     |oaj02                                   |tqv05               |tqv0|tqv07                                             ]
+[tqv02 |tqv03 |tqv04     |oaj02                                   |tqv05               |tqv0|tqv07                                             ]
+[tqv02 |tqv03 |tqv04     |oaj02                                   |tqv05               |tqv0|tqv07                                             ]
+[tqv02 |tqv03 |tqv04     |oaj02                                   |tqv05               |tqv0|tqv07                                             ]
+[tqv02 |tqv03 |tqv04     |oaj02                                   |tqv05               |tqv0|tqv07                                             ]
+[tqv02 |tqv03 |tqv04     |oaj02                                   |tqv05               |tqv0|tqv07                                             ]
+[tqv02 |tqv03 |tqv04     |oaj02                                   |tqv05               |tqv0|tqv07                                             ]
+[tqv02 |tqv03 |tqv04     |oaj02                                   |tqv05               |tqv0|tqv07                                             ]
+[tqv02 |tqv03 |tqv04     |oaj02                                   |tqv05               |tqv0|tqv07                                             ]
+[tqv02 |tqv03 |tqv04     |oaj02                                   |tqv05               |tqv0|tqv07                                             ]
+
+}
+END -- s_tqv
+END -- Page01
+END -- pc4
+Grid gr7
+{
+---------- Rows [cn2    ] ----------
+
+}
+END -- gr7
+END -- vb5
+END -- atmt231_1
+
+TABLES
+tqv_file
+ATTRIBUTES
+Edit tqv02=tqv_file.tqv02, tabIndex=1, title="Line No.", not null, required;
+Edit tqv03=tqv_file.tqv03, tabIndex=2, title="Constract Line No.";
+ButtonEdit tqv04=tqv_file.tqv04, action=controlp, tabIndex=3, title="Expense Code", image="zoom.png";
+Edit oaj02=formonly.oaj02 type VARCHAR, tabIndex=4, title="Expense Name", noEntry;
+Edit tqv05=tqv_file.tqv05, tabIndex=5, title="Discount Amt", not null, required;
+CheckBox tqv0=tqv_file.tqv06, tabIndex=6, title="Beforehand Nay", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit tqv07=tqv_file.tqv07, tabIndex=7, title="Description";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tqv(tqv_file.tqv02,tqv_file.tqv03,tqv_file.tqv04,formonly.oaj02,tqv_file.tqv05,tqv_file.tqv06,tqv_file.tqv07)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

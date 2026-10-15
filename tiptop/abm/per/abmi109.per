@@ -1,0 +1,135 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi109.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi109")
+VBox vb2
+Folder pc107
+Page page01(text="Main")
+Grid gr719
+{
+  Item No.            [bmq01                         ]    <G group02                                        >
+  Formal Item No.     [bmq011                        ]    [bmq15                                        ]    [imgmksg]
+  Part Name           [bmq02                         ]    [bmq105                                       ]    [       ]
+  Specification       [bmq021                        ]    [bmq903                                       ]
+  Current version     [bmq05     ]                        [bmq107                                       ]
+  Group Code          [bmq06              ]               [bmq147                                       ]
+  Source Code         [bmq08              ]
+  Main Alternate Code [bmq910             ]               <                                                 >
+ <G group01                                             > <G group03                                        >
+  Inventory Unit      [bmq25     ]                         Covering Policy            [bmq37]
+  Issuing Unit        [bmq63     ]                         Purchase Feature           [bmq10]
+  Production Unit     [bmq55     ]                         Latest Purchase Unit Price [bmq53               ]
+  Purchase Unit       [bmq44     ]                         Market Price               [bmq531              ]
+                                                           average unit price         [bmq91               ]
+
+
+
+
+
+
+
+ <                                                      > <                                                 >
+
+}
+END -- gr719
+END -- page01
+Page info(text="Info")
+Grid gr720
+{
+ Record Owner        [bmquser   ] Last Modified by    [bmqmodu   ] Data Valid Code     [bmqacti   ]
+ Department          [bmqgrup   ] Create/Modify Date  [bmqdate   ]
+ Record Orig.        [bmqoriu   ]
+ Dept Orig.          [bmqorig   ]
+
+}
+END -- gr720
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[bmqud01                       ] userdefined_field07[bmqud07        ] userdefined_field13[bmqud13        ]
+                    [                              ] userdefined_field08[bmqud08        ] userdefined_field14[bmqud14        ]
+ userdefined_field02[bmqud02        ]                userdefined_field09[bmqud09        ] userdefined_field15[bmqud15        ]
+ userdefined_field03[bmqud03        ]                userdefined_field10[bmqud10        ]
+ userdefined_field04[bmqud04        ]                userdefined_field11[bmqud11        ]
+ userdefined_field05[bmqud05        ]                userdefined_field12[bmqud12        ]
+ userdefined_field06[bmqud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc107
+Grid gr721
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+
+}
+END -- gr721
+END -- vb2
+END -- abmi109
+
+TABLES
+bmq_file
+ATTRIBUTES
+ButtonEdit bmq01=bmq_file.bmq01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Details";
+Group group02:group02;
+CheckBox bmq15=bmq_file.bmq15, tabIndex=13, text="Bonded", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmq105=bmq_file.bmq105, tabIndex=14, text="Software object", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmq903=bmq_file.bmq903, tabIndex=15, text="Corelation Product", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmq107=bmq_file.bmq107, tabIndex=16, text="Location of Insert", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Enter  Y:Open Windws,N:No Open Windws";
+CheckBox bmq147=bmq_file.bmq147, tabIndex=17, text="Check QPA", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Check QPA";
+Edit bmq011=bmq_file.bmq011, tabIndex=2, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit bmq02=bmq_file.bmq02, tabIndex=3;
+Edit bmq021=bmq_file.bmq021, tabIndex=4;
+Edit bmq05=bmq_file.bmq05, tabIndex=5;
+ButtonEdit bmq06=bmq_file.bmq06, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Group Code ";
+ComboBox bmq08=bmq_file.bmq08, tabIndex=7, not null, required, queryEditable, comment="Enter C/T/D/A/M/P/X/K/U/V/R/Z/S, press    <^F> Qry Field Description", items=(("C", "C"),("T", "T"),("D", "D"),("A", "A"),("M", "M"),("P", "P"),("X", "X"),("K", "K"),("U", "U"),("V", "V"),("R", "R"),("Z", "Z"),("S", "S"));
+Edit bmq910=bmq_file.bmq910, tabIndex=8;
+Group group01:group01;
+ButtonEdit bmq25=bmq_file.bmq25, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit  ";
+ButtonEdit bmq63=bmq_file.bmq63, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit  ";
+ButtonEdit bmq55=bmq_file.bmq55, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit  ";
+ButtonEdit bmq44=bmq_file.bmq44, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit  ";
+Group group03:group03;
+ComboBox bmq37=bmq_file.bmq37, tabIndex=18, not null, required, queryEditable, items=(("0", "Reorder point"),("1", "MPS"),("2", "MRP"),("3", "FAS"),("4", "Production by Order"),("5", "Pur of Period"));
+ComboBox bmq10=bmq_file.bmq103, tabIndex=19, not null, required, queryEditable, items=(("0", "Local Purchase"),("1", "Foreign Purchase"),("2", "Other"));
+Edit bmq53=bmq_file.bmq53, tabIndex=20;
+Edit bmq531=bmq_file.bmq531, tabIndex=21;
+Edit bmq91=bmq_file.bmq91, tabIndex=22;
+Edit bmquser=bmq_file.bmquser, tabIndex=23, noEntry;
+Edit bmqmodu=bmq_file.bmqmodu, tabIndex=24, noEntry;
+Edit bmqacti=bmq_file.bmqacti, tabIndex=25, noEntry, upShift;
+Edit bmqgrup=bmq_file.bmqgrup, tabIndex=26, noEntry;
+DateEdit bmqdate=bmq_file.bmqdate, tabIndex=27, noEntry;
+Edit bmqoriu=bmq_file.bmqoriu, tabIndex=501, noEntry;
+Edit bmqorig=bmq_file.bmqorig, tabIndex=502, noEntry;
+TextEdit bmqud01=bmq_file.bmqud01, tabIndex=30, stretch=NONE;
+Edit bmqud07=bmq_file.bmqud07, tabIndex=31;
+DateEdit bmqud13=bmq_file.bmqud13, tabIndex=32;
+Edit bmqud08=bmq_file.bmqud08, tabIndex=33;
+DateEdit bmqud14=bmq_file.bmqud14, tabIndex=34;
+Edit bmqud02=bmq_file.bmqud02, tabIndex=35;
+Edit bmqud09=bmq_file.bmqud09, tabIndex=36;
+DateEdit bmqud15=bmq_file.bmqud15, tabIndex=37;
+Edit bmqud03=bmq_file.bmqud03, tabIndex=38;
+Edit bmqud10=bmq_file.bmqud10, tabIndex=39;
+Edit bmqud04=bmq_file.bmqud04, tabIndex=40;
+Edit bmqud11=bmq_file.bmqud11, tabIndex=41;
+Edit bmqud05=bmq_file.bmqud05, tabIndex=42;
+Edit bmqud12=bmq_file.bmqud12, tabIndex=43;
+Edit bmqud06=bmq_file.bmqud06, tabIndex=44;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bmq_file.bmq01,bmq_file.bmq15,bmq_file.bmq105,bmq_file.bmq903,bmq_file.bmq107,bmq_file.bmq147,bmq_file.bmq011,formonly.imgmksg,bmq_file.bmq02,bmq_file.bmq021,bmq_file.bmq05,bmq_file.bmq06,bmq_file.bmq08,bmq_file.bmq910,bmq_file.bmq25,bmq_file.bmq63,bmq_file.bmq55,bmq_file.bmq44,bmq_file.bmq37,bmq_file.bmq103,bmq_file.bmq53,bmq_file.bmq531,bmq_file.bmq91,bmq_file.bmquser,bmq_file.bmqmodu,bmq_file.bmqacti,bmq_file.bmqgrup,bmq_file.bmqdate,bmq_file.bmqoriu,bmq_file.bmqorig,bmq_file.bmqud01,bmq_file.bmqud07,bmq_file.bmqud13,bmq_file.bmqud08,bmq_file.bmqud14,bmq_file.bmqud02,bmq_file.bmqud09,bmq_file.bmqud15,bmq_file.bmqud03,bmq_file.bmqud10,bmq_file.bmqud04,bmq_file.bmqud11,bmq_file.bmqud05,bmq_file.bmqud12,bmq_file.bmqud06,formonly.cnt)
+END -- INSTRUCTIONS
+

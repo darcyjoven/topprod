@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjp500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apjp500")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr4726
+{
+ Project No.   [pjb01       ]                         P/R Date     [pmk04     ]                                   P/R Employee  [pmk12     ][gen02     ]
+ WBS No.       [pjb02       ]                         Vender No.   [pmk09     ][pmc03     ]                       Department    [pmk13     ][gem02     ]
+ P/R No.       [pmk01             ]                   Currency     [pmk22     ]
+}
+END -- gr4726
+END -- page01
+END -- folder01
+Table s_pjf
+{
+[pjf01     |pjk02       |pjf02   |pjf03               |pjf04                         |ima25 |pjf05              |sum                  |pml20      |pjf06               |pml34             |pml31               ]
+[pjf01     |pjk02       |pjf02   |pjf03               |pjf04                         |ima25 |pjf05              |sum                  |pml20      |pjf06               |pml34             |pml31               ]
+[pjf01     |pjk02       |pjf02   |pjf03               |pjf04                         |ima25 |pjf05              |sum                  |pml20      |pjf06               |pml34             |pml31               ]
+[pjf01     |pjk02       |pjf02   |pjf03               |pjf04                         |ima25 |pjf05              |sum                  |pml20      |pjf06               |pml34             |pml31               ]
+[pjf01     |pjk02       |pjf02   |pjf03               |pjf04                         |ima25 |pjf05              |sum                  |pml20      |pjf06               |pml34             |pml31               ]
+[pjf01     |pjk02       |pjf02   |pjf03               |pjf04                         |ima25 |pjf05              |sum                  |pml20      |pjf06               |pml34             |pml31               ]
+[pjf01     |pjk02       |pjf02   |pjf03               |pjf04                         |ima25 |pjf05              |sum                  |pml20      |pjf06               |pml34             |pml31               ]
+[pjf01     |pjk02       |pjf02   |pjf03               |pjf04                         |ima25 |pjf05              |sum                  |pml20      |pjf06               |pml34             |pml31               ]
+[pjf01     |pjk02       |pjf02   |pjf03               |pjf04                         |ima25 |pjf05              |sum                  |pml20      |pjf06               |pml34             |pml31               ]
+[pjf01     |pjk02       |pjf02   |pjf03               |pjf04                         |ima25 |pjf05              |sum                  |pml20      |pjf06               |pml34             |pml31               ]
+
+}
+END -- s_pjf
+Grid gr4727
+{
+ ----------Rows [cnt2  ] ----------
+
+}
+END -- gr4727
+END -- vb2
+END -- apjp500
+
+ATTRIBUTES
+ButtonEdit pjb01=formonly.pjb01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Project #";
+DateEdit pmk04=formonly.pmk04 type CHAR, tabIndex=2;
+ButtonEdit pmk12=formonly.pmk12 type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Employee ";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit pjb02=formonly.pjb02 type CHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Project Seq.";
+ButtonEdit pmk09=formonly.pmk09 type CHAR, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Vender ";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=7, noEntry;
+ButtonEdit pmk13=formonly.pmk13 type CHAR, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry  Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=9, noEntry;
+ButtonEdit pmk01=formonly.pmk01 type CHAR, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry PR Type  <^Y>Qry PR ";
+ButtonEdit pmk22=formonly.pmk22 type CHAR, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Currency ";
+Edit pjf01=formonly.pjf01 type CHAR, tabIndex=12, title="WBS No.", noEntry;
+Edit pjk02=formonly.pjk02 type CHAR, tabIndex=23, title="Active No.", noEntry;
+Edit pjf02=formonly.pjf02 type CHAR, tabIndex=13, title="Ln NO.", noEntry;
+Edit pjf03=formonly.pjf03 type CHAR, tabIndex=14, title="Item No.", noEntry;
+Edit pjf04=formonly.pjf04 type CHAR, tabIndex=15, title="Item Name", noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=16, title="Unit", noEntry;
+Edit pjf05=formonly.pjf05 type CHAR, tabIndex=17, title="Requirement Qty", noEntry;
+Edit sum=formonly.sum type CHAR, tabIndex=24, title="Transf PR to PO Qty", noEntry;
+Edit pml20=formonly.pml20 type CHAR, tabIndex=18, title="P/R Qty";
+DateEdit pjf06=formonly.pjf06 type CHAR, tabIndex=19, title="Requirement Date", noEntry;
+DateEdit pml34=formonly.pml34 type CHAR, tabIndex=20, title="Arriving Date";
+Edit pml31=formonly.pml31 type CHAR, tabIndex=21, title="P/R Unit Price";
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=22;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjf(formonly.pjf01,formonly.pjk02,formonly.pjf02,formonly.pjf03,formonly.pjf04,formonly.ima25,formonly.pjf05,formonly.sum,formonly.pml20,formonly.pjf06,formonly.pml34,formonly.pml31)
+SCREEN RECORD Undefined(formonly.pjb01,formonly.pmk04,formonly.pmk12,formonly.gen02,formonly.pjb02,formonly.pmk09,formonly.pmc03,formonly.pmk13,formonly.gem02,formonly.pmk01,formonly.pmk22,formonly.cnt2)
+END -- INSTRUCTIONS
+

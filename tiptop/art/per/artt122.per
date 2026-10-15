@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt122.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt122")
+VBox VBox1
+Folder folder00
+Page Page13(text=%"Basic Data")
+Grid gr13
+{
+
+  Adjustment No.        [rtm01                 ] Status           [rtm900       ]
+  Effective Type        [rtm02     ]             Confirmation     [rtmconf      ]         [imgmksg]
+  Effective Date        [rtm03     ]             Confirmation Date[rtmcond   ]            [       ]
+  Std.Sales Price Rate  [rtm04 ]%                Confirmed By     [rtmconu        |rtmconu_desc   ]
+  Std.Member Price Rate [rtm05 ]%                Org.             [rtmplant       |rtmplant_desc  ]
+  Std.Minimax Price Rate[rtm06 ]%                Memo             [rtm07                          ]
+                                                                  [                               ]
+                                                                  [                               ]
+
+
+}
+END -- gr13
+END -- Page13
+Page Page14(text=%"Info")
+Grid gr18
+{
+ Record Owner        [rtmuser   ] Last Modified by    [rtmmodu   ] Data Valid Code     [rtmacti   ]
+ Department          [rtmgrup   ] Create Date         [rtmcrat   ] Modify Date         [rtmdate   ]
+ Record Orig.        [rtmoriu   ] Dept Orig.          [rtmorig   ]
+
+}
+END -- gr18
+END -- Page14
+END -- folder00
+Table s_rtn
+{
+[rtn02|rtn03               |rtn03_desc          |rtn04     |rtn04_desc     |rtn05               |rtn06               |rtn07               |rtn08 |rtn09 |rtn10 |rtn11               |rtn12               |rtn13               |rtn18               |rtn16   |rtn17   |rtn14   |rtn15   ]
+[rtn02|rtn03               |rtn03_desc          |rtn04     |rtn04_desc     |rtn05               |rtn06               |rtn07               |rtn08 |rtn09 |rtn10 |rtn11               |rtn12               |rtn13               |rtn18               |rtn16   |rtn17   |rtn14   |rtn15   ]
+[rtn02|rtn03               |rtn03_desc          |rtn04     |rtn04_desc     |rtn05               |rtn06               |rtn07               |rtn08 |rtn09 |rtn10 |rtn11               |rtn12               |rtn13               |rtn18               |rtn16   |rtn17   |rtn14   |rtn15   ]
+[rtn02|rtn03               |rtn03_desc          |rtn04     |rtn04_desc     |rtn05               |rtn06               |rtn07               |rtn08 |rtn09 |rtn10 |rtn11               |rtn12               |rtn13               |rtn18               |rtn16   |rtn17   |rtn14   |rtn15   ]
+[rtn02|rtn03               |rtn03_desc          |rtn04     |rtn04_desc     |rtn05               |rtn06               |rtn07               |rtn08 |rtn09 |rtn10 |rtn11               |rtn12               |rtn13               |rtn18               |rtn16   |rtn17   |rtn14   |rtn15   ]
+
+}
+END -- s_rtn
+Grid gr9
+{
+
+  ------ Rows[idx ]/[cnt ] --- Items[cn2 ] --------
+
+}
+END -- gr9
+END -- VBox1
+END -- artt122
+
+TABLES
+rtn_file,
+rtm_file
+ATTRIBUTES
+ButtonEdit rtm01=rtm_file.rtm01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ComboBox rtm900=rtm_file.rtm900, tabIndex=7, noEntry, items=(("0", "0"),("1", "1"),("2", "2"));
+ComboBox rtm02=rtm_file.rtm02, tabIndex=2, not null, items=(("1", "Update Immediately"),("2", "Update By Date"));
+ComboBox rtmconf=rtm_file.rtmconf, tabIndex=8, noEntry, not null, items=(("N", "Unconfirm"),("Y", "Confirm"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+DateEdit rtm03=rtm_file.rtm03, tabIndex=3, noEntry, not null;
+DateEdit rtmcond=rtm_file.rtmcond, tabIndex=9, noEntry;
+Edit rtm04=rtm_file.rtm04, tabIndex=4;
+ButtonEdit rtmconu=rtm_file.rtmconu, action=controlp, tabIndex=10, noEntry, image="zoom.png";
+Edit rtmconu_desc=formonly.rtmconu_desc type CHAR, tabIndex=13, noEntry;
+Edit rtm05=rtm_file.rtm05, tabIndex=5;
+ButtonEdit rtmplant=rtm_file.rtmplant, action=controlp, tabIndex=11, noEntry, image="zoom.png";
+Edit rtmplant_desc=formonly.rtmplant_desc type CHAR, tabIndex=14, noEntry;
+Edit rtm06=rtm_file.rtm06, tabIndex=6;
+TextEdit rtm07=rtm_file.rtm07, tabIndex=12;
+Edit rtmuser=rtm_file.rtmuser, tabIndex=15, noEntry;
+Edit rtmmodu=rtm_file.rtmmodu, tabIndex=18, noEntry;
+Edit rtmacti=rtm_file.rtmacti, tabIndex=21, noEntry, upShift;
+Edit rtmgrup=rtm_file.rtmgrup, tabIndex=16, noEntry;
+DateEdit rtmcrat=rtm_file.rtmcrat, tabIndex=19, noEntry;
+DateEdit rtmdate=rtm_file.rtmdate, tabIndex=22, noEntry;
+Edit rtmoriu=rtm_file.rtmoriu, tabIndex=17, noEntry;
+Edit rtmorig=rtm_file.rtmorig, tabIndex=20, noEntry;
+Edit rtn02=rtn_file.rtn02, tabIndex=23, title="Line No.", not null, required;
+ButtonEdit rtn03=rtn_file.rtn03, action=controlp, tabIndex=24, title="Goods Code", not null, image="zoom.png";
+Edit rtn03_desc=formonly.rtn03_desc type CHAR, tabIndex=25, title="Goods Name", noEntry;
+ButtonEdit rtn04=rtn_file.rtn04, action=controlp, tabIndex=26, title="Pricing Unit", not null, image="zoom.png";
+Edit rtn04_desc=formonly.rtn04_desc type CHAR, tabIndex=27, title="Unit Name\n", noEntry;
+Edit rtn05=rtn_file.rtn05, tabIndex=28, title="Old Sales Price ", noEntry;
+Edit rtn06=rtn_file.rtn06, tabIndex=29, title="Old Member Price", noEntry;
+Edit rtn07=rtn_file.rtn07, tabIndex=30, title="Old Minimax Price", noEntry;
+Edit rtn08=rtn_file.rtn08, tabIndex=31, title="Sales Price Rate", not null;
+Edit rtn09=rtn_file.rtn09, tabIndex=32, title="Member Price Rate", not null;
+Edit rtn10=rtn_file.rtn10, tabIndex=33, title="Minimax Price Rate", not null;
+Edit rtn11=rtn_file.rtn11, tabIndex=34, title="New Sales Price", not null;
+Edit rtn12=rtn_file.rtn12, tabIndex=35, title="New Member Price", not null;
+Edit rtn13=rtn_file.rtn13, tabIndex=36, title="New Minimax Price", not null;
+Edit rtn18=rtn_file.rtn18, tabIndex=37, title=%"rtn18";
+CheckBox rtn16=rtn_file.rtn16, tabIndex=38, title=%"rtn16", text=%"", valueChecked = "Y", valueUnchecked = "N";
+CheckBox rtn17=rtn_file.rtn17, tabIndex=39, title=%"rtn17", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rtn14=rtn_file.rtn14, tabIndex=40, title="Old Valid Code", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rtn15=rtn_file.rtn15, tabIndex=41, title="New Valid Code", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=42, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=43, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=44;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rtn(rtn_file.rtn02,rtn_file.rtn03,formonly.rtn03_desc,rtn_file.rtn04,formonly.rtn04_desc,rtn_file.rtn05,rtn_file.rtn06,rtn_file.rtn07,rtn_file.rtn08,rtn_file.rtn09,rtn_file.rtn10,rtn_file.rtn11,rtn_file.rtn12,rtn_file.rtn13,rtn_file.rtn18,rtn_file.rtn16,rtn_file.rtn17,rtn_file.rtn14,rtn_file.rtn15)
+SCREEN RECORD Undefined(rtm_file.rtm01,rtm_file.rtm900,rtm_file.rtm02,rtm_file.rtmconf,formonly.imgmksg,rtm_file.rtm03,rtm_file.rtmcond,rtm_file.rtm04,rtm_file.rtmconu,formonly.rtmconu_desc,rtm_file.rtm05,rtm_file.rtmplant,formonly.rtmplant_desc,rtm_file.rtm06,rtm_file.rtm07,rtm_file.rtmuser,rtm_file.rtmmodu,rtm_file.rtmacti,rtm_file.rtmgrup,rtm_file.rtmcrat,rtm_file.rtmdate,rtm_file.rtmoriu,rtm_file.rtmorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

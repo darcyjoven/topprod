@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmr850.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmr850")
+Grid gr1
+{
+ <G group01                                                                             >
+  Flow Type                                     [poz00          ]
+  Order/Contract No.                            [oea01          ]
+  P/O No.                                       [pmm01          ]
+  Date                                          [rva06          ]
+ <                                                                                      >
+ <G group02                                                                             >
+  Plant No.                                      [plant          ][dummy01   ]
+ <                                                                                      >
+
+}
+END -- gr1
+END -- axmr850
+
+TABLES
+poz_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ComboBox poz00=poz_file.poz00, tabIndex=2, not null, required, items=(("1", "Sales"),("2", "Buyer"));
+ButtonEdit oea01=formonly.oea01 type CHAR, action=controlp, tabIndex=4, image="zoom.png";
+ButtonEdit pmm01=formonly.pmm01 type CHAR, action=controlp, tabIndex=5, image="zoom.png";
+DateEdit rva06=formonly.rva06 type DATE, tabIndex=1;
+Group group02:group02, text="INPUT";
+ButtonEdit plant=formonly.plant type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom", upShift, comment="<^P>Qry Plant No.";
+Label dummy01:dummy01, text="ALL";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(poz_file.poz00,formonly.oea01,formonly.pmm01,formonly.rva06,formonly.plant)
+END -- INSTRUCTIONS
+

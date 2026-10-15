@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr154.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr154")
+VBox vb7
+Grid gr7
+{
+ <G group02                                                                          >
+  Item No.            [ima01               ] Other Group 3     [ima11               ]
+  Main Group Code     [ima06               ] Cost Group        [ima12               ]
+  Other Group 1       [ima09               ] Product Class     [ima131              ]
+  Other Group 2       [ima10               ]
+
+ <                                                                                   >
+
+}
+END -- gr7
+Group group03(text="INPUT")
+Grid gr8
+{
+ <G group05                                                            >
+  Year       [yy  ]   Month   [mm]   Cost Method  [ctype              ]
+ [a                                                  ]
+ <                                                                     >
+ <G gb24                                                               >
+  Plant No.     [plant_1   ][plant_2   ][plant_3   ][plant_4   ]
+                [plant_5   ][plant_6   ][plant_7   ][plant_8   ]
+
+
+ <                                                                     >
+
+}
+END -- gr8
+END -- group03
+Grid gr9
+{
+[more                                                ]
+
+}
+END -- gr9
+END -- vb7
+END -- axcr154
+
+ATTRIBUTES
+Group group02:group02, text="QBE2";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ima11=formonly.ima11 type VARCHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ima06=formonly.ima06 type VARCHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ima12=formonly.ima12 type VARCHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ima09=formonly.ima09 type VARCHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ima131=formonly.ima131 type VARCHAR, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ima10=formonly.ima10 type VARCHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Details";
+Group group05:group05;
+Edit yy=formonly.yy type SMALLINT, tabIndex=8, not null, required;
+Edit mm=formonly.mm type SMALLINT, tabIndex=9, not null, required;
+ComboBox ctype=formonly.ctype type VARCHAR, tabIndex=10, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually Batch Cost"),("4", "Identify Manually Item Cost"),("5", "Identify Manually Store Profit Center"));
+CheckBox a=formonly.a type VARCHAR, tabIndex=11, text="Print Item Details", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb24:gb24;
+ButtonEdit plant_1=formonly.plant_1 type CHAR, action=controlp, tabIndex=13, image="zoom";
+ButtonEdit plant_2=formonly.plant_2 type CHAR, action=controlp, tabIndex=14, image="zoom";
+ButtonEdit plant_3=formonly.plant_3 type CHAR, action=controlp, tabIndex=15, image="zoom";
+ButtonEdit plant_4=formonly.plant_4 type CHAR, action=controlp, tabIndex=16, image="zoom";
+ButtonEdit plant_5=formonly.plant_5 type CHAR, action=controlp, tabIndex=17, image="zoom";
+ButtonEdit plant_6=formonly.plant_6 type CHAR, action=controlp, tabIndex=18, image="zoom";
+ButtonEdit plant_7=formonly.plant_7 type CHAR, action=controlp, tabIndex=19, image="zoom";
+ButtonEdit plant_8=formonly.plant_8 type CHAR, action=controlp, tabIndex=20, image="zoom";
+CheckBox more=formonly.more type VARCHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima11,formonly.ima06,formonly.ima12,formonly.ima09,formonly.ima131,formonly.ima10,formonly.yy,formonly.mm,formonly.ctype,formonly.a,formonly.plant_1,formonly.plant_2,formonly.plant_3,formonly.plant_4,formonly.plant_5,formonly.plant_6,formonly.plant_7,formonly.plant_8,formonly.more)
+END -- INSTRUCTIONS
+

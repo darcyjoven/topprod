@@ -1,0 +1,220 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/4fd/asft803.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft803")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr859
+{
+  W/O No.          [snb01               ]
+  Item No.         [sfb05               ]
+  Change S/N       [snb02     ]
+  Date of Change   [snb022    ]
+
+
+
+
+
+
+}
+END -- gr859
+Grid gr860
+{
+  Style         [sfb02    ][sfb02_d  ]Complete      [sfb09               ]
+ <G group01                                                                > Status[snb99     ]       [imgmksg]
+  Sets          [snb08b              ]Sets          [snb08a              ]   Issue [snbconf           |       ]
+  Est. Ope Date [snb13b     |snb14b  ]Est. Ope Date [snb13a     |snb14a  ]  [snbmksg     ]
+  Est. Com Date [snb15b     |snb16b  ]Est. Com Date [snb15a     |snb16a  ]
+  Department    [snb82b              ]Department    [snb82a              ]
+
+
+ <                                                                         >
+
+}
+END -- gr860
+Grid gr861
+{
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr861
+END -- hb2
+END -- page01
+Page info(text="Info")
+Grid gr862
+{
+ Record Owner        [snbuser   ]   Last Modified by    [snbmodu   ]    Issued Time [snbsendt    ]
+ Department          [snbgrup   ]   Create/Modify Date  [snbdate   ]
+ Record Orig.        [snboriu   ]   Issued staff        [snbsendu  ]
+ Dept Orig.          [snborig   ]   Issued Date         [snbsendd    ]
+}
+END -- gr862
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[snbud01                       ] userdefined_field07[snbud07        ] userdefined_field13[snbud13        ]
+                    [                              ] userdefined_field08[snbud08        ] userdefined_field14[snbud14        ]
+ userdefined_field02[snbud02        ]                userdefined_field09[snbud09        ] userdefined_field15[snbud15        ]
+ userdefined_field03[snbud03        ]                userdefined_field10[snbud10        ]
+ userdefined_field04[snbud04        ]                userdefined_field11[snbud11        ]
+ userdefined_field05[snbud05        ]                userdefined_field12[snbud12        ]
+ userdefined_field06[snbud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+ScrollGrid gr863
+{
+
+[dummy0]          [dummy11          ]   [dummy12     ] [dummy02             ][dummy03             ][dummy14              ][dummy04    ][dummy15    ][dummy05      ]  [dummy05_|dummy051 |dummy06   |dummy07     |dummy08   |dummy09            |dummy13            |dummy10              ]
+[sna04 ][sbefore] [sna012b           ]  [sna013b     ] [sna03b              ][ima02b              ][ima021b              ][sna05b     ][sna065b    ][sna161b      ]  [sna26b  |sna28b   |sna12b    |sna13b      |sna11b    |sna08b             |sna29b             ]
+        [safter ] [sna012a           ]  [sna013a     ] [sna03a              ][ima02a              ][ima021a              ][sna05a     ][sna065a    ][sna161a      ]  [sna26a  |sna28a   |sna12a    |sna13a      |sna11a    |sna08a             |sna29a             |sna50                 ]
+[sna04 ][sbefore] [sna012b           ]  [sna013b     ] [sna03b              ][ima02b              ][ima021b              ][sna05b     ][sna065b    ][sna161b      ]  [sna26b  |sna28b   |sna12b    |sna13b      |sna11b    |sna08b             |sna29b             ]
+        [safter ] [sna012a           ]  [sna013a     ] [sna03a              ][ima02a              ][ima021a              ][sna05a     ][sna065a    ][sna161a      ]  [sna26a  |sna28a   |sna12a    |sna13a      |sna11a    |sna08a             |sna29a             |sna50                 ]
+[sna04 ][sbefore] [sna012b           ]  [sna013b     ] [sna03b              ][ima02b              ][ima021b              ][sna05b     ][sna065b    ][sna161b      ]  [sna26b  |sna28b   |sna12b    |sna13b      |sna11b    |sna08b             |sna29b             ]
+        [safter ] [sna012a           ]  [sna013a     ] [sna03a              ][ima02a              ][ima021a              ][sna05a     ][sna065a    ][sna161a      ]  [sna26a  |sna28a   |sna12a    |sna13a      |sna11a    |sna08a             |sna29a             |sna50                 ]
+[sna04 ][sbefore] [sna012b           ]  [sna013b     ] [sna03b              ][ima02b              ][ima021b              ][sna05b     ][sna065b    ][sna161b      ]  [sna26b  |sna28b   |sna12b    |sna13b      |sna11b    |sna08b             |sna29b             ]
+        [safter ] [sna012a           ]  [sna013a     ] [sna03a              ][ima02a              ][ima021a              ][sna05a     ][sna065a    ][sna161a      ]  [sna26a  |sna28a   |sna12a    |sna13a      |sna11a    |sna08a             |sna29a             |sna50                 ]
+
+}
+END -- gr863
+Grid gr864
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr864
+END -- vb3
+END -- asft803
+
+TABLES
+snb_file,
+sna_file
+ATTRIBUTES
+ButtonEdit snb01=snb_file.snb01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Query W/O #,Yoy Can Enter^PQuery W/O # ";
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=2, noEntry;
+Edit snb02=snb_file.snb02, tabIndex=3, noEntry, not null, required;
+DateEdit snb022=snb_file.snb022, tabIndex=4, not null, required;
+Edit sfb02=formonly.sfb02 type CHAR, tabIndex=5, noEntry;
+Edit sfb02_d=formonly.sfb02_d type CHAR, tabIndex=6, noEntry;
+Edit sfb09=formonly.sfb09 type CHAR, tabIndex=7, noEntry;
+Group group01:group01;
+Edit snb08b=snb_file.snb08b, tabIndex=8, noEntry;
+Edit snb08a=snb_file.snb08a, tabIndex=9;
+DateEdit snb13b=snb_file.snb13b, tabIndex=10, noEntry;
+Edit snb14b=formonly.snb14b type VARCHAR, tabIndex=11, noEntry, picture="XX:XX";
+DateEdit snb13a=snb_file.snb13a, tabIndex=12;
+Edit snb14a=snb_file.snb14a, tabIndex=13, picture="XX:XX";
+DateEdit snb15b=snb_file.snb15b, tabIndex=14, noEntry;
+Edit snb16b=formonly.snb16b type VARCHAR, tabIndex=15, noEntry, picture="XX:XX";
+DateEdit snb15a=snb_file.snb15a, tabIndex=16;
+Edit snb16a=snb_file.snb16a, tabIndex=17, picture="XX:XX";
+ButtonEdit snb82b=snb_file.snb82b, tabIndex=18, noEntry, image="zoom";
+ButtonEdit snb82a=snb_file.snb82a, action=controlp, tabIndex=19, image="zoom";
+ComboBox snb99=snb_file.snb99, tabIndex=20, noEntry, not null, required, items=(("0", "Open"),("1", "Approved"),("S", "Approving"),("R", "Approving Return"),("W", "Cancel"),("2", "Release"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ComboBox snbconf=snb_file.snbconf, tabIndex=21, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+CheckBox snbmksg=snb_file.snbmksg, tabIndex=22, text="snbmksg", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit snbuser=snb_file.snbuser, tabIndex=57, noEntry;
+Edit snbmodu=snb_file.snbmodu, tabIndex=61, noEntry;
+TimeEdit snbsendt=snb_file.snbsendt, tabIndex=65;
+Edit snbgrup=snb_file.snbgrup, tabIndex=58, noEntry;
+DateEdit snbdate=snb_file.snbdate, tabIndex=62, noEntry;
+Edit snboriu=snb_file.snboriu, tabIndex=59, noEntry;
+Edit snbsendu=snb_file.snbsendu, tabIndex=63, noEntry;
+Edit snborig=snb_file.snborig, tabIndex=60, noEntry;
+DateEdit snbsendd=snb_file.snbsendd, tabIndex=64;
+TextEdit snbud01=snb_file.snbud01, tabIndex=66, stretch=NONE;
+Edit snbud07=snb_file.snbud07, tabIndex=72;
+DateEdit snbud13=snb_file.snbud13, tabIndex=78;
+Edit snbud08=snb_file.snbud08, tabIndex=73;
+DateEdit snbud14=snb_file.snbud14, tabIndex=79;
+Edit snbud02=snb_file.snbud02, tabIndex=67;
+Edit snbud09=snb_file.snbud09, tabIndex=74;
+DateEdit snbud15=snb_file.snbud15, tabIndex=80;
+Edit snbud03=snb_file.snbud03, tabIndex=68;
+Edit snbud10=snb_file.snbud10, tabIndex=75;
+Edit snbud04=snb_file.snbud04, tabIndex=69;
+Edit snbud11=snb_file.snbud11, tabIndex=76;
+Edit snbud05=snb_file.snbud05, tabIndex=70;
+Edit snbud12=snb_file.snbud12, tabIndex=77;
+Edit snbud06=snb_file.snbud06, tabIndex=71;
+Label dummy0:dummy01, text="Line#";
+Label dummy11:dummy11, text=%"Pro.Routing.No.";
+Label dummy12:dummy12, text=%"Process No.";
+Label dummy02:dummy02, text="Item No.";
+Label dummy03:dummy03, text="Part Name Specification";
+Label dummy14:dummy14, text="Specification";
+Label dummy04:dummy04, text="Quantity";
+Label dummy15:dummy15, text="Purchase Qty";
+Label dummy05:dummy05, text="Actual QPA";
+Label dummy05_:dummy05_1, text="Substitute code";
+Label dummy051:dummy051, text="Subs. Rate";
+Label dummy06:dummy06, text="Unit";
+Label dummy07:dummy07, text="Rate";
+Label dummy08:dummy08, text="Flag";
+Label dummy09:dummy09, text="Task No.";
+Label dummy13:dummy13, text="Master Item No.";
+Label dummy10:dummy10, text="Remark";
+ButtonEdit sna04=sna_file.sna04, action=controlp, tabIndex=23, not null, required, image="zoom";
+ComboBox sbefore=formonly.sbefore type CHAR, tabIndex=24, noEntry, items=(("0", "Original:"),("1", "Modify:"),("2", "Add:"));
+ButtonEdit sna012b=sna_file.sna012b, action=controlp, tabIndex=25, noEntry, image="zoom.png";
+Edit sna013b=sna_file.sna013b, tabIndex=26, noEntry;
+ButtonEdit sna03b=sna_file.sna03b, action=controlp, tabIndex=27, noEntry, image="zoom";
+Edit ima02b=formonly.ima02b type CHAR, tabIndex=28, noEntry;
+Edit ima021b=formonly.ima021b type CHAR, tabIndex=29, noEntry;
+Edit sna05b=sna_file.sna05b, tabIndex=30, noEntry;
+Edit sna065b=sna_file.sna065b, tabIndex=31, noEntry;
+Edit sna161b=formonly.sna161b type DECIMAL(20,8), tabIndex=32, noEntry;
+ComboBox sna26b=sna_file.sna26b, tabIndex=33, noEntry, items=(("0", "No REP/SUB"),("1", "Old:"),("2", "M.It"),("3", "Old(with New)"),("4", "M.It(Sb-Itm)"),("5", "M.It,SUB with SE"),("6", "M.It,SET SUBNewText"),("U", "REP Item"),("S", "SUB Item"),("T", "SET SUB Item"),("Z", "Rule Sub."));
+Edit sna28b=sna_file.sna28b, tabIndex=34, noEntry;
+ButtonEdit sna12b=sna_file.sna12b, action=controlp, tabIndex=35, noEntry, image="zoom";
+Edit sna13b=sna_file.sna13b, tabIndex=36, noEntry;
+ComboBox sna11b=sna_file.sna11b, tabIndex=37, noEntry, queryEditable, items=(("N", "General Item"),("E", "Consumable(BackFlush)"),("V", "Mass Purchased Item"),("U", "Mass Manufactured-Item"),("R", "WIP Item"),("X", "Reference"),("C", "Cust-Material"),("S", "Recovery"));
+Edit sna08b=sna_file.sna08b, tabIndex=38, noEntry;
+ButtonEdit sna29b=sna_file.sna29b, action=controlp, tabIndex=39, noEntry, image="zoom";
+ComboBox safter=formonly.safter type CHAR, tabIndex=40, noEntry, items=(("0", "Original:"),("1", "Modify:"),("2", "Add:"));
+ButtonEdit sna012a=sna_file.sna012a, action=controlp, tabIndex=41, image="zoom.png";
+Edit sna013a=sna_file.sna013a, tabIndex=42;
+ButtonEdit sna03a=sna_file.sna03a, action=controlp, tabIndex=43, image="zoom";
+Edit ima02a=formonly.ima02a type CHAR, tabIndex=44, noEntry;
+Edit ima021a=formonly.ima021a type CHAR, tabIndex=45, noEntry;
+Edit sna05a=sna_file.sna05a, tabIndex=46;
+Edit sna065a=sna_file.sna065a, tabIndex=47;
+Edit sna161a=formonly.sna161a type DECIMAL(20,8), tabIndex=48;
+ComboBox sna26a=sna_file.sna26a, tabIndex=49, items=(("0", "No REP/SUB"),("1", "Old:"),("2", "M.It"),("T", "SET SUB Item"),("Z", "Rule Sub."));
+Edit sna28a=sna_file.sna28a, tabIndex=50;
+ButtonEdit sna12a=sna_file.sna12a, action=controlp, tabIndex=51, image="zoom";
+Edit sna13a=sna_file.sna13a, tabIndex=52;
+ComboBox sna11a=sna_file.sna11a, tabIndex=53, queryEditable, items=(("N", "General Item"),("E", "Consumable(BackFlush)"),("V", "Mass Purchased Item"),("U", "Mass Manufactured-Item"),("R", "WIP Item"),("X", "Reference"),("C", "Cust-Material"),("S", "Recovery"));
+ButtonEdit sna08a=sna_file.sna08a, action=controlp, tabIndex=54, image="zoom", comment="<^P>Qry Task No.";
+ButtonEdit sna29a=sna_file.sna29a, action=controlp, tabIndex=55, image="zoom";
+Edit sna50=sna_file.sna50, tabIndex=56;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=81, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=82, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sna(sna_file.sna04,formonly.sbefore,sna_file.sna012b,sna_file.sna013b,sna_file.sna03b,formonly.ima02b,formonly.ima021b,sna_file.sna05b,sna_file.sna065b,formonly.sna161b,sna_file.sna26b,sna_file.sna28b,sna_file.sna12b,sna_file.sna13b,sna_file.sna11b,sna_file.sna08b,sna_file.sna29b,formonly.safter,sna_file.sna012a,sna_file.sna013a,sna_file.sna03a,formonly.ima02a,formonly.ima021a,sna_file.sna05a,sna_file.sna065a,formonly.sna161a,sna_file.sna26a,sna_file.sna28a,sna_file.sna12a,sna_file.sna13a,sna_file.sna11a,sna_file.sna08a,sna_file.sna29a,sna_file.sna50)
+SCREEN RECORD Undefined(snb_file.snb01,formonly.sfb05,snb_file.snb02,snb_file.snb022,formonly.sfb02,formonly.sfb02_d,formonly.sfb09,snb_file.snb08b,snb_file.snb08a,snb_file.snb13b,snb_file.snb13a,snb_file.snb15b,snb_file.snb15a,snb_file.snb82b,snb_file.snb82a,snb_file.snb99,formonly.imgmksg,snb_file.snbconf,snb_file.snbmksg,snb_file.snbuser,snb_file.snbmodu,snb_file.snbgrup,snb_file.snbdate,snb_file.snboriu,snb_file.snborig,snb_file.snbud01,snb_file.snbud07,snb_file.snbud13,snb_file.snbud08,snb_file.snbud14,snb_file.snbud02,snb_file.snbud09,snb_file.snbud15,snb_file.snbud03,snb_file.snbud10,snb_file.snbud04,snb_file.snbud11,snb_file.snbud05,snb_file.snbud12,snb_file.snbud06,formonly.cnt,formonly.cn2,formonly.snb14b,formonly.snb16b,snb_file.snb14a,snb_file.snb16a,snb_file.snbsendu,snb_file.snbsendd,snb_file.snbsendt)
+END -- INSTRUCTIONS
+

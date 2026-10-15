@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_u.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt110_u")
+Grid gr346
+{
+ <G group01                                       >
+ [only_one                         ]
+ <                                                >
+ <G group02                                       >
+  Accounts# QBE           [apa01     ]
+  Account Date QBE        [apa02       ]
+  Account Employee QBE    [apa21     ]
+  Accounts Department QBE [apa22     ]
+  Paying Vender QBE       [apa06     ]
+ <                                                >
+ <G group03                                       >
+  UnConfirmed Accounts Payable Total [l_amt     ]
+
+ <                                                >
+
+}
+END -- gr346
+END -- aapt110_u
+
+TABLES
+apa_file
+ATTRIBUTES
+Group group01:group01, text="UnConfirm Condition";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, items=(("1", "UnConfirm this Accounts only"),("2", "UnConfirm by QBE Condition"));
+Group group02:group02, text="Enter Accounts Condition to UnConfirm";
+ButtonEdit apa01=apa_file.apa01, action=controlp, tabIndex=2, image="zoom";
+DateEdit apa02=apa_file.apa02, tabIndex=3;
+ButtonEdit apa21=apa_file.apa21, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit apa22=apa_file.apa22, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit apa06=apa_file.apa06, action=controlp, tabIndex=6, image="zoom";
+Group group03:group03;
+Edit l_amt=formonly.l_amt type CHAR, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,apa_file.apa01,apa_file.apa02,apa_file.apa21,apa_file.apa22,apa_file.apa06,formonly.l_amt)
+END -- INSTRUCTIONS
+

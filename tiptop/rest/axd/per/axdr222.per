@@ -1,0 +1,52 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdr222.per created Wed Jan 23 05:30:42 2008
+-- File created from axdr222.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdr222")
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID 
+    {
+     <G group01                                                 >
+      Item No.            [aa0                 ]
+     <                                                          >
+     <G group02                                                 >
+      Request Plant       [aa1       ]
+      Scheduled Period    [aa2       ]
+      Period Scope        [aa3       ]-[aa4       ]
+                          [aa5                 ]
+
+     <                                                          >
+
+
+    }
+    END -- GRID
+    GRID 
+    {
+     [aa6                     ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  BUTTONEDIT aa0=FORMONLY.obc01, ACTION=controlp, IMAGE="zoom", TABINDEX=1;
+  GROUP group02 : group02, TEXT="INPUT";
+  EDIT aa1=FORMONLY.ada01, TABINDEX=2;
+  COMBOBOX aa2=FORMONLY.a, COMMENT="Please insert 1/2/3", NOT NULL, REQUIRED, QUERYEDITABLE, TABINDEX=3, ITEMS=(("1","YY+MM"),("2","YY+WK"),("3","YY+MM+10DAY"));
+  DATEEDIT aa3=FORMONLY.bdate TYPE DATE, TABINDEX=4;
+  DATEEDIT aa4=FORMONLY.edate TYPE DATE, TABINDEX=5;
+  CHECKBOX aa5=FORMONLY.b TYPE VARCHAR, TEXT="Print Detail?", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=6;
+  CHECKBOX aa6=FORMONLY.more TYPE VARCHAR, TEXT="Other condition to print", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=7;
+END

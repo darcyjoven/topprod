@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_gsyc.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_gsyc")
+Folder pc749
+Page page01(text="Page01")
+VBox VBox1
+Table s_gsyc(wantFixedPageSize)
+{
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+[gsyc0|gsyc04    |gsyc06             |gsyc07              ]
+}
+END -- s_gsyc
+Group group01(text="memo")
+Grid gr3204
+{
+  [dummy01                                                     ]
+  [dummy02                                                     ]
+  [dummy14                                                     ]
+  [dummy03                                                     ]
+  [dummy04                                                     ]
+  [dummy05                                                     ]
+  [dummy06                                                     ]
+  [dummy07                                                     ]
+  [dummy08                                                     ]
+  [dummy09                                                     ]
+  [dummy10                                                     ]
+  [dummy11                                                     ]
+  [dummy12                                                     ]
+  [dummy13                                                     ]
+
+}
+END -- gr3204
+END -- group01
+Grid gr3205
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3205
+END -- VBox1
+END -- page01
+END -- pc749
+END -- p_gsyc
+
+TABLES
+gsyc_file
+ATTRIBUTES
+Edit gsyc0=gsyc_file.gsyc02, tabIndex=1, title="Ln #", not null, required, comment="No Blank!";
+ComboBox gsyc04=gsyc_file.gsyc04, tabIndex=2, title="No.", not null, required, queryEditable, comment="Enter 2|6|7|8|9|A|G|H|I ", items=(("2", "zz_file p_zz"),("6", "gao_file p_zmd"),("7", "gae_file p_perlang"),("8", "new p_perlang gae_file"),("9", "new p_link gak_file gal_file"),("A", "gaq_file  p_feldname"),("G", "new gat_file p_tabname"),("H", "new wsa_file wsb_file aws_efcfg"),("I", "new zaa_file p_zaa"),("P", "new zaw_file p_zaw"),("Q", "new zai_file p_query"));
+Edit gsyc06=gsyc_file.gsyc06, tabIndex=3, title="KEY col1", not null, required, comment="No Blank!";
+Edit gsyc07=gsyc_file.gsyc07, tabIndex=4, title="KEY col2", comment="No Blank!";
+Label dummy01:dummy01, text="Input two key :", style="fixedFont";
+Label dummy02:dummy02, text="(\"7\",\"gae_file\")          Ex. \"cimi100\",\"ta_ima99\"    \"Add field in form, modify data of p_perlang, include data of p_per\"", style="fixedFont";
+Label dummy14:dummy14, text="(\"9\",\"gak_file\")          Ex. \"sub\",\"s_upimg\"            \"Modify link data of library (p_link)\"", style="fixedFont";
+Label dummy03:dummy03, text="Input one key :", style="fixedFont";
+Label dummy04:dummy04, text="(\"2\",\"zz_file\")            Ex. \"cimi100\"           \"Modify data of program(p_zz), include program name(p_zz_name)\"", style="fixedFont";
+Label dummy05:dummy05, text="(\"6\",\"gao_file\")          Ex. \"CIM\"                \"Add new module (p_zmd), add new folder automatically and pack cust_sys file\"", style="fixedFont";
+Label dummy06:dummy06, text="(\"8\",\"gae_file\")          Ex. \"cimi100\"           \"Modify UI data (p_perlang), include component setting (p_per)\"", style="fixedFont";
+Label dummy07:dummy07, text="(\"9\",\"gak_file\")          Ex. \"cimi100\"           \"Modify link data of program (p_link)\"", style="fixedFont";
+Label dummy08:dummy08, text="(\"A\",\"gaq_file\")          Ex. \"ta_ima99\"         \"Modify or add field data (p_feldname)\"", style="fixedFont";
+Label dummy09:dummy09, text="(\"G\",\"p_tabname\")      Ex. \"tc_ima_file\"      \"Modify or add table data (p_tabname), include fields data of table (p_feldname)\"", style="fixedFont";
+Label dummy10:dummy10, text="(\"H\",\"wsa_file\")          Ex. \"cimi100\"           \"Modify data of easyflow (aws_efcfg)\"", style="fixedFont";
+Label dummy11:dummy11, text="(\"I\",\"zaa_file\")            Ex. \"cimr100\"           \"Modify report data (p_zaa)\"", style="fixedFont";
+Label dummy12:dummy12, text="(\"Q\",\"zai_file\")           Ex. \'cimr100\'             \"modify user define query report data (p_query)\"", style="fixedFont";
+Label dummy13:dummy13, text="(\"P\",\"zaw_file\")          Ex. \'cimr100\'             \"modify crystal report data (p_zaw)\"", style="fixedFont";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gsyc(gsyc_file.gsyc02,gsyc_file.gsyc04,gsyc_file.gsyc06,gsyc_file.gsyc07)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

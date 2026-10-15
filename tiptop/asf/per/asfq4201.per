@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfq4201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfq4201")
+VBox VBox1
+Folder pc139
+Page page01(text="Page01")
+Grid gr581
+{
+ <G group01                                                 ><G group02                             >
+  W/O No.             [sfb01           ]                      Production Item [sfb05               ]
+ <                                                          ><                                      >
+
+}
+END -- gr581
+END -- page01
+END -- pc139
+Table s_sfh
+{
+[sfh13           |sfh02    |sfh08      |imd02               |sfh06           |sfh07|sfh09      |ime03               |sfh10                  ]
+[sfh13           |sfh02    |sfh08      |imd02               |sfh06           |sfh07|sfh09      |ime03               |sfh10                  ]
+[sfh13           |sfh02    |sfh08      |imd02               |sfh06           |sfh07|sfh09      |ime03               |sfh10                  ]
+[sfh13           |sfh02    |sfh08      |imd02               |sfh06           |sfh07|sfh09      |ime03               |sfh10                  ]
+[sfh13           |sfh02    |sfh08      |imd02               |sfh06           |sfh07|sfh09      |ime03               |sfh10                  ]
+[sfh13           |sfh02    |sfh08      |imd02               |sfh06           |sfh07|sfh09      |ime03               |sfh10                  ]
+[sfh13           |sfh02    |sfh08      |imd02               |sfh06           |sfh07|sfh09      |ime03               |sfh10                  ]
+[sfh13           |sfh02    |sfh08      |imd02               |sfh06           |sfh07|sfh09      |ime03               |sfh10                  ]
+[sfh13           |sfh02    |sfh08      |imd02               |sfh06           |sfh07|sfh09      |ime03               |sfh10                  ]
+[sfh13           |sfh02    |sfh08      |imd02               |sfh06           |sfh07|sfh09      |ime03               |sfh10                  ]
+
+}
+END -- s_sfh
+END -- VBox1
+END -- asfq4201
+
+TABLES
+sfb_file,
+ime_file,
+imd_file,
+sfh_file
+ATTRIBUTES
+Group group01:group01;
+Edit sfb01=sfb_file.sfb01, tabIndex=1, noEntry;
+Group group02:group02;
+Edit sfb05=sfb_file.sfb05, tabIndex=2, noEntry;
+Edit sfh13=sfh_file.sfh13, tabIndex=3, title="St-in Note#", noEntry;
+DateEdit sfh02=sfh_file.sfh02, tabIndex=4, title="Date", noEntry;
+Edit sfh08=sfh_file.sfh08, tabIndex=5, title="Warehouse", noEntry;
+Edit imd02=imd_file.imd02, tabIndex=10, title=%"Warehouse Name", noEntry;
+Edit sfh06=sfh_file.sfh06, tabIndex=6, title="Completed Sets", noEntry;
+Edit sfh07=sfh_file.sfh07, tabIndex=7, title="Unit", noEntry;
+Edit sfh09=sfh_file.sfh09, tabIndex=8, title="Location", noEntry;
+Edit ime03=ime_file.ime03, tabIndex=11, title=%"Location Name", noEntry;
+Edit sfh10=sfh_file.sfh10, tabIndex=9, title="Lot#", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfh(sfh_file.sfh13,sfh_file.sfh02,sfh_file.sfh08,imd_file.imd02,sfh_file.sfh06,sfh_file.sfh07,sfh_file.sfh09,ime_file.ime03,sfh_file.sfh10)
+SCREEN RECORD Undefined(sfb_file.sfb01,sfb_file.sfb05)
+END -- INSTRUCTIONS
+

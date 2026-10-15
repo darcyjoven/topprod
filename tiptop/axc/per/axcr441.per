@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr441.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr441")
+VBox VBox1
+Grid gr10
+{
+ <G group01                                                                             >
+  W/O#                [ccg01               ]  Master Item#     [ccg04               ]
+ <                                                                                      >
+ <G group02                                                                            >
+   Cost Calculation Method[type                      ]
+ [d_sw                                                         ]
+ <                                                                                     >
+}
+END -- gr10
+Grid gr11
+{
+[more                                                        ]
+
+}
+END -- gr11
+END -- VBox1
+END -- axcr441
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ccg01=formonly.ccg01 type CHAR, tabIndex=1;
+ButtonEdit ccg04=formonly.ccg04 type CHAR, action=controlp, tabIndex=2, image="zoom", comment="<P>";
+Group group02:group02, text="INPUT";
+ComboBox type=formonly.type type CHAR, tabIndex=5, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+CheckBox d_sw=formonly.d_sw type CHAR, tabIndex=3, text="Print Details?  ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ccg01,formonly.ccg04,formonly.type,formonly.d_sw,formonly.more)
+END -- INSTRUCTIONS
+

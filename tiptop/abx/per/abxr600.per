@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxr200")
+VBox VBox1
+Grid gr1157
+{
+ <G group01                                        >
+  Item No.          [ima01                         ]
+
+ <                                                 >
+}
+END -- gr1157
+Group group02(text="INPUT")
+Grid gr1158
+{
+
+ Begin Date  [bdate     ]
+ End Date    [edate     ]
+ Date        [mdate     ]
+ Print Peo   [c                   ]
+[d                               ]
+[e                               ]
+[f                               ]
+
+
+
+
+
+}
+END -- gr1158
+END -- group02
+Grid gr1159
+{
+[more                          ]
+
+
+}
+END -- gr1159
+END -- VBox1
+END -- abxr600
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment=" <^P> Qry Item No";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=2, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=3, not null, required;
+DateEdit mdate=formonly.mdate type DATE, tabIndex=4, not null, required;
+ComboBox c=formonly.c type CHAR, tabIndex=5, not null, required, queryEditable, items=(("1", "Stuff"),("2", "Materiel And Supplies"),("3", "All"));
+CheckBox d=formonly.d type CHAR, tabIndex=6, text="Print Bond Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=7, text="Print No Trans Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type CHAR, tabIndex=8, text="Print Balance = 0", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.bdate,formonly.edate,formonly.mdate,formonly.c,formonly.d,formonly.e,formonly.f,formonly.more)
+END -- INSTRUCTIONS
+

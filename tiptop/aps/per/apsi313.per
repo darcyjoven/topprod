@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi313.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi313")
+VBox vb20
+Folder pc1047
+Page page01(text="Page01")
+Grid gr5429
+{
+ <G group01                                          >
+  Master Item No.     [vmo01                         ]
+  Master Item S/P     [ima02                         ]
+ <                                                   >
+
+}
+END -- gr5429
+END -- page01
+END -- pc1047
+Table s_vmo
+{
+[vmo03  |vmo02      |vmo13         |vmo14                 |vmo15         |vmo16         |vmo17       |vmo18         ]
+[vmo03  |vmo02      |vmo13         |vmo14                 |vmo15         |vmo16         |vmo17       |vmo18         ]
+[vmo03  |vmo02      |vmo13         |vmo14                 |vmo15         |vmo16         |vmo17       |vmo18         ]
+[vmo03  |vmo02      |vmo13         |vmo14                 |vmo15         |vmo16         |vmo17       |vmo18         ]
+[vmo03  |vmo02      |vmo13         |vmo14                 |vmo15         |vmo16         |vmo17       |vmo18         ]
+[vmo03  |vmo02      |vmo13         |vmo14                 |vmo15         |vmo16         |vmo17       |vmo18         ]
+[vmo03  |vmo02      |vmo13         |vmo14                 |vmo15         |vmo16         |vmo17       |vmo18         ]
+[vmo03  |vmo02      |vmo13         |vmo14                 |vmo15         |vmo16         |vmo17       |vmo18         ]
+[vmo03  |vmo02      |vmo13         |vmo14                 |vmo15         |vmo16         |vmo17       |vmo18         ]
+[vmo03  |vmo02      |vmo13         |vmo14                 |vmo15         |vmo16         |vmo17       |vmo18         ]
+
+}
+END -- s_vmo
+Grid gr5430
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5430
+END -- vb20
+END -- apsi313
+
+TABLES
+vmo_file
+ATTRIBUTES
+Group group01:group01;
+Edit vmo01=formonly.vmo01 type CHAR, tabIndex=1, noEntry, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit vmo03=vmo_file.vmo03, tabIndex=3, title="Ln No.", noEntry, not null, required;
+Edit vmo02=vmo_file.vmo02, tabIndex=4, title="Component No.", noEntry, not null, required;
+ComboBox vmo13=vmo_file.vmo13, tabIndex=5, title="Substitute Method", not null, queryEditable, comment="0/1(when 1?雓蕭銗琦n not be mix part)", items=(("0", %"General SUB"),("1", %"Total SUB"));
+ComboBox vmo14=vmo_file.vmo14, tabIndex=6, title="Explode Component Demand", not null, queryEditable, comment="0/1", items=(("0", %"General Demand"),("1", %"No Item Expand Demand"));
+ComboBox vmo15=vmo_file.vmo15, tabIndex=7, title="Cust-Material", not null, queryEditable, comment="0/1", items=(("0", %"False"),("1", %"True"));
+ComboBox vmo16=vmo_file.vmo16, tabIndex=8, title="Is Altod", not null, queryEditable, comment="0/1", items=(("0", %"False"),("1", %"True"));
+ComboBox vmo17=vmo_file.vmo17, tabIndex=9, title="Create Type", not null, queryEditable, comment="0/1", items=(("0", %"For Master Item"),("1", %"For Alt Ratio"));
+Edit vmo18=vmo_file.vmo18, tabIndex=10, default = "0", title="Subst. Ratio";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vmo(vmo_file.vmo03,vmo_file.vmo02,vmo_file.vmo13,vmo_file.vmo14,vmo_file.vmo15,vmo_file.vmo16,vmo_file.vmo17,vmo_file.vmo18)
+SCREEN RECORD Undefined(formonly.vmo01,formonly.ima02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

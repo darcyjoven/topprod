@@ -1,0 +1,200 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/4fd/p_login.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+HBox HBox1
+Folder Folder1
+Page Page1(action=page1, text=%"Page1")
+HBox HBox2
+Table s_group
+{
+[gem01       |gem02       |zyw01       |zyw02       |gbo02   |gbo03       |right       ]
+[gem01       |gem02       |zyw01       |zyw02       |gbo02   |gbo03       |right       ]
+[gem01       |gem02       |zyw01       |zyw02       |gbo02   |gbo03       |right       ]
+[gem01       |gem02       |zyw01       |zyw02       |gbo02   |gbo03       |right       ]
+[gem01       |gem02       |zyw01       |zyw02       |gbo02   |gbo03       |right       ]
+[gem01       |gem02       |zyw01       |zyw02       |gbo02   |gbo03       |right       ]
+[gem01       |gem02       |zyw01       |zyw02       |gbo02   |gbo03       |right       ]
+[gem01       |gem02       |zyw01       |zyw02       |gbo02   |gbo03       |right       ]
+[gem01       |gem02       |zyw01       |zyw02       |gbo02   |gbo03       |right       ]
+[gem01       |gem02       |zyw01       |zyw02       |gbo02   |gbo03       |right       ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- s_group
+Table s_gen
+{
+[gen01       |gen02       |ip            |dat       |tim       ]
+[gen01       |gen02       |ip            |dat       |tim       ]
+[gen01       |gen02       |ip            |dat       |tim       ]
+[gen01       |gen02       |ip            |dat       |tim       ]
+[gen01       |gen02       |ip            |dat       |tim       ]
+[gen01       |gen02       |ip            |dat       |tim       ]
+[gen01       |gen02       |ip            |dat       |tim       ]
+[gen01       |gen02       |ip            |dat       |tim       ]
+[gen01       |gen02       |ip            |dat       |tim       ]
+[gen01       |gen02       |ip            |dat       |tim       ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- s_gen
+Table s_pid
+{
+[chk     |pid       |shell           |dat_1     |tim_1     ]
+[chk     |pid       |shell           |dat_1     |tim_1     ]
+[chk     |pid       |shell           |dat_1     |tim_1     ]
+[chk     |pid       |shell           |dat_1     |tim_1     ]
+[chk     |pid       |shell           |dat_1     |tim_1     ]
+[chk     |pid       |shell           |dat_1     |tim_1     ]
+[chk     |pid       |shell           |dat_1     |tim_1     ]
+[chk     |pid       |shell           |dat_1     |tim_1     ]
+[chk     |pid       |shell           |dat_1     |tim_1     ]
+[chk     |pid       |shell           |dat_1     |tim_1     ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- s_pid
+END -- HBox2
+END -- Page1
+Page Page2(action=page2, text=%"Page2")
+Grid Grid1
+{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- Page2
+Page Page3(action=page3, text=%"Page3")
+Grid Grid2
+{
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid2
+END -- Page3
+END -- Folder1
+END -- HBox1
+END -- Form
+
+ATTRIBUTES
+Edit gem01=formonly.gem01, tabIndex=1, title=%"gem01";
+Edit gem02=formonly.gem02, tabIndex=2, title=%"gem02";
+Edit zyw01=formonly.zyw01, tabIndex=5, title=%"zyw01";
+Edit zyw02=formonly.zyw02, tabIndex=3, title=%"zyw02";
+CheckBox gbo02=formonly.gbo02, tabIndex=6, title=%"gbo02", text=%"";
+Edit gbo03=formonly.gbo03, tabIndex=7, title=%"gbo03";
+Edit right=formonly.right type INTEGER, tabIndex=8, title=%"right";
+Edit gen01=formonly.gen01, tabIndex=10, title=%"gen01";
+Edit gen02=formonly.gen02, tabIndex=11, title=%"gen02";
+Edit ip=formonly.ip, tabIndex=17, title=%"ip";
+DateEdit dat=formonly.dat, tabIndex=12, title=%"dat";
+Edit tim=formonly.tim, tabIndex=13, title=%"tim";
+CheckBox chk=formonly.chk, tabIndex=14, title=%"chk", text=%"", valueChecked = "Y", valueUnchecked = "N";
+Edit pid=formonly.pid, tabIndex=4, title=%"pid";
+TextEdit shell=formonly.shell, tabIndex=9, title=%"shell";
+DateEdit dat_1=formonly.dat_1 type DATE, tabIndex=15, title=%"dat_1";
+Edit tim_1=formonly.tim_1, tabIndex=16, title=%"tim_1";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_group(formonly.gem01,formonly.gem02,formonly.zyw01,formonly.zyw02,formonly.gbo02,formonly.gbo03,formonly.right)
+SCREEN RECORD s_gen(formonly.gen01,formonly.gen02,formonly.ip,formonly.dat,formonly.tim)
+SCREEN RECORD s_pid(formonly.chk,formonly.pid,formonly.shell,formonly.dat_1,formonly.tim_1)
+END -- INSTRUCTIONS
+

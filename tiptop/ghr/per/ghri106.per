@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghri106.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrai01    |hrai02     |hrai03     |hrai04     |hrai05    |hraiacti      ]
+[hrai01    |hrai02     |hrai03     |hrai04     |hrai05    |hraiacti      ]
+[hrai01    |hrai02     |hrai03     |hrai04     |hrai05    |hraiacti      ]
+[hrai01    |hrai02     |hrai03     |hrai04     |hrai05    |hraiacti      ]
+[hrai01    |hrai02     |hrai03     |hrai04     |hrai05    |hraiacti      ]
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+  ----------------- cn2 [cn2  ]-----------------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrai01=formonly.hrai01 type VARCHAR, action=controlp, tabIndex=1, title=%"hrai01", not null, required, image="zoom";
+Edit hrai02=formonly.hrai02 type VARCHAR, tabIndex=2, title=%"hrai02", noEntry;
+ButtonEdit hrai03=formonly.hrai03 type VARCHAR, action=controlp, tabIndex=4, title=%"hrai03", not null, required, image="zoom";
+Edit hrai04=formonly.hrai04 type VARCHAR, tabIndex=5, title=%"hrai04", not null, required;
+Edit hrai05=formonly.hrai05 type VARCHAR, tabIndex=6, title=%"hrai05";
+CheckBox hraiacti=formonly.hraiacti type VARCHAR, tabIndex=7, title=%"hraiacti", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrai(formonly.hrai01,formonly.hrai02,formonly.hrai03,formonly.hrai04,formonly.hrai05,formonly.hraiacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

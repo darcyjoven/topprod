@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr853.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr853")
+VBox vb3
+Grid gr3379
+{
+ <G group01                                                             >
+  Production Item     [pid03               ]
+  Item Inv Taking     [pie02               ]
+  Label No.           [pid01               ]
+  Work/Order No.      [pid02               ]
+
+ <                                                                      >
+
+}
+END -- gr3379
+Group group02(text="INPUT")
+Grid gr3380
+{
+ <G group03                        ><G group04                         >
+ [a                   ]             [b                             ]
+ <                                 ><                                  >
+ <G group05                        ><G group06                         >
+ [c         ]                       [d                             ]
+ [          ]
+ [          ]
+ <                                 ><                                  >
+}
+END -- gr3380
+END -- group02
+Grid gr3381
+{
+[more                                  ]
+
+}
+END -- gr3381
+END -- vb3
+END -- aimr853
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit pid03=formonly.pid03 type VARCHAR, tabIndex=1;
+Edit pie02=formonly.pie02 type VARCHAR, tabIndex=2;
+Edit pid01=formonly.pid01 type VARCHAR, tabIndex=3;
+Edit pid02=formonly.pid02 type VARCHAR, tabIndex=4;
+Group group03:group03, text="Cost";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=5, items=(("1", "Inv Taking Cost"),("2", "Current Cost"));
+Group group04:group04, text="Cost Issue";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=6, items=(("1", "Standard Cost"),("2", "Current Cost"),("3", "Default Cost"));
+Group group05:group05, text="Report format";
+RadioGroup c=formonly.c type VARCHAR, tabIndex=7, items=(("1", "General List"),("2", "Detail"),("3", "All"));
+Group group06:group06, text="Print Data";
+CheckBox d=formonly.d type VARCHAR, tabIndex=8, text="Print if no Inv Difference", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pid03,formonly.pie02,formonly.pid01,formonly.pid02,formonly.a,formonly.b,formonly.c,formonly.d,formonly.more)
+END -- INSTRUCTIONS
+

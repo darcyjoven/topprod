@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemi104.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemi104")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1766
+{
+  Operation Number          [fid01          ]
+  Description               [fid02                     ]
+  Prepared Man-hours        [fid03          ] [dummy01   ]
+  Standard Man-hours        [fid04          ] [dummy02   ]
+}
+END -- gr1766
+END -- page01
+Page info(text="Info")
+Grid gr1767
+{
+  Record Owner        [fiduser   ] Last Modified by    [fidmodu   ] Data Valid Code     [fidacti   ]
+  Department          [fidgrup   ] Create/Modify Date  [fiddate   ]
+  Record Orig.        [fidoriu   ]
+  Dept Orig.          [fidorig   ]
+}
+END -- gr1767
+END -- info
+END -- folder01
+Table s_fie
+{
+[fie02  |fie03                                                          ]
+[fie02  |fie03                                                          ]
+[fie02  |fie03                                                          ]
+[fie02  |fie03                                                          ]
+[fie02  |fie03                                                          ]
+[fie02  |fie03                                                          ]
+[fie02  |fie03                                                          ]
+[fie02  |fie03                                                          ]
+[fie02  |fie03                                                          ]
+[fie02  |fie03                                                          ]
+
+}
+END -- s_fie
+Grid gr1768
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1768
+END -- VBox1
+END -- aemi104
+
+TABLES
+fie_file,
+fid_file
+ATTRIBUTES
+Edit fid01=fid_file.fid01, tabIndex=1, not null, required;
+Edit fid02=fid_file.fid02, tabIndex=2;
+Edit fid03=fid_file.fid03, tabIndex=3;
+Label dummy01:dummy01, text="hours";
+Edit fid04=fid_file.fid04, tabIndex=4;
+Label dummy02:dummy02, text="hours";
+Edit fiduser=fid_file.fiduser, tabIndex=5, noEntry;
+Edit fidmodu=fid_file.fidmodu, tabIndex=6, noEntry;
+Edit fidacti=fid_file.fidacti, tabIndex=7, noEntry, upShift;
+Edit fidgrup=fid_file.fidgrup, tabIndex=8, noEntry;
+DateEdit fiddate=fid_file.fiddate, tabIndex=9, noEntry;
+Edit fidoriu=fid_file.fidoriu, tabIndex=501, noEntry;
+Edit fidorig=fid_file.fidorig, tabIndex=502, noEntry;
+Edit fie02=fie_file.fie02, tabIndex=10, title="Step", not null, required;
+Edit fie03=fie_file.fie03, tabIndex=11, title="Description";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fie(fie_file.fie02,fie_file.fie03)
+SCREEN RECORD Undefined(fid_file.fid01,fid_file.fid02,fid_file.fid03,fid_file.fid04,fid_file.fiduser,fid_file.fidmodu,fid_file.fidacti,fid_file.fidgrup,fid_file.fiddate,fid_file.fidoriu,fid_file.fidorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

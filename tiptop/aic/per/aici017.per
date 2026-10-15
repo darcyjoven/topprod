@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici017.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aici017")
+VBox vb2
+Folder folder01
+Page page01(text="Page01")
+Grid gr3257
+{
+ <G group01                                                                            >
+  HOW ID         [icr01               ]
+  Make ID        [icr02               ]
+ <                                                                                     >
+}
+END -- gr3257
+END -- page01
+END -- folder01
+Table s_icr
+{
+[icr03  |icr04      |icr05             |icr06         |icr06_desc        |icr061        |icr061_desc       |icr07         |icr08         ]
+[icr03  |icr04      |icr05             |icr06         |icr06_desc        |icr061        |icr061_desc       |icr07         |icr08         ]
+[icr03  |icr04      |icr05             |icr06         |icr06_desc        |icr061        |icr061_desc       |icr07         |icr08         ]
+[icr03  |icr04      |icr05             |icr06         |icr06_desc        |icr061        |icr061_desc       |icr07         |icr08         ]
+[icr03  |icr04      |icr05             |icr06         |icr06_desc        |icr061        |icr061_desc       |icr07         |icr08         ]
+[icr03  |icr04      |icr05             |icr06         |icr06_desc        |icr061        |icr061_desc       |icr07         |icr08         ]
+[icr03  |icr04      |icr05             |icr06         |icr06_desc        |icr061        |icr061_desc       |icr07         |icr08         ]
+[icr03  |icr04      |icr05             |icr06         |icr06_desc        |icr061        |icr061_desc       |icr07         |icr08         ]
+[icr03  |icr04      |icr05             |icr06         |icr06_desc        |icr061        |icr061_desc       |icr07         |icr08         ]
+[icr03  |icr04      |icr05             |icr06         |icr06_desc        |icr061        |icr061_desc       |icr07         |icr08         ]
+[icr03  |icr04      |icr05             |icr06         |icr06_desc        |icr061        |icr061_desc       |icr07         |icr08         ]
+
+}
+END -- s_icr
+Grid gr3258
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3258
+END -- vb2
+END -- aici017
+
+TABLES
+icr_file
+ATTRIBUTES
+Group group01:group01, text="Program";
+Edit icr01=icr_file.icr01, tabIndex=8, not null;
+ComboBox icr02=icr_file.icr02, tabIndex=9, items=(("1", "BODY MASK"),("2", "Layer Mask"),("3", "Code Mask"),("4", "Wafer ID"),("5", "DateCode"));
+Edit icr03=icr_file.icr03, tabIndex=1, title="Order", not null, scroll;
+ComboBox icr04=icr_file.icr04, tabIndex=2, title="Code Form", items=(("1", "Fixup"),("2", "Define"),("3", "Glide"));
+Edit icr05=icr_file.icr05, tabIndex=3, title="Fixup", scroll, comment="IF Field Name is \'wintitle\', Then This Field is \'NO Entry\'! Using \'Update\' Function!";
+ButtonEdit icr06=icr_file.icr06, action=controlp, tabIndex=4, title="Table Name", image="zoom.png";
+Edit icr06_desc=formonly.icr06_desc type VARCHAR, tabIndex=5, title="Table Name_desc", noEntry;
+ButtonEdit icr061=icr_file.icr061, action=controlp, tabIndex=10, title="Field Name", image="zoom.png";
+Edit icr061_desc=formonly.icr061_desc type VARCHAR, tabIndex=11, title="Field Name_desc", noEntry;
+Edit icr07=icr_file.icr07, tabIndex=12, title="MaShu", not null;
+ComboBox icr08=icr_file.icr08, tabIndex=13, title="Date Kind", items=(("1", "YearWeek"),("2", "YearMonthWeek"),("3", "YearMonthDay"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_icr(icr_file.icr03,icr_file.icr04,icr_file.icr05,icr_file.icr06,formonly.icr06_desc,icr_file.icr061,formonly.icr061_desc,icr_file.icr07,icr_file.icr08)
+SCREEN RECORD Undefined(icr_file.icr01,icr_file.icr02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

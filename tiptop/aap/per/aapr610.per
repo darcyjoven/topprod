@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr610")
+VBox VBox1
+Grid gr273
+{
+ <G group01                                                                                >
+  Accounts Property   [apa00               ]   Accounts Dept.      [apa22               ]
+  Accounts NO.        [apa01               ]   Paying Vender       [apa06               ]
+  Account Date        [apa02               ]   Tax Type            [apa15               ]
+  Account Empl.       [apa21               ]   Voucher NO.         [apa44               ]
+ <                                                                                         >
+
+}
+END -- gr273
+Group group04(text="INPUT")
+Grid gr274
+{
+ <G group02                                                      >
+  [h                                                           ]
+ <                                                               >
+ <G group03                                                      >
+  [s1           ]      [s2            ]      [s3             ]
+  [t1           ]      [t2            ]      [t3             ]
+  [u1           ]      [u2            ]      [u3             ]
+ <                                                               >
+
+}
+END -- gr274
+END -- group04
+Grid gr275
+{
+[more                                                        ]
+
+}
+END -- gr275
+END -- VBox1
+END -- aapr610
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit apa00=formonly.apa00 type VARCHAR, tabIndex=1;
+Edit apa22=formonly.apa22 type VARCHAR, tabIndex=2;
+Edit apa01=formonly.apa01 type VARCHAR, tabIndex=3;
+Edit apa06=formonly.apa06 type VARCHAR, tabIndex=4;
+DateEdit apa02=formonly.apa02 type DATE, tabIndex=5;
+Edit apa15=formonly.apa15 type VARCHAR, tabIndex=6;
+Edit apa21=formonly.apa21 type VARCHAR, tabIndex=7;
+Edit apa44=formonly.apa44 type VARCHAR, tabIndex=8;
+Group group02:group02, text="Data Option";
+RadioGroup h=formonly.h type CHAR, tabIndex=9, default = "3", items=(("1", "Confirmed"),("2", "UnConfirmed"),("3", "All "));
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=10, queryEditable, items=(("1", "Acct Pty"),("2", "Acct NO."),("3", "Act. DD "),("4", "Ac.Empl"),("5", "Ac. Dept"),("6", "Pay.Vend"),("7", "Tax"),("8", "Voucher NO."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=11, queryEditable, items=(("1", "Acct Pty"),("2", "Acct NO."),("3", "Act. DD "),("4", "Ac.Empl"),("5", "Ac. Dept"),("6", "Pay.Vend"),("7", "Tax"),("8", "Voucher NO."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=12, queryEditable, items=(("1", "Acct Pty"),("2", "Acct NO."),("3", "Act. DD "),("4", "Ac.Empl"),("5", "Ac. Dept"),("6", "Pay.Vend"),("7", "Tax"),("8", "Voucher NO."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=13, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=14, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=15, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=16, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=17, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=18, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=19, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apa00,formonly.apa22,formonly.apa01,formonly.apa06,formonly.apa02,formonly.apa15,formonly.apa21,formonly.apa44,formonly.h,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.more)
+END -- INSTRUCTIONS
+

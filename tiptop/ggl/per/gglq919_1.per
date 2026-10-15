@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq919_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq919_1")
+VBox VBox1
+Grid gr3376
+{
+ <G group1                                          >
+  Book No.            [b           ]
+  Parent Company      [axa02       ]
+  Group No.           [axa01       ]
+  Enter Year Period   [yy        ][bm        ]
+ <                                                  >
+ <G group5                                          >
+  Acc No.             [aag01            ]
+ <                                                  >
+ <G group2                                          >
+  Unit                [d                   ]
+  Decimal Digits      [e         ]
+ <                                                  >
+ <G group4                                          >
+ [o                    ]G/L Currency [r         ]
+  Convert Currency    [p         ]
+  Ex.Rate             [q                   ]
+ <                                                  >
+}
+END -- gr3376
+Grid Grid1
+{
+ <T s_axb                                            >
+ [check   |axb04          |azp02            |axb05   ]
+ [check   |axb04          |azp02            |axb05   ]
+ [check   |axb04          |azp02            |axb05   ]
+ [check   |axb04          |azp02            |axb05   ]
+ [check   |axb04          |azp02            |axb05   ]
+
+
+ <                                                   >
+}
+END -- Grid1
+Grid gr3377
+{
+[more                                 ]
+
+}
+END -- gr3377
+END -- VBox1
+END -- gglq919_1
+
+ATTRIBUTES
+Group group1:group1, text="Input";
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Query Book No.";
+ButtonEdit axa02=formonly.axa02 type VARCHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P> Query Book No.";
+ButtonEdit axa01=formonly.axa01 type VARCHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P> Query Book No.";
+Edit yy=formonly.yy type SMALLINT, tabIndex=4;
+Edit bm=formonly.bm type SMALLINT, tabIndex=5;
+Group group5:group5, text="QBE";
+ButtonEdit aag01=formonly.aag01 type VARCHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P> Query Book No.";
+Group group2:group2, text="Amount Unit";
+ComboBox d=formonly.d type VARCHAR, tabIndex=8, items=(("1", "DR"),("2", "TH"),("3", "TEN THOUSAND"),("4", "Million"));
+Edit e=formonly.e type CHAR, tabIndex=9;
+Group group4:group4, text="Convert Currency";
+CheckBox o=formonly.o type VARCHAR, tabIndex=10, text="Convert Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=11, noEntry;
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=12, image="zoom", comment="<^P> Qry Currency";
+Edit q=formonly.q type DECIMAL, tabIndex=13;
+Table s_axb:s_axb;
+CheckBox check=formonly.check type VARCHAR, tabIndex=14, text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit axb04=formonly.axb04 type CHAR, tabIndex=15, title=%"Daughter Co", noEntry;
+Edit azp02=formonly.azp02 type CHAR, tabIndex=16, title=%"Name", noEntry;
+Edit axb05=formonly.axb05 type CHAR, tabIndex=17, title=%"Book No", noEntry;
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.b,formonly.axa02,formonly.axa01,formonly.yy,formonly.bm,formonly.more,formonly.aag01,formonly.d,formonly.e,formonly.o,formonly.p,formonly.q,formonly.r)
+SCREEN RECORD s_axb(formonly.check,formonly.axb04,formonly.azp02,formonly.axb05)
+END -- INSTRUCTIONS
+

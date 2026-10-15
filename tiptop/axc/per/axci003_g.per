@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci003_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axci001_g")
+Grid gr1439
+{
+  <G gb4                                                                >
+   Apportionment Category [cay00          ]
+   Book No.               [cay11          ]
+   Year/Month             [yy        ][mm        ]
+   Cost Center            [cay04          ]
+   Department Attribute   [cay08          ]
+   Allocation Method      [cay12          ]
+  <                                                                     >
+
+  <G gb6                                                                >
+   Department No.    [gem01     ]
+   Account No.       [aag01     ]
+  <                                                                     >
+
+}
+END -- gr1439
+END -- axci001_g
+
+ATTRIBUTES
+Group gb4:gb4, text="Input";
+ComboBox cay00=formonly.cay00 type VARCHAR, tabIndex=1, not null, required, items=(("1", "Labor"),("2", "Overhead 1"),("3", "Overhead 2"),("4", "Overhead 3"),("5", "Overhead 4"),("6", "Overhead 5"));
+ButtonEdit cay11=formonly.cay11 type VARCHAR, action=controlp, tabIndex=2, not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit yy=formonly.yy type CHAR, tabIndex=3, not null, required;
+Edit mm=formonly.mm type CHAR, tabIndex=4, not null, required;
+ButtonEdit cay04=formonly.cay04 type VARCHAR, action=controlp, tabIndex=5, not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+ComboBox cay08=formonly.cay08 type VARCHAR, tabIndex=6, not null, required, items=(("A", "Direct Department"),("B", "Indirect Department"));
+ComboBox cay12=formonly.cay12 type VARCHAR, tabIndex=7, not null, required, items=(("1", "Actual Labor Hours"),("2", "Standard Labor Hours"),("3", "Standard Machine Hours"),("4", "Output Qty * Distribution Ratio"),("5", "Actual Machine Hours"));
+Group gb6:gb6, text="Construct";
+ButtonEdit gem01=formonly.gem01 type CHAR, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Account";
+ButtonEdit aag01=formonly.aag01 type CHAR, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Account";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cay00,formonly.cay11,formonly.yy,formonly.mm,formonly.cay04,formonly.cay08,formonly.cay12,formonly.gem01,formonly.aag01)
+END -- INSTRUCTIONS
+

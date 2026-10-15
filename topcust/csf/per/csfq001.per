@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfq001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox3
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+  Label1 [sfu02                 ]
+
+  Label2 [sfv05                 ]          sfupost [sfupost               ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Folder Folder2
+Page page3(action=page3, text=%"page3")
+VBox VBox1
+Table Table1
+{
+[sfu02_1    |sfu01   |sfv20   |sfv11   |sfv04   |ima02           |sfv08      |sfv09   |oea23   |sfvud07 |sfv_sum    ]
+[sfu02_1    |sfu01   |sfv20   |sfv11   |sfv04   |ima02           |sfv08      |sfv09   |oea23   |sfvud07 |sfv_sum    ]
+[sfu02_1    |sfu01   |sfv20   |sfv11   |sfv04   |ima02           |sfv08      |sfv09   |oea23   |sfvud07 |sfv_sum    ]
+[sfu02_1    |sfu01   |sfv20   |sfv11   |sfv04   |ima02           |sfv08      |sfv09   |oea23   |sfvud07 |sfv_sum    ]
+[sfu02_1    |sfu01   |sfv20   |sfv11   |sfv04   |ima02           |sfv08      |sfv09   |oea23   |sfvud07 |sfv_sum    ]
+
+}
+END -- Table1
+Grid gr2
+{
+  ---------- Rows [cnt   ] ------------------------ Label4  [cn1           ]   ---- Label3[cn3            ]
+
+}
+END -- gr2
+END -- VBox1
+END -- page3
+Page page4(action=page4, text=%"page4")
+VBox VBox2
+Table Table2
+{
+[sfu01_1 |sfv11_1 |sfv04_1 |ima02_1         |sfv08_1    |sfv09_1 |oea23_1 |sfvud07_|sfv_sum_1  ]
+[sfu01_1 |sfv11_1 |sfv04_1 |ima02_1         |sfv08_1    |sfv09_1 |oea23_1 |sfvud07_|sfv_sum_1  ]
+[sfu01_1 |sfv11_1 |sfv04_1 |ima02_1         |sfv08_1    |sfv09_1 |oea23_1 |sfvud07_|sfv_sum_1  ]
+[sfu01_1 |sfv11_1 |sfv04_1 |ima02_1         |sfv08_1    |sfv09_1 |oea23_1 |sfvud07_|sfv_sum_1  ]
+[sfu01_1 |sfv11_1 |sfv04_1 |ima02_1         |sfv08_1    |sfv09_1 |oea23_1 |sfvud07_|sfv_sum_1  ]
+
+}
+END -- Table2
+Grid gr3
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr3
+END -- VBox2
+END -- page4
+END -- Folder2
+END -- VBox3
+END -- Form
+
+ATTRIBUTES
+DateEdit sfu02=formonly.sfu02, tabIndex=1;
+ButtonEdit sfv05=formonly.sfv05, action=controlp, tabIndex=2, image="zoom";
+ComboBox sfupost=formonly.sfupost, tabIndex=25, items=(("Y", "Y"),("N", "N"));
+DateEdit sfu02_1=formonly.sfu02_1, tabIndex=4, title=%"sfu02_1";
+ButtonEdit sfu01=formonly.sfu01, action=controlp, tabIndex=5, title=%"sfu01", image="zoom";
+ButtonEdit sfv20=formonly.sfv20, action=controlp, tabIndex=6, title=%"sfv20", image="zoom";
+ButtonEdit sfv11=formonly.sfv11, action=controlp, tabIndex=7, title=%"sfv11", image="zoom";
+ButtonEdit sfv04=formonly.sfv04, action=controlp, tabIndex=8, title=%"sfv04", image="zoom";
+Edit ima02=formonly.ima02, tabIndex=9, title=%"ima02";
+Edit sfv08=formonly.sfv08, tabIndex=10, title=%"sfv08";
+Edit sfv09=formonly.sfv09, tabIndex=11, title=%"sfv09";
+DateEdit oea23=formonly.oea23, tabIndex=12, title=%"oea23";
+DateEdit sfvud07=formonly.sfvud07, tabIndex=13, title=%"sfvud07";
+DateEdit sfv_sum=formonly.sfv_sum, tabIndex=14, title=%"sfv_sum";
+Edit cnt=formonly.cnt type CHAR, tabIndex=15;
+Edit cn1=formonly.cn1 type CHAR, tabIndex=26;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=27;
+ButtonEdit sfu01_1=formonly.sfu01_1, action=controlp, tabIndex=16, title=%"sfu01_1", image="zoom";
+ButtonEdit sfv11_1=formonly.sfv11_1, action=controlp, tabIndex=17, title=%"sfv11_1", image="zoom";
+ButtonEdit sfv04_1=formonly.sfv04_1, action=controlp, tabIndex=18, title=%"sfv04_1", image="zoom";
+Edit ima02_1=formonly.ima02_1, tabIndex=19, title=%"ima02_1";
+Edit sfv08_1=formonly.sfv08_1, tabIndex=20, title=%"sfv08_1";
+Edit sfv09_1=formonly.sfv09_1, tabIndex=21, title=%"sfv09_1";
+DateEdit oea23_1=formonly.oea23_1, tabIndex=22, title=%"oea23_1";
+DateEdit sfvud07_=formonly.sfvud07_1, tabIndex=23, title=%"sfvud07_1";
+DateEdit sfv_sum_1=formonly.sfv_sum_1, tabIndex=24, title=%"sfv_sum_1";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfu02,formonly.sfv05,formonly.cn2,formonly.cnt,formonly.sfupost,formonly.cn1,formonly.cn3)
+SCREEN RECORD s_sfv(formonly.sfu02_1,formonly.sfu01,formonly.sfv20,formonly.sfv11,formonly.sfv04,formonly.ima02,formonly.sfv08,formonly.sfv09,formonly.oea23,formonly.sfvud07,formonly.sfv_sum)
+SCREEN RECORD s_sfv_1(formonly.sfu01_1,formonly.sfv11_1,formonly.sfv04_1,formonly.ima02_1,formonly.sfv08_1,formonly.sfv09_1,formonly.oea23_1,formonly.sfvud07_1,formonly.sfv_sum_1)
+END -- INSTRUCTIONS
+

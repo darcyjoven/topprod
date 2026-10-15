@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi201")
+VBox VBox1
+Folder pc300
+Page page01(text="Page01")
+Table s_toa
+{
+[toa01      |toa02                |toa03     |toaacti     ]
+[toa01      |toa02                |toa03     |toaacti     ]
+[toa01      |toa02                |toa03     |toaacti     ]
+[toa01      |toa02                |toa03     |toaacti     ]
+[toa01      |toa02                |toa03     |toaacti     ]
+[toa01      |toa02                |toa03     |toaacti     ]
+[toa01      |toa02                |toa03     |toaacti     ]
+[toa01      |toa02                |toa03     |toaacti     ]
+[toa01      |toa02                |toa03     |toaacti     ]
+[toa01      |toa02                |toa03     |toaacti     ]
+
+}
+END -- s_toa
+END -- page01
+END -- pc300
+Grid gr1343
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1343
+END -- VBox1
+END -- atmi201
+
+TABLES
+toa_file
+ATTRIBUTES
+Edit toa01=toa_file.toa01, tabIndex=1, title="Code", not null, required, comment="KEY Field,No Blank/Repeated!";
+Edit toa02=toa_file.toa02, tabIndex=2, title="Description", not null, required, color = black reverse, comment="No Blank/Repeated!";
+ComboBox toa03=toa_file.toa03, tabIndex=3, title="Cate.", not null, required, queryEditable, items=(("1", %"Agency"),("2", %"Media Type"),("3", %"Media Grade"),("4", %"City"),("5", %"Material Type"),("6", %"Material Unit"),("7", %"Bond"));
+CheckBox toaacti=toa_file.toaacti, tabIndex=4, title="Valid?", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="No Blank/Repeated!";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_toa(toa_file.toa01,toa_file.toa02,toa_file.toa03,toa_file.toaacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

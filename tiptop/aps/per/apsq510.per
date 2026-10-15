@@ -1,0 +1,139 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsq510")
+VBox vb9
+Folder folder01
+Page page01(text="Main")
+Grid gr3865
+{
+ APS Version         [voj01              ]            S/N          [voj03     ]
+ Save Version        [voj02     ]                     Demand Date  [voj06     ]
+ Item No.            [voj04                         ][ima02                 ]
+
+
+}
+END -- gr3865
+END -- page01
+END -- folder01
+Grid gr19
+{
+ <G gb6                                                             > <G gb6_1                                                           >
+   Undelivered Qty                [voj07     ]                          Planned Alloc.                               [voj14     ]
+   Est. Demand                    [voj08     ]                          Alternative Demand for Planned Allocation    [voj15     ]
+   Safety Stock                   [voj09     ]                          WO Material Required                         [voj16     ]
+   APT Demand                     [voj10     ]                          Alternative Demand for WO Allocation         [voj17     ]
+   Undelivered Alternative Demand [voj11     ]                          Decreased Demand(Due to Alloc. Rescheduling) [voj18     ]
+   Est. Other Demand              [voj12     ]                          Added Demand(Due to Alloc. Rescheduling)     [voj19     ]
+   APT Alt Demand                 [voj13     ]
+ <                                                                  > <                                                                  >
+
+}
+END -- gr19
+Grid gr3867
+{
+ <G group04                        ><G group04_1                                              ><G group04_2                              >
+  Stock               [voj20     ]   Issued WIP Qty                               [voj27     ]  Estimated Balance            [voj33     ]
+  Under Inspection    [voj21     ]   SUB Purchase Requisition Qty                 [voj28     ]  Planned Purchase             [voj34     ]
+  SUB Stock           [voj22     ]   SUB Purchase Qty                             [voj29     ]  SUB Planned Purchase Qty     [voj35     ]
+  PR Qty              [voj23     ]   SUB WIP Qty                                  [voj30     ]  Planned Manufacture          [voj36     ]
+  Qty on Purchase     [voj24     ]   Decreased Supply(Due to Delivery Reschedulin [voj31     ]  SUB Planned Manufacture Qty  [voj37     ]
+  Outstanding Qty     [voj25     ]   Added Supply(Due to Delivery Rescheduling)   [voj32     ]  Planned Balance              [voj38     ]
+  Un-issued WIP Qty   [voj26     ]                                                              Planned Balance              [voj39     ]
+ <                                 ><                                                         ><                                         >
+
+}
+END -- gr3867
+Table s_vok
+{
+[vok06     |vok07        |vok08        |vok09            |vok10         |vok11           |vok12                 ]
+[vok06     |vok07        |vok08        |vok09            |vok10         |vok11           |vok12                 ]
+[vok06     |vok07        |vok08        |vok09            |vok10         |vok11           |vok12                 ]
+[vok06     |vok07        |vok08        |vok09            |vok10         |vok11           |vok12                 ]
+[vok06     |vok07        |vok08        |vok09            |vok10         |vok11           |vok12                 ]
+[vok06     |vok07        |vok08        |vok09            |vok10         |vok11           |vok12                 ]
+[vok06     |vok07        |vok08        |vok09            |vok10         |vok11           |vok12                 ]
+[vok06     |vok07        |vok08        |vok09            |vok10         |vok11           |vok12                 ]
+[vok06     |vok07        |vok08        |vok09            |vok10         |vok11           |vok12                 ]
+[vok06     |vok07        |vok08        |vok09            |vok10         |vok11           |vok12                 ]
+
+}
+END -- s_vok
+Grid gr3868
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr3868
+END -- vb9
+END -- apsq510
+
+TABLES
+vok_file,
+voj_file
+ATTRIBUTES
+ButtonEdit voj01=voj_file.voj01, action=controlp, tabIndex=1, image="zoom";
+Edit voj03=voj_file.voj03, tabIndex=2;
+Edit voj02=voj_file.voj02, tabIndex=14;
+Edit voj06=voj_file.voj06, tabIndex=15;
+ButtonEdit voj04=voj_file.voj04, action=controlp, tabIndex=3, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, noEntry;
+Group gb6:gb6;
+Edit voj07=voj_file.voj07, tabIndex=16;
+Edit voj08=voj_file.voj08, tabIndex=17;
+Edit voj09=voj_file.voj09, tabIndex=18;
+Edit voj10=voj_file.voj10, tabIndex=19;
+Edit voj11=voj_file.voj11, tabIndex=20;
+Edit voj12=voj_file.voj12, tabIndex=21;
+Edit voj13=voj_file.voj13, tabIndex=22;
+Group gb6_1:gb6_1;
+Edit voj14=voj_file.voj14, tabIndex=23;
+Edit voj15=voj_file.voj15, tabIndex=24;
+Edit voj16=voj_file.voj16, tabIndex=25;
+Edit voj17=voj_file.voj17, tabIndex=26;
+Edit voj18=voj_file.voj18, tabIndex=27;
+Edit voj19=voj_file.voj19, tabIndex=28;
+Group group04:group04;
+Edit voj20=voj_file.voj20, tabIndex=29;
+Edit voj21=voj_file.voj21, tabIndex=30;
+Edit voj22=voj_file.voj22, tabIndex=31;
+Edit voj23=voj_file.voj23, tabIndex=32;
+Edit voj24=voj_file.voj24, tabIndex=33;
+Edit voj25=voj_file.voj25, tabIndex=34;
+Edit voj26=voj_file.voj26, tabIndex=35;
+Group group04_1:group04_1;
+Edit voj27=voj_file.voj27, tabIndex=36;
+Edit voj28=voj_file.voj28, tabIndex=37;
+Edit voj29=voj_file.voj29, tabIndex=38;
+Edit voj30=voj_file.voj30, tabIndex=39;
+Edit voj31=voj_file.voj31, tabIndex=40;
+Edit voj32=voj_file.voj32, tabIndex=41;
+Group group04_2:group04_2;
+Edit voj33=voj_file.voj33, tabIndex=42;
+Edit voj34=voj_file.voj34, tabIndex=43;
+Edit voj35=voj_file.voj35, tabIndex=44;
+Edit voj36=voj_file.voj36, tabIndex=45;
+Edit voj37=voj_file.voj37, tabIndex=46;
+Edit voj38=voj_file.voj38, tabIndex=47;
+Edit voj39=voj_file.voj39, tabIndex=48;
+Edit vok06=vok_file.vok06, tabIndex=5, title="D/S Date(Actual)";
+Edit vok07=vok_file.vok07, tabIndex=6, title="Demand/Supply Category";
+Edit vok08=vok_file.vok08, tabIndex=7, title="Source Doc. No.";
+Edit vok09=vok_file.vok09, tabIndex=8, title="Line No";
+Edit vok10=vok_file.vok10, tabIndex=9, title="Freeze Delivery";
+Edit vok11=vok_file.vok11, tabIndex=10, title="Source Item No.";
+Edit vok12=vok_file.vok12, tabIndex=11, title="Quantity";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vok(vok_file.vok06,vok_file.vok07,vok_file.vok08,vok_file.vok09,vok_file.vok10,vok_file.vok11,vok_file.vok12)
+SCREEN RECORD Undefined(voj_file.voj01,voj_file.voj03,voj_file.voj02,voj_file.voj06,voj_file.voj04,formonly.ima02,voj_file.voj07,voj_file.voj08,voj_file.voj09,voj_file.voj10,voj_file.voj11,voj_file.voj12,voj_file.voj13,voj_file.voj14,voj_file.voj15,voj_file.voj16,voj_file.voj17,voj_file.voj18,voj_file.voj19,voj_file.voj20,voj_file.voj21,voj_file.voj22,voj_file.voj23,voj_file.voj24,voj_file.voj25,voj_file.voj26,voj_file.voj27,voj_file.voj28,voj_file.voj29,voj_file.voj30,voj_file.voj31,voj_file.voj32,voj_file.voj33,voj_file.voj34,voj_file.voj35,voj_file.voj36,voj_file.voj37,voj_file.voj38,voj_file.voj39,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

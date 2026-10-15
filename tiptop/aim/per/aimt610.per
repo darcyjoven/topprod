@@ -1,0 +1,99 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Main(text=%"Main")
+Grid Grid1
+{
+
+   Billing No.    [ing01                     ]        Warehouse[ing04               ]         Confirm     [ingconf             ]
+   Billing Date   [ing02             ]                Storage  [ing05               ]        [ingpost   ]
+   Item No.       [ing03             ]                Lot No.  [ing06               ]
+   Name           [ima02                 ]            SKU      [img09               ]
+   Specification  [ima021                ]            Number   [img10               ]
+
+}
+END -- Grid1
+END -- Main
+Page Info(text=%"Info")
+Grid Grid3
+{
+
+  Data Owner        [inguser        ]        Modified By          [ingmodu        ]
+  Department        [inggrup        ]        Last Modified Date   [ingdate        ]
+  Data creator      [ingoriu        ]
+  Information       [ingorig        ]
+
+
+}
+END -- Grid3
+END -- Info
+END -- Folder1
+Table Table1
+{
+[inh02       |inh04       |inh03       |inh05       |inh06       |inh07       |inh08       ]
+[inh02       |inh04       |inh03       |inh05       |inh06       |inh07       |inh08       ]
+[inh02       |inh04       |inh03       |inh05       |inh06       |inh07       |inh08       ]
+[inh02       |inh04       |inh03       |inh05       |inh06       |inh07       |inh08       ]
+[inh02       |inh04       |inh03       |inh05       |inh06       |inh07       |inh08       ]
+[inh02       |inh04       |inh03       |inh05       |inh06       |inh07       |inh08       ]
+[inh02       |inh04       |inh03       |inh05       |inh06       |inh07       |inh08       ]
+[inh02       |inh04       |inh03       |inh05       |inh06       |inh07       |inh08       ]
+}
+END -- Table1
+Grid Grid2
+{
+ ----------  cnt [cn2       ] /[cnt       ]   count      [count      ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+img_file,
+inh_file,
+ing_file,
+ima_file
+ATTRIBUTES
+ButtonEdit ing01=ing_file.ing01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit ing04=ing_file.ing04, action=controlp, tabIndex=6, not null, required, image="zoom";
+ComboBox ingconf=ing_file.ingconf, tabIndex=12, noEntry, items=(("N", "Not sure"),("Y", "Confirm"),("X", "Not enter"));
+DateEdit ing02=ing_file.ing02, tabIndex=2, not null, required;
+ButtonEdit ing05=ing_file.ing05, action=controlp, tabIndex=7, image="zoom";
+CheckBox ingpost=ing_file.ingpost, tabIndex=11, text=%"Posting", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ing03=ing_file.ing03, action=controlp, tabIndex=3, not null, required, image="zoom";
+ButtonEdit ing06=ing_file.ing06, action=controlp, tabIndex=8, image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=4, noEntry;
+Edit img09=img_file.img09, tabIndex=9, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=5, noEntry;
+Edit img10=img_file.img10, tabIndex=10, noEntry;
+Edit inguser=ing_file.inguser, tabIndex=13, noEntry;
+Edit ingmodu=ing_file.ingmodu, tabIndex=17, noEntry;
+Edit inggrup=ing_file.inggrup, tabIndex=14, noEntry;
+DateEdit ingdate=ing_file.ingdate, tabIndex=18, noEntry;
+Edit ingoriu=ing_file.ingoriu, tabIndex=15, noEntry;
+Edit ingorig=ing_file.ingorig, tabIndex=16, noEntry;
+Edit inh02=inh_file.inh02, tabIndex=19, title=%"Line No.", not null, required;
+Edit inh04=inh_file.inh04, tabIndex=20, title=%"Manufacturing lot number";
+Edit inh03=inh_file.inh03, tabIndex=21, title=%"Serial No.";
+DateEdit inh05=inh_file.inh05, tabIndex=22, title=%"Created";
+Edit inh06=inh_file.inh06, tabIndex=23, title=%"Quantity", not null, required;
+ComboBox inh07=inh_file.inh07, tabIndex=24, title=%"Type", items=(("1", "Order"),("2", "Work Order"),("3", "Project"));
+Edit inh08=inh_file.inh08, tabIndex=25, title=%"Document No.";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=26;
+Edit cnt=formonly.cnt type CHAR, tabIndex=27;
+Edit count=formonly.count type CHAR, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ing_file.ing01,ing_file.ing02,ing_file.ing03,ima_file.ima02,ima_file.ima021,ing_file.ing04,ing_file.ing05,ing_file.ing06,img_file.img09,img_file.img10,ing_file.ingpost,ing_file.ingconf,ing_file.inguser,ing_file.inggrup,ing_file.ingmodu,ing_file.ingoriu,ing_file.ingdate,ing_file.ingorig,formonly.cn2,formonly.cnt,formonly.count)
+SCREEN RECORD s_inh(inh_file.inh02,inh_file.inh04,inh_file.inh03,inh_file.inh05,inh_file.inh06,inh_file.inh07,inh_file.inh08)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi402.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"axmi402")
+VBox VBox1
+Folder Folder1
+Page page1(text=%"Main")
+Grid Grid1
+{
+
+     Attribute Id      [odm01         ]        [odl02         ]                     [ima04                         ]
+                                                                                    [                              ]
+     Manual No         [odm02         ]        [odm03         ]                     [                              ]
+                                                                                    [                              ]
+     Start year month  [odm04] / [odm05]         Ending year month [odm06 ]/[odm07 ][                              ]
+                                                                                    [                              ]
+    [odmacti   ]       [odmconf   ]                                                 [                              ]
+     Time Bucket       [odm08         ]                                             [                              ]
+                                                                                    [                              ]
+
+}
+END -- Grid1
+END -- page1
+END -- Folder1
+Table s_odn
+{
+[odn03    |odn04         |odn05                         |ima02               |ima31      |odn06   |odn07   |odn08            |odn09            ]
+[odn03    |odn04         |odn05                         |ima02               |ima31      |odn06   |odn07   |odn08            |odn09            ]
+[odn03    |odn04         |odn05                         |ima02               |ima31      |odn06   |odn07   |odn08            |odn09            ]
+[odn03    |odn04         |odn05                         |ima02               |ima31      |odn06   |odn07   |odn08            |odn09            ]
+[odn03    |odn04         |odn05                         |ima02               |ima31      |odn06   |odn07   |odn08            |odn09            ]
+}
+END -- s_odn
+Grid Grid2
+{
+ ----------  Rows [idx   ]/[cnt   ]  ---  Details [cn2   ] ----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- axmi402
+
+TABLES
+odm_file,
+odn_file
+ATTRIBUTES
+ButtonEdit odm01=odm_file.odm01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit odl02=formonly.odl02 type CHAR, tabIndex=2, noEntry, not null;
+IMAGE ima04=formonly.ima04 type CHAR, sizePolicy=fixed;
+Edit odm02=odm_file.odm02, tabIndex=3, not null, required;
+Edit odm03=odm_file.odm03, tabIndex=4, not null, required;
+Edit odm04=odm_file.odm04, tabIndex=5, not null, required;
+Edit odm05=odm_file.odm05, tabIndex=6, not null, required;
+Edit odm06=odm_file.odm06, tabIndex=8, not null, required;
+Edit odm07=odm_file.odm07, tabIndex=9, not null, required;
+CheckBox odmacti=odm_file.odmacti, tabIndex=19, text=%"odmacti", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox odmconf=odm_file.odmconf, tabIndex=20, text=%"odmconf", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox odm08=odm_file.odm08, tabIndex=7, default = "1", sizePolicy=fixed, items=(("1", "不分期"),("2", "周"),("3", "旬"),("4", "月"));
+Edit odn03=odn_file.odn03, tabIndex=10, title=%"odn03", not null, scroll;
+Edit odn04=odn_file.odn04, tabIndex=11, title=%"odn04", not null, required, scroll;
+ButtonEdit odn05=odn_file.odn05, action=controlp, tabIndex=12, title=%"odn05", image="zoom", scroll;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=17, title=%"ima02", noEntry;
+Edit ima31=formonly.ima31 type CHAR, tabIndex=18, title=%"ima31", noEntry;
+CheckBox odn06=odn_file.odn06, tabIndex=13, default = "N", title=%"odn06", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox odn07=odn_file.odn07, tabIndex=14, default = "N", title=%"odn07", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit odn08=odn_file.odn08, tabIndex=15, title=%"odn08", not null, required, scroll;
+Edit odn09=odn_file.odn09, tabIndex=16, title=%"odn09", not null, required, scroll;
+Edit idx=formonly.idx type SMALLINT, tabIndex=21, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(odm_file.odm01,formonly.odl02,formonly.ima04,odm_file.odm02,odm_file.odm03,odm_file.odm04,odm_file.odm05,odm_file.odm06,odm_file.odm07,odm_file.odm08,odm_file.odmacti,odm_file.odmconf,formonly.idx,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_odn(odn_file.odn03,odn_file.odn04,odn_file.odn05,formonly.ima02,formonly.ima31,odn_file.odn06,odn_file.odn07,odn_file.odn08,odn_file.odn09)
+END -- INSTRUCTIONS
+

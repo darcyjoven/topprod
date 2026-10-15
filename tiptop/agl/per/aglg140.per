@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglg140.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr140")
+VBox VBox1
+Folder pc501
+Page page01(text="Main")
+Group group01(text="INPUT")
+Grid gr2655
+{
+ <G group02                                                                                                   >
+  [rtype                                                       ]
+ <                                                                                                            >
+ <G group03                                                                                                   >
+   Book No.            [b                   ]
+   Report Structure No.[a                   ]
+ <                                                                                                            >
+ <G group04                                                                                                   >
+                           [dummy01]              [dummy02]            [dummy03]            [dummy04]
+  Enter Name          [title1              ][title2              ][title3              ][title4              ]
+  Enter Year          [yy1                 ][yy2                 ][yy3                 ][yy4                 ]
+  Initial Period      [bm1                 ][bm2                 ][bm3                 ][bm4                 ]
+  Ending Period       [em1                 ][em2                 ][em3                 ][em4                 ]
+ <                                                                                                            >
+
+}
+END -- gr2655
+END -- group01
+END -- page01
+Page info(text="Info")
+Grid gr2656
+{
+ <G group05                                                                                                   >
+  Decimal Digits      [e                   ]
+  Print Minimum Level#[f                   ]
+ <                                                                                                            >
+ <G group06                                                                                                   >
+  [d                             ]
+ <                                                                                                            >
+ <G group07                                                                                                   >
+ [acc_code                ]
+ [c                             ]
+ [h                             ]
+ <                                                                                                            >
+ <G group08                                                                                                   >
+  [o                                       ]
+  G/L Curr.           [r                   ]
+  Convert Curr.       [p                   ]
+  * Ex.Rate           [q                   ]
+ <                                                                                                            >
+
+}
+END -- gr2656
+END -- info
+END -- pc501
+Grid gr2657
+{
+
+[more                                                        ]
+
+}
+END -- gr2657
+END -- VBox1
+END -- aglr140
+
+ATTRIBUTES
+Group group02:group02, text="Report Type";
+RadioGroup rtype=formonly.rtype type CHAR, tabIndex=1, items=(("1", "Balance Sheet"),("2", "Income statement"));
+Group group03:group03;
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Group group04:group04;
+Label dummy01:dummy01, text="1st Period";
+Label dummy02:dummy02, text="2nd Period";
+Label dummy03:dummy03, text="3rd Period";
+Label dummy04:dummy04, text="4th Period";
+Edit title1=formonly.title1 type CHAR, tabIndex=4;
+Edit title2=formonly.title2 type CHAR, tabIndex=5;
+Edit title3=formonly.title3 type CHAR, tabIndex=6;
+Edit title4=formonly.title4 type CHAR, tabIndex=7;
+Edit yy1=formonly.yy1 type SMALLINT, tabIndex=8;
+Edit yy2=formonly.yy2 type SMALLINT, tabIndex=9;
+Edit yy3=formonly.yy3 type SMALLINT, tabIndex=10;
+Edit yy4=formonly.yy4 type SMALLINT, tabIndex=11;
+Edit bm1=formonly.bm1 type SMALLINT, tabIndex=12;
+Edit bm2=formonly.bm2 type SMALLINT, tabIndex=13;
+Edit bm3=formonly.bm3 type SMALLINT, tabIndex=14;
+Edit bm4=formonly.bm4 type SMALLINT, tabIndex=15;
+Edit em1=formonly.em1 type SMALLINT, tabIndex=16;
+Edit em2=formonly.em2 type SMALLINT, tabIndex=17;
+Edit em3=formonly.em3 type SMALLINT, tabIndex=18;
+Edit em4=formonly.em4 type SMALLINT, tabIndex=19;
+Group group05:group05;
+Edit e=formonly.e type CHAR, tabIndex=20;
+Edit f=formonly.f type SMALLINT, tabIndex=21;
+Group group06:group06, text="amount unit";
+RadioGroup d=formonly.d type CHAR, tabIndex=22, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+Group group07:group07;
+CheckBox acc_code=formonly.acc_code type CHAR, tabIndex=30, text=%"Print Account Code", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type CHAR, tabIndex=23, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=24, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group08:group08, text="Convert Curr.";
+CheckBox o=formonly.o type CHAR, tabIndex=25, text="Convert Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=26, noEntry;
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=27, image="zoom";
+Edit q=formonly.q type DECIMAL, tabIndex=28;
+CheckBox more=formonly.more type CHAR, tabIndex=29, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rtype,formonly.b,formonly.a,formonly.title1,formonly.title2,formonly.title3,formonly.title4,formonly.yy1,formonly.yy2,formonly.yy3,formonly.yy4,formonly.bm1,formonly.bm2,formonly.bm3,formonly.bm4,formonly.em1,formonly.em2,formonly.em3,formonly.em4,formonly.e,formonly.f,formonly.d,formonly.c,formonly.h,formonly.o,formonly.r,formonly.p,formonly.q,formonly.more,formonly.acc_code)
+END -- INSTRUCTIONS
+

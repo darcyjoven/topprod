@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afaq1021.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afaq1021")
+Folder Folder1
+Page page01(text="Main")
+VBox VBox1
+Group Group01
+Grid Grid1
+{
+  Depreciation Method [fap30     ]
+  Apportionment Metd  [fap15     ][desc                ]
+  Apportioning Dept.  [fap16     ]
+  Reamort. after Depr?[fap38     ]
+  Re-Amortizing Amt.  [fap39               ]
+  Re-amortize Life    [fap40     ]
+  Keeping Department  [fap17     ][gem02     ]
+  Employee            [fap18     ][gen02     ]
+  Location            [fap19     ]
+ <G group1                                  ><G group2                                  >
+  Default Res. Value  [fap32               ]  Latest Trans. date  [fap41               ]
+  Deprec.-Tax Cost    [fap33               ]  Adjustment Cost     [fap34               ]
+  Charge off Cost     [fap36               ]  Accumulated Depre.  [fap35               ]
+  Char.Off Accu. Depr.[fap37               ]  Undepreciated Amt.  [fap341              ]
+  Asset Account       [fap12               ]  Accu. Depr. Acct.   [fap13               ]
+  Depreciation Acct.  [fap14               ]  Quantity            [fap20               ]
+  Qty Outside         [fap201              ]  Charge off Qty      [fap21               ]
+ <                                          ><                                          >
+
+}
+END -- Grid1
+END -- Group01
+END -- VBox1
+END -- page01
+END -- Folder1
+END -- afaq1021
+
+TABLES
+fap_file
+ATTRIBUTES
+Edit fap30=fap_file.fap30, tabIndex=1, noEntry;
+Edit fap15=fap_file.fap15, tabIndex=2, noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=3;
+Edit fap16=fap_file.fap16, tabIndex=4, noEntry;
+Edit fap38=fap_file.fap38, tabIndex=5, noEntry;
+Edit fap39=fap_file.fap39, tabIndex=6, noEntry;
+Edit fap40=fap_file.fap40, tabIndex=7, noEntry;
+Edit fap17=fap_file.fap17, tabIndex=8, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=9, noEntry;
+Edit fap18=fap_file.fap18, tabIndex=10, noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=11, noEntry;
+Edit fap19=fap_file.fap19, tabIndex=12, noEntry;
+Group group1:group1;
+Edit fap32=fap_file.fap32, tabIndex=13, noEntry;
+Edit fap33=fap_file.fap33, tabIndex=14, noEntry;
+Edit fap36=fap_file.fap36, tabIndex=15, noEntry;
+Edit fap37=fap_file.fap37, tabIndex=16, noEntry;
+Edit fap12=fap_file.fap12, tabIndex=17, noEntry;
+Edit fap14=fap_file.fap14, tabIndex=18, noEntry;
+Edit fap201=fap_file.fap201, tabIndex=19, noEntry;
+Group group2:group2;
+DateEdit fap41=fap_file.fap41, tabIndex=20, noEntry;
+Edit fap34=fap_file.fap34, tabIndex=21, noEntry;
+Edit fap35=fap_file.fap35, tabIndex=22, noEntry;
+Edit fap341=fap_file.fap341, tabIndex=23, noEntry;
+Edit fap13=fap_file.fap13, tabIndex=24, noEntry;
+Edit fap20=fap_file.fap20, tabIndex=25, noEntry;
+Edit fap21=fap_file.fap21, tabIndex=26, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fap_file.fap30,fap_file.fap15,formonly.desc,fap_file.fap16,fap_file.fap38,fap_file.fap39,fap_file.fap40,fap_file.fap17,formonly.gem02,fap_file.fap18,formonly.gen02,fap_file.fap19,fap_file.fap32,fap_file.fap33,fap_file.fap36,fap_file.fap37,fap_file.fap12,fap_file.fap14,fap_file.fap201,fap_file.fap41,fap_file.fap34,fap_file.fap35,fap_file.fap341,fap_file.fap13,fap_file.fap20,fap_file.fap21)
+END -- INSTRUCTIONS
+

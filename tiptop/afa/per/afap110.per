@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afap110")
+VBox VBox1
+Folder pc349
+Page page01(text="Main")
+Table s_fak
+{
+[a     |fak00                |fak02          |fak022    |fak06                    |fak17 |splt    |comb   |fak90          |fak901    ]
+[a     |fak00                |fak02          |fak022    |fak06                    |fak17 |splt    |comb   |fak90          |fak901    ]
+[a     |fak00                |fak02          |fak022    |fak06                    |fak17 |splt    |comb   |fak90          |fak901    ]
+[a     |fak00                |fak02          |fak022    |fak06                    |fak17 |splt    |comb   |fak90          |fak901    ]
+[a     |fak00                |fak02          |fak022    |fak06                    |fak17 |splt    |comb   |fak90          |fak901    ]
+[a     |fak00                |fak02          |fak022    |fak06                    |fak17 |splt    |comb   |fak90          |fak901    ]
+[a     |fak00                |fak02          |fak022    |fak06                    |fak17 |splt    |comb   |fak90          |fak901    ]
+[a     |fak00                |fak02          |fak022    |fak06                    |fak17 |splt    |comb   |fak90          |fak901    ]
+[a     |fak00                |fak02          |fak022    |fak06                    |fak17 |splt    |comb   |fak90          |fak901    ]
+[a     |fak00                |fak02          |fak022    |fak06                    |fak17 |splt    |comb   |fak90          |fak901    ]
+
+}
+END -- s_fak
+END -- page01
+END -- pc349
+Grid gr1900
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1900
+END -- VBox1
+END -- afap110
+
+TABLES
+fak_file
+ATTRIBUTES
+CheckBox a=formonly.a type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Enter Y to Modify";
+Edit fak00=fak_file.fak00, tabIndex=2, title="Generating Lot No.", noEntry;
+Edit fak02=fak_file.fak02, tabIndex=3, title="Property No.", noEntry;
+Edit fak022=fak_file.fak022, tabIndex=4, title="Add No.", noEntry;
+Edit fak06=formonly.fak06 type CHAR, tabIndex=5, title="Chinese", noEntry;
+Edit fak17=fak_file.fak17, tabIndex=6, title="Qty", noEntry;
+CheckBox splt=formonly.splt type CHAR, tabIndex=7, title="Split", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox comb=formonly.comb type CHAR, tabIndex=8, title="Comb", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit fak90=formonly.fak90 type like fak_file.fak90, action=controlp, tabIndex=11, title=%"ButtonEdit1", image="zoom";
+Edit fak901=fak_file.fak901, tabIndex=9, title="Add No.", comment="If to combine multi-asset sheets as one record, Enter Combined Property Additional #";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fak(formonly.a,fak_file.fak00,fak_file.fak02,fak_file.fak022,formonly.fak06,fak_file.fak17,formonly.splt,formonly.comb,fak_file.fak901,formonly.fak90)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

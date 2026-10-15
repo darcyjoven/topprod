@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi120")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+Grid gr607
+{
+ Version [bgp01     ]    Year    [bgp02     ]
+ Month   [bgp03     ]    Total $ [tot                 ]
+}
+END -- gr607
+END -- page01
+END -- folder01
+Table s_bgp
+{
+[bgp04  |ima02   |ima021          |bgp05                |bgp06   |bgp07               |bgp11    |ima25    |bgp11_fac   |bgp08    |bgp09          ]
+[bgp04  |ima02   |ima021          |bgp05                |bgp06   |bgp07               |bgp11    |ima25    |bgp11_fac   |bgp08    |bgp09          ]
+[bgp04  |ima02   |ima021          |bgp05                |bgp06   |bgp07               |bgp11    |ima25    |bgp11_fac   |bgp08    |bgp09          ]
+[bgp04  |ima02   |ima021          |bgp05                |bgp06   |bgp07               |bgp11    |ima25    |bgp11_fac   |bgp08    |bgp09          ]
+[bgp04  |ima02   |ima021          |bgp05                |bgp06   |bgp07               |bgp11    |ima25    |bgp11_fac   |bgp08    |bgp09          ]
+[bgp04  |ima02   |ima021          |bgp05                |bgp06   |bgp07               |bgp11    |ima25    |bgp11_fac   |bgp08    |bgp09          ]
+[bgp04  |ima02   |ima021          |bgp05                |bgp06   |bgp07               |bgp11    |ima25    |bgp11_fac   |bgp08    |bgp09          ]
+[bgp04  |ima02   |ima021          |bgp05                |bgp06   |bgp07               |bgp11    |ima25    |bgp11_fac   |bgp08    |bgp09          ]
+[bgp04  |ima02   |ima021          |bgp05                |bgp06   |bgp07               |bgp11    |ima25    |bgp11_fac   |bgp08    |bgp09          ]
+[bgp04  |ima02   |ima021          |bgp05                |bgp06   |bgp07               |bgp11    |ima25    |bgp11_fac   |bgp08    |bgp09          ]
+
+}
+END -- s_bgp
+Grid gr608
+{
+ ---------- Rows [cnt   ]/[cn2   ] ----------
+
+}
+END -- gr608
+END -- vb1
+END -- abgi120
+
+TABLES
+bgp_file
+ATTRIBUTES
+Edit bgp01=bgp_file.bgp01, tabIndex=1;
+Edit bgp02=bgp_file.bgp02, tabIndex=2, not null, required;
+Edit bgp03=bgp_file.bgp03, tabIndex=3, not null, required;
+Edit tot=formonly.tot type DECIMAL, tabIndex=4;
+ButtonEdit bgp04=bgp_file.bgp04, action=controlp, tabIndex=5, title="Item#", image="zoom", comment="<^P>Qry Item No.";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=6, title="P/N S", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=7, title="Specification", noEntry;
+Edit bgp05=bgp_file.bgp05, tabIndex=8, title="Unit Price";
+Edit bgp06=bgp_file.bgp06, tabIndex=9, title="Qty";
+Edit bgp07=bgp_file.bgp07, tabIndex=10, title="Amt", noEntry;
+ButtonEdit bgp11=bgp_file.bgp11, action=controlp, tabIndex=11, title="Pur Unit", not null, required, image="zoom", comment="<^P> Qry Unit";
+Edit ima25=formonly.ima25 type VARCHAR, tabIndex=12, title="Inv Unit", noEntry;
+Edit bgp11_fac=bgp_file.bgp11_fac, tabIndex=13, title="Con.Rt", noEntry;
+DateEdit bgp08=bgp_file.bgp08, tabIndex=14, title="A/P Date";
+DateEdit bgp09=bgp_file.bgp09, tabIndex=15, title="Note Due Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgp(bgp_file.bgp04,formonly.ima02,formonly.ima021,bgp_file.bgp05,bgp_file.bgp06,bgp_file.bgp07,bgp_file.bgp11,formonly.ima25,bgp_file.bgp11_fac,bgp_file.bgp08,bgp_file.bgp09)
+SCREEN RECORD Undefined(bgp_file.bgp01,bgp_file.bgp02,bgp_file.bgp03,formonly.tot,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

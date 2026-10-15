@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page main(text=%"main")
+Grid Grid1
+{
+
+ Book No.             [b                  ]            Enter Year             [yy        ]                        [d         ]           [c                             ]
+ Report Structure No. [a                  ]            Period (Initial-End)   [bm        |la|em        ]          [          ]           [s                        ]
+ Group No.            [abe01              ]            Print Minimum Level NO.[f         ]                        [          ]           [e                        ]
+
+}
+END -- Grid1
+END -- main
+END -- Folder1
+Table g
+{
+[maj20       |maj20e      |dept1   |dept2   |dept3   |dept4   |dept5   |dept6   |dept7   |dept8   |dept9   |dept10  |dept11  |dept12  |dept13  |dept14  |dept15  |dept16  |dept17  |dept18  |dept19  |dept20  |dept21  |dept22  |dept23  |dept24  |dept25  |dept26  |dept27  |dept28  |dept29  |dept30  |dept31  |dept32  |dept33  |dept34  |dept35  |dept36  |dept37  |dept38  |dept39  |dept41  |dept42  |dept40  |dept43  |dept44  |dept45  |dept46  |dept47  |dept48  |dept49  |dept50  |sum     ]
+[maj20       |maj20e      |dept1   |dept2   |dept3   |dept4   |dept5   |dept6   |dept7   |dept8   |dept9   |dept10  |dept11  |dept12  |dept13  |dept14  |dept15  |dept16  |dept17  |dept18  |dept19  |dept20  |dept21  |dept22  |dept23  |dept24  |dept25  |dept26  |dept27  |dept28  |dept29  |dept30  |dept31  |dept32  |dept33  |dept34  |dept35  |dept36  |dept37  |dept38  |dept39  |dept41  |dept42  |dept40  |dept43  |dept44  |dept45  |dept46  |dept47  |dept48  |dept49  |dept50  |sum     ]
+[maj20       |maj20e      |dept1   |dept2   |dept3   |dept4   |dept5   |dept6   |dept7   |dept8   |dept9   |dept10  |dept11  |dept12  |dept13  |dept14  |dept15  |dept16  |dept17  |dept18  |dept19  |dept20  |dept21  |dept22  |dept23  |dept24  |dept25  |dept26  |dept27  |dept28  |dept29  |dept30  |dept31  |dept32  |dept33  |dept34  |dept35  |dept36  |dept37  |dept38  |dept39  |dept41  |dept42  |dept40  |dept43  |dept44  |dept45  |dept46  |dept47  |dept48  |dept49  |dept50  |sum     ]
+[maj20       |maj20e      |dept1   |dept2   |dept3   |dept4   |dept5   |dept6   |dept7   |dept8   |dept9   |dept10  |dept11  |dept12  |dept13  |dept14  |dept15  |dept16  |dept17  |dept18  |dept19  |dept20  |dept21  |dept22  |dept23  |dept24  |dept25  |dept26  |dept27  |dept28  |dept29  |dept30  |dept31  |dept32  |dept33  |dept34  |dept35  |dept36  |dept37  |dept38  |dept39  |dept41  |dept42  |dept40  |dept43  |dept44  |dept45  |dept46  |dept47  |dept48  |dept49  |dept50  |sum     ]
+[maj20       |maj20e      |dept1   |dept2   |dept3   |dept4   |dept5   |dept6   |dept7   |dept8   |dept9   |dept10  |dept11  |dept12  |dept13  |dept14  |dept15  |dept16  |dept17  |dept18  |dept19  |dept20  |dept21  |dept22  |dept23  |dept24  |dept25  |dept26  |dept27  |dept28  |dept29  |dept30  |dept31  |dept32  |dept33  |dept34  |dept35  |dept36  |dept37  |dept38  |dept39  |dept41  |dept42  |dept40  |dept43  |dept44  |dept45  |dept46  |dept47  |dept48  |dept49  |dept50  |sum     ]
+}
+END -- g
+END -- VBox1
+END -- Form
+
+TABLES
+maj_file
+ATTRIBUTES
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit yy=formonly.yy type SMALLINT, tabIndex=4;
+RadioGroup d=formonly.d type CHAR, tabIndex=8, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+CheckBox c=formonly.c type CHAR, tabIndex=9, text=%"Print Balance For Zero", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit a=formonly.a type VARCHAR, tag="", action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit bm=formonly.bm type SMALLINT, tabIndex=5;
+Label la:Label7, text=%"-";
+Edit em=formonly.em type SMALLINT, tabIndex=6;
+CheckBox s=formonly.s type CHAR, tabIndex=10, text=%"Print Sub Dept", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit abe01=formonly.abe01 type SMALLINT, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit f=formonly.f type SMALLINT, tabIndex=7;
+CheckBox e=formonly.e type CHAR, tabIndex=11, text=%"Print Other Namt", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit maj20=maj_file.maj20, tabIndex=12, title=%"maj20";
+Edit maj20e=maj_file.maj20e, tabIndex=13, title=%"maj20e";
+Edit dept1=formonly.dept1 type SMALLINT, tabIndex=14, title=%"dept1";
+Edit dept2=formonly.dept2 type SMALLINT, tabIndex=15, title=%"dept2";
+Edit dept3=formonly.dept3 type SMALLINT, tabIndex=16, title=%"dept3";
+Edit dept4=formonly.dept4 type SMALLINT, tabIndex=17, title=%"dept4";
+Edit dept5=formonly.dept5 type SMALLINT, tabIndex=18, title=%"dept5";
+Edit dept6=formonly.dept6 type SMALLINT, tabIndex=19, title=%"dept6";
+Edit dept7=formonly.dept7 type SMALLINT, tabIndex=20, title=%"dept7";
+Edit dept8=formonly.dept8 type SMALLINT, tabIndex=21, title=%"dept8";
+Edit dept9=formonly.dept9 type SMALLINT, tabIndex=22, title=%"dept9";
+Edit dept10=formonly.dept10 type SMALLINT, tabIndex=23, title=%"dept10";
+Edit dept11=formonly.dept11 type SMALLINT, tabIndex=24, title=%"dept11";
+Edit dept12=formonly.dept12 type SMALLINT, tabIndex=25, title=%"dept12";
+Edit dept13=formonly.dept13 type SMALLINT, tabIndex=26, title=%"dept13";
+Edit dept14=formonly.dept14 type SMALLINT, tabIndex=27, title=%"dept14";
+Edit dept15=formonly.dept15 type SMALLINT, tabIndex=28, title=%"dept15";
+Edit dept16=formonly.dept16 type SMALLINT, tabIndex=29, title=%"dept16";
+Edit dept17=formonly.dept17 type SMALLINT, tabIndex=30, title=%"dept17";
+Edit dept18=formonly.dept18 type SMALLINT, tabIndex=31, title=%"dept18";
+Edit dept19=formonly.dept19 type SMALLINT, tabIndex=32, title=%"dept19";
+Edit dept20=formonly.dept20 type SMALLINT, tabIndex=33, title=%"dept20";
+Edit dept21=formonly.dept21 type SMALLINT, tabIndex=34, title=%"dept21";
+Edit dept22=formonly.dept22 type SMALLINT, tabIndex=35, title=%"dept22";
+Edit dept23=formonly.dept23 type SMALLINT, tabIndex=36, title=%"dept23";
+Edit dept24=formonly.dept24 type SMALLINT, tabIndex=37, title=%"dept24";
+Edit dept25=formonly.dept25 type SMALLINT, tabIndex=38, title=%"dept25";
+Edit dept26=formonly.dept26 type SMALLINT, tabIndex=39, title=%"dept26";
+Edit dept27=formonly.dept27 type SMALLINT, tabIndex=40, title=%"dept27";
+Edit dept28=formonly.dept28 type SMALLINT, tabIndex=41, title=%"dept28";
+Edit dept29=formonly.dept29 type SMALLINT, tabIndex=42, title=%"dept29";
+Edit dept30=formonly.dept30 type SMALLINT, tabIndex=43, title=%"dept30";
+Edit dept31=formonly.dept31 type SMALLINT, tabIndex=44, title=%"dept31";
+Edit dept32=formonly.dept32 type SMALLINT, tabIndex=45, title=%"dept32";
+Edit dept33=formonly.dept33 type SMALLINT, tabIndex=46, title=%"dept33";
+Edit dept34=formonly.dept34 type SMALLINT, tabIndex=47, title=%"dept34";
+Edit dept35=formonly.dept35 type SMALLINT, tabIndex=48, title=%"dept35";
+Edit dept36=formonly.dept36 type SMALLINT, tabIndex=49, title=%"dept36";
+Edit dept37=formonly.dept37 type SMALLINT, tabIndex=50, title=%"dept37";
+Edit dept38=formonly.dept38 type SMALLINT, tabIndex=51, title=%"dept38";
+Edit dept39=formonly.dept39 type SMALLINT, tabIndex=52, title=%"dept39";
+Edit dept41=formonly.dept41 type VARCHAR, tabIndex=53, title=%"dept41";
+Edit dept42=formonly.dept42 type VARCHAR, tabIndex=54, title=%"dept42";
+Edit dept40=formonly.dept40 type SMALLINT, tabIndex=55, title=%"dept40";
+Edit dept43=formonly.dept43 type SMALLINT, tabIndex=56, title=%"dept43";
+Edit dept44=formonly.dept44 type SMALLINT, tabIndex=57, title=%"dept44";
+Edit dept45=formonly.dept45 type SMALLINT, tabIndex=58, title=%"dept45";
+Edit dept46=formonly.dept46 type SMALLINT, tabIndex=59, title=%"dept46";
+Edit dept47=formonly.dept47 type SMALLINT, tabIndex=60, title=%"dept47";
+Edit dept48=formonly.dept48 type SMALLINT, tabIndex=61, title=%"dept48";
+Edit dept49=formonly.dept49 type SMALLINT, tabIndex=62, title=%"dept49";
+Edit dept50=formonly.dept50 type SMALLINT, tabIndex=63, title=%"dept50";
+Edit sum=formonly.sum type SMALLINT, tabIndex=64, title=%"sum";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.b,formonly.a,formonly.abe01,formonly.yy,formonly.bm,formonly.f,formonly.em,formonly.d,formonly.c,formonly.s,formonly.e)
+SCREEN RECORD s_maj(maj_file.maj20,maj_file.maj20e,formonly.dept1,formonly.dept2,formonly.dept3,formonly.dept4,formonly.dept5,formonly.dept6,formonly.dept7,formonly.dept8,formonly.dept9,formonly.dept10,formonly.dept11,formonly.dept12,formonly.dept13,formonly.dept14,formonly.dept15,formonly.dept16,formonly.dept17,formonly.dept18,formonly.dept19,formonly.dept20,formonly.dept21,formonly.dept22,formonly.dept23,formonly.dept24,formonly.dept25,formonly.dept26,formonly.dept27,formonly.dept28,formonly.dept29,formonly.dept30,formonly.dept31,formonly.dept32,formonly.dept33,formonly.dept34,formonly.dept35,formonly.dept36,formonly.dept37,formonly.dept38,formonly.dept39,formonly.dept40,formonly.dept41,formonly.dept42,formonly.dept43,formonly.dept44,formonly.dept45,formonly.dept46,formonly.dept47,formonly.dept48,formonly.dept49,formonly.dept50,formonly.sum)
+END -- INSTRUCTIONS
+

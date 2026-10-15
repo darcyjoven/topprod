@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft620y.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft620y")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+HBox HBox1
+Grid gr777
+{
+ Item No.            [partno                        ]
+ Trans-out No.       [seq1      ]
+ Store-in Qty        [tot_qty   ]
+}
+END -- gr777
+Grid gr778
+{
+ Warehouse           [ware      ]
+ Location            [loc       ]
+ Lot No.             [lot                           ]
+}
+END -- gr778
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_sfb
+{
+[bmb03               |sfb01           |seq  |qty          |y                      |in_qty       |sfb98     ]
+[bmb03               |sfb01           |seq  |qty          |y                      |in_qty       |sfb98     ]
+[bmb03               |sfb01           |seq  |qty          |y                      |in_qty       |sfb98     ]
+[bmb03               |sfb01           |seq  |qty          |y                      |in_qty       |sfb98     ]
+[bmb03               |sfb01           |seq  |qty          |y                      |in_qty       |sfb98     ]
+[bmb03               |sfb01           |seq  |qty          |y                      |in_qty       |sfb98     ]
+[bmb03               |sfb01           |seq  |qty          |y                      |in_qty       |sfb98     ]
+[bmb03               |sfb01           |seq  |qty          |y                      |in_qty       |sfb98     ]
+[bmb03               |sfb01           |seq  |qty          |y                      |in_qty       |sfb98     ]
+[bmb03               |sfb01           |seq  |qty          |y                      |in_qty       |sfb98     ]
+
+}
+END -- s_sfb
+Grid gr779
+{
+                            Total Incompl.Qty [qty_t               ]               Total Store-in Qty [in_qty_t            ]
+
+}
+END -- gr779
+END -- VBox1
+END -- asft620y
+
+TABLES
+sfb_file
+ATTRIBUTES
+ButtonEdit partno=formonly.partno type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Query. Can use \'*\'    .";
+Edit seq1=formonly.seq1 type CHAR, tabIndex=2;
+Edit tot_qty=formonly.tot_qty type CHAR, tabIndex=3;
+Edit ware=formonly.ware type CHAR, tabIndex=4;
+Edit loc=formonly.loc type CHAR, tabIndex=5;
+Edit lot=formonly.lot type CHAR, tabIndex=6;
+Edit bmb03=formonly.bmb03 type CHAR, tabIndex=7, title="Item No.", noEntry;
+Edit sfb01=sfb_file.sfb01, tabIndex=8, title="W/O No.", noEntry;
+Edit seq=formonly.seq type CHAR, tabIndex=9, title="S/N", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=10, title="Incompl.Qty", noEntry;
+CheckBox y=formonly.y type CHAR, tabIndex=11, title="W/O to Store-in Blank", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit in_qty=formonly.in_qty type CHAR, tabIndex=12, title="Store-in Qty";
+Edit sfb98=sfb_file.sfb98, tabIndex=15, title=%"sfb98";
+Edit qty_t=formonly.qty_t type CHAR, tabIndex=13;
+Edit in_qty_t=formonly.in_qty_t type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(formonly.bmb03,sfb_file.sfb01,formonly.seq,formonly.qty,formonly.y,formonly.in_qty,sfb_file.sfb98)
+SCREEN RECORD Undefined(formonly.partno,formonly.seq1,formonly.tot_qty,formonly.ware,formonly.loc,formonly.lot,formonly.qty_t,formonly.in_qty_t)
+END -- INSTRUCTIONS
+

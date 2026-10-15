@@ -1,0 +1,153 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asrq130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asrq130")
+VBox vb29
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr979
+{
+ Forecasting Item    [opc01                         ]
+ Item Name           [ima02                         ]
+ Specification       [ima021                        ]
+ Customer #          [opc02       ]
+ Customer Name       [occ02       ]
+ Plan.Date           [opc03       ]
+}
+END -- gr979
+Grid gr980
+{
+ Salesman            [opc04       ]
+ Name                [gen02       ]
+ Department No.      [opc05       ]
+ Name                [gem02       ]
+ Listing Method      [opc06     ]
+ Time Bucket         [opc10     ]
+}
+END -- gr980
+Grid gr981
+{
+ Generat Periods     [opc07     ]
+ Currency            [opc08     ]
+ Exchg Rt            [opc09               ]
+ [opc11       ]
+ [opc12       ]
+
+}
+END -- gr981
+END -- hb2
+END -- page01
+END -- folder01
+Folder pc220
+Page page02(action=page02, text="Detail")
+VBox vb30
+Group gb796
+Table s_opd
+{
+[opd05      |opd06          |opd07         |opd08          |qty1           |qty2           |qty3      ]
+[opd05      |opd06          |opd07         |opd08          |qty1           |qty2           |qty3      ]
+[opd05      |opd06          |opd07         |opd08          |qty1           |qty2           |qty3      ]
+[opd05      |opd06          |opd07         |opd08          |qty1           |qty2           |qty3      ]
+[opd05      |opd06          |opd07         |opd08          |qty1           |qty2           |qty3      ]
+[opd05      |opd06          |opd07         |opd08          |qty1           |qty2           |qty3      ]
+[opd05      |opd06          |opd07         |opd08          |qty1           |qty2           |qty3      ]
+[opd05      |opd06          |opd07         |opd08          |qty1           |qty2           |qty3      ]
+[opd05      |opd06          |opd07         |opd08          |qty1           |qty2           |qty3      ]
+[opd05      |opd06          |opd07         |opd08          |qty1           |qty2           |qty3      ]
+
+}
+END -- s_opd
+END -- gb796
+Group gb797
+Grid gr982
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr982
+END -- gb797
+END -- vb30
+END -- page02
+Page page03(action=page03, text="Chart")
+VBox vb31
+Group gb798
+Grid gr983
+{
+ [prev_month]     [yy  ] / [mm]     [next_month]     [reset_month]
+
+}
+END -- gr983
+END -- gb798
+Group gb799
+Grid gr984
+{
+ [c01                                                                                                                                       ]
+ [                                                                                                                                          ]
+ [                                                                                                                                          ]
+ [                                                                                                                                          ]
+ [                                                                                                                                          ]
+ [                                                                                                                                          ]
+ [                                                                                                                                          ]
+ [                                                                                                                                          ]
+ [                                                                                                                                          ]
+ [                                                                                                                                          ]
+ [                                                                                                                                          ]
+ [                                                                                                                                          ]
+
+}
+END -- gr984
+END -- gb799
+END -- vb31
+END -- page03
+END -- pc220
+END -- vb29
+END -- asrq130
+
+TABLES
+opc_file,
+opd_file
+ATTRIBUTES
+ButtonEdit opc01=opc_file.opc01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=3, noEntry;
+ButtonEdit opc02=opc_file.opc02, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Details";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=5, noEntry;
+DateEdit opc03=opc_file.opc03, tabIndex=6, not null, required;
+ButtonEdit opc04=opc_file.opc04, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=8, noEntry;
+ButtonEdit opc05=opc_file.opc05, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=10, noEntry;
+ComboBox opc06=opc_file.opc06, tabIndex=11, not null, required, queryEditable, items=(("1", "By Time Bucket"),("2", "Day"),("3", "Week"),("4", "10-Day"),("5", "Month"));
+ButtonEdit opc10=opc_file.opc10, action=controlp, tabIndex=12, image="zoom", comment="<^P>Time Bucket # QBE";
+Edit opc07=opc_file.opc07, tabIndex=13, not null, required;
+ButtonEdit opc08=opc_file.opc08, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit opc09=opc_file.opc09, action=controlp, tabIndex=15, not null, required, image="zoom";
+CheckBox opc11=opc_file.opc11, tabIndex=16, text="Sales", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox opc12=opc_file.opc12, tabIndex=17, text="Production Management", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit opd05=opd_file.opd05, tabIndex=18, title="Serial No.", not null, required;
+DateEdit opd06=opd_file.opd06, tabIndex=19, title="Initial Date", not null, required;
+DateEdit opd07=opd_file.opd07, tabIndex=20, title="Ending Date", not null, required;
+Edit opd08=opd_file.opd08, tabIndex=21, title="Planning Qty", not null, required;
+Edit qty1=formonly.qty1 type CHAR, tabIndex=22, title="Product Qty", noEntry;
+Edit qty2=formonly.qty2 type CHAR, tabIndex=23, title="Diff Qty", noEntry;
+Edit qty3=formonly.qty3 type CHAR, tabIndex=24, title="Diff Rate", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=26, noEntry;
+Button prev_month:prev_month, text="-1 Month", image="prev";
+Edit yy=formonly.yy type SMALLINT, tabIndex=27;
+Edit mm=formonly.mm type SMALLINT, tabIndex=28;
+Button next_month:next_month, text="+1 Month", image="next";
+Button reset_month:reset_month, text="Reset Month";
+Canvas c01:c01;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_opd(opd_file.opd05,opd_file.opd06,opd_file.opd07,opd_file.opd08,formonly.qty1,formonly.qty2,formonly.qty3)
+SCREEN RECORD Undefined(opc_file.opc01,formonly.ima02,formonly.ima021,opc_file.opc02,formonly.occ02,opc_file.opc03,opc_file.opc04,formonly.gen02,opc_file.opc05,formonly.gem02,opc_file.opc06,opc_file.opc10,opc_file.opc07,opc_file.opc08,opc_file.opc09,opc_file.opc11,opc_file.opc12,formonly.cnt,formonly.cn2,formonly.yy,formonly.mm)
+END -- INSTRUCTIONS
+

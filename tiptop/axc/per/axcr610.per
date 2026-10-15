@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr610")
+VBox vb3
+Grid gr11
+{
+ <G group01                                                                             >
+  Item No.            [cma01               ]  Category            [cma03               ]
+  Costing Group       [ima12               ]
+ <                                                                                      >
+}
+END -- gr11
+Group g01(text="INPU")
+Grid gr12
+{
+ <G group02                                                                           >
+  [dummy01                     ]
+   Idle               [i00  ]      Days - To     [i01  ] Days Idle Ratio    [i02  ] %
+                      [i10  ]           -        [i11  ]                    [i12  ] %
+                      [i20  ]           -        [i21  ]                    [i22  ] %
+                      [i30  ]           -        [i31  ]                    [i32  ] %
+                      [i40  ]           -        [i41  ]                    [i42  ] %
+ <                                                                                    >
+ <G group03                         >  <G group04                                     >
+  Mat.A Idle %      [k1   ] %           Year/Month            [yy  ]/[mm  ]
+      B Idle %      [k2   ] %
+      C Idle %      [k3   ] %           Calculating Base Date [cma02       ]
+ <                                  >  <                                              >
+ <G group05                         >  <G group06                                     >
+ [c                              ]     [d                          ]
+  Method  [ctype                 ]
+ <                                  >  <                                              >
+
+}
+END -- gr12
+END -- g01
+Grid gr13
+{
+[more                                                                 ]
+
+}
+END -- gr13
+END -- vb3
+END -- axcr610
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit cma01=formonly.cma01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<P>";
+Edit cma03=formonly.cma03 type CHAR, tabIndex=2;
+ButtonEdit ima12=formonly.ima12 type CHAR, action=controlp, tabIndex=3, image="zoom", comment="<P>";
+Group group02:group02;
+Label dummy01:dummy01, text="Idle Days Printing Option :";
+Edit i00=formonly.i00 type CHAR, tabIndex=4;
+Edit i01=formonly.i01 type CHAR, tabIndex=5;
+Edit i02=formonly.i02 type CHAR, tabIndex=6;
+Edit i10=formonly.i10 type CHAR, tabIndex=7;
+Edit i11=formonly.i11 type CHAR, tabIndex=8;
+Edit i12=formonly.i12 type CHAR, tabIndex=9;
+Edit i20=formonly.i20 type CHAR, tabIndex=10;
+Edit i21=formonly.i21 type CHAR, tabIndex=11;
+Edit i22=formonly.i22 type CHAR, tabIndex=12;
+Edit i30=formonly.i30 type CHAR, tabIndex=13;
+Edit i31=formonly.i31 type CHAR, tabIndex=14;
+Edit i32=formonly.i32 type CHAR, tabIndex=15;
+Edit i40=formonly.i40 type CHAR, tabIndex=16;
+Edit i41=formonly.i41 type CHAR, tabIndex=17;
+Edit i42=formonly.i42 type CHAR, tabIndex=18;
+Group group03:group03;
+Edit k1=formonly.k1 type CHAR, tabIndex=19;
+Edit k2=formonly.k2 type CHAR, tabIndex=20;
+Edit k3=formonly.k3 type CHAR, tabIndex=21;
+Group group04:group04;
+Edit yy=formonly.yy type SMALLINT, tabIndex=22, not null, required;
+Edit mm=formonly.mm type SMALLINT, tabIndex=23, not null, required;
+DateEdit cma02=formonly.cma02 type DATE, tabIndex=24;
+Group group05:group05, text="Calculation Base";
+RadioGroup c=formonly.c type CHAR, tabIndex=25, items=(("1", "First In First Out"),("2", "Latest Transaction date"));
+ComboBox ctype=formonly.ctype type VARCHAR, tabIndex=26, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually Batch Cost"),("4", "Identify Manually Item Cost"),("5", "Identify Manually Store Profit Center"));
+Group group06:group06, text="Idle Ratio Base";
+RadioGroup d=formonly.d type CHAR, tabIndex=27, items=(("1", "First In First Out"),("2", "Latest Transaction date"));
+CheckBox more=formonly.more type CHAR, tabIndex=28, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cma01,formonly.cma03,formonly.i00,formonly.i01,formonly.i02,formonly.i10,formonly.i11,formonly.i12,formonly.i20,formonly.i21,formonly.i22,formonly.i30,formonly.i31,formonly.i32,formonly.i40,formonly.i41,formonly.i42,formonly.k1,formonly.k2,formonly.k3,formonly.yy,formonly.mm,formonly.cma02,formonly.c,formonly.ctype,formonly.d,formonly.more,formonly.ima12)
+END -- INSTRUCTIONS
+

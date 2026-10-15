@@ -1,0 +1,106 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri036.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="ghri036")
+VBox vb2
+Folder pc1
+Page Page1(text=%"Page0")
+Grid gr7
+{
+  <G group1                                                                                                   >
+        [label11][hrbv11    |hraa02              ]             [label5 ] [hrbv05    |hrbu02              ]
+    [label1     ][hrbv01                         ]        [label2      ] [hrbv02                         ]
+       [label9  ][hrbv09                         ]                 [lab] [hrbv04                         ]
+     [label3    ][hrbv03                         ]             [label8 ] [hrbv08                         ]
+          [label][hrbv07                         ]          [label10   ] [hrbv10                         ]
+         [label6][hrbv06                         ]
+  <                                                                                                           >
+  <G group2                                                                                                    >
+    [hrbv12                                                                                                  ]
+    [                                                                                                        ]
+    [                                                                                                        ]
+  <                                                                                                            >
+
+}
+END -- gr7
+END -- Page1
+Page Page2(text=%"Page1")
+Grid gr1
+{
+
+   [label12    ]   [hrbvuser                       ]  [label13      ]  [hrbvmodu                       ]
+   [label14    ]   [hrbvgrup                       ]       [label15 ]  [hrbvdate  ]
+         [labe1]   [hrbvoriu                       ]  [hrbvacti  ]
+   [label17    ]   [hrbvorig                       ]
+
+
+
+}
+END -- gr1
+END -- Page2
+END -- pc1
+Grid gr5
+{
+
+  ---------- ROWS[idx  ]/[cnt  ] ----------
+}
+END -- gr5
+END -- vb2
+END -- ghri036
+
+TABLES
+tableAlias1=hrbv_file,
+hrbv_file
+ATTRIBUTES
+Group group1:group1, text="inform";
+Label label11:Label11, text=%"Company", justify=right;
+ButtonEdit hrbv11=hrbv_file.hrbv11, action=controlp, tabIndex=11, required, image="zoom";
+Edit hraa02=formonly.hraa02 type CHAR, tabIndex=12;
+Label label5:Label5, text=%"Type No", justify=right;
+ButtonEdit hrbv05=hrbv_file.hrbv05, action=controlp, tabIndex=20, not null, image="zoom";
+Edit hrbu02=formonly.hrbu02 type CHAR, tabIndex=13;
+Label label1:Label1, text=%"Machine No.", justify=right;
+ButtonEdit hrbv01=hrbv_file.hrbv01, action=controlp, tabIndex=23, required, image="zoom";
+Label label2:Label2, text=%"Machine Name", justify=right;
+Edit hrbv02=hrbv_file.hrbv02, tabIndex=18;
+Label label9:Label9, text=%"Location", justify=right;
+Edit hrbv09=hrbv_file.hrbv09, tabIndex=19;
+Label lab:Label4, text=%"Use", justify=right;
+ComboBox hrbv04=hrbv_file.hrbv04, tabIndex=17, items=(("1", "Check "),("2", "On work"),("3", "After work"),("4", "forbid"),("5", "meal"),("6", "common"));
+Label label3:Label3, text=%"Short Name", justify=right;
+ComboBox hrbv03=hrbv_file.hrbv03, tabIndex=22, items=(("1", "1"),("2", "2"),("3", "3"));
+Label label8:Label8, text=%"Keepper", justify=right;
+ComboBox hrbv08=hrbv_file.hrbv08, tabIndex=15, items=(("Y", "Y"),("N", "N"));
+Label label:Label7, text=%"Brand", justify=right;
+Edit hrbv07=tableAlias1.hrbv07, tabIndex=21;
+Label label10:Label10, text=%"Machine IP", justify=right;
+Edit hrbv10=hrbv_file.hrbv10, tabIndex=14;
+Label label6:Label6, text=%"Supply", justify=right;
+Edit hrbv06=hrbv_file.hrbv06, tabIndex=16;
+Group group2:group2, text="PS";
+TextEdit hrbv12=hrbv_file.hrbv12, tabIndex=10;
+Label label12:Label12, text=%"Record User", justify=right;
+Edit hrbvuser=hrbv_file.hrbvuser, tabIndex=1;
+Label label13:Label13, text=%"Record Modify", justify=right;
+Edit hrbvmodu=hrbv_file.hrbvmodu, tabIndex=5;
+Label label14:Label14, text=%"Record grup", justify=right;
+Edit hrbvgrup=hrbv_file.hrbvgrup, tabIndex=2;
+Label label15:Label15, text=%"Mod Date", justify=right;
+DateEdit hrbvdate=hrbv_file.hrbvdate, tabIndex=6;
+Label labe1:Label16, text=%"Build", justify=right;
+Edit hrbvoriu=hrbv_file.hrbvoriu, tabIndex=3;
+CheckBox hrbvacti=hrbv_file.hrbvacti, tabIndex=7, text="hrbvacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label17:Label17, text=%"Record Dept", justify=right;
+Edit hrbvorig=hrbv_file.hrbvorig, tabIndex=4;
+Edit idx=formonly.idx type CHAR, tabIndex=8;
+Edit cnt=formonly.cnt type CHAR, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(hrbv_file.hrbv01,hrbv_file.hrbv02,hrbv_file.hrbv03,hrbv_file.hrbv04,hrbv_file.hrbv05,formonly.hrbu02,hrbv_file.hrbv06,tableAlias1.hrbv07,hrbv_file.hrbv08,hrbv_file.hrbv09,hrbv_file.hrbv10,hrbv_file.hrbv11,formonly.hraa02,hrbv_file.hrbv12,hrbv_file.hrbvuser,hrbv_file.hrbvmodu,hrbv_file.hrbvgrup,hrbv_file.hrbvdate,hrbv_file.hrbvoriu,hrbv_file.hrbvacti,hrbv_file.hrbvorig,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

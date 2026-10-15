@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemi115.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemi115")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1748
+{
+ Type Of Work        [trw01     ]
+ Description         [trw02     ]
+}
+END -- gr1748
+END -- page01
+END -- folder01
+Table s_trx
+{
+[trx02    |gen02     |trx03                                   ]
+[trx02    |gen02     |trx03                                   ]
+[trx02    |gen02     |trx03                                   ]
+[trx02    |gen02     |trx03                                   ]
+[trx02    |gen02     |trx03                                   ]
+[trx02    |gen02     |trx03                                   ]
+[trx02    |gen02     |trx03                                   ]
+[trx02    |gen02     |trx03                                   ]
+[trx02    |gen02     |trx03                                   ]
+[trx02    |gen02     |trx03                                   ]
+
+}
+END -- s_trx
+Grid gr1749
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1749
+END -- VBox1
+END -- aemi115
+
+TABLES
+trx_file,
+trw_file
+ATTRIBUTES
+Edit trw01=trw_file.trw01, tabIndex=1, noEntry;
+Edit trw02=trw_file.trw02, tabIndex=2, noEntry;
+ButtonEdit trx02=trx_file.trx02, action=controlp, tabIndex=3, title="Person", not null, required, image="zoom", comment="<^P> Qry Detail";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=4, title="Name", noEntry;
+Edit trx03=trx_file.trx03, tabIndex=5, title="Memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_trx(trx_file.trx02,formonly.gen02,trx_file.trx03)
+SCREEN RECORD Undefined(trw_file.trw01,trw_file.trw02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

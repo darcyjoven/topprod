@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcq456.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aqcq456")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr73
+{
+ Item No.            [qcf021                        ]
+ Specification       [ima02                         ]
+ QC Date Range       [bdate       ]-[edate       ]
+}
+END -- gr73
+END -- page01
+END -- folder01
+Table s_qcg
+{
+[qcf01            |qcf04       |qcf03               |qcf02            |qcg04    |azf03     |qcg11  |qcg07       |rate      |qcg08]
+[qcf01            |qcf04       |qcf03               |qcf02            |qcg04    |azf03     |qcg11  |qcg07       |rate      |qcg08]
+[qcf01            |qcf04       |qcf03               |qcf02            |qcg04    |azf03     |qcg11  |qcg07       |rate      |qcg08]
+[qcf01            |qcf04       |qcf03               |qcf02            |qcg04    |azf03     |qcg11  |qcg07       |rate      |qcg08]
+[qcf01            |qcf04       |qcf03               |qcf02            |qcg04    |azf03     |qcg11  |qcg07       |rate      |qcg08]
+[qcf01            |qcf04       |qcf03               |qcf02            |qcg04    |azf03     |qcg11  |qcg07       |rate      |qcg08]
+[qcf01            |qcf04       |qcf03               |qcf02            |qcg04    |azf03     |qcg11  |qcg07       |rate      |qcg08]
+[qcf01            |qcf04       |qcf03               |qcf02            |qcg04    |azf03     |qcg11  |qcg07       |rate      |qcg08]
+[qcf01            |qcf04       |qcf03               |qcf02            |qcg04    |azf03     |qcg11  |qcg07       |rate      |qcg08]
+[qcf01            |qcf04       |qcf03               |qcf02            |qcg04    |azf03     |qcg11  |qcg07       |rate      |qcg08]
+
+}
+END -- s_qcg
+Grid gr74
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr74
+END -- VBox1
+END -- aqcq456
+
+ATTRIBUTES
+ButtonEdit qcf021=formonly.qcf021 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=3;
+DateEdit edate=formonly.edate type DATE, tabIndex=4;
+Edit qcf01=formonly.qcf01 type CHAR, tabIndex=5, title="QC Note#";
+DateEdit qcf04=formonly.qcf04 type CHAR, tabIndex=6, title="QC Date";
+Edit qcf03=formonly.qcf03 type CHAR, tabIndex=7, title="Run Card";
+Edit qcf02=formonly.qcf02 type CHAR, tabIndex=8, title="W/O No.";
+Edit qcg04=formonly.qcg04 type CHAR, tabIndex=9, title="QC Items";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=10, title="QC Name";
+Edit qcg11=formonly.qcg11 type CHAR, tabIndex=11, title="QC Qty";
+Edit qcg07=formonly.qcg07 type CHAR, tabIndex=12, title="NO-Good Qty";
+Edit rate=formonly.rate type CHAR, tabIndex=13, title="NO-Good %";
+Edit qcg08=formonly.qcg08 type CHAR, tabIndex=14, title="Judge";
+Edit cnt=formonly.cnt type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcg(formonly.qcf01,formonly.qcf04,formonly.qcf03,formonly.qcf02,formonly.qcg04,formonly.azf03,formonly.qcg11,formonly.qcg07,formonly.rate,formonly.qcg08)
+SCREEN RECORD Undefined(formonly.qcf021,formonly.ima02,formonly.bdate,formonly.edate,formonly.cnt)
+END -- INSTRUCTIONS
+

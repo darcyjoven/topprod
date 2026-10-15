@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq943.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page main(text=%"main")
+Grid Grid2
+{
+
+  [label1    |tic00          ]      [label2    |tic01       ]
+
+}
+END -- Grid2
+END -- main
+END -- Folder1
+Table ds1
+{
+[tic02   |tic03     |tic04               |tic05     |tic06     |nml02                    |tic07          |tic07f         |tic08               |tic09          |nppglno        |npq04                         ]
+[tic02   |tic03     |tic04               |tic05     |tic06     |nml02                    |tic07          |tic07f         |tic08               |tic09          |nppglno        |npq04                         ]
+[tic02   |tic03     |tic04               |tic05     |tic06     |nml02                    |tic07          |tic07f         |tic08               |tic09          |nppglno        |npq04                         ]
+[tic02   |tic03     |tic04               |tic05     |tic06     |nml02                    |tic07          |tic07f         |tic08               |tic09          |nppglno        |npq04                         ]
+[tic02   |tic03     |tic04               |tic05     |tic06     |nml02                    |tic07          |tic07f         |tic08               |tic09          |nppglno        |npq04                         ]
+[tic02   |tic03     |tic04               |tic05     |tic06     |nml02                    |tic07          |tic07f         |tic08               |tic09          |nppglno        |npq04                         ]
+[tic02   |tic03     |tic04               |tic05     |tic06     |nml02                    |tic07          |tic07f         |tic08               |tic09          |nppglno        |npq04                         ]
+[tic02   |tic03     |tic04               |tic05     |tic06     |nml02                    |tic07          |tic07f         |tic08               |tic09          |nppglno        |npq04                         ]
+[tic02   |tic03     |tic04               |tic05     |tic06     |nml02                    |tic07          |tic07f         |tic08               |tic09          |nppglno        |npq04                         ]
+[tic02   |tic03     |tic04               |tic05     |tic06     |nml02                    |tic07          |tic07f         |tic08               |tic09          |nppglno        |npq04                         ]
+
+}
+END -- ds1
+Grid Grid1
+{
+
+  ----------[label4|idx     |labe|cnt     ]---[label6|cn2     ]----------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+tic_file,
+npq_file,
+npp_file,
+nml_file
+ATTRIBUTES
+Label label1:Label1, text=%"Set of Books";
+ButtonEdit tic00=tic_file.tic00, action=controlp, tabIndex=1, image="zoom";
+Label label2:Label2, text=%"Year";
+Edit tic01=tic_file.tic01, tabIndex=2;
+Edit tic02=tic_file.tic02, tabIndex=17, title=%"Period";
+ComboBox tic03=tic_file.tic03, tabIndex=3, title=%"De/Cr", not null, scroll, items=(("1", "Debit"),("2", "Credit"));
+ButtonEdit tic04=tic_file.tic04, action=controlp, tabIndex=4, title=%"tic04", not null, image="zoom", scroll;
+Edit tic05=tic_file.tic05, tabIndex=5, title=%"Line No.", not null, scroll;
+ButtonEdit tic06=tic_file.tic06, action=controlp, tabIndex=6, title=%"Cash Variation Code", not null, image="zoom", scroll;
+Edit nml02=nml_file.nml02, tabIndex=7, title=%"Edit2", noEntry;
+Edit tic07=tic_file.tic07, tabIndex=8, title=%"Amount(Local Curr.)", not null, scroll;
+Edit tic07f=tic_file.tic07f, tabIndex=9, title=%"Amt in Trans. Curr.", not null, scroll;
+Edit tic08=tic_file.tic08, tabIndex=10, title=%"Affiliate", not null, scroll;
+ComboBox tic09=tic_file.tic09, tabIndex=11, title=%"Source", not null, scroll, items=(("1", "Note Fund Module"),("2", "Ledger system"),("3", "Entry Sheet"));
+Edit nppglno=npp_file.nppglno, tabIndex=12, title=%"Edit2";
+Edit npq04=npq_file.npq04, tabIndex=13, title=%"Edit3";
+Label label4:Label4, text=%"Rows";
+Edit idx=formonly.idx, tabIndex=14;
+Label labe:Label5, text=%"/";
+Edit cnt=formonly.cnt, tabIndex=15;
+Label label6:Label6, text=%"Details";
+Edit cn2=formonly.cn2, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(tic_file.tic00,tic_file.tic01,formonly.idx,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_tic(tic_file.tic02,tic_file.tic03,tic_file.tic04,tic_file.tic05,tic_file.tic06,nml_file.nml02,tic_file.tic07,tic_file.tic07f,tic_file.tic08,tic_file.tic09,npp_file.nppglno,npq_file.npq04)
+END -- INSTRUCTIONS
+

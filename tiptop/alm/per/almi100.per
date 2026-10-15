@@ -1,0 +1,132 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/top/alm/4fd/almi100.tmp.per created 2010-09-25T17:14:30
+-- File created from /u3/top/alm/4fd/almi100.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text=%"almi100")
+                                                                                                                                                                            
+  VBox vb2                                                                                                                                                                  
+  Folder pc1                                                                                                                                                                
+  Page page1(text="Main")                                                                                                                                                   
+  Grid gr1                                                                                                                                                                  
+  {                                                                                                                                                                         
+   Store No.              [lma01            ]               Manager                  [lma10         |gen021    ]  Bank Code       [lma22        |nma02            ]         
+   Store Full Name        [lma03            ]               Manager Tel              [lma11                    ]  Bank Account No.[lma23                          ]         
+   Store Abbreviation     [lma02            ]               Manager Mobile           [lma12                    ]  Name of Account [lma24                          ]         
+   Upper Level Institution[lma04            |azp02       ]  Manager Fax              [lma121                   ]  Attribute       [lma29     ]                              
+   Store Addr. Post Code  [lma32     ]                      Manager E-mail           [lma122                   ]  Company Type    [lma30                          ]         
+   Store Address          [lma05                         ]  Leasing Manager          [lma13         |gen022    ]  Approval Status [lma25     |imgmksg]                      
+                          [                              ]  Leasing Manager Tel      [lma14                    ]  Approver        [lma26     |       ]                      
+                          [                              ]  Leasing Manager Mobile   [lma15                    ]  Approval Date   [lma27     ]                              
+   Store Mail Post Code   [lma33     ]                      Leasing Manager Fax      [lma151                   ]  meno            [lma28                      ]             
+   Store Mail Addr.       [lma34                         ]  Leasing Manager E-mail   [lma152                   ]                  [                           ]             
+                          [                              ]  Finance Principal        [lma16         |gen0231   ]                                                            
+                          [                              ]  Finance Principal Tel    [lma17                    ]                                                            
+   Cons.Area              [lma07        ]                   Finance Principal Mobile [lma18                    ]                                                            
+   Busi.Area              [lma08        ]                   Finance Principal Fax    [lma181                   ]                                                            
+   Total Stalls           [lma09        ]                   Finance Principal E-mail [lma182                   ]                                                            
+                                                                                                                                                                            
+                                                                                                                                                                            
+  }                                                                                                                                                                         
+  END                                                                                                                                                                       
+  END -- Page                                                                                                                                                               
+  Page info(text="Info")                                                                                                                                                    
+  Grid gr2                                                                                                                                                                  
+  {                                                                                                                                                                         
+                                                                                                                                                                            
+    Data Owner[lmauser             ]     Last Modified by[lmamodu          ]      DataValidCode[lmaacti        ]                                                            
+    Department[lmagrup             ]     Last Modify Date[lmadate          ]      create on    [lmacrat        ]                                                            
+    Recd Orig.[lmaoriu             ]                                                                                                                                        
+    Dept Orig.[lmaorig             ]                                                                                                                                        
+                                                                                                                                                                            
+  }                                                                                                                                                                         
+  END                                                                                                                                                                       
+                                                                                                                                                                            
+                                                                                                                                                                            
+                                                                                                                                                                            
+                                                                                                                                                                            
+                                                                                                                                                                            
+                                                                                                                                                                            
+                                                                                                                                                                            
+                                                                                                                                                                            
+  END -- Page                                                                                                                                                               
+  END -- Folder                                                                                                                                                             
+  Grid gr3                                                                                                                                                                  
+  {                                                                                                                                                                         
+                                                                                                                                                                            
+   ---------- Rows[idx ]/[cnt ] ----------                                                                                                                                  
+                                                                                                                                                                            
+                                                                                                                                                                            
+                                                                                                                                                                            
+  }                                                                                                                                                                         
+  END                                                                                                                                                                       
+  END -- VBox                                                                                                                                                               
+END -- Form
+
+TABLES
+lma_file
+
+ATTRIBUTES
+ButtonEdit lma01=lma_file.lma01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ButtonEdit lma10=lma_file.lma10, action=controlp, tabIndex=13, image="zoom.png";
+Edit gen021=formonly.gen021, tabIndex=14, noEntry;
+ButtonEdit lma22=lma_file.lma22, action=controlp, tabIndex=31, image="zoom.png";
+Edit nma02=formonly.nma02, tabIndex=32, noEntry;
+ButtonEdit lma03=lma_file.lma03, action=update_item, tabIndex=2, image="pen.png";
+Edit lma11=lma_file.lma11, tabIndex=15;
+Edit lma23=lma_file.lma23, tabIndex=33;
+ButtonEdit lma02=lma_file.lma02, action=update_item, tabIndex=3, image="pen.png";
+Edit lma12=lma_file.lma12, tabIndex=16;
+Edit lma24=lma_file.lma24, tabIndex=34;
+ButtonEdit lma04=lma_file.lma04, action=controlp, tabIndex=4, noEntry, not null, required, image="zoom.png";
+Edit azp02=formonly.azp02, tabIndex=5, noEntry;
+Edit lma121=lma_file.lma121, tabIndex=17;
+ComboBox lma29=lma_file.lma29, tabIndex=35, items=(("1", "one"),("2", "two"),("3", "three"));
+Edit lma32=lma_file.lma32, tabIndex=6;
+Edit lma122=lma_file.lma122, tabIndex=18;
+Edit lma30=lma_file.lma30, tabIndex=36;
+TextEdit lma05=lma_file.lma05, tabIndex=7, stretch=NONE;
+ButtonEdit lma13=lma_file.lma13, action=controlp, tabIndex=19, image="zoom.png";
+Edit gen022=formonly.gen022, tabIndex=20, noEntry;
+ComboBox lma25=lma_file.lma25, tabIndex=37, default = "N", noEntry, not null, required, items=(("Y", "confirmd"),("N", "unconfirmd"),("X", "zuofei"));
+Image imgmksg=formonly.imgmksg;
+Edit lma14=lma_file.lma14, tabIndex=21;
+Edit lma26=lma_file.lma26, tabIndex=38, noEntry, not null, required;
+Edit lma15=lma_file.lma15, tabIndex=22;
+DateEdit lma27=lma_file.lma27, tabIndex=39, not null, required;
+Edit lma33=lma_file.lma33, tabIndex=8;
+Edit lma151=lma_file.lma151, tabIndex=23;
+TextEdit lma28=lma_file.lma28, tabIndex=40, stretch=NONE;
+TextEdit lma34=lma_file.lma34, tabIndex=9, stretch=NONE;
+Edit lma152=lma_file.lma152, tabIndex=24;
+ButtonEdit lma16=lma_file.lma16, action=controlp, tabIndex=25, image="zoom.png";
+Edit gen0231=formonly.gen0231, tabIndex=26, noEntry;
+Edit lma17=lma_file.lma17, tabIndex=27;
+Edit lma07=lma_file.lma07, tabIndex=10, noEntry;
+Edit lma18=lma_file.lma18, tabIndex=28;
+Edit lma08=lma_file.lma08, tabIndex=11, noEntry;
+Edit lma181=lma_file.lma181, tabIndex=29;
+Edit lma09=lma_file.lma09, tabIndex=12, noEntry;
+Edit lma182=lma_file.lma182, tabIndex=30;
+Edit lmauser=lma_file.lmauser, tabIndex=41, noEntry;
+Edit lmamodu=lma_file.lmamodu, tabIndex=45, noEntry;
+Edit lmaacti=lma_file.lmaacti, tabIndex=47, default = "Y", noEntry;
+Edit lmagrup=lma_file.lmagrup, tabIndex=42, noEntry;
+DateEdit lmadate=lma_file.lmadate, tabIndex=46, noEntry;
+DateEdit lmacrat=lma_file.lmacrat, tabIndex=48, noEntry;
+Edit lmaoriu=lma_file.lmaoriu, tabIndex=43, noEntry;
+Edit lmaorig=lma_file.lmaorig, tabIndex=44, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=49, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=50, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

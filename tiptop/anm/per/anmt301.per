@@ -1,0 +1,156 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox3
+Folder Folder1
+Page Page1(text=%"Main")
+Grid Grid1
+{
+
+[label1 |naf01             ]                [label5   |nafconf   ]
+[label2 |naf02             ][nma03           ]
+[label3 |naf03 |la|naf04 ]
+
+
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Info")
+Grid Grid2
+{
+
+[nafuser  |nafuse1     ]   [nafmodu  |nafmod1     ]
+[nafgrup  |nafgru1     ]   [nafdate  |nafdat1     ]
+
+
+
+
+}
+END -- Grid2
+END -- Page2
+END -- Folder1
+HBox HBox1
+Folder Folder2
+Page Page3(text=%"Comp")
+VBox VBox1
+Table s_nag
+{
+[chk1    |nag04     |nag02    |nag03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+[chk1    |nag04     |nag02    |nag03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+[chk1    |nag04     |nag02    |nag03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+[chk1    |nag04     |nag02    |nag03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+[chk1    |nag04     |nag02    |nag03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+[chk1    |nag04     |nag02    |nag03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+[chk1    |nag04     |nag02    |nag03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+[chk1    |nag04     |nag02    |nag03   |nag05   |nag06   |nme05                  |nme16    |dc1     |nme08                 ]
+
+}
+END -- s_nag
+Grid Grid3
+{
+
+      text11                [a1                  ]
+      text12                [b1                  ]
+      text13                [c1                  ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- Page3
+END -- Folder2
+Folder Folder3
+Page Page4(text=%"Bank")
+VBox VBox2
+Table s_naf
+{
+[chk2       |nah04      |nah02    |nah03   |nmu01   |dc2     |nmu10                 ]
+[chk2       |nah04      |nah02    |nah03   |nmu01   |dc2     |nmu10                 ]
+[chk2       |nah04      |nah02    |nah03   |nmu01   |dc2     |nmu10                 ]
+[chk2       |nah04      |nah02    |nah03   |nmu01   |dc2     |nmu10                 ]
+[chk2       |nah04      |nah02    |nah03   |nmu01   |dc2     |nmu10                 ]
+[chk2       |nah04      |nah02    |nah03   |nmu01   |dc2     |nmu10                 ]
+[chk2       |nah04      |nah02    |nah03   |nmu01   |dc2     |nmu10                 ]
+[chk2       |nah04      |nah02    |nah03   |nmu01   |dc2     |nmu10                 ]
+
+}
+END -- s_naf
+Grid Grid4
+{
+
+    text17                [a2                  ]
+    text18                [b2                  ]
+    text19                [c2                  ]
+
+}
+END -- Grid4
+END -- VBox2
+END -- Page4
+END -- Folder3
+END -- HBox1
+END -- VBox3
+END -- anmt301
+
+TABLES
+nah_file,
+nag_file,
+nme_file,
+naf_file,
+nmu_file,
+nma_file
+ATTRIBUTES
+Label label1:Label1, text=%"naf01";
+Edit naf01=naf_file.naf01, tabIndex=16, noEntry, not null, scroll;
+Label label5:Label5, text=%"nafconf";
+ComboBox nafconf=naf_file.nafconf, tabIndex=21, noEntry, items=(("Y", "Confirm"),("N", "UNconfirm"));
+Label label2:Label2, text=%"naf02";
+ButtonEdit naf02=naf_file.naf02, action=controlp, tabIndex=17, image="zoom", picture="";
+Edit nma03=nma_file.nma03, tabIndex=20, noEntry;
+Label label3:Label3, text=%"naf03";
+Edit naf03=naf_file.naf03, tabIndex=18, not null, scroll;
+Label la:lable, text=%"-";
+Edit naf04=naf_file.naf04, tabIndex=19, not null, scroll;
+Label nafuser:nafuser, text=%"nafuser";
+Edit nafuse1=naf_file.nafuser, tabIndex=22, noEntry, scroll;
+Label nafmodu:nafmodu, text=%"nafmodu";
+Edit nafmod1=naf_file.nafmodu, tabIndex=24, noEntry, scroll;
+Label nafgrup:nafgrup, text=%"nafgrup";
+Edit nafgru1=naf_file.nafgrup, tabIndex=23, noEntry, scroll;
+Label nafdate:nafdate, text=%"nafdate";
+DateEdit nafdat1=naf_file.nafdate, tabIndex=25, noEntry;
+CheckBox chk1=formonly.chk1 type VARCHAR, tabIndex=3, title=%"chk1", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox nag04=nag_file.nag04, tabIndex=5, title=%"nag04", noEntry, not null, items=(("1", "Auto"),("2", "Hand"));
+Edit nag02=nag_file.nag02, tabIndex=1, title=%"nag02", noEntry;
+Edit nag03=nag_file.nag03, tabIndex=32, title=%"nag03", noEntry;
+Edit nag05=nag_file.nag05, tabIndex=7, title=%"nag05", noEntry;
+Edit nag06=nag_file.nag06, tabIndex=8, title=%"nag06", noEntry;
+Edit nme05=nme_file.nme05, tabIndex=9, title=%"nme05", noEntry;
+DateEdit nme16=nme_file.nme16, tabIndex=12, title=%"nme16", noEntry;
+ComboBox dc1=formonly.dc1 type CHAR, tabIndex=10, title=%"dc1", noEntry, not null, items=(("1", "debit"),("2", "credit"));
+Edit nme08=nme_file.nme08, tabIndex=11, title=%"nme08", noEntry;
+Edit a1=formonly.a1 type DECIMAL, tabIndex=28, noEntry;
+Edit b1=formonly.b1 type DECIMAL, tabIndex=27, noEntry;
+Edit c1=formonly.c1 type DATETIME YEAR TO YEAR, tabIndex=26, noEntry;
+CheckBox chk2=formonly.chk2 type CHAR, tabIndex=3, title=%"chk2", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox nah04=nah_file.nah04, tabIndex=4, title=%"nah04", noEntry, not null, items=(("1", "Auto"),("2", "Hand"));
+Edit nah02=nah_file.nah02, tabIndex=2, title=%"nah02", noEntry;
+Edit nah03=nah_file.nah03, tabIndex=33, title=%"nah03", noEntry;
+DateEdit nmu01=nmu_file.nmu01, tabIndex=10, title=%"nmu01", noEntry;
+ComboBox dc2=formonly.dc2 type CHAR, tabIndex=10, title=%"dc2", noEntry, items=(("1", "shou"),("-1", "fu"),("0", "other"));
+Edit nmu10=nmu_file.nmu10, tabIndex=10, title=%"nmu10", noEntry;
+Edit a2=formonly.a2 type DECIMAL, tabIndex=31, noEntry;
+Edit b2=formonly.b2 type DECIMAL, tabIndex=30, noEntry;
+Edit c2=formonly.c2 type DECIMAL, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nag(formonly.chk1,nag_file.nag04,nag_file.nag02,nag_file.nag03,nag_file.nag05,nag_file.nag06,nme_file.nme05,nme_file.nme16,formonly.dc1,nme_file.nme08)
+SCREEN RECORD s_nah(formonly.chk2,nah_file.nah04,nah_file.nah02,nah_file.nah03,nmu_file.nmu01,formonly.dc2,nmu_file.nmu10)
+SCREEN RECORD Undefined(naf_file.naf01,naf_file.naf02,naf_file.naf03,naf_file.naf04,nma_file.nma03,naf_file.nafconf,naf_file.nafuser,naf_file.nafgrup,naf_file.nafmodu,naf_file.nafdate,formonly.c1,formonly.b1,formonly.a1,formonly.c2,formonly.b2,formonly.a2)
+END -- INSTRUCTIONS
+

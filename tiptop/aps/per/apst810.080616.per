@@ -1,0 +1,76 @@
+----------------------------------------------------------------------------------
+-- $Id:  apst810.080616.per created 2009-10-22T03:19:19
+-- File created from apst810.080616.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apst810")
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX vb2
+    GRID gr5444
+    {
+    <G group01                                                                       >
+     APS Version   [aa0                 ]
+     Save Version  [aa1                 ]
+    <                                                                                >
+
+     <T s_vob                                                                                                                                 >
+     [aa2      |aa3     |aa4       |aa5     |aa6     |aa7     |aa8     |aa9     |ab0     |ab1     |ab2       |ab3       |ab4       |ab5       ]
+     [aa2      |aa3     |aa4       |aa5     |aa6     |aa7     |aa8     |aa9     |ab0     |ab1     |ab2       |ab3       |ab4       |ab5       ]
+     [aa2      |aa3     |aa4       |aa5     |aa6     |aa7     |aa8     |aa9     |ab0     |ab1     |ab2       |ab3       |ab4       |ab5       ]
+     [aa2      |aa3     |aa4       |aa5     |aa6     |aa7     |aa8     |aa9     |ab0     |ab1     |ab2       |ab3       |ab4       |ab5       ]
+     [aa2      |aa3     |aa4       |aa5     |aa6     |aa7     |aa8     |aa9     |ab0     |ab1     |ab2       |ab3       |ab4       |ab5       ]
+     [aa2      |aa3     |aa4       |aa5     |aa6     |aa7     |aa8     |aa9     |ab0     |ab1     |ab2       |ab3       |ab4       |ab5       ]
+     [aa2      |aa3     |aa4       |aa5     |aa6     |aa7     |aa8     |aa9     |ab0     |ab1     |ab2       |ab3       |ab4       |ab5       ]
+     [aa2      |aa3     |aa4       |aa5     |aa6     |aa7     |aa8     |aa9     |ab0     |ab1     |ab2       |ab3       |ab4       |ab5       ]
+     [aa2      |aa3     |aa4       |aa5     |aa6     |aa7     |aa8     |aa9     |ab0     |ab1     |ab2       |ab3       |ab4       |ab5       ]
+     [aa2      |aa3     |aa4       |aa5     |aa6     |aa7     |aa8     |aa9     |ab0     |ab1     |ab2       |ab3       |ab4       |ab5       ]
+     <                                                                                                                                        >
+
+
+    }
+    END -- GRID
+    GRID gr881
+    {
+     ----------  Rows [ab6   ] / [ab7   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES vob_file
+
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="Basic Data";
+  BUTTONEDIT aa0=FORMONLY.vob01 TYPE VARCHAR, ACTION=controlp, COMMENT="Assign Add/Query Item#", IMAGE="zoom", TABINDEX=18;
+  EDIT aa1=FORMONLY.vob02, TABINDEX=10;
+  TABLE s_vob : s_vob;
+  CHECKBOX aa2=vob_file.vob36, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=2, TITLE="vob36";
+  COMBOBOX aa3=FORMONLY.status, NOENTRY, TABINDEX=1, TITLE="status", ITEMS=(("A","請購調整"),("B","採購單調整"),("C","採購單變更"),("D","不可調整"));
+  COMBOBOX aa4=FORMONLY.vaz24, NOENTRY, TABINDEX=12, TITLE="Doc. Type", ITEMS=(("0","請購單"),("1","採購單"));
+  EDIT aa5=FORMONLY.vob13, NOENTRY, TABINDEX=3, TITLE="Source Doc. No.";
+  EDIT aa6=FORMONLY.vaz23, NOENTRY, TABINDEX=4, TITLE="Line No";
+  EDIT aa7=FORMONLY.vob07, NOENTRY, TABINDEX=5, TITLE="Item No.";
+  EDIT aa8=FORMONLY.ima02, NOENTRY, TABINDEX=6, TITLE="Item No.";
+  EDIT aa9=FORMONLY.vob11, NOENTRY, TABINDEX=7, TITLE="Purchase Unit";
+  EDIT ab0=FORMONLY.unst_qty, NOENTRY, TABINDEX=8, TITLE="unst_qty";
+  EDIT ab1=FORMONLY.vob33, NOENTRY, TABINDEX=9, TITLE="vob33";
+  EDIT ab2=FORMONLY.qty, NOENTRY, TABINDEX=13, TITLE="qty";
+  DATEEDIT ab3=FORMONLY.sdate, NOENTRY, TABINDEX=14, TITLE="Orig. Delivery Date";
+  DATEEDIT ab4=FORMONLY.vob14, NOENTRY, TABINDEX=11, TITLE="vob14";
+  EDIT ab5=FORMONLY.vob03, NOENTRY, TABINDEX=17, TITLE="vob03";
+  EDIT ab6=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=15;
+  EDIT ab7=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=16;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_vob (vob_file.vob36, FORMONLY.status, FORMONLY.vaz24, FORMONLY.vob13, FORMONLY.vaz23, FORMONLY.vob07, FORMONLY.ima02, FORMONLY.vob11, FORMONLY.unst_qty, FORMONLY.vob33, FORMONLY.qty, FORMONLY.sdate, FORMONLY.vob14, FORMONLY.vob03)
+END

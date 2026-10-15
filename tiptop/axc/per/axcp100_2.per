@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp100_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axcp100_2")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid Grid1
+{
+
+ Cost Calculation Method   [g_t       ]
+
+
+
+
+}
+END -- Grid1
+END -- page01
+END -- folder01
+END -- VBox1
+END -- axcp100_2
+
+ATTRIBUTES
+ComboBox g_t=formonly.g_t type VARCHAR, tabIndex=1, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Specific-Batch Cost"),("4", "Individual-Item Cost"),("5", "Specific Identification-Cost by Store(Profit Center)"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_t)
+END -- INSTRUCTIONS
+

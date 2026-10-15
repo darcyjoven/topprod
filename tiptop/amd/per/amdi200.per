@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdi200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (minWidth=1, minHeight=1, spacing=normal, text=%"aooi300")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+  Classification Method     [amg01     ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table s_amg
+{
+[amg02               |azf03                                                          |amg03                          |amgacti ]
+[amg02               |azf03                                                          |amg03                          |amgacti ]
+[amg02               |azf03                                                          |amg03                          |amgacti ]
+[amg02               |azf03                                                          |amg03                          |amgacti ]
+[amg02               |azf03                                                          |amg03                          |amgacti ]
+[amg02               |azf03                                                          |amg03                          |amgacti ]
+[amg02               |azf03                                                          |amg03                          |amgacti ]
+[amg02               |azf03                                                          |amg03                          |amgacti ]
+[amg02               |azf03                                                          |amg03                          |amgacti ]
+[amg02               |azf03                                                          |amg03                          |amgacti ]
+}
+END -- s_amg
+Grid gr4644
+{
+
+  ---------- Rows [cn2   ]/[cn1   ]----------
+
+
+}
+END -- gr4644
+END -- VBox1
+END -- amdi200
+
+TABLES
+amg_file
+ATTRIBUTES
+ComboBox amg01=amg_file.amg01, tabIndex=6, not null, required, items=(("D", "Othr Group Code 1"),("E", "Othr Group Code 2"),("F", "Othr Group Code 3"),("M", "Main Group Code"),("P", "Product Classification"));
+ButtonEdit amg02=amg_file.amg02, action=controlp, tabIndex=1, title="Product  Category Code", not null, image="zoom";
+Edit azf03=formonly.azf03 type VARCHAR, tabIndex=2, title="Item Category No.", noEntry;
+Edit amg03=amg_file.amg03, tabIndex=3, title=%"Seller Logistics Code";
+CheckBox amgacti=amg_file.amgacti, tabIndex=4, default = "Y", title=%"Validity? (y/n)", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+Edit cn1=formonly.cn1 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_amg(amg_file.amg02,formonly.azf03,amg_file.amg03,amg_file.amgacti)
+SCREEN RECORD Undefined(amg_file.amg01,formonly.cn2,formonly.cn1)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt2009.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt2009")
+VBox VBox1
+Folder pc665
+Page page01(text="Main")
+Grid gr2761
+{
+ <G group01                                        >
+ [only_one                       ]
+
+ <                                                 >
+ <G group02                                        >
+  Local Sale/Export      [ola11                 ]
+  L/C Receipt #          [ola01     ]
+  L/C Receiving Date QBE [ola02       ]
+  Account Employee QBE   [olauser             ]
+  Accounts Department    [olagrup             ]
+ <                                                 >
+
+}
+END -- gr2761
+END -- page01
+END -- pc665
+END -- VBox1
+END -- axrt2009
+
+TABLES
+ola_file
+ATTRIBUTES
+Group group01:group01, text="Option";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, not null, required, items=(("1", "Generate this Doc only"),("2", "Generate by QBE Condition"));
+Group group02:group02, text="Enter Sales L/C Condition to Gen Entry Sheet";
+ComboBox ola11=ola_file.ola11, tabIndex=2, items=(("1", "Local Sales"),("2", "Export"));
+Edit ola01=ola_file.ola01, tabIndex=3;
+DateEdit ola02=ola_file.ola02, tabIndex=4;
+Edit olauser=ola_file.olauser, tabIndex=5;
+Edit olagrup=ola_file.olagrup, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,ola_file.ola11,ola_file.ola01,ola_file.ola02,ola_file.olauser,ola_file.olagrup)
+END -- INSTRUCTIONS
+

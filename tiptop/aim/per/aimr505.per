@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr505.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr505")
+VBox VBox1
+Grid gr3282
+{
+ <G group01                                                 >
+  Item No.            [img01               ]
+  Warehouse           [img02               ]
+  Location            [img03               ]
+  Lot No.             [img04               ]
+  Warehouse Keeper    [ima23               ]
+  Source code         [ima08               ]
+ <                                                          >
+
+}
+END -- gr3282
+Group group02(text="INPUT")
+Grid gr3283
+{
+ <G group03                                               >
+  Document date range [b_date      ]-[e_date      ]
+ <                                                        >
+ <G group04                                               >
+ [choice                   ]
+ <                                                        >
+ <G group05                                               >
+ [type                                    ]
+ [page_skip                               ]
+ <                                                        >
+
+}
+END -- gr3283
+END -- group02
+Grid gr3284
+{
+[more                                      ]
+
+}
+END -- gr3284
+END -- VBox1
+END -- aimr505
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit img01=formonly.img01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit img02=formonly.img02 type VARCHAR, tabIndex=2;
+Edit img03=formonly.img03 type VARCHAR, tabIndex=3;
+Edit img04=formonly.img04 type VARCHAR, tabIndex=4;
+Edit ima23=formonly.ima23 type VARCHAR, tabIndex=5;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=6;
+Group group03:group03;
+DateEdit b_date=formonly.b_date type DATE, tabIndex=7;
+DateEdit e_date=formonly.e_date type DATE, tabIndex=8;
+Group group04:group04, text="Format";
+RadioGroup choice=formonly.choice type VARCHAR, tabIndex=9, items=(("1", "by document date"),("2", "by Details"));
+Group group05:group05;
+CheckBox type=formonly.type type CHAR, tabIndex=10, text="Print Only Inventory<0", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox page_skip=formonly.page_skip type CHAR, tabIndex=11, text="Next Page if different Item No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.img01,formonly.img02,formonly.img03,formonly.img04,formonly.ima23,formonly.ima08,formonly.b_date,formonly.e_date,formonly.choice,formonly.type,formonly.page_skip,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmp610")
+VBox VBox1
+Grid gr861
+{
+ <G group01                                               >
+  Master Item #       [item                ]
+                      [ima02                         ]
+  Alternate Code      [acode               ]
+  Levels              [max_level ]
+ <                                                        >
+
+}
+END -- gr861
+Grid gr862
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr862
+END -- VBox1
+END -- abmp610
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit item=formonly.item type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="       <^P>Query Item,        <^Y> Enter Other Condition to Run";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=2, noEntry;
+Edit acode=formonly.acode type CHAR, tabIndex=3;
+Edit max_level=formonly.max_level type SMALLINT, tabIndex=4, not null, required;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=5, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.item,formonly.ima02,formonly.acode,formonly.max_level,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

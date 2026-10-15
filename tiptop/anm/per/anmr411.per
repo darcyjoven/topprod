@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr411.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmr411")
+VBox VBox1
+Group Group1
+Grid Grid1
+{
+ <G group01                                                          >
+  Transaction Doc NO. [gxc01               ]
+  Transaction Property[gxc02               ]
+  Accepting Bank      [gxc07               ]
+  Accepting Date      [gxc03               ]
+  Initial Value Date  [gxc04               ]
+  Ending Value Date   [gxc041              ]
+ <                                                                   >
+
+}
+END -- Grid1
+END -- Group1
+Grid Grid2
+{
+[more                                                        ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- anmr411
+
+TABLES
+gxc_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit gxc01=gxc_file.gxc01, tabIndex=1;
+Edit gxc02=gxc_file.gxc02, tabIndex=2;
+Edit gxc07=gxc_file.gxc07, tabIndex=3;
+DateEdit gxc03=gxc_file.gxc03, tabIndex=4;
+DateEdit gxc04=gxc_file.gxc04, tabIndex=5;
+DateEdit gxc041=gxc_file.gxc041, tabIndex=6;
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gxc_file.gxc01,gxc_file.gxc02,gxc_file.gxc07,gxc_file.gxc03,gxc_file.gxc04,gxc_file.gxc041,formonly.more)
+END -- INSTRUCTIONS
+

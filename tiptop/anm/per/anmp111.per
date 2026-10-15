@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp111.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmp111")
+Grid gr4080
+{
+ <T s_nme                                                                                    >
+ [nme17      |nme02        |nmd05             |nme01       |nme13      |nme04               ]
+ [nme17      |nme02        |nmd05             |nme01       |nme13      |nme04               ]
+ [nme17      |nme02        |nmd05             |nme01       |nme13      |nme04               ]
+ [nme17      |nme02        |nmd05             |nme01       |nme13      |nme04               ]
+ [nme17      |nme02        |nmd05             |nme01       |nme13      |nme04               ]
+ [nme17      |nme02        |nmd05             |nme01       |nme13      |nme04               ]
+ [nme17      |nme02        |nmd05             |nme01       |nme13      |nme04               ]
+ [nme17      |nme02        |nmd05             |nme01       |nme13      |nme04               ]
+ [nme17      |nme02        |nmd05             |nme01       |nme13      |nme04               ]
+ [nme17      |nme02        |nmd05             |nme01       |nme13      |nme04               ]
+ <                                                                                           >
+
+}
+END -- gr4080
+END -- anmp111
+
+TABLES
+nme_file,
+nmd_file
+ATTRIBUTES
+Table s_nme:s_nme, width = 93 characters, height = 12 characters;
+Edit nme17=nme_file.nme17, tabIndex=1, title="Note No.", noEntry;
+DateEdit nme02=nme_file.nme02, tabIndex=2, title="Cashing Date";
+DateEdit nmd05=nmd_file.nmd05, tabIndex=3, title="Original Due Date", noEntry;
+Edit nme01=nme_file.nme01, tabIndex=4, title="Paying Bank", noEntry;
+Edit nme13=nme_file.nme13, tabIndex=5, title="Vender", noEntry;
+Edit nme04=nme_file.nme04, tabIndex=6, title="Face Value", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nme(nme_file.nme17,nme_file.nme02,nmd_file.nmd05,nme_file.nme01,nme_file.nme13,nme_file.nme04)
+END -- INSTRUCTIONS
+

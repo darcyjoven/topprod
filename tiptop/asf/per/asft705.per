@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft705.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="askt001")
+VBox vb4
+Folder pc3
+Page Page4(text=%"Main")
+Grid gr10
+{
+ Work No     [sgk01              ]     Worker      [sgk03                ]     [sgk03_gen02      ]
+ Date        [sgk02              ]     Confirm     [sgk07     ]
+ memo        [sgk04                          ]     [sgk05               ]      [sgk06               ]
+             [                               ]                    [imgmksg ]
+             [                               ]                    [        ]
+
+}
+END -- gr10
+END -- Page4
+Page Page5(text=%"Info")
+Grid gr10_
+{
+ Record Owner        [sgkuser   ]   Last Modified by    [sgkmodu   ]   Data Valid Code     [sgkacti   ]
+ Department          [sgkgrup   ]   Create/Modify Date  [sgkdate   ]
+
+
+
+}
+END -- gr10_
+END -- Page5
+END -- pc3
+Table s_sgl
+{
+[sgl02   |sgl12              |sgl12_gen02        |sgl03           |sgl04             |sgl05          |sgl05_ima02 |sgl012    |sgl06            |sgl07            |sgl08      |sgl09          |sgl10            |sgl11       |sgl13              ]
+[sgl02   |sgl12              |sgl12_gen02        |sgl03           |sgl04             |sgl05          |sgl05_ima02 |sgl012    |sgl06            |sgl07            |sgl08      |sgl09          |sgl10            |sgl11       |sgl13              ]
+[sgl02   |sgl12              |sgl12_gen02        |sgl03           |sgl04             |sgl05          |sgl05_ima02 |sgl012    |sgl06            |sgl07            |sgl08      |sgl09          |sgl10            |sgl11       |sgl13              ]
+[sgl02   |sgl12              |sgl12_gen02        |sgl03           |sgl04             |sgl05          |sgl05_ima02 |sgl012    |sgl06            |sgl07            |sgl08      |sgl09          |sgl10            |sgl11       |sgl13              ]
+[sgl02   |sgl12              |sgl12_gen02        |sgl03           |sgl04             |sgl05          |sgl05_ima02 |sgl012    |sgl06            |sgl07            |sgl08      |sgl09          |sgl10            |sgl11       |sgl13              ]
+[sgl02   |sgl12              |sgl12_gen02        |sgl03           |sgl04             |sgl05          |sgl05_ima02 |sgl012    |sgl06            |sgl07            |sgl08      |sgl09          |sgl10            |sgl11       |sgl13              ]
+[sgl02   |sgl12              |sgl12_gen02        |sgl03           |sgl04             |sgl05          |sgl05_ima02 |sgl012    |sgl06            |sgl07            |sgl08      |sgl09          |sgl10            |sgl11       |sgl13              ]
+[sgl02   |sgl12              |sgl12_gen02        |sgl03           |sgl04             |sgl05          |sgl05_ima02 |sgl012    |sgl06            |sgl07            |sgl08      |sgl09          |sgl10            |sgl11       |sgl13              ]
+[sgl02   |sgl12              |sgl12_gen02        |sgl03           |sgl04             |sgl05          |sgl05_ima02 |sgl012    |sgl06            |sgl07            |sgl08      |sgl09          |sgl10            |sgl11       |sgl13              ]
+[sgl02   |sgl12              |sgl12_gen02        |sgl03           |sgl04             |sgl05          |sgl05_ima02 |sgl012    |sgl06            |sgl07            |sgl08      |sgl09          |sgl10            |sgl11       |sgl13              ]
+
+}
+END -- s_sgl
+Grid gr12
+{
+----------  Rows [cnt   ] / [cnt2  ] ----------
+
+}
+END -- gr12
+END -- vb4
+END -- asft705
+
+TABLES
+sgl_file,
+sgk_file
+ATTRIBUTES
+ButtonEdit sgk01=sgk_file.sgk01, action=controlp, tabIndex=1, not null, image="zoom.png";
+ButtonEdit sgk03=sgk_file.sgk03, action=controlp, tabIndex=4, not null, image="zoom.png";
+Edit sgk03_gen02=formonly.sgk03_gen02 type CHAR, tabIndex=7, noEntry;
+DateEdit sgk02=sgk_file.sgk02, tabIndex=2, not null;
+ComboBox sgk07=sgk_file.sgk07, tabIndex=5, noEntry, not null, required, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+TextEdit sgk04=sgk_file.sgk04, tabIndex=3, not null;
+CheckBox sgk05=sgk_file.sgk05, tabIndex=6, text="sgk05", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sgk06=sgk_file.sgk06, tabIndex=8, text="sgk06", not null, required, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit sgkuser=sgk_file.sgkuser, tabIndex=9, noEntry;
+Edit sgkmodu=sgk_file.sgkmodu, tabIndex=11, noEntry;
+Edit sgkacti=sgk_file.sgkacti, tabIndex=13, noEntry, upShift;
+Edit sgkgrup=sgk_file.sgkgrup, tabIndex=10, noEntry;
+DateEdit sgkdate=sgk_file.sgkdate, tabIndex=12, noEntry;
+Edit sgl02=sgl_file.sgl02, tabIndex=14, title="Order", not null;
+ButtonEdit sgl12=sgl_file.sgl12, action=controlp, tabIndex=15, title="WorkerNo", image="zoom.png";
+Edit sgl12_gen02=formonly.sgl12_gen02 type VARCHAR, tabIndex=16, title="Worker name\n\n", noEntry;
+ButtonEdit sgl03=sgl_file.sgl03, action=controlp, tabIndex=17, title="Flytickets No", image="zoom.png";
+ButtonEdit sgl04=sgl_file.sgl04, action=controlp, tabIndex=18, title="List No", not null, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+ButtonEdit sgl05=sgl_file.sgl05, action=controlp, tabIndex=19, title="Product No ", not null, image="zoom.png";
+Edit sgl05_ima02=formonly.sgl05_ima02 type DATE, tabIndex=20, title="Product Name", noEntry;
+ButtonEdit sgl012=formonly.sgl012 type CHAR, action=controlp, tabIndex=21, title="Process Session No", image="zoom.png";
+ButtonEdit sgl06=sgl_file.sgl06, action=controlp, tabIndex=22, title="Working procedure", image="zoom.png";
+ButtonEdit sgl07=sgl_file.sgl07, action=controlp, tabIndex=23, title="Work unit No", image="zoom.png";
+Edit sgl08=sgl_file.sgl08, tabIndex=24, title="Good num", not null;
+Edit sgl09=sgl_file.sgl09, tabIndex=25, title="Discards No", not null;
+ButtonEdit sgl10=sgl_file.sgl10, action=controlp, tabIndex=26, title="work position", noEntry, not null, image="zoom.png";
+Edit sgl11=sgl_file.sgl11, tabIndex=27, title="Actual time";
+Edit sgl13=sgl_file.sgl13, tabIndex=28, title="memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=30;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sgl(sgl_file.sgl02,sgl_file.sgl12,formonly.sgl12_gen02,sgl_file.sgl03,sgl_file.sgl04,sgl_file.sgl05,formonly.sgl05_ima02,formonly.sgl012,sgl_file.sgl06,sgl_file.sgl07,sgl_file.sgl08,sgl_file.sgl09,sgl_file.sgl10,sgl_file.sgl11,sgl_file.sgl13)
+SCREEN RECORD Undefined(sgk_file.sgk01,sgk_file.sgk03,formonly.sgk03_gen02,sgk_file.sgk02,sgk_file.sgk05,sgk_file.sgk06,sgk_file.sgk04,sgk_file.sgk07,formonly.imgmksg,sgk_file.sgkuser,sgk_file.sgkmodu,sgk_file.sgkacti,sgk_file.sgkgrup,sgk_file.sgkdate,formonly.cnt,formonly.cnt2)
+END -- INSTRUCTIONS
+

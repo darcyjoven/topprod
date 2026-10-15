@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi160.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi160")
+VBox VBox1
+Folder pc463
+Page page01(text="Main")
+Table s_obl
+{
+[obl01               |obl02      |occ02                  |obl03          ]
+[obl01               |obl02      |occ02                  |obl03          ]
+[obl01               |obl02      |occ02                  |obl03          ]
+[obl01               |obl02      |occ02                  |obl03          ]
+[obl01               |obl02      |occ02                  |obl03          ]
+[obl01               |obl02      |occ02                  |obl03          ]
+[obl01               |obl02      |occ02                  |obl03          ]
+[obl01               |obl02      |occ02                  |obl03          ]
+[obl01               |obl02      |occ02                  |obl03          ]
+[obl01               |obl02      |occ02                  |obl03          ]
+
+}
+END -- s_obl
+END -- page01
+END -- pc463
+Grid gr2033
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2033
+END -- VBox1
+END -- axmi160
+
+TABLES
+obl_file
+ATTRIBUTES
+ButtonEdit obl01=obl_file.obl01, action=controlp, tabIndex=1, title="Product No.", not null, required, image="zoom", comment="<^P>Qry Item # <^O>Copy Previous Record!";
+ButtonEdit obl02=obl_file.obl02, action=controlp, tabIndex=2, title="Customer #", not null, image="zoom", comment="<^P>Qry Customer #!";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=3, title="Customer Abbreviation", noEntry;
+ButtonEdit obl03=obl_file.obl03, action=controlp, tabIndex=4, title="Packing Type", not null, required, image="zoom", comment="<^P>Qry Packing Method";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_obl(obl_file.obl01,obl_file.obl02,formonly.occ02,obl_file.obl03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

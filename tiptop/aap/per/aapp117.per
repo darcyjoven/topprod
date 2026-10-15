@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapp117.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapp117")
+VBox VBox1
+Grid gr5_1
+{
+ <G gb4                                                 >
+  Plant     [azp01       ]
+ <                                                      >
+
+}
+END -- gr5_1
+Grid gr74
+{
+ <G group05                                     >
+  Plant      [source    ][azp02               ]
+ <                                              >
+
+}
+END -- gr74
+Grid gr75
+{
+ <G group01                                                                            >
+  Store-in Note No.   [rvv01               ]  Store-in Date   [rvv09              ]
+  Vender No.          [rvv06               ]  P/O No.         [rvv36              ]
+  Plant               [rvuplant            ]  Buyer           [pmm12              ]
+ <                                                                                     >
+
+}
+END -- gr75
+Group g01(text="INPUT")
+Grid gr76
+{
+  Bill                [trtype    ]      Account Date [apa02       ]
+  Account Empl.       [apa21     ]      Accounts Dept[apa22     ]
+  Accounts Category   [apa36     ]     [apr02                         ]
+  Tax Tape            [apa15     ]     [apa16     ]% [dummy01                          ]
+ [g_a                           ]       Pay_type     [ptype        ][pt_name           ]
+ [enter_account                                   ]
+ [g_b                           ]
+  Pro of nature       [purchas_sw                 ]
+ <G group02                                                                          >
+ [summary_sw        ]
+ [                  ]
+ [                  ]
+ [                  ]
+ <                                                                                   >
+
+}
+END -- gr76
+END -- g01
+Grid gr77
+{
+ <G group03                                                                              >
+  Start No [start_no            ] [dummy02             ] End No [end_no              ]
+ <                                                                                       >
+}
+END -- gr77
+END -- VBox1
+END -- aapp117
+
+TABLES
+apa_file,
+pmm_file,
+azp_file
+ATTRIBUTES
+Group gb4:gb4, text="QBE1";
+ButtonEdit azp01=azp_file.azp01, action=controlp, tabIndex=23, not null, required, image="zoom.png", comment="<^P> Qry Documents";
+Group group05:group05, text="INPUT";
+ButtonEdit source=formonly.source type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Documents";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=2, noEntry;
+Group group01:group01, text="QBE2";
+ButtonEdit rvv01=formonly.rvv01 type CHAR, action=controlp, tabIndex=3, image="zoom";
+DateEdit rvv09=formonly.rvv09 type DATE, tabIndex=6;
+ButtonEdit rvv06=formonly.rvv06 type CHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit rvv36=formonly.rvv36 type CHAR, action=controlp, tabIndex=7, image="zoom";
+ButtonEdit rvuplant=formonly.rvuplant type CHAR, action=controlp, tabIndex=5, image="zoom.png";
+ButtonEdit pmm12=pmm_file.pmm12, action=controlp, tabIndex=8, image="zoom";
+ButtonEdit trtype=formonly.trtype type VARCHAR, action=controlp, tabIndex=9, image="zoom", comment="<^P> Qry Documents";
+DateEdit apa02=apa_file.apa02, tabIndex=10, not null, required;
+ButtonEdit apa21=apa_file.apa21, action=controlp, tabIndex=11, image="zoom", comment="<^P> Qry Employee";
+ButtonEdit apa22=apa_file.apa22, action=controlp, tabIndex=12, image="zoom", comment="<^P> Qry Department";
+ButtonEdit apa36=apa_file.apa36, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P> Qry Category";
+Edit apr02=formonly.apr02 type CHAR, tabIndex=14, upShift;
+ButtonEdit apa15=apa_file.apa15, action=controlp, tabIndex=15, not null, required, image="zoom", comment="<^P> Qry Tax Type";
+Edit apa16=apa_file.apa16, tabIndex=16, noEntry;
+Label dummy01:dummy01, text="(T.Es must be 0-Tax & No Declaration)";
+CheckBox g_a=formonly.g_a, tabIndex=25, text="a", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ptype=formonly.ptype type VARCHAR, action=controlp, tabIndex=21, image="zoom";
+Edit pt_name=formonly.pt_name type VARCHAR, tabIndex=22, noEntry;
+CheckBox enter_account=formonly.enter_account type CHAR, tabIndex=17, text="Enter Account, When Unit Price = 0", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_b=formonly.g_b, tabIndex=26, text="b", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox purchas_sw=formonly.purchas_sw, tabIndex=24, default = "1", not null, required, items=(("1", "Text"),("2", "Text"));
+Group group02:group02, text="Sumamry Method";
+RadioGroup summary_sw=formonly.summary_sw type CHAR, tabIndex=18, items=(("1", "Store-in Note"),("2", "P/O"),("3", "Vender"),("4", "Plant"));
+Group group03:group03, text="Range of generated data";
+Edit start_no=formonly.start_no type CHAR, tabIndex=19, noEntry;
+Label dummy02:dummy02;
+Edit end_no=formonly.end_no type CHAR, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(azp_file.azp01,formonly.source,formonly.azp02,formonly.rvv01,formonly.rvv09,formonly.rvv06,formonly.rvv36,formonly.rvuplant,pmm_file.pmm12,formonly.trtype,apa_file.apa02,apa_file.apa21,apa_file.apa22,apa_file.apa36,formonly.apr02,apa_file.apa15,apa_file.apa16,formonly.enter_account,formonly.ptype,formonly.pt_name,formonly.summary_sw,formonly.start_no,formonly.end_no,formonly.purchas_sw,formonly.g_a,formonly.g_b)
+END -- INSTRUCTIONS
+

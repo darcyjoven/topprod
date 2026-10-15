@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_about.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"About....")
+VBox vb3
+Folder pc841
+Page page01(text="Program Info")
+VBox VBox1
+Group group01(text="System Info")
+Grid gr3656
+{
+ [tiptop_pic][dummy01                               ]
+ [          ][dummy02                               ]
+ [          ][dummy03                               ]
+ [ie_to_dsc ]
+}
+END -- gr3656
+END -- group01
+Group group02(text="Program Info")
+Table s_about
+{
+[gal02  |gal03        |cus         |ver            ]
+[gal02  |gal03        |cus         |ver            ]
+[gal02  |gal03        |cus         |ver            ]
+
+}
+END -- s_about
+END -- group02
+END -- VBox1
+END -- page01
+Page page02(text="Environmants")
+Grid gr3657
+{
+ <G group03                                     >
+  Operate System         [label03               ]
+  Server Name            [label08               ]
+  Genero FGL Version     [label10               ]
+ <                                              >
+ <G group05                                     >
+  Executing Area         [label01               ]
+  Using Database Type    [label04               ]
+  Using Plant(Database)  [label02               ]
+  Language Setting       [label07               ]
+ <                                              >
+ <G group04                                     >
+  Connect Address        [label05               ]
+  Operateion System      [label06               ]
+  GDC Version            [label09               ]
+ <                                              >
+
+}
+END -- gr3657
+END -- page02
+END -- pc841
+Grid gr3658
+{
+ [yes_i_s] [patch_info  ]                  [check_stack]
+
+}
+END -- gr3658
+END -- vb3
+END -- cl_about
+
+TABLES
+gal_file
+ATTRIBUTES
+IMAGE tiptop_pic=formonly.tiptop_pic type CHAR, autoScale, width = 10 characters, height = 3 characters;
+Label dummy01:dummy01, text="TIPTOP GP ERP System";
+Label dummy02:dummy02, text="Copyright(c) 2004 Data System Co";
+Label dummy03:dummy03, text="All Rights Reserved.";
+Button ie_to_dsc:ie_to_dsc, text="Connect DSC";
+Edit gal02=gal_file.gal02, tabIndex=2, title="Module";
+Edit gal03=gal_file.gal03, tabIndex=3, title="Function";
+Edit cus=formonly.cus type CHAR, tabIndex=4, title="Custom";
+Edit ver=formonly.ver type CHAR, tabIndex=5, title="Version";
+Group group03:group03, text="Server Parameters";
+Edit label03=formonly.label03 type CHAR, tabIndex=6;
+Edit label08=formonly.label08 type CHAR, tabIndex=7;
+Edit label10=formonly.label10 type CHAR, tabIndex=8;
+Group group05:group05, text="Database Parameters";
+Edit label01=formonly.label01 type CHAR, tabIndex=9;
+Edit label04=formonly.label04 type CHAR, tabIndex=10;
+Edit label02=formonly.label02 type CHAR, tabIndex=11;
+Edit label07=formonly.label07 type CHAR, tabIndex=12;
+Group group04:group04, text="Client Parameters";
+Edit label05=formonly.label05 type CHAR, tabIndex=13;
+Edit label06=formonly.label06 type CHAR, tabIndex=14;
+Edit label09=formonly.label09 type CHAR, tabIndex=15;
+Button yes_i_s:yes_i_see, text="Yes,I See";
+Button patch_info:patch_info, text="Check Patch Info";
+Button check_stack:check_stack, text="Check Stack";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_about(gal_file.gal02,gal_file.gal03,formonly.cus,formonly.ver)
+SCREEN RECORD Undefined(formonly.tiptop_pic,formonly.label03,formonly.label08,formonly.label10,formonly.label01,formonly.label04,formonly.label02,formonly.label07,formonly.label05,formonly.label06,formonly.label09)
+END -- INSTRUCTIONS
+

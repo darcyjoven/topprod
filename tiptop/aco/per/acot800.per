@@ -1,0 +1,169 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acot800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acov800")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1516
+{
+ Advance Declaration     [cou01               ]
+ Customs Declaration No. [cou02               ]
+ Memo No.                [cou03               ]
+ Bonded No.              [cou04               ]
+ Document Date           [cou06       ]
+ Sent By                 [cou05               ]
+
+}
+END -- gr1516
+Grid gr1517
+{
+ Recipient           [cou07               ]
+ Import Date         [cou08       ]
+ Trade Type          [cou09     ]
+ Country             [cou10     ]
+ Currency            [cou11     ]
+ Advice No.          [cou12           ]
+
+}
+END -- gr1517
+Grid gr1518
+{
+ Pieces              [cou13     ] (PCS)     [imgmksg]
+ Total Weight        [cou14     ] (KG )     [       ]
+ Container No.       [cou15     ]
+
+
+
+
+}
+END -- gr1518
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1519
+{
+ Record Owner        [couuser   ] Last Modified by    [coumodu   ] Data Valid Code     [couacti   ]
+ Department          [cougrup   ] Create/Modify Date  [coudate     ]
+ Record Orig.        [couoriu   ]
+ Dept Orig.          [couorig   ]
+}
+END -- gr1519
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[couud01                       ] userdefined_field07[couud07        ] userdefined_field13[couud13        ]
+                    [                              ] userdefined_field08[couud08        ] userdefined_field14[couud14        ]
+ userdefined_field02[couud02        ]                userdefined_field09[couud09        ] userdefined_field15[couud15        ]
+ userdefined_field03[couud03        ]                userdefined_field10[couud10        ]
+ userdefined_field04[couud04        ]                userdefined_field11[couud11        ]
+ userdefined_field05[couud05        ]                userdefined_field12[couud12        ]
+ userdefined_field06[couud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_cov
+{
+[cov02   |cov03      |cov04                         |cov05           |cov06        |cov07  |cov08     |covud01   |covud02   |covud03    |covud04    |covud05    |covud06    |covud07    |covud08    |covud09    |covud10    |covud11   |covud12  |covud13   |covud14   |covud15    ]
+[cov02   |cov03      |cov04                         |cov05           |cov06        |cov07  |cov08     |covud01   |covud02   |covud03    |covud04    |covud05    |covud06    |covud07    |covud08    |covud09    |covud10    |covud11   |covud12  |covud13   |covud14   |covud15    ]
+[cov02   |cov03      |cov04                         |cov05           |cov06        |cov07  |cov08     |covud01   |covud02   |covud03    |covud04    |covud05    |covud06    |covud07    |covud08    |covud09    |covud10    |covud11   |covud12  |covud13   |covud14   |covud15    ]
+[cov02   |cov03      |cov04                         |cov05           |cov06        |cov07  |cov08     |covud01   |covud02   |covud03    |covud04    |covud05    |covud06    |covud07    |covud08    |covud09    |covud10    |covud11   |covud12  |covud13   |covud14   |covud15    ]
+[cov02   |cov03      |cov04                         |cov05           |cov06        |cov07  |cov08     |covud01   |covud02   |covud03    |covud04    |covud05    |covud06    |covud07    |covud08    |covud09    |covud10    |covud11   |covud12  |covud13   |covud14   |covud15    ]
+[cov02   |cov03      |cov04                         |cov05           |cov06        |cov07  |cov08     |covud01   |covud02   |covud03    |covud04    |covud05    |covud06    |covud07    |covud08    |covud09    |covud10    |covud11   |covud12  |covud13   |covud14   |covud15    ]
+[cov02   |cov03      |cov04                         |cov05           |cov06        |cov07  |cov08     |covud01   |covud02   |covud03    |covud04    |covud05    |covud06    |covud07    |covud08    |covud09    |covud10    |covud11   |covud12  |covud13   |covud14   |covud15    ]
+[cov02   |cov03      |cov04                         |cov05           |cov06        |cov07  |cov08     |covud01   |covud02   |covud03    |covud04    |covud05    |covud06    |covud07    |covud08    |covud09    |covud10    |covud11   |covud12  |covud13   |covud14   |covud15    ]
+[cov02   |cov03      |cov04                         |cov05           |cov06        |cov07  |cov08     |covud01   |covud02   |covud03    |covud04    |covud05    |covud06    |covud07    |covud08    |covud09    |covud10    |covud11   |covud12  |covud13   |covud14   |covud15    ]
+[cov02   |cov03      |cov04                         |cov05           |cov06        |cov07  |cov08     |covud01   |covud02   |covud03    |covud04    |covud05    |covud06    |covud07    |covud08    |covud09    |covud10    |covud11   |covud12  |covud13   |covud14   |covud15    ]
+
+}
+END -- s_cov
+Grid gr1520
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1520
+END -- VBox1
+END -- acot800
+
+TABLES
+cov_file,
+cou_file
+ATTRIBUTES
+ButtonEdit cou01=cou_file.cou01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Documents";
+Edit cou02=cou_file.cou02, tabIndex=2;
+ButtonEdit cou03=cou_file.cou03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Query Memo No.";
+Edit cou04=cou_file.cou04, tabIndex=4;
+DateEdit cou06=cou_file.cou06, tabIndex=5, not null, required;
+Edit cou05=cou_file.cou05, tabIndex=6;
+Edit cou07=cou_file.cou07, tabIndex=7;
+DateEdit cou08=cou_file.cou08, tabIndex=8;
+Edit cou09=cou_file.cou09, tabIndex=9;
+ButtonEdit cou10=cou_file.cou10, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry Country #";
+ButtonEdit cou11=cou_file.cou11, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Qry Currency #";
+Edit cou12=cou_file.cou12, tabIndex=12;
+Edit cou13=cou_file.cou13, tabIndex=13;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit cou14=cou_file.cou14, tabIndex=15;
+Edit cou15=cou_file.cou15, tabIndex=16;
+Edit couuser=cou_file.couuser, tabIndex=17, noEntry;
+Edit coumodu=cou_file.coumodu, tabIndex=18, noEntry;
+Edit couacti=cou_file.couacti, tabIndex=19, noEntry, upShift;
+Edit cougrup=cou_file.cougrup, tabIndex=20, noEntry;
+DateEdit coudate=cou_file.coudate, tabIndex=21, noEntry;
+Edit couoriu=cou_file.couoriu, tabIndex=501, noEntry;
+Edit couorig=cou_file.couorig, tabIndex=502, noEntry;
+TextEdit couud01=cou_file.couud01, tabIndex=327, stretch=NONE;
+Edit couud07=cou_file.couud07, tabIndex=328;
+DateEdit couud13=cou_file.couud13, tabIndex=329;
+Edit couud08=cou_file.couud08, tabIndex=330;
+DateEdit couud14=cou_file.couud14, tabIndex=331;
+Edit couud02=cou_file.couud02, tabIndex=332;
+Edit couud09=cou_file.couud09, tabIndex=333;
+DateEdit couud15=cou_file.couud15, tabIndex=334;
+Edit couud03=cou_file.couud03, tabIndex=335;
+Edit couud10=cou_file.couud10, tabIndex=336;
+Edit couud04=cou_file.couud04, tabIndex=337;
+Edit couud11=cou_file.couud11, tabIndex=338;
+Edit couud05=cou_file.couud05, tabIndex=339;
+Edit couud12=cou_file.couud12, tabIndex=340;
+Edit couud06=cou_file.couud06, tabIndex=341;
+Edit cov02=cov_file.cov02, tabIndex=22, title="Ln No.", not null, required;
+ButtonEdit cov03=cov_file.cov03, action=controlp, tabIndex=23, title="Memo S/N", not null, required, image="zoom", comment="Press <^P> to Query [Memo S/N]     ";
+Edit cov04=cov_file.cov04, tabIndex=24, title="Desc. & Spec.";
+ButtonEdit cov05=cov_file.cov05, action=controlp, tabIndex=25, title="Origin Contry", not null, required, image="zoom", comment="<^P>Qry Country #";
+Edit cov06=cov_file.cov06, tabIndex=26, title="Qty/Weight";
+ButtonEdit cov07=cov_file.cov07, action=controlp, tabIndex=27, title="Unit", not null, required, image="zoom", comment="<^P>Query Unit Code";
+Edit cov08=cov_file.cov08, tabIndex=28, title="Total";
+TextEdit covud01=cov_file.covud01, tabIndex=325, title="covud01", stretch=NONE;
+Edit covud02=cov_file.covud02, tabIndex=342, title="covud02";
+Edit covud03=cov_file.covud03, tabIndex=343, title="covud03";
+Edit covud04=cov_file.covud04, tabIndex=344, title="covud04";
+Edit covud05=cov_file.covud05, tabIndex=345, title="covud05";
+Edit covud06=cov_file.covud06, tabIndex=346, title="covud06";
+Edit covud07=cov_file.covud07, tabIndex=347, title="covud07";
+Edit covud08=cov_file.covud08, tabIndex=348, title="covud08";
+Edit covud09=cov_file.covud09, tabIndex=349, title="covud09";
+Edit covud10=cov_file.covud10, tabIndex=350, title="covud10";
+Edit covud11=cov_file.covud11, tabIndex=351, title="covud11";
+Edit covud12=cov_file.covud12, tabIndex=352, title="covud12";
+Edit covud13=cov_file.covud13, tabIndex=353, title="covud13";
+Edit covud14=cov_file.covud14, tabIndex=354, title="covud14";
+Edit covud15=cov_file.covud15, tabIndex=355, title="covud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=30, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cov(cov_file.cov02,cov_file.cov03,cov_file.cov04,cov_file.cov05,cov_file.cov06,cov_file.cov07,cov_file.cov08,cov_file.covud01,cov_file.covud02,cov_file.covud03,cov_file.covud04,cov_file.covud05,cov_file.covud06,cov_file.covud07,cov_file.covud08,cov_file.covud09,cov_file.covud10,cov_file.covud11,cov_file.covud12,cov_file.covud13,cov_file.covud14,cov_file.covud15)
+SCREEN RECORD Undefined(cou_file.cou01,cou_file.cou02,cou_file.cou03,cou_file.cou04,cou_file.cou06,cou_file.cou05,cou_file.cou07,cou_file.cou08,cou_file.cou09,cou_file.cou10,cou_file.cou11,cou_file.cou12,cou_file.cou13,formonly.imgmksg,cou_file.cou14,cou_file.cou15,cou_file.couuser,cou_file.coumodu,cou_file.couacti,cou_file.cougrup,cou_file.coudate,cou_file.couoriu,cou_file.couorig,cou_file.couud01,cou_file.couud07,cou_file.couud13,cou_file.couud08,cou_file.couud14,cou_file.couud02,cou_file.couud09,cou_file.couud15,cou_file.couud03,cou_file.couud10,cou_file.couud04,cou_file.couud11,cou_file.couud05,cou_file.couud12,cou_file.couud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

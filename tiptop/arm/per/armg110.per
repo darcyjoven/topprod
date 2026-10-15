@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armg110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"armr110")
+VBox VBox1
+Grid gr345
+{
+ <G group01                                             >
+  RMA Re-Delivery No. [rme01               ]
+  Document Date       [rme02               ]
+  Customer No.        [rme03               ]
+  RMA INVOICE No.     [rme08               ]
+ <                                                      >
+}
+END -- gr345
+Grid gr346
+{
+[more                                     ]
+
+
+}
+END -- gr346
+END -- VBox1
+END -- armr110
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit rme01=formonly.rme01 type VARCHAR, tabIndex=1, upShift;
+DateEdit rme02=formonly.rme02 type DATE, tabIndex=2;
+ButtonEdit rme03=formonly.rme03 type VARCHAR, action=controlp, tabIndex=3, image="zoom", upShift;
+Edit rme08=formonly.rme08 type VARCHAR, tabIndex=4;
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rme01,formonly.rme02,formonly.rme03,formonly.rme08,formonly.more)
+END -- INSTRUCTIONS
+

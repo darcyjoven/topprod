@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apci202.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Main(text=%"Main")
+Table ds1
+{
+[ryq01                         |ryq01_desc          |ryq02                         |ryq02_desc          |ryq03      |ryq04     |ryq05               |ryq06               |ryqacti     |ryqpos             ]
+[ryq01                         |ryq01_desc          |ryq02                         |ryq02_desc          |ryq03      |ryq04     |ryq05               |ryq06               |ryqacti     |ryqpos             ]
+[ryq01                         |ryq01_desc          |ryq02                         |ryq02_desc          |ryq03      |ryq04     |ryq05               |ryq06               |ryqacti     |ryqpos             ]
+[ryq01                         |ryq01_desc          |ryq02                         |ryq02_desc          |ryq03      |ryq04     |ryq05               |ryq06               |ryqacti     |ryqpos             ]
+[ryq01                         |ryq01_desc          |ryq02                         |ryq02_desc          |ryq03      |ryq04     |ryq05               |ryq06               |ryqacti     |ryqpos             ]
+[ryq01                         |ryq01_desc          |ryq02                         |ryq02_desc          |ryq03      |ryq04     |ryq05               |ryq06               |ryqacti     |ryqpos             ]
+[ryq01                         |ryq01_desc          |ryq02                         |ryq02_desc          |ryq03      |ryq04     |ryq05               |ryq06               |ryqacti     |ryqpos             ]
+[ryq01                         |ryq01_desc          |ryq02                         |ryq02_desc          |ryq03      |ryq04     |ryq05               |ryq06               |ryqacti     |ryqpos             ]
+[ryq01                         |ryq01_desc          |ryq02                         |ryq02_desc          |ryq03      |ryq04     |ryq05               |ryq06               |ryqacti     |ryqpos             ]
+[ryq01                         |ryq01_desc          |ryq02                         |ryq02_desc          |ryq03      |ryq04     |ryq05               |ryq06               |ryqacti     |ryqpos             ]
+
+}
+END -- ds1
+END -- Main
+END -- Folder1
+Grid gr2000
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2000
+END -- VBox1
+END -- Form
+
+TABLES
+ryq_file
+ATTRIBUTES
+ButtonEdit ryq01=ryq_file.ryq01, action=controlp, tabIndex=1, title=%"ryq01", not null, image="zoom.png", scroll;
+Edit ryq01_desc=formonly.ryq01_desc, tabIndex=2, title=%"ryq01_desc", noEntry;
+ButtonEdit ryq02=ryq_file.ryq02, action=controlp, tabIndex=3, title=%"ryq02", not null, image="zoom.png", scroll;
+Edit ryq02_desc=formonly.ryq02_desc, tabIndex=4, title=%"ryp02_desc", noEntry;
+CheckBox ryq03=ryq_file.ryq03, tabIndex=5, title=%"ryq03", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox ryq04=ryq_file.ryq04, tabIndex=6, title=%"ryq04", not null, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"));
+Edit ryq05=ryq_file.ryq05, tabIndex=7, title=%"ryq05";
+Edit ryq06=ryq_file.ryq06, tabIndex=8, title=%"ryq06";
+CheckBox ryqacti=ryq_file.ryqacti, tabIndex=9, default = "Y", title=%"ryqacti", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox ryqpos=ryq_file.ryqpos, tabIndex=10, title=%"ryqpos", noEntry, not null, scroll, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ryq(ryq_file.ryq01,formonly.ryq01_desc,ryq_file.ryq02,formonly.ryq02_desc,ryq_file.ryq03,ryq_file.ryq04,ryq_file.ryq05,ryq_file.ryq06,ryq_file.ryqacti,ryq_file.ryqpos)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

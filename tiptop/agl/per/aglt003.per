@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglt003")
+VBox vb2_
+Folder folder01
+Page page01(text="Main")
+Grid gr2856
+{
+ Group No.           [axq01     ]
+ Under Company       [axq04     ]              Under Comp Book No  [axq041    ]
+ Year                [axq06     ]              Period              [axq07     ]              Currency[axq12     ]
+
+}
+END -- gr2856
+END -- page01
+END -- folder01
+Table s_axq
+{
+[axq29     |axq05                   |axq051                                            |axq13     |axq08                 |axq09                 |axq14                             |axq15                             |axq16                             |axq17                             ]
+[axq29     |axq05                   |axq051                                            |axq13     |axq08                 |axq09                 |axq14                             |axq15                             |axq16                             |axq17                             ]
+[axq29     |axq05                   |axq051                                            |axq13     |axq08                 |axq09                 |axq14                             |axq15                             |axq16                             |axq17                             ]
+[axq29     |axq05                   |axq051                                            |axq13     |axq08                 |axq09                 |axq14                             |axq15                             |axq16                             |axq17                             ]
+[axq29     |axq05                   |axq051                                            |axq13     |axq08                 |axq09                 |axq14                             |axq15                             |axq16                             |axq17                             ]
+[axq29     |axq05                   |axq051                                            |axq13     |axq08                 |axq09                 |axq14                             |axq15                             |axq16                             |axq17                             ]
+[axq29     |axq05                   |axq051                                            |axq13     |axq08                 |axq09                 |axq14                             |axq15                             |axq16                             |axq17                             ]
+[axq29     |axq05                   |axq051                                            |axq13     |axq08                 |axq09                 |axq14                             |axq15                             |axq16                             |axq17                             ]
+[axq29     |axq05                   |axq051                                            |axq13     |axq08                 |axq09                 |axq14                             |axq15                             |axq16                             |axq17                             ]
+[axq29     |axq05                   |axq051                                            |axq13     |axq08                 |axq09                 |axq14                             |axq15                             |axq16                             |axq17                             ]
+}
+END -- s_axq
+Grid gr2857
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------                      Debit Amount        [sumaxq08            ]                          Credit Amount       [sumaxq09            ]
+
+
+}
+END -- gr2857
+END -- vb2_
+END -- aglt003
+
+TABLES
+axq_file
+ATTRIBUTES
+ButtonEdit axq01=axq_file.axq01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit axq04=axq_file.axq04, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Query";
+ButtonEdit axq041=axq_file.axq041, action=controlp, tabIndex=3, noEntry, not null, required, image="zoom", comment="<^P>Qry Book#";
+Edit axq06=axq_file.axq06, tabIndex=4;
+Edit axq07=axq_file.axq07, tabIndex=5;
+Edit axq12=axq_file.axq12, tabIndex=6, noEntry;
+Edit axq29=axq_file.axq29, tabIndex=20, title=%"Dept.";
+Edit axq05=axq_file.axq05, tabIndex=7, title="Account No.";
+Edit axq051=axq_file.axq051, tabIndex=8, title="Account Name";
+ButtonEdit axq13=axq_file.axq13, action=controlp, tabIndex=9, title="Affiliate", image="zoom", comment="<^P>Qry Details";
+Edit axq08=axq_file.axq08, tabIndex=10, title="Debit Transaction Amt";
+Edit axq09=axq_file.axq09, tabIndex=11, title="Credit Transaction Amt";
+ButtonEdit axq14=axq_file.axq14, action=controlp, tabIndex=16, title="Dimension 5", image="zoom";
+ButtonEdit axq15=axq_file.axq15, action=controlp, tabIndex=17, title="Dimension 6", image="zoom";
+ButtonEdit axq16=axq_file.axq16, action=controlp, tabIndex=18, title="Dimension 7", image="zoom";
+ButtonEdit axq17=axq_file.axq17, action=controlp, tabIndex=19, title="Dimension 8", image="zoom";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+Edit sumaxq08=formonly.sumaxq08 type DECIMAL, tabIndex=14, noEntry;
+Edit sumaxq09=formonly.sumaxq09 type DECIMAL, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axq(axq_file.axq29,axq_file.axq05,axq_file.axq051,axq_file.axq13,axq_file.axq08,axq_file.axq09,axq_file.axq14,axq_file.axq15,axq_file.axq16,axq_file.axq17)
+SCREEN RECORD Undefined(axq_file.axq01,axq_file.axq04,axq_file.axq041,axq_file.axq06,axq_file.axq07,axq_file.axq12,formonly.cnt,formonly.cn2,formonly.sumaxq08,formonly.sumaxq09)
+END -- INSTRUCTIONS
+

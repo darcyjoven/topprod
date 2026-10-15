@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt211.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt311")
+VBox vb3
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr12
+{
+   <G gb1                                                                                                  >
+     Check List No. [ruu01                 ]             Auditing Code   [ruuconf   ]            [imgmks]
+     Check Plan     [ruu02                 ][ruu02_desc] Auditing Date   [ruucond   ][ruucont   ][      ]
+     Check Date     [ruu03             ]                 Auditing Person [ruuconu   ][ruuconu_de]
+     Check Depot    [ruu04             ]    [ruu04_desc] Ins Type        [ruuplant  ][ruuplant_d]
+     Check Person   [ruu05             ]    [ruu05_desc] Memo            [ruu06                 ]
+
+   <                                                                                                       >
+
+}
+END -- gr12
+END -- Page1
+Page Page2(text=%"Info")
+Grid gr11
+{
+
+   Record Owner[ruuuser   ]     Record Modify User[ruumodu   ]    Record Acti      [ruuacti   ]
+   Record Group[ruugrup   ]     Last Modified Date[ruudate   ]    Record Creat Date[ruucrat   ]
+   Record Orig.[ruuoriu   ]     Dept Orig.        [ruuorig   ]
+
+
+
+}
+END -- gr11
+END -- Page2
+END -- pc1
+Table s_ruv
+{
+[ruv02     |ruv03     |ruv04     |ruv04_desc|ruv05     |ruv05_desc|ruv06     |ruv07     |ruv08     |ruv09     |ruv10     ]
+[ruv02     |ruv03     |ruv04     |ruv04_desc|ruv05     |ruv05_desc|ruv06     |ruv07     |ruv08     |ruv09     |ruv10     ]
+[ruv02     |ruv03     |ruv04     |ruv04_desc|ruv05     |ruv05_desc|ruv06     |ruv07     |ruv08     |ruv09     |ruv10     ]
+[ruv02     |ruv03     |ruv04     |ruv04_desc|ruv05     |ruv05_desc|ruv06     |ruv07     |ruv08     |ruv09     |ruv10     ]
+[ruv02     |ruv03     |ruv04     |ruv04_desc|ruv05     |ruv05_desc|ruv06     |ruv07     |ruv08     |ruv09     |ruv10     ]
+}
+END -- s_ruv
+Grid gr33
+{
+  ----------count[cnt       ]/[cn2       ]----------
+
+
+
+}
+END -- gr33
+END -- vb3
+END -- artt211
+
+TABLES
+ruv_file,
+ruu_file
+ATTRIBUTES
+Group gb1:gb1;
+ButtonEdit ruu01=ruu_file.ruu01, action=controlp, tabIndex=7, not null, image="zoom.png";
+ComboBox ruuconf=ruu_file.ruuconf, tabIndex=15, noEntry, items=(("Y", "Auditing"),("N", "No Auditing"),("X", "Blank Out"));
+IMAGE imgmks=formonly.imgmksg type CHAR;
+ButtonEdit ruu02=ruu_file.ruu02, action=controlp, tabIndex=8, not null, image="zoom.png";
+Edit ruu02_desc=formonly.ruu02_desc type CHAR, tabIndex=12, noEntry;
+DateEdit ruucond=ruu_file.ruucond, tabIndex=16, noEntry;
+TimeEdit ruucont=ruu_file.ruucont, tabIndex=35, not null, required;
+DateEdit ruu03=ruu_file.ruu03, tabIndex=9, noEntry, not null;
+ButtonEdit ruuconu=ruu_file.ruuconu, action=controlp, tabIndex=17, noEntry, image="zoom.png";
+Edit ruuconu_de=formonly.ruuconu_desc type CHAR, tabIndex=18, noEntry;
+ButtonEdit ruu04=ruu_file.ruu04, action=controlp, tabIndex=10, not null, image="zoom.png";
+Edit ruu04_desc=formonly.ruu04_desc type CHAR, tabIndex=13, noEntry;
+Edit ruuplant=ruu_file.ruuplant, tabIndex=19, noEntry;
+Edit ruuplant_d=formonly.ruuplant_desc type CHAR, tabIndex=21, noEntry;
+ButtonEdit ruu05=ruu_file.ruu05, action=controlp, tabIndex=11, image="zoom.png";
+Edit ruu05_desc=formonly.ruu05_desc type CHAR, tabIndex=14, noEntry;
+Edit ruu06=ruu_file.ruu06, tabIndex=20;
+Edit ruuuser=formonly.ruuuser type CHAR, tabIndex=1, noEntry;
+Edit ruumodu=formonly.ruumodu type CHAR, tabIndex=3, noEntry;
+Edit ruuacti=formonly.ruuacti type CHAR, tabIndex=4, noEntry;
+Edit ruugrup=formonly.ruugrup type CHAR, tabIndex=2, noEntry;
+DateEdit ruudate=formonly.ruudate type CHAR, tabIndex=5, noEntry;
+DateEdit ruucrat=formonly.ruucrat type CHAR, tabIndex=6, noEntry;
+Edit ruuoriu=ruu_file.ruuoriu, tabIndex=37, noEntry;
+Edit ruuorig=ruu_file.ruuorig, tabIndex=36, noEntry;
+Edit ruv02=ruv_file.ruv02, tabIndex=22, title="ruv02";
+Edit ruv03=ruv_file.ruv03, tabIndex=23, title="ruv03";
+ButtonEdit ruv04=ruv_file.ruv04, action=controlp, tabIndex=24, title="ruv04", not null, image="zoom.png";
+Edit ruv04_desc=formonly.ruv04_desc type CHAR, tabIndex=25, title="ruv04_desc", noEntry;
+ButtonEdit ruv05=ruv_file.ruv05, action=controlp, tabIndex=26, title="ruv05", noEntry, image="zoom.png";
+Edit ruv05_desc=formonly.ruv05_desc type CHAR, tabIndex=27, title="ruv05_desc", noEntry;
+Edit ruv06=ruv_file.ruv06, tabIndex=28, title="ruv06", not null;
+Edit ruv07=ruv_file.ruv07, tabIndex=29, title="ruv07";
+Edit ruv08=ruv_file.ruv08, tabIndex=30, title="ruv08";
+Edit ruv09=ruv_file.ruv09, tabIndex=31, title="ruv09";
+TextEdit ruv10=ruv_file.ruv10, tabIndex=32, title="ruv10";
+Edit cnt=formonly.cnt type CHAR, tabIndex=33;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=34;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ruv(ruv_file.ruv02,ruv_file.ruv03,ruv_file.ruv04,formonly.ruv04_desc,ruv_file.ruv05,formonly.ruv05_desc,ruv_file.ruv06,ruv_file.ruv07,ruv_file.ruv08,ruv_file.ruv09,ruv_file.ruv10)
+SCREEN RECORD Undefined(ruu_file.ruu01,ruu_file.ruuconf,formonly.imgmksg,ruu_file.ruu02,formonly.ruu02_desc,ruu_file.ruucond,ruu_file.ruucont,ruu_file.ruu03,ruu_file.ruuconu,formonly.ruuconu_desc,ruu_file.ruu04,formonly.ruu04_desc,ruu_file.ruuplant,formonly.ruuplant_desc,ruu_file.ruu05,formonly.ruu05_desc,ruu_file.ruu06,formonly.ruuuser,formonly.ruumodu,formonly.ruuacti,formonly.ruugrup,formonly.ruudate,formonly.ruucrat,ruu_file.ruuoriu,ruu_file.ruuorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

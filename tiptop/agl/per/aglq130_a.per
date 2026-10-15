@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq130_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq130_a")
+Grid gr2533
+{
+ <T s_npq                                                                                                     >
+ [npqsys |npq00 |npp02   |npp01    |nppglno       |npq06 |npq24      |npq07f     |npq07      |npq04          ]
+ [npqsys |npq00 |npp02   |npp01    |nppglno       |npq06 |npq24      |npq07f     |npq07      |npq04          ]
+ [npqsys |npq00 |npp02   |npp01    |nppglno       |npq06 |npq24      |npq07f     |npq07      |npq04          ]
+ [npqsys |npq00 |npp02   |npp01    |nppglno       |npq06 |npq24      |npq07f     |npq07      |npq04          ]
+ [npqsys |npq00 |npp02   |npp01    |nppglno       |npq06 |npq24      |npq07f     |npq07      |npq04          ]
+ [npqsys |npq00 |npp02   |npp01    |nppglno       |npq06 |npq24      |npq07f     |npq07      |npq04          ]
+ [npqsys |npq00 |npp02   |npp01    |nppglno       |npq06 |npq24      |npq07f     |npq07      |npq04          ]
+ [npqsys |npq00 |npp02   |npp01    |nppglno       |npq06 |npq24      |npq07f     |npq07      |npq04          ]
+ [npqsys |npq00 |npp02   |npp01    |nppglno       |npq06 |npq24      |npq07f     |npq07      |npq04          ]
+ [npqsys |npq00 |npp02   |npp01    |nppglno       |npq06 |npq24      |npq07f     |npq07      |npq04          ]
+ <                                                                                                            >
+
+}
+END -- gr2533
+END -- aglq130_a
+
+TABLES
+npq_file,
+npp_file
+ATTRIBUTES
+Table s_npq:s_npq;
+Edit npqsys=npq_file.npqsys, tabIndex=1, title="Module", noEntry;
+Edit npq00=npq_file.npq00, tabIndex=2, title="Cate", noEntry;
+Edit npp02=npp_file.npp02, tabIndex=3, title="T.Date", noEntry;
+Edit npp01=npp_file.npp01, tabIndex=4, title="Docu No.", noEntry;
+Edit nppglno=npp_file.nppglno, tabIndex=5, title="C.Voucher No.", noEntry;
+Edit npq06=npq_file.npq06, tabIndex=6, title="De/Cr", noEntry;
+Edit npq24=npq_file.npq24, tabIndex=7, title="O.Currency", noEntry;
+Edit npq07f=npq_file.npq07f, tabIndex=8, title="O.C Amount", noEntry, not null, required;
+Edit npq07=npq_file.npq07, tabIndex=9, title="H.C Amount", noEntry, not null, required;
+Edit npq04=npq_file.npq04, tabIndex=10, title="Memo", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_npq(npq_file.npqsys,npq_file.npq00,npp_file.npp02,npp_file.npp01,npp_file.nppglno,npq_file.npq06,npq_file.npq24,npq_file.npq07f,npq_file.npq07,npq_file.npq04)
+END -- INSTRUCTIONS
+

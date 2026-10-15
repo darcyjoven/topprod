@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/4fd/apmq234.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq234")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+Table s_pmj
+{
+[pmj12       |pmj03              |pmj031  |pmj032  |pmc01       |pmc03       |pmj04               |pmi02   |pmi05      |ima44   |pmj10     |pmj05     |pmj06               |pmj06t              |pmj07               |pmj07t              |pmj08      |pmj09       ]
+[pmj12       |pmj03              |pmj031  |pmj032  |pmc01       |pmc03       |pmj04               |pmi02   |pmi05      |ima44   |pmj10     |pmj05     |pmj06               |pmj06t              |pmj07               |pmj07t              |pmj08      |pmj09       ]
+[pmj12       |pmj03              |pmj031  |pmj032  |pmc01       |pmc03       |pmj04               |pmi02   |pmi05      |ima44   |pmj10     |pmj05     |pmj06               |pmj06t              |pmj07               |pmj07t              |pmj08      |pmj09       ]
+[pmj12       |pmj03              |pmj031  |pmj032  |pmc01       |pmc03       |pmj04               |pmi02   |pmi05      |ima44   |pmj10     |pmj05     |pmj06               |pmj06t              |pmj07               |pmj07t              |pmj08      |pmj09       ]
+[pmj12       |pmj03              |pmj031  |pmj032  |pmc01       |pmc03       |pmj04               |pmi02   |pmi05      |ima44   |pmj10     |pmj05     |pmj06               |pmj06t              |pmj07               |pmj07t              |pmj08      |pmj09       ]
+[pmj12       |pmj03              |pmj031  |pmj032  |pmc01       |pmc03       |pmj04               |pmi02   |pmi05      |ima44   |pmj10     |pmj05     |pmj06               |pmj06t              |pmj07               |pmj07t              |pmj08      |pmj09       ]
+[pmj12       |pmj03              |pmj031  |pmj032  |pmc01       |pmc03       |pmj04               |pmi02   |pmi05      |ima44   |pmj10     |pmj05     |pmj06               |pmj06t              |pmj07               |pmj07t              |pmj08      |pmj09       ]
+[pmj12       |pmj03              |pmj031  |pmj032  |pmc01       |pmc03       |pmj04               |pmi02   |pmi05      |ima44   |pmj10     |pmj05     |pmj06               |pmj06t              |pmj07               |pmj07t              |pmj08      |pmj09       ]
+[pmj12       |pmj03              |pmj031  |pmj032  |pmc01       |pmc03       |pmj04               |pmi02   |pmi05      |ima44   |pmj10     |pmj05     |pmj06               |pmj06t              |pmj07               |pmj07t              |pmj08      |pmj09       ]
+[pmj12       |pmj03              |pmj031  |pmj032  |pmc01       |pmc03       |pmj04               |pmi02   |pmi05      |ima44   |pmj10     |pmj05     |pmj06               |pmj06t              |pmj07               |pmj07t              |pmj08      |pmj09       ]
+}
+END -- s_pmj
+END -- page01
+END -- folder01
+Grid gr4981
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4981
+END -- vb3
+END -- apmq234
+
+TABLES
+pmj_file,
+pmi_file,
+pmc_file
+ATTRIBUTES
+ComboBox pmj12=pmj_file.pmj12, tabIndex=15, title="Price Type", items=(("1", "General"),("2", "Subcontracting"));
+Edit pmj03=formonly.pmj03 type CHAR, tabIndex=1, title="Item No.";
+Edit pmj031=pmj_file.pmj031, tabIndex=18, title=%"pmj031", noEntry;
+Edit pmj032=pmj_file.pmj032, tabIndex=19, title=%"pmj032", noEntry;
+ButtonEdit pmc01=pmc_file.pmc01, action=controlp, tabIndex=16, title="Vender", image="zoom";
+Edit pmc03=pmc_file.pmc03, tabIndex=17, title="Abbreviation", noEntry;
+Edit pmj04=formonly.pmj04 type CHAR, tabIndex=2, title="Vender Item#";
+DateEdit pmi02=formonly.pmi02 type DATE, tabIndex=3, title="Appr.Dt";
+Edit pmi05=pmi_file.pmi05, tabIndex=14, title=%"Pricing by Qty";
+Edit ima44=formonly.ima44 type CHAR, tabIndex=4, title="Pur Unit Ori-U/P", noEntry;
+Edit pmj10=pmj_file.pmj10, tabIndex=12, title="pmj10", noEntry;
+Edit pmj05=pmj_file.pmj05, tabIndex=13, title="pmj05", noEntry;
+Edit pmj06=formonly.pmj06 type CHAR, tabIndex=5;
+Edit pmj06t=formonly.pmj06t type CHAR, tabIndex=6, title="Ori-Tax-U/P";
+Edit pmj07=formonly.pmj07 type CHAR, tabIndex=7, title="New U/P";
+Edit pmj07t=formonly.pmj07t type CHAR, tabIndex=8, title="New Tax U/P";
+DateEdit pmj08=formonly.pmj08 type DATE, tabIndex=9, title="Or-Appr.Dt";
+DateEdit pmj09=formonly.pmj09 type CHAR, tabIndex=10, title="New-Appr.Dt";
+Edit cnt=formonly.cnt type CHAR, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmj(pmj_file.pmj12,formonly.pmj03,pmj_file.pmj031,pmj_file.pmj032,pmc_file.pmc01,pmc_file.pmc03,formonly.pmj04,formonly.pmi02,pmi_file.pmi05,formonly.ima44,pmj_file.pmj10,pmj_file.pmj05,formonly.pmj06,formonly.pmj06t,formonly.pmj07,formonly.pmj07t,formonly.pmj08,formonly.pmj09)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

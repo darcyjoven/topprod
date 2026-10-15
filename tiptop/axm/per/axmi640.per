@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi640.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi640")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+VBox VBox2
+Grid Grid1
+{
+
+   Commission No.# [ofs01     ][ofs02               ]                [imgmksg]
+                                                                     [       ]
+
+
+}
+END -- Grid1
+Grid Grid2
+{
+ <G group02                     ><G group03                                             >
+ [ofs03                      ]   [ofs16                      ]
+
+
+                                   [ofs17     ]
+ <                              ><                                                      >
+ <G group04                                                                             >
+  Calculation Base    [ofs04                       ]
+  Rate                [ofs05               ]
+ <                                                                                      >
+
+}
+END -- Grid2
+Group group05(text="Rate")
+Grid Grid3
+{
+ Base 1              [ofs06               ]              Rate 1              [ofs07               ]
+ Base 2              [ofs08               ]              Rate 2              [ofs09               ]
+ Base 3              [ofs10               ]              Rate 3              [ofs11               ]
+ Base 4              [ofs12               ]              Rate 4              [ofs13               ]
+ Base 5              [ofs14               ]              Rate 5              [ofs15               ]
+}
+END -- Grid3
+END -- group05
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid Grid4
+{
+ Record Owner        [ofsuser   ] Last Modified by    [ofsmodu   ] Data Valid Code     [ofsacti   ]
+ Department          [ofsgrup   ] Create/Modify Date  [ofsdate     ]
+ Record Orig.        [ofsoriu   ]
+ Dept Orig.          [ofsorig   ]
+}
+END -- Grid4
+END -- info
+END -- Folder1
+Grid Grid5
+{
+ --------- Rows [cnt   ] ----------
+
+}
+END -- Grid5
+END -- VBox1
+END -- axmi640
+
+TABLES
+ofs_file
+ATTRIBUTES
+ButtonEdit ofs01=ofs_file.ofs01, action=controlp, tabIndex=1, image="zoom";
+Edit ofs02=ofs_file.ofs02, tabIndex=2;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Group group02:group02, text="Calculation Method";
+RadioGroup ofs03=ofs_file.ofs03, tabIndex=4, items=(("1", %"By Commission Define"),("2", %"By Customer"),("3", %"By Product"));
+Group group03:group03, text="Currency Count:";
+RadioGroup ofs16=ofs_file.ofs16, tabIndex=5, items=(("1", %"Original Currency"),("2", %"Home Currency"),("3", %"Assign Currency"));
+ButtonEdit ofs17=ofs_file.ofs17, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Details";
+Group group04:group04;
+ComboBox ofs04=ofs_file.ofs04, tabIndex=7, required, items=(("1", %"Sales Qty"),("2", %"Sales Amount"),("3", %"Standard Selling Price"),("4", %"Profit"));
+Edit ofs05=ofs_file.ofs05, tabIndex=8, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofs06=ofs_file.ofs06, tabIndex=9, comment="Calculation Base 1 = Exceed Quantity 1  2/3/4 = Exceed Amount 1";
+Edit ofs07=ofs_file.ofs07, tabIndex=10, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofs08=ofs_file.ofs08, tabIndex=11, comment="Calculation Base 1 = Exceed Quantity 2  2/3/4 = Exceed Amount 2";
+Edit ofs09=ofs_file.ofs09, tabIndex=12, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofs10=ofs_file.ofs10, tabIndex=13, comment="Calculation Base 1 = Exceed Quantity 3  2/3/4 = Exceed Amount 3";
+Edit ofs11=ofs_file.ofs11, tabIndex=14, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofs12=ofs_file.ofs12, tabIndex=15, comment="Calculation Base 1 = Exceed Quantity 4  2/3/4 = Exceed Amount 4";
+Edit ofs13=ofs_file.ofs13, tabIndex=16, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofs14=ofs_file.ofs14, tabIndex=17, comment="Calculation Base 1 = Exceed Quantity 5  2/3/4 = Exceed Amount 5";
+Edit ofs15=ofs_file.ofs15, tabIndex=18, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofsuser=ofs_file.ofsuser, tabIndex=19, noEntry;
+Edit ofsmodu=ofs_file.ofsmodu, tabIndex=20, noEntry;
+Edit ofsacti=ofs_file.ofsacti, tabIndex=21, noEntry, upShift;
+Edit ofsgrup=ofs_file.ofsgrup, tabIndex=22, noEntry;
+DateEdit ofsdate=ofs_file.ofsdate, tabIndex=23, noEntry;
+Edit ofsoriu=ofs_file.ofsoriu, tabIndex=501, noEntry;
+Edit ofsorig=ofs_file.ofsorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ofs_file.ofs01,ofs_file.ofs02,formonly.imgmksg,ofs_file.ofs03,ofs_file.ofs16,ofs_file.ofs17,ofs_file.ofs04,ofs_file.ofs05,ofs_file.ofs06,ofs_file.ofs07,ofs_file.ofs08,ofs_file.ofs09,ofs_file.ofs10,ofs_file.ofs11,ofs_file.ofs12,ofs_file.ofs13,ofs_file.ofs14,ofs_file.ofs15,ofs_file.ofsuser,ofs_file.ofsmodu,ofs_file.ofsacti,ofs_file.ofsgrup,ofs_file.ofsdate,ofs_file.ofsoriu,ofs_file.ofsorig,formonly.cnt)
+END -- INSTRUCTIONS
+

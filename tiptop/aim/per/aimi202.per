@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi202.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi202")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+HBox hb5
+Grid gr3050
+{
+ Item No.      [imf01                                   ]
+ Part Name     [ima02                                                      ]
+ Specification [ima021                                                     ]
+
+}
+END -- gr3050
+Grid gr3051
+{
+  Inv Unit    [ima25 ]
+  Current ver [ima05 ]
+  Src Cd      [ima08 ]
+
+}
+END -- gr3051
+END -- hb5
+END -- page01
+END -- folder01
+Table s_imf
+{
+[imf02     |imd02   |imf03     |ime03   |imf04          ]
+[imf02     |imd02   |imf03     |ime03   |imf04          ]
+[imf02     |imd02   |imf03     |ime03   |imf04          ]
+[imf02     |imd02   |imf03     |ime03   |imf04          ]
+[imf02     |imd02   |imf03     |ime03   |imf04          ]
+[imf02     |imd02   |imf03     |ime03   |imf04          ]
+[imf02     |imd02   |imf03     |ime03   |imf04          ]
+[imf02     |imd02   |imf03     |ime03   |imf04          ]
+[imf02     |imd02   |imf03     |ime03   |imf04          ]
+[imf02     |imd02   |imf03     |ime03   |imf04          ]
+
+}
+END -- s_imf
+Grid gr3052
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3052
+END -- vb2
+END -- aimi202
+
+TABLES
+imf_file
+ATTRIBUTES
+ButtonEdit imf01=imf_file.imf01, action=controlp, tabIndex=1, image="zoom", comment="Assign Item No. to Add/Query   ";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=4, noEntry;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=5, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=6, noEntry;
+ButtonEdit imf02=imf_file.imf02, action=controlp, tabIndex=7, title="Warehouse#", not null, required, image="zoom", comment="<^P> Qry Warehouse <^Y> Create Warehouse";
+Edit imd02=formonly.imd02, tabIndex=12, title=%"imd02";
+ButtonEdit imf03=imf_file.imf03, action=controlp, tabIndex=8, title="Location", image="zoom", comment="<^P> Qry Warehouse/Location <^Y> Create Warehouse/Location";
+Edit ime03=formonly.ime03, tabIndex=13, title=%"ime03";
+Edit imf04=imf_file.imf04, tabIndex=9, title="Max Stock Level";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imf(imf_file.imf02,formonly.imd02,imf_file.imf03,formonly.ime03,imf_file.imf04)
+SCREEN RECORD Undefined(imf_file.imf01,formonly.ima02,formonly.ima021,formonly.ima25,formonly.ima05,formonly.ima08,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

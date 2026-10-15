@@ -1,0 +1,157 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cec/4fd/cect001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1(splitter)
+Folder Folder1
+Page Page1(text=%"Page1")
+HBox HBox1(splitter)
+Grid Grid2
+{
+
+  tc_ima01   [tc_ima01           ]       tc_ima04    [tc_ima04           ]       tc_imaconf   [tc_imaconf        ]         [imgmksg        ]
+                                                                                                                           [               ]
+  tc_ima02   [tc_ima02           ]       gen02       [gen02              ]       tc_ima05     [tc_ima05           ]       ecg02    [ecg02              ]
+
+  tc_ima03   [tc_ima03           ]       eca02       [eca02              ]       tc_ima06     [tc_ima06           ]       gen02a   [gen02a             ]
+ [tc_imaud02                    ]        tc_imaud03  [tc_imaud03         ]
+
+
+}
+END -- Grid2
+END -- HBox1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid ds2
+{
+
+ tc_imauser[tc_imauser      ]              tc_imagrup[tc_imagrup      ]
+ tc_imamodu[tc_imamodu      ]              tc_imadate[tc_imadate      ]
+ tc_imaoriu[tc_imaoriu      ]              tc_imaorig[tc_imaorig      ]
+ tc_imaacti[tc_imaacti      ]
+
+}
+END -- ds2
+END -- Page2
+END -- Folder1
+Folder Folder2
+Page Page3(action=accessory, text=%"Page3")
+Table ds3
+{
+[tc_imb02  |tc_imb03    |ecd02           |tc_imb04     |tc_imb05       |sfb05            |ima02_2           |ima021_2            |tc_imb06    |tc_imb07      |tc_imb08        |tc_imb09        |tc_imb11       |tc_imb12        |tc_imb10       |tc_imb13         ]
+[tc_imb02  |tc_imb03    |ecd02           |tc_imb04     |tc_imb05       |sfb05            |ima02_2           |ima021_2            |tc_imb06    |tc_imb07      |tc_imb08        |tc_imb09        |tc_imb11       |tc_imb12        |tc_imb10       |tc_imb13         ]
+[tc_imb02  |tc_imb03    |ecd02           |tc_imb04     |tc_imb05       |sfb05            |ima02_2           |ima021_2            |tc_imb06    |tc_imb07      |tc_imb08        |tc_imb09        |tc_imb11       |tc_imb12        |tc_imb10       |tc_imb13         ]
+[tc_imb02  |tc_imb03    |ecd02           |tc_imb04     |tc_imb05       |sfb05            |ima02_2           |ima021_2            |tc_imb06    |tc_imb07      |tc_imb08        |tc_imb09        |tc_imb11       |tc_imb12        |tc_imb10       |tc_imb13         ]
+[tc_imb02  |tc_imb03    |ecd02           |tc_imb04     |tc_imb05       |sfb05            |ima02_2           |ima021_2            |tc_imb06    |tc_imb07      |tc_imb08        |tc_imb09        |tc_imb11       |tc_imb12        |tc_imb10       |tc_imb13         ]
+}
+END -- ds3
+END -- Page3
+Page Page4(action=user_defined_columns, text=%"Page4")
+Table ds4
+{
+[tc_imc02  |tc_imc03  |ecd02_1           |tc_imc05    |tc_imc06   |ima02         |ima021        |tc_imc07       |ima02c        |ima021c       |tc_imc08     |tc_imc09      |tc_imc10       |tc_imc11        |tc_imc12       |tc_imc13       ]
+[tc_imc02  |tc_imc03  |ecd02_1           |tc_imc05    |tc_imc06   |ima02         |ima021        |tc_imc07       |ima02c        |ima021c       |tc_imc08     |tc_imc09      |tc_imc10       |tc_imc11        |tc_imc12       |tc_imc13       ]
+[tc_imc02  |tc_imc03  |ecd02_1           |tc_imc05    |tc_imc06   |ima02         |ima021        |tc_imc07       |ima02c        |ima021c       |tc_imc08     |tc_imc09      |tc_imc10       |tc_imc11        |tc_imc12       |tc_imc13       ]
+[tc_imc02  |tc_imc03  |ecd02_1           |tc_imc05    |tc_imc06   |ima02         |ima021        |tc_imc07       |ima02c        |ima021c       |tc_imc08     |tc_imc09      |tc_imc10       |tc_imc11        |tc_imc12       |tc_imc13       ]
+[tc_imc02  |tc_imc03  |ecd02_1           |tc_imc05    |tc_imc06   |ima02         |ima021        |tc_imc07       |ima02c        |ima021c       |tc_imc08     |tc_imc09      |tc_imc10       |tc_imc11        |tc_imc12       |tc_imc13       ]
+}
+END -- ds4
+END -- Page4
+Page Page5(action=spare_part, text=%"Page5")
+Table ds5
+{
+[tc_imd02   |tc_imd03    |ima02d       |ima021d       |tc_imd04     ]
+[tc_imd02   |tc_imd03    |ima02d       |ima021d       |tc_imd04     ]
+[tc_imd02   |tc_imd03    |ima02d       |ima021d       |tc_imd04     ]
+[tc_imd02   |tc_imd03    |ima02d       |ima021d       |tc_imd04     ]
+[tc_imd02   |tc_imd03    |ima02d       |ima021d       |tc_imd04     ]
+}
+END -- ds5
+END -- Page5
+END -- Folder2
+Grid Grid1
+{
+  ---------- Rows [idx   ]/[cnt   ]  ---  Details [cn2           ]               Details2[cn3             ]              Details3[cn4            ]----------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit tc_ima01=formonly.tc_ima01, action=controlp, tabIndex=50, noEntry, not null, image="zoom";
+DateEdit tc_ima04=formonly.tc_ima04 type DATE, tabIndex=53, not null;
+ComboBox tc_imaconf=formonly.tc_imaconf, tabIndex=56, noEntry, items=(("N", "N"),("Y", "Y"),("X", "X"));
+IMAGE imgmksg=formonly.imgmksg;
+ButtonEdit tc_ima02=formonly.tc_ima02, action=controlp, tabIndex=51, not null, image="zoom";
+Edit gen02=formonly.gen02, tabIndex=54, noEntry;
+ButtonEdit tc_ima05=formonly.tc_ima05, action=controlp, tabIndex=57, image="zoom";
+Edit ecg02=formonly.ecg02, tabIndex=59, noEntry;
+ButtonEdit tc_ima03=formonly.tc_ima03, action=controlp, tabIndex=52, not null, image="zoom";
+Edit eca02=formonly.eca02, tabIndex=55, noEntry;
+ButtonEdit tc_ima06=formonly.tc_ima06, action=controlp, tabIndex=58, image="zoom";
+Edit gen02a=formonly.gen02a, tabIndex=60, noEntry;
+CheckBox tc_imaud02=formonly.tc_imaud02, tabIndex=61, text=%"tc_imaud02", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox tc_imaud03=formonly.tc_imaud03, tabIndex=62, not null, required, items=(("1", "1"),("2", "2"),("3", "3"));
+Edit tc_imauser=formonly.tc_imauser type VARCHAR, tabIndex=38, scroll;
+Edit tc_imagrup=formonly.tc_imagrup type VARCHAR, tabIndex=39, scroll;
+Edit tc_imamodu=formonly.tc_imamodu type VARCHAR, tabIndex=40, scroll;
+DateEdit tc_imadate=formonly.tc_imadate type DATE, tabIndex=41;
+Edit tc_imaoriu=formonly.tc_imaoriu type VARCHAR, tabIndex=42, scroll;
+Edit tc_imaorig=formonly.tc_imaorig type VARCHAR, tabIndex=43, scroll;
+Edit tc_imaacti=formonly.tc_imaacti type VARCHAR, tabIndex=44, scroll;
+Edit tc_imb02=formonly.tc_imb02, tabIndex=1, title=%"tc_imb02", noEntry;
+Edit tc_imb03=formonly.tc_imb03 type DATE, tabIndex=2, title=%"tc_imb03", noEntry;
+Edit ecd02=formonly.ecd02, tabIndex=3, title=%"Edit1";
+Edit tc_imb04=formonly.tc_imb04 type VARCHAR, tabIndex=4, title=%"tc_imb04", noEntry, scroll;
+Edit tc_imb05=formonly.tc_imb05 type VARCHAR, tabIndex=5, title=%"tc_imb05", noEntry, scroll;
+Edit sfb05=formonly.sfb05, tabIndex=6, title=%"Edit2";
+Edit ima02_2=formonly.ima02_2, tabIndex=7, title=%"Edit3";
+Edit ima021_2=formonly.ima021_2, tabIndex=8, title=%"Edit4";
+Edit tc_imb06=formonly.tc_imb06 type DECIMAL(15,2), tabIndex=9, title=%"tc_imb06", noEntry, scroll;
+Edit tc_imb07=formonly.tc_imb07 type VARCHAR, tabIndex=10, title=%"tc_imb07", noEntry, scroll;
+Edit tc_imb08=formonly.tc_imb08, tabIndex=11, title=%"tc_imb08", noEntry;
+Edit tc_imb09=formonly.tc_imb09, tabIndex=12, title=%"tc_imb09", noEntry;
+Edit tc_imb11=formonly.tc_imb11, tabIndex=13, title=%"tc_imb11", noEntry;
+Edit tc_imb12=formonly.tc_imb12, tabIndex=14, title=%"tc_imb12", noEntry;
+Edit tc_imb10=formonly.tc_imb10, tabIndex=15, title=%"tc_imb10", noEntry;
+Edit tc_imb13=formonly.tc_imb13, tabIndex=16, title=%"tc_imb13", noEntry;
+Edit tc_imc02=formonly.tc_imc02, tabIndex=17, title=%"tc_imc02", noEntry;
+Edit tc_imc03=formonly.tc_imc03 type DATE, tabIndex=18, title=%"tc_imc03", noEntry;
+Edit ecd02_1=formonly.ecd02_1, tabIndex=19, title=%"Edit1";
+Edit tc_imc05=formonly.tc_imc05 type VARCHAR, tabIndex=20, title=%"tc_imc05", noEntry, scroll;
+Edit tc_imc06=formonly.tc_imc06 type DECIMAL(15,2), tabIndex=21, title=%"tc_imc06", noEntry, scroll;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=22, title=%"ima02", noEntry, scroll;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=23, title=%"ima021", noEntry, scroll;
+Edit tc_imc07=formonly.tc_imc07, tabIndex=24, title=%"tc_imc07", noEntry;
+Edit ima02c=formonly.ima02c, tabIndex=25, title=%"ima02c", noEntry;
+Edit ima021c=formonly.ima021c, tabIndex=26, title=%"ima021c", noEntry;
+Edit tc_imc08=formonly.tc_imc08, tabIndex=27, title=%"tc_imc08", noEntry;
+Edit tc_imc09=formonly.tc_imc09, tabIndex=28, title=%"tc_imc09", noEntry;
+Edit tc_imc10=formonly.tc_imc10, tabIndex=29, title=%"tc_imc10", noEntry;
+Edit tc_imc11=formonly.tc_imc11, tabIndex=30, title=%"tc_imc11", noEntry;
+Edit tc_imc12=formonly.tc_imc12, tabIndex=31, title=%"tc_imc12", noEntry;
+Edit tc_imc13=formonly.tc_imc13, tabIndex=32, title=%"tc_imc13", noEntry;
+Edit tc_imd02=formonly.tc_imd02, tabIndex=33, title=%"tc_imd02", noEntry;
+Edit tc_imd03=formonly.tc_imd03 type DATE, tabIndex=34, title=%"tc_imd03", noEntry;
+Edit ima02d=formonly.ima02d type VARCHAR, tabIndex=35, title=%"ima02d", noEntry, scroll;
+Edit ima021d=formonly.ima021d type VARCHAR, tabIndex=36, title=%"ima021d", noEntry, scroll;
+Edit tc_imd04=formonly.tc_imd04, tabIndex=37, title=%"tc_imd04", noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=45, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=46, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=47, noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=48, noEntry;
+Edit cn4=formonly.cn4 type SMALLINT, tabIndex=49, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_imauser,formonly.tc_imagrup,formonly.tc_imamodu,formonly.tc_imadate,formonly.tc_imaoriu,formonly.tc_imaorig,formonly.tc_imaacti,formonly.idx,formonly.cnt,formonly.cn2,formonly.cn3,formonly.cn4,formonly.tc_ima01,formonly.tc_ima02,formonly.tc_ima03,formonly.tc_ima04,formonly.gen02,formonly.eca02,formonly.tc_imaconf,formonly.tc_ima05,formonly.tc_ima06,formonly.ecg02,formonly.gen02a,formonly.imgmksg,formonly.tc_imaud02,formonly.tc_imaud03)
+SCREEN RECORD s_tc_imb(formonly.tc_imb02,formonly.tc_imb03,formonly.ecd02,formonly.tc_imb04,formonly.tc_imb05,formonly.sfb05,formonly.ima02_2,formonly.ima021_2,formonly.tc_imb06,formonly.tc_imb07,formonly.tc_imb08,formonly.tc_imb09,formonly.tc_imb11,formonly.tc_imb12,formonly.tc_imb10,formonly.tc_imb13)
+SCREEN RECORD s_tc_imc(formonly.tc_imc02,formonly.tc_imc03,formonly.ecd02_1,formonly.tc_imc05,formonly.tc_imc06,formonly.ima02,formonly.ima021,formonly.tc_imc07,formonly.ima02c,formonly.ima021c,formonly.tc_imc08,formonly.tc_imc09,formonly.tc_imc10,formonly.tc_imc11,formonly.tc_imc12,formonly.tc_imc13)
+SCREEN RECORD s_tc_imd(formonly.tc_imd02,formonly.tc_imd03,formonly.ima02d,formonly.ima021d,formonly.tc_imd04)
+END -- INSTRUCTIONS
+

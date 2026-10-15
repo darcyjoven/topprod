@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi901_fp.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aooi901_fp")
+Grid gr1
+{
+
+ Filename of FGLPROFILE [filename                             ]
+ Database ID            [azp03                                ]
+                        [encode                ]
+ ---------------------------------------------------------------
+
+ Database Login Username        [username                     ]
+
+ New Database Login Password    [passwd1                      ]
+ Retype Database Login Password [passwd2                      ]
+
+
+}
+END -- gr1
+END -- aooi901_fp
+
+TABLES
+azp_file
+ATTRIBUTES
+Edit filename=formonly.filename type CHAR, tabIndex=1, noEntry;
+Edit azp03=azp_file.azp03, tabIndex=6;
+CheckBox encode=formonly.encode type CHAR, tabIndex=4, text="Password Encoding", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Edit username=formonly.username type VARCHAR, tabIndex=5, not null, required, comment="Modify need in FGLPROFILE";
+Edit passwd1=formonly.passwd1 type CHAR, tabIndex=2, not null, required, invisible;
+Edit passwd2=formonly.passwd2 type CHAR, tabIndex=3, not null, required, invisible;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.filename,azp_file.azp03,formonly.encode,formonly.username,formonly.passwd1,formonly.passwd2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmr170.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr170")
+VBox VBox1
+Grid gr2315
+{
+ <G group01                                                  >
+  Forecast Item No.    [opc01               ]
+  Salesman             [opc04               ]
+  Department No.       [opc05               ]
+
+ <                                                           >
+
+}
+END -- gr2315
+Group g01(text="INPUT")
+Grid gr2316
+{
+ Planning Date        [bdate       ]-[edate       ]
+ Print                [a           ]
+ Time Span            [b           ]
+ Time Bucket Code     [b_co        ]
+}
+END -- gr2316
+END -- g01
+Grid gr2317
+{
+[more                           ]
+
+}
+END -- gr2317
+END -- VBox1
+END -- axmr170
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit opc01=formonly.opc01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit opc04=formonly.opc04 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit opc05=formonly.opc05 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=4;
+DateEdit edate=formonly.edate type DATE, tabIndex=5;
+ComboBox a=formonly.a type VARCHAR, tabIndex=6, items=(("1", "Planning Qty"),("2", "Comfirmed Quantity"),("3", "Amount"));
+ComboBox b=formonly.b type VARCHAR, tabIndex=7, not null, required, queryEditable, items=(("1", "By Time Bucket"),("2", "Day"),("3", "Week"),("4", "10-Day"),("5", "Month"));
+ButtonEdit b_co=formonly.b_co type VARCHAR, action=controlp, tabIndex=8, image="zoom";
+CheckBox more=formonly.more type VARCHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.opc01,formonly.opc04,formonly.opc05,formonly.bdate,formonly.edate,formonly.a,formonly.b,formonly.b_co,formonly.more)
+END -- INSTRUCTIONS
+

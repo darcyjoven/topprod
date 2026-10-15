@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt205.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt205")
+VBox vb1
+Folder pc2
+Page Page3(text=%"Info")
+Grid gr3
+{
+
+  Net No.           [pjmb01    ]      Net name               [pjj02                                   ]
+  Promotion No.     [pjmb02    ]      Active Name            [pjk03                                   ]
+  Planned Start Date[pjk16     ]      Planned Completion Date[pjk17     ]
+
+}
+END -- gr3
+END -- Page3
+END -- pc2
+Table tb2
+{
+[pjmb0|pjmb04              |pjy02                         |pjmb1|pjy0|pjy04               |pjmb06         |amt                 |p]
+[pjmb0|pjmb04              |pjy02                         |pjmb1|pjy0|pjy04               |pjmb06         |amt                 |p]
+[pjmb0|pjmb04              |pjy02                         |pjmb1|pjy0|pjy04               |pjmb06         |amt                 |p]
+[pjmb0|pjmb04              |pjy02                         |pjmb1|pjy0|pjy04               |pjmb06         |amt                 |p]
+[pjmb0|pjmb04              |pjy02                         |pjmb1|pjy0|pjy04               |pjmb06         |amt                 |p]
+[pjmb0|pjmb04              |pjy02                         |pjmb1|pjy0|pjy04               |pjmb06         |amt                 |p]
+
+}
+END -- tb2
+Grid gr2
+{
+
+  ------ rows [cnt ]/[cn2 ] -------
+
+}
+END -- gr2
+END -- vb1
+END -- apjt205
+
+TABLES
+pjmb_file
+ATTRIBUTES
+ButtonEdit pjmb01=pjmb_file.pjmb01, action=controlp, tabIndex=14, image="zoom.png";
+Edit pjj02=formonly.pjj02 type VARCHAR, tabIndex=1, noEntry;
+ButtonEdit pjmb02=pjmb_file.pjmb02, action=controlp, tabIndex=15, image="zoom.png";
+Edit pjk03=formonly.pjk03 type VARCHAR, tabIndex=2, noEntry;
+DateEdit pjk16=formonly.pjk16 type DATE, tabIndex=16, noEntry;
+DateEdit pjk17=formonly.pjk17 type VARCHAR, tabIndex=17, noEntry;
+Edit pjmb0=pjmb_file.pjmb03, tabIndex=3, title="Line No.";
+ButtonEdit pjmb04=pjmb_file.pjmb04, action=controlp, tabIndex=4, title="Type", image="zoom.png";
+Edit pjy02=formonly.pjy02 type VARCHAR, tabIndex=5, title="Account Name", noEntry;
+Edit pjmb1=pjmb_file.pjmb05, tabIndex=6, default = "1", title="Quantity";
+Edit pjy0=formonly.pjy03 type VARCHAR, tabIndex=7, title="Pricing Unit", noEntry;
+Edit pjy04=formonly.pjy04 type DECIMAL, tabIndex=8, title="Unit Expense", noEntry;
+Edit pjmb06=pjmb_file.pjmb06, tabIndex=9, title="Requirement Qty(Run Time hr)", not null;
+Edit amt=formonly.amt type DECIMAL, tabIndex=10, default = "0", title="amt", noEntry;
+CheckBox p=pjmb_file.pjmbacti, tabIndex=11, default = "N", title="Valid Code", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type CHAR, tabIndex=12;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tb2(pjmb_file.pjmb03,pjmb_file.pjmb04,formonly.pjy02,pjmb_file.pjmb05,formonly.pjy03,formonly.pjy04,pjmb_file.pjmb06,formonly.amt,pjmb_file.pjmbacti)
+SCREEN RECORD Undefined(pjmb_file.pjmb01,formonly.pjj02,pjmb_file.pjmb02,formonly.pjk03,formonly.pjk16,formonly.pjk17,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

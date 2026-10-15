@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form2")
+VBox vb5
+Folder pc3
+Page Page3(text=%"Page0")
+VBox vb4
+Table s_oay
+{
+[oayslip|oaydesc                                 |oayaun|oaycon|oaypr|oaytype     |oayapr  |oayacti ]
+[oayslip|oaydesc                                 |oayaun|oaycon|oaypr|oaytype     |oayapr  |oayacti ]
+[oayslip|oaydesc                                 |oayaun|oaycon|oaypr|oaytype     |oayapr  |oayacti ]
+[oayslip|oaydesc                                 |oayaun|oaycon|oaypr|oaytype     |oayapr  |oayacti ]
+[oayslip|oaydesc                                 |oayaun|oaycon|oaypr|oaytype     |oayapr  |oayacti ]
+[oayslip|oaydesc                                 |oayaun|oaycon|oaypr|oaytype     |oayapr  |oayacti ]
+[oayslip|oaydesc                                 |oayaun|oaycon|oaypr|oaytype     |oayapr  |oayacti ]
+}
+END -- s_oay
+Grid gr4
+{
+
+ <G gb1                                                                                         >
+  PS.[dummy01                                                                ]
+ <                                                                                              >
+}
+END -- gr4
+END -- vb4
+END -- Page3
+END -- pc3
+Grid gr5
+{
+ --------- Rows [cn2    ] ---------
+
+}
+END -- gr5
+END -- vb5
+END -- Form2
+
+TABLES
+oay_file
+ATTRIBUTES
+Edit oayslip=oay_file.oayslip, tabIndex=1, title="Doc", not null, required;
+Edit oaydesc=oay_file.oaydesc, tabIndex=2, title="DocName", not null;
+CheckBox oayaun=oay_file.oayauno, tabIndex=3, default = "Y", title="NumAuto", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaycon=oay_file.oayconf, tabIndex=4, default = "N", title="AutCnf", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaypr=oay_file.oayprnt, tabIndex=5, default = "N", title="PrtNow", not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox oaytype=oay_file.oaytype, tabIndex=6, title="DocPty", not null;
+CheckBox oayapr=oay_file.oayapr, tabIndex=7, default = "N", title="Approve", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oayacti=oay_file.oayacti, tabIndex=8, default = "Y", title="oayacti", valueChecked = "Y", valueUnchecked = "N";
+Group gb1:gb1;
+Label dummy01:dummy01, text="Invo Amt\'Used In China and Doc Pty for 50.DM & 60.SR,Will Be Enter";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oay(oay_file.oayslip,oay_file.oaydesc,oay_file.oayauno,oay_file.oayconf,oay_file.oayprnt,oay_file.oaytype,oay_file.oayapr,oay_file.oayacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

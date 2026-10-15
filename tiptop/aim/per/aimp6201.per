@@ -1,0 +1,29 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp6201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimp6201")
+Grid Grid1
+{
+ <G group01                                           >
+  Item#               [imk01               ]
+  Warehouse           [imk02     ]
+ <                                                    >
+
+}
+END -- Grid1
+END -- aimp6201
+
+ATTRIBUTES
+Group group01:group01, text="Status";
+Edit imk01=formonly.imk01 type VARCHAR, tabIndex=1;
+Edit imk02=formonly.imk02 type VARCHAR, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.imk01,formonly.imk02)
+END -- INSTRUCTIONS
+

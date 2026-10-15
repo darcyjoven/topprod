@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi500")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr625
+{
+ Version                      [bgw01     ]
+ Category                     [bgw04               ]
+ Apportionment Method         [bgw08               ]
+ Asset Category/Property No.  [bgw02     ]
+ Equipment Name/Additional No.[bgw03                         ]
+ Department                   [bgw07     ][gem02     ]
+ Year                         [bgw05     ]
+ St.Month                     [bgw12     ]
+ Depre. Code                  [bgw11                         ]
+                              [aag02                         ]
+}
+END -- gr625
+END -- page01
+END -- folder01
+Table s_bgw
+{
+[bgw06    |bgw09               |bgw10               ]
+[bgw06    |bgw09               |bgw10               ]
+[bgw06    |bgw09               |bgw10               ]
+[bgw06    |bgw09               |bgw10               ]
+[bgw06    |bgw09               |bgw10               ]
+[bgw06    |bgw09               |bgw10               ]
+[bgw06    |bgw09               |bgw10               ]
+[bgw06    |bgw09               |bgw10               ]
+[bgw06    |bgw09               |bgw10               ]
+[bgw06    |bgw09               |bgw10               ]
+
+}
+END -- s_bgw
+Grid gr626
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr626
+END -- VBox1
+END -- abgi500
+
+TABLES
+bgw_file
+ATTRIBUTES
+Edit bgw01=bgw_file.bgw01, tabIndex=1;
+ComboBox bgw04=bgw_file.bgw04, tabIndex=2, not null, required, items=(("1", "Estimated Capital"),("2", "Fixed Asset"));
+ComboBox bgw08=bgw_file.bgw08, tabIndex=3, not null, required, items=(("1", "One Departement"),("2", "Multi-Department"),("3", "Apportioned"));
+Edit bgw02=bgw_file.bgw02, tabIndex=4, not null, required;
+Edit bgw03=bgw_file.bgw03, tabIndex=5;
+ButtonEdit bgw07=bgw_file.bgw07, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Dept.";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=7;
+Edit bgw05=bgw_file.bgw05, tabIndex=10, not null, required;
+Edit bgw12=bgw_file.bgw12, tabIndex=11, not null, required;
+ButtonEdit bgw11=bgw_file.bgw11, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry Acc. Code";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=9, noEntry;
+Edit bgw06=bgw_file.bgw06, tabIndex=12, title="Month", not null, required;
+Edit bgw09=bgw_file.bgw09, tabIndex=13, title="Depreciation", not null, required;
+Edit bgw10=bgw_file.bgw10, tabIndex=14, title="Apportioned";
+Edit cnt=formonly.cnt type CHAR, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgw(bgw_file.bgw06,bgw_file.bgw09,bgw_file.bgw10)
+SCREEN RECORD Undefined(bgw_file.bgw01,bgw_file.bgw04,bgw_file.bgw08,bgw_file.bgw02,bgw_file.bgw03,bgw_file.bgw07,formonly.gem02,bgw_file.bgw05,bgw_file.bgw12,bgw_file.bgw11,formonly.aag02,formonly.cnt)
+END -- INSTRUCTIONS
+

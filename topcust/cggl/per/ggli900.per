@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cggl/4fd/ggli900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+  tz_aag00      [tc_aag00                ]
+
+}
+END -- Grid1
+Table s_tz_aag
+{
+[tc_aag01           |aag02              |tc_aag02           |tc_aag03            |tc_aag04   ]
+[tc_aag01           |aag02              |tc_aag02           |tc_aag03            |tc_aag04   ]
+[tc_aag01           |aag02              |tc_aag02           |tc_aag03            |tc_aag04   ]
+[tc_aag01           |aag02              |tc_aag02           |tc_aag03            |tc_aag04   ]
+[tc_aag01           |aag02              |tc_aag02           |tc_aag03            |tc_aag04   ]
+}
+END -- s_tz_aag
+Grid Grid2
+{
+
+   ----------  [edit7     ]   ----------
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit tc_aag00=formonly.tc_aag00 type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+ButtonEdit tc_aag01=formonly.tc_aag01 type CHAR, action=controlp, tabIndex=1, title=%"tz_aag01", not null, image="zoom";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, title=%"aag02", noEntry;
+ComboBox tc_aag02=formonly.tc_aag02 type CHAR, tabIndex=4, title=%"tz_aag02", not null, required, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"));
+TextEdit tc_aag03=formonly.tc_aag03 type CHAR, tabIndex=5, title=%"tz_aag03";
+CheckBox tc_aag04=formonly.tc_aag04 type CHAR, tabIndex=6, title=%"tz_aag04", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit edit7=formonly.Edit7 type CHAR, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tc_aag(formonly.tc_aag01,formonly.aag02,formonly.tc_aag02,formonly.tc_aag03,formonly.tc_aag04)
+SCREEN RECORD Undefined(formonly.tc_aag00,formonly.Edit7)
+END -- INSTRUCTIONS
+

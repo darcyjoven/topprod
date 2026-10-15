@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi110_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi110_g")
+Folder pc84
+Page page01(text="Main")
+VBox VBox1
+Grid gr605
+{
+ <G group01                                   >
+  Version              [bgm01               ]
+  Year                 [bgm02               ]
+  Customer #           [bgm014              ]
+  Department No        [bgm015              ]
+  Product Type         [bgm017              ]
+ <                                            >
+
+}
+END -- gr605
+Grid gr606
+{
+ <G group02                                    >
+  Version              [new_ver             ]
+  Year                 [nyy       ]
+  Produce Adjust Ratio [per       ]%
+  BoP Fetch Year/Month [yy        ][mm        ]
+ <                                             >
+
+}
+END -- gr606
+END -- VBox1
+END -- page01
+END -- pc84
+END -- abgi110_g
+
+ATTRIBUTES
+Group group01:group01;
+Edit bgm01=formonly.bgm01 type CHAR, tabIndex=1;
+Edit bgm02=formonly.bgm02 type CHAR, tabIndex=2;
+Edit bgm014=formonly.bgm014 type CHAR, tabIndex=3;
+Edit bgm015=formonly.bgm015 type CHAR, tabIndex=4;
+Edit bgm017=formonly.bgm017 type CHAR, tabIndex=5;
+Group group02:group02;
+Edit new_ver=formonly.new_ver type CHAR, tabIndex=6;
+Edit nyy=formonly.nyy type SMALLINT, tabIndex=7;
+Edit per=formonly.per type CHAR, tabIndex=8;
+Edit yy=formonly.yy type SMALLINT, tabIndex=9;
+Edit mm=formonly.mm type SMALLINT, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bgm01,formonly.bgm02,formonly.bgm014,formonly.bgm015,formonly.bgm017,formonly.new_ver,formonly.nyy,formonly.per,formonly.yy,formonly.mm)
+END -- INSTRUCTIONS
+

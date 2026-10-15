@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zz_name.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zz_name")
+VBox VBox1
+Folder pc698
+Page page01(text="Main")
+Table s_gaz
+{
+[gaz01      |gaz02      |gaz03                    |gaz06                     |gaz05    ]
+[gaz01      |gaz02      |gaz03                    |gaz06                     |gaz05    ]
+[gaz01      |gaz02      |gaz03                    |gaz06                     |gaz05    ]
+[gaz01      |gaz02      |gaz03                    |gaz06                     |gaz05    ]
+[gaz01      |gaz02      |gaz03                    |gaz06                     |gaz05    ]
+[gaz01      |gaz02      |gaz03                    |gaz06                     |gaz05    ]
+[gaz01      |gaz02      |gaz03                    |gaz06                     |gaz05    ]
+[gaz01      |gaz02      |gaz03                    |gaz06                     |gaz05    ]
+[gaz01      |gaz02      |gaz03                    |gaz06                     |gaz05    ]
+[gaz01      |gaz02      |gaz03                    |gaz06                     |gaz05    ]
+
+}
+END -- s_gaz
+END -- page01
+END -- pc698
+Grid gr3034
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3034
+END -- VBox1
+END -- p_zz_name
+
+TABLES
+gaz_file
+ATTRIBUTES
+Edit gaz01=gaz_file.gaz01, tabIndex=1, title="Program ID", not null, required, comment="Key,No Blank/Repeated!";
+ComboBox gaz02=gaz_file.gaz02, tabIndex=2, title="Language", not null, required, queryEditable;
+Edit gaz03=gaz_file.gaz03, tabIndex=3, title="Program Name", not null, required, scroll;
+Edit gaz06=gaz_file.gaz06, tabIndex=6, title=%"Report Title";
+CheckBox gaz05=gaz_file.gaz05, tabIndex=4, title="Customerlized", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gaz(gaz_file.gaz01,gaz_file.gaz02,gaz_file.gaz03,gaz_file.gaz06,gaz_file.gaz05)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

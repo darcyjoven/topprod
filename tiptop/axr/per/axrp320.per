@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrp320.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrp320")
+VBox VBox1
+Grid gr2947
+{
+ <G group01                                        >
+  Bill No.                  [oma01               ]
+  Enter Account Date        [oma02               ]
+  Invoice                   [oma05               ]
+  Copies                    [oma212              ]
+ <                                                 >
+
+}
+END -- gr2947
+Group group02(text="INPUT")
+VBox VBox2
+Grid gr2948
+{
+  Issue Invoice Date  [g_date      ]
+  Invoice             [g_oma05   ]
+ <G group03                                                           >
+ [ex_sw                                                              ]
+ <                                                                    >
+
+}
+END -- gr2948
+Grid gr2949
+{
+ Rows                [g_cnt     ]
+ Before Tax          [g_oma59   ]
+ Tax                 [g_oma59x  ]
+}
+END -- gr2949
+END -- VBox2
+END -- group02
+Grid gr2950
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr2950
+END -- VBox1
+END -- axrp320
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit oma01=formonly.oma01 type CHAR, tabIndex=1;
+DateEdit oma02=formonly.oma02 type DATE, tabIndex=2;
+Edit oma05=formonly.oma05 type CHAR, tabIndex=3;
+Edit oma212=formonly.oma212 type CHAR, tabIndex=4;
+DateEdit g_date=formonly.g_date type CHAR, tabIndex=5;
+Edit g_oma05=formonly.g_oma05 type CHAR, tabIndex=6;
+Group group03:group03, text="Foreign Currency Invoice Exchange Rate Mothod";
+RadioGroup ex_sw=formonly.ex_sw type VARCHAR, tabIndex=7, items=(("1", "Assign and Calculate Invoice Amount"),("2", "Assign and Calculate Invoice Amount for which w/o Setting"),("3", "None"));
+Edit g_cnt=formonly.g_cnt type CHAR, tabIndex=8;
+Edit g_oma59=formonly.g_oma59 type CHAR, tabIndex=9;
+Edit g_oma59x=formonly.g_oma59x type CHAR, tabIndex=10;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=11, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oma01,formonly.oma02,formonly.oma05,formonly.oma212,formonly.g_date,formonly.g_oma05,formonly.ex_sw,formonly.g_cnt,formonly.g_oma59,formonly.g_oma59x,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

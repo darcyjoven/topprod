@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi610a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfi501a")
+VBox vb1
+Folder pc115
+Page page01(text="Page01")
+Grid gr494
+{
+ <G group01                                                                            >
+  Item# From/To       [b_part                        ]-[e_part                        ]
+ <                                                                                     >
+
+  <G group03                                                        >
+  [issue_type                           ]
+  [                                     ]
+  [                                     ]
+  [                                     ]
+  [                                     ]
+  [                                     ]
+
+  <                                                                 >
+
+  <G group04                                                        >
+   Warehouse           [ware_no   ][imd02                         ]
+   Location            [loc_no    ][ime03                         ]
+   Lot No.             [lot_no                                    ]
+   Gen No.             [gen_no    ][gen02                         ]
+  <                                                                 >
+
+}
+END -- gr494
+END -- page01
+END -- pc115
+END -- vb1
+END -- asfi501a
+
+ATTRIBUTES
+Group group01:group01;
+Edit b_part=formonly.b_part type CHAR, tabIndex=1, noEntry;
+Edit e_part=formonly.e_part type CHAR, tabIndex=2, noEntry;
+Group group03:group03, text="Issue/Return Method";
+RadioGroup issue_type=formonly.issue_type type CHAR, tabIndex=3, not null, required, items=(("0", "Not Auto Generate"),("1", "By Item Main WH/Loc Issue/Return"),("2", "By Assigned W/H/Location/Lot#"),("3", "By W/O W/H/Location Issue/Return"),("4", "Issued by Inventory"),("5", "By Available Qty"));
+Group group04:group04;
+ButtonEdit ware_no=formonly.ware_no type CHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Warehouse ";
+Edit imd02=formonly.imd02 type CHAR, tabIndex=5, noEntry;
+ButtonEdit loc_no=formonly.loc_no type CHAR, action=controlp, tabIndex=6, image="zoom", comment="<^P>Query Location ";
+Edit ime03=formonly.ime03 type CHAR, tabIndex=7, noEntry;
+Edit lot_no=formonly.lot_no type CHAR, tabIndex=8;
+ButtonEdit gen_no=formonly.gen_no type CHAR, action=controlp, tabIndex=9, image="zoom";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.b_part,formonly.e_part,formonly.issue_type,formonly.ware_no,formonly.imd02,formonly.loc_no,formonly.ime03,formonly.lot_no,formonly.gen_no,formonly.gen02)
+END -- INSTRUCTIONS
+

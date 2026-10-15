@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almp680.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Grid Grid1
+{
+
+  Year/Month [yy        ]/ [mm   ]
+
+  [g_bgjob   ]
+
+
+
+
+
+
+}
+END -- Grid1
+END -- Form
+
+ATTRIBUTES
+Edit yy=formonly.yy type VARCHAR, tabIndex=1, not null, required;
+Edit mm=formonly.mm type VARCHAR, tabIndex=2, not null, required;
+CheckBox g_bgjob=formonly.g_bgjob type VARCHAR, tabIndex=3, default = "N", text=%"Background Job", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,111 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi132.per created Wed Jan 23 05:30:34 2008
+-- File created from axdi132.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi132")
+-- GRID
+-- GRID
+-- GRID
+-- HBOX
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- GRID
+-- HBOX
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page( TEXT="Main")
+        HBOX 
+          GRID gr7775
+          {
+           Item No.            [aa0                           ]
+                               [aa1                           ]
+           Inventory Unit      [aa2       ]
+
+          }
+          END -- GRID
+          GRID gr7776
+          {
+           Initial Period      [aa3       ][aa4       ]
+           Number Generated    [aa5       ]
+           Line No             [aa6       ]
+
+          }
+          END -- GRID
+          GRID gr7777
+          {
+                               [aa7       ][aa8    ]
+                               [aa9       ][       ]
+
+          }
+          END -- GRID
+        END -- HBOX
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_obh
+    {
+    [ab0         |ab1              |ab2              |ab3           ]
+    [ab0         |ab1              |ab2              |ab3           ]
+    [ab0         |ab1              |ab2              |ab3           ]
+    [ab0         |ab1              |ab2              |ab3           ]
+    [ab0         |ab1              |ab2              |ab3           ]
+    [ab0         |ab1              |ab2              |ab3           ]
+    [ab0         |ab1              |ab2              |ab3           ]
+    [ab0         |ab1              |ab2              |ab3           ]
+    [ab0         |ab1              |ab2              |ab3           ]
+    [ab0         |ab1              |ab2              |ab3           ]
+    }
+    END -- TABLE
+    HBOX 
+      GRID gr7778
+      {
+       tot         [ab4           ]  [ab5           ]  [ab6           ]
+
+      }
+      END -- GRID
+      GRID gr7779
+      {
+       ---------- Rows [ab7   ] / [ab8   ] ----------
+
+      }
+      END -- GRID
+    END -- HBOX
+  END -- VBOX
+END
+TABLES obd_file,obc_file,obh_file
+
+ATTRIBUTES
+  EDIT aa0=obd_file.obd01, TABINDEX=1;
+  EDIT aa1=FORMONLY.ima02 TYPE VARCHAR, NOENTRY, TABINDEX=2;
+  EDIT aa2=obc_file.obc07, NOENTRY, TABINDEX=3;
+  EDIT aa3=obd_file.obd02, NOENTRY, TABINDEX=4;
+  EDIT aa4=obd_file.obd021, NOENTRY, TABINDEX=5;
+  EDIT aa5=obc_file.obc03, NOENTRY, TABINDEX=6;
+  EDIT aa6=obd_file.obd03, NOENTRY, TABINDEX=7;
+  CHECKBOX aa7=obc_file.obc06, TEXT="fetch? ", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=8;
+  IMAGE aa8=FORMONLY.imgmksg, AUTOSCALE, WIDTH=7 CHARACTERS, HEIGHT=2 CHARACTERS;
+  CHECKBOX aa9=obd_file.obdconf, TEXT="Confirm", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=10;
+  EDIT ab0=obh_file.obh04, NOENTRY, TABINDEX=11, TITLE="Sub-Plant";
+  EDIT ab1=obh_file.obh05, NOENTRY, TABINDEX=12, TITLE="Sub Demand Qty";
+  EDIT ab2=obh_file.obh06, NOT NULL, REQUIRED, TABINDEX=13, TITLE="Sub Adjust Qty";
+  EDIT ab3=obh_file.obh07, NOENTRY, TABINDEX=14, TITLE="Total";
+  EDIT ab4=FORMONLY.obh05t, NOENTRY, TABINDEX=15;
+  EDIT ab5=FORMONLY.obh06t, NOENTRY, TABINDEX=16;
+  EDIT ab6=FORMONLY.obh07t, NOENTRY, TABINDEX=17;
+  EDIT ab7=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=18;
+  EDIT ab8=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=19;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_obh (obh_file.obh04, obh_file.obh05, obh_file.obh06, obh_file.obh07)
+END

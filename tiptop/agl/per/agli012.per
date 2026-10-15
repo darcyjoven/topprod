@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli012.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli012")
+VBox vb1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ Year      [axv01     ] Group No. [axv03     ]
+ Period    [axv02     ] Parent Co.[axv031    ][axz02              ]
+
+
+}
+END -- gr1
+END -- page01
+END -- pc1
+Table tb1
+{
+[axv04|axv05       |axv06      |axv07      |axz02_s             |axv08      |axz02_t             |axv09                   |aag02_a             |axv10                   |aag02_t             |axv11       |axv12               |axv13               |axv131          |axv14               |axv15          |axv16                     |axv17           ]
+[axv04|axv05       |axv06      |axv07      |axz02_s             |axv08      |axz02_t             |axv09                   |aag02_a             |axv10                   |aag02_t             |axv11       |axv12               |axv13               |axv131          |axv14               |axv15          |axv16                     |axv17           ]
+[axv04|axv05       |axv06      |axv07      |axz02_s             |axv08      |axz02_t             |axv09                   |aag02_a             |axv10                   |aag02_t             |axv11       |axv12               |axv13               |axv131          |axv14               |axv15          |axv16                     |axv17           ]
+[axv04|axv05       |axv06      |axv07      |axz02_s             |axv08      |axz02_t             |axv09                   |aag02_a             |axv10                   |aag02_t             |axv11       |axv12               |axv13               |axv131          |axv14               |axv15          |axv16                     |axv17           ]
+[axv04|axv05       |axv06      |axv07      |axz02_s             |axv08      |axz02_t             |axv09                   |aag02_a             |axv10                   |aag02_t             |axv11       |axv12               |axv13               |axv131          |axv14               |axv15          |axv16                     |axv17           ]
+[axv04|axv05       |axv06      |axv07      |axz02_s             |axv08      |axz02_t             |axv09                   |aag02_a             |axv10                   |aag02_t             |axv11       |axv12               |axv13               |axv131          |axv14               |axv15          |axv16                     |axv17           ]
+[axv04|axv05       |axv06      |axv07      |axz02_s             |axv08      |axz02_t             |axv09                   |aag02_a             |axv10                   |aag02_t             |axv11       |axv12               |axv13               |axv131          |axv14               |axv15          |axv16                     |axv17           ]
+[axv04|axv05       |axv06      |axv07      |axz02_s             |axv08      |axz02_t             |axv09                   |aag02_a             |axv10                   |aag02_t             |axv11       |axv12               |axv13               |axv131          |axv14               |axv15          |axv16                     |axv17           ]
+[axv04|axv05       |axv06      |axv07      |axz02_s             |axv08      |axz02_t             |axv09                   |aag02_a             |axv10                   |aag02_t             |axv11       |axv12               |axv13               |axv131          |axv14               |axv15          |axv16                     |axv17           ]
+[axv04|axv05       |axv06      |axv07      |axz02_s             |axv08      |axz02_t             |axv09                   |aag02_a             |axv10                   |aag02_t             |axv11       |axv12               |axv13               |axv131          |axv14               |axv15          |axv16                     |axv17           ]
+
+}
+END -- tb1
+Grid gr2
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2
+END -- vb1
+END -- agli012
+
+TABLES
+axv_file
+ATTRIBUTES
+Edit axv01=axv_file.axv01, tabIndex=1, not null, required;
+ButtonEdit axv03=axv_file.axv03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Group No.";
+Edit axv02=axv_file.axv02, tabIndex=2, not null, required;
+ButtonEdit axv031=axv_file.axv031, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Parent Company";
+Edit axz02=formonly.axz02 type CHAR, tabIndex=5, noEntry;
+Edit axv04=axv_file.axv04, tabIndex=6, title="Ln#", not null, required;
+ComboBox axv05=axv_file.axv05, tabIndex=7, title="Trans.Prop.", not null, required, items=(("1", %"Downstream"),("2", %"Backflow"),("3", %"Sideflow"));
+ComboBox axv06=axv_file.axv06, tabIndex=8, title="Trans.Type", not null, required, items=(("1", "Inventory"),("2", "Tangible Asset(Territory)"),("3", "Tangible Asset"),("4", "Intangible Asset"),("5", "Other"));
+ButtonEdit axv07=axv_file.axv07, action=controlp, tabIndex=9, title="Sour.Comp.", not null, required, image="zoom", comment="<^P>Qry Company";
+Edit axz02_s=formonly.axz02_s type CHAR, tabIndex=10, title="Source Company Name", noEntry;
+ButtonEdit axv08=axv_file.axv08, action=controlp, tabIndex=11, title="Trans.Comp. Trans. Company Name", not null, required, image="zoom", comment="<^P>Qry Company";
+Edit axz02_t=formonly.axz02_t type CHAR, tabIndex=12, title="Trans. Company Name", noEntry;
+ButtonEdit axv09=axv_file.axv09, action=controlp, tabIndex=13, title="Account", not null, required, image="zoom", comment="<^P>Qry Account";
+Edit aag02_a=formonly.aag02_a type CHAR, tabIndex=14, title="Account Name", noEntry;
+ButtonEdit axv10=axv_file.axv10, action=controlp, tabIndex=15, title="Transaction Account", not null, required, image="zoom", comment="<^P>Qry Account";
+Edit aag02_t=formonly.aag02_t type CHAR, tabIndex=16, title="Trans. Account Name", noEntry;
+ButtonEdit axv11=axv_file.axv11, action=controlp, tabIndex=17, title="Sour. Curr.", not null, required, image="zoom", comment="<^P>Qry Currency";
+Edit axv12=axv_file.axv12, tabIndex=18, title="Transaction Amount", not null, required;
+Edit axv13=axv_file.axv13, tabIndex=19, title="Trans. Profit/Loss", not null, required;
+Edit axv131=axv_file.axv131, tabIndex=20, title="Realize Prof/Loss", not null, required;
+Edit axv14=axv_file.axv14, tabIndex=21, title="Unrealize Prof/Loss", not null, required;
+Edit axv15=axv_file.axv15, tabIndex=22, title="Hoding %", not null, required;
+Edit axv16=axv_file.axv16, tabIndex=23, title="Share Unrealize Prof/Loss", not null, required;
+Edit axv17=axv_file.axv17, tabIndex=24, title="Doc. No.";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=26, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axv(axv_file.axv04,axv_file.axv05,axv_file.axv06,axv_file.axv07,formonly.axz02_s,axv_file.axv08,formonly.axz02_t,axv_file.axv09,formonly.aag02_a,axv_file.axv10,formonly.aag02_t,axv_file.axv11,axv_file.axv12,axv_file.axv13,axv_file.axv131,axv_file.axv14,axv_file.axv15,axv_file.axv16,axv_file.axv17)
+SCREEN RECORD Undefined(axv_file.axv01,axv_file.axv03,axv_file.axv02,axv_file.axv031,formonly.axz02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

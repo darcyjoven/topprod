@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi520.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi520")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2110
+{
+ Price Terms         [xme01     ]
+ Terms Desc          [oah02                         ]
+ Currency            [xme02     ]
+ ta_xme01            [ta_xme01  ] [gec02         ]
+}
+END -- gr2110
+Grid gr2111
+{
+ Memo                [xme06                             ]
+                     [                                  ]
+                     [                                  ]
+
+}
+END -- gr2111
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr2112
+{
+ Record Owner        [xmeuser   ] Last Modified by    [xmemodu   ]
+ Department          [xmegrup   ] Create/Modify Date  [xmedate     ]
+ Record Orig.        [xmeoriu   ]
+ Dept Orig.          [xmeorig   ]
+}
+END -- gr2112
+END -- info
+END -- folder01
+Table s_xmf
+{
+[xmf03               |ima02               |ima021              |ta_xmf01       |ta_xmf_desc        |xmf04      |ima908     |xmf05    |xmf07               |ta_xmf03        |xmf08    |ta_xmf04|ta_xmf05]
+[xmf03               |ima02               |ima021              |ta_xmf01       |ta_xmf_desc        |xmf04      |ima908     |xmf05    |xmf07               |ta_xmf03        |xmf08    |ta_xmf04|ta_xmf05]
+[xmf03               |ima02               |ima021              |ta_xmf01       |ta_xmf_desc        |xmf04      |ima908     |xmf05    |xmf07               |ta_xmf03        |xmf08    |ta_xmf04|ta_xmf05]
+[xmf03               |ima02               |ima021              |ta_xmf01       |ta_xmf_desc        |xmf04      |ima908     |xmf05    |xmf07               |ta_xmf03        |xmf08    |ta_xmf04|ta_xmf05]
+[xmf03               |ima02               |ima021              |ta_xmf01       |ta_xmf_desc        |xmf04      |ima908     |xmf05    |xmf07               |ta_xmf03        |xmf08    |ta_xmf04|ta_xmf05]
+[xmf03               |ima02               |ima021              |ta_xmf01       |ta_xmf_desc        |xmf04      |ima908     |xmf05    |xmf07               |ta_xmf03        |xmf08    |ta_xmf04|ta_xmf05]
+[xmf03               |ima02               |ima021              |ta_xmf01       |ta_xmf_desc        |xmf04      |ima908     |xmf05    |xmf07               |ta_xmf03        |xmf08    |ta_xmf04|ta_xmf05]
+[xmf03               |ima02               |ima021              |ta_xmf01       |ta_xmf_desc        |xmf04      |ima908     |xmf05    |xmf07               |ta_xmf03        |xmf08    |ta_xmf04|ta_xmf05]
+[xmf03               |ima02               |ima021              |ta_xmf01       |ta_xmf_desc        |xmf04      |ima908     |xmf05    |xmf07               |ta_xmf03        |xmf08    |ta_xmf04|ta_xmf05]
+[xmf03               |ima02               |ima021              |ta_xmf01       |ta_xmf_desc        |xmf04      |ima908     |xmf05    |xmf07               |ta_xmf03        |xmf08    |ta_xmf04|ta_xmf05]
+
+}
+END -- s_xmf
+Grid gr2113
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2113
+END -- VBox1
+END -- axmi520
+
+TABLES
+xmf_file,
+xme_file
+ATTRIBUTES
+ButtonEdit xme01=xme_file.xme01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oah02=formonly.oah02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit xme02=xme_file.xme02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ta_xme01=formonly.ta_xme01, action=controlp, tabIndex=505, image="zoom";
+Edit gec02=formonly.gec02, tabIndex=506, noEntry;
+TextEdit xme06=xme_file.xme06, tabIndex=4, stretch=NONE, wantNoReturns;
+Edit xmeuser=xme_file.xmeuser, tabIndex=5, noEntry;
+Edit xmemodu=xme_file.xmemodu, tabIndex=6, noEntry;
+Edit xmegrup=xme_file.xmegrup, tabIndex=7, noEntry;
+DateEdit xmedate=xme_file.xmedate, tabIndex=8, noEntry;
+Edit xmeoriu=xme_file.xmeoriu, tabIndex=501, noEntry;
+Edit xmeorig=xme_file.xmeorig, tabIndex=502, noEntry;
+ButtonEdit xmf03=xmf_file.xmf03, action=controlp, tabIndex=9, title="Item No.", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=10, title="P/N", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=11, title="Spec", noEntry;
+ButtonEdit ta_xmf01=formonly.ta_xmf01, action=controlp, tabIndex=503, title=%"ta_xmf01", image="zoom";
+Edit ta_xmf_desc=formonly.ta_xmf_desc, tabIndex=504, title=%"ta_xmf01_desc";
+ButtonEdit xmf04=xmf_file.xmf04, action=controlp, tabIndex=12, title="Sales Unit", not null, required, image="zoom";
+Edit ima908=formonly.ima908 type CHAR, tabIndex=13, title="Price Unit", noEntry;
+DateEdit xmf05=xmf_file.xmf05, tabIndex=14, title="Eff.Date", not null, required;
+Edit xmf07=xmf_file.xmf07, tabIndex=15, title="Unit Price", not null, required, comment="<^Y>Under Field Modified the same this Price";
+Edit ta_xmf03=formonly.ta_xmf03, tabIndex=507, title=%"ta_xmf03", not null, required;
+Edit xmf08=xmf_file.xmf08, tabIndex=16, title="Discount", not null, required, comment="<^Y>Under Field Modified the same this Discount";
+Edit ta_xmf04=formonly.ta_xmf04, tabIndex=508, title=%"ta_xmf04";
+Edit ta_xmf05=formonly.ta_xmf05, tabIndex=509, title=%"ta_xmf05";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_xmf(xmf_file.xmf03,formonly.ima02,formonly.ima021,formonly.ta_xmf01,formonly.ta_xmf_desc,xmf_file.xmf04,formonly.ima908,xmf_file.xmf05,xmf_file.xmf07,formonly.ta_xmf03,xmf_file.xmf08,formonly.ta_xmf04,formonly.ta_xmf05)
+SCREEN RECORD Undefined(xme_file.xme01,formonly.oah02,xme_file.xme02,xme_file.xme06,xme_file.xmeuser,xme_file.xmemodu,xme_file.xmegrup,xme_file.xmedate,xme_file.xmeoriu,xme_file.xmeorig,formonly.cnt,formonly.cn2,formonly.ta_xme01,formonly.gec02)
+END -- INSTRUCTIONS
+

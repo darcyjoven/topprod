@@ -1,0 +1,130 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_qryauth.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_qryauth")
+VBox vb5
+Group group01(text="User Info")
+VBox VBox1
+Grid gr1
+{
+ User Id        [zx01        ][zx02                ]
+
+
+}
+END -- gr1
+Folder pc1
+Page page01(text="Category")
+Grid gr2
+{
+ Category       [zx04        ][zw02                ]
+
+ Union Category
+[zxwtxt                                            ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+}
+END -- gr2
+END -- page01
+Page page02(text="Department Restriction")
+Grid gr3
+{
+ Department No. [zx03        ][gem03               ]
+
+ Releative-Department Group
+[zywtxt                                            ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+}
+END -- gr3
+END -- page02
+Page page03(text="Plant Permission")
+Grid gr4
+{
+ Allowed Execute Plant List
+[zxytxt                                            ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+}
+END -- gr4
+END -- page03
+END -- pc1
+END -- VBox1
+END -- group01
+Group group02(text="Program Info")
+VBox vb4
+Grid gr5
+{
+ Program Id     [zz01        ][gaz03               ]
+
+[dummy01                                           ]
+
+
+}
+END -- gr5
+Table tb1
+{
+[gbd01                  |gbd04                |zxw04       |gbl03         ]
+[gbd01                  |gbd04                |zxw04       |gbl03         ]
+[gbd01                  |gbd04                |zxw04       |gbl03         ]
+[gbd01                  |gbd04                |zxw04       |gbl03         ]
+[gbd01                  |gbd04                |zxw04       |gbl03         ]
+}
+END -- tb1
+Grid gr6
+{
+
+ Non-owner\'s Data Permission  [zy04                          ]
+ Over Dept.\'s Data Permission [zy05                          ]
+ Detail Data Permission       [zy07                          ]
+ Output Report Allowed Method [zy06                          ]
+ Rows[cnt ]
+}
+END -- gr6
+END -- vb4
+END -- group02
+END -- vb5
+END -- p_qryauth
+
+TABLES
+zx_file,
+gbd_file,
+zz_file,
+zy_file
+ATTRIBUTES
+ButtonEdit zx01=zx_file.zx01, action=controlp, tabIndex=1, not null, required, image="zoom", scroll;
+Edit zx02=zx_file.zx02, tabIndex=2, noEntry;
+Edit zx04=zx_file.zx04, tabIndex=3, noEntry;
+Edit zw02=formonly.zw02 type CHAR, tabIndex=4, noEntry;
+TextEdit zxwtxt=formonly.zxwtxt type CHAR, tabIndex=5, noEntry, stretch=NONE;
+Edit zx03=zx_file.zx03, tabIndex=6, noEntry;
+Edit gem03=formonly.gem03 type CHAR, tabIndex=7, noEntry;
+TextEdit zywtxt=formonly.zywtxt type CHAR, tabIndex=8, noEntry, stretch=NONE;
+TextEdit zxytxt=formonly.zxytxt type CHAR, tabIndex=9, noEntry, stretch=NONE;
+ButtonEdit zz01=zz_file.zz01, action=controlp, tabIndex=10, not null, required, image="zoom", downShift, scroll;
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=11, noEntry;
+Label dummy01:dummy01, text="Permissive Functions";
+Edit gbd01=gbd_file.gbd01, tabIndex=12, title="Permissive function id";
+Edit gbd04=gbd_file.gbd04, tabIndex=13, title="Function Description";
+Edit zxw04=formonly.zxw04 type CHAR, tabIndex=14, title="Setting By";
+Edit gbl03=formonly.gbl03 type CHAR, tabIndex=15, title="Auth.Regard As";
+ComboBox zy04=zy_file.zy04, tabIndex=16, items=(("0", "Can Query,Modify,Delete"),("1", "Can Query,Modify,But Delete"),("2", "Can Query,But Modify,Can Delete"),("3", "Can Query,But Modify,nor Delete"),("4", "Can't Query,nor Modify,nor Delete"));
+ComboBox zy05=zy_file.zy05, tabIndex=17, items=(("0", "Different Dept., Can Query,Modify,Delete"),("1", "Different Dept., Can Query,Modify,But Delete"),("2", "Different Dept., Can Query,But Modify,Can Delete"),("3", "Different Dept., Can Query,But Modify,nor Delete"),("4", "Different Dept., Can't Query,nor Modify,nor Delete"),("5", "In Relative Dept, Can Query,Modify,But Delete"),("6", "In Relative Dept, Can Query,But Modify,Can Delete"),("7", "In Relative Dept, Can Query,But Modify,nor Delete"),("8", "In Relative Dept, Can Query,Modify,Delete"));
+ComboBox zy07=zy_file.zy07, tabIndex=18, items=(("0", "Can Insert, Delete"),("1", "Can Insert,But Delete"),("2", "Cannot Insert,Can Delete"),("3", "Cannot Insert,nor Delete"));
+Edit zy06=zy_file.zy06, tabIndex=19;
+Edit cnt=formonly.cnt type CHAR, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qryauth(gbd_file.gbd01,gbd_file.gbd04,formonly.zxw04,formonly.gbl03)
+SCREEN RECORD Undefined(zx_file.zx01,zx_file.zx02,zx_file.zx04,formonly.zw02,formonly.zxwtxt,zx_file.zx03,formonly.gem03,formonly.zywtxt,formonly.zxytxt,zz_file.zz01,formonly.gaz03,zy_file.zy04,zy_file.zy05,zy_file.zy07,zy_file.zy06,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi100a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi100a")
+Folder pc1284
+Page page01(text="Page01")
+VBox VBox1
+Table s_imt
+{
+[imt02               |imt03                 ]
+[imt02               |imt03                 ]
+[imt02               |imt03                 ]
+[imt02               |imt03                 ]
+[imt02               |imt03                 ]
+[imt02               |imt03                 ]
+[imt02               |imt03                 ]
+[imt02               |imt03                 ]
+[imt02               |imt03                 ]
+[imt02               |imt03                 ]
+
+}
+END -- s_imt
+END -- VBox1
+END -- page01
+END -- pc1284
+END -- aimi100a
+
+TABLES
+imt_file,
+tableAlias1=imt_file
+ATTRIBUTES
+Edit imt02=tableAlias1.imt02, tabIndex=1, title="Item No.", not null;
+Edit imt03=imt_file.imt03, tabIndex=2, title="content";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imt(tableAlias1.imt02,imt_file.imt03)
+END -- INSTRUCTIONS
+

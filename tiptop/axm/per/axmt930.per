@@ -1,0 +1,120 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt930.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"cxmt631")
+VBox VBox1
+Folder pc3
+Page Page6(text=%"Page0")
+Grid gr1
+{
+ Packing list number      [ogl03                 ]                    Requisition number           [ogl01                    ]                                Audit          [oglconu     ]              [imgmksg]
+ Order number             [oga16                 ]                    Date of shipment             [oga02              ]                                      Audit date     [oglcond         ]          [       ]
+ Customer number          [oga18          ]  [occ02_1          ]      delivery order               [ogl08                    ]                               [oglconf         ]
+ Delivery                 [oga04          ]  [occ02_2          ]
+
+
+
+}
+END -- gr1
+END -- Page6
+Page Page7(text=%"Page1")
+Grid gr2
+{
+
+  Data owner                    [ogluser         ]        Data modification                 [oglmodu            ]      Create Date   [oglcrat            ]
+  departement                   [oglgrup         ]        Recent changes                    [ogldate            ]
+  Information builders          [ogloriu         ]
+
+}
+END -- gr2
+END -- Page7
+END -- pc3
+Table s_ogl
+{
+[ogl04   |ogl02   |ogl07      |imx00      |ima02   |ogl09       |color   |imx01   |imx02   |imx03   |imx04   |imx05   |imx06   |imx07   |imx08   |imx09   |imx10   |imx11   |imx12   |imx13   |imx14   |imx15   |imx16|imx17|imx18|imx19|imx20|imx21|imx22|imx23|imx24|imx25|ogl05   |ogl06   ]
+[ogl04   |ogl02   |ogl07      |imx00      |ima02   |ogl09       |color   |imx01   |imx02   |imx03   |imx04   |imx05   |imx06   |imx07   |imx08   |imx09   |imx10   |imx11   |imx12   |imx13   |imx14   |imx15   |imx16|imx17|imx18|imx19|imx20|imx21|imx22|imx23|imx24|imx25|ogl05   |ogl06   ]
+[ogl04   |ogl02   |ogl07      |imx00      |ima02   |ogl09       |color   |imx01   |imx02   |imx03   |imx04   |imx05   |imx06   |imx07   |imx08   |imx09   |imx10   |imx11   |imx12   |imx13   |imx14   |imx15   |imx16|imx17|imx18|imx19|imx20|imx21|imx22|imx23|imx24|imx25|ogl05   |ogl06   ]
+[ogl04   |ogl02   |ogl07      |imx00      |ima02   |ogl09       |color   |imx01   |imx02   |imx03   |imx04   |imx05   |imx06   |imx07   |imx08   |imx09   |imx10   |imx11   |imx12   |imx13   |imx14   |imx15   |imx16|imx17|imx18|imx19|imx20|imx21|imx22|imx23|imx24|imx25|ogl05   |ogl06   ]
+[ogl04   |ogl02   |ogl07      |imx00      |ima02   |ogl09       |color   |imx01   |imx02   |imx03   |imx04   |imx05   |imx06   |imx07   |imx08   |imx09   |imx10   |imx11   |imx12   |imx13   |imx14   |imx15   |imx16|imx17|imx18|imx19|imx20|imx21|imx22|imx23|imx24|imx25|ogl05   |ogl06   ]
+}
+END -- s_ogl
+Grid Grid1
+{
+
+  count [idx ] / [cnt   ]   sum  [sum                 ]
+}
+END -- Grid1
+END -- VBox1
+END -- axmt930
+
+TABLES
+ogl_file,
+oga_file
+ATTRIBUTES
+ButtonEdit ogl03=ogl_file.ogl03, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit ogl01=ogl_file.ogl01, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit oglconu=ogl_file.oglconu, tabIndex=9;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit oga16=oga_file.oga16, action=controlp, tabIndex=2, image="zoom";
+DateEdit oga02=oga_file.oga02, tabIndex=6;
+DateEdit oglcond=ogl_file.oglcond, tabIndex=10, century="";
+ButtonEdit oga18=oga_file.oga18, action=controlp, tabIndex=3, image="zoom";
+Edit occ02_1=formonly.occ02_1 type CHAR, tabIndex=4;
+ButtonEdit ogl08=ogl_file.ogl08, action=controlp, tabIndex=55, noEntry, image="zoom";
+CheckBox oglconf=ogl_file.oglconf, tabIndex=11, default = "N", text="Verification code", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oga04=oga_file.oga04, action=controlp, tabIndex=7, image="zoom";
+Edit occ02_2=formonly.occ02_2 type CHAR, tabIndex=8;
+Edit ogluser=ogl_file.ogluser, tabIndex=12;
+Edit oglmodu=ogl_file.oglmodu, tabIndex=15;
+DateEdit oglcrat=ogl_file.oglcrat, tabIndex=17;
+Edit oglgrup=ogl_file.oglgrup, tabIndex=13;
+Edit ogldate=ogl_file.ogldate, tabIndex=16;
+Edit ogloriu=ogl_file.ogloriu, tabIndex=14;
+Edit ogl04=ogl_file.ogl04, tabIndex=18, title="ogl04", noEntry;
+ButtonEdit ogl02=ogl_file.ogl02, action=controlp, tabIndex=19, title="ogl02", not null, required, image="zoom";
+Edit ogl07=ogl_file.ogl07, tabIndex=20, title="ogl07", not null, required;
+Edit imx00=formonly.imx00 type VARCHAR, tabIndex=21, title="imx00", noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=22, title="ima02", noEntry;
+Edit ogl09=ogl_file.ogl09, tabIndex=23, title="ogl09";
+Edit color=formonly.color type CHAR, tabIndex=24, title="color", noEntry;
+Edit imx01=formonly.imx01 type VARCHAR, tabIndex=25, title="imx01", noEntry, justify=center, century="C";
+Edit imx02=formonly.imx02 type VARCHAR, tabIndex=26, title="imx02", noEntry, justify=center, century="C";
+Edit imx03=formonly.imx03 type VARCHAR, tabIndex=27, title="imx03", noEntry, justify=center, century="C";
+Edit imx04=formonly.imx04 type VARCHAR, tabIndex=28, title="imx04", noEntry, justify=center, century="C";
+Edit imx05=formonly.imx05 type VARCHAR, tabIndex=29, title="imx05", noEntry, justify=center, century="C";
+Edit imx06=formonly.imx06 type VARCHAR, tabIndex=30, title="imx06", noEntry, justify=center, century="C";
+Edit imx07=formonly.imx07 type VARCHAR, tabIndex=31, title="imx07", noEntry, justify=center, century="C";
+Edit imx08=formonly.imx08 type VARCHAR, tabIndex=32, title="imx08", noEntry, justify=center, century="C";
+Edit imx09=formonly.imx09 type VARCHAR, tabIndex=33, title="imx09", noEntry, justify=center, century="C";
+Edit imx10=formonly.imx10 type VARCHAR, tabIndex=34, title="imx10", noEntry, justify=center, century="C";
+Edit imx11=formonly.imx11 type VARCHAR, tabIndex=35, title="imx11", noEntry, justify=center, century="C";
+Edit imx12=formonly.imx12 type VARCHAR, tabIndex=36, title="imx12", noEntry, justify=center, century="C";
+Edit imx13=formonly.imx13 type VARCHAR, tabIndex=37, title="imx13", noEntry, justify=center, century="C";
+Edit imx14=formonly.imx14 type VARCHAR, tabIndex=38, title="imx14", noEntry, justify=center, century="C";
+Edit imx15=formonly.imx15 type VARCHAR, tabIndex=39, title="imx15", noEntry, justify=center, century="C";
+Edit imx16=formonly.imx16 type VARCHAR, tabIndex=40, title="imx16", noEntry, justify=center, century="C";
+Edit imx17=formonly.imx17 type VARCHAR, tabIndex=41, title="imx17", noEntry, justify=center, century="C";
+Edit imx18=formonly.imx18 type VARCHAR, tabIndex=42, title="imx18", noEntry, justify=center, century="C";
+Edit imx19=formonly.imx19 type VARCHAR, tabIndex=43, title="imx19", noEntry, justify=center, century="C";
+Edit imx20=formonly.imx20 type VARCHAR, tabIndex=44, title="imx20", noEntry, justify=center, century="C";
+Edit imx21=formonly.imx21 type VARCHAR, tabIndex=45, title="imx21", noEntry, justify=center, century="C";
+Edit imx22=formonly.imx22 type VARCHAR, tabIndex=46, title="imx22", noEntry, justify=center, century="C";
+Edit imx23=formonly.imx23 type VARCHAR, tabIndex=47, title="imx23", noEntry, justify=center, century="C";
+Edit imx24=formonly.imx24 type VARCHAR, tabIndex=48, title="imx24", noEntry, justify=center, century="C";
+Edit imx25=formonly.imx25 type VARCHAR, tabIndex=49, title="imx25", noEntry, justify=center, century="C";
+Edit ogl05=ogl_file.ogl05, tabIndex=50, title="ogl05", justify=center;
+Edit ogl06=ogl_file.ogl06, tabIndex=51, title="ogl06";
+Edit idx=formonly.idx type CHAR, tabIndex=52;
+Edit cnt=formonly.cnt type CHAR, tabIndex=53;
+Edit sum=formonly.sum type CHAR, tabIndex=54, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogl(ogl_file.ogl04,ogl_file.ogl02,ogl_file.ogl07,formonly.imx00,formonly.ima02,ogl_file.ogl09,formonly.color,formonly.imx01,formonly.imx02,formonly.imx03,formonly.imx04,formonly.imx05,formonly.imx06,formonly.imx07,formonly.imx08,formonly.imx09,formonly.imx10,formonly.imx11,formonly.imx12,formonly.imx13,formonly.imx14,formonly.imx15,formonly.imx16,formonly.imx17,formonly.imx18,formonly.imx19,formonly.imx20,formonly.imx21,formonly.imx22,formonly.imx23,formonly.imx24,formonly.imx25,ogl_file.ogl05,ogl_file.ogl06)
+SCREEN RECORD Undefined(ogl_file.ogl03,ogl_file.ogl01,ogl_file.oglconu,formonly.imgmksg,oga_file.oga16,oga_file.oga02,ogl_file.oglcond,oga_file.oga18,formonly.occ02_1,oga_file.oga04,formonly.occ02_2,ogl_file.oglconf,ogl_file.ogluser,ogl_file.oglcrat,formonly.sum,ogl_file.oglgrup,ogl_file.ogloriu,ogl_file.oglmodu,ogl_file.ogldate,formonly.idx,formonly.cnt,ogl_file.ogl08)
+END -- INSTRUCTIONS
+

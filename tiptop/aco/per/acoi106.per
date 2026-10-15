@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi106.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi106")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1273
+{
+ Item No.   [coa01                         ][ima02               ]
+ Source Code[ima08     ]                Unit[ima25     ]
+}
+END -- gr1273
+END -- page01
+END -- folder01
+Table s_coa
+{
+[coa02    |coa05        |coa03           |cob02                    |cob04 |coa04         ]
+[coa02    |coa05        |coa03           |cob02                    |cob04 |coa04         ]
+[coa02    |coa05        |coa03           |cob02                    |cob04 |coa04         ]
+[coa02    |coa05        |coa03           |cob02                    |cob04 |coa04         ]
+[coa02    |coa05        |coa03           |cob02                    |cob04 |coa04         ]
+[coa02    |coa05        |coa03           |cob02                    |cob04 |coa04         ]
+[coa02    |coa05        |coa03           |cob02                    |cob04 |coa04         ]
+[coa02    |coa05        |coa03           |cob02                    |cob04 |coa04         ]
+[coa02    |coa05        |coa03           |cob02                    |cob04 |coa04         ]
+[coa02    |coa05        |coa03           |cob02                    |cob04 |coa04         ]
+
+}
+END -- s_coa
+Grid gr1274
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr1274
+END -- VBox1
+END -- acoi106
+
+ATTRIBUTES
+ButtonEdit coa01=formonly.coa01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Item No.";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=3, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=4, noEntry;
+Edit coa02=formonly.coa02 type CHAR, tabIndex=5, title="Line No.", not null, required, color = yellow;
+ButtonEdit coa05=formonly.coa05 type CHAR, action=controlp, tabIndex=6, title="Custom No.", not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Custom No.";
+ButtonEdit coa03=formonly.coa03 type CHAR, action=controlp, tabIndex=7, title="Goods No.", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit cob02=formonly.cob02 type VARCHAR, tabIndex=8, title="Part Name Specification", noEntry;
+Edit cob04=formonly.cob04 type VARCHAR, tabIndex=9, title="Unit", noEntry;
+Edit coa04=formonly.coa04 type CHAR, tabIndex=10, title="Exchange Rate", color = yellow;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_coa(formonly.coa02,formonly.coa05,formonly.coa03,formonly.cob02,formonly.cob04,formonly.coa04)
+SCREEN RECORD Undefined(formonly.coa01,formonly.ima02,formonly.ima08,formonly.ima25,formonly.cnt)
+END -- INSTRUCTIONS
+

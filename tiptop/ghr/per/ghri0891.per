@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri0891.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"ghri0891")
+VBox VBox1
+Folder folder2
+Page page2(text=%"page2")
+Grid ds2
+{
+
+ [label1   ] [hrdu02          |hrdu02_n                                             ]
+ [hrdu04    ][hrdu01          ]          [hrdu03    ] [hrdu05          ]
+ [label2    ][tyjs            ]
+
+
+}
+END -- ds2
+END -- page2
+END -- folder2
+Table s_hrdu
+{
+[hrdu06        |hrdu07           |hrdu08          |hrdu09          |hrdu00           |hrdu10           ]
+[hrdu06        |hrdu07           |hrdu08          |hrdu09          |hrdu00           |hrdu10           ]
+[hrdu06        |hrdu07           |hrdu08          |hrdu09          |hrdu00           |hrdu10           ]
+[hrdu06        |hrdu07           |hrdu08          |hrdu09          |hrdu00           |hrdu10           ]
+[hrdu06        |hrdu07           |hrdu08          |hrdu09          |hrdu00           |hrdu10           ]
+}
+END -- s_hrdu
+END -- VBox1
+END -- ghri0891
+
+ATTRIBUTES
+Label label1:label1, text=%"Label1";
+ButtonEdit hrdu02=formonly.hrdu02 type CHAR, action=controlp, tabIndex=9, image="zoom";
+Edit hrdu02_n=formonly.hrdu02_n type CHAR, tabIndex=10;
+Label hrdu04:hrdu04, text=%"hrdu04";
+ButtonEdit hrdu01=formonly.hrdu04 type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+Label hrdu03:hrdu03, text=%"hrdu03";
+ComboBox hrdu05=formonly.hrdu03 type VARCHAR, tabIndex=7, not null, required;
+Label label2:Label2, text=%"Label2";
+Edit tyjs=formonly.tyjs type CHAR, tabIndex=11;
+ComboBox hrdu06=formonly.hrdu05 type VARCHAR, tabIndex=1, title=%"hrdu05", noEntry;
+ComboBox hrdu07=formonly.hrdu06 type VARCHAR, tabIndex=5, title=%"hrdu06", noEntry;
+Edit hrdu08=formonly.hrdu07 type DECIMAL, tabIndex=3, title=%"hrdu07";
+Edit hrdu09=formonly.hrdu08 type DECIMAL, tabIndex=2, title=%"hrdu08";
+Edit hrdu00=formonly.hrdu09 type DECIMAL, tabIndex=4, title=%"hrdu09";
+Edit hrdu10=formonly.hrdu10 type DECIMAL, tabIndex=8, title=%"hrdu10";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.hrdu04,formonly.hrdu03,formonly.hrdu02,formonly.hrdu02_n,formonly.tyjs)
+SCREEN RECORD s_hrdu(formonly.hrdu05,formonly.hrdu06,formonly.hrdu07,formonly.hrdu08,formonly.hrdu09,formonly.hrdu10)
+END -- INSTRUCTIONS
+

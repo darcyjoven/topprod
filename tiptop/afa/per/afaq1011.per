@@ -1,0 +1,148 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afaq1011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afaq1011")
+Folder Folder1
+Page page01(text="Main")
+VBox VBox1
+Group Group01
+Grid Grid1
+{
+  Depreciation Method [fap06     ]
+  Apportionment Metd  [fap15     ][desc                ]
+  Apportioning Dept.  [fap16     ]
+
+ <G group1                                  ><G group2                                    >
+  [fap24                                   ]  Keeping Department  [fap17     ][gem02     ]
+  Re-Amortizing Amt.  [fap25               ]  Employee            [fap18     ][gen02     ]
+  Re-amortize Life    [fap26     ]            Location            [fap19     ]
+ <                                          ><                                            >
+ <G group3                                  ><G group4                                  >
+  Home Currency Cost  [fap09               ]  Rest Life           [fap07     ][dummy01 ]
+  Charge off Cost     [fap22               ]  Latest Trans. date  [fap41               ]
+  Char.Off Accu. Depr.[fap23               ]  Qty                 [fap20               ]
+  Adjustment Cost     [fap10               ]  Charge off Qty      [fap21               ]
+  Default Res. Value  [fap08               ]  Qty Outside         [fap201              ]
+  Accumulated Depre.  [fap11               ]  Undepreciated Amt.  [fap101              ]
+
+ <                                          ><                                          >
+
+}
+END -- Grid1
+END -- Group01
+END -- VBox1
+END -- page01
+Page page02(text="Main2")
+VBox VBox2
+Group Group7
+Grid Grid3
+{
+  Depreciation Method [fap062    ]
+  Apportionment Metd  [fap152    ][desc2               ]
+  Apportioning Dept.  [fap162    ]
+
+ <G group8                                  >
+  [fap242                                  ]
+  Re-Amortizing Amt.  [fap252              ]
+  Re-amortize Life    [fap262    ]
+ <                                          >
+ <G group10                                 ><G group11                                 >
+  Home Currency Cost  [fap092              ]  Rest Life           [fap072    ][dummy02 ]
+  Charge off Cost     [fap222              ]
+  Char.Off Accu. Depr.[fap232              ]
+  Adjustment Cost     [fap103              ]  Charge off Qty      [fap212              ]
+  Default Res. Value  [fap082              ]
+  Accumulated Depre.  [fap112              ]  Undepreciated Amt.  [fap1012             ]
+
+ <                                          ><                                          >
+
+}
+END -- Grid3
+END -- Group7
+END -- VBox2
+END -- page02
+Page page03(text="Acct Info")
+Grid Grid2
+{
+ <G group5                                  ><G group6                                  >
+  Asset Account       [fap12               ]  Asset Account2      [fap121              ]
+  Accu. Depr. Acct.   [fap13               ]  Accu. Depr. Acct2.  [fap131              ]
+  Depreciation Acct.  [fap14               ]  Depreciation Acct2. [fap141              ]
+ <                                          ><                                          >
+
+}
+END -- Grid2
+END -- page03
+END -- Folder1
+END -- afaq1011
+
+TABLES
+fap_file
+ATTRIBUTES
+Edit fap06=fap_file.fap06, tabIndex=1, noEntry;
+Edit fap15=fap_file.fap15, tabIndex=2, noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=3;
+Edit fap16=fap_file.fap16, tabIndex=4, noEntry;
+Group group1:group1;
+CheckBox fap24=fap_file.fap24, tabIndex=5, text="Re-Amortize after Depreciated", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fap25=fap_file.fap25, tabIndex=6, noEntry;
+Edit fap26=fap_file.fap26, tabIndex=7, noEntry;
+Group group2:group2;
+Edit fap17=fap_file.fap17, tabIndex=8, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=9;
+Edit fap18=fap_file.fap18, tabIndex=10, noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=11;
+Edit fap19=fap_file.fap19, tabIndex=12, noEntry;
+Group group3:group3;
+Edit fap09=fap_file.fap09, tabIndex=13, noEntry;
+Edit fap22=fap_file.fap22, tabIndex=14, noEntry;
+Edit fap23=fap_file.fap23, tabIndex=15, noEntry;
+Edit fap10=fap_file.fap10, tabIndex=16, noEntry;
+Edit fap08=fap_file.fap08, tabIndex=17, noEntry;
+Edit fap11=fap_file.fap11, tabIndex=18, noEntry;
+Group group4:group4;
+Edit fap07=fap_file.fap07, tabIndex=19, noEntry;
+Label dummy01:dummy01, text="Month";
+DateEdit fap41=fap_file.fap41, tabIndex=20, noEntry;
+Edit fap20=fap_file.fap20, tabIndex=21, noEntry;
+Edit fap21=fap_file.fap21, tabIndex=22, noEntry;
+Edit fap201=fap_file.fap201, tabIndex=23, noEntry;
+Edit fap101=fap_file.fap101, tabIndex=24, noEntry;
+Edit fap062=fap_file.fap062, tabIndex=31, noEntry;
+Edit fap152=fap_file.fap152, tabIndex=32, noEntry;
+Edit desc2=formonly.desc2 type CHAR, tabIndex=33;
+Edit fap162=fap_file.fap162, tabIndex=34, noEntry;
+Group group8:group8;
+CheckBox fap242=fap_file.fap242, tabIndex=35, text="Re-Amortize after Depreciated", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fap252=fap_file.fap252, tabIndex=36, noEntry;
+Edit fap262=fap_file.fap262, tabIndex=37, noEntry;
+Group group10:group10;
+Edit fap092=fap_file.fap092, tabIndex=38, noEntry;
+Edit fap222=fap_file.fap222, tabIndex=39, noEntry;
+Edit fap232=fap_file.fap232, tabIndex=40, noEntry;
+Edit fap103=fap_file.fap103, tabIndex=41, noEntry;
+Edit fap082=fap_file.fap082, tabIndex=42, noEntry;
+Edit fap112=fap_file.fap112, tabIndex=43, noEntry;
+Group group11:group11;
+Edit fap072=fap_file.fap072, tabIndex=44, noEntry;
+Label dummy02:dummy02, text="Month";
+Edit fap212=fap_file.fap212, tabIndex=45, noEntry;
+Edit fap1012=fap_file.fap1012, tabIndex=46, noEntry;
+Group group5:group5;
+Edit fap12=fap_file.fap12, tabIndex=25, noEntry;
+Edit fap13=fap_file.fap13, tabIndex=26, noEntry;
+Edit fap14=fap_file.fap14, tabIndex=27, noEntry;
+Group group6:group6;
+Edit fap121=fap_file.fap121, tabIndex=28, noEntry;
+Edit fap131=fap_file.fap131, tabIndex=29, noEntry;
+Edit fap141=fap_file.fap141, tabIndex=30, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fap_file.fap06,fap_file.fap15,formonly.desc,fap_file.fap16,fap_file.fap24,fap_file.fap25,fap_file.fap26,fap_file.fap17,formonly.gem02,fap_file.fap18,formonly.gen02,fap_file.fap19,fap_file.fap09,fap_file.fap22,fap_file.fap23,fap_file.fap10,fap_file.fap08,fap_file.fap11,fap_file.fap07,fap_file.fap41,fap_file.fap20,fap_file.fap21,fap_file.fap201,fap_file.fap101,fap_file.fap12,fap_file.fap13,fap_file.fap14,fap_file.fap121,fap_file.fap131,fap_file.fap141,fap_file.fap062,fap_file.fap152,formonly.desc2,fap_file.fap162,fap_file.fap242,fap_file.fap252,fap_file.fap262,fap_file.fap092,fap_file.fap222,fap_file.fap232,fap_file.fap103,fap_file.fap082,fap_file.fap112,fap_file.fap072,fap_file.fap212,fap_file.fap1012)
+END -- INSTRUCTIONS
+

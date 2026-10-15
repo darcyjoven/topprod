@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gfa/42f/gfag110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"afar110")
+VBox VBox1
+Grid gr1
+{
+ <G grpqbe                                                                                           >
+  Sales Doc No.       [fbe01               ]
+  Sale Date           [fbe02               ]
+  Sales Customer      [fbe03               ]
+  Shipping Customer   [fbe04               ]
+ <                                                                                                   >
+
+}
+END -- gr1
+Group group01(text="INPUT")
+Grid gr2
+{
+ <G group02               ><G group04                   ><G group05                   >
+ [a                     ]  [b                          ] [d                         ]
+ [                      ]  [                           ] [                          ]
+ [                      ]  [                           ] [                          ]
+ <                        ><                            ><                            >
+
+}
+END -- gr2
+END -- group01
+Grid gr3
+{
+[more                                   ]
+
+}
+END -- gr3
+END -- VBox1
+END -- gfag110
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+ButtonEdit fbe01=formonly.fbe01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit fbe02=formonly.fbe02 type DATE, tabIndex=2;
+ButtonEdit fbe03=formonly.fbe03 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit fbe04=formonly.fbe04 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+Group group02:group02, text="Data Option";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=5, items=(("1", "Confirmed"),("2", "UnConfirmed"),("3", "All"));
+Group group04:group04, text="Print Item";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=7, items=(("1", "Financial Report"),("2", "Tax"));
+Group group05:group05, text="Post";
+RadioGroup d=formonly.d type VARCHAR, tabIndex=8, items=(("1", "Posted"),("2", "Unposted"),("3", "All"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.fbe01,formonly.fbe02,formonly.fbe03,formonly.fbe04,formonly.a,formonly.b,formonly.d,formonly.more)
+END -- INSTRUCTIONS
+

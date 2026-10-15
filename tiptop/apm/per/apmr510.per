@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr510")
+VBox VBox1
+Grid gr5111
+{
+ <G group01                                                     >
+  Receipt No.  [rva01               ]
+  Receipt Date [rva06               ]
+  Vender No.   [rva05               ]
+  Item No.     [rvb05               ]
+  P/O No.      [rvb04               ]
+ <                                                              >
+}
+END -- gr5111
+Group group02(text="INPUT")
+Grid gr5112
+{
+ <G group03                                                          >
+  [s1                ]  [s2                 ]  [s3                  ]
+  [t1                ]  [t2                 ]  [t3                  ]
+  [u1                ]  [u2                 ]  [u3                  ]
+ <                                                                   >
+ <G group04                                                          >
+  [sel_sw    ]      [iqc_sw    ]      [sel_sw_c  ]      [sub       ]
+ <                                                                   >
+
+}
+END -- gr5112
+END -- group02
+Grid gr5113
+{
+ [more                                                            ]
+
+
+}
+END -- gr5113
+END -- VBox1
+END -- apmr510
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit rva01=formonly.rva01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit rva06=formonly.rva06 type DATE, tabIndex=2;
+Edit rva05=formonly.rva05 type VARCHAR, tabIndex=3;
+ButtonEdit rvb05=formonly.rvb05 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit rvb04=formonly.rvb04 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=6, items=(("1", "Receipt No."),("2", "Receipt Date"),("3", "Vender No."),("4", "Item No."),("5", "P/O No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=7, items=(("1", "Receipt No."),("2", "Receipt Date"),("3", "Vender No."),("4", "Item No."),("5", "P/O No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=8, items=(("1", "Receipt No."),("2", "Receipt Date"),("3", "Vender No."),("4", "Item No."),("5", "P/O No."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=12, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=13, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="Data Option";
+RadioGroup sel_sw=formonly.sel_sw type VARCHAR, tabIndex=15, items=(("1", "Confirmed"),("2", "UnConfirmed"),("3", "All"));
+RadioGroup iqc_sw=formonly.iqc_sw type VARCHAR, tabIndex=16, items=(("1", "Yes Inspect"),("2", "No Inspection"),("3", "All"));
+RadioGroup sel_sw_c=formonly.sel_sw_c type VARCHAR, tabIndex=17, items=(("1", "Not QC"),("2", "QC Done"),("3", "All"));
+RadioGroup sub=formonly.sub type VARCHAR, tabIndex=18, items=(("1", "General"),("2", "Indent"),("3", "All"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=19, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rva01,formonly.rva06,formonly.rva05,formonly.rvb05,formonly.rvb04,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.sel_sw,formonly.iqc_sw,formonly.sel_sw_c,formonly.sub,formonly.more)
+END -- INSTRUCTIONS
+

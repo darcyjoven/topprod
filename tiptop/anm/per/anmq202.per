@@ -1,0 +1,101 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/4fd/anmq202.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmq202")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr4151
+{
+ Note Receipt#       [nmh01           ]
+ Note No.            [nmh31       ]
+ Remitting Bank      [nmh21       ]
+ Bank Abbreviation   [nma02               ]
+ Note Received Date  [nmh04       ]
+}
+END -- gr4151
+Grid gr4152
+{
+ Notes type 1/2      [nmh10] [nmh29]
+ Currency            [nmh03        ]
+ Exchange Rate       [nmh28               ]
+ Original Currency   [nmh02               ]
+ Contra\'d Amt        [nmh17               ]
+}
+END -- gr4152
+Grid gr4153
+{
+ Due Date             [nmh05       ]
+ Note Status          [nmh24       ]
+ Customer #           [nmh11       ]
+ Customer Abbreviation[nmh30       ]
+ Latest Closing Date  [nmh35       ]
+}
+END -- gr4153
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_nmi
+{
+[nmi03|nmi02            |nmi05                |nmi06               |nmi08               |nmi09               |remark              |nmi10       |nmi11       ]
+[nmi03|nmi02            |nmi05                |nmi06               |nmi08               |nmi09               |remark              |nmi10       |nmi11       ]
+[nmi03|nmi02            |nmi05                |nmi06               |nmi08               |nmi09               |remark              |nmi10       |nmi11       ]
+[nmi03|nmi02            |nmi05                |nmi06               |nmi08               |nmi09               |remark              |nmi10       |nmi11       ]
+[nmi03|nmi02            |nmi05                |nmi06               |nmi08               |nmi09               |remark              |nmi10       |nmi11       ]
+[nmi03|nmi02            |nmi05                |nmi06               |nmi08               |nmi09               |remark              |nmi10       |nmi11       ]
+[nmi03|nmi02            |nmi05                |nmi06               |nmi08               |nmi09               |remark              |nmi10       |nmi11       ]
+[nmi03|nmi02            |nmi05                |nmi06               |nmi08               |nmi09               |remark              |nmi10       |nmi11       ]
+[nmi03|nmi02            |nmi05                |nmi06               |nmi08               |nmi09               |remark              |nmi10       |nmi11       ]
+[nmi03|nmi02            |nmi05                |nmi06               |nmi08               |nmi09               |remark              |nmi10       |nmi11       ]
+
+}
+END -- s_nmi
+Grid gr4154
+{
+ ---------- Counts [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4154
+END -- VBox1
+END -- anmq202
+
+ATTRIBUTES
+Edit nmh01=formonly.nmh01 type VARCHAR, tabIndex=1;
+Edit nmh31=formonly.nmh31 type VARCHAR, tabIndex=2;
+Edit nmh21=formonly.nmh21 type VARCHAR, tabIndex=3;
+Edit nma02=formonly.nma02 type VARCHAR, tabIndex=4, noEntry;
+DateEdit nmh04=formonly.nmh04 type DATE, tabIndex=5;
+Edit nmh10=formonly.nmh10 type VARCHAR, tabIndex=6;
+Edit nmh29=formonly.nmh29 type VARCHAR, tabIndex=7;
+Edit nmh03=formonly.nmh03 type VARCHAR, tabIndex=8;
+Edit nmh28=formonly.nmh28 type DECIMAL, tabIndex=9;
+Edit nmh02=formonly.nmh02 type DECIMAL, tabIndex=10;
+Edit nmh17=formonly.nmh17 type VARCHAR, tabIndex=11;
+Edit nmh05=formonly.nmh05 type VARCHAR, tabIndex=12;
+ComboBox nmh24=formonly.nmh24 type CHAR, tabIndex=13, noEntry, not null, required, queryEditable, items=(("1", "Untransaction"),("2", "Collection Discount"),("3", "Pledge"),("4", "Note discount"),("5", "Transfer"),("6", "Withdraw"),("7", "Note Returned"),("8", "Cash"),("9", "Text"));
+Edit nmh11=formonly.nmh11 type VARCHAR, tabIndex=14;
+Edit nmh30=formonly.nmh30 type VARCHAR, tabIndex=15, noEntry;
+DateEdit nmh35=formonly.nmh35 type CHAR, tabIndex=16;
+Edit nmi03=formonly.nmi03 type INTEGER, tabIndex=17, title="S/N";
+DateEdit nmi02=formonly.nmi02 type DATE, tabIndex=18, title="Transaction Date";
+ComboBox nmi05=formonly.nmi05 type VARCHAR, tabIndex=19, title="Original Note Status", queryEditable, items=(("1", %"Untransaction"),("2", %"Collection Discount"),("3", %"Pledge"),("4", %"Note discount"),("5", %"Transfer"),("6", %"Withdraw"),("7", %"Note Returned"),("8", %"Cash"),("9", %"Transfer payment refund"));
+ComboBox nmi06=formonly.nmi06 type VARCHAR, tabIndex=20, title="DescNew Note Status", queryEditable, items=(("1", %"Untransaction"),("2", %"Collection Discount"),("3", %"Pledge"),("4", %"Note discount"),("5", %"Transfer"),("6", %"Withdraw"),("7", %"Note Returned"),("8", %"Cash"),("9", %"Transfer payment refund"));
+Edit nmi08=formonly.nmi08 type CHAR, tabIndex=21, title="Original Exchange Rate", noEntry;
+Edit nmi09=formonly.nmi09 type CHAR, tabIndex=22, title="Current Exchange Rate", noEntry;
+TextEdit remark=formonly.remark, tabIndex=23, title=%"remark";
+Edit nmi10=formonly.nmi10 type CHAR, tabIndex=24, title="Voucher#", noEntry;
+Edit nmi11=formonly.nmi11 type CHAR, tabIndex=25, title="Voucher Date", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=26, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmi(formonly.nmi03,formonly.nmi02,formonly.nmi05,formonly.nmi06,formonly.nmi08,formonly.nmi09,formonly.remark,formonly.nmi10,formonly.nmi11)
+SCREEN RECORD Undefined(formonly.nmh01,formonly.nmh31,formonly.nmh21,formonly.nma02,formonly.nmh04,formonly.nmh10,formonly.nmh29,formonly.nmh03,formonly.nmh28,formonly.nmh02,formonly.nmh17,formonly.nmh05,formonly.nmh24,formonly.nmh11,formonly.nmh30,formonly.nmh35,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

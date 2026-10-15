@@ -1,0 +1,116 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft310")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr761
+{
+ Split Note No.      [shp01             ]
+ Date                [shp02       ]
+ Run Card No.        [shp03                ]
+
+
+
+}
+END -- gr761
+Grid gr762
+{
+ Routing No.         [shp012         ]
+ Routing Sequence    [shp04          ]
+ Task No.            [shp05          ]
+ WIP Qty             [shp06          ]
+
+
+}
+END -- gr762
+Grid gr763
+{
+ Employee No.        [shp07     ]   [imgmksg]
+ Employee Name       [gen02     ]   [       ]
+ Time                [shptime   ]
+ Confirm             [shpconf   ]
+
+
+}
+END -- gr763
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr764
+{
+ Record Owner        [shpuser   ]   Last Modified by    [shpmodu   ]   Data Valid Code     [shpacti   ]
+ Department          [shpgrup   ]   Create/Modify Date  [shpdate   ]
+ Record Orig.        [shporiu   ]
+ Dept Orig.          [shporig   ]
+}
+END -- gr764
+END -- info
+END -- folder01
+Table s_shq
+{
+[shq011       |shq02                |shq03        |shq04                     ]
+[shq011       |shq02                |shq03        |shq04                     ]
+[shq011       |shq02                |shq03        |shq04                     ]
+[shq011       |shq02                |shq03        |shq04                     ]
+[shq011       |shq02                |shq03        |shq04                     ]
+[shq011       |shq02                |shq03        |shq04                     ]
+[shq011       |shq02                |shq03        |shq04                     ]
+[shq011       |shq02                |shq03        |shq04                     ]
+[shq011       |shq02                |shq03        |shq04                     ]
+[shq011       |shq02                |shq03        |shq04                     ]
+}
+END -- s_shq
+Grid gr765
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr765
+END -- VBox1
+END -- asft310
+
+TABLES
+shq_file,
+shp_file
+ATTRIBUTES
+ButtonEdit shp01=shp_file.shp01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Document Property";
+DateEdit shp02=shp_file.shp02, tabIndex=2, not null, required;
+ButtonEdit shp03=shp_file.shp03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Run Card";
+ButtonEdit shp012=shp_file.shp012, action=controlp, tabIndex=503, noEntry, image="zoom";
+Edit shp04=shp_file.shp04, tabIndex=4;
+Edit shp05=shp_file.shp05, tabIndex=5, noEntry;
+Edit shp06=shp_file.shp06, tabIndex=6, noEntry;
+ButtonEdit shp07=shp_file.shp07, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Employee";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=9, noEntry;
+Edit shptime=shp_file.shptime, tabIndex=10, noEntry;
+ComboBox shpconf=shp_file.shpconf, tabIndex=11, noEntry, not null, required, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+Edit shpuser=shp_file.shpuser, tabIndex=12, noEntry;
+Edit shpmodu=shp_file.shpmodu, tabIndex=13, noEntry;
+Edit shpacti=shp_file.shpacti, tabIndex=14, noEntry, upShift;
+Edit shpgrup=shp_file.shpgrup, tabIndex=15, noEntry;
+DateEdit shpdate=shp_file.shpdate, tabIndex=16, noEntry;
+Edit shporiu=shp_file.shporiu, tabIndex=501, noEntry;
+Edit shporig=shp_file.shporig, tabIndex=502, noEntry;
+Edit shq011=shq_file.shq011, tabIndex=17, title="Division S/N", not null, required;
+Edit shq02=shq_file.shq02, tabIndex=18, title="New Run Card", noEntry;
+Edit shq03=shq_file.shq03, tabIndex=19, title="Qty", not null, required;
+Edit shq04=shq_file.shq04, tabIndex=20, title="Memo";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_shq(shq_file.shq011,shq_file.shq02,shq_file.shq03,shq_file.shq04)
+SCREEN RECORD Undefined(shp_file.shp01,shp_file.shp02,shp_file.shp03,shp_file.shp012,shp_file.shp04,shp_file.shp05,shp_file.shp06,shp_file.shp07,formonly.imgmksg,formonly.gen02,shp_file.shptime,shp_file.shpconf,shp_file.shpuser,shp_file.shpmodu,shp_file.shpacti,shp_file.shpgrup,shp_file.shpdate,shp_file.shporiu,shp_file.shporig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr400")
+VBox VBox1
+Grid Grid1
+{
+ <G group02                                                          >
+  Doc NO. QBE                   [npp01               ]
+  Transaction Date Range        [npp02               ]
+ <                                                                   >
+
+}
+END -- Grid1
+Group group01(text="INPUT")
+Grid Grid2
+{
+ Check Item    [p                             ]
+
+}
+END -- Grid2
+END -- group01
+Grid Grid3
+{
+[more                                                        ]
+[dummy01         ][dummy02                                         ]
+                  [dummy03                                         ]
+                     [dummy04                                         ]
+                     [dummy05                                         ]
+                     [dummy06                                         ]
+                     [dummy07                                         ]
+                     [dummy08                                         ]
+                     [dummy09                                         ]
+}
+END -- Grid3
+END -- VBox1
+END -- anmr400
+
+ATTRIBUTES
+Group group02:group02, text="QBE";
+Edit npp01=formonly.npp01 type CHAR, tabIndex=1;
+DateEdit npp02=formonly.npp02 type DATE, tabIndex=2;
+ComboBox p=formonly.p type CHAR, tabIndex=3, not null, required, items=(("1", %"A/P "),("2", %"A/R "),("3", %"Bank"));
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="ps.Checking Item";
+Label dummy02:dummy02, text="1.Summary Entry Sheet Dr and Cr imbalanced";
+Label dummy03:dummy03, text="2.Corresponding Voucher Contents";
+Label dummy04:dummy04, text="a.Account set to Invalid";
+Label dummy05:dummy05, text="b.Not an Account Title";
+Label dummy06:dummy06, text="c.Control Account";
+Label dummy07:dummy07, text="d.Acct or Amt Different from Voucher";
+Label dummy08:dummy08, text="e.Voucher Source is NM but no Account Matched";
+Label dummy09:dummy09, text="f.Dept is Rejected?";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.npp01,formonly.npp02,formonly.p,formonly.more)
+END -- INSTRUCTIONS
+

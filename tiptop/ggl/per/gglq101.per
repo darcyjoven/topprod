@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq101")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr3354
+{
+ Account NO.         [tah01                         ]
+ Account Name        [aag02                                             ]
+
+}
+END -- gr3354
+Grid gr3355
+{
+ Currency            [tah08     ]
+ Book No.            [tah00     ]
+ Year                [tah02     ]
+}
+END -- gr3355
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_tah
+{
+[seq       |tah09               |tah10               |tah06               |tah07               |l_tot               ]
+[seq       |tah09               |tah10               |tah06               |tah07               |l_tot               ]
+[seq       |tah09               |tah10               |tah06               |tah07               |l_tot               ]
+[seq       |tah09               |tah10               |tah06               |tah07               |l_tot               ]
+[seq       |tah09               |tah10               |tah06               |tah07               |l_tot               ]
+[seq       |tah09               |tah10               |tah06               |tah07               |l_tot               ]
+[seq       |tah09               |tah10               |tah06               |tah07               |l_tot               ]
+[seq       |tah09               |tah10               |tah06               |tah07               |l_tot               ]
+[seq       |tah09               |tah10               |tah06               |tah07               |l_tot               ]
+[seq       |tah09               |tah10               |tah06               |tah07               |l_tot               ]
+
+}
+END -- s_tah
+Grid gr3356
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr3356
+END -- VBox1
+END -- gglq101
+
+TABLES
+tah_file
+ATTRIBUTES
+Edit tah01=tah_file.tah01, tabIndex=1;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+Edit tah08=tah_file.tah08, tabIndex=3;
+Edit tah00=formonly.tah00 type VARCHAR, tabIndex=4;
+Edit tah02=tah_file.tah02, tabIndex=5;
+Edit seq=formonly.seq type CHAR, tabIndex=6, title="Period", noEntry;
+Edit tah09=tah_file.tah09, tabIndex=7, title="Debit Trans. Amt", noEntry;
+Edit tah10=tah_file.tah10, tabIndex=8, title="Credit Trans. Amt", noEntry;
+Edit tah06=tah_file.tah06, tabIndex=9, title="Debit Rows", noEntry;
+Edit tah07=tah_file.tah07, tabIndex=10, title="Credit Rows", noEntry;
+Edit l_tot=formonly.l_tot type DECIMAL, tabIndex=11, title="Accumulated Blance", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tah(formonly.seq,tah_file.tah09,tah_file.tah10,tah_file.tah06,tah_file.tah07,formonly.l_tot)
+SCREEN RECORD Undefined(tah_file.tah01,formonly.aag02,tah_file.tah08,formonly.tah00,tah_file.tah02,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,164 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft700_tch4.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"asft700_tch4", windowStyle="touch1")
+HBox hb4
+VBox vb6
+Grid gr2
+{
+
+ W/O No.  [shb05          ]    WorkStation[shb07         ]
+
+
+
+
+
+
+}
+END -- gr2
+Group gb_input
+Grid gr1
+{
+
+ text21  [shc04          ]    text21     [qce03_2        ]
+
+ text21  [shc06          ]    text21     [ecm04          ]
+
+ text21  [shc05          ]    text21     [shc03          ]
+
+
+}
+END -- gr1
+END -- gb_input
+Table s_shc(style="touch-bg1")
+{
+[shc03_|shc04_1   |qce03_1   |shc05_1 |shc06_1   |ecm04_1    ]
+[shc03_|shc04_1   |qce03_1   |shc05_1 |shc06_1   |ecm04_1    ]
+[shc03_|shc04_1   |qce03_1   |shc05_1 |shc06_1   |ecm04_1    ]
+[shc03_|shc04_1   |qce03_1   |shc05_1 |shc06_1   |ecm04_1    ]
+[shc03_|shc04_1   |qce03_1   |shc05_1 |shc06_1   |ecm04_1    ]
+[shc03_|shc04_1   |qce03_1   |shc05_1 |shc06_1   |ecm04_1    ]
+[shc03_|shc04_1   |qce03_1   |shc05_1 |shc06_1   |ecm04_1    ]
+[shc03_|shc04_1   |qce03_1   |shc05_1 |shc06_1   |ecm04_1    ]
+
+
+
+
+
+
+}
+END -- s_shc
+END -- vb6
+VBox vb7
+Group gb_btn(style="touch-bg1")
+Grid gr14
+{
+
+
+[data_ok    |data_delete|return_repo|data_cancel]
+[           |           |           |           ]
+
+
+
+}
+END -- gr14
+END -- gb_btn
+Group gb_shc04
+Table s_qce
+{
+[qce01     |qce03               ]
+[qce01     |qce03               ]
+[qce01     |qce03               ]
+[qce01     |qce03               ]
+}
+END -- s_qce
+END -- gb_shc04
+Group gb_shc06
+Table s_ecm
+{
+[ecm03_|ecm04_2       |ecm45_2      ]
+[ecm03_|ecm04_2       |ecm45_2      ]
+[ecm03_|ecm04_2       |ecm45_2      ]
+[ecm03_|ecm04_2       |ecm45_2      ]
+[ecm03_|ecm04_2       |ecm45_2      ]
+}
+END -- s_ecm
+END -- gb_shc06
+Group gb_shc05(style="touch-bg2")
+Grid gr11
+{
+[count   ]
+[c7|c8|c9]
+[c4|c5|c6]
+[c1|c2|c3]
+[c0|cd|ce]
+[enter   ]
+
+
+
+
+
+
+
+}
+END -- gr11
+END -- gb_shc05
+END -- vb7
+END -- hb4
+END -- asft700_tch4
+
+TABLES
+qce_file,
+shc_file,
+shb_file
+ATTRIBUTES
+Edit shb05=shb_file.shb05, tabIndex=10, noEntry;
+Edit shb07=shb_file.shb07, tabIndex=14, noEntry;
+Edit shc04=shc_file.shc04, tabIndex=9;
+Edit qce03_2=formonly.qce03_2 type CHAR, tabIndex=17, noEntry;
+Edit shc06=shc_file.shc06, tabIndex=15;
+Edit ecm04=formonly.ecm04 type CHAR, tabIndex=18, noEntry;
+Edit shc05=shc_file.shc05, tabIndex=16;
+Edit shc03=formonly.shc03 type CHAR, tabIndex=20, noEntry;
+Edit shc03_=formonly.shc03_1 type CHAR, tabIndex=1, title=%"shc03_1";
+Edit shc04_1=formonly.shc04_1 type CHAR, tabIndex=2, title=%"shc04_1";
+Edit qce03_1=formonly.qce03_1 type CHAR, tabIndex=11, title=%"qce03_1";
+Edit shc05_1=formonly.shc05_1 type CHAR, tabIndex=12, title=%"shc05_1";
+Edit shc06_1=formonly.shc06_1 type CHAR, tabIndex=13, title=%"shc06_1";
+Edit ecm04_1=formonly.ecm04_1 type CHAR, tabIndex=19, title=%"ecm04_1";
+Button data_ok:data_ok, tabIndex=21, image="", sizePolicy=dynamic, style="touch-btn1";
+Button data_delete:data_delete, tabIndex=22, image="", sizePolicy=dynamic, style="touch-btn1";
+Button return_repo:return_report, tabIndex=23, image="", sizePolicy=dynamic, style="touch-btn1";
+Button data_cancel:data_cancel, tabIndex=24, sizePolicy=dynamic, style="touch-btn1";
+Edit qce01=qce_file.qce01, tabIndex=7, title=%"qce01", noEntry, not null, required;
+Edit qce03=qce_file.qce03, tabIndex=8, title=%"qce03", noEntry;
+Edit ecm03_=formonly.ecm03_2 type CHAR, tabIndex=4, title=%"ecm03_2";
+Edit ecm04_2=formonly.ecm04_2 type CHAR, tabIndex=5, title=%"ecm04_2";
+Edit ecm45_2=formonly.ecm45_2 type CHAR, tabIndex=6, title=%"ecm45_2";
+Edit count=formonly.count type CHAR, tabIndex=3;
+Button c7:c7, tabIndex=25, image="calculator_7", sizePolicy=dynamic, style="touch-btn1";
+Button c8:c8, tabIndex=26, image="calculator_8", sizePolicy=dynamic, style="touch-btn1";
+Button c9:c9, tabIndex=27, image="calculator_9", sizePolicy=dynamic, style="touch-btn1";
+Button c4:c4, tabIndex=28, image="calculator_4", sizePolicy=dynamic, style="touch-btn1";
+Button c5:c5, tabIndex=29, image="calculator_5", sizePolicy=dynamic, style="touch-btn1";
+Button c6:c6, tabIndex=30, image="calculator_6", sizePolicy=dynamic, style="touch-btn1";
+Button c1:c1, tabIndex=31, image="calculator_1", sizePolicy=dynamic, style="touch-btn1";
+Button c2:c2, tabIndex=32, image="calculator_2", sizePolicy=dynamic, style="touch-btn1";
+Button c3:c3, tabIndex=33, image="calculator_3", sizePolicy=dynamic, style="touch-btn1";
+Button c0:c0, tabIndex=34, image="calculator_0", sizePolicy=dynamic, style="touch-btn1";
+Button cd:cdot, tabIndex=35, image="calculator_dot", sizePolicy=dynamic, style="touch-btn1";
+Button ce:ce, tabIndex=36, image="calculator_ce", sizePolicy=dynamic, style="touch-btn1";
+Button enter:enter, tabIndex=37, image="calculator_enter", sizePolicy=dynamic, style="touch-btn1";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_shc(formonly.shc03_1,formonly.shc04_1,formonly.qce03_1,formonly.shc05_1,formonly.shc06_1,formonly.ecm04_1)
+SCREEN RECORD s_qce(qce_file.qce01,qce_file.qce03)
+SCREEN RECORD s_ecm(formonly.ecm03_2,formonly.ecm04_2,formonly.ecm45_2)
+SCREEN RECORD Undefined(shb_file.shb05,shb_file.shb07,shc_file.shc04,formonly.qce03_2,shc_file.shc06,formonly.ecm04,shc_file.shc05,formonly.shc03,formonly.count)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci020")
+VBox VBox1
+Folder pc343
+Page page01(text="Main")
+Table s_ccd
+{
+[ccd01        |ccd02               |ccd03   ]
+[ccd01        |ccd02               |ccd03   ]
+[ccd01        |ccd02               |ccd03   ]
+[ccd01        |ccd02               |ccd03   ]
+[ccd01        |ccd02               |ccd03   ]
+[ccd01        |ccd02               |ccd03   ]
+[ccd01        |ccd02               |ccd03   ]
+[ccd01        |ccd02               |ccd03   ]
+[ccd01        |ccd02               |ccd03   ]
+[ccd01        |ccd02               |ccd03   ]
+
+}
+END -- s_ccd
+END -- page01
+END -- pc343
+Grid gr1447
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr1447
+END -- VBox1
+END -- axci020
+
+TABLES
+ccd_file
+ATTRIBUTES
+Edit ccd01=ccd_file.ccd01, tabIndex=1, title="Cost Levels", not null, required;
+Edit ccd02=ccd_file.ccd02, tabIndex=2, title="Name";
+CheckBox ccd03=ccd_file.ccd03, tabIndex=3, title="Rework", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Must Process Rework Cost";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ccd(ccd_file.ccd01,ccd_file.ccd02,ccd_file.ccd03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

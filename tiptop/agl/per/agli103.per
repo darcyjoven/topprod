@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli103")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+Grid gr2370
+{
+ Book No               [aak00]
+ Account Code         [aak01                         ]
+ Account Name         [aag02                                             ]
+ Description Category [aak0]
+}
+END -- gr2370
+END -- page01
+END -- folder01
+Table s_aak
+{
+[aak03 |aak04                         ]
+[aak03 |aak04                         ]
+[aak03 |aak04                         ]
+[aak03 |aak04                         ]
+[aak03 |aak04                         ]
+[aak03 |aak04                         ]
+
+}
+END -- s_aak
+Grid gr2371
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2371
+END -- vb4
+END -- agli103
+
+TABLES
+aak_file
+ATTRIBUTES
+ButtonEdit aak00=aak_file.aak00, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P> Qry Book No";
+ButtonEdit aak01=aak_file.aak01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Account ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+Edit aak0=aak_file.aak02, tabIndex=3, not null, required;
+Edit aak03=aak_file.aak03, tabIndex=4, title="Line#", noEntry, not null, required, comment="Key Field, No Blank/Repeated    ";
+Edit aak04=aak_file.aak04, tabIndex=5, title="Extra Description", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aak(aak_file.aak03,aak_file.aak04)
+SCREEN RECORD Undefined(aak_file.aak00,aak_file.aak01,formonly.aag02,aak_file.aak02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

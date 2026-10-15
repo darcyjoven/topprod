@@ -1,0 +1,163 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt500")
+VBox vb2
+Folder folder01
+Page Page16(text=%"Basic Data")
+Grid gr13
+{
+
+  Allocation No.  [rud01                 ]                 Confirmation     [rudconf     ]     [imgmksg]   Memo [rud04               ]
+  Allocation Date [rud02       ]                           Confirmation Date[rudcond     ]     [       ]        [                    ]
+  Distributed By  [rud03          |rud03_desc           ]  Confirmed By     [rudconu     |rudconu_desc   ]      [                    ]
+  Purchase Center [rud05          |rud05_desc           ]  Organization     [rudplant    |rudplant_desc  ]      [                    ]
+
+}
+END -- gr13
+END -- Page16
+Page Info(text=%"Info")
+Grid gr12
+{
+ Record Owner        [ruduser   ] Last Modified by    [rudmodu   ] Data Valid Code     [rudacti   ]
+ Department          [rudgrup   ] Modify Date         [ruddate   ] Create Date         [rudcrat   ]
+ Record Orig.        [rudoriu   ] Dept Orig.          [rudorig   ]
+
+}
+END -- gr12
+END -- Info
+END -- folder01
+Folder pc2
+Page Page4(text=%"Goods Info")
+Table s_b1
+{
+[rue05               |ima02          |ima021         |ima1004   |ima1005   |ima1007   |ima1009   |rue15     |rue15_desc|sum1           |sum2           ]
+[rue05               |ima02          |ima021         |ima1004   |ima1005   |ima1007   |ima1009   |rue15     |rue15_desc|sum1           |sum2           ]
+[rue05               |ima02          |ima021         |ima1004   |ima1005   |ima1007   |ima1009   |rue15     |rue15_desc|sum1           |sum2           ]
+[rue05               |ima02          |ima021         |ima1004   |ima1005   |ima1007   |ima1009   |rue15     |rue15_desc|sum1           |sum2           ]
+[rue05               |ima02          |ima021         |ima1004   |ima1005   |ima1007   |ima1009   |rue15     |rue15_desc|sum1           |sum2           ]
+
+}
+END -- s_b1
+END -- Page4
+END -- pc2
+Folder pc4
+Page Page7(text=%"Requirement Info")
+Table s_b3
+{
+[rue01|rue00   |rue02                |rue02_desc|rue03           |rue04|rue06          |rue06_desc|rue07           |rue08|rue09   |rue10   |rue11          |rue11_desc|rue12          |rue12_desc|rue13   |rue14   |rue16          |rue17               |rue18     |rue18_desc|rue19     |rue20          |rue21          |rue23                    |rue24     |rue25|rue26     |rue26_desc|rue27     |rue28               |rue29   |rue30   |rue31           |rue32          |rue33     |rue34       |rue36        ]
+[rue01|rue00   |rue02                |rue02_desc|rue03           |rue04|rue06          |rue06_desc|rue07           |rue08|rue09   |rue10   |rue11          |rue11_desc|rue12          |rue12_desc|rue13   |rue14   |rue16          |rue17               |rue18     |rue18_desc|rue19     |rue20          |rue21          |rue23                    |rue24     |rue25|rue26     |rue26_desc|rue27     |rue28               |rue29   |rue30   |rue31           |rue32          |rue33     |rue34       |rue36        ]
+[rue01|rue00   |rue02                |rue02_desc|rue03           |rue04|rue06          |rue06_desc|rue07           |rue08|rue09   |rue10   |rue11          |rue11_desc|rue12          |rue12_desc|rue13   |rue14   |rue16          |rue17               |rue18     |rue18_desc|rue19     |rue20          |rue21          |rue23                    |rue24     |rue25|rue26     |rue26_desc|rue27     |rue28               |rue29   |rue30   |rue31           |rue32          |rue33     |rue34       |rue36        ]
+[rue01|rue00   |rue02                |rue02_desc|rue03           |rue04|rue06          |rue06_desc|rue07           |rue08|rue09   |rue10   |rue11          |rue11_desc|rue12          |rue12_desc|rue13   |rue14   |rue16          |rue17               |rue18     |rue18_desc|rue19     |rue20          |rue21          |rue23                    |rue24     |rue25|rue26     |rue26_desc|rue27     |rue28               |rue29   |rue30   |rue31           |rue32          |rue33     |rue34       |rue36        ]
+[rue01|rue00   |rue02                |rue02_desc|rue03           |rue04|rue06          |rue06_desc|rue07           |rue08|rue09   |rue10   |rue11          |rue11_desc|rue12          |rue12_desc|rue13   |rue14   |rue16          |rue17               |rue18     |rue18_desc|rue19     |rue20          |rue21          |rue23                    |rue24     |rue25|rue26     |rue26_desc|rue27     |rue28               |rue29   |rue30   |rue31           |rue32          |rue33     |rue34       |rue36        ]
+
+}
+END -- s_b3
+END -- Page7
+END -- pc4
+Grid gr36
+{
+
+
+  ------ Rows[idx    ]/[cnt       ]  ----- Items[cn2        ]--------
+
+
+
+
+
+}
+END -- gr36
+END -- vb2
+END -- artt500
+
+TABLES
+rue_file,
+rud_file
+ATTRIBUTES
+ButtonEdit rud01=rud_file.rud01, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+ComboBox rudconf=rud_file.rudconf, tabIndex=12, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+TextEdit rud04=rud_file.rud04, tabIndex=14;
+DateEdit rud02=rud_file.rud02, tabIndex=8;
+DateEdit rudcond=rud_file.rudcond, tabIndex=11, noEntry;
+ButtonEdit rud03=rud_file.rud03, action=controlp, tabIndex=9, image="zoom.png";
+Edit rud03_desc=formonly.rud03_desc type CHAR, tabIndex=17, noEntry;
+ButtonEdit rudconu=rud_file.rudconu, action=controlp, tabIndex=10, noEntry, image="zoom.png";
+Edit rudconu_desc=formonly.rudconu_desc type CHAR, tabIndex=15, noEntry;
+ButtonEdit rud05=rud_file.rud05, action=controlp, tabIndex=81, not null, required, image="zoom.png";
+Edit rud05_desc=formonly.rud05_desc type CHAR, tabIndex=82, noEntry;
+ButtonEdit rudplant=rud_file.rudplant, action=controlp, tabIndex=13, noEntry, image="zoom.png";
+Edit rudplant_desc=formonly.rudplant_desc type CHAR, tabIndex=16, noEntry;
+Edit ruduser=rud_file.ruduser, tabIndex=5, noEntry;
+Edit rudmodu=rud_file.rudmodu, tabIndex=4, noEntry;
+Edit rudacti=rud_file.rudacti, tabIndex=3, noEntry, upShift;
+Edit rudgrup=rud_file.rudgrup, tabIndex=2, noEntry;
+DateEdit ruddate=rud_file.ruddate, tabIndex=1, noEntry;
+DateEdit rudcrat=rud_file.rudcrat, tabIndex=6, noEntry;
+Edit rudoriu=rud_file.rudoriu, tabIndex=78, noEntry;
+Edit rudorig=rud_file.rudorig, tabIndex=79, noEntry;
+ButtonEdit rue05=rue_file.rue05, action=controlp, tabIndex=18, title="Item No.", noEntry, image="zoom.png";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=19, title="Item Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=24, title="Item Specification", noEntry;
+Edit ima1004=formonly.ima1004 type CHAR, tabIndex=25, title="Brand Class.", noEntry;
+Edit ima1005=formonly.ima1005 type CHAR, tabIndex=38, title="Brand", noEntry;
+Edit ima1007=formonly.ima1007 type CHAR, tabIndex=26, title="Model", noEntry;
+Edit ima1009=formonly.ima1009 type CHAR, tabIndex=27, title="Attribute", noEntry;
+ButtonEdit rue15=rue_file.rue15, action=controlp, tabIndex=28, title="Inventory Unit\n", noEntry, image="zoom.png";
+Edit rue15_desc=formonly.rue15_desc type CHAR, tabIndex=29, title="Unit Name", noEntry;
+Edit sum1=formonly.sum1 type CHAR, tabIndex=30, title="Requrirement Qty", noEntry;
+Edit sum2=formonly.sum2 type CHAR, tabIndex=31, title="Allocation Qty\n", noEntry;
+Edit rue01=rue_file.rue011, tabIndex=77, title="Line No.", not null;
+ComboBox rue00=rue_file.rue00, tabIndex=22, title="Requirement Type", noEntry, not null, items=(("1", "PR No."));
+ButtonEdit rue02=rue_file.rue02, action=controlp, tabIndex=23, title="Requirement Org.", noEntry, image="zoom.png";
+Edit rue02_desc=formonly.rue02_desc type VARCHAR, tabIndex=39, title="Org.Name", noEntry;
+Edit rue03=rue_file.rue03, tabIndex=40, title="Requirement No.", noEntry;
+Edit rue04=rue_file.rue04, tabIndex=41, title="Line No.", noEntry;
+ButtonEdit rue06=rue_file.rue06, action=controlp, tabIndex=42, title="Source Org.", noEntry, image="zoom.png";
+Edit rue06_desc=formonly.rue06_desc type CHAR, tabIndex=43, title="Org.Name", noEntry;
+Edit rue07=rue_file.rue07, tabIndex=44, title="Source No.", noEntry;
+Edit rue08=rue_file.rue08, tabIndex=45, title="Source SN.", noEntry;
+DateEdit rue09=rue_file.rue09, tabIndex=46, title="Issue Date", noEntry;
+ComboBox rue10=rue_file.rue10, tabIndex=47, title="Data From", noEntry, not null, items=(("1", "Input"),("2", "Suggest Purchase"),("3", "S/O"),("4", "Dispatch"),("5", "POS"),("6", "Freight charges"));
+ButtonEdit rue11=rue_file.rue11, action=controlp, tabIndex=48, title="Goods Acquire Org.", noEntry, image="zoom.png";
+Edit rue11_desc=formonly.rue11_desc type CHAR, tabIndex=49, title="Org.Name", noEntry;
+ButtonEdit rue12=rue_file.rue12, action=controlp, tabIndex=50, title="Vendor No.", noEntry, image="zoom.png";
+Edit rue12_desc=formonly.rue12_desc type VARCHAR, tabIndex=51, title="Vendor Name", noEntry;
+ComboBox rue13=rue_file.rue13, tabIndex=52, title="Business Method", noEntry, not null, items=(("1", "Sell"),("2", "Cost Sell"),("3", "Discount Rate Sell"),("4", "Unite Sell"));
+ComboBox rue14=rue_file.rue14, tabIndex=53, title="Purchase Type", noEntry, not null, items=(("1", "self-defined"),("2", "PO"),("3", "Provider"),("4", "Purchase"));
+Edit rue16=rue_file.rue16, tabIndex=54, title="Distributed Qty", noEntry;
+Edit rue17=rue_file.rue17, tabIndex=55, title="Bar Code", noEntry;
+ButtonEdit rue18=rue_file.rue18, action=controlp, tabIndex=56, title="Unit", noEntry, image="zoom.png";
+Edit rue18_desc=formonly.rue18_desc type CHAR, tabIndex=57, title="Unit Name", noEntry;
+Edit rue19=rue_file.rue19, tabIndex=58, title="Conversion Rate", noEntry;
+Edit rue20=rue_file.rue20, tabIndex=59, title="Requirement Qty", noEntry;
+Edit rue21=rue_file.rue21, tabIndex=60, title="Purchase Qty\n";
+Edit rue23=rue_file.rue23, tabIndex=61, title="Transfer Qty\n";
+ButtonEdit rue24=rue_file.rue24, action=controlp, tabIndex=62, title="Transfer-out Org.\n", not null, image="zoom.png";
+CheckBox rue25=rue_file.rue25, tabIndex=63, title="Force To Close", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rue26=rue_file.rue26, action=controlp, tabIndex=64, title="Purchase Unit", noEntry, not null, image="zoom.png";
+Edit rue26_desc=formonly.rue26_desc type VARCHAR, tabIndex=65, title="Unit Name", noEntry;
+Edit rue27=rue_file.rue27, tabIndex=66, title="Conversion Rate", noEntry;
+Edit rue28=rue_file.rue28, tabIndex=67, title="Price", noEntry, not null;
+DateEdit rue29=rue_file.rue29, tabIndex=68, title="Date";
+ComboBox rue30=rue_file.rue30, tabIndex=69, title="Price Type", noEntry, not null, items=(("1", "Premium"),("2", "Promotion"),("3", "PR"),("4", "Other"));
+Edit rue31=rue_file.rue31, tabIndex=70, title="Price From", noEntry;
+ButtonEdit rue32=rue_file.rue32, action=controlp, tabIndex=71, title="Delivery Dept.", noEntry, image="zoom.png";
+DateEdit rue33=rue_file.rue33, tabIndex=72, title="Requirement Date", noEntry;
+ButtonEdit rue34=rue_file.rue34, action=controlp, tabIndex=73, title="Triangular Trade Flow", image="zoom.png";
+ButtonEdit rue36=rue_file.rue36, action=controlp, tabIndex=80, title="Triangular Trade Flow2", image="zoom.png";
+Edit idx=formonly.idx type CHAR, tabIndex=75, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=74, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=76;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_b3(rue_file.rue011,rue_file.rue00,rue_file.rue02,formonly.rue02_desc,rue_file.rue03,rue_file.rue04,rue_file.rue06,formonly.rue06_desc,rue_file.rue07,rue_file.rue08,rue_file.rue09,rue_file.rue10,rue_file.rue11,formonly.rue11_desc,rue_file.rue12,formonly.rue12_desc,rue_file.rue13,rue_file.rue14,rue_file.rue16,rue_file.rue17,rue_file.rue18,formonly.rue18_desc,rue_file.rue19,rue_file.rue20,rue_file.rue21,rue_file.rue23,rue_file.rue24,rue_file.rue25,rue_file.rue26,formonly.rue26_desc,rue_file.rue27,rue_file.rue28,rue_file.rue29,rue_file.rue30,rue_file.rue31,rue_file.rue32,rue_file.rue33,rue_file.rue34,rue_file.rue36)
+SCREEN RECORD s_b1(rue_file.rue05,formonly.ima02,formonly.ima021,formonly.ima1004,formonly.ima1005,formonly.ima1007,formonly.ima1009,rue_file.rue15,formonly.rue15_desc,formonly.sum1,formonly.sum2)
+SCREEN RECORD Undefined(rud_file.rud01,rud_file.rudconf,formonly.imgmksg,rud_file.rud04,rud_file.rud02,rud_file.rudcond,rud_file.rud03,formonly.rud03_desc,rud_file.rudconu,formonly.rudconu_desc,rud_file.rud05,formonly.rud05_desc,rud_file.rudplant,formonly.rudplant_desc,rud_file.ruduser,rud_file.rudmodu,rud_file.rudacti,rud_file.rudgrup,rud_file.ruddate,rud_file.rudcrat,rud_file.rudoriu,rud_file.rudorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

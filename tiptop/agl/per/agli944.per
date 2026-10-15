@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli944.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli944")
+VBox vb5
+Folder pc475
+Page page01(text="Main")
+Grid gr8
+{
+
+   year   [giy04     ]   period  [giy05     ]
+
+}
+END -- gr8
+END -- page01
+END -- pc475
+Table s_gim
+{
+[giy01|giy02                                                  |giy03               ]
+[giy01|giy02                                                  |giy03               ]
+[giy01|giy02                                                  |giy03               ]
+[giy01|giy02                                                  |giy03               ]
+[giy01|giy02                                                  |giy03               ]
+[giy01|giy02                                                  |giy03               ]
+
+}
+END -- s_gim
+Grid gr2464
+{
+
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+}
+END -- gr2464
+END -- vb5
+END -- agli944
+
+TABLES
+giy_file
+ATTRIBUTES
+Edit giy04=formonly.giy04 type CHAR, tabIndex=6, not null, required;
+Edit giy05=formonly.giy05 type CHAR, tabIndex=7, not null, required;
+Edit giy01=giy_file.giy01, tabIndex=8, title="Seq.", not null, required;
+Edit giy02=giy_file.giy02, tabIndex=9, title="Description";
+Edit giy03=giy_file.giy03, tabIndex=10, title="Amount";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_giy(giy_file.giy01,giy_file.giy02,giy_file.giy03)
+SCREEN RECORD Undefined(formonly.giy04,formonly.giy05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

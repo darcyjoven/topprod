@@ -1,0 +1,203 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cim/4fd/cimq102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq102")
+VBox vb8
+Folder folder01
+Page page01(text="Main")
+Grid gr3121
+{
+ <G group01                                                                     ><G group02                                   >   <G group1                                    >
+  Item No.            [ima01                                                   ]  Available Qty             [avl_stk        ]      Available Qty             [avl_stk1       ]
+  Part Name Spec      [ima02                                                   ]  Invaild Qty               [img_q          ]      Invaild Qty               [img_q1         ]
+  Spec                [ima021                                                  ]  -------------------------------------------      -------------------------------------------
+  Version             [ima05     ]                                                - Qty Ordered             [oeb_q          ]      - Qty Ordered             [oeb_q1         ]
+  Group Cd            [ima06     ]                                                - W/O Allotment Qty       [sfa_q1         ]      - W/O Allotment Qty       [sfa_q3         ]
+  Inv Unit            [ima25     ]                                                  cll                     [sfe_c          ]        cll                     [sfe_c1         ]
+  Src Cd              [ima08     ]                                                - W/O Shortage Qty        [sfa_q2         ]      - W/O Shortage Qty        [sfa_q4         ]
+  Covering Goods      [ima37     ]                                                + W/O xiaban              [sfa_xiaban     ]      + W/O xiaban              [sfa_xiaban1    ]
+ <                                                                              > + W/O liuzhi              [sfa_liuzhi     ]      + W/O liuzhi              [sfa_liuzhi1    ]
+ <G aimi103                                                                    >  -------------------------------------------      -------------------------------------------
+  Covering Goods     [ima44       ]   Covering Goods    [ima44_fac       ]        + P/R Qty                 [pml_q          ]      + P/R Qty                 [pml_q1         ]
+  Covering Goods     [ima45       ]                                               + Purchase Qty            [pmn_q          ]      + Purchase Qty            [pmn_q1         ]
+  Covering Goods     [ima46       ]                                               + W/O WIP Qty             [sfb_q1         ]      + W/O WIP Qty             [sfb_q3         ]
+  Covering Goods     [ima881      ]                                               + Sub.WIP Qty             [sfb_q2         ]      + Sub.WIP Qty             [sfb_q4         ]
+                                                                                  ( Sub.IQC Qty on QC )     [rvb_q2         ]      ( Sub.IQC Qty on QC )     [rvb_q1         ]
+ <                                                                             >  + IQC Qty on QC           [rvb_q          ]      + IQC Qty on QC           [rvb_q3         ]
+ <G group043                         > <G group044                              > + FQC Qty on QC           [qcf_q          ]      + FQC Qty on QC           [qcf_q1         ]
+ [ima906             ]                  Par/Ref Unit   [ima907    ]               -------------------------------------------      -------------------------------------------
+ <                                   > <                                        > - ima27                   [ima27          ]      - ima27                   [ima1           ]
+ <G group03                                                                     > - AMRI506RPC13            [rpc13          ]      - AMRI506RPC13            [rpc1           ]
+ [ima70                                    ]                                      -------------------------------------------      -------------------------------------------
+ [ima15                                    ]                                      = Estimated Available Qty [atp_qty        ]      = Estimated Available Qty [atp_qty1       ]
+ <                                                                              >  Unusable Qty             [unavl_stk      ]       Unusable Qty             [unavl_stk1     ]
+                                                                                   Allocated Qty            [sie_q          ]       Allocated Qty            [sie_q1         ]
+
+
+                                                                                 <                                            >   <                                            >
+
+}
+END -- gr3121
+END -- page01
+END -- folder01
+Folder Folder1
+Page Page1(text=%"Inventory Detail")
+Table s_img
+{
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+}
+END -- s_img
+END -- Page1
+Page Page2(text=%"Lot Serial No. Detail")
+Table s_imgs
+{
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+
+}
+END -- s_imgs
+END -- Page2
+END -- Folder1
+Grid gr3122
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr3122
+END -- vb8
+END -- aimq102
+
+TABLES
+sig_file,
+img_file,
+imgs_file,
+ima_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=2;
+Edit ima021=ima_file.ima021, tabIndex=3, noEntry;
+Edit ima05=ima_file.ima05, tabIndex=4, noEntry;
+Edit ima06=ima_file.ima06, tabIndex=5, noEntry;
+Edit ima25=ima_file.ima25, tabIndex=6, noEntry;
+Edit ima08=ima_file.ima08, tabIndex=7, noEntry;
+Edit ima37=ima_file.ima37, tabIndex=8, noEntry;
+Group group02:group02, text="liangchan";
+Edit avl_stk=formonly.avl_stk type DECIMAL, tabIndex=9, not null, required;
+Edit img_q=formonly.img_q type DECIMAL, tabIndex=51, not null, required, color = black;
+Edit oeb_q=formonly.oeb_q type CHAR, tabIndex=10;
+Edit sfa_q1=formonly.sfa_q1 type CHAR, tabIndex=11;
+Edit sfe_c=formonly.sfe_c type DECIMAL, tabIndex=53, not null, required;
+Edit sfa_q2=formonly.sfa_q2 type CHAR, tabIndex=12;
+Edit sfa_xiaban=formonly.sfa_xiaban type VARCHAR, tabIndex=54;
+Edit sfa_liuzhi=formonly.sfa_liuzhi type VARCHAR, tabIndex=55;
+Edit pml_q=formonly.pml_q type CHAR, tabIndex=13;
+Edit pmn_q=formonly.pmn_q type CHAR, tabIndex=14;
+Edit sfb_q1=formonly.sfb_q1 type CHAR, tabIndex=15;
+Edit sfb_q2=formonly.sfb_q2 type CHAR, tabIndex=16;
+Edit rvb_q2=formonly.rvb_q2 type CHAR, tabIndex=17;
+Edit rvb_q=formonly.rvb_q type CHAR, tabIndex=18;
+Edit qcf_q=formonly.qcf_q type CHAR, tabIndex=19;
+Edit ima27=formonly.ima27 type CHAR, tabIndex=56;
+Edit rpc13=formonly.rpc13 type CHAR, tabIndex=57;
+Edit atp_qty=formonly.atp_qty type CHAR, tabIndex=20;
+Edit unavl_stk=formonly.unavl_stk type DECIMAL, tabIndex=21, not null, required;
+Edit sie_q=formonly.sie_q type CHAR, tabIndex=22;
+Group group1:group1, text="shichan";
+Edit avl_stk1=formonly.avl_stk1 type DECIMAL, tabIndex=63, not null, required;
+Edit img_q1=formonly.img_q1 type DECIMAL, tabIndex=64, not null, required, color = black;
+Edit oeb_q1=formonly.oeb_q1 type CHAR, tabIndex=65;
+Edit sfa_q3=formonly.sfa_q3 type CHAR, tabIndex=66;
+Edit sfe_c1=formonly.sfe_c1 type DECIMAL, tabIndex=67, not null, required;
+Edit sfa_q4=formonly.sfa_q4 type CHAR, tabIndex=68;
+Edit sfa_xiaban1=formonly.sfa_xiaban1 type VARCHAR, tabIndex=69;
+Edit sfa_liuzhi1=formonly.sfa_liuzhi1 type VARCHAR, tabIndex=70;
+Edit pml_q1=formonly.pml_q1 type CHAR, tabIndex=71;
+Edit pmn_q1=formonly.pmn_q1 type CHAR, tabIndex=72;
+Edit sfb_q3=formonly.sfb_q3 type CHAR, tabIndex=73;
+Edit sfb_q4=formonly.sfb_q4 type CHAR, tabIndex=74;
+Edit rvb_q1=formonly.rvb_q1 type CHAR, tabIndex=75;
+Edit rvb_q3=formonly.rvb_q3 type CHAR, tabIndex=76;
+Edit qcf_q1=formonly.qcf_q1 type CHAR, tabIndex=77;
+Edit ima1=formonly.ima1 type CHAR, tabIndex=78;
+Edit rpc1=formonly.rpc1 type CHAR, tabIndex=79;
+Edit atp_qty1=formonly.atp_qty1 type CHAR, tabIndex=80;
+Edit unavl_stk1=formonly.unavl_stk1 type DECIMAL, tabIndex=81, not null, required;
+Edit sie_q1=formonly.sie_q1 type CHAR, tabIndex=82;
+Group aimi103:aimi103, text=%"aimi103";
+Edit ima44=formonly.ima44, tabIndex=58;
+Edit ima44_fac=formonly.ima44_fac, tabIndex=59;
+Edit ima45=formonly.ima45, tabIndex=60;
+Edit ima46=formonly.ima46, tabIndex=61;
+DateEdit ima881=formonly.ima881, tabIndex=62;
+Group group043:group043, text="Unit Control";
+RadioGroup ima906=ima_file.ima906, tabIndex=23, not null, required, items=(("1", "Single Unit"),("2", "Child/Parent Unit"),("3", "Reference Unit"));
+Group group044:group044;
+ButtonEdit ima907=ima_file.ima907, action=controlp, tabIndex=24, image="zoom";
+Group group03:group03;
+CheckBox ima70=ima_file.ima70, tabIndex=25, text="Consumable Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ima15=ima_file.ima15, tabIndex=26, text="Bonded Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit img02=img_file.img02, tabIndex=29, title="WH/Loc/Lot", not null, required;
+Edit imd02=formonly.imd02, tabIndex=47, title=%"imd02";
+Edit img03=img_file.img03, tabIndex=30, title="Loc", not null, required;
+Edit ime03=formonly.ime03, tabIndex=48, title=%"ime03";
+Edit img04=img_file.img04, tabIndex=31, title="Lot", not null, required;
+CheckBox img23=img_file.img23, tabIndex=32, title="Use W/H", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit img10=img_file.img10, tabIndex=33, title="Inventory Qty", not null, required;
+Edit img18=formonly.img18, tabIndex=52, title=%"img18";
+Edit sig05=sig_file.sig05, tabIndex=34, title=%"Allocated Qty";
+Edit img0=img_file.img09, tabIndex=35, title="Unit";
+Edit img38=img_file.img38, tabIndex=36, title=%"Remark";
+Edit imgs02=imgs_file.imgs02, tabIndex=37, title="WH", noEntry;
+Edit im02=formonly.im02, tabIndex=49, title=%"im02";
+Edit imgs03=imgs_file.imgs03, tabIndex=38, title="Location", noEntry;
+Edit im03=formonly.im03, tabIndex=50, title=%"im03";
+Edit imgs04=imgs_file.imgs04, tabIndex=39, title="Lot No.", noEntry;
+Edit imgs06=imgs_file.imgs06, tabIndex=40, title="Manufacturing Lot No.", noEntry;
+Edit imgs05=imgs_file.imgs05, tabIndex=41, title=%"Serial No.";
+DateEdit imgs09=imgs_file.imgs09, tabIndex=42, title="Manufactured on", noEntry;
+Edit imgs=imgs_file.imgs07, tabIndex=43, title=%"Unit", noEntry;
+Edit imgs08=imgs_file.imgs08, tabIndex=44, title=%"Quantity", noEntry;
+ComboBox imgs10=imgs_file.imgs10, tabIndex=45, title=%"Type", noEntry, queryEditable, items=(("1", "SO"),("2", "Work Order"),("3", "Project"));
+Edit imgs11=imgs_file.imgs11, tabIndex=46, title=%"Document No.";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=27, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,ima_file.ima05,ima_file.ima06,ima_file.ima25,ima_file.ima08,ima_file.ima37,formonly.avl_stk,formonly.oeb_q,formonly.sfa_q1,formonly.sfa_q2,formonly.sie_q,formonly.pml_q,formonly.pmn_q,formonly.sfb_q1,formonly.sfb_q2,formonly.rvb_q2,formonly.rvb_q,formonly.qcf_q,formonly.atp_qty,formonly.unavl_stk,ima_file.ima906,ima_file.ima907,ima_file.ima70,ima_file.ima15,formonly.cnt,formonly.cn2,formonly.img_q,formonly.sfe_c,formonly.sfa_xiaban,formonly.sfa_liuzhi,formonly.ima27,formonly.rpc13,formonly.ima44,formonly.ima44_fac,formonly.ima45,formonly.ima46,formonly.ima881,formonly.avl_stk1,formonly.img_q1,formonly.oeb_q1,formonly.sfa_q3,formonly.sfe_c1,formonly.sfa_q4,formonly.sfa_xiaban1,formonly.sfa_liuzhi1,formonly.pml_q1,formonly.pmn_q1,formonly.sfb_q3,formonly.sfb_q4,formonly.rvb_q1,formonly.rvb_q3,formonly.qcf_q1,formonly.ima1,formonly.rpc1,formonly.atp_qty1,formonly.unavl_stk1,formonly.sie_q1)
+SCREEN RECORD s_img(img_file.img02,formonly.imd02,img_file.img03,formonly.ime03,img_file.img04,img_file.img23,img_file.img10,formonly.img18,sig_file.sig05,img_file.img09,img_file.img38)
+SCREEN RECORD s_imgs(imgs_file.imgs02,formonly.im02,imgs_file.imgs03,formonly.im03,imgs_file.imgs04,imgs_file.imgs06,imgs_file.imgs05,imgs_file.imgs09,imgs_file.imgs07,imgs_file.imgs08,imgs_file.imgs10,imgs_file.imgs11)
+END -- INSTRUCTIONS
+

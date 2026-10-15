@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi900")
+VBox VBox1
+Folder pc514
+Page page01(text="Main")
+Table s_oza
+{
+[oza01                    |oza02                         |ozaacti   ]
+[oza01                    |oza02                         |ozaacti   ]
+[oza01                    |oza02                         |ozaacti   ]
+[oza01                    |oza02                         |ozaacti   ]
+[oza01                    |oza02                         |ozaacti   ]
+[oza01                    |oza02                         |ozaacti   ]
+[oza01                    |oza02                         |ozaacti   ]
+[oza01                    |oza02                         |ozaacti   ]
+[oza01                    |oza02                         |ozaacti   ]
+[oza01                    |oza02                         |ozaacti   ]
+
+}
+END -- s_oza
+END -- page01
+END -- pc514
+Grid gr2162
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr2162
+END -- VBox1
+END -- axmi900
+
+TABLES
+oza_file
+ATTRIBUTES
+Edit oza01=oza_file.oza01, tabIndex=1, title="Air Transportantion Code", not null, required;
+Edit oza02=oza_file.oza02, tabIndex=2, title="Air Transportantion Desc", not null, required;
+CheckBox ozaacti=oza_file.ozaacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oza(oza_file.oza01,oza_file.oza02,oza_file.ozaacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

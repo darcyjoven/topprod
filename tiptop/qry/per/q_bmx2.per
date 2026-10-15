@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_bmx2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry BOM Component")
+Grid gr3740
+{
+ <T s_bmb                                                                        >
+ [check |x       |bmb02      |bmb03               |bmb04            |bmb05      ]
+ [check |x       |bmb02      |bmb03               |bmb04            |bmb05      ]
+ [check |x       |bmb02      |bmb03               |bmb04            |bmb05      ]
+ [check |x       |bmb02      |bmb03               |bmb04            |bmb05      ]
+ [check |x       |bmb02      |bmb03               |bmb04            |bmb05      ]
+ [check |x       |bmb02      |bmb03               |bmb04            |bmb05      ]
+ [check |x       |bmb02      |bmb03               |bmb04            |bmb05      ]
+ [check |x       |bmb02      |bmb03               |bmb04            |bmb05      ]
+ [check |x       |bmb02      |bmb03               |bmb04            |bmb05      ]
+ [check |x       |bmb02      |bmb03               |bmb04            |bmb05      ]
+ <                                                                               >
+
+}
+END -- gr3740
+END -- q_bmx2
+
+TABLES
+bmb_file
+ATTRIBUTES
+Table s_bmb:s_bmb;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit x=formonly.x type CHAR, tabIndex=2, title="Level";
+Edit bmb02=bmb_file.bmb02, tabIndex=3, title="Line No.", noEntry;
+Edit bmb03=bmb_file.bmb03, tabIndex=4, title="Component No.", noEntry;
+Edit bmb04=bmb_file.bmb04, tabIndex=5, title="Effective Date", noEntry;
+Edit bmb05=bmb_file.bmb05, tabIndex=6, title="Expiry Date", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmb(formonly.check,formonly.x,bmb_file.bmb02,bmb_file.bmb03,bmb_file.bmb04,bmb_file.bmb05)
+END -- INSTRUCTIONS
+

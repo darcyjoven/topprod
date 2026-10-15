@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct070.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct070")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1757
+{
+ Master Item#        [cjp01                         ]
+                     [ima02                         ]
+                     [ima021                        ]
+ YY/MM               [cjp0]/[cj]
+}
+END -- gr1757
+Grid gr1758
+{
+ Unit                [ima55     ]
+
+
+
+}
+END -- gr1758
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_cjp
+{
+[cjp04               |ima02s                       |cjp05|cjp06   ]
+[cjp04               |ima02s                       |cjp05|cjp06   ]
+[cjp04               |ima02s                       |cjp05|cjp06   ]
+[cjp04               |ima02s                       |cjp05|cjp06   ]
+[cjp04               |ima02s                       |cjp05|cjp06   ]
+[cjp04               |ima02s                       |cjp05|cjp06   ]
+[cjp04               |ima02s                       |cjp05|cjp06   ]
+[cjp04               |ima02s                       |cjp05|cjp06   ]
+
+}
+END -- s_cjp
+Grid gr1759
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------  Total               [tot       ]
+
+}
+END -- gr1759
+END -- VBox1
+END -- axct070
+
+TABLES
+cjp_file
+ATTRIBUTES
+Edit cjp01=cjp_file.cjp01, tabIndex=1, noEntry, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit cjp0=cjp_file.cjp02, tabIndex=4, noEntry;
+Edit cj=cjp_file.cjp03, tabIndex=5, noEntry;
+Edit ima55=formonly.ima55 type CHAR, tabIndex=6, noEntry;
+Edit cjp04=cjp_file.cjp04, tabIndex=7, title="Co.Pro. Item", noEntry;
+Edit ima02s=formonly.ima02s type CHAR, tabIndex=8, title="P/N Spec", noEntry;
+Edit cjp05=cjp_file.cjp05, tabIndex=9, title="Unit", noEntry;
+Edit cjp06=cjp_file.cjp06, tabIndex=10, title="Dist.%";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+Edit tot=formonly.tot type VARCHAR, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cjp(cjp_file.cjp04,formonly.ima02s,cjp_file.cjp05,cjp_file.cjp06)
+SCREEN RECORD Undefined(cjp_file.cjp01,formonly.ima02,formonly.ima021,cjp_file.cjp02,cjp_file.cjp03,formonly.ima55,formonly.cnt,formonly.cn2,formonly.tot)
+END -- INSTRUCTIONS
+

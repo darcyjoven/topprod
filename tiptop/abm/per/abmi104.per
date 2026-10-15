@@ -1,0 +1,96 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi104.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi104")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr713
+{
+ Master Item No.     [bed01                         ]
+ Part Name           [ima02                         ]
+ Specification       [ima021                        ]
+ Unit                [ima25_h   ]  Source Code [ima0]
+}
+END -- gr713
+Grid gr714
+{
+ Master Item Version [bed011    ]
+ Line No.            [bed012    ]
+ REP/SUB             [bed02          ]
+
+}
+END -- gr714
+Grid gr715
+{
+ Component No.       [bmp03                        ]
+ Part Name           [ima02_2                      ]
+ Specification       [ima021_2                     ]
+ Unit                [bmp10     ] Source Code [ima1]
+}
+END -- gr715
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_bed
+{
+[bed0|bed04               |ima02_b                     |ima021_b                    |bed05   |bed06   |bed09   |bed07  ]
+[bed0|bed04               |ima02_b                     |ima021_b                    |bed05   |bed06   |bed09   |bed07  ]
+[bed0|bed04               |ima02_b                     |ima021_b                    |bed05   |bed06   |bed09   |bed07  ]
+[bed0|bed04               |ima02_b                     |ima021_b                    |bed05   |bed06   |bed09   |bed07  ]
+[bed0|bed04               |ima02_b                     |ima021_b                    |bed05   |bed06   |bed09   |bed07  ]
+[bed0|bed04               |ima02_b                     |ima021_b                    |bed05   |bed06   |bed09   |bed07  ]
+[bed0|bed04               |ima02_b                     |ima021_b                    |bed05   |bed06   |bed09   |bed07  ]
+[bed0|bed04               |ima02_b                     |ima021_b                    |bed05   |bed06   |bed09   |bed07  ]
+[bed0|bed04               |ima02_b                     |ima021_b                    |bed05   |bed06   |bed09   |bed07  ]
+[bed0|bed04               |ima02_b                     |ima021_b                    |bed05   |bed06   |bed09   |bed07  ]
+
+}
+END -- s_bed
+Grid gr716
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr716
+END -- VBox1
+END -- abmi104
+
+TABLES
+bed_file
+ATTRIBUTES
+ButtonEdit bed01=bed_file.bed01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Query Item  <^T> Query Testing Item ";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit ima25_h=formonly.ima25_h type CHAR, tabIndex=4, noEntry;
+Edit ima0=formonly.ima08_h type CHAR, tabIndex=5, noEntry;
+ButtonEdit bed011=bed_file.bed011, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Query Ver";
+ButtonEdit bed012=bed_file.bed012, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Query Ln#";
+RadioGroup bed02=bed_file.bed02, tabIndex=8, not null, required, items=(("1", "UTE"),("2", "SUB"));
+Edit bmp03=formonly.bmp03 type CHAR, tabIndex=9, noEntry;
+Edit ima02_2=formonly.ima02_2 type CHAR, tabIndex=10, noEntry;
+Edit ima021_2=formonly.ima021_2 type CHAR, tabIndex=11, noEntry;
+Edit bmp10=formonly.bmp10 type CHAR, tabIndex=12, noEntry;
+Edit ima1=formonly.ima08_2 type CHAR, tabIndex=13, noEntry;
+Edit bed0=bed_file.bed03, tabIndex=14, title="Ln #", not null, required;
+ButtonEdit bed04=bed_file.bed04, action=controlp, tabIndex=15, title="SUB Item No.", not null, required, image="zoom", comment="<^P> Query Formal Item, <^T> Query Testing Item";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=16, title="Part Name", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=17, title="Spec", noEntry;
+DateEdit bed05=bed_file.bed05, tabIndex=18, title="Eff.Dt";
+DateEdit bed06=bed_file.bed06, tabIndex=19, title="Exp.Dt";
+DateEdit bed09=bed_file.bed09, tabIndex=20, title="R/SUB Dt";
+Edit bed07=bed_file.bed07, tabIndex=21, title="SUB Qt";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bed(bed_file.bed03,bed_file.bed04,formonly.ima02_b,formonly.ima021_b,bed_file.bed05,bed_file.bed06,bed_file.bed09,bed_file.bed07)
+SCREEN RECORD Undefined(bed_file.bed01,formonly.ima02,formonly.ima021,formonly.ima25_h,formonly.ima08_h,bed_file.bed011,bed_file.bed012,bed_file.bed02,formonly.bmp03,formonly.ima02_2,formonly.ima021_2,formonly.bmp10,formonly.ima08_2,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gis/42f/gisp210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gisp210")
+Folder pc800
+Page page01(text="Main")
+VBox VBox1
+Grid gr3484
+{
+ <G group01                                                       >
+  Invoice No.          [ise01               ]
+  Invoice Date         [ise03               ]
+  Accounts No.         [ise04               ]
+  Invoice Type         [ise062              ]
+ <                                                                >
+ <G group02                                                       >
+ [b                                            ]
+ [e                                            ]
+ [dummy01                                           ]
+
+ <                                                                >
+
+}
+END -- gr3484
+END -- VBox1
+END -- page01
+END -- pc800
+END -- gisp210
+
+TABLES
+ise_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ise01=ise_file.ise01, tabIndex=1;
+Edit ise03=ise_file.ise03, tabIndex=2;
+Edit ise04=ise_file.ise04, tabIndex=3;
+ComboBox ise062=ise_file.ise062, tabIndex=4, queryEditable, items=(("S", "Dedu"),("N", "No Dedu"),("T", "Tran"),("A", "Agric WVoid Material"),("G", "Cus.Tax"));
+Group group02:group02;
+CheckBox b=formonly.b type CHAR, tabIndex=5, text="Update Status Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=6, text="Export to Client", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="dummy";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ise_file.ise01,ise_file.ise03,ise_file.ise04,ise_file.ise062,formonly.b,formonly.e)
+END -- INSTRUCTIONS
+

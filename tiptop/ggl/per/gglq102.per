@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq102")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+Grid gr3357
+{
+ Account NO.         [aag01                         ]
+ Account Name        [aag02                                             ]
+ Book No.            [tas00]
+ Currency            [tas08     ]
+}
+END -- gr3357
+END -- page01
+END -- folder01
+Table s_tas
+{
+[tas02       |tas09               |tas10               ]
+[tas02       |tas09               |tas10               ]
+[tas02       |tas09               |tas10               ]
+[tas02       |tas09               |tas10               ]
+[tas02       |tas09               |tas10               ]
+[tas02       |tas09               |tas10               ]
+[tas02       |tas09               |tas10               ]
+[tas02       |tas09               |tas10               ]
+[tas02       |tas09               |tas10               ]
+[tas02       |tas09               |tas10               ]
+
+}
+END -- s_tas
+Grid gr3358
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr3358
+END -- vb4
+END -- gglq102
+
+TABLES
+aag_file,
+tableAlias1=tas_file,
+tas_file
+ATTRIBUTES
+Edit aag01=aag_file.aag01, tabIndex=1, not null, required;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+Edit tas00=tableAlias1.tas00, tabIndex=8;
+Edit tas08=tas_file.tas08, tabIndex=3;
+DateEdit tas02=tas_file.tas02, tabIndex=4, title="Date";
+Edit tas09=tas_file.tas09, tabIndex=5, title="Debit Trans. Amt", noEntry;
+Edit tas10=tas_file.tas10, tabIndex=6, title="Credit Trans. Amt", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tas(tas_file.tas02,tas_file.tas09,tas_file.tas10)
+SCREEN RECORD Undefined(aag_file.aag01,formonly.aag02,tableAlias1.tas00,tas_file.tas08,formonly.cnt)
+END -- INSTRUCTIONS
+

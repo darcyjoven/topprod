@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u53/tiptop/qry/4fd/q_asb.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Corelation Complany Under Group No. Query")
+Grid gr3734
+{
+ <T s_asb                                                                               >
+ [check|asb04              |azp02                     |asb05  |asb07  |asb08           ]
+ [check|asb04              |azp02                     |asb05  |asb07  |asb08           ]
+ [check|asb04              |azp02                     |asb05  |asb07  |asb08           ]
+ [check|asb04              |azp02                     |asb05  |asb07  |asb08           ]
+ [check|asb04              |azp02                     |asb05  |asb07  |asb08           ]
+ [check|asb04              |azp02                     |asb05  |asb07  |asb08           ]
+ [check|asb04              |azp02                     |asb05  |asb07  |asb08           ]
+ [check|asb04              |azp02                     |asb05  |asb07  |asb08           ]
+ [check|asb04              |azp02                     |asb05  |asb07  |asb08           ]
+ [check|asb04              |azp02                     |asb05  |asb07  |asb08           ]
+ <                                                                                      >
+
+}
+END -- gr3734
+END -- q_asb
+
+TABLES
+asb_file
+ATTRIBUTES
+Table s_asb:s_asb;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit asb04=asb_file.asb04, tabIndex=2, title="Under Company Code", noEntry;
+Edit azp02=formonly.azp02 type CHAR, tabIndex=3, title="Under Company Name";
+Edit asb05=asb_file.asb05, tabIndex=4, title="Hoding", noEntry;
+Edit asb07=asb_file.asb07, tabIndex=5, title="Ratio", noEntry;
+Edit asb08=asb_file.asb08, tabIndex=6, title="Transaction Date", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asb(formonly.check,asb_file.asb04,formonly.azp02,asb_file.asb05,asb_file.asb07,asb_file.asb08)
+END -- INSTRUCTIONS
+

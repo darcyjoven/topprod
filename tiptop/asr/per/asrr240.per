@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asrr240.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asrr240")
+VBox VBox1
+Grid gr961
+{
+ <G group01                                      >
+  Line No#            [srf03     ]
+ <                                               >
+ <G group02                                      >
+  Date Range          [bdate     ] - [edate     ]
+ <                                               >
+
+}
+END -- gr961
+Grid gr962
+{
+[more                                     ]
+
+}
+END -- gr962
+END -- VBox1
+END -- asrr240
+
+TABLES
+srf_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit srf03=srf_file.srf03, action=controlp, tabIndex=1, image="zoom";
+Group group02:group02, text="DATE RANGE";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=2;
+DateEdit edate=formonly.edate type DATE, tabIndex=3;
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(srf_file.srf03,formonly.bdate,formonly.edate,formonly.more)
+END -- INSTRUCTIONS
+

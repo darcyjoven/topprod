@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_show_log.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"cl_show_log")
+Grid gr3708
+{
+ <T s_log                                                                                                 >
+ [change_time  |action |change_value                            |old_value                               ]
+ [change_time  |action |change_value                            |old_value                               ]
+ [change_time  |action |change_value                            |old_value                               ]
+ [change_time  |action |change_value                            |old_value                               ]
+ [change_time  |action |change_value                            |old_value                               ]
+ [change_time  |action |change_value                            |old_value                               ]
+ [change_time  |action |change_value                            |old_value                               ]
+ [change_time  |action |change_value                            |old_value                               ]
+ [change_time  |action |change_value                            |old_value                               ]
+ [change_time  |action |change_value                            |old_value                               ]
+ <                                                                                                        >
+
+}
+END -- gr3708
+END -- cl_show_log
+
+ATTRIBUTES
+Table s_log:s_log;
+Edit change_time=formonly.change_time type CHAR, tabIndex=1, title="Changed Time";
+Edit action=formonly.action type CHAR, tabIndex=2, title="Action";
+Edit change_value=formonly.change_value type CHAR, tabIndex=3, title="Changed Value", scroll;
+Edit old_value=formonly.old_value type CHAR, tabIndex=4, title="Old Value", scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_log(formonly.change_time,formonly.action,formonly.change_value,formonly.old_value)
+END -- INSTRUCTIONS
+

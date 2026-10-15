@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_padd_img.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="s_padd_img")
+VBox VBox1
+Table s_img
+{
+[img01       |img02     |img03     |img04     |img09 |img21   |img26         |img13     |img18     |img19   |img36   |img27   |img28   |img35   ]
+[img01       |img02     |img03     |img04     |img09 |img21   |img26         |img13     |img18     |img19   |img36   |img27   |img28   |img35   ]
+[img01       |img02     |img03     |img04     |img09 |img21   |img26         |img13     |img18     |img19   |img36   |img27   |img28   |img35   ]
+[img01       |img02     |img03     |img04     |img09 |img21   |img26         |img13     |img18     |img19   |img36   |img27   |img28   |img35   ]
+[img01       |img02     |img03     |img04     |img09 |img21   |img26         |img13     |img18     |img19   |img36   |img27   |img28   |img35   ]
+[img01       |img02     |img03     |img04     |img09 |img21   |img26         |img13     |img18     |img19   |img36   |img27   |img28   |img35   ]
+[img01       |img02     |img03     |img04     |img09 |img21   |img26         |img13     |img18     |img19   |img36   |img27   |img28   |img35   ]
+[img01       |img02     |img03     |img04     |img09 |img21   |img26         |img13     |img18     |img19   |img36   |img27   |img28   |img35   ]
+[img01       |img02     |img03     |img04     |img09 |img21   |img26         |img13     |img18     |img19   |img36   |img27   |img28   |img35   ]
+[img01       |img02     |img03     |img04     |img09 |img21   |img26         |img13     |img18     |img19   |img36   |img27   |img28   |img35   ]
+
+}
+END -- s_img
+END -- VBox1
+END -- s_padd_img
+
+TABLES
+img_file
+ATTRIBUTES
+Edit img01=img_file.img01, tabIndex=1, default = "N", title="Item No.", noEntry, comment="";
+Edit img02=img_file.img02, tabIndex=2, title="Warehous", noEntry;
+Edit img03=img_file.img03, tabIndex=3, title="Location", noEntry;
+Edit img04=img_file.img04, tabIndex=4, title="Lot No.", noEntry;
+Edit img09=img_file.img09, tabIndex=5, title="Unit", required;
+Edit img21=img_file.img21, tabIndex=6, title="Con.Rt", noEntry;
+Edit img26=img_file.img26, tabIndex=7, title="Account Code", noEntry;
+Edit img13=img_file.img13, tabIndex=8, title="Making Date";
+Edit img18=img_file.img18, tabIndex=9, title="Expiry Date";
+Edit img19=img_file.img19, tabIndex=10, title="Inv Class";
+Edit img36=img_file.img36, tabIndex=11, title="Look Code";
+Edit img27=img_file.img27, tabIndex=12, title="Issuing priority";
+Edit img28=img_file.img28, tabIndex=13, title="Sales priority";
+Edit img35=img_file.img35, tabIndex=14, title="Project#";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(img_file.img01,img_file.img02,img_file.img03,img_file.img04,img_file.img09,img_file.img26,img_file.img13,img_file.img18,img_file.img21,img_file.img19,img_file.img36,img_file.img27,img_file.img28,img_file.img35)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq302.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="anmq302")
+VBox vb3
+Grid gr1
+{
+
+   Bank No.            [nmr01           |nma02               |nma04                         ]
+   Opening Bank No.    [nma39      |nmt02                                                   ]
+   First Download Date [nmr02          ] Last Download Date [nmr03          ]
+
+}
+END -- gr1
+Grid gr5
+{
+ ---------- Rows [idx   ] / [cnt   ] ----------
+
+}
+END -- gr5
+END -- vb3
+END -- anmq302
+
+TABLES
+nmr_file
+ATTRIBUTES
+ButtonEdit nmr01=nmr_file.nmr01, action=controlp, tabIndex=1, image="zoom", comment="Press <^P>Query Department";
+Edit nma02=formonly.nma02 type CHAR, tabIndex=4, noEntry;
+Edit nma04=formonly.nma04 type CHAR, tabIndex=5, noEntry;
+Edit nma39=formonly.nma39 type CHAR, tabIndex=6, noEntry;
+Edit nmt02=formonly.nmt02 type CHAR, tabIndex=7, noEntry;
+DateEdit nmr02=nmr_file.nmr02, tabIndex=2;
+DateEdit nmr03=nmr_file.nmr03, tabIndex=3;
+Edit idx=formonly.idx type SMALLINT, tabIndex=9, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nmr_file.nmr01,formonly.nma02,formonly.nma04,formonly.nma39,formonly.nmt02,nmr_file.nmr02,nmr_file.nmr03,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

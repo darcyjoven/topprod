@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi763.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="acoi763")
+VBox vb5
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr2
+{
+ In-House Item No. [cej04                    ]           Customs Commodity Code [cej06                   ]    [imgmks]
+ Item Name         [ima02                    ]           S/N aft Merged         [cej05                   ]    [      ]
+ Item Spec.        [ima021                   ]           Approval Status        [cej07       |cej08      ]
+ BOM Version       [cej02       ]
+ Property Code     [cej03       ]
+}
+END -- gr2
+END -- Page1
+Page Page2(text=%"Info")
+Grid gr3
+{
+ Record Owner       [cejuser     ]   Last Modified by         [cejmodu      ]      Data Valid Code      [cejacti     ]
+ Department         [cejgrup     ]   Create/Modify Date       [cejdate      ]
+
+}
+END -- gr3
+END -- Page2
+END -- pc1
+Table s_cek
+{
+[cek04     |cek05     |cek06           |ima02b                 |ima021b            |cek09        |cek10       |cek11      ]
+[cek04     |cek05     |cek06           |ima02b                 |ima021b            |cek09        |cek10       |cek11      ]
+[cek04     |cek05     |cek06           |ima02b                 |ima021b            |cek09        |cek10       |cek11      ]
+[cek04     |cek05     |cek06           |ima02b                 |ima021b            |cek09        |cek10       |cek11      ]
+[cek04     |cek05     |cek06           |ima02b                 |ima021b            |cek09        |cek10       |cek11      ]
+[cek04     |cek05     |cek06           |ima02b                 |ima021b            |cek09        |cek10       |cek11      ]
+
+}
+END -- s_cek
+Table s_cel
+{
+[cel04     |cel05     |cel06           |cei12                  |cei13              |cel07        |cel08       |cel09     ]
+[cel04     |cel05     |cel06           |cei12                  |cei13              |cel07        |cel08       |cel09     ]
+[cel04     |cel05     |cel06           |cei12                  |cei13              |cel07        |cel08       |cel09     ]
+[cel04     |cel05     |cel06           |cei12                  |cei13              |cel07        |cel08       |cel09     ]
+[cel04     |cel05     |cel06           |cei12                  |cei13              |cel07        |cel08       |cel09     ]
+[cel04     |cel05     |cel06           |cei12                  |cei13              |cel07        |cel08       |cel09     ]
+
+}
+END -- s_cel
+Grid gr4
+{
+ ------Rows [cn1    ] / [cn2     ]  ------
+
+
+}
+END -- gr4
+END -- vb5
+END -- acoi763
+
+TABLES
+cel_file,
+cek_file,
+cej_file
+ATTRIBUTES
+ButtonEdit cej04=cej_file.cej04, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ButtonEdit cej06=cej_file.cej06, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+IMAGE imgmks=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit cej05=cej_file.cej05, tabIndex=7;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+ComboBox cej07=cej_file.cej07, tabIndex=8, items=(("Y", "Confirm"),("N", "Unconfirm"),("X", "Void"));
+DateEdit cej08=cej_file.cej08, tabIndex=23, noEntry;
+Edit cej02=cej_file.cej02, tabIndex=4, not null, required;
+Edit cej03=cej_file.cej03, tabIndex=5;
+Edit cejuser=cej_file.cejuser, tabIndex=14;
+Edit cejmodu=cej_file.cejmodu, tabIndex=15;
+Edit cejacti=cej_file.cejacti, tabIndex=16;
+Edit cejgrup=cej_file.cejgrup, tabIndex=17;
+DateEdit cejdate=cej_file.cejdate, tabIndex=18;
+Edit cek04=cek_file.cek04, tabIndex=31, title="S/N", noEntry;
+Edit cek05=cek_file.cek05, tabIndex=10, title="Component S/N bef Merged", noEntry, not null, required;
+Edit cek06=cek_file.cek06, tabIndex=9, title="In-House Component No.", noEntry;
+Edit ima02b=formonly.ima02b type VARCHAR, tabIndex=19, title="Item Name", noEntry;
+Edit ima021b=formonly.ima021b type VARCHAR, tabIndex=20, title="Item Sepc.", noEntry;
+Edit cek09=cek_file.cek09, tabIndex=11, title="Decl Measure Unit", noEntry;
+Edit cek10=cek_file.cek10, tabIndex=12, title="QPA", not null, required;
+Edit cek11=cek_file.cek11, tabIndex=13, title="Loss Rate(%)", not null, required;
+Edit cel04=cel_file.cel04, tabIndex=32, title="S/N";
+Edit cel05=cel_file.cel05, tabIndex=24, title="S/N aft Merged", noEntry;
+Edit cel06=cel_file.cel06, tabIndex=25, title="Customs Commodity Code", noEntry;
+Edit cei12=formonly.cei12 type VARCHAR, tabIndex=26, title="Item Name aft Merged", noEntry;
+Edit cei13=formonly.cei13 type VARCHAR, tabIndex=27, title="Spec. aft Merged", noEntry;
+Edit cel07=cel_file.cel07, tabIndex=28, title="Decl Measure Unit", noEntry;
+Edit cel08=cel_file.cel08, tabIndex=29, title="QPA";
+Edit cel09=cel_file.cel09, tabIndex=30, title="Loss Rate(%)";
+Edit cn1=formonly.cn1 type SMALLINT, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cek(cek_file.cek04,cek_file.cek05,cek_file.cek06,formonly.ima02b,formonly.ima021b,cek_file.cek09,cek_file.cek10,cek_file.cek11)
+SCREEN RECORD s_cel(cel_file.cel04,cel_file.cel05,cel_file.cel06,formonly.cei12,formonly.cei13,cel_file.cel07,cel_file.cel08,cel_file.cel09)
+SCREEN RECORD Undefined(cej_file.cej04,cej_file.cej06,formonly.imgmksg,formonly.ima02,cej_file.cej05,formonly.ima021,cej_file.cej07,cej_file.cej08,cej_file.cej02,cej_file.cej03,cej_file.cejuser,cej_file.cejmodu,cej_file.cejacti,cej_file.cejgrup,cej_file.cejdate,formonly.cn1,formonly.cn2)
+END -- INSTRUCTIONS
+

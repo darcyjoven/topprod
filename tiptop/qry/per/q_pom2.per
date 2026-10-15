@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_pom2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Untransferred P/O Data Query")
+Grid gr3833
+{
+ <T s_pom                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      >
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |attdesc         |att01         |att02         |att03         |att04         |att05         |att06         |att07         |att08         |att09         |att10         |att11         |att12         |att13         |att14         |att15         |att16         |att17         |att18         |att19         |att20          |rest              |pom22      |pom21      |pom20           |pon31     ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |attdesc         |att01         |att02         |att03         |att04         |att05         |att06         |att07         |att08         |att09         |att10         |att11         |att12         |att13         |att14         |att15         |att16         |att17         |att18         |att19         |att20          |rest              |pom22      |pom21      |pom20           |pon31     ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |attdesc         |att01         |att02         |att03         |att04         |att05         |att06         |att07         |att08         |att09         |att10         |att11         |att12         |att13         |att14         |att15         |att16         |att17         |att18         |att19         |att20          |rest              |pom22      |pom21      |pom20           |pon31     ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |attdesc         |att01         |att02         |att03         |att04         |att05         |att06         |att07         |att08         |att09         |att10         |att11         |att12         |att13         |att14         |att15         |att16         |att17         |att18         |att19         |att20          |rest              |pom22      |pom21      |pom20           |pon31     ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |attdesc         |att01         |att02         |att03         |att04         |att05         |att06         |att07         |att08         |att09         |att10         |att11         |att12         |att13         |att14         |att15         |att16         |att17         |att18         |att19         |att20          |rest              |pom22      |pom21      |pom20           |pon31     ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |attdesc         |att01         |att02         |att03         |att04         |att05         |att06         |att07         |att08         |att09         |att10         |att11         |att12         |att13         |att14         |att15         |att16         |att17         |att18         |att19         |att20          |rest              |pom22      |pom21      |pom20           |pon31     ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |attdesc         |att01         |att02         |att03         |att04         |att05         |att06         |att07         |att08         |att09         |att10         |att11         |att12         |att13         |att14         |att15         |att16         |att17         |att18         |att19         |att20          |rest              |pom22      |pom21      |pom20           |pon31     ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |attdesc         |att01         |att02         |att03         |att04         |att05         |att06         |att07         |att08         |att09         |att10         |att11         |att12         |att13         |att14         |att15         |att16         |att17         |att18         |att19         |att20          |rest              |pom22      |pom21      |pom20           |pon31     ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |attdesc         |att01         |att02         |att03         |att04         |att05         |att06         |att07         |att08         |att09         |att10         |att11         |att12         |att13         |att14         |att15         |att16         |att17         |att18         |att19         |att20          |rest              |pom22      |pom21      |pom20           |pon31     ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |attdesc         |att01         |att02         |att03         |att04         |att05         |att06         |att07         |att08         |att09         |att10         |att11         |att12         |att13         |att14         |att15         |att16         |att17         |att18         |att19         |att20          |rest              |pom22      |pom21      |pom20           |pon31     ]
+ <                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             >
+
+}
+END -- gr3833
+END -- q_pom2
+
+TABLES
+pon_file,
+pom_file,
+pmc_file
+ATTRIBUTES
+Table s_pom:s_pom;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pom01=pom_file.pom01, tabIndex=2, title="P/O No.", noEntry;
+Edit pom09=pom_file.pom09, tabIndex=3, title="Vender No.", noEntry;
+Edit pmc03=pmc_file.pmc03, tabIndex=4, title="Vender Abbr.", noEntry;
+Edit pon02=pon_file.pon02, tabIndex=5, title="Line No.", noEntry;
+Edit pon04=pon_file.pon04, tabIndex=6, title="Item No.", noEntry;
+Edit attdesc=formonly.attdesc type CHAR, tabIndex=7, title="Attdesc", noEntry;
+Edit att01=formonly.att01 type CHAR, tabIndex=8, title="att01";
+ComboBox att02=formonly.att02 type CHAR, tabIndex=9, title="att02", queryEditable;
+Edit att03=formonly.att03 type CHAR, tabIndex=10, title="att03";
+ComboBox att04=formonly.att04 type CHAR, tabIndex=11, title="att04", queryEditable;
+Edit att05=formonly.att05 type CHAR, tabIndex=12, title="att05";
+ComboBox att06=formonly.att06 type CHAR, tabIndex=13, title="att06", queryEditable;
+Edit att07=formonly.att07 type CHAR, tabIndex=14, title="att07";
+ComboBox att08=formonly.att08 type CHAR, tabIndex=15, title="att08", queryEditable;
+Edit att09=formonly.att09 type CHAR, tabIndex=16, title="att09";
+ComboBox att10=formonly.att10 type CHAR, tabIndex=17, title="att10", queryEditable;
+Edit att11=formonly.att11 type CHAR, tabIndex=18, title="att11";
+ComboBox att12=formonly.att12 type CHAR, tabIndex=19, title="att12", queryEditable;
+Edit att13=formonly.att13 type CHAR, tabIndex=20, title="att13";
+ComboBox att14=formonly.att14 type CHAR, tabIndex=21, title="att14", queryEditable;
+Edit att15=formonly.att15 type CHAR, tabIndex=22, title="att15";
+ComboBox att16=formonly.att16 type CHAR, tabIndex=23, title="att16", queryEditable;
+Edit att17=formonly.att17 type CHAR, tabIndex=24, title="att17";
+ComboBox att18=formonly.att18 type CHAR, tabIndex=25, title="att18", queryEditable;
+Edit att19=formonly.att19 type CHAR, tabIndex=26, title="att19";
+ComboBox att20=formonly.att20 type CHAR, tabIndex=27, title="att20", queryEditable;
+Edit rest=formonly.rest type CHAR, tabIndex=28, title="Undelivered Qty", noEntry;
+Edit pom22=pom_file.pom22, tabIndex=29, title="Currency", noEntry;
+Edit pom21=pom_file.pom21, tabIndex=30, title="Tax Type", noEntry;
+Edit pom20=pom_file.pom20, tabIndex=31, title="Payment Terms", noEntry;
+Edit pon31=pon_file.pon31, tabIndex=32, title="Unit Price", noEntry, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pom(formonly.check,pom_file.pom01,pom_file.pom09,pmc_file.pmc03,pon_file.pon02,pon_file.pon04,formonly.attdesc,formonly.att01,formonly.att02,formonly.att03,formonly.att04,formonly.att05,formonly.att06,formonly.att07,formonly.att08,formonly.att09,formonly.att10,formonly.att11,formonly.att12,formonly.att13,formonly.att14,formonly.att15,formonly.att16,formonly.att17,formonly.att18,formonly.att19,formonly.att20,formonly.rest,pom_file.pom22,pom_file.pom21,pom_file.pom20,pon_file.pon31)
+END -- INSTRUCTIONS
+

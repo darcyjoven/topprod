@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci800")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1690
+{
+ [dummy01                       ]
+ Calendar No.        [ecn01     ]
+ [dummy02                       ]
+}
+END -- gr1690
+Grid gr1691
+{
+ [dummy03                       ]
+ Version             [ecn03     ]
+ [dummy04                       ]
+}
+END -- gr1691
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_ecn
+{
+[ecn02   |ecn04      |ecn05        ]
+[ecn02   |ecn04      |ecn05        ]
+[ecn02   |ecn04      |ecn05        ]
+[ecn02   |ecn04      |ecn05        ]
+[ecn02   |ecn04      |ecn05        ]
+[ecn02   |ecn04      |ecn05        ]
+[ecn02   |ecn04      |ecn05        ]
+[ecn02   |ecn04      |ecn05        ]
+[ecn02   |ecn04      |ecn05        ]
+[ecn02   |ecn04      |ecn05        ]
+
+}
+END -- s_ecn
+Grid gr1692
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1692
+END -- VBox1
+END -- aeci800
+
+TABLES
+ecn_file
+ATTRIBUTES
+Label dummy01:dummy01;
+Edit ecn01=ecn_file.ecn01, tabIndex=1, not null, required, comment="Key Field, No Blank/Repeated";
+Label dummy02:dummy02;
+Label dummy03:dummy03;
+Edit ecn03=ecn_file.ecn03, tabIndex=2, not null, required, comment="Key Field, No Blank/Repeated";
+Label dummy04:dummy04;
+DateEdit ecn02=ecn_file.ecn02, tabIndex=3, title="Date", not null, required, comment="Combine [Calndr+Vers] as Key Field, No Blank/Repeated";
+Edit ecn04=ecn_file.ecn04, tabIndex=4, title="Work Hour", not null, required;
+Edit ecn05=ecn_file.ecn05, tabIndex=5, title="Efficiency%", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ecn(ecn_file.ecn02,ecn_file.ecn04,ecn_file.ecn05)
+SCREEN RECORD Undefined(ecn_file.ecn01,ecn_file.ecn03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

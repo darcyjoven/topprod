@@ -1,0 +1,79 @@
+----------------------------------------------------------------------------------
+-- File created from /u53/tiptop/atm/42f/atmi302.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA formonly
+
+
+
+
+LAYOUT(spacing=normal, text="atmi302")
+ VBox vb5
+ Folder pc2
+ Page Page3(text=%"Main\n")
+ Grid gr4
+ {
+  VIP Rule No [vii01         ]               SDate [vii04          ]
+  VIP Desc    [vii02                     ]   EDate [vii05          ]
+  Using       [vii03                ]        conf  [vii06          ]
+ }
+ END
+ END -- Page
+ Page Page4(text=%"Info\n\n")
+ Grid gr4834
+ {
+  Record Owner  [viiuser   ]  Last Modified by    [viimodu   ]  Data Valid Code [viiacti   ]
+  Department    [viigrup   ]  Create/Modify Date  [viidate   ]
+
+ }
+ END
+ END -- Page
+ END -- Folder
+ Table s_vij
+ {
+ [vij02   |vij03                |ima02                    |ima021                 |vij04        ]
+ [vij02   |vij03                |ima02                    |ima021                 |vij04        ]
+ [vij02   |vij03                |ima02                    |ima021                 |vij04        ]
+ [vij02   |vij03                |ima02                    |ima021                 |vij04        ]
+ [vij02   |vij03                |ima02                    |ima021                 |vij04        ]
+ [vij02   |vij03                |ima02                    |ima021                 |vij04        ]
+
+ }
+ END -- Table
+ Grid gr4835
+ {
+   ---------- Rows [idx   ]/[cnt   ]  ---  Details [cn2   ] ----------
+
+ }
+ END
+ END -- VBox
+END -- Form
+
+
+ATTRIBUTES
+Edit vii01=formonly.vii01 type VARCHAR, tabIndex=1, not null, required;
+DateEdit vii04=formonly.vii04 type DATE, tabIndex=4, not null, required;
+Edit vii02=formonly.vii02 type VARCHAR, tabIndex=2, not null, required;
+DateEdit vii05=formonly.vii05 type DATE, tabIndex=5, not null, required;
+ComboBox vii03=formonly.vii03 type VARCHAR, tabIndex=3, default = "1", not null, required, items=(("1", "change gift"));
+ComboBox vii06=formonly.vii06 type VARCHAR, tabIndex=6, default = "N", noEntry, not null, required, items=(("N", "unconfirm"),("Y", "confirm"));
+Edit viiuser=formonly.viiuser type VARCHAR, tabIndex=7, noEntry;
+Edit viimodu=formonly.viimodu type VARCHAR, tabIndex=8, noEntry;
+Edit viiacti=formonly.viiacti type VARCHAR, tabIndex=9, noEntry, upShift;
+Edit viigrup=formonly.viigrup type VARCHAR, tabIndex=10, noEntry;
+DateEdit viidate=formonly.viidate type DATE, tabIndex=11, noEntry;
+Edit vij02=formonly.vij02 type SMALLINT, tabIndex=19, title="Line#", not null, required;
+ButtonEdit vij03=formonly.vij03 type VARCHAR, action=controlp, tabIndex=13, title="Item No", not null, required, image="zoom.png";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=17, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=16, title="Specification", noEntry;
+Edit vij04=formonly.vij04 type INTEGER, tabIndex=12, title="needed cent\n", not null, required;
+Edit idx=formonly.idx type SMALLINT, tabIndex=14, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vij(formonly.vij02, formonly.vij03, formonly.ima02, formonly.ima021, formonly.vij04)
+SCREEN RECORD Undefined(formonly.vii01, formonly.vii04, formonly.vii02, formonly.vii05, formonly.vii03, formonly.vii06, formonly.viiuser, formonly.viimodu, formonly.viiacti, formonly.viigrup, formonly.viidate, formonly.idx, formonly.cnt, formonly.cn2)
+END -- INSTRUCTIONS
+

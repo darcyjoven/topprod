@@ -1,0 +1,36 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdt201_m.per created Wed Jan 23 05:30:45 2008
+-- File created from axdt201_m.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdt201_m")
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID gr7864
+    {
+    <G group01                                    >
+     Category            [aa0       ][aa1       ]
+     Initial Period      [aa2       ]
+     Line No.            [aa3       ]
+    <                                             >
+
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=FORMONLY.ade18, NOENTRY, TABINDEX=1;
+  EDIT aa1=FORMONLY.desc, NOENTRY, TABINDEX=2;
+  BUTTONEDIT aa2=FORMONLY.ade19, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", TABINDEX=3;
+  EDIT aa3=FORMONLY.ade20, TABINDEX=4;
+END

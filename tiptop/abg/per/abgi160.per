@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi160.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi160")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+Grid gr611
+{
+ Version         [bgv01     ]
+ Year            [bgv02     ] Month[bgv03     ]
+ Dept No.        [bgv04     ][gem02     ]
+ Cost Item       [bgv05     ][bgs02     ]
+ Direct/Indirect [bgv06     ]
+}
+END -- gr611
+END -- page01
+END -- folder01
+Table s_bgv
+{
+[bgv07  |bgv08  |bgv09          |bgv10              |bgvuser   |bgvgrup   |bgvmodu   |bgvdate       ]
+[bgv07  |bgv08  |bgv09          |bgv10              |bgvuser   |bgvgrup   |bgvmodu   |bgvdate       ]
+[bgv07  |bgv08  |bgv09          |bgv10              |bgvuser   |bgvgrup   |bgvmodu   |bgvdate       ]
+[bgv07  |bgv08  |bgv09          |bgv10              |bgvuser   |bgvgrup   |bgvmodu   |bgvdate       ]
+[bgv07  |bgv08  |bgv09          |bgv10              |bgvuser   |bgvgrup   |bgvmodu   |bgvdate       ]
+[bgv07  |bgv08  |bgv09          |bgv10              |bgvuser   |bgvgrup   |bgvmodu   |bgvdate       ]
+[bgv07  |bgv08  |bgv09          |bgv10              |bgvuser   |bgvgrup   |bgvmodu   |bgvdate       ]
+[bgv07  |bgv08  |bgv09          |bgv10              |bgvuser   |bgvgrup   |bgvmodu   |bgvdate       ]
+[bgv07  |bgv08  |bgv09          |bgv10              |bgvuser   |bgvgrup   |bgvmodu   |bgvdate       ]
+[bgv07  |bgv08  |bgv09          |bgv10              |bgvuser   |bgvgrup   |bgvmodu   |bgvdate       ]
+}
+END -- s_bgv
+Grid gr612
+{
+ ------Rows [cnt   ]------                               Total Amount  [tot                 ]
+
+
+
+
+
+
+}
+END -- gr612
+END -- vb1
+END -- abgi160
+
+TABLES
+bgv_file
+ATTRIBUTES
+Edit bgv01=bgv_file.bgv01, tabIndex=1;
+Edit bgv02=bgv_file.bgv02, tabIndex=2, not null, required;
+Edit bgv03=bgv_file.bgv03, tabIndex=3, not null, required;
+ButtonEdit bgv04=bgv_file.bgv04, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Department";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=5, noEntry;
+ButtonEdit bgv05=bgv_file.bgv05, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Cost Item";
+Edit bgs02=formonly.bgs02 type VARCHAR, tabIndex=7, noEntry;
+ComboBox bgv06=bgv_file.bgv06, tabIndex=8, not null, required, queryEditable, items=(("1", "Direct"),("2", "Indirect"));
+ButtonEdit bgv07=bgv_file.bgv07, action=controlp, tabIndex=9, title="Class", not null, required, image="zoom", comment="<^P>Qry Class & Rank";
+ButtonEdit bgv08=bgv_file.bgv08, action=controlp, tabIndex=10, title="Rank", not null, required, image="zoom", comment="<^P>Qry Class & Rank";
+Edit bgv09=bgv_file.bgv09, tabIndex=11, title="Position Desc", not null, required;
+Edit bgv10=bgv_file.bgv10, tabIndex=12, title="Average Amount";
+Edit bgvuser=bgv_file.bgvuser, tabIndex=15, title=%"Owner", noEntry;
+Edit bgvgrup=bgv_file.bgvgrup, tabIndex=16, title=%"Group", noEntry;
+Edit bgvmodu=bgv_file.bgvmodu, tabIndex=17, title=%"Modifier", noEntry;
+DateEdit bgvdate=bgv_file.bgvdate, tabIndex=18, title=%"Date", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit tot=formonly.tot type DECIMAL, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgv(bgv_file.bgv07,bgv_file.bgv08,bgv_file.bgv09,bgv_file.bgv10,bgv_file.bgvuser,bgv_file.bgvgrup,bgv_file.bgvmodu,bgv_file.bgvdate)
+SCREEN RECORD Undefined(bgv_file.bgv01,bgv_file.bgv02,bgv_file.bgv03,bgv_file.bgv04,formonly.gem02,bgv_file.bgv05,formonly.bgs02,bgv_file.bgv06,formonly.cnt,formonly.tot)
+END -- INSTRUCTIONS
+

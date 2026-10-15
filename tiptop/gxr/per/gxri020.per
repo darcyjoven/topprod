@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gxr/42f/gxri020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gxri020")
+VBox vb3
+Folder pc837
+Page page01(text="Main")
+Grid gr3638
+{
+ Invoice Year/Month  [oom0]/[oo]-[o1]
+
+}
+END -- gr3638
+END -- page01
+END -- pc837
+Table s_oom
+{
+[oom03   |oom04  |oom05    |oom06      |oom07           |oom08            |oom09              |oom10       |cnt1        |cnt2           |oom13             |oom14         |oom14_desc        |oompos  ]
+[oom03   |oom04  |oom05    |oom06      |oom07           |oom08            |oom09              |oom10       |cnt1        |cnt2           |oom13             |oom14         |oom14_desc        |oompos  ]
+[oom03   |oom04  |oom05    |oom06      |oom07           |oom08            |oom09              |oom10       |cnt1        |cnt2           |oom13             |oom14         |oom14_desc        |oompos  ]
+[oom03   |oom04  |oom05    |oom06      |oom07           |oom08            |oom09              |oom10       |cnt1        |cnt2           |oom13             |oom14         |oom14_desc        |oompos  ]
+[oom03   |oom04  |oom05    |oom06      |oom07           |oom08            |oom09              |oom10       |cnt1        |cnt2           |oom13             |oom14         |oom14_desc        |oompos  ]
+[oom03   |oom04  |oom05    |oom06      |oom07           |oom08            |oom09              |oom10       |cnt1        |cnt2           |oom13             |oom14         |oom14_desc        |oompos  ]
+[oom03   |oom04  |oom05    |oom06      |oom07           |oom08            |oom09              |oom10       |cnt1        |cnt2           |oom13             |oom14         |oom14_desc        |oompos  ]
+[oom03   |oom04  |oom05    |oom06      |oom07           |oom08            |oom09              |oom10       |cnt1        |cnt2           |oom13             |oom14         |oom14_desc        |oompos  ]
+[oom03   |oom04  |oom05    |oom06      |oom07           |oom08            |oom09              |oom10       |cnt1        |cnt2           |oom13             |oom14         |oom14_desc        |oompos  ]
+[oom03   |oom04  |oom05    |oom06      |oom07           |oom08            |oom09              |oom10       |cnt1        |cnt2           |oom13             |oom14         |oom14_desc        |oompos  ]
+}
+END -- s_oom
+Grid gr3639
+{
+ ---------- Total Pages [tot1      ] ---------- Pages Generated [tot2      ] ----------
+
+
+
+
+}
+END -- gr3639
+END -- vb3
+END -- gxri020
+
+TABLES
+oom_file
+ATTRIBUTES
+Edit oom0=oom_file.oom01, tabIndex=1, not null, required;
+Edit oo=oom_file.oom02, tabIndex=2, not null, required;
+Edit o1=oom_file.oom021, tabIndex=3, not null, required;
+Edit oom03=oom_file.oom03, tabIndex=4, title="Invoice", not null, required;
+ComboBox oom04=oom_file.oom04, tabIndex=5, title="Cate", not null, required, queryEditable, items=(("A", %"Appr.Tax.Inv."),("B", %"NormaInv"),("C", %"Exe.Inv."),("X", %"No"));
+Edit oom05=oom_file.oom05, tabIndex=6, title="Book No.", not null, required;
+ComboBox oom06=oom_file.oom06, tabIndex=7, title="Issue Type", not null, required, queryEditable, items=(("1", %"Computer-Issued"),("2", %"Manually Open"));
+Edit oom07=oom_file.oom07, tabIndex=8, title="InitialInvoice#", not null, required;
+Edit oom08=oom_file.oom08, tabIndex=9, title="Ending Invoice#", not null, required;
+Edit oom09=oom_file.oom09, tabIndex=10, title="Issued Invoice No.";
+DateEdit oom10=oom_file.oom10, tabIndex=11, title="Issued Date";
+Edit cnt1=formonly.cnt1 type INTEGER, tabIndex=12, title="Total Pages", noEntry;
+Edit cnt2=formonly.cnt2 type INTEGER, tabIndex=13, title="Pages Generated", noEntry;
+ButtonEdit oom13=oom_file.oom13, action=controlp, tabIndex=16, title="Declaration No.", not null, required, image="zoom";
+ButtonEdit oom14=oom_file.oom14, action=controlp, tabIndex=17, title=%"Issuance Store", not null, required, image="zoom";
+Edit oom14_desc=formonly.oom14_desc type VARCHAR, tabIndex=18, title=%"Store Name", noEntry;
+ComboBox oompos=oom_file.oompos, tabIndex=19, default = "N", title=%"POS?", noEntry, not null, items=(("1", "Add-No passed"),("2", "Modify-No passed"),("3", "Passed"));
+Edit tot1=formonly.tot1 type INTEGER, tabIndex=14, noEntry;
+Edit tot2=formonly.tot2 type INTEGER, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oom(oom_file.oom03,oom_file.oom04,oom_file.oom05,oom_file.oom06,oom_file.oom07,oom_file.oom08,oom_file.oom09,oom_file.oom10,formonly.cnt1,formonly.cnt2,oom_file.oom13,oom_file.oom14,formonly.oom14_desc,oom_file.oompos)
+SCREEN RECORD Undefined(oom_file.oom01,oom_file.oom02,oom_file.oom021,formonly.tot1,formonly.tot2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asfr120")
+VBox VBox1
+Grid gr618
+{
+ <G group01                                                          >
+  Cost year/month     [g_yy      ][g_mm      ]
+ [g_a                           ]
+ [g_b                           ]
+  Cost Method         [g_type             ]
+ <                                                                   >
+
+
+}
+END -- gr618
+Table s_bma
+{
+[cnt        |bma01                  |ima02                         |ima021  ]
+[cnt        |bma01                  |ima02                         |ima021  ]
+[cnt        |bma01                  |ima02                         |ima021  ]
+[cnt        |bma01                  |ima02                         |ima021  ]
+[cnt        |bma01                  |ima02                         |ima021  ]
+[cnt        |bma01                  |ima02                         |ima021  ]
+[cnt        |bma01                  |ima02                         |ima021  ]
+[cnt        |bma01                  |ima02                         |ima021  ]
+[cnt        |bma01                  |ima02                         |ima021  ]
+[cnt        |bma01                  |ima02                         |ima021  ]
+
+}
+END -- s_bma
+END -- VBox1
+END -- asfr120
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+Edit g_yy=formonly.g_yy type SMALLINT, tabIndex=1;
+Edit g_mm=formonly.g_mm type SMALLINT, tabIndex=2;
+CheckBox g_a=formonly.g_a type VARCHAR, tabIndex=3, text="Print Phased out?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_b=formonly.g_b type VARCHAR, tabIndex=4, text="Print Substitute Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox g_type=formonly.g_type type CHAR, tabIndex=8, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, title="Line No.";
+ButtonEdit bma01=formonly.bma01 type CHAR, action=controlp, tabIndex=6, title="Finished Product No.", image="zoom", comment="<^P>Qry Item No. <^Y>Clear All Item # <^O>Copy Prev.Line";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=7, title="Part Name Specification", noEntry;
+Edit ima021=formonly.ima021, tabIndex=9, title=%"ima021";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bma(formonly.cnt,formonly.bma01,formonly.ima02,formonly.ima021)
+SCREEN RECORD Undefined(formonly.g_yy,formonly.g_mm,formonly.g_a,formonly.g_b,formonly.g_type)
+END -- INSTRUCTIONS
+

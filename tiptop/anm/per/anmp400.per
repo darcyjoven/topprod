@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmp400")
+VBox vb2
+Grid gr4090
+{
+ <G group01                                                                                               >
+ [dummy01                                  ]
+  Cate QBE            [npp00               ]  Doc# QBE            [npp01               ]
+  Serial No. QBE      [npp011              ]  Date QBE            [npp02               ]
+ <                                                                                                        >
+
+}
+END -- gr4090
+Group g01(text="INPUT")
+HBox hb3
+Grid gr4091
+{
+ Enter user QBE              [b_user    ]-[e_user    ]
+ General Ledger Plant No.    [p_plant   ]
+ General Ledger No.          [p_bookno  ]
+ General Ledger Voucher Type [gl_no               ]
+ General Ledger No2.         [p_bookno2 ]
+ General LedgerVoucher Type2 [gl_no2              ]
+ General Ledger Voucher Date [gl_date         |dummy04              ]
+}
+END -- gr4091
+Grid gr4092
+{
+ [gl_tran              ]
+ <G group02                       >
+ [gl_seq                    ]
+ [                          ]
+ [                          ]
+ <                                >
+
+}
+END -- gr4092
+END -- hb3
+END -- g01
+Grid gr4093
+{
+[dummy02                                                                                                  ]
+[dummy03                                                                                                  ]
+
+}
+END -- gr4093
+Grid gr4094
+{
+  glno  [chr2                                                                                            ]
+
+[g_bgjob                                                      ]
+}
+END -- gr4094
+END -- vb2
+END -- anmp400
+
+TABLES
+npp_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Label dummy01:dummy01, text="Module QBE:(NM)";
+Edit npp00=npp_file.npp00, tabIndex=1, comment="1.A/P  2.A/R  3.CIB  6.Pay Interest 7.Pay Principal 16.Cur.Financing 17.Term Loan 18.Temp Est 19.Purchase 20.Cover";
+ButtonEdit npp01=npp_file.npp01, action=controlp, tabIndex=2, image="ZOOM";
+Edit npp011=npp_file.npp011, tabIndex=3;
+DateEdit npp02=npp_file.npp02, tabIndex=4;
+Edit b_user=formonly.b_user type CHAR, tabIndex=5, not null, required;
+Edit e_user=formonly.e_user type CHAR, tabIndex=6, not null, required;
+Edit p_plant=formonly.p_plant type VARCHAR, tabIndex=7, not null, required;
+Edit p_bookno=formonly.p_bookno type VARCHAR, tabIndex=8, not null, required;
+ButtonEdit gl_no=formonly.gl_no type VARCHAR, action=controlp, tabIndex=9, not null, required, image="zoom", comment="Qry Documents";
+Edit p_bookno2=formonly.p_bookno2 type VARCHAR, tabIndex=10, not null, required;
+ButtonEdit gl_no2=formonly.gl_no2 type VARCHAR, action=controlp, tabIndex=11, not null, required, image="zoom", comment="Qry Documents";
+DateEdit gl_date=formonly.gl_date type DATE, tabIndex=12;
+Label dummy04:dummy04, text="(by original entry date if blank)";
+CheckBox gl_tran=formonly.gl_tran type CHAR, tabIndex=13, text="Carry Memo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Voucher Summarizing Method";
+RadioGroup gl_seq=formonly.gl_seq type CHAR, tabIndex=14, not null, required, items=(("0", "All"),("1", "By Document Number"),("2", "By Date"));
+Label dummy02:dummy02, text="NOTE1:Transfer only Confirmed Note to G/L Voucher";
+Label dummy03:dummy03, text="NOTE2:If you want to QBE the Doc.No. which category is 18,please add 4 codes year and 2 codes month after the original Doc. No.For example:AAA-09010001200901";
+Edit chr2=formonly.chr2 type CHAR, tabIndex=16, noEntry;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=15, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(npp_file.npp00,npp_file.npp01,npp_file.npp011,npp_file.npp02,formonly.b_user,formonly.e_user,formonly.p_plant,formonly.p_bookno,formonly.gl_no,formonly.p_bookno2,formonly.gl_no2,formonly.gl_date,formonly.gl_tran,formonly.gl_seq,formonly.chr2,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

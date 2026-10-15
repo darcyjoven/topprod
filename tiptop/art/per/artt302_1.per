@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt302_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artt302_1")
+VBox vb2
+Folder pc2
+Page Page2(text=%"Work Plant")
+Table s_raq
+{
+[raq04      |raq04_de|raq05   |acti    |raq06   |raq07   ]
+[raq04      |raq04_de|raq05   |acti    |raq06   |raq07   ]
+[raq04      |raq04_de|raq05   |acti    |raq06   |raq07   ]
+[raq04      |raq04_de|raq05   |acti    |raq06   |raq07   ]
+[raq04      |raq04_de|raq05   |acti    |raq06   |raq07   ]
+
+}
+END -- s_raq
+END -- Page2
+END -- pc2
+Folder vendor
+Page Page1(text=%"vendor")
+Table Table1
+{
+[raq08   |raqacti ]
+[raq08   |raqacti ]
+[raq08   |raqacti ]
+[raq08   |raqacti ]
+[raq08   |raqacti ]
+}
+END -- Table1
+END -- Page1
+END -- vendor
+Grid gr16
+{
+
+ --- Items[cn2 ] --------
+
+}
+END -- gr16
+END -- vb2
+END -- Form2
+
+TABLES
+raq_file
+ATTRIBUTES
+ButtonEdit raq04=raq_file.raq04, action=controlp, tabIndex=1, title="raq04", not null, required, image="zoom.png";
+Edit raq04_de=formonly.raq04_desc type CHAR, tabIndex=2, title="raq04_desc", noEntry;
+CheckBox raq05=raq_file.raq05, tabIndex=3, default = "Y", title="raq05", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox acti=formonly.acti type VARCHAR, tabIndex=4, default = "Y", title="acti", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit raq06=raq_file.raq06, tabIndex=6, title=%"raq06";
+Edit raq07=raq_file.raq07, tabIndex=7, title=%"raq07";
+ButtonEdit raq08=raq_file.raq08, action=controlp, tabIndex=8, title=%"raq08", image="zoom.png";
+CheckBox raqacti=raq_file.raqacti, tabIndex=9, title="raqacti", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_raq(raq_file.raq04,formonly.raq04_desc,raq_file.raq05,formonly.acti,raq_file.raq06,raq_file.raq07)
+SCREEN RECORD Undefined(formonly.cn2)
+SCREEN RECORD s_raq2(raq_file.raq08,raq_file.raqacti)
+END -- INSTRUCTIONS
+

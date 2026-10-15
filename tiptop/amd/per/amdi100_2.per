@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdi100_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Detail")
+VBox VBox1
+Folder pc687
+Page page01(text="Page01")
+VBox VBox2
+Table s_amf
+{
+[amf03       |amf022          |amf04               |amf06                         |amf07    ]
+[amf03       |amf022          |amf04               |amf06                         |amf07    ]
+[amf03       |amf022          |amf04               |amf06                         |amf07    ]
+[amf03       |amf022          |amf04               |amf06                         |amf07    ]
+[amf03       |amf022          |amf04               |amf06                         |amf07    ]
+[amf03       |amf022          |amf04               |amf06                         |amf07    ]
+[amf03       |amf022          |amf04               |amf06                         |amf07    ]
+[amf03       |amf022          |amf04               |amf06                         |amf07    ]
+[amf03       |amf022          |amf04               |amf06                         |amf07    ]
+[amf03       |amf022          |amf04               |amf06                         |amf07    ]
+
+}
+END -- s_amf
+END -- VBox2
+END -- page01
+END -- pc687
+Grid gr3674
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3674
+END -- VBox1
+END -- amdi100_2
+
+TABLES
+amf_file
+ATTRIBUTES
+Edit amf03=amf_file.amf03, tabIndex=1, title="Serial No.", not null, required;
+Edit amf022=amf_file.amf022, tabIndex=2, title="Reference Doc#";
+Edit amf04=amf_file.amf04, tabIndex=3, title="Product No.";
+Edit amf06=amf_file.amf06, tabIndex=4, title="Part Name Specification", not null, required;
+Edit amf07=amf_file.amf07, tabIndex=5, title="Qty";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_amf(amf_file.amf03,amf_file.amf022,amf_file.amf04,amf_file.amf06,amf_file.amf07)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

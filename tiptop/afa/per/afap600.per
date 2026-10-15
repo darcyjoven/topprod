@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afap600")
+VBox VBox1
+Folder pc366
+Page page01(text="Main")
+Grid gr1935
+{
+ <G group01                                                               >
+  Asset Property      [faj09               ]
+  Asset Category      [faj04               ]
+  Serial No.          [faj01               ]
+  Property No.        [faj02               ]
+  Property Style      [faj021              ]
+  Keeper              [faj19               ]
+  Keeping Department  [faj20               ]
+  Storing Location    [faj21               ]
+  Date Recorded       [faj26               ]
+ <                                                                        >
+ <G group02                                                               >
+  Enter Inv.Taking No [lot       ]
+ [qty                                                            ]
+ <                                                                        >
+ <G group03                                                               >
+  [s1                   ][s2                    ][s3                     ]
+  [s4                   ][s5                    ][s6                     ]
+                                                 [s7                     ]
+ <                                                                        >
+
+}
+END -- gr1935
+END -- page01
+END -- pc366
+Grid gr1936
+{
+[g_bgjob                                                       ]
+
+}
+END -- gr1936
+END -- VBox1
+END -- afap600
+
+TABLES
+faj_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ComboBox faj09=faj_file.faj09, tabIndex=1, queryEditable, items=(("1", "Tangible"),("2", "Intangible Asset"),("3", "Land"),("4", "Dim.Asset"),("5", "Exp"));
+Edit faj04=faj_file.faj04, tabIndex=2;
+Edit faj01=faj_file.faj01, tabIndex=3;
+Edit faj02=faj_file.faj02, tabIndex=4;
+Edit faj021=faj_file.faj021, tabIndex=5;
+Edit faj19=faj_file.faj19, tabIndex=6;
+Edit faj20=faj_file.faj20, tabIndex=7;
+Edit faj21=faj_file.faj21, tabIndex=8;
+DateEdit faj26=faj_file.faj26, tabIndex=9;
+Group group02:group02, text="Input";
+Edit lot=formonly.lot type VARCHAR, tabIndex=10;
+CheckBox qty=formonly.qty type CHAR, tabIndex=11, text="Inventory Qty is Default Book Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=12, queryEditable, items=(("1", "Asset Property"),("2", "Asset Category"),("3", "Serial No."),("4", "Property No."),("5", "Property Style"),("6", "Keeper"),("7", "Keeping Department"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=13, queryEditable, items=(("1", "Asset Property"),("2", "Asset Category"),("3", "Serial No."),("4", "Property No."),("5", "Property Style"),("6", "Keeper"),("7", "Keeping Department"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=14, queryEditable, items=(("1", "Asset Property"),("2", "Asset Category"),("3", "Serial No."),("4", "Property No."),("5", "Property Style"),("6", "Keeper"),("7", "Keeping Department"));
+ComboBox s4=formonly.s4 type CHAR, tabIndex=15, queryEditable, items=(("1", "Asset Property"),("2", "Asset Category"),("3", "Serial No."),("4", "Property No."),("5", "Property Style"),("6", "Keeper"),("7", "Keeping Department"));
+ComboBox s5=formonly.s5 type CHAR, tabIndex=16, queryEditable, items=(("1", "Asset Property"),("2", "Asset Category"),("3", "Serial No."),("4", "Property No."),("5", "Property Style"),("6", "Keeper"),("7", "Keeping Department"));
+ComboBox s6=formonly.s6 type CHAR, tabIndex=17, queryEditable, items=(("1", "Asset Property"),("2", "Asset Category"),("3", "Serial No."),("4", "Property No."),("5", "Property Style"),("6", "Keeper"),("7", "Keeping Department"));
+ComboBox s7=formonly.s7 type CHAR, tabIndex=18, queryEditable, items=(("1", "Asset Property"),("2", "Asset Category"),("3", "Serial No."),("4", "Property No."),("5", "Property Style"),("6", "Keeper"),("7", "Keeping Department"));
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=19, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(faj_file.faj09,faj_file.faj04,faj_file.faj01,faj_file.faj02,faj_file.faj021,faj_file.faj19,faj_file.faj20,faj_file.faj21,faj_file.faj26,formonly.lot,formonly.qty,formonly.s1,formonly.s2,formonly.s3,formonly.s4,formonly.s5,formonly.s6,formonly.s7,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artp410.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artp410")
+VBox vb6
+Group gb3(text="Replenish Suggestion")
+Table s_rua
+{
+[a       |ruaplant|ruaplan1|rua01   |rua02   |rua03   |rua03_de|rua04   |rua05   |rua06   |ruaconf |ruacond|ruaconu  |ruaconu_|ruacrat   |ruadate |ruagrup   |ruamodu    |ruauser |ruaacti ]
+[a       |ruaplant|ruaplan1|rua01   |rua02   |rua03   |rua03_de|rua04   |rua05   |rua06   |ruaconf |ruacond|ruaconu  |ruaconu_|ruacrat   |ruadate |ruagrup   |ruamodu    |ruauser |ruaacti ]
+[a       |ruaplant|ruaplan1|rua01   |rua02   |rua03   |rua03_de|rua04   |rua05   |rua06   |ruaconf |ruacond|ruaconu  |ruaconu_|ruacrat   |ruadate |ruagrup   |ruamodu    |ruauser |ruaacti ]
+[a       |ruaplant|ruaplan1|rua01   |rua02   |rua03   |rua03_de|rua04   |rua05   |rua06   |ruaconf |ruacond|ruaconu  |ruaconu_|ruacrat   |ruadate |ruagrup   |ruamodu    |ruauser |ruaacti ]
+[a       |ruaplant|ruaplan1|rua01   |rua02   |rua03   |rua03_de|rua04   |rua05   |rua06   |ruaconf |ruacond|ruaconu  |ruaconu_|ruacrat   |ruadate |ruagrup   |ruamodu    |ruauser |ruaacti ]
+[a       |ruaplant|ruaplan1|rua01   |rua02   |rua03   |rua03_de|rua04   |rua05   |rua06   |ruaconf |ruacond|ruaconu  |ruaconu_|ruacrat   |ruadate |ruagrup   |ruamodu    |ruauser |ruaacti ]
+[a       |ruaplant|ruaplan1|rua01   |rua02   |rua03   |rua03_de|rua04   |rua05   |rua06   |ruaconf |ruacond|ruaconu  |ruaconu_|ruacrat   |ruadate |ruagrup   |ruamodu    |ruauser |ruaacti ]
+[a       |ruaplant|ruaplan1|rua01   |rua02   |rua03   |rua03_de|rua04   |rua05   |rua06   |ruaconf |ruacond|ruaconu  |ruaconu_|ruacrat   |ruadate |ruagrup   |ruamodu    |ruauser |ruaacti ]
+[a       |ruaplant|ruaplan1|rua01   |rua02   |rua03   |rua03_de|rua04   |rua05   |rua06   |ruaconf |ruacond|ruaconu  |ruaconu_|ruacrat   |ruadate |ruagrup   |ruamodu    |ruauser |ruaacti ]
+
+}
+END -- s_rua
+END -- gb3
+Group gb4(text="Replenish Suggestion Details")
+Table s_rub
+{
+[rub02   |rub03   |rub03_de|rub04       |rub04_de|rub05   |rub06   |rub07   |rub08   |rub09   |rub10   ]
+[rub02   |rub03   |rub03_de|rub04       |rub04_de|rub05   |rub06   |rub07   |rub08   |rub09   |rub10   ]
+[rub02   |rub03   |rub03_de|rub04       |rub04_de|rub05   |rub06   |rub07   |rub08   |rub09   |rub10   ]
+[rub02   |rub03   |rub03_de|rub04       |rub04_de|rub05   |rub06   |rub07   |rub08   |rub09   |rub10   ]
+[rub02   |rub03   |rub03_de|rub04       |rub04_de|rub05   |rub06   |rub07   |rub08   |rub09   |rub10   ]
+[rub02   |rub03   |rub03_de|rub04       |rub04_de|rub05   |rub06   |rub07   |rub08   |rub09   |rub10   ]
+[rub02   |rub03   |rub03_de|rub04       |rub04_de|rub05   |rub06   |rub07   |rub08   |rub09   |rub10   ]
+[rub02   |rub03   |rub03_de|rub04       |rub04_de|rub05   |rub06   |rub07   |rub08   |rub09   |rub10   ]
+[rub02   |rub03   |rub03_de|rub04       |rub04_de|rub05   |rub06   |rub07   |rub08   |rub09   |rub10   ]
+[rub02   |rub03   |rub03_de|rub04       |rub04_de|rub05   |rub06   |rub07   |rub08   |rub09   |rub10   ]
+
+}
+END -- s_rub
+END -- gb4
+Grid gr4
+{
+ [view1    |return   ]
+
+
+}
+END -- gr4
+Grid gr5
+{
+  -----------Rows[idx   ]/[cnt    ] ---- Items[cn2     ] ------------
+
+
+}
+END -- gr5
+END -- vb6
+END -- Form2
+
+TABLES
+rub_file,
+rua_file
+ATTRIBUTES
+CheckBox a=formonly.a type CHAR, tabIndex=15, default = "N", title="Check", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ruaplant=rua_file.ruaplant, action=controlp, tabIndex=16, title="Institution", not null, image="zoom";
+Edit ruaplan1=formonly.ruaplant_desc type CHAR, tabIndex=17, title="Institution Name";
+Edit rua01=rua_file.rua01, tabIndex=18, title="Replenish Suggestion No.";
+DateEdit rua02=rua_file.rua02, tabIndex=19, title="Suggested Date";
+ButtonEdit rua03=rua_file.rua03, tabIndex=20, title="Suggested By", image="zoom";
+Edit rua03_de=formonly.rua03_desc type CHAR, tabIndex=21, title="Name", noEntry;
+Edit rua04=rua_file.rua04, tabIndex=22, title="Suggested Coefficient %";
+Edit rua05=rua_file.rua05, tabIndex=23, title="Memo";
+Edit rua06=rua_file.rua06, tabIndex=24, title="PR No.";
+ComboBox ruaconf=rua_file.ruaconf, tabIndex=25, title="Approval Code", items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+DateEdit ruacond=rua_file.ruacond, tabIndex=26, title="Approval Date";
+ButtonEdit ruaconu=rua_file.ruaconu, tabIndex=27, title="Approver", image="zoom";
+Edit ruaconu_=formonly.ruaconu_desc type VARCHAR, tabIndex=28, title="Name", noEntry;
+Edit ruacrat=rua_file.ruacrat, tabIndex=29, title="Created Date";
+Edit ruadate=rua_file.ruadate, tabIndex=30, title="Last Modified Date";
+Edit ruagrup=rua_file.ruagrup, tabIndex=31, title="Data Owner (Dept)";
+Edit ruamodu=rua_file.ruamodu, tabIndex=32, title="Modified by";
+Edit ruauser=rua_file.ruauser, tabIndex=33, title="Created By";
+Edit ruaacti=rua_file.ruaacti, tabIndex=34, default = "Y", title="Data Valid Code", noEntry;
+Edit rub02=rub_file.rub02, tabIndex=1, title="Line No.", not null;
+Edit rub03=rub_file.rub03, tabIndex=2, title="Item No.";
+Edit rub03_de=formonly.rub03_desc type VARCHAR, tabIndex=3, title="Item Name", noEntry;
+Edit rub04=rub_file.rub04, tabIndex=4, title="Inventory Unit";
+Edit rub04_de=formonly.rub04_desc type CHAR, tabIndex=5, title="Unit Name", noEntry;
+Edit rub05=rub_file.rub05, tabIndex=6, title="Weekly Sales Volume";
+Edit rub06=rub_file.rub06, tabIndex=7, title="Stock";
+Edit rub07=rub_file.rub07, tabIndex=8, title="Available Stock";
+Edit rub08=rub_file.rub08, tabIndex=9, title="In-transit Qty";
+Edit rub09=rub_file.rub09, tabIndex=10, title="Suggested Replenishment";
+Edit rub10=rub_file.rub10, tabIndex=11, title="PR Qty";
+Button view1:view1, text="view1";
+Button return:return, text="return";
+Edit idx=formonly.idx type SMALLINT, tabIndex=12;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rub(rub_file.rub02,rub_file.rub03,formonly.rub03_desc,rub_file.rub04,formonly.rub04_desc,rub_file.rub05,rub_file.rub06,rub_file.rub07,rub_file.rub08,rub_file.rub09,rub_file.rub10)
+SCREEN RECORD s_rua(formonly.a,rua_file.ruaplant,formonly.ruaplant_desc,rua_file.rua01,rua_file.rua02,rua_file.rua03,formonly.rua03_desc,rua_file.rua04,rua_file.rua05,rua_file.rua06,rua_file.ruaconf,rua_file.ruacond,rua_file.ruaconu,formonly.ruaconu_desc,rua_file.ruacrat,rua_file.ruadate,rua_file.ruagrup,rua_file.ruamodu,rua_file.ruauser,rua_file.ruaacti)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

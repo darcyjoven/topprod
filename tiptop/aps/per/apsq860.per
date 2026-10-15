@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq860.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsq860")
+VBox vb4
+Folder pc837
+Page page01(text="Page01")
+Table s_voq
+{
+[voq01     |voq02     |voq05     |voq07     |voq04     |voq10|voq03     |pmk01     |voq06     |voq09     |voq08     ]
+[voq01     |voq02     |voq05     |voq07     |voq04     |voq10|voq03     |pmk01     |voq06     |voq09     |voq08     ]
+[voq01     |voq02     |voq05     |voq07     |voq04     |voq10|voq03     |pmk01     |voq06     |voq09     |voq08     ]
+[voq01     |voq02     |voq05     |voq07     |voq04     |voq10|voq03     |pmk01     |voq06     |voq09     |voq08     ]
+[voq01     |voq02     |voq05     |voq07     |voq04     |voq10|voq03     |pmk01     |voq06     |voq09     |voq08     ]
+[voq01     |voq02     |voq05     |voq07     |voq04     |voq10|voq03     |pmk01     |voq06     |voq09     |voq08     ]
+[voq01     |voq02     |voq05     |voq07     |voq04     |voq10|voq03     |pmk01     |voq06     |voq09     |voq08     ]
+[voq01     |voq02     |voq05     |voq07     |voq04     |voq10|voq03     |pmk01     |voq06     |voq09     |voq08     ]
+[voq01     |voq02     |voq05     |voq07     |voq04     |voq10|voq03     |pmk01     |voq06     |voq09     |voq08     ]
+[voq01     |voq02     |voq05     |voq07     |voq04     |voq10|voq03     |pmk01     |voq06     |voq09     |voq08     ]
+
+}
+END -- s_voq
+END -- page01
+END -- pc837
+Grid gr4626
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4626
+END -- vb4
+END -- apsq860
+
+TABLES
+pmk_file,
+voq_file
+ATTRIBUTES
+ButtonEdit voq01=voq_file.voq01, action=controlp, tabIndex=1, title="voq01", image="zoom", comment="<^P> Query Area ";
+ButtonEdit voq02=voq_file.voq02, action=controlp, tabIndex=4, title=%"voq02", image="zoom";
+ButtonEdit voq05=voq_file.voq05, action=controlp, tabIndex=5, title=%"voq05", image="zoom";
+DateEdit voq07=voq_file.voq07, tabIndex=6, title=%"voq07";
+ComboBox voq04=voq_file.voq04, tabIndex=7, title=%"voq04", items=(("M", "M"),("P", "P"));
+CheckBox voq10=voq_file.voq10, tabIndex=2, title="voq10";
+ButtonEdit voq03=voq_file.voq03, action=controlp, tabIndex=9, title=%"voq03", image="zoom";
+Edit pmk01=pmk_file.pmk01, tabIndex=10, title=%"pmk01";
+DateEdit voq06=voq_file.voq06, tabIndex=11, title=%"voq06";
+ButtonEdit voq09=voq_file.voq09, action=controlp, tabIndex=12, title=%"voq09", image="zoom";
+Edit voq08=voq_file.voq08, tabIndex=8, title=%"voq08";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_voq(voq_file.voq01,voq_file.voq02,voq_file.voq05,voq_file.voq07,voq_file.voq04,voq_file.voq10,voq_file.voq03,pmk_file.pmk01,voq_file.voq06,voq_file.voq09,voq_file.voq08)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

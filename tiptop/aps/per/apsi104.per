@@ -1,0 +1,64 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsi104.per created Wed Dec 31 05:29:34 2008
+-- File created from apsi104.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsi104")
+-- TABLE
+-- PAGE
+-- GRID
+-- PAGE
+-- FOLDER
+-- LAYOUT
+-- 
+
+  FOLDER pc1015
+    PAGE page01( TEXT="Page01")
+      TABLE   s_aps
+      {
+      [aa0            |aa1             |aa2              |aa3     |aa4                        |aa5                       ]
+      [aa0            |aa1             |aa2              |aa3     |aa4                        |aa5                       ]
+      [aa0            |aa1             |aa2              |aa3     |aa4                        |aa5                       ]
+      [aa0            |aa1             |aa2              |aa3     |aa4                        |aa5                       ]
+      [aa0            |aa1             |aa2              |aa3     |aa4                        |aa5                       ]
+      [aa0            |aa1             |aa2              |aa3     |aa4                        |aa5                       ]
+      [aa0            |aa1             |aa2              |aa3     |aa4                        |aa5                       ]
+      [aa0            |aa1             |aa2              |aa3     |aa4                        |aa5                       ]
+      [aa0            |aa1             |aa2              |aa3     |aa4                        |aa5                       ]
+      [aa0            |aa1             |aa2              |aa3     |aa4                        |aa5                       ]
+      }
+      END -- TABLE
+    END -- PAGE
+    PAGE info( TEXT="Info")
+      GRID gr5348
+      {
+      <G grpinfo                     >
+       Detail Counts      [aa6       ]
+      <                              >
+
+
+      }
+      END -- GRID
+    END -- PAGE
+  END -- FOLDER
+END
+TABLES aps_sae
+
+ATTRIBUTES
+  EDIT aa0=aps_sae.wm_id, NOT NULL, REQUIRED, TABINDEX=1, TITLE="Work Model No.";
+  EDIT aa1=aps_sae.st_t, TABINDEX=2, TITLE="Start Time(Sec)";
+  EDIT aa2=aps_sae.ed_t, TABINDEX=3, TITLE="Ending Time(Sec)";
+  COMBOBOX aa3=aps_sae.wk_type, COMMENT="0:Not Work Time 1:Work Time", NOT NULL, REQUIRED, QUERYEDITABLE, TABINDEX=4, TITLE="Type", ITEMS=(("0","Not Work Time"),("1","Time"));
+  EDIT aa4=aps_sae.wm_name, SCROLL, TABINDEX=5, TITLE="Model Name";
+  EDIT aa5=aps_sae.wm_des, SCROLL, TABINDEX=6, TITLE="Model Description";
+  GROUP grpinfo : grpinfo;
+  EDIT aa6=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=7;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_aps (aps_sae.wm_id, aps_sae.st_t, aps_sae.ed_t, aps_sae.wk_type, aps_sae.wm_name, aps_sae.wm_des)
+END

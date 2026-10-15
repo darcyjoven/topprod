@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt300_w.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Direct Debit")
+VBox vb2
+Grid grid01
+{
+ <G group01                   > <G group02                   >
+  [oma54t                     ]  [oma56t                     ]
+
+ <                            > <                            >
+}
+END -- grid01
+Table s_oob
+{
+[oob0|oob03|oob04  |oob04_d   |oob17       |oob18      |oob06           |oob19     |oob15    |oob11          |oob13               |oob14                 |oob07|oob08     |oob09    |oob10     |oob22     |oob12                  ]
+[oob0|oob03|oob04  |oob04_d   |oob17       |oob18      |oob06           |oob19     |oob15    |oob11          |oob13               |oob14                 |oob07|oob08     |oob09    |oob10     |oob22     |oob12                  ]
+[oob0|oob03|oob04  |oob04_d   |oob17       |oob18      |oob06           |oob19     |oob15    |oob11          |oob13               |oob14                 |oob07|oob08     |oob09    |oob10     |oob22     |oob12                  ]
+[oob0|oob03|oob04  |oob04_d   |oob17       |oob18      |oob06           |oob19     |oob15    |oob11          |oob13               |oob14                 |oob07|oob08     |oob09    |oob10     |oob22     |oob12                  ]
+[oob0|oob03|oob04  |oob04_d   |oob17       |oob18      |oob06           |oob19     |oob15    |oob11          |oob13               |oob14                 |oob07|oob08     |oob09    |oob10     |oob22     |oob12                  ]
+[oob0|oob03|oob04  |oob04_d   |oob17       |oob18      |oob06           |oob19     |oob15    |oob11          |oob13               |oob14                 |oob07|oob08     |oob09    |oob10     |oob22     |oob12                  ]
+[oob0|oob03|oob04  |oob04_d   |oob17       |oob18      |oob06           |oob19     |oob15    |oob11          |oob13               |oob14                 |oob07|oob08     |oob09    |oob10     |oob22     |oob12                  ]
+[oob0|oob03|oob04  |oob04_d   |oob17       |oob18      |oob06           |oob19     |oob15    |oob11          |oob13               |oob14                 |oob07|oob08     |oob09    |oob10     |oob22     |oob12                  ]
+[oob0|oob03|oob04  |oob04_d   |oob17       |oob18      |oob06           |oob19     |oob15    |oob11          |oob13               |oob14                 |oob07|oob08     |oob09    |oob10     |oob22     |oob12                  ]
+[oob0|oob03|oob04  |oob04_d   |oob17       |oob18      |oob06           |oob19     |oob15    |oob11          |oob13               |oob14                 |oob07|oob08     |oob09    |oob10     |oob22     |oob12                  ]
+}
+END -- s_oob
+Grid gr441
+{
+                Original Currency Debit      [ooa31d              ]    Original Currency Credit    [ooa31c              ]     Original Currency Difference [g_ooa31_diff        ]
+                Home Currency Debit          [ooa32d              ]    Home Currency Credit        [ooa32c              ]     Home Currency Difference     [g_ooa32_diff        ]
+
+
+}
+END -- gr441
+END -- vb2
+END -- axrt300_w
+
+TABLES
+oob_file,
+ooa_file
+ATTRIBUTES
+Group group01:group01, text="F.C.";
+Edit oma54t=formonly.oma54t type CHAR, tabIndex=1, noEntry;
+Group group02:group02, text="H.C.";
+Edit oma56t=formonly.oma56t type CHAR, tabIndex=2, noEntry;
+Edit oob0=oob_file.oob02, tabIndex=3, title="Ln", not null, required, comment="<^T>Qry D/W Transaction Code";
+ComboBox oob03=oob_file.oob03, tabIndex=4, title="D/C", noEntry, not null, required, queryEditable, comment="1:Debit, 2:Credit", items=(("1", %"Debit"),("2", %"Credit"));
+ComboBox oob04=oob_file.oob04, tabIndex=5, title="Cate Desc.", noEntry, items=(("2", "Text"),("3", "Text"));
+Edit oob04_d=formonly.oob04_d type CHAR, tabIndex=6, noEntry;
+ButtonEdit oob17=oob_file.oob17, action=controlp, tabIndex=7, title="Bank", image="zoom", comment="<^P> Qry Bank    ";
+ButtonEdit oob18=oob_file.oob18, action=controlp, tabIndex=8, title="Bank-C", image="zoom", comment="<^P> Qry Bank AR  ";
+ButtonEdit oob06=oob_file.oob06, action=controlp, tabIndex=9, title="Reference Doc #", noEntry, image="zoom.png", comment="<^P>Qry Details <^Y>Enter Related Data";
+Edit oob19=oob_file.oob19, tabIndex=10, title="Line No.";
+Edit oob15=oob_file.oob15, tabIndex=11, title="Line No.", noEntry;
+ButtonEdit oob11=oob_file.oob11, action=controlp, tabIndex=12, title="Account Title", not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit oob13=oob_file.oob13, action=controlp, tabIndex=13, title="Original Department", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oob14=oob_file.oob14, tabIndex=14, title="2nd Reference Doc No.";
+Edit oob07=oob_file.oob07, tabIndex=15, title="Curr", not null, required;
+Edit oob08=oob_file.oob08, tabIndex=16, title="ExRt", not null, required;
+Edit oob09=oob_file.oob09, tabIndex=17, title="F.C Payt", not null, required;
+Edit oob10=oob_file.oob10, tabIndex=18, title="H.C Payt", not null, required;
+Edit oob22=oob_file.oob22, tabIndex=26, title="Paycnt", noEntry;
+Edit oob12=oob_file.oob12, tabIndex=19, title="Memo";
+Edit ooa31d=ooa_file.ooa31d, tabIndex=20, noEntry, not null, required;
+Edit ooa31c=ooa_file.ooa31c, tabIndex=21, noEntry, not null, required;
+Edit g_ooa31_diff=formonly.g_ooa31_diff type CHAR, tabIndex=22, noEntry;
+Edit ooa32d=ooa_file.ooa32d, tabIndex=23, noEntry, not null, required;
+Edit ooa32c=ooa_file.ooa32c, tabIndex=24, noEntry, not null, required;
+Edit g_ooa32_diff=formonly.g_ooa32_diff type CHAR, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oob(oob_file.oob02,oob_file.oob03,oob_file.oob04,formonly.oob04_d,oob_file.oob17,oob_file.oob18,oob_file.oob06,oob_file.oob19,oob_file.oob15,oob_file.oob11,oob_file.oob13,oob_file.oob14,oob_file.oob07,oob_file.oob08,oob_file.oob09,oob_file.oob10,oob_file.oob22,oob_file.oob12)
+SCREEN RECORD Undefined(formonly.oma54t,formonly.oma56t,ooa_file.ooa31d,ooa_file.ooa31c,formonly.g_ooa31_diff,ooa_file.ooa32d,ooa_file.ooa32c,formonly.g_ooa32_diff)
+END -- INSTRUCTIONS
+

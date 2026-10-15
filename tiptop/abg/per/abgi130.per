@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi130")
+VBox vb3
+Folder pc86
+Page page01(text="Main")
+Table s_bgx
+{
+[bgx01          |bgx02           |bgx03       |bgs02       |bgx04               |bgxac]
+[bgx01          |bgx02           |bgx03       |bgs02       |bgx04               |bgxac]
+[bgx01          |bgx02           |bgx03       |bgs02       |bgx04               |bgxac]
+[bgx01          |bgx02           |bgx03       |bgs02       |bgx04               |bgxac]
+[bgx01          |bgx02           |bgx03       |bgs02       |bgx04               |bgxac]
+[bgx01          |bgx02           |bgx03       |bgs02       |bgx04               |bgxac]
+[bgx01          |bgx02           |bgx03       |bgs02       |bgx04               |bgxac]
+[bgx01          |bgx02           |bgx03       |bgs02       |bgx04               |bgxac]
+[bgx01          |bgx02           |bgx03       |bgs02       |bgx04               |bgxac]
+[bgx01          |bgx02           |bgx03       |bgs02       |bgx04               |bgxac]
+
+}
+END -- s_bgx
+END -- page01
+END -- pc86
+Grid gr5
+{
+---------- Rows[cn2   ] ----------
+
+}
+END -- gr5
+END -- vb3
+END -- abgi130
+
+TABLES
+bgx_file
+ATTRIBUTES
+ButtonEdit bgx01=bgx_file.bgx01, action=controlp, tabIndex=1, title="Department No.", image="zoom", comment="<^P>Qry Departement No.";
+ComboBox bgx02=bgx_file.bgx02, tabIndex=2, title="Direct/Indirect", not null, required, queryEditable, items=(("1", %"Direct"),("2", %"Indirect"));
+ButtonEdit bgx03=bgx_file.bgx03, action=controlp, tabIndex=3, title="Expense No.", image="zoom", comment="<^P>Qry Expense No.";
+Edit bgs02=formonly.bgs02 type VARCHAR, tabIndex=4, title="Description", noEntry;
+ButtonEdit bgx04=bgx_file.bgx04, action=controlp, tabIndex=5, title="Account Code", not null, required, image="zoom", comment="<^P>Open Window to Qry Acct";
+CheckBox bgxac=bgx_file.bgxacti, tabIndex=6, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgx(bgx_file.bgx01,bgx_file.bgx02,bgx_file.bgx03,formonly.bgs02,bgx_file.bgx04,bgx_file.bgxacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

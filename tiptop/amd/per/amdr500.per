@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdr500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amdr500")
+VBox VBox1
+Grid gr3725
+{
+ <G group01                                                              >
+  Accounts No.        [apa01               ]
+  Account Date        [apa02               ]
+  Format No.          [apa171              ]
+  Deduction No.       [apa17               ]
+  Tax Type            [apa172              ]
+  Dept No.            [apa22               ]
+  Accounts Property   [apa00               ]
+  Entered By          [apauser             ]
+ <                                                                       >
+
+}
+END -- gr3725
+Group group02(text="INPUT")
+VBox VBox2
+Grid gr3727
+{
+ <G group04                       ><G group06                              >
+  [sure                          ] [c                             ]
+ <                                ><                                       >
+
+
+}
+END -- gr3727
+Grid gr3728
+{
+[b                                       ]
+
+
+}
+END -- gr3728
+END -- VBox2
+END -- group02
+Grid gr3729
+{
+[more                           ]
+
+}
+END -- gr3729
+END -- VBox1
+END -- amdr500
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit apa01=formonly.apa01 type CHAR, tabIndex=1, upShift;
+DateEdit apa02=formonly.apa02 type DATE, tabIndex=2;
+Edit apa171=formonly.apa171 type CHAR, tabIndex=3;
+Edit apa17=formonly.apa17 type CHAR, tabIndex=4;
+Edit apa172=formonly.apa172 type CHAR, tabIndex=5, upShift, comment=" 1.Taxable 2.0-Tax Rate 3.Exempted D.Void and Blank  ";
+Edit apa22=formonly.apa22 type CHAR, tabIndex=6;
+Edit apa00=formonly.apa00 type CHAR, tabIndex=7;
+Edit apauser=formonly.apauser type CHAR, tabIndex=8;
+Group group04:group04, text="Data Option";
+RadioGroup sure=formonly.sure type VARCHAR, tabIndex=17, items=(("Y", "Confirmed"),("N", "UnConfirmed"));
+Group group06:group06, text="Data Option";
+RadioGroup c=formonly.c type VARCHAR, tabIndex=18, items=(("1", "Under Tax 500 DR(contain)"),("2", "Tax 500 DR above"),("3", "All "));
+CheckBox b=formonly.b type CHAR, tabIndex=19, text="Print Error Data Only?  ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=20, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apa01,formonly.apa02,formonly.apa171,formonly.apa17,formonly.apa172,formonly.apa22,formonly.apa00,formonly.apauser,formonly.sure,formonly.c,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt500")
+VBox vb5
+Folder pc3
+Page main(text=%"main")
+Grid gr7
+{
+
+         project No.    [pjn01                  ]       [pja02                    ]
+
+         Net No.        [pjj01                  ]       [pjj02                    ]
+
+
+}
+END -- gr7
+END -- main
+END -- pc3
+Table tb4
+{
+[pjn02       |pjn03        |pjn04        |pjn05        |pjb03       |pjn06       |pjn07      |pjn08        |pjn09         |pjnacti         ]
+[pjn02       |pjn03        |pjn04        |pjn05        |pjb03       |pjn06       |pjn07      |pjn08        |pjn09         |pjnacti         ]
+[pjn02       |pjn03        |pjn04        |pjn05        |pjb03       |pjn06       |pjn07      |pjn08        |pjn09         |pjnacti         ]
+[pjn02       |pjn03        |pjn04        |pjn05        |pjb03       |pjn06       |pjn07      |pjn08        |pjn09         |pjnacti         ]
+[pjn02       |pjn03        |pjn04        |pjn05        |pjb03       |pjn06       |pjn07      |pjn08        |pjn09         |pjnacti         ]
+[pjn02       |pjn03        |pjn04        |pjn05        |pjb03       |pjn06       |pjn07      |pjn08        |pjn09         |pjnacti         ]
+[pjn02       |pjn03        |pjn04        |pjn05        |pjb03       |pjn06       |pjn07      |pjn08        |pjn09         |pjnacti         ]
+
+}
+END -- tb4
+Grid gr12
+{
+ ---------- Rows [cnt   ] / [idx   ]            details  [cnt2      ]
+
+}
+END -- gr12
+END -- vb5
+END -- apjt500
+
+TABLES
+pjn_file
+ATTRIBUTES
+ButtonEdit pjn01=pjn_file.pjn01, action=controlp, tabIndex=1, image="zoom.png";
+Edit pja02=formonly.pja02 type VARCHAR, tabIndex=3, noEntry, not null, required;
+Edit pjj01=formonly.pjj01 type VARCHAR, tabIndex=2;
+Edit pjj02=formonly.pjj02 type VARCHAR, tabIndex=4;
+Edit pjn02=pjn_file.pjn02, tabIndex=5, title="pjn02";
+Edit pjn03=pjn_file.pjn03, tabIndex=6, title="pjn03", not null, required;
+ComboBox pjn04=pjn_file.pjn04, tabIndex=7, title="pjn04", not null, required, items=(("W", "W"),("A", "A"));
+ButtonEdit pjn05=pjn_file.pjn05, action=controlp, tabIndex=8, title="pjn05", image="zoom.png";
+Edit pjb03=formonly.pjb03 type VARCHAR, tabIndex=9, title="pjb03", noEntry;
+Edit pjn06=pjn_file.pjn06, tabIndex=10, title="pjn06";
+Edit pjn07=pjn_file.pjn07, tabIndex=11, title="pjn07";
+Edit pjn08=pjn_file.pjn08, tabIndex=12, title="pjn08";
+CheckBox pjn09=pjn_file.pjn09, tabIndex=13, title="pjn09", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pjnacti=pjn_file.pjnacti, tabIndex=14, title="pjnacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=16, noEntry;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tb4(pjn_file.pjn02,pjn_file.pjn03,pjn_file.pjn04,pjn_file.pjn05,formonly.pjb03,pjn_file.pjn06,pjn_file.pjn07,pjn_file.pjn08,pjn_file.pjn09,pjn_file.pjnacti)
+SCREEN RECORD Undefined(pjn_file.pjn01,formonly.pja02,formonly.pjj01,formonly.pjj02,formonly.cnt,formonly.idx,formonly.cnt2)
+END -- INSTRUCTIONS
+

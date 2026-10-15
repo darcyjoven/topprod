@@ -1,0 +1,71 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/alm/4fd/almt460_1.tmp.per created 2010-10-22T09:41:22
+-- File created from /u3/tiptop/alm/4fd/almt460_1.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almt460_1")
+                                                                                                                           
+      VBox vb6                                                                                                             
+      Folder pc2                                                                                                           
+      Page Page3(text=%"Main")                                                                                             
+      Grid gr4                                                                                                             
+      {                                                                                                                    
+                                                                                                                           
+        Contributions Doc. No.[lrc02             ]    Cashiers No. [lrc12       ][gen02                         ]          
+        Voucher No.           [lrc03                 ]Entry Date   [lrc13       ][lrc131    ]                              
+        Amount                [lrc04               ]  Remark       [lrc16                                       ]          
+        Discount Amt          [lrc05               ]               [                                            ]          
+        AP Amount             [lrc06               ]                                                                       
+        Coupon Amt.           [lrc28               ]                                                                       
+        FJ Amount             [lrc09               ]                                                                       
+        Integral Amt.         [lrc29               ]                                                                       
+        Gift Point            [lrc11               ]                                                                       
+        Refund Amount         [lrc14               ]                                                                       
+                                                                                                                           
+                                                                                                                           
+      }                                                                                                                    
+      END                                                                                                                  
+      END -- Page                                                                                                          
+      END -- Folder                                                                                                        
+      Grid gr6                                                                                                             
+      {                                                                                                                    
+       --------Rows[idx   ]/[cnt    ] ---                                                                                  
+                                                                                                                           
+      }                                                                                                                    
+      END                                                                                                                  
+      END -- VBox                                                                                                          
+END -- Form
+
+TABLES
+lrc_file
+
+ATTRIBUTES
+ButtonEdit lrc02=lrc_file.lrc02, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+ButtonEdit lrc12=lrc_file.lrc12, action=controlp, tabIndex=12, not null, image="zoom.png";
+Edit gen02=formonly.gen02, tabIndex=10, noEntry;
+ButtonEdit lrc03=lrc_file.lrc03, action=controlp, tabIndex=4, not null, image="zoom.png";
+DateEdit lrc13=lrc_file.lrc13, tabIndex=11;
+Edit lrc131=lrc_file.lrc131, tabIndex=15, noEntry;
+Edit lrc04=lrc_file.lrc04, tabIndex=5;
+TextEdit lrc16=lrc_file.lrc16, tabIndex=14;
+Edit lrc05=lrc_file.lrc05, tabIndex=6, noEntry;
+Edit lrc06=lrc_file.lrc06, tabIndex=7, noEntry;
+Edit lrc28=lrc_file.lrc28, tabIndex=17, noEntry;
+Edit lrc09=lrc_file.lrc09, tabIndex=8, noEntry;
+Edit lrc29=lrc_file.lrc29, tabIndex=16, noEntry;
+Edit lrc11=lrc_file.lrc11, tabIndex=9, noEntry;
+Edit lrc14=lrc_file.lrc14, tabIndex=13, noEntry;
+Edit idx=formonly.idx, tabIndex=1, noEntry;
+Edit cnt=formonly.cnt, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

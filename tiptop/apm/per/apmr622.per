@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr622.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr622")
+VBox VBox1
+Grid gr5160
+{
+ <G group01                                                     >
+  Item No. [pmn04               ]
+  Supplier [pmm09               ]
+ <                                                              >
+
+}
+END -- gr5160
+Group group02(text="INPUT")
+Grid gr5161
+{
+ Statistic Period [bdate       ]-[edate       ]
+ Sumamry Method   [a                          ]
+}
+END -- gr5161
+END -- group02
+Grid gr5162
+{
+ [more                                                            ]
+
+}
+END -- gr5162
+END -- VBox1
+END -- apmr622
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmn04=formonly.pmn04 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit pmm09=formonly.pmm09 type VARCHAR, tabIndex=2;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=3;
+DateEdit edate=formonly.edate type DATE, tabIndex=4;
+RadioGroup a=formonly.a type VARCHAR, tabIndex=5, items=(("1", "By Item No."),("2", "By Supplier+Item"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmn04,formonly.pmm09,formonly.bdate,formonly.edate,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

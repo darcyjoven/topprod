@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq840.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq840")
+VBox vb5
+Folder folder01
+Page page01(text="Page01")
+Grid gr3187
+{
+ <G group01                                           ><G group02                                             ><G group043                     >
+  W/O No.             [sfb01           ]                Production Item #     [sfb05                         ]  [ima906             ]
+  Item #              [sfa03                         ]  Uncompleted Qty       [unfinish                      ] <                               >
+  Part Name Spec      [ima02                         ]  Inv Unit              [ima25     ]
+  Specification       [ima021                        ]  MPS/MRP Available Inv [avl_stk_mpsmrp                ] <G group044                     >
+                                                                                                                Par/Ref Unit       [ima907    ]
+ <                                                    ><                                                      ><                               >
+}
+END -- gr3187
+END -- page01
+END -- folder01
+Table s_sr
+{
+[l_date  |l_desc  |l_no             |l_cust      |l_qty             |l_balance      ]
+[l_date  |l_desc  |l_no             |l_cust      |l_qty             |l_balance      ]
+[l_date  |l_desc  |l_no             |l_cust      |l_qty             |l_balance      ]
+[l_date  |l_desc  |l_no             |l_cust      |l_qty             |l_balance      ]
+[l_date  |l_desc  |l_no             |l_cust      |l_qty             |l_balance      ]
+[l_date  |l_desc  |l_no             |l_cust      |l_qty             |l_balance      ]
+[l_date  |l_desc  |l_no             |l_cust      |l_qty             |l_balance      ]
+[l_date  |l_desc  |l_no             |l_cust      |l_qty             |l_balance      ]
+[l_date  |l_desc  |l_no             |l_cust      |l_qty             |l_balance      ]
+[l_date  |l_desc  |l_no             |l_cust      |l_qty             |l_balance      ]
+
+}
+END -- s_sr
+Grid gr3188
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3188
+END -- vb5
+END -- aimq840
+
+TABLES
+sfb_file,
+sfa_file,
+ima_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit sfa03=sfa_file.sfa03, action=controlp, tabIndex=2, image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=3, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=4, noEntry;
+Group group02:group02;
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=5, image="zoom";
+Edit unfinish=formonly.unfinish type CHAR, tabIndex=6;
+Edit ima25=ima_file.ima25, tabIndex=7, noEntry;
+Edit avl_stk_mpsmrp=formonly.avl_stk_mpsmrp type CHAR, tabIndex=8, noEntry;
+Group group043:group043, text="Unit Control";
+RadioGroup ima906=ima_file.ima906, tabIndex=9, not null, required, items=(("1", "Single Unit"),("2", "Child/Parent Unit"),("3", "Reference Unit"));
+Group group044:group044;
+ButtonEdit ima907=ima_file.ima907, action=controlp, tabIndex=10, image="zoom";
+DateEdit l_date=formonly.l_date type DATE, tabIndex=11, title="Date";
+Edit l_desc=formonly.l_desc type VARCHAR, tabIndex=12, title="Category";
+Edit l_no=formonly.l_no type VARCHAR, tabIndex=13, title="Doc#";
+Edit l_cust=formonly.l_cust type VARCHAR, tabIndex=14, title="Cust./Supplr";
+Edit l_qty=formonly.l_qty type DECIMAL(15,3), tabIndex=15, title="Supply/Demand Qty", not null, required;
+Edit l_balance=formonly.l_balance type DECIMAL(15,3), tabIndex=16, title="Credit Balance", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=17;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sr(formonly.l_date,formonly.l_desc,formonly.l_no,formonly.l_cust,formonly.l_qty,formonly.l_balance)
+SCREEN RECORD Undefined(sfb_file.sfb01,sfa_file.sfa03,ima_file.ima02,ima_file.ima021,sfb_file.sfb05,formonly.unfinish,ima_file.ima25,formonly.avl_stk_mpsmrp,ima_file.ima906,ima_file.ima907,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

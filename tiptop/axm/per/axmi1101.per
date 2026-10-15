@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi1101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi1101")
+VBox VBox1
+Folder pc438
+Page page01(text="Main")
+Table s_ocs
+{
+[ocs011          |ocs012          |ocs01      |ocs02      |ocr02               |ocs03          |aag02             |ocs031         |aag02_1           |ocs04              |ocs05          |ocs06     |ocs07     |ocs08     |ocs09     ]
+[ocs011          |ocs012          |ocs01      |ocs02      |ocr02               |ocs03          |aag02             |ocs031         |aag02_1           |ocs04              |ocs05          |ocs06     |ocs07     |ocs08     |ocs09     ]
+[ocs011          |ocs012          |ocs01      |ocs02      |ocr02               |ocs03          |aag02             |ocs031         |aag02_1           |ocs04              |ocs05          |ocs06     |ocs07     |ocs08     |ocs09     ]
+[ocs011          |ocs012          |ocs01      |ocs02      |ocr02               |ocs03          |aag02             |ocs031         |aag02_1           |ocs04              |ocs05          |ocs06     |ocs07     |ocs08     |ocs09     ]
+[ocs011          |ocs012          |ocs01      |ocs02      |ocr02               |ocs03          |aag02             |ocs031         |aag02_1           |ocs04              |ocs05          |ocs06     |ocs07     |ocs08     |ocs09     ]
+[ocs011          |ocs012          |ocs01      |ocs02      |ocr02               |ocs03          |aag02             |ocs031         |aag02_1           |ocs04              |ocs05          |ocs06     |ocs07     |ocs08     |ocs09     ]
+[ocs011          |ocs012          |ocs01      |ocs02      |ocr02               |ocs03          |aag02             |ocs031         |aag02_1           |ocs04              |ocs05          |ocs06     |ocs07     |ocs08     |ocs09     ]
+[ocs011          |ocs012          |ocs01      |ocs02      |ocr02               |ocs03          |aag02             |ocs031         |aag02_1           |ocs04              |ocs05          |ocs06     |ocs07     |ocs08     |ocs09     ]
+[ocs011          |ocs012          |ocs01      |ocs02      |ocr02               |ocs03          |aag02             |ocs031         |aag02_1           |ocs04              |ocs05          |ocs06     |ocs07     |ocs08     |ocs09     ]
+[ocs011          |ocs012          |ocs01      |ocs02      |ocr02               |ocs03          |aag02             |ocs031         |aag02_1           |ocs04              |ocs05          |ocs06     |ocs07     |ocs08     |ocs09     ]
+
+}
+END -- s_ocs
+END -- page01
+END -- pc438
+Grid gr1990
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr1990
+END -- VBox1
+END -- axmi1101
+
+TABLES
+ocs_file
+ATTRIBUTES
+ButtonEdit ocs011=ocs_file.ocs011, action=controlp, tabIndex=10, title="Customer No.", image="zoom";
+ButtonEdit ocs012=ocs_file.ocs012, action=controlp, tabIndex=11, title="Item No.", image="zoom";
+ButtonEdit ocs01=ocs_file.ocs01, action=controlp, tabIndex=12, title="type", image="zoom";
+ButtonEdit ocs02=ocs_file.ocs02, action=controlp, tabIndex=1, title="Code", not null, required, image="zoom";
+Edit ocr02=formonly.ocr02 type VARCHAR, tabIndex=2, title="Name", noEntry;
+ButtonEdit ocs03=ocs_file.ocs03, action=controlp, tabIndex=4, title="Account Code", not null, required, image="zoom";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=5, title="Acct Title", noEntry;
+ButtonEdit ocs031=ocs_file.ocs031, action=controlp, tabIndex=6, title="Account Code 2", not null, required, image="zoom";
+Edit aag02_1=formonly.aag02_1 type VARCHAR, tabIndex=7, title="Acct Title", noEntry;
+Edit ocs04=ocs_file.ocs04, tabIndex=8, title="percent", not null, required;
+Edit ocs05=ocs_file.ocs05, tabIndex=9, title="month", not null, required;
+Edit ocs06=ocs_file.ocs06, tabIndex=13, title=%"start year";
+Edit ocs07=ocs_file.ocs07, tabIndex=14, title=%"start month";
+Edit ocs08=ocs_file.ocs08, tabIndex=15, title=%"expiry year";
+Edit ocs09=ocs_file.ocs09, tabIndex=16, title=%"expiry month";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ocs(ocs_file.ocs011,ocs_file.ocs012,ocs_file.ocs01,ocs_file.ocs02,formonly.ocr02,ocs_file.ocs03,formonly.aag02,ocs_file.ocs031,formonly.aag02_1,ocs_file.ocs04,ocs_file.ocs05,ocs_file.ocs06,ocs_file.ocs07,ocs_file.ocs08,ocs_file.ocs09)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

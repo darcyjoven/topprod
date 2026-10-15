@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_lua.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Grid gr3757
+{
+    <T s_rus                                                                       >
+    [check |lua01                 |lua09                |luaplant              ]
+    [check |lua01                 |lua09                |luaplant              ]
+    [check |lua01                 |lua09                |luaplant              ]
+    [check |lua01                 |lua09                |luaplant              ]
+    [check |lua01                 |lua09                |luaplant              ]
+    [check |lua01                 |lua09                |luaplant              ]
+    [check |lua01                 |lua09                |luaplant              ]
+    [check |lua01                 |lua09                |luaplant              ]
+    [check |lua01                 |lua09                |luaplant              ]
+    [check |lua01                 |lua09                |luaplant              ]
+    <                                                                              >
+
+}
+END -- gr3757
+END -- Form
+
+TABLES
+lua_file
+ATTRIBUTES
+Table s_rus:s_rus;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit lua01=lua_file.lua01, tabIndex=2, title="Inventory Plans No.", noEntry;
+Edit lua09=lua_file.lua09, tabIndex=3, title="Inventory Plans Name", noEntry;
+Edit luaplant=lua_file.luaplant, tabIndex=4, title="Logistics Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lua(formonly.check,lua_file.lua01,lua_file.lua09,lua_file.luaplant)
+END -- INSTRUCTIONS
+

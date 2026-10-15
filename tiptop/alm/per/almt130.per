@@ -1,0 +1,136 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Main")
+Grid ds1
+{
+
+[label1      ][lia01                 ]                  [label10     ][lia10           ]
+[label2      ][lia02                 ]                  [label12     ][lia11           ]
+[label3      ][lia03                 ]                  [label14     ][lia12           ]
+[label6      ][lia06                 ]                  [label11     ][lia101          ]
+[label4      ][lia04                 ]                  [label13     ][lia111          ]
+[label5      ][lia05                 ]                  [label15     ][lia121          ]
+[label24     ][liaplant              |rtz13         ]                 [liamksg            ]
+[label23     ][lialegal              |azt02         ]   [label18     ][lia15           |imgmksg]
+[label7      ][lia07                 |lmb03         ]   [label20     ][liaconf         |       ]
+[label8      ][lia08                 |lmc04         ]   [label21     ][liaconu         |gen02         ]
+[label9      ][lia09                 |lmy04         ]   [label19     ][liacond         ]
+[label16     ][lia13                 ]                  [label17     ][lia14                          ]
+
+}
+END -- ds1
+END -- Page1
+Page Page2(text=%"Info")
+Grid ds2
+{
+
+[label30   |liauser       ] [label27   |liamodu       ]  [label22   |liaacti       ]
+[label26   |liagrup       ] [label25   |liadate       ]
+[label29   |liaoriu       ]
+[label28   |liaorig       ]
+
+}
+END -- ds2
+END -- Page2
+END -- Folder1
+Grid Grid3
+{
+
+ ----------[label|idx   |la|cnt   ] ----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+TABLES
+lia_file
+ATTRIBUTES
+Label label1:Label1, text=%"lia01";
+ButtonEdit lia01=lia_file.lia01, action=controlp, tabIndex=1, not null, required, image="zoom", scroll;
+Label label10:Label10, text=%"lia10";
+Edit lia10=lia_file.lia10, tabIndex=10, noEntry, scroll;
+Label label2:Label2, text=%"lia02";
+DateEdit lia02=lia_file.lia02, tabIndex=2;
+Label label12:Label12, text=%"lia11";
+Edit lia11=lia_file.lia11, tabIndex=12, noEntry, scroll;
+Label label3:Label3, text=%"lia03";
+ComboBox lia03=lia_file.lia03, tabIndex=3, not null, scroll, items=(("1", "Add"),("2", "Modify"),("3", "Void"));
+Label label14:Label14, text=%"lia12";
+Edit lia12=lia_file.lia12, tabIndex=14, noEntry, scroll;
+Label label6:Label6, text=%"lia06";
+ButtonEdit lia06=lia_file.lia06, action=controlp, tabIndex=6, image="zoom", scroll;
+Label label11:Label11, text=%"lia101";
+Edit lia101=lia_file.lia101, tabIndex=11, noEntry, scroll;
+Label label4:Label4, text=%"lia04";
+ButtonEdit lia04=lia_file.lia04, action=controlp, tabIndex=4, not null, image="zoom", scroll;
+Label label13:Label13, text=%"lia111";
+Edit lia111=lia_file.lia111, tabIndex=13, not null, scroll;
+Label label5:Label5, text=%"lia05";
+Edit lia05=lia_file.lia05, tabIndex=5, noEntry, not null, scroll;
+Label label15:Label15, text=%"lia121";
+Edit lia121=lia_file.lia121, tabIndex=15, not null, scroll;
+Label label24:Label24, text=%"liaplant";
+ButtonEdit liaplant=lia_file.liaplant, action=controlp, tabIndex=24, noEntry, not null, image="zoom", scroll;
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=25, noEntry;
+CheckBox liamksg=lia_file.liamksg, tabIndex=22, text=%"lia_file.liamksg", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Label label23:Label23, text=%"lialegal";
+ButtonEdit lialegal=lia_file.lialegal, action=controlp, tabIndex=23, noEntry, not null, image="zoom", scroll;
+Edit azt02=formonly.azt02 type CHAR, tabIndex=26, noEntry;
+Label label18:Label18, text=%"lia15";
+ComboBox lia15=lia_file.lia15, tabIndex=18, noEntry, not null, scroll, items=(("0", "Open"),("1", "Approved"),("2", "Issued"),("S", "Approving"),("W", "Cancel"),("R", "Approving Return"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Label label7:Label7, text=%"lia07";
+ButtonEdit lia07=lia_file.lia07, action=controlp, tabIndex=7, noEntry, not null, image="zoom", scroll;
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=27, noEntry;
+Label label20:Label20, text=%"liaconf";
+ComboBox liaconf=lia_file.liaconf, tabIndex=20, noEntry, not null, scroll, items=(("Y", "Confirmed"),("N", "Unconfirm"));
+Label label8:Label8, text=%"lia08";
+ButtonEdit lia08=lia_file.lia08, action=controlp, tabIndex=8, noEntry, not null, image="zoom", scroll;
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=28, noEntry;
+Label label21:Label21, text=%"liaconu";
+ButtonEdit liaconu=lia_file.liaconu, action=controlp, tabIndex=21, noEntry, image="zoom", scroll;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=30, noEntry;
+Label label9:Label9, text=%"lia09";
+ButtonEdit lia09=lia_file.lia09, action=controlp, tabIndex=9, noEntry, image="zoom", scroll;
+Edit lmy04=formonly.lmy04 type CHAR, tabIndex=29, noEntry;
+Label label19:Label19, text=%"liacond";
+DateEdit liacond=lia_file.liacond, tabIndex=19, noEntry;
+Label label16:Label16, text=%"lia13";
+ComboBox lia13=lia_file.lia13, tabIndex=16, noEntry, not null, scroll, items=(("Y", "Used"),("N", "No_use"));
+Label label17:Label17, text=%"lia14";
+TextEdit lia14=lia_file.lia14, tabIndex=17;
+Label label30:Label30, text=%"liauser";
+Edit liauser=lia_file.liauser, tabIndex=37, noEntry, scroll;
+Label label27:Label27, text=%"liamodu";
+Edit liamodu=lia_file.liamodu, tabIndex=34, noEntry, scroll;
+Label label22:Label22, text=%"liaacti";
+Edit liaacti=lia_file.liaacti, tabIndex=31, noEntry, not null, scroll;
+Label label26:Label26, text=%"liagrup";
+Edit liagrup=lia_file.liagrup, tabIndex=33, noEntry, scroll;
+Label label25:Label25, text=%"liadate";
+DateEdit liadate=lia_file.liadate, tabIndex=32, noEntry;
+Label label29:Label29, text=%"liaoriu";
+Edit liaoriu=lia_file.liaoriu, tabIndex=36, noEntry, scroll;
+Label label28:Label28, text=%"liaorig";
+Edit liaorig=lia_file.liaorig, tabIndex=35, noEntry, scroll;
+Label label:Label31, text=%"Rows";
+Edit idx=formonly.idx type SMALLINT, tabIndex=38, noEntry;
+Label la:Label32, text=%"/";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=39, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(lia_file.lia01,lia_file.lia02,lia_file.lia03,lia_file.lia04,lia_file.lia05,lia_file.lia06,lia_file.lia07,lia_file.lia08,lia_file.lia09,lia_file.lia10,lia_file.lia101,lia_file.lia11,lia_file.lia111,lia_file.lia12,lia_file.lia121,lia_file.lia13,lia_file.lia14,lia_file.lia15,lia_file.liacond,lia_file.liaconf,lia_file.liaconu,lia_file.liamksg,lia_file.lialegal,lia_file.liaplant)
+SCREEN RECORD Undefined(formonly.rtz13,formonly.azt02,formonly.lmb03,formonly.lmc04,formonly.lmy04,formonly.gen02,formonly.idx,formonly.cnt,formonly.imgmksg)
+SCREEN RECORD Record2(lia_file.liaacti,lia_file.liadate,lia_file.liagrup,lia_file.liamodu,lia_file.liaorig,lia_file.liaoriu,lia_file.liauser)
+END -- INSTRUCTIONS
+

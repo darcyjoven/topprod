@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acot400_y.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acot400_y")
+Folder pc223
+Page page01(text="Main")
+VBox VBox1
+Grid gr1481
+{
+ <G group01                                                               >
+                      [only_one                                          ]
+ <                                                                        >
+ <G group02                                                               >
+  Delivery Note       [coo01           ]
+  Delivery Date       [coo03       ]
+  Customer No.        [coo05     ]
+  Customs No.         [coo11     ]
+ <                                                                        >
+
+}
+END -- gr1481
+END -- VBox1
+END -- page01
+END -- pc223
+END -- acot400_y
+
+TABLES
+coo_file
+ATTRIBUTES
+Group group01:group01, text="Confirm Condition";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, not null, required, items=(("1", "Confirm this Doc only "),("2", "Confirm by QBE Condition"));
+Group group02:group02, text="QBE";
+Edit coo01=coo_file.coo01, tabIndex=2;
+DateEdit coo03=coo_file.coo03, tabIndex=3;
+Edit coo05=coo_file.coo05, tabIndex=4;
+Edit coo11=coo_file.coo11, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,coo_file.coo01,coo_file.coo03,coo_file.coo05,coo_file.coo11)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp990.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimp990")
+Grid Grid1
+{
+ <G group01                                               >
+  Receipt Tp               [a01       ]
+  Receipt/Issue Date       [sdate     ]
+  Dept. No.                [dept      ]
+  Receipt/Issue Body Rows  [b01       ]
+  Trn.Code                 [memo      ]
+ <                                                        >
+ <G group02                                               >
+  [a                              ]
+
+ <                                                        >
+
+}
+END -- Grid1
+END -- aimp990
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit a01=formonly.a01 type VARCHAR, action=controlp, tabIndex=1, not null, required, color = yellow, image="zoom", upShift, comment="<^P> Qry Documents";
+DateEdit sdate=formonly.sdate type DATE, tabIndex=2, not null, required, color = yellow;
+ButtonEdit dept=formonly.dept type VARCHAR, action=controlp, tabIndex=3, not null, required, color = yellow, image="zoom", comment="<^P> Qry Department";
+Edit b01=formonly.b01 type SMALLINT, tabIndex=4, not null, required, color = yellow;
+ButtonEdit memo=formonly.memo type VARCHAR, action=controlp, tabIndex=5, not null, required, color = yellow, image="zoom", comment="<P>Qry Trn.Code";
+Group group02:group02, text="Open Account";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=6, items=(("1", %"Inventory"),("2", %"WIP"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a01,formonly.sdate,formonly.dept,formonly.b01,formonly.memo,formonly.a)
+END -- INSTRUCTIONS
+

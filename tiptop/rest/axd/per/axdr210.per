@@ -1,0 +1,81 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdr210.per created Wed Jan 23 05:30:42 2008
+-- File created from axdr210.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdr210")
+-- GRID
+-- GRID
+-- VBOX
+-- GROUP
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID 
+    {
+    <G group01                                                                               >
+     P/O No              [aa0                 ]
+     P/O Date            [aa1                 ]
+     Item No.            [aa2                 ]
+     Buyer               [aa3                 ]
+     P/O Department      [aa4                 ]
+     Status Code         [aa5                 ]
+
+    <                                                                                        >
+
+
+    }
+    END -- GRID
+    GROUP g01( TEXT="INPUT")
+
+      VBOX 
+        GRID 
+        {
+        <G group02                                                              >
+         [aa6                 ] [aa7                  ] [aa8                   ]
+         [aa9                 ] [ab0                  ] [ab1                   ]
+        <                                                                       >
+        <G group03                                                              >
+         [ab2                  ]
+
+        <                                                                       >
+
+
+        }
+        END -- GRID
+      END -- VBOX
+    END -- GROUP
+    GRID 
+    {
+    [ab3                                               ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  EDIT aa0=FORMONLY.pmm01 TYPE VARCHAR, TABINDEX=1;
+  DATEEDIT aa1=FORMONLY.pmm04 TYPE DATE, TABINDEX=2;
+  BUTTONEDIT aa2=FORMONLY.pmn04 TYPE VARCHAR, ACTION=controlp, IMAGE="zoom", TABINDEX=3;
+  EDIT aa3=FORMONLY.pmm12 TYPE VARCHAR, TABINDEX=4;
+  EDIT aa4=FORMONLY.pmm13 TYPE VARCHAR, TABINDEX=5;
+  EDIT aa5=FORMONLY.pmn16 TYPE VARCHAR, TABINDEX=6;
+  GROUP group02 : group02, TEXT="Sequence";
+  COMBOBOX aa6=FORMONLY.s1, QUERYEDITABLE, TABINDEX=7, ITEMS=(("1","P/O No."),("2","P/O Date"),("3","Item No"),("4","Buyer"),("5","P/O Department"));
+  COMBOBOX aa7=FORMONLY.s2, QUERYEDITABLE, TABINDEX=8, ITEMS=(("1","P/O No."),("2","P/O Date"),("3","Item No"),("4","Buyer"),("5","P/O Department"));
+  COMBOBOX aa8=FORMONLY.s3, QUERYEDITABLE, TABINDEX=9, ITEMS=(("1","P/O No."),("2","P/O Date"),("3","Item No"),("4","Buyer"),("5","P/O Department"));
+  CHECKBOX aa9=FORMONLY.t1, TEXT="Slip Page", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=10;
+  CHECKBOX ab0=FORMONLY.t2, TEXT="Slip Page", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=11;
+  CHECKBOX ab1=FORMONLY.t3, TEXT="Slip Page", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=12;
+  GROUP group03 : group03, TEXT="Prt Data";
+  CHECKBOX ab2=FORMONLY.b, TEXT="Print Details?", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=13;
+  CHECKBOX ab3=FORMONLY.more TYPE VARCHAR, TEXT="Other codition to print", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=14;
+END

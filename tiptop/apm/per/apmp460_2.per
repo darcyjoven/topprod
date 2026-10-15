@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp460_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"dimt_orderform")
+VBox vb3
+Grid gr24
+{
+
+ Item No. [pml04_2          ]
+ Item Name[pml041_2                  ]
+ data     [pml33_2         ]
+ Unit     [pml07_2]
+
+}
+END -- gr24
+Table tb5
+{
+[pmk09_2            |pmc03_2          ]
+[pmk09_2            |pmc03_2          ]
+[pmk09_2            |pmc03_2          ]
+[pmk09_2            |pmc03_2          ]
+[pmk09_2            |pmc03_2          ]
+
+}
+END -- tb5
+END -- vb3
+END -- apmp460_2
+
+ATTRIBUTES
+Edit pml04_2=formonly.pml04_2 type VARCHAR, tabIndex=3, noEntry;
+Edit pml041_2=formonly.pml041_2 type VARCHAR, tabIndex=4, noEntry;
+DateEdit pml33_2=formonly.pml33_2 type DATE, tabIndex=2, noEntry;
+Edit pml07_2=formonly.pml07_2 type VARCHAR, tabIndex=1, noEntry;
+ButtonEdit pmk09_2=formonly.pmk09_2 type CHAR, action=CONTROLP, tabIndex=5, title="Manufacturer No.", not null, required, image="zoom.png";
+Edit pmc03_2=formonly.pmc03_2 type CHAR, tabIndex=6, title="Manufacturer Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pml2(formonly.pmk09_2,formonly.pmc03_2)
+SCREEN RECORD Undefined(formonly.pml04_2,formonly.pml041_2,formonly.pml33_2,formonly.pml07_2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi460.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid ds1
+{
+
+[label1 ] [lpc00           ]
+
+}
+END -- ds1
+END -- Page1
+END -- Folder1
+Table s_lpc
+{
+[lpc01     |lpc02                         |lpc03                 |lpc04                 |lpcact]
+[lpc01     |lpc02                         |lpc03                 |lpc04                 |lpcact]
+[lpc01     |lpc02                         |lpc03                 |lpc04                 |lpcact]
+[lpc01     |lpc02                         |lpc03                 |lpc04                 |lpcact]
+[lpc01     |lpc02                         |lpc03                 |lpc04                 |lpcact]
+
+}
+END -- s_lpc
+Grid Grid1
+{
+
+ [label2 ] [cn2       ]
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+lpc_file
+ATTRIBUTES
+Label label1:Label1, text=%"lpc00";
+ComboBox lpc00=lpc_file.lpc00, tabIndex=1, not null, scroll, items=(("1", "Education group
+"),("2", "Apply for membership of the source"),("3", "Income classification"),("4", "Interest group"),("5", "Professional category"),("6", "Member level"),("7", "Member type"),("8", "Member anniversary type"));
+ButtonEdit lpc01=lpc_file.lpc01, action=controlp, tabIndex=2, title=%"lpc01", not null, image="zoom", scroll;
+Edit lpc02=lpc_file.lpc02, tabIndex=3, title=%"lpc02", scroll;
+Edit lpc03=lpc_file.lpc03, tabIndex=4, title=%"lpc03", not null, scroll;
+Edit lpc04=lpc_file.lpc04, tabIndex=5, title=%"lpc04", not null, scroll;
+CheckBox lpcact=lpc_file.lpcacti, tabIndex=6, default = "Y", title="lpcacti", text="", not null, valueChecked = "Y", valueUnchecked = "N";
+Label label2:Label2, text=%"Label2";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(lpc_file.lpc00)
+SCREEN RECORD s_lpc(lpc_file.lpc01,lpc_file.lpc02,lpc_file.lpc03,lpc_file.lpc04,lpc_file.lpcacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

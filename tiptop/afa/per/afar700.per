@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afar700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afar700")
+VBox VBox1
+Grid Grid1
+{
+ <G grpqbe                                  >
+  Autho. Approval No. [fcb04               ]
+  Currency            [fcc14               ]
+  IRA Approval No.    [fcb06               ]
+  Credit Ratio        [fcc15               ]
+  Auth. Approval Date [fcb03               ]
+  IRA Approval Date   [fcb05               ]
+ <                                          >
+
+}
+END -- Grid1
+Group group01(text="INPUT")
+Grid Grid2
+{
+ Data Option       [a                                               ]
+[d                                                                  ]
+}
+END -- Grid2
+END -- group01
+Grid Grid3
+{
+[more                                         ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- afar700
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+Edit fcb04=formonly.fcb04 type VARCHAR, tabIndex=1;
+Edit fcc14=formonly.fcc14 type VARCHAR, tabIndex=2;
+Edit fcb06=formonly.fcb06 type VARCHAR, tabIndex=3;
+Edit fcc15=formonly.fcc15 type SMALLINT, tabIndex=4;
+DateEdit fcb03=formonly.fcb03 type DATE, tabIndex=5;
+DateEdit fcb05=formonly.fcb05 type DATE, tabIndex=6;
+ComboBox a=formonly.a type VARCHAR, tabIndex=7, items=(("1", %"Authority Approval Only"),("2", %"IRA Approval"),("3", %"Including 1 AND 2"));
+CheckBox d=formonly.d type VARCHAR, tabIndex=8, text="Print Proccessed", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.fcb04,formonly.fcc14,formonly.fcb06,formonly.fcc15,formonly.fcb03,formonly.fcb05,formonly.a,formonly.d,formonly.more)
+END -- INSTRUCTIONS
+

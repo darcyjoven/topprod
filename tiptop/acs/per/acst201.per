@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/acs/42f/acst201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acst201")
+Folder Folder1
+Page page01(text="Main")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                      ><G group02                                              >
+  Simulation Version     [csc01     ]              Simulation Date        [csc03     ]
+  Simulation Cost Method [csc02               ]    Simulation Time        [csc04     ]-[csc05     ]
+  Simulation User        [csc06     ][d01       ]  Simulation Item#       [csc07                         ]
+  Expiry Date            [csc08     ]              Simulation Routing No. [csc09     ]
+ [csc10                                   ]       [csc13                                   ]
+ [csc11                                   ]       [csc12                                   ]
+ <                                               ><                                                       >
+ <G group03                                                                  >
+  Simulation Desc.       [csc16                                             ]
+ <                                                                           >
+ <G group04                                      ><G group05                                              >
+  Simulation Version     [csc01_2   ]              Simulation Date        [csc03_2   ]
+  Simulation Cost Method [csc02_2             ]    Simulation Time        [csc04_2   ]-[csc05_2   ]
+  Simulation User        [csc06_2   ][d02       ]  Simulation Item#       [csc07_2             ]
+  Expiry Date            [csc08_2   ]              Simulation Routing No. [csc09_2   ]
+ [csc10_2                                 ]       [csc13_2                                 ]
+ [csc11_2                                 ]       [csc12_2                                 ]
+ <                                               ><                                                       >
+ <G group06                                                                  >
+  Simulation Desc. [csc16_2                                                 ]
+ <                                                                           >
+
+}
+END -- Grid1
+END -- VBox1
+END -- page01
+END -- Folder1
+END -- acst201
+
+TABLES
+csc_file
+ATTRIBUTES
+Group group01:group01;
+Edit csc01=csc_file.csc01, tabIndex=1;
+RadioGroup csc02=csc_file.csc02, tabIndex=2, items=(("1", %"Standard Cost"),("2", %"Current Cost"),("3", %"Default Cost"));
+Edit csc06=csc_file.csc06, tabIndex=3, noEntry;
+Edit d01=formonly.d01 type VARCHAR, tabIndex=4;
+Edit csc08=csc_file.csc08, tabIndex=5, noEntry;
+CheckBox csc10=csc_file.csc10, tabIndex=6, text="Including Mass Mat. and MISC Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox csc11=csc_file.csc11, tabIndex=7, text="Use Purd-Item Calculation on Mfd-Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02;
+Edit csc03=csc_file.csc03, tabIndex=8, noEntry;
+Edit csc04=csc_file.csc04, tabIndex=9, noEntry;
+Edit csc05=csc_file.csc05, tabIndex=10, noEntry;
+Edit csc07=csc_file.csc07, tabIndex=11, noEntry;
+Edit csc09=csc_file.csc09, tabIndex=12, noEntry;
+CheckBox csc13=csc_file.csc13, tabIndex=13, text="PUR.and MISC Item Labor/Clear Overhead?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox csc12=csc_file.csc12, tabIndex=14, text="Use Mfd-Item Calculation on Purd-Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03;
+Edit csc16=csc_file.csc16, tabIndex=15, noEntry;
+Group group04:group04;
+Edit csc01_2=formonly.csc01_2 type CHAR, tabIndex=16;
+RadioGroup csc02_2=formonly.csc02_2 type CHAR, tabIndex=17, items=(("1", %"Standard Cost"),("2", %"Current Cost"),("3", %"Default Cost"));
+Edit csc06_2=formonly.csc06_2 type CHAR, tabIndex=18, noEntry;
+Edit d02=formonly.d02 type VARCHAR, tabIndex=19, noEntry;
+Edit csc08_2=formonly.csc08_2 type DATE, tabIndex=20, noEntry;
+CheckBox csc10_2=formonly.csc10_2 type CHAR, tabIndex=21, text="Including Mass Mat. and MISC Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox csc11_2=formonly.csc11_2 type CHAR, tabIndex=22, text="Use Purd-Item Calculation on Mfd-Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05;
+Edit csc03_2=formonly.csc03_2 type DATE, tabIndex=23, noEntry;
+Edit csc04_2=formonly.csc04_2 type CHAR, tabIndex=24, noEntry;
+Edit csc05_2=formonly.csc05_2 type CHAR, tabIndex=25, noEntry;
+Edit csc07_2=formonly.csc07_2 type CHAR, tabIndex=26, noEntry;
+Edit csc09_2=formonly.csc09_2 type CHAR, tabIndex=27, noEntry;
+CheckBox csc13_2=formonly.csc13_2 type CHAR, tabIndex=28, text="PUR.and MISC Item Labor/Clear Overhead?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox csc12_2=formonly.csc12_2 type CHAR, tabIndex=29, text="Use Mfd-Item Calculation on Purd-Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group06:group06;
+Edit csc16_2=formonly.csc16_2 type CHAR, tabIndex=30, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(csc_file.csc01,csc_file.csc02,csc_file.csc06,formonly.d01,csc_file.csc08,csc_file.csc10,csc_file.csc11,csc_file.csc03,csc_file.csc04,csc_file.csc05,csc_file.csc07,csc_file.csc09,csc_file.csc13,csc_file.csc12,csc_file.csc16,formonly.csc01_2,formonly.csc02_2,formonly.csc06_2,formonly.d02,formonly.csc08_2,formonly.csc10_2,formonly.csc11_2,formonly.csc03_2,formonly.csc04_2,formonly.csc05_2,formonly.csc07_2,formonly.csc09_2,formonly.csc13_2,formonly.csc12_2,formonly.csc16_2)
+END -- INSTRUCTIONS
+

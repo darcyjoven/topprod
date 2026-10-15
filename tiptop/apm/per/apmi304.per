@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi304.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi304")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+Grid gr4850
+{
+ Item No.            [pmu01                    ]                [pmu01_ima02                        ]
+ Vendor No.          [pmu02          ]                          [pmu02_pmc03         ]
+
+}
+END -- gr4850
+END -- page01
+END -- folder01
+Table s_pmu
+{
+[pmu03     |pmu04     |pmu05               |pmu06               |pmu07         |pmu08         ]
+[pmu03     |pmu04     |pmu05               |pmu06               |pmu07         |pmu08         ]
+[pmu03     |pmu04     |pmu05               |pmu06               |pmu07         |pmu08         ]
+[pmu03     |pmu04     |pmu05               |pmu06               |pmu07         |pmu08         ]
+[pmu03     |pmu04     |pmu05               |pmu06               |pmu07         |pmu08         ]
+[pmu03     |pmu04     |pmu05               |pmu06               |pmu07         |pmu08         ]
+[pmu03     |pmu04     |pmu05               |pmu06               |pmu07         |pmu08         ]
+[pmu03     |pmu04     |pmu05               |pmu06               |pmu07         |pmu08         ]
+[pmu03     |pmu04     |pmu05               |pmu06               |pmu07         |pmu08         ]
+[pmu03     |pmu04     |pmu05               |pmu06               |pmu07         |pmu08         ]
+
+}
+END -- s_pmu
+Grid gr4852
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4852
+END -- vb6
+END -- apmi304
+
+TABLES
+pmu_file
+ATTRIBUTES
+ButtonEdit pmu01=pmu_file.pmu01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Vender    <^Y>Create Vender,Key Field, No Blank/Repeated!    ,";
+Edit pmu01_ima02=formonly.pmu01_ima02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit pmu02=pmu_file.pmu02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Vender    <^Y>Create Vender,Key Field, No Blank/Repeated!    ,";
+Edit pmu02_pmc03=formonly.pmu02_pmc03 type CHAR, tabIndex=4, noEntry;
+Edit pmu03=pmu_file.pmu03, tabIndex=5, title="Start Code", not null, required;
+Edit pmu04=pmu_file.pmu04, tabIndex=6, title="End Code", not null, required;
+Edit pmu05=pmu_file.pmu05, tabIndex=7, title="Original Value", noEntry, not null;
+Edit pmu06=pmu_file.pmu06, tabIndex=8, title="Substitute Value", not null, required;
+DateEdit pmu07=pmu_file.pmu07, tabIndex=9, title="Effective Date", not null, required;
+DateEdit pmu08=pmu_file.pmu08, tabIndex=10, title="Expired Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmu(pmu_file.pmu03,pmu_file.pmu04,pmu_file.pmu05,pmu_file.pmu06,pmu_file.pmu07,pmu_file.pmu08)
+SCREEN RECORD Undefined(pmu_file.pmu01,formonly.pmu01_ima02,pmu_file.pmu02,formonly.pmu02_pmc03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

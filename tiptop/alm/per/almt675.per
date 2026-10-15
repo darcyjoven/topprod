@@ -1,0 +1,101 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt675.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almt675")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+Grid gr5382
+{
+
+ Cancel Note         [lqa01                 ]                                                               [lqa05                         ]
+ Cancel Type         [lqa02               ]                                             Approved Status     [lqa06     ]  [imgmksg   ]
+ Sign Date           [lqa04       ]                                                     Confirmed Status    [lqa07     ]  [          ]
+ Shop No.            [lqaplant              ][rtz13                         ]           Confirmed Person    [lqa08       ]
+ Corporation         [lqalegal              ][azt02                         ]           Confirmed Date      [lqa09       ]
+
+}
+END -- gr5382
+END -- page01
+Page info(text="Info")
+Grid gr5383
+{
+ Record Owner        [lqauser   ]  Created Date        [lqacrat   ] Data Valid Code     [lqaacti   ]
+ Department          [lqagrup   ]  Last Modified by    [lqamodu   ] Modify Date         [lqadate   ]
+ Record Orig.        [lqaoriu   ]
+ Dept Orig.          [lqaorig   ]
+}
+END -- gr5383
+END -- info
+END -- folder01
+Table s_lqb
+{
+[lqb02                 |lqb03        |lpx02               |lqb04                    |lrz02         |lqb05                   |lqb06                |lqb07             |lqb08                  ]
+[lqb02                 |lqb03        |lpx02               |lqb04                    |lrz02         |lqb05                   |lqb06                |lqb07             |lqb08                  ]
+[lqb02                 |lqb03        |lpx02               |lqb04                    |lrz02         |lqb05                   |lqb06                |lqb07             |lqb08                  ]
+[lqb02                 |lqb03        |lpx02               |lqb04                    |lrz02         |lqb05                   |lqb06                |lqb07             |lqb08                  ]
+[lqb02                 |lqb03        |lpx02               |lqb04                    |lrz02         |lqb05                   |lqb06                |lqb07             |lqb08                  ]
+[lqb02                 |lqb03        |lpx02               |lqb04                    |lrz02         |lqb05                   |lqb06                |lqb07             |lqb08                  ]
+[lqb02                 |lqb03        |lpx02               |lqb04                    |lrz02         |lqb05                   |lqb06                |lqb07             |lqb08                  ]
+[lqb02                 |lqb03        |lpx02               |lqb04                    |lrz02         |lqb05                   |lqb06                |lqb07             |lqb08                  ]
+[lqb02                 |lqb03        |lpx02               |lqb04                    |lrz02         |lqb05                   |lqb06                |lqb07             |lqb08                  ]
+}
+END -- s_lqb
+Grid gr5384
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr5384
+END -- vb6
+END -- almt675
+
+TABLES
+lqb_file,
+lqa_file
+ATTRIBUTES
+ButtonEdit lqa01=lqa_file.lqa01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+CheckBox lqa05=lqa_file.lqa05, tabIndex=8, text="Approved?", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox lqa02=lqa_file.lqa02, tabIndex=2, not null, required, items=(("0", "Automatic"),("1", "Manual"));
+ComboBox lqa06=lqa_file.lqa06, tabIndex=9, noEntry, items=(("0", "Created"),("1", "Approved"),("S", "Approving"),("R", "Rejected"),("W", "Withdraw"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+DateEdit lqa04=lqa_file.lqa04, tabIndex=3, not null, required;
+ComboBox lqa07=lqa_file.lqa07, tabIndex=10, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+ButtonEdit lqaplant=lqa_file.lqaplant, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type VARCHAR, tabIndex=5, noEntry;
+ButtonEdit lqa08=lqa_file.lqa08, action=controlp, tabIndex=11, noEntry, image="zoom.png";
+ButtonEdit lqalegal=lqa_file.lqalegal, action=controlp, tabIndex=6, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=7, noEntry;
+DateEdit lqa09=lqa_file.lqa09, tabIndex=12, noEntry;
+Edit lqauser=lqa_file.lqauser, tabIndex=13, noEntry;
+DateEdit lqacrat=lqa_file.lqacrat, tabIndex=17, noEntry;
+Edit lqaacti=lqa_file.lqaacti, tabIndex=19, noEntry;
+Edit lqagrup=lqa_file.lqagrup, tabIndex=14, noEntry;
+Edit lqamodu=lqa_file.lqamodu, tabIndex=18, noEntry;
+DateEdit lqadate=lqa_file.lqadate, tabIndex=20, noEntry;
+Edit lqaoriu=lqa_file.lqaoriu, tabIndex=15, noEntry;
+Edit lqaorig=lqa_file.lqaorig, tabIndex=16, noEntry;
+ButtonEdit lqb02=lqb_file.lqb02, action=controlp, tabIndex=21, title="Coupon No.", not null, required, image="zoom.png";
+ButtonEdit lqb03=lqb_file.lqb03, action=controlp, tabIndex=22, title="Coupon Type", noEntry, image="zoom.png";
+Edit lpx02=formonly.lpx02 type CHAR, tabIndex=23, title="Coupon Type Name", noEntry;
+ButtonEdit lqb04=lqb_file.lqb04, action=controlp, tabIndex=24, title="Coupon Denomination No.", noEntry, image="zoom.png";
+Edit lrz02=formonly.lrz02 type CHAR, tabIndex=25, title="Denomination", noEntry;
+ComboBox lqb05=lqb_file.lqb05, tabIndex=26, title="Coupon Original Status", noEntry, items=(("0", "Register"),("1", "Put On Sale"),("2", "Withdrawl"),("3", "Cancel"),("4", "Used"),("5", "Grant"),("6", "Recycling"),("7", "Cancel After Vertification"));
+Edit lqb06=lqb_file.lqb06, tabIndex=27, title="Original Status Date", noEntry;
+ComboBox lqb07=lqb_file.lqb07, tabIndex=28, title="Cancel Status", noEntry, items=(("0", "Normal"),("1", "Abnormal"),("2", "Abnormal-unvalid Coupon"));
+Edit lqb08=lqb_file.lqb08, tabIndex=29, title="Cancel Times", noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=30;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=31;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lqb(lqb_file.lqb02,lqb_file.lqb03,formonly.lpx02,lqb_file.lqb04,formonly.lrz02,lqb_file.lqb05,lqb_file.lqb06,lqb_file.lqb07,lqb_file.lqb08)
+SCREEN RECORD Undefined(lqa_file.lqa01,lqa_file.lqa05,lqa_file.lqa02,lqa_file.lqa06,formonly.imgmksg,lqa_file.lqa04,lqa_file.lqa07,lqa_file.lqaplant,formonly.rtz13,lqa_file.lqa08,lqa_file.lqalegal,formonly.azt02,lqa_file.lqa09,lqa_file.lqauser,lqa_file.lqacrat,lqa_file.lqaacti,lqa_file.lqagrup,lqa_file.lqamodu,lqa_file.lqadate,lqa_file.lqaoriu,lqa_file.lqaorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

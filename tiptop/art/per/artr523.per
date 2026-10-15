@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr523.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                             >
+  [label1      |ogaplant                ]
+  [label2      |rtz10                   ]
+  [label3      |oga02                   ]
+  [label5      |oga01                   ]
+  [label4      |ima131                  ]
+ <                                                     >
+ <G group2                                             >
+  [cb1                       ]
+  [cb2                     ]
+ <                                                     >
+}
+END -- Grid1
+Grid Grid2
+{
+  [more                       ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+oga_file
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+Label label1:Label1, text=%"Plant";
+ButtonEdit ogaplant=formonly.ogaplant type CHAR, action=controlp, tabIndex=1, image="zoom";
+Label label2:Label2, text=%"City";
+ButtonEdit rtz10=formonly.rtz10 type CHAR, action=controlp, tabIndex=2, image="zoom";
+Label label3:Label3, text=%"Date";
+DateEdit oga02=formonly.oga02 type like oga_file.oga02, tabIndex=3;
+Label label5:Label5, text=%"Sales order";
+ButtonEdit oga01=formonly.oga01 type CHAR, action=controlp, tabIndex=4, image="zoom";
+Label label4:Label4, text=%"Classify";
+ButtonEdit ima131=formonly.ima131 type CHAR, action=controlp, tabIndex=5, image="zoom";
+Group group2:Group2, text=%"Group2";
+CheckBox cb1=formonly.cb1 type CHAR, tabIndex=6, text=%"Sales return material", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox cb2=formonly.cb2 type CHAR, tabIndex=7, text=%"Print Details", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=8, text=%"more", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.more,formonly.cb1,formonly.ogaplant,formonly.rtz10,formonly.oga02,formonly.ima131,formonly.oga01,formonly.cb2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_sfa2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Allotment")
+Grid gr3842
+{
+ <T s_sfa                                                   >
+ [check|sfa03               |sfa08      |sfa12|sfa05       ]
+ [check|sfa03               |sfa08      |sfa12|sfa05       ]
+ [check|sfa03               |sfa08      |sfa12|sfa05       ]
+ [check|sfa03               |sfa08      |sfa12|sfa05       ]
+ [check|sfa03               |sfa08      |sfa12|sfa05       ]
+ [check|sfa03               |sfa08      |sfa12|sfa05       ]
+ [check|sfa03               |sfa08      |sfa12|sfa05       ]
+ [check|sfa03               |sfa08      |sfa12|sfa05       ]
+ [check|sfa03               |sfa08      |sfa12|sfa05       ]
+ [check|sfa03               |sfa08      |sfa12|sfa05       ]
+ <                                                          >
+
+}
+END -- gr3842
+END -- q_sfa2
+
+TABLES
+sfa_file
+ATTRIBUTES
+Table s_sfa:s_sfa;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sfa03=sfa_file.sfa03, tabIndex=2, title="Down Level Item", noEntry;
+Edit sfa08=sfa_file.sfa08, tabIndex=3, title="Serial No.", noEntry;
+Edit sfa12=sfa_file.sfa12, tabIndex=4, title="Unit", noEntry;
+Edit sfa05=sfa_file.sfa05, tabIndex=5, title="Qty to Issue", noEntry, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfa(formonly.check,sfa_file.sfa03,sfa_file.sfa08,sfa_file.sfa12,sfa_file.sfa05)
+END -- INSTRUCTIONS
+

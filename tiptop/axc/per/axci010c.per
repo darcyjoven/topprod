@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci010c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci010c")
+VBox VBox1
+Folder pc342
+Page page01(text="Copy Data")
+Grid gr1446
+{
+ Document Source    [oldno    ]
+
+}
+END -- gr1446
+END -- page01
+END -- pc342
+Table s_newno
+{
+[newno       ]
+[newno       ]
+[newno       ]
+[newno       ]
+[newno       ]
+[newno       ]
+[newno       ]
+[newno       ]
+[newno       ]
+[newno       ]
+
+}
+END -- s_newno
+END -- VBox1
+END -- axci010c
+
+ATTRIBUTES
+Edit oldno=formonly.oldno type CHAR, tabIndex=1, noEntry;
+ButtonEdit newno=formonly.newno type CHAR, action=controlp, tabIndex=2, title="Copy Document", image="zoom", comment="Enter Doc No, <^P>Qry Doc No.";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_newno(formonly.newno)
+SCREEN RECORD Undefined(formonly.oldno)
+END -- INSTRUCTIONS
+

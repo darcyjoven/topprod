@@ -1,0 +1,140 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt552.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt551")
+VBox vb3
+Folder pc1
+Page Page1(text=%"Page0")
+Grid gr1
+{
+
+ rvc01[rvc01                ]   rvc04[rvc04          ]               rvcconf  [rvcconf       |imgmksg ]
+ rvc02[rvc02                ]   rvc05[rvc05          ]               rvccond  [rvccond       |        ]
+ rvc03[rvc03                ]   rvc06[rvc06                   ]      rvcconu  [rvcconu       |rvcconu_desc    ]
+      [rvc03_desc           ]        [                        ]      rvcplant [rvcplant      |rvcplant_desc   ]
+
+
+}
+END -- gr1
+END -- Page1
+Page Page2(text=%"Page1")
+Grid gr2
+{
+
+ rvcuser[rvcuser        ]     rvcmodu[rvcmodu       ]    rvcacti[rvcacti       ]
+ rvcgrup[rvcgrup        ]     rvcdate[rvcdate       ]    rvccrat[rvccrat       ]
+ rvcoriu[rvcoriu        ]     rvcorig[rvcorig       ]
+
+}
+END -- gr2
+END -- Page2
+END -- pc1
+Folder pc2
+Page Page3(action=scale, text=%"Page0")
+Table s_rvg
+{
+[rvg02   |rvg03   |rvg03_desc   |rvg04   |rvg05   |rvg06   |ogb04_ohb04 |ogb06_oh|ogb05_ohb05|ogb05_de|ogb13   |ogb12   |ogb14   |ogb14t_o|num_unch|rvg07   |rvg08   ]
+[rvg02   |rvg03   |rvg03_desc   |rvg04   |rvg05   |rvg06   |ogb04_ohb04 |ogb06_oh|ogb05_ohb05|ogb05_de|ogb13   |ogb12   |ogb14   |ogb14t_o|num_unch|rvg07   |rvg08   ]
+[rvg02   |rvg03   |rvg03_desc   |rvg04   |rvg05   |rvg06   |ogb04_ohb04 |ogb06_oh|ogb05_ohb05|ogb05_de|ogb13   |ogb12   |ogb14   |ogb14t_o|num_unch|rvg07   |rvg08   ]
+[rvg02   |rvg03   |rvg03_desc   |rvg04   |rvg05   |rvg06   |ogb04_ohb04 |ogb06_oh|ogb05_ohb05|ogb05_de|ogb13   |ogb12   |ogb14   |ogb14t_o|num_unch|rvg07   |rvg08   ]
+[rvg02   |rvg03   |rvg03_desc   |rvg04   |rvg05   |rvg06   |ogb04_ohb04 |ogb06_oh|ogb05_ohb05|ogb05_de|ogb13   |ogb12   |ogb14   |ogb14t_o|num_unch|rvg07   |rvg08   ]
+
+}
+END -- s_rvg
+END -- Page3
+Page Page7(action=feiyong, text=%"Page2")
+Table s_rve
+{
+[rve02 |rve03     |rve03_desc  |rve04     |rve05   |lub03   |oaj02   |lub09        |lub04   |lub04t  |lua24               |rve06       ]
+[rve02 |rve03     |rve03_desc  |rve04     |rve05   |lub03   |oaj02   |lub09        |lub04   |lub04t  |lua24               |rve06       ]
+[rve02 |rve03     |rve03_desc  |rve04     |rve05   |lub03   |oaj02   |lub09        |lub04   |lub04t  |lua24               |rve06       ]
+[rve02 |rve03     |rve03_desc  |rve04     |rve05   |lub03   |oaj02   |lub09        |lub04   |lub04t  |lua24               |rve06       ]
+[rve02 |rve03     |rve03_desc  |rve04     |rve05   |lub03   |oaj02   |lub09        |lub04   |lub04t  |lua24               |rve06       ]
+
+}
+END -- s_rve
+END -- Page7
+END -- pc2
+Grid gr6
+{
+    ----------Rows[idx  ]/[cnt   ]---------------
+
+
+
+}
+END -- gr6
+END -- vb3
+END -- artt552
+
+TABLES
+rvg_file,
+rve_file,
+rvc_file,
+ogb_file,
+lub_file
+ATTRIBUTES
+ButtonEdit rvc01=rvc_file.rvc01, action=controlp, tabIndex=1, not null, required, image="zoom";
+DateEdit rvc04=rvc_file.rvc04, tabIndex=4, not null, required;
+ComboBox rvcconf=rvc_file.rvcconf, tabIndex=7, noEntry, items=(("N", "un_confirm"),("Y", "confirm"),("X", "void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ComboBox rvc02=rvc_file.rvc02, tabIndex=48, noEntry, not null, required, items=(("3", "rate scale"),("4", "union"));
+DateEdit rvc05=rvc_file.rvc05, tabIndex=5, not null, required;
+DateEdit rvccond=rvc_file.rvccond, tabIndex=8, noEntry;
+ButtonEdit rvc03=rvc_file.rvc03, action=controlp, tabIndex=2, not null, required, image="zoom";
+TextEdit rvc06=rvc_file.rvc06, tabIndex=6;
+ButtonEdit rvcconu=rvc_file.rvcconu, action=controlp, tabIndex=9, noEntry, image="zoom";
+Edit rvcconu_desc=formonly.rvcconu_desc type VARCHAR, tabIndex=12, noEntry;
+Edit rvc03_desc=formonly.rvc03_desc type VARCHAR, tabIndex=3, noEntry;
+ButtonEdit rvcplant=rvc_file.rvcplant, action=controlp, tabIndex=10, noEntry, image="zoom.png";
+Edit rvcplant_desc=formonly.rvcplant_desc type VARCHAR, tabIndex=11, noEntry;
+Edit rvcuser=rvc_file.rvcuser, tabIndex=13, noEntry;
+Edit rvcmodu=rvc_file.rvcmodu, tabIndex=15, noEntry;
+Edit rvcacti=rvc_file.rvcacti, tabIndex=17, noEntry;
+Edit rvcgrup=rvc_file.rvcgrup, tabIndex=14, noEntry;
+DateEdit rvcdate=formonly.rvcdate type CHAR, tabIndex=16, noEntry;
+DateEdit rvccrat=rvc_file.rvccrat, tabIndex=18, noEntry;
+Edit rvcoriu=rvc_file.rvcoriu, tabIndex=49, noEntry;
+Edit rvcorig=rvc_file.rvcorig, tabIndex=50, noEntry;
+Edit rvg02=rvg_file.rvg02, tabIndex=19, title="rvg02", noEntry, not null, required;
+ButtonEdit rvg03=rvg_file.rvg03, action=controlp, tabIndex=20, title="rvg03", noEntry, image="zoom";
+Edit rvg03_desc=formonly.rvg03_desc type VARCHAR, tabIndex=21, title="rvg03_desc", noEntry;
+ComboBox rvg04=rvg_file.rvg04, tabIndex=22, title="rvg04", noEntry, items=(("1", "Out"),("2", "Return"));
+ButtonEdit rvg05=rvg_file.rvg05, action=controlp, tabIndex=23, title="rvg05", noEntry, image="zoom";
+Edit rvg06=rvg_file.rvg06, tabIndex=24, title="rvg06", noEntry;
+Edit ogb04_ohb04=formonly.ogb04_ohb04 type VARCHAR, tabIndex=25, title="ogb04_ohb04", noEntry;
+Edit ogb06_oh=formonly.ogb06_ohb06 type VARCHAR, tabIndex=27, title="ogb06_ohb06", noEntry;
+Edit ogb05_ohb05=formonly.ogb05_ohb05 type VARCHAR, tabIndex=26, title="ogb05_ohb05", noEntry;
+Edit ogb05_de=formonly.ogb05_desc type VARCHAR, tabIndex=28, title="ogb05_desc", noEntry;
+Edit ogb13=ogb_file.ogb13, tabIndex=29, title="ogb13_ohb13", noEntry;
+Edit ogb12=ogb_file.ogb12, tabIndex=30, title="ogb12_ohb12", noEntry;
+Edit ogb14=ogb_file.ogb14, tabIndex=31, title="ogb14_ohb14", noEntry;
+Edit ogb14t_o=formonly.ogb14t_ohb14t type DECIMAL, tabIndex=32, title="ogb14t_ohb14t", noEntry;
+Edit num_unch=formonly.num_uncheck1 type INTEGER, tabIndex=33, title="num_uncheck1", noEntry;
+CheckBox rvg07=rvg_file.rvg07, tabIndex=34, title="rvg07", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rvg08=rvg_file.rvg08, tabIndex=35, title="rvg08", not null, required;
+Edit rve02=rve_file.rve02, tabIndex=36, title="rve02", noEntry;
+ButtonEdit rve03=rve_file.rve03, action=controlp, tabIndex=37, title="rve03", noEntry, image="zoom";
+Edit rve03_desc=formonly.rve03_desc type VARCHAR, tabIndex=41, title="rve03_desc", noEntry;
+ButtonEdit rve04=rve_file.rve04, action=controlp, tabIndex=38, title="rve04", noEntry, image="zoom";
+Edit rve05=rve_file.rve05, tabIndex=39, title="rve05", noEntry;
+Edit lub03=formonly.lub03 type VARCHAR, tabIndex=42, title="lub03", noEntry;
+Edit oaj02=formonly.oaj02 type VARCHAR, tabIndex=43, title="oaj02", noEntry;
+ComboBox lub09=lub_file.lub09, tabIndex=51, title=%"lub09", noEntry, items=(("01", "Deposit"),("02", "Income"),("10", "Expenditure alone"));
+Edit lub04=formonly.lub04 type DECIMAL, tabIndex=44, title="lub04", noEntry;
+Edit lub04t=formonly.lub04t type DECIMAL, tabIndex=45, title="lub04t", noEntry;
+Edit lua24=formonly.lua24 type like lub_file.lub14, tabIndex=52, title=%"lub14", noEntry;
+CheckBox rve06=rve_file.rve06, tabIndex=40, title="rve06", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type SMALLINT, tabIndex=46;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=47;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvg(rvg_file.rvg02,rvg_file.rvg03,formonly.rvg03_desc,rvg_file.rvg04,rvg_file.rvg05,rvg_file.rvg06,formonly.ogb04_ohb04,formonly.ogb06_ohb06,formonly.ogb05_ohb05,formonly.ogb05_desc,ogb_file.ogb13,ogb_file.ogb12,ogb_file.ogb14,formonly.ogb14t_ohb14t,formonly.num_uncheck1,rvg_file.rvg07,rvg_file.rvg08)
+SCREEN RECORD Undefined(rvc_file.rvc01,rvc_file.rvc04,rvc_file.rvcconf,formonly.imgmksg,rvc_file.rvc02,rvc_file.rvc05,rvc_file.rvccond,rvc_file.rvc03,rvc_file.rvc06,rvc_file.rvcconu,formonly.rvcconu_desc,formonly.rvc03_desc,rvc_file.rvcplant,formonly.rvcplant_desc,rvc_file.rvcuser,rvc_file.rvcmodu,rvc_file.rvcacti,rvc_file.rvcgrup,formonly.rvcdate,rvc_file.rvccrat,rvc_file.rvcoriu,rvc_file.rvcorig,formonly.idx,formonly.cnt)
+SCREEN RECORD s_rve(rve_file.rve02,rve_file.rve03,formonly.rve03_desc,rve_file.rve04,rve_file.rve05,formonly.lub03,formonly.oaj02,lub_file.lub09,formonly.lub04,formonly.lub04t,formonly.lua24,rve_file.rve06)
+END -- INSTRUCTIONS
+

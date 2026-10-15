@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi140.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi140")
+VBox vb4
+Folder pc4
+Page Page6(text=%"Main")
+Grid gr9
+{
+
+ Store No.  [lmestore    |rtz13                         ]  Confirm Status[lme05        |imgmksg]
+ Corporation[lmelegal    |azt02                         ]  Confirmed BY  [lme06        |       ]
+ Floor No.  [lme02       |lmb03                         ]  Confirmed Date[lme07        ]
+ Storey No. [lme03       |lmc04                         ]
+ Apport.%   [lme04               ]%
+
+}
+END -- gr9
+END -- Page6
+Page info(text=%"Info")
+Grid gr23
+{
+
+ Data User   [lmeuser   ] Modify     [lmemodu     ]  acti[lmeacti   ]
+ Data Group  [lmegrup   ] Modify Date[lmedate     ]  crat[lmecrat     ]
+ Record Orig.[lmeoriu   ]
+ Dept Orig.  [lmeorig     ]
+
+}
+END -- gr23
+END -- info
+END -- pc4
+Grid gr8
+{
+ ---------- Rows [idx   ]/[cnt   ] ----------
+
+
+}
+END -- gr8
+END -- vb4
+END -- almi140
+
+TABLES
+lme_file
+ATTRIBUTES
+ButtonEdit lmestore=lme_file.lmestore, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=10, noEntry;
+ComboBox lme05=lme_file.lme05, tabIndex=9, not null, items=(("Y", "Confirmed"),("N", "UnConfirmed"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit lmelegal=lme_file.lmelegal, action=controlp, tabIndex=19, noEntry, not null, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=20, noEntry;
+Edit lme06=lme_file.lme06, tabIndex=7, not null;
+ButtonEdit lme02=lme_file.lme02, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=11, noEntry;
+DateEdit lme07=lme_file.lme07, tabIndex=8, not null;
+ButtonEdit lme03=lme_file.lme03, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=12, noEntry;
+Edit lme04=lme_file.lme04, tabIndex=6, not null;
+Edit lmeuser=formonly.lmeuser type VARCHAR, tabIndex=13, noEntry;
+Edit lmemodu=formonly.lmemodu type VARCHAR, tabIndex=14, noEntry;
+Edit lmeacti=formonly.lmeacti type VARCHAR, tabIndex=15, noEntry;
+Edit lmegrup=formonly.lmegrup type VARCHAR, tabIndex=16, noEntry;
+DateEdit lmedate=formonly.lmedate type DATE, tabIndex=17, noEntry;
+DateEdit lmecrat=formonly.lmecrat type CHAR, tabIndex=18, noEntry;
+Edit lmeoriu=lme_file.lmeoriu, tabIndex=22, noEntry;
+Edit lmeorig=lme_file.lmeorig, tabIndex=21, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=1, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lme_file.lmestore,formonly.rtz13,lme_file.lme05,formonly.imgmksg,lme_file.lmelegal,formonly.azt02,lme_file.lme06,lme_file.lme02,formonly.lmb03,lme_file.lme07,lme_file.lme03,formonly.lmc04,lme_file.lme04,formonly.lmeuser,formonly.lmemodu,formonly.lmeacti,formonly.lmegrup,formonly.lmedate,formonly.lmecrat,lme_file.lmeoriu,lme_file.lmeorig,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

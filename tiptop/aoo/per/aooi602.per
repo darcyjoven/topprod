@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi602.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi602")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+Grid gr574
+{
+ Data Center Code  [gew01         ][geu02               ]
+ Data Type         [gew02          ]
+ Carry Type        [gew03          ]
+
+}
+END -- gr574
+END -- page01
+END -- folder01
+Table s_gew
+{
+[gew04         |azp02               |azw05   |azw06   |plant                     |gew05                         |gew06   |gew10   |gew07   |gew08                         ]
+[gew04         |azp02               |azw05   |azw06   |plant                     |gew05                         |gew06   |gew10   |gew07   |gew08                         ]
+[gew04         |azp02               |azw05   |azw06   |plant                     |gew05                         |gew06   |gew10   |gew07   |gew08                         ]
+[gew04         |azp02               |azw05   |azw06   |plant                     |gew05                         |gew06   |gew10   |gew07   |gew08                         ]
+[gew04         |azp02               |azw05   |azw06   |plant                     |gew05                         |gew06   |gew10   |gew07   |gew08                         ]
+
+}
+END -- s_gew
+Grid gr6
+{
+[dummy01                                                                                   ]
+[dummy05                                                                                   ]
+}
+END -- gr6
+Grid gr5
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5
+END -- vb4
+END -- aooi602
+
+TABLES
+gew_file,
+geu_file,
+azp_file
+ATTRIBUTES
+ButtonEdit gew01=gew_file.gew01, action=controlp, tabIndex=1, not null, required, image="zoom.png", comment="<^P>Qry Data Center Code";
+Edit geu02=geu_file.geu02, tabIndex=2, noEntry;
+ComboBox gew02=gew_file.gew02, tabIndex=3, not null, required, items=(("0", "Basic Data"),("1", "Item"),("2", "BOM"),("3", "ECN"),("4", "Customer"),("5", "Vendor"),("6", "Account"),("7", "Price"));
+ComboBox gew03=gew_file.gew03, tabIndex=4, not null, required, items=(("1", "Auto Carry"),("2", "Carry After Ask"),("3", "Manual Carry"));
+ButtonEdit gew04=gew_file.gew04, action=controlp, tabIndex=5, title="Logestic", not null, required, image="zoom.png", comment="<^P>Qry Logestic";
+Edit azp02=azp_file.azp02, tabIndex=6, title="Logestic Name", noEntry;
+Edit azw05=formonly.azw05 type VARCHAR, tabIndex=7, title="Transtration Data DB", noEntry;
+Edit azw06=formonly.azw06 type VARCHAR, tabIndex=8, title="Base Data DB", noEntry;
+Edit plant=formonly.plant type CHAR, tabIndex=9, title="plant", noEntry;
+ButtonEdit gew05=gew_file.gew05, action=controlp, tabIndex=10, title="Carry Conditions", not null, required, image="zoom.png", comment="<^P>Qry Conditions";
+CheckBox gew06=gew_file.gew06, tabIndex=11, title="Delete", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gew10=formonly.gew10 type CHAR, tabIndex=12, title="gew10", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gew07=gew_file.gew07, tabIndex=13, title="Update", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit gew08=gew_file.gew08, action=controlp, tabIndex=14, title="Person To Notify", image="zoom.png", comment="<^P>Qry Persons & Address";
+Label dummy01:dummy01, text="Do not enter Carry Condtions manually! Please Enter it By controlp!";
+Label dummy05:dummy05, text=" ";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gew(gew_file.gew04,azp_file.azp02,formonly.azw05,formonly.azw06,formonly.plant,gew_file.gew05,gew_file.gew06,formonly.gew10,gew_file.gew07,gew_file.gew08)
+SCREEN RECORD Undefined(gew_file.gew01,geu_file.geu02,gew_file.gew02,gew_file.gew03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi100")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr596
+{
+ Version        [bgm01     ]
+ Area Code      [bgm012    ]
+ Year           [bgm02     ]
+ Product Type   [bgm017              ]
+                [ima02                         ]
+                [ima021                        ]
+ Sales Unit     [bgm08     ]
+ Inventory Unit [ima25     ]
+ Conver.Rt.     [bgm08_fac ]
+
+}
+END -- gr596
+Grid gr597
+{
+ Customer #     [bgm014    ][occ02     ]
+ Salesman       [bgm013    ][gen02     ]
+ Department No. [bgm015    ][gem02     ]
+ Currency       [bgm016    ]
+
+
+
+
+
+
+}
+END -- gr597
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_bgm
+{
+[bgm03    |bgm04               |bga05               |bgm05               |bgm06     |bgm07        |bgm091              |bgm092              |bgm093              |bgm094            ]
+[bgm03    |bgm04               |bga05               |bgm05               |bgm06     |bgm07        |bgm091              |bgm092              |bgm093              |bgm094            ]
+[bgm03    |bgm04               |bga05               |bgm05               |bgm06     |bgm07        |bgm091              |bgm092              |bgm093              |bgm094            ]
+[bgm03    |bgm04               |bga05               |bgm05               |bgm06     |bgm07        |bgm091              |bgm092              |bgm093              |bgm094            ]
+[bgm03    |bgm04               |bga05               |bgm05               |bgm06     |bgm07        |bgm091              |bgm092              |bgm093              |bgm094            ]
+[bgm03    |bgm04               |bga05               |bgm05               |bgm06     |bgm07        |bgm091              |bgm092              |bgm093              |bgm094            ]
+[bgm03    |bgm04               |bga05               |bgm05               |bgm06     |bgm07        |bgm091              |bgm092              |bgm093              |bgm094            ]
+[bgm03    |bgm04               |bga05               |bgm05               |bgm06     |bgm07        |bgm091              |bgm092              |bgm093              |bgm094            ]
+[bgm03    |bgm04               |bga05               |bgm05               |bgm06     |bgm07        |bgm091              |bgm092              |bgm093              |bgm094            ]
+[bgm03    |bgm04               |bga05               |bgm05               |bgm06     |bgm07        |bgm091              |bgm092              |bgm093              |bgm094            ]
+
+}
+END -- s_bgm
+HBox HBox2
+Grid gr598
+{
+ Sales Revenue [tot1                ]   Sales Cost [tot2                ]
+
+
+}
+END -- gr598
+Grid gr599
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr599
+END -- HBox2
+END -- VBox1
+END -- abgi100
+
+TABLES
+bgm_file
+ATTRIBUTES
+Edit bgm01=bgm_file.bgm01, tabIndex=1;
+ButtonEdit bgm012=bgm_file.bgm012, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>  Query Area ,You can input \'ALL\' means all area";
+Edit bgm02=bgm_file.bgm02, tabIndex=3, not null, required;
+ButtonEdit bgm017=bgm_file.bgm017, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P> Qry Item Master <^E> Qry Product Class";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=5, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=6, noEntry;
+ButtonEdit bgm08=bgm_file.bgm08, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P> Qry Unit";
+Edit ima25=formonly.ima25 type VARCHAR, tabIndex=8, noEntry;
+Edit bgm08_fac=bgm_file.bgm08_fac, tabIndex=9, noEntry;
+ButtonEdit bgm014=bgm_file.bgm014, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P> Qry Customer Common Data,You can input \'ALL\' means all Customer";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=11, noEntry;
+ButtonEdit bgm013=bgm_file.bgm013, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P> Qry Salesman  ,You can input \'ALL\' means all Salesman";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=13, noEntry;
+ButtonEdit bgm015=bgm_file.bgm015, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P> Query Department,You can input \'ALL\' means all Dept.";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=15, noEntry;
+ButtonEdit bgm016=bgm_file.bgm016, action=controlp, tabIndex=16, not null, required, image="zoom", comment="<^P> Qry Currency";
+Edit bgm03=bgm_file.bgm03, tabIndex=17, title="Period", not null, required;
+Edit bgm04=bgm_file.bgm04, tabIndex=18, title="U/P";
+Edit bga05=formonly.bga05 type CHAR, tabIndex=19, title="Ex.Rate", noEntry;
+Edit bgm05=bgm_file.bgm05, tabIndex=20, title="Budget Sales";
+Edit bgm06=bgm_file.bgm06, tabIndex=21, title="AR Date";
+Edit bgm07=bgm_file.bgm07, tabIndex=22, title="Nt.Due Dt.";
+Edit bgm091=bgm_file.bgm091, tabIndex=23, title="Unit Material", noEntry;
+Edit bgm092=bgm_file.bgm092, tabIndex=24, title="Unit Labor", noEntry;
+Edit bgm093=bgm_file.bgm093, tabIndex=25, title="Unit Overhead", noEntry;
+Edit bgm094=bgm_file.bgm094, tabIndex=26, title="Unit Sub", noEntry;
+Edit tot1=formonly.tot1 type DECIMAL, tabIndex=27, noEntry;
+Edit tot2=formonly.tot2 type DECIMAL, tabIndex=28, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=30, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgm(bgm_file.bgm03,bgm_file.bgm04,formonly.bga05,bgm_file.bgm05,bgm_file.bgm06,bgm_file.bgm07,bgm_file.bgm091,bgm_file.bgm092,bgm_file.bgm093,bgm_file.bgm094)
+SCREEN RECORD Undefined(bgm_file.bgm01,bgm_file.bgm012,bgm_file.bgm02,bgm_file.bgm017,formonly.ima02,formonly.ima021,bgm_file.bgm08,formonly.ima25,bgm_file.bgm08_fac,bgm_file.bgm014,formonly.occ02,bgm_file.bgm013,formonly.gen02,bgm_file.bgm015,formonly.gem02,bgm_file.bgm016,formonly.tot1,formonly.tot2,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

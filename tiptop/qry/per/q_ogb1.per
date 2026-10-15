@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_ogb1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_ogb1")
+VBox VBox1
+Folder pc846
+Page page01(text="Page01")
+Table s_ogb1
+{
+[check |ogb01            |ogb03   |oga03       |adg01            |adg02   |adg10          |adg05           |ima02               |adg11   |adg12           |adg17         ]
+[check |ogb01            |ogb03   |oga03       |adg01            |adg02   |adg10          |adg05           |ima02               |adg11   |adg12           |adg17         ]
+[check |ogb01            |ogb03   |oga03       |adg01            |adg02   |adg10          |adg05           |ima02               |adg11   |adg12           |adg17         ]
+[check |ogb01            |ogb03   |oga03       |adg01            |adg02   |adg10          |adg05           |ima02               |adg11   |adg12           |adg17         ]
+[check |ogb01            |ogb03   |oga03       |adg01            |adg02   |adg10          |adg05           |ima02               |adg11   |adg12           |adg17         ]
+[check |ogb01            |ogb03   |oga03       |adg01            |adg02   |adg10          |adg05           |ima02               |adg11   |adg12           |adg17         ]
+[check |ogb01            |ogb03   |oga03       |adg01            |adg02   |adg10          |adg05           |ima02               |adg11   |adg12           |adg17         ]
+[check |ogb01            |ogb03   |oga03       |adg01            |adg02   |adg10          |adg05           |ima02               |adg11   |adg12           |adg17         ]
+[check |ogb01            |ogb03   |oga03       |adg01            |adg02   |adg10          |adg05           |ima02               |adg11   |adg12           |adg17         ]
+[check |ogb01            |ogb03   |oga03       |adg01            |adg02   |adg10          |adg05           |ima02               |adg11   |adg12           |adg17         ]
+
+}
+END -- s_ogb1
+END -- page01
+END -- pc846
+Grid gr3815
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3815
+END -- VBox1
+END -- q_ogb1
+
+TABLES
+adg_file,
+ogb_file,
+oga_file
+ATTRIBUTES
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ogb01=ogb_file.ogb01, tabIndex=2, title="Delvry No.", noEntry;
+Edit ogb03=ogb_file.ogb03, tabIndex=3, title="Line#", noEntry;
+Edit oga03=oga_file.oga03, tabIndex=4, title="Out-Plant", noEntry;
+Edit adg01=adg_file.adg01, tabIndex=5, title="Trn-Out No.", noEntry;
+Edit adg02=adg_file.adg02, tabIndex=6, title="Line#", noEntry;
+Edit adg10=adg_file.adg10, tabIndex=7, title="In Warehouse", noEntry;
+Edit adg05=adg_file.adg05, tabIndex=8, title="Item No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=9, title="S/P Name";
+Edit adg11=adg_file.adg11, tabIndex=10, title="Unit", noEntry;
+Edit adg12=adg_file.adg12, tabIndex=11, title="WH-Ret Qty", noEntry;
+Edit adg17=adg_file.adg17, tabIndex=12, title="Retured Qty", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogb1(formonly.check,ogb_file.ogb01,ogb_file.ogb03,oga_file.oga03,adg_file.adg01,adg_file.adg02,adg_file.adg10,adg_file.adg05,formonly.ima02,adg_file.adg11,adg_file.adg12,adg_file.adg17)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

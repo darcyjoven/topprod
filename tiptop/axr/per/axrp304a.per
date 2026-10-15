@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrp304a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrp304a")
+Grid gr2956
+{
+ <G group01                                   >
+  Bill No.            [oma01           ]
+  Account Category    [oma13     ]
+  Label1              [g_no1           ]
+ <                                            >
+
+}
+END -- gr2956
+END -- axrp304a
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit oma01=formonly.oma01 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Edit oma13=formonly.oma13 type CHAR, tabIndex=1;
+ButtonEdit g_no1=formonly.g_no1, action=controlp, tabIndex=2, image="zoom.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oma13,formonly.g_no1,formonly.oma01)
+END -- INSTRUCTIONS
+

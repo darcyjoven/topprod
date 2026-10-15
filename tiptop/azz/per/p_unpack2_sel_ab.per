@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_unpack2_sel_ab.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"choice_database_for_alter_table")
+VBox VBox1
+Grid gr49
+{
+  ORACLE SYSTEM的密碼：     [g_pwd       ]
+  ORACLE SYS的密碼：        [g_pwd_sys   ]
+[delete_chk                              ]
+
+}
+END -- gr49
+VBox VBox2
+Table tb1
+{
+[alter_|backup|azp03       |type      ]
+[alter_|backup|azp03       |type      ]
+[alter_|backup|azp03       |type      ]
+[alter_|backup|azp03       |type      ]
+[alter_|backup|azp03       |type      ]
+[alter_|backup|azp03       |type      ]
+[alter_|backup|azp03       |type      ]
+[alter_|backup|azp03       |type      ]
+[alter_|backup|azp03       |type      ]
+[alter_|backup|azp03       |type      ]
+
+}
+END -- tb1
+END -- VBox2
+END -- VBox1
+END -- p_unpack2_sel_db
+
+ATTRIBUTES
+Edit g_pwd=formonly.g_pwd type VARCHAR, tabIndex=5, default = "", not null, required, invisible;
+Edit g_pwd_sys=formonly.g_pwd_sys type VARCHAR, tabIndex=6, not null, required, invisible;
+CheckBox delete_chk=formonly.delete_chk type VARCHAR, tabIndex=7, default = "N", text="進行刪除PATCH備份檔的動作", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox alter_=formonly.alter_chk type CHAR, tabIndex=1, title="alter", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox backup=formonly.Backup_chk type CHAR, tabIndex=4, title="Backup", text="", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit azp03=formonly.azp03 type CHAR, tabIndex=2, title="db_name", noEntry, downShift;
+Edit type=formonly.type type CHAR, tabIndex=3, title=%"type", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azp03(formonly.alter_chk,formonly.Backup_chk,formonly.azp03,formonly.type)
+SCREEN RECORD s_pwd_chk(formonly.g_pwd,formonly.g_pwd_sys,formonly.delete_chk)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_itemlang.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_itemlang")
+VBox VBox1
+Grid gr3216
+{
+ <G gb2346                               >
+  Form ID          [gae01               ]
+  Control Item     [gae03               ]
+ <                                       >
+
+}
+END -- gr3216
+Table s_gaeitem
+{
+[gae04                           |gae05                           |gae06                          ]
+[gae04                           |gae05                           |gae06                          ]
+[gae04                           |gae05                           |gae06                          ]
+[gae04                           |gae05                           |gae06                          ]
+[gae04                           |gae05                           |gae06                          ]
+[gae04                           |gae05                           |gae06                          ]
+[gae04                           |gae05                           |gae06                          ]
+[gae04                           |gae05                           |gae06                          ]
+[gae04                           |gae05                           |gae06                          ]
+[gae04                           |gae05                           |gae06                          ]
+
+}
+END -- s_gaeitem
+END -- VBox1
+END -- p_itemlang
+
+TABLES
+gae_file
+ATTRIBUTES
+Group gb2346:gb2346, text="group01";
+Edit gae01=gae_file.gae01, tabIndex=1, noEntry;
+Edit gae03=gae_file.gae03, tabIndex=2, noEntry;
+Edit gae04=gae_file.gae04, tabIndex=3, title="Traditional Chinese Description", noEntry;
+Edit gae05=gae_file.gae05, tabIndex=4, title="English Description", not null, required;
+Edit gae06=gae_file.gae06, tabIndex=5, title="Simplified Chinese Description", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gaeitem(gae_file.gae04,gae_file.gae05,gae_file.gae06)
+SCREEN RECORD Undefined(gae_file.gae01,gae_file.gae03)
+END -- INSTRUCTIONS
+

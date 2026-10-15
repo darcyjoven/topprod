@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi080.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi080")
+VBox vb9
+Folder pc748
+Page page01(text="Main")
+Table s_nmt
+{
+[nmt01      |nmt02                                                       |nmt03            |nmt14               |nmt12       |nmt11        |nmt04     |nmt05     |nmt13            |nmt06     |nmt07     |nmt08     |nmt09     |nmt10     |nmtac]
+[nmt01      |nmt02                                                       |nmt03            |nmt14               |nmt12       |nmt11        |nmt04     |nmt05     |nmt13            |nmt06     |nmt07     |nmt08     |nmt09     |nmt10     |nmtac]
+[nmt01      |nmt02                                                       |nmt03            |nmt14               |nmt12       |nmt11        |nmt04     |nmt05     |nmt13            |nmt06     |nmt07     |nmt08     |nmt09     |nmt10     |nmtac]
+[nmt01      |nmt02                                                       |nmt03            |nmt14               |nmt12       |nmt11        |nmt04     |nmt05     |nmt13            |nmt06     |nmt07     |nmt08     |nmt09     |nmt10     |nmtac]
+[nmt01      |nmt02                                                       |nmt03            |nmt14               |nmt12       |nmt11        |nmt04     |nmt05     |nmt13            |nmt06     |nmt07     |nmt08     |nmt09     |nmt10     |nmtac]
+[nmt01      |nmt02                                                       |nmt03            |nmt14               |nmt12       |nmt11        |nmt04     |nmt05     |nmt13            |nmt06     |nmt07     |nmt08     |nmt09     |nmt10     |nmtac]
+[nmt01      |nmt02                                                       |nmt03            |nmt14               |nmt12       |nmt11        |nmt04     |nmt05     |nmt13            |nmt06     |nmt07     |nmt08     |nmt09     |nmt10     |nmtac]
+[nmt01      |nmt02                                                       |nmt03            |nmt14               |nmt12       |nmt11        |nmt04     |nmt05     |nmt13            |nmt06     |nmt07     |nmt08     |nmt09     |nmt10     |nmtac]
+[nmt01      |nmt02                                                       |nmt03            |nmt14               |nmt12       |nmt11        |nmt04     |nmt05     |nmt13            |nmt06     |nmt07     |nmt08     |nmt09     |nmt10     |nmtac]
+[nmt01      |nmt02                                                       |nmt03            |nmt14               |nmt12       |nmt11        |nmt04     |nmt05     |nmt13            |nmt06     |nmt07     |nmt08     |nmt09     |nmt10     |nmtac]
+
+}
+END -- s_nmt
+END -- page01
+END -- pc748
+Grid gr4030
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4030
+END -- vb9
+END -- anmi080
+
+TABLES
+nmt_file
+ATTRIBUTES
+Edit nmt01=nmt_file.nmt01, tabIndex=1, title="Bank No.", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit nmt02=nmt_file.nmt02, tabIndex=2, title="Bank Name";
+Edit nmt03=nmt_file.nmt03, tabIndex=3, title="Acct.Record Days";
+Edit nmt14=nmt_file.nmt14, tabIndex=16, title="Address";
+Edit nmt12=nmt_file.nmt12, tabIndex=14, title="The source bank code of the internet bank\'s interface", not null, required;
+Edit nmt11=nmt_file.nmt11, tabIndex=13, default = "2.0", title="Interface version of the internet bank", not null, required;
+Edit nmt04=nmt_file.nmt04, tabIndex=6, default = "CMB", title="Bank Identify Code/SWIFT Code";
+Edit nmt05=nmt_file.nmt05, tabIndex=7, default = "CMB", title="Bank Identify Name/SWIFT Name";
+ButtonEdit nmt13=nmt_file.nmt13, action=controlp, tabIndex=15, title="Country/Area Code", image="zoom.png";
+ButtonEdit nmt06=nmt_file.nmt06, action=controlp, tabIndex=8, title="The province of opening bank", not null, required, image="zoom";
+ButtonEdit nmt07=nmt_file.nmt07, action=controlp, tabIndex=9, title="The city of opening bank", not null, required, image="zoom";
+ButtonEdit nmt08=nmt_file.nmt08, action=controlp, tabIndex=10, title="The country of opening bank", image="zoom";
+Edit nmt09=nmt_file.nmt09, tabIndex=11, title="The branch of bank code in the system", not null, required;
+Edit nmt10=nmt_file.nmt10, tabIndex=12, title="Interface system code", not null, required;
+CheckBox nmtac=nmt_file.nmtacti, tabIndex=4, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmt(nmt_file.nmt01,nmt_file.nmt02,nmt_file.nmt03,nmt_file.nmt14,nmt_file.nmt12,nmt_file.nmt11,nmt_file.nmt04,nmt_file.nmt05,nmt_file.nmt13,nmt_file.nmt06,nmt_file.nmt07,nmt_file.nmt08,nmt_file.nmt09,nmt_file.nmt10,nmt_file.nmtacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

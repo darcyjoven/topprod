@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr610")
+VBox VBox1
+Grid gr5145
+{
+ <G group01                                                     >
+  P/O No.        [pmm01               ]
+  Purchase Cate. [pmm07               ]
+  Approval Level [pmmsign             ]
+ <                                                              >
+ <G group02                                                     >
+  Approver       [azc03   ]
+ <                                                              >
+
+}
+END -- gr5145
+Grid gr5146
+{
+ [more                                                            ]
+
+}
+END -- gr5146
+END -- VBox1
+END -- apmr610
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit pmm01=formonly.pmm01 type VARCHAR, tabIndex=1;
+Edit pmm07=formonly.pmm07 type VARCHAR, tabIndex=2;
+Edit pmmsign=formonly.pmmsign type VARCHAR, tabIndex=3;
+Group group02:group02, text="INPUT";
+ButtonEdit azc03=formonly.azc03 type VARCHAR, action=controlp, tabIndex=4, image="zoom", comment="Enter Approver <^P>Qry Approver ";
+CheckBox more=formonly.more type VARCHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmm01,formonly.pmm07,formonly.pmmsign,formonly.azc03,formonly.more)
+END -- INSTRUCTIONS
+

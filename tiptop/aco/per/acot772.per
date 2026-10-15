@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acot772.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acot772")
+VBox vb7
+Folder pc883
+Page page01(text="Main")
+Grid gr17
+{
+ <G gb1                                                                            ><G gb2                                                 >
+  Doc No.                  [ceu01           ]  Document Date     [ceu03         ]    Confirm            [ceuconf    |ceu21      ][imgmksg]
+  Vendor No.               [ceu05           ]  Vendor Abbr.      [ceu06         ]    Shipping Type      [ceu24      |ged02      ][       ]
+  Transaction Cate.        [ceu09           ]  Invoice No        [ceu11         ]    Trade Patterns     [ceu26      |cea02      ]
+  Declaration Date         [ceu08           ]  Bill of Lading No.[ceu25         ]    Dealing Method     [ceu27      |ced02      ]
+  Approval Doc. No.        [ceu28           ]  Customs No.       [ceu17         ]    Usage              [ceu29      |cec02      ]
+  Import Customs Decl. No. [ceu30           ]                                        Prod./Sales Country[ceu32      |geb02      ]
+                                                                                     Duty Type          [ceu33      |cnc02      ]
+ <                                                                                 ><                                                      >
+}
+END -- gr17
+END -- page01
+Page info(text=%"Info")
+Grid gr739
+{
+ Record Owner     [ceuuser         ]   Last Modified by     [ceumodu          ]       Data Valid Code     [ceuacti            ]
+ Department       [ceugrup         ]   Create/Modify Date   [ceudate          ]
+ Record Orig.     [ceuoriu         ]
+ Dept Orig.       [ceuorig         ]
+}
+END -- gr739
+END -- info
+END -- pc883
+Table s_ceu
+{
+[ceu02 |ceu04     |ima02      |ima021    |ceu15     |ceu16     |pmn31t  |pmn88t  |pmm22     |ceu10     |ceu31     |cei12     |cei13     ]
+[ceu02 |ceu04     |ima02      |ima021    |ceu15     |ceu16     |pmn31t  |pmn88t  |pmm22     |ceu10     |ceu31     |cei12     |cei13     ]
+[ceu02 |ceu04     |ima02      |ima021    |ceu15     |ceu16     |pmn31t  |pmn88t  |pmm22     |ceu10     |ceu31     |cei12     |cei13     ]
+[ceu02 |ceu04     |ima02      |ima021    |ceu15     |ceu16     |pmn31t  |pmn88t  |pmm22     |ceu10     |ceu31     |cei12     |cei13     ]
+[ceu02 |ceu04     |ima02      |ima021    |ceu15     |ceu16     |pmn31t  |pmn88t  |pmm22     |ceu10     |ceu31     |cei12     |cei13     ]
+[ceu02 |ceu04     |ima02      |ima021    |ceu15     |ceu16     |pmn31t  |pmn88t  |pmm22     |ceu10     |ceu31     |cei12     |cei13     ]
+[ceu02 |ceu04     |ima02      |ima021    |ceu15     |ceu16     |pmn31t  |pmn88t  |pmm22     |ceu10     |ceu31     |cei12     |cei13     ]
+
+}
+END -- s_ceu
+Grid gr4740
+{
+ ----------Rows  [cn1   ]  / [cn2   ]   ----------
+
+}
+END -- gr4740
+END -- vb7
+END -- acot772
+
+TABLES
+ceu_file
+ATTRIBUTES
+Group gb1:gb1;
+ButtonEdit ceu01=ceu_file.ceu01, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+DateEdit ceu03=ceu_file.ceu03, tabIndex=2, noEntry;
+ButtonEdit ceu05=ceu_file.ceu05, action=controlp, tabIndex=3, noEntry, not null, required, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+Edit ceu06=ceu_file.ceu06, tabIndex=4, noEntry;
+ComboBox ceu09=ceu_file.ceu09, tabIndex=5, noEntry, items=(("1", "Direct Purchase"));
+Edit ceu11=ceu_file.ceu11, tabIndex=6, noEntry;
+DateEdit ceu08=ceu_file.ceu08, tabIndex=7;
+Edit ceu25=ceu_file.ceu25, tabIndex=8;
+Edit ceu28=ceu_file.ceu28, tabIndex=9;
+ButtonEdit ceu17=ceu_file.ceu17, action=controlp, tabIndex=10, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+Edit ceu30=ceu_file.ceu30, tabIndex=11;
+Group gb2:gb2;
+ComboBox ceuconf=ceu_file.ceuconf, tabIndex=12, noEntry, items=(("Y", "Confirmed"),("N", "NOT Confirm"),("X", "Void"));
+DateEdit ceu21=ceu_file.ceu21, tabIndex=13, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit ceu24=ceu_file.ceu24, action=controlp, tabIndex=14, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+Edit ged02=formonly.ged02 type VARCHAR, tabIndex=36, noEntry;
+ButtonEdit ceu26=ceu_file.ceu26, action=controlp, tabIndex=15, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+Edit cea02=formonly.cea02 type VARCHAR, tabIndex=37, noEntry;
+ButtonEdit ceu27=ceu_file.ceu27, action=controlp, tabIndex=16, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+Edit ced02=formonly.ced02 type VARCHAR, tabIndex=38, noEntry;
+ButtonEdit ceu29=ceu_file.ceu29, action=controlp, tabIndex=17, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+Edit cec02=formonly.cec02 type VARCHAR, tabIndex=39, noEntry;
+ButtonEdit ceu32=ceu_file.ceu32, action=controlp, tabIndex=42, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+Edit geb02=formonly.geb02 type VARCHAR, tabIndex=43, noEntry;
+ButtonEdit ceu33=ceu_file.ceu33, action=controlp, tabIndex=44, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+Edit cnc02=formonly.cnc02 type VARCHAR, tabIndex=45, noEntry;
+Edit ceuuser=ceu_file.ceuuser, tabIndex=18, noEntry;
+Edit ceumodu=ceu_file.ceumodu, tabIndex=19, noEntry;
+Edit ceuacti=ceu_file.ceuacti, tabIndex=40, noEntry;
+Edit ceugrup=ceu_file.ceugrup, tabIndex=20, noEntry;
+DateEdit ceudate=ceu_file.ceudate, tabIndex=21, noEntry;
+Edit ceuoriu=ceu_file.ceuoriu, tabIndex=501, noEntry;
+Edit ceuorig=ceu_file.ceuorig, tabIndex=502, noEntry;
+Edit ceu02=ceu_file.ceu02, tabIndex=22, title="Line No.";
+Edit ceu04=ceu_file.ceu04, tabIndex=23, title="Item No.";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=24, title="Item Name";
+Edit ima021=formonly.ima021 type CHAR, tabIndex=25, title="Item Sepc.";
+Edit ceu15=ceu_file.ceu15, tabIndex=26, title="Change Qty (Contract)";
+Edit ceu16=ceu_file.ceu16, tabIndex=27, title="Transication Unit";
+Edit pmn31t=formonly.pmn31t type CHAR, tabIndex=28, title="U/P Incl. Tax";
+Edit pmn88t=formonly.pmn88t type CHAR, tabIndex=29, title="Amt Incl. Tax";
+Edit pmm22=formonly.pmm22 type CHAR, tabIndex=30, title="Currency";
+Edit ceu10=ceu_file.ceu10, tabIndex=31, title="Item No.";
+Edit ceu31=ceu_file.ceu31, tabIndex=32, title="S/N aft Merged";
+Edit cei12=formonly.cei12 type VARCHAR, tabIndex=33, title="Item Name aft Merged";
+Edit cei13=formonly.cei13 type CHAR, tabIndex=34, title="Spec. aft Merged";
+Edit cn1=formonly.cn1 type CHAR, tabIndex=41, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=35, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ceu(ceu_file.ceu02,ceu_file.ceu04,formonly.ima02,formonly.ima021,ceu_file.ceu15,ceu_file.ceu16,formonly.pmn31t,formonly.pmn88t,formonly.pmm22,ceu_file.ceu10,ceu_file.ceu31,formonly.cei12,formonly.cei13)
+SCREEN RECORD Undefined(ceu_file.ceu01,ceu_file.ceu03,ceu_file.ceu05,ceu_file.ceu06,ceu_file.ceu09,ceu_file.ceu11,ceu_file.ceu08,ceu_file.ceu25,ceu_file.ceu28,ceu_file.ceu17,ceu_file.ceu30,ceu_file.ceuconf,ceu_file.ceu21,formonly.imgmksg,ceu_file.ceu24,formonly.ged02,ceu_file.ceu26,formonly.cea02,ceu_file.ceu27,formonly.ced02,ceu_file.ceu29,formonly.cec02,ceu_file.ceu32,formonly.geb02,ceu_file.ceu33,formonly.cnc02,ceu_file.ceuuser,ceu_file.ceumodu,ceu_file.ceuacti,ceu_file.ceugrup,ceu_file.ceudate,ceu_file.ceuoriu,ceu_file.ceuorig,formonly.cn1,formonly.cn2)
+END -- INSTRUCTIONS
+

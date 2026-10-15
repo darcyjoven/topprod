@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghri022_e.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox vbox1
+Table table1
+{
+[chk     |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      |hrbf04      |hrbf10      |hrbf08      |hrbf09      |hrbf11      ]
+[chk     |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      |hrbf04      |hrbf10      |hrbf08      |hrbf09      |hrbf11      ]
+[chk     |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      |hrbf04      |hrbf10      |hrbf08      |hrbf09      |hrbf11      ]
+[chk     |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      |hrbf04      |hrbf10      |hrbf08      |hrbf09      |hrbf11      ]
+[chk     |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      |hrbf04      |hrbf10      |hrbf08      |hrbf09      |hrbf11      ]
+[chk     |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      |hrbf04      |hrbf10      |hrbf08      |hrbf09      |hrbf11      ]
+[chk     |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      |hrbf04      |hrbf10      |hrbf08      |hrbf09      |hrbf11      ]
+[chk     |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      |hrbf04      |hrbf10      |hrbf08      |hrbf09      |hrbf11      ]
+}
+END -- table1
+Grid grid1
+{
+ --------- [lab|cnt     ][label9  ] ---------[fi   ][pr   |jump1  |la|jump2  |ne   ][l1   |label2][cnt1   |labe]            ------ [shaixuan       ] ---------------
+
+}
+END -- grid1
+END -- vbox1
+END -- ghri022
+
+ATTRIBUTES
+CheckBox chk=formonly.chk type CHAR, tabIndex=25, title=%"chk", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit hratid=formonly.hratid type CHAR, tabIndex=26, title=%"hratid", noEntry;
+ButtonEdit hrat03=formonly.hrat03 type CHAR, action=controlp, tabIndex=1, title=%"hrat03", noEntry, image="zoom";
+ButtonEdit hrat01=formonly.hrat01 type CHAR, action=controlp, tabIndex=2, title=%"hrat01", noEntry, image="zoom";
+Edit hrat02=formonly.hrat02 type CHAR, tabIndex=3, title=%"hrat02", noEntry;
+ButtonEdit hrat17=formonly.hrat17 type CHAR, action=controlp, tabIndex=4, title=%"hrat17", noEntry, image="zoom";
+ButtonEdit hrat04=formonly.hrat04 type CHAR, action=controlp, tabIndex=5, title=%"hrat04", noEntry, image="zoom";
+ButtonEdit hrat05=formonly.hrat05 type CHAR, action=controlp, tabIndex=6, title=%"hrat05", noEntry, image="zoom";
+DateEdit hrat25=formonly.hrat25 type DATE, tabIndex=7, title=%"hrat25", noEntry;
+ButtonEdit hrat19=formonly.hrat19 type DATE, action=controlp, tabIndex=8, title=%"hrat19", noEntry, image="zoom";
+ButtonEdit hrat22=formonly.hrat22 type CHAR, action=controlp, tabIndex=9, title=%"hrat22", noEntry, image="zoom";
+ButtonEdit hrat42=formonly.hrat42 type CHAR, action=controlp, tabIndex=10, title=%"hrat42", noEntry, image="zoom";
+ButtonEdit hrbf04=formonly.hrbf04 type CHAR, action=controlp, tabIndex=11, title=%"hrbf04", noEntry, image="zoom";
+DateEdit hrbf10=formonly.hrbf10 type DATE, tabIndex=12, title=%"hrbf10", noEntry;
+DateEdit hrbf08=formonly.hrbf08 type DATE, tabIndex=13, title=%"hrbf08", noEntry;
+DateEdit hrbf09=formonly.hrbf09 type DATE, tabIndex=14, title=%"hrbf09", noEntry;
+ButtonEdit hrbf11=formonly.hrbf11 type CHAR, action=controlp, tabIndex=15, title=%"hrbf11", noEntry, image="zoom";
+Label lab:label10, text=%"共";
+Edit cnt=formonly.cnt type VARCHAR, tabIndex=16;
+Label label9:label9, text=%"笔记录";
+Button fi:fi, tabIndex=17, text=%"", image="first.png";
+Button pr:pr, tabIndex=18, text=%"", image="prev.png";
+Edit jump1=formonly.jump1 type VARCHAR, tabIndex=19;
+Label la:label7, text=%"/";
+Edit jump2=formonly.jump2 type VARCHAR, tabIndex=20;
+Button ne:ne, tabIndex=21, text=%"", image="next.png";
+Button l1:la, tabIndex=22, text=%"", image="last.png";
+Label label2:label2, text=%"每页";
+Edit cnt1=formonly.cnt1 type VARCHAR, tabIndex=23;
+Label labe:label8, text=%"笔";
+Button shaixuan:shaixuan, tabIndex=24, text=%"指定页面跳转";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.cnt,formonly.jump1,formonly.jump2,formonly.cnt1)
+SCREEN RECORD s_hrat(formonly.chk,formonly.hratid,formonly.hrat03,formonly.hrat01,formonly.hrat02,formonly.hrat17,formonly.hrat04,formonly.hrat05,formonly.hrat25,formonly.hrat19,formonly.hrat22,formonly.hrat42,formonly.hrbf04,formonly.hrbf10,formonly.hrbf08,formonly.hrbf09,formonly.hrbf11)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapg824.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid ds1
+{
+
+  <G group1                                                         >
+   [label1     |alh01                ]
+   [label2     |alh021               ]
+   [label3     |alh02                ]
+  <                                                                 >
+
+  [mor|label4                   ]
+
+}
+END -- ds1
+END -- VBox1
+END -- Form
+
+TABLES
+alh_file
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+Label label1:Label1, text=%"alh01";
+Edit alh01=alh_file.alh01, tabIndex=1, not null, scroll;
+Label label2:Label2, text=%"alh021";
+DateEdit alh021=alh_file.alh021, tabIndex=2;
+Label label3:Label3, text=%"alh02";
+DateEdit alh02=alh_file.alh02, tabIndex=3;
+CheckBox mor=formonly.more type VARCHAR, tabIndex=4, text=%"CheckBox1", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label4:Label4, text=%"";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(alh_file.alh01,alh_file.alh021,alh_file.alh02)
+SCREEN RECORD Undefined(formonly.more)
+END -- INSTRUCTIONS
+

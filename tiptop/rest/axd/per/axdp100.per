@@ -1,0 +1,54 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdp100.per created Wed Jan 23 05:30:35 2008
+-- File created from axdp100.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdp100")
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID gr7780
+    {
+     <G group01                                                         >
+      Customer No.        [aa0       ]
+      Good No.            [aa1                 ]
+      Lot No.             [aa2                           ]
+     <                                                                  >
+     <G group02                                                         >
+      Year                [aa3 ]
+      Month               [aa4 ]
+     [aa5                                                           ]
+     <                                                                  >
+
+
+    }
+    END -- GRID
+    GRID gr7781
+    {
+    [aa6                                                          ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adq_file
+
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  EDIT aa0=adq_file.adq01, TABINDEX=1;
+  EDIT aa1=adq_file.adq02, TABINDEX=2;
+  EDIT aa2=adq_file.adq03, TABINDEX=3;
+  GROUP group02 : group02, TEXT="INPUT";
+  EDIT aa3=FORMONLY.yy TYPE SMALLINT, NOT NULL, REQUIRED, TABINDEX=4;
+  EDIT aa4=FORMONLY.mm TYPE SMALLINT, NOT NULL, REQUIRED, TABINDEX=5;
+  LABEL aa5:dummy01, TEXT="ps. Total the Transformation Quantity of ADQ_FILE Corresponding to Customer Goods Patch, and Update ADR_FILE(adr06-adr09)";
+  CHECKBOX aa6=FORMONLY.g_bgjob, TEXT="Background Job", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=6;
+END

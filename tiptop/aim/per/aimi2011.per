@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi2011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi2011")
+VBox vb4
+Folder pc833
+Page page01(text="Main")
+Table s_inc
+{
+[inc02    |inc03     |zx02        ]
+[inc02    |inc03     |zx02        ]
+[inc02    |inc03     |zx02        ]
+[inc02    |inc03     |zx02        ]
+[inc02    |inc03     |zx02        ]
+[inc02    |inc03     |zx02        ]
+[inc02    |inc03     |zx02        ]
+[inc02    |inc03     |zx02        ]
+[inc02    |inc03     |zx02        ]
+[inc02    |inc03     |zx02        ]
+
+}
+END -- s_inc
+END -- page01
+END -- pc833
+Grid gr4619
+{
+ ----------Rows [cn3   ] ----------
+
+}
+END -- gr4619
+END -- vb4
+END -- aimi2011
+
+TABLES
+zx_file,
+inc_file
+ATTRIBUTES
+Edit inc02=inc_file.inc02, tabIndex=1, title="inc02", not null, required;
+ButtonEdit inc03=inc_file.inc03, action=controlp, tabIndex=2, title="inc03", image="zoom.png";
+Edit zx02=zx_file.zx02, tabIndex=3, title="zx02", noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_inc(inc_file.inc02,inc_file.inc03,zx_file.zx02)
+SCREEN RECORD Undefined(formonly.cn3)
+END -- INSTRUCTIONS
+

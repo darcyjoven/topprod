@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli1021.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli1021")
+VBox vb6
+Folder pc442
+Page page01(text="Page01")
+Table s_ahe
+{
+[ahe01           |ahe02             |ahe03           |ahe04       |gat03             |ahe05             |gaq03             |ahe07                     |gaq03_1      |ahe08   |ahe09   |ahe06         |gae04                ]
+[ahe01           |ahe02             |ahe03           |ahe04       |gat03             |ahe05             |gaq03             |ahe07                     |gaq03_1      |ahe08   |ahe09   |ahe06         |gae04                ]
+[ahe01           |ahe02             |ahe03           |ahe04       |gat03             |ahe05             |gaq03             |ahe07                     |gaq03_1      |ahe08   |ahe09   |ahe06         |gae04                ]
+[ahe01           |ahe02             |ahe03           |ahe04       |gat03             |ahe05             |gaq03             |ahe07                     |gaq03_1      |ahe08   |ahe09   |ahe06         |gae04                ]
+[ahe01           |ahe02             |ahe03           |ahe04       |gat03             |ahe05             |gaq03             |ahe07                     |gaq03_1      |ahe08   |ahe09   |ahe06         |gae04                ]
+[ahe01           |ahe02             |ahe03           |ahe04       |gat03             |ahe05             |gaq03             |ahe07                     |gaq03_1      |ahe08   |ahe09   |ahe06         |gae04                ]
+[ahe01           |ahe02             |ahe03           |ahe04       |gat03             |ahe05             |gaq03             |ahe07                     |gaq03_1      |ahe08   |ahe09   |ahe06         |gae04                ]
+[ahe01           |ahe02             |ahe03           |ahe04       |gat03             |ahe05             |gaq03             |ahe07                     |gaq03_1      |ahe08   |ahe09   |ahe06         |gae04                ]
+[ahe01           |ahe02             |ahe03           |ahe04       |gat03             |ahe05             |gaq03             |ahe07                     |gaq03_1      |ahe08   |ahe09   |ahe06         |gae04                ]
+[ahe01           |ahe02             |ahe03           |ahe04       |gat03             |ahe05             |gaq03             |ahe07                     |gaq03_1      |ahe08   |ahe09   |ahe06         |gae04                ]
+
+}
+END -- s_ahe
+END -- page01
+END -- pc442
+Grid gr2368
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr2368
+END -- vb6
+END -- agli1021
+
+TABLES
+ahe_file
+ATTRIBUTES
+Edit ahe01=ahe_file.ahe01, tabIndex=1, title="Trans. Code No.", not null, required;
+Edit ahe02=ahe_file.ahe02, tabIndex=2, title="Transaction Name", not null, required;
+ComboBox ahe03=ahe_file.ahe03, tabIndex=3, title="Data Source", not null, required, queryEditable, comment="Enter  1/2/3", items=(("1", %"Information"),("2", %"Default"),("3", %"Manually Enter"),("4", %"Entry Sheet(Access Data)"));
+ButtonEdit ahe04=ahe_file.ahe04, action=controlp, tabIndex=4, title="Source File", image="zoom", comment="<^P> Query Table";
+Edit gat03=formonly.gat03 type CHAR, tabIndex=5, title="File Name", noEntry;
+ButtonEdit ahe05=ahe_file.ahe05, action=controlp, tabIndex=6, title="Source Code Field", image="zoom", comment="<^P> Query Field";
+Edit gaq03=formonly.gaq03 type CHAR, tabIndex=7, title="Field Name", noEntry;
+ButtonEdit ahe07=ahe_file.ahe07, action=controlp, tabIndex=8, title="Source Description Field", image="zoom.png";
+Edit gaq03_1=formonly.gaq03_1 type CHAR, tabIndex=9, title="Field Name", noEntry;
+Edit ahe08=ahe_file.ahe08, tabIndex=13, title=%"Initial Digits";
+Edit ahe09=ahe_file.ahe09, tabIndex=14, title=%"Ending Digits";
+ButtonEdit ahe06=ahe_file.ahe06, action=controlp, tabIndex=10, title="QRY", image="zoom", comment="<^P> Query QRY";
+Edit gae04=formonly.gae04 type CHAR, tabIndex=11, title="Qry Title", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ahe(ahe_file.ahe01,ahe_file.ahe02,ahe_file.ahe03,ahe_file.ahe04,formonly.gat03,ahe_file.ahe05,formonly.gaq03,ahe_file.ahe07,formonly.gaq03_1,ahe_file.ahe08,ahe_file.ahe09,ahe_file.ahe06,formonly.gae04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

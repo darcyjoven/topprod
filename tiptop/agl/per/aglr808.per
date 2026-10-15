@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr808.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglr808")
+VBox vb4
+Grid gr2787
+{
+ <G group01                                                         >
+  Account Code        [aag01                         ]
+  abg11               [abg11                         ]
+  abg12               [abg12                         ]
+  abg13               [abg13                         ]
+  abg14               [abg14                         ]
+ <                                                                  >
+ <G group02                                                         >
+  Ending Date         [edate                         ]
+  Book                [b                             ]
+
+ [c                                                  ]
+ [d                                                  ]
+ [e                                                  ]
+ <                                                                  >
+
+}
+END -- gr2787
+Grid gr2788
+{
+[more                                                        ]
+
+}
+END -- gr2788
+END -- vb4
+END -- aglr808
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit aag01=formonly.aag01 type CHAR, tabIndex=1;
+Edit abg11=formonly.abg11 type CHAR, tabIndex=6;
+Edit abg12=formonly.abg12 type CHAR, tabIndex=7;
+Edit abg13=formonly.abg13 type CHAR, tabIndex=8;
+Edit abg14=formonly.abg14 type CHAR, tabIndex=9;
+Group group02:group02, text="INPUT";
+DateEdit edate=formonly.edate type DATE, tabIndex=2;
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+CheckBox c=formonly.c type CHAR, tabIndex=10, text="skip to top of page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type CHAR, tabIndex=11, text="skip amount zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=4, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aag01,formonly.abg11,formonly.abg12,formonly.abg13,formonly.abg14,formonly.edate,formonly.b,formonly.c,formonly.d,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

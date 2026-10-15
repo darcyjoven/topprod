@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aoou090.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aoou090")
+VBox VBox1
+Folder pc889
+Page page01(text="Page01")
+Table s_bmr
+{
+[choice |bmr01           |bmr02       |gen02     |gem02      |bmrsign  |bmrdays   |bmrprit       ]
+[choice |bmr01           |bmr02       |gen02     |gem02      |bmrsign  |bmrdays   |bmrprit       ]
+[choice |bmr01           |bmr02       |gen02     |gem02      |bmrsign  |bmrdays   |bmrprit       ]
+[choice |bmr01           |bmr02       |gen02     |gem02      |bmrsign  |bmrdays   |bmrprit       ]
+[choice |bmr01           |bmr02       |gen02     |gem02      |bmrsign  |bmrdays   |bmrprit       ]
+[choice |bmr01           |bmr02       |gen02     |gem02      |bmrsign  |bmrdays   |bmrprit       ]
+[choice |bmr01           |bmr02       |gen02     |gem02      |bmrsign  |bmrdays   |bmrprit       ]
+[choice |bmr01           |bmr02       |gen02     |gem02      |bmrsign  |bmrdays   |bmrprit       ]
+[choice |bmr01           |bmr02       |gen02     |gem02      |bmrsign  |bmrdays   |bmrprit       ]
+[choice |bmr01           |bmr02       |gen02     |gem02      |bmrsign  |bmrdays   |bmrprit       ]
+
+}
+END -- s_bmr
+END -- page01
+END -- pc889
+Grid gr4720
+{
+[select_all    ] [cancel_all  ] Select Counts       [cmt        ]
+ ----------Rows [cnt   ] ----------
+}
+END -- gr4720
+END -- VBox1
+END -- aoou090
+
+TABLES
+bmr_file
+ATTRIBUTES
+CheckBox choice=formonly.choice type CHAR, tabIndex=1, title="choice", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit bmr01=bmr_file.bmr01, tabIndex=2, title="ECR No.", noEntry;
+DateEdit bmr02=bmr_file.bmr02, tabIndex=3, title="Form Date", noEntry;
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=4, title="Applicant", noEntry;
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=5, title="Department", noEntry;
+Edit bmrsign=bmr_file.bmrsign, tabIndex=6, title="Approval";
+Edit bmrdays=bmr_file.bmrdays, tabIndex=7, title="Rest Days";
+Edit bmrprit=bmr_file.bmrprit, tabIndex=8, title="Priority Level";
+Button select_all:select_all, comment="Select All";
+Button cancel_all:cancel_all, comment="Cancel All";
+Edit cmt=formonly.cmt type SMALLINT, tabIndex=9, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmr(formonly.choice,bmr_file.bmr01,bmr_file.bmr02,formonly.gen02,formonly.gem02,bmr_file.bmrsign,bmr_file.bmrdays,bmr_file.bmrprit)
+SCREEN RECORD Undefined(formonly.cmt,formonly.cnt)
+END -- INSTRUCTIONS
+

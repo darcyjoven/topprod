@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmr001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmr001")
+VBox vb2
+Grid gr898
+{
+ <G group01                                                >
+  Master Item         [bma01               ]
+  Alternate Code      [bma06               ]
+  Group Code          [ima06               ]
+ <                                                         >
+ <G group02                                                >
+  Print version       [version             ]
+  BOM Active Date     [eff_date            ]
+  Levels              [x                   ]
+ <                                                         >
+
+}
+END -- gr898
+Grid gr899
+{
+[more                                ]
+
+}
+END -- gr899
+END -- vb2
+END -- abmr001
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit bma01=formonly.bma01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit bma06=formonly.bma06 type VARCHAR, tabIndex=2;
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=3;
+Group group02:group02, text="INPUT";
+Edit version=formonly.version type VARCHAR, tabIndex=4;
+DateEdit eff_date=formonly.eff_date type DATE, tabIndex=5;
+Edit x=formonly.x type VARCHAR, tabIndex=6, comment="Levels (at least 1)";
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bma01,formonly.bma06,formonly.ima06,formonly.version,formonly.eff_date,formonly.x,formonly.more)
+END -- INSTRUCTIONS
+

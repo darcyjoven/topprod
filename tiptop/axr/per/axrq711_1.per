@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrq711_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrr710")
+VBox vb2_
+Folder folder01
+Page page01(text="Main")
+Grid gr5447
+{
+ Account No.         [npr00                   ][aag02                                   ]
+ Year                [yy        ]               Month               [mm        ]
+
+}
+END -- gr5447
+END -- page01
+END -- folder01
+Table s_npr
+{
+[npr01                     |npr02                       |npr11     |pb_dc     |pb_balf               |npr11_pb  |pb_bal                |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr01                     |npr02                       |npr11     |pb_dc     |pb_balf               |npr11_pb  |pb_bal                |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr01                     |npr02                       |npr11     |pb_dc     |pb_balf               |npr11_pb  |pb_bal                |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr01                     |npr02                       |npr11     |pb_dc     |pb_balf               |npr11_pb  |pb_bal                |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr01                     |npr02                       |npr11     |pb_dc     |pb_balf               |npr11_pb  |pb_bal                |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr01                     |npr02                       |npr11     |pb_dc     |pb_balf               |npr11_pb  |pb_bal                |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr01                     |npr02                       |npr11     |pb_dc     |pb_balf               |npr11_pb  |pb_bal                |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr01                     |npr02                       |npr11     |pb_dc     |pb_balf               |npr11_pb  |pb_bal                |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr01                     |npr02                       |npr11     |pb_dc     |pb_balf               |npr11_pb  |pb_bal                |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+[npr01                     |npr02                       |npr11     |pb_dc     |pb_balf               |npr11_pb  |pb_bal                |df                         |npr11_d        |d                          |cf                           |npr11_c        |c                           |dc      |balf             |npr11_bal     |bal             ]
+
+}
+END -- s_npr
+Grid gr5449
+{
+ ----------- Rows [cnt   ] -----------
+
+}
+END -- gr5449
+END -- vb2_
+END -- axrq711_1
+
+TABLES
+aag_file
+ATTRIBUTES
+Edit npr00=formonly.npr00 type VARCHAR, tabIndex=1;
+Edit aag02=aag_file.aag02, tabIndex=2;
+Edit yy=formonly.yy type VARCHAR, tabIndex=3;
+Edit mm=formonly.mm type VARCHAR, tabIndex=4;
+Edit npr01=formonly.npr01 type VARCHAR, tabIndex=6, title="Customer No.";
+Edit npr02=formonly.npr02 type VARCHAR, tabIndex=7, title="Customer Abbreviation";
+Edit npr11=formonly.npr11 type VARCHAR, tabIndex=8, title="Currency";
+Edit pb_dc=formonly.pb_dc type CHAR, tabIndex=9, title=%"DC(BOP)";
+Edit pb_balf=formonly.pb_balf type CHAR, tabIndex=10, title=%"Balance T.C Amt(BOP)";
+Edit npr11_pb=formonly.npr11_pb type CHAR, tabIndex=11, title=%"Exchange Rate";
+Edit pb_bal=formonly.pb_bal type CHAR, tabIndex=12, title=%"Balance L.C Amt(BOP)";
+Edit df=formonly.df type CHAR, tabIndex=13, title="Debit Amount (Trans. Curr.)";
+Edit npr11_d=formonly.npr11_d type DECIMAL, tabIndex=14, title="Exchange Rate";
+Edit d=formonly.d type CHAR, tabIndex=15, title="Debit Amount (Local. Curr.)";
+Edit cf=formonly.cf type CHAR, tabIndex=16, title="Credit Amount (Trans. Curr.)";
+Edit npr11_c=formonly.npr11_c type CHAR, tabIndex=17, title="Exchange Rate";
+Edit c=formonly.c type CHAR, tabIndex=18, title="Credit Amount (Local. Curr.)";
+Edit dc=formonly.dc type CHAR, tabIndex=19, title="D/C";
+Edit balf=formonly.balf type CHAR, tabIndex=20, title="Balance T.C Amt";
+Edit npr11_bal=formonly.npr11_bal type CHAR, tabIndex=21, title="Exchange Rate";
+Edit bal=formonly.bal type CHAR, tabIndex=22, title="Balance L.C Amt";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_npr(formonly.npr01,formonly.npr02,formonly.npr11,formonly.pb_dc,formonly.pb_balf,formonly.npr11_pb,formonly.pb_bal,formonly.df,formonly.npr11_d,formonly.d,formonly.cf,formonly.npr11_c,formonly.c,formonly.dc,formonly.balf,formonly.npr11_bal,formonly.bal)
+SCREEN RECORD Undefined(formonly.npr00,aag_file.aag02,formonly.yy,formonly.mm,formonly.cnt)
+END -- INSTRUCTIONS
+

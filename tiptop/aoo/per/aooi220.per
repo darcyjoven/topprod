@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi220.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox1
+Table ds1
+{
+[ggc01     |smydesc1            |ggc02     |smydesc2            |ggc03     |imz02               |ggc04                    |ima02               |ima021              |ggc05     |imd02               |ggc06     |gen02               |ggc07     |gem02               |ggc08     |azf03   |ggc09     |ggcacti   ]
+[ggc01     |smydesc1            |ggc02     |smydesc2            |ggc03     |imz02               |ggc04                    |ima02               |ima021              |ggc05     |imd02               |ggc06     |gen02               |ggc07     |gem02               |ggc08     |azf03   |ggc09     |ggcacti   ]
+[ggc01     |smydesc1            |ggc02     |smydesc2            |ggc03     |imz02               |ggc04                    |ima02               |ima021              |ggc05     |imd02               |ggc06     |gen02               |ggc07     |gem02               |ggc08     |azf03   |ggc09     |ggcacti   ]
+[ggc01     |smydesc1            |ggc02     |smydesc2            |ggc03     |imz02               |ggc04                    |ima02               |ima021              |ggc05     |imd02               |ggc06     |gen02               |ggc07     |gem02               |ggc08     |azf03   |ggc09     |ggcacti   ]
+[ggc01     |smydesc1            |ggc02     |smydesc2            |ggc03     |imz02               |ggc04                    |ima02               |ima021              |ggc05     |imd02               |ggc06     |gen02               |ggc07     |gem02               |ggc08     |azf03   |ggc09     |ggcacti   ]
+
+}
+END -- ds1
+Grid Grid1
+{
+
+   ------------ Rows [cn   ]   ------------
+}
+END -- Grid1
+END -- VBox1
+END -- Page1
+END -- Folder1
+END -- Form
+
+TABLES
+imz_file,
+gen_file,
+gem_file,
+imd_file,
+azf_file,
+ima_file,
+ggc_file
+ATTRIBUTES
+ButtonEdit ggc01=ggc_file.ggc01, action=controlp, tabIndex=1, title=%"ggc01", not null, required, image="zoom", scroll;
+Edit smydesc1=formonly.smydesc1 type VARCHAR, tabIndex=11, title=%"Edit1", noEntry;
+ButtonEdit ggc02=ggc_file.ggc02, action=controlp, tabIndex=2, title=%"ggc02", not null, required, image="zoom", scroll;
+Edit smydesc2=formonly.smydesc2 type VARCHAR, tabIndex=12, title=%"Edit2", noEntry;
+ButtonEdit ggc03=ggc_file.ggc03, action=controlp, tabIndex=3, title=%"ggc03", not null, required, image="zoom", scroll;
+Edit imz02=imz_file.imz02, tabIndex=13, title=%"Edit3", noEntry;
+ButtonEdit ggc04=ggc_file.ggc04, action=controlp, tabIndex=4, title=%"ggc04", not null, required, image="zoom", scroll;
+Edit ima02=ima_file.ima02, tabIndex=14, title=%"Edit4", noEntry;
+Edit ima021=ima_file.ima021, tabIndex=15, title=%"Edit5", noEntry;
+ButtonEdit ggc05=ggc_file.ggc05, action=controlp, tabIndex=5, title=%"ggc05", not null, required, image="zoom", scroll;
+Edit imd02=imd_file.imd02, tabIndex=16, title=%"Edit6", noEntry;
+ButtonEdit ggc06=ggc_file.ggc06, action=controlp, tabIndex=6, title=%"ggc06", not null, required, image="zoom", scroll;
+Edit gen02=gen_file.gen02, tabIndex=17, title=%"Edit7", noEntry;
+ButtonEdit ggc07=ggc_file.ggc07, action=controlp, tabIndex=7, title=%"ggc07", not null, required, image="zoom", scroll;
+Edit gem02=gem_file.gem02, tabIndex=18, title=%"Edit8", noEntry;
+ButtonEdit ggc08=ggc_file.ggc08, action=controlp, tabIndex=8, title=%"ggc08", not null, required, image="zoom", scroll;
+Edit azf03=azf_file.azf03, tabIndex=19, title=%"Edit9", noEntry;
+CheckBox ggc09=ggc_file.ggc09, tabIndex=9, default = "N", title=%"ggc09", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ggcacti=ggc_file.ggcacti, tabIndex=10, default = "Y", title=%"ggcacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn=formonly.cn, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ggc(ggc_file.ggc01,formonly.smydesc1,ggc_file.ggc02,formonly.smydesc2,ggc_file.ggc03,imz_file.imz02,ggc_file.ggc04,ima_file.ima02,ima_file.ima021,ggc_file.ggc05,imd_file.imd02,ggc_file.ggc06,gen_file.gen02,ggc_file.ggc07,gem_file.gem02,ggc_file.ggc08,azf_file.azf03,ggc_file.ggc09,ggc_file.ggcacti)
+SCREEN RECORD Undefined(formonly.cn)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt400_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt400_c")
+VBox vb2
+Folder pc38
+Page page01(text="Main")
+Table s_oof
+{
+[oof02    |oof03           |oof032              |oof04           |oof042         |oof05         |oof06                    |oof10               |oof101              |oof07               |oof08            |oof09f             |oof09                  ]
+[oof02    |oof03           |oof032              |oof04           |oof042         |oof05         |oof06                    |oof10               |oof101              |oof07               |oof08            |oof09f             |oof09                  ]
+[oof02    |oof03           |oof032              |oof04           |oof042         |oof05         |oof06                    |oof10               |oof101              |oof07               |oof08            |oof09f             |oof09                  ]
+[oof02    |oof03           |oof032              |oof04           |oof042         |oof05         |oof06                    |oof10               |oof101              |oof07               |oof08            |oof09f             |oof09                  ]
+[oof02    |oof03           |oof032              |oof04           |oof042         |oof05         |oof06                    |oof10               |oof101              |oof07               |oof08            |oof09f             |oof09                  ]
+[oof02    |oof03           |oof032              |oof04           |oof042         |oof05         |oof06                    |oof10               |oof101              |oof07               |oof08            |oof09f             |oof09                  ]
+[oof02    |oof03           |oof032              |oof04           |oof042         |oof05         |oof06                    |oof10               |oof101              |oof07               |oof08            |oof09f             |oof09                  ]
+[oof02    |oof03           |oof032              |oof04           |oof042         |oof05         |oof06                    |oof10               |oof101              |oof07               |oof08            |oof09f             |oof09                  ]
+[oof02    |oof03           |oof032              |oof04           |oof042         |oof05         |oof06                    |oof10               |oof101              |oof07               |oof08            |oof09f             |oof09                  ]
+[oof02    |oof03           |oof032              |oof04           |oof042         |oof05         |oof06                    |oof10               |oof101              |oof07               |oof08            |oof09f             |oof09                  ]
+
+}
+END -- s_oof
+END -- page01
+END -- pc38
+Grid gr361
+{
+ ----------Rows [cnk   ] ----------
+
+}
+END -- gr361
+END -- vb2
+END -- axrt400_c
+
+TABLES
+oof_file
+ATTRIBUTES
+Edit oof02=oof_file.oof02, tabIndex=1, title="Line#", not null, required, comment="KEY Field, No Blank/Repeated!";
+ButtonEdit oof03=oof_file.oof03, action=controlp, tabIndex=2, title="Payment Method", not null, required, image="zoom";
+Edit oof032=oof_file.oof032, tabIndex=3, title="Desc", noEntry;
+ButtonEdit oof04=oof_file.oof04, action=controlp, tabIndex=4, title="Payment Company", not null, required, image="zoom";
+Edit oof042=oof_file.oof042, tabIndex=5, title="Desc", noEntry;
+ButtonEdit oof05=oof_file.oof05, action=controlp, tabIndex=6, title="Aap Doc", not null, required, image="zoom";
+DateEdit oof06=oof_file.oof06, tabIndex=7, title="Date", not null, required;
+ButtonEdit oof10=oof_file.oof10, action=controlp, tabIndex=8, title="oof10", not null, required, image="zoom";
+ButtonEdit oof101=oof_file.oof101, action=controlp, tabIndex=9, title="oof101", not null, required, image="zoom";
+ButtonEdit oof07=oof_file.oof07, action=controlp, tabIndex=10, title="Curr", not null, required, image="zoom";
+Edit oof08=oof_file.oof08, tabIndex=11, title="Rate", noEntry;
+Edit oof09f=oof_file.oof09f, tabIndex=12, title="Ori Amt", not null, required;
+Edit oof09=oof_file.oof09, tabIndex=13, title="Amt", not null, required;
+Edit cnk=formonly.cnk type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oof(oof_file.oof02,oof_file.oof03,oof_file.oof032,oof_file.oof04,oof_file.oof042,oof_file.oof05,oof_file.oof06,oof_file.oof10,oof_file.oof101,oof_file.oof07,oof_file.oof08,oof_file.oof09f,oof_file.oof09)
+SCREEN RECORD Undefined(formonly.cnk)
+END -- INSTRUCTIONS
+

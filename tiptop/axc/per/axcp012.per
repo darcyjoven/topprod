@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp012.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcp012")
+VBox vb1
+Folder pc356
+Page page01(text="Main")
+Table s_ima
+{
+[ima01                 |ima25 |ima08       |ima16          |ima57        |ima80    |ima39     |ima391     |ima06     |ima58               |ima12     ]
+[ima01                 |ima25 |ima08       |ima16          |ima57        |ima80    |ima39     |ima391     |ima06     |ima58               |ima12     ]
+[ima01                 |ima25 |ima08       |ima16          |ima57        |ima80    |ima39     |ima391     |ima06     |ima58               |ima12     ]
+[ima01                 |ima25 |ima08       |ima16          |ima57        |ima80    |ima39     |ima391     |ima06     |ima58               |ima12     ]
+[ima01                 |ima25 |ima08       |ima16          |ima57        |ima80    |ima39     |ima391     |ima06     |ima58               |ima12     ]
+[ima01                 |ima25 |ima08       |ima16          |ima57        |ima80    |ima39     |ima391     |ima06     |ima58               |ima12     ]
+[ima01                 |ima25 |ima08       |ima16          |ima57        |ima80    |ima39     |ima391     |ima06     |ima58               |ima12     ]
+[ima01                 |ima25 |ima08       |ima16          |ima57        |ima80    |ima39     |ima391     |ima06     |ima58               |ima12     ]
+[ima01                 |ima25 |ima08       |ima16          |ima57        |ima80    |ima39     |ima391     |ima06     |ima58               |ima12     ]
+[ima01                 |ima25 |ima08       |ima16          |ima57        |ima80    |ima39     |ima391     |ima06     |ima58               |ima12     ]
+
+}
+END -- s_ima
+END -- page01
+Page info(text="Info")
+Grid gr1473
+{
+ Record Owner        [imauser   ]   Last Modified By    [imamodu   ]
+ Department          [imagrup   ]   Create/Modify Date  [imadate   ]
+ Record Orig.        [imaoriu   ]
+ Dept Orig.          [imaorig   ]
+}
+END -- gr1473
+END -- info
+END -- pc356
+Grid gr1474
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr1474
+END -- vb1
+END -- axcp012
+
+TABLES
+ima_file
+ATTRIBUTES
+Edit ima01=ima_file.ima01, tabIndex=1, title="Item#", noEntry, not null, required;
+Edit ima25=ima_file.ima25, tabIndex=2, title="Unit", noEntry;
+Edit ima08=ima_file.ima08, tabIndex=3, title="Source Code", noEntry;
+Edit ima16=ima_file.ima16, tabIndex=4, title="Low Level Code", noEntry;
+Edit ima57=ima_file.ima57, tabIndex=5, title="Cost Levels";
+Edit ima80=ima_file.ima80, tabIndex=6, title="Isue Low Level Code", noEntry;
+ButtonEdit ima39=ima_file.ima39, action=controlp, tabIndex=7, title="Account Subject", image="zoom", comment="<^P> Query Account Subject";
+ButtonEdit ima391=ima_file.ima391, action=controlp, tabIndex=8, title="Account Subject 2", image="zoom", comment="<^P> Query Account Subject 2";
+Edit ima06=ima_file.ima06, tabIndex=9, title="Group Code", noEntry;
+Edit ima58=ima_file.ima58, tabIndex=10, title="Standard Labor hour";
+ButtonEdit ima12=ima_file.ima12, action=controlp, tabIndex=11, title="Cost Group", image="zoom", comment="<^P> Query Cost Group Code";
+Edit imauser=ima_file.imauser, tabIndex=12, noEntry;
+Edit imamodu=ima_file.imamodu, tabIndex=13, noEntry;
+Edit imagrup=ima_file.imagrup, tabIndex=14, noEntry;
+DateEdit imadate=ima_file.imadate, tabIndex=15, noEntry;
+Edit imaoriu=ima_file.imaoriu, tabIndex=501, noEntry;
+Edit imaorig=ima_file.imaorig, tabIndex=502, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ima(ima_file.ima01,ima_file.ima25,ima_file.ima08,ima_file.ima16,ima_file.ima57,ima_file.ima80,ima_file.ima39,ima_file.ima391,ima_file.ima06,ima_file.ima58,ima_file.ima12)
+SCREEN RECORD Undefined(ima_file.imauser,ima_file.imamodu,ima_file.imagrup,ima_file.imadate,ima_file.imaoriu,ima_file.imaorig,formonly.cn2)
+END -- INSTRUCTIONS
+

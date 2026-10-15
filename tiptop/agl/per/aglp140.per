@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglp140.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglp140")
+VBox VBox1
+Grid gr2493
+{
+ <G group01                                >
+  Cost Calculation Year   [yy          ]
+  Cost Calculation Month  [mm          ]
+  Document No.            [v_no            ]
+ <                                         >
+
+}
+END -- gr2493
+Grid gr2494
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr2494
+END -- VBox1
+END -- aglp140
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+Edit yy=formonly.yy type CHAR, tabIndex=1, not null, required;
+Edit mm=formonly.mm type CHAR, tabIndex=2, not null, required;
+Edit v_no=formonly.v_no type CHAR, tabIndex=3, not null, required;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=4, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.v_no,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

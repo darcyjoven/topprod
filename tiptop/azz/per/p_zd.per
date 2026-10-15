@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zd.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zd")
+VBox VBox1
+Folder pc722
+Page page01(text="Main")
+VBox VBox2
+Grid gr3103
+{
+ <G group01                                    ><G group02                         >
+  DATE                [zd01      ][weeks     ]   Std. Hr             [h1  ]
+  USER                [zd02      ][zx02      ]   ABSENT              [h3  ]
+                                                 Wrk. Hr             [h2  ]
+                                                 OVER                [h4  ]
+ <                                             ><                                  >
+
+}
+END -- gr3103
+Grid gr3104
+{
+ <G group03                                                       >
+  --DEVELOPE-- -- OFFICE -- --CUSTOMER--
+  101:SA/SD    201:R&D      301:MODEM
+  102:CODING   202:MEETING  302:INSTALL
+  103:ENHANCE  203:TRAINER  303:TEL.
+  104:DEBUG    204:TRAINEE  304:MODIFY
+  105:QC       209:MISC.    305:TRAINER
+  106:ARCHIVE               309:MISC.
+
+  001:ABSENT
+ <                                                                >
+
+}
+END -- gr3104
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr3105
+{
+ <G grpinfo                           >
+  Retrieve Rows       [cnt       ]
+ <                                    >
+
+}
+END -- gr3105
+END -- info
+END -- pc722
+Table s_zd
+{
+[zd03   |zd10 |zd11  |zd12      ]
+[zd03   |zd10 |zd11  |zd12      ]
+[zd03   |zd10 |zd11  |zd12      ]
+[zd03   |zd10 |zd11  |zd12      ]
+[zd03   |zd10 |zd11  |zd12      ]
+[zd03   |zd10 |zd11  |zd12      ]
+[zd03   |zd10 |zd11  |zd12      ]
+[zd03   |zd10 |zd11  |zd12      ]
+[zd03   |zd10 |zd11  |zd12      ]
+[zd03   |zd10 |zd11  |zd12      ]
+
+}
+END -- s_zd
+END -- VBox1
+END -- p_zd
+
+TABLES
+zd_file
+ATTRIBUTES
+Group group01:group01;
+Edit zd01=zd_file.zd01, tabIndex=1;
+Edit weeks=formonly.weeks type CHAR, tabIndex=2;
+Edit zd02=zd_file.zd02, tabIndex=3, downShift;
+Edit zx02=formonly.zx02 type CHAR, tabIndex=4, noEntry;
+Group group02:group02;
+Edit h1=formonly.h1 type CHAR, tabIndex=5, noEntry;
+Edit h3=formonly.h3 type CHAR, tabIndex=6, noEntry;
+Edit h2=formonly.h2 type CHAR, tabIndex=7, noEntry;
+Edit h4=formonly.h4 type CHAR, tabIndex=8, noEntry;
+Group group03:group03;
+Group grpinfo:grpinfo;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit zd03=zd_file.zd03, tabIndex=10, title="ITEM", not null, required;
+ComboBox zd10=zd_file.zd10, tabIndex=11, title="CODE", not null, required, queryEditable, items=(("001", %"ABSENT"),("101", %"SA/SD"),("102", %"CODING"),("103", %"ENHANCE"),("104", %"DEBUG"),("105", %"QC"),("106", %"ARCHIVE"),("201", %"R&D"),("202", %"MEETING"),("203", %"TRAINER"),("204", %"TRAINEE"),("209", %"MISC."),("301", %"MODEM"),("302", %"INSTALL"),("303", %"TEL."),("304", %"MODIFY"),("305", %"TRAINER"),("309", %"MISC."));
+Edit zd11=zd_file.zd11, tabIndex=12, title="TIME", not null, required;
+Edit zd12=zd_file.zd12, tabIndex=13, title="REMARK";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zd(zd_file.zd03,zd_file.zd10,zd_file.zd11,zd_file.zd12)
+SCREEN RECORD Undefined(zd_file.zd01,formonly.weeks,zd_file.zd02,formonly.zx02,formonly.h1,formonly.h3,formonly.h2,formonly.h4,formonly.cnt)
+END -- INSTRUCTIONS
+

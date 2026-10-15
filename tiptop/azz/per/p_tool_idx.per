@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_tool_idx.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"List Of Index Table")
+VBox VBox1
+Grid gr3298
+{
+ Table Name[g_zta01             ]
+
+}
+END -- gr3298
+Table s_index(unhidableColumns)
+{
+[idx       |uni      |ord      |col       ]
+[idx       |uni      |ord      |col       ]
+[idx       |uni      |ord      |col       ]
+[idx       |uni      |ord      |col       ]
+[idx       |uni      |ord      |col       ]
+[idx       |uni      |ord      |col       ]
+[idx       |uni      |ord      |col       ]
+[idx       |uni      |ord      |col       ]
+[idx       |uni      |ord      |col       ]
+[idx       |uni      |ord      |col       ]
+
+}
+END -- s_index
+END -- VBox1
+END -- p_tool_idx
+
+ATTRIBUTES
+ButtonEdit g_zta01=formonly.g_zta01 type CHAR, action=controlp, tabIndex=1, required, image="zoom", downShift, comment="KEY Field,No Blank/Repeated!";
+Edit idx=formonly.idx type CHAR, tabIndex=2, title="Index";
+Edit uni=formonly.uni type CHAR, tabIndex=3, title="Unique";
+Edit ord=formonly.ord type CHAR, tabIndex=4, title="Order";
+Edit col=formonly.col type CHAR, tabIndex=5, title="Column";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_index(formonly.idx,formonly.uni,formonly.ord,formonly.col)
+SCREEN RECORD Undefined(formonly.g_zta01)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi550.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi550")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr4036
+{
+ Data Year          [nmm01     ]
+ Data Month         [nmm02     ]
+
+}
+END -- gr4036
+Grid gr4037
+{
+ Interest Rate (%)  [nmm03               ]  [imgmksg]
+ Interest Expense   [nmm04               ]  [       ]
+
+}
+END -- gr4037
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr4038
+{
+ Record Owner        [nmmuser   ] Last Modified by    [nmmmodu   ] Data Valid Code     [nmmacti   ]
+ Department          [nmmgrup   ] Create/Modify Date  [nmmdate   ]
+ Record Orig.        [nmmoriu   ]
+ Dept Orig.          [nmmorig   ]
+}
+END -- gr4038
+END -- info
+END -- folder01
+Table s_nmn
+{
+[nmn0|nmn04|nmn05               |nmn06               |nmn07               |nmn1]
+[nmn0|nmn04|nmn05               |nmn06               |nmn07               |nmn1]
+[nmn0|nmn04|nmn05               |nmn06               |nmn07               |nmn1]
+[nmn0|nmn04|nmn05               |nmn06               |nmn07               |nmn1]
+[nmn0|nmn04|nmn05               |nmn06               |nmn07               |nmn1]
+[nmn0|nmn04|nmn05               |nmn06               |nmn07               |nmn1]
+[nmn0|nmn04|nmn05               |nmn06               |nmn07               |nmn1]
+[nmn0|nmn04|nmn05               |nmn06               |nmn07               |nmn1]
+[nmn0|nmn04|nmn05               |nmn06               |nmn07               |nmn1]
+[nmn0|nmn04|nmn05               |nmn06               |nmn07               |nmn1]
+
+}
+END -- s_nmn
+Grid gr4039
+{
+ Financing Amount    [tot_nmn05           ]      Repayment Amount    [tot_nmn06           ]      Days                [tot_nmn08 ]
+
+}
+END -- gr4039
+Grid gr4040
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4040
+END -- VBox1
+END -- anmi550
+
+TABLES
+nmn_file,
+nmm_file
+ATTRIBUTES
+Edit nmm01=nmm_file.nmm01, tabIndex=1, not null, required, comment="KEY Field, No Blank/Repeated!,Enter Year  (yyyy) ";
+Edit nmm02=nmm_file.nmm02, tabIndex=2, not null, required, comment="KEY Field, No Blank/Repeated! ";
+Edit nmm03=nmm_file.nmm03, tabIndex=3;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit nmm04=nmm_file.nmm04, tabIndex=5;
+Edit nmmuser=nmm_file.nmmuser, tabIndex=6, noEntry;
+Edit nmmmodu=nmm_file.nmmmodu, tabIndex=7, noEntry;
+Edit nmmacti=nmm_file.nmmacti, tabIndex=8, noEntry, upShift;
+Edit nmmgrup=nmm_file.nmmgrup, tabIndex=9, noEntry;
+DateEdit nmmdate=nmm_file.nmmdate, tabIndex=10, noEntry;
+Edit nmmoriu=nmm_file.nmmoriu, tabIndex=501, noEntry;
+Edit nmmorig=nmm_file.nmmorig, tabIndex=502, noEntry;
+Edit nmn0=nmn_file.nmn03, tabIndex=11, title="S/N", not null, required, comment="KEY Field, No Blank/Repeated! ";
+Edit nmn04=nmn_file.nmn04, tabIndex=12, title="Date", not null, required;
+Edit nmn05=nmn_file.nmn05, tabIndex=13, title="Financing Amount";
+Edit nmn06=nmn_file.nmn06, tabIndex=14, title="Repayment Amount";
+Edit nmn07=nmn_file.nmn07, tabIndex=15, title="Financing Balance", noEntry;
+Edit nmn1=nmn_file.nmn08, tabIndex=16, title="Days", noEntry;
+Edit tot_nmn05=formonly.tot_nmn05 type INTEGER, tabIndex=17, noEntry;
+Edit tot_nmn06=formonly.tot_nmn06 type INTEGER, tabIndex=18, noEntry;
+Edit tot_nmn08=formonly.tot_nmn08 type INTEGER, tabIndex=19, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmn(nmn_file.nmn03,nmn_file.nmn04,nmn_file.nmn05,nmn_file.nmn06,nmn_file.nmn07,nmn_file.nmn08)
+SCREEN RECORD Undefined(nmm_file.nmm01,nmm_file.nmm02,nmm_file.nmm03,formonly.imgmksg,nmm_file.nmm04,nmm_file.nmmuser,nmm_file.nmmmodu,nmm_file.nmmacti,nmm_file.nmmgrup,nmm_file.nmmdate,nmm_file.nmmoriu,nmm_file.nmmorig,formonly.tot_nmn05,formonly.tot_nmn06,formonly.tot_nmn08,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

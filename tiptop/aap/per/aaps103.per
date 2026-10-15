@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aaps103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aaps103")
+Folder Folder1
+Page page01(text="Main")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                              >
+ [apz31                                              ]
+ [apz32                                              ]
+ [apz36                                              ]
+ [apz37                                              ]
+ [apz38                                              ]
+ [apz40                                              ]
+ <                                                       >
+ <G group02                                              >
+  Bank Outward Acct Def Transaction Code [ap]
+ <                                                       >
+ <G group03                                              >
+ [apz42                                              ]
+
+ <                                                       >
+
+}
+END -- Grid1
+END -- VBox1
+END -- page01
+END -- Folder1
+END -- aaps103
+
+TABLES
+apz_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox apz31=apz_file.apz31, tabIndex=1, text="Auto Gen Entry when Enter Pur.Invo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz32=apz_file.apz32, tabIndex=2, text="Auto Gen Entry when Ent MISC Invo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz36=apz_file.apz36, tabIndex=3, text="Auto Gen Entry when Ent Allowance", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz37=apz_file.apz37, tabIndex=4, text="Auto Gen Entry when Enter D.M", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz38=apz_file.apz38, tabIndex=5, text="Auto Gen Entry when Ent Prepaymt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz40=apz_file.apz40, tabIndex=6, text="Auto Gen Entry when Enter Payment", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02;
+Edit ap=apz_file.apz58, tabIndex=7;
+Group group03:group03, text="EoM Revaluation Entry Sheet Gen. Method";
+RadioGroup apz42=apz_file.apz42, tabIndex=8, items=(("1", %"Detail"),("2", %"ALL"),("3", %"By Vender"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(apz_file.apz31,apz_file.apz32,apz_file.apz36,apz_file.apz37,apz_file.apz38,apz_file.apz40,apz_file.apz58,apz_file.apz42)
+END -- INSTRUCTIONS
+

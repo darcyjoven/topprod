@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri104_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+HBox HBox1
+Tree tree(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file")
+{
+[name             ]
+[name             ]
+[name             ]
+[name             ]
+[name             ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- tree
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+ hrag01 [hrag01           ] hrag03 [hrag03            ]
+ hrag02 [hrag02           ][hrag04       ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table Table1
+{
+[hrag05    |hrag06          |hrag07           |hrag08   |hrag09         |hragacti   ]
+[hrag05    |hrag06          |hrag07           |hrag08   |hrag09         |hragacti   ]
+[hrag05    |hrag06          |hrag07           |hrag08   |hrag09         |hragacti   ]
+[hrag05    |hrag06          |hrag07           |hrag08   |hrag09         |hragacti   ]
+[hrag05    |hrag06          |hrag07           |hrag08   |hrag09         |hragacti   ]
+
+
+}
+END -- Table1
+Grid Grid2
+{
+
+  -----------[cnt  ]/[cn2 ]------------
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- HBox1
+END -- Form
+
+ATTRIBUTES
+Edit name=formonly.name, tabIndex=13, title=%"name";
+Phantom formonly.pid;
+Phantom formonly.id;
+Phantom formonly.has_children;
+Phantom formonly.expanded;
+Phantom formonly.level;
+Phantom formonly.treekey1;
+Phantom formonly.treekey2;
+ButtonEdit hrag01=formonly.hrag01 type VARCHAR, action=controlp, tabIndex=1, noEntry, image="zoom";
+ComboBox hrag03=formonly.hrag03 type VARCHAR, tabIndex=2, noEntry, items=(("01", "01"),("02", "02"),("03", "03"),("04", "04"),("05", "05"),("06", "06"),("07", "07"),("08", "08"),("09", "09"),("10", "10"));
+Edit hrag02=formonly.hrag02 type VARCHAR, tabIndex=3, noEntry;
+CheckBox hrag04=formonly.hrag04 type VARCHAR, tabIndex=4, text=%"hrag04", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit hrag05=formonly.hrag05 type INTEGER, tabIndex=5, title=%"hrag05", not null, required;
+ButtonEdit hrag06=formonly.hrag06 type VARCHAR, action=controlp, tabIndex=6, title=%"hrag06", not null, required, image="zoom";
+Edit hrag07=formonly.hrag07 type VARCHAR, tabIndex=7, title=%"hrag07";
+CheckBox hrag08=formonly.hrag08 type VARCHAR, tabIndex=8, title=%"hrag08", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit hrag09=formonly.hrag09 type VARCHAR, tabIndex=9, title=%"hrag09";
+CheckBox hragacti=formonly.hragacti type VARCHAR, tabIndex=10, title=%"hragacti", text=%"Edit1", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrag01,formonly.hrag03,formonly.hrag02,formonly.hrag04,formonly.cnt,formonly.cn2)
+SCREEN RECORD Record1(formonly.hrag05,formonly.hrag06,formonly.hrag07,formonly.hrag08,formonly.hrag09,formonly.hragacti)
+SCREEN RECORD Record2(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.treekey1,formonly.treekey2)
+END -- INSTRUCTIONS
+

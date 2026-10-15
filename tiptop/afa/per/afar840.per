@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afar840.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afar840")
+VBox VBox1
+Grid Grid1
+{
+ <G grpqbe                                                                               >
+  Duty-Free Appr. Date[fch06               ]   Accounts No.        [faj45               ]
+  Duty-Free Appr. No. [fch07               ]   Property No.        [faj02               ]
+
+
+ <                                                                                       >
+
+}
+END -- Grid1
+Group grup01(text="INPUT")
+Grid Grid2
+{
+[s1                 ] [s2                 ] [s3                 ] [s4                 ]
+[t1                 ] [t2                 ] [t3                 ] [t4                 ]
+}
+END -- Grid2
+END -- grup01
+Grid Grid3
+{
+[more                                         ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- afar840
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+DateEdit fch06=formonly.fch06 type DATE, tabIndex=1;
+Edit faj45=formonly.faj45 type VARCHAR, tabIndex=2;
+Edit fch07=formonly.fch07 type VARCHAR, tabIndex=3;
+Edit faj02=formonly.faj02 type VARCHAR, tabIndex=4;
+ComboBox s1=formonly.s1 type CHAR, tabIndex=5, queryEditable, items=(("1", %"FreeApproval Date"),("2", %"FreeApproval #"),("3", %"Accounts #"),("4", %"Property No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=6, queryEditable, items=(("1", %"FreeApproval Date"),("2", %"FreeApproval #"),("3", %"Accounts #"),("4", %"Property No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=7, queryEditable, items=(("1", %"FreeApproval Date"),("2", %"FreeApproval #"),("3", %"Accounts #"),("4", %"Property No."));
+ComboBox s4=formonly.s4 type CHAR, tabIndex=8, queryEditable, items=(("1", %"FreeApproval Date"),("2", %"FreeApproval #"),("3", %"Accounts #"),("4", %"Property No."));
+CheckBox t1=formonly.t1 type VARCHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type VARCHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type VARCHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t4=formonly.t4 type VARCHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.fch06,formonly.faj45,formonly.fch07,formonly.faj02,formonly.s1,formonly.s2,formonly.s3,formonly.s4,formonly.t1,formonly.t2,formonly.t3,formonly.t4,formonly.more)
+END -- INSTRUCTIONS
+

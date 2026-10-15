@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici007.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aici007")
+VBox vb2
+Folder pc2
+Page Main(text=%"Main")
+Table s_ich
+{
+[ich01     |ich02     ]
+[ich01     |ich02     ]
+[ich01     |ich02     ]
+[ich01     |ich02     ]
+[ich01     |ich02     ]
+[ich01     |ich02     ]
+[ich01     |ich02     ]
+[ich01     |ich02     ]
+[ich01     |ich02     ]
+[ich01     |ich02     ]
+[ich01     |ich02     ]
+[ich01     |ich02     ]
+[ich01     |ich02     ]
+[ich01     |ich02     ]
+
+}
+END -- s_ich
+END -- Main
+END -- pc2
+Grid gr2
+{
+ -------Rows  [cnt       ]-------
+
+
+
+
+}
+END -- gr2
+END -- vb2
+END -- aici007
+
+TABLES
+ich_file
+ATTRIBUTES
+Edit ich01=ich_file.ich01, tabIndex=2, title="Formula No.", not null, required;
+Edit ich02=ich_file.ich02, tabIndex=3, title="Formula", noEntry, not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=1;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ich(ich_file.ich01,ich_file.ich02)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asmp630.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asmp630")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr884
+{
+ Cost Accounting Locking Date:           [sma53        ]
+ Account Locking Date(AP):               [apz57        ]
+ Account Locking Date(AR):               [ooz09        ]
+ Account Locking Date(ANM):              [nmz10        ]
+ AFA Locking Date:                       [faa09        ]
+ Depreciation-Tax Locking Date:          [faa13        ]
+[dummy01                                               ]
+}
+END -- gr884
+END -- page01
+END -- folder01
+Table s_aaa
+{
+[aaa01    |aaa02                                   |aaa07     ]
+[aaa01    |aaa02                                   |aaa07     ]
+[aaa01    |aaa02                                   |aaa07     ]
+[aaa01    |aaa02                                   |aaa07     ]
+[aaa01    |aaa02                                   |aaa07     ]
+[aaa01    |aaa02                                   |aaa07     ]
+[aaa01    |aaa02                                   |aaa07     ]
+[aaa01    |aaa02                                   |aaa07     ]
+[aaa01    |aaa02                                   |aaa07     ]
+[aaa01    |aaa02                                   |aaa07     ]
+
+}
+END -- s_aaa
+Grid gr885
+{
+ [m                                                           ]
+
+}
+END -- gr885
+END -- VBox1
+END -- asmp630
+
+ATTRIBUTES
+Edit sma53=formonly.sma53 type CHAR, tabIndex=1;
+Edit apz57=formonly.apz57 type CHAR, tabIndex=2;
+Edit ooz09=formonly.ooz09 type CHAR, tabIndex=3;
+Edit nmz10=formonly.nmz10 type CHAR, tabIndex=4;
+Edit faa09=formonly.faa09 type CHAR, tabIndex=5;
+Edit faa13=formonly.faa13 type CHAR, tabIndex=6;
+Label dummy01:dummy01, text="Account Locking Date(AGL):";
+Edit aaa01=formonly.aaa01 type CHAR, tabIndex=7, title="Book NO.";
+Edit aaa02=formonly.aaa02 type CHAR, tabIndex=8, title="Book No. Desc";
+Edit aaa07=formonly.aaa07 type CHAR, tabIndex=9, title="Date";
+CheckBox m=formonly.m type CHAR, tabIndex=10, text="BackGround Work", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aaa(formonly.aaa01,formonly.aaa02,formonly.aaa07)
+SCREEN RECORD Undefined(formonly.sma53,formonly.apz57,formonly.ooz09,formonly.nmz10,formonly.faa09,formonly.faa13,formonly.m)
+END -- INSTRUCTIONS
+

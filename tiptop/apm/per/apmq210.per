@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq210")
+VBox vb13
+Folder folder01
+Page page01(text="Main")
+Grid gr4966
+{
+ Item No.            [ima01                               ]
+ P/N Spec            [ima02                               ]
+ Spec                [ima021                              ]
+ Group Code          [ima06     ]
+ Price Type          [pmh22               ]
+                     [                    ]
+ Pur Unit            [ima44     ]
+}
+END -- gr4966
+END -- page01
+END -- folder01
+Table s_pmh
+{
+[pmh02     |pmc03        |pmh04        |pmh|pmh09     |pmh13|pmh21     |pmh12               |pmh11       |pmh05 ]
+[pmh02     |pmc03        |pmh04        |pmh|pmh09     |pmh13|pmh21     |pmh12               |pmh11       |pmh05 ]
+[pmh02     |pmc03        |pmh04        |pmh|pmh09     |pmh13|pmh21     |pmh12               |pmh11       |pmh05 ]
+[pmh02     |pmc03        |pmh04        |pmh|pmh09     |pmh13|pmh21     |pmh12               |pmh11       |pmh05 ]
+[pmh02     |pmc03        |pmh04        |pmh|pmh09     |pmh13|pmh21     |pmh12               |pmh11       |pmh05 ]
+[pmh02     |pmc03        |pmh04        |pmh|pmh09     |pmh13|pmh21     |pmh12               |pmh11       |pmh05 ]
+[pmh02     |pmc03        |pmh04        |pmh|pmh09     |pmh13|pmh21     |pmh12               |pmh11       |pmh05 ]
+[pmh02     |pmc03        |pmh04        |pmh|pmh09     |pmh13|pmh21     |pmh12               |pmh11       |pmh05 ]
+[pmh02     |pmc03        |pmh04        |pmh|pmh09     |pmh13|pmh21     |pmh12               |pmh11       |pmh05 ]
+[pmh02     |pmc03        |pmh04        |pmh|pmh09     |pmh13|pmh21     |pmh12               |pmh11       |pmh05 ]
+
+}
+END -- s_pmh
+Grid gr4967
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4967
+END -- vb13
+END -- apmq210
+
+TABLES
+pmh_file
+ATTRIBUTES
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit ima06=formonly.ima06 type CHAR, tabIndex=4, noEntry;
+RadioGroup pmh22=pmh_file.pmh22, tabIndex=18, noEntry, items=(("1", "General"),("2", "Subcontracting"));
+Edit ima44=formonly.ima44 type CHAR, tabIndex=5, noEntry;
+Edit pmh02=pmh_file.pmh02, tabIndex=6, title="Vender#";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=7, title="Abbreviation", noEntry;
+Edit pmh04=formonly.pmh04 type CHAR, tabIndex=8, title="Vender Item#", noEntry;
+Edit pmh=formonly.pmh08 type CHAR, tabIndex=9, title="QC", noEntry;
+Edit pmh09=formonly.pmh09 type CHAR, tabIndex=10, title="QC Degree", noEntry, comment="N.Normal QC T.Strict QC R.Reduced-Qty QC";
+Edit pmh13=formonly.pmh13 type CHAR, tabIndex=11, title="Curr.", noEntry;
+Edit pmh21=pmh_file.pmh21, tabIndex=17, title="pmh21";
+Edit pmh12=formonly.pmh12 type CHAR, tabIndex=12, title="U/P", noEntry;
+Edit pmh11=formonly.pmh11 type CHAR, tabIndex=13, title="Distr.Ratio", noEntry;
+Edit pmh05=formonly.pmh05 type CHAR, tabIndex=14, title="status", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmh(pmh_file.pmh02,formonly.pmc03,formonly.pmh04,formonly.pmh08,formonly.pmh09,formonly.pmh13,pmh_file.pmh21,formonly.pmh12,formonly.pmh11,formonly.pmh05)
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima02,formonly.ima021,formonly.ima06,pmh_file.pmh22,formonly.ima44,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

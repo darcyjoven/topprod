@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrr029.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+   hrdxa06[hrdxa06   |hraa12              ]
+   hrct04 [hrct04                         ]
+   hrdxa04[hrdxa04                        ]
+
+
+
+
+
+
+  [more                               ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrdxa06=formonly.hrdxa06 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hraa12=formonly.hraa12 type VARCHAR, tabIndex=2, noEntry;
+Edit hrct04=formonly.hrct04 type VARCHAR, tabIndex=3, not null, required;
+ButtonEdit hrdxa04=formonly.hrdxa04 type VARCHAR, tabIndex=4, image="zoom", comment=%"controlp";
+CheckBox more=formonly.more type VARCHAR, tabIndex=5, text=%"CheckBox1", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrdxa06,formonly.hraa12,formonly.hrct04,formonly.hrdxa04,formonly.more)
+END -- INSTRUCTIONS
+

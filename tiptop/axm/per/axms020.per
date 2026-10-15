@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axms020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axms020")
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+ <G group01                                                                      >
+  Credit Over Limit On-Hold Code [oaz11     ]
+ <                                                                               >
+ <G group02                                ><G group03                           >
+ [oaz121                          ]         [oaz141                        ]
+ <                                         ><                                    >
+ <G group04                                ><G group05                           >
+ [oaz122                          ]         [oaz142                        ]
+ <                                         ><                                    >
+ <G group06                                ><G group07                           >
+ [oaz131                          ]         [oaz211                        ]
+ <                                         ><                                    >
+ <G group08                                ><G group09                           >
+ [oaz132                          ]         [oaz212                        ]
+
+ <                                         ><                                    >
+
+}
+END -- Grid1
+END -- page01
+END -- Folder1
+END -- axms020
+
+TABLES
+oaz_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit oaz11=oaz_file.oaz11, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Hold Code";
+Group group02:group02, text="When Prt Order,Credit Over-Lmt Handl.Mtd";
+RadioGroup oaz121=oaz_file.oaz121, tabIndex=2, items=(("0", %"NO Checking"),("1", %"Warn"));
+Group group03:group03, text="Prt Deli.Note,Hand Mth if Over-Lmt";
+RadioGroup oaz141=oaz_file.oaz141, tabIndex=3, items=(("0", %"NO Checking"),("1", %"Warn"));
+Group group04:group04, text="Confirm Order,Handling Method if Over-Lmt";
+RadioGroup oaz122=oaz_file.oaz122, tabIndex=4, items=(("0", %"NO Checking"),("1", %"Warn and Hold"),("2", %"Reject"));
+Group group05:group05, text="Conf Deli.Note,Handl.Mtd if Over-Lmt";
+RadioGroup oaz142=oaz_file.oaz142, tabIndex=5, items=(("0", %"NO Checking"),("1", %"Warn"),("2", %"Reject"));
+Group group06:group06, text="Prt Del.Advice, Credit Ov-Lmt Handl.Mtd";
+RadioGroup oaz131=oaz_file.oaz131, tabIndex=6, items=(("0", %"NO Checking"),("1", %"Warn"));
+Group group07:group07, text="Creidt Line Exhange Rate Bas";
+RadioGroup oaz211=oaz_file.oaz211, tabIndex=7, items=(("1", %"By A/R Exchange Rt"),("2", %"Current Exhange Rate"));
+Group group08:group08, text="When Conf Del.Adv, Cred Ov-Lmt Handl.Mtd";
+RadioGroup oaz132=oaz_file.oaz132, tabIndex=8, items=(("0", %"NO Checking"),("1", %"Warn"),("2", %"Reject"));
+Group group09:group09, text="Creidt Line Curr Exhange Rate Base";
+RadioGroup oaz212=oaz_file.oaz212, tabIndex=9, items=(("B", %"Bank Buying"),("S", %"Bank Selling"),("M", %"Bank Average ExRt"),("C", %"Customs Buy"),("D", %"Customs Sell"),("P", %"Customs 10"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oaz_file.oaz11,oaz_file.oaz121,oaz_file.oaz141,oaz_file.oaz122,oaz_file.oaz142,oaz_file.oaz131,oaz_file.oaz211,oaz_file.oaz132,oaz_file.oaz212)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axms060.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axms060")
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+ <G group05                                  ><G group07                                  >
+ [oaz65                                     ] [oaz67                                     ]
+
+                                              <                                           >
+ <                                           ><G group01                                  >
+ <G group06                                  >[oaz22                                     ]
+ [oaz66                                     ] <                                           >
+                                              <G group02                                  >
+                                              [oaz62                                     ]
+ <                                           ><                                           >
+ <G group09                                  ><G group03                                  >
+ [oaz71                                     ] [oaz64                                     ]
+
+ <                                           ><                                           >
+ <G group04                                  ><G group08                                  >
+ [oaz61                                   ]    Local Delivery Note Body Max.Rows  [oaz6]
+                                               Overseas Delivery Nt Body Max Rows [oaz1]
+
+ <                                           ><                                           >
+
+}
+END -- Grid1
+END -- page01
+END -- Folder1
+END -- axms060
+
+TABLES
+oaz_file
+ATTRIBUTES
+Group group05:group05, text="Order # Entred to Deli.Note Checking Mthod";
+RadioGroup oaz65=oaz_file.oaz65, tabIndex=1, items=(("0", %"Blank"),("1", %"No Blank"));
+Group group07:group07, text="Delivery Note # Source of Packing List";
+RadioGroup oaz67=oaz_file.oaz67, tabIndex=2, items=(("1", %"Delivery Advice"),("2", %"Delivery Note"));
+Group group01:group01;
+CheckBox oaz22=oaz_file.oaz22, tabIndex=3, text="Updt Del.Note Qt when Conf Packing List", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group06:group06, text="Ckg.Mtd for Del.Nt entered to Sls/Ret.Nt";
+RadioGroup oaz66=oaz_file.oaz66, tabIndex=4, items=(("0", %"Blank"),("1", %"No Blank"));
+Group group02:group02;
+CheckBox oaz62=oaz_file.oaz62, tabIndex=5, text="Enter A/R once Delivery confirmed", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group09:group09, text="Method for Auto Delivery Transaction Dtl";
+RadioGroup oaz71=oaz_file.oaz71, tabIndex=6, items=(("1", %"Same as Prod."),("2", %"img_file Def,Lot same as Prod.Ln#"));
+Group group03:group03, text="Count Del. as Uninvo.Sls Revenue to Rcv";
+RadioGroup oaz64=oaz_file.oaz64, tabIndex=7, items=(("Y", %"Cnt Del as Uninvo.Sls Rcvg"),("N", %"Not Cnt Del as Uninvo.Sls Rc"),("O", %"by Cust.Order"));
+Group group04:group04, text="Inventory Deduction Method after Del Conf";
+RadioGroup oaz61=oaz_file.oaz61, tabIndex=8, items=(("1", %"Ded Now (No Ask)"),("2", %"Ded Now"),("3", %"Ded Later"));
+Group group08:group08;
+Edit oaz6=oaz_file.oaz691, tabIndex=9;
+Edit oaz1=oaz_file.oaz692, tabIndex=10, upShift;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oaz_file.oaz65,oaz_file.oaz67,oaz_file.oaz22,oaz_file.oaz66,oaz_file.oaz62,oaz_file.oaz71,oaz_file.oaz64,oaz_file.oaz61,oaz_file.oaz691,oaz_file.oaz692)
+END -- INSTRUCTIONS
+

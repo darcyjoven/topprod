@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdp120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asdp120")
+VBox VBox1
+Grid gr372
+{
+ <G group01                                               >
+  Monthly Closing YY/MM [year]/[mo]
+ [sw1                                                 ]
+ [sw2                                                 ]
+ [sw3                                                 ]
+ <                                                        >
+
+}
+END -- gr372
+Grid gr373
+{
+ [g_bgj]
+
+}
+END -- gr373
+END -- VBox1
+END -- asdp120
+
+ATTRIBUTES
+Group group01:group01;
+Edit year=formonly.year type SMALLINT, tabIndex=1, not null, required;
+Edit mo=formonly.month type SMALLINT, tabIndex=2, not null, required;
+CheckBox sw1=formonly.sw1 type CHAR, tabIndex=3, text="Clear Data, C/f Last Period Balance", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sw2=formonly.sw2 type CHAR, tabIndex=4, text="Summarize Current MM Wtdw/Ret/St-in Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sw3=formonly.sw3 type CHAR, tabIndex=5, text="Summarize Monthly Statistics Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgj=formonly.g_bgjob type CHAR, tabIndex=6, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.year,formonly.month,formonly.sw1,formonly.sw2,formonly.sw3,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli604.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli604")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2403
+{
+ Book No.[atq15          ]
+ Year    [atq01     ]
+ Month   [atq02     ]
+
+}
+END -- gr2403
+END -- page01
+END -- folder01
+Table s_atq
+{
+[atq17        |ats02               |atq19      |atn02       |atq18           |atq20   ]
+[atq17        |ats02               |atq19      |atn02       |atq18           |atq20   ]
+[atq17        |ats02               |atq19      |atn02       |atq18           |atq20   ]
+[atq17        |ats02               |atq19      |atn02       |atq18           |atq20   ]
+[atq17        |ats02               |atq19      |atn02       |atq18           |atq20   ]
+[atq17        |ats02               |atq19      |atn02       |atq18           |atq20   ]
+[atq17        |ats02               |atq19      |atn02       |atq18           |atq20   ]
+[atq17        |ats02               |atq19      |atn02       |atq18           |atq20   ]
+[atq17        |ats02               |atq19      |atn02       |atq18           |atq20   ]
+[atq17        |ats02               |atq19      |atn02       |atq18           |atq20   ]
+}
+END -- s_atq
+Grid gr2404
+{
+ --- Rows [cnt   ] / [cn2   ] -----Sum [sum_atq18]-----
+
+
+
+}
+END -- gr2404
+END -- VBox1
+END -- ggli604
+
+TABLES
+atq_file
+ATTRIBUTES
+ButtonEdit atq15=atq_file.atq15, action=controlp, tabIndex=1, required, image="zoom";
+Edit atq01=atq_file.atq01, tabIndex=2, not null, required;
+Edit atq02=atq_file.atq02, tabIndex=3, not null, required;
+ButtonEdit atq17=atq_file.atq17, action=controlp, tabIndex=4, title="Flow Category Code", not null, required, image="zoom", comment="<^P>Flow Category Code";
+Edit ats02=formonly.ats02 type CHAR, tabIndex=5, title="Descriptiom", noEntry;
+ButtonEdit atq19=atq_file.atq19, action=controlp, tabIndex=10, title=%"Group code", not null, required, image="zoom";
+Edit atn02=formonly.atn02 type CHAR, tabIndex=11, title=%"Directions", noEntry;
+Edit atq18=atq_file.atq18, tabIndex=6, title="Balance", not null, required;
+Edit atq20=atq_file.atq20, tabIndex=12, title=%"Merge";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+Edit sum_atq18=formonly.sum_atq18 type CHAR, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_atq(atq_file.atq17,formonly.ats02,atq_file.atq19,formonly.atn02,atq_file.atq18,atq_file.atq20)
+SCREEN RECORD Undefined(atq_file.atq01,atq_file.atq15,atq_file.atq02,formonly.cnt,formonly.cn2,formonly.sum_atq18)
+END -- INSTRUCTIONS
+

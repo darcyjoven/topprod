@@ -1,0 +1,101 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq842.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq842")
+VBox vb6
+Folder folder01
+Page page01(text="Page01")
+Grid gr3194
+{
+ Item#               [ima01                         ]  Inv Unit [ima25     ]                     <G group043                     >  <G group044                     >
+ Part Name           [ima02                         ]           [ima021                        ]  [ima906             ]              Par/Ref Unit       [ima907    ]
+                                                                                                 <                               >  <                               >
+
+}
+END -- gr3194
+END -- page01
+END -- folder01
+Table s_qty
+{
+[plan       |pname        |avl_stk        |avl_stk_mpsmrp |qty_3          |qty_4          |qty_5          |qty_2          |qty_51         |qty_6          |qty_1          |qty_7           ]
+[plan       |pname        |avl_stk        |avl_stk_mpsmrp |qty_3          |qty_4          |qty_5          |qty_2          |qty_51         |qty_6          |qty_1          |qty_7           ]
+[plan       |pname        |avl_stk        |avl_stk_mpsmrp |qty_3          |qty_4          |qty_5          |qty_2          |qty_51         |qty_6          |qty_1          |qty_7           ]
+[plan       |pname        |avl_stk        |avl_stk_mpsmrp |qty_3          |qty_4          |qty_5          |qty_2          |qty_51         |qty_6          |qty_1          |qty_7           ]
+[plan       |pname        |avl_stk        |avl_stk_mpsmrp |qty_3          |qty_4          |qty_5          |qty_2          |qty_51         |qty_6          |qty_1          |qty_7           ]
+[plan       |pname        |avl_stk        |avl_stk_mpsmrp |qty_3          |qty_4          |qty_5          |qty_2          |qty_51         |qty_6          |qty_1          |qty_7           ]
+[plan       |pname        |avl_stk        |avl_stk_mpsmrp |qty_3          |qty_4          |qty_5          |qty_2          |qty_51         |qty_6          |qty_1          |qty_7           ]
+[plan       |pname        |avl_stk        |avl_stk_mpsmrp |qty_3          |qty_4          |qty_5          |qty_2          |qty_51         |qty_6          |qty_1          |qty_7           ]
+[plan       |pname        |avl_stk        |avl_stk_mpsmrp |qty_3          |qty_4          |qty_5          |qty_2          |qty_51         |qty_6          |qty_1          |qty_7           ]
+[plan       |pname        |avl_stk        |avl_stk_mpsmrp |qty_3          |qty_4          |qty_5          |qty_2          |qty_51         |qty_6          |qty_1          |qty_7           ]
+
+}
+END -- s_qty
+Table s_sr
+{
+[ds_date           |ds_plan  |ds_class  |ds_no           |ds_cust       |ds_qlty                |ds_total           ]
+[ds_date           |ds_plan  |ds_class  |ds_no           |ds_cust       |ds_qlty                |ds_total           ]
+[ds_date           |ds_plan  |ds_class  |ds_no           |ds_cust       |ds_qlty                |ds_total           ]
+[ds_date           |ds_plan  |ds_class  |ds_no           |ds_cust       |ds_qlty                |ds_total           ]
+[ds_date           |ds_plan  |ds_class  |ds_no           |ds_cust       |ds_qlty                |ds_total           ]
+[ds_date           |ds_plan  |ds_class  |ds_no           |ds_cust       |ds_qlty                |ds_total           ]
+[ds_date           |ds_plan  |ds_class  |ds_no           |ds_cust       |ds_qlty                |ds_total           ]
+[ds_date           |ds_plan  |ds_class  |ds_no           |ds_cust       |ds_qlty                |ds_total           ]
+[ds_date           |ds_plan  |ds_class  |ds_no           |ds_cust       |ds_qlty                |ds_total           ]
+[ds_date           |ds_plan  |ds_class  |ds_no           |ds_cust       |ds_qlty                |ds_total           ]
+
+}
+END -- s_sr
+Grid gr3195
+{
+  ---------- Rows [cnt   ] / [cn3   ] / [cn2   ] ----------
+
+}
+END -- gr3195
+END -- vb6
+END -- aimq842
+
+TABLES
+ima_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima25=ima_file.ima25, tabIndex=2, noEntry;
+Group group043:group043, text="Unit Control";
+RadioGroup ima906=ima_file.ima906, tabIndex=3, not null, required, items=(("1", "Single Unit"),("2", "Child/Parent Unit"),("3", "Reference Unit"));
+Group group044:group044;
+ButtonEdit ima907=ima_file.ima907, action=controlp, tabIndex=4, image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=5, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=6, noEntry;
+Edit plan=formonly.plan type CHAR, tabIndex=7, title="Plant No";
+Edit pname=formonly.pname type CHAR, tabIndex=8, title="Plant Name";
+Edit avl_stk=formonly.avl_stk type DECIMAL, tabIndex=9, title="Available Qty", noEntry;
+Edit avl_stk_mpsmrp=formonly.avl_stk_mpsmrp type DECIMAL, tabIndex=10, title="MRP Usable", noEntry;
+Edit qty_3=formonly.qty_3 type CHAR, tabIndex=11, title="P/R Qty";
+Edit qty_4=formonly.qty_4 type CHAR, tabIndex=12, title="Purchase Qty";
+Edit qty_5=formonly.qty_5 type CHAR, tabIndex=13, title="IQC Qty on QC";
+Edit qty_2=formonly.qty_2 type CHAR, tabIndex=14, title="WIP Qty";
+Edit qty_51=formonly.qty_51 type CHAR, tabIndex=15, title="FQC Qty";
+Edit qty_6=formonly.qty_6 type CHAR, tabIndex=16, title="Allotment Qty";
+Edit qty_1=formonly.qty_1 type CHAR, tabIndex=17, title="Qty Ordered";
+Edit qty_7=formonly.qty_7 type CHAR, tabIndex=18, title="Order Allocation";
+DateEdit ds_date=formonly.ds_date type CHAR, tabIndex=19, title="Demand/Supply Dt";
+Edit ds_plan=formonly.ds_plan type CHAR, tabIndex=20, title="Plant";
+Edit ds_class=formonly.ds_class type CHAR, tabIndex=21, title="Category";
+Edit ds_no=formonly.ds_no type CHAR, tabIndex=22, title="Doc#";
+Edit ds_cust=formonly.ds_cust type CHAR, tabIndex=23, title="Cust./Supplr";
+Edit ds_qlty=formonly.ds_qlty type CHAR, tabIndex=24, title="(+-)Supply/Demand Qty";
+Edit ds_total=formonly.ds_total type CHAR, tabIndex=25, title="Estimated Balance";
+Edit cnt=formonly.cnt type CHAR, tabIndex=26;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=27;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qty(formonly.plan,formonly.pname,formonly.avl_stk,formonly.avl_stk_mpsmrp,formonly.qty_3,formonly.qty_4,formonly.qty_5,formonly.qty_2,formonly.qty_51,formonly.qty_6,formonly.qty_1,formonly.qty_7)
+SCREEN RECORD s_sr(formonly.ds_date,formonly.ds_plan,formonly.ds_class,formonly.ds_no,formonly.ds_cust,formonly.ds_qlty,formonly.ds_total)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima25,ima_file.ima906,ima_file.ima907,ima_file.ima02,ima_file.ima021,formonly.cnt,formonly.cn3,formonly.cn2)
+END -- INSTRUCTIONS
+

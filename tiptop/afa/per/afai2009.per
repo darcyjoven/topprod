@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai2009.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai2009")
+VBox VBox1
+Folder pc338
+Page page01(text="Main")
+VBox VBox2
+Grid gr1870
+{
+ Instrument No.      [fga01               ]
+ Instrument Serial No[fga02               ]
+ Property No.        [fga03               ]
+ Additional No.      [fga031              ]
+ Property Serial No. [fga04               ]
+
+ Chinese Name        [fga06                         ]  Vender No.          [fga10     ][pmc03     ]
+                     [fga061                        ]  Verder              [fga11     ][pmc03_2   ]
+ English Name        [fga07                         ]  Keeper              [fga12     ][gen02_1   ]
+                     [fga071                        ]  Keeping Department  [fga13     ][gem02     ]
+ Spec. Model No.     [fga08                         ]  Storing Location    [fga14     ][fga15     ]
+ Accuracy            [fga09                         ]  Date of Acquisition [fga16       ]
+
+}
+END -- gr1870
+Grid gr1871
+{
+ Cycle of Calib.     [fga20     ][dummy01   ]          Next Calib. Date    [fga23       ]
+ Calib. Type         [fga21     ][desc      ]          Result              [fga24     ][resu      ]
+ Latest Calib. Date  [fga22       ]                    Calib. By           [fga25     ][gen02_2   ]
+}
+END -- gr1871
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr1872
+{
+ Record Owner      [fgauser   ] Last Modified By  [fgamodu   ] Data Valid Code   [fgaacti   ]
+ Department        [fgagrup   ] Create/MidifyDate [fgadate   ]
+ Record Orig.      [fgaoriu   ]
+ Dept Orig.        [fgaorig   ]
+}
+END -- gr1872
+END -- info
+END -- pc338
+Grid gr1873
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1873
+END -- VBox1
+END -- afai2009
+
+TABLES
+fga_file
+ATTRIBUTES
+Edit fga01=fga_file.fga01, tabIndex=1;
+Edit fga02=fga_file.fga02, tabIndex=2;
+ButtonEdit fga03=fga_file.fga03, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Property No.";
+Edit fga031=fga_file.fga031, tabIndex=4;
+Edit fga04=fga_file.fga04, tabIndex=5, noEntry;
+Edit fga06=fga_file.fga06, tabIndex=6;
+ButtonEdit fga10=fga_file.fga10, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Vender ";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=8, noEntry;
+Edit fga061=fga_file.fga061, tabIndex=9;
+ButtonEdit fga11=fga_file.fga11, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Vender ";
+Edit pmc03_2=formonly.pmc03_2 type CHAR, tabIndex=11, noEntry;
+Edit fga07=fga_file.fga07, tabIndex=12;
+ButtonEdit fga12=fga_file.fga12, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Employee ";
+Edit gen02_1=formonly.gen02_1 type CHAR, tabIndex=14, noEntry;
+Edit fga071=fga_file.fga071, tabIndex=15;
+ButtonEdit fga13=fga_file.fga13, action=controlp, tabIndex=16, image="zoom", comment="<^P>Query Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=17, noEntry;
+Edit fga08=fga_file.fga08, tabIndex=18;
+ButtonEdit fga14=fga_file.fga14, action=controlp, tabIndex=19, image="zoom", comment="<^P>Qry Storing Location,Enter Storing Location";
+ButtonEdit fga15=fga_file.fga15, action=controlp, tabIndex=20, image="zoom", comment="<^P>Qry Plant No.,Please Enter Storing Plant";
+Edit fga09=fga_file.fga09, tabIndex=21;
+DateEdit fga16=fga_file.fga16, tabIndex=22;
+Edit fga20=fga_file.fga20, tabIndex=23;
+Label dummy01:dummy01, text="Days";
+DateEdit fga23=fga_file.fga23, tabIndex=24;
+ComboBox fga21=fga_file.fga21, tabIndex=25, queryEditable, items=(("1", "On-Site"),("2", "Send-out"));
+Edit desc=formonly.desc type CHAR, tabIndex=26, noEntry;
+Edit fga24=fga_file.fga24, tabIndex=27, noEntry;
+Edit resu=formonly.resu type CHAR, tabIndex=28, noEntry;
+DateEdit fga22=fga_file.fga22, tabIndex=29, noEntry;
+ButtonEdit fga25=fga_file.fga25, action=controlp, tabIndex=30, image="zoom", comment="<^P>Qry Employee";
+Edit gen02_2=formonly.gen02_2 type CHAR, tabIndex=31;
+Edit fgauser=fga_file.fgauser, tabIndex=32, noEntry;
+Edit fgamodu=fga_file.fgamodu, tabIndex=33, noEntry;
+Edit fgaacti=fga_file.fgaacti, tabIndex=34, noEntry, upShift;
+Edit fgagrup=fga_file.fgagrup, tabIndex=35, noEntry;
+DateEdit fgadate=fga_file.fgadate, tabIndex=36, noEntry;
+Edit fgaoriu=fga_file.fgaoriu, tabIndex=501, noEntry;
+Edit fgaorig=fga_file.fgaorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=37, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fga_file.fga01,fga_file.fga02,fga_file.fga03,fga_file.fga031,fga_file.fga04,fga_file.fga06,fga_file.fga10,formonly.pmc03,fga_file.fga061,fga_file.fga11,formonly.pmc03_2,fga_file.fga07,fga_file.fga12,formonly.gen02_1,fga_file.fga071,fga_file.fga13,formonly.gem02,fga_file.fga08,fga_file.fga14,fga_file.fga15,fga_file.fga09,fga_file.fga16,fga_file.fga20,fga_file.fga23,fga_file.fga21,formonly.desc,fga_file.fga24,formonly.resu,fga_file.fga22,fga_file.fga25,formonly.gen02_2,fga_file.fgauser,fga_file.fgamodu,fga_file.fgaacti,fga_file.fgagrup,fga_file.fgadate,fga_file.fgaoriu,fga_file.fgaorig,formonly.cnt)
+END -- INSTRUCTIONS
+

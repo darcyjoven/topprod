@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct310")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+HBox hb3
+Grid gr1796
+{
+ Year/Month          [cae0]/[ca]
+
+
+
+}
+END -- gr1796
+Grid gr1797
+{
+ Tot Labor Cost      [ltot          ]     Tot Overhead3          [otot3         ]
+ Tot Overhead1       [otot1         ]     Tot Overhead4          [otot4         ]
+ Tot Overhead2        [otot2         ]     Tot Overhead5          [otot5         ]
+
+}
+END -- gr1797
+END -- hb3
+END -- page01
+Page info(text="Info")
+Grid gr1798
+{
+ Record Owner        [caeuser   ]   Last Modified by    [caemodu   ]
+ Department          [caegrup   ]   Create/Modify Date  [caedate   ]
+ Record Orig.        [caeoriu   ]
+ Dept Orig.          [caeorig   ]
+}
+END -- gr1798
+END -- info
+END -- folder01
+Table s_cae
+{
+[cae03    |cae04    |cab02       |cae041     |cae08     |cae05      |cae06      |cae07    |cae09     |cae10     |cae11    ]
+[cae03    |cae04    |cab02       |cae041     |cae08     |cae05      |cae06      |cae07    |cae09     |cae10     |cae11    ]
+[cae03    |cae04    |cab02       |cae041     |cae08     |cae05      |cae06      |cae07    |cae09     |cae10     |cae11    ]
+[cae03    |cae04    |cab02       |cae041     |cae08     |cae05      |cae06      |cae07    |cae09     |cae10     |cae11    ]
+[cae03    |cae04    |cab02       |cae041     |cae08     |cae05      |cae06      |cae07    |cae09     |cae10     |cae11    ]
+[cae03    |cae04    |cab02       |cae041     |cae08     |cae05      |cae06      |cae07    |cae09     |cae10     |cae11    ]
+[cae03    |cae04    |cab02       |cae041     |cae08     |cae05      |cae06      |cae07    |cae09     |cae10     |cae11    ]
+[cae03    |cae04    |cab02       |cae041     |cae08     |cae05      |cae06      |cae07    |cae09     |cae10     |cae11    ]
+
+}
+END -- s_cae
+Grid gr1799
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1799
+END -- vb2
+END -- axct310
+
+TABLES
+cae_file
+ATTRIBUTES
+Edit cae0=cae_file.cae01, tabIndex=1, not null, required;
+Edit ca=cae_file.cae02, tabIndex=2, not null, required;
+Edit ltot=formonly.ltot type CHAR, tabIndex=3, noEntry;
+Edit otot3=formonly.otot3 type CHAR, tabIndex=23, noEntry;
+Edit otot1=formonly.otot1 type CHAR, tabIndex=4, noEntry;
+Edit otot4=formonly.otot4 type CHAR, tabIndex=24, noEntry;
+Edit otot2=formonly.otot2 type CHAR, tabIndex=22, noEntry;
+Edit otot5=formonly.otot5 type CHAR, tabIndex=25, noEntry;
+Edit caeuser=cae_file.caeuser, tabIndex=5, noEntry;
+Edit caemodu=cae_file.caemodu, tabIndex=6, noEntry;
+Edit caegrup=cae_file.caegrup, tabIndex=7, noEntry;
+DateEdit caedate=cae_file.caedate, tabIndex=8, noEntry;
+Edit caeoriu=cae_file.caeoriu, tabIndex=501, noEntry;
+Edit caeorig=cae_file.caeorig, tabIndex=502, noEntry;
+Edit cae03=cae_file.cae03, tabIndex=9, title="Cost Cnt", not null, required;
+ButtonEdit cae04=cae_file.cae04, action=controlp, tabIndex=10, title="Cost Itm", not null, required, image="zoom", comment="<^P>Qry Cost Items!";
+Edit cab02=formonly.cab02 type CHAR, tabIndex=11, title="Desc", noEntry;
+ComboBox cae041=cae_file.cae041, tabIndex=12, title="Cls", items=(("1", "Manual"),("2", "Overhead1"),("3", "Overhead2"),("4", "Overhead3"),("5", "Overhead4"),("6", "NewText"));
+ComboBox cae08=cae_file.cae08, tabIndex=13, title="Appo.Mtd", not null, required, items=(("1", "Actual Hour"),("2", "Standard Hour"),("3", "Output Qty"),("4", "Output Qty * Distribution Ratio"),("5", "Actual Machine Hours"));
+Edit cae05=cae_file.cae05, tabIndex=14, title="Amount", not null, required;
+Edit cae06=cae_file.cae06, tabIndex=15, title="Index Tot", noEntry, not null, required;
+Edit cae07=cae_file.cae07, tabIndex=16, title="Ut Cost", noEntry, not null, required;
+ComboBox cae09=cae_file.cae09, tabIndex=17, title="Type", items=(("1", %"Fixed"),("2", %"Variable"));
+Edit cae10=cae_file.cae10, tabIndex=18, title="Std.Capacity";
+Edit cae11=cae_file.cae11, tabIndex=19, title="Idle Overhead";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cae(cae_file.cae03,cae_file.cae04,formonly.cab02,cae_file.cae041,cae_file.cae08,cae_file.cae05,cae_file.cae06,cae_file.cae07,cae_file.cae09,cae_file.cae10,cae_file.cae11)
+SCREEN RECORD Undefined(cae_file.cae01,cae_file.cae02,formonly.ltot,formonly.otot3,formonly.otot1,formonly.otot4,formonly.otot2,formonly.otot5,cae_file.caeuser,cae_file.caemodu,cae_file.caegrup,cae_file.caedate,cae_file.caeoriu,cae_file.caeorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

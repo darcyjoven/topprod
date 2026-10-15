@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli007.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"agli007")
+VBox vb5
+Folder folder01
+Page page01(text=%"Main")
+Grid gr2343
+{
+  Group Code      [aye01        ]
+  Parent Company  [aye02        ]
+  Book No.        [aye00        ]
+  Year            [aye03        ]
+  Month           [aye04        ]
+  Currency        [aye05        ]
+
+
+
+}
+END -- gr2343
+END -- page01
+END -- folder01
+Table s_axo
+{
+[aye06          |aya02           |aye07            |axl02           |aye08           ]
+[aye06          |aya02           |aye07            |axl02           |aye08           ]
+[aye06          |aya02           |aye07            |axl02           |aye08           ]
+[aye06          |aya02           |aye07            |axl02           |aye08           ]
+[aye06          |aya02           |aye07            |axl02           |aye08           ]
+[aye06          |aya02           |aye07            |axl02           |aye08           ]
+[aye06          |aya02           |aye07            |axl02           |aye08           ]
+[aye06          |aya02           |aye07            |axl02           |aye08           ]
+[aye06          |aya02           |aye07            |axl02           |aye08           ]
+[aye06          |aya02           |aye07            |axl02           |aye08           ]
+}
+END -- s_axo
+Grid gr2344
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2344
+END -- vb5
+END -- agli007
+
+TABLES
+aye_file
+ATTRIBUTES
+ButtonEdit aye01=aye_file.aye01, action=controlp, tabIndex=11, not null, required, image="zoom.png";
+ButtonEdit aye02=aye_file.aye02, action=controlp, tabIndex=12, not null, required, image="zoom.png";
+Edit aye00=formonly.aye00 type VARCHAR, tabIndex=1, noEntry;
+Edit aye03=formonly.aye03 type SMALLINT, tabIndex=2, not null, required;
+Edit aye04=formonly.aye04 type SMALLINT, tabIndex=3, not null, required;
+Edit aye05=aye_file.aye05, tabIndex=13, noEntry, not null, required;
+ButtonEdit aye06=formonly.aye06 type VARCHAR, action=controlp, tabIndex=4, title=%"Flow Category Code", not null, required, image="zoom", comment=%"<^P>Flow Category Code";
+Edit aya02=formonly.aya02 type CHAR, tabIndex=5, title=%"Description", noEntry;
+ButtonEdit aye07=formonly.aye07 type VARCHAR, action=controlp, tabIndex=7, title=%"Group Code", not null, required, image="zoom", comment=%"<^P>Flow Category Code";
+Edit axl02=formonly.axl02 type CHAR, tabIndex=8, title=%"Description", noEntry;
+Edit aye08=formonly.aye08 type DECIMAL, tabIndex=6, title=%"Transaction Amount", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aye(formonly.aye06,formonly.aya02,formonly.aye07,formonly.axl02,formonly.aye08)
+SCREEN RECORD Undefined(aye_file.aye01,aye_file.aye02,formonly.aye00,formonly.aye03,formonly.aye04,aye_file.aye05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

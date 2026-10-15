@@ -1,0 +1,190 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi404.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"axmi404")
+VBox VBox3
+Folder pc1
+Page Page1(text=%"Basic")
+Grid gr1
+{
+
+  Order id   [odp01          ] [odl02              ]   [odp13     ]         Order NO.     [odp00                 ]
+  Customer id[odp02          ] [occ02              ]   [odp11            ]  Confirm id    [odp14                 ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+HBox HBox1
+VBox VBox1
+Folder pc3
+Page s(text=%"Order Style")
+Grid gr3
+{
+
+  <T s_odp                                                                                                               >
+  [odp03   |odp04|odp05|odp07               |odp08       |odp09          |odp10          |odp09a         |odp10a         ]
+  [odp03   |odp04|odp05|odp07               |odp08       |odp09          |odp10          |odp09a         |odp10a         ]
+  [odp03   |odp04|odp05|odp07               |odp08       |odp09          |odp10          |odp09a         |odp10a         ]
+  [odp03   |odp04|odp05|odp07               |odp08       |odp09          |odp10          |odp09a         |odp10a         ]
+  [odp03   |odp04|odp05|odp07               |odp08       |odp09          |odp10          |odp09a         |odp10a         ]
+  [odp03   |odp04|odp05|odp07               |odp08       |odp09          |odp10          |odp09a         |odp10a         ]
+  [odp03   |odp04|odp05|odp07               |odp08       |odp09          |odp10          |odp09a         |odp10a         ]
+  [odp03   |odp04|odp05|odp07               |odp08       |odp09          |odp10          |odp09a         |odp10a         ]
+}
+END -- gr3
+END -- s
+END -- pc3
+Folder pc4
+Page Page7(text=%"Link Shop")
+Grid gr4
+{
+
+   <T s_odp_2                                                                                                             >
+   [odp03_2 |odp06|odp0a|odp07_2             |odp08_2     |odp09_2        |odp10_2        |odp09a_2       |odp10a_2       ]
+   [odp03_2 |odp06|odp0a|odp07_2             |odp08_2     |odp09_2        |odp10_2        |odp09a_2       |odp10a_2       ]
+   [odp03_2 |odp06|odp0a|odp07_2             |odp08_2     |odp09_2        |odp10_2        |odp09a_2       |odp10a_2       ]
+   [odp03_2 |odp06|odp0a|odp07_2             |odp08_2     |odp09_2        |odp10_2        |odp09a_2       |odp10a_2       ]
+   [odp03_2 |odp06|odp0a|odp07_2             |odp08_2     |odp09_2        |odp10_2        |odp09a_2       |odp10a_2       ]
+
+}
+END -- gr4
+END -- Page7
+END -- pc4
+END -- VBox1
+VBox VBox2
+Folder pc2
+Page Page3(text=%"Item basic")
+Grid gr2
+{
+
+    Item id        [ima01                   ]          [ima04                            ]
+    Item name      [ima02                   ]          [                                 ]
+    Item style     [ima021                  ]          [                                 ]
+    Sell id        [ima31     ]  [gfe02     ]          [                                 ]
+    Style1         [ima1004   ]  [tqa02_1   ]          [                                 ]
+    Name           [ima1005   ]  [tqa02_2   ]          [                                 ]
+    Serials        [ima1006   ]  [tqa02_3   ]          [                                 ]
+    Style2         [ima1007   ]  [tqa02_4   ]          [                                 ]
+    Item style2    [ima1008   ]  [tqa02_5   ]          [                                 ]
+    Item           [ima1009   ]  [tqa02_6   ]          [                                 ]
+}
+END -- gr2
+END -- Page3
+END -- pc2
+Folder pc5
+Page Page9(text=%"Order Serials")
+Grid gr5
+{
+
+ <T s_imx                                                                                          >
+ [numb|color|imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d|e|f|g|h|j|count ]
+ [numb|color|imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d|e|f|g|h|j|count ]
+ [numb|color|imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d|e|f|g|h|j|count ]
+ [numb|color|imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d|e|f|g|h|j|count ]
+ [numb|color|imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d|e|f|g|h|j|count ]
+}
+END -- gr5
+END -- Page9
+END -- pc5
+END -- VBox2
+END -- HBox1
+Grid Grid1
+{
+ ----------  Rows [idx   ]/[cnt   ]  ---  Details [cn2   ]  [cn3     ] ----------
+
+}
+END -- Grid1
+END -- VBox3
+END -- Form1
+
+TABLES
+odp_file
+ATTRIBUTES
+ButtonEdit odp01=odp_file.odp01, action=controlp, tabIndex=1, not null, required, image="zoom", sizePolicy=fixed;
+Edit odl02=formonly.odl02 type CHAR, tabIndex=2, noEntry, sizePolicy=fixed;
+ComboBox odp13=odp_file.odp13, tabIndex=65, default = "", not null, required, items=(("1", "futures"),("2", "spot"));
+ButtonEdit odp00=odp_file.odp00, action=controlp, tabIndex=64, not null, required, image="zoom", sizePolicy=fixed;
+ButtonEdit odp02=odp_file.odp02, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=4, noEntry;
+CheckBox odp11=odp_file.odp11, tabIndex=63, text=%"cofirm", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit odp14=odp_file.odp14, tabIndex=66, noEntry;
+Table s_odp:s_odp;
+ButtonEdit odp03=odp_file.odp03, action=controlp, tabIndex=25, title="odp03", image="zoom";
+ButtonEdit odp04=odp_file.odp04, action=controlp, tabIndex=24, title="odp04", image="zoom";
+ButtonEdit odp05=odp_file.odp05, action=controlp, tabIndex=31, title=%"odp05", image="zoom";
+ButtonEdit odp07=odp_file.odp07, action=controlp, tabIndex=35, title=%"odp07", not null, image="zoom";
+Edit odp08=odp_file.odp08, tabIndex=29, title=%"odp08";
+Edit odp09=odp_file.odp09, tabIndex=26, title=%"odp09", noEntry;
+Edit odp10=odp_file.odp10, tabIndex=34, title=%"odp10", noEntry;
+Edit odp09a=formonly.odp09a type DECIMAL, tabIndex=36, title=%"odp09a", noEntry;
+Edit odp10a=formonly.odp10a type DECIMAL, tabIndex=37, title=%"odp10a", noEntry;
+Table s_odp_2:s_odp_2;
+Edit odp03_2=formonly.odp03_2 type CHAR, tabIndex=23, title="odp03_2";
+Edit odp06=formonly.odp04_2 type CHAR, tabIndex=22, title="odp04_2";
+Edit odp0a=formonly.odp05_2 type CHAR, tabIndex=32, title=%"odp05_2";
+Edit odp07_2=formonly.odp07_2 type CHAR, tabIndex=28, title=%"odp07_2", noEntry, not null;
+Edit odp08_2=formonly.odp08_2 type CHAR, tabIndex=30, title=%"odp08_2";
+Edit odp09_2=formonly.odp09_2 type CHAR, tabIndex=33, title=%"odp09_2", noEntry;
+Edit odp10_2=formonly.odp10_2 type CHAR, tabIndex=27, title=%"odp10_2", noEntry;
+Edit odp09a_2=formonly.odp09a_2 type DECIMAL, tabIndex=38, title=%"odp09a_2", noEntry;
+Edit odp10a_2=formonly.odp10a_2 type DECIMAL, tabIndex=39, title=%"odp10a_2", noEntry;
+Edit ima01=formonly.ima01 type CHAR, tabIndex=5, noEntry;
+IMAGE ima04=formonly.ima04 type CHAR, sizePolicy=fixed;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=11, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=10, noEntry;
+Edit ima31=formonly.ima31 type CHAR, tabIndex=9, noEntry;
+Edit gfe02=formonly.gfe02 type CHAR, tabIndex=16, noEntry;
+Edit ima1004=formonly.ima1004 type CHAR, tabIndex=8, noEntry;
+Edit tqa02_1=formonly.tqa02_1 type CHAR, tabIndex=15, noEntry;
+Edit ima1005=formonly.ima1005 type CHAR, tabIndex=7, noEntry;
+Edit tqa02_2=formonly.tqa02_2 type CHAR, tabIndex=14, noEntry;
+Edit ima1006=formonly.ima1006 type CHAR, tabIndex=6;
+Edit tqa02_3=formonly.tqa02_3 type CHAR, tabIndex=20, noEntry;
+Edit ima1007=formonly.ima1007 type CHAR, tabIndex=13, noEntry;
+Edit tqa02_4=formonly.tqa02_4 type CHAR, tabIndex=19;
+Edit ima1008=formonly.ima1008 type CHAR, tabIndex=12, noEntry;
+Edit tqa02_5=formonly.tqa02_5 type CHAR, tabIndex=18, noEntry;
+Edit ima1009=formonly.ima1009 type CHAR, tabIndex=17, noEntry;
+Edit tqa02_6=formonly.tqa02_6 type CHAR, tabIndex=21, noEntry;
+Table s_imx:s_imx;
+Edit numb=formonly.number type DECIMAL, tabIndex=61, title=%"number", not null, required;
+ComboBox color=formonly.color type VARCHAR, tabIndex=40, title="color", not null, required;
+Edit imx01=formonly.imx01 type SMALLINT, tabIndex=57, title="imx01";
+Edit imx02=formonly.imx02 type SMALLINT, tabIndex=58, title="imx02";
+Edit imx03=formonly.imx03 type SMALLINT, tabIndex=46, title="imx03";
+Edit imx04=formonly.imx04 type SMALLINT, tabIndex=45, title="imx04";
+Edit imx05=formonly.imx05 type SMALLINT, tabIndex=42, title="imx05";
+Edit imx06=formonly.imx06 type SMALLINT, tabIndex=55, title="imx06";
+Edit imx07=formonly.imx07 type SMALLINT, tabIndex=52, title="imx07";
+Edit imx08=formonly.imx08 type SMALLINT, tabIndex=47, title="imx08";
+Edit imx09=formonly.imx09 type SMALLINT, tabIndex=43, title="imx09";
+Edit imx10=formonly.imx10 type SMALLINT, tabIndex=51, title="imx10";
+Edit i=formonly.imx11 type SMALLINT, tabIndex=41, title="imx11";
+Edit a=formonly.imx12 type SMALLINT, tabIndex=53, title="imx12";
+Edit b=formonly.imx13 type SMALLINT, tabIndex=44, title="imx13";
+Edit c=formonly.imx14 type SMALLINT, tabIndex=48, title="imx14";
+Edit d=formonly.imx15 type SMALLINT, tabIndex=49, title="imx15";
+Edit e=formonly.imx16 type SMALLINT, tabIndex=50, title="imx16";
+Edit f=formonly.imx17 type SMALLINT, tabIndex=59, title="imx17";
+Edit g=formonly.imx18 type SMALLINT, tabIndex=54, title="imx18";
+Edit h=formonly.imx19 type SMALLINT, tabIndex=56, title="imx19";
+Edit j=formonly.imx20 type SMALLINT, tabIndex=60, title="imx20";
+Edit count=formonly.count type DECIMAL, tabIndex=62, title=%"count", noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=67, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=68, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=69, noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=70;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_odp(odp_file.odp03,odp_file.odp04,odp_file.odp05,odp_file.odp07,odp_file.odp08,odp_file.odp09,odp_file.odp10,formonly.odp09a,formonly.odp10a)
+SCREEN RECORD s_odp_2(formonly.odp03_2,formonly.odp04_2,formonly.odp05_2,formonly.odp07_2,formonly.odp08_2,formonly.odp09_2,formonly.odp10_2,formonly.odp09a_2,formonly.odp10a_2)
+SCREEN RECORD s_imx(formonly.number,formonly.color,formonly.imx01,formonly.imx02,formonly.imx03,formonly.imx04,formonly.imx05,formonly.imx06,formonly.imx07,formonly.imx08,formonly.imx09,formonly.imx10,formonly.imx11,formonly.imx12,formonly.imx13,formonly.imx14,formonly.imx15,formonly.imx16,formonly.imx17,formonly.imx18,formonly.imx19,formonly.imx20,formonly.count)
+SCREEN RECORD Undefined(odp_file.odp01,formonly.odl02,odp_file.odp02,formonly.occ02,odp_file.odp11,formonly.ima01,formonly.ima02,formonly.ima021,formonly.ima31,formonly.gfe02,formonly.ima1004,formonly.tqa02_1,formonly.ima1005,formonly.tqa02_2,formonly.ima1006,formonly.tqa02_3,formonly.ima1007,formonly.tqa02_4,formonly.ima1008,formonly.tqa02_5,formonly.ima1009,formonly.tqa02_6,formonly.ima04,odp_file.odp00,odp_file.odp13,odp_file.odp14,formonly.idx,formonly.cnt,formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

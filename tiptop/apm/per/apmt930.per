@@ -1,0 +1,112 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt930.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apmt930")
+VBox vb13
+Folder main
+Page Page16(text=%"Main")
+Grid gr13
+{
+
+  Quality Problem No.  [qcr01            ]
+  Date                 [qcr02                            ]
+  Department No.       [qcr03               ][gem02                      ]
+  Employee No.         [qcr04               ][ed24                       ]
+  Item No.             [qcr05                                            ]
+  Goods Name           [ima02                                            ]
+  NO-Good Qty          [qcr06     ] Unit [qcr07     ]
+}
+END -- gr13
+END -- Page16
+END -- main
+Folder ProblemStatus
+Page Page17(text=%"Problem Status")
+VBox vb15
+VBox vb14
+Table tb10
+{
+[qcp02 |sgb01      |sgb05          |qcp03                         |qcp04               |qcp05                                  ]
+[qcp02 |sgb01      |sgb05          |qcp03                         |qcp04               |qcp05                                  ]
+[qcp02 |sgb01      |sgb05          |qcp03                         |qcp04               |qcp05                                  ]
+[qcp02 |sgb01      |sgb05          |qcp03                         |qcp04               |qcp05                                  ]
+[qcp02 |sgb01      |sgb05          |qcp03                         |qcp04               |qcp05                                  ]
+[qcp02 |sgb01      |sgb05          |qcp03                         |qcp04               |qcp05                                  ]
+[qcp02 |sgb01      |sgb05          |qcp03                         |qcp04               |qcp05                                  ]
+[qcp02 |sgb01      |sgb05          |qcp03                         |qcp04               |qcp05                                  ]
+[qcp02 |sgb01      |sgb05          |qcp03                         |qcp04               |qcp05                                  ]
+[qcp02 |sgb01      |sgb05          |qcp03                         |qcp04               |qcp05                                  ]
+
+}
+END -- tb10
+Grid gr27
+{
+
+ ----------  Rows [ed223 ] ----------
+}
+END -- gr27
+END -- vb14
+Grid gr26
+{
+ - Rows [ed221 ] / [ed222 ]
+
+}
+END -- gr26
+END -- vb15
+END -- Page17
+Page Page18(text=%"Result")
+Grid gr30
+{
+
+   Responsible      [qcp06       ] Vender No./Department [qcp07          |pmc03                           ]
+   Judge            [qcp08       ]
+   Cost             [qcp09          ]
+   Deduction Amount [qcp10          ]
+
+
+
+
+
+}
+END -- gr30
+END -- Page18
+END -- ProblemStatus
+END -- vb13
+END -- apmt930
+
+ATTRIBUTES
+ButtonEdit qcr01=formonly.qcr01 type CHAR, tabIndex=1, required;
+DateEdit qcr02=formonly.qcr02 type CHAR, tabIndex=2;
+ButtonEdit qcr03=formonly.qcr03 type CHAR, tabIndex=3;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=15, noEntry;
+ButtonEdit qcr04=formonly.qcr04 type CHAR, tabIndex=4;
+Edit ed24=formonly.ed24 type CHAR, tabIndex=16, noEntry;
+ButtonEdit qcr05=formonly.qcr05 type CHAR, tabIndex=5;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=6, noEntry;
+Edit qcr06=formonly.qcr06 type CHAR, tabIndex=7;
+ButtonEdit qcr07=formonly.qcr07 type CHAR, tabIndex=8;
+Edit qcp02=formonly.qcp02 type CHAR, tabIndex=9, title="Item No.";
+ButtonEdit sgb01=formonly.sgb01 type CHAR, tabIndex=10, title="Error#";
+Edit sgb05=formonly.sgb05 type CHAR, tabIndex=11, title="Error Description", noEntry;
+Edit qcp03=formonly.qcp03 type CHAR, tabIndex=12, title="Status";
+Edit qcp04=formonly.qcp04 type DECIMAL, tabIndex=13, title="NO-Good Qty";
+Edit qcp05=formonly.qcp05 type CHAR, tabIndex=14, title="Processed Counterplan";
+Edit ed223=formonly.ed223 type SMALLINT, tabIndex=19, noEntry;
+Edit ed221=formonly.ed221 type SMALLINT, tabIndex=17, noEntry;
+Edit ed222=formonly.ed222 type SMALLINT, tabIndex=18, noEntry;
+ComboBox qcp06=formonly.qcp06 type CHAR, tabIndex=20, required;
+ButtonEdit qcp07=formonly.qcp07 type CHAR, tabIndex=21;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=22, noEntry;
+ComboBox qcp08=formonly.qcp08 type CHAR, tabIndex=23, not null, required;
+Edit qcp09=formonly.qcp09 type CHAR, tabIndex=24, not null, required;
+Edit qcp10=formonly.qcp10 type CHAR, tabIndex=25, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tb10(formonly.qcp02,formonly.sgb01,formonly.sgb05,formonly.qcp03,formonly.qcp04,formonly.qcp05)
+SCREEN RECORD Undefined(formonly.qcr01,formonly.qcr02,formonly.qcr03,formonly.gem02,formonly.qcr04,formonly.ed24,formonly.qcr05,formonly.ima02,formonly.qcr06,formonly.qcr07,formonly.ed223,formonly.ed221,formonly.ed222,formonly.qcp06,formonly.qcp07,formonly.pmc03,formonly.qcp08,formonly.qcp09,formonly.qcp10)
+END -- INSTRUCTIONS
+

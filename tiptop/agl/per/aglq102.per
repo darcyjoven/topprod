@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq102")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr2528
+{
+ Book No.            [aag00        ]
+ Account No.         [aag01                         ]
+ Account Title       [aag02                                             ]
+
+}
+END -- gr2528
+END -- page01
+END -- folder01
+Table s_aas
+{
+[aas02   |bamt                   |aas04                  |aas05                  |tamt                   ]
+[aas02   |bamt                   |aas04                  |aas05                  |tamt                   ]
+[aas02   |bamt                   |aas04                  |aas05                  |tamt                   ]
+[aas02   |bamt                   |aas04                  |aas05                  |tamt                   ]
+[aas02   |bamt                   |aas04                  |aas05                  |tamt                   ]
+[aas02   |bamt                   |aas04                  |aas05                  |tamt                   ]
+[aas02   |bamt                   |aas04                  |aas05                  |tamt                   ]
+[aas02   |bamt                   |aas04                  |aas05                  |tamt                   ]
+[aas02   |bamt                   |aas04                  |aas05                  |tamt                   ]
+[aas02   |bamt                   |aas04                  |aas05                  |tamt                   ]
+
+}
+END -- s_aas
+Grid gr2529
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2529
+END -- vb2
+END -- aglq102
+
+TABLES
+aag_file,
+aas_file
+ATTRIBUTES
+ButtonEdit aag00=aag_file.aag00, action=controlp, tabIndex=10, not null, required, image="zoom.png";
+ButtonEdit aag01=aag_file.aag01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Account # ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+DateEdit aas02=aas_file.aas02, tabIndex=3, title="Date";
+Edit bamt=formonly.bamt type CHAR, tabIndex=4, title="BOP Amt";
+Edit aas04=aas_file.aas04, tabIndex=5, title="Debit Transaction Amt", noEntry;
+Edit aas05=aas_file.aas05, tabIndex=6, title="Credit Transaction Amt", noEntry;
+Edit tamt=formonly.tamt type CHAR, tabIndex=7, title="Today Amt";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aas(aas_file.aas02,formonly.bamt,aas_file.aas04,aas_file.aas05,formonly.tamt)
+SCREEN RECORD Undefined(aag_file.aag00,aag_file.aag01,formonly.aag02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

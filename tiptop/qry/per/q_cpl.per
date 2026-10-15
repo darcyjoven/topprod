@@ -1,0 +1,45 @@
+----------------------------------------------------------------------------------
+-- File created from /u53/tiptop/qry/42f/q_cpl.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text=%"Qry Document Property")
+Grid gr3752
+{
+ <T s_cpl                                                           >
+ [check |cplslip    |cpldesc             |cplauno         |cpltype ]
+ [check |cplslip    |cpldesc             |cplauno         |cpltype ]
+ [check |cplslip    |cpldesc             |cplauno         |cpltype ]
+ [check |cplslip    |cpldesc             |cplauno         |cpltype ]
+ [check |cplslip    |cpldesc             |cplauno         |cpltype ]
+ [check |cplslip    |cpldesc             |cplauno         |cpltype ]
+ [check |cplslip    |cpldesc             |cplauno         |cpltype ]
+ [check |cplslip    |cpldesc             |cplauno         |cpltype ]
+ [check |cplslip    |cpldesc             |cplauno         |cpltype ]
+ [check |cplslip    |cpldesc             |cplauno         |cpltype ]
+
+
+}
+END
+END -- Form
+
+TABLES
+cpl_file
+
+ATTRIBUTES
+Table s_cpl:s_cpl;
+CheckBox check=formonly.check, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cplslip=cpl_file.cplslip, tabIndex=2, title="Document", noEntry;
+Edit cpldesc=cpl_file.cpldesc, tabIndex=3, title="Document Name", noEntry;
+Edit cplauno=cpl_file.cplauno, tabIndex=4, title="Automatic No.", noEntry;
+Edit cpltype=cpl_file.cpltype, tabIndex=5, title="Property", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cpl(formonly.check, cpl_file.cplslip, cpl_file.cpldesc, cpl_file.cplauno, cpl_file.cpltype)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr090.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxr090")
+VBox VBox1
+Grid gr1118
+{
+ <G group01                            >
+  Item No.       [ima01               ]
+  Bond Group Code[ima1916           ]
+  Pay Customer   [bxi13        ]
+  Customer No.   [bxi03        ]
+ <                                     >
+
+}
+END -- gr1118
+Group group02(text="INPUT")
+Grid gr1119
+{
+ <G group04                                                           >
+  [s1             ][s2             ][s3             ][s4             ]
+  [u1             ][u2             ][u3             ][u4             ]
+ <                                                                    >
+ <G group03                                     ><G group05           ><G group06         >
+  Apply Period  [yy  ] - [mm]                     [choice            ]  [ima15            ]
+  Delivery Date [bdate       ] - [edate       ]
+  Cause1        [a           ][b               ]
+  Cause2        [a2          ][b2              ]
+  [detail_flag                                ]
+  Report Name   [rname                        ]
+ <                                              ><                    ><                  >
+
+}
+END -- gr1119
+END -- group02
+Grid gr1120
+{
+[more                                      ]
+
+}
+END -- gr1120
+END -- VBox1
+END -- abxr090
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Item No.";
+ButtonEdit ima1916=formonly.ima1916 type CHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P> Qry Bond Group Code";
+Edit bxi13=formonly.bxi13 type CHAR, tabIndex=3;
+Edit bxi03=formonly.bxi03 type CHAR, tabIndex=4;
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=5, queryEditable, items=(("1", "Item No."),("2", "Group Code"),("3", "Collecting Customer"),("4", "Shipping Customer"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=6, queryEditable, items=(("1", "Item No."),("2", "Group Code"),("3", "Collecting Customer"),("4", "Shipping Customer"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=7, queryEditable, items=(("1", "Item No."),("2", "Group Code"),("3", "Collecting Customer"),("4", "Shipping Customer"));
+ComboBox s4=formonly.s4 type CHAR, tabIndex=8, queryEditable, items=(("1", "Item No."),("2", "Group Code"),("3", "Collecting Customer"),("4", "Shipping Customer"));
+CheckBox u1=formonly.u1 type CHAR, tabIndex=9, text="Subtotal", valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=10, text="Subtotal", valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=11, text="Subtotal", valueChecked = "Y", valueUnchecked = "N";
+CheckBox u4=formonly.u4 type CHAR, tabIndex=12, text="Subtotal", valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03;
+Edit yy=formonly.yy type SMALLINT, tabIndex=13;
+Edit mm=formonly.mm type SMALLINT, tabIndex=14;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=15;
+DateEdit edate=formonly.edate type DATE, tabIndex=16;
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=17, not null, required, image="zoom", comment="<^P> Qry Bond Change Reason Code";
+Edit b=formonly.b type VARCHAR, tabIndex=18, noEntry;
+ButtonEdit a2=formonly.a2 type VARCHAR, action=controlp, tabIndex=19, image="zoom", comment="<^P> Qry Bond Change Reason Code";
+Edit b2=formonly.b2 type VARCHAR, tabIndex=20, noEntry;
+CheckBox detail_flag=formonly.detail_flag type VARCHAR, tabIndex=21, text="Print Detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rname=formonly.rname type CHAR, tabIndex=22, not null, required, queryEditable, items=(("1", "Report1"),("2", "Report2"),("3", "Report3"),("4", "Report4"));
+Group group05:group05, text="Print Part";
+RadioGroup choice=formonly.choice type VARCHAR, tabIndex=23, not null, required, items=(("1", "Sales"),("2", "Sales/Return"),("3", "All"));
+Group group06:group06, text="Bond Data";
+RadioGroup ima15=formonly.ima15 type VARCHAR, tabIndex=24, not null, required, items=(("1", "Bonded"),("2", "Not Bonded"),("3", "All"));
+CheckBox more=formonly.more type CHAR, tabIndex=25, text="Other codition to print", valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima1916,formonly.bxi13,formonly.bxi03,formonly.s1,formonly.s2,formonly.s3,formonly.s4,formonly.u1,formonly.u2,formonly.u3,formonly.u4,formonly.yy,formonly.mm,formonly.bdate,formonly.edate,formonly.a,formonly.b,formonly.a2,formonly.b2,formonly.detail_flag,formonly.rname,formonly.choice,formonly.ima15,formonly.more)
+END -- INSTRUCTIONS
+

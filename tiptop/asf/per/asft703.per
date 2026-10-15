@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft703.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft703")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+Grid gr813
+{
+ Transfer Note    [shj01                 ]                                       Confirm Code [shjconf   ]
+ Transfer Out W/O.[shb05                 ]     Process Session No[shb012    ]                 [imgmksg]
+ Task No.         [shb081      ]               Routing S/N       [shb06     ]                 [       ]
+                  [shb082            ]         Trun Out Qty      [shb17     ]
+ Issuing Note No. [shj02                 ]
+ Issuing Note No. [shj03                 ]
+ WareHouse        [shj04     ]                  Loc         [shj05     ]          Lot         [shj06     ]
+ WareHouse        [shj07     ]                  Loc         [shj08     ]          Lot         [shj09     ]
+ Date             [shj13     ]
+}
+END -- gr813
+END -- page01
+END -- folder01
+Table s_shj
+{
+[shj10    |shj11            |shj12           ]
+[shj10    |shj11            |shj12           ]
+[shj10    |shj11            |shj12           ]
+[shj10    |shj11            |shj12           ]
+[shj10    |shj11            |shj12           ]
+[shj10    |shj11            |shj12           ]
+[shj10    |shj11            |shj12           ]
+[shj10    |shj11            |shj12           ]
+[shj10    |shj11            |shj12           ]
+[shj10    |shj11            |shj12           ]
+
+}
+END -- s_shj
+Grid gr814
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr814
+END -- vb1
+END -- asft703
+
+TABLES
+shb_file,
+shj_file
+ATTRIBUTES
+ButtonEdit shj01=shj_file.shj01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Transfer Note";
+ComboBox shjconf=shj_file.shjconf, tabIndex=2, noEntry, items=(("Y", "Confirm"),("N", "Cancel"));
+ButtonEdit shb05=shb_file.shb05, action=controlp, tabIndex=3, noEntry, image="zoom", comment="<^P>Qry W/O.";
+Edit shb012=shb_file.shb012, tabIndex=23, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit shb081=shb_file.shb081, tabIndex=5, noEntry;
+Edit shb06=shb_file.shb06, tabIndex=6, noEntry;
+Edit shb082=shb_file.shb082, tabIndex=7, noEntry;
+Edit shb17=shb_file.shb17, tabIndex=8, noEntry;
+ButtonEdit shj02=shj_file.shj02, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Issuing Note No.";
+ButtonEdit shj03=shj_file.shj03, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry Issuing Note No.";
+ButtonEdit shj04=shj_file.shj04, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Warehouse";
+ButtonEdit shj05=shj_file.shj05, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Loc";
+Edit shj06=shj_file.shj06, tabIndex=13;
+ButtonEdit shj07=shj_file.shj07, action=controlp, tabIndex=14, image="zoom", comment="<^P>Qry Warehouse";
+ButtonEdit shj08=shj_file.shj08, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry Loc";
+Edit shj09=shj_file.shj09, tabIndex=16;
+DateEdit shj13=shj_file.shj13, tabIndex=17, not null, required;
+Edit shj10=shj_file.shj10, tabIndex=18, title="Line No.", not null, required;
+ButtonEdit shj11=shj_file.shj11, action=controlp, tabIndex=19, title="Transfer In W/O.", not null, required, image="zoom", comment="<^P>Qry W/O.";
+Edit shj12=shj_file.shj12, tabIndex=20, title="Transfer In Qty", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=21;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=22;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_shj(shj_file.shj10,shj_file.shj11,shj_file.shj12)
+SCREEN RECORD Undefined(shj_file.shj01,shj_file.shjconf,shb_file.shb05,shb_file.shb012,formonly.imgmksg,shb_file.shb081,shb_file.shb06,shb_file.shb082,shb_file.shb17,shj_file.shj02,shj_file.shj03,shj_file.shj04,shj_file.shj05,shj_file.shj06,shj_file.shj07,shj_file.shj08,shj_file.shj09,shj_file.shj13,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

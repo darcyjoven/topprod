@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemi001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gpyi066")
+VBox VBox1
+Folder pc818
+Page page01(text="Page01")
+Table s_trw
+{
+[trw01     |trw02          |trwact]
+[trw01     |trw02          |trwact]
+[trw01     |trw02          |trwact]
+[trw01     |trw02          |trwact]
+[trw01     |trw02          |trwact]
+[trw01     |trw02          |trwact]
+[trw01     |trw02          |trwact]
+[trw01     |trw02          |trwact]
+[trw01     |trw02          |trwact]
+[trw01     |trw02          |trwact]
+
+}
+END -- s_trw
+END -- page01
+END -- pc818
+Grid gr3549
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3549
+END -- VBox1
+END -- gpyi066
+
+TABLES
+trw_file
+ATTRIBUTES
+Edit trw01=trw_file.trw01, tabIndex=1, title="No.", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ";
+Edit trw02=trw_file.trw02, tabIndex=2, title="Description";
+CheckBox trwact=trw_file.trwacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_trw(trw_file.trw01,trw_file.trw02,trw_file.trwacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

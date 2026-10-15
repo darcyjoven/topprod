@@ -1,0 +1,171 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zz.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zz")
+VBox VBox1
+Folder pc700
+Page page01(text="Main")
+Grid gr3040
+{
+ Program ID          [zz01                ]     Module ID    [zz011    ]
+ Program Name        [gaz03                                 ][modif]
+}
+END -- gr3040
+END -- page01
+Page info(text="Info")
+Grid gr3041
+{
+ Record Owner        [zzuser    ]   Last Modified by    [zzmodu    ]
+ Department          [zzgrup    ]   Create/Modify Date  [zzdate    ]
+ Record Orig.        [zzoriu    ]
+ Dept Orig.          [zzorig    ]
+}
+END -- gr3041
+END -- info
+END -- pc700
+Folder pc701
+Page page02(text="Data,Auth Setting")
+Grid gr3042
+{
+ <G group01                 ><G group02                                               >
+ [zz04_ds                   ] Program Group            [zz10                ]
+ [                          ] Window Style             [zz27                ]
+ [                          ] Program Category         [zz03                ]
+ [                          ]<                                                        >
+ [                          ]<G group03                                               >
+ [                          ] UNIX Command             [zz08                          ]
+ [                          ] Fixed Executed Condition [zz21                          ]
+ [                          ]<                                                        >
+ [                          ]<G group04                                               >
+ [                          ] Design Date              [zz09                ]
+ [                          ]<                                                        >
+ [                          ]<G group10                                               >
+ [                          ][zz15                                                    ]
+ <                          ><                                                        >
+
+}
+END -- gr3042
+END -- page02
+Page page03(text="Print Setting")
+Grid gr3043
+{
+ <G group05                                                                           >
+  Report Title             [gaz06                                 ][modi1]
+  Print Method             [zz22      ]
+  Report Category          [zz14                ]
+  Report File Extension    [zz06                ]
+  Report Width             [zz17      ]
+  Printed Times            [zz16      ]
+  Delayed Prints           [zz07      ]
+ [zz05                                          ]
+
+
+
+
+
+
+ <                                                                                    >
+}
+END -- gr3043
+END -- page03
+Page page05(text="Idle Setting")
+Group group06
+Grid gr3044
+{
+  Deal With        [zz28                     ]
+  Idle Time (Sec)  [zz30      ]
+
+ <G group07                                  >
+ [zz29                                       ]
+ <                                           >
+
+}
+END -- gr3044
+END -- group06
+END -- page05
+Page page04(text="Other Setting")
+Grid gr3045
+{
+ <G group08                                   >
+ [zz26                                        ]
+ [zz13                                        ]
+ [zz25                                        ]
+ <                                            >
+ <G group09                                   >
+ [zz31                                        ]
+ [                                            ]
+ [                                            ]
+ [                                            ]
+ <                                            >
+
+}
+END -- gr3045
+END -- page04
+END -- pc701
+Grid gr3046
+{
+ ---------- Rows [cnt       ] ----------
+
+}
+END -- gr3046
+END -- VBox1
+END -- p_zz
+
+TABLES
+gaz_file,
+zz_file
+ATTRIBUTES
+ButtonEdit zz01=zz_file.zz01, action=controlp, tabIndex=1, not null, required, image="zoom", downShift, scroll, comment="KEY Field,No Blank/Repeated!";
+ComboBox zz011=zz_file.zz011, tabIndex=2, not null, required, queryEditable, comment="Which Module is the Program in. Fill it!";
+Edit gaz03=gaz_file.gaz03, tabIndex=3, noEntry, comment="Show Program Description";
+Button modif:modify_program_name, text="Update";
+Edit zzuser=zz_file.zzuser, tabIndex=4;
+Edit zzmodu=zz_file.zzmodu, tabIndex=5;
+Edit zzgrup=zz_file.zzgrup, tabIndex=6, noEntry;
+DateEdit zzdate=zz_file.zzdate, tabIndex=7, noEntry, comment="When Does the Program Been create";
+Edit zzoriu=zz_file.zzoriu, tabIndex=501;
+Edit zzorig=zz_file.zzorig, tabIndex=502, noEntry;
+Group group01:group01, text="Executable Actions";
+TextEdit zz04_ds=formonly.zz04_ds type CHAR, tabIndex=8, noEntry, stretch=NONE, comment="Show Auth. About The Program";
+Group group02:group02, text="Config Setting";
+ButtonEdit zz10=zz_file.zz10, action=controlp, tabIndex=9, image="zoom", comment="zz10, Printing Default";
+ComboBox zz27=zz_file.zz27, tabIndex=10, not null, required, queryEditable, items=(("sm1", "sm1"),("sm2", "sm2"),("sm3", "sm3"),("popup", "popup"),("main", "main"),("dialog", "dialog"),("naked", "naked"),("viewer", "viewer"),("report", "report"),("err01", "err01"),("login", "login"),("view", "view"),("lib", "lib"));
+ComboBox zz03=zz_file.zz03, tabIndex=11, not null, required, queryEditable, items=(("I", "Input/Create"),("M", "Menu"),("O", "Other"),("P", "Process/Batch"),("Q", "Query"),("R", "Report"),("S", "System Parameter"),("T", "Transaction"),("U", "Update"));
+Group group03:group03, text="Executing Seeting";
+Edit zz08=zz_file.zz08, tabIndex=12, scroll;
+Edit zz21=zz_file.zz21, tabIndex=13, scroll, comment="Data used for Quick Running";
+Group group04:group04;
+DateEdit zz09=zz_file.zz09, tabIndex=14;
+Group group10:group10;
+CheckBox zz15=zz_file.zz15, tabIndex=15, text="Parameter of Book No. Been Pass to Program", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05;
+Edit gaz06=gaz_file.gaz06, tabIndex=31, noEntry, comment="Show Program Description";
+Button modi1:modify_report_title, text="Update";
+Edit zz22=zz_file.zz22, tabIndex=16, comment="zz22, Printing Default";
+ComboBox zz14=zz_file.zz14, tabIndex=17, queryEditable, items=(("1", "Voucher"),("2", "Detail Report"),("3", "Statistics"),("4", "Tracking Report"),("5", "None"));
+ComboBox zz06=zz_file.zz06, tabIndex=18, not null, required, queryEditable, items=(("1", "Fixed File Extension(*.out)"),("2", "Dynamic File Extension(*.xxr)"));
+Edit zz17=zz_file.zz17, tabIndex=19;
+Edit zz16=zz_file.zz16, tabIndex=20;
+Edit zz07=zz_file.zz07, tabIndex=21;
+CheckBox zz05=zz_file.zz05, tabIndex=22, text="Print option", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox zz28=zz_file.zz28, tabIndex=23, not null, required, queryEditable, items=(("1", "Not Control"),("2", "Idle Setting By Program"),("3", "Idle Setting By Whole System"));
+Edit zz30=zz_file.zz30, tabIndex=24, not null, required;
+Group group07:group07, text="Idle Process";
+RadioGroup zz29=zz_file.zz29, tabIndex=25, not null, required, items=(("1", "Only Give a Warning"),("2", "After Warning, Let Program Be Closed"),("3", "Let Program Be Closed"));
+Group group08:group08;
+CheckBox zz26=zz_file.zz26, tabIndex=26, text="Log Error Messages Into Logfiles", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox zz13=zz_file.zz13, tabIndex=27, text="Update Key Field Data in Maintain Task", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox zz25=zz_file.zz25, tabIndex=28, text="Set Explaination Switch ON", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group09:group09, text="Other Memo";
+TextEdit zz31=zz_file.zz31, tabIndex=29, stretch=NONE;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=30, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(zz_file.zz01,zz_file.zz011,gaz_file.gaz03,zz_file.zzuser,zz_file.zzmodu,zz_file.zzgrup,zz_file.zzdate,zz_file.zzoriu,zz_file.zzorig,formonly.zz04_ds,zz_file.zz10,zz_file.zz27,zz_file.zz03,zz_file.zz08,zz_file.zz21,zz_file.zz09,zz_file.zz15,gaz_file.gaz06,zz_file.zz22,zz_file.zz14,zz_file.zz06,zz_file.zz17,zz_file.zz16,zz_file.zz07,zz_file.zz05,zz_file.zz28,zz_file.zz30,zz_file.zz29,zz_file.zz26,zz_file.zz13,zz_file.zz25,zz_file.zz31,formonly.cnt)
+END -- INSTRUCTIONS
+

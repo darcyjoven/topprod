@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr940.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apmr940")
+VBox vb12
+Grid gr23
+{
+ <G gb9                                                                  >
+   Supplier No.         [pmc01                    ]
+   Supplier Class Code  [pmc02                    ]
+ <                                                                       >
+ <G gb2                                                                  >
+   Year/Month           [yy    ] -[mm ]
+ <                                                                       >
+
+}
+END -- gr23
+Grid gr24
+{
+[more                                                            ]
+
+}
+END -- gr24
+END -- vb12
+END -- apmr940
+
+ATTRIBUTES
+Group gb9:gb9, text="QBE";
+ButtonEdit pmc01=formonly.pmc01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit pmc02=formonly.pmc02 type CHAR, action=controlp, tabIndex=2, image="zoom";
+Group gb2:gb2, text="INPUT";
+Edit yy=formonly.yy type CHAR, tabIndex=3, not null, required;
+ComboBox mm=formonly.mm type SMALLINT, tabIndex=5, not null, required, items=(("01", "01"),("02", "02"),("03", "03"),("04", "04"),("05", "05"),("06", "06"),("07", "07"),("08", "08"),("09", "09"),("10", "10"),("11", "11"),("12", "12"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmc01,formonly.pmc02,formonly.yy,formonly.mm,formonly.more)
+END -- INSTRUCTIONS
+

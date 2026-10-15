@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglg818.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr818")
+VBox vb2
+Group g01(text="INPUT")
+Grid gr2514
+{
+ Original Book No.         [o_abg00   ]
+ Carry to Book No.         [n_abg00   ]
+ OriginalDocType           [o_abg01   ]
+ Initial voucher date      [b_abg06     ]
+ EndingVoucher Date        [e_abg06     ]
+
+}
+END -- gr2514
+END -- g01
+Grid gr2515
+{
+[more                                                        ]
+
+}
+END -- gr2515
+END -- vb2
+END -- aglr818
+
+ATTRIBUTES
+Edit o_abg00=formonly.o_abg00 type CHAR, tabIndex=1, not null, required;
+Edit n_abg00=formonly.n_abg00 type CHAR, tabIndex=2, not null, required;
+Edit o_abg01=formonly.o_abg01 type CHAR, tabIndex=6, not null, required;
+DateEdit b_abg06=formonly.b_abg06 type DATE, tabIndex=3, not null, required;
+DateEdit e_abg06=formonly.e_abg06 type DATE, tabIndex=4, not null, required;
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.o_abg00,formonly.n_abg00,formonly.o_abg01,formonly.b_abg06,formonly.e_abg06,formonly.more)
+END -- INSTRUCTIONS
+

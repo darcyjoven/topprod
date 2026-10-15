@@ -1,0 +1,26 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt6191.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_xlsstyle_load")
+Grid gr3133
+{
+ Document Path [doc_path                                  ]
+ col_cnt       [col_cnt            ]-[col_cnt1            ]
+}
+END -- gr3133
+END -- almt6191
+
+ATTRIBUTES
+ButtonEdit doc_path=formonly.doc_path type CHAR, action=open_file, tabIndex=1, not null, required, image="zoom", scroll;
+Edit col_cnt=formonly.col_cnt type CHAR, tabIndex=2, not null, required, scroll, comment="Separate by Comma";
+Edit col_cnt1=formonly.col_cnt1 type CHAR, tabIndex=3, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.doc_path,formonly.col_cnt,formonly.col_cnt1)
+END -- INSTRUCTIONS
+

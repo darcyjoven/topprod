@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_helpfeld.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_helpfeld")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+Grid gr3214
+{
+ <G group01                                      >
+  Form ID      [gae01               ]
+  Window Title [gaz03                            ]
+  Industry     [gae12            ]
+ [gae11                                         ]
+ <                                               >
+}
+END -- gr3214
+END -- page01
+END -- folder01
+Table s_gae
+{
+[gae02  |gae03    |gae04       |gbs07                           |gae07   |gae08           |gae09               |gaq03            |gaq04            |gaq05                  ]
+[gae02  |gae03    |gae04       |gbs07                           |gae07   |gae08           |gae09               |gaq03            |gaq04            |gaq05                  ]
+[gae02  |gae03    |gae04       |gbs07                           |gae07   |gae08           |gae09               |gaq03            |gaq04            |gaq05                  ]
+[gae02  |gae03    |gae04       |gbs07                           |gae07   |gae08           |gae09               |gaq03            |gaq04            |gaq05                  ]
+[gae02  |gae03    |gae04       |gbs07                           |gae07   |gae08           |gae09               |gaq03            |gaq04            |gaq05                  ]
+[gae02  |gae03    |gae04       |gbs07                           |gae07   |gae08           |gae09               |gaq03            |gaq04            |gaq05                  ]
+[gae02  |gae03    |gae04       |gbs07                           |gae07   |gae08           |gae09               |gaq03            |gaq04            |gaq05                  ]
+[gae02  |gae03    |gae04       |gbs07                           |gae07   |gae08           |gae09               |gaq03            |gaq04            |gaq05                  ]
+[gae02  |gae03    |gae04       |gbs07                           |gae07   |gae08           |gae09               |gaq03            |gaq04            |gaq05                  ]
+[gae02  |gae03    |gae04       |gbs07                           |gae07   |gae08           |gae09               |gaq03            |gaq04            |gaq05                  ]
+
+}
+END -- s_gae
+Grid gr3215
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3215
+END -- vb4
+END -- p_helpfeld
+
+TABLES
+gaz_file,
+gae_file,
+gbs_file
+ATTRIBUTES
+Group group01:group01, text="Program";
+ButtonEdit gae01=gae_file.gae01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Enter Program ID";
+Edit gaz03=gaz_file.gaz03, tabIndex=2, noEntry;
+ComboBox gae12=gae_file.gae12, tabIndex=16, not null, required;
+CheckBox gae11=gae_file.gae11, tabIndex=3, text="Editing a Customized PER-File Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gae02=gae_file.gae02, tabIndex=4, title="Field", noEntry, scroll;
+ComboBox gae03=gae_file.gae03, tabIndex=5, title="Language", noEntry;
+Edit gae04=gae_file.gae04, tabIndex=6, title="Description", noEntry, scroll;
+Edit gbs07=gbs_file.gbs07, tabIndex=7, title="Description Use in Help", scroll;
+CheckBox gae07=gae_file.gae07, tabIndex=8, title="Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gae08=gae_file.gae08, tabIndex=9, title="Important Field", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gae09=gae_file.gae09, tabIndex=10, title="Sample File";
+Edit gaq03=formonly.gaq03 type CHAR, tabIndex=11, title="Table Field Name", noEntry;
+TextEdit gaq04=formonly.gaq04 type CHAR, tabIndex=12, title="Table Field Memo", noEntry, stretch=NONE;
+TextEdit gaq05=formonly.gaq05 type CHAR, tabIndex=13, title="Extra TABLE Field Memo", noEntry, stretch=NONE;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=14, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gae(gae_file.gae02,gae_file.gae03,gae_file.gae04,gbs_file.gbs07,gae_file.gae07,gae_file.gae08,gae_file.gae09,formonly.gaq03,formonly.gaq04,formonly.gaq05)
+SCREEN RECORD Undefined(gae_file.gae01,gaz_file.gaz03,gae_file.gae12,gae_file.gae11,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

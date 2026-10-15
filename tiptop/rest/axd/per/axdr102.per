@@ -1,0 +1,44 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdr102.per created Wed Jan 23 05:30:38 2008
+-- File created from axdr102.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdr102")
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID gr7811
+    {
+     <G group01                                                   >
+      Customer No.        [aa0       ]
+      Goods No.           [aa1                 ]
+      Lot No.             [aa2                 ]
+
+     <                                                            >
+
+
+    }
+    END -- GRID
+    GRID gr7812
+    {
+     [aa3                                     ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  EDIT aa0=FORMONLY.adp01, TABINDEX=1;
+  EDIT aa1=FORMONLY.adp02, TABINDEX=2;
+  EDIT aa2=FORMONLY.adp03, TABINDEX=3;
+  CHECKBOX aa3=FORMONLY.more TYPE VARCHAR, TEXT="Other conditionto print", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=4;
+END

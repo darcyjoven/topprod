@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmr243.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"atmr243")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                    >
+  Document Category   [ina00               ]
+  Ship type           [ina1025             ]
+  Collecting Cust.    [ina1001             ]
+  Document No.        [ina01               ]
+  Department No.      [ina04               ]
+  Document Date       [ina02               ]
+  Pre-Ship Date       [ina1013             ]
+ <                                                             >
+
+}
+END -- Grid1
+Group g01(text="INPUT")
+Grid Grid2
+{
+ <G group02                                                  >
+ [a                            ]
+ <                                                           >
+ <G group03                                                  >
+ [b                            ]
+ <                                                           >
+ <G group04                                                  >
+ [c                            ]
+ <                                                           >
+
+}
+END -- Grid2
+END -- g01
+Grid Grid3
+{
+[more                                    ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- atmr243
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ComboBox ina00=formonly.ina00 type VARCHAR, tabIndex=1, items=(("1", %"Misc Issue"),("2", %"WIP Misc Issue"),("3", %"MISC Receipt"),("4", %"WIP Misc Receipt"),("5", %"MISC Scrap"),("6", %"WIP Retire"));
+ComboBox ina1025=formonly.ina1025 type VARCHAR, tabIndex=2, items=(("1", %"Local Sales Exp"),("2", %"Export Exp"),("3", %"Other"));
+ButtonEdit ina1001=formonly.ina1001 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ina01=formonly.ina01 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit ina04=formonly.ina04 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+DateEdit ina02=formonly.ina02 type DATE, tabIndex=6;
+DateEdit ina1013=formonly.ina1013 type DATE, tabIndex=7;
+Group group02:group02, text="Print Data";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=8, items=(("1", %"Printed"),("2", %"Unprinted"),("3", %"All "));
+Group group03:group03, text="Data Post";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=9, items=(("1", %"Posted"),("2", %"Unposted"),("3", %"All "));
+Group group04:group04;
+CheckBox c=formonly.c type VARCHAR, tabIndex=10, text="Print Price?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ina00,formonly.ina1025,formonly.ina1001,formonly.ina01,formonly.ina04,formonly.ina02,formonly.ina1013,formonly.a,formonly.b,formonly.c,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi303.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi303")
+VBox vb5
+Folder pc1
+Page page01(text="Page01")
+Grid gr1
+{
+ <G group01                                           >
+  Machine No.       [vmd01  ]
+  Week Calendar No. [vmd02                 ]
+  Day Calendar NO.  [vmd03                 ]
+  Machine Efficiency[vmd08  ]
+ <                                                    >
+ <G group02                                           >
+ [vmd04                                              ]
+ <                                                    >
+ <G gb10                                             >
+  Continuous Lot Condition Code  [vmd07     ]
+
+ <                                                   >
+
+}
+END -- gr1
+END -- page01
+END -- pc1
+Grid gr2
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+}
+END -- gr2
+END -- vb5
+END -- apsi303
+
+TABLES
+vmd_file
+ATTRIBUTES
+Group group01:group01;
+Edit vmd01=vmd_file.vmd01, tabIndex=1, noEntry, not null, required;
+ButtonEdit vmd02=vmd_file.vmd02, action=controlp, tabIndex=2, image="zoom", comment=" <^P>Qry Work Center <^Y>Create Work Center";
+ButtonEdit vmd03=vmd_file.vmd03, action=controlp, tabIndex=3, image="zoom", comment=" <^P>Qry Work Center <^Y>Create Work Center";
+Edit vmd08=vmd_file.vmd08, tabIndex=4, default = "1", upShift;
+Group group02:group02, text="Capacity Type";
+RadioGroup vmd04=vmd_file.vmd04, tabIndex=3, not null, required, items=(("0", "Limited Capacity"),("1", "Limitless Capacity"));
+Group gb10:gb10;
+ComboBox vmd07=vmd_file.vmd07, tabIndex=4, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vmd_file.vmd01,vmd_file.vmd02,vmd_file.vmd03,vmd_file.vmd08,vmd_file.vmd04,vmd_file.vmd07,formonly.cnt)
+END -- INSTRUCTIONS
+

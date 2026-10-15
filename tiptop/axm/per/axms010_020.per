@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axms010_020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axms010_020")
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+ <G group01                                                          >
+  [oaz01                           ]
+ <                                                                   >
+ <G group02                           ><G group03                    >
+  [oaz02                        ]       [oaz101                     ]
+   Plant # where AGL is[oaz02p    ]     [oaz102                     ]
+   AGL Module Book No. [oa]             [oaz103                     ]
+  [oaz03                     ]          [oaz104                     ]
+  [oaz04                     ]
+  [oaz05                     ]
+  [oaz06                     ]
+  Accnt Lock Date [oaz09       ]
+ <                                    ><                             >
+
+}
+END -- Grid1
+END -- page01
+Page info(text="Info")
+HBox HBox1
+Group Group1(text="TEST")
+Grid Grid2
+{
+ Credit Over Limit On-Hold Code[oaz1]
+
+ <G group04                                  >
+   When Prt Order,Credit Over-Lmt Handl.Mtd
+   [oaz121                          ]
+ <                                           >
+ <G group05                                  >
+   Confirm Order,Handling Method if Over-Lmt
+   [oaz122                          ]
+ <                                           >
+ <G group06                                  >
+   Prt Del.Advice, Credit Ov-Lmt Handl.Mtd
+   [oaz131                          ]
+ <                                           >
+ <G group07                                  >
+   When Conf Del.Adv, Cred Ov-Lmt Handl.Mtd
+   [oaz132                          ]
+ <                                           >
+
+}
+END -- Grid2
+END -- Group1
+Group Group2
+Grid Grid3
+{
+ <G group08                                >
+  [oaz141                          ]
+ <                                         >
+ <G group09                                >
+  [oaz142                          ]
+ <                                         >
+ <G group10                                >
+  [oaz211                          ]
+ <                                         >
+ <G group11                                >
+  [oaz212                          ]
+ <                                         >
+
+}
+END -- Grid3
+END -- Group2
+END -- HBox1
+END -- info
+END -- Folder1
+END -- axms010_020
+
+TABLES
+oaz_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox oaz01=oaz_file.oaz01, tabIndex=1, text="Open AXM Module to Users?         ", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y: Normal use N: For Qry Printing only, No Add, Modify, Delete, Qry";
+Group group02:group02, text="Linking-Set";
+CheckBox oaz02=oaz_file.oaz02, tabIndex=2, text="Link to AGL Module", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oaz02p=oaz_file.oaz02p, tabIndex=3;
+Edit oa=oaz_file.oaz02b, tabIndex=4;
+CheckBox oaz03=oaz_file.oaz03, tabIndex=5, text="Link to MFG System", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz04=oaz_file.oaz04, tabIndex=6, text="Link to ANM Module", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz05=oaz_file.oaz05, tabIndex=7, text="Link to AXR Module", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz06=oaz_file.oaz06, tabIndex=8, text="Generate MPS Transaction Log", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit oaz09=oaz_file.oaz09, tabIndex=9;
+Group group03:group03, text="Store-out_Set";
+CheckBox oaz101=oaz_file.oaz101, tabIndex=10, text="Multi-Plant Store-out", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz102=oaz_file.oaz102, tabIndex=11, text="Multi-Warehouse Store-out", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz103=oaz_file.oaz103, tabIndex=12, text="Multi-location Store-out", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz104=oaz_file.oaz104, tabIndex=13, text="Multi-Lot No. Store-out", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oaz1=oaz_file.oaz11, tabIndex=14;
+Group group04:group04, text="When Prt Order,Credit Over-Lmt Handl.Mtd";
+RadioGroup oaz121=oaz_file.oaz121, tabIndex=15, items=(("0", %"NO Checking"),("1", %"Warn"));
+Group group05:group05, text="Confirm Order,Handling Method if Over-Lmt";
+RadioGroup oaz122=oaz_file.oaz122, tabIndex=16, items=(("0", %"NO Checking"),("1", %"Warn and Hold"),("2", %"Reject"));
+Group group06:group06, text="Prt Del.Advice, Credit Ov-Lmt Handl.Mtd";
+RadioGroup oaz131=oaz_file.oaz131, tabIndex=17, items=(("0", %"NO Checking"),("1", %"Warn"));
+Group group07:group07, text="When Conf Del.Adv, Cred Ov-Lmt Handl.Mtd";
+RadioGroup oaz132=oaz_file.oaz132, tabIndex=18, items=(("0", %"NO Checking"),("1", %"Warn"),("2", %"Reject"));
+Group group08:group08, text="Prt Deli.Note,Hand Mth if Over-Lmt";
+RadioGroup oaz141=oaz_file.oaz141, tabIndex=19, items=(("0", %"NO Checking"),("1", %"Warn"));
+Group group09:group09, text="Conf Deli.Note,Handl.Mtd if Over-Lmt";
+RadioGroup oaz142=oaz_file.oaz142, tabIndex=20, items=(("0", %"NO Checking"),("1", %"Warn"),("2", %"Reject"));
+Group group10:group10, text="Creidt Line Exhange Rate Base";
+RadioGroup oaz211=oaz_file.oaz211, tabIndex=21, items=(("1", %"By A/R Exchange Rt"),("2", %"Current Exhange Rate"));
+Group group11:group11, text="Creidt Line Curr Exhange Rate Base";
+RadioGroup oaz212=oaz_file.oaz212, tabIndex=22, items=(("B", %"Bank Buying"),("S", %"Bank Selling"),("M", %"Bank Average ExRt"),("C", %"Customs Buy"),("D", %"Customs Sell"),("P", %"Customs 10"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oaz_file.oaz01,oaz_file.oaz02,oaz_file.oaz02p,oaz_file.oaz02b,oaz_file.oaz03,oaz_file.oaz04,oaz_file.oaz05,oaz_file.oaz06,oaz_file.oaz09,oaz_file.oaz101,oaz_file.oaz102,oaz_file.oaz103,oaz_file.oaz104,oaz_file.oaz11,oaz_file.oaz121,oaz_file.oaz122,oaz_file.oaz131,oaz_file.oaz132,oaz_file.oaz141,oaz_file.oaz142,oaz_file.oaz211,oaz_file.oaz212)
+END -- INSTRUCTIONS
+

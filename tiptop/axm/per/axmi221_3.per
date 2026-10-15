@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi221_3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi221_3")
+VBox VBox1
+Folder pc475
+Page page01(text="Page01")
+Table s_ocb
+{
+[ocb02     |ocb03      |pmc03        ]
+[ocb02     |ocb03      |pmc03        ]
+[ocb02     |ocb03      |pmc03        ]
+[ocb02     |ocb03      |pmc03        ]
+[ocb02     |ocb03      |pmc03        ]
+[ocb02     |ocb03      |pmc03        ]
+[ocb02     |ocb03      |pmc03        ]
+[ocb02     |ocb03      |pmc03        ]
+[ocb02     |ocb03      |pmc03        ]
+[ocb02     |ocb03      |pmc03        ]
+
+}
+END -- s_ocb
+END -- page01
+END -- pc475
+END -- VBox1
+END -- axmi221_3
+
+TABLES
+ocb_file
+ATTRIBUTES
+ButtonEdit ocb02=ocb_file.ocb02, action=controlp, tabIndex=1, title="Plant No.", image="zoom", comment="Key Field, No Blank/Repeated!     <^P>Query";
+ButtonEdit ocb03=ocb_file.ocb03, action=controlp, tabIndex=2, title="Vender No.", image="zoom", comment="Key Field, No Blank/Repeated!     <^P>Query";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=3, title="Abbreviation";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ocb(ocb_file.ocb02,ocb_file.ocb03,formonly.pmc03)
+END -- INSTRUCTIONS
+

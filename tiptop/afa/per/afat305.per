@@ -1,0 +1,164 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat305.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat305")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox hb6
+Grid gr2282
+{
+ Return Slip No.     [fee01             ]
+ Return Date         [fee02       ]
+ Applicant           [fee07             |gen02     ]
+
+
+
+
+}
+END -- gr2282
+Grid gr2283
+{
+ <G group01            >
+ [fee05               ]
+
+
+
+ <                     >
+
+}
+END -- gr2283
+Grid gr2284
+{
+ Dept/Vender No.     [fee03     ][gem02     ]  [imgmksg]
+ Memo                [fee04               ]    [       ]
+ conf                [feeconf             ]
+ status              [fee06           ]    [feemksg  ]
+
+
+
+}
+END -- gr2284
+END -- hb6
+END -- page01
+Page info(text="Info")
+Grid gr2285
+{
+ Record Owner       [feeuser   ] Last Modified by   [feemodu   ] Active Code         [feeacti   ]
+ Department         [feegrup   ] Create/Modify Date [feedate   ]
+ Record Orig.       [feeoriu   ]
+ Dept Orig.         [feeorig   ]
+}
+END -- gr2285
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[feeud01                       ] userdefined_field07[feeud07        ] userdefined_field13[feeud13        ]
+                    [                              ] userdefined_field08[feeud08        ] userdefined_field14[feeud14        ]
+ userdefined_field02[feeud02        ]                userdefined_field09[feeud09        ] userdefined_field15[feeud15        ]
+ userdefined_field03[feeud03        ]                userdefined_field10[feeud10        ]
+ userdefined_field04[feeud04        ]                userdefined_field11[feeud11        ]
+ userdefined_field05[feeud05        ]                userdefined_field12[feeud12        ]
+ userdefined_field06[feeud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_fef
+{
+[fef02        |fef03       |fea02               |fef05                 |fef04|fefud01   |fefud02   |fefud03    |fefud04    |fefud05    |fefud06    |fefud07    |fefud08    |fefud09    |fefud10    |fefud11   |fefud12  |fefud13   |fefud14   |fefud15    ]
+[fef02        |fef03       |fea02               |fef05                 |fef04|fefud01   |fefud02   |fefud03    |fefud04    |fefud05    |fefud06    |fefud07    |fefud08    |fefud09    |fefud10    |fefud11   |fefud12  |fefud13   |fefud14   |fefud15    ]
+[fef02        |fef03       |fea02               |fef05                 |fef04|fefud01   |fefud02   |fefud03    |fefud04    |fefud05    |fefud06    |fefud07    |fefud08    |fefud09    |fefud10    |fefud11   |fefud12  |fefud13   |fefud14   |fefud15    ]
+[fef02        |fef03       |fea02               |fef05                 |fef04|fefud01   |fefud02   |fefud03    |fefud04    |fefud05    |fefud06    |fefud07    |fefud08    |fefud09    |fefud10    |fefud11   |fefud12  |fefud13   |fefud14   |fefud15    ]
+[fef02        |fef03       |fea02               |fef05                 |fef04|fefud01   |fefud02   |fefud03    |fefud04    |fefud05    |fefud06    |fefud07    |fefud08    |fefud09    |fefud10    |fefud11   |fefud12  |fefud13   |fefud14   |fefud15    ]
+[fef02        |fef03       |fea02               |fef05                 |fef04|fefud01   |fefud02   |fefud03    |fefud04    |fefud05    |fefud06    |fefud07    |fefud08    |fefud09    |fefud10    |fefud11   |fefud12  |fefud13   |fefud14   |fefud15    ]
+[fef02        |fef03       |fea02               |fef05                 |fef04|fefud01   |fefud02   |fefud03    |fefud04    |fefud05    |fefud06    |fefud07    |fefud08    |fefud09    |fefud10    |fefud11   |fefud12  |fefud13   |fefud14   |fefud15    ]
+[fef02        |fef03       |fea02               |fef05                 |fef04|fefud01   |fefud02   |fefud03    |fefud04    |fefud05    |fefud06    |fefud07    |fefud08    |fefud09    |fefud10    |fefud11   |fefud12  |fefud13   |fefud14   |fefud15    ]
+[fef02        |fef03       |fea02               |fef05                 |fef04|fefud01   |fefud02   |fefud03    |fefud04    |fefud05    |fefud06    |fefud07    |fefud08    |fefud09    |fefud10    |fefud11   |fefud12  |fefud13   |fefud14   |fefud15    ]
+[fef02        |fef03       |fea02               |fef05                 |fef04|fefud01   |fefud02   |fefud03    |fefud04    |fefud05    |fefud06    |fefud07    |fefud08    |fefud09    |fefud10    |fefud11   |fefud12  |fefud13   |fefud14   |fefud15    ]
+
+}
+END -- s_fef
+Grid gr2286
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2286
+END -- VBox1
+END -- afat305
+
+TABLES
+fef_file,
+fee_file
+ATTRIBUTES
+ButtonEdit fee01=fee_file.fee01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Documents";
+DateEdit fee02=fee_file.fee02, tabIndex=2, not null, required;
+ButtonEdit fee07=fee_file.fee07, action=controlp, tabIndex=359, not null, required, image="zoom";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=360, not null, required;
+Group group01:group01, text="Category";
+RadioGroup fee05=fee_file.fee05, tabIndex=3, items=(("1", "Department"),("2", "Vender"));
+ButtonEdit fee03=fee_file.fee03, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=5;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit fee04=fee_file.fee04, tabIndex=7;
+ComboBox feeconf=fee_file.feeconf, tabIndex=356, noEntry, not null, required, items=(("Y", "Confirm"),("N", "Not Confirm"),("X", "Voided"));
+ComboBox fee06=fee_file.fee06, tabIndex=357, noEntry, not null, required, items=(("0", "Open"),("1", "Approved"),("S", "Approving"),("R", "Approving Return"),("W", "Withdraw"));
+CheckBox feemksg=fee_file.feemksg, tabIndex=358, text="Approve", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit feeuser=fee_file.feeuser, tabIndex=8, noEntry;
+Edit feemodu=fee_file.feemodu, tabIndex=9, noEntry;
+Edit feeacti=fee_file.feeacti, tabIndex=10, noEntry, upShift;
+Edit feegrup=fee_file.feegrup, tabIndex=11, noEntry;
+DateEdit feedate=fee_file.feedate, tabIndex=12, noEntry;
+Edit feeoriu=fee_file.feeoriu, tabIndex=501, noEntry;
+Edit feeorig=fee_file.feeorig, tabIndex=502, noEntry;
+TextEdit feeud01=fee_file.feeud01, tabIndex=327, stretch=NONE;
+Edit feeud07=fee_file.feeud07, tabIndex=328;
+DateEdit feeud13=fee_file.feeud13, tabIndex=329;
+Edit feeud08=fee_file.feeud08, tabIndex=330;
+DateEdit feeud14=fee_file.feeud14, tabIndex=331;
+Edit feeud02=fee_file.feeud02, tabIndex=332;
+Edit feeud09=fee_file.feeud09, tabIndex=333;
+DateEdit feeud15=fee_file.feeud15, tabIndex=334;
+Edit feeud03=fee_file.feeud03, tabIndex=335;
+Edit feeud10=fee_file.feeud10, tabIndex=336;
+Edit feeud04=fee_file.feeud04, tabIndex=337;
+Edit feeud11=fee_file.feeud11, tabIndex=338;
+Edit feeud05=fee_file.feeud05, tabIndex=339;
+Edit feeud12=fee_file.feeud12, tabIndex=340;
+Edit feeud06=fee_file.feeud06, tabIndex=341;
+Edit fef02=fef_file.fef02, tabIndex=13, title="Serial No.", not null, required;
+ButtonEdit fef03=fef_file.fef03, action=controlp, tabIndex=14, title="Mold No.", not null, required, image="zoom", comment="<^P>Qry Mold ";
+Edit fea02=formonly.fea02 type CHAR, tabIndex=15, title="Mold Name", noEntry;
+ButtonEdit fef05=fef_file.fef05, action=controlp, tabIndex=16, title="Withdrawal Slip No.", not null, required, image="zoom", comment="<^P>Qry Withdrawal Slip No.";
+Edit fef04=fef_file.fef04, tabIndex=17, title="Qty", not null, required;
+TextEdit fefud01=fef_file.fefud01, tabIndex=325, title="fefud01", stretch=NONE;
+Edit fefud02=fef_file.fefud02, tabIndex=342, title="fefud02";
+Edit fefud03=fef_file.fefud03, tabIndex=343, title="fefud03";
+Edit fefud04=fef_file.fefud04, tabIndex=344, title="fefud04";
+Edit fefud05=fef_file.fefud05, tabIndex=345, title="fefud05";
+Edit fefud06=fef_file.fefud06, tabIndex=346, title="fefud06";
+Edit fefud07=fef_file.fefud07, tabIndex=347, title="fefud07";
+Edit fefud08=fef_file.fefud08, tabIndex=348, title="fefud08";
+Edit fefud09=fef_file.fefud09, tabIndex=349, title="fefud09";
+Edit fefud10=fef_file.fefud10, tabIndex=350, title="fefud10";
+Edit fefud11=fef_file.fefud11, tabIndex=351, title="fefud11";
+Edit fefud12=fef_file.fefud12, tabIndex=352, title="fefud12";
+Edit fefud13=fef_file.fefud13, tabIndex=353, title="fefud13";
+Edit fefud14=fef_file.fefud14, tabIndex=354, title="fefud14";
+Edit fefud15=fef_file.fefud15, tabIndex=355, title="fefud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fef(fef_file.fef02,fef_file.fef03,formonly.fea02,fef_file.fef05,fef_file.fef04,fef_file.fefud01,fef_file.fefud02,fef_file.fefud03,fef_file.fefud04,fef_file.fefud05,fef_file.fefud06,fef_file.fefud07,fef_file.fefud08,fef_file.fefud09,fef_file.fefud10,fef_file.fefud11,fef_file.fefud12,fef_file.fefud13,fef_file.fefud14,fef_file.fefud15)
+SCREEN RECORD Undefined(fee_file.fee01,fee_file.fee02,fee_file.fee07,formonly.gen02,fee_file.fee05,fee_file.fee03,formonly.gem02,formonly.imgmksg,fee_file.fee04,fee_file.feeconf,fee_file.fee06,fee_file.feemksg,fee_file.feeuser,fee_file.feemodu,fee_file.feeacti,fee_file.feegrup,fee_file.feedate,fee_file.feeoriu,fee_file.feeorig,fee_file.feeud01,fee_file.feeud07,fee_file.feeud13,fee_file.feeud08,fee_file.feeud14,fee_file.feeud02,fee_file.feeud09,fee_file.feeud15,fee_file.feeud03,fee_file.feeud10,fee_file.feeud04,fee_file.feeud11,fee_file.feeud05,fee_file.feeud12,fee_file.feeud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

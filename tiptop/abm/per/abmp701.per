@@ -1,0 +1,96 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="abmp701")
+VBox vb2_
+Table s_bmx
+{
+[sel |bmx01           |bmx06     |bmx07            |bmx10      |bmx05               |bmg03                     |bmx04     ]
+[sel |bmx01           |bmx06     |bmx07            |bmx10      |bmx05               |bmg03                     |bmx04     ]
+[sel |bmx01           |bmx06     |bmx07            |bmx10      |bmx05               |bmg03                     |bmx04     ]
+[sel |bmx01           |bmx06     |bmx07            |bmx10      |bmx05               |bmg03                     |bmx04     ]
+[sel |bmx01           |bmx06     |bmx07            |bmx10      |bmx05               |bmg03                     |bmx04     ]
+
+}
+END -- s_bmx
+Table s_bmz
+{
+[bmz02             |ima02         |ima021         |bmz04               |bmz03         ]
+[bmz02             |ima02         |ima021         |bmz04               |bmz03         ]
+[bmz02             |ima02         |ima021         |bmz04               |bmz03         ]
+[bmz02             |ima02         |ima021         |bmz04               |bmz03         ]
+[bmz02             |ima02         |ima021         |bmz04               |bmz03         ]
+
+}
+END -- s_bmz
+Table s_bmy
+{
+[bmy02     |bmy03        |bmy19           |bmy04         |bmy05             |ima02_1       |ima021_1       |bmy27       |ima02_2    |ima021_2    |bmy16         |bmy06    |bmy30        |bmy07         |bmy22            ]
+[bmy02     |bmy03        |bmy19           |bmy04         |bmy05             |ima02_1       |ima021_1       |bmy27       |ima02_2    |ima021_2    |bmy16         |bmy06    |bmy30        |bmy07         |bmy22            ]
+[bmy02     |bmy03        |bmy19           |bmy04         |bmy05             |ima02_1       |ima021_1       |bmy27       |ima02_2    |ima021_2    |bmy16         |bmy06    |bmy30        |bmy07         |bmy22            ]
+[bmy02     |bmy03        |bmy19           |bmy04         |bmy05             |ima02_1       |ima021_1       |bmy27       |ima02_2    |ima021_2    |bmy16         |bmy06    |bmy30        |bmy07         |bmy22            ]
+[bmy02     |bmy03        |bmy19           |bmy04         |bmy05             |ima02_1       |ima021_1       |bmy27       |ima02_2    |ima021_2    |bmy16         |bmy06    |bmy30        |bmy07         |bmy22            ]
+
+}
+END -- s_bmy
+Grid gr1
+{
+  ------ Rows [cnt  ] /  [cn2   ] /  [cn3   ] -----
+
+
+}
+END -- gr1
+END -- vb2_
+END -- abmp701
+
+TABLES
+bmz_file,
+bmy_file,
+bmx_file,
+bmg_file,
+ima_file
+ATTRIBUTES
+CheckBox sel=formonly.sel type VARCHAR, tabIndex=6, title="sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit bmx01=bmx_file.bmx01, action=controlp, tabIndex=1, title="ECN No.", image="zoom.png";
+ComboBox bmx06=bmx_file.bmx06, tabIndex=30, title="Data Type", not null, items=(("1", "ECN for Multi-Item"),("2", "ECN for Single Item"));
+DateEdit bmx07=bmx_file.bmx07, tabIndex=2, title="Effective Date", noEntry, not null, required;
+ButtonEdit bmx10=bmx_file.bmx10, action=controlp, tabIndex=3, title="Applicant", image="zoom.png";
+ButtonEdit bmx05=bmx_file.bmx05, action=controlp, tabIndex=4, title="ECR NO", image="zoom.png";
+Edit bmg03=bmg_file.bmg03, tabIndex=5, title="Line Des.", noEntry, not null, required;
+Edit bmx04=bmx_file.bmx04, tabIndex=31, title=%"Confirm\n", noEntry, not null;
+Edit bmz02=bmz_file.bmz02, tabIndex=7, title="Master Item No.", noEntry, not null, required;
+Edit ima02=ima_file.ima02, tabIndex=10, title="Item Des.", noEntry, not null, required;
+Edit ima021=ima_file.ima021, tabIndex=11, title="Item Spec.", noEntry, not null, required;
+Edit bmz04=bmz_file.bmz04, tabIndex=8, title="Original Version", noEntry, not null, required;
+Edit bmz03=bmz_file.bmz03, tabIndex=9, title="Version", noEntry, not null, required;
+Edit bmy02=bmy_file.bmy02, tabIndex=14, title="Line No.", noEntry, not null, required;
+ComboBox bmy03=bmy_file.bmy03, tabIndex=15, title="Change Type", noEntry, not null, required, items=(("1", "Old Item Void"),("2", "New Component Effective"),("3", "Old Item Modify"),("4", "Replacement"));
+Edit bmy19=bmy_file.bmy19, tabIndex=16, title="Change Method", noEntry, not null, required;
+Edit bmy04=bmy_file.bmy04, tabIndex=17, title="BOM Line No.", noEntry, not null, required;
+Edit bmy05=bmy_file.bmy05, tabIndex=18, title="Component No.", noEntry, not null, required;
+Edit ima02_1=formonly.ima02_1 type VARCHAR, tabIndex=12, title="Item Des.", noEntry, not null, required;
+Edit ima021_1=formonly.ima021_1 type VARCHAR, tabIndex=13, title="Item Spec", noEntry, not null, required;
+Edit bmy27=bmy_file.bmy27, tabIndex=19, title="NO USE", noEntry, not null, required;
+Edit ima02_2=formonly.ima02_2 type VARCHAR, tabIndex=25, title="NItem Des", noEntry, not null, required;
+Edit ima021_2=formonly.ima021_2 type VARCHAR, tabIndex=26, title="NItem Spec", noEntry, not null, required;
+Edit bmy16=bmy_file.bmy16, tabIndex=20, title="SUB Feature", noEntry, not null, required;
+Edit bmy06=bmy_file.bmy06, tabIndex=21, title="QPA", noEntry, not null, required;
+Edit bmy30=bmy_file.bmy30, tabIndex=22, title="Calcu Type", noEntry, not null, required;
+Edit bmy07=bmy_file.bmy07, tabIndex=23, title="Denominator", noEntry, not null, required;
+Edit bmy22=bmy_file.bmy22, tabIndex=24, title="Memo", noEntry, not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=27;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=28;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=29;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmx(formonly.sel,bmx_file.bmx01,bmx_file.bmx06,bmx_file.bmx07,bmx_file.bmx10,bmx_file.bmx05,bmg_file.bmg03,bmx_file.bmx04)
+SCREEN RECORD s_bmz(bmz_file.bmz02,ima_file.ima02,ima_file.ima021,bmz_file.bmz04,bmz_file.bmz03)
+SCREEN RECORD s_bmy(bmy_file.bmy02,bmy_file.bmy03,bmy_file.bmy19,bmy_file.bmy04,bmy_file.bmy05,formonly.ima02_1,formonly.ima021_1,bmy_file.bmy27,formonly.ima02_2,formonly.ima021_2,bmy_file.bmy16,bmy_file.bmy06,bmy_file.bmy30,bmy_file.bmy07,bmy_file.bmy22)
+SCREEN RECORD Undefined(formonly.cnt,formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

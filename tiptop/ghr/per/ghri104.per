@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri104.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+HBox HBox3
+HBox HBox1
+Grid Grid3
+{
+
+  hrag01  [hrag01          ]
+  hrag02  [hrag02          ]
+
+
+
+
+}
+END -- Grid3
+Grid Grid1
+{
+
+  hrag03 [hrag03            ]
+ [hrag04       ]
+
+
+
+
+}
+END -- Grid1
+END -- HBox1
+Grid Grid4
+{
+
+
+
+
+
+
+
+}
+END -- Grid4
+END -- HBox3
+END -- Page1
+END -- Folder1
+Table Table1
+{
+[hrag05    |hrag06          |hrag07           |hrag08   |hrag09         |hragacti   ]
+[hrag05    |hrag06          |hrag07           |hrag08   |hrag09         |hragacti   ]
+[hrag05    |hrag06          |hrag07           |hrag08   |hrag09         |hragacti   ]
+[hrag05    |hrag06          |hrag07           |hrag08   |hrag09         |hragacti   ]
+[hrag05    |hrag06          |hrag07           |hrag08   |hrag09         |hragacti   ]
+
+
+
+
+
+
+}
+END -- Table1
+Grid Grid2
+{
+
+  -----------[cnt  ]/[cn2 ]------------
+
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrag01=formonly.hrag01 type VARCHAR, action=controlp, tabIndex=1, noEntry, image="zoom";
+Edit hrag02=formonly.hrag02 type VARCHAR, tabIndex=3, noEntry;
+ComboBox hrag03=formonly.hrag03 type VARCHAR, tabIndex=2, noEntry, items=(("01", "01"),("02", "02"),("03", "03"),("04", "04"),("05", "05"),("06", "06"),("07", "07"),("08", "08"),("09", "09"),("10", "10"));
+CheckBox hrag04=formonly.hrag04 type VARCHAR, tabIndex=4, text=%"hrag04", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit hrag05=formonly.hrag05 type INTEGER, tabIndex=5, title=%"hrag05", not null, required;
+ButtonEdit hrag06=formonly.hrag06 type VARCHAR, action=controlp, tabIndex=6, title=%"hrag06", not null, required, image="zoom";
+Edit hrag07=formonly.hrag07 type VARCHAR, tabIndex=9, title=%"hrag07";
+CheckBox hrag08=formonly.hrag08 type VARCHAR, tabIndex=10, title=%"hrag08", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit hrag09=formonly.hrag09 type VARCHAR, tabIndex=11, title=%"hrag09";
+CheckBox hragacti=formonly.hragacti type VARCHAR, tabIndex=12, title=%"hragacti", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrag01,formonly.hrag03,formonly.hrag02,formonly.hrag04,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_hrag(formonly.hrag05,formonly.hrag06,formonly.hrag07,formonly.hrag08,formonly.hrag09,formonly.hragacti)
+END -- INSTRUCTIONS
+

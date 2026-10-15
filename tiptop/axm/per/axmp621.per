@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp621.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"wagp020")
+VBox vb6
+Group gb1
+Table s_xsh
+{
+[sel  |xsh99       |azp02               |xsh01           |xsh02       |xsh03       |xsh05     ]
+[sel  |xsh99       |azp02               |xsh01           |xsh02       |xsh03       |xsh05     ]
+[sel  |xsh99       |azp02               |xsh01           |xsh02       |xsh03       |xsh05     ]
+[sel  |xsh99       |azp02               |xsh01           |xsh02       |xsh03       |xsh05     ]
+[sel  |xsh99       |azp02               |xsh01           |xsh02       |xsh03       |xsh05     ]
+
+}
+END -- s_xsh
+END -- gb1
+Group gb2
+Table s_xsi
+{
+[xsi02     |xsi03                   |ima02                         |xsi04     |xsi05 |xsi06     ]
+[xsi02     |xsi03                   |ima02                         |xsi04     |xsi05 |xsi06     ]
+[xsi02     |xsi03                   |ima02                         |xsi04     |xsi05 |xsi06     ]
+[xsi02     |xsi03                   |ima02                         |xsi04     |xsi05 |xsi06     ]
+[xsi02     |xsi03                   |ima02                         |xsi04     |xsi05 |xsi06     ]
+
+}
+END -- s_xsi
+END -- gb2
+END -- vb6
+END -- Form1
+
+TABLES
+xsi_file,
+xsh_file
+ATTRIBUTES
+CheckBox sel=formonly.sel type CHAR, tabIndex=13, title="sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit xsh99=xsh_file.xsh99, action=controlp, tabIndex=6, title="xsh99", noEntry, image="zoom.png";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=7, title="azp02", noEntry;
+Edit xsh01=xsh_file.xsh01, tabIndex=12, title="xsh01", noEntry;
+DateEdit xsh02=xsh_file.xsh02, tabIndex=8, title="xsh02", noEntry;
+DateEdit xsh03=xsh_file.xsh03, tabIndex=9, title="xsh03", noEntry;
+ComboBox xsh05=xsh_file.xsh05, tabIndex=10, title="xsh05", noEntry, items=(("0", "Open"),("1", "Confirmed"));
+Edit xsi02=xsi_file.xsi02, tabIndex=11, title="xsi02";
+ButtonEdit xsi03=xsi_file.xsi03, action=controlp, tabIndex=2, title="controlp", image="zoom.png";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, title="ima02";
+Edit xsi04=xsi_file.xsi04, tabIndex=4, title="xsi04", not null, required;
+Edit xsi05=xsi_file.xsi05, tabIndex=1, title="xsi05";
+Edit xsi06=xsi_file.xsi06, tabIndex=5, title="xsi06", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_xsi(xsi_file.xsi02,xsi_file.xsi03,formonly.ima02,xsi_file.xsi04,xsi_file.xsi05,xsi_file.xsi06)
+SCREEN RECORD s_xsh(formonly.sel,xsh_file.xsh99,formonly.azp02,xsh_file.xsh01,xsh_file.xsh02,xsh_file.xsh03,xsh_file.xsh05)
+END -- INSTRUCTIONS
+

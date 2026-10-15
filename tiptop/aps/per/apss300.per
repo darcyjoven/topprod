@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apss300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apss300")
+VBox vb2_
+Grid gr5444
+{
+ <G group01                                                                       >
+  TIPTOP DB No. [vzy06                 ]  [azp02               ]
+ <                                                                                >
+
+  <T s_vzy                                                                                                                         >
+  [vzy01    |vzy02     |vzy03             |vzy13     |vzy10     |vzy04        |vzy05     |vzy08         |vzy09         |vzy11      ]
+  [vzy01    |vzy02     |vzy03             |vzy13     |vzy10     |vzy04        |vzy05     |vzy08         |vzy09         |vzy11      ]
+  [vzy01    |vzy02     |vzy03             |vzy13     |vzy10     |vzy04        |vzy05     |vzy08         |vzy09         |vzy11      ]
+  [vzy01    |vzy02     |vzy03             |vzy13     |vzy10     |vzy04        |vzy05     |vzy08         |vzy09         |vzy11      ]
+  [vzy01    |vzy02     |vzy03             |vzy13     |vzy10     |vzy04        |vzy05     |vzy08         |vzy09         |vzy11      ]
+  [vzy01    |vzy02     |vzy03             |vzy13     |vzy10     |vzy04        |vzy05     |vzy08         |vzy09         |vzy11      ]
+  [vzy01    |vzy02     |vzy03             |vzy13     |vzy10     |vzy04        |vzy05     |vzy08         |vzy09         |vzy11      ]
+  [vzy01    |vzy02     |vzy03             |vzy13     |vzy10     |vzy04        |vzy05     |vzy08         |vzy09         |vzy11      ]
+  [vzy01    |vzy02     |vzy03             |vzy13     |vzy10     |vzy04        |vzy05     |vzy08         |vzy09         |vzy11      ]
+  [vzy01    |vzy02     |vzy03             |vzy13     |vzy10     |vzy04        |vzy05     |vzy08         |vzy09         |vzy11      ]
+  <                                                                                                                                >
+}
+END -- gr5444
+Grid gr881
+{
+ ----------  Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr881
+END -- vb2_
+END -- apss300
+
+TABLES
+vzy_file
+ATTRIBUTES
+Group group01:group01, text="Basic Data";
+ButtonEdit vzy06=vzy_file.vzy06, action=controlp, tabIndex=12, not null, required, image="zoom", comment="Assign Add/Query Item#";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=9, noEntry;
+Table s_vzy:s_vzy;
+Edit vzy01=vzy_file.vzy01, tabIndex=1, title="APS Version", not null, required;
+Edit vzy02=formonly.vzy02 type CHAR, tabIndex=10, title="Save Version", noEntry;
+Edit vzy03=vzy_file.vzy03, tabIndex=11, title="APS Version Description";
+ButtonEdit vzy13=vzy_file.vzy13, action=controlp, tabIndex=14, title="vzy13", not null, required, image="zoom";
+ComboBox vzy10=formonly.vzy10 type CHAR, tabIndex=2, title="DB Status Code", noEntry, items=(("N", "Not created"),("R", "Creating"),("Y", "Created"),("F", "Created Fail"),("D", "Deleted"),("E", "Deleting"),("L", "Deleted Fail"));
+Edit vzy04=vzy_file.vzy04, tabIndex=3, title="APS DB Name", not null, required;
+Edit vzy05=vzy_file.vzy05, tabIndex=4, title="vzy05", noEntry;
+Edit vzy08=vzy_file.vzy08, tabIndex=5, title="APS Server No.", noEntry, not null, required;
+Edit vzy09=vzy_file.vzy09, tabIndex=6, title="APS Server Port", noEntry, not null, required;
+Edit vzy11=formonly.vzy11 type CHAR, tabIndex=13, title="Version in use", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vzy(vzy_file.vzy01,formonly.vzy02,vzy_file.vzy03,vzy_file.vzy13,formonly.vzy10,vzy_file.vzy04,vzy_file.vzy05,vzy_file.vzy08,vzy_file.vzy09,formonly.vzy11)
+SCREEN RECORD Undefined(vzy_file.vzy06,formonly.azp02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

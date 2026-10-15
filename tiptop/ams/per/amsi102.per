@@ -1,0 +1,124 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsi102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amsi102")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+                      [dummy11   ]
+  Time Bucket#        [rpg01     ]
+  Description         [rpg02               ]
+                      [dummy12             ]
+
+ <G group02                                                                                          >
+ [dummy0] [dummy02 ] [dummy1] [dummy04 ] [dummy2] [dummy06 ] [dummy3] [dummy08 ] [dummy4] [dummy10 ]
+     1  [rpg101    ]     9  [rpg109    ]    17  [rpg117    ]    25  [rpg125    ]    33  [rpg133    ]
+     2  [rpg102    ]    10  [rpg110    ]    18  [rpg118    ]    26  [rpg126    ]    34  [rpg134    ]
+     3  [rpg103    ]    11  [rpg111    ]    19  [rpg119    ]    27  [rpg127    ]    35  [rpg135    ]
+     4  [rpg104    ]    12  [rpg112    ]    20  [rpg120    ]    28  [rpg128    ]    36  [rpg136    ]
+     5  [rpg105    ]    13  [rpg113    ]    21  [rpg121    ]    29  [rpg129    ]
+     6  [rpg106    ]    14  [rpg114    ]    22  [rpg122    ]    30  [rpg130    ]         [dummy13   ]
+     7  [rpg107    ]    15  [rpg115    ]    23  [rpg123    ]    31  [rpg131    ]        [rpg137    ]
+     8  [rpg108    ]    16  [rpg116    ]    24  [rpg124    ]    32  [rpg132    ]
+
+ <                                                                                                   >
+
+}
+END -- Grid1
+END -- page01
+Page info(text="Info")
+Grid Grid2
+{
+ Record Owner        [rpguser   ] Last Modified by    [rpgmodu   ] Data Valid Code     [rpgacti   ]
+ Department          [rpggrup   ] Create/Modify Date  [rpgdate   ]
+ Record Orig.        [rpgoriu   ]
+ Dept Orig.          [rpgorig   ]
+}
+END -- Grid2
+END -- info
+END -- Folder1
+Grid Grid3
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- amsi102
+
+TABLES
+rpg_file
+ATTRIBUTES
+Label dummy11:dummy11;
+Edit rpg01=rpg_file.rpg01, tabIndex=1, not null, required, comment="Enter Time Bucket as Key to Add or Query        ";
+Edit rpg02=rpg_file.rpg02, tabIndex=2, comment="Enter this Time Bucket# Description";
+Label dummy12:dummy12;
+Group group02:group02;
+Label dummy0:dummy01, text="Bucket";
+Label dummy02:dummy02, text="Days";
+Label dummy1:dummy03, text="Bucket";
+Label dummy04:dummy04, text="Days";
+Label dummy2:dummy05, text="Bucket";
+Label dummy06:dummy06, text="Days";
+Label dummy3:dummy07, text="Bucket";
+Label dummy08:dummy08, text="Days";
+Label dummy4:dummy09, text="Bucket";
+Label dummy10:dummy10, text="Days";
+Edit rpg101=rpg_file.rpg101, tabIndex=3, comment="Enter Days in 1st Time Bucket (< 365 Calendar DDs)";
+Edit rpg109=rpg_file.rpg109, tabIndex=4, comment="Enter Days in 9th time Bucket (< 365 Calendar DDs)";
+Edit rpg117=rpg_file.rpg117, tabIndex=5, comment="Enter Days in 17th Time Bucket  (< 365 Calendar DDs)";
+Edit rpg125=rpg_file.rpg125, tabIndex=6, comment="Enter Days in 25th Time Bucket    (< 365 Calendar DDs)";
+Edit rpg133=rpg_file.rpg133, tabIndex=7, comment="Enter Days in 33rd Time Bucket    (< 365 Calendar DDs)";
+Edit rpg102=rpg_file.rpg102, tabIndex=8, comment="Enter Days in 2nd Time Bucket (< 365 Calendar DDs)";
+Edit rpg110=rpg_file.rpg110, tabIndex=9, comment="Enter Days in 10th Time Bucket(< 365 Calendar DDs)";
+Edit rpg118=rpg_file.rpg118, tabIndex=10, comment="Enter Days in 18th Time Bucket  (< 365 Calendar DDs)";
+Edit rpg126=rpg_file.rpg126, tabIndex=11, comment="Enter Days in 26th Time Bucket    (< 365 Calendar DDs)";
+Edit rpg134=rpg_file.rpg134, tabIndex=12, comment="Enter Days in 34th Time Bucket    (< 365 Calendar DDs)";
+Edit rpg103=rpg_file.rpg103, tabIndex=13, comment="Enter Days in 3rd Time Bucket (< 365 Calendar DDs)";
+Edit rpg111=rpg_file.rpg111, tabIndex=14, comment="Enter Days in 11th Time Bucket  (< 365 Calendar DDs)";
+Edit rpg119=rpg_file.rpg119, tabIndex=15, comment="Enter Days in 19th Time Bucket  (< 365 Calendar DDs)";
+Edit rpg127=rpg_file.rpg127, tabIndex=16, comment="Enter Days in 27th Time Bucket    (< 365 Calendar DDs)";
+Edit rpg135=rpg_file.rpg135, tabIndex=17, comment="Enter Days in 35th Time Bucket    (< 365 Calendar DDs)";
+Edit rpg104=rpg_file.rpg104, tabIndex=18, comment="Enter Days in 4th Time Bucket (< 365 Calendar DDs)";
+Edit rpg112=rpg_file.rpg112, tabIndex=19, comment="Enter Days in 12th Time Bucket  (< 365 Calendar DDs)";
+Edit rpg120=rpg_file.rpg120, tabIndex=20, comment="Enter Days in 20th Time Bucket  (< 365 Calendar DDs)";
+Edit rpg128=rpg_file.rpg128, tabIndex=21, comment="Enter Days in 28th Time Bucket    (< 365 Calendar DDs)";
+Edit rpg136=rpg_file.rpg136, tabIndex=22, comment="Enter Days in 36th Time Bucket    (< 365 Calendar DDs)";
+Edit rpg105=rpg_file.rpg105, tabIndex=23, comment="Enter Days in 5th Time Bucket (< 365 Calendar DDs)";
+Edit rpg113=rpg_file.rpg113, tabIndex=24, comment="Enter Days in 13th Time Bucket  (< 365 Calendar DDs)";
+Edit rpg121=rpg_file.rpg121, tabIndex=25, comment="Enter Days in 21st Time Bucket    (< 365 Calendar DDs)";
+Edit rpg129=rpg_file.rpg129, tabIndex=26, comment="Enter Days in 29th Time Bucket    (< 365 Calendar DDs)";
+Edit rpg106=rpg_file.rpg106, tabIndex=27, comment="Enter Days in 6th Time Bucket (< 365 Calendar DDs)";
+Edit rpg114=rpg_file.rpg114, tabIndex=28, comment="Enter Days in 14th Time Bucket  (< 365 Calendar DDs)";
+Edit rpg122=rpg_file.rpg122, tabIndex=29, comment="Enter Days in 22nd Time Bucket    (< 365 Calendar DDs)";
+Edit rpg130=rpg_file.rpg130, tabIndex=30, comment="Enter Days in 30th Time Bucket  (< 365 Calendar DDs)";
+Label dummy13:dummy13, text="Total Days";
+Edit rpg107=rpg_file.rpg107, tabIndex=31, comment="Enter Days in 7th Time Bucket (< 365 Calendar DDs)";
+Edit rpg115=rpg_file.rpg115, tabIndex=32, comment="Enter Days in 15th Time Bucket  (< 365 Calendar DDs)";
+Edit rpg123=rpg_file.rpg123, tabIndex=33, comment="Enter Days in 23rd Time Bucket    (< 365 Calendar DDs)";
+Edit rpg131=rpg_file.rpg131, tabIndex=34, comment="Enter Days in 31st Time Bucket    (< 365 Calendar DDs)";
+Edit rpg137=rpg_file.rpg137, tabIndex=35, noEntry;
+Edit rpg108=rpg_file.rpg108, tabIndex=36, comment="Enter Days in 8th Time Bucket (< 365 Calendar DDs)";
+Edit rpg116=rpg_file.rpg116, tabIndex=37, comment="Enter Days in 16th Time Bucket  (< 365 Calendar DDs)";
+Edit rpg124=rpg_file.rpg124, tabIndex=38, comment="Enter Days in 24th Time Bucket    (< 365 Calendar DDs)";
+Edit rpg132=rpg_file.rpg132, tabIndex=39, comment="Enter Days in 32nd Time Bucket    (< 365 Calendar DDs)";
+Edit rpguser=rpg_file.rpguser, tabIndex=40, noEntry;
+Edit rpgmodu=rpg_file.rpgmodu, tabIndex=41, noEntry;
+Edit rpgacti=rpg_file.rpgacti, tabIndex=42, noEntry, upShift;
+Edit rpggrup=rpg_file.rpggrup, tabIndex=43, noEntry;
+DateEdit rpgdate=rpg_file.rpgdate, tabIndex=44, noEntry;
+Edit rpgoriu=rpg_file.rpgoriu, tabIndex=501, noEntry;
+Edit rpgorig=rpg_file.rpgorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=45;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rpg_file.rpg01,rpg_file.rpg02,rpg_file.rpg101,rpg_file.rpg109,rpg_file.rpg117,rpg_file.rpg125,rpg_file.rpg133,rpg_file.rpg102,rpg_file.rpg110,rpg_file.rpg118,rpg_file.rpg126,rpg_file.rpg134,rpg_file.rpg103,rpg_file.rpg111,rpg_file.rpg119,rpg_file.rpg127,rpg_file.rpg135,rpg_file.rpg104,rpg_file.rpg112,rpg_file.rpg120,rpg_file.rpg128,rpg_file.rpg136,rpg_file.rpg105,rpg_file.rpg113,rpg_file.rpg121,rpg_file.rpg129,rpg_file.rpg106,rpg_file.rpg114,rpg_file.rpg122,rpg_file.rpg130,rpg_file.rpg107,rpg_file.rpg115,rpg_file.rpg123,rpg_file.rpg131,rpg_file.rpg137,rpg_file.rpg108,rpg_file.rpg116,rpg_file.rpg124,rpg_file.rpg132,rpg_file.rpguser,rpg_file.rpgmodu,rpg_file.rpgacti,rpg_file.rpggrup,rpg_file.rpgdate,rpg_file.rpgoriu,rpg_file.rpgorig,formonly.cnt)
+END -- INSTRUCTIONS
+

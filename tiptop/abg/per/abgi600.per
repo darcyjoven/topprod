@@ -1,0 +1,90 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi600")
+VBox VBox1
+Folder pc98
+Page page01(text="Main")
+Grid gr627
+{
+  Date of Addition [bgu01     ]       Record   [bgu02     ]
+ <G group01                                       >
+  Version          [bgu03     ]
+  Department No.   [bgu033    ][gem02     ]
+  Year             [bgu034    ][imgmksg]
+  Month            [bgu035    ][       ]
+  Account #        [bgu032              ]
+                   [aag02               ]
+ <                                                >
+ <G group02                                        >
+  Current Addition Amount   [bgu04               ]
+ <                                                 >
+ <G group03                                        >
+  Original Budget Amount    [bgq07               ]
+  Additional Amount         [bgq08               ]
+  Total Budget Amount       [tot                 ]
+ <                                                 >
+
+}
+END -- gr627
+END -- page01
+Page info(text="Info")
+Grid gr628
+{
+ Record Owner        [bguuser   ]   Last Modified by    [bgumodu   ]
+ Department          [bgugrup   ]   Create/Modify Date  [bgudate   ]
+ Confirm             [bguconf   ]   Data Valid Code     [bguacti   ]
+ Record Orig.        [bguoriu   ]
+ Dept Orig.          [bguorig   ]
+}
+END -- gr628
+END -- info
+END -- pc98
+Grid gr629
+{
+ --------- Rows [cnt       ] ----------
+
+}
+END -- gr629
+END -- VBox1
+END -- abgi600
+
+TABLES
+bgu_file
+ATTRIBUTES
+DateEdit bgu01=bgu_file.bgu01, tabIndex=1;
+Edit bgu02=bgu_file.bgu02, tabIndex=2, noEntry;
+Group group01:group01;
+Edit bgu03=bgu_file.bgu03, tabIndex=3;
+ButtonEdit bgu033=bgu_file.bgu033, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Query Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=7, noEntry;
+Edit bgu034=bgu_file.bgu034, tabIndex=8, not null, required;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit bgu035=bgu_file.bgu035, tabIndex=10;
+ButtonEdit bgu032=bgu_file.bgu032, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Account ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=5, noEntry;
+Group group02:group02;
+Edit bgu04=bgu_file.bgu04, tabIndex=11;
+Group group03:group03;
+Edit bgq07=formonly.bgq07 type CHAR, tabIndex=12, noEntry;
+Edit bgq08=formonly.bgq08 type CHAR, tabIndex=13, noEntry;
+Edit tot=formonly.tot type CHAR, tabIndex=14, noEntry;
+Edit bguuser=bgu_file.bguuser, tabIndex=15, noEntry;
+Edit bgumodu=bgu_file.bgumodu, tabIndex=16, noEntry;
+Edit bgugrup=bgu_file.bgugrup, tabIndex=17, noEntry;
+DateEdit bgudate=bgu_file.bgudate, tabIndex=18, noEntry;
+Edit bguconf=bgu_file.bguconf, tabIndex=19, noEntry;
+Edit bguacti=bgu_file.bguacti, tabIndex=20, noEntry;
+Edit bguoriu=bgu_file.bguoriu, tabIndex=501, noEntry;
+Edit bguorig=bgu_file.bguorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bgu_file.bgu01,bgu_file.bgu02,bgu_file.bgu03,bgu_file.bgu033,formonly.gem02,bgu_file.bgu034,formonly.imgmksg,bgu_file.bgu035,bgu_file.bgu032,formonly.aag02,bgu_file.bgu04,formonly.bgq07,formonly.bgq08,formonly.tot,bgu_file.bguuser,bgu_file.bgumodu,bgu_file.bgugrup,bgu_file.bgudate,bgu_file.bguconf,bgu_file.bguacti,bgu_file.bguoriu,bgu_file.bguorig,formonly.cnt)
+END -- INSTRUCTIONS
+

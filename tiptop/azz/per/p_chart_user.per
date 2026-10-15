@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_chart_user.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Table Table1
+{
+[gdj03   |zx02    ]
+[gdj03   |zx02    ]
+[gdj03   |zx02    ]
+[gdj03   |zx02    ]
+[gdj03   |zx02    ]
+
+
+
+
+}
+END -- Table1
+END -- Form
+
+TABLES
+zx_file,
+gdj_file
+ATTRIBUTES
+ButtonEdit gdj03=gdj_file.gdj03, action=controlp, tabIndex=1, title=%"zx01", not null, required, scroll;
+Edit zx02=zx_file.zx02, tabIndex=2, title=%"zx02", noEntry, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gdj(gdj_file.gdj03,zx_file.zx02)
+END -- INSTRUCTIONS
+

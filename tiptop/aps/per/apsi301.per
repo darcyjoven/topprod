@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi301")
+Folder pc1044
+Page page01(text="Page01")
+Table s_vmb
+{
+[vmb01               |vmb02       |vmb03               ]
+[vmb01               |vmb02       |vmb03               ]
+[vmb01               |vmb02       |vmb03               ]
+[vmb01               |vmb02       |vmb03               ]
+[vmb01               |vmb02       |vmb03               ]
+[vmb01               |vmb02       |vmb03               ]
+[vmb01               |vmb02       |vmb03               ]
+[vmb01               |vmb02       |vmb03               ]
+[vmb01               |vmb02       |vmb03               ]
+[vmb01               |vmb02       |vmb03               ]
+
+}
+END -- s_vmb
+END -- page01
+Page info(text="Info")
+Grid gr5425
+{
+ <G grpinfo                     >
+  Detail Counts      [cn2       ]
+ <                              >
+
+}
+END -- gr5425
+END -- info
+END -- pc1044
+END -- apsi301
+
+TABLES
+vmb_file
+ATTRIBUTES
+Edit vmb01=vmb_file.vmb01, tabIndex=1, title="Day Calendar NO.", not null, required;
+DateEdit vmb02=vmb_file.vmb02, tabIndex=2, title="Date", not null, required;
+ButtonEdit vmb03=vmb_file.vmb03, action=controlp, tabIndex=3, title="Work Model", image="zoom";
+Group grpinfo:grpinfo;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vmb(vmb_file.vmb01,vmb_file.vmb02,vmb_file.vmb03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

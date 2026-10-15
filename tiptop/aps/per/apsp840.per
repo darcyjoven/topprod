@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsp840.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apsp840")
+VBox vb9
+HBox hb3
+Folder pc4
+Page Page26(text=%"Quary")
+Grid gr7
+{
+
+ APS  [vom01           ]         Adjusts[hstatus           ]
+ Save [vom02  ]
+
+
+}
+END -- gr7
+END -- Page26
+END -- pc4
+Grid gr6
+{
+
+
+
+
+
+
+
+}
+END -- gr6
+END -- hb3
+Folder pc3
+Page Page1(action=lock_sys, text=%"lock_sys")
+Table s_arr1
+{
+[vom13 |vom14   |vom03   |vom04   |vom05   |vom06   |vom07   |vom08 |vom09                 |vom10                 |vom11  |vom12   |vom13a    ]
+[vom13 |vom14   |vom03   |vom04   |vom05   |vom06   |vom07   |vom08 |vom09                 |vom10                 |vom11  |vom12   |vom13a    ]
+[vom13 |vom14   |vom03   |vom04   |vom05   |vom06   |vom07   |vom08 |vom09                 |vom10                 |vom11  |vom12   |vom13a    ]
+
+}
+END -- s_arr1
+END -- Page1
+END -- pc3
+Grid gr571
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr571
+END -- vb9
+END -- apsp840
+
+TABLES
+vom_file
+ATTRIBUTES
+ButtonEdit vom01=vom_file.vom01, action=controlp, tabIndex=129, not null, required, image="zoom", comment="<^P>Query Vender Classification Code";
+ComboBox hstatus=formonly.hstatus type CHAR, tabIndex=136, not null, required, items=(("A", "Adjust"),("B", "Subreturing unadj"),("C", "Lockmach unadj"));
+Edit vom02=vom_file.vom02, tabIndex=130, noEntry, not null;
+CheckBox vom13=vom_file.vom13, tabIndex=134, title="IsUpdate", noEntry;
+ComboBox vom14=formonly.vom14 type CHAR, tabIndex=137, title="vom14", noEntry, items=(("0", "Unchg"),("1", "ADD"),("2", "DEL"),("3", "UPD"));
+Edit vom03=vom_file.vom03, tabIndex=13, title="mfg_order_id", noEntry;
+Edit vom04=vom_file.vom04, tabIndex=12, title="route_id", noEntry;
+Edit vom05=vom_file.vom05, tabIndex=11, title="sequ_num", noEntry;
+Edit vom06=vom_file.vom06, tabIndex=10, title="operation_id", noEntry;
+Edit vom07=vom_file.vom07, tabIndex=9, title="equip_id", noEntry;
+ComboBox vom08=vom_file.vom08, tabIndex=8, title="firm_code", noEntry, items=(("0", "UnLock Time"),("1", "Lock Start time"),("2", "Lock End Time"),("3", "Lock Start and End time"));
+Edit vom09=vom_file.vom09, tabIndex=6, title="start_time", noEntry;
+Edit vom10=vom_file.vom10, tabIndex=14, title="end_time", noEntry;
+ComboBox vom11=vom_file.vom11, tabIndex=15, title="is_scheduled", noEntry, items=(("0", "Unscheduled, the limit not considered"),("1", "Scheduled, with limitation"));
+ComboBox vom12=vom_file.vom12, tabIndex=7, title="is_parallel", noEntry, items=(("0", "N"),("1", "Y"));
+Edit vom13a=formonly.vom13a type VARCHAR, tabIndex=135, title="vom13a", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=127;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=128;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_arr1(vom_file.vom13,formonly.vom14,vom_file.vom03,vom_file.vom04,vom_file.vom05,vom_file.vom06,vom_file.vom07,vom_file.vom08,vom_file.vom09,vom_file.vom10,vom_file.vom11,vom_file.vom12,formonly.vom13a)
+SCREEN RECORD Undefined(vom_file.vom01,formonly.hstatus,vom_file.vom02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,115 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai900")
+VBox vb2
+Folder pc346
+Page page01(text="Main")
+HBox hb1
+VBox vb1
+Grid gr1888
+{
+  Asset No                 [fan01               ]
+                           [faj06                         ]
+                           [faj061                        ]
+  Additional No            [fan02     ]
+  Yesr                     [fan03     ]
+  Month                    [fan04     ]
+
+ <G group02                                                 >
+  [fan05                                   ]
+  [                                        ]
+ <                                                          >
+}
+END -- gr1888
+Grid gr1887
+{
+ <G group01                                 >
+  [fan041                                  ]
+  [                                        ]
+ <                                          >
+
+
+}
+END -- gr1887
+END -- vb1
+Grid gr1889
+{
+       Dept No                  [fan06     ][gem02_1   ]
+       ShareDept#               [fan09     ][gem02_2   ]
+       Asset Type               [fan10     ]
+       Proportion Type          [fan13     ]
+       Depreciation Cost        [fan07                 ]
+       Current Period Acc.Depr. [fan08                 ]
+       Cost                     [fan14                 ]
+       Accumulated Depreciation [fan15                 ]
+       Deduction Preparation    [fan17                 ]
+       Yearly Depreciation      [faj108                ]
+       Share Rate               [fan16     ]
+       Asset Acoount No         [fan11                 ][aag02_1                     ]
+       Depr. Account No         [fan12                 ][aag02_2                     ]
+       Acc. Depr. Account       [fan20                 ][aag02_5                     ]
+       Entry Sheet No           [fan19             ]
+
+
+
+
+}
+END -- gr1889
+END -- hb1
+END -- page01
+END -- pc346
+Grid gr1890
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1890
+END -- vb2
+END -- afai900
+
+TABLES
+faj_file,
+fan_file
+ATTRIBUTES
+ButtonEdit fan01=fan_file.fan01, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Asset Code";
+LABEL faj06=formonly.faj06 type VARCHAR;
+LABEL faj061=formonly.faj061 type VARCHAR;
+Edit fan02=fan_file.fan02, tabIndex=5;
+Edit fan03=fan_file.fan03, tabIndex=6;
+Edit fan04=fan_file.fan04, tabIndex=7;
+Group group02:group02, text="Proportion";
+RadioGroup fan05=fan_file.fan05, tabIndex=8, items=(("1", "Single"),("2", "Mulit"),("3", "Share"));
+Group group01:group01, text="Source Code";
+RadioGroup fan041=fan_file.fan041, tabIndex=1, noEntry, items=(("0", "Open"),("1", "Calculate"),("2", "Adjust"));
+ButtonEdit fan06=fan_file.fan06, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Dept Code";
+LABEL gem02_1=formonly.gem02_1 type VARCHAR;
+ButtonEdit fan09=fan_file.fan09, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Dept Code";
+LABEL gem02_2=formonly.gem02_2 type VARCHAR;
+ComboBox fan10=fan_file.fan10, tabIndex=13, queryEditable, items=(("0", "Acquire"),("1", "Capitalization"),("2", "In Depreication"),("3", "Send"),("4", "Depreciated"),("7", "Re-Amortize"),("8", "Improve"),("9", "Revaluate"),("X", "Capitalized"));
+ButtonEdit fan13=fan_file.fan13, action=controlp, tabIndex=14, image="zoom", comment="<^P>Qry Data";
+Edit fan07=fan_file.fan07, tabIndex=15;
+Edit fan08=fan_file.fan08, tabIndex=16;
+Edit fan14=fan_file.fan14, tabIndex=17;
+Edit fan15=fan_file.fan15, tabIndex=18;
+Edit fan17=fan_file.fan17, tabIndex=19;
+Edit faj108=faj_file.faj108, tabIndex=20;
+Edit fan16=fan_file.fan16, tabIndex=21;
+ButtonEdit fan11=fan_file.fan11, action=controlp, tabIndex=22, not null, required, image="zoom", comment="<^P>Qry Account Code";
+LABEL aag02_1=formonly.aag02_1 type VARCHAR;
+ButtonEdit fan12=fan_file.fan12, action=controlp, tabIndex=24, not null, required, image="zoom", comment="<^P>Qry Account Code";
+LABEL aag02_2=formonly.aag02_2 type VARCHAR;
+ButtonEdit fan20=fan_file.fan20, action=controlp, tabIndex=30, not null, required, image="zoom", comment="<^P>Qry Account Code";
+LABEL aag02_5=formonly.aag02_5 type VARCHAR;
+Edit fan19=fan_file.fan19, tabIndex=29, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fan_file.fan01,formonly.faj06,formonly.faj061,fan_file.fan02,fan_file.fan03,fan_file.fan04,fan_file.fan05,fan_file.fan041,fan_file.fan06,formonly.gem02_1,fan_file.fan09,formonly.gem02_2,fan_file.fan10,fan_file.fan13,fan_file.fan07,fan_file.fan08,fan_file.fan14,fan_file.fan15,fan_file.fan17,faj_file.faj108,fan_file.fan16,fan_file.fan11,formonly.aag02_1,fan_file.fan12,formonly.aag02_2,fan_file.fan20,formonly.aag02_5,fan_file.fan19,formonly.cnt)
+END -- INSTRUCTIONS
+

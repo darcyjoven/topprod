@@ -1,0 +1,192 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci600")
+VBox vbox1
+Folder pc258
+Page page01(text=%"Main")
+HBox HBox1
+VBox vbox2
+Grid gr1642
+{
+ Work Center         [eca01     ]
+ Description         [eca02               ]
+ Department          [eca03     ][gem02   ]
+
+}
+END -- gr1642
+Grid gr1643
+{
+ <G group01               ><G group03                                         >
+ [eca04                  ]  Work Calender#              [eca55     ]
+ <                        > Adust Efficiency%           [eca12     ]
+ <G group02               > Total Machine Capacity/Hour [eca50               ]
+ [eca06                  ]  Total Labor Capacity/Hour   [eca52               ]
+ <                        ><                                                  >
+}
+END -- gr1643
+END -- vbox2
+Grid gr1648
+{
+ <G group23                              >
+ [ima04                                 ]
+ [                                      ]
+ [                                      ]
+ [                                      ]
+ [                                      ]
+ [                                      ]
+ [                                      ]
+ [upda]
+ <                                       >
+
+
+}
+END -- gr1648
+END -- HBox1
+END -- page01
+Page info(text=%"Info")
+Grid gr1644
+{
+ Record Owner        [ecauser   ] Last Modified by    [ecamodu   ] Data Valid Code     [ecaacti   ]
+ Department          [ecagrup   ] Create/Modify Date  [ecadate     ]
+ Record Orig.        [ecaoriu   ]
+ Dept Orig.          [ecaorig   ]
+}
+END -- gr1644
+END -- info
+END -- pc258
+Folder pc259
+Page page02(text=%"Normal Station Cost Maint.")
+Grid gr1645
+{
+ <G group04                  >    <G group06                                                                               >
+ [eca14                     ]                                        [dummy05         ]           [dummy06       ]
+ <                           >                                       [dummy01     ] [dummy02    ] [dummy03    ] [dummy04  ]
+ <G group05                  >     Labor Setup                       [eca16       ] [eca17      ] [eca26      ] [eca27    ]
+ [eca15                     ]      Labor Production                  [eca18       ] [eca19      ] [eca28      ] [eca29    ]
+                                   Machine Setup                     [eca20       ] [eca21      ] [eca30      ] [eca31    ]
+                                   Machine Production                [eca201      ] [eca211     ] [eca301     ] [eca311   ]
+                                   Fixed Overhead Apportioning Ratio [eca22       ] [eca23      ] [eca32      ] [eca33    ]
+                                   Variable Overhead Apportion.Ratio [eca24       ] [eca25      ] [eca34      ] [eca35    ]
+ <                           >    <                                                                                        >
+
+}
+END -- gr1645
+END -- page02
+Page page03(text=%"Subcont/Process.Cost Maint.")
+Grid gr1646
+{
+ <G group07                                                                                 >
+                                            [dummy11         ]           [dummy12       ]
+                                       [dummy07     ]  [dummy08  ] [dummy09    ] [dummy10  ]
+  Processing Unit Cost                [eca36       ] [eca37    ] [eca42      ] [eca43    ]
+  Processing Overhead Apport%         [eca38       ] [eca39    ] [eca44      ] [eca45    ]
+  Processing Variable Expense Apport% [eca40       ] [eca41    ] [eca46      ] [eca47    ]
+ <                                                                                          >
+
+}
+END -- gr1646
+END -- page03
+END -- pc259
+Grid gr1647
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+}
+END -- gr1647
+END -- vbox1
+END -- aeci600
+
+TABLES
+eca_file
+ATTRIBUTES
+Edit eca01=eca_file.eca01, tabIndex=1, not null, required, comment=%"Key Field, No Blank/Repeated    ";
+Edit eca02=eca_file.eca02, tabIndex=2;
+ButtonEdit eca03=eca_file.eca03, action=controlp, tabIndex=3, not null, required, image="zoom", comment=%"<^P> Query Department, <^Y> Create Department Data";
+Edit gem02=formonly.gem02 type SMALLINT, tabIndex=4, noEntry;
+Group group01:group01, text=%"Style";
+ComboBox eca04=eca_file.eca04, tabIndex=5, not null, required, queryEditable, items=(("0", %"Normal"),("1", %"Subcontracting"),("2", %"Plant Processing"));
+Group group03:group03;
+ButtonEdit eca55=eca_file.eca55, action=controlp, tabIndex=6, not null, required, image="zoom", comment=%"<^P>Query Work Calendar, <^Y>Create Work Calendar ";
+Edit eca12=eca_file.eca12, tabIndex=7, not null, required;
+Edit eca50=eca_file.eca50, tabIndex=8, not null, required;
+Edit eca52=eca_file.eca52, tabIndex=9, not null, required;
+Group group02:group02, text=%"Capacity Type";
+ComboBox eca06=eca_file.eca06, tabIndex=10, not null, required, queryEditable, items=(("1", %"Machine Capacity"),("2", %"Labor Capacity"));
+Group group23:group23, text=%"";
+IMAGE ima04=formonly.ima04 type CHAR, sizePolicy=fixed, width = 300 pixels, height = 140 pixels;
+Button upda:update, tabIndex=503, text=%"Update";
+Edit ecauser=eca_file.ecauser, tabIndex=11, noEntry;
+Edit ecamodu=eca_file.ecamodu, tabIndex=12, noEntry;
+Edit ecaacti=eca_file.ecaacti, tabIndex=13, noEntry, upShift;
+Edit ecagrup=eca_file.ecagrup, tabIndex=14, noEntry;
+DateEdit ecadate=eca_file.ecadate, tabIndex=15, noEntry;
+Edit ecaoriu=eca_file.ecaoriu, tabIndex=501, noEntry;
+Edit ecaorig=eca_file.ecaorig, tabIndex=502, noEntry;
+Group group04:group04, text=%"Costing Base";
+ComboBox eca14=eca_file.eca14, tabIndex=16, not null, required, queryEditable, items=(("1", %"Hour/Unit"),("2", %"Unit/Hour"));
+Group group06:group06, text=%"Average Standard/Average Default";
+Label dummy05:dummy05, text=%"Average Standard";
+Label dummy06:dummy06, text=%"Average Default";
+Label dummy01:dummy01, text=%"Cost Rate";
+Label dummy02:dummy02, text=%"Cost Items";
+Label dummy03:dummy03, text=%"Cost Rate";
+Label dummy04:dummy04, text=%"Cost Items";
+Edit eca16=eca_file.eca16, tabIndex=17, not null, required;
+ButtonEdit eca17=eca_file.eca17, action=controlp, tabIndex=18, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca26=eca_file.eca26, tabIndex=19, not null, required;
+ButtonEdit eca27=eca_file.eca27, action=controlp, tabIndex=20, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca18=eca_file.eca18, tabIndex=21, not null, required;
+ButtonEdit eca19=eca_file.eca19, action=controlp, tabIndex=22, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca28=eca_file.eca28, tabIndex=23, not null, required;
+ButtonEdit eca29=eca_file.eca29, action=controlp, tabIndex=24, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca20=eca_file.eca20, tabIndex=25, not null, required;
+ButtonEdit eca21=eca_file.eca21, action=controlp, tabIndex=26, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca30=eca_file.eca30, tabIndex=27, not null, required;
+ButtonEdit eca31=eca_file.eca31, action=controlp, tabIndex=28, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca201=eca_file.eca201, tabIndex=29, not null, required;
+ButtonEdit eca211=eca_file.eca211, action=controlp, tabIndex=30, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca301=eca_file.eca301, tabIndex=31, not null, required;
+ButtonEdit eca311=eca_file.eca311, action=controlp, tabIndex=32, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca22=eca_file.eca22, tabIndex=33, not null, required;
+ButtonEdit eca23=eca_file.eca23, action=controlp, tabIndex=34, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca32=eca_file.eca32, tabIndex=35, not null, required;
+ButtonEdit eca33=eca_file.eca33, action=controlp, tabIndex=36, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca24=eca_file.eca24, tabIndex=37, not null, required;
+ButtonEdit eca25=eca_file.eca25, action=controlp, tabIndex=38, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca34=eca_file.eca34, tabIndex=39, not null, required;
+ButtonEdit eca35=eca_file.eca35, action=controlp, tabIndex=40, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Group group05:group05, text=%"Overhead Apportionment Base";
+ComboBox eca15=eca_file.eca15, tabIndex=41, not null, required, queryEditable, items=(("1", %"Direct Labor Cost"),("2", %"Direct Labor Hour"),("3", %"Machine Cost"),("4", %"Mach-hours"),("5", %"Direct Material Cost"),("6", %"Production Qty"));
+Group group07:group07, text=%"Average Standard/Average Default";
+Label dummy11:dummy11, text=%"Average Standard";
+Label dummy12:dummy12, text=%"Average Default";
+Label dummy07:dummy07, text=%"Cost Rate";
+Label dummy08:dummy08, text=%"Cost Items";
+Label dummy09:dummy09, text=%"Cost Rate";
+Label dummy10:dummy10, text=%"Cost Items";
+Edit eca36=eca_file.eca36, tabIndex=42, not null, required;
+ButtonEdit eca37=eca_file.eca37, action=controlp, tabIndex=43, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca42=eca_file.eca42, tabIndex=44, not null, required;
+ButtonEdit eca43=eca_file.eca43, action=controlp, tabIndex=45, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca38=eca_file.eca38, tabIndex=46, not null, required;
+ButtonEdit eca39=eca_file.eca39, action=controlp, tabIndex=47, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca44=eca_file.eca44, tabIndex=48, not null, required;
+ButtonEdit eca45=eca_file.eca45, action=controlp, tabIndex=49, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca40=eca_file.eca40, tabIndex=50, not null, required;
+ButtonEdit eca41=eca_file.eca41, action=controlp, tabIndex=51, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit eca46=eca_file.eca46, tabIndex=52, not null, required;
+ButtonEdit eca47=eca_file.eca47, action=controlp, tabIndex=53, image="zoom", comment=%"<^P> Qry [Cost Table]  , <^Y> Create [Cost Table]";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=54;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD sr1(eca_file.eca01,eca_file.eca02,eca_file.eca03,formonly.gem02,eca_file.eca04,eca_file.eca55,eca_file.eca12,eca_file.eca50,eca_file.eca52,eca_file.eca06,eca_file.ecauser,eca_file.ecamodu,eca_file.ecaacti,eca_file.ecagrup,eca_file.ecadate,eca_file.ecaoriu,eca_file.ecaorig,eca_file.eca14,eca_file.eca16,eca_file.eca17,eca_file.eca26,eca_file.eca27,eca_file.eca18,eca_file.eca19,eca_file.eca28,eca_file.eca29,eca_file.eca20,eca_file.eca21,eca_file.eca30,eca_file.eca31,eca_file.eca201,eca_file.eca211,eca_file.eca301,eca_file.eca311,eca_file.eca22,eca_file.eca23,eca_file.eca32,eca_file.eca33,eca_file.eca24,eca_file.eca25,eca_file.eca34,eca_file.eca35,eca_file.eca15,eca_file.eca36,eca_file.eca37,eca_file.eca42,eca_file.eca43,eca_file.eca38,eca_file.eca39,eca_file.eca44,eca_file.eca45,eca_file.eca40,eca_file.eca41,eca_file.eca46,eca_file.eca47,formonly.cnt,formonly.ima04)
+END -- INSTRUCTIONS
+

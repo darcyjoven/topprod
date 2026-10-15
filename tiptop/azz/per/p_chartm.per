@@ -1,0 +1,106 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_chartm.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox1
+Grid Grid1
+{
+
+[label1    |s_zx01           |s_zx02           ]
+
+}
+END -- Grid1
+Grid Grid2
+{
+
+        <T s_gfm                                 >
+        [gfm01_pi]
+        <                                        >
+
+}
+END -- Grid2
+Group Group1(text=%"Selectable")
+Table Table1
+{
+[gdk01   |gfp04_1 |gfn02   |gfp04_2 |gdk02   |gdk03   ]
+[gdk01   |gfp04_1 |gfn02   |gfp04_2 |gdk02   |gdk03   ]
+[gdk01   |gfp04_1 |gfn02   |gfp04_2 |gdk02   |gdk03   ]
+[gdk01   |gfp04_1 |gfn02   |gfp04_2 |gdk02   |gdk03   ]
+[gdk01   |gfp04_1 |gfn02   |gfp04_2 |gdk02   |gdk03   ]
+[gdk01   |gfp04_1 |gfn02   |gfp04_2 |gdk02   |gdk03   ]
+[gdk01   |gfp04_1 |gfn02   |gfp04_2 |gdk02   |gdk03   ]
+[gdk01   |gfp04_1 |gfn02   |gfp04_2 |gdk02   |gdk03   ]
+[gdk01   |gfp04_1 |gfn02   |gfp04_2 |gdk02   |gdk03   ]
+[gdk01   |gfp04_1 |gfn02   |gfp04_2 |gdk02   |gdk03   ]
+}
+END -- Table1
+END -- Group1
+Group Group2(text=%"Selected")
+Table Table2
+{
+[gdl02   |gdl03   |gfp04   ]
+[gdl02   |gdl03   |gfp04   ]
+[gdl02   |gdl03   |gfp04   ]
+[gdl02   |gdl03   |gfp04   ]
+[gdl02   |gdl03   |gfp04   ]
+[gdl02   |gdl03   |gfp04   ]
+
+
+}
+END -- Table2
+END -- Group2
+Grid gr3066
+{
+ ---------- Rows [cnt   ] ----------
+
+
+}
+END -- gr3066
+END -- VBox1
+END -- Page1
+END -- Folder1
+END -- Form
+
+TABLES
+gfp_file,
+gfn_file,
+gdl_file,
+gdk_file
+ATTRIBUTES
+Label label1:Label1, text=%"filter username:";
+ButtonEdit s_zx01=formonly.s_zx01 type VARCHAR, action=controlp, tabIndex=3;
+Edit s_zx02=formonly.s_zx02 type CHAR, tabIndex=4, noEntry;
+Table s_gfm:s_gfm, style="picflow", height = 3 lines;
+IMAGE gfm01_pi=formonly.gfm01_pic type CHAR, title=%"gfm01_pic";
+Phantom formonly.gfm01 type CHAR;
+Edit gdk01=gdk_file.gdk01, tabIndex=5, title=%"Chart Code";
+Edit gfp04_1=formonly.gfp04_1 type VARCHAR, tabIndex=5, title=%"Chart Name";
+Edit gfn02=gfn_file.gfn02, tabIndex=5, title=%"Chart Type";
+Edit gfp04_2=formonly.gfp04_2 type VARCHAR, tabIndex=5, title=%"Chart Description";
+Edit gdk02=gdk_file.gdk02, tabIndex=5, title=%"Condition 1";
+Edit gdk03=gdk_file.gdk03, tabIndex=5, title=%"Condition 2";
+Edit gdl02=gdl_file.gdl02, tabIndex=1, title=%"Sequence";
+Edit gdl03=gdl_file.gdl03, tabIndex=2, title=%"Chart Code";
+Edit gfp04=gfp_file.gfp04, tabIndex=11, title=%"Chart Name";
+Phantom gdl_file.gdldate;
+Phantom gdl_file.gdlgrup;
+Phantom gdl_file.gdlmodu;
+Phantom gdl_file.gdlorig;
+Phantom gdl_file.gdloriu;
+Phantom gdl_file.gdluser;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.s_zx01,formonly.s_zx02,formonly.cnt)
+SCREEN RECORD s_gdl(gdl_file.gdl02,gdl_file.gdl03,gfp_file.gfp04,gdl_file.gdldate,gdl_file.gdlgrup,gdl_file.gdlmodu,gdl_file.gdlorig,gdl_file.gdloriu,gdl_file.gdluser)
+SCREEN RECORD s_gdk(gdk_file.gdk01,formonly.gfp04_1,gfn_file.gfn02,formonly.gfp04_2,gdk_file.gdk02,gdk_file.gdk03)
+SCREEN RECORD s_gfm(formonly.gfm01_pic,formonly.gfm01)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_m_oom.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_m_oom")
+Grid gr3794
+{
+ <T s_ool                                                       >
+ [check  |oom03             ]
+ [check  |oom03             ]
+ [check  |oom03             ]
+ [check  |oom03             ]
+ [check  |oom03             ]
+ [check  |oom03             ]
+ <                                                              >
+
+}
+END -- gr3794
+END -- q_m_oom
+
+TABLES
+oom_file
+ATTRIBUTES
+Table s_ool:s_ool;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oom03=oom_file.oom03, tabIndex=2, title="Notes type", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oom(formonly.check,oom_file.oom03)
+END -- INSTRUCTIONS
+

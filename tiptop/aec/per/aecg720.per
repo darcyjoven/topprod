@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aecg720.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aecr720")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                            >
+  Change Note No.     [sgt01               ]
+  Change Date         [sgt05     ]
+  Change S/N          [sgt02     ]
+ <                                                     >
+}
+END -- Grid1
+Group group02(text="INPUT")
+Grid Grid2
+{
+ <G group03                                          >
+ [a                                                  ]
+ <                                                   >
+ <G group04                                          >
+ [b                                                  ]
+ <                                                   >
+
+}
+END -- Grid2
+END -- group02
+Grid Grid3
+{
+[more                                      ]
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- aecr720
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sgt01=formonly.sgt01 type CHAR, action=controlp, tabIndex=1, required, image="zoom";
+DateEdit sgt05=formonly.sgt05 type DATE, tabIndex=2;
+Edit sgt02=formonly.sgt02 type SMALLINT, tabIndex=3, required;
+Group group03:group03, text="Print Date";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=4, items=(("1", %"Already Change Issueed"),("2", %"Change Issueed Not Yet"),("3", %"All "));
+Group group04:group04, hidden;
+CheckBox b=formonly.b type VARCHAR, tabIndex=5, text="Head Change Influence Body Change Details Print", not null, required, valueChecked = "Y", valueUnchecked = "N", hidden;
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other Condition to Print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sgt01,formonly.sgt05,formonly.sgt02,formonly.a,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

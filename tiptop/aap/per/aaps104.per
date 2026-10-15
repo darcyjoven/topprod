@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aaps104.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aaps104")
+Folder Folder1
+Page page01(text="Main")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                              >
+ [dummy01                               ]
+  [apz43                                 ]
+ <                                                       >
+ <G group02                                              >
+ [dummy02                               ]
+  [apz44                                 ]
+ <                                                       >
+ <G group03                                              >
+ [dummy03                               ]
+  [apz52                                 ]
+
+ <                                                       >
+
+}
+END -- Grid1
+END -- VBox1
+END -- page01
+END -- Folder1
+END -- aaps104
+
+TABLES
+apz_file
+ATTRIBUTES
+Group group01:group01;
+Label dummy01:dummy01, text="A/P Voucher Memo Format";
+RadioGroup apz43=apz_file.apz43, tabIndex=1, items=(("0", %"Blank"),("1", %"Vender"),("2", %"Vender+Invoice/Accounts #"));
+Group group02:group02;
+Label dummy02:dummy02, text="Payment/Contra Voucher Memo Format";
+RadioGroup apz44=apz_file.apz44, tabIndex=2, items=(("0", %"Blank"),("1", %"Vender"),("2", %"Vender+Note Due"));
+Group group03:group03;
+Label dummy03:dummy03, text="Credit Acct Type When Pay Demand Note";
+RadioGroup apz52=apz_file.apz52, tabIndex=3, items=(("1", %"Notes Payable"),("2", %"Cash In Bank"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(apz_file.apz43,apz_file.apz44,apz_file.apz52)
+END -- INSTRUCTIONS
+

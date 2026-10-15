@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct200_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct200_g")
+VBox VBox1
+Grid gr1771
+{
+ <G group01                                                                             >
+  W/O No.            [sfb01               ]
+  Production Item    [sfb05               ]
+  Issue Date         [sfb81       ]
+ <                                                                                      >
+
+}
+END -- gr1771
+Group g01(text="INPUT")
+Grid gr1772
+{
+[rswo               ]
+ <G group1                           >
+ [tp                            ]
+ <                                   >
+ Data Year/Month   [yy        ][mm        ]
+
+}
+END -- gr1772
+END -- g01
+END -- VBox1
+END -- axct200_g
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit sfb01=formonly.sfb01 type VARCHAR, tabIndex=1;
+Edit sfb05=formonly.sfb05 type VARCHAR, tabIndex=2;
+DateEdit sfb81=formonly.sfb81 type DATE, tabIndex=3;
+CheckBox rswo=formonly.rswo type CHAR, tabIndex=4, default = "", text=%"Retrieve Subcontract WO", not null;
+Group group1:Group1, text=%"Cost Plant";
+RadioGroup tp=formonly.tp, tabIndex=5, default = "1", not null, required, items=(("1", "Vender/Department"),("2", "Cost Center"));
+Edit yy=formonly.yy type SMALLINT, tabIndex=6, not null, required;
+Edit mm=formonly.mm type SMALLINT, tabIndex=7, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfb01,formonly.sfb05,formonly.sfb81,formonly.yy,formonly.mm,formonly.rswo,formonly.tp)
+END -- INSTRUCTIONS
+

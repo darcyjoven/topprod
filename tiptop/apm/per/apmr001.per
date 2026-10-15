@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr001")
+VBox VBox1
+Grid gr5030
+{
+ <G group01                                >
+  P/O No. [pmm01               ]
+  Buyer   [pmm12               ]
+ <                                         >
+ <G group02                                        >
+  Purchased Date Range [bdate       ]-[edate       ]
+  [upd                                     ]
+
+ <                                                 >
+
+}
+END -- gr5030
+Grid gr5031
+{
+[more                                                                  ]
+
+}
+END -- gr5031
+END -- VBox1
+END -- apmr001
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmm01=formonly.pmm01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit pmm12=formonly.pmm12 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=3;
+DateEdit edate=formonly.edate type DATE, tabIndex=4;
+CheckBox upd=formonly.upd type VARCHAR, tabIndex=5, text="Only Undelivered Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmm01,formonly.pmm12,formonly.bdate,formonly.edate,formonly.upd,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmx430.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr430")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                                >
+  Agrd Deli Dt         [oeb15               ]   Accounts Cust        [oea03               ]
+  Sche.Del Date        [oeb16               ]   Shp Cust             [oea04               ]
+  Order No.            [oea01               ]   Product No.          [oeb04               ]
+  Employee No.         [oea14               ]   Del Warehouse        [oeb09               ]
+  Dept No.             [oea15               ]
+ <                                                                                         >
+
+}
+END -- Grid1
+Group g01(text="INPUT")
+VBox VBox2
+Grid Grid2
+{
+ <G group02                                                              >
+  [s1                  ] [s2                   ] [s3                    ]
+  [t1                  ] [t2                   ] [t3                    ]
+
+ <                                                                       >
+ <G group03                                                              >
+  [o                                           ]
+
+
+ <                                                                       >
+
+}
+END -- Grid2
+END -- VBox2
+END -- g01
+Grid Grid3
+{
+[more                                              ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- axmr430
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit oeb15=formonly.oeb15 type DATE, tabIndex=1;
+ButtonEdit oea03=formonly.oea03 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+DateEdit oeb16=formonly.oeb16 type DATE, tabIndex=3;
+ButtonEdit oea04=formonly.oea04 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit oea01=formonly.oea01 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit oeb04=formonly.oeb04 type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit oea14=formonly.oea14 type VARCHAR, action=controlp, tabIndex=7, image="zoom";
+ButtonEdit oeb09=formonly.oeb09 type VARCHAR, action=controlp, tabIndex=8, image="zoom";
+ButtonEdit oea15=formonly.oea15 type VARCHAR, action=controlp, tabIndex=9, image="zoom";
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=10, queryEditable, items=(("1", %"Agreed Delivery Date"),("2", %"Scheduled Delivery Date"),("3", %"Order No."),("4", %"Employee No."),("5", %"Department No."),("6", %"Accounts Customer"),("7", %"Shipping Customer"),("8", %"Product No."),("9", %"Delivery Plant"),("a", %"Delivery Warehouse"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=11, queryEditable, items=(("1", %"Agreed Delivery Date"),("2", %"Scheduled Delivery Date"),("3", %"Order No."),("4", %"Employee No."),("5", %"Department No."),("6", %"Accounts Customer"),("7", %"Shipping Customer"),("8", %"Product No."),("9", %"Delivery Plant"),("a", %"Delivery Warehouse"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=12, queryEditable, items=(("1", %"Agreed Delivery Date"),("2", %"Scheduled Delivery Date"),("3", %"Order No."),("4", %"Employee No."),("5", %"Department No."),("6", %"Accounts Customer"),("7", %"Shipping Customer"),("8", %"Product No."),("9", %"Delivery Plant"),("a", %"Delivery Warehouse"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=13, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=14, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=15, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Delivery Date";
+RadioGroup o=formonly.o type VARCHAR, tabIndex=16, items=(("1", %"Agreed Delivery Date"),("2", %"Scheduled Delivery Date"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=17, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oeb15,formonly.oea03,formonly.oeb16,formonly.oea04,formonly.oea01,formonly.oeb04,formonly.oea14,formonly.oeb09,formonly.oea15,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.o,formonly.more)
+END -- INSTRUCTIONS
+

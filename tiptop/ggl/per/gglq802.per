@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq802.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq802")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+Grid gr3362
+{
+ Trans.Code Sequence [aec051    ]
+ Transaction Type    [aec052    ][ahe02   ]
+ Trans.Code          [aec05               ]
+ Book No             [aec00]
+}
+END -- gr3362
+END -- page01
+END -- folder01
+Table s_aec
+{
+[aec02          |aec01              |aec03          |abb24    |abb25                |abb07_1             |abb07f_1            |abb07_2             |abb07f_2             |abb99               ]
+[aec02          |aec01              |aec03          |abb24    |abb25                |abb07_1             |abb07f_1            |abb07_2             |abb07f_2             |abb99               ]
+[aec02          |aec01              |aec03          |abb24    |abb25                |abb07_1             |abb07f_1            |abb07_2             |abb07f_2             |abb99               ]
+[aec02          |aec01              |aec03          |abb24    |abb25                |abb07_1             |abb07f_1            |abb07_2             |abb07f_2             |abb99               ]
+[aec02          |aec01              |aec03          |abb24    |abb25                |abb07_1             |abb07f_1            |abb07_2             |abb07f_2             |abb99               ]
+[aec02          |aec01              |aec03          |abb24    |abb25                |abb07_1             |abb07f_1            |abb07_2             |abb07f_2             |abb99               ]
+[aec02          |aec01              |aec03          |abb24    |abb25                |abb07_1             |abb07f_1            |abb07_2             |abb07f_2             |abb99               ]
+[aec02          |aec01              |aec03          |abb24    |abb25                |abb07_1             |abb07f_1            |abb07_2             |abb07f_2             |abb99               ]
+[aec02          |aec01              |aec03          |abb24    |abb25                |abb07_1             |abb07f_1            |abb07_2             |abb07f_2             |abb99               ]
+[aec02          |aec01              |aec03          |abb24    |abb25                |abb07_1             |abb07f_1            |abb07_2             |abb07f_2             |abb99               ]
+
+}
+END -- s_aec
+Grid gr3363
+{
+ ---------- Rows [cnt   ] / [cnt2  ] ----------
+
+}
+END -- gr3363
+END -- vb3
+END -- gglq802
+
+TABLES
+aec_file
+ATTRIBUTES
+Edit aec051=aec_file.aec051, tabIndex=1;
+ButtonEdit aec052=aec_file.aec052, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+Edit ahe02=formonly.ahe02 type CHAR, tabIndex=3, noEntry;
+Edit aec05=aec_file.aec05, tabIndex=4;
+Edit aec00=aec_file.aec00, tabIndex=17;
+Edit aec02=aec_file.aec02, tabIndex=5, title="Voucher Date";
+Edit aec01=formonly.aec01 type CHAR, tabIndex=6, title="Account NO.", noEntry;
+Edit aec03=formonly.aec03 type CHAR, tabIndex=7, title="Voucher NO.", noEntry;
+Edit abb24=formonly.abb24 type CHAR, tabIndex=8, title="Curr.", noEntry;
+Edit abb25=formonly.abb25 type CHAR, tabIndex=9, title="Ex.Rate", noEntry;
+Edit abb07_1=formonly.abb07_1 type CHAR, tabIndex=10, title="Debit", noEntry;
+Edit abb07f_1=formonly.abb07f_1 type CHAR, tabIndex=11, title="Debit O.C.Amount", noEntry;
+Edit abb07_2=formonly.abb07_2 type CHAR, tabIndex=12, title="Credit", noEntry;
+Edit abb07f_2=formonly.abb07f_2 type CHAR, tabIndex=13, title="Credit O.C.Amount", noEntry;
+Edit abb99=formonly.abb99 type CHAR, tabIndex=14, title="Balance", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aec(aec_file.aec02,formonly.aec01,formonly.aec03,formonly.abb24,formonly.abb25,formonly.abb07_1,formonly.abb07f_1,formonly.abb07_2,formonly.abb07f_2,formonly.abb99)
+SCREEN RECORD Undefined(aec_file.aec051,aec_file.aec052,formonly.ahe02,aec_file.aec05,aec_file.aec00,formonly.cnt,formonly.cnt2)
+END -- INSTRUCTIONS
+

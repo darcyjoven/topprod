@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi099.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi099")
+VBox VBox1
+Folder pc450
+Page page01(text="Main")
+Table s_oaq
+{
+[oaq01                  |oaq02                |oaq03        |oaq04       ]
+[oaq01                  |oaq02                |oaq03        |oaq04       ]
+[oaq01                  |oaq02                |oaq03        |oaq04       ]
+[oaq01                  |oaq02                |oaq03        |oaq04       ]
+[oaq01                  |oaq02                |oaq03        |oaq04       ]
+[oaq01                  |oaq02                |oaq03        |oaq04       ]
+[oaq01                  |oaq02                |oaq03        |oaq04       ]
+[oaq01                  |oaq02                |oaq03        |oaq04       ]
+[oaq01                  |oaq02                |oaq03        |oaq04       ]
+[oaq01                  |oaq02                |oaq03        |oaq04       ]
+
+}
+END -- s_oaq
+END -- page01
+END -- pc450
+Grid gr2006
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2006
+END -- VBox1
+END -- axmi099
+
+TABLES
+oaq_file
+ATTRIBUTES
+ButtonEdit oaq01=oaq_file.oaq01, action=controlp, tabIndex=1, title="Sales Return Note Type", not null, required, image="zoom", upShift, comment="<^P>Qry Doc";
+ButtonEdit oaq02=oaq_file.oaq02, action=controlp, tabIndex=2, title="W/H Return Note Tpye", image="zoom", upShift, comment="<^P>Qry Doc";
+ButtonEdit oaq03=oaq_file.oaq03, action=controlp, tabIndex=3, title="AR Allowance", image="zoom", upShift, comment="<^P>Qry Doc";
+ButtonEdit oaq04=oaq_file.oaq04, action=controlp, tabIndex=4, title="AP Allowance", image="zoom", upShift, comment="<^P>Qry Doc";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oaq(oaq_file.oaq01,oaq_file.oaq02,oaq_file.oaq03,oaq_file.oaq04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

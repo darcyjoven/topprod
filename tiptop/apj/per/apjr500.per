@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjr500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apjr500")
+VBox vb4
+Grid gr4763
+{
+ <G grpqbe                                                      >
+   Project No.            [pjb01               ]
+   WBS No.                [pjb02               ]
+  Item No.                [pjf03               ]
+ <                                                              >
+ <G g01                                                         >
+  [a                                                           ]
+  [more                                 ]
+ <                                                              >
+}
+END -- gr4763
+Grid gr4765
+{
+
+
+
+}
+END -- gr4765
+END -- vb4
+END -- apjr500
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+ButtonEdit pjb01=formonly.pjb01 type VARCHAR, action=controlp, tabIndex=1, image="zoom.png", justify=center;
+Edit pjb02=formonly.pjb02 type VARCHAR, tabIndex=2;
+ButtonEdit pjf03=formonly.pjf03 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Group g01:g01, text="INPUT";
+CheckBox a=formonly.a type VARCHAR, tabIndex=4, text="Print Incompleted Transferred Project only", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pjb01,formonly.pjb02,formonly.pjf03,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt541.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt541")
+Folder pc1004
+Page page01(text="Page01")
+Grid gr5308
+{
+ <G group01                                               >
+  Budget No   [pmn66     ][afa02               ]
+  Account No  [pmn40               ][aag02               ]
+  Account No2 [pmn401              ][aag02_1             ]
+  Dept. No    [pmn67     ][gem02     ]
+ <                                                        >
+
+}
+END -- gr5308
+END -- page01
+END -- pc1004
+END -- apmt541
+
+TABLES
+pmn_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit pmn66=pmn_file.pmn66, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Budget#  <^T>Qry Consumed Budget";
+Edit afa02=formonly.afa02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit pmn40=pmn_file.pmn40, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Account No. <^T>Qry Consumed Budget";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit pmn401=pmn_file.pmn401, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Account No. <^T>Qry Consumed Budget";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=6, noEntry;
+ButtonEdit pmn67=pmn_file.pmn67, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Department No. <^T>Qry Consumed Budget";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pmn_file.pmn66,formonly.afa02,pmn_file.pmn40,formonly.aag02,pmn_file.pmn401,formonly.aag02_1,pmn_file.pmn67,formonly.gem02)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aici005")
+VBox vb5
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+
+     Item      [icf01           ]   [ima02                  ]
+
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table s_icf
+{
+[icf02           |icf03          |icf07               |icf04      |icf05         |icf06        ]
+[icf02           |icf03          |icf07               |icf04      |icf05         |icf06        ]
+[icf02           |icf03          |icf07               |icf04      |icf05         |icf06        ]
+[icf02           |icf03          |icf07               |icf04      |icf05         |icf06        ]
+[icf02           |icf03          |icf07               |icf04      |icf05         |icf06        ]
+[icf02           |icf03          |icf07               |icf04      |icf05         |icf06        ]
+[icf02           |icf03          |icf07               |icf04      |icf05         |icf06        ]
+[icf02           |icf03          |icf07               |icf04      |icf05         |icf06        ]
+
+}
+END -- s_icf
+Grid gr4
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4
+END -- vb5
+END -- aici005
+
+TABLES
+icf_file
+ATTRIBUTES
+ButtonEdit icf01=icf_file.icf01, action=controlp, tabIndex=1, image="zoom.png";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, not null;
+Edit icf02=icf_file.icf02, tabIndex=3, title="icf02", not null;
+Edit icf03=icf_file.icf03, tabIndex=4, title="icf03";
+ButtonEdit icf07=icf_file.icf07, action=controlp, tabIndex=5, title=%"icf07", image="zoom";
+CheckBox icf04=icf_file.icf04, tabIndex=6, title="icf04", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox icf05=icf_file.icf05, tabIndex=7, title="icf05", not null, items=(("0", "0:Good"),("1", "1:D/G"),("2", "2:Fail"));
+Edit icf06=icf_file.icf06, tabIndex=8, title="icf06";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_icf(icf_file.icf02,icf_file.icf03,icf_file.icf07,icf_file.icf04,icf_file.icf05,icf_file.icf06)
+SCREEN RECORD Undefined(icf_file.icf01,formonly.ima02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

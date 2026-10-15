@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_per_sel_function.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="p_per_sel_function")
+VBox vb46
+Grid gr13
+{
+ Form ID  [gav01               ] [search    ][send      ]
+ Field ID [gav02               ]             [quit      ]
+
+}
+END -- gr13
+Table tb1
+{
+[gav01_2|gav08_2|gav11_2|gav02_2|check  |fun_cont   ]
+[gav01_2|gav08_2|gav11_2|gav02_2|check  |fun_cont   ]
+[gav01_2|gav08_2|gav11_2|gav02_2|check  |fun_cont   ]
+[gav01_2|gav08_2|gav11_2|gav02_2|check  |fun_cont   ]
+[gav01_2|gav08_2|gav11_2|gav02_2|check  |fun_cont   ]
+[gav01_2|gav08_2|gav11_2|gav02_2|check  |fun_cont   ]
+[gav01_2|gav08_2|gav11_2|gav02_2|check  |fun_cont   ]
+[gav01_2|gav08_2|gav11_2|gav02_2|check  |fun_cont   ]
+
+}
+END -- tb1
+Grid gr108
+{
+ [fun_cont_desc                                           ]
+ [                                                        ]
+ [                                                        ]
+ [                                                        ]
+ [                                                        ]
+ [                                                        ]
+ [                                                        ]
+ [                                                        ]
+ [                                                        ]
+
+}
+END -- gr108
+END -- vb46
+END -- p_per_sel_function
+
+TABLES
+gav_file
+ATTRIBUTES
+ComboBox gav01=gav_file.gav01, tabIndex=1;
+Button search:search, text="Query";
+Button send:send, text="Send";
+ComboBox gav02=gav_file.gav02, tabIndex=2;
+Button quit:quit, text="Cancel";
+Edit gav01_2=formonly.gav01_2 type VARCHAR, tabIndex=3, title="Form ID", noEntry;
+Edit gav08_2=formonly.gav08_2 type VARCHAR, tabIndex=8, title="Cust", noEntry;
+ComboBox gav11_2=formonly.gav11_2 type VARCHAR, tabIndex=7, title="Industry";
+Edit gav02_2=formonly.gav02_2 type VARCHAR, tabIndex=4, title="Field ID", noEntry;
+ComboBox check=formonly.check type VARCHAR, tabIndex=5, title="Check", not null, items=(("1", "Data Check"),("2", "Repeat Check"),("3", "Reference Value"));
+Edit fun_cont=formonly.fun_cont type VARCHAR, tabIndex=9, title="Function Content", noEntry, hidden;
+TextEdit fun_cont_desc=formonly.fun_cont_desc type VARCHAR, tabIndex=6, noEntry, scrollBars=both;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fun(formonly.gav01_2,formonly.gav08_2,formonly.gav11_2,formonly.gav02_2,formonly.check,formonly.fun_cont)
+SCREEN RECORD Undefined(gav_file.gav01,gav_file.gav02,formonly.fun_cont_desc)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,65 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/alm/4fd/almi960.tmp.per created 2010-10-12T06:33:01
+-- File created from /u3/tiptop/alm/4fd/almi960.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almi960")
+VBox vb3                                                                                                                                                                           
+Folder pc2                                                                                                                                                                         
+Page Main(text=%"Main")                                                                                                                                                            
+Grid gr3                                                                                                                                                                           
+{                                                                                                                                                                                  
+ <G gb2                              >                                                                                                                                             
+  Category           [azf02     ]                                                                                                                                                  
+ <                                   >                                                                                                                                             
+                                                                                                                                                                                   
+}                                                                                                                                                                                  
+END                                                                                                                                                                                
+END -- Page                                                                                                                                                                        
+END -- Folder                                                                                                                                                                      
+Table s_azf                                                                                                                                                                        
+{                                                                                                                                                                                  
+[azf01   |azf03   |azf15   |azf03_1 |azf16   |azf17   |azfact]                                                                                                                     
+[azf01   |azf03   |azf15   |azf03_1 |azf16   |azf17   |azfact]                                                                                                                     
+[azf01   |azf03   |azf15   |azf03_1 |azf16   |azf17   |azfact]                                                                                                                     
+[azf01   |azf03   |azf15   |azf03_1 |azf16   |azf17   |azfact]                                                                                                                     
+[azf01   |azf03   |azf15   |azf03_1 |azf16   |azf17   |azfact]                                                                                                                     
+}                                                                                                                                                                                  
+END -- Table                                                                                                                                                                       
+Grid gr5                                                                                                                                                                           
+{                                                                                                                                                                                  
+  ---------- Rows[cn2   ]----------                                                                                                                                                
+                                                                                                                                                                                   
+                                                                                                                                                                                   
+}                                                                                                                                                                                  
+END                                                                                                                                                                                
+END -- VBox                                                                                                                                                                        
+END -- Form
+
+TABLES
+azf_file
+
+ATTRIBUTES
+Group gb2:gb2;
+ComboBox azf02=azf_file.azf02, tabIndex=1, noEntry, comment="No Blank  , Enter 2 5 6 8 A D E F G", items=(("3", "pinpaibianhao"),("4", "liyoubianhao"),("5", "koujianxiang"));
+ButtonEdit azf01=azf_file.azf01, action=controlp, tabIndex=2, title="azf01", not null, required, image="zoom.png";
+Edit azf03=azf_file.azf03, tabIndex=3, title="azf03";
+ButtonEdit azf15=azf_file.azf15, action=controlp, tabIndex=4, title="azf15", image="zoom.png";
+Edit azf03_1=formonly.azf03_1, tabIndex=5, title="azf03_1", noEntry;
+ButtonEdit azf16=azf_file.azf16, action=controlp, tabIndex=6, title="azf16", image="zoom.png";
+Edit azf17=azf_file.azf17, tabIndex=7, title="azf17";
+CheckBox azfact=azf_file.azfacti, tabIndex=9, title="azfacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azf(azf_file.azf01, azf_file.azf03, azf_file.azf15, formonly.azf03_1, azf_file.azf16, azf_file.azf17, azf_file.azfacti)
+END -- INSTRUCTIONS
+

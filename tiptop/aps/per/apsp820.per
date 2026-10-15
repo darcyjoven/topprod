@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsp820.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsp820")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+Grid gr23
+{
+  <G gb1                                                           > <G gb8                                                             >
+   vod11     [vod11        ]     Route     [vod39        ]                 vod01   [vod01     ]       sfb81    [sfb81     ]
+   vod09     [vod09        ]     vod20     [vod20        ]                 vod02   [vod02     ]       sfb01    [sfb01     ]
+   planner   [ima67        ]     vod41     [vod41        ]                 sfb02   [sfb02     ]       sfb82    [sfb82     ]
+   vod36     [vod36        ]                                               sfb44   [sfb44     ]
+  <                                                                > <                                                                  >
+
+}
+END -- gr23
+END -- page01
+END -- folder01
+Table s_vod
+{
+[select |planner   |vod09_1            |ima02               |ima021            |ima08     |vod16     |vod28     |vod29     |vod10                |vod11_1           |vod04     |vod35     |vod35_pro |vod03     |route          |vod20_1   |vod41_1   |voo04   ]
+[select |planner   |vod09_1            |ima02               |ima021            |ima08     |vod16     |vod28     |vod29     |vod10                |vod11_1           |vod04     |vod35     |vod35_pro |vod03     |route          |vod20_1   |vod41_1   |voo04   ]
+[select |planner   |vod09_1            |ima02               |ima021            |ima08     |vod16     |vod28     |vod29     |vod10                |vod11_1           |vod04     |vod35     |vod35_pro |vod03     |route          |vod20_1   |vod41_1   |voo04   ]
+[select |planner   |vod09_1            |ima02               |ima021            |ima08     |vod16     |vod28     |vod29     |vod10                |vod11_1           |vod04     |vod35     |vod35_pro |vod03     |route          |vod20_1   |vod41_1   |voo04   ]
+[select |planner   |vod09_1            |ima02               |ima021            |ima08     |vod16     |vod28     |vod29     |vod10                |vod11_1           |vod04     |vod35     |vod35_pro |vod03     |route          |vod20_1   |vod41_1   |voo04   ]
+[select |planner   |vod09_1            |ima02               |ima021            |ima08     |vod16     |vod28     |vod29     |vod10                |vod11_1           |vod04     |vod35     |vod35_pro |vod03     |route          |vod20_1   |vod41_1   |voo04   ]
+[select |planner   |vod09_1            |ima02               |ima021            |ima08     |vod16     |vod28     |vod29     |vod10                |vod11_1           |vod04     |vod35     |vod35_pro |vod03     |route          |vod20_1   |vod41_1   |voo04   ]
+[select |planner   |vod09_1            |ima02               |ima021            |ima08     |vod16     |vod28     |vod29     |vod10                |vod11_1           |vod04     |vod35     |vod35_pro |vod03     |route          |vod20_1   |vod41_1   |voo04   ]
+[select |planner   |vod09_1            |ima02               |ima021            |ima08     |vod16     |vod28     |vod29     |vod10                |vod11_1           |vod04     |vod35     |vod35_pro |vod03     |route          |vod20_1   |vod41_1   |voo04   ]
+[select |planner   |vod09_1            |ima02               |ima021            |ima08     |vod16     |vod28     |vod29     |vod10                |vod11_1           |vod04     |vod35     |vod35_pro |vod03     |route          |vod20_1   |vod41_1   |voo04   ]
+
+}
+END -- s_vod
+Grid gr4727
+{
+ ----------Rows [cnt2  ] ----------
+
+}
+END -- gr4727
+END -- vb4
+END -- apsp820
+
+TABLES
+vod_file,
+sfb_file,
+ima_file,
+voo_file
+ATTRIBUTES
+Group gb1:gb1, text="gb1";
+DateEdit vod11=vod_file.vod11, tabIndex=9;
+ComboBox vod39=vod_file.vod39, tabIndex=23, items=(("0", "UnRouting"),("1", "Routing"));
+ButtonEdit vod09=vod_file.vod09, action=controlp, tabIndex=17, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Edit vod20=vod_file.vod20, tabIndex=28;
+ButtonEdit ima67=ima_file.ima67, action=controlp, tabIndex=22, image="zoom";
+ButtonEdit vod41=vod_file.vod41, action=controlp, tabIndex=30, image="zoom";
+ButtonEdit vod36=vod_file.vod36, action=controlp, tabIndex=10, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Group gb8:gb8, text="gb8";
+ButtonEdit vod01=vod_file.vod01, action=controlp, tabIndex=7, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+DateEdit sfb81=sfb_file.sfb81, tabIndex=14, not null, required;
+Edit vod02=vod_file.vod02, tabIndex=8;
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=11, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+ComboBox sfb02=sfb_file.sfb02, tabIndex=27, not null, required, items=(("1", "1"),("7", "7"));
+ButtonEdit sfb82=sfb_file.sfb82, action=controlp, tabIndex=12, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+ButtonEdit sfb44=sfb_file.sfb44, action=controlp, tabIndex=32, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+CheckBox select=formonly.select type CHAR, tabIndex=2, title="select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit planner=formonly.planner type CHAR, tabIndex=24, title="planner", noEntry;
+ButtonEdit vod09_1=formonly.vod09_1 type VARCHAR, tabIndex=3, title="vod09_1", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, title="ima02", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, title="ima021", noEntry;
+ComboBox ima08=formonly.ima08 type CHAR, tabIndex=26, title="ima08", noEntry, items=(("C", "C"),("T", "T"),("D", "D"),("A", "A"),("M", "M"),("P", "P"),("X", "X"),("K", "K"),("U", "U"),("V", "V"),("R", "R"),("Z", "Z"),("S", "S"));
+ButtonEdit vod16=vod_file.vod16, action=controlp, tabIndex=18, title="vod16", noEntry, image="zoom";
+ButtonEdit vod28=vod_file.vod28, action=controlp, tabIndex=19, title="vod28", noEntry, image="zoom";
+Edit vod29=vod_file.vod29, tabIndex=20, title="vod29", noEntry;
+DateEdit vod10=vod_file.vod10, tabIndex=16, title="vod10", noEntry;
+DateEdit vod11_1=formonly.vod11_1 type DATE, tabIndex=6, title="vod11_1", noEntry;
+Edit vod04=vod_file.vod04, tabIndex=33, title=%"vod04", noEntry;
+Edit vod35=vod_file.vod35, tabIndex=13, title="vod35", noEntry;
+Edit vod35_pro=formonly.vod35_pro type CHAR, tabIndex=21, title="vod35_pro", noEntry;
+Edit vod03=vod_file.vod03, tabIndex=15, title="vod03", noEntry;
+ComboBox route=formonly.route type DECIMAL, tabIndex=25, title="route", noEntry, items=(("0", "UnRouting"),("1", "Routing"));
+Edit vod20_1=formonly.vod20_1 type CHAR, tabIndex=29, title="vod20_1", noEntry;
+Edit vod41_1=formonly.vod41_1 type CHAR, tabIndex=31, title="vod41_1", noEntry;
+Edit voo04=voo_file.voo04, tabIndex=34, title=%"voo04", noEntry;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=1;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vod(formonly.select,formonly.planner,formonly.vod09_1,formonly.ima02,formonly.ima021,formonly.ima08,vod_file.vod16,vod_file.vod28,vod_file.vod29,vod_file.vod10,formonly.vod11_1,vod_file.vod04,vod_file.vod35,formonly.vod35_pro,vod_file.vod03,formonly.route,formonly.vod20_1,formonly.vod41_1,voo_file.voo04)
+SCREEN RECORD Undefined(vod_file.vod11,vod_file.vod39,vod_file.vod09,vod_file.vod20,ima_file.ima67,vod_file.vod41,vod_file.vod36,vod_file.vod01,sfb_file.sfb81,vod_file.vod02,sfb_file.sfb01,sfb_file.sfb02,sfb_file.sfb82,sfb_file.sfb44,formonly.cnt2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq811.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsq811")
+VBox vb2_
+Grid gr5444
+{
+ <G group01                                                                                                                                                                                                                                          >
+  APS Version   [vob01               ]       PaperNo   [vob13_1                     ]       Partno[vob07_1            ]
+  Save Version  [vob02               ]       Buyer     [pmk12_1     ][gen02         ]      [vob36_1   ]
+ <                                                                                                                                                                                                                                                   >
+ <T s_vob                                                                                                                                                                                                                                                                             >
+ [vob3|vob13      |pml16     |pmk12 |pmk09|itemno|vob07   |ima02      |vob11   |ischang|pml20     |unst_qty    |vob33       |qty       |pml34           |vob14           |pml35       |vob40           |vob17       |vob42        |vob08     |vob20     |vob04     |vob03     ]
+ [vob3|vob13      |pml16     |pmk12 |pmk09|itemno|vob07   |ima02      |vob11   |ischang|pml20     |unst_qty    |vob33       |qty       |pml34           |vob14           |pml35       |vob40           |vob17       |vob42        |vob08     |vob20     |vob04     |vob03     ]
+ [vob3|vob13      |pml16     |pmk12 |pmk09|itemno|vob07   |ima02      |vob11   |ischang|pml20     |unst_qty    |vob33       |qty       |pml34           |vob14           |pml35       |vob40           |vob17       |vob42        |vob08     |vob20     |vob04     |vob03     ]
+ [vob3|vob13      |pml16     |pmk12 |pmk09|itemno|vob07   |ima02      |vob11   |ischang|pml20     |unst_qty    |vob33       |qty       |pml34           |vob14           |pml35       |vob40           |vob17       |vob42        |vob08     |vob20     |vob04     |vob03     ]
+ [vob3|vob13      |pml16     |pmk12 |pmk09|itemno|vob07   |ima02      |vob11   |ischang|pml20     |unst_qty    |vob33       |qty       |pml34           |vob14           |pml35       |vob40           |vob17       |vob42        |vob08     |vob20     |vob04     |vob03     ]
+ [vob3|vob13      |pml16     |pmk12 |pmk09|itemno|vob07   |ima02      |vob11   |ischang|pml20     |unst_qty    |vob33       |qty       |pml34           |vob14           |pml35       |vob40           |vob17       |vob42        |vob08     |vob20     |vob04     |vob03     ]
+ [vob3|vob13      |pml16     |pmk12 |pmk09|itemno|vob07   |ima02      |vob11   |ischang|pml20     |unst_qty    |vob33       |qty       |pml34           |vob14           |pml35       |vob40           |vob17       |vob42        |vob08     |vob20     |vob04     |vob03     ]
+ [vob3|vob13      |pml16     |pmk12 |pmk09|itemno|vob07   |ima02      |vob11   |ischang|pml20     |unst_qty    |vob33       |qty       |pml34           |vob14           |pml35       |vob40           |vob17       |vob42        |vob08     |vob20     |vob04     |vob03     ]
+ [vob3|vob13      |pml16     |pmk12 |pmk09|itemno|vob07   |ima02      |vob11   |ischang|pml20     |unst_qty    |vob33       |qty       |pml34           |vob14           |pml35       |vob40           |vob17       |vob42        |vob08     |vob20     |vob04     |vob03     ]
+ [vob3|vob13      |pml16     |pmk12 |pmk09|itemno|vob07   |ima02      |vob11   |ischang|pml20     |unst_qty    |vob33       |qty       |pml34           |vob14           |pml35       |vob40           |vob17       |vob42        |vob08     |vob20     |vob04     |vob03     ]
+ <                                                                                                                                                                                                                                                                                    >
+
+
+}
+END -- gr5444
+Grid gr881
+{
+ ----------  Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr881
+END -- vb2_
+END -- apsq811
+
+TABLES
+vob_file,
+pml_file,
+pmk_file,
+ima_file
+ATTRIBUTES
+Group group01:group01, text="Basic Data";
+ButtonEdit vob01=formonly.vob01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Assign Add/Query Item#";
+ButtonEdit vob13_1=formonly.vob13_1 type VARCHAR, action=controlp, tabIndex=30, image="zoom", comment="Assign Add/Query Item#";
+ButtonEdit vob07_1=formonly.vob07_1 type VARCHAR, action=controlp, tabIndex=33, image="zoom", comment="Assign Add/Query Item#";
+Edit vob02=formonly.vob02 type CHAR, tabIndex=2;
+ButtonEdit pmk12_1=formonly.pmk12_1 type VARCHAR, action=controlp, tabIndex=31, image="zoom", comment="Assign Add/Query Item#";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=32, noEntry;
+CheckBox vob36_1=formonly.vob36_1 type VARCHAR, tabIndex=29, text="vob36", valueChecked = "Y", valueUnchecked = "N";
+Table s_vob:s_vob;
+CheckBox vob3=vob_file.vob36, tabIndex=3, title="vob36", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit vob13=formonly.vob13 type CHAR, tabIndex=4, title="Source Doc. No.", noEntry;
+ComboBox pml16=pml_file.pml16, tabIndex=5, title="pml16", queryEditable, items=(("0", "開立"),("1", "已核准"),("2", "轉成採購單"),("6", "結案-正常"),("7", "結案-結長"),("8", "結案-結短"),("9", "作廢"),("X", "計畫訂單轉入"));
+ButtonEdit pmk12=pmk_file.pmk12, action=controlp, tabIndex=6, title="pmk12", image="zoom";
+ButtonEdit pmk09=pmk_file.pmk09, action=controlp, tabIndex=7, title="pmk09", image="zoom";
+Edit itemno=formonly.itemno type SMALLINT, tabIndex=8, title="Line No", noEntry;
+ButtonEdit vob07=vob_file.vob07, action=controlp, tabIndex=10, title="Item No.", image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=11, title="prod name", noEntry;
+ButtonEdit vob11=vob_file.vob11, action=controlp, tabIndex=12, title="Purchase Unit", image="zoom";
+CheckBox ischang=formonly.IsChange type CHAR, tabIndex=13, title="IsChange", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit pml20=pml_file.pml20, tabIndex=22, title="pml20", noEntry;
+Edit unst_qty=formonly.unst_qty type CHAR, tabIndex=14, title="unst_qty", noEntry;
+Edit vob33=vob_file.vob33, tabIndex=15, title="vob33", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=16, title="qty", noEntry;
+DateEdit pml34=pml_file.pml34, tabIndex=18, title="pml34", noEntry;
+DateEdit vob14=vob_file.vob14, tabIndex=17, title="vob14";
+DateEdit pml35=pml_file.pml35, tabIndex=21, title="pml35", noEntry;
+DateEdit vob40=vob_file.vob40, tabIndex=24, title="vob40";
+Edit vob17=vob_file.vob17, tabIndex=23, title="vob17", noEntry;
+ButtonEdit vob42=vob_file.vob42, action=controlp, tabIndex=9, title="Supply Rule", noEntry, image="zoom.png";
+Edit vob08=vob_file.vob08, tabIndex=28, title="vob08";
+Edit vob20=vob_file.vob20, tabIndex=27, title="vob20";
+Edit vob04=vob_file.vob04, tabIndex=26, title="vob04";
+Edit vob03=vob_file.vob03, tabIndex=25, title="vob03";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vob(vob_file.vob36,formonly.vob13,pml_file.pml16,pmk_file.pmk12,pmk_file.pmk09,formonly.itemno,vob_file.vob07,ima_file.ima02,vob_file.vob11,formonly.IsChange,pml_file.pml20,formonly.unst_qty,vob_file.vob33,formonly.qty,pml_file.pml34,vob_file.vob14,pml_file.pml35,vob_file.vob40,vob_file.vob17,vob_file.vob42,vob_file.vob08,vob_file.vob20,vob_file.vob04,vob_file.vob03)
+SCREEN RECORD Undefined(formonly.vob01,formonly.vob13_1,formonly.vob07_1,formonly.vob02,formonly.pmk12_1,formonly.gen02,formonly.vob36_1,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

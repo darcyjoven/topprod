@@ -1,0 +1,255 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csft730.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft730")
+VBox vb3
+Folder folder01
+Page page01(text=%"Main")
+HBox HBox1
+Grid gr838
+{
+ Transfer Note       [shb01               ]
+ Employee No.        [shb04     ][gen02    ]
+ Run Card            [shb16                  ]
+
+
+
+
+
+}
+END -- gr838
+Grid gr839
+{
+ W/O No.     [shb05               ]
+ Process No. [shb012    ][ecu014    ]
+ Task No.    [shb081    ][shb082    ]
+ Routing S/N [shb06     ]
+
+
+
+
+}
+END -- gr839
+Grid gr840
+{
+ Confirm        [shbconf         ]      [imgmks]
+                                        [      ]
+
+ Product No.    [shb10                         ]
+ Part Name      [ima02                         ]
+ Specification  [ima021                        ]
+ Machine No.    [shb25                         ]
+
+}
+END -- gr840
+END -- HBox1
+END -- page01
+Page info(text=%"Info")
+Grid gr841
+{
+ Record Owner        [shbuser   ]   Last Modified by    [shbmodu   ]
+ Department          [shbgrup   ]   Create/Modify Date  [shbdate   ]
+ Record Orig.        [shboriu   ]
+ Dept Orig.          [shborig   ]
+}
+END -- gr841
+END -- info
+END -- folder01
+Folder folder02
+Page page02(text=%"Page02")
+HBox hb4
+Grid gr842
+{
+ Line/Shift          [shb08     ]
+ Work Center         [shb07     ]
+ Machine No.         [shb09     ]
+ Operating Date      [shb02     ][shb021    ]
+ Date of Report      [shb03     ][shb031    ]
+ Input Hours(Minute) [shb032    ]
+ Input of time       [shb033    ]
+ Confirm Date        [shb32     ]
+
+}
+END -- gr842
+Grid gr843
+{
+ Good Trans-out          [shb111    ]
+ Bonus                   [shb115    ]
+ Direct Scrap            [shb112    ]
+ Rework/Trans-out        [shb113    ]
+ Next Process No.        [shb121    ]
+ Next Routing            [shb12     ]
+ Direct Off-Line         [shb114    ]
+[unit        ]           [shb34     ]
+
+}
+END -- gr843
+Grid gr844
+{
+  WIP                [wip       ]
+  PQC Reportable Qty [pqc       ]
+  Total PQC          [tot_pqc   ]
+ [sgm54        ][shb31         ][shb30    ]
+ [sgm53        ][shb26         ]
+  Vendor             [shb27     ][pmc03   ]
+  Pro. Stock-in      [shb21               ]
+  FQC Doc. No.       [shb22               ]
+
+}
+END -- gr844
+END -- hb4
+END -- page02
+Page page03(text=%"Page03")
+Grid gr845
+{
+
+                            [shbud02              ]
+ PO No.                     [shb28                 ]
+ Goods Receiving No.        [shb29                 ]
+ Subcontr.Store-in Note No. [shb14                 ]
+ Line No.                   [shb15                 ]
+ Material Requisite No.     [shb13                 ]
+
+
+
+
+}
+END -- gr845
+END -- page03
+Page Page1(text=%"User Defined Field")
+Grid gru47
+{
+ userdefined_field01[shbud01                       ] userdefined_field07[shbud07        ] userdefined_field13[shbud13        ]
+                    [                              ] userdefined_field08[shbud08        ] userdefined_field14[shbud14        ]
+                                                     userdefined_field09[shbud09        ] userdefined_field15[shbud15        ]
+ userdefined_field03[shbud03        ]                userdefined_field10[shbud10        ]
+ userdefined_field04[shbud04        ]                userdefined_field11[shbud11        ]
+ userdefined_field05[shbud05        ]                userdefined_field12[shbud12        ]
+ userdefined_field06[shbud06        ]
+}
+END -- gru47
+END -- Page1
+END -- folder02
+Table s_shc
+{
+[shc|shc04 |qce0|qce03                             |shc05     |shc012    |shc06      |sgm04       ]
+[shc|shc04 |qce0|qce03                             |shc05     |shc012    |shc06      |sgm04       ]
+[shc|shc04 |qce0|qce03                             |shc05     |shc012    |shc06      |sgm04       ]
+[shc|shc04 |qce0|qce03                             |shc05     |shc012    |shc06      |sgm04       ]
+[shc|shc04 |qce0|qce03                             |shc05     |shc012    |shc06      |sgm04       ]
+[shc|shc04 |qce0|qce03                             |shc05     |shc012    |shc06      |sgm04       ]
+[shc|shc04 |qce0|qce03                             |shc05     |shc012    |shc06      |sgm04       ]
+[shc|shc04 |qce0|qce03                             |shc05     |shc012    |shc06      |sgm04       ]
+[shc|shc04 |qce0|qce03                             |shc05     |shc012    |shc06      |sgm04       ]
+[shc|shc04 |qce0|qce03                             |shc05     |shc012    |shc06      |sgm04       ]
+
+}
+END -- s_shc
+Grid gr846
+{
+ ---------- Rows [cnt   ] ----------
+
+
+}
+END -- gr846
+END -- vb3
+END -- asft730
+
+TABLES
+shc_file,
+shb_file,
+sgm_file
+ATTRIBUTES
+ButtonEdit shb01=shb_file.shb01, action=controlp, tabIndex=1, not null, required, image="zoom", comment=%"<^P>Qry Document Property";
+ButtonEdit shb04=shb_file.shb04, action=controlp, tabIndex=2, not null, required, image="zoom", comment=%"<^P>Qry Employee    ";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=3, noEntry;
+ButtonEdit shb16=shb_file.shb16, action=controlp, tabIndex=4, not null, required, image="zoom", comment=%"<^P>Qry Run Card";
+ButtonEdit shb05=shb_file.shb05, action=controlp, tabIndex=5, noEntry, image="zoom", comment=%"<^P>Qry Work No";
+ButtonEdit shb012=shb_file.shb012, action=controlp, tabIndex=6, not null, required, image="zoom", comment=%"<^P>Qry Task #  ";
+Edit ecu014=formonly.ecu014 type CHAR, tabIndex=7, noEntry;
+ButtonEdit shb081=shb_file.shb081, action=controlp, tabIndex=8, not null, required, image="zoom", comment=%"<^P>Qry Task #  ";
+Edit shb082=shb_file.shb082, tabIndex=9, noEntry;
+Edit shb06=shb_file.shb06, tabIndex=10, noEntry;
+ComboBox shbconf=shb_file.shbconf, tabIndex=77, default = "N", noEntry, not null, items=(("N", %"Cancel"),("Y", %"Confirm"),("X", %"Void"));
+IMAGE imgmks=formonly.imgmksg type CHAR, sizePolicy=dynamic, width = 6 characters, height = 2 characters;
+Edit shb10=shb_file.shb10, tabIndex=11, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=12, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=13, noEntry;
+Edit shb25=shb_file.shb25, tabIndex=14, noEntry;
+Edit shbuser=shb_file.shbuser, tabIndex=15, noEntry;
+Edit shbmodu=shb_file.shbmodu, tabIndex=16, noEntry;
+Edit shbgrup=shb_file.shbgrup, tabIndex=17, noEntry;
+DateEdit shbdate=shb_file.shbdate, tabIndex=18, noEntry;
+Edit shboriu=shb_file.shboriu, tabIndex=19, noEntry;
+Edit shborig=shb_file.shborig, tabIndex=20, noEntry;
+ButtonEdit shb08=shb_file.shb08, action=controlp, tabIndex=21, not null, required, image="zoom", comment=%"<^P>Qry Shift";
+ButtonEdit shb07=shb_file.shb07, action=controlp, tabIndex=22, not null, required, image="zoom", comment=%"<^P>Qry Work Center ";
+ButtonEdit shb09=shb_file.shb09, action=controlp, tabIndex=23, image="zoom", comment=%"<^P>Qry Machine #";
+DateEdit shb02=shb_file.shb02, tabIndex=24, not null, required;
+Edit shb021=shb_file.shb021, tabIndex=25, not null, required, picture="XX:XX";
+DateEdit shb03=shb_file.shb03, tabIndex=26, not null, required;
+Edit shb031=shb_file.shb031, tabIndex=27, not null, required, picture="XX:XX";
+Edit shb032=shb_file.shb032, tabIndex=28, not null, required;
+Edit shb033=shb_file.shb033, tabIndex=29, not null, required;
+DateEdit shb32=shb_file.shb32, tabIndex=78, not null, required;
+Edit shb111=shb_file.shb111, tabIndex=30, not null, required;
+Edit shb115=shb_file.shb115, tabIndex=31, not null, required;
+Edit shb112=shb_file.shb112, tabIndex=32, not null, required;
+Edit shb113=shb_file.shb113, tabIndex=33, not null, required;
+ButtonEdit shb121=shb_file.shb121, action=controlp, tabIndex=34, image="zoom", comment=%"<^P> Qry W/O Routing S/N";
+ButtonEdit shb12=shb_file.shb12, action=controlp, tabIndex=35, image="zoom", comment=%"<^P> Qry W/O Routing S/N";
+Edit shb114=shb_file.shb114, tabIndex=36, not null, required;
+Label unit:unit, text=%"unit";
+Edit shb34=shb_file.shb34, tabIndex=79, noEntry;
+Edit wip=formonly.wip type CHAR, tabIndex=37, noEntry;
+Edit pqc=formonly.pqc type CHAR, tabIndex=38, noEntry;
+Edit tot_pqc=formonly.tot_pqc type CHAR, tabIndex=39, noEntry;
+CheckBox sgm54=sgm_file.sgm54, tabIndex=40, text=%"Check in", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox shb31=shb_file.shb31, tabIndex=42, text=%"This Routing is Subcontracted?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox shb30=shb_file.shb30, tabIndex=44, text=%"Auto Daily Report?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sgm53=sgm_file.sgm53, tabIndex=41, text=%"PQC", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox shb26=shb_file.shb26, tabIndex=43, text=%"Next Routing is Subcontracted?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit shb27=shb_file.shb27, action=controlp, tabIndex=45, noEntry, image="zoom";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=46, noEntry;
+ButtonEdit shb21=shb_file.shb21, action=controlp, tabIndex=47, noEntry, image="zoom.png";
+ButtonEdit shb22=shb_file.shb22, action=controlp, tabIndex=48, noEntry, image="zoom.png";
+CheckBox shbud02=shb_file.shbud02, tabIndex=80, text=%"shb_file.shbud02";
+ButtonEdit shb28=shb_file.shb28, action=controlp, tabIndex=49, noEntry, image="zoom";
+ButtonEdit shb29=shb_file.shb29, action=controlp, tabIndex=50, noEntry, image="zoom";
+ButtonEdit shb14=shb_file.shb14, action=controlp, tabIndex=51, not null, required, image="zoom", comment=%"<^P> Query";
+ButtonEdit shb15=shb_file.shb15, action=controlp, tabIndex=52, image="zoom", comment=%"<^P> Query";
+ButtonEdit shb13=shb_file.shb13, action=controlp, tabIndex=53, image="zoom", comment=%"<^P> Qry Document Property";
+TextEdit shbud01=shb_file.shbud01, tabIndex=63;
+Edit shbud07=shb_file.shbud07, tabIndex=64;
+DateEdit shbud13=shb_file.shbud13, tabIndex=65;
+Edit shbud08=shb_file.shbud08, tabIndex=66;
+DateEdit shbud14=shb_file.shbud14, tabIndex=67;
+Edit shbud09=shb_file.shbud09, tabIndex=68;
+DateEdit shbud15=shb_file.shbud15, tabIndex=69;
+Edit shbud03=shb_file.shbud03, tabIndex=70;
+Edit shbud10=shb_file.shbud10, tabIndex=71;
+Edit shbud04=shb_file.shbud04, tabIndex=72;
+Edit shbud11=shb_file.shbud11, tabIndex=73;
+Edit shbud05=shb_file.shbud05, tabIndex=74;
+Edit shbud12=shb_file.shbud12, tabIndex=75;
+Edit shbud06=shb_file.shbud06, tabIndex=76;
+Edit shc=shc_file.shc03, tabIndex=54, title=%"Ln#", not null, required;
+ButtonEdit shc04=shc_file.shc04, action=controlp, tabIndex=55, title=%"Flaw", not null, required, image="zoom", comment=%"<^P>Qry Reason Code";
+Edit qce0=formonly.qce02 type CHAR, tabIndex=56, title=%"Code", noEntry;
+Edit qce03=formonly.qce03 type CHAR, tabIndex=57, title=%"Flaw Description", noEntry;
+Edit shc05=shc_file.shc05, tabIndex=58, title=%"Qty", not null, required;
+ButtonEdit shc012=shc_file.shc012, action=controlp, tabIndex=59, title=%"Routing No.", not null, required, image="zoom";
+ButtonEdit shc06=shc_file.shc06, action=controlp, tabIndex=60, title=%"Responsible", not null, required, image="zoom", comment=%"<^P> Qry W/O Routing S/N";
+Edit sgm04=sgm_file.sgm04, tabIndex=61, title=%"Routing S/N", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=62, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_shc(shc_file.shc03,shc_file.shc04,formonly.qce02,formonly.qce03,shc_file.shc05,shc_file.shc012,shc_file.shc06,sgm_file.sgm04)
+SCREEN RECORD Undefined(shb_file.shb01,shb_file.shb04,formonly.gen02,shb_file.shb16,shb_file.shb05,shb_file.shb012,formonly.ecu014,shb_file.shb081,shb_file.shb082,shb_file.shb06,shb_file.shb10,formonly.ima02,formonly.ima021,shb_file.shb25,shb_file.shbuser,shb_file.shbmodu,shb_file.shbgrup,shb_file.shbdate,shb_file.shboriu,shb_file.shborig,shb_file.shb08,shb_file.shb07,shb_file.shb09,shb_file.shb02,shb_file.shb021,shb_file.shb03,shb_file.shb031,shb_file.shb032,shb_file.shb033,shb_file.shb111,shb_file.shb115,shb_file.shb112,shb_file.shb113,shb_file.shb121,shb_file.shb12,shb_file.shb114,formonly.wip,formonly.pqc,formonly.tot_pqc,sgm_file.sgm54,shb_file.shb31,shb_file.shb30,sgm_file.sgm53,shb_file.shb26,shb_file.shb27,formonly.pmc03,shb_file.shb21,shb_file.shb22,shb_file.shb28,shb_file.shb29,shb_file.shb14,shb_file.shb15,shb_file.shb13,formonly.cnt,shb_file.shbud01,shb_file.shbud07,shb_file.shbud13,shb_file.shbud08,shb_file.shbud14,shb_file.shbud09,shb_file.shbud15,shb_file.shbud03,shb_file.shbud10,shb_file.shbud04,shb_file.shbud11,shb_file.shbud05,shb_file.shbud12,shb_file.shbud06,formonly.imgmksg,shb_file.shbconf,shb_file.shb32,shb_file.shb34,shb_file.shbud02)
+END -- INSTRUCTIONS
+

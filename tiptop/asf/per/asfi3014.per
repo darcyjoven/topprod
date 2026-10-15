@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi3014.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Query Comp.Grp")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr466
+{
+ <G group01                                           >
+  Component Group     [boa02     ]
+  Line No.            [cn1       ]
+ <                                                    >
+
+}
+END -- gr466
+END -- page01
+Page info(text="Info")
+Grid gr467
+{
+ <G grpinfo                       >
+  Retrieve Rows       [cn2       ]
+  Detail Counts       [cn3       ]
+ <                                >
+
+}
+END -- gr467
+END -- info
+END -- folder01
+Table s_boa2
+{
+[boa03                 |ima02                           |boa04    |boa05 ]
+[boa03                 |ima02                           |boa04    |boa05 ]
+[boa03                 |ima02                           |boa04    |boa05 ]
+[boa03                 |ima02                           |boa04    |boa05 ]
+[boa03                 |ima02                           |boa04    |boa05 ]
+[boa03                 |ima02                           |boa04    |boa05 ]
+[boa03                 |ima02                           |boa04    |boa05 ]
+[boa03                 |ima02                           |boa04    |boa05 ]
+[boa03                 |ima02                           |boa04    |boa05 ]
+[boa03                 |ima02                           |boa04    |boa05 ]
+
+}
+END -- s_boa2
+END -- VBox1
+END -- asfi3014
+
+TABLES
+boa_file
+ATTRIBUTES
+Group group01:group01;
+Edit boa02=boa_file.boa02, tabIndex=1, noEntry;
+Edit cn1=formonly.cn1 type SMALLINT, tabIndex=2, noEntry;
+Group grpinfo:grpinfo;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=4, noEntry;
+Edit boa03=boa_file.boa03, tabIndex=5, title="Component No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=6, title="Part Name Specification", noEntry;
+Edit boa04=boa_file.boa04, tabIndex=7, title="Task No.", noEntry;
+Edit boa05=boa_file.boa05, tabIndex=8, title="Unit", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_boa2(boa_file.boa03,formonly.ima02,boa_file.boa04,boa_file.boa05)
+SCREEN RECORD Undefined(boa_file.boa02,formonly.cn1,formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

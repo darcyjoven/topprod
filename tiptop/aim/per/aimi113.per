@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi113.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi113")
+VBox VBox1
+Folder pc538
+Page page01(text="Main")
+Grid gr2992
+{
+ <G group01                                                        >
+  Item Group Code     [imz01     ]                    [imgmksg]
+  Description         [imz02                         ][       ]
+  Source Code         [imz08     ]
+  Inventory Unit      [imz25     ]
+  Menu No.            [imz03               ]
+ <                                                                 >
+ <G group02                                                        >
+  Cost Center                       [imz34     ][smh02            ]
+  Direct Material Cost Items        [imz87     ][smg02_1          ]
+  Indirect Material Cost Items      [imz872    ][smg02_2          ]
+  Indirect Labor Cost Items         [imz874    ][smg02_3          ]
+  Indirect Material Apportion.Ratio [imz871    ]
+  Indirect Labor Apportion.Ratio    [imz873    ]
+
+
+ <                                                                 >
+
+}
+END -- gr2992
+END -- page01
+Page info(text="Info")
+Grid gr2993
+{
+ Record Owner        [imzuser   ] Last Modified by    [imzmodu   ] Data Valid Code     [imzacti   ]
+ Department          [imzgrup   ] Create/Modify Date  [imzdate   ]
+ Record Orig.        [imzoriu   ]
+ Dept Orig.          [imzorig   ]
+}
+END -- gr2993
+END -- info
+END -- pc538
+Grid gr2994
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2994
+END -- VBox1
+END -- aimi113
+
+TABLES
+imz_file
+ATTRIBUTES
+Group group01:group01;
+Edit imz01=imz_file.imz01, tabIndex=1, noEntry, not null, required;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit imz02=imz_file.imz02, tabIndex=3, noEntry;
+Edit imz08=imz_file.imz08, tabIndex=4, noEntry;
+Edit imz25=imz_file.imz25, tabIndex=5, noEntry;
+Edit imz03=imz_file.imz03, tabIndex=6, noEntry;
+Group group02:group02;
+ButtonEdit imz34=imz_file.imz34, action=controlp, tabIndex=7, image="zoom", comment="<^P> Qry Cost center";
+Edit smh02=formonly.smh02 type CHAR, tabIndex=22, noEntry;
+ButtonEdit imz87=imz_file.imz87, action=controlp, tabIndex=8, image="zoom", comment="<^P> Qry Cost Items";
+Edit smg02_1=formonly.smg02_1 type CHAR, tabIndex=9, noEntry;
+ButtonEdit imz872=imz_file.imz872, action=controlp, tabIndex=10, image="zoom", comment="<^P> Qry Cost Items";
+Edit smg02_2=formonly.smg02_2 type CHAR, tabIndex=11, noEntry;
+ButtonEdit imz874=imz_file.imz874, action=controlp, tabIndex=12, image="zoom", comment="<^P> Qry Cost Items";
+Edit smg02_3=formonly.smg02_3 type CHAR, tabIndex=13, noEntry;
+Edit imz871=imz_file.imz871, tabIndex=14, not null, required;
+Edit imz873=imz_file.imz873, tabIndex=15, not null, required;
+Edit imzuser=imz_file.imzuser, tabIndex=16, noEntry;
+Edit imzmodu=imz_file.imzmodu, tabIndex=17, noEntry;
+Edit imzacti=imz_file.imzacti, tabIndex=18, noEntry, upShift;
+Edit imzgrup=imz_file.imzgrup, tabIndex=19, noEntry;
+DateEdit imzdate=imz_file.imzdate, tabIndex=20, noEntry;
+Edit imzoriu=imz_file.imzoriu, tabIndex=501, noEntry;
+Edit imzorig=imz_file.imzorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(imz_file.imz01,formonly.imgmksg,imz_file.imz02,imz_file.imz08,imz_file.imz25,imz_file.imz03,imz_file.imz34,formonly.smh02,imz_file.imz87,formonly.smg02_1,imz_file.imz872,formonly.smg02_2,imz_file.imz874,formonly.smg02_3,imz_file.imz871,imz_file.imz873,imz_file.imzuser,imz_file.imzmodu,imz_file.imzacti,imz_file.imzgrup,imz_file.imzdate,imz_file.imzoriu,imz_file.imzorig,formonly.cnt)
+END -- INSTRUCTIONS
+

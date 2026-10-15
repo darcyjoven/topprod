@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqci110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqci110")
+VBox vb5
+Folder pc9
+Page Page16(text=%"Page01")
+Table s_qcb
+{
+[qcb01     |qcb02   |qcb03       |qcb04              |qcb05  |qcb06 ]
+[qcb01     |qcb02   |qcb03       |qcb04              |qcb05  |qcb06 ]
+[qcb01     |qcb02   |qcb03       |qcb04              |qcb05  |qcb06 ]
+[qcb01     |qcb02   |qcb03       |qcb04              |qcb05  |qcb06 ]
+[qcb01     |qcb02   |qcb03       |qcb04              |qcb05  |qcb06 ]
+[qcb01     |qcb02   |qcb03       |qcb04              |qcb05  |qcb06 ]
+[qcb01     |qcb02   |qcb03       |qcb04              |qcb05  |qcb06 ]
+[qcb01     |qcb02   |qcb03       |qcb04              |qcb05  |qcb06 ]
+[qcb01     |qcb02   |qcb03       |qcb04              |qcb05  |qcb06 ]
+[qcb01     |qcb02   |qcb03       |qcb04              |qcb05  |qcb06 ]
+
+}
+END -- s_qcb
+END -- Page16
+END -- pc9
+Grid gr11
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr11
+END -- vb5
+END -- aqci110
+
+TABLES
+qcb_file
+ATTRIBUTES
+ComboBox qcb01=qcb_file.qcb01, tabIndex=1, title="QC Degree", not null, required, upShift, items=(("N", %"Normal QC"),("T", %"Strict"),("R", %"Reduced-Qty QC"));
+Edit qcb02=qcb_file.qcb02, tabIndex=2, title="AQL", not null, required;
+Edit qcb03=qcb_file.qcb03, tabIndex=3, title="Sample Code", not null, required, upShift;
+Edit qcb04=qcb_file.qcb04, tabIndex=4, title="Adjust Sample Code", not null, required, upShift;
+Edit qcb05=qcb_file.qcb05, tabIndex=5, title="Accept", not null, required;
+Edit qcb06=qcb_file.qcb06, tabIndex=6, title="Reject", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcb(qcb_file.qcb01,qcb_file.qcb02,qcb_file.qcb03,qcb_file.qcb04,qcb_file.qcb05,qcb_file.qcb06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,62 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi113.per created Wed Jan 23 05:30:31 2008
+-- File created from axdi113.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi113")
+-- GRID
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1559
+      PAGE page01( TEXT="Main")
+        GRID gr7755
+        {
+         Vehicle No.         [aa0       ]
+         Line no             [aa1       ]
+         Date                [aa2       ]
+         Maintain Item       [aa3       ] [aa4                 ]
+         Matter Description  [aa5                                     ]
+                             [                                        ]
+                             [                                        ]
+         Result of Dispose   [aa6                                     ]
+                             [                                        ]
+                             [                                        ]
+         Person Of Dispose   [aa7       ] [aa8       ]
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    GRID gr7756
+    {
+     ----------Rows [aa9   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES obx_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=obx_file.obx01, ACTION=controlp, COMMENT="KEY Field,No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=1;
+  EDIT aa1=obx_file.obx02, COMMENT="No Blank/Repeated!", NOT NULL, REQUIRED, TABINDEX=2;
+  DATEEDIT aa2=obx_file.obx03, NOT NULL, REQUIRED, TABINDEX=3;
+  BUTTONEDIT aa3=obx_file.obx04, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=4;
+  EDIT aa4=FORMONLY.obu02, TABINDEX=5;
+  TEXTEDIT aa5=obx_file.obx05, TABINDEX=6;
+  TEXTEDIT aa6=obx_file.obx08, TABINDEX=7;
+  BUTTONEDIT aa7=obx_file.obx11, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=8;
+  EDIT aa8=FORMONLY.gen02, NOENTRY, TABINDEX=9;
+  EDIT aa9=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=10;
+END

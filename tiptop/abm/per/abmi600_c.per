@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi600_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi600_c")
+VBox VBox1
+Grid gr743
+{
+ <G group01                                                                                                         >
+  Original Master Item No. [old_no                        ]   Original Alternate Code      [old_bma06           ]
+  New Master Item No       [new_no                        ]   New Alternate Code           [new_bma06           ]
+  Expiry Date              [ans_2       ]
+ <                                                                                                                  >
+ <G group02                                      >
+ [ans_1                                         ]
+ <                                               >
+ <G group03                                      >
+  Effective Date           [ef_date     ]
+ <                                               >
+ <G group04                                      >
+ [ans_3                                         ]
+ [ans_31                                        ]
+ [ans_4                                         ]
+ [ans_5                                         ]
+ <                                               >
+
+}
+END -- gr743
+END -- VBox1
+END -- abmi600_c
+
+ATTRIBUTES
+Group group01:group01;
+Edit old_no=formonly.old_no type CHAR, tabIndex=1, not null, required;
+Edit old_bma06=formonly.old_bma06 type CHAR, tabIndex=2;
+ButtonEdit new_no=formonly.new_no type VARCHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit new_bma06=formonly.new_bma06 type CHAR, tabIndex=4;
+DateEdit ans_2=formonly.ans_2 type DATE, tabIndex=5;
+Group group02:group02, text="Effective Date after Copied";
+RadioGroup ans_1=formonly.ans_1 type CHAR, tabIndex=6, not null, required, items=(("1", "Original Eff.Date"),("2", "System Date"),("3", "Enter"));
+Group group03:group03;
+DateEdit ef_date=formonly.ef_date type DATE, tabIndex=7;
+Group group04:group04;
+CheckBox ans_3=formonly.ans_3 type CHAR, tabIndex=8, text="Copy Description?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ans_31=formonly.ans_31 type CHAR, tabIndex=9, text="Copy Insert Location?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ans_4=formonly.ans_4 type CHAR, tabIndex=10, text="Copy Component Brand?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ans_5=formonly.ans_5 type CHAR, tabIndex=11, text="Copy REP/SUB Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.old_no,formonly.old_bma06,formonly.new_no,formonly.new_bma06,formonly.ans_2,formonly.ans_1,formonly.ef_date,formonly.ans_3,formonly.ans_31,formonly.ans_4,formonly.ans_5)
+END -- INSTRUCTIONS
+

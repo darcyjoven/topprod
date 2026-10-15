@@ -1,0 +1,166 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmt321.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmt321")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+Grid gr1003
+{
+ Agent Cust    [oga1016   ]            [ogaconf  ]           [ogapost ]
+ Delivery Date [oga02     ]
+
+
+
+}
+END -- gr1003
+END -- page01
+Page grhide(text=%"Retail Circulation Data")
+Group gb9_1
+HBox hb15
+Grid gr12_1
+{
+ Sales Institution  [oga83           |oga83_desc    ]
+ Picking Institution[oga84           |oga84_desc    ]
+ Balance Type       [oga85           ]
+ Customer No.       [oga86           ]
+ Card No.           [oga87           ]
+ Institution        [ogaplant        |ogaplant_desc ]
+
+
+
+
+
+}
+END -- gr12_1
+Grid gr14_1
+{
+ Customer Name    [oga88          ]
+ Telephone        [oga89          ]
+ Certificate Type [oga90          ]
+ Certificate No.  [oga91          ]
+ Gift Release No. [oga92          ]
+ Rebate Coupon No.[oga93          ]
+
+
+
+
+
+}
+END -- gr14_1
+Grid gr13_1
+{
+[oga94         ]
+ Current Scores        [oga95           ]
+ Cash Register Code    [oga96           ]
+ Transaction Serial No.[oga97           ]
+ Confirm Staff         [ogaconu         |ogaconu_de]
+ Confirm Date          [ogacond     ]
+ Confirm Time          [ogacont     ]
+
+
+
+
+}
+END -- gr13_1
+END -- hb15
+END -- gb9_1
+END -- grhide
+END -- folder01
+Table s_oga_b
+{
+[oga03_b   |oga032_b  |oga04_b   |occ02_b   |oga00_b   |oga01_b         |oga02_b |oga16_b         |oea02_b  |oea10_b         |ogaco|ogap]
+[oga03_b   |oga032_b  |oga04_b   |occ02_b   |oga00_b   |oga01_b         |oga02_b |oga16_b         |oea02_b  |oea10_b         |ogaco|ogap]
+[oga03_b   |oga032_b  |oga04_b   |occ02_b   |oga00_b   |oga01_b         |oga02_b |oga16_b         |oea02_b  |oea10_b         |ogaco|ogap]
+[oga03_b   |oga032_b  |oga04_b   |occ02_b   |oga00_b   |oga01_b         |oga02_b |oga16_b         |oea02_b  |oea10_b         |ogaco|ogap]
+[oga03_b   |oga032_b  |oga04_b   |occ02_b   |oga00_b   |oga01_b         |oga02_b |oga16_b         |oea02_b  |oea10_b         |ogaco|ogap]
+[oga03_b   |oga032_b  |oga04_b   |occ02_b   |oga00_b   |oga01_b         |oga02_b |oga16_b         |oea02_b  |oea10_b         |ogaco|ogap]
+
+}
+END -- s_oga_b
+Table s_ogb_c
+{
+[ogb03_c|ogb04_c             |ogb06_c             |ima021_c            |oeb15_c       |oeb16_c     |ogb05_c|ogb12_c     ]
+[ogb03_c|ogb04_c             |ogb06_c             |ima021_c            |oeb15_c       |oeb16_c     |ogb05_c|ogb12_c     ]
+[ogb03_c|ogb04_c             |ogb06_c             |ima021_c            |oeb15_c       |oeb16_c     |ogb05_c|ogb12_c     ]
+[ogb03_c|ogb04_c             |ogb06_c             |ima021_c            |oeb15_c       |oeb16_c     |ogb05_c|ogb12_c     ]
+[ogb03_c|ogb04_c             |ogb06_c             |ima021_c            |oeb15_c       |oeb16_c     |ogb05_c|ogb12_c     ]
+[ogb03_c|ogb04_c             |ogb06_c             |ima021_c            |oeb15_c       |oeb16_c     |ogb05_c|ogb12_c     ]
+
+}
+END -- s_ogb_c
+Grid gr1004
+{
+ ---------- Rows [cntb  ] / [cntc  ] ----------[view][retu]
+
+}
+END -- gr1004
+END -- vb6
+END -- atmt321
+
+TABLES
+oga_file
+ATTRIBUTES
+ButtonEdit oga1016=oga_file.oga1016, action=controlp, tabIndex=1, image="zoom";
+CheckBox ogaconf=oga_file.ogaconf, tabIndex=2, text="Confirm", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ogapost=oga_file.ogapost, tabIndex=3, text="Post", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit oga02=oga_file.oga02, tabIndex=4;
+ButtonEdit oga83=oga_file.oga83, action=controlp, tabIndex=27, image="zoom.png";
+Edit oga83_desc=formonly.oga83_desc type CHAR, tabIndex=28, noEntry;
+ButtonEdit oga84=oga_file.oga84, action=controlp, tabIndex=29, image="zoom.png";
+Edit oga84_desc=formonly.oga84_desc type CHAR, tabIndex=30, noEntry;
+ComboBox oga85=oga_file.oga85, tabIndex=31, not null, items=(("1", "Cash Customer"),("2", "Account Customer"));
+ButtonEdit oga86=oga_file.oga86, action=controlp, tabIndex=32, image="zoom.png";
+ButtonEdit oga87=oga_file.oga87, action=controlp, tabIndex=33, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+ButtonEdit ogaplant=oga_file.ogaplant, action=controlp, tabIndex=34, image="zoom.png";
+Edit ogaplant_desc=formonly.ogaplant_desc type CHAR, tabIndex=35, noEntry;
+Edit oga88=oga_file.oga88, tabIndex=36;
+Edit oga89=oga_file.oga89, tabIndex=37;
+Edit oga90=oga_file.oga90, tabIndex=38;
+Edit oga91=oga_file.oga91, tabIndex=39;
+Edit oga92=oga_file.oga92, tabIndex=40, noEntry;
+Edit oga93=oga_file.oga93, tabIndex=41, noEntry;
+CheckBox oga94=oga_file.oga94, tabIndex=42, default = "N", text="POS Sales?", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit oga95=oga_file.oga95, tabIndex=43, noEntry;
+Edit oga96=oga_file.oga96, tabIndex=45, noEntry;
+Edit oga97=oga_file.oga97, tabIndex=44;
+ButtonEdit ogaconu=oga_file.ogaconu, action=controlp, tabIndex=46, noEntry, image="zoom.png";
+Edit ogaconu_de=formonly.ogaconu_desc_1 type CHAR, tabIndex=47, noEntry;
+DateEdit ogacond=oga_file.ogacond, tabIndex=48, noEntry;
+TimeEdit ogacont=oga_file.ogacont, tabIndex=49, noEntry;
+Edit oga03_b=formonly.oga03_b type CHAR, tabIndex=5, title="Cust No.", noEntry;
+Edit oga032_b=formonly.oga032_b type CHAR, tabIndex=6, title="Cust Abbr", noEntry;
+Edit oga04_b=formonly.oga04_b type CHAR, tabIndex=7, title="Ship Cust", noEntry;
+Edit occ02_b=formonly.occ02_b type CHAR, tabIndex=8, title="Abbr", noEntry;
+ComboBox oga00_b=formonly.oga00_b type CHAR, tabIndex=9, title="Ship Type", noEntry, items=(("1", %"Normal Delivery"),("2", %"Exchange and Deliver"),("3", %"to Offs.Warehouse"),("4", %"from Off.Warehouse"),("6", %"Transfer Delivery"),("7", %"Consign Delivery"));
+Edit oga01_b=formonly.oga01_b type CHAR, tabIndex=10, title="Delivery No.", noEntry;
+DateEdit oga02_b=formonly.oga02_b type CHAR, tabIndex=11, title="Del. Dt";
+Edit oga16_b=formonly.oga16_b type CHAR, tabIndex=12, title="Order No.", noEntry;
+DateEdit oea02_b=formonly.oea02_b type CHAR, tabIndex=13, title="Order Dt", noEntry;
+Edit oea10_b=formonly.oea10_b type CHAR, tabIndex=14, title="Cust Order No.", noEntry;
+CheckBox ogaco=formonly.ogaconf_b type CHAR, tabIndex=15, title="Conf", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ogap=formonly.ogapost_b type CHAR, tabIndex=16, title="Post", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit ogb03_c=formonly.ogb03_c type CHAR, tabIndex=17, title="Line #", noEntry;
+Edit ogb04_c=formonly.ogb04_c type CHAR, tabIndex=18, title="Item No.", noEntry;
+Edit ogb06_c=formonly.ogb06_c type CHAR, tabIndex=19, title="Part Name", noEntry;
+Edit ima021_c=formonly.ima021_c type CHAR, tabIndex=20, title="Specification", noEntry;
+DateEdit oeb15_c=formonly.oeb15_c type CHAR, tabIndex=21, title="Agreed Del.Dt", noEntry;
+DateEdit oeb16_c=formonly.oeb16_c type CHAR, tabIndex=22, title="Sche Del.Dt", noEntry;
+Edit ogb05_c=formonly.ogb05_c type CHAR, tabIndex=23, title="Unit", noEntry;
+Edit ogb12_c=formonly.ogb12_c type CHAR, tabIndex=24, title="Qty", noEntry;
+Edit cntb=formonly.cntb type SMALLINT, tabIndex=25, noEntry;
+Edit cntc=formonly.cntc type SMALLINT, tabIndex=26, noEntry;
+Button view:view, text="View";
+Button retu:return, text="Return";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oga_b(formonly.oga03_b,formonly.oga032_b,formonly.oga04_b,formonly.occ02_b,formonly.oga00_b,formonly.oga01_b,formonly.oga02_b,formonly.oga16_b,formonly.oea02_b,formonly.oea10_b,formonly.ogaconf_b,formonly.ogapost_b)
+SCREEN RECORD s_ogb_c(formonly.ogb03_c,formonly.ogb04_c,formonly.ogb06_c,formonly.ima021_c,formonly.oeb15_c,formonly.oeb16_c,formonly.ogb05_c,formonly.ogb12_c)
+SCREEN RECORD Undefined(oga_file.oga1016,oga_file.ogaconf,oga_file.ogapost,oga_file.oga02,oga_file.oga83,formonly.oga83_desc,oga_file.oga84,formonly.oga84_desc,oga_file.oga85,oga_file.oga86,oga_file.oga87,oga_file.ogaplant,formonly.ogaplant_desc,oga_file.oga88,oga_file.oga89,oga_file.oga90,oga_file.oga91,oga_file.oga92,oga_file.oga93,oga_file.oga94,oga_file.oga95,oga_file.oga96,oga_file.oga97,oga_file.ogaconu,formonly.ogaconu_desc_1,oga_file.ogacond,oga_file.ogacont,formonly.cntb,formonly.cntc)
+END -- INSTRUCTIONS
+

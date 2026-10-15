@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_sql.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_sql")
+VBox VBox1
+Folder pc766
+Page page01(text="Main")
+VBox VBox2
+Grid grid01
+{
+ Sql ID          [zae01     ]
+ ID Explanation  [zae02                         ]
+}
+END -- grid01
+Grid grid02
+{
+ [zae03                                     ]
+ [                                          ]
+ [                                          ]
+ [                                          ]
+ [                                          ]
+ [                                          ]
+ [                                          ]
+ [                                          ]
+ [                                          ]
+ [                                          ]
+}
+END -- grid02
+Table s_zae
+{
+[zae|zae05|zae06          |zae07          |zae08       |zae09     |zae10               |text           ]
+
+}
+END -- s_zae
+END -- VBox2
+END -- page01
+END -- pc766
+END -- VBox1
+END -- p_sql
+
+TABLES
+zae_file
+ATTRIBUTES
+Edit zae01=zae_file.zae01, tabIndex=1, not null, required, comment="KEY Field,No Blank/Repeated!";
+Edit zae02=zae_file.zae02, tabIndex=2;
+TextEdit zae03=zae_file.zae03, tabIndex=3, stretch=x, scrollBars=both, style="fixedFont";
+Edit zae=zae_file.zae04, tabIndex=4, title="No.", noEntry, not null, required, comment="KEY Field,No Blank/Repeated!";
+ComboBox zae05=zae_file.zae05, tabIndex=5, title="Lang", noEntry, not null, required, queryEditable;
+Edit zae06=zae_file.zae06, tabIndex=6, title="ColumnID", noEntry;
+Edit zae07=zae_file.zae07, tabIndex=7, title="ColumnDesc";
+Edit zae08=zae_file.zae08, tabIndex=8, title="NCNo.", not null, required;
+ComboBox zae09=zae_file.zae09, tabIndex=9, title="Type", items=(("1", %"program id"),("2", %"sql id"));
+ButtonEdit zae10=zae_file.zae10, action=controlp, tabIndex=10, title="Content", image="zoom", comment="<^P>Input Field Name";
+Edit text=formonly.text type CHAR, tabIndex=11, title="Content1", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zae(zae_file.zae04,zae_file.zae05,zae_file.zae06,zae_file.zae07,zae_file.zae08,zae_file.zae09,zae_file.zae10,formonly.text)
+SCREEN RECORD Undefined(zae_file.zae01,zae_file.zae02,zae_file.zae03)
+END -- INSTRUCTIONS
+

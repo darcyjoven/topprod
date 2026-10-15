@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci200")
+VBox vb3
+Folder pc555
+Page page01(text="Main")
+Table s_cmw
+{
+[cmw01     |imd02               ]
+[cmw01     |imd02               ]
+[cmw01     |imd02               ]
+[cmw01     |imd02               ]
+[cmw01     |imd02               ]
+[cmw01     |imd02               ]
+[cmw01     |imd02               ]
+[cmw01     |imd02               ]
+[cmw01     |imd02               ]
+[cmw01     |imd02               ]
+
+}
+END -- s_cmw
+END -- page01
+END -- pc555
+Grid gr3045
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3045
+END -- vb3
+END -- axci200
+
+TABLES
+cmw_file
+ATTRIBUTES
+ButtonEdit cmw01=cmw_file.cmw01, action=controlp, tabIndex=1, title="Warehouse#", not null, required, image="zoom.png";
+Edit imd02=formonly.imd02 type VARCHAR, tabIndex=2, title="WareHouse Name", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cmw(cmw_file.cmw01,formonly.imd02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

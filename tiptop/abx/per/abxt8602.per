@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxt8602.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxt8602")
+VBox VBox1
+Grid gr1243
+{
+ <G group01                              >
+  W/O No.       [sfb01           ]
+ <                                       >
+
+}
+END -- gr1243
+Grid gr1244
+{
+ <G group02                                        >
+  Invetory Year[bwb011 ]
+  [dummy01                                         ]
+ <                                                 >
+
+}
+END -- gr1244
+END -- VBox1
+END -- abxt8602
+
+TABLES
+sfb_file,
+bwb_file
+ATTRIBUTES
+Group group01:group01;
+Edit sfb01=sfb_file.sfb01, tabIndex=1;
+Group group02:group02, text="input";
+Edit bwb011=bwb_file.bwb011, tabIndex=2, not null, required;
+Label dummy01:dummy01, text="Data Source:1.W/O Unclosed 2.Issued > Stored-in Sets";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfb_file.sfb01,bwb_file.bwb011)
+END -- INSTRUCTIONS
+

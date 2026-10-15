@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr491.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                             >
+  [label1        ] [azp01                     ]
+  [label5     ]    [ryi01                     ]
+  [label6  ]       [ryd01                     ]
+ <                                                     >
+ <G group3                                             >
+  [label4         ][bdate          |la|edate          ]
+ <                                                     >
+
+}
+END -- Grid1
+Grid gr132
+{
+[more                                     ]
+
+
+}
+END -- gr132
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"QBE1";
+Label label1:Label1, text=%"Logistics Code";
+ButtonEdit azp01=formonly.azp01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Label label5:Label5, text=%"Cashier No.";
+ButtonEdit ryi01=formonly.ryi01 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Label label6:Label6, text=%"Pay Kind";
+ButtonEdit ryd01=formonly.ryd01 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+Group group3:Group3, text=%"Input";
+Label label4:Label4, text=%"Date of payment";
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=3;
+Label la:Label2, text=%"~";
+DateEdit edate=formonly.edate type CHAR, tabIndex=3;
+CheckBox more=formonly.more type CHAR, tabIndex=2, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.bdate,formonly.edate,formonly.more,formonly.ryd01,formonly.ryi01)
+END -- INSTRUCTIONS
+

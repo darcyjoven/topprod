@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi900")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+Grid gr1301
+{
+  Plant No.           [cnz01     ]
+ <G group01                      >
+ [cnz02                        ]
+ [                             ]
+ [                             ]
+ <                               >
+}
+END -- gr1301
+END -- page01
+Page info(text="Info")
+Grid gr1302
+{
+ Record Owner        [cnzuser   ] Last Modified by    [cnzmodu   ]   Data Valid Code     [cnzacti   ]
+ Department          [cnzgrup   ] Create/Modify Date  [cnzdate     ]
+ Record Orig.        [cnzoriu   ]
+ Dept Orig.          [cnzorig   ]
+
+}
+END -- gr1302
+END -- info
+END -- folder01
+Table s_cnz
+{
+[cnz03    |cnz04                         |cnz05                        ]
+[cnz03    |cnz04                         |cnz05                        ]
+[cnz03    |cnz04                         |cnz05                        ]
+[cnz03    |cnz04                         |cnz05                        ]
+[cnz03    |cnz04                         |cnz05                        ]
+[cnz03    |cnz04                         |cnz05                        ]
+[cnz03    |cnz04                         |cnz05                        ]
+[cnz03    |cnz04                         |cnz05                        ]
+[cnz03    |cnz04                         |cnz05                        ]
+[cnz03    |cnz04                         |cnz05                        ]
+}
+END -- s_cnz
+Grid gr1303
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+
+
+}
+END -- gr1303
+END -- vb1
+END -- acoi900
+
+TABLES
+cnz_file
+ATTRIBUTES
+ButtonEdit cnz01=cnz_file.cnz01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank/Repeated! <^P>Qry Plant";
+Group group01:group01, text="Category";
+RadioGroup cnz02=cnz_file.cnz02, tabIndex=2, not null, required, comment="Key Field, No Blank/Repeated!", items=(("1", "Details of Export/Scrap/Sales-Return"),("2", "Details of Import/Warehouse-Return"),("3", "Details of Local Data"));
+Edit cnzuser=cnz_file.cnzuser, tabIndex=3, noEntry;
+Edit cnzmodu=cnz_file.cnzmodu, tabIndex=4, noEntry;
+Edit cnzacti=cnz_file.cnzacti, tabIndex=5, noEntry, upShift;
+Edit cnzgrup=cnz_file.cnzgrup, tabIndex=6, noEntry;
+DateEdit cnzdate=cnz_file.cnzdate, tabIndex=7, noEntry;
+Edit cnzoriu=cnz_file.cnzoriu, tabIndex=501, noEntry;
+Edit cnzorig=cnz_file.cnzorig, tabIndex=502, noEntry;
+Edit cnz03=cnz_file.cnz03, tabIndex=8, title="Line No.", not null, required, comment="Key Field, No Blank/Repeated!";
+Edit cnz04=cnz_file.cnz04, tabIndex=9, title="Condiction", not null, required, scroll;
+Edit cnz05=cnz_file.cnz05, tabIndex=10, title="Description", scroll;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cnz(cnz_file.cnz03,cnz_file.cnz04,cnz_file.cnz05)
+SCREEN RECORD Undefined(cnz_file.cnz01,cnz_file.cnz02,cnz_file.cnzuser,cnz_file.cnzmodu,cnz_file.cnzacti,cnz_file.cnzgrup,cnz_file.cnzdate,cnz_file.cnzoriu,cnz_file.cnzorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

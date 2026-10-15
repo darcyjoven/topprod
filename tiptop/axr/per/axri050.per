@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axri050.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axri050")
+VBox vb2
+Folder pc2
+Page Page2(text=%"Main")
+Table s_ood
+{
+[ood01     |ood01_desc   |ood02     |ood02_desc     |ood03     |ood03_desc     ]
+[ood01     |ood01_desc   |ood02     |ood02_desc     |ood03     |ood03_desc     ]
+[ood01     |ood01_desc   |ood02     |ood02_desc     |ood03     |ood03_desc     ]
+[ood01     |ood01_desc   |ood02     |ood02_desc     |ood03     |ood03_desc     ]
+[ood01     |ood01_desc   |ood02     |ood02_desc     |ood03     |ood03_desc     ]
+
+}
+END -- s_ood
+END -- Page2
+END -- pc2
+Grid gr7
+{
+ ----------Rows[cn2   ]----------
+
+}
+END -- gr7
+END -- vb2
+END -- arti108
+
+TABLES
+ood_file
+ATTRIBUTES
+ButtonEdit ood01=ood_file.ood01, action=controlp, tabIndex=1, title="ood01", not null, required, image="zoom.png";
+Edit ood01_desc=formonly.ood01_desc type CHAR, tabIndex=7, title=%"ood01_desc", noEntry;
+ButtonEdit ood02=ood_file.ood02, action=controlp, tabIndex=2, title="ood02", image="zoom.png";
+Edit ood02_desc=formonly.ood02_desc type CHAR, tabIndex=3, title="ood02_desc", noEntry;
+ButtonEdit ood03=ood_file.ood03, action=controlp, tabIndex=4, title="ood03", image="zoom.png";
+Edit ood03_desc=formonly.ood03_desc type CHAR, tabIndex=5, title="ood03_desc", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ood(ood_file.ood01,formonly.ood01_desc,ood_file.ood02,formonly.ood02_desc,ood_file.ood03,formonly.ood03_desc)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt504.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="Form6")
+VBox vb2
+Folder pc6
+Page Page11(text=%"Basic Data")
+Grid gr18
+{
+
+ Web No.                   [pjk01             |pjj02                                   ]
+ Promotion No.             [pjk02             |pjk03                                   ]      Promotion Status[p]
+ Department Code           [pjk05             |gem02                                                            ]
+ Confirmed By              [pjk29             |gen02     ]
+ Progress Confirmation Date[pjk28             ]
+ Complete Progress %       [pjk08             ]
+ <G gb6                                                                                                        >
+                              [dummy01   ]               [dummy02         ]          [dummy03   ]
+         Planning Progress    [pjk16     ]               [pjk17     ]
+         Reckon Progress      [start_date]               [end_date_e]
+         Real Progress        [pjk18     ]               [pjk19     ]                [pjk24               ]
+
+       -----[dummy04     ] ---------------------------------------------------------------------------------
+
+         Real Progress        [pjk18_u   ]               [pjk19_u   ]                [pjk24_u             ]
+ <                                                                                                             >
+}
+END -- gr18
+END -- Page11
+END -- pc6
+Grid gr20
+{
+
+  -----  Rows[cnt ]/[cn2 ] ------
+
+}
+END -- gr20
+END -- vb2
+END -- apjt504
+
+TABLES
+pjk_file
+ATTRIBUTES
+ButtonEdit pjk01=formonly.pjk01 type CHAR, action=controlp, tabIndex=21, image="zoom.png";
+Edit pjj02=formonly.pjj02 type CHAR, tabIndex=22;
+ButtonEdit pjk02=formonly.pjk02 type VARCHAR, action=controlp, tabIndex=2, image="zoom.png";
+Edit pjk03=pjk_file.pjk03, tabIndex=1;
+ComboBox p=formonly.pjk27 type VARCHAR, tabIndex=17, items=(("0", "Open"),("1", "Approved"),("2", "Frozen"),("3", "Finish"),("4", "Closing"));
+ButtonEdit pjk05=formonly.pjk05 type CHAR, action=controlp, tabIndex=19, image="zoom.png";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=3;
+ButtonEdit pjk29=pjk_file.pjk29, action=controlp, tabIndex=20, image="zoom.png";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=4;
+DateEdit pjk28=pjk_file.pjk28, tabIndex=5;
+Edit pjk08=pjk_file.pjk08, tabIndex=16;
+Group gb6:gb6, text="Progress Info";
+Label dummy01:dummy01, text="Start Date";
+Label dummy02:dummy02, text="Completion Date";
+Label dummy03:dummy03, text="Work Days\n";
+DateEdit pjk16=formonly.pjk16 type DATE, tabIndex=7;
+DateEdit pjk17=formonly.pjk17 type DATE, tabIndex=10;
+DateEdit start_date=formonly.start_date_e type VARCHAR, tabIndex=8;
+DateEdit end_date_e=formonly.end_date_e type CHAR, tabIndex=11;
+DateEdit pjk18=formonly.pjk18 type DATE, tabIndex=9;
+DateEdit pjk19=formonly.pjk19 type DATE, tabIndex=12;
+Edit pjk24=formonly.pjk24 type DECIMAL, tabIndex=6;
+Label dummy04:dummy04, text="This Comfirm";
+DateEdit pjk18_u=formonly.pjk18_u type DATE, tabIndex=14;
+DateEdit pjk19_u=formonly.pjk19_u type DATE, tabIndex=15;
+Edit pjk24_u=formonly.pjk24_u type SMALLINT, tabIndex=13;
+Edit cnt=formonly.cnt type CHAR, tabIndex=18;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=19;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pjk01,formonly.pjj02,formonly.pjk02,pjk_file.pjk03,formonly.pjk27,formonly.pjk05,formonly.gem02,pjk_file.pjk29,formonly.gen02,pjk_file.pjk28,pjk_file.pjk08,formonly.pjk16,formonly.pjk17,formonly.start_date_e,formonly.end_date_e,formonly.pjk18,formonly.pjk19,formonly.pjk24,formonly.pjk18_u,formonly.pjk19_u,formonly.pjk24_u,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

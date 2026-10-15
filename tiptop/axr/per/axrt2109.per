@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt2109.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt2109")
+VBox VBox1
+Folder pc661
+Page page01(text="Main")
+Grid gr2749
+{
+ <G group01                                        >
+ [only_one                       ]
+
+ <                                                 >
+ <G group02                                        >
+  Local Sale/Export      [olc03                ]
+  L/C Receipt #          [olc01           ]
+  L/C Receiving Date QBE [olc02     ]
+  Account Employee QBE   [olcuser             ]
+  Accounts Department    [olcgrup             ]
+ <                                                 >
+
+}
+END -- gr2749
+END -- page01
+END -- pc661
+END -- VBox1
+END -- axrt2109
+
+TABLES
+olc_file
+ATTRIBUTES
+Group group01:group01, text="Option";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, items=(("1", "Generate this Doc only"),("2", "Generate by QBE Condition"));
+Group group02:group02, text="Enter Sales L/C Condition to Gen Entry Sheet";
+ComboBox olc03=olc_file.olc03, tabIndex=2, items=(("1", "Local"),("2", "Export"));
+Edit olc01=olc_file.olc01, tabIndex=3;
+DateEdit olc02=olc_file.olc02, tabIndex=4;
+Edit olcuser=olc_file.olcuser, tabIndex=5;
+Edit olcgrup=olc_file.olcgrup, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,olc_file.olc03,olc_file.olc01,olc_file.olc02,olc_file.olcuser,olc_file.olcgrup)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amm/42f/ammi010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ammi010")
+VBox VBox1
+Folder pc691
+Page page01(text="Main")
+Table s_mmc
+{
+[mmc01          |mmc02               |mmcac]
+[mmc01          |mmc02               |mmcac]
+[mmc01          |mmc02               |mmcac]
+[mmc01          |mmc02               |mmcac]
+[mmc01          |mmc02               |mmcac]
+[mmc01          |mmc02               |mmcac]
+[mmc01          |mmc02               |mmcac]
+[mmc01          |mmc02               |mmcac]
+[mmc01          |mmc02               |mmcac]
+[mmc01          |mmc02               |mmcac]
+
+}
+END -- s_mmc
+END -- page01
+END -- pc691
+Grid gr3740
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3740
+END -- VBox1
+END -- ammi010
+
+TABLES
+mmc_file
+ATTRIBUTES
+Edit mmc01=mmc_file.mmc01, tabIndex=1, title="ProcessingCode", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit mmc02=mmc_file.mmc02, tabIndex=2, title="ProcessingName";
+CheckBox mmcac=mmc_file.mmcacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mmc(mmc_file.mmc01,mmc_file.mmc02,mmc_file.mmcacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

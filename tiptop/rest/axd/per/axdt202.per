@@ -1,0 +1,140 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdt202.per created Wed Jan 23 05:30:46 2008
+-- File created from axdt202.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdt202")
+-- GRID
+-- GRID
+-- HBOX
+-- PAGE
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        HBOX 
+          GRID gr7865
+          {
+           Slip Type           [aa0       ][aa1       ]
+           Transfer-Out No     [aa2               ]
+           Date                [aa3       ]
+           Post Date           [aa4       ]
+           WIP                 [aa5       ]
+           Employee            [aa6       ][aa7       ]
+           Department          [aa8       ][aa9       ]
+           Transfer Flow       [ab0       ]
+           Estimate Arrival DD [ab1       ]
+           Memo                [ab2                           ]
+
+          }
+          END -- GRID
+          GRID gr7866
+          {
+           Status              [ab3       ][ab4       ][ab5    ]
+                               [ab6       ][ab7       ][       ]
+                               [ab8       ]
+                               [ab9       ]
+
+          }
+          END -- GRID
+        END -- HBOX
+      END -- PAGE
+      PAGE info( TEXT="Info")
+        GRID gr7867
+        {
+         Record Owner        [ac0       ]   Last Modified by    [ac1       ]   Data Valid Code     [ac2       ]
+         Department          [ac3       ]   Create/Modify Date  [ac4       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_adg
+    {
+    [ac5       |ac6               |ac7       |ac8                 |ac9                       |ad0                 |ad1         |ad2             |ad3                 |ad4        |ad5                     |ad6    |ad7                 |ad8           |ad9                      |ae0          |ae1                 |ae2                            |ae3               |ae4             ]
+    [ac5       |ac6               |ac7       |ac8                 |ac9                       |ad0                 |ad1         |ad2             |ad3                 |ad4        |ad5                     |ad6    |ad7                 |ad8           |ad9                      |ae0          |ae1                 |ae2                            |ae3               |ae4             ]
+    [ac5       |ac6               |ac7       |ac8                 |ac9                       |ad0                 |ad1         |ad2             |ad3                 |ad4        |ad5                     |ad6    |ad7                 |ad8           |ad9                      |ae0          |ae1                 |ae2                            |ae3               |ae4             ]
+    [ac5       |ac6               |ac7       |ac8                 |ac9                       |ad0                 |ad1         |ad2             |ad3                 |ad4        |ad5                     |ad6    |ad7                 |ad8           |ad9                      |ae0          |ae1                 |ae2                            |ae3               |ae4             ]
+    [ac5       |ac6               |ac7       |ac8                 |ac9                       |ad0                 |ad1         |ad2             |ad3                 |ad4        |ad5                     |ad6    |ad7                 |ad8           |ad9                      |ae0          |ae1                 |ae2                            |ae3               |ae4             ]
+    [ac5       |ac6               |ac7       |ac8                 |ac9                       |ad0                 |ad1         |ad2             |ad3                 |ad4        |ad5                     |ad6    |ad7                 |ad8           |ad9                      |ae0          |ae1                 |ae2                            |ae3               |ae4             ]
+    [ac5       |ac6               |ac7       |ac8                 |ac9                       |ad0                 |ad1         |ad2             |ad3                 |ad4        |ad5                     |ad6    |ad7                 |ad8           |ad9                      |ae0          |ae1                 |ae2                            |ae3               |ae4             ]
+    [ac5       |ac6               |ac7       |ac8                 |ac9                       |ad0                 |ad1         |ad2             |ad3                 |ad4        |ad5                     |ad6    |ad7                 |ad8           |ad9                      |ae0          |ae1                 |ae2                            |ae3               |ae4             ]
+    [ac5       |ac6               |ac7       |ac8                 |ac9                       |ad0                 |ad1         |ad2             |ad3                 |ad4        |ad5                     |ad6    |ad7                 |ad8           |ad9                      |ae0          |ae1                 |ae2                            |ae3               |ae4             ]
+    [ac5       |ac6               |ac7       |ac8                 |ac9                       |ad0                 |ad1         |ad2             |ad3                 |ad4        |ad5                     |ad6    |ad7                 |ad8           |ad9                      |ae0          |ae1                 |ae2                            |ae3               |ae4             ]
+    }
+    END -- TABLE
+    GRID gr7868
+    {
+     ---------- Rows [ae5   ] / [ae6   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adf_file,adg_file
+
+ATTRIBUTES
+  COMBOBOX aa0=adf_file.adf00, NOT NULL, REQUIRED, TABINDEX=1, ITEMS=(("1","In Tran"),("2","Out Tran"),("3","Out Retn"));
+  EDIT aa1=FORMONLY.e, NOENTRY, TABINDEX=2;
+  BUTTONEDIT aa2=adf_file.adf01, ACTION=controlp, COMMENT="<^P>Qry Tr-out No.", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=3;
+  DATEEDIT aa3=adf_file.adf02, NOT NULL, REQUIRED, TABINDEX=4;
+  DATEEDIT aa4=adf_file.adf09, NOT NULL, REQUIRED, TABINDEX=5;
+  BUTTONEDIT aa5=adf_file.adf07, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=6;
+  BUTTONEDIT aa6=adf_file.adf03, ACTION=controlp, COMMENT="<^P>Qry Employee", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=7;
+  EDIT aa7=FORMONLY.gen02, NOENTRY, TABINDEX=8;
+  BUTTONEDIT aa8=adf_file.adf04, ACTION=controlp, COMMENT="<^P>Qry Department", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=9;
+  EDIT aa9=FORMONLY.gem02, NOENTRY, TABINDEX=10;
+  BUTTONEDIT ab0=adf_file.adf05, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", TABINDEX=11;
+  DATEEDIT ab1=adf_file.adf06, TABINDEX=12;
+  EDIT ab2=adf_file.adf08, TABINDEX=13;
+  EDIT ab3=adf_file.adf10, NOENTRY, TABINDEX=14;
+  EDIT ab4=FORMONLY.desc, NOENTRY, TABINDEX=15;
+  IMAGE ab5=FORMONLY.imgmksg, AUTOSCALE, WIDTH=7 CHARACTERS, HEIGHT=2 CHARACTERS;
+  CHECKBOX ab6=adf_file.adfmksg, TEXT="Approve", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=17;
+  EDIT ab7=adf_file.adfsign, NOENTRY, TABINDEX=18;
+  CHECKBOX ab8=adf_file.adfconf, TEXT="Confirm", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=19;
+  CHECKBOX ab9=adf_file.adfpost, TEXT="Post", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=20;
+  EDIT ac0=adf_file.adfuser, NOENTRY, TABINDEX=21;
+  EDIT ac1=adf_file.adfmodu, NOENTRY, TABINDEX=22;
+  EDIT ac2=adf_file.adfacti, NOENTRY, UPSHIFT, TABINDEX=23;
+  EDIT ac3=adf_file.adfgrup, NOENTRY, TABINDEX=24;
+  EDIT ac4=adf_file.adfdate, NOENTRY, TABINDEX=25;
+  EDIT ac5=adg_file.adg02, NOT NULL, REQUIRED, TABINDEX=26, TITLE="Line No";
+  BUTTONEDIT ac6=adg_file.adg03, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=27, TITLE="Application No";
+  EDIT ac7=adg_file.adg04, NOT NULL, REQUIRED, TABINDEX=28, TITLE="Line No";
+  EDIT ac8=adg_file.adg05, NOENTRY, TABINDEX=29, TITLE="Item No.";
+  EDIT ac9=FORMONLY.ima02, NOENTRY, TABINDEX=30, TITLE="Part Name Specification";
+  EDIT ad0=FORMONLY.ima021, NOENTRY, TABINDEX=31, TITLE="Specification";
+  BUTTONEDIT ad1=adg_file.adg06, ACTION=controlp, COMMENT="<^P>Qry Inv Detail Data, <^T>Qry Item/WH Est Data ", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=32, TITLE="Warehouse";
+  BUTTONEDIT ad2=adg_file.adg07, ACTION=controlp, COMMENT="<^P>Qry Inv Detail Data", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=33, TITLE="Locaction";
+  BUTTONEDIT ad3=adg_file.adg08, ACTION=controlp, COMMENT="<^P>Qry Inv Detail Data", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=34, TITLE="Lot No.";
+  EDIT ad4=adg_file.adg09, NOENTRY, TABINDEX=35, TITLE="In-Plant";
+  EDIT ad5=adg_file.adg10, NOENTRY, TABINDEX=36, TITLE="Transfer-in Warehouse";
+  EDIT ad6=adg_file.adg11, NOENTRY, TABINDEX=37, TITLE="Unit";
+  EDIT ad7=adg_file.adg12, NOT NULL, REQUIRED, TABINDEX=38, TITLE="Transfer-Out Qty";
+  BUTTONEDIT ad8=adg_file.adg33, ACTION=controlp, COMMENT="<^P>Qry Details", IMAGE="zoom", NOENTRY, TABINDEX=39, TITLE="Par/Ref Unit";
+  EDIT ad9=adg_file.adg34, TABINDEX=40, TITLE="Par/Ref Conversion Rate";
+  EDIT ae0=adg_file.adg35, TABINDEX=41, TITLE="Par/Ref Qty";
+  BUTTONEDIT ae1=adg_file.adg30, ACTION=controlp, COMMENT="<^P>Qry Details", IMAGE="zoom", NOENTRY, TABINDEX=42, TITLE="Chi/Trans-out Unit";
+  EDIT ae2=adg_file.adg31, TABINDEX=43, TITLE="Chi/Trans-out Conversion Rate";
+  EDIT ae3=adg_file.adg32, TABINDEX=44, TITLE="Chi/Trans-out Qty";
+  EDIT ae4=adg_file.adg17, NOENTRY, TABINDEX=45, TITLE="Transfer-In Qty";
+  EDIT ae5=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=46;
+  EDIT ae6=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=47;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adg (adg_file.adg02, adg_file.adg03, adg_file.adg04, adg_file.adg05, FORMONLY.ima02, FORMONLY.ima021, adg_file.adg06, adg_file.adg07, adg_file.adg08, adg_file.adg09, adg_file.adg10, adg_file.adg11, adg_file.adg12, adg_file.adg33, adg_file.adg34, adg_file.adg35, adg_file.adg30, adg_file.adg31, adg_file.adg32, adg_file.adg17)
+END

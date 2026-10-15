@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap810.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afap810")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1951
+{
+ Application No.     [fch01             ]
+ Applying Date       [fch02       ]
+ Oper. Approval No.  [fch05               ]
+
+}
+END -- gr1951
+Grid gr1952
+{
+ Duty-Free App. Date [fch06       ]
+ Duty-Free App. No.  [fch07               ]
+ Duty-Free Life      [fch08     ][dummy01 ]
+ Tax-Free Amount     [fch09               ]
+}
+END -- gr1952
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_fci
+{
+[sure   |fci02      |fci03          |fci031    |fci05                         |fci15               ]
+[sure   |fci02      |fci03          |fci031    |fci05                         |fci15               ]
+[sure   |fci02      |fci03          |fci031    |fci05                         |fci15               ]
+[sure   |fci02      |fci03          |fci031    |fci05                         |fci15               ]
+[sure   |fci02      |fci03          |fci031    |fci05                         |fci15               ]
+[sure   |fci02      |fci03          |fci031    |fci05                         |fci15               ]
+[sure   |fci02      |fci03          |fci031    |fci05                         |fci15               ]
+[sure   |fci02      |fci03          |fci031    |fci05                         |fci15               ]
+[sure   |fci02      |fci03          |fci031    |fci05                         |fci15               ]
+[sure   |fci02      |fci03          |fci031    |fci05                         |fci15               ]
+
+}
+END -- s_fci
+Grid gr1953
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1953
+END -- VBox1
+END -- afap810
+
+TABLES
+fci_file,
+fch_file
+ATTRIBUTES
+ButtonEdit fch01=fch_file.fch01, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Duty-Free Application Form";
+DateEdit fch02=fch_file.fch02, tabIndex=2, noEntry;
+Edit fch05=fch_file.fch05, tabIndex=3, noEntry;
+DateEdit fch06=fch_file.fch06, tabIndex=4;
+Edit fch07=fch_file.fch07, tabIndex=5;
+Edit fch08=fch_file.fch08, tabIndex=6;
+Label dummy01:dummy01, text="Year";
+Edit fch09=fch_file.fch09, tabIndex=7;
+CheckBox sure=formonly.sure type CHAR, tabIndex=8, title="Appr", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="<^T> Whole page Approval";
+Edit fci02=fci_file.fci02, tabIndex=9, title="Line No.", noEntry;
+Edit fci03=fci_file.fci03, tabIndex=10, title="Property No.", noEntry;
+Edit fci031=fci_file.fci031, tabIndex=11, title="Add No.", noEntry;
+Edit fci05=fci_file.fci05, tabIndex=12, title="English Name", noEntry;
+Edit fci15=fci_file.fci15, tabIndex=13, title="Cost", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=14, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fci(formonly.sure,fci_file.fci02,fci_file.fci03,fci_file.fci031,fci_file.fci05,fci_file.fci15)
+SCREEN RECORD Undefined(fch_file.fch01,fch_file.fch02,fch_file.fch05,fch_file.fch06,fch_file.fch07,fch_file.fch08,fch_file.fch09,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

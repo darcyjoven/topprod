@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi214.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi214")
+VBox VBox1
+Folder pc288
+Page page01(text="Main")
+Grid gr1312
+{
+ Bill No.  [tou01           ]   Bill Date           [tou02      ]         Confirm             [tou08     ][imgmksg   ]
+ Bond No.  [tou03     ]         Amount of Discount  [tou04      ]         Current Status      [tou09     ][          ]
+ AccountsNo[tou05             ] Accounts date       [tou06      ]
+ Memo      [tou07                                  ]
+
+}
+END -- gr1312
+END -- page01
+Page info(text="Info")
+Grid gr1313
+{
+ Record Owner        [touuser   ] Last Modified by    [toumodu   ] Data Valid Code     [touacti   ]
+ Department          [tougrup   ] Create/Modify Date  [toudate   ]
+ Record Orig.        [touoriu   ]
+ Dept Orig.          [touorig   ]
+}
+END -- gr1313
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[touud01                       ] userdefined_field07[touud07        ] userdefined_field13[touud13        ]
+                    [                              ] userdefined_field08[touud08        ] userdefined_field14[touud14        ]
+ userdefined_field02[touud02        ]                userdefined_field09[touud09        ] userdefined_field15[touud15        ]
+ userdefined_field03[touud03        ]                userdefined_field10[touud10        ]
+ userdefined_field04[touud04        ]                userdefined_field11[touud11        ]
+ userdefined_field05[touud05        ]                userdefined_field12[touud12        ]
+ userdefined_field06[touud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc288
+Grid gr1314
+{
+ ---------- Rows [cnt       ]  ----------
+
+}
+END -- gr1314
+END -- VBox1
+END -- atmi214
+
+TABLES
+tou_file
+ATTRIBUTES
+Edit tou01=tou_file.tou01, tabIndex=1, not null, required;
+DateEdit tou02=tou_file.tou02, tabIndex=2, not null, required;
+ComboBox tou08=tou_file.tou08, tabIndex=3, noEntry, not null, required, items=(("N", "Not Confirmed"),("Y", "Confirmed"),("X", "Discarded"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 10 characters, height = 2 characters;
+ButtonEdit tou03=tou_file.tou03, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit tou04=tou_file.tou04, tabIndex=6;
+ComboBox tou09=tou_file.tou09, tabIndex=7, noEntry, not null, required, items=(("0", "OPEN"),("1", "Approve"),("9", "Canceled"));
+ButtonEdit tou05=tou_file.tou05, action=controlp, tabIndex=8, not null, required, image="zoom";
+DateEdit tou06=tou_file.tou06, tabIndex=9, noEntry, not null, required;
+Edit tou07=tou_file.tou07, tabIndex=10;
+Edit touuser=tou_file.touuser, tabIndex=11, noEntry;
+Edit toumodu=tou_file.toumodu, tabIndex=12, noEntry;
+Edit touacti=tou_file.touacti, tabIndex=13, noEntry;
+Edit tougrup=tou_file.tougrup, tabIndex=14, noEntry;
+DateEdit toudate=tou_file.toudate, tabIndex=15, noEntry;
+Edit touoriu=tou_file.touoriu, tabIndex=501, noEntry;
+Edit touorig=tou_file.touorig, tabIndex=502, noEntry;
+TextEdit touud01=tou_file.touud01, tabIndex=18, stretch=NONE;
+Edit touud07=tou_file.touud07, tabIndex=19;
+DateEdit touud13=tou_file.touud13, tabIndex=20;
+Edit touud08=tou_file.touud08, tabIndex=21;
+DateEdit touud14=tou_file.touud14, tabIndex=22;
+Edit touud02=tou_file.touud02, tabIndex=23;
+Edit touud09=tou_file.touud09, tabIndex=24;
+DateEdit touud15=tou_file.touud15, tabIndex=25;
+Edit touud03=tou_file.touud03, tabIndex=26;
+Edit touud10=tou_file.touud10, tabIndex=27;
+Edit touud04=tou_file.touud04, tabIndex=28;
+Edit touud11=tou_file.touud11, tabIndex=29;
+Edit touud05=tou_file.touud05, tabIndex=30;
+Edit touud12=tou_file.touud12, tabIndex=31;
+Edit touud06=tou_file.touud06, tabIndex=32;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(tou_file.tou01,tou_file.tou02,tou_file.tou08,formonly.imgmksg,tou_file.tou03,tou_file.tou04,tou_file.tou09,tou_file.tou05,tou_file.tou06,tou_file.tou07,tou_file.touuser,tou_file.toumodu,tou_file.touacti,tou_file.tougrup,tou_file.toudate,tou_file.touoriu,tou_file.touorig,tou_file.touud01,tou_file.touud07,tou_file.touud13,tou_file.touud08,tou_file.touud14,tou_file.touud02,tou_file.touud09,tou_file.touud15,tou_file.touud03,tou_file.touud10,tou_file.touud04,tou_file.touud11,tou_file.touud05,tou_file.touud12,tou_file.touud06,formonly.cnt)
+END -- INSTRUCTIONS
+

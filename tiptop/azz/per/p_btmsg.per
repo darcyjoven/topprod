@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_btmsg.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_btmsg")
+Grid gr3160
+{
+ <T s_bf                                                                                                             >
+ [user      |gah01                |gah04     |gah07        |gah08                         |gah09       |bt          ]
+ [user      |gah01                |gah04     |gah07        |gah08                         |gah09       |bt          ]
+ [user      |gah01                |gah04     |gah07        |gah08                         |gah09       |bt          ]
+ [user      |gah01                |gah04     |gah07        |gah08                         |gah09       |bt          ]
+ [user      |gah01                |gah04     |gah07        |gah08                         |gah09       |bt          ]
+ [user      |gah01                |gah04     |gah07        |gah08                         |gah09       |bt          ]
+ [user      |gah01                |gah04     |gah07        |gah08                         |gah09       |bt          ]
+ [user      |gah01                |gah04     |gah07        |gah08                         |gah09       |bt          ]
+ [user      |gah01                |gah04     |gah07        |gah08                         |gah09       |bt          ]
+ [user      |gah01                |gah04     |gah07        |gah08                         |gah09       |bt          ]
+ <                                                                                                                   >
+
+}
+END -- gr3160
+END -- p_btmsg
+
+TABLES
+gah_file
+ATTRIBUTES
+Table s_bf:s_bf;
+Edit user=formonly.user type CHAR, tabIndex=1, title="Employee";
+Edit gah01=gah_file.gah01, tabIndex=2, title="Message No.";
+ComboBox gah04=gah_file.gah04, tabIndex=3, title="Level", queryEditable, items=(("A", %"Emergency"),("B", %"Importance"),("C", %"General"),("D", %"Notice"),("E", %"Record"));
+Edit gah07=gah_file.gah07, tabIndex=4, title="Document No.";
+Edit gah08=gah_file.gah08, tabIndex=5, title="Message";
+Edit gah09=gah_file.gah09, tabIndex=6, title="Load Action";
+Edit bt=formonly.bt type CHAR, tabIndex=7, title="Behind Time";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bf(formonly.user,gah_file.gah01,gah_file.gah04,gah_file.gah07,gah_file.gah08,gah_file.gah09,formonly.bt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asms290.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asms290")
+Folder pc201
+Page page01(text="Industry")
+Grid gr917
+{
+ Industry [smb            ]
+
+
+}
+END -- gr917
+END -- page01
+Page page02(text="Industry Property")
+Grid gr918
+{
+ <G group01             ><G group04             >
+ [sma118              ]  [sma116              ]
+     [sma121          ]
+ <                      ><                      >
+ <G group02                                     >
+ [sma115                                      ]
+     [sma122                                  ]
+ [sma117                                      ]
+     [sma903_1                                ]
+ [sma903_2                                    ]
+  Note No             [sma123     ]
+ <                                              >
+ <G group03                                     >
+ [sma120                                      ]
+  separator [sma46                ]
+ [sma909                                      ]
+ [sma907                                      ]
+ [sma908                                      ]
+ <                                              >
+ <G gb26                                        >
+ [sma127                                     ]
+ [sma128                   ]
+ <                                              >
+
+}
+END -- gr918
+END -- page02
+END -- pc201
+END -- asms290
+
+TABLES
+sma_file
+ATTRIBUTES
+ComboBox smb=formonly.smb type VARCHAR, tabIndex=1, not null, required;
+Group group01:group01, text="Alternate BOM";
+CheckBox sma118=sma_file.sma118, tabIndex=2, text="Use Alternate BOM?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+RadioGroup sma121=sma_file.sma121, tabIndex=3, items=(("1", "Formula BOM"),("2", "Gearing BOM"),("3", "Routing BOM"));
+Group group04:group04, text="Price Unit";
+RadioGroup sma116=sma_file.sma116, tabIndex=4, not null, required, items=(("0", "No Use"),("1", "Purchase"),("2", "Sale"),("3", "Both"));
+Group group02:group02, text="Unit Control";
+CheckBox sma115=sma_file.sma115, tabIndex=5, text="Use Double Unit", not null, required, valueChecked = "Y", valueUnchecked = "N";
+RadioGroup sma122=sma_file.sma122, tabIndex=6, items=(("1", "Child/Parent Unit"),("2", "Reference Unit"),("3", "All"));
+CheckBox sma117=sma_file.sma117, tabIndex=7, text="Dismantle if Inventory Short", not null, required, valueChecked = "Y", valueUnchecked = "N";
+RadioGroup sma903_1=formonly.sma903_1 type CHAR, tabIndex=8, items=(("1", "FROM big To small"),("2", "From small To big"));
+CheckBox sma903_2=formonly.sma903_2 type CHAR, tabIndex=9, text="Add up all the dismantle qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sma123=sma_file.sma123, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Document Property";
+Group group03:group03, text="Item Multi Attribute Setting";
+CheckBox sma120=sma_file.sma120, tabIndex=11, text="Multi-Attribute Material", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox sma46=sma_file.sma46, tabIndex=12, items=(("1", "_"),("2", "-"));
+CheckBox sma909=sma_file.sma909, tabIndex=13, text="Copy Bom When Add Multi_Attribute Meterial", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma907=sma_file.sma907, tabIndex=14, text="Document Related To Attribute Group", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma908=sma_file.sma908, tabIndex=15, text="Add Item When Insert Document", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb26:gb26;
+CheckBox sma127=sma_file.sma127, tabIndex=16, text="Transfer inspection process several pieces", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma128=sma_file.sma128, tabIndex=17, default = "N", text="Using mixed packing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.smb,sma_file.sma118,sma_file.sma121,sma_file.sma116,sma_file.sma115,sma_file.sma122,sma_file.sma117,formonly.sma903_1,formonly.sma903_2,sma_file.sma123,sma_file.sma120,sma_file.sma46,sma_file.sma909,sma_file.sma907,sma_file.sma908,sma_file.sma127,sma_file.sma128)
+END -- INSTRUCTIONS
+

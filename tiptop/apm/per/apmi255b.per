@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi255b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi255b")
+Grid gr4847
+{
+ [dummy01                                   ]
+
+ <G group01                                  >
+  Inquiry List#       [pmw01           ]
+  Inquiry Date        [pmw06           ]
+ <                                           >
+
+}
+END -- gr4847
+END -- apmi255b
+
+TABLES
+pmw_file
+ATTRIBUTES
+Label dummy01:dummy01, text="Please Input Purchase Inquiry Condition:";
+Group group01:group01, text="QBE";
+ButtonEdit pmw01=pmw_file.pmw01, action=controlp, tabIndex=1, image="zoom", comment="<P>";
+DateEdit pmw06=pmw_file.pmw06, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pmw_file.pmw01,pmw_file.pmw06)
+END -- INSTRUCTIONS
+

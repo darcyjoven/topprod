@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr203.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr203")
+VBox vb9
+Grid gr624
+{
+ <G group01                                                                                        >
+  PBI NO              [g_sfc01         ]
+ <                                                                                                 >
+ <G group02                                                                                                        >
+  Work/Order No.      [sfb01               ]  [sfb01               ]  [sfb01               ]  [sfb01               ]
+                      [sfb01               ]  [sfb01               ]  [sfb01               ]  [sfb01               ]
+                      [sfb01               ]  [sfb01               ]  [sfb01               ]  [sfb01               ]
+                      [sfb01               ]  [sfb01               ]  [sfb01               ]  [sfb01               ]
+                      [sfb01               ]  [sfb01               ]  [sfb01               ]  [sfb01               ]
+ <                                                                                                                 >
+}
+END -- gr624
+Group group06(text="group06")
+Grid gr8
+{
+
+ Task No.               [sfa08     ]
+ Warehouse Keeper       [ima23     ]
+
+
+}
+END -- gr8
+END -- group06
+Group group03(text="INPUT")
+Grid gr625
+{
+ <G group03_3                                   ><G group04                  > <G gb7                              >
+ [order_sw               ]                       [sub_flag                  ]  [trans            ]
+ [qvl_flag               ]                       [                          ]   Transfer Doc.   [imm01     ]
+ <                                              ><                           > <                                   >
+}
+END -- gr625
+END -- group03
+Grid gr626
+{
+[more                                         ]
+
+
+}
+END -- gr626
+END -- vb9
+END -- asfr203
+
+TABLES
+sfb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit g_sfc01=formonly.g_sfc01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Group group02:group02, text="QBE:W/O No.";
+Edit sfb01=sfb_file.sfb01, tabIndex=2, comment="<^Y>Auto Generate";
+Edit sfa08=formonly.sfa08 type VARCHAR, tabIndex=3;
+Edit ima23=formonly.ima23 type VARCHAR, tabIndex=4, upShift;
+Group group03_3:group03_3;
+CheckBox order_sw=formonly.order_sw type CHAR, tabIndex=5, text="Sequence by W/H Keeper?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox qvl_flag=formonly.qvl_flag type CHAR, tabIndex=6, text="Print QVL.Data  ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="SUB Item Method";
+RadioGroup sub_flag=formonly.sub_flag type CHAR, tabIndex=7, items=(("1", "None"),("2", "All Print"),("3", "Print if Inventory Short"));
+Group gb7:gb7, text="Transfer";
+CheckBox trans=formonly.trans type CHAR, tabIndex=9, text="Transfer ?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit imm01=formonly.imm01 type CHAR, action=controlp, tabIndex=10, not null, required, image="zoom.png";
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_no(sfb_file.sfb01)
+SCREEN RECORD Undefined(formonly.g_sfc01,formonly.sfa08,formonly.ima23,formonly.order_sw,formonly.qvl_flag,formonly.sub_flag,formonly.trans,formonly.imm01,formonly.more)
+END -- INSTRUCTIONS
+

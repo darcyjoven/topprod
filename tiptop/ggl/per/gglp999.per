@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglp999.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gglp999")
+Folder pc1
+Page page01(text="Main")
+Grid gr9
+{
+ <G group01                               >
+  Year             [yy                 ]
+  Month            [mm                 ]
+  Book No.         [bookn]
+ <                                        >
+
+}
+END -- gr9
+END -- page01
+END -- pc1
+END -- gglp999
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+Edit yy=formonly.yy type CHAR, tabIndex=1, not null, required;
+Edit mm=formonly.mm type CHAR, tabIndex=2, not null, required;
+ButtonEdit bookn=formonly.bookno type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.bookno)
+END -- INSTRUCTIONS
+

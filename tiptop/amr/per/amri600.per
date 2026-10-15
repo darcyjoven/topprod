@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amri600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amri600")
+VBox VBox1
+Folder pc714
+Page page01(text="Main")
+Grid gr3899
+{
+  Item No.            [ima01                         ]  Version             [ima05     ]
+  P/N Spec.           [ima02                         ]  Menu No.            [ima03               ]
+  Spec.               [ima021                        ]  Source Code         [ima08     ]
+  Inventory Unit      [ima25     ]
+
+  Safe Inventory      [ima27     ]                      Covering Policy     [ima37     ]
+  Safe Invent. Period [ima28     ]                      [ima139                       ]
+  Prod.Fore.Item No.  [ima133                        ]
+
+ <G group02                                >           <G group03                                 >
+  Pur Unit Lot Qty   [ima45     ]                       Issuing Lot Qty     [ima64     ]
+  Min Purchase Qty   [ima46     ]                       Min Issue Qty       [ima641    ]
+  Pur Wastage Ratio% [ima47     ]                       Prod. Lot Size      [ima56     ]
+  Delivery lead time [ima48     ]                       Min. Production Qty [ima561    ]
+  Arriving Lead Time [ima49     ]                       Prod. Wastage %     [ima562    ]
+  Store-in Lead Time [ima491    ]                       Fixed Lead Time     [ima59     ]
+  Paper Work Time    [ima50     ]                       Variable Lead Time  [ima60     ]
+                                                        Change Lead Time    [ima601    ]
+                                                        QC Lead Time        [ima61     ]
+
+ <                                         >           <                                          >
+
+}
+END -- gr3899
+END -- page01
+Page info(text="Info")
+Grid gr3900
+{
+ Record Owner        [imauser   ] Last Modified by    [imamodu   ] Data Valid Code     [imaacti   ]
+ Department          [imagrup   ] Create/Modify Date  [imadate   ]
+ Record Orig.        [imaoriu   ]
+ Dept Orig.          [imaorig   ]
+}
+END -- gr3900
+END -- info
+END -- pc714
+Grid gr3901
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3901
+END -- VBox1
+END -- amri600
+
+TABLES
+ima_file
+ATTRIBUTES
+Edit ima01=ima_file.ima01, tabIndex=1, not null, required, comment="Assign Item No. to Query   (QBE)";
+Edit ima05=ima_file.ima05, tabIndex=2, noEntry;
+Edit ima02=ima_file.ima02, tabIndex=3, noEntry;
+Edit ima03=ima_file.ima03, tabIndex=4, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=5, noEntry;
+Edit ima08=ima_file.ima08, tabIndex=6, noEntry;
+Edit ima25=ima_file.ima25, tabIndex=7, noEntry;
+Edit ima27=ima_file.ima27, tabIndex=8;
+ComboBox ima37=ima_file.ima37, tabIndex=9, not null, required, queryEditable, items=(("0", "Reorder point"),("1", "MPS"),("2", "MRP"),("3", "FAS"),("4", "Production by Order"),("5", "Pur of Period"));
+Edit ima28=ima_file.ima28, tabIndex=10;
+CheckBox ima139=ima_file.ima139, tabIndex=11, text="MPSCalculation", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ima133=ima_file.ima133, tabIndex=12, noEntry;
+Group group02:group02, text="Purchase";
+Edit ima45=ima_file.ima45, tabIndex=13;
+Edit ima46=ima_file.ima46, tabIndex=14;
+Edit ima47=ima_file.ima47, tabIndex=15;
+Edit ima48=ima_file.ima48, tabIndex=16;
+Edit ima49=ima_file.ima49, tabIndex=17;
+Edit ima491=ima_file.ima491, tabIndex=18;
+Edit ima50=ima_file.ima50, tabIndex=19;
+Group group03:group03, text="Production Management";
+Edit ima64=ima_file.ima64, tabIndex=20;
+Edit ima641=ima_file.ima641, tabIndex=21;
+Edit ima56=ima_file.ima56, tabIndex=22;
+Edit ima561=ima_file.ima561, tabIndex=23;
+Edit ima562=ima_file.ima562, tabIndex=24;
+Edit ima59=ima_file.ima59, tabIndex=25;
+Edit ima60=ima_file.ima60, tabIndex=26;
+Edit ima601=ima_file.ima601, tabIndex=34;
+Edit ima61=ima_file.ima61, tabIndex=27;
+Edit imauser=ima_file.imauser, tabIndex=28, noEntry;
+Edit imamodu=ima_file.imamodu, tabIndex=29, noEntry;
+Edit imaacti=ima_file.imaacti, tabIndex=30, noEntry, upShift;
+Edit imagrup=ima_file.imagrup, tabIndex=31, noEntry;
+DateEdit imadate=ima_file.imadate, tabIndex=32, noEntry;
+Edit imaoriu=ima_file.imaoriu, tabIndex=501, noEntry;
+Edit imaorig=ima_file.imaorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=33;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima05,ima_file.ima02,ima_file.ima03,ima_file.ima021,ima_file.ima08,ima_file.ima25,ima_file.ima27,ima_file.ima37,ima_file.ima28,ima_file.ima139,ima_file.ima133,ima_file.ima45,ima_file.ima46,ima_file.ima47,ima_file.ima48,ima_file.ima49,ima_file.ima491,ima_file.ima50,ima_file.ima64,ima_file.ima641,ima_file.ima56,ima_file.ima561,ima_file.ima562,ima_file.ima59,ima_file.ima60,ima_file.ima601,ima_file.ima61,ima_file.imauser,ima_file.imamodu,ima_file.imaacti,ima_file.imagrup,ima_file.imadate,ima_file.imaoriu,ima_file.imaorig,formonly.cnt)
+END -- INSTRUCTIONS
+

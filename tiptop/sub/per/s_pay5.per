@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_pay5.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="s_pay5")
+VBox vb2
+Grid gr1
+{
+
+  total     [total            ]
+  Give Money[rxy05            ]
+  card total[total2           ]
+  sort no   [rxy12            ][rxy12_desc       ]
+  card no   [rxy06            ]
+            [rxy20            ]
+  rate      [rxy07            ]%o
+  card money[rxy08            ]
+
+
+
+}
+END -- gr1
+Table s_rxz
+{
+[rxz03   |rxz04   |rxz05   |rxz06   |rxz07   |rxz08   |rxz08_de|rxz09   |rxz10     |rxz15     ]
+[rxz03   |rxz04   |rxz05   |rxz06   |rxz07   |rxz08   |rxz08_de|rxz09   |rxz10     |rxz15     ]
+[rxz03   |rxz04   |rxz05   |rxz06   |rxz07   |rxz08   |rxz08_de|rxz09   |rxz10     |rxz15     ]
+[rxz03   |rxz04   |rxz05   |rxz06   |rxz07   |rxz08   |rxz08_de|rxz09   |rxz10     |rxz15     ]
+[rxz03   |rxz04   |rxz05   |rxz06   |rxz07   |rxz08   |rxz08_de|rxz09   |rxz10     |rxz15     ]
+
+}
+END -- s_rxz
+END -- vb2
+END -- s_pay5
+
+TABLES
+rxy_file,
+rxz_file
+ATTRIBUTES
+Edit total=formonly.total type DECIMAL, tabIndex=1, noEntry;
+Edit rxy05=rxy_file.rxy05, tabIndex=2, not null, required;
+Edit total2=formonly.total2 type DECIMAL, tabIndex=3, noEntry;
+ButtonEdit rxy12=rxy_file.rxy12, action=controlp, tabIndex=4, not null, required, image="zoom";
+Edit rxy12_desc=formonly.rxy12_desc type VARCHAR, tabIndex=20, noEntry;
+Edit rxy06=rxy_file.rxy06, tabIndex=5, not null, required;
+CheckBox rxy20=rxy_file.rxy20, tabIndex=6, default = "N", text="rxy20", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rxy07=rxy_file.rxy07, tabIndex=7, not null, required;
+Edit rxy08=rxy_file.rxy08, tabIndex=8, not null, required;
+Edit rxz03=rxz_file.rxz03, tabIndex=6, title="rzx03";
+Edit rxz04=rxz_file.rxz04, tabIndex=7, title="rxz04";
+Edit rxz05=rxz_file.rxz05, tabIndex=8, title="rxz05";
+DateEdit rxz06=rxz_file.rxz06, tabIndex=9, title="rxz06";
+Edit rxz07=rxz_file.rxz07, tabIndex=10, title="rxz07";
+Edit rxz08=rxz_file.rxz08, tabIndex=11, title="rxz08";
+Edit rxz08_de=formonly.rxz08_desc type VARCHAR, tabIndex=12, title="rxz08_desc";
+Edit rxz09=rxz_file.rxz09, tabIndex=13, title="rxz09";
+Edit rxz10=rxz_file.rxz10, tabIndex=14, title="rxz10";
+CheckBox rxz15=rxz_file.rxz15, tabIndex=18, title="rxz15", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rxz(rxz_file.rxz03,rxz_file.rxz04,rxz_file.rxz05,rxz_file.rxz06,rxz_file.rxz07,rxz_file.rxz08,formonly.rxz08_desc,rxz_file.rxz09,rxz_file.rxz10,rxz_file.rxz15)
+SCREEN RECORD Undefined(formonly.total,rxy_file.rxy05,formonly.total2,rxy_file.rxy12,formonly.rxy12_desc,rxy_file.rxy06,rxy_file.rxy20,rxy_file.rxy07,rxy_file.rxy08)
+END -- INSTRUCTIONS
+

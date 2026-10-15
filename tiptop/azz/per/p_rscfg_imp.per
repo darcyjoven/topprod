@@ -1,0 +1,28 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_rscfg_imp.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"p_rscfg_imp")
+Grid gr8
+{
+ Program ID  [zz01                ]
+ Module ID   [zz011    ]
+
+}
+END -- gr8
+END -- Form1
+
+TABLES
+zz_file
+ATTRIBUTES
+ButtonEdit zz01=zz_file.zz01, action=controlp, tabIndex=1, not null, required, image="zoom", downShift, scroll, comment="KEY Field,No Blank/Repeated!";
+ComboBox zz011=zz_file.zz011, tabIndex=2, not null, required, queryEditable, comment="Which Module is the Program in. Fill it!";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(zz_file.zz01,zz_file.zz011)
+END -- INSTRUCTIONS
+

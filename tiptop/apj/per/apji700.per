@@ -1,0 +1,192 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apji700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apji700")
+VBox vb5
+Folder pc1
+Page page1(text="Basic Data")
+Grid gr1
+{
+
+     Project No.         [pja01        ]Version[pja03  ]                Description            [pja091                                  ]  [imgmksg]
+     Project Name        [pja02                        ]                                       [pja092                                  ]  [       ]
+     Current Level Code  [pja04        ]                                                       [pja093                                  ]
+     Project Created Date[pja05        ]                                                       [pja094                                  ]
+     Project Type        [pja06        ]                                Project Category       [pja07        |pjq02                     ]
+     Director            [pja08        |gen02          ]                Department NO.         [pja09        |gem02                     ]
+     Planned Start Date  [pja10        ]                                Planned Completion Date[pja11        ]
+    [pja12                ]                                            [pjaconf        ]       [pjaclose    ]
+    [pja26                  ]
+
+
+
+
+}
+END -- gr1
+END -- page1
+Page page2(text="Date 2")
+Grid gr2
+{
+
+  Estimated Amt in Total  [pja13                         ]Currency                [pja14          |azi02     ]Exchange Rate[pja15                         ]
+  Estimated Total Workload[pja16               ]          Planned Unit of Workload[pja17          ]
+
+
+  <G wbs                                                                                                                                      >
+
+    Planning Date Maintenance Method[pja18          ] Network Estimate Method[pja19          ]
+
+   [pja20                                  ]
+
+
+
+
+  <                                                                                                                                           >
+
+}
+END -- gr2
+END -- page2
+Page page4(text="Date 3")
+Grid gr5
+{
+
+  Confirm Method for Income     [pja31               ]
+  Expected Income in Total      [pja32               ]
+  Planned Material Cost in Total[pja33               ]
+  Expected Other Cost in Total  [pja34               ]
+
+
+
+
+
+
+
+
+
+}
+END -- gr5
+END -- page4
+Page page3(text="Status")
+Grid gr3
+{
+
+    Data Owner        [pjauser     ]   Data Modified By    [pjamodu      ] Data Valid Code[pjaact]
+    Data of Department[pjagrup     ]   Latest Modified Date[pjadate      ]
+    Dept Orig.         [pjaorig   ]     Record Orig.         [pjaoriu   ]
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr3
+END -- page3
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[pjaud01                       ] userdefined_field07[pjaud07        ] userdefined_field13[pjaud13        ]
+                    [                              ] userdefined_field08[pjaud08        ] userdefined_field14[pjaud14        ]
+ userdefined_field02[pjaud02        ]                userdefined_field09[pjaud09        ] userdefined_field15[pjaud15        ]
+ userdefined_field03[pjaud03        ]                userdefined_field10[pjaud10        ]
+ userdefined_field04[pjaud04        ]                userdefined_field11[pjaud11        ]
+ userdefined_field05[pjaud05        ]                userdefined_field12[pjaud12        ]
+ userdefined_field06[pjaud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc1
+Grid gr4
+{
+
+ -------- Rows[idx  ]/[cnt  ]----------
+
+
+}
+END -- gr4
+END -- vb5
+END -- apji700
+
+TABLES
+pja_file
+ATTRIBUTES
+Edit pja01=pja_file.pja01, tabIndex=18, not null, required;
+Edit pja03=pja_file.pja03, tabIndex=27, default = "0", noEntry, not null, required;
+Edit pja091=pja_file.pja091, tabIndex=30;
+IMAGE imgmksg=formonly.imgmksg, autoScale, width = 7 characters, height = 2 characters;
+Edit pja02=pja_file.pja02, tabIndex=19;
+Edit pja092=pja_file.pja092, tabIndex=31;
+Edit pja04=pja_file.pja04, tabIndex=20;
+Edit pja093=pja_file.pja093, tabIndex=32;
+DateEdit pja05=pja_file.pja05, tabIndex=21, not null, required;
+Edit pja094=pja_file.pja094, tabIndex=33;
+ComboBox pja06=pja_file.pja06, tabIndex=22, default = "1", items=(("1", "STANDAPD PROJECT"),("2", "REAL PROJECT"));
+ButtonEdit pja07=pja_file.pja07, action=controlp, tabIndex=28, not null, required, image="zoom.png";
+Edit pjq02=formonly.pjq02 type CHAR, tabIndex=37, noEntry;
+ButtonEdit pja08=pja_file.pja08, action=controlp, tabIndex=23, not null, required, image="zoom.png";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=25, noEntry;
+ButtonEdit pja09=pja_file.pja09, action=controlp, tabIndex=34, not null, required, image="zoom.png";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=35, noEntry;
+DateEdit pja10=pja_file.pja10, tabIndex=24, not null, required;
+DateEdit pja11=pja_file.pja11, tabIndex=29, not null, required;
+CheckBox pja12=pja_file.pja12, tabIndex=26, default = "N", text="Activity Network", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pjaconf=pja_file.pjaconf, tabIndex=16, text="Confirmation", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pjaclose=pja_file.pjaclose, tabIndex=17, text="Closing", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pja26=pja_file.pja26, tabIndex=38, text="Invnetoty Magagement", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pja13=pja_file.pja13, tabIndex=1, not null, required;
+ButtonEdit pja14=pja_file.pja14, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Edit azi02=formonly.azi02 type CHAR, tabIndex=15, noEntry;
+Edit pja15=pja_file.pja15, tabIndex=3, not null, required;
+Edit pja16=pja_file.pja16, tabIndex=4, not null, required;
+ComboBox pja17=pja_file.pja17, tabIndex=5, not null, required, items=(("1", "Person/Day
+"),("2", "Person/Hour"));
+Group wbs:wbs, text="Related WBS Parameters";
+ComboBox pja18=pja_file.pja18, tabIndex=12, not null, required, items=(("1", "TOP-DOWN"),("2", "BOTTOM-UP"),("3", "OPEN-PLANNING"));
+ComboBox pja19=pja_file.pja19, tabIndex=14, not null, required, items=(("1", "FORWARD SCHEDULING"),("2", "BACKWARD SCHEDULING"));
+CheckBox pja20=pja_file.pja20, tabIndex=13, text="Update WBS time during calculation", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox pja31=pja_file.pja31, tabIndex=39, not null, required, items=(("1", "Confirm Income by Shipping Method
+"),("2", "Confirm Income by Complete%"),("3", "Confirm Income by Received Amt"));
+Edit pja32=pja_file.pja32, tabIndex=40, not null, required;
+Edit pja33=pja_file.pja33, tabIndex=41, not null, required;
+Edit pja34=pja_file.pja34, tabIndex=42, not null, required;
+Edit pjauser=pja_file.pjauser, tabIndex=6, noEntry;
+Edit pjamodu=pja_file.pjamodu, tabIndex=8, noEntry;
+Edit pjaact=pja_file.pjaacti, tabIndex=10, noEntry;
+Edit pjagrup=pja_file.pjagrup, tabIndex=7, noEntry;
+DateEdit pjadate=pja_file.pjadate, tabIndex=9, noEntry;
+Edit pjaorig=pja_file.pjaorig, tabIndex=58, noEntry;
+Edit pjaoriu=pja_file.pjaoriu, tabIndex=59, noEntry;
+TextEdit pjaud01=pja_file.pjaud01, tabIndex=43, stretch=NONE;
+Edit pjaud07=pja_file.pjaud07, tabIndex=44;
+DateEdit pjaud13=pja_file.pjaud13, tabIndex=45;
+Edit pjaud08=pja_file.pjaud08, tabIndex=46;
+DateEdit pjaud14=pja_file.pjaud14, tabIndex=47;
+Edit pjaud02=pja_file.pjaud02, tabIndex=48;
+Edit pjaud09=pja_file.pjaud09, tabIndex=49;
+DateEdit pjaud15=pja_file.pjaud15, tabIndex=50;
+Edit pjaud03=pja_file.pjaud03, tabIndex=51;
+Edit pjaud10=pja_file.pjaud10, tabIndex=52;
+Edit pjaud04=pja_file.pjaud04, tabIndex=53;
+Edit pjaud11=pja_file.pjaud11, tabIndex=54;
+Edit pjaud05=pja_file.pjaud05, tabIndex=55;
+Edit pjaud12=pja_file.pjaud12, tabIndex=56;
+Edit pjaud06=pja_file.pjaud06, tabIndex=57;
+Edit idx=formonly.idx type CHAR, tabIndex=11;
+Edit cnt=formonly.cnt type CHAR, tabIndex=36;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pja_file.pja01,pja_file.pja03,pja_file.pja091,pja_file.pja02,pja_file.pja092,pja_file.pja04,pja_file.pja093,pja_file.pja05,pja_file.pja094,pja_file.pja06,pja_file.pja07,formonly.pjq02,pja_file.pja08,formonly.gen02,pja_file.pja09,formonly.gem02,pja_file.pja10,pja_file.pja11,pja_file.pja12,pja_file.pjaconf,pja_file.pjaclose,pja_file.pja26,pja_file.pja13,pja_file.pja14,formonly.azi02,pja_file.pja15,pja_file.pja16,pja_file.pja17,pja_file.pja18,pja_file.pja19,pja_file.pja20,pja_file.pja31,pja_file.pja32,pja_file.pja33,pja_file.pja34,pja_file.pjauser,pja_file.pjamodu,pja_file.pjaacti,pja_file.pjagrup,pja_file.pjadate,pja_file.pjaorig,pja_file.pjaoriu,pja_file.pjaud01,pja_file.pjaud07,pja_file.pjaud13,pja_file.pjaud08,pja_file.pjaud14,pja_file.pjaud02,pja_file.pjaud09,pja_file.pjaud15,pja_file.pjaud03,pja_file.pjaud10,pja_file.pjaud04,pja_file.pjaud11,pja_file.pjaud05,pja_file.pjaud12,pja_file.pjaud06,formonly.idx,formonly.cnt,formonly.imgmksg)
+END -- INSTRUCTIONS
+

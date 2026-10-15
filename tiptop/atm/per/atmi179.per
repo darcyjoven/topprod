@@ -1,0 +1,160 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi179.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi179")
+VBox VBox1
+Folder pc315
+Page page01(text="Main")
+HBox HBox1
+Grid gr1370
+{
+ <G group01                                                     >
+  Vehcile No.                   [obw01     ]
+  Level                         [obw05     ]
+  Category                      [obw02     ]
+  Brand                         [obw03               ]
+  Model                         [obw04               ]
+  Car No.                       [obw08               ]
+  Engine No.                    [obw09               ]
+  Chassis No.                   [obw10               ]
+
+
+  Ownership                     [obw06     ]
+  State                         [obw07     ]
+  lately vechile maintain date  [obw26     ]
+  Memo                          [obw25                         ]
+
+
+
+ <                                                              >
+
+}
+END -- gr1370
+Grid gr1371
+{
+ <G group02                                                         >
+  Leave Fact. Date              [obw11     ]
+  Purchase Date                 [obw12     ]
+  Mileage Drived                [obw13     ]
+  Custos                        [obw14     ] [gen02     ]
+  Driver                        [obw16     ] [gen02a    ]
+  Accompanyist                  [obw17     ] [gen02b    ]
+                                [obw18     ] [gen02c    ]
+                                [obw19     ] [gen02d    ]
+
+  Price Meth.Of Vehicle Leased  [obw21     ]
+  Unit Price Of Vehicle Leased  [obw22                  ]
+
+  Assets No.                    [obw23     ] [obw24     ]
+  Vehicle Group No.             [obw20     ]
+
+
+ <                                                                  >
+
+
+}
+END -- gr1371
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1372
+{
+ Record Owner        [obwuser   ] Last Modified by    [obwmodu   ] Data Valid Code     [obwacti   ]
+ Department          [obwgrup   ] Create/Modify Date  [obwdate   ]
+ Record Orig.        [obworiu   ]
+ Dept Orig.          [obworig   ]
+}
+END -- gr1372
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[obwud01                       ] userdefined_field07[obwud07        ] userdefined_field13[obwud13        ]
+                    [                              ] userdefined_field08[obwud08        ] userdefined_field14[obwud14        ]
+ userdefined_field02[obwud02        ]                userdefined_field09[obwud09        ] userdefined_field15[obwud15        ]
+ userdefined_field03[obwud03        ]                userdefined_field10[obwud10        ]
+ userdefined_field04[obwud04        ]                userdefined_field11[obwud11        ]
+ userdefined_field05[obwud05        ]                userdefined_field12[obwud12        ]
+ userdefined_field06[obwud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc315
+Grid gr1373
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1373
+END -- VBox1
+END -- atmi179
+
+TABLES
+obw_file
+ATTRIBUTES
+Group group01:group01;
+Edit obw01=obw_file.obw01, tabIndex=1, not null, required, comment="KEY Field, No Blank/Repeated!";
+ButtonEdit obw05=obw_file.obw05, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Detail";
+ButtonEdit obw02=obw_file.obw02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Detail";
+ButtonEdit obw03=obw_file.obw03, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Detail";
+ButtonEdit obw04=obw_file.obw04, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit obw08=obw_file.obw08, tabIndex=6, not null, required;
+Edit obw09=obw_file.obw09, tabIndex=7, not null, required;
+Edit obw10=obw_file.obw10, tabIndex=8;
+ComboBox obw06=obw_file.obw06, tabIndex=9, not null, required, items=(("1", "Possess"),("2", "Lease"));
+ComboBox obw07=obw_file.obw07, tabIndex=10, not null, required, items=(("1", "Usable"),("2", "Unusable"));
+Edit obw26=obw_file.obw26, tabIndex=11, noEntry;
+Edit obw25=obw_file.obw25, tabIndex=12;
+Group group02:group02;
+Edit obw11=obw_file.obw11, tabIndex=13;
+Edit obw12=obw_file.obw12, tabIndex=14;
+Edit obw13=obw_file.obw13, tabIndex=15, not null, required;
+ButtonEdit obw14=obw_file.obw14, action=controlp, tabIndex=16, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=17, noEntry;
+ButtonEdit obw16=obw_file.obw16, action=controlp, tabIndex=18, image="zoom", comment="<^P>Qry Detail";
+Edit gen02a=formonly.gen02a type CHAR, tabIndex=19, noEntry;
+ButtonEdit obw17=obw_file.obw17, action=controlp, tabIndex=20, image="zoom", comment="<^P>Qry Detail";
+Edit gen02b=formonly.gen02b type CHAR, tabIndex=21, noEntry;
+ButtonEdit obw18=obw_file.obw18, action=controlp, tabIndex=22, image="zoom", comment="<^P>Qry Detail";
+Edit gen02c=formonly.gen02c type CHAR, tabIndex=23, noEntry;
+ButtonEdit obw19=obw_file.obw19, action=controlp, tabIndex=24, image="zoom", comment="<^P>Qry Detail";
+Edit gen02d=formonly.gen02d type CHAR, tabIndex=25, noEntry;
+ComboBox obw21=obw_file.obw21, tabIndex=26, items=(("1", "Monthly Fixed Sum"),("2", "Daily Fixed Sum"),("3", "Computed By Mileage"));
+Edit obw22=obw_file.obw22, tabIndex=27;
+ButtonEdit obw23=obw_file.obw23, action=controlp, tabIndex=28, image="zoom", comment="<^P>Qry Detail";
+Edit obw24=obw_file.obw24, tabIndex=29;
+ButtonEdit obw20=obw_file.obw20, action=controlp, tabIndex=30, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit obwuser=obw_file.obwuser, tabIndex=31, noEntry;
+Edit obwmodu=obw_file.obwmodu, tabIndex=32, noEntry;
+Edit obwacti=obw_file.obwacti, tabIndex=33, noEntry;
+Edit obwgrup=obw_file.obwgrup, tabIndex=34, noEntry;
+DateEdit obwdate=obw_file.obwdate, tabIndex=35, noEntry;
+Edit obworiu=obw_file.obworiu, tabIndex=501, noEntry;
+Edit obworig=obw_file.obworig, tabIndex=502, noEntry;
+TextEdit obwud01=obw_file.obwud01, tabIndex=37, stretch=NONE;
+Edit obwud07=obw_file.obwud07, tabIndex=38;
+DateEdit obwud13=obw_file.obwud13, tabIndex=39;
+Edit obwud08=obw_file.obwud08, tabIndex=40;
+DateEdit obwud14=obw_file.obwud14, tabIndex=41;
+Edit obwud02=obw_file.obwud02, tabIndex=42;
+Edit obwud09=obw_file.obwud09, tabIndex=43;
+DateEdit obwud15=obw_file.obwud15, tabIndex=44;
+Edit obwud03=obw_file.obwud03, tabIndex=45;
+Edit obwud10=obw_file.obwud10, tabIndex=46;
+Edit obwud04=obw_file.obwud04, tabIndex=47;
+Edit obwud11=obw_file.obwud11, tabIndex=48;
+Edit obwud05=obw_file.obwud05, tabIndex=49;
+Edit obwud12=obw_file.obwud12, tabIndex=50;
+Edit obwud06=obw_file.obwud06, tabIndex=51;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=36, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(obw_file.obw01,obw_file.obw05,obw_file.obw02,obw_file.obw03,obw_file.obw04,obw_file.obw08,obw_file.obw09,obw_file.obw10,obw_file.obw06,obw_file.obw07,obw_file.obw26,obw_file.obw25,obw_file.obw11,obw_file.obw12,obw_file.obw13,obw_file.obw14,formonly.gen02,obw_file.obw16,formonly.gen02a,obw_file.obw17,formonly.gen02b,obw_file.obw18,formonly.gen02c,obw_file.obw19,formonly.gen02d,obw_file.obw21,obw_file.obw22,obw_file.obw23,obw_file.obw24,obw_file.obw20,obw_file.obwuser,obw_file.obwmodu,obw_file.obwacti,obw_file.obwgrup,obw_file.obwdate,obw_file.obworiu,obw_file.obworig,obw_file.obwud01,obw_file.obwud07,obw_file.obwud13,obw_file.obwud08,obw_file.obwud14,obw_file.obwud02,obw_file.obwud09,obw_file.obwud15,obw_file.obwud03,obw_file.obwud10,obw_file.obwud04,obw_file.obwud11,obw_file.obwud05,obw_file.obwud12,obw_file.obwud06,formonly.cnt)
+END -- INSTRUCTIONS
+

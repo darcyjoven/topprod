@@ -1,0 +1,136 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdt201.per created Wed Jan 23 05:30:45 2008
+-- File created from axdt201.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdt201")
+-- GRID
+-- GRID
+-- HBOX
+-- PAGE
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        HBOX 
+          GRID gr7860
+          {
+           Slip Type           [aa0       ][aa1       ]
+           Application Note    [aa2               ]
+           Application Date    [aa3       ]
+           Employee            [aa4       ][aa5       ]
+           Department          [aa6       ][aa7       ]
+           Memo                [aa8                           ]
+
+          }
+          END -- GRID
+          GRID gr7861
+          {
+           Status              [aa9       ][ab0       ][ab1    ]
+                               [ab2       ][ab3       ][       ]
+                               [ab4       ][ab5       ]
+                               [ab6       ]
+
+          }
+          END -- GRID
+        END -- HBOX
+      END -- PAGE
+      PAGE info( TEXT="Info")
+        GRID gr7862
+        {
+         Record Owner        [ab7       ]   Last Modified by    [ab8       ]   Data Valid Code     [ab9       ]
+         Department          [ac0       ]   Create/Modify Date  [ac1       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_ade
+    {
+    [ac2       |ac3               |ac4       |ac5                 |ac6                 |ac7    |ac8          |ac9           |ad0                      |ad1          |ad2             |ad3                        |ad4            |ad5              |ad6             |ad7       |ad8               |ad9            |ae0             |ae1                      |ae2    |ae3     |ae4       ]
+    [ac2       |ac3               |ac4       |ac5                 |ac6                 |ac7    |ac8          |ac9           |ad0                      |ad1          |ad2             |ad3                        |ad4            |ad5              |ad6             |ad7       |ad8               |ad9            |ae0             |ae1                      |ae2    |ae3     |ae4       ]
+    [ac2       |ac3               |ac4       |ac5                 |ac6                 |ac7    |ac8          |ac9           |ad0                      |ad1          |ad2             |ad3                        |ad4            |ad5              |ad6             |ad7       |ad8               |ad9            |ae0             |ae1                      |ae2    |ae3     |ae4       ]
+    [ac2       |ac3               |ac4       |ac5                 |ac6                 |ac7    |ac8          |ac9           |ad0                      |ad1          |ad2             |ad3                        |ad4            |ad5              |ad6             |ad7       |ad8               |ad9            |ae0             |ae1                      |ae2    |ae3     |ae4       ]
+    [ac2       |ac3               |ac4       |ac5                 |ac6                 |ac7    |ac8          |ac9           |ad0                      |ad1          |ad2             |ad3                        |ad4            |ad5              |ad6             |ad7       |ad8               |ad9            |ae0             |ae1                      |ae2    |ae3     |ae4       ]
+    [ac2       |ac3               |ac4       |ac5                 |ac6                 |ac7    |ac8          |ac9           |ad0                      |ad1          |ad2             |ad3                        |ad4            |ad5              |ad6             |ad7       |ad8               |ad9            |ae0             |ae1                      |ae2    |ae3     |ae4       ]
+    [ac2       |ac3               |ac4       |ac5                 |ac6                 |ac7    |ac8          |ac9           |ad0                      |ad1          |ad2             |ad3                        |ad4            |ad5              |ad6             |ad7       |ad8               |ad9            |ae0             |ae1                      |ae2    |ae3     |ae4       ]
+    [ac2       |ac3               |ac4       |ac5                 |ac6                 |ac7    |ac8          |ac9           |ad0                      |ad1          |ad2             |ad3                        |ad4            |ad5              |ad6             |ad7       |ad8               |ad9            |ae0             |ae1                      |ae2    |ae3     |ae4       ]
+    [ac2       |ac3               |ac4       |ac5                 |ac6                 |ac7    |ac8          |ac9           |ad0                      |ad1          |ad2             |ad3                        |ad4            |ad5              |ad6             |ad7       |ad8               |ad9            |ae0             |ae1                      |ae2    |ae3     |ae4       ]
+    [ac2       |ac3               |ac4       |ac5                 |ac6                 |ac7    |ac8          |ac9           |ad0                      |ad1          |ad2             |ad3                        |ad4            |ad5              |ad6             |ad7       |ad8               |ad9            |ae0             |ae1                      |ae2    |ae3     |ae4       ]
+    }
+    END -- TABLE
+    GRID gr7863
+    {
+     ---------- Rows [ae5   ] / [ae6   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES add_file,ade_file
+
+ATTRIBUTES
+  COMBOBOX aa0=add_file.add00, NOT NULL, REQUIRED, TABINDEX=1, ITEMS=(("1","In Tran"),("2","Out Tran"),("3","Out Retn"));
+  EDIT aa1=FORMONLY.e, NOENTRY, TABINDEX=2;
+  BUTTONEDIT aa2=add_file.add01, ACTION=controlp, COMMENT="<^P>Qry App Note", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=3;
+  DATEEDIT aa3=add_file.add02, NOT NULL, REQUIRED, TABINDEX=4;
+  BUTTONEDIT aa4=add_file.add03, ACTION=controlp, COMMENT="<^P>Qry Employee", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=5;
+  EDIT aa5=FORMONLY.gen02, NOENTRY, TABINDEX=6;
+  BUTTONEDIT aa6=add_file.add04, ACTION=controlp, COMMENT="<^P>Qry Department", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=7;
+  EDIT aa7=FORMONLY.gem02, NOENTRY, TABINDEX=8;
+  EDIT aa8=add_file.add05, TABINDEX=9;
+  EDIT aa9=add_file.add06, NOENTRY, TABINDEX=10;
+  EDIT ab0=FORMONLY.desc, NOENTRY, TABINDEX=11;
+  IMAGE ab1=FORMONLY.imgmksg, AUTOSCALE, WIDTH=7 CHARACTERS, HEIGHT=2 CHARACTERS;
+  CHECKBOX ab2=add_file.addmksg, TEXT="Approve", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=13;
+  EDIT ab3=add_file.addsign, NOENTRY, TABINDEX=14;
+  CHECKBOX ab4=add_file.add07, TEXT="Close", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=15;
+  EDIT ab5=add_file.add08, NOENTRY, TABINDEX=16;
+  CHECKBOX ab6=add_file.addconf, TEXT="Comfirm", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=17;
+  EDIT ab7=add_file.adduser, NOENTRY, TABINDEX=18;
+  EDIT ab8=add_file.addmodu, NOENTRY, TABINDEX=19;
+  EDIT ab9=add_file.addacti, NOENTRY, UPSHIFT, TABINDEX=20;
+  EDIT ac0=add_file.addgrup, NOENTRY, TABINDEX=21;
+  EDIT ac1=add_file.adddate, NOENTRY, TABINDEX=22;
+  EDIT ac2=ade_file.ade02, NOT NULL, REQUIRED, TABINDEX=23, TITLE="Line No";
+  BUTTONEDIT ac3=ade_file.ade16, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", TABINDEX=24, TITLE="Transact.No";
+  EDIT ac4=ade_file.ade17, TABINDEX=25, TITLE="Line No";
+  BUTTONEDIT ac5=ade_file.ade03, ACTION=controlp, COMMENT="<^P>Qry Item Data", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=26, TITLE="Item No.";
+  EDIT ac6=FORMONLY.ima02, NOENTRY, TABINDEX=27, TITLE="S/P Name";
+  BUTTONEDIT ac7=ade_file.ade04, ACTION=controlp, COMMENT="<^P>Qry Unit Data", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=28, TITLE="Unit";
+  EDIT ac8=ade_file.ade05, NOT NULL, REQUIRED, TABINDEX=29, TITLE="Qty";
+  BUTTONEDIT ac9=ade_file.ade33, ACTION=controlp, COMMENT="<^P>Qry Details", IMAGE="zoom", TABINDEX=30, TITLE="Par/Ref Unit";
+  EDIT ad0=ade_file.ade34, TABINDEX=31, TITLE="Par/Ref Conversion Rate";
+  EDIT ad1=ade_file.ade35, TABINDEX=32, TITLE="Par/Ref Qty";
+  BUTTONEDIT ad2=ade_file.ade30, ACTION=controlp, COMMENT="<^P>Qry Details", IMAGE="zoom", TABINDEX=33, TITLE="Chi/Apply Unit";
+  EDIT ad3=ade_file.ade31, TABINDEX=34, TITLE="Chi/Apply Conversion Rate";
+  EDIT ad4=ade_file.ade32, TABINDEX=35, TITLE="Chi/Apply Qty";
+  EDIT ad5=ade_file.ade12, NOENTRY, TABINDEX=36, TITLE="Transfered Qty";
+  BUTTONEDIT ad6=ade_file.ade06, ACTION=controlp, COMMENT="<^P>Qry Plant Data", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=37, TITLE="Request Plant";
+  BUTTONEDIT ad7=ade_file.ade07, ACTION=controlp, COMMENT="<^P>Qry WH Data", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=38, TITLE="WIP";
+  EDIT ad8=ade_file.ade15, NOENTRY, TABINDEX=39, TITLE="Transfer-in Qty";
+  DATEEDIT ad9=ade_file.ade08, NOT NULL, REQUIRED, TABINDEX=40, TITLE="Request Date";
+  DATEEDIT ae0=ade_file.ade09, TABINDEX=41, TITLE="Response Date";
+  DATEEDIT ae1=ade_file.ade10, TABINDEX=42, TITLE="Estimate Transfer Date";
+  EDIT ae2=ade_file.ade11, TABINDEX=43, TITLE="Note";
+  CHECKBOX ae3=ade_file.ade13, NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=44, TITLE="Close";
+  DATEEDIT ae4=ade_file.ade14, NOENTRY, TABINDEX=45, TITLE="Close Date";
+  EDIT ae5=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=46;
+  EDIT ae6=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=47;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_ade (ade_file.ade02, ade_file.ade16, ade_file.ade17, ade_file.ade03, FORMONLY.ima02, ade_file.ade04, ade_file.ade05, ade_file.ade33, ade_file.ade34, ade_file.ade35, ade_file.ade30, ade_file.ade31, ade_file.ade32, ade_file.ade12, ade_file.ade06, ade_file.ade07, ade_file.ade15, ade_file.ade08, ade_file.ade09, ade_file.ade10, ade_file.ade11, ade_file.ade13, ade_file.ade14)
+END

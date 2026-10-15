@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr301")
+VBox vb2
+Grid gr6
+{
+ <G group01                                                                             >
+  Item No.            [ima01               ]  Cost Levels         [ima57               ]
+  Cost Group          [ima12               ]  Source              [ima08               ]
+  Main Grp Code       [ima06               ]  Grp Code 1          [ima09               ]
+  Group Code 2        [ima10               ]  Grp Code 3          [ima11               ]
+ <                                                                                      >
+
+}
+END -- gr6
+Group g01(text="INPUT")
+Grid gr7
+{
+ <G group03                                                       >
+  Base Year/Month          [yy1       ][mm1       ]
+  Comp.Year Month          [yy2       ][mm2       ]
+  Cost Calculation Method  [type                  ]
+ <                                                                >
+ <G group02                                                      >
+  Difference Rate for Unit Cost    [diff1     ] %
+  Difference Rate for Material     [diff2     ] %
+  Difference Rate for Labor        [diff3     ] %
+  Difference Rate for Overhead 1   [diff4     ] %
+  Difference Rate for Subcontract  [diff5     ] %
+  Difference Rate for Overhead 2   [diff6     ] %
+  Difference Rate for Overhead 3   [diff7     ] %
+  Difference Rate for Overhead 4   [diff8     ] %
+  Difference Rate for Overhead 5   [diff9     ] %
+ <                                                               >
+}
+END -- gr7
+END -- g01
+Grid gr8
+{
+[more                                                          ]
+
+}
+END -- gr8
+END -- vb2
+END -- axcr301
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<P>";
+Edit ima57=formonly.ima57 type CHAR, tabIndex=2;
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=3;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=4;
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=5;
+Edit ima09=formonly.ima09 type VARCHAR, tabIndex=6;
+Edit ima10=formonly.ima10 type VARCHAR, tabIndex=7;
+Edit ima11=formonly.ima11 type VARCHAR, tabIndex=8;
+Group group03:group03;
+Edit yy1=formonly.yy1 type CHAR, tabIndex=9;
+Edit mm1=formonly.mm1 type CHAR, tabIndex=10;
+Edit yy2=formonly.yy2 type CHAR, tabIndex=11;
+Edit mm2=formonly.mm2 type CHAR, tabIndex=12;
+ComboBox type=formonly.type type VARCHAR, tabIndex=13, not null, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+Group group02:group02;
+Edit diff1=formonly.diff1 type CHAR, tabIndex=14;
+Edit diff2=formonly.diff2 type CHAR, tabIndex=15;
+Edit diff3=formonly.diff3 type CHAR, tabIndex=16;
+Edit diff4=formonly.diff4 type CHAR, tabIndex=17;
+Edit diff5=formonly.diff5 type CHAR, tabIndex=18;
+Edit diff6=formonly.diff6 type CHAR, tabIndex=19;
+Edit diff7=formonly.diff7 type CHAR, tabIndex=20;
+Edit diff8=formonly.diff8 type CHAR, tabIndex=21;
+Edit diff9=formonly.diff9 type CHAR, tabIndex=22;
+CheckBox more=formonly.more type CHAR, tabIndex=23, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima57,formonly.ima12,formonly.ima08,formonly.ima06,formonly.ima09,formonly.ima10,formonly.ima11,formonly.yy1,formonly.mm1,formonly.yy2,formonly.mm2,formonly.type,formonly.diff1,formonly.diff2,formonly.diff3,formonly.diff4,formonly.diff5,formonly.diff6,formonly.diff7,formonly.diff8,formonly.diff9,formonly.more)
+END -- INSTRUCTIONS
+

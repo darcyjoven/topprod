@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti161.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="arti161")
+VBox vb1
+Folder pc3
+Page Page4(text=%"Main")
+Table s_rvj
+{
+[rvj01   |rvj02   |rvj03     |geu02     |rvjacti ]
+[rvj01   |rvj02   |rvj03     |geu02     |rvjacti ]
+[rvj01   |rvj02   |rvj03     |geu02     |rvjacti ]
+[rvj01   |rvj02   |rvj03     |geu02     |rvjacti ]
+
+}
+END -- s_rvj
+END -- Page4
+END -- pc3
+Grid gr2
+{
+ ----------Rows[cn2   ]----------
+
+}
+END -- gr2
+END -- vb1
+END -- arti161
+
+TABLES
+rvj_file
+ATTRIBUTES
+Edit rvj01=rvj_file.rvj01, tabIndex=1, title="rvj01", not null, required;
+Edit rvj02=rvj_file.rvj02, tabIndex=2, title="rvj02";
+ButtonEdit rvj03=rvj_file.rvj03, action=controlp, tabIndex=5, title="rvj03", not null, required, image="zoom.png";
+Edit geu02=formonly.geu02 type CHAR, tabIndex=4, title="geu02", noEntry;
+CheckBox rvjacti=rvj_file.rvjacti, tabIndex=3, default = "Y", title="rvjacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvj(rvj_file.rvj01,rvj_file.rvj02,rvj_file.rvj03,formonly.geu02,rvj_file.rvjacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

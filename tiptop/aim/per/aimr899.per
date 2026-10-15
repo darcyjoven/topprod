@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr899.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr899")
+VBox vb11
+Grid gr3395
+{
+ <G group01                                >
+  Item Category       [ima131              ]
+  Item No.            [pia02               ]
+  Label No.           [pia01               ]
+  Warehouse No.       [pia03               ]
+  Lot No.             [pia05               ]
+  Location            [pia04               ]
+  Type                [pia931              ]
+ <                                         >
+}
+END -- gr3395
+Group group03(text="INPUT")
+Grid gr3396
+{
+
+ <G group05                                                                            >
+ [a                             ]
+ [b                             ]
+ [c                             ]
+ [d                             ]
+ [f                             ]
+ [g                             ]
+ <                                                                                     >
+ <G group06                     ><G group07                                            >
+ [e                   ]          [h                             ]
+ <                              ><                                                     >
+
+}
+END -- gr3396
+END -- group03
+Grid gr3397
+{
+[more                                  ]
+
+}
+END -- gr3397
+END -- vb11
+END -- aimr899
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ima131=formonly.ima131 type VARCHAR, tabIndex=1;
+ButtonEdit pia02=formonly.pia02 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit pia01=formonly.pia01 type VARCHAR, tabIndex=3;
+Edit pia03=formonly.pia03 type VARCHAR, tabIndex=4;
+Edit pia05=formonly.pia05 type VARCHAR, tabIndex=5;
+Edit pia04=formonly.pia04 type VARCHAR, tabIndex=6;
+Edit pia931=formonly.pia931 type VARCHAR, tabIndex=7, default = "1", noEntry, not null;
+Group group05:group05;
+CheckBox a=formonly.a type VARCHAR, tabIndex=8, text="Print Lot No. Detail?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=9, text="Print Warehouse Detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=10, text="Print Location Detail ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=11, text="Print if no Inventory Difference?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type VARCHAR, tabIndex=12, text="Print Item  No. total", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type VARCHAR, tabIndex=13, text="Print Category Total", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group06:group06, text="Qty Decimal";
+RadioGroup e=formonly.e type VARCHAR, tabIndex=14, not null, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"));
+Group group07:group07, text="Category Source";
+RadioGroup h=formonly.h type VARCHAR, tabIndex=15, not null, items=(("0", "Main Group"),("1", "Group 1"),("2", "Group 2"),("3", "Group 3"),("4", "Group 4"),("5", "Product Class"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=16, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima131,formonly.pia02,formonly.pia01,formonly.pia03,formonly.pia05,formonly.pia04,formonly.pia931,formonly.a,formonly.b,formonly.c,formonly.d,formonly.f,formonly.g,formonly.e,formonly.h,formonly.more)
+END -- INSTRUCTIONS
+

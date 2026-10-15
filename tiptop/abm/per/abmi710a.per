@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi710a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi710a")
+VBox VBox1
+Grid gr813
+{
+ <G group01                                           >
+  Master Item#        [bmb01                         ]
+  Alternate Code      [bmb29               ]
+  Component No.       [bmb03                         ]
+  Process No.         [brb011                        ]
+  Process Section No. [brb012                        ]
+  System procedures   [brb013                        ]
+ <                                                    >
+ <G group02                                >
+  Expiry Date        [eff_date            ]
+ <                                         >
+
+}
+END -- gr813
+END -- VBox1
+END -- abmi710a
+
+TABLES
+brb_file,
+bmb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit bmb01=bmb_file.bmb01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit bmb29=bmb_file.bmb29, tabIndex=2;
+ButtonEdit bmb03=bmb_file.bmb03, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit brb011=brb_file.brb011, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit brb012=brb_file.brb012, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit brb013=brb_file.brb013, action=controlp, tabIndex=7, image="zoom";
+Group group02:group02, text="INPUT";
+DateEdit eff_date=formonly.eff_date type DATE, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bmb_file.bmb01,bmb_file.bmb29,bmb_file.bmb03,brb_file.brb011,brb_file.brb012,brb_file.brb013,formonly.eff_date)
+END -- INSTRUCTIONS
+

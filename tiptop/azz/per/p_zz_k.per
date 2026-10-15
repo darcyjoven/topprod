@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zz_k.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zz_k")
+Grid gr3035
+{
+ <T s_zy                                                                                                                                  >
+ [zy01               |zw02    |zy03                 |zy04                           |zy05                                 |zy07           ]
+ [zy01               |zw02    |zy03                 |zy04                           |zy05                                 |zy07           ]
+ [zy01               |zw02    |zy03                 |zy04                           |zy05                                 |zy07           ]
+ [zy01               |zw02    |zy03                 |zy04                           |zy05                                 |zy07           ]
+ [zy01               |zw02    |zy03                 |zy04                           |zy05                                 |zy07           ]
+ [zy01               |zw02    |zy03                 |zy04                           |zy05                                 |zy07           ]
+ [zy01               |zw02    |zy03                 |zy04                           |zy05                                 |zy07           ]
+ [zy01               |zw02    |zy03                 |zy04                           |zy05                                 |zy07           ]
+ [zy01               |zw02    |zy03                 |zy04                           |zy05                                 |zy07           ]
+ [zy01               |zw02    |zy03                 |zy04                           |zy05                                 |zy07           ]
+ <                                                                                                                                        >
+
+}
+END -- gr3035
+END -- p_zz_k
+
+TABLES
+zw_file,
+zy_file
+ATTRIBUTES
+Table s_zy:s_zy;
+ButtonEdit zy01=zy_file.zy01, action=controlp, tabIndex=1, title="Authoriza Category", not null, required, image="zoom", comment="<^Y>Gen All Authorization";
+Edit zw02=zw_file.zw02, tabIndex=6, title=%"Authoriza Category Statement", noEntry;
+Edit zy03=zy_file.zy03, tabIndex=2, title="Available Functions", noEntry, scroll;
+ComboBox zy04=zy_file.zy04, tabIndex=3, title="Non-self\'s Data Dealing Method", not null, required, queryEditable, comment="Set User\'s Authorization to Access Other Owner\'s Data", items=(("0", %"Can Qry,Modify,Delete"),("1", %"Can Qry,Modify,But Delete"),("2", %"Can Qry,But Modify,Can Delete"),("3", %"Can Qry,But Modify,nor Delete"),("4", %"Can't Qry,nor Modify,nor Delete"));
+ComboBox zy05=zy_file.zy05, tabIndex=4, title="Non-Same Dept.\'s Data Dealing Method", not null, required, queryEditable, comment="Set User\'s Authorization to Access Other Dept\'s Data(0/1/2/3/4/5/6/7)", items=(("0", %"Different Dept., Can Query,Modify,Delete"),("1", %"Different Dept., Can Query,Modify,But Delete"),("2", %"Different Dept., Can Query,But Modify,Can Delete"),("3", %"Different Dept., Can Query,But Modify,nor Delete"),("8", %"In Relative Dept, Can Query,Modify,Delete"),("5", %"In Relative Dept, Can Query,Modify,But Delete"),("6", %"In Relative Dept, Can Query,But Modify,Can Delete"),("7", %"In Relative Dept, Can Query,But Modify,nor Delete"),("4", %"Different Dept., Can't Query,nor Modify,nor Delete"));
+ComboBox zy07=zy_file.zy07, tabIndex=5, title="Detail Auth", noEntry, not null, required, queryEditable, items=(("0", %"Can Insert, Delete"),("1", %"Can Insert,But Delete"),("2", %"Cannot Insert,Can Delete"),("3", %"Cannot Insert,nor Delete"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zy(zy_file.zy01,zw_file.zw02,zy_file.zy03,zy_file.zy04,zy_file.zy05,zy_file.zy07)
+END -- INSTRUCTIONS
+

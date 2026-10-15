@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt861.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt861")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr3522
+{
+ <G group01                                           >
+  Inventory Sheet No. [pid01     ]
+  W/O No.             [pid02     ]
+  Production Item     [pid03               ]
+  Part Name           [ima02_d                       ]
+ <                                                    >
+
+}
+END -- gr3522
+END -- page01
+END -- folder01
+Table s_pie
+{
+[pie0|pie05       |pie03  |pie02               |ima02                         |pi|qty                 ]
+[pie0|pie05       |pie03  |pie02               |ima02                         |pi|qty                 ]
+[pie0|pie05       |pie03  |pie02               |ima02                         |pi|qty                 ]
+[pie0|pie05       |pie03  |pie02               |ima02                         |pi|qty                 ]
+[pie0|pie05       |pie03  |pie02               |ima02                         |pi|qty                 ]
+[pie0|pie05       |pie03  |pie02               |ima02                         |pi|qty                 ]
+[pie0|pie05       |pie03  |pie02               |ima02                         |pi|qty                 ]
+[pie0|pie05       |pie03  |pie02               |ima02                         |pi|qty                 ]
+[pie0|pie05       |pie03  |pie02               |ima02                         |pi|qty                 ]
+[pie0|pie05       |pie03  |pie02               |ima02                         |pi|qty                 ]
+
+}
+END -- s_pie
+Grid gr3523
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3523
+END -- VBox1
+END -- aimt861
+
+TABLES
+pie_file,
+pid_file
+ATTRIBUTES
+Group group01:group01;
+Edit pid01=pid_file.pid01, tabIndex=1, comment="KEY Field, No Blank/Repeated!";
+ButtonEdit pid02=pid_file.pid02, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Query W/O No.";
+Edit pid03=pid_file.pid03, tabIndex=3, noEntry;
+Edit ima02_d=formonly.ima02_d type VARCHAR, tabIndex=4, noEntry;
+Edit pie0=pie_file.pie07, tabIndex=5, title="Ln#", noEntry;
+ButtonEdit pie05=pie_file.pie05, action=controlp, tabIndex=6, title="Workstation", image="zoom", comment="<^P>Qry Workstation";
+Edit pie03=pie_file.pie03, tabIndex=7, title="Task";
+ButtonEdit pie02=pie_file.pie02, action=controlp, tabIndex=8, title="Item Inv Taking No.", not null, required, image="zoom", comment="<^P>Qry Item Master   ";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=9, title="Part Name", noEntry;
+ButtonEdit pi=pie_file.pie04, action=controlp, tabIndex=10, title="Unit", image="zoom", comment="<^P>Qry Unit <^Y>Create Unit   <^U>/<^T>Create Item/ Unit conversion";
+ButtonEdit qty=formonly.qty type DECIMAL, action=controlp, tabIndex=11, title="2nd Inv Qty", image="zoom", comment="<^P>Modify Inventory Taking Employee/Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pie(pie_file.pie07,pie_file.pie05,pie_file.pie03,pie_file.pie02,formonly.ima02,pie_file.pie04,formonly.qty)
+SCREEN RECORD Undefined(pid_file.pid01,pid_file.pid02,pid_file.pid03,formonly.ima02_d,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

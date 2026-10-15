@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amm/42f/ammr210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"ammr210")
+VBox VBox1
+Grid gr3774
+{
+ <G group01                                                                       >
+  Advice No.          [mme01           ]  Advice Date         [mme02             ]
+  Vender/Department   [mme03         ]
+ <                                                                                >
+ <G group02                                                                     >
+  [a                                                         ]
+
+ <                                                                              >
+
+}
+END -- gr3774
+Grid gr3775
+{
+[more                                                 ]
+
+}
+END -- gr3775
+END -- VBox1
+END -- ammr210
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit mme01=formonly.mme01 type VARCHAR, tabIndex=1;
+DateEdit mme02=formonly.mme02 type DATE, tabIndex=2;
+Edit mme03=formonly.mme03 type VARCHAR, tabIndex=3;
+Group group02:group02, text="INPUT";
+CheckBox a=formonly.a type VARCHAR, tabIndex=4, text="Series printing. Material whether again series printing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.mme01,formonly.mme02,formonly.mme03,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

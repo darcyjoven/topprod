@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmg554.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr554")
+VBox vb6
+Grid gr1
+{
+ <G group01                                                                               >
+  Advice No.           [oga01               ]
+  Delivery Date        [oga02               ]
+
+ <                                                                                        >
+}
+END -- gr1
+Group group02(text="INPUT")
+VBox vb5
+Grid gr7
+{
+ PRINT Product Name Spec Desc Category  [imc02               ]
+
+
+}
+END -- gr7
+Grid gr2
+{
+ <G group03                                 >
+ [s                   ]
+
+ [a                                         ]
+ [b                                         ]
+ <                                          >
+}
+END -- gr2
+END -- vb5
+END -- group02
+Grid gr3
+{
+[more                                      ]
+
+
+}
+END -- gr3
+END -- vb6
+END -- axmr554
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oga01=formonly.oga01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit oga02=formonly.oga02 type DATE, tabIndex=2;
+Edit imc02=formonly.imc02 type CHAR, tabIndex=7;
+Group group03:group03, text="Sequence";
+ComboBox s=formonly.s type CHAR, tabIndex=3, queryEditable, items=(("1", "Item No."),("2", "Box No."));
+CheckBox a=formonly.a type VARCHAR, tabIndex=5, text="Print Full Company Name for Internal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=6, text="Print Full Company Name for External", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oga01,formonly.oga02,formonly.imc02,formonly.s,formonly.a,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

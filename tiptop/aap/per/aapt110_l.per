@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_l.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt110_l")
+VBox vb2
+Table s_apx
+{
+[apx0|apx03        |apa07     |apa08           |apa14              |apx04f            |apx04               |apa73f              |apa73               ]
+[apx0|apx03        |apa07     |apa08           |apa14              |apx04f            |apx04               |apa73f              |apa73               ]
+[apx0|apx03        |apa07     |apa08           |apa14              |apx04f            |apx04               |apa73f              |apa73               ]
+[apx0|apx03        |apa07     |apa08           |apa14              |apx04f            |apx04               |apa73f              |apa73               ]
+[apx0|apx03        |apa07     |apa08           |apa14              |apx04f            |apx04               |apa73f              |apa73               ]
+[apx0|apx03        |apa07     |apa08           |apa14              |apx04f            |apx04               |apa73f              |apa73               ]
+[apx0|apx03        |apa07     |apa08           |apa14              |apx04f            |apx04               |apa73f              |apa73               ]
+[apx0|apx03        |apa07     |apa08           |apa14              |apx04f            |apx04               |apa73f              |apa73               ]
+[apx0|apx03        |apa07     |apa08           |apa14              |apx04f            |apx04               |apa73f              |apa73               ]
+[apx0|apx03        |apa07     |apa08           |apa14              |apx04f            |apx04               |apa73f              |apa73               ]
+
+}
+END -- s_apx
+Grid gr362
+{
+ <G group01                                                                                                                                             >
+  F.C Total          [apa65f              ]            H.C Total          [apa65               ]
+ <                                                                                                                                                      >
+
+}
+END -- gr362
+END -- vb2
+END -- aapt110_l
+
+TABLES
+apx_file
+ATTRIBUTES
+Edit apx0=apx_file.apx02, tabIndex=1, title="Ln#", not null, required;
+ButtonEdit apx03=apx_file.apx03, action=controlp, tabIndex=2, title="Acc.# To-Off", not null, required, image="zoom", comment="<^P>Qry Account No. To Contra";
+Edit apa07=formonly.apa07 type CHAR, tabIndex=3, title="Name", noEntry;
+Edit apa08=formonly.apa08 type CHAR, tabIndex=4, title="Invoice#", noEntry, upShift;
+Edit apa14=formonly.apa14 type CHAR, tabIndex=5, title="Ex Rate", noEntry;
+Edit apx04f=apx_file.apx04f, tabIndex=6, title="F.C.Contra$", not null, required;
+Edit apx04=apx_file.apx04, tabIndex=7, title="H.C.Contra$", not null, required;
+Edit apa73f=formonly.apa73f type CHAR, tabIndex=8, title="F. Unpay", noEntry;
+Edit apa73=formonly.apa73 type CHAR, tabIndex=9, title="H Unpay", noEntry;
+Group group01:group01;
+Edit apa65f=formonly.apa65f type CHAR, tabIndex=10, noEntry;
+Edit apa65=formonly.apa65 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apx(apx_file.apx02,apx_file.apx03,formonly.apa07,formonly.apa08,formonly.apa14,apx_file.apx04f,apx_file.apx04,formonly.apa73f,formonly.apa73)
+SCREEN RECORD Undefined(formonly.apa65f,formonly.apa65)
+END -- INSTRUCTIONS
+

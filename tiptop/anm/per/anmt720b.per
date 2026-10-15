@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt720b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Term Loan Default Account")
+Grid gr4548
+{
+                    [dummy01     ] [dummy02                  ]
+ Debit Account-1    [nng_d1      ] [aag02_d1                 ]
+ Debit Account-2    [nng_d2      ] [aag02_d2                 ]
+ Credit Account-1   [nng_c1      ] [aag02_c1                 ]
+ Credit Account-2   [nng_c2      ] [aag02_c2                 ]
+}
+END -- gr4548
+END -- anmt720b
+
+TABLES
+nng_file
+ATTRIBUTES
+Label dummy01:dummy01, text="Account #";
+Label dummy02:dummy02, text="Account Title";
+ButtonEdit nng_d1=nng_file.nng_d1, action=controlp, tabIndex=1, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_d1=formonly.aag02_d1 type CHAR, tabIndex=2;
+ButtonEdit nng_d2=nng_file.nng_d2, action=controlp, tabIndex=3, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_d2=formonly.aag02_d2 type CHAR, tabIndex=4;
+ButtonEdit nng_c1=nng_file.nng_c1, action=controlp, tabIndex=5, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_c1=formonly.aag02_c1 type CHAR, tabIndex=6;
+ButtonEdit nng_c2=nng_file.nng_c2, action=controlp, tabIndex=7, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_c2=formonly.aag02_c2 type CHAR, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nng_file.nng_d1,formonly.aag02_d1,nng_file.nng_d2,formonly.aag02_d2,nng_file.nng_c1,formonly.aag02_c1,nng_file.nng_c2,formonly.aag02_c2)
+END -- INSTRUCTIONS
+

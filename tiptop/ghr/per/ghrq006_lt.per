@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrq006_lt.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid3
+{
+ <G group1                                                                                       >
+ [label1|hrbh01    |hrat02              ]   [label4|hrat04        |hrat04_desc               ]
+ [label3|hrat17    |hrat17_desc         ]   [label5|hrat05        |hrat05_desc               ]
+ [label6|hrat22    |hrat22_desc         ]   [label8|hrat06        |hrat06_desc               ]
+ [label7|hrat42    |hrat42_desc         ]   [label9|hrat25        ]
+ [label2|hrat20    |hrat20_desc         ]
+ <                                                                                               >
+ <G group2                                                                                       >
+ [label0|hrbh02                         ]   [labela|hrbh03    ][labelb|hrbh04      ]
+ [labelc|hrbh05    |hrbh05_desc         ]   [labeld|hrbh06    ][hrbh06_desc        ]
+ [labele|hrbhconf   |hrbh09              ]  [hrbhu]
+ [labelf|hrbh12    ][hrbh12_desc        ]   [labelg|hrbh11    ]
+ [labelh|hrbh07                                                                    ]
+ [labeli|hrbh08                                                                    ]
+        [                                                                          ]
+
+ <                                                                                               >
+
+
+}
+END -- Grid3
+END -- Page1
+END -- Folder1
+Grid Grid2(hidden)
+{
+ ----------[label|cnt  ]----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"Group1", hidden;
+Label label1:Label1, text=%"hrbh01", justify=right;
+ButtonEdit hrbh01=formonly.hrbh01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=2, noEntry;
+Label label4:Label4, text=%"hrat04", justify=right;
+ButtonEdit hrat04=formonly.hrat04 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Edit hrat04_desc=formonly.hrat04_desc, tabIndex=6;
+Label label3:Label3, text=%"hrat17", justify=right;
+Edit hrat17=formonly.hrat17 type VARCHAR, tabIndex=3, noEntry;
+Edit hrat17_desc=formonly.hrat17_desc type VARCHAR, tabIndex=4, noEntry;
+Label label5:Label5, text=%"hrat05", justify=right;
+Edit hrat05=formonly.hrat05 type VARCHAR, tabIndex=7, noEntry;
+Edit hrat05_desc=formonly.hrat05_desc type VARCHAR, tabIndex=8, noEntry;
+Label label6:Label6, text=%"hrat22", justify=right;
+ButtonEdit hrat22=formonly.hrat22 type VARCHAR, action=controlp, tabIndex=9, image="zoom";
+Edit hrat22_desc=formonly.hrat22_desc type VARCHAR, tabIndex=10, noEntry;
+Label label8:Label8, text=%"hrat06", justify=right;
+Edit hrat06=formonly.hrat06 type VARCHAR, tabIndex=13, noEntry;
+Edit hrat06_desc=formonly.hrat06_desc type VARCHAR, tabIndex=14, noEntry;
+Label label7:Label7, text=%"hrat42", justify=right;
+Edit hrat42=formonly.hrat42 type VARCHAR, tabIndex=11;
+Edit hrat42_desc=formonly.hrat42_desc type VARCHAR, tabIndex=12, noEntry;
+Label label9:Label9, text=%"hrat25", justify=right;
+DateEdit hrat25=formonly.hrat25 type DATE, tabIndex=15;
+Label label2:Label2, text=%"hrat20", justify=right;
+ButtonEdit hrat20=formonly.hrat20 type VARCHAR, action=controlp, tabIndex=32, image="zoom";
+Edit hrat20_desc=formonly.hrat20_desc type VARCHAR, tabIndex=33, noEntry;
+Group group2:Group2, text=%"Group2";
+Label label0:Label11, text=%"hrbh02", justify=right;
+ComboBox hrbh02=formonly.hrbh02 type VARCHAR, tabIndex=16, not null, required, items=(("1", "lizhi"),("2", "tuixiu"));
+Label labela:Label12, text=%"hrbh03", justify=right;
+DateEdit hrbh03=formonly.hrbh03 type DATE, tabIndex=17, not null, required;
+Label labelb:Label13, text=%"hrbh04", justify=right;
+DateEdit hrbh04=formonly.hrbh04 type DATE, tabIndex=18, not null, required;
+Label labelc:Label14, text=%"hrbh05", justify=right;
+ButtonEdit hrbh05=formonly.hrbh05 type VARCHAR, action=controlp, tabIndex=19, not null, required, image="zoom";
+Edit hrbh05_desc=formonly.hrbh05_desc type VARCHAR, tabIndex=20, noEntry;
+Label labeld:Label15, text=%"hrbh06", justify=right;
+ButtonEdit hrbh06=formonly.hrbh06 type VARCHAR, action=controlp, tabIndex=21, not null, required, image="zoom";
+Edit hrbh06_desc=formonly.hrbh06_desc, tabIndex=22;
+Label labele:Label16, text=%"hrbhconf", justify=right;
+ComboBox hrbhconf=formonly.hrbhconf type VARCHAR, tabIndex=24, noEntry, not null, required, items=(("1", "unconfirm"),("2", "confirm"),("3", "guidang"));
+CheckBox hrbh09=formonly.hrbh09 type VARCHAR, tabIndex=23, text=%"hrbh09", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrbhu=formonly.hrbhud02, tabIndex=31, text=%"hrbhud02", valueChecked = "Y", valueUnchecked = "N";
+Label labelf:Label40, text=%"hrbh12", justify=right;
+ButtonEdit hrbh12=formonly.hrbh12 type VARCHAR, action=controlp, tabIndex=28, not null, required, image="zoom";
+Edit hrbh12_desc=formonly.hrbh12_desc, tabIndex=29;
+Label labelg:Label10, text=%"hrbh11", justify=right;
+DateEdit hrbh11=formonly.hrbh11 type DATE, tabIndex=30, not null, required;
+Label labelh:Label17, text=%"hrbh07", justify=right;
+TextEdit hrbh07=formonly.hrbh07 type VARCHAR, tabIndex=25;
+Label labeli:Label18, text=%"hrbh08", justify=right;
+TextEdit hrbh08=formonly.hrbh08, tabIndex=26;
+Label label:Label25, text=%"cnt";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrbh01,formonly.hrat02,formonly.hrat17,formonly.hrat17_desc,formonly.hrat04,formonly.hrat04_desc,formonly.hrat05,formonly.hrat05_desc,formonly.hrat22,formonly.hrat22_desc,formonly.hrat42,formonly.hrat42_desc,formonly.hrat06,formonly.hrat06_desc,formonly.hrat25,formonly.hrbh02,formonly.hrbh03,formonly.hrbh04,formonly.hrbh05,formonly.hrbh05_desc,formonly.hrbh06,formonly.hrbh06_desc,formonly.hrbh09,formonly.hrbhconf,formonly.hrbh07,formonly.hrbh08,formonly.cnt,formonly.hrbh12,formonly.hrbh12_desc,formonly.hrbh11,formonly.hrbhud02,formonly.hrat20,formonly.hrat20_desc)
+END -- INSTRUCTIONS
+

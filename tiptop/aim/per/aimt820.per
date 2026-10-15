@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt820.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt820")
+VBox VBox1
+Folder pc613
+Page page01(text="Main")
+Grid gr3488
+{
+ <T s_pia                                                                                                                                                                                                                                                              >
+ [pia16   |pia01       |pia02        |ima02       |ima021       |pia|pia03    |pia04     |pia05         |pia06    |pia09        |pia07       |qty                 |pia35      |peo        |gen02    |pia930    |gem02   |pia931    |icdcnt  |pia70      |azf03         ]
+ [pia16   |pia01       |pia02        |ima02       |ima021       |pia|pia03    |pia04     |pia05         |pia06    |pia09        |pia07       |qty                 |pia35      |peo        |gen02    |pia930    |gem02   |pia931    |icdcnt  |pia70      |azf03         ]
+ [pia16   |pia01       |pia02        |ima02       |ima021       |pia|pia03    |pia04     |pia05         |pia06    |pia09        |pia07       |qty                 |pia35      |peo        |gen02    |pia930    |gem02   |pia931    |icdcnt  |pia70      |azf03         ]
+ [pia16   |pia01       |pia02        |ima02       |ima021       |pia|pia03    |pia04     |pia05         |pia06    |pia09        |pia07       |qty                 |pia35      |peo        |gen02    |pia930    |gem02   |pia931    |icdcnt  |pia70      |azf03         ]
+ [pia16   |pia01       |pia02        |ima02       |ima021       |pia|pia03    |pia04     |pia05         |pia06    |pia09        |pia07       |qty                 |pia35      |peo        |gen02    |pia930    |gem02   |pia931    |icdcnt  |pia70      |azf03         ]
+ [pia16   |pia01       |pia02        |ima02       |ima021       |pia|pia03    |pia04     |pia05         |pia06    |pia09        |pia07       |qty                 |pia35      |peo        |gen02    |pia930    |gem02   |pia931    |icdcnt  |pia70      |azf03         ]
+ [pia16   |pia01       |pia02        |ima02       |ima021       |pia|pia03    |pia04     |pia05         |pia06    |pia09        |pia07       |qty                 |pia35      |peo        |gen02    |pia930    |gem02   |pia931    |icdcnt  |pia70      |azf03         ]
+ [pia16   |pia01       |pia02        |ima02       |ima021       |pia|pia03    |pia04     |pia05         |pia06    |pia09        |pia07       |qty                 |pia35      |peo        |gen02    |pia930    |gem02   |pia931    |icdcnt  |pia70      |azf03         ]
+ [pia16   |pia01       |pia02        |ima02       |ima021       |pia|pia03    |pia04     |pia05         |pia06    |pia09        |pia07       |qty                 |pia35      |peo        |gen02    |pia930    |gem02   |pia931    |icdcnt  |pia70      |azf03         ]
+ [pia16   |pia01       |pia02        |ima02       |ima021       |pia|pia03    |pia04     |pia05         |pia06    |pia09        |pia07       |qty                 |pia35      |peo        |gen02    |pia930    |gem02   |pia931    |icdcnt  |pia70      |azf03         ]
+ <                                                                                                                                                                                                                                                                     >
+
+
+
+}
+END -- gr3488
+END -- page01
+END -- pc613
+Grid gr3489
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr3489
+END -- VBox1
+END -- aimt820
+
+TABLES
+gen_file,
+azf_file,
+pia_file
+ATTRIBUTES
+Table s_pia:s_pia;
+CheckBox pia16=pia_file.pia16, tabIndex=19, title="Empty Label", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit pia01=pia_file.pia01, tabIndex=17, title="Label No.", noEntry;
+ButtonEdit pia02=pia_file.pia02, action=controlp, tabIndex=2, title="Item No.", image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=4, title="Spec", noEntry;
+CheckBox pia=pia_file.pia19, tabIndex=18, title="post", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit pia03=pia_file.pia03, action=controlp, tabIndex=5, title="Warehouse", image="zoom";
+ButtonEdit pia04=pia_file.pia04, action=controlp, tabIndex=6, title="Location", noEntry, image="zoom";
+ButtonEdit pia05=pia_file.pia05, action=controlp, tabIndex=7, title="Lot#", image="zoom";
+Edit pia06=pia_file.pia06, tabIndex=8, title="Inventory Class", noEntry;
+ButtonEdit pia09=pia_file.pia09, action=controlp, tabIndex=9, title="Inventory Unit", image="zoom";
+ButtonEdit pia07=pia_file.pia07, action=controlp, tabIndex=10, title="Account", noEntry, image="zoom";
+Edit qty=formonly.qty type DECIMAL, tabIndex=11, title="Inventory Qty";
+DateEdit pia35=pia_file.pia35, tabIndex=12, title="Inv Taking Date";
+ButtonEdit peo=formonly.peo type CHAR, action=controlp, tabIndex=13, title="Inv Taking Employee", image="zoom";
+Edit gen02=gen_file.gen02, tabIndex=14, title="Emp Name", noEntry;
+ButtonEdit pia930=formonly.pia930 type CHAR, action=controlp, tabIndex=15, title="Cost Center", image="zoom";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=16, title="Desc", noEntry;
+ButtonEdit pia931=pia_file.pia931, action=controlp, tabIndex=20, title="pia931", noEntry, image="zoom.png";
+CheckBox icdcnt=formonly.icdcnt type CHAR, tabIndex=21, title=%"Uncounting M/B", text=%"";
+ButtonEdit pia70=pia_file.pia70, action=controlp, tabIndex=22, title=%"pia70", image="zoom";
+Edit azf03=azf_file.azf03, tabIndex=23, title=%"azf03", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=1;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pia(pia_file.pia16,pia_file.pia01,pia_file.pia02,formonly.ima02,formonly.ima021,pia_file.pia19,pia_file.pia03,pia_file.pia04,pia_file.pia05,pia_file.pia06,pia_file.pia09,pia_file.pia07,formonly.qty,pia_file.pia35,formonly.peo,gen_file.gen02,formonly.pia930,formonly.gem02,pia_file.pia931,formonly.icdcnt,pia_file.pia70,azf_file.azf03)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

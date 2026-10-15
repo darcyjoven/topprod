@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr170.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxr170")
+VBox VBox1
+Grid gr1153
+{
+ <G group01                                 >
+  Item No.             [mea02              ]
+ <                                          >
+ <G group02                                 >
+  [a                    ]
+
+ <                                          >
+
+}
+END -- gr1153
+Grid gr1154
+{
+[more                          ]
+
+}
+END -- gr1154
+END -- VBox1
+END -- abxr170
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit mea02=formonly.mea02 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Group group02:group02, text="INPUT";
+CheckBox a=formonly.a type CHAR, tabIndex=2, text="Print Bond Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=3, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.mea02,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

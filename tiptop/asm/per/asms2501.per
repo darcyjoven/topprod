@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asms2501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asms2501")
+VBox VBox1
+Folder pc205
+Page page03(text="Pricing")
+Grid gr923
+{
+ <G group21                                                                          >
+ [sma841                                                       ]
+
+
+ <                                                                                   >
+ <G group22                             ><G group25                                  >
+ [sma842                               ] [sma843                                ]
+
+ <                                      ><                                           >
+ <G group23                             ><G group26                                  >
+ [sma113                               ] [sma844                                ]
+
+ <                                      ><                                           >
+ <G group24                             ><G group27                                  >
+ [sma112                               ]  Update Item/Supplier Latest U/P Method
+ [sma114                               ]  Lower Price fr Appraisal Table and Supplier
+                                         [sma83                                 ]
+ <                                      ><                                           >
+
+}
+END -- gr923
+END -- page03
+END -- pc205
+END -- VBox1
+END -- asms2501
+
+TABLES
+sma_file
+ATTRIBUTES
+Group group21:group21, text="P/O Unit Price Method";
+RadioGroup sma841=sma_file.sma841, tabIndex=1, required, items=(("1", "Item/Supplier Unit Price,Latest Item Unit Price"),("2", "Item/Supplier Unit Price,Latest Market Price"),("3", "Latest Item Unit Price"),("4", "Latest Market Price"),("5", "Price from Appraisal Table, Latest Item Unit Price"),("6", "Price from Appraisal Table, Item/Supplier Unit Price"),("7", "Price from Appraisal Table"));
+Group group22:group22, text="Updt Item Master Last U/P when Rls P/O";
+RadioGroup sma842=sma_file.sma842, tabIndex=2, required, items=(("1", "Update    "),("2", "Update when Lower"),("3", "No Update"));
+Group group25:group25, text="Update Item/Supplier Latest U/P Method When Issue PO";
+RadioGroup sma843=sma_file.sma843, tabIndex=3, required, items=(("1", "Update    "),("2", "Update when Lower"),("3", "No Update"));
+Group group23:group23, text="Transferred Blanket PO U/P Set";
+RadioGroup sma113=sma_file.sma113, tabIndex=4, required, items=(("1", "Use Blanket PO U/P"),("2", "Pur.U/P "),("3", "Take Lower"));
+Group group26:group26, text="Updt Item Master Market Price when Release P/O";
+RadioGroup sma844=sma_file.sma844, tabIndex=5, required, items=(("1", "Update    "),("2", "Update when Lower"),("3", "No Update"));
+Group group24:group24;
+CheckBox sma112=sma_file.sma112, tabIndex=6, text="Pur.U/P Could = 0", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma114=sma_file.sma114, tabIndex=7, text="Sub.Pur.Affect Last Pur.U/P", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group27:group27;
+RadioGroup sma83=sma_file.sma83, tabIndex=8, required, items=(("1", "Update    "),("2", "Update when Lower"),("3", "No Update"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sma_file.sma841,sma_file.sma842,sma_file.sma843,sma_file.sma113,sma_file.sma844,sma_file.sma112,sma_file.sma114,sma_file.sma83)
+END -- INSTRUCTIONS
+

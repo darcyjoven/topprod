@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsr510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amsr510")
+VBox VBox1
+Grid gr111
+{
+ <G group01                                                                             >
+  Item No.            [mps01               ]  Buyer               [ima43               ]
+  Source Code         [ima08               ]  Time Bucket         [mps03               ]
+  Planner             [ima67               ]
+ <                                                                                      >
+
+}
+END -- gr111
+Group g01(text="INPUT")
+Grid gr112
+{
+  Simulation Version                                    [ver_no    ]
+  Master Item#(Explode All Down Level Component by BOM) [part1               ]
+  Component No(Explode All Pegging Master Item by BOM)  [part2               ]
+ [print_adj                               ]
+ [print_plp                               ]
+
+ <G group02                                          >
+ [order                         ]
+
+ <                                                   >
+
+}
+END -- gr112
+END -- g01
+Grid gr113
+{
+[more                                               ]
+
+}
+END -- gr113
+END -- VBox1
+END -- amsr510
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit mps01=formonly.mps01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima43=formonly.ima43 type CHAR, tabIndex=2;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=3;
+DateEdit mps03=formonly.mps03 type DATE, tabIndex=4;
+Edit ima67=formonly.ima67 type CHAR, tabIndex=5;
+Edit ver_no=formonly.ver_no type CHAR, tabIndex=6;
+ButtonEdit part1=formonly.part1 type VARCHAR, action=controlp, tabIndex=7, image="zoom", comment="If Item No. entered, print the Master Item BOM Down Level item only";
+ButtonEdit part2=formonly.part2 type VARCHAR, action=controlp, tabIndex=8, image="zoom", comment="If Item No. entered, print the component BOM Pegging item only";
+CheckBox print_adj=formonly.print_adj type CHAR, tabIndex=9, text="Print Delivery ReSchedule Suggest?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox print_plp=formonly.print_plp type CHAR, tabIndex=10, text="Print PLM/PLP Suggestion?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Data Option";
+RadioGroup order=formonly.order type CHAR, tabIndex=11, default = "3", items=(("1", "Planner"),("2", "Buyer "),("3", "Item#"));
+CheckBox more=formonly.more type CHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.mps01,formonly.ima43,formonly.ima08,formonly.mps03,formonly.ima67,formonly.ver_no,formonly.part1,formonly.part2,formonly.print_adj,formonly.print_plp,formonly.order,formonly.more)
+END -- INSTRUCTIONS
+

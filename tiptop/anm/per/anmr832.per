@@ -1,0 +1,90 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr832.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr832")
+VBox vb4
+Group group01(text="QBE")
+Grid gr4
+{
+ Transaction Date    [nmh25               ]
+ Customer            [nmh11               ]
+ Note Receipt NO.    [nmh01               ]
+ Department No.      [nmh15               ]
+ Due date            [nmh05               ]
+ Remitting Bank      [nmh21               ]
+ Notes type 1        [nmh10               ]
+ Notes type 2        [nmh29               ]
+
+}
+END -- gr4
+END -- group01
+Group group02(text="INPUT")
+VBox VBox1
+Grid gr5
+{
+ <G group03                                                          >
+  [s1                  ]   [s2                  ]
+  [t1                  ]   [t2                  ]
+  [u1                  ]   [u2                  ]
+
+ <                                                                   >
+
+}
+END -- gr5
+Grid gr6
+{
+ Ending Date         [e_date              ]
+
+}
+END -- gr6
+Grid gr7
+{
+
+ <G group04                                                         >
+  [a                             ]
+
+ <                                                                  >
+
+}
+END -- gr7
+END -- VBox1
+END -- group02
+Grid gr8
+{
+[more                                                        ]
+
+}
+END -- gr8
+END -- vb4
+END -- anmr832
+
+ATTRIBUTES
+DateEdit nmh25=formonly.nmh25 type DATE, tabIndex=1;
+Edit nmh11=formonly.nmh11 type VARCHAR, tabIndex=2;
+Edit nmh01=formonly.nmh01 type VARCHAR, tabIndex=3;
+Edit nmh15=formonly.nmh15 type VARCHAR, tabIndex=4;
+DateEdit nmh05=formonly.nmh05 type DATE, tabIndex=5;
+Edit nmh21=formonly.nmh21 type VARCHAR, tabIndex=6;
+Edit nmh10=formonly.nmh10 type VARCHAR, tabIndex=16;
+Edit nmh29=formonly.nmh29 type VARCHAR, tabIndex=17;
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=7, queryEditable, items=(("1", "Transaction Date"),("2", "Customer NO."),("3", "Note Receipt NO."),("4", "Department No."),("5", "Due Date"),("6", "Remitting Bank"),("7", "Notes type 1"),("8", "Notes type 2"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=8, queryEditable, items=(("1", "Transaction Date"),("2", "Customer NO."),("3", "Note Receipt NO."),("4", "Department No."),("5", "Due Date"),("6", "Remitting Bank"),("7", "Notes type 1"),("8", "Notes type 2"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=11, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=12, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit e_date=formonly.e_date type DATE, tabIndex=13;
+Group group04:group04, text="Data Option";
+RadioGroup a=formonly.a type CHAR, tabIndex=14, items=(("1", "Note Received"),("2", "Collection Discount"),("3", "Pledge"),("4", "Note discount"));
+CheckBox more=formonly.more type CHAR, tabIndex=15, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nmh25,formonly.nmh11,formonly.nmh01,formonly.nmh15,formonly.nmh05,formonly.nmh21,formonly.nmh10,formonly.nmh29,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.u1,formonly.u2,formonly.e_date,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

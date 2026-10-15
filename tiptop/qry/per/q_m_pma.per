@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_m_pma.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_m_pma")
+Grid gr3796
+{
+ <T s_pma                                                                            >
+ [check  |pma01          |pma02               |pma03|pma09 |pma08|pma12|pma13 |pma10]
+ [check  |pma01          |pma02               |pma03|pma09 |pma08|pma12|pma13 |pma10]
+ [check  |pma01          |pma02               |pma03|pma09 |pma08|pma12|pma13 |pma10]
+ [check  |pma01          |pma02               |pma03|pma09 |pma08|pma12|pma13 |pma10]
+ [check  |pma01          |pma02               |pma03|pma09 |pma08|pma12|pma13 |pma10]
+ [check  |pma01          |pma02               |pma03|pma09 |pma08|pma12|pma13 |pma10]
+ <                                                                                   >
+
+}
+END -- gr3796
+END -- q_m_pma
+
+TABLES
+pma_file
+ATTRIBUTES
+Table s_pma:s_pma;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pma01=pma_file.pma01, tabIndex=2, title="Payment Method", noEntry;
+Edit pma02=pma_file.pma02, tabIndex=3, title="Description", noEntry;
+Edit pma03=pma_file.pma03, tabIndex=4, title="Base", noEntry;
+Edit pma09=pma_file.pma09, tabIndex=5, title="Month", noEntry;
+Edit pma08=pma_file.pma08, tabIndex=6, title="Day", noEntry;
+Edit pma12=pma_file.pma12, tabIndex=7, title="Base", noEntry;
+Edit pma13=pma_file.pma13, tabIndex=8, title="Month", noEntry;
+Edit pma10=pma_file.pma10, tabIndex=9, title="Day", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pma(formonly.check,pma_file.pma01,pma_file.pma02,pma_file.pma03,pma_file.pma09,pma_file.pma08,pma_file.pma12,pma_file.pma13,pma_file.pma10)
+END -- INSTRUCTIONS
+

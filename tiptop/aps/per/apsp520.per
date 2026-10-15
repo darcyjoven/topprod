@@ -1,0 +1,50 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsp520.per created Wed Dec 31 05:30:03 2008
+-- File created from apsp520.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsp520")
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID gr5379
+    {
+    <G group01                                 >
+     Item No.            [aa0                 ]
+     Source Code         [aa1                 ]
+    <                                          >
+    <G group02                                 >
+     W/O Date            [aa2         ]
+     W/O Doc.            [aa3               ]
+     Manufacturing Dpet. [aa4       ]
+    <                                          >
+
+
+    }
+    END -- GRID
+    GRID gr5380
+    {
+    [aa5                                                          ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  EDIT aa0=FORMONLY.pid, TABINDEX=1;
+  EDIT aa1=FORMONLY.ima08, UPSHIFT, TABINDEX=2;
+  GROUP group02 : group02, TEXT="INPUT";
+  DATEEDIT aa2=FORMONLY.sfb81 TYPE DATE, TABINDEX=3;
+  BUTTONEDIT aa3=FORMONLY.sfb01, ACTION=controlp, COMMENT="<^P>Qry Documents", IMAGE="zoom", UPSHIFT, TABINDEX=4;
+  BUTTONEDIT aa4=FORMONLY.sfb82, ACTION=controlp, IMAGE="zoom", UPSHIFT, TABINDEX=5;
+  CHECKBOX aa5=FORMONLY.g_bgjob, TEXT="Background Job", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=6;
+END

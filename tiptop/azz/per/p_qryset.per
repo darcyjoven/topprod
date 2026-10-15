@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_qryset.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_qryset")
+VBox VBox1
+Table s_gcm
+{
+[gcm01   |gcm02        |gcm03             |gcm04        |gcm11         |gcm05        |gcm06                 |gcm07                 ]
+[gcm01   |gcm02        |gcm03             |gcm04        |gcm11         |gcm05        |gcm06                 |gcm07                 ]
+[gcm01   |gcm02        |gcm03             |gcm04        |gcm11         |gcm05        |gcm06                 |gcm07                 ]
+[gcm01   |gcm02        |gcm03             |gcm04        |gcm11         |gcm05        |gcm06                 |gcm07                 ]
+[gcm01   |gcm02        |gcm03             |gcm04        |gcm11         |gcm05        |gcm06                 |gcm07                 ]
+[gcm01   |gcm02        |gcm03             |gcm04        |gcm11         |gcm05        |gcm06                 |gcm07                 ]
+[gcm01   |gcm02        |gcm03             |gcm04        |gcm11         |gcm05        |gcm06                 |gcm07                 ]
+[gcm01   |gcm02        |gcm03             |gcm04        |gcm11         |gcm05        |gcm06                 |gcm07                 ]
+[gcm01   |gcm02        |gcm03             |gcm04        |gcm11         |gcm05        |gcm06                 |gcm07                 ]
+[gcm01   |gcm02        |gcm03             |gcm04        |gcm11         |gcm05        |gcm06                 |gcm07                 ]
+
+}
+END -- s_gcm
+Grid gr3278
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3278
+END -- VBox1
+END -- p_qryset
+
+TABLES
+gcm_file
+ATTRIBUTES
+Edit gcm01=gcm_file.gcm01, tabIndex=1, title="Item", not null, required;
+ButtonEdit gcm02=gcm_file.gcm02, action=controlp, tabIndex=2, title="Class Code", not null, required, image="zoom.png";
+ButtonEdit gcm03=gcm_file.gcm03, action=controlp, tabIndex=3, title="Table", not null, required, image="zoom.png";
+ButtonEdit gcm04=gcm_file.gcm04, action=controlp, tabIndex=4, title="Column", not null, required, image="zoom.png";
+ButtonEdit gcm11=gcm_file.gcm11, action=controlp, tabIndex=5, title="Program Code", not null, required, image="zoom.png";
+ButtonEdit gcm05=gcm_file.gcm05, action=controlp, tabIndex=6, title="Program Code", not null, required, image="zoom.png";
+ButtonEdit gcm06=gcm_file.gcm06, action=controlp, tabIndex=7, title="KeyValue_1", not null, required, image="zoom.png";
+ButtonEdit gcm07=gcm_file.gcm07, action=controlp, tabIndex=8, title="KeyValue_2", image="zoom.png";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gcm(gcm_file.gcm01,gcm_file.gcm02,gcm_file.gcm03,gcm_file.gcm04,gcm_file.gcm11,gcm_file.gcm05,gcm_file.gcm06,gcm_file.gcm07)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

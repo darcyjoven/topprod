@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_coe.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Bonded Import Material Data Query")
+VBox VBox1
+Grid gr3746
+{
+ Bonded No.          [coc04               ]
+ Guide No.           [coc03               ]
+}
+END -- gr3746
+Table s_coe
+{
+[check |coe02      |coe03          |cob02                                   |coe05         |coe06   |coe07               |coe08               ]
+[check |coe02      |coe03          |cob02                                   |coe05         |coe06   |coe07               |coe08               ]
+[check |coe02      |coe03          |cob02                                   |coe05         |coe06   |coe07               |coe08               ]
+[check |coe02      |coe03          |cob02                                   |coe05         |coe06   |coe07               |coe08               ]
+[check |coe02      |coe03          |cob02                                   |coe05         |coe06   |coe07               |coe08               ]
+[check |coe02      |coe03          |cob02                                   |coe05         |coe06   |coe07               |coe08               ]
+[check |coe02      |coe03          |cob02                                   |coe05         |coe06   |coe07               |coe08               ]
+[check |coe02      |coe03          |cob02                                   |coe05         |coe06   |coe07               |coe08               ]
+[check |coe02      |coe03          |cob02                                   |coe05         |coe06   |coe07               |coe08               ]
+[check |coe02      |coe03          |cob02                                   |coe05         |coe06   |coe07               |coe08               ]
+
+}
+END -- s_coe
+END -- VBox1
+END -- q_coe
+
+TABLES
+coe_file,
+coc_file
+ATTRIBUTES
+Edit coc04=coc_file.coc04, tabIndex=1;
+Edit coc03=coc_file.coc03, tabIndex=2;
+CheckBox check=formonly.check type CHAR, tabIndex=3, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit coe02=coe_file.coe02, tabIndex=4, title="Serial No.", noEntry;
+Edit coe03=coe_file.coe03, tabIndex=5, title="Goods No.", noEntry;
+Edit cob02=formonly.cob02 type VARCHAR, tabIndex=6, title="Part Name Specification", noEntry;
+Edit coe05=coe_file.coe05, tabIndex=7, title="Qty Applied", noEntry;
+Edit coe06=coe_file.coe06, tabIndex=8, title="Unit", noEntry;
+Edit coe07=coe_file.coe07, tabIndex=9, title="Unit price", noEntry;
+Edit coe08=coe_file.coe08, tabIndex=10, title="Amount", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_coe(formonly.check,coe_file.coe02,coe_file.coe03,formonly.cob02,coe_file.coe05,coe_file.coe06,coe_file.coe07,coe_file.coe08)
+SCREEN RECORD Undefined(coc_file.coc04,coc_file.coc03)
+END -- INSTRUCTIONS
+

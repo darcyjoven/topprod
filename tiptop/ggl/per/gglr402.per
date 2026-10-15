@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglr402.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gglr402")
+VBox VBox1
+Group g1(text=%"INPUT1")
+Grid Grid1
+{
+   Book.No        [bookno        ]
+
+}
+END -- Grid1
+END -- g1
+Grid gr14
+{
+ <G group01                                           >
+  Account NO.         [aag01                         ]
+ <                                                    >
+}
+END -- gr14
+Group g01(text="INPUT")
+Grid gr15
+{
+
+  Year       [yy         ]
+  Month      [mm1 ]-[mm2 ]
+
+ <G group04                                           >
+ [a                                                  ]
+  Account level  [lvl1      ]-[lvl2      ]
+ [b                                                  ]
+ [c                                                  ]
+ [d                                                  ]
+ [e                                                  ]
+ [f                                                  ]
+ [h                                              ]
+ <                                                    >
+
+}
+END -- gr15
+END -- g01
+Grid gr16
+{
+ [more                               ]
+
+
+}
+END -- gr16
+END -- VBox1
+END -- gglr402
+
+ATTRIBUTES
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Qry Book No ";
+Group group01:group01, text="QBE 1";
+ButtonEdit aag01=formonly.aag01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry  Account";
+Edit yy=formonly.yy type SMALLINT, tabIndex=3, not null, required, comment="Enter Year !!";
+Edit mm1=formonly.mm1 type SMALLINT, tabIndex=4, not null, required, comment="Enter Begin Month !!";
+Edit mm2=formonly.mm2 type SMALLINT, tabIndex=5, not null, required, comment="Enter End Month !!";
+Group group04:group04, text="Print Method";
+CheckBox a=formonly.a type CHAR, tabIndex=6, text="Only Print Lowest Level Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit lvl1=formonly.lvl1 type INTEGER, tabIndex=7, noEntry;
+Edit lvl2=formonly.lvl2 type INTEGER, tabIndex=8, noEntry;
+CheckBox b=formonly.b type CHAR, tabIndex=9, text="Print if None Beginning & Transaction?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type CHAR, tabIndex=10, text="Print Independent Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type CHAR, tabIndex=11, text="Print Uncurrency Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=12, text="Next Page by each finished Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type CHAR, tabIndex=13, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=15, text="Monetary Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,formonly.aag01,formonly.yy,formonly.mm1,formonly.mm2,formonly.a,formonly.lvl1,formonly.lvl2,formonly.b,formonly.c,formonly.d,formonly.e,formonly.f,formonly.h,formonly.more)
+END -- INSTRUCTIONS
+

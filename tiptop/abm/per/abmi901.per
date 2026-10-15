@@ -1,0 +1,238 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi901.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi901")
+VBox VBox1
+Folder pc133
+Page page01(text="Main")
+HBox hb8
+Grid gr824
+{
+ Change Requisite No.      [bmr01                   ]
+ Application Form Date     [bmr02       ]
+ Anticipated Complete Date [bmr03       ]
+ Applicant                 [bmr06     ] [gen02            ]
+ Applying Department       [bmr05     ] [gem02            ]
+ ECN No.                   [ecnno                                                     ]
+
+
+}
+END -- gr824
+Grid gr825
+{
+ Item No.            [bmr07                         ]
+ Item Name           [ima02                         ]
+ Specification       [ima021                        ]
+ Related Customer    [bmr04     ][occ02     ]
+ Confirm             [bmrconf         ]
+[bmr48              ]                       [imgmksg]
+ Status              [bmr49               ] [       ]
+
+}
+END -- gr825
+END -- hb8
+END -- page01
+Page info(text="Info")
+Grid gr826
+{
+ Record Owner        [bmruser   ] Last Modified by    [bmrmodu   ] Data Valid Code     [bmracti   ]
+ Department          [bmrgrup   ] Create/Modify Date  [bmrdate   ]
+ Record Orig.        [bmroriu   ]
+ Dept Orig.          [bmrorig   ]
+}
+END -- gr826
+END -- info
+END -- pc133
+Folder pc134
+Page page02(text="page02")
+HBox hb6
+Grid gr827
+{
+ <G group01                               >
+  (1)[bmr08                              ]
+  (2)[bmr09                              ]
+  (3)[bmr10                              ]
+  (4)[bmr11                              ]
+  (5)[bmr12                              ]
+  (6)[bmr13                              ]
+  (7)[bmr14                              ]
+  Related document #[bmr141    ]
+  (8)[bmr15                              ]
+     [bmr151                             ]
+ <                                        >
+
+}
+END -- gr827
+Grid gr828
+{
+ <G group02                         >
+  [bmr26                           ]
+  [bmr27                           ]
+ <                                  >
+
+
+
+
+
+
+
+
+
+}
+END -- gr828
+END -- hb6
+END -- page02
+Page page04(text="page04")
+Grid gr829
+{
+ <G group05                                       >
+                         [dummy01   ] [dummy02   ]
+  Supplier inventory     [bmr16     ] [bmr17     ]
+  Parts Inventory        [bmr18     ] [bmr19     ]
+  WIP Inventory          [bmr20     ] [bmr21     ]
+  Finished Product Inv   [bmr22     ] [bmr23     ]
+  Delivered Product      [bmr24     ] [bmr25     ]
+ <                                                >
+
+}
+END -- gr829
+END -- page04
+Page page03(text="page03")
+HBox hb7
+Grid gr830
+{
+ <G group03                        >
+  (01)[bmr36                      ]
+  (02)[bmr37                      ]
+  (03)[bmr38                      ]
+  (04)[bmr39                      ]
+  (05)[bmr40                      ]
+  (06)[bmr41                      ]
+  (07)[bmr42                      ]
+  (08)[bmr43                      ]
+  (09)[bmr44                      ]
+  (10)[bmr45                      ]
+      [bmr46                      ]
+ <                                 >
+
+}
+END -- gr830
+Grid gr831
+{
+ <G group04                        >
+ [bmr30                         ]
+ [bmr31                         ]
+ [bmr32                         ]
+ [bmr33                         ]
+ [bmr34   ][bmr35               ]
+ <                                 >
+
+
+
+
+
+
+
+}
+END -- gr831
+END -- hb7
+END -- page03
+END -- pc134
+Grid gr832
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+
+
+
+}
+END -- gr832
+END -- VBox1
+END -- abmi901
+
+TABLES
+bmr_file
+ATTRIBUTES
+ButtonEdit bmr01=bmr_file.bmr01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Enter Engineering Change Requisite No. <^P> Qry  Doc Property <^Y>Doc Property (FM)";
+DateEdit bmr02=bmr_file.bmr02, tabIndex=2, not null, required;
+DateEdit bmr03=bmr_file.bmr03, tabIndex=3, comment="<^E>Cursor Up";
+ButtonEdit bmr06=bmr_file.bmr06, action=controlp, tabIndex=502, not null, required, image="zoom", comment="<^P> Qry Dept.Employee <^E>Cursor Up";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=503, not null, required;
+ButtonEdit bmr05=bmr_file.bmr05, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P> Qry  Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=5, not null, required;
+Edit ecnno=formonly.ecnno type CHAR, tabIndex=6;
+ButtonEdit bmr07=bmr_file.bmr07, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P> Query Item";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=8, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=9, noEntry;
+ButtonEdit bmr04=bmr_file.bmr04, action=controlp, tabIndex=10, image="zoom", comment="<^P> Qry Customer <^E>Cursor Up";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=11, noEntry;
+ComboBox bmrconf=bmr_file.bmrconf, tabIndex=501, noEntry, queryEditable, items=(("Y", "Confirm"),("N", "Cancel"),("X", "Void"));
+CheckBox bmr48=bmr_file.bmr48, tabIndex=12, text="Approve?", noEntry, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ComboBox bmr49=bmr_file.bmr49, tabIndex=14, noEntry, queryEditable, items=(("0", "Issue"),("1", "Approved"),("S", "Approving"),("R", "Approval rejected!"),("W", "Withdraw"),("X", "void"));
+Edit bmruser=bmr_file.bmruser, tabIndex=15, noEntry;
+Edit bmrmodu=bmr_file.bmrmodu, tabIndex=16, noEntry;
+Edit bmracti=bmr_file.bmracti, tabIndex=17, noEntry, upShift;
+Edit bmrgrup=bmr_file.bmrgrup, tabIndex=18, noEntry;
+DateEdit bmrdate=bmr_file.bmrdate, tabIndex=19, noEntry;
+Edit bmroriu=bmr_file.bmroriu, tabIndex=499, noEntry;
+Edit bmrorig=bmr_file.bmrorig, tabIndex=500, noEntry;
+Group group01:group01, text="Attribute";
+CheckBox bmr08=bmr_file.bmr08, tabIndex=20, text="Modify Drawing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr09=bmr_file.bmr09, tabIndex=21, text="Product Improvement", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr10=bmr_file.bmr10, tabIndex=22, text="Manufacturing Problem", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr11=bmr_file.bmr11, tabIndex=23, text="Purchase Problem", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr12=bmr_file.bmr12, tabIndex=24, text="Decrease Manufacturing Cost", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr13=bmr_file.bmr13, tabIndex=25, text="Re-Design", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr14=bmr_file.bmr14, tabIndex=26, text="On Customer\'s Demand", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit bmr141=bmr_file.bmr141, tabIndex=27;
+CheckBox bmr15=bmr_file.bmr15, tabIndex=28, text="Other", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit bmr151=bmr_file.bmr151, tabIndex=29;
+Group group02:group02, text="Change Requisition QBE";
+CheckBox bmr26=bmr_file.bmr26, tabIndex=30, text="Stock Part, WIP, Fin.Product", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr27=bmr_file.bmr27, tabIndex=31, text="Delivered Product Servicing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05;
+Label dummy01:dummy01, text="Suggested method";
+Label dummy02:dummy02, text="Estimated cost consumption";
+ComboBox bmr16=bmr_file.bmr16, tabIndex=32, queryEditable, comment="A.Retire B.Re-Fix C.Use up   D.Return to Supplier E.till ECN Assigned Effective Date or after W/O", items=(("A", "Retire"),("B", "Re-Fix"),("C", "Use up"),("D", "Return to Supplier"),("E", "till ECN Assigned Effective Date or after W/O"));
+Edit bmr17=bmr_file.bmr17, tabIndex=33;
+ComboBox bmr18=bmr_file.bmr18, tabIndex=34, queryEditable, comment="A.Retire B.Re-Fix C.Use up   D.Return to Supplier E.till ECN Assigned Effective Date or after W/O", items=(("A", "Retire"),("B", "Re-Fix"),("C", "Use up"),("D", "Return to Supplier"),("E", "till ECN Assigned Effective Date or after W/O"));
+Edit bmr19=bmr_file.bmr19, tabIndex=35;
+ComboBox bmr20=bmr_file.bmr20, tabIndex=36, queryEditable, comment="A.Retire B.Re-Fix C.Use up   D.Return to Supplier E.till ECN Assigned Effective Date or after W/O", items=(("A", "Retire"),("B", "Re-Fix"),("C", "Use up"),("D", "Return to Supplier"),("E", "till ECN Assigned Effective Date or after W/O"));
+Edit bmr21=bmr_file.bmr21, tabIndex=37;
+ComboBox bmr22=bmr_file.bmr22, tabIndex=38, queryEditable, comment="A.Retire B.Re-Fix C.Use up   D.Return to Supplier E.till ECN Assigned Effective Date or after W/O", items=(("A", "Retire"),("B", "Re-Fix"),("C", "Use up"),("D", "Return to Supplier"),("E", "till ECN Assigned Effective Date or after W/O"));
+Edit bmr23=bmr_file.bmr23, tabIndex=39;
+ComboBox bmr24=bmr_file.bmr24, tabIndex=40, queryEditable, comment="A.Retire B.Re-Fix C.Use up   D.Return to Supplier E.till ECN Assigned Effective Date or after W/O", items=(("A", "Retire"),("B", "Re-Fix"),("C", "Use up"),("D", "Return to Supplier"),("E", "till ECN Assigned Effective Date or after W/O"));
+Edit bmr25=bmr_file.bmr25, tabIndex=41;
+Group group03:group03, text="Design Affected after Change";
+CheckBox bmr36=bmr_file.bmr36, tabIndex=42, text="Firmware", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr37=bmr_file.bmr37, tabIndex=43, text="Schematic", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr38=bmr_file.bmr38, tabIndex=44, text="PACKING", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr39=bmr_file.bmr39, tabIndex=45, text="QVL", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr40=bmr_file.bmr40, tabIndex=46, text="UL.CSA.FCC.VDE", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr41=bmr_file.bmr41, tabIndex=47, text="S/W", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr42=bmr_file.bmr42, tabIndex=48, text="BOM", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr43=bmr_file.bmr43, tabIndex=49, text="PCB", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr44=bmr_file.bmr44, tabIndex=50, text="Product Specification", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr45=bmr_file.bmr45, tabIndex=51, text="Other", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit bmr46=bmr_file.bmr46, tabIndex=52;
+Group group04:group04, text="Engineering Affected after Change";
+CheckBox bmr30=bmr_file.bmr30, tabIndex=53, text="Tools", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr31=bmr_file.bmr31, tabIndex=54, text="Testing Method,Steps,Program", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr32=bmr_file.bmr32, tabIndex=55, text="Work hour", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr33=bmr_file.bmr33, tabIndex=56, text="Manufacturing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr34=bmr_file.bmr34, tabIndex=57, text="Other", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit bmr35=bmr_file.bmr35, tabIndex=58;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=59, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bmr_file.bmr01,bmr_file.bmr02,bmr_file.bmr03,bmr_file.bmr05,formonly.gem02,formonly.ecnno,bmr_file.bmr07,formonly.ima02,formonly.ima021,bmr_file.bmr04,formonly.occ02,bmr_file.bmrconf,bmr_file.bmr48,formonly.imgmksg,bmr_file.bmr49,bmr_file.bmruser,bmr_file.bmrmodu,bmr_file.bmracti,bmr_file.bmrgrup,bmr_file.bmrdate,bmr_file.bmroriu,bmr_file.bmrorig,bmr_file.bmr08,bmr_file.bmr09,bmr_file.bmr10,bmr_file.bmr11,bmr_file.bmr12,bmr_file.bmr13,bmr_file.bmr14,bmr_file.bmr141,bmr_file.bmr15,bmr_file.bmr151,bmr_file.bmr26,bmr_file.bmr27,bmr_file.bmr16,bmr_file.bmr17,bmr_file.bmr18,bmr_file.bmr19,bmr_file.bmr20,bmr_file.bmr21,bmr_file.bmr22,bmr_file.bmr23,bmr_file.bmr24,bmr_file.bmr25,bmr_file.bmr36,bmr_file.bmr37,bmr_file.bmr38,bmr_file.bmr39,bmr_file.bmr40,bmr_file.bmr41,bmr_file.bmr42,bmr_file.bmr43,bmr_file.bmr44,bmr_file.bmr45,bmr_file.bmr46,bmr_file.bmr30,bmr_file.bmr31,bmr_file.bmr32,bmr_file.bmr33,bmr_file.bmr34,bmr_file.bmr35,formonly.cnt,bmr_file.bmr06,formonly.gen02)
+END -- INSTRUCTIONS
+

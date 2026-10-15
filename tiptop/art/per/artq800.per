@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artq800")
+VBox vb3
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+    [label1   ]  [rxc00            ]
+    [label2  ]   [rxc01                       ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table s_rxc
+{
+[rxc02   |rxc03   |rxc04   |rxc05   |rxc06   |rxc07   |rxc08   |rxc09   |rxc10   |rxc11   |rxc12   |rxc12_de|rxc13   |rxc13_de|rxc14   ]
+[rxc02   |rxc03   |rxc04   |rxc05   |rxc06   |rxc07   |rxc08   |rxc09   |rxc10   |rxc11   |rxc12   |rxc12_de|rxc13   |rxc13_de|rxc14   ]
+[rxc02   |rxc03   |rxc04   |rxc05   |rxc06   |rxc07   |rxc08   |rxc09   |rxc10   |rxc11   |rxc12   |rxc12_de|rxc13   |rxc13_de|rxc14   ]
+[rxc02   |rxc03   |rxc04   |rxc05   |rxc06   |rxc07   |rxc08   |rxc09   |rxc10   |rxc11   |rxc12   |rxc12_de|rxc13   |rxc13_de|rxc14   ]
+[rxc02   |rxc03   |rxc04   |rxc05   |rxc06   |rxc07   |rxc08   |rxc09   |rxc10   |rxc11   |rxc12   |rxc12_de|rxc13   |rxc13_de|rxc14   ]
+[rxc02   |rxc03   |rxc04   |rxc05   |rxc06   |rxc07   |rxc08   |rxc09   |rxc10   |rxc11   |rxc12   |rxc12_de|rxc13   |rxc13_de|rxc14   ]
+[rxc02   |rxc03   |rxc04   |rxc05   |rxc06   |rxc07   |rxc08   |rxc09   |rxc10   |rxc11   |rxc12   |rxc12_de|rxc13   |rxc13_de|rxc14   ]
+[rxc02   |rxc03   |rxc04   |rxc05   |rxc06   |rxc07   |rxc08   |rxc09   |rxc10   |rxc11   |rxc12   |rxc12_de|rxc13   |rxc13_de|rxc14   ]
+[rxc02   |rxc03   |rxc04   |rxc05   |rxc06   |rxc07   |rxc08   |rxc09   |rxc10   |rxc11   |rxc12   |rxc12_de|rxc13   |rxc13_de|rxc14   ]
+[rxc02   |rxc03   |rxc04   |rxc05   |rxc06   |rxc07   |rxc08   |rxc09   |rxc10   |rxc11   |rxc12   |rxc12_de|rxc13   |rxc13_de|rxc14   ]
+}
+END -- s_rxc
+Grid gr20
+{
+
+    ---------[labe|idx       |la|cnt       ]--[lab1|cn2       ]---------  [label6][t_sum         ]
+
+
+}
+END -- gr20
+END -- vb3
+END -- Form1
+
+TABLES
+rxc_file
+ATTRIBUTES
+Label label1:Label1, text=%"Doc. Type";
+ComboBox rxc00=rxc_file.rxc00, tabIndex=1, not null, required, items=(("01", "SO"),("02", "Sales Order"),("03", "Sales Return No."));
+Label label2:Label2, text=%"Doc. No.";
+ButtonEdit rxc01=rxc_file.rxc01, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit rxc02=rxc_file.rxc02, tabIndex=3, title="Line No.", noEntry;
+ComboBox rxc03=rxc_file.rxc03, tabIndex=4, title="rxc03", noEntry, items=(("01", "NewText"),("02", "NewText"),("03", "NewText"),("06", "NewText"),("07", "NewText"),("08", "NewText"),("09", "NewText"),("10", "NewText"),("11", "NewText"),("12", "NewText"),("13", "NewText"),("14", "NewText"),("15", "NewText"),("16", "NewText"),("17", "NewText"),("18", "More Purchase"),("19", "Gifts"),("20", "Prepaid Discount"));
+Edit rxc04=rxc_file.rxc04, tabIndex=5, title="Promotion No.", noEntry;
+Edit rxc05=rxc_file.rxc05, tabIndex=6, title="rxc05", noEntry;
+Edit rxc06=rxc_file.rxc06, tabIndex=7, title="rxc06", noEntry;
+Edit rxc07=rxc_file.rxc07, tabIndex=8, title="rxc07", noEntry;
+Edit rxc08=rxc_file.rxc08, tabIndex=9, title="rxc08", noEntry;
+Edit rxc09=rxc_file.rxc09, tabIndex=10, title="rxc09", noEntry;
+Edit rxc10=rxc_file.rxc10, tabIndex=11, title="rxc10", noEntry;
+CheckBox rxc11=rxc_file.rxc11, tabIndex=12, title="rxc11", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rxc12=rxc_file.rxc12, action=controlp, tabIndex=13, title="rxc12", noEntry, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rxc12_de=formonly.rxc12_desc type VARCHAR, tabIndex=14, title="rxc12_desc", noEntry;
+ButtonEdit rxc13=rxc_file.rxc13, action=controlp, tabIndex=15, title="rxc13", noEntry, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rxc13_de=formonly.rxc13_desc type VARCHAR, tabIndex=16, title="rxc13_desc", noEntry;
+Edit rxc14=rxc_file.rxc14, tabIndex=17, title="rxc14", noEntry;
+Label labe:Label4, text=%"Rows";
+Edit idx=formonly.idx type CHAR, tabIndex=19, noEntry;
+Label la:Label5, text=%"/";
+Edit cnt=formonly.cnt type CHAR, tabIndex=20, noEntry;
+Label lab1:Label3, text=%"Item";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=18, noEntry;
+Label label6:Label6, text=%"t_sum";
+Edit t_sum=formonly.t_sum type CHAR, tabIndex=21, default = "0";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rxc(rxc_file.rxc02,rxc_file.rxc03,rxc_file.rxc04,rxc_file.rxc05,rxc_file.rxc06,rxc_file.rxc07,rxc_file.rxc08,rxc_file.rxc09,rxc_file.rxc10,rxc_file.rxc11,rxc_file.rxc12,formonly.rxc12_desc,rxc_file.rxc13,formonly.rxc13_desc,rxc_file.rxc14)
+SCREEN RECORD Undefined(rxc_file.rxc00,rxc_file.rxc01,formonly.idx,formonly.cnt,formonly.cn2,formonly.t_sum)
+END -- INSTRUCTIONS
+

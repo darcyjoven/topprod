@@ -1,0 +1,295 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zta_constraint.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="p_zta_constraint")
+Folder pc3
+Page Page6(action=constraint_type, text=%"Definition")
+VBox vb15
+Grid gr35
+{
+ <G gb17                                                            >
+  Constraint Name [ztd03                                |lb30       ]
+
+  Constraint Type:[ztd04                                ]
+
+ <                                                                  >
+
+}
+END -- gr35
+Grid gr44_
+{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr44_
+END -- vb15
+END -- Page6
+Page Page27(action=constraint_pk, text=%"Key Cols")
+HBox hb7
+Table tb22
+{
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+[tcol01                   ]
+
+}
+END -- tb22
+Grid gr39
+{
+
+ [pk_ch]
+ [     ]
+ [     ]
+ [p_add]
+ [     ]
+ [     ]
+ [p_mov]
+ [     ]
+ [     ]
+
+
+
+
+
+
+
+
+
+}
+END -- gr39
+Table tb23
+{
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+[kcol01                   ]
+
+}
+END -- tb23
+END -- hb7
+END -- Page27
+Page Page28(action=constraint_fk, text=%"Ref. Table")
+Grid gr36
+{
+ <G gb19                                                            >
+  Referenced Table Schema[ztd06                  ]
+
+  Referenced Table       [ztd17                  ]
+
+ <                                                                  >
+
+}
+END -- gr36
+END -- Page28
+Page Page29(action=constraint_fk_col, text=%"Ref. Cols")
+HBox hb6
+Table tb24
+{
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+[trcol01                  ]
+
+}
+END -- tb24
+Grid gr42
+{
+
+ [fk_ch]
+ [     ]
+ [     ]
+ [f_add]
+ [     ]
+ [     ]
+ [f_mov]
+ [     ]
+ [     ]
+
+
+
+
+
+
+
+
+
+}
+END -- gr42
+Table tb25
+{
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+[rcol01                   ]
+
+}
+END -- tb25
+END -- hb6
+END -- Page29
+Page Page30(action=constraint_check, text=%"Condition")
+Grid gr44
+{
+[ztd05                                                          ]
+[                                                               ]
+[                                                               ]
+[                                                               ]
+[                                                               ]
+[                                                               ]
+[                                                               ]
+[                                                               ]
+[                                                               ]
+[                                                               ]
+}
+END -- gr44
+END -- Page30
+Page Page7(action=constraint_option, text=%"Options")
+Grid gr25
+{
+ <G gb7                       >  <G gb8                  >
+ [ztd08             ]             [ztd09           ]
+ [                  ]             [                ]
+ <                            >  <                       >
+ <G gb9                       >  <G gb10                 >
+ [ztd11                ]         [ztd10         ]
+ [                     ]         [              ]
+ [lb199          ]               [              ]
+ <                            >  <                       >
+
+}
+END -- gr25
+END -- Page7
+Page Page8(action=constraint_sql, text=%"Sql")
+Grid gr6
+{
+[sql                                                           ]
+[                                                              ]
+[                                                              ]
+[                                                              ]
+[                                                              ]
+[                                                              ]
+[                                                              ]
+[                                                              ]
+[                                                              ]
+[                                                              ]
+[                                                              ]
+[                                                              ]
+[                                                              ]
+[                                                              ]
+[                                                              ]
+
+}
+END -- gr6
+END -- Page8
+END -- pc3
+END -- p_zta_constraint
+
+TABLES
+ztd_file
+ATTRIBUTES
+Group gb17:gb17, tag="group";
+Edit ztd03=ztd_file.ztd03, tabIndex=14;
+Label lb30:lb30;
+RadioGroup ztd04=ztd_file.ztd04, tabIndex=2, default = "1", not null, required, orientation=horizontal, items=(("1", "Primary Key"),("2", "Check"),("3", "Unique"),("4", "Foreign Key"));
+Edit tcol01=formonly.tcol01 type VARCHAR, tabIndex=7, title="Table Columns";
+Button pk_ch:pk_change, text="Change";
+Button p_add:p_add, text=">>";
+Button p_mov:p_move, text="<<";
+Edit kcol01=formonly.kcol01 type CHAR, tabIndex=12, title="Constrained Columns";
+Group gb19:gb19, tag="group";
+ButtonEdit ztd06=ztd_file.ztd06, action=controlp, tabIndex=11, not null, required, image="zoom.png";
+ButtonEdit ztd17=ztd_file.ztd17, action=controlp, tabIndex=13, not null, required, image="zoom.png";
+Edit trcol01=formonly.trcol01 type CHAR, tabIndex=8, title="Table Columns";
+Button fk_ch:fk_change, text="Change";
+Button f_add:f_add, text=">>";
+Button f_mov:f_move, text="<<";
+Edit rcol01=formonly.rcol01 type CHAR, tabIndex=9, title="Referenced Columns";
+TextEdit ztd05=ztd_file.ztd05, tabIndex=10, not null, required;
+Group gb7:gb7, tag="group", text="Foreign Key Option";
+RadioGroup ztd08=ztd_file.ztd08, tabIndex=3, default = "2", not null, required, items=(("1", "On Delete Cascade"),("2", "On Delete Set Null"));
+Group gb8:gb8, tag="group", text="Status on Creation";
+RadioGroup ztd09=ztd_file.ztd09, tabIndex=4, default = "1", not null, required, items=(("1", "Enable"),("2", "Disable"));
+Group gb9:gb9, tag="group", text="Validation";
+RadioGroup ztd11=ztd_file.ztd11, tabIndex=5, default = "1", not null, required, items=(("1", "Validate"),("2", "NoValidate"));
+LABEL lb199=formonly.lb199 type CHAR;
+Group gb10:gb10, tag="group", text="Deferrable", hidden;
+RadioGroup ztd10=ztd_file.ztd10, tabIndex=6, default = "1", not null, required, items=(("1", "Not Deferrable"),("2", "Initially Immediate"),("3", "Initially Deferred"));
+TextEdit sql=formonly.sql type CHAR, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tcol(formonly.tcol01)
+SCREEN RECORD s_kcol(formonly.kcol01)
+SCREEN RECORD s_trcol(formonly.trcol01)
+SCREEN RECORD s_rcol(formonly.rcol01)
+SCREEN RECORD Undefined(ztd_file.ztd03,ztd_file.ztd04,ztd_file.ztd06,ztd_file.ztd17,ztd_file.ztd05,ztd_file.ztd08,ztd_file.ztd09,ztd_file.ztd11,formonly.lb199,ztd_file.ztd10,formonly.sql)
+END -- INSTRUCTIONS
+

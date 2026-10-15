@@ -1,0 +1,150 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt661.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid ds1
+{
+
+[label1 |lts01               |rtz13          ]    [label10|lts09                 ]
+[label2 |lts02               |lts021]             [label11|lts10                 ]
+[label4 |lts03               |lpx02          ]    [label15|ltsconf   ]           [imgmksg ]
+[label5 |lts04               ]                    [label17|ltsconu   |gen02      |        ]
+[label6 |lts05               ]                    [label14|ltscond   |ltscont    ]
+[label7 |lts06               ]                            [lts11     ]
+[label8 |lts07               ]                    [label13|lts12     ]
+        [lts08               ]
+
+}
+END -- ds1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid ds2
+{
+
+[label21|ltsuser   ]          [label9 |ltscrat   ]          [label3 |ltsacti   ]
+[label16|ltsgrup   ]          [label18|ltsmodu   ]          [label12|ltsdate   ]
+[label20|ltsoriu   ]
+[label19|ltsorig   ]
+
+}
+END -- ds2
+END -- Page2
+END -- Folder1
+Folder Folder2
+Page Page3(text=%"Page3")
+Table ds3
+{
+[ltt03                         |name1                         |lttacti   ]
+[ltt03                         |name1                         |lttacti   ]
+[ltt03                         |name1                         |lttacti   ]
+[ltt03                         |name1                         |lttacti   ]
+[ltt03                         |name1                         |lttacti   ]
+}
+END -- ds3
+END -- Page3
+END -- Folder2
+Folder Folder3
+Page Page4(text=%"Page4")
+Table ds4
+{
+[ltu03                         |name2                         |ltuacti   ]
+[ltu03                         |name2                         |ltuacti   ]
+[ltu03                         |name2                         |ltuacti   ]
+[ltu03                         |name2                         |ltuacti   ]
+[ltu03                         |name2                         |ltuacti   ]
+}
+END -- ds4
+END -- Page4
+END -- Folder3
+Grid Grid1
+{
+
+ ---------- cnt[idx  ]/ [cnt  ]---------- cnt1[cnt1 ]---------- cnt2[cnt2 ]----------
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+ltu_file,
+ltt_file,
+lts_file,
+lts_file1=lts_file
+ATTRIBUTES
+Label label1:Label1, text=%"lts01";
+ButtonEdit lts01=lts_file1.lts01, action=controlp, tabIndex=1, noEntry, not null, image="zoom.png", scroll;
+Edit rtz13=formonly.rtz13, tabIndex=2, noEntry;
+Label label10:Label10, text=%"lts09";
+Edit lts09=lts_file.lts09, tabIndex=12, not null, scroll;
+Label label2:Label2, text=%"lts02";
+ButtonEdit lts02=lts_file.lts02, action=controlp, tabIndex=3, not null, image="zoom.png", scroll;
+Edit lts021=lts_file.lts021, tabIndex=4, noEntry, not null, scroll;
+Label label11:Label11, text=%"lts10";
+Edit lts10=lts_file.lts10, tabIndex=13, not null, scroll;
+Label label4:Label4, text=%"lts03";
+ButtonEdit lts03=lts_file.lts03, action=controlp, tabIndex=5, noEntry, not null, required, image="zoom.png", scroll;
+Edit lpx02=formonly.lpx02, tabIndex=6, noEntry;
+Label label15:Label15, text=%"ltsconf";
+ComboBox ltsconf=lts_file.ltsconf, tabIndex=14, not null, scroll, items=(("N", "Text"),("Y", "Text"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Label label5:Label5, text=%"lts04";
+DateEdit lts04=lts_file.lts04, tabIndex=7, not null, required;
+Label label17:Label17, text=%"ltsconu";
+ButtonEdit ltsconu=lts_file.ltsconu, action=controlp, tabIndex=15, image="zoom.png", scroll;
+Edit gen02=formonly.gen02, tabIndex=16;
+Label label6:Label6, text=%"lts05";
+DateEdit lts05=lts_file.lts05, tabIndex=8, not null, required;
+Label label14:Label14, text=%"ltscond";
+DateEdit ltscond=lts_file.ltscond, tabIndex=17;
+TimeEdit ltscont=lts_file.ltscont, tabIndex=18, scroll;
+Label label7:Label7, text=%"lts06";
+ComboBox lts06=lts_file.lts06, tabIndex=9, not null, scroll, items=(("0", "Text"),("1", "Text"),("2", "Text"),("3", "Text"),("4", "Text"));
+CheckBox lts11=lts_file.lts11, tabIndex=19, text=%"lts_file.lts11", not null, valueChecked = "Y", valueUnchecked = "N";
+Label label8:Label8, text=%"lts07";
+ComboBox lts07=lts_file.lts07, tabIndex=10, not null, scroll, items=(("0", "Text"),("1", "Text"),("2", "Text"),("3", "Text"));
+Label label13:Label13, text=%"lts12";
+DateEdit lts12=lts_file.lts12, tabIndex=20;
+CheckBox lts08=lts_file.lts08, tabIndex=11, text=%"lts_file.lts08", not null, valueChecked = "Y", valueUnchecked = "N";
+Label label21:Label21, text=%"ltsuser";
+Edit ltsuser=lts_file.ltsuser, tabIndex=21, scroll;
+Label label9:Label9, text=%"ltscrat";
+DateEdit ltscrat=lts_file.ltscrat, tabIndex=25;
+Label label3:Label3, text=%"ltsacti";
+Edit ltsacti=lts_file.ltsacti, tabIndex=27, not null, scroll;
+Label label16:Label16, text=%"ltsgrup";
+Edit ltsgrup=lts_file.ltsgrup, tabIndex=22, scroll;
+Label label18:Label18, text=%"ltsmodu";
+Edit ltsmodu=lts_file.ltsmodu, tabIndex=26, scroll;
+Label label12:Label12, text=%"ltsdate";
+DateEdit ltsdate=lts_file.ltsdate, tabIndex=28;
+Label label20:Label20, text=%"ltsoriu";
+Edit ltsoriu=lts_file.ltsoriu, tabIndex=23, scroll;
+Label label19:Label19, text=%"ltsorig";
+Edit ltsorig=lts_file.ltsorig, tabIndex=24, scroll;
+ButtonEdit ltt03=ltt_file.ltt03, action=controlp, tabIndex=29, title=%"ltt03", not null, image="zoom.png", scroll;
+Edit name1=formonly.name1 type VARCHAR, tabIndex=30, title=%"Edit2", noEntry;
+CheckBox lttacti=ltt_file.lttacti, tabIndex=31, title=%"lttacti", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ltu03=ltu_file.ltu03, action=controlp, tabIndex=32, title=%"ltu03", not null, image="zoom.png", scroll;
+Edit name2=formonly.name2, tabIndex=33, title=%"Edit2", noEntry;
+CheckBox ltuacti=ltu_file.ltuacti, tabIndex=34, title=%"ltuacti", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx, tabIndex=35;
+Edit cnt=formonly.cnt, tabIndex=36;
+Edit cnt1=formonly.cnt1, tabIndex=37;
+Edit cnt2=formonly.cnt2, tabIndex=38;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(lts_file1.lts01,lts_file.lts02,lts_file.lts021,lts_file.lts03,lts_file.lts04,lts_file.lts05,lts_file.lts06,lts_file.lts07,lts_file.lts08,lts_file.lts09,lts_file.lts10,lts_file.lts11,lts_file.lts12,lts_file.ltscond,lts_file.ltsconf,lts_file.ltscont,lts_file.ltsconu)
+SCREEN RECORD Undefined(formonly.rtz13,formonly.lpx02,formonly.gen02,formonly.idx,formonly.cnt,formonly.cnt1,formonly.cnt2,formonly.imgmksg)
+SCREEN RECORD Record2(lts_file.ltsacti,lts_file.ltscrat,lts_file.ltsdate,lts_file.ltsgrup,lts_file.ltsmodu,lts_file.ltsorig,lts_file.ltsoriu,lts_file.ltsuser)
+SCREEN RECORD s_ltt(ltt_file.ltt03,formonly.name1,ltt_file.lttacti)
+SCREEN RECORD s_ltu(ltu_file.ltu03,formonly.name2,ltu_file.ltuacti)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_sel_shm01.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT 
+Table s_ima
+{
+[ch|shm01           |shm012   |shm05      |ima02     |ima021     |shm08   |shm09   |qcf22   ]
+[ch|shm01           |shm012   |shm05      |ima02     |ima021     |shm08   |shm09   |qcf22   ]
+[ch|shm01           |shm012   |shm05      |ima02     |ima021     |shm08   |shm09   |qcf22   ]
+[ch|shm01           |shm012   |shm05      |ima02     |ima021     |shm08   |shm09   |qcf22   ]
+[ch|shm01           |shm012   |shm05      |ima02     |ima021     |shm08   |shm09   |qcf22   ]
+[ch|shm01           |shm012   |shm05      |ima02     |ima021     |shm08   |shm09   |qcf22   ]
+[ch|shm01           |shm012   |shm05      |ima02     |ima021     |shm08   |shm09   |qcf22   ]
+[ch|shm01           |shm012   |shm05      |ima02     |ima021     |shm08   |shm09   |qcf22   ]
+[ch|shm01           |shm012   |shm05      |ima02     |ima021     |shm08   |shm09   |qcf22   ]
+[ch|shm01           |shm012   |shm05      |ima02     |ima021     |shm08   |shm09   |qcf22   ]
+
+}
+END -- s_ima
+END -- q_ima01
+
+TABLES
+qcf_file,
+ima_file,
+shm_file
+ATTRIBUTES
+Edit ch=formonly.check type CHAR, tabIndex=6, title=%"Sel", not null, required;
+Edit shm01=shm_file.shm01, tabIndex=1, title=%"shm01", not null, scroll;
+Edit shm012=shm_file.shm012, tabIndex=2, title=%"shm012", not null;
+Edit shm05=shm_file.shm05, tabIndex=3, title=%"shm05", not null, scroll;
+Edit ima02=ima_file.ima02, tabIndex=4, title=%"ima02", not null, scroll;
+Edit ima021=ima_file.ima021, tabIndex=5, title=%"ima021", not null, scroll;
+Edit shm08=shm_file.shm08, tabIndex=7, title=%"shm08";
+Edit shm09=shm_file.shm09, tabIndex=8, title=%"shm09";
+Edit qcf22=qcf_file.qcf22, tabIndex=9, title=%"qcf22";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_shm(formonly.check,shm_file.shm01,shm_file.shm012,shm_file.shm05,ima_file.ima02,ima_file.ima021,shm_file.shm08,shm_file.shm09,qcf_file.qcf22)
+END -- INSTRUCTIONS
+

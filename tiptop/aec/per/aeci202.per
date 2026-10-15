@@ -1,0 +1,169 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci202.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci202")
+VBox VBox5
+Folder pc122
+Page page01(text="Main")
+VBox VBox2
+HBox HBox1
+Grid gr769
+{
+ Combined Version No [edd01               ]
+                     [eda02                     ]
+ Combined S/N        [edd011         ]
+ Routing Sequence    [edd013         ]
+ Cmpo.Ln #           [edd02     ]
+
+
+
+
+}
+END -- gr769
+Grid gr770
+{
+ Compo.No            [edd03                         ]
+ Part Name           [ima02_h2                      ]
+ Spec                [ima021_h2                     ]
+ Src.Cd              [ima08_2   ]
+ Eff.Date            [edd04       ]
+ Exp.Date            [edd05       ]
+
+
+
+}
+END -- gr770
+END -- HBox1
+HBox HBox2
+Group gb534
+Grid gr771
+{
+ Iss.Unit            [edd10     ]
+ Conv.R(Issu/Unit)   [edd10_fac ]
+ Conv.R(Issu/Cost)   [edd10_fac2]
+ QPA                 [edd06     ]
+ DQPA                [edd07     ]
+ Wast.%              [edd08     ]%
+ Chosn%              [edd23     ]%
+ Eng.Drw#            [edd11               ]
+ Inst.Loc            [edd13     ]
+}
+END -- gr771
+END -- gb534
+VBox VBox1
+Group gb535
+Grid gr772
+{
+ Task No.            [edd09     ]
+ Inpt T.B(DD)        [edd18     ]
+ diff ratio          [edd28     ]%
+ WO Open/Expl Opt    [edd19               ]
+}
+END -- gr772
+END -- gb535
+Group group05(text="Usg.Feat")
+Grid gr773
+{
+[edd14                                    ]
+[                                         ]
+[                                         ]
+[                                         ]
+}
+END -- gr773
+END -- group05
+END -- VBox1
+END -- HBox2
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr776
+{
+ Last Modified by    [eddmodu   ] Modify command from [eddcomm   ]
+ Create/Modify Date  [edddate   ]
+}
+END -- gr776
+END -- info
+END -- pc122
+VBox VBox3
+VBox VBox4
+HBox HBox3
+Group gb537
+Grid gr774
+{
+ SUB Feat[edd16             ]
+[edd27                      ]
+[edd15                      ]
+}
+END -- gr774
+END -- gb537
+Group gb538
+Grid gr775
+{
+ Wharehouse          [edd25     ]
+ Location            [edd26     ]
+ ECN No.             [edd24           ]
+}
+END -- gr775
+END -- gb538
+END -- HBox3
+END -- VBox4
+END -- VBox3
+Grid gr777
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+}
+END -- gr777
+END -- VBox5
+END -- aeci202
+
+TABLES
+edd_file
+ATTRIBUTES
+ButtonEdit edd01=edd_file.edd01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ";
+Edit eda02=formonly.eda02 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit edd011=edd_file.edd011, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ";
+ButtonEdit edd013=edd_file.edd013, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ";
+Edit edd02=edd_file.edd02, tabIndex=5, required;
+ButtonEdit edd03=edd_file.edd03, action=controlp, tabIndex=6, required, color = green, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ,<^O>Maintian Brand";
+Edit ima02_h2=formonly.ima02_h2 type VARCHAR, tabIndex=7, noEntry;
+Edit ima021_h2=formonly.ima021_h2 type VARCHAR, tabIndex=8, noEntry;
+Edit ima08_2=formonly.ima08_2 type VARCHAR, tabIndex=9, noEntry;
+DateEdit edd04=edd_file.edd04, tabIndex=10, not null, required;
+DateEdit edd05=edd_file.edd05, tabIndex=11, comment="Modifying,<^P>BOM Description";
+ButtonEdit edd10=edd_file.edd10, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit  <^U>/<^T>Crt Item/ Unit Conv.  ";
+Edit edd10_fac=edd_file.edd10_fac, tabIndex=13, noEntry;
+Edit edd10_fac2=edd_file.edd10_fac2, tabIndex=14, noEntry;
+Edit edd06=edd_file.edd06, tabIndex=15;
+Edit edd07=edd_file.edd07, tabIndex=16;
+Edit edd08=edd_file.edd08, tabIndex=17;
+Edit edd23=edd_file.edd23, tabIndex=18, not null, required;
+Edit edd11=edd_file.edd11, tabIndex=19;
+Edit edd13=edd_file.edd13, tabIndex=20, comment="Chng,Press<^T>M-Insert Loc ";
+ButtonEdit edd09=edd_file.edd09, action=controlp, tabIndex=21, noEntry, image="zoom", comment="<^P> Qry Task No.";
+Edit edd18=edd_file.edd18, tabIndex=22, not null, required;
+Edit edd28=edd_file.edd28, tabIndex=23;
+ComboBox edd19=edd_file.edd19, tabIndex=24, not null, required, items=(("1", "No Exp"),("2", "No Expl, Auto Open WO"),("3", "Expl"),("4", "Open Window and Qry to Expl"));
+RadioGroup edd14=edd_file.edd14, tabIndex=25, not null, required, items=(("0", "required"),("1", "optional"),("2", "Recovery item"),("3", "Guest Supply"));
+Edit eddmodu=edd_file.eddmodu, tabIndex=32, noEntry;
+Edit eddcomm=edd_file.eddcomm, tabIndex=33, noEntry;
+DateEdit edddate=edd_file.edddate, tabIndex=34, noEntry;
+ComboBox edd16=edd_file.edd16, tabIndex=26, not null, required, comment="<^Y>Create REP or SUB   ", items=(("0", "No REP/SUB"),("1", "OK REPd"),("2", "OK SUBd"),("5", "SUB wth SET"),("7", "Rule."));
+CheckBox edd27=edd_file.edd27, tabIndex=27, text="Software object", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox edd15=edd_file.edd15, tabIndex=28, text="Consumption Feature", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit edd25=edd_file.edd25, action=controlp, tabIndex=29, image="zoom", comment="<^P> Qry W/H Table ,<^Y> Crt W/H Table ";
+ButtonEdit edd26=edd_file.edd26, action=controlp, tabIndex=30, image="zoom", comment="<^P> Qry Location    ,<^Y> Create Location ";
+Edit edd24=edd_file.edd24, tabIndex=31, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=35, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(edd_file.edd01,formonly.eda02,edd_file.edd011,edd_file.edd013,edd_file.edd02,edd_file.edd03,formonly.ima02_h2,formonly.ima021_h2,formonly.ima08_2,edd_file.edd04,edd_file.edd05,edd_file.edd10,edd_file.edd10_fac,edd_file.edd10_fac2,edd_file.edd06,edd_file.edd07,edd_file.edd08,edd_file.edd23,edd_file.edd11,edd_file.edd13,edd_file.edd09,edd_file.edd18,edd_file.edd28,edd_file.edd19,edd_file.edd14,edd_file.eddmodu,edd_file.eddcomm,edd_file.edddate,edd_file.edd16,edd_file.edd27,edd_file.edd15,edd_file.edd25,edd_file.edd26,edd_file.edd24,formonly.cnt)
+END -- INSTRUCTIONS
+

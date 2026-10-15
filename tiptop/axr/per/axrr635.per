@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrr635.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr635")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                              >
+  Customer No.        [oma03               ]
+  Department No.      [oma15               ]
+  Employee No.        [oma14               ]
+  Delivery Note No.   [omb31               ]
+  Delivery Date       [oma02               ]
+ <                                                                       >
+ <G group02                                  >
+  Sequence        [s                   ]
+ <                                           >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                             ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- axrr635
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oma03=formonly.oma03 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit oma15=formonly.oma15 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit oma14=formonly.oma14 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit omb31=formonly.omb31 type CHAR, action=controlp, tabIndex=4, image="zoom";
+DateEdit oma02=formonly.oma02 type DATE, tabIndex=5;
+Group group02:group02, text="INPUT";
+ComboBox s=formonly.s type CHAR, tabIndex=6, not null, required, items=(("1", %"By Customer"),("2", %"By Salesman"));
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oma03,formonly.oma15,formonly.oma14,formonly.omb31,formonly.oma02,formonly.s,formonly.more)
+END -- INSTRUCTIONS
+

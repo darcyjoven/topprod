@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt600e.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt600e")
+VBox VBox1
+Folder pc599
+Page page01(text="Page01")
+VBox VBox2
+Table s_ogg
+{
+[ogg20|ogg09       |ogg091      |ogg092     |ogg12     |ogg13     |ogg10            |img10             |ogg15|ogg15_fac    |ogg16     |ogg18     ]
+[ogg20|ogg09       |ogg091      |ogg092     |ogg12     |ogg13     |ogg10            |img10             |ogg15|ogg15_fac    |ogg16     |ogg18     ]
+[ogg20|ogg09       |ogg091      |ogg092     |ogg12     |ogg13     |ogg10            |img10             |ogg15|ogg15_fac    |ogg16     |ogg18     ]
+[ogg20|ogg09       |ogg091      |ogg092     |ogg12     |ogg13     |ogg10            |img10             |ogg15|ogg15_fac    |ogg16     |ogg18     ]
+[ogg20|ogg09       |ogg091      |ogg092     |ogg12     |ogg13     |ogg10            |img10             |ogg15|ogg15_fac    |ogg16     |ogg18     ]
+[ogg20|ogg09       |ogg091      |ogg092     |ogg12     |ogg13     |ogg10            |img10             |ogg15|ogg15_fac    |ogg16     |ogg18     ]
+[ogg20|ogg09       |ogg091      |ogg092     |ogg12     |ogg13     |ogg10            |img10             |ogg15|ogg15_fac    |ogg16     |ogg18     ]
+[ogg20|ogg09       |ogg091      |ogg092     |ogg12     |ogg13     |ogg10            |img10             |ogg15|ogg15_fac    |ogg16     |ogg18     ]
+[ogg20|ogg09       |ogg091      |ogg092     |ogg12     |ogg13     |ogg10            |img10             |ogg15|ogg15_fac    |ogg16     |ogg18     ]
+[ogg20|ogg09       |ogg091      |ogg092     |ogg12     |ogg13     |ogg10            |img10             |ogg15|ogg15_fac    |ogg16     |ogg18     ]
+
+}
+END -- s_ogg
+Grid gr2580
+{
+ <G group03                                     ><G group01                                     ><G group02                                        >
+  Actual Delivery Qty 1   [ogb12t_1            ]  Sales Qty Total 1       [ogg12t_1            ]  Curr Inv Conv.Qty Total_1 [ogg16t_1            ]
+  Actual Delivery Qty 2   [ogb12t_2            ]  Sales Qty Total 2       [ogg12t_2            ]  Curr Inv Conv.Qty Total_2 [ogg16t_2            ]
+ <                                              ><                                              ><                                                 >
+
+}
+END -- gr2580
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr2581
+{
+ <G grpinfo                       >
+  Detail Counts       [cn2       ]
+ <                                >
+
+}
+END -- gr2581
+END -- info
+END -- pc599
+END -- VBox1
+END -- axmt600e
+
+ATTRIBUTES
+ComboBox ogg20=formonly.ogg20 type VARCHAR, tabIndex=1, title="Type", items=(("1", "Unit 1"),("2", "Unit 2"));
+ButtonEdit ogg09=formonly.ogg09 type CHAR, action=controlp, tabIndex=2, title="Warehouse", image="zoom", comment="<^P> Qry Warehouse";
+ButtonEdit ogg091=formonly.ogg091 type CHAR, action=controlp, tabIndex=3, title="Location", image="zoom", comment="<^P> Qry Location";
+Edit ogg092=formonly.ogg092 type CHAR, tabIndex=4, title="Lot#";
+Edit ogg12=formonly.ogg12 type CHAR, tabIndex=5, title="Sales Qty";
+Edit ogg13=formonly.ogg13, tabIndex=19, default = "0", title=%"Sign off Qty";
+Edit ogg10=formonly.ogg10 type CHAR, tabIndex=6, title="Transaction Unit", noEntry;
+Edit img10=formonly.img10 type CHAR, tabIndex=7, title="Quantity On Hand", noEntry;
+Edit ogg15=formonly.ogg15 type CHAR, tabIndex=8, title="UNit", noEntry;
+Edit ogg15_fac=formonly.ogg15_fac type CHAR, tabIndex=9, title="Convers.Rate", noEntry;
+Edit ogg16=formonly.ogg16 type CHAR, tabIndex=10, title="Qty", noEntry;
+Edit ogg18=formonly.ogg18 type CHAR, tabIndex=11, title="LOT NO", noEntry;
+Group group03:group03;
+Edit ogb12t_1=formonly.ogb12t_1 type CHAR, tabIndex=12, noEntry;
+Edit ogb12t_2=formonly.ogb12t_2 type CHAR, tabIndex=13, noEntry;
+Group group01:group01;
+Edit ogg12t_1=formonly.ogg12t_1 type CHAR, tabIndex=14, noEntry;
+Edit ogg12t_2=formonly.ogg12t_2 type CHAR, tabIndex=15, noEntry;
+Group group02:group02;
+Edit ogg16t_1=formonly.ogg16t_1 type CHAR, tabIndex=16, noEntry;
+Edit ogg16t_2=formonly.ogg16t_2 type CHAR, tabIndex=17, noEntry;
+Group grpinfo:grpinfo;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogg(formonly.ogg20,formonly.ogg09,formonly.ogg091,formonly.ogg092,formonly.ogg12,formonly.ogg13,formonly.ogg10,formonly.img10,formonly.ogg15,formonly.ogg15_fac,formonly.ogg16,formonly.ogg18)
+SCREEN RECORD Undefined(formonly.ogb12t_1,formonly.ogb12t_2,formonly.ogg12t_1,formonly.ogg12t_2,formonly.ogg16t_1,formonly.ogg16t_2,formonly.cn2)
+END -- INSTRUCTIONS
+

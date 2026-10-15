@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr503.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxr503")
+VBox VBox1
+Grid gr1179
+{
+ <G group01                                   >
+  Inventory S/N Used      [bze01            ]
+  Inventory Taking Date   [bze02            ]
+  Machine Equipment No    [bzf03            ]
+  Keeping Department      [bzb03            ]
+  Keeper                  [bzb04            ]
+ <                                            >
+ <G group02                                   >
+  Inventory Taking Year   [year]
+  [s]
+  [c]
+ <                                            >
+
+}
+END -- gr1179
+END -- VBox1
+END -- abxr503
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit bze01=formonly.bze01 type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry bze01";
+DateEdit bze02=formonly.bze02 type DATE, tabIndex=2;
+ButtonEdit bzf03=formonly.bzf03 type CHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P> Qry bzf03";
+ButtonEdit bzb03=formonly.bzb03 type CHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P> Qry Keeping Department No.";
+ButtonEdit bzb04=formonly.bzb04 type CHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P> Qry Keeper No.";
+Group group02:group02, text="INPUT";
+Edit year=formonly.year type CHAR, tabIndex=6;
+CheckBox s=formonly.s type CHAR, tabIndex=7, text="Next Page By Department", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type CHAR, tabIndex=8, text="Print Inventory Qty Y OR N", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bze01,formonly.bze02,formonly.bzf03,formonly.bzb03,formonly.bzb04,formonly.year,formonly.s,formonly.c)
+END -- INSTRUCTIONS
+

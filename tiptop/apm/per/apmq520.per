@@ -1,0 +1,182 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq520.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq520")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr5002
+{
+ P/O No.             [pmm01                      ]
+ Line No.            [pmn02                      ]
+
+}
+END -- gr5002
+Grid gr5003
+{
+ Purchase Date       [pmm04     ]
+ Supplier            [pmm09     ][pmc03     ]
+
+}
+END -- gr5003
+Grid gr5004
+{
+ Purchase Property   [pmm02     ]
+ W/O No.             [pmn41           ]
+
+}
+END -- gr5004
+Grid gr5005
+{
+ Status [pmm25             ]
+
+
+}
+END -- gr5005
+END -- hb1
+END -- page01
+END -- folder01
+Folder folder02
+Page page02(text="General")
+HBox hb2
+Grid gr5006
+{
+ Item No.            [pmn04                         ]
+ P/N Spec            [pmn041                        ]
+ Spec                [ima021                        ]
+ Status Code         [pmn16     ]
+ Order Qty           [pmn20     ]
+ Unit                [pmn07     ]
+}
+END -- gr5006
+Grid gr5007
+{
+ Par/Ref Unit        [pmn83               ]
+ Par/Ref Qty         [pmn85               ]
+ Chi/P/O Unit        [pmn80               ]
+ Chi/P/O Qty         [pmn82               ]
+
+
+}
+END -- gr5007
+Grid gr5008
+{
+ Qt Out              [rest                ]
+ Del.Qty             [pmn50               ]
+ IQC Qty             [pmn51               ]
+ St-in Qty           [pmn53               ]
+ QC/Ret.Qty          [pmn55               ]
+ W/H Ret.Qty         [pmn58               ]
+}
+END -- gr5008
+Grid gr5009
+{
+ Substitute code     [pmn42     ]
+ Sub.Item#           [pmn61               ]
+ Substitution Ratio  [pmn62     ]
+ Lot Plan            [pmn919    ]
+
+
+}
+END -- gr5009
+END -- hb2
+END -- page02
+Page page03(text="Date/Qty")
+Grid gr5010
+{
+ Arriving Date       [pmn34       ]
+ Delivery Date       [pmn33       ]
+ Store Date          [pmn35       ]
+}
+END -- gr5010
+END -- page03
+END -- folder02
+Table s_rvb
+{
+[rva06   |rvb01            |rvb0|rvb07        |rvb83         |rvb85        |rvb80             |rvb82             |rvb08    |rvb29      |rvb30     |rvb31      |rvb35]
+[rva06   |rvb01            |rvb0|rvb07        |rvb83         |rvb85        |rvb80             |rvb82             |rvb08    |rvb29      |rvb30     |rvb31      |rvb35]
+[rva06   |rvb01            |rvb0|rvb07        |rvb83         |rvb85        |rvb80             |rvb82             |rvb08    |rvb29      |rvb30     |rvb31      |rvb35]
+[rva06   |rvb01            |rvb0|rvb07        |rvb83         |rvb85        |rvb80             |rvb82             |rvb08    |rvb29      |rvb30     |rvb31      |rvb35]
+[rva06   |rvb01            |rvb0|rvb07        |rvb83         |rvb85        |rvb80             |rvb82             |rvb08    |rvb29      |rvb30     |rvb31      |rvb35]
+[rva06   |rvb01            |rvb0|rvb07        |rvb83         |rvb85        |rvb80             |rvb82             |rvb08    |rvb29      |rvb30     |rvb31      |rvb35]
+[rva06   |rvb01            |rvb0|rvb07        |rvb83         |rvb85        |rvb80             |rvb82             |rvb08    |rvb29      |rvb30     |rvb31      |rvb35]
+[rva06   |rvb01            |rvb0|rvb07        |rvb83         |rvb85        |rvb80             |rvb82             |rvb08    |rvb29      |rvb30     |rvb31      |rvb35]
+[rva06   |rvb01            |rvb0|rvb07        |rvb83         |rvb85        |rvb80             |rvb82             |rvb08    |rvb29      |rvb30     |rvb31      |rvb35]
+[rva06   |rvb01            |rvb0|rvb07        |rvb83         |rvb85        |rvb80             |rvb82             |rvb08    |rvb29      |rvb30     |rvb31      |rvb35]
+}
+END -- s_rvb
+Grid gr5011
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr5011
+END -- vb1
+END -- apmq520
+
+TABLES
+pmn_file,
+rvb_file,
+pmm_file
+ATTRIBUTES
+Edit pmm01=pmm_file.pmm01, tabIndex=1, upShift;
+Edit pmn02=pmn_file.pmn02, tabIndex=2;
+DateEdit pmm04=pmm_file.pmm04, tabIndex=3;
+Edit pmm09=pmm_file.pmm09, tabIndex=4;
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=5, noEntry;
+Edit pmm02=pmm_file.pmm02, tabIndex=6;
+Edit pmn41=pmn_file.pmn41, tabIndex=7;
+ComboBox pmm25=pmm_file.pmm25, tabIndex=9, items=(("0", "Creat"),("1", "Approved"),("2", "Release PO"),("6", "Closing"),("9", "Cancel"),("R", "Rejected"),("S", "Approving"),("W", "Withdraw"));
+ButtonEdit pmn04=pmn_file.pmn04, action=controlp, tabIndex=8, image="zoom";
+Edit pmn041=pmn_file.pmn041, tabIndex=10;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=11;
+Edit pmn16=pmn_file.pmn16, tabIndex=12, noEntry;
+Edit pmn20=pmn_file.pmn20, tabIndex=13, not null, required;
+Edit pmn07=pmn_file.pmn07, tabIndex=14;
+Edit pmn83=pmn_file.pmn83, tabIndex=15;
+Edit pmn85=pmn_file.pmn85, tabIndex=16;
+Edit pmn80=pmn_file.pmn80, tabIndex=17;
+Edit pmn82=pmn_file.pmn82, tabIndex=18;
+Edit rest=formonly.rest type DECIMAL, tabIndex=19;
+Edit pmn50=pmn_file.pmn50, tabIndex=20;
+Edit pmn51=pmn_file.pmn51, tabIndex=21, not null, required;
+Edit pmn53=pmn_file.pmn53, tabIndex=22, not null, required;
+Edit pmn55=pmn_file.pmn55, tabIndex=23, not null, required;
+Edit pmn58=pmn_file.pmn58, tabIndex=24;
+Edit pmn42=pmn_file.pmn42, tabIndex=25, noEntry, not null, required;
+Edit pmn61=pmn_file.pmn61, tabIndex=26, not null, required;
+Edit pmn62=pmn_file.pmn62, tabIndex=27, not null, required;
+Edit pmn919=pmn_file.pmn919, tabIndex=28, noEntry;
+DateEdit pmn34=pmn_file.pmn34, tabIndex=29;
+DateEdit pmn33=pmn_file.pmn33, tabIndex=30;
+DateEdit pmn35=pmn_file.pmn35, tabIndex=31;
+DateEdit rva06=formonly.rva06 type DATE, tabIndex=32, title="Rece Dt";
+Edit rvb01=rvb_file.rvb01, tabIndex=33, title="Receipt#", upShift;
+Edit rvb0=rvb_file.rvb02, tabIndex=34, title="Ln#";
+Edit rvb07=rvb_file.rvb07, tabIndex=35, title="Act.Rept.Qty", not null, required;
+Edit rvb83=rvb_file.rvb83, tabIndex=36, title="Par/Ref Unit";
+Edit rvb85=rvb_file.rvb85, tabIndex=37, title="Par/Ref Qty";
+Edit rvb80=rvb_file.rvb80, tabIndex=38, title="Chi/Receive Unit";
+Edit rvb82=rvb_file.rvb82, tabIndex=39, title="Chi/Receive Qty";
+Edit rvb08=rvb_file.rvb08, tabIndex=40, title="Rect.Qty", not null, required;
+Edit rvb29=rvb_file.rvb29, tabIndex=41, title="Qc/Ret.Qty", not null, required;
+Edit rvb30=rvb_file.rvb30, tabIndex=42, title="St-in Qty", not null, required;
+Edit rvb31=rvb_file.rvb31, tabIndex=43, title="Avl St-in", not null, required;
+Edit rvb35=rvb_file.rvb35, tabIndex=44, title="Sampl";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=45, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=46, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvb(formonly.rva06,rvb_file.rvb01,rvb_file.rvb02,rvb_file.rvb07,rvb_file.rvb83,rvb_file.rvb85,rvb_file.rvb80,rvb_file.rvb82,rvb_file.rvb08,rvb_file.rvb29,rvb_file.rvb30,rvb_file.rvb31,rvb_file.rvb35)
+SCREEN RECORD Undefined(pmm_file.pmm01,pmn_file.pmn02,pmm_file.pmm04,pmm_file.pmm09,formonly.pmc03,pmm_file.pmm02,pmn_file.pmn41,pmm_file.pmm25,pmn_file.pmn04,pmn_file.pmn041,formonly.ima021,pmn_file.pmn16,pmn_file.pmn20,pmn_file.pmn07,pmn_file.pmn83,pmn_file.pmn85,pmn_file.pmn80,pmn_file.pmn82,formonly.rest,pmn_file.pmn50,pmn_file.pmn51,pmn_file.pmn53,pmn_file.pmn55,pmn_file.pmn58,pmn_file.pmn42,pmn_file.pmn61,pmn_file.pmn62,pmn_file.pmn919,pmn_file.pmn34,pmn_file.pmn33,pmn_file.pmn35,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

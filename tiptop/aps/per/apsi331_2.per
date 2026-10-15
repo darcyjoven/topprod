@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi331_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi331_2")
+VBox vb3_
+Folder folder01
+Page page01(text="Main")
+Grid gr1633
+{
+
+  Product No. [vnm00                 ]       Routing Code [vnm01              ]
+  Routing S/N [vnm02                 ]       ProcessId    [vnm03              ]
+  Routing SEQ [vnm06                 ]       Process No.  [vnm012             ]
+
+}
+END -- gr1633
+END -- page01
+END -- folder01
+Table s_vnm
+{
+[vnm04                                  ]
+[vnm04                                  ]
+[vnm04                                  ]
+[vnm04                                  ]
+[vnm04                                  ]
+[vnm04                                  ]
+[vnm04                                  ]
+[vnm04                                  ]
+[vnm04                                  ]
+}
+END -- s_vnm
+Grid gr1635
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr1635
+END -- vb3_
+END -- apsi331_2
+
+TABLES
+vnm_file
+ATTRIBUTES
+Edit vnm00=vnm_file.vnm00, tabIndex=1;
+Edit vnm01=vnm_file.vnm01, tabIndex=2;
+Edit vnm02=vnm_file.vnm02, tabIndex=3;
+Edit vnm03=vnm_file.vnm03, tabIndex=5;
+Edit vnm06=vnm_file.vnm06, tabIndex=6;
+Edit vnm012=vnm_file.vnm012, tabIndex=9;
+ButtonEdit vnm04=vnm_file.vnm04, action=controlp, tabIndex=4, title="toolsgroup", image="zoom";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vnm(vnm_file.vnm04)
+SCREEN RECORD Undefined(vnm_file.vnm00,vnm_file.vnm01,vnm_file.vnm02,vnm_file.vnm03,vnm_file.vnm06,formonly.cnt,formonly.cn2,vnm_file.vnm012)
+END -- INSTRUCTIONS
+

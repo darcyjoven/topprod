@@ -1,0 +1,130 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt595.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt595")
+VBox VBox1
+Folder pc4
+Page main(text=%"Main")
+Grid gr9
+{
+
+ Integral No.     [lrj01                   ]                 Exchange restrictions [lst18                 ]                                        Real coupon amount[lrj13                 ]
+ Card No.         [lrj02               ]                     times                 [lst19                 ]                                        Confirm Status    [lrj10                 ][imgmksg]
+ Card kind No.    [lrj03               |lph02               ]Convertibility        [lrj06                 ]                                        Confirmed BY      [lrj11                 ][       ]
+ Insider No.      [lrj04               |lpk04               ]Conversion source     [lrj14                 ]                                        Confirmed Date    [lrj12                 ]
+ Tell No.         [lpk18               ]                     Total consumption     [lrj15                 ]                                        Sales/MISC Doc No [lrj16                 ]
+ Address          [lpk15               ]                     Change                [lrj07                 ]                                        Store No.         [lrjplant              ][rtz13                 ]
+ Project No.      [lrj05               |lst02               ]Price                 [lrj08                 ]                                        Corporation       [lrjlegal              ][azt02                 ]
+ Version          [lrj17               ]                     Surplus int           [lrj09                 ]
+ Created Logistics[lrj00               |lrj00_desc          ]
+
+
+
+
+
+}
+END -- gr9
+END -- main
+Page info(text=%"Info")
+Grid gr23
+{
+
+ Data User    [lrjuser   ]  Modify     [lrjmodu   ]    acti[lrjacti   ]
+ Data Group   [lrjgrup   ]  Modify Date[lrjdate   ]    crat[lrjcrat   ]
+ Record Orig. [lrjoriu   ]
+ Dept Orig.   [lrjorig   ]
+
+
+
+
+
+}
+END -- gr23
+END -- info
+END -- pc4
+Table lrf
+{
+[lrf02              |lqe02            |lpx02             |lqe03             |lrf03           ]
+[lrf02              |lqe02            |lpx02             |lqe03             |lrf03           ]
+[lrf02              |lqe02            |lpx02             |lqe03             |lrf03           ]
+[lrf02              |lqe02            |lpx02             |lqe03             |lrf03           ]
+[lrf02              |lqe02            |lpx02             |lqe03             |lrf03           ]
+[lrf02              |lqe02            |lpx02             |lqe03             |lrf03           ]
+[lrf02              |lqe02            |lpx02             |lqe03             |lrf03           ]
+[lrf02              |lqe02            |lpx02             |lqe03             |lrf03           ]
+[lrf02              |lqe02            |lpx02             |lqe03             |lrf03           ]
+[lrf02              |lqe02            |lpx02             |lqe03             |lrf03           ]
+}
+END -- lrf
+Grid gr8
+{
+ ---------- Rows [idx   ]/[cnt   ]----------  Details [cn2   ]----------
+
+}
+END -- gr8
+END -- VBox1
+END -- almt595
+
+TABLES
+lrj_file,
+lrf_file,
+lst_file
+ATTRIBUTES
+ButtonEdit lrj01=lrj_file.lrj01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ComboBox lst18=lst_file.lst18, tabIndex=46, noEntry, not null, items=(("1", "No Limit"),("2", "During the period Once"),("3", "Everyday Once"));
+Edit lrj13=lrj_file.lrj13, tabIndex=17, noEntry;
+ButtonEdit lrj02=lrj_file.lrj02, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Edit lst19=lst_file.lst19, tabIndex=45, noEntry, not null;
+ComboBox lrj10=lrj_file.lrj10, tabIndex=18, noEntry, items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "voild"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit lrj03=lrj_file.lrj03, tabIndex=3, noEntry;
+Edit lph02=formonly.lph02 type CHAR, tabIndex=4, noEntry;
+Edit lrj06=lrj_file.lrj06, tabIndex=11, noEntry;
+Edit lrj11=lrj_file.lrj11, tabIndex=19, noEntry;
+ButtonEdit lrj04=lrj_file.lrj04, action=controlp, tabIndex=5, noEntry, not null, required, image="zoom";
+Edit lpk04=formonly.lpk04 type CHAR, tabIndex=6, noEntry;
+ComboBox lrj14=lrj_file.lrj14, tabIndex=15, default = "1", noEntry, items=(("0", "Integral ticket"),("1", "change ticket"));
+DateEdit lrj12=lrj_file.lrj12, tabIndex=20, noEntry;
+Edit lpk18=formonly.lpk18 type CHAR, tabIndex=7, noEntry;
+Edit lrj15=lrj_file.lrj15, tabIndex=16, noEntry;
+Edit lrj16=lrj_file.lrj16, tabIndex=41, noEntry;
+Edit lpk15=formonly.lpk15 type CHAR, tabIndex=8, noEntry;
+Edit lrj07=lrj_file.lrj07, tabIndex=12;
+ButtonEdit lrjplant=lrj_file.lrjplant, action=controlp, tabIndex=21, noEntry, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=23, noEntry;
+ButtonEdit lrj05=lrj_file.lrj05, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Edit lst02=formonly.lst02 type CHAR, tabIndex=10, noEntry;
+Edit lrj08=lrj_file.lrj08, tabIndex=13, noEntry;
+ButtonEdit lrjlegal=lrj_file.lrjlegal, action=controlp, tabIndex=22, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=24, noEntry;
+Edit lrj17=lrj_file.lrj17, tabIndex=42, noEntry;
+Edit lrj09=lrj_file.lrj09, tabIndex=14, noEntry;
+Edit lrj00=lrj_file.lrj00, tabIndex=43, noEntry;
+Edit lrj00_desc=formonly.lrj00_desc type CHAR, tabIndex=44, noEntry;
+Edit lrjuser=lrj_file.lrjuser, tabIndex=25, noEntry, not null, required;
+Edit lrjmodu=lrj_file.lrjmodu, tabIndex=29, noEntry;
+Edit lrjacti=lrj_file.lrjacti, tabIndex=31, default = "Y", noEntry, not null, required;
+Edit lrjgrup=lrj_file.lrjgrup, tabIndex=26, noEntry, not null, required;
+DateEdit lrjdate=lrj_file.lrjdate, tabIndex=30, noEntry;
+DateEdit lrjcrat=lrj_file.lrjcrat, tabIndex=32, noEntry, not null, required;
+Edit lrjoriu=lrj_file.lrjoriu, tabIndex=27, noEntry;
+Edit lrjorig=lrj_file.lrjorig, tabIndex=28, noEntry;
+ButtonEdit lrf02=lrf_file.lrf02, action=controlp, tabIndex=33, title="lrf02", image="zoom.png";
+Edit lqe02=formonly.lqe02 type CHAR, tabIndex=34, title="lqe02", noEntry;
+Edit lpx02=formonly.lpx02 type CHAR, tabIndex=35, title="lpx02", noEntry;
+Edit lqe03=formonly.lqe03 type CHAR, tabIndex=36, title="lqe03", noEntry;
+Edit lrf03=lrf_file.lrf03, tabIndex=37, title="lrf03", noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=38, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=39, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=40, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lrf(lrf_file.lrf02,formonly.lqe02,formonly.lpx02,formonly.lqe03,lrf_file.lrf03)
+SCREEN RECORD Undefined(lrj_file.lrj01,lrj_file.lrj02,lrj_file.lrj03,formonly.lph02,lrj_file.lrj13,lrj_file.lrj04,formonly.lpk04,lrj_file.lrj10,formonly.imgmksg,formonly.lpk18,lrj_file.lrj11,formonly.lpk15,lrj_file.lrj12,lrj_file.lrjplant,formonly.rtz13,lrj_file.lrj05,lrj_file.lrjlegal,formonly.azt02,formonly.lst02,lrj_file.lrjuser,lrj_file.lrjmodu,lrj_file.lrjacti,lrj_file.lrjgrup,lrj_file.lrjdate,lrj_file.lrjcrat,lrj_file.lrjoriu,lrj_file.lrjorig,formonly.idx,formonly.cnt,formonly.cn2,lrj_file.lrj14,lrj_file.lrj15,lrj_file.lrj09,lrj_file.lrj06,lrj_file.lrj07,lrj_file.lrj08,lrj_file.lrj16,lrj_file.lrj17,lrj_file.lrj00,formonly.lrj00_desc,lst_file.lst19,lst_file.lst18)
+END -- INSTRUCTIONS
+

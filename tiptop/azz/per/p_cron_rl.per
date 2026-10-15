@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_cron_rl.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_cron_rl")
+Grid gr3171
+{
+ <T s_report                                  >
+ [date      |time |line |report              ]
+ [date      |time |line |report              ]
+ [date      |time |line |report              ]
+ [date      |time |line |report              ]
+ [date      |time |line |report              ]
+ [date      |time |line |report              ]
+ [date      |time |line |report              ]
+ [date      |time |line |report              ]
+ [date      |time |line |report              ]
+ [date      |time |line |report              ]
+ <                                            >
+
+}
+END -- gr3171
+END -- p_cron_rl
+
+ATTRIBUTES
+Table s_report:s_report;
+Edit date=formonly.date type CHAR, tabIndex=1, title="Date", noEntry;
+Edit time=formonly.time type CHAR, tabIndex=2, title="Time", noEntry;
+Edit line=formonly.line type CHAR, tabIndex=3, title="Line", noEntry, hidden;
+Edit report=formonly.report type CHAR, tabIndex=4, title="Report", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_report(formonly.date,formonly.time,formonly.line,formonly.report)
+END -- INSTRUCTIONS
+

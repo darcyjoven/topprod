@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp642.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmp642")
+VBox vb2
+Grid gr2195
+{
+ <G group01                                                                              >
+  Delivery Note No.  [oft01              ]
+  Employee           [oft04              ]
+  Agency/Agent Cust  [oft03              ]
+  Commission Year    [oft18              ]
+  Commission Month   [oft19              ]
+ <                                                                                       >
+
+}
+END -- gr2195
+Group group02(text="INPUT")
+Grid gr2196
+{
+ Delivery date       [bdate       ]-[edate       ]
+ Generate Object     [oft17     ]
+ Bill                [trtype    ]    Account Date        [apa02       ]
+ Account Empl.       [apa21     ]    Accounts Dept.      [apa22     ]
+ Accounts Category   [apa36     ]    [apr02                         ]
+}
+END -- gr2196
+END -- group02
+Grid gr2197
+{
+ <G group03                                                                                      >
+  Start No          [start_no        ]                      End No       [end_no          ]
+ <                                                                                               >
+
+}
+END -- gr2197
+Grid gr2198
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr2198
+END -- vb2
+END -- axmp642
+
+TABLES
+apa_file,
+oft_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oft01=oft_file.oft01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit oft04=oft_file.oft04, action=controlp, tabIndex=2, image="zoom", comment="<^P> Qry Details";
+ButtonEdit oft03=oft_file.oft03, action=controlp, tabIndex=3, image="zoom", comment="<^P> Qry Details";
+Edit oft18=oft_file.oft18, tabIndex=4;
+Edit oft19=oft_file.oft19, tabIndex=5;
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=6;
+DateEdit edate=formonly.edate type CHAR, tabIndex=7;
+RadioGroup oft17=oft_file.oft17, tabIndex=8, not null, required, items=(("1", "Agent"),("2", "Agent Cust"));
+ButtonEdit trtype=formonly.trtype type VARCHAR, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P> Qry Documents";
+DateEdit apa02=apa_file.apa02, tabIndex=10, not null, required;
+ButtonEdit apa21=apa_file.apa21, action=controlp, tabIndex=11, image="zoom", comment="<^P> Qry Employee";
+ButtonEdit apa22=apa_file.apa22, action=controlp, tabIndex=12, image="zoom", comment="<^P> Qry Department";
+ButtonEdit apa36=apa_file.apa36, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P> Qry Category";
+Edit apr02=formonly.apr02 type CHAR, tabIndex=14, noEntry;
+Group group03:group03, text="Range of generated data";
+Edit start_no=formonly.start_no type CHAR, tabIndex=15, noEntry;
+Edit end_no=formonly.end_no type CHAR, tabIndex=16, noEntry;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=17, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oft_file.oft01,oft_file.oft04,oft_file.oft03,oft_file.oft18,oft_file.oft19,formonly.bdate,formonly.edate,oft_file.oft17,formonly.trtype,apa_file.apa02,apa_file.apa21,apa_file.apa22,apa_file.apa36,formonly.apr02,formonly.start_no,formonly.end_no,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

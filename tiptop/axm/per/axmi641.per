@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi641.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi641")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+VBox VBox2
+Grid Grid1
+{
+
+  Commission No.#     [ofu01     ] [ofs02               ]
+  Customer No.#       [ofu02     ] [occ02     ]
+
+
+ <G group02                                                                              >
+  Calculation Base    [ofu03                            ]
+  Rate                [ofu04                ]
+ <                                                                                       >
+
+}
+END -- Grid1
+Group group03(text="Rate")
+Grid Grid2
+{
+ Base 1              [ofu05                ]              Rate 1              [ofu06               ]
+ Base 2              [ofu07                ]              Rate 2              [ofu08               ]
+ Base 3              [ofu09                ]              Rate 3              [ofu10               ]
+ Base 4              [ofu11                ]              Rate 4              [ofu12               ]
+ Base 5              [ofu13                ]              Rate 5              [ofu14               ]
+}
+END -- Grid2
+END -- group03
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid Grid3
+{
+ Record Owner        [ofuuser   ] Last Modified by    [ofumodu   ]
+ Department          [ofugrup   ] Create/Modify Date  [ofudate   ]
+ Record Orig.        [ofuoriu   ]
+ Dept Orig.          [ofuorig   ]
+}
+END -- Grid3
+END -- info
+END -- Folder1
+Grid Grid4
+{
+ --------- Rows [cnt   ] ---------
+
+}
+END -- Grid4
+END -- VBox1
+END -- axmi641
+
+TABLES
+ofu_file
+ATTRIBUTES
+ButtonEdit ofu01=ofu_file.ofu01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Details";
+Edit ofs02=formonly.ofs02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit ofu02=ofu_file.ofu02, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Details";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=4, noEntry;
+Group group02:group02;
+ComboBox ofu03=ofu_file.ofu03, tabIndex=5, not null, required, items=(("1", %"Sales Qty"),("2", %"Sales Amount"),("3", %"Standard Selling Price"),("4", %"Profit"));
+Edit ofu04=ofu_file.ofu04, tabIndex=6, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofu05=ofu_file.ofu05, tabIndex=7, comment="Calculation Base 1 = Exceed Quantity 1  2/3/4 = Exceed Amount 1";
+Edit ofu06=ofu_file.ofu06, tabIndex=8, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofu07=ofu_file.ofu07, tabIndex=9, comment="Calculation Base 1 = Exceed Quantity 2  2/3/4 = Exceed Amount 2";
+Edit ofu08=ofu_file.ofu08, tabIndex=10, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofu09=ofu_file.ofu09, tabIndex=11, comment="Calculation Base 1 = Exceed Quantity 3  2/3/4 = Exceed Amount 3";
+Edit ofu10=ofu_file.ofu10, tabIndex=12, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofu11=ofu_file.ofu11, tabIndex=13, comment="Calculation Base 1 = Exceed Quantity 4  2/3/4 = Exceed Amount 4";
+Edit ofu12=ofu_file.ofu12, tabIndex=14, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofu13=ofu_file.ofu13, tabIndex=15, comment="Calculation Base 1 = Exceed Quantity 5  2/3/4 = Exceed Amount 5";
+Edit ofu14=ofu_file.ofu14, tabIndex=16, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofuuser=ofu_file.ofuuser, tabIndex=17, noEntry;
+Edit ofumodu=ofu_file.ofumodu, tabIndex=18, noEntry;
+Edit ofugrup=ofu_file.ofugrup, tabIndex=19, noEntry;
+DateEdit ofudate=ofu_file.ofudate, tabIndex=20, noEntry;
+Edit ofuoriu=ofu_file.ofuoriu, tabIndex=501, noEntry;
+Edit ofuorig=ofu_file.ofuorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ofu_file.ofu01,formonly.ofs02,ofu_file.ofu02,formonly.occ02,ofu_file.ofu03,ofu_file.ofu04,ofu_file.ofu05,ofu_file.ofu06,ofu_file.ofu07,ofu_file.ofu08,ofu_file.ofu09,ofu_file.ofu10,ofu_file.ofu11,ofu_file.ofu12,ofu_file.ofu13,ofu_file.ofu14,ofu_file.ofuuser,ofu_file.ofumodu,ofu_file.ofugrup,ofu_file.ofudate,ofu_file.ofuoriu,ofu_file.ofuorig,formonly.cnt)
+END -- INSTRUCTIONS
+

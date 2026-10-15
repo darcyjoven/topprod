@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi720g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi720g")
+VBox VBox1
+Group group01(text="Basic")
+HBox HBox1
+Grid gr821
+{
+ Chg.Tp        [a           ]
+ Var.Item      [bmy05                           ]
+ Part Name     [ima02n1                         ]
+ Specification [ima021n1                        ]
+
+ QPA           [bmy06       ]
+ Denm          [bmy07       ]
+ REP/SUB       [c           ]
+}
+END -- gr821
+Grid gr822
+{
+
+ New Item      [bmy27                           ]
+ Part Name     [ima02n2                         ]
+ Specification [ima021n2                        ]
+
+
+
+
+}
+END -- gr822
+END -- HBox1
+END -- group01
+Group group02(text="QBE")
+Grid gr823
+{
+ Item Rang       [ima01a                        ]
+
+}
+END -- gr823
+END -- group02
+Table s_ima
+{
+[choice    |ima01                 |ima02                    |ima021                        |bma05   ]
+[choice    |ima01                 |ima02                    |ima021                        |bma05   ]
+[choice    |ima01                 |ima02                    |ima021                        |bma05   ]
+[choice    |ima01                 |ima02                    |ima021                        |bma05   ]
+[choice    |ima01                 |ima02                    |ima021                        |bma05   ]
+[choice    |ima01                 |ima02                    |ima021                        |bma05   ]
+
+}
+END -- s_ima
+END -- VBox1
+END -- abmi720g
+
+TABLES
+bmy_file,
+ima_file
+ATTRIBUTES
+ComboBox a=formonly.a type CHAR, tabIndex=1, not null, required, queryEditable, items=(("1", "Old Void"),("3", "Mdf O.Comp"),("4", "REP"));
+ButtonEdit bmy05=bmy_file.bmy05, action=controlp, tabIndex=2, image="zoom", comment="<^P> Query Item";
+Edit ima02n1=formonly.ima02n1 type CHAR, tabIndex=3, noEntry;
+Edit ima021n1=formonly.ima021n1 type CHAR, tabIndex=4, noEntry;
+Edit bmy06=bmy_file.bmy06, tabIndex=5;
+Edit bmy07=bmy_file.bmy07, tabIndex=6;
+ComboBox c=formonly.c type CHAR, tabIndex=7, not null, required, queryEditable, items=(("0", "No REP/SUB"),("1", "OK REPd"),("2", "OK SUBd"),("5", "SUB wth SET"));
+ButtonEdit bmy27=formonly.bmy27 type CHAR, action=controlp, tabIndex=8, image="zoom", comment="<^P> Query Item";
+Edit ima02n2=formonly.ima02n2 type CHAR, tabIndex=9, noEntry;
+Edit ima021n2=formonly.ima021n2 type CHAR, tabIndex=10, noEntry;
+ButtonEdit ima01a=formonly.ima01a type CHAR, action=controlp, tabIndex=11, image="zoom";
+Edit choice=formonly.choice type CHAR, tabIndex=12, title="Choose", comment="<^Y>All <^U>All Not ";
+Edit ima01=ima_file.ima01, tabIndex=13, title="M.Item #", noEntry, not null, required;
+Edit ima02=ima_file.ima02, tabIndex=14, title="P/N Spec", noEntry;
+Edit ima021=ima_file.ima021, tabIndex=15, title="Spec", noEntry;
+Edit bma05=formonly.bma05 type CHAR, tabIndex=16, title="Pay Date", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ima(formonly.choice,ima_file.ima01,ima_file.ima02,ima_file.ima021,formonly.bma05)
+SCREEN RECORD Undefined(formonly.a,bmy_file.bmy05,formonly.ima02n1,formonly.ima021n1,bmy_file.bmy06,bmy_file.bmy07,formonly.c,formonly.bmy27,formonly.ima02n2,formonly.ima021n2,formonly.ima01a)
+END -- INSTRUCTIONS
+

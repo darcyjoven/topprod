@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi150.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi150")
+VBox vb6
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr1
+{
+
+ sta.DocNo.   [lmf01             ]                    Status    [lmf05          ]
+ Store No.    [lmfstore          |rtz13             ] Appr.No.  [lmf06          |imgmksg]
+ Corporation  [lmflegal          |azt02             ] Approver  [lmf07          |       ]
+ Bui.DocNo.   [lmf03             |lmb03             ] Appr.on   [lmf08          ]
+ Flo.DocNo.   [lmf04             |lmc04             ]
+
+}
+END -- gr1
+END -- Page3
+Page info(text=%"Info")
+Grid gr2
+{
+
+ Data Owner  [lmfuser    ] Last Modified by   [lmfmodu   ] Valid Code  [lmfacti   ]
+ Department  [lmfgrup    ] Last Modified on   [lmfdate   ] create on   [lmfcrat   ]
+ Record Orig.[lmforiu   ]
+ Dept Orig.  [lmforig     ]
+
+}
+END -- gr2
+END -- info
+END -- pc2
+Grid gr3
+{
+
+ ---- Rows [idx  ]/ [cnt   ] -------
+
+
+}
+END -- gr3
+END -- vb6
+END -- almi150
+
+TABLES
+lmf_file
+ATTRIBUTES
+ButtonEdit lmf01=lmf_file.lmf01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ComboBox lmf05=lmf_file.lmf05, tabIndex=8, noEntry, not null, required, items=(("0", "unused"),("1", "used"));
+ButtonEdit lmfstore=lmf_file.lmfstore, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=5, noEntry;
+ComboBox lmf06=lmf_file.lmf06, tabIndex=18, default = "N", noEntry, not null, required, items=(("Y", "checked"),("N", "unchecked"),("X", "zuofei"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit lmflegal=lmf_file.lmflegal, action=controlp, tabIndex=20, noEntry, not null, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=21, noEntry;
+Edit lmf07=lmf_file.lmf07, tabIndex=9, noEntry, not null, required;
+ButtonEdit lmf03=lmf_file.lmf03, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=6, noEntry;
+DateEdit lmf08=lmf_file.lmf08, tabIndex=10, noEntry, not null, required;
+ButtonEdit lmf04=lmf_file.lmf04, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=7, noEntry;
+Edit lmfuser=lmf_file.lmfuser, tabIndex=11, noEntry;
+Edit lmfmodu=lmf_file.lmfmodu, tabIndex=13, noEntry;
+Edit lmfacti=lmf_file.lmfacti, tabIndex=15, default = "Y", noEntry;
+Edit lmfgrup=lmf_file.lmfgrup, tabIndex=12, noEntry;
+DateEdit lmfdate=lmf_file.lmfdate, tabIndex=14, noEntry;
+DateEdit lmfcrat=lmf_file.lmfcrat, tabIndex=19, noEntry;
+Edit lmforiu=lmf_file.lmforiu, tabIndex=23, noEntry;
+Edit lmforig=lmf_file.lmforig, tabIndex=22, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=16, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lmf_file.lmf01,lmf_file.lmf05,lmf_file.lmfstore,formonly.rtz13,lmf_file.lmf06,formonly.imgmksg,lmf_file.lmflegal,formonly.azt02,lmf_file.lmf07,lmf_file.lmf03,formonly.lmb03,lmf_file.lmf08,lmf_file.lmf04,formonly.lmc04,lmf_file.lmfuser,lmf_file.lmfmodu,lmf_file.lmfacti,lmf_file.lmfgrup,lmf_file.lmfdate,lmf_file.lmfcrat,lmf_file.lmforiu,lmf_file.lmforig,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

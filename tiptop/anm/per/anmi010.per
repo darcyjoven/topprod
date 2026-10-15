@@ -1,0 +1,125 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="anmi010")
+VBox vb3
+Folder pc1
+Page Main(text=%"Main")
+Grid gr1
+{
+ Net Bank Interface Code     [nmv01            ] [nmv05                         ]
+ TIPTOP Login Name           [nmv06            ] [zx02                          ]
+ Net Bank Login Name         [nmv03                             ]
+ Net Bank Login Password     [nmv04                             ]
+ Bank Cart Login Password    [nmv07                             ]
+ HSBC Connect Customer ID    [nmv09                             ]
+ HSBCnet Customer ID         [nmv10                             ]
+ ACH Agreement No            [nmv11                             ]
+ Payment Doc. No.-Prefix     [nmv12                             ]
+ Doc. Reference No.          [nmv13                             ]
+ Doc. Reference Date         [nmv14                             ]
+ Payment Doc. Coding Rules   [nmv15                             ]
+ Authorization Mode          [nmv16                             ]
+ Doc. Interface Version      [nmv17                             ]
+ Doc. Coding Rules           [nmv18                             ]
+ [nmv19                             ]
+ Email Format                [nmv20                             ]
+ [nmv21                     ]
+ Advising Detail Format      [nmv22                             ]
+
+
+}
+END -- gr1
+END -- Main
+END -- pc1
+Folder pc2
+Page Page02(text=%"Payment Code Info")
+Table s_nmx
+{
+[nmx06     |nmx03                    |nmx04                                                        |nmx05     ]
+[nmx06     |nmx03                    |nmx04                                                        |nmx05     ]
+[nmx06     |nmx03                    |nmx04                                                        |nmx05     ]
+[nmx06     |nmx03                    |nmx04                                                        |nmx05     ]
+[nmx06     |nmx03                    |nmx04                                                        |nmx05     ]
+[nmx06     |nmx03                    |nmx04                                                        |nmx05     ]
+[nmx06     |nmx03                    |nmx04                                                        |nmx05     ]
+[nmx06     |nmx03                    |nmx04                                                        |nmx05     ]
+[nmx06     |nmx03                    |nmx04                                                        |nmx05     ]
+[nmx06     |nmx03                    |nmx04                                                        |nmx05     ]
+
+}
+END -- s_nmx
+END -- Page02
+Page Page03(text=%"Advising Format Column")
+Table s_nca
+{
+[nca03              |nca04                             ]
+[nca03              |nca04                             ]
+[nca03              |nca04                             ]
+[nca03              |nca04                             ]
+[nca03              |nca04                             ]
+[nca03              |nca04                             ]
+[nca03              |nca04                             ]
+[nca03              |nca04                             ]
+[nca03              |nca04                             ]
+[nca03              |nca04                             ]
+
+}
+END -- s_nca
+END -- Page03
+END -- pc2
+Grid gr2
+{
+ Rows[cnt   ]/[cn2   ]
+
+}
+END -- gr2
+END -- vb3
+END -- anmi010
+
+TABLES
+nmv_file,
+nca_file,
+nmx_file
+ATTRIBUTES
+Edit nmv01=formonly.nmv01 type VARCHAR, tabIndex=1, not null, required;
+Edit nmv05=formonly.nmv05 type VARCHAR, tabIndex=2, not null, required;
+ButtonEdit nmv06=formonly.nmv06 type VARCHAR, action=CONTROLP, tabIndex=8, required, image="zoom";
+Edit zx02=formonly.zx02 type CHAR, tabIndex=7, noEntry;
+Edit nmv03=formonly.nmv03 type VARCHAR, tabIndex=3, not null, required, invisible;
+Edit nmv04=formonly.nmv04 type VARCHAR, tabIndex=4, not null, required, invisible;
+Edit nmv07=formonly.nmv07 type CHAR, tabIndex=9, invisible;
+Edit nmv09=nmv_file.nmv09, tabIndex=10;
+Edit nmv10=nmv_file.nmv10, tabIndex=11;
+Edit nmv11=nmv_file.nmv11, tabIndex=12;
+Edit nmv12=nmv_file.nmv12, tabIndex=13;
+Edit nmv13=nmv_file.nmv13, tabIndex=14, noEntry;
+DateEdit nmv14=nmv_file.nmv14, tabIndex=15, noEntry;
+ComboBox nmv15=nmv_file.nmv15, tabIndex=16, not null, items=(("1", "prefix+yymmdd+'_'+No"),("2", "prefix+yymm+'_'+No"),("3", "prefix+'_'+No"));
+ComboBox nmv16=nmv_file.nmv16, tabIndex=17, not null, items=(("A", "Pre Authorization"),("P", "Command Authorization"),("V", "Document Authorization(General)"),("F", "Document Authorization(Details)"));
+Edit nmv17=nmv_file.nmv17, tabIndex=18;
+ComboBox nmv18=nmv_file.nmv18, tabIndex=19, not null, items=(("1", "GB01"),("2", "U801"));
+CheckBox nmv19=nmv_file.nmv19, tabIndex=20, default = "Y", text="Activate Email Notify?", not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox nmv20=nmv_file.nmv20, tabIndex=21, items=(("1", "PDF"),("2", "CSV"));
+CheckBox nmv21=nmv_file.nmv21, tabIndex=26, text="Advising Detail Notify?", valueChecked = "Y", valueUnchecked = "N";
+ComboBox nmv22=nmv_file.nmv22, tabIndex=27, items=(("1", "FREETXT"),("2", "TBLTXT"),("3", "BOTH"));
+Edit nmx06=nmx_file.nmx06, tabIndex=25, title="Line No", not null, required;
+Edit nmx03=nmx_file.nmx03, tabIndex=22, title="Payment Code", not null, required;
+Edit nmx04=nmx_file.nmx04, tabIndex=23, title="Collection No. Desc.";
+CheckBox nmx05=nmx_file.nmx05, tabIndex=24, default = "N", title="Data Used", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nca03=nca_file.nca03, tabIndex=28, title="Column Serial No.";
+ComboBox nca04=nca_file.nca04, tabIndex=29, title="Data Source";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmx(nmx_file.nmx06,nmx_file.nmx03,nmx_file.nmx04,nmx_file.nmx05)
+SCREEN RECORD s_nca(nca_file.nca03,nca_file.nca04)
+SCREEN RECORD Undefined(formonly.nmv01,formonly.nmv05,formonly.nmv06,formonly.zx02,formonly.nmv03,formonly.nmv04,formonly.nmv07,nmv_file.nmv09,nmv_file.nmv10,nmv_file.nmv11,nmv_file.nmv12,nmv_file.nmv13,nmv_file.nmv14,nmv_file.nmv15,nmv_file.nmv16,nmv_file.nmv17,nmv_file.nmv18,nmv_file.nmv19,nmv_file.nmv20,nmv_file.nmv21,nmv_file.nmv22,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

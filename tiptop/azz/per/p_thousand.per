@@ -1,0 +1,248 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_thousand.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_thousand")
+Folder pc1
+Page step1(action=visible_exit, text=%"Step1:Please choose update type")
+Grid gr2
+{
+
+  [s_ucd             ]
+  [s_ads                                   ]
+  [                                        ]
+  <G group1             >
+  [label2    |gav11    ]
+  <                     >
+  [label1           ]    [fflabel1                ]
+
+   <T tb1                          >
+   [gck01         |gck02           ]
+   [gck01         |gck02           ]
+   [gck01         |gck02           ]
+   [gck01         |gck02           ]
+   [gck01         |gck02           ]
+   [gck01         |gck02           ]
+   [gck01         |gck02           ]
+   [gck01         |gck02           ]
+   [gck01         |gck02           ]
+
+
+
+
+
+
+}
+END -- gr2
+END -- step1
+Page step2(action=visible_all, text=%"Step2:Please choose update according")
+VBox vb11
+Grid gr3
+{
+
+ [s_atmp                ]
+ [                      ]
+
+
+
+}
+END -- gr3
+Folder pc2
+Page atm(action=atm, text=%"According to module")
+Grid gr11
+{
+    <T tb2                                        >
+    [choose  |gao01     |gaz03                    ]
+    [choose  |gao01     |gaz03                    ]
+    [choose  |gao01     |gaz03                    ]
+    [choose  |gao01     |gaz03                    ]
+    [choose  |gao01     |gaz03                    ]
+    [choose  |gao01     |gaz03                    ]
+    [choose  |gao01     |gaz03                    ]
+    [choose  |gao01     |gaz03                    ]
+    [choose  |gao01     |gaz03                    ]
+    [choose  |gao01     |gaz03                    ]
+    [choose  |gao01     |gaz03                    ]
+
+
+
+}
+END -- gr11
+END -- atm
+Page atp(action=atp, text=%"According to program")
+Grid gr5
+{
+ [lb1           |s_pcm  |s_mn            |open_ui_li]
+
+  <T tb3                                          >
+  [choose2 |zz01      |gaz03_m                    ]
+  [choose2 |zz01      |gaz03_m                    ]
+  [choose2 |zz01      |gaz03_m                    ]
+  [choose2 |zz01      |gaz03_m                    ]
+  [choose2 |zz01      |gaz03_m                    ]
+  [choose2 |zz01      |gaz03_m                    ]
+  [choose2 |zz01      |gaz03_m                    ]
+  [choose2 |zz01      |gaz03_m                    ]
+  [choose2 |zz01      |gaz03_m                    ]
+
+
+
+}
+END -- gr5
+END -- atp
+END -- pc2
+END -- vb11
+END -- step2
+Page ul(action=visible_exit, text=%"Updated list")
+Grid grid4
+{
+ <T tb7                                                      >
+ [mi       |pi3            |pn3                           ]
+ [mi       |pi3            |pn3                           ]
+ [mi       |pi3            |pn3                           ]
+ [mi       |pi3            |pn3                           ]
+ [mi       |pi3            |pn3                           ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <                                                           >
+
+}
+END -- grid4
+END -- ul
+Page udl(action=visible_exit, text=%"Updated detail list", hidden)
+Grid grid2
+{
+
+  <T tb5                                                                                                  >
+  [pi1        |pn1                 |fc      |fn      |ft          |action           |result1              ]
+  [pi1        |pn1                 |fc      |fn      |ft          |action           |result1              ]
+  [pi1        |pn1                 |fc      |fn      |ft          |action           |result1              ]
+  [pi1        |pn1                 |fc      |fn      |ft          |action           |result1              ]
+  [pi1        |pn1                 |fc      |fn      |ft          |action           |result1              ]
+
+
+
+
+
+  <                                                                                                       >
+
+
+
+
+
+
+
+
+
+}
+END -- grid2
+END -- udl
+Page uthpl(action=visible_exit, text=%"Unable to handle program list", hidden)
+Grid grid3
+{
+
+  <T tb6                                                                                 >
+  [pi2       |pn2              |attr2             |error        |result2                 ]
+  [pi2       |pn2              |attr2             |error        |result2                 ]
+  [pi2       |pn2              |attr2             |error        |result2                 ]
+  [pi2       |pn2              |attr2             |error        |result2                 ]
+  [pi2       |pn2              |attr2             |error        |result2                 ]
+
+
+
+
+
+  <                                                                                      >
+
+
+
+
+
+
+
+
+
+}
+END -- grid3
+END -- uthpl
+END -- pc1
+END -- p_thousand
+
+TABLES
+gck_file,
+gaz_file,
+gav_file,
+gao_file,
+zz_file
+ATTRIBUTES
+CheckBox s_ucd=formonly.s_ucd type VARCHAR, tabIndex=13, default = "Y", text=%"Update custom data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+RadioGroup s_ads=formonly.s_ads type VARCHAR, tabIndex=1, default = "1", not null, required, fontPitch=variable, items=(("1", %"p_per column:[Field Format] add 'amt' string (xxx,xxx,xxx)"),("2", %"p_per column:[Field Format] del 'amt' string (xxxxxxxxx)"));
+Group group1:Group1, text=%"";
+Label label2:Label2, text=%"Industry";
+ComboBox gav11=gav_file.gav11, tabIndex=24, default = "std", required, sizePolicy=fixed;
+Label label1:Label1, text=%"Amount / Figure field attr.";
+LABEL fflabel1=formonly.FFLabel1;
+Table tb1:tb1, width = 33 characters;
+ButtonEdit gck01=gck_file.gck01, action=controlc, tabIndex=4, title=%"Field AttrNo.", image="zoom";
+Edit gck02=gck_file.gck02, tabIndex=3, title=%"Attr ShortName", noEntry;
+RadioGroup s_atmp=formonly.s_atmp type VARCHAR, tabIndex=2, default = "1", not null, required, items=(("1", %"According to module"),("2", %"According to program"));
+Table tb2:tb2, width = 47 characters;
+CheckBox choose=formonly.choose type VARCHAR, tabIndex=10, default = "N", title=%"Choose", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gao01=gao_file.gao01, tabIndex=11, title=%"Module ID", noEntry, not null, required;
+Edit gaz03=gaz_file.gaz03, tabIndex=12, title=%"Module Name", noEntry;
+Label lb1:lb1, text=%"Please choose module";
+ButtonEdit s_pcm=formonly.s_pcm type VARCHAR, action=controlp, tabIndex=8, default = "", image="zoom";
+Edit s_mn=formonly.s_mn type VARCHAR, tabIndex=9, default = "", noEntry;
+Button open_ui_li:open_ui_list, tabIndex=30, text=%"open UI list";
+Table tb3:tb3, width = 49 characters;
+CheckBox choose2=formonly.choose2 type VARCHAR, tabIndex=5, default = "N", title=%"Choose", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit zz01=zz_file.zz01, tabIndex=6, title=%"Program ID", noEntry, not null, required;
+Edit gaz03_m=formonly.gaz03_m type VARCHAR, tabIndex=7, title=%"Program Name", noEntry;
+Table tb7:tb7;
+Edit mi=formonly.mi type VARCHAR, tabIndex=27, title=%"Module ID", hidden;
+Edit pi3=formonly.pi3 type VARCHAR, tabIndex=28, title=%"Program ID";
+Edit pn3=formonly.pn3 type VARCHAR, tabIndex=29, title=%"Program Name";
+Table tb5:tb5, width = 53 characters;
+Edit pi1=formonly.pi1 type VARCHAR, tabIndex=14, title=%"Program ID", noEntry;
+Edit pn1=formonly.pn1 type VARCHAR, tabIndex=15, title=%"Programe Name", noEntry;
+Edit fc=formonly.fc, tabIndex=25, title=%"Field Code";
+Edit fn=formonly.fn, tabIndex=26, title=%"Field Name";
+Edit ft=formonly.ft type VARCHAR, tabIndex=20, title=%"Field Type";
+Edit action=formonly.Action type VARCHAR, tabIndex=21, title=%"action";
+Edit result1=formonly.result1 type VARCHAR, tabIndex=22, title=%"Result";
+Table tb6:tb6, width = 53 characters;
+Edit pi2=formonly.pi2 type VARCHAR, tabIndex=16, title=%"Program ID", noEntry;
+Edit pn2=formonly.pn2 type VARCHAR, tabIndex=17, title=%"Programe Name", noEntry;
+Edit attr2=formonly.attr2 type VARCHAR, tabIndex=19, title=%"Un-updated attribute";
+Edit error=formonly.error type VARCHAR, tabIndex=18, title=%"Error reason";
+Edit result2=formonly.result2 type VARCHAR, tabIndex=23, title=%"Result";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.s_ads,formonly.s_atmp,formonly.s_pcm,formonly.s_mn,formonly.s_ucd)
+SCREEN RECORD s_tb2(formonly.choose,gao_file.gao01,gaz_file.gaz03)
+SCREEN RECORD s_tb1(gck_file.gck01,gck_file.gck02)
+SCREEN RECORD s_tb3(formonly.choose2,zz_file.zz01,formonly.gaz03_m)
+SCREEN RECORD s_tb5(formonly.pi1,formonly.pn1,formonly.fc,formonly.fn,formonly.ft,formonly.Action,formonly.result1)
+SCREEN RECORD s_tb6(formonly.pi2,formonly.pn2,formonly.attr2,formonly.error,formonly.result2)
+SCREEN RECORD Undefined3(formonly.FFLabel1,gav_file.gav11)
+SCREEN RECORD s_tb7(formonly.mi,formonly.pi3,formonly.pn3)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_pay9.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="s_pay9")
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+
+ Balance                   [total               ]
+ Stored-value Cards        [rxz04                                   ]
+ Stored-value Cards Balance[lpj06               ]
+ Amount                    [rxz05               ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+END -- s_pay9
+
+TABLES
+rxz_file
+ATTRIBUTES
+Edit total=formonly.total type DECIMAL, tabIndex=1, noEntry;
+Edit rxz04=rxz_file.rxz04, tabIndex=2, not null, required;
+Edit lpj06=formonly.lpj06 type DECIMAL, tabIndex=3, noEntry;
+Edit rxz05=rxz_file.rxz05, tabIndex=4, not null;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.total,rxz_file.rxz04,formonly.lpj06,rxz_file.rxz05)
+END -- INSTRUCTIONS
+

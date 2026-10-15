@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/4fd/aimq138.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq138")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr3145
+{
+ Item#               [ima01                         ]
+ Part Name           [ima02                         ]
+ Specification       [ima021                        ]
+}
+END -- gr3145
+Grid gr3146
+{
+ Source Code         [ima08     ]
+
+
+}
+END -- gr3146
+END -- hb1
+END -- page01
+END -- folder01
+Table s_sr
+{
+[sfa01            |sfb82 |sfb05               |ima03               |ima022              |sfa05          |sfa06          |sfa07          |sfa12  |sfa012      |sfa013     ]
+[sfa01            |sfb82 |sfb05               |ima03               |ima022              |sfa05          |sfa06          |sfa07          |sfa12  |sfa012      |sfa013     ]
+[sfa01            |sfb82 |sfb05               |ima03               |ima022              |sfa05          |sfa06          |sfa07          |sfa12  |sfa012      |sfa013     ]
+[sfa01            |sfb82 |sfb05               |ima03               |ima022              |sfa05          |sfa06          |sfa07          |sfa12  |sfa012      |sfa013     ]
+[sfa01            |sfb82 |sfb05               |ima03               |ima022              |sfa05          |sfa06          |sfa07          |sfa12  |sfa012      |sfa013     ]
+[sfa01            |sfb82 |sfb05               |ima03               |ima022              |sfa05          |sfa06          |sfa07          |sfa12  |sfa012      |sfa013     ]
+[sfa01            |sfb82 |sfb05               |ima03               |ima022              |sfa05          |sfa06          |sfa07          |sfa12  |sfa012      |sfa013     ]
+[sfa01            |sfb82 |sfb05               |ima03               |ima022              |sfa05          |sfa06          |sfa07          |sfa12  |sfa012      |sfa013     ]
+[sfa01            |sfb82 |sfb05               |ima03               |ima022              |sfa05          |sfa06          |sfa07          |sfa12  |sfa012      |sfa013     ]
+[sfa01            |sfb82 |sfb05               |ima03               |ima022              |sfa05          |sfa06          |sfa07          |sfa12  |sfa012      |sfa013     ]
+
+}
+END -- s_sr
+Grid gr3147
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----- Qty to Issue Total  [sfa05_t             ] ----- Unissued Qty Total  [sfa06_t             ] ----- Short Qty Total     [sfa07_t             ] ----------
+
+}
+END -- gr3147
+END -- vb2
+END -- aimq138
+
+TABLES
+sfb_file,
+sfa_file,
+ima_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=3, noEntry;
+Edit ima08=ima_file.ima08, tabIndex=4, noEntry;
+Edit sfa01=sfa_file.sfa01, tabIndex=5, title="W/O No.", noEntry;
+Edit sfb82=sfb_file.sfb82, tabIndex=6, title="Dept", noEntry;
+Edit sfb05=sfb_file.sfb05, tabIndex=7, title="Production Item#", noEntry;
+Edit ima03=formonly.ima02, tabIndex=8, title=%"ima02";
+Edit ima022=formonly.ima021, tabIndex=9, title=%"ima021";
+Edit sfa05=formonly.sfa05 type CHAR, tabIndex=10, title="Qty to Issue", noEntry;
+Edit sfa06=formonly.sfa06 type CHAR, tabIndex=11, title="Unissued Qty", noEntry;
+Edit sfa07=formonly.sfa07 type CHAR, tabIndex=12, title="Short Qty", noEntry;
+Edit sfa12=formonly.sfa12 type VARCHAR, tabIndex=13, title="Unit", noEntry;
+Edit sfa012=formonly.sfa012 type VARCHAR, tabIndex=19, title=%"Process Section No", noEntry;
+Edit sfa013=formonly.sfa013 type SMALLINT, tabIndex=20, title=%"Routing Sequence", noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=14, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=15, noEntry;
+Edit sfa05_t=formonly.sfa05_t type CHAR, tabIndex=16, noEntry;
+Edit sfa06_t=formonly.sfa06_t type CHAR, tabIndex=17, noEntry;
+Edit sfa07_t=formonly.sfa07_t type CHAR, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sr(sfa_file.sfa01,sfb_file.sfb82,sfb_file.sfb05,formonly.ima02,formonly.ima021,formonly.sfa05,formonly.sfa06,formonly.sfa07,formonly.sfa12,formonly.sfa012,formonly.sfa013)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,ima_file.ima08,formonly.cnt,formonly.cn2,formonly.sfa05_t,formonly.sfa06_t,formonly.sfa07_t)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt410_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="axmt410_c")
+Folder pc5
+Page Page7(text=%"Main")
+Table tb5
+{
+[l_no |l_p_no                  |l_p_desc                      |l_end ]
+[l_no |l_p_no                  |l_p_desc                      |l_end ]
+[l_no |l_p_no                  |l_p_desc                      |l_end ]
+[l_no |l_p_no                  |l_p_desc                      |l_end ]
+[l_no |l_p_no                  |l_p_desc                      |l_end ]
+[l_no |l_p_no                  |l_p_desc                      |l_end ]
+[l_no |l_p_no                  |l_p_desc                      |l_end ]
+[l_no |l_p_no                  |l_p_desc                      |l_end ]
+[l_no |l_p_no                  |l_p_desc                      |l_end ]
+[l_no |l_p_no                  |l_p_desc                      |l_end ]
+
+}
+END -- tb5
+END -- Page7
+END -- pc5
+END -- axmt410_c
+
+ATTRIBUTES
+Edit l_no=formonly.l_no type SMALLINT, tabIndex=1, title="#Line", not null, required;
+Edit l_p_no=formonly.l_p_no type VARCHAR, tabIndex=2, title="Good No.", noEntry;
+Edit l_p_desc=formonly.l_p_desc type VARCHAR, tabIndex=3, title="Good Name", noEntry;
+CheckBox l_end=formonly.l_end type VARCHAR, tabIndex=4, title="END", noEntry, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oeb_c(formonly.l_no,formonly.l_p_no,formonly.l_p_desc,formonly.l_end)
+END -- INSTRUCTIONS
+

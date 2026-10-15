@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai080.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai080")
+VBox VBox1
+Folder pc325
+Page page01(text="Main")
+Table s_fbi
+{
+[fbi01      |gem02       |fbi03           |fbi02                         |aag02                           |fbi021                          |aag021                          |fbiact]
+[fbi01      |gem02       |fbi03           |fbi02                         |aag02                           |fbi021                          |aag021                          |fbiact]
+[fbi01      |gem02       |fbi03           |fbi02                         |aag02                           |fbi021                          |aag021                          |fbiact]
+[fbi01      |gem02       |fbi03           |fbi02                         |aag02                           |fbi021                          |aag021                          |fbiact]
+[fbi01      |gem02       |fbi03           |fbi02                         |aag02                           |fbi021                          |aag021                          |fbiact]
+[fbi01      |gem02       |fbi03           |fbi02                         |aag02                           |fbi021                          |aag021                          |fbiact]
+[fbi01      |gem02       |fbi03           |fbi02                         |aag02                           |fbi021                          |aag021                          |fbiact]
+[fbi01      |gem02       |fbi03           |fbi02                         |aag02                           |fbi021                          |aag021                          |fbiact]
+[fbi01      |gem02       |fbi03           |fbi02                         |aag02                           |fbi021                          |aag021                          |fbiact]
+[fbi01      |gem02       |fbi03           |fbi02                         |aag02                           |fbi021                          |aag021                          |fbiact]
+
+}
+END -- s_fbi
+END -- page01
+END -- pc325
+Grid gr1809
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1809
+END -- VBox1
+END -- afai080
+
+TABLES
+fbi_file
+ATTRIBUTES
+ButtonEdit fbi01=fbi_file.fbi01, action=controlp, tabIndex=1, title="Dept No.", not null, required, image="zoom", comment="<^P>Query Department <^O>Copy Previous Record!";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=2, title="Dept Name", noEntry;
+ButtonEdit fbi03=fbi_file.fbi03, action=controlp, tabIndex=3, title="Main Category", not null, required, image="zoom", comment="<^P>Qry Main Category <^O>Copy Previous Record!";
+ButtonEdit fbi02=fbi_file.fbi02, action=controlp, tabIndex=4, title="Depreciation Account Number", image="zoom", comment="<^P>Qry Account  ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=5, title="Account Title", noEntry;
+ButtonEdit fbi021=fbi_file.fbi021, action=controlp, tabIndex=6, title="Depr Acct2.Code", image="zoom", comment="<^P>Qry Account  ";
+Edit aag021=formonly.aag021 type CHAR, tabIndex=7, title="Acct2.Title", noEntry;
+CheckBox fbiact=fbi_file.fbiacti, tabIndex=8, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fbi(fbi_file.fbi01,formonly.gem02,fbi_file.fbi03,fbi_file.fbi02,formonly.aag02,fbi_file.fbi021,formonly.aag021,fbi_file.fbiacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

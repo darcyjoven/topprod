@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp610")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+HBox HBox1
+Grid gr554
+{
+ W/O No.     [a               ]
+ Period Item [b                  ]
+
+}
+END -- gr554
+Grid gr555
+{
+ [c                                                      ]
+
+
+}
+END -- gr555
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_sfb
+{
+[sfb01           |sfb05              |sfb07   |sfb071      ]
+[sfb01           |sfb05              |sfb07   |sfb071      ]
+[sfb01           |sfb05              |sfb07   |sfb071      ]
+[sfb01           |sfb05              |sfb07   |sfb071      ]
+[sfb01           |sfb05              |sfb07   |sfb071      ]
+[sfb01           |sfb05              |sfb07   |sfb071      ]
+[sfb01           |sfb05              |sfb07   |sfb071      ]
+[sfb01           |sfb05              |sfb07   |sfb071      ]
+[sfb01           |sfb05              |sfb07   |sfb071      ]
+[sfb01           |sfb05              |sfb07   |sfb071      ]
+
+}
+END -- s_sfb
+Grid gr556
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr556
+END -- VBox1
+END -- asfp610
+
+TABLES
+sfb_file
+ATTRIBUTES
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+CheckBox c=formonly.c type VARCHAR, tabIndex=3, text="Give Version and Expiry Date again?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sfb01=sfb_file.sfb01, tabIndex=4, title="W/O No.", noEntry;
+Edit sfb05=sfb_file.sfb05, tabIndex=5, title="Item No.", noEntry;
+Edit sfb07=sfb_file.sfb07, tabIndex=6, title="Version";
+DateEdit sfb071=sfb_file.sfb071, tabIndex=7, title="Expiry Date";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(sfb_file.sfb01,sfb_file.sfb05,sfb_file.sfb07,sfb_file.sfb071)
+SCREEN RECORD Undefined(formonly.a,formonly.b,formonly.c,formonly.cn2)
+END -- INSTRUCTIONS
+

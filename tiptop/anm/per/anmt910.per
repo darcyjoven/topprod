@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt910.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt910")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr4584
+{
+ Simulation Version   [nqg01     ]
+ Logistics No.        [nqg02     ][azp02     ]
+ Logistics Curr       [nqg03     ]
+ Coffer Curr          [nqa01     ]
+}
+END -- gr4584
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_nqg
+{
+[nqg04  |nqg05           |nqg06        |nqd02          |nqg10 |nqg11 |nqg12            |nqg13             |nqg14        ]
+[nqg04  |nqg05           |nqg06        |nqd02          |nqg10 |nqg11 |nqg12            |nqg13             |nqg14        ]
+[nqg04  |nqg05           |nqg06        |nqd02          |nqg10 |nqg11 |nqg12            |nqg13             |nqg14        ]
+[nqg04  |nqg05           |nqg06        |nqd02          |nqg10 |nqg11 |nqg12            |nqg13             |nqg14        ]
+[nqg04  |nqg05           |nqg06        |nqd02          |nqg10 |nqg11 |nqg12            |nqg13             |nqg14        ]
+[nqg04  |nqg05           |nqg06        |nqd02          |nqg10 |nqg11 |nqg12            |nqg13             |nqg14        ]
+[nqg04  |nqg05           |nqg06        |nqd02          |nqg10 |nqg11 |nqg12            |nqg13             |nqg14        ]
+[nqg04  |nqg05           |nqg06        |nqd02          |nqg10 |nqg11 |nqg12            |nqg13             |nqg14        ]
+[nqg04  |nqg05           |nqg06        |nqd02          |nqg10 |nqg11 |nqg12            |nqg13             |nqg14        ]
+[nqg04  |nqg05           |nqg06        |nqd02          |nqg10 |nqg11 |nqg12            |nqg13             |nqg14        ]
+
+}
+END -- s_nqg
+Grid gr4585
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4585
+END -- VBox1
+END -- anmt910
+
+TABLES
+nqg_file
+ATTRIBUTES
+ButtonEdit nqg01=nqg_file.nqg01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit nqg02=nqg_file.nqg02, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=3, noEntry;
+ButtonEdit nqg03=nqg_file.nqg03, action=controlp, tabIndex=4, noEntry, not null, required, image="zoom";
+Edit nqa01=formonly.nqa01 type CHAR, tabIndex=5, noEntry;
+DateEdit nqg04=nqg_file.nqg04, tabIndex=6, title="Date", not null, required;
+ComboBox nqg05=nqg_file.nqg05, tabIndex=7, title="Variance Class", not null, required, queryEditable, items=(("1", %"Business Activity"),("2", %"Investment"),("3", %"Financial Activity"));
+ButtonEdit nqg06=nqg_file.nqg06, action=controlp, tabIndex=8, title="Category No", noEntry, not null, required, image="zoom";
+Edit nqd02=formonly.nqd02 type CHAR, tabIndex=9, title="Category Name", noEntry;
+ButtonEdit nqg10=nqg_file.nqg10, action=controlp, tabIndex=10, title="Curr", not null, required, image="zoom";
+Edit nqg11=nqg_file.nqg11, tabIndex=11, title="Rate", not null, required;
+Edit nqg12=nqg_file.nqg12, tabIndex=12, title="Amount", not null, required;
+Edit nqg13=nqg_file.nqg13, tabIndex=13, title="Logistics Amount", not null, required;
+Edit nqg14=nqg_file.nqg14, tabIndex=14, title="Coffer Amount", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nqg(nqg_file.nqg04,nqg_file.nqg05,nqg_file.nqg06,formonly.nqd02,nqg_file.nqg10,nqg_file.nqg11,nqg_file.nqg12,nqg_file.nqg13,nqg_file.nqg14)
+SCREEN RECORD Undefined(nqg_file.nqg01,nqg_file.nqg02,formonly.azp02,nqg_file.nqg03,formonly.nqa01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmq102")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr4141
+{
+ Drawing Slip No.    [nmd01             ]
+ Paying Bank         [nmd03               ]
+ Bank Abbreviation   [nma02               ]
+ Note No.            [nmd02       ]
+ Closing Date        [nmd29       ]
+
+}
+END -- gr4141
+Grid gr4142
+{
+  Currency            [nmd21   ]
+  Face Value          [nmd04               ]
+  Drawing Date        [nmd07       ]
+  Due Date            [nmd05       ]
+  Note Category       [nmd06       ]
+  Ex.Rate             [nmd19                 ]
+}
+END -- gr4142
+Grid gr4143
+{
+  Vender No.          [nmd08     ]
+  Vender Abbreviation [nmd24     ]
+  Payment Slip No.    [nmd10           ]
+  Payment Slip Line # [nmd101    ]
+  Note Status         [nmd12     ]
+
+}
+END -- gr4143
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_nmd
+{
+[nmf02               |nmf05                |nmf06           |nmf08                 |nmf09                |nmf11           |nmf13         |nmf12               ]
+[nmf02               |nmf05                |nmf06           |nmf08                 |nmf09                |nmf11           |nmf13         |nmf12               ]
+[nmf02               |nmf05                |nmf06           |nmf08                 |nmf09                |nmf11           |nmf13         |nmf12               ]
+[nmf02               |nmf05                |nmf06           |nmf08                 |nmf09                |nmf11           |nmf13         |nmf12               ]
+[nmf02               |nmf05                |nmf06           |nmf08                 |nmf09                |nmf11           |nmf13         |nmf12               ]
+[nmf02               |nmf05                |nmf06           |nmf08                 |nmf09                |nmf11           |nmf13         |nmf12               ]
+[nmf02               |nmf05                |nmf06           |nmf08                 |nmf09                |nmf11           |nmf13         |nmf12               ]
+[nmf02               |nmf05                |nmf06           |nmf08                 |nmf09                |nmf11           |nmf13         |nmf12               ]
+[nmf02               |nmf05                |nmf06           |nmf08                 |nmf09                |nmf11           |nmf13         |nmf12               ]
+[nmf02               |nmf05                |nmf06           |nmf08                 |nmf09                |nmf11           |nmf13         |nmf12               ]
+
+}
+END -- s_nmd
+Grid gr4144
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4144
+END -- VBox1
+END -- anmq102
+
+ATTRIBUTES
+Edit nmd01=formonly.nmd01 type CHAR, tabIndex=1;
+Edit nmd03=formonly.nmd03 type VARCHAR, tabIndex=2;
+Edit nma02=formonly.nma02 type VARCHAR, tabIndex=3, noEntry;
+Edit nmd02=formonly.nmd02 type VARCHAR, tabIndex=4;
+DateEdit nmd29=formonly.nmd29 type DATE, tabIndex=5;
+Edit nmd21=formonly.nmd21 type VARCHAR, tabIndex=6;
+Edit nmd04=formonly.nmd04 type DECIMAL, tabIndex=7;
+DateEdit nmd07=formonly.nmd07 type DATE, tabIndex=8;
+DateEdit nmd05=formonly.nmd05 type DATE, tabIndex=9;
+Edit nmd06=formonly.nmd06 type VARCHAR, tabIndex=10;
+Edit nmd19=formonly.nmd19 type CHAR, tabIndex=11;
+Edit nmd08=formonly.nmd08 type VARCHAR, tabIndex=12;
+Edit nmd24=formonly.nmd24 type VARCHAR, tabIndex=13, noEntry;
+Edit nmd10=formonly.nmd10 type VARCHAR, tabIndex=14;
+Edit nmd101=formonly.nmd101 type SMALLINT, tabIndex=15;
+ComboBox nmd12=formonly.nmd12 type CHAR, tabIndex=16, noEntry, not null, required, queryEditable, items=(("1", "Draw"),("6", "Withdraw"),("7", "Return"),("8", "Cash"),("9", "Void"),("X", "Atuo Open"));
+DateEdit nmf02=formonly.nmf02 type DATE, tabIndex=17, title="Transaction Date";
+ComboBox nmf05=formonly.nmf05 type VARCHAR, tabIndex=18, title="Original Note Status", queryEditable, items=(("1", %"Draw"),("6", %"Withdraw"),("7", %"Return"),("8", %"Cash"),("9", %"Void"),("X", %"Atuo Open"));
+ComboBox nmf06=formonly.nmf06 type VARCHAR, tabIndex=19, title="New Note Status", queryEditable, items=(("1", %"Draw"),("6", %"Withdraw"),("7", %"Return"),("8", %"Cash"),("9", %"Void"),("X", %"Atuo Open"));
+Edit nmf08=formonly.nmf08 type CHAR, tabIndex=20, title="Original Ex Rate", noEntry;
+Edit nmf09=formonly.nmf09 type CHAR, tabIndex=21, title="Current Ex Rate", noEntry;
+Edit nmf11=formonly.nmf11 type CHAR, tabIndex=22, title="Voucher#";
+Edit nmf13=formonly.nmf13 type CHAR, tabIndex=23, title="Voucher Date";
+Edit nmf12=formonly.nmf12 type CHAR, tabIndex=24, title="Transaction Note No.";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=26, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmd(formonly.nmf02,formonly.nmf05,formonly.nmf06,formonly.nmf08,formonly.nmf09,formonly.nmf11,formonly.nmf13,formonly.nmf12)
+SCREEN RECORD Undefined(formonly.nmd01,formonly.nmd03,formonly.nma02,formonly.nmd02,formonly.nmd29,formonly.nmd21,formonly.nmd04,formonly.nmd07,formonly.nmd05,formonly.nmd06,formonly.nmd19,formonly.nmd08,formonly.nmd24,formonly.nmd10,formonly.nmd101,formonly.nmd12,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

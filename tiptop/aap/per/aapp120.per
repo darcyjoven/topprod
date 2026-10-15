@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapp120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapp120")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr78
+{
+
+ Store-in Date    [rvv09     ]  St-in Note#      [rvv01           ] P/O No.    [rvb04           ]
+ Invoice L/C #    [rvb22           ]  [rva04                ] Vender           [rvv06           ]
+ plant.QBE        [azw01           ]
+
+}
+END -- gr78
+END -- page01
+END -- folder01
+Table s_rvv
+{
+[rvvplant   |rvv09b        |rvv06b     |pmc03       |rvb05                 |rvv36           |rvv37 |rvv01b         |rvv0|rvv87        |rvv04                |rvv1|rva01|x            |rvb22b         |rvb10       |rvb88     ]
+[rvvplant   |rvv09b        |rvv06b     |pmc03       |rvb05                 |rvv36           |rvv37 |rvv01b         |rvv0|rvv87        |rvv04                |rvv1|rva01|x            |rvb22b         |rvb10       |rvb88     ]
+[rvvplant   |rvv09b        |rvv06b     |pmc03       |rvb05                 |rvv36           |rvv37 |rvv01b         |rvv0|rvv87        |rvv04                |rvv1|rva01|x            |rvb22b         |rvb10       |rvb88     ]
+[rvvplant   |rvv09b        |rvv06b     |pmc03       |rvb05                 |rvv36           |rvv37 |rvv01b         |rvv0|rvv87        |rvv04                |rvv1|rva01|x            |rvb22b         |rvb10       |rvb88     ]
+[rvvplant   |rvv09b        |rvv06b     |pmc03       |rvb05                 |rvv36           |rvv37 |rvv01b         |rvv0|rvv87        |rvv04                |rvv1|rva01|x            |rvb22b         |rvb10       |rvb88     ]
+[rvvplant   |rvv09b        |rvv06b     |pmc03       |rvb05                 |rvv36           |rvv37 |rvv01b         |rvv0|rvv87        |rvv04                |rvv1|rva01|x            |rvb22b         |rvb10       |rvb88     ]
+[rvvplant   |rvv09b        |rvv06b     |pmc03       |rvb05                 |rvv36           |rvv37 |rvv01b         |rvv0|rvv87        |rvv04                |rvv1|rva01|x            |rvb22b         |rvb10       |rvb88     ]
+[rvvplant   |rvv09b        |rvv06b     |pmc03       |rvb05                 |rvv36           |rvv37 |rvv01b         |rvv0|rvv87        |rvv04                |rvv1|rva01|x            |rvb22b         |rvb10       |rvb88     ]
+[rvvplant   |rvv09b        |rvv06b     |pmc03       |rvb05                 |rvv36           |rvv37 |rvv01b         |rvv0|rvv87        |rvv04                |rvv1|rva01|x            |rvb22b         |rvb10       |rvb88     ]
+[rvvplant   |rvv09b        |rvv06b     |pmc03       |rvb05                 |rvv36           |rvv37 |rvv01b         |rvv0|rvv87        |rvv04                |rvv1|rva01|x            |rvb22b         |rvb10       |rvb88     ]
+}
+END -- s_rvv
+Grid gr79
+{
+ ----------Rows [cn3   ] ----------
+
+
+}
+END -- gr79
+END -- vb2
+END -- aapp120
+
+TABLES
+rvv_file,
+rvb_file,
+rva_file,
+azw_file
+ATTRIBUTES
+DateEdit rvv09=rvv_file.rvv09, tabIndex=1, comment="Enter Store-in Date QBE";
+ButtonEdit rvv01=rvv_file.rvv01, action=controlp, tabIndex=2, image="zoom", comment="Enter Store-in Note# QBE";
+ButtonEdit rvb04=rvb_file.rvb04, action=controlp, tabIndex=3, image="zoom", comment="Enter Purchase Order# QBE";
+Edit rvb22=rvb_file.rvb22, tabIndex=4, comment="Enter Invoice L/C # QBE";
+CheckBox rva04=rva_file.rva04, tabIndex=5, text="L/C?", not null, required, valueChecked = "N";
+ButtonEdit rvv06=rvv_file.rvv06, action=controlp, tabIndex=6, image="zoom", comment="Enter Delivery Vender No# QBE";
+ButtonEdit azw01=azw_file.azw01, action=controlp, tabIndex=24, image="zoom.png";
+ButtonEdit rvvplant=rvv_file.rvvplant, action=controlp, tabIndex=25, title=%"Plantcode", noEntry, image="zoom.png";
+Edit rvv09b=formonly.rvv09b type CHAR, tabIndex=7, title="Store-in Date", noEntry;
+Edit rvv06b=formonly.rvv06b type CHAR, tabIndex=8, title="Vender No.", noEntry;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=9, title="Verdor name", noEntry;
+Edit rvb05=formonly.rvb05 type CHAR, tabIndex=10, title="Item No.", noEntry;
+Edit rvv36=formonly.rvv36 type CHAR, tabIndex=11, title="P/O No.", noEntry;
+Edit rvv37=formonly.rvv37 type CHAR, tabIndex=12, title="Ln#", noEntry;
+Edit rvv01b=formonly.rvv01b type CHAR, tabIndex=13, title="Store-in Note#", noEntry;
+Edit rvv0=formonly.rvv02 type CHAR, tabIndex=14, title="Ln#", noEntry;
+Edit rvv87=formonly.rvv87 type CHAR, tabIndex=15, title="Store-in Qty", noEntry;
+Edit rvv04=formonly.rvv04 type CHAR, tabIndex=16, title="Receiving Report No.", noEntry;
+Edit rvv1=formonly.rvv05 type CHAR, tabIndex=17, title="Ln#", noEntry;
+CheckBox rva01=formonly.rva04b type CHAR, tabIndex=18, title="L/C", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N", comment=" Y :Foreign Pur L/C Rcpts,  N :Local Purchase Invoice Accounts";
+CheckBox x=formonly.x type CHAR, tabIndex=19, title="Inv#", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N", comment=" Y :Receiving Inv# already exists,N :Receiving Inv# not exists";
+ButtonEdit rvb22b=formonly.rvb22b type CHAR, action=controlp, tabIndex=20, title="Invoice L/C#", image="zoom", comment="<^P>Enter Invoice Date,Tax Type,Amount";
+Edit rvb10=formonly.rvb10 type CHAR, tabIndex=21, title="Unit Price", noEntry;
+Edit rvb88=formonly.rvb88 type CHAR, tabIndex=22, title="Amount#", noEntry;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=23;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvv(rvv_file.rvvplant,formonly.rvv09b,formonly.rvv06b,formonly.pmc03,formonly.rvb05,formonly.rvv36,formonly.rvv37,formonly.rvv01b,formonly.rvv02,formonly.rvv87,formonly.rvv04,formonly.rvv05,formonly.rva04b,formonly.x,formonly.rvb22b,formonly.rvb10,formonly.rvb88)
+SCREEN RECORD Undefined(rvv_file.rvv09,rvv_file.rvv01,rvb_file.rvb04,rvb_file.rvb22,rva_file.rva04,rvv_file.rvv06,azw_file.azw01,formonly.cn3)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/cghrr001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+   [label7    ][hrat04              ]
+   [label1    ][hrat01              ]
+   [label2    ][hraoud02            ]
+   [label3    ][hrat21              ]
+   [label4    ][hrcj03             ]
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Label label7:Label7, text=%"hrat04";
+ButtonEdit hrat04=formonly.hrat04 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Label label1:Label1, text=%"hrat01";
+ButtonEdit hrat01=formonly.hrat01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Label label2:Label2, text=%"hraoud02";
+ButtonEdit hraoud02=formonly.hraoud02 type CHAR, action=controlp, tabIndex=2, image="zoom";
+Label label3:Label3, text=%"hrat21";
+ButtonEdit hrat21=formonly.hrat21 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Label label4:Label4, text=%"hrcj03";
+Edit hrcj03=formonly.hrcj03 type CHAR, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrat04,formonly.hrat01,formonly.hraoud02,formonly.hrat21,formonly.hrcj03)
+END -- INSTRUCTIONS
+

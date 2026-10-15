@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_efcfg_exc.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"EF Exception Station Config")
+VBox VBox1
+Grid gr1412
+{
+ <G group01                                                                       >
+  Plant No.                   [wsj06          ]
+  EasyFlow station name       [wsj04               ]
+  EasyFlow station IP address [wsj02          ]
+  EasyFlow SOAP Services URL  [wsj03                                             ]
+
+
+ <                                                                                >
+
+}
+END -- gr1412
+Table s_bwsj
+{
+[bwsj06   |bwsj04              |bwsj02         |bwsj03                                            ]
+[bwsj06   |bwsj04              |bwsj02         |bwsj03                                            ]
+[bwsj06   |bwsj04              |bwsj02         |bwsj03                                            ]
+[bwsj06   |bwsj04              |bwsj02         |bwsj03                                            ]
+[bwsj06   |bwsj04              |bwsj02         |bwsj03                                            ]
+
+}
+END -- s_bwsj
+END -- VBox1
+END -- aws_efcfg_exc
+
+TABLES
+wsj_file
+ATTRIBUTES
+Group group01:group01, text="Exception Station Setting";
+ButtonEdit wsj06=wsj_file.wsj06, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit wsj04=wsj_file.wsj04, tabIndex=2, not null, required;
+Edit wsj02=wsj_file.wsj02, tabIndex=3, not null, required;
+Edit wsj03=wsj_file.wsj03, tabIndex=4, not null, required, scroll;
+Edit bwsj06=formonly.bwsj06 type CHAR, tabIndex=5, title="Plant No. Station name", noEntry;
+Edit bwsj04=formonly.bwsj04 type CHAR, tabIndex=6, noEntry;
+Edit bwsj02=formonly.bwsj02 type CHAR, tabIndex=7, title="IP address", noEntry;
+Edit bwsj03=formonly.bwsj03 type CHAR, tabIndex=8, title="SOAP Services URL", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bwsj(formonly.bwsj06,formonly.bwsj04,formonly.bwsj02,formonly.bwsj03)
+SCREEN RECORD Undefined(wsj_file.wsj06,wsj_file.wsj04,wsj_file.wsj02,wsj_file.wsj03)
+END -- INSTRUCTIONS
+

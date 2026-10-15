@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi305.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi305")
+VBox vb2
+Folder pc1049
+Page page01(text="Page01")
+Grid gr5432
+{
+ <G group01                                           >
+  Warehouse No.     [vmf01                           ]
+  IsCustPart        [vmf06     ]
+  vmf07             [vmf07     ]
+ <                                                    >
+
+}
+END -- gr5432
+END -- page01
+END -- pc1049
+Grid gr5433
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr5433
+END -- vb2
+END -- apsi305
+
+TABLES
+vmf_file
+ATTRIBUTES
+Group group01:group01;
+Edit vmf01=vmf_file.vmf01, tabIndex=1, noEntry, not null, required;
+ComboBox vmf06=vmf_file.vmf06, tabIndex=2, default = "0", not null, required, items=(("0", "False"),("1", "True"));
+ComboBox vmf07=vmf_file.vmf07, tabIndex=4, default = "0", not null, required, items=(("0", "N"),("1", "Y"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vmf_file.vmf01,vmf_file.vmf06,vmf_file.vmf07,formonly.cnt)
+END -- INSTRUCTIONS
+

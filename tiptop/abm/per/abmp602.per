@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp602.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmp602")
+VBox VBox1
+Folder pc139
+Page page01(text="Main")
+VBox VBox2
+VBox VBox3
+Grid gr855
+{
+ <G group01                                                >
+  Component # to Modify [bmb03               ]
+                        [ima02                         ]
+  Expiry Date           [vdate       ]
+  Version               [ima05     ]
+ <                                                         >
+ <G group02                                                >
+ [a                        ]
+  Issuing Unit        [bmb10     ]
+ <                                                         >
+ <G group03                                                >
+ [b                        ]
+  Wastage %           [bmb08               ]
+ <                                                         >
+
+}
+END -- gr855
+Group g01
+Grid gr856
+{
+ [d                        ]
+ <G group04                                                >
+ [bmb16               ]
+ <                                                         >
+
+}
+END -- gr856
+END -- g01
+END -- VBox3
+Grid gr857
+{
+[y                                                         ]
+[g_bgjob                                                   ]
+}
+END -- gr857
+END -- VBox2
+END -- page01
+END -- pc139
+Grid gr858
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr858
+END -- VBox1
+END -- abmp602
+
+TABLES
+bmb_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit bmb03=bmb_file.bmb03, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Enter Component No. to Delete                ";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=2, noEntry;
+DateEdit vdate=formonly.vdate type DATE, tabIndex=3;
+Edit ima05=formonly.ima05 type VARCHAR, tabIndex=4, noEntry;
+Group group02:group02;
+CheckBox a=formonly.a type VARCHAR, tabIndex=5, text="Modify Issuing Unit", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Amend Issuing Unit?           ";
+ButtonEdit bmb10=formonly.bmb10 type VARCHAR, action=controlp, tabIndex=6, image="zoom", comment="Enter new Issuing Unit    <^P>Qry  Unit    ";
+Group group03:group03;
+CheckBox b=formonly.b type VARCHAR, tabIndex=7, text="Modify Wastage Ratio", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Amend Wastage Ratio?";
+Edit bmb08=formonly.bmb08 type DECIMAL, tabIndex=8, comment="Enter New Wastage Ratio                       ";
+CheckBox d=formonly.d type VARCHAR, tabIndex=9, text="Modify Substitute Feature", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Amend Substitute Feature?";
+Group group04:group04, text="Substitute Feature";
+RadioGroup bmb16=formonly.bmb16 type VARCHAR, tabIndex=10, items=(("0", "normal"),("1", "REP"),("2", "Substitute"));
+CheckBox y=formonly.y type VARCHAR, tabIndex=11, text="Re-confirm bef update component No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=12, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type VARCHAR, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bmb_file.bmb03,formonly.ima02,formonly.vdate,formonly.ima05,formonly.a,formonly.bmb10,formonly.b,formonly.bmb08,formonly.d,formonly.bmb16,formonly.y,formonly.g_bgjob,formonly.cnt)
+END -- INSTRUCTIONS
+

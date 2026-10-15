@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq997.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq997")
+VBox vb1
+Folder pc833
+Page page01(text="Main")
+Table s_tlf
+{
+[ccc02   |ccc03   |ccc07   |pia02      |ima02           |ima021           |ccc08      |pia03       |pia04     |pia05     |img09     |pia08      |pia08_c    |pia01       |pia30       |pia30_c     |diff       |diff_c    |ccc23   ]
+[ccc02   |ccc03   |ccc07   |pia02      |ima02           |ima021           |ccc08      |pia03       |pia04     |pia05     |img09     |pia08      |pia08_c    |pia01       |pia30       |pia30_c     |diff       |diff_c    |ccc23   ]
+[ccc02   |ccc03   |ccc07   |pia02      |ima02           |ima021           |ccc08      |pia03       |pia04     |pia05     |img09     |pia08      |pia08_c    |pia01       |pia30       |pia30_c     |diff       |diff_c    |ccc23   ]
+[ccc02   |ccc03   |ccc07   |pia02      |ima02           |ima021           |ccc08      |pia03       |pia04     |pia05     |img09     |pia08      |pia08_c    |pia01       |pia30       |pia30_c     |diff       |diff_c    |ccc23   ]
+[ccc02   |ccc03   |ccc07   |pia02      |ima02           |ima021           |ccc08      |pia03       |pia04     |pia05     |img09     |pia08      |pia08_c    |pia01       |pia30       |pia30_c     |diff       |diff_c    |ccc23   ]
+[ccc02   |ccc03   |ccc07   |pia02      |ima02           |ima021           |ccc08      |pia03       |pia04     |pia05     |img09     |pia08      |pia08_c    |pia01       |pia30       |pia30_c     |diff       |diff_c    |ccc23   ]
+[ccc02   |ccc03   |ccc07   |pia02      |ima02           |ima021           |ccc08      |pia03       |pia04     |pia05     |img09     |pia08      |pia08_c    |pia01       |pia30       |pia30_c     |diff       |diff_c    |ccc23   ]
+[ccc02   |ccc03   |ccc07   |pia02      |ima02           |ima021           |ccc08      |pia03       |pia04     |pia05     |img09     |pia08      |pia08_c    |pia01       |pia30       |pia30_c     |diff       |diff_c    |ccc23   ]
+[ccc02   |ccc03   |ccc07   |pia02      |ima02           |ima021           |ccc08      |pia03       |pia04     |pia05     |img09     |pia08      |pia08_c    |pia01       |pia30       |pia30_c     |diff       |diff_c    |ccc23   ]
+
+}
+END -- s_tlf
+END -- page01
+END -- pc833
+Grid gr4619
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr4619
+END -- vb1
+END -- aimq997
+
+TABLES
+ccc_file,
+img_file,
+pia_file,
+ima_file
+ATTRIBUTES
+Edit ccc02=formonly.ccc02 type CHAR, tabIndex=18, title=%"ccc02";
+Edit ccc03=formonly.ccc03 type CHAR, tabIndex=19, title=%"ccc03";
+ComboBox ccc07=formonly.ccc07 type CHAR, tabIndex=20, title=%"ccc07", items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually Batch Cost"),("4", "Identify Manually Item Cost"),("5", "Identify Manually Store Profit Center"));
+ButtonEdit pia02=pia_file.pia02, action=controlp, tabIndex=1, title="pia02", image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=2, title="ima02";
+Edit ima021=ima_file.ima021, tabIndex=3, title="ima021";
+Edit ccc08=ccc_file.ccc08, tabIndex=5, title=%"ccc08";
+ButtonEdit pia03=pia_file.pia03, action=controlp, tabIndex=6, title=%"pia03", image="zoom";
+Edit pia04=pia_file.pia04, tabIndex=7, title=%"pia04";
+Edit pia05=pia_file.pia05, tabIndex=8, title=%"pia05";
+Edit img09=img_file.img09, tabIndex=9, title=%"img09";
+Edit pia08=pia_file.pia08, tabIndex=10, title=%"pia08";
+Edit pia08_c=formonly.pia08_c type CHAR, tabIndex=11, title=%"pia08_c";
+ButtonEdit pia01=pia_file.pia01, action=controlp, tabIndex=12, title=%"pia01", image="zoom";
+Edit pia30=pia_file.pia30, tabIndex=13, title=%"pia30";
+Edit pia30_c=formonly.pia30_c type CHAR, tabIndex=14, title=%"pia30_c";
+Edit diff=formonly.diff type CHAR, tabIndex=15, title=%"diff";
+Edit diff_c=formonly.diff_c type CHAR, tabIndex=16, title=%"diff_c";
+Edit ccc23=ccc_file.ccc23, tabIndex=17, title=%"ccc23";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tlf(formonly.ccc02,formonly.ccc03,formonly.ccc07,pia_file.pia02,ima_file.ima02,ima_file.ima021,ccc_file.ccc08,pia_file.pia03,pia_file.pia04,pia_file.pia05,img_file.img09,pia_file.pia08,formonly.pia08_c,pia_file.pia01,pia_file.pia30,formonly.pia30_c,formonly.diff,formonly.diff_c,ccc_file.ccc23)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

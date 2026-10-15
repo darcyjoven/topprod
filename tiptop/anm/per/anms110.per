@@ -1,0 +1,101 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anms110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anms110")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr4431
+{
+ Format No.          [npx01      ]
+
+
+}
+END -- gr4431
+Grid gr4432
+{
+ Bank Number         [npx02      ]
+ Bank Name           [nma02           ]
+ Book No.            [npx03      ]
+}
+END -- gr4432
+Grid gr4433
+{
+ Skip One Line On The First Page [npx04      ]
+ Skip One Line On The Last Page  [npx05      ]
+ Date Range                      [npx06      ]
+}
+END -- gr4433
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr4434
+{
+ Record Owner        [npxuser   ] Create/Modify Date  [npxdate   ]
+ Department          [npxgrup   ]
+ Record Orig.        [npxoriu   ]
+ Dept Orig.          [npxorig   ]
+}
+END -- gr4434
+END -- info
+END -- folder01
+Table s_npy
+{
+[npy0|npy03      |dses                  |npy04           |npy05       |npy06  ]
+[npy0|npy03      |dses                  |npy04           |npy05       |npy06  ]
+[npy0|npy03      |dses                  |npy04           |npy05       |npy06  ]
+[npy0|npy03      |dses                  |npy04           |npy05       |npy06  ]
+[npy0|npy03      |dses                  |npy04           |npy05       |npy06  ]
+[npy0|npy03      |dses                  |npy04           |npy05       |npy06  ]
+[npy0|npy03      |dses                  |npy04           |npy05       |npy06  ]
+[npy0|npy03      |dses                  |npy04           |npy05       |npy06  ]
+[npy0|npy03      |dses                  |npy04           |npy05       |npy06  ]
+[npy0|npy03      |dses                  |npy04           |npy05       |npy06  ]
+
+}
+END -- s_npy
+Grid gr4435
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4435
+END -- VBox1
+END -- anms110
+
+TABLES
+npy_file,
+npx_file
+ATTRIBUTES
+Edit npx01=npx_file.npx01, tabIndex=1, not null, required;
+ButtonEdit npx02=npx_file.npx02, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Bank No.";
+Edit nma02=formonly.nma02 type CHAR, tabIndex=3, noEntry;
+Edit npx03=npx_file.npx03, tabIndex=4, not null, required;
+Edit npx04=npx_file.npx04, tabIndex=5;
+Edit npx05=npx_file.npx05, tabIndex=6;
+Edit npx06=npx_file.npx06, tabIndex=7;
+Edit npxuser=npx_file.npxuser, tabIndex=8, noEntry;
+DateEdit npxdate=npx_file.npxdate, tabIndex=9, noEntry;
+Edit npxgrup=npx_file.npxgrup, tabIndex=10, noEntry;
+Edit npxoriu=npx_file.npxoriu, tabIndex=501, noEntry;
+Edit npxorig=npx_file.npxorig, tabIndex=502, noEntry;
+Edit npy0=npy_file.npy02, tabIndex=11, title="Seq", not null, required;
+ButtonEdit npy03=npy_file.npy03, action=controlp, tabIndex=12, title="Print Item", image="zoom", comment="<^P>Query Print Item";
+Edit dses=formonly.dses type CHAR, tabIndex=13, title="Description", noEntry;
+Edit npy04=npy_file.npy04, tabIndex=14, title="Blank Space Row";
+Edit npy05=npy_file.npy05, tabIndex=15, title="Blank Space";
+CheckBox npy06=npy_file.npy06, tabIndex=16, title="End Row", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type CHAR, tabIndex=17;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_npy(npy_file.npy02,npy_file.npy03,formonly.dses,npy_file.npy04,npy_file.npy05,npy_file.npy06)
+SCREEN RECORD Undefined(npx_file.npx01,npx_file.npx02,formonly.nma02,npx_file.npx03,npx_file.npx04,npx_file.npx05,npx_file.npx06,npx_file.npxuser,npx_file.npxdate,npx_file.npxgrup,npx_file.npxoriu,npx_file.npxorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt704.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt704")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr4527
+{
+ Document No.         [nnu01           ]
+
+}
+END -- gr4527
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_nnu
+{
+[nnu02 |nnu03       |nnu04                         |nnu05          |nnu06               |nnu07   |nnu08               ]
+[nnu02 |nnu03       |nnu04                         |nnu05          |nnu06               |nnu07   |nnu08               ]
+[nnu02 |nnu03       |nnu04                         |nnu05          |nnu06               |nnu07   |nnu08               ]
+[nnu02 |nnu03       |nnu04                         |nnu05          |nnu06               |nnu07   |nnu08               ]
+[nnu02 |nnu03       |nnu04                         |nnu05          |nnu06               |nnu07   |nnu08               ]
+[nnu02 |nnu03       |nnu04                         |nnu05          |nnu06               |nnu07   |nnu08               ]
+[nnu02 |nnu03       |nnu04                         |nnu05          |nnu06               |nnu07   |nnu08               ]
+[nnu02 |nnu03       |nnu04                         |nnu05          |nnu06               |nnu07   |nnu08               ]
+[nnu02 |nnu03       |nnu04                         |nnu05          |nnu06               |nnu07   |nnu08               ]
+[nnu02 |nnu03       |nnu04                         |nnu05          |nnu06               |nnu07   |nnu08               ]
+
+}
+END -- s_nnu
+Grid gr4528
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4528
+END -- VBox1
+END -- anmt704
+
+TABLES
+nnu_file
+ATTRIBUTES
+Edit nnu01=nnu_file.nnu01, tabIndex=1;
+Edit nnu02=nnu_file.nnu02, tabIndex=2, title="Line#", not null, required;
+ButtonEdit nnu03=nnu_file.nnu03, action=controlp, tabIndex=3, title="Inves. Type", not null, required, image="zoom", comment="<^P>Investment Type";
+Edit nnu04=nnu_file.nnu04, tabIndex=4, title="Investment Object";
+Edit nnu05=nnu_file.nnu05, tabIndex=5, title="Bills No.", not null, required;
+Edit nnu06=nnu_file.nnu06, tabIndex=6, title="Bills Name", noEntry;
+Edit nnu07=nnu_file.nnu07, tabIndex=7, title="Pages", not null, required;
+Edit nnu08=nnu_file.nnu08, tabIndex=8, title="Face Value", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nnu(nnu_file.nnu02,nnu_file.nnu03,nnu_file.nnu04,nnu_file.nnu05,nnu_file.nnu06,nnu_file.nnu07,nnu_file.nnu08)
+SCREEN RECORD Undefined(nnu_file.nnu01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1059.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat1059")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Table s_faz2
+{
+[faz02      |faz03          |faj06           |faz031    |faz042                  |faz082     |faz052    |faz092  |faz062     |faz102     |faz12   ]
+[faz02      |faz03          |faj06           |faz031    |faz042                  |faz082     |faz052    |faz092  |faz062     |faz102     |faz12   ]
+[faz02      |faz03          |faj06           |faz031    |faz042                  |faz082     |faz052    |faz092  |faz062     |faz102     |faz12   ]
+[faz02      |faz03          |faj06           |faz031    |faz042                  |faz082     |faz052    |faz092  |faz062     |faz102     |faz12   ]
+[faz02      |faz03          |faj06           |faz031    |faz042                  |faz082     |faz052    |faz092  |faz062     |faz102     |faz12   ]
+[faz02      |faz03          |faj06           |faz031    |faz042                  |faz082     |faz052    |faz092  |faz062     |faz102     |faz12   ]
+[faz02      |faz03          |faj06           |faz031    |faz042                  |faz082     |faz052    |faz092  |faz062     |faz102     |faz12   ]
+[faz02      |faz03          |faj06           |faz031    |faz042                  |faz082     |faz052    |faz092  |faz062     |faz102     |faz12   ]
+[faz02      |faz03          |faj06           |faz031    |faz042                  |faz082     |faz052    |faz092  |faz062     |faz102     |faz12   ]
+[faz02      |faz03          |faj06           |faz031    |faz042                  |faz082     |faz052    |faz092  |faz062     |faz102     |faz12   ]
+
+}
+END -- s_faz2
+END -- page01
+END -- folder01
+Grid gr2224
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2224
+END -- VBox1
+END -- afat1059
+
+TABLES
+faz_file
+ATTRIBUTES
+Edit faz02=faz_file.faz02, tabIndex=1, title="Line No.", noEntry;
+Edit faz03=faz_file.faz03, tabIndex=2, title="Property No.", noEntry;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=3, title="Chinese Name", noEntry;
+Edit faz031=faz_file.faz031, tabIndex=4, title="Add No.", noEntry;
+Edit faz042=faz_file.faz042, tabIndex=5, title="Undepreciated Balance", noEntry, not null, required;
+Edit faz082=faz_file.faz082, tabIndex=6, title="Impv.Cst", not null, required;
+Edit faz052=faz_file.faz052, tabIndex=7, title="Rest Lf", noEntry, not null, required;
+Edit faz092=faz_file.faz092, tabIndex=8, title="After", not null, required;
+Edit faz062=faz_file.faz062, tabIndex=9, title="Est.Rsdl", noEntry, not null, required;
+Edit faz102=faz_file.faz102, tabIndex=10, title="After", not null, required;
+Edit faz12=faz_file.faz12, tabIndex=11, title="Cause", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_faz2(faz_file.faz02,faz_file.faz03,formonly.faj06,faz_file.faz031,faz_file.faz042,faz_file.faz082,faz_file.faz052,faz_file.faz092,faz_file.faz062,faz_file.faz102,faz_file.faz12)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

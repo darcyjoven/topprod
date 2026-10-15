@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt600f.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt6001")
+VBox VBox1
+Folder pc828
+Page page01(text="Main")
+Grid gr4600
+{
+
+ F.Del.Dt     [oeb15          ]
+ Packing Type [oeb931         ][obi02        ]
+ Cartons      [oeb932         ]
+
+}
+END -- gr4600
+END -- page01
+END -- pc828
+END -- VBox1
+END -- axmt6001
+
+TABLES
+oeb_file
+ATTRIBUTES
+DateEdit oeb15=oeb_file.oeb15, tabIndex=1, not null, required;
+ButtonEdit oeb931=oeb_file.oeb931, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit obi02=formonly.obi02 type CHAR, tabIndex=3, noEntry;
+Edit oeb932=oeb_file.oeb932, tabIndex=4, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oeb_file.oeb15,oeb_file.oeb931,formonly.obi02,oeb_file.oeb932)
+END -- INSTRUCTIONS
+

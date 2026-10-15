@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt325c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimt325c")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                              >
+  Transfer Note#                      [imm01             ]
+  Transfer Date                       [imm02       ]
+  Tr-Out Transfer-out In Transit W/H  [imm08     ]
+  Delivery Note No.                   [imm09             ]
+ <                                                       >
+ <G group02                                       >
+ [dummy01]
+   Warehouse#           [t_img02   ]
+   Location#            [t_img03   ]
+   Lot#                 [t_img04   ]
+ <                                                >
+
+}
+END -- Grid1
+END -- VBox1
+END -- aimt325c
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit imm01=formonly.imm01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Documents";
+DateEdit imm02=formonly.imm02 type DATE, tabIndex=2, not null, required;
+ButtonEdit imm08=formonly.imm08 type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Warehouse";
+ButtonEdit imm09=formonly.imm09 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Delivery Note to Offshore W/H";
+Group group02:group02;
+Label dummy01:dummy01, text="Enter Target of Transfer:";
+ButtonEdit t_img02=formonly.t_img02 type CHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Warehouse";
+ButtonEdit t_img03=formonly.t_img03 type CHAR, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Location";
+ButtonEdit t_img04=formonly.t_img04 type CHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Lot#";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.imm01,formonly.imm02,formonly.imm08,formonly.imm09,formonly.t_img02,formonly.t_img03,formonly.t_img04)
+END -- INSTRUCTIONS
+

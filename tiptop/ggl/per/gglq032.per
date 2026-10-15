@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq032.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq032")
+VBox vb5
+Folder folder01
+Page page01(text="Main")
+HBox hb5
+Grid gr2523
+{
+
+
+ Group No.       [atcc01      ]                Group Book No.     [atcc00     ]
+ Upper Company   [atcc02      ]                Upper Comp Book No [atcc03     ]
+ Under Company   [atcc04      ]                Under Comp Book No [atcc041    ]
+ Year            [atcc08      ]                Currency           [atcc14     ]
+
+
+}
+END -- gr2523
+Grid gr2524
+{
+
+
+ Account No.         [atcc05                        ]
+ Account Name        [aag02                                             ]
+ Trans.Code          [atcc06    ]
+ Trans.Value         [atcc07            ]
+
+
+}
+END -- gr2524
+END -- hb5
+END -- page01
+END -- folder01
+Table s_atcc
+{
+[seq    |atcc10              |atcc11              |summ                ]
+[seq    |atcc10              |atcc11              |summ                ]
+[seq    |atcc10              |atcc11              |summ                ]
+[seq    |atcc10              |atcc11              |summ                ]
+[seq    |atcc10              |atcc11              |summ                ]
+[seq    |atcc10              |atcc11              |summ                ]
+[seq    |atcc10              |atcc11              |summ                ]
+[seq    |atcc10              |atcc11              |summ                ]
+[seq    |atcc10              |atcc11              |summ                ]
+[seq    |atcc10              |atcc11              |summ                ]
+
+}
+END -- s_atcc
+Grid gr2525
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2525
+END -- vb5
+END -- gglq032
+
+TABLES
+atcc_file
+ATTRIBUTES
+ButtonEdit atcc01=atcc_file.atcc01, action=controlp, tabIndex=1, image="zoom";
+Edit atcc00=atcc_file.atcc00, tabIndex=2, color = yellow;
+Edit atcc02=atcc_file.atcc02, tabIndex=3;
+Edit atcc03=atcc_file.atcc03, tabIndex=4;
+Edit atcc04=atcc_file.atcc04, tabIndex=5;
+Edit atcc041=atcc_file.atcc041, tabIndex=6;
+Edit atcc08=atcc_file.atcc08, tabIndex=7;
+ButtonEdit atcc14=atcc_file.atcc14, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Details";
+ButtonEdit atcc05=atcc_file.atcc05, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Account # <^Y>Create Account  ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=10, noEntry;
+Edit atcc06=atcc_file.atcc06, tabIndex=11;
+Edit atcc07=atcc_file.atcc07, tabIndex=12;
+Edit seq=formonly.seq type CHAR, tabIndex=13, title="Period", noEntry;
+Edit atcc10=atcc_file.atcc10, tabIndex=14, title="Debit Transaction Amt", noEntry;
+Edit atcc11=atcc_file.atcc11, tabIndex=15, title="Credit", noEntry;
+Edit summ=formonly.summ type CHAR, tabIndex=18, title=%"Balance";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_atcc(formonly.seq,atcc_file.atcc10,atcc_file.atcc11,formonly.summ)
+SCREEN RECORD Undefined(atcc_file.atcc01,atcc_file.atcc00,atcc_file.atcc02,atcc_file.atcc03,atcc_file.atcc04,atcc_file.atcc041,atcc_file.atcc08,atcc_file.atcc14,atcc_file.atcc05,formonly.aag02,atcc_file.atcc06,atcc_file.atcc07,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

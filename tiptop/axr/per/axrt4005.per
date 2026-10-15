@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt4005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt4005")
+VBox VBox1
+Folder pc641
+Page page01(text="Main")
+Grid gr2708
+{
+ <G group01                                           >
+  Account             [oob11               ]
+  Memo                [oob12                         ]
+  Original department [oob13                         ]
+ <                                                    >
+
+}
+END -- gr2708
+END -- page01
+END -- pc641
+END -- VBox1
+END -- axrt4005
+
+TABLES
+oob_file
+ATTRIBUTES
+Group group01:group01;
+Edit oob11=oob_file.oob11, tabIndex=1;
+Edit oob12=oob_file.oob12, tabIndex=2;
+Edit oob13=oob_file.oob13, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oob_file.oob11,oob_file.oob12,oob_file.oob13)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt860.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt860")
+VBox vb8
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ <G group01                                           ><G group02                                          >
+  Label No.           [pia01             ]              Inv Qty             [qty1                ]
+  Item No.            [pia02                         ]  Inv Taking Employee [peo1                ]
+  Part Name           [ima02                         ]                      [gen02_1             ]
+                                                        Inv Taking Date     [tagdate1            ]
+ <                                                    ><                                                   >
+ <G group03                                           ><G group04                                          >
+  WareHouse           [pia03     ]                      2nd Inv Qty             [qty                     ]
+  Location            [pia04     ]                      2nd Inv Taking Employee [peo                     ]
+  Lot#                [pia05                   ]                                [gen02_2                 ]
+  Inv Class           [pia06     ]                      2nd Inv Taking Date     [tagdate                 ]
+  Inv Unit            [pia09     ]                      Cost Center             [pia930      |gem02      ]
+  Account             [pia07                   ]        reason code             [pia70                   ]
+  Type                [pia931                  ]        explain                 [azf03                   ]
+
+ <                                                    ><                                                   >
+}
+END -- gr1
+END -- page01
+END -- pc1
+Grid gr2
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2
+END -- vb8
+END -- aimt860
+
+TABLES
+azf_file,
+pia_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit pia01=pia_file.pia01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!";
+ButtonEdit pia02=pia_file.pia02, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Item Master  ";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=3, noEntry;
+Group group02:group02;
+Edit qty1=formonly.qty1 type DECIMAL, tabIndex=4;
+ButtonEdit peo1=formonly.peo1 type VARCHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry  Employee    ";
+Edit gen02_1=formonly.gen02_1 type VARCHAR, tabIndex=6, noEntry;
+DateEdit tagdate1=formonly.tagdate1 type DATE, tabIndex=7;
+Group group03:group03;
+ButtonEdit pia03=pia_file.pia03, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Warehouse   <^T>Qry Warehouse/Location";
+ButtonEdit pia04=pia_file.pia04, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Location ";
+ButtonEdit pia05=pia_file.pia05, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Lot No.  ";
+Edit pia06=pia_file.pia06, tabIndex=11;
+ButtonEdit pia09=pia_file.pia09, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit   <^U>/<^T>Create Item/ Unit conversion";
+ButtonEdit pia07=pia_file.pia07, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Account      ";
+ButtonEdit pia931=formonly.pia931 type VARCHAR, action=controlp, tabIndex=14, default = "1", noEntry, not null, image="zoom.png";
+Group group04:group04;
+Edit qty=formonly.qty type DECIMAL, tabIndex=15;
+ButtonEdit peo=formonly.peo type VARCHAR, action=controlp, tabIndex=16, image="zoom", comment="<^P>Qry  Employee    ";
+Edit gen02_2=formonly.gen02_2 type VARCHAR, tabIndex=17, noEntry;
+DateEdit tagdate=formonly.tagdate type DATE, tabIndex=18;
+ButtonEdit pia930=pia_file.pia930, action=controlp, tabIndex=19, image="zoom", comment="<^P>Qry  Employee    ";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=20, noEntry;
+ButtonEdit pia70=pia_file.pia70, action=controlp, tabIndex=21, image="zoom";
+Edit azf03=azf_file.azf03, tabIndex=22, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pia_file.pia01,pia_file.pia02,formonly.ima02,formonly.qty1,formonly.peo1,formonly.gen02_1,formonly.tagdate1,pia_file.pia03,pia_file.pia04,pia_file.pia05,pia_file.pia06,pia_file.pia09,pia_file.pia07,formonly.pia931,formonly.qty,formonly.peo,formonly.gen02_2,formonly.tagdate,pia_file.pia930,formonly.gem02,formonly.cnt,pia_file.pia70,azf_file.azf03)
+END -- INSTRUCTIONS
+

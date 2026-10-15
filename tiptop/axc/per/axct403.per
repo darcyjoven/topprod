@@ -1,0 +1,129 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct403.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct403")
+VBox vb8
+Folder pc386
+Page page01(text="Main")
+Grid gr1806
+{
+ WO No.                    [cxl01           ]
+ F.P Item#                 [sfb05                         ]
+ P/N Spec.                 [ima02                         ]
+ Unit                      [ima25     ]
+ Task No                   [cxl012    ]
+ Adjust YY/MM              [cxl02     ]/[cx]
+ Cost Calculation Method   [cxl06     ]Category No.  [cxl07                        ]
+ Adj.Desc                  [cxl05               ]
+ Ref.Doc#                  [cxl04           ]
+
+ <G group02                                                              >
+  CM Adj.Qty(WIP Sets)[cxl21               ]
+  -  Mat.             [cxl22a              ]
+  -  Lbr              [cxl22b              ]
+  -  Ovhd 1           [cxl22c              ]
+  -  Prcs             [cxl22d              ]
+  -  Ovhd 2           [cxl22e              ]
+  -  Ovhd 3           [cxl22f              ]
+  -  Ovhd 4           [cxl22g              ]
+  -  Ovhd 5           [cxl22h              ]
+  ----------------------------------------------
+   Totl.Amt           [cxl22                ]
+
+
+ <                                                                       >
+
+}
+END -- gr1806
+END -- page01
+Page info(text="Info")
+Grid gr1807
+{
+ Record Owner        [cxluser   ]   Last Modified by    [cxlmodu   ]
+ Department          [cxlgrup   ]   Create/Modify Date  [cxldate   ]
+ Record Orig.        [cxloriu   ]
+ Dept Orig.          [cxlorig   ]
+}
+END -- gr1807
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[cxlud01                       ] userdefined_field07[cxlud07        ] userdefined_field13[cxlud13        ]
+                    [                              ] userdefined_field08[cxlud08        ] userdefined_field14[cxlud14        ]
+ userdefined_field02[cxlud02        ]                userdefined_field09[cxlud09        ] userdefined_field15[cxlud15        ]
+ userdefined_field03[cxlud03        ]                userdefined_field10[cxlud10        ]
+ userdefined_field04[cxlud04        ]                userdefined_field11[cxlud11        ]
+ userdefined_field05[cxlud05        ]                userdefined_field12[cxlud12        ]
+ userdefined_field06[cxlud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc386
+Grid gr1808
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr1808
+END -- vb8
+END -- axct403
+
+TABLES
+cxl_file
+ATTRIBUTES
+Edit cxl01=cxl_file.cxl01, tabIndex=1, not null, required;
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=4, noEntry;
+Edit cxl012=cxl_file.cxl012, tabIndex=5, not null, required;
+Edit cxl02=cxl_file.cxl02, tabIndex=6, not null, required;
+Edit cx=cxl_file.cxl03, tabIndex=7, not null, required;
+ComboBox cxl06=cxl_file.cxl06, tabIndex=8, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Specific-Batch Cost"),("4", "Individual-Item Cost"),("5", "Specific Identification-Cost by Store(Profit Center)"));
+ButtonEdit cxl07=cxl_file.cxl07, action=controlp, tabIndex=11, not null, required, image="zoom.png";
+Edit cxl05=cxl_file.cxl05, tabIndex=9;
+Edit cxl04=cxl_file.cxl04, tabIndex=10, not null, required;
+Group group02:group02;
+Edit cxl21=cxl_file.cxl21, tabIndex=12;
+Edit cxl22a=cxl_file.cxl22a, tabIndex=13, not null, required;
+Edit cxl22b=cxl_file.cxl22b, tabIndex=14, not null, required;
+Edit cxl22c=cxl_file.cxl22c, tabIndex=15, not null, required;
+Edit cxl22d=cxl_file.cxl22d, tabIndex=16, not null, required;
+Edit cxl22e=cxl_file.cxl22e, tabIndex=17, not null, required;
+Edit cxl22f=cxl_file.cxl22f, tabIndex=19, not null, required;
+Edit cxl22g=cxl_file.cxl22g, tabIndex=21, not null, required;
+Edit cxl22h=cxl_file.cxl22h, tabIndex=24, not null, required;
+Edit cxl22=cxl_file.cxl22, tabIndex=25, noEntry, not null, required;
+Edit cxluser=cxl_file.cxluser, tabIndex=18, noEntry;
+Edit cxlmodu=cxl_file.cxlmodu, tabIndex=20, noEntry;
+Edit cxlgrup=cxl_file.cxlgrup, tabIndex=22, noEntry;
+DateEdit cxldate=cxl_file.cxldate, tabIndex=23, noEntry;
+Edit cxloriu=cxl_file.cxloriu, tabIndex=501, noEntry;
+Edit cxlorig=cxl_file.cxlorig, tabIndex=502, noEntry;
+TextEdit cxlud01=cxl_file.cxlud01, tabIndex=27, stretch=NONE;
+Edit cxlud07=cxl_file.cxlud07, tabIndex=33;
+DateEdit cxlud13=cxl_file.cxlud13, tabIndex=39;
+Edit cxlud08=cxl_file.cxlud08, tabIndex=34;
+DateEdit cxlud14=cxl_file.cxlud14, tabIndex=40;
+Edit cxlud02=cxl_file.cxlud02, tabIndex=28;
+Edit cxlud09=cxl_file.cxlud09, tabIndex=35;
+DateEdit cxlud15=cxl_file.cxlud15, tabIndex=41;
+Edit cxlud03=cxl_file.cxlud03, tabIndex=29;
+Edit cxlud10=cxl_file.cxlud10, tabIndex=36;
+Edit cxlud04=cxl_file.cxlud04, tabIndex=30;
+Edit cxlud11=cxl_file.cxlud11, tabIndex=37;
+Edit cxlud05=cxl_file.cxlud05, tabIndex=31;
+Edit cxlud12=cxl_file.cxlud12, tabIndex=38;
+Edit cxlud06=cxl_file.cxlud06, tabIndex=32;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=26, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cxl_file.cxl01,formonly.sfb05,formonly.ima02,formonly.ima25,cxl_file.cxl012,cxl_file.cxl02,cxl_file.cxl03,cxl_file.cxl06,cxl_file.cxl07,cxl_file.cxl05,cxl_file.cxl04,cxl_file.cxl21,cxl_file.cxl22a,cxl_file.cxl22b,cxl_file.cxl22c,cxl_file.cxl22d,cxl_file.cxl22e,cxl_file.cxl22f,cxl_file.cxl22g,cxl_file.cxl22h,cxl_file.cxl22,cxl_file.cxluser,cxl_file.cxlmodu,cxl_file.cxlgrup,cxl_file.cxldate,cxl_file.cxloriu,cxl_file.cxlorig,cxl_file.cxlud01,cxl_file.cxlud07,cxl_file.cxlud13,cxl_file.cxlud08,cxl_file.cxlud14,cxl_file.cxlud02,cxl_file.cxlud09,cxl_file.cxlud15,cxl_file.cxlud03,cxl_file.cxlud10,cxl_file.cxlud04,cxl_file.cxlud11,cxl_file.cxlud05,cxl_file.cxlud12,cxl_file.cxlud06,formonly.cnt)
+END -- INSTRUCTIONS
+

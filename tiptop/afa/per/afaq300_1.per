@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afaq300_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afaq300_1")
+Folder pc386
+Page page01(text="Main")
+VBox VBox1
+Grid gr1986
+{
+ <G group1                                   ><G group2                                  >
+  Receipt Plant       [faj44     ]             Import Declaration  [faj48               ]
+  Accounts No.        [faj45     ]             Import No.          [faj49               ]
+                      [faj451    ]             Budget No.          [faj50               ]
+  Receipt No.         [faj46     ]             Invoice No.         [faj51               ]
+                      [faj461    ]             Voucher No.         [faj52               ]
+  P/O No.             [faj47               ]
+                      [faj471              ]
+ <                                           ><                                          >
+
+}
+END -- gr1986
+END -- VBox1
+END -- page01
+END -- pc386
+END -- afaq300_1
+
+TABLES
+faj_file
+ATTRIBUTES
+Group group1:group1;
+Edit faj44=faj_file.faj44, tabIndex=1, noEntry;
+Edit faj45=faj_file.faj45, tabIndex=2, noEntry;
+Edit faj451=faj_file.faj451, tabIndex=3, noEntry;
+Edit faj46=faj_file.faj46, tabIndex=4, noEntry;
+Edit faj461=faj_file.faj461, tabIndex=5, noEntry;
+Edit faj47=faj_file.faj47, tabIndex=6, noEntry;
+Edit faj471=faj_file.faj471, tabIndex=7, noEntry;
+Group group2:group2;
+Edit faj48=faj_file.faj48, tabIndex=8, noEntry;
+Edit faj49=faj_file.faj49, tabIndex=9, noEntry;
+Edit faj50=faj_file.faj50, tabIndex=10, noEntry;
+Edit faj51=faj_file.faj51, tabIndex=11, noEntry;
+Edit faj52=faj_file.faj52, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(faj_file.faj44,faj_file.faj45,faj_file.faj451,faj_file.faj46,faj_file.faj461,faj_file.faj47,faj_file.faj471,faj_file.faj48,faj_file.faj49,faj_file.faj50,faj_file.faj51,faj_file.faj52)
+END -- INSTRUCTIONS
+

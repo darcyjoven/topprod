@@ -1,0 +1,225 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Main(text=%"Main")
+Grid Grid1
+{
+
+[label1         |ine01                         ]                          [label5         |ineconf             ] [imgmksg    ]
+[label2         |ine02               ]                                    [label6         |ine05               ] [           ]
+[label3         |ine03               |azf03                         ]     [inemksg             ]                 [           ]
+[label4         |ine04               |gen02          ]
+
+
+
+
+}
+END -- Grid1
+END -- Main
+Page Status(text=%"Status")
+Grid Grid2
+{
+
+[label8         |ineuser             ]  [label12        ] [inemodu             ] [label30        ][inesendt  ]
+[label9         |inegrup             ]  [label13        ] [inedate             ]
+[label10        |ineoriu             ]  [label7         ] [inesendu            ]
+[label11        |ineorig             ]  [label29        ] [inesendd            ]
+
+
+
+
+}
+END -- Grid2
+END -- Status
+Page Selfdefined(text=%"Selfdefined")
+Grid Grid3
+{
+
+[label14           ][ineud01                       ][label20          |ineud07             ][label26          |ineud13             ]
+                    [                              ][label21          |ineud08             ][label27          |ineud14             ]
+[label15           ][ineud02             ]          [label22          |ineud09             ][label28          |ineud15             ]
+[label16           ][ineud03             ]          [label23          |ineud10             ]
+[label17           ][ineud04             ]          [label24          |ineud11             ]
+[label18           ][ineud05             ]          [label25          |ineud12             ]
+[label19           ][ineud06             ]
+
+}
+END -- Grid3
+END -- Selfdefined
+END -- Folder1
+Group Group1(text=%"")
+ScrollGrid ScrollGrid1
+{
+
+ [dummy0|dummy02                       |dummy03                       |dummy04             |dummy05             |dummy11             |dummy06             |dummy07             |dummy08             |dummy09             |dummy10             ]
+ [inf02 |inf03                         |ima02                         |inf04b              |inf05b              |inf10               |inf06b              |inf07b              |inf08               |ini02               |inf09b              ]
+                                       [ima021                        |inf04a              |inf05a              ]                    [inf06a              |inf07a              ]                                         [inf09a              ]
+ [inf02 |inf03                         |ima02                         |inf04b              |inf05b              |inf10               |inf06b              |inf07b              |inf08               |ini02               |inf09b              ]
+                                       [ima021                        |inf04a              |inf05a              ]                    [inf06a              |inf07a              ]                                         [inf09a              ]
+ [inf02 |inf03                         |ima02                         |inf04b              |inf05b              |inf10               |inf06b              |inf07b              |inf08               |ini02               |inf09b              ]
+                                       [ima021                        |inf04a              |inf05a              ]                    [inf06a              |inf07a              ]                                         [inf09a              ]
+ [inf02 |inf03                         |ima02                         |inf04b              |inf05b              |inf10               |inf06b              |inf07b              |inf08               |ini02               |inf09b              ]
+                                       [ima021                        |inf04a              |inf05a              ]                    [inf06a              |inf07a              ]                                         [inf09a              ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- ScrollGrid1
+END -- Group1
+Grid Grid4
+{
+
+
+
+
+
+
+
+
+ ---------- [rows    ][idx    ][lb][cnt    ]-----------  [detail|cn2     ]  ------------
+
+}
+END -- Grid4
+END -- VBox1
+END -- Form
+
+TABLES
+gen_file,
+ini_file,
+inf_file,
+ine_file,
+azf_file,
+ima_file
+ATTRIBUTES
+Label label1:Label1, text=%"ine01";
+ButtonEdit ine01=ine_file.ine01, action=controlp, tabIndex=1, not null, required, image="zoom", scroll;
+Label label5:Label5, text=%"ineconf";
+ComboBox ineconf=ine_file.ineconf, tabIndex=7, noEntry, not null, scroll, items=(("N", %"未确认"),("Y", %"确认"),("X", %"作废"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale;
+Label label2:Label2, text=%"ine02";
+DateEdit ine02=ine_file.ine02, tabIndex=2, not null, required;
+Label label6:Label6, text=%"ine05";
+ComboBox ine05=ine_file.ine05, tabIndex=8, default = "0", noEntry, not null, scroll, items=(("0", %"开立"),("1", %"已核准"),("2", %"已发出"),("9", %"作废"),("S", %"送签中"),("W", %"退单"),("R", %"送签退回"));
+Label label3:Label3, text=%"ine03";
+ButtonEdit ine03=ine_file.ine03, action=controlp, tabIndex=3, not null, required, image="zoom", scroll;
+Edit azf03=azf_file.azf03, tabIndex=4, noEntry, scroll;
+CheckBox inemksg=ine_file.inemksg, tabIndex=9, default = "N", text=%"ine_file.inemksg", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Label label4:Label4, text=%"ine04";
+ButtonEdit ine04=ine_file.ine04, action=controlp, tabIndex=5, not null, required, image="zoom", scroll;
+Edit gen02=gen_file.gen02, tabIndex=6, noEntry, scroll;
+Label label8:Label8, text=%"ineuser";
+Edit ineuser=ine_file.ineuser, tabIndex=10, noEntry, scroll;
+Label label12:Label12, text=%"inemodu";
+Edit inemodu=ine_file.inemodu, tabIndex=14, noEntry, scroll;
+Label label30:Label30, text=%"Issued Time";
+TimeEdit inesendt=ine_file.inesendt, tabIndex=18;
+Label label9:Label9, text=%"inegrup";
+Edit inegrup=ine_file.inegrup, tabIndex=11, noEntry, scroll;
+Label label13:Label13, text=%"inedate";
+DateEdit inedate=ine_file.inedate, tabIndex=15, noEntry;
+Label label10:Label10, text=%"ineoriu";
+Edit ineoriu=ine_file.ineoriu, tabIndex=12, noEntry, scroll;
+Label label7:Label7, text=%"Issued staff";
+Edit inesendu=ine_file.inesendu, tabIndex=16, noEntry;
+Label label11:Label11, text=%"ineorig";
+Edit ineorig=ine_file.ineorig, tabIndex=13, noEntry, scroll;
+Label label29:Label29, text=%"Issued Date";
+DateEdit inesendd=ine_file.inesendd, tabIndex=17;
+Label label14:Label14, text=%"ineud01";
+TextEdit ineud01=ine_file.ineud01, tabIndex=19;
+Label label20:Label20, text=%"ineud07";
+Edit ineud07=ine_file.ineud07, tabIndex=25, scroll;
+Label label26:Label26, text=%"ineud13";
+Edit ineud13=ine_file.ineud13, tabIndex=31, scroll;
+Label label21:Label21, text=%"ineud08";
+Edit ineud08=ine_file.ineud08, tabIndex=26, scroll;
+Label label27:Label27, text=%"ineud14";
+Edit ineud14=ine_file.ineud14, tabIndex=32, scroll;
+Label label15:Label15, text=%"ineud02";
+Edit ineud02=ine_file.ineud02, tabIndex=20, scroll;
+Label label22:Label22, text=%"ineud09";
+Edit ineud09=ine_file.ineud09, tabIndex=27, scroll;
+Label label28:Label28, text=%"ineud15";
+Edit ineud15=ine_file.ineud15, tabIndex=33, scroll;
+Label label16:Label16, text=%"ineud03";
+Edit ineud03=ine_file.ineud03, tabIndex=21, scroll;
+Label label23:Label23, text=%"ineud10";
+Edit ineud10=ine_file.ineud10, tabIndex=28, scroll;
+Label label17:Label17, text=%"ineud04";
+Edit ineud04=ine_file.ineud04, tabIndex=22, scroll;
+Label label24:Label24, text=%"ineud11";
+Edit ineud11=ine_file.ineud11, tabIndex=29, scroll;
+Label label18:Label18, text=%"ineud05";
+Edit ineud05=ine_file.ineud05, tabIndex=23, scroll;
+Label label25:Label25, text=%"ineud12";
+Edit ineud12=ine_file.ineud12, tabIndex=30, scroll;
+Label label19:Label19, text=%"ineud06";
+Edit ineud06=ine_file.ineud06, tabIndex=24, scroll;
+Label dummy0:dummy01, text=%"Line#";
+Label dummy02:dummy02, text=%"Item No.";
+Label dummy03:dummy03, text=%"Part Name";
+Label dummy04:dummy04, text=%"Manufacturing No.";
+Label dummy05:dummy05, text=%"No.";
+Label dummy11:dummy11, text=%"Change Qty";
+Label dummy06:dummy06, text=%"Ownership category";
+Label dummy07:dummy07, text=%"Ownership No.";
+Label dummy08:dummy08, text=%"Feature code";
+Label dummy09:dummy09, text=%"Feature name";
+Label dummy10:dummy10, text=%"Feature value";
+Edit inf02=inf_file.inf02, tabIndex=34, not null, required, scroll;
+ButtonEdit inf03=inf_file.inf03, action=controlp, tabIndex=35, not null, required, image="zoom", scroll;
+Edit ima02=ima_file.ima02, tabIndex=36, noEntry, scroll;
+ButtonEdit inf04b=inf_file.inf04b, action=controlp, tabIndex=38, image="zoom", scroll;
+ButtonEdit inf05b=inf_file.inf05b, action=controlp, tabIndex=40, image="zoom", scroll;
+Edit inf10=inf_file.inf10, tabIndex=42, not null, required, scroll;
+ComboBox inf06b=inf_file.inf06b, tabIndex=43, items=(("1", "Order"),("2", "Work Order"),("3", "Project"));
+ButtonEdit inf07b=inf_file.inf07b, action=controlp, tabIndex=45, image="zoom", scroll;
+ButtonEdit inf08=inf_file.inf08, action=controlp, tabIndex=47, image="zoom", scroll;
+Edit ini02=ini_file.ini02, tabIndex=48, noEntry, scroll;
+Edit inf09b=inf_file.inf09b, tabIndex=49, noEntry, scroll;
+Edit ima021=ima_file.ima021, tabIndex=37, noEntry, scroll;
+ButtonEdit inf04a=inf_file.inf04a, action=controlp, tabIndex=39, image="zoom", scroll;
+ButtonEdit inf05a=inf_file.inf05a, action=controlp, tabIndex=41, image="zoom", scroll;
+ComboBox inf06a=inf_file.inf06a, tabIndex=44, scroll, items=(("1", "Order"),("2", "Work Order"),("3", "Project"));
+Edit inf07a=inf_file.inf07a, tabIndex=46, scroll;
+Edit inf09a=inf_file.inf09a, tabIndex=50, scroll;
+Label rows:rows, text=%"Rows";
+Edit idx=formonly.idx type CHAR, tabIndex=51;
+Label lb:lb, text=%"/";
+Edit cnt=formonly.cnt type CHAR, tabIndex=52;
+Label detail:DetailRows, text=%"DetailRows";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=53;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ine_file.ine01,ine_file.ine02,ine_file.ine03,ine_file.ine04,ine_file.ineconf,ine_file.ine05,ine_file.inemksg,azf_file.azf03,gen_file.gen02,ine_file.ineuser,ine_file.inegrup,ine_file.ineoriu,ine_file.ineorig,ine_file.inemodu,ine_file.inedate,ine_file.ineud01,ine_file.ineud02,ine_file.ineud03,ine_file.ineud04,ine_file.ineud05,ine_file.ineud06,ine_file.ineud07,ine_file.ineud08,ine_file.ineud09,ine_file.ineud10,ine_file.ineud11,ine_file.ineud12,ine_file.ineud13,ine_file.ineud14,ine_file.ineud15,formonly.imgmksg,formonly.idx,formonly.cnt,formonly.cn2,ine_file.inesendu,ine_file.inesendd,ine_file.inesendt)
+SCREEN RECORD s_inf(inf_file.inf02,inf_file.inf03,ima_file.ima02,inf_file.inf04b,inf_file.inf05b,inf_file.inf06b,inf_file.inf07b,inf_file.inf08,ini_file.ini02,inf_file.inf09b,ima_file.ima021,inf_file.inf04a,inf_file.inf05a,inf_file.inf06a,inf_file.inf07a,inf_file.inf09a,inf_file.inf10)
+END -- INSTRUCTIONS
+

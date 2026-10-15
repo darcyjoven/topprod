@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq811.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq811")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr2561
+{
+ Book No.          [abh00     ]
+ Account #         [abh03                         ]
+ Account Name      [aag02                         ]
+ Voucher#          [abh01               ]-[abh02  ]
+ Vou.Date          [abh021      ]
+ Voucher Issued By [gen02_h   ]
+
+}
+END -- gr2561
+Grid gr2562
+{
+ Department   [abh05     ][gem02     ]
+ Trans.Code 1 [abh11                 ]  Trans.Code 6  [abh32                 ]
+ Trans.Code 2 [abh12                 ]  Trans.Code 7  [abh33                 ]
+ Trans.Code 3 [abh13                 ]  Trans.Code 8  [abh34                 ]
+ Trans.Code 4 [abh14                 ]  Trans.Code 9  [abh35                 ]
+ Trans.Code 5 [abh31                 ]  Trans.Code 10 [abh36                 ]
+
+}
+END -- gr2562
+Grid gr2563
+{
+
+ Memo                [abh04                         ]
+ Contra Amount       [abh09               ]
+ Comfirm             [abhconf     ]
+
+
+
+}
+END -- gr2563
+END -- hb2
+END -- page01
+END -- folder01
+Table s_abg
+{
+[abg06        |abg01       |abg0|abg05      |abg071              |abg072              |abg073              |unpay               |abg04                    |gen02     ]
+[abg06        |abg01       |abg0|abg05      |abg071              |abg072              |abg073              |unpay               |abg04                    |gen02     ]
+[abg06        |abg01       |abg0|abg05      |abg071              |abg072              |abg073              |unpay               |abg04                    |gen02     ]
+[abg06        |abg01       |abg0|abg05      |abg071              |abg072              |abg073              |unpay               |abg04                    |gen02     ]
+[abg06        |abg01       |abg0|abg05      |abg071              |abg072              |abg073              |unpay               |abg04                    |gen02     ]
+[abg06        |abg01       |abg0|abg05      |abg071              |abg072              |abg073              |unpay               |abg04                    |gen02     ]
+[abg06        |abg01       |abg0|abg05      |abg071              |abg072              |abg073              |unpay               |abg04                    |gen02     ]
+[abg06        |abg01       |abg0|abg05      |abg071              |abg072              |abg073              |unpay               |abg04                    |gen02     ]
+[abg06        |abg01       |abg0|abg05      |abg071              |abg072              |abg073              |unpay               |abg04                    |gen02     ]
+[abg06        |abg01       |abg0|abg05      |abg071              |abg072              |abg073              |unpay               |abg04                    |gen02     ]
+
+}
+END -- s_abg
+Grid gr2564
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2564
+END -- vb3
+END -- aglq811
+
+TABLES
+abh_file,
+abg_file
+ATTRIBUTES
+ButtonEdit abh00=abh_file.abh00, action=controlp, tabIndex=34, not null, required, image="zoom.png", comment="Key Field, No Blank,     <^P> Qry Book No";
+ButtonEdit abh03=abh_file.abh03, action=controlp, tabIndex=1, image="zoom";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+Edit abh01=abh_file.abh01, tabIndex=3;
+Edit abh02=abh_file.abh02, tabIndex=4, color = yellow;
+DateEdit abh021=abh_file.abh021, tabIndex=5;
+Edit gen02_h=formonly.gen02_h type CHAR, tabIndex=6, noEntry;
+Edit abh05=abh_file.abh05, tabIndex=7;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=8, noEntry;
+Edit abh11=abh_file.abh11, tabIndex=9;
+Edit abh32=abh_file.abh32, tabIndex=10;
+Edit abh12=abh_file.abh12, tabIndex=11;
+Edit abh33=abh_file.abh33, tabIndex=12;
+Edit abh13=abh_file.abh13, tabIndex=13;
+Edit abh34=abh_file.abh34, tabIndex=14;
+Edit abh14=abh_file.abh14, tabIndex=15;
+Edit abh35=abh_file.abh35, tabIndex=16;
+Edit abh31=abh_file.abh31, tabIndex=17;
+Edit abh36=abh_file.abh36, tabIndex=18;
+Edit abh04=abh_file.abh04, tabIndex=19;
+Edit abh09=abh_file.abh09, tabIndex=20, not null, required;
+ComboBox abhconf=abh_file.abhconf, tabIndex=21, not null, required, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Cancelled"));
+DateEdit abg06=abg_file.abg06, tabIndex=22, title="Voucher Date";
+Edit abg01=abg_file.abg01, tabIndex=23, title="Voucher#";
+Edit abg0=abg_file.abg02, tabIndex=24, title="Ln.";
+Edit abg05=abg_file.abg05, tabIndex=25, title="Department";
+Edit abg071=abg_file.abg071, tabIndex=26, title="Entering Acct. Amt.", not null, required;
+Edit abg072=abg_file.abg072, tabIndex=27, title="Contra\'d Amt", not null, required;
+Edit abg073=abg_file.abg073, tabIndex=28, title="To-Contra Amt", not null, required;
+Edit unpay=formonly.unpay type CHAR, tabIndex=29, title="UnContra\'d Amt";
+Edit abg04=abg_file.abg04, tabIndex=30, title="Memo";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=31, title="Issued By";
+Edit cnt=formonly.cnt type CHAR, tabIndex=32, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abg(abg_file.abg06,abg_file.abg01,abg_file.abg02,abg_file.abg05,abg_file.abg071,abg_file.abg072,abg_file.abg073,formonly.unpay,abg_file.abg04,formonly.gen02)
+SCREEN RECORD Undefined(abh_file.abh00,abh_file.abh03,formonly.aag02,abh_file.abh01,abh_file.abh02,abh_file.abh021,formonly.gen02_h,abh_file.abh05,formonly.gem02,abh_file.abh11,abh_file.abh32,abh_file.abh12,abh_file.abh33,abh_file.abh13,abh_file.abh34,abh_file.abh14,abh_file.abh35,abh_file.abh31,abh_file.abh36,abh_file.abh04,abh_file.abh09,abh_file.abhconf,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

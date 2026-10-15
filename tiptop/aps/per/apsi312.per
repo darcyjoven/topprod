@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi312.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi312")
+VBox vb2
+Folder pc4
+Page page01(text="Page01")
+Grid gr7
+{
+ <G group01                                                    >
+  Item No.                               [vmn01               ]
+  Routing No.                            [vmn02               ]
+  Subcontract S/N                        [vmn03               ]
+  Operation No.                          [vmn04               ]
+  Process No.                            [vmn012              ]
+  Resource Group No.(Machine)            [vmn08               ]
+  Resource Group No.(Workstation)        [vmn081              ]
+  Batch Process                          [vmn09               ]
+  Transfer Lot Size                      [vmn12               ]
+  Base Qty                               [vmn13               ]
+  Alternative Priority                   [vmn15               ]
+  Max Batch Size                         [vmn16               ]
+  Min Batch Size                         [vmn17               ]
+ [isoutsourc]
+  Outsource Factory                      [vmn18               ]
+  post_op_time                           [vmn19               ]
+ <                                                             >
+
+}
+END -- gr7
+END -- page01
+END -- pc4
+Grid gr8
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+}
+END -- gr8
+END -- vb2
+END -- apsi312
+
+TABLES
+vmn_file
+ATTRIBUTES
+Group group01:group01;
+Edit vmn01=vmn_file.vmn01, tabIndex=13, noEntry, not null, required;
+Edit vmn02=vmn_file.vmn02, tabIndex=1, noEntry, not null, required;
+Edit vmn03=vmn_file.vmn03, tabIndex=4, default = "0", noEntry, not null, required;
+Edit vmn04=vmn_file.vmn04, tabIndex=5, noEntry, not null, required;
+Edit vmn012=vmn_file.vmn012, tabIndex=17, noEntry, not null, required;
+ButtonEdit vmn08=vmn_file.vmn08, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit vmn081=vmn_file.vmn081, action=controlp, tabIndex=12, image="zoom";
+ComboBox vmn09=vmn_file.vmn09, tabIndex=2, default = "0", not null, required, queryEditable, comment="Enter  0/1", items=(("0", "False"),("1", "True"));
+Edit vmn12=vmn_file.vmn12, tabIndex=7, default = "0";
+Edit vmn13=vmn_file.vmn13, tabIndex=8, default = "1", not null, required;
+Edit vmn15=vmn_file.vmn15, tabIndex=9, default = "0";
+Edit vmn16=vmn_file.vmn16, tabIndex=10, default = "9999";
+Edit vmn17=vmn_file.vmn17, tabIndex=11, default = "1";
+CheckBox isoutsourc=formonly.isoutsource type CHAR, tabIndex=14, default = "N", text="isoutsource", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit vmn18=vmn_file.vmn18, action=controlp, tabIndex=15, image="zoom";
+Edit vmn19=vmn_file.vmn19, tabIndex=16, default = "0", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vmn_file.vmn01,vmn_file.vmn02,vmn_file.vmn03,vmn_file.vmn04,vmn_file.vmn08,vmn_file.vmn081,vmn_file.vmn09,vmn_file.vmn12,vmn_file.vmn13,vmn_file.vmn15,vmn_file.vmn16,vmn_file.vmn17,formonly.isoutsource,vmn_file.vmn18,vmn_file.vmn19,formonly.cnt,vmn_file.vmn012)
+END -- INSTRUCTIONS
+

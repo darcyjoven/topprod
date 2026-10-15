@@ -1,0 +1,96 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cim/4fd/cimq020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder csfq033
+Page Page1(text=%"Page1")
+Table s_tlf
+{
+[tlf01             |ima02          |ima021         |ima06       |ima06_desc  |tlf06       |tlf905          |tlf906  |tlf13   |tlf902  |tlf903  |tlf904      |tlf10       |tlf11   |tlf12       |tlf14     |azf03       |ima25   |ccc23     |price        |amt         |tlf07     |tlf08     |gen01   |gen02   |gem01   |gem02   ]
+[tlf01             |ima02          |ima021         |ima06       |ima06_desc  |tlf06       |tlf905          |tlf906  |tlf13   |tlf902  |tlf903  |tlf904      |tlf10       |tlf11   |tlf12       |tlf14     |azf03       |ima25   |ccc23     |price        |amt         |tlf07     |tlf08     |gen01   |gen02   |gem01   |gem02   ]
+[tlf01             |ima02          |ima021         |ima06       |ima06_desc  |tlf06       |tlf905          |tlf906  |tlf13   |tlf902  |tlf903  |tlf904      |tlf10       |tlf11   |tlf12       |tlf14     |azf03       |ima25   |ccc23     |price        |amt         |tlf07     |tlf08     |gen01   |gen02   |gem01   |gem02   ]
+[tlf01             |ima02          |ima021         |ima06       |ima06_desc  |tlf06       |tlf905          |tlf906  |tlf13   |tlf902  |tlf903  |tlf904      |tlf10       |tlf11   |tlf12       |tlf14     |azf03       |ima25   |ccc23     |price        |amt         |tlf07     |tlf08     |gen01   |gen02   |gem01   |gem02   ]
+[tlf01             |ima02          |ima021         |ima06       |ima06_desc  |tlf06       |tlf905          |tlf906  |tlf13   |tlf902  |tlf903  |tlf904      |tlf10       |tlf11   |tlf12       |tlf14     |azf03       |ima25   |ccc23     |price        |amt         |tlf07     |tlf08     |gen01   |gen02   |gem01   |gem02   ]
+
+
+
+
+
+
+}
+END -- s_tlf
+END -- Page1
+Page Page2(text=%"Page2")
+Table s_ima
+{
+[imz01       |imz02           |sum             |amt_1           ]
+[imz01       |imz02           |sum             |amt_1           ]
+[imz01       |imz02           |sum             |amt_1           ]
+[imz01       |imz02           |sum             |amt_1           ]
+[imz01       |imz02           |sum             |amt_1           ]
+
+
+
+
+
+
+}
+END -- s_ima
+END -- Page2
+END -- csfq033
+Grid Grid1
+{
+        -------------[curr     ]/[cnt      ]-------------
+
+}
+END -- Grid1
+END -- VBox1
+END -- cimq020
+
+ATTRIBUTES
+ButtonEdit tlf01=formonly.tlf01, action=controlp, tabIndex=1, title=%"tlf01", image="zoom";
+Edit ima02=formonly.ima02, tabIndex=2, title=%"ima02";
+Edit ima021=formonly.ima021, tabIndex=3, title=%"ima021";
+ButtonEdit ima06=formonly.ima06, action=controlp, tabIndex=4, title=%"ima06", image="zoom";
+Edit ima06_desc=formonly.ima06_desc, tabIndex=5, title=%"ima06_desc";
+DateEdit tlf06=formonly.tlf06 type DATE, tabIndex=6, title=%"tlf06";
+Edit tlf905=formonly.tlf905, tabIndex=7, title=%"tlf905";
+Edit tlf906=formonly.tlf906, tabIndex=8, title=%"tlf906";
+Edit tlf13=formonly.tlf13, tabIndex=9, title=%"tlf13";
+ButtonEdit tlf902=formonly.tlf902, action=controlp, tabIndex=10, title=%"tlf902", image="zoom";
+ButtonEdit tlf903=formonly.tlf903, action=controlp, tabIndex=11, title=%"tlf903", image="zoom";
+Edit tlf904=formonly.tlf904, tabIndex=12, title=%"tlf904";
+Edit tlf10=formonly.tlf10 type DECIMAL, tabIndex=13, title=%"tlf10";
+Edit tlf11=formonly.tlf11, tabIndex=14, title=%"tlf11";
+Edit tlf12=formonly.tlf12 type DECIMAL, tabIndex=15, title=%"tlf12", hidden;
+Edit tlf14=formonly.tlf14, tabIndex=16, title=%"tlf14";
+Edit azf03=formonly.azf03, tabIndex=17, title=%"azf03";
+Edit ima25=formonly.ima25, tabIndex=18, title=%"ima25", hidden;
+Edit ccc23=formonly.ccc23 type DECIMAL, tabIndex=19, title=%"ccc23";
+ComboBox price=formonly.price, tabIndex=20, title=%"price", items=(("0", "unprice"),("1", "ta_ccc23"),("2", "ccc23"),("3", "ima53"));
+Edit amt=formonly.amt type DECIMAL, tabIndex=21, title=%"amt";
+DateEdit tlf07=formonly.tlf07, tabIndex=22, title=%"tlf07";
+Edit tlf08=formonly.tlf08, tabIndex=23, title=%"tlf08";
+Edit gen01=formonly.gen01, tabIndex=24, title=%"gen01";
+Edit gen02=formonly.gen02, tabIndex=25, title=%"gen02";
+Edit gem01=formonly.gem01, tabIndex=26, title=%"gem01";
+Edit gem02=formonly.gem02, tabIndex=27, title=%"gem02";
+Edit imz01=formonly.imz01, tabIndex=28, title=%"imz01";
+Edit imz02=formonly.imz02, tabIndex=29, title=%"imz02";
+Edit sum=formonly.sum type DECIMAL, tabIndex=30, title=%"sum";
+Edit amt_1=formonly.amt_1 type DECIMAL, tabIndex=31, title=%"amt_1";
+Edit curr=formonly.curr, tabIndex=32;
+Edit cnt=formonly.cnt, tabIndex=33;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.curr,formonly.cnt)
+SCREEN RECORD s_tlf(formonly.tlf01,formonly.ima02,formonly.ima021,formonly.ima06,formonly.ima06_desc,formonly.tlf06,formonly.tlf905,formonly.tlf906,formonly.tlf13,formonly.tlf902,formonly.tlf903,formonly.tlf904,formonly.tlf10,formonly.tlf11,formonly.tlf12,formonly.tlf14,formonly.azf03,formonly.ima25,formonly.ccc23,formonly.price,formonly.amt,formonly.tlf07,formonly.tlf08,formonly.gen01,formonly.gen02,formonly.gem01,formonly.gem02)
+SCREEN RECORD s_ima(formonly.imz01,formonly.imz02,formonly.sum,formonly.amt_1)
+END -- INSTRUCTIONS
+

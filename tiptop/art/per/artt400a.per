@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt400a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt400a")
+Folder pc3
+Page Page12(text=%"QBE")
+Grid gr8
+{
+
+    <G gb1                                                   >
+
+       Item No.[ima01                    ]
+       Type    [ima131                   ]
+       Org.    [rug09                    ]
+
+    <                                                        >
+
+    <G gb2                                                   >
+       Unit           [rug04          ]
+       Number         [rug05          ]
+       Required Date  [rug06     ]
+       Required Time  [rug07     ]
+    <                                                        >
+
+
+}
+END -- gr8
+END -- Page12
+END -- pc3
+END -- artt400a
+
+TABLES
+rug_file
+ATTRIBUTES
+Group gb1:gb1, text="CONSTRUCT";
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit ima131=formonly.ima131 type CHAR, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit rug09=formonly.rug09 type CHAR, action=controlp, tabIndex=3, not null, image="zoom.png";
+Group gb2:gb2, text="INPUT";
+ButtonEdit rug04=formonly.rug04 type CHAR, action=controlp, tabIndex=7, image="zoom.png";
+Edit rug05=rug_file.rug05, tabIndex=4, not null;
+DateEdit rug06=formonly.rug06 type CHAR, tabIndex=6;
+TimeEdit rug07=formonly.rug07 type CHAR, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima131,formonly.rug09,formonly.rug04,rug_file.rug05,formonly.rug06,formonly.rug07)
+END -- INSTRUCTIONS
+

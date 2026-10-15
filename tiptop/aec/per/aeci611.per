@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci611.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci611")
+VBox VBox1
+Folder pc264
+Page page01(text="Page01")
+Grid gr1656
+{
+ <G group01                                          >
+  Item No.            [ecb01                        ]
+  Routing Code        [ecb02     ]
+  Task Serial Number  [ecb03     ]
+ <                                                   >
+ <G group02                                        >
+  Default Labor Setup Time(Min)        [ecb30     ]
+  Default Labor Production Time(Min)   [ecb31     ]
+  Default Machine Setup Time(Min)      [ecb32     ]
+  Default Machine Production Time(Min) [ecb33     ]
+  Default Subcontracting Time(Min)     [ecb34     ]
+  Default Subcontracting Cost          [ecb35     ]
+
+ <                                                 >
+
+}
+END -- gr1656
+END -- page01
+END -- pc264
+Grid gr1657
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1657
+END -- VBox1
+END -- aeci611
+
+TABLES
+ecb_file
+ATTRIBUTES
+Group group01:group01;
+Edit ecb01=ecb_file.ecb01, tabIndex=1, noEntry;
+Edit ecb02=ecb_file.ecb02, tabIndex=2, noEntry;
+Edit ecb03=ecb_file.ecb03, tabIndex=3, noEntry;
+Group group02:group02;
+Edit ecb30=ecb_file.ecb30, tabIndex=4;
+Edit ecb31=ecb_file.ecb31, tabIndex=5;
+Edit ecb32=ecb_file.ecb32, tabIndex=6;
+Edit ecb33=ecb_file.ecb33, tabIndex=7;
+Edit ecb34=ecb_file.ecb34, tabIndex=8;
+Edit ecb35=ecb_file.ecb35, tabIndex=9;
+Edit cnt=formonly.cnt type CHAR, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ecb_file.ecb01,ecb_file.ecb02,ecb_file.ecb03,ecb_file.ecb30,ecb_file.ecb31,ecb_file.ecb32,ecb_file.ecb33,ecb_file.ecb34,ecb_file.ecb35,formonly.cnt)
+END -- INSTRUCTIONS
+

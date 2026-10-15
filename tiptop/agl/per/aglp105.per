@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglp105.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglp105")
+VBox VBox1
+Grid gr2486
+{
+ <G group01                                            >
+  Current Accounting Year [aaa04     ]
+  Period                  [aaa05     ]
+ <                                                     >
+
+}
+END -- gr2486
+Grid gr2487
+{
+ <G group02                                            >
+  Book No.            [bookn]
+  Accounting Year     [y1        ]
+  Period              [m2        ]
+  Re-Sort Doc Tp      [trn       ]
+  Initial General No. [tno       ]
+ <                                                     >
+
+}
+END -- gr2487
+Grid gr2488
+{
+ [g_bgj]
+
+}
+END -- gr2488
+END -- VBox1
+END -- aglp105
+
+ATTRIBUTES
+Group group01:group01;
+Edit aaa04=formonly.aaa04 type CHAR, tabIndex=1, noEntry;
+Edit aaa05=formonly.aaa05 type CHAR, tabIndex=2, noEntry;
+Group group02:group02, text="INPUT";
+ButtonEdit bookn=formonly.bookno type CHAR, action=controlp, tabIndex=8, not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+Edit y1=formonly.y1 type SMALLINT, tabIndex=3;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=4;
+Edit trn=formonly.trn type VARCHAR, tabIndex=5, comment="<^P>Qry Documents";
+Edit tno=formonly.tno type INTEGER, tabIndex=6, not null, required;
+CheckBox g_bgj=formonly.g_bgjob type CHAR, tabIndex=7, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aaa04,formonly.aaa05,formonly.bookno,formonly.y1,formonly.m2,formonly.trn,formonly.tno,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt603_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form1")
+VBox vb1
+Group exchangeshop(text="exchangeshop")
+Table s_temp
+{
+[temp01  |temp02  |temp03  |temp04  |temp05  |temp06  |temp07  |temp08  |temp09  |temp10  |temp11  |temp12  |temp13  |temp14  ]
+[temp01  |temp02  |temp03  |temp04  |temp05  |temp06  |temp07  |temp08  |temp09  |temp10  |temp11  |temp12  |temp13  |temp14  ]
+[temp01  |temp02  |temp03  |temp04  |temp05  |temp06  |temp07  |temp08  |temp09  |temp10  |temp11  |temp12  |temp13  |temp14  ]
+[temp01  |temp02  |temp03  |temp04  |temp05  |temp06  |temp07  |temp08  |temp09  |temp10  |temp11  |temp12  |temp13  |temp14  ]
+[temp01  |temp02  |temp03  |temp04  |temp05  |temp06  |temp07  |temp08  |temp09  |temp10  |temp11  |temp12  |temp13  |temp14  ]
+
+}
+END -- s_temp
+END -- exchangeshop
+Group fixedshop(text="fixedshop")
+Table s_temp2
+{
+[temp101       |temp102      |temp103      |temp104     |temp105   |temp106 ]
+[temp101       |temp102      |temp103      |temp104     |temp105   |temp106 ]
+[temp101       |temp102      |temp103      |temp104     |temp105   |temp106 ]
+[temp101       |temp102      |temp103      |temp104     |temp105   |temp106 ]
+[temp101       |temp102      |temp103      |temp104     |temp105   |temp106 ]
+
+}
+END -- s_temp2
+END -- fixedshop
+END -- vb1
+END -- Form1
+
+ATTRIBUTES
+CheckBox temp01=formonly.temp01 type CHAR, tabIndex=1, title="temp01", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit temp02=formonly.temp02 type CHAR, tabIndex=2, title="temp02", noEntry;
+ComboBox temp03=formonly.temp03 type CHAR, tabIndex=3, title="temp03", noEntry, items=(("4", "fix scale"),("5", "full scale"));
+ComboBox temp04=formonly.temp04 type CHAR, tabIndex=4, title="temp04", noEntry, items=(("1", "beiliang"),("2", "add count"));
+ComboBox temp05=formonly.temp05 type CHAR, tabIndex=5, title="temp05", noEntry, items=(("1", "sigle"),("2", "mulite"));
+ComboBox temp06=formonly.temp06 type CHAR, tabIndex=6, title="temp06", noEntry, items=(("0", "biandong"),("1", "fix"));
+CheckBox temp07=formonly.temp07 type CHAR, tabIndex=7, title="temp07", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit temp08=formonly.temp08 type CHAR, tabIndex=8, title="temp08", noEntry;
+Edit temp09=formonly.temp09 type CHAR, tabIndex=20, title="temp09", noEntry;
+Edit temp10=formonly.temp10 type CHAR, tabIndex=9, title="temp10", noEntry;
+Edit temp11=formonly.temp11 type CHAR, tabIndex=10, title="temp11", noEntry;
+Edit temp12=formonly.temp12 type CHAR, tabIndex=11, title="temp12", noEntry;
+Edit temp13=formonly.temp13 type CHAR, tabIndex=12, title="temp13", noEntry;
+Edit temp14=formonly.temp14 type INTEGER, tabIndex=13, title="temp14", not null, required;
+Edit temp101=formonly.temp101 type CHAR, tabIndex=14, title="temp101", noEntry;
+Edit temp102=formonly.temp102 type CHAR, tabIndex=15, title="temp102", noEntry;
+Edit temp103=formonly.temp103 type CHAR, tabIndex=16, title="temp103", noEntry;
+Edit temp104=formonly.temp104 type CHAR, tabIndex=17, title="temp104", noEntry;
+Edit temp105=formonly.temp105 type CHAR, tabIndex=18, title="temp105", noEntry;
+Edit temp106=formonly.temp106 type CHAR, tabIndex=19, title="temp106", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_temp(formonly.temp01,formonly.temp02,formonly.temp03,formonly.temp04,formonly.temp05,formonly.temp06,formonly.temp07,formonly.temp08,formonly.temp09,formonly.temp10,formonly.temp11,formonly.temp12,formonly.temp13,formonly.temp14)
+SCREEN RECORD s_temp2(formonly.temp101,formonly.temp102,formonly.temp103,formonly.temp104,formonly.temp105,formonly.temp106)
+END -- INSTRUCTIONS
+

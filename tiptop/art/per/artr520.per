@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr520.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"artr515")
+VBox VBox1
+VBox VBox2
+Group Group1(text=%"QBE1")
+Grid Grid1
+{
+
+  Logistics Code        [azp01              ]
+                    [dummy1                         ]
+}
+END -- Grid1
+END -- Group1
+Group Group4(text=%"QBE2")
+Grid Grid4
+{
+
+  Product Classification[ima131             ]
+
+  Item No.              [ima01              ]
+
+}
+END -- Grid4
+END -- Group4
+END -- VBox2
+Group Group2(text=%"Input")
+Grid Grid2
+{
+
+ Contribution Rate        [rate1      ]~[rate2      ]
+ Date QBE                 [date1      ]~[date2      ]
+ Cost calculation category[ccc07                    ]
+ <G group3                                         >
+  [style                                       ]
+  [                                            ]
+  [                                            ]
+ <                                                 >
+}
+END -- Grid2
+END -- Group2
+Grid Grid3
+{
+[more                                        ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- artr515
+
+ATTRIBUTES
+ButtonEdit azp01=formonly.azp01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Label dummy1:dummy1, text="LRDMDS,QY\'|\'H\';\'GK";
+ButtonEdit ima131=formonly.ima131 type CHAR, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=3, image="zoom.png";
+Edit rate1=formonly.rate1 type CHAR, tabIndex=4;
+Edit rate2=formonly.rate2 type CHAR, tabIndex=5;
+DateEdit date1=formonly.date1 type DATE, tabIndex=6;
+DateEdit date2=formonly.date2 type DATE, tabIndex=7;
+ComboBox ccc07=formonly.ccc07 type CHAR, tabIndex=8, not null, items=(("1", "Monthly weighted average cost"),("2", "FIFO Cost"),("3", "Specific-Batch Cost"),("4", "Specific-Project Cost"),("5", "Individual-Cost by Store (Profit Center)"));
+Group group3:Group3, text=%"Print Option";
+RadioGroup style=formonly.style type CHAR, tabIndex=10, items=(("1", "1:Logistics "),("2", "2:Logistics + Product Classification"),("3", "3:Logistics + Product"));
+CheckBox more=formonly.more type CHAR, tabIndex=9, text=%"Other codition to print", valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.ima131,formonly.ima01,formonly.rate1,formonly.rate2,formonly.date1,formonly.date2,formonly.ccc07,formonly.style,formonly.more)
+END -- INSTRUCTIONS
+

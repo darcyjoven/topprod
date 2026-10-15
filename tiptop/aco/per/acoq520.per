@@ -1,0 +1,108 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoq520.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoq520")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+HBox HBox1
+Grid gr1345
+{
+ Goods No.           [coe03               ]
+ P/N Spec.           [cob02               ]
+ HS Code             [cob09               ]
+}
+END -- gr1345
+Grid gr1346
+{
+ Register Book No.   [coc03          ]
+ Customs No.         [coc10          ]
+ Unit                [coe06          ]
+}
+END -- gr1346
+Grid gr1347
+{
+ Qty Applied         [coe05       ]
+ Additional Qty      [coe10       ]
+
+}
+END -- gr1347
+END -- HBox1
+Group group01
+Grid gr1348
+{
+   Year / Period     [yy  ]/[mm]
+
+}
+END -- gr1348
+END -- group01
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_coe
+{
+[cnl03|cnl04  |cnl05         |cnl06           |cnl07           |cnl08           |cnl09         |cnl10             |cnl11       |cnl12                 |cnl13            |cnl14              |cnl15              |cnl16      |cnl17                ]
+[cnl03|cnl04  |cnl05         |cnl06           |cnl07           |cnl08           |cnl09         |cnl10             |cnl11       |cnl12                 |cnl13            |cnl14              |cnl15              |cnl16      |cnl17                ]
+[cnl03|cnl04  |cnl05         |cnl06           |cnl07           |cnl08           |cnl09         |cnl10             |cnl11       |cnl12                 |cnl13            |cnl14              |cnl15              |cnl16      |cnl17                ]
+[cnl03|cnl04  |cnl05         |cnl06           |cnl07           |cnl08           |cnl09         |cnl10             |cnl11       |cnl12                 |cnl13            |cnl14              |cnl15              |cnl16      |cnl17                ]
+[cnl03|cnl04  |cnl05         |cnl06           |cnl07           |cnl08           |cnl09         |cnl10             |cnl11       |cnl12                 |cnl13            |cnl14              |cnl15              |cnl16      |cnl17                ]
+[cnl03|cnl04  |cnl05         |cnl06           |cnl07           |cnl08           |cnl09         |cnl10             |cnl11       |cnl12                 |cnl13            |cnl14              |cnl15              |cnl16      |cnl17                ]
+[cnl03|cnl04  |cnl05         |cnl06           |cnl07           |cnl08           |cnl09         |cnl10             |cnl11       |cnl12                 |cnl13            |cnl14              |cnl15              |cnl16      |cnl17                ]
+[cnl03|cnl04  |cnl05         |cnl06           |cnl07           |cnl08           |cnl09         |cnl10             |cnl11       |cnl12                 |cnl13            |cnl14              |cnl15              |cnl16      |cnl17                ]
+[cnl03|cnl04  |cnl05         |cnl06           |cnl07           |cnl08           |cnl09         |cnl10             |cnl11       |cnl12                 |cnl13            |cnl14              |cnl15              |cnl16      |cnl17                ]
+[cnl03|cnl04  |cnl05         |cnl06           |cnl07           |cnl08           |cnl09         |cnl10             |cnl11       |cnl12                 |cnl13            |cnl14              |cnl15              |cnl16      |cnl17                ]
+
+}
+END -- s_coe
+Grid gr1349
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1349
+END -- VBox1
+END -- acoq520
+
+TABLES
+cnl_file,
+coe_file
+ATTRIBUTES
+Edit coe03=coe_file.coe03, tabIndex=1;
+Edit cob02=formonly.cob02 type CHAR, tabIndex=2, noEntry;
+Edit cob09=formonly.cob09 type CHAR, tabIndex=3;
+Edit coc03=formonly.coc03 type CHAR, tabIndex=4;
+Edit coc10=formonly.coc10 type CHAR, tabIndex=5;
+Edit coe06=formonly.coe06 type CHAR, tabIndex=6, noEntry;
+Edit coe05=formonly.coe05 type CHAR, tabIndex=7, noEntry;
+Edit coe10=formonly.coe10 type CHAR, tabIndex=8, noEntry;
+Edit yy=formonly.yy type CHAR, tabIndex=9;
+Edit mm=formonly.mm type CHAR, tabIndex=10;
+Edit cnl03=cnl_file.cnl03, tabIndex=11, title="Year";
+Edit cnl04=cnl_file.cnl04, tabIndex=12, title="Period";
+Edit cnl05=cnl_file.cnl05, tabIndex=13, title="Direct/Import";
+Edit cnl06=cnl_file.cnl06, tabIndex=14, title="Direct/Used";
+Edit cnl07=cnl_file.cnl07, tabIndex=15, title="Overseas/Return";
+Edit cnl08=cnl_file.cnl08, tabIndex=16, title="Transfer/Import";
+Edit cnl09=cnl_file.cnl09, tabIndex=17, title="Transfer/Used";
+Edit cnl10=cnl_file.cnl10, tabIndex=18, title="Transfer/Return";
+Edit cnl11=cnl_file.cnl11, tabIndex=19, title="Local Sales";
+Edit cnl12=cnl_file.cnl12, tabIndex=20, title="Local purchase Return";
+Edit cnl13=cnl_file.cnl13, tabIndex=21, title="Lacal Sales Used";
+Edit cnl14=cnl_file.cnl14, tabIndex=22, title="Register Book Tr-o";
+Edit cnl15=cnl_file.cnl15, tabIndex=23, title="Register Book Tr-i";
+Edit cnl16=cnl_file.cnl16, tabIndex=24, title="Retire Qty";
+Edit cnl17=cnl_file.cnl17, tabIndex=25, title="End of Period Balance";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=26, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_coe(cnl_file.cnl03,cnl_file.cnl04,cnl_file.cnl05,cnl_file.cnl06,cnl_file.cnl07,cnl_file.cnl08,cnl_file.cnl09,cnl_file.cnl10,cnl_file.cnl11,cnl_file.cnl12,cnl_file.cnl13,cnl_file.cnl14,cnl_file.cnl15,cnl_file.cnl16,cnl_file.cnl17)
+SCREEN RECORD Undefined(coe_file.coe03,formonly.cob02,formonly.cob09,formonly.coc03,formonly.coc10,formonly.coe06,formonly.coe05,formonly.coe10,formonly.yy,formonly.mm,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

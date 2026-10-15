@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aims100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aims100")
+VBox VBox1
+Folder pc591
+Page page01(text="Main")
+Grid gr3408
+{
+ <G group01                       ><G group02                         >
+ [a                              ]  [b                             ]
+ <                                ><                                  >
+ <G group03                       ><G group04                         >
+ [c                              ]  Initial Inv Date    [ima30       ]
+ <                                ><                                  >
+
+}
+END -- gr3408
+END -- page01
+END -- pc591
+END -- VBox1
+END -- aims100
+
+ATTRIBUTES
+Group group01:group01, text="Initial Date Setting Type";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=1, items=(("1", "Same date for all items"),("2", "By ABC Class Setting"));
+Group group02:group02, text="Item Sequence";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=2, items=(("1", "By Item Number"),("2", "By Unit Price"));
+Group group03:group03, text="Date Handling Method";
+RadioGroup c=formonly.c type VARCHAR, tabIndex=3, items=(("1", "By Calendar"),("2", "By Work Calendar"));
+Group group04:group04, text="Initial Inv Date";
+DateEdit ima30=formonly.ima30 type DATE, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.b,formonly.c,formonly.ima30)
+END -- INSTRUCTIONS
+

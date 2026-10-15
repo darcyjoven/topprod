@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amrp601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amrp601")
+VBox VBox1
+Grid gr3877
+{
+ <G group01                   >
+  Plant          [azp01     ]
+ <                            >
+
+}
+END -- gr3877
+Grid gr3878
+{
+ <G group02                   >
+  MRP Version    [mss_v     ]
+ [del                       ]
+  P/O Center     [pnx01     ]
+ <                            >
+
+}
+END -- gr3878
+END -- VBox1
+END -- amrp601
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit azp01=formonly.azp01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Group group02:group02, text="INPUT";
+Edit mss_v=formonly.mss_v type CHAR, tabIndex=2, not null, required;
+CheckBox del=formonly.del type CHAR, tabIndex=3, text="Delete MRP Version", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit pnx01=formonly.pnx01 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.mss_v,formonly.del,formonly.pnx01)
+END -- INSTRUCTIONS
+

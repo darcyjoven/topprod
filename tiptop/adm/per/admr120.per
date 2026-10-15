@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/adm/42f/admr120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"admr120")
+VBox vb5_
+Grid gr1606
+{
+ <G group01                                                                             >
+  Customer #          [oma03               ] Department          [oma15               ]
+  Salesman            [oma14               ] Product Class       [ima131              ]
+ <                                                                                      >
+ <G group02                                                                            >
+  Data Range          [bdate       ] - [edate       ]
+ [a                             ]
+ <                                                                                     >
+}
+END -- gr1606
+Grid gr1607
+{
+[more                                                          ]
+
+}
+END -- gr1607
+END -- vb5_
+END -- admr120
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oma03=formonly.oma03 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit oma15=formonly.oma15 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit oma14=formonly.oma14 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ima131=formonly.ima131 type VARCHAR, action=controlp, tabIndex=4, image="zoom", sample="controlp";
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=5;
+DateEdit edate=formonly.edate type DATE, tabIndex=6;
+CheckBox a=formonly.a type CHAR, tabIndex=7, text="Print Data With No Sales Ret. Amount", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oma03,formonly.oma15,formonly.oma14,formonly.ima131,formonly.bdate,formonly.edate,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

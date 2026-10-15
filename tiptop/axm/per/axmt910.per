@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt910.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt910")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2615
+{
+ Delivery Date        [oga02             ]
+ Advice No.           [oga01             ]
+
+}
+END -- gr2615
+Grid gr2616
+{
+ Customer No.         [oga03     ]
+ Shipping Cust        [oga04     ]
+
+}
+END -- gr2616
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_ogb
+{
+[oga02b        |oga03b       |oga01b          |ogb03    |ogb04       ]
+[oga02b        |oga03b       |oga01b          |ogb03    |ogb04       ]
+[oga02b        |oga03b       |oga01b          |ogb03    |ogb04       ]
+[oga02b        |oga03b       |oga01b          |ogb03    |ogb04       ]
+[oga02b        |oga03b       |oga01b          |ogb03    |ogb04       ]
+[oga02b        |oga03b       |oga01b          |ogb03    |ogb04       ]
+[oga02b        |oga03b       |oga01b          |ogb03    |ogb04       ]
+[oga02b        |oga03b       |oga01b          |ogb03    |ogb04       ]
+[oga02b        |oga03b       |oga01b          |ogb03    |ogb04       ]
+[oga02b        |oga03b       |oga01b          |ogb03    |ogb04       ]
+
+}
+END -- s_ogb
+Grid gr2617
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr2617
+END -- VBox1
+END -- axmt910
+
+ATTRIBUTES
+DateEdit oga02=formonly.oga02 type DATE, tabIndex=1;
+ButtonEdit oga01=formonly.oga01 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit oga03=formonly.oga03 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit oga04=formonly.oga04 type CHAR, action=controlp, tabIndex=4, image="zoom";
+Edit oga02b=formonly.oga02b type CHAR, tabIndex=5, title="Delivery Date";
+Edit oga03b=formonly.oga03b type CHAR, tabIndex=6, title="Customer No.", noEntry;
+Edit oga01b=formonly.oga01b type CHAR, tabIndex=7, title="Advice No.", noEntry;
+Edit ogb03=formonly.ogb03 type CHAR, tabIndex=8, title="Line No.", noEntry;
+Edit ogb04=formonly.ogb04 type CHAR, tabIndex=9, title="Product No.", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogb(formonly.oga02b,formonly.oga03b,formonly.oga01b,formonly.ogb03,formonly.ogb04)
+SCREEN RECORD Undefined(formonly.oga02,formonly.oga01,formonly.oga03,formonly.oga04,formonly.cn2)
+END -- INSTRUCTIONS
+

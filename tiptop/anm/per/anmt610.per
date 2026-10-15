@@ -1,0 +1,128 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt610")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+ Cover No.           [gse01               ] Investment Doc No.  [gse03               ] Confirm             [gseconf    ][imgmksg]
+ Cover Date          [gse02       ]         Investment Type     [gsb05     ]                                            [       ]
+                                                                [gsa02               ] Voucher NO.         [gse21       ]
+ Department          [gse27       ]         Investment Object   [gsb06               ] Voucher Date        [gse22       ]
+ --------------------------------------------------------------------------------------------------------------------------------
+ Cover Qty           [gse05               ] Expense No          [gse13     ]           Cover Unit Price    [gse04               ]
+ Cover Price         [gse26               ] Expense Name        [gsf02        ]        Cover Amount        [gse06               ]
+ Deposit Account No  [gse07               ] Deposit Account No  [gse14               ] Invest Gross Margin [gse24               ]
+ Curr/Rate           [gse08  ][gse09      ] Curr/Rate           [gse15  ][gse16      ] Profit/Loss Amount  [gse25               ]
+ Deposit/Withd Trans [gse10        ]        Deposit/Withd Trans [gse17        ]
+ Cash Variation      [gse11        ]        Cash Variation      [gse18        ]
+ Outst O.C. Amount   [gse12               ] Expense O.C. Amount [gse19               ]
+ Cover Amount        [gse23               ] Expense H.C. Amount [gse20               ]
+
+}
+END -- Grid1
+END -- page01
+Page info(text="Info")
+Grid Grid2
+{
+ Record Owner        [gseuser   ] Last Modified by    [gsemodu   ]
+ Department          [gsegrup   ] Create/Modify Date  [gsedate   ]
+ Record Orig.        [gseoriu   ]
+ Dept Orig.          [gseorig   ]
+}
+END -- Grid2
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[gseud01                       ] userdefined_field07[gseud07        ] userdefined_field13[gseud13        ]
+                    [                              ] userdefined_field08[gseud08        ] userdefined_field14[gseud14        ]
+ userdefined_field02[gseud02        ]                userdefined_field09[gseud09        ] userdefined_field15[gseud15        ]
+ userdefined_field03[gseud03        ]                userdefined_field10[gseud10        ]
+ userdefined_field04[gseud04        ]                userdefined_field11[gseud11        ]
+ userdefined_field05[gseud05        ]                userdefined_field12[gseud12        ]
+ userdefined_field06[gseud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- Folder1
+Grid Grid3
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- anmt610
+
+TABLES
+gse_file
+ATTRIBUTES
+ButtonEdit gse01=gse_file.gse01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Documents KEYNo Blank/Repeated Field";
+ButtonEdit gse03=gse_file.gse03, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Investment Case No.";
+ComboBox gseconf=gse_file.gseconf, tabIndex=3, noEntry, not null, required, items=(("Y", %"Confirmed"),("N", %"UnConfirmed"),("X", %"Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+DateEdit gse02=gse_file.gse02, tabIndex=5;
+Edit gsb05=formonly.gsb05 type CHAR, tabIndex=6;
+Edit gsa02=formonly.gsa02 type CHAR, tabIndex=7;
+Edit gse21=gse_file.gse21, tabIndex=8, noEntry;
+ButtonEdit gse27=gse_file.gse27, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Department Code";
+Edit gsb06=formonly.gsb06 type CHAR, tabIndex=10;
+DateEdit gse22=gse_file.gse22, tabIndex=11, noEntry;
+Edit gse05=gse_file.gse05, tabIndex=12, not null, required;
+ButtonEdit gse13=gse_file.gse13, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P>Qry Expense No.";
+Edit gse04=gse_file.gse04, tabIndex=14, noEntry;
+Edit gse26=gse_file.gse26, tabIndex=15, not null, required;
+Edit gsf02=formonly.gsf02 type CHAR, tabIndex=16;
+Edit gse06=gse_file.gse06, tabIndex=17, noEntry;
+ButtonEdit gse07=gse_file.gse07, action=controlp, tabIndex=18, not null, required, image="zoom", comment="<^P>Qry Bank Account No.";
+ButtonEdit gse14=gse_file.gse14, action=controlp, tabIndex=19, not null, required, image="zoom", comment="<^P>Qry Bank Account No.";
+Edit gse24=gse_file.gse24, tabIndex=20, noEntry;
+ButtonEdit gse08=gse_file.gse08, action=controlp, tabIndex=21, noEntry, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit gse09=gse_file.gse09, action=controlp, tabIndex=22, not null, required, image="zoom";
+ButtonEdit gse15=gse_file.gse15, action=controlp, tabIndex=23, noEntry, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit gse16=gse_file.gse16, action=controlp, tabIndex=24, not null, required, image="zoom";
+Edit gse25=gse_file.gse25, tabIndex=25, noEntry;
+ButtonEdit gse10=gse_file.gse10, action=controlp, tabIndex=26, not null, required, image="zoom", comment="<^P>Qry Withdraw/Deposit Transation";
+ButtonEdit gse17=gse_file.gse17, action=controlp, tabIndex=27, not null, required, image="zoom", comment="<^P>Qry Withdraw/Deposit Transation";
+ButtonEdit gse11=gse_file.gse11, action=controlp, tabIndex=28, not null, required, image="zoom", comment="<^P>Query Cash Variation Code";
+ButtonEdit gse18=gse_file.gse18, action=controlp, tabIndex=29, not null, required, image="zoom", comment="<^P>Query Cash Variation Code";
+Edit gse12=gse_file.gse12, tabIndex=30, not null, required;
+Edit gse19=gse_file.gse19, tabIndex=31, not null, required;
+Edit gse23=gse_file.gse23, tabIndex=32, not null, required;
+Edit gse20=gse_file.gse20, tabIndex=33, not null, required;
+Edit gseuser=gse_file.gseuser, tabIndex=34, noEntry;
+Edit gsemodu=gse_file.gsemodu, tabIndex=35, noEntry;
+Edit gsegrup=gse_file.gsegrup, tabIndex=36, noEntry;
+DateEdit gsedate=gse_file.gsedate, tabIndex=37, noEntry;
+Edit gseoriu=gse_file.gseoriu, tabIndex=501, noEntry;
+Edit gseorig=gse_file.gseorig, tabIndex=502, noEntry;
+TextEdit gseud01=gse_file.gseud01, tabIndex=40, stretch=NONE;
+Edit gseud07=gse_file.gseud07, tabIndex=41;
+DateEdit gseud13=gse_file.gseud13, tabIndex=42;
+Edit gseud08=gse_file.gseud08, tabIndex=43;
+DateEdit gseud14=gse_file.gseud14, tabIndex=44;
+Edit gseud02=gse_file.gseud02, tabIndex=45;
+Edit gseud09=gse_file.gseud09, tabIndex=46;
+DateEdit gseud15=gse_file.gseud15, tabIndex=47;
+Edit gseud03=gse_file.gseud03, tabIndex=48;
+Edit gseud10=gse_file.gseud10, tabIndex=49;
+Edit gseud04=gse_file.gseud04, tabIndex=50;
+Edit gseud11=gse_file.gseud11, tabIndex=51;
+Edit gseud05=gse_file.gseud05, tabIndex=52;
+Edit gseud12=gse_file.gseud12, tabIndex=53;
+Edit gseud06=gse_file.gseud06, tabIndex=54;
+Edit cnt=formonly.cnt type CHAR, tabIndex=38, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gse_file.gse01,gse_file.gse03,gse_file.gseconf,formonly.imgmksg,gse_file.gse02,formonly.gsb05,formonly.gsa02,gse_file.gse21,gse_file.gse27,formonly.gsb06,gse_file.gse22,gse_file.gse05,gse_file.gse13,gse_file.gse04,gse_file.gse26,formonly.gsf02,gse_file.gse06,gse_file.gse07,gse_file.gse14,gse_file.gse24,gse_file.gse08,gse_file.gse09,gse_file.gse15,gse_file.gse16,gse_file.gse25,gse_file.gse10,gse_file.gse17,gse_file.gse11,gse_file.gse18,gse_file.gse12,gse_file.gse19,gse_file.gse23,gse_file.gse20,gse_file.gseuser,gse_file.gsemodu,gse_file.gsegrup,gse_file.gsedate,gse_file.gseoriu,gse_file.gseorig,gse_file.gseud01,gse_file.gseud07,gse_file.gseud13,gse_file.gseud08,gse_file.gseud14,gse_file.gseud02,gse_file.gseud09,gse_file.gseud15,gse_file.gseud03,gse_file.gseud10,gse_file.gseud04,gse_file.gseud11,gse_file.gseud05,gse_file.gseud12,gse_file.gseud06,formonly.cnt)
+END -- INSTRUCTIONS
+

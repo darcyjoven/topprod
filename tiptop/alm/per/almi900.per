@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi900")
+VBox vb2
+Folder main
+Page Page1(text=%"Page0")
+Grid gr1
+{
+
+  <T s_lsf                                                                                                                          >
+  [lsf01       |lse02     |lsf02      |toa02      |lsf03       |lsf04     |lsf05      |lsf06      |lsf07      |lsf08    |lsf09    ]
+  [lsf01       |lse02     |lsf02      |toa02      |lsf03       |lsf04     |lsf05      |lsf06      |lsf07      |lsf08    |lsf09    ]
+  [lsf01       |lse02     |lsf02      |toa02      |lsf03       |lsf04     |lsf05      |lsf06      |lsf07      |lsf08    |lsf09    ]
+  [lsf01       |lse02     |lsf02      |toa02      |lsf03       |lsf04     |lsf05      |lsf06      |lsf07      |lsf08    |lsf09    ]
+  [lsf01       |lse02     |lsf02      |toa02      |lsf03       |lsf04     |lsf05      |lsf06      |lsf07      |lsf08    |lsf09    ]
+  [lsf01       |lse02     |lsf02      |toa02      |lsf03       |lsf04     |lsf05      |lsf06      |lsf07      |lsf08    |lsf09    ]
+  [lsf01       |lse02     |lsf02      |toa02      |lsf03       |lsf04     |lsf05      |lsf06      |lsf07      |lsf08    |lsf09    ]
+  [lsf01       |lse02     |lsf02      |toa02      |lsf03       |lsf04     |lsf05      |lsf06      |lsf07      |lsf08    |lsf09    ]
+  [lsf01       |lse02     |lsf02      |toa02      |lsf03       |lsf04     |lsf05      |lsf06      |lsf07      |lsf08    |lsf09    ]
+  [lsf01       |lse02     |lsf02      |toa02      |lsf03       |lsf04     |lsf05      |lsf06      |lsf07      |lsf08    |lsf09    ]
+  [lsf01       |lse02     |lsf02      |toa02      |lsf03       |lsf04     |lsf05      |lsf06      |lsf07      |lsf08    |lsf09    ]
+  [lsf01       |lse02     |lsf02      |toa02      |lsf03       |lsf04     |lsf05      |lsf06      |lsf07      |lsf08    |lsf09    ]
+  <                                                                                                                                 >
+
+}
+END -- gr1
+END -- Page1
+END -- main
+Grid gr4
+{
+ ----------Rows[cn2   ]----------
+
+}
+END -- gr4
+END -- vb2
+END -- almi900
+
+TABLES
+lsf_file
+ATTRIBUTES
+Table s_lsf:s_lsf;
+ButtonEdit lsf01=lsf_file.lsf01, action=controlp, tabIndex=1, title="lsf01", not null, required, image="zoom.png";
+Edit lse02=formonly.lse02 type CHAR, tabIndex=2, title="lse02", noEntry;
+ButtonEdit lsf02=lsf_file.lsf02, action=controlp, tabIndex=3, title="lsf02", not null, required, image="zoom.png";
+Edit toa02=formonly.toa02 type CHAR, tabIndex=4, title="toa02", noEntry;
+DateEdit lsf03=lsf_file.lsf03, tabIndex=5, title="lsf03", not null, required;
+Edit lsf04=lsf_file.lsf04, tabIndex=6, title="lsf04";
+Edit lsf05=lsf_file.lsf05, tabIndex=7, title="lsf05";
+Edit lsf06=lsf_file.lsf06, tabIndex=8, title="lsf06";
+Edit lsf07=lsf_file.lsf07, tabIndex=9, title="lsf07";
+Edit lsf08=lsf_file.lsf08, tabIndex=11, title="lsf08";
+Edit lsf09=lsf_file.lsf09, tabIndex=12, title="lsf09";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lsf(lsf_file.lsf01,formonly.lse02,lsf_file.lsf02,formonly.toa02,lsf_file.lsf03,lsf_file.lsf04,lsf_file.lsf05,lsf_file.lsf06,lsf_file.lsf07,lsf_file.lsf08,lsf_file.lsf09)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_pay.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="s_pay1")
+VBox VBox1
+Group sum(text="sum")
+Grid gr2
+{
+  Total Money            [sum1             ]
+  Give Money Total       [sum2             ]
+  No Money Total         [sum3             ]
+
+}
+END -- gr2
+END -- sum
+Group detail(text="detail")
+Grid gr3
+{
+  Pay Discount                  [rxx04_10         ]
+  Cash                          [rxx04_01         ]
+  Bank Money                    [rxx04_02         ]
+  cheque money                  [rxx04_03         ]  Cheque More Money [sum4             ]
+  Paper Money                   [rxx04_04         ]  Paper More Money  [sum5             ]
+  Union Card                    [rxx04_05         ]
+  Svae Card                     [rxx04_06         ]
+  Kill GetMoney                 [rxx04_07         ]
+  Kill transfer                 [rxx04_08         ]
+  Integral is now amount        [rxx04_09         ]  Is now integral   [rxx04_point      ]
+
+}
+END -- gr3
+END -- detail
+END -- VBox1
+END -- s_pay
+
+TABLES
+aaa_file
+ATTRIBUTES
+Edit sum1=formonly.sum1 type DECIMAL, tabIndex=1, noEntry;
+Edit sum2=formonly.sum2 type DECIMAL, tabIndex=2, noEntry;
+Edit sum3=formonly.sum3 type DECIMAL, tabIndex=3, noEntry;
+Edit rxx04_10=formonly.rxx04_10 type CHAR, tabIndex=16, noEntry;
+Edit rxx04_01=formonly.rxx04_01 type DECIMAL, tabIndex=6, noEntry;
+Edit rxx04_02=formonly.rxx04_02 type like aaa_file.aaa01, tabIndex=7, noEntry;
+Edit rxx04_03=formonly.rxx04_03 type DECIMAL, tabIndex=8, noEntry;
+Edit sum4=formonly.sum4 type DECIMAL, tabIndex=4, noEntry;
+Edit rxx04_04=formonly.rxx04_04 type CHAR, tabIndex=9, noEntry;
+Edit sum5=formonly.sum5 type DECIMAL, tabIndex=5, noEntry;
+Edit rxx04_05=formonly.rxx04_05 type DECIMAL, tabIndex=10, noEntry;
+Edit rxx04_06=formonly.rxx04_06 type DECIMAL, tabIndex=11, noEntry;
+Edit rxx04_07=formonly.rxx04_07 type DECIMAL, tabIndex=12, noEntry;
+Edit rxx04_08=formonly.rxx04_08 type DECIMAL, tabIndex=13, noEntry;
+Edit rxx04_09=formonly.rxx04_09 type CHAR, tabIndex=14, noEntry;
+Edit rxx04_point=formonly.rxx04_point type CHAR, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sum1,formonly.sum2,formonly.sum3,formonly.rxx04_01,formonly.rxx04_02,formonly.rxx04_03,formonly.sum4,formonly.rxx04_04,formonly.sum5,formonly.rxx04_05,formonly.rxx04_06,formonly.rxx04_07,formonly.rxx04_08,formonly.rxx04_09,formonly.rxx04_point,formonly.rxx04_10)
+END -- INSTRUCTIONS
+

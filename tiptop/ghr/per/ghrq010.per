@@ -1,0 +1,127 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrq010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+HBox HBox1
+Grid Grid1
+{
+
+    hrcr05    [hrcr05      |hrcr05_desc         ]       hrcr04     [hrcr04    ]
+    hrcr02    [hrcr02      |hrcr02_desc         ]       hrcr03     [hrcr03    ]
+    hrbx02    [hrbx02      |hrbu01_desc         ]
+
+
+
+
+}
+END -- Grid1
+Grid Grid6
+{
+
+
+
+
+
+
+
+
+}
+END -- Grid6
+Folder Folder2
+Page Page2(text=%"Page2")
+Grid Grid3
+{
+
+   [dat]
+   [   ]
+   [   ]
+
+}
+END -- Grid3
+END -- Page2
+END -- Folder2
+Grid Grid4
+{
+
+
+
+
+
+
+
+
+}
+END -- Grid4
+Grid Grid5
+{
+
+
+
+
+
+
+
+
+}
+END -- Grid5
+END -- HBox1
+END -- Page1
+END -- Folder1
+Table Table1
+{
+[b_hrcr02    |hrat02  |hrat04    |hrat04_name       |b_hrbu01     |hrbx02_name    |b2_hrbu01   |b_hrcr03    |hrcr06      |shougong     |b_hrcr05    |b_hrcr05_desc  |b_hrcr04     |hrbx06            ]
+[b_hrcr02    |hrat02  |hrat04    |hrat04_name       |b_hrbu01     |hrbx02_name    |b2_hrbu01   |b_hrcr03    |hrcr06      |shougong     |b_hrcr05    |b_hrcr05_desc  |b_hrcr04     |hrbx06            ]
+[b_hrcr02    |hrat02  |hrat04    |hrat04_name       |b_hrbu01     |hrbx02_name    |b2_hrbu01   |b_hrcr03    |hrcr06      |shougong     |b_hrcr05    |b_hrcr05_desc  |b_hrcr04     |hrbx06            ]
+[b_hrcr02    |hrat02  |hrat04    |hrat04_name       |b_hrbu01     |hrbx02_name    |b2_hrbu01   |b_hrcr03    |hrcr06      |shougong     |b_hrcr05    |b_hrcr05_desc  |b_hrcr04     |hrbx06            ]
+[b_hrcr02    |hrat02  |hrat04    |hrat04_name       |b_hrbu01     |hrbx02_name    |b2_hrbu01   |b_hrcr03    |hrcr06      |shougong     |b_hrcr05    |b_hrcr05_desc  |b_hrcr04     |hrbx06            ]
+}
+END -- Table1
+Grid Grid2
+{
+
+   ----------[label7 |cnt     ]----------
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrcr05=formonly.hrcr05, action=controlp, tabIndex=1, image="zoom";
+Edit hrcr05_desc=formonly.hrcr05_desc, tabIndex=2;
+DateEdit hrcr04=formonly.hrcr04, tabIndex=7;
+ButtonEdit hrcr02=formonly.hrcr02, action=controlp, tabIndex=5, image="zoom";
+Edit hrcr02_desc=formonly.hrcr02_desc, tabIndex=6;
+DateEdit hrcr03=formonly.hrcr03, tabIndex=8;
+ButtonEdit hrbx02=formonly.hrbx02, action=controlp, tabIndex=3, image="zoom";
+Edit hrbu01_desc=formonly.hrbu01_desc, tabIndex=4;
+RadioGroup dat=formonly.datacatch, tabIndex=9, items=(("1", "datacatch1"),("2", "datacatch2"),("3", "datacatch3"));
+Edit b_hrcr02=formonly.b_hrcr02, tabIndex=10, title=%"b_hrcr02";
+Edit hrat02=formonly.hrat02, tabIndex=11, title=%"hrat02";
+Edit hrat04=formonly.hrat04, tabIndex=12, title=%"hrat04";
+Edit hrat04_name=formonly.hrat04_name, tabIndex=13, title=%"hrat04_name";
+Edit b_hrbu01=formonly.b_hrbu01, tabIndex=14, title=%"b_hrbu01";
+Edit hrbx02_name=formonly.hrbx02_name, tabIndex=15, title=%"hrbx02_name";
+Edit b2_hrbu01=formonly.b2_hrbu01, tabIndex=16, title=%"b2_hrbu01";
+Edit b_hrcr03=formonly.b_hrcr03, tabIndex=18, title=%"b_hrcr03";
+Edit hrcr06=formonly.hrcr06, tabIndex=17, title=%"hrcr06";
+Edit shougong=formonly.shougong, tabIndex=19, title=%"shougong";
+Edit b_hrcr05=formonly.b_hrcr05, tabIndex=20, title=%"b_hrcr05";
+Edit b_hrcr05_desc=formonly.b_hrcr05_desc, tabIndex=21, title=%"b_hrcr05_desc";
+Edit b_hrcr04=formonly.b_hrcr04, tabIndex=22, title=%"b_hrcr04";
+Edit hrbx06=formonly.hrbx06, tabIndex=23, title=%"hrbx06";
+Label label7:Label7, text=%"Label7";
+Edit cnt=formonly.cnt type CHAR, tabIndex=24;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrcr05,formonly.hrcr05_desc,formonly.hrbx02,formonly.hrbu01_desc,formonly.hrcr02,formonly.hrcr02_desc,formonly.hrcr04,formonly.hrcr03,formonly.datacatch,formonly.cnt)
+SCREEN RECORD s_b_hrcr(formonly.b_hrcr02,formonly.hrat02,formonly.hrat04,formonly.hrat04_name,formonly.b_hrbu01,formonly.hrbx02_name,formonly.b2_hrbu01,formonly.b_hrcr03,formonly.hrcr06,formonly.shougong,formonly.b_hrcr05,formonly.b_hrcr05_desc,formonly.b_hrcr04,formonly.hrbx06)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri078_date.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[name      |des                                              ]
+[name      |des                                              ]
+[name      |des                                              ]
+[name      |des                                              ]
+[name      |des                                              ]
+
+
+
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Edit name=formonly.name type VARCHAR, tabIndex=1, title=%"name", noEntry;
+TextEdit des=formonly.des type VARCHAR, tabIndex=2, title=%"des", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fun(formonly.name,formonly.des)
+END -- INSTRUCTIONS
+

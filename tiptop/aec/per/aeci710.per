@@ -1,0 +1,149 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci710.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci710")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+HBox hb2
+Grid gr1683
+{
+ W/O No.             [sfb01                 ]
+ Product No.         [sfb05                 ]
+ P/N                 [ima02                         ]
+ P/N Spec.           [ima021                        ]
+
+
+
+
+
+
+}
+END -- gr1683
+Grid gr1684
+{
+ Routing Code        [sfb06       ]
+ Routing             [ecm012      ]
+ ecm014              [ecm014              ]
+ Routing S/N         [ecm03       ]
+ Routing Desc        [ecm45               ]
+ Production Station  [ecm06       ]
+ Work Center Desc    [eca02               ]
+
+
+
+}
+END -- gr1684
+Grid gr1685
+{
+ Production Qty           [sfb08     ]
+ Lot Size Stnd Work Hour  [ecm14     ]
+ Lot Size Stnd Machine Tm [ecm16     ]
+ Lot Size Routing Labor   [ecm49     ]
+
+
+
+
+
+
+}
+END -- gr1685
+Grid gr5
+{
+ ecm60#####      [ecm60     ]
+ ecmslk04        [ecmslk04            ]
+ ecmslk03        [ecmslk03            ]
+ ecmslk02        [ecmslk02       ]
+
+
+
+
+
+
+}
+END -- gr5
+END -- hb2
+END -- page01
+END -- folder01
+Table s_sgd
+{
+[sgd05 |sga02            |sga03           |sgd06      |sgd07          |sgd08         |sgd10            |sgd11            |sgd09      |sgdslk05  |sgdslk04            |sgdslk03            |sgdslk02       |sgd13     |sgd14     ]
+[sgd05 |sga02            |sga03           |sgd06      |sgd07          |sgd08         |sgd10            |sgd11            |sgd09      |sgdslk05  |sgdslk04            |sgdslk03            |sgdslk02       |sgd13     |sgd14     ]
+[sgd05 |sga02            |sga03           |sgd06      |sgd07          |sgd08         |sgd10            |sgd11            |sgd09      |sgdslk05  |sgdslk04            |sgdslk03            |sgdslk02       |sgd13     |sgd14     ]
+[sgd05 |sga02            |sga03           |sgd06      |sgd07          |sgd08         |sgd10            |sgd11            |sgd09      |sgdslk05  |sgdslk04            |sgdslk03            |sgdslk02       |sgd13     |sgd14     ]
+[sgd05 |sga02            |sga03           |sgd06      |sgd07          |sgd08         |sgd10            |sgd11            |sgd09      |sgdslk05  |sgdslk04            |sgdslk03            |sgdslk02       |sgd13     |sgd14     ]
+[sgd05 |sga02            |sga03           |sgd06      |sgd07          |sgd08         |sgd10            |sgd11            |sgd09      |sgdslk05  |sgdslk04            |sgdslk03            |sgdslk02       |sgd13     |sgd14     ]
+[sgd05 |sga02            |sga03           |sgd06      |sgd07          |sgd08         |sgd10            |sgd11            |sgd09      |sgdslk05  |sgdslk04            |sgdslk03            |sgdslk02       |sgd13     |sgd14     ]
+[sgd05 |sga02            |sga03           |sgd06      |sgd07          |sgd08         |sgd10            |sgd11            |sgd09      |sgdslk05  |sgdslk04            |sgdslk03            |sgdslk02       |sgd13     |sgd14     ]
+[sgd05 |sga02            |sga03           |sgd06      |sgd07          |sgd08         |sgd10            |sgd11            |sgd09      |sgdslk05  |sgdslk04            |sgdslk03            |sgdslk02       |sgd13     |sgd14     ]
+[sgd05 |sga02            |sga03           |sgd06      |sgd07          |sgd08         |sgd10            |sgd11            |sgd09      |sgdslk05  |sgdslk04            |sgdslk03            |sgdslk02       |sgd13     |sgd14     ]
+}
+END -- s_sgd
+Grid gr1686
+{
+ ---------- Rows [cnt   ] / [cn2   ] ---------- Stnd Labor Hour(Second) [ecm14a         ]         Stnd Machine Tm(Sec)    [ecm16a         ]             Routing Labor           [ecm49a         ]
+
+
+
+
+}
+END -- gr1686
+END -- VBox1
+END -- aeci710
+
+TABLES
+sgd_file,
+sfb_file,
+ecm_file,
+sga_file
+ATTRIBUTES
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=2, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=4, noEntry;
+ButtonEdit sfb06=sfb_file.sfb06, action=controlp, tabIndex=5, image="zoom";
+Edit ecm012=ecm_file.ecm012, tabIndex=38;
+Edit ecm014=ecm_file.ecm014, tabIndex=39;
+Edit ecm03=ecm_file.ecm03, tabIndex=6;
+Edit ecm45=ecm_file.ecm45, tabIndex=7;
+ButtonEdit ecm06=ecm_file.ecm06, action=controlp, tabIndex=8, image="zoom";
+Edit eca02=formonly.eca02 type CHAR, tabIndex=9;
+Edit sfb08=sfb_file.sfb08, tabIndex=10, not null, required;
+Edit ecm14=ecm_file.ecm14, tabIndex=11;
+Edit ecm16=ecm_file.ecm16, tabIndex=12;
+Edit ecm49=ecm_file.ecm49, tabIndex=13;
+Edit ecm60=ecm_file.ecm60, tabIndex=28, noEntry;
+Edit ecmslk04=ecm_file.ecmslk04, tabIndex=29, noEntry;
+Edit ecmslk03=ecm_file.ecmslk03, tabIndex=30, noEntry;
+Edit ecmslk02=ecm_file.ecmslk02, tabIndex=31, noEntry;
+ButtonEdit sgd05=sgd_file.sgd05, action=controlp, tabIndex=14, title="Cell#", not null, required, image="zoom", comment="<^P>Open window Qry Cell No.";
+Edit sga02=sga_file.sga02, tabIndex=15, title="Name", noEntry;
+Edit sga03=sga_file.sga03, tabIndex=16, title="Specification", noEntry;
+Edit sgd06=sgd_file.sgd06, tabIndex=17, title="Parts Qty", not null, required;
+Edit sgd07=sgd_file.sgd07, tabIndex=18, title="Unit Labor Tm", noEntry;
+Edit sgd08=sgd_file.sgd08, tabIndex=19, title="Cell Labor Hr", noEntry;
+Edit sgd10=sgd_file.sgd10, tabIndex=20, title="Unit Machine Tm", noEntry;
+Edit sgd11=sgd_file.sgd11, tabIndex=21, title="Cell Machine Hr", noEntry;
+Edit sgd09=sgd_file.sgd09, tabIndex=22, title="Uint Labor", not null, required;
+Edit sgdslk05=sgd_file.sgdslk05, tabIndex=32, title="sgdslk05";
+Edit sgdslk04=sgd_file.sgdslk04, tabIndex=33, title="sgdslk04";
+Edit sgdslk03=sgd_file.sgdslk03, tabIndex=34, title="sgdslk03";
+Edit sgdslk02=sgd_file.sgdslk02, tabIndex=35, title="sgdslk02";
+CheckBox sgd13=sgd_file.sgd13, tabIndex=36, title="sgd13", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sgd14=sgd_file.sgd14, tabIndex=37, title="sgd14", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=24, noEntry;
+Edit ecm14a=formonly.ecm14a type CHAR, tabIndex=25;
+Edit ecm16a=formonly.ecm16a type CHAR, tabIndex=26;
+Edit ecm49a=formonly.ecm49a type CHAR, tabIndex=27;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sgd(sgd_file.sgd05,sga_file.sga02,sga_file.sga03,sgd_file.sgd06,sgd_file.sgd07,sgd_file.sgd08,sgd_file.sgd10,sgd_file.sgd11,sgd_file.sgd09,sgd_file.sgdslk05,sgd_file.sgdslk04,sgd_file.sgdslk03,sgd_file.sgdslk02,sgd_file.sgd13,sgd_file.sgd14)
+SCREEN RECORD Undefined(sfb_file.sfb01,sfb_file.sfb05,formonly.ima02,formonly.ima021,sfb_file.sfb06,ecm_file.ecm012,ecm_file.ecm014,ecm_file.ecm03,ecm_file.ecm45,ecm_file.ecm06,formonly.eca02,sfb_file.sfb08,ecm_file.ecm14,ecm_file.ecm16,ecm_file.ecm49,ecm_file.ecm60,ecm_file.ecmslk04,ecm_file.ecmslk03,ecm_file.ecmslk02,formonly.cnt,formonly.cn2,formonly.ecm14a,formonly.ecm16a,formonly.ecm49a)
+END -- INSTRUCTIONS
+

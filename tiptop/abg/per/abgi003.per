@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi003")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr577
+{
+ Version             [bgc01     ]
+ Year                [bgc02     ]
+ Currency            [bgc04     ]
+ Item No.            [bgc05                         ]
+ Goods Name          [ima02                         ]
+ Spec                [ima021                        ]
+ Purchase Unit       [bgc08     ]
+}
+END -- gr577
+END -- HBox1
+END -- page01
+Page info(text=%"Page1")
+Grid gr588
+{
+ Record Owner        [bgcuser   ]   Last Modified by    [bgcmodu   ]
+ Department          [bgcgrup   ]   Create/Modify Date  [bgcdate   ]
+ Record Orig.        [bgcoriu   ]
+ Dept Orig.          [bgcorig   ]
+}
+END -- gr588
+END -- info
+END -- folder01
+Table s_bgc
+{
+[bgc03   |bga05             |bgc06                          |bgc07                   ]
+[bgc03   |bga05             |bgc06                          |bgc07                   ]
+[bgc03   |bga05             |bgc06                          |bgc07                   ]
+[bgc03   |bga05             |bgc06                          |bgc07                   ]
+[bgc03   |bga05             |bgc06                          |bgc07                   ]
+[bgc03   |bga05             |bgc06                          |bgc07                   ]
+[bgc03   |bga05             |bgc06                          |bgc07                   ]
+[bgc03   |bga05             |bgc06                          |bgc07                   ]
+[bgc03   |bga05             |bgc06                          |bgc07                   ]
+[bgc03   |bga05             |bgc06                          |bgc07                   ]
+}
+END -- s_bgc
+Grid gr578
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr578
+END -- VBox1
+END -- abgi003
+
+TABLES
+bgc_file
+ATTRIBUTES
+Edit bgc01=bgc_file.bgc01, tabIndex=1, not null, required;
+Edit bgc02=bgc_file.bgc02, tabIndex=2, not null, required;
+ButtonEdit bgc04=bgc_file.bgc04, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P> Qry Curr.   ";
+ButtonEdit bgc05=bgc_file.bgc05, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P> Qry Item Master";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=5, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=6, noEntry;
+ButtonEdit bgc08=bgc_file.bgc08, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P> Qry. Unit";
+Edit bgcuser=bgc_file.bgcuser, tabIndex=8, noEntry;
+Edit bgcmodu=bgc_file.bgcmodu, tabIndex=12, noEntry;
+Edit bgcgrup=bgc_file.bgcgrup, tabIndex=9, noEntry;
+Edit bgcdate=bgc_file.bgcdate, tabIndex=13, noEntry;
+Edit bgcoriu=bgc_file.bgcoriu, tabIndex=10, noEntry;
+Edit bgcorig=bgc_file.bgcorig, tabIndex=11, noEntry;
+Edit bgc03=bgc_file.bgc03, tabIndex=14, title="Month", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit bga05=formonly.bga05 type CHAR, tabIndex=15, title="Exchange Rate", noEntry;
+Edit bgc06=bgc_file.bgc06, tabIndex=16, title="Original Currency Unit/Price", not null, required;
+Edit bgc07=bgc_file.bgc07, tabIndex=17, title="Home Currency Unit/Price", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgc(bgc_file.bgc03,formonly.bga05,bgc_file.bgc06,bgc_file.bgc07)
+SCREEN RECORD Undefined(bgc_file.bgc01,bgc_file.bgc02,bgc_file.bgc04,bgc_file.bgc05,formonly.ima02,formonly.ima021,bgc_file.bgc08,bgc_file.bgcuser,bgc_file.bgcmodu,bgc_file.bgcgrup,bgc_file.bgcdate,bgc_file.bgcoriu,bgc_file.bgcorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

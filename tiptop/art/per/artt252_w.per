@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt252_w.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Group Group1(text=%"Group1")
+Grid Grid1
+{
+
+    type       [type                                     ]
+    rvn09      [rvn09                 ]
+    rvn06      [rvn06                 ]
+
+}
+END -- Grid1
+END -- Group1
+END -- Form
+
+ATTRIBUTES
+RadioGroup type=formonly.type type CHAR, tabIndex=1, not null, orientation=horizontal, items=(("1", "Demand"),("2", "Average"),("3", "Shop"));
+ButtonEdit rvn09=formonly.rvn09 type VARCHAR, action=controlp, tabIndex=2, image="zoom", scroll;
+ButtonEdit rvn06=formonly.rvn06 type VARCHAR, action=controlp, tabIndex=3, image="zoom", scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.type)
+SCREEN RECORD Record1(formonly.rvn09,formonly.rvn06)
+END -- INSTRUCTIONS
+

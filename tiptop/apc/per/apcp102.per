@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apcp102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"apcp101")
+Grid gr7
+{
+
+  <G gb7                                                                                                    >
+        Trans_DB [pdb          ]
+  <                                                                                                         >
+  <G gb8                                                                                                    >
+        Appoint Plant[plant                                              ]
+                     [dummy1                                                                      ]
+
+        Appoint Pos  [pos                                                ]
+
+  <                                                                                                         >
+
+  <G gb9                                                                                                    >
+         Date       [date                          ]
+                    [sale                   ]
+                    [order                       ]
+                    [deposit         ]
+                    [card            ]
+                    [coupon          ]
+  <                                                                                                         >
+}
+END -- gr7
+END -- Form4
+
+ATTRIBUTES
+Group gb7:gb7, text="Basic Info";
+Edit pdb=formonly.pdb type CHAR, tabIndex=1, not null, required;
+Group gb8:gb8, text="Choice Plant";
+ButtonEdit plant=formonly.plant type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom", upShift;
+Label dummy1:dummy1, text="LRDMDS,QY\'|\'H\';\'GK";
+Edit pos=formonly.pos type CHAR, tabIndex=3, upShift;
+Group gb9:gb9, text="TransData Area";
+DateEdit date=formonly.date type CHAR, tabIndex=4, not null, required;
+CheckBox sale=formonly.sale type CHAR, tabIndex=5, text=%"Pos Sale Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox order=formonly.order type CHAR, tabIndex=6, text=%"Pos Order Data", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox deposit=formonly.deposit type CHAR, tabIndex=7, text=%"Pos Deposit Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox card=formonly.card type VARCHAR, tabIndex=8, text=%"Pos Card", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox coupon=formonly.coupon type VARCHAR, tabIndex=9, text=%"Pos Coupon", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pdb,formonly.plant,formonly.pos,formonly.date,formonly.sale,formonly.order,formonly.deposit,formonly.card,formonly.coupon)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_per_chg_location.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_per_chg_location")
+VBox vb3
+Grid gr10
+{
+ <G group01                                              >
+ [dummy01                                     ]
+ [chg_field        ]
+ <                                                       >
+ <G group02                                              >
+ [dummy02                                     ]
+ [page_field       ]
+ <                                                       >
+ <G group03                                              >
+ [dummy03                                     ]
+ [h_field          ]
+ [dummy07                                     ]
+ <                                                       >
+ <G group04                                              >
+ [dummy04                                     ]
+ [v_field          ]
+ [dummy06                                     ]
+ [before_field     ]
+ <                                                       >
+}
+END -- gr10
+Grid gr2
+{
+[tabindex_flag                                 ]
+
+}
+END -- gr2
+Grid gr7
+{
+
+[prev_step   |next_step   |loc_finish  ]    [cancel      ]
+
+}
+END -- gr7
+END -- vb3
+END -- p_per_chg_location
+
+ATTRIBUTES
+Group group01:group01;
+Label dummy01:dummy01, text="Which field do you want to change location?";
+ComboBox chg_field=formonly.chg_field type VARCHAR, tabIndex=1, not null;
+Group group02:group02;
+Label dummy02:dummy02, text="Which page of field existence do you want to move to?";
+ComboBox page_field=formonly.page_field type VARCHAR, tabIndex=2, not null;
+Group group03:group03;
+Label dummy03:dummy03, text="With which horizon together of field?";
+ComboBox h_field=formonly.h_field type VARCHAR, tabIndex=3;
+Label dummy07:dummy07, text="* If doesn\'t choose, increase new one row.";
+Group group04:group04;
+Label dummy04:dummy04, text="With which vertical together of field?";
+ComboBox v_field=formonly.v_field type VARCHAR, tabIndex=4;
+Label dummy06:dummy06, text="Which field do you want to insert after? (null will be by horizon)";
+ComboBox before_field=formonly.before_field type VARCHAR, tabIndex=6;
+CheckBox tabindex_flag=formonly.tabindex_flag type VARCHAR, tabIndex=5, text="After finishing this change, then adjust the input order of all field", not null, valueChecked = "Y", valueUnchecked = "N";
+Button prev_step:prev_step, text="Previous", sizePolicy=fixed;
+Button next_step:next_step, text="next", sizePolicy=fixed;
+Button loc_finish:loc_finish, text="Finish", sizePolicy=fixed;
+Button cancel:cancel, text="Cancel", sizePolicy=fixed;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.chg_field,formonly.page_field,formonly.h_field,formonly.v_field,formonly.before_field,formonly.tabindex_flag)
+END -- INSTRUCTIONS
+

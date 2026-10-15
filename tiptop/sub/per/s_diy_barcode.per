@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_diy_barcode.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"main")
+Grid Grid2
+{
+
+ No     [no                  ]
+
+}
+END -- Grid2
+END -- Page1
+END -- Folder1
+Table s_diy
+{
+[ln   |ima01             |ima02               |ima021              |lot           |seq           |end_seq       |qty         |ima918  |ima919  |ima920  |ima921  |ima922  |ima923  ]
+[ln   |ima01             |ima02               |ima021              |lot           |seq           |end_seq       |qty         |ima918  |ima919  |ima920  |ima921  |ima922  |ima923  ]
+[ln   |ima01             |ima02               |ima021              |lot           |seq           |end_seq       |qty         |ima918  |ima919  |ima920  |ima921  |ima922  |ima923  ]
+[ln   |ima01             |ima02               |ima021              |lot           |seq           |end_seq       |qty         |ima918  |ima919  |ima920  |ima921  |ima922  |ima923  ]
+[ln   |ima01             |ima02               |ima021              |lot           |seq           |end_seq       |qty         |ima918  |ima919  |ima920  |ima921  |ima922  |ima923  ]
+[ln   |ima01             |ima02               |ima021              |lot           |seq           |end_seq       |qty         |ima918  |ima919  |ima920  |ima921  |ima922  |ima923  ]
+[ln   |ima01             |ima02               |ima021              |lot           |seq           |end_seq       |qty         |ima918  |ima919  |ima920  |ima921  |ima922  |ima923  ]
+[ln   |ima01             |ima02               |ima021              |lot           |seq           |end_seq       |qty         |ima918  |ima919  |ima920  |ima921  |ima922  |ima923  ]
+[ln   |ima01             |ima02               |ima021              |lot           |seq           |end_seq       |qty         |ima918  |ima919  |ima920  |ima921  |ima922  |ima923  ]
+[ln   |ima01             |ima02               |ima021              |lot           |seq           |end_seq       |qty         |ima918  |ima919  |ima920  |ima921  |ima922  |ima923  ]
+}
+END -- s_diy
+Grid Grid1
+{
+ ----------  count[cnt       ] ----------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit no=formonly.no, tabIndex=1;
+Edit ln=formonly.ln, tabIndex=2, title=%"ln", noEntry;
+Edit ima01=formonly.ima01, tabIndex=3, title=%"ima01", noEntry;
+Edit ima02=formonly.ima02, tabIndex=4, title=%"ima02", noEntry;
+Edit ima021=formonly.ima021, tabIndex=5, title=%"ima021", noEntry;
+Edit lot=formonly.lot, tabIndex=6, title=%"lot";
+Edit seq=formonly.seq, tabIndex=7, title=%"seq";
+Edit end_seq=formonly.end_seq, tabIndex=8, title=%"end_seq", noEntry;
+Edit qty=formonly.qty, tabIndex=9, title=%"qty", noEntry;
+CheckBox ima918=formonly.ima918, tabIndex=10, title=%"ima918", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ima919=formonly.ima919, tabIndex=11, title=%"ima919", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N", hidden;
+Edit ima920=formonly.ima920, tabIndex=12, title=%"ima920", noEntry, hidden;
+CheckBox ima921=formonly.ima921, tabIndex=13, title=%"ima921", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ima922=formonly.ima922, tabIndex=14, title=%"ima922", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N", hidden;
+Edit ima923=formonly.ima923, tabIndex=15, title=%"ima923", noEntry, hidden;
+Edit cnt=formonly.cnt, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.no,formonly.cnt)
+SCREEN RECORD s_diy(formonly.ln,formonly.ima01,formonly.ima02,formonly.ima021,formonly.lot,formonly.seq,formonly.end_seq,formonly.qty,formonly.ima918,formonly.ima919,formonly.ima920,formonly.ima921,formonly.ima922,formonly.ima923)
+END -- INSTRUCTIONS
+

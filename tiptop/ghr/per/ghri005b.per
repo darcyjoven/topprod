@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri005b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrasb02   |hrasb03   |hrasb04      |hrasb05      |hrasb06    ]
+[hrasb02   |hrasb03   |hrasb04      |hrasb05      |hrasb06    ]
+[hrasb02   |hrasb03   |hrasb04      |hrasb05      |hrasb06    ]
+[hrasb02   |hrasb03   |hrasb04      |hrasb05      |hrasb06    ]
+[hrasb02   |hrasb03   |hrasb04      |hrasb05      |hrasb06    ]
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Edit hrasb02=formonly.hrasb02 type INTEGER, tabIndex=1, title=%"hrasb02", noEntry;
+Edit hrasb03=formonly.hrasb03 type VARCHAR, tabIndex=2, title=%"hrasb03", not null, required;
+Edit hrasb04=formonly.hrasb04 type DECIMAL, tabIndex=3, title=%"hrasb04", not null, required;
+Edit hrasb05=formonly.hrasb05 type VARCHAR, tabIndex=4, title=%"hrasb05", not null, required;
+TextEdit hrasb06=formonly.hrasb06 type VARCHAR, tabIndex=5, title=%"hrasb06";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrasb(formonly.hrasb02,formonly.hrasb03,formonly.hrasb04,formonly.hrasb05,formonly.hrasb06)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi406.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form1")
+VBox VBox1(splitter)
+Folder pc1
+Page Page1(text=%"Main1")
+Grid Grid2
+{
+ odr00  [odr00               ]     odr01  [odr01           |odl02          ]   [odp13          ]
+
+
+}
+END -- Grid2
+END -- Page1
+END -- pc1
+Folder pc2
+Page Page3(text=%"Main2")
+Table s_odp
+{
+[odp07        |ima02   |odp08_s   |odn08      |odp08_odn08  |odp09_s          |odp10_s        |odp12               |ima02_1    ]
+[odp07        |ima02   |odp08_s   |odn08      |odp08_odn08  |odp09_s          |odp10_s        |odp12               |ima02_1    ]
+[odp07        |ima02   |odp08_s   |odn08      |odp08_odn08  |odp09_s          |odp10_s        |odp12               |ima02_1    ]
+[odp07        |ima02   |odp08_s   |odn08      |odp08_odn08  |odp09_s          |odp10_s        |odp12               |ima02_1    ]
+[odp07        |ima02   |odp08_s   |odn08      |odp08_odn08  |odp09_s          |odp10_s        |odp12               |ima02_1    ]
+
+}
+END -- s_odp
+END -- Page3
+END -- pc2
+HBox HBox1(splitter)
+Folder pc4
+Page Page7(text=%"Main4")
+Table s_odr2
+{
+[odr02_2       |occ02_2 |odr05_s |odp09     |odp10     |odr05_to|odp09_tota|odp10_tota|odo03   |odo04     |odr06   ]
+[odr02_2       |occ02_2 |odr05_s |odp09     |odp10     |odr05_to|odp09_tota|odp10_tota|odo03   |odo04     |odr06   ]
+[odr02_2       |occ02_2 |odr05_s |odp09     |odp10     |odr05_to|odp09_tota|odp10_tota|odo03   |odo04     |odr06   ]
+[odr02_2       |occ02_2 |odr05_s |odp09     |odp10     |odr05_to|odp09_tota|odp10_tota|odo03   |odo04     |odr06   ]
+[odr02_2       |occ02_2 |odr05_s |odp09     |odp10     |odr05_to|odp09_tota|odp10_tota|odo03   |odo04     |odr06   ]
+
+}
+END -- s_odr2
+END -- Page7
+END -- pc4
+Folder pc3
+Page Page5(text=%"Main3")
+Table s_odr
+{
+[odr02     |occ02   |agd02_1 |agd02_2    |odr04        |odr05          |odr07      ]
+[odr02     |occ02   |agd02_1 |agd02_2    |odr04        |odr05          |odr07      ]
+[odr02     |occ02   |agd02_1 |agd02_2    |odr04        |odr05          |odr07      ]
+[odr02     |occ02   |agd02_1 |agd02_2    |odr04        |odr05          |odr07      ]
+[odr02     |occ02   |agd02_1 |agd02_2    |odr04        |odr05          |odr07      ]
+
+}
+END -- s_odr
+END -- Page5
+END -- pc3
+END -- HBox1
+Grid Grid1
+{
+ -----  Rows[idx  ]/[cnt   ]Project1[cn1   ]  Project2 [cn2    ] Project3  [cn3    ]
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form1
+
+TABLES
+odr_file
+ATTRIBUTES
+ButtonEdit odr00=odr_file.odr00, action=controlp, tabIndex=31, not null, required, image="zoom";
+ButtonEdit odr01=formonly.odr01 type VARCHAR, action=controlp, tabIndex=2, not null, image="zoom";
+Edit odl02=formonly.odl02 type CHAR, tabIndex=1;
+ComboBox odp13=formonly.odp13 type CHAR, tabIndex=32, not null, required, items=(("1", "futures"),("2", "spot"));
+ButtonEdit odp07=formonly.odp07 type CHAR, action=controlp, tabIndex=3, title="odp07", not null, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, title="ima02", noEntry;
+Edit odp08_s=formonly.odp08_s type CHAR, tabIndex=5, title=%"odp08_s", noEntry;
+Edit odn08=formonly.odn08 type CHAR, tabIndex=6, title=%"odn08", noEntry;
+Edit odp08_odn08=formonly.odp08_odn08 type CHAR, tabIndex=7, title=%"odp08_odn08", noEntry;
+Edit odp09_s=formonly.odp09_s type CHAR, tabIndex=8, title=%"odp09_s", noEntry;
+Edit odp10_s=formonly.odp10_s type CHAR, tabIndex=9, title=%"odp10_s", noEntry;
+Edit odp12=formonly.odp12 type CHAR, tabIndex=28, title=%"odp12", noEntry;
+Edit ima02_1=formonly.ima02_1, tabIndex=36, title=%"ima02_1", noEntry;
+ButtonEdit odr02_2=formonly.odr02_2 type CHAR, action=controlp, tabIndex=16, title="odr02_2", image="zoom";
+Edit occ02_2=formonly.occ02_2 type CHAR, tabIndex=27, title=%"occ02_2";
+Edit odr05_s=formonly.odr05_s type CHAR, tabIndex=17, title="odr05_s", noEntry;
+Edit odp09=formonly.odp09 type CHAR, tabIndex=18, title=%"odp09", noEntry;
+Edit odp10=formonly.odp10 type CHAR, tabIndex=19, title=%"odp10", noEntry;
+Edit odr05_to=formonly.odr05_total type CHAR, tabIndex=33, title=%"odr05_total", noEntry;
+Edit odp09_tota=formonly.odp09_total type CHAR, tabIndex=34, title=%"odp09_total", noEntry;
+Edit odp10_tota=formonly.odp10_total, tabIndex=35, title=%"odp10_total", noEntry;
+Edit odo03=formonly.odo03 type CHAR, tabIndex=20, title=%"odo03", noEntry;
+Edit odo04=formonly.odo04 type CHAR, tabIndex=21, title=%"odo04", noEntry;
+Edit odr06=formonly.odr06 type CHAR, tabIndex=30, title=%"odr06", noEntry;
+ButtonEdit odr02=formonly.odr02 type CHAR, action=controlp, tabIndex=10, title="odr02", not null, image="zoom";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=11, title="occ02", noEntry;
+Edit agd02_1=formonly.agd02_1 type CHAR, tabIndex=12, title=%"agd02_1", noEntry;
+Edit agd02_2=formonly.agd02_2 type CHAR, tabIndex=14, title=%"agd02_2", noEntry;
+Edit odr04=formonly.odr04 type CHAR, tabIndex=13, title=%"odr04", noEntry;
+Edit odr05=formonly.odr05 type CHAR, tabIndex=15, title=%"odr05";
+Edit odr07=formonly.odr07 type CHAR, tabIndex=29, title=%"odr07", noEntry;
+Edit idx=formonly.idx type CHAR, tabIndex=22;
+Edit cnt=formonly.cnt type CHAR, tabIndex=23;
+Edit cn1=formonly.cn1 type CHAR, tabIndex=24;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=25;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=26;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_odp(formonly.odp07,formonly.ima02,formonly.odp08_s,formonly.odn08,formonly.odp08_odn08,formonly.odp09_s,formonly.odp10_s,formonly.odp12,formonly.ima02_1)
+SCREEN RECORD s_odr(formonly.odr02,formonly.occ02,formonly.agd02_1,formonly.agd02_2,formonly.odr04,formonly.odr05,formonly.odr07)
+SCREEN RECORD s_odr2(formonly.odr02_2,formonly.occ02_2,formonly.odr05_s,formonly.odp09,formonly.odp10,formonly.odr05_total,formonly.odp09_total,formonly.odp10_total,formonly.odo03,formonly.odo04,formonly.odr06)
+SCREEN RECORD Undefined(formonly.odr01,formonly.odl02,formonly.idx,formonly.cnt,formonly.cn1,formonly.cn2,formonly.cn3,odr_file.odr00,formonly.odp13)
+END -- INSTRUCTIONS
+

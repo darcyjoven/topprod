@@ -1,0 +1,69 @@
+----------------------------------------------------------------------------------
+-- $Id:  axds010.per created Wed Jan 23 05:30:43 2008
+-- File created from axds010.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axds010")
+-- TABLE
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1577
+      PAGE page01( TEXT="Page01")
+        TABLE   s_adu
+        {
+        [aa0       |aa1               |aa2               |aa3         |aa4           |aa5             |aa6       |aa7      |aa8          |aa9       |ab0        |ab1        |ab2        |ab3             |ab4   ]
+        [aa0       |aa1               |aa2               |aa3         |aa4           |aa5             |aa6       |aa7      |aa8          |aa9       |ab0        |ab1        |ab2        |ab3             |ab4   ]
+        [aa0       |aa1               |aa2               |aa3         |aa4           |aa5             |aa6       |aa7      |aa8          |aa9       |ab0        |ab1        |ab2        |ab3             |ab4   ]
+        [aa0       |aa1               |aa2               |aa3         |aa4           |aa5             |aa6       |aa7      |aa8          |aa9       |ab0        |ab1        |ab2        |ab3             |ab4   ]
+        [aa0       |aa1               |aa2               |aa3         |aa4           |aa5             |aa6       |aa7      |aa8          |aa9       |ab0        |ab1        |ab2        |ab3             |ab4   ]
+        [aa0       |aa1               |aa2               |aa3         |aa4           |aa5             |aa6       |aa7      |aa8          |aa9       |ab0        |ab1        |ab2        |ab3             |ab4   ]
+        [aa0       |aa1               |aa2               |aa3         |aa4           |aa5             |aa6       |aa7      |aa8          |aa9       |ab0        |ab1        |ab2        |ab3             |ab4   ]
+        [aa0       |aa1               |aa2               |aa3         |aa4           |aa5             |aa6       |aa7      |aa8          |aa9       |ab0        |ab1        |ab2        |ab3             |ab4   ]
+        [aa0       |aa1               |aa2               |aa3         |aa4           |aa5             |aa6       |aa7      |aa8          |aa9       |ab0        |ab1        |ab2        |ab3             |ab4   ]
+        [aa0       |aa1               |aa2               |aa3         |aa4           |aa5             |aa6       |aa7      |aa8          |aa9       |ab0        |ab1        |ab2        |ab3             |ab4   ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr7848
+    {
+     ----------Rows [ab5   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adu_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=adu_file.adu01, ACTION=controlp, COMMENT="KEY Field,No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=1, TITLE="Plant";
+  BUTTONEDIT aa1=adu_file.adu02, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=2, TITLE="Purchase";
+  BUTTONEDIT aa2=adu_file.adu021, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=3, TITLE="Receipt";
+  BUTTONEDIT aa3=adu_file.adu03, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=4, TITLE="Pay.Terms";
+  BUTTONEDIT aa4=adu_file.adu04, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=5, TITLE="Price.Terms";
+  BUTTONEDIT aa5=adu_file.adu05, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=6, TITLE="Ship Addrress";
+  BUTTONEDIT aa6=adu_file.adu06, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=7, TITLE="Buyer";
+  EDIT aa7=FORMONLY.gen02 TYPE VARCHAR, NOENTRY, TABINDEX=8, TITLE="Name";
+  BUTTONEDIT aa8=adu_file.adu07, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=9, TITLE="Department";
+  EDIT aa9=FORMONLY.gem02 TYPE VARCHAR, NOENTRY, TABINDEX=10, TITLE="Name";
+  BUTTONEDIT ab0=adu_file.adu08, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=11, TITLE="Tax Type";
+  EDIT ab1=adu_file.adu09, TABINDEX=12, TITLE="TaxRate%";
+  BUTTONEDIT ab2=adu_file.adu10, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=13, TITLE="Currency";
+  BUTTONEDIT ab3=adu_file.adu11, ACTION=controlp, IMAGE="zoom", TABINDEX=14, TITLE="Exchange Rate";
+  CHECKBOX ab4=adu_file.aduacti, COMMENT="No Blank/Repeated!", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=15, TITLE="Valid?";
+  EDIT ab5=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=16;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adu (adu_file.adu01, adu_file.adu02, adu_file.adu021, adu_file.adu03, adu_file.adu04, adu_file.adu05, adu_file.adu06, FORMONLY.gen02, adu_file.adu07, FORMONLY.gem02, adu_file.adu08, adu_file.adu09, adu_file.adu10, adu_file.adu11, adu_file.aduacti)
+END

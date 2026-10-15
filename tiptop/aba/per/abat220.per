@@ -1,0 +1,104 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abat220.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox1(splitter)
+Table Table3(doubleClick=accept_a)
+{
+[oea01          |oea03   |oea032    |oba01   |oba02   |ruku ]
+[oea01          |oea03   |oea032    |oba01   |oba02   |ruku ]
+[oea01          |oea03   |oea032    |oba01   |oba02   |ruku ]
+[oea01          |oea03   |oea032    |oba01   |oba02   |ruku ]
+[oea01          |oea03   |oea032    |oba01   |oba02   |ruku ]
+
+
+}
+END -- Table3
+HBox HBox1(splitter)
+Table Table1
+{
+[sfb01       |sfb05   |ima02          |ima021     |sfb04   |sfb08   |sfb09   |sets    ]
+[sfb01       |sfb05   |ima02          |ima021     |sfb04   |sfb08   |sfb09   |sets    ]
+[sfb01       |sfb05   |ima02          |ima021     |sfb04   |sfb08   |sfb09   |sets    ]
+[sfb01       |sfb05   |ima02          |ima021     |sfb04   |sfb08   |sfb09   |sets    ]
+[sfb01       |sfb05   |ima02          |ima021     |sfb04   |sfb08   |sfb09   |sets    ]
+[sfb01       |sfb05   |ima02          |ima021     |sfb04   |sfb08   |sfb09   |sets    ]
+[sfb01       |sfb05   |ima02          |ima021     |sfb04   |sfb08   |sfb09   |sets    ]
+[sfb01       |sfb05   |ima02          |ima021     |sfb04   |sfb08   |sfb09   |sets    ]
+[sfb01       |sfb05   |ima02          |ima021     |sfb04   |sfb08   |sfb09   |sets    ]
+[sfb01       |sfb05   |ima02          |ima021     |sfb04   |sfb08   |sfb09   |sets    ]
+
+}
+END -- Table1
+Table Table2
+{
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+
+}
+END -- Table2
+END -- HBox1
+Grid Grid1
+{
+
+[label1  |idx  |la|cnt  |l1|cn2  ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit oea01=formonly.oea01 type CHAR, action=controlp, tabIndex=16, title=%"oea01", image="zoom";
+ButtonEdit oea03=formonly.oea03 type CHAR, action=controlp, tabIndex=17, title=%"oea03", image="zoom";
+Edit oea032=formonly.oea032 type CHAR, tabIndex=18, title=%"oea032";
+ButtonEdit oba01=formonly.oba01 type CHAR, action=controlp, tabIndex=19, title=%"oba01", image="zoom";
+Edit oba02=formonly.oba02 type CHAR, tabIndex=20, title=%"oba02";
+CheckBox ruku=formonly.ruku type CHAR, tabIndex=21, title=%"ruku", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sfb01=formonly.sfb01 type VARCHAR, action=controlp, tabIndex=1, title=%"sfb01", image="zoom";
+ButtonEdit sfb05=formonly.sfb05 type CHAR, action=controlp, tabIndex=2, title=%"sfb05", image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, title=%"ima02", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=4, title=%"ima021", noEntry;
+ComboBox sfb04=formonly.sfb04 type CHAR, tabIndex=5, title=%"sfb04", items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"));
+Edit sfb08=formonly.sfb08 type DECIMAL, tabIndex=6, title=%"sfb08";
+Edit sfb09=formonly.sfb09 type DECIMAL, tabIndex=7, title=%"sfb09";
+Edit sets=formonly.sets type DECIMAL, tabIndex=8, title=%"sets";
+Edit imgb01=formonly.imgb01 type CHAR, tabIndex=9, title=%"imgb01";
+Edit ibb0=formonly.ibb05 type CHAR, tabIndex=10, title=%"ibb05";
+Edit imgb=formonly.imgb02 type CHAR, tabIndex=11, title=%"imgb02";
+Edit img1=formonly.imgb03 type CHAR, tabIndex=12, title=%"imgb05";
+Edit img2=formonly.imgb04 type CHAR, tabIndex=25, title=%"imgb04";
+Edit imgb0=formonly.imgb05 type DECIMAL, tabIndex=13, title=%"imgb05";
+Edit more=formonly.more type DECIMAL, tabIndex=14, title=%"more";
+Edit less=formonly.less type DECIMAL, tabIndex=15, title=%"less";
+Label label1:Label1, text=%"Label1";
+Edit idx=formonly.idx type CHAR, tabIndex=22;
+Label la:Label2, text=%"/";
+Edit cnt=formonly.cnt type CHAR, tabIndex=23;
+Label l1:Label3, text=%"/";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=24;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_sfb(formonly.sfb01,formonly.sfb05,formonly.ima02,formonly.ima021,formonly.sfb04,formonly.sfb08,formonly.sfb09,formonly.sets)
+SCREEN RECORD s_imgb(formonly.imgb01,formonly.ibb05,formonly.imgb02,formonly.imgb03,formonly.imgb04,formonly.imgb05,formonly.more,formonly.less)
+SCREEN RECORD s_oea(formonly.oea01,formonly.oea03,formonly.oea032,formonly.oba01,formonly.oba02,formonly.ruku)
+END -- INSTRUCTIONS
+

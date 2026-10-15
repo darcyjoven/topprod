@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armt300_t.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"armt300_t")
+Grid gr257
+{
+ <G group01                         >
+  Data Year/Month     [year] /[mm]
+  Document Date       [sdate       ]
+  Body Rows           [bcnt      ]
+  RMA Warehouse       [w1        ]
+  Issuing Note        [no1       ]
+  Receipt Type        [no2       ]
+ <                                  >
+
+}
+END -- gr257
+END -- armt300_t
+
+ATTRIBUTES
+Group group01:group01;
+Edit year=formonly.year type SMALLINT, tabIndex=1;
+Edit mm=formonly.mm type SMALLINT, tabIndex=2;
+DateEdit sdate=formonly.sdate type DATE, tabIndex=3;
+Edit bcnt=formonly.bcnt type SMALLINT, tabIndex=4;
+Edit w1=formonly.w1 type VARCHAR, tabIndex=5, noEntry;
+Edit no1=formonly.no1 type VARCHAR, tabIndex=6, noEntry;
+Edit no2=formonly.no2 type VARCHAR, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.year,formonly.mm,formonly.sdate,formonly.bcnt,formonly.w1,formonly.no1,formonly.no2)
+END -- INSTRUCTIONS
+

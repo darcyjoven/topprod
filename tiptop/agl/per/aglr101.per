@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr101")
+VBox VBox1
+Group group01(text="INPUT")
+VBox VBox2
+Grid gr2596
+{
+ Book No.                      [b         ]
+ Report Structure No.          [a         ]
+ Group No.                     [abe01     ]
+ Enter Year                    [yy        ]
+ Period (Initial-End)          [bm        ] - [em        ]
+ Print Minimum Level NO.       [f         ]
+}
+END -- gr2596
+Grid gr2597
+{
+ <G group03                                                          >
+  [d                             ]
+ <                                                                   >
+
+}
+END -- gr2597
+Grid gr2598
+{
+ [c                             ]
+ [e                             ]
+}
+END -- gr2598
+END -- VBox2
+END -- group01
+Grid gr2599
+{
+[more                                                        ]
+
+}
+END -- gr2599
+END -- VBox1
+END -- aglr101
+
+ATTRIBUTES
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit abe01=formonly.abe01 type SMALLINT, action=controlp, tabIndex=3, image="zoom.png";
+Edit yy=formonly.yy type SMALLINT, tabIndex=4;
+Edit bm=formonly.bm type SMALLINT, tabIndex=5;
+Edit em=formonly.em type SMALLINT, tabIndex=6;
+Edit f=formonly.f type SMALLINT, tabIndex=7;
+Group group03:group03, text="amount unit";
+RadioGroup d=formonly.d type CHAR, tabIndex=8, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+CheckBox c=formonly.c type CHAR, tabIndex=9, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=10, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.b,formonly.a,formonly.abe01,formonly.yy,formonly.bm,formonly.em,formonly.f,formonly.d,formonly.c,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

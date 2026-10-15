@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrr001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+HBox HBox1
+Grid Grid1
+{
+
+     <G group1                                                    >
+      [label1   |hras02      ]       [label2   ][hrap01      ]
+
+      [label3   |hrar02      ]       [label4   ][hras03      ]
+
+      [label5   |hras01      ]       [label6   ][hras06      ]
+     <                                                            >
+
+     [mor]
+
+
+
+
+
+
+}
+END -- Grid1
+END -- HBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"QBE条件";
+Label label1:Label1, text=%"Label1";
+ButtonEdit hras02=formonly.hras02, action=controlp, tabIndex=1, not null, required, image="zoom";
+Label label2:Label2, text=%"Label1";
+ButtonEdit hrap01=formonly.hrap01, action=controlp, tabIndex=2, image="zoom";
+Label label3:Label3, text=%"Label1";
+ButtonEdit hrar02=formonly.hrar02, action=controlp, tabIndex=3, image="zoom";
+Label label4:Label4, text=%"Label1";
+ButtonEdit hras03=formonly.hras03, action=controlp, tabIndex=4, image="zoom";
+Label label5:Label5, text=%"Label1";
+ButtonEdit hras01=formonly.hras01, action=controlp, tabIndex=5, image="zoom";
+Label label6:Label6, text=%"Label1";
+ButtonEdit hras06=formonly.hras06, action=controlp, tabIndex=6, image="zoom";
+CheckBox mor=formonly.more, tabIndex=7, default = "N", text=%"其他特殊打印条件", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hras02,formonly.hrap01,formonly.hrar02,formonly.hras03,formonly.hras01,formonly.hras06,formonly.more)
+END -- INSTRUCTIONS
+

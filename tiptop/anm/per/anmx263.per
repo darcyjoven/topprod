@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmx263.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr263")
+VBox VBox1
+Group group01(text="QBE")
+Grid Grid1
+{
+ Currency             [nmh03                    ]
+ Customer NO.         [nmh11                    ]
+ Note Receipt NO.     [nmh01                    ]
+}
+END -- Grid1
+END -- group01
+Group group02(text="INPUT")
+Grid Grid2
+{
+ N/R Enter Account Deadline    [edate               ]
+ Ex.Rate Op    [rate_op       ]
+[detail                                                      ]
+}
+END -- Grid2
+END -- group02
+Grid Grid3
+{
+[more                                                        ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- anmr263
+
+ATTRIBUTES
+ButtonEdit nmh03=formonly.nmh03 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit nmh11=formonly.nmh11 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit nmh01=formonly.nmh01 type CHAR, action=controlp, tabIndex=3, image="zoom";
+DateEdit edate=formonly.edate type DATE, tabIndex=4;
+ComboBox rate_op=formonly.rate_op type CHAR, tabIndex=5, queryEditable, items=(("B", %"Bank Buying"),("S", %"Bank Selling"),("C", %"Customs Buy"),("D", %"Customs Sell"),("R", %"EoM Rev Exate"));
+CheckBox detail=formonly.detail type CHAR, tabIndex=6, text="Print Account Detail List", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nmh03,formonly.nmh11,formonly.nmh01,formonly.edate,formonly.rate_op,formonly.detail,formonly.more)
+END -- INSTRUCTIONS
+

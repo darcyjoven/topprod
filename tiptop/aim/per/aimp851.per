@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp851.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimp851")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                    >
+ [a                             ]
+  Initial Label No.   [bstk      ]-[bstkno    ]
+  Ending Label No.    [estk      ]-[estkno    ]
+ <                                             >
+ <G group02                                    >
+ [b                             ]
+  Initial Label No.   [bwip      ]-[bwipno    ]
+  Ending Label No.    [ewip      ]-[ewipno    ]
+ <                                             >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[g_bgjob                                   ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- aimp851
+
+ATTRIBUTES
+Group group01:group01;
+CheckBox a=formonly.a type VARCHAR, tabIndex=1, text="Delete (Qt On Hand)Blank Label", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit bstk=formonly.bstk type VARCHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry  Label     ";
+Edit bstkno=formonly.bstkno type VARCHAR, tabIndex=3;
+Edit estk=formonly.estk type VARCHAR, tabIndex=4, noEntry;
+Edit estkno=formonly.estkno type VARCHAR, tabIndex=5;
+Group group02:group02;
+CheckBox b=formonly.b type VARCHAR, tabIndex=6, text="Delete (WIP W/O) Blank Label", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit bwip=formonly.bwip type VARCHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry  Label     ";
+Edit bwipno=formonly.bwipno type VARCHAR, tabIndex=8;
+Edit ewip=formonly.ewip type VARCHAR, tabIndex=9, noEntry;
+Edit ewipno=formonly.ewipno type VARCHAR, tabIndex=10;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=11, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.bstk,formonly.bstkno,formonly.estk,formonly.estkno,formonly.b,formonly.bwip,formonly.bwipno,formonly.ewip,formonly.ewipno,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

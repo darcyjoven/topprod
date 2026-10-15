@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cim/4fd/ceci130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfq400")
+VBox vb8
+Folder folder01
+Page page01(text="Main")
+HBox hb3
+Grid gr575
+{
+
+ shm05  [shm05                ] shm012 [shm012              ]  shm01   [shm01                      ]
+
+}
+END -- gr575
+END -- hb3
+END -- page01
+END -- folder01
+Table s_sfb
+{
+[sel     |tlf06         |tlf01           |edit1       |ima02     |ima021  |sgm04               |sgm45                    |chuku                  |eca02         |wip     |shm09   ]
+[sel     |tlf06         |tlf01           |edit1       |ima02     |ima021  |sgm04               |sgm45                    |chuku                  |eca02         |wip     |shm09   ]
+[sel     |tlf06         |tlf01           |edit1       |ima02     |ima021  |sgm04               |sgm45                    |chuku                  |eca02         |wip     |shm09   ]
+[sel     |tlf06         |tlf01           |edit1       |ima02     |ima021  |sgm04               |sgm45                    |chuku                  |eca02         |wip     |shm09   ]
+[sel     |tlf06         |tlf01           |edit1       |ima02     |ima021  |sgm04               |sgm45                    |chuku                  |eca02         |wip     |shm09   ]
+[sel     |tlf06         |tlf01           |edit1       |ima02     |ima021  |sgm04               |sgm45                    |chuku                  |eca02         |wip     |shm09   ]
+[sel     |tlf06         |tlf01           |edit1       |ima02     |ima021  |sgm04               |sgm45                    |chuku                  |eca02         |wip     |shm09   ]
+[sel     |tlf06         |tlf01           |edit1       |ima02     |ima021  |sgm04               |sgm45                    |chuku                  |eca02         |wip     |shm09   ]
+[sel     |tlf06         |tlf01           |edit1       |ima02     |ima021  |sgm04               |sgm45                    |chuku                  |eca02         |wip     |shm09   ]
+[sel     |tlf06         |tlf01           |edit1       |ima02     |ima021  |sgm04               |sgm45                    |chuku                  |eca02         |wip     |shm09   ]
+
+}
+END -- s_sfb
+Grid gr577
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr577
+END -- vb8
+END -- asfq400
+
+ATTRIBUTES
+ButtonEdit shm05=formonly.shm05 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit shm012=formonly.shm012 type VARCHAR, action=controlp, tabIndex=11, image="zoom";
+ButtonEdit shm01=formonly.shm01 type VARCHAR, action=controlp, tabIndex=14, image="zoom";
+CheckBox sel=formonly.sel, tabIndex=15, title=%"sel", text=%"", not null, required, valueChecked = "Y";
+Edit tlf06=formonly.tlf06 type DATE, tabIndex=2, title="shm01_t", noEntry;
+Edit tlf01=formonly.tlf01 type VARCHAR, tabIndex=3, title="shm012_t", noEntry;
+Edit edit1=formonly.Edit1, tabIndex=16, title=%"shm05_t", noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=4, title="ima02", noEntry, comment="1.Gnrl 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm 13.Predic 15.Trial ";
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=5, title="ima021", noEntry, comment="1.Open 2.Rls 3.Prt 4.Iss.Mat 5.WIP 6.FQC 7.St-i 8.Clos";
+Edit sgm04=formonly.sgm04 type VARCHAR, tabIndex=6, title="sgm04", noEntry;
+Edit sgm45=formonly.sgm45 type VARCHAR, tabIndex=7, title="sgm45", noEntry;
+Edit chuku=formonly.chuku type VARCHAR, tabIndex=8, title="sgm06", noEntry;
+Edit eca02=formonly.eca02 type VARCHAR, tabIndex=9, title="eca02", noEntry;
+Edit wip=formonly.wip type DECIMAL, tabIndex=12, title=%"wip", noEntry;
+Edit shm09=formonly.shm09 type DECIMAL, tabIndex=13, title=%"shm09", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sgm(formonly.sel,formonly.tlf06,formonly.tlf01,formonly.Edit1,formonly.ima02,formonly.ima021,formonly.sgm04,formonly.sgm45,formonly.chuku,formonly.eca02,formonly.wip,formonly.shm09)
+SCREEN RECORD Undefined(formonly.shm05,formonly.cn2,formonly.shm012,formonly.shm01)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt101_l.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglt101_l")
+Folder folder01
+Page page01(text="Page01")
+Grid gr2858
+{
+ <G group01                                       >
+  Source Data Name    [file                       ]
+ [b                 ]
+ [dummy01                                 ]
+ [dummy01_1                               ]
+ [c                                           ]
+ <                                                >
+}
+END -- gr2858
+END -- page01
+END -- folder01
+END -- gglt101_l
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit file=formonly.file type CHAR, tabIndex=1, not null, required;
+RadioGroup b=formonly.b type CHAR, tabIndex=3, orientation=horizontal, items=(("1", "TXT"),("2", "EXCEL"));
+Label dummy01:dummy01, text="excel use unicode TXT";
+Label dummy01_1:dummy01_1, text="select TXT,the source is $TEMPDIR";
+CheckBox c=formonly.c type VARCHAR, tabIndex=2, text="Upload From C:TIPTOP??", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.file,formonly.b,formonly.c)
+END -- INSTRUCTIONS
+

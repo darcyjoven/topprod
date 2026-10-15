@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt100_3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form1")
+VBox VBox1
+Group gb1(text="QBE")
+Grid gr1
+{
+
+  azp01   [azp01                 ]
+  ima01   [ima01                 ]
+  ima131  [ima131                ]
+  ima1005 [ima1005               ]
+  ima1006 [ima1006               ]
+
+}
+END -- gr1
+END -- gb1
+Group gb2(text="INPUT")
+Grid gr2
+{
+
+  ryn05 [ryn05          ] ryn07 [ryn07          ] ryn12 [ryn12          ]
+  ryn06 [ryn06          ] ryn09 [ryn09          ] ryn13 [ryn13          ]
+  ryn15 [ryn15          ] ryn10 [ryn10          ]       [ryn14          ]
+
+}
+END -- gr2
+END -- gb2
+END -- VBox1
+END -- Form1
+
+TABLES
+ryn_file,
+ima_file,
+azp_file
+ATTRIBUTES
+ButtonEdit azp01=azp_file.azp01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit ima131=ima_file.ima131, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ima1005=ima_file.ima1005, action=controlp, tabIndex=4, not null, required, image="zoom";
+ButtonEdit ima1006=ima_file.ima1006, action=controlp, tabIndex=5, not null, required, image="zoom";
+ComboBox ryn05=ryn_file.ryn05, tabIndex=6, not null, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+ButtonEdit ryn07=ryn_file.ryn07, action=controlp, tabIndex=9, not null, image="zoom";
+ButtonEdit ryn12=ryn_file.ryn12, action=controlp, tabIndex=12, image="zoom";
+ButtonEdit ryn06=ryn_file.ryn06, action=controlp, tabIndex=7, image="zoom";
+Edit ryn09=ryn_file.ryn09, tabIndex=10;
+ButtonEdit ryn13=ryn_file.ryn13, action=controlp, tabIndex=13, image="zoom";
+ButtonEdit ryn15=ryn_file.ryn15, action=controlp, tabIndex=8, image="zoom";
+Edit ryn10=ryn_file.ryn10, tabIndex=11;
+CheckBox ryn14=ryn_file.ryn14, tabIndex=14, default = "Y", text=%"ryn_file.ryn14", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(azp_file.azp01,ima_file.ima01,ima_file.ima131,ima_file.ima1005,ima_file.ima1006,ryn_file.ryn05,ryn_file.ryn06,ryn_file.ryn15,ryn_file.ryn07,ryn_file.ryn09,ryn_file.ryn10,ryn_file.ryn12,ryn_file.ryn13,ryn_file.ryn14)
+END -- INSTRUCTIONS
+

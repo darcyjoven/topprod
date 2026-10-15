@@ -1,0 +1,192 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gap/4fd/gapi140.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gapi140")
+Folder Folder1
+Page Page1(action=main, text=%"Page1")
+VBox VBox1
+Folder folder01
+Page main(action=main_pg, text=%"Main")
+Grid gr3303
+{
+ type                [g_t]
+ Invoice No.         [rvw01           ] Vender No.          [rvv06   ][pmc03       ] Invoic amount [rvw05f_s            ] rvw18      [rvw18               ]
+ Invoice Date        [rvw02       ]     Tax Type            [rvw03   ][rvw04       ] Tax amount    [rvw06f_s            ] ta_rvw01_h [ta_rvw01_h          ]
+ date                [rvw19       ]     Currency            [rvw11   ]               Exc rate      [rvw12               ]
+ Invoice Code        [rvw07       ]
+}
+END -- gr3303
+END -- main
+Page info(text=%"Info")
+Grid ds1
+{
+
+[label6 |rvwuser   ]        [label7 |rvwmodu   ]         [label8 |rvwacti   ]
+[label9 |rvwgrup   ]        [label10|rvwdate   ]
+[label12|rvworig   ]
+[label11|rvworiu   ]
+}
+END -- ds1
+END -- info
+Page undefinecols(text=%"自定义字段", hidden)
+Grid Grid1
+{
+ rvwuser               [ta_rvw02  ]                     rvwuser                 [ta_rvw07  ]
+ rvwuser               [ta_rvw03  ]                     rvwuser                 [ta_rvw08  ]
+ rvwuser               [ta_rvw04  ]                     rvwuser                 [ta_rvw09  ]
+ rvwuser               [ta_rvw05  ]                     rvwuser                 [ta_rvw10  ]
+ rvwuser               [ta_rvw06  ]
+}
+END -- Grid1
+END -- undefinecols
+END -- folder01
+Table s_rvw
+{
+[rvw99    |rvv36   |rvw08           |rvw09  |ima01               |ima02                         |ima021                                            |imaud33     |imaud34     |rvv09   |rvw10          |rvw17          |rvw05f              |rvw06f              |sum1                  |rvw05               |rvw06               |sum2                 |ta_rvw01             ]
+[rvw99    |rvv36   |rvw08           |rvw09  |ima01               |ima02                         |ima021                                            |imaud33     |imaud34     |rvv09   |rvw10          |rvw17          |rvw05f              |rvw06f              |sum1                  |rvw05               |rvw06               |sum2                 |ta_rvw01             ]
+[rvw99    |rvv36   |rvw08           |rvw09  |ima01               |ima02                         |ima021                                            |imaud33     |imaud34     |rvv09   |rvw10          |rvw17          |rvw05f              |rvw06f              |sum1                  |rvw05               |rvw06               |sum2                 |ta_rvw01             ]
+[rvw99    |rvv36   |rvw08           |rvw09  |ima01               |ima02                         |ima021                                            |imaud33     |imaud34     |rvv09   |rvw10          |rvw17          |rvw05f              |rvw06f              |sum1                  |rvw05               |rvw06               |sum2                 |ta_rvw01             ]
+[rvw99    |rvv36   |rvw08           |rvw09  |ima01               |ima02                         |ima021                                            |imaud33     |imaud34     |rvv09   |rvw10          |rvw17          |rvw05f              |rvw06f              |sum1                  |rvw05               |rvw06               |sum2                 |ta_rvw01             ]
+[rvw99    |rvv36   |rvw08           |rvw09  |ima01               |ima02                         |ima021                                            |imaud33     |imaud34     |rvv09   |rvw10          |rvw17          |rvw05f              |rvw06f              |sum1                  |rvw05               |rvw06               |sum2                 |ta_rvw01             ]
+[rvw99    |rvv36   |rvw08           |rvw09  |ima01               |ima02                         |ima021                                            |imaud33     |imaud34     |rvv09   |rvw10          |rvw17          |rvw05f              |rvw06f              |sum1                  |rvw05               |rvw06               |sum2                 |ta_rvw01             ]
+[rvw99    |rvv36   |rvw08           |rvw09  |ima01               |ima02                         |ima021                                            |imaud33     |imaud34     |rvv09   |rvw10          |rvw17          |rvw05f              |rvw06f              |sum1                  |rvw05               |rvw06               |sum2                 |ta_rvw01             ]
+[rvw99    |rvv36   |rvw08           |rvw09  |ima01               |ima02                         |ima021                                            |imaud33     |imaud34     |rvv09   |rvw10          |rvw17          |rvw05f              |rvw06f              |sum1                  |rvw05               |rvw06               |sum2                 |ta_rvw01             ]
+[rvw99    |rvv36   |rvw08           |rvw09  |ima01               |ima02                         |ima021                                            |imaud33     |imaud34     |rvv09   |rvw10          |rvw17          |rvw05f              |rvw06f              |sum1                  |rvw05               |rvw06               |sum2                 |ta_rvw01             ]
+
+}
+END -- s_rvw
+Grid gr3304
+{
+ ----------[label|idx  ]/[cnt  ]---- Rows[cn2  ]----------   Tot Ori-Amo Bef-Tax [rvw05f_sum         ]Tot Tax amount [rvw06f_sum         ]   [label1               ]  [sum3                   ]
+                                                            [label2              |rvw05_sum          |label3        ][rvw06_sum          ]   [label4               ]  [sum4                   ]     [label13            ] [rvw10_sum          ]
+
+}
+END -- gr3304
+END -- VBox1
+END -- Page1
+Page Page2(action=item_list, text=%"Page2")
+Table s_rvw_1
+{
+[rvw01_1             |rvw02_1   |rvw19_1   |rvv06_1   |pmc03_1                       |rvw03_1 |rvw04_1    |rvw11_1 |rvw05f_1              |rvw06f_1              |rvw12_1               ]
+[rvw01_1             |rvw02_1   |rvw19_1   |rvv06_1   |pmc03_1                       |rvw03_1 |rvw04_1    |rvw11_1 |rvw05f_1              |rvw06f_1              |rvw12_1               ]
+[rvw01_1             |rvw02_1   |rvw19_1   |rvv06_1   |pmc03_1                       |rvw03_1 |rvw04_1    |rvw11_1 |rvw05f_1              |rvw06f_1              |rvw12_1               ]
+[rvw01_1             |rvw02_1   |rvw19_1   |rvv06_1   |pmc03_1                       |rvw03_1 |rvw04_1    |rvw11_1 |rvw05f_1              |rvw06f_1              |rvw12_1               ]
+[rvw01_1             |rvw02_1   |rvw19_1   |rvv06_1   |pmc03_1                       |rvw03_1 |rvw04_1    |rvw11_1 |rvw05f_1              |rvw06f_1              |rvw12_1               ]
+[rvw01_1             |rvw02_1   |rvw19_1   |rvv06_1   |pmc03_1                       |rvw03_1 |rvw04_1    |rvw11_1 |rvw05f_1              |rvw06f_1              |rvw12_1               ]
+[rvw01_1             |rvw02_1   |rvw19_1   |rvv06_1   |pmc03_1                       |rvw03_1 |rvw04_1    |rvw11_1 |rvw05f_1              |rvw06f_1              |rvw12_1               ]
+[rvw01_1             |rvw02_1   |rvw19_1   |rvv06_1   |pmc03_1                       |rvw03_1 |rvw04_1    |rvw11_1 |rvw05f_1              |rvw06f_1              |rvw12_1               ]
+[rvw01_1             |rvw02_1   |rvw19_1   |rvv06_1   |pmc03_1                       |rvw03_1 |rvw04_1    |rvw11_1 |rvw05f_1              |rvw06f_1              |rvw12_1               ]
+[rvw01_1             |rvw02_1   |rvw19_1   |rvv06_1   |pmc03_1                       |rvw03_1 |rvw04_1    |rvw11_1 |rvw05f_1              |rvw06f_1              |rvw12_1               ]
+}
+END -- s_rvw_1
+END -- Page2
+END -- Folder1
+END -- gapi140
+
+TABLES
+rvw_file,
+rvv_file,
+ima_file
+ATTRIBUTES
+ComboBox g_t=formonly.g_type type VARCHAR, tabIndex=1, not null, required, items=(("1", %"Store-in"),("2", %"Both"),("3", %"Returns"));
+Edit rvw01=rvw_file.rvw01, tabIndex=2, not null, required;
+ButtonEdit rvv06=rvv_file.rvv06, action=controlp, tabIndex=5, not null, required, image="zoom", comment=%"<^P>Qry Vender";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=6, noEntry;
+Edit rvw05f_s=formonly.rvw05f_s type VARCHAR, tabIndex=10;
+ButtonEdit rvw18=rvw_file.rvw18, action=controlp, tabIndex=39, noEntry, image="zoom", scroll;
+DateEdit rvw02=rvw_file.rvw02, tabIndex=3;
+ButtonEdit rvw03=rvw_file.rvw03, action=controlp, tabIndex=7, not null, required, image="zoom", comment=%"<^P>Qry Detail";
+Edit rvw04=rvw_file.rvw04, tabIndex=8, noEntry;
+Edit rvw06f_s=formonly.rvw06f_s type VARCHAR, tabIndex=11;
+Edit ta_rvw01_h=formonly.ta_rvw01_h type VARCHAR, tabIndex=61;
+DateEdit rvw19=rvw_file.rvw19, tabIndex=47;
+ButtonEdit rvw11=rvw_file.rvw11, action=controlp, tabIndex=9, not null, required, image="zoom", comment=%"<^P>Qry Detail";
+Edit rvw12=rvw_file.rvw12, tabIndex=12, not null, required;
+Edit rvw07=rvw_file.rvw07, tabIndex=4;
+Label label6:Label6, text=%"rvwuser";
+Edit rvwuser=rvw_file.rvwuser, tabIndex=40, noEntry, scroll;
+Label label7:Label7, text=%"rvwmodu";
+Edit rvwmodu=rvw_file.rvwmodu, tabIndex=44, noEntry, scroll;
+Label label8:Label8, text=%"rvwacti";
+Edit rvwacti=rvw_file.rvwacti, tabIndex=46, noEntry, scroll;
+Label label9:Label9, text=%"rvwgrup";
+Edit rvwgrup=rvw_file.rvwgrup, tabIndex=41, noEntry, scroll;
+Label label10:Label10, text=%"rvwdate";
+DateEdit rvwdate=rvw_file.rvwdate, tabIndex=45, noEntry;
+Label label12:Label12, text=%"rvworig";
+Edit rvworig=rvw_file.rvworig, tabIndex=42, noEntry, scroll;
+Label label11:Label11, text=%"rvworiu";
+Edit rvworiu=rvw_file.rvworiu, tabIndex=43, noEntry, scroll;
+Edit ta_rvw02=formonly.ta_rvw02, tabIndex=62;
+Edit ta_rvw07=formonly.ta_rvw07 type DATE, tabIndex=68;
+Edit ta_rvw03=formonly.ta_rvw03, tabIndex=64;
+Edit ta_rvw08=formonly.ta_rvw08 type DATE, tabIndex=67;
+Edit ta_rvw04=formonly.ta_rvw04 type DECIMAL, tabIndex=63;
+Edit ta_rvw09=formonly.ta_rvw09 type DATE, tabIndex=66;
+Edit ta_rvw05=formonly.ta_rvw05 type DECIMAL, tabIndex=69;
+Edit ta_rvw10=formonly.ta_rvw10 type DATE, tabIndex=70;
+Edit ta_rvw06=formonly.ta_rvw06 type DECIMAL, tabIndex=65;
+ButtonEdit rvw99=rvw_file.rvw99, action=controlp, tabIndex=13, title=%"source", not null, required, image="zoom.png";
+Edit rvv36=formonly.rvv36, tabIndex=14, title=%"rvv36";
+ButtonEdit rvw08=rvw_file.rvw08, action=controlp, tabIndex=15, title=%"Stk-in/Ret No.", not null, required, image="zoom", comment=%"<^P>Qry Detail By Line #";
+Edit rvw09=rvw_file.rvw09, tabIndex=16, title=%"Ln #", not null, required;
+Edit ima01=ima_file.ima01, tabIndex=17, title=%"Item No.", noEntry, not null, required;
+Edit ima02=ima_file.ima02, tabIndex=18, title=%"Part Name", noEntry;
+Edit ima021=formonly.ima021, tabIndex=19, title=%"ima021";
+Edit imaud33=formonly.imaud33, tabIndex=20, title=%"imaud33", noEntry;
+Edit imaud34=formonly.imaud34, tabIndex=21, title=%"imaud34", noEntry;
+DateEdit rvv09=rvv_file.rvv09, tabIndex=22, title=%"Tr Date", noEntry;
+Edit rvw10=rvw_file.rvw10, tabIndex=23, title=%"Quantity";
+Edit rvw17=rvw_file.rvw17, tabIndex=24, title=%"Ori-Pr Bef Tax";
+Edit rvw05f=rvw_file.rvw05f, tabIndex=25, title=%"Ori-Amo Before Tax";
+Edit rvw06f=rvw_file.rvw06f, tabIndex=26, title=%"Original Tax";
+Edit sum1=formonly.sum1 type DECIMAL, tabIndex=27, title=%"Ori-Amo Tax", noEntry;
+Edit rvw05=rvw_file.rvw05, tabIndex=28, title=%"Home-Amo Before Tax";
+Edit rvw06=rvw_file.rvw06, tabIndex=29, title=%"Home Tax";
+Edit sum2=formonly.sum2 type DECIMAL, tabIndex=30, title=%"sum2", noEntry;
+Edit ta_rvw01=formonly.ta_rvw01 type VARCHAR, tabIndex=71, title=%"ta_rvw01";
+Label label:Label5, text=%"Details";
+Edit idx=formonly.idx type SMALLINT, tabIndex=31;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=32;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=59;
+Edit rvw05f_sum=formonly.rvw05f_sum type VARCHAR, tabIndex=33, noEntry;
+Edit rvw06f_sum=formonly.rvw06f_sum type VARCHAR, tabIndex=34, noEntry;
+Label label1:label1, text=%"Tot curr-Tax amount";
+Edit sum3=formonly.sum3 type CHAR, tabIndex=35;
+Label label2:label2, text=%"Tot Loc-Cur Bef-Tax ";
+Edit rvw05_sum=formonly.rvw05_sum type CHAR, tabIndex=36;
+Label label3:label3, text=%"Tot Tax Curr";
+Edit rvw06_sum=formonly.rvw06_sum type CHAR, tabIndex=37;
+Label label4:label4, text=%"Tot Local Curr-Tax ";
+Edit sum4=formonly.sum4 type CHAR, tabIndex=38;
+Label label13:Label13, text=%"数量合计";
+Edit rvw10_sum=formonly.rvw10_sum type VARCHAR, tabIndex=60, noEntry;
+Edit rvw01_1=formonly.rvw01_1 type VARCHAR, tabIndex=48, title=%"Invoice No.", not null, scroll;
+DateEdit rvw02_1=formonly.rvw02_1 type DATE, tabIndex=50, title=%"Invoice Date";
+DateEdit rvw19_1=formonly.rvw19_1 type DATE, tabIndex=49, title=%"date";
+Edit rvv06_1=formonly.rvv06_1 type VARCHAR, tabIndex=51, title=%"Vender No.", scroll;
+Edit pmc03_1=formonly.pmc03_1 type VARCHAR, tabIndex=52, title=%"pmc03", scroll;
+Edit rvw03_1=formonly.rvw03_1 type VARCHAR, tabIndex=53, title=%"Tax Type", scroll;
+Edit rvw04_1=formonly.rvw04_1 type DECIMAL(9,4), tabIndex=54, title=%"rvw04", scroll;
+Edit rvw11_1=formonly.rvw11_1 type VARCHAR, tabIndex=55, title=%"Currency", scroll;
+Edit rvw05f_1=formonly.rvw05f_1 type DECIMAL(20,6), tabIndex=56, title=%"Invoic amount", scroll;
+Edit rvw06f_1=formonly.rvw06f_1 type DECIMAL(20,6), tabIndex=57, title=%"Tax amount", scroll;
+Edit rvw12_1=formonly.rvw12_1 type DECIMAL(20,10), tabIndex=58, title=%"Exc rate", scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.g_type,rvw_file.rvw01,rvv_file.rvv06,formonly.pmc03,formonly.rvw05f_s,rvw_file.rvw02,rvw_file.rvw03,rvw_file.rvw04,formonly.rvw06f_s,rvw_file.rvw07,rvw_file.rvw11,rvw_file.rvw12,formonly.idx,formonly.cnt,formonly.rvw05f_sum,formonly.rvw06f_sum,formonly.sum3,formonly.rvw05_sum,formonly.rvw06_sum,formonly.sum4,formonly.ta_rvw01_h)
+SCREEN RECORD s_rvw(rvw_file.rvw99,formonly.rvv36,rvw_file.rvw08,rvw_file.rvw09,ima_file.ima01,ima_file.ima02,formonly.ima021,formonly.imaud33,formonly.imaud34,rvv_file.rvv09,rvw_file.rvw10,rvw_file.rvw17,rvw_file.rvw05f,rvw_file.rvw06f,formonly.sum1,rvw_file.rvw05,rvw_file.rvw06,formonly.sum2,formonly.ta_rvw01)
+SCREEN RECORD Record1(rvw_file.rvw18)
+SCREEN RECORD Record2(rvw_file.rvw19)
+SCREEN RECORD s_rvw_1(formonly.rvw01_1,formonly.rvw02_1,formonly.rvw19_1,formonly.rvv06_1,formonly.pmc03_1,formonly.rvw03_1,formonly.rvw04_1,formonly.rvw11_1,formonly.rvw05f_1,formonly.rvw06f_1,formonly.rvw12_1)
+SCREEN RECORD Record3(formonly.cn2)
+SCREEN RECORD Record4(rvw_file.rvwuser,rvw_file.rvwmodu,rvw_file.rvwacti,rvw_file.rvwgrup,rvw_file.rvwdate,rvw_file.rvworiu,rvw_file.rvworig)
+SCREEN RECORD Record5(formonly.rvw10_sum)
+SCREEN RECORD ta_rvw(formonly.ta_rvw02,formonly.ta_rvw04,formonly.ta_rvw03,formonly.ta_rvw06,formonly.ta_rvw09,formonly.ta_rvw08,formonly.ta_rvw07,formonly.ta_rvw05,formonly.ta_rvw10)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcq100")
+VBox VBox1
+Grid Grid1
+{
+
+  Year   [yy        ]   Month    [mm        ]      Cost Calculation Method[type          ]
+}
+END -- Grid1
+Folder pc833
+Page page01(text="Main")
+Table s_tlf
+{
+[cki01   |cki02               |qty1               |tot1               |qty2               |tot2               |qty3               |tot3               |cki03               ]
+[cki01   |cki02               |qty1               |tot1               |qty2               |tot2               |qty3               |tot3               |cki03               ]
+[cki01   |cki02               |qty1               |tot1               |qty2               |tot2               |qty3               |tot3               |cki03               ]
+[cki01   |cki02               |qty1               |tot1               |qty2               |tot2               |qty3               |tot3               |cki03               ]
+[cki01   |cki02               |qty1               |tot1               |qty2               |tot2               |qty3               |tot3               |cki03               ]
+[cki01   |cki02               |qty1               |tot1               |qty2               |tot2               |qty3               |tot3               |cki03               ]
+[cki01   |cki02               |qty1               |tot1               |qty2               |tot2               |qty3               |tot3               |cki03               ]
+[cki01   |cki02               |qty1               |tot1               |qty2               |tot2               |qty3               |tot3               |cki03               ]
+[cki01   |cki02               |qty1               |tot1               |qty2               |tot2               |qty3               |tot3               |cki03               ]
+[cki01   |cki02               |qty1               |tot1               |qty2               |tot2               |qty3               |tot3               |cki03               ]
+[cki01   |cki02               |qty1               |tot1               |qty2               |tot2               |qty3               |tot3               |cki03               ]
+[cki01   |cki02               |qty1               |tot1               |qty2               |tot2               |qty3               |tot3               |cki03               ]
+[cki01   |cki02               |qty1               |tot1               |qty2               |tot2               |qty3               |tot3               |cki03               ]
+[cki01   |cki02               |qty1               |tot1               |qty2               |tot2               |qty3               |tot3               |cki03               ]
+}
+END -- s_tlf
+END -- page01
+Page Page02(text=%"Page")
+Table s_aeh
+{
+[aeh04                 |tot4                   |tot5                         |tot6                         ]
+[aeh04                 |tot4                   |tot5                         |tot6                         ]
+[aeh04                 |tot4                   |tot5                         |tot6                         ]
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- s_aeh
+END -- Page02
+END -- pc833
+Grid gr4619
+{
+ ----------  Rows [cn2   ] ----------
+
+}
+END -- gr4619
+END -- VBox1
+END -- axcq100
+
+TABLES
+cki_file,
+aeh_file
+ATTRIBUTES
+Edit yy=formonly.yy type SMALLINT, tabIndex=1, not null, required;
+Edit mm=formonly.mm type SMALLINT, tabIndex=2, not null, required;
+ComboBox type=formonly.type type CHAR, tabIndex=3, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+Edit cki01=cki_file.cki01, tabIndex=4, title=%"cki01";
+Edit cki02=cki_file.cki02, tabIndex=5, title="cki02", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit qty1=formonly.qty1 type DECIMAL(15,3), tabIndex=6, title="qty1";
+Edit tot1=formonly.tot1 type DECIMAL(20,6), tabIndex=7, title="tot1";
+Edit qty2=formonly.qty2 type DECIMAL(15,3), tabIndex=8, title="qty2";
+Edit tot2=formonly.tot2 type DECIMAL(20,6), tabIndex=9, title="tot2";
+Edit qty3=formonly.qty3 type DECIMAL(15,3), tabIndex=10, title="qty3", color = red;
+Edit tot3=formonly.tot3 type DECIMAL(20,6), tabIndex=11, title=%"tot3", color = red;
+Edit cki03=cki_file.cki03, tabIndex=12, title="cki03";
+Edit aeh04=aeh_file.aeh04, tabIndex=13, title=%"aeh04";
+Edit tot4=formonly.tot4 type DECIMAL(20,6), tabIndex=14, title=%"tot4";
+Edit tot5=formonly.tot5 type DECIMAL(20,6), tabIndex=15, title=%"tot5";
+Edit tot6=formonly.tot6 type DECIMAL(20,6), tabIndex=16, title=%"tot6";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cki(cki_file.cki01,cki_file.cki02,formonly.qty1,formonly.tot1,formonly.qty2,formonly.tot2,formonly.qty3,formonly.tot3,cki_file.cki03)
+SCREEN RECORD Undefined(formonly.cn2,formonly.type,formonly.yy,formonly.mm)
+SCREEN RECORD s_aeh(aeh_file.aeh04,formonly.tot4,formonly.tot5,formonly.tot6)
+END -- INSTRUCTIONS
+

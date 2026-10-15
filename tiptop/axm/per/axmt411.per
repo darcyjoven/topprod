@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt411.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"wagt003")
+VBox vb2
+Grid gr1
+{
+    Manuscript No.   [xsb01          ]    Order No.      [xsb03          ]     Orders NO.[xsb13        ]
+    Manuscript Date. [xsb02          ]    Order Date.    [xsb04          ]     State.    [xsb07        ]
+    Customer         [xsb05          ]   [desc_t             ]
+    Delivery Address [xsb06          ]   [pme031             ]
+                                         [pme032             ]
+                                         [pme033             ]
+                                         [pme034             ]
+}
+END -- gr1
+Table tb1
+{
+[xsc02    |xsc03   |desc    |xsc05      |xsc04     |xsc06   |xsc07        |xsc07t   |xsc08      |xsc09   ]
+[xsc02    |xsc03   |desc    |xsc05      |xsc04     |xsc06   |xsc07        |xsc07t   |xsc08      |xsc09   ]
+[xsc02    |xsc03   |desc    |xsc05      |xsc04     |xsc06   |xsc07        |xsc07t   |xsc08      |xsc09   ]
+[xsc02    |xsc03   |desc    |xsc05      |xsc04     |xsc06   |xsc07        |xsc07t   |xsc08      |xsc09   ]
+[xsc02    |xsc03   |desc    |xsc05      |xsc04     |xsc06   |xsc07        |xsc07t   |xsc08      |xsc09   ]
+
+
+
+}
+END -- tb1
+Grid gr12
+{
+----------  Rows [cnt   ] / [cnt2  ] ----------
+
+}
+END -- gr12
+END -- vb2
+END -- Form1
+
+TABLES
+xsc_file
+ATTRIBUTES
+Edit xsb01=formonly.xsb01 type VARCHAR, tabIndex=4;
+Edit xsb03=formonly.xsb03 type VARCHAR, tabIndex=3;
+Edit xsb13=formonly.xsb13 type VARCHAR, tabIndex=25;
+DateEdit xsb02=formonly.xsb02 type VARCHAR, tabIndex=10;
+DateEdit xsb04=formonly.xsb04 type DATE, tabIndex=11;
+ComboBox xsb07=formonly.xsb07 type VARCHAR, tabIndex=12, items=(("1", "Manuscript"),("2", "Transferred Order"),("3", "Back"));
+Edit xsb05=formonly.xsb05 type VARCHAR, tabIndex=2;
+Edit desc_t=formonly.desc_t type CHAR, tabIndex=1;
+Edit xsb06=formonly.xsb06 type VARCHAR, tabIndex=7;
+Edit pme031=formonly.pme031 type CHAR, tabIndex=6;
+Edit pme032=formonly.pme032 type CHAR, tabIndex=9;
+Edit pme033=formonly.pme033 type CHAR, tabIndex=5;
+Edit pme034=formonly.pme034 type CHAR, tabIndex=8;
+Edit xsc02=xsc_file.xsc02, tabIndex=20, title="Item No.", noEntry;
+Edit xsc03=xsc_file.xsc03, tabIndex=19, title="Product No.", noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=18, title="desc", noEntry;
+Edit xsc05=xsc_file.xsc05, tabIndex=16, title="Order Amount", noEntry;
+Edit xsc04=xsc_file.xsc04, tabIndex=17, title="Company", noEntry;
+Edit xsc06=xsc_file.xsc06, tabIndex=15, title="Price", noEntry;
+Edit xsc07=xsc_file.xsc07, tabIndex=14, title="No Tax", noEntry;
+Edit xsc07t=xsc_file.xsc07t, tabIndex=13, title="Tax", noEntry;
+DateEdit xsc08=xsc_file.xsc08, tabIndex=21, title="Delivery Date", noEntry;
+Edit xsc09=xsc_file.xsc09, tabIndex=24, title="Amount";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=23;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_xsc(xsc_file.xsc02,xsc_file.xsc03,formonly.desc,xsc_file.xsc05,xsc_file.xsc04,xsc_file.xsc06,xsc_file.xsc07,xsc_file.xsc07t,xsc_file.xsc08,xsc_file.xsc09)
+SCREEN RECORD Undefined(formonly.xsb01,formonly.xsb03,formonly.xsb13,formonly.xsb02,formonly.xsb04,formonly.xsb07,formonly.xsb05,formonly.desc_t,formonly.xsb06,formonly.pme031,formonly.pme032,formonly.pme033,formonly.pme034,formonly.cnt,formonly.cnt2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi091.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi091")
+VBox VBox1
+Folder pc448
+Page page01(text="Page01")
+Table s_tsj
+{
+[tsj01        |tsj02                |tsj03             |tsj04             |tsj05         |tsj06       |tsj07            |tsj08      |gen02     |tsj09               |gem02       |tsj10    |tsj11      |tsj12     |tsj13         |tsjacti   ]
+[tsj01        |tsj02                |tsj03             |tsj04             |tsj05         |tsj06       |tsj07            |tsj08      |gen02     |tsj09               |gem02       |tsj10    |tsj11      |tsj12     |tsj13         |tsjacti   ]
+[tsj01        |tsj02                |tsj03             |tsj04             |tsj05         |tsj06       |tsj07            |tsj08      |gen02     |tsj09               |gem02       |tsj10    |tsj11      |tsj12     |tsj13         |tsjacti   ]
+[tsj01        |tsj02                |tsj03             |tsj04             |tsj05         |tsj06       |tsj07            |tsj08      |gen02     |tsj09               |gem02       |tsj10    |tsj11      |tsj12     |tsj13         |tsjacti   ]
+[tsj01        |tsj02                |tsj03             |tsj04             |tsj05         |tsj06       |tsj07            |tsj08      |gen02     |tsj09               |gem02       |tsj10    |tsj11      |tsj12     |tsj13         |tsjacti   ]
+[tsj01        |tsj02                |tsj03             |tsj04             |tsj05         |tsj06       |tsj07            |tsj08      |gen02     |tsj09               |gem02       |tsj10    |tsj11      |tsj12     |tsj13         |tsjacti   ]
+[tsj01        |tsj02                |tsj03             |tsj04             |tsj05         |tsj06       |tsj07            |tsj08      |gen02     |tsj09               |gem02       |tsj10    |tsj11      |tsj12     |tsj13         |tsjacti   ]
+[tsj01        |tsj02                |tsj03             |tsj04             |tsj05         |tsj06       |tsj07            |tsj08      |gen02     |tsj09               |gem02       |tsj10    |tsj11      |tsj12     |tsj13         |tsjacti   ]
+[tsj01        |tsj02                |tsj03             |tsj04             |tsj05         |tsj06       |tsj07            |tsj08      |gen02     |tsj09               |gem02       |tsj10    |tsj11      |tsj12     |tsj13         |tsjacti   ]
+[tsj01        |tsj02                |tsj03             |tsj04             |tsj05         |tsj06       |tsj07            |tsj08      |gen02     |tsj09               |gem02       |tsj10    |tsj11      |tsj12     |tsj13         |tsjacti   ]
+
+}
+END -- s_tsj
+END -- page01
+END -- pc448
+Grid gr2004
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2004
+END -- VBox1
+END -- axmi091
+
+TABLES
+tsj_file
+ATTRIBUTES
+ButtonEdit tsj01=tsj_file.tsj01, action=controlp, tabIndex=1, title="Plant No.", not null, required, image="zoom", comment="KEY Field,No Blank/Repeated!";
+ButtonEdit tsj02=tsj_file.tsj02, action=controlp, tabIndex=2, title="Type of I.ISS Note", not null, required, image="zoom", comment="KEY Field,No Blank/Repeated!";
+ButtonEdit tsj03=tsj_file.tsj03, action=controlp, tabIndex=3, title="Type of Delivery", not null, required, image="zoom";
+ButtonEdit tsj04=tsj_file.tsj04, action=controlp, tabIndex=4, title="Type of Purchase", not null, required, image="zoom";
+ButtonEdit tsj05=tsj_file.tsj05, action=controlp, tabIndex=5, title="Payment Terms", not null, required, image="zoom";
+ButtonEdit tsj06=tsj_file.tsj06, action=controlp, tabIndex=6, title="Price Terms", not null, required, image="zoom";
+ButtonEdit tsj07=tsj_file.tsj07, action=controlp, tabIndex=7, title="Shipping Address", not null, required, image="zoom";
+ButtonEdit tsj08=tsj_file.tsj08, action=controlp, tabIndex=8, title="Buyer", not null, required, image="zoom";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=9, title="Name", noEntry;
+ButtonEdit tsj09=tsj_file.tsj09, action=controlp, tabIndex=10, title="Purchase Department", not null, required, image="zoom";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=11, title="Dept. Name", noEntry;
+ButtonEdit tsj10=tsj_file.tsj10, action=controlp, tabIndex=12, title="Tax Type", not null, required, image="zoom";
+ButtonEdit tsj11=tsj_file.tsj11, tabIndex=13, title="Tax Rate", noEntry;
+ButtonEdit tsj12=tsj_file.tsj12, action=controlp, tabIndex=14, title="Currency", not null, required, image="zoom";
+ButtonEdit tsj13=tsj_file.tsj13, action=controlp, tabIndex=15, title="Exchange Rate", not null, required, image="zoom";
+CheckBox tsjacti=tsj_file.tsjacti, tabIndex=16, title="Valid?", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="No Blank/Repeated!";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tsj(tsj_file.tsj01,tsj_file.tsj02,tsj_file.tsj03,tsj_file.tsj04,tsj_file.tsj05,tsj_file.tsj06,tsj_file.tsj07,tsj_file.tsj08,formonly.gen02,tsj_file.tsj09,formonly.gem02,tsj_file.tsj10,tsj_file.tsj11,tsj_file.tsj12,tsj_file.tsj13,tsj_file.tsjacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

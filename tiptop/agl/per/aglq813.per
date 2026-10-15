@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq813.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="")
+VBox vb2
+Folder pc1
+Page Page1(text=%"Page0")
+Table s_abm
+{
+[abm01       |abm02   |abm03          |abm04       |abm05   |abm06          |abm07     |abm08   |abm09     ]
+[abm01       |abm02   |abm03          |abm04       |abm05   |abm06          |abm07     |abm08   |abm09     ]
+[abm01       |abm02   |abm03          |abm04       |abm05   |abm06          |abm07     |abm08   |abm09     ]
+[abm01       |abm02   |abm03          |abm04       |abm05   |abm06          |abm07     |abm08   |abm09     ]
+[abm01       |abm02   |abm03          |abm04       |abm05   |abm06          |abm07     |abm08   |abm09     ]
+[abm01       |abm02   |abm03          |abm04       |abm05   |abm06          |abm07     |abm08   |abm09     ]
+[abm01       |abm02   |abm03          |abm04       |abm05   |abm06          |abm07     |abm08   |abm09     ]
+[abm01       |abm02   |abm03          |abm04       |abm05   |abm06          |abm07     |abm08   |abm09     ]
+[abm01       |abm02   |abm03          |abm04       |abm05   |abm06          |abm07     |abm08   |abm09     ]
+[abm01       |abm02   |abm03          |abm04       |abm05   |abm06          |abm07     |abm08   |abm09     ]
+
+}
+END -- s_abm
+END -- Page1
+END -- pc1
+Grid gr1
+{
+ ----------Rows [cn2   ]----------
+
+}
+END -- gr1
+END -- vb2
+END -- aglq813
+
+TABLES
+abm_file
+ATTRIBUTES
+Edit abm01=abm_file.abm01, tabIndex=3, title="Source Operating Org.", noEntry;
+ButtonEdit abm02=abm_file.abm02, action=controlp, tabIndex=4, title="Source Book", image="zoom";
+ButtonEdit abm03=abm_file.abm03, action=controlp, tabIndex=5, title="Source Voucher No.", image="zoom";
+Edit abm04=abm_file.abm04, tabIndex=6, title="Target Operating Org.", noEntry;
+ButtonEdit abm05=abm_file.abm05, action=controlp, tabIndex=7, title="Target Book", image="zoom";
+ButtonEdit abm06=abm_file.abm06, action=controlp, tabIndex=8, title="Target Voucher No.", image="zoom";
+Edit abm07=abm_file.abm07, tabIndex=9, title="Transfer Date", noEntry;
+Edit abm08=abm_file.abm08, tabIndex=10, title="Transferred at", noEntry;
+Edit abm09=abm_file.abm09, tabIndex=11, title="Transferrer Code", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abm(abm_file.abm01,abm_file.abm02,abm_file.abm03,abm_file.abm04,abm_file.abm05,abm_file.abm06,abm_file.abm07,abm_file.abm08,abm_file.abm09)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

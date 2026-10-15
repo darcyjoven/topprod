@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_gr_list.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"aooi932")
+Folder folder01
+Page page01(text=%"main")
+VBox VBox1
+Group Group1(text=%"QBE")
+Grid Grid1
+{
+  Plant  [gcl01             ]   Class  [gcl04             ]
+  Prog   [gcl02             ]   Time   [gcl05         ]
+  Creator[gcl03             ]
+
+}
+END -- Grid1
+END -- Group1
+Group Group2(text=%"")
+Grid Grid2
+{
+  List By[sel               ]
+
+}
+END -- Grid2
+END -- Group2
+HBox HBox1(splitter)
+Tree tree1(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="folder_i932", imageCollapsed="folder_i932", imageLeaf="page", comment=%"", width = 21 characters)
+{
+[name               ]
+[name               ]
+[name               ]
+[name               ]
+[name               ]
+[name               ]
+[name               ]
+[name               ]
+[name               ]
+[name               ]
+}
+END -- tree1
+Table s_list
+{
+[prog_id |prog_name           |create_time     |file_siz|creator_id|creator_|svg_file_name       ]
+[prog_id |prog_name           |create_time     |file_siz|creator_id|creator_|svg_file_name       ]
+[prog_id |prog_name           |create_time     |file_siz|creator_id|creator_|svg_file_name       ]
+[prog_id |prog_name           |create_time     |file_siz|creator_id|creator_|svg_file_name       ]
+[prog_id |prog_name           |create_time     |file_siz|creator_id|creator_|svg_file_name       ]
+[prog_id |prog_name           |create_time     |file_siz|creator_id|creator_|svg_file_name       ]
+[prog_id |prog_name           |create_time     |file_siz|creator_id|creator_|svg_file_name       ]
+[prog_id |prog_name           |create_time     |file_siz|creator_id|creator_|svg_file_name       ]
+[prog_id |prog_name           |create_time     |file_siz|creator_id|creator_|svg_file_name       ]
+[prog_id |prog_name           |create_time     |file_siz|creator_id|creator_|svg_file_name       ]
+}
+END -- s_list
+END -- HBox1
+END -- VBox1
+END -- page01
+END -- folder01
+END -- g_gr_list
+
+TABLES
+gcl_file
+ATTRIBUTES
+ButtonEdit gcl01=gcl_file.gcl01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!    , <^P>Qry Doc Pty ";
+ButtonEdit gcl04=gcl_file.gcl04, action=controlp, tabIndex=4, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!    , <^P>Qry Doc Pty ";
+ButtonEdit gcl02=gcl_file.gcl02, action=controlp, tabIndex=2, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!    , <^P>Qry Doc Pty ";
+DateEdit gcl05=gcl_file.gcl05, tabIndex=5, not null, required, comment="Key Field, No Blank/Repeated!    , <^P>Qry Doc Pty ";
+ButtonEdit gcl03=gcl_file.gcl03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!    , <^P>Qry Doc Pty ";
+ComboBox sel=formonly.sel type VARCHAR, tabIndex=6, not null, required, upShift, comment="Key Field, No Blank/Repeated!    , <^P>Qry Doc Pty ";
+LABEL name=formonly.name type CHAR, title=%"PlantTree", unsortable;
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.path type CHAR;
+Phantom formonly.values type CHAR;
+Phantom formonly.azp01;
+Phantom formonly.bdate type DATE;
+Phantom formonly.edate type DATE;
+Phantom formonly.image type CHAR;
+Edit prog_id=formonly.prog_id, tabIndex=7, title=%"ProgID", noEntry;
+Edit prog_name=formonly.prog_name, tabIndex=8, title=%"Program Name", noEntry;
+Edit create_time=formonly.create_time, tabIndex=9, title=%"Create Time", noEntry;
+Edit file_siz=formonly.file_size, tabIndex=10, title=%"File Size", noEntry;
+Edit creator_id=formonly.creator_id, tabIndex=11, title=%"Creator", noEntry;
+Edit creator_=formonly.creator_name, tabIndex=12, title=%"Name", noEntry;
+Edit svg_file_name=formonly.svg_file_name, tabIndex=13, title=%"File Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.path,formonly.values,formonly.azp01,formonly.bdate,formonly.edate,formonly.image)
+SCREEN RECORD Undefined(gcl_file.gcl01,gcl_file.gcl02,gcl_file.gcl05,gcl_file.gcl03,gcl_file.gcl04,formonly.sel)
+SCREEN RECORD s_list(formonly.prog_id,formonly.prog_name,formonly.create_time,formonly.file_size,formonly.creator_id,formonly.creator_name,formonly.svg_file_name)
+END -- INSTRUCTIONS
+

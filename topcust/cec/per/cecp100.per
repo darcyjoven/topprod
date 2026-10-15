@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cec/4fd/cecp100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+HBox hbox1
+Table tb100(width = 910 characters, height = 0 characters)
+{
+[select           |ecu01           |ima02          |ima021          |ecu02           |ecu06          ]
+[select           |ecu01           |ima02          |ima021          |ecu02           |ecu06          ]
+[select           |ecu01           |ima02          |ima021          |ecu02           |ecu06          ]
+[select           |ecu01           |ima02          |ima021          |ecu02           |ecu06          ]
+[select           |ecu01           |ima02          |ima021          |ecu02           |ecu06          ]
+[select           |ecu01           |ima02          |ima021          |ecu02           |ecu06          ]
+[select           |ecu01           |ima02          |ima021          |ecu02           |ecu06          ]
+[select           |ecu01           |ima02          |ima021          |ecu02           |ecu06          ]
+[select           |ecu01           |ima02          |ima021          |ecu02           |ecu06          ]
+[select           |ecu01           |ima02          |ima021          |ecu02           |ecu06          ]
+}
+END -- tb100
+END -- hbox1
+END -- cecp100
+
+ATTRIBUTES
+CheckBox select=formonly.select type VARCHAR, tabIndex=1, title=%"sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ecu01=formonly.ecu01 type VARCHAR, action=controlp, tabIndex=1, title=%"ecu01", not null, required, image="zoom";
+ButtonEdit ima02=formonly.ima02 type VARCHAR, action=controlp, tabIndex=1, title=%"ima02", image="zoom";
+ButtonEdit ima021=formonly.ima021 type VARCHAR, action=controlp, tabIndex=1, title=%"ima021", image="zoom";
+Edit ecu02=formonly.ecu02 type VARCHAR, tabIndex=1, title=%"ecu02", not null, required;
+CheckBox ecu06=formonly.ecu06 type VARCHAR, tabIndex=1, default = "N", title="ecu06", text=%"", valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ecu(formonly.select,formonly.ecu01,formonly.ima02,formonly.ima021,formonly.ecu02,formonly.ecu06)
+END -- INSTRUCTIONS
+

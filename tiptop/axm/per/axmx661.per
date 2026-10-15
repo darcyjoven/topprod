@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmx661.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmr660")
+VBox VBox1
+Grid gr4
+{
+ <G group01                                                                               >
+  Del.Note No.         [oga01               ]  Shipping Cust        [oga04               ]
+  Sales Return No.     [oha01               ]  Empl No.             [oga14               ]
+  Delivery Date        [oga02               ]  Dept No.             [oga15               ]
+  Accnt Cust           [oga03               ]
+ <                                                                                        >
+
+}
+END -- gr4
+Group group02(text="INPUT")
+Grid gr6
+{
+ [a                   ]
+ [b                             ]
+ <G group03                                                                >
+  [s1                  ] [s2                   ] [s3                    ]
+  [t1                  ] [t2                   ] [t3                    ]
+   oma02  [oma02       ]
+
+ <                                                                         >
+
+}
+END -- gr6
+END -- group02
+Grid gr5
+{
+[more                                              ]
+
+}
+END -- gr5
+END -- VBox1
+END -- axmr661
+
+TABLES
+oha_file,
+oma_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oga01=formonly.oga01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit oga04=formonly.oga04 type CHAR, action=controlp, tabIndex=5, image="zoom", comment="No. ";
+ButtonEdit oha01=formonly.oha01 type like oha_file.oha01, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit oga14=formonly.oga14 type CHAR, action=controlp, tabIndex=6, image="zoom", comment="No. ";
+DateEdit oga02=formonly.oga02 type DATE, tabIndex=3;
+ButtonEdit oga15=formonly.oga15 type CHAR, action=controlp, tabIndex=7, image="zoom", comment="No. ";
+ButtonEdit oga03=formonly.oga03 type CHAR, action=controlp, tabIndex=4, image="zoom", comment="No. ";
+CheckBox a=formonly.a type CHAR, tabIndex=8, text="Print Zero Price", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b, tabIndex=9, text=%"Include Sales Return Data", not null, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=10, queryEditable, items=(("1", "Delivery Note No."),("2", "Delivery Date"),("3", "Accounts Customer"),("4", "Shipping Customer"),("5", "Employee No."),("6", "Department No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=11, queryEditable, items=(("1", "Delivery Note No."),("2", "Delivery Date"),("3", "Accounts Customer"),("4", "Shipping Customer"),("5", "Employee No."),("6", "Department No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=12, queryEditable, items=(("1", "Delivery Note No."),("2", "Delivery Date"),("3", "Accounts Customer"),("4", "Shipping Customer"),("5", "Employee No."),("6", "Department No."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=13, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=14, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=15, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit oma02=oma_file.oma02, tabIndex=16;
+CheckBox more=formonly.more type VARCHAR, tabIndex=17, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oga01,formonly.oga04,formonly.oga02,formonly.oga14,formonly.oga03,formonly.oga15,formonly.a,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.more,formonly.oha01,formonly.b,oma_file.oma02)
+END -- INSTRUCTIONS
+

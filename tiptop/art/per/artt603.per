@@ -1,0 +1,125 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt603.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt603")
+VBox VBox1
+Folder pc1
+Page Page1(text=%"Base Data")
+Grid gr1
+{
+ rxm00  [rxm00                 ]rxm04  [rxm04           ]                rxmconf[rxmconf      ][imgmks]
+ rxm01  [rxm01                 ]rxm05  [rxm05           ]                rxmcond[rxmcond      ][      ]
+ rxm02  [rxm02                 ]rxm06  [rxm06           |rxm06_desc    ] rxmconu[rxmconu      |rxmconu_desc  ]
+ rxm03  [rxm03                 ]rxm07  [rxm07                          ] sum    [sum          ]
+                                plant  [rxmplant        |rxmplant_desc ]
+
+}
+END -- gr1
+END -- Page1
+Page Page2(text=%"Status")
+Grid gr2
+{
+ rxmuser[rxmuser   ]    rxmdate[rxmdate   ]    rxmacti[rxmacti    ]   rxmoriu[rxmoriu   ]
+ rxmgrup[rxmgrup   ]    rxmmodu[rxmmodu   ]    rxmcrat[rxmcrat    ]   rxmorig[rxmorig   ]
+
+
+}
+END -- gr2
+END -- Page2
+END -- pc1
+Table s_rxn
+{
+[rxn02    |rxn03      |rxn04            |rxn05        |rxn06         |l_oma10     |rxn07           |rxn08                      ]
+[rxn02    |rxn03      |rxn04            |rxn05        |rxn06         |l_oma10     |rxn07           |rxn08                      ]
+[rxn02    |rxn03      |rxn04            |rxn05        |rxn06         |l_oma10     |rxn07           |rxn08                      ]
+[rxn02    |rxn03      |rxn04            |rxn05        |rxn06         |l_oma10     |rxn07           |rxn08                      ]
+[rxn02    |rxn03      |rxn04            |rxn05        |rxn06         |l_oma10     |rxn07           |rxn08                      ]
+
+}
+END -- s_rxn
+Table s_rxo
+{
+[rxo02 |rxo14            |rxo03     |rxo05 |rxo05_de|rxo04     |rxo04_de|rxo06     |rxo07     |rxo08     |rxo09     |rxo10     |rxo12    |rxo11     |rxo13   ]
+[rxo02 |rxo14            |rxo03     |rxo05 |rxo05_de|rxo04     |rxo04_de|rxo06     |rxo07     |rxo08     |rxo09     |rxo10     |rxo12    |rxo11     |rxo13   ]
+[rxo02 |rxo14            |rxo03     |rxo05 |rxo05_de|rxo04     |rxo04_de|rxo06     |rxo07     |rxo08     |rxo09     |rxo10     |rxo12    |rxo11     |rxo13   ]
+[rxo02 |rxo14            |rxo03     |rxo05 |rxo05_de|rxo04     |rxo04_de|rxo06     |rxo07     |rxo08     |rxo09     |rxo10     |rxo12    |rxo11     |rxo13   ]
+[rxo02 |rxo14            |rxo03     |rxo05 |rxo05_de|rxo04     |rxo04_de|rxo06     |rxo07     |rxo08     |rxo09     |rxo10     |rxo12    |rxo11     |rxo13   ]
+
+}
+END -- s_rxo
+Grid gr3
+{
+ ----------rows[idx   ]/[cnt    ]
+
+}
+END -- gr3
+END -- VBox1
+END -- artt603
+
+TABLES
+rxo_file,
+rxn_file,
+rxm_file
+ATTRIBUTES
+ComboBox rxm00=rxm_file.rxm00, tabIndex=1, not null, required, items=(("1", "shop buy"),("2", "shop return"));
+Edit rxm04=rxm_file.rxm04, tabIndex=5;
+ComboBox rxmconf=rxm_file.rxmconf, tabIndex=10, items=(("Y", "confirm"),("N", "unconfirm"),("X", "voie"));
+IMAGE imgmks=formonly.imgmksg type CHAR;
+ButtonEdit rxm01=rxm_file.rxm01, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit rxm05=rxm_file.rxm05, tabIndex=6;
+DateEdit rxmcond=rxm_file.rxmcond, tabIndex=11;
+DateEdit rxm02=rxm_file.rxm02, tabIndex=3, not null, required;
+ButtonEdit rxm06=rxm_file.rxm06, action=controlp, tabIndex=7, not null, required, image="zoom";
+Edit rxm06_desc=formonly.rxm06_desc type CHAR, tabIndex=13, noEntry;
+ButtonEdit rxmconu=rxm_file.rxmconu, action=controlp, tabIndex=12, image="zoom";
+Edit rxmconu_desc=formonly.rxmconu_desc type CHAR, tabIndex=15;
+ComboBox rxm03=rxm_file.rxm03, tabIndex=4, noEntry, required, items=(("1", "xiaofei get"),("2", "come li"),("3", "choujiang"));
+Edit rxm07=rxm_file.rxm07, tabIndex=8;
+Edit sum=formonly.sum type DECIMAL, tabIndex=49, noEntry;
+ButtonEdit rxmplant=rxm_file.rxmplant, action=controlp, tabIndex=9, not null, required, image="zoom";
+Edit rxmplant_desc=formonly.rxmplant_desc type CHAR, tabIndex=14, noEntry;
+Edit rxmuser=rxm_file.rxmuser, tabIndex=22, noEntry;
+DateEdit rxmdate=rxm_file.rxmdate, tabIndex=17, noEntry;
+Edit rxmacti=rxm_file.rxmacti, tabIndex=23, noEntry;
+Edit rxmoriu=rxm_file.rxmoriu, tabIndex=21, noEntry;
+Edit rxmgrup=rxm_file.rxmgrup, tabIndex=18, noEntry;
+Edit rxmmodu=rxm_file.rxmmodu, tabIndex=19, noEntry;
+DateEdit rxmcrat=rxm_file.rxmcrat, tabIndex=16, noEntry;
+Edit rxmorig=rxm_file.rxmorig, tabIndex=20, noEntry;
+Edit rxn02=rxn_file.rxn02, tabIndex=25, title="rxn02", not null, required;
+DateEdit rxn03=rxn_file.rxn03, tabIndex=24, title="rxn03", not null, required;
+ButtonEdit rxn04=rxn_file.rxn04, action=controlp, tabIndex=27, title="rxn04", image="zoom";
+ButtonEdit rxn05=rxn_file.rxn05, action=controlp, tabIndex=28, title="rxn05", noEntry, image="zoom";
+ButtonEdit rxn06=rxn_file.rxn06, action=controlp, tabIndex=29, title="rxn06", image="zoom";
+Edit l_oma10=formonly.l_oma10 type CHAR, tabIndex=47, title=%"l_oma10", noEntry;
+Edit rxn07=rxn_file.rxn07, tabIndex=26, title="rxn07", noEntry;
+Edit rxn08=rxn_file.rxn08, tabIndex=30, title="rxn08";
+Edit rxo02=rxo_file.rxo02, tabIndex=31, title="rxo02", not null, required;
+Edit rxo14=rxo_file.rxo14, tabIndex=48, title=%"rxo14", noEntry;
+ButtonEdit rxo03=rxo_file.rxo03, action=controlp, tabIndex=32, title="rxo03", not null, required, image="zoom";
+ButtonEdit rxo05=rxo_file.rxo05, action=controlp, tabIndex=34, title="rxo05", not null, required, image="zoom";
+Edit rxo05_de=formonly.rxo05_desc type CHAR, tabIndex=43, title="rxo05_desc", noEntry;
+ButtonEdit rxo04=rxo_file.rxo04, action=controlp, tabIndex=33, title="rxo04", not null, required, image="zoom";
+Edit rxo04_de=formonly.rxo04_desc type CHAR, tabIndex=42, title="rxo04_desc", noEntry;
+Edit rxo06=rxo_file.rxo06, tabIndex=35, title="rxo06", noEntry;
+Edit rxo07=rxo_file.rxo07, tabIndex=36, title="rxo07", not null, required;
+Edit rxo08=rxo_file.rxo08, tabIndex=37, title="rxo08", noEntry;
+Edit rxo09=rxo_file.rxo09, tabIndex=38, title="rxo09", not null, required;
+Edit rxo10=rxo_file.rxo10, tabIndex=39, title="rxo10", not null, required;
+ComboBox rxo12=rxo_file.rxo12, tabIndex=41, title="rxo12", noEntry, items=(("2", "fix sale"),("3", "full sale"));
+Edit rxo11=rxo_file.rxo11, tabIndex=40, title="rxo11", noEntry;
+Edit rxo13=rxo_file.rxo13, tabIndex=46, title=%"rxo13";
+Edit idx=formonly.idx type CHAR, tabIndex=44;
+Edit cnt=formonly.cnt type CHAR, tabIndex=45;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rxn(rxn_file.rxn02,rxn_file.rxn03,rxn_file.rxn04,rxn_file.rxn05,rxn_file.rxn06,formonly.l_oma10,rxn_file.rxn07,rxn_file.rxn08)
+SCREEN RECORD s_rxo(rxo_file.rxo02,rxo_file.rxo14,rxo_file.rxo03,rxo_file.rxo05,formonly.rxo05_desc,rxo_file.rxo04,formonly.rxo04_desc,rxo_file.rxo06,rxo_file.rxo07,rxo_file.rxo08,rxo_file.rxo09,rxo_file.rxo10,rxo_file.rxo12,rxo_file.rxo11,rxo_file.rxo13)
+SCREEN RECORD Undefined(rxm_file.rxm00,rxm_file.rxm04,rxm_file.rxmconf,formonly.imgmksg,rxm_file.rxm01,rxm_file.rxm05,rxm_file.rxmcond,rxm_file.rxm02,rxm_file.rxm06,formonly.rxm06_desc,rxm_file.rxmconu,formonly.rxmconu_desc,rxm_file.rxm03,rxm_file.rxm07,rxm_file.rxmplant,formonly.rxmplant_desc,rxm_file.rxmuser,rxm_file.rxmdate,rxm_file.rxmacti,rxm_file.rxmoriu,rxm_file.rxmgrup,rxm_file.rxmmodu,rxm_file.rxmcrat,rxm_file.rxmorig,formonly.idx,formonly.cnt,formonly.sum)
+END -- INSTRUCTIONS
+

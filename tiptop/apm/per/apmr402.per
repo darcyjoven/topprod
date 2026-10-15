@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr402.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr402")
+VBox VBox1
+Grid gr5078
+{
+ <G group01                                                     >
+  P/R No.      [pmk01               ]
+  P/R Date     [pmk04               ]
+  P/R Employee [pmk12               ]
+  P/R Dept     [pmk13               ]
+  Item No.     [pml04               ]
+  Status Code  [pml16               ]
+ <                                                              >
+
+}
+END -- gr5078
+Group group02(text="INPUT")
+Grid gr5079
+{
+ <G group03                                                          >
+ [s1                  ]  [s2                  ]  [s3                ]
+ [t1                  ]  [t2                  ]  [t3                ]
+ <                                                                   >
+ <G group04                                                          >
+ [n                                                                 ]
+ <                                                                   >
+
+}
+END -- gr5079
+END -- group02
+Grid gr5080
+{
+ [more                                                            ]
+
+}
+END -- gr5080
+END -- VBox1
+END -- apmr402
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmk01=formonly.pmk01 type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<P>";
+DateEdit pmk04=formonly.pmk04 type DATE, tabIndex=2;
+ButtonEdit pmk12=formonly.pmk12 type VARCHAR, action=controlp, tabIndex=3, image="zoom", comment="<P>";
+ButtonEdit pmk13=formonly.pmk13 type VARCHAR, action=controlp, tabIndex=4, image="zoom", comment="<P>";
+ButtonEdit pml04=formonly.pml04 type VARCHAR, action=controlp, tabIndex=5, image="zoom", comment="<P>";
+Edit pml16=formonly.pml16 type VARCHAR, tabIndex=6;
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=7, items=(("1", "P/R No."),("2", "P/R Date"),("3", "P/R Employee"),("4", "P/R Department"),("5", "Item No"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=8, items=(("1", "P/R No."),("2", "P/R Date"),("3", "P/R Employee"),("4", "P/R Department"),("5", "Item No"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=9, items=(("1", "P/R No."),("2", "P/R Date"),("3", "P/R Employee"),("4", "P/R Department"),("5", "Item No"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="Print Data";
+RadioGroup n=formonly.n type CHAR, tabIndex=13, items=(("1", "All"),("2", "Untransferred P/R"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmk01,formonly.pmk04,formonly.pmk12,formonly.pmk13,formonly.pml04,formonly.pml16,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.n,formonly.more)
+END -- INSTRUCTIONS
+

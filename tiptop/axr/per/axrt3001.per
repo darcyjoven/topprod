@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt3001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt3001")
+VBox VBox1
+Folder pc4
+Page page01(text="Main")
+Grid gr15
+{
+ <G group01                                                                          >
+  Export Type                         [oma35     ]
+  Non-Customs-Certified Document Name [oma36                                   ]
+  Number                              [oma37               ]
+  Via Customs Export Declaration Cate [oma38     ]
+  Number                              [oma39               ]
+  Declaration No.                     [oma71              ]
+ <                                                                                   >
+}
+END -- gr15
+END -- page01
+END -- pc4
+END -- VBox1
+END -- axrt3001
+
+TABLES
+oma_file
+ATTRIBUTES
+Group group01:group01;
+ComboBox oma35=oma_file.oma35, tabIndex=1, not null, required, queryEditable, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"));
+Edit oma36=oma_file.oma36, tabIndex=2;
+Edit oma37=oma_file.oma37, tabIndex=3;
+Edit oma38=oma_file.oma38, tabIndex=4;
+Edit oma39=oma_file.oma39, tabIndex=5;
+ButtonEdit oma71=oma_file.oma71, action=CONTROLP, tabIndex=6, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oma_file.oma35,oma_file.oma36,oma_file.oma37,oma_file.oma38,oma_file.oma39,oma_file.oma71)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi317.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi317")
+VBox vb26
+Folder pc4
+Page page01(text="Page01")
+Grid gr7
+{
+ <G group01                                       >
+  PO No.                    [vmz01               ]
+  Reserve                   [vmz12               ]
+  Supply Rule Code          [vmz16               ]
+  vmz25                     [vmz25               ]
+ <                                                >
+
+}
+END -- gr7
+END -- page01
+END -- pc4
+Grid gr8
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr8
+END -- vb26
+END -- apsi317
+
+TABLES
+vmz_file
+ATTRIBUTES
+Group group01:group01;
+Edit vmz01=vmz_file.vmz01, tabIndex=1, noEntry, not null, required;
+ComboBox vmz12=vmz_file.vmz12, tabIndex=2, default = "0", not null, queryEditable, comment="Enter  0/1", items=(("0", "False"),("1", "True"));
+Edit vmz16=vmz_file.vmz16, tabIndex=4, not null, required;
+ComboBox vmz25=vmz_file.vmz25, tabIndex=5, default = "0", not null, required, queryEditable, comment="Enter  0/1", items=(("0", "N"),("1", "Y"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vmz_file.vmz01,vmz_file.vmz12,vmz_file.vmz16,vmz_file.vmz25,formonly.cnt)
+END -- INSTRUCTIONS
+

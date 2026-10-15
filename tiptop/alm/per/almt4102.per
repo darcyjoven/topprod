@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt4102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table ds1
+{
+[ljp03   |ljp04       |ljp05     |oaj02               |ljp06               |ljp07               |ljp071  |ljp08   |ljp09   |ljp02   ]
+[ljp03   |ljp04       |ljp05     |oaj02               |ljp06               |ljp07               |ljp071  |ljp08   |ljp09   |ljp02   ]
+[ljp03   |ljp04       |ljp05     |oaj02               |ljp06               |ljp07               |ljp071  |ljp08   |ljp09   |ljp02   ]
+[ljp03   |ljp04       |ljp05     |oaj02               |ljp06               |ljp07               |ljp071  |ljp08   |ljp09   |ljp02   ]
+[ljp03   |ljp04       |ljp05     |oaj02               |ljp06               |ljp07               |ljp071  |ljp08   |ljp09   |ljp02   ]
+}
+END -- ds1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+[ljp06_c   |ljp06_1             ]
+
+}
+END -- Grid1
+Grid gr2
+{
+ ---------- Rows [cn2   ]----------
+
+
+}
+END -- gr2
+END -- VBox1
+END -- Form
+
+TABLES
+ljp_file
+ATTRIBUTES
+Edit ljp03=ljp_file.ljp03, tabIndex=1, title=%"ljp03", not null, scroll;
+DateEdit ljp04=ljp_file.ljp04, tabIndex=2, title=%"ljp04";
+Edit ljp05=ljp_file.ljp05, tabIndex=3, title=%"ljp05", scroll;
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=12, title=%"oaj02";
+Edit ljp06=ljp_file.ljp06, tabIndex=4, title=%"ljp06", scroll;
+Edit ljp07=ljp_file.ljp07, tabIndex=5, title=%"ljp07", scroll;
+Edit ljp071=ljp_file.ljp071, tabIndex=6, title=%"ljp071", scroll;
+ComboBox ljp08=ljp_file.ljp08, tabIndex=7, title=%"ljp08", not null, scroll, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+ComboBox ljp09=ljp_file.ljp09, tabIndex=8, title=%"ljp09", not null, scroll, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+Edit ljp02=ljp_file.ljp02, tabIndex=9, title=%"ljp02", scroll;
+Label ljp06_c:ljp06_c, text=%"ljp06_c";
+Edit ljp06_1=formonly.ljp06_c type CHAR, tabIndex=10;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ljp(ljp_file.ljp03,ljp_file.ljp04,ljp_file.ljp05,formonly.oaj02,ljp_file.ljp06,ljp_file.ljp07,ljp_file.ljp071,ljp_file.ljp08,ljp_file.ljp09,ljp_file.ljp02)
+SCREEN RECORD Undefined(formonly.ljp06_c,formonly.cn2)
+END -- INSTRUCTIONS
+

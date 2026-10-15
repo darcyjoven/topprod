@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfq005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox3
+VBox VBox2
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+[label1           ][date1            ]         [label2             ][date2             ]
+
+ [s_all     ]        [s_small   ]        [s_big     ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- VBox2
+Folder Folder2
+Page Page2(text=%"Page2")
+VBox VBox1
+Table Table1
+{
+[sfb01   |sfb05   |ima02   |ima021  |bfl     |rkl     |sjll    |imaud09  ]
+[sfb01   |sfb05   |ima02   |ima021  |bfl     |rkl     |sjll    |imaud09  ]
+[sfb01   |sfb05   |ima02   |ima021  |bfl     |rkl     |sjll    |imaud09  ]
+[sfb01   |sfb05   |ima02   |ima021  |bfl     |rkl     |sjll    |imaud09  ]
+[sfb01   |sfb05   |ima02   |ima021  |bfl     |rkl     |sjll    |imaud09  ]
+}
+END -- Table1
+Grid gr2
+{
+  ---------- Rows [cnt   ]----------
+
+}
+END -- gr2
+END -- VBox1
+END -- Page2
+END -- Folder2
+END -- VBox3
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"date1";
+DateEdit date1=formonly.date1, tabIndex=1;
+Label label2:Label2, text=%"date2";
+DateEdit date2=formonly.date2, tabIndex=2;
+CheckBox s_all=formonly.s_all, tabIndex=3, text=%"s_all", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox s_small=formonly.s_small, tabIndex=4, text=%"s_small", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox s_big=formonly.s_big, tabIndex=5, text=%"s_big", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sfb01=formonly.sfb01, action=controlp, tabIndex=6, title=%"sfb01", image="zoom";
+ButtonEdit sfb05=formonly.sfb05, action=controlp, tabIndex=7, title=%"sfb05", image="zoom";
+Edit ima02=formonly.ima02, tabIndex=8, title=%"ima02";
+Edit ima021=formonly.ima021, tabIndex=9, title=%"ima021";
+Edit bfl=formonly.bfl, tabIndex=10, title=%"bfl";
+Edit rkl=formonly.rkl, tabIndex=11, title=%"rkl";
+Edit sjll=formonly.sjll, tabIndex=12, title=%"sjll";
+Edit imaud09=formonly.imaud09, tabIndex=13, title=%"imaud09";
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.date1,formonly.date2,formonly.s_all,formonly.s_small,formonly.s_big,formonly.cnt)
+SCREEN RECORD s_sfb(formonly.sfb01,formonly.sfb05,formonly.ima02,formonly.ima021,formonly.bfl,formonly.rkl,formonly.sjll,formonly.imaud09)
+END -- INSTRUCTIONS
+

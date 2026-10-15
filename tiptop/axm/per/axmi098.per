@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi098.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi098")
+VBox VBox1
+Folder pc449
+Page page01(text="Main")
+Table s_oan
+{
+[oan01             |oan02             |oan03         |oan04   |oan05  ]
+[oan01             |oan02             |oan03         |oan04   |oan05  ]
+[oan01             |oan02             |oan03         |oan04   |oan05  ]
+[oan01             |oan02             |oan03         |oan04   |oan05  ]
+[oan01             |oan02             |oan03         |oan04   |oan05  ]
+[oan01             |oan02             |oan03         |oan04   |oan05  ]
+[oan01             |oan02             |oan03         |oan04   |oan05  ]
+[oan01             |oan02             |oan03         |oan04   |oan05  ]
+[oan01             |oan02             |oan03         |oan04   |oan05  ]
+[oan01             |oan02             |oan03         |oan04   |oan05  ]
+
+}
+END -- s_oan
+END -- page01
+END -- pc449
+Grid gr2005
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2005
+END -- VBox1
+END -- axmi098
+
+TABLES
+oan_file
+ATTRIBUTES
+ButtonEdit oan01=oan_file.oan01, action=controlp, tabIndex=1, title="Delivery Note <->", not null, required, image="zoom", upShift, comment="<^P>Qty Delivery Note";
+ButtonEdit oan02=oan_file.oan02, action=controlp, tabIndex=2, title="Receipt Note <->", image="zoom", upShift, comment="<^P>Qty Receipt Note";
+ButtonEdit oan03=oan_file.oan03, action=controlp, tabIndex=3, title="Store-in Note", not null, required, image="zoom", upShift, comment="<^P>Qry Store-in Note";
+ButtonEdit oan04=oan_file.oan04, action=controlp, tabIndex=4, title="AR Note", image="zoom", upShift, comment="<^P>Qty AR Note";
+ButtonEdit oan05=oan_file.oan05, action=controlp, tabIndex=5, title="AP Note", image="zoom", upShift, comment="<^P>Qty AP Note";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oan(oan_file.oan01,oan_file.oan02,oan_file.oan03,oan_file.oan04,oan_file.oan05)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

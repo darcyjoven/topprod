@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi163.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi163")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1402
+{
+ Forecast Ver. [odc01     ][odb02               ]           Employee   [odc07     ][gen02     ]           Target Amt   [odc11       ][imgmksg]
+ Inst No.      [odc02     ][tqb02               ]           Department [odc08     ][gem02     ]           Fore.Tot.Amt [ode14_1     ][       ]
+ Time Bucket   [odc04     ]                                 Currency   [odc09     ]                       [odc12                    ]
+ For.Init.Date [odc05     ]                                 Ex.Rate    [odc10               ]             [odc121                   ]
+ For.End Date  [odc06     ]                                                                               [odc13                    ]
+                                                                                                          [odc131                   ]
+}
+END -- gr1402
+END -- page01
+Page info(text="Info")
+Grid gr1403
+{
+ Record Owner        [odcuser   ] Last Modified by    [odcmodu   ]
+ Department          [odcgrup   ] Create/Modify Date  [odcdate   ]
+ Record Orig.        [odcoriu   ]
+ Dept Orig.          [odcorig   ]
+}
+END -- gr1403
+END -- info
+END -- folder01
+Folder pc333
+Page page07(text="Adjust Target Amt")
+VBox VBox2
+Table s_odc1
+{
+[odc02_1        |tqb02_1             |ode05a_s       |ode14_s        |odc11_1        ]
+[odc02_1        |tqb02_1             |ode05a_s       |ode14_s        |odc11_1        ]
+[odc02_1        |tqb02_1             |ode05a_s       |ode14_s        |odc11_1        ]
+[odc02_1        |tqb02_1             |ode05a_s       |ode14_s        |odc11_1        ]
+[odc02_1        |tqb02_1             |ode05a_s       |ode14_s        |odc11_1        ]
+[odc02_1        |tqb02_1             |ode05a_s       |ode14_s        |odc11_1        ]
+[odc02_1        |tqb02_1             |ode05a_s       |ode14_s        |odc11_1        ]
+[odc02_1        |tqb02_1             |ode05a_s       |ode14_s        |odc11_1        ]
+[odc02_1        |tqb02_1             |ode05a_s       |ode14_s        |odc11_1        ]
+[odc02_1        |tqb02_1             |ode05a_s       |ode14_s        |odc11_1        ]
+
+}
+END -- s_odc1
+Grid gr1404
+{
+ --- Rows [cnt   ] / [cn2   ] ---Total[tot1          ][tot2          ][tot3          ]
+
+}
+END -- gr1404
+END -- VBox2
+END -- page07
+END -- pc333
+END -- VBox1
+END -- atmi163
+
+TABLES
+odc_file
+ATTRIBUTES
+ButtonEdit odc01=odc_file.odc01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank/Repeated! <^P>Qry Forecast Version";
+Edit odb02=formonly.odb02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit odc07=odc_file.odc07, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=4, noEntry;
+Edit odc11=odc_file.odc11, tabIndex=5, not null, required;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit odc02=odc_file.odc02, action=controlp, tabIndex=7, not null, required, image="zoom", comment="Key Field, No Blank/Repeated! <^P>Qry Inst No.";
+Edit tqb02=formonly.tqb02 type CHAR, tabIndex=8, noEntry;
+ButtonEdit odc08=odc_file.odc08, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=10, noEntry;
+Edit ode14_1=formonly.ode14_1 type CHAR, tabIndex=11, noEntry;
+ComboBox odc04=odc_file.odc04, tabIndex=12, noEntry, items=(("1", "Quarter"),("2", "Month"),("3", "10-Day"),("4", "Week"),("5", "Day"));
+ButtonEdit odc09=odc_file.odc09, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P>Qry Currency";
+CheckBox odc12=odc_file.odc12, tabIndex=14, text="Forecast Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit odc05=odc_file.odc05, tabIndex=15, noEntry;
+Edit odc10=odc_file.odc10, tabIndex=16, not null, required;
+CheckBox odc121=odc_file.odc121, tabIndex=17, text="Upper Adjust Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit odc06=odc_file.odc06, tabIndex=18, noEntry;
+CheckBox odc13=odc_file.odc13, tabIndex=19, text="Target Amt Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox odc131=odc_file.odc131, tabIndex=20, text="Target Qty Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit odcuser=odc_file.odcuser, tabIndex=21, noEntry;
+Edit odcmodu=odc_file.odcmodu, tabIndex=22, noEntry;
+Edit odcgrup=odc_file.odcgrup, tabIndex=23, noEntry;
+DateEdit odcdate=odc_file.odcdate, tabIndex=24, noEntry;
+Edit odcoriu=odc_file.odcoriu, tabIndex=501, noEntry;
+Edit odcorig=odc_file.odcorig, tabIndex=502, noEntry;
+Edit odc02_1=formonly.odc02_1 type CHAR, tabIndex=25, title="Lower Inst No.", noEntry;
+Edit tqb02_1=formonly.tqb02_1 type CHAR, tabIndex=26, title="Lower Inst Name", noEntry;
+Edit ode05a_s=formonly.ode05a_s type CHAR, tabIndex=27, title="History Amt", noEntry;
+Edit ode14_s=formonly.ode14_s type CHAR, tabIndex=28, title="Fore.Tot.Amt", noEntry;
+Edit odc11_1=formonly.odc11_1 type CHAR, tabIndex=29, title="Target Amt";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=30, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=31, noEntry;
+Edit tot1=formonly.tot1 type CHAR, tabIndex=32, noEntry;
+Edit tot2=formonly.tot2 type CHAR, tabIndex=33, noEntry;
+Edit tot3=formonly.tot3 type CHAR, tabIndex=34, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_odc1(formonly.odc02_1,formonly.tqb02_1,formonly.ode05a_s,formonly.ode14_s,formonly.odc11_1)
+SCREEN RECORD Undefined(odc_file.odc01,formonly.odb02,odc_file.odc07,formonly.gen02,odc_file.odc11,formonly.imgmksg,odc_file.odc02,formonly.tqb02,odc_file.odc08,formonly.gem02,formonly.ode14_1,odc_file.odc04,odc_file.odc09,odc_file.odc12,odc_file.odc05,odc_file.odc10,odc_file.odc121,odc_file.odc06,odc_file.odc13,odc_file.odc131,odc_file.odcuser,odc_file.odcmodu,odc_file.odcgrup,odc_file.odcdate,odc_file.odcoriu,odc_file.odcorig,formonly.cnt,formonly.cn2,formonly.tot1,formonly.tot2,formonly.tot3)
+END -- INSTRUCTIONS
+

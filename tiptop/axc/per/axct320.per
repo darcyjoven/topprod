@@ -1,0 +1,128 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct320.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt330")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr462
+{
+ Cost Calculate Category  [cde04                 ]
+ Book No.                 [cde01   ]
+ Legal                    [cdelegal][azt02        ]
+
+
+
+}
+END -- gr462
+Grid gr463
+{
+ Year   [cde0]    Month   [cd]
+ Entry  [cde05               ]                   [imgmksg]
+ glno   [nppglno             ]   [cdeconf  ]     [       ]
+
+
+
+}
+END -- gr463
+END -- hb2
+END -- page01
+Page info(text="Info")
+Grid gr466
+{
+
+   Record Orig.     [cdeoriu     ]
+   Dept Orig.       [cdeorig     ]
+
+
+
+}
+END -- gr466
+END -- info
+END -- folder01
+Table s_cde
+{
+[cde06         |cde11             |cde07        |cde12       |cde13       |cde08          |cde09               |aag02          |cde10             ]
+[cde06         |cde11             |cde07        |cde12       |cde13       |cde08          |cde09               |aag02          |cde10             ]
+[cde06         |cde11             |cde07        |cde12       |cde13       |cde08          |cde09               |aag02          |cde10             ]
+[cde06         |cde11             |cde07        |cde12       |cde13       |cde08          |cde09               |aag02          |cde10             ]
+[cde06         |cde11             |cde07        |cde12       |cde13       |cde08          |cde09               |aag02          |cde10             ]
+
+}
+END -- s_cde
+Table s_cdf
+{
+[cdf07          |cdf08               |aag02_2        |cdf09             |cdf09a              |cdf09b               |cdf09c              |cdf09d          |cdf09e          |cdf09f          |cdf09g         |cdf09h          ]
+[cdf07          |cdf08               |aag02_2        |cdf09             |cdf09a              |cdf09b               |cdf09c              |cdf09d          |cdf09e          |cdf09f          |cdf09g         |cdf09h          ]
+[cdf07          |cdf08               |aag02_2        |cdf09             |cdf09a              |cdf09b               |cdf09c              |cdf09d          |cdf09e          |cdf09f          |cdf09g         |cdf09h          ]
+[cdf07          |cdf08               |aag02_2        |cdf09             |cdf09a              |cdf09b               |cdf09c              |cdf09d          |cdf09e          |cdf09f          |cdf09g         |cdf09h          ]
+[cdf07          |cdf08               |aag02_2        |cdf09             |cdf09a              |cdf09b               |cdf09c              |cdf09d          |cdf09e          |cdf09f          |cdf09g         |cdf09h          ]
+
+}
+END -- s_cdf
+Grid gr467
+{
+  ---------- Rows [cnt   ] / [cn2   ]-[cn4   ] ----------
+
+
+}
+END -- gr467
+END -- VBox1
+END -- aapt330
+
+TABLES
+aag_file,
+cdf_file,
+cde_file,
+npp_file,
+azt_file
+ATTRIBUTES
+ComboBox cde04=cde_file.cde04, tabIndex=1, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+ButtonEdit cde01=cde_file.cde01, action=controlp, tabIndex=2, image="zoom";
+Edit cdelegal=cde_file.cdelegal, tabIndex=3;
+Edit azt02=azt_file.azt02, tabIndex=4;
+Edit cde0=cde_file.cde02, tabIndex=5;
+Edit cd=cde_file.cde03, tabIndex=6;
+Edit cde05=cde_file.cde05, tabIndex=7;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit nppglno=npp_file.nppglno, tabIndex=8;
+CheckBox cdeconf=cde_file.cdeconf, tabIndex=9, default = "N", text="cdeconf", valueChecked = "Y", valueUnchecked = "N";
+Edit cdeoriu=cde_file.cdeoriu, tabIndex=10, noEntry;
+Edit cdeorig=cde_file.cdeorig, tabIndex=11, noEntry;
+Edit cde06=cde_file.cde06, tabIndex=12, title="Type Code", noEntry;
+Edit cde11=formonly.cde11 type CHAR, tabIndex=13, title="Cost Center", noEntry;
+Edit cde07=cde_file.cde07, tabIndex=14, title="Work Order", noEntry;
+ComboBox cde12=cde_file.cde12, tabIndex=15, title=%"Work Type", items=(("1", "Text"),("5", "Text"),("7", "Text"),("8", "Text"),("11", "Text"),("13", "Text"),("15", "Text"));
+Edit cde13=cde_file.cde13, tabIndex=16, title=%"Factory";
+Edit cde08=cde_file.cde08, tabIndex=17, title="Main Item", noEntry;
+ButtonEdit cde09=cde_file.cde09, action=controlp, tabIndex=18, title="Cost Acc", image="zoom";
+Edit aag02=aag_file.aag02, tabIndex=19, title="Acc Name", noEntry;
+Edit cde10=cde_file.cde10, tabIndex=20, title="Amt", noEntry;
+Edit cdf07=cdf_file.cdf07, tabIndex=21, title="Sub Item", noEntry;
+ButtonEdit cdf08=cdf_file.cdf08, action=controlp, tabIndex=22, title="Account", image="zoom";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=23, title="Acc Name", noEntry;
+Edit cdf09=cdf_file.cdf09, tabIndex=24, title="Amt", noEntry;
+Edit cdf09a=cdf_file.cdf09a, tabIndex=25, title="Material", noEntry;
+Edit cdf09b=cdf_file.cdf09b, tabIndex=26, title="Man Cost", noEntry;
+Edit cdf09c=cdf_file.cdf09c, tabIndex=27, title="Make Cost", noEntry;
+Edit cdf09d=cdf_file.cdf09d, tabIndex=28, title="Cost 1", noEntry;
+Edit cdf09e=cdf_file.cdf09e, tabIndex=29, title="Cost 2", noEntry;
+Edit cdf09f=cdf_file.cdf09f, tabIndex=30, title="Cost 3", noEntry;
+Edit cdf09g=cdf_file.cdf09g, tabIndex=31, title="Cost 4", noEntry;
+Edit cdf09h=cdf_file.cdf09h, tabIndex=32, title="Cost 5", noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=33;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=34;
+Edit cn4=formonly.cn4 type INTEGER, tabIndex=35;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cde(cde_file.cde06,formonly.cde11,cde_file.cde07,cde_file.cde12,cde_file.cde13,cde_file.cde08,cde_file.cde09,aag_file.aag02,cde_file.cde10)
+SCREEN RECORD s_cdf(cdf_file.cdf07,cdf_file.cdf08,formonly.aag02_2,cdf_file.cdf09,cdf_file.cdf09a,cdf_file.cdf09b,cdf_file.cdf09c,cdf_file.cdf09d,cdf_file.cdf09e,cdf_file.cdf09f,cdf_file.cdf09g,cdf_file.cdf09h)
+SCREEN RECORD Undefined(cde_file.cde04,cde_file.cde01,cde_file.cdelegal,azt_file.azt02,cde_file.cde02,cde_file.cde03,cde_file.cde05,formonly.imgmksg,npp_file.nppglno,cde_file.cdeconf,cde_file.cdeoriu,cde_file.cdeorig,formonly.cnt,formonly.cn2,formonly.cn4)
+END -- INSTRUCTIONS
+

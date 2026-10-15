@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi601")
+VBox VBox1
+Folder pc754
+Page page01(text="Main")
+Table s_gsf
+{
+[gsf01     |gsf02               |gsf04               |aag02                                             |gsf041              |aag021                                            |gsfact]
+[gsf01     |gsf02               |gsf04               |aag02                                             |gsf041              |aag021                                            |gsfact]
+[gsf01     |gsf02               |gsf04               |aag02                                             |gsf041              |aag021                                            |gsfact]
+[gsf01     |gsf02               |gsf04               |aag02                                             |gsf041              |aag021                                            |gsfact]
+[gsf01     |gsf02               |gsf04               |aag02                                             |gsf041              |aag021                                            |gsfact]
+[gsf01     |gsf02               |gsf04               |aag02                                             |gsf041              |aag021                                            |gsfact]
+[gsf01     |gsf02               |gsf04               |aag02                                             |gsf041              |aag021                                            |gsfact]
+[gsf01     |gsf02               |gsf04               |aag02                                             |gsf041              |aag021                                            |gsfact]
+[gsf01     |gsf02               |gsf04               |aag02                                             |gsf041              |aag021                                            |gsfact]
+[gsf01     |gsf02               |gsf04               |aag02                                             |gsf041              |aag021                                            |gsfact]
+
+}
+END -- s_gsf
+END -- page01
+END -- pc754
+Grid gr4042
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4042
+END -- VBox1
+END -- anmi601
+
+TABLES
+gsf_file
+ATTRIBUTES
+Edit gsf01=gsf_file.gsf01, tabIndex=1, title="Expense #", not null, required;
+Edit gsf02=gsf_file.gsf02, tabIndex=2, title="Expense Description";
+ButtonEdit gsf04=gsf_file.gsf04, action=controlp, tabIndex=3, title="Account", image="zoom", comment="<^P>Qry Account ";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=4, title="Account Name", noEntry;
+ButtonEdit gsf041=gsf_file.gsf041, action=controlp, tabIndex=5, title="Account2", image="zoom", comment="<^P>Qry Account ";
+Edit aag021=formonly.aag021 type VARCHAR, tabIndex=6, title="Account Name2", noEntry;
+CheckBox gsfact=gsf_file.gsfacti, tabIndex=7, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gsf(gsf_file.gsf01,gsf_file.gsf02,gsf_file.gsf04,formonly.aag02,gsf_file.gsf041,formonly.aag021,gsf_file.gsfacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

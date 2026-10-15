@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimp500")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                      ><G group05                             >
+ [sma47                             ]              % to Class A        [sma13     ]%
+                                                   % to Class B        [sma14     ]%
+ <                                               ><                                      >
+ <G group02                                      ><G group06                             >
+  ABC Calculation period [sma48     ]             [f                                 ]
+  Current Period         [sma51     ][sma52     ]
+ <                                               ><                                      >
+ <G group03                                      ><G group07                             >
+ [sma49                             ]             [dummy01                           ]
+                                                  [dummy02                           ]
+ <                                               ><                                      >
+ <G group04                                      ><G group08                             >
+  Group Code          [d         ]                [e                                   ]
+ <                                               ><                                      >
+
+}
+END -- gr1
+Grid gr2
+{
+[g_bgjob                                 ]
+
+}
+END -- gr2
+END -- VBox1
+END -- aimp500
+
+ATTRIBUTES
+Group group01:group01, text="ABC Calculation type";
+RadioGroup sma47=formonly.sma47 type VARCHAR, tabIndex=1, noEntry, items=(("1", "by Passed Amount Used"),("3", "By Standard Cost"),("4", "By Current Cost"));
+Group group05:group05, text="Inventory ABC Class";
+Edit sma13=formonly.sma13 type VARCHAR, tabIndex=2, noEntry;
+Edit sma14=formonly.sma14 type VARCHAR, tabIndex=3, noEntry;
+Group group02:group02, text="ABC Cd Calcul. Period Base";
+Edit sma48=formonly.sma48 type VARCHAR, tabIndex=4, noEntry;
+Edit sma51=formonly.sma51 type VARCHAR, tabIndex=5, noEntry;
+Edit sma52=formonly.sma52 type VARCHAR, tabIndex=6, noEntry;
+Group group06:group06, text="by Passed Amount Used";
+RadioGroup f=formonly.f type VARCHAR, tabIndex=7, items=(("1", "Store-in  + Store-out + Sales Qty"),("2", "Stock-out +           + Sales Qty"));
+Group group03:group03, text="ABC Cd Criteria";
+RadioGroup sma49=formonly.sma49 type VARCHAR, tabIndex=8, noEntry, items=(("1", "by Group Code"),("2", "All"));
+Group group07:group07;
+Label dummy01:dummy01, text="Qty Used in Period";
+Label dummy02:dummy02, text="= Store-in + Store-out + Sales Qty";
+Group group04:group04, text="QBE";
+Edit d=formonly.d type VARCHAR, tabIndex=9;
+Group group08:group08;
+CheckBox e=formonly.e type VARCHAR, tabIndex=10, text="Print Result now", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=11, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sma47,formonly.sma13,formonly.sma14,formonly.sma48,formonly.sma51,formonly.sma52,formonly.f,formonly.sma49,formonly.d,formonly.e,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

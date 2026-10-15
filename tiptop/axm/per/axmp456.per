@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp456.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmp456")
+Grid gr2179
+{
+ <G group01                                              >
+  Order No.           [oea01               ]
+  Order Date          [oea02               ]
+  Accounts Cust       [oea03               ]
+  Shipping Cust       [oea04               ]
+  Employee No.        [oea14               ]
+  Department No.      [oea15               ]
+ <                                                       >
+
+}
+END -- gr2179
+END -- axmp456
+
+TABLES
+oea_file
+ATTRIBUTES
+Group group01:group01;
+Edit oea01=oea_file.oea01, tabIndex=1;
+DateEdit oea02=oea_file.oea02, tabIndex=2;
+Edit oea03=oea_file.oea03, tabIndex=3;
+Edit oea04=oea_file.oea04, tabIndex=4;
+Edit oea14=oea_file.oea14, tabIndex=5;
+Edit oea15=oea_file.oea15, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oea_file.oea01,oea_file.oea02,oea_file.oea03,oea_file.oea04,oea_file.oea14,oea_file.oea15)
+END -- INSTRUCTIONS
+

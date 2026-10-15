@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi319.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi319")
+VBox vb3
+Folder pc4
+Page page01(text="Page01")
+Grid gr7
+{
+ <G group01                                                       >
+  Remaining of Source Supply Doc.     [vnb01               ]
+  Source Demand Qty                   [vnb02               ]
+  Source Doc. No                      [vnb03               ]
+  Demand Order                        [vnb04               ]
+  Estimated Supplies                  [vnb05               ]
+  PO or MO                            [vnb06               ]
+  Max. Supply                         [vnb07               ]
+  Lock                                [vnb08               ]
+  Item No.                            [vnb09               ]
+ <                                                                >
+
+}
+END -- gr7
+END -- page01
+END -- pc4
+Grid gr8
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr8
+END -- vb3
+END -- apsi319
+
+TABLES
+vnb_file
+ATTRIBUTES
+Group group01:group01;
+Edit vnb01=vnb_file.vnb01, tabIndex=1, not null, required;
+Edit vnb02=vnb_file.vnb02, tabIndex=2;
+Edit vnb03=vnb_file.vnb03, tabIndex=4, not null, required;
+ComboBox vnb04=vnb_file.vnb04, tabIndex=5, default = "0", not null, required, items=(("0", "False"),("1", "True"));
+Edit vnb05=vnb_file.vnb05, tabIndex=6, not null, required;
+ComboBox vnb06=vnb_file.vnb06, tabIndex=7, default = "0", not null, required, items=(("0", "W/O"),("1", "P/O"));
+Edit vnb07=vnb_file.vnb07, tabIndex=8;
+ComboBox vnb08=vnb_file.vnb08, tabIndex=9, not null, required, items=(("0", "False"),("1", "True"));
+Edit vnb09=vnb_file.vnb09, tabIndex=10, not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vnb_file.vnb01,vnb_file.vnb02,vnb_file.vnb03,vnb_file.vnb04,vnb_file.vnb05,vnb_file.vnb06,vnb_file.vnb07,vnb_file.vnb08,vnb_file.vnb09,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi101")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4817
+{
+ Upper Payment Method  [pmb01               ]          Category[pmb02     ]
+ Description           [pmb01_pma02                   ]
+}
+END -- gr4817
+END -- page01
+Page info(text="Info")
+Grid gr4818
+{
+ Record Owner        [pmbuser   ]  Last Modified by    [pmbmodu   ]  Valid[pmbacti   ]
+ Department          [pmbgrup   ]  Create/Modify Date  [pmbdate   ]
+ Record Orig.        [pmboriu   ]
+ Dept Orig.          [pmborig   ]
+}
+END -- gr4818
+END -- info
+END -- folder01
+Table s_pmb
+{
+[pmb03       |pmb04            |pmb04_pma02                  |pmb05         ]
+[pmb03       |pmb04            |pmb04_pma02                  |pmb05         ]
+[pmb03       |pmb04            |pmb04_pma02                  |pmb05         ]
+[pmb03       |pmb04            |pmb04_pma02                  |pmb05         ]
+[pmb03       |pmb04            |pmb04_pma02                  |pmb05         ]
+[pmb03       |pmb04            |pmb04_pma02                  |pmb05         ]
+[pmb03       |pmb04            |pmb04_pma02                  |pmb05         ]
+[pmb03       |pmb04            |pmb04_pma02                  |pmb05         ]
+[pmb03       |pmb04            |pmb04_pma02                  |pmb05         ]
+[pmb03       |pmb04            |pmb04_pma02                  |pmb05         ]
+
+}
+END -- s_pmb
+Grid gr4819
+{
+ ------------Rows [cnt  ]------------
+
+}
+END -- gr4819
+END -- VBox1
+END -- apmi101
+
+TABLES
+pmb_file
+ATTRIBUTES
+ButtonEdit pmb01=pmb_file.pmb01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ComboBox pmb02=pmb_file.pmb02, tabIndex=2, not null, required, items=(("1", "By Rate"),("2", "User Defined Column"));
+Edit pmb01_pma02=formonly.pmb01_pma02 type CHAR, tabIndex=3, noEntry;
+Edit pmbuser=pmb_file.pmbuser, tabIndex=4, noEntry;
+Edit pmbmodu=pmb_file.pmbmodu, tabIndex=5, noEntry;
+Edit pmbacti=pmb_file.pmbacti, tabIndex=6, noEntry;
+Edit pmbgrup=pmb_file.pmbgrup, tabIndex=7, noEntry;
+DateEdit pmbdate=pmb_file.pmbdate, tabIndex=8, noEntry;
+Edit pmboriu=pmb_file.pmboriu, tabIndex=501, noEntry;
+Edit pmborig=pmb_file.pmborig, tabIndex=502, noEntry;
+Edit pmb03=pmb_file.pmb03, tabIndex=9, title="Line No.", not null, required;
+ButtonEdit pmb04=pmb_file.pmb04, action=controlp, tabIndex=10, title="Payment Method", not null, required, image="zoom";
+Edit pmb04_pma02=formonly.pmb04_pma02 type CHAR, tabIndex=11, title="Description", noEntry;
+Edit pmb05=pmb_file.pmb05, tabIndex=12, title="Payment Ratio%";
+Edit cnt=formonly.cnt type CHAR, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmb(pmb_file.pmb03,pmb_file.pmb04,formonly.pmb04_pma02,pmb_file.pmb05)
+SCREEN RECORD Undefined(pmb_file.pmb01,pmb_file.pmb02,formonly.pmb01_pma02,pmb_file.pmbuser,pmb_file.pmbmodu,pmb_file.pmbacti,pmb_file.pmbgrup,pmb_file.pmbdate,pmb_file.pmboriu,pmb_file.pmborig,formonly.cnt)
+END -- INSTRUCTIONS
+

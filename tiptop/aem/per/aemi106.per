@@ -1,0 +1,108 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemi106.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemi106")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr1760
+{
+ <G group01                                                                           >
+    Equipment No.             [fig01          ][fia02                               ]
+    Instrument No.            [fig02          ][fif02                               ]
+
+ <                                                                                    >
+
+}
+END -- gr1760
+Group gb1182
+HBox HBox1
+Grid gr1761
+{
+ Measurement Units       [fig03          ]
+
+
+}
+END -- gr1761
+Grid gr1762
+{
+ Upper Limit             [fig04          ]
+ Lower Limit             [fig05          ]
+
+}
+END -- gr1762
+END -- HBox1
+END -- gb1182
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr1763
+{
+  Record Owner        [figuser   ]   Last Modified by    [figmodu   ]   Data Valid Code     [figacti   ]
+  Department          [figgrup   ]   Create/Modify Date  [figdate   ]
+  Record Orig.        [figoriu   ]
+  Dept Orig.          [figorig   ]
+}
+END -- gr1763
+END -- info
+END -- folder01
+Table s_fih
+{
+[fih03  |fih04  |fih05          ]
+[fih03  |fih04  |fih05          ]
+[fih03  |fih04  |fih05          ]
+[fih03  |fih04  |fih05          ]
+[fih03  |fih04  |fih05          ]
+[fih03  |fih04  |fih05          ]
+[fih03  |fih04  |fih05          ]
+[fih03  |fih04  |fih05          ]
+[fih03  |fih04  |fih05          ]
+[fih03  |fih04  |fih05          ]
+
+}
+END -- s_fih
+Grid gr1764
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1764
+END -- VBox1
+END -- aemi106
+
+TABLES
+fih_file,
+fig_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit fig01=fig_file.fig01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>query the information of the equipment";
+Edit fia02=formonly.fia02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit fig02=fig_file.fig02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>query the information of the instrument";
+Edit fif02=formonly.fif02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit fig03=fig_file.fig03, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>query the detail";
+Edit fig04=fig_file.fig04, tabIndex=6, not null, required;
+Edit fig05=fig_file.fig05, tabIndex=7, not null, required;
+Edit figuser=fig_file.figuser, tabIndex=8, noEntry;
+Edit figmodu=fig_file.figmodu, tabIndex=9, noEntry;
+Edit figacti=fig_file.figacti, tabIndex=10, noEntry, upShift;
+Edit figgrup=fig_file.figgrup, tabIndex=11, noEntry;
+DateEdit figdate=fig_file.figdate, tabIndex=12, noEntry;
+Edit figoriu=fig_file.figoriu, tabIndex=501, noEntry;
+Edit figorig=fig_file.figorig, tabIndex=502, noEntry;
+Edit fih03=fih_file.fih03, tabIndex=13, title="Date", not null, required;
+Edit fih04=fih_file.fih04, tabIndex=14, title="Time", not null, required, format="------";
+Edit fih05=fih_file.fih05, tabIndex=15, title="Value", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fih(fih_file.fih03,fih_file.fih04,fih_file.fih05)
+SCREEN RECORD Undefined(fig_file.fig01,formonly.fia02,fig_file.fig02,formonly.fif02,fig_file.fig03,fig_file.fig04,fig_file.fig05,fig_file.figuser,fig_file.figmodu,fig_file.figacti,fig_file.figgrup,fig_file.figdate,fig_file.figoriu,fig_file.figorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

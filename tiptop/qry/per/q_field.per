@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_field.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"  Qry Field ")
+VBox VBox1
+Grid gr3762
+{
+ <G group01                                      >
+  S/N [l]
+ <                                               >
+
+}
+END -- gr3762
+Table s_fields
+{
+[no  |fields    |descr                         ]
+[no  |fields    |descr                         ]
+[no  |fields    |descr                         ]
+[no  |fields    |descr                         ]
+[no  |fields    |descr                         ]
+[no  |fields    |descr                         ]
+[no  |fields    |descr                         ]
+[no  |fields    |descr                         ]
+[no  |fields    |descr                         ]
+[no  |fields    |descr                         ]
+
+}
+END -- s_fields
+END -- VBox1
+END -- q_field
+
+ATTRIBUTES
+Group group01:group01;
+Edit l=formonly.linex type VARCHAR, tabIndex=1;
+Edit no=formonly.no type SMALLINT, tabIndex=2, title="No.";
+Edit fields=formonly.fields type CHAR, tabIndex=3, title="Field", noEntry;
+Edit descr=formonly.descr type CHAR, tabIndex=4, title="Description", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fields(formonly.no,formonly.fields,formonly.descr)
+SCREEN RECORD Undefined(formonly.linex)
+END -- INSTRUCTIONS
+

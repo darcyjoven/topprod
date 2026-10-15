@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi410.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi410")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr623
+{
+ Department             [bhc01     ][gem02     ]
+ Apportionment Category [bhc02     ][aca02     ]
+}
+END -- gr623
+END -- page01
+END -- folder01
+Table s_bhc
+{
+[bhc03    |bhc04           |aag02                                             |bhc05  |gem02_b     |bhc07              ]
+[bhc03    |bhc04           |aag02                                             |bhc05  |gem02_b     |bhc07              ]
+[bhc03    |bhc04           |aag02                                             |bhc05  |gem02_b     |bhc07              ]
+[bhc03    |bhc04           |aag02                                             |bhc05  |gem02_b     |bhc07              ]
+[bhc03    |bhc04           |aag02                                             |bhc05  |gem02_b     |bhc07              ]
+[bhc03    |bhc04           |aag02                                             |bhc05  |gem02_b     |bhc07              ]
+[bhc03    |bhc04           |aag02                                             |bhc05  |gem02_b     |bhc07              ]
+[bhc03    |bhc04           |aag02                                             |bhc05  |gem02_b     |bhc07              ]
+[bhc03    |bhc04           |aag02                                             |bhc05  |gem02_b     |bhc07              ]
+[bhc03    |bhc04           |aag02                                             |bhc05  |gem02_b     |bhc07              ]
+
+}
+END -- s_bhc
+Grid gr624
+{
+ ---------- Rows [cnt       ] ----------
+
+}
+END -- gr624
+END -- VBox1
+END -- abgi410
+
+TABLES
+bhc_file
+ATTRIBUTES
+ButtonEdit bhc01=bhc_file.bhc01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Query Department \"ALL\" means all department,if users input \"ALL\" then can not input other department data";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit bhc02=bhc_file.bhc02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Apportionment Category";
+Edit aca02=formonly.aca02 type CHAR, tabIndex=4, noEntry;
+Edit bhc03=bhc_file.bhc03, tabIndex=5, title="Line No.", not null, required;
+ButtonEdit bhc04=bhc_file.bhc04, action=controlp, tabIndex=6, title="Account Code", not null, required, image="zoom", comment="<^P>Qry Account ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=7, title="Account Name", noEntry;
+ButtonEdit bhc05=bhc_file.bhc05, action=controlp, tabIndex=8, title="Dept.", not null, required, image="zoom", comment="<^P>Query Department";
+Edit gem02_b=formonly.gem02_b type VARCHAR, tabIndex=9, title="Dept. Name", noEntry;
+Edit bhc07=bhc_file.bhc07, tabIndex=10, title="Apportionment Base", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bhc(bhc_file.bhc03,bhc_file.bhc04,formonly.aag02,bhc_file.bhc05,formonly.gem02_b,bhc_file.bhc07)
+SCREEN RECORD Undefined(bhc_file.bhc01,formonly.gem02,bhc_file.bhc02,formonly.aca02,formonly.cnt)
+END -- INSTRUCTIONS
+

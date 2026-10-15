@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq440.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq440")
+VBox vb67
+Folder folder01
+Page page01(text="Main")
+Grid gr2263
+{
+  Order No.           [oea01                  ]     Employee            [oea14     |gen02               ][oeaconf         ]
+  Order Date          [oea02     ]                  Department          [oea15     |gem02               ][oeb70           ]
+  Accounts Customer   [oea03     ][oea032  ]        On-Hold Reason      [oeahold   |oak02               ]
+  Shipping Customer   [oea04     ][occ02   ]
+
+ <G group01                                           ><G group03                                    ><G group02                                                          >
+  Line No.            [oeb03               ]            Par/Ref Unit          [oeb913    ]             WH/Loc./Lot         [oeb09|oeb09_1 ][oeb01|oeb091_|oeb092    ]
+  Product No.         [oeb04               ]            Par/Ref Qty           [oeb915    ]             Deliver Date        [oeb16     ]
+  Part Name           [oeb06                        ]   Par/Ref Ck/Acpt Qty   [acd_q2              ]   Delivery Qty        [oeb24     ]
+  Spec.               [ima021    ]                      Chi/Sales Unit        [oeb910    ]             Sales/return Qty    [oeb25     ]
+  Unit                [oeb05     ]                      Chi/Sales Qty         [oeb912    ]             Undelivered Qty     [unqty               ]
+  Order Qty           [oeb12     ]                      Chi/Sales Ck/Acpt Qty [acd_q1              ]   Check/Accept Qty    [acd_q               ]
+  Delivery Date       [oeb15     ]                     <                                             ><                                                                   >
+ <                                                    >
+}
+END -- gr2263
+END -- page01
+END -- folder01
+Table s_sfb
+{
+[sfb01            |sfb04_d  |sfb13                 |sfb15                |sfb08           |sfb081      |sfb09          |sfb82     |gem01   ]
+[sfb01            |sfb04_d  |sfb13                 |sfb15                |sfb08           |sfb081      |sfb09          |sfb82     |gem01   ]
+[sfb01            |sfb04_d  |sfb13                 |sfb15                |sfb08           |sfb081      |sfb09          |sfb82     |gem01   ]
+[sfb01            |sfb04_d  |sfb13                 |sfb15                |sfb08           |sfb081      |sfb09          |sfb82     |gem01   ]
+[sfb01            |sfb04_d  |sfb13                 |sfb15                |sfb08           |sfb081      |sfb09          |sfb82     |gem01   ]
+[sfb01            |sfb04_d  |sfb13                 |sfb15                |sfb08           |sfb081      |sfb09          |sfb82     |gem01   ]
+[sfb01            |sfb04_d  |sfb13                 |sfb15                |sfb08           |sfb081      |sfb09          |sfb82     |gem01   ]
+[sfb01            |sfb04_d  |sfb13                 |sfb15                |sfb08           |sfb081      |sfb09          |sfb82     |gem01   ]
+[sfb01            |sfb04_d  |sfb13                 |sfb15                |sfb08           |sfb081      |sfb09          |sfb82     |gem01   ]
+[sfb01            |sfb04_d  |sfb13                 |sfb15                |sfb08           |sfb081      |sfb09          |sfb82     |gem01   ]
+
+}
+END -- s_sfb
+Grid gr2264
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2264
+END -- vb67
+END -- axmq440
+
+TABLES
+gen_file,
+gem_file,
+sfb_file,
+ima_file,
+oeb_file,
+oea_file,
+oak_file
+ATTRIBUTES
+ButtonEdit oea01=oea_file.oea01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit oea14=oea_file.oea14, action=controlp, tabIndex=2, image="zoom";
+Edit gen02=gen_file.gen02, tabIndex=42;
+CheckBox oeaconf=oea_file.oeaconf, tabIndex=3, text="Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit oea02=oea_file.oea02, tabIndex=4;
+ButtonEdit oea15=oea_file.oea15, action=controlp, tabIndex=5, image="zoom";
+Edit gem02=gem_file.gem02, tabIndex=43;
+CheckBox oeb70=oeb_file.oeb70, tabIndex=6, text="Close", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oea03=oea_file.oea03, action=controlp, tabIndex=7, image="zoom";
+Edit oea032=oea_file.oea032, tabIndex=8, noEntry;
+ButtonEdit oeahold=oea_file.oeahold, action=controlp, tabIndex=9, image="zoom";
+Edit oak02=oak_file.oak02, tabIndex=46;
+ButtonEdit oea04=oea_file.oea04, action=controlp, tabIndex=10, image="zoom";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=11, noEntry;
+Group group01:group01;
+ButtonEdit oeb03=oeb_file.oeb03, action=controlp, tabIndex=12, image="zoom";
+ButtonEdit oeb04=oeb_file.oeb04, action=controlp, tabIndex=13, image="zoom";
+Edit oeb06=oeb_file.oeb06, tabIndex=14;
+Edit ima021=ima_file.ima021, tabIndex=44;
+Edit oeb05=oeb_file.oeb05, tabIndex=15;
+Edit oeb12=oeb_file.oeb12, tabIndex=16, not null, required;
+DateEdit oeb15=oeb_file.oeb15, tabIndex=17;
+Group group03:group03;
+Edit oeb913=oeb_file.oeb913, tabIndex=18;
+Edit oeb915=oeb_file.oeb915, tabIndex=19;
+Edit acd_q2=formonly.acd_q2 type DECIMAL, tabIndex=20;
+Edit oeb910=oeb_file.oeb910, tabIndex=21;
+Edit oeb912=oeb_file.oeb912, tabIndex=22;
+Edit acd_q1=formonly.acd_q1 type DECIMAL, tabIndex=23;
+Group group02:group02;
+ButtonEdit oeb09=oeb_file.oeb09, action=controlp, tabIndex=24, image="zoom";
+Edit oeb09_1=formonly.oeb09_1, tabIndex=47;
+ButtonEdit oeb01=oeb_file.oeb091, action=controlp, tabIndex=25, image="zoom";
+Edit oeb091_=formonly.oeb091_1, tabIndex=48;
+ButtonEdit oeb092=oeb_file.oeb092, action=controlp, tabIndex=26, image="zoom";
+DateEdit oeb16=oeb_file.oeb16, tabIndex=27;
+Edit oeb24=oeb_file.oeb24, tabIndex=28, not null, required;
+Edit oeb25=oeb_file.oeb25, tabIndex=29, not null, required;
+Edit unqty=formonly.unqty type DECIMAL, tabIndex=30;
+Edit acd_q=formonly.acd_q type DECIMAL, tabIndex=31;
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=32, title="W/O No.", image="zoom";
+ButtonEdit sfb04_d=formonly.sfb04_d type CHAR, action=controlp, tabIndex=33, title="Status", image="zoom";
+Edit sfb13=sfb_file.sfb13, tabIndex=34, title="Anticipated Operating";
+Edit sfb15=sfb_file.sfb15, tabIndex=35, title="Anticipated Complete";
+Edit sfb08=sfb_file.sfb08, tabIndex=36, title="Production Sets", not null, required;
+Edit sfb081=sfb_file.sfb081, tabIndex=37, title="Issued Qty", not null, required;
+Edit sfb09=sfb_file.sfb09, tabIndex=38, title="Completed Sets", not null, required;
+ButtonEdit sfb82=sfb_file.sfb82, action=controlp, tabIndex=39, title="Department", image="zoom";
+Edit gem01=formonly.gem02, tabIndex=45, title=%"gem02";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=40, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=41, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(sfb_file.sfb01,formonly.sfb04_d,sfb_file.sfb13,sfb_file.sfb15,sfb_file.sfb08,sfb_file.sfb081,sfb_file.sfb09,sfb_file.sfb82,formonly.gem02)
+SCREEN RECORD Undefined(oea_file.oea01,oea_file.oea14,oea_file.oeaconf,oea_file.oea02,oea_file.oea15,oeb_file.oeb70,oea_file.oea03,oea_file.oea032,oea_file.oeahold,oak_file.oak02,oea_file.oea04,formonly.occ02,oeb_file.oeb03,oeb_file.oeb04,oeb_file.oeb06,oeb_file.oeb05,oeb_file.oeb12,oeb_file.oeb15,oeb_file.oeb913,oeb_file.oeb915,formonly.acd_q2,oeb_file.oeb910,oeb_file.oeb912,formonly.acd_q1,oeb_file.oeb09,formonly.oeb09_1,oeb_file.oeb091,formonly.oeb091_1,oeb_file.oeb092,oeb_file.oeb16,oeb_file.oeb24,oeb_file.oeb25,formonly.unqty,formonly.acd_q,formonly.cnt,formonly.cn2,gen_file.gen02,gem_file.gem02,ima_file.ima021)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_fldhelp_view.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"cl_fldhelp_view")
+VBox VBox1
+Group group02
+Grid gr3678
+{
+ Form ID                                  [gae01     ]
+ Language                                 [gae03     ]
+ Field                                    [gae02     ]
+}
+END -- gr3678
+END -- group02
+Group group01
+Grid gr3679
+{
+  Description                             [gae04                     ]
+  Sample File                             [gae09                     ]
+ <G group03                                                          >
+ [gbs07                                                              ]
+ [                                                                   ]
+ [                                                                   ]
+ [                                                                   ]
+ [                                                                   ]
+ <                                                                   >
+
+}
+END -- gr3679
+END -- group01
+END -- VBox1
+END -- cl_fldhelp_view
+
+TABLES
+gae_file,
+gbs_file
+ATTRIBUTES
+Edit gae01=gae_file.gae01, tabIndex=1, noEntry;
+ComboBox gae03=gae_file.gae03, tabIndex=2, noEntry;
+Edit gae02=gae_file.gae02, tabIndex=3, noEntry, scroll;
+Edit gae04=gae_file.gae04, tabIndex=4, noEntry, scroll;
+Edit gae09=gae_file.gae09, tabIndex=5;
+Group group03:group03;
+TextEdit gbs07=gbs_file.gbs07, tabIndex=6, stretch=NONE;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gae_file.gae01,gae_file.gae03,gae_file.gae02,gae_file.gae04,gae_file.gae09,gbs_file.gbs07)
+END -- INSTRUCTIONS
+

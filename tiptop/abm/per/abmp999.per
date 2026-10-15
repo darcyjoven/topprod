@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp999.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmp999f")
+Folder pc2
+Page page01(text="Main")
+Group g01
+VBox VBox1
+Grid gr4
+{
+ <G group01                                                      >
+  ECN No.                   [bmz01               ]
+  Item.No                   [bmz02               ]
+                            [ima02                         ]
+                            [ima021                        ]
+  Characteristic Code       [a3                  ]
+ <                                                               >
+
+}
+END -- gr4
+END -- VBox1
+END -- g01
+END -- page01
+END -- pc2
+END -- abmp999
+
+TABLES
+bmz_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit bmz01=bmz_file.bmz01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit bmz02=bmz_file.bmz02, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=3, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit a3=formonly.a3 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bmz_file.bmz01,bmz_file.bmz02,formonly.ima02,formonly.ima021,formonly.a3)
+END -- INSTRUCTIONS
+

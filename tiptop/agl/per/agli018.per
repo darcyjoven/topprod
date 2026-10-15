@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli018.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="agli018")
+VBox vb1
+Folder pc1
+Page Page1(text=%"Page0")
+Table s_aes
+{
+[aes01       |aes02       |aes03       |aes05       |aesacti     ]
+[aes01       |aes02       |aes03       |aes05       |aesacti     ]
+[aes01       |aes02       |aes03       |aes05       |aesacti     ]
+[aes01       |aes02       |aes03       |aes05       |aesacti     ]
+[aes01       |aes02       |aes03       |aes05       |aesacti     ]
+[aes01       |aes02       |aes03       |aes05       |aesacti     ]
+[aes01       |aes02       |aes03       |aes05       |aesacti     ]
+[aes01       |aes02       |aes03       |aes05       |aesacti     ]
+[aes01       |aes02       |aes03       |aes05       |aesacti     ]
+[aes01       |aes02       |aes03       |aes05       |aesacti     ]
+
+}
+END -- s_aes
+END -- Page1
+END -- pc1
+Grid gr2
+{
+   ---------- Rows  [cn2   ] ----------
+
+}
+END -- gr2
+END -- vb1
+END -- agli018
+
+TABLES
+aes_file
+ATTRIBUTES
+Edit aes01=aes_file.aes01, tabIndex=1, title="aes01", not null, required;
+Edit aes02=aes_file.aes02, tabIndex=2, title="aes02";
+ComboBox aes03=aes_file.aes03, tabIndex=3, title=%"aes03", not null, required, items=(("10", %"Business Activity Income"),("11", %"Business Activity Expenditure"),("20", %"Investment Income"),("21", %"Investment Expenditure"),("30", %"Financial Activity Income"),("31", %"Financial Activity Expenditure"),("40", %"Influence"));
+Edit aes05=aes_file.aes05, tabIndex=4, title=%"aes05";
+CheckBox aesacti=aes_file.aesacti, tabIndex=5, title=%"aesacti", valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type VARCHAR, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aes(aes_file.aes01,aes_file.aes02,aes_file.aes03,aes_file.aes05,aes_file.aesacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

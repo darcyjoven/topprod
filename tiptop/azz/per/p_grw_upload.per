@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_grw_upload.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_replang")
+VBox VBox1
+Folder folder01
+Page Page1(text="main")
+Grid gr3257
+{
+[label1      ] [gdw01             ][gaz03                           ]
+[label2       ][gdw02             ]
+[label3      ] [gdw05             ][zx02                            ]
+[label4       ][gdw04             ][zw02                            ]
+[label5  ]     [gdw06          ]
+[label6        |gdw09             ][gdw03                               ]
+
+}
+END -- gr3257
+END -- Page1
+END -- folder01
+Grid Grid1
+{
+ <G group1                                                                             >
+ [label7        |upload                           |file_brows|label8   ]
+                                                             [rep            ]
+                   [file_uploa] [cancel    ]                 [               ]
+ <                                                                                     >
+
+}
+END -- Grid1
+END -- VBox1
+END -- p_replang
+
+TABLES
+gdw_file
+ATTRIBUTES
+Label label1:Label1, text=%"Program Code";
+ButtonEdit gdw01=gdw_file.gdw01, action=controlp, tabIndex=1, not null, required, image="zoom", downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=7, noEntry;
+Label label2:Label2, text=%"Template Code";
+Edit gdw02=gdw_file.gdw02, tabIndex=1;
+Label label3:Label3, text=%"Program User";
+ButtonEdit gdw05=gdw_file.gdw05, action=controlp, tabIndex=2, not null, required, image="zoom", scroll;
+Edit zx02=formonly.zx02 type CHAR, tabIndex=8, noEntry;
+Label label4:Label4, text=%"Program Class";
+ButtonEdit gdw04=gdw_file.gdw04, action=controlp, tabIndex=3, not null, required, image="zoom", scroll;
+Edit zw02=formonly.zw02 type CHAR, tabIndex=9, noEntry;
+Label label5:Label5, text=%"Industry";
+ComboBox gdw06=gdw_file.gdw06, tabIndex=4;
+Label label6:Label6, text=%"Template Name";
+Edit gdw09=gdw_file.gdw09, tabIndex=6;
+CheckBox gdw03=gdw_file.gdw03, tabIndex=5, text="Editing a Customerlized Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group1:Group1, text=%"";
+Label label7:Label7, text=%"File path";
+Edit upload=formonly.upload type VARCHAR, tabIndex=10;
+Button file_brows:file_browse, tabIndex=11, text=%"file_browse";
+Label label8:Label8, text=%"report type:";
+RadioGroup rep=formonly.rep, tabIndex=14, default = "1", items=(("1", %"Standard report"),("2", "Other report"));
+Button file_uploa:file_upload, tabIndex=13, text=%"file_upload";
+Button cancel:cancel, tabIndex=12, text=%"cancel";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gdw(gdw_file.gdw01,gdw_file.gdw02,gdw_file.gdw05,gdw_file.gdw04,gdw_file.gdw06,gdw_file.gdw03,gdw_file.gdw09)
+SCREEN RECORD Undefined(formonly.gaz03,formonly.zx02,formonly.zw02,formonly.upload,formonly.rep)
+END -- INSTRUCTIONS
+

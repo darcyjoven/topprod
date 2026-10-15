@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt584.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt584")
+Grid gr5344
+{
+ <G group01                      >
+  Purchase Unit       [pon07     ]
+  Par/Ref Unit        [pon83     ]
+  Chi/P/O Unit        [pon80     ]
+  Inventory Unit      [pon08     ]
+  Translate Rate %    [pon09     ]
+ <                               >
+
+}
+END -- gr5344
+END -- apmt584
+
+TABLES
+pon_file
+ATTRIBUTES
+Group group01:group01;
+Edit pon07=pon_file.pon07, tabIndex=1, comment="<^P>Qry Unit";
+ButtonEdit pon83=pon_file.pon83, action=controlp, tabIndex=2, image="zoom", comment="<P>Qry  Unit    ";
+ButtonEdit pon80=pon_file.pon80, action=controlp, tabIndex=3, image="zoom", comment="<P>Qry  Unit    ";
+Edit pon08=pon_file.pon08, tabIndex=4, noEntry;
+Edit pon09=pon_file.pon09, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pon_file.pon07,pon_file.pon83,pon_file.pon80,pon_file.pon08,pon_file.pon09)
+END -- INSTRUCTIONS
+

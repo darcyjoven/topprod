@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooq604.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooq604")
+VBox vb2_
+Folder folder01
+Page page01(text="Main")
+Grid gr574
+{
+ Data Center Code  [gex01         ][geu02               ]
+ Data Type         [gex02     ]
+ Logestic          [gex03               ][azp02               ]
+ Relevance         [plant                                     ]
+ Program ID        [gex04               ]
+}
+END -- gr574
+END -- page01
+END -- folder01
+Table s_gex
+{
+[gex05                    |gex06    |gex07        |gex08     |gex09     |gen02     ]
+[gex05                    |gex06    |gex07        |gex08     |gex09     |gen02     ]
+[gex05                    |gex06    |gex07        |gex08     |gex09     |gen02     ]
+[gex05                    |gex06    |gex07        |gex08     |gex09     |gen02     ]
+[gex05                    |gex06    |gex07        |gex08     |gex09     |gen02     ]
+
+}
+END -- s_gex
+Grid gr5
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5
+END -- vb2_
+END -- aooq604
+
+TABLES
+gex_file,
+geu_file,
+azp_file
+ATTRIBUTES
+ButtonEdit gex01=gex_file.gex01, action=controlp, tabIndex=1, image="zoom.png", comment="<^P>Qry Data Center Code";
+Edit geu02=geu_file.geu02, tabIndex=2;
+ComboBox gex02=gex_file.gex02, tabIndex=3, not null, required, items=(("0", "Basic Data"),("1", "Item"),("2", "BOM"),("3", "ECN"),("4", "Customer"),("5", "Vendor"),("6", "Account"),("7", "Price"));
+ButtonEdit gex03=gex_file.gex03, action=controlp, tabIndex=12, image="zoom.png", comment="<^P>Qry Logestic";
+Edit azp02=azp_file.azp02, tabIndex=13;
+Edit plant=formonly.plant type CHAR, tabIndex=15, noEntry;
+ButtonEdit gex04=gex_file.gex04, action=controlp, tabIndex=14, image="zoom.png", comment="<^P>Qry Program";
+Edit gex05=gex_file.gex05, tabIndex=4, title="Key Value";
+Edit gex06=gex_file.gex06, tabIndex=5, title="Carry Records";
+DateEdit gex07=gex_file.gex07, tabIndex=6, title="Carry Date";
+Edit gex08=gex_file.gex08, tabIndex=9, title="Carry Time";
+Edit gex09=gex_file.gex09, tabIndex=10, title="Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=11, title="Employee Name";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gex(gex_file.gex05,gex_file.gex06,gex_file.gex07,gex_file.gex08,gex_file.gex09,formonly.gen02)
+SCREEN RECORD Undefined(gex_file.gex01,geu_file.geu02,gex_file.gex02,gex_file.gex03,azp_file.azp02,formonly.plant,gex_file.gex04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

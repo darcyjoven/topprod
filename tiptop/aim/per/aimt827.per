@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt827.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt827")
+VBox vb2
+Folder pc616
+Page page01(text="Main")
+Grid gr3494
+{
+  Label No.           [pie01               ]
+  Line No.            [pie07     ]
+
+ <G group01                                                  >
+  W/O No.             [pid02           ][desc                ]
+  Production Item     [pid03               ]
+                      [ima02_1                       ]
+                      [ima021_1                      ]
+  Cost Center         [sfb98     ][gem02     ]
+  Work Center         [pie05     ]
+  Pro.Routing No.     [pie012         ]
+  Pro.No.             [pie013    ]
+  Task No.            [pie03     ]
+  Item Inv Taking     [pie02               ]
+                      [ima02_2                       ]
+                      [ima021_2                      ]
+ <                                                           >
+ <G group02                                           >
+   User(1)            [pie30     ]/[pie0]
+   User(2)            [pie40     ]/[pie1]
+ <                                                    >
+ <G group03                                           >
+  Adjust Qty          [qty       ]          /[unit]
+  Reason Code         [pie70         ]
+                      [azf03               ]
+ <                                                    >
+
+}
+END -- gr3494
+END -- page01
+END -- pc616
+Grid gr3495
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr3495
+END -- vb2
+END -- aimt827
+
+TABLES
+pie_file,
+pid_file
+ATTRIBUTES
+Edit pie01=pie_file.pie01, tabIndex=1, comment="KEY Field, No Blank/Repeated!";
+Edit pie07=pie_file.pie07, tabIndex=2, not null, required;
+Group group01:group01;
+Edit pid02=pid_file.pid02, tabIndex=3, not null, required;
+Edit desc=formonly.desc type VARCHAR, tabIndex=4, noEntry;
+Edit pid03=pid_file.pid03, tabIndex=5;
+Edit ima02_1=formonly.ima02_1 type VARCHAR, tabIndex=6, noEntry;
+Edit ima021_1=formonly.ima021_1 type VARCHAR, tabIndex=7, noEntry;
+Edit sfb98=formonly.sfb98 type CHAR, tabIndex=8, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=9, noEntry;
+Edit pie05=pie_file.pie05, tabIndex=10;
+ButtonEdit pie012=pie_file.pie012, action=controlp, tabIndex=24, noEntry, image="zoom.png";
+Edit pie013=pie_file.pie013, tabIndex=25, noEntry;
+Edit pie03=pie_file.pie03, tabIndex=11;
+Edit pie02=pie_file.pie02, tabIndex=12;
+Edit ima02_2=formonly.ima02_2 type VARCHAR, tabIndex=13, noEntry;
+Edit ima021_2=formonly.ima021_2 type VARCHAR, tabIndex=14, noEntry;
+Group group02:group02;
+Edit pie30=pie_file.pie30, tabIndex=17, noEntry;
+Edit pie0=formonly.pie04_1 type VARCHAR, tabIndex=18;
+Edit pie40=pie_file.pie40, tabIndex=19, noEntry;
+Edit pie1=formonly.pie04_2 type VARCHAR, tabIndex=20;
+Group group03:group03;
+Edit qty=formonly.qty type DECIMAL, tabIndex=21;
+Edit unit=formonly.unit type VARCHAR, tabIndex=22, noEntry;
+ButtonEdit pie70=pie_file.pie70, action=controlp, tabIndex=15, image="zoom";
+Edit azf03=formonly.azf03 type VARCHAR, tabIndex=16, noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=23;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pie_file.pie01,pie_file.pie07,pid_file.pid02,formonly.desc,pid_file.pid03,formonly.ima02_1,formonly.ima021_1,formonly.sfb98,formonly.gem02,pie_file.pie05,pie_file.pie012,pie_file.pie013,pie_file.pie03,pie_file.pie02,formonly.ima02_2,formonly.ima021_2,pie_file.pie30,formonly.pie04_1,pie_file.pie40,formonly.pie04_2,formonly.qty,formonly.unit,formonly.cnt,pie_file.pie70,formonly.azf03)
+END -- INSTRUCTIONS
+

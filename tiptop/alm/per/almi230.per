@@ -1,0 +1,73 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/alm/4fd/almi230.tmp.per created 2010-10-25T17:53:37
+-- File created from /u3/tiptop/alm/4fd/almi230.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almi230")
+                                                                                                                                                                   
+ Folder page1                                                                                                                                                      
+ Page Main(text=%"Main")                                                                                                                                           
+  VBox vb3                                                                                                                                                         
+  Grid gr6                                                                                                                                                         
+  {                                                                                                                                                                
+   ----------Rows[cn2   ]----------                                                                                                                                
+                                                                                                                                                                   
+                                                                                                                                                                   
+  }                                                                                                                                                                
+  END                                                                                                                                                              
+  Table s_lmp                                                                                                                                                      
+  {                                                                                                                                                                
+  [lmpstore|lma02   |lmplegal|azt02   |lmp01   |lmp02   |lmp03   |lmp04   |lmp05   |lne05   |lmp06   |lmp11   |lmp07   |lmp08   |lmp09     |lmp10     ]            
+  [lmpstore|lma02   |lmplegal|azt02   |lmp01   |lmp02   |lmp03   |lmp04   |lmp05   |lne05   |lmp06   |lmp11   |lmp07   |lmp08   |lmp09     |lmp10     ]            
+  [lmpstore|lma02   |lmplegal|azt02   |lmp01   |lmp02   |lmp03   |lmp04   |lmp05   |lne05   |lmp06   |lmp11   |lmp07   |lmp08   |lmp09     |lmp10     ]            
+  [lmpstore|lma02   |lmplegal|azt02   |lmp01   |lmp02   |lmp03   |lmp04   |lmp05   |lne05   |lmp06   |lmp11   |lmp07   |lmp08   |lmp09     |lmp10     ]            
+  [lmpstore|lma02   |lmplegal|azt02   |lmp01   |lmp02   |lmp03   |lmp04   |lmp05   |lne05   |lmp06   |lmp11   |lmp07   |lmp08   |lmp09     |lmp10     ]            
+  }                                                                                                                                                                
+  END -- Table                                                                                                                                                     
+  END -- VBox                                                                                                                                                      
+ END -- Page                                                                                                                                                       
+ END -- Folder                                                                                                                                                     
+                                                                                                                                                                   
+                                                                                                                                                                   
+                                                                                                                                                                   
+                                                                                                                                                                   
+                                                                                                                                                                   
+                                                                                                                                                                   
+                                                                                                                                                                   
+                                                                                                                                                                   
+END -- Form
+
+TABLES
+lmp_file
+
+ATTRIBUTES
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+ButtonEdit lmpstore=lmp_file.lmpstore, action=controlp, tabIndex=17, title="lmpstore", noEntry, image="zoom.png";
+Edit lma02=formonly.lma02, tabIndex=16, title="lma02", noEntry;
+ButtonEdit lmplegal=lmp_file.lmplegal, action=controlp, tabIndex=15, title="lmplegal", noEntry, image="zoom.png";
+Edit azt02=formonly.azt02, tabIndex=14, title="azt02", noEntry;
+ComboBox lmp01=lmp_file.lmp01, tabIndex=1, title="lmp01", not null, required, items=(("0", "dinge"),("1", "bushui"));
+ButtonEdit lmp02=lmp_file.lmp02, action=controlp, tabIndex=2, title="lmp02", not null, required, image="zoom.png";
+Edit lmp03=lmp_file.lmp03, tabIndex=3, title="lmp03", not null, required;
+ComboBox lmp04=lmp_file.lmp04, tabIndex=4, title="lmp04", items=(("01", "1"),("02", "2"),("03", "3"),("04", "4"),("05", "5"),("06", "6"),("07", "7"),("08", "8"),("09", "9"),("10", "10"),("11", "11"),("12", "12"));
+ButtonEdit lmp05=lmp_file.lmp05, action=controlp, tabIndex=5, title="lmp05", noEntry, image="zoom.png";
+Edit lne05=formonly.lne05 type VARCHAR, tabIndex=6, title="lne05", noEntry;
+ButtonEdit lmp06=lmp_file.lmp06, action=controlp, tabIndex=7, title="lmp06", noEntry, image="zoom.png";
+Edit lmp11=lmp_file.lmp11, tabIndex=8, title="lmp11", not null, required;
+Edit lmp07=lmp_file.lmp07, tabIndex=9, title="lmp07", not null;
+Edit lmp08=lmp_file.lmp08, tabIndex=10, title="lmp08", not null;
+Edit lmp09=lmp_file.lmp09, tabIndex=12, title="lmp09", not null;
+DateEdit lmp10=lmp_file.lmp10, tabIndex=13, title="lmp10", not null;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lmp(lmp_file.lmpstore, formonly.lma02, lmp_file.lmplegal, formonly.azt02, lmp_file.lmp01, lmp_file.lmp02, lmp_file.lmp03, lmp_file.lmp04, lmp_file.lmp05, formonly.lne05, lmp_file.lmp06, lmp_file.lmp11, lmp_file.lmp07, lmp_file.lmp08, lmp_file.lmp09, lmp_file.lmp10)
+END -- INSTRUCTIONS
+

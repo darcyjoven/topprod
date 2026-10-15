@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrx330.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr330")
+VBox VBox2
+Grid gr1
+{
+ <G group01                                                                              >
+  Customer No.        [oma03               ]
+  Customer name       [oma032              ]
+  Currency            [oma23               ]
+  Accounts No.        [oma01               ]
+  Cate No.            [oma00               ]
+  Department No.      [oma15               ]
+  Employee No.        [oma14               ]
+ <                                                                                       >
+
+
+}
+END -- gr1
+Group group02(text="INPUT")
+VBox VBox1
+Grid gr2
+{
+
+ <G group03                                                                               >
+  [s1                   ][s2                  ][s3                  ]
+  [t1                   ][t2                  ][t3                  ]
+
+
+ <                                                                                        >
+}
+END -- gr2
+Grid gr3
+{
+ Accounts Deadline   [deadline       ]
+                     [n                                                                 ]
+                     [y                                                                ]
+
+
+}
+END -- gr3
+END -- VBox1
+END -- group02
+Grid gr4
+{
+
+[more                                                        ]
+
+}
+END -- gr4
+END -- VBox2
+END -- axrr330
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oma03=formonly.oma03 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit oma032=formonly.oma032 type CHAR, action=controlp, tabIndex=17, image="zoom";
+ButtonEdit oma23=formonly.oma23 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit oma01=formonly.oma01 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Edit oma00=formonly.oma00 type CHAR, tabIndex=4;
+ButtonEdit oma15=formonly.oma15 type CHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit oma14=formonly.oma14 type CHAR, action=controlp, tabIndex=6, image="zoom";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=7, queryEditable, items=(("1", "Customer #"),("2", "Customer Name"),("3", "Currency"),("4", "Accounts #"),("5", "Cate No."),("6", "Department No"),("7", "Employee No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=8, queryEditable, items=(("1", "Customer #"),("2", "Customer Name"),("3", "Currency"),("4", "Accounts #"),("5", "Cate No."),("6", "Department No"),("7", "Employee No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=9, queryEditable, items=(("1", "Customer #"),("2", "Customer Name"),("3", "Currency"),("4", "Accounts #"),("5", "Cate No."),("6", "Department No"),("7", "Employee No."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit deadline=formonly.deadline type DATE, tabIndex=14;
+CheckBox n=formonly.n type CHAR, tabIndex=15, text="Print Product Detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox y=formonly.y type CHAR, tabIndex=16, text="Convert Original Currency to Home Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oma03,formonly.oma032,formonly.oma23,formonly.oma01,formonly.oma00,formonly.oma15,formonly.oma14,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.deadline,formonly.n,formonly.y,formonly.more)
+END -- INSTRUCTIONS
+

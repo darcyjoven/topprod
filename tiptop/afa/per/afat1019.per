@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1019.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat1019")
+Grid gr13
+{
+ <T s_far2                                                                                                                                                                                                                            >
+ [far02      |far03          |far031    |faj06                    |far12                 |far121     |far042          |far272            |far071         |far081                        |far092     |far102       |far111             ]
+ [far02      |far03          |far031    |faj06                    |far12                 |far121     |far042          |far272            |far071         |far081                        |far092     |far102       |far111             ]
+ [far02      |far03          |far031    |faj06                    |far12                 |far121     |far042          |far272            |far071         |far081                        |far092     |far102       |far111             ]
+ [far02      |far03          |far031    |faj06                    |far12                 |far121     |far042          |far272            |far071         |far081                        |far092     |far102       |far111             ]
+ [far02      |far03          |far031    |faj06                    |far12                 |far121     |far042          |far272            |far071         |far081                        |far092     |far102       |far111             ]
+ [far02      |far03          |far031    |faj06                    |far12                 |far121     |far042          |far272            |far071         |far081                        |far092     |far102       |far111             ]
+ [far02      |far03          |far031    |faj06                    |far12                 |far121     |far042          |far272            |far071         |far081                        |far092     |far102       |far111             ]
+ [far02      |far03          |far031    |faj06                    |far12                 |far121     |far042          |far272            |far071         |far081                        |far092     |far102       |far111             ]
+ [far02      |far03          |far031    |faj06                    |far12                 |far121     |far042          |far272            |far071         |far081                        |far092     |far102       |far111             ]
+ [far02      |far03          |far031    |faj06                    |far12                 |far121     |far042          |far272            |far071         |far081                        |far092     |far102       |far111             ]
+ <                                                                                                                                                                                                                                    >
+
+}
+END -- gr13
+END -- afat1019
+
+TABLES
+far_file
+ATTRIBUTES
+Table s_far2:s_far2;
+Edit far02=far_file.far02, tabIndex=14, title="Line No.", noEntry, not null, required;
+ButtonEdit far03=far_file.far03, action=controlp, tabIndex=15, title="Property No.", noEntry, not null, required, image="zoom", comment="<^P>Qry Assets ";
+Edit far031=far_file.far031, tabIndex=16, title="Add No.", noEntry, not null, required;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=17, title="Chinese Name", noEntry;
+Edit far12=far_file.far12, tabIndex=18, title="Formal Property No.", noEntry;
+Edit far121=far_file.far121, tabIndex=19, title="-Add No.", noEntry;
+DateEdit far042=far_file.far042, tabIndex=20, title="Date Recorded", not null, required;
+Edit far272=far_file.far272, tabIndex=21, title="Initial Listing";
+ButtonEdit far071=far_file.far071, action=controlp, tabIndex=24, title="Asset Accout", image="zoom", comment="<^P>Qry Account";
+ButtonEdit far081=far_file.far081, action=controlp, tabIndex=26, title="Accumulated Depre.Account", image="zoom", comment="<^P>Qry Account";
+ComboBox far092=far_file.far092, tabIndex=28, title="Appo.Mtd", not null, required, queryEditable, items=(("1", %"Single Department Apportionment"),("2", %"Multi-Department Apportionment"));
+ButtonEdit far102=far_file.far102, action=controlp, tabIndex=29, title="Department", not null, required, image="zoom", comment="<^P>Query Department <^T>Qry Apportionment Category <^Y>Apportionment Category";
+ButtonEdit far111=far_file.far111, action=controlp, tabIndex=30, title="Depreciation Account Depreciation Account2", image="zoom", comment="<^P>Qry Account";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_far2(far_file.far02,far_file.far03,far_file.far031,formonly.faj06,far_file.far12,far_file.far121,far_file.far042,far_file.far272,far_file.far071,far_file.far081,far_file.far092,far_file.far102,far_file.far111)
+END -- INSTRUCTIONS
+

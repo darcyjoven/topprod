@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici012.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aici012")
+VBox vb6
+Folder pc6
+Page Page8(text=%"Main")
+Grid gr1273
+{
+ Item No.   [icl01                         ][ima02               ]
+
+}
+END -- gr1273
+END -- Page8
+END -- pc6
+Table s_icl
+{
+[icl02      |icl03 |icl04        |icl05                         ]
+[icl02      |icl03 |icl04        |icl05                         ]
+[icl02      |icl03 |icl04        |icl05                         ]
+[icl02      |icl03 |icl04        |icl05                         ]
+[icl02      |icl03 |icl04        |icl05                         ]
+[icl02      |icl03 |icl04        |icl05                         ]
+[icl02      |icl03 |icl04        |icl05                         ]
+[icl02      |icl03 |icl04        |icl05                         ]
+[icl02      |icl03 |icl04        |icl05                         ]
+[icl02      |icl03 |icl04        |icl05                         ]
+[icl02      |icl03 |icl04        |icl05                         ]
+
+}
+END -- s_icl
+Grid gr4
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4
+END -- vb6
+END -- aici012
+
+TABLES
+icl_file
+ATTRIBUTES
+ButtonEdit icl01=icl_file.icl01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Item No.";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+ComboBox icl02=icl_file.icl02, tabIndex=3, default = "1", title="Type", not null, items=(("1", "1.face"),("2", "2.back"),("3", "3.face remark"),("4", "4.back remark"));
+Edit icl03=icl_file.icl03, tabIndex=4, title="No.", not null;
+CheckBox icl04=icl_file.icl04, tabIndex=5, default = "N", title="Date Code", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit icl05=icl_file.icl05, tabIndex=6, title="Remark";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_icl(icl_file.icl02,icl_file.icl03,icl_file.icl04,icl_file.icl05)
+SCREEN RECORD Undefined(icl_file.icl01,formonly.ima02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

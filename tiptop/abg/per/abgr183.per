@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgr183.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abgr183")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                                                       >
+  Book No.     [bookno              ]
+ <                                                                               >
+}
+END -- Grid1
+Grid gr1
+{
+ <G group01                                                                      >
+   Account #   [aag01               ]
+ <                                                                               >
+ <G group02                                                                                        >
+  Department Range     [bdept     ] - [edept     ]
+  Enter Base Year/Month[defyy     ] - [defbm     ] [defem     ] Budget Item[budget1   ]
+  Comparing Year/Month [comyy     ] - [combm     ] [comem     ] Budget Item[budget2   ]
+  Difference Amount \>  [diff1               ]
+  Difference % \>       [diff2               ]
+  Expense Category     [type                ]
+ <                                                                                                 >
+}
+END -- gr1
+Grid gr2
+{
+ [more                                 ]
+
+
+}
+END -- gr2
+END -- VBox1
+END -- abgr183
+
+ATTRIBUTES
+Group group1:Group1, text=%"INPUT";
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=16, not null, required, image="zoom.png";
+Group group01:group01, text="QBE";
+ButtonEdit aag01=formonly.aag01 type VARCHAR, action=controlp, tabIndex=1, required, image="zoom.png";
+Group group02:group02, text="INPUT";
+Edit bdept=formonly.bdept type VARCHAR, tabIndex=2, not null, required;
+Edit edept=formonly.edept type VARCHAR, tabIndex=3, not null, required;
+Edit defyy=formonly.defyy type SMALLINT, tabIndex=4, not null, required;
+Edit defbm=formonly.defbm type SMALLINT, tabIndex=5, not null, required;
+Edit defem=formonly.defem type SMALLINT, tabIndex=6, not null, required;
+ButtonEdit budget1=formonly.budget1 type CHAR, action=controlp, tabIndex=15, image="zoom.png";
+Edit comyy=formonly.comyy type SMALLINT, tabIndex=7, not null, required;
+Edit combm=formonly.combm type SMALLINT, tabIndex=8, not null, required;
+Edit comem=formonly.comem type SMALLINT, tabIndex=9, not null, required;
+ButtonEdit budget2=formonly.budget2 type CHAR, action=controlp, tabIndex=14, image="zoom.png";
+Edit diff1=formonly.diff1 type DECIMAL, tabIndex=10, not null, required;
+Edit diff2=formonly.diff2 type DECIMAL, tabIndex=11, not null, required;
+ComboBox type=formonly.type type VARCHAR, tabIndex=12, not null, required, items=(("M", "Administration Expense"),("P", "Overhead"),("R", "Research & Development"),("S", "Sales Expense"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=13, text="Ohter conditionto print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,formonly.aag01,formonly.bdept,formonly.edept,formonly.defyy,formonly.defbm,formonly.defem,formonly.budget1,formonly.comyy,formonly.combm,formonly.comem,formonly.budget2,formonly.diff1,formonly.diff2,formonly.type,formonly.more)
+END -- INSTRUCTIONS
+

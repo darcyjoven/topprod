@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt822.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt822")
+VBox vb1
+Folder pc613
+Page page01(text="Main")
+Grid gr3488
+{
+ <T s_piaa                                                                                                                                                                                                                                       >
+ [piaa16|piaa01      |piaa09       |piaa02       |ima02       |ima021       |pia|piaa03   |piaa04    |piaa05        |piaa06   |piaa07      |qty                 |tagdate    |peo        |gen02      |piaa931        |piaa70     |azf03           ]
+ [piaa16|piaa01      |piaa09       |piaa02       |ima02       |ima021       |pia|piaa03   |piaa04    |piaa05        |piaa06   |piaa07      |qty                 |tagdate    |peo        |gen02      |piaa931        |piaa70     |azf03           ]
+ [piaa16|piaa01      |piaa09       |piaa02       |ima02       |ima021       |pia|piaa03   |piaa04    |piaa05        |piaa06   |piaa07      |qty                 |tagdate    |peo        |gen02      |piaa931        |piaa70     |azf03           ]
+ [piaa16|piaa01      |piaa09       |piaa02       |ima02       |ima021       |pia|piaa03   |piaa04    |piaa05        |piaa06   |piaa07      |qty                 |tagdate    |peo        |gen02      |piaa931        |piaa70     |azf03           ]
+ [piaa16|piaa01      |piaa09       |piaa02       |ima02       |ima021       |pia|piaa03   |piaa04    |piaa05        |piaa06   |piaa07      |qty                 |tagdate    |peo        |gen02      |piaa931        |piaa70     |azf03           ]
+ [piaa16|piaa01      |piaa09       |piaa02       |ima02       |ima021       |pia|piaa03   |piaa04    |piaa05        |piaa06   |piaa07      |qty                 |tagdate    |peo        |gen02      |piaa931        |piaa70     |azf03           ]
+ [piaa16|piaa01      |piaa09       |piaa02       |ima02       |ima021       |pia|piaa03   |piaa04    |piaa05        |piaa06   |piaa07      |qty                 |tagdate    |peo        |gen02      |piaa931        |piaa70     |azf03           ]
+ [piaa16|piaa01      |piaa09       |piaa02       |ima02       |ima021       |pia|piaa03   |piaa04    |piaa05        |piaa06   |piaa07      |qty                 |tagdate    |peo        |gen02      |piaa931        |piaa70     |azf03           ]
+ [piaa16|piaa01      |piaa09       |piaa02       |ima02       |ima021       |pia|piaa03   |piaa04    |piaa05        |piaa06   |piaa07      |qty                 |tagdate    |peo        |gen02      |piaa931        |piaa70     |azf03           ]
+ [piaa16|piaa01      |piaa09       |piaa02       |ima02       |ima021       |pia|piaa03   |piaa04    |piaa05        |piaa06   |piaa07      |qty                 |tagdate    |peo        |gen02      |piaa931        |piaa70     |azf03           ]
+ <                                                                                                                                                                                                                                               >
+
+
+
+}
+END -- gr3488
+END -- page01
+END -- pc613
+Grid gr3489
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr3489
+END -- vb1
+END -- aimt822
+
+TABLES
+piaa_file,
+gen_file,
+azf_file
+ATTRIBUTES
+Table s_piaa:s_piaa;
+CheckBox piaa16=piaa_file.piaa16, tabIndex=1, title="Empty Label", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit piaa01=piaa_file.piaa01, tabIndex=2, title="Label No.", noEntry;
+ButtonEdit piaa09=piaa_file.piaa09, action=controlp, tabIndex=3, title="Inv Multi Unit", image="zoom";
+ButtonEdit piaa02=piaa_file.piaa02, action=controlp, tabIndex=4, title="Item No.", image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=5, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=6, title="Spec", noEntry;
+CheckBox pia=piaa_file.piaa19, tabIndex=7, title="post", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit piaa03=piaa_file.piaa03, action=controlp, tabIndex=8, title="Warehouse", image="zoom";
+ButtonEdit piaa04=piaa_file.piaa04, action=controlp, tabIndex=9, title="Location", noEntry, image="zoom";
+ButtonEdit piaa05=piaa_file.piaa05, action=controlp, tabIndex=10, title="Lot#", image="zoom";
+Edit piaa06=piaa_file.piaa06, tabIndex=11, title="Inventory Class", noEntry;
+ButtonEdit piaa07=piaa_file.piaa07, action=controlp, tabIndex=12, title="Account", noEntry, image="zoom";
+Edit qty=formonly.qty type DECIMAL, tabIndex=13, title="Inventory Qty";
+DateEdit tagdate=formonly.tagdate type DATE, tabIndex=14, title="Inv Taking Date";
+ButtonEdit peo=formonly.peo type CHAR, action=controlp, tabIndex=15, title="Inv Taking Employee", image="zoom";
+Edit gen02=gen_file.gen02, tabIndex=16, title="Emp Name", noEntry;
+ButtonEdit piaa931=formonly.piaa931 type VARCHAR, action=controlp, tabIndex=17, default = "1", title="Type", noEntry, not null, image="zoom.png";
+ButtonEdit piaa70=piaa_file.piaa70, action=controlp, tabIndex=19, title=%"reason code", image="zoom";
+Edit azf03=azf_file.azf03, tabIndex=20, title=%"explain", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_piaa(piaa_file.piaa16,piaa_file.piaa01,piaa_file.piaa09,piaa_file.piaa02,formonly.ima02,formonly.ima021,piaa_file.piaa19,piaa_file.piaa03,piaa_file.piaa04,piaa_file.piaa05,piaa_file.piaa06,piaa_file.piaa07,formonly.qty,formonly.tagdate,formonly.peo,gen_file.gen02,formonly.piaa931,piaa_file.piaa70,azf_file.azf03)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

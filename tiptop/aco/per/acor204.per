@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acor204.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acor204")
+VBox VBox1
+Grid gr1381
+{
+ <G group01                                                                        >
+  Custom No.             [cnp15          ]  Application Form No.[cno01           ]
+  Register Book No.      [cno10          ]  Document Date       [cno02          ]
+  Customs Declaration No.[cno06           ] Goods No.           [cnp03          ]
+
+ <                                                                                 >
+
+}
+END -- gr1381
+Group group02(text="INPUT")
+Grid gr1382
+{
+  Date         [y1        ]-[y2        ]
+  [y                                                           ]
+
+ <G group03                               >
+  [s1        ] [s2        ] [s3        ]
+
+ <                                        >
+
+}
+END -- gr1382
+END -- group02
+Grid gr1383
+{
+ [more                                                        ]
+
+}
+END -- gr1383
+END -- VBox1
+END -- acor204
+
+TABLES
+cnp_file,
+cno_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit cnp15=cnp_file.cnp15, tabIndex=1;
+Edit cno01=cno_file.cno01, tabIndex=2;
+Edit cno10=cno_file.cno10, tabIndex=3;
+DateEdit cno02=cno_file.cno02, tabIndex=4;
+Edit cno06=cno_file.cno06, tabIndex=5;
+Edit cnp03=cnp_file.cnp03, tabIndex=6;
+DateEdit y1=formonly.y1 type DATE, tabIndex=7, not null, required;
+DateEdit y2=formonly.y2 type DATE, tabIndex=8, not null, required;
+CheckBox y=formonly.y type VARCHAR, tabIndex=9, text="Convert HS Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=10, queryEditable, items=(("1", "Date"),("2", "Doc Type"),("3", "Vender"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=11, queryEditable, items=(("1", "Date"),("2", "Doc Type"),("3", "Vender"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=12, queryEditable, items=(("1", "Date"),("2", "Doc Type"),("3", "Vender"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cnp_file.cnp15,cno_file.cno01,cno_file.cno10,cno_file.cno02,cno_file.cno06,cnp_file.cnp03,formonly.y1,formonly.y2,formonly.y,formonly.s1,formonly.s2,formonly.s3,formonly.more)
+END -- INSTRUCTIONS
+

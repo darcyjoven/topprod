@@ -1,0 +1,78 @@
+----------------------------------------------------------------------------------
+-- $Id:  apss100.per created 2009-10-15T00:44:12
+-- File created from apss100.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apss100")
+-- GRID
+-- PAGE
+-- FOLDER
+-- VBOX
+-- LAYOUT
+-- 
+
+  FOLDER pc1051
+    PAGE page01( TEXT="Main")
+      GRID gr5446
+      {
+       <G group01                                                  >
+        APS System Plant No. [aa0       ]
+
+       [aa1                       ]
+
+       [aa2                       ]
+       <                                                           >
+       <G group2                                                   >
+        ETL Polling Interval  [a0]
+        ETL Timeout           [aa3           ]
+        ETL Job Name          [aa4       ]
+        ETL SOAP URL          [aa5                           ]
+        ETL Job Version       [aa6  ]
+        ETL User Name         [aa7            ]
+        ETL Job2 Name         [aa8       ]
+       <                                                           >
+       <G group3                                                   >
+        APS Server IP         [aa9            ]
+        APS Server Port       [ab0  ]
+        APS From              [ab1            ]
+        APS Charset           [ab2     ]
+        APS Step Start        [ab3                           ]
+        APS Step Finish       [ab4                           ]
+        APS Method Parameters [ab5            ]
+       <                                                           >
+
+      }
+      END -- GRID
+    END -- PAGE
+  END -- FOLDER
+END
+TABLES aps_saz
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  BUTTONEDIT aa0=aps_saz.saz01, ACTION=controlp, COMMENT="<^P>Qry Plant No.", IMAGE="zoom", REQUIRED, UPSHIFT, TABINDEX=1;
+  CHECKBOX aa1=aps_saz.saz02, TEXT="Gen Virtual Route", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=2;
+  RADIOGROUP aa2=aps_saz.saz03, NOT NULL, REQUIRED, TABINDEX=3, ITEMS=(("1","Plan Qty"),("2","Confirm Qty"));
+  GROUP group2 : group2;
+  EDIT a0=aps_saz.saz04, NOT NULL, REQUIRED, TABINDEX=4;
+  EDIT aa3=aps_saz.saz05, NOT NULL, PICTURE="##:##:##.#####", REQUIRED, TABINDEX=5;
+  EDIT aa4=aps_saz.saz06, NOT NULL, REQUIRED, TABINDEX=6;
+  EDIT aa5=aps_saz.saz07, NOT NULL, REQUIRED, TABINDEX=7;
+  EDIT aa6=aps_saz.saz08, NOT NULL, REQUIRED, TABINDEX=8;
+  EDIT aa7=aps_saz.saz09, NOT NULL, REQUIRED, TABINDEX=9;
+  EDIT aa8=aps_saz.saz17, NOT NULL, REQUIRED, TABINDEX=17;
+  GROUP group3 : group3;
+  EDIT aa9=aps_saz.saz10, NOT NULL, REQUIRED, TABINDEX=10;
+  EDIT ab0=aps_saz.saz11, NOT NULL, REQUIRED, TABINDEX=11;
+  EDIT ab1=aps_saz.saz12, NOT NULL, REQUIRED, TABINDEX=12;
+  EDIT ab2=aps_saz.saz13, NOT NULL, REQUIRED, TABINDEX=13;
+  EDIT ab3=aps_saz.saz14, NOT NULL, REQUIRED, TABINDEX=14;
+  EDIT ab4=aps_saz.saz15, NOT NULL, REQUIRED, TABINDEX=15;
+  EDIT ab5=aps_saz.saz16, NOT NULL, REQUIRED, TABINDEX=16;
+END
+▼--------------------------------------------------------------------------
+# Per_version = '5.30.01-11.07.23(00001)'   #

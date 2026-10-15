@@ -1,0 +1,99 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri066.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+[label1    ]  [hrck01            ]       [label2    ][hrck12           ]
+[label3    ]  [hrck02            ]
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid4
+{
+[label4    ]  [hrckacti  ]        [label7    |hrckmodu  ]  [label10   ][hrckoriu  ]
+[label5    ]  [hrckuser  ]        [label8    |hrckdate  ]
+[label6    ]  [hrckgrup  ]        [label9    |hrckorig  ]
+
+}
+END -- Grid4
+END -- Page2
+END -- Folder1
+Grid Grid2
+{
+
+  <T table1                                                                                                                                                >
+  [hrcka01 |hrcka02 |hrcka03 |hrcka04 |hrcka05 |hrcka06 |hrcka07 |hrcka08 |hrcka09 |hrcka10 |hrcka11 |hrcka12 |hrcka13 |hrcka14 |hrcka15 ]
+  [hrcka01 |hrcka02 |hrcka03 |hrcka04 |hrcka05 |hrcka06 |hrcka07 |hrcka08 |hrcka09 |hrcka10 |hrcka11 |hrcka12 |hrcka13 |hrcka14 |hrcka15 ]
+  [hrcka01 |hrcka02 |hrcka03 |hrcka04 |hrcka05 |hrcka06 |hrcka07 |hrcka08 |hrcka09 |hrcka10 |hrcka11 |hrcka12 |hrcka13 |hrcka14 |hrcka15 ]
+  [hrcka01 |hrcka02 |hrcka03 |hrcka04 |hrcka05 |hrcka06 |hrcka07 |hrcka08 |hrcka09 |hrcka10 |hrcka11 |hrcka12 |hrcka13 |hrcka14 |hrcka15 ]
+  [hrcka01 |hrcka02 |hrcka03 |hrcka04 |hrcka05 |hrcka06 |hrcka07 |hrcka08 |hrcka09 |hrcka10 |hrcka11 |hrcka12 |hrcka13 |hrcka14 |hrcka15 ]
+
+}
+END -- Grid2
+Grid Grid3
+{
+  ----------[label0|cnt |lab|cn2] ----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"hrck01";
+Edit hrck01=formonly.hrck01, tabIndex=15;
+Label label2:Label2, text=%"hrck12";
+Edit hrck12=formonly.hrck12, tabIndex=16;
+Label label3:Label3, text=%"hrck02";
+Edit hrck02=formonly.hrck02, tabIndex=17;
+Label label4:Label4, text=%"hrckacti";
+Edit hrckacti=formonly.hrckacti, tabIndex=18;
+Label label7:Label7, text=%"hrckmodu";
+Edit hrckmodu=formonly.hrckmodu, tabIndex=21;
+Label label10:Label10, text=%"hrckoriu";
+Edit hrckoriu=formonly.hrckoriu, tabIndex=24;
+Label label5:Label5, text=%"hrckuser";
+Edit hrckuser=formonly.hrckuser, tabIndex=19;
+Label label8:Label8, text=%"hrckdate";
+DateEdit hrckdate=formonly.hrckdate, tabIndex=22;
+Label label6:Label6, text=%"hrckgrup";
+Edit hrckgrup=formonly.hrckgrup, tabIndex=20;
+Label label9:Label9, text=%"hrckorig";
+Edit hrckorig=formonly.hrckorig, tabIndex=23;
+Table table1:Table1;
+Edit hrcka01=formonly.hrcka01, tabIndex=1, title=%"hrcka01";
+Edit hrcka02=formonly.hrcka02, tabIndex=2, title=%"hrcka02";
+ButtonEdit hrcka03=formonly.hrcka03, action=controlp, tabIndex=3, title=%"hrcka03", image="zoom";
+Edit hrcka04=formonly.hrcka04, tabIndex=4, title=%"hrcka04";
+Edit hrcka05=formonly.hrcka05, tabIndex=5, title=%"hrcka05";
+ButtonEdit hrcka06=formonly.hrcka06, action=controlp, tabIndex=6, title=%"hrcka06", image="zoom";
+Edit hrcka07=formonly.hrcka07, tabIndex=7, title=%"hrcka07";
+Edit hrcka08=formonly.hrcka08, tabIndex=8, title=%"hrcka08";
+ButtonEdit hrcka09=formonly.hrcka09, action=controlp, tabIndex=9, title=%"hrcka09", image="zoom";
+Edit hrcka10=formonly.hrcka10, tabIndex=10, title=%"hrcka10";
+ButtonEdit hrcka11=formonly.hrcka11, action=controlp, tabIndex=11, title=%"hrcka11", image="zoom";
+ButtonEdit hrcka12=formonly.hrcka12, action=controlp, tabIndex=12, title=%"hrcka12", image="zoom";
+Edit hrcka13=formonly.hrcka13, tabIndex=13, title=%"hrcka13";
+ButtonEdit hrcka14=formonly.hrcka14, action=controlp, tabIndex=14, title=%"hrcka14", image="zoom";
+Edit hrcka15=formonly.hrcka15, tabIndex=25, title=%"hrcka15";
+Label label0:Label11, text=%"rows";
+Edit cnt=formonly.cnt, tabIndex=26;
+Label lab:Label12, text=%"/";
+Edit cn2=formonly.cn2, tabIndex=27;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrcka(formonly.hrcka01,formonly.hrcka02,formonly.hrcka03,formonly.hrcka04,formonly.hrcka05,formonly.hrcka06,formonly.hrcka07,formonly.hrcka08,formonly.hrcka09,formonly.hrcka10,formonly.hrcka11,formonly.hrcka12,formonly.hrcka13,formonly.hrcka14,formonly.hrcka15)
+SCREEN RECORD Undefined(formonly.hrck01,formonly.hrck12,formonly.hrck02,formonly.hrckacti,formonly.hrckuser,formonly.hrckgrup,formonly.hrckmodu,formonly.hrckdate,formonly.hrckorig,formonly.hrckoriu,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

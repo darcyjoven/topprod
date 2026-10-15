@@ -1,0 +1,189 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi010")
+VBox VBox1
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr5
+{
+
+ [label1    |lua01                 ]                             [lua37               ]                 [label16] [lua14       ][imgmksg]
+ [label2    |lua09                 ]                             [lua10               ]                 [label17] [lua15       ][       ]
+ [label22   |luaplant              |rtz13             ]  [label14|lua11               ]                 [label18] [lua16       ][gen02_2   ]
+ [label21   |lualegal              |azt02             ]  [label15|lua12               ]                 [label19] [lua17       ]
+ [label3    |lua32                 ]                     [label8 |lua21     |lua22    |la|lua23     ]   [label20] [lua18                         ]
+ [label6    |lua06                 |lua061            ]  [label10|lua08               ]                           [                              ]
+ [label7    |lua07                 |lua05             ]  [label11|lua08t              ]
+ [label4    |lua04                 ]                     [label23|lua35               ]
+ [label5    |lua20                 ]                     [label24|amt                 ]
+ [label12   |lua33                 ]                     [label25|lua36               ]
+ [label13   |lua34                 ]                     [label27|lua38               |gen02     ]
+ [label29   |lnt30                 |tqa02             ]  [label28|lua39               |gem02     ]
+
+}
+END -- gr5
+END -- Page3
+Page Page4(text=%"Info")
+Grid gr6
+{
+
+[label35    |luauser   ]  [label31     |luamodu     ]  [label|luaacti     ]
+[label34    |luagrup   ]  [label30     |luadate     ]  [labe1|luacrat     ]
+[label33    |luaoriu   ]  [label32     |luaorig     ]
+
+
+}
+END -- gr6
+END -- Page4
+END -- pc2
+Table s_lub
+{
+[lub02|lub03       |oaj02               |oaj031      |lnj02               |lub09       |lub07       |lub08       |lub10       |lub04               |lub04t              |lub11               |amt_2               |lub12               |oaj04     |aag02               |oaj041    |aag02_1             |lub13   |lub14             |lub15             |lub05                                   |lub16          ]
+[lub02|lub03       |oaj02               |oaj031      |lnj02               |lub09       |lub07       |lub08       |lub10       |lub04               |lub04t              |lub11               |amt_2               |lub12               |oaj04     |aag02               |oaj041    |aag02_1             |lub13   |lub14             |lub15             |lub05                                   |lub16          ]
+[lub02|lub03       |oaj02               |oaj031      |lnj02               |lub09       |lub07       |lub08       |lub10       |lub04               |lub04t              |lub11               |amt_2               |lub12               |oaj04     |aag02               |oaj041    |aag02_1             |lub13   |lub14             |lub15             |lub05                                   |lub16          ]
+[lub02|lub03       |oaj02               |oaj031      |lnj02               |lub09       |lub07       |lub08       |lub10       |lub04               |lub04t              |lub11               |amt_2               |lub12               |oaj04     |aag02               |oaj041    |aag02_1             |lub13   |lub14             |lub15             |lub05                                   |lub16          ]
+[lub02|lub03       |oaj02               |oaj031      |lnj02               |lub09       |lub07       |lub08       |lub10       |lub04               |lub04t              |lub11               |amt_2               |lub12               |oaj04     |aag02               |oaj041    |aag02_1             |lub13   |lub14             |lub15             |lub05                                   |lub16          ]
+
+}
+END -- s_lub
+Grid gr4
+{
+
+ -------- [labe2|idx   |l1|cnt    ]   ---   [label39][cn2   ] ------
+}
+END -- gr4
+END -- VBox1
+END -- artt610
+
+TABLES
+lua_file,
+lub_file
+ATTRIBUTES
+Label label1:Label1, text=%"lua01";
+ButtonEdit lua01=lua_file.lua01, action=controlp, tabIndex=1, not null, required, image="zoom";
+CheckBox lua37=lua_file.lua37, tabIndex=17, text=%"lua_file.lua37", not null, valueChecked = "Y", valueUnchecked = "N";
+Label label16:Label16, text=%"lua14";
+ComboBox lua14=lua_file.lua14, tabIndex=33, noEntry, not null, scroll, items=(("0", "0"),("1", "1"),("2", "2"),("S", "S"),("W", "W"),("R", "R"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Label label2:Label2, text=%"lua09";
+DateEdit lua09=lua_file.lua09, tabIndex=2, not null;
+CheckBox lua10=lua_file.lua10, tabIndex=18, text="lua10", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Label label17:Label17, text=%"lua15";
+ComboBox lua15=lua_file.lua15, tabIndex=34, noEntry, not null, items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "Void"));
+Label label22:Label22, text=%"luaplant";
+ButtonEdit luaplant=lua_file.luaplant, action=controlp, tabIndex=3, not null, image="zoom";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=4, noEntry;
+Label label14:Label14, text=%"lua11";
+ComboBox lua11=lua_file.lua11, tabIndex=19, noEntry, not null, items=(("0", "By hand"),("1", "hetong"),("2", "scale money"),("3", "Sta.Intention Procle"),("4", "Sta. P-rent Procle"),("5", "contract costs"),("6", "Advertising costs"),("7", "7"));
+Label label18:Label18, text=%"lua16";
+ButtonEdit lua16=lua_file.lua16, action=controlp, tabIndex=35, noEntry, image="zoom";
+Edit gen02_2=formonly.gen02_2 type CHAR, tabIndex=36, noEntry;
+Label label21:Label21, text=%"lualegal";
+ButtonEdit lualegal=lua_file.lualegal, action=controlp, tabIndex=5, not null, image="zoom", scroll;
+Edit azt02=formonly.azt02 type CHAR, tabIndex=6, noEntry;
+Label label15:Label15, text=%"lua12";
+Edit lua12=lua_file.lua12, tabIndex=20, noEntry;
+Label label19:Label19, text=%"lua17";
+DateEdit lua17=lua_file.lua17, tabIndex=37, noEntry;
+Label label3:Label3, text=%"lua32";
+ComboBox lua32=lua_file.lua32, tabIndex=7, not null, items=(("0", "Purchasing Suppliers"),("1", "Department business preregistration"),("2", "Department business potential"),("3", "Department for official business"),("4", "Shop in department stores 
+"),("5", "Distributed Customer"));
+Label label8:Label8, text=%"lua21";
+ButtonEdit lua21=lua_file.lua21, action=controlp, tabIndex=21, not null, image="zoom";
+Edit lua22=lua_file.lua22, tabIndex=22, noEntry;
+Label la:Label9, text=%"%";
+CheckBox lua23=lua_file.lua23, tabIndex=23, text="lua23", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Label label20:Label20, text=%"lua18";
+TextEdit lua18=lua_file.lua18, tabIndex=38;
+Label label6:Label6, text=%"lua06";
+ButtonEdit lua06=lua_file.lua06, action=controlp, tabIndex=8, not null, image="zoom";
+ButtonEdit lua061=lua_file.lua061, action=controlp, tabIndex=9, noEntry, image="zoom";
+Label label10:Label10, text=%"lua08";
+Edit lua08=lua_file.lua08, tabIndex=24, noEntry;
+Label label7:Label7, text=%"lua07";
+ButtonEdit lua07=lua_file.lua07, action=controlp, tabIndex=10, image="zoom";
+CheckBox lua05=lua_file.lua05, tabIndex=73, text=%"lua_file.lua05", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Label label11:Label11, text=%"lua08t";
+Edit lua08t=lua_file.lua08t, tabIndex=25, noEntry;
+Label label4:Label4, text=%"lua04";
+ButtonEdit lua04=lua_file.lua04, action=controlp, tabIndex=11, image="zoom";
+Label label23:Label23, text=%"lua35";
+Edit lua35=lua_file.lua35, tabIndex=26, noEntry, scroll;
+Label label5:Label5, text=%"lua20";
+Edit lua20=lua_file.lua20, tabIndex=12, noEntry;
+Label label24:Label24, text=%"amt";
+Edit amt=formonly.amt type CHAR, tabIndex=27, noEntry;
+Label label12:Label12, text=%"lua33";
+Edit lua33=lua_file.lua33, tabIndex=13, noEntry, scroll;
+Label label25:Label25, text=%"lua36";
+Edit lua36=lua_file.lua36, tabIndex=28, noEntry, scroll;
+Label label13:Label13, text=%"lua34";
+DateEdit lua34=lua_file.lua34, tabIndex=14, noEntry;
+Label label27:Label27, text=%"lua38";
+ButtonEdit lua38=lua_file.lua38, action=controlp, tabIndex=29, not null, image="zoom", scroll;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=30, noEntry;
+Label label29:Label29, text=%"lnt30";
+Edit lnt30=formonly.lnt30 type CHAR, tabIndex=15, noEntry;
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=16;
+Label label28:Label28, text=%"lua39";
+ButtonEdit lua39=lua_file.lua39, action=controlp, tabIndex=31, not null, image="zoom", scroll;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=32, noEntry;
+Label label35:Label35, text=%"Data User";
+Edit luauser=lua_file.luauser, tabIndex=39, noEntry;
+Label label31:Label31, text=%"Modify";
+Edit luamodu=lua_file.luamodu, tabIndex=42, noEntry;
+Label label:Label36, text=%"acti";
+Edit luaacti=lua_file.luaacti, tabIndex=45, noEntry;
+Label label34:Label34, text=%"Data Group";
+Edit luagrup=lua_file.luagrup, tabIndex=40, noEntry;
+Label label30:Label30, text=%"Modify Date";
+DateEdit luadate=lua_file.luadate, tabIndex=43, noEntry;
+Label labe1:Label37, text=%"crat";
+DateEdit luacrat=lua_file.luacrat, tabIndex=46, noEntry;
+Label label33:Label33, text=%"luaoriu";
+Edit luaoriu=lua_file.luaoriu, tabIndex=41, noEntry;
+Label label32:Label32, text=%"luaorig";
+Edit luaorig=lua_file.luaorig, tabIndex=44, noEntry;
+Edit lub02=lub_file.lub02, tabIndex=47, title="lub02", not null, required;
+ButtonEdit lub03=lub_file.lub03, action=controlp, tabIndex=48, title="lub03", not null, image="zoom.png";
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=49, title="oaj02", noEntry;
+ButtonEdit oaj031=formonly.oaj031 type VARCHAR, action=controlp, tabIndex=50, title="oaj031", noEntry, not null, image="zoom.png";
+Edit lnj02=formonly.lnj02 type CHAR, tabIndex=51, title="lnj02", noEntry;
+ComboBox lub09=lub_file.lub09, tabIndex=52, title=%"lub09", noEntry, items=(("01", "01"),("02", "02"),("10", "10"));
+DateEdit lub07=lub_file.lub07, tabIndex=53, title=%"lub07", not null;
+DateEdit lub08=lub_file.lub08, tabIndex=54, title=%"lub08", not null;
+DateEdit lub10=lub_file.lub10, tabIndex=55, title=%"lub10", not null;
+Edit lub04=lub_file.lub04, tabIndex=56, title="lub04", not null;
+Edit lub04t=lub_file.lub04t, tabIndex=57, title="lub04t", not null;
+Edit lub11=lub_file.lub11, tabIndex=58, title=%"lub11", noEntry;
+Edit amt_2=formonly.amt_2 type CHAR, tabIndex=59, title=%"amt_2", noEntry;
+Edit lub12=lub_file.lub12, tabIndex=60, title=%"lub12", noEntry;
+Edit oaj04=formonly.oaj04 type CHAR, tabIndex=61, title="oaj04", noEntry;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=62, title="aag02", noEntry;
+Edit oaj041=formonly.oaj041 type CHAR, tabIndex=63, title="oaj041", noEntry;
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=64, title="aag02_1", noEntry;
+CheckBox lub13=lub_file.lub13, tabIndex=65, title=%"lub13", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit lub14=lub_file.lub14, tabIndex=66, title=%"lub14", noEntry;
+Edit lub15=lub_file.lub15, tabIndex=67, title=%"lub15", noEntry;
+Edit lub05=lub_file.lub05, tabIndex=68, title="lub05";
+Edit lub16=lub_file.lub16, tabIndex=69, title=%"lub16", noEntry;
+Label labe2:Label38, text=%"Rows";
+Edit idx=formonly.idx type CHAR, tabIndex=70, noEntry;
+Label l1:Label40, text=%"/";
+Edit cnt=formonly.cnt type CHAR, tabIndex=71, noEntry;
+Label label39:Label39, text=%"Details";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=72, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lub(lub_file.lub02,lub_file.lub03,formonly.oaj02,formonly.oaj031,formonly.lnj02,lub_file.lub09,lub_file.lub07,lub_file.lub08,lub_file.lub10,lub_file.lub04,lub_file.lub04t,lub_file.lub11,formonly.amt_2,lub_file.lub12,formonly.oaj04,formonly.aag02,formonly.oaj041,formonly.aag02_1,lub_file.lub13,lub_file.lub14,lub_file.lub15,lub_file.lub05,lub_file.lub16)
+SCREEN RECORD Undefined(lua_file.lua01,lua_file.lua09,lua_file.lua10,lua_file.lua32,lua_file.lua11,lua_file.lua04,lua_file.lua12,lua_file.lua20,lua_file.lua06,lua_file.lua061,lua_file.lua07,lua_file.lua15,formonly.imgmksg,lua_file.lua21,lua_file.lua16,lua_file.lua22,lua_file.lua17,lua_file.lua23,lua_file.lua18,lua_file.lua08,lua_file.lua08t,lua_file.luaplant,lua_file.luauser,lua_file.luacrat,lua_file.luaacti,lua_file.luagrup,lua_file.luamodu,lua_file.luadate,lua_file.luaoriu,lua_file.luaorig,formonly.idx,formonly.cnt,formonly.cn2,formonly.amt,formonly.gen02,formonly.gem02,formonly.rtz13,formonly.azt02,formonly.lnt30,formonly.gen02_2,formonly.tqa02)
+SCREEN RECORD Record1(lua_file.lualegal,lua_file.lua14,lua_file.lua33,lua_file.lua34,lua_file.lua35,lua_file.lua36,lua_file.lua37,lua_file.lua38,lua_file.lua39)
+SCREEN RECORD Record2(lua_file.lua05)
+END -- INSTRUCTIONS
+

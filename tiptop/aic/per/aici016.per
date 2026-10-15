@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici016.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aici016")
+VBox vb5
+Folder pc1
+Page Page1(text=%"Main")
+Table s_icq
+{
+[icq01          |pmc03        |icq02           |icq03           |icq04            ]
+[icq01          |pmc03        |icq02           |icq03           |icq04            ]
+[icq01          |pmc03        |icq02           |icq03           |icq04            ]
+[icq01          |pmc03        |icq02           |icq03           |icq04            ]
+[icq01          |pmc03        |icq02           |icq03           |icq04            ]
+[icq01          |pmc03        |icq02           |icq03           |icq04            ]
+[icq01          |pmc03        |icq02           |icq03           |icq04            ]
+[icq01          |pmc03        |icq02           |icq03           |icq04            ]
+[icq01          |pmc03        |icq02           |icq03           |icq04            ]
+[icq01          |pmc03        |icq02           |icq03           |icq04            ]
+[icq01          |pmc03        |icq02           |icq03           |icq04            ]
+[icq01          |pmc03        |icq02           |icq03           |icq04            ]
+
+}
+END -- s_icq
+END -- Page1
+END -- pc1
+Grid gr9
+{
+ ---------- Rows [cnt   ]  ----------
+
+}
+END -- gr9
+END -- vb5
+END -- aici016
+
+TABLES
+icq_file
+ATTRIBUTES
+ButtonEdit icq01=icq_file.icq01, action=controlp, tabIndex=1, title="Factory No", not null, image="zoom.png";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, title="Name", noEntry;
+Edit icq02=icq_file.icq02, tabIndex=3, title=%"Wafer Site\n";
+Edit icq03=icq_file.icq03, tabIndex=4, title=%"Wafer site desc";
+Edit icq04=icq_file.icq04, tabIndex=5, title=%"Standed Mark", not null;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_icq(icq_file.icq01,formonly.pmc03,icq_file.icq02,icq_file.icq03,icq_file.icq04)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

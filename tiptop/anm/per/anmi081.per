@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi081.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi081")
+VBox vb7
+Folder pc739
+Page page01(text="Main")
+Table s_nac
+{
+[nsh01     |nmt02     |nsh02     |nsh03          |nsh04          |nsh05     |nsh06          |nsh07          |nsh08     |nsh09     |nsh10     |nsh11     |nsh12     |nsh13     |nsh14     |nsh15     ]
+[nsh01     |nmt02     |nsh02     |nsh03          |nsh04          |nsh05     |nsh06          |nsh07          |nsh08     |nsh09     |nsh10     |nsh11     |nsh12     |nsh13     |nsh14     |nsh15     ]
+[nsh01     |nmt02     |nsh02     |nsh03          |nsh04          |nsh05     |nsh06          |nsh07          |nsh08     |nsh09     |nsh10     |nsh11     |nsh12     |nsh13     |nsh14     |nsh15     ]
+[nsh01     |nmt02     |nsh02     |nsh03          |nsh04          |nsh05     |nsh06          |nsh07          |nsh08     |nsh09     |nsh10     |nsh11     |nsh12     |nsh13     |nsh14     |nsh15     ]
+[nsh01     |nmt02     |nsh02     |nsh03          |nsh04          |nsh05     |nsh06          |nsh07          |nsh08     |nsh09     |nsh10     |nsh11     |nsh12     |nsh13     |nsh14     |nsh15     ]
+[nsh01     |nmt02     |nsh02     |nsh03          |nsh04          |nsh05     |nsh06          |nsh07          |nsh08     |nsh09     |nsh10     |nsh11     |nsh12     |nsh13     |nsh14     |nsh15     ]
+[nsh01     |nmt02     |nsh02     |nsh03          |nsh04          |nsh05     |nsh06          |nsh07          |nsh08     |nsh09     |nsh10     |nsh11     |nsh12     |nsh13     |nsh14     |nsh15     ]
+[nsh01     |nmt02     |nsh02     |nsh03          |nsh04          |nsh05     |nsh06          |nsh07          |nsh08     |nsh09     |nsh10     |nsh11     |nsh12     |nsh13     |nsh14     |nsh15     ]
+[nsh01     |nmt02     |nsh02     |nsh03          |nsh04          |nsh05     |nsh06          |nsh07          |nsh08     |nsh09     |nsh10     |nsh11     |nsh12     |nsh13     |nsh14     |nsh15     ]
+[nsh01     |nmt02     |nsh02     |nsh03          |nsh04          |nsh05     |nsh06          |nsh07          |nsh08     |nsh09     |nsh10     |nsh11     |nsh12     |nsh13     |nsh14     |nsh15     ]
+
+}
+END -- s_nac
+END -- page01
+END -- pc739
+Grid gr4015
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4015
+END -- vb7
+END -- anmi081
+
+TABLES
+nsh_file
+ATTRIBUTES
+ButtonEdit nsh01=nsh_file.nsh01, action=CONTROLP, tabIndex=16, title="Bank No.", noEntry, not null, required, image="zoom";
+Edit nmt02=formonly.nmt02 type CHAR, tabIndex=17, title=%"Bank Name", noEntry;
+Edit nsh02=nsh_file.nsh02, tabIndex=1, title="Bank Account", noEntry, not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! <^Y>User Authorization <^U>Dept Authorization ";
+ComboBox nsh03=nsh_file.nsh03, tabIndex=2, title="A/C Object", noEntry, not null, required, items=(("1", "Company"),("2", "Vendor"),("4", "Customer"),("9", "Others"));
+Edit nsh04=nsh_file.nsh04, tabIndex=3, title="Object Code", noEntry, not null, required;
+Edit nsh05=nsh_file.nsh05, tabIndex=4, title="Party Abbr.", noEntry;
+Edit nsh06=nsh_file.nsh06, tabIndex=5, title="Business No./ID", noEntry;
+Edit nsh07=nsh_file.nsh07, tabIndex=6, title="Account name", noEntry;
+ComboBox nsh08=nsh_file.nsh08, tabIndex=7, title="Account Notice", not null, required, items=(("1", "1"),("2", "2"),("3", "No Notify"),("4", "4"),("5", "5"));
+Edit nsh09=nsh_file.nsh09, tabIndex=11, title="Contact (1)", noEntry;
+Edit nsh10=nsh_file.nsh10, tabIndex=15, title="Contact (2)", noEntry;
+Edit nsh11=nsh_file.nsh11, tabIndex=14, title="Contact (3)", noEntry;
+Edit nsh12=nsh_file.nsh12, tabIndex=13, title="Contact TEL (1)", noEntry;
+Edit nsh13=nsh_file.nsh13, tabIndex=12, title="Contact TEL (2)", noEntry;
+Edit nsh14=nsh_file.nsh14, tabIndex=10, title="Fax", noEntry;
+Edit nsh15=nsh_file.nsh15, tabIndex=9, title="e-mail", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nsh(nsh_file.nsh01,formonly.nmt02,nsh_file.nsh02,nsh_file.nsh03,nsh_file.nsh04,nsh_file.nsh05,nsh_file.nsh06,nsh_file.nsh07,nsh_file.nsh08,nsh_file.nsh09,nsh_file.nsh10,nsh_file.nsh11,nsh_file.nsh12,nsh_file.nsh13,nsh_file.nsh14,nsh_file.nsh15)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

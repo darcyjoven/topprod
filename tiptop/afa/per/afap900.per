@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afap900")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1954
+{
+ Application No.     [fcd01             ]
+ Mortgage Doc No.    [fcd06               ]
+}
+END -- gr1954
+END -- page01
+END -- folder01
+Table s_fce
+{
+[fce02  |fce03          |fce031    |faj04  |faj49        |faj20                |fce05             |fce08      ]
+[fce02  |fce03          |fce031    |faj04  |faj49        |faj20                |fce05             |fce08      ]
+[fce02  |fce03          |fce031    |faj04  |faj49        |faj20                |fce05             |fce08      ]
+[fce02  |fce03          |fce031    |faj04  |faj49        |faj20                |fce05             |fce08      ]
+[fce02  |fce03          |fce031    |faj04  |faj49        |faj20                |fce05             |fce08      ]
+[fce02  |fce03          |fce031    |faj04  |faj49        |faj20                |fce05             |fce08      ]
+[fce02  |fce03          |fce031    |faj04  |faj49        |faj20                |fce05             |fce08      ]
+[fce02  |fce03          |fce031    |faj04  |faj49        |faj20                |fce05             |fce08      ]
+[fce02  |fce03          |fce031    |faj04  |faj49        |faj20                |fce05             |fce08      ]
+[fce02  |fce03          |fce031    |faj04  |faj49        |faj20                |fce05             |fce08      ]
+
+}
+END -- s_fce
+Grid gr1955
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1955
+END -- VBox1
+END -- afap900
+
+TABLES
+fce_file,
+fcd_file
+ATTRIBUTES
+ButtonEdit fcd01=fcd_file.fcd01, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Mortgage Application Form";
+Edit fcd06=fcd_file.fcd06, tabIndex=2, noEntry;
+Edit fce02=fce_file.fce02, tabIndex=3, title="Appr", noEntry;
+Edit fce03=fce_file.fce03, tabIndex=4, title="Property No.", noEntry;
+Edit fce031=fce_file.fce031, tabIndex=5, title="Add No.", noEntry;
+Edit faj04=formonly.faj04 type CHAR, tabIndex=6, title="Cate", noEntry;
+Edit faj49=formonly.faj49 type CHAR, tabIndex=7, title="Import No.", noEntry;
+Edit faj20=formonly.faj20 type CHAR, tabIndex=8, title="Keeping Department", noEntry;
+Edit fce05=fce_file.fce05, tabIndex=9, title="Mortgage Amount", noEntry;
+Edit fce08=fce_file.fce08, tabIndex=10, title="Bank Label";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fce(fce_file.fce02,fce_file.fce03,fce_file.fce031,formonly.faj04,formonly.faj49,formonly.faj20,fce_file.fce05,fce_file.fce08)
+SCREEN RECORD Undefined(fcd_file.fcd01,fcd_file.fcd06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

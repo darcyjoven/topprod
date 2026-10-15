@@ -1,0 +1,33 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1013.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat1013")
+VBox VBox1
+Grid gr2199
+{
+ <G group1                                             >
+  Prop. No. After Cap.[far12     ]
+  Additional No.      [far121    ]
+ <                                                     >
+
+}
+END -- gr2199
+END -- VBox1
+END -- afat1013
+
+TABLES
+far_file
+ATTRIBUTES
+Group group1:group1, text="INPUT";
+Edit far12=far_file.far12, tabIndex=1;
+Edit far121=far_file.far121, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(far_file.far12,far_file.far121)
+END -- INSTRUCTIONS
+

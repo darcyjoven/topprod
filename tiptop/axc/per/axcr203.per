@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr203.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr203")
+VBox vb8
+Grid gr12
+{
+ <G group01                                                                             >
+  Prod. Item#         [tlf62               ]  Group Code 1        [ima09               ]
+  Down Level Item#    [tlf01               ]  Group Code 2        [ima10               ]
+  Cost Levels         [ima57               ]  Group Code 3        [ima11               ]
+  Main Grp Code       [ima06               ]  Group Code 4        [ima12               ]
+ <                                                                                      >
+
+}
+END -- gr12
+Group g01(text="INPUT")
+Grid gr13
+{
+ Cost Calculation Method[type             ]
+ Year Period            [yy        ] [mm       ]
+[detail_sw                     ]
+
+}
+END -- gr13
+END -- g01
+Grid gr14
+{
+[more                                                                   ]
+
+}
+END -- gr14
+END -- vb8
+END -- axcr203
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit tlf62=formonly.tlf62 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima09=formonly.ima09 type VARCHAR, tabIndex=2;
+ButtonEdit tlf01=formonly.tlf01 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Edit ima10=formonly.ima10 type VARCHAR, tabIndex=4;
+Edit ima57=formonly.ima57 type VARCHAR, tabIndex=5;
+Edit ima11=formonly.ima11 type VARCHAR, tabIndex=6;
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=7;
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=8;
+ComboBox type=formonly.type type CHAR, tabIndex=13, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+Edit yy=formonly.yy type SMALLINT, tabIndex=9;
+Edit mm=formonly.mm type SMALLINT, tabIndex=10;
+CheckBox detail_sw=formonly.detail_sw type VARCHAR, tabIndex=11, text="Print Detail?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tlf62,formonly.ima09,formonly.tlf01,formonly.ima10,formonly.ima57,formonly.ima11,formonly.ima06,formonly.ima12,formonly.type,formonly.yy,formonly.mm,formonly.detail_sw,formonly.more)
+END -- INSTRUCTIONS
+

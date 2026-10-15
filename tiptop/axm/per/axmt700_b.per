@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt700_b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axmt700_b")
+VBox vb1
+Folder pc1
+Page Page1(text=%"Actual Trading Tax detail")
+Table tb1
+{
+[ogj02|ogj0|gec02               |ogj04     |ogj05     |ogj06     |ogj07     |ogj07t    |ogj08     ]
+[ogj02|ogj0|gec02               |ogj04     |ogj05     |ogj06     |ogj07     |ogj07t    |ogj08     ]
+[ogj02|ogj0|gec02               |ogj04     |ogj05     |ogj06     |ogj07     |ogj07t    |ogj08     ]
+[ogj02|ogj0|gec02               |ogj04     |ogj05     |ogj06     |ogj07     |ogj07t    |ogj08     ]
+[ogj02|ogj0|gec02               |ogj04     |ogj05     |ogj06     |ogj07     |ogj07t    |ogj08     ]
+
+}
+END -- tb1
+END -- Page1
+END -- pc1
+Grid gr1
+{
+
+  ----------Rows[cn2       ] ----------
+
+}
+END -- gr1
+END -- vb1
+END -- axmt700_b
+
+TABLES
+ogj_file,
+gec_file
+ATTRIBUTES
+Edit ogj02=ogj_file.ogj02, tabIndex=1, title=%"Serial No.", noEntry;
+Edit ogj0=ogj_file.ogj03, tabIndex=2, title=%"Sales Tax Code", noEntry;
+Edit gec02=gec_file.gec02, tabIndex=9, title=%"Sales Tax Name", noEntry;
+Edit ogj04=ogj_file.ogj04, tabIndex=3, title=%"Tax Rate%", noEntry;
+Edit ogj05=ogj_file.ogj05, tabIndex=4, title=%"Fixed Tax Amount", noEntry;
+CheckBox ogj06=ogj_file.ogj06, tabIndex=5, title=%"Include Tax", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit ogj07=ogj_file.ogj07, tabIndex=6, title=%"Amt Excl. Tax", noEntry;
+Edit ogj07t=ogj_file.ogj07t, tabIndex=7, title=%"Amt Incl. Tax", noEntry;
+Edit ogj08=ogj_file.ogj08, tabIndex=8, title=%"Tax", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogj(ogj_file.ogj02,ogj_file.ogj03,gec_file.gec02,ogj_file.ogj04,ogj_file.ogj05,ogj_file.ogj06,ogj_file.ogj07,ogj_file.ogj07t,ogj_file.ogj08)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

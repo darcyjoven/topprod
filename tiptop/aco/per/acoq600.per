@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoq600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"acoq600")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1360
+{
+ Advance Application No[cnm01     ]
+ Applying Date         [cnm02       ]
+ Application No.       [cnm03               ]
+ Transfer Type         [cnm04     ][desc                ]
+ Trade Register Book No[cnm05               ]
+ Customs No.           [cnm09     ]
+ Currency              [cnm06     ]
+
+
+}
+END -- gr1360
+Grid gr1361
+{
+ <G group01                                                    >
+  Transfer From [cnm07     ][desc1                         ]
+  Book Active Dt[cnm072    ]
+ <                                                             >
+ <G group02                                                    >
+  Transfer To   [cnm08     ][desc2                         ]
+  Book Active Dt[cnm082    ]
+ <                                                             >
+
+}
+END -- gr1361
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_cnn
+{
+[cnn0|cnn1|cnn04          |cnn041    |cob02                         |cnn06|cnn05       |cnn051       |tot        ]
+[cnn0|cnn1|cnn04          |cnn041    |cob02                         |cnn06|cnn05       |cnn051       |tot        ]
+[cnn0|cnn1|cnn04          |cnn041    |cob02                         |cnn06|cnn05       |cnn051       |tot        ]
+[cnn0|cnn1|cnn04          |cnn041    |cob02                         |cnn06|cnn05       |cnn051       |tot        ]
+[cnn0|cnn1|cnn04          |cnn041    |cob02                         |cnn06|cnn05       |cnn051       |tot        ]
+[cnn0|cnn1|cnn04          |cnn041    |cob02                         |cnn06|cnn05       |cnn051       |tot        ]
+[cnn0|cnn1|cnn04          |cnn041    |cob02                         |cnn06|cnn05       |cnn051       |tot        ]
+[cnn0|cnn1|cnn04          |cnn041    |cob02                         |cnn06|cnn05       |cnn051       |tot        ]
+[cnn0|cnn1|cnn04          |cnn041    |cob02                         |cnn06|cnn05       |cnn051       |tot        ]
+[cnn0|cnn1|cnn04          |cnn041    |cob02                         |cnn06|cnn05       |cnn051       |tot        ]
+
+}
+END -- s_cnn
+Grid gr1362
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1362
+END -- VBox1
+END -- acoq600
+
+ATTRIBUTES
+Edit cnm01=formonly.cnm01 type CHAR, tabIndex=1;
+DateEdit cnm02=formonly.cnm02 type DATE, tabIndex=2;
+Edit cnm03=formonly.cnm03 type CHAR, tabIndex=3;
+Edit cnm04=formonly.cnm04 type CHAR, tabIndex=4, comment="1:Tr-i Itm 2:Tr-o Prod";
+Edit desc=formonly.desc type CHAR, tabIndex=5, noEntry;
+Edit cnm05=formonly.cnm05 type CHAR, tabIndex=6;
+Edit cnm09=formonly.cnm09 type CHAR, tabIndex=7;
+Edit cnm06=formonly.cnm06 type CHAR, tabIndex=8;
+Group group01:group01;
+Edit cnm07=formonly.cnm07 type CHAR, tabIndex=9;
+Edit desc1=formonly.desc1 type CHAR, tabIndex=10;
+DateEdit cnm072=formonly.cnm072 type CHAR, tabIndex=11;
+Group group02:group02;
+Edit cnm08=formonly.cnm08 type CHAR, tabIndex=12;
+Edit desc2=formonly.desc2 type CHAR, tabIndex=13;
+DateEdit cnm082=formonly.cnm082 type CHAR, tabIndex=14;
+Edit cnn0=formonly.cnn02 type CHAR, tabIndex=15, title="Ln#";
+Edit cnn1=formonly.cnn03 type CHAR, tabIndex=16, title="Co.";
+Edit cnn04=formonly.cnn04 type CHAR, tabIndex=17, title="Goods No.";
+Edit cnn041=formonly.cnn041 type CHAR, tabIndex=18, title="Version";
+Edit cob02=formonly.cob02 type CHAR, tabIndex=19, title="P/N Specification", scroll;
+Edit cnn06=formonly.cnn06 type CHAR, tabIndex=20, title="Unit";
+Edit cnn05=formonly.cnn05 type CHAR, tabIndex=21, title="Qty Applied";
+Edit cnn051=formonly.cnn051 type CHAR, tabIndex=22, title="Transfer Qty";
+Edit tot=formonly.tot type CHAR, tabIndex=23, title="Rest Qty";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cnn(formonly.cnn02,formonly.cnn03,formonly.cnn04,formonly.cnn041,formonly.cob02,formonly.cnn06,formonly.cnn05,formonly.cnn051,formonly.tot)
+SCREEN RECORD Undefined(formonly.cnm01,formonly.cnm02,formonly.cnm03,formonly.cnm04,formonly.desc,formonly.cnm05,formonly.cnm09,formonly.cnm06,formonly.cnm07,formonly.desc1,formonly.cnm072,formonly.cnm08,formonly.desc2,formonly.cnm082,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

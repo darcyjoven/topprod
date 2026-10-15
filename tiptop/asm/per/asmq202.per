@@ -1,0 +1,151 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asmq202.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asmq202")
+VBox vb2
+Folder pc188
+Page page01(text="Main")
+Grid gr889
+{
+ Item No.                  [tlf01                         ] W/O No.                   [tlf62           ]
+ Product Name              [g_ima02                       ] Transaction Command Code  [tlf13     ][tlf13_desc                    ]
+ Specification             [g_ima021                      ] Cause                     [tlf14     ][g_azf03                       ]
+ Document Date             [tlf06       ]                   Vender/Customer           [tlf19     ]
+ Document No.              [tlf905              ]           Project No.               [tlf20     ]
+                           [g_smydesc           ]           Register Bookn No         [tlf64               ]
+ Line No.                  [tlf906    ]                     Cost Center               [tlf930    ][gem02a      ]
+                                                            Mul trade No.             [tlf99          ]
+                                                            Operation No.             [tlf05          ][ecm45               ]
+
+}
+END -- gr889
+END -- page01
+END -- pc188
+Folder pc189
+Page page02(text="Warehouse/Accountiing")
+Grid gr890
+{
+ <G group01                       ><G group02                                 ><G group03                                 >
+  Cost Warehouse      [tlf901    ]  Transaction Qty     [tlf10     ]            Transaction cost    [tlf21     ]
+  Warehouse           [tlf902    ]  Transaction Unit    [tlf11     ]            Debit Account       [tlf15     ]
+  Location            [tlf903    ]  imgConversion Rate  [tlf12     ]            Credit Account      [tlf16               ]
+  Lot No.             [tlf904    ]  imaConversion Rate  [tlf60               ]
+  Store-in/out+-      [tlf907    ]
+ <                                ><                                          ><                                          >
+
+}
+END -- gr890
+END -- page02
+Page page03(text="Source/Destination")
+Grid gr891
+{
+ <G group04                                              >  <G group05                                                >
+  Source               [tlf02     ]                          Destination         [tlf03     ]
+  Plant No.            [tlf020    ]                          Plant No.           [tlf030    ]
+  Warehouse            [tlf021    ]                          Warehouse           [tlf031    ]
+  Location             [tlf022    ]                          Location            [tlf032    ]
+  Lot#                 [tlf023                ]              Lot#                [tlf033                ]
+  Unit                 [tlf025    ]                          Unit                [tlf035    ]
+  Document No. Line#   [tlf026               ][tlf027    ]   Document No. Line#  [tlf036               ] [tlf037    ]
+ <                                                       >  <                                                         >
+
+}
+END -- gr891
+END -- page03
+Page page04(text="Data Info")
+Grid gr892
+{
+ <G group06                              >
+  Generated Date            [tlf07       ]
+  By User                   [tlf09     ]
+  Calculation Date          [tlf211      ]
+  Calculating Time          [tlf212    ]
+  Transaction time          [tlf08     ]
+ <                                       >
+}
+END -- gr892
+END -- page04
+END -- pc189
+Grid gr893
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr893
+END -- vb2
+END -- asmq202
+
+TABLES
+tlf_file
+ATTRIBUTES
+ButtonEdit tlf01=tlf_file.tlf01, action=controlp, tabIndex=1, image="zoom";
+Edit tlf62=tlf_file.tlf62, tabIndex=2;
+Edit g_ima02=formonly.g_ima02 type CHAR, tabIndex=3, noEntry;
+Edit tlf13=tlf_file.tlf13, tabIndex=4;
+Edit tlf13_desc=formonly.tlf13_desc type CHAR, tabIndex=5, noEntry;
+Edit g_ima021=formonly.g_ima021 type CHAR, tabIndex=6, noEntry;
+Edit tlf14=tlf_file.tlf14, tabIndex=7;
+Edit g_azf03=formonly.g_azf03 type CHAR, tabIndex=8, noEntry;
+DateEdit tlf06=tlf_file.tlf06, tabIndex=9;
+Edit tlf19=tlf_file.tlf19, tabIndex=10;
+Edit tlf905=tlf_file.tlf905, tabIndex=12;
+Edit tlf20=tlf_file.tlf20, tabIndex=11;
+Edit g_smydesc=formonly.g_smydesc type CHAR, tabIndex=14, noEntry;
+Edit tlf64=tlf_file.tlf64, tabIndex=13;
+Edit tlf906=tlf_file.tlf906, tabIndex=17;
+ButtonEdit tlf930=tlf_file.tlf930, action=controlp, tabIndex=15, image="zoom";
+Edit gem02a=formonly.gem02a type CHAR, tabIndex=16, noEntry;
+Edit tlf99=tlf_file.tlf99, tabIndex=18;
+Edit tlf05=tlf_file.tlf05, tabIndex=19;
+Edit ecm45=formonly.ecm45 type VARCHAR, tabIndex=20, noEntry;
+Group group01:group01, text="W/H";
+Edit tlf901=tlf_file.tlf901, tabIndex=21;
+Edit tlf902=tlf_file.tlf902, tabIndex=22;
+Edit tlf903=tlf_file.tlf903, tabIndex=23;
+Edit tlf904=tlf_file.tlf904, tabIndex=24;
+Edit tlf907=tlf_file.tlf907, tabIndex=25;
+Group group02:group02, text="Qty";
+Edit tlf10=tlf_file.tlf10, tabIndex=26;
+Edit tlf11=tlf_file.tlf11, tabIndex=27;
+Edit tlf12=tlf_file.tlf12, tabIndex=28;
+Edit tlf60=tlf_file.tlf60, tabIndex=29;
+Group group03:group03, text="Accounting";
+Edit tlf21=tlf_file.tlf21, tabIndex=30;
+Edit tlf15=tlf_file.tlf15, tabIndex=31;
+Edit tlf16=tlf_file.tlf16, tabIndex=32;
+Group group04:group04, text="Source";
+Edit tlf02=tlf_file.tlf02, tabIndex=33;
+Edit tlf020=tlf_file.tlf020, tabIndex=34;
+Edit tlf021=tlf_file.tlf021, tabIndex=35;
+Edit tlf022=tlf_file.tlf022, tabIndex=36;
+Edit tlf023=tlf_file.tlf023, tabIndex=37;
+Edit tlf025=tlf_file.tlf025, tabIndex=38;
+Edit tlf026=tlf_file.tlf026, tabIndex=39;
+Edit tlf027=tlf_file.tlf027, tabIndex=40;
+Group group05:group05, text="Destination";
+Edit tlf03=tlf_file.tlf03, tabIndex=41;
+Edit tlf030=tlf_file.tlf030, tabIndex=42;
+Edit tlf031=tlf_file.tlf031, tabIndex=43;
+Edit tlf032=tlf_file.tlf032, tabIndex=44;
+Edit tlf033=tlf_file.tlf033, tabIndex=45;
+Edit tlf035=tlf_file.tlf035, tabIndex=46;
+Edit tlf036=tlf_file.tlf036, tabIndex=47;
+Edit tlf037=tlf_file.tlf037, tabIndex=48;
+Group group06:group06;
+DateEdit tlf07=tlf_file.tlf07, tabIndex=50;
+Edit tlf09=tlf_file.tlf09, tabIndex=51;
+DateEdit tlf211=tlf_file.tlf211, tabIndex=52;
+Edit tlf212=tlf_file.tlf212, tabIndex=53;
+Edit tlf08=tlf_file.tlf08, tabIndex=54;
+Edit cnt=formonly.cnt type CHAR, tabIndex=49;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(tlf_file.tlf01,tlf_file.tlf62,formonly.g_ima02,tlf_file.tlf13,formonly.tlf13_desc,formonly.g_ima021,tlf_file.tlf14,formonly.g_azf03,tlf_file.tlf06,tlf_file.tlf19,tlf_file.tlf905,tlf_file.tlf20,formonly.g_smydesc,tlf_file.tlf64,tlf_file.tlf906,tlf_file.tlf930,formonly.gem02a,tlf_file.tlf99,tlf_file.tlf05,formonly.ecm45,tlf_file.tlf901,tlf_file.tlf902,tlf_file.tlf903,tlf_file.tlf904,tlf_file.tlf907,tlf_file.tlf10,tlf_file.tlf11,tlf_file.tlf12,tlf_file.tlf60,tlf_file.tlf21,tlf_file.tlf15,tlf_file.tlf16,tlf_file.tlf02,tlf_file.tlf020,tlf_file.tlf021,tlf_file.tlf022,tlf_file.tlf023,tlf_file.tlf025,tlf_file.tlf026,tlf_file.tlf027,tlf_file.tlf03,tlf_file.tlf030,tlf_file.tlf031,tlf_file.tlf032,tlf_file.tlf033,tlf_file.tlf035,tlf_file.tlf036,tlf_file.tlf037,tlf_file.tlf07,tlf_file.tlf09,tlf_file.tlf211,tlf_file.tlf212,tlf_file.tlf08,formonly.cnt)
+END -- INSTRUCTIONS
+

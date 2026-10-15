@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi352.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apsi352")
+VBox vb10
+Folder pc837
+Page page01(action=page01, text="page01")
+Table s_vlp
+{
+[vlp02   |vlp03              |occ02           |occ34            |vlpacti           ]
+[vlp02   |vlp03              |occ02           |occ34            |vlpacti           ]
+[vlp02   |vlp03              |occ02           |occ34            |vlpacti           ]
+[vlp02   |vlp03              |occ02           |occ34            |vlpacti           ]
+[vlp02   |vlp03              |occ02           |occ34            |vlpacti           ]
+[vlp02   |vlp03              |occ02           |occ34            |vlpacti           ]
+[vlp02   |vlp03              |occ02           |occ34            |vlpacti           ]
+[vlp02   |vlp03              |occ02           |occ34            |vlpacti           ]
+[vlp02   |vlp03              |occ02           |occ34            |vlpacti           ]
+[vlp02   |vlp03              |occ02           |occ34            |vlpacti           ]
+
+}
+END -- s_vlp
+END -- page01
+END -- pc837
+Grid gr4626
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4626
+END -- vb10
+END -- apsi352
+
+TABLES
+vlp_file
+ATTRIBUTES
+Edit vlp02=vlp_file.vlp02, tabIndex=13, title="vlp02", not null, required;
+ButtonEdit vlp03=vlp_file.vlp03, action=controlp, tabIndex=14, title="vlp03", not null, required, image="zoom";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=15, title="occ02", noEntry;
+Edit occ34=formonly.occ34 type CHAR, tabIndex=16, title="occ34", noEntry;
+CheckBox vlpacti=vlp_file.vlpacti, tabIndex=17, title="vlpacti", valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vlp(vlp_file.vlp02,vlp_file.vlp03,formonly.occ02,formonly.occ34,vlp_file.vlpacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

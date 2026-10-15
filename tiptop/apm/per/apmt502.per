@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt502.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt502")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr5278
+{
+ P/O No. [pmo01           ][pmo03     ]
+
+}
+END -- gr5278
+END -- page01
+END -- folder01
+Table s_pmo
+{
+[pmo04    |pmo05   |pmo06                                                       ]
+[pmo04    |pmo05   |pmo06                                                       ]
+[pmo04    |pmo05   |pmo06                                                       ]
+[pmo04    |pmo05   |pmo06                                                       ]
+[pmo04    |pmo05   |pmo06                                                       ]
+[pmo04    |pmo05   |pmo06                                                       ]
+[pmo04    |pmo05   |pmo06                                                       ]
+[pmo04    |pmo05   |pmo06                                                       ]
+[pmo04    |pmo05   |pmo06                                                       ]
+[pmo04    |pmo05   |pmo06                                                       ]
+
+}
+END -- s_pmo
+Grid gr5279
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5279
+END -- VBox1
+END -- apmt502
+
+TABLES
+pmo_file
+ATTRIBUTES
+Edit pmo01=pmo_file.pmo01, tabIndex=1, not null, required, comment="Key Field, No Blank/Repeated!    ";
+Edit pmo03=pmo_file.pmo03, tabIndex=2, not null, required, comment="Field and [P/O No. ] Combined as Key Field, 0:Head Description";
+ComboBox pmo04=pmo_file.pmo04, tabIndex=3, title="Location", not null, required, queryEditable, items=(("0", %"Print Location:Before"),("1", %"Print Location:After"));
+Edit pmo05=pmo_file.pmo05, tabIndex=4, title="Line No.", not null, required;
+Edit pmo06=pmo_file.pmo06, tabIndex=5, title="Description", not null, required, comment="^PQry Freq Special Desc";
+Edit cnt=formonly.cnt type CHAR, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmo(pmo_file.pmo04,pmo_file.pmo05,pmo_file.pmo06)
+SCREEN RECORD Undefined(pmo_file.pmo01,pmo_file.pmo03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

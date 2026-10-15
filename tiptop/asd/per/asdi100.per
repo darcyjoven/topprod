@@ -1,0 +1,119 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdi100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdi100")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+HBox HBox1
+Grid gr352
+{
+ Item No.            [sta01                         ]
+                     [ima02                         ]
+ Prod.Class          [ima131    ]
+                     [oba02                         ]
+ Master Routing      [sta07     ]
+}
+END -- gr352
+Grid gr353
+{
+ Ver.                [ima05     ]
+ Source Code         [ima08     ]
+ Inventory Unit      [ima25     ]
+ Main Group Code     [ima06     ]
+ Product Type        [ima09     ]
+}
+END -- gr353
+END -- HBox1
+Grid gr354
+{
+ <G group03                                     > <G group04                                           >
+  Costing Method [sta02                         ]  Current Level Direct Material Cost      [sta04     ]
+  Standard Labor Hour                [sta03     ]  Current Level Direct Labor Wage Rate    [sta05     ]
+  Processing Expense                 [sta08     ]  Current Level Overhead Apportionment %  [sta06     ]
+  Manufactured/Subcontracting Ratio% [sta09     ]  Current Level Other Overhead            [sta06a    ]
+  Idle Listing Ratio%                [sta10     ]
+  [sta11                                        ]
+ <                                              > <                                                    >
+
+}
+END -- gr354
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_stb
+{
+[stb02|stb03 |stb04     |stb05     |stb06     |stb06a   |stb07        |stb08      |stb09        |stb09a    |stb10              |stbtot              ]
+[stb02|stb03 |stb04     |stb05     |stb06     |stb06a   |stb07        |stb08      |stb09        |stb09a    |stb10              |stbtot              ]
+[stb02|stb03 |stb04     |stb05     |stb06     |stb06a   |stb07        |stb08      |stb09        |stb09a    |stb10              |stbtot              ]
+[stb02|stb03 |stb04     |stb05     |stb06     |stb06a   |stb07        |stb08      |stb09        |stb09a    |stb10              |stbtot              ]
+[stb02|stb03 |stb04     |stb05     |stb06     |stb06a   |stb07        |stb08      |stb09        |stb09a    |stb10              |stbtot              ]
+[stb02|stb03 |stb04     |stb05     |stb06     |stb06a   |stb07        |stb08      |stb09        |stb09a    |stb10              |stbtot              ]
+[stb02|stb03 |stb04     |stb05     |stb06     |stb06a   |stb07        |stb08      |stb09        |stb09a    |stb10              |stbtot              ]
+[stb02|stb03 |stb04     |stb05     |stb06     |stb06a   |stb07        |stb08      |stb09        |stb09a    |stb10              |stbtot              ]
+[stb02|stb03 |stb04     |stb05     |stb06     |stb06a   |stb07        |stb08      |stb09        |stb09a    |stb10              |stbtot              ]
+[stb02|stb03 |stb04     |stb05     |stb06     |stb06a   |stb07        |stb08      |stb09        |stb09a    |stb10              |stbtot              ]
+
+}
+END -- s_stb
+Grid gr355
+{
+ ---------- Rows [cnt                 ] ----------
+
+}
+END -- gr355
+END -- VBox1
+END -- asdi100
+
+TABLES
+ima_file,
+stb_file,
+sta_file
+ATTRIBUTES
+ButtonEdit sta01=sta_file.sta01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Item #";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+ButtonEdit ima131=ima_file.ima131, action=controlp, tabIndex=3, not null, required, image="zoom", upShift, comment="<^P>Qry Product Category";
+Edit oba02=formonly.oba02 type CHAR, tabIndex=4, noEntry;
+Edit sta07=sta_file.sta07, tabIndex=5, upShift;
+Edit ima05=ima_file.ima05, tabIndex=6, noEntry;
+Edit ima08=ima_file.ima08, tabIndex=7, noEntry;
+Edit ima25=ima_file.ima25, tabIndex=8, noEntry;
+Edit ima06=ima_file.ima06, tabIndex=9, noEntry;
+Edit ima09=ima_file.ima09, tabIndex=10, noEntry;
+Group group03:group03;
+ComboBox sta02=sta_file.sta02, tabIndex=11, not null, required, items=(("0", "No Re-Calculation"),("1", "Omit Wastage Ratio"),("2", "Count Wastage%"));
+Edit sta03=sta_file.sta03, tabIndex=12;
+Edit sta08=sta_file.sta08, tabIndex=13;
+Edit sta09=sta_file.sta09, tabIndex=14;
+Edit sta10=sta_file.sta10, tabIndex=15;
+CheckBox sta11=sta_file.sta11, tabIndex=16, text="Idle Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04;
+Edit sta04=sta_file.sta04, tabIndex=17;
+Edit sta05=sta_file.sta05, tabIndex=18;
+Edit sta06=sta_file.sta06, tabIndex=19;
+Edit sta06a=sta_file.sta06a, tabIndex=20;
+Edit stb02=stb_file.stb02, tabIndex=21, title="Year", not null, required;
+Edit stb03=stb_file.stb03, tabIndex=22, title="Month", not null, required;
+Edit stb04=stb_file.stb04, tabIndex=23, title="Material";
+Edit stb05=stb_file.stb05, tabIndex=24, title="Labor";
+Edit stb06=stb_file.stb06, tabIndex=25, title="Overhead";
+Edit stb06a=stb_file.stb06a, tabIndex=26, title="Other";
+Edit stb07=stb_file.stb07, tabIndex=27, title="Acc.Material";
+Edit stb08=stb_file.stb08, tabIndex=28, title="Acc.Labor";
+Edit stb09=stb_file.stb09, tabIndex=29, title="Acc.Overhead";
+Edit stb09a=stb_file.stb09a, tabIndex=30, title="Acc.Other";
+Edit stb10=stb_file.stb10, tabIndex=31, title="Actual Total Cost";
+Edit stbtot=formonly.stbtot type DECIMAL, tabIndex=32, title="Standard Total Cost", noEntry;
+Edit cnt=formonly.cnt type DECIMAL, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_stb(stb_file.stb02,stb_file.stb03,stb_file.stb04,stb_file.stb05,stb_file.stb06,stb_file.stb06a,stb_file.stb07,stb_file.stb08,stb_file.stb09,stb_file.stb09a,stb_file.stb10,formonly.stbtot)
+SCREEN RECORD Undefined(sta_file.sta01,ima_file.ima02,ima_file.ima131,formonly.oba02,sta_file.sta07,ima_file.ima05,ima_file.ima08,ima_file.ima25,ima_file.ima06,ima_file.ima09,sta_file.sta02,sta_file.sta03,sta_file.sta08,sta_file.sta09,sta_file.sta10,sta_file.sta11,sta_file.sta04,sta_file.sta05,sta_file.sta06,sta_file.sta06a,formonly.cnt)
+END -- INSTRUCTIONS
+

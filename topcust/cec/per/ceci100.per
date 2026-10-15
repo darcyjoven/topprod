@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cec/4fd/ceci100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+              Label1      [tc_ecn01           ]
+
+              Label2      [tc_ecn02           ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table Table1
+{
+[tc_ecn09|tc_ecn03  |tc_ecn04  |tc_ecn05  |tc_ecn06  |tc_ecn07  |tc_ecn08 |tc_ecnud|tc_ecnacti  ]
+[tc_ecn09|tc_ecn03  |tc_ecn04  |tc_ecn05  |tc_ecn06  |tc_ecn07  |tc_ecn08 |tc_ecnud|tc_ecnacti  ]
+[tc_ecn09|tc_ecn03  |tc_ecn04  |tc_ecn05  |tc_ecn06  |tc_ecn07  |tc_ecn08 |tc_ecnud|tc_ecnacti  ]
+[tc_ecn09|tc_ecn03  |tc_ecn04  |tc_ecn05  |tc_ecn06  |tc_ecn07  |tc_ecn08 |tc_ecnud|tc_ecnacti  ]
+[tc_ecn09|tc_ecn03  |tc_ecn04  |tc_ecn05  |tc_ecn06  |tc_ecn07  |tc_ecn08 |tc_ecnud|tc_ecnacti  ]
+
+
+}
+END -- Table1
+Grid Grid3
+{
+
+  -------------  Rows[cnt     ]----------------
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit tc_ecn01=formonly.tc_ecn01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit tc_ecn02=formonly.tc_ecn02, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit tc_ecn09=formonly.tc_ecn09, tabIndex=3, title=%"tc_ecn09";
+Edit tc_ecn03=formonly.tc_ecn03, tabIndex=1, title=%"tc_ecn03";
+Edit tc_ecn04=formonly.tc_ecn04, tabIndex=1, title=%"tc_ecn04";
+Edit tc_ecn05=formonly.tc_ecn05, tabIndex=1, title=%"tc_ecn05";
+Edit tc_ecn06=formonly.tc_ecn06, tabIndex=1, title=%"tc_ecn06";
+Edit tc_ecn07=formonly.tc_ecn07, tabIndex=1, title=%"tc_ecn07";
+Edit tc_ecn08=formonly.tc_ecn08, tabIndex=1, title=%"tc_ecn08";
+Edit tc_ecnud=formonly.tc_ecnud06, tabIndex=4, title=%"tc_ecnud06";
+CheckBox tc_ecnacti=formonly.tc_ecnacti, tabIndex=1, title=%"tc_ecnacti", text=%"", valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tc_ecn(formonly.tc_ecn09,formonly.tc_ecn03,formonly.tc_ecn04,formonly.tc_ecn05,formonly.tc_ecn06,formonly.tc_ecn07,formonly.tc_ecn08,formonly.tc_ecnud06,formonly.tc_ecnacti)
+SCREEN RECORD Undefined(formonly.tc_ecn01,formonly.tc_ecn02,formonly.cnt)
+END -- INSTRUCTIONS
+

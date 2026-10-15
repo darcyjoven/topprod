@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapq720.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapq720")
+VBox VBox1
+Folder pc867
+Page page01(text="Page01")
+Table s_apb
+{
+[apb01          |apk05            |apb11          |apk08          |apk07          |apk06          |apb10          |sum                 ]
+[apb01          |apk05            |apb11          |apk08          |apk07          |apk06          |apb10          |sum                 ]
+[apb01          |apk05            |apb11          |apk08          |apk07          |apk06          |apb10          |sum                 ]
+[apb01          |apk05            |apb11          |apk08          |apk07          |apk06          |apb10          |sum                 ]
+[apb01          |apk05            |apb11          |apk08          |apk07          |apk06          |apb10          |sum                 ]
+[apb01          |apk05            |apb11          |apk08          |apk07          |apk06          |apb10          |sum                 ]
+[apb01          |apk05            |apb11          |apk08          |apk07          |apk06          |apb10          |sum                 ]
+[apb01          |apk05            |apb11          |apk08          |apk07          |apk06          |apb10          |sum                 ]
+[apb01          |apk05            |apb11          |apk08          |apk07          |apk06          |apb10          |sum                 ]
+[apb01          |apk05            |apb11          |apk08          |apk07          |apk06          |apb10          |sum                 ]
+
+}
+END -- s_apb
+END -- page01
+END -- pc867
+Grid gr4683
+{
+  ---------- Row [cnt   ] ----------
+
+}
+END -- gr4683
+END -- VBox1
+END -- aapq720
+
+TABLES
+apk_file,
+apb_file
+ATTRIBUTES
+Edit apb01=apb_file.apb01, tabIndex=1, title="apb01";
+DateEdit apk05=apk_file.apk05, tabIndex=2, title="apk05";
+Edit apb11=apb_file.apb11, tabIndex=3, title="apb11";
+Edit apk08=apk_file.apk08, tabIndex=4, title="apk08";
+Edit apk07=apk_file.apk07, tabIndex=5, title="apk07";
+Edit apk06=apk_file.apk06, tabIndex=6, title="apk06";
+Edit apb10=apb_file.apb10, tabIndex=7, title="apb10";
+Edit sum=formonly.sum type DECIMAL, tabIndex=8, title="sum";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apb(apb_file.apb01,apk_file.apk05,apb_file.apb11,apk_file.apk08,apk_file.apk07,apk_file.apk06,apb_file.apb10,formonly.sum)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

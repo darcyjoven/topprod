@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afaq250.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afaq250")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1981
+{
+ Instrument No.      [fgc01               ]
+ Instrument Serial No[fga02               ]
+
+}
+END -- gr1981
+Grid gr1982
+{
+ Property No.        [fga03     ]
+ Add No.             [fga031    ]
+ Property Serial No. [fga04     ]
+}
+END -- gr1982
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_fgc
+{
+[fgc011     |fgc02         |fgc03             |fgc04      |fgc05           |fge03         |fgc06    |desc   |fgc07                 ]
+[fgc011     |fgc02         |fgc03             |fgc04      |fgc05           |fge03         |fgc06    |desc   |fgc07                 ]
+[fgc011     |fgc02         |fgc03             |fgc04      |fgc05           |fge03         |fgc06    |desc   |fgc07                 ]
+[fgc011     |fgc02         |fgc03             |fgc04      |fgc05           |fge03         |fgc06    |desc   |fgc07                 ]
+[fgc011     |fgc02         |fgc03             |fgc04      |fgc05           |fge03         |fgc06    |desc   |fgc07                 ]
+[fgc011     |fgc02         |fgc03             |fgc04      |fgc05           |fge03         |fgc06    |desc   |fgc07                 ]
+[fgc011     |fgc02         |fgc03             |fgc04      |fgc05           |fge03         |fgc06    |desc   |fgc07                 ]
+[fgc011     |fgc02         |fgc03             |fgc04      |fgc05           |fge03         |fgc06    |desc   |fgc07                 ]
+[fgc011     |fgc02         |fgc03             |fgc04      |fgc05           |fge03         |fgc06    |desc   |fgc07                 ]
+[fgc011     |fgc02         |fgc03             |fgc04      |fgc05           |fge03         |fgc06    |desc   |fgc07                 ]
+}
+END -- s_fgc
+Grid gr1983
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr1983
+END -- VBox1
+END -- afaq250
+
+TABLES
+fgc_file,
+fga_file
+ATTRIBUTES
+Edit fgc01=fgc_file.fgc01, tabIndex=1;
+Edit fga02=fga_file.fga02, tabIndex=2;
+Edit fga03=fga_file.fga03, tabIndex=3;
+Edit fga031=fga_file.fga031, tabIndex=4;
+Edit fga04=fga_file.fga04, tabIndex=5;
+Edit fgc011=fgc_file.fgc011, tabIndex=6, title="Line No.";
+DateEdit fgc02=fgc_file.fgc02, tabIndex=7, title="Calib. Date";
+Edit fgc03=fgc_file.fgc03, tabIndex=8, title="Calibration No.";
+Edit fgc04=fgc_file.fgc04, tabIndex=9, title="Calib By";
+Edit fgc05=fgc_file.fgc05, tabIndex=10, title="Failure Cause";
+Edit fge03=formonly.fge03 type CHAR, tabIndex=11, title="Description", noEntry;
+Edit fgc06=fgc_file.fgc06, tabIndex=12, title="Result";
+Edit desc=formonly.desc type CHAR, tabIndex=13, title="Desc", noEntry;
+Edit fgc07=fgc_file.fgc07, tabIndex=14, title="Next Calibrating Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fgc(fgc_file.fgc011,fgc_file.fgc02,fgc_file.fgc03,fgc_file.fgc04,fgc_file.fgc05,formonly.fge03,fgc_file.fgc06,formonly.desc,fgc_file.fgc07)
+SCREEN RECORD Undefined(fgc_file.fgc01,fga_file.fga02,fga_file.fga03,fga_file.fga031,fga_file.fga04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

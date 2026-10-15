@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci101")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1633
+{
+  Product No.  [ecb01                         ]
+  P/N          [ima02                         ]
+  P/N Desc.    [ima021                        ]
+  Routing Code [ecb02     ]
+  Routing S/N  [ecb03     ]
+
+
+}
+END -- gr1633
+Grid gr1634
+{
+ Pro.No.    [ecb012    ][ecu014                             ]
+ Task No.   [ecb06     ]
+ Task Desc. [ecb17               ]
+ Workstation[ecb08     ]
+ W/S Desc.  [desc1               ]
+
+
+}
+END -- gr1634
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_ecbb
+{
+[ecbb09 |ecbb10                                                      ]
+[ecbb09 |ecbb10                                                      ]
+[ecbb09 |ecbb10                                                      ]
+[ecbb09 |ecbb10                                                      ]
+[ecbb09 |ecbb10                                                      ]
+[ecbb09 |ecbb10                                                      ]
+[ecbb09 |ecbb10                                                      ]
+[ecbb09 |ecbb10                                                      ]
+[ecbb09 |ecbb10                                                      ]
+[ecbb09 |ecbb10                                                      ]
+}
+END -- s_ecbb
+Grid gr1635
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr1635
+END -- VBox1
+END -- aeci101
+
+TABLES
+ecb_file,
+ecbb_file,
+ecu_file
+ATTRIBUTES
+ButtonEdit ecb01=ecb_file.ecb01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Query Item  ";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=3;
+Edit ecb02=ecb_file.ecb02, tabIndex=4, comment="Combine Product No. as Key Field,No Blank/Repeated!";
+Edit ecb03=ecb_file.ecb03, tabIndex=5;
+Edit ecb012=ecb_file.ecb012, tabIndex=14;
+Edit ecu014=ecu_file.ecu014, tabIndex=15;
+Edit ecb06=ecb_file.ecb06, tabIndex=6;
+Edit ecb17=ecb_file.ecb17, tabIndex=7;
+Edit ecb08=ecb_file.ecb08, tabIndex=8;
+Edit desc1=formonly.desc1 type VARCHAR, tabIndex=9, noEntry;
+Edit ecbb09=ecbb_file.ecbb09, tabIndex=10, title="Line#", not null, required, comment="Key Field, No Blank/Repeated!   ";
+Edit ecbb10=ecbb_file.ecbb10, tabIndex=11, title="Description", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ecbb(ecbb_file.ecbb09,ecbb_file.ecbb10)
+SCREEN RECORD Undefined(ecb_file.ecb01,formonly.ima02,formonly.ima021,ecb_file.ecb02,ecb_file.ecb03,ecb_file.ecb012,ecu_file.ecu014,ecb_file.ecb06,ecb_file.ecb17,ecb_file.ecb08,formonly.desc1,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,55 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsi209.per created 2009-10-15T00:40:45
+-- File created from apsi209.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsi209")
+-- GRID
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX vb5
+    FOLDER pc4
+      PAGE page01( TEXT="Page01")
+        GRID gr7
+        {
+        <G group01                                       >
+         Part Id                [aa0                 ]
+         Rule Id                [aa1                 ]
+         Component              [aa2                 ]
+         Supply ruld Id         [aa3                 ]
+        <                                                >
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    GRID gr8
+    {
+     ----------Rows [aa4   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES aps_arm
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=aps_arm.pid, NOT NULL, REQUIRED, TABINDEX=1;
+  EDIT aa1=aps_arm.rid, NOT NULL, REQUIRED, TABINDEX=2;
+  EDIT aa2=aps_arm.compt, NOT NULL, REQUIRED, TABINDEX=4;
+  EDIT aa3=aps_arm.sply_rid, REQUIRED, TABINDEX=5;
+  EDIT aa4=FORMONLY.cnt, NOENTRY, TABINDEX=3;
+END
+▼--------------------------------------------------------------------------
+# Per_version = '5.30.01-11.07.23(00001)'   #

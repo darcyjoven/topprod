@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_prt_type_list.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"cl_prt_type_list")
+VBox VBox1
+Grid gr3695
+{
+ Column Attribute [att_name         ] Update [upd_name     ] To [upd_value]
+
+}
+END -- gr3695
+Table s_zaa
+{
+[sel |zaa01               |gaz03                               ]
+[sel |zaa01               |gaz03                               ]
+[sel |zaa01               |gaz03                               ]
+[sel |zaa01               |gaz03                               ]
+[sel |zaa01               |gaz03                               ]
+[sel |zaa01               |gaz03                               ]
+[sel |zaa01               |gaz03                               ]
+[sel |zaa01               |gaz03                               ]
+[sel |zaa01               |gaz03                               ]
+[sel |zaa01               |gaz03                               ]
+
+}
+END -- s_zaa
+END -- VBox1
+END -- cl_prt_type_list
+
+ATTRIBUTES
+Edit att_name=formonly.att_name type CHAR, tabIndex=1, noEntry;
+Edit upd_name=formonly.upd_name type CHAR, tabIndex=2, noEntry;
+Edit upd_value=formonly.upd_value type CHAR, tabIndex=3, noEntry;
+CheckBox sel=formonly.sel type CHAR, tabIndex=4, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit zaa01=formonly.zaa01 type CHAR, tabIndex=5, title="Program Code", noEntry;
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=6, title="Program Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zaa(formonly.sel,formonly.zaa01,formonly.gaz03)
+SCREEN RECORD Undefined(formonly.att_name,formonly.upd_name,formonly.upd_value)
+END -- INSTRUCTIONS
+

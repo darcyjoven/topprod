@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli013.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli013")
+VBox vb1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ Year      [axw01     ] Group No. [axw03     ]
+ Period    [axw02     ] Parent Co.[axw031    ][axz02              ]
+
+}
+END -- gr1
+END -- page01
+END -- pc1
+Table tb1
+{
+[axw04|axw05       |axw06      |axw07      |axz02_s             |axw08      |axz02_t             |axw11       |axw16                     |axw17            |axw18         |axw19              |axw20]
+[axw04|axw05       |axw06      |axw07      |axz02_s             |axw08      |axz02_t             |axw11       |axw16                     |axw17            |axw18         |axw19              |axw20]
+[axw04|axw05       |axw06      |axw07      |axz02_s             |axw08      |axz02_t             |axw11       |axw16                     |axw17            |axw18         |axw19              |axw20]
+[axw04|axw05       |axw06      |axw07      |axz02_s             |axw08      |axz02_t             |axw11       |axw16                     |axw17            |axw18         |axw19              |axw20]
+[axw04|axw05       |axw06      |axw07      |axz02_s             |axw08      |axz02_t             |axw11       |axw16                     |axw17            |axw18         |axw19              |axw20]
+[axw04|axw05       |axw06      |axw07      |axz02_s             |axw08      |axz02_t             |axw11       |axw16                     |axw17            |axw18         |axw19              |axw20]
+[axw04|axw05       |axw06      |axw07      |axz02_s             |axw08      |axz02_t             |axw11       |axw16                     |axw17            |axw18         |axw19              |axw20]
+[axw04|axw05       |axw06      |axw07      |axz02_s             |axw08      |axz02_t             |axw11       |axw16                     |axw17            |axw18         |axw19              |axw20]
+[axw04|axw05       |axw06      |axw07      |axz02_s             |axw08      |axz02_t             |axw11       |axw16                     |axw17            |axw18         |axw19              |axw20]
+[axw04|axw05       |axw06      |axw07      |axz02_s             |axw08      |axz02_t             |axw11       |axw16                     |axw17            |axw18         |axw19              |axw20]
+
+}
+END -- tb1
+Grid gr2
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2
+END -- vb1
+END -- agli013
+
+TABLES
+axw_file
+ATTRIBUTES
+Edit axw01=axw_file.axw01, tabIndex=1, not null, required;
+ButtonEdit axw03=axw_file.axw03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Group No.";
+Edit axw02=axw_file.axw02, tabIndex=2, not null, required;
+ButtonEdit axw031=axw_file.axw031, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Parent Company";
+Edit axz02=formonly.axz02 type CHAR, tabIndex=5, noEntry;
+Edit axw04=axw_file.axw04, tabIndex=6, title="Ln#", not null, required;
+ComboBox axw05=axw_file.axw05, tabIndex=7, title="Trans.Prop.", noEntry, items=(("1", %"Downstream"),("2", %"Backflow"),("3", %"Sideflow"),("4", %"Other"));
+ComboBox axw06=axw_file.axw06, tabIndex=8, title="Trans.Type", noEntry, items=(("1", %"Inventory"),("2", %"Tangible Asset"),("3", %"Intangible Asset"),("4", %"Other"));
+ButtonEdit axw07=axw_file.axw07, action=controlp, tabIndex=9, title="Sour.Comp.", noEntry, image="zoom", comment="<^P>Qry Company";
+Edit axz02_s=formonly.axz02_s type CHAR, tabIndex=10, title="Source Company Name", noEntry;
+ButtonEdit axw08=axw_file.axw08, action=controlp, tabIndex=11, title="Trans.Comp.", noEntry, image="zoom", comment="<^P>Qry Company";
+Edit axz02_t=formonly.axz02_t type CHAR, tabIndex=12, title="Trans. Company Name", noEntry;
+ButtonEdit axw11=axw_file.axw11, action=controlp, tabIndex=13, title="Sour. Curr.", noEntry, image="zoom", comment="<^P>Qry Currency";
+Edit axw16=axw_file.axw16, tabIndex=14, title="Share Unrealize Prof/Loss", noEntry;
+Edit axw17=axw_file.axw17, tabIndex=15, title="Tot Share Period", not null, required;
+Edit axw18=axw_file.axw18, tabIndex=16, title="Shared Period", not null, required;
+Edit axw19=axw_file.axw19, tabIndex=17, title="Shared Amount", not null, required;
+CheckBox axw20=axw_file.axw20, tabIndex=18, title="Clos", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axw(axw_file.axw04,axw_file.axw05,axw_file.axw06,axw_file.axw07,formonly.axz02_s,axw_file.axw08,formonly.axz02_t,axw_file.axw11,axw_file.axw16,axw_file.axw17,axw_file.axw18,axw_file.axw19,axw_file.axw20)
+SCREEN RECORD Undefined(axw_file.axw01,axw_file.axw03,axw_file.axw02,axw_file.axw031,formonly.axz02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

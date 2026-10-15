@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apcq300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid ds1
+{
+
+ shop  [shop             ]
+ mach  [mach             ]
+ rdate [rdate            ]
+
+}
+END -- ds1
+END -- Page1
+END -- Folder1
+Table Table1
+{
+[select  |rxu03      |rxu13   |rxu14            |rxu04   |etype   |rxu01                                   |rxu06               |rxu07               |rxu08               |rxu09               |rxu10           |rxu15           |rxu16               |rxu11   |rxu12   |stype   ]
+[select  |rxu03      |rxu13   |rxu14            |rxu04   |etype   |rxu01                                   |rxu06               |rxu07               |rxu08               |rxu09               |rxu10           |rxu15           |rxu16               |rxu11   |rxu12   |stype   ]
+[select  |rxu03      |rxu13   |rxu14            |rxu04   |etype   |rxu01                                   |rxu06               |rxu07               |rxu08               |rxu09               |rxu10           |rxu15           |rxu16               |rxu11   |rxu12   |stype   ]
+[select  |rxu03      |rxu13   |rxu14            |rxu04   |etype   |rxu01                                   |rxu06               |rxu07               |rxu08               |rxu09               |rxu10           |rxu15           |rxu16               |rxu11   |rxu12   |stype   ]
+[select  |rxu03      |rxu13   |rxu14            |rxu04   |etype   |rxu01                                   |rxu06               |rxu07               |rxu08               |rxu09               |rxu10           |rxu15           |rxu16               |rxu11   |rxu12   |stype   ]
+}
+END -- Table1
+Grid gr501
+{
+ ---------- Rows [cnt   ]----------
+
+}
+END -- gr501
+END -- VBox1
+END -- Form
+
+TABLES
+rxu_file
+ATTRIBUTES
+ButtonEdit shop=formonly.shop type VARCHAR, action=controlp, tabIndex=1, not null, image="zoom", scroll;
+ButtonEdit mach=formonly.mach type VARCHAR, action=controlp, tabIndex=2, image="zoom", scroll;
+DateEdit rdate=formonly.rdate, tabIndex=3, format="yyyymmdd";
+CheckBox select=formonly.select, tabIndex=4, title=%"select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rxu03=formonly.rxu03 type like rxu_file.rxu03, tabIndex=5, title=%"rxu03";
+Edit rxu13=formonly.rxu13 type like rxu_file.rxu13, tabIndex=6, title=%"rxu13";
+ComboBox rxu14=rxu_file.rxu14, tabIndex=7, title=%"rxu14", items=(("0", "Text"),("1", "Text"),("2", "Text"),("3", "Text"),("4", "Text"),("5", "Text"),("6", "Text"),("7", "Text"),("8", "Text"),("9", "Text"),("10", "Text"),("11", "Text"),("12", "Text"),("13", "Text"),("14", "Text"),("15", "Text"),("16", "Text"),("17", "Text"));
+Edit rxu04=rxu_file.rxu04, tabIndex=8, title=%"rxu04";
+ComboBox etype=formonly.etype, tabIndex=9, title=%"etype", items=(("1", "Text"),("2", "Text"));
+Edit rxu01=rxu_file.rxu01, tabIndex=10, title=%"rxu01";
+ComboBox rxu06=formonly.rxu06 type like rxu_file.rxu06, tabIndex=11, title=%"rxu06", items=(("1", "Text"),("2", "Text"),("3", "Text"),("4", "Text"),("5", "Text"),("6", "Text"),("7", "Text"),("8", "Text"),("9", "Text"),("10", "Text"),("11", "Text"),("12", "Text"),("13", "Text"));
+Edit rxu07=rxu_file.rxu07, tabIndex=12, title=%"rxu07";
+Edit rxu08=rxu_file.rxu08, tabIndex=13, title=%"rxu08";
+Edit rxu09=rxu_file.rxu09, tabIndex=14, title=%"rxu09";
+Edit rxu10=rxu_file.rxu10, tabIndex=15, title=%"rxu10";
+Edit rxu15=rxu_file.rxu15, tabIndex=16, title=%"rxu15";
+Edit rxu16=rxu_file.rxu16, tabIndex=17, title=%"rxu16";
+DateEdit rxu11=rxu_file.rxu11, tabIndex=18, title=%"rxu11";
+TimeEdit rxu12=rxu_file.rxu12, tabIndex=19, title=%"rxu12";
+ComboBox stype=formonly.stype, tabIndex=20, title=%"stype", items=(("2", "Text"),("3", "Text"),("4", "Text"));
+Phantom rxu_file.rxu02;
+Edit cnt=formonly.cnt type CHAR, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(formonly.shop,formonly.mach,formonly.rdate)
+SCREEN RECORD s_rxu(formonly.select,formonly.rxu03,formonly.rxu13,rxu_file.rxu14,rxu_file.rxu04,formonly.etype,rxu_file.rxu01,formonly.rxu06,rxu_file.rxu07,rxu_file.rxu08,rxu_file.rxu09,rxu_file.rxu10,rxu_file.rxu15,rxu_file.rxu16,rxu_file.rxu11,rxu_file.rxu12,formonly.stype,rxu_file.rxu02)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

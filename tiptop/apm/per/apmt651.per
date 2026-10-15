@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u53/tiptop/apm/42f/apmt651.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt651")
+VBox VBox1
+Folder pc1025
+Page page01(text="Main")
+Grid gr5360
+{
+ <G group01                                                             >
+  Date of Addition [pnu01       ]            [pnuconf   ]   [imgmksg]
+  Record           [pnu02     ]                             [       ]
+  Budget No.       [pnu031    ]
+                   [afa02_1         ]
+  Account #        [pnu032                  ]
+                   [aag02_1                 ]
+  Department No.   [pnu033    ][gem02_1   ]
+  Year             [pnu0]
+  Period           [pn]
+ <                                                                      >
+ <G group03                                                             >
+  Current Addition Amount [pnu04               ]
+ <                                                                      >
+ <G group02                                                             >
+  Original Budget Amount  [pns06_1             ]
+  Additional Amount       [pns07_1             ]
+  Shift Amount            [pns08_1             ]
+  Total Budget Amount     [pns09_1             ]
+
+ <                                                                      >
+
+}
+END -- gr5360
+END -- page01
+Page info(text="Info")
+Grid gr5361
+{
+ Record Owner        [pnuuser   ]  Last Modified by    [pnumodu   ]   Data Valid Code     [pnuacti   ]
+ Department          [pnugrup   ]  Create/Modify Date  [pnudate     ]
+ Record Orig.        [pnuoriu   ]
+ Dept Orig.          [pnuorig   ]
+}
+END -- gr5361
+END -- info
+END -- pc1025
+Grid gr5362
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr5362
+END -- VBox1
+END -- apmt651
+
+TABLES
+pnu_file
+ATTRIBUTES
+Group group01:group01;
+DateEdit pnu01=pnu_file.pnu01, tabIndex=1, not null, required;
+CheckBox pnuconf=pnu_file.pnuconf, tabIndex=2, text="Confirmed", noEntry, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit pnu02=pnu_file.pnu02, tabIndex=4, noEntry, not null, required;
+ButtonEdit pnu031=pnu_file.pnu031, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Budget#    <^T>Qry P/R / P/O Budget";
+Edit afa02_1=formonly.afa02_1 type CHAR, tabIndex=6, noEntry;
+ButtonEdit pnu032=pnu_file.pnu032, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Account ";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=8, noEntry;
+ButtonEdit pnu033=pnu_file.pnu033, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Query Department";
+Edit gem02_1=formonly.gem02_1 type CHAR, tabIndex=10, noEntry;
+Edit pnu0=pnu_file.pnu034, tabIndex=11, not null, required;
+Edit pn=pnu_file.pnu035, tabIndex=12;
+Group group03:group03;
+Edit pnu04=pnu_file.pnu04, tabIndex=13, not null, required;
+Group group02:group02;
+Edit pns06_1=formonly.pns06_1 type CHAR, tabIndex=14;
+Edit pns07_1=formonly.pns07_1 type CHAR, tabIndex=15;
+Edit pns08_1=formonly.pns08_1 type CHAR, tabIndex=16;
+Edit pns09_1=formonly.pns09_1 type CHAR, tabIndex=17;
+Edit pnuuser=pnu_file.pnuuser, tabIndex=18, noEntry;
+Edit pnumodu=pnu_file.pnumodu, tabIndex=19, noEntry;
+Edit pnuacti=pnu_file.pnuacti, tabIndex=20, noEntry, upShift;
+Edit pnugrup=pnu_file.pnugrup, tabIndex=21, noEntry;
+DateEdit pnudate=pnu_file.pnudate, tabIndex=22, noEntry;
+Edit pnuoriu=pnu_file.pnuoriu, tabIndex=501, noEntry;
+Edit pnuorig=pnu_file.pnuorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pnu_file.pnu01,pnu_file.pnuconf,formonly.imgmksg,pnu_file.pnu02,pnu_file.pnu031,formonly.afa02_1,pnu_file.pnu032,formonly.aag02_1,pnu_file.pnu033,formonly.gem02_1,pnu_file.pnu034,pnu_file.pnu035,pnu_file.pnu04,formonly.pns06_1,formonly.pns07_1,formonly.pns08_1,formonly.pns09_1,pnu_file.pnuuser,pnu_file.pnumodu,pnu_file.pnuacti,pnu_file.pnugrup,pnu_file.pnudate,pnu_file.pnuoriu,pnu_file.pnuorig,formonly.cnt)
+END -- INSTRUCTIONS
+

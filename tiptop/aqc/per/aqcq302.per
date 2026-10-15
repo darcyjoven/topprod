@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcq302.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table s_qcs
+{
+[qcs03     |pmc03                         |qcs04     |qcs01               |qcs02 |qcs05 |qcs021                        |ima02                         |ima021                        |qcs22            |qcs091           |q|qcs13     |gen02   |qct04     |azf03                         |qct11            |qct07            |a|qct131           |qct132           ]
+[qcs03     |pmc03                         |qcs04     |qcs01               |qcs02 |qcs05 |qcs021                        |ima02                         |ima021                        |qcs22            |qcs091           |q|qcs13     |gen02   |qct04     |azf03                         |qct11            |qct07            |a|qct131           |qct132           ]
+[qcs03     |pmc03                         |qcs04     |qcs01               |qcs02 |qcs05 |qcs021                        |ima02                         |ima021                        |qcs22            |qcs091           |q|qcs13     |gen02   |qct04     |azf03                         |qct11            |qct07            |a|qct131           |qct132           ]
+[qcs03     |pmc03                         |qcs04     |qcs01               |qcs02 |qcs05 |qcs021                        |ima02                         |ima021                        |qcs22            |qcs091           |q|qcs13     |gen02   |qct04     |azf03                         |qct11            |qct07            |a|qct131           |qct132           ]
+[qcs03     |pmc03                         |qcs04     |qcs01               |qcs02 |qcs05 |qcs021                        |ima02                         |ima021                        |qcs22            |qcs091           |q|qcs13     |gen02   |qct04     |azf03                         |qct11            |qct07            |a|qct131           |qct132           ]
+}
+END -- s_qcs
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+ ----------- Rows [cnt   ] -----------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+gen_file,
+qct_file,
+qcs_file,
+azf_file,
+ima_file,
+pmc_file
+ATTRIBUTES
+ButtonEdit qcs03=qcs_file.qcs03, action=controlp, tabIndex=1, title=%"qcs03", image="zoom", scroll;
+Edit pmc03=pmc_file.pmc03, tabIndex=2, title=%"pmc03", scroll;
+DateEdit qcs04=qcs_file.qcs04, tabIndex=3, title=%"qcs04";
+ButtonEdit qcs01=qcs_file.qcs01, action=controlp, tabIndex=4, title=%"qcs01", not null, image="zoom", scroll;
+Edit qcs02=qcs_file.qcs02, tabIndex=5, title=%"qcs02", not null, scroll;
+Edit qcs05=qcs_file.qcs05, tabIndex=6, title=%"qcs05", not null, scroll;
+ButtonEdit qcs021=qcs_file.qcs021, action=controlp, tabIndex=7, title=%"qcs021", image="zoom", scroll;
+Edit ima02=ima_file.ima02, tabIndex=8, title=%"ima02", scroll;
+Edit ima021=ima_file.ima021, tabIndex=9, title=%"ima021", scroll;
+Edit qcs22=qcs_file.qcs22, tabIndex=10, title=%"qcs22", scroll;
+Edit qcs091=qcs_file.qcs091, tabIndex=11, title=%"qcs091", scroll;
+ComboBox q=qcs_file.qcs09, tabIndex=12, title=%"qcs09", scroll, queryEditable, items=(("1", "Text"),("2", "Text"),("3", "Text"));
+ButtonEdit qcs13=qcs_file.qcs13, action=controlp, tabIndex=13, title=%"qcs13", image="zoom", scroll;
+Edit gen02=gen_file.gen02, tabIndex=22, title=%"gen02";
+ButtonEdit qct04=qct_file.qct04, action=controlp, tabIndex=14, title=%"qct04", image="zoom", scroll;
+Edit azf03=azf_file.azf03, tabIndex=15, title=%"azf03", scroll;
+Edit qct11=qct_file.qct11, tabIndex=16, title=%"qct11", scroll;
+Edit qct07=qct_file.qct07, tabIndex=17, title=%"qct07", scroll;
+ComboBox a=qct_file.qct08, tabIndex=18, title=%"qct08", scroll, queryEditable, items=(("1", "Text"),("2", "Text"),("3", "Text"));
+Edit qct131=qct_file.qct131, tabIndex=19, title=%"qct131", scroll;
+Edit qct132=qct_file.qct132, tabIndex=20, title=%"qct132", scroll;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcs(qcs_file.qcs03,pmc_file.pmc03,qcs_file.qcs04,qcs_file.qcs01,qcs_file.qcs02,qcs_file.qcs05,qcs_file.qcs021,ima_file.ima02,ima_file.ima021,qcs_file.qcs22,qcs_file.qcs091,qcs_file.qcs09,qcs_file.qcs13,gen_file.gen02,qct_file.qct04,azf_file.azf03,qct_file.qct11,qct_file.qct07,qct_file.qct08,qct_file.qct131,qct_file.qct132)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

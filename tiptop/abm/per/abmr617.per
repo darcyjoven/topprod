@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmr617.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmr617")
+VBox VBox1
+Grid gr938
+{
+ <G group01                                                                                   >
+  Insert Loc          [bmt06               ]
+  Component No.       [bmb03               ]
+ <                                                                                            >
+
+}
+END -- gr938
+Group grou02(text="INPUT")
+Grid gr939
+{
+ <G group03                                                                                 >
+  Master Item-1       [part1               ]      [code1               ]
+  Master Item-2       [part2               ]      [code2               ]
+  Master Item-3       [part3               ]      [code3               ]
+  Master Item-4       [part4               ]      [code4               ]
+  Master Item-5       [part5               ]      [code5               ]
+ <                                                                                          >
+ <G group04                                                                                 >
+  Master Item Qty     [num       ]
+  Expiry Date         [vdate       ]
+ <                                                                                          >
+ <G group05           ><G group06                                                           >
+ [choice              ][s1                  ][s2                  ]
+ <                    ><                                                                    >
+ <G group07                                                                                 >
+ [diff                                              ]
+ <                                                                                          >
+
+}
+END -- gr939
+END -- grou02
+Grid gr940
+{
+[more                                ]
+
+}
+END -- gr940
+END -- VBox1
+END -- abmr617
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit bmt06=formonly.bmt06 type VARCHAR, tabIndex=1;
+ButtonEdit bmb03=formonly.bmb03 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Group group03:group03, text="Print Analysis Master Item";
+ButtonEdit part1=formonly.part1 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Edit code1=formonly.code1 type VARCHAR, tabIndex=4;
+ButtonEdit part2=formonly.part2 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Edit code2=formonly.code2 type VARCHAR, tabIndex=6;
+ButtonEdit part3=formonly.part3 type VARCHAR, action=controlp, tabIndex=7, image="zoom";
+Edit code3=formonly.code3 type VARCHAR, tabIndex=8;
+ButtonEdit part4=formonly.part4 type VARCHAR, action=controlp, tabIndex=9, image="zoom";
+Edit code4=formonly.code4 type VARCHAR, tabIndex=10;
+ButtonEdit part5=formonly.part5 type VARCHAR, action=controlp, tabIndex=11, image="zoom";
+Edit code5=formonly.code5 type VARCHAR, tabIndex=12;
+Group group04:group04;
+Edit num=formonly.num type VARCHAR, tabIndex=13, not null, required;
+DateEdit vdate=formonly.vdate type DATE, tabIndex=14;
+Group group05:group05, text="Option";
+RadioGroup choice=formonly.choice type VARCHAR, tabIndex=15, not null, required, items=(("1", "single level"),("2", "Bottom Level"));
+Group group06:group06, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=16, queryEditable, items=(("1", "Inst.Loc"),("2", "Component No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=17, queryEditable, items=(("1", "Inst.Loc"),("2", "Component No."));
+Group group07:group07, text="Print Data";
+CheckBox diff=formonly.diff type VARCHAR, tabIndex=18, text="Print difference only", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=19, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bmt06,formonly.bmb03,formonly.part1,formonly.code1,formonly.part2,formonly.code2,formonly.part3,formonly.code3,formonly.part4,formonly.code4,formonly.part5,formonly.code5,formonly.num,formonly.vdate,formonly.choice,formonly.s1,formonly.s2,formonly.diff,formonly.more)
+END -- INSTRUCTIONS
+

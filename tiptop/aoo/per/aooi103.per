@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi103")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr4630
+{
+ Item No.                [ima01                         ]
+ Part Name Specification [ima02                         ]
+ Source Code             [ima08     ]
+ Group Code              [ima06     ]
+ Version                 [ima05     ]
+}
+END -- gr4630
+Grid gr4631
+{
+ Inventory Unit          [ima25     ]
+ Buyer                   [ima44     ]
+ Sales                   [ima31     ]
+ Issuing                 [ima63     ]
+ production              [ima55     ]
+}
+END -- gr4631
+Grid gr4632
+{
+ <G group043           ><G group044                     >
+  [ima906             ]  Par/Ref Unit       [ima907    ]
+ <                     ><                               >
+
+
+}
+END -- gr4632
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_smd
+{
+[smd04                       |smd02                      |smd06                       |smd03                      |smdac|smdpo|smddate         ]
+[smd04                       |smd02                      |smd06                       |smd03                      |smdac|smdpo|smddate         ]
+[smd04                       |smd02                      |smd06                       |smd03                      |smdac|smdpo|smddate         ]
+[smd04                       |smd02                      |smd06                       |smd03                      |smdac|smdpo|smddate         ]
+[smd04                       |smd02                      |smd06                       |smd03                      |smdac|smdpo|smddate         ]
+[smd04                       |smd02                      |smd06                       |smd03                      |smdac|smdpo|smddate         ]
+[smd04                       |smd02                      |smd06                       |smd03                      |smdac|smdpo|smddate         ]
+[smd04                       |smd02                      |smd06                       |smd03                      |smdac|smdpo|smddate         ]
+[smd04                       |smd02                      |smd06                       |smd03                      |smdac|smdpo|smddate         ]
+[smd04                       |smd02                      |smd06                       |smd03                      |smdac|smdpo|smddate         ]
+}
+END -- s_smd
+Grid gr4633
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr4633
+END -- VBox1
+END -- aooi103
+
+TABLES
+smd_file,
+ima_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Please Enter Item No. to Add/Query  ";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima08=ima_file.ima08, tabIndex=3, noEntry;
+Edit ima06=ima_file.ima06, tabIndex=4, noEntry;
+Edit ima05=ima_file.ima05, tabIndex=5, noEntry;
+Edit ima25=ima_file.ima25, tabIndex=6, noEntry;
+Edit ima44=ima_file.ima44, tabIndex=7, noEntry;
+Edit ima31=ima_file.ima31, tabIndex=19, noEntry;
+Edit ima63=ima_file.ima63, tabIndex=8, noEntry;
+Edit ima55=ima_file.ima55, tabIndex=9, noEntry;
+Group group043:group043, text="Unit Control";
+RadioGroup ima906=ima_file.ima906, tabIndex=10, not null, required, items=(("1", "Single Unit"),("2", "Child/Parent Unit"),("3", "Reference Unit"));
+Group group044:group044;
+ButtonEdit ima907=ima_file.ima907, action=controlp, tabIndex=11, image="zoom";
+Edit smd04=smd_file.smd04, tabIndex=12, title="Source Unit of Exchange Qty", not null, required;
+ButtonEdit smd02=smd_file.smd02, action=controlp, tabIndex=13, title="Source of Calculation Unit", not null, required, image="zoom", comment="<^P> Qry Unit     <^Y> Create Unit ";
+Edit smd06=smd_file.smd06, tabIndex=14, title="Target Unit of Exchange Qty", not null, required;
+ButtonEdit smd03=smd_file.smd03, action=controlp, tabIndex=15, title="Target of Calculation Unit", not null, required, image="zoom", comment="<^P> Qry Unit     <^Y> Create Unit ";
+CheckBox smdac=smd_file.smdacti, tabIndex=16, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox smdpo=smd_file.smdpos, tabIndex=20, title="smdpos", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit smddate=smd_file.smddate, tabIndex=21, title=%"smddate", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_smd(smd_file.smd04,smd_file.smd02,smd_file.smd06,smd_file.smd03,smd_file.smdacti,smd_file.smdpos,smd_file.smddate)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima08,ima_file.ima06,ima_file.ima05,ima_file.ima25,ima_file.ima44,ima_file.ima31,ima_file.ima63,ima_file.ima55,ima_file.ima906,ima_file.ima907,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

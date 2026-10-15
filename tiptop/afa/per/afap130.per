@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afap130")
+Folder pc351
+Page page01(text="Main")
+VBox VBox1
+Grid gr1903
+{
+ <G group01                                           >
+  Sales Doc No.       [fbe01               ]
+  Sale Date           [fbe02               ]
+  Sales Customer      [fbe03               ]
+ <                                                    >
+ <G group02                                             >
+  Account Rec. Bill                       [g_no      ]
+  Accounts Receivable Enter Account Date  [g_date      ]
+  Account Class Code                      [g_type    ]
+ <                                                      >
+
+}
+END -- gr1903
+Grid gr1904
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr1904
+END -- VBox1
+END -- page01
+END -- pc351
+END -- afap130
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit fbe01=formonly.fbe01, action=controlp, tabIndex=7, image="zoom";
+DateEdit fbe02=formonly.fbe02 type DATE, tabIndex=1;
+Edit fbe03=formonly.fbe03 type CHAR, tabIndex=2;
+Group group02:group02, text="Input";
+ButtonEdit g_no=formonly.g_no type CHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Documents ";
+DateEdit g_date=formonly.g_date type DATE, tabIndex=4;
+ButtonEdit g_type=formonly.g_type type CHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Cate Code ";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=6, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.fbe02,formonly.fbe03,formonly.g_no,formonly.g_date,formonly.g_type,formonly.g_bgjob,formonly.fbe01)
+END -- INSTRUCTIONS
+

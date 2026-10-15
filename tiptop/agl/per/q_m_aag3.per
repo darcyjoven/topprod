@@ -1,0 +1,46 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/agl/4fd/q_m_aag3.tmp.per created 2010-04-30T00:41:53
+-- File created from /u3/tiptop/agl/4fd/q_m_aag3.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text=%"Query Account")
+ Grid gr3779                                                                                                                                                                                                                                              
+ {                                                                                                                                                                                                                                                        
+  <T s_aag                                                    >                                                                                                                                                                                           
+  [check |axq051              |axq00                 ]                                                                                                                                                                                                    
+  [check |axq051              |axq00                 ]                                                                                                                                                                                                    
+  [check |axq051              |axq00                 ]                                                                                                                                                                                                    
+  [check |axq051              |axq00                 ]                                                                                                                                                                                                    
+  [check |axq051              |axq00                 ]                                                                                                                                                                                                    
+  [check |axq051              |axq00                 ]                                                                                                                                                                                                    
+  [check |axq051              |axq00                 ]                                                                                                                                                                                                    
+  [check |axq051              |axq00                 ]                                                                                                                                                                                                    
+  [check |axq051              |axq00                 ]                                                                                                                                                                                                    
+  [check |axq051              |axq00                 ]                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                                          
+ }                                                                                                                                                                                                                                                        
+ END                                                                                                                                                                                                                                                      
+END -- Form
+
+TABLES
+axq_file
+
+ATTRIBUTES
+Table s_aag:s_aag;
+CheckBox check=formonly.check, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit axq051=axq_file.axq051, tabIndex=2, title="Account", noEntry, not null, required;
+Edit axq00=axq_file.axq00, tabIndex=3, title=%"Account Name";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aag(formonly.check, axq_file.axq051, axq_file.axq00)
+END -- INSTRUCTIONS
+

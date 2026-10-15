@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt3029.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Generate Entry")
+VBox VBox1
+Grid gr4495
+{
+ <G group01                                  >
+ [only_one                                  ]
+ <                                           >
+ <G group02                                  >
+ [dummy                                     ]
+  Income/Expense      [nmg00               ]
+  Income/Expense Date [nmg01               ]
+ <                                           >
+
+}
+END -- gr4495
+END -- VBox1
+END -- anmt3029
+
+TABLES
+nmg_file
+ATTRIBUTES
+Group group01:group01, text="Condition";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, items=(("1", "Gen this only "),("2", "Gen by QBE    "));
+Group group02:group02, text="QBE";
+Label dummy:dummy, text="Enter Accounts Condition to Generate Sheet:";
+Edit nmg00=nmg_file.nmg00, tabIndex=2;
+DateEdit nmg01=nmg_file.nmg01, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,nmg_file.nmg00,nmg_file.nmg01)
+END -- INSTRUCTIONS
+

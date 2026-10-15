@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt3102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt3102")
+VBox vb4
+Folder pc3
+Page Main(text=%"Main")
+Table s_lug
+{
+[lug03     |lug04     |lug05     |lug06         |lug07        ]
+[lug03     |lug04     |lug05     |lug06         |lug07        ]
+[lug03     |lug04     |lug05     |lug06         |lug07        ]
+[lug03     |lug04     |lug05     |lug06         |lug07        ]
+[lug03     |lug04     |lug05     |lug06         |lug07        ]
+
+}
+END -- s_lug
+END -- Main
+END -- pc3
+Grid gr3
+{
+
+ ------- Rows [idx   ] -------
+
+}
+END -- gr3
+END -- vb4
+END -- almt3102
+
+TABLES
+lug_file
+ATTRIBUTES
+Edit lug03=lug_file.lug03, tabIndex=1, title="Cert.Name", not null, required;
+Edit lug04=lug_file.lug04, tabIndex=2, title="Cert.num.", not null, required;
+Edit lug05=lug_file.lug05, tabIndex=3, title="Operator";
+DateEdit lug06=lug_file.lug06, tabIndex=4, title="Val.date from";
+DateEdit lug07=lug_file.lug07, tabIndex=5, title="Val.date to";
+Edit idx=formonly.idx type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lug(lug_file.lug03,lug_file.lug04,lug_file.lug05,lug_file.lug06,lug_file.lug07)
+SCREEN RECORD Undefined(formonly.idx)
+END -- INSTRUCTIONS
+

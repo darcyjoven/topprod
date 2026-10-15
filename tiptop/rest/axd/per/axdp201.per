@@ -1,0 +1,48 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdp201.per created Wed Jan 23 05:30:35 2008
+-- File created from axdp201.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdp201")
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID gr7785
+    {
+     <G group01                                                         >
+      Item No.            [aa0                 ]
+     <                                                                  >
+     <G group02                                                         >
+      Year                [aa1 ]
+      Month               [aa2 ]
+     <                                                                  >
+
+
+    }
+    END -- GRID
+    GRID gr7786
+    {
+    [aa3                                                          ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adg_file
+
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  EDIT aa0=adg_file.adg05, TABINDEX=1;
+  GROUP group02 : group02, TEXT="INPUT";
+  EDIT aa1=FORMONLY.yy TYPE SMALLINT, NOT NULL, REQUIRED, TABINDEX=2;
+  EDIT aa2=FORMONLY.mm TYPE SMALLINT, NOT NULL, REQUIRED, TABINDEX=3;
+  CHECKBOX aa3=FORMONLY.g_bgjob, TEXT="Background Job", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=4;
+END

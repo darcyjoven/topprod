@@ -1,0 +1,190 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi102")
+VBox VBox1
+Folder pc103
+Page page01(text="Main")
+VBox vb7
+HBox HBox1
+Grid gr699
+{
+ M.Item #            [bmp01                         ]
+ Part Name           [ima02_h1                      ]
+ Specification       [ima021_h1                     ]
+ Src.Cd              [ima08_1   ]
+ Alternate Code      [bmp28               ]
+}
+END -- gr699
+Grid gr700
+{
+ Ver                 [bmp011    ]
+ Cmpo.Ln#            [bmp02     ]
+
+
+
+}
+END -- gr700
+Grid gr701
+{
+ Compo.No            [bmp03                        ]
+ Part Name           [ima02_h2                      ]
+ Specification       [ima021_h2                     ]
+ Src.Cd              [ima08_2   ]  [imgmksg]
+                                   [       ]
+}
+END -- gr701
+END -- HBox1
+HBox HBox2
+Grid gr702
+{
+ <G group03                                             >
+  Iss.Unit            [bmp10     ]
+  Conv.R(Issu/Unit)   [bmp10_fac ]
+  Conv.R(Issu/Cost)   [bmp10_fac2]
+  QPA                 [bmp06     ]
+  DQPA                [bmp07     ]
+  Wast.%              [bmp08     ]%
+  Chosn%              [bmp23     ]%
+  Eng.Drw#            [bmp11               ]
+  Inst.Loc            [bmp13     ]
+ <                                                      >
+
+
+
+
+
+}
+END -- gr702
+VBox VBox2
+Group gb518
+Grid gr703
+{
+ Task No.            [bmp09     ]
+ Inpt T.B(DD)        [bmp18     ]
+}
+END -- gr703
+END -- gb518
+Group group01(text="Usg.Feat")
+Grid gr704
+{
+ [bmp14              ]
+ [                   ]
+ [                   ]
+}
+END -- gr704
+END -- group01
+Group group02(text="WO Open/Expl Opt")
+Grid gr705
+{
+ [bmp19                               ]
+ [                                    ]
+
+}
+END -- gr705
+END -- group02
+END -- VBox2
+END -- HBox2
+END -- vb7
+END -- page01
+Page info(text="Info")
+Grid gr708
+{
+ Record Owner        [bmouser   ] Last Modified by    [bmomodu   ] Data Valid Code     [bmoacti   ]
+ Department          [bmogrup   ] Create/Modify Date  [bmodate   ]
+ Record Orig.        [bmooriu   ]
+ Dept Orig.          [bmoorig   ]
+}
+END -- gr708
+END -- info
+END -- pc103
+VBox VBox3
+VBox VBox4
+HBox HBox3
+Grid gr706
+{
+ <G group06                                             >
+  SUB Feat            [bmp16          ]
+ [bmp27                               ]
+ [bmp15                               ]
+ <                                                      >
+
+}
+END -- gr706
+Grid gr707
+{
+ <G group08                                             >
+  Warehouse           [bmp25       ]
+  Location            [bmp26       ]
+ <                                                      >
+
+
+}
+END -- gr707
+END -- HBox3
+END -- VBox4
+END -- VBox3
+Grid gr709
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr709
+END -- VBox1
+END -- abmi102
+
+TABLES
+bmp_file,
+bmo_file
+ATTRIBUTES
+ButtonEdit bmp01=bmp_file.bmp01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry  Test.Itm,<^Y> Crt  Test.Itm";
+Edit ima02_h1=formonly.ima02_h1 type VARCHAR, tabIndex=2, noEntry;
+Edit ima021_h1=formonly.ima021_h1 type VARCHAR, tabIndex=3, noEntry;
+Edit ima08_1=formonly.ima08_1 type VARCHAR, tabIndex=4, noEntry;
+Edit bmp28=bmp_file.bmp28, tabIndex=5;
+Edit bmp011=bmp_file.bmp011, tabIndex=6, not null, required;
+Edit bmp02=bmp_file.bmp02, tabIndex=7, not null, required;
+ButtonEdit bmp03=bmp_file.bmp03, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P> Qry Item  <^Z>Qry Test.Itm <^Y> Crt  Test.Itm <^O>Crt Cmpo.Brnd";
+Edit ima02_h2=formonly.ima02_h2 type VARCHAR, tabIndex=9, noEntry;
+Edit ima021_h2=formonly.ima021_h2 type VARCHAR, tabIndex=10, noEntry;
+Edit ima08_2=formonly.ima08_2 type VARCHAR, tabIndex=11, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Group group03:group03;
+ButtonEdit bmp10=bmp_file.bmp10, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit  <^U>/<^T>Crt Item/ Unit Conv.  ";
+Edit bmp10_fac=bmp_file.bmp10_fac, tabIndex=14, noEntry;
+Edit bmp10_fac2=bmp_file.bmp10_fac2, tabIndex=15, noEntry;
+Edit bmp06=bmp_file.bmp06, tabIndex=16;
+Edit bmp07=bmp_file.bmp07, tabIndex=17;
+Edit bmp08=bmp_file.bmp08, tabIndex=18;
+Edit bmp23=bmp_file.bmp23, tabIndex=19, not null, required;
+Edit bmp11=bmp_file.bmp11, tabIndex=20;
+Edit bmp13=bmp_file.bmp13, tabIndex=21, comment="Chng,Press<^T>M-Insert Loc ";
+ButtonEdit bmp09=bmp_file.bmp09, action=controlp, tabIndex=22, image="zoom", comment="<^P> Qry Task No.";
+Edit bmp18=bmp_file.bmp18, tabIndex=23, not null, required;
+RadioGroup bmp14=bmp_file.bmp14, tabIndex=24, not null, required, items=(("0", "required"),("1", "optional"),("2", "Recovery"),("3", "Guest Supply"));
+RadioGroup bmp19=bmp_file.bmp19, tabIndex=25, not null, required, items=(("1", "No Exp"),("2", "No Expl, Auto Open WO"),("3", "Expl"),("4", "Open Window for Explosion Query"));
+Edit bmouser=bmo_file.bmouser, tabIndex=31, noEntry;
+Edit bmomodu=bmo_file.bmomodu, tabIndex=32, noEntry;
+Edit bmoacti=bmo_file.bmoacti, tabIndex=33, noEntry;
+Edit bmogrup=bmo_file.bmogrup, tabIndex=34, noEntry;
+DateEdit bmodate=bmo_file.bmodate, tabIndex=35, noEntry;
+Edit bmooriu=bmo_file.bmooriu, tabIndex=501, noEntry;
+Edit bmoorig=bmo_file.bmoorig, tabIndex=502, noEntry;
+Group group06:group06;
+ComboBox bmp16=bmp_file.bmp16, tabIndex=26, not null, required, comment="<^Y>Create REP or SUB   ", items=(("0", "No REP/SUB"),("1", "REP"),("2", "SUB"));
+CheckBox bmp27=bmp_file.bmp27, tabIndex=27, text="Software object", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmp15=bmp_file.bmp15, tabIndex=28, text="Consumption Feature", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group08:group08;
+ButtonEdit bmp25=bmp_file.bmp25, action=controlp, tabIndex=29, image="zoom", comment="<^P> Qry W/H Table ,<^Y> Crt W/H Table ";
+ButtonEdit bmp26=bmp_file.bmp26, action=controlp, tabIndex=30, image="zoom", comment="<^P> Qry Location    ,<^Y> Create Location ";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=36, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bmp_file.bmp01,formonly.ima02_h1,formonly.ima021_h1,formonly.ima08_1,bmp_file.bmp28,bmp_file.bmp011,bmp_file.bmp02,bmp_file.bmp03,formonly.ima02_h2,formonly.ima021_h2,formonly.ima08_2,formonly.imgmksg,bmp_file.bmp10,bmp_file.bmp10_fac,bmp_file.bmp10_fac2,bmp_file.bmp06,bmp_file.bmp07,bmp_file.bmp08,bmp_file.bmp23,bmp_file.bmp11,bmp_file.bmp13,bmp_file.bmp09,bmp_file.bmp18,bmp_file.bmp14,bmp_file.bmp19,bmo_file.bmouser,bmo_file.bmomodu,bmo_file.bmoacti,bmo_file.bmogrup,bmo_file.bmodate,bmo_file.bmooriu,bmo_file.bmoorig,bmp_file.bmp16,bmp_file.bmp27,bmp_file.bmp15,bmp_file.bmp25,bmp_file.bmp26,formonly.cnt)
+END -- INSTRUCTIONS
+

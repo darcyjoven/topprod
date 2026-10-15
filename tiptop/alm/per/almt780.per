@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt780.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt780")
+VBox vb4
+Folder pc1
+Page Page1(text=%"Basic Data")
+Grid gr1
+{
+
+ Send Present No. [lrh01               ]                       Present No.      [lrh09               ]
+ Store No.        [lrhplant            ][rtz13               ] Present Name     [ima02               ]
+ Corporation      [lrhlegal            ][azt02               ] Present Price    [lrh10               ]
+ Stalls No.       [lrh02               ]                                        [lrh11          ]
+ Contract No.     [lrh03               ]                       Confirmed Status [lrh12       |imgmksg]
+ Tenant No.       [lrh04               ][lne05               ] Confirmed Person [lrh13       |       ]
+ Date             [lrh06       ]                               Confirmed Date   [lrh14       ]
+ Promotion No.    [lrh07               ]                       Memo             [lrh15                         ]
+ Contract Amt.    [lrh16               ]                                        [                              ]
+ Amount           [lrh08               ]
+
+}
+END -- gr1
+END -- Page1
+Page info(text=%"Info")
+Grid gr5
+{
+
+ Data User   [lrhuser   ] crat  [lrhcrat     ] Modify Date[lrhdate     ]
+ Data Group  [lrhgrup   ] Modify[lrhmodu     ]
+ Record Orig.[lrhoriu   ]
+ Dept Orig.  [lrhorig   ]
+
+
+
+
+}
+END -- gr5
+END -- info
+END -- pc1
+Table s_lri
+{
+[lri02             |lri03           |lri04           |lri05           |lri06               |lri07               ]
+[lri02             |lri03           |lri04           |lri05           |lri06               |lri07               ]
+[lri02             |lri03           |lri04           |lri05           |lri06               |lri07               ]
+[lri02             |lri03           |lri04           |lri05           |lri06               |lri07               ]
+[lri02             |lri03           |lri04           |lri05           |lri06               |lri07               ]
+}
+END -- s_lri
+Grid gr6
+{
+ --------Rows[idx   ]/[cnt    ]  ---Details[cn2   ]------
+
+
+
+
+}
+END -- gr6
+END -- vb4
+END -- almt780
+
+TABLES
+lri_file,
+lrh_file
+ATTRIBUTES
+ButtonEdit lrh01=lrh_file.lrh01, action=controlp, tabIndex=11, not null, required, image="zoom.png";
+Edit lrh09=lrh_file.lrh09, tabIndex=15, noEntry;
+ButtonEdit lrhplant=lrh_file.lrhplant, action=controlp, tabIndex=32, noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=34, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=22, noEntry;
+ButtonEdit lrhlegal=lrh_file.lrhlegal, action=controlp, tabIndex=33, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=35, noEntry;
+Edit lrh10=lrh_file.lrh10, tabIndex=16, noEntry;
+ButtonEdit lrh02=lrh_file.lrh02, action=controlp, tabIndex=27, noEntry, image="zoom.png";
+CheckBox lrh11=lrh_file.lrh11, tabIndex=17, text="Recovery ?", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit lrh03=lrh_file.lrh03, action=controlp, tabIndex=28, noEntry, image="zoom.png";
+ComboBox lrh12=lrh_file.lrh12, tabIndex=18, noEntry, items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit lrh04=lrh_file.lrh04, action=controlp, tabIndex=29, noEntry, image="zoom.png";
+Edit lne05=formonly.lne05 type CHAR, tabIndex=30, noEntry;
+Edit lrh13=lrh_file.lrh13, tabIndex=19, noEntry;
+DateEdit lrh06=lrh_file.lrh06, tabIndex=13, noEntry;
+DateEdit lrh14=lrh_file.lrh14, tabIndex=20, noEntry;
+ButtonEdit lrh07=lrh_file.lrh07, action=controlp, tabIndex=12, noEntry, image="zoom.png";
+TextEdit lrh15=lrh_file.lrh15, tabIndex=21, noEntry;
+Edit lrh16=lrh_file.lrh16, tabIndex=31, noEntry;
+Edit lrh08=lrh_file.lrh08, tabIndex=14, noEntry;
+Edit lrhuser=lrh_file.lrhuser, tabIndex=1, noEntry;
+DateEdit lrhcrat=lrh_file.lrhcrat, tabIndex=5, noEntry;
+DateEdit lrhdate=lrh_file.lrhdate, tabIndex=4, noEntry;
+Edit lrhgrup=lrh_file.lrhgrup, tabIndex=3, noEntry;
+Edit lrhmodu=lrh_file.lrhmodu, tabIndex=2, noEntry;
+Edit lrhoriu=lrh_file.lrhoriu, tabIndex=36, noEntry;
+Edit lrhorig=lrh_file.lrhorig, tabIndex=37, noEntry;
+ButtonEdit lri02=lri_file.lri02, action=controlp, tabIndex=9, title="Payment No.", not null, required, image="zoom.png";
+Edit lri03=lri_file.lri03, tabIndex=10, title="Payment Voucher No.", noEntry;
+Edit lri04=lri_file.lri04, tabIndex=23, title="Sales No.", noEntry;
+Edit lri05=lri_file.lri05, tabIndex=24, title="Contract No.", noEntry;
+Edit lri06=lri_file.lri06, tabIndex=25, title="Contract Amt.", noEntry;
+Edit lri07=lri_file.lri07, tabIndex=26, title="Payment Amt.", noEntry;
+Edit idx=formonly.idx type CHAR, tabIndex=6, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lri(lri_file.lri02,lri_file.lri03,lri_file.lri04,lri_file.lri05,lri_file.lri06,lri_file.lri07)
+SCREEN RECORD Undefined(lrh_file.lrh01,lrh_file.lrh09,lrh_file.lrhplant,formonly.rtz13,formonly.ima02,lrh_file.lrhlegal,formonly.azt02,lrh_file.lrh10,lrh_file.lrh02,lrh_file.lrh11,lrh_file.lrh03,lrh_file.lrh12,formonly.imgmksg,lrh_file.lrh04,formonly.lne05,lrh_file.lrh13,lrh_file.lrh06,lrh_file.lrh14,lrh_file.lrh07,lrh_file.lrh15,lrh_file.lrh16,lrh_file.lrh08,lrh_file.lrhuser,lrh_file.lrhcrat,lrh_file.lrhdate,lrh_file.lrhgrup,lrh_file.lrhmodu,lrh_file.lrhoriu,lrh_file.lrhorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

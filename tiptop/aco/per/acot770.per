@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acot770.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acot770")
+VBox vb2
+Folder pc883
+Page page01(text="Main")
+Grid gr17
+{
+ <G gb1                                                                              ><G gb2                                                          >
+   Doc No.                 [cet01       ]      Document Date           [cet03       ]  Confirmation         [cetconf        |cet21       ]   [imgmksg]
+   Customer No.            [cet05       ]      Customer Abbr.          [cet06       ]  Shipping Type        [cet24          |ged02       ]   [       ]
+   Transaction Category    [cet09       ]      Invoice No.             [cet34       ]  Dealing Method       [cet26          |ced02       ]
+   Declaration Date        [cet08       ]      Bill of Lading No       [cet25       ]  Usage                [cet28          |cec02       ]
+   Approval No.            [cet27       ]      Customs No.             [cet11       ]  Prod./Sales Country  [cet38          |geb02       ]
+   Export Customs Decl. No.[cet29       ]
+ <                                                                                   ><                                                               >
+
+}
+END -- gr17
+END -- page01
+Page info(text=%"Info")
+Grid gr739
+{
+ Record Owner     [cetuser         ]   Last Modified by     [cetmodu          ]       Data Valid Code     [cetacti            ]
+ Department       [cetgrup         ]   Create/Modify Date   [cetdate          ]
+ Record Orig.     [cetoriu         ]
+ Dept Orig.       [cetorig         ]
+}
+END -- gr739
+END -- info
+END -- pc883
+Table s_cet
+{
+[cet02 |cet04     |ima02      |ima021    |cet15   |cet16   |cet36     |cet37       |cet35     |cet10     |cet17  |cet31     |cet32     |cet33     ]
+[cet02 |cet04     |ima02      |ima021    |cet15   |cet16   |cet36     |cet37       |cet35     |cet10     |cet17  |cet31     |cet32     |cet33     ]
+[cet02 |cet04     |ima02      |ima021    |cet15   |cet16   |cet36     |cet37       |cet35     |cet10     |cet17  |cet31     |cet32     |cet33     ]
+[cet02 |cet04     |ima02      |ima021    |cet15   |cet16   |cet36     |cet37       |cet35     |cet10     |cet17  |cet31     |cet32     |cet33     ]
+[cet02 |cet04     |ima02      |ima021    |cet15   |cet16   |cet36     |cet37       |cet35     |cet10     |cet17  |cet31     |cet32     |cet33     ]
+[cet02 |cet04     |ima02      |ima021    |cet15   |cet16   |cet36     |cet37       |cet35     |cet10     |cet17  |cet31     |cet32     |cet33     ]
+[cet02 |cet04     |ima02      |ima021    |cet15   |cet16   |cet36     |cet37       |cet35     |cet10     |cet17  |cet31     |cet32     |cet33     ]
+
+}
+END -- s_cet
+Grid gr4740
+{
+ ----------Rows  [cn1   ]  / [cn2   ]   ----------
+
+}
+END -- gr4740
+END -- vb2
+END -- acot770
+
+TABLES
+cet_file
+ATTRIBUTES
+Group gb1:gb1;
+ButtonEdit cet01=cet_file.cet01, action=controlp, tabIndex=6, noEntry, not null, required, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+DateEdit cet03=cet_file.cet03, tabIndex=7, noEntry;
+ButtonEdit cet05=cet_file.cet05, action=controlp, tabIndex=9, noEntry, not null, required, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+Edit cet06=cet_file.cet06, tabIndex=10, noEntry;
+ComboBox cet09=cet_file.cet09, tabIndex=11, noEntry, items=(("1", "Direct Export"));
+Edit cet34=cet_file.cet34, tabIndex=12, noEntry;
+DateEdit cet08=cet_file.cet08, tabIndex=13;
+Edit cet25=cet_file.cet25, tabIndex=14;
+Edit cet27=cet_file.cet27, tabIndex=16;
+ButtonEdit cet11=cet_file.cet11, action=controlp, tabIndex=15, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+Edit cet29=cet_file.cet29, tabIndex=18;
+Group gb2:gb2;
+ComboBox cetconf=cet_file.cetconf, tabIndex=25, noEntry, items=(("Y", "Confirmed"),("N", "NOT Confirm"),("X", "Void"));
+DateEdit cet21=cet_file.cet21, tabIndex=28, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit cet24=cet_file.cet24, action=controlp, tabIndex=19, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+Edit ged02=formonly.ged02 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit cet26=cet_file.cet26, action=controlp, tabIndex=21, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+Edit ced02=formonly.ced02 type VARCHAR, tabIndex=5, noEntry;
+ButtonEdit cet28=cet_file.cet28, action=controlp, tabIndex=23, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+Edit cec02=formonly.cec02 type VARCHAR, tabIndex=8, noEntry;
+ButtonEdit cet38=cet_file.cet38, action=controlp, tabIndex=42, image="zoom", upShift, comment="Key Field, No Blank/Repeated! ,<^P>Qry Received Data";
+Edit geb02=formonly.geb02 type VARCHAR, tabIndex=41, noEntry;
+Edit cetuser=cet_file.cetuser, tabIndex=35, noEntry;
+Edit cetmodu=cet_file.cetmodu, tabIndex=38, noEntry;
+Edit cetacti=cet_file.cetacti, tabIndex=40, noEntry;
+Edit cetgrup=cet_file.cetgrup, tabIndex=37, noEntry;
+DateEdit cetdate=cet_file.cetdate, tabIndex=39, noEntry;
+Edit cetoriu=cet_file.cetoriu, tabIndex=501, noEntry;
+Edit cetorig=cet_file.cetorig, tabIndex=502, noEntry;
+Edit cet02=cet_file.cet02, tabIndex=2, title="Description";
+Edit cet04=cet_file.cet04, tabIndex=3, title="Item No.";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=17, title="Item No.";
+Edit ima021=formonly.ima021 type CHAR, tabIndex=20, title="Item Spec.";
+Edit cet15=cet_file.cet15, tabIndex=22, title="Change Qty (Contract)";
+Edit cet16=cet_file.cet16, tabIndex=24, title="Transication Unit";
+Edit cet36=cet_file.cet36, tabIndex=30, title="Unit Price";
+Edit cet37=cet_file.cet37, tabIndex=32, title="Total";
+Edit cet35=cet_file.cet35, tabIndex=33, title="Currency";
+Edit cet10=cet_file.cet10, tabIndex=26, title="Item No.";
+Edit cet17=cet_file.cet17, tabIndex=27, title="BOM Version";
+Edit cet31=cet_file.cet31, tabIndex=29, title="Legal Qty 1";
+Edit cet32=cet_file.cet32, tabIndex=31, title="Legal Qty 2";
+Edit cet33=cet_file.cet33, tabIndex=36, title="Net Weight";
+Edit cn1=formonly.cn1 type CHAR, tabIndex=34, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cet(cet_file.cet02,cet_file.cet04,formonly.ima02,formonly.ima021,cet_file.cet15,cet_file.cet16,cet_file.cet36,cet_file.cet37,cet_file.cet35,cet_file.cet10,cet_file.cet17,cet_file.cet31,cet_file.cet32,cet_file.cet33)
+SCREEN RECORD Undefined(cet_file.cet01,cet_file.cet03,cet_file.cet05,cet_file.cet06,cet_file.cet09,cet_file.cet34,cet_file.cet08,cet_file.cet25,cet_file.cet27,cet_file.cet11,cet_file.cet29,cet_file.cetconf,cet_file.cet21,formonly.imgmksg,cet_file.cet24,formonly.ged02,cet_file.cet26,formonly.ced02,cet_file.cet28,formonly.cec02,cet_file.cet38,formonly.geb02,cet_file.cetuser,cet_file.cetmodu,cet_file.cetacti,cet_file.cetgrup,cet_file.cetdate,cet_file.cetoriu,cet_file.cetorig,formonly.cn1,formonly.cn2)
+END -- INSTRUCTIONS
+

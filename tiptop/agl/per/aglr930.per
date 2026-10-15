@@ -1,0 +1,90 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr930.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglr930")
+VBox VBox2
+Grid gr2831
+{
+ <G group01                                                            >
+  Classification(1 )  [aag223              ]
+  Classification(2 )  [aag224              ]
+  Classification(3 )  [aag225              ]
+  Classification(4 )  [aag226              ]
+ [dummy01                                              ]
+ <                                                                     >
+}
+END -- gr2831
+Group group03(text="INPUT")
+VBox VBox1
+Grid gr2832
+{
+  Book No.            [bookno              ]
+  Title number        [azh01               ] [azh02                         ]
+  Budget Year         [yy                  ]
+  Bugget NO.          [afc01               ]
+  Department No.      [dept                ]
+  <G group05                                                                 >
+   [s1                  ][s2                  ]
+   [t1                  ][t2                  ]
+  <                                                                          >
+ <G group06                               ><G group07                       >
+  [dec                                   ] [detail                        ]
+ <                                        ><                                >
+}
+END -- gr2832
+Grid gr2833
+{
+
+ [choice                                           ]
+ [k                                                ]
+
+
+
+}
+END -- gr2833
+END -- VBox1
+END -- group03
+Grid gr2834
+{
+[more                                                        ]
+
+}
+END -- gr2834
+END -- VBox2
+END -- aglr930
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit aag223=formonly.aag223 type VARCHAR, tabIndex=1;
+Edit aag224=formonly.aag224 type VARCHAR, tabIndex=2;
+Edit aag225=formonly.aag225 type VARCHAR, tabIndex=3;
+Edit aag226=formonly.aag226 type VARCHAR, tabIndex=4;
+Label dummy01:dummy01, text="NOTE:Press Enter to print all data; Do not use the condition *.";
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=18, not null, image="zoom";
+ButtonEdit azh01=formonly.azh01 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Edit azh02=formonly.azh02 type VARCHAR, tabIndex=6;
+Edit yy=formonly.yy type SMALLINT, tabIndex=7;
+ButtonEdit afc01=formonly.afc01 type CHAR, action=controlp, tabIndex=19, image="zoom.png";
+Edit dept=formonly.dept type CHAR, tabIndex=8;
+Group group05:group05, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=9, queryEditable, items=(("1", "Class.QBE(1 )"),("2", "Class.QBE(2 )"),("3", "Class.QBE(3 )"),("4", "Class.QBE(4)"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=10, queryEditable, items=(("1", "Class.QBE(1 )"),("2", "Class.QBE(2 )"),("3", "Class.QBE(3 )"),("4", "Class.QBE(4)"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group06:group06, text="Amount Unit";
+RadioGroup dec=formonly.dec type CHAR, tabIndex=13, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+Group group07:group07;
+RadioGroup detail=formonly.detail type CHAR, tabIndex=14, items=(("1", "Account detail"),("2", "Classification Summary"));
+CheckBox choice=formonly.choice type CHAR, tabIndex=15, text="Print Budget be Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox k=formonly.k type CHAR, tabIndex=16, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=17, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aag223,formonly.aag224,formonly.aag225,formonly.aag226,formonly.bookno,formonly.azh01,formonly.azh02,formonly.yy,formonly.afc01,formonly.dept,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.dec,formonly.detail,formonly.choice,formonly.k,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi380.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi380")
+VBox vb2
+Folder pc4
+Page Page6(text=%"Basic Data")
+Table s_lnr
+{
+[lnr01                 |lnr02                 |lnr03 |lnr04 ]
+[lnr01                 |lnr02                 |lnr03 |lnr04 ]
+[lnr01                 |lnr02                 |lnr03 |lnr04 ]
+[lnr01                 |lnr02                 |lnr03 |lnr04 ]
+[lnr01                 |lnr02                 |lnr03 |lnr04 ]
+
+}
+END -- s_lnr
+END -- Page6
+END -- pc4
+Grid gr10
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr10
+END -- vb2
+END -- almi380
+
+TABLES
+lnr_file
+ATTRIBUTES
+ButtonEdit lnr01=lnr_file.lnr01, action=controlp, tabIndex=1, title="lnr01", not null, required, image="zoom.png";
+Edit lnr02=lnr_file.lnr02, tabIndex=2, title="lnr02";
+Edit lnr03=lnr_file.lnr03, tabIndex=4, title="lnr03", not null;
+CheckBox lnr04=lnr_file.lnr04, tabIndex=5, default = "Y", title="lnr04", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lnr(lnr_file.lnr01,lnr_file.lnr02,lnr_file.lnr03,lnr_file.lnr04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

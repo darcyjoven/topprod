@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/rest/axd/4fd/axdi131.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axdi131")
+VBox VBox1
+Folder pc1567
+Page page01(text="Page01")
+Table s_ima
+{
+[ima01                |ima02                          |ima131           |ima96            |desc          |ima97            ]
+[ima01                |ima02                          |ima131           |ima96            |desc          |ima97            ]
+[ima01                |ima02                          |ima131           |ima96            |desc          |ima97            ]
+[ima01                |ima02                          |ima131           |ima96            |desc          |ima97            ]
+[ima01                |ima02                          |ima131           |ima96            |desc          |ima97            ]
+[ima01                |ima02                          |ima131           |ima96            |desc          |ima97            ]
+[ima01                |ima02                          |ima131           |ima96            |desc          |ima97            ]
+[ima01                |ima02                          |ima131           |ima96            |desc          |ima97            ]
+[ima01                |ima02                          |ima131           |ima96            |desc          |ima97            ]
+[ima01                |ima02                          |ima131           |ima96            |desc          |ima97            ]
+
+}
+END -- s_ima
+END -- page01
+END -- pc1567
+Grid gr7774
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr7774
+END -- VBox1
+END -- axdi131
+
+TABLES
+ima_file
+ATTRIBUTES
+Edit ima01=ima_file.ima01, tabIndex=1, title="Item No.", noEntry, not null, required;
+Edit ima02=ima_file.ima02, tabIndex=2, title="Item Name", noEntry;
+Edit ima131=ima_file.ima131, tabIndex=3, title="Classification", noEntry;
+ComboBox ima96=ima_file.ima96, tabIndex=4, title="Planned Period", not null, required, items=(("1", %"Year+Month"),("2", %"Year+Week"),("3", %"Year+Month+Ten Days"));
+Edit desc=formonly.desc type VARCHAR, tabIndex=5, title="Description", noEntry;
+Edit ima97=ima_file.ima97, tabIndex=6, title="Number Generated";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ima(ima_file.ima01,ima_file.ima02,ima_file.ima131,ima_file.ima96,formonly.desc,ima_file.ima97)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acor307.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"acor307")
+VBox VBox1
+Grid gr1422
+{
+ <G grpqbe                                             >
+  Customs Declaration No. [cno06               ]
+  Goods No.               [cnp03               ]
+ <                                                     >
+
+}
+END -- gr1422
+Group group02(text="Input")
+Grid gr1423
+{
+  <G group03                        ><G group04                       >
+   [a                             ]   [y                             ]
+  <                                 ><                                >
+
+}
+END -- gr1423
+END -- group02
+Grid gr1424
+{
+[more                                        ]
+
+}
+END -- gr1424
+END -- VBox1
+END -- acor307
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+Edit cno06=formonly.cno06 type CHAR, tabIndex=1;
+Edit cnp03=formonly.cnp03 type CHAR, tabIndex=2;
+Group group03:group03, text="Custom Clasee";
+RadioGroup a=formonly.a type CHAR, tabIndex=3, items=(("1", "Carry forward"),("2", "Transfer"),("3", "All"));
+Group group04:group04;
+CheckBox y=formonly.y type VARCHAR, tabIndex=4, text="Convert HS Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cno06,formonly.cnp03,formonly.a,formonly.y,formonly.more)
+END -- INSTRUCTIONS
+

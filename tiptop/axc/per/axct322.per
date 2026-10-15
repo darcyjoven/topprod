@@ -1,0 +1,101 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct322.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt330")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr462
+{
+ Cost Calculate Category  [cdj04                 ]
+ Book No.                 [cdj01   ]
+ Legal                    [cdjlegal][azt02        ]
+
+
+
+}
+END -- gr462
+Grid gr463
+{
+ Year   [cdj0]    Month   [cd]
+ Entry  [cdj13               ]                   [imgmksg]
+ glno   [nppglno             ]     [cdjconf  ]   [       ]
+
+
+
+}
+END -- gr463
+END -- hb2
+END -- page01
+END -- folder01
+Table s_cdj
+{
+[cdj17 |cdj14   |cdj142  |cdj15   |gem02   |cdj05         |cdj06          |ima02       |cdj07       |azf03   |cdj08              |aag02          |cdj09           |aag021    |cdj10     |cdj11        |cdj12             ]
+[cdj17 |cdj14   |cdj142  |cdj15   |gem02   |cdj05         |cdj06          |ima02       |cdj07       |azf03   |cdj08              |aag02          |cdj09           |aag021    |cdj10     |cdj11        |cdj12             ]
+[cdj17 |cdj14   |cdj142  |cdj15   |gem02   |cdj05         |cdj06          |ima02       |cdj07       |azf03   |cdj08              |aag02          |cdj09           |aag021    |cdj10     |cdj11        |cdj12             ]
+[cdj17 |cdj14   |cdj142  |cdj15   |gem02   |cdj05         |cdj06          |ima02       |cdj07       |azf03   |cdj08              |aag02          |cdj09           |aag021    |cdj10     |cdj11        |cdj12             ]
+[cdj17 |cdj14   |cdj142  |cdj15   |gem02   |cdj05         |cdj06          |ima02       |cdj07       |azf03   |cdj08              |aag02          |cdj09           |aag021    |cdj10     |cdj11        |cdj12             ]
+
+}
+END -- s_cdj
+Grid gr467
+{
+  ---------- Rows [cnt   ] / [cn2   ]
+
+
+
+
+
+
+}
+END -- gr467
+END -- vb2
+END -- aapt330
+
+TABLES
+gem_file,
+npp_file,
+azt_file,
+cdj_file
+ATTRIBUTES
+ComboBox cdj04=cdj_file.cdj04, tabIndex=1, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+ButtonEdit cdj01=cdj_file.cdj01, action=controlp, tabIndex=2, image="zoom";
+Edit cdjlegal=cdj_file.cdjlegal, tabIndex=3;
+Edit azt02=azt_file.azt02, tabIndex=4;
+Edit cdj0=cdj_file.cdj02, tabIndex=5;
+Edit cd=cdj_file.cdj03, tabIndex=6;
+Edit cdj13=cdj_file.cdj13, tabIndex=7;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit nppglno=npp_file.nppglno, tabIndex=8;
+CheckBox cdjconf=cdj_file.cdjconf, tabIndex=9, text="Confirm", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit cdj17=cdj_file.cdj17, tabIndex=10, title=%"Line#";
+Edit cdj14=cdj_file.cdj14, tabIndex=11, title=%"Customer#";
+Edit cdj142=cdj_file.cdj142, tabIndex=12, title=%"desc";
+Edit cdj15=cdj_file.cdj15, tabIndex=13, title=%"dept#";
+Edit gem02=gem_file.gem02, tabIndex=14, title=%"desc";
+Edit cdj05=cdj_file.cdj05, tabIndex=15, title="Cost Center", noEntry;
+Edit cdj06=cdj_file.cdj06, tabIndex=16, title="ItemNo.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=17, title="Item Name", noEntry;
+Edit cdj07=cdj_file.cdj07, tabIndex=18, title="Reason Code", noEntry;
+Edit azf03=formonly.azf03 type CHAR, tabIndex=19, title="Desc", noEntry;
+ButtonEdit cdj08=cdj_file.cdj08, action=controlp, tabIndex=20, title="Cost Acc", image="zoom";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=21, title="Acc Name", noEntry;
+ButtonEdit cdj09=cdj_file.cdj09, action=controlp, tabIndex=22, title="Item Acc", image="zoom.png";
+Edit aag021=formonly.aag021 type VARCHAR, tabIndex=23, title="Acc Name", noEntry;
+Edit cdj10=cdj_file.cdj10, tabIndex=24, title="Quantity", noEntry;
+Edit cdj11=cdj_file.cdj11, tabIndex=25, title="Unit Price", noEntry;
+Edit cdj12=cdj_file.cdj12, tabIndex=26, title="Amt", noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=27;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cdj(cdj_file.cdj17,cdj_file.cdj14,cdj_file.cdj142,cdj_file.cdj15,gem_file.gem02,cdj_file.cdj05,cdj_file.cdj06,formonly.ima02,cdj_file.cdj07,formonly.azf03,cdj_file.cdj08,formonly.aag02,cdj_file.cdj09,formonly.aag021,cdj_file.cdj10,cdj_file.cdj11,cdj_file.cdj12)
+SCREEN RECORD Undefined(cdj_file.cdj04,cdj_file.cdj01,cdj_file.cdjlegal,azt_file.azt02,cdj_file.cdj03,cdj_file.cdj02,cdj_file.cdj13,npp_file.nppglno,cdj_file.cdjconf,formonly.imgmksg,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,106 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq401")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+Grid gr2251
+{
+
+  Order No.         [oea01           ]                   Employee        [oea14     ]
+  Order Date        [oea02     ]                         Department      [oea15     ]
+  Accounts Customer [oea03     ] [oea032               ] On-Hold Reason  [oeahold   ]
+  Shipping Customer [oea04     ] [occ02                ][oeaconf     ]    [oeb70       ]
+
+ <G group01                                           ><G group02                                     >
+  Ln #                [oeb03    ]                       WH/Loc./Lot         [oeb09][oeb01][oeb092    ]
+  Product No.         [oeb04               ]            Deliver Date        [oeb16     ]
+                      [oeb06                        ]
+                      [ima021_h                     ]   Check/Accept Qty    [acc_q               ]
+  Unit                [oeb05     ]                      Delivery Qty        [oeb24     ]
+  Order Qty           [oeb12     ]                      Sales/return qty    [oeb25     ]
+  Delivery Date       [oeb15     ]                      Undelivered Qty     [unqty               ]
+ <                                                    ><                                              >
+
+}
+END -- gr2251
+END -- page01
+END -- folder01
+Table s_oeo
+{
+[oeo04                 |ima02                          |ima021                         |oeo05|oeo06  |oeo07|oeo09     |desc  ]
+[oeo04                 |ima02                          |ima021                         |oeo05|oeo06  |oeo07|oeo09     |desc  ]
+[oeo04                 |ima02                          |ima021                         |oeo05|oeo06  |oeo07|oeo09     |desc  ]
+[oeo04                 |ima02                          |ima021                         |oeo05|oeo06  |oeo07|oeo09     |desc  ]
+[oeo04                 |ima02                          |ima021                         |oeo05|oeo06  |oeo07|oeo09     |desc  ]
+[oeo04                 |ima02                          |ima021                         |oeo05|oeo06  |oeo07|oeo09     |desc  ]
+[oeo04                 |ima02                          |ima021                         |oeo05|oeo06  |oeo07|oeo09     |desc  ]
+[oeo04                 |ima02                          |ima021                         |oeo05|oeo06  |oeo07|oeo09     |desc  ]
+[oeo04                 |ima02                          |ima021                         |oeo05|oeo06  |oeo07|oeo09     |desc  ]
+[oeo04                 |ima02                          |ima021                         |oeo05|oeo06  |oeo07|oeo09     |desc  ]
+
+}
+END -- s_oeo
+Grid gr2252
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2252
+END -- vb6
+END -- axmq401
+
+TABLES
+oeb_file,
+oea_file
+ATTRIBUTES
+Edit oea01=oea_file.oea01, tabIndex=1;
+ButtonEdit oea14=oea_file.oea14, action=controlp, tabIndex=2, image="zoom";
+DateEdit oea02=oea_file.oea02, tabIndex=3;
+ButtonEdit oea15=oea_file.oea15, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit oea03=oea_file.oea03, action=controlp, tabIndex=5, image="zoom";
+Edit oea032=oea_file.oea032, tabIndex=6, noEntry;
+Edit oeahold=oea_file.oeahold, tabIndex=7;
+ButtonEdit oea04=oea_file.oea04, action=controlp, tabIndex=8, image="zoom";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=9, noEntry;
+CheckBox oeaconf=oea_file.oeaconf, tabIndex=10, text="Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oeb70=oeb_file.oeb70, tabIndex=11, text="Close", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group01:group01;
+Edit oeb03=oeb_file.oeb03, tabIndex=12;
+ButtonEdit oeb04=oeb_file.oeb04, action=controlp, tabIndex=13, image="zoom";
+Edit oeb06=oeb_file.oeb06, tabIndex=14;
+Edit ima021_h=formonly.ima021_h type CHAR, tabIndex=15, noEntry;
+Edit oeb05=oeb_file.oeb05, tabIndex=16;
+Edit oeb12=oeb_file.oeb12, tabIndex=17, not null, required;
+DateEdit oeb15=oeb_file.oeb15, tabIndex=18;
+Group group02:group02;
+Edit oeb09=oeb_file.oeb09, tabIndex=19;
+Edit oeb01=oeb_file.oeb091, tabIndex=20;
+Edit oeb092=oeb_file.oeb092, tabIndex=21;
+Edit oeb16=oeb_file.oeb16, tabIndex=22;
+Edit acc_q=formonly.acc_q type DECIMAL, tabIndex=23;
+Edit oeb24=oeb_file.oeb24, tabIndex=24, not null, required;
+Edit oeb25=oeb_file.oeb25, tabIndex=25, not null, required;
+Edit unqty=formonly.unqty type DECIMAL, tabIndex=26;
+Edit oeo04=formonly.oeo04 type CHAR, tabIndex=27, title="Accessory/Spares Item";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=28, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=29, title="Specificatio", noEntry;
+Edit oeo05=formonly.oeo05 type CHAR, tabIndex=30, title="Unit";
+Edit oeo06=formonly.oeo06 type CHAR, tabIndex=31, title="QPA";
+ComboBox oeo07=formonly.oeo07 type CHAR, tabIndex=32, title="R/O", noEntry, items=(("0", %"required"),("1", %"Option"));
+Edit oeo09=formonly.oeo09 type CHAR, tabIndex=33, title="Qty", noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=34, title="Type", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=35, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=36, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oeo(formonly.oeo04,formonly.ima02,formonly.ima021,formonly.oeo05,formonly.oeo06,formonly.oeo07,formonly.oeo09,formonly.desc)
+SCREEN RECORD Undefined(oea_file.oea01,oea_file.oea14,oea_file.oea02,oea_file.oea15,oea_file.oea03,oea_file.oea032,oea_file.oeahold,oea_file.oea04,formonly.occ02,oea_file.oeaconf,oeb_file.oeb70,oeb_file.oeb03,oeb_file.oeb04,oeb_file.oeb06,formonly.ima021_h,oeb_file.oeb05,oeb_file.oeb12,oeb_file.oeb15,oeb_file.oeb09,oeb_file.oeb091,oeb_file.oeb092,oeb_file.oeb16,formonly.acc_q,oeb_file.oeb24,oeb_file.oeb25,formonly.unqty,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

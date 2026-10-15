@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_icdcount.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_icdcount")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+HBox hb2_
+Grid gr4614
+{
+ Check No            [piad01                        ]
+ Item No.            [piad02                        ]
+ Desc                [ima02                         ]
+ Spec                [ima021                        ]
+
+
+}
+END -- gr4614
+Grid gr3
+{
+ Stk                 [piad03                        ]
+ Loc                 [piad04                        ]
+ Lot                 [piad05                        ]
+ Unit                [piad10                        ]
+ Qty                 [qty                           ]
+
+}
+END -- gr3
+END -- hb2_
+END -- page01
+END -- folder01
+Table s_piad
+{
+[piad06      |piad07             |piad09               |cqty        |cdate        |empno        |gen02                  ]
+[piad06      |piad07             |piad09               |cqty        |cdate        |empno        |gen02                  ]
+[piad06      |piad07             |piad09               |cqty        |cdate        |empno        |gen02                  ]
+[piad06      |piad07             |piad09               |cqty        |cdate        |empno        |gen02                  ]
+[piad06      |piad07             |piad09               |cqty        |cdate        |empno        |gen02                  ]
+[piad06      |piad07             |piad09               |cqty        |cdate        |empno        |gen02                  ]
+[piad06      |piad07             |piad09               |cqty        |cdate        |empno        |gen02                  ]
+[piad06      |piad07             |piad09               |cqty        |cdate        |empno        |gen02                  ]
+[piad06      |piad07             |piad09               |cqty        |cdate        |empno        |gen02                  ]
+[piad06      |piad07             |piad09               |cqty        |cdate        |empno        |gen02                  ]
+}
+END -- s_piad
+END -- vb2
+END -- s_icdcount
+
+TABLES
+piad_file
+ATTRIBUTES
+Edit piad01=piad_file.piad01, tabIndex=1, noEntry, not null, required;
+Edit piad02=piad_file.piad02, tabIndex=2, noEntry, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=4, noEntry;
+Edit piad03=piad_file.piad03, tabIndex=5, noEntry, not null, required;
+Edit piad04=piad_file.piad04, tabIndex=6, noEntry, not null, required;
+Edit piad05=piad_file.piad05, tabIndex=7, noEntry, not null, required;
+Edit piad10=piad_file.piad10, tabIndex=8, noEntry, not null, required;
+Edit qty=formonly.qty type DECIMAL, tabIndex=16, noEntry;
+Edit piad06=piad_file.piad06, tabIndex=9, title="Serial No.", noEntry, not null, required;
+Edit piad07=piad_file.piad07, tabIndex=10, title="External Lot No.", noEntry, not null, required;
+Edit piad09=piad_file.piad09, tabIndex=11, title="Inventory On Hand", noEntry;
+Edit cqty=formonly.cqty type VARCHAR, tabIndex=12, title="Count Qty";
+DateEdit cdate=formonly.cdate type DATE, tabIndex=13, title="Counted On";
+ButtonEdit empno=formonly.empno type VARCHAR, action=controlp, tabIndex=14, title="Employee", image="zoom.png";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=15, title="Employee Name";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_piad(piad_file.piad06,piad_file.piad07,piad_file.piad09,formonly.cqty,formonly.cdate,formonly.empno,formonly.gen02)
+SCREEN RECORD Undefined(piad_file.piad01,piad_file.piad02,formonly.ima02,formonly.ima021,piad_file.piad03,piad_file.piad04,piad_file.piad05,piad_file.piad10,formonly.qty)
+END -- INSTRUCTIONS
+

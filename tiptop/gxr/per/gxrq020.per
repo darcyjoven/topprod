@@ -1,0 +1,96 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gxr/42f/gxrq020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gxrq020")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Group gb2127
+Grid gr2918
+{
+ Year/Month          [oom0]/[oo]-[o1]
+ Invoice             [oom03     ]
+ Copies              [oom04     ]
+ Book No.            [oom05     ]
+ Issue Type          [oom06     ]
+}
+END -- gr2918
+END -- gb2127
+Group gb2128
+Grid gr2919
+{
+ Initial Invoice#    [oom07           ]
+ Ending Invoice#     [oom08           ]
+ Issued Invoice No.  [oom09           ]
+ Issued Date         [oom10       ]
+ Total Pages         [cnt1      ]
+}
+END -- gr2919
+END -- gb2128
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_ome
+{
+[ome01           |ome02        |omevoi|ome043          |ome59                |ome59x              |ome59t              ]
+[ome01           |ome02        |omevoi|ome043          |ome59                |ome59x              |ome59t              ]
+[ome01           |ome02        |omevoi|ome043          |ome59                |ome59x              |ome59t              ]
+[ome01           |ome02        |omevoi|ome043          |ome59                |ome59x              |ome59t              ]
+[ome01           |ome02        |omevoi|ome043          |ome59                |ome59x              |ome59t              ]
+[ome01           |ome02        |omevoi|ome043          |ome59                |ome59x              |ome59t              ]
+[ome01           |ome02        |omevoi|ome043          |ome59                |ome59x              |ome59t              ]
+[ome01           |ome02        |omevoi|ome043          |ome59                |ome59x              |ome59t              ]
+[ome01           |ome02        |omevoi|ome043          |ome59                |ome59x              |ome59t              ]
+[ome01           |ome02        |omevoi|ome043          |ome59                |ome59x              |ome59t              ]
+
+}
+END -- s_ome
+Grid gr2920
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------Before Tax Total [tot1                ] ---------- Tax Total [tot2                ] ---------- Total [tot3                ] ----------
+
+}
+END -- gr2920
+END -- VBox1
+END -- gxrq020
+
+TABLES
+oom_file,
+ome_file
+ATTRIBUTES
+Edit oom0=oom_file.oom01, tabIndex=1;
+Edit oo=oom_file.oom02, tabIndex=2;
+Edit o1=oom_file.oom021, tabIndex=3;
+Edit oom03=oom_file.oom03, tabIndex=4, comment="1.For One-Plant  2.For Two-Plant";
+ComboBox oom04=oom_file.oom04, tabIndex=5, queryEditable, items=(("A", "A"),("B", "B"),("X", "X"));
+Edit oom05=oom_file.oom05, tabIndex=6;
+ComboBox oom06=oom_file.oom06, tabIndex=7, queryEditable, items=(("1", "Computer-Issued"),("2", "Manually Open"));
+Edit oom07=oom_file.oom07, tabIndex=8;
+Edit oom08=oom_file.oom08, tabIndex=9;
+Edit oom09=oom_file.oom09, tabIndex=10;
+DateEdit oom10=oom_file.oom10, tabIndex=11;
+Edit cnt1=formonly.cnt1 type SMALLINT, tabIndex=12, noEntry;
+Edit ome01=ome_file.ome01, tabIndex=13, title="Invoice #";
+DateEdit ome02=ome_file.ome02, tabIndex=14, title="Invoice Date";
+CheckBox omevoi=ome_file.omevoid, tabIndex=15, title="Void", valueChecked = "Y", valueUnchecked = "N";
+Edit ome043=ome_file.ome043, tabIndex=16, title="Customer Name";
+Edit ome59=ome_file.ome59, tabIndex=17, title="Before Tax Amount", noEntry, not null, required;
+Edit ome59x=ome_file.ome59x, tabIndex=18, title="Tax", noEntry, not null, required;
+Edit ome59t=ome_file.ome59t, tabIndex=19, title="Total", noEntry, not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+Edit tot1=formonly.tot1 type SMALLINT, tabIndex=22, noEntry;
+Edit tot2=formonly.tot2 type SMALLINT, tabIndex=23, noEntry;
+Edit tot3=formonly.tot3 type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ome(ome_file.ome01,ome_file.ome02,ome_file.omevoid,ome_file.ome043,ome_file.ome59,ome_file.ome59x,ome_file.ome59t)
+SCREEN RECORD Undefined(oom_file.oom01,oom_file.oom02,oom_file.oom021,oom_file.oom03,oom_file.oom04,oom_file.oom05,oom_file.oom06,oom_file.oom07,oom_file.oom08,oom_file.oom09,oom_file.oom10,formonly.cnt1,formonly.cnt,formonly.cn2,formonly.tot1,formonly.tot2,formonly.tot3)
+END -- INSTRUCTIONS
+

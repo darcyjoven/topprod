@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi002")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr574
+{
+ Version   [bgb01     ]
+ Year      [bgb02     ]
+ Month     [bgb03     ]
+}
+END -- gr574
+END -- page01
+END -- folder01
+Table s_bgb
+{
+[bgb04               |bgb05     |bgbact]
+[bgb04               |bgb05     |bgbact]
+[bgb04               |bgb05     |bgbact]
+[bgb04               |bgb05     |bgbact]
+[bgb04               |bgb05     |bgbact]
+[bgb04               |bgb05     |bgbact]
+[bgb04               |bgb05     |bgbact]
+[bgb04               |bgb05     |bgbact]
+[bgb04               |bgb05     |bgbact]
+[bgb04               |bgb05     |bgbact]
+
+}
+END -- s_bgb
+Grid gr575
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr575
+END -- VBox1
+END -- abgi002
+
+TABLES
+bgb_file
+ATTRIBUTES
+Edit bgb01=bgb_file.bgb01, tabIndex=1, color = black reverse;
+Edit bgb02=bgb_file.bgb02, tabIndex=2, not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit bgb03=bgb_file.bgb03, tabIndex=3, not null, required, comment="KEY Field, No Blank/Repeated!";
+ButtonEdit bgb04=bgb_file.bgb04, action=controlp, tabIndex=4, title="Material Category", not null, required, image="zoom", comment="<^P>Qry Material category";
+Edit bgb05=bgb_file.bgb05, tabIndex=5, title="Adjust%";
+CheckBox bgbact=bgb_file.bgbacti, tabIndex=6, title="Valid?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgb(bgb_file.bgb04,bgb_file.bgb05,bgb_file.bgbacti)
+SCREEN RECORD Undefined(bgb_file.bgb01,bgb_file.bgb02,bgb_file.bgb03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

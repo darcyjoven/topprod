@@ -1,0 +1,137 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfq028.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox3
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+  Label1    [sfp03_q               ]          Label2   [tlf07_q               ]
+  Label1    [sfp06_q               ]          Label2   [begin_q         ]   [end_q           ]
+  Label1    [groupby               ]         [sfsud07_q                ]
+ [post_q               ]                     [xiaban_q             ]
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Folder Folder2
+Page page3(action=page3, text=%"page3")
+VBox VBox1
+Table Table1
+{
+[sfp01                  |sfp02        |sfp06             |sfp07     |gem02       |sfp16     |gen02       |sfp04      |sfpud02     |sfpud03     |sfs02   |sfs03       |sfq03        |sfs26       |sfs28         |sfs27       |sfs04       |ima02           |ima021          |sfs06   |sfs10     |eca01   |eca02   |sfa05     |sfa06   |sfsud07    |sfsud02 |imn05   |sfs05     |sfs07   |sfs08   |sfs09       ]
+[sfp01                  |sfp02        |sfp06             |sfp07     |gem02       |sfp16     |gen02       |sfp04      |sfpud02     |sfpud03     |sfs02   |sfs03       |sfq03        |sfs26       |sfs28         |sfs27       |sfs04       |ima02           |ima021          |sfs06   |sfs10     |eca01   |eca02   |sfa05     |sfa06   |sfsud07    |sfsud02 |imn05   |sfs05     |sfs07   |sfs08   |sfs09       ]
+[sfp01                  |sfp02        |sfp06             |sfp07     |gem02       |sfp16     |gen02       |sfp04      |sfpud02     |sfpud03     |sfs02   |sfs03       |sfq03        |sfs26       |sfs28         |sfs27       |sfs04       |ima02           |ima021          |sfs06   |sfs10     |eca01   |eca02   |sfa05     |sfa06   |sfsud07    |sfsud02 |imn05   |sfs05     |sfs07   |sfs08   |sfs09       ]
+[sfp01                  |sfp02        |sfp06             |sfp07     |gem02       |sfp16     |gen02       |sfp04      |sfpud02     |sfpud03     |sfs02   |sfs03       |sfq03        |sfs26       |sfs28         |sfs27       |sfs04       |ima02           |ima021          |sfs06   |sfs10     |eca01   |eca02   |sfa05     |sfa06   |sfsud07    |sfsud02 |imn05   |sfs05     |sfs07   |sfs08   |sfs09       ]
+[sfp01                  |sfp02        |sfp06             |sfp07     |gem02       |sfp16     |gen02       |sfp04      |sfpud02     |sfpud03     |sfs02   |sfs03       |sfq03        |sfs26       |sfs28         |sfs27       |sfs04       |ima02           |ima021          |sfs06   |sfs10     |eca01   |eca02   |sfa05     |sfa06   |sfsud07    |sfsud02 |imn05   |sfs05     |sfs07   |sfs08   |sfs09       ]
+
+}
+END -- Table1
+Grid gr2
+{
+  ---------- Rows [cnt   ]
+
+}
+END -- gr2
+END -- VBox1
+END -- page3
+Page page4(action=page4, text=%"page4")
+VBox VBox2
+Table Table2
+{
+[sfp02_1   |sfs03_1         |sfs10_1   |eca01_1   |eca02_1     |sfs04_1        |ima02_1         |ima021_1        |sfsud07_1 |sfs06_1   |sfsud02_|imn05_1 |sfs09_1         |sfs05_1     ]
+[sfp02_1   |sfs03_1         |sfs10_1   |eca01_1   |eca02_1     |sfs04_1        |ima02_1         |ima021_1        |sfsud07_1 |sfs06_1   |sfsud02_|imn05_1 |sfs09_1         |sfs05_1     ]
+[sfp02_1   |sfs03_1         |sfs10_1   |eca01_1   |eca02_1     |sfs04_1        |ima02_1         |ima021_1        |sfsud07_1 |sfs06_1   |sfsud02_|imn05_1 |sfs09_1         |sfs05_1     ]
+[sfp02_1   |sfs03_1         |sfs10_1   |eca01_1   |eca02_1     |sfs04_1        |ima02_1         |ima021_1        |sfsud07_1 |sfs06_1   |sfsud02_|imn05_1 |sfs09_1         |sfs05_1     ]
+[sfp02_1   |sfs03_1         |sfs10_1   |eca01_1   |eca02_1     |sfs04_1        |ima02_1         |ima021_1        |sfsud07_1 |sfs06_1   |sfsud02_|imn05_1 |sfs09_1         |sfs05_1     ]
+
+
+}
+END -- Table2
+Grid gr3
+{
+  ---------- Rows [cn2   ] ----------
+
+
+}
+END -- gr3
+END -- VBox2
+END -- page4
+END -- Folder2
+END -- VBox3
+END -- Form
+
+ATTRIBUTES
+DateEdit sfp03_q=formonly.sfp03_q type DATE, tabIndex=1, not null;
+DateEdit tlf07_q=formonly.tlf07_q, tabIndex=2;
+ComboBox sfp06_q=formonly.sfp06_q type VARCHAR, tabIndex=5, items=(("1", "1:成套发料"),("2", "2:工单超领"),("3", "3:工单补料"),("4", "4:耗材领料"),("A", "A:重覆性生产发料"),("C", "C:重覆性生产领料"),("D", "D:Run Card成套发料"),("6", "6:成套退料"),("7", "7:超领退料"),("8", "8:一般退料"),("9", "9:领料退料"),("B", "B:重覆性生产退料"));
+Edit begin_q=formonly.begin_q, tabIndex=3;
+Edit end_q=formonly.end_q, tabIndex=4;
+ComboBox groupby=formonly.groupby type VARCHAR, tabIndex=8, not null, items=(("1", "1.依料号、仓储批汇总"),("2", "2.依料号汇总"),("3", "3.依工单汇总"),("4", "4.依单据日期汇总"),("5", "5.依作业编号汇总"),("6", "6.依工作站汇总"));
+CheckBox sfsud07_q=formonly.sfsud07_q, tabIndex=57, text=%"sfsud07_q", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox post_q=formonly.post_q, tabIndex=6, default = "Y", text=%"仅过账单据", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox xiaban_q=formonly.xiaban_q, tabIndex=7, default = "Y", text=%"排除下版发料", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sfp01=formonly.sfp01 type VARCHAR, action=controlp, tabIndex=9, title=%"sfp01", image="zoom";
+DateEdit sfp02=formonly.sfp02 type DATE, tabIndex=10, title=%"sfp02";
+ComboBox sfp06=formonly.sfp06, tabIndex=11, title=%"sfp06", items=(("1", "1:成套发料"),("2", "2:工单超领"),("3", "3:工单补料"),("4", "4:耗材领料"),("A", "A:重覆性生产发料"),("C", "C:重覆性生产领料"),("D", "D:Run Card成套发料"),("6", "6:成套退料"),("7", "7:超领退料"),("8", "8:一般退料"),("9", "9:领料退料"),("B", "B:重覆性生产退料"));
+ButtonEdit sfp07=formonly.sfp07, action=controlp, tabIndex=12, title=%"sfp07", image="zoom";
+Edit gem02=formonly.gem02, tabIndex=13, title=%"gem02";
+ButtonEdit sfp16=formonly.sfp16, action=controlp, tabIndex=14, title=%"sfp16", image="zoom";
+Edit gen02=formonly.gen02, tabIndex=15, title=%"gen02";
+CheckBox sfp04=formonly.sfp04, tabIndex=16, title=%"sfp04", text=%"", valueChecked = "Y", valueUnchecked = "N";
+Edit sfpud02=formonly.sfpud02, tabIndex=17, title=%"sfpud02";
+Edit sfpud03=formonly.sfpud03 type VARCHAR, tabIndex=18, title=%"sfpud03";
+Edit sfs02=formonly.sfs02 type BIGINT, tabIndex=19, title=%"sfs02";
+ButtonEdit sfs03=formonly.sfs03, action=controlp, tabIndex=20, title=%"sfs03", image="zoom";
+Edit sfq03=formonly.sfq03 type DECIMAL, tabIndex=21, title=%"sfq03";
+Edit sfs26=formonly.sfs26 type DECIMAL, tabIndex=22, title=%"sfs26";
+ComboBox sfs28=formonly.sfs28 type DECIMAL, tabIndex=23, title=%"sfs28";
+ButtonEdit sfs27=formonly.sfs27, action=controlp, tabIndex=24, title=%"sfs27", image="zoom";
+ButtonEdit sfs04=formonly.sfs04 type VARCHAR, action=controlp, tabIndex=25, title=%"sfs04", image="zoom";
+Edit ima02=formonly.ima02, tabIndex=26, title=%"ima02";
+Edit ima021=formonly.ima021, tabIndex=27, title=%"ima021";
+Edit sfs06=formonly.sfs06, tabIndex=28, title=%"sfs06";
+Edit sfs10=formonly.sfs10, tabIndex=29, title=%"sfs10";
+Edit eca01=formonly.eca01, tabIndex=30, title=%"eca01";
+Edit eca02=formonly.eca02, tabIndex=31, title=%"eca02";
+Edit sfa05=formonly.sfa05 type DECIMAL, tabIndex=32, title=%"sfa05";
+Edit sfa06=formonly.sfa06 type DATETIME YEAR TO YEAR, tabIndex=33, title=%"sfa06";
+Edit sfsud07=formonly.sfsud07 type DECIMAL, tabIndex=34, title=%"sfsud07";
+Edit sfsud02=formonly.sfsud02, tabIndex=35, title=%"sfsud02";
+Edit imn05=formonly.imn05, tabIndex=36, title=%"imn05";
+Edit sfs05=formonly.sfs05 type DECIMAL, tabIndex=37, title=%"sfs05";
+Edit sfs07=formonly.sfs07, tabIndex=38, title=%"sfs07";
+Edit sfs08=formonly.sfs08, tabIndex=39, title=%"sfs08";
+Edit sfs09=formonly.sfs09, tabIndex=40, title=%"sfs09";
+Edit cnt=formonly.cnt type CHAR, tabIndex=41;
+DateEdit sfp02_1=formonly.sfp02_1 type DATE, tabIndex=42, title=%"sfp02_1";
+Edit sfs03_1=formonly.sfs03_1, tabIndex=43, title=%"sfs03_1";
+Edit sfs10_1=formonly.sfs10_1, tabIndex=44, title=%"sfs10_1";
+Edit eca01_1=formonly.eca01_1, tabIndex=45, title=%"eca01_1";
+Edit eca02_1=formonly.eca02_1, tabIndex=46, title=%"eca02_1";
+Edit sfs04_1=formonly.sfs04_1, tabIndex=47, title=%"sfs04_1";
+Edit ima02_1=formonly.ima02_1, tabIndex=48, title=%"ima02_1";
+Edit ima021_1=formonly.ima021_1, tabIndex=49, title=%"ima021_1";
+Edit sfsud07_1=formonly.sfsud07_1 type DECIMAL, tabIndex=50, title=%"sfsud07_1";
+Edit sfs06_1=formonly.sfs06_1, tabIndex=51, title=%"sfs06_1";
+Edit sfsud02_=formonly.sfsud02_1, tabIndex=52, title=%"sfsud02_1";
+Edit imn05_1=formonly.imn05_1, tabIndex=53, title=%"imn05_1";
+Edit sfs09_1=formonly.sfs09_1, tabIndex=54, title=%"sfs09_1";
+Edit sfs05_1=formonly.sfs05_1 type DECIMAL, tabIndex=55, title=%"sfs05_1";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=56;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfp03_q,formonly.tlf07_q,formonly.cn2,formonly.cnt,formonly.begin_q,formonly.end_q,formonly.groupby,formonly.post_q,formonly.xiaban_q,formonly.sfp06_q,formonly.sfsud07_q)
+SCREEN RECORD s_sfs(formonly.sfp01,formonly.sfp02,formonly.sfp06,formonly.sfp07,formonly.gem02,formonly.sfp16,formonly.gen02,formonly.sfp04,formonly.sfpud02,formonly.sfpud03,formonly.sfs02,formonly.sfs03,formonly.sfq03,formonly.sfs26,formonly.sfs28,formonly.sfs27,formonly.sfs04,formonly.ima02,formonly.ima021,formonly.sfs06,formonly.sfs10,formonly.eca01,formonly.eca02,formonly.sfa05,formonly.sfa06,formonly.sfsud07,formonly.sfsud02,formonly.imn05,formonly.sfs05,formonly.sfs07,formonly.sfs08,formonly.sfs09)
+SCREEN RECORD s_sfq(formonly.sfp02_1,formonly.sfs03_1,formonly.sfs10_1,formonly.eca01_1,formonly.eca02_1,formonly.sfs04_1,formonly.ima02_1,formonly.ima021_1,formonly.sfsud07_1,formonly.sfs06_1,formonly.sfsud02_1,formonly.imn05_1,formonly.sfs09_1,formonly.sfs05_1)
+END -- INSTRUCTIONS
+

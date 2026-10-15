@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri081_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrdna02    |hrdn02    |hrat02_1  |hrat04_1  |hrdn05_1  |hrat19    |hrdna03    |hrat02    |hrat04   |hrat05  |hrat25  |hrdna04 |hrdna05     |hrdna06       |hrdna08  |hrdna07    ]
+[hrdna02    |hrdn02    |hrat02_1  |hrat04_1  |hrdn05_1  |hrat19    |hrdna03    |hrat02    |hrat04   |hrat05  |hrat25  |hrdna04 |hrdna05     |hrdna06       |hrdna08  |hrdna07    ]
+[hrdna02    |hrdn02    |hrat02_1  |hrat04_1  |hrdn05_1  |hrat19    |hrdna03    |hrat02    |hrat04   |hrat05  |hrat25  |hrdna04 |hrdna05     |hrdna06       |hrdna08  |hrdna07    ]
+[hrdna02    |hrdn02    |hrat02_1  |hrat04_1  |hrdn05_1  |hrat19    |hrdna03    |hrat02    |hrat04   |hrat05  |hrat25  |hrdna04 |hrdna05     |hrdna06       |hrdna08  |hrdna07    ]
+[hrdna02    |hrdn02    |hrat02_1  |hrat04_1  |hrdn05_1  |hrat19    |hrdna03    |hrat02    |hrat04   |hrat05  |hrat25  |hrdna04 |hrdna05     |hrdna06       |hrdna08  |hrdna07    ]
+
+
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+  ---------- cn2[cn2 ]----------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit hrdna02=formonly.hrdna02 type INTEGER, tabIndex=1, title=%"hrdna02", noEntry;
+Edit hrdn02=formonly.hrdn02 type VARCHAR, tabIndex=13, title=%"hrdn02", noEntry;
+Edit hrat02_1=formonly.hrat02_1 type VARCHAR, tabIndex=17, title=%"hrat02_1", noEntry;
+Edit hrat04_1=formonly.hrat04_1 type VARCHAR, tabIndex=16, title=%"hrat04_1", noEntry;
+Edit hrdn05_1=formonly.hrdn05_1 type VARCHAR, tabIndex=15, title=%"hrat05_1", noEntry;
+Edit hrat19=formonly.hrat19 type VARCHAR, tabIndex=14, title=%"hrat19", noEntry;
+ButtonEdit hrdna03=formonly.hrdna03 type VARCHAR, action=controlp, tabIndex=2, title=%"hrdna03", not null, required, image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=3, title=%"hrat02", noEntry;
+Edit hrat04=formonly.hrat04 type VARCHAR, tabIndex=12, title=%"hrat04", noEntry;
+Edit hrat05=formonly.hrat05 type VARCHAR, tabIndex=5, title=%"hrat05", noEntry;
+DateEdit hrat25=formonly.hrat25 type VARCHAR, tabIndex=6, title=%"hrat25", noEntry;
+DateEdit hrdna04=formonly.hrdna04 type DATE, tabIndex=7, title=%"hrdna04", not null, required;
+ButtonEdit hrdna05=formonly.hrdna05 type VARCHAR, action=controlp, tabIndex=8, title=%"hrdna05", not null, required, image="zoom";
+ButtonEdit hrdna06=formonly.hrdna06 type VARCHAR, action=controlp, tabIndex=9, title=%"hrdna06", not null, required, image="zoom";
+Edit hrdna08=formonly.hrdna08 type VARCHAR, tabIndex=4, title=%"hrdna08";
+CheckBox hrdna07=formonly.hrdna07 type VARCHAR, tabIndex=10, title=%"hrdna07", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrdna(formonly.hrdna02,formonly.hrdn02,formonly.hrat02_1,formonly.hrat04_1,formonly.hrdn05_1,formonly.hrat19,formonly.hrdna03,formonly.hrat02,formonly.hrat04,formonly.hrat05,formonly.hrat25,formonly.hrdna04,formonly.hrdna05,formonly.hrdna06,formonly.hrdna08,formonly.hrdna07)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

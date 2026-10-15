@@ -1,0 +1,128 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt411.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"artt411")
+VBox vb8
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid grh01
+{
+ Or-No.  [shop            ][tqb02           ]
+ Fno.    [fno             ]
+ Or-Dt   [fdate           ]
+ Dt Sour [opno            ][gen02           ]
+ Cus#    [cno             ][occ02           ]
+ memo    [procs_c]
+
+}
+END -- grh01
+Grid grh02
+{
+ Cus#        [paytype         ]
+ Customer #  [linkman              ]
+ tel         [linktel              ]
+ date        [reqdate        ]
+ time        [reqtime        ]
+ Agent Cust. [getshop        |tqb02_1   ]
+
+}
+END -- grh02
+Grid grh03
+{
+ Employee     [sendaddr             ]
+ memo         [memo                 ]
+ memo         [cnfflg ]
+ memo         [cnfman     ][gen02_1    ]
+ memo         [cnfdate        ]
+ time         [cnftime        ]
+
+}
+END -- grh03
+END -- hb2
+END -- page01
+END -- folder01
+Folder pc578
+Page page06(action=deliver, text="Deliver")
+Table s_posdh
+{
+[item   |prod               |ima02                       |ima021                      |reqdate_1      |unit    |ordqty   |price     |wno       |disc_rate |amt    |price_dis|subt_disc |comb_dis|getflg    |memo_1    ]
+[item   |prod               |ima02                       |ima021                      |reqdate_1      |unit    |ordqty   |price     |wno       |disc_rate |amt    |price_dis|subt_disc |comb_dis|getflg    |memo_1    ]
+[item   |prod               |ima02                       |ima021                      |reqdate_1      |unit    |ordqty   |price     |wno       |disc_rate |amt    |price_dis|subt_disc |comb_dis|getflg    |memo_1    ]
+[item   |prod               |ima02                       |ima021                      |reqdate_1      |unit    |ordqty   |price     |wno       |disc_rate |amt    |price_dis|subt_disc |comb_dis|getflg    |memo_1    ]
+[item   |prod               |ima02                       |ima021                      |reqdate_1      |unit    |ordqty   |price     |wno       |disc_rate |amt    |price_dis|subt_disc |comb_dis|getflg    |memo_1    ]
+[item   |prod               |ima02                       |ima021                      |reqdate_1      |unit    |ordqty   |price     |wno       |disc_rate |amt    |price_dis|subt_disc |comb_dis|getflg    |memo_1    ]
+[item   |prod               |ima02                       |ima021                      |reqdate_1      |unit    |ordqty   |price     |wno       |disc_rate |amt    |price_dis|subt_disc |comb_dis|getflg    |memo_1    ]
+[item   |prod               |ima02                       |ima021                      |reqdate_1      |unit    |ordqty   |price     |wno       |disc_rate |amt    |price_dis|subt_disc |comb_dis|getflg    |memo_1    ]
+[item   |prod               |ima02                       |ima021                      |reqdate_1      |unit    |ordqty   |price     |wno       |disc_rate |amt    |price_dis|subt_disc |comb_dis|getflg    |memo_1    ]
+[item   |prod               |ima02                       |ima021                      |reqdate_1      |unit    |ordqty   |price     |wno       |disc_rate |amt    |price_dis|subt_disc |comb_dis|getflg    |memo_1    ]
+
+}
+END -- s_posdh
+END -- page06
+END -- pc578
+Grid gr2521
+{
+ - Rows[cnt   ] / [cn2   ] Before-Tax Amount  [tot_amt  ]
+
+
+
+}
+END -- gr2521
+END -- vb8
+END -- artt411
+
+ATTRIBUTES
+ButtonEdit shop=formonly.shop type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit tqb02=formonly.tqb02 type VARCHAR, tabIndex=2, noEntry;
+Edit fno=formonly.fno type VARCHAR, tabIndex=34, noEntry;
+DateEdit fdate=formonly.fdate type VARCHAR, tabIndex=3, not null, required;
+ButtonEdit opno=formonly.opno type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=22, noEntry;
+ButtonEdit cno=formonly.cno type VARCHAR, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=23, noEntry;
+ComboBox procs_c=formonly.procs_code type VARCHAR, tabIndex=43, default = "N", noEntry, items=(("Y", "NewText"),("N", "NewText"));
+ComboBox paytype=formonly.paytype type VARCHAR, tabIndex=24, not null, required, items=(("1", "xf"),("2", "zq"));
+Edit linkman=formonly.linkman type VARCHAR, tabIndex=5, not null, required;
+Edit linktel=formonly.linktel type VARCHAR, tabIndex=25, not null, required;
+DateEdit reqdate=formonly.reqdate type VARCHAR, tabIndex=26, not null, required;
+Edit reqtime=formonly.reqtime type VARCHAR, tabIndex=27, not null, required;
+ButtonEdit getshop=formonly.getshop type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+Edit tqb02_1=formonly.tqb02_1 type VARCHAR, tabIndex=28, noEntry;
+Edit sendaddr=formonly.sendaddr type VARCHAR, tabIndex=29;
+Edit memo=formonly.memo type VARCHAR, tabIndex=30;
+ComboBox cnfflg=formonly.cnfflg type VARCHAR, tabIndex=38, default = "N", noEntry, items=(("Y", "NewText"),("N", "NewText"));
+Edit cnfman=formonly.cnfman type VARCHAR, tabIndex=39, noEntry;
+Edit gen02_1=formonly.gen02_1 type VARCHAR, tabIndex=42, noEntry;
+DateEdit cnfdate=formonly.cnfdate type VARCHAR, tabIndex=40, noEntry;
+Edit cnftime=formonly.cnftime type VARCHAR, tabIndex=41, noEntry, not null;
+Edit item=formonly.item type SMALLINT, tabIndex=7, title="Line #", not null, required, comment="<^Y>Maint Other Data <^T>Maint Accessory/Spares";
+ButtonEdit prod=formonly.prod type VARCHAR, action=controlp, tabIndex=8, title="Product No.", not null, required, image="zoom", comment="<^P>Qry Details <^T>Maint Accessory/Spares <^E>FAS Prod.Comb.";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=9, title="Specification", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=10, title="Part Name", noEntry;
+DateEdit reqdate_1=formonly.reqdate_1 type DATE, tabIndex=11, title="English Name", not null, required;
+ButtonEdit unit=formonly.unit type VARCHAR, tabIndex=12, title="Prod. Barcd. No.", not null, required, image="zoom";
+Edit ordqty=formonly.ordqty type INTEGER, tabIndex=13, title="Cust Product No.", not null, required;
+Edit price=formonly.price type DECIMAL, tabIndex=14, title="Rea. Code", not null, required;
+ButtonEdit wno=formonly.wno type CHAR, action=controlp, tabIndex=35, title="wno", image="zoom";
+Edit disc_rate=formonly.disc_rate type INTEGER, tabIndex=36, title="disc_rate";
+Edit amt=formonly.amt type DECIMAL, tabIndex=15, title="amt", noEntry;
+Edit price_dis=formonly.price_disc type DECIMAL, tabIndex=16, title="Borrow Rea. Code";
+Edit subt_disc=formonly.subt_disc type DECIMAL, tabIndex=17, title="Unit";
+Edit comb_dis=formonly.comb_disc type DECIMAL, tabIndex=18, title="Qty", comment="<^I>QR";
+CheckBox getflg=formonly.getflg type VARCHAR, tabIndex=31, default = "N", title="getflg", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit memo_1=formonly.memo_1 type VARCHAR, tabIndex=37, title="memo_1";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+Edit tot_amt=formonly.tot_amt type DECIMAL, tabIndex=21, noEntry, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_posdh(formonly.item,formonly.prod,formonly.ima02,formonly.ima021,formonly.reqdate_1,formonly.unit,formonly.ordqty,formonly.price,formonly.wno,formonly.disc_rate,formonly.amt,formonly.price_disc,formonly.subt_disc,formonly.comb_disc,formonly.getflg,formonly.memo_1)
+SCREEN RECORD Undefined(formonly.shop,formonly.tqb02,formonly.fno,formonly.fdate,formonly.opno,formonly.gen02,formonly.cno,formonly.occ02,formonly.procs_code,formonly.paytype,formonly.linkman,formonly.linktel,formonly.reqdate,formonly.reqtime,formonly.getshop,formonly.tqb02_1,formonly.sendaddr,formonly.memo,formonly.cnfflg,formonly.cnfman,formonly.gen02_1,formonly.cnfdate,formonly.cnftime,formonly.cnt,formonly.cn2,formonly.tot_amt)
+END -- INSTRUCTIONS
+

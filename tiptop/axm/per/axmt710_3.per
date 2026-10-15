@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt710_3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt710_3")
+VBox VBox1
+Folder pc45
+Page page01(text="Page01")
+Grid gr113
+{
+ <G group01                                      ><G group02                                      >
+  Charge              [ohf03     ][gen02_1   ]     Review              [ohf04     ][gen02_2   ]
+ <                                               ><                                               >
+
+}
+END -- gr113
+END -- page01
+END -- pc45
+Table s_ohg
+{
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+
+}
+END -- s_ohg
+END -- VBox1
+END -- axmt710_3
+
+TABLES
+ohg_file,
+ohf_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit ohf03=ohf_file.ohf03, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Employee";
+Edit gen02_1=formonly.gen02_1 type VARCHAR, tabIndex=2, noEntry;
+Group group02:group02;
+ButtonEdit ohf04=ohf_file.ohf04, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Employee";
+Edit gen02_2=formonly.gen02_2 type VARCHAR, tabIndex=4, noEntry;
+Edit ohg03=ohg_file.ohg03, tabIndex=5, title="Line No.";
+Edit ohg04=ohg_file.ohg04, tabIndex=6, title="Processed Counterplan and Meliorative Counterplan";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ohg(ohg_file.ohg03,ohg_file.ohg04)
+SCREEN RECORD Undefined(ohf_file.ohf03,formonly.gen02_1,ohf_file.ohf04,formonly.gen02_2)
+END -- INSTRUCTIONS
+

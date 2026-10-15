@@ -1,0 +1,84 @@
+----------------------------------------------------------------------------------
+-- $Id:  gxcq110.per created 2009-10-22T03:37:50
+-- File created from gxcq110.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="gxcq110")
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX vb26
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        GRID gr3624
+        {
+         Item No.  [aa0                           ]   P/N [aa1                           ]
+         Year/Month[aa2 ][a0]                         Unit[aa3 ]
+         Cost Calculation Method [aa4       ] Category No.[aa5                           ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_cxb
+    {
+    [aa6      |aa7       |aa8              |aa9 |ab0       |ab1       |ab2       |ab3       |ab4       |ab5       |ab6       |ab7       |ab8       |ab9       ]
+    [aa6      |aa7       |aa8              |aa9 |ab0       |ab1       |ab2       |ab3       |ab4       |ab5       |ab6       |ab7       |ab8       |ab9       ]
+    [aa6      |aa7       |aa8              |aa9 |ab0       |ab1       |ab2       |ab3       |ab4       |ab5       |ab6       |ab7       |ab8       |ab9       ]
+    [aa6      |aa7       |aa8              |aa9 |ab0       |ab1       |ab2       |ab3       |ab4       |ab5       |ab6       |ab7       |ab8       |ab9       ]
+    [aa6      |aa7       |aa8              |aa9 |ab0       |ab1       |ab2       |ab3       |ab4       |ab5       |ab6       |ab7       |ab8       |ab9       ]
+    [aa6      |aa7       |aa8              |aa9 |ab0       |ab1       |ab2       |ab3       |ab4       |ab5       |ab6       |ab7       |ab8       |ab9       ]
+    [aa6      |aa7       |aa8              |aa9 |ab0       |ab1       |ab2       |ab3       |ab4       |ab5       |ab6       |ab7       |ab8       |ab9       ]
+    [aa6      |aa7       |aa8              |aa9 |ab0       |ab1       |ab2       |ab3       |ab4       |ab5       |ab6       |ab7       |ab8       |ab9       ]
+    [aa6      |aa7       |aa8              |aa9 |ab0       |ab1       |ab2       |ab3       |ab4       |ab5       |ab6       |ab7       |ab8       |ab9       ]
+    [aa6      |aa7       |aa8              |aa9 |ab0       |ab1       |ab2       |ab3       |ab4       |ab5       |ab6       |ab7       |ab8       |ab9       ]
+    }
+    END -- TABLE
+    GRID gr3625
+    {
+     ---------- Rows [ac0   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES cxb_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=cxb_file.cxb01, ACTION=controlp, IMAGE="zoom", TABINDEX=1;
+  EDIT aa1=FORMONLY.ima02, NOENTRY, TABINDEX=2;
+  EDIT aa2=cxb_file.cxb02, TABINDEX=3;
+  EDIT a0=cxb_file.cxb03, TABINDEX=4;
+  EDIT aa3=FORMONLY.ima25, NOENTRY, TABINDEX=5;
+  COMBOBOX aa4=cxb_file.cxb010, NOT NULL, REQUIRED, TABINDEX=18, ITEMS=(("1","Monthly Weighted Unit Cost"),("2","FIFO Cost"),("3","Identify Manuallyï¼Batch Cost"),("4","Identify Manuallyï¼Item Cost"),("5","Identify Manuallyï¼Store Profit Center"));
+  BUTTONEDIT aa5=cxb_file.cxb011, ACTION=controlp, IMAGE="zoom.png", NOT NULL, REQUIRED, TABINDEX=19;
+  DATEEDIT aa6=cxb_file.cxb04, TABINDEX=6, TITLE="Tran Dte";
+  EDIT aa7=cxb_file.cxb05, TABINDEX=7, TITLE="Tran Time";
+  EDIT aa8=cxb_file.cxb06, TABINDEX=8, TITLE="Tran.Nt#";
+  EDIT aa9=cxb_file.cxb07, TABINDEX=9, TITLE="Ln#";
+  EDIT ab0=cxb_file.cxb08, TABINDEX=10, TITLE="EoP Qty";
+  EDIT ab1=cxb_file.cxb09, NOENTRY, TABINDEX=11, TITLE="EoP Amt";
+  EDIT ab2=cxb_file.cxb091, TABINDEX=12, TITLE="Mat.";
+  EDIT ab3=cxb_file.cxb092, TABINDEX=13, TITLE="Labor";
+  EDIT ab4=cxb_file.cxb093, TABINDEX=14, TITLE="Ovhd 1";
+  EDIT ab5=cxb_file.cxb094, TABINDEX=15, TITLE="Prcs";
+  EDIT ab6=cxb_file.cxb095, TABINDEX=16, TITLE="Ovhd 2";
+  EDIT ab7=cxb_file.cxb096, NOT NULL, REQUIRED, TABINDEX=20, TITLE="Ovhd 3";
+  EDIT ab8=cxb_file.cxb097, NOT NULL, REQUIRED, TABINDEX=21, TITLE="Ovhd 4";
+  EDIT ab9=cxb_file.cxb098, NOT NULL, REQUIRED, TABINDEX=22, TITLE="Ovhd 5";
+  EDIT ac0=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=17;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_cxb (cxb_file.cxb04, cxb_file.cxb05, cxb_file.cxb06, cxb_file.cxb07, cxb_file.cxb08, cxb_file.cxb09, cxb_file.cxb091, cxb_file.cxb092, cxb_file.cxb093, cxb_file.cxb094, cxb_file.cxb095, cxb_file.cxb096, cxb_file.cxb097, cxb_file.cxb098)
+END

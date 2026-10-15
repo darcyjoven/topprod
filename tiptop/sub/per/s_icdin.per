@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_icdin.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="s_icdin.4fd")
+VBox vb2
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+ ticket No [ida07                      ]       Order              [ida08              ]
+ Item No   [ida01                      ]       Item Name     [ima02                   ]         Specification  [ima021                   ]
+ Warehouse [ida02                      ]       Store loct.   [ida03                   ]         Batch No.      [ida04                    ]
+ In sum    [tot            ]                   Out sum       [tot_b                   ]         Difference     [odds                     ]
+ Unit      [ida13          ]                   Gross IDE     [imaicd14                ]
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table s_ida
+{
+[ida05   |ida06   |ida21    |ida10        |ida11        |ida12   |ida14   |ida15   |ida17   |ida16   |ida18   |ida19   |ida20   |ida22     |ida26   |ida27   |ida29   ]
+[ida05   |ida06   |ida21    |ida10        |ida11        |ida12   |ida14   |ida15   |ida17   |ida16   |ida18   |ida19   |ida20   |ida22     |ida26   |ida27   |ida29   ]
+[ida05   |ida06   |ida21    |ida10        |ida11        |ida12   |ida14   |ida15   |ida17   |ida16   |ida18   |ida19   |ida20   |ida22     |ida26   |ida27   |ida29   ]
+[ida05   |ida06   |ida21    |ida10        |ida11        |ida12   |ida14   |ida15   |ida17   |ida16   |ida18   |ida19   |ida20   |ida22     |ida26   |ida27   |ida29   ]
+[ida05   |ida06   |ida21    |ida10        |ida11        |ida12   |ida14   |ida15   |ida17   |ida16   |ida18   |ida19   |ida20   |ida22     |ida26   |ida27   |ida29   ]
+[ida05   |ida06   |ida21    |ida10        |ida11        |ida12   |ida14   |ida15   |ida17   |ida16   |ida18   |ida19   |ida20   |ida22     |ida26   |ida27   |ida29   ]
+[ida05   |ida06   |ida21    |ida10        |ida11        |ida12   |ida14   |ida15   |ida17   |ida16   |ida18   |ida19   |ida20   |ida22     |ida26   |ida27   |ida29   ]
+[ida05   |ida06   |ida21    |ida10        |ida11        |ida12   |ida14   |ida15   |ida17   |ida16   |ida18   |ida19   |ida20   |ida22     |ida26   |ida27   |ida29   ]
+[ida05   |ida06   |ida21    |ida10        |ida11        |ida12   |ida14   |ida15   |ida17   |ida16   |ida18   |ida19   |ida20   |ida22     |ida26   |ida27   |ida29   ]
+[ida05   |ida06   |ida21    |ida10        |ida11        |ida12   |ida14   |ida15   |ida17   |ida16   |ida18   |ida19   |ida20   |ida22     |ida26   |ida27   |ida29   ]
+[ida05   |ida06   |ida21    |ida10        |ida11        |ida12   |ida14   |ida15   |ida17   |ida16   |ida18   |ida19   |ida20   |ida22     |ida26   |ida27   |ida29   ]
+[ida05   |ida06   |ida21    |ida10        |ida11        |ida12   |ida14   |ida15   |ida17   |ida16   |ida18   |ida19   |ida20   |ida22     |ida26   |ida27   |ida29   ]
+}
+END -- s_ida
+Grid gr5
+{
+ ---------- Rows [cnt   ]/[cn2   ] ----------   Counts   [sum1      ]
+
+
+
+}
+END -- gr5
+END -- vb2
+END -- s_icdin
+
+TABLES
+tableAlias1=ida_file,
+imaicd_file,
+ida_file
+ATTRIBUTES
+Edit ida07=ida_file.ida07, tabIndex=1, noEntry;
+Edit ida08=ida_file.ida08, tabIndex=2, noEntry;
+Edit ida01=ida_file.ida01, tabIndex=3, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, noEntry;
+Edit ida02=ida_file.ida02, tabIndex=6, noEntry;
+Edit ida03=ida_file.ida03, tabIndex=7, noEntry;
+Edit ida04=ida_file.ida04, tabIndex=8, noEntry;
+Edit tot=formonly.tot type CHAR, tabIndex=9, noEntry;
+Edit tot_b=formonly.tot_b type CHAR, tabIndex=10, noEntry;
+Edit odds=formonly.odds type CHAR, tabIndex=11, noEntry;
+Edit ida13=tableAlias1.ida13, tabIndex=12, noEntry;
+Edit imaicd14=imaicd_file.imaicd14, tabIndex=13, noEntry;
+Edit ida05=ida_file.ida05, tabIndex=14, title="Ke No", not null, required;
+ButtonEdit ida06=ida_file.ida06, action=controlp, tabIndex=15, title="BIN", not null, required, image="zoom";
+CheckBox ida21=ida_file.ida21, tabIndex=16, title="Pass BIN", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ida10=ida_file.ida10, tabIndex=17, title="Real Number", not null, required;
+Edit ida11=ida_file.ida11, tabIndex=18, title="Bad number", not null, required;
+Edit ida12=ida_file.ida12, tabIndex=19, title="Discard Number", not null, required;
+Edit ida14=ida_file.ida14, tabIndex=20, title="BASEItem", noEntry, not null, required;
+ButtonEdit ida15=ida_file.ida15, action=controlp, tabIndex=21, title="Base batch", image="zoom";
+Edit ida17=ida_file.ida17, tabIndex=22, title="DIE Number", noEntry, not null, required;
+Edit ida16=ida_file.ida16, tabIndex=23, title="DATECODE";
+Edit ida18=ida_file.ida18, tabIndex=24, title="YIELD", not null, required;
+Edit ida19=ida_file.ida19, tabIndex=25, title="Test";
+Edit ida20=ida_file.ida20, tabIndex=26, title="Deduct";
+Edit ida22=ida_file.ida22, tabIndex=27, title="Received No";
+CheckBox ida26=ida_file.ida26, tabIndex=28, title="IN Or", valueChecked = "Y", valueUnchecked = "N";
+CheckBox ida27=ida_file.ida27, tabIndex=29, title="Switch in", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ida29=ida_file.ida29, tabIndex=30, title="MEMO";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=31, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=32, noEntry;
+Edit sum1=formonly.sum1 type CHAR, tabIndex=33;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ida(ida_file.ida05,ida_file.ida06,ida_file.ida21,ida_file.ida10,ida_file.ida11,ida_file.ida12,ida_file.ida14,ida_file.ida15,ida_file.ida17,ida_file.ida16,ida_file.ida18,ida_file.ida19,ida_file.ida20,ida_file.ida22,ida_file.ida26,ida_file.ida27,ida_file.ida29)
+SCREEN RECORD Undefined(ida_file.ida07,ida_file.ida08,ida_file.ida01,formonly.ima02,formonly.ima021,ida_file.ida02,ida_file.ida03,ida_file.ida04,formonly.tot,formonly.tot_b,formonly.odds,tableAlias1.ida13,imaicd_file.imaicd14,formonly.cnt,formonly.cn2,formonly.sum1)
+END -- INSTRUCTIONS
+

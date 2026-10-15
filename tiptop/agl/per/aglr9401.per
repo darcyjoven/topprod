@@ -1,0 +1,90 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr9401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr9401")
+Group group01(text="INPUT")
+Grid gr2837
+{
+
+  Group Code          [axa01            ]
+  Parent Company      [axa02            ]
+  axa06               [axa06            ]
+  Combine Book        [b         ]
+  Report Name         [title               ]
+                            [dummy01   ]           [dummy02   ]
+  Year                [y1                  ]  [y11                 ]
+  StartPeriod         [m1                  ]  [m11                 ]
+  EndPeriod           [m2                  ]  [m21                 ]
+  StartQuarter        [q1                  ]  [q11                 ]
+  EndQuarter          [q2                  ]  [q21                 ]
+  Start Half a Year   [h1                  ]  [h11                 ]
+  End Half a Year     [h2                  ]  [h21                 ]
+  Decimal Digits      [e                   ]
+  <G group03                                                      >
+   [d                             ]
+  <                                                               >
+  <G group04                                                      >
+   [c                             ]
+   [s                             ]
+   [t                             ]
+  <                                                               >
+  <G group05                                                      >
+   [o                                       ]
+   G/L Curr.           [r                   ]
+   Convert Curr.       [p                   ]
+   * Ex.Rate           [q                   ]
+  <                                                               >
+ [more                                    ]
+
+
+
+}
+END -- gr2837
+END -- group01
+END -- aglr9401
+
+ATTRIBUTES
+ButtonEdit axa01=formonly.axa01 type CHAR, action=controlp, tabIndex=17, not null, required, image="zoom";
+ButtonEdit axa02=formonly.axa02 type CHAR, action=controlp, tabIndex=18, not null, required, image="zoom";
+ComboBox axa06=formonly.axa06 type VARCHAR, tabIndex=19, items=(("1", "Month"),("2", "Quarter"),("3", "Half a Year"),("4", "Year"));
+ButtonEdit b=formonly.b type CHAR, action=controlp, tabIndex=20, noEntry, not null, required, image="zoom";
+Edit title=formonly.title type VARCHAR, tabIndex=1;
+Label dummy01:dummy01, text="Curr. Per.";
+Label dummy02:dummy02, text="Last Per.";
+Edit y1=formonly.y1 type SMALLINT, tabIndex=2, not null, required;
+Edit y11=formonly.y11 type SMALLINT, tabIndex=14, not null, required;
+Edit m1=formonly.m1 type SMALLINT, tabIndex=3, not null, required;
+Edit m11=formonly.m11 type SMALLINT, tabIndex=15, not null, required;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=4, not null, required;
+Edit m21=formonly.m21 type SMALLINT, tabIndex=16, not null, required;
+ComboBox q1=formonly.q1 type VARCHAR, tabIndex=21, not null, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox q11=formonly.q11 type VARCHAR, tabIndex=23, not null, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox q2=formonly.q2 type VARCHAR, tabIndex=25, not null, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox q21=formonly.q21 type VARCHAR, tabIndex=27, not null, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox h1=formonly.h1 type VARCHAR, tabIndex=22, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+ComboBox h11=formonly.h11 type VARCHAR, tabIndex=24, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+ComboBox h2=formonly.h2 type VARCHAR, tabIndex=26, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+ComboBox h21=formonly.h21 type VARCHAR, tabIndex=28, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+Edit e=formonly.e type CHAR, tabIndex=5;
+Group group03:group03, text="amount unit";
+RadioGroup d=formonly.d type CHAR, tabIndex=6, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+Group group04:group04;
+CheckBox c=formonly.c type CHAR, tabIndex=7, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox s=formonly.s type CHAR, tabIndex=8, text="Maintain Manually Amt.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t=formonly.t type CHAR, tabIndex=13, text="Account Detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05, text="Convert Curr.";
+CheckBox o=formonly.o type CHAR, tabIndex=9, text="Convert Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=10, noEntry;
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=11, image="zoom";
+Edit q=formonly.q type DECIMAL, tabIndex=12;
+CheckBox more=formonly.more type CHAR, tabIndex=29, text="more", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.axa01,formonly.axa02,formonly.axa06,formonly.b,formonly.title,formonly.y1,formonly.y11,formonly.m1,formonly.m11,formonly.m2,formonly.m21,formonly.q1,formonly.q11,formonly.q2,formonly.q21,formonly.h1,formonly.h11,formonly.h2,formonly.h21,formonly.e,formonly.d,formonly.c,formonly.s,formonly.t,formonly.o,formonly.r,formonly.p,formonly.q,formonly.more)
+END -- INSTRUCTIONS
+

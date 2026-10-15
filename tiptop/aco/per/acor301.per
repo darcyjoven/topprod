@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acor301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"acor301")
+VBox VBox1
+Grid gr1411
+{
+ <G group01                                                             >
+  Product Item No.    [coq02               ]
+  Material No.        [coq01               ]
+  Warehouse           [coq03               ]
+  Location            [coq04                         ]
+  Lot No.             [coq05                         ]
+ <                                                                      >
+
+}
+END -- gr1411
+Group group02(text="Input")
+Grid gr1412
+{
+
+ <G group05                           ><G group03                       >
+  [a                                 ]  [b                             ]
+ <                                    ><                                >
+ <G group04                                                             >
+  [c                                                           ]
+  [y                                                           ]
+ <                                                                      >
+
+}
+END -- gr1412
+END -- group02
+Grid gr1413
+{
+ [more                                                        ]
+
+}
+END -- gr1413
+END -- VBox1
+END -- acor301
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit coq02=formonly.coq02 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit coq01=formonly.coq01 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit coq03=formonly.coq03 type CHAR, tabIndex=3;
+Edit coq04=formonly.coq04 type CHAR, tabIndex=4;
+Edit coq05=formonly.coq05 type CHAR, tabIndex=5;
+Group group05:group05, text="Data Option";
+RadioGroup a=formonly.a type CHAR, tabIndex=6, items=(("1", "Semi-Product"),("2", "Finished Product"));
+Group group03:group03, text="Report format";
+RadioGroup b=formonly.b type CHAR, tabIndex=7, items=(("1", "By Finished Prodcut"),("2", "By Material"));
+Group group04:group04;
+CheckBox c=formonly.c type CHAR, tabIndex=8, text="Print Warehouse/Location/Lot# List", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox y=formonly.y type VARCHAR, tabIndex=9, text="Convert HS Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=10, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.coq02,formonly.coq01,formonly.coq03,formonly.coq04,formonly.coq05,formonly.a,formonly.b,formonly.c,formonly.y,formonly.more)
+END -- INSTRUCTIONS
+

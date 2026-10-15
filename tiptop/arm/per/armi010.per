@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armi010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armi010")
+Folder pc63
+Page page01(text="Main")
+VBox VBox1
+Table s_rmg
+{
+[rmg01    |rmg02                 ]
+[rmg01    |rmg02                 ]
+[rmg01    |rmg02                 ]
+[rmg01    |rmg02                 ]
+[rmg01    |rmg02                 ]
+[rmg01    |rmg02                 ]
+[rmg01    |rmg02                 ]
+[rmg01    |rmg02                 ]
+[rmg01    |rmg02                 ]
+[rmg01    |rmg02                 ]
+
+}
+END -- s_rmg
+Grid gr230
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr230
+END -- VBox1
+END -- page01
+END -- pc63
+END -- armi010
+
+TABLES
+rmg_file
+ATTRIBUTES
+DateEdit rmg01=rmg_file.rmg01, tabIndex=1, title="Eff.Date", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit rmg02=rmg_file.rmg02, tabIndex=2, title="Wage Unit Price($/hr)";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rmg(rmg_file.rmg01,rmg_file.rmg02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

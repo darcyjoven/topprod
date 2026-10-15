@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_gzln.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_gzln")
+Folder pc751
+Page page01(text="Page01")
+VBox VBox1
+Table s_gzln(wantFixedPageSize)
+{
+[gzln0|gzln03 |gzln04 |gzln05             |gzln06                    ]
+[gzln0|gzln03 |gzln04 |gzln05             |gzln06                    ]
+[gzln0|gzln03 |gzln04 |gzln05             |gzln06                    ]
+[gzln0|gzln03 |gzln04 |gzln05             |gzln06                    ]
+[gzln0|gzln03 |gzln04 |gzln05             |gzln06                    ]
+[gzln0|gzln03 |gzln04 |gzln05             |gzln06                    ]
+[gzln0|gzln03 |gzln04 |gzln05             |gzln06                    ]
+[gzln0|gzln03 |gzln04 |gzln05             |gzln06                    ]
+[gzln0|gzln03 |gzln04 |gzln05             |gzln06                    ]
+[gzln0|gzln03 |gzln04 |gzln05             |gzln06                    ]
+
+}
+END -- s_gzln
+Group group01(text="memo")
+Grid gr3209
+{
+  [dummy01                                                     ]
+  [dummy02                                                     ]
+  [dummy03                                                     ]
+}
+END -- gr3209
+END -- group01
+Grid gr3210
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr3210
+END -- VBox1
+END -- page01
+END -- pc751
+END -- p_gzln
+
+TABLES
+gzln_file
+ATTRIBUTES
+Edit gzln0=gzln_file.gzln02, tabIndex=1, title="Line", not null, required, comment="No Blank!";
+Edit gzln03=gzln_file.gzln03, tabIndex=2, title="Module", downShift, comment="No Blank!";
+Edit gzln04=gzln_file.gzln04, tabIndex=3, title="Menu", comment="No Blank! Enter 4gl,per,sql,link,za,4ad,4tm,";
+Edit gzln05=gzln_file.gzln05, tabIndex=4, title="Program Name", comment="No Blank!";
+Edit gzln06=gzln_file.gzln06, tabIndex=5, title="Memo";
+Label dummy01:dummy01, text="Maintain program,   input \"4gl\" in menu, Ex. \"cim\" \"4gl\" \"cimi100.4gl\", include \"4ad\",\"4tm\" file and UI data when pack.", style="fixedFont";
+Label dummy02:dummy02, text="Maintain form,      input \"per\" or \"4fd\" in menu, Ex. \"cim\" \"4fd\" \"cimi100.4fd\"  or  \"cim\" \"per\" \"cimi100.per\".", style="fixedFont";
+Label dummy03:dummy03, text="                    Whether \"per\" or \"4fd\", include two file when pack.", style="fixedFont";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gzln(gzln_file.gzln02,gzln_file.gzln03,gzln_file.gzln04,gzln_file.gzln05,gzln_file.gzln06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

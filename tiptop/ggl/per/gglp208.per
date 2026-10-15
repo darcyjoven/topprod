@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglp208.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="gglp208")
+VBox vb2
+Grid gr35
+{
+
+  Year        [asj03        ]
+  Month       [asj04        ]
+  zuqun       [asj05        ]
+  gt          [aac01        ]
+
+}
+END -- gr35
+Grid gr24
+{
+[g_bgjob                      ]
+
+}
+END -- gr24
+END -- vb2
+END -- gglp208
+
+TABLES
+asj_file
+ATTRIBUTES
+Edit asj03=asj_file.asj03, tabIndex=1, not null, required;
+Edit asj04=asj_file.asj04, tabIndex=2, not null, required;
+ButtonEdit asj05=asj_file.asj05, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+ButtonEdit aac01=formonly.aac01 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=5, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(asj_file.asj03,asj_file.asj04,asj_file.asj05,formonly.aac01,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

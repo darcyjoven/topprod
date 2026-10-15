@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi9999.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apmi999")
+VBox vb1
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+
+  inquery    [ima01               ][ed1                    ]
+
+   date      [pmw06             ]       [gec07                ]
+
+
+
+}
+END -- gr1
+END -- Page1
+Page Page2(text=%"Info\n")
+Grid gr2
+{
+
+  datauser   [pmwuser                       ]
+
+
+
+
+}
+END -- gr2
+END -- Page2
+END -- pc1
+Table tb2
+{
+[pmx02      |pmx12        ]
+[pmx02      |pmx12        ]
+[pmx02      |pmx12        ]
+[pmx02      |pmx12        ]
+[pmx02      |pmx12        ]
+
+}
+END -- tb2
+Grid gr3
+{
+
+  ------ Rows  [cn2      ] /  [cn        ]    -----www  [ed5       ]
+
+
+}
+END -- gr3
+END -- vb1
+END -- apmi999
+
+TABLES
+ima_file,
+pmx_file,
+pmw_file,
+gec_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit ed1=formonly.ed1 type CHAR, tabIndex=2, noEntry;
+DateEdit pmw06=pmw_file.pmw06, tabIndex=4, not null, required;
+CheckBox gec07=gec_file.gec07, tabIndex=5, text="aaaaaaaaaaaaa", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit pmwuser=pmw_file.pmwuser, tabIndex=4, noEntry, not null;
+Edit pmx02=pmx_file.pmx02, tabIndex=6, title=%"name";
+Edit pmx12=pmx_file.pmx12, tabIndex=7, title=%"pmx12";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=8, noEntry;
+Edit cn=formonly.cn type SMALLINT, tabIndex=9, noEntry;
+Edit ed5=formonly.ed5 type CHAR, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tb2(pmx_file.pmx02,pmx_file.pmx12)
+SCREEN RECORD Undefined(ima_file.ima01,formonly.ed1,pmw_file.pmw06,gec_file.gec07,pmw_file.pmwuser,formonly.cn2,formonly.cn,formonly.ed5)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,128 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zx.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zx")
+VBox vb3
+Folder pc707
+Page page01(text="Basic Data")
+Grid gr3063
+{
+ <G group01                                                   >
+  User Code        [zx01          ]
+  User Name        [zx02          ]
+  Department Code  [zx03          ][gem02          ]
+  Category         [zx04          ][zw02           ]
+  User Menu        [zx05          ]
+  User Flow        [zx11          ]
+ [zx12                                                ]
+ <                                                            >
+ <G group02                                                   >
+ [zx07                                                ]
+  Default Logistics Code [zx08           ]
+  Email Address          [zx09                          ]
+  Password               [zx10           ]
+                         [zx19                          ]
+  Expired Date           [zx18           ]
+ <                                                            >
+
+}
+END -- gr3063
+END -- page01
+Page page02(text="Language")
+VBox VBox1
+Grid gr3064
+{
+ <G group03                                           >
+ [zx15                                                ]
+    [dummy01                                          ]
+ <                                                    >
+ <G group04                                          >
+  Language  [zx06      ]
+ <                                                   >
+
+
+
+}
+END -- gr3064
+END -- VBox1
+END -- page02
+Page info(text="Status")
+Grid gr3065
+{
+
+ User Valid Code                 [zxacti      ]
+ Last Password Modified On       [zx16        ]
+ Counts of Login By the Password [zx17        ]
+ Login Cnt With Wrong Password   [zx20        ][user_unlo]
+                                 [locked               ]
+ ----------------------------------------------------------
+ Data Owner  [zxuser    ]   Last Modified by  [zxmodu    ]
+ Department  [zxgrup    ]   Last Modified On  [zxdate    ]
+ Recd Orig.  [zxoriu    ]
+ Dept Orig.  [zxorig    ]
+
+
+
+
+
+}
+END -- gr3065
+END -- info
+END -- pc707
+Grid gr3066
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr3066
+END -- vb3
+END -- p_zx
+
+TABLES
+zx_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit zx01=zx_file.zx01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEYField,No Blank/Repeated!";
+ButtonEdit zx02=zx_file.zx02, action=update_item, tabIndex=2, image="pen", comment="Maintain field data in Multi. Language";
+ButtonEdit zx03=zx_file.zx03, action=controlp, tabIndex=3, image="zoom", upShift, comment="<^P> Qry Department ID";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit zx04=zx_file.zx04, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P> Qry Class ID";
+Edit zw02=formonly.zw02 type CHAR, tabIndex=6, noEntry;
+ButtonEdit zx05=zx_file.zx05, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P> Qry User Menu";
+ButtonEdit zx11=zx_file.zx11, action=controlp, tabIndex=8, image="zoom", comment="<^P> Qry User Flow";
+CheckBox zx12=zx_file.zx12, tabIndex=9, text="Refresh User Menu by Permission", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02;
+CheckBox zx07=zx_file.zx07, tabIndex=10, text="Multi-Logistics User", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit zx08=zx_file.zx08, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P> Qry Plant Code";
+Edit zx09=zx_file.zx09, tabIndex=12;
+Edit zx10=zx_file.zx10, tabIndex=13, invisible, comment="                     ";
+CheckBox zx19=zx_file.zx19, tabIndex=25, text="Enforce Change User\'s Password Next Login", not null, valueChecked = "Y", valueUnchecked = "N";
+DateEdit zx18=zx_file.zx18, tabIndex=24;
+Group group03:group03, text="Change Language Control";
+RadioGroup zx15=formonly.zx15 type CHAR, tabIndex=14, not null, required, items=(("1", "Close the function of change dynamic language.(Default user language"),("2", "Allow change language from udm7,but other job can't."),("3", "Allow change language from all jobs."));
+Label dummy01:dummy01, text="Simplified/Tranditional Chin. convert  only for udm-tree and no control for above .";
+Group group04:group04;
+ComboBox zx06=zx_file.zx06, tabIndex=15, not null, required, queryEditable;
+ComboBox zxacti=zx_file.zxacti, tabIndex=21, noEntry, not null, items=(("Y", "User Valid"),("N", "User Disable"));
+DateEdit zx16=zx_file.zx16, tabIndex=22, noEntry;
+Edit zx17=zx_file.zx17, tabIndex=23, noEntry;
+Edit zx20=zx_file.zx20, tabIndex=26;
+Button user_unlo:user_unlock, text="UNLOCK";
+CheckBox locked=formonly.locked type CHAR, tabIndex=27, text="User Already Been Locked", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit zxuser=zx_file.zxuser, tabIndex=16, noEntry;
+Edit zxmodu=zx_file.zxmodu, tabIndex=17, noEntry;
+Edit zxgrup=zx_file.zxgrup, tabIndex=18, noEntry;
+DateEdit zxdate=zx_file.zxdate, tabIndex=19, noEntry;
+Edit zxoriu=zx_file.zxoriu, tabIndex=501, noEntry;
+Edit zxorig=zx_file.zxorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(zx_file.zx01,zx_file.zx02,zx_file.zx03,formonly.gem02,zx_file.zx04,formonly.zw02,zx_file.zx05,zx_file.zx11,zx_file.zx12,zx_file.zx07,zx_file.zx08,zx_file.zx09,zx_file.zx10,zx_file.zx19,zx_file.zx18,formonly.zx15,zx_file.zx06,zx_file.zxacti,zx_file.zx16,zx_file.zx17,zx_file.zx20,formonly.locked,zx_file.zxuser,zx_file.zxmodu,zx_file.zxgrup,zx_file.zxdate,zx_file.zxoriu,zx_file.zxorig,formonly.cnt)
+END -- INSTRUCTIONS
+

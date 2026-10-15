@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi051.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi051")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr4814
+{
+ Purchase Center      [pnw01     ][geu02     ]
+
+}
+END -- gr4814
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_pnw
+{
+[pnw02               |azp02_1     |pnw03              |azp02_2     |pnw04     |pnw05          |pnw06 ]
+[pnw02               |azp02_1     |pnw03              |azp02_2     |pnw04     |pnw05          |pnw06 ]
+[pnw02               |azp02_1     |pnw03              |azp02_2     |pnw04     |pnw05          |pnw06 ]
+[pnw02               |azp02_1     |pnw03              |azp02_2     |pnw04     |pnw05          |pnw06 ]
+[pnw02               |azp02_1     |pnw03              |azp02_2     |pnw04     |pnw05          |pnw06 ]
+[pnw02               |azp02_1     |pnw03              |azp02_2     |pnw04     |pnw05          |pnw06 ]
+[pnw02               |azp02_1     |pnw03              |azp02_2     |pnw04     |pnw05          |pnw06 ]
+[pnw02               |azp02_1     |pnw03              |azp02_2     |pnw04     |pnw05          |pnw06 ]
+[pnw02               |azp02_1     |pnw03              |azp02_2     |pnw04     |pnw05          |pnw06 ]
+[pnw02               |azp02_1     |pnw03              |azp02_2     |pnw04     |pnw05          |pnw06 ]
+
+}
+END -- s_pnw
+Grid gr4815
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4815
+END -- VBox1
+END -- apmi051
+
+TABLES
+pnw_file
+ATTRIBUTES
+ButtonEdit pnw01=pnw_file.pnw01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit geu02=formonly.geu02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit pnw02=pnw_file.pnw02, action=controlp, tabIndex=3, title="Transfer-out Plant", not null, required, image="zoom";
+Edit azp02_1=formonly.azp02_1 type CHAR, tabIndex=4, title="Plant Name", noEntry;
+ButtonEdit pnw03=pnw_file.pnw03, action=controlp, tabIndex=5, title="Transfer-in Plant", not null, required, image="zoom";
+Edit azp02_2=formonly.azp02_2 type CHAR, tabIndex=6, title="Plant Name", noEntry;
+ButtonEdit pnw04=pnw_file.pnw04, action=controlp, tabIndex=7, title="P/O Note", not null, required, image="zoom";
+ButtonEdit pnw05=pnw_file.pnw05, action=controlp, tabIndex=8, title="Transfer Flow", not null, required, image="zoom";
+Edit pnw06=pnw_file.pnw06, tabIndex=9, title="Days", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pnw(pnw_file.pnw02,formonly.azp02_1,pnw_file.pnw03,formonly.azp02_2,pnw_file.pnw04,pnw_file.pnw05,pnw_file.pnw06)
+SCREEN RECORD Undefined(pnw_file.pnw01,formonly.geu02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

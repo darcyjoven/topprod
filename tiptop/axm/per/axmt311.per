@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt311.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt311")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2490
+{
+ Estimate No.        [oqe01           ]               Line No.            [oqe02     ]
+
+}
+END -- gr2490
+END -- page01
+END -- folder01
+Table s_oqe
+{
+[oqe03 |oqe04                                                       ]
+[oqe03 |oqe04                                                       ]
+[oqe03 |oqe04                                                       ]
+[oqe03 |oqe04                                                       ]
+[oqe03 |oqe04                                                       ]
+[oqe03 |oqe04                                                       ]
+[oqe03 |oqe04                                                       ]
+[oqe03 |oqe04                                                       ]
+[oqe03 |oqe04                                                       ]
+[oqe03 |oqe04                                                       ]
+
+}
+END -- s_oqe
+Grid gr2491
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2491
+END -- VBox1
+END -- axmt311
+
+TABLES
+oqe_file
+ATTRIBUTES
+Edit oqe01=oqe_file.oqe01, tabIndex=1, not null, required, comment="Key Field, No Blank/Repeated!";
+Edit oqe02=oqe_file.oqe02, tabIndex=2, not null, required, comment="Combine with [Est.No.] as Key Field, 0:Head Description";
+Edit oqe03=oqe_file.oqe03, tabIndex=3, title="Line #", not null, required;
+Edit oqe04=oqe_file.oqe04, tabIndex=4, title="Description", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oqe(oqe_file.oqe03,oqe_file.oqe04)
+SCREEN RECORD Undefined(oqe_file.oqe01,oqe_file.oqe02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

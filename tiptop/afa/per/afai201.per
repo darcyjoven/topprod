@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai201")
+VBox VBox1
+Folder pc339
+Page page01(text="Main")
+Table s_fgb
+{
+[fgb02      |fgb03             |fgd02                    |fgb04                         ]
+[fgb02      |fgb03             |fgd02                    |fgb04                         ]
+[fgb02      |fgb03             |fgd02                    |fgb04                         ]
+[fgb02      |fgb03             |fgd02                    |fgb04                         ]
+[fgb02      |fgb03             |fgd02                    |fgb04                         ]
+[fgb02      |fgb03             |fgd02                    |fgb04                         ]
+[fgb02      |fgb03             |fgd02                    |fgb04                         ]
+[fgb02      |fgb03             |fgd02                    |fgb04                         ]
+[fgb02      |fgb03             |fgd02                    |fgb04                         ]
+[fgb02      |fgb03             |fgd02                    |fgb04                         ]
+
+}
+END -- s_fgb
+END -- page01
+END -- pc339
+Grid gr1874
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1874
+END -- VBox1
+END -- afai201
+
+TABLES
+fgb_file
+ATTRIBUTES
+Edit fgb02=fgb_file.fgb02, tabIndex=1, title="Line No.", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+ButtonEdit fgb03=fgb_file.fgb03, action=controlp, tabIndex=2, title="Calibration No.", not null, required, image="zoom", comment="<^P>Qry Calibration No.";
+Edit fgd02=formonly.fgd02 type VARCHAR, tabIndex=3, title="Calibration Items Name", noEntry;
+Edit fgb04=fgb_file.fgb04, tabIndex=4, title="Memo";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fgb(fgb_file.fgb02,fgb_file.fgb03,formonly.fgd02,fgb_file.fgb04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

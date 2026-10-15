@@ -1,0 +1,104 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aicp032.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aicp032")
+VBox vb8
+Folder pc6
+Page Page10(text=%"Main")
+VBox vb7
+Group gb1(text="QBE")
+Grid gr5
+{
+    Item No.               [idc01           ]
+    iBody                  [idc09           ]
+    ima131                 [ima131          ]
+    lot                    [idc04           ]
+}
+END -- gr5
+END -- gb1
+Group gb2(text="INPUT")
+Grid gr7_
+{
+   [hold_yn          ][qty0_yn           ]
+    Hold/Release Date      [date          ]
+    Hold/Release Reason    [reason                   ]
+    user                   [user            ][user_name          ]
+}
+END -- gr7_
+END -- gb2
+END -- vb7
+END -- Page10
+END -- pc6
+Table s_idc
+{
+[sure  |idc01_b |ima02   |ima021  |idc09_b |ima06   |ima08   |idc07   |ima131_b|oba02   |idc02   |idc03   |idc04_b |idc08   |idc12   |idc17   |user_old  |uder_name1 |date_old  |reason_old |user_b     |user_name2 |date_b         |reason_b ]
+[sure  |idc01_b |ima02   |ima021  |idc09_b |ima06   |ima08   |idc07   |ima131_b|oba02   |idc02   |idc03   |idc04_b |idc08   |idc12   |idc17   |user_old  |uder_name1 |date_old  |reason_old |user_b     |user_name2 |date_b         |reason_b ]
+[sure  |idc01_b |ima02   |ima021  |idc09_b |ima06   |ima08   |idc07   |ima131_b|oba02   |idc02   |idc03   |idc04_b |idc08   |idc12   |idc17   |user_old  |uder_name1 |date_old  |reason_old |user_b     |user_name2 |date_b         |reason_b ]
+[sure  |idc01_b |ima02   |ima021  |idc09_b |ima06   |ima08   |idc07   |ima131_b|oba02   |idc02   |idc03   |idc04_b |idc08   |idc12   |idc17   |user_old  |uder_name1 |date_old  |reason_old |user_b     |user_name2 |date_b         |reason_b ]
+[sure  |idc01_b |ima02   |ima021  |idc09_b |ima06   |ima08   |idc07   |ima131_b|oba02   |idc02   |idc03   |idc04_b |idc08   |idc12   |idc17   |user_old  |uder_name1 |date_old  |reason_old |user_b     |user_name2 |date_b         |reason_b ]
+[sure  |idc01_b |ima02   |ima021  |idc09_b |ima06   |ima08   |idc07   |ima131_b|oba02   |idc02   |idc03   |idc04_b |idc08   |idc12   |idc17   |user_old  |uder_name1 |date_old  |reason_old |user_b     |user_name2 |date_b         |reason_b ]
+[sure  |idc01_b |ima02   |ima021  |idc09_b |ima06   |ima08   |idc07   |ima131_b|oba02   |idc02   |idc03   |idc04_b |idc08   |idc12   |idc17   |user_old  |uder_name1 |date_old  |reason_old |user_b     |user_name2 |date_b         |reason_b ]
+
+}
+END -- s_idc
+Grid gr7
+{
+ ------Rows  [cn2       ]-------
+
+
+
+}
+END -- gr7
+END -- vb8
+END -- aicp032
+
+TABLES
+idc_file,
+ima_file
+ATTRIBUTES
+ButtonEdit idc01=idc_file.idc01, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit idc09=idc_file.idc09, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit ima131=ima_file.ima131, action=controlp, tabIndex=3, image="zoom.png";
+Edit idc04=idc_file.idc04, tabIndex=35;
+CheckBox hold_yn=formonly.hold_yn type VARCHAR, tabIndex=4, default = "N", text="Hold?(Y?N)", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox qty0_yn=formonly.qty0_yn type VARCHAR, tabIndex=5, default = "N", text="qty0_yn", not null, valueChecked = "Y", valueUnchecked = "N";
+DateEdit date=formonly.date type VARCHAR, tabIndex=6;
+Edit reason=formonly.reason type CHAR, tabIndex=7;
+ButtonEdit user=formonly.user type VARCHAR, action=controlp, tabIndex=8, image="zoom.png";
+Edit user_name=formonly.user_name type CHAR, tabIndex=9;
+CheckBox sure=formonly.sure type VARCHAR, tabIndex=10, title="sure", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit idc01_b=formonly.idc01_b type CHAR, tabIndex=11, title="idc01_b", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=12, title="ima02", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=13, title="ima021", noEntry;
+Edit idc09_b=formonly.idc09_b type CHAR, tabIndex=14, title="idc09_b", noEntry;
+Edit ima06=formonly.ima06 type CHAR, tabIndex=15, title="ima06", noEntry;
+ComboBox ima08=formonly.ima08 type CHAR, tabIndex=16, title="ima08", noEntry, not null, required, items=(("C", "Configurable Product"),("T", "FAS Product"),("D", "Feature"),("A", "Family Product"),("M", "Make Product"),("P", "Purchase"),("X", "Phantom"),("K", "Kit"),("U", "Manufactured Mass Item"),("V", "Purchased Mass Item"),("R", "Routable"),("Z", "Miscellaneous"),("S", "Subcontract"));
+Edit idc07=idc_file.idc07, tabIndex=17, title="idc07", noEntry;
+Edit ima131_b=formonly.ima131_b type CHAR, tabIndex=18, title="ima131_b", noEntry;
+Edit oba02=formonly.oba02 type CHAR, tabIndex=19, title="oba02", noEntry;
+Edit idc02=idc_file.idc02, tabIndex=20, title="idc02";
+Edit idc03=idc_file.idc03, tabIndex=21, title="idc03";
+Edit idc04_b=formonly.idc04_b type CHAR, tabIndex=22, title="idc04_b", noEntry;
+Edit idc08=idc_file.idc08, tabIndex=23, title="idc08", noEntry;
+Edit idc12=idc_file.idc12, tabIndex=24, title="idc12", noEntry;
+Edit idc17=idc_file.idc17, tabIndex=25, title="idc17", noEntry;
+Edit user_old=formonly.user_old type CHAR, tabIndex=26, title="user_old", noEntry;
+Edit uder_name1=formonly.uder_name1 type CHAR, tabIndex=27, title="user_name1", noEntry;
+Edit date_old=formonly.date_old type CHAR, tabIndex=28, title="date_old", noEntry;
+Edit reason_old=formonly.reason_old type CHAR, tabIndex=29, title="reason_old", noEntry;
+ButtonEdit user_b=formonly.user_b type CHAR, action=controlp, tabIndex=30, title="user_b", not null, required, image="zoom.png";
+Edit user_name2=formonly.user_name2 type CHAR, tabIndex=31, title="user_name2", noEntry;
+DateEdit date_b=formonly.date_b type CHAR, tabIndex=32, title="date_b", not null, required;
+Edit reason_b=formonly.reason_b type CHAR, tabIndex=33, title="reason_b";
+Edit cn2=formonly.cn2 type SMALLFLOAT, tabIndex=34, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_idc(formonly.sure,formonly.idc01_b,formonly.ima02,formonly.ima021,formonly.idc09_b,formonly.ima06,formonly.ima08,idc_file.idc07,formonly.ima131_b,formonly.oba02,idc_file.idc02,idc_file.idc03,formonly.idc04_b,idc_file.idc08,idc_file.idc12,idc_file.idc17,formonly.user_old,formonly.uder_name1,formonly.date_old,formonly.reason_old,formonly.user_b,formonly.user_name2,formonly.date_b,formonly.reason_b)
+SCREEN RECORD Undefined(idc_file.idc01,idc_file.idc09,ima_file.ima131,idc_file.idc04,formonly.hold_yn,formonly.qty0_yn,formonly.date,formonly.reason,formonly.user,formonly.user_name,formonly.cn2)
+END -- INSTRUCTIONS
+

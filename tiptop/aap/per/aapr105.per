@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr105.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapr105")
+VBox vb5
+Grid gr177
+{
+ <G group01                                                      >
+  Vender No.          [rvu04               ]
+  Transaction Cate    [rvu00               ]
+  Tran. Note No.      [rvu01               ]
+  Transaction Date    [rvu03               ]
+  Invoice NO.         [rvb22               ]
+ <                                                               >
+
+}
+END -- gr177
+Group group02(text="INPUT")
+Grid gr178
+{
+ <G group03                        ><G group04                   >
+  [amt_sw                       ]    [lc_sw                   ]
+ <                                 ><                            >
+
+}
+END -- gr178
+END -- group02
+Grid gr179
+{
+[more                                                        ]
+
+}
+END -- gr179
+END -- vb5
+END -- aapr105
+
+TABLES
+rvu_file,
+rvb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit rvu04=rvu_file.rvu04, tabIndex=1;
+Edit rvu00=rvu_file.rvu00, tabIndex=2, comment=" 1.Sotck-in 2.Reject 3.Inventory Return";
+Edit rvu01=rvu_file.rvu01, tabIndex=3;
+DateEdit rvu03=rvu_file.rvu03, tabIndex=4;
+Edit rvb22=rvb_file.rvb22, tabIndex=5;
+Group group03:group03, text="Data Option 1";
+RadioGroup amt_sw=formonly.amt_sw type CHAR, tabIndex=6, default = "1", items=(("1", "Receipt Amount"),("2", "APEntering Account Amount"));
+Group group04:group04, text="Data Option 2";
+RadioGroup lc_sw=formonly.lc_sw type CHAR, tabIndex=7, default = "3", items=(("1", "Non L/C Category"),("2", "L/CCa"),("3", "All "));
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rvu_file.rvu04,rvu_file.rvu00,rvu_file.rvu01,rvu_file.rvu03,rvb_file.rvb22,formonly.amt_sw,formonly.lc_sw,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmr212.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmr212")
+VBox VBox1
+Grid gr912
+{
+ <G group01                                                >
+  Master Item No.     [bmo01               ]
+  Version             [bmo011              ]
+  Alternate Code      [bmo06               ]
+
+ <                                                         >
+
+}
+END -- gr912
+Group group02(text="INPUT")
+Grid gr913
+{
+ <G group03            ><G group04                                    >
+ [choice             ]   H.C/Convert Currency[loccur    ]/[cur       ]
+ [                   ]   H.C Exchange Ratio  [rate1               ]/
+ [                   ]   Conversion Curr ExRt[rate2               ]
+ <                     ><                                             >
+ <G group05                                                           >
+ [s                           ]
+ <                                                                    >
+
+}
+END -- gr913
+END -- group02
+Grid gr914
+{
+[more                                ]
+
+}
+END -- gr914
+END -- VBox1
+END -- abmr212
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit bmo01=formonly.bmo01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit bmo011=formonly.bmo011 type VARCHAR, tabIndex=2;
+Edit bmo06=formonly.bmo06 type VARCHAR, tabIndex=3;
+Group group03:group03, text="Print Data";
+RadioGroup choice=formonly.choice type VARCHAR, tabIndex=4, not null, required, items=(("1", "detail"),("2", "General List"));
+Group group04:group04;
+Edit loccur=formonly.loccur type VARCHAR, tabIndex=5, noEntry;
+ButtonEdit cur=formonly.cur type VARCHAR, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Currency";
+Edit rate1=formonly.rate1 type DECIMAL, tabIndex=7, not null, required;
+ButtonEdit rate2=formonly.rate2 type DECIMAL, action=controlp, tabIndex=8, not null, required, image="zoom";
+Group group05:group05, text="Sequence";
+RadioGroup s=formonly.s type VARCHAR, tabIndex=9, not null, required, items=(("1", "Component"),("2", "Purchase Feature"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=10, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bmo01,formonly.bmo011,formonly.bmo06,formonly.choice,formonly.loccur,formonly.cur,formonly.rate1,formonly.rate2,formonly.s,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi9011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi9011")
+VBox VBox1
+Grid gr833
+{
+ <G group01                               >
+  (1)[bmr08                              ]
+  (2)[bmr09                              ]
+  (3)[bmr10                              ]
+  (4)[bmr11                              ]
+  (5)[bmr12                              ]
+  (6)[bmr13                              ]
+  (7)[bmr14                              ]
+            Related document #[bmr141    ]
+  (8)[bmr15                              ]
+     [bmr151                             ]
+ <                                        >
+
+}
+END -- gr833
+END -- VBox1
+END -- abmi9011
+
+TABLES
+bmr_file
+ATTRIBUTES
+Group group01:group01, text="Attribute";
+CheckBox bmr08=bmr_file.bmr08, tabIndex=1, text="Modify Drawing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr09=bmr_file.bmr09, tabIndex=2, text="Product Improvement", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr10=bmr_file.bmr10, tabIndex=3, text="Manufacturing Problem", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr11=bmr_file.bmr11, tabIndex=4, text="Purchase Problem", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr12=bmr_file.bmr12, tabIndex=5, text="Decrease Manufacturing Cost", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr13=bmr_file.bmr13, tabIndex=6, text="Re-Design", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr14=bmr_file.bmr14, tabIndex=7, text="On Customer\'s Demand", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit bmr141=bmr_file.bmr141, tabIndex=8;
+CheckBox bmr15=bmr_file.bmr15, tabIndex=9, text="Other", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit bmr151=bmr_file.bmr151, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bmr_file.bmr08,bmr_file.bmr09,bmr_file.bmr10,bmr_file.bmr11,bmr_file.bmr12,bmr_file.bmr13,bmr_file.bmr14,bmr_file.bmr141,bmr_file.bmr15,bmr_file.bmr151)
+END -- INSTRUCTIONS
+

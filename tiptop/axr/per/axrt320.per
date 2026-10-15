@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt320.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1
+{
+ Invoice No.   [omg00                      ]    Customer # [omg04          |omg041         ]     Confirm[omg08             |imgmksg]
+ Invoice Date  [omg03                      ]    Tax Type   [omg05          |omg051         ]                               [       ]
+ Invoice #     [omg01                      ]    Currency   [omg06          ]
+ Invoice Code  [omg02                      ]    Exc rate   [omg07          ]
+
+}
+END -- gr1
+END -- page01
+Page Info(text=%"Info")
+Grid ds1
+{
+
+ omguser[omguser         ]    omgmodu[omgmodu         ]
+ omggrup[omggrup         ]    omgdate[omgdate         ]
+ omgoriu[omgoriu         ]
+ omgorig[omgorig         ]
+
+}
+END -- ds1
+END -- Info
+END -- folder01
+Table s_omg
+{
+[omg09       |omg10       |omg11           |omg23       |omg12           |omg13       |omg14           |omg15       |omg16       |omg17       |omg18       |omg21           |omg22           |omg22x      |omg22t          |omg19       |omg20           |omg20x      |omg20t      ]
+[omg09       |omg10       |omg11           |omg23       |omg12           |omg13       |omg14           |omg15       |omg16       |omg17       |omg18       |omg21           |omg22           |omg22x      |omg22t          |omg19       |omg20           |omg20x      |omg20t      ]
+[omg09       |omg10       |omg11           |omg23       |omg12           |omg13       |omg14           |omg15       |omg16       |omg17       |omg18       |omg21           |omg22           |omg22x      |omg22t          |omg19       |omg20           |omg20x      |omg20t      ]
+[omg09       |omg10       |omg11           |omg23       |omg12           |omg13       |omg14           |omg15       |omg16       |omg17       |omg18       |omg21           |omg22           |omg22x      |omg22t          |omg19       |omg20           |omg20x      |omg20t      ]
+[omg09       |omg10       |omg11           |omg23       |omg12           |omg13       |omg14           |omg15       |omg16       |omg17       |omg18       |omg21           |omg22           |omg22x      |omg22t          |omg19       |omg20           |omg20x      |omg20t      ]
+
+}
+END -- s_omg
+Grid gr4835
+{
+  ---------- Rows [cnt   ]/[cn2   ]       Tot Ori-Amo Bef-Tax          [omg22_sum               ]    Tot Tax amount[omg22x_sum              ]       Tot Original Currency With-Tax  [omg22t_sum              ]
+                                          Total Amt Payable excl. Tax  [omg20_sum               ]    Total Tax     [omg20x_sum              ]       Total Ship. Amt Incl. Tax       [omg20t_sum              ]
+
+}
+END -- gr4835
+END -- VBox1
+END -- Form
+
+TABLES
+omg_file
+ATTRIBUTES
+ButtonEdit omg00=omg_file.omg00, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit omg04=omg_file.omg04, action=controlp, tabIndex=2, required, image="zoom";
+Edit omg041=omg_file.omg041, tabIndex=3, noEntry;
+ComboBox omg08=omg_file.omg08, tabIndex=4, noEntry, not null, required, queryEditable, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale;
+DateEdit omg03=omg_file.omg03, tabIndex=5, not null, required;
+ButtonEdit omg05=omg_file.omg05, action=controlp, tabIndex=6, required, image="zoom";
+Edit omg051=omg_file.omg051, tabIndex=7, noEntry;
+Edit omg01=omg_file.omg01, tabIndex=8;
+ButtonEdit omg06=omg_file.omg06, action=controlp, tabIndex=9, required, image="zoom";
+Edit omg02=omg_file.omg02, tabIndex=10;
+Edit omg07=omg_file.omg07, tabIndex=11, required;
+Edit omguser=omg_file.omguser, tabIndex=12, scroll;
+Edit omgmodu=omg_file.omgmodu, tabIndex=13, scroll;
+Edit omggrup=omg_file.omggrup, tabIndex=14, scroll;
+DateEdit omgdate=omg_file.omgdate, tabIndex=15;
+Edit omgoriu=omg_file.omgoriu, tabIndex=16, scroll;
+Edit omgorig=omg_file.omgorig, tabIndex=17, scroll;
+Edit omg09=omg_file.omg09, tabIndex=18, title=%"Line No.", not null, required;
+ComboBox omg10=omg_file.omg10, tabIndex=19, title=%"Type", items=(("1", "Accounts receivable"));
+ButtonEdit omg11=omg_file.omg11, action=controlp, tabIndex=20, title=%"Account No", not null, required, image="zoom";
+Edit omg23=omg_file.omg23, tabIndex=21, title=%"Line No.", not null, required;
+Edit omg12=omg_file.omg12, tabIndex=22, title=%"Reference No.", noEntry;
+Edit omg13=omg_file.omg13, tabIndex=23, title=%"Line No.", noEntry;
+Edit omg14=omg_file.omg14, tabIndex=24, title=%"Item No.", noEntry;
+Edit omg15=omg_file.omg15, tabIndex=25, title=%"Item Name", noEntry;
+Edit omg16=omg_file.omg16, tabIndex=26, title=%"Desc.", noEntry;
+Edit omg17=omg_file.omg17, tabIndex=27, title=%"Qty";
+Edit omg18=omg_file.omg18, tabIndex=28, title=%"Unit", noEntry;
+Edit omg21=omg_file.omg21, tabIndex=29, title=%"Ori-Pr Bef Tax", noEntry;
+Edit omg22=omg_file.omg22, tabIndex=30, title=%"Ori. Curr. Amount(No Tax)", noEntry;
+Edit omg22x=omg_file.omg22x, tabIndex=31, title=%"Tax (Trans. Curr.)", noEntry;
+Edit omg22t=omg_file.omg22t, tabIndex=32, title=%"Curr. Tax Amount", noEntry;
+Edit omg19=omg_file.omg19, tabIndex=33, title=%"Unit Price", noEntry;
+Edit omg20=omg_file.omg20, tabIndex=34, title=%"Amt Excl. Tax", noEntry;
+Edit omg20x=omg_file.omg20x, tabIndex=35, title=%"Tax", noEntry;
+Edit omg20t=omg_file.omg20t, tabIndex=36, title=%"Amt Incl. Tax", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=37, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=38, noEntry;
+Edit omg22_sum=formonly.omg22_sum type SMALLINT, tabIndex=39, noEntry;
+Edit omg22x_sum=formonly.omg22x_sum type SMALLINT, tabIndex=40, noEntry;
+Edit omg22t_sum=formonly.omg22t_sum type SMALLINT, tabIndex=41, noEntry;
+Edit omg20_sum=formonly.omg20_sum type SMALLINT, tabIndex=42, noEntry;
+Edit omg20x_sum=formonly.omg20x_sum type SMALLINT, tabIndex=43, noEntry;
+Edit omg20t_sum=formonly.omg20t_sum type SMALLINT, tabIndex=44, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(omg_file.omg00,omg_file.omg04,omg_file.omg041,omg_file.omg08,omg_file.omg03,omg_file.omg05,omg_file.omg051,omg_file.omg01,omg_file.omg06,omg_file.omg02,omg_file.omg07,omg_file.omguser,omg_file.omgmodu,omg_file.omggrup,omg_file.omgdate,omg_file.omgoriu,omg_file.omgorig,formonly.cnt,formonly.cn2,formonly.omg22_sum,formonly.omg22x_sum,formonly.omg22t_sum,formonly.omg20_sum,formonly.omg20x_sum,formonly.omg20t_sum,formonly.imgmksg)
+SCREEN RECORD s_omg(omg_file.omg09,omg_file.omg10,omg_file.omg11,omg_file.omg23,omg_file.omg12,omg_file.omg13,omg_file.omg14,omg_file.omg15,omg_file.omg16,omg_file.omg17,omg_file.omg18,omg_file.omg21,omg_file.omg22,omg_file.omg22x,omg_file.omg22t,omg_file.omg19,omg_file.omg20,omg_file.omg20x,omg_file.omg20t)
+END -- INSTRUCTIONS
+

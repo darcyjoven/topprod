@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcr451.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aqcr451")
+VBox VBox1
+Grid gr145
+{
+ <G group01                                                           >
+  Customer No.        [occ01               ]
+  FQC Document No.    [qcf01               ]
+  Run Card            [qcf03               ]
+  Work/Order No.      [qcf02               ]
+  Item No.            [qcf021              ]
+ <                                                                    >
+ <G group02                                                           >
+  QC Date             [bdate       ] - [edate       ]
+ <                                                                    >
+ <G group03                                                           >
+ [s1                  ]  [s2                  ]  [s3                  ]
+ [t1                  ]  [t2                  ]  [t3                  ]
+ <                                                                    >
+
+}
+END -- gr145
+Grid gr146
+{
+[more                                     ]
+
+}
+END -- gr146
+END -- VBox1
+END -- aqcr451
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit occ01=formonly.occ01 type VARCHAR, tabIndex=1;
+Edit qcf01=formonly.qcf01 type VARCHAR, tabIndex=2;
+Edit qcf03=formonly.qcf03 type VARCHAR, tabIndex=3;
+Edit qcf02=formonly.qcf02 type VARCHAR, tabIndex=4;
+ButtonEdit qcf021=formonly.qcf021 type VARCHAR, action=controlp, tabIndex=5, image="zoom", comment="<P>";
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=6;
+DateEdit edate=formonly.edate type DATE, tabIndex=7;
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, queryEditable, items=(("1", "Customer No."),("2", "FQC Doc.No."),("3", "Run Card Doc.No."),("4", "W/O No. "),("5", "Item No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=9, queryEditable, items=(("1", "Customer No."),("2", "FQC Doc.No."),("3", "Run Card Doc.No."),("4", "W/O No. "),("5", "Item No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=10, queryEditable, items=(("1", "Customer No."),("2", "FQC Doc.No."),("3", "Run Card Doc.No."),("4", "W/O No. "),("5", "Item No."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=13, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.occ01,formonly.qcf01,formonly.qcf03,formonly.qcf02,formonly.qcf021,formonly.bdate,formonly.edate,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.more)
+END -- INSTRUCTIONS
+

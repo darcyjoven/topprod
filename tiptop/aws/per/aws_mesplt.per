@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_mesplt.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"GPM Station Config")
+VBox VBox1
+Grid gr1426
+{
+ <G group01                                                                              >
+  Plant No.                          [wge06          ]
+  MES station name                   [wge04               ]
+  MES station IP address             [wge02          ]
+  MES SOAP Services URL              [wge03                                             ]
+  MES HTTP Services URL              [wge08                                             ]
+
+ <                                                                                       >
+
+}
+END -- gr1426
+Table s_bwge
+{
+[bwge06       |bwge04              |bwge02         |bwge03                                            |bwge08              ]
+[bwge06       |bwge04              |bwge02         |bwge03                                            |bwge08              ]
+[bwge06       |bwge04              |bwge02         |bwge03                                            |bwge08              ]
+[bwge06       |bwge04              |bwge02         |bwge03                                            |bwge08              ]
+[bwge06       |bwge04              |bwge02         |bwge03                                            |bwge08              ]
+
+}
+END -- s_bwge
+END -- VBox1
+END -- aws_mesplt
+
+TABLES
+wge_file
+ATTRIBUTES
+Group group01:group01, text="GPM Station Setting";
+ButtonEdit wge06=wge_file.wge06, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit wge04=wge_file.wge04, tabIndex=2, not null, required;
+Edit wge02=wge_file.wge02, tabIndex=3, not null, required;
+Edit wge03=wge_file.wge03, tabIndex=4, not null, required, scroll;
+Edit wge08=wge_file.wge08, tabIndex=5, not null, required, scroll;
+Edit bwge06=formonly.bwge06 type CHAR, tabIndex=6, title="Plant No.", noEntry;
+Edit bwge04=formonly.bwge04 type CHAR, tabIndex=7, title="Station name", noEntry;
+Edit bwge02=formonly.bwge02 type CHAR, tabIndex=8, title="IP address", noEntry;
+Edit bwge03=formonly.bwge03 type CHAR, tabIndex=9, title="SOAP Services URL", noEntry;
+Edit bwge08=formonly.bwge08 type CHAR, tabIndex=10, title="HTTP Services URL", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bwge(formonly.bwge06,formonly.bwge04,formonly.bwge02,formonly.bwge03,formonly.bwge08)
+SCREEN RECORD Undefined(wge_file.wge06,wge_file.wge04,wge_file.wge02,wge_file.wge03,wge_file.wge08)
+END -- INSTRUCTIONS
+

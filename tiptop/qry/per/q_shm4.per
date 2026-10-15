@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_shm4.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+HBox HBox1
+Table ds1
+{
+[check   |shm01                  |shm012              |sgm04 |sgm45                         |shm08            |shm05                         |ima02                         |ima021                        |shm09            ]
+[check   |shm01                  |shm012              |sgm04 |sgm45                         |shm08            |shm05                         |ima02                         |ima021                        |shm09            ]
+[check   |shm01                  |shm012              |sgm04 |sgm45                         |shm08            |shm05                         |ima02                         |ima021                        |shm09            ]
+[check   |shm01                  |shm012              |sgm04 |sgm45                         |shm08            |shm05                         |ima02                         |ima021                        |shm09            ]
+[check   |shm01                  |shm012              |sgm04 |sgm45                         |shm08            |shm05                         |ima02                         |ima021                        |shm09            ]
+
+}
+END -- ds1
+END -- HBox1
+END -- Form
+
+TABLES
+ima_file,
+sgm_file,
+shm_file
+ATTRIBUTES
+CheckBox check=formonly.check, tabIndex=10, title=%"Select", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit shm01=shm_file.shm01, tabIndex=1, title=%"Run Card", not null, scroll;
+Edit shm012=shm_file.shm012, tabIndex=2, title=%"W/O No.", scroll;
+Edit sgm04=sgm_file.sgm04, tabIndex=3, title=%"sgm04", scroll;
+Edit sgm45=sgm_file.sgm45, tabIndex=4, title=%"sgm45", scroll;
+Edit shm08=shm_file.shm08, tabIndex=5, title=%"Production Qty", not null, scroll;
+Edit shm05=shm_file.shm05, tabIndex=6, title=%"Item No.", scroll;
+Edit ima02=ima_file.ima02, tabIndex=7, title=%"Item Name", scroll;
+Edit ima021=ima_file.ima021, tabIndex=8, title=%"ima021", scroll;
+Edit shm09=shm_file.shm09, tabIndex=9, title=%"Cmoplete/Store-in Qty", not null, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_shm(formonly.check,shm_file.shm01,shm_file.shm012,sgm_file.sgm04,sgm_file.sgm45,shm_file.shm08,shm_file.shm05,ima_file.ima02,ima_file.ima021,shm_file.shm09)
+END -- INSTRUCTIONS
+

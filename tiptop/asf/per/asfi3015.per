@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi3015.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Substitute Group List")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr468
+{
+ <G group01                        ><G group02                       >
+  Substitute Group    [bob03     ]   Substitute Qty      [bob07     ]
+ <                                 ><                                >
+
+}
+END -- gr468
+END -- page01
+Page info(text="Info")
+Grid gr469
+{
+ <G grpinfo                       >
+  Line No.            [cn1       ]
+  Retrieve Rows       [cn2       ]
+  Detail Counts       [cn3       ]
+ <                                >
+
+}
+END -- gr469
+END -- info
+END -- folder01
+Table s_bob
+{
+[bob04               |ima02                         |bob05    |bob06        |bob08                 |bob09       ]
+[bob04               |ima02                         |bob05    |bob06        |bob08                 |bob09       ]
+[bob04               |ima02                         |bob05    |bob06        |bob08                 |bob09       ]
+[bob04               |ima02                         |bob05    |bob06        |bob08                 |bob09       ]
+[bob04               |ima02                         |bob05    |bob06        |bob08                 |bob09       ]
+[bob04               |ima02                         |bob05    |bob06        |bob08                 |bob09       ]
+[bob04               |ima02                         |bob05    |bob06        |bob08                 |bob09       ]
+[bob04               |ima02                         |bob05    |bob06        |bob08                 |bob09       ]
+[bob04               |ima02                         |bob05    |bob06        |bob08                 |bob09       ]
+[bob04               |ima02                         |bob05    |bob06        |bob08                 |bob09       ]
+
+}
+END -- s_bob
+END -- VBox1
+END -- asfi3015
+
+TABLES
+bob_file
+ATTRIBUTES
+Group group01:group01;
+Edit bob03=bob_file.bob03, tabIndex=1, noEntry;
+Group group02:group02;
+Edit bob07=bob_file.bob07, tabIndex=2, noEntry;
+Group grpinfo:grpinfo;
+Edit cn1=formonly.cn1 type SMALLINT, tabIndex=3, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=5, noEntry;
+Edit bob04=bob_file.bob04, tabIndex=6, title="Substitute Item#", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=7, title="Part Name Specification", noEntry;
+Edit bob05=bob_file.bob05, tabIndex=8, title="Task No.", noEntry;
+Edit bob06=bob_file.bob06, tabIndex=9, title="Issuing Unit", noEntry;
+Edit bob08=bob_file.bob08, tabIndex=10, title="Qty Per Assembly(QPA)", noEntry;
+Edit bob09=bob_file.bob09, tabIndex=11, title="Denominator", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bob(bob_file.bob04,formonly.ima02,bob_file.bob05,bob_file.bob06,bob_file.bob08,bob_file.bob09)
+SCREEN RECORD Undefined(bob_file.bob03,bob_file.bob07,formonly.cn1,formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

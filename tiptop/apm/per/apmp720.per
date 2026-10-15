@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp720.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp720")
+VBox vb3
+Grid gr5193
+{
+ <G group01                                                                  >
+   Vender No.                        [pmi03               ]
+   Item No.                          [pmj03               ]
+   Currency                          [pmj05               ]
+   Approval Effective Date           [pmj09               ]
+   Appr.List No.                     [pmi01               ]
+ <                                                                           >
+
+}
+END -- gr5193
+Grid gr5194
+{
+ <G group02                                                                   >
+  Transaction Doc Period DATE    [b_date       ]  -- [e_date        ]
+ <                                                                            >
+
+}
+END -- gr5194
+Table s_rvu
+{
+[sel     |rvu04   |pmc03   |rvu01   |rvu03   |rvu00   ]
+[sel     |rvu04   |pmc03   |rvu01   |rvu03   |rvu00   ]
+[sel     |rvu04   |pmc03   |rvu01   |rvu03   |rvu00   ]
+[sel     |rvu04   |pmc03   |rvu01   |rvu03   |rvu00   ]
+[sel     |rvu04   |pmc03   |rvu01   |rvu03   |rvu00   ]
+
+}
+END -- s_rvu
+END -- vb3
+END -- apmp720
+
+TABLES
+pmi_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmi03=pmi_file.pmi03, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit pmj03=formonly.pmj03 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit pmj05=formonly.pmj05 type VARCHAR, action=controlp, tabIndex=4, image="zoom.png";
+DateEdit pmj09=formonly.pmj09 type DATE, tabIndex=5, century="";
+ButtonEdit pmi01=pmi_file.pmi01, action=controlp, tabIndex=1, image="zoom.png";
+Group group02:group02, text="INPUT";
+DateEdit b_date=formonly.b_date type DATE, tabIndex=6, century="";
+DateEdit e_date=formonly.e_date type DATE, tabIndex=7, century="";
+CheckBox sel=formonly.sel type VARCHAR, tabIndex=8, title="sel", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit rvu04=formonly.rvu04 type CHAR, tabIndex=9, title="rvu04";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=10, title="pmc03";
+Edit rvu01=formonly.rvu01 type CHAR, tabIndex=11, title="rvu01";
+DateEdit rvu03=formonly.rvu03 type CHAR, tabIndex=12, title="rvu03";
+ComboBox rvu00=formonly.rvu00 type CHAR, tabIndex=13, title="rvu00", noEntry, not null, items=(("1", "Stock-in"),("2", "QC Reject"),("3", "Return"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvu(formonly.sel,formonly.rvu04,formonly.pmc03,formonly.rvu01,formonly.rvu03,formonly.rvu00)
+SCREEN RECORD Undefined(pmi_file.pmi03,formonly.pmj03,formonly.pmj05,formonly.pmj09,pmi_file.pmi01,formonly.b_date,formonly.e_date)
+END -- INSTRUCTIONS
+

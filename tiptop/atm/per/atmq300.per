@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmq300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmq300")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1269
+{
+ <G group01                                   >
+  Inventory Type      [tup11                 ]
+  Customer            [tup01     ][occ02     ]
+  Shipping Customer   [tup12     ][occ02_2   ]
+  Goods No.           [tup02               ]
+                      [ima02               ]
+  Patch               [tup03               ]
+ <                                            >
+
+}
+END -- gr1269
+Grid gr1270
+{
+ <G group02                                           >
+  Initial Date                  [bdate     ]
+  Inv of the beginning of period[tur09               ]
+  Current Inventory             [tup05               ]
+  Inventory Unit                [tup04     ]
+ <                                                    >
+
+
+
+}
+END -- gr1270
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_tuq
+{
+[tuq04   |tuq10            |desc           |tuq05           |tuq09           |tot                         ]
+[tuq04   |tuq10            |desc           |tuq05           |tuq09           |tot                         ]
+[tuq04   |tuq10            |desc           |tuq05           |tuq09           |tot                         ]
+[tuq04   |tuq10            |desc           |tuq05           |tuq09           |tot                         ]
+[tuq04   |tuq10            |desc           |tuq05           |tuq09           |tot                         ]
+[tuq04   |tuq10            |desc           |tuq05           |tuq09           |tot                         ]
+[tuq04   |tuq10            |desc           |tuq05           |tuq09           |tot                         ]
+[tuq04   |tuq10            |desc           |tuq05           |tuq09           |tot                         ]
+[tuq04   |tuq10            |desc           |tuq05           |tuq09           |tot                         ]
+[tuq04   |tuq10            |desc           |tuq05           |tuq09           |tot                         ]
+
+}
+END -- s_tuq
+Grid gr1271
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr1271
+END -- VBox1
+END -- atmq300
+
+TABLES
+tuq_file,
+tup_file
+ATTRIBUTES
+Group group01:group01;
+ComboBox tup11=tup_file.tup11, tabIndex=1, not null, required, items=(("1", "Customer Inventory"),("2", "Consign Inventory"));
+Edit tup01=tup_file.tup01, tabIndex=2;
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=3, noEntry;
+Edit tup12=tup_file.tup12, tabIndex=4;
+Edit occ02_2=formonly.occ02_2 type VARCHAR, tabIndex=5, noEntry;
+Edit tup02=tup_file.tup02, tabIndex=6;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=7, noEntry;
+Edit tup03=tup_file.tup03, tabIndex=8;
+Group group02:group02;
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=9, comment="Enter the Initial Date";
+Edit tur09=formonly.tur09 type CHAR, tabIndex=10;
+Edit tup05=tup_file.tup05, tabIndex=11;
+Edit tup04=tup_file.tup04, tabIndex=12;
+DateEdit tuq04=tuq_file.tuq04, tabIndex=13, title="Date";
+Edit tuq10=tuq_file.tuq10, tabIndex=14, title="Planned Period";
+Edit desc=formonly.desc type CHAR, tabIndex=15, title="Description", noEntry;
+Edit tuq05=tuq_file.tuq05, tabIndex=16, title="Initial No";
+Edit tuq09=tuq_file.tuq09, tabIndex=17, title="Tranfered Qty";
+Edit tot=formonly.tot type CHAR, tabIndex=18, title="Inventory Qty after Transfer", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=19;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tuq(tuq_file.tuq04,tuq_file.tuq10,formonly.desc,tuq_file.tuq05,tuq_file.tuq09,formonly.tot)
+SCREEN RECORD Undefined(tup_file.tup11,tup_file.tup01,formonly.occ02,tup_file.tup12,formonly.occ02_2,tup_file.tup02,formonly.ima02,tup_file.tup03,formonly.bdate,formonly.tur09,tup_file.tup05,tup_file.tup04,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr622.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+ <G group1                                                            >
+
+  [label3    ][bdate          ] [label4   ][a          ]
+
+  [label5    ][img01          ]
+  [label1    ][img02          ]
+  [label2    ][img03          ]
+
+
+  [txt                                                         ]
+  [                                                            ]
+  [                                                            ]
+  [                                                            ]
+ <                                                                    >
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+Label label3:Label3, text=%"bdate";
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=1;
+Label label4:Label4, text=%"a";
+ComboBox a=formonly.a type CHAR, tabIndex=2, not null, items=(("1", "明细库龄"),("2", "整体库龄"));
+Label label5:Label5, text=%"img01";
+ButtonEdit img01=formonly.img01 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Label label1:Label1, text=%"img02";
+ButtonEdit img02=formonly.img02 type CHAR, action=controlp, tabIndex=4, image="zoom";
+Label label2:Label2, text=%"img03";
+ButtonEdit img03=formonly.img03 type CHAR, action=controlp, tabIndex=5, image="zoom";
+TextEdit txt=formonly.txt type VARCHAR, tabIndex=6, stretch=NONE;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bdate,formonly.a,formonly.img01,formonly.img02,formonly.img03,formonly.txt)
+END -- INSTRUCTIONS
+

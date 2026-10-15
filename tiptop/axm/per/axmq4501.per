@@ -1,0 +1,33 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq4501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq4501")
+Folder pc536
+Page page01(text="Page01")
+Grid gr2267
+{
+ <G group01                                       >
+  Start Inventory Qty  [min_qty               ]
+  End Inventory Qty    [max_qty               ]
+ <                                                >
+
+}
+END -- gr2267
+END -- page01
+END -- pc536
+END -- axmq4501
+
+ATTRIBUTES
+Group group01:group01, text="QBE:Inventory Qty";
+Edit min_qty=formonly.min_qty type CHAR, tabIndex=1;
+Edit max_qty=formonly.max_qty type CHAR, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.min_qty,formonly.max_qty)
+END -- INSTRUCTIONS
+

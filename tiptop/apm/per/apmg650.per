@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmg650.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr650")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                                       >
+    Book No.      [afb00               ]
+ <                                                               >
+
+}
+END -- Grid1
+Grid gr5172
+{
+ <G group01                                                     >
+
+  Year        [afb03               ]
+  Budget No.  [afb01               ]
+  Account No. [afb02               ]
+  Dept No.    [afb041              ]
+  Project No. [afb042              ]
+  WBS No.     [afb04               ]
+ <                                                              >
+}
+END -- gr5172
+Grid gr6
+{
+
+[more                                                            ]
+
+
+}
+END -- gr6
+END -- VBox1
+END -- apmr650
+
+ATTRIBUTES
+Group group1:Group1, text=%"INPUT";
+ButtonEdit afb00=formonly.afb00 type VARCHAR, action=controlp, tabIndex=6, not null, required, image="zoom";
+Group group01:group01, text="QBE";
+Edit afb03=formonly.afb03 type SMALLINT, tabIndex=1;
+ButtonEdit afb01=formonly.afb01 type VARCHAR, action=controlp, tabIndex=3, image="zoom.png";
+ButtonEdit afb02=formonly.afb02 type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+ButtonEdit afb041=formonly.afb041 type VARCHAR, action=controlp, tabIndex=5, image="zoom.png";
+ButtonEdit afb042=formonly.afb042 type VARCHAR, action=controlp, tabIndex=7, image="zoom.png";
+ButtonEdit afb04=formonly.afb04 type VARCHAR, action=controlp, tabIndex=8, image="zoom.png";
+CheckBox more=formonly.more type VARCHAR, tabIndex=2, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.afb00,formonly.afb03,formonly.afb01,formonly.afb02,formonly.afb041,formonly.afb042,formonly.afb04,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsp400.080721.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsp400")
+Group group2(text="Input")
+Grid gr5717
+{
+
+  APS version        [vld01                  ]
+  Save Version       [vld02                  ]
+  Data Date QBE      [vld03     ][vld04      ]
+  Date Select        [vld05                  ]
+  Time Bucket Method [vld06                  ][vld14            ]
+  vld10              [vld10                  ]
+  vld11              [vld11                  ]
+  vld12              [vld12                  ]
+
+
+  <G group1                                               >
+    [vld07     ] [vld08     ]   [vld09     ]
+  <                                                       >
+
+
+}
+END -- gr5717
+END -- group2
+END -- apsp400
+
+TABLES
+vld_file
+ATTRIBUTES
+ButtonEdit vld01=vld_file.vld01, action=controlp, tabIndex=4, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Edit vld02=vld_file.vld02, tabIndex=5;
+DateEdit vld03=vld_file.vld03, tabIndex=6, not null, required;
+DateEdit vld04=vld_file.vld04, tabIndex=7, not null, required;
+ComboBox vld05=vld_file.vld05, tabIndex=2, not null, required, items=(("1", "1"),("2", "2"));
+ComboBox vld06=vld_file.vld06, tabIndex=3, not null, required, items=(("2", "2"),("3", "3"),("4", "4"),("5", "5"));
+ButtonEdit vld14=vld_file.vld14, action=controlp, tabIndex=8, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+ComboBox vld10=vld_file.vld10, tabIndex=11, not null, required, items=(("1", "1"),("2", "2"),("3", "3"));
+ComboBox vld11=vld_file.vld11, tabIndex=12, not null, required, items=(("1", "1"),("2", "2"));
+DateEdit vld12=vld_file.vld12, tabIndex=13, noEntry;
+Group group1:group1, text="DataSource";
+CheckBox vld07=vld_file.vld07, tabIndex=1, text="vld07", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vld08=vld_file.vld08, tabIndex=9, text="vld08", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vld09=vld_file.vld09, tabIndex=10, text="vld09", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vld_file.vld01,vld_file.vld02,vld_file.vld03,vld_file.vld04,vld_file.vld05,vld_file.vld06,vld_file.vld14,vld_file.vld10,vld_file.vld11,vld_file.vld12,vld_file.vld07,vld_file.vld08,vld_file.vld09)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,123 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/askt004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"askt004")
+VBox VBox1
+Folder pc2
+Page page01(text="Main")
+HBox HBox1
+Grid gr5
+{
+ zdnum         [slc01                      ]
+ knum          [slc02                      ]
+ kname         [ima02                      ]
+ gg            [ima021                     ]
+ Size Code     [slc09          ]
+}
+END -- gr5
+Grid gr6
+{
+ date  [slc03       ]
+ cust  [slc07       ]
+ sum   [slc08       ]
+
+
+}
+END -- gr6
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr7
+{
+ Record Owner        [slcuser    ] Last Modified by    [slcmodu    ]
+ Department          [slcgrup    ] Create/Modify Date  [slcdate    ]
+ Record Orig.        [slcoriu    ]
+ Dept Orig.          [slcorig    ]
+}
+END -- gr7
+END -- info
+END -- pc2
+Table s_sld
+{
+[sld0|sld05     |bol02        |sld06        |slb02         |sld04         |sld07     |k01        |k02        |k03        |k04        |k05        |k06        |k07        |k08        |k09        |k10        |k11        |k12        |k13        |k14        |k15        |k16        |k17        |k18        |k19        |k20        |sld10          |sld11        ]
+[sld0|sld05     |bol02        |sld06        |slb02         |sld04         |sld07     |k01        |k02        |k03        |k04        |k05        |k06        |k07        |k08        |k09        |k10        |k11        |k12        |k13        |k14        |k15        |k16        |k17        |k18        |k19        |k20        |sld10          |sld11        ]
+[sld0|sld05     |bol02        |sld06        |slb02         |sld04         |sld07     |k01        |k02        |k03        |k04        |k05        |k06        |k07        |k08        |k09        |k10        |k11        |k12        |k13        |k14        |k15        |k16        |k17        |k18        |k19        |k20        |sld10          |sld11        ]
+[sld0|sld05     |bol02        |sld06        |slb02         |sld04         |sld07     |k01        |k02        |k03        |k04        |k05        |k06        |k07        |k08        |k09        |k10        |k11        |k12        |k13        |k14        |k15        |k16        |k17        |k18        |k19        |k20        |sld10          |sld11        ]
+[sld0|sld05     |bol02        |sld06        |slb02         |sld04         |sld07     |k01        |k02        |k03        |k04        |k05        |k06        |k07        |k08        |k09        |k10        |k11        |k12        |k13        |k14        |k15        |k16        |k17        |k18        |k19        |k20        |sld10          |sld11        ]
+[sld0|sld05     |bol02        |sld06        |slb02         |sld04         |sld07     |k01        |k02        |k03        |k04        |k05        |k06        |k07        |k08        |k09        |k10        |k11        |k12        |k13        |k14        |k15        |k16        |k17        |k18        |k19        |k20        |sld10          |sld11        ]
+[sld0|sld05     |bol02        |sld06        |slb02         |sld04         |sld07     |k01        |k02        |k03        |k04        |k05        |k06        |k07        |k08        |k09        |k10        |k11        |k12        |k13        |k14        |k15        |k16        |k17        |k18        |k19        |k20        |sld10          |sld11        ]
+[sld0|sld05     |bol02        |sld06        |slb02         |sld04         |sld07     |k01        |k02        |k03        |k04        |k05        |k06        |k07        |k08        |k09        |k10        |k11        |k12        |k13        |k14        |k15        |k16        |k17        |k18        |k19        |k20        |sld10          |sld11        ]
+[sld0|sld05     |bol02        |sld06        |slb02         |sld04         |sld07     |k01        |k02        |k03        |k04        |k05        |k06        |k07        |k08        |k09        |k10        |k11        |k12        |k13        |k14        |k15        |k16        |k17        |k18        |k19        |k20        |sld10          |sld11        ]
+[sld0|sld05     |bol02        |sld06        |slb02         |sld04         |sld07     |k01        |k02        |k03        |k04        |k05        |k06        |k07        |k08        |k09        |k10        |k11        |k12        |k13        |k14        |k15        |k16        |k17        |k18        |k19        |k20        |sld10          |sld11        ]
+
+}
+END -- s_sld
+Grid gr8
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr8
+END -- VBox1
+END -- askt004
+
+TABLES
+sld_file,
+slc_file
+ATTRIBUTES
+ButtonEdit slc01=slc_file.slc01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit slc02=slc_file.slc02, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=4, noEntry;
+ButtonEdit slc09=slc_file.slc09, action=controlp, tabIndex=5, image="zoom";
+DateEdit slc03=slc_file.slc03, tabIndex=6;
+ButtonEdit slc07=slc_file.slc07, action=controlp, tabIndex=7, image="zoom";
+Edit slc08=slc_file.slc08, tabIndex=8;
+Edit slcuser=slc_file.slcuser, tabIndex=9, noEntry;
+Edit slcmodu=slc_file.slcmodu, tabIndex=10, noEntry;
+Edit slcgrup=slc_file.slcgrup, tabIndex=11, noEntry;
+DateEdit slcdate=slc_file.slcdate, tabIndex=12, noEntry;
+Edit slcoriu=slc_file.slcoriu, tabIndex=501, noEntry;
+Edit slcorig=slc_file.slcorig, tabIndex=502, noEntry;
+Edit sld0=sld_file.sld03, tabIndex=13, title="XC";
+ButtonEdit sld05=sld_file.sld05, action=controlp, tabIndex=14, title="Part", not null, required, image="zoom";
+Edit bol02=formonly.bol02 type CHAR, tabIndex=15, title="Partname", noEntry;
+ButtonEdit sld06=sld_file.sld06, action=controlp, tabIndex=16, title="DF", image="zoom";
+Edit slb02=formonly.slb02 type CHAR, tabIndex=17, title="DFSM", noEntry;
+Edit sld04=sld_file.sld04, tabIndex=18, title="Partsx";
+ComboBox sld07=sld_file.sld07, tabIndex=19, title="BW", not null, required, queryEditable, items=(("1", %"HEN"),("2", %"ZHI"));
+Edit k01=formonly.k01 type CHAR, tabIndex=20, title="k01";
+Edit k02=formonly.k02 type CHAR, tabIndex=21, title="k02";
+Edit k03=formonly.k03 type CHAR, tabIndex=22, title="k03";
+Edit k04=formonly.k04 type CHAR, tabIndex=23, title="k04";
+Edit k05=formonly.k05 type CHAR, tabIndex=24, title="k05";
+Edit k06=formonly.k06 type CHAR, tabIndex=25, title="k06";
+Edit k07=formonly.k07 type CHAR, tabIndex=26, title="k07";
+Edit k08=formonly.k08 type CHAR, tabIndex=27, title="k08";
+Edit k09=formonly.k09 type CHAR, tabIndex=28, title="k09";
+Edit k10=formonly.k10 type CHAR, tabIndex=29, title="k10";
+Edit k11=formonly.k11 type CHAR, tabIndex=30, title="k11";
+Edit k12=formonly.k12 type CHAR, tabIndex=31, title="k12";
+Edit k13=formonly.k13 type CHAR, tabIndex=32, title="k13";
+Edit k14=formonly.k14 type CHAR, tabIndex=33, title="k14";
+Edit k15=formonly.k15 type CHAR, tabIndex=34, title="k15";
+Edit k16=formonly.k16 type CHAR, tabIndex=35, title="k16";
+Edit k17=formonly.k17 type CHAR, tabIndex=36, title="k17";
+Edit k18=formonly.k18 type CHAR, tabIndex=37, title="k18";
+Edit k19=formonly.k19 type CHAR, tabIndex=38, title="k19";
+Edit k20=formonly.k20 type CHAR, tabIndex=39, title="k20";
+Edit sld10=sld_file.sld10, tabIndex=40, title="GC";
+Edit sld11=sld_file.sld11, tabIndex=41, title="Meno";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=42, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=43, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sld(sld_file.sld03,sld_file.sld05,formonly.bol02,sld_file.sld06,formonly.slb02,sld_file.sld04,sld_file.sld07,formonly.k01,formonly.k02,formonly.k03,formonly.k04,formonly.k05,formonly.k06,formonly.k07,formonly.k08,formonly.k09,formonly.k10,formonly.k11,formonly.k12,formonly.k13,formonly.k14,formonly.k15,formonly.k16,formonly.k17,formonly.k18,formonly.k19,formonly.k20,sld_file.sld10,sld_file.sld11)
+SCREEN RECORD Undefined(slc_file.slc01,slc_file.slc02,formonly.ima02,formonly.ima021,slc_file.slc09,slc_file.slc03,slc_file.slc07,slc_file.slc08,slc_file.slcuser,slc_file.slcmodu,slc_file.slcgrup,slc_file.slcdate,slc_file.slcoriu,slc_file.slcorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

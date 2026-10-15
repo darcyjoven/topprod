@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi009.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi009")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr587
+{
+ Version             [bha01     ]
+ Year                [bha02     ]
+ Expense Item        [bha03     ] [bgs02               ]
+ Month Base          [bha04     ]
+}
+END -- gr587
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr588
+{
+ Record Owner        [bhauser   ]   Last Modified by    [bhamodu   ]
+ Department          [bhagrup   ]   Create/Modify Date  [bhadate   ]
+ Record Orig.        [bhaoriu   ]
+ Dept Orig.          [bhaorig   ]
+}
+END -- gr588
+END -- info
+END -- folder01
+Table s_bhb
+{
+[bhb04           |bgs02_1   |bhb05          |bhb06              ]
+[bhb04           |bgs02_1   |bhb05          |bhb06              ]
+[bhb04           |bgs02_1   |bhb05          |bhb06              ]
+[bhb04           |bgs02_1   |bhb05          |bhb06              ]
+[bhb04           |bgs02_1   |bhb05          |bhb06              ]
+[bhb04           |bgs02_1   |bhb05          |bhb06              ]
+[bhb04           |bgs02_1   |bhb05          |bhb06              ]
+[bhb04           |bgs02_1   |bhb05          |bhb06              ]
+[bhb04           |bgs02_1   |bhb05          |bhb06              ]
+[bhb04           |bgs02_1   |bhb05          |bhb06              ]
+
+}
+END -- s_bhb
+Grid gr589
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr589
+END -- VBox1
+END -- abgi009
+
+TABLES
+bhb_file,
+bha_file
+ATTRIBUTES
+Edit bha01=bha_file.bha01, tabIndex=1;
+Edit bha02=bha_file.bha02, tabIndex=2, not null, required;
+ButtonEdit bha03=bha_file.bha03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Expense Item";
+Edit bgs02=formonly.bgs02 type CHAR, tabIndex=4, noEntry;
+Edit bha04=bha_file.bha04, tabIndex=5, not null, required;
+Edit bhauser=bha_file.bhauser, tabIndex=6, noEntry;
+Edit bhamodu=bha_file.bhamodu, tabIndex=7, noEntry;
+Edit bhagrup=bha_file.bhagrup, tabIndex=8, noEntry;
+Edit bhadate=bha_file.bhadate, tabIndex=9, noEntry;
+Edit bhaoriu=bha_file.bhaoriu, tabIndex=501, noEntry;
+Edit bhaorig=bha_file.bhaorig, tabIndex=502, noEntry;
+ButtonEdit bhb04=bhb_file.bhb04, action=controlp, tabIndex=10, title="Original Item", not null, required, image="zoom", comment="<^P>Qry Expense Item";
+Edit bgs02_1=formonly.bgs02_1 type CHAR, tabIndex=11, title="Name", noEntry;
+ComboBox bhb05=bhb_file.bhb05, tabIndex=12, title="Reverse Type", not null, required, items=(("1", %"Fixed Amount"),("2", %"Ratio"));
+Edit bhb06=bhb_file.bhb06, tabIndex=13, title="Reverse % or Amount", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=14, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bhb(bhb_file.bhb04,formonly.bgs02_1,bhb_file.bhb05,bhb_file.bhb06)
+SCREEN RECORD Undefined(bha_file.bha01,bha_file.bha02,bha_file.bha03,formonly.bgs02,bha_file.bha04,bha_file.bhauser,bha_file.bhamodu,bha_file.bhagrup,bha_file.bhadate,bha_file.bhaoriu,bha_file.bhaorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi006.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apmi006")
+VBox vb5
+Folder pc8
+Page Page14(text=%"Main")
+Grid gr10
+{
+
+  Vender Classification[ppc01            ]
+  Description          [pmy02                            ]
+
+}
+END -- gr10
+END -- Page14
+END -- pc8
+Table s_ppc
+{
+[ppc02     |ppa03                   |ppc03      ]
+[ppc02     |ppa03                   |ppc03      ]
+[ppc02     |ppa03                   |ppc03      ]
+[ppc02     |ppa03                   |ppc03      ]
+[ppc02     |ppa03                   |ppc03      ]
+}
+END -- s_ppc
+Grid gr4
+{
+ ---------- Rows [cnt   ] ----------
+
+
+}
+END -- gr4
+END -- vb5
+END -- apmi006
+
+TABLES
+ppc_file,
+ppa_file
+ATTRIBUTES
+ButtonEdit ppc01=ppc_file.ppc01, action=CONTROLP, tabIndex=2, image="zoom";
+Edit pmy02=formonly.pmy02 type CHAR, tabIndex=1, noEntry;
+ButtonEdit ppc02=ppc_file.ppc02, action=controlp, tabIndex=3, title="Code", image="zoom";
+Edit ppa03=ppa_file.ppa03, tabIndex=4, title="Description", noEntry;
+Edit ppc03=ppc_file.ppc03, tabIndex=5, title="Weights";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ppc(ppc_file.ppc02,ppa_file.ppa03,ppc_file.ppc03)
+SCREEN RECORD Undefined(ppc_file.ppc01,formonly.pmy02,formonly.cnt)
+END -- INSTRUCTIONS
+

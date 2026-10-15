@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq906.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq906")
+VBox vb9
+Folder folder01
+Page page01(text="Main")
+Grid gr3369
+{
+ Book No.            [aag00]
+ Account NO.         [aag01                       ]
+ Account Name        [aag02                       ]
+ Start date          [bdate                       ]
+ Ending date         [edate                       ]
+}
+END -- gr3369
+END -- page01
+END -- folder01
+Table s_aea
+{
+[aea02     |aba05   |aea03       |abb04     |aba06  |abb24 |abb25            |abb07f_1         |abb07_1          |abb07f_2          |abb07_2          |b                 ]
+[aea02     |aba05   |aea03       |abb04     |aba06  |abb24 |abb25            |abb07f_1         |abb07_1          |abb07f_2          |abb07_2          |b                 ]
+[aea02     |aba05   |aea03       |abb04     |aba06  |abb24 |abb25            |abb07f_1         |abb07_1          |abb07f_2          |abb07_2          |b                 ]
+[aea02     |aba05   |aea03       |abb04     |aba06  |abb24 |abb25            |abb07f_1         |abb07_1          |abb07f_2          |abb07_2          |b                 ]
+[aea02     |aba05   |aea03       |abb04     |aba06  |abb24 |abb25            |abb07f_1         |abb07_1          |abb07f_2          |abb07_2          |b                 ]
+[aea02     |aba05   |aea03       |abb04     |aba06  |abb24 |abb25            |abb07f_1         |abb07_1          |abb07f_2          |abb07_2          |b                 ]
+[aea02     |aba05   |aea03       |abb04     |aba06  |abb24 |abb25            |abb07f_1         |abb07_1          |abb07f_2          |abb07_2          |b                 ]
+[aea02     |aba05   |aea03       |abb04     |aba06  |abb24 |abb25            |abb07f_1         |abb07_1          |abb07f_2          |abb07_2          |b                 ]
+[aea02     |aba05   |aea03       |abb04     |aba06  |abb24 |abb25            |abb07f_1         |abb07_1          |abb07f_2          |abb07_2          |b                 ]
+[aea02     |aba05   |aea03       |abb04     |aba06  |abb24 |abb25            |abb07f_1         |abb07_1          |abb07f_2          |abb07_2          |b                 ]
+
+}
+END -- s_aea
+Grid gr3370
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr3370
+END -- vb9
+END -- gglq906
+
+TABLES
+aag_file,
+aea_file
+ATTRIBUTES
+Edit aag00=aag_file.aag00, tabIndex=18;
+Edit aag01=aag_file.aag01, tabIndex=1, not null, required;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=3;
+DateEdit edate=formonly.edate type CHAR, tabIndex=4;
+DateEdit aea02=aea_file.aea02, tabIndex=5, title="Voucher/D";
+DateEdit aba05=formonly.aba05 type CHAR, tabIndex=6, title="Entry/D", noEntry;
+Edit aea03=formonly.aea03 type CHAR, tabIndex=7, title="Voucher NO.", noEntry;
+Edit abb04=formonly.abb04 type CHAR, tabIndex=8, title="Memo", noEntry;
+Edit aba06=formonly.aba06 type CHAR, tabIndex=9, title="Source", noEntry;
+Edit abb24=formonly.abb24 type CHAR, tabIndex=10, title="Curr.", noEntry;
+Edit abb25=formonly.abb25 type CHAR, tabIndex=11, title="Ex.Rate", noEntry;
+Edit abb07f_1=formonly.abb07f_1 type CHAR, tabIndex=12, title="Debit O.C.Amount", noEntry;
+Edit abb07_1=formonly.abb07_1 type CHAR, tabIndex=13, title="Debit", noEntry;
+Edit abb07f_2=formonly.abb07f_2 type CHAR, tabIndex=14, title="Credit O.C.Amount", noEntry;
+Edit abb07_2=formonly.abb07_2 type CHAR, tabIndex=15, title="Credit", noEntry;
+Edit b=formonly.b type CHAR, tabIndex=16, title="Memo", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aea(aea_file.aea02,formonly.aba05,formonly.aea03,formonly.abb04,formonly.aba06,formonly.abb24,formonly.abb25,formonly.abb07f_1,formonly.abb07_1,formonly.abb07f_2,formonly.abb07_2,formonly.b)
+SCREEN RECORD Undefined(aag_file.aag00,aag_file.aag01,formonly.aag02,formonly.bdate,formonly.edate,formonly.cnt)
+END -- INSTRUCTIONS
+

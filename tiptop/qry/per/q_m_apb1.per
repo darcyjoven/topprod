@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_m_apb1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_m_apb1")
+Grid gr3839
+{
+ <T s_apb1                                                                                   >
+ [check  |apb01            |apb02    |apb12       |apb27       |apb24          |apb10       ]
+ [check  |apb01            |apb02    |apb12       |apb27       |apb24          |apb10       ]
+ [check  |apb01            |apb02    |apb12       |apb27       |apb24          |apb10       ]
+ [check  |apb01            |apb02    |apb12       |apb27       |apb24          |apb10       ]
+ [check  |apb01            |apb02    |apb12       |apb27       |apb24          |apb10       ]
+ [check  |apb01            |apb02    |apb12       |apb27       |apb24          |apb10       ]
+ [check  |apb01            |apb02    |apb12       |apb27       |apb24          |apb10       ]
+ [check  |apb01            |apb02    |apb12       |apb27       |apb24          |apb10       ]
+ [check  |apb01            |apb02    |apb12       |apb27       |apb24          |apb10       ]
+ [check  |apb01            |apb02    |apb12       |apb27       |apb24          |apb10       ]
+ <                                                                                           >
+
+}
+END -- gr3839
+END -- q_rvv
+
+TABLES
+apb_file
+ATTRIBUTES
+Table s_apb1:s_apb1;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit apb01=apb_file.apb01, tabIndex=2, title="Transaction No.", noEntry, color = yellow;
+Edit apb02=apb_file.apb02, tabIndex=3, title="Line No.", noEntry, color = yellow;
+Edit apb12=apb_file.apb12, tabIndex=4, title="Item No.", noEntry, color = yellow;
+Edit apb27=apb_file.apb27, tabIndex=5, title="Item Name", noEntry, color = yellow;
+Edit apb24=apb_file.apb24, tabIndex=6, title="Trans. Curr.", noEntry, color = yellow;
+Edit apb10=apb_file.apb10, tabIndex=7, title=%"Local Curr.";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apb1(formonly.check,apb_file.apb01,apb_file.apb02,apb_file.apb12,apb_file.apb27,apb_file.apb24,apb_file.apb10)
+END -- INSTRUCTIONS
+

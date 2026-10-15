@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmq101")
+VBox VBox1
+Folder pc769
+Page page01(text="Main")
+VBox VBox2
+Table s_nmd
+{
+[nmd03       |nmd02     |nmd07        |nmd05    |nmd04               |nmd08   |nmd24               |nmd12      ]
+[nmd03       |nmd02     |nmd07        |nmd05    |nmd04               |nmd08   |nmd24               |nmd12      ]
+[nmd03       |nmd02     |nmd07        |nmd05    |nmd04               |nmd08   |nmd24               |nmd12      ]
+[nmd03       |nmd02     |nmd07        |nmd05    |nmd04               |nmd08   |nmd24               |nmd12      ]
+[nmd03       |nmd02     |nmd07        |nmd05    |nmd04               |nmd08   |nmd24               |nmd12      ]
+[nmd03       |nmd02     |nmd07        |nmd05    |nmd04               |nmd08   |nmd24               |nmd12      ]
+[nmd03       |nmd02     |nmd07        |nmd05    |nmd04               |nmd08   |nmd24               |nmd12      ]
+[nmd03       |nmd02     |nmd07        |nmd05    |nmd04               |nmd08   |nmd24               |nmd12      ]
+[nmd03       |nmd02     |nmd07        |nmd05    |nmd04               |nmd08   |nmd24               |nmd12      ]
+[nmd03       |nmd02     |nmd07        |nmd05    |nmd04               |nmd08   |nmd24               |nmd12      ]
+
+}
+END -- s_nmd
+Grid gr4139
+{
+ [dummy01                         ] Number of Checks    [cnt2                ] [dummy02                    ] Check Amount        [cnt3                ]
+
+}
+END -- gr4139
+END -- VBox2
+END -- page01
+END -- pc769
+Grid gr4140
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4140
+END -- VBox1
+END -- anmq101
+
+ATTRIBUTES
+Edit nmd03=formonly.nmd03 type CHAR, tabIndex=1, title="Paying Bank";
+Edit nmd02=formonly.nmd02 type CHAR, tabIndex=2, title="Note#";
+DateEdit nmd07=formonly.nmd07 type DATE, tabIndex=3, title="Drawing Date";
+DateEdit nmd05=formonly.nmd05 type DATE, tabIndex=4, title="Due Date";
+Edit nmd04=formonly.nmd04 type CHAR, tabIndex=5, title="Face Value";
+Edit nmd08=formonly.nmd08 type CHAR, tabIndex=6, title="Vender#";
+Edit nmd24=formonly.nmd24 type CHAR, tabIndex=7, title="Vender Abbreviation", noEntry;
+ComboBox nmd12=formonly.nmd12 type CHAR, tabIndex=8, title="Note Status", queryEditable, items=(("1", %"Draw"),("6", %"Withdraw"),("7", %"Return"),("8", %"Cash"),("9", %"Void"),("X", %"Issue"));
+Label dummy01:dummy01;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=9, noEntry;
+Label dummy02:dummy02;
+Edit cnt3=formonly.cnt3 type DECIMAL, tabIndex=10, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmd(formonly.nmd03,formonly.nmd02,formonly.nmd07,formonly.nmd05,formonly.nmd04,formonly.nmd08,formonly.nmd24,formonly.nmd12)
+SCREEN RECORD Undefined(formonly.cnt2,formonly.cnt3,formonly.cnt)
+END -- INSTRUCTIONS
+

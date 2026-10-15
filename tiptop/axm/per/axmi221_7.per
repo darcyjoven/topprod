@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi221_7.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmi221_7")
+VBox VBox1
+Folder pc477
+Page page01(text="Page01")
+Table s_plant
+{
+[plant                   ]
+[plant                   ]
+[plant                   ]
+[plant                   ]
+[plant                   ]
+[plant                   ]
+[plant                   ]
+[plant                   ]
+[plant                   ]
+[plant                   ]
+
+}
+END -- s_plant
+END -- page01
+END -- pc477
+END -- VBox1
+END -- axmi221_7
+
+ATTRIBUTES
+ButtonEdit plant=formonly.plant type CHAR, action=controlp, tabIndex=1, title="Please Entry Plant Code", image="zoom", comment="Press<^P>Qry Plant No.";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_plant(formonly.plant)
+END -- INSTRUCTIONS
+

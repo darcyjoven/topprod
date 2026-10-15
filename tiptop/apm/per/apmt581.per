@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt581.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt581")
+Folder pc1019
+Page page01(text="Page01")
+Grid gr5341
+{
+ <G group01                                            >
+  Budget#  [pon66     ][afa02         ]
+  Account# [pon40               ][aag02               ]
+  Dept#    [pon67     ][gem02         ]
+
+ <                                                     >
+
+}
+END -- gr5341
+END -- page01
+END -- pc1019
+END -- apmt581
+
+TABLES
+pon_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit pon66=pon_file.pon66, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Budget#  <^T>Qry Consumed Budget";
+Edit afa02=formonly.afa02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit pon40=pon_file.pon40, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Account No. <^T>Qry Consumed Budget";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit pon67=pon_file.pon67, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Department No. <^T>Qry Consumed Budget";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pon_file.pon66,formonly.afa02,pon_file.pon40,formonly.aag02,pon_file.pon67,formonly.gem02)
+END -- INSTRUCTIONS
+

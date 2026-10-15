@@ -1,0 +1,92 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdq201.per created Wed Jan 23 05:30:37 2008
+-- File created from axdq201.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdq201")
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        GRID gr7797
+        {
+         Item No.            [aa0                 ]
+                             [aa1                           ]
+                             [aa2                           ]
+         Initial Date        [aa3       ]
+         End Date            [aa4       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_sr
+    {
+    [aa5       |aa6               |aa7       |aa8            |aa9            |ab0                     |ab1    |ab2           |ab3                  |ab4                |ab5      |ab6     ]
+    [aa5       |aa6               |aa7       |aa8            |aa9            |ab0                     |ab1    |ab2           |ab3                  |ab4                |ab5      |ab6     ]
+    [aa5       |aa6               |aa7       |aa8            |aa9            |ab0                     |ab1    |ab2           |ab3                  |ab4                |ab5      |ab6     ]
+    [aa5       |aa6               |aa7       |aa8            |aa9            |ab0                     |ab1    |ab2           |ab3                  |ab4                |ab5      |ab6     ]
+    [aa5       |aa6               |aa7       |aa8            |aa9            |ab0                     |ab1    |ab2           |ab3                  |ab4                |ab5      |ab6     ]
+    [aa5       |aa6               |aa7       |aa8            |aa9            |ab0                     |ab1    |ab2           |ab3                  |ab4                |ab5      |ab6     ]
+    [aa5       |aa6               |aa7       |aa8            |aa9            |ab0                     |ab1    |ab2           |ab3                  |ab4                |ab5      |ab6     ]
+    [aa5       |aa6               |aa7       |aa8            |aa9            |ab0                     |ab1    |ab2           |ab3                  |ab4                |ab5      |ab6     ]
+    [aa5       |aa6               |aa7       |aa8            |aa9            |ab0                     |ab1    |ab2           |ab3                  |ab4                |ab5      |ab6     ]
+    [aa5       |aa6               |aa7       |aa8            |aa9            |ab0                     |ab1    |ab2           |ab3                  |ab4                |ab5      |ab6     ]
+    }
+    END -- TABLE
+    GRID gr7798
+    {
+     ------------Total:[ab7           ][ab8           ][ab9           ]----------
+
+    }
+    END -- GRID
+    GRID gr7799
+    {
+     ---------- Rows [ac0   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES ade_file,add_file
+
+ATTRIBUTES
+  EDIT aa0=ade_file.ade03, TABINDEX=1;
+  EDIT aa1=FORMONLY.ima02, NOENTRY, TABINDEX=2;
+  EDIT aa2=FORMONLY.ima021, NOENTRY, TABINDEX=3;
+  DATEEDIT aa3=FORMONLY.bdate, NOT NULL, REQUIRED, TABINDEX=4;
+  DATEEDIT aa4=FORMONLY.edate, NOT NULL, REQUIRED, TABINDEX=5;
+  EDIT aa5=FORMONLY.r TYPE SMALLINT, TABINDEX=6, TITLE="Line No";
+  EDIT aa6=add_file.add01, TABINDEX=7, TITLE="Application No.";
+  EDIT aa7=ade_file.ade02, TABINDEX=8, TITLE="Line No";
+  DATEEDIT aa8=add_file.add02, TABINDEX=9, TITLE="Applied Date";
+  EDIT aa9=ade_file.ade06, TABINDEX=10, TITLE="Demand Plant";
+  EDIT ab0=ade_file.ade07, TABINDEX=11, TITLE="Transfer-in Warehouse";
+  EDIT ab1=ade_file.ade04, TABINDEX=12, TITLE="Unit";
+  EDIT ab2=ade_file.ade05, TABINDEX=13, TITLE="Applied Qty";
+  EDIT ab3=ade_file.ade12, TABINDEX=14, TITLE="Transfered-out Qty";
+  EDIT ab4=ade_file.ade15, TABINDEX=15, TITLE="Transfered-in Qty";
+  CHECKBOX ab5=ade_file.ade13, TEXT="Close", VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=16, TITLE="Close?";
+  EDIT ab6=ade_file.ade14, TABINDEX=17, TITLE="Close DD";
+  EDIT ab7=FORMONLY.ade05_t TYPE SMALLINT, NOENTRY, TABINDEX=18;
+  EDIT ab8=FORMONLY.ade12_t TYPE SMALLINT, NOENTRY, TABINDEX=19;
+  EDIT ab9=FORMONLY.ade15_t TYPE SMALLINT, NOENTRY, TABINDEX=20;
+  EDIT ac0=FORMONLY.cnt TYPE SMALLINT, TABINDEX=21;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_sr (FORMONLY.r, add_file.add01, ade_file.ade02, add_file.add02, ade_file.ade06, ade_file.ade07, ade_file.ade04, ade_file.ade05, ade_file.ade12, ade_file.ade15, ade_file.ade13, ade_file.ade14)
+END

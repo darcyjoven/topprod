@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/saimi100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artp101_1")
+VBox VBox1
+Group Group1(text=%"QBE")
+Grid Grid1
+{
+
+  Product strategy   [rtd01              ]
+
+}
+END -- Grid1
+END -- Group1
+Group Group2(text=%"Input")
+Grid Grid2
+{
+
+  Tax Type           [rte08              ]
+ [rte04     ]  [rte05       ] [rte06       ]
+
+}
+END -- Grid2
+END -- Group2
+END -- VBox1
+END -- sarti120
+
+TABLES
+rte_file,
+rtd_file
+ATTRIBUTES
+ButtonEdit rtd01=rtd_file.rtd01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit rte08=rte_file.rte08, action=controlp, tabIndex=1, not null, required, image="zoom";
+CheckBox rte04=formonly.rte04 type VARCHAR, tabIndex=1, text=%"rte04", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rte05=formonly.rte05 type VARCHAR, tabIndex=1, text=%"rte05", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rte06=formonly.rte06 type VARCHAR, tabIndex=1, text=%"rte06", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rtd_file.rtd01,rte_file.rte08,formonly.rte04,formonly.rte05,formonly.rte06)
+END -- INSTRUCTIONS
+

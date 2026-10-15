@@ -1,0 +1,257 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi610")
+VBox vb3
+Folder pc931
+Page page01(text="Main")
+HBox hb3
+Grid gr4870
+{
+ Apply Type/No.        [pmca00     ][pmcano                      ]
+ Vender No.            [pmca01     ]
+ Abbreviation          [pmca03     ]
+ Full Name             [pmca081                                  ]
+                       [pmca082                                  ]
+ Uniform#              [pmca24               ][pmca903           ]
+ Data Property         [pmca14     ]
+
+
+
+}
+END -- gr4870
+Grid gr4871
+{
+ Vender Classification [pmca02     ] [pmy02               ]
+ Vender Property       [pmca30     ]
+ Paying Vender         [pmca04     ] [pmca03_d   ]
+ Delivery Vender       [pmca901    ] [pmca03_e   ]
+ Current Status        [pmca05     ] [pmca23                      ]
+                       [imgmksg]
+                       [       ]
+
+
+
+}
+END -- gr4871
+END -- hb3
+END -- page01
+Page info(text="Info")
+Grid gr4872
+{
+ Record Owner        [pmcauser   ]  Last Modified by    [pmcamodu   ] Data Valid Code     [pmcaacti  ]
+ Department          [pmcagrup   ]  Create/Modify Date  [pmcadate     ]
+ Record Orig.        [pmcaoriu   ]
+ Dept Orig.          [pmcaorig   ]
+
+}
+END -- gr4872
+END -- info
+END -- pc931
+Folder pc932
+Page page02(text="Used Setting")
+Grid gr4873
+{
+ <G group02                                                          ><G group03                            >
+  Payment Terms         [pmca17     ] [pma02               ]           [pmca48                             ]
+  Price Terms           [pmca49     ] [pnz02                         ]  Submit Promise          [pmca902   ]
+  Used Currency         [pmca22     ] [azi02               ]            Note Recipt             [pmca27    ]
+  Used Tax              [pmca47     ] [gec02               ]            Cash Note Due Date      [pmca50    ]
+  Used Commission       [pmca54     ]                                   Term Note Due Date      [pmca51    ]
+  Used Language         [pmca911    ]                                   Charge(Postage/Transfer)[pmca28    ]
+                                                                        Incl./Excl. charges     [pmca281   ]
+
+
+
+
+
+
+
+
+ <                                                                   ><                                     >
+
+}
+END -- gr4873
+END -- page02
+Page page03(text="Vender Information")
+VBox vb1
+Grid gr4874
+{
+ <G group04                                               ><G group05                                >
+  Local #       [pmca908    ] [geo02          ]
+  Country #     [pmca07     ] [geb02          ]              Account         [pmca56               ]
+  Area Code     [pmca06     ] [gea02          ]              Remitting Bank  [pmca55               ]
+  ZIP Code      [pmca904    ]                                Phone           [pmca10               ]
+  Address       [pmca091                        ]            Fax             [pmca11               ]
+                [pmca092                        ]            Telx            [pmca12               ]
+                [pmca093                        ]
+                [pmca094                        ]
+                [pmca095                        ]
+  Invoice       [pmca52                                   ]
+  Mail          [pmca53                                   ]
+  Ship Address  [pmca15     ]   Bill Address  [pmca16     ]
+
+
+
+
+
+
+
+
+
+ <                                                        ><                                         >
+
+}
+END -- gr4874
+END -- vb1
+END -- page03
+Page Page05(text=%"VMI Information")
+Grid gr17
+{
+ <G gb6                                             ><G gb5                                                      >
+ [pmca914           ]                                 VMI Settling Receipt             [pmca919                 ]
+  VMI Store               [pmca915                 ]  VMI Settling Stock-In Note       [pmca920                 ]
+  VMI Location            [pmca916                 ]  VMI Settling Return Note         [pmca921                 ]
+  VMI Settling Store      [pmca917                 ]  VMI Misc. Issue                  [pmca922                 ]
+  VMI Settling Location   [pmca918                 ]  VMI Misc. Receipt                [pmca923                 ]
+ <                                                  ><                                                           >
+
+}
+END -- gr17
+END -- Page05
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[pmcaud01             ]  userdefined_field07[pmcaud07          ]  userdefined_field10[pmcaud10          ]
+                    [                     ]  userdefined_field08[pmcaud08          ]  userdefined_field11[pmcaud11          ]
+ userdefined_field02[pmcaud02          ]     userdefined_field09[pmcaud09          ]  userdefined_field12[pmcaud12          ]
+ userdefined_field03[pmcaud03          ]                                              userdefined_field13[pmcaud13          ]
+ userdefined_field04[pmcaud04          ]                                              userdefined_field14[pmcaud14          ]
+ userdefined_field05[pmcaud05          ]                                              userdefined_field15[pmcaud15          ]
+ userdefined_field06[pmcaud06          ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc932
+Grid gr4875
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+
+}
+END -- gr4875
+END -- vb3
+END -- apmi610
+
+TABLES
+pmca_file
+ATTRIBUTES
+ComboBox pmca00=pmca_file.pmca00, tabIndex=1, not null, required, queryEditable, items=(("I", "Insert"),("U", "Update"));
+ButtonEdit pmcano=pmca_file.pmcano, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Documents";
+ButtonEdit pmca01=pmca_file.pmca01, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Vender no. Terms";
+ButtonEdit pmca03=pmca_file.pmca03, action=update_item, tabIndex=4, image="pen", comment="Maintain field data in Multi. Language";
+Edit pmca081=pmca_file.pmca081, tabIndex=5;
+Edit pmca082=pmca_file.pmca082, tabIndex=6;
+Edit pmca24=pmca_file.pmca24, tabIndex=7;
+CheckBox pmca903=pmca_file.pmca903, tabIndex=8, text="Affiliate?  ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox pmca14=pmca_file.pmca14, tabIndex=9, not null, required, queryEditable, comment="1.Pur Vender 2.Misc Vender 3.Employee 4.Agent 5.Advertisement Agent 6.Agent Cust ", items=(("1", "Pur Vender"),("2", "Misc Vender"),("3", "Employee"),("4", "Agent"),("5", "Advertisement Agent"),("6", "Agent Cust"));
+ButtonEdit pmca02=pmca_file.pmca02, action=controlp, tabIndex=10, image="zoom", comment="<^P>Query Vender Classification Code";
+Edit pmy02=formonly.pmy02 type CHAR, tabIndex=11;
+ComboBox pmca30=pmca_file.pmca30, tabIndex=12, not null, required, queryEditable, comment="1.Supplier 2.Payer Vender 3.Both", items=(("1", "Supplier"),("2", "Payer Vender"),("3", "Both"));
+ButtonEdit pmca04=pmca_file.pmca04, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Paying Vender, <^Y>Create Paying Vender";
+Edit pmca03_d=formonly.pmca03_d type CHAR, tabIndex=14;
+ButtonEdit pmca901=pmca_file.pmca901, action=controlp, tabIndex=15, image="zoom", comment="<^P>Query ";
+Edit pmca03_e=formonly.pmca03_e type CHAR, tabIndex=16;
+ComboBox pmca05=pmca_file.pmca05, tabIndex=17, noEntry, not null, required, queryEditable, items=(("0", "Issue"),("1", "Approved"),("2", "Carried"),("S", "Approving"),("R", "Approval rejected!"),("W", "Withdraw"));
+CheckBox pmca23=pmca_file.pmca23, tabIndex=18, text="Approve?", noEntry, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit pmcauser=pmca_file.pmcauser, tabIndex=20, noEntry;
+Edit pmcamodu=pmca_file.pmcamodu, tabIndex=21, noEntry;
+Edit pmcaacti=pmca_file.pmcaacti, tabIndex=22, noEntry, upShift;
+Edit pmcagrup=pmca_file.pmcagrup, tabIndex=23, noEntry;
+DateEdit pmcadate=pmca_file.pmcadate, tabIndex=24, noEntry;
+Edit pmcaoriu=pmca_file.pmcaoriu, tabIndex=501, noEntry;
+Edit pmcaorig=pmca_file.pmcaorig, tabIndex=502, noEntry;
+Group group02:group02;
+ButtonEdit pmca17=pmca_file.pmca17, action=controlp, tabIndex=25, not null, required, image="zoom", comment="<^P>Qry Payment Terms";
+Edit pma02=formonly.pma02 type CHAR, tabIndex=26, noEntry;
+ButtonEdit pmca49=pmca_file.pmca49, action=controlp, tabIndex=27, not null, required, image="zoom", comment="<^P>Qry Price Terms";
+Edit pnz02=formonly.pnz02 type CHAR, tabIndex=28, noEntry;
+ButtonEdit pmca22=pmca_file.pmca22, action=controlp, tabIndex=29, not null, required, image="zoom", comment="<^P>Qry Currency ";
+Edit azi02=formonly.azi02 type CHAR, tabIndex=30;
+ButtonEdit pmca47=pmca_file.pmca47, action=controlp, tabIndex=31, not null, required, image="zoom", comment="<^P>Qry Tax Type ";
+Edit gec02=formonly.gec02 type CHAR, tabIndex=32;
+ButtonEdit pmca54=pmca_file.pmca54, action=controlp, tabIndex=33, image="zoom", comment="<^P>Qry Details";
+ComboBox pmca911=pmca_file.pmca911, tabIndex=34, not null, required, queryEditable, comment="0.Tradition Chinese 1.English 2.Simply Chinese", items=(("0", "Tradition Chinese"),("1", "English"),("2", "Simply Chinese"));
+Group group03:group03;
+CheckBox pmca48=pmca_file.pmca48, tabIndex=35, text="No Endorsement", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox pmca902=pmca_file.pmca902, tabIndex=36, not null, required, queryEditable, comment="0.Not Need 1.Not Pay 2.Submitted", items=(("0", "Not Need"),("1", "Not Pay"),("2", "Submitted"));
+ComboBox pmca27=pmca_file.pmca27, tabIndex=37, not null, required, queryEditable, comment="1.Mail 2.Take 3.Other", items=(("1", "Mail"),("2", "Take"),("3", "Other"));
+Edit pmca50=pmca_file.pmca50, tabIndex=38;
+Edit pmca51=pmca_file.pmca51, tabIndex=39;
+Edit pmca28=pmca_file.pmca28, tabIndex=40;
+ComboBox pmca281=pmca_file.pmca281, tabIndex=513, default = "0", not null, required, items=(("0", "Incl. charges"),("1", "Excl. charges"));
+Group group04:group04;
+ButtonEdit pmca908=pmca_file.pmca908, action=controlp, tabIndex=41, image="zoom", comment="<^P>Qry Local ";
+Edit geo02=formonly.geo02 type VARCHAR, tabIndex=42, noEntry;
+ButtonEdit pmca07=pmca_file.pmca07, action=controlp, tabIndex=43, image="zoom";
+Edit geb02=formonly.geb02 type VARCHAR, tabIndex=44, noEntry;
+ButtonEdit pmca06=pmca_file.pmca06, action=controlp, tabIndex=45, image="zoom";
+Edit gea02=formonly.gea02 type VARCHAR, tabIndex=46, noEntry;
+Edit pmca904=pmca_file.pmca904, tabIndex=47;
+Edit pmca091=pmca_file.pmca091, tabIndex=48;
+Edit pmca092=pmca_file.pmca092, tabIndex=49;
+Edit pmca093=pmca_file.pmca093, tabIndex=50;
+Edit pmca094=pmca_file.pmca094, tabIndex=51;
+Edit pmca095=pmca_file.pmca095, tabIndex=52;
+Edit pmca52=pmca_file.pmca52, tabIndex=53, comment="Enter Vender Invoice Address";
+Edit pmca53=pmca_file.pmca53, tabIndex=54;
+ButtonEdit pmca15=pmca_file.pmca15, action=controlp, tabIndex=55, image="zoom", comment="<^P>Qry Shipping Address <^Y>Create Delivery Address";
+ButtonEdit pmca16=pmca_file.pmca16, action=controlp, tabIndex=56, image="zoom", comment="<^P>Qry Bill Address  <^Y>Create Bill Address";
+Group group05:group05;
+Edit pmca56=pmca_file.pmca56, tabIndex=57;
+ButtonEdit pmca55=pmca_file.pmca55, action=controlp, tabIndex=58, image="zoom", comment="<^P>Qry All Banks     ";
+Edit pmca10=pmca_file.pmca10, tabIndex=59;
+Edit pmca11=pmca_file.pmca11, tabIndex=60;
+Edit pmca12=pmca_file.pmca12, tabIndex=61;
+Group gb6:gb6;
+CheckBox pmca914=pmca_file.pmca914, tabIndex=503, default = "N", text="VMI Magagement", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit pmca915=pmca_file.pmca915, action=controlp, tabIndex=504, not null, required, image="zoom";
+ButtonEdit pmca916=pmca_file.pmca916, action=controlp, tabIndex=505, not null, required, image="zoom";
+ButtonEdit pmca917=pmca_file.pmca917, action=controlp, tabIndex=506, not null, required, image="zoom";
+ButtonEdit pmca918=pmca_file.pmca918, action=controlp, tabIndex=507, not null, required, image="zoom";
+Group gb5:gb5;
+ButtonEdit pmca919=pmca_file.pmca919, action=controlp, tabIndex=508, not null, required, image="zoom";
+ButtonEdit pmca920=pmca_file.pmca920, action=controlp, tabIndex=509, not null, required, image="zoom";
+ButtonEdit pmca921=pmca_file.pmca921, action=controlp, tabIndex=510, not null, required, image="zoom";
+ButtonEdit pmca922=pmca_file.pmca922, action=controlp, tabIndex=511, not null, required, image="zoom";
+ButtonEdit pmca923=pmca_file.pmca923, action=controlp, tabIndex=512, not null, required, image="zoom";
+TextEdit pmcaud01=pmca_file.pmcaud01, tabIndex=64, stretch=NONE;
+Edit pmcaud07=pmca_file.pmcaud07, tabIndex=65;
+Edit pmcaud10=pmca_file.pmcaud10, tabIndex=73;
+Edit pmcaud08=pmca_file.pmcaud08, tabIndex=67;
+Edit pmcaud11=pmca_file.pmcaud11, tabIndex=75;
+Edit pmcaud02=pmca_file.pmcaud02, tabIndex=69;
+Edit pmcaud09=pmca_file.pmcaud09, tabIndex=70;
+Edit pmcaud12=pmca_file.pmcaud12, tabIndex=77;
+Edit pmcaud03=pmca_file.pmcaud03, tabIndex=72;
+DateEdit pmcaud13=pmca_file.pmcaud13, tabIndex=66;
+Edit pmcaud04=pmca_file.pmcaud04, tabIndex=74;
+DateEdit pmcaud14=pmca_file.pmcaud14, tabIndex=68;
+Edit pmcaud05=pmca_file.pmcaud05, tabIndex=76;
+DateEdit pmcaud15=pmca_file.pmcaud15, tabIndex=71;
+Edit pmcaud06=pmca_file.pmcaud06, tabIndex=78;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=62, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pmca_file.pmca00,pmca_file.pmcano,pmca_file.pmca01,pmca_file.pmca03,pmca_file.pmca081,pmca_file.pmca082,pmca_file.pmca24,pmca_file.pmca903,pmca_file.pmca14,pmca_file.pmca02,formonly.pmy02,pmca_file.pmca30,pmca_file.pmca04,formonly.pmca03_d,pmca_file.pmca901,formonly.pmca03_e,pmca_file.pmca05,pmca_file.pmca23,formonly.imgmksg,pmca_file.pmcauser,pmca_file.pmcamodu,pmca_file.pmcaacti,pmca_file.pmcagrup,pmca_file.pmcadate,pmca_file.pmcaoriu,pmca_file.pmcaorig,pmca_file.pmca17,formonly.pma02,pmca_file.pmca49,formonly.pnz02,pmca_file.pmca22,formonly.azi02,pmca_file.pmca47,formonly.gec02,pmca_file.pmca54,pmca_file.pmca911,pmca_file.pmca48,pmca_file.pmca902,pmca_file.pmca27,pmca_file.pmca50,pmca_file.pmca51,pmca_file.pmca28,pmca_file.pmca908,formonly.geo02,pmca_file.pmca07,formonly.geb02,pmca_file.pmca06,formonly.gea02,pmca_file.pmca904,pmca_file.pmca091,pmca_file.pmca092,pmca_file.pmca093,pmca_file.pmca094,pmca_file.pmca095,pmca_file.pmca52,pmca_file.pmca53,pmca_file.pmca15,pmca_file.pmca16,pmca_file.pmca56,pmca_file.pmca55,pmca_file.pmca10,pmca_file.pmca11,pmca_file.pmca12,pmca_file.pmcaud01,pmca_file.pmcaud07,pmca_file.pmcaud10,pmca_file.pmcaud08,pmca_file.pmcaud11,pmca_file.pmcaud02,pmca_file.pmcaud09,pmca_file.pmcaud12,pmca_file.pmcaud03,pmca_file.pmcaud13,pmca_file.pmcaud04,pmca_file.pmcaud14,pmca_file.pmcaud05,pmca_file.pmcaud15,pmca_file.pmcaud06,formonly.cnt,pmca_file.pmca914,pmca_file.pmca915,pmca_file.pmca916,pmca_file.pmca917,pmca_file.pmca918,pmca_file.pmca919,pmca_file.pmca920,pmca_file.pmca921,pmca_file.pmca922,pmca_file.pmca923,pmca_file.pmca281)
+END -- INSTRUCTIONS
+

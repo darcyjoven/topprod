@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr809.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglr809")
+VBox VBox2
+Grid Grid1
+{
+ <G group1                                                            >
+  Book.No             [bookno              ]
+ <                                                                    >
+}
+END -- Grid1
+Group group01(text="QBE")
+Grid gr2782
+{
+
+ Tran. Code          [aee03               ]
+ Account NO.         [aee01               ]
+ Tran.Code Sequence  [aee02               ]
+ Tran. Code Type     [aee021              ]
+}
+END -- gr2782
+END -- group01
+Group group02(text="INPUT")
+VBox VBox1
+Grid gr2783
+{
+
+ Year                [yyyy                ]
+ Period              [bmm                 ]-[emm                 ]
+ Bugget NO.          [afc01               ]
+
+}
+END -- gr2783
+Grid gr2784
+{
+ <G group04                                                          >
+  [s1                  ][s2                  ]
+ <                                                                   >
+
+}
+END -- gr2784
+Grid gr2785
+{
+ [jp                                                          ]
+ [zero_amt                                                    ]
+ [e                                                           ]
+
+}
+END -- gr2785
+END -- VBox1
+END -- group02
+Grid gr2786
+{
+[more                                                        ]
+
+}
+END -- gr2786
+END -- VBox2
+END -- aglr809
+
+TABLES
+aee_file
+ATTRIBUTES
+Group group1:Group1, text=%"INPUT";
+ButtonEdit bookno=formonly.bookno type CHAR, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+Edit aee03=aee_file.aee03, tabIndex=1;
+ButtonEdit aee01=aee_file.aee01, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit aee02=aee_file.aee02, tabIndex=3;
+ButtonEdit aee021=formonly.aee021 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+Edit yyyy=formonly.yyyy type SMALLINT, tabIndex=5;
+Edit bmm=formonly.bmm type SMALLINT, tabIndex=6;
+Edit emm=formonly.emm type SMALLINT, tabIndex=7;
+ButtonEdit afc01=formonly.afc01 type CHAR, action=controlp, tabIndex=15, image="zoom.png";
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, queryEditable, items=(("1", "Tran. Code"),("2", "Account NO."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=9, queryEditable, items=(("1", "Tran. Code"),("2", "Account NO."));
+CheckBox jp=formonly.jp type CHAR, tabIndex=10, text="Next Page By Tran. Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox zero_amt=formonly.zero_amt type CHAR, tabIndex=11, text="Print Amount = 0 ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=12, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,aee_file.aee03,aee_file.aee01,aee_file.aee02,formonly.aee021,formonly.yyyy,formonly.bmm,formonly.emm,formonly.afc01,formonly.s1,formonly.s2,formonly.jp,formonly.zero_amt,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

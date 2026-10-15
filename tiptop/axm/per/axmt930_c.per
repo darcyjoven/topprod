@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt930_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"cxmt631_c")
+Table s_ogb
+{
+[ogb03   |ogb04              |tqa02        |ogb12      |ogl05     |sub       |ogl07     ]
+[ogb03   |ogb04              |tqa02        |ogb12      |ogl05     |sub       |ogl07     ]
+[ogb03   |ogb04              |tqa02        |ogb12      |ogl05     |sub       |ogl07     ]
+[ogb03   |ogb04              |tqa02        |ogb12      |ogl05     |sub       |ogl07     ]
+[ogb03   |ogb04              |tqa02        |ogb12      |ogl05     |sub       |ogl07     ]
+
+}
+END -- s_ogb
+END -- Form2
+
+TABLES
+ogl_file,
+ogb_file,
+tqa_file
+ATTRIBUTES
+Edit ogb03=ogb_file.ogb03, tabIndex=1, title="ogb03";
+Edit ogb04=ogb_file.ogb04, tabIndex=2, title="ogb04";
+Edit tqa02=tqa_file.tqa02, tabIndex=3, title=%"tqa02";
+Edit ogb12=ogb_file.ogb12, tabIndex=4, title=%"ogb12";
+Edit ogl05=ogl_file.ogl05, tabIndex=5, title=%"ogl05";
+Edit sub=formonly.sub type INTEGER, tabIndex=6, title=%"sub";
+Edit ogl07=ogl_file.ogl07, tabIndex=7, title=%"ogl07";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogb(ogb_file.ogb03,ogb_file.ogb04,tqa_file.tqa02,ogb_file.ogb12,ogl_file.ogl05,formonly.sub,ogl_file.ogl07)
+END -- INSTRUCTIONS
+

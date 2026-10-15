@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr821.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr821")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                    >
+  Register No.        [shh01               ]
+  Register Date       [shh02               ]
+  Work/Order No.      [shh03               ]
+  Run Card            [shh031              ]
+ <                                             >
+
+}
+END -- Grid1
+Group group011(text="INPUT")
+VBox VBox2
+Grid Grid2
+{
+ <G group02                                    >
+ [type                                      ]
+ <                                             >
+
+}
+END -- Grid2
+END -- VBox2
+END -- group011
+Grid Grid3
+{
+[more                                      ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- asfr821
+
+TABLES
+shh_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit shh01=shh_file.shh01, tabIndex=1;
+DateEdit shh02=shh_file.shh02, tabIndex=2;
+Edit shh03=shh_file.shh03, tabIndex=3;
+Edit shh031=shh_file.shh031, tabIndex=4;
+Group group02:group02, text="Print Data";
+RadioGroup type=formonly.type type VARCHAR, tabIndex=5, items=(("1", %"UnConfirmed"),("2", %"Confirmed"),("3", %"All "));
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(shh_file.shh01,shh_file.shh02,shh_file.shh03,shh_file.shh031,formonly.type,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Main")
+Grid ds1
+{
+
+ rca01        [rca01                 ]         rcapos       [rcapos                ]
+ Name         [rca01_desc            ]         rcaconf      [rcaconf               ]
+ rca02        [rca02           ]               rcacond      [rcacond               |rcacont               ]
+ rca03        [rca03           ]               rcaconu      [rcaconu               |rcaconu_desc          ]
+ rca04        [rca04                 ]         rca05        [rca05                                        ]
+
+}
+END -- ds1
+END -- Page1
+Page Page2(text=%"States")
+Grid ds2
+{
+
+ rcauser  [rcauser       ]   rcamodu  [rcamodu       ]    rcaacti  [rcaacti       ]
+ rcagrup  [rcagrup       ]   rcadate  [rcadate       ]    rcacrat  [rcacrat       ]
+ rcaoriu  [rcaoriu       ]   rcaorig  [rcaorig       ]
+
+}
+END -- ds2
+END -- Page2
+END -- Folder1
+Table ds3
+{
+[rcb04     |rcb05             |rcb05_desc        |rcb06         |rcb07         |rcb08         |rcb09               |rcbacti         ]
+[rcb04     |rcb05             |rcb05_desc        |rcb06         |rcb07         |rcb08         |rcb09               |rcbacti         ]
+[rcb04     |rcb05             |rcb05_desc        |rcb06         |rcb07         |rcb08         |rcb09               |rcbacti         ]
+[rcb04     |rcb05             |rcb05_desc        |rcb06         |rcb07         |rcb08         |rcb09               |rcbacti         ]
+[rcb04     |rcb05             |rcb05_desc        |rcb06         |rcb07         |rcb08         |rcb09               |rcbacti         ]
+
+}
+END -- ds3
+Table ds4
+{
+[rcc05     |rcc06             |rcc06_desc        |rccacti         ]
+[rcc05     |rcc06             |rcc06_desc        |rccacti         ]
+[rcc05     |rcc06             |rcc06_desc        |rccacti         ]
+[rcc05     |rcc06             |rcc06_desc        |rccacti         ]
+[rcc05     |rcc06             |rcc06_desc        |rccacti         ]
+
+}
+END -- ds4
+Grid gr15
+{
+
+  ------ Rows[idx     ]/[cnt       ]--- Items[cn2     ] --------
+}
+END -- gr15
+END -- VBox1
+END -- Form
+
+TABLES
+rcb_file,
+rca_file,
+rcc_file
+ATTRIBUTES
+ButtonEdit rca01=rca_file.rca01, action=controlp, tabIndex=1, not null, required, image="zoom", scroll;
+ComboBox rcapos=rca_file.rcapos, tabIndex=6, noEntry, not null, scroll, items=(("1", "Newnopos"),("2", "Alternopos"),("3", "Pos"),("4", "Updnopos"));
+Edit rca01_desc=formonly.rca01_desc type CHAR, tabIndex=2, noEntry;
+ComboBox rcaconf=rca_file.rcaconf, tabIndex=7, noEntry, not null, scroll, items=(("N", "Nocofirm"),("Y", "Confirm"));
+DateEdit rca02=rca_file.rca02, tabIndex=3, not null, required;
+DateEdit rcacond=rca_file.rcacond, tabIndex=8, noEntry;
+TimeEdit rcacont=rca_file.rcacont, tabIndex=9, noEntry, scroll;
+DateEdit rca03=rca_file.rca03, tabIndex=4, not null, required;
+ButtonEdit rcaconu=rca_file.rcaconu, action=controlp, tabIndex=10, noEntry, image="zoom", scroll;
+Edit rcaconu_desc=formonly.rcaconu_desc type CHAR, tabIndex=11, noEntry;
+ComboBox rca04=rca_file.rca04, tabIndex=5, not null, scroll, items=(("1", "item"),("2", "brand"),("3", "series"),("4", "other1"),("5", "other2"),("6", "other3"),("7", "other4"));
+Edit rca05=rca_file.rca05, tabIndex=12, scroll;
+Edit rcauser=rca_file.rcauser, tabIndex=13, scroll;
+Edit rcamodu=rca_file.rcamodu, tabIndex=16, scroll;
+Edit rcaacti=rca_file.rcaacti, tabIndex=19, not null, scroll;
+Edit rcagrup=rca_file.rcagrup, tabIndex=14, scroll;
+DateEdit rcadate=rca_file.rcadate, tabIndex=17;
+DateEdit rcacrat=rca_file.rcacrat, tabIndex=20;
+Edit rcaoriu=rca_file.rcaoriu, tabIndex=15, scroll;
+Edit rcaorig=rca_file.rcaorig, tabIndex=18, scroll;
+Edit rcb04=rcb_file.rcb04, tabIndex=21, title=%"rcb04", not null, scroll;
+ButtonEdit rcb05=rcb_file.rcb05, action=controlp, tabIndex=22, title=%"rcb05", not null, required, image="zoom", scroll;
+Edit rcb05_desc=formonly.rcb05_desc type CHAR, tabIndex=23, title=%"rcb05_desc", noEntry;
+Edit rcb06=rcb_file.rcb06, tabIndex=24, title=%"rcb06", scroll;
+Edit rcb07=rcb_file.rcb07, tabIndex=25, title=%"rcb07", scroll;
+Edit rcb08=rcb_file.rcb08, tabIndex=26, title=%"rcb08", not null, required, scroll;
+CheckBox rcb09=rcb_file.rcb09, tabIndex=27, title=%"rcb09", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rcbacti=rcb_file.rcbacti, tabIndex=28, title=%"rcbacti", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rcc05=rcc_file.rcc05, tabIndex=29, title=%"rcc05", not null, scroll;
+ButtonEdit rcc06=rcc_file.rcc06, action=controlp, tabIndex=30, title=%"rcc06", not null, required, image="zoom", scroll;
+Edit rcc06_desc=formonly.rcc06_desc type CHAR, tabIndex=31, title=%"rcc06_desc", noEntry;
+CheckBox rccacti=rcc_file.rccacti, tabIndex=32, title=%"rccacti", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=33, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=34, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=35;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(rca_file.rca01,rca_file.rca02,rca_file.rca03,rca_file.rca04,rca_file.rca05,rca_file.rcacond,rca_file.rcaconf,rca_file.rcacont,rca_file.rcaconu,rca_file.rcapos)
+SCREEN RECORD Undefined(formonly.rca01_desc,formonly.rcaconu_desc,formonly.idx,formonly.cnt,formonly.cn2)
+SCREEN RECORD Record2(rca_file.rcaacti,rca_file.rcacrat,rca_file.rcadate,rca_file.rcagrup,rca_file.rcamodu,rca_file.rcaorig,rca_file.rcaoriu,rca_file.rcauser)
+SCREEN RECORD s_rcb(rcb_file.rcb04,rcb_file.rcb05,formonly.rcb05_desc,rcb_file.rcb06,rcb_file.rcb07,rcb_file.rcb08,rcb_file.rcb09,rcb_file.rcbacti)
+SCREEN RECORD s_rcc(rcc_file.rcc05,rcc_file.rcc06,formonly.rcc06_desc,rcc_file.rccacti)
+END -- INSTRUCTIONS
+

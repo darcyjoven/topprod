@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat700a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat700a")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Table s_faj
+{
+[fajyn |faj02          |faj022    |faj06                     |faj07                               |faj26           |faj51           |faj17 |faj18  |faj14                  ]
+[fajyn |faj02          |faj022    |faj06                     |faj07                               |faj26           |faj51           |faj17 |faj18  |faj14                  ]
+[fajyn |faj02          |faj022    |faj06                     |faj07                               |faj26           |faj51           |faj17 |faj18  |faj14                  ]
+[fajyn |faj02          |faj022    |faj06                     |faj07                               |faj26           |faj51           |faj17 |faj18  |faj14                  ]
+[fajyn |faj02          |faj022    |faj06                     |faj07                               |faj26           |faj51           |faj17 |faj18  |faj14                  ]
+[fajyn |faj02          |faj022    |faj06                     |faj07                               |faj26           |faj51           |faj17 |faj18  |faj14                  ]
+[fajyn |faj02          |faj022    |faj06                     |faj07                               |faj26           |faj51           |faj17 |faj18  |faj14                  ]
+[fajyn |faj02          |faj022    |faj06                     |faj07                               |faj26           |faj51           |faj17 |faj18  |faj14                  ]
+[fajyn |faj02          |faj022    |faj06                     |faj07                               |faj26           |faj51           |faj17 |faj18  |faj14                  ]
+[fajyn |faj02          |faj022    |faj06                     |faj07                               |faj26           |faj51           |faj17 |faj18  |faj14                  ]
+
+}
+END -- s_faj
+END -- VBox2
+END -- page01
+END -- folder01
+Grid gr2300
+{
+  ----------Rows [cnt   ] ----------
+
+}
+END -- gr2300
+END -- VBox1
+END -- afat700a
+
+ATTRIBUTES
+CheckBox fajyn=formonly.fajyn type VARCHAR, tabIndex=1, title="Y/N", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit faj02=formonly.faj02 type CHAR, tabIndex=2, title="Property No.", noEntry;
+Edit faj022=formonly.faj022 type CHAR, tabIndex=3, title="Add No.", noEntry;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=4, title="Chinese Name";
+Edit faj07=formonly.faj07 type CHAR, tabIndex=5, title="English Name";
+DateEdit faj26=formonly.faj26 type CHAR, tabIndex=6, title="Date Recorded", noEntry;
+Edit faj51=formonly.faj51 type CHAR, tabIndex=7, title="Invoice No.", noEntry;
+Edit faj17=formonly.faj17 type CHAR, tabIndex=8, title="Qty", noEntry;
+Edit faj18=formonly.faj18 type CHAR, tabIndex=9, title="Unit", noEntry;
+Edit faj14=formonly.faj14 type CHAR, tabIndex=10, title="Origignal Currency cost", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_faj(formonly.fajyn,formonly.faj02,formonly.faj022,formonly.faj06,formonly.faj07,formonly.faj26,formonly.faj51,formonly.faj17,formonly.faj18,formonly.faj14)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri0222.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Group Group1(text=%"Group1")
+Grid Grid1
+{
+[label1  |hrbf03    ]                [label2  |hrbf04    |hrbf04_nam]     [hrbf05             ]
+[label3  |hrbf08    ]                [label4  |hrbf09    ]                [label5  |hrbf10    ]
+[label6  |hrbf11    |hrbf11_nam]     [hrbf07             ]
+[label7  |hrbf12                                                                              ]
+         [                                                                                    ]
+         [                                                                                    ]
+
+
+}
+END -- Grid1
+END -- Group1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"Label1";
+ComboBox hrbf03=formonly.hrbf03, tabIndex=1, noEntry, not null, required, items=(("1", "Text1"),("2", "Text2"));
+Label label2:Label2, text=%"Label2";
+ButtonEdit hrbf04=formonly.hrbf04, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit hrbf04_nam=formonly.hrbf04_name, tabIndex=3, noEntry;
+CheckBox hrbf05=formonly.hrbf05, tabIndex=4, text=%"hrbf05", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label3:Label3, text=%"Label3";
+DateEdit hrbf08=formonly.hrbf08, tabIndex=5, not null, required;
+Label label4:Label4, text=%"Label4";
+DateEdit hrbf09=formonly.hrbf09, tabIndex=6, not null, required;
+Label label5:Label5, text=%"Label5";
+DateEdit hrbf10=formonly.hrbf10, tabIndex=7, not null, required;
+Label label6:Label6, text=%"Label6";
+ButtonEdit hrbf11=formonly.hrbf11, action=controlp, tabIndex=8, not null, required, image="zoom";
+Edit hrbf11_nam=formonly.hrbf11_name, tabIndex=9, noEntry;
+CheckBox hrbf07=formonly.hrbf07, tabIndex=10, text=%"hrbf07", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label7:Label7, text=%"Label7";
+TextEdit hrbf12=formonly.hrbf12, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrbf03,formonly.hrbf04,formonly.hrbf04_name,formonly.hrbf05,formonly.hrbf08,formonly.hrbf09,formonly.hrbf10,formonly.hrbf11,formonly.hrbf11_name,formonly.hrbf07,formonly.hrbf12)
+END -- INSTRUCTIONS
+

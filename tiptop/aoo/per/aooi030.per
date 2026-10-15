@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/4fd/aooi030.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi030")
+VBox vb3
+Folder pc831
+Page page01(text="Page01")
+Table s_gem
+{
+[gem01          |gem02                 |gem03                |gem05                  |gem07             |gem09        |gem10       |gem02a      |gemac]
+[gem01          |gem02                 |gem03                |gem05                  |gem07             |gem09        |gem10       |gem02a      |gemac]
+[gem01          |gem02                 |gem03                |gem05                  |gem07             |gem09        |gem10       |gem02a      |gemac]
+[gem01          |gem02                 |gem03                |gem05                  |gem07             |gem09        |gem10       |gem02a      |gemac]
+[gem01          |gem02                 |gem03                |gem05                  |gem07             |gem09        |gem10       |gem02a      |gemac]
+[gem01          |gem02                 |gem03                |gem05                  |gem07             |gem09        |gem10       |gem02a      |gemac]
+[gem01          |gem02                 |gem03                |gem05                  |gem07             |gem09        |gem10       |gem02a      |gemac]
+[gem01          |gem02                 |gem03                |gem05                  |gem07             |gem09        |gem10       |gem02a      |gemac]
+[gem01          |gem02                 |gem03                |gem05                  |gem07             |gem09        |gem10       |gem02a      |gemac]
+[gem01          |gem02                 |gem03                |gem05                  |gem07             |gem09        |gem10       |gem02a      |gemac]
+
+}
+END -- s_gem
+END -- page01
+END -- pc831
+Grid gr4617
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4617
+END -- vb3
+END -- aooi030
+
+TABLES
+gem_file
+ATTRIBUTES
+Edit gem01=gem_file.gem01, tabIndex=1, title="Department No.", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit gem02=gem_file.gem02, tabIndex=2, title="Department Abbreviate";
+Edit gem03=gem_file.gem03, tabIndex=3, title="Department Full name";
+CheckBox gem05=gem_file.gem05, tabIndex=4, title="Accounting Department", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox gem07=gem_file.gem07, tabIndex=5, title="Expense Category", not null, required, queryEditable, items=(("M", %"Administration"),("P", %"Production"),("R", %"R&D"),("S", %"Sales Expense"));
+ComboBox gem09=gem_file.gem09, tabIndex=6, title="Control Type", not null, required, queryEditable, items=(("1", %"Cost Center"),("2", %"Profit Center"),("3", %"Other"));
+ButtonEdit gem10=gem_file.gem10, action=controlp, tabIndex=7, title="Cost Center", not null, required, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02a=formonly.gem02a type CHAR, tabIndex=8, title="Center Desc", noEntry;
+CheckBox gemac=gem_file.gemacti, tabIndex=9, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gem(gem_file.gem01,gem_file.gem02,gem_file.gem03,gem_file.gem05,gem_file.gem07,gem_file.gem09,gem_file.gem10,formonly.gem02a,gem_file.gemacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

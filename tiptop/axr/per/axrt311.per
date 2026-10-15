@@ -1,0 +1,240 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt311.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt310")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2717
+{
+ Invoice Category  [ome00               ]     Invoice #   [ome01               ]      [label12   ]   [ome77                    ][imgmksg]
+[label3]           [ome71               ]    [label4    ] [ome011              ]       Shipments No. [oga01                    ][       ]
+[label2 ]          [ome72               ]     Invoice Date[ome02               ]       Export No.    [omexml                   ]
+[label1          ] [ome73               ]     Invoice time[ome82               ]       Exproted?     [ome81                    ]
+
+
+}
+END -- gr2717
+END -- page01
+Page info(text="Info")
+Grid gr2718
+{
+ Record Owner        [omeuser   ]  Last Modified by    [omemodu   ]  Latest Modified Date[omemodd   ]
+ Department          [omegrup   ]  Create/Modify Date  [omedate   ]
+ Record Orig.        [omeoriu   ]
+ Dept Orig.          [omeorig   ]
+}
+END -- gr2718
+END -- info
+END -- folder01
+Folder pc648
+Page page04(text="Other")
+Grid gr2719
+{
+ <G group01                                                                                                                                 >
+  Bill No.             [ome16           ]     Invoice   [ome05              ]     Import/Export    [ome08               ]
+ <                                                                                                                                          >
+ <G group02                                                                                                                                 >
+  Invoice Customer     [ome04                                   ]
+  Customer Full Name   [ome043                                  ]
+  Invoice Address      [ome044                                  ]
+  Uniform#             [ome042                                  ]
+  Tax Type             [ome21     ]  [om]%       [ome212    ]         [ome213   ]
+  Tax                  [ome172    ]   Random code[ome26     ]         [ome22         ]
+  Print Invoice        [omeprsw   ]
+ <                                                                                                                                          >
+ <G group03                                            >   <G group1                                         >
+  Before-Tax             [ome59                      ]       [label6            ]     [ome78               ]
+  Tax                    [ome59x                     ]       [label7            ]     [ome79               ]
+  Total                  [ome59t                     ]       [label8            ]     [ome80               ]
+                                                             [label9            ]     [ome74               ]
+                                                             [label10           ]     [ome75               ]
+                                                             [label11           ]     [ome76               ]
+
+ <                                                     >   <                                                 >
+ <G group2                                   >   <G group04                                   >   <G group3                                   >
+    Vehicles Type          [ome23          ]     [omevoid   ]                                     [omecncl   ]
+    Vehicles Number        [ome24          ]      Void reason   [omevoid2      |azf03       ]      Cancel reason [omecncl2      |azf1       ]
+    Vehicles Hidden Number [ome241         ]      Voided By     [omevoidu      ]                   Cancel By     [omecnclu      ]
+    Welfare Number         [ome25          ]      Void Date     [omevoidd      ]                   Cancel Date   [omecncld      ]
+    Settlement             [ooh02          ]      Void Time     [omevoidt      ]                   Cancel Time   [omecnclt      ]
+                                                  Void No       [omevoidn      ]                   Cancel Memo   [omecnclm                  ]
+                                                  Void Memo     [omevoidm                   ]                    [                          ]
+                                                                [                           ]
+ <                                           >   <                                            >   <                                           >
+}
+END -- gr2719
+END -- page04
+Page page02(text="Declaration")
+VBox vb1
+Grid gr2720
+{
+ <G group05                                         >
+  Deduct/Offset        [ome17     ]
+  Format               [ome171    ]
+  Declaring Year/Month [ome1][ome2]
+  Serial Number        [ome175    ]
+  Declaration No.      [ome60          ]
+ <                                                  >
+
+ <G group06                                         >
+  Declaration Date     [ome32       ]
+  Release Date         [ome33       ]
+  Export date          [ome34       ]
+
+
+ <                                                  >
+
+}
+END -- gr2720
+END -- vb1
+END -- page02
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[omeud01                       ] userdefined_field07[omeud07        ] userdefined_field13[omeud13        ]
+                    [                              ] userdefined_field08[omeud08        ] userdefined_field14[omeud14        ]
+ userdefined_field02[omeud02        ]                userdefined_field09[omeud09        ] userdefined_field15[omeud15        ]
+ userdefined_field03[omeud03        ]                userdefined_field10[omeud10        ]
+ userdefined_field04[omeud04        ]                userdefined_field11[omeud11        ]
+ userdefined_field05[omeud05        ]                userdefined_field12[omeud12        ]
+ userdefined_field06[omeud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc648
+Grid gr2721
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2721
+END -- VBox1
+END -- axrt310
+
+TABLES
+aaa_file1=ome_file,
+ome_file,
+oga_file
+ATTRIBUTES
+ComboBox ome00=ome_file.ome00, tabIndex=1, not null, required, queryEditable, items=(("1", "Sales Invoice"),("3", "Non-A/R Invoice"),("4", "Sell a bill
+"));
+Edit ome01=ome_file.ome01, tabIndex=2, not null, required;
+Label label12:Label12, text=%"Open way";
+ComboBox ome77=ome_file.ome77, tabIndex=506, noEntry, items=(("1", "1"),("2", "2"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Label label3:Label3, text=%"posnum";
+ButtonEdit ome71=ome_file.ome71, action=controlp, tabIndex=502, noEntry, image="zoom";
+Label label4:Label4, text=%"Invoice by number";
+Edit ome011=ome_file.ome011, tabIndex=505, noEntry;
+ButtonEdit oga01=oga_file.oga01, action=controlp, tabIndex=519, image="zoom";
+Label label2:Label2, text=%"posnum1";
+Edit ome72=aaa_file1.ome72, tabIndex=503, noEntry;
+DateEdit ome02=ome_file.ome02, tabIndex=4, not null, required;
+Edit omexml=ome_file.omexml, tabIndex=518, not null, required;
+Label label1:Label1, text=%"Operations center Numbers";
+ButtonEdit ome73=ome_file.ome73, action=controlp, tabIndex=504, noEntry, image="zoom";
+TimeEdit ome82=ome_file.ome82, tabIndex=534, not null, required;
+ComboBox ome81=ome_file.ome81, tabIndex=535, noEntry, items=(("1", "Y"),("2", "N"),("3", "Exporting"));
+Edit omeuser=ome_file.omeuser, tabIndex=5, noEntry;
+Edit omemodu=ome_file.omemodu, tabIndex=6, noEntry;
+DateEdit omemodd=ome_file.omemodd, tabIndex=7, noEntry;
+Edit omegrup=ome_file.omegrup, tabIndex=8, noEntry;
+DateEdit omedate=ome_file.omedate, tabIndex=9, noEntry;
+Edit omeoriu=ome_file.omeoriu, tabIndex=499, noEntry;
+Edit omeorig=ome_file.omeorig, tabIndex=500, noEntry;
+Group group01:group01, text="Bill Information";
+Edit ome16=ome_file.ome16, tabIndex=10, not null, required;
+Edit ome05=ome_file.ome05, tabIndex=11, not null, required;
+ComboBox ome08=ome_file.ome08, tabIndex=12, not null, required, queryEditable, items=(("1", "Local Sales"),("2", "Export"),("3", "As Export (for ACO System)"));
+Group group02:group02, text="Invoice";
+Edit ome04=ome_file.ome04, tabIndex=13;
+Edit ome043=ome_file.ome043, tabIndex=14;
+Edit ome044=ome_file.ome044, tabIndex=15;
+Edit ome042=ome_file.ome042, tabIndex=16;
+ButtonEdit ome21=ome_file.ome21, action=controlp, tabIndex=17, not null, required, image="zoom";
+Edit om=ome_file.ome211, tabIndex=18, noEntry;
+ComboBox ome212=ome_file.ome212, tabIndex=19, noEntry;
+CheckBox ome213=ome_file.ome213, tabIndex=20, text="With Tax", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox ome172=ome_file.ome172, tabIndex=21, noEntry, queryEditable, items=(("1", "Taxable"),("2", "Zero Tax Rate"),("3", "Free"),("D", "unused Invoice"),("F", "void"));
+Edit ome26=ome_file.ome26, tabIndex=521;
+CheckBox ome22=ome_file.ome22, tabIndex=513, text="Electronic Invoice", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit omeprsw=ome_file.omeprsw, tabIndex=22;
+Group group03:group03, text="Invoice Amount";
+Edit ome59=ome_file.ome59, tabIndex=23, not null, required;
+Edit ome59x=ome_file.ome59x, tabIndex=24, not null, required;
+Edit ome59t=ome_file.ome59t, tabIndex=25, not null, required;
+Group group1:Group1, text=%"Payment information";
+Label label6:Label6, text=%"Taxable amount";
+Edit ome78=ome_file.ome78, tabIndex=507;
+Label label7:Label7, text=%"Zero tax amount";
+Edit ome79=ome_file.ome79, tabIndex=508;
+Label label8:Label8, text=%"Exemption amount";
+Edit ome80=ome_file.ome80, tabIndex=509;
+Label label9:Label9, text=%"already invoice";
+Edit ome74=ome_file.ome74, tabIndex=510, noEntry;
+Label label10:Label10, text=%"already invoice tax";
+Edit ome75=ome_file.ome75, tabIndex=511, noEntry;
+Label label11:Label11, text=%"invoice leave tax deduction";
+Edit ome76=ome_file.ome76, tabIndex=512, noEntry;
+Group group2:Group2, text=%"Vehicles Info.";
+Edit ome23=ome_file.ome23, tabIndex=514, not null, required;
+Edit ome24=ome_file.ome24, tabIndex=515, not null, required;
+Edit ome241=ome_file.ome241, tabIndex=520, not null, required;
+ButtonEdit ome25=ome_file.ome25, action=controlp, tabIndex=516, image="zoom";
+Edit ooh02=formonly.ooh02 type VARCHAR, tabIndex=517, noEntry;
+Group group04:group04, text="Void";
+CheckBox omevoid=ome_file.omevoid, tabIndex=26, text="Void", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit omevoid2=ome_file.omevoid2, action=controlp, tabIndex=27, image="zoom", comment="<^P>Qry Reason Code";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=28, noEntry;
+Edit omevoidu=ome_file.omevoidu, tabIndex=531, noEntry;
+DateEdit omevoidd=ome_file.omevoidd, tabIndex=532, noEntry;
+TimeEdit omevoidt=ome_file.omevoidt, tabIndex=533, noEntry;
+Edit omevoidn=ome_file.omevoidn, tabIndex=522;
+TextEdit omevoidm=ome_file.omevoidm, tabIndex=523;
+Group group3:group3, text="Cancel";
+CheckBox omecncl=ome_file.omecncl, tabIndex=524, text="Cancel", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit omecncl2=ome_file.omecncl2, action=controlp, tabIndex=525, image="zoom", comment="<^P>Qry Reason Code";
+Edit azf1=formonly.azf1 type CHAR, tabIndex=526, noEntry;
+Edit omecnclu=ome_file.omecnclu, tabIndex=527, noEntry;
+DateEdit omecncld=ome_file.omecncld, tabIndex=528, noEntry;
+TimeEdit omecnclt=ome_file.omecnclt, tabIndex=529, noEntry;
+TextEdit omecnclm=ome_file.omecnclm, tabIndex=530;
+Group group05:group05;
+Edit ome17=ome_file.ome17, tabIndex=29, noEntry;
+Edit ome171=ome_file.ome171, tabIndex=30, noEntry;
+Edit ome1=ome_file.ome173, tabIndex=31, noEntry;
+Edit ome2=ome_file.ome174, tabIndex=32, noEntry;
+Edit ome175=ome_file.ome175, tabIndex=33, noEntry;
+Edit ome60=ome_file.ome60, tabIndex=501, not null;
+Group group06:group06;
+DateEdit ome32=ome_file.ome32, tabIndex=34;
+DateEdit ome33=ome_file.ome33, tabIndex=35;
+DateEdit ome34=ome_file.ome34, tabIndex=36;
+TextEdit omeud01=ome_file.omeud01, tabIndex=39, stretch=NONE;
+Edit omeud07=ome_file.omeud07, tabIndex=40;
+DateEdit omeud13=ome_file.omeud13, tabIndex=41;
+Edit omeud08=ome_file.omeud08, tabIndex=42;
+DateEdit omeud14=ome_file.omeud14, tabIndex=43;
+Edit omeud02=ome_file.omeud02, tabIndex=44;
+Edit omeud09=ome_file.omeud09, tabIndex=45;
+DateEdit omeud15=ome_file.omeud15, tabIndex=46;
+Edit omeud03=ome_file.omeud03, tabIndex=47;
+Edit omeud10=ome_file.omeud10, tabIndex=48;
+Edit omeud04=ome_file.omeud04, tabIndex=49;
+Edit omeud11=ome_file.omeud11, tabIndex=50;
+Edit omeud05=ome_file.omeud05, tabIndex=51;
+Edit omeud12=ome_file.omeud12, tabIndex=52;
+Edit omeud06=ome_file.omeud06, tabIndex=53;
+Edit cnt=formonly.cnt type CHAR, tabIndex=37;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ome_file.ome00,ome_file.ome01,formonly.imgmksg,ome_file.ome02,ome_file.omeuser,ome_file.omemodu,ome_file.omemodd,ome_file.omegrup,ome_file.omedate,ome_file.omeoriu,ome_file.omeorig,ome_file.ome16,ome_file.ome05,ome_file.ome08,ome_file.ome04,ome_file.ome043,ome_file.ome044,ome_file.ome042,ome_file.ome21,ome_file.ome211,ome_file.ome212,ome_file.ome213,ome_file.ome172,ome_file.omeprsw,ome_file.ome59,ome_file.ome59x,ome_file.ome59t,ome_file.omevoid,ome_file.omevoid2,formonly.azf03,ome_file.ome17,ome_file.ome171,ome_file.ome173,ome_file.ome174,ome_file.ome175,ome_file.ome60,ome_file.ome32,ome_file.ome33,ome_file.ome34,ome_file.omeud01,ome_file.omeud07,ome_file.omeud13,ome_file.omeud08,ome_file.omeud14,ome_file.omeud02,ome_file.omeud09,ome_file.omeud15,ome_file.omeud03,ome_file.omeud10,ome_file.omeud04,ome_file.omeud11,ome_file.omeud05,ome_file.omeud12,ome_file.omeud06,formonly.cnt,ome_file.ome71,aaa_file1.ome72,ome_file.ome73,ome_file.ome011,ome_file.ome77,ome_file.ome78,ome_file.ome79,ome_file.ome80,ome_file.ome74,ome_file.ome75,ome_file.ome76,ome_file.ome22,ome_file.ome23,ome_file.ome24,ome_file.ome25,formonly.ooh02,ome_file.omexml,oga_file.oga01,ome_file.ome241,ome_file.ome26,ome_file.omevoidn,ome_file.omevoidm,ome_file.omecncl,ome_file.omecncl2,formonly.azf1,ome_file.omecnclu,ome_file.omecncld,ome_file.omecnclt,ome_file.omecnclm,ome_file.omevoidu,ome_file.omevoidd,ome_file.omevoidt,ome_file.ome82,ome_file.ome81)
+END -- INSTRUCTIONS
+

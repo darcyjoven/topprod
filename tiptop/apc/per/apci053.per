@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apci053.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"apci053")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Main")
+Table s_rzh
+{
+[rzh01      |rzh02            |rzh03  |rzh04       |rzh04_desc    |rzh05  |rzh06         |rzhacti]
+[rzh01      |rzh02            |rzh03  |rzh04       |rzh04_desc    |rzh05  |rzh06         |rzhacti]
+[rzh01      |rzh02            |rzh03  |rzh04       |rzh04_desc    |rzh05  |rzh06         |rzhacti]
+[rzh01      |rzh02            |rzh03  |rzh04       |rzh04_desc    |rzh05  |rzh06         |rzhacti]
+[rzh01      |rzh02            |rzh03  |rzh04       |rzh04_desc    |rzh05  |rzh06         |rzhacti]
+
+}
+END -- s_rzh
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+  ------- Rows[cn2       ]--------
+
+}
+END -- Grid1
+END -- VBox1
+END -- apci053
+
+TABLES
+rzh_file
+ATTRIBUTES
+ButtonEdit rzh01=rzh_file.rzh01, action=controlp, tabIndex=1, title=%"Touch screen classification", not null, required, image="zoom", scroll;
+Edit rzh02=rzh_file.rzh02, tabIndex=2, title=%"Category Name", scroll;
+Edit rzh03=rzh_file.rzh03, tabIndex=3, title=%"Level", scroll;
+ButtonEdit rzh04=rzh_file.rzh04, action=controlp, tabIndex=4, title=%"Sub-headings", image="zoom", scroll;
+Edit rzh04_desc=formonly.rzh04_desc type VARCHAR, tabIndex=9, title=%"rzh04_desc", noEntry;
+Edit rzh05=rzh_file.rzh05, tabIndex=5, title=%"The number of lower classification", noEntry, scroll;
+Edit rzh06=rzh_file.rzh06, tabIndex=6, title=%"Belongs to a classification", noEntry, scroll;
+CheckBox rzhacti=rzh_file.rzhacti, tabIndex=7, default = "Y", title=%"Effective whether", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rzh(rzh_file.rzh01,rzh_file.rzh02,rzh_file.rzh03,rzh_file.rzh04,formonly.rzh04_desc,rzh_file.rzh05,rzh_file.rzh06,rzh_file.rzhacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

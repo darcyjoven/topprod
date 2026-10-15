@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp570_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmp570_c")
+Grid gr4938
+{
+ <T s_tmp                                                               >
+ [choice |supr       |curr     |price               |rate              ]
+ [choice |supr       |curr     |price               |rate              ]
+ [choice |supr       |curr     |price               |rate              ]
+ [choice |supr       |curr     |price               |rate              ]
+ [choice |supr       |curr     |price               |rate              ]
+ [choice |supr       |curr     |price               |rate              ]
+ [choice |supr       |curr     |price               |rate              ]
+ [choice |supr       |curr     |price               |rate              ]
+ [choice |supr       |curr     |price               |rate              ]
+ [choice |supr       |curr     |price               |rate              ]
+ <                                                                      >
+
+}
+END -- gr4938
+END -- apmp570_c
+
+ATTRIBUTES
+Table s_tmp:s_tmp;
+Edit choice=formonly.choice type CHAR, tabIndex=1, title="Selcet", autoNext, upShift;
+Edit supr=formonly.supr type CHAR, tabIndex=2, title="Vender#", noEntry;
+Edit curr=formonly.curr type CHAR, tabIndex=3, title="Currency", noEntry;
+Edit price=formonly.price type CHAR, tabIndex=4, title="U/P", noEntry;
+Edit rate=formonly.rate type CHAR, tabIndex=5, title="Distribution Ratio", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tmp(formonly.choice,formonly.supr,formonly.curr,formonly.price,formonly.rate)
+END -- INSTRUCTIONS
+

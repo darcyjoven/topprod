@@ -1,0 +1,29 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqct600_x.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aqct600_x")
+Grid gr222
+{
+ <G group01                                 >
+  OQC Doc# QBE        [qcs01               ]
+  QC Date QBE         [qcs04               ]
+ <                                          >
+
+}
+END -- gr222
+END -- aqct600_x
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit qcs01=formonly.qcs01 type CHAR, tabIndex=1;
+DateEdit qcs04=formonly.qcs04 type CHAR, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.qcs01,formonly.qcs04)
+END -- INSTRUCTIONS
+

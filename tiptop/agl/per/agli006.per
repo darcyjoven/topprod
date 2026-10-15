@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli006.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"agli006")
+VBox vb3
+Folder folder01
+Page page01(text=%"Main")
+Grid gr2403
+{
+ Group Code         [ayd01          ]
+ Parent Company     [ayd02          ]
+ Book No.           [ayd00          ]
+ Year               [ayd03          ]
+ Month              [ayd04          ]
+ Currency           [ayd05          ]
+
+
+}
+END -- gr2403
+END -- page01
+END -- folder01
+Table s_axn
+{
+[ayd06          |aya02               |ayd07      |axl02            |ayd08           ]
+[ayd06          |aya02               |ayd07      |axl02            |ayd08           ]
+[ayd06          |aya02               |ayd07      |axl02            |ayd08           ]
+[ayd06          |aya02               |ayd07      |axl02            |ayd08           ]
+[ayd06          |aya02               |ayd07      |axl02            |ayd08           ]
+[ayd06          |aya02               |ayd07      |axl02            |ayd08           ]
+[ayd06          |aya02               |ayd07      |axl02            |ayd08           ]
+[ayd06          |aya02               |ayd07      |axl02            |ayd08           ]
+[ayd06          |aya02               |ayd07      |axl02            |ayd08           ]
+[ayd06          |aya02               |ayd07      |axl02            |ayd08           ]
+}
+END -- s_axn
+Grid gr2404
+{
+ --- Rows [cnt   ] / [cn2   ] -----Sum [sum_ayd08]-----
+
+}
+END -- gr2404
+END -- vb3
+END -- agli006
+
+TABLES
+ayd_file
+ATTRIBUTES
+ButtonEdit ayd01=ayd_file.ayd01, action=controlp, tabIndex=12, not null, required, image="zoom.png";
+ButtonEdit ayd02=ayd_file.ayd02, action=controlp, tabIndex=13, not null, required, image="zoom.png";
+Edit ayd00=formonly.ayd00 type VARCHAR, tabIndex=1, not null, required;
+Edit ayd03=formonly.ayd03 type SMALLINT, tabIndex=2, not null, required;
+Edit ayd04=formonly.ayd04 type SMALLINT, tabIndex=3, noEntry, not null, required;
+Edit ayd05=ayd_file.ayd05, tabIndex=14, noEntry, not null, required;
+ButtonEdit ayd06=ayd_file.ayd06, action=controlp, tabIndex=4, title=%"Flow Category Code", not null, required, image="zoom.png", comment=%"<^P>Flow Category Code";
+Edit aya02=formonly.aya02 type CHAR, tabIndex=5, title=%"Descriptiom", noEntry;
+ButtonEdit ayd07=ayd_file.ayd07, action=controlp, tabIndex=10, title=%"axn19", not null, required, image="zoom.png";
+Edit axl02=formonly.axl02 type CHAR, tabIndex=11, title=%"axl02", noEntry;
+Edit ayd08=formonly.ayd08 type DECIMAL, tabIndex=6, title=%"Balance", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+Edit sum_ayd08=formonly.sum_ayd08 type CHAR, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ayd(ayd_file.ayd06,formonly.aya02,ayd_file.ayd07,formonly.axl02,formonly.ayd08)
+SCREEN RECORD Undefined(ayd_file.ayd01,ayd_file.ayd02,formonly.ayd00,formonly.ayd03,formonly.ayd04,ayd_file.ayd05,formonly.cnt,formonly.cn2,formonly.sum_ayd08)
+END -- INSTRUCTIONS
+

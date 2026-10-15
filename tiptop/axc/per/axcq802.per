@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq802.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Table Table1
+{
+[cfc07      |cfc08           |cfc11      |cfc13   |ima021  |cfc15       |tot        |sum1              |tot1               |sum2               |tot2                |sum3               |tot3              |sum4                |tot4             |sum5           |tot5          ]
+[cfc07      |cfc08           |cfc11      |cfc13   |ima021  |cfc15       |tot        |sum1              |tot1               |sum2               |tot2                |sum3               |tot3              |sum4                |tot4             |sum5           |tot5          ]
+[cfc07      |cfc08           |cfc11      |cfc13   |ima021  |cfc15       |tot        |sum1              |tot1               |sum2               |tot2                |sum3               |tot3              |sum4                |tot4             |sum5           |tot5          ]
+[cfc07      |cfc08           |cfc11      |cfc13   |ima021  |cfc15       |tot        |sum1              |tot1               |sum2               |tot2                |sum3               |tot3              |sum4                |tot4             |sum5           |tot5          ]
+[cfc07      |cfc08           |cfc11      |cfc13   |ima021  |cfc15       |tot        |sum1              |tot1               |sum2               |tot2                |sum3               |tot3              |sum4                |tot4             |sum5           |tot5          ]
+
+}
+END -- Table1
+Grid Grid1
+{
+
+ -----[label1  ][cn2       ] ------
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit cfc07=formonly.cfc07, tabIndex=1, title=%"cfc07";
+Edit cfc08=formonly.cfc08, tabIndex=2, title=%"cfc08";
+Edit cfc11=formonly.cfc11, tabIndex=3, title=%"cfc11";
+Edit cfc13=formonly.cfc13, tabIndex=17, title=%"cfc13\n";
+Edit ima021=formonly.ima021, tabIndex=18, title=%"ima021\n";
+Edit cfc15=formonly.cfc15 type INTEGER, tabIndex=4, title=%"cfc15";
+Edit tot=formonly.tot type FLOAT, tabIndex=5, title=%"tot";
+Edit sum1=formonly.sum1 type INTEGER, tabIndex=6, title=%"sum1";
+Edit tot1=formonly.tot1 type FLOAT, tabIndex=7, title=%"tot1";
+Edit sum2=formonly.sum2 type INTEGER, tabIndex=8, title=%"sum2";
+Edit tot2=formonly.tot2 type DECIMAL, tabIndex=9, title=%"tot2";
+Edit sum3=formonly.sum3 type INTERVAL YEAR TO YEAR, tabIndex=10, title=%"sum3";
+Edit tot3=formonly.tot3 type FLOAT, tabIndex=11, title=%"tot3";
+Edit sum4=formonly.sum4 type INTEGER, tabIndex=12, title=%"sum4";
+Edit tot4=formonly.tot4 type FLOAT, tabIndex=13, title=%"tot4";
+Edit sum5=formonly.sum5 type INTEGER, tabIndex=14, title=%"sum5";
+Edit tot5=formonly.tot5 type FLOAT, tabIndex=15, title=%"tot5";
+Label label1:Label1, text=%"rows";
+Edit cn2=formonly.cn2, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cfc(formonly.cfc07,formonly.cfc08,formonly.cfc11,formonly.cfc13,formonly.cfc15,formonly.tot,formonly.sum1,formonly.tot1,formonly.sum2,formonly.tot2,formonly.sum3,formonly.tot3,formonly.sum4,formonly.tot4,formonly.sum5,formonly.tot5,formonly.ima021)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

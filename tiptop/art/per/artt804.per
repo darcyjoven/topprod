@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt804.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+  rcf01    [rcf01             ]                       rcfconf  [rcfconf         ]
+  rcfplant [rcfplant          ][rcfplant_desc     ]   rcfcond  [rcfcond         |rcfcont     ]
+  rcf02    [rcf02             ]                       rcfconu  [rcfconu         ]
+  rcf03    [rcf03                                 ]
+
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid3
+{
+
+  rcfuser  [rcfuser         ]  rcfcrat   [rcfcrat        ]  rcfacti    [rcfacti         ]
+  rcfgrup  [rcfgrup         ]  rcfmodu   [rcfmodu        ]  rcfdate    [rcfdate         ]
+  rcforiu  [rcforiu         ]  rcforig   [rcforig        ]
+
+
+
+}
+END -- Grid3
+END -- Page2
+END -- Folder1
+Table Table1
+{
+[rcg02   |rcg03      |rcg03_desc   |rcg04   ]
+[rcg02   |rcg03      |rcg03_desc   |rcg04   ]
+[rcg02   |rcg03      |rcg03_desc   |rcg04   ]
+[rcg02   |rcg03      |rcg03_desc   |rcg04   ]
+[rcg02   |rcg03      |rcg03_desc   |rcg04   ]
+
+}
+END -- Table1
+Grid Grid2
+{
+ ------ Rows[idx   ]/[cnt   ]----- Details[cn2    ]-----
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+rcg_file,
+rcf_file
+ATTRIBUTES
+ButtonEdit rcf01=formonly.rcf01 type like rcf_file.rcf01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ComboBox rcfconf=formonly.rcfconf type like rcf_file.rcfconf, tabIndex=6, noEntry, not null, items=(("N", "N"),("Y", "Y"),("X", "X"));
+ButtonEdit rcfplant=formonly.rcfplant type like rcf_file.rcfplant, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit rcfplant_desc=formonly.rcfplant_desc type CHAR, tabIndex=3, noEntry;
+DateEdit rcfcond=formonly.rcfcond type like rcf_file.rcfcond, tabIndex=7;
+TimeEdit rcfcont=formonly.rcfcont type like rcf_file.rcfcont, tabIndex=8;
+DateEdit rcf02=formonly.rcf02 type like rcf_file.rcf02, tabIndex=4, not null, required;
+ButtonEdit rcfconu=formonly.rcfconu type like rcf_file.rcfconu, tabIndex=9, image="zoom";
+Edit rcf03=formonly.rcf03 type like rcf_file.rcf03, tabIndex=5;
+Edit rcfuser=formonly.rcfuser type like rcf_file.rcfuser, tabIndex=17;
+Edit rcfcrat=formonly.rcfcrat type like rcf_file.rcfcrat, tabIndex=20;
+Edit rcfacti=formonly.rcfacti type like rcf_file.rcfacti, tabIndex=23;
+Edit rcfgrup=formonly.rcfgrup type like rcf_file.rcfgrup, tabIndex=18;
+Edit rcfmodu=formonly.rcfmodu type like rcf_file.rcfmodu, tabIndex=21;
+Edit rcfdate=formonly.rcfdate type like rcf_file.rcfdate, tabIndex=24;
+Edit rcforiu=formonly.rcforiu type like rcf_file.rcforiu, tabIndex=19;
+Edit rcforig=formonly.rcforig type like rcf_file.rcforig, tabIndex=22;
+Edit rcg02=rcg_file.rcg02, tabIndex=10, title=%"rcg02", not null, required;
+ButtonEdit rcg03=rcg_file.rcg03, action=controlp, tabIndex=11, title=%"rcg03", not null, required, image="zoom";
+Edit rcg03_desc=formonly.rcg03_desc type DECIMAL(20,6), tabIndex=12, title=%"rcg03_desc", noEntry;
+Edit rcg04=rcg_file.rcg04, tabIndex=13, title=%"rcg04";
+Edit idx=formonly.idx type CHAR, tabIndex=14;
+Edit cnt=formonly.cnt type CHAR, tabIndex=15;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rcf01,formonly.rcfplant,formonly.rcfplant_desc,formonly.rcf02,formonly.rcf03,formonly.rcfconf,formonly.rcfcond,formonly.rcfcont,formonly.rcfconu,formonly.idx,formonly.cnt,formonly.cn2,formonly.rcfuser,formonly.rcfgrup,formonly.rcforiu,formonly.rcfcrat,formonly.rcfmodu,formonly.rcforig,formonly.rcfacti,formonly.rcfdate)
+SCREEN RECORD s_rcg(rcg_file.rcg02,rcg_file.rcg03,formonly.rcg03_desc,rcg_file.rcg04)
+END -- INSTRUCTIONS
+

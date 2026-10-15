@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr205.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxr205")
+VBox VBox1
+Grid gr1160
+{
+ <G group01                           >
+  Item No.      [ima01               ]
+  Bonded GP Code[ima1916             ]
+ <                                    >
+
+}
+END -- gr1160
+HBox HBox1
+Grid gr1161
+{
+ <G group02                        >
+  Start Date     [sdate       ]
+  End Date       [edate       ]
+  Rep Date       [rdate       ]
+  [a                          ]
+  [b                          ]
+ <                                 >
+
+}
+END -- gr1161
+Grid gr1162
+{
+ <G group03                       >
+  [s1           ][s2          ]
+  [u1           ][u2          ]
+ <                                >
+
+
+
+
+}
+END -- gr1162
+END -- HBox1
+Grid gr1163
+{
+[more                                      ]
+
+}
+END -- gr1163
+END -- VBox1
+END -- abxr205
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Item Master";
+ButtonEdit ima1916=formonly.ima1916 type CHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P> Qry Bonded Group Code";
+Group group02:group02, text="INPUT";
+DateEdit sdate=formonly.sdate type DATE, tabIndex=3, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=4, not null, required;
+DateEdit rdate=formonly.rdate type DATE, tabIndex=5, not null, required;
+CheckBox a=formonly.a type VARCHAR, tabIndex=6, text="Only print ima01 for tax", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=7, text="Print balance for no any different", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, not null, required, queryEditable, items=(("1", "Item No."),("2", "Group Code"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=9, not null, required, queryEditable, items=(("1", "Item No."),("2", "Group Code"));
+CheckBox u1=formonly.u1 type CHAR, tabIndex=10, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=11, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima1916,formonly.sdate,formonly.edate,formonly.rdate,formonly.a,formonly.b,formonly.s1,formonly.s2,formonly.u1,formonly.u2,formonly.more)
+END -- INSTRUCTIONS
+

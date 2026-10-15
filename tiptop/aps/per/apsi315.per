@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi315.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi315")
+VBox vb3
+Folder pc4
+Page page01(text="Page01")
+Grid gr7
+{
+ <G group01                                                                                              >
+  MO No.                 [vne01               ] sma917                 [sma917              ]
+  Routing No.            [vne02               ] Operation No.          [vne04               ]
+  Subcontract S/N        [vne03               ] ecm45                  [ecm45               ]
+  Process No.            [vne012              ]
+ <                                                                                                       >
+}
+END -- gr7
+END -- page01
+END -- pc4
+Table s_vne
+{
+[vne05   |desc    |vne50   |vne51   |vne06   |vne311  |vne312  |vne313  |vne314  |vne315  |vne316  |vne07   ]
+[vne05   |desc    |vne50   |vne51   |vne06   |vne311  |vne312  |vne313  |vne314  |vne315  |vne316  |vne07   ]
+[vne05   |desc    |vne50   |vne51   |vne06   |vne311  |vne312  |vne313  |vne314  |vne315  |vne316  |vne07   ]
+[vne05   |desc    |vne50   |vne51   |vne06   |vne311  |vne312  |vne313  |vne314  |vne315  |vne316  |vne07   ]
+[vne05   |desc    |vne50   |vne51   |vne06   |vne311  |vne312  |vne313  |vne314  |vne315  |vne316  |vne07   ]
+[vne05   |desc    |vne50   |vne51   |vne06   |vne311  |vne312  |vne313  |vne314  |vne315  |vne316  |vne07   ]
+[vne05   |desc    |vne50   |vne51   |vne06   |vne311  |vne312  |vne313  |vne314  |vne315  |vne316  |vne07   ]
+[vne05   |desc    |vne50   |vne51   |vne06   |vne311  |vne312  |vne313  |vne314  |vne315  |vne316  |vne07   ]
+[vne05   |desc    |vne50   |vne51   |vne06   |vne311  |vne312  |vne313  |vne314  |vne315  |vne316  |vne07   ]
+[vne05   |desc    |vne50   |vne51   |vne06   |vne311  |vne312  |vne313  |vne314  |vne315  |vne316  |vne07   ]
+
+}
+END -- s_vne
+Grid gr8
+{
+           Rows [cnt   ]/[cn2   ] ----------
+
+}
+END -- gr8
+END -- vb3
+END -- apsi315
+
+TABLES
+vne_file,
+ecm_file,
+sma_file
+ATTRIBUTES
+Group group01:group01;
+Edit vne01=vne_file.vne01, tabIndex=1, not null, required;
+ComboBox sma917=sma_file.sma917, tabIndex=7, items=(("0", "WorkStation"),("1", "Machine"));
+Edit vne02=vne_file.vne02, tabIndex=2, not null, required;
+Edit vne04=vne_file.vne04, tabIndex=5, default = "0", not null, required;
+Edit vne03=vne_file.vne03, tabIndex=4, not null, required;
+Edit ecm45=ecm_file.ecm45, tabIndex=8, default = "0", not null, required;
+Edit vne012=vne_file.vne012, tabIndex=21, not null, required;
+ButtonEdit vne05=vne_file.vne05, action=controlp, tabIndex=9, title="vne05", not null, required, image="zoom";
+Edit desc=formonly.desc type CHAR, tabIndex=10, title="desc", noEntry;
+DateEdit vne50=vne_file.vne50, tabIndex=20, title="vne50", not null, required;
+DateEdit vne51=vne_file.vne51, tabIndex=19, title="vne51", not null, required;
+Edit vne06=vne_file.vne06, tabIndex=18, title="vne06", noEntry;
+Edit vne311=vne_file.vne311, tabIndex=17, title="vne311", noEntry;
+Edit vne312=vne_file.vne312, tabIndex=16, title="vne312", noEntry;
+Edit vne313=vne_file.vne313, tabIndex=15, title="vne313", noEntry;
+Edit vne314=vne_file.vne314, tabIndex=14, title="vne314", noEntry;
+Edit vne315=vne_file.vne315, tabIndex=13, title="vne315", noEntry;
+Edit vne316=vne_file.vne316, tabIndex=12, title="vne316", noEntry;
+Edit vne07=vne_file.vne07, tabIndex=11, title="vne07", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=3, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vne(vne_file.vne05,formonly.desc,vne_file.vne50,vne_file.vne51,vne_file.vne06,vne_file.vne311,vne_file.vne312,vne_file.vne313,vne_file.vne314,vne_file.vne315,vne_file.vne316,vne_file.vne07)
+SCREEN RECORD Undefined(vne_file.vne01,sma_file.sma917,vne_file.vne02,vne_file.vne04,vne_file.vne03,ecm_file.ecm45,formonly.cnt,formonly.cn2,vne_file.vne012)
+END -- INSTRUCTIONS
+

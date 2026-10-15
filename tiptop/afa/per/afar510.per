@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afar510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"afar510")
+VBox VBox1
+Grid Grid1
+{
+ <G grpqbe                                                                                   >
+  Year Month          [fdd03     ][fdd033  ]     Property No.        [fdc03               ]
+  Policy No.          [fdc01               ]     Asset Category      [faj04               ]
+  Department          [fdc05               ]     Object S/N          [fdc04               ]
+ <                                                                                           >
+
+}
+END -- Grid1
+Group group01(text="INPUT")
+Grid Grid2
+{
+ <G group02                                                           >
+ [s1                 ] [s2                  ] [s3                  ]
+ [t1                 ] [t2                  ] [t3                  ]
+ [u1                 ] [u2                  ] [u3                  ]
+ <                                                                    >
+ <G group03                         ><G group04                       >
+ [a                                ]  [b                             ]
+ <                                  ><                                >
+
+}
+END -- Grid2
+END -- group01
+Grid Grid3
+{
+[more                                         ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- afar510
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+Edit fdd03=formonly.fdd03 type SMALLINT, tabIndex=1;
+Edit fdd033=formonly.fdd033 type SMALLINT, tabIndex=2;
+Edit fdc03=formonly.fdc03 type CHAR, tabIndex=3;
+Edit fdc01=formonly.fdc01 type CHAR, tabIndex=4;
+Edit faj04=formonly.faj04 type CHAR, tabIndex=5;
+Edit fdc05=formonly.fdc05 type CHAR, tabIndex=6;
+Edit fdc04=formonly.fdc04 type CHAR, tabIndex=7;
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, queryEditable, items=(("1", %"Policy No."),("2", %"Department QBE"),("3", %"Property No."),("4", %"Asset Category"),("5", %"Object S/N"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=9, queryEditable, items=(("1", %"Policy No."),("2", %"Department QBE"),("3", %"Property No."),("4", %"Asset Category"),("5", %"Object S/N"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=10, queryEditable, items=(("1", %"Policy No."),("2", %"Department QBE"),("3", %"Property No."),("4", %"Asset Category"),("5", %"Object S/N"));
+CheckBox t1=formonly.t1 type VARCHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type VARCHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type VARCHAR, tabIndex=13, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type VARCHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type VARCHAR, tabIndex=15, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type VARCHAR, tabIndex=16, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Print Method";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=17, items=(("1", %"Detail"),("2", %"Summary"));
+Group group04:group04, text="Sumamry Method";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=18, items=(("1", %"Insurance Policy"),("2", %"Department"),("3", %"Asset Category"),("4", %"Object S/N"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=19, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.fdd03,formonly.fdd033,formonly.fdc03,formonly.fdc01,formonly.faj04,formonly.fdc05,formonly.fdc04,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.a,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

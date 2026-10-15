@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr170.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr170")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                  >
+  Customer#           [tlf19               ]
+ <                                           >
+
+}
+END -- gr1
+Grid gr2
+{
+ <G group02                                                                                      >
+  Item No.            [tlf01               ]           Grp Code 3          [ima11               ]
+  Prod. Class         [ima131              ]           Cost Group          [ima12               ]
+ <                                                                                               >
+}
+END -- gr2
+Group g01(text="INPUT")
+Grid gr3
+{
+ Printing Period  [yy1_b     ]/[mm1_b     ]-[mm1_e     ][dummy01     ]
+
+
+  <G group05                                                                         >
+    Plant# [plant_1   ] [plant_2   ] [plant_3   ] [plant_4   ]
+           [plant_5   ] [plant_6   ] [plant_7   ] [plant_8   ]
+  <                                                                                  >
+  <G group03                                                                         >
+  [dec                           ]
+  <                                                                                  >
+  <G group04                                                                         >
+   Cost Calculation Method[type                ]
+  [sum_code                                          ]
+   Conv.Curr/Base ExRt [azk01     ]/ [azk04               ]
+   Title Number        [azh01     ] [azh02                         ]
+  <                                                                                  >
+
+}
+END -- gr3
+END -- g01
+Grid gr4
+{
+[more                                                    ]
+
+
+}
+END -- gr4
+END -- VBox1
+END -- axcr170
+
+ATTRIBUTES
+Group group01:group01, text="QBE1";
+Edit tlf19=formonly.tlf19 type CHAR, tabIndex=1, comment="Enter Cust# to Compare";
+Group group02:group02, text="QBE2";
+ButtonEdit tlf01=formonly.tlf01 type CHAR, action=controlp, tabIndex=2, image="zoom", comment="<P>";
+Edit ima11=formonly.ima11 type CHAR, tabIndex=3;
+Edit ima131=formonly.ima131 type CHAR, tabIndex=4;
+Edit ima12=formonly.ima12 type CHAR, tabIndex=5;
+Edit yy1_b=formonly.yy1_b type CHAR, tabIndex=6, comment="No Blank Field";
+Edit mm1_b=formonly.mm1_b type CHAR, tabIndex=7, comment="No Blank Field";
+Edit mm1_e=formonly.mm1_e type CHAR, tabIndex=8, comment="No Blank Field";
+Label dummy01:dummy01, text="(Year/Period)";
+Group group05:group05;
+ButtonEdit plant_1=formonly.plant_1 type CHAR, action=controlp, tabIndex=9, image="zoom", upShift;
+ButtonEdit plant_2=formonly.plant_2 type CHAR, action=controlp, tabIndex=10, image="zoom", upShift;
+ButtonEdit plant_3=formonly.plant_3 type CHAR, action=controlp, tabIndex=11, image="zoom", upShift;
+ButtonEdit plant_4=formonly.plant_4 type CHAR, action=controlp, tabIndex=12, image="zoom", upShift;
+ButtonEdit plant_5=formonly.plant_5 type CHAR, action=controlp, tabIndex=13, image="zoom", upShift;
+ButtonEdit plant_6=formonly.plant_6 type CHAR, action=controlp, tabIndex=14, image="zoom", upShift;
+ButtonEdit plant_7=formonly.plant_7 type CHAR, action=controlp, tabIndex=15, image="zoom", upShift;
+ButtonEdit plant_8=formonly.plant_8 type CHAR, action=controlp, tabIndex=16, image="zoom", upShift;
+Group group03:group03, text="Amount Unit";
+RadioGroup dec=formonly.dec type CHAR, tabIndex=17, items=(("1", "DR"),("2", "TH"),("3", "Ten TH"));
+Group group04:group04;
+ComboBox type=formonly.type type VARCHAR, tabIndex=24, not null, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+CheckBox sum_code=formonly.sum_code type CHAR, tabIndex=18, text="Allowance/Misc Invo./For Internal Total", not null, required, valueChecked = "N";
+ButtonEdit azk01=formonly.azk01 type VARCHAR, action=controlp, tabIndex=19, image="zoom", upShift;
+ButtonEdit azk04=formonly.azk04 type DECIMAL, action=controlp, tabIndex=20, image="zoom";
+ButtonEdit azh01=formonly.azh01 type VARCHAR, action=controlp, tabIndex=21, image="zoom", comment="<^P> Qry Title No.";
+Edit azh02=formonly.azh02 type CHAR, tabIndex=22;
+CheckBox more=formonly.more type CHAR, tabIndex=23, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tlf19,formonly.tlf01,formonly.ima11,formonly.ima131,formonly.ima12,formonly.yy1_b,formonly.mm1_b,formonly.mm1_e,formonly.plant_1,formonly.plant_2,formonly.plant_3,formonly.plant_4,formonly.plant_5,formonly.plant_6,formonly.plant_7,formonly.plant_8,formonly.dec,formonly.type,formonly.sum_code,formonly.azk01,formonly.azk04,formonly.azh01,formonly.azh02,formonly.more)
+END -- INSTRUCTIONS
+

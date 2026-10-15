@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqct4102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqct4102")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr203
+{
+ <G group01                                                       >
+  Line No.            [qcg03     ]
+  QC Items            [qcg04     ][azf03                         ]
+  QC Qty              [qcg11     ]
+  QC Type             [qcg12     ] (1.105D/E 2.C=0)
+  Low Limit           [qcg131    ]
+  Up Limit            [qcg132    ]
+ <                                                                >
+
+}
+END -- gr203
+END -- page01
+END -- folder01
+Table s_qcgg
+{
+[qcgg04   ]
+[qcgg04   ]
+[qcgg04   ]
+[qcgg04   ]
+[qcgg04   ]
+[qcgg04   ]
+[qcgg04   ]
+[qcgg04   ]
+[qcgg04   ]
+[qcgg04   ]
+
+}
+END -- s_qcgg
+Grid gr204
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr204
+END -- VBox1
+END -- aqct4102
+
+ATTRIBUTES
+Group group01:group01;
+Edit qcg03=formonly.qcg03 type CHAR, tabIndex=1, noEntry;
+Edit qcg04=formonly.qcg04 type CHAR, tabIndex=2, noEntry;
+Edit azf03=formonly.azf03 type CHAR, tabIndex=3, noEntry;
+Edit qcg11=formonly.qcg11 type CHAR, tabIndex=4, noEntry;
+Edit qcg12=formonly.qcg12 type CHAR, tabIndex=5, noEntry;
+Edit qcg131=formonly.qcg131 type CHAR, tabIndex=6, noEntry;
+Edit qcg132=formonly.qcg132 type CHAR, tabIndex=7, noEntry;
+Edit qcgg04=formonly.qcgg04 type CHAR, tabIndex=8, title="Measures";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcgg(formonly.qcgg04)
+SCREEN RECORD Undefined(formonly.qcg03,formonly.qcg04,formonly.azf03,formonly.qcg11,formonly.qcg12,formonly.qcg131,formonly.qcg132,formonly.cn2)
+END -- INSTRUCTIONS
+

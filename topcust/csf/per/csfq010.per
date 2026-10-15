@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfq010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+ [label1          ] [tc_sfa02              ]
+
+ [label2          ] [tc_sfbud05            ] [tc_sfbud06          ]
+
+ [label3          ] [tc_sfb06              ] [eca02               ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Folder Folder2
+Page page3(action=page3, text=%"page3")
+VBox VBox3
+Table Table1
+{
+[tc_sfa01|tc_sfa03|tc_sfbud|tc_sfbu1|tc_sfb01|eca02_1 |tc_sfb03       |tc_sfbud04  |tc_sfb04       |tc_sfbud02   |ima02   |ima021  |tc_sfb08]
+[tc_sfa01|tc_sfa03|tc_sfbud|tc_sfbu1|tc_sfb01|eca02_1 |tc_sfb03       |tc_sfbud04  |tc_sfb04       |tc_sfbud02   |ima02   |ima021  |tc_sfb08]
+[tc_sfa01|tc_sfa03|tc_sfbud|tc_sfbu1|tc_sfb01|eca02_1 |tc_sfb03       |tc_sfbud04  |tc_sfb04       |tc_sfbud02   |ima02   |ima021  |tc_sfb08]
+[tc_sfa01|tc_sfa03|tc_sfbud|tc_sfbu1|tc_sfb01|eca02_1 |tc_sfb03       |tc_sfbud04  |tc_sfb04       |tc_sfbud02   |ima02   |ima021  |tc_sfb08]
+[tc_sfa01|tc_sfa03|tc_sfbud|tc_sfbu1|tc_sfb01|eca02_1 |tc_sfb03       |tc_sfbud04  |tc_sfb04       |tc_sfbud02   |ima02   |ima021  |tc_sfb08]
+}
+END -- Table1
+Grid gr2
+{
+  ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2
+END -- VBox3
+END -- page3
+Page page4(action=page4, text=%"page4")
+VBox VBox2
+Table Table2
+{
+[tc_sfa02_2  |tc_sfa01_1|tc_sfbud05_2 |tc_sfbud06_2|tc_sfb06_2  |eca02_2 |tc_sfbud02_1     |ima02_1       |ima021_1     |tc_sfb08_1    ]
+[tc_sfa02_2  |tc_sfa01_1|tc_sfbud05_2 |tc_sfbud06_2|tc_sfb06_2  |eca02_2 |tc_sfbud02_1     |ima02_1       |ima021_1     |tc_sfb08_1    ]
+[tc_sfa02_2  |tc_sfa01_1|tc_sfbud05_2 |tc_sfbud06_2|tc_sfb06_2  |eca02_2 |tc_sfbud02_1     |ima02_1       |ima021_1     |tc_sfb08_1    ]
+[tc_sfa02_2  |tc_sfa01_1|tc_sfbud05_2 |tc_sfbud06_2|tc_sfb06_2  |eca02_2 |tc_sfbud02_1     |ima02_1       |ima021_1     |tc_sfb08_1    ]
+[tc_sfa02_2  |tc_sfa01_1|tc_sfbud05_2 |tc_sfbud06_2|tc_sfb06_2  |eca02_2 |tc_sfbud02_1     |ima02_1       |ima021_1     |tc_sfb08_1    ]
+}
+END -- Table2
+Grid gr3
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr3
+END -- VBox2
+END -- page4
+END -- Folder2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"Label1";
+DateEdit tc_sfa02=formonly.tc_sfa02, tabIndex=1;
+Label label2:Label2, text=%"Label2";
+ButtonEdit tc_sfbud05=formonly.tc_sfbud05, action=controlp, tabIndex=2, image="zoom";
+Edit tc_sfbud06=formonly.tc_sfbud06, tabIndex=3;
+Label label3:Label3, text=%"Label3";
+ButtonEdit tc_sfb06=formonly.tc_sfb06, action=controlp, tabIndex=4, image="zoom";
+Edit eca02=formonly.eca02, tabIndex=5;
+DateEdit tc_sfa01=formonly.tc_sfa02_1, tabIndex=6, title=%"tc_sfa02_1";
+ButtonEdit tc_sfa03=formonly.tc_sfa01, action=controlp, tabIndex=7, title=%"tc_sfa01", image="zoom";
+ButtonEdit tc_sfbud=formonly.tc_sfbud05_1, action=controlp, tabIndex=8, title=%"tc_sfbud05_1", image="zoom";
+Edit tc_sfbu1=formonly.tc_sfbud06_1, tabIndex=9, title=%"tc_sfbud06_1";
+ButtonEdit tc_sfb01=formonly.tc_sfb06_1, action=controlp, tabIndex=10, title=%"tc_sfb06_1", image="zoom";
+Edit eca02_1=formonly.eca02_1, tabIndex=11, title=%"eca02_1";
+ButtonEdit tc_sfb03=formonly.tc_sfb03, action=controlp, tabIndex=12, title=%"tc_sfb03", image="zoom";
+ButtonEdit tc_sfbud04=formonly.tc_sfbud04, action=controlp, tabIndex=13, title=%"tc_sfbud04", image="zoom";
+Edit tc_sfb04=formonly.tc_sfb04, tabIndex=14, title=%"tc_sfb04";
+ButtonEdit tc_sfbud02=formonly.tc_sfbud02, action=controlp, tabIndex=15, title=%"tc_sfbud02", image="zoom";
+Edit ima02=formonly.ima02, tabIndex=16, title=%"ima02";
+Edit ima021=formonly.ima021, tabIndex=17, title=%"ima021";
+Edit tc_sfb08=formonly.tc_sfb08, tabIndex=18, title=%"tc_sfb08";
+Edit cnt=formonly.cnt type CHAR, tabIndex=30;
+DateEdit tc_sfa02_2=formonly.tc_sfa02_2, tabIndex=19, title=%"tc_sfa02_2";
+ButtonEdit tc_sfa01_1=formonly.tc_sfa01_1, action=controlp, tabIndex=20, title=%"tc_sfa01_1", image="zoom";
+ButtonEdit tc_sfbud05_2=formonly.tc_sfbud05_2, action=controlp, tabIndex=21, title=%"tc_sfbud05_2", image="zoom";
+Edit tc_sfbud06_2=formonly.tc_sfbud06_2, tabIndex=22, title=%"tc_sfbud06_2";
+ButtonEdit tc_sfb06_2=formonly.tc_sfb06_2, action=controlp, tabIndex=23, title=%"tc_sfb06_2", image="zoom";
+Edit eca02_2=formonly.eca02_2, tabIndex=24, title=%"eca02_2";
+ButtonEdit tc_sfbud02_1=formonly.tc_sfbud02_1, action=controlp, tabIndex=25, title=%"tc_sfbud02_1", image="zoom";
+Edit ima02_1=formonly.ima02_1, tabIndex=26, title=%"ima02_1";
+Edit ima021_1=formonly.ima021_1, tabIndex=27, title=%"ima021_1";
+Edit tc_sfb08_1=formonly.tc_sfb08_1, tabIndex=28, title=%"tc_sfb08_1";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=29;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_sfa02,formonly.tc_sfbud05,formonly.tc_sfbud06,formonly.tc_sfb06,formonly.eca02,formonly.cn2,formonly.cnt)
+SCREEN RECORD s_tc_sfb(formonly.tc_sfa02_1,formonly.tc_sfa01,formonly.tc_sfbud05_1,formonly.tc_sfbud06_1,formonly.tc_sfb06_1,formonly.eca02_1,formonly.tc_sfb03,formonly.tc_sfbud04,formonly.tc_sfb04,formonly.tc_sfbud02,formonly.ima02,formonly.ima021,formonly.tc_sfb08)
+SCREEN RECORD s_tc_sfb_1(formonly.tc_sfa02_2,formonly.tc_sfa01_1,formonly.tc_sfbud05_2,formonly.tc_sfbud06_2,formonly.tc_sfb06_2,formonly.eca02_2,formonly.tc_sfbud02_1,formonly.ima02_1,formonly.ima021_1,formonly.tc_sfb08_1)
+END -- INSTRUCTIONS
+

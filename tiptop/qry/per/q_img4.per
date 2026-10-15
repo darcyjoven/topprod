@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_img4.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Inventory Detail")
+Grid gr3768
+{
+ <T s_img                                                                                                                                                                                                            >
+ [check|img02      |img03      |img04                    |img09|img10     |img27   |img23     |img18   |imgg10_1  |imgg10_2  |imgg10_3  |imgg10_4  |imgg10_5  |imgg10_6  |imgg10_7  |imgg10_8  |imgg10_9  |imgg10_10 ]
+ [check|img02      |img03      |img04                    |img09|img10     |img27   |img23     |img18   |imgg10_1  |imgg10_2  |imgg10_3  |imgg10_4  |imgg10_5  |imgg10_6  |imgg10_7  |imgg10_8  |imgg10_9  |imgg10_10 ]
+ [check|img02      |img03      |img04                    |img09|img10     |img27   |img23     |img18   |imgg10_1  |imgg10_2  |imgg10_3  |imgg10_4  |imgg10_5  |imgg10_6  |imgg10_7  |imgg10_8  |imgg10_9  |imgg10_10 ]
+ [check|img02      |img03      |img04                    |img09|img10     |img27   |img23     |img18   |imgg10_1  |imgg10_2  |imgg10_3  |imgg10_4  |imgg10_5  |imgg10_6  |imgg10_7  |imgg10_8  |imgg10_9  |imgg10_10 ]
+ [check|img02      |img03      |img04                    |img09|img10     |img27   |img23     |img18   |imgg10_1  |imgg10_2  |imgg10_3  |imgg10_4  |imgg10_5  |imgg10_6  |imgg10_7  |imgg10_8  |imgg10_9  |imgg10_10 ]
+ [check|img02      |img03      |img04                    |img09|img10     |img27   |img23     |img18   |imgg10_1  |imgg10_2  |imgg10_3  |imgg10_4  |imgg10_5  |imgg10_6  |imgg10_7  |imgg10_8  |imgg10_9  |imgg10_10 ]
+ [check|img02      |img03      |img04                    |img09|img10     |img27   |img23     |img18   |imgg10_1  |imgg10_2  |imgg10_3  |imgg10_4  |imgg10_5  |imgg10_6  |imgg10_7  |imgg10_8  |imgg10_9  |imgg10_10 ]
+ [check|img02      |img03      |img04                    |img09|img10     |img27   |img23     |img18   |imgg10_1  |imgg10_2  |imgg10_3  |imgg10_4  |imgg10_5  |imgg10_6  |imgg10_7  |imgg10_8  |imgg10_9  |imgg10_10 ]
+ [check|img02      |img03      |img04                    |img09|img10     |img27   |img23     |img18   |imgg10_1  |imgg10_2  |imgg10_3  |imgg10_4  |imgg10_5  |imgg10_6  |imgg10_7  |imgg10_8  |imgg10_9  |imgg10_10 ]
+ [check|img02      |img03      |img04                    |img09|img10     |img27   |img23     |img18   |imgg10_1  |imgg10_2  |imgg10_3  |imgg10_4  |imgg10_5  |imgg10_6  |imgg10_7  |imgg10_8  |imgg10_9  |imgg10_10 ]
+ <                                                                                                                                                                                                                   >
+
+}
+END -- gr3768
+END -- q_img4
+
+TABLES
+img_file
+ATTRIBUTES
+Table s_img:s_img;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit img02=img_file.img02, tabIndex=2, title="Warehouse", noEntry, not null, required;
+Edit img03=img_file.img03, tabIndex=3, title="Location", noEntry, not null, required;
+Edit img04=img_file.img04, tabIndex=4, title="Lot#", noEntry, not null, required;
+Edit img09=img_file.img09, tabIndex=5, title="Unit", noEntry;
+Edit img10=img_file.img10, tabIndex=6, title="Inventory", noEntry, not null, required;
+Edit img27=img_file.img27, tabIndex=7, title="Sequence", noEntry;
+Edit img23=img_file.img23, tabIndex=8, title="img23";
+Edit img18=img_file.img18, tabIndex=19, title=%"Expiry Date";
+Edit imgg10_1=formonly.imgg10_1 type DECIMAL, tabIndex=9, title="imgg10_1";
+Edit imgg10_2=formonly.imgg10_2 type DECIMAL, tabIndex=10, title="imgg10_2";
+Edit imgg10_3=formonly.imgg10_3 type DECIMAL, tabIndex=11, title="imgg10_3";
+Edit imgg10_4=formonly.imgg10_4 type DECIMAL, tabIndex=12, title="imgg10_4";
+Edit imgg10_5=formonly.imgg10_5 type DECIMAL, tabIndex=13, title="imgg10_5";
+Edit imgg10_6=formonly.imgg10_6 type DECIMAL, tabIndex=14, title="imgg10_6";
+Edit imgg10_7=formonly.imgg10_7 type DECIMAL, tabIndex=15, title="imgg10_7";
+Edit imgg10_8=formonly.imgg10_8 type DECIMAL, tabIndex=16, title="imgg10_8";
+Edit imgg10_9=formonly.imgg10_9 type DECIMAL, tabIndex=17, title="imgg10_9";
+Edit imgg10_10=formonly.imgg10_10 type DECIMAL, tabIndex=18, title="imgg10_10";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(formonly.check,img_file.img02,img_file.img03,img_file.img04,img_file.img09,img_file.img10,img_file.img27,img_file.img23,img_file.img18,formonly.imgg10_1,formonly.imgg10_2,formonly.imgg10_3,formonly.imgg10_4,formonly.imgg10_5,formonly.imgg10_6,formonly.imgg10_7,formonly.imgg10_8,formonly.imgg10_9,formonly.imgg10_10)
+END -- INSTRUCTIONS
+

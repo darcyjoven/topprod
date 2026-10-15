@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt410_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt410_2")
+VBox vb3
+Folder pc1
+Page Main(text=%"Other Fare Standard")
+Table s_lod
+{
+[lod03       |oaj02               |lod04                   |aag02_1                |lod041              |aag02_2             |lod06               |lod10           |lod07           |lod08       |lod09     ]
+[lod03       |oaj02               |lod04                   |aag02_1                |lod041              |aag02_2             |lod06               |lod10           |lod07           |lod08       |lod09     ]
+[lod03       |oaj02               |lod04                   |aag02_1                |lod041              |aag02_2             |lod06               |lod10           |lod07           |lod08       |lod09     ]
+[lod03       |oaj02               |lod04                   |aag02_1                |lod041              |aag02_2             |lod06               |lod10           |lod07           |lod08       |lod09     ]
+[lod03       |oaj02               |lod04                   |aag02_1                |lod041              |aag02_2             |lod06               |lod10           |lod07           |lod08       |lod09     ]
+
+}
+END -- s_lod
+END -- Main
+END -- pc1
+Grid gr1
+{
+  ---- Rows [cnt   ] ------
+
+
+}
+END -- gr1
+END -- vb3
+END -- almt410_2
+
+TABLES
+lod_file
+ATTRIBUTES
+ButtonEdit lod03=lod_file.lod03, action=controlp, tabIndex=1, title="Fare No.", not null, required, image="zoom.png";
+Edit oaj02=formonly.oaj02 type VARCHAR, tabIndex=2, title="Fare Name", noEntry;
+Edit lod04=lod_file.lod04, tabIndex=3, title="Account No.", noEntry;
+Edit aag02_1=formonly.aag02_1 type VARCHAR, tabIndex=4, title="Account Name", noEntry;
+Edit lod041=lod_file.lod041, tabIndex=5, title="Account No. 2", noEntry;
+Edit aag02_2=formonly.aag02_2 type INTEGER, tabIndex=6, title="Account 2 Name", noEntry;
+Edit lod06=lod_file.lod06, tabIndex=12, title="Qty";
+ComboBox lod10=lod_file.lod10, tabIndex=9, title="Amount Belongs To", noEntry, items=(("0", "Accrual System"),("1", "Receipt & Payment System "));
+ComboBox lod07=lod_file.lod07, tabIndex=7, title="Charge Type", not null, required, items=(("0", "Once"),("1", "Monthly"));
+Edit lod08=lod_file.lod08, tabIndex=11, title=%"Effected Date", not null, required;
+Edit lod09=lod_file.lod09, tabIndex=10, title=%"Expire Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lod(lod_file.lod03,formonly.oaj02,lod_file.lod04,formonly.aag02_1,lod_file.lod041,formonly.aag02_2,lod_file.lod06,lod_file.lod10,lod_file.lod07,lod_file.lod08,lod_file.lod09)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

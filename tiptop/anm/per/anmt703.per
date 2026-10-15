@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt703.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt703")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr4525
+{
+ Document No.         [nnt01           ]
+
+}
+END -- gr4525
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_nnt
+{
+[nnt02 |nnt03     |nnt04       |nnt05                         |nnt06|nnt07  |nnt08               |nnt09               |nnt10               ]
+[nnt02 |nnt03     |nnt04       |nnt05                         |nnt06|nnt07  |nnt08               |nnt09               |nnt10               ]
+[nnt02 |nnt03     |nnt04       |nnt05                         |nnt06|nnt07  |nnt08               |nnt09               |nnt10               ]
+[nnt02 |nnt03     |nnt04       |nnt05                         |nnt06|nnt07  |nnt08               |nnt09               |nnt10               ]
+[nnt02 |nnt03     |nnt04       |nnt05                         |nnt06|nnt07  |nnt08               |nnt09               |nnt10               ]
+[nnt02 |nnt03     |nnt04       |nnt05                         |nnt06|nnt07  |nnt08               |nnt09               |nnt10               ]
+[nnt02 |nnt03     |nnt04       |nnt05                         |nnt06|nnt07  |nnt08               |nnt09               |nnt10               ]
+[nnt02 |nnt03     |nnt04       |nnt05                         |nnt06|nnt07  |nnt08               |nnt09               |nnt10               ]
+[nnt02 |nnt03     |nnt04       |nnt05                         |nnt06|nnt07  |nnt08               |nnt09               |nnt10               ]
+[nnt02 |nnt03     |nnt04       |nnt05                         |nnt06|nnt07  |nnt08               |nnt09               |nnt10               ]
+
+}
+END -- s_nnt
+Grid gr4526
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4526
+END -- VBox1
+END -- anmt703
+
+TABLES
+nnt_file
+ATTRIBUTES
+Edit nnt01=nnt_file.nnt01, tabIndex=1;
+Edit nnt02=nnt_file.nnt02, tabIndex=2, title="Line#", not null, required;
+ButtonEdit nnt03=nnt_file.nnt03, action=controlp, tabIndex=3, title="Property#", not null, required, image="zoom", comment="<^P>Qry Property No.";
+ButtonEdit nnt04=nnt_file.nnt04, action=controlp, tabIndex=4, title="Additional#", not null, required, image="zoom", comment="<^P>Qry Data";
+Edit nnt05=nnt_file.nnt05, tabIndex=5, title="Property Name";
+Edit nnt06=nnt_file.nnt06, tabIndex=6, title="Unit", not null, required;
+Edit nnt07=nnt_file.nnt07, tabIndex=7, title="Qty", not null, required;
+Edit nnt08=nnt_file.nnt08, tabIndex=8, title="Undepreciated$", not null, required;
+Edit nnt09=nnt_file.nnt09, tabIndex=9, title="Acquisition Cost", not null, required;
+Edit nnt10=nnt_file.nnt10, tabIndex=10, title="Mortgage Amount", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nnt(nnt_file.nnt02,nnt_file.nnt03,nnt_file.nnt04,nnt_file.nnt05,nnt_file.nnt06,nnt_file.nnt07,nnt_file.nnt08,nnt_file.nnt09,nnt_file.nnt10)
+SCREEN RECORD Undefined(nnt_file.nnt01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi310")
+VBox VBox1
+Folder pc490
+Page page01(text="Main")
+Grid gr2092
+{
+ Work Center                      [oqf01               ]
+
+ Name                             [eca02               ]
+
+ Direct Labor Wage Rate           [oqf02               ]
+
+ Indirect Ovrhead Apportion.Ratio [oqf03               ]
+}
+END -- gr2092
+END -- page01
+Page info(text="Info")
+Grid gr2093
+{
+ Record Owner        [oqfuser   ] Last Modified by    [oqfmodu   ] Data Valid Code     [oqfacti   ]
+ Department          [oqfgrup   ] Create/Modify Date  [oqfdate     ]
+ Record Orig.        [oqforiu   ]
+ Dept Orig.          [oqforig   ]
+}
+END -- gr2093
+END -- info
+END -- pc490
+Grid gr2094
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2094
+END -- VBox1
+END -- axmi310
+
+TABLES
+oqf_file
+ATTRIBUTES
+ButtonEdit oqf01=oqf_file.oqf01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Workstation";
+Edit eca02=formonly.eca02 type CHAR, tabIndex=2, noEntry;
+Edit oqf02=oqf_file.oqf02, tabIndex=3;
+Edit oqf03=oqf_file.oqf03, tabIndex=4;
+Edit oqfuser=oqf_file.oqfuser, tabIndex=5, noEntry;
+Edit oqfmodu=oqf_file.oqfmodu, tabIndex=6, noEntry;
+Edit oqfacti=oqf_file.oqfacti, tabIndex=7, noEntry, upShift;
+Edit oqfgrup=oqf_file.oqfgrup, tabIndex=8, noEntry;
+DateEdit oqfdate=oqf_file.oqfdate, tabIndex=9, noEntry;
+Edit oqforiu=oqf_file.oqforiu, tabIndex=501, noEntry;
+Edit oqforig=oqf_file.oqforig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oqf_file.oqf01,formonly.eca02,oqf_file.oqf02,oqf_file.oqf03,oqf_file.oqfuser,oqf_file.oqfmodu,oqf_file.oqfacti,oqf_file.oqfgrup,oqf_file.oqfdate,oqf_file.oqforiu,oqf_file.oqforig,formonly.cnt)
+END -- INSTRUCTIONS
+

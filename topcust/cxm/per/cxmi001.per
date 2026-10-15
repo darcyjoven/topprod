@@ -1,0 +1,197 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cxm/4fd/cxmi001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox1
+Group Group6(text=%"Group6")
+Grid Grid1
+{
+
+ tc_dhyud02  [tc_dhyud02        ]                           tc_dhy02    [tc_dhy02         ]        tc_dhy40    [tc_dhy40      ]
+ tc_dhy00    [tc_dhy00          ]                           tc_dhy08    [tc_dhy08         ]        tc_dhy41    [tc_dhy41      ]
+ tc_dhy01    [tc_dhy01          ]                                       [tc_dhy09         ]                         [imgmksg]
+ tc_dhy03    [tc_dhy03          ] [occ02           ]        tc_dhy10    [tc_dhy10         ]                         [       ]
+ tc_dhy04    [tc_dhy04          ]                           tc_dhy11    [tc_dhy11         ]
+ tc_dhy05    [tc_dhy05          ]                           tc_dhyud10  [tc_dhyud10       ]
+ tc_dhy06    [tc_dhy06          ]                           tc_dhyud03  [tc_dhyud03       ]
+ tc_dhy07    [tc_dhy07          ]
+}
+END -- Grid1
+END -- Group6
+Group Group1(text=%"Group1")
+Grid Grid2
+{
+ 客户提供        [tc_dhy12       ]     [tc_dhy13       ]     [tc_dhy14       ]      [tc_dhy15       ]
+[tc_dhy16    ]                          tc_dhy17             [tc_dhy17      ]
+ tc_dhy18   [tc_dhy18      ]            tc_dhy19             [tc_dhy19      ]
+ SMT元件来料[tc_dhy20   ]              [tc_dhy21   ]
+ tc_dhy22   [tc_dhy22      ]            tc_dhy23             [tc_dhy23      ]
+}
+END -- Grid2
+END -- Group1
+Group Group2(text=%"Group2")
+Grid Grid3
+{
+  [tc_dhy24     ][tc_dhy241                                                      ]
+  [tc_dhy25     ]
+  [tc_dhy26     ][tc_dhy261                                                      ]
+  [tc_dhy27     ][tc_dhy271                                                      ]
+   tc_dhy28      [tc_dhy28       ]
+  [tc_dhy29     ][tc_dhy291                                                      ]
+  [tc_dhy30     ][tc_dhy301                                                      ]
+
+}
+END -- Grid3
+END -- Group2
+Group Group3(text=%"Group3")
+Grid Grid4
+{
+ [tc_dhy31      ][tc_dhy311                                                      ]
+ [tc_dhy32      ][tc_dhy321                                                      ]
+ [tc_dhy33      ][tc_dhy331                                                      ]
+}
+END -- Grid4
+END -- Group3
+Group Group4(text=%"Group4")
+Grid Grid5
+{
+
+   tc_dhy34   [tc_dhy34                                                                                       ]
+   tc_dhy35   [tc_dhy35                                                                                       ]
+   tc_dhy36   [tc_dhy36                                                                                       ]
+
+}
+END -- Grid5
+END -- Group4
+Group Group5(text=%"Group5")
+Grid Grid6
+{
+  tc_dhy37        [tc_dhy37           ]
+[tc_dhy38     ]   [tc_dhy39                              ]
+
+}
+END -- Grid6
+END -- Group5
+Grid gr48
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr48
+END -- VBox1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid7
+{
+
+   tc_dhyacti   [tc_dhyacti  ]               tc_dhyuser    [tc_dhyuser     ]      tc_dhygrup   [tc_dhygrup ]
+   tc_dhymodu   [tc_dhymodu  ]               tc_dhydate    [tc_dhydate     ]
+
+
+
+
+}
+END -- Grid7
+END -- Page2
+Page Page3(text=%"Page3")
+Grid Grid8
+{
+
+     tc_dhyud01  [tc_dhyud01    ]           tc_dhyud06  [tc_dhyud06     ]             tc_dhyud11    [tc_dhyud11   ]
+                                            tc_dhyud07  [tc_dhyud07     ]             tc_dhyud12    [tc_dhyud12   ]
+                                            tc_dhyud08  [tc_dhyud08     ]             tc_dhyud13    [tc_dhyud13   ]
+     tc_dhyud04  [tc_dhyud04    ]           tc_dhyud09  [tc_dhyud09     ]             tc_dhyud14    [tc_dhyud14   ]
+     tc_dhyud05  [tc_dhyud05    ]                                                     tc_dhyud15    [tc_dhyud15   ]
+
+}
+END -- Grid8
+END -- Page3
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit tc_dhyud02=formonly.tc_dhyud02, action=controlp, tabIndex=70, noEntry, image="zoom";
+DateEdit tc_dhy02=formonly.tc_dhy02 type DATE, tabIndex=9;
+ComboBox tc_dhy40=formonly.tc_dhy40, tabIndex=15, items=(("Y", "Y"),("N", "N"),("X", "X"));
+ComboBox tc_dhy00=formonly.tc_dhy00, tabIndex=1, not null, required, items=(("1", "1"),("2", "2"));
+ComboBox tc_dhy08=formonly.tc_dhy08, tabIndex=10, not null, required, items=(("A", "A"),("R", "R"),("F", "F"));
+DateEdit tc_dhy41=formonly.tc_dhy41 type DATE, tabIndex=16;
+ButtonEdit tc_dhy01=formonly.tc_dhy01, action=controlp, tabIndex=2, image="zoom";
+CheckBox tc_dhy09=formonly.tc_dhy09, tabIndex=11, text=%"tc_dhy09", not null, required, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit tc_dhy03=formonly.tc_dhy03, action=controlp, tabIndex=3, image="zoom";
+Edit occ02=formonly.occ02, tabIndex=8, noEntry;
+ComboBox tc_dhy10=formonly.tc_dhy10, tabIndex=12, items=(("1", "1"),("2", "2"));
+Edit tc_dhy04=formonly.tc_dhy04, tabIndex=4;
+ComboBox tc_dhy11=formonly.tc_dhy11, tabIndex=13, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+Edit tc_dhy05=formonly.tc_dhy05, tabIndex=5, noEntry;
+Edit tc_dhyud10=formonly.tc_dhyud10, tabIndex=14, not null, required;
+Edit tc_dhy06=formonly.tc_dhy06, tabIndex=6;
+ComboBox tc_dhyud03=formonly.tc_dhyud03, tabIndex=71, not null, required, items=(("U", "U"),("R", "R"));
+DateEdit tc_dhy07=formonly.tc_dhy07 type DATE, tabIndex=7;
+CheckBox tc_dhy12=formonly.tc_dhy12, tabIndex=17, text=%"tc_dhy12", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tc_dhy13=formonly.tc_dhy13, tabIndex=18, text=%"tc_dhy13", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tc_dhy14=formonly.tc_dhy14, tabIndex=19, text=%"tc_dhy14", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tc_dhy15=formonly.tc_dhy15, tabIndex=20, text=%"tc_dhy15", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tc_dhy16=formonly.tc_dhy16, tabIndex=21, text=%"tc_dhy16", not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox tc_dhy17=formonly.tc_dhy17, tabIndex=22, items=(("1", "1"),("2", "2"));
+ComboBox tc_dhy18=formonly.tc_dhy18, tabIndex=23, items=(("1", "1"),("2", "2"),("3", "3"));
+ComboBox tc_dhy19=formonly.tc_dhy19, tabIndex=24, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+CheckBox tc_dhy20=formonly.tc_dhy20, tabIndex=26, text=%"tc_dhy20", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tc_dhy21=formonly.tc_dhy21, tabIndex=27, text=%"tc_dhy21", not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox tc_dhy22=formonly.tc_dhy22, tabIndex=25, items=(("1", "1"),("2", "2"));
+ComboBox tc_dhy23=formonly.tc_dhy23, tabIndex=28, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+CheckBox tc_dhy24=formonly.tc_dhy24, tabIndex=29, text=%"tc_dhy24", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_dhy241=formonly.tc_dhy241, tabIndex=30;
+CheckBox tc_dhy25=formonly.tc_dhy25, tabIndex=31, text=%"tc_dhy25", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tc_dhy26=formonly.tc_dhy26, tabIndex=32, text=%"tc_dhy26", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_dhy261=formonly.tc_dhy261, tabIndex=33;
+CheckBox tc_dhy27=formonly.tc_dhy27, tabIndex=34, text=%"tc_dhy27", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_dhy271=formonly.tc_dhy271, tabIndex=35;
+ComboBox tc_dhy28=formonly.tc_dhy28, tabIndex=36, items=(("1", "1"),("2", "2"),("3", "3"));
+CheckBox tc_dhy29=formonly.tc_dhy29, tabIndex=37, text=%"tc_dhy29", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_dhy291=formonly.tc_dhy291, tabIndex=38;
+CheckBox tc_dhy30=formonly.tc_dhy30, tabIndex=39, text=%"tc_dhy30", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_dhy301=formonly.tc_dhy301, tabIndex=40;
+CheckBox tc_dhy31=formonly.tc_dhy31, tabIndex=41, text=%"tc_dhy31", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_dhy311=formonly.tc_dhy311, tabIndex=42;
+CheckBox tc_dhy32=formonly.tc_dhy32, tabIndex=43, text=%"tc_dhy32", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_dhy321=formonly.tc_dhy321, tabIndex=44;
+CheckBox tc_dhy33=formonly.tc_dhy33, tabIndex=45, text=%"tc_dhy33", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_dhy331=formonly.tc_dhy331, tabIndex=46;
+TextEdit tc_dhy34=formonly.tc_dhy34, tabIndex=48;
+TextEdit tc_dhy35=formonly.tc_dhy35, tabIndex=47;
+TextEdit tc_dhy36=formonly.tc_dhy36, tabIndex=49;
+ComboBox tc_dhy37=formonly.tc_dhy37, tabIndex=50, items=(("1", "1"),("2", "2"),("3", "3"));
+CheckBox tc_dhy38=formonly.tc_dhy38, tabIndex=51, text=%"tc_dhy38", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_dhy39=formonly.tc_dhy39, tabIndex=52;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=72;
+Edit tc_dhyacti=formonly.tc_dhyacti, tabIndex=53;
+Edit tc_dhyuser=formonly.tc_dhyuser, tabIndex=54;
+Edit tc_dhygrup=formonly.tc_dhygrup, tabIndex=55;
+Edit tc_dhymodu=formonly.tc_dhymodu, tabIndex=56;
+DateEdit tc_dhydate=formonly.tc_dhydate type DATE, tabIndex=57;
+Edit tc_dhyud01=formonly.tc_dhyud01, tabIndex=58;
+Edit tc_dhyud06=formonly.tc_dhyud06, tabIndex=61;
+Edit tc_dhyud11=formonly.tc_dhyud11, tabIndex=65;
+Edit tc_dhyud07=formonly.tc_dhyud07, tabIndex=62;
+Edit tc_dhyud12=formonly.tc_dhyud12, tabIndex=66;
+Edit tc_dhyud08=formonly.tc_dhyud08, tabIndex=63;
+Edit tc_dhyud13=formonly.tc_dhyud13, tabIndex=67;
+Edit tc_dhyud04=formonly.tc_dhyud04, tabIndex=59;
+Edit tc_dhyud09=formonly.tc_dhyud09, tabIndex=64;
+Edit tc_dhyud14=formonly.tc_dhyud14, tabIndex=68;
+Edit tc_dhyud05=formonly.tc_dhyud05, tabIndex=60;
+Edit tc_dhyud15=formonly.tc_dhyud15, tabIndex=69;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_dhy00,formonly.tc_dhy02,formonly.tc_dhy01,formonly.tc_dhy03,formonly.occ02,formonly.tc_dhy04,formonly.tc_dhy05,formonly.tc_dhy06,formonly.tc_dhy07,formonly.tc_dhy08,formonly.tc_dhy09,formonly.tc_dhy10,formonly.tc_dhy11,formonly.tc_dhy40,formonly.tc_dhy41,formonly.tc_dhy12,formonly.tc_dhy13,formonly.tc_dhy14,formonly.tc_dhy15,formonly.tc_dhy16,formonly.tc_dhy17,formonly.tc_dhy18,formonly.tc_dhy19,formonly.tc_dhy22,formonly.tc_dhy20,formonly.tc_dhy21,formonly.tc_dhy23,formonly.tc_dhy24,formonly.tc_dhy241,formonly.tc_dhy25,formonly.tc_dhy26,formonly.tc_dhy261,formonly.tc_dhy27,formonly.tc_dhy271,formonly.tc_dhy28,formonly.tc_dhy29,formonly.tc_dhy291,formonly.tc_dhy30,formonly.tc_dhy301,formonly.tc_dhy31,formonly.tc_dhy311,formonly.tc_dhy32,formonly.tc_dhy321,formonly.tc_dhy33,formonly.tc_dhy331,formonly.tc_dhy35,formonly.tc_dhy34,formonly.tc_dhy36,formonly.tc_dhy37,formonly.tc_dhy38,formonly.tc_dhy39,formonly.tc_dhyacti,formonly.tc_dhyuser,formonly.tc_dhygrup,formonly.tc_dhymodu,formonly.tc_dhydate,formonly.tc_dhyud01,formonly.tc_dhyud04,formonly.tc_dhyud05,formonly.tc_dhyud06,formonly.tc_dhyud07,formonly.tc_dhyud08,formonly.tc_dhyud09,formonly.tc_dhyud11,formonly.tc_dhyud12,formonly.tc_dhyud13,formonly.tc_dhyud14,formonly.tc_dhyud15,formonly.imgmksg,formonly.tc_dhyud10,formonly.tc_dhyud02,formonly.tc_dhyud03,formonly.cnt)
+END -- INSTRUCTIONS
+

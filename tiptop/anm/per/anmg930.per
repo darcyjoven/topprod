@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmg930.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr930")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                          >
+  Trans-out Note  [nnw01          ]
+  Document Date   [nnw02          ]
+ <                                   >
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                                        ]
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- anmr930
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit nnw01=formonly.nnw01 type CHAR, tabIndex=1;
+DateEdit nnw02=formonly.nnw02 type CHAR, tabIndex=2;
+CheckBox more=formonly.more type CHAR, tabIndex=3, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nnw01,formonly.nnw02,formonly.more)
+END -- INSTRUCTIONS
+

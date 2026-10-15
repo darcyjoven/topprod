@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi411.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfi411")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr488
+{
+
+ Data Type  [sfd09                 ]
+ PBI#       [sfd01                 ]             Com Ver No [sfd08               |imgmksg]
+ Description[sfc02                            ]  confirm    [sfdconf     ]       [       ]
+
+}
+END -- gr488
+END -- page01
+END -- folder01
+Table s_sfd
+{
+[sfd02    |sfd03                |sfb05                |ima02               |ima021              |sfb04     |sfd04|sfd05     |sfd06     |sfd07     |sfb40      |sfb13          |sfb15         |sfduser |sfdgrup |sfdmodu |sfddate |sfdoriu |sfdorig ]
+[sfd02    |sfd03                |sfb05                |ima02               |ima021              |sfb04     |sfd04|sfd05     |sfd06     |sfd07     |sfb40      |sfb13          |sfb15         |sfduser |sfdgrup |sfdmodu |sfddate |sfdoriu |sfdorig ]
+[sfd02    |sfd03                |sfb05                |ima02               |ima021              |sfb04     |sfd04|sfd05     |sfd06     |sfd07     |sfb40      |sfb13          |sfb15         |sfduser |sfdgrup |sfdmodu |sfddate |sfdoriu |sfdorig ]
+[sfd02    |sfd03                |sfb05                |ima02               |ima021              |sfb04     |sfd04|sfd05     |sfd06     |sfd07     |sfb40      |sfb13          |sfb15         |sfduser |sfdgrup |sfdmodu |sfddate |sfdoriu |sfdorig ]
+[sfd02    |sfd03                |sfb05                |ima02               |ima021              |sfb04     |sfd04|sfd05     |sfd06     |sfd07     |sfb40      |sfb13          |sfb15         |sfduser |sfdgrup |sfdmodu |sfddate |sfdoriu |sfdorig ]
+[sfd02    |sfd03                |sfb05                |ima02               |ima021              |sfb04     |sfd04|sfd05     |sfd06     |sfd07     |sfb40      |sfb13          |sfb15         |sfduser |sfdgrup |sfdmodu |sfddate |sfdoriu |sfdorig ]
+[sfd02    |sfd03                |sfb05                |ima02               |ima021              |sfb04     |sfd04|sfd05     |sfd06     |sfd07     |sfb40      |sfb13          |sfb15         |sfduser |sfdgrup |sfdmodu |sfddate |sfdoriu |sfdorig ]
+[sfd02    |sfd03                |sfb05                |ima02               |ima021              |sfb04     |sfd04|sfd05     |sfd06     |sfd07     |sfb40      |sfb13          |sfb15         |sfduser |sfdgrup |sfdmodu |sfddate |sfdoriu |sfdorig ]
+[sfd02    |sfd03                |sfb05                |ima02               |ima021              |sfb04     |sfd04|sfd05     |sfd06     |sfd07     |sfb40      |sfb13          |sfb15         |sfduser |sfdgrup |sfdmodu |sfddate |sfdoriu |sfdorig ]
+[sfd02    |sfd03                |sfb05                |ima02               |ima021              |sfb04     |sfd04|sfd05     |sfd06     |sfd07     |sfb40      |sfb13          |sfb15         |sfduser |sfdgrup |sfdmodu |sfddate |sfdoriu |sfdorig ]
+}
+END -- s_sfd
+Grid gr489
+{
+
+     ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr489
+END -- VBox1
+END -- asfi411
+
+TABLES
+sfd_file,
+sfc_file
+ATTRIBUTES
+ComboBox sfd09=sfd_file.sfd09, tabIndex=1, default = "1", not null, required, items=(("1", "Combine Issue"),("2", "Combine WO"));
+ButtonEdit sfd01=sfd_file.sfd01, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry PBI          <^Y>Create PBI ";
+ButtonEdit sfd08=sfd_file.sfd08, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry PBI          <^Y>Create PBI ";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit sfc02=sfc_file.sfc02, tabIndex=3;
+ComboBox sfdconf=sfd_file.sfdconf, tabIndex=5, noEntry, items=(("Y", "Confirm"),("X", "Void"),("N", "Not Confirm"));
+Edit sfd02=sfd_file.sfd02, tabIndex=6, title="Line No.", not null, required;
+ButtonEdit sfd03=sfd_file.sfd03, action=controlp, tabIndex=7, title="W/O No.", not null, required, image="zoom", comment="<^P> Query W/O #  <^Y>Query W/O    ";
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=8, title="Production Item", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=9, title="P/N", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=10, title="Spec.", noEntry;
+ComboBox sfb04=formonly.sfb04 type CHAR, tabIndex=11, title=%"status", noEntry, items=(("1", "Gnrl"),("2", "Rls"),("3", "Prt"),("4", "Iss.Mat"),("5", "WIP"),("6", "FQC"),("7", "St-i"),("8", "Clos"));
+Edit sfd04=sfd_file.sfd04, tabIndex=12, title=%"Combined S/N";
+Edit sfd05=sfd_file.sfd05, tabIndex=13, title=%"Module Qty", not null, required;
+Edit sfd06=sfd_file.sfd06, tabIndex=14, title=%"Total Module Qty", noEntry;
+ButtonEdit sfd07=sfd_file.sfd07, action=controlp, tabIndex=15, title=%"Replaced Process No", image="zoom";
+Edit sfb40=formonly.sfb40 type CHAR, tabIndex=16, title="Priority", noEntry;
+DateEdit sfb13=formonly.sfb13 type CHAR, tabIndex=17, title="Operating Date", noEntry;
+DateEdit sfb15=formonly.sfb15 type CHAR, tabIndex=18, title="Complete Date", noEntry;
+Edit sfduser=sfd_file.sfduser, tabIndex=21, title=%"sfduser", noEntry;
+Edit sfdgrup=sfd_file.sfdgrup, tabIndex=22, title=%"sfdgrup", noEntry;
+Edit sfdmodu=sfd_file.sfdmodu, tabIndex=23, title=%"sfdmodu", noEntry;
+DateEdit sfddate=sfd_file.sfddate, tabIndex=24, title=%"sfddate", noEntry;
+Edit sfdoriu=sfd_file.sfdoriu, tabIndex=25, title=%"sfdoriu", noEntry;
+Edit sfdorig=sfd_file.sfdorig, tabIndex=26, title=%"sfdorig", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfd(sfd_file.sfd02,sfd_file.sfd03,formonly.sfb05,formonly.ima02,formonly.ima021,formonly.sfb04,sfd_file.sfd04,sfd_file.sfd05,sfd_file.sfd06,sfd_file.sfd07,formonly.sfb40,formonly.sfb13,formonly.sfb15,sfd_file.sfduser,sfd_file.sfdgrup,sfd_file.sfdmodu,sfd_file.sfddate,sfd_file.sfdoriu,sfd_file.sfdorig)
+SCREEN RECORD Undefined(sfd_file.sfd01,sfd_file.sfd08,formonly.imgmksg,sfc_file.sfc02,sfd_file.sfdconf,formonly.cnt,formonly.cn2,sfd_file.sfd09)
+END -- INSTRUCTIONS
+

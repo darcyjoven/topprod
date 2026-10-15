@@ -1,0 +1,413 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_cron.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_cron")
+Folder folder01
+Page page01(text="Job Project")
+VBox vb2
+Group group01(text="Main")
+HBox HBox1
+Grid gr1
+{
+ Job Name [gde01         ]
+ Job Desc [gde02         ]
+
+
+
+}
+END -- gr1
+Grid gr2
+{
+ Period          [gde04    ]
+[gde03       ]
+[gde18            ]  [gde19            ]
+
+
+}
+END -- gr2
+END -- HBox1
+END -- group01
+Group groupmonth(text="Schedule of Month")
+HBox hb2
+Group gb16(text="Month of time")
+Grid gr5
+{
+ Day of Month [dd_mo]
+ Start Time   [hh_mo]:[mm_mo]
+
+}
+END -- gr5
+END -- gb16
+Group gb17(text="Month of the month")
+Grid gr6
+{
+ [month01   ]   [month04   ]   [month07   ]   [month10   ]
+ [month02   ]   [month05   ]   [month08   ]   [month11   ]
+ [month03   ]   [month06   ]   [month09   ]   [month12   ]
+
+}
+END -- gr6
+END -- gb17
+END -- hb2
+END -- groupmonth
+Group groupweek(text="Schedule of Week")
+HBox hb3
+Group gb14(text="Week of time")
+Grid gr20
+{
+ Start Time [hh_we]:[mm_we]
+
+
+
+}
+END -- gr20
+END -- gb14
+Group gb15(text="Week of the week")
+Grid gr4
+{
+ [week01    ]   [week04    ]   [week07    ]
+ [week02    ]   [week05    ]
+ [week03    ]   [week06    ]
+
+}
+END -- gr4
+END -- gb15
+END -- hb3
+END -- groupweek
+Group groupday(text="Schedule of Day")
+HBox hb4
+Group gb12(text="Day of time")
+Grid gr19
+{
+ Start Time [hh_da]:[mm_da]
+
+
+
+
+}
+END -- gr19
+END -- gb12
+Group gb13(text="Day of the day")
+Grid gr21
+{
+ [day01] [day05] [day09] [day13] [day17] [day21 ][day25 |day29 ]
+ [day02] [day06] [day10 ][day14] [day18] [day22 ][day26][day30 ]
+ [day03] [day07 ][day11 ][day15 ][day19 ][day23 ][day27 |day31 ]
+ [day04] [day08 ][day12 ][day16 ][day20 ][day24 ][day28 ]
+
+}
+END -- gr21
+END -- gb13
+END -- hb4
+END -- groupday
+Group grouphour(text="Schedule of Hour")
+HBox hb5
+Group gb10(text="Minute of hour")
+Grid gr23
+{
+ Start Minute:[mm_ho]
+
+
+
+}
+END -- gr23
+END -- gb10
+Group gb11(text="Hour of the hour")
+Grid gr24
+{
+ [hour0] [hour1] [hour2] [hour3] [hour4] [hour15][hour18|hour21]
+ [hour5] [hour6] [hour07][hour7] [hour8] [hour16][hour9][hour22]
+ [houra] [hour05][hour08][hour11][hour14][hour17][hour20|hour23]
+
+}
+END -- gr24
+END -- gb11
+END -- hb5
+END -- grouphour
+Group groupminute(text="Schedule of Minute")
+Grid gr18
+{
+   [minut] [minu1] [minu2] [minu3] [minu4] [minute][minut1|minu5] [minu6] [minu7] [minu8] [minu9] [minut2][minut3|minut4]
+   [minu0] [minua] [minut5][minub] [minuc] [minut6][minud][minue] [minuf] [minut7][minug] [minuh] [minut8][minui][minuj]
+   [minuk] [minut9][minut0][minuta][minutb][minutc][minutd|minul] [minutf][minutg][minuth][minuti][minutj][minutk|minutl]
+   [minum] [minutm][minutn][minuto][minutp][minutq][minutr|minun] [minuts][minutt][minutu][minutv][minutw][minutx|minuty]
+
+}
+END -- gr18
+END -- groupminute
+Group grouponce(text="Schedule of Once")
+Grid gr29
+{
+ Date          [gde11     ]
+ Time          [hh_on]:[mm_on]
+
+}
+END -- gr29
+END -- grouponce
+HBox hb8
+Folder pc2
+Page page03(action=job, text="Job")
+Table s_cron
+{
+[gdf02     |gdf03          |gaz03                         |gdf04       |gdf05                        |gdf06                          |gdf07                          ]
+[gdf02     |gdf03          |gaz03                         |gdf04       |gdf05                        |gdf06                          |gdf07                          ]
+[gdf02     |gdf03          |gaz03                         |gdf04       |gdf05                        |gdf06                          |gdf07                          ]
+[gdf02     |gdf03          |gaz03                         |gdf04       |gdf05                        |gdf06                          |gdf07                          ]
+[gdf02     |gdf03          |gaz03                         |gdf04       |gdf05                        |gdf06                          |gdf07                          ]
+[gdf02     |gdf03          |gaz03                         |gdf04       |gdf05                        |gdf06                          |gdf07                          ]
+[gdf02     |gdf03          |gaz03                         |gdf04       |gdf05                        |gdf06                          |gdf07                          ]
+[gdf02     |gdf03          |gaz03                         |gdf04       |gdf05                        |gdf06                          |gdf07                          ]
+[gdf02     |gdf03          |gaz03                         |gdf04       |gdf05                        |gdf06                          |gdf07                          ]
+[gdf02     |gdf03          |gaz03                         |gdf04       |gdf05                        |gdf06                          |gdf07                          ]
+
+}
+END -- s_cron
+END -- page03
+END -- pc2
+Folder pc3
+Page page04(action=parameter, text="Parameter")
+Table s_para
+{
+[gdi04      |gdi05                                                                      ]
+[gdi04      |gdi05                                                                      ]
+[gdi04      |gdi05                                                                      ]
+[gdi04      |gdi05                                                                      ]
+[gdi04      |gdi05                                                                      ]
+[gdi04      |gdi05                                                                      ]
+[gdi04      |gdi05                                                                      ]
+[gdi04      |gdi05                                                                      ]
+[gdi04      |gdi05                                                                      ]
+[gdi04      |gdi05                                                                      ]
+
+}
+END -- s_para
+END -- page04
+END -- pc3
+END -- hb8
+Grid gr7
+{
+  ---------- Rows [cnt   ] / [cn2   ] / [cn3   ] ----------
+
+
+
+
+}
+END -- gr7
+END -- vb2
+END -- page01
+Page page02(text="Job Status")
+HBox hb7
+Grid gr27
+{
+
+    Last Start Time        [gde16             ]
+    Last Completed Time    [gde13             ]
+
+
+
+
+
+}
+END -- gr27
+Grid gr15
+{
+
+ Last Running Results   [gde14             ]
+ Create/Modify Date     [gde15             ]
+
+
+
+
+
+}
+END -- gr15
+END -- hb7
+END -- page02
+END -- folder01
+END -- p_cron
+
+TABLES
+gaz_file,
+gdi_file,
+gdf_file,
+gde_file
+ATTRIBUTES
+Edit gde01=gde_file.gde01, tabIndex=1, not null, required;
+Edit gde02=gde_file.gde02, tabIndex=2;
+ComboBox gde04=gde_file.gde04, tabIndex=3, not null, required, items=(("M", "Every Month"),("W", "Every Week"),("D", "Every Day"),("H", "Every Hour"),("F", "Every Minute"),("O", "Once"));
+CheckBox gde03=gde_file.gde03, tabIndex=7209074, default = "Y", text=%"Data validate", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gde18=gde_file.gde18, tabIndex=7209075, default = "Y", text=%"Use special condition", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gde19=gde_file.gde19, tabIndex=7209076, default = "Y", text=%"Use local time", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox dd_mo=formonly.dd_month type CHAR, tabIndex=13, not null, required, initializer=initday1;
+ComboBox hh_mo=formonly.hh_month type CHAR, tabIndex=4, not null, required, initializer=inithour;
+ComboBox mm_mo=formonly.mm_month type CHAR, tabIndex=5, not null, required, initializer=initminute;
+CheckBox month01=formonly.month01 type CHAR, tabIndex=14, text="January", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox month04=formonly.month04 type CHAR, tabIndex=15, text="April", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox month07=formonly.month07 type CHAR, tabIndex=16, text="July", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox month10=formonly.month10 type CHAR, tabIndex=17, text="October", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox month02=formonly.month02 type CHAR, tabIndex=18, text="February", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox month05=formonly.month05 type CHAR, tabIndex=19, text="May", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox month08=formonly.month08 type CHAR, tabIndex=20, text="August", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox month11=formonly.month11 type CHAR, tabIndex=21, text="November", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox month03=formonly.month03 type CHAR, tabIndex=22, text="March", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox month06=formonly.month06 type CHAR, tabIndex=23, text="June", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox month09=formonly.month09 type CHAR, tabIndex=24, text="September", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox month12=formonly.month12 type CHAR, tabIndex=25, text="December", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox hh_we=formonly.hh_week type CHAR, tabIndex=7209041, not null, required, initializer=inithour;
+ComboBox mm_we=formonly.mm_week type CHAR, tabIndex=7209041, not null, required, initializer=initminute;
+CheckBox week01=formonly.week01 type CHAR, tabIndex=6, text="Monday", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox week04=formonly.week04 type CHAR, tabIndex=7, text="Thursday", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox week07=formonly.week07 type CHAR, tabIndex=8, text="Sunday", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox week02=formonly.week02 type CHAR, tabIndex=9, text="Tuesday", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox week05=formonly.week05 type CHAR, tabIndex=10, text="Friday", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox week03=formonly.week03 type CHAR, tabIndex=11, text="Wednesday", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox week06=formonly.week06 type CHAR, tabIndex=12, text="Saturday", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox hh_da=formonly.hh_day type CHAR, tabIndex=7209066, not null, required, initializer=inithour;
+ComboBox mm_da=formonly.mm_day type CHAR, tabIndex=7209066, not null, required, initializer=initminute;
+CheckBox day01=formonly.day01 type CHAR, tabIndex=7209066, text="01", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day05=formonly.day05 type CHAR, tabIndex=7209066, text="05", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day09=formonly.day09 type CHAR, tabIndex=7209066, text="09", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day13=formonly.day13 type CHAR, tabIndex=7209066, text="13", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day17=formonly.day17 type CHAR, tabIndex=7209066, text="17", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day21=formonly.day21 type CHAR, tabIndex=7209066, text="21", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day25=formonly.day25 type CHAR, tabIndex=7209066, text="25", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day29=formonly.day29 type CHAR, tabIndex=7209066, text="29", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day02=formonly.day02 type CHAR, tabIndex=7209066, text="02", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day06=formonly.day06 type CHAR, tabIndex=7209066, text="06", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day10=formonly.day10 type CHAR, tabIndex=7209066, text="10", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day14=formonly.day14 type CHAR, tabIndex=7209066, text="14", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day18=formonly.day18 type CHAR, tabIndex=7209066, text="18", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day22=formonly.day22 type CHAR, tabIndex=7209066, text="22", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day26=formonly.day26 type CHAR, tabIndex=7209066, text="26", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day30=formonly.day30 type CHAR, tabIndex=7209066, text="30", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day03=formonly.day03 type CHAR, tabIndex=7209066, text="03", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day07=formonly.day07 type CHAR, tabIndex=7209066, text="07", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day11=formonly.day11 type CHAR, tabIndex=7209066, text="11", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day15=formonly.day15 type CHAR, tabIndex=7209066, text="15", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day19=formonly.day19 type CHAR, tabIndex=7209066, text="19", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day23=formonly.day23 type CHAR, tabIndex=7209066, text="23", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day27=formonly.day27 type CHAR, tabIndex=7209066, text="27", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day31=formonly.day31 type CHAR, tabIndex=7209066, text="31", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day04=formonly.day04 type CHAR, tabIndex=7209066, text="04", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day08=formonly.day08 type CHAR, tabIndex=7209066, text="08", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day12=formonly.day12 type CHAR, tabIndex=7209066, text="12", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day16=formonly.day16 type CHAR, tabIndex=7209066, text="16", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day20=formonly.day20 type CHAR, tabIndex=7209066, text="20", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day24=formonly.day24 type CHAR, tabIndex=7209066, text="24", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox day28=formonly.day28 type CHAR, tabIndex=7209066, text="28", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox mm_ho=formonly.mm_hour type CHAR, tabIndex=7209041, not null, required, initializer=initminute;
+CheckBox hour0=formonly.hour00 type CHAR, tabIndex=7209041, text="00", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour1=formonly.hour03 type CHAR, tabIndex=7209044, text="03", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour2=formonly.hour06 type CHAR, tabIndex=7209047, text="06", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour3=formonly.hour09 type CHAR, tabIndex=7209050, text="09", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour4=formonly.hour12 type CHAR, tabIndex=7209053, text="12", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour15=formonly.hour15 type CHAR, tabIndex=7209056, text="15", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour18=formonly.hour18 type CHAR, tabIndex=7209059, text="18", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour21=formonly.hour21 type CHAR, tabIndex=7209062, text="21", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour5=formonly.hour01 type CHAR, tabIndex=7209042, text="01", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour6=formonly.hour04 type CHAR, tabIndex=7209045, text="04", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour07=formonly.hour07 type CHAR, tabIndex=7209048, text="07", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour7=formonly.hour10 type CHAR, tabIndex=7209051, text="10", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour8=formonly.hour13 type CHAR, tabIndex=7209054, text="13", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour16=formonly.hour16 type CHAR, tabIndex=7209057, text="16", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour9=formonly.hour19 type CHAR, tabIndex=7209060, text="19", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour22=formonly.hour22 type CHAR, tabIndex=7209063, text="22", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox houra=formonly.hour02 type CHAR, tabIndex=7209043, text="02", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour05=formonly.hour05 type CHAR, tabIndex=7209046, text="05", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour08=formonly.hour08 type CHAR, tabIndex=7209049, text="08", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour11=formonly.hour11 type CHAR, tabIndex=7209052, text="11", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour14=formonly.hour14 type CHAR, tabIndex=7209055, text="14", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour17=formonly.hour17 type CHAR, tabIndex=7209058, text="17", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour20=formonly.hour20 type CHAR, tabIndex=7209061, text="20", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hour23=formonly.hour23 type CHAR, tabIndex=7209064, text="23", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minut=formonly.minute00 type CHAR, tabIndex=7209041, text="00", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minu1=formonly.minute04 type CHAR, tabIndex=7209041, text="04", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minu2=formonly.minute08 type CHAR, tabIndex=7209041, text="08", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minu3=formonly.minute12 type CHAR, tabIndex=7209041, text="12", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minu4=formonly.minute16 type CHAR, tabIndex=7209041, text="16", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minute=formonly.minute20 type CHAR, tabIndex=7209041, text="20", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minut1=formonly.minute24 type CHAR, tabIndex=7209041, text="24", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minu5=formonly.minute28 type CHAR, tabIndex=7209041, text="28", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minu6=formonly.minute32 type CHAR, tabIndex=7209041, text="32", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minu7=formonly.minute36 type CHAR, tabIndex=7209041, text="36", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minu8=formonly.minute40 type CHAR, tabIndex=7209041, text="40", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minu9=formonly.minute44 type CHAR, tabIndex=7209041, text="44", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minut2=formonly.minute48 type CHAR, tabIndex=7209041, text="48", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minut3=formonly.minute52 type CHAR, tabIndex=7209041, text="52", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minut4=formonly.minute56 type CHAR, tabIndex=7209041, text="56", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minu0=formonly.minute01 type CHAR, tabIndex=7209041, text="01", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minua=formonly.minute05 type CHAR, tabIndex=7209041, text="05", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minut5=formonly.minute09 type CHAR, tabIndex=7209041, text="09", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minub=formonly.minute13 type CHAR, tabIndex=7209041, text="13", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minuc=formonly.minute17 type CHAR, tabIndex=7209041, text="17", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minut6=formonly.minute21 type CHAR, tabIndex=7209041, text="21", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minud=formonly.minute25 type CHAR, tabIndex=7209041, text="25", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minue=formonly.minute29 type CHAR, tabIndex=7209041, text="29", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minuf=formonly.minute33 type CHAR, tabIndex=7209041, text="33", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minut7=formonly.minute37 type CHAR, tabIndex=7209041, text="37", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minug=formonly.minute41 type CHAR, tabIndex=7209041, text="41", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minuh=formonly.minute45 type CHAR, tabIndex=7209041, text="45", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minut8=formonly.minute49 type CHAR, tabIndex=7209041, text="49", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minui=formonly.minute53 type CHAR, tabIndex=7209041, text="53", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minuj=formonly.minute57 type CHAR, tabIndex=7209042, text="57", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minuk=formonly.minute02 type CHAR, tabIndex=7209041, text="02", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minut9=formonly.minute06 type CHAR, tabIndex=7209041, text="06", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minut0=formonly.minute10 type CHAR, tabIndex=7209041, text="10", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minuta=formonly.minute14 type CHAR, tabIndex=7209041, text="14", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutb=formonly.minute18 type CHAR, tabIndex=7209041, text="18", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutc=formonly.minute22 type CHAR, tabIndex=7209041, text="22", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutd=formonly.minute26 type CHAR, tabIndex=7209041, text="26", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minul=formonly.minute30 type CHAR, tabIndex=7209041, text="30", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutf=formonly.minute34 type CHAR, tabIndex=7209041, text="34", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutg=formonly.minute38 type CHAR, tabIndex=7209041, text="38", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minuth=formonly.minute42 type CHAR, tabIndex=7209041, text="42", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minuti=formonly.minute46 type CHAR, tabIndex=7209041, text="46", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutj=formonly.minute50 type CHAR, tabIndex=7209041, text="50", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutk=formonly.minute54 type CHAR, tabIndex=7209041, text="54", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutl=formonly.minute58 type CHAR, tabIndex=7209042, text="58", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minum=formonly.minute03 type CHAR, tabIndex=7209041, text="03", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutm=formonly.minute07 type CHAR, tabIndex=7209041, text="07", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutn=formonly.minute11 type CHAR, tabIndex=7209041, text="11", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minuto=formonly.minute15 type CHAR, tabIndex=7209041, text="15", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutp=formonly.minute19 type CHAR, tabIndex=7209041, text="19", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutq=formonly.minute23 type CHAR, tabIndex=7209041, text="23", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutr=formonly.minute27 type CHAR, tabIndex=7209041, text="27", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minun=formonly.minute31 type CHAR, tabIndex=7209041, text="31", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minuts=formonly.minute35 type CHAR, tabIndex=7209041, text="35", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutt=formonly.minute39 type CHAR, tabIndex=7209041, text="39", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutu=formonly.minute43 type CHAR, tabIndex=7209041, text="43", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutv=formonly.minute47 type CHAR, tabIndex=7209041, text="47", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutw=formonly.minute51 type CHAR, tabIndex=7209041, text="51", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minutx=formonly.minute55 type CHAR, tabIndex=7209041, text="55", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox minuty=formonly.minute59 type CHAR, tabIndex=7209042, text="59", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit gde11=gde_file.gde11, tabIndex=7209040;
+ComboBox hh_on=formonly.hh_once type CHAR, tabIndex=7209040, not null, required, initializer=inithour;
+ComboBox mm_on=formonly.mm_once type CHAR, tabIndex=7209040, not null, required, initializer=initminute;
+Edit gdf02=gdf_file.gdf02, tabIndex=26, title="Seq", not null, required;
+ButtonEdit gdf03=gdf_file.gdf03, action=controlp, tabIndex=27, title="Application", not null, required, image="zoom";
+Edit gaz03=gaz_file.gaz03, tabIndex=28, title="App Name", noEntry;
+ComboBox gdf04=gdf_file.gdf04, tabIndex=29, title="Plant", not null, required, initializer=initplant;
+Edit gdf05=gdf_file.gdf05, tabIndex=30, title="mailto", hidden;
+Edit gdf06=gdf_file.gdf06, tabIndex=31, title="mailcc", hidden;
+Edit gdf07=gdf_file.gdf07, tabIndex=32, title="mailbcc", hidden;
+Edit gdi04=gdi_file.gdi04, tabIndex=7209067, title="ID", not null, required;
+ButtonEdit gdi05=gdi_file.gdi05, action=controlp, tabIndex=7209068, title="Para Value", image="zoom", scroll;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=33, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=34, noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=7209073, noEntry;
+DateEdit gde16=gde_file.gde16, tabIndex=7209072;
+DateEdit gde13=gde_file.gde13, tabIndex=7209071;
+ComboBox gde14=gde_file.gde14, tabIndex=7209070, noEntry, items=(("Y", "Y"),("N", "N"));
+DateEdit gde15=gde_file.gde15, tabIndex=7209069, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cron(gdf_file.gdf02,gdf_file.gdf03,gaz_file.gaz03,gdf_file.gdf04,gdf_file.gdf05,gdf_file.gdf06,gdf_file.gdf07)
+SCREEN RECORD s_para(gdi_file.gdi04,gdi_file.gdi05)
+SCREEN RECORD Undefined(gde_file.gde01,gde_file.gde02,gde_file.gde04,gde_file.gde03,gde_file.gde18,gde_file.gde19,formonly.dd_month,formonly.hh_month,formonly.mm_month,formonly.month01,formonly.month04,formonly.month07,formonly.month10,formonly.month02,formonly.month05,formonly.month08,formonly.month11,formonly.month03,formonly.month06,formonly.month09,formonly.month12,formonly.hh_week,formonly.mm_week,formonly.week01,formonly.week04,formonly.week07,formonly.week02,formonly.week05,formonly.week03,formonly.week06,formonly.hh_day,formonly.mm_day,formonly.day01,formonly.day05,formonly.day09,formonly.day13,formonly.day17,formonly.day21,formonly.day25,formonly.day29,formonly.day02,formonly.day06,formonly.day10,formonly.day14,formonly.day18,formonly.day22,formonly.day26,formonly.day30,formonly.day03,formonly.day07,formonly.day11,formonly.day15,formonly.day19,formonly.day23,formonly.day27,formonly.day31,formonly.day04,formonly.day08,formonly.day12,formonly.day16,formonly.day20,formonly.day24,formonly.day28,formonly.mm_hour,formonly.hour00,formonly.hour03,formonly.hour06,formonly.hour09,formonly.hour12,formonly.hour15,formonly.hour18,formonly.hour21,formonly.hour01,formonly.hour04,formonly.hour07,formonly.hour10,formonly.hour13,formonly.hour16,formonly.hour19,formonly.hour22,formonly.hour02,formonly.hour05,formonly.hour08,formonly.hour11,formonly.hour14,formonly.hour17,formonly.hour20,formonly.hour23,formonly.minute00,formonly.minute04,formonly.minute08,formonly.minute12,formonly.minute16,formonly.minute20,formonly.minute24,formonly.minute28,formonly.minute32,formonly.minute36,formonly.minute40,formonly.minute44,formonly.minute48,formonly.minute52,formonly.minute56,formonly.minute01,formonly.minute05,formonly.minute09,formonly.minute13,formonly.minute17,formonly.minute21,formonly.minute25,formonly.minute29,formonly.minute33,formonly.minute37,formonly.minute41,formonly.minute45,formonly.minute49,formonly.minute53,formonly.minute57,formonly.minute02,formonly.minute06,formonly.minute10,formonly.minute14,formonly.minute18,formonly.minute22,formonly.minute26,formonly.minute30,formonly.minute34,formonly.minute38,formonly.minute42,formonly.minute46,formonly.minute50,formonly.minute54,formonly.minute58,formonly.minute03,formonly.minute07,formonly.minute11,formonly.minute15,formonly.minute19,formonly.minute23,formonly.minute27,formonly.minute31,formonly.minute35,formonly.minute39,formonly.minute43,formonly.minute47,formonly.minute51,formonly.minute55,formonly.minute59,gde_file.gde11,formonly.hh_once,formonly.mm_once,formonly.cnt,formonly.cn2,formonly.cn3,gde_file.gde16,gde_file.gde13,gde_file.gde14,gde_file.gde15)
+END -- INSTRUCTIONS
+

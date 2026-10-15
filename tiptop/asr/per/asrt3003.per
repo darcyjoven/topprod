@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asrt3003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asrt3003")
+VBox VBox1
+Folder pc215
+Page page01(text="Main")
+Table s_srj
+{
+[srj01    |srj02 |srj03 |srg03                         |ima02                         |ima021                        |srj04   |gen02               |srj05     |srj06         |srj08                            ]
+[srj01    |srj02 |srj03 |srg03                         |ima02                         |ima021                        |srj04   |gen02               |srj05     |srj06         |srj08                            ]
+[srj01    |srj02 |srj03 |srg03                         |ima02                         |ima021                        |srj04   |gen02               |srj05     |srj06         |srj08                            ]
+[srj01    |srj02 |srj03 |srg03                         |ima02                         |ima021                        |srj04   |gen02               |srj05     |srj06         |srj08                            ]
+[srj01    |srj02 |srj03 |srg03                         |ima02                         |ima021                        |srj04   |gen02               |srj05     |srj06         |srj08                            ]
+[srj01    |srj02 |srj03 |srg03                         |ima02                         |ima021                        |srj04   |gen02               |srj05     |srj06         |srj08                            ]
+
+}
+END -- s_srj
+END -- page01
+END -- pc215
+Grid gr942
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr942
+END -- VBox1
+END -- asrt3003
+
+TABLES
+srj_file
+ATTRIBUTES
+ButtonEdit srj01=srj_file.srj01, action=controlp, tabIndex=1, title="Rep No.", not null, required, image="zoom", comment="<^P> Qry Labor Report No.";
+Edit srj02=srj_file.srj02, tabIndex=2, title="Item", not null, required;
+ButtonEdit srj03=srj_file.srj03, action=controlp, tabIndex=3, title="Ln#", not null, required, image="zoom", comment="<^P> Qry Labor Report No.";
+Edit srg03=formonly.srg03 type CHAR, tabIndex=4, title="Product No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=5, title="Desc", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=6, title="Spec", noEntry;
+ButtonEdit srj04=srj_file.srj04, action=controlp, tabIndex=7, title="Emp No.", not null, required, image="zoom", comment="<^P> Qry Emp No.";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=8, title="Emp Name", noEntry;
+Edit srj05=srj_file.srj05, tabIndex=9, title="Wk Time", not null, required;
+Edit srj06=srj_file.srj06, tabIndex=10, title="Qty", not null, required;
+Edit srj08=srj_file.srj08, tabIndex=11, title="Remark";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_srj(srj_file.srj01,srj_file.srj02,srj_file.srj03,formonly.srg03,formonly.ima02,formonly.ima021,srj_file.srj04,formonly.gen02,srj_file.srj05,srj_file.srj06,srj_file.srj08)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

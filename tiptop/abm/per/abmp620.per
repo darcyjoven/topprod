@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp620.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmp620")
+VBox vb3
+Grid grid01
+{
+ Design gn Style     [a1                  |a1_ima02  ]
+ Characteristic Code [a3             ]
+ Expiration Date     [a2             ]
+[b3                                          ]
+
+ Original Number[a4              ] Original Date[a5              ]
+
+}
+END -- grid01
+Table s_b
+{
+[b1                   |b2                             |b2_ecd02                       ]
+[b1                   |b2                             |b2_ecd02                       ]
+[b1                   |b2                             |b2_ecd02                       ]
+
+
+}
+END -- s_b
+Table s_c
+{
+[c1                   |c2                             |c2_ima02                       ]
+[c1                   |c2                             |c2_ima02                       ]
+[c1                   |c2                             |c2_ima02                       ]
+[c1                   |c2                             |c2_ima02                       ]
+[c1                   |c2                             |c2_ima02                       ]
+}
+END -- s_c
+END -- vb3
+END -- abmp620
+
+ATTRIBUTES
+ButtonEdit a1=formonly.a1 type VARCHAR, action=controlp, tabIndex=1, not null, image="zoom", comment="<^P>Qry  Testing Master Item";
+Edit a1_ima02=formonly.a1_ima02 type VARCHAR, tabIndex=9, noEntry;
+ButtonEdit a3=formonly.a3 type VARCHAR, action=controlp, tabIndex=2, image="zoom.png";
+DateEdit a2=formonly.a2 type VARCHAR, tabIndex=3, not null;
+CheckBox b3=formonly.b3 type VARCHAR, tabIndex=4, text="Bring  blank homework serial number Date", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit a4=formonly.a4 type VARCHAR, action=controlp, tabIndex=8, not null, image="zoom.png";
+DateEdit a5=formonly.a5 type VARCHAR, tabIndex=10, not null;
+CheckBox b1=formonly.b1 type VARCHAR, tabIndex=5, default = "Y", title="Choice1", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit b2=formonly.b2 type VARCHAR, tabIndex=6, title="BOM Exe No", noEntry;
+Edit b2_ecd02=formonly.b2_ecd02 type VARCHAR, tabIndex=7, title="Exe No Name", noEntry;
+CheckBox c1=formonly.c1 type VARCHAR, tabIndex=11, default = "Y", title="Choice2", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit c2=formonly.c2 type VARCHAR, tabIndex=12, title="Detail Anticipates No", noEntry;
+Edit c2_ima02=formonly.c2_ima02 type VARCHAR, tabIndex=13, title="Anticipate Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_b(formonly.b1,formonly.b2,formonly.b2_ecd02)
+SCREEN RECORD s_c(formonly.c1,formonly.c2,formonly.c2_ima02)
+SCREEN RECORD Undefined(formonly.a1,formonly.a1_ima02,formonly.a3,formonly.a2,formonly.b3,formonly.a4,formonly.a5)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,56 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/abx/4fd/abmi710b.tmp.per created 2010-04-30T13:37:33
+-- File created from /u3/tiptop/abx/4fd/abmi710b.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text=%"abmi710b")
+VBox vb1                                                                                             
+Grid gr814                                                                                           
+{                                                                                                    
+ <G group01                                                     ><G group02                       >  
+  Issu.W/H            [bmy25     ]                                Task S/N            [bmy09     ]   
+  Issu.Loc            [bmy26     ]                                Iss.Unit            [bmy10     ]   
+  Inst.Loc            [bmy13     ]                                Conv.Rt             [bmy10_fac ]   
+  Inpt T.B            [bmy18     ]                               [bmy21                          ]   
+  Wast%               [bmy08     ]                                diff ratio%         [bmy23     ]   
+  Eng.Drw#            [bmy11               ]                                                         
+  W/O Open/Explosion  [bmy20                                   ]                                     
+  Memo                [bmy22                                   ]                                     
+ <                                                              ><                                >  
+                                                                                                     
+}                                                                                                    
+END                                                                                                  
+END -- VBox                                                                                          
+END -- Form
+
+TABLES
+bmy_file
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit bmy25=bmy_file.bmy25, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Warehouse";
+ButtonEdit bmy26=bmy_file.bmy26, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Warehouse";
+Edit bmy13=bmy_file.bmy13, tabIndex=3, noEntry;
+Edit bmy18=bmy_file.bmy18, tabIndex=4;
+Edit bmy08=bmy_file.bmy08, tabIndex=5;
+Edit bmy11=bmy_file.bmy11, tabIndex=6;
+ComboBox bmy20=bmy_file.bmy20, tabIndex=7, not null, required, comment="1.No Exp 2.No Expl,Auto Open WO 3.Expl 4.Ask ", items=(("1", "No Exp."),("2", "No Exp,Auto Open WO"),("3", "Expl."),("4", "Ask"));
+Edit bmy22=bmy_file.bmy22, tabIndex=8;
+Group group02:group02;
+ButtonEdit bmy09=bmy_file.bmy09, action=controlp, tabIndex=9, image="zoom", comment="<^P>Query Task#";
+ButtonEdit bmy10=bmy_file.bmy10, action=controlp, tabIndex=10, image="zoom", comment="<^P>Query Unit";
+Edit bmy10_fac=bmy_file.bmy10_fac, tabIndex=11;
+CheckBox bmy21=bmy_file.bmy21, tabIndex=12, text="Consum.Feat", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit bmy23=bmy_file.bmy23, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asms220.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asms220")
+VBox VBox1
+Folder pc209
+Page page01(text="Main")
+Grid gr929
+{
+ <G group01                                            >
+ [sma47                              ]
+
+
+ <                                                     >
+ <G group02                                            >
+ [sma49                              ]
+
+
+ <                                                     >
+ <G group03                                            >
+  A Class Inventory % [sma13     ]
+  B Class Inventory % [sma14     ]
+ <                                                     >
+ <G group04                                            >
+  A Class Inventory   [sma15     ]
+  B Class Inventory   [sma16     ]
+  C Class Inventory   [sma17     ]
+ <                                                     >
+ <G group05                                            >
+  Calcalating Periods Setting [sma48     ]
+
+
+ <                                                     >
+
+}
+END -- gr929
+END -- page01
+END -- pc209
+END -- VBox1
+END -- asms220
+
+TABLES
+sma_file
+ATTRIBUTES
+Group group01:group01, text="Item Inventory ABC Class Calculation Method Setting";
+RadioGroup sma47=sma_file.sma47, tabIndex=1, required, items=(("1", "by Passed Amount Used"),("3", "By Standard Cost"),("4", "By Current Cost"));
+Group group02:group02, text="Standard Setting";
+RadioGroup sma49=sma_file.sma49, tabIndex=2, required, items=(("1", "by Group Code"),("2", "All Items"));
+Group group03:group03, text="% Distribution";
+Edit sma13=sma_file.sma13, tabIndex=3, required;
+Edit sma14=sma_file.sma14, tabIndex=4, required;
+Group group04:group04, text="Cycle Inventory Taking Suggested Days";
+Edit sma15=sma_file.sma15, tabIndex=5, required;
+Edit sma16=sma_file.sma16, tabIndex=6, required;
+Edit sma17=sma_file.sma17, tabIndex=7, required;
+Group group05:group05;
+Edit sma48=sma_file.sma48, tabIndex=8, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sma_file.sma47,sma_file.sma49,sma_file.sma13,sma_file.sma14,sma_file.sma15,sma_file.sma16,sma_file.sma17,sma_file.sma48)
+END -- INSTRUCTIONS
+

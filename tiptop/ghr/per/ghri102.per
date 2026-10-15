@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrae00    |hrae01     |hrae02     |hrae03     |hrae04    |hrae05        ]
+[hrae00    |hrae01     |hrae02     |hrae03     |hrae04    |hrae05        ]
+[hrae00    |hrae01     |hrae02     |hrae03     |hrae04    |hrae05        ]
+[hrae00    |hrae01     |hrae02     |hrae03     |hrae04    |hrae05        ]
+[hrae00    |hrae01     |hrae02     |hrae03     |hrae04    |hrae05        ]
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+  ----------------- cn2 [cn2  ]-----------------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ComboBox hrae00=formonly.hrae00 type VARCHAR, tabIndex=1, title=%"hrae00", not null, required, items=(("1", "1"),("2", "2"));
+ButtonEdit hrae01=formonly.hrae01 type VARCHAR, action=controlp, tabIndex=2, title=%"hrae01", not null, required, image="zoom";
+Edit hrae02=formonly.hrae02 type VARCHAR, tabIndex=4, title=%"hrae02";
+Edit hrae03=formonly.hrae03 type DECIMAL, tabIndex=5, title=%"hrae03", not null, required;
+Edit hrae04=formonly.hrae04 type DECIMAL, tabIndex=6, title=%"hrae04", not null, required;
+Edit hrae05=formonly.hrae05 type VARCHAR, tabIndex=7, title=%"hrae05";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrae(formonly.hrae00,formonly.hrae01,formonly.hrae02,formonly.hrae03,formonly.hrae04,formonly.hrae05)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli005")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2337
+{
+ Report #            [axm01     ]
+ Account No          [axm00          ]
+ Report Name         [axm02                         ]
+}
+END -- gr2337
+END -- page01
+END -- folder01
+Table s_axm
+{
+[axm0|axm09              |axm10       |axm04        |axm05                         |axm11   |axm12            ]
+[axm0|axm09              |axm10       |axm04        |axm05                         |axm11   |axm12            ]
+[axm0|axm09              |axm10       |axm04        |axm05                         |axm11   |axm12            ]
+[axm0|axm09              |axm10       |axm04        |axm05                         |axm11   |axm12            ]
+[axm0|axm09              |axm10       |axm04        |axm05                         |axm11   |axm12            ]
+[axm0|axm09              |axm10       |axm04        |axm05                         |axm11   |axm12            ]
+[axm0|axm09              |axm10       |axm04        |axm05                         |axm11   |axm12            ]
+[axm0|axm09              |axm10       |axm04        |axm05                         |axm11   |axm12            ]
+[axm0|axm09              |axm10       |axm04        |axm05                         |axm11   |axm12            ]
+[axm0|axm09              |axm10       |axm04        |axm05                         |axm11   |axm12            ]
+
+}
+END -- s_axm
+Grid gr2338
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2338
+END -- VBox1
+END -- agli005
+
+TABLES
+axm_file
+ATTRIBUTES
+Edit axm01=axm_file.axm01, tabIndex=1, not null, required;
+ButtonEdit axm00=axm_file.axm00, action=controlp, tabIndex=12, not null, required, image="zoom";
+Edit axm02=axm_file.axm02, tabIndex=2;
+Edit axm0=axm_file.axm03, tabIndex=3, title="Ln#", not null, required;
+ComboBox axm09=axm_file.axm09, tabIndex=8, title=%"Print code", items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"));
+ComboBox axm10=axm_file.axm10, tabIndex=9, title=%"Source", items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"));
+ButtonEdit axm04=axm_file.axm04, action=controlp, tabIndex=4, title="Group Code", not null, required, image="zoom", comment="<^P>Query Group No. Data";
+Edit axm05=axm_file.axm05, tabIndex=5, title="Description";
+Edit axm11=axm_file.axm11, tabIndex=10, title=%"Spaces";
+ComboBox axm12=axm_file.axm12, tabIndex=11, title=%"Information to source", items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axm(axm_file.axm03,axm_file.axm09,axm_file.axm10,axm_file.axm04,axm_file.axm05,axm_file.axm11,axm_file.axm12)
+SCREEN RECORD Undefined(axm_file.axm01,axm_file.axm02,formonly.cnt,formonly.cn2,axm_file.axm00)
+END -- INSTRUCTIONS
+

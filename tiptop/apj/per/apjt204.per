@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt204.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt204")
+VBox vb2
+Folder pc3
+Page Page1(text=%"Basic Data")
+Grid gr4
+{
+
+  Net No.           [pjhb01         ] Net Name               [pjj02                                   ]
+  Promotion No.     [pjhb02         ] Promotion Name         [pjk03                                   ]
+  Planned Start Date[pjk16          ] Planned Completion Date[pjk17         ]
+
+}
+END -- gr4
+END -- Page1
+END -- pc3
+Table s_pjhb
+{
+[pjhb0|pjhb04    |cpi02                                               |pjx02|pjx03               |pjhb05    |amt                 |pjhba]
+[pjhb0|pjhb04    |cpi02                                               |pjx02|pjx03               |pjhb05    |amt                 |pjhba]
+[pjhb0|pjhb04    |cpi02                                               |pjx02|pjx03               |pjhb05    |amt                 |pjhba]
+[pjhb0|pjhb04    |cpi02                                               |pjx02|pjx03               |pjhb05    |amt                 |pjhba]
+[pjhb0|pjhb04    |cpi02                                               |pjx02|pjx03               |pjhb05    |amt                 |pjhba]
+[pjhb0|pjhb04    |cpi02                                               |pjx02|pjx03               |pjhb05    |amt                 |pjhba]
+[pjhb0|pjhb04    |cpi02                                               |pjx02|pjx03               |pjhb05    |amt                 |pjhba]
+[pjhb0|pjhb04    |cpi02                                               |pjx02|pjx03               |pjhb05    |amt                 |pjhba]
+
+}
+END -- s_pjhb
+Grid gr5
+{
+  --------Rows[idx   ]/ [cnt    ] ---Details [cn2   ] ------
+
+}
+END -- gr5
+END -- vb2
+END -- apjt204
+
+TABLES
+pjhb_file
+ATTRIBUTES
+ButtonEdit pjhb01=pjhb_file.pjhb01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit pjj02=formonly.pjj02 type CHAR, tabIndex=5, noEntry;
+ButtonEdit pjhb02=pjhb_file.pjhb02, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Edit pjk03=formonly.pjk03 type CHAR, tabIndex=6, noEntry;
+DateEdit pjk16=formonly.pjk16 type CHAR, tabIndex=3, noEntry;
+DateEdit pjk17=formonly.pjk17 type CHAR, tabIndex=4, noEntry;
+Edit pjhb0=pjhb_file.pjhb03, tabIndex=7, title="Line No.", not null, required;
+ButtonEdit pjhb04=pjhb_file.pjhb04, action=controlp, tabIndex=8, title="Skill No.", not null, required, image="zoom.png";
+Edit cpi02=formonly.cpi02 type CHAR, tabIndex=9, title="Description", noEntry;
+Edit pjx02=formonly.pjx02 type CHAR, tabIndex=11, title="Unit", noEntry;
+Edit pjx03=formonly.pjx03 type CHAR, tabIndex=10, title="Unit Expense", noEntry;
+Edit pjhb05=pjhb_file.pjhb05, tabIndex=12, title="Requirement Qty", not null, required;
+Edit amt=formonly.amt type CHAR, tabIndex=13, title="amt", noEntry;
+CheckBox pjhba=pjhb_file.pjhbacti, tabIndex=14, default = "N", title="Acti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=15;
+Edit cnt=formonly.cnt type CHAR, tabIndex=17;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjhb(pjhb_file.pjhb03,pjhb_file.pjhb04,formonly.cpi02,formonly.pjx02,formonly.pjx03,pjhb_file.pjhb05,formonly.amt,pjhb_file.pjhbacti)
+SCREEN RECORD Undefined(pjhb_file.pjhb01,formonly.pjj02,pjhb_file.pjhb02,formonly.pjk03,formonly.pjk16,formonly.pjk17,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acos750.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acos750")
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ [cez01                    ]
+ [cez02                    ]
+  Custom No.    [cez03          |cna02         ]
+  Manual No.    [cez04          ]
+
+}
+END -- gr1
+END -- page01
+Page userdefined_field(text=%"User Defined Field")
+Grid Grid1
+{
+ userdefined_field01[cezud01                              ] userdefined_field08[cezud08              ]
+                    [                                     ] userdefined_field09[cezud09              ]
+ userdefined_field02[cezud02              ]                 userdefined_field10[cezud10              ]
+ userdefined_field03[cezud03              ]                 userdefined_field11[cezud11              ]
+ userdefined_field04[cezud04              ]                 userdefined_field12[cezud12              ]
+ userdefined_field05[cezud05              ]                 userdefined_field13[cezud13              ]
+ userdefined_field06[cezud06              ]                 userdefined_field14[cezud14              ]
+ userdefined_field07[cezud07              ]                 userdefined_field15[cezud15              ]
+
+}
+END -- Grid1
+END -- userdefined_field
+END -- pc1
+END -- acos750
+
+TABLES
+cna_file,
+cez_file
+ATTRIBUTES
+CheckBox cez01=cez_file.cez01, tabIndex=1, text="Customs System Now Available", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox cez02=cez_file.cez02, tabIndex=2, text="Default Customs Code?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit cez03=cez_file.cez03, action=controlp, tabIndex=3, image="zoom", comment=" <^P>Qry Custom No.";
+Edit cna02=cna_file.cna02, tabIndex=5, noEntry;
+Edit cez04=cez_file.cez04, tabIndex=4;
+TextEdit cezud01=cez_file.cezud01, tabIndex=6;
+Edit cezud08=cez_file.cezud08, tabIndex=20;
+Edit cezud09=cez_file.cezud09, tabIndex=19;
+Edit cezud02=cez_file.cezud02, tabIndex=7;
+Edit cezud10=cez_file.cezud10, tabIndex=18;
+Edit cezud03=cez_file.cezud03, tabIndex=8;
+Edit cezud11=cez_file.cezud11, tabIndex=17;
+Edit cezud04=cez_file.cezud04, tabIndex=9;
+Edit cezud12=cez_file.cezud12, tabIndex=16;
+Edit cezud05=cez_file.cezud05, tabIndex=10;
+DateEdit cezud13=cez_file.cezud13, tabIndex=15;
+Edit cezud06=cez_file.cezud06, tabIndex=11;
+DateEdit cezud14=cez_file.cezud14, tabIndex=14;
+Edit cezud07=cez_file.cezud07, tabIndex=12;
+DateEdit cezud15=cez_file.cezud15, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cez_file.cez01,cez_file.cez02,cez_file.cez03,cna_file.cna02,cez_file.cez04,cez_file.cezud01,cez_file.cezud02,cez_file.cezud03,cez_file.cezud04,cez_file.cezud05,cez_file.cezud06,cez_file.cezud07,cez_file.cezud08,cez_file.cezud09,cez_file.cezud10,cez_file.cezud11,cez_file.cezud12,cez_file.cezud13,cez_file.cezud14,cez_file.cezud15)
+END -- INSTRUCTIONS
+

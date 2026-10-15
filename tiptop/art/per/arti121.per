@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti121.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="arti121")
+VBox VBox1
+Folder pc1
+Page Main(text=%"Main")
+Grid gr2
+{
+ Price Strategy No. [rtf01             ]                                Memo       [rtf05            ]
+ Price Strategy Name[rtf02                                   ]          status     [rtfconf          |imgmksg]
+ Develop Agency No. [rtf03             |rtf03_desc           ]          Audit Date [rtfcond          |       ]
+ Number             [rtf04             ]                                Audit Staff[rtfconu          |rtfconu_desc    ]
+
+}
+END -- gr2
+END -- Main
+Page Memo(text=%"Memo")
+Grid gr3
+{
+ Record Owner [rtfuser      ] Last Modified By[rtfmodu     ]  Data Valid Code[rtfacti      ]
+ Department   [rtfgrup      ] Modify Date     [rtfdate      ] Create Date    [rtfcrat       ]
+ Record Orig. [rtforiu      ] Dept Orig.      [rtforig      ]
+
+
+}
+END -- gr3
+END -- Memo
+END -- pc1
+Table s_rtg
+{
+[rtg02  |rtg03     |rtg03_desc  |rtg04      |rtg04_desc |rtg05         |rtg06          |rtg07         |rtg11               |rtg12       |rtg08       |rtg10     |rtg09   |rtgpos  ]
+[rtg02  |rtg03     |rtg03_desc  |rtg04      |rtg04_desc |rtg05         |rtg06          |rtg07         |rtg11               |rtg12       |rtg08       |rtg10     |rtg09   |rtgpos  ]
+[rtg02  |rtg03     |rtg03_desc  |rtg04      |rtg04_desc |rtg05         |rtg06          |rtg07         |rtg11               |rtg12       |rtg08       |rtg10     |rtg09   |rtgpos  ]
+[rtg02  |rtg03     |rtg03_desc  |rtg04      |rtg04_desc |rtg05         |rtg06          |rtg07         |rtg11               |rtg12       |rtg08       |rtg10     |rtg09   |rtgpos  ]
+[rtg02  |rtg03     |rtg03_desc  |rtg04      |rtg04_desc |rtg05         |rtg06          |rtg07         |rtg11               |rtg12       |rtg08       |rtg10     |rtg09   |rtgpos  ]
+[rtg02  |rtg03     |rtg03_desc  |rtg04      |rtg04_desc |rtg05         |rtg06          |rtg07         |rtg11               |rtg12       |rtg08       |rtg10     |rtg09   |rtgpos  ]
+[rtg02  |rtg03     |rtg03_desc  |rtg04      |rtg04_desc |rtg05         |rtg06          |rtg07         |rtg11               |rtg12       |rtg08       |rtg10     |rtg09   |rtgpos  ]
+[rtg02  |rtg03     |rtg03_desc  |rtg04      |rtg04_desc |rtg05         |rtg06          |rtg07         |rtg11               |rtg12       |rtg08       |rtg10     |rtg09   |rtgpos  ]
+[rtg02  |rtg03     |rtg03_desc  |rtg04      |rtg04_desc |rtg05         |rtg06          |rtg07         |rtg11               |rtg12       |rtg08       |rtg10     |rtg09   |rtgpos  ]
+
+}
+END -- s_rtg
+Grid gr1
+{
+
+ ---------- Rows[cnt  ]/[cn2  ] ----------
+
+}
+END -- gr1
+END -- VBox1
+END -- arti121
+
+TABLES
+rtg_file,
+rtf_file
+ATTRIBUTES
+ButtonEdit rtf01=rtf_file.rtf01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit rtf05=rtf_file.rtf05, tabIndex=6;
+Edit rtf02=rtf_file.rtf02, tabIndex=2;
+ComboBox rtfconf=rtf_file.rtfconf, tabIndex=7, noEntry, items=(("N", "Unconfirm"),("Y", "Confirm"),("X", "void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale;
+ButtonEdit rtf03=rtf_file.rtf03, action=controlp, tabIndex=3, noEntry, image="zoom.png";
+Edit rtf03_desc=formonly.rtf03_desc type VARCHAR, tabIndex=5, noEntry;
+DateEdit rtfcond=rtf_file.rtfcond, tabIndex=8, noEntry;
+Edit rtf04=rtf_file.rtf04, tabIndex=4, noEntry;
+ButtonEdit rtfconu=rtf_file.rtfconu, action=controlp, tabIndex=9, noEntry, image="zoom.png";
+Edit rtfconu_desc=formonly.rtfconu_desc type VARCHAR, tabIndex=10, noEntry;
+Edit rtfuser=rtf_file.rtfuser, tabIndex=11, noEntry;
+Edit rtfmodu=rtf_file.rtfmodu, tabIndex=14, noEntry;
+Edit rtfacti=rtf_file.rtfacti, tabIndex=17, noEntry;
+Edit rtfgrup=rtf_file.rtfgrup, tabIndex=12, noEntry;
+DateEdit rtfdate=rtf_file.rtfdate, tabIndex=15, noEntry;
+DateEdit rtfcrat=rtf_file.rtfcrat, tabIndex=18, noEntry;
+Edit rtforiu=rtf_file.rtforiu, tabIndex=13, noEntry;
+Edit rtforig=rtf_file.rtforig, tabIndex=16, noEntry;
+Edit rtg02=rtg_file.rtg02, tabIndex=19, title="Item", not null, required;
+ButtonEdit rtg03=rtg_file.rtg03, action=controlp, tabIndex=20, title="Goods No.", not null, required, image="zoom.png";
+Edit rtg03_desc=formonly.rtg03_desc type VARCHAR, tabIndex=21, title="Goods Name", noEntry;
+ButtonEdit rtg04=rtg_file.rtg04, action=controlp, tabIndex=22, title="Price Unit", not null, required, image="zoom.png";
+Edit rtg04_desc=formonly.rtg04_desc type VARCHAR, tabIndex=23, title="Unit Name", noEntry;
+Edit rtg05=rtg_file.rtg05, tabIndex=24, title="Stantard Price";
+Edit rtg06=rtg_file.rtg06, tabIndex=25, title="StantardMemberPrice";
+Edit rtg07=rtg_file.rtg07, tabIndex=26, title="StantardLowestPrice";
+Edit rtg11=rtg_file.rtg11, tabIndex=27, title=%"rtg11";
+DateEdit rtg12=rtg_file.rtg12, tabIndex=28, title=%"rtg12", not null;
+CheckBox rtg08=rtg_file.rtg08, tabIndex=29, default = "Y", title="Allow Self-Price", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rtg10=rtg_file.rtg10, tabIndex=30, title=%"rtg10", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rtg09=rtg_file.rtg09, tabIndex=31, default = "Y", title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rtgpos=rtg_file.rtgpos, tabIndex=32, title="rtgpos", noEntry, not null, required, items=(("1", "Add-No passed"),("2", "Modify-No passed"),("3", "Passed"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=33, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=34, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rtg(rtg_file.rtg02,rtg_file.rtg03,formonly.rtg03_desc,rtg_file.rtg04,formonly.rtg04_desc,rtg_file.rtg05,rtg_file.rtg06,rtg_file.rtg07,rtg_file.rtg11,rtg_file.rtg12,rtg_file.rtg08,rtg_file.rtg10,rtg_file.rtg09,rtg_file.rtgpos)
+SCREEN RECORD Undefined(rtf_file.rtf01,rtf_file.rtf05,rtf_file.rtf02,rtf_file.rtfconf,formonly.imgmksg,rtf_file.rtf03,formonly.rtf03_desc,rtf_file.rtfcond,rtf_file.rtf04,rtf_file.rtfconu,formonly.rtfconu_desc,rtf_file.rtfuser,rtf_file.rtfmodu,rtf_file.rtfacti,rtf_file.rtfgrup,rtf_file.rtfdate,rtf_file.rtfcrat,rtf_file.rtforiu,rtf_file.rtforig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

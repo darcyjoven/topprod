@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_contview2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Report Continuous View")
+Grid gr3749
+{
+ <T s_zae                                                                  >
+ [zae08     |zae09          |zae10         |zaememo                       ]
+ [zae08     |zae09          |zae10         |zaememo                       ]
+ [zae08     |zae09          |zae10         |zaememo                       ]
+ [zae08     |zae09          |zae10         |zaememo                       ]
+ [zae08     |zae09          |zae10         |zaememo                       ]
+ [zae08     |zae09          |zae10         |zaememo                       ]
+ [zae08     |zae09          |zae10         |zaememo                       ]
+ [zae08     |zae09          |zae10         |zaememo                       ]
+ [zae08     |zae09          |zae10         |zaememo                       ]
+ [zae08     |zae09          |zae10         |zaememo                       ]
+ <                                                                         >
+
+}
+END -- gr3749
+END -- q_contview2
+
+TABLES
+zae_file
+ATTRIBUTES
+Table s_zae:s_zae;
+Edit zae08=zae_file.zae08, tabIndex=1, title="CView No.", noEntry, not null, required;
+ComboBox zae09=zae_file.zae09, tabIndex=2, title="CView Category", noEntry, items=(("1", %"Program No."),("2", %"SQL No."));
+Edit zae10=zae_file.zae10, tabIndex=3, title="CView Content", noEntry;
+Edit zaememo=formonly.zaememo type CHAR, tabIndex=4, title="Memo", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zae(zae_file.zae08,zae_file.zae09,zae_file.zae10,formonly.zaememo)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri006_e.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table s_hrate
+{
+[hrate01   |hrat02        |hrate02   |hrate02_name        |hrate03   |hrate04       |hrate05       |hrate06       |hrate07       |hrate08       ]
+[hrate01   |hrat02        |hrate02   |hrate02_name        |hrate03   |hrate04       |hrate05       |hrate06       |hrate07       |hrate08       ]
+[hrate01   |hrat02        |hrate02   |hrate02_name        |hrate03   |hrate04       |hrate05       |hrate06       |hrate07       |hrate08       ]
+[hrate01   |hrat02        |hrate02   |hrate02_name        |hrate03   |hrate04       |hrate05       |hrate06       |hrate07       |hrate08       ]
+[hrate01   |hrat02        |hrate02   |hrate02_name        |hrate03   |hrate04       |hrate05       |hrate06       |hrate07       |hrate08       ]
+[hrate01   |hrat02        |hrate02   |hrate02_name        |hrate03   |hrate04       |hrate05       |hrate06       |hrate07       |hrate08       ]
+[hrate01   |hrat02        |hrate02   |hrate02_name        |hrate03   |hrate04       |hrate05       |hrate06       |hrate07       |hrate08       ]
+[hrate01   |hrat02        |hrate02   |hrate02_name        |hrate03   |hrate04       |hrate05       |hrate06       |hrate07       |hrate08       ]
+[hrate01   |hrat02        |hrate02   |hrate02_name        |hrate03   |hrate04       |hrate05       |hrate06       |hrate07       |hrate08       ]
+[hrate01   |hrat02        |hrate02   |hrate02_name        |hrate03   |hrate04       |hrate05       |hrate06       |hrate07       |hrate08       ]
+}
+END -- s_hrate
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+  ---------- cn2[cn2       ]----------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrate01=formonly.hrate01 type VARCHAR, action=controlp, tabIndex=9, title=%"hrate01", image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=10, title=%"hrat02", noEntry;
+ButtonEdit hrate02=formonly.hrate02 type VARCHAR, action=controlp, tabIndex=1, title=%"hrate02", not null, required, image="zoom";
+Edit hrate02_name=formonly.hrate02_name type CHAR, tabIndex=11, title=%"hrate02_name", noEntry;
+Edit hrate03=formonly.hrate03 type VARCHAR, tabIndex=2, title=%"hrate03";
+Edit hrate04=formonly.hrate04 type VARCHAR, tabIndex=3, title=%"hrate04";
+Edit hrate05=formonly.hrate05 type VARCHAR, tabIndex=5, title=%"hrate05";
+Edit hrate06=formonly.hrate06 type VARCHAR, tabIndex=6, title=%"hrate06";
+Edit hrate07=formonly.hrate07 type VARCHAR, tabIndex=7, title=%"hrate07";
+Edit hrate08=formonly.hrate08 type VARCHAR, tabIndex=4, title=%"hrate08";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrate(formonly.hrate01,formonly.hrat02,formonly.hrate02,formonly.hrate02_name,formonly.hrate03,formonly.hrate04,formonly.hrate05,formonly.hrate06,formonly.hrate07,formonly.hrate08)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

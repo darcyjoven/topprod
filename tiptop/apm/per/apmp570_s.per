@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp570_s.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmp570_s")
+VBox VBox1
+Grid grid01
+{
+ <G group01                                          >
+  Line No.            [old_seq   ]
+  P/R Qty             [pml20     ]/[pml21     ]
+  Qty Untransferred   [diff      ]/[pml07     ]
+ <                                                   >
+
+}
+END -- grid01
+Table s_new
+{
+[new_part             |new_ra|new_|new_qty|new_qty3 ]
+[new_part             |new_ra|new_|new_qty|new_qty3 ]
+[new_part             |new_ra|new_|new_qty|new_qty3 ]
+[new_part             |new_ra|new_|new_qty|new_qty3 ]
+[new_part             |new_ra|new_|new_qty|new_qty3 ]
+[new_part             |new_ra|new_|new_qty|new_qty3 ]
+[new_part             |new_ra|new_|new_qty|new_qty3 ]
+[new_part             |new_ra|new_|new_qty|new_qty3 ]
+[new_part             |new_ra|new_|new_qty|new_qty3 ]
+[new_part             |new_ra|new_|new_qty|new_qty3 ]
+
+}
+END -- s_new
+Grid gr4941
+{
+ <G group02                                          >
+ [l_tot     ]
+ <                                                   >
+
+}
+END -- gr4941
+END -- VBox1
+END -- apmp570_s
+
+ATTRIBUTES
+Group group01:group01;
+Edit old_seq=formonly.old_seq type CHAR, tabIndex=1;
+Edit pml20=formonly.pml20 type CHAR, tabIndex=2, noEntry;
+Edit pml21=formonly.pml21 type CHAR, tabIndex=3, noEntry;
+Edit diff=formonly.diff type CHAR, tabIndex=4, noEntry;
+Edit pml07=formonly.pml07 type CHAR, tabIndex=5, noEntry;
+Edit new_part=formonly.new_part type CHAR, tabIndex=6, title="Substitute Item#";
+Edit new_ra=formonly.new_rate type CHAR, tabIndex=7, title="Ratio", noEntry;
+CheckBox new_=formonly.new_yes type CHAR, tabIndex=8, title="Y/N", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit new_qty=formonly.new_qty type CHAR, tabIndex=9, title="Qty";
+Edit new_qty3=formonly.new_qty3 type CHAR, tabIndex=10, title="Equi. Amt", noEntry;
+Group group02:group02, text="Total";
+Edit l_tot=formonly.l_tot type CHAR, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_new(formonly.new_part,formonly.new_rate,formonly.new_yes,formonly.new_qty,formonly.new_qty3)
+SCREEN RECORD Undefined(formonly.old_seq,formonly.pml20,formonly.pml21,formonly.diff,formonly.pml07,formonly.l_tot)
+END -- INSTRUCTIONS
+

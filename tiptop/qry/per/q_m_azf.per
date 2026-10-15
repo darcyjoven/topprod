@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_m_azf.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_m_azf")
+Grid gr3785
+{
+ <T s_azf                                                             >
+ [check  |azf01        |azf02   |azf03                               ]
+ [check  |azf01        |azf02   |azf03                               ]
+ [check  |azf01        |azf02   |azf03                               ]
+ [check  |azf01        |azf02   |azf03                               ]
+ [check  |azf01        |azf02   |azf03                               ]
+ <                                                                    >
+
+}
+END -- gr3785
+END -- q_m_azf
+
+TABLES
+azf_file
+ATTRIBUTES
+Table s_azf:s_azf;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit azf01=azf_file.azf01, tabIndex=2, title="Department", noEntry;
+Edit azf02=azf_file.azf02, tabIndex=3, title="Name", noEntry;
+Edit azf03=azf_file.azf03, tabIndex=4, title="Memo for Payment", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azf(formonly.check,azf_file.azf01,azf_file.azf02,azf_file.azf03)
+END -- INSTRUCTIONS
+

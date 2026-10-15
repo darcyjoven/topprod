@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armp120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armp120")
+VBox VBox1
+Grid gr237
+{
+ <G group01                                      >
+  RMA No.             [rma01               ]
+  Doc Entry Date      [rma07               ]
+  Customer #          [rma03               ]
+ <                                               >
+ <G group02                                      >
+  Bill                [ano       ]
+  Sales/Return Date   [bdate       ]
+  RMA Charge Off Date [cdate       ]
+ <                                               >
+
+}
+END -- gr237
+Grid gr238
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr238
+END -- VBox1
+END -- armp120
+
+TABLES
+rma_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit rma01=rma_file.rma01, tabIndex=1, upShift;
+Edit rma07=rma_file.rma07, tabIndex=2;
+Edit rma03=rma_file.rma03, tabIndex=3;
+Group group02:group02, text="INPUT";
+ButtonEdit ano=formonly.ano type CHAR, action=controlp, tabIndex=4, image="zoom";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=5;
+DateEdit cdate=formonly.cdate type DATE, tabIndex=6;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=7, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rma_file.rma01,rma_file.rma07,rma_file.rma03,formonly.ano,formonly.bdate,formonly.cdate,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr406.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr406")
+VBox VBox1
+Grid gr3262
+{
+ <G group01                                                          >
+  Product Class       [ima131              ]
+  Source Code         [ima08               ]
+  Item No.            [img01               ]
+  Warehouse No.       [img02               ]
+  Location No.        [img03               ]
+  Lot No.             [img04               ]
+ <                                                                   >
+}
+END -- gr3262
+Group group02(text="INPUT")
+Grid gr3263
+{
+ <G group03                                                          >
+ [s1                  ] [s2                  ] [s3                  ]
+ [t1                  ] [t2                  ] [t3                  ]
+ [u1                  ] [u2                  ] [u3                  ]
+ <                                                                   >
+ <G group04                                                          >
+  Cost U/P Data YYMM  [yy        ]-[mm        ]
+  Cost Method         [type                   ]
+   [p1                  ]
+ <                                                                   >
+
+}
+END -- gr3263
+END -- group02
+Grid gr3264
+{
+[more                                    ]
+
+}
+END -- gr3264
+END -- VBox1
+END -- aimr406
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ima131=formonly.ima131 type VARCHAR, tabIndex=1;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=2;
+ButtonEdit img01=formonly.img01 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Edit img02=formonly.img02 type VARCHAR, tabIndex=4;
+Edit img03=formonly.img03 type VARCHAR, tabIndex=5;
+Edit img04=formonly.img04 type VARCHAR, tabIndex=6;
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=7, queryEditable, items=(("1", "Product Class"),("2", "Source Code"),("3", "Item No."),("4", "Warehouse No."),("5", "Location No."),("6", "Lot No. "));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=8, queryEditable, items=(("1", "Product Class"),("2", "Source Code"),("3", "Item No."),("4", "Warehouse No."),("5", "Location No."),("6", "Lot No. "));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=9, queryEditable, items=(("1", "Product Class"),("2", "Source Code"),("3", "Item No."),("4", "Warehouse No."),("5", "Location No."),("6", "Lot No. "));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=13, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=15, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04;
+Edit yy=formonly.yy type SMALLINT, tabIndex=16;
+Edit mm=formonly.mm type SMALLINT, tabIndex=17;
+ComboBox type=formonly.type type CHAR, tabIndex=18, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+CheckBox p1=formonly.p1 type CHAR, tabIndex=20, text="Pring Stock for Zero", valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=19, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima131,formonly.ima08,formonly.img01,formonly.img02,formonly.img03,formonly.img04,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.yy,formonly.mm,formonly.type,formonly.p1,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfr623.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+
+  [sfu01           ]    [sfu02               ]
+
+  [sfu03           ]    [sfu04               ]
+
+  [sfv20           ]    [sfv21               ]
+
+  [sfvuser         ]    [sfv11               ]
+
+  [sfuuser        ]     [sfuuse1             ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Label sfu01:sfu01, text=%"Label1";
+ButtonEdit sfu02=formonly.sfu01, action=controlp, tabIndex=1, image="zoom";
+Label sfu03:sfu02, text=%"Label2";
+DateEdit sfu04=formonly.sfu02, tabIndex=2;
+Label sfv20:sfv20, text=%"Label3";
+ButtonEdit sfv21=formonly.sfv20, action=controlp, tabIndex=3, image="zoom";
+Label sfvuser:sfvuser, text=%"Label4";
+ButtonEdit sfv11=formonly.sfv11, action=controlp, tabIndex=4, image="zoom";
+Label sfuuser:sfuuser, text=%"Label5";
+ButtonEdit sfuuse1=formonly.sfuuser, action=controlp, tabIndex=5, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfu01,formonly.sfu02,formonly.sfv20,formonly.sfv11,formonly.sfuuser)
+END -- INSTRUCTIONS
+

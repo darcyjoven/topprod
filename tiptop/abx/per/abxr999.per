@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr999.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxr999")
+Grid gr1221
+{
+ <G group01                                          >
+  Document            [no   ]
+  Receipt Date QBE    [meb031      ] - [meb032      ]
+
+ <                                                   >
+
+}
+END -- gr1221
+END -- abxr999
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+Edit no=formonly.no type CHAR, tabIndex=1, upShift;
+DateEdit meb031=formonly.meb031 type DATE, tabIndex=2;
+DateEdit meb032=formonly.meb032 type DATE, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.no,formonly.meb031,formonly.meb032)
+END -- INSTRUCTIONS
+

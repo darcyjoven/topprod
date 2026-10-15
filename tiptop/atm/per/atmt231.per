@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmt231.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmt231")
+VBox vb1
+Folder pc1
+Page page01(text=%"Main")
+HBox hb1
+Grid gr1
+{
+ Discount No.        [tqw01           ]
+ Discount date       [tqw02     ]
+ Contract No.        [tqw22           ]
+ Type                [tqw20     ]
+ Cash Type           [tqw21     ]
+ Customer No.        [tqw05     ][occ02               ]
+ SO No.              [tqw23           ]
+ Currency            [tqw17     ][tqw18               ]
+ Tax type            [tqw11     ][tqw12     ]%[tqw13][tqw14]
+ Reason Code         [tqw15     ][azf03               ]
+ Memo                [tqw06     ][tqw16               ]
+}
+END -- gr1
+Grid gr2
+{
+ Department          [tqw03     ][gem02                         ]
+ Employee            [tqw04     ][gen02                         ]
+ Discount Amount     [tqw07               ]
+ Retured Amount      [tqw08               ]
+ Amount Left         [a                   ]
+ Undirectly KAB      [tqw19               ]
+ Status              [tqw10     ] [imgmksg]
+                                  [       ]
+ Remark              [tqw09                           ]
+                     [                                ]
+                     [                                ]
+}
+END -- gr2
+END -- hb1
+END -- page01
+Page info(text=%"Info")
+Grid gr3
+{
+ Record Owner        [tqwuser   ] Last Modified by    [tqwmodu   ] Data Valid Code     [tqwacti   ]
+ Department          [tqwgrup   ] Create/Modify Date  [tqwdate   ]
+ Record Orig.        [tqworiu   ]
+ Dept Orig.          [tqworig   ]
+}
+END -- gr3
+END -- info
+END -- pc1
+Grid gr4
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4
+END -- vb1
+END -- atmt231
+
+TABLES
+tqw_file
+ATTRIBUTES
+ButtonEdit tqw01=tqw_file.tqw01, action=controlp, tabIndex=1, not null, required, image="zoom", comment=%"KEY Field,No Blank/Repeated!";
+DateEdit tqw02=tqw_file.tqw02, tabIndex=2, not null, required;
+ButtonEdit tqw22=tqw_file.tqw22, action=controlp, tabIndex=3, image="zoom.png";
+ComboBox tqw20=tqw_file.tqw20, tabIndex=4, not null, required, queryEditable, items=(("1", %"Discount"),("2", %"Fixed Discount"),("3", %"Others"));
+ComboBox tqw21=tqw_file.tqw21, tabIndex=5, not null, required, queryEditable, items=(("1", %"Single"),("2", %"Grand Total"));
+ButtonEdit tqw05=tqw_file.tqw05, action=controlp, tabIndex=6, not null, required, image="zoom";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=7, noEntry;
+ButtonEdit tqw23=tqw_file.tqw23, action=controlp, tabIndex=8, image="zoom.png";
+ButtonEdit tqw17=tqw_file.tqw17, action=controlp, tabIndex=9, not null, required, image="zoom";
+ButtonEdit tqw18=tqw_file.tqw18, action=controlp, tabIndex=10, not null, required, image="zoom";
+ButtonEdit tqw11=tqw_file.tqw11, action=controlp, tabIndex=11, not null, required, image="zoom";
+Edit tqw12=tqw_file.tqw12, tabIndex=12, noEntry;
+Edit tqw13=tqw_file.tqw13, tabIndex=13, noEntry;
+CheckBox tqw14=tqw_file.tqw14, tabIndex=14, noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit tqw15=tqw_file.tqw15, action=controlp, tabIndex=15, not null, required, image="zoom";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=16, noEntry;
+ButtonEdit tqw06=tqw_file.tqw06, action=controlp, tabIndex=17, image="zoom";
+Edit tqw16=tqw_file.tqw16, tabIndex=18;
+ButtonEdit tqw03=tqw_file.tqw03, action=controlp, tabIndex=19, not null, required, image="zoom";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=20, noEntry;
+ButtonEdit tqw04=tqw_file.tqw04, action=controlp, tabIndex=21, not null, required, image="zoom";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=22, noEntry;
+Edit tqw07=tqw_file.tqw07, tabIndex=23, not null, required;
+Edit tqw08=tqw_file.tqw08, tabIndex=24, noEntry;
+Edit a=formonly.a type CHAR, tabIndex=25, noEntry;
+ButtonEdit tqw19=tqw_file.tqw19, action=controlp, tabIndex=26, image="zoom";
+ComboBox tqw10=tqw_file.tqw10, tabIndex=27, not null, required, queryEditable, items=(("1", %"Open"),("2", %"Applying"),("3", %"Confirm"),("4", %"Close"),("5", %"void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+TextEdit tqw09=tqw_file.tqw09, tabIndex=28, stretch=none;
+Edit tqwuser=tqw_file.tqwuser, tabIndex=29, noEntry;
+Edit tqwmodu=tqw_file.tqwmodu, tabIndex=30, noEntry;
+Edit tqwacti=tqw_file.tqwacti, tabIndex=31, noEntry, upShift;
+Edit tqwgrup=tqw_file.tqwgrup, tabIndex=29, noEntry;
+DateEdit tqwdate=tqw_file.tqwdate, tabIndex=30, noEntry;
+Edit tqworiu=tqw_file.tqworiu, tabIndex=501, noEntry;
+Edit tqworig=tqw_file.tqworig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=31, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(tqw_file.tqw01,tqw_file.tqw02,tqw_file.tqw22,tqw_file.tqw20,tqw_file.tqw21,tqw_file.tqw05,formonly.occ02,tqw_file.tqw23,tqw_file.tqw17,tqw_file.tqw18,tqw_file.tqw11,tqw_file.tqw12,tqw_file.tqw13,tqw_file.tqw14,tqw_file.tqw15,formonly.azf03,tqw_file.tqw06,tqw_file.tqw16,tqw_file.tqw03,formonly.gem02,tqw_file.tqw04,formonly.gen02,tqw_file.tqw07,tqw_file.tqw08,formonly.a,tqw_file.tqw19,tqw_file.tqw10,formonly.imgmksg,tqw_file.tqw09,tqw_file.tqwuser,tqw_file.tqwmodu,tqw_file.tqwacti,tqw_file.tqwgrup,tqw_file.tqwdate,tqw_file.tqworiu,tqw_file.tqworig,formonly.cnt)
+END -- INSTRUCTIONS
+

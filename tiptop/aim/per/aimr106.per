@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr106.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr106")
+VBox VBox1
+Grid gr3218
+{
+ <G group01                                                            >
+  Item No.            [img01               ]
+  Warehouse           [img02               ]
+  Location            [img03               ]
+  Lot No.             [img04               ]
+ <                                                                     >
+ <G group02                                                            >
+  Inventory Due Date  [edate       ]
+ <                                                                     >
+
+}
+END -- gr3218
+Grid gr3219
+{
+[more                                    ]
+
+}
+END -- gr3219
+END -- VBox1
+END -- aimr106
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit img01=formonly.img01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit img02=formonly.img02 type CHAR, tabIndex=2;
+Edit img03=formonly.img03 type CHAR, tabIndex=3;
+Edit img04=formonly.img04 type CHAR, tabIndex=4;
+Group group02:group02, text="INPUT";
+DateEdit edate=formonly.edate type CHAR, tabIndex=5;
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.img01,formonly.img02,formonly.img03,formonly.img04,formonly.edate,formonly.more)
+END -- INSTRUCTIONS
+

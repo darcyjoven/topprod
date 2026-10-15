@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt402.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt402")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr5253
+{
+ Document No. [pmo01           ][pmo03     ]
+
+}
+END -- gr5253
+END -- page01
+END -- folder01
+Table s_pmo
+{
+[pmo04    |pmo0|pmo06                                                       ]
+[pmo04    |pmo0|pmo06                                                       ]
+[pmo04    |pmo0|pmo06                                                       ]
+[pmo04    |pmo0|pmo06                                                       ]
+[pmo04    |pmo0|pmo06                                                       ]
+[pmo04    |pmo0|pmo06                                                       ]
+[pmo04    |pmo0|pmo06                                                       ]
+[pmo04    |pmo0|pmo06                                                       ]
+[pmo04    |pmo0|pmo06                                                       ]
+[pmo04    |pmo0|pmo06                                                       ]
+
+}
+END -- s_pmo
+Grid gr5254
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5254
+END -- VBox1
+END -- apmt402
+
+TABLES
+pmo_file
+ATTRIBUTES
+Edit pmo01=pmo_file.pmo01, tabIndex=1, comment="Key Field, No Blank/Repeated!    ";
+Edit pmo03=pmo_file.pmo03, tabIndex=2, not null, required, comment="Comb. with [Doc#] as Key Field, 0:Head Description";
+ComboBox pmo04=pmo_file.pmo04, tabIndex=3, title="Location", not null, required, queryEditable, items=(("0", %"Print Location:Before"),("1", %"Print Location:After"));
+Edit pmo0=pmo_file.pmo05, tabIndex=4, title="Ln#", not null, required;
+ButtonEdit pmo06=pmo_file.pmo06, action=controlp, tabIndex=5, title="Description", not null, required, image="zoom";
+Edit cnt=formonly.cnt type CHAR, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmo(pmo_file.pmo04,pmo_file.pmo05,pmo_file.pmo06)
+SCREEN RECORD Undefined(pmo_file.pmo01,pmo_file.pmo03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

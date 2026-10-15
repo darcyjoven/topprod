@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_itemname_update.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_itemname_update")
+VBox VBox1
+Grid gr3217
+{
+ <G group01                                   >
+  Table ID       [gbc01                       ]
+  Field ID       [gbc02                       ]
+  KEY Series     [gbc03                       ]
+ <                                            >
+
+}
+END -- gr3217
+Group group02
+Table azz_gbc
+{
+[gbc04    |gbc05                             ]
+[gbc04    |gbc05                             ]
+[gbc04    |gbc05                             ]
+[gbc04    |gbc05                             ]
+[gbc04    |gbc05                             ]
+
+}
+END -- azz_gbc
+END -- group02
+Grid gr3218
+{
+[u][dummy01                                  ]
+
+}
+END -- gr3218
+END -- VBox1
+END -- p_itemname_update
+
+TABLES
+gbc_file
+ATTRIBUTES
+Group group01:group01;
+Edit gbc01=formonly.gbc01 type CHAR, tabIndex=1, noEntry;
+Edit gbc02=formonly.gbc02 type CHAR, tabIndex=2, noEntry;
+Edit gbc03=formonly.gbc03 type CHAR, tabIndex=3, noEntry;
+ComboBox gbc04=gbc_file.gbc04, tabIndex=4, title="Language", not null, required;
+Edit gbc05=gbc_file.gbc05, tabIndex=5, title="Item Name", scroll;
+Button u:update_zx14;
+Label dummy01:dummy01, text="Auto-Bringing Multi-Lingual Input Dialog When Data Modified!";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD azz_gbc(gbc_file.gbc04,gbc_file.gbc05)
+SCREEN RECORD Undefined(formonly.gbc01,formonly.gbc02,formonly.gbc03)
+END -- INSTRUCTIONS
+

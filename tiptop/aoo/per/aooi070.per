@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi070.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi070")
+VBox VBox1
+Folder pc835
+Page page01(text="Page01")
+Grid gr4623
+{
+  Currency                     [azk01     ] [azi02               ]
+  Date                         [azk02       ]
+ <G group01                                                                    >
+  Bank Buying ExRt             [azk03               ]
+  Bank Selling ExRt            [azk04               ]
+  Bank Average ExRt            [azk041              ]
+
+  Customs Buying ExRt          [azk051              ]
+  Customs Selling ExRt         [azk052              ]
+ <                                                                             >
+
+}
+END -- gr4623
+END -- page01
+END -- pc835
+Grid gr4624
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4624
+END -- VBox1
+END -- aooi070
+
+TABLES
+azk_file
+ATTRIBUTES
+ButtonEdit azk01=azk_file.azk01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Currency Table";
+Edit azi02=formonly.azi02 type CHAR, tabIndex=2, noEntry;
+DateEdit azk02=azk_file.azk02, tabIndex=3, not null, required, comment="KEY Field, No Blank/Repeated!";
+Group group01:group01;
+ButtonEdit azk03=azk_file.azk03, action=controlp, tabIndex=4, not null, required, image="zoom";
+ButtonEdit azk04=azk_file.azk04, action=controlp, tabIndex=5, not null, required, image="zoom";
+ButtonEdit azk041=azk_file.azk041, action=controlp, tabIndex=6, not null, required, image="zoom";
+ButtonEdit azk051=azk_file.azk051, action=controlp, tabIndex=7, not null, required, image="zoom";
+ButtonEdit azk052=azk_file.azk052, action=controlp, tabIndex=8, not null, required, image="zoom";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(azk_file.azk01,formonly.azi02,azk_file.azk02,azk_file.azk03,azk_file.azk04,azk_file.azk041,azk_file.azk051,azk_file.azk052,formonly.cnt)
+END -- INSTRUCTIONS
+

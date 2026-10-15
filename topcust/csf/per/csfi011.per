@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfi011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"csfi011")
+VBox vb6
+Folder pc839
+Page page01(text="Page01")
+Table s_gfe
+{
+[tc_baa01|tc_baa02|tc_baa03|tc_baa04]
+[tc_baa01|tc_baa02|tc_baa03|tc_baa04]
+[tc_baa01|tc_baa02|tc_baa03|tc_baa04]
+[tc_baa01|tc_baa02|tc_baa03|tc_baa04]
+[tc_baa01|tc_baa02|tc_baa03|tc_baa04]
+[tc_baa01|tc_baa02|tc_baa03|tc_baa04]
+[tc_baa01|tc_baa02|tc_baa03|tc_baa04]
+[tc_baa01|tc_baa02|tc_baa03|tc_baa04]
+[tc_baa01|tc_baa02|tc_baa03|tc_baa04]
+[tc_baa01|tc_baa02|tc_baa03|tc_baa04]
+
+}
+END -- s_gfe
+END -- page01
+END -- pc839
+Grid gr4628
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr4628
+END -- vb6
+END -- csfi011
+
+ATTRIBUTES
+Edit tc_baa01=formonly.tc_baa01 type VARCHAR, tabIndex=1, title=%"tc_baa01", required, verify;
+Edit tc_baa02=formonly.tc_baa02 type DECIMAL, tabIndex=2, title=%"tc_baa02", required;
+Edit tc_baa03=formonly.tc_baa03, tabIndex=3, title=%"tc_baa03", required;
+Edit tc_baa04=formonly.tc_baa04, tabIndex=5, default = "0", title=%"tc_baa04", required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gfe(formonly.tc_baa01,formonly.tc_baa02,formonly.tc_baa03,formonly.tc_baa04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

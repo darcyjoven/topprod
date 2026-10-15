@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_keyrelat.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_keyrelat")
+VBox VBox1
+Folder pc647
+Page page01(text="Main")
+Grid gr3558
+{
+ <G group01                                                                        >
+ [label5              ]           [gbu01               |gaq03                    ]
+ [label4              ]           [gbu02               |gat03                    ]
+ [label3                  ]       [gbu03               |gaz03                    ]
+ [label2                ]         [gbu04               |gae04                    ]
+ [label1        ]                 [gbu05               |gaq03_1                  ]
+
+ <                                                                                 >
+
+}
+END -- gr3558
+END -- page01
+END -- pc647
+Table s_gau
+{
+[gau03                |gaq01           |gau04               |gat01                  ]
+[gau03                |gaq01           |gau04               |gat01                  ]
+[gau03                |gaq01           |gau04               |gat01                  ]
+[gau03                |gaq01           |gau04               |gat01                  ]
+[gau03                |gaq01           |gau04               |gat01                  ]
+[gau03                |gaq01           |gau04               |gat01                  ]
+[gau03                |gaq01           |gau04               |gat01                  ]
+[gau03                |gaq01           |gau04               |gat01                  ]
+[gau03                |gaq01           |gau04               |gat01                  ]
+[gau03                |gaq01           |gau04               |gat01                  ]
+}
+END -- s_gau
+Grid gr3559
+{
+ ---------- Rows[idx   ]/[cnt   ] --- Details[cn2   ] ----------
+
+}
+END -- gr3559
+END -- VBox1
+END -- p_keyrelat
+
+TABLES
+gau_file,
+gbu_file,
+gat_file,
+gaq_file
+ATTRIBUTES
+Group group01:group01, text="Primary Key Infomation";
+Label label5:Label5, text=%"Field of Primary Key";
+Edit gbu01=gbu_file.gbu01, tabIndex=1, not null, required;
+Edit gaq03=formonly.gaq03 type CHAR, tabIndex=12;
+Label label4:Label4, text=%"Table of Primary Key";
+Edit gbu02=gbu_file.gbu02, tabIndex=2, not null, required;
+Edit gat03=formonly.gat03 type VARCHAR, tabIndex=13;
+Label label3:Label3, text=%"Linkded query Program ID";
+Edit gbu03=gbu_file.gbu03, tabIndex=3;
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=14;
+Label label2:Label2, text=%"Dynamic query Function";
+Edit gbu04=gbu_file.gbu04, tabIndex=4;
+Edit gae04=formonly.gae04 type CHAR, tabIndex=11;
+Label label1:Label1, text=%"Relative Field";
+Edit gbu05=gbu_file.gbu05, tabIndex=5;
+Edit gaq03_1=formonly.gaq03_1 type CHAR, tabIndex=15;
+Edit gau03=gau_file.gau03, tabIndex=6, title="Field of Foreign Key", not null, required;
+Edit gaq01=gaq_file.gaq03, tabIndex=16, title="Column Name", noEntry;
+Edit gau04=gau_file.gau04, tabIndex=7, title="Table of Foreign Key", not null, required;
+Edit gat01=gat_file.gat03, tabIndex=17, title="Table Name", noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=10, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gau(gau_file.gau03,gaq_file.gaq03,gau_file.gau04,gat_file.gat03)
+SCREEN RECORD Undefined(gbu_file.gbu01,formonly.gaq03,gbu_file.gbu02,formonly.gat03,gbu_file.gbu03,formonly.gaz03,gbu_file.gbu04,formonly.gae04,gbu_file.gbu05,formonly.gaq03_1,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

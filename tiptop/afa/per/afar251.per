@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afar251.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"afar251")
+VBox VBox1
+Grid Grid1
+{
+ <G grpqbe                                                                                >
+  Keeping Department  [fga12               ]   Calibration Type    [fga21               ]
+  Instrument No.      [fga01               ]   Storing Location    [fga14               ]
+  Property No.        [fga03               ]   Date of Acquisition [fga16               ]
+
+ <                                                                                        >
+}
+END -- Grid1
+Group group02(text="INPUT")
+Grid Grid2
+{
+  Due Calib. Date Range [bdate       ]-[edate       ]
+ <G group01                                           >
+ [s1                     ] [s2                      ]
+ [t1                     ] [t2                      ]
+ <                                                    >
+
+}
+END -- Grid2
+END -- group02
+Grid Grid3
+{
+[more                                         ]
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- afar251
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+Edit fga12=formonly.fga12 type VARCHAR, tabIndex=1;
+ComboBox fga21=formonly.fga21 type VARCHAR, tabIndex=2, queryEditable, items=(("1", "1"),("2", "2"),("3", "3"));
+Edit fga01=formonly.fga01 type VARCHAR, tabIndex=3;
+Edit fga14=formonly.fga14 type VARCHAR, tabIndex=4;
+Edit fga03=formonly.fga03 type VARCHAR, tabIndex=5;
+DateEdit fga16=formonly.fga16 type DATE, tabIndex=6;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=7;
+DateEdit edate=formonly.edate type DATE, tabIndex=8;
+Group group01:group01, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=9, queryEditable, items=(("1", %"Keeper"),("2", %"Instrument No."),("3", %"Property No."),("4", %"Calibration Type"),("5", %"Storing Location"),("6", %"Acqu.Dt"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=10, queryEditable, items=(("1", %"Keeper"),("2", %"Instrument No."),("3", %"Property No."),("4", %"Calibration Type"),("5", %"Storing Location"),("6", %"Acqu.Dt"));
+CheckBox t1=formonly.t1 type VARCHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type VARCHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.fga12,formonly.fga21,formonly.fga01,formonly.fga14,formonly.fga03,formonly.fga16,formonly.bdate,formonly.edate,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrp606.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group Group1(text=%"Group1")
+Grid ds1
+{
+
+[label1 |azp01                  ]
+[label2 |lui01                  ]
+
+}
+END -- ds1
+END -- Group1
+Grid gr17
+{
+[g_bgjob                                               ]
+
+}
+END -- gr17
+END -- VBox1
+END -- Form
+
+TABLES
+lui_file,
+azp_file
+ATTRIBUTES
+Label label1:Label1, text=%"azp01";
+ButtonEdit azp01=azp_file.azp01, action=controlp, tabIndex=1, not null, image="zoom.png", scroll;
+Label label2:Label2, text=%"lui01";
+ButtonEdit lui01=lui_file.lui01, action=controlp, tabIndex=2, not null, image="zoom.png", scroll;
+CheckBox g_bgjob=formonly.g_bgjob type VARCHAR, tabIndex=3, default = "N", text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(azp_file.azp01,lui_file.lui01)
+SCREEN RECORD Undefined(formonly.g_bgjob)
+END -- INSTRUCTIONS
+

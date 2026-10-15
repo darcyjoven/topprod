@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq034.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq034")
+VBox vb5
+Folder folder01
+Page page01(text="Main")
+HBox hb5
+Grid gr2523
+{
+
+
+ Group No.       [asll01      ]                Group Book No.     [asll00     ]
+ Upper Company   [asll02      ]                Upper Comp Book No [asll021    ]
+ Under Company   [asll03      ]                Under Comp Book No [asll031    ]
+ Year            [asll09      ]                Currency           [asll18     ]
+
+
+}
+END -- gr2523
+Grid gr2524
+{
+
+
+ Account No.         [asll04                        ]
+ Account Name        [aag02                                             ]
+ Trans.Value5        [asll05         ]  Trans.Value7    [asll07         ]
+ Trans.Value6        [asll06         ]  Trans.Value8    [asll08         ]
+
+
+}
+END -- gr2524
+END -- hb5
+END -- page01
+END -- folder01
+Table s_atcc
+{
+[seq    |asll11                |asll12                 |amt                 ]
+[seq    |asll11                |asll12                 |amt                 ]
+[seq    |asll11                |asll12                 |amt                 ]
+[seq    |asll11                |asll12                 |amt                 ]
+[seq    |asll11                |asll12                 |amt                 ]
+[seq    |asll11                |asll12                 |amt                 ]
+[seq    |asll11                |asll12                 |amt                 ]
+[seq    |asll11                |asll12                 |amt                 ]
+[seq    |asll11                |asll12                 |amt                 ]
+[seq    |asll11                |asll12                 |amt                 ]
+
+}
+END -- s_atcc
+Grid gr2525
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2525
+END -- vb5
+END -- gglq034
+
+TABLES
+asll_file
+ATTRIBUTES
+ButtonEdit asll01=asll_file.asll01, action=controlp, tabIndex=1, image="zoom";
+Edit asll00=asll_file.asll00, tabIndex=2, color = yellow;
+Edit asll02=asll_file.asll02, tabIndex=3;
+Edit asll021=asll_file.asll021, tabIndex=4;
+Edit asll03=asll_file.asll03, tabIndex=5;
+Edit asll031=asll_file.asll031, tabIndex=6;
+Edit asll09=asll_file.asll09, tabIndex=7;
+ButtonEdit asll18=asll_file.asll18, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Details";
+ButtonEdit asll04=asll_file.asll04, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Account # <^Y>Create Account  ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=10, noEntry;
+Edit asll05=asll_file.asll05, tabIndex=11;
+Edit asll07=asll_file.asll07, tabIndex=18;
+Edit asll06=asll_file.asll06, tabIndex=12;
+Edit asll08=asll_file.asll08, tabIndex=19;
+Edit seq=formonly.seq type CHAR, tabIndex=13, title="Period", noEntry;
+Edit asll11=asll_file.asll11, tabIndex=14, title="Debit Transaction Amt", noEntry;
+Edit asll12=asll_file.asll12, tabIndex=15, title="Credit", noEntry;
+Edit amt=formonly.amt type CHAR, tabIndex=20, title=%"Balance";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asll(formonly.seq,asll_file.asll11,asll_file.asll12,formonly.amt)
+SCREEN RECORD Undefined(asll_file.asll01,asll_file.asll00,asll_file.asll02,asll_file.asll021,asll_file.asll03,asll_file.asll031,asll_file.asll09,asll_file.asll18,asll_file.asll04,formonly.aag02,asll_file.asll05,asll_file.asll07,asll_file.asll06,asll_file.asll08,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

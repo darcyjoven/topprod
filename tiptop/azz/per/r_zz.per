@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/r_zz.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"r_zz")
+VBox VBox1
+Table s_zz
+{
+[x    |zz01        |zz02                                  |zzuser     |zz09    ]
+[x    |zz01        |zz02                                  |zzuser     |zz09    ]
+[x    |zz01        |zz02                                  |zzuser     |zz09    ]
+[x    |zz01        |zz02                                  |zzuser     |zz09    ]
+[x    |zz01        |zz02                                  |zzuser     |zz09    ]
+[x    |zz01        |zz02                                  |zzuser     |zz09    ]
+[x    |zz01        |zz02                                  |zzuser     |zz09    ]
+[x    |zz01        |zz02                                  |zzuser     |zz09    ]
+[x    |zz01        |zz02                                  |zzuser     |zz09    ]
+[x    |zz01        |zz02                                  |zzuser     |zz09    ]
+
+}
+END -- s_zz
+END -- VBox1
+END -- r_zz
+
+TABLES
+zz_file
+ATTRIBUTES
+Edit x=formonly.x type SMALLINT, tabIndex=1;
+Edit zz01=zz_file.zz01, tabIndex=2, title="Program Code", not null, required;
+Edit zz02=zz_file.zz02, tabIndex=3, title="Program Name";
+Edit zzuser=zz_file.zzuser, tabIndex=4, title="Designed";
+Edit zz09=zz_file.zz09, tabIndex=5, title="Date";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zz(formonly.x,zz_file.zz01,zz_file.zz02,zz_file.zzuser,zz_file.zz09)
+END -- INSTRUCTIONS
+

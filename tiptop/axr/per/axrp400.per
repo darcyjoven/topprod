@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrp400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrp400")
+VBox VBox1
+Group g01(text="QBE")
+Grid gr2934
+{
+ <G group06                                   >  <G group07                                                   >
+   A/R Date            [oma11               ]     Accounts Property   [oma00               ]
+   Payment Method      [oma32               ]     Customer #          [oma03               ]
+   Accounts #          [oma01               ]     Customer name       [oma032              ]
+   Account Date        [oma02               ]     Collecting Cust. #  [oma68               ]
+   Account Empl        [oma14               ]     Collecting Customer [oma69               ]
+                                                  Receive currency    [oma23               ]
+                                                  Accounts Category   [oma13               ]
+ <                                            >  <                                                            >
+
+}
+END -- gr2934
+END -- g01
+Group g02(text="INPUT")
+Grid gr2935
+{
+ <G group03                                                         >       <G group04                                                   >
+  Receving Employee            [emp_no    ][gen02          ]                 [a                       ]
+  Department                   [dept      ][gem02          ]                 [b                       ]
+  Receving Slip                [tr_type   ]                                  [s2                      ]
+  Receving Date                [pay_date  ]                                  [ap                      ]
+  Receving End Date            [pay_edate ]                                   Customer #              [apa06              ]
+                              [chg                                 ]          Vender Name             [apa07              ]
+ <                                                                  >       <                                                            >
+
+}
+END -- gr2935
+END -- g02
+END -- VBox1
+END -- axrp400
+
+TABLES
+oma_file
+ATTRIBUTES
+Group group06:group06;
+DateEdit oma11=oma_file.oma11, tabIndex=1;
+Edit oma32=oma_file.oma32, tabIndex=2;
+Edit oma01=oma_file.oma01, tabIndex=3;
+DateEdit oma02=oma_file.oma02, tabIndex=4;
+Edit oma14=oma_file.oma14, tabIndex=5;
+Group group07:group07;
+Edit oma00=oma_file.oma00, tabIndex=6, comment="11.Deposit 12.Delivery 13.Balance 14.MISC";
+Edit oma03=oma_file.oma03, tabIndex=7;
+Edit oma032=oma_file.oma032, tabIndex=8;
+Edit oma68=formonly.oma68 type CHAR, tabIndex=9;
+Edit oma69=formonly.oma69 type CHAR, tabIndex=10;
+Edit oma23=oma_file.oma23, tabIndex=11;
+Edit oma13=oma_file.oma13, tabIndex=12;
+Group group03:group03;
+ButtonEdit emp_no=formonly.emp_no type VARCHAR, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P> Qry Employee";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=14, noEntry;
+ButtonEdit dept=formonly.dept type VARCHAR, action=controlp, tabIndex=15, not null, required, image="zoom", comment="<^P> Qry Department";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=16, noEntry;
+ButtonEdit tr_type=formonly.tr_type type VARCHAR, action=controlp, tabIndex=17, not null, required, image="zoom", comment="<^P> Qry Payment Slip";
+DateEdit pay_date=formonly.pay_date type DATE, tabIndex=18, not null, required;
+DateEdit pay_edate=formonly.pay_edate type DATE, tabIndex=26;
+CheckBox chg=formonly.chg type CHAR, tabIndex=25, text="Auto Change Account No. By Year", valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04;
+CheckBox a=formonly.a type CHAR, tabIndex=19, text="Note Receivable", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type CHAR, tabIndex=20, text="T/T", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox s2=formonly.s2 type CHAR, tabIndex=21, text="Account to offset", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ap=formonly.ap type CHAR, tabIndex=22, text="Account payable", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="THERE is only one customer\'s account,or this function is no use";
+ButtonEdit apa06=formonly.apa06 type CHAR, action=controlp, tabIndex=23, not null, required, image="zoom", comment="<^P> Qry Details";
+Edit apa07=formonly.apa07 type CHAR, tabIndex=24, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oma_file.oma11,oma_file.oma32,oma_file.oma01,oma_file.oma02,oma_file.oma14,oma_file.oma00,oma_file.oma03,oma_file.oma032,formonly.oma68,formonly.oma69,oma_file.oma23,oma_file.oma13,formonly.emp_no,formonly.gen02,formonly.dept,formonly.gem02,formonly.tr_type,formonly.pay_date,formonly.chg,formonly.a,formonly.b,formonly.s2,formonly.ap,formonly.apa06,formonly.apa07,formonly.pay_edate)
+END -- INSTRUCTIONS
+

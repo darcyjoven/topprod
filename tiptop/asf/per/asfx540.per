@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfx540.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr540")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                        >
+  Work/Order No       [sfb01               ]
+  Production Item     [sfb05               ]
+  Batch ID            [sfb85               ]
+ <                                                                 >
+ <G group02                                                        >
+ [a                            ]
+ [b                            ]
+ <                                                                 >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                           ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- asfr540
+
+TABLES
+sfb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit sfb05=formonly.sfb05 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit sfb85=sfb_file.sfb85, action=controlp, tabIndex=3, not null, required, image="zoom";
+Group group02:group02, text="INPUT";
+CheckBox a=formonly.a type VARCHAR, tabIndex=4, text="Only Print Completed W/O", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=5, text="Only Print Diffrent Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfb_file.sfb01,formonly.sfb05,sfb_file.sfb85,formonly.a,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

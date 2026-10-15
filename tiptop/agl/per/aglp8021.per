@@ -1,0 +1,29 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglp8021.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglp8021")
+Group g01(text=%"INPUT")
+Grid gr2514
+{
+ Original Book No.            [book1     ]
+ Carry to Book No.            [book2     ]
+ yy                           [yy        ]
+}
+END -- gr2514
+END -- g01
+END -- aglp8021
+
+ATTRIBUTES
+ButtonEdit book1=formonly.book1 type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+ButtonEdit book2=formonly.book2 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit yy=formonly.yy, tabIndex=3, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.book1,formonly.book2,formonly.yy)
+END -- INSTRUCTIONS
+

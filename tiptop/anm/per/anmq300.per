@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmq300")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr4159
+{
+ Bank No.            [nma01             ]
+ Bank Name           [nma02             ]
+
+}
+END -- gr4159
+Grid gr4160
+{
+ Currency            [nma10     ]
+ Account No.         [nma04                         ]
+
+}
+END -- gr4160
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_nme
+{
+[nme02     |nme16      |nme12     |voucher   |flag      |nmc03     |nme03            |nmc02                 |nme04                 |nme07              |nme08                |nme06               |nme061              |nme26     |nme28               |nme29               ]
+[nme02     |nme16      |nme12     |voucher   |flag      |nmc03     |nme03            |nmc02                 |nme04                 |nme07              |nme08                |nme06               |nme061              |nme26     |nme28               |nme29               ]
+[nme02     |nme16      |nme12     |voucher   |flag      |nmc03     |nme03            |nmc02                 |nme04                 |nme07              |nme08                |nme06               |nme061              |nme26     |nme28               |nme29               ]
+[nme02     |nme16      |nme12     |voucher   |flag      |nmc03     |nme03            |nmc02                 |nme04                 |nme07              |nme08                |nme06               |nme061              |nme26     |nme28               |nme29               ]
+[nme02     |nme16      |nme12     |voucher   |flag      |nmc03     |nme03            |nmc02                 |nme04                 |nme07              |nme08                |nme06               |nme061              |nme26     |nme28               |nme29               ]
+[nme02     |nme16      |nme12     |voucher   |flag      |nmc03     |nme03            |nmc02                 |nme04                 |nme07              |nme08                |nme06               |nme061              |nme26     |nme28               |nme29               ]
+[nme02     |nme16      |nme12     |voucher   |flag      |nmc03     |nme03            |nmc02                 |nme04                 |nme07              |nme08                |nme06               |nme061              |nme26     |nme28               |nme29               ]
+[nme02     |nme16      |nme12     |voucher   |flag      |nmc03     |nme03            |nmc02                 |nme04                 |nme07              |nme08                |nme06               |nme061              |nme26     |nme28               |nme29               ]
+[nme02     |nme16      |nme12     |voucher   |flag      |nmc03     |nme03            |nmc02                 |nme04                 |nme07              |nme08                |nme06               |nme061              |nme26     |nme28               |nme29               ]
+[nme02     |nme16      |nme12     |voucher   |flag      |nmc03     |nme03            |nmc02                 |nme04                 |nme07              |nme08                |nme06               |nme061              |nme26     |nme28               |nme29               ]
+
+}
+END -- s_nme
+Grid gr4161
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4161
+END -- VBox1
+END -- anmq300
+
+TABLES
+nme_file,
+nmc_file,
+nma_file
+ATTRIBUTES
+ButtonEdit nma01=nma_file.nma01, action=controlp, tabIndex=1, image="zoom";
+Edit nma02=formonly.nma02 type CHAR, tabIndex=2, noEntry;
+Edit nma10=formonly.nma10 type CHAR, tabIndex=3;
+Edit nma04=formonly.nma04 type CHAR, tabIndex=4;
+DateEdit nme02=nme_file.nme02, tabIndex=5, title="Bank Date", comment="Enter Bank Date to Qry by QBE";
+DateEdit nme16=nme_file.nme16, tabIndex=7, title="Account Date";
+Edit nme12=nme_file.nme12, tabIndex=7, title="nme12";
+Edit voucher=formonly.voucher type CHAR, tabIndex=7, title="Voucher No.";
+Edit flag=formonly.flag type CHAR, tabIndex=7, title="flag", hidden;
+ComboBox nmc03=nmc_file.nmc03, tabIndex=7, title="nmc03", items=(("1", "Deposit"),("2", "Withdraw"));
+Edit nme03=nme_file.nme03, tabIndex=5, title="Transaction Code", comment="Enter Tran.Code to Qry by QBE";
+Edit nmc02=formonly.nmc02 type CHAR, tabIndex=5, title="Transaction Code Name";
+Edit nme04=nme_file.nme04, tabIndex=5, title="Original Currency Amt", comment="Enter Amount Range to Qry by QBE";
+Edit nme07=nme_file.nme07, tabIndex=5, title="Exchange Rate";
+Edit nme08=nme_file.nme08, tabIndex=5, title="Home Currency Amount";
+Edit nme06=nme_file.nme06, tabIndex=5, title="Counterpart Account";
+Edit nme061=nme_file.nme061, tabIndex=5, title="Counterpart Account2";
+CheckBox nme26=nme_file.nme26, tabIndex=7, title="Transfer-out Code (Web Bank)", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nme28=nme_file.nme28, tabIndex=15, title=%"nme28", noEntry, not null, required;
+Edit nme29=nme_file.nme29, tabIndex=16, title=%"nme29", noEntry, not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=13;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nme(nme_file.nme02,nme_file.nme16,nme_file.nme12,formonly.voucher,formonly.flag,nmc_file.nmc03,nme_file.nme03,formonly.nmc02,nme_file.nme04,nme_file.nme07,nme_file.nme08,nme_file.nme06,nme_file.nme061,nme_file.nme26,nme_file.nme28,nme_file.nme29)
+SCREEN RECORD Undefined(nma_file.nma01,formonly.nma02,formonly.nma10,formonly.nma04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr018.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr018")
+VBox vb8
+Group group01(text="INPUT")
+VBox vb7
+Grid gr2632
+{
+  Group Code          [axa01            ]
+  Parent Company      [axa02            ]
+  axa06               [axa06            ]
+  Book No.            [b    ]
+  Combine Book        [aaz641    ]
+  Report Structure No.[a                  ]
+
+}
+END -- gr2632
+Grid gr2633
+{
+
+ <G group04                                                         >
+                          [dummy01         ]    [dummy02        ]
+   Enter Year          [yy1                 ][yy2                 ]
+   Ending Period       [em1                 ][em2                 ]
+   Quarter             [q1                  ][q2                  ]
+   Half a Year         [h1                  ][h2                  ]
+
+ <                                                                  >
+
+}
+END -- gr2633
+Grid gr2634
+{
+   Decimal Digits      [e                   ]
+   Print Minimum Level#[f                   ]
+   Amount Unit         [d                   ]
+  [c                             ]
+  [h                             ]
+
+ <G group08                                                         >
+  [o                                       ]
+  G/L Curr.           [r                   ]
+  Convert Curr.       [p                   ]
+  * Ex.Rate           [q                   ]
+ <                                                                  >
+
+}
+END -- gr2634
+END -- vb7
+END -- group01
+Grid gr2635
+{
+
+[more                                                        ]
+
+}
+END -- gr2635
+END -- vb8
+END -- aglr018
+
+ATTRIBUTES
+ButtonEdit axa01=formonly.axa01, action=controlp, tabIndex=17, not null, required, image="zoom";
+ButtonEdit axa02=formonly.axa02, action=controlp, tabIndex=18, not null, required, image="zoom";
+ComboBox axa06=formonly.axa06 type VARCHAR, tabIndex=20, items=(("1", "Month"),("2", "Quarter"),("3", "Half a Year"),("4", "Year"));
+Edit b=formonly.b type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit aaz641=formonly.aaz641, action=controlp, tabIndex=19, noEntry, not null, required, image="zoom";
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Group group04:group04;
+Label dummy01:dummy01, text="1st Period";
+Label dummy02:dummy02, text="2st Period";
+Edit yy1=formonly.yy1 type SMALLINT, tabIndex=3, not null, required;
+Edit yy2=formonly.yy2 type SMALLINT, tabIndex=4, noEntry;
+Edit em1=formonly.em1 type SMALLINT, tabIndex=5, not null, required;
+Edit em2=formonly.em2 type SMALLINT, tabIndex=6, noEntry;
+ComboBox q1=formonly.q1 type VARCHAR, tabIndex=21, not null, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox q2=formonly.q2 type VARCHAR, tabIndex=22, noEntry, not null, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox h1=formonly.h1 type VARCHAR, tabIndex=23, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+ComboBox h2=formonly.h2 type VARCHAR, tabIndex=24, noEntry, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+Edit e=formonly.e, tabIndex=7, not null, required;
+Edit f=formonly.f type SMALLINT, tabIndex=8, not null, required;
+ComboBox d=formonly.d, tabIndex=9, not null, required, queryEditable, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+CheckBox c=formonly.c, tabIndex=10, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h, tabIndex=11, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group08:group08;
+CheckBox o=formonly.o, tabIndex=12, text="Convert Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=13, noEntry, not null, required;
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=14, image="zoom";
+Edit q=formonly.q type DECIMAL, tabIndex=15;
+CheckBox more=formonly.more, tabIndex=16, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.axa01,formonly.axa02,formonly.axa06,formonly.b,formonly.aaz641,formonly.a,formonly.yy1,formonly.yy2,formonly.em1,formonly.em2,formonly.q1,formonly.q2,formonly.h1,formonly.h2,formonly.e,formonly.f,formonly.d,formonly.c,formonly.h,formonly.o,formonly.r,formonly.p,formonly.q,formonly.more)
+END -- INSTRUCTIONS
+

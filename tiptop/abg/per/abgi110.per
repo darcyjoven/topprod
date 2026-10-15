@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi110")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+Grid gr601
+{
+ Version     [bgn01     ]
+ Customer #  [bgn013    ][occ02   ]
+ Dept. No.   [bgn012    ][gem02   ]
+ Product No. [bgn014              ]
+ Part Name   [ima02                         ]
+ Spec.       [ima021                        ]
+ Prd Ut      [bgn11     ]  Inv.Ut [ima25     ]  Conv.Rt. [bgn11_fac ]
+ Year        [bgn02     ]
+}
+END -- gr601
+END -- page01
+END -- folder01
+Table s_bgn
+{
+[bgn03   |bgn04    |bgn05               |bgn06                |bgn07                    |bgn08                  ]
+[bgn03   |bgn04    |bgn05               |bgn06                |bgn07                    |bgn08                  ]
+[bgn03   |bgn04    |bgn05               |bgn06                |bgn07                    |bgn08                  ]
+[bgn03   |bgn04    |bgn05               |bgn06                |bgn07                    |bgn08                  ]
+[bgn03   |bgn04    |bgn05               |bgn06                |bgn07                    |bgn08                  ]
+[bgn03   |bgn04    |bgn05               |bgn06                |bgn07                    |bgn08                  ]
+[bgn03   |bgn04    |bgn05               |bgn06                |bgn07                    |bgn08                  ]
+[bgn03   |bgn04    |bgn05               |bgn06                |bgn07                    |bgn08                  ]
+[bgn03   |bgn04    |bgn05               |bgn06                |bgn07                    |bgn08                  ]
+[bgn03   |bgn04    |bgn05               |bgn06                |bgn07                    |bgn08                  ]
+}
+END -- s_bgn
+Grid gr603
+{
+ Rows:[cnt   ] -- [cn2   ]Total[tot5           ]  --  [tot6         ]     -- [tot7          ]    -- [tot8        ]
+
+
+
+}
+END -- gr603
+END -- vb3
+END -- abgi110
+
+TABLES
+bgn_file
+ATTRIBUTES
+Edit bgn01=bgn_file.bgn01, tabIndex=1;
+ButtonEdit bgn013=bgn_file.bgn013, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Qry Customer Common Data";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=3, noEntry;
+ButtonEdit bgn012=bgn_file.bgn012, action=controlp, tabIndex=4, not null, required, color = green reverse, image="zoom", comment="<^P> Query Department";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=5;
+ButtonEdit bgn014=bgn_file.bgn014, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P> Qry Item Master <^E> Qry Product Class";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=7;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=8;
+Edit bgn11=bgn_file.bgn11, tabIndex=9, not null, required;
+Edit ima25=formonly.ima25 type VARCHAR, tabIndex=10, noEntry;
+Edit bgn11_fac=bgn_file.bgn11_fac, tabIndex=11, noEntry;
+Edit bgn02=bgn_file.bgn02, tabIndex=12, not null, required;
+Edit bgn03=bgn_file.bgn03, tabIndex=13, title="Period", not null, required;
+Edit bgn04=bgn_file.bgn04, tabIndex=14, title="Qty", not null, required;
+Edit bgn05=bgn_file.bgn05, tabIndex=15, title="Unit Material", not null, required;
+Edit bgn06=bgn_file.bgn06, tabIndex=16, title="Unit Labor", not null, required;
+Edit bgn07=bgn_file.bgn07, tabIndex=17, title="Unit Overhead", not null, required;
+Edit bgn08=bgn_file.bgn08, tabIndex=18, title="Unit Process", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry, color = yellow reverse;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=24, noEntry;
+Edit tot5=formonly.tot5 type DECIMAL, tabIndex=19, noEntry;
+Edit tot6=formonly.tot6 type DECIMAL, tabIndex=20, noEntry;
+Edit tot7=formonly.tot7 type DECIMAL, tabIndex=21, noEntry;
+Edit tot8=formonly.tot8 type DECIMAL, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgn(bgn_file.bgn03,bgn_file.bgn04,bgn_file.bgn05,bgn_file.bgn06,bgn_file.bgn07,bgn_file.bgn08)
+SCREEN RECORD Undefined(bgn_file.bgn01,bgn_file.bgn013,formonly.occ02,bgn_file.bgn012,formonly.gem02,bgn_file.bgn014,formonly.ima02,formonly.ima021,bgn_file.bgn11,formonly.ima25,bgn_file.bgn11_fac,bgn_file.bgn02,formonly.cnt,formonly.cn2,formonly.tot5,formonly.tot6,formonly.tot7,formonly.tot8)
+END -- INSTRUCTIONS
+

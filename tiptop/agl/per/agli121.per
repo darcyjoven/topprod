@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli121.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli121")
+VBox vb13
+Folder folder01
+Page page01(text="Page01")
+Grid gr2399
+{
+ Book.No   [ahh00       ]
+ Account   [ahh01       ]    [aag02                     ]
+
+}
+END -- gr2399
+END -- page01
+END -- folder01
+Table s_ahh
+{
+[ahh02       |gaz03                       |ahh03                                             ]
+[ahh02       |gaz03                       |ahh03                                             ]
+[ahh02       |gaz03                       |ahh03                                             ]
+[ahh02       |gaz03                       |ahh03                                             ]
+[ahh02       |gaz03                       |ahh03                                             ]
+[ahh02       |gaz03                       |ahh03                                             ]
+[ahh02       |gaz03                       |ahh03                                             ]
+[ahh02       |gaz03                       |ahh03                                             ]
+[ahh02       |gaz03                       |ahh03                                             ]
+}
+END -- s_ahh
+Grid gr2400
+{
+ ---------- Rows [cnt   ] / [cn2   ] -------------------------------------------------------------------------------
+
+
+
+}
+END -- gr2400
+END -- vb13
+END -- agli121
+
+TABLES
+ahh_file
+ATTRIBUTES
+ButtonEdit ahh00=ahh_file.ahh00, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry Account";
+ButtonEdit ahh01=ahh_file.ahh01, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Account";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=1, noEntry;
+ButtonEdit ahh02=ahh_file.ahh02, action=controlp, tabIndex=2, title="Transaction", not null, required, image="zoom", comment="<^P>Qry Transaction";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=3, title="Transaction Maintain Name", noEntry;
+Edit ahh03=ahh_file.ahh03, tabIndex=4, title="Memo";
+Edit cnt=formonly.cnt type CHAR, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ahh(ahh_file.ahh02,formonly.gaz03,ahh_file.ahh03)
+SCREEN RECORD Undefined(ahh_file.ahh00,ahh_file.ahh01,formonly.aag02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

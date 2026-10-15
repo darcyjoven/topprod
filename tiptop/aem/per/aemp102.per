@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemp102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemp102")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1734
+{
+  Work Order No.     [fil01             ]
+  Equipment No.      [fil03     ] [fia02               ]
+  Asset No.          [fia011    ] [fia012              ]
+  Improved Note Type [o                 ]
+}
+END -- gr1734
+END -- page01
+END -- folder01
+Folder pc294
+Page page02(text="Task Maintain")
+VBox VBox2
+Table s_fiw
+{
+[fiw03      |ima02                     |ima25 |qty      |a       |b                ]
+[fiw03      |ima02                     |ima25 |qty      |a       |b                ]
+[fiw03      |ima02                     |ima25 |qty      |a       |b                ]
+[fiw03      |ima02                     |ima25 |qty      |a       |b                ]
+[fiw03      |ima02                     |ima25 |qty      |a       |b                ]
+[fiw03      |ima02                     |ima25 |qty      |a       |b                ]
+[fiw03      |ima02                     |ima25 |qty      |a       |b                ]
+[fiw03      |ima02                     |ima25 |qty      |a       |b                ]
+[fiw03      |ima02                     |ima25 |qty      |a       |b                ]
+[fiw03      |ima02                     |ima25 |qty      |a       |b                ]
+
+}
+END -- s_fiw
+Grid gr1735
+{
+  Total   [c                ]
+
+}
+END -- gr1735
+END -- VBox2
+END -- page02
+END -- pc294
+Grid gr1736
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr1736
+END -- VBox1
+END -- aemp102
+
+TABLES
+fil_file,
+fiw_file
+ATTRIBUTES
+ButtonEdit fil01=fil_file.fil01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit fil03=fil_file.fil03, tabIndex=2, noEntry;
+Edit fia02=formonly.fia02 type CHAR, tabIndex=3, noEntry;
+Edit fia011=formonly.fia011 type CHAR, tabIndex=4, noEntry;
+Edit fia012=formonly.fia012 type CHAR, tabIndex=5, noEntry;
+ButtonEdit o=formonly.o type CHAR, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit fiw03=fiw_file.fiw03, tabIndex=7, title="Item No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=8, title="Part Name Specification", noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=9, title="Unit", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=10, title="Quantity", noEntry;
+Edit a=formonly.a type CHAR, tabIndex=11, title="Amount", noEntry;
+Edit b=formonly.b type CHAR, tabIndex=12, title="Transfer-in Cost", not null, required;
+Edit c=formonly.c type CHAR, tabIndex=13, not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fiw(fiw_file.fiw03,formonly.ima02,formonly.ima25,formonly.qty,formonly.a,formonly.b)
+SCREEN RECORD Undefined(fil_file.fil01,fil_file.fil03,formonly.fia02,formonly.fia011,formonly.fia012,formonly.o,formonly.c,formonly.cn2)
+END -- INSTRUCTIONS
+

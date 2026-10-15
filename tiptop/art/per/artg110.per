@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artg110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+   <G group1                                                >
+
+     [label1          ]  [oba01                ]
+   <                                                        >
+
+}
+END -- Grid1
+Group Group2(text=%"INPUT")
+Grid Grid3
+{
+
+   [label2          ]   [a                   ]
+
+}
+END -- Grid3
+END -- Group2
+Grid Grid2
+{
+
+ [more                                 ]
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+Label label1:Label1, text=%"Product Class";
+ButtonEdit oba01=formonly.oba01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Label label2:Label2, text=%"Limit tiers";
+Edit a=formonly.a type CHAR, tabIndex=2;
+CheckBox more=formonly.more type CHAR, tabIndex=3, text=%"Other codition to print";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oba01,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

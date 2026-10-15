@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmp601")
+VBox VBox1
+Folder pc138
+Page page01(text="Main")
+Grid gr853
+{
+ <G group01                                                  >
+  Original Component No. [a                   ]
+                         [b                             ]
+                         [ima021_1                      ]
+  Expiry Date            [vdate       ]
+  Version                [c         ]
+  Source Code            [d         ]
+ <                                                           >
+ <G group02                                                  >
+  New Component No.   [e                   ]
+                      [f                             ]
+                      [ima021_2                      ]
+  Version             [g         ]
+  Source Code         [h         ]
+ <                                                           >
+ <G group03                                                  >
+ [y                                                         ]
+ [g_bgjob                                                   ]
+ <                                                           >
+
+}
+END -- gr853
+END -- page01
+END -- pc138
+Grid gr854
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr854
+END -- VBox1
+END -- abmp601
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Enter Item No. to be Substituted                      ";
+Edit b=formonly.b type CHAR, tabIndex=2, noEntry;
+Edit ima021_1=formonly.ima021_1 type CHAR, tabIndex=3, noEntry;
+DateEdit vdate=formonly.vdate type DATE, tabIndex=4;
+Edit c=formonly.c type CHAR, tabIndex=5, noEntry;
+Edit d=formonly.d type CHAR, tabIndex=6, noEntry;
+Group group02:group02;
+ButtonEdit e=formonly.e type CHAR, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^Y> Create Item Master";
+Edit f=formonly.f type CHAR, tabIndex=8, noEntry;
+Edit ima021_2=formonly.ima021_2 type CHAR, tabIndex=9, noEntry;
+Edit g=formonly.g type CHAR, tabIndex=10, noEntry;
+Edit h=formonly.h type CHAR, tabIndex=11, noEntry;
+Group group03:group03;
+CheckBox y=formonly.y type VARCHAR, tabIndex=12, text="Re-confirm before SUB component", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=13, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.b,formonly.ima021_1,formonly.vdate,formonly.c,formonly.d,formonly.e,formonly.f,formonly.ima021_2,formonly.g,formonly.h,formonly.y,formonly.g_bgjob,formonly.cnt)
+END -- INSTRUCTIONS
+

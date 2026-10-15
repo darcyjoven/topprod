@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq304.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="anmq304")
+VBox vb8
+Table s_nps
+{
+[nps03        |nps01               |nps05               |nps07               |nps12        |nps13          |nps17            |nps20       |nps21        |nps22         |nps15               |nps16               |nps23         |nps24         ]
+[nps03        |nps01               |nps05               |nps07               |nps12        |nps13          |nps17            |nps20       |nps21        |nps22         |nps15               |nps16               |nps23         |nps24         ]
+[nps03        |nps01               |nps05               |nps07               |nps12        |nps13          |nps17            |nps20       |nps21        |nps22         |nps15               |nps16               |nps23         |nps24         ]
+[nps03        |nps01               |nps05               |nps07               |nps12        |nps13          |nps17            |nps20       |nps21        |nps22         |nps15               |nps16               |nps23         |nps24         ]
+[nps03        |nps01               |nps05               |nps07               |nps12        |nps13          |nps17            |nps20       |nps21        |nps22         |nps15               |nps16               |nps23         |nps24         ]
+[nps03        |nps01               |nps05               |nps07               |nps12        |nps13          |nps17            |nps20       |nps21        |nps22         |nps15               |nps16               |nps23         |nps24         ]
+[nps03        |nps01               |nps05               |nps07               |nps12        |nps13          |nps17            |nps20       |nps21        |nps22         |nps15               |nps16               |nps23         |nps24         ]
+[nps03        |nps01               |nps05               |nps07               |nps12        |nps13          |nps17            |nps20       |nps21        |nps22         |nps15               |nps16               |nps23         |nps24         ]
+[nps03        |nps01               |nps05               |nps07               |nps12        |nps13          |nps17            |nps20       |nps21        |nps22         |nps15               |nps16               |nps23         |nps24         ]
+[nps03        |nps01               |nps05               |nps07               |nps12        |nps13          |nps17            |nps20       |nps21        |nps22         |nps15               |nps16               |nps23         |nps24         ]
+
+}
+END -- s_nps
+Grid gr5
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr5
+END -- vb8
+END -- anmq304
+
+TABLES
+nps_file
+ATTRIBUTES
+ComboBox nps03=nps_file.nps03, tabIndex=1, title="Tran. Type", noEntry, queryEditable, items=(("N02031", "Direct Payment"),("N02041", "The Direct Group Pays"),("N02020", "Internal Account Transfer"),("N03010", "Issues 0n Another's Behalf The Wages"),("N03020", "Issuing 0n Another's Behalf"),("N03030", "Generation Of Buckle"),("LTR", "Domestic Pay"),("FTR", "Foreign (Foreign Currency)Pay"),("IAT", "Internal Transfer"),("ACH-CR", "Salaying on Behalf"));
+Edit nps01=nps_file.nps01, tabIndex=2, title="Tran. Refer. No.", noEntry;
+Edit nps05=formonly.nps05 type CHAR, tabIndex=3, title="Payer\'s Bank Account", noEntry;
+Edit nps07=nps_file.nps07, tabIndex=4, title="Payee\'s Bank Account", noEntry;
+Edit nps12=nps_file.nps12, tabIndex=5, title="Tran. Money", noEntry;
+ButtonEdit nps13=nps_file.nps13, action=controlp, tabIndex=6, title="Currency", noEntry, image="zoom";
+ComboBox nps17=nps_file.nps17, tabIndex=7, title="Payment Status", noEntry, queryEditable, items=(("0", "The Landing Pays Successfully"),("1", "Internet Bank Payment Defeat"),("2", "Internet Bank Payment Had Not Determined"),("3", "Internet Bank Submits Successfully"),("4", "Internet Bank Transfers Accounts Successfully"),("9", "No Pay"));
+Edit nps20=nps_file.nps20, tabIndex=8, title="Total Count(Private)", noEntry;
+Edit nps21=nps_file.nps21, tabIndex=9, title="Successful Money(Private)", noEntry;
+Edit nps22=nps_file.nps22, tabIndex=10, title="Successful Count(Private)", noEntry;
+Edit nps15=nps_file.nps15, tabIndex=11, title="Purpose", noEntry;
+Edit nps16=nps_file.nps16, tabIndex=12, title="Abstract", noEntry;
+DateEdit nps23=nps_file.nps23, tabIndex=13, title="Submission(Expectation) Date", noEntry;
+DateEdit nps24=nps_file.nps24, tabIndex=14, title="Practice Date", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nps(nps_file.nps03,nps_file.nps01,formonly.nps05,nps_file.nps07,nps_file.nps12,nps_file.nps13,nps_file.nps17,nps_file.nps20,nps_file.nps21,nps_file.nps22,nps_file.nps15,nps_file.nps16,nps_file.nps23,nps_file.nps24)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

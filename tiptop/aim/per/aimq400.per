@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq400")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr3157
+{
+ Item No.            [ima01                         ]
+ Part Name Spec      [ima02                         ]
+ Specification       [ima021                        ]
+ Ver                 [ima05     ]
+}
+END -- gr3157
+Grid gr3158
+{
+ Src Cd              [ima08     ]
+ Group Cd            [ima06     ]
+ ABC Cd              [ima07     ]
+
+}
+END -- gr3158
+Grid gr3159
+{
+  MRP Available Inv   [avl_stk_mpsmrp      ]
+  Available Inv       [avl_stk             ]
+  Unusable Inv Qty    [unavl_stk           ]
+
+}
+END -- gr3159
+END -- hb1
+END -- page01
+END -- folder01
+Table s_img
+{
+[img02     |img03     |img04       |img23 |img09|img10          |img21        |img37   |img18   ]
+[img02     |img03     |img04       |img23 |img09|img10          |img21        |img37   |img18   ]
+[img02     |img03     |img04       |img23 |img09|img10          |img21        |img37   |img18   ]
+[img02     |img03     |img04       |img23 |img09|img10          |img21        |img37   |img18   ]
+[img02     |img03     |img04       |img23 |img09|img10          |img21        |img37   |img18   ]
+[img02     |img03     |img04       |img23 |img09|img10          |img21        |img37   |img18   ]
+[img02     |img03     |img04       |img23 |img09|img10          |img21        |img37   |img18   ]
+[img02     |img03     |img04       |img23 |img09|img10          |img21        |img37   |img18   ]
+[img02     |img03     |img04       |img23 |img09|img10          |img21        |img37   |img18   ]
+[img02     |img03     |img04       |img23 |img09|img10          |img21        |img37   |img18   ]
+
+}
+END -- s_img
+Grid gr3160
+{
+  ---------- Rows [cnt   ] / [cn2   ] --------------------------------------------------------------------Inventory Qty Total [tot                 ]
+
+}
+END -- gr3160
+END -- vb1
+END -- aimq400
+
+TABLES
+ima_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Please by QBE, Enter Item# to Query";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=3, noEntry;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=4, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=5, noEntry;
+Edit ima06=formonly.ima06 type CHAR, tabIndex=6, noEntry;
+Edit ima07=formonly.ima07 type CHAR, tabIndex=7, noEntry;
+Edit avl_stk_mpsmrp=formonly.avl_stk_mpsmrp type CHAR, tabIndex=8;
+Edit avl_stk=formonly.avl_stk type CHAR, tabIndex=9;
+Edit unavl_stk=formonly.unavl_stk type CHAR, tabIndex=10;
+Edit img02=formonly.img02 type CHAR, tabIndex=11, title="Warehouse";
+Edit img03=formonly.img03 type CHAR, tabIndex=12, title="Location";
+Edit img04=formonly.img04 type CHAR, tabIndex=13, title="Lot#";
+Edit img23=formonly.img23 type CHAR, tabIndex=14, title="Usable";
+Edit img09=formonly.img09 type CHAR, tabIndex=15, title="Unit";
+Edit img10=formonly.img10 type CHAR, tabIndex=16, title="Inventory Qty";
+Edit img21=formonly.img21 type CHAR, tabIndex=17, title="Conversion Rt";
+DateEdit img37=formonly.img37 type DATE, tabIndex=18, title="Idle Dt";
+DateEdit img18=formonly.img18 type DATE, tabIndex=22, title=%"Valid Date";
+Edit cnt=formonly.cnt type CHAR, tabIndex=19;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=20;
+Edit tot=formonly.tot type CHAR, tabIndex=21;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(formonly.img02,formonly.img03,formonly.img04,formonly.img23,formonly.img09,formonly.img10,formonly.img21,formonly.img37,formonly.img18)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,formonly.ima05,formonly.ima08,formonly.ima06,formonly.ima07,formonly.avl_stk_mpsmrp,formonly.avl_stk,formonly.unavl_stk,formonly.cnt,formonly.cn2,formonly.tot)
+END -- INSTRUCTIONS
+

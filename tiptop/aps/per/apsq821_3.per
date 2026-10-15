@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq821_3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsq821_3")
+Folder pc194
+Page page01(text="Main")
+Grid gr907
+{
+ <G group01                                                                            >
+  APS Version     [vom01           ]         Lock Code Setting       [vom08       ]
+  Save Version    [vom02       ]             Start Time              [vom09       ]
+  WO No.          [vom03       ]             End Time                [vom10       ]
+  Routing Code    [vom04       ]             Schedule                [vom11       ]
+  Routing Sequence[vom05       ]             Task of Parallel Machine[vom12       ]
+  Operation No.   [vom06       ]
+  Resource No.    [vom07       ]
+ <                                                                                     >
+
+}
+END -- gr907
+END -- page01
+END -- pc194
+END -- apsq821_3
+
+TABLES
+vom_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit vom01=vom_file.vom01, action=controlp, tabIndex=12, image="zoom";
+ComboBox vom08=vom_file.vom08, tabIndex=5, items=(("0", "不鎖定時間"),("1", "鎖定開始時間"),("2", "鎖定結束時間"),("3", "鎖定開始及結束時間"));
+Edit vom02=vom_file.vom02, tabIndex=11;
+Edit vom09=vom_file.vom09, tabIndex=6, not null, required;
+Edit vom03=vom_file.vom03, tabIndex=1, not null, required;
+Edit vom10=vom_file.vom10, tabIndex=7, not null, required;
+Edit vom04=vom_file.vom04, tabIndex=2, not null, required;
+ComboBox vom11=vom_file.vom11, tabIndex=8, items=(("0", "未排程"),("1", "已排程"));
+Edit vom05=vom_file.vom05, tabIndex=3, not null, required;
+ComboBox vom12=vom_file.vom12, tabIndex=9, items=(("0", "否"),("1", "是"));
+Edit vom06=vom_file.vom06, tabIndex=4, not null, required;
+Edit vom07=vom_file.vom07, tabIndex=10, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vom_file.vom01,vom_file.vom08,vom_file.vom02,vom_file.vom09,vom_file.vom03,vom_file.vom10,vom_file.vom04,vom_file.vom11,vom_file.vom05,vom_file.vom12,vom_file.vom06,vom_file.vom07)
+END -- INSTRUCTIONS
+

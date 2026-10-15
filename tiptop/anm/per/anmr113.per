@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr113.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr113")
+VBox VBox1
+Group group01(text="QBE")
+Grid Grid1
+{
+ Paying Bank         [nmd03               ]
+ Vender No.          [nmd08               ]
+ Notes type 1        [nmd06               ]
+ Notes type 2        [nmd20               ]
+}
+END -- Grid1
+END -- group01
+Group group02(text="INPUT")
+Grid Grid2
+{
+  Ending Voucher Date [edate               ]
+
+ <G group03                                                          >
+  [s1                  ][s2                  ]
+  [t1                  ][t2                  ]
+  [u1                  ][u2                  ]
+ <                                                                   >
+
+}
+END -- Grid2
+END -- group02
+Grid Grid3
+{
+[more                                                        ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- anmr113
+
+ATTRIBUTES
+Edit nmd03=formonly.nmd03 type VARCHAR, tabIndex=1;
+Edit nmd08=formonly.nmd08 type VARCHAR, tabIndex=2;
+Edit nmd06=formonly.nmd06 type VARCHAR, tabIndex=3;
+Edit nmd20=formonly.nmd20 type VARCHAR, tabIndex=4;
+DateEdit edate=formonly.edate type DATE, tabIndex=5;
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=6, queryEditable, items=(("1", %"Paying Bank"),("2", %"Vender No."),("3", %"Note Type 1"),("4", %"Note Type 2"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=7, queryEditable, items=(("1", %"Paying Bank"),("2", %"Vender No."),("3", %"Note Type 1"),("4", %"Note Type 2"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=8, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=10, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=11, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nmd03,formonly.nmd08,formonly.nmd06,formonly.nmd20,formonly.edate,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.u1,formonly.u2,formonly.more)
+END -- INSTRUCTIONS
+

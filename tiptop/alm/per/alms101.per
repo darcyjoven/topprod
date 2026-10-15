@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/alms101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Main
+Page main01(text=%"Page1")
+Grid Grid1
+{
+
+[label1         |llastore              |rtz13                         ]
+[label2         |llalegal              |azt02                         ]
+[label3         |lla01                 ]
+                [lla02                 |lla05               ]
+[label7         |lla03                 ]
+[label8         |lla04                 ]
+
+}
+END -- Grid1
+END -- main01
+END -- Main
+Folder DETAIL
+Page detail01(text=%"Page2")
+Table s_llb
+{
+[llb01                 |oaj02                         |llb02          ]
+[llb01                 |oaj02                         |llb02          ]
+[llb01                 |oaj02                         |llb02          ]
+[llb01                 |oaj02                         |llb02          ]
+[llb01                 |oaj02                         |llb02          ]
+
+
+
+
+}
+END -- s_llb
+END -- detail01
+Page detail02(text=%"Page3")
+Table s_llc
+{
+[llc01                 |oba02                         |llc02          |llc03          ]
+[llc01                 |oba02                         |llc02          |llc03          ]
+[llc01                 |oba02                         |llc02          |llc03          ]
+[llc01                 |oba02                         |llc02          |llc03          ]
+[llc01                 |oba02                         |llc02          |llc03          ]
+
+
+
+}
+END -- s_llc
+END -- detail02
+END -- DETAIL
+Grid tail
+{
+ ---------[label4   |idx      |labe|cnt      ]---------[label6        |cn2   ]----------
+
+}
+END -- tail
+END -- VBox1
+END -- Form
+
+TABLES
+oaj_file,
+llc_file,
+llb_file,
+lla_file,
+oba_file,
+azt_file,
+rtz_file
+ATTRIBUTES
+Label label1:Label1, text=%"llastore";
+ButtonEdit llastore=lla_file.llastore, action=controlp, tabIndex=1, noEntry, not null, image="zoom";
+Edit rtz13=rtz_file.rtz13, tabIndex=2, noEntry;
+Label label2:Label2, text=%"llalegal";
+ButtonEdit llalegal=lla_file.llalegal, action=controlp, tabIndex=3, noEntry, not null, image="zoom";
+Edit azt02=azt_file.azt02, tabIndex=4, noEntry;
+Label label3:Label3, text=%"lla01";
+ComboBox lla01=lla_file.lla01, tabIndex=5, not null, items=(("1", %"月首"),("2", %"月尾"));
+CheckBox lla02=lla_file.lla02, tabIndex=6, default = "N", text=%"lla02", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lla05=lla_file.lla05, tabIndex=19, text=%"lla05", not null, valueChecked = "Y", valueUnchecked = "N";
+Label label7:Label7, text=%"lla03";
+ComboBox lla03=lla_file.lla03, tabIndex=7, not null, scroll, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"));
+Label label8:Label8, text=%"lla04";
+ComboBox lla04=lla_file.lla04, tabIndex=8, not null, scroll, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"));
+ButtonEdit llb01=llb_file.llb01, action=controlp, tabIndex=9, title=%"llb01", not null, image="zoom";
+Edit oaj02=oaj_file.oaj02, tabIndex=10, title=%"oaj02", noEntry;
+Edit llb02=llb_file.llb02, tabIndex=11, title=%"llb02", not null;
+ButtonEdit llc01=llc_file.llc01, action=controlp, tabIndex=12, title=%"llc01", not null, image="zoom";
+Edit oba02=oba_file.oba02, tabIndex=13, title=%"oba02", noEntry;
+Edit llc02=llc_file.llc02, tabIndex=14, title=%"llc02", not null;
+ComboBox llc03=llc_file.llc03, tabIndex=15, title=%"llc03", not null, items=(("1", %"月初"),("2", %"月末"));
+Label label4:Label4, text=%"Label4";
+Edit idx=formonly.idx type CHAR, tabIndex=16;
+Label labe:Label5, text=%"Label5";
+Edit cnt=formonly.cnt type CHAR, tabIndex=17;
+Label label6:Label6, text=%"Label6";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_llb(llb_file.llb01,oaj_file.oaj02,llb_file.llb02)
+SCREEN RECORD s_llc(llc_file.llc01,oba_file.oba02,llc_file.llc02,llc_file.llc03)
+SCREEN RECORD Undefined(lla_file.llastore,rtz_file.rtz13,lla_file.llalegal,azt_file.azt02,lla_file.lla01,lla_file.lla02,formonly.idx,formonly.cnt,formonly.cn2,lla_file.lla05)
+SCREEN RECORD Record1(lla_file.lla03,lla_file.lla04)
+END -- INSTRUCTIONS
+

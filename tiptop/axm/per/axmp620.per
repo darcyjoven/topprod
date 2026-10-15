@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp620.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmp620")
+VBox VBox1
+Grid gr2191
+{
+ <G group01                                        >
+  Delivery Advice #          [g_no1             ]
+  Delivery Date              [g_date2           ]
+  Transfer as Delivery Note# [g_no2             ]
+ <                                                 >
+
+}
+END -- gr2191
+Grid gr2192
+{
+[g_bgj]
+
+}
+END -- gr2192
+END -- VBox1
+END -- axmp620
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit g_no1=formonly.g_no1 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+DateEdit g_date2=formonly.g_date2 type DATE, tabIndex=2, not null, required;
+ButtonEdit g_no2=formonly.g_no2 type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Documents";
+CheckBox g_bgj=formonly.g_bgjob type CHAR, tabIndex=4, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_no1,formonly.g_date2,formonly.g_no2,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

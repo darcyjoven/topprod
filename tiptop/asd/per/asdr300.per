@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdr300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdr300")
+VBox VBox1
+Grid gr417
+{
+ <G group01                                                                             >
+  Costing Group       [ima12               ]  Item No.            [imk01               ]
+  Main Group Code     [ima06               ]  Product Class       [ima131              ]
+  Source Code         [ima08               ]
+ <                                                                                      >
+
+}
+END -- gr417
+Group g01(text="INPUT")
+Grid gr418
+{
+ <G group02                                                                           >
+  Data Year/Month     [yea ]/[mo]
+ <                                                                                    >
+ <G group03                                                                           >
+ [sw                                             ]
+ <                                                                                    >
+ <G group04                                                                           >
+ [s1                ]  [s2                 ] [s3                   ]
+ <                                                                                    >
+
+}
+END -- gr418
+END -- g01
+Grid gr419
+{
+[more                                            ]
+
+}
+END -- gr419
+END -- VBox1
+END -- asdr300
+
+TABLES
+imk_file,
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ima12=ima_file.ima12, tabIndex=1;
+ButtonEdit imk01=imk_file.imk01, action=controlp, tabIndex=2, image="zoom";
+Edit ima06=ima_file.ima06, tabIndex=3;
+Edit ima131=ima_file.ima131, tabIndex=4;
+Edit ima08=ima_file.ima08, tabIndex=5;
+Group group02:group02;
+Edit yea=formonly.yea type SMALLINT, tabIndex=6;
+Edit mo=formonly.mo type SMALLINT, tabIndex=7;
+Group group03:group03;
+CheckBox sw=formonly.sw type CHAR, tabIndex=8, text="Print None Inventory And Transaction Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=9, queryEditable, items=(("1", "Costing Group"),("2", "Item No."),("3", "Main Group Code"),("4", "Product Class"),("5", "Source Code"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=10, queryEditable, items=(("1", "Costing Group"),("2", "Item No."),("3", "Main Group Code"),("4", "Product Class"),("5", "Source Code"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=11, queryEditable, items=(("1", "Costing Group"),("2", "Item No."),("3", "Main Group Code"),("4", "Product Class"),("5", "Source Code"));
+CheckBox more=formonly.more type CHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima12,imk_file.imk01,ima_file.ima06,ima_file.ima131,ima_file.ima08,formonly.yea,formonly.mo,formonly.sw,formonly.s1,formonly.s2,formonly.s3,formonly.more)
+END -- INSTRUCTIONS
+

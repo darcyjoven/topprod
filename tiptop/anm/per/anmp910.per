@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp910.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmp910")
+Grid gr4127
+{
+ Version        [nqf00     ]
+
+ Plant No       [nqf01_1   ][nqf01_2   ][nqf01_3   ][nqf01_4   ]
+                [nqf01_5   ][nqf01_6   ][nqf01_7   ][nqf01_8   ]
+                [nqf01_9   ][nqf01_10  ][nqf01_11  ][nqf01_12  ]
+                [nqf01_13  ][nqf01_14  ][nqf01_15  ][nqf01_16  ]
+
+
+ Date           [nqf02     ]
+
+
+ [dummy01                  ]         [dummy02                  ]
+ [nqf03                    ]         [nqf11                    ]
+ [nqf04                    ]         [nqf12                    ]
+ [nqf05                    ]         [nqf13                    ]
+ [nqf06                    ]         [nqf14                    ]
+ [nqf07                    ]         [nqf15                    ]
+ [nqf08                    ]         [nqf16                    ]
+ [nqf09                    ]
+ [nqf10                    ]
+}
+END -- gr4127
+END -- anmp910
+
+ATTRIBUTES
+Edit nqf00=formonly.nqf00 type CHAR, tabIndex=1, not null, required;
+ButtonEdit nqf01_1=formonly.nqf01_1 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+ButtonEdit nqf01_2=formonly.nqf01_2 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit nqf01_3=formonly.nqf01_3 type CHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit nqf01_4=formonly.nqf01_4 type CHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit nqf01_5=formonly.nqf01_5 type CHAR, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit nqf01_6=formonly.nqf01_6 type CHAR, action=controlp, tabIndex=7, image="zoom";
+ButtonEdit nqf01_7=formonly.nqf01_7 type CHAR, action=controlp, tabIndex=8, image="zoom";
+ButtonEdit nqf01_8=formonly.nqf01_8 type CHAR, action=controlp, tabIndex=9, image="zoom";
+ButtonEdit nqf01_9=formonly.nqf01_9 type CHAR, action=controlp, tabIndex=10, image="zoom";
+ButtonEdit nqf01_10=formonly.nqf01_10 type CHAR, action=controlp, tabIndex=11, image="zoom";
+ButtonEdit nqf01_11=formonly.nqf01_11 type CHAR, action=controlp, tabIndex=12, image="zoom";
+ButtonEdit nqf01_12=formonly.nqf01_12 type CHAR, action=controlp, tabIndex=13, image="zoom";
+ButtonEdit nqf01_13=formonly.nqf01_13 type CHAR, action=controlp, tabIndex=14, image="zoom";
+ButtonEdit nqf01_14=formonly.nqf01_14 type CHAR, action=controlp, tabIndex=15, image="zoom";
+ButtonEdit nqf01_15=formonly.nqf01_15 type CHAR, action=controlp, tabIndex=16, image="zoom";
+ButtonEdit nqf01_16=formonly.nqf01_16 type CHAR, action=controlp, tabIndex=17, image="zoom";
+DateEdit nqf02=formonly.nqf02 type CHAR, tabIndex=18, not null, required;
+Label dummy01:dummy01, text="Business Activity";
+Label dummy02:dummy02, text="Financial Activity";
+CheckBox nqf03=formonly.nqf03 type CHAR, tabIndex=19, text="Sale Order", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nqf11=formonly.nqf11 type CHAR, tabIndex=20, text="Interst receivable", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nqf04=formonly.nqf04 type CHAR, tabIndex=21, text="S/O", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nqf12=formonly.nqf12 type CHAR, tabIndex=22, text="Short Financing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nqf05=formonly.nqf05 type CHAR, tabIndex=23, text="A/R", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nqf13=formonly.nqf13 type CHAR, tabIndex=24, text="Extended Financing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nqf06=formonly.nqf06 type CHAR, tabIndex=25, text="N/R", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nqf14=formonly.nqf14 type CHAR, tabIndex=26, text="Investment", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nqf07=formonly.nqf07 type CHAR, tabIndex=27, text="P/O", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nqf15=formonly.nqf15 type CHAR, tabIndex=28, text="Interest Payable", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nqf08=formonly.nqf08 type CHAR, tabIndex=29, text="Store-in No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nqf16=formonly.nqf16 type CHAR, tabIndex=30, text="Exchange", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nqf09=formonly.nqf09 type CHAR, tabIndex=31, text="A/P", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nqf10=formonly.nqf10 type CHAR, tabIndex=32, text="N/P", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nqf00,formonly.nqf01_1,formonly.nqf01_2,formonly.nqf01_3,formonly.nqf01_4,formonly.nqf01_5,formonly.nqf01_6,formonly.nqf01_7,formonly.nqf01_8,formonly.nqf01_9,formonly.nqf01_10,formonly.nqf01_11,formonly.nqf01_12,formonly.nqf01_13,formonly.nqf01_14,formonly.nqf01_15,formonly.nqf01_16,formonly.nqf02,formonly.nqf03,formonly.nqf11,formonly.nqf04,formonly.nqf12,formonly.nqf05,formonly.nqf13,formonly.nqf06,formonly.nqf14,formonly.nqf07,formonly.nqf15,formonly.nqf08,formonly.nqf16,formonly.nqf09,formonly.nqf10)
+END -- INSTRUCTIONS
+

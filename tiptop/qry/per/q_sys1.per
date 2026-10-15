@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_sys1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"  Qry Module  ")
+Grid gr3851
+{
+ <T s_sys                                        >
+ [check|sys      |descr                         ]
+ [check|sys      |descr                         ]
+ [check|sys      |descr                         ]
+ [check|sys      |descr                         ]
+ [check|sys      |descr                         ]
+ [check|sys      |descr                         ]
+ [check|sys      |descr                         ]
+ [check|sys      |descr                         ]
+ [check|sys      |descr                         ]
+ [check|sys      |descr                         ]
+ <                                               >
+
+}
+END -- gr3851
+END -- q_sys1
+
+ATTRIBUTES
+Table s_sys:s_sys;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sys=formonly.sys type CHAR, tabIndex=2, title="Module", noEntry;
+Edit descr=formonly.descr type CHAR, tabIndex=3, title="Description", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sys(formonly.check,formonly.sys,formonly.descr)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmp201")
+VBox VBox1
+Grid gr4086
+{
+ <G group1                                                                       >
+   [tm_type                            ]
+   [                                   ]
+ <                                                                               >
+ <G group02                                                                      >
+   Transaction No.         [nme12                     ]
+   Transaction Date        [nme02                     ]
+   nme28                   [nme28                     ]
+   nme29                   [nme29                     ]
+
+ <                                                                               >
+ <G group01                                                                      >
+  [g_curr        ]
+  [              ]
+   Media No.               [g_nsa01                   ]
+   Bank Code               [g_nma01                   ]
+   Transfer out Date       [g_out_date                ]
+ <                                                                               >
+
+
+}
+END -- gr4086
+Table ds1
+{
+[chk     |nme22     |nme13                         |nme01               |nme03     |nme04                 |nme08                 |nme11               |nme21               |nme23               ]
+[chk     |nme22     |nme13                         |nme01               |nme03     |nme04                 |nme08                 |nme11               |nme21               |nme23               ]
+[chk     |nme22     |nme13                         |nme01               |nme03     |nme04                 |nme08                 |nme11               |nme21               |nme23               ]
+[chk     |nme22     |nme13                         |nme01               |nme03     |nme04                 |nme08                 |nme11               |nme21               |nme23               ]
+[chk     |nme22     |nme13                         |nme01               |nme03     |nme04                 |nme08                 |nme11               |nme21               |nme23               ]
+[chk     |nme22     |nme13                         |nme01               |nme03     |nme04                 |nme08                 |nme11               |nme21               |nme23               ]
+[chk     |nme22     |nme13                         |nme01               |nme03     |nme04                 |nme08                 |nme11               |nme21               |nme23               ]
+[chk     |nme22     |nme13                         |nme01               |nme03     |nme04                 |nme08                 |nme11               |nme21               |nme23               ]
+[chk     |nme22     |nme13                         |nme01               |nme03     |nme04                 |nme08                 |nme11               |nme21               |nme23               ]
+[chk     |nme22     |nme13                         |nme01               |nme03     |nme04                 |nme08                 |nme11               |nme21               |nme23               ]
+
+}
+END -- ds1
+END -- VBox1
+END -- anmp201
+
+TABLES
+nme_file
+ATTRIBUTES
+Group group1:Group1, text=%"INPUT";
+RadioGroup tm_type=formonly.tm_type type CHAR, tabIndex=7, not null, required, items=(("1", "E-currency material turn out"),("2", "reduction"));
+Group group02:group02, text="QBE";
+ButtonEdit nme12=formonly.nme12 type VARCHAR, action=CONTROLP, tabIndex=1, image="zoom";
+DateEdit nme02=formonly.nme02 type DATE, tabIndex=2;
+DateEdit nme28=formonly.nme28 type DATE, tabIndex=18;
+Edit nme29=formonly.nme29 type CHAR, tabIndex=19;
+Group group01:group01, text="INPUT";
+RadioGroup g_curr=formonly.g_curr type VARCHAR, tabIndex=6, default = "1", not null, required, items=(("1", "Local Curr."),("2", "Foreign Currency"));
+ButtonEdit g_nsa01=formonly.g_nsa01 type VARCHAR, action=CONTROLP, tabIndex=3, not null, required, image="zoom";
+ButtonEdit g_nma01=formonly.g_nma01 type VARCHAR, action=CONTROLP, tabIndex=4, not null, required, image="zoom";
+DateEdit g_out_date=formonly.g_out_date type CHAR, tabIndex=5, not null, required;
+CheckBox chk=formonly.chk type CHAR, tabIndex=17, title=%"choice", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nme22=nme_file.nme22, tabIndex=8, title=%"nme22", noEntry, scroll;
+Edit nme13=nme_file.nme13, tabIndex=9, title=%"nme13", noEntry, scroll;
+Edit nme01=nme_file.nme01, tabIndex=10, title=%"nme01", noEntry, scroll;
+Edit nme03=nme_file.nme02, tabIndex=11, title=%"nme02", noEntry, scroll;
+Edit nme04=nme_file.nme04, tabIndex=12, title=%"nme04", noEntry, scroll;
+Edit nme08=nme_file.nme08, tabIndex=13, title=%"nme08", noEntry, scroll;
+Edit nme11=nme_file.nme12, tabIndex=14, title=%"nme12", noEntry, scroll;
+Edit nme21=nme_file.nme28, tabIndex=15, title=%"nme28", noEntry, scroll;
+Edit nme23=nme_file.nme29, tabIndex=16, title=%"nme29", noEntry, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nme12,formonly.nme02,formonly.g_curr,formonly.g_nsa01,formonly.g_nma01,formonly.g_out_date,formonly.tm_type,formonly.nme28,formonly.nme29)
+SCREEN RECORD s_nme(formonly.chk,nme_file.nme22,nme_file.nme13,nme_file.nme01,nme_file.nme02,nme_file.nme04,nme_file.nme08,nme_file.nme12,nme_file.nme28,nme_file.nme29)
+END -- INSTRUCTIONS
+

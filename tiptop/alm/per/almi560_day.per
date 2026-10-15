@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi560_day.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+ Card No.            [lpk01_a             ]                 TEL No   [lpk17_a             ]
+ Name                [lpk04_a                       ]       Phone No [lpk18_a             ]
+ Identification No   [lpk03_a                       ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table s_lpa
+{
+[lpa02       |lpc02                         |lpa03       |lpa]
+[lpa02       |lpc02                         |lpa03       |lpa]
+[lpa02       |lpc02                         |lpa03       |lpa]
+[lpa02       |lpc02                         |lpa03       |lpa]
+[lpa02       |lpc02                         |lpa03       |lpa]
+
+}
+END -- s_lpa
+Grid Grid2
+{
+ -------------[details][cnt_a      ] -----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+lpc_file,
+lpa_file
+ATTRIBUTES
+Edit lpk01_a=formonly.lpk01_a type VARCHAR, tabIndex=1, noEntry, not null, scroll;
+Edit lpk17_a=formonly.lpk17_a type VARCHAR, tabIndex=4, noEntry, scroll;
+Edit lpk04_a=formonly.lpk04_a type VARCHAR, tabIndex=2, noEntry, scroll;
+Edit lpk18_a=formonly.lpk18_a type VARCHAR, tabIndex=5, noEntry, scroll;
+Edit lpk03_a=formonly.lpk03_a type VARCHAR, tabIndex=3, noEntry, scroll;
+ButtonEdit lpa02=lpa_file.lpa02, action=controlp, tabIndex=6, title=%"Commemoration day No", not null, image="zoom", scroll;
+Edit lpc02=lpc_file.lpc02, tabIndex=7, title=%"Desc", noEntry, scroll;
+DateEdit lpa03=lpa_file.lpa03, tabIndex=8, title=%"Commemoration Date", not null;
+CheckBox lpa=lpa_file.lpaacti, tabIndex=9, title=%"Acti", not null, valueChecked = "Y", valueUnchecked = "N";
+Label details:details, text=%"Label1";
+Edit cnt_a=formonly.cnt_a type CHAR, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.lpk01_a,formonly.lpk04_a,formonly.lpk03_a,formonly.lpk17_a,formonly.lpk18_a,formonly.cnt_a)
+SCREEN RECORD s_lpa(lpa_file.lpa02,lpc_file.lpc02,lpa_file.lpa03,lpa_file.lpaacti)
+END -- INSTRUCTIONS
+

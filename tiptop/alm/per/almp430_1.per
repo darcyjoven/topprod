@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almp430_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almp430_1")
+VBox vb3
+Folder pc1
+Page Main(text=%"Fare Notes Data Entry")
+Table s_lnv
+{
+[lnt01               |lnv04       |oaj02               |t_sum               |s_sum           |a_sum               |n_sum                 |ad_sum              ]
+[lnt01               |lnv04       |oaj02               |t_sum               |s_sum           |a_sum               |n_sum                 |ad_sum              ]
+[lnt01               |lnv04       |oaj02               |t_sum               |s_sum           |a_sum               |n_sum                 |ad_sum              ]
+[lnt01               |lnv04       |oaj02               |t_sum               |s_sum           |a_sum               |n_sum                 |ad_sum              ]
+[lnt01               |lnv04       |oaj02               |t_sum               |s_sum           |a_sum               |n_sum                 |ad_sum              ]
+
+}
+END -- s_lnv
+END -- Main
+END -- pc1
+Grid gr1
+{
+  ---- Rows [cnt   ] ------
+
+}
+END -- gr1
+END -- vb3
+END -- almp430_1
+
+TABLES
+oaj_file,
+lnv_file,
+lnt_file
+ATTRIBUTES
+Edit lnt01=lnt_file.lnt01, tabIndex=1, title="Contract No.", noEntry;
+Edit lnv04=lnv_file.lnv04, tabIndex=2, title="Fare No.", noEntry;
+Edit oaj02=oaj_file.oaj02, tabIndex=3, title="Fare Name", noEntry;
+Edit t_sum=formonly.t_sum type DECIMAL, tabIndex=4, title="Total Amount", noEntry;
+Edit s_sum=formonly.s_sum type INTEGER, tabIndex=5, title="Amount Should be Generate", noEntry;
+Edit a_sum=formonly.a_sum type DECIMAL, tabIndex=6, title="Amount Generated", noEntry;
+Edit n_sum=formonly.n_sum type CHAR, tabIndex=9, title="Amount to Generated", noEntry;
+Edit ad_sum=formonly.ad_sum type DECIMAL, tabIndex=7, title="Adjust Amount", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lnv(lnt_file.lnt01,lnv_file.lnv04,oaj_file.oaj02,formonly.t_sum,formonly.s_sum,formonly.a_sum,formonly.n_sum,formonly.ad_sum)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

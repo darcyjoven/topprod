@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_pmn4.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_pmn4")
+VBox VBox1
+Folder pc847
+Page page01(text="Page01")
+Table s_pmn4
+{
+[check |pmn24            |pmn25   |pmn01            |pmn02   |pmn04           |pmn041              |pmn52          |pmn07   |pmn20           |amt           ]
+[check |pmn24            |pmn25   |pmn01            |pmn02   |pmn04           |pmn041              |pmn52          |pmn07   |pmn20           |amt           ]
+[check |pmn24            |pmn25   |pmn01            |pmn02   |pmn04           |pmn041              |pmn52          |pmn07   |pmn20           |amt           ]
+[check |pmn24            |pmn25   |pmn01            |pmn02   |pmn04           |pmn041              |pmn52          |pmn07   |pmn20           |amt           ]
+[check |pmn24            |pmn25   |pmn01            |pmn02   |pmn04           |pmn041              |pmn52          |pmn07   |pmn20           |amt           ]
+[check |pmn24            |pmn25   |pmn01            |pmn02   |pmn04           |pmn041              |pmn52          |pmn07   |pmn20           |amt           ]
+[check |pmn24            |pmn25   |pmn01            |pmn02   |pmn04           |pmn041              |pmn52          |pmn07   |pmn20           |amt           ]
+[check |pmn24            |pmn25   |pmn01            |pmn02   |pmn04           |pmn041              |pmn52          |pmn07   |pmn20           |amt           ]
+[check |pmn24            |pmn25   |pmn01            |pmn02   |pmn04           |pmn041              |pmn52          |pmn07   |pmn20           |amt           ]
+[check |pmn24            |pmn25   |pmn01            |pmn02   |pmn04           |pmn041              |pmn52          |pmn07   |pmn20           |amt           ]
+
+}
+END -- s_pmn4
+END -- page01
+END -- pc847
+Grid gr3830
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3830
+END -- VBox1
+END -- q_pmn4
+
+TABLES
+pmn_file
+ATTRIBUTES
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmn24=pmn_file.pmn24, tabIndex=2, title="Tr-ou No", noEntry;
+Edit pmn25=pmn_file.pmn25, tabIndex=3, title="Line#", noEntry;
+Edit pmn01=pmn_file.pmn01, tabIndex=4, title="P/O No", noEntry;
+Edit pmn02=pmn_file.pmn02, tabIndex=5, title="Line#", noEntry;
+Edit pmn04=pmn_file.pmn04, tabIndex=6, title="Item No.", noEntry;
+Edit pmn041=pmn_file.pmn041, tabIndex=7, title="S/P Name", noEntry;
+Edit pmn52=pmn_file.pmn52, tabIndex=8, title="In-Warehouse", noEntry;
+Edit pmn07=pmn_file.pmn07, tabIndex=9, title="Unit", noEntry;
+Edit pmn20=pmn_file.pmn20, tabIndex=10, title="Purchse Qty", noEntry, not null, required;
+Edit amt=formonly.amt type CHAR, tabIndex=11, title="Unreceived Qty";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmn4(formonly.check,pmn_file.pmn24,pmn_file.pmn25,pmn_file.pmn01,pmn_file.pmn02,pmn_file.pmn04,pmn_file.pmn041,pmn_file.pmn52,pmn_file.pmn07,pmn_file.pmn20,formonly.amt)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

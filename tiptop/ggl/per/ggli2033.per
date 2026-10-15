@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli2033.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli2033")
+VBox VBox1
+Folder folder01
+Page page01(text="QBE")
+Grid gr989
+{
+  Opposite Account[asq02                   ]
+  Formula Account [asu03                   ]
+}
+END -- gr989
+END -- page01
+END -- folder01
+Group gb1884
+ScrollGrid gr2621
+{
+
+[dummy01                 ][dummy02                 ][dummy03       ]
+[asv04                   ][aag02                   ][asv05         ]
+[asv04                   ][aag02                   ][asv05         ]
+[asv04                   ][aag02                   ][asv05         ]
+[asv04                   ][aag02                   ][asv05         ]
+[asv04                   ][aag02                   ][asv05         ]
+[asv04                   ][aag02                   ][asv05         ]
+[asv04                   ][aag02                   ][asv05         ]
+[asv04                   ][aag02                   ][asv05         ]
+
+}
+END -- gr2621
+END -- gb1884
+Grid gr2404
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2404
+END -- VBox1
+END -- ggli2033
+
+TABLES
+asv_file
+ATTRIBUTES
+ButtonEdit asq02=formonly.asq02 type CHAR, action=controlp, tabIndex=1, noEntry, image="zoom", comment="<^P> Query Account No.";
+ButtonEdit asu03=formonly.asu03 type CHAR, action=controlp, tabIndex=2, noEntry, image="zoom", comment="<^P> Query Account No.";
+Label dummy01:dummy01, text="Opposite Acc.";
+Label dummy02:dummy02, text="Acc. Descript";
+Label dummy03:dummy03, text="Operation Sign";
+ButtonEdit asv04=asv_file.asv04, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P> Query Account No.";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=7, noEntry;
+ComboBox asv05=asv_file.asv05, tabIndex=4, not null, required, items=(("+", "Increase"),("-", "Decrease"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asv(asv_file.asv04,formonly.aag02,asv_file.asv05)
+SCREEN RECORD Undefined(formonly.asq02,formonly.asu03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

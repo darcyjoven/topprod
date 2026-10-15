@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapp330.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapp330")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr85
+{
+
+ Payment Slip#       [apf01           ]      Vender No.          [apf03     ]    Bank             [aph08               ]
+ Paying Date         [apf02       ]          Vender Abbv.        [apf12     ]    Voucher#         [apf44               ]
+
+}
+END -- gr85
+END -- page01
+END -- folder01
+Table s_aph
+{
+[aph01           |aph0|aph13 |aph05f      |aph05       |apf12_b    |aph07    |aph08_b      |aph15   |pcnt           ]
+[aph01           |aph0|aph13 |aph05f      |aph05       |apf12_b    |aph07    |aph08_b      |aph15   |pcnt           ]
+[aph01           |aph0|aph13 |aph05f      |aph05       |apf12_b    |aph07    |aph08_b      |aph15   |pcnt           ]
+[aph01           |aph0|aph13 |aph05f      |aph05       |apf12_b    |aph07    |aph08_b      |aph15   |pcnt           ]
+[aph01           |aph0|aph13 |aph05f      |aph05       |apf12_b    |aph07    |aph08_b      |aph15   |pcnt           ]
+[aph01           |aph0|aph13 |aph05f      |aph05       |apf12_b    |aph07    |aph08_b      |aph15   |pcnt           ]
+[aph01           |aph0|aph13 |aph05f      |aph05       |apf12_b    |aph07    |aph08_b      |aph15   |pcnt           ]
+[aph01           |aph0|aph13 |aph05f      |aph05       |apf12_b    |aph07    |aph08_b      |aph15   |pcnt           ]
+[aph01           |aph0|aph13 |aph05f      |aph05       |apf12_b    |aph07    |aph08_b      |aph15   |pcnt           ]
+[aph01           |aph0|aph13 |aph05f      |aph05       |apf12_b    |aph07    |aph08_b      |aph15   |pcnt           ]
+}
+END -- s_aph
+Grid gr86
+{
+ ----------Rows [cn3   ] ----------
+
+
+
+}
+END -- gr86
+END -- vb2
+END -- aapp330
+
+TABLES
+aph_file,
+apf_file
+ATTRIBUTES
+ButtonEdit apf01=apf_file.apf01, action=controlp, tabIndex=1, image="zoom", comment="Enter by QBE     ";
+ButtonEdit apf03=apf_file.apf03, action=controlp, tabIndex=3, image="zoom", comment="Enter by QBE     ";
+Edit aph08=aph_file.aph08, tabIndex=5, comment="Enter by QBE     ";
+DateEdit apf02=apf_file.apf02, tabIndex=2, comment="Enter by QBE     ";
+Edit apf12=apf_file.apf12, tabIndex=4, comment="Enter by QBE     ";
+Edit apf44=apf_file.apf44, tabIndex=6, comment="Enter by QBE     ";
+Edit aph01=aph_file.aph01, tabIndex=7, title="Payment Slip #", noEntry;
+Edit aph0=aph_file.aph02, tabIndex=8, title="Ln#", noEntry;
+Edit aph13=aph_file.aph13, tabIndex=9, title="Curr.", noEntry;
+Edit aph05f=aph_file.aph05f, tabIndex=10, title="F.C Payment", noEntry, not null, required;
+Edit aph05=aph_file.aph05, tabIndex=11, title="H.C Payment", noEntry, not null, required;
+Edit apf12_b=formonly.apf12_b type CHAR, tabIndex=12, title="Vender", noEntry;
+DateEdit aph07=aph_file.aph07, tabIndex=13, title="Due Date";
+ButtonEdit aph08_b=formonly.aph08_b type VARCHAR, action=controlp, tabIndex=14, title="Bank", color = yellow, image="zoom", comment="<^P> Qry Bank if 1st Code Entered   \'.\'Copy Last Bank Number";
+Edit aph15=aph_file.aph15, tabIndex=15, title="Book No.";
+Edit pcnt=formonly.pcnt type SMALLINT, tabIndex=16, title=%"Available Pages", noEntry;
+Edit cn3=formonly.cn3 type INTEGER, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aph(aph_file.aph01,aph_file.aph02,aph_file.aph13,aph_file.aph05f,aph_file.aph05,formonly.apf12_b,aph_file.aph07,formonly.aph08_b,aph_file.aph15,formonly.pcnt)
+SCREEN RECORD Undefined(apf_file.apf01,apf_file.apf03,aph_file.aph08,apf_file.apf02,apf_file.apf12,apf_file.apf44,formonly.cn3)
+END -- INSTRUCTIONS
+

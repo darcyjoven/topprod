@@ -1,0 +1,199 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi040.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi040")
+VBox VBox1
+Folder pc745
+Page page01(text="Main")
+VBox VBox2
+Grid gr4024
+{
+  Department No.           [nms01     ][gem02     ]       [imgmksg]
+                                                          [       ]
+ <G group01                                           ><G group02                                        >
+  Exchange Profit Acct     [nms12                    ]  Long-Term Loan             [nms55               ]
+  Exchange Loss Account    [nms13                    ]  Export Loan                [nms56               ]
+  Draw Note Payable D. Def [nms14                    ]  Fiduciary Loan             [nms57               ]
+  Note Payable Account     [nms15                    ]  Other-Charge               [nms58               ]
+  N/P Returned Credit      [nms16                    ]  A/P Promissory Note Dis    [nms59               ]
+  N/P Withdrawn Credit     [nms17                    ]  Interest Expense           [nms60               ]
+  N/P Void Credit          [nms18                    ]  Acce Bill Payable Discount [nms61               ]
+  N/R Receipt Default C.   [nms21                    ]  Acceptance Bill Payable    [nms62               ]
+  Note Receivable          [nms22                    ]  Commercial Paper Payable   [nms63               ]
+  N/R Collection Debit     [nms23                    ]  Interest Payable Temp Est  [nms64               ]
+  N/R Pledge Debit         [nms24                    ]  Purchase Loan              [nms65               ]
+  N/R Discount Debit       [nms25                    ]  Guaranteed Bill Pay        [nms66               ]
+  N/R Returned Debit       [nms26                    ]  Guarantee Bill Paid        [nms67               ]
+  N/R Withdrawn Debit      [nms27                    ]  Guarantee Bill Received    [nms69               ]
+  Accrued Interest Payable [nms50                    ]  Timing Deposit             [nms68               ]
+  Receivable Void Debit    [nms51                    ]  Interest Income            [nms70               ]
+  Temporary Received       [nms28                    ]  Interest Receivable        [nms71               ]
+ <                                                    ><                                                 >
+
+}
+END -- gr4024
+END -- VBox2
+END -- page01
+Page page02(text="Main2")
+VBox VBox3
+Grid gr4025
+{
+ <G group03                                           ><G group04                                        >
+  Exchange Profit Acct2    [nms121                   ]  Long-Term Loan2            [nms551              ]
+  Exchange Loss Account2   [nms131                   ]  Export Loan2               [nms561              ]
+  Draw Note Payable D. Def2[nms141                   ]  Fiduciary Loan2            [nms571              ]
+  Note Payable Account2    [nms151                   ]  Other-Charge2              [nms581              ]
+  N/P Returned Credit2     [nms161                   ]  A/P Promissory Note Dis2   [nms591              ]
+  N/P Withdrawn Credit2    [nms171                   ]  Interest Expense2          [nms601              ]
+  N/P Void Credit2         [nms181                   ]  Acce Bill Payable Discount2[nms611              ]
+  N/R Receipt Default C.2  [nms211                   ]  Acceptance Bill Payable2   [nms621              ]
+  Note Receivable2         [nms221                   ]  Commercial Paper Payable2  [nms631              ]
+  N/R Collection Debit2    [nms231                   ]  Interest Payable Temp Est2 [nms641              ]
+  N/R Pledge Debit2        [nms241                   ]  Purchase Loan2             [nms651              ]
+  N/R Discount Debit2      [nms251                   ]  Guaranteed Bill Pay2       [nms661              ]
+  N/R Returned Debit2      [nms261                   ]  Guarantee Bill Paid2       [nms671              ]
+  N/R Withdrawn Debit2     [nms271                   ]  Guarantee Bill Received2   [nms691              ]
+  Accrued Interest Payable2[nms501                   ]  Timing Deposit2            [nms681              ]
+  Receivable Void Debit2   [nms511                   ]  Interest Income2           [nms701              ]
+  Temporary Received2      [nms281                   ]  Interest Receivable2       [nms711              ]
+ <                                                    ><                                                 >
+
+}
+END -- gr4025
+END -- VBox3
+END -- page02
+Page info(text="Info")
+HBox hb1
+Grid gr8_
+{
+ Record Owner [nmsuser      ]
+ Department   [nmsgrup      ]
+ Dept Orig.   [nmsoriu      ]
+ Record Orig. [nmsorig      ]
+}
+END -- gr8_
+Grid gr7_
+{
+ Last Modified by   [nmsmodu    ]
+ Create/Modify Date [nmsdate    ]
+
+
+}
+END -- gr7_
+Grid gr9
+{
+ Data Valid Code     [nmsacti   ]
+
+
+
+}
+END -- gr9
+END -- hb1
+END -- info
+END -- pc745
+Grid gr4027
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4027
+END -- VBox1
+END -- anmi040
+
+TABLES
+nms_file,
+gem_file
+ATTRIBUTES
+ButtonEdit nms01=nms_file.nms01, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Department No.";
+Edit gem02=gem_file.gem02, tabIndex=2, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Group group01:group01;
+ButtonEdit nms12=nms_file.nms12, action=controlp, tabIndex=4, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms13=nms_file.nms13, action=controlp, tabIndex=5, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms14=nms_file.nms14, action=controlp, tabIndex=6, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms15=nms_file.nms15, action=controlp, tabIndex=7, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms16=nms_file.nms16, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms17=nms_file.nms17, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms18=nms_file.nms18, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms21=nms_file.nms21, action=controlp, tabIndex=11, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms22=nms_file.nms22, action=controlp, tabIndex=12, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms23=nms_file.nms23, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms24=nms_file.nms24, action=controlp, tabIndex=14, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms25=nms_file.nms25, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms26=nms_file.nms26, action=controlp, tabIndex=16, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms27=nms_file.nms27, action=controlp, tabIndex=17, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms50=nms_file.nms50, action=controlp, tabIndex=18, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms51=nms_file.nms51, action=controlp, tabIndex=19, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms28=nms_file.nms28, action=controlp, tabIndex=20, image="zoom", comment="<^P> Qry Account     ";
+Group group02:group02;
+ButtonEdit nms55=nms_file.nms55, action=controlp, tabIndex=21, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms56=nms_file.nms56, action=controlp, tabIndex=22, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms57=nms_file.nms57, action=controlp, tabIndex=23, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms58=nms_file.nms58, action=controlp, tabIndex=24, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms59=nms_file.nms59, action=controlp, tabIndex=25, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms60=nms_file.nms60, action=controlp, tabIndex=26, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms61=nms_file.nms61, action=controlp, tabIndex=27, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms62=nms_file.nms62, action=controlp, tabIndex=28, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms63=nms_file.nms63, action=controlp, tabIndex=29, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms64=nms_file.nms64, action=controlp, tabIndex=30, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms65=nms_file.nms65, action=controlp, tabIndex=31, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms66=nms_file.nms66, action=controlp, tabIndex=32, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms67=nms_file.nms67, action=controlp, tabIndex=33, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms69=nms_file.nms69, action=controlp, tabIndex=34, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms68=nms_file.nms68, action=controlp, tabIndex=35, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms70=nms_file.nms70, action=controlp, tabIndex=36, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms71=nms_file.nms71, action=controlp, tabIndex=37, image="zoom", comment="<^P> Qry Account     ";
+Group group03:group03;
+ButtonEdit nms121=nms_file.nms121, action=controlp, tabIndex=38, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms131=nms_file.nms131, action=controlp, tabIndex=39, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms141=nms_file.nms141, action=controlp, tabIndex=40, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms151=nms_file.nms151, action=controlp, tabIndex=41, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms161=nms_file.nms161, action=controlp, tabIndex=42, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms171=nms_file.nms171, action=controlp, tabIndex=43, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms181=nms_file.nms181, action=controlp, tabIndex=44, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms211=nms_file.nms211, action=controlp, tabIndex=45, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms221=nms_file.nms221, action=controlp, tabIndex=46, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms231=nms_file.nms231, action=controlp, tabIndex=47, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms241=nms_file.nms241, action=controlp, tabIndex=48, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms251=nms_file.nms251, action=controlp, tabIndex=49, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms261=nms_file.nms261, action=controlp, tabIndex=50, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms271=nms_file.nms271, action=controlp, tabIndex=51, image="zoom", comment="<^P>Qry Acct Title Blank:Same as Original Note Debit Acct";
+ButtonEdit nms501=nms_file.nms501, action=controlp, tabIndex=52, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms511=nms_file.nms511, action=controlp, tabIndex=53, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms281=nms_file.nms281, action=controlp, tabIndex=54, image="zoom", comment="<^P> Qry Account     ";
+Group group04:group04;
+ButtonEdit nms551=nms_file.nms551, action=controlp, tabIndex=55, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms561=nms_file.nms561, action=controlp, tabIndex=56, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms571=nms_file.nms571, action=controlp, tabIndex=57, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms581=nms_file.nms581, action=controlp, tabIndex=58, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms591=nms_file.nms591, action=controlp, tabIndex=59, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms601=nms_file.nms601, action=controlp, tabIndex=60, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms611=nms_file.nms611, action=controlp, tabIndex=61, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms621=nms_file.nms621, action=controlp, tabIndex=62, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms631=nms_file.nms631, action=controlp, tabIndex=63, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms641=nms_file.nms641, action=controlp, tabIndex=64, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms651=nms_file.nms651, action=controlp, tabIndex=65, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms661=nms_file.nms661, action=controlp, tabIndex=66, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms671=nms_file.nms671, action=controlp, tabIndex=67, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms691=nms_file.nms691, action=controlp, tabIndex=68, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms681=nms_file.nms681, action=controlp, tabIndex=69, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms701=nms_file.nms701, action=controlp, tabIndex=70, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nms711=nms_file.nms711, action=controlp, tabIndex=71, image="zoom", comment="<^P> Qry Account     ";
+Edit nmsuser=nms_file.nmsuser, tabIndex=72, noEntry;
+Edit nmsgrup=nms_file.nmsgrup, tabIndex=75, noEntry;
+Edit nmsoriu=nms_file.nmsoriu, tabIndex=501, noEntry;
+Edit nmsorig=nms_file.nmsorig, tabIndex=502, noEntry;
+Edit nmsmodu=nms_file.nmsmodu, tabIndex=73, noEntry;
+DateEdit nmsdate=nms_file.nmsdate, tabIndex=76, noEntry;
+Edit nmsacti=nms_file.nmsacti, tabIndex=74, noEntry, upShift;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=77;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nms_file.nms01,gem_file.gem02,formonly.imgmksg,nms_file.nms12,nms_file.nms13,nms_file.nms14,nms_file.nms15,nms_file.nms16,nms_file.nms17,nms_file.nms18,nms_file.nms21,nms_file.nms22,nms_file.nms23,nms_file.nms24,nms_file.nms25,nms_file.nms26,nms_file.nms27,nms_file.nms50,nms_file.nms51,nms_file.nms28,nms_file.nms55,nms_file.nms56,nms_file.nms57,nms_file.nms58,nms_file.nms59,nms_file.nms60,nms_file.nms61,nms_file.nms62,nms_file.nms63,nms_file.nms64,nms_file.nms65,nms_file.nms66,nms_file.nms67,nms_file.nms69,nms_file.nms68,nms_file.nms70,nms_file.nms71,nms_file.nms121,nms_file.nms131,nms_file.nms141,nms_file.nms151,nms_file.nms161,nms_file.nms171,nms_file.nms181,nms_file.nms211,nms_file.nms221,nms_file.nms231,nms_file.nms241,nms_file.nms251,nms_file.nms261,nms_file.nms271,nms_file.nms501,nms_file.nms511,nms_file.nms281,nms_file.nms551,nms_file.nms561,nms_file.nms571,nms_file.nms581,nms_file.nms591,nms_file.nms601,nms_file.nms611,nms_file.nms621,nms_file.nms631,nms_file.nms641,nms_file.nms651,nms_file.nms661,nms_file.nms671,nms_file.nms691,nms_file.nms681,nms_file.nms701,nms_file.nms711,nms_file.nmsuser,nms_file.nmsgrup,nms_file.nmsoriu,nms_file.nmsorig,nms_file.nmsmodu,nms_file.nmsdate,nms_file.nmsacti,formonly.cnt)
+END -- INSTRUCTIONS
+

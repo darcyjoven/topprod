@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aicq026.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"cimq110T")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+HBox HBox1
+Grid gr2
+{
+ <G group02                                   >
+  [estyle                                    ]
+ <                                            >
+
+
+
+
+}
+END -- gr2
+END -- HBox1
+END -- page01
+END -- pc1
+Table s_idc
+{
+[part        |idc01        |ima02        |ima021       |idc09              |ima06  |ima08  |idc19        |ima02_2      |idc07    |idc02        |idc03        |idc04           |idc11           |idc10    |idc08       |idc12       |idc17     ]
+[part        |idc01        |ima02        |ima021       |idc09              |ima06  |ima08  |idc19        |ima02_2      |idc07    |idc02        |idc03        |idc04           |idc11           |idc10    |idc08       |idc12       |idc17     ]
+[part        |idc01        |ima02        |ima021       |idc09              |ima06  |ima08  |idc19        |ima02_2      |idc07    |idc02        |idc03        |idc04           |idc11           |idc10    |idc08       |idc12       |idc17     ]
+[part        |idc01        |ima02        |ima021       |idc09              |ima06  |ima08  |idc19        |ima02_2      |idc07    |idc02        |idc03        |idc04           |idc11           |idc10    |idc08       |idc12       |idc17     ]
+[part        |idc01        |ima02        |ima021       |idc09              |ima06  |ima08  |idc19        |ima02_2      |idc07    |idc02        |idc03        |idc04           |idc11           |idc10    |idc08       |idc12       |idc17     ]
+[part        |idc01        |ima02        |ima021       |idc09              |ima06  |ima08  |idc19        |ima02_2      |idc07    |idc02        |idc03        |idc04           |idc11           |idc10    |idc08       |idc12       |idc17     ]
+[part        |idc01        |ima02        |ima021       |idc09              |ima06  |ima08  |idc19        |ima02_2      |idc07    |idc02        |idc03        |idc04           |idc11           |idc10    |idc08       |idc12       |idc17     ]
+[part        |idc01        |ima02        |ima021       |idc09              |ima06  |ima08  |idc19        |ima02_2      |idc07    |idc02        |idc03        |idc04           |idc11           |idc10    |idc08       |idc12       |idc17     ]
+[part        |idc01        |ima02        |ima021       |idc09              |ima06  |ima08  |idc19        |ima02_2      |idc07    |idc02        |idc03        |idc04           |idc11           |idc10    |idc08       |idc12       |idc17     ]
+[part        |idc01        |ima02        |ima021       |idc09              |ima06  |ima08  |idc19        |ima02_2      |idc07    |idc02        |idc03        |idc04           |idc11           |idc10    |idc08       |idc12       |idc17     ]
+
+}
+END -- s_idc
+Grid gr3
+{
+  ---------- Rows [cnt   ]/[cn2   ] ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+}
+END -- gr3
+END -- VBox1
+END -- aicq026
+
+TABLES
+idc_file,
+ima_file
+ATTRIBUTES
+Group group02:group02, text="Input";
+RadioGroup estyle=formonly.estyle type CHAR, tabIndex=1, not null, required, items=(("1", "back e"),("2", "ford e"),("3", "all e"));
+ButtonEdit part=formonly.part type CHAR, action=controlp, tabIndex=2, title="part", image="zoom";
+Edit idc01=idc_file.idc01, tabIndex=3, title="Item";
+Edit ima02=ima_file.ima02, tabIndex=4, title="Desc";
+Edit ima021=ima_file.ima021, tabIndex=5, title="Spec";
+ButtonEdit idc09=idc_file.idc09, action=controlp, tabIndex=6, title="ibody", image="zoom";
+Edit ima06=ima_file.ima06, tabIndex=7, title="G-code";
+Edit ima08=ima_file.ima08, tabIndex=8, title="S-code";
+ButtonEdit idc19=idc_file.idc19, action=controlp, tabIndex=9, title="Last Item", image="zoom";
+Edit ima02_2=formonly.ima02_2 type CHAR, tabIndex=10, title="L-Item Desc";
+ButtonEdit idc07=idc_file.idc07, action=controlp, tabIndex=11, title="Unit", image="zoom";
+ButtonEdit idc02=idc_file.idc02, action=controlp, tabIndex=12, title="Warehouse", image="zoom";
+ButtonEdit idc03=idc_file.idc03, action=controlp, tabIndex=13, title="Location", image="zoom";
+ButtonEdit idc04=idc_file.idc04, action=controlp, tabIndex=14, title="Lot#", image="zoom";
+ButtonEdit idc11=idc_file.idc11, action=controlp, tabIndex=15, title="DATECODE", image="zoom";
+ButtonEdit idc10=idc_file.idc10, action=controlp, tabIndex=16, title="Lot1", image="zoom";
+Edit idc08=idc_file.idc08, tabIndex=17, title="stock";
+Edit idc12=idc_file.idc12, tabIndex=18, title="ref-stock";
+CheckBox idc17=idc_file.idc17, tabIndex=19, title="Hold", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type CHAR, tabIndex=20;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=21;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_idc(formonly.part,idc_file.idc01,ima_file.ima02,ima_file.ima021,idc_file.idc09,ima_file.ima06,ima_file.ima08,idc_file.idc19,formonly.ima02_2,idc_file.idc07,idc_file.idc02,idc_file.idc03,idc_file.idc04,idc_file.idc11,idc_file.idc10,idc_file.idc08,idc_file.idc12,idc_file.idc17)
+SCREEN RECORD Undefined(formonly.estyle,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

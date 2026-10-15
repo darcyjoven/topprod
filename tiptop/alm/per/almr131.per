@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almr131.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group Group1(text=%"QBE")
+Grid ds1
+{
+
+  Store No.   [lmdstore              ]
+  Building No.[lmd03                 ]
+  Floor No.   [lmd04                 ]
+  Region Code [lmd14                 ]
+  Ground No.  [lmd01                 ]
+
+}
+END -- ds1
+END -- Group1
+Group Group2(text=%"Input")
+Grid Grid1
+{
+  <G group3                     >
+  [lmd07                      ]
+  <                             >
+ [sub          ]
+}
+END -- Grid1
+END -- Group2
+Grid gr132
+{
+[more                                     ]
+
+}
+END -- gr132
+END -- VBox1
+END -- Form
+
+TABLES
+lmd_file
+ATTRIBUTES
+ButtonEdit lmdstore=lmd_file.lmdstore, action=controlp, tabIndex=1, not null, image="zoom", scroll;
+ButtonEdit lmd03=lmd_file.lmd03, action=controlp, tabIndex=2, image="zoom", scroll;
+ButtonEdit lmd04=lmd_file.lmd04, action=controlp, tabIndex=3, image="zoom", scroll;
+ButtonEdit lmd14=lmd_file.lmd14, action=controlp, tabIndex=4, image="zoom", scroll;
+ButtonEdit lmd01=lmd_file.lmd01, action=controlp, tabIndex=5, not null, image="zoom", scroll;
+Group group3:Group3, text=%"Fie.Stat.";
+RadioGroup lmd07=lmd_file.lmd07, tabIndex=6, not null, required, orientation=horizontal, items=(("0", %"All"),("1", "Used"),("2", "Unused"));
+CheckBox sub=formonly.sub, tabIndex=7, text=%"Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(lmd_file.lmdstore,lmd_file.lmd03,lmd_file.lmd04,lmd_file.lmd14,lmd_file.lmd01)
+SCREEN RECORD Undefined(lmd_file.lmd07,formonly.sub,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_abg.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Maintain Entering Account")
+Grid gr3718
+{
+ <T s_abg                                                                                                                                                      >
+ [check|abg11                |abg12                |abg13               |abg14               |abg04                         |abg01                   |abg02   ]
+ [check|abg11                |abg12                |abg13               |abg14               |abg04                         |abg01                   |abg02   ]
+ [check|abg11                |abg12                |abg13               |abg14               |abg04                         |abg01                   |abg02   ]
+ [check|abg11                |abg12                |abg13               |abg14               |abg04                         |abg01                   |abg02   ]
+ [check|abg11                |abg12                |abg13               |abg14               |abg04                         |abg01                   |abg02   ]
+ [check|abg11                |abg12                |abg13               |abg14               |abg04                         |abg01                   |abg02   ]
+ [check|abg11                |abg12                |abg13               |abg14               |abg04                         |abg01                   |abg02   ]
+ [check|abg11                |abg12                |abg13               |abg14               |abg04                         |abg01                   |abg02   ]
+ [check|abg11                |abg12                |abg13               |abg14               |abg04                         |abg01                   |abg02   ]
+ [check|abg11                |abg12                |abg13               |abg14               |abg04                         |abg01                   |abg02   ]
+ <                                                                                                                                                             >
+
+}
+END -- gr3718
+END -- q_abg
+
+ATTRIBUTES
+Table s_abg:s_abg;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit abg11=formonly.abg11 type CHAR, tabIndex=2, title="Transaction Code 1", noEntry;
+Edit abg12=formonly.abg12 type CHAR, tabIndex=3, title="Transaction Code 2", noEntry;
+Edit abg13=formonly.abg13 type CHAR, tabIndex=4, title="Transaction Code 3", noEntry;
+Edit abg14=formonly.abg14 type CHAR, tabIndex=5, title="Transaction Code 4", noEntry;
+Edit abg04=formonly.abg04 type CHAR, tabIndex=6, title="Memo", noEntry;
+Edit abg01=formonly.abg01 type CHAR, tabIndex=7, title="Entering Acct Voucher", noEntry;
+Edit abg02=formonly.abg02 type CHAR, tabIndex=8, title="Line No.", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abg(formonly.check,formonly.abg11,formonly.abg12,formonly.abg13,formonly.abg14,formonly.abg04,formonly.abg01,formonly.abg02)
+END -- INSTRUCTIONS
+

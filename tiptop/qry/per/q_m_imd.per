@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_m_imd.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_m_imd")
+Grid gr3789
+{
+ <T s_imd                                                                               >
+ [check  |imd01     |imd02               |imd10    |imd11  |imd12     |imd13  |imd14   ]
+ [check  |imd01     |imd02               |imd10    |imd11  |imd12     |imd13  |imd14   ]
+ [check  |imd01     |imd02               |imd10    |imd11  |imd12     |imd13  |imd14   ]
+ [check  |imd01     |imd02               |imd10    |imd11  |imd12     |imd13  |imd14   ]
+ [check  |imd01     |imd02               |imd10    |imd11  |imd12     |imd13  |imd14   ]
+ [check  |imd01     |imd02               |imd10    |imd11  |imd12     |imd13  |imd14   ]
+ <                                                                                      >
+
+}
+END -- gr3789
+END -- q_m_imd
+
+TABLES
+imd_file
+ATTRIBUTES
+Table s_imd:s_imd;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit imd01=imd_file.imd01, tabIndex=2, title="Warehouse", noEntry;
+Edit imd02=imd_file.imd02, tabIndex=3, title="Name", noEntry;
+Edit imd10=imd_file.imd10, tabIndex=4, title="Category", noEntry;
+Edit imd11=imd_file.imd11, tabIndex=5, title="Usable", noEntry;
+Edit imd12=imd_file.imd12, tabIndex=6, title="MRPUsable", noEntry;
+Edit imd13=imd_file.imd13, tabIndex=7, title="Bonded", noEntry;
+Edit imd14=imd_file.imd14, tabIndex=8, title="Sequence", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imd(formonly.check,imd_file.imd01,imd_file.imd02,imd_file.imd10,imd_file.imd11,imd_file.imd12,imd_file.imd13,imd_file.imd14)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapi105.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapi105")
+VBox VBox1
+Folder pc8
+Page page01(text="Main")
+Table s_apo
+{
+[apo01       |apo02               |apoact]
+[apo01       |apo02               |apoact]
+[apo01       |apo02               |apoact]
+[apo01       |apo02               |apoact]
+[apo01       |apo02               |apoact]
+[apo01       |apo02               |apoact]
+[apo01       |apo02               |apoact]
+[apo01       |apo02               |apoact]
+[apo01       |apo02               |apoact]
+[apo01       |apo02               |apoact]
+
+}
+END -- s_apo
+END -- page01
+END -- pc8
+Grid gr16
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr16
+END -- VBox1
+END -- aapi105
+
+TABLES
+apo_file
+ATTRIBUTES
+Edit apo01=apo_file.apo01, tabIndex=1, title="Reason Code", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit apo02=apo_file.apo02, tabIndex=2, title="Reason", comment="No blank Field!";
+CheckBox apoact=apo_file.apoacti, tabIndex=3, title="Valid?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apo(apo_file.apo01,apo_file.apo02,apo_file.apoacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

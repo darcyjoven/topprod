@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt670_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt6006")
+VBox VBox1
+Folder pc595
+Page page01(text="Page01")
+VBox VBox2
+Table s_ogc
+{
+[ogc09       |ogc091      |ogc092     |ogc12           |img10             |ogc15|ogc15_fac    |ogc16           |ogc18     ]
+[ogc09       |ogc091      |ogc092     |ogc12           |img10             |ogc15|ogc15_fac    |ogc16           |ogc18     ]
+[ogc09       |ogc091      |ogc092     |ogc12           |img10             |ogc15|ogc15_fac    |ogc16           |ogc18     ]
+[ogc09       |ogc091      |ogc092     |ogc12           |img10             |ogc15|ogc15_fac    |ogc16           |ogc18     ]
+[ogc09       |ogc091      |ogc092     |ogc12           |img10             |ogc15|ogc15_fac    |ogc16           |ogc18     ]
+[ogc09       |ogc091      |ogc092     |ogc12           |img10             |ogc15|ogc15_fac    |ogc16           |ogc18     ]
+[ogc09       |ogc091      |ogc092     |ogc12           |img10             |ogc15|ogc15_fac    |ogc16           |ogc18     ]
+[ogc09       |ogc091      |ogc092     |ogc12           |img10             |ogc15|ogc15_fac    |ogc16           |ogc18     ]
+[ogc09       |ogc091      |ogc092     |ogc12           |img10             |ogc15|ogc15_fac    |ogc16           |ogc18     ]
+[ogc09       |ogc091      |ogc092     |ogc12           |img10             |ogc15|ogc15_fac    |ogc16           |ogc18     ]
+}
+END -- s_ogc
+Grid gr2568
+{
+ <G group03                                     ><G group01                                     ><G group02                                     >
+  Actual Delivery Qty     [ogb12t              ]  Sales Qty Total         [ogc12t              ]  Curr Inv Conv.Qty Total [ogc16t              ]
+
+
+ <                                              ><                                              ><                                              >
+
+
+}
+END -- gr2568
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr2569
+{
+ <G grpinfo                       >
+  Detail Counts       [cn2       ]
+
+
+ <                                >
+
+}
+END -- gr2569
+END -- info
+END -- pc595
+END -- VBox1
+END -- axmt6006
+
+ATTRIBUTES
+ButtonEdit ogc09=formonly.ogc09 type CHAR, action=controlp, tabIndex=1, title="Warehouse", image="zoom", comment="<^P> Qry Warehouse";
+ButtonEdit ogc091=formonly.ogc091 type CHAR, action=controlp, tabIndex=2, title="Location", image="zoom", comment="<^P> Qry Location";
+Edit ogc092=formonly.ogc092 type CHAR, tabIndex=3, title="Lot#";
+Edit ogc12=formonly.ogc12 type CHAR, tabIndex=4, title="Sales Qty";
+Edit img10=formonly.img10 type CHAR, tabIndex=5, title="Quantity On Hand", noEntry;
+Edit ogc15=formonly.ogc15 type CHAR, tabIndex=6, title="UNit", noEntry;
+Edit ogc15_fac=formonly.ogc15_fac type CHAR, tabIndex=7, title="Convers.Rate", noEntry;
+Edit ogc16=formonly.ogc16 type CHAR, tabIndex=8, title="Qty", noEntry;
+Edit ogc18=formonly.ogc18 type CHAR, tabIndex=9, title="LOT NO", noEntry;
+Group group03:group03;
+Edit ogb12t=formonly.ogb12t type CHAR, tabIndex=10, noEntry;
+Group group01:group01;
+Edit ogc12t=formonly.ogc12t type CHAR, tabIndex=11, noEntry;
+Group group02:group02;
+Edit ogc16t=formonly.ogc16t type CHAR, tabIndex=12, noEntry;
+Group grpinfo:grpinfo;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogc(formonly.ogc09,formonly.ogc091,formonly.ogc092,formonly.ogc12,formonly.img10,formonly.ogc15,formonly.ogc15_fac,formonly.ogc16,formonly.ogc18)
+SCREEN RECORD Undefined(formonly.ogb12t,formonly.ogc12t,formonly.ogc16t,formonly.cn2)
+END -- INSTRUCTIONS
+

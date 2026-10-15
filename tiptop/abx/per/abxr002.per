@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxr002")
+Grid gr1090
+{
+ <G group01                                 >
+  Category             [bw]
+  Item No.             [bwg04              ]
+  Bonded               [im]
+
+ <                                          >
+
+}
+END -- gr1090
+END -- abxr002
+
+TABLES
+bwg_file,
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit bw=bwg_file.bwg00, tabIndex=1, noEntry, upShift, comment="L:Local Sales  F:Export  S:Retire  T:Sent";
+ButtonEdit bwg04=bwg_file.bwg04, action=controlp, tabIndex=2, image="zoom";
+Edit im=ima_file.ima15, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bwg_file.bwg00,bwg_file.bwg04,ima_file.ima15)
+END -- INSTRUCTIONS
+

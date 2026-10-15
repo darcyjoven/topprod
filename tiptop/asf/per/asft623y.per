@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft623y.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft623y")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+HBox HBox1
+Grid gr792
+{
+ Item No.            [partno                    ]
+ Trans-out No.       [seq1      ]
+ Store-in Qty        [tot_qty   ]
+}
+END -- gr792
+Grid gr793
+{
+ Warehouse           [ware      ]
+ Location            [loc       ]
+ Lot No.             [lot                           ]
+}
+END -- gr793
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_shm
+{
+[shm05               |shm01              |seq  |qty          |y                      |in_qty       ]
+[shm05               |shm01              |seq  |qty          |y                      |in_qty       ]
+[shm05               |shm01              |seq  |qty          |y                      |in_qty       ]
+[shm05               |shm01              |seq  |qty          |y                      |in_qty       ]
+[shm05               |shm01              |seq  |qty          |y                      |in_qty       ]
+[shm05               |shm01              |seq  |qty          |y                      |in_qty       ]
+[shm05               |shm01              |seq  |qty          |y                      |in_qty       ]
+[shm05               |shm01              |seq  |qty          |y                      |in_qty       ]
+[shm05               |shm01              |seq  |qty          |y                      |in_qty       ]
+[shm05               |shm01              |seq  |qty          |y                      |in_qty       ]
+
+}
+END -- s_shm
+Grid gr794
+{
+                            Total Incompl.Qty [qty_t               ]               Total Store-in Qty [in_qty_t            ]
+
+}
+END -- gr794
+END -- VBox1
+END -- asft623y
+
+TABLES
+shm_file
+ATTRIBUTES
+ButtonEdit partno=formonly.partno type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Query. Can use \'*\'    .";
+Edit seq1=formonly.seq1 type CHAR, tabIndex=2;
+Edit tot_qty=formonly.tot_qty type CHAR, tabIndex=3;
+Edit ware=formonly.ware type CHAR, tabIndex=4;
+Edit loc=formonly.loc type CHAR, tabIndex=5;
+Edit lot=formonly.lot type CHAR, tabIndex=6;
+Edit shm05=shm_file.shm05, tabIndex=7, title="Item No.", noEntry;
+Edit shm01=shm_file.shm01, tabIndex=8, title="Run Card No.", noEntry;
+Edit seq=formonly.seq type CHAR, tabIndex=9, title="S/N", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=10, title="Incompl.Qty", noEntry;
+CheckBox y=formonly.y type CHAR, tabIndex=11, title="W/O to Store-in Blank", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit in_qty=formonly.in_qty type CHAR, tabIndex=12, title="Store-in Qty";
+Edit qty_t=formonly.qty_t type CHAR, tabIndex=13;
+Edit in_qty_t=formonly.in_qty_t type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_shm(shm_file.shm05,shm_file.shm01,formonly.seq,formonly.qty,formonly.y,formonly.in_qty)
+SCREEN RECORD Undefined(formonly.partno,formonly.seq1,formonly.tot_qty,formonly.ware,formonly.loc,formonly.lot,formonly.qty_t,formonly.in_qty_t)
+END -- INSTRUCTIONS
+

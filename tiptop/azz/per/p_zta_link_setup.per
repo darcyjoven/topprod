@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zta_link_setup.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zta_link_setup")
+VBox VBox1
+Table s_link_setup
+{
+[azp0|azp01     |azp02               ]
+[azp0|azp01     |azp02               ]
+[azp0|azp01     |azp02               ]
+[azp0|azp01     |azp02               ]
+[azp0|azp01     |azp02               ]
+[azp0|azp01     |azp02               ]
+[azp0|azp01     |azp02               ]
+[azp0|azp01     |azp02               ]
+[azp0|azp01     |azp02               ]
+[azp0|azp01     |azp02               ]
+
+}
+END -- s_link_setup
+END -- VBox1
+END -- p_zta_link_setup
+
+TABLES
+azp_file
+ATTRIBUTES
+CheckBox azp0=azp_file.azp08, tabIndex=1, title="link", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit azp01=formonly.azp01 type CHAR, tabIndex=2, title="plant_no", noEntry;
+Edit azp02=formonly.azp02 type CHAR, tabIndex=3, title="plant_name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_link_setup(azp_file.azp08,formonly.azp01,formonly.azp02)
+END -- INSTRUCTIONS
+

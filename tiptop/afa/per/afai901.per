@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai901.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai901")
+VBox VBox1
+Folder pc347
+Page page01(text="Main")
+HBox HBox1
+VBox VBox2
+Grid gr1891
+{
+ <G group01                                 >
+  [fao041                                  ]
+
+ <                                          >
+
+
+}
+END -- gr1891
+Grid gr1892
+{
+  Asset No                 [fao01               ]
+                           [faj06                         ]
+                           [faj061                        ]
+  Additional No            [fao02     ]
+  Yesr                     [fao03     ]
+  Month                    [fao04     ]
+
+ <G group02                                                 >
+  [fao05                                   ]
+
+ <                                                          >
+}
+END -- gr1892
+END -- VBox2
+Grid gr1893
+{
+ Dept No                  [fao06     ][gem02_1   ]
+ ShareDept#               [fao09     ][gem02_2   ]
+ Asset Type               [fao10     ]
+ Proportion Type          [fao13     ]
+ Depreciation Cost        [fao07                 ]
+ Current Period Acc.Depr. [fao08                 ]
+ Cost                     [fao14                 ]
+ Accumulated Depreciation [fao15                 ]
+ Deduction Preparation    [fao17                 ]
+ Yearly Depreciation      [faj109                ]
+ Share Rate               [fao16     ]
+ Asset Acoount No         [fao11                 ][aag02_1                       ]
+ Depr. Account No         [fao12                 ][aag02_2                       ]
+ Acc. Depr. Account       [fao20                 ][aag02_5                       ]
+
+
+
+
+
+}
+END -- gr1893
+END -- HBox1
+END -- page01
+END -- pc347
+Grid gr1894
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1894
+END -- VBox1
+END -- afai901
+
+TABLES
+faj_file,
+fao_file
+ATTRIBUTES
+Group group01:group01, text="Source Code";
+RadioGroup fao041=fao_file.fao041, tabIndex=1, noEntry, items=(("0", "Open"),("1", "Calculate"),("2", "Adjust"));
+ButtonEdit fao01=fao_file.fao01, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Asset Code";
+LABEL faj06=formonly.faj06 type VARCHAR;
+LABEL faj061=formonly.faj061 type VARCHAR;
+Edit fao02=fao_file.fao02, tabIndex=5;
+Edit fao03=fao_file.fao03, tabIndex=6;
+Edit fao04=fao_file.fao04, tabIndex=7;
+Group group02:group02, text="Proportion";
+RadioGroup fao05=fao_file.fao05, tabIndex=8, items=(("1", "Single"),("2", "Mulit"),("3", "Share"));
+ButtonEdit fao06=fao_file.fao06, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Dept Code";
+LABEL gem02_1=formonly.gem02_1 type VARCHAR;
+ButtonEdit fao09=fao_file.fao09, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Dept Code";
+LABEL gem02_2=formonly.gem02_2 type VARCHAR;
+ComboBox fao10=fao_file.fao10, tabIndex=13, queryEditable, items=(("0", "Acquire"),("1", "Capitalization"),("2", "In Depreication"),("3", "Send"),("4", "Depreciated"),("7", "Re-Amortize"),("8", "Improve"),("9", "Revaluate"),("X", "Capitalized"));
+ButtonEdit fao13=fao_file.fao13, action=controlp, tabIndex=14, image="zoom", comment="<^P>Qry Data";
+Edit fao07=fao_file.fao07, tabIndex=15;
+Edit fao08=fao_file.fao08, tabIndex=16;
+Edit fao14=fao_file.fao14, tabIndex=17;
+Edit fao15=fao_file.fao15, tabIndex=18;
+Edit fao17=fao_file.fao17, tabIndex=19;
+Edit faj109=faj_file.faj109, tabIndex=20;
+Edit fao16=fao_file.fao16, tabIndex=21;
+ButtonEdit fao11=fao_file.fao11, action=controlp, tabIndex=22, not null, required, image="zoom", comment="<^P>Qry Account Code";
+LABEL aag02_1=formonly.aag02_1 type VARCHAR;
+ButtonEdit fao12=fao_file.fao12, action=controlp, tabIndex=24, not null, required, image="zoom", comment="<^P>Qry Account Code";
+LABEL aag02_2=formonly.aag02_2 type VARCHAR;
+ButtonEdit fao20=fao_file.fao20, action=controlp, tabIndex=29, not null, required, image="zoom", comment="<^P>Qry Account Code";
+LABEL aag02_5=formonly.aag02_5 type VARCHAR;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fao_file.fao041,fao_file.fao01,formonly.faj06,formonly.faj061,fao_file.fao02,fao_file.fao03,fao_file.fao04,fao_file.fao05,fao_file.fao06,formonly.gem02_1,fao_file.fao09,formonly.gem02_2,fao_file.fao10,fao_file.fao13,fao_file.fao07,fao_file.fao08,fao_file.fao14,fao_file.fao15,fao_file.fao17,faj_file.faj109,fao_file.fao16,fao_file.fao11,formonly.aag02_1,fao_file.fao12,formonly.aag02_2,fao_file.fao20,formonly.aag02_5,formonly.cnt)
+END -- INSTRUCTIONS
+

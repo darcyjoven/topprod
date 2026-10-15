@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli9431.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli9431")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid gr9
+{
+  Group No.      [gizz01              ]
+  Company No.    [gizz02              ]
+  Plant Name     [axz1                ]
+  Book No.       [gizz00              ]
+  Year           [gizz03              ]
+  Period         [gizz04              ]
+  GroupId        [gizz07              ]
+  GroupDesc      [giqq02              ]
+
+}
+END -- gr9
+END -- Page1
+END -- Folder1
+Table s_gizz
+{
+[gizz06                    |aag02                                             |gizz05  ]
+[gizz06                    |aag02                                             |gizz05  ]
+[gizz06                    |aag02                                             |gizz05  ]
+[gizz06                    |aag02                                             |gizz05  ]
+[gizz06                    |aag02                                             |gizz05  ]
+[gizz06                    |aag02                                             |gizz05  ]
+[gizz06                    |aag02                                             |gizz05  ]
+[gizz06                    |aag02                                             |gizz05  ]
+[gizz06                    |aag02                                             |gizz05  ]
+[gizz06                    |aag02                                             |gizz05  ]
+
+
+
+
+
+
+}
+END -- s_gizz
+Grid gr2467
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+
+
+
+}
+END -- gr2467
+END -- VBox1
+END -- agli9431
+
+TABLES
+aag_file,
+giqq_file,
+gizz_file
+ATTRIBUTES
+ButtonEdit gizz01=gizz_file.gizz01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit gizz02=gizz_file.gizz02, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Query";
+Edit axz1=formonly.axz1 type VARCHAR, tabIndex=3, noEntry;
+ButtonEdit gizz00=gizz_file.gizz00, action=controlp, tabIndex=4, noEntry, image="zoom";
+Edit gizz03=gizz_file.gizz03, tabIndex=5, not null, required;
+Edit gizz04=gizz_file.gizz04, tabIndex=6, not null, required;
+ButtonEdit gizz07=gizz_file.gizz07, action=controlp, tabIndex=13, not null, required, image="zoom";
+Edit giqq02=giqq_file.giqq02, tabIndex=12, noEntry;
+ButtonEdit gizz06=gizz_file.gizz06, action=controlp, tabIndex=7, title="Account No.", not null, required, image="zoom", comment="<^P>Qry Account # ";
+Edit aag02=aag_file.aag02, tabIndex=8, title="Account Title", noEntry;
+Edit gizz05=gizz_file.gizz05, tabIndex=9, title=%"Amount";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gizz_file.gizz01,gizz_file.gizz02,formonly.axz1,gizz_file.gizz00,gizz_file.gizz03,gizz_file.gizz04,formonly.cnt,formonly.cn2,giqq_file.giqq02,gizz_file.gizz07)
+SCREEN RECORD s_gizz(gizz_file.gizz06,aag_file.aag02,gizz_file.gizz05)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,42 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/art/4fd/s_shop.tmp.per created 2010-04-30T02:15:44
+-- File created from /u3/tiptop/art/4fd/s_shop.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="artp101_1")
+                                                                            
+  Table s_rti                                                               
+  {                                                                         
+  [status  |rtg03           |ima02       |ima021        |rtg04          ]   
+  [status  |rtg03           |ima02       |ima021        |rtg04          ]   
+  [status  |rtg03           |ima02       |ima021        |rtg04          ]   
+  [status  |rtg03           |ima02       |ima021        |rtg04          ]   
+  [status  |rtg03           |ima02       |ima021        |rtg04          ]   
+                                                                            
+  }                                                                         
+  END -- Table                                                              
+END -- Form
+
+TABLES
+rtg_file
+ima_file
+
+ATTRIBUTES
+CheckBox status=formonly.status type VARCHAR, tabIndex=1, title="status", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rtg03=rtg_file.rtg03, tabIndex=2, title="rtg03", noEntry;
+ComboBox ima02=ima_file.ima02, tabIndex=3, title="ima02", items=(("1", "at once"),("2", "date"));
+Edit ima021=ima_file.ima021, tabIndex=4, title="ima021", noEntry;
+Edit rtg04=rtg_file.rtg04, tabIndex=5, title=%"rtg04";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rti(formonly.status, rtg_file.rtg03, ima_file.ima02, ima_file.ima021, rtg_file.rtg04)
+END -- INSTRUCTIONS
+

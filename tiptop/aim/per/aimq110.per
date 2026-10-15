@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimq110")
+VBox VBox1
+Folder pc2
+Page Page2(text=%"Page0")
+Grid gr1
+{
+
+   text16  [azp01       ]
+ <G group03                                                                                                    >
+  Period              [bdate     ]-[edate     ]
+ [price                            ]          [viewall                      ]
+  Year/Month          [yy  ][mm]              [total             |c              ]
+ <                                                                                                             >
+
+}
+END -- gr1
+END -- Page2
+END -- pc2
+Table s_img
+{
+[azp02     |img02     |img03     |ime03   |img04   |imd02     |img19     |ima12     |ima01     |ima02     |ima021    |img09     |q0        |p0      |s0        |n0      |r0        |m0      |q1        |p1      |s1        |n1      |r1        |m1      |q2        |p2      |s2        |n2      |r2        |m2      |q3        |p3      |s3        |n3      |r3        |m3      ]
+[azp02     |img02     |img03     |ime03   |img04   |imd02     |img19     |ima12     |ima01     |ima02     |ima021    |img09     |q0        |p0      |s0        |n0      |r0        |m0      |q1        |p1      |s1        |n1      |r1        |m1      |q2        |p2      |s2        |n2      |r2        |m2      |q3        |p3      |s3        |n3      |r3        |m3      ]
+[azp02     |img02     |img03     |ime03   |img04   |imd02     |img19     |ima12     |ima01     |ima02     |ima021    |img09     |q0        |p0      |s0        |n0      |r0        |m0      |q1        |p1      |s1        |n1      |r1        |m1      |q2        |p2      |s2        |n2      |r2        |m2      |q3        |p3      |s3        |n3      |r3        |m3      ]
+[azp02     |img02     |img03     |ime03   |img04   |imd02     |img19     |ima12     |ima01     |ima02     |ima021    |img09     |q0        |p0      |s0        |n0      |r0        |m0      |q1        |p1      |s1        |n1      |r1        |m1      |q2        |p2      |s2        |n2      |r2        |m2      |q3        |p3      |s3        |n3      |r3        |m3      ]
+[azp02     |img02     |img03     |ime03   |img04   |imd02     |img19     |ima12     |ima01     |ima02     |ima021    |img09     |q0        |p0      |s0        |n0      |r0        |m0      |q1        |p1      |s1        |n1      |r1        |m1      |q2        |p2      |s2        |n2      |r2        |m2      |q3        |p3      |s3        |n3      |r3        |m3      ]
+[azp02     |img02     |img03     |ime03   |img04   |imd02     |img19     |ima12     |ima01     |ima02     |ima021    |img09     |q0        |p0      |s0        |n0      |r0        |m0      |q1        |p1      |s1        |n1      |r1        |m1      |q2        |p2      |s2        |n2      |r2        |m2      |q3        |p3      |s3        |n3      |r3        |m3      ]
+[azp02     |img02     |img03     |ime03   |img04   |imd02     |img19     |ima12     |ima01     |ima02     |ima021    |img09     |q0        |p0      |s0        |n0      |r0        |m0      |q1        |p1      |s1        |n1      |r1        |m1      |q2        |p2      |s2        |n2      |r2        |m2      |q3        |p3      |s3        |n3      |r3        |m3      ]
+[azp02     |img02     |img03     |ime03   |img04   |imd02     |img19     |ima12     |ima01     |ima02     |ima021    |img09     |q0        |p0      |s0        |n0      |r0        |m0      |q1        |p1      |s1        |n1      |r1        |m1      |q2        |p2      |s2        |n2      |r2        |m2      |q3        |p3      |s3        |n3      |r3        |m3      ]
+[azp02     |img02     |img03     |ime03   |img04   |imd02     |img19     |ima12     |ima01     |ima02     |ima021    |img09     |q0        |p0      |s0        |n0      |r0        |m0      |q1        |p1      |s1        |n1      |r1        |m1      |q2        |p2      |s2        |n2      |r2        |m2      |q3        |p3      |s3        |n3      |r3        |m3      ]
+
+}
+END -- s_img
+Grid gr3155
+{
+             Rows [cnt   ]
+
+}
+END -- gr3155
+END -- VBox1
+END -- aimq110
+
+ATTRIBUTES
+ButtonEdit azp01=formonly.azp01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Group group03:group03, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=2, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=3, not null, required;
+CheckBox price=formonly.price type VARCHAR, tabIndex=4, text="price", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox viewall=formonly.viewall type VARCHAR, tabIndex=7, text="viewall", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit yy=formonly.yy type VARCHAR, tabIndex=5;
+Edit mm=formonly.mm type VARCHAR, tabIndex=6;
+CheckBox total=formonly.total type VARCHAR, tabIndex=8, default = "N", text="total", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox c=formonly.c type VARCHAR, tabIndex=9, not null, required, items=(("1", "按料件小计"),("2", "按仓库小计"));
+Edit azp02=formonly.azp02 type VARCHAR, tabIndex=10, title="azp02";
+ButtonEdit img02=formonly.img02 type VARCHAR, action=controlp, tabIndex=11, title="img02", image="zoom";
+ButtonEdit img03=formonly.img03 type VARCHAR, action=controlp, tabIndex=12, title="img03", image="zoom";
+Edit ime03=formonly.ime03 type VARCHAR, tabIndex=13, title=%"ime03";
+ButtonEdit img04=formonly.img04 type VARCHAR, action=controlp, tabIndex=14, title="img04", image="zoom";
+Edit imd02=formonly.imd02 type VARCHAR, tabIndex=15, title="imd02";
+Edit img19=formonly.img19 type VARCHAR, tabIndex=16, title="img19";
+ButtonEdit ima12=formonly.ima12 type VARCHAR, action=controlp, tabIndex=17, title="ima12", image="zoom";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=18, title="ima01", image="zoom";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=19, title="ima02";
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=20, title="ima021";
+ButtonEdit img09=formonly.img09 type VARCHAR, action=controlp, tabIndex=21, title="img09", image="zoom";
+Edit q0=formonly.q0 type VARCHAR, tabIndex=22, title="q0";
+Edit p0=formonly.p0 type VARCHAR, tabIndex=23, title="p0";
+Edit s0=formonly.s0 type VARCHAR, tabIndex=24, title="s0";
+Edit n0=formonly.n0 type VARCHAR, tabIndex=25, title="n0";
+Edit r0=formonly.r0 type VARCHAR, tabIndex=26, title="r0";
+Edit m0=formonly.m0 type VARCHAR, tabIndex=27, title="m0", color = red reverse;
+Edit q1=formonly.q1 type VARCHAR, tabIndex=28, title="q1";
+Edit p1=formonly.p1 type VARCHAR, tabIndex=29, title="p1";
+Edit s1=formonly.s1 type VARCHAR, tabIndex=30, title="s1";
+Edit n1=formonly.n1 type VARCHAR, tabIndex=31, title="n1";
+Edit r1=formonly.r1 type VARCHAR, tabIndex=32, title="r1";
+Edit m1=formonly.m1 type VARCHAR, tabIndex=33, title="m1", color = red reverse;
+Edit q2=formonly.q2 type VARCHAR, tabIndex=34, title="q2";
+Edit p2=formonly.p2 type VARCHAR, tabIndex=35, title="p2";
+Edit s2=formonly.s2 type VARCHAR, tabIndex=36, title="s2";
+Edit n2=formonly.n2 type VARCHAR, tabIndex=37, title="n2";
+Edit r2=formonly.r2 type VARCHAR, tabIndex=38, title="r2";
+Edit m2=formonly.m2 type VARCHAR, tabIndex=39, title="m2", color = red reverse;
+Edit q3=formonly.q3 type VARCHAR, tabIndex=40, title="q3";
+Edit p3=formonly.p3 type VARCHAR, tabIndex=41, title="p3";
+Edit s3=formonly.s3 type VARCHAR, tabIndex=42, title="s3";
+Edit n3=formonly.n3 type VARCHAR, tabIndex=43, title="n3\n";
+Edit r3=formonly.r3 type VARCHAR, tabIndex=44, title="r3";
+Edit m3=formonly.m3 type VARCHAR, tabIndex=45, title="m3", color = red reverse;
+Edit cnt=formonly.cnt type CHAR, tabIndex=46;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(formonly.azp02,formonly.img02,formonly.img03,formonly.ime03,formonly.img04,formonly.imd02,formonly.img19,formonly.ima12,formonly.ima01,formonly.ima02,formonly.ima021,formonly.img09,formonly.q0,formonly.p0,formonly.s0,formonly.n0,formonly.r0,formonly.m0,formonly.q1,formonly.p1,formonly.s1,formonly.n1,formonly.r1,formonly.m1,formonly.q2,formonly.p2,formonly.s2,formonly.n2,formonly.r2,formonly.m2,formonly.q3,formonly.p3,formonly.s3,formonly.n3,formonly.r3,formonly.m3)
+SCREEN RECORD Undefined(formonly.azp01,formonly.bdate,formonly.edate,formonly.price,formonly.viewall,formonly.yy,formonly.mm,formonly.total,formonly.c,formonly.cnt)
+END -- INSTRUCTIONS
+

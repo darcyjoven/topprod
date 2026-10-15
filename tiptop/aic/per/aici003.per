@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aici003")
+VBox vb1
+Folder pc2
+Page Page3(text=%"Main")
+Table s_icd
+{
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+[icd01   |icd02             |icd03                         |icdact]
+
+}
+END -- s_icd
+END -- Page3
+END -- pc2
+Grid gr1
+{
+   --------Rows[cn2       ]
+
+}
+END -- gr1
+END -- vb1
+END -- aici003
+
+TABLES
+icd_file
+ATTRIBUTES
+Edit icd01=icd_file.icd01, tabIndex=1, title="code", not null, required;
+ComboBox icd02=icd_file.icd02, tabIndex=2, title="cate", not null, required, items=(("J", "Wafer Size"),("K", "Purpose"),("L", "Technology"),("M", "Process Type"),("N", "W/F THICKNESS"),("O", "Package type"),("P", "Pin Count"),("Q", "RoHS"),("R", "EDN USER"),("S", "Ink Material"),("T", "Wafer Test Region Code"),("U", "Process Group"));
+Edit icd03=icd_file.icd03, tabIndex=3, title="Desc";
+CheckBox icdact=icd_file.icdacti, tabIndex=4, title="valid", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_icd(icd_file.icd01,icd_file.icd02,icd_file.icd03,icd_file.icdacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

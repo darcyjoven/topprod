@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr131.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+   <G group1                                        >
+         Member No.    [lpk01                     ]
+         Member Type   [lpk13                     ]
+         Member Level  [lpk10                     ]
+         Income lel    [lpk11                     ]
+         Birthdate     [lpk05                     ]
+   <                                                >
+  <G group2                                         >
+   Accumulated Consumption [a1        ]~[a2        ]
+   Columns per Page        [c              ]
+   Greeting                [d              ]
+                           [e                      ]
+  <                                                 >
+}
+END -- Grid1
+Grid gr5042
+{
+ [more                                      ]
+
+}
+END -- gr5042
+END -- VBox1
+END -- Form
+
+TABLES
+lpk_file
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+ButtonEdit lpk01=lpk_file.lpk01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit lpk13=lpk_file.lpk13, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit lpk10=lpk_file.lpk10, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit lpk11=lpk_file.lpk11, action=controlp, tabIndex=3, image="zoom";
+DateEdit lpk05=lpk_file.lpk05, tabIndex=4;
+Group group2:Group2, text=%"Input";
+Edit a1=formonly.a1 type CHAR, tabIndex=5;
+Edit a2=formonly.a2 type CHAR, tabIndex=6;
+ComboBox c=formonly.c type SMALLINT, tabIndex=7, not null, required, queryEditable, items=(("1", "1"),("2", "2"),("3", "3"));
+ComboBox d=formonly.d type VARCHAR, tabIndex=8, not null, required, items=(("1", "To"),("2", "Dear"),("3", "Sin"),("4", "Attn"));
+Edit e=formonly.e type VARCHAR, tabIndex=10;
+CheckBox more=formonly.more type VARCHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lpk_file.lpk01,lpk_file.lpk13,lpk_file.lpk10,lpk_file.lpk11,lpk_file.lpk05,formonly.a1,formonly.a2,formonly.c,formonly.d,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,141 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csft010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1(splitter)
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+  tc_sfa01     [tc_sfa01         ]                     tc_sfa02  [tc_sfa02      ]      [imgmksg]
+  tc_sfa03     [tc_sfa03         ][gen02             ] tc_sfa04  [tc_sfa04      ]      [       ]
+  tc_sfa05     [tc_sfa05         ][gen02_1           ] tc_sfa06  [tc_sfa06      ]
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid2
+{
+
+     tc_sfauser   [tc_sfauser]               tc_sfagrup    [tc_sfagrup]       tc_sfadate    [tc_sfadate]
+     tc_sfamodu   [tc_sfamodu]
+
+
+}
+END -- Grid2
+END -- Page2
+Page Page3(text=%"Page3")
+Grid Grid3
+{
+
+       tc_sfaud01     [tc_sfaud01   ]        tc_sfaud05   [tc_sfaud05   ]         tc_sfaud09  [tc_sfaud09   ]   tc_sfaud13   [tc_sfaud13   ]
+       tc_sfaud02     [tc_sfaud02   ]        tc_sfaud06   [tc_sfaud06   ]         tc_sfaud10  [tc_sfaud10   ]   tc_sfaud14   [tc_sfaud14   ]
+       tc_sfaud03     [tc_sfaud03   ]        tc_sfaud07   [tc_sfaud07   ]         tc_sfaud11  [tc_sfaud11   ]   tc_sfaud15   [tc_sfaud15   ]
+       tc_sfaud04     [tc_sfaud04   ]        tc_sfaud08   [tc_sfaud08   ]         tc_sfaud12  [tc_sfaud12   ]
+
+}
+END -- Grid3
+END -- Page3
+END -- Folder1
+Table Table1
+{
+[sel       |sfb05     |ecm04      |ecm45       |wipqty      |llbg       |pcl         ]
+[sel       |sfb05     |ecm04      |ecm45       |wipqty      |llbg       |pcl         ]
+[sel       |sfb05     |ecm04      |ecm45       |wipqty      |llbg       |pcl         ]
+[sel       |sfb05     |ecm04      |ecm45       |wipqty      |llbg       |pcl         ]
+[sel       |sfb05     |ecm04      |ecm45       |wipqty      |llbg       |pcl         ]
+}
+END -- Table1
+Table s_tc_gyy
+{
+[tc_sfb02   |tc_sfbud04     |tc_sfb03       |tc_sfbud02   |tc_sfb04     |tc_sfb05      |tc_sfb06      |tc_sfbud05   |tc_sfbud06    |tc_sfbud07   |tc_sfbud08    |tc_sfb07    |tc_sfb08    |tc_sfbud03   |tc_sfbud01  |tc_sfbud|tc_sfbu1|tc_sfbu2|tc_sfbu3|tc_sfbu4|tc_sfbu5|tc_sfbu6]
+[tc_sfb02   |tc_sfbud04     |tc_sfb03       |tc_sfbud02   |tc_sfb04     |tc_sfb05      |tc_sfb06      |tc_sfbud05   |tc_sfbud06    |tc_sfbud07   |tc_sfbud08    |tc_sfb07    |tc_sfb08    |tc_sfbud03   |tc_sfbud01  |tc_sfbud|tc_sfbu1|tc_sfbu2|tc_sfbu3|tc_sfbu4|tc_sfbu5|tc_sfbu6]
+[tc_sfb02   |tc_sfbud04     |tc_sfb03       |tc_sfbud02   |tc_sfb04     |tc_sfb05      |tc_sfb06      |tc_sfbud05   |tc_sfbud06    |tc_sfbud07   |tc_sfbud08    |tc_sfb07    |tc_sfb08    |tc_sfbud03   |tc_sfbud01  |tc_sfbud|tc_sfbu1|tc_sfbu2|tc_sfbu3|tc_sfbu4|tc_sfbu5|tc_sfbu6]
+[tc_sfb02   |tc_sfbud04     |tc_sfb03       |tc_sfbud02   |tc_sfb04     |tc_sfb05      |tc_sfb06      |tc_sfbud05   |tc_sfbud06    |tc_sfbud07   |tc_sfbud08    |tc_sfb07    |tc_sfb08    |tc_sfbud03   |tc_sfbud01  |tc_sfbud|tc_sfbu1|tc_sfbu2|tc_sfbu3|tc_sfbu4|tc_sfbu5|tc_sfbu6]
+[tc_sfb02   |tc_sfbud04     |tc_sfb03       |tc_sfbud02   |tc_sfb04     |tc_sfb05      |tc_sfb06      |tc_sfbud05   |tc_sfbud06    |tc_sfbud07   |tc_sfbud08    |tc_sfb07    |tc_sfb08    |tc_sfbud03   |tc_sfbud01  |tc_sfbud|tc_sfbu1|tc_sfbu2|tc_sfbu3|tc_sfbu4|tc_sfbu5|tc_sfbu6]
+}
+END -- s_tc_gyy
+Grid gr4835
+{
+  ----------[cnt1    ]   /  [cnt   ]   ---  Details [cn2   ] ----------
+
+}
+END -- gr4835
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit tc_sfa01=formonly.tc_sfa01, action=controlp, tabIndex=1, noEntry, image="zoom";
+DateEdit tc_sfa02=formonly.tc_sfa02, tabIndex=2;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit tc_sfa03=formonly.tc_sfa03, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit gen02=formonly.gen02, tabIndex=4;
+ComboBox tc_sfa04=formonly.tc_sfa04, tabIndex=5, noEntry, items=(("Y", "Y"),("N", "N"),("X", "X"));
+Edit tc_sfa05=formonly.tc_sfa05, tabIndex=6;
+Edit gen02_1=formonly.gen02_1, tabIndex=7, noEntry;
+DateEdit tc_sfa06=formonly.tc_sfa06, tabIndex=8;
+Edit tc_sfauser=formonly.tc_sfauser, tabIndex=9;
+Edit tc_sfagrup=formonly.tc_sfagrup, tabIndex=10;
+DateEdit tc_sfadate=formonly.tc_sfadate, tabIndex=11;
+Edit tc_sfamodu=formonly.tc_sfamodu, tabIndex=12;
+Edit tc_sfaud01=formonly.tc_sfaud01, tabIndex=13;
+Edit tc_sfaud05=formonly.tc_sfaud05, tabIndex=17;
+Edit tc_sfaud09=formonly.tc_sfaud09, tabIndex=21;
+DateEdit tc_sfaud13=formonly.tc_sfaud13 type DATE, tabIndex=25;
+Edit tc_sfaud02=formonly.tc_sfaud02, tabIndex=14;
+Edit tc_sfaud06=formonly.tc_sfaud06, tabIndex=18;
+Edit tc_sfaud10=formonly.tc_sfaud10, tabIndex=22;
+DateEdit tc_sfaud14=formonly.tc_sfaud14 type DATE, tabIndex=26;
+Edit tc_sfaud03=formonly.tc_sfaud03, tabIndex=15;
+Edit tc_sfaud07=formonly.tc_sfaud07, tabIndex=19;
+Edit tc_sfaud11=formonly.tc_sfaud11, tabIndex=23;
+DateEdit tc_sfaud15=formonly.tc_sfaud15 type DATE, tabIndex=27;
+Edit tc_sfaud04=formonly.tc_sfaud04, tabIndex=16;
+Edit tc_sfaud08=formonly.tc_sfaud08, tabIndex=20;
+Edit tc_sfaud12=formonly.tc_sfaud12, tabIndex=24;
+CheckBox sel=formonly.sel, tabIndex=52, title=%"sel", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sfb05=formonly.sfb05, tabIndex=57, title=%"sfb05", noEntry;
+Edit ecm04=formonly.ecm04, tabIndex=53, title=%"ecm04", noEntry;
+Edit ecm45=formonly.ecm45, tabIndex=54, title=%"ecm45", noEntry;
+Edit wipqty=formonly.wipqty, tabIndex=55, title=%"wipqty", noEntry;
+Edit llbg=formonly.llbg, tabIndex=58, title=%"llbg", noEntry;
+Edit pcl=formonly.pcl, tabIndex=59, title=%"pcl";
+Edit tc_sfb02=formonly.tc_sfb02, tabIndex=28, title=%"tc_sfb02", noEntry;
+Edit tc_sfbud04=formonly.tc_sfbud04, tabIndex=38, title=%"tc_sfbud04";
+ButtonEdit tc_sfb03=formonly.tc_sfb03, action=controlp, tabIndex=29, title=%"tc_sfb03", noEntry, image="zoom";
+Edit tc_sfbud02=formonly.tc_sfbud02, tabIndex=36, title=%"tc_sfbud02";
+Edit tc_sfb04=formonly.tc_sfb04, tabIndex=30, title=%"tc_sfb04", noEntry;
+Edit tc_sfb05=formonly.tc_sfb05, tabIndex=31, title=%"tc_sfb05", noEntry;
+Edit tc_sfb06=formonly.tc_sfb06, tabIndex=32, title=%"tc_sfb06", noEntry;
+Edit tc_sfbud05=formonly.tc_sfbud05, tabIndex=39, title=%"tc_sfbud05";
+Edit tc_sfbud06=formonly.tc_sfbud06, tabIndex=40, title=%"tc_sfbud06";
+Edit tc_sfbud07=formonly.tc_sfbud07, tabIndex=41, title=%"tc_sfbud07";
+Edit tc_sfbud08=formonly.tc_sfbud08, tabIndex=42, title=%"tc_sfbud08";
+Edit tc_sfb07=formonly.tc_sfb07, tabIndex=33, title=%"tc_sfb07", noEntry;
+Edit tc_sfb08=formonly.tc_sfb08, tabIndex=34, title=%"tc_sfb08";
+Edit tc_sfbud03=formonly.tc_sfbud03, tabIndex=37, title=%"tc_sfbud03";
+Edit tc_sfbud01=formonly.tc_sfbud01, tabIndex=35, title=%"tc_sfbud01";
+Edit tc_sfbud=formonly.tc_sfbud09, tabIndex=43, title=%"tc_sfbud09";
+Edit tc_sfbu1=formonly.tc_sfbud10, tabIndex=44, title=%"tc_sfbud10";
+Edit tc_sfbu2=formonly.tc_sfbud11, tabIndex=45, title=%"tc_sfbud11";
+Edit tc_sfbu3=formonly.tc_sfbud12, tabIndex=46, title=%"tc_sfbud12";
+DateEdit tc_sfbu4=formonly.tc_sfbud13 type DATE, tabIndex=47, title=%"tc_sfbud13";
+DateEdit tc_sfbu5=formonly.tc_sfbud14 type DATE, tabIndex=48, title=%"tc_sfbud14";
+DateEdit tc_sfbu6=formonly.tc_sfbud15 type DATE, tabIndex=49, title=%"tc_sfbud15";
+Edit cnt1=formonly.cnt1, tabIndex=56;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=50, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=51, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_sfa01,formonly.tc_sfa02,formonly.tc_sfa03,formonly.gen02,formonly.tc_sfa04,formonly.tc_sfa05,formonly.gen02_1,formonly.tc_sfa06,formonly.tc_sfauser,formonly.tc_sfagrup,formonly.tc_sfadate,formonly.tc_sfamodu,formonly.cnt,formonly.cn2,formonly.tc_sfaud01,formonly.tc_sfaud02,formonly.tc_sfaud03,formonly.tc_sfaud04,formonly.tc_sfaud05,formonly.tc_sfaud06,formonly.tc_sfaud07,formonly.tc_sfaud08,formonly.tc_sfaud09,formonly.tc_sfaud10,formonly.tc_sfaud11,formonly.tc_sfaud12,formonly.tc_sfaud13,formonly.tc_sfaud14,formonly.tc_sfaud15,formonly.cnt1,formonly.imgmksg)
+SCREEN RECORD s_tc_sfb(formonly.tc_sfb02,formonly.tc_sfbud04,formonly.tc_sfb03,formonly.tc_sfbud02,formonly.tc_sfb04,formonly.tc_sfb05,formonly.tc_sfb06,formonly.tc_sfbud05,formonly.tc_sfbud06,formonly.tc_sfbud07,formonly.tc_sfbud08,formonly.tc_sfb07,formonly.tc_sfb08,formonly.tc_sfbud03,formonly.tc_sfbud01,formonly.tc_sfbud09,formonly.tc_sfbud10,formonly.tc_sfbud11,formonly.tc_sfbud12,formonly.tc_sfbud13,formonly.tc_sfbud14,formonly.tc_sfbud15)
+SCREEN RECORD s_sfb(formonly.sel,formonly.sfb05,formonly.ecm04,formonly.ecm45,formonly.wipqty,formonly.llbg,formonly.pcl)
+END -- INSTRUCTIONS
+

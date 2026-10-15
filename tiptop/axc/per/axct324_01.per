@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct324_01.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct324_01")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr462
+{
+ Cost Calculate Category  [tc_cdl04              ]
+ Book No.                 [tc_cdl01]
+ Legal                    [tc_cdlle][azt02        ]
+
+
+
+}
+END -- gr462
+Grid gr463
+{
+ Year   [tc_c]    Month   [tc]
+ Entry  [tc_cdl11            ]                      [imgmksg]
+ glno   [nppglno             ]        [tc_cdlcon]   [       ]
+
+
+
+}
+END -- gr463
+END -- hb2
+END -- page01
+END -- folder01
+Table s_tc_cdl
+{
+[tc_cdl13      |tc_cdl06      |azf03          |tc_cdl05     |gem02         |tc_cdl16    |gem02_1     |tc_cdl07       |ima02                |tc_cdl08            |aag02          |tc_cdl14         |tc_cdl15          |tc_cdl09       |aag02_2           |tc_cdl10           ]
+[tc_cdl13      |tc_cdl06      |azf03          |tc_cdl05     |gem02         |tc_cdl16    |gem02_1     |tc_cdl07       |ima02                |tc_cdl08            |aag02          |tc_cdl14         |tc_cdl15          |tc_cdl09       |aag02_2           |tc_cdl10           ]
+[tc_cdl13      |tc_cdl06      |azf03          |tc_cdl05     |gem02         |tc_cdl16    |gem02_1     |tc_cdl07       |ima02                |tc_cdl08            |aag02          |tc_cdl14         |tc_cdl15          |tc_cdl09       |aag02_2           |tc_cdl10           ]
+[tc_cdl13      |tc_cdl06      |azf03          |tc_cdl05     |gem02         |tc_cdl16    |gem02_1     |tc_cdl07       |ima02                |tc_cdl08            |aag02          |tc_cdl14         |tc_cdl15          |tc_cdl09       |aag02_2           |tc_cdl10           ]
+[tc_cdl13      |tc_cdl06      |azf03          |tc_cdl05     |gem02         |tc_cdl16    |gem02_1     |tc_cdl07       |ima02                |tc_cdl08            |aag02          |tc_cdl14         |tc_cdl15          |tc_cdl09       |aag02_2           |tc_cdl10           ]
+}
+END -- s_tc_cdl
+Grid gr467
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------    Amt Tot.[cdl10_tot           ]
+
+
+
+
+}
+END -- gr467
+END -- vb1
+END -- axct324_01
+
+TABLES
+gem_file,
+azf_file,
+npp_file,
+azt_file
+ATTRIBUTES
+ComboBox tc_cdl04=formonly.tc_cdl04 type VARCHAR, tabIndex=1, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+ButtonEdit tc_cdl01=formonly.tc_cdl01 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit tc_cdlle=formonly.tc_cdllegal type VARCHAR, tabIndex=3;
+Edit azt02=azt_file.azt02, tabIndex=4;
+Edit tc_c=formonly.tc_cdl02 type SMALLINT, tabIndex=5;
+Edit tc=formonly.tc_cdl03 type SMALLINT, tabIndex=6;
+Edit tc_cdl11=formonly.tc_cdl11 type VARCHAR, tabIndex=7;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit nppglno=npp_file.nppglno, tabIndex=8;
+CheckBox tc_cdlcon=formonly.tc_cdlconf type CHAR, tabIndex=9, text="cdlconf", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit tc_cdl13=formonly.tc_cdl13 type CHAR, action=controlp, tabIndex=10, title="Type Code", noEntry, image="zoom";
+ButtonEdit tc_cdl06=formonly.tc_cdl06 type VARCHAR, action=controlp, tabIndex=11, title="Reson Code", noEntry, image="zoom";
+Edit azf03=azf_file.azf03, tabIndex=12, title="Desc", noEntry;
+ButtonEdit tc_cdl05=formonly.tc_cdl05 type VARCHAR, action=controlp, tabIndex=13, title="Dept No.", noEntry, image="zoom";
+Edit gem02=gem_file.gem02, tabIndex=14, title="Name", noEntry;
+Edit tc_cdl16=formonly.tc_cdl16 type VARCHAR, tabIndex=27, title=%"Cost Dept", noEntry;
+Edit gem02_1=formonly.gem02_1 type VARCHAR, tabIndex=28, title=%"Name2", noEntry;
+ButtonEdit tc_cdl07=formonly.tc_cdl07 type VARCHAR, action=controlp, tabIndex=15, title="Item No.", noEntry, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=16, title="Item Name";
+ButtonEdit tc_cdl08=formonly.tc_cdl08 type VARCHAR, action=controlp, tabIndex=17, title="Reson Acc", image="zoom";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=18, title="Acc Name", noEntry;
+ButtonEdit tc_cdl14=formonly.tc_cdl14 type VARCHAR, action=controlp, tabIndex=19, title=%"Project No.", image="zoom";
+ButtonEdit tc_cdl15=formonly.tc_cdl15 type VARCHAR, action=controlp, tabIndex=20, title=%"WBS No.", image="zoom";
+ButtonEdit tc_cdl09=formonly.tc_cdl09 type VARCHAR, action=controlp, tabIndex=21, title="Store Acc", not null, image="zoom";
+Edit aag02_2=formonly.aag02_2 type VARCHAR, tabIndex=22, title="Acc Name", noEntry;
+Edit tc_cdl10=formonly.tc_cdl10 type DECIMAL(20,6), tabIndex=23, title="Amt", noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=24;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=25;
+Edit cdl10_tot=formonly.cdl10_tot type DECIMAL(20,6), tabIndex=26;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tc_cdl(formonly.tc_cdl13,formonly.tc_cdl06,azf_file.azf03,formonly.tc_cdl05,gem_file.gem02,formonly.tc_cdl16,formonly.gem02_1,formonly.tc_cdl07,formonly.ima02,formonly.tc_cdl08,formonly.aag02,formonly.tc_cdl14,formonly.tc_cdl15,formonly.tc_cdl09,formonly.aag02_2,formonly.tc_cdl10)
+SCREEN RECORD Undefined(formonly.tc_cdl04,formonly.tc_cdl01,formonly.tc_cdllegal,azt_file.azt02,formonly.tc_cdl02,formonly.tc_cdl03,formonly.tc_cdl11,formonly.imgmksg,npp_file.nppglno,formonly.tc_cdlconf,formonly.cnt,formonly.cn2,formonly.cdl10_tot)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,111 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq400_slk.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox2(splitter)
+Grid Grid1
+{
+ <G group1                                                  >   <G group2                                                   >
+  [shop1          ]    [shop2       ]   [store      ]            [show1                    ]   [show2                ]
+ <                                                          >   <                                                           >
+ <G group3                                                                                                                                        >
+   Operations Center  [azw01                       ] purduce number   [ima01                      ]
+ <                                                                                                                                                >
+}
+END -- Grid1
+VBox VBox1(splitter)
+HBox HBox1
+Table s_img
+{
+[imgplant  |azw08     |img02     |imd02         |img03   |img04  |img01        |ima02         |img0|img10     ]
+[imgplant  |azw08     |img02     |imd02         |img03   |img04  |img01        |ima02         |img0|img10     ]
+[imgplant  |azw08     |img02     |imd02         |img03   |img04  |img01        |ima02         |img0|img10     ]
+[imgplant  |azw08     |img02     |imd02         |img03   |img04  |img01        |ima02         |img0|img10     ]
+[imgplant  |azw08     |img02     |imd02         |img03   |img04  |img01        |ima02         |img0|img10     ]
+[imgplant  |azw08     |img02     |imd02         |img03   |img04  |img01        |ima02         |img0|img10     ]
+[imgplant  |azw08     |img02     |imd02         |img03   |img04  |img01        |ima02         |img0|img10     ]
+[imgplant  |azw08     |img02     |imd02         |img03   |img04  |img01        |ima02         |img0|img10     ]
+[imgplant  |azw08     |img02     |imd02         |img03   |img04  |img01        |ima02         |img0|img10     ]
+[imgplant  |azw08     |img02     |imd02         |img03   |img04  |img01        |ima02         |img0|img10     ]
+}
+END -- s_img
+Table s_imx
+{
+[color |imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d]
+[color |imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d]
+[color |imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d]
+[color |imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d]
+[color |imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d]
+[color |imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d]
+[color |imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d]
+[color |imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d]
+[color |imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d]
+[color |imx01|imx02|imx03|imx04|imx05|imx06|imx07|imx08|imx09|imx10|i|a|b|c|d]
+}
+END -- s_imx
+END -- HBox1
+Grid gr3160
+{
+  ---------- Rows[cn2   ] --------------------------------------------------------------------
+
+}
+END -- gr3160
+END -- VBox1
+END -- VBox2
+END -- Form
+
+TABLES
+img_file,
+azw_file,
+imd_file,
+ima_file
+ATTRIBUTES
+Group group1:Group1, text=%"query stype";
+CheckBox shop1=formonly.shop1 type VARCHAR, tabIndex=1, text=%"current shop", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox shop2=formonly.shop2 type VARCHAR, tabIndex=2, text=%"area shop", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox store=formonly.store type VARCHAR, tabIndex=3, text=%"store", not null, valueChecked = "Y", valueUnchecked = "N";
+Group group2:Group2, text=%"detail produce";
+CheckBox show1=formonly.show1 type VARCHAR, tabIndex=4, text=%"query results into detail", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox show2=formonly.show2 type VARCHAR, tabIndex=5, text=%"only show store", not null, valueChecked = "Y", valueUnchecked = "N";
+Group group3:Group3, text=%"Group3";
+ButtonEdit azw01=azw_file.azw01, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=7, image="zoom";
+Edit imgplant=img_file.imgplant, tabIndex=8, title=%"imgplant", noEntry;
+Edit azw08=azw_file.azw08, tabIndex=9, title=%"azw08", noEntry;
+Edit img02=img_file.img02, tabIndex=10, title=%"img02", noEntry;
+Edit imd02=imd_file.imd02, tabIndex=11, title=%"imd02", noEntry;
+Edit img03=img_file.img03, tabIndex=12, title=%"img03", noEntry;
+Edit img04=img_file.img04, tabIndex=13, title=%"img04", noEntry;
+Edit img01=img_file.img01, tabIndex=14, title=%"img01", noEntry;
+Edit ima02=ima_file.ima02, tabIndex=15, title=%"ima02", noEntry;
+Edit img0=img_file.img09, tabIndex=16, title=%"img09", noEntry;
+Edit img10=img_file.img10, tabIndex=17, title=%"img10", noEntry;
+ComboBox color=formonly.color type VARCHAR, tabIndex=18, title=%"color", noEntry;
+Edit imx01=formonly.imx01 type VARCHAR, tabIndex=19, title=%"imx01";
+Edit imx02=formonly.imx02 type VARCHAR, tabIndex=20, title=%"imx02";
+Edit imx03=formonly.imx03 type VARCHAR, tabIndex=21, title=%"imx03";
+Edit imx04=formonly.imx04 type VARCHAR, tabIndex=22, title=%"imx04";
+Edit imx05=formonly.imx05 type VARCHAR, tabIndex=23, title=%"imx05";
+Edit imx06=formonly.imx06 type VARCHAR, tabIndex=24, title=%"imx06";
+Edit imx07=formonly.imx07 type VARCHAR, tabIndex=25, title=%"imx07";
+Edit imx08=formonly.imx08 type VARCHAR, tabIndex=26, title=%"imx08";
+Edit imx09=formonly.imx09 type VARCHAR, tabIndex=27, title=%"imx09";
+Edit imx10=formonly.imx10 type VARCHAR, tabIndex=28, title=%"imx10";
+Edit i=formonly.imx11 type VARCHAR, tabIndex=29, title=%"imx11";
+Edit a=formonly.imx12 type VARCHAR, tabIndex=30, title=%"imx12";
+Edit b=formonly.imx13 type VARCHAR, tabIndex=31, title=%"imx13";
+Edit c=formonly.imx14 type VARCHAR, tabIndex=32, title=%"imx14";
+Edit d=formonly.imx15 type VARCHAR, tabIndex=33, title=%"imx15";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=34;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.shop1,formonly.shop2,formonly.store,formonly.show1,formonly.show2,azw_file.azw01,ima_file.ima01,formonly.cn2)
+SCREEN RECORD s_img(img_file.imgplant,azw_file.azw08,img_file.img02,imd_file.imd02,img_file.img03,img_file.img04,img_file.img01,ima_file.ima02,img_file.img09,img_file.img10)
+SCREEN RECORD s_imx(formonly.color,formonly.imx01,formonly.imx02,formonly.imx03,formonly.imx04,formonly.imx05,formonly.imx06,formonly.imx07,formonly.imx08,formonly.imx09,formonly.imx10,formonly.imx11,formonly.imx12,formonly.imx13,formonly.imx14,formonly.imx15)
+END -- INSTRUCTIONS
+

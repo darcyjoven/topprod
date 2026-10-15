@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr100")
+VBox VBox1
+Group group05(text=%"QBE")
+Grid Grid1
+{
+ W/O No.      [sfb01           ]
+
+}
+END -- Grid1
+END -- group05
+Group group01(text="INPUT")
+Grid gr594
+{
+ <G group02                      ><G group03                   >
+ [a                             ] [d                          ]
+ [b                             ] [e                          ]
+ [c                             ] [f                          ]
+ <                               ><                            >
+ <G group04                                                    >
+  Ending Date         [e_date      ]
+ <                                                             >
+
+}
+END -- gr594
+END -- group01
+Grid gr595
+{
+[more                                                  ]
+
+}
+END -- gr595
+END -- VBox1
+END -- asfr100
+
+ATTRIBUTES
+ButtonEdit sfb01=formonly.sfb01 type VARCHAR, action=controlp, tabIndex=9, image="zoom";
+Group group02:group02;
+CheckBox a=formonly.a type VARCHAR, tabIndex=1, text="Include Requirement Data?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=2, text="Include Confirmed W/O", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=3, text="Include WIP W/O", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03;
+CheckBox d=formonly.d type VARCHAR, tabIndex=4, text="Print Mass Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=5, text="Print only Short Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type VARCHAR, tabIndex=6, text="Count Wastage Ratio", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04;
+DateEdit e_date=formonly.e_date type DATE, tabIndex=7;
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.b,formonly.c,formonly.d,formonly.e,formonly.f,formonly.e_date,formonly.more,formonly.sfb01)
+END -- INSTRUCTIONS
+

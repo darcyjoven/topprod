@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_mis.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_mis")
+Grid gr3228
+{
+ <G group01                                    >
+ [chk1                                        ]
+ [chk2                                        ]
+ [chk3                                        ]
+ <                                             >
+ <G group02                                   >
+ [chk4                                        ]
+ [chk5                                        ]
+ [chk9                           ]
+ <                                            >
+ <G group03                                   >
+ [chk6                                        ]
+ [chk7                                        ]
+ [chk8                                       ]
+ <                                            >
+
+}
+END -- gr3228
+END -- p_mis
+
+ATTRIBUTES
+Group group01:group01, text="System Auth Maintaince";
+CheckBox chk1=formonly.chk1 type CHAR, tabIndex=1, text="Redo Auto Grab Action ID in Each Program(gap)", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox chk2=formonly.chk2 type CHAR, tabIndex=2, text="Redo Auto Modify Action ID in Program Data(p_zz)", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox chk3=formonly.chk3 type CHAR, tabIndex=3, text="Redo Auto Grab Action ID in Auth.(p_zy) ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Configure File Group Maintaince";
+CheckBox chk4=formonly.chk4 type CHAR, tabIndex=4, text="Redo Action Default Files for all Programs.(4ad) ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox chk5=formonly.chk5 type CHAR, tabIndex=5, text="Redo TopMenu Files for all Programs.(4tm) ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox chk9=formonly.chk9 type CHAR, tabIndex=6, text="Re-generate All Users\' Start Menu File. (4sm)", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Documents Maintaince";
+CheckBox chk6=formonly.chk6 type CHAR, tabIndex=7, text="Re-generate All Programs\'  On-line Help (p_help)", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox chk7=formonly.chk7 type CHAR, tabIndex=8, text="Re-catch Relationship Between Programs And Data (p_zr)", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox chk8=formonly.chk8 type CHAR, tabIndex=9, text="Re-catch Descriptions in Library / Subroutine Functions (p_helpfunc)", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.chk1,formonly.chk2,formonly.chk3,formonly.chk4,formonly.chk5,formonly.chk9,formonly.chk6,formonly.chk7,formonly.chk8)
+END -- INSTRUCTIONS
+

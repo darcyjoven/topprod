@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqct1101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqct1101")
+Folder pc48
+Page page01(text="Page01")
+VBox vb3
+Table s_qcu
+{
+[qcu04         |qce03                   |qcu05   |qcuicd01  |qcuicd02    |icd03            ]
+[qcu04         |qce03                   |qcu05   |qcuicd01  |qcuicd02    |icd03            ]
+[qcu04         |qce03                   |qcu05   |qcuicd01  |qcuicd02    |icd03            ]
+[qcu04         |qce03                   |qcu05   |qcuicd01  |qcuicd02    |icd03            ]
+[qcu04         |qce03                   |qcu05   |qcuicd01  |qcuicd02    |icd03            ]
+[qcu04         |qce03                   |qcu05   |qcuicd01  |qcuicd02    |icd03            ]
+[qcu04         |qce03                   |qcu05   |qcuicd01  |qcuicd02    |icd03            ]
+[qcu04         |qce03                   |qcu05   |qcuicd01  |qcuicd02    |icd03            ]
+[qcu04         |qce03                   |qcu05   |qcuicd01  |qcuicd02    |icd03            ]
+[qcu04         |qce03                   |qcu05   |qcuicd01  |qcuicd02    |icd03            ]
+
+}
+END -- s_qcu
+Grid gr187
+{
+ <G group01                       >
+  Total               [qcu05t    ]
+ <                                >
+
+}
+END -- gr187
+END -- vb3
+END -- page01
+Page info(text="Info")
+Grid gr188
+{
+ <G grpinfo                       >
+  Detail Counts       [cn2       ]
+ <                                >
+
+}
+END -- gr188
+END -- info
+END -- pc48
+END -- aqct1101
+
+TABLES
+qcu_file
+ATTRIBUTES
+ButtonEdit qcu04=formonly.qcu04 type CHAR, action=controlp, tabIndex=1, title="NO-Good Cause", not null, required, image="zoom", comment="<^P>Qry Failure(No-Gd) Cause";
+Edit qce03=formonly.qce03 type CHAR, tabIndex=2, title="Description", noEntry;
+Edit qcu05=formonly.qcu05 type CHAR, tabIndex=3, title="Qty";
+ButtonEdit qcuicd01=qcu_file.qcuicd01, action=controlp, tabIndex=6, title="Wafer Mark", image="zoom.png";
+ButtonEdit qcuicd02=qcu_file.qcuicd02, action=controlp, tabIndex=7, title="Inspect Area", image="zoom.png";
+Edit icd03=formonly.icd03 type VARCHAR, tabIndex=8, title="Inspect Area Desc", noEntry;
+Group group01:group01;
+Edit qcu05t=formonly.qcu05t type CHAR, tabIndex=4, noEntry;
+Group grpinfo:grpinfo;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcu(formonly.qcu04,formonly.qce03,formonly.qcu05,qcu_file.qcuicd01,qcu_file.qcuicd02,formonly.icd03)
+SCREEN RECORD Undefined(formonly.qcu05t,formonly.cn2)
+END -- INSTRUCTIONS
+

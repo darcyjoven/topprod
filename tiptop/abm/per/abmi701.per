@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi701")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr805
+{
+ Engineering Change Note[bmx01                    ][imgmksg]
+ Date of Entry          [bmx02       ]             [       ]
+}
+END -- gr805
+END -- page01
+Page info(text="Info")
+Grid gr806
+{
+ Record Owner        [bmxuser   ] Last Modified by    [bmxmodu   ] Data Valid Code     [bmxacti   ]
+ Department          [bmxgrup   ] Create/Modify Date  [bmxdate   ]
+ Record Orig.        [bmxoriu   ]
+ Dept Orig.          [bmxorig   ]
+}
+END -- gr806
+END -- info
+END -- folder01
+Table s_bmg
+{
+[bmg0|bmg03                                                       ]
+[bmg0|bmg03                                                       ]
+[bmg0|bmg03                                                       ]
+[bmg0|bmg03                                                       ]
+[bmg0|bmg03                                                       ]
+[bmg0|bmg03                                                       ]
+[bmg0|bmg03                                                       ]
+[bmg0|bmg03                                                       ]
+[bmg0|bmg03                                                       ]
+[bmg0|bmg03                                                       ]
+[bmg0|bmg03                                                       ]
+
+}
+END -- s_bmg
+Grid gr807
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr807
+END -- vb2
+END -- abmi701
+
+TABLES
+bmx_file,
+bmg_file
+ATTRIBUTES
+ButtonEdit bmx01=bmx_file.bmx01, action=controlp, tabIndex=1, image="zoom.png", comment="Enter Enginering Change Note#";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+DateEdit bmx02=bmx_file.bmx02, tabIndex=3, noEntry;
+Edit bmxuser=bmx_file.bmxuser, tabIndex=4, noEntry;
+Edit bmxmodu=bmx_file.bmxmodu, tabIndex=5, noEntry;
+Edit bmxacti=bmx_file.bmxacti, tabIndex=6, noEntry, upShift;
+Edit bmxgrup=bmx_file.bmxgrup, tabIndex=7, noEntry;
+DateEdit bmxdate=bmx_file.bmxdate, tabIndex=8, noEntry;
+Edit bmxoriu=bmx_file.bmxoriu, tabIndex=501, noEntry;
+Edit bmxorig=bmx_file.bmxorig, tabIndex=502, noEntry;
+Edit bmg0=bmg_file.bmg02, tabIndex=9, title="Ln#", not null, required;
+Edit bmg03=bmg_file.bmg03, tabIndex=10, title="Desc of Change", not null, required, comment="Enter Description of Change";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmg(bmg_file.bmg02,bmg_file.bmg03)
+SCREEN RECORD Undefined(bmx_file.bmx01,formonly.imgmksg,bmx_file.bmx02,bmx_file.bmxuser,bmx_file.bmxmodu,bmx_file.bmxacti,bmx_file.bmxgrup,bmx_file.bmxdate,bmx_file.bmxoriu,bmx_file.bmxorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

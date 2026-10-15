@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri035_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"s_hrbua")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+  <T table1                                                                                                                       >
+  [hrbua02                        |hrbua03                        |hrbua04                        ]
+  [hrbua02                        |hrbua03                        |hrbua04                        ]
+  [hrbua02                        |hrbua03                        |hrbua04                        ]
+  [hrbua02                        |hrbua03                        |hrbua04                        ]
+  [hrbua02                        |hrbua03                        |hrbua04                        ]
+  <                                                                                                                               >
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Grid Grid3
+{
+
+  ----------  ROWS [cn2       ]----------
+
+
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- Grid1
+
+ATTRIBUTES
+Table table1:Table1;
+Edit hrbua02=formonly.hrbua02 type VARCHAR, tabIndex=1, title=%"hrbua02", not null;
+Edit hrbua03=formonly.hrbua03 type VARCHAR, tabIndex=1, title=%"hrbua03", not null;
+Edit hrbua04=formonly.hrbua04 type VARCHAR, tabIndex=1, title=%"hrbua04";
+Edit cn2=formonly.cn2 type DECIMAL, tabIndex=1;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cn2)
+SCREEN RECORD s_hrbua(formonly.hrbua02,formonly.hrbua03,formonly.hrbua04)
+END -- INSTRUCTIONS
+

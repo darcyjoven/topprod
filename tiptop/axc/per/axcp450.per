@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp450.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcp450")
+VBox VBox1
+Grid gr1521
+{
+ <G group01                                           >
+  Cost Grp QBE        [ima12     ]
+  Cost Lvl QBE        [ima57     ]
+  M.Item # QBE        [ccg04                         ]
+ <                                                    >
+ <G group02                                           >
+  Data YY             [yy        ]
+  Data MM             [mm        ]
+ [more                                      ]
+ <                                                    >
+
+}
+END -- gr1521
+Grid gr1522
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr1522
+END -- VBox1
+END -- axcp450
+
+ATTRIBUTES
+Group group01:group01;
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=1;
+Edit ima57=formonly.ima57 type CHAR, tabIndex=2;
+ButtonEdit ccg04=formonly.ccg04 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Group group02:group02;
+Edit yy=formonly.yy type CHAR, tabIndex=4;
+Edit mm=formonly.mm type CHAR, tabIndex=5;
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other Condition to Print", valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=7, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima12,formonly.ima57,formonly.ccg04,formonly.yy,formonly.mm,formonly.more,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

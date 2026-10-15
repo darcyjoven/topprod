@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi132.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axmi132")
+VBox vb2
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr2
+{
+
+      ocq01  [ocq01           ][ocq02       ]
+      ocq03  [ocq03           ][agc02              ]
+     [ocq06    ]
+     [         ]
+
+
+}
+END -- gr2
+END -- Page3
+Page Page4(text=%"Info")
+Grid gr4
+{
+ Record Owner [ocquser   ]   Last Modified by   [ocqmodu     ]  Data Valid Code [ocqac]
+ Department   [ocqgrup   ]   Create/Modify Date [ocqdate     ]
+}
+END -- gr4
+END -- Page4
+END -- pc2
+Table s_ocq
+{
+[ocq04           |ocq05           ]
+[ocq04           |ocq05           ]
+[ocq04           |ocq05           ]
+[ocq04           |ocq05           ]
+[ocq04           |ocq05           ]
+
+}
+END -- s_ocq
+Grid gr5
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5
+END -- vb2
+END -- axmi132
+
+TABLES
+ocq_file
+ATTRIBUTES
+Edit ocq01=ocq_file.ocq01, tabIndex=6, not null, required;
+Edit ocq02=ocq_file.ocq02, tabIndex=7, not null, required;
+ButtonEdit ocq03=ocq_file.ocq03, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+Edit agc02=formonly.agc02 type VARCHAR, tabIndex=9, noEntry;
+RadioGroup ocq06=ocq_file.ocq06, tabIndex=14, items=(("1", "size"),("2", "color"));
+Edit ocquser=ocq_file.ocquser, tabIndex=1, noEntry;
+Edit ocqmodu=ocq_file.ocqmodu, tabIndex=2, noEntry;
+Edit ocqac=ocq_file.ocqacti, tabIndex=3, noEntry, upShift;
+Edit ocqgrup=ocq_file.ocqgrup, tabIndex=4, noEntry;
+DateEdit ocqdate=ocq_file.ocqdate, tabIndex=5, noEntry;
+ButtonEdit ocq04=ocq_file.ocq04, action=controlp, tabIndex=10, title="ocq04", not null, required, image="zoom.png";
+Edit ocq05=ocq_file.ocq05, tabIndex=11, title="ocq05", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ocq(ocq_file.ocq04,ocq_file.ocq05)
+SCREEN RECORD Undefined(ocq_file.ocq01,ocq_file.ocq02,ocq_file.ocq03,formonly.agc02,ocq_file.ocq06,ocq_file.ocquser,ocq_file.ocqmodu,ocq_file.ocqacti,ocq_file.ocqgrup,ocq_file.ocqdate,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxi991.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxi991")
+VBox VBox1
+Folder pc170
+Page page01(text="Main")
+Grid gr1060
+{
+  Bonded Item         [mea02               ]
+  Specification       [ima02                         ]
+  Serial No.          [mea01     ]
+
+ <G group01                                           >
+  Effective Date      [mea03       ]
+  Expiry Date         [mea04       ]
+  Approval #          [mea05               ]
+  Approval Date       [mea06       ]
+ <                                                    >
+
+}
+END -- gr1060
+END -- page01
+END -- pc170
+Grid gr1061
+{
+  ----------Rows [cnt   ] ----------
+
+}
+END -- gr1061
+END -- VBox1
+END -- abxi991
+
+TABLES
+mea_file,
+ima_file
+ATTRIBUTES
+ButtonEdit mea02=mea_file.mea02, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Item No.";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit mea01=mea_file.mea01, tabIndex=3, not null, required;
+Group group01:group01;
+DateEdit mea03=mea_file.mea03, tabIndex=4, not null, required, comment="Enter [Eff.Date]";
+DateEdit mea04=mea_file.mea04, tabIndex=5, comment="Enter [Exp.Date]";
+Edit mea05=mea_file.mea05, tabIndex=6, comment="Enter [Approval #]";
+DateEdit mea06=mea_file.mea06, tabIndex=7, not null, required, comment="Enter [Appr.Dt] ";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(mea_file.mea02,ima_file.ima02,mea_file.mea01,mea_file.mea03,mea_file.mea04,mea_file.mea05,mea_file.mea06,formonly.cnt)
+END -- INSTRUCTIONS
+

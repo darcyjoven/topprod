@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapp102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapp102")
+VBox vb4
+Grid gr41
+{
+ <G group01                                                         >
+  Enter Carry Forward Year [yy        ]
+                           [g_a                                 ]
+ <                                                                  >
+}
+END -- gr41
+Grid gr42
+{
+[g_bgjob                                                     ]
+
+}
+END -- gr42
+END -- vb4
+END -- aapp102
+
+ATTRIBUTES
+Group group01:group01;
+Edit yy=formonly.yy type SMALLINT, tabIndex=1;
+CheckBox g_a=formonly.g_a type CHAR, tabIndex=3, text="Auto Change Account No. By Year", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=2, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.g_a,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

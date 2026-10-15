@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt5405.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt5405")
+Folder pc1003
+Page page01(text="Page01")
+Grid gr5307
+{
+ <G group01                                     > <G group02                                          >
+  Account       [pmn40               ]             Task#              [pmn43 ]
+  Account 2     [pmn401              ]             Next Task#         [pmn431]
+  Shp.Address   [pmn23     ]                       Substituted Item#  [pmn61                        ]
+  Inquiry List# [pmn03               ]             Substitution Ratio [pmn62 ]
+  Vender Item#  [pmn06                         ]
+ <                                              > <                                                   >
+ <G group03                                 > <G group04                               >
+  Ratio (Over/Short Deliv.) [pmn13     ]         Document# [pmn05              ]
+  Partial Delivery          [pmn14     ]
+  Advance Delivery          [pmn15     ]
+  Standard Price            [pmn30          ]
+
+ <                                          > <                                        >
+
+}
+END -- gr5307
+END -- page01
+END -- pc1003
+END -- apmt5405
+
+TABLES
+pmn_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit pmn40=pmn_file.pmn40, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit pmn401=pmn_file.pmn401, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit pmn23=pmn_file.pmn23, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Shipping Address";
+ButtonEdit pmn03=pmn_file.pmn03, action=controlp, tabIndex=4, image="zoom";
+Edit pmn06=pmn_file.pmn06, tabIndex=5;
+Group group02:group02;
+Edit pmn43=pmn_file.pmn43, tabIndex=6;
+Edit pmn431=pmn_file.pmn431, tabIndex=7;
+ButtonEdit pmn61=pmn_file.pmn61, action=controlp, tabIndex=8, not null, required, image="zoom";
+Edit pmn62=pmn_file.pmn62, tabIndex=9, not null, required;
+Group group03:group03;
+Edit pmn13=pmn_file.pmn13, tabIndex=10;
+Edit pmn14=pmn_file.pmn14, tabIndex=11, upShift;
+Edit pmn15=pmn_file.pmn15, tabIndex=12, upShift;
+Edit pmn30=pmn_file.pmn30, tabIndex=13;
+Group group04:group04;
+Edit pmn05=pmn_file.pmn05, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pmn_file.pmn40,pmn_file.pmn401,pmn_file.pmn23,pmn_file.pmn03,pmn_file.pmn06,pmn_file.pmn43,pmn_file.pmn431,pmn_file.pmn61,pmn_file.pmn62,pmn_file.pmn13,pmn_file.pmn14,pmn_file.pmn15,pmn_file.pmn30,pmn_file.pmn05)
+END -- INSTRUCTIONS
+

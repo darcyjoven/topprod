@@ -1,0 +1,382 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt540_syc.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt540")
+VBox vb17
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr5290
+{
+ P/O No               [pmm01           ]
+ Change S/N           [pmm03       ]
+ Data Source          [pmm909      ]
+
+
+
+
+
+
+}
+END -- gr5290
+Grid gr5291
+{
+ Date                 [pmm04       ]
+ Document Property    [pmm02       ]
+
+
+
+
+
+
+
+}
+END -- gr5291
+Grid gr5292
+{
+ Supplier             [pmm09       ][pmc03     ]
+ Project No.          [pmm05       ]
+
+
+
+
+
+
+
+}
+END -- gr5292
+Grid gr5293
+{
+ Confirm              [pmm18   ]
+ Current Status       [pmm25   ]
+                      [imgmksg]
+                      [       ]
+
+
+
+
+
+}
+END -- gr5293
+END -- hb1
+END -- page01
+Page info(text="Info")
+Grid gr5294
+{
+ Record Owner        [pmmuser   ] Last Modified by    [pmmmodu   ]   Data Valid Code     [pmmact]
+ Department          [pmmgrup   ] Create/Modify Date  [pmmdate     ]
+ Record Orig.        [pmmoriu   ]
+ Dept Orig.          [pmmorig   ]
+
+
+
+}
+END -- gr5294
+END -- info
+END -- folder01
+Folder folder02
+Page page02(text="General")
+HBox hb5
+Grid gr5295
+{
+ Pay.Terms               [pmm20  ][pma02          ]
+ Price Terms             [pmm41  ][pnz02          ]
+ Shipping Address        [pmm10  ]
+ Invoice Address         [pmm11  ]
+
+
+
+
+
+
+
+}
+END -- gr5295
+Grid gr5296
+{
+ Buyer             [pmm12   ][gen02     ]
+ Department        [pmm13   ][gem02     ]
+ Tax Rate          [pmm21   ][pmm43     ]%[gec07  ]
+ Ex. Rate          [pmm22   ][pmm42               ]
+
+
+
+
+
+
+
+}
+END -- gr5296
+Grid gr5297
+{
+[pmm45                            ]
+[pmmmksg                          ]
+[pmm905                           ]
+ Mti-Trade S/N      [pmm99            ]
+
+
+
+
+
+
+
+}
+END -- gr5297
+END -- hb5
+END -- page02
+Page page03(text="Other")
+HBox hb6
+Grid gr5298
+{
+ Goods Received Department [pmm14     ][gem02_2   ]
+ Confirmed By              [pmm15     ][gen02_2   ]
+ Shipping Method           [pmm16     ]
+ Agent                     [pmm17     ][pmc03_2   ]
+
+
+
+
+
+
+
+}
+END -- gr5298
+Grid gr5299
+{
+[pmm30                                            ]
+ Deduct/Offset             [pmm44                 ]
+
+
+
+
+
+
+
+
+
+}
+END -- gr5299
+END -- hb6
+END -- page03
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[pmmud01                       ] userdefined_field07[pmmud07        ] userdefined_field13[pmmud13        ]
+                    [                              ] userdefined_field08[pmmud08        ] userdefined_field14[pmmud14        ]
+ userdefined_field02[pmmud02        ]                userdefined_field09[pmmud09        ] userdefined_field15[pmmud15        ]
+ userdefined_field03[pmmud03        ]                userdefined_field10[pmmud10        ]
+ userdefined_field04[pmmud04        ]                userdefined_field11[pmmud11        ]
+ userdefined_field05[pmmud05        ]                userdefined_field12[pmmud12        ]
+ userdefined_field06[pmmud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder02
+Table s_pmn
+{
+[pmn|pmn24           |pmn25      |pmn65  |pmn41    |pm|pmn16  |pmnislk01 |pmn04                 |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |pmn041                         |ima021                         |pmniicd14 |pmniicd15 |pmn07 |pmn20           |pmn83         |pmn84                    |pmn85        |pmn80         |pmn81                    |pmn82        |pmn86      |pmn87         |pmniicd13 |pmn68           |p|pmn31               |pmn31t              |pmn89     |pmn64  |pmn6|pmn33         |pmn34         |pmn122     |pmn96       |pmn97     |pmn67     |pmn98     |pmn40     |pmn401    |pmn930      |gem02a      |pmn43         |pmn431      |pmn91     |pmn38         |pmn90           |pmn1|pmn123  |mse02        |pmniicd06 |pmniicd09 |pmniicd18 |pmniicd12 |pmniicd08 |pmniicd03 |pmniicd11 |pmniicd05 |pmnud01   |pmnud02   |pmnud03    |pmnud04    |pmnud05    |pmnud06    |pmnud07    |pmnud08    |pmnud09    |pmnud10    |pmnud11   |pmnud12  |pmnud13   |pmnud14   |pmnud15    ]
+[pmn|pmn24           |pmn25      |pmn65  |pmn41    |pm|pmn16  |pmnislk01 |pmn04                 |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |pmn041                         |ima021                         |pmniicd14 |pmniicd15 |pmn07 |pmn20           |pmn83         |pmn84                    |pmn85        |pmn80         |pmn81                    |pmn82        |pmn86      |pmn87         |pmniicd13 |pmn68           |p|pmn31               |pmn31t              |pmn89     |pmn64  |pmn6|pmn33         |pmn34         |pmn122     |pmn96       |pmn97     |pmn67     |pmn98     |pmn40     |pmn401    |pmn930      |gem02a      |pmn43         |pmn431      |pmn91     |pmn38         |pmn90           |pmn1|pmn123  |mse02        |pmniicd06 |pmniicd09 |pmniicd18 |pmniicd12 |pmniicd08 |pmniicd03 |pmniicd11 |pmniicd05 |pmnud01   |pmnud02   |pmnud03    |pmnud04    |pmnud05    |pmnud06    |pmnud07    |pmnud08    |pmnud09    |pmnud10    |pmnud11   |pmnud12  |pmnud13   |pmnud14   |pmnud15    ]
+[pmn|pmn24           |pmn25      |pmn65  |pmn41    |pm|pmn16  |pmnislk01 |pmn04                 |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |pmn041                         |ima021                         |pmniicd14 |pmniicd15 |pmn07 |pmn20           |pmn83         |pmn84                    |pmn85        |pmn80         |pmn81                    |pmn82        |pmn86      |pmn87         |pmniicd13 |pmn68           |p|pmn31               |pmn31t              |pmn89     |pmn64  |pmn6|pmn33         |pmn34         |pmn122     |pmn96       |pmn97     |pmn67     |pmn98     |pmn40     |pmn401    |pmn930      |gem02a      |pmn43         |pmn431      |pmn91     |pmn38         |pmn90           |pmn1|pmn123  |mse02        |pmniicd06 |pmniicd09 |pmniicd18 |pmniicd12 |pmniicd08 |pmniicd03 |pmniicd11 |pmniicd05 |pmnud01   |pmnud02   |pmnud03    |pmnud04    |pmnud05    |pmnud06    |pmnud07    |pmnud08    |pmnud09    |pmnud10    |pmnud11   |pmnud12  |pmnud13   |pmnud14   |pmnud15    ]
+[pmn|pmn24           |pmn25      |pmn65  |pmn41    |pm|pmn16  |pmnislk01 |pmn04                 |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |pmn041                         |ima021                         |pmniicd14 |pmniicd15 |pmn07 |pmn20           |pmn83         |pmn84                    |pmn85        |pmn80         |pmn81                    |pmn82        |pmn86      |pmn87         |pmniicd13 |pmn68           |p|pmn31               |pmn31t              |pmn89     |pmn64  |pmn6|pmn33         |pmn34         |pmn122     |pmn96       |pmn97     |pmn67     |pmn98     |pmn40     |pmn401    |pmn930      |gem02a      |pmn43         |pmn431      |pmn91     |pmn38         |pmn90           |pmn1|pmn123  |mse02        |pmniicd06 |pmniicd09 |pmniicd18 |pmniicd12 |pmniicd08 |pmniicd03 |pmniicd11 |pmniicd05 |pmnud01   |pmnud02   |pmnud03    |pmnud04    |pmnud05    |pmnud06    |pmnud07    |pmnud08    |pmnud09    |pmnud10    |pmnud11   |pmnud12  |pmnud13   |pmnud14   |pmnud15    ]
+[pmn|pmn24           |pmn25      |pmn65  |pmn41    |pm|pmn16  |pmnislk01 |pmn04                 |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |pmn041                         |ima021                         |pmniicd14 |pmniicd15 |pmn07 |pmn20           |pmn83         |pmn84                    |pmn85        |pmn80         |pmn81                    |pmn82        |pmn86      |pmn87         |pmniicd13 |pmn68           |p|pmn31               |pmn31t              |pmn89     |pmn64  |pmn6|pmn33         |pmn34         |pmn122     |pmn96       |pmn97     |pmn67     |pmn98     |pmn40     |pmn401    |pmn930      |gem02a      |pmn43         |pmn431      |pmn91     |pmn38         |pmn90           |pmn1|pmn123  |mse02        |pmniicd06 |pmniicd09 |pmniicd18 |pmniicd12 |pmniicd08 |pmniicd03 |pmniicd11 |pmniicd05 |pmnud01   |pmnud02   |pmnud03    |pmnud04    |pmnud05    |pmnud06    |pmnud07    |pmnud08    |pmnud09    |pmnud10    |pmnud11   |pmnud12  |pmnud13   |pmnud14   |pmnud15    ]
+[pmn|pmn24           |pmn25      |pmn65  |pmn41    |pm|pmn16  |pmnislk01 |pmn04                 |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |pmn041                         |ima021                         |pmniicd14 |pmniicd15 |pmn07 |pmn20           |pmn83         |pmn84                    |pmn85        |pmn80         |pmn81                    |pmn82        |pmn86      |pmn87         |pmniicd13 |pmn68           |p|pmn31               |pmn31t              |pmn89     |pmn64  |pmn6|pmn33         |pmn34         |pmn122     |pmn96       |pmn97     |pmn67     |pmn98     |pmn40     |pmn401    |pmn930      |gem02a      |pmn43         |pmn431      |pmn91     |pmn38         |pmn90           |pmn1|pmn123  |mse02        |pmniicd06 |pmniicd09 |pmniicd18 |pmniicd12 |pmniicd08 |pmniicd03 |pmniicd11 |pmniicd05 |pmnud01   |pmnud02   |pmnud03    |pmnud04    |pmnud05    |pmnud06    |pmnud07    |pmnud08    |pmnud09    |pmnud10    |pmnud11   |pmnud12  |pmnud13   |pmnud14   |pmnud15    ]
+[pmn|pmn24           |pmn25      |pmn65  |pmn41    |pm|pmn16  |pmnislk01 |pmn04                 |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |pmn041                         |ima021                         |pmniicd14 |pmniicd15 |pmn07 |pmn20           |pmn83         |pmn84                    |pmn85        |pmn80         |pmn81                    |pmn82        |pmn86      |pmn87         |pmniicd13 |pmn68           |p|pmn31               |pmn31t              |pmn89     |pmn64  |pmn6|pmn33         |pmn34         |pmn122     |pmn96       |pmn97     |pmn67     |pmn98     |pmn40     |pmn401    |pmn930      |gem02a      |pmn43         |pmn431      |pmn91     |pmn38         |pmn90           |pmn1|pmn123  |mse02        |pmniicd06 |pmniicd09 |pmniicd18 |pmniicd12 |pmniicd08 |pmniicd03 |pmniicd11 |pmniicd05 |pmnud01   |pmnud02   |pmnud03    |pmnud04    |pmnud05    |pmnud06    |pmnud07    |pmnud08    |pmnud09    |pmnud10    |pmnud11   |pmnud12  |pmnud13   |pmnud14   |pmnud15    ]
+[pmn|pmn24           |pmn25      |pmn65  |pmn41    |pm|pmn16  |pmnislk01 |pmn04                 |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |pmn041                         |ima021                         |pmniicd14 |pmniicd15 |pmn07 |pmn20           |pmn83         |pmn84                    |pmn85        |pmn80         |pmn81                    |pmn82        |pmn86      |pmn87         |pmniicd13 |pmn68           |p|pmn31               |pmn31t              |pmn89     |pmn64  |pmn6|pmn33         |pmn34         |pmn122     |pmn96       |pmn97     |pmn67     |pmn98     |pmn40     |pmn401    |pmn930      |gem02a      |pmn43         |pmn431      |pmn91     |pmn38         |pmn90           |pmn1|pmn123  |mse02        |pmniicd06 |pmniicd09 |pmniicd18 |pmniicd12 |pmniicd08 |pmniicd03 |pmniicd11 |pmniicd05 |pmnud01   |pmnud02   |pmnud03    |pmnud04    |pmnud05    |pmnud06    |pmnud07    |pmnud08    |pmnud09    |pmnud10    |pmnud11   |pmnud12  |pmnud13   |pmnud14   |pmnud15    ]
+[pmn|pmn24           |pmn25      |pmn65  |pmn41    |pm|pmn16  |pmnislk01 |pmn04                 |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |pmn041                         |ima021                         |pmniicd14 |pmniicd15 |pmn07 |pmn20           |pmn83         |pmn84                    |pmn85        |pmn80         |pmn81                    |pmn82        |pmn86      |pmn87         |pmniicd13 |pmn68           |p|pmn31               |pmn31t              |pmn89     |pmn64  |pmn6|pmn33         |pmn34         |pmn122     |pmn96       |pmn97     |pmn67     |pmn98     |pmn40     |pmn401    |pmn930      |gem02a      |pmn43         |pmn431      |pmn91     |pmn38         |pmn90           |pmn1|pmn123  |mse02        |pmniicd06 |pmniicd09 |pmniicd18 |pmniicd12 |pmniicd08 |pmniicd03 |pmniicd11 |pmniicd05 |pmnud01   |pmnud02   |pmnud03    |pmnud04    |pmnud05    |pmnud06    |pmnud07    |pmnud08    |pmnud09    |pmnud10    |pmnud11   |pmnud12  |pmnud13   |pmnud14   |pmnud15    ]
+[pmn|pmn24           |pmn25      |pmn65  |pmn41    |pm|pmn16  |pmnislk01 |pmn04                 |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |pmn041                         |ima021                         |pmniicd14 |pmniicd15 |pmn07 |pmn20           |pmn83         |pmn84                    |pmn85        |pmn80         |pmn81                    |pmn82        |pmn86      |pmn87         |pmniicd13 |pmn68           |p|pmn31               |pmn31t              |pmn89     |pmn64  |pmn6|pmn33         |pmn34         |pmn122     |pmn96       |pmn97     |pmn67     |pmn98     |pmn40     |pmn401    |pmn930      |gem02a      |pmn43         |pmn431      |pmn91     |pmn38         |pmn90           |pmn1|pmn123  |mse02        |pmniicd06 |pmniicd09 |pmniicd18 |pmniicd12 |pmniicd08 |pmniicd03 |pmniicd11 |pmniicd05 |pmnud01   |pmnud02   |pmnud03    |pmnud04    |pmnud05    |pmnud06    |pmnud07    |pmnud08    |pmnud09    |pmnud10    |pmnud11   |pmnud12  |pmnud13   |pmnud14   |pmnud15    ]
+[pmn|pmn24           |pmn25      |pmn65  |pmn41    |pm|pmn16  |pmnislk01 |pmn04                 |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |pmn041                         |ima021                         |pmniicd14 |pmniicd15 |pmn07 |pmn20           |pmn83         |pmn84                    |pmn85        |pmn80         |pmn81                    |pmn82        |pmn86      |pmn87         |pmniicd13 |pmn68           |p|pmn31               |pmn31t              |pmn89     |pmn64  |pmn6|pmn33         |pmn34         |pmn122     |pmn96       |pmn97     |pmn67     |pmn98     |pmn40     |pmn401    |pmn930      |gem02a      |pmn43         |pmn431      |pmn91     |pmn38         |pmn90           |pmn1|pmn123  |mse02        |pmniicd06 |pmniicd09 |pmniicd18 |pmniicd12 |pmniicd08 |pmniicd03 |pmniicd11 |pmniicd05 |pmnud01   |pmnud02   |pmnud03    |pmnud04    |pmnud05    |pmnud06    |pmnud07    |pmnud08    |pmnud09    |pmnud10    |pmnud11   |pmnud12  |pmnud13   |pmnud14   |pmnud15    ]
+
+}
+END -- s_pmn
+Grid gr5301
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------           Total Amount      [pmm40                 ]        Total Tax Amount  [pmm40t                ]
+
+
+
+
+
+
+
+}
+END -- gr5301
+END -- vb17
+END -- apmt540
+
+TABLES
+pma_file,
+pmn_file,
+pmm_file,
+pmni_file
+ATTRIBUTES
+ButtonEdit pmm01=pmm_file.pmm01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank/Repeated! <^P>Qry Doc Property";
+Edit pmm03=pmm_file.pmm03, tabIndex=2, noEntry;
+ComboBox pmm909=pmm_file.pmm909, tabIndex=3, noEntry, queryEditable, items=(("1", "INPUT"),("2", "From P/R"),("3", "From S/O"),("4", "Transfer"));
+DateEdit pmm04=pmm_file.pmm04, tabIndex=4, not null, required;
+ComboBox pmm02=pmm_file.pmm02, tabIndex=5, not null, required, queryEditable, items=(("REG", "Regular"),("EXP", "Expense"),("CAP", "Capital"),("SUB", "Subcontracting"),("TRI", "Multi-angle Trade"),("TAP", "Sub PO for"));
+ButtonEdit pmm09=pmm_file.pmm09, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Vender";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=8, noEntry;
+ButtonEdit pmm05=pmm_file.pmm05, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Purchase Budget";
+ComboBox pmm18=pmm_file.pmm18, tabIndex=9, noEntry, not null, required, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Void"));
+ComboBox pmm25=pmm_file.pmm25, tabIndex=10, noEntry, not null, required, items=(("0", "Open"),("1", "Approved"),("2", "Issued"),("6", "Close"),("9", "Void"),("S", "Approving"),("R", "Approving Return"),("W", "Cancel"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit pmmuser=pmm_file.pmmuser, tabIndex=11, noEntry;
+Edit pmmmodu=pmm_file.pmmmodu, tabIndex=13, noEntry;
+Edit pmmact=pmm_file.pmmacti, tabIndex=15, noEntry;
+Edit pmmgrup=pmm_file.pmmgrup, tabIndex=12, noEntry;
+DateEdit pmmdate=pmm_file.pmmdate, tabIndex=14, noEntry;
+Edit pmmoriu=pmm_file.pmmoriu, tabIndex=501, noEntry;
+Edit pmmorig=pmm_file.pmmorig, tabIndex=502, noEntry;
+ButtonEdit pmm20=pmm_file.pmm20, action=controlp, tabIndex=16, not null, required, image="zoom", comment="<^P>Qry Payment Terms";
+Edit pma02=pma_file.pma02, tabIndex=20, noEntry;
+ButtonEdit pmm41=pmm_file.pmm41, action=controlp, tabIndex=17, image="zoom", comment="<^P>Qry Price Terms";
+Edit pnz02=formonly.pnz02 type CHAR, tabIndex=21, noEntry;
+ButtonEdit pmm10=pmm_file.pmm10, action=controlp, tabIndex=18, image="zoom", comment="<^P>Qry Shipping Address";
+ButtonEdit pmm11=pmm_file.pmm11, action=controlp, tabIndex=19, image="zoom", comment="<^P>Qry Invoice Address";
+ButtonEdit pmm12=pmm_file.pmm12, action=controlp, tabIndex=22, not null, required, image="zoom", comment="<^P>Qry Employee";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=26, noEntry;
+ButtonEdit pmm13=pmm_file.pmm13, action=controlp, tabIndex=23, not null, required, image="zoom", comment="<^P>Qry Department";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=27, noEntry;
+ButtonEdit pmm21=pmm_file.pmm21, action=controlp, tabIndex=24, not null, required, image="zoom", comment="<^P>Qry Tax Type ";
+Edit pmm43=pmm_file.pmm43, tabIndex=28, noEntry, not null, required;
+CheckBox gec07=formonly.gec07 type CHAR, tabIndex=30, text="With Tax", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit pmm22=pmm_file.pmm22, action=controlp, tabIndex=25, not null, required, image="zoom", comment="<^P>Qry Currency ";
+ButtonEdit pmm42=pmm_file.pmm42, action=controlp, tabIndex=29, not null, required, image="zoom", comment="Ex.Rate";
+CheckBox pmm45=pmm_file.pmm45, tabIndex=31, text="MPS/MRPUsable", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pmmmksg=pmm_file.pmmmksg, tabIndex=32, text="Approve?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pmm905=pmm_file.pmm905, tabIndex=33, text="Mti-Trade Transfer ?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmm99=pmm_file.pmm99, tabIndex=34, noEntry;
+ButtonEdit pmm14=pmm_file.pmm14, action=controlp, tabIndex=35, image="zoom", comment="<^P> Qry Department";
+Edit gem02_2=formonly.gem02_2 type VARCHAR, tabIndex=39, noEntry;
+ButtonEdit pmm15=pmm_file.pmm15, action=controlp, tabIndex=36, image="zoom", comment="<^P> Qry Employee";
+Edit gen02_2=formonly.gen02_2 type VARCHAR, tabIndex=40, noEntry;
+ButtonEdit pmm16=pmm_file.pmm16, action=controlp, tabIndex=37, image="zoom";
+ButtonEdit pmm17=pmm_file.pmm17, action=controlp, tabIndex=38, image="zoom", comment="<^P> Qry Vender Common Data";
+Edit pmc03_2=formonly.pmc03_2 type VARCHAR, tabIndex=41, noEntry;
+CheckBox pmm30=pmm_file.pmm30, tabIndex=42, text="Received Goods and Print Receipt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox pmm44=pmm_file.pmm44, tabIndex=43, items=(("1", "Deductible Cost and Expense"),("2", "Creditable Fixed Asset"),("3", "No-Deduct Cost and Expense"),("4", "No-Credit Fixed Asset"));
+TextEdit pmmud01=pmm_file.pmmud01, tabIndex=138, stretch=NONE;
+Edit pmmud07=pmm_file.pmmud07, tabIndex=139;
+DateEdit pmmud13=pmm_file.pmmud13, tabIndex=140;
+Edit pmmud08=pmm_file.pmmud08, tabIndex=141;
+DateEdit pmmud14=pmm_file.pmmud14, tabIndex=142;
+Edit pmmud02=pmm_file.pmmud02, tabIndex=143;
+Edit pmmud09=pmm_file.pmmud09, tabIndex=144;
+DateEdit pmmud15=pmm_file.pmmud15, tabIndex=145;
+Edit pmmud03=pmm_file.pmmud03, tabIndex=146;
+Edit pmmud10=pmm_file.pmmud10, tabIndex=147;
+Edit pmmud04=pmm_file.pmmud04, tabIndex=148;
+Edit pmmud11=pmm_file.pmmud11, tabIndex=149;
+Edit pmmud05=pmm_file.pmmud05, tabIndex=150;
+Edit pmmud12=pmm_file.pmmud12, tabIndex=151;
+Edit pmmud06=pmm_file.pmmud06, tabIndex=152;
+Edit pmn=pmn_file.pmn02, tabIndex=44, title="Ln#", not null, required, comment="<^U>Mntn Other Data <^Y>Special Description <^T>Customs Register Book Maintian";
+ButtonEdit pmn24=pmn_file.pmn24, action=controlp, tabIndex=45, title="P/R No", image="zoom", comment="<^P>Query P/R";
+Edit pmn25=pmn_file.pmn25, tabIndex=46, title="PR Ln#";
+ComboBox pmn65=pmn_file.pmn65, tabIndex=47, title="Indent", noEntry, queryEditable, comment="1.General Purchase 2.Indent  ", items=(("1", %"General Purchase"),("2", %"Indent"));
+Edit pmn41=pmn_file.pmn41, tabIndex=48, title="W/O No", noEntry;
+ComboBox pm=pmn_file.pmn42, tabIndex=49, title="Sub", noEntry, not null, required, queryEditable, items=(("0", %"No REP/SUB"),("1", %"Old"),("2", %"M.It"),("3", %"Old(with New)"),("4", %"M.It(Sb-Itm)"),("5", %"M.It,SUB with SE"),("6", %"M.It,SET SUB"),("U", %"REP Item"),("S", %"SUB Item"),("T", %"SET SUB Item"));
+ComboBox pmn16=pmn_file.pmn16, tabIndex=50, title="Status", noEntry, queryEditable, items=(("0", "Open"),("1", "Confirmed"),("2", "Trans-out"),("6", "Finish-Normal"),("7", "Finish-Long"),("8", "Finish-Short"),("9", "Cancel"),("S", "Approving"),("R", "Rejected"),("W", "Withdraw"),("X", "Trans-in"));
+ButtonEdit pmnislk01=pmni_file.pmnislk01, action=controlp, tabIndex=51, title="Make NO.", image="zoom";
+ButtonEdit pmn04=pmn_file.pmn04, action=controlp, tabIndex=52, title="Item No", not null, required, image="zoom", comment="MISC:MISC Purchase<^P>Qry Item";
+ButtonEdit att00=formonly.att00 type CHAR, action=controlp, tabIndex=53, title="Parent No.", not null, required, image="zoom", comment="<^P>Qry Details <^T>Maint Accessory/Spares <^E>FAS Prod.Comb.";
+Edit att01=formonly.att01 type CHAR, tabIndex=54, title="att01";
+ComboBox att01_c=formonly.att01_c type CHAR, tabIndex=55, title="att01_c", queryEditable;
+Edit att02=formonly.att02 type CHAR, tabIndex=56, title="att02";
+ComboBox att02_c=formonly.att02_c type CHAR, tabIndex=57, title="att02_c", queryEditable;
+Edit att03=formonly.att03 type CHAR, tabIndex=58, title="att03";
+ComboBox att03_c=formonly.att03_c type CHAR, tabIndex=59, title="att03_c", queryEditable;
+Edit att04=formonly.att04 type CHAR, tabIndex=60, title="att04";
+ComboBox att04_c=formonly.att04_c type CHAR, tabIndex=61, title="att04_c", queryEditable;
+Edit att05=formonly.att05 type CHAR, tabIndex=62, title="att05";
+ComboBox att05_c=formonly.att05_c type CHAR, tabIndex=63, title="att05_c", queryEditable;
+Edit att06=formonly.att06 type CHAR, tabIndex=64, title="att06";
+ComboBox att06_c=formonly.att06_c type CHAR, tabIndex=65, title="att06_c", queryEditable;
+Edit att07=formonly.att07 type CHAR, tabIndex=66, title="att07";
+ComboBox att07_c=formonly.att07_c type CHAR, tabIndex=67, title="att07_c", queryEditable;
+Edit att08=formonly.att08 type CHAR, tabIndex=68, title="att08";
+ComboBox att08_c=formonly.att08_c type CHAR, tabIndex=69, title="att08_c", queryEditable;
+Edit att09=formonly.att09 type CHAR, tabIndex=70, title="att09";
+ComboBox att09_c=formonly.att09_c type CHAR, tabIndex=71, title="att09_c", queryEditable;
+Edit att10=formonly.att10 type CHAR, tabIndex=72, title="att10";
+ComboBox att10_c=formonly.att10_c type CHAR, tabIndex=73, title="att10_c", queryEditable;
+Edit pmn041=pmn_file.pmn041, tabIndex=74, title="Part Name";
+Edit ima021=formonly.ima021 type CHAR, tabIndex=75, title="Specification", noEntry;
+ButtonEdit pmniicd14=pmni_file.pmniicd14, action=controlp, tabIndex=111, title="ibody", image="zoom";
+ButtonEdit pmniicd15=pmni_file.pmniicd15, action=controlp, tabIndex=113, title="Last No.", image="zoom";
+ButtonEdit pmn07=pmn_file.pmn07, action=controlp, tabIndex=76, title="Unit", not null, required, image="zoom", comment="<^P>Qry Unit";
+Edit pmn20=pmn_file.pmn20, tabIndex=77, title="Qty", not null, required;
+ButtonEdit pmn83=pmn_file.pmn83, action=controlp, tabIndex=78, title="Par/Ref Unit", image="zoom", comment="<^P>Qry Details";
+Edit pmn84=pmn_file.pmn84, tabIndex=79, title="Par/Ref Conversion Rate";
+Edit pmn85=pmn_file.pmn85, tabIndex=80, title="Par/Ref Qty";
+ButtonEdit pmn80=pmn_file.pmn80, action=controlp, tabIndex=81, title="Chi/P/O Unit", image="zoom", comment="<^P>Qry Details";
+Edit pmn81=pmn_file.pmn81, tabIndex=82, title="Chi/P/O Conversion Rate";
+Edit pmn82=pmn_file.pmn82, tabIndex=83, title="Chi/P/O Qty";
+ButtonEdit pmn86=pmn_file.pmn86, action=controlp, tabIndex=84, title="Price Unit", image="zoom", comment="<^P>Qry Details";
+Edit pmn87=pmn_file.pmn87, tabIndex=85, title="Price Qty";
+Edit pmniicd13=pmni_file.pmniicd13, tabIndex=342, title="pmniicd13", noEntry;
+ButtonEdit pmn68=pmn_file.pmn68, action=controlp, tabIndex=86, title="Blanket PO#", image="zoom", comment="Blanket PO  Document No. ,<^P>Query Blanket PO";
+ButtonEdit p=pmn_file.pmn69, action=controlp, tabIndex=87, title="L#", image="zoom", comment="Blanket PO Line No. ,<^P>Query Blanket PO Line No. ";
+Edit pmn31=pmn_file.pmn31, tabIndex=88, title="Unit Price", not null, required;
+Edit pmn31t=pmn_file.pmn31t, tabIndex=89, title="Tax Price";
+CheckBox pmn89=pmn_file.pmn89, tabIndex=343, default = "N", title="VMI Purchasing", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pmn64=pmn_file.pmn64, tabIndex=90, title="Bonded", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pmn6=pmn_file.pmn63, tabIndex=91, title="Urg", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit pmn33=pmn_file.pmn33, tabIndex=92, title="Delivery Date", not null, required, comment="Enter Vender Delivery Date";
+DateEdit pmn34=pmn_file.pmn34, tabIndex=93, title="Arriving Date", not null, required, comment="Enter Arriving Date";
+ButtonEdit pmn122=pmn_file.pmn122, action=controlp, tabIndex=94, title="Project No", image="zoom";
+ButtonEdit pmn96=pmn_file.pmn96, action=controlp, tabIndex=95, title="WBS No.", image="zoom";
+ButtonEdit pmn97=pmn_file.pmn97, action=controlp, tabIndex=96, title="Activity No.", image="zoom";
+ButtonEdit pmn67=pmn_file.pmn67, action=controlp, tabIndex=97, title="Department No.", image="zoom";
+ButtonEdit pmn98=pmn_file.pmn98, action=controlp, tabIndex=98, title="Expense Reason", image="zoom";
+ButtonEdit pmn40=pmn_file.pmn40, action=controlp, tabIndex=99, title="Account", image="zoom";
+ButtonEdit pmn401=pmn_file.pmn401, action=controlp, tabIndex=100, title="Account 2", image="zoom";
+ButtonEdit pmn930=pmn_file.pmn930, action=controlp, tabIndex=101, title="Cost Center", not null, required, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02a=formonly.gem02a type CHAR, tabIndex=102, title="Center Desc", noEntry;
+Edit pmn43=pmn_file.pmn43, tabIndex=103, title="Curent Rou.SN", noEntry;
+Edit pmn431=pmn_file.pmn431, tabIndex=104, title="Next Rou.SN", noEntry;
+Edit pmn91=pmn_file.pmn91, tabIndex=122, title="unit No.", noEntry;
+CheckBox pmn38=pmn_file.pmn38, tabIndex=105, title="MPS/MRPUsable", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmn90=pmn_file.pmn90, tabIndex=106, title="Fitst Unit Price", noEntry;
+CheckBox pmn1=pmn_file.pmn11, tabIndex=109, title="Urg", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit pmn123=pmn_file.pmn123, action=controlp, tabIndex=344, title=%"Brand", image="zoom";
+Edit mse02=formonly.mse02 type CHAR, tabIndex=345, title=%"Brand Name", noEntry;
+CheckBox pmniicd06=pmni_file.pmniicd06, tabIndex=114, title="metal layer", valueChecked = "Y", valueUnchecked = "N";
+Edit pmniicd09=pmni_file.pmniicd09, tabIndex=115, title="reference die", noEntry;
+ButtonEdit pmniicd18=pmni_file.pmniicd18, action=controlp, tabIndex=116, title="Down Fac", image="zoom";
+ButtonEdit pmniicd12=pmni_file.pmniicd12, action=controlp, tabIndex=117, title="wafer site", image="zoom";
+ButtonEdit pmniicd08=pmni_file.pmniicd08, action=controlp, tabIndex=118, title="multi die", image="zoom";
+ButtonEdit pmniicd03=pmni_file.pmniicd03, action=controlp, tabIndex=119, title="icd pro", image="zoom";
+Edit pmniicd11=pmni_file.pmniicd11, tabIndex=120, title="datecode";
+Edit pmniicd05=pmni_file.pmniicd05, tabIndex=121, title="Mum No.";
+TextEdit pmnud01=pmn_file.pmnud01, tabIndex=123, title="pmnud01", stretch=NONE;
+Edit pmnud02=pmn_file.pmnud02, tabIndex=124, title="pmnud02";
+Edit pmnud03=pmn_file.pmnud03, tabIndex=125, title="pmnud03";
+Edit pmnud04=pmn_file.pmnud04, tabIndex=126, title="pmnud04";
+Edit pmnud05=pmn_file.pmnud05, tabIndex=127, title="pmnud05";
+Edit pmnud06=pmn_file.pmnud06, tabIndex=128, title="pmnud06";
+Edit pmnud07=pmn_file.pmnud07, tabIndex=129, title="pmnud07";
+Edit pmnud08=pmn_file.pmnud08, tabIndex=130, title="pmnud08";
+Edit pmnud09=pmn_file.pmnud09, tabIndex=131, title="pmnud09";
+Edit pmnud10=pmn_file.pmnud10, tabIndex=132, title="pmnud10";
+Edit pmnud11=pmn_file.pmnud11, tabIndex=133, title="pmnud11";
+Edit pmnud12=pmn_file.pmnud12, tabIndex=134, title="pmnud12";
+Edit pmnud13=pmn_file.pmnud13, tabIndex=135, title="pmnud13";
+Edit pmnud14=pmn_file.pmnud14, tabIndex=136, title="pmnud14";
+Edit pmnud15=pmn_file.pmnud15, tabIndex=137, title="pmnud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=107, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=108, noEntry;
+Edit pmm40=pmm_file.pmm40, tabIndex=110, noEntry;
+Edit pmm40t=pmm_file.pmm40t, tabIndex=112, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmn(pmn_file.pmn02,pmn_file.pmn24,pmn_file.pmn25,pmn_file.pmn65,pmn_file.pmn41,pmn_file.pmn42,pmn_file.pmn16,pmni_file.pmnislk01,pmn_file.pmn04,formonly.att00,formonly.att01,formonly.att01_c,formonly.att02,formonly.att02_c,formonly.att03,formonly.att03_c,formonly.att04,formonly.att04_c,formonly.att05,formonly.att05_c,formonly.att06,formonly.att06_c,formonly.att07,formonly.att07_c,formonly.att08,formonly.att08_c,formonly.att09,formonly.att09_c,formonly.att10,formonly.att10_c,pmn_file.pmn041,formonly.ima021,pmni_file.pmniicd14,pmni_file.pmniicd15,pmn_file.pmn07,pmn_file.pmn20,pmn_file.pmn83,pmn_file.pmn84,pmn_file.pmn85,pmn_file.pmn80,pmn_file.pmn81,pmn_file.pmn82,pmn_file.pmn86,pmn_file.pmn87,pmni_file.pmniicd13,pmn_file.pmn68,pmn_file.pmn69,pmn_file.pmn31,pmn_file.pmn31t,pmn_file.pmn89,pmn_file.pmn64,pmn_file.pmn63,pmn_file.pmn33,pmn_file.pmn34,pmn_file.pmn122,pmn_file.pmn96,pmn_file.pmn97,pmn_file.pmn67,pmn_file.pmn98,pmn_file.pmn40,pmn_file.pmn401,pmn_file.pmn930,formonly.gem02a,pmn_file.pmn43,pmn_file.pmn431,pmn_file.pmn91,pmn_file.pmn38,pmn_file.pmn90,pmn_file.pmn11,pmn_file.pmn123,formonly.mse02,pmni_file.pmniicd06,pmni_file.pmniicd09,pmni_file.pmniicd18,pmni_file.pmniicd12,pmni_file.pmniicd08,pmni_file.pmniicd03,pmni_file.pmniicd11,pmni_file.pmniicd05,pmn_file.pmnud01,pmn_file.pmnud02,pmn_file.pmnud03,pmn_file.pmnud04,pmn_file.pmnud05,pmn_file.pmnud06,pmn_file.pmnud07,pmn_file.pmnud08,pmn_file.pmnud09,pmn_file.pmnud10,pmn_file.pmnud11,pmn_file.pmnud12,pmn_file.pmnud13,pmn_file.pmnud14,pmn_file.pmnud15)
+SCREEN RECORD Undefined(pmm_file.pmm01,pmm_file.pmm03,pmm_file.pmm909,pmm_file.pmm04,pmm_file.pmm02,pmm_file.pmm09,formonly.pmc03,pmm_file.pmm05,pmm_file.pmm18,pmm_file.pmm25,formonly.imgmksg,pmm_file.pmmuser,pmm_file.pmmmodu,pmm_file.pmmacti,pmm_file.pmmgrup,pmm_file.pmmdate,pmm_file.pmmoriu,pmm_file.pmmorig,pmm_file.pmm20,pma_file.pma02,pmm_file.pmm41,formonly.pnz02,pmm_file.pmm10,pmm_file.pmm11,pmm_file.pmm12,formonly.gen02,pmm_file.pmm13,formonly.gem02,pmm_file.pmm21,pmm_file.pmm43,formonly.gec07,pmm_file.pmm22,pmm_file.pmm42,pmm_file.pmm45,pmm_file.pmmmksg,pmm_file.pmm905,pmm_file.pmm99,pmm_file.pmm14,formonly.gem02_2,pmm_file.pmm15,formonly.gen02_2,pmm_file.pmm16,pmm_file.pmm17,formonly.pmc03_2,pmm_file.pmm30,pmm_file.pmm44,pmm_file.pmmud01,pmm_file.pmmud07,pmm_file.pmmud13,pmm_file.pmmud08,pmm_file.pmmud14,pmm_file.pmmud02,pmm_file.pmmud09,pmm_file.pmmud15,pmm_file.pmmud03,pmm_file.pmmud10,pmm_file.pmmud04,pmm_file.pmmud11,pmm_file.pmmud05,pmm_file.pmmud12,pmm_file.pmmud06,formonly.cnt,formonly.cn2,pmm_file.pmm40,pmm_file.pmm40t)
+END -- INSTRUCTIONS
+

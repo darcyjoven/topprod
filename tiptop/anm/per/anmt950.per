@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt950.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt950")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4598
+{
+ <G group01                                                   >
+  Accrual Begin    [nae04     ]   Accrual End [nae05     ]
+ <                                                            >
+
+}
+END -- gr4598
+END -- page01
+END -- folder01
+Folder pc827
+Page info(text="Info")
+Table s_nae
+{
+[nae01            |nma02     |nma10     |nae02        |nae03 |nae06          |nae09       |nae07       |naeconf |g_type  |nae08   ]
+[nae01            |nma02     |nma10     |nae02        |nae03 |nae06          |nae09       |nae07       |naeconf |g_type  |nae08   ]
+[nae01            |nma02     |nma10     |nae02        |nae03 |nae06          |nae09       |nae07       |naeconf |g_type  |nae08   ]
+[nae01            |nma02     |nma10     |nae02        |nae03 |nae06          |nae09       |nae07       |naeconf |g_type  |nae08   ]
+[nae01            |nma02     |nma10     |nae02        |nae03 |nae06          |nae09       |nae07       |naeconf |g_type  |nae08   ]
+[nae01            |nma02     |nma10     |nae02        |nae03 |nae06          |nae09       |nae07       |naeconf |g_type  |nae08   ]
+[nae01            |nma02     |nma10     |nae02        |nae03 |nae06          |nae09       |nae07       |naeconf |g_type  |nae08   ]
+[nae01            |nma02     |nma10     |nae02        |nae03 |nae06          |nae09       |nae07       |naeconf |g_type  |nae08   ]
+[nae01            |nma02     |nma10     |nae02        |nae03 |nae06          |nae09       |nae07       |naeconf |g_type  |nae08   ]
+[nae01            |nma02     |nma10     |nae02        |nae03 |nae06          |nae09       |nae07       |naeconf |g_type  |nae08   ]
+
+}
+END -- s_nae
+END -- info
+END -- pc827
+Grid gr4599
+{
+ ---------- Rows [cnt   ]/[cn2  ]--------------
+
+}
+END -- gr4599
+END -- VBox1
+END -- anmt950
+
+TABLES
+nae_file
+ATTRIBUTES
+Group group01:group01;
+DateEdit nae04=nae_file.nae04, tabIndex=1, not null, required;
+DateEdit nae05=nae_file.nae05, tabIndex=2, not null, required;
+ButtonEdit nae01=nae_file.nae01, action=controlp, tabIndex=3, title="Bank Account No.", not null, required, image="zoom";
+Edit nma02=formonly.nma02 type CHAR, tabIndex=4, title="Bank name", noEntry;
+Edit nma10=formonly.nma10 type CHAR, tabIndex=5, title="Currencyi", noEntry;
+ComboBox nae02=nae_file.nae02, tabIndex=6, title="Accrual Type", noEntry, items=(("0", %"0.Current"),("1", %"1.one year fixed deposit"),("2", %"2.two years fixed deposit"),("3", %"3.three years fixed deposit"),("4", %"4.five years fixed deposit"));
+Edit nae03=nae_file.nae03, tabIndex=7, title="Rate", noEntry;
+Edit nae06=nae_file.nae06, tabIndex=8, title="Interest amount Into Change";
+ButtonEdit nae09=nae_file.nae09, action=controlp, tabIndex=9, image="zoom";
+Edit nae07=nae_file.nae07, tabIndex=10, title="Accrual Slp# Confirm", noEntry;
+ComboBox naeconf=nae_file.naeconf, tabIndex=11, noEntry, not null, required, items=(("N", %"Not Confirm"),("Y", %"Confirmed"));
+CheckBox g_type=formonly.g_type type CHAR, tabIndex=12, title="Chooice", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit nae08=nae_file.nae08, action=controlp, tabIndex=13, title="Plant", noEntry, image="zoom";
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nae(nae_file.nae01,formonly.nma02,formonly.nma10,nae_file.nae02,nae_file.nae03,nae_file.nae06,nae_file.nae09,nae_file.nae07,nae_file.naeconf,formonly.g_type,nae_file.nae08)
+SCREEN RECORD Undefined(nae_file.nae04,nae_file.nae05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi901.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi901")
+VBox vb2
+Folder pc860
+Page page01(text="Page01")
+Grid gr4672
+{
+ <G group01                                                                          >
+  Plant No.           [azp01     ]
+  Plant Name          [azp02               ]
+  Schema No.          [azp03               ]  SQL Server IP [azp20                 ]
+  DBlink Name.        [azp04     ]
+ [azp053                                   ]
+  Time Zone           [azp052              ]
+  Address             [azp051                                                      ]
+                      [                                                            ]
+  Plant Tel           [azp06               ]
+  Plant Fax           [azp07               ]
+ [azp09                ]
+  Concurrent Users    [azp10               ]
+ <                                                                                   >
+
+}
+END -- gr4672
+END -- page01
+END -- pc860
+Grid gr4673
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4673
+END -- vb2
+END -- aooi901
+
+TABLES
+azp_file
+ATTRIBUTES
+Group group01:group01;
+Edit azp01=azp_file.azp01, tabIndex=1, not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit azp02=azp_file.azp02, tabIndex=2;
+Edit azp03=azp_file.azp03, tabIndex=3, not null, required, downShift;
+Edit azp20=azp_file.azp20, tabIndex=13;
+Edit azp04=azp_file.azp04, tabIndex=10, upShift, comment="KEY Field, No Blank/Repeated!";
+CheckBox azp053=azp_file.azp053, tabIndex=4, text="ERP Database", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox azp052=azp_file.azp052, tabIndex=5, not null, required, queryEditable, items=(("GMT+12", "Auckland, Wellington, Fiji"),("GMT+11", "Magadon"),("GMT+10", "Sydney, Brisbane"),("GMT+9", "Toykoy, Osaka, Seoul"),("GMT+8", "Taipei, HongKong, Singapore"),("GMT+7", "HoChiMinh, Jakarta, Bangkok"),("GMT+6", "Colonbo"),("GMT+5", "Islamabad"),("GMT+4", "Abu Dhabi"),("GMT+3", "Moscow, Baghdad"),("GMT+2", "Israel, Athens, Bucharest"),("GMT+1", "Paris, Bern, Brussels"),("GMT", "Greenwich Mean Time, London"),("GMT-1", "Azores, Cape Verde Is."),("GMT-2", "Mid-Atlantic"),("GMT-3", "Buenos Aires"),("GMT-4", "Atlantic Time(Canada)"),("GMT-5", "Eastern Time of U.S & Canada"),("GMT-6", "Central Time of U.S, Mexico"),("GMT-7", "Mountain Time of U.S"),("GMT-8", "Pacific Time of U.S"),("GMT-9", "Alaska"),("GMT-10", "Hawaii"),("GMT-11", "Samoa"));
+TextEdit azp051=azp_file.azp051, tabIndex=6, stretch=NONE, wantNoReturns;
+Edit azp06=azp_file.azp06, tabIndex=7;
+Edit azp07=azp_file.azp07, tabIndex=8;
+CheckBox azp09=azp_file.azp09, tabIndex=11, text="Limited Logistics Users", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit azp10=azp_file.azp10, tabIndex=12;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(azp_file.azp01,azp_file.azp02,azp_file.azp03,azp_file.azp20,azp_file.azp04,azp_file.azp053,azp_file.azp052,azp_file.azp051,azp_file.azp06,azp_file.azp07,azp_file.azp09,azp_file.azp10,formonly.cnt)
+END -- INSTRUCTIONS
+

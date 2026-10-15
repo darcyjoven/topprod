@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apji600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apji600")
+VBox vb1
+Folder pc2
+Page Page3(text=%"Info")
+Table tb2
+{
+[pjw01     |pjw02                                   |pjw03                   |pjw|pj1|p]
+[pjw01     |pjw02                                   |pjw03                   |pjw|pj1|p]
+[pjw01     |pjw02                                   |pjw03                   |pjw|pj1|p]
+[pjw01     |pjw02                                   |pjw03                   |pjw|pj1|p]
+[pjw01     |pjw02                                   |pjw03                   |pjw|pj1|p]
+[pjw01     |pjw02                                   |pjw03                   |pjw|pj1|p]
+[pjw01     |pjw02                                   |pjw03                   |pjw|pj1|p]
+[pjw01     |pjw02                                   |pjw03                   |pjw|pj1|p]
+[pjw01     |pjw02                                   |pjw03                   |pjw|pj1|p]
+[pjw01     |pjw02                                   |pjw03                   |pjw|pj1|p]
+[pjw01     |pjw02                                   |pjw03                   |pjw|pj1|p]
+[pjw01     |pjw02                                   |pjw03                   |pjw|pj1|p]
+
+}
+END -- tb2
+END -- Page3
+END -- pc2
+Grid gr1
+{
+
+ ------ Rows[cnt   ] -------
+
+}
+END -- gr1
+END -- vb1
+END -- apji600
+
+TABLES
+pjw_file
+ATTRIBUTES
+Edit pjw01=pjw_file.pjw01, tabIndex=1, title="Type No.", not null;
+Edit pjw02=pjw_file.pjw02, tabIndex=2, title="Credit Name", not null;
+ComboBox pjw03=pjw_file.pjw03, tabIndex=3, title="Category", not null, items=(("0", "Start-End Rule"),("1", "Estimate Rule"),("2", "Development Degree Rule"),("3", "Time Rate Rule"));
+Edit pjw=pjw_file.pjw04, tabIndex=4, title="Start-End Value", not null;
+Edit pj1=pjw_file.pjw05, tabIndex=5, title="UCl Value", not null;
+CheckBox p=pjw_file.pjwacti, tabIndex=6, default = "Y", title="Valid Code", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type CHAR, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjw(pjw_file.pjw01,pjw_file.pjw02,pjw_file.pjw03,pjw_file.pjw04,pjw_file.pjw05,pjw_file.pjwacti)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

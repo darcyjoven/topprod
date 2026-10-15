@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aicp045.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aicp045")
+VBox vb2
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+ Vendor No.  [idi01           ][pmc03       ] File Name  [idi03               ]
+ Logistics   [idi02           ]              [idi04           ]
+                                              compart    [idi05        ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table s_idj
+{
+[idj03        |idj04         |idj05          |gaq03                  ]
+[idj03        |idj04         |idj05          |gaq03                  ]
+[idj03        |idj04         |idj05          |gaq03                  ]
+[idj03        |idj04         |idj05          |gaq03                  ]
+[idj03        |idj04         |idj05          |gaq03                  ]
+[idj03        |idj04         |idj05          |gaq03                  ]
+[idj03        |idj04         |idj05          |gaq03                  ]
+[idj03        |idj04         |idj05          |gaq03                  ]
+[idj03        |idj04         |idj05          |gaq03                  ]
+[idj03        |idj04         |idj05          |gaq03                  ]
+
+}
+END -- s_idj
+Grid gr2
+{
+
+   ---------- Rows  [idx ] /  [cnt] ---- Details  [cn2  ] ----------
+
+}
+END -- gr2
+END -- vb2
+END -- aicp045
+
+TABLES
+idj_file,
+idi_file
+ATTRIBUTES
+ButtonEdit idi01=idi_file.idi01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, noEntry;
+Edit idi03=idi_file.idi03, tabIndex=4, not null, required;
+Edit idi02=idi_file.idi02, tabIndex=3, not null, required;
+CheckBox idi04=idi_file.idi04, tabIndex=5, text="From c:\tiptop to update", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox idi05=idi_file.idi05, tabIndex=6, not null, required, items=(("0", "idi05-0"),("1", "idi05-1"),("2", "idi05-2"));
+Edit idj03=idj_file.idj03, tabIndex=7, title="Sequence", not null, required;
+ButtonEdit idj04=idj_file.idj04, action=controlp, tabIndex=8, title="Table No.", not null, required, image="zoom.png";
+ButtonEdit idj05=idj_file.idj05, action=controlp, tabIndex=9, title="Field No.", not null, required, image="zoom.png";
+Edit gaq03=formonly.gaq03 type CHAR, tabIndex=10, title="Description", noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=11, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_idj(idj_file.idj03,idj_file.idj04,idj_file.idj05,formonly.gaq03)
+SCREEN RECORD Undefined(idi_file.idi01,formonly.pmc03,idi_file.idi03,idi_file.idi02,idi_file.idi05,formonly.idx,formonly.cnt,formonly.cn2,idi_file.idi04)
+END -- INSTRUCTIONS
+

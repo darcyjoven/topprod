@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi400_3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi400_3")
+Folder pc1
+Page Main(text=%"Preferencial")
+Grid gr9
+{
+ <G gb1                                                                                                >
+   Fare No.    [lnx03     ]              Discount Rate    [lnx04     ]
+   Fare Name   [oaj02               ]    Monthes For Free [lnx05     ]
+ <                                                                                                     >
+
+ <G gb2                                                                                                >
+  [dummy01   ]         [dummy02         ][dummy03         ][dummy04         ][dummy05         ]
+   Qty In Current Shop [lnx07           ][lnx08           ][lnx09           ][lnx10           ]
+   Qty In Current Zone [lnx071          ][lnx081          ][lnx091          ][lnx101          ]
+   Qty In Other Zone   [lnx072          ][lnx082          ][lnx092          ][lnx102          ]
+
+ <                                                                                                     >
+
+}
+END -- gr9
+END -- Main
+END -- pc1
+END -- almi400_3
+
+TABLES
+lnx_file
+ATTRIBUTES
+Group gb1:gb1, text="Preferencial Payment Type";
+Edit lnx03=lnx_file.lnx03, tabIndex=1;
+Edit lnx04=lnx_file.lnx04, tabIndex=3;
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=2;
+Edit lnx05=lnx_file.lnx05, tabIndex=4;
+Group gb2:gb2, text="Alliance And Catenation";
+Label dummy01:dummy01, text="Type";
+Label dummy02:dummy02, text="Catenation Qty";
+Label dummy03:dummy03, text="Discount Rate";
+Label dummy04:dummy04, text="Combined Discount";
+Label dummy05:dummy05, text="Final Discount";
+Edit lnx07=lnx_file.lnx07, tabIndex=5;
+Edit lnx08=lnx_file.lnx08, tabIndex=8;
+Edit lnx09=lnx_file.lnx09, tabIndex=11;
+Edit lnx10=lnx_file.lnx10, tabIndex=14;
+Edit lnx071=lnx_file.lnx071, tabIndex=6;
+Edit lnx081=lnx_file.lnx081, tabIndex=9;
+Edit lnx091=lnx_file.lnx091, tabIndex=12;
+Edit lnx101=lnx_file.lnx101, tabIndex=15;
+Edit lnx072=lnx_file.lnx072, tabIndex=7;
+Edit lnx082=lnx_file.lnx082, tabIndex=10;
+Edit lnx092=lnx_file.lnx092, tabIndex=13;
+Edit lnx102=lnx_file.lnx102, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lnx_file.lnx03,lnx_file.lnx04,formonly.oaj02,lnx_file.lnx05,lnx_file.lnx07,lnx_file.lnx08,lnx_file.lnx09,lnx_file.lnx10,lnx_file.lnx071,lnx_file.lnx081,lnx_file.lnx091,lnx_file.lnx101,lnx_file.lnx072,lnx_file.lnx082,lnx_file.lnx092,lnx_file.lnx102)
+END -- INSTRUCTIONS
+

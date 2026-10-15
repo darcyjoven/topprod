@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq777_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcq777_1")
+VBox VBox1
+Grid gr11
+{
+ <G group01                                                                             >
+  Cost Group          [ima12               ]  Cost Levels         [ima57               ]
+  Source Code         [ima08               ]  Item No.            [ima01               ]
+  W/O No.             [sfb01               ]
+ <                                                                                      >
+ <G group02                                                                              >
+  Date Range [bdate       ]-[edate       ]
+  Cost Calculation Method [type          ]
+ [stock                      ]
+ [                           ]
+ [                           ]
+ [                           ]
+ [a                  ]
+
+ <                                                                                       >
+}
+END -- gr11
+END -- VBox1
+END -- axcq777_1
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=1;
+Edit ima57=formonly.ima57 type VARCHAR, tabIndex=2;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=3;
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=4, image="zoom", comment="<P>";
+Edit sfb01=formonly.sfb01 type VARCHAR, tabIndex=5;
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=6, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=7, not null, required;
+ComboBox type=formonly.type type CHAR, tabIndex=8, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+RadioGroup stock=formonly.stock type CHAR, tabIndex=9, not null, required, items=(("1", "Not Include Direct Suspend"),("2", "Include Direct Suspend"),("3", "Only Direct Suspend"));
+CheckBox a=formonly.a type VARCHAR, tabIndex=10, default = "Y", text="Check", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima12,formonly.ima57,formonly.ima08,formonly.ima01,formonly.sfb01,formonly.bdate,formonly.edate,formonly.type,formonly.stock,formonly.a)
+END -- INSTRUCTIONS
+

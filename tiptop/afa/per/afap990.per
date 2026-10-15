@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap990.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"afap990")
+Folder pc373
+Page page01(text="Main")
+Grid gr1962
+{
+ <G group01                                                   >
+  F.A. Invest.Cr Application # [fcb01           ]
+
+  Owner                        [a                   ]
+
+  Contact Person               [b                   ]
+  Extension                    [c         ]
+
+ [d                                                 ]
+ [e                                                 ]
+
+  Actual Capital               [f                   ][dummy01]
+
+ [dummy02             ]
+ [dummy03             ]
+ [dummy04             ]
+ <                                                            >
+
+}
+END -- gr1962
+END -- page01
+END -- pc373
+END -- afap990
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+Edit fcb01=formonly.fcb01 type VARCHAR, tabIndex=1;
+Edit a=formonly.a type VARCHAR, tabIndex=2;
+Edit b=formonly.b type VARCHAR, tabIndex=3;
+Edit c=formonly.c type VARCHAR, tabIndex=4;
+CheckBox d=formonly.d type VARCHAR, tabIndex=5, text="Equipment Install at the same plant", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit e=formonly.e type VARCHAR, tabIndex=6;
+Edit f=formonly.f type INTEGER, tabIndex=7;
+Label dummy01:dummy01, text="(Thou)";
+Label dummy02:dummy02, text="** Media File    Applict#.txt **";
+Label dummy03:dummy03, text="   ex:Applict#    is FFF-350001";
+Label dummy04:dummy04, text="      Media File  is FFF-350001.txt";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.fcb01,formonly.a,formonly.b,formonly.c,formonly.d,formonly.e,formonly.f)
+END -- INSTRUCTIONS
+

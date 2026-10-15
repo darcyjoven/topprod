@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci500")
+VBox vb1
+Folder pc355
+Page page01(text="Main")
+Table s_jce
+{
+[jce01     |jce02       |imd02       ]
+[jce01     |jce02       |imd02       ]
+[jce01     |jce02       |imd02       ]
+[jce01     |jce02       |imd02       ]
+[jce01     |jce02       |imd02       ]
+[jce01     |jce02       |imd02       ]
+[jce01     |jce02       |imd02       ]
+[jce01     |jce02       |imd02       ]
+[jce01     |jce02       |imd02       ]
+[jce01     |jce02       |imd02       ]
+
+}
+END -- s_jce
+END -- page01
+END -- pc355
+Grid gr1472
+{
+ ---------- Rows [cn2   ] ----------
+
+
+}
+END -- gr1472
+END -- vb1
+END -- axci500
+
+TABLES
+jce_file
+ATTRIBUTES
+Edit jce01=jce_file.jce01, tabIndex=1, title="Cost W/H", not null, required;
+ButtonEdit jce02=jce_file.jce02, action=controlp, tabIndex=2, title="Warehouse#", not null, required, image="zoom", comment="<^P>Qry Warehouse #";
+Edit imd02=formonly.imd02, tabIndex=4, title=%"Name", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_jce(jce_file.jce01,jce_file.jce02,formonly.imd02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

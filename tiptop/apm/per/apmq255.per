@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq255.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apmq255")
+VBox vb2
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+
+  Item No.           [pmj03         ]
+  Item Name          [pmj031        ]
+  Item Specification [pmj032        ]
+  Purchase Unit      [ima44         ]
+  Price Unit         [ima908        ]
+  Price Type         [pmj12              ]
+                     [                   ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table s_pmi
+{
+[pmi01         |pmi03     |pmc03   |pmi02   |pmi08    |gec07 |pmj04    |pmj05     |pmj10    |pmj06    |pmj06t   |pmj08    |pmj09    |pmr03     |pmr04    |pmr05    |pmr05t   ]
+[pmi01         |pmi03     |pmc03   |pmi02   |pmi08    |gec07 |pmj04    |pmj05     |pmj10    |pmj06    |pmj06t   |pmj08    |pmj09    |pmr03     |pmr04    |pmr05    |pmr05t   ]
+[pmi01         |pmi03     |pmc03   |pmi02   |pmi08    |gec07 |pmj04    |pmj05     |pmj10    |pmj06    |pmj06t   |pmj08    |pmj09    |pmr03     |pmr04    |pmr05    |pmr05t   ]
+[pmi01         |pmi03     |pmc03   |pmi02   |pmi08    |gec07 |pmj04    |pmj05     |pmj10    |pmj06    |pmj06t   |pmj08    |pmj09    |pmr03     |pmr04    |pmr05    |pmr05t   ]
+[pmi01         |pmi03     |pmc03   |pmi02   |pmi08    |gec07 |pmj04    |pmj05     |pmj10    |pmj06    |pmj06t   |pmj08    |pmj09    |pmr03     |pmr04    |pmr05    |pmr05t   ]
+
+}
+END -- s_pmi
+Grid gr2
+{
+ Rows [cnt  ]/[cn2  ]
+
+}
+END -- gr2
+END -- vb2
+END -- apmq255
+
+ATTRIBUTES
+ButtonEdit pmj03=formonly.pmj03 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit pmj031=formonly.pmj031 type VARCHAR, tabIndex=2;
+Edit pmj032=formonly.pmj032 type VARCHAR, tabIndex=3;
+Edit ima44=formonly.ima44 type VARCHAR, tabIndex=4;
+Edit ima908=formonly.ima908 type VARCHAR, tabIndex=5;
+RadioGroup pmj12=formonly.pmj12 type VARCHAR, tabIndex=6, items=(("1", "General"),("2", "Subcontracting"));
+ButtonEdit pmi01=formonly.pmi01 type VARCHAR, action=controlp, tabIndex=7, title="Quotation No.", image="zoom";
+ButtonEdit pmi03=formonly.pmi03 type VARCHAR, action=controlp, tabIndex=8, title="Vendor No.", image="zoom";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=9, title="Vendor Abbr.";
+DateEdit pmi02=formonly.pmi02 type DATE, tabIndex=10, title="Quotation Date";
+ButtonEdit pmi08=formonly.pmi08 type VARCHAR, action=controlp, tabIndex=11, title="Tax Code", image="zoom";
+CheckBox gec07=formonly.gec07 type VARCHAR, tabIndex=12, title="With Tax", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit pmj04=formonly.pmj04 type VARCHAR, tabIndex=13, title="Vendor Item No.";
+ButtonEdit pmj05=formonly.pmj05 type VARCHAR, action=controlp, tabIndex=14, title="Currency", image="zoom";
+Edit pmj10=formonly.pmj10 type VARCHAR, tabIndex=15, title="Operation No.";
+Edit pmj06=formonly.pmj06 type DECIMAL, tabIndex=16, title="U/P Excl. Tax";
+Edit pmj06t=formonly.pmj06t type DECIMAL, tabIndex=17, title="U/P Incl. Tax";
+DateEdit pmj08=formonly.pmj08 type DATE, tabIndex=18, title="Original Approval Date";
+DateEdit pmj09=formonly.pmj09 type DATE, tabIndex=19, title="New Approval Date";
+Edit pmr03=formonly.pmr03 type DECIMAL, tabIndex=20, title="Qty From";
+Edit pmr04=formonly.pmr04 type DECIMAL, tabIndex=21, title="to";
+Edit pmr05=formonly.pmr05 type DECIMAL, tabIndex=22, title="U/P Excl. Tax";
+Edit pmr05t=formonly.pmr05t type DECIMAL, tabIndex=23, title="U/P Incl. Tax";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=24;
+Edit cn2=formonly.cn2 type INTERVAL YEAR(2) TO YEAR, tabIndex=25;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmi(formonly.pmi01,formonly.pmi03,formonly.pmc03,formonly.pmi02,formonly.pmi08,formonly.gec07,formonly.pmj04,formonly.pmj05,formonly.pmj10,formonly.pmj06,formonly.pmj06t,formonly.pmj08,formonly.pmj09,formonly.pmr03,formonly.pmr04,formonly.pmr05,formonly.pmr05t)
+SCREEN RECORD Undefined(formonly.pmj03,formonly.pmj031,formonly.pmj032,formonly.ima44,formonly.ima908,formonly.pmj12,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

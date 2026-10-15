@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq621.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"wagq019")
+Folder pc1
+Page main(text=%"main")
+VBox vb1
+Grid gr1
+{
+
+ Lower org    [xsh99_1           ]     Products no.   [xsi03_1           ]
+
+ Begin date   [xsh02_1           ]     End date       [xsh03_1           ]
+
+}
+END -- gr1
+Table s_xsi
+{
+[xsh99   |azp02   |xsi03   |ima02   |xsi04   |xsi05   |xsi06   ]
+[xsh99   |azp02   |xsi03   |ima02   |xsi04   |xsi05   |xsi06   ]
+[xsh99   |azp02   |xsi03   |ima02   |xsi04   |xsi05   |xsi06   ]
+[xsh99   |azp02   |xsi03   |ima02   |xsi04   |xsi05   |xsi06   ]
+[xsh99   |azp02   |xsi03   |ima02   |xsi04   |xsi05   |xsi06   ]
+
+}
+END -- s_xsi
+END -- vb1
+END -- main
+END -- pc1
+END -- Form1
+
+TABLES
+xsi_file,
+xsh_file
+ATTRIBUTES
+ButtonEdit xsh99_1=formonly.xsh99_1 type CHAR, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit xsi03_1=formonly.xsi03_1 type CHAR, action=controlp, tabIndex=5, image="zoom.png";
+DateEdit xsh02_1=formonly.xsh02_1 type CHAR, tabIndex=3;
+DateEdit xsh03_1=formonly.xsh03_1 type CHAR, tabIndex=4;
+Edit xsh99=xsh_file.xsh99, tabIndex=1, title="xsh99";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=6, title="azp02";
+Edit xsi03=xsi_file.xsi03, tabIndex=8, title="xsi03";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=9, title="ima02";
+Edit xsi04=xsi_file.xsi04, tabIndex=10, title="xsi04", not null, required;
+Edit xsi05=xsi_file.xsi05, tabIndex=7, title="xsi05";
+Edit xsi06=xsi_file.xsi06, tabIndex=11, title="xsi06", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_xsi(xsh_file.xsh99,formonly.azp02,xsi_file.xsi03,formonly.ima02,xsi_file.xsi04,xsi_file.xsi05,xsi_file.xsi06)
+SCREEN RECORD Undefined(formonly.xsh99_1,formonly.xsi03_1,formonly.xsh02_1,formonly.xsh03_1)
+END -- INSTRUCTIONS
+

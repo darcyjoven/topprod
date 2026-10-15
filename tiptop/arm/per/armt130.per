@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armt130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armt130")
+Folder pc78
+Page page01(text="Page01")
+Table s_rmd
+{
+[rmd0|rmd1|rmd23 |rmk02               |rmd24               |rmd21           |rmd04               |rmd07          |rmd05|rmd12   |rmd27|rmd06                         |rmd13               |rmd14               ]
+[rmd0|rmd1|rmd23 |rmk02               |rmd24               |rmd21           |rmd04               |rmd07          |rmd05|rmd12   |rmd27|rmd06                         |rmd13               |rmd14               ]
+[rmd0|rmd1|rmd23 |rmk02               |rmd24               |rmd21           |rmd04               |rmd07          |rmd05|rmd12   |rmd27|rmd06                         |rmd13               |rmd14               ]
+[rmd0|rmd1|rmd23 |rmk02               |rmd24               |rmd21           |rmd04               |rmd07          |rmd05|rmd12   |rmd27|rmd06                         |rmd13               |rmd14               ]
+[rmd0|rmd1|rmd23 |rmk02               |rmd24               |rmd21           |rmd04               |rmd07          |rmd05|rmd12   |rmd27|rmd06                         |rmd13               |rmd14               ]
+[rmd0|rmd1|rmd23 |rmk02               |rmd24               |rmd21           |rmd04               |rmd07          |rmd05|rmd12   |rmd27|rmd06                         |rmd13               |rmd14               ]
+[rmd0|rmd1|rmd23 |rmk02               |rmd24               |rmd21           |rmd04               |rmd07          |rmd05|rmd12   |rmd27|rmd06                         |rmd13               |rmd14               ]
+[rmd0|rmd1|rmd23 |rmk02               |rmd24               |rmd21           |rmd04               |rmd07          |rmd05|rmd12   |rmd27|rmd06                         |rmd13               |rmd14               ]
+[rmd0|rmd1|rmd23 |rmk02               |rmd24               |rmd21           |rmd04               |rmd07          |rmd05|rmd12   |rmd27|rmd06                         |rmd13               |rmd14               ]
+[rmd0|rmd1|rmd23 |rmk02               |rmd24               |rmd21           |rmd04               |rmd07          |rmd05|rmd12   |rmd27|rmd06                         |rmd13               |rmd14               ]
+[rmd0|rmd1|rmd23 |rmk02               |rmd24               |rmd21           |rmd04               |rmd07          |rmd05|rmd12   |rmd27|rmd06                         |rmd13               |rmd14               ]
+
+}
+END -- s_rmd
+END -- page01
+Page info(text="Info")
+Grid gr295
+{
+ <G grpinfo                       >
+  Detail Counts       [cn2       ]
+ <                                >
+
+}
+END -- gr295
+END -- info
+END -- pc78
+END -- armt130
+
+TABLES
+rmd_file
+ATTRIBUTES
+Edit rmd0=rmd_file.rmd02, tabIndex=1, title="S/N", not null, required;
+Edit rmd1=rmd_file.rmd031, tabIndex=2, title="Key";
+ButtonEdit rmd23=rmd_file.rmd23, action=controlp, tabIndex=3, title="D/RCd", image="zoom", comment="<^P>Qry Status Code ";
+Edit rmk02=formonly.rmk02 type CHAR, tabIndex=4, title="D/RDesc";
+Edit rmd24=rmd_file.rmd24, tabIndex=5, title="Ext.Desc";
+Edit rmd21=rmd_file.rmd21, tabIndex=6, title="MISC MQ/MR No.";
+ButtonEdit rmd04=rmd_file.rmd04, action=controlp, tabIndex=7, title="Item #", not null, required, image="zoom", comment="<^P>Query Item  ";
+Edit rmd07=rmd_file.rmd07, tabIndex=8, title="S/N", noEntry;
+Edit rmd05=rmd_file.rmd05, tabIndex=9, title="Unit", noEntry;
+Edit rmd12=rmd_file.rmd12, tabIndex=10, title="Qty", not null, required;
+Edit rmd27=rmd_file.rmd27, tabIndex=11, title="Rspn", upShift, comment="A.Company U.Customer";
+Edit rmd06=rmd_file.rmd06, tabIndex=12, title="P/N", noEntry;
+Edit rmd13=rmd_file.rmd13, tabIndex=13, title="Cost U/P", noEntry, not null, required;
+Edit rmd14=rmd_file.rmd14, tabIndex=14, title="Cost Amt", not null, required;
+Group grpinfo:grpinfo;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rmd(rmd_file.rmd02,rmd_file.rmd031,rmd_file.rmd23,formonly.rmk02,rmd_file.rmd24,rmd_file.rmd21,rmd_file.rmd04,rmd_file.rmd07,rmd_file.rmd05,rmd_file.rmd12,rmd_file.rmd27,rmd_file.rmd06,rmd_file.rmd13,rmd_file.rmd14)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

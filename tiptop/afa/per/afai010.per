@@ -1,0 +1,149 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai010")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+
+  Category No.        [fab01     ]             [fab14                                          ]
+  Category Desc.      [fab02               ]    Bonded                    [fab15               ]
+  Asset Property      [fab03     ]              Insurance                 [fab16               ]
+  Depreciation Method [fab04     ]              Tax-Free                  [fab17               ]
+  Residual%           [fab23     ]%             Mortgage                  [fab18               ]
+  Service Life        [fab05     ]
+ [fab08                                      ]  Investment Credit         [fab19               ]
+  Depr.-Tax Method    [fab06     ]              Credit Rate Home Currency [fab20     ]%
+  Depr.-Tax Life      [fab07     ]              Foreign Currency          [fab21     ]%
+  Re-Am. Lf af Depre. [fab10     ]              Tax Revamped Life         [fab22     ]
+  Depreciation Method2[fab042    ]
+  Residual2%          [fab232    ]%
+  Service Life 2      [fab052    ]
+ [fab082                                     ]
+  Re-Am. Lf af Depre2.[fab102    ]
+------------------------------------------------------------------------------------------------
+ Asset Account       [fab11                         ][aag02_1                                 ]
+ Acc. Depr. Account  [fab12                         ][aag02_2                                 ]
+ Depre. Account      [fab13                         ][aag02_3                                 ]
+ Dedu. Prep. Account [fab24                         ][aag02_4                                 ]
+ Asset Account2      [fab111                        ][aag02_11                                ]
+ Acc. Depr. Account2 [fab121                        ][aag02_21                                ]
+ Depre. Account2     [fab131                        ][aag02_31                                ]
+ Dedu. Prep. Account2[fab241                        ][aag02_41                                ]
+}
+END -- gr1
+END -- page01
+Page info(text="Info")
+Grid gr2
+{
+ Record Owner       [fabuser   ] Last Modified by   [fabmodu   ] Data Valid Code     [fabacti   ]
+ Department         [fabgrup   ] Create/Modify Date [fabdate   ]
+ Record Orig.       [faboriu   ]
+ Dept Orig.         [faborig   ]
+}
+END -- gr2
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[fabud01                       ] userdefined_field07[fabud07        ] userdefined_field13[fabud13        ]
+                    [                              ] userdefined_field08[fabud08        ] userdefined_field14[fabud14        ]
+ userdefined_field02[fabud02        ]                userdefined_field09[fabud09        ] userdefined_field15[fabud15        ]
+ userdefined_field03[fabud03        ]                userdefined_field10[fabud10        ]
+ userdefined_field04[fabud04        ]                userdefined_field11[fabud11        ]
+ userdefined_field05[fabud05        ]                userdefined_field12[fabud12        ]
+ userdefined_field06[fabud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc1
+Grid gr3
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+}
+END -- gr3
+END -- VBox1
+END -- afai010
+
+TABLES
+fab_file
+ATTRIBUTES
+Edit fab01=fab_file.fab01, tabIndex=1, not null, required;
+CheckBox fab14=fab_file.fab14, tabIndex=2, text="Capitalize Directly", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fab02=fab_file.fab02, tabIndex=3;
+ComboBox fab15=fab_file.fab15, tabIndex=4, not null, required, queryEditable, items=(("0", %"Non-Bonded"),("1", %"Bondable"));
+ComboBox fab03=fab_file.fab03, tabIndex=5, not null, required, queryEditable, comment="1.Tangible 2.Intangible Asset 3.Land 4.Dim.Asset 5.Exp", items=(("1", %"Tangible"),("2", %"Intangible Asset"),("3", %"Land"),("4", %"Dim.Asset"),("5", %"Exp"));
+ComboBox fab16=fab_file.fab16, tabIndex=6, not null, required, queryEditable, items=(("0", %"No Insurance"),("1", %"To Insure"),("2", %"Insured"));
+ComboBox fab04=fab_file.fab04, tabIndex=7, not null, required, queryEditable, comment="0.No Depr 1.Avg&Rsdl 2.Avg No-Rsdl 3.Fix% Dim 4.Outp.Qt 5.Othr", items=(("0", %"No Depr"),("1", %"Avg&Rsdl"),("2", %"Avg No-Rsdl"),("3", %"Fix% Dim"),("4", %"Outp.Qt"),("5", %"Othr"));
+ComboBox fab17=fab_file.fab17, tabIndex=8, not null, required, queryEditable, items=(("0", %"Not Duty-Free"),("1", %"Exemptable"));
+Edit fab23=fab_file.fab23, tabIndex=9;
+ComboBox fab18=fab_file.fab18, tabIndex=10, not null, required, queryEditable, items=(("0", %"NO Mortgage"),("1", %"UnMortgaged"));
+Edit fab05=fab_file.fab05, tabIndex=11;
+CheckBox fab08=fab_file.fab08, tabIndex=506, text="Re-Amortize after Depreciated", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox fab19=fab_file.fab19, tabIndex=13, not null, required, queryEditable, items=(("0", %"NO Credit"),("1", %"Creditable"));
+ComboBox fab06=fab_file.fab06, tabIndex=14, not null, required, queryEditable, comment="0.No Depr 1.Avg&Rsdl 2.Avg No-Rsdl 3.Fix% Dim 4.Outp.Qt 5.Othr", items=(("0", %"No Depr"),("1", %"Avg&Rsdl"),("2", %"Avg No-Rsdl"),("3", %"Fix% Dim"),("4", %"Outp.Qt"),("5", %"Othr"));
+Edit fab20=fab_file.fab20, tabIndex=15;
+Edit fab07=fab_file.fab07, tabIndex=16;
+Edit fab21=fab_file.fab21, tabIndex=17;
+Edit fab10=fab_file.fab10, tabIndex=18;
+Edit fab22=fab_file.fab22, tabIndex=19;
+ComboBox fab042=fab_file.fab042, tabIndex=503, not null, required, queryEditable, comment="0.No Depr 1.Avg&Rsdl 2.Avg No-Rsdl 3.Fix% Dim 4.Outp.Qt 5.Othr", items=(("0", %"No Depr"),("1", %"Avg&Rsdl"),("2", %"Avg No-Rsdl"),("3", %"Fix% Dim"),("4", %"Outp.Qt"),("5", %"Othr"));
+Edit fab232=fab_file.fab232, tabIndex=504;
+Edit fab052=fab_file.fab052, tabIndex=505;
+CheckBox fab082=fab_file.fab082, tabIndex=12, text="Re-Amortize after Depreciated", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fab102=fab_file.fab102, tabIndex=507;
+ButtonEdit fab11=fab_file.fab11, action=controlp, tabIndex=20, not null, required, image="zoom", comment="<^P>Qry Details <^Y>Multi-Department Depreciation Account";
+Edit aag02_1=formonly.aag02_1 type VARCHAR, tabIndex=21;
+ButtonEdit fab12=fab_file.fab12, action=controlp, tabIndex=22, not null, required, image="zoom", comment="<^P>Qry Account Detail ";
+Edit aag02_2=formonly.aag02_2 type VARCHAR, tabIndex=23;
+ButtonEdit fab13=fab_file.fab13, action=controlp, tabIndex=24, not null, required, image="zoom", comment="<^P>Qry Account Detail ";
+Edit aag02_3=formonly.aag02_3 type VARCHAR, tabIndex=25;
+ButtonEdit fab24=fab_file.fab24, action=controlp, tabIndex=26, image="zoom", comment="<^P>Qry Account Detail ";
+Edit aag02_4=formonly.aag02_4 type VARCHAR, tabIndex=27;
+ButtonEdit fab111=fab_file.fab111, action=controlp, tabIndex=28, not null, required, image="zoom", comment="<^P>Qry Details <^Y>Multi-Department Depreciation Account";
+Edit aag02_11=formonly.aag02_11 type VARCHAR, tabIndex=29;
+ButtonEdit fab121=fab_file.fab121, action=controlp, tabIndex=30, not null, required, image="zoom", comment="<^P>Qry Account Detail ";
+Edit aag02_21=formonly.aag02_21 type VARCHAR, tabIndex=31;
+ButtonEdit fab131=fab_file.fab131, action=controlp, tabIndex=32, not null, required, image="zoom", comment="<^P>Qry Account Detail ";
+Edit aag02_31=formonly.aag02_31 type VARCHAR, tabIndex=33;
+ButtonEdit fab241=fab_file.fab241, action=controlp, tabIndex=34, image="zoom", comment="<^P>Qry Account Detail ";
+Edit aag02_41=formonly.aag02_41 type VARCHAR, tabIndex=35;
+Edit fabuser=fab_file.fabuser, tabIndex=36, noEntry;
+Edit fabmodu=fab_file.fabmodu, tabIndex=37, noEntry;
+Edit fabacti=fab_file.fabacti, tabIndex=38, noEntry;
+Edit fabgrup=fab_file.fabgrup, tabIndex=39, noEntry;
+DateEdit fabdate=fab_file.fabdate, tabIndex=40, noEntry;
+Edit faboriu=fab_file.faboriu, tabIndex=501, noEntry;
+Edit faborig=fab_file.faborig, tabIndex=502, noEntry;
+TextEdit fabud01=fab_file.fabud01, tabIndex=42, stretch=NONE;
+Edit fabud07=fab_file.fabud07, tabIndex=43;
+DateEdit fabud13=fab_file.fabud13, tabIndex=44;
+Edit fabud08=fab_file.fabud08, tabIndex=45;
+DateEdit fabud14=fab_file.fabud14, tabIndex=46;
+Edit fabud02=fab_file.fabud02, tabIndex=47;
+Edit fabud09=fab_file.fabud09, tabIndex=48;
+DateEdit fabud15=fab_file.fabud15, tabIndex=49;
+Edit fabud03=fab_file.fabud03, tabIndex=50;
+Edit fabud10=fab_file.fabud10, tabIndex=51;
+Edit fabud04=fab_file.fabud04, tabIndex=52;
+Edit fabud11=fab_file.fabud11, tabIndex=53;
+Edit fabud05=fab_file.fabud05, tabIndex=54;
+Edit fabud12=fab_file.fabud12, tabIndex=55;
+Edit fabud06=fab_file.fabud06, tabIndex=56;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=41;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fab_file.fab01,fab_file.fab14,fab_file.fab02,fab_file.fab15,fab_file.fab03,fab_file.fab16,fab_file.fab04,fab_file.fab17,fab_file.fab23,fab_file.fab18,fab_file.fab05,fab_file.fab08,fab_file.fab19,fab_file.fab06,fab_file.fab20,fab_file.fab07,fab_file.fab21,fab_file.fab10,fab_file.fab22,fab_file.fab042,fab_file.fab232,fab_file.fab052,fab_file.fab082,fab_file.fab102,fab_file.fab11,formonly.aag02_1,fab_file.fab12,formonly.aag02_2,fab_file.fab13,formonly.aag02_3,fab_file.fab24,formonly.aag02_4,fab_file.fab111,formonly.aag02_11,fab_file.fab121,formonly.aag02_21,fab_file.fab131,formonly.aag02_31,fab_file.fab241,formonly.aag02_41,fab_file.fabuser,fab_file.fabmodu,fab_file.fabacti,fab_file.fabgrup,fab_file.fabdate,fab_file.faboriu,fab_file.faborig,fab_file.fabud01,fab_file.fabud07,fab_file.fabud13,fab_file.fabud08,fab_file.fabud14,fab_file.fabud02,fab_file.fabud09,fab_file.fabud15,fab_file.fabud03,fab_file.fabud10,fab_file.fabud04,fab_file.fabud11,fab_file.fabud05,fab_file.fabud12,fab_file.fabud06,formonly.cnt)
+END -- INSTRUCTIONS
+

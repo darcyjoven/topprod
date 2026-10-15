@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxp010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxp010")
+VBox VBox1
+Grid gr1062
+{
+ <G group01                                >
+  W/O No.             [sfb01           ]
+  W/O Closing Date    [sfb36       ]
+  Charge Off Date     [bnb13       ]
+ <                                         >
+
+}
+END -- gr1062
+Grid gr1063
+{
+[g_bgjob   ]
+
+}
+END -- gr1063
+END -- VBox1
+END -- abxp010
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+Edit sfb01=formonly.sfb01 type VARCHAR, tabIndex=1, comment=" Enter WO # or WO Closing Date!    ";
+DateEdit sfb36=formonly.sfb36 type DATE, tabIndex=2;
+DateEdit bnb13=formonly.bnb13 type DATE, tabIndex=3;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=4, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfb01,formonly.sfb36,formonly.bnb13,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

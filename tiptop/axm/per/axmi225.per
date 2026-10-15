@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi225.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi225")
+VBox vb5
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2069
+{
+ Customer No.        [occ01     ]
+
+
+}
+END -- gr2069
+Grid gr2070
+{
+ Customer Name       [occ02     ]
+
+
+}
+END -- gr2070
+Grid gr2071
+{
+ Current Status      [occ05     ]
+
+
+}
+END -- gr2071
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_ocj
+{
+[ocj02        |nmt02                   |ocj03                         |ocj04     |ocj05   |ocj06             |ocj07                |ocjact]
+[ocj02        |nmt02                   |ocj03                         |ocj04     |ocj05   |ocj06             |ocj07                |ocjact]
+[ocj02        |nmt02                   |ocj03                         |ocj04     |ocj05   |ocj06             |ocj07                |ocjact]
+[ocj02        |nmt02                   |ocj03                         |ocj04     |ocj05   |ocj06             |ocj07                |ocjact]
+[ocj02        |nmt02                   |ocj03                         |ocj04     |ocj05   |ocj06             |ocj07                |ocjact]
+[ocj02        |nmt02                   |ocj03                         |ocj04     |ocj05   |ocj06             |ocj07                |ocjact]
+[ocj02        |nmt02                   |ocj03                         |ocj04     |ocj05   |ocj06             |ocj07                |ocjact]
+[ocj02        |nmt02                   |ocj03                         |ocj04     |ocj05   |ocj06             |ocj07                |ocjact]
+[ocj02        |nmt02                   |ocj03                         |ocj04     |ocj05   |ocj06             |ocj07                |ocjact]
+[ocj02        |nmt02                   |ocj03                         |ocj04     |ocj05   |ocj06             |ocj07                |ocjact]
+
+}
+END -- s_ocj
+Grid gr2072
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2072
+END -- vb5
+END -- axmi225
+
+TABLES
+ocj_file
+ATTRIBUTES
+Edit occ01=formonly.occ01 type CHAR, tabIndex=1;
+Edit occ02=formonly.occ02 type CHAR, tabIndex=2, noEntry;
+ComboBox occ05=formonly.occ05 type CHAR, tabIndex=3, not null, required, queryEditable, items=(("1", "Permanent"),("2", "Temporary"));
+ButtonEdit ocj02=ocj_file.ocj02, action=controlp, tabIndex=4, title="Bank Number", not null, required, image="zoom", comment="<^O>Copy Previous Record!    <^P>Qry All Banks       ";
+Edit nmt02=formonly.nmt02 type CHAR, tabIndex=5, title="Bank Full Name", noEntry;
+Edit ocj03=ocj_file.ocj03, tabIndex=6, title="Bank Account #", not null, required;
+Edit ocj04=ocj_file.ocj04, tabIndex=10, title="account name", not null, required;
+CheckBox ocj05=ocj_file.ocj05, tabIndex=11, default = "N", title="chief of bank account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ocj06=ocj_file.ocj06, tabIndex=12, title="Account Email";
+Edit ocj07=ocj_file.ocj07, tabIndex=13, title="Add Email";
+CheckBox ocjact=ocj_file.ocjacti, tabIndex=9, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ocj(ocj_file.ocj02,formonly.nmt02,ocj_file.ocj03,ocj_file.ocj04,ocj_file.ocj05,ocj_file.ocj06,ocj_file.ocj07,ocj_file.ocjacti)
+SCREEN RECORD Undefined(formonly.occ01,formonly.occ02,formonly.occ05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

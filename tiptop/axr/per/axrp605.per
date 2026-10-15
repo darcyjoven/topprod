@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrp605.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group Group1(text=%"QBE")
+Grid ds1
+{
+
+[azp01|azp02               ]
+
+[lua01|lua02               ]
+
+[yy   |y1                  ]
+
+[mm   |m1                  ]
+
+}
+END -- ds1
+END -- Group1
+END -- VBox1
+END -- Form
+
+TABLES
+lua_file,
+azp_file
+ATTRIBUTES
+Label azp01:azp01, text=%"azp01";
+ButtonEdit azp02=azp_file.azp01, action=controlp, tabIndex=1, not null, image="zoom", scroll;
+Label lua01:lua01, text=%"lua01";
+ButtonEdit lua02=lua_file.lua01, action=controlp, tabIndex=2, not null, image="zoom", scroll;
+Label yy:yy, text=%"yy";
+Edit y1=formonly.yy type INTEGER, tabIndex=3, not null, required;
+Label mm:mm, text=%"mm";
+Edit m1=formonly.mm type INTEGER, tabIndex=4, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(azp_file.azp01,lua_file.lua01)
+SCREEN RECORD Undefined(formonly.yy,formonly.mm)
+END -- INSTRUCTIONS
+

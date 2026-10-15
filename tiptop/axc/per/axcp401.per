@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcp401")
+VBox vb2
+Grid gr1515
+{
+ <G group01                                                            >
+  W/O No. QBE           [bno             ]-[eno             ]
+ [sw_1                                                      ]
+ [sw_2                                                      ]
+  Current Year/Period      [yy       ]    [mm       ]
+  Cost Accounting Locking Date         [sma53            ]
+
+ <                                                                     >
+}
+END -- gr1515
+Grid gr1516
+{
+ [dummy01                                                               ]
+ [dummy02                                                               ]
+ [dummy03                                                               ]
+ [dummy04                                                              ]
+}
+END -- gr1516
+Grid gr1517
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr1517
+END -- vb2
+END -- axcp401
+
+TABLES
+sma_file
+ATTRIBUTES
+Group group01:group01;
+Edit bno=formonly.bno type CHAR, tabIndex=1, upShift;
+Edit eno=formonly.eno type CHAR, tabIndex=2, upShift;
+CheckBox sw_1=formonly.sw_1 type CHAR, tabIndex=3, text="Completed W/O(Esitmated Production Qty=Stored-in Qty)W/O", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sw_2=formonly.sw_2 type CHAR, tabIndex=4, text="Auto Set Closed W/O Closing Date", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit yy=formonly.yy type CHAR, tabIndex=6;
+Edit mm=formonly.mm type CHAR, tabIndex=7;
+DateEdit sma53=sma_file.sma53, tabIndex=8;
+Label dummy01:dummy01, text="Note: ";
+Label dummy02:dummy02, text="1.Before Run Cost Accouting, better to Close Closed W/O";
+Label dummy03:dummy03, text="  to avoid Nx.MM Withdrawal/Return Cost being Input";
+Label dummy04:dummy04, text="2.It\'ll Update sfb38(Cost Accounting Closing Date) for Closed W/O";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=5, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bno,formonly.eno,formonly.sw_1,formonly.sw_2,formonly.yy,formonly.mm,sma_file.sma53,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

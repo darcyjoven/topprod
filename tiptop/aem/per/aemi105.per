@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemi105.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemi105")
+VBox VBox1
+Folder pc308
+Page page01(text="main")
+VBox VBox2
+Table s_fif
+{
+[fif01             |fif02               |fif03           |fif04                |fif05                           |fif06             |fif07          |fif08          |fif09          ]
+[fif01             |fif02               |fif03           |fif04                |fif05                           |fif06             |fif07          |fif08          |fif09          ]
+[fif01             |fif02               |fif03           |fif04                |fif05                           |fif06             |fif07          |fif08          |fif09          ]
+[fif01             |fif02               |fif03           |fif04                |fif05                           |fif06             |fif07          |fif08          |fif09          ]
+[fif01             |fif02               |fif03           |fif04                |fif05                           |fif06             |fif07          |fif08          |fif09          ]
+[fif01             |fif02               |fif03           |fif04                |fif05                           |fif06             |fif07          |fif08          |fif09          ]
+[fif01             |fif02               |fif03           |fif04                |fif05                           |fif06             |fif07          |fif08          |fif09          ]
+[fif01             |fif02               |fif03           |fif04                |fif05                           |fif06             |fif07          |fif08          |fif09          ]
+[fif01             |fif02               |fif03           |fif04                |fif05                           |fif06             |fif07          |fif08          |fif09          ]
+[fif01             |fif02               |fif03           |fif04                |fif05                           |fif06             |fif07          |fif08          |fif09          ]
+
+}
+END -- s_fif
+END -- VBox2
+END -- page01
+END -- pc308
+Grid gr1765
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1765
+END -- VBox1
+END -- aemi105
+
+TABLES
+fif_file
+ATTRIBUTES
+Edit fif01=fif_file.fif01, tabIndex=1, title="Instrument Code", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ";
+Edit fif02=fif_file.fif02, tabIndex=2, title="Name";
+Edit fif03=fif_file.fif03, tabIndex=3, title="Signal Mark";
+ButtonEdit fif04=fif_file.fif04, action=controlp, tabIndex=4, title="Measurement Units", image="zoom", comment="<^P>Query Detail";
+Edit fif05=fif_file.fif05, tabIndex=5, title="Average-Instrument-Units/Day";
+ComboBox fif06=fif_file.fif06, tabIndex=6, title="Run-Time/Period", not null, required, comment="1.Run-Time 2.Period", items=(("1", %"Run-Time"),("2", %"Period"));
+ComboBox fif07=fif_file.fif07, tabIndex=7, title="Replace/Add", not null, required, comment="1.Replace 2.Add", items=(("1", %"Replace"),("2", %"Add"));
+Edit fif08=fif_file.fif08, tabIndex=8, title="Cycle Times";
+Edit fif09=fif_file.fif09, tabIndex=9, title="Cycle Point";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fif(fif_file.fif01,fif_file.fif02,fif_file.fif03,fif_file.fif04,fif_file.fif05,fif_file.fif06,fif_file.fif07,fif_file.fif08,fif_file.fif09)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

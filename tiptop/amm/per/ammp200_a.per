@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amm/42f/ammp200_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ammp200_a")
+Grid gr3747
+{
+ <G group01                                    >
+  Requisition Note #     [mma01               ]
+  Requisition# Date      [mma07               ]
+  Requisition Department [mma15               ]
+  Mold W/O               [mma021              ]
+  Vender/Department      [mmb08               ]
+  Maintained by          [mmamodu             ]
+ <                                             >
+ <G group02                                    >
+  Issue Date          [opdate      ]
+ <                                             >
+
+}
+END -- gr3747
+END -- ammp200_a
+
+TABLES
+mmb_file,
+mma_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit mma01=mma_file.mma01, tabIndex=1;
+DateEdit mma07=mma_file.mma07, tabIndex=2;
+Edit mma15=mma_file.mma15, tabIndex=3;
+Edit mma021=mma_file.mma021, tabIndex=4;
+Edit mmb08=mmb_file.mmb08, tabIndex=5;
+Edit mmamodu=mma_file.mmamodu, tabIndex=6;
+Group group02:group02, text="INPUT";
+DateEdit opdate=formonly.opdate type DATE, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(mma_file.mma01,mma_file.mma07,mma_file.mma15,mma_file.mma021,mmb_file.mmb08,mma_file.mmamodu,formonly.opdate)
+END -- INSTRUCTIONS
+

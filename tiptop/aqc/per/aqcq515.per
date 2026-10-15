@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcq515.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aqcq515")
+VBox VBox1
+Folder pc37
+Page page01(text="Main")
+Grid gr90
+{
+ <G group01                                            >
+  Item No.            [qcm021                        ]
+                      [ima02                         ]
+                      [ima021                        ]
+  QC Date             [bdate       ]-[edate       ]
+ <                                                     >
+ <G group02                                            >
+  Lots Sent           [lot       ]
+  Qty Sent to QC      [qcm22     ]
+  Qty Passed          [stkqty    ]
+ <                                                     >
+ <G group03                                            >
+  NO-Good Qty         [crqty     ]
+  NO-Good %           [crrate    ]
+
+ <                                                     >
+ <G group04                                            >
+  Lots Rejected       [rejqty    ]
+  Lot Rejected%       [rejrate   ]%
+ <                                                     >
+
+}
+END -- gr90
+END -- page01
+END -- pc37
+Grid gr91
+{
+ ----------- Rows [cnt   ] ----------
+
+}
+END -- gr91
+END -- VBox1
+END -- aqcq515
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit qcm021=formonly.qcm021 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=4;
+DateEdit edate=formonly.edate type DATE, tabIndex=5;
+Group group02:group02;
+Edit lot=formonly.lot type CHAR, tabIndex=6;
+Edit qcm22=formonly.qcm22 type CHAR, tabIndex=7;
+Edit stkqty=formonly.stkqty type CHAR, tabIndex=8;
+Group group03:group03;
+Edit crqty=formonly.crqty type CHAR, tabIndex=9;
+Edit crrate=formonly.crrate type CHAR, tabIndex=10;
+Group group04:group04;
+Edit rejqty=formonly.rejqty type CHAR, tabIndex=11;
+Edit rejrate=formonly.rejrate type CHAR, tabIndex=12;
+Edit cnt=formonly.cnt type CHAR, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.qcm021,formonly.ima02,formonly.ima021,formonly.bdate,formonly.edate,formonly.lot,formonly.qcm22,formonly.stkqty,formonly.crqty,formonly.crrate,formonly.rejqty,formonly.rejrate,formonly.cnt)
+END -- INSTRUCTIONS
+

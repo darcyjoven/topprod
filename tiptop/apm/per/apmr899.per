@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr899.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr899")
+VBox VBox1
+Grid gr5203
+{
+ <G group01                                                     >
+  Receipt No.  [rva01               ]
+  Receipt Date [rva06               ]
+  Vender No.   [rva05               ]
+  P/O No.      [rvb04               ]
+  Item No.     [rvb05               ]
+ <                                                              >
+
+}
+END -- gr5203
+Group group02(text="INPUT")
+Grid gr5204
+{
+ <G group03                                                       >
+  [s1                ]  [s2               ]  [s3                 ]
+  [t1                ]  [t2               ]  [t3                 ]
+  [u1                ]  [u2               ]  [u3                 ]
+ <                                                                >
+ <G group04                     >  <G group05                     >
+ [exm                          ]   [d                            ]
+
+ <                              >  <                              >
+
+}
+END -- gr5204
+END -- group02
+Grid gr5205
+{
+ [more                                                            ]
+
+}
+END -- gr5205
+END -- VBox1
+END -- apmr899
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit rva01=formonly.rva01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit rva06=formonly.rva06 type DATE, tabIndex=2;
+ButtonEdit rva05=formonly.rva05 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit rvb04=formonly.rvb04 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit rvb05=formonly.rvb05 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Group group03:group03, text="Sqence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=6, items=(("1", "Receipt No."),("2", "Receipt Date"),("3", "Vender No."),("4", "P/O No."),("5", "Item No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=7, items=(("1", "Receipt No."),("2", "Receipt Date"),("3", "Vender No."),("4", "P/O No."),("5", "Item No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=8, items=(("1", "Receipt No."),("2", "Receipt Date"),("3", "Vender No."),("4", "P/O No."),("5", "Item No."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=12, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=13, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="Data Option1";
+RadioGroup exm=formonly.exm type VARCHAR, tabIndex=15, items=(("1", "To-QC"),("2", "Skip QC "),("3", "All "));
+Group group05:group05, text="Data Option2";
+RadioGroup d=formonly.d type VARCHAR, tabIndex=16, items=(("1", "Confirmed"),("2", "UnConfirmed"),("3", "All "));
+CheckBox more=formonly.more type VARCHAR, tabIndex=17, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rva01,formonly.rva06,formonly.rva05,formonly.rvb04,formonly.rvb05,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.exm,formonly.d,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi202.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi202")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4826
+{
+ Vender No.          [pmc01     ][pmc03     ]
+ Current Status      [pmc05      ]
+}
+END -- gr4826
+END -- page01
+END -- folder01
+Table s_pmg
+{
+[pmg02 |pmg03                                                   ]
+[pmg02 |pmg03                                                   ]
+[pmg02 |pmg03                                                   ]
+[pmg02 |pmg03                                                   ]
+[pmg02 |pmg03                                                   ]
+[pmg02 |pmg03                                                   ]
+[pmg02 |pmg03                                                   ]
+[pmg02 |pmg03                                                   ]
+[pmg02 |pmg03                                                   ]
+[pmg02 |pmg03                                                   ]
+
+}
+END -- s_pmg
+Grid gr4827
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4827
+END -- VBox1
+END -- apmi202
+
+TABLES
+pmg_file,
+pmc_file
+ATTRIBUTES
+Edit pmc01=formonly.pmc01 type CHAR, tabIndex=1;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, noEntry;
+ComboBox pmc05=pmc_file.pmc05, tabIndex=7, noEntry, not null, required, queryEditable, items=(("0", "Issue"),("1", "Confirm"),("2", "Hung"),("3", "Stop"));
+Edit pmg02=pmg_file.pmg02, tabIndex=3, title="Line#", not null, required;
+Edit pmg03=pmg_file.pmg03, tabIndex=4, title="Key Memo", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmg(pmg_file.pmg02,pmg_file.pmg03)
+SCREEN RECORD Undefined(formonly.pmc01,formonly.pmc03,pmc_file.pmc05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

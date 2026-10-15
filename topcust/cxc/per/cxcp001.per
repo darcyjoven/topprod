@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cxc/4fd/cxcp001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid2
+{
+                [label5    ] [label6    ]
+  [label1    ]  [y1        ] [m1        ]               成品分群码     [ima061          ]
+  [label2    ]  [y2        ] [m2        ]               元件分群码     [ima062          ]
+
+}
+END -- Grid2
+Table s_sfb
+{
+[sfb01   |sfb02   |sfb05   |ima06_1 |ima02_1 |ima021_1|sfb08   |sfb09   |sfb38   |tlf01   |ima02_2 |ima021_2|ima06_2 |sfa08   |sfa06   |sfa062  |tlf10   |ktl     |ccc23   |a       |b       |c       ]
+[sfb01   |sfb02   |sfb05   |ima06_1 |ima02_1 |ima021_1|sfb08   |sfb09   |sfb38   |tlf01   |ima02_2 |ima021_2|ima06_2 |sfa08   |sfa06   |sfa062  |tlf10   |ktl     |ccc23   |a       |b       |c       ]
+[sfb01   |sfb02   |sfb05   |ima06_1 |ima02_1 |ima021_1|sfb08   |sfb09   |sfb38   |tlf01   |ima02_2 |ima021_2|ima06_2 |sfa08   |sfa06   |sfa062  |tlf10   |ktl     |ccc23   |a       |b       |c       ]
+[sfb01   |sfb02   |sfb05   |ima06_1 |ima02_1 |ima021_1|sfb08   |sfb09   |sfb38   |tlf01   |ima02_2 |ima021_2|ima06_2 |sfa08   |sfa06   |sfa062  |tlf10   |ktl     |ccc23   |a       |b       |c       ]
+[sfb01   |sfb02   |sfb05   |ima06_1 |ima02_1 |ima021_1|sfb08   |sfb09   |sfb38   |tlf01   |ima02_2 |ima021_2|ima06_2 |sfa08   |sfa06   |sfa062  |tlf10   |ktl     |ccc23   |a       |b       |c       ]
+}
+END -- s_sfb
+Grid Grid1
+{
+  sum    [sum1              ]    [sum2                ]
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label label5:Label5, text=%"年份";
+Label label6:Label6, text=%"月份";
+Label label1:Label1, text=%"执行";
+Edit y1=formonly.y1 type INTEGER, tabIndex=23;
+Edit m1=formonly.m1 type INTEGER, tabIndex=24;
+ButtonEdit ima061=formonly.ima061, action=controlp, tabIndex=21, image="zoom";
+Label label2:Label2, text=%"成本单价";
+Edit y2=formonly.y2 type INTEGER, tabIndex=25;
+Edit m2=formonly.m2 type INTEGER, tabIndex=26;
+ButtonEdit ima062=formonly.ima062, action=controlp, tabIndex=22, image="zoom";
+ButtonEdit sfb01=formonly.sfb01, action=controlp, tabIndex=1, title=%"sfb01", noEntry, image="zoom";
+ComboBox sfb02=formonly.sfb02, tabIndex=2, title=%"sfb02", noEntry, items=(("1", "1"),("5", "5"),("7", "7"),("8", "8"),("11", "11"),("13", "13"),("15", "15"));
+ButtonEdit sfb05=formonly.sfb05, action=controlp, tabIndex=3, title=%"sfb05", noEntry, image="zoom";
+Edit ima06_1=formonly.ima06_1, tabIndex=4, title=%"ima06_1", noEntry;
+Edit ima02_1=formonly.ima02_1, tabIndex=5, title=%"ima02_1", noEntry;
+Edit ima021_1=formonly.ima021_1, tabIndex=6, title=%"ima021_1", noEntry;
+Edit sfb08=formonly.sfb08, tabIndex=7, title=%"sfb08", noEntry;
+Edit sfb09=formonly.sfb09, tabIndex=8, title=%"sfb09", noEntry;
+DateEdit sfb38=formonly.sfb38 type DATE, tabIndex=9, title=%"sfb38", noEntry;
+ButtonEdit tlf01=formonly.tlf01, tabIndex=10, title=%"tlf01", noEntry, image="zoom";
+Edit ima02_2=formonly.ima02_2, tabIndex=11, title=%"ima02_2", noEntry;
+Edit ima021_2=formonly.ima021_2, tabIndex=12, title=%"ima021_2", noEntry;
+Edit ima06_2=formonly.ima06_2, tabIndex=13, title=%"ima06_2", noEntry;
+Edit sfa08=formonly.sfa08, tabIndex=28, title=%"sfa08";
+Edit sfa06=formonly.sfa06, tabIndex=29, title=%"sfa06";
+Edit sfa062=formonly.sfa062, tabIndex=30, title=%"sfa062";
+Edit tlf10=formonly.tlf10, tabIndex=14, title=%"tlf10", noEntry;
+Edit ktl=formonly.ktl type DECIMAL, tabIndex=27, title=%"ktl", noEntry;
+Edit ccc23=formonly.ccc23, tabIndex=15, title=%"ccc23", noEntry;
+Edit a=formonly.a, tabIndex=16, title=%"a", noEntry;
+Edit b=formonly.b type INTEGER, tabIndex=17, title=%"b";
+Edit c=formonly.c, tabIndex=18, title=%"c", noEntry;
+Edit sum1=formonly.sum1, tabIndex=19;
+Edit sum2=formonly.sum2, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(formonly.sfb01,formonly.sfb02,formonly.sfb05,formonly.ima06_1,formonly.ima02_1,formonly.ima021_1,formonly.sfb08,formonly.sfb09,formonly.sfb38,formonly.tlf01,formonly.ima02_2,formonly.ima021_2,formonly.ima06_2,formonly.sfa08,formonly.sfa06,formonly.sfa062,formonly.tlf10,formonly.ktl,formonly.ccc23,formonly.a,formonly.b,formonly.c)
+SCREEN RECORD Undefined(formonly.sum1,formonly.sum2,formonly.y1,formonly.m1,formonly.y2,formonly.m2,formonly.ima061,formonly.ima062)
+END -- INSTRUCTIONS
+

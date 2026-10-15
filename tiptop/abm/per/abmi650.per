@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi650.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi650")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr802
+{
+ Component No.       [bml01                         ]
+ Part Name           [ima02_h                       ]
+ Specification       [ima021_h                      ]
+ Curr Ver            [ima05_h   ]
+ Src Cd              [ima08_h   ]
+}
+END -- gr802
+Grid gr803
+{
+ Master Item #       [bml02                         ]
+ Part Name           [ima02_h2                      ]
+ Specification       [ima021_h2                     ]
+ Curr Ver            [ima05_h2  ]
+ Src Cd              [ima08_h2  ]
+}
+END -- gr803
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_bml
+{
+[bml0|bml04        |mse02             |bmj10        |bmj11         |wdesc |bml06         |pmc03             ]
+[bml0|bml04        |mse02             |bmj10        |bmj11         |wdesc |bml06         |pmc03             ]
+[bml0|bml04        |mse02             |bmj10        |bmj11         |wdesc |bml06         |pmc03             ]
+[bml0|bml04        |mse02             |bmj10        |bmj11         |wdesc |bml06         |pmc03             ]
+[bml0|bml04        |mse02             |bmj10        |bmj11         |wdesc |bml06         |pmc03             ]
+[bml0|bml04        |mse02             |bmj10        |bmj11         |wdesc |bml06         |pmc03             ]
+[bml0|bml04        |mse02             |bmj10        |bmj11         |wdesc |bml06         |pmc03             ]
+[bml0|bml04        |mse02             |bmj10        |bmj11         |wdesc |bml06         |pmc03             ]
+[bml0|bml04        |mse02             |bmj10        |bmj11         |wdesc |bml06         |pmc03             ]
+[bml0|bml04        |mse02             |bmj10        |bmj11         |wdesc |bml06         |pmc03             ]
+
+}
+END -- s_bml
+Grid gr804
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr804
+END -- VBox1
+END -- abmi650
+
+TABLES
+bml_file
+ATTRIBUTES
+ButtonEdit bml01=bml_file.bml01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Query Item";
+Edit ima02_h=formonly.ima02_h type CHAR, tabIndex=2, noEntry;
+Edit ima021_h=formonly.ima021_h type CHAR, tabIndex=3, noEntry;
+Edit ima05_h=formonly.ima05_h type CHAR, tabIndex=4, noEntry;
+Edit ima08_h=formonly.ima08_h type CHAR, tabIndex=5, noEntry;
+ButtonEdit bml02=bml_file.bml02, action=controlp, tabIndex=6, not null, required, image="zoom", comment="Enter ALL for All Items <^P> Query Item";
+Edit ima02_h2=formonly.ima02_h2 type CHAR, tabIndex=7, noEntry;
+Edit ima021_h2=formonly.ima021_h2 type CHAR, tabIndex=8, noEntry;
+Edit ima05_h2=formonly.ima05_h2 type CHAR, tabIndex=9, noEntry;
+Edit ima08_h2=formonly.ima08_h2 type CHAR, tabIndex=10, noEntry;
+Edit bml0=bml_file.bml03, tabIndex=11, title="Ln#", not null, required;
+ButtonEdit bml04=bml_file.bml04, action=controlp, tabIndex=12, title="Brand(Maker)", not null, required, image="zoom", comment="<^P> Qry Brand";
+Edit mse02=formonly.mse02 type CHAR, tabIndex=13, title="Brand(Maker) Name", noEntry;
+Edit bmj10=formonly.bmj10 type CHAR, tabIndex=14, title="Approval No.", noEntry;
+DateEdit bmj11=formonly.bmj11 type CHAR, tabIndex=15, title="Approval Date", noEntry;
+Edit wdesc=formonly.wdesc type CHAR, tabIndex=16, title="Sts", noEntry;
+ButtonEdit bml06=bml_file.bml06, action=controlp, tabIndex=17, title="Main Supplier", image="zoom", comment="<^P> Qry Supplier";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=18, title="Main Supplier Name", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bml(bml_file.bml03,bml_file.bml04,formonly.mse02,formonly.bmj10,formonly.bmj11,formonly.wdesc,bml_file.bml06,formonly.pmc03)
+SCREEN RECORD Undefined(bml_file.bml01,formonly.ima02_h,formonly.ima021_h,formonly.ima05_h,formonly.ima08_h,bml_file.bml02,formonly.ima02_h2,formonly.ima021_h2,formonly.ima05_h2,formonly.ima08_h2,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,120 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/askt003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"askt001f")
+VBox vb2
+Folder pc3
+Page page01(text="Main")
+HBox hb2_
+Grid gr4
+{
+ zdnum         [sle01                      ]
+ knum          [sle02                      ]
+ kname         [ima02                      ]
+ gg            [ima021                     ]
+ bdnum         [sle05                      ]
+
+}
+END -- gr4
+Grid gr5
+{
+ zddate[sle04       ]  Confirm[sleconf     |imgmks]
+ slz   [sle08       ]                      [      ]
+ slh   [sle09       ]
+ mw    [sle10       ]
+ cc    [sle03       ] [agd03                      ]
+ xss   [sle06       ]       [sle07       ]
+}
+END -- gr5
+END -- hb2_
+END -- page01
+Page info(text="Info")
+Grid gr6
+{
+ Record Owner        [sleuser    ] Last Modified by    [slemodu    ]
+ Department          [slegrup    ] Create/Modify Date  [sledate    ]
+ Record Orig.        [sleoriu    ]
+ Dept Orig.          [sleorig    ]
+}
+END -- gr6
+END -- info
+END -- pc3
+Table s_slf
+{
+[slf04     |slf05      |slf06        |bol02        |slf07        |slb02         |slf08         |slf09     |slf10     |slf11     |slf12     |slf13     |slf14     |slf15     |slf16     |slf17     |slf18     ]
+[slf04     |slf05      |slf06        |bol02        |slf07        |slb02         |slf08         |slf09     |slf10     |slf11     |slf12     |slf13     |slf14     |slf15     |slf16     |slf17     |slf18     ]
+[slf04     |slf05      |slf06        |bol02        |slf07        |slb02         |slf08         |slf09     |slf10     |slf11     |slf12     |slf13     |slf14     |slf15     |slf16     |slf17     |slf18     ]
+[slf04     |slf05      |slf06        |bol02        |slf07        |slb02         |slf08         |slf09     |slf10     |slf11     |slf12     |slf13     |slf14     |slf15     |slf16     |slf17     |slf18     ]
+[slf04     |slf05      |slf06        |bol02        |slf07        |slb02         |slf08         |slf09     |slf10     |slf11     |slf12     |slf13     |slf14     |slf15     |slf16     |slf17     |slf18     ]
+[slf04     |slf05      |slf06        |bol02        |slf07        |slb02         |slf08         |slf09     |slf10     |slf11     |slf12     |slf13     |slf14     |slf15     |slf16     |slf17     |slf18     ]
+[slf04     |slf05      |slf06        |bol02        |slf07        |slb02         |slf08         |slf09     |slf10     |slf11     |slf12     |slf13     |slf14     |slf15     |slf16     |slf17     |slf18     ]
+[slf04     |slf05      |slf06        |bol02        |slf07        |slb02         |slf08         |slf09     |slf10     |slf11     |slf12     |slf13     |slf14     |slf15     |slf16     |slf17     |slf18     ]
+[slf04     |slf05      |slf06        |bol02        |slf07        |slb02         |slf08         |slf09     |slf10     |slf11     |slf12     |slf13     |slf14     |slf15     |slf16     |slf17     |slf18     ]
+[slf04     |slf05      |slf06        |bol02        |slf07        |slb02         |slf08         |slf09     |slf10     |slf11     |slf12     |slf13     |slf14     |slf15     |slf16     |slf17     |slf18     ]
+
+}
+END -- s_slf
+Grid gr7
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr7
+END -- vb2
+END -- askt003
+
+TABLES
+slf_file,
+sle_file
+ATTRIBUTES
+ButtonEdit sle01=sle_file.sle01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit sle02=sle_file.sle02, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=4, noEntry;
+ButtonEdit sle05=sle_file.sle05, action=controlp, tabIndex=5, image="zoom";
+DateEdit sle04=sle_file.sle04, tabIndex=6;
+ComboBox sleconf=sle_file.sleconf, tabIndex=7, noEntry, not null, required, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+IMAGE imgmks=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit sle08=sle_file.sle08, tabIndex=9;
+Edit sle09=sle_file.sle09, tabIndex=10;
+ButtonEdit sle10=sle_file.sle10, action=controlp, tabIndex=38, image="zoom.png";
+ButtonEdit sle03=sle_file.sle03, action=controlp, tabIndex=11, not null, required, image="zoom";
+Edit agd03=formonly.agd03 type CHAR, tabIndex=12, noEntry;
+ButtonEdit sle06=sle_file.sle06, action=controlp, tabIndex=13, image="zoom";
+CheckBox sle07=sle_file.sle07, tabIndex=14, text="is_jcm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sleuser=sle_file.sleuser, tabIndex=15, noEntry;
+Edit slemodu=sle_file.slemodu, tabIndex=16, noEntry;
+Edit slegrup=sle_file.slegrup, tabIndex=17, noEntry;
+DateEdit sledate=sle_file.sledate, tabIndex=18, noEntry;
+Edit sleoriu=sle_file.sleoriu, tabIndex=501, noEntry;
+Edit sleorig=sle_file.sleorig, tabIndex=502, noEntry;
+Edit slf04=slf_file.slf04, tabIndex=19, title="Seq", not null, required;
+Edit slf05=slf_file.slf05, tabIndex=20, title="Partsx";
+ButtonEdit slf06=slf_file.slf06, action=controlp, tabIndex=21, title="Part", not null, required, image="zoom";
+Edit bol02=formonly.bol02 type CHAR, tabIndex=22, title="Partname", noEntry;
+ButtonEdit slf07=slf_file.slf07, action=controlp, tabIndex=23, title="DF", image="zoom";
+Edit slb02=formonly.slb02 type CHAR, tabIndex=24, title="DFSM", noEntry;
+ComboBox slf08=slf_file.slf08, tabIndex=25, title="BW", not null, required, queryEditable, items=(("1", %"HEN"),("2", %"ZHI"));
+Edit slf09=slf_file.slf09, tabIndex=26, title="CD";
+Edit slf10=slf_file.slf10, tabIndex=27, title="ZYSL";
+Edit slf11=slf_file.slf11, tabIndex=28, title="YPCC";
+Edit slf12=slf_file.slf12, tabIndex=29, title="XQ";
+Edit slf13=slf_file.slf13, tabIndex=30, title="TQ";
+Edit slf14=slf_file.slf14, tabIndex=31, title="TH";
+Edit slf15=slf_file.slf15, tabIndex=32, title="DHZYCC";
+Edit slf16=slf_file.slf16, tabIndex=33, title="DHXQCC";
+Edit slf17=slf_file.slf17, tabIndex=34, title="GC";
+Edit slf18=slf_file.slf18, tabIndex=35, title="BZ";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=36, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=37, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_slf(slf_file.slf04,slf_file.slf05,slf_file.slf06,formonly.bol02,slf_file.slf07,formonly.slb02,slf_file.slf08,slf_file.slf09,slf_file.slf10,slf_file.slf11,slf_file.slf12,slf_file.slf13,slf_file.slf14,slf_file.slf15,slf_file.slf16,slf_file.slf17,slf_file.slf18)
+SCREEN RECORD Undefined(sle_file.sle01,sle_file.sle02,formonly.ima02,formonly.ima021,sle_file.sle05,sle_file.sle04,sle_file.sleconf,formonly.imgmksg,sle_file.sle08,sle_file.sle09,sle_file.sle10,sle_file.sle03,formonly.agd03,sle_file.sle06,sle_file.sle07,sle_file.sleuser,sle_file.slemodu,sle_file.slegrup,sle_file.sledate,sle_file.sleoriu,sle_file.sleorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

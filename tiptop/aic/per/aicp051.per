@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aicp051.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aicp051")
+VBox vb5
+Folder pc2
+Page Main(text=%"Main")
+Grid gr2
+{
+
+ COM. NO. [idm01         |pmc03               ]File Pos.[idm03                                                       ]
+ COM. Type[idm02     ]                         Field Dep[idm05               ]
+
+}
+END -- gr2
+END -- Main
+END -- pc2
+Table tb1
+{
+[idn03   |idn04                   |idn05                   |gaq03                                                       ]
+[idn03   |idn04                   |idn05                   |gaq03                                                       ]
+[idn03   |idn04                   |idn05                   |gaq03                                                       ]
+[idn03   |idn04                   |idn05                   |gaq03                                                       ]
+[idn03   |idn04                   |idn05                   |gaq03                                                       ]
+[idn03   |idn04                   |idn05                   |gaq03                                                       ]
+[idn03   |idn04                   |idn05                   |gaq03                                                       ]
+[idn03   |idn04                   |idn05                   |gaq03                                                       ]
+[idn03   |idn04                   |idn05                   |gaq03                                                       ]
+[idn03   |idn04                   |idn05                   |gaq03                                                       ]
+
+}
+END -- tb1
+Grid gr3
+{
+
+ ----------Rows[idx  ]/[cnt  ]---Details[cn2  ]----------
+
+}
+END -- gr3
+END -- vb5
+END -- aicp051
+
+TABLES
+idn_file,
+idm_file
+ATTRIBUTES
+ButtonEdit idm01=idm_file.idm01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, noEntry;
+Edit idm03=idm_file.idm03, tabIndex=4, noEntry;
+Edit idm02=idm_file.idm02, tabIndex=3, not null, required;
+ComboBox idm05=idm_file.idm05, tabIndex=5, not null, required, queryEditable, items=(("0", "TAB"),("1", ";"));
+Edit idn03=idn_file.idn03, tabIndex=6, title="Order", not null, required;
+ButtonEdit idn04=idn_file.idn04, tabIndex=7, default = "ido_file", title="File Name", noEntry, not null, required, image="zoom.png";
+ButtonEdit idn05=idn_file.idn05, action=controlp, tabIndex=8, title="Field No.", not null, required, image="zoom.png";
+Edit gaq03=formonly.gaq03 type CHAR, tabIndex=9, title="Field Name", noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=10, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_idn(idn_file.idn03,idn_file.idn04,idn_file.idn05,formonly.gaq03)
+SCREEN RECORD Undefined(idm_file.idm01,formonly.pmc03,idm_file.idm03,idm_file.idm02,idm_file.idm05,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

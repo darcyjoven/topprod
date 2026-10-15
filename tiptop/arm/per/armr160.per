@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armr160.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"armr160")
+VBox VBox1
+Grid gr332
+{
+ <G group01                                             >
+  RMA Re-Delivery No. [rme01               ]
+  Document Date       [rme02               ]
+  Customer No.        [rme03               ]
+ <                                                      >
+ <G group02                                             >
+  Print Memo          [footer              ]
+ <                                                      >
+ <G group03                                             >
+ [rdare                         ][rme021      ]
+ [spec                          ]
+ [misc                          ]
+ <                                                      >
+
+}
+END -- gr332
+Grid gr333
+{
+[more                                     ]
+
+}
+END -- gr333
+END -- VBox1
+END -- armr160
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit rme01=formonly.rme01 type VARCHAR, tabIndex=1, upShift;
+DateEdit rme02=formonly.rme02 type DATE, tabIndex=2;
+ButtonEdit rme03=formonly.rme03 type VARCHAR, action=controlp, tabIndex=3, image="zoom", upShift;
+Group group02:group02, text="INPUT";
+Edit footer=formonly.footer type VARCHAR, tabIndex=4;
+Group group03:group03;
+CheckBox rdare=formonly.rdare type VARCHAR, tabIndex=5, text="Update Re-delivery Date", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit rme021=formonly.rme021 type DATE, tabIndex=6;
+CheckBox spec=formonly.spec type VARCHAR, tabIndex=7, text="Print Part Name Spec", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox misc=formonly.misc type VARCHAR, tabIndex=8, text="Print MISC Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rme01,formonly.rme02,formonly.rme03,formonly.footer,formonly.rdare,formonly.rme021,formonly.spec,formonly.misc,formonly.more)
+END -- INSTRUCTIONS
+

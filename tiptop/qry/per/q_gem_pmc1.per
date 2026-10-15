@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_gem_pmc1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_gem_pmc1")
+VBox VBox1
+Grid gr3793
+{
+ <T s_gem                                                  >
+ [check  |a       |gem01        |gem02                 ]
+ [check  |a       |gem01        |gem02                 ]
+ [check  |a       |gem01        |gem02                 ]
+ [check  |a       |gem01        |gem02                 ]
+ [check  |a       |gem01        |gem02                 ]
+ [check  |a       |gem01        |gem02                 ]
+ <                                                         >
+
+
+}
+END -- gr3793
+END -- VBox1
+END -- q_gem_pmc1
+
+TABLES
+gem_file
+ATTRIBUTES
+Table s_gem:s_gem;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox a=formonly.a, tabIndex=4, title=%"a", items=(("1", "Dept"),("2", "Vender"),("3", "ALL"));
+Edit gem01=gem_file.gem01, tabIndex=2, title="Department No.", noEntry;
+Edit gem02=gem_file.gem02, tabIndex=3, title="Department Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gem(formonly.check,formonly.a,gem_file.gem01,gem_file.gem02)
+END -- INSTRUCTIONS
+

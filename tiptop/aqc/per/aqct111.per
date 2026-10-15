@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqct111.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqct111")
+VBox vb2_
+Folder folder01
+Page page01(text="Page01")
+Grid gr193
+{
+ <G group01                                            >
+  Receipt#            [qcu01           ]
+  Line No.            [qcu02     ]
+  Lot QC Sequence     [qcu021    ]
+ <                                                     >
+
+}
+END -- gr193
+END -- page01
+END -- folder01
+Table s_qcu
+{
+[qcu03 |item     |azf03     |qcuicd01  |qcuicd02    |icd03            |qcu04         |qce03                   |qcu05   ]
+[qcu03 |item     |azf03     |qcuicd01  |qcuicd02    |icd03            |qcu04         |qce03                   |qcu05   ]
+[qcu03 |item     |azf03     |qcuicd01  |qcuicd02    |icd03            |qcu04         |qce03                   |qcu05   ]
+[qcu03 |item     |azf03     |qcuicd01  |qcuicd02    |icd03            |qcu04         |qce03                   |qcu05   ]
+[qcu03 |item     |azf03     |qcuicd01  |qcuicd02    |icd03            |qcu04         |qce03                   |qcu05   ]
+[qcu03 |item     |azf03     |qcuicd01  |qcuicd02    |icd03            |qcu04         |qce03                   |qcu05   ]
+[qcu03 |item     |azf03     |qcuicd01  |qcuicd02    |icd03            |qcu04         |qce03                   |qcu05   ]
+[qcu03 |item     |azf03     |qcuicd01  |qcuicd02    |icd03            |qcu04         |qce03                   |qcu05   ]
+[qcu03 |item     |azf03     |qcuicd01  |qcuicd02    |icd03            |qcu04         |qce03                   |qcu05   ]
+[qcu03 |item     |azf03     |qcuicd01  |qcuicd02    |icd03            |qcu04         |qce03                   |qcu05   ]
+
+}
+END -- s_qcu
+Grid gr194
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr194
+END -- vb2_
+END -- aqct111
+
+TABLES
+qcu_file
+ATTRIBUTES
+Group group01:group01;
+Edit qcu01=qcu_file.qcu01, tabIndex=1, noEntry;
+Edit qcu02=qcu_file.qcu02, tabIndex=2, noEntry;
+Edit qcu021=qcu_file.qcu021, tabIndex=3, noEntry;
+Edit qcu03=qcu_file.qcu03, tabIndex=4, title="Line#", not null, required;
+Edit item=formonly.item type CHAR, tabIndex=5, title="QC Items", noEntry;
+Edit azf03=formonly.azf03 type CHAR, tabIndex=6, title="QC Desc", noEntry;
+ButtonEdit qcuicd01=qcu_file.qcuicd01, action=controlp, tabIndex=12, title="Wafer Mark", image="zoom.png";
+ButtonEdit qcuicd02=qcu_file.qcuicd02, action=controlp, tabIndex=13, title="Inspect Area", image="zoom.png";
+Edit icd03=formonly.icd03 type VARCHAR, tabIndex=14, title="Inspect Area Desc", noEntry;
+Edit qcu04=qcu_file.qcu04, tabIndex=7, title="No-Good Cause", not null, required;
+Edit qce03=formonly.qce03 type CHAR, tabIndex=8, title="Description", noEntry;
+Edit qcu05=qcu_file.qcu05, tabIndex=9, title="Qty", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcu(qcu_file.qcu03,formonly.item,formonly.azf03,qcu_file.qcuicd01,qcu_file.qcuicd02,formonly.icd03,qcu_file.qcu04,formonly.qce03,qcu_file.qcu05)
+SCREEN RECORD Undefined(qcu_file.qcu01,qcu_file.qcu02,qcu_file.qcu021,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

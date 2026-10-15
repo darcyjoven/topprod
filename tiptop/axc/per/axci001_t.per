@@ -1,0 +1,30 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci001_t.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axci001_t")
+Grid gr1438
+{
+ <G group01                                    >
+  Book No.            [cay11         ]
+  Year/Month          [yy     ][mm   ]
+ <                                             >
+
+}
+END -- gr1438
+END -- axci001_t
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit cay11=formonly.cay11 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit yy=formonly.yy type CHAR, tabIndex=2, not null, required;
+Edit mm=formonly.mm type CHAR, tabIndex=3, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cay11,formonly.yy,formonly.mm)
+END -- INSTRUCTIONS
+

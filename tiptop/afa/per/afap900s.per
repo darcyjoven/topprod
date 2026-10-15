@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap900s.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"afap900s")
+Grid gr1956
+{
+ <G group01                                      >
+  Bank Label Init. No [begin     ]
+  Bank Label End. No. [endno     ]
+ <                                               >
+ <G group02                                      >
+ [s                                           ]
+ <                                               >
+
+}
+END -- gr1956
+END -- afap900s
+
+ATTRIBUTES
+Group group01:group01, text="Input";
+Edit begin=formonly.begin type CHAR, tabIndex=1;
+Edit endno=formonly.endno type CHAR, tabIndex=2;
+Group group02:group02, text="Select Label Sequence";
+RadioGroup s=formonly.s type CHAR, tabIndex=3, items=(("1", "Book Amount"),("2", "Property No."));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.begin,formonly.endno,formonly.s)
+END -- INSTRUCTIONS
+

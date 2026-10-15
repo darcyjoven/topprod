@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt213.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt213")
+VBox vb3
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+ Inventory Change No. [ruy01             ]             Confirm Code   [ruyconf           ] [imgmksg ]
+ Their Inventory Plan [ruy02             |ruy02_desc]  Confirm Date   [ruycond           ] [        ]
+ Inventory No.        [ruy03             ]             Confirm Staff  [ruyconu           |ruyconu_de]
+ Change Date          [ruy04             ]             status         [ruy900            ]
+ Inventory Date       [ruy05             ]             Current Agency [ruyplant          |ruyplant_d]
+ Inventory Warehouse  [ruy06             |ruy06_desc]  Remarks        [ruy08     ]
+ Staff Changes        [ruy07             |ruy07_desc]
+
+}
+END -- gr1
+END -- Page1
+Page Page2(text=%"Memo")
+Grid gr6
+{
+ Data Own Staff [ruyuser   ]               Data Modify Staff [ruymodu   ]   Data Activity    [ruyacti   ]      Record Orig. [ruyoriu  ]
+ Data Own Group [ruygrup   ]               Data Modify Date  [ruydate   ]   Data Create Date [ruycrat   ]      Dept Orig.   [ruyorig  ]
+
+}
+END -- gr6
+END -- Page2
+END -- pc1
+Table tb1
+{
+[ruz02|ruz03           |ruz03_desc          |ruz04   |ruz04_desc          |ruz05          |ruz06          |ruz07          |ruz08          |ruz09          |ruz10               ]
+[ruz02|ruz03           |ruz03_desc          |ruz04   |ruz04_desc          |ruz05          |ruz06          |ruz07          |ruz08          |ruz09          |ruz10               ]
+[ruz02|ruz03           |ruz03_desc          |ruz04   |ruz04_desc          |ruz05          |ruz06          |ruz07          |ruz08          |ruz09          |ruz10               ]
+[ruz02|ruz03           |ruz03_desc          |ruz04   |ruz04_desc          |ruz05          |ruz06          |ruz07          |ruz08          |ruz09          |ruz10               ]
+[ruz02|ruz03           |ruz03_desc          |ruz04   |ruz04_desc          |ruz05          |ruz06          |ruz07          |ruz08          |ruz09          |ruz10               ]
+[ruz02|ruz03           |ruz03_desc          |ruz04   |ruz04_desc          |ruz05          |ruz06          |ruz07          |ruz08          |ruz09          |ruz10               ]
+[ruz02|ruz03           |ruz03_desc          |ruz04   |ruz04_desc          |ruz05          |ruz06          |ruz07          |ruz08          |ruz09          |ruz10               ]
+[ruz02|ruz03           |ruz03_desc          |ruz04   |ruz04_desc          |ruz05          |ruz06          |ruz07          |ruz08          |ruz09          |ruz10               ]
+[ruz02|ruz03           |ruz03_desc          |ruz04   |ruz04_desc          |ruz05          |ruz06          |ruz07          |ruz08          |ruz09          |ruz10               ]
+[ruz02|ruz03           |ruz03_desc          |ruz04   |ruz04_desc          |ruz05          |ruz06          |ruz07          |ruz08          |ruz09          |ruz10               ]
+}
+END -- tb1
+Grid gr2
+{
+
+ ----------Count[cnt   ]/[cn2   ]    ----------
+
+
+}
+END -- gr2
+END -- vb3
+END -- artt213
+
+TABLES
+ruz_file,
+ruy_file
+ATTRIBUTES
+ButtonEdit ruy01=ruy_file.ruy01, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+ComboBox ruyconf=ruy_file.ruyconf, tabIndex=14, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit ruy02=ruy_file.ruy02, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+Edit ruy02_desc=formonly.ruy02_desc type CHAR, tabIndex=3, noEntry;
+DateEdit ruycond=ruy_file.ruycond, tabIndex=15, noEntry;
+ButtonEdit ruy03=ruy_file.ruy03, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+ButtonEdit ruyconu=ruy_file.ruyconu, action=controlp, tabIndex=16, noEntry, image="zoom.png";
+Edit ruyconu_de=formonly.ruyconu_desc type CHAR, tabIndex=17, noEntry;
+DateEdit ruy04=ruy_file.ruy04, tabIndex=8, not null, required;
+ComboBox ruy900=ruy_file.ruy900, tabIndex=39, items=(("0", "new"),("1", "confirm"),("2", "send"));
+DateEdit ruy05=ruy_file.ruy05, tabIndex=9, noEntry;
+Edit ruyplant=ruy_file.ruyplant, tabIndex=18, noEntry, not null, required;
+Edit ruyplant_d=formonly.ruyplant_desc type CHAR, tabIndex=19, noEntry;
+ButtonEdit ruy06=ruy_file.ruy06, action=controlp, tabIndex=10, noEntry, image="zoom.png";
+Edit ruy06_desc=formonly.ruy06_desc type CHAR, tabIndex=4, noEntry;
+Edit ruy08=ruy_file.ruy08, tabIndex=13;
+ButtonEdit ruy07=ruy_file.ruy07, action=controlp, tabIndex=11, image="zoom.png";
+Edit ruy07_desc=formonly.ruy07_desc type CHAR, tabIndex=12, noEntry;
+Edit ruyuser=ruy_file.ruyuser, tabIndex=22, noEntry;
+Edit ruymodu=ruy_file.ruymodu, tabIndex=24, noEntry;
+Edit ruyacti=ruy_file.ruyacti, tabIndex=25, noEntry;
+Edit ruyoriu=ruy_file.ruyoriu, tabIndex=37, noEntry;
+Edit ruygrup=ruy_file.ruygrup, tabIndex=23, noEntry;
+DateEdit ruydate=ruy_file.ruydate, tabIndex=20, noEntry;
+DateEdit ruycrat=ruy_file.ruycrat, tabIndex=21, noEntry;
+Edit ruyorig=ruy_file.ruyorig, tabIndex=38, noEntry;
+Edit ruz02=ruz_file.ruz02, tabIndex=1, title="#Line", not null, required;
+ButtonEdit ruz03=ruz_file.ruz03, action=controlp, tabIndex=2, title="Goods No.", image="zoom.png";
+Edit ruz03_desc=formonly.ruz03_desc type CHAR, tabIndex=26, title="Goods Name", noEntry;
+ButtonEdit ruz04=ruz_file.ruz04, action=controlp, tabIndex=27, title="Stock Unit", noEntry, image="zoom.png";
+Edit ruz04_desc=formonly.ruz04_desc type CHAR, tabIndex=28, title="Unit Name", noEntry;
+Edit ruz05=ruz_file.ruz05, tabIndex=29, title="Accounts Number", noEntry;
+Edit ruz06=ruz_file.ruz06, tabIndex=30, title="Firm Offer Number", noEntry;
+Edit ruz07=ruz_file.ruz07, tabIndex=31, title="Change Number", noEntry;
+Edit ruz08=ruz_file.ruz08, tabIndex=32, title="Diff Number", noEntry;
+Edit ruz09=ruz_file.ruz09, tabIndex=33, title="The Change Number";
+Edit ruz10=ruz_file.ruz10, tabIndex=34, title="Remarks1";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=35, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=36, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ruz(ruz_file.ruz02,ruz_file.ruz03,formonly.ruz03_desc,ruz_file.ruz04,formonly.ruz04_desc,ruz_file.ruz05,ruz_file.ruz06,ruz_file.ruz07,ruz_file.ruz08,ruz_file.ruz09,ruz_file.ruz10)
+SCREEN RECORD Undefined(ruy_file.ruy01,ruy_file.ruyconf,formonly.imgmksg,ruy_file.ruy02,formonly.ruy02_desc,ruy_file.ruycond,ruy_file.ruy03,ruy_file.ruyconu,formonly.ruyconu_desc,ruy_file.ruy04,ruy_file.ruyplant,formonly.ruyplant_desc,ruy_file.ruy05,ruy_file.ruy08,ruy_file.ruy06,formonly.ruy06_desc,ruy_file.ruy07,formonly.ruy07_desc,ruy_file.ruyuser,ruy_file.ruymodu,ruy_file.ruyacti,ruy_file.ruyoriu,ruy_file.ruygrup,ruy_file.ruydate,ruy_file.ruycrat,ruy_file.ruyorig,formonly.cnt,formonly.cn2,ruy_file.ruy900)
+END -- INSTRUCTIONS
+

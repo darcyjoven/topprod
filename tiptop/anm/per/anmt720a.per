@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt720a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Note Payable Default")
+Grid gr4547
+{
+ Drawing Slip No.   [nng41           ]
+ Paying Bank        [nng42               ]
+ Drawing Date       [nng43       ]
+ Notes type 1       [nng44     ]
+ Notes type 2       [nng45     ]
+ Book No            [book_no   ]
+ Department No.     [nng47     ]
+ Vender No.         [nng48     ]
+ Abbreviation       [nng51     ]
+ Note Title         [nng49                                  ]
+ Reason for Payment [nng50     ]
+
+}
+END -- gr4547
+END -- anmt720a
+
+TABLES
+nng_file
+ATTRIBUTES
+ButtonEdit nng41=nng_file.nng41, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Data";
+ButtonEdit nng42=nng_file.nng42, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Data";
+DateEdit nng43=nng_file.nng43, tabIndex=3, not null, required;
+ButtonEdit nng44=nng_file.nng44, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Data";
+ButtonEdit nng45=nng_file.nng45, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Data";
+Edit book_no=formonly.book_no type CHAR, tabIndex=11, not null, required;
+ButtonEdit nng47=nng_file.nng47, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Data";
+ButtonEdit nng48=nng_file.nng48, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Data";
+Edit nng51=nng_file.nng51, tabIndex=8;
+Edit nng49=nng_file.nng49, tabIndex=9;
+ButtonEdit nng50=nng_file.nng50, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Data";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nng_file.nng41,nng_file.nng42,nng_file.nng43,nng_file.nng44,nng_file.nng45,formonly.book_no,nng_file.nng47,nng_file.nng48,nng_file.nng51,nng_file.nng49,nng_file.nng50)
+END -- INSTRUCTIONS
+

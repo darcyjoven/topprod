@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci7001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci7001")
+Folder pc273
+Page page01(text="Page01")
+Grid gr1680
+{
+ <G group01                                          ><G group02                                     >
+  Adjust Earliest Initial Lead Time(Day) [g_ecm07   ]  Actual Labor Setup Time(Min)      [g_ecm20   ]
+  Adjust Last Initial Lead Time(Day)     [g_ecm08   ]  Actual Labor Production Time(Min) [g_ecm21   ]
+  Adjust 1st Completed Lead Time(Day)    [g_ecm09   ]  Actual Machine Setup Time(Min)    [g_ecm22   ]
+  Adjust Last Completed Lead Time(Day)   [g_ecm10   ]  Actual Machine Pro. Time(Min)     [g_ecm23   ]
+                                                       Actual Subcontracting Time(Min)   [g_ecm24   ]
+ <                                                   ><                                              >
+ <G group03                                      ><G group04                                         >
+  Standard  Subcontracting Time(Min) [g_ecm17   ]  Schedule  Manually Setup Time(Minute) [g_ecm37   ]
+  Moving Time(Min)                   [g_ecm18   ]  Labor Production Time(Minute)         [g_ecm38   ]
+  Waiting Time(Minute)               [g_ecm19   ]  Subcontracting Time(Min)              [g_ecm39   ]
+
+ <                                               ><                                                  >
+
+}
+END -- gr1680
+END -- page01
+END -- pc273
+END -- aeci7001
+
+ATTRIBUTES
+Group group01:group01, text="Related Time(Standard)";
+Edit g_ecm07=formonly.g_ecm07 type CHAR, tabIndex=1;
+Edit g_ecm08=formonly.g_ecm08 type CHAR, tabIndex=2;
+Edit g_ecm09=formonly.g_ecm09 type CHAR, tabIndex=3;
+Edit g_ecm10=formonly.g_ecm10 type CHAR, tabIndex=4;
+Group group02:group02, text="Related Time(Actual)";
+Edit g_ecm20=formonly.g_ecm20 type CHAR, tabIndex=5;
+Edit g_ecm21=formonly.g_ecm21 type CHAR, tabIndex=6;
+Edit g_ecm22=formonly.g_ecm22 type CHAR, tabIndex=7;
+Edit g_ecm23=formonly.g_ecm23 type CHAR, tabIndex=8;
+Edit g_ecm24=formonly.g_ecm24 type CHAR, tabIndex=9;
+Group group03:group03, text="Capacity Planning/Scheduled Time";
+Edit g_ecm17=formonly.g_ecm17 type CHAR, tabIndex=10;
+Edit g_ecm18=formonly.g_ecm18 type CHAR, tabIndex=11;
+Edit g_ecm19=formonly.g_ecm19 type CHAR, tabIndex=12;
+Group group04:group04;
+Edit g_ecm37=formonly.g_ecm37 type CHAR, tabIndex=13;
+Edit g_ecm38=formonly.g_ecm38 type CHAR, tabIndex=14;
+Edit g_ecm39=formonly.g_ecm39 type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_ecm07,formonly.g_ecm08,formonly.g_ecm09,formonly.g_ecm10,formonly.g_ecm20,formonly.g_ecm21,formonly.g_ecm22,formonly.g_ecm23,formonly.g_ecm24,formonly.g_ecm17,formonly.g_ecm18,formonly.g_ecm19,formonly.g_ecm37,formonly.g_ecm38,formonly.g_ecm39)
+END -- INSTRUCTIONS
+

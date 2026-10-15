@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdr312.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amdr312")
+VBox VBox1
+Grid gr3715
+{
+ <G group02                                                                                      >
+  Attention           [ooz61                                             ]
+  Applying Date       [date        ]  [dummy02             ]
+  Declaring Department[amd22     ]
+  Year/Month          [yy        ]/[mm        ]-[mm2       ][dummy01             ]
+ [a                                       ]
+  Print               [b         ]
+ [c                                       ]
+ [d                                       ]
+ [e                                       ]
+ [                                        ]
+ <                                                                                               >
+}
+END -- gr3715
+Grid gr3716
+{
+[more                           ]
+
+}
+END -- gr3716
+Grid gr3717
+{
+[dummy03                                                              ]
+
+}
+END -- gr3717
+END -- VBox1
+END -- amdr312
+
+ATTRIBUTES
+Group group02:group02, text="INPUT";
+Edit ooz61=formonly.ooz61 type VARCHAR, tabIndex=1, not null, required;
+DateEdit date=formonly.date type DATE, tabIndex=2;
+Label dummy02:dummy02, text="(Century Year)";
+ButtonEdit amd22=formonly.amd22 type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit yy=formonly.yy type INTEGER, tabIndex=4, not null, required;
+Edit mm=formonly.mm type INTEGER, tabIndex=5, not null, required;
+Edit mm2=formonly.mm2 type INTEGER, tabIndex=6, not null, required;
+Label dummy01:dummy01, text="(Century Year)";
+CheckBox a=formonly.a type CHAR, tabIndex=7, text="Print Delivery detail?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox b=formonly.b type CHAR, tabIndex=8, queryEditable, items=(("1", "Part Name"),("2", "Item#"));
+CheckBox c=formonly.c type CHAR, tabIndex=9, text="Print Customs-Certified Document", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type CHAR, tabIndex=10, text="IS Export Method = \'4\',Print In First Page????", not null, required, valueChecked = "Y", valueUnchecked = "N";
+RadioGroup e=formonly.e, tabIndex=12, items=(("1", "test"),("2", "test"));
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy03:dummy03, text="**It\'s controled to Compact Prt by Program,Choice STD Print(82,136)";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ooz61,formonly.date,formonly.amd22,formonly.yy,formonly.mm,formonly.mm2,formonly.a,formonly.b,formonly.c,formonly.d,formonly.more,formonly.e)
+END -- INSTRUCTIONS
+

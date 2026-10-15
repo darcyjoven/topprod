@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli601")
+VBox VBox1
+Folder pc465
+Page page01(text="Main")
+Table s_afa
+{
+[afa00     |afa01     |afa02                         |afaac]
+[afa00     |afa01     |afa02                         |afaac]
+[afa00     |afa01     |afa02                         |afaac]
+[afa00     |afa01     |afa02                         |afaac]
+[afa00     |afa01     |afa02                         |afaac]
+[afa00     |afa01     |afa02                         |afaac]
+[afa00     |afa01     |afa02                         |afaac]
+[afa00     |afa01     |afa02                         |afaac]
+[afa00     |afa01     |afa02                         |afaac]
+[afa00     |afa01     |afa02                         |afaac]
+
+}
+END -- s_afa
+END -- page01
+END -- pc465
+Grid gr2425
+{
+  ---------- Rows [cn2   ] ----------
+
+
+}
+END -- gr2425
+END -- VBox1
+END -- agli601
+
+TABLES
+afa_file
+ATTRIBUTES
+Edit afa00=afa_file.afa00, tabIndex=5, title="Book No", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit afa01=afa_file.afa01, tabIndex=1, title="Budget No", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit afa02=afa_file.afa02, tabIndex=2, title="Budget Name";
+CheckBox afaac=afa_file.afaacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_afa(afa_file.afa00,afa_file.afa01,afa_file.afa02,afa_file.afaacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

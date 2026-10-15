@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq901.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Main
+Page Page1(text=%"Main")
+Grid Grid1
+{
+   Label1 [yy        ]  Label2 [mm        ]     Label3  [sys                 ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Main
+Table ds1
+{
+[oma01               |msg                 |prog      ]
+[oma01               |msg                 |prog      ]
+[oma01               |msg                 |prog      ]
+[oma01               |msg                 |prog      ]
+[oma01               |msg                 |prog      ]
+
+}
+END -- ds1
+END -- VBox1
+END -- Form
+
+TABLES
+oma_file
+ATTRIBUTES
+Edit yy=formonly.yy, tabIndex=1;
+Edit mm=formonly.mm, tabIndex=2;
+ComboBox sys=formonly.sys type VARCHAR, tabIndex=3, items=(("1", "Text"),("2", "Text"),("3", "Text"),("4", "Text"),("5", "Text"),("6", "Text"));
+Edit oma01=oma_file.oma01, tabIndex=4, title=%"oma01", not null, scroll;
+Edit msg=formonly.msg type VARCHAR, tabIndex=5, title=%"Edit1";
+Edit prog=formonly.prog type VARCHAR, tabIndex=6, title=%"Edit2";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.sys)
+SCREEN RECORD s_oma(oma_file.oma01,formonly.msg,formonly.prog)
+END -- INSTRUCTIONS
+

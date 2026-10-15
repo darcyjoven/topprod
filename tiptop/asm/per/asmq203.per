@@ -1,0 +1,165 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asmq203.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asmq203")
+VBox vb1
+Folder pc190
+Page page01(text="Main")
+Grid gr894
+{
+ Item No.                  [tlff01                        ]  W/O No.                   [tlff62              ]
+ Product Name              [g_ima02                       ]  Transaction Command Code  [tlff13     ][tlff13_desc                    ]
+ Specification             [g_ima021                      ]  Cause                     [tlff14     ][g_azf03                        ]
+ Document Date             [tlff06       ]                   Vender/Customer           [tlff19     ]
+ Document No.              [tlff905             ]            Register Bookn No         [tlff64               ]
+                           [g_smydesc           ]            Cost Center               [tlff930     ][gem02a      ]
+ Line No.                  [tlff906      ]                   Mul trade No.             [tlff99               ]
+}
+END -- gr894
+END -- page01
+END -- pc190
+Folder pc191
+Page page02(text="Warehouse")
+Grid gr895
+{
+ <G group01                             ><G group02                                   ><G group03                                 >
+  Cost Warehouse      [tlff901   ]        Transaction Qty     [tlff10    ]              Transaction Qty     [tlff10t   ]
+  Warehouse           [tlff902   ]        Transaction Unit    [tlff11    ]              Transaction Unit    [tlff11t   ]
+  Location            [tlff903   ]        imgConversion Rate  [tlff12    ]              imgConversion Rate  [tlff12t   ]
+  Lot No.             [tlff904   ]        imaConversion Rate  [tlff60    ]              imaConversion Rate  [tlff60t   ]
+  Store-in/out+-      [tlff907   ]
+ <                                      ><                                            ><                                          >
+
+}
+END -- gr895
+END -- page02
+Page page03(text="Accountiing")
+Grid gr896
+{
+ <G group04                                 >
+  Transaction cost    [tlff21              ]
+  Debit Account       [tlff15              ]
+  Credit Account      [tlff16              ]
+ <                                          >
+
+}
+END -- gr896
+END -- page03
+Page page04(text="Source/Destination")
+Grid gr897
+{
+ <G group05                                                 ><G group06                                                >
+  Source               [tlff02     ]                          Destination         [tlff03     ]
+  Plant No.            [tlff020    ]                          Plant No.           [tlff030    ]
+  Warehouse            [tlff021    ]                          Warehouse           [tlff031    ]
+  Location             [tlff022    ]                          Location            [tlff032    ]
+  Lot#                 [tlff023                ]              Lot#                [tlff033                ]
+  Par/Ref Unit         [tlff025    ]                          Par/Ref Unit        [tlff035    ]
+  Chi/Trans Unit       [tlff025t   ]                          Chi/Trans Unit      [tlff035t   ]
+  Document No. Line#   [tlff026             |tlff027   ]      Document No. Line#  [tlff036             |tlff037   ]
+ <                                                          ><                                                         >
+
+}
+END -- gr897
+END -- page04
+Page page05(text="Data Info")
+Grid gr898
+{
+ <G group07                               >
+  Generated on              [tlff07      ]
+  By User                   [tlff09      ]
+  Calculation Date          [tlff211     ]
+  Calculating Time          [tlff212     ]
+ <                                        >
+
+}
+END -- gr898
+END -- page05
+END -- pc191
+Grid gr899
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+}
+END -- gr899
+END -- vb1
+END -- asmq203
+
+TABLES
+tlff_file
+ATTRIBUTES
+ButtonEdit tlff01=tlff_file.tlff01, action=controlp, tabIndex=1, image="zoom";
+Edit tlff62=tlff_file.tlff62, tabIndex=2;
+Edit g_ima02=formonly.g_ima02 type CHAR, tabIndex=3, noEntry;
+Edit tlff13=tlff_file.tlff13, tabIndex=4;
+Edit tlff13_desc=formonly.tlff13_desc type CHAR, tabIndex=5, noEntry;
+Edit g_ima021=formonly.g_ima021 type CHAR, tabIndex=6, noEntry;
+Edit tlff14=tlff_file.tlff14, tabIndex=7;
+Edit g_azf03=formonly.g_azf03 type CHAR, tabIndex=8, noEntry;
+DateEdit tlff06=tlff_file.tlff06, tabIndex=9;
+Edit tlff19=tlff_file.tlff19, tabIndex=10;
+Edit tlff905=tlff_file.tlff905, tabIndex=11;
+Edit tlff64=tlff_file.tlff64, tabIndex=12;
+Edit g_smydesc=formonly.g_smydesc type CHAR, tabIndex=13, noEntry;
+ButtonEdit tlff930=tlff_file.tlff930, action=controlp, tabIndex=14, image="zoom";
+Edit gem02a=formonly.gem02a type CHAR, tabIndex=15, noEntry;
+Edit tlff906=tlff_file.tlff906, tabIndex=16;
+Edit tlff99=tlff_file.tlff99, tabIndex=17;
+Group group01:group01, text="W/H";
+Edit tlff901=tlff_file.tlff901, tabIndex=18;
+Edit tlff902=tlff_file.tlff902, tabIndex=19;
+Edit tlff903=tlff_file.tlff903, tabIndex=20;
+Edit tlff904=tlff_file.tlff904, tabIndex=21;
+Edit tlff907=tlff_file.tlff907, tabIndex=22;
+Group group02:group02, text="Par/Ref Qty";
+Edit tlff10=tlff_file.tlff10, tabIndex=23;
+Edit tlff11=tlff_file.tlff11, tabIndex=24;
+Edit tlff12=tlff_file.tlff12, tabIndex=25;
+Edit tlff60=tlff_file.tlff60, tabIndex=26;
+Group group03:group03, text="Chi/Trans Qty";
+Edit tlff10t=formonly.tlff10t type CHAR, tabIndex=27;
+Edit tlff11t=formonly.tlff11t type CHAR, tabIndex=28;
+Edit tlff12t=formonly.tlff12t type CHAR, tabIndex=29;
+Edit tlff60t=formonly.tlff60t type CHAR, tabIndex=30;
+Group group04:group04, text="Accounting";
+Edit tlff21=tlff_file.tlff21, tabIndex=31;
+Edit tlff15=tlff_file.tlff15, tabIndex=32;
+Edit tlff16=tlff_file.tlff16, tabIndex=33;
+Group group05:group05, text="Source";
+Edit tlff02=tlff_file.tlff02, tabIndex=34;
+Edit tlff020=tlff_file.tlff020, tabIndex=35;
+Edit tlff021=tlff_file.tlff021, tabIndex=36;
+Edit tlff022=tlff_file.tlff022, tabIndex=37;
+Edit tlff023=tlff_file.tlff023, tabIndex=38;
+Edit tlff025=tlff_file.tlff025, tabIndex=39;
+Edit tlff025t=formonly.tlff025t type CHAR, tabIndex=40;
+Edit tlff026=tlff_file.tlff026, tabIndex=41;
+Edit tlff027=tlff_file.tlff027, tabIndex=42;
+Group group06:group06, text="Destination";
+Edit tlff03=tlff_file.tlff03, tabIndex=43;
+Edit tlff030=tlff_file.tlff030, tabIndex=44;
+Edit tlff031=tlff_file.tlff031, tabIndex=45;
+Edit tlff032=tlff_file.tlff032, tabIndex=46;
+Edit tlff033=tlff_file.tlff033, tabIndex=47;
+Edit tlff035=tlff_file.tlff035, tabIndex=48;
+Edit tlff035t=formonly.tlff035t type CHAR, tabIndex=49;
+Edit tlff036=tlff_file.tlff036, tabIndex=50;
+Edit tlff037=tlff_file.tlff037, tabIndex=51;
+Group group07:group07;
+DateEdit tlff07=tlff_file.tlff07, tabIndex=52;
+Edit tlff09=tlff_file.tlff09, tabIndex=53;
+DateEdit tlff211=tlff_file.tlff211, tabIndex=54;
+Edit tlff212=tlff_file.tlff212, tabIndex=55;
+Edit cnt=formonly.cnt type CHAR, tabIndex=56;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(tlff_file.tlff01,tlff_file.tlff62,formonly.g_ima02,tlff_file.tlff13,formonly.tlff13_desc,formonly.g_ima021,tlff_file.tlff14,formonly.g_azf03,tlff_file.tlff06,tlff_file.tlff19,tlff_file.tlff905,tlff_file.tlff64,formonly.g_smydesc,tlff_file.tlff930,formonly.gem02a,tlff_file.tlff906,tlff_file.tlff99,tlff_file.tlff901,tlff_file.tlff902,tlff_file.tlff903,tlff_file.tlff904,tlff_file.tlff907,tlff_file.tlff10,tlff_file.tlff11,tlff_file.tlff12,tlff_file.tlff60,formonly.tlff10t,formonly.tlff11t,formonly.tlff12t,formonly.tlff60t,tlff_file.tlff21,tlff_file.tlff15,tlff_file.tlff16,tlff_file.tlff02,tlff_file.tlff020,tlff_file.tlff021,tlff_file.tlff022,tlff_file.tlff023,tlff_file.tlff025,formonly.tlff025t,tlff_file.tlff026,tlff_file.tlff027,tlff_file.tlff03,tlff_file.tlff030,tlff_file.tlff031,tlff_file.tlff032,tlff_file.tlff033,tlff_file.tlff035,formonly.tlff035t,tlff_file.tlff036,tlff_file.tlff037,tlff_file.tlff07,tlff_file.tlff09,tlff_file.tlff211,tlff_file.tlff212,formonly.cnt)
+END -- INSTRUCTIONS
+

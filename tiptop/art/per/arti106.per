@@ -1,0 +1,41 @@
+----------------------------------------------------------------------------------
+-- $Id:  arti106.per created 2010-01-11T12:12:49
+-- File created from arti106.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA FORMONLY
+
+LAYOUT( TEXT="apci010")
+  VBOX vb3
+    FOLDER pc2
+      PAGE Page2( TEXT="Page0")
+        TABLE   s_ryh
+        {
+        [aa0     |aa1     ]
+        [aa0     |aa1     ]
+        [aa0     |aa1     ]
+        [aa0     |aa1     ]
+        [aa0     |aa1     ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr2
+    {
+     ---------- Rows [aa2   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  COMBOBOX aa0=FORMONLY.ryh01, NOT NULL, REQUIRED, TABINDEX=1, TITLE="ryh01", ITEMS=(("1","zhuguan"),("2","zuzhang"),("3","zuyaun"));
+  EDIT aa1=FORMONLY.ryh02 TYPE INTEGER, NOT NULL, REQUIRED, TABINDEX=2, TITLE="ryh02";
+  EDIT aa2=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=3;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_ryh (FORMONLY.ryh01, FORMONLY.ryh02)
+END

@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq821_4.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsq821_4")
+Folder pc194
+Page page01(text="Main")
+Grid gr907
+{
+ <G group01                             >
+  APS Version     [von01           ]
+  Save Version    [von02       ]
+  WO No.          [von03       ]
+  Routing Code    [von04       ]
+  Routing Sequence[von05       ]
+  Operation No.   [von06       ]
+  Resource No.    [von07       ]
+  Uncompleted Qty [von08       ]
+  Schedule        [von09       ]
+
+
+
+ <                                      >
+
+}
+END -- gr907
+END -- page01
+END -- pc194
+END -- apsq821_4
+
+TABLES
+von_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit von01=von_file.von01, action=controlp, tabIndex=9, image="zoom";
+Edit von02=von_file.von02, tabIndex=8;
+Edit von03=von_file.von03, tabIndex=1, not null, required;
+Edit von04=von_file.von04, tabIndex=2, not null, required;
+Edit von05=von_file.von05, tabIndex=3, not null, required;
+Edit von06=von_file.von06, tabIndex=4, not null, required;
+Edit von07=von_file.von07, tabIndex=7, not null, required;
+Edit von08=von_file.von08, tabIndex=6, not null, required;
+ComboBox von09=von_file.von09, tabIndex=5, items=(("0", "未排程"),("1", "已排程"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(von_file.von01,von_file.von02,von_file.von03,von_file.von04,von_file.von05,von_file.von06,von_file.von07,von_file.von08,von_file.von09)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,137 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi141.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi150")
+VBox VBox1
+Folder pc1
+Page main(text=%"Main")
+Grid gr1
+{
+
+ sta.DocNo.      [lmf01               ]                         Booth Applic  [lmf12       |tqa02               ]
+ version No.     [lmf15               ]                         Status        [lmf05       |imgmksg]
+ Store No.       [lmfstore            |rtz13               ]    Appr.No.      [lmf06       |       ]
+ legal           [lmflegal            |azt02               ]    Approver      [lmf07       |gen02               ]
+ Bui.DocNo.      [lmf03               |lmb03               ]    Appr.on       [lmf08       ]
+ Flo.DocNo.      [lmf04               |lmc04               ]    House No.     [lmf13                            ]
+ Tcons area      [lmf09               ]                                       [                                 ]
+
+ Tmeas area      [lmf10               ]                         Memo          [lmf14                            ]
+ Texpe area      [lmf11               ]                                       [                                 ]
+
+}
+END -- gr1
+END -- main
+Page info(text=%"Info")
+Grid gr2
+{
+
+ Data Owner  [lmfuser    ] Last Modified by   [lmfmodu   ] Valid Code  [lmfacti   ]
+ Department  [lmfgrup    ] Last Modified on   [lmfdate   ] create on   [lmfcrat   ]
+ Record Orig.[lmforiu    ]
+ Dept Orig.  [lmforig    ]
+
+}
+END -- gr2
+END -- info
+END -- pc1
+Folder pc2
+Page site(text=%"Site")
+Table lie
+{
+[lie02               |lie03     |lmc04_1                       |lie04     |lmy04                         |lie05               |lie06               |lie07               |lieacti ]
+[lie02               |lie03     |lmc04_1                       |lie04     |lmy04                         |lie05               |lie06               |lie07               |lieacti ]
+[lie02               |lie03     |lmc04_1                       |lie04     |lmy04                         |lie05               |lie06               |lie07               |lieacti ]
+[lie02               |lie03     |lmc04_1                       |lie04     |lmy04                         |lie05               |lie06               |lie07               |lieacti ]
+[lie02               |lie03     |lmc04_1                       |lie04     |lmy04                         |lie05               |lie06               |lie07               |lieacti ]
+
+}
+END -- lie
+END -- site
+Page smallclass(text=%"Small class")
+Table lml
+{
+[lml02     |oba02                         |lml06   ]
+[lml02     |oba02                         |lml06   ]
+[lml02     |oba02                         |lml06   ]
+[lml02     |oba02                         |lml06   ]
+[lml02     |oba02                         |lml06   ]
+}
+END -- lml
+END -- smallclass
+END -- pc2
+Grid gr3
+{
+
+ ---------   Rows [idx   ] /[cnt   ] -------           Site[cn2   ]    Small class[cn3   ]----------
+
+}
+END -- gr3
+END -- VBox1
+END -- almi141
+
+TABLES
+lmf_file,
+lie_file,
+lml_file
+ATTRIBUTES
+ButtonEdit lmf01=lmf_file.lmf01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ButtonEdit lmf12=lmf_file.lmf12, action=controlp, tabIndex=14, not null, image="zoom.png";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=15, noEntry;
+Edit lmf15=lmf_file.lmf15, tabIndex=2;
+ComboBox lmf05=lmf_file.lmf05, tabIndex=16, noEntry, not null, items=(("1", "unused"),("2", "used"),("3", "yuzu"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit lmfstore=lmf_file.lmfstore, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=4, noEntry;
+ComboBox lmf06=lmf_file.lmf06, tabIndex=17, default = "N", noEntry, not null, required, items=(("Y", "checked"),("N", "unchecked"),("X", "zuofei"));
+ButtonEdit lmflegal=lmf_file.lmflegal, action=controlp, tabIndex=5, noEntry, not null, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=6, noEntry;
+ButtonEdit lmf07=lmf_file.lmf07, action=controlp, tabIndex=18, not null, required, image="zoom.png";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=19, noEntry;
+ButtonEdit lmf03=lmf_file.lmf03, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=8, noEntry;
+DateEdit lmf08=lmf_file.lmf08, tabIndex=20, noEntry, not null, required;
+ButtonEdit lmf04=lmf_file.lmf04, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=10, noEntry;
+TextEdit lmf13=lmf_file.lmf13, tabIndex=21, scrollBars=vertical;
+Edit lmf09=lmf_file.lmf09, tabIndex=11, noEntry;
+Edit lmf10=lmf_file.lmf10, tabIndex=12, noEntry;
+TextEdit lmf14=lmf_file.lmf14, tabIndex=22;
+Edit lmf11=lmf_file.lmf11, tabIndex=13, noEntry;
+Edit lmfuser=lmf_file.lmfuser, tabIndex=23, noEntry;
+Edit lmfmodu=lmf_file.lmfmodu, tabIndex=27, noEntry;
+Edit lmfacti=lmf_file.lmfacti, tabIndex=29, default = "Y", noEntry;
+Edit lmfgrup=lmf_file.lmfgrup, tabIndex=24, noEntry;
+DateEdit lmfdate=lmf_file.lmfdate, tabIndex=28, noEntry;
+DateEdit lmfcrat=lmf_file.lmfcrat, tabIndex=30, noEntry;
+Edit lmforiu=lmf_file.lmforiu, tabIndex=25, noEntry;
+Edit lmforig=lmf_file.lmforig, tabIndex=26, noEntry;
+ButtonEdit lie02=lie_file.lie02, action=controlp, tabIndex=31, title=%"Site ID", not null, required, image="zoom.png";
+ButtonEdit lie03=lie_file.lie03, action=controlp, tabIndex=32, title="Floor No.", not null, image="zoom.png";
+Edit lmc04_1=formonly.lmc04_1 type VARCHAR, tabIndex=33, title=%"Floor name", noEntry;
+ButtonEdit lie04=lie_file.lie04, action=controlp, tabIndex=34, title=%"Area code", image="zoom.png";
+Edit lmy04=formonly.lmy04 type VARCHAR, tabIndex=35, title=%"Area  name", noEntry;
+Edit lie05=lie_file.lie05, tabIndex=36, title=%"Built-up area";
+Edit lie06=lie_file.lie06, tabIndex=37, title=%"Measurement of area";
+Edit lie07=lie_file.lie07, tabIndex=38, title=%"Experience area";
+CheckBox lieacti=lie_file.lieacti, tabIndex=39, default = "Y", title="Effective or not", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit lml02=lml_file.lml02, action=controlp, tabIndex=40, title="Product classification", not null, image="zoom.png";
+Edit oba02=formonly.oba02 type VARCHAR, tabIndex=41, title=%"Class name", noEntry;
+CheckBox lml06=lml_file.lml06, tabIndex=42, default = "Y", title="Effective or not", valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type SMALLINT, tabIndex=43, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=44, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=45, noEntry;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=46, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lmf(lmf_file.lmf01,lmf_file.lmf05,lmf_file.lmfstore,formonly.rtz13,lmf_file.lmf06,formonly.imgmksg,lmf_file.lmflegal,formonly.azt02,lmf_file.lmf07,lmf_file.lmf03,formonly.lmb03,lmf_file.lmf08,lmf_file.lmf04,lmf_file.lmfuser,lmf_file.lmfmodu,lmf_file.lmfacti,lmf_file.lmfgrup,lmf_file.lmfdate,lmf_file.lmfcrat,lmf_file.lmforiu,lmf_file.lmforig,formonly.idx,formonly.cnt,lmf_file.lmf12,formonly.tqa02,formonly.gen02,lmf_file.lmf09,lmf_file.lmf10,lmf_file.lmf11,lmf_file.lmf13,lmf_file.lmf15,lmf_file.lmf14,formonly.cn2,formonly.cn3)
+SCREEN RECORD s_lie(lie_file.lie02,lie_file.lie03,formonly.lmc04_1,lie_file.lie04,formonly.lmy04,lie_file.lie05,lie_file.lie06,lie_file.lie07,lie_file.lieacti)
+SCREEN RECORD s_lml(lml_file.lml02,formonly.oba02,lml_file.lml06)
+SCREEN RECORD Undefined(formonly.lmc04)
+END -- INSTRUCTIONS
+

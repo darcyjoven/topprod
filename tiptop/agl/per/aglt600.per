@@ -1,0 +1,133 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglt600")
+VBox vb6
+Folder pc1
+Page Page01(text=%"Basic Data\n")
+Grid gr8
+{
+
+  Book No.    [afb00     ]                                                             <G gb5                       >   <G gb5_                                  >
+  Budget Year [afb03     ]                                                             [afb05          ]                  Yearly Budget        [afb10          ]
+  Budget No.  [afb01                    |azf03                                   ]     [               ]                  First Quarter Budget [afb11          ]
+  Account Code[afb02                    |aag02                                   ]     [               ]                  Second Quarter Budget[afb12          ]
+  Budget Dept.[afb041                   |gem02                                   ]     <                            >     Third Quarter Budget [afb13          ]
+  Project No. [afb042                   |pja02                                   ]     <G gb6                       >     Fourth Quarter Budget[afb14          ]
+  WBS No.     [afb04                    ]                                              [afb06                      ]    <                                        >
+                                                                                       [                           ]
+                                                                                       <                            >
+  <G gb13                                     >                                        <G gb7                       >
+   [afb09                                     ]                                        [afb07                      ]
+   [afb18             ]                                                                [                           ]
+   [afb19             ]                                                                [                           ]
+  <                                           >                                        <                            >
+
+}
+END -- gr8
+END -- Page01
+Page info(text=%"info")
+Grid gr19
+{
+
+    Data Owner        [afbuser     ]   Data Modified By    [afbmodu      ] Data Valid Code[afbact]
+    Data of Department[afbgrup     ]   Latest Modified Date[afbdate      ]
+    Recd Orig.        [afboriu     ]
+    Data Of Dept Orig.[afborig     ]
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr19
+END -- info
+END -- pc1
+Table s_afc
+{
+[afc05     |afc06                    |afc08                    |afc09                    |afc07                    ]
+[afc05     |afc06                    |afc08                    |afc09                    |afc07                    ]
+[afc05     |afc06                    |afc08                    |afc09                    |afc07                    ]
+[afc05     |afc06                    |afc08                    |afc09                    |afc07                    ]
+[afc05     |afc06                    |afc08                    |afc09                    |afc07                    ]
+[afc05     |afc06                    |afc08                    |afc09                    |afc07                    ]
+
+}
+END -- s_afc
+Grid gr11
+{
+
+  ------ Rows[cnt       ]/[idx       ] --- Items[cn2       ]--------
+
+
+}
+END -- gr11
+END -- vb6
+END -- aglt600
+
+TABLES
+afb_file
+ATTRIBUTES
+Edit afb00=afb_file.afb00, tabIndex=1, not null, required;
+Group gb5:gb5, text="Maintained by";
+RadioGroup afb05=afb_file.afb05, tabIndex=8, not null, items=(("1", "Period
+"),("2", "Quarter
+"),("3", "Year
+"));
+Group gb5_:gb5_, text="Budget";
+Edit afb10=afb_file.afb10, tabIndex=11, noEntry, not null;
+Edit afb11=afb_file.afb11, tabIndex=12, noEntry;
+Edit afb12=afb_file.afb12, tabIndex=15, noEntry;
+Edit afb13=afb_file.afb13, tabIndex=13, noEntry;
+Edit afb14=afb_file.afb14, tabIndex=14, noEntry;
+Edit afb03=afb_file.afb03, tabIndex=2, not null, required;
+ButtonEdit afb01=afb_file.afb01, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Edit azf03=formonly.azf03 type VARCHAR, tabIndex=18;
+ButtonEdit afb02=afb_file.afb02, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=19;
+ButtonEdit afb041=afb_file.afb041, action=controlp, tabIndex=5, image="zoom.png";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=17;
+ButtonEdit afb042=afb_file.afb042, action=controlp, tabIndex=6, image="zoom.png";
+Edit pja02=formonly.pja02 type VARCHAR, tabIndex=20;
+Group gb6:gb6, text="Budget Distribution Method";
+RadioGroup afb06=afb_file.afb06, tabIndex=9, not null, items=(("1", "Set a Module Parameter
+"),("2", "Share Alike"));
+ButtonEdit afb04=afb_file.afb04, action=controlp, tabIndex=7, image="zoom.png";
+Group gb13:gb13;
+CheckBox afb09=afb_file.afb09, tabIndex=16, default = "N", text="Defer Unconsumed Budget to Next Period?", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox afb18=afb_file.afb18, tabIndex=23, default = "N", text="Total Control?", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox afb19=afb_file.afb19, tabIndex=24, default = "N", text="Source Budget?\n", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Group gb7:gb7, text="Budget Control Method";
+RadioGroup afb07=afb_file.afb07, tabIndex=10, not null, items=(("1", "No Control
+"),("2", "Warning if Over-Budget"),("3", "Reject if Over-Budget"));
+Edit afbuser=afb_file.afbuser, tabIndex=30, noEntry, not null;
+Edit afbmodu=afb_file.afbmodu, tabIndex=32, noEntry, not null;
+Edit afbact=afb_file.afbacti, tabIndex=34, noEntry, not null;
+Edit afbgrup=afb_file.afbgrup, tabIndex=31, noEntry, not null;
+DateEdit afbdate=afb_file.afbdate, tabIndex=33, noEntry, not null;
+Edit afboriu=afb_file.afboriu, tabIndex=501, noEntry, not null;
+Edit afborig=afb_file.afborig, tabIndex=502, noEntry, not null;
+Edit afc05=formonly.afc05 type CHAR, tabIndex=25, title="Period", not null, required;
+Edit afc06=formonly.afc06 type CHAR, tabIndex=26, title="Budget Amount", not null;
+Edit afc08=formonly.afc08 type CHAR, tabIndex=27, title="Shift Amount", noEntry, not null;
+Edit afc09=formonly.afc09 type CHAR, tabIndex=28, title="Add Amount", noEntry, not null;
+Edit afc07=formonly.afc07 type CHAR, tabIndex=29, title="Consumed Amount", noEntry, not null;
+Edit cnt=formonly.cnt type CHAR, tabIndex=22, noEntry;
+Edit idx=formonly.idx type CHAR, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=35;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_afc(formonly.afc05,formonly.afc06,formonly.afc08,formonly.afc09,formonly.afc07)
+SCREEN RECORD Undefined(afb_file.afb00,afb_file.afb05,afb_file.afb10,afb_file.afb11,afb_file.afb12,afb_file.afb13,afb_file.afb14,afb_file.afb03,afb_file.afb01,formonly.azf03,afb_file.afb02,formonly.aag02,afb_file.afb041,formonly.gem02,afb_file.afb042,formonly.pja02,afb_file.afb06,afb_file.afb04,afb_file.afb09,afb_file.afb18,afb_file.afb19,afb_file.afb07,afb_file.afbuser,afb_file.afbmodu,afb_file.afbacti,afb_file.afbgrup,afb_file.afbdate,afb_file.afboriu,afb_file.afborig,formonly.cnt,formonly.idx,formonly.cn2)
+END -- INSTRUCTIONS
+

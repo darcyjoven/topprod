@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armp160.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armp160")
+VBox VBox1
+Grid gr241
+{
+ <G group01                                 >
+  RMA No.             [rmc01               ]
+ <                                          >
+ <G group02                                 >
+  Ending Fix Date         [edate       ]
+  RMA Warehouse #         [stk1      ]
+  In-Transit W/H No       [stk2      ]
+  Receipt Tp              [a01       ]
+  Issuing Note            [a02       ]
+  Receipt/Issue Date      [sdate       ]
+  RMA Department No.      [dept      ]
+  Receipt/Issue Body Rows [b01       ]
+ <                                          >
+
+}
+END -- gr241
+Grid gr242
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr242
+END -- VBox1
+END -- armp160
+
+TABLES
+rmc_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit rmc01=rmc_file.rmc01, tabIndex=1, upShift;
+Group group02:group02, text="INPUT";
+DateEdit edate=formonly.edate type DATE, tabIndex=2, comment="Must Enter!";
+ButtonEdit stk1=formonly.stk1 type VARCHAR, action=controlp, tabIndex=3, image="zoom.png";
+ButtonEdit stk2=formonly.stk2 type VARCHAR, action=controlp, tabIndex=4, image="zoom.png";
+ButtonEdit a01=formonly.a01 type VARCHAR, action=controlp, tabIndex=5, image="zoom.png";
+ButtonEdit a02=formonly.a02 type VARCHAR, action=controlp, tabIndex=6, image="zoom.png";
+DateEdit sdate=formonly.sdate type DATE, tabIndex=7;
+ButtonEdit dept=formonly.dept type VARCHAR, action=controlp, tabIndex=8, image="zoom.png";
+Edit b01=formonly.b01 type SMALLINT, tabIndex=9;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=10, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rmc_file.rmc01,formonly.edate,formonly.stk1,formonly.stk2,formonly.a01,formonly.a02,formonly.sdate,formonly.dept,formonly.b01,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

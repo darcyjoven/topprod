@@ -1,0 +1,101 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amrp510")
+VBox vbox1
+Grid gr3884
+{
+ <G group01                                                   >
+  ima01               [ima01               ]
+  ima06               [ima06               ]
+  ima67               [ima67               ]
+  ima54               [ima54               ]
+ <                                                            >
+
+
+
+
+
+}
+END -- gr3884
+Group g01(text=%"INPUT")
+Grid gr3885
+{
+
+
+ ima08                 [ima08             ]
+ P/R Date              [pmk04             ]
+ P/R                   [pmk01             ]
+ pmk12                 [pmk12             ]
+ P/R Dept.             [pmk13             ]
+ P/R Summary Method    [summary_flag      ]
+
+
+}
+END -- gr3885
+END -- g01
+Grid gr7
+{
+ <G gb5                                                     >
+
+    [t1     ]   [t2             ]--- [t3             ]
+    [label1    ][y             ]
+    [label2    ][m             ]
+    [a                  ]   [e                  ]
+    [b                  ]   [h                  ]
+    [c                  ]   [f                  ]
+    [d                  ]   [g                  ]
+ <                                                          >
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr7
+END -- vbox1
+END -- amrp510
+
+ATTRIBUTES
+Group group01:group01, text=%"QBE";
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ima06=formonly.ima06 type CHAR, action=controlp, tabIndex=4, image="zoom";
+Edit ima67=formonly.ima67 type CHAR, tabIndex=1;
+ButtonEdit ima54=formonly.ima54 type CHAR, action=controlp, tabIndex=2, image="zoom", comment=%"<^P> Qry Supplier    <^Y> Create Supplier";
+ComboBox ima08=formonly.ima08 type CHAR, tabIndex=22, not null, required, items=(("S", "S"),("P", "P"),("M", "M"));
+DateEdit pmk04=formonly.pmk04 type DATE, tabIndex=5, not null, required;
+ButtonEdit pmk01=formonly.pmk01 type CHAR, action=controlp, tabIndex=6, not null, required, image="zoom", upShift, comment=%"<^P>Qry Documents";
+ButtonEdit pmk12=formonly.pmk12 type CHAR, action=controlp, tabIndex=7, not null, required, image="zoom";
+ButtonEdit pmk13=formonly.pmk13 type CHAR, action=controlp, tabIndex=8, not null, required, image="zoom";
+ComboBox summary_flag=formonly.summary_flag type CHAR, tabIndex=9, not null, required, items=(("0", %"0"),("1", %"1"),("2", %"2"),("3", %"3"));
+Group gb5:gb5, text=%"INPUT2";
+Label t1:t1, text=%"t1";
+DateEdit t2=formonly.t1 type CHAR, tabIndex=18;
+DateEdit t3=formonly.t2 type CHAR, tabIndex=19;
+Label label1:Label1, text=%"y";
+Edit y=formonly.y type CHAR, tabIndex=20;
+Label label2:Label2, text=%"m";
+Edit m=formonly.m type CHAR, tabIndex=21;
+CheckBox a=formonly.a type CHAR, tabIndex=10, text=%"a", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=14, text=%"e", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type CHAR, tabIndex=11, text=%"b", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=15, text=%"h", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type CHAR, tabIndex=12, text=%"c", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type CHAR, tabIndex=16, text=%"f", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type CHAR, tabIndex=13, text=%"d", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type CHAR, tabIndex=17, text=%"g", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima67,formonly.ima54,formonly.pmk04,formonly.pmk01,formonly.pmk12,formonly.pmk13,formonly.summary_flag,formonly.ima06,formonly.a,formonly.b,formonly.c,formonly.d,formonly.e,formonly.f,formonly.g,formonly.t1,formonly.t2,formonly.y,formonly.m,formonly.ima08,formonly.h)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt120")
+VBox vb2
+Folder pc3
+Page Page3(text=%"Basic Data")
+Grid gr10
+{
+
+ Project No. [pjb01      ]                    Project Name    [pja02                                   ]
+ WBS No.     [pjfa01                        ] WBS Description [pjb03                                                                      ]
+ Start Date  [pjb15        ]                  Completion Date [pjb16        ]
+
+
+}
+END -- gr10
+END -- Page3
+END -- pc3
+Table s_pjfa
+{
+[pjfa0|pjfa03                                  |pjfa04                                                      |ima021                                                      |ima25       |pjfa05            |pjfa06    |pjfaacti ]
+[pjfa0|pjfa03                                  |pjfa04                                                      |ima021                                                      |ima25       |pjfa05            |pjfa06    |pjfaacti ]
+[pjfa0|pjfa03                                  |pjfa04                                                      |ima021                                                      |ima25       |pjfa05            |pjfa06    |pjfaacti ]
+[pjfa0|pjfa03                                  |pjfa04                                                      |ima021                                                      |ima25       |pjfa05            |pjfa06    |pjfaacti ]
+[pjfa0|pjfa03                                  |pjfa04                                                      |ima021                                                      |ima25       |pjfa05            |pjfa06    |pjfaacti ]
+[pjfa0|pjfa03                                  |pjfa04                                                      |ima021                                                      |ima25       |pjfa05            |pjfa06    |pjfaacti ]
+[pjfa0|pjfa03                                  |pjfa04                                                      |ima021                                                      |ima25       |pjfa05            |pjfa06    |pjfaacti ]
+
+}
+END -- s_pjfa
+Grid gr6
+{
+
+ --------Rows[idx   ]/ [cnt    ] ---Details [cn2   ] ------
+
+}
+END -- gr6
+END -- vb2
+END -- apjt120
+
+TABLES
+pjfa_file
+ATTRIBUTES
+Edit pjb01=formonly.pjb01 type VARCHAR, tabIndex=11, noEntry;
+Edit pja02=formonly.pja02 type VARCHAR, tabIndex=14, noEntry;
+ButtonEdit pjfa01=pjfa_file.pjfa01, action=controlp, tabIndex=10, not null, required, image="zoom.png";
+Edit pjb03=formonly.pjb03 type VARCHAR, tabIndex=15, noEntry;
+DateEdit pjb15=formonly.pjb15 type DATE, tabIndex=12, noEntry;
+DateEdit pjb16=formonly.pjb16 type DATE, tabIndex=13, noEntry;
+Edit pjfa0=pjfa_file.pjfa02, tabIndex=1, title="Line No.", not null, required;
+ButtonEdit pjfa03=pjfa_file.pjfa03, action=controlp, tabIndex=2, title="Item No.", not null, required, image="zoom.png";
+Edit pjfa04=pjfa_file.pjfa04, tabIndex=3, title="Item Description", not null, required;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=7, title="Item Specification", noEntry;
+Edit ima25=formonly.ima25 type VARCHAR, tabIndex=4, title="Unit", noEntry;
+Edit pjfa05=pjfa_file.pjfa05, tabIndex=5, default = "0", title="Requirement Qty", not null, required;
+DateEdit pjfa06=pjfa_file.pjfa06, tabIndex=6, title="Requirement Date", not null, required;
+CheckBox pjfaacti=pjfa_file.pjfaacti, tabIndex=17, default = "N", title="acti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=8;
+Edit cnt=formonly.cnt type CHAR, tabIndex=16;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjfa(pjfa_file.pjfa02,pjfa_file.pjfa03,pjfa_file.pjfa04,formonly.ima021,formonly.ima25,pjfa_file.pjfa05,pjfa_file.pjfa06,pjfa_file.pjfaacti)
+SCREEN RECORD Undefined(formonly.pjb01,formonly.pja02,pjfa_file.pjfa01,formonly.pjb03,formonly.pjb15,formonly.pjb16,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

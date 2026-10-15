@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi3002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi3002")
+VBox vb4
+Folder pc3
+Page Main(text=%"Main")
+Table s_lng
+{
+[lng03     |lng04     |lng05     |lng06         |lng07       ]
+[lng03     |lng04     |lng05     |lng06         |lng07       ]
+[lng03     |lng04     |lng05     |lng06         |lng07       ]
+[lng03     |lng04     |lng05     |lng06         |lng07       ]
+[lng03     |lng04     |lng05     |lng06         |lng07       ]
+
+}
+END -- s_lng
+END -- Main
+END -- pc3
+Grid gr3
+{
+
+ ------- Rows [idx   ] -------
+
+}
+END -- gr3
+END -- vb4
+END -- almi3002
+
+TABLES
+lng_file
+ATTRIBUTES
+Edit lng03=lng_file.lng03, tabIndex=1, title="Cer.Name", not null, required;
+Edit lng04=lng_file.lng04, tabIndex=2, title="Cer.num.", not null, required;
+Edit lng05=lng_file.lng05, tabIndex=3, title="Operator";
+DateEdit lng06=lng_file.lng06, tabIndex=4, title="Val.dat.from";
+DateEdit lng07=lng_file.lng07, tabIndex=5, title="Val.dat.to";
+Edit idx=formonly.idx type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lng(lng_file.lng03,lng_file.lng04,lng_file.lng05,lng_file.lng06,lng_file.lng07)
+SCREEN RECORD Undefined(formonly.idx)
+END -- INSTRUCTIONS
+

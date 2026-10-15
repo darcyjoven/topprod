@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/udmenu.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"User-Define Menu(udmenu)")
+Folder pc694
+Page Page1029(text="User-Define Menu(udmenu)")
+VBox VBox1
+Grid gr3015
+{
+[zz01h     ][zz02h                                   ]
+
+}
+END -- gr3015
+Table s_zz
+{
+[zz01         |zz02                                ]
+[zz01         |zz02                                ]
+[zz01         |zz02                                ]
+[zz01         |zz02                                ]
+[zz01         |zz02                                ]
+[zz01         |zz02                                ]
+[zz01         |zz02                                ]
+[zz01         |zz02                                ]
+[zz01         |zz02                                ]
+[zz01         |zz02                                ]
+
+}
+END -- s_zz
+Grid gr3016
+{
+ Enter Option (\<F3\>PgDn \<F4\>PgUp 0.End )  [l_ans     ]
+
+}
+END -- gr3016
+END -- VBox1
+END -- Page1029
+Page Page1030(text="Info")
+Grid gr3017
+{
+ <G grpinfo                                  >
+  Detail Counts       [cnt       ]
+ <                                           >
+
+}
+END -- gr3017
+END -- Page1030
+END -- pc694
+END -- udmenu
+
+ATTRIBUTES
+Edit zz01h=formonly.zz01h type VARCHAR, tabIndex=1, noEntry;
+Edit zz02h=formonly.zz02h type VARCHAR, tabIndex=2, noEntry;
+Edit zz01=formonly.zz01 type VARCHAR, tabIndex=3, title="Program Code", noEntry;
+Edit zz02=formonly.zz02 type VARCHAR, tabIndex=4, title="Program Name", noEntry;
+Edit l_ans=formonly.l_ans type SMALLINT, tabIndex=5;
+Group grpinfo:grpinfo;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zz(formonly.zz01,formonly.zz02)
+SCREEN RECORD Undefined(formonly.zz01h,formonly.zz02h,formonly.l_ans,formonly.cnt)
+END -- INSTRUCTIONS
+

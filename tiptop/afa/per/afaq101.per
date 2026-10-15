@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afaq101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afaq101")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1970
+{
+ <G group01                         >  <G group03                                                                                                  >
+  Serial No.          [faj01     ]      English Name        [faj07                         ] [dummy01] Keeper              [faj19     ][gen02     ]
+  Property No.        [faj02     ]      Chinese Name        [faj06                         ]           Keeper Dept         [faj20     ][gem02     ]
+  Additonal No.       [faj022    ]      Asset Category      [faj04     ][fab02           ]             Storing Location    [faj21     ]
+ <                                  >   Sub-Category        [faj05     ][fac02           ]             Storing Plant       [faj22                 ]
+ <G group02                         >   Date of Acquisition [faj25     ]                               Hm Cur. Unit Price  [faj13               ]
+  Initial Date        [fap04       ]    Date Recorded       [faj26     ]                               Cost                [faj14               ]
+ <                                  >   Date Recorded 2     [faj262    ]                               Cost 2              [faj142              ]
+                                       <                                                                                                           >
+}
+END -- gr1970
+END -- page01
+END -- folder01
+Table s_sr
+{
+[tdate           |fap03          |fap05    |fap052   |fap50           |fap51       |fap66      |fap54               |fap542              |fap77                      |fap772                     |desc                                                           |desc2                                                          ]
+[tdate           |fap03          |fap05    |fap052   |fap50           |fap51       |fap66      |fap54               |fap542              |fap77                      |fap772                     |desc                                                           |desc2                                                          ]
+[tdate           |fap03          |fap05    |fap052   |fap50           |fap51       |fap66      |fap54               |fap542              |fap77                      |fap772                     |desc                                                           |desc2                                                          ]
+[tdate           |fap03          |fap05    |fap052   |fap50           |fap51       |fap66      |fap54               |fap542              |fap77                      |fap772                     |desc                                                           |desc2                                                          ]
+[tdate           |fap03          |fap05    |fap052   |fap50           |fap51       |fap66      |fap54               |fap542              |fap77                      |fap772                     |desc                                                           |desc2                                                          ]
+[tdate           |fap03          |fap05    |fap052   |fap50           |fap51       |fap66      |fap54               |fap542              |fap77                      |fap772                     |desc                                                           |desc2                                                          ]
+[tdate           |fap03          |fap05    |fap052   |fap50           |fap51       |fap66      |fap54               |fap542              |fap77                      |fap772                     |desc                                                           |desc2                                                          ]
+[tdate           |fap03          |fap05    |fap052   |fap50           |fap51       |fap66      |fap54               |fap542              |fap77                      |fap772                     |desc                                                           |desc2                                                          ]
+[tdate           |fap03          |fap05    |fap052   |fap50           |fap51       |fap66      |fap54               |fap542              |fap77                      |fap772                     |desc                                                           |desc2                                                          ]
+[tdate           |fap03          |fap05    |fap052   |fap50           |fap51       |fap66      |fap54               |fap542              |fap77                      |fap772                     |desc                                                           |desc2                                                          ]
+}
+END -- s_sr
+Grid gr1971
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr1971
+END -- VBox1
+END -- afaq101
+
+TABLES
+faj_file,
+fap_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit faj01=faj_file.faj01, tabIndex=1;
+Edit faj02=faj_file.faj02, tabIndex=2;
+Edit faj022=faj_file.faj022, tabIndex=3;
+Group group03:group03;
+Edit faj07=faj_file.faj07, tabIndex=4;
+Label dummy01:dummy01;
+Edit faj19=faj_file.faj19, tabIndex=5;
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=6;
+Edit faj06=faj_file.faj06, tabIndex=7;
+Edit faj20=faj_file.faj20, tabIndex=8;
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=31;
+Edit faj04=faj_file.faj04, tabIndex=9;
+Edit fab02=formonly.fab02 type CHAR, tabIndex=29;
+Edit faj21=faj_file.faj21, tabIndex=10;
+Edit faj05=faj_file.faj05, tabIndex=11;
+Edit fac02=formonly.fac02 type CHAR, tabIndex=30;
+Edit faj22=faj_file.faj22, tabIndex=12;
+DateEdit faj25=faj_file.faj25, tabIndex=13;
+Edit faj13=faj_file.faj13, tabIndex=14;
+DateEdit faj26=faj_file.faj26, tabIndex=15;
+Edit faj14=faj_file.faj14, tabIndex=16;
+DateEdit faj262=faj_file.faj262, tabIndex=36;
+Edit faj142=faj_file.faj142, tabIndex=36, not null, required;
+Group group02:group02, text="INPUT";
+DateEdit fap04=fap_file.fap04, tabIndex=17;
+DateEdit tdate=formonly.tdate type CHAR, tabIndex=18, title="Document Date";
+Edit fap03=formonly.fap03 type CHAR, tabIndex=19, title="Transaction", noEntry;
+Edit fap05=formonly.fap05 type CHAR, tabIndex=20, title="Status", noEntry;
+Edit fap052=formonly.fap052 type CHAR, tabIndex=32, title="Status", noEntry;
+Edit fap50=formonly.fap50 type CHAR, tabIndex=21, title="Tran.Nt No.", noEntry;
+Edit fap51=formonly.fap51 type CHAR, tabIndex=22, title="Line No.", noEntry;
+Edit fap66=formonly.fap66 type CHAR, tabIndex=23, title="Quantity", noEntry;
+Edit fap54=formonly.fap54 type CHAR, tabIndex=24, title="Amount", noEntry;
+Edit fap542=formonly.fap542 type CHAR, tabIndex=33, title="Amount", noEntry;
+Edit fap77=formonly.fap77 type CHAR, tabIndex=25, title="Status After Transaction", noEntry;
+Edit fap772=formonly.fap772 type CHAR, tabIndex=34, title="Status After Transaction", noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=26, title="Transaction Contents", noEntry;
+Edit desc2=formonly.desc2 type CHAR, tabIndex=35, title="Transaction Contents", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=27;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sr(formonly.tdate,formonly.fap03,formonly.fap05,formonly.fap052,formonly.fap50,formonly.fap51,formonly.fap66,formonly.fap54,formonly.fap542,formonly.fap77,formonly.fap772,formonly.desc,formonly.desc2)
+SCREEN RECORD Undefined(faj_file.faj01,faj_file.faj02,faj_file.faj022,faj_file.faj07,faj_file.faj19,formonly.gen02,faj_file.faj06,faj_file.faj20,formonly.gem02,faj_file.faj04,formonly.fab02,faj_file.faj21,faj_file.faj05,formonly.fac02,faj_file.faj22,faj_file.faj25,faj_file.faj13,faj_file.faj26,faj_file.faj14,faj_file.faj262,faj_file.faj142,fap_file.fap04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

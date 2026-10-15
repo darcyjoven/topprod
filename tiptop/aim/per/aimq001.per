@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aimq001")
+VBox vb2_
+Folder pc6
+Page Page12(text=%"Main")
+Grid gr24
+{
+ Item No.        [stx01                                   ]
+ P/N             [ima02                                   ]
+ Spec            [ima021                                  ]
+
+}
+END -- gr24
+END -- Page12
+END -- pc6
+Table s_stx
+{
+[stx02     |stx03     |stx05               |stx06               |stx07               |stx08               |stx09               |stx10               |stx11               |stx12               |stx13               ]
+[stx02     |stx03     |stx05               |stx06               |stx07               |stx08               |stx09               |stx10               |stx11               |stx12               |stx13               ]
+[stx02     |stx03     |stx05               |stx06               |stx07               |stx08               |stx09               |stx10               |stx11               |stx12               |stx13               ]
+[stx02     |stx03     |stx05               |stx06               |stx07               |stx08               |stx09               |stx10               |stx11               |stx12               |stx13               ]
+[stx02     |stx03     |stx05               |stx06               |stx07               |stx08               |stx09               |stx10               |stx11               |stx12               |stx13               ]
+[stx02     |stx03     |stx05               |stx06               |stx07               |stx08               |stx09               |stx10               |stx11               |stx12               |stx13               ]
+[stx02     |stx03     |stx05               |stx06               |stx07               |stx08               |stx09               |stx10               |stx11               |stx12               |stx13               ]
+[stx02     |stx03     |stx05               |stx06               |stx07               |stx08               |stx09               |stx10               |stx11               |stx12               |stx13               ]
+[stx02     |stx03     |stx05               |stx06               |stx07               |stx08               |stx09               |stx10               |stx11               |stx12               |stx13               ]
+
+}
+END -- s_stx
+Grid gr52
+{
+ ----------  Rows [cnt   ] / [cn2   ]
+
+}
+END -- gr52
+END -- vb2_
+END -- aimq001
+
+TABLES
+stx_file
+ATTRIBUTES
+ButtonEdit stx01=stx_file.stx01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=2;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=3;
+Edit stx02=stx_file.stx02, tabIndex=4, title="Year";
+Edit stx03=stx_file.stx03, tabIndex=5, title="Month";
+Edit stx05=stx_file.stx05, tabIndex=6, title="Current Level Material";
+Edit stx06=stx_file.stx06, tabIndex=7, title="Current Level Labor";
+Edit stx07=stx_file.stx07, tabIndex=8, title="Current Level Overhead";
+Edit stx08=stx_file.stx08, tabIndex=9, title="Current Level Processing";
+Edit stx09=stx_file.stx09, tabIndex=10, title="Down Level Material";
+Edit stx10=stx_file.stx10, tabIndex=11, title="Down Level Labor force";
+Edit stx11=stx_file.stx11, tabIndex=12, title="Down Level Overhead";
+Edit stx12=stx_file.stx12, tabIndex=13, title="stx12";
+Edit stx13=stx_file.stx13, tabIndex=14, title="Total";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_stx(stx_file.stx02,stx_file.stx03,stx_file.stx05,stx_file.stx06,stx_file.stx07,stx_file.stx08,stx_file.stx09,stx_file.stx10,stx_file.stx11,stx_file.stx12,stx_file.stx13)
+SCREEN RECORD Undefined(stx_file.stx01,formonly.ima02,formonly.ima021,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

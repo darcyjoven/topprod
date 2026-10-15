@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapp133.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group Group1(text=%"Group1")
+Grid ds1
+{
+
+[label|ape02                     ]
+[labe1|ape03                     ]
+
+}
+END -- ds1
+END -- Group1
+Group Group2(text=%"Group2")
+Grid ds2
+{
+
+[labe2|ape01                     ]
+[labe3|ape04                     ]
+
+}
+END -- ds2
+END -- Group2
+END -- VBox1
+END -- Form
+
+TABLES
+ape_file
+ATTRIBUTES
+Label label:Label1, text=%"ape02";
+Edit ape02=ape_file.ape02, tabIndex=1, not null, scroll;
+Label labe1:Label2, text=%"ape03";
+Edit ape03=ape_file.ape03, tabIndex=2, not null, scroll;
+Label labe2:Label3, text=%"ape01";
+ButtonEdit ape01=ape_file.ape01, action=controlp, tabIndex=3, image="zoom", scroll;
+Label labe3:Label4, text=%"ape04";
+ButtonEdit ape04=ape_file.ape04, action=controlp, tabIndex=4, image="zoom", scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(ape_file.ape02,ape_file.ape03)
+SCREEN RECORD Record2(ape_file.ape01,ape_file.ape04)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemi112.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemi112")
+VBox VBox1
+Folder pc301
+Page page01(text="Page01")
+Table s_fiz
+{
+[fiz01  |fiz02                    ]
+[fiz01  |fiz02                    ]
+[fiz01  |fiz02                    ]
+[fiz01  |fiz02                    ]
+[fiz01  |fiz02                    ]
+[fiz01  |fiz02                    ]
+[fiz01  |fiz02                    ]
+[fiz01  |fiz02                    ]
+[fiz01  |fiz02                    ]
+[fiz01  |fiz02                    ]
+
+}
+END -- s_fiz
+END -- page01
+END -- pc301
+Grid gr1752
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1752
+END -- VBox1
+END -- aemi112
+
+TABLES
+fiz_file
+ATTRIBUTES
+Edit fiz01=fiz_file.fiz01, tabIndex=1, title="Type", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ";
+Edit fiz02=fiz_file.fiz02, tabIndex=2, title="Description";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fiz(fiz_file.fiz01,fiz_file.fiz02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

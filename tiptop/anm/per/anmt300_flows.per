@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt300_flows.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"anmt300_flows")
+Folder pc2
+Page page01(text=%"Main")
+VBox VBox1
+Grid gr4437
+{
+
+    Year                        [tic01          ]         Month           [tic02       ]
+
+    Debit/Credit Balance        [tic03          ]
+
+
+
+
+
+}
+END -- gr4437
+Table s_tic
+{
+[tic04               |ti|tic06 |tic08          |tic07f                 |tic07                    ]
+[tic04               |ti|tic06 |tic08          |tic07f                 |tic07                    ]
+[tic04               |ti|tic06 |tic08          |tic07f                 |tic07                    ]
+[tic04               |ti|tic06 |tic08          |tic07f                 |tic07                    ]
+[tic04               |ti|tic06 |tic08          |tic07f                 |tic07                    ]
+
+
+}
+END -- s_tic
+END -- VBox1
+END -- page01
+END -- pc2
+END -- anmt300_flows
+
+TABLES
+tic_file
+ATTRIBUTES
+DateEdit tic01=tic_file.tic01, tabIndex=1, not null;
+DateEdit tic02=tic_file.tic02, tabIndex=1, not null;
+ComboBox tic03=tic_file.tic03, tabIndex=1, not null, items=(("1", "Debit Balance"),("2", "Credit Balance"));
+Edit tic04=tic_file.tic04, tabIndex=2, title=%"Line#", not null;
+Edit ti=tic_file.tic05, tabIndex=3, title=%"Line No.", not null;
+ButtonEdit tic06=tic_file.tic06, action=controlp, tabIndex=4, title=%"Cash Variation Code", not null, image="zoom";
+Edit tic08=tic_file.tic08, tabIndex=7, title=%"Affilliate", not null;
+Edit tic07f=tic_file.tic07f, tabIndex=6, title=%"Debit O. Amount", not null;
+Edit tic07=tic_file.tic07, tabIndex=5, title=%"Debit H. Amount", not null;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tic(tic_file.tic04,tic_file.tic05,tic_file.tic06,tic_file.tic08,tic_file.tic07f,tic_file.tic07)
+SCREEN RECORD Undefined(tic_file.tic01,tic_file.tic02,tic_file.tic03)
+END -- INSTRUCTIONS
+

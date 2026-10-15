@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zy2_cr.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Method Setting")
+Grid gr3047
+{
+[p                                                 ]
+[r                                                 ]
+[d                                                 ]
+[e                                                 ]
+[x                                                 ]
+[a                                                 ]
+[n                                                 ]
+
+
+}
+END -- gr3047
+END -- p_zy2_cr
+
+ATTRIBUTES
+CheckBox p=formonly.p type CHAR, tabIndex=4, text="P:Adobe Acrobat PDF", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox r=formonly.r type CHAR, tabIndex=5, text="R:Crystal Report", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type CHAR, tabIndex=2, text="D:Microsoft Office Word", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=1, text="E:Microsoft Office Excel - Print header and footer on each page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox x=formonly.x type CHAR, tabIndex=3, text="X:Microsoft Office Excel - Normal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox a=formonly.a type CHAR, tabIndex=6, text="A:Microsoft Office Excel - Data Only", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox n=formonly.n type CHAR, tabIndex=7, text="N:None", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.p,formonly.r,formonly.d,formonly.e,formonly.x,formonly.a,formonly.n)
+END -- INSTRUCTIONS
+

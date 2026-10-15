@@ -1,0 +1,78 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/aic/4fd/aeci620.tmp.per created 2010-04-30T14:06:14
+-- File created from /u3/tiptop/aic/4fd/aeci620.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text=%"aeci620")
+VBox VBox1                                                                                              
+Folder pc267                                                                                            
+Page page01(text="Main")                                                                                
+Grid gr1662                                                                                             
+{                                                                                                       
+[gummy01                        ]                                                                       
+ Task No.            [ecd01     ]                                                                       
+ Task Description    [ecd02               ]                                                             
+ Task Style          [ecd05               ]                                                             
+ Work Center         [ecd07     ]                                                                       
+ Task Overlap Level% [ecd09     ]                                                                       
+ Task Memo           [ecd15               ]                                                             
+ Operation Group      [ecdicd01            ]                                                            
+                                                                                                        
+}                                                                                                       
+END                                                                                                     
+END -- Page                                                                                             
+Page info(text="Info")                                                                                  
+Grid gr1663                                                                                             
+{                                                                                                       
+ Record Owner        [ecduser   ] Last Modified by    [ecdmodu   ] Data Valid Code     [ecdacti   ]     
+ Department          [ecdgrup   ] Create/Modify Date  [ecddate     ]                                    
+ Record Orig.        [ecdoriu   ]                                                                       
+ Dept Orig.          [ecdorig   ]                                                                       
+}                                                                                                       
+END                                                                                                     
+                                                                                                        
+                                                                                                        
+END -- Page                                                                                             
+END -- Folder                                                                                           
+Grid gr1664                                                                                             
+{                                                                                                       
+ ----------Rows [cnt   ] ----------                                                                     
+                                                                                                        
+                                                                                                        
+}                                                                                                       
+END                                                                                                     
+END -- VBox                                                                                             
+END -- Form
+
+TABLES
+ecd_file
+
+ATTRIBUTES
+Label gummy01:gummy01;
+Edit ecd01=ecd_file.ecd01, tabIndex=1, not null, required, comment="Key Field, No Blank/Repeated";
+Edit ecd02=ecd_file.ecd02, tabIndex=2, not null, required;
+ComboBox ecd05=ecd_file.ecd05, tabIndex=3, items=(("1", "Manual Operation"),("2", "Machine Operation"),("3", "Indirect Manual"),("4", "Idle Labor"));
+ButtonEdit ecd07=ecd_file.ecd07, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P> Qry Work Center";
+Edit ecd09=ecd_file.ecd09, tabIndex=5;
+Edit ecd15=ecd_file.ecd15, tabIndex=6;
+ComboBox ecdicd01=ecd_file.ecdicd01, tabIndex=13, default = "1", items=(("1", "WB"),("2", "CP"),("3", "DS"),("4", "AS"),("5", "FT"),("6", "Turnkey"),("7", "Other"));
+Edit ecduser=ecd_file.ecduser, tabIndex=7, noEntry;
+Edit ecdmodu=ecd_file.ecdmodu, tabIndex=8, noEntry;
+Edit ecdacti=ecd_file.ecdacti, tabIndex=9, noEntry, upShift;
+Edit ecdgrup=ecd_file.ecdgrup, tabIndex=10, noEntry;
+DateEdit ecddate=ecd_file.ecddate, tabIndex=11, noEntry;
+Edit ecdoriu=ecd_file.ecdoriu, tabIndex=501, noEntry;
+Edit ecdorig=ecd_file.ecdorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

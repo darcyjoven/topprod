@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi1712.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axmi1712")
+VBox vb2
+Folder pc1
+Page Main(text=%"Main")
+Grid gr1
+{
+ Forecast Item[opd01                           ]   Serial No.        [opd05       ]
+ Sta DocNo.   [ima02                           ]   Start Date        [opd06       ]
+ Store No.    [ima021                          ]   End Date          [opd07       ]
+ Customer No. [opd02       ][occ02             ]   Planning Qty      [opd08               ]
+ Planning Date[opd03       ]                       Confirmed Quantity[opd09               ]
+ Salesman     [opd04       ][gen02             ]   Unit Price        [opd10               ]
+ SBusi area   [opc05       ][gem02             ]   Amount            [opd11               ]
+
+}
+END -- gr1
+END -- Main
+END -- pc1
+Table s_ope
+{
+[ope05   |ope06       |ope08          |ope09          |ope10               |ope11               ]
+[ope05   |ope06       |ope08          |ope09          |ope10               |ope11               ]
+[ope05   |ope06       |ope08          |ope09          |ope10               |ope11               ]
+[ope05   |ope06       |ope08          |ope09          |ope10               |ope11               ]
+[ope05   |ope06       |ope08          |ope09          |ope10               |ope11               ]
+
+}
+END -- s_ope
+Grid gr4
+{
+
+ -------Rows [cn2   ]-------
+
+}
+END -- gr4
+END -- vb2
+END -- axmi1712
+
+TABLES
+ope_file,
+opd_file
+ATTRIBUTES
+ButtonEdit opd01=opd_file.opd01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit opd05=opd_file.opd05, tabIndex=13, not null, required;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=2, noEntry;
+DateEdit opd06=opd_file.opd06, tabIndex=12, century="";
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=3, noEntry;
+DateEdit opd07=opd_file.opd07, tabIndex=11, noEntry, not null, required;
+ButtonEdit opd02=opd_file.opd02, action=controlp, tabIndex=20, not null, required, image="zoom.png";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=21, noEntry;
+Edit opd08=opd_file.opd08, tabIndex=19;
+DateEdit opd03=opd_file.opd03, tabIndex=4, century="";
+Edit opd09=opd_file.opd09, tabIndex=18;
+ButtonEdit opd04=opd_file.opd04, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=9, noEntry;
+Edit opd10=opd_file.opd10, tabIndex=10;
+Edit opc05=formonly.opc05 type DECIMAL, tabIndex=6, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=8, noEntry;
+Edit opd11=opd_file.opd11, tabIndex=7, noEntry, not null, required;
+Edit ope05=ope_file.ope05, tabIndex=14, title="Serial No.";
+DateEdit ope06=ope_file.ope06, tabIndex=15, title="Allocation Date";
+Edit ope08=ope_file.ope08, tabIndex=16, title="Planning Qty";
+Edit ope09=ope_file.ope09, tabIndex=17, title="Confirmed Quantity";
+Edit ope10=ope_file.ope10, tabIndex=22, title="Unit Price";
+Edit ope11=ope_file.ope11, tabIndex=23, title="Amount";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ope(ope_file.ope05,ope_file.ope06,ope_file.ope08,ope_file.ope09,ope_file.ope10,ope_file.ope11)
+SCREEN RECORD Undefined(opd_file.opd01,opd_file.opd05,formonly.ima02,opd_file.opd06,formonly.ima021,opd_file.opd07,opd_file.opd02,formonly.occ02,opd_file.opd08,opd_file.opd03,opd_file.opd09,opd_file.opd04,formonly.gen02,opd_file.opd10,formonly.opc05,formonly.gem02,opd_file.opd11,formonly.cn2)
+END -- INSTRUCTIONS
+

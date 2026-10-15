@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri114.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrbsa01 |hrbsa02 |hrbsa03        ]
+[hrbsa01 |hrbsa02 |hrbsa03        ]
+[hrbsa01 |hrbsa02 |hrbsa03        ]
+[hrbsa01 |hrbsa02 |hrbsa03        ]
+[hrbsa01 |hrbsa02 |hrbsa03        ]
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+  ---------- cn2[cn2 ]------------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit hrbsa01=formonly.hrbsa01 type INTEGER, tabIndex=1, title=%"hrbsa01", noEntry;
+ButtonEdit hrbsa02=formonly.hrbsa02 type VARCHAR, action=controlp, tabIndex=2, title=%"hrbsa02", not null, required, image="zoom";
+Edit hrbsa03=formonly.hrbsa03 type VARCHAR, tabIndex=3, title=%"hrbsa03", noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrbsa(formonly.hrbsa01,formonly.hrbsa02,formonly.hrbsa03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

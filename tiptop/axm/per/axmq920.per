@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq920.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq920")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2294
+{
+ Transportation Type  [oze04       ]
+ Port of Departure    [oze07       ]
+
+}
+END -- gr2294
+Grid gr2295
+{
+ Freight Code         [oze05       ]
+ Port of Unloading    [oze08       ]
+
+}
+END -- gr2295
+Grid gr2296
+{
+ Transportation Code  [oze06       ]
+
+
+}
+END -- gr2296
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_ozf
+{
+[ogb01            |ogb04       |ozf07             |ozf04             |ozf05             |ozf09       ]
+[ogb01            |ogb04       |ozf07             |ozf04             |ozf05             |ozf09       ]
+[ogb01            |ogb04       |ozf07             |ozf04             |ozf05             |ozf09       ]
+[ogb01            |ogb04       |ozf07             |ozf04             |ozf05             |ozf09       ]
+[ogb01            |ogb04       |ozf07             |ozf04             |ozf05             |ozf09       ]
+[ogb01            |ogb04       |ozf07             |ozf04             |ozf05             |ozf09       ]
+[ogb01            |ogb04       |ozf07             |ozf04             |ozf05             |ozf09       ]
+[ogb01            |ogb04       |ozf07             |ozf04             |ozf05             |ozf09       ]
+[ogb01            |ogb04       |ozf07             |ozf04             |ozf05             |ozf09       ]
+[ogb01            |ogb04       |ozf07             |ozf04             |ozf05             |ozf09       ]
+
+}
+END -- s_ozf
+Grid gr2297
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2297
+END -- VBox1
+END -- axmq920
+
+ATTRIBUTES
+ComboBox oze04=formonly.oze04 type CHAR, tabIndex=1, queryEditable, items=(("O", "Ocean"),("C", "Container"),("H", "House"),("A", "Air"),("E", "Express"));
+Edit oze07=formonly.oze07 type CHAR, tabIndex=2;
+Edit oze05=formonly.oze05 type CHAR, tabIndex=3;
+Edit oze08=formonly.oze08 type CHAR, tabIndex=4;
+ButtonEdit oze06=formonly.oze06 type CHAR, action=controlp, tabIndex=5, image="zoom";
+Edit ogb01=formonly.ogb01 type CHAR, tabIndex=6, title="Advice No.";
+Edit ogb04=formonly.ogb04 type CHAR, tabIndex=7, title="Product No.";
+Edit ozf07=formonly.ozf07 type CHAR, tabIndex=8, title="Goods Information";
+Edit ozf04=formonly.ozf04 type CHAR, tabIndex=9, title="Port of Departure";
+Edit ozf05=formonly.ozf05 type CHAR, tabIndex=10, title="Port of Unloading";
+Edit ozf09=formonly.ozf09 type CHAR, tabIndex=11, title="Arrival Time";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ozf(formonly.ogb01,formonly.ogb04,formonly.ozf07,formonly.ozf04,formonly.ozf05,formonly.ozf09)
+SCREEN RECORD Undefined(formonly.oze04,formonly.oze07,formonly.oze05,formonly.oze08,formonly.oze06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

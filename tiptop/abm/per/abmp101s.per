@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp101s.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmp101s")
+VBox VBox1
+HBox HBox1
+Grid grid01
+{
+ Upper Lv. Item No.   [bmp01               ]
+ Part Name            [desc1                         ]
+ Specification        [desc11                        ]
+ Version              [v1        ]
+}
+END -- grid01
+Grid grid02
+{
+ Current Lv. Item No. [bmp03               ]
+ Part Name            [desc2                         ]
+ Specification        [desc22                        ]
+ Version              [v2        ]
+}
+END -- grid02
+END -- HBox1
+Table s_bed
+{
+[bed03|bed02 |bed04                |ima02                          |ima021                         |a           |sitem               ]
+[bed03|bed02 |bed04                |ima02                          |ima021                         |a           |sitem               ]
+[bed03|bed02 |bed04                |ima02                          |ima021                         |a           |sitem               ]
+[bed03|bed02 |bed04                |ima02                          |ima021                         |a           |sitem               ]
+[bed03|bed02 |bed04                |ima02                          |ima021                         |a           |sitem               ]
+[bed03|bed02 |bed04                |ima02                          |ima021                         |a           |sitem               ]
+[bed03|bed02 |bed04                |ima02                          |ima021                         |a           |sitem               ]
+[bed03|bed02 |bed04                |ima02                          |ima021                         |a           |sitem               ]
+[bed03|bed02 |bed04                |ima02                          |ima021                         |a           |sitem               ]
+[bed03|bed02 |bed04                |ima02                          |ima021                         |a           |sitem               ]
+
+}
+END -- s_bed
+END -- VBox1
+END -- abmp101s
+
+TABLES
+bed_file
+ATTRIBUTES
+Edit bmp01=formonly.bmp01 type CHAR, tabIndex=1, noEntry;
+Edit desc1=formonly.desc1 type VARCHAR, tabIndex=2, noEntry;
+Edit desc11=formonly.desc11 type VARCHAR, tabIndex=3, noEntry;
+Edit v1=formonly.v1 type VARCHAR, tabIndex=4, noEntry;
+Edit bmp03=formonly.bmp03 type CHAR, tabIndex=5, noEntry;
+Edit desc2=formonly.desc2 type VARCHAR, tabIndex=6, noEntry;
+Edit desc22=formonly.desc22 type VARCHAR, tabIndex=7, noEntry;
+Edit v2=formonly.v2 type VARCHAR, tabIndex=8, noEntry;
+Edit bed03=bed_file.bed03, tabIndex=9, title="Ln", noEntry;
+Edit bed02=bed_file.bed02, tabIndex=10, title="R/SUB", noEntry;
+Edit bed04=bed_file.bed04, tabIndex=11, title="SUB Item No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=12, title="P/N Specification", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=13, title="Specification", noEntry;
+CheckBox a=formonly.a type CHAR, tabIndex=14, title="Formal Item", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sitem=formonly.sitem type CHAR, action=controlp, tabIndex=15, title="Formal Item No.", image="zoom", comment="<^P>Qry Item #";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bed(bed_file.bed03,bed_file.bed02,bed_file.bed04,formonly.ima02,formonly.ima021,formonly.a,formonly.sitem)
+SCREEN RECORD Undefined(formonly.bmp01,formonly.desc1,formonly.desc11,formonly.v1,formonly.bmp03,formonly.desc2,formonly.desc22,formonly.v2)
+END -- INSTRUCTIONS
+

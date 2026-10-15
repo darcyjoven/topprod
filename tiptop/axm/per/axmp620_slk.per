@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp620_slk.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmp620")
+Grid gr2191
+{
+
+ <G group01                                       >
+  Transfer as Delivery Note# [g_no2             ]
+  cangku                     [g_imd01           ]
+  chuwei                     [g_ime02           ]
+ <                                                >
+
+}
+END -- gr2191
+END -- axmp620
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit g_no2=formonly.g_no2 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Documents";
+ButtonEdit g_imd01=formonly.g_imd01 type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+ButtonEdit g_ime02=formonly.g_ime02 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_no2,formonly.g_imd01,formonly.g_ime02)
+END -- INSTRUCTIONS
+

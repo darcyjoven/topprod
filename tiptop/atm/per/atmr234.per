@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmr234.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"atmr234")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                    >
+  BOND No.            [tqp01               ]
+  BOND Begin Date     [tqp06               ]
+  BOND End Date       [tqp07               ]
+  Credit No.          [tqp05               ]
+ <                                                             >
+ <G group02                                                    >
+  [a                                       ]
+ <                                                             >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                    ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- atmr234
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit tqp01=formonly.tqp01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+DateEdit tqp06=formonly.tqp06 type DATE, tabIndex=2;
+DateEdit tqp07=formonly.tqp07 type DATE, tabIndex=3;
+ButtonEdit tqp05=formonly.tqp05 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+Group group02:group02, text="INPUT";
+CheckBox a=formonly.a type VARCHAR, tabIndex=5, text="Print Store Info", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other condition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tqp01,formonly.tqp06,formonly.tqp07,formonly.tqp05,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

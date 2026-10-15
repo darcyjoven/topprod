@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq300")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+Grid gr4985
+{
+ Store-In No.   [rvx01       ]
+
+}
+END -- gr4985
+END -- page01
+END -- folder01
+Table s_rvx
+{
+[rvx02|rvx03      |rvx031     |rvx04     |rvx04t    |rvx05     |rvx06     |rvx05t    |rvx06t    |rvxuser  ]
+[rvx02|rvx03      |rvx031     |rvx04     |rvx04t    |rvx05     |rvx06     |rvx05t    |rvx06t    |rvxuser  ]
+[rvx02|rvx03      |rvx031     |rvx04     |rvx04t    |rvx05     |rvx06     |rvx05t    |rvx06t    |rvxuser  ]
+[rvx02|rvx03      |rvx031     |rvx04     |rvx04t    |rvx05     |rvx06     |rvx05t    |rvx06t    |rvxuser  ]
+[rvx02|rvx03      |rvx031     |rvx04     |rvx04t    |rvx05     |rvx06     |rvx05t    |rvx06t    |rvxuser  ]
+[rvx02|rvx03      |rvx031     |rvx04     |rvx04t    |rvx05     |rvx06     |rvx05t    |rvx06t    |rvxuser  ]
+[rvx02|rvx03      |rvx031     |rvx04     |rvx04t    |rvx05     |rvx06     |rvx05t    |rvx06t    |rvxuser  ]
+[rvx02|rvx03      |rvx031     |rvx04     |rvx04t    |rvx05     |rvx06     |rvx05t    |rvx06t    |rvxuser  ]
+[rvx02|rvx03      |rvx031     |rvx04     |rvx04t    |rvx05     |rvx06     |rvx05t    |rvx06t    |rvxuser  ]
+[rvx02|rvx03      |rvx031     |rvx04     |rvx04t    |rvx05     |rvx06     |rvx05t    |rvx06t    |rvxuser  ]
+
+}
+END -- s_rvx
+Grid gr4986
+{
+ ---------- Rows [cnt   ]/[cn2       ] ----------
+
+}
+END -- gr4986
+END -- vb3
+END -- apmq300
+
+TABLES
+rvx_file
+ATTRIBUTES
+ButtonEdit rvx01=rvx_file.rvx01, action=controlp, tabIndex=1, image="zoom";
+Edit rvx02=rvx_file.rvx02, tabIndex=2, title="Ln#", noEntry;
+DateEdit rvx03=rvx_file.rvx03, tabIndex=3, title="ChangeDate", noEntry;
+Edit rvx031=formonly.rvx031 type CHAR, tabIndex=13, title="Operation Time";
+Edit rvx04=rvx_file.rvx04, tabIndex=4, title="O/P", noEntry;
+Edit rvx04t=rvx_file.rvx04t, tabIndex=5, title="TAX O/P", noEntry;
+Edit rvx05=rvx_file.rvx05, tabIndex=6, title="N/P", noEntry;
+Edit rvx06=rvx_file.rvx06, tabIndex=7, title="N/T", noEntry;
+Edit rvx05t=rvx_file.rvx05t, tabIndex=8, title="Tax N/P", noEntry;
+Edit rvx06t=rvx_file.rvx06t, tabIndex=9, title="Tax N/T", noEntry;
+Edit rvxuser=rvx_file.rvxuser, tabIndex=10, title="Author", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvx(rvx_file.rvx02,rvx_file.rvx03,formonly.rvx031,rvx_file.rvx04,rvx_file.rvx04t,rvx_file.rvx05,rvx_file.rvx06,rvx_file.rvx05t,rvx_file.rvx06t,rvx_file.rvxuser)
+SCREEN RECORD Undefined(rvx_file.rvx01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

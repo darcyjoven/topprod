@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli601")
+VBox VBox1
+Folder pc831
+Page page01(text="Main")
+Table s_ats
+{
+[ats01          |ats02            |ats06       |ats07   ]
+[ats01          |ats02            |ats06       |ats07   ]
+[ats01          |ats02            |ats06       |ats07   ]
+[ats01          |ats02            |ats06       |ats07   ]
+[ats01          |ats02            |ats06       |ats07   ]
+[ats01          |ats02            |ats06       |ats07   ]
+[ats01          |ats02            |ats06       |ats07   ]
+[ats01          |ats02            |ats06       |ats07   ]
+[ats01          |ats02            |ats06       |ats07   ]
+[ats01          |ats02            |ats06       |ats07   ]
+
+}
+END -- s_ats
+END -- page01
+END -- pc831
+Grid gr4617
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr4617
+END -- VBox1
+END -- ggli601
+
+TABLES
+ats_file
+ATTRIBUTES
+Edit ats01=ats_file.ats01, tabIndex=1, title="Type Code", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit ats02=ats_file.ats02, tabIndex=2, title="Description";
+Edit ats06=ats_file.ats06, tabIndex=11, title=%"Print Order";
+Edit ats07=ats_file.ats07, tabIndex=12, title=%"Merge", invisible;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ats(ats_file.ats01,ats_file.ats02,ats_file.ats06,ats_file.ats07)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

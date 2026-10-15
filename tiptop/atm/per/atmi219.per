@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi219.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi219")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1305
+{
+ Credit Code         [tqh01               ]  Name      [tqa02               ]
+
+}
+END -- gr1305
+END -- page01
+END -- folder01
+Table s_tqh
+{
+[tqh02               |tqa021              ]
+[tqh02               |tqa021              ]
+[tqh02               |tqa021              ]
+[tqh02               |tqa021              ]
+[tqh02               |tqa021              ]
+[tqh02               |tqa021              ]
+[tqh02               |tqa021              ]
+[tqh02               |tqa021              ]
+[tqh02               |tqa021              ]
+[tqh02               |tqa021              ]
+
+}
+END -- s_tqh
+Grid gr1306
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1306
+END -- VBox1
+END -- atmi219
+
+TABLES
+tqh_file
+ATTRIBUTES
+ButtonEdit tqh01=tqh_file.tqh01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Query Credit Code";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit tqh02=tqh_file.tqh02, action=controlp, tabIndex=3, title="Credit code", not null, required, image="zoom", comment="<^P>Query Code";
+Edit tqa021=formonly.tqa021 type CHAR, tabIndex=4, title="Description", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tqh(tqh_file.tqh02,formonly.tqa021)
+SCREEN RECORD Undefined(tqh_file.tqh01,formonly.tqa02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

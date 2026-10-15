@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt402_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artt402_2")
+VBox vb8
+Folder pc8
+Page Page16(text=%"MemberLevelAlteration")
+ScrollGrid gr24
+{
+
+  [dummy01  ]             [dummy02  ] [dummy03         ][dummy04         ] [dummy05     ][dummy06     ][dummy07     ]  [dummy08  ]
+  [type     ][before     ][rbp07_1  ] [rbp08_1         ][rbp08_1_desc    ] [rbp09_1     ][rbp10_1     ][rbp11_1     ]  [rbpacti_1]
+             [after      ][rbp07    ] [rbp08           ][rbp08_desc      ] [rbp09       ][rbp10       ][rbp11       ]  [rbpacti  ]
+
+  [type     ][before     ][rbp07_1  ] [rbp08_1         ][rbp08_1_desc    ] [rbp09_1     ][rbp10_1     ][rbp11_1     ]  [rbpacti_1]
+             [after      ][rbp07    ] [rbp08           ][rbp08_desc      ] [rbp09       ][rbp10       ][rbp11       ]  [rbpacti  ]
+
+  [type     ][before     ][rbp07_1  ] [rbp08_1         ][rbp08_1_desc    ] [rbp09_1     ][rbp10_1     ][rbp11_1     ]  [rbpacti_1]
+             [after      ][rbp07    ] [rbp08           ][rbp08_desc      ] [rbp09       ][rbp10       ][rbp11       ]  [rbpacti  ]
+
+}
+END -- gr24
+END -- Page16
+END -- pc8
+Grid gr16
+{
+
+ --- Items[cn2 ] --------
+
+
+}
+END -- gr16
+END -- vb8
+END -- Form7
+
+TABLES
+rbp_file
+ATTRIBUTES
+Label dummy01:dummy01, text="type";
+Label dummy02:dummy02, text="rbp07";
+Label dummy03:dummy03, text="rbp08";
+Label dummy04:dummy04, text="rbp08_desc";
+Label dummy05:dummy05, text="rbp09";
+Label dummy06:dummy06, text="rbp10";
+Label dummy07:dummy07, text="rbp11";
+Label dummy08:dummy08, text="rbpacti";
+ComboBox type=formonly.type type CHAR, tabIndex=1, noEntry, items=(("0", "Add"),("1", "Modify"));
+ComboBox before=formonly.before type CHAR, tabIndex=2, noEntry, items=(("0", "Original:"));
+Edit rbp07_1=formonly.rbp07_1 type CHAR, tabIndex=4, noEntry;
+ButtonEdit rbp08_1=formonly.rbp08_1 type CHAR, action=controlp, tabIndex=6, noEntry, image="zoom";
+Edit rbp08_1_desc=formonly.rbp08_1_desc type CHAR, tabIndex=8, noEntry;
+Edit rbp09_1=formonly.rbp09_1 type CHAR, tabIndex=10, noEntry;
+Edit rbp10_1=formonly.rbp10_1 type CHAR, tabIndex=12, noEntry;
+Edit rbp11_1=formonly.rbp11_1 type CHAR, tabIndex=17, noEntry;
+CheckBox rbpacti_1=formonly.rbpacti_1 type CHAR, tabIndex=15, default = "Y", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox after=formonly.after type CHAR, tabIndex=3, noEntry, items=(("1", "Modify:"));
+Edit rbp07=rbp_file.rbp07, tabIndex=5, not null, required;
+ButtonEdit rbp08=rbp_file.rbp08, action=controlp, tabIndex=7, not null, required, image="zoom";
+Edit rbp08_desc=formonly.rbp08_desc type CHAR, tabIndex=9, noEntry;
+Edit rbp09=rbp_file.rbp09, tabIndex=11, not null, required;
+Edit rbp10=rbp_file.rbp10, tabIndex=13, not null, required;
+Edit rbp11=rbp_file.rbp11, tabIndex=14, not null, required;
+CheckBox rbpacti=rbp_file.rbpacti, tabIndex=16, default = "Y", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rbp(formonly.type,formonly.before,formonly.rbp07_1,formonly.rbp08_1,formonly.rbp08_1_desc,formonly.rbp09_1,formonly.rbp10_1,formonly.rbp11_1,formonly.rbpacti_1,formonly.after,rbp_file.rbp07,rbp_file.rbp08,formonly.rbp08_desc,rbp_file.rbp09,rbp_file.rbp10,rbp_file.rbp11,rbp_file.rbpacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

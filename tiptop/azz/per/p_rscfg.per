@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_rscfg.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"p_rscfg")
+Group group01(text="Report Server Setup")
+Grid gr5
+{
+
+  Report server IP      [gdg01               ]
+  Report server port    [gdg02]
+  VpWebService URL      [gdg03                                             ]
+  Report server user    [gdg04               ]
+  Report server password[gdg05               ]
+  Report server CMS name[gdg06               ]
+  Report root directory [gdg07               ]
+
+}
+END -- gr5
+END -- group01
+END -- Form2
+
+TABLES
+gdg_file
+ATTRIBUTES
+Edit gdg01=gdg_file.gdg01, tabIndex=1, not null, required;
+Edit gdg02=gdg_file.gdg02, tabIndex=2, not null, required;
+Edit gdg03=gdg_file.gdg03, tabIndex=3, not null, required;
+Edit gdg04=gdg_file.gdg04, tabIndex=4, not null, required;
+Edit gdg05=gdg_file.gdg05, tabIndex=5, not null, required, invisible;
+Edit gdg06=gdg_file.gdg06, tabIndex=6, not null, required;
+Edit gdg07=gdg_file.gdg07, tabIndex=7, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gdg_file.gdg01,gdg_file.gdg02,gdg_file.gdg03,gdg_file.gdg04,gdg_file.gdg05,gdg_file.gdg06,gdg_file.gdg07)
+END -- INSTRUCTIONS
+

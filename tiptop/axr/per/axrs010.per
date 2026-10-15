@@ -1,0 +1,172 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrs010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrs010")
+VBox VBox1
+Folder pc671
+Page page01(text="Main")
+Grid gr2773
+{
+[ooz01                                                      ]
+[ooz02                                                      ]
+ Plant # where AGL is [ooz02p    ]
+ AGL Module Book No.  [ooz02b    ]
+ AGL Module Book No.2 [ooz02c    ]
+[ooz03                                                      ]
+[ooz04                                                      ]
+ Account Locking Date [ooz09     ]
+}
+END -- gr2773
+END -- page01
+Page page02(text="Page02")
+Grid gr2774
+{
+ <G group01                                                >
+ [ooz32                                     ]
+ [ooz11                                                ]
+  L.Sls A/R Body Max.Rows  [ooz121    ]
+  Exp A/R Body Max.Rows    [ooz122    ]
+ <                                                         >
+
+ <G group02                                                >
+ [ooz13                                               ]
+ <                                                         >
+ <G group03                                                >
+  L.Sls Enter A/R ExRt Mtd [ooz17     ]
+  Export Enter A/R ExR Mtd [ooz63     ]
+  A/R Def Acct.Cate        [ooz08     ]
+
+ [ooz10                               ]
+ [ooz16                                                ]
+ [ooz19                                                ]
+ [ooz20                                                ]
+ [ooz64                                                ]
+ [ooz65                                                ]
+ [ooz33                                                ]
+ <                                                         >
+}
+END -- gr2774
+END -- page02
+Page page03(text="Page03")
+Grid gr2775
+{
+  Advance Received Default Doc [ooz21     ]
+  Over Received Default Doc    [ooz22     ]
+  ooz26                        [ooz26     ]
+  ooz27                        [ooz27     ]
+  ooz28                        [ooz28     ]
+  ooz30                        [ooz30     ]
+ [ooz29                              ]
+ [ooz23                                                 ]
+ [ooz24                                                 ]
+ [ooz62                            ]
+  End of Month Revaluation Year/Month  [ooz0] [oo]
+ [ooz07                                                 ]
+ [ooz66                                                 ]
+  <G group04                                                >
+  [ooz15                                                 ]
+  [                                                      ]
+  [                                                      ]
+  <                                                         >
+
+
+}
+END -- gr2775
+END -- page03
+Page userdefined_field(text=%"User Defined Field")
+Grid Grid1
+{
+ userdefined_field01[oozud01                              ]
+                    [                                     ]
+ userdefined_field02[oozud02              ]
+ userdefined_field03[oozud03              ]
+ userdefined_field04[oozud04              ]
+ userdefined_field05[oozud05              ]
+ userdefined_field06[oozud06              ]
+ userdefined_field07[oozud07              ]
+ userdefined_field08[oozud08              ]
+ userdefined_field09[oozud09              ]
+ userdefined_field10[oozud10              ]
+ userdefined_field11[oozud11              ]
+ userdefined_field12[oozud12              ]
+ userdefined_field13[oozud13              ]
+ userdefined_field14[oozud14              ]
+ userdefined_field15[oozud15              ]
+
+}
+END -- Grid1
+END -- userdefined_field
+END -- pc671
+END -- VBox1
+END -- axrs010
+
+TABLES
+ooz_file
+ATTRIBUTES
+CheckBox ooz01=ooz_file.ooz01, tabIndex=1, text="AXR Mould Open To Use For User", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ooz02=ooz_file.ooz02, tabIndex=2, text="Link to AGL Module", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ooz02p=ooz_file.ooz02p, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ooz02b=ooz_file.ooz02b, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ooz02c=ooz_file.ooz02c, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Details";
+CheckBox ooz03=ooz_file.ooz03, tabIndex=6, text="Link to MFG System?   ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ooz04=ooz_file.ooz04, tabIndex=7, text="Link to ANM Module?   ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit ooz09=ooz_file.ooz09, tabIndex=8;
+Group group01:group01;
+CheckBox ooz32=formonly.ooz32, tabIndex=52, text=%"Invoice Managerment", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ooz11=ooz_file.ooz11, tabIndex=9, text="Combine Multi A/R to Issue Invoice", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ooz121=ooz_file.ooz121, tabIndex=10;
+Edit ooz122=ooz_file.ooz122, tabIndex=11;
+Group group02:group02, text="Conf.Mtd aft DN A/R Auto Gen";
+RadioGroup ooz13=ooz_file.ooz13, tabIndex=12, items=(("1", "Conf Now"),("2", "Ask if Confirm"),("3", "Bch Conf Later"));
+Group group03:group03;
+ComboBox ooz17=ooz_file.ooz17, tabIndex=13, not null, required, queryEditable, items=(("B", "Bank Buy"),("S", "Sell"),("M", "Bank Average ExRt"),("C", "Customs Buy"),("D", "Sell"));
+ComboBox ooz63=ooz_file.ooz63, tabIndex=14, not null, required, queryEditable, items=(("B", "Bank Buy"),("S", "Sell"),("M", "Bank Average ExRt"),("C", "Customs Buy"),("D", "Sell"));
+ButtonEdit ooz08=ooz_file.ooz08, action=controlp, tabIndex=15, image="zoom", upShift, comment="<^P>Qry Details";
+CheckBox ooz10=ooz_file.ooz10, tabIndex=16, text="ReWrt DN.ExRt ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ooz16=ooz_file.ooz16, tabIndex=17, text="Updt A/R U/P to Del.Nt when Conf", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ooz19=ooz_file.ooz19, tabIndex=18, text="Issue Invoice w/o DN", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ooz20=ooz_file.ooz20, tabIndex=19, text="Issue Invoice after A/R Confirmed", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ooz64=ooz_file.ooz64, tabIndex=20, text="Exp.to ssue Invo(Eff.Medi.Decl Access)", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ooz65=ooz_file.ooz65, tabIndex=21, text="S/D Note A/R include S/R Note", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ooz33=ooz_file.ooz33, tabIndex=53, text="Deposits recognized as income", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ooz21=ooz_file.ooz21, action=controlp, tabIndex=22, image="zoom", comment="<^P>Qry Document Property";
+ButtonEdit ooz22=ooz_file.ooz22, action=controlp, tabIndex=23, image="zoom", comment="<^P>Qry Document Property";
+ButtonEdit ooz26=ooz_file.ooz26, action=controlp, tabIndex=32, image="zoom", comment="<^P>Qry Document Property";
+ButtonEdit ooz27=ooz_file.ooz27, action=controlp, tabIndex=33, image="zoom", comment="<^P>Qry Document Property";
+ButtonEdit ooz28=ooz_file.ooz28, action=controlp, tabIndex=34, image="zoom", comment="<^P>Qry Document Property";
+ButtonEdit ooz30=ooz_file.ooz30, action=controlp, tabIndex=51, image="zoom", comment="<^P>Qry Document Property";
+CheckBox ooz29=ooz_file.ooz29, tabIndex=35, text="Transf", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ooz23=ooz_file.ooz23, tabIndex=24, text="Enter Note when Contra Receipt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ooz24=ooz_file.ooz24, tabIndex=25, text="Enter Bank Income/Expense when Contra Receipt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ooz62=ooz_file.ooz62, tabIndex=26, text="Contra Receipt to A/R Lines", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ooz0=ooz_file.ooz05, tabIndex=27;
+Edit oo=ooz_file.ooz06, tabIndex=28;
+CheckBox ooz07=ooz_file.ooz07, tabIndex=29, text="Spread Approved in End of Month Revaluation,Un- next Month.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ooz66=ooz_file.ooz66, tabIndex=31, text="No EoM Revaluation for Pre/Temp-Collected", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="EoM Revaluat. Entry Sheet Produce Method";
+RadioGroup ooz15=ooz_file.ooz15, tabIndex=30, items=(("1", "Details"),("2", "Summary"),("3", "By Customer"));
+TextEdit oozud01=ooz_file.oozud01, tabIndex=36;
+Edit oozud02=ooz_file.oozud02, tabIndex=37;
+Edit oozud03=ooz_file.oozud03, tabIndex=38;
+Edit oozud04=ooz_file.oozud04, tabIndex=39;
+Edit oozud05=ooz_file.oozud05, tabIndex=40;
+Edit oozud06=ooz_file.oozud06, tabIndex=41;
+Edit oozud07=ooz_file.oozud07, tabIndex=42;
+Edit oozud08=ooz_file.oozud08, tabIndex=43;
+Edit oozud09=ooz_file.oozud09, tabIndex=44;
+Edit oozud10=ooz_file.oozud10, tabIndex=45;
+Edit oozud11=ooz_file.oozud11, tabIndex=46;
+Edit oozud12=ooz_file.oozud12, tabIndex=47;
+DateEdit oozud13=ooz_file.oozud13, tabIndex=48;
+DateEdit oozud14=ooz_file.oozud14, tabIndex=49;
+DateEdit oozud15=ooz_file.oozud15, tabIndex=50;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ooz_file.ooz01,ooz_file.ooz02,ooz_file.ooz02p,ooz_file.ooz02b,ooz_file.ooz02c,ooz_file.ooz03,ooz_file.ooz04,ooz_file.ooz09,ooz_file.ooz11,ooz_file.ooz121,ooz_file.ooz122,ooz_file.ooz13,ooz_file.ooz17,ooz_file.ooz63,ooz_file.ooz08,ooz_file.ooz10,ooz_file.ooz16,ooz_file.ooz19,ooz_file.ooz20,ooz_file.ooz64,ooz_file.ooz65,ooz_file.ooz21,ooz_file.ooz22,ooz_file.ooz26,ooz_file.ooz27,ooz_file.ooz28,ooz_file.ooz30,ooz_file.ooz29,ooz_file.ooz23,ooz_file.ooz24,ooz_file.ooz62,ooz_file.ooz05,ooz_file.ooz06,ooz_file.ooz07,ooz_file.ooz66,ooz_file.ooz15,ooz_file.oozud01,ooz_file.oozud02,ooz_file.oozud03,ooz_file.oozud04,ooz_file.oozud05,ooz_file.oozud06,ooz_file.oozud07,ooz_file.oozud08,ooz_file.oozud09,ooz_file.oozud10,ooz_file.oozud11,ooz_file.oozud12,ooz_file.oozud13,ooz_file.oozud14,ooz_file.oozud15,formonly.ooz32,ooz_file.ooz33)
+END -- INSTRUCTIONS
+

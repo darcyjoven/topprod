@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_kind.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Qry Document Property")
+Grid gr3774
+{
+ <T s_kind                                          >
+ [check |kind       |descr                         ]
+ [check |kind       |descr                         ]
+ [check |kind       |descr                         ]
+ [check |kind       |descr                         ]
+ [check |kind       |descr                         ]
+ [check |kind       |descr                         ]
+ [check |kind       |descr                         ]
+ [check |kind       |descr                         ]
+ [check |kind       |descr                         ]
+ [check |kind       |descr                         ]
+ <                                                  >
+
+}
+END -- gr3774
+END -- q_kind
+
+ATTRIBUTES
+Table s_kind:s_kind;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit kind=formonly.kind type CHAR, tabIndex=2, title="Property", noEntry;
+Edit descr=formonly.descr type CHAR, tabIndex=3, title="Description", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_kind(formonly.check,formonly.kind,formonly.descr)
+END -- INSTRUCTIONS
+

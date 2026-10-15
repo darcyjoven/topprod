@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_fau1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Query Asset Sending Note Head Table")
+Grid gr3761
+{
+ <T s_fau                                                                                                                                               >
+ [check |fau01               |fau02            |fau03         |fau04                   |fau05           |fav03     |fav031    |faj06                    ]
+ [check |fau01               |fau02            |fau03         |fau04                   |fau05           |fav03     |fav031    |faj06                    ]
+ [check |fau01               |fau02            |fau03         |fau04                   |fau05           |fav03     |fav031    |faj06                    ]
+ [check |fau01               |fau02            |fau03         |fau04                   |fau05           |fav03     |fav031    |faj06                    ]
+ [check |fau01               |fau02            |fau03         |fau04                   |fau05           |fav03     |fav031    |faj06                    ]
+ [check |fau01               |fau02            |fau03         |fau04                   |fau05           |fav03     |fav031    |faj06                    ]
+ [check |fau01               |fau02            |fau03         |fau04                   |fau05           |fav03     |fav031    |faj06                    ]
+ [check |fau01               |fau02            |fau03         |fau04                   |fau05           |fav03     |fav031    |faj06                    ]
+ [check |fau01               |fau02            |fau03         |fau04                   |fau05           |fav03     |fav031    |faj06                    ]
+ [check |fau01               |fau02            |fau03         |fau04                   |fau05           |fav03     |fav031    |faj06                    ]
+ <                                                                                                                                                      >
+
+}
+END -- gr3761
+END -- q_fau1
+
+TABLES
+faj_file,
+fav_file,
+fau_file
+ATTRIBUTES
+Table s_fau:s_fau;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fau01=fau_file.fau01, tabIndex=2, title="Sending Note No.", noEntry;
+Edit fau02=fau_file.fau02, tabIndex=3, title="Sending Date", noEntry;
+Edit fau03=fau_file.fau03, tabIndex=4, title="Applicant", noEntry;
+Edit fau04=fau_file.fau04, tabIndex=5, title="Applying Department", noEntry;
+Edit fau05=fau_file.fau05, tabIndex=6, title="Applying Date", noEntry;
+Edit fav03=fav_file.fav03, tabIndex=7, title=%"Property No.", noEntry;
+Edit fav031=fav_file.fav031, tabIndex=9, title=%"Add No.", noEntry;
+Edit faj06=faj_file.faj06, tabIndex=8, title=%"Chinese Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fau(formonly.check,fau_file.fau01,fau_file.fau02,fau_file.fau03,fau_file.fau04,fau_file.fau05,fav_file.fav03,fav_file.fav031,faj_file.faj06)
+END -- INSTRUCTIONS
+

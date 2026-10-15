@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli940.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli940")
+VBox vb2
+Folder pc476
+Page page01(text="Main")
+Table s_giq
+{
+[giq01      |giq02                    |giq03     |giq04]
+[giq01      |giq02                    |giq03     |giq04]
+[giq01      |giq02                    |giq03     |giq04]
+[giq01      |giq02                    |giq03     |giq04]
+[giq01      |giq02                    |giq03     |giq04]
+[giq01      |giq02                    |giq03     |giq04]
+[giq01      |giq02                    |giq03     |giq04]
+[giq01      |giq02                    |giq03     |giq04]
+[giq01      |giq02                    |giq03     |giq04]
+[giq01      |giq02                    |giq03     |giq04]
+[giq01      |giq02                    |giq03     |giq04]
+
+}
+END -- s_giq
+END -- page01
+END -- pc476
+Grid gr2465
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr2465
+END -- vb2
+END -- agli940
+
+TABLES
+giq_file
+ATTRIBUTES
+Edit giq01=giq_file.giq01, tabIndex=1, title="Group Code", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit giq02=giq_file.giq02, tabIndex=2, title="Description";
+ComboBox giq03=giq_file.giq03, tabIndex=3, title="Var.Class", not null, required, queryEditable, items=(("1", "Business Activity"),("2", "Investment"),("3", "Financial Activity"),("4", "Beginning/End Of Period Amount"));
+Edit giq04=giq_file.giq04, tabIndex=4, title="Line";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_giq(giq_file.giq01,giq_file.giq02,giq_file.giq03,giq_file.giq04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt385_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Table s_ljf
+{
+[ljf02 |ljf03               |oaj02               |oaj05               |ljf04               |ljf05          |ljf06     ]
+[ljf02 |ljf03               |oaj02               |oaj05               |ljf04               |ljf05          |ljf06     ]
+[ljf02 |ljf03               |oaj02               |oaj05               |ljf04               |ljf05          |ljf06     ]
+[ljf02 |ljf03               |oaj02               |oaj05               |ljf04               |ljf05          |ljf06     ]
+[ljf02 |ljf03               |oaj02               |oaj05               |ljf04               |ljf05          |ljf06     ]
+[ljf02 |ljf03               |oaj02               |oaj05               |ljf04               |ljf05          |ljf06     ]
+[ljf02 |ljf03               |oaj02               |oaj05               |ljf04               |ljf05          |ljf06     ]
+[ljf02 |ljf03               |oaj02               |oaj05               |ljf04               |ljf05          |ljf06     ]
+[ljf02 |ljf03               |oaj02               |oaj05               |ljf04               |ljf05          |ljf06     ]
+[ljf02 |ljf03               |oaj02               |oaj05               |ljf04               |ljf05          |ljf06     ]
+}
+END -- s_ljf
+END -- Form
+
+TABLES
+oaj_file,
+ljf_file
+ATTRIBUTES
+Edit ljf02=ljf_file.ljf02, tabIndex=1, title=%"ljf02", noEntry, scroll;
+ButtonEdit ljf03=ljf_file.ljf03, tabIndex=2, title=%"ljf03", noEntry, scroll;
+Edit oaj02=oaj_file.oaj02, tabIndex=3, title=%"oaj02", noEntry, scroll;
+ComboBox oaj05=oaj_file.oaj05, tabIndex=4, title=%"oaj05", noEntry, scroll, items=(("01", "Text"),("02", "Text"),("10", "Text"));
+ButtonEdit ljf04=ljf_file.ljf04, tabIndex=5, title=%"ljf04", noEntry, scroll;
+ComboBox ljf05=ljf_file.ljf05, tabIndex=6, title=%"ljf05", noEntry, scroll, items=(("1", "Text"),("2", "Text"));
+CheckBox ljf06=ljf_file.ljf06, tabIndex=7, title=%"ljf06", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ljf(ljf_file.ljf02,ljf_file.ljf03,oaj_file.oaj02,oaj_file.oaj05,ljf_file.ljf04,ljf_file.ljf05,ljf_file.ljf06)
+END -- INSTRUCTIONS
+

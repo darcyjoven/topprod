@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci211.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci211")
+VBox vb8
+Folder folder01
+Page page01(text="Main")
+Grid gr1462
+{
+ Year     [cmc021    ]
+ Month    [cmc022    ]
+ Item No. [cmc01               ]  Calculation Base Date [cmc02        ]
+ Method   [cmc07               ]
+ Category [cmc08                ]
+
+
+}
+END -- gr1462
+END -- page01
+END -- folder01
+Table s_cmc
+{
+[cmc03        |cmc04          ]
+[cmc03        |cmc04          ]
+[cmc03        |cmc04          ]
+[cmc03        |cmc04          ]
+[cmc03        |cmc04          ]
+[cmc03        |cmc04          ]
+[cmc03        |cmc04          ]
+
+}
+END -- s_cmc
+Grid gr1464
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1464
+END -- vb8
+END -- axci211
+
+TABLES
+cmc_file
+ATTRIBUTES
+Edit cmc021=cmc_file.cmc021, tabIndex=1, not null, required;
+Edit cmc022=cmc_file.cmc022, tabIndex=2, not null, required;
+ButtonEdit cmc01=cmc_file.cmc01, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+DateEdit cmc02=cmc_file.cmc02, tabIndex=4;
+ComboBox cmc07=cmc_file.cmc07, tabIndex=5, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually Batch Cost"),("4", "Identify Manually Item Cost"),("5", "Identify Manually Store Profit Center"));
+ButtonEdit cmc08=cmc_file.cmc08, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+DateEdit cmc03=cmc_file.cmc03, tabIndex=7, title="Transaction Date", not null, required;
+Edit cmc04=cmc_file.cmc04, tabIndex=8, title="Quantity";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cmc(cmc_file.cmc03,cmc_file.cmc04)
+SCREEN RECORD Undefined(cmc_file.cmc021,cmc_file.cmc022,cmc_file.cmc01,cmc_file.cmc02,cmc_file.cmc07,cmc_file.cmc08,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

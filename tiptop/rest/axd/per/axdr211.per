@@ -1,0 +1,54 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdr211.per created Wed Jan 23 05:30:42 2008
+-- File created from axdr211.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdr211")
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID 
+    {
+     <G group01                                                  >
+      Application No.     [aa0             ]
+      Application Date    [aa1       ]
+      Request Plant       [aa2       ]
+      Item No.            [aa3                 ]
+     <                                                           >
+     <G group02                                                 >
+      Request Date Begin  [aa4       ]
+      Request Date End    [aa5       ]
+      Status Code         [aa6       ]
+     <                                                          >
+
+
+    }
+    END -- GRID
+    GRID 
+    {
+     [aa7                     ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  EDIT aa0=FORMONLY.add01, TABINDEX=1;
+  DATEEDIT aa1=FORMONLY.add02 TYPE DATE, TABINDEX=2;
+  BUTTONEDIT aa2=FORMONLY.ade06, ACTION=controlp, IMAGE="zoom", TABINDEX=3;
+  EDIT aa3=FORMONLY.ade03, TABINDEX=4;
+  GROUP group02 : group02, TEXT="INPUT";
+  DATEEDIT aa4=FORMONLY.bdate TYPE DATE, TABINDEX=5;
+  DATEEDIT aa5=FORMONLY.edate TYPE DATE, TABINDEX=6;
+  COMBOBOX aa6=FORMONLY.a, COMMENT="Please insert 0/1/2/3/4/5", NOT NULL, REQUIRED, QUERYEDITABLE, TABINDEX=7, ITEMS=(("0","Open"),("1","Approved"),("2","Appr Sent"),("3","Appr Rejected"),("4","Appr Withdrawn"),("5","All"));
+  CHECKBOX aa7=FORMONLY.more TYPE VARCHAR, TEXT="Other condition to print", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=8;
+END

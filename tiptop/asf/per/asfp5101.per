@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp5101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asfp5101")
+Grid gr546
+{
+ <T s_tmp                                                                                                                                                                                                                                                    >
+ [tmp01                |ima02                         |ima021                        |tmp12     |tmp13   |tmp02   |tmp03       |tmp04               |tmp05               |tmp06                    |tmp00  |tmp10         |tmp97      |tmp98      |tmp99     ]
+ [tmp01                |ima02                         |ima021                        |tmp12     |tmp13   |tmp02   |tmp03       |tmp04               |tmp05               |tmp06                    |tmp00  |tmp10         |tmp97      |tmp98      |tmp99     ]
+ [tmp01                |ima02                         |ima021                        |tmp12     |tmp13   |tmp02   |tmp03       |tmp04               |tmp05               |tmp06                    |tmp00  |tmp10         |tmp97      |tmp98      |tmp99     ]
+ [tmp01                |ima02                         |ima021                        |tmp12     |tmp13   |tmp02   |tmp03       |tmp04               |tmp05               |tmp06                    |tmp00  |tmp10         |tmp97      |tmp98      |tmp99     ]
+ [tmp01                |ima02                         |ima021                        |tmp12     |tmp13   |tmp02   |tmp03       |tmp04               |tmp05               |tmp06                    |tmp00  |tmp10         |tmp97      |tmp98      |tmp99     ]
+ [tmp01                |ima02                         |ima021                        |tmp12     |tmp13   |tmp02   |tmp03       |tmp04               |tmp05               |tmp06                    |tmp00  |tmp10         |tmp97      |tmp98      |tmp99     ]
+ [tmp01                |ima02                         |ima021                        |tmp12     |tmp13   |tmp02   |tmp03       |tmp04               |tmp05               |tmp06                    |tmp00  |tmp10         |tmp97      |tmp98      |tmp99     ]
+ [tmp01                |ima02                         |ima021                        |tmp12     |tmp13   |tmp02   |tmp03       |tmp04               |tmp05               |tmp06                    |tmp00  |tmp10         |tmp97      |tmp98      |tmp99     ]
+ [tmp01                |ima02                         |ima021                        |tmp12     |tmp13   |tmp02   |tmp03       |tmp04               |tmp05               |tmp06                    |tmp00  |tmp10         |tmp97      |tmp98      |tmp99     ]
+ [tmp01                |ima02                         |ima021                        |tmp12     |tmp13   |tmp02   |tmp03       |tmp04               |tmp05               |tmp06                    |tmp00  |tmp10         |tmp97      |tmp98      |tmp99     ]
+ <                                                                                                                                                                                                                                                           >
+
+}
+END -- gr546
+END -- asfp5101
+
+ATTRIBUTES
+Table s_tmp:s_tmp;
+Edit tmp01=formonly.tmp01 type VARCHAR, tabIndex=1, title="Item#", noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=2, title="Part Name Specification", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=3, title="Specification", noEntry;
+Edit tmp12=formonly.tmp12 type CHAR, tabIndex=4, title="Process Section No", noEntry;
+Edit tmp13=formonly.tmp13 type CHAR, tabIndex=5, title="Routing Sequence", noEntry;
+Edit tmp02=formonly.tmp02 type VARCHAR, tabIndex=6, title="Task No", noEntry;
+Edit tmp03=formonly.tmp03 type VARCHAR, tabIndex=7, title="Unit", noEntry;
+Edit tmp04=formonly.tmp04 type DECIMAL, tabIndex=8, title="Src W/O Retnb Qty", noEntry;
+Edit tmp05=formonly.tmp05 type DECIMAL, tabIndex=9, title="Tgt W/O Req.Qty", noEntry;
+Edit tmp06=formonly.tmp06 type DECIMAL, tabIndex=10, title="Src W/O Reality Req.Qty", comment="Status 1:Common Item 2:Source Work Order 3:Target Work Order";
+ComboBox tmp00=formonly.tmp00 type VARCHAR, tabIndex=11, title="Status", items=(("1", "Common materials"),("2", "Only Source WO"),("3", "Only Destination WO"));
+Edit tmp10=formonly.tmp10 type VARCHAR, tabIndex=12, title="Over-Withdraw", noEntry;
+ButtonEdit tmp97=formonly.tmp97 type VARCHAR, action=controlp, tabIndex=13, title="Warehouse", image="zoom", comment="<^P>Query Inventory Details <T>Query Inventory Data";
+ButtonEdit tmp98=formonly.tmp98 type VARCHAR, action=controlp, tabIndex=14, title="Location", image="zoom", comment="<^P>Qry Location Details <T>Query Inventory Data";
+Edit tmp99=formonly.tmp99 type VARCHAR, tabIndex=15, title="Lot";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tmp(formonly.tmp01,formonly.ima02,formonly.ima021,formonly.tmp12,formonly.tmp13,formonly.tmp02,formonly.tmp03,formonly.tmp04,formonly.tmp05,formonly.tmp06,formonly.tmp00,formonly.tmp10,formonly.tmp97,formonly.tmp98,formonly.tmp99)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi3003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi3003")
+VBox vb8
+Folder pc1
+Page Main(text=%"Main")
+Table s_lnh
+{
+[lnhstore     |rtz13            |lnhlegal    |azt02     |lnh04         |lnh05        |lnh06     |lnh07      ]
+[lnhstore     |rtz13            |lnhlegal    |azt02     |lnh04         |lnh05        |lnh06     |lnh07      ]
+[lnhstore     |rtz13            |lnhlegal    |azt02     |lnh04         |lnh05        |lnh06     |lnh07      ]
+[lnhstore     |rtz13            |lnhlegal    |azt02     |lnh04         |lnh05        |lnh06     |lnh07      ]
+[lnhstore     |rtz13            |lnhlegal    |azt02     |lnh04         |lnh05        |lnh06     |lnh07      ]
+
+}
+END -- s_lnh
+END -- Main
+END -- pc1
+Grid gr2
+{
+
+  -------Rows [idx     ] -------
+
+
+}
+END -- gr2
+END -- vb8
+END -- almi3003
+
+TABLES
+lnh_file
+ATTRIBUTES
+ButtonEdit lnhstore=lnh_file.lnhstore, action=controlp, tabIndex=2, title="Store No.", noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=5, title="Store Name", noEntry;
+ButtonEdit lnhlegal=lnh_file.lnhlegal, tabIndex=8, title=%"Corporation", noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=9, title=%"Corporation Name", noEntry;
+ComboBox lnh04=lnh_file.lnh04, tabIndex=3, title="Corporation Initial Status", not null, required, items=(("0", "unchecked"),("1", "keqianye"),("2", "clear"));
+ComboBox lnh05=lnh_file.lnh05, tabIndex=4, title="Expected Change Status", not null, required, items=(("0", "uncheck"),("1", "keqiny"),("2", "clear"));
+CheckBox lnh06=lnh_file.lnh06, tabIndex=6, default = "N", title="Confirmed Result", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox lnh07=lnh_file.lnh07, tabIndex=7, title="Corporation Status", noEntry, items=(("0", "un"),("1", "qian"),("2", "clear"));
+Edit idx=formonly.idx type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lnh(lnh_file.lnhstore,formonly.rtz13,lnh_file.lnhlegal,formonly.azt02,lnh_file.lnh04,lnh_file.lnh05,lnh_file.lnh06,lnh_file.lnh07)
+SCREEN RECORD Undefined(formonly.idx)
+END -- INSTRUCTIONS
+

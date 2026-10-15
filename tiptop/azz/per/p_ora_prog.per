@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_ora_prog.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_ora_prog")
+Grid gr2
+{
+ <T table1                  >
+ [prog           |line      ]
+ [prog           |line      ]
+ [prog           |line      ]
+ [prog           |line      ]
+ [prog           |line      ]
+ [prog           |line      ]
+ [prog           |line      ]
+ [prog           |line      ]
+ [prog           |line      ]
+ [prog           |line      ]
+ <                          >
+
+}
+END -- gr2
+END -- p_ora_prog
+
+ATTRIBUTES
+Table table1:Table1;
+Edit prog=formonly.prog type CHAR, tabIndex=1, title="Pragram";
+Edit line=formonly.line type CHAR, tabIndex=2, title=%"line";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_prog(formonly.prog,formonly.line)
+END -- INSTRUCTIONS
+

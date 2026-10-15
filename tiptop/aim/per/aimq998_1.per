@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq998_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimq998_1")
+VBox VBox1
+Grid gr3399
+{
+ <G gb8                                                                                >
+
+   Plant     [azw01         ]
+ <                                                                                     >
+ <G group01                                                                            >
+  Cost Group          [ima12               ] Warehouse No.       [pia03               ]
+  Item No.            [pia02               ] Location            [pia04               ]
+  Lot No.             [pia05               ] Label No.           [pia01               ]
+  Type                [pia931              ]
+ <                                                                                     >
+}
+END -- gr3399
+Group group03(text="INPUT")
+Grid gr3400
+{
+
+ <G group04                                                                         >
+ [s1                  ] [s2                  ] [s3                  ]
+ [u1                  ] [u2                  ] [u3                  ]
+ <                                                                                  >
+
+ <G group05                                                                         >
+  Pricing Year Month  [yy        ][mm         ]  [dummy01]
+  Cost Method         [ctype                  ]
+                      [d                                       ]
+ <                                                                                  >
+ <G group06                             ><G group07                                 >
+ [e                             ]        [f                             ]
+ <                                      ><                                          >
+ [a                        ]
+
+}
+END -- gr3400
+END -- group03
+END -- VBox1
+END -- aimq998_1
+
+ATTRIBUTES
+Group gb8:gb8, text="QBE1";
+ButtonEdit azw01=formonly.azw01 type VARCHAR, action=controlp, tabIndex=17, image="zoom.png";
+Group group01:group01, text="QBE2";
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=1;
+Edit pia03=formonly.pia03 type VARCHAR, tabIndex=2;
+ButtonEdit pia02=formonly.pia02 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Edit pia04=formonly.pia04 type VARCHAR, tabIndex=4;
+Edit pia05=formonly.pia05 type VARCHAR, tabIndex=5;
+Edit pia01=formonly.pia01 type VARCHAR, tabIndex=6;
+Edit pia931=formonly.pia931 type VARCHAR, tabIndex=7, default = "1", noEntry, not null;
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, queryEditable, items=(("1", "Cost Group"),("2", "Item No"),("3", "Lot No"),("4", "Warehouse No."),("5", "Location"),("6", "Label No."),("7", "Logistics"),("8", "Cate No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=9, queryEditable, items=(("1", "Cost Group"),("2", "Item No"),("3", "Lot No"),("4", "Warehouse No."),("5", "Location"),("6", "Label No."),("7", "Logistics"),("8", "Cate No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=10, queryEditable, items=(("1", "Cost Group"),("2", "Item No"),("3", "Lot No"),("4", "Warehouse No."),("5", "Location"),("6", "Label No."),("7", "Logistics"),("8", "Cate No."));
+CheckBox u1=formonly.u1 type CHAR, tabIndex=11, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=12, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=13, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05;
+Edit yy=formonly.yy type SMALLINT, tabIndex=19;
+Edit mm=formonly.mm type SMALLINT, tabIndex=20;
+Label dummy01:dummy01, text="(Blank:Current Period Price) ";
+ComboBox ctype=formonly.ctype type VARCHAR, tabIndex=14, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually Batch Cost"),("4", "Identify Manually Item Cost"),("5", "Identify Manually Store Profit Center"));
+CheckBox d=formonly.d type VARCHAR, tabIndex=21, text="Print if no Inv Difference", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group06:group06, text="Print Data";
+RadioGroup e=formonly.e type VARCHAR, tabIndex=15, items=(("1", "Profit"),("2", "Loss"),("3", "All"));
+Group group07:group07, text="Print Data";
+RadioGroup f=formonly.f type VARCHAR, tabIndex=16, items=(("1", "Posted"),("2", "Unposted"),("3", "All "));
+CheckBox a=formonly.a type CHAR, tabIndex=18, text=%"Write articulation table", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azw01,formonly.ima12,formonly.pia03,formonly.pia02,formonly.pia04,formonly.pia05,formonly.pia01,formonly.pia931,formonly.s1,formonly.s2,formonly.s3,formonly.u1,formonly.u2,formonly.u3,formonly.ctype,formonly.e,formonly.f,formonly.a,formonly.yy,formonly.mm,formonly.d)
+END -- INSTRUCTIONS
+

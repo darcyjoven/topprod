@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi204.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi204")
+VBox VBox1
+Folder pc920
+Page page01(text="Main")
+Grid gr4828
+{
+ <G group01                                           >
+  Address No.         [pme01     ]
+  Feature             [pme02                         ]
+  Address             [pme031                        ]
+                      [pme032                        ]
+                      [pme033                        ]
+                      [pme034                        ]
+                      [pme035                        ]
+ <                                                    >
+
+}
+END -- gr4828
+END -- page01
+Page info(text="Info")
+Grid gr4829
+{
+ Record Owner        [pmeuser   ] Last Modified by    [pmemodu   ] Data Valid Code     [pmeacti   ]
+ Department          [pmegrup   ] Create/Modify Date  [pmedate     ]
+ Record Orig.        [pmeoriu   ]
+ Dept Orig.          [pmeorig   ]
+}
+END -- gr4829
+END -- info
+END -- pc920
+Grid gr4830
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4830
+END -- VBox1
+END -- apmi204
+
+TABLES
+pme_file
+ATTRIBUTES
+Group group01:group01;
+Edit pme01=pme_file.pme01, tabIndex=1, not null, required, comment="Key Field, No Blank/Repeated!    ";
+ComboBox pme02=pme_file.pme02, tabIndex=2, not null, required, queryEditable, items=(("0", "Shipping Address"),("1", "Bill Address"),("2", "Both are"));
+Edit pme031=pme_file.pme031, tabIndex=3, not null, required;
+Edit pme032=pme_file.pme032, tabIndex=4;
+Edit pme033=pme_file.pme033, tabIndex=5;
+Edit pme034=pme_file.pme034, tabIndex=6;
+Edit pme035=pme_file.pme035, tabIndex=7;
+Edit pmeuser=pme_file.pmeuser, tabIndex=8, noEntry;
+Edit pmemodu=pme_file.pmemodu, tabIndex=9, noEntry;
+Edit pmeacti=pme_file.pmeacti, tabIndex=10, noEntry, upShift;
+Edit pmegrup=pme_file.pmegrup, tabIndex=11, noEntry;
+DateEdit pmedate=pme_file.pmedate, tabIndex=12, noEntry;
+Edit pmeoriu=pme_file.pmeoriu, tabIndex=501, noEntry;
+Edit pmeorig=pme_file.pmeorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pme_file.pme01,pme_file.pme02,pme_file.pme031,pme_file.pme032,pme_file.pme033,pme_file.pme034,pme_file.pme035,pme_file.pmeuser,pme_file.pmemodu,pme_file.pmeacti,pme_file.pmegrup,pme_file.pmedate,pme_file.pmeoriu,pme_file.pmeorig,formonly.cnt)
+END -- INSTRUCTIONS
+

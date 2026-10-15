@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq702.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq702")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+Grid gr2547
+{
+ Book No.            [aeg00               ]
+ Project#            [aeg05               ]
+}
+END -- gr2547
+END -- page01
+END -- folder01
+Table s_aeg
+{
+[aeg02         |aeg01              |aeg03       |abb07_1             |abb07_2             |abb99               ]
+[aeg02         |aeg01              |aeg03       |abb07_1             |abb07_2             |abb99               ]
+[aeg02         |aeg01              |aeg03       |abb07_1             |abb07_2             |abb99               ]
+[aeg02         |aeg01              |aeg03       |abb07_1             |abb07_2             |abb99               ]
+[aeg02         |aeg01              |aeg03       |abb07_1             |abb07_2             |abb99               ]
+[aeg02         |aeg01              |aeg03       |abb07_1             |abb07_2             |abb99               ]
+[aeg02         |aeg01              |aeg03       |abb07_1             |abb07_2             |abb99               ]
+[aeg02         |aeg01              |aeg03       |abb07_1             |abb07_2             |abb99               ]
+[aeg02         |aeg01              |aeg03       |abb07_1             |abb07_2             |abb99               ]
+[aeg02         |aeg01              |aeg03       |abb07_1             |abb07_2             |abb99               ]
+
+}
+END -- s_aeg
+Grid gr2548
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2548
+END -- vb4
+END -- aglq702
+
+TABLES
+aeg_file
+ATTRIBUTES
+ButtonEdit aeg00=aeg_file.aeg00, action=controlp, tabIndex=10, image="zoom", comment="Enter project number, <^P>Qry Project No.";
+ButtonEdit aeg05=aeg_file.aeg05, action=controlp, tabIndex=1, image="zoom", comment="Enter project number, <^P>Qry Project No.";
+DateEdit aeg02=aeg_file.aeg02, tabIndex=2, title="Voucher Date";
+Edit aeg01=formonly.aeg01 type CHAR, tabIndex=3, title="Account #", noEntry;
+Edit aeg03=formonly.aeg03 type CHAR, tabIndex=4, title="Voucher#", noEntry;
+Edit abb07_1=formonly.abb07_1 type CHAR, tabIndex=5, title="Debit Amt", noEntry;
+Edit abb07_2=formonly.abb07_2 type CHAR, tabIndex=6, title="Credit Amt", noEntry;
+Edit abb99=formonly.abb99 type CHAR, tabIndex=7, title="Balance", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aeg(aeg_file.aeg02,formonly.aeg01,formonly.aeg03,formonly.abb07_1,formonly.abb07_2,formonly.abb99)
+SCREEN RECORD Undefined(aeg_file.aeg00,aeg_file.aeg05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,154 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt320.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid ds1
+{
+
+[label1  |lih01               ]                  [label9  |lih09               ][tqa02            ][label20 |lih20               ][gen02_1          ]
+[label2  |lih02               ]                  [label10 |lih10               ][oaj02            ]         [lih21               ]
+[label3  |lih03               ]                  [label11 |lih11               ]                            [lih23               ]
+[label4  |lih04               ]                  [label12 |lih12               ]                   [label24 |lih24               ]
+[label29 |lihplant            ][rtz13            |label13 |lih13               ]                   [label26 |lihconf             ][imgmksg]
+[label28 |lihlegal            ][azt02            |label14 |lih14               ]                   [label27 |lihconu             ][       ]
+[label5  |lih05               ][lmb03            |label15 |lih15               ]                   [label25 |lihcond             ]
+[label6  |lih06               ][lmc04            |label16 |lih16               ]                   [label21 |lihpos              ]
+[label7  |lih07               ][lmf13            |label17 |lih17               ]                   [label22 |lih22               ]
+[label8  |lih08               ][lne05            |label18 |lih18               ]                            [                    ]
+                                                 [label19 |lih19               ][gen02            ]
+
+}
+END -- ds1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid ds2
+{
+
+[label38|lihuser   ]  [label35|lihmodu   ]   [label30|lihacti   ]
+[label34|lihgrup   ]  [label33|lihdate   ]   [label32|lihcrat   ]
+[label37|lihoriu   ]  [label36|lihorig   ]
+
+
+
+
+
+}
+END -- ds2
+END -- Page2
+END -- Folder1
+Grid Grid1
+{
+ ------ [cnt][idx  |labe|cn1  ] ------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+lih_file
+ATTRIBUTES
+Label label1:Label1, text=%"lih01";
+ButtonEdit lih01=lih_file.lih01, action=controlp, tabIndex=1, not null, required, image="zoom", scroll;
+Label label9:Label9, text=%"lih09";
+ButtonEdit lih09=lih_file.lih09, action=controlp, tabIndex=17, not null, required, image="zoom", scroll;
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=28, noEntry;
+Label label20:Label20, text=%"lih20";
+ButtonEdit lih20=lih_file.lih20, action=controlp, tabIndex=31, image="zoom", scroll;
+Edit gen02_1=formonly.gen02_1 type CHAR, tabIndex=40, noEntry;
+Label label2:Label2, text=%"lih02";
+ComboBox lih02=lih_file.lih02, tabIndex=2, not null, required, scroll, items=(("1", "Advance Rent"),("2", "Continue Rent"));
+Label label10:Label10, text=%"lih10";
+ButtonEdit lih10=lih_file.lih10, action=controlp, tabIndex=18, image="zoom", scroll;
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=29, noEntry;
+CheckBox lih21=lih_file.lih21, tabIndex=32, text=%"lih_file.lih21", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label3:Label3, text=%"lih03";
+ButtonEdit lih03=lih_file.lih03, action=controlp, tabIndex=3, image="zoom", scroll;
+Label label11:Label11, text=%"lih11";
+Edit lih11=lih_file.lih11, tabIndex=19, scroll;
+CheckBox lih23=lih_file.lih23, tabIndex=33, text=%"lih_file.lih23", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label4:Label4, text=%"lih04";
+ButtonEdit lih04=lih_file.lih04, action=controlp, tabIndex=4, image="zoom", scroll;
+Label label12:Label12, text=%"lih12";
+ButtonEdit lih12=lih_file.lih12, action=controlp, tabIndex=20, image="zoom", scroll;
+Label label24:Label24, text=%"lih24";
+ComboBox lih24=lih_file.lih24, tabIndex=34, not null, required, scroll, items=(("0", "Open"),("1", "Approved"),("2", "Issued"),("R", "Approving Return"),("S", "Approving"),("W", "Cancel"));
+Label label29:Label29, text=%"lihplant";
+ButtonEdit lihplant=lih_file.lihplant, action=controlp, tabIndex=5, noEntry, not null, required, image="zoom", scroll;
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=11, noEntry;
+Label label13:Label13, text=%"lih13";
+DateEdit lih13=lih_file.lih13, tabIndex=21, not null, required;
+Label label26:Label26, text=%"lihconf";
+ComboBox lihconf=lih_file.lihconf, tabIndex=35, noEntry, not null, required, scroll, items=(("N", "Unconfirm"),("Y", "Confirmed"),("S", "Stop"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Label label28:Label28, text=%"lihlegal";
+ButtonEdit lihlegal=lih_file.lihlegal, action=controlp, tabIndex=6, noEntry, not null, required, image="zoom", scroll;
+Edit azt02=formonly.azt02 type CHAR, tabIndex=12, noEntry;
+Label label14:Label14, text=%"lih14";
+DateEdit lih14=lih_file.lih14, tabIndex=22, not null, required;
+Label label27:Label27, text=%"lihconu";
+Edit lihconu=lih_file.lihconu, tabIndex=36, noEntry, scroll;
+Label label5:Label5, text=%"lih05";
+ButtonEdit lih05=lih_file.lih05, action=controlp, tabIndex=7, noEntry, image="zoom", scroll;
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=13, noEntry;
+Label label15:Label15, text=%"lih15";
+DateEdit lih15=lih_file.lih15, tabIndex=23, not null, required;
+Label label25:Label25, text=%"lihcond";
+DateEdit lihcond=lih_file.lihcond, tabIndex=37, noEntry;
+Label label6:Label6, text=%"lih06";
+ButtonEdit lih06=lih_file.lih06, action=controlp, tabIndex=8, noEntry, image="zoom", scroll;
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=14, noEntry;
+Label label16:Label16, text=%"lih16";
+DateEdit lih16=lih_file.lih16, tabIndex=24;
+Label label21:Label21, text=%"lihpos";
+ComboBox lihpos=lih_file.lihpos, tabIndex=38, noEntry, not null, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+Label label7:Label7, text=%"lih07";
+ButtonEdit lih07=lih_file.lih07, action=controlp, tabIndex=9, not null, required, image="zoom", scroll;
+Edit lmf13=formonly.lmf13 type CHAR, tabIndex=15, noEntry;
+Label label17:Label17, text=%"lih17";
+DateEdit lih17=lih_file.lih17, tabIndex=25;
+Label label22:Label22, text=%"lih22";
+TextEdit lih22=lih_file.lih22, tabIndex=39;
+Label label8:Label8, text=%"lih08";
+ButtonEdit lih08=lih_file.lih08, action=controlp, tabIndex=10, not null, required, image="zoom", scroll;
+Edit lne05=formonly.lne05 type CHAR, tabIndex=16, noEntry;
+Label label18:Label18, text=%"lih18";
+DateEdit lih18=lih_file.lih18, tabIndex=26;
+Label label19:Label19, text=%"lih19";
+Edit lih19=lih_file.lih19, tabIndex=27, scroll;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=30, noEntry;
+Label label38:Label38, text=%"lihuser";
+Edit lihuser=lih_file.lihuser, tabIndex=41, noEntry, scroll;
+Label label35:Label35, text=%"lihmodu";
+Edit lihmodu=lih_file.lihmodu, tabIndex=44, noEntry, scroll;
+Label label30:Label30, text=%"lihacti";
+Edit lihacti=lih_file.lihacti, tabIndex=47, noEntry, not null, scroll;
+Label label34:Label34, text=%"lihgrup";
+Edit lihgrup=lih_file.lihgrup, tabIndex=42, noEntry, scroll;
+Label label33:Label33, text=%"lihdate";
+DateEdit lihdate=lih_file.lihdate, tabIndex=45, noEntry;
+Label label32:Label32, text=%"lihcrat";
+DateEdit lihcrat=lih_file.lihcrat, tabIndex=48, noEntry;
+Label label37:Label37, text=%"lihoriu";
+Edit lihoriu=lih_file.lihoriu, tabIndex=43, noEntry, scroll;
+Label label36:Label36, text=%"lihorig";
+Edit lihorig=lih_file.lihorig, tabIndex=46, noEntry, scroll;
+Label cnt:cnt, text=%"cnt";
+Edit idx=formonly.idx type CHAR, tabIndex=49;
+Label labe:Label31, text=%"/";
+Edit cn1=formonly.cnt type CHAR, tabIndex=50;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(lih_file.lih01,lih_file.lih02,lih_file.lih03,lih_file.lih04,lih_file.lihplant,lih_file.lih05,lih_file.lih06,lih_file.lih07,lih_file.lih08,lih_file.lih09,lih_file.lih10,lih_file.lih11,lih_file.lih12,lih_file.lih13,lih_file.lih14,lih_file.lih15,lih_file.lih16,lih_file.lih17,lih_file.lih18,lih_file.lih19,lih_file.lih20,lih_file.lih21,lih_file.lih22,lih_file.lih23,lih_file.lih24,lih_file.lihcond,lih_file.lihconf,lih_file.lihconu,lih_file.lihlegal)
+SCREEN RECORD Undefined(formonly.rtz13,formonly.azt02,formonly.lmb03,formonly.lmc04,formonly.lmf13,formonly.lne05,formonly.tqa02,formonly.oaj02,formonly.gen02,formonly.idx,formonly.cnt,formonly.gen02_1,formonly.imgmksg,lih_file.lihpos)
+SCREEN RECORD Record2(lih_file.lihacti,lih_file.lihcrat,lih_file.lihdate,lih_file.lihgrup,lih_file.lihmodu,lih_file.lihorig,lih_file.lihoriu,lih_file.lihuser)
+END -- INSTRUCTIONS
+

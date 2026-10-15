@@ -1,0 +1,90 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/alm/4fd/almt820.tmp.per created 2010-10-25T17:56:56
+-- File created from /u3/tiptop/alm/4fd/almt820.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almt820")
+                                                                                     
+     VBox vb5                                                                        
+     Folder pc2                                                                      
+     Page Page3(text=%"Main")                                                        
+     Grid gr4                                                                        
+     {                                                                               
+                                                                                     
+       lsj01    [lsj01             ]           lsj05  [lsj05           ]             
+       lsjplant [lsjplant    |lma02          ] lsj06  [lsj06               ]         
+       lsjlegal [lsjlegal    |azt02          ] lsj07  [lsj07               ]         
+       lsj02    [lsj02             ]           lsj08  [lsj08       ]                 
+       lsj04    [lsj04             ]           lsj09  [lsj09       ][imgmksg]        
+       lsj03    [lsj03     ]                   lsj10  [lsj10       ][       ]        
+       lne05    [lne05               ]         lsj11  [lsj11       ]                 
+                                                                                     
+     }                                                                               
+     END                                                                             
+     END -- Page                                                                     
+     Page info(text=%"Info")                                                         
+     Grid gr5                                                                        
+     {                                                                               
+                                                                                     
+      Data User   [lsjuser   ] crat  [lsjcrat     ]  acti       [lsjacti   ]         
+      Data Group  [lsjgrup   ] Modify[lsjmodu     ]  Modify Date[lsjdate     ]       
+      Record Orig.[lsjoriu   ]                                                       
+      Dept Orig.  [lsjorig   ]                                                       
+                                                                                     
+                                                                                     
+     }                                                                               
+     END                                                                             
+     END -- Page                                                                     
+     END -- Folder                                                                   
+     Grid gr6                                                                        
+     {                                                                               
+       -------Rows[idx   ]/[cnt    ]------                                           
+                                                                                     
+     }                                                                               
+     END                                                                             
+     END -- VBox                                                                     
+END -- Form
+
+TABLES
+lsj_file
+
+ATTRIBUTES
+ButtonEdit lsj01=lsj_file.lsj01, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+ComboBox lsj05=lsj_file.lsj05, tabIndex=14, not null, items=(("0", "Sales certificate"),("1", "Contributions certificate"),("2", "Refund certificate"));
+ButtonEdit lsjplant=lsj_file.lsjplant, action=controlp, tabIndex=21, noEntry, image="zoom.png";
+Edit lma02=formonly.lma02, tabIndex=23, noEntry;
+Edit lsj06=lsj_file.lsj06, tabIndex=18, not null;
+ButtonEdit lsjlegal=lsj_file.lsjlegal, action=controlp, tabIndex=22, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02, tabIndex=24, noEntry;
+Edit lsj07=lsj_file.lsj07, tabIndex=19, not null;
+ButtonEdit lsj02=lsj_file.lsj02, action=controlp, tabIndex=10, not null, image="zoom.png";
+DateEdit lsj08=lsj_file.lsj08, tabIndex=15, not null;
+ButtonEdit lsj04=lsj_file.lsj04, action=controlp, tabIndex=13, not null, image="zoom.png";
+ComboBox lsj09=lsj_file.lsj09, tabIndex=16, noEntry, items=(("Y", "Confirmed"),("N", "Confirmed"));
+Image imgmksg=formonly.imgmksg;
+Edit lsj03=lsj_file.lsj03, tabIndex=11, noEntry;
+Edit lsj10=lsj_file.lsj10, tabIndex=20, noEntry;
+Edit lne05=formonly.lne05, tabIndex=12, noEntry;
+DateEdit lsj11=lsj_file.lsj11, tabIndex=17, noEntry;
+Edit lsjuser=formonly.lsjuser type VARCHAR, tabIndex=1, noEntry;
+DateEdit lsjcrat=formonly.lsjcrat, tabIndex=6, noEntry;
+Edit lsjacti=formonly.lsjacti type VARCHAR, tabIndex=3, noEntry;
+Edit lsjgrup=formonly.lsjgrup type VARCHAR, tabIndex=4, noEntry;
+Edit lsjmodu=formonly.lsjmodu type VARCHAR, tabIndex=2, noEntry;
+DateEdit lsjdate=formonly.lsjdate type DATE, tabIndex=5, noEntry;
+Edit lsjoriu=formonly.lsjoriu type VARCHAR, tabIndex=25, noEntry;
+Edit lsjorig=formonly.lsjorig type VARCHAR, tabIndex=26, noEntry;
+Edit idx=formonly.idx, tabIndex=7;
+Edit cnt=formonly.cnt, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

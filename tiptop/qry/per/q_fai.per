@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_fai.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Frequently Used Memo")
+Grid gr3760
+{
+ <T s_fai                                          >
+ [check |fai01     |fai02                         ]
+ [check |fai01     |fai02                         ]
+ [check |fai01     |fai02                         ]
+ [check |fai01     |fai02                         ]
+ [check |fai01     |fai02                         ]
+ [check |fai01     |fai02                         ]
+ [check |fai01     |fai02                         ]
+ [check |fai01     |fai02                         ]
+ [check |fai01     |fai02                         ]
+ [check |fai01     |fai02                         ]
+ <                                                 >
+
+}
+END -- gr3760
+END -- q_fai
+
+TABLES
+fai_file
+ATTRIBUTES
+Table s_fai:s_fai;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fai01=fai_file.fai01, tabIndex=2, title="No.", noEntry;
+Edit fai02=fai_file.fai02, tabIndex=3, title="Memo", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fai(formonly.check,fai_file.fai01,fai_file.fai02)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai1001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai1001")
+Folder pc331
+Page page01(text="Main")
+VBox VBox1
+Grid gr1838
+{
+ <G group01                                                                 >
+  Asset  Account      [faj53                         ][aag02_1             ]
+ <                                                                          >
+ <G group02                                                                 >
+ [faj23                                                ]
+ <                                                                          >
+ <G group03                                                                 >
+  Apportioning Dept.  [faj24     ]
+  Accu. Depr.Account  [faj54                         ][aag02_2             ]
+  Depreciation Acct.  [faj55                         ][aag02_3             ]
+ [faj37                                                ]
+  Bonded              [faj38     ][c1                  ]
+  Insure              [faj39     ][d1                  ]
+  Duty-Free           [faj40     ][e1                  ]
+  Mortgage            [faj41     ][f1                  ]
+  Credit              [faj42     ][g1                  ]
+ <                                                                          >
+ <G group04                                                                 >
+  Home Currency       [faj421    ]%
+  Foreign Currency    [faj422    ]%
+  Tax Revamped Life   [faj423    ]Month
+  Usage               [faj56               ]
+ <                                                                          >
+
+}
+END -- gr1838
+END -- VBox1
+END -- page01
+END -- pc331
+END -- afai1001
+
+TABLES
+faj_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit faj53=faj_file.faj53, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Account Detail <^Y>Multi-Department Depreciation Account";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=2, noEntry;
+Group group02:group02, text="Apportionment Method";
+RadioGroup faj23=faj_file.faj23, tabIndex=3, not null, required, items=(("1", "Single Department Apportionment"),("2", "Multi-Department Apportionment"));
+Group group03:group03;
+ButtonEdit faj24=faj_file.faj24, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Query Department <^T>Qry Multi-Dept Expense Apportionment <^Y>Multi-Department Depreciation Apportionment";
+ButtonEdit faj54=faj_file.faj54, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Account Detail";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=6, noEntry;
+ButtonEdit faj55=faj_file.faj55, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Account Detail";
+Edit aag02_3=formonly.aag02_3 type CHAR, tabIndex=8, noEntry;
+CheckBox faj37=faj_file.faj37, tabIndex=9, text="Capitalize Directly", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox faj38=faj_file.faj38, tabIndex=10, not null, required, queryEditable, items=(("0", "Non-Bonded "),("1", "Bondable "));
+Edit c1=formonly.c1 type CHAR, tabIndex=11, noEntry;
+ComboBox faj39=faj_file.faj39, tabIndex=12, not null, required, queryEditable, items=(("0", "No Insurance "),("1", "To Insure "),("2", "Insured"));
+Edit d1=formonly.d1 type CHAR, tabIndex=13, noEntry;
+ComboBox faj40=faj_file.faj40, tabIndex=14, not null, required, queryEditable, items=(("0", "Not Free"),("1", "Exmptbl"),("2", "Applying "),("3", "Credtd"),("4", "Oper Dele"),("5", "T-Fr Dele"),("6", "Oper Appr"));
+Edit e1=formonly.e1 type CHAR, tabIndex=15, noEntry;
+ComboBox faj41=faj_file.faj41, tabIndex=16, not null, required, queryEditable, items=(("0", "NO Mortgage "),("1", "UnMortgaged"),("2", "Applying "),("3", "Partially Set"),("4", "Set All"));
+Edit f1=formonly.f1 type CHAR, tabIndex=17, noEntry;
+ComboBox faj42=faj_file.faj42, tabIndex=18, not null, required, queryEditable, items=(("0", "NO Credit"),("1", "Creditable "),("2", "Applying "),("3", "Authority Approved"),("4", "Authority Delete "),("5", "IRA Delete"));
+Edit g1=formonly.g1 type CHAR, tabIndex=19, noEntry;
+Group group04:group04, text="Credit Rate";
+Edit faj421=faj_file.faj421, tabIndex=20;
+Edit faj422=faj_file.faj422, tabIndex=21;
+Edit faj423=faj_file.faj423, tabIndex=22;
+Edit faj56=faj_file.faj56, tabIndex=23;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(faj_file.faj53,formonly.aag02_1,faj_file.faj23,faj_file.faj24,faj_file.faj54,formonly.aag02_2,faj_file.faj55,formonly.aag02_3,faj_file.faj37,faj_file.faj38,formonly.c1,faj_file.faj39,formonly.d1,faj_file.faj40,formonly.e1,faj_file.faj41,formonly.f1,faj_file.faj42,formonly.g1,faj_file.faj421,faj_file.faj422,faj_file.faj423,faj_file.faj56)
+END -- INSTRUCTIONS
+

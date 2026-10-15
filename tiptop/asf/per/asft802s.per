@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft802s.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Qry W/O Allotment")
+VBox VBox1
+Folder pc179
+Page page01(text="Main")
+Grid gr857
+{
+ <G group01                                                       >
+  Item No.            [old_part                      ][sfa26     ]
+  Task No.            [old_sfa08 ]
+  UnIssQ              [old_qty   ][sfa12     ]
+ <                                                                >
+
+}
+END -- gr857
+END -- page01
+END -- pc179
+Table s_new
+{
+[new_part             |new_rate           |new_yes |new_qty |new_qty3|avl_stk                 |new_qty4                |new_qty5                    |new_qty6                        |new_qty7  |new_qty8       ]
+[new_part             |new_rate           |new_yes |new_qty |new_qty3|avl_stk                 |new_qty4                |new_qty5                    |new_qty6                        |new_qty7  |new_qty8       ]
+[new_part             |new_rate           |new_yes |new_qty |new_qty3|avl_stk                 |new_qty4                |new_qty5                    |new_qty6                        |new_qty7  |new_qty8       ]
+[new_part             |new_rate           |new_yes |new_qty |new_qty3|avl_stk                 |new_qty4                |new_qty5                    |new_qty6                        |new_qty7  |new_qty8       ]
+[new_part             |new_rate           |new_yes |new_qty |new_qty3|avl_stk                 |new_qty4                |new_qty5                    |new_qty6                        |new_qty7  |new_qty8       ]
+[new_part             |new_rate           |new_yes |new_qty |new_qty3|avl_stk                 |new_qty4                |new_qty5                    |new_qty6                        |new_qty7  |new_qty8       ]
+[new_part             |new_rate           |new_yes |new_qty |new_qty3|avl_stk                 |new_qty4                |new_qty5                    |new_qty6                        |new_qty7  |new_qty8       ]
+[new_part             |new_rate           |new_yes |new_qty |new_qty3|avl_stk                 |new_qty4                |new_qty5                    |new_qty6                        |new_qty7  |new_qty8       ]
+[new_part             |new_rate           |new_yes |new_qty |new_qty3|avl_stk                 |new_qty4                |new_qty5                    |new_qty6                        |new_qty7  |new_qty8       ]
+[new_part             |new_rate           |new_yes |new_qty |new_qty3|avl_stk                 |new_qty4                |new_qty5                    |new_qty6                        |new_qty7  |new_qty8       ]
+
+}
+END -- s_new
+Grid gr858
+{
+ <G group02             >
+  [l_tot               ]
+ <                      >
+
+}
+END -- gr858
+END -- VBox1
+END -- asft802s
+
+ATTRIBUTES
+Group group01:group01;
+Edit old_part=formonly.old_part type CHAR, tabIndex=1;
+Edit sfa26=formonly.sfa26 type CHAR, tabIndex=2;
+Edit old_sfa08=formonly.old_sfa08 type CHAR, tabIndex=3;
+Edit old_qty=formonly.old_qty type CHAR, tabIndex=4;
+Edit sfa12=formonly.sfa12 type CHAR, tabIndex=5;
+Edit new_part=formonly.new_part type CHAR, tabIndex=6, title="SUB Itm#", noEntry;
+Edit new_rate=formonly.new_rate type CHAR, tabIndex=7, title="Substitution Ratio", noEntry;
+Edit new_yes=formonly.new_yes type CHAR, tabIndex=8, title="Choice", upShift;
+Edit new_qty=formonly.new_qty type CHAR, tabIndex=9, title="SUB (+-)", comment="+:Add Substitute Qty, -:To Reduse Substitute Qty";
+Edit new_qty3=formonly.new_qty3 type CHAR, tabIndex=10, title="Equi.Q", noEntry;
+Edit avl_stk=formonly.avl_stk type CHAR, tabIndex=11, title="Available Inventory Qty", noEntry;
+Edit new_qty4=formonly.new_qty4 type CHAR, tabIndex=12, title="Subsituted Qty", noEntry;
+Edit new_qty5=formonly.new_qty5 type CHAR, tabIndex=13, title="Quantity In-Transit(Supply)", noEntry;
+Edit new_qty6=formonly.new_qty6 type CHAR, tabIndex=14, title="Quantity In-Transit(Requiring)", noEntry;
+Edit new_qty7=formonly.new_qty7 type CHAR, tabIndex=15, title="Allocate", noEntry;
+Edit new_qty8=formonly.new_qty8 type CHAR, tabIndex=16, title="Available Qty", noEntry;
+Group group02:group02, text="Substitute Qty Total ";
+Edit l_tot=formonly.l_tot type CHAR, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_new(formonly.new_part,formonly.new_rate,formonly.new_yes,formonly.new_qty,formonly.new_qty3,formonly.avl_stk,formonly.new_qty4,formonly.new_qty5,formonly.new_qty6,formonly.new_qty7,formonly.new_qty8)
+SCREEN RECORD Undefined(formonly.old_part,formonly.sfa26,formonly.old_sfa08,formonly.old_qty,formonly.sfa12,formonly.l_tot)
+END -- INSTRUCTIONS
+

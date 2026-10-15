@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmt233_6.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmt233_6")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1101
+{
+  Promotion No.       [tsa01          ]
+  Cust. No.           [tqy03          ]
+
+}
+END -- gr1101
+Grid gr1102
+{
+  Cust. Seq           [tsa02    ]
+  Cust. Abbr.         [occ02                         ]
+
+}
+END -- gr1102
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_tsa
+{
+[tsa03    |tqz03          |ima02               |ima31    |tsa04          |tsa05          |tsa08          ]
+[tsa03    |tqz03          |ima02               |ima31    |tsa04          |tsa05          |tsa08          ]
+[tsa03    |tqz03          |ima02               |ima31    |tsa04          |tsa05          |tsa08          ]
+[tsa03    |tqz03          |ima02               |ima31    |tsa04          |tsa05          |tsa08          ]
+[tsa03    |tqz03          |ima02               |ima31    |tsa04          |tsa05          |tsa08          ]
+[tsa03    |tqz03          |ima02               |ima31    |tsa04          |tsa05          |tsa08          ]
+[tsa03    |tqz03          |ima02               |ima31    |tsa04          |tsa05          |tsa08          ]
+[tsa03    |tqz03          |ima02               |ima31    |tsa04          |tsa05          |tsa08          ]
+
+}
+END -- s_tsa
+Grid gr1103
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------Without-Tax Amount [tqy10              ]  With-Tax Amount    [tqy11               ]
+
+}
+END -- gr1103
+END -- VBox1
+END -- atmt233_6
+
+TABLES
+tsa_file
+ATTRIBUTES
+Edit tsa01=tsa_file.tsa01, tabIndex=1, noEntry, not null, required;
+Edit tqy03=formonly.tqy03 type CHAR, tabIndex=2, noEntry;
+Edit tsa02=tsa_file.tsa02, tabIndex=3, noEntry, not null, required;
+Edit occ02=formonly.occ02 type CHAR, tabIndex=4, noEntry;
+Edit tsa03=tsa_file.tsa03, tabIndex=5, title="Seq", noEntry, not null, required;
+Edit tqz03=formonly.tqz03 type CHAR, tabIndex=6, title="Item No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=7, title="Part Name", noEntry;
+Edit ima31=formonly.ima31 type CHAR, tabIndex=8, title="Unit", noEntry;
+Edit tsa04=tsa_file.tsa04, tabIndex=9, title="Quantity";
+Edit tsa05=tsa_file.tsa05, tabIndex=10, title="Bef. Amount";
+Edit tsa08=tsa_file.tsa08, tabIndex=11, title="Aft. Amount";
+Edit cnt=formonly.cnt type CHAR, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=13, noEntry;
+Edit tqy10=formonly.tqy10 type CHAR, tabIndex=14, noEntry;
+Edit tqy11=formonly.tqy11 type CHAR, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tsa(tsa_file.tsa03,formonly.tqz03,formonly.ima02,formonly.ima31,tsa_file.tsa04,tsa_file.tsa05,tsa_file.tsa08)
+SCREEN RECORD Undefined(tsa_file.tsa01,formonly.tqy03,tsa_file.tsa02,formonly.occ02,formonly.cnt,formonly.cn2,formonly.tqy10,formonly.tqy11)
+END -- INSTRUCTIONS
+

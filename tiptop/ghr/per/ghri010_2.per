@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghri010_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder folder1
+Page page1(text=%"Page1")
+VBox vbox1
+Group group4(text=%"")
+Grid grid1
+{
+
+[date         |zzdate         |hray24    |hray21     |status   |zzstat      |z_n              ]
+
+[department   |zgpart         |partname       |position     ][zgpost         |postname       ]
+
+}
+END -- grid1
+END -- group4
+Group group1(text=%"Direct manager")
+Grid grid2(fontPitch=variable)
+{
+
+[dirmemo                                                                                           ]
+[                                                                                                  ]
+
+}
+END -- grid2
+END -- group1
+Group group2(text=%"Department manager")
+Grid grid3(fontPitch=variable)
+{
+
+[depmemo                                                                                           ]
+[                                                                                                  ]
+
+}
+END -- grid3
+END -- group2
+Group group3(text=%"General manager")
+Grid grid4(fontPitch=variable)
+{
+
+[genmemo                                                                                           ]
+[                                                                                                  ]
+
+}
+END -- grid4
+END -- group3
+END -- vbox1
+END -- page1
+END -- folder1
+END -- ghri010_2
+
+ATTRIBUTES
+Label date:date, text=%"Label1";
+DateEdit zzdate=formonly.zzdate type CHAR, tabIndex=1, required;
+Label hray24:hray24, text=%"Label2";
+Edit hray21=formonly.hray24 type CHAR, tabIndex=8;
+Label status:status, text=%"Label2";
+ButtonEdit zzstat=formonly.zzstat type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit z_n=formonly.z_n type CHAR, tabIndex=9;
+Label department:department, text=%"Label3";
+ButtonEdit zgpart=formonly.zgpart type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+Edit partname=formonly.partname type CHAR, tabIndex=6;
+Label position:position, text=%"Label4";
+ButtonEdit zgpost=formonly.zgpost type CHAR, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit postname=formonly.postname type CHAR, tabIndex=7;
+TextEdit dirmemo=formonly.dirmemo type CHAR, tabIndex=3, sizePolicy=initial;
+TextEdit depmemo=formonly.depmemo type CHAR, tabIndex=1, sizePolicy=initial;
+TextEdit genmemo=formonly.genmemo type CHAR, tabIndex=1, sizePolicy=initial;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.zzdate,formonly.zzstat,formonly.z_n,formonly.depmemo,formonly.genmemo,formonly.dirmemo,formonly.zgpart,formonly.zgpost,formonly.partname,formonly.postname,formonly.hray24)
+END -- INSTRUCTIONS
+

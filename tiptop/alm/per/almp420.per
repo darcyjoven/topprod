@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almp420.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almp420")
+VBox vb2
+Grid gr6502
+{
+ <G group01                                                                                                                                                                                             >
+  Contract No.        [lnt01                 ]           Stall No.          [lnt06                 ]          Initial Lease Date  [lnt17       ]
+  Sign Date           [lnt03       ]                     Building No.       [lnt08                 ]          End Lease Date      [lnt18       ]
+  Tenant No.          [lnt04                 ]           Floor No.          [lnt09                 ]          Free Days           [lnt51       ]
+  Payment Tenant No.  [lnt12                 ]                                                                Charged Lease Int DD[lnt21       ]
+                                                                                                              Charged Lease End DD[lnt22       ]
+ <                                                                                                                                                                                                      >
+}
+END -- gr6502
+Table s_lnt
+{
+[sel    |lnt01_1             |lnt03_1     |lnt04_1   |lne05_1             |lnt06_1             |lnt08_1             |lnt09_1             |lnt12_1   |lne05_2             |lnt15_1   |lnt17_1     |lnt18_1     |lnt51_1     |lnt21_1     |lnt22_1     ]
+[sel    |lnt01_1             |lnt03_1     |lnt04_1   |lne05_1             |lnt06_1             |lnt08_1             |lnt09_1             |lnt12_1   |lne05_2             |lnt15_1   |lnt17_1     |lnt18_1     |lnt51_1     |lnt21_1     |lnt22_1     ]
+[sel    |lnt01_1             |lnt03_1     |lnt04_1   |lne05_1             |lnt06_1             |lnt08_1             |lnt09_1             |lnt12_1   |lne05_2             |lnt15_1   |lnt17_1     |lnt18_1     |lnt51_1     |lnt21_1     |lnt22_1     ]
+[sel    |lnt01_1             |lnt03_1     |lnt04_1   |lne05_1             |lnt06_1             |lnt08_1             |lnt09_1             |lnt12_1   |lne05_2             |lnt15_1   |lnt17_1     |lnt18_1     |lnt51_1     |lnt21_1     |lnt22_1     ]
+[sel    |lnt01_1             |lnt03_1     |lnt04_1   |lne05_1             |lnt06_1             |lnt08_1             |lnt09_1             |lnt12_1   |lne05_2             |lnt15_1   |lnt17_1     |lnt18_1     |lnt51_1     |lnt21_1     |lnt22_1     ]
+[sel    |lnt01_1             |lnt03_1     |lnt04_1   |lne05_1             |lnt06_1             |lnt08_1             |lnt09_1             |lnt12_1   |lne05_2             |lnt15_1   |lnt17_1     |lnt18_1     |lnt51_1     |lnt21_1     |lnt22_1     ]
+[sel    |lnt01_1             |lnt03_1     |lnt04_1   |lne05_1             |lnt06_1             |lnt08_1             |lnt09_1             |lnt12_1   |lne05_2             |lnt15_1   |lnt17_1     |lnt18_1     |lnt51_1     |lnt21_1     |lnt22_1     ]
+[sel    |lnt01_1             |lnt03_1     |lnt04_1   |lne05_1             |lnt06_1             |lnt08_1             |lnt09_1             |lnt12_1   |lne05_2             |lnt15_1   |lnt17_1     |lnt18_1     |lnt51_1     |lnt21_1     |lnt22_1     ]
+[sel    |lnt01_1             |lnt03_1     |lnt04_1   |lne05_1             |lnt06_1             |lnt08_1             |lnt09_1             |lnt12_1   |lne05_2             |lnt15_1   |lnt17_1     |lnt18_1     |lnt51_1     |lnt21_1     |lnt22_1     ]
+[sel    |lnt01_1             |lnt03_1     |lnt04_1   |lne05_1             |lnt06_1             |lnt08_1             |lnt09_1             |lnt12_1   |lne05_2             |lnt15_1   |lnt17_1     |lnt18_1     |lnt51_1     |lnt21_1     |lnt22_1     ]
+
+}
+END -- s_lnt
+END -- vb2
+END -- almp420
+
+TABLES
+lnt_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit lnt01=lnt_file.lnt01, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit lnt06=lnt_file.lnt06, action=controlp, tabIndex=5, image="zoom.png";
+DateEdit lnt17=lnt_file.lnt17, tabIndex=8;
+DateEdit lnt03=lnt_file.lnt03, tabIndex=2;
+ButtonEdit lnt08=lnt_file.lnt08, action=controlp, tabIndex=6, image="zoom.png";
+DateEdit lnt18=lnt_file.lnt18, tabIndex=9;
+ButtonEdit lnt04=lnt_file.lnt04, action=controlp, tabIndex=3, image="zoom.png";
+ButtonEdit lnt09=lnt_file.lnt09, action=controlp, tabIndex=7, image="zoom.png";
+Edit lnt51=lnt_file.lnt51, tabIndex=10;
+ButtonEdit lnt12=lnt_file.lnt12, action=controlp, tabIndex=4, image="zoom.png";
+DateEdit lnt21=lnt_file.lnt21, tabIndex=11;
+DateEdit lnt22=lnt_file.lnt22, tabIndex=12;
+CheckBox sel=formonly.sel type CHAR, tabIndex=13, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit lnt01_1=formonly.lnt01_1 type CHAR, tabIndex=14, title="Contract No.", noEntry;
+DateEdit lnt03_1=formonly.lnt03_1 type CHAR, tabIndex=15, title="Sign Date", noEntry;
+Edit lnt04_1=formonly.lnt04_1 type CHAR, tabIndex=16, title="Tenant No.", noEntry;
+Edit lne05_1=formonly.lne05_1 type CHAR, tabIndex=27, title="Tenant Name", noEntry;
+Edit lnt06_1=formonly.lnt06_1 type CHAR, tabIndex=17, title="Stall No.", noEntry;
+Edit lnt08_1=formonly.lnt08_1 type CHAR, tabIndex=18, title="Building No.", noEntry;
+Edit lnt09_1=formonly.lnt09_1 type CHAR, tabIndex=19, title="Floor No.", noEntry;
+Edit lnt12_1=formonly.lnt12_1 type CHAR, tabIndex=20, title="Payment Tenant", noEntry;
+Edit lne05_2=formonly.lne05_2 type CHAR, tabIndex=28, title="Payment Tenant Name", noEntry;
+Edit lnt15_1=formonly.lnt15_1 type CHAR, tabIndex=21, title="Payment Type", noEntry;
+DateEdit lnt17_1=formonly.lnt17_1 type CHAR, tabIndex=22, title="Initial Lease Date", noEntry;
+DateEdit lnt18_1=formonly.lnt18_1 type CHAR, tabIndex=23, title="End Lease Date", noEntry;
+Edit lnt51_1=formonly.lnt51_1 type CHAR, tabIndex=24, title="Free Days", noEntry;
+DateEdit lnt21_1=formonly.lnt21_1 type CHAR, tabIndex=25, title="Charged Lease Int DD", noEntry;
+DateEdit lnt22_1=formonly.lnt22_1 type CHAR, tabIndex=26, title="Charged Lease End DD", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lnt(formonly.sel,formonly.lnt01_1,formonly.lnt03_1,formonly.lnt04_1,formonly.lne05_1,formonly.lnt06_1,formonly.lnt08_1,formonly.lnt09_1,formonly.lnt12_1,formonly.lne05_2,formonly.lnt15_1,formonly.lnt17_1,formonly.lnt18_1,formonly.lnt51_1,formonly.lnt21_1,formonly.lnt22_1)
+SCREEN RECORD Undefined(lnt_file.lnt01,lnt_file.lnt06,lnt_file.lnt17,lnt_file.lnt03,lnt_file.lnt08,lnt_file.lnt18,lnt_file.lnt04,lnt_file.lnt09,lnt_file.lnt51,lnt_file.lnt12,lnt_file.lnt21,lnt_file.lnt22)
+END -- INSTRUCTIONS
+

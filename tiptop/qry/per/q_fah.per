@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_fah.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Document Property")
+Grid gr3759
+{
+ <T s_fah                                                           >
+ [check |fahslip    |fahdesc             |fahauno         |fahtype ]
+ [check |fahslip    |fahdesc             |fahauno         |fahtype ]
+ [check |fahslip    |fahdesc             |fahauno         |fahtype ]
+ [check |fahslip    |fahdesc             |fahauno         |fahtype ]
+ [check |fahslip    |fahdesc             |fahauno         |fahtype ]
+ [check |fahslip    |fahdesc             |fahauno         |fahtype ]
+ [check |fahslip    |fahdesc             |fahauno         |fahtype ]
+ [check |fahslip    |fahdesc             |fahauno         |fahtype ]
+ [check |fahslip    |fahdesc             |fahauno         |fahtype ]
+ [check |fahslip    |fahdesc             |fahauno         |fahtype ]
+ <                                                                  >
+
+}
+END -- gr3759
+END -- q_fah
+
+TABLES
+fah_file
+ATTRIBUTES
+Table s_fah:s_fah;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fahslip=fah_file.fahslip, tabIndex=2, title="Document", noEntry;
+Edit fahdesc=fah_file.fahdesc, tabIndex=3, title="Document Name", noEntry;
+Edit fahauno=fah_file.fahauno, tabIndex=4, title="Automatic No.", noEntry;
+Edit fahtype=fah_file.fahtype, tabIndex=5, title="Property", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fah(formonly.check,fah_file.fahslip,fah_file.fahdesc,fah_file.fahauno,fah_file.fahtype)
+END -- INSTRUCTIONS
+

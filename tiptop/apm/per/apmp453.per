@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp453.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp453")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4890
+{
+ <G group01                                                                            >
+  P/R No.             [pmk01             ]  Property          [pmk02     ]
+  Change S/N          [pmk03     ]          Vender Code       [pmk09     ][pmc03     ]
+ <                                                                                     >
+ <G group03                                                                      >
+  Cancel date         [pmk27       ]  Reason code         [pmk26     ]
+
+ <                                                                               >
+
+}
+END -- gr4890
+END -- page01
+END -- folder01
+Table s_pml
+{
+[sure |pml02|pml04                |pml16_d           ]
+[sure |pml02|pml04                |pml16_d           ]
+[sure |pml02|pml04                |pml16_d           ]
+[sure |pml02|pml04                |pml16_d           ]
+[sure |pml02|pml04                |pml16_d           ]
+[sure |pml02|pml04                |pml16_d           ]
+[sure |pml02|pml04                |pml16_d           ]
+[sure |pml02|pml04                |pml16_d           ]
+[sure |pml02|pml04                |pml16_d           ]
+[sure |pml02|pml04                |pml16_d           ]
+
+}
+END -- s_pml
+Grid gr4891
+{
+ [select_all    ] [cancel_all  ] Select Counts       [cn3       ]
+ ---------- Rows [cn2   ] ----------
+}
+END -- gr4891
+END -- VBox1
+END -- apmp453
+
+TABLES
+pmk_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit pmk01=pmk_file.pmk01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Enter a P/R # to Close  <^P> Qry P/R ";
+Edit pmk02=formonly.pmk02 type CHAR, tabIndex=2, noEntry;
+Edit pmk03=formonly.pmk03 type CHAR, tabIndex=3, noEntry;
+Edit pmk09=formonly.pmk09 type CHAR, tabIndex=4, noEntry;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=5, noEntry;
+Group group03:group03;
+DateEdit pmk27=formonly.pmk27 type DATE, tabIndex=6, not null, required;
+ButtonEdit pmk26=formonly.pmk26 type CHAR, action=controlp, tabIndex=7, image="zoom", comment="Press <^P>Qry Reason!";
+CheckBox sure=formonly.sure type CHAR, tabIndex=8, title="Sure", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pml02=formonly.pml02 type CHAR, tabIndex=9, title="Ln#", noEntry;
+Edit pml04=formonly.pml04 type CHAR, tabIndex=10, title="Item No.", noEntry;
+Edit pml16_d=formonly.pml16_d type CHAR, tabIndex=11, title="Current Status", noEntry;
+Button select_all:select_all, comment="Select All";
+Button cancel_all:cancel_all, comment="Cancel All";
+Edit cn3=formonly.cn3 type CHAR, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pml(formonly.sure,formonly.pml02,formonly.pml04,formonly.pml16_d)
+SCREEN RECORD Undefined(pmk_file.pmk01,formonly.pmk02,formonly.pmk03,formonly.pmk09,formonly.pmc03,formonly.pmk27,formonly.pmk26,formonly.cn3,formonly.cn2)
+END -- INSTRUCTIONS
+

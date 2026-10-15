@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemi101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemi101")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1777
+{
+ Upper Position      [fjf01     ][fka02               ]
+ Plant No.           [fjf02     ][azp02               ]
+}
+END -- gr1777
+END -- page01
+Page info(text="Info")
+Grid gr1778
+{
+  Record Owner        [fjfuser   ]   Last Modified by    [fjfmodu   ]   Data Valid Code     [fjfacti   ]
+  Department          [fjfgrup   ]   Create/Modify Date  [fjfdate   ]
+  Record Orig.        [fjforiu   ]
+  Dept Orig.          [fjforig   ]
+}
+END -- gr1778
+END -- info
+END -- folder01
+Table s_fjg
+{
+[fjg03      |fjg04          |fka02a      ]
+[fjg03      |fjg04          |fka02a      ]
+[fjg03      |fjg04          |fka02a      ]
+[fjg03      |fjg04          |fka02a      ]
+[fjg03      |fjg04          |fka02a      ]
+[fjg03      |fjg04          |fka02a      ]
+[fjg03      |fjg04          |fka02a      ]
+[fjg03      |fjg04          |fka02a      ]
+[fjg03      |fjg04          |fka02a      ]
+[fjg03      |fjg04          |fka02a      ]
+
+}
+END -- s_fjg
+Grid gr1779
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1779
+END -- VBox1
+END -- aemi101
+
+TABLES
+fjf_file,
+fjg_file
+ATTRIBUTES
+ButtonEdit fjf01=fjf_file.fjf01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Detail";
+Edit fka02=formonly.fka02 type CHAR, tabIndex=2;
+ButtonEdit fjf02=fjf_file.fjf02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P> Qry Detail";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=4, noEntry;
+Edit fjfuser=fjf_file.fjfuser, tabIndex=5, noEntry;
+Edit fjfmodu=fjf_file.fjfmodu, tabIndex=6, noEntry;
+Edit fjfacti=fjf_file.fjfacti, tabIndex=7, noEntry, upShift;
+Edit fjfgrup=fjf_file.fjfgrup, tabIndex=8, noEntry;
+DateEdit fjfdate=fjf_file.fjfdate, tabIndex=9, noEntry;
+Edit fjforiu=fjf_file.fjforiu, tabIndex=501, noEntry;
+Edit fjforig=fjf_file.fjforig, tabIndex=502, noEntry;
+Edit fjg03=fjg_file.fjg03, tabIndex=10, title="Line No.", not null, required;
+ButtonEdit fjg04=fjg_file.fjg04, action=controlp, tabIndex=11, title="Sub Position", not null, required, image="zoom", comment="<^P> Qry Detail";
+Edit fka02a=formonly.fka02a type CHAR, tabIndex=12, title="Name", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fjg(fjg_file.fjg03,fjg_file.fjg04,formonly.fka02a)
+SCREEN RECORD Undefined(fjf_file.fjf01,formonly.fka02,fjf_file.fjf02,formonly.azp02,fjf_file.fjfuser,fjf_file.fjfmodu,fjf_file.fjfacti,fjf_file.fjfgrup,fjf_file.fjfdate,fjf_file.fjforiu,fjf_file.fjforig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

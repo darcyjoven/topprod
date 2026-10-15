@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1022.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"afat1022")
+VBox VBox1
+Grid gr2205
+{
+ <G group1                                             >
+  Serial No.          [faj01     ]
+  Group No.           [faj93     ]
+  Property No.        [faj02     ]
+  Property Add. No.   [faj022    ]
+  Keeper              [faj19     ]
+  Keeping Department  [faj20     ]
+  Storing Location    [faj21     ]
+  Asset Account       [faj53                         ]
+ <                                                     >
+ <G group2                                                                       >
+  New Keeper          [a         ][gen02     ]
+  New Keeping Depart. [b         ][gem02     ]
+                      [d                                                      ]
+  Storing Location    [c         ]
+ [faf02                                                       ]
+ <                                                                               >
+
+}
+END -- gr2205
+END -- VBox1
+END -- afat1022
+
+ATTRIBUTES
+Group group1:group1, text="Enter Condition to Transfer Department";
+Edit faj01=formonly.faj01 type VARCHAR, tabIndex=1;
+Edit faj93=formonly.faj93 type CHAR, tabIndex=15;
+Edit faj02=formonly.faj02 type VARCHAR, tabIndex=2;
+Edit faj022=formonly.faj022 type VARCHAR, tabIndex=3;
+Edit faj19=formonly.faj19 type VARCHAR, tabIndex=4;
+Edit faj20=formonly.faj20 type VARCHAR, tabIndex=5;
+Edit faj21=formonly.faj21 type VARCHAR, tabIndex=6;
+Edit faj53=formonly.faj53 type VARCHAR, tabIndex=7;
+Group group2:group2;
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry  Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=9;
+ButtonEdit b=formonly.b type CHAR, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry  Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=11;
+CheckBox d=formonly.d type VARCHAR, tabIndex=12, text="Update Depreciation Department", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit c=formonly.c type CHAR, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Location";
+Edit faf02=formonly.faf02 type VARCHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.faj01,formonly.faj02,formonly.faj022,formonly.faj19,formonly.faj20,formonly.faj21,formonly.faj53,formonly.a,formonly.gen02,formonly.b,formonly.gem02,formonly.d,formonly.c,formonly.faf02,formonly.faj93)
+END -- INSTRUCTIONS
+

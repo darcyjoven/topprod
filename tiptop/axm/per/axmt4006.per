@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt4006.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt4006")
+VBox VBox1
+Folder pc569
+Page page01(text="Main")
+Grid gr2503
+{
+ <G group01                                 >
+  Order No.           [p_no                ]
+  Line No.            [p_seq               ]
+  Product             [p_part              ]
+ <                                          >
+
+}
+END -- gr2503
+END -- page01
+END -- pc569
+Table s_oeo
+{
+[oeo04                 |ima02                          |oeo05 |oeo06      |oeo09      |oeo08     |oeo07     ]
+[oeo04                 |ima02                          |oeo05 |oeo06      |oeo09      |oeo08     |oeo07     ]
+[oeo04                 |ima02                          |oeo05 |oeo06      |oeo09      |oeo08     |oeo07     ]
+[oeo04                 |ima02                          |oeo05 |oeo06      |oeo09      |oeo08     |oeo07     ]
+[oeo04                 |ima02                          |oeo05 |oeo06      |oeo09      |oeo08     |oeo07     ]
+[oeo04                 |ima02                          |oeo05 |oeo06      |oeo09      |oeo08     |oeo07     ]
+[oeo04                 |ima02                          |oeo05 |oeo06      |oeo09      |oeo08     |oeo07     ]
+[oeo04                 |ima02                          |oeo05 |oeo06      |oeo09      |oeo08     |oeo07     ]
+[oeo04                 |ima02                          |oeo05 |oeo06      |oeo09      |oeo08     |oeo07     ]
+[oeo04                 |ima02                          |oeo05 |oeo06      |oeo09      |oeo08     |oeo07     ]
+
+}
+END -- s_oeo
+END -- VBox1
+END -- axmt4006
+
+ATTRIBUTES
+Group group01:group01;
+Edit p_no=formonly.p_no type CHAR, tabIndex=1;
+Edit p_seq=formonly.p_seq type CHAR, tabIndex=2;
+Edit p_part=formonly.p_part type CHAR, tabIndex=3;
+ButtonEdit oeo04=formonly.oeo04 type CHAR, action=controlp, tabIndex=4, title="Accessory Item No.", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=5, title="Part Name", noEntry;
+ButtonEdit oeo05=formonly.oeo05 type CHAR, action=controlp, tabIndex=6, title="Unit", image="zoom", comment="<^P>Qry Details";
+Edit oeo06=formonly.oeo06 type CHAR, tabIndex=7, title="QPAQty", not null, required;
+Edit oeo09=formonly.oeo09 type CHAR, tabIndex=8, title="Qty";
+ComboBox oeo08=formonly.oeo08 type CHAR, tabIndex=9, title="Attribute", not null, required, queryEditable, items=(("1", %"Accessory"),("2", %"Spares"));
+ComboBox oeo07=formonly.oeo07 type CHAR, tabIndex=10, title="R/O", noEntry, items=(("0", "Required"),("1", "Accessories"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oeo(formonly.oeo04,formonly.ima02,formonly.oeo05,formonly.oeo06,formonly.oeo09,formonly.oeo08,formonly.oeo07)
+SCREEN RECORD Undefined(formonly.p_no,formonly.p_seq,formonly.p_part)
+END -- INSTRUCTIONS
+

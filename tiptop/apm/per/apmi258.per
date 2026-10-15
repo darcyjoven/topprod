@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi258.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal)
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4850
+{
+ Vender No.          [pmh02     ] [pmc03     ]
+
+}
+END -- gr4850
+END -- page01
+END -- folder01
+Table s_pmh
+{
+[pmh01               |ima02                         |ima021                        |pmh21     |ecd02                    |pmh23     |pmh05    |pmh|pmh24     |pmh25   |pmh06         |pmh13 |pmh14               |pmh17|pmh18|pmh12               |pmh19              |pmh11              |pmh04                 |pmh07  |mse02        |ima25          |ima44         |ima908        |pmhuser   |pmhgrup  |pmhmodu        |pmhdate       |pmhacti           ]
+[pmh01               |ima02                         |ima021                        |pmh21     |ecd02                    |pmh23     |pmh05    |pmh|pmh24     |pmh25   |pmh06         |pmh13 |pmh14               |pmh17|pmh18|pmh12               |pmh19              |pmh11              |pmh04                 |pmh07  |mse02        |ima25          |ima44         |ima908        |pmhuser   |pmhgrup  |pmhmodu        |pmhdate       |pmhacti           ]
+[pmh01               |ima02                         |ima021                        |pmh21     |ecd02                    |pmh23     |pmh05    |pmh|pmh24     |pmh25   |pmh06         |pmh13 |pmh14               |pmh17|pmh18|pmh12               |pmh19              |pmh11              |pmh04                 |pmh07  |mse02        |ima25          |ima44         |ima908        |pmhuser   |pmhgrup  |pmhmodu        |pmhdate       |pmhacti           ]
+[pmh01               |ima02                         |ima021                        |pmh21     |ecd02                    |pmh23     |pmh05    |pmh|pmh24     |pmh25   |pmh06         |pmh13 |pmh14               |pmh17|pmh18|pmh12               |pmh19              |pmh11              |pmh04                 |pmh07  |mse02        |ima25          |ima44         |ima908        |pmhuser   |pmhgrup  |pmhmodu        |pmhdate       |pmhacti           ]
+[pmh01               |ima02                         |ima021                        |pmh21     |ecd02                    |pmh23     |pmh05    |pmh|pmh24     |pmh25   |pmh06         |pmh13 |pmh14               |pmh17|pmh18|pmh12               |pmh19              |pmh11              |pmh04                 |pmh07  |mse02        |ima25          |ima44         |ima908        |pmhuser   |pmhgrup  |pmhmodu        |pmhdate       |pmhacti           ]
+[pmh01               |ima02                         |ima021                        |pmh21     |ecd02                    |pmh23     |pmh05    |pmh|pmh24     |pmh25   |pmh06         |pmh13 |pmh14               |pmh17|pmh18|pmh12               |pmh19              |pmh11              |pmh04                 |pmh07  |mse02        |ima25          |ima44         |ima908        |pmhuser   |pmhgrup  |pmhmodu        |pmhdate       |pmhacti           ]
+[pmh01               |ima02                         |ima021                        |pmh21     |ecd02                    |pmh23     |pmh05    |pmh|pmh24     |pmh25   |pmh06         |pmh13 |pmh14               |pmh17|pmh18|pmh12               |pmh19              |pmh11              |pmh04                 |pmh07  |mse02        |ima25          |ima44         |ima908        |pmhuser   |pmhgrup  |pmhmodu        |pmhdate       |pmhacti           ]
+[pmh01               |ima02                         |ima021                        |pmh21     |ecd02                    |pmh23     |pmh05    |pmh|pmh24     |pmh25   |pmh06         |pmh13 |pmh14               |pmh17|pmh18|pmh12               |pmh19              |pmh11              |pmh04                 |pmh07  |mse02        |ima25          |ima44         |ima908        |pmhuser   |pmhgrup  |pmhmodu        |pmhdate       |pmhacti           ]
+[pmh01               |ima02                         |ima021                        |pmh21     |ecd02                    |pmh23     |pmh05    |pmh|pmh24     |pmh25   |pmh06         |pmh13 |pmh14               |pmh17|pmh18|pmh12               |pmh19              |pmh11              |pmh04                 |pmh07  |mse02        |ima25          |ima44         |ima908        |pmhuser   |pmhgrup  |pmhmodu        |pmhdate       |pmhacti           ]
+[pmh01               |ima02                         |ima021                        |pmh21     |ecd02                    |pmh23     |pmh05    |pmh|pmh24     |pmh25   |pmh06         |pmh13 |pmh14               |pmh17|pmh18|pmh12               |pmh19              |pmh11              |pmh04                 |pmh07  |mse02        |ima25          |ima44         |ima908        |pmhuser   |pmhgrup  |pmhmodu        |pmhdate       |pmhacti           ]
+}
+END -- s_pmh
+Grid gr4852
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+
+}
+END -- gr4852
+END -- VBox1
+END -- apmi258
+
+TABLES
+pmh_file
+ATTRIBUTES
+ButtonEdit pmh02=pmh_file.pmh02, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Vender    <^Y>Create Vender,Key Field, No Blank/Repeated!    ,";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit pmh01=pmh_file.pmh01, action=controlp, tabIndex=3, title="Item No.", not null, required, image="zoom", comment="<^P>Qry Item Master  ";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=4, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=5, title="Specification", noEntry;
+ButtonEdit pmh21=pmh_file.pmh21, action=controlp, tabIndex=6, title="Task No", not null, required, image="zoom";
+Edit ecd02=formonly.ecd02 type VARCHAR, tabIndex=32, title=%"Task Name", noEntry;
+ButtonEdit pmh23=pmh_file.pmh23, action=controlp, tabIndex=7, title="Cell No.", image="zoom";
+ComboBox pmh05=pmh_file.pmh05, tabIndex=8, title="Approval", not null, required, queryEditable, comment=" 0: Approved 1: Approving 2: UnApprove", items=(("0", %"Approved"),("1", %"Approving"),("2", %"UnApprove"));
+CheckBox pmh=pmh_file.pmh08, tabIndex=9, title="QC", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pmh24=pmh_file.pmh24, tabIndex=10, title="VMI U/P", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pmh25=pmh_file.pmh25, tabIndex=33, title=%"WEB Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit pmh06=pmh_file.pmh06, tabIndex=11, title="Approval Date";
+ButtonEdit pmh13=pmh_file.pmh13, action=controlp, tabIndex=12, title="Curr.", not null, required, image="zoom", comment="<^P>Qry Currency ";
+ButtonEdit pmh14=pmh_file.pmh14, action=controlp, tabIndex=13, title="Ex.Rate", image="zoom";
+Edit pmh17=pmh_file.pmh17, tabIndex=14, title="Tax", noEntry;
+Edit pmh18=pmh_file.pmh18, tabIndex=15, title="Rat", noEntry;
+Edit pmh12=pmh_file.pmh12, tabIndex=16, title="Latest Price";
+Edit pmh19=pmh_file.pmh19, tabIndex=17, title="Lastest Tax U/P";
+Edit pmh11=pmh_file.pmh11, tabIndex=18, title="Distribution Ratio";
+Edit pmh04=pmh_file.pmh04, tabIndex=19, title="Vender Item#", comment=" <^Y>Create Vender Item No.";
+ButtonEdit pmh07=pmh_file.pmh07, action=controlp, tabIndex=20, title="Brand", image="zoom", comment="<^P>Query ";
+Edit mse02=formonly.mse02 type VARCHAR, tabIndex=21, title="Brand Name";
+Edit ima25=formonly.ima25 type VARCHAR, tabIndex=22, title="Inventory Unit", noEntry;
+Edit ima44=formonly.ima44 type VARCHAR, tabIndex=23, title="Purchase Unit", noEntry;
+Edit ima908=formonly.ima908 type VARCHAR, tabIndex=24, title="Price Unit", noEntry;
+Edit pmhuser=pmh_file.pmhuser, tabIndex=25, title="Record Owner", noEntry;
+Edit pmhgrup=pmh_file.pmhgrup, tabIndex=26, title="Department", noEntry;
+Edit pmhmodu=pmh_file.pmhmodu, tabIndex=27, title="Last Modified by", noEntry;
+DateEdit pmhdate=pmh_file.pmhdate, tabIndex=28, title="Create/Modify Date";
+CheckBox pmhacti=pmh_file.pmhacti, tabIndex=29, title="Data Volid Code", valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=30;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=31;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmh(pmh_file.pmh01,formonly.ima02,formonly.ima021,pmh_file.pmh21,formonly.ecd02,pmh_file.pmh23,pmh_file.pmh05,pmh_file.pmh08,pmh_file.pmh24,pmh_file.pmh25,pmh_file.pmh06,pmh_file.pmh13,pmh_file.pmh14,pmh_file.pmh17,pmh_file.pmh18,pmh_file.pmh12,pmh_file.pmh19,pmh_file.pmh11,pmh_file.pmh04,pmh_file.pmh07,formonly.mse02,formonly.ima25,formonly.ima44,formonly.ima908,pmh_file.pmhuser,pmh_file.pmhgrup,pmh_file.pmhmodu,pmh_file.pmhdate,pmh_file.pmhacti)
+SCREEN RECORD Undefined(pmh_file.pmh02,formonly.pmc03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

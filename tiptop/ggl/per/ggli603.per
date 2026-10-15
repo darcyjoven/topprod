@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli603.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli603")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2337
+{
+ Report #     [atp01     ]
+ Account No   [atp00          ]
+ Report Name  [atp02                         ]
+
+}
+END -- gr2337
+END -- page01
+END -- folder01
+Table s_atp
+{
+[atp0|atp09         |atp10      |atp04       |atp05                         |atp11   |atp12          ]
+[atp0|atp09         |atp10      |atp04       |atp05                         |atp11   |atp12          ]
+[atp0|atp09         |atp10      |atp04       |atp05                         |atp11   |atp12          ]
+[atp0|atp09         |atp10      |atp04       |atp05                         |atp11   |atp12          ]
+[atp0|atp09         |atp10      |atp04       |atp05                         |atp11   |atp12          ]
+[atp0|atp09         |atp10      |atp04       |atp05                         |atp11   |atp12          ]
+[atp0|atp09         |atp10      |atp04       |atp05                         |atp11   |atp12          ]
+[atp0|atp09         |atp10      |atp04       |atp05                         |atp11   |atp12          ]
+[atp0|atp09         |atp10      |atp04       |atp05                         |atp11   |atp12          ]
+[atp0|atp09         |atp10      |atp04       |atp05                         |atp11   |atp12          ]
+
+}
+END -- s_atp
+Grid gr2338
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2338
+END -- VBox1
+END -- ggli603
+
+TABLES
+atp_file
+ATTRIBUTES
+Edit atp01=atp_file.atp01, tabIndex=1, not null, required;
+ButtonEdit atp00=atp_file.atp00, action=controlp, tabIndex=8, not null, required, image="zoom";
+Edit atp02=atp_file.atp02, tabIndex=2;
+Edit atp0=atp_file.atp03, tabIndex=3, title="Ln#", not null, required;
+ComboBox atp09=atp_file.atp09, tabIndex=9, title=%"Print code", items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"));
+ComboBox atp10=atp_file.atp10, tabIndex=10, title=%"Source", items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"));
+ButtonEdit atp04=atp_file.atp04, action=controlp, tabIndex=4, title="Group Code", image="zoom", comment="<^P>Query Group No. Data";
+Edit atp05=atp_file.atp05, tabIndex=5, title="Description";
+Edit atp11=atp_file.atp11, tabIndex=11, title=%"Spaces";
+ComboBox atp12=atp_file.atp12, tabIndex=12, title=%"Information to source", items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_atp(atp_file.atp03,atp_file.atp09,atp_file.atp10,atp_file.atp04,atp_file.atp05,atp_file.atp11,atp_file.atp12)
+SCREEN RECORD Undefined(atp_file.atp01,atp_file.atp02,formonly.cnt,formonly.cn2,atp_file.atp00)
+END -- INSTRUCTIONS
+

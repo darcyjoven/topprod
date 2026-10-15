@@ -1,0 +1,186 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axri090.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axri090")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+  Account Class Code   [ool01     ]
+  Account Classificati [ool02               ]
+ <G group01                                                   ><G group02                                            >
+  Accounts Receivable         [ool11               ]            Advance Receipt(Deposit)      [ool21               ]
+  Note Receivable             [ool12               ]            Suspense Credit(Note Received)[ool22               ]
+  Note Return                 [ool13               ]            Suspense Credit(TT)           [ool23               ]
+  Sales/Return Tax Acc        [ool14               ]            Suspense Credit(Negotiation)  [ool24               ]
+  Sales Revenue Accoun        [ool41               ]            Suspense Credit(Over Received)[ool25               ]
+  Sales Returned              [ool42               ]            Sales/Return Payable          [ool26               ]
+  Cost of Sales Accoun        [ool43               ]            To-Offset Bad Debt Account    [ool27               ]
+  Sales/Return                [ool44               ]            Sales Tax Account             [ool28               ]
+  Collection Discount         [ool51               ]            L/C Receivable                [ool45               ]
+  Exchange Loss Accoun        [ool52               ]            L/C Deposit                   [ool46               ]
+  Exchange Profit Acct        [ool53               ]            Sales Allowance               [ool47               ]
+  Bad Debt Loss               [ool54               ]            Receiving Rev Account         [ool15               ]
+  QJF                         [ool31               ]            QDF                           [ool32               ]
+  QJF                         [ool33               ]            QDF                           [ool34               ]
+  QJF                         [ool35               ]            Agency Account                [ool36               ]
+  Health_Donate               [ool55               ]           [label2          ]             [ool40               ]
+  Account Deduction           [ool56               ]           <                                                     >
+ <                                                            >
+}
+END -- gr1
+END -- page01
+Page page02(text="Sec Acc Info")
+Grid gr2
+{
+ <G group03                                                   >  <G group04                                            >
+  Accounts Receivable         [ool111              ]              Advance Receipt(Deposit)      [ool211              ]
+  Note Receivable             [ool121              ]              Suspense Credit(Note Received)[ool221              ]
+  Note Return                 [ool131              ]              Suspense Credit(TT)           [ool231              ]
+  Sales/Return Tax Acc        [ool141              ]              Suspense Credit(Negotiation)  [ool241              ]
+  Sales Revenue Accoun        [ool411              ]              Suspense Credit(Over Received)[ool251              ]
+  Sales Returned              [ool421              ]              Sales/Return Payable          [ool261              ]
+  Cost of Sales Accoun        [ool431              ]              To-Offset Bad Debt Account    [ool271              ]
+  Sales/Return                [ool441              ]              Sales Tax Account             [ool281              ]
+  Collection Discount         [ool511              ]              L/C Receivable                [ool451              ]
+  Exchange Loss Accoun        [ool521              ]              L/C Deposit                   [ool461              ]
+  Exchange Profit Acct        [ool531              ]              Sales Allowance               [ool471              ]
+  Bad Debt Loss               [ool541              ]              Receiving Rev Account         [ool151              ]
+  QJF                         [ool311              ]              QDF                           [ool321              ]
+  QJF                         [ool331              ]              QDF                           [ool341              ]
+  QJF                         [ool351              ]              Agency Account                [ool361              ]
+  Health_Donate               [ool551              ]             [label1               ]        [ool401              ]
+  Account Deduction           [ool561              ]
+
+ <                                                            >  <                                                     >
+}
+END -- gr2
+END -- page02
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+         userdefined_field01[oolud01                       ] userdefined_field07[oolud07        ] userdefined_field13[oolud13        ]
+                            [                              ] userdefined_field08[oolud08        ] userdefined_field14[oolud14        ]
+         userdefined_field02[oolud02        ]                userdefined_field09[oolud09        ] userdefined_field15[oolud15        ]
+         userdefined_field03[oolud03        ]                userdefined_field10[oolud10        ]
+         userdefined_field04[oolud04        ]                userdefined_field11[oolud11        ]
+         userdefined_field05[oolud05        ]                userdefined_field12[oolud12        ]
+         userdefined_field06[oolud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc1
+Grid gr4
+{
+
+ ----------Rows [cnt   ] ----------
+}
+END -- gr4
+END -- VBox1
+END -- axri090
+
+TABLES
+ool_file
+ATTRIBUTES
+Edit ool01=ool_file.ool01, tabIndex=1, not null, required;
+Edit ool02=ool_file.ool02, tabIndex=2;
+Group group01:group01;
+ButtonEdit ool11=ool_file.ool11, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool12=ool_file.ool12, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool13=ool_file.ool13, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool14=ool_file.ool14, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool41=ool_file.ool41, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool42=ool_file.ool42, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool43=ool_file.ool43, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool44=ool_file.ool44, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool51=ool_file.ool51, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool52=ool_file.ool52, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool53=ool_file.ool53, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool54=ool_file.ool54, action=controlp, tabIndex=14, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool31=ool_file.ool31, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool33=ool_file.ool33, action=controlp, tabIndex=16, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool35=ool_file.ool35, action=controlp, tabIndex=17, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool55=ool_file.ool55, action=controlp, tabIndex=18, image="zoom";
+ButtonEdit ool56=ool_file.ool56, action=controlp, tabIndex=84, image="zoom";
+Group group02:group02;
+ButtonEdit ool21=ool_file.ool21, action=controlp, tabIndex=19, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool22=ool_file.ool22, action=controlp, tabIndex=20, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool23=ool_file.ool23, action=controlp, tabIndex=21, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool24=ool_file.ool24, action=controlp, tabIndex=22, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool25=ool_file.ool25, action=controlp, tabIndex=23, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool26=ool_file.ool26, action=controlp, tabIndex=24, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool27=ool_file.ool27, action=controlp, tabIndex=25, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool28=ool_file.ool28, action=controlp, tabIndex=26, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool45=ool_file.ool45, action=controlp, tabIndex=27, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool46=ool_file.ool46, action=controlp, tabIndex=28, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool47=ool_file.ool47, action=controlp, tabIndex=29, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool15=ool_file.ool15, action=controlp, tabIndex=30, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool32=ool_file.ool32, action=controlp, tabIndex=31, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool34=ool_file.ool34, action=controlp, tabIndex=32, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool36=ool_file.ool36, action=controlp, tabIndex=33, image="zoom", comment="<^P>Qry Account ";
+Label label2:Label2, text=%"Export Subject";
+ButtonEdit ool40=formonly.ool40 type VARCHAR, action=controlp, tabIndex=34, image="zoom";
+Group group03:group03;
+ButtonEdit ool111=ool_file.ool111, action=controlp, tabIndex=35, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool121=ool_file.ool121, action=controlp, tabIndex=36, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool131=ool_file.ool131, action=controlp, tabIndex=37, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool141=ool_file.ool141, action=controlp, tabIndex=38, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool411=ool_file.ool411, action=controlp, tabIndex=39, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool421=ool_file.ool421, action=controlp, tabIndex=40, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool431=ool_file.ool431, action=controlp, tabIndex=41, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool441=ool_file.ool441, action=controlp, tabIndex=42, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool511=ool_file.ool511, action=controlp, tabIndex=43, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool521=ool_file.ool521, action=controlp, tabIndex=44, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool531=ool_file.ool531, action=controlp, tabIndex=45, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool541=ool_file.ool541, action=controlp, tabIndex=46, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool311=ool_file.ool311, action=controlp, tabIndex=47, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool331=ool_file.ool331, action=controlp, tabIndex=48, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool351=ool_file.ool351, action=controlp, tabIndex=49, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool551=ool_file.ool551, action=controlp, tabIndex=50, image="zoom";
+ButtonEdit ool561=ool_file.ool561, action=controlp, tabIndex=83, image="zoom";
+Group group04:group04;
+ButtonEdit ool211=ool_file.ool211, action=controlp, tabIndex=51, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool221=ool_file.ool221, action=controlp, tabIndex=52, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool231=ool_file.ool231, action=controlp, tabIndex=53, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool241=ool_file.ool241, action=controlp, tabIndex=54, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool251=ool_file.ool251, action=controlp, tabIndex=55, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool261=ool_file.ool261, action=controlp, tabIndex=56, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool271=ool_file.ool271, action=controlp, tabIndex=57, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool281=ool_file.ool281, action=controlp, tabIndex=58, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool451=ool_file.ool451, action=controlp, tabIndex=59, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool461=ool_file.ool461, action=controlp, tabIndex=60, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool471=ool_file.ool471, action=controlp, tabIndex=61, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool151=ool_file.ool151, action=controlp, tabIndex=62, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool321=ool_file.ool321, action=controlp, tabIndex=63, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool341=ool_file.ool341, action=controlp, tabIndex=64, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit ool361=ool_file.ool361, action=controlp, tabIndex=65, image="zoom", comment="<^P>Qry Account ";
+Label label1:Label1, text=%"Export Subject(2)";
+ButtonEdit ool401=formonly.ool401 type VARCHAR, action=controlp, tabIndex=66, image="zoom";
+TextEdit oolud01=ool_file.oolud01, tabIndex=67, stretch=NONE;
+Edit oolud07=ool_file.oolud07, tabIndex=73;
+DateEdit oolud13=ool_file.oolud13, tabIndex=79;
+Edit oolud08=ool_file.oolud08, tabIndex=74;
+DateEdit oolud14=ool_file.oolud14, tabIndex=80;
+Edit oolud02=ool_file.oolud02, tabIndex=68;
+Edit oolud09=ool_file.oolud09, tabIndex=75;
+DateEdit oolud15=ool_file.oolud15, tabIndex=81;
+Edit oolud03=ool_file.oolud03, tabIndex=69;
+Edit oolud10=ool_file.oolud10, tabIndex=76;
+Edit oolud04=ool_file.oolud04, tabIndex=70;
+Edit oolud11=ool_file.oolud11, tabIndex=77;
+Edit oolud05=ool_file.oolud05, tabIndex=71;
+Edit oolud12=ool_file.oolud12, tabIndex=78;
+Edit oolud06=ool_file.oolud06, tabIndex=72;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=82, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ool_file.ool01,ool_file.ool02,ool_file.ool11,ool_file.ool12,ool_file.ool13,ool_file.ool14,ool_file.ool41,ool_file.ool42,ool_file.ool43,ool_file.ool44,ool_file.ool51,ool_file.ool52,ool_file.ool53,ool_file.ool54,ool_file.ool31,ool_file.ool33,ool_file.ool35,ool_file.ool55,ool_file.ool21,ool_file.ool22,ool_file.ool23,ool_file.ool24,ool_file.ool25,ool_file.ool26,ool_file.ool27,ool_file.ool28,ool_file.ool45,ool_file.ool46,ool_file.ool47,ool_file.ool15,ool_file.ool32,ool_file.ool34,ool_file.ool36,ool_file.ool111,ool_file.ool121,ool_file.ool131,ool_file.ool141,ool_file.ool411,ool_file.ool421,ool_file.ool431,ool_file.ool441,ool_file.ool511,ool_file.ool521,ool_file.ool531,ool_file.ool541,ool_file.ool311,ool_file.ool331,ool_file.ool351,ool_file.ool551,ool_file.ool211,ool_file.ool221,ool_file.ool231,ool_file.ool241,ool_file.ool251,ool_file.ool261,ool_file.ool271,ool_file.ool281,ool_file.ool451,ool_file.ool461,ool_file.ool471,ool_file.ool151,ool_file.ool321,ool_file.ool341,ool_file.ool361,ool_file.oolud01,ool_file.oolud07,ool_file.oolud13,ool_file.oolud08,ool_file.oolud14,ool_file.oolud02,ool_file.oolud09,ool_file.oolud15,ool_file.oolud03,ool_file.oolud10,ool_file.oolud04,ool_file.oolud11,ool_file.oolud05,ool_file.oolud12,ool_file.oolud06,formonly.cnt,formonly.ool401,formonly.ool40,ool_file.ool561,ool_file.ool56)
+END -- INSTRUCTIONS
+

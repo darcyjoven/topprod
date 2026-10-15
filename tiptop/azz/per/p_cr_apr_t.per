@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_cr_apr_t.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"p_cr_apr")
+VBox vb3
+Folder pc2
+Page BasicData(text=%"Basic Data")
+Grid gr7
+{
+
+ Doc. Type No.[gdx01     ]
+
+}
+END -- gr7
+END -- BasicData
+END -- pc2
+HBox hb4
+Grid gr6
+{
+
+ <T s_gdx                                                                                                      >
+ [gdx03      |gdx02   |gdx04                               ]
+ [gdx03      |gdx02   |gdx04                               ]
+ [gdx03      |gdx02   |gdx04                               ]
+ [gdx03      |gdx02   |gdx04                               ]
+ [gdx03      |gdx02   |gdx04                               ]
+ [gdx03      |gdx02   |gdx04                               ]
+ [gdx03      |gdx02   |gdx04                               ]
+ [gdx03      |gdx02   |gdx04                               ]
+ [gdx03      |gdx02   |gdx04                               ]
+ [gdx03      |gdx02   |gdx04                               ]
+ <                                                                                                             >
+
+}
+END -- gr6
+Grid gr6017
+{
+
+[up  ]
+
+
+
+[down]
+
+
+
+
+
+
+
+
+}
+END -- gr6017
+END -- hb4
+Grid gr10
+{
+---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr10
+END -- vb3
+END -- Form2
+
+TABLES
+gdx_file
+ATTRIBUTES
+Edit gdx01=gdx_file.gdx01, tabIndex=1;
+Table s_gdx:s_gdx;
+ComboBox gdx03=gdx_file.gdx03, tabIndex=2, title="gdx03", not null, required;
+Edit gdx02=gdx_file.gdx02, tabIndex=3, title="gdx02", not null, required;
+Edit gdx04=gdx_file.gdx04, tabIndex=4, title="gdx04", not null, required;
+Button up:up, image="arrup";
+Button down:down, image="arrdown";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gdx(gdx_file.gdx03,gdx_file.gdx02,gdx_file.gdx04)
+SCREEN RECORD Undefined(gdx_file.gdx01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

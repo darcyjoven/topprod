@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq630.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artq630")
+VBox vb15
+Group gb14(text="Deposit Return")
+Table s_rxa
+{
+[rxaplant|rxaplan1|rxa01          |rxa09 |rxa02          |rxa03   |rxa03_de|occ93|occ930|occ71|rxa04          |rxa05          |rxa06          |rxa07     |rxaco|rxacon|rxaco1|rxaconu |rxaco2|rxa]
+[rxaplant|rxaplan1|rxa01          |rxa09 |rxa02          |rxa03   |rxa03_de|occ93|occ930|occ71|rxa04          |rxa05          |rxa06          |rxa07     |rxaco|rxacon|rxaco1|rxaconu |rxaco2|rxa]
+[rxaplant|rxaplan1|rxa01          |rxa09 |rxa02          |rxa03   |rxa03_de|occ93|occ930|occ71|rxa04          |rxa05          |rxa06          |rxa07     |rxaco|rxacon|rxaco1|rxaconu |rxaco2|rxa]
+[rxaplant|rxaplan1|rxa01          |rxa09 |rxa02          |rxa03   |rxa03_de|occ93|occ930|occ71|rxa04          |rxa05          |rxa06          |rxa07     |rxaco|rxacon|rxaco1|rxaconu |rxaco2|rxa]
+[rxaplant|rxaplan1|rxa01          |rxa09 |rxa02          |rxa03   |rxa03_de|occ93|occ930|occ71|rxa04          |rxa05          |rxa06          |rxa07     |rxaco|rxacon|rxaco1|rxaconu |rxaco2|rxa]
+
+}
+END -- s_rxa
+END -- gb14
+Group gb13(text="Details")
+VBox vb23
+Table s_rxb
+{
+[rxb02     |rxb03       |rxb04        |rxb05          |rxb05_desc   |rxb06       ]
+[rxb02     |rxb03       |rxb04        |rxb05          |rxb05_desc   |rxb06       ]
+[rxb02     |rxb03       |rxb04        |rxb05          |rxb05_desc   |rxb06       ]
+[rxb02     |rxb03       |rxb04        |rxb05          |rxb05_desc   |rxb06       ]
+[rxb02     |rxb03       |rxb04        |rxb05          |rxb05_desc   |rxb06       ]
+
+}
+END -- s_rxb
+Grid gr16
+{
+[view1     |return    ]
+
+}
+END -- gr16
+END -- vb23
+END -- gb13
+Grid gr17
+{
+
+  ----------Rows[idx     ]/[cnt       ]-----Items[cn2     ]----------
+
+}
+END -- gr17
+END -- vb15
+END -- artq630
+
+TABLES
+rxb_file,
+rxa_file
+ATTRIBUTES
+ButtonEdit rxaplant=formonly.rxaplant type CHAR, action=controlp, tabIndex=7, title="Org#Name", image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rxaplan1=formonly.rxaplant_desc type CHAR, tabIndex=8, title="Org#Name", noEntry;
+Edit rxa01=formonly.rxa01 type CHAR, tabIndex=9, title="Rtn No.";
+DateEdit rxa09=rxa_file.rxa09, tabIndex=29, title=%"Document Date";
+Edit rxa02=formonly.rxa02 type CHAR, tabIndex=10, title="Order NO.";
+ButtonEdit rxa03=formonly.rxa03 type CHAR, action=controlp, tabIndex=11, title="Customer", image="zoom.png";
+Edit rxa03_de=formonly.rxa03_desc type CHAR, tabIndex=12, title="Customer desc", noEntry;
+Edit occ93=formonly.occ930 type CHAR, tabIndex=15, title="Org#";
+ComboBox occ930=formonly.occ930_type type CHAR, tabIndex=13, title="Customer Type", items=(("1", "Ext-Vender"),("2", "In-Vender"));
+ComboBox occ71=formonly.occ71 type CHAR, tabIndex=14, title="Customer Kind", items=(("1", "Paynow Customer"),("2", "Amount Customer"));
+Edit rxa04=formonly.rxa04 type CHAR, tabIndex=16, title="Contra Amt";
+Edit rxa05=formonly.rxa05 type CHAR, tabIndex=17, title="Rejected Amt";
+Edit rxa06=formonly.rxa06 type CHAR, tabIndex=18, title="Returnable Amt";
+Edit rxa07=formonly.rxa07 type CHAR, tabIndex=19, title="Memo";
+ComboBox rxaco=formonly.rxaconf type CHAR, tabIndex=20, title="Confirmed", items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "Void"));
+DateEdit rxacon=formonly.rxacond type CHAR, tabIndex=21, title="Confirmed Date";
+TimeEdit rxaco1=formonly.rxacont type CHAR, tabIndex=22, title="Confirmed Time";
+ButtonEdit rxaconu=formonly.rxaconu type CHAR, action=controlp, tabIndex=23, title="Confirmed By", image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rxaco2=formonly.rxaconu_desc type CHAR, tabIndex=24, title="Name";
+CheckBox rxa=formonly.rxaacti type CHAR, tabIndex=25, title="valid", valueChecked = "Y", valueUnchecked = "N";
+Edit rxb02=formonly.rxb02 type SMALLINT, tabIndex=1, title="Ln#";
+Edit rxb03=formonly.rxb03 type VARCHAR, tabIndex=2, title="Order No.";
+DateEdit rxb04=rxb_file.rxb04, tabIndex=3, title="Contra Date";
+ButtonEdit rxb05=rxb_file.rxb05, action=controlp, tabIndex=4, title="Contra Employee", image="zoom";
+Edit rxb05_desc=formonly.rxb05_desc type VARCHAR, tabIndex=5, title="Employee Name";
+Edit rxb06=rxb_file.rxb06, tabIndex=6, title="Contra Amt";
+Button view1:view1, text="view1";
+Button return:return, text="return";
+Edit idx=formonly.idx type CHAR, tabIndex=28;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=26, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rxb(formonly.rxb02,formonly.rxb03,rxb_file.rxb04,rxb_file.rxb05,formonly.rxb05_desc,rxb_file.rxb06)
+SCREEN RECORD s_rxa(formonly.rxaplant,formonly.rxaplant_desc,formonly.rxa01,rxa_file.rxa09,formonly.rxa02,formonly.rxa03,formonly.rxa03_desc,formonly.occ930,formonly.occ930_type,formonly.occ71,formonly.rxa04,formonly.rxa05,formonly.rxa06,formonly.rxa07,formonly.rxaconf,formonly.rxacond,formonly.rxacont,formonly.rxaconu,formonly.rxaconu_desc,formonly.rxaacti)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

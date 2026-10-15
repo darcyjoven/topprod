@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxi050.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxi050")
+VBox VBox1
+Folder pc152
+Page page01(text="Main")
+VBox VBox2
+Grid gr1009
+{
+  Item No.            [bnf01                         ] Bond Group Code              [bxe01                        ]
+  Name                [ima02                         ] Bond Group Name              [bxe02                        ]
+  Spec.               [ima021                        ] Bond Group Spec.             [bxe03                        ]
+  Warehouse #         [bnf02     ]
+  Year/Month          [bnf0]/[bnf]
+
+ <G group01                                                             ><G group03                                      >
+  Current Period Total St-in Qty  [bnf05               ]                  Fac-in Current Receiv Qty (Mat.)      [bnf21   ]
+  Current Period Total St-out Qty [bnf06               ]                  Fac-out Current Receiv Qty (Mat.)     [bnf22   ]
+  End of Period Qty               [bnf07               ]                  Trans-out Current Receiv Qty (Mat.)   [bnf23   ]
+ <                                                                      > Current Other Receiv Qty (Mat.)       [bnf24   ]
+ <G group02                                                             > Current Return Qty (Mat.)             [bnf25   ]
+  Current Period Bonded Received Qty              [bnf08               ]  Current Exit Qty (Mat.)               [bnf26   ]
+  Current Period Non-Bonded Received Qty          [bnf09               ]  Current Charge Qty (Mat.)             [bnf27   ]
+  Current Period Local Sales Qty                  [bnf10               ]  Current Exit Qty (Prod.)              [bnf28   ]
+  Currency Period Local Sales Equivalent Material [bnf11               ]  Current STK-in Qty (Tran-Prod.)       [bnf29   ]
+  Current Period Non-Bonded Balance               [bnf12               ]  Current STK-out Qty (Tran-Prod.)      [bnf30   ]
+                                                                          Current Other STK-out Qty (Tran-Prod.)[bnf31   ]
+ <                                                                      ><                                               >
+
+}
+END -- gr1009
+END -- VBox2
+END -- page01
+END -- pc152
+Grid gr1010
+{
+  ----------Rows [cnt   ] ----------
+
+}
+END -- gr1010
+END -- VBox1
+END -- abxi050
+
+TABLES
+bnf_file
+ATTRIBUTES
+ButtonEdit bnf01=bnf_file.bnf01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Item No.";
+Edit bxe01=formonly.bxe01 type CHAR, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit bxe02=formonly.bxe02 type CHAR, tabIndex=4, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, noEntry;
+Edit bxe03=formonly.bxe03 type CHAR, tabIndex=6, noEntry;
+ButtonEdit bnf02=bnf_file.bnf02, action=controlp, tabIndex=7, noEntry, image="zoom", comment="<^P>Qry Warehouse #";
+Edit bnf0=bnf_file.bnf03, tabIndex=8;
+Edit bnf=bnf_file.bnf04, tabIndex=9;
+Group group01:group01;
+Edit bnf05=bnf_file.bnf05, tabIndex=10, not null, required;
+Edit bnf06=bnf_file.bnf06, tabIndex=11, not null, required;
+Edit bnf07=bnf_file.bnf07, tabIndex=12, not null, required;
+Group group03:group03;
+Edit bnf21=bnf_file.bnf21, tabIndex=13, not null, required;
+Edit bnf22=bnf_file.bnf22, tabIndex=14, not null, required;
+Edit bnf23=bnf_file.bnf23, tabIndex=15, not null, required;
+Edit bnf24=bnf_file.bnf24, tabIndex=16, not null, required;
+Edit bnf25=bnf_file.bnf25, tabIndex=17, not null, required;
+Edit bnf26=bnf_file.bnf26, tabIndex=18, not null, required;
+Edit bnf27=bnf_file.bnf27, tabIndex=19, not null, required;
+Edit bnf28=bnf_file.bnf28, tabIndex=20, not null, required;
+Edit bnf29=bnf_file.bnf29, tabIndex=21, not null, required;
+Edit bnf30=bnf_file.bnf30, tabIndex=22, not null, required;
+Edit bnf31=bnf_file.bnf31, tabIndex=23, not null, required;
+Group group02:group02;
+Edit bnf08=bnf_file.bnf08, tabIndex=24, not null, required, comment=" Total of Bond Tran Reason Code = A1 ";
+Edit bnf09=bnf_file.bnf09, tabIndex=25, not null, required, comment=" Total of Bond Tran Reason Code = A2 ";
+Edit bnf10=bnf_file.bnf10, tabIndex=26, not null, required;
+Edit bnf11=bnf_file.bnf11, tabIndex=27, not null, required;
+Edit bnf12=bnf_file.bnf12, tabIndex=28, not null, required, comment=" LP Non-bonded Bal + C.P Non-bonded Rcv.Qty - Equiv.Q to C.P L.Sls ";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bnf_file.bnf01,formonly.bxe01,formonly.ima02,formonly.bxe02,formonly.ima021,formonly.bxe03,bnf_file.bnf02,bnf_file.bnf03,bnf_file.bnf04,bnf_file.bnf05,bnf_file.bnf06,bnf_file.bnf07,bnf_file.bnf21,bnf_file.bnf22,bnf_file.bnf23,bnf_file.bnf24,bnf_file.bnf25,bnf_file.bnf26,bnf_file.bnf27,bnf_file.bnf28,bnf_file.bnf29,bnf_file.bnf30,bnf_file.bnf31,bnf_file.bnf08,bnf_file.bnf09,bnf_file.bnf10,bnf_file.bnf11,bnf_file.bnf12,formonly.cnt)
+END -- INSTRUCTIONS
+

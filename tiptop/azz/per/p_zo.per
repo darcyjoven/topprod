@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zo.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zo")
+VBox vb9
+Folder pc715
+Page page01(text="Main")
+Grid gr3082
+{
+ Language Type                 [zo01      ]                               [pdfimg]
+ Full Company Name for Internal[zo02                                    ] [      ]
+ Full Company Name for External[zo12                                    ] [upda]
+ <G group01                                                                          >
+  Company Abbreviation          [zo07      ]
+  Uniform#                      [zo06                ]
+  Company Address(1)            [zo041                                   ]
+  Company Address(2)            [zo042                                   ]
+  Phone                         [zo05                ]
+  Fax No.                       [zo09           ]
+  Tax ID                        [zo11      ]
+  Open Account Bank             [zo13                ][nma03                         ]
+  Bank Account #                [nma04                         ]
+  REMARK                        [zo10                                    ]
+  Listed (OTC) Company Code     [zo16                                    ]
+ <                                                                                   >
+}
+END -- gr3082
+END -- page01
+Page info(text="Info")
+Grid gr3083
+{
+ Record Owner        [zouser    ]   Last Modified By    [zomodu    ]
+ Department          [zogrup    ]   Create/Modify Date  [zodate    ]
+ Record Orig.        [zooriu    ]
+ Dept Orig.          [zoorig    ]
+}
+END -- gr3083
+END -- info
+END -- pc715
+Grid gr3084
+{
+ ---------- Rows [cnt       ] ----------
+
+}
+END -- gr3084
+END -- vb9
+END -- p_zo
+
+TABLES
+zo_file
+ATTRIBUTES
+ComboBox zo01=zo_file.zo01, tabIndex=1, not null, required, queryEditable;
+IMAGE pdfimg=formonly.pdfimg type CHAR, width = 300 pixels, height = 55 pixels;
+Edit zo02=zo_file.zo02, tabIndex=3;
+Edit zo12=zo_file.zo12, tabIndex=4;
+Button upda:update, text="Update";
+Group group01:group01;
+Edit zo07=zo_file.zo07, tabIndex=5, comment="Data will Display at Right Top Screen";
+Edit zo06=zo_file.zo06, tabIndex=6;
+Edit zo041=zo_file.zo041, tabIndex=7;
+Edit zo042=zo_file.zo042, tabIndex=8;
+Edit zo05=zo_file.zo05, tabIndex=9;
+Edit zo09=zo_file.zo09, tabIndex=10;
+Edit zo11=zo_file.zo11, tabIndex=11;
+ButtonEdit zo13=zo_file.zo13, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Details";
+Edit nma03=formonly.nma03 type CHAR, tabIndex=13, noEntry;
+Edit nma04=formonly.nma04 type CHAR, tabIndex=14;
+Edit zo10=zo_file.zo10, tabIndex=15, scroll;
+Edit zo16=zo_file.zo16, tabIndex=503;
+Edit zouser=zo_file.zouser, tabIndex=16, noEntry;
+Edit zomodu=zo_file.zomodu, tabIndex=17, noEntry;
+Edit zogrup=zo_file.zogrup, tabIndex=18, noEntry;
+DateEdit zodate=zo_file.zodate, tabIndex=19, noEntry;
+Edit zooriu=zo_file.zooriu, tabIndex=501, noEntry;
+Edit zoorig=zo_file.zoorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(zo_file.zo01,formonly.pdfimg,zo_file.zo02,zo_file.zo12,zo_file.zo07,zo_file.zo06,zo_file.zo041,zo_file.zo042,zo_file.zo05,zo_file.zo09,zo_file.zo11,zo_file.zo13,formonly.nma03,formonly.nma04,zo_file.zo10,zo_file.zo16,zo_file.zouser,zo_file.zomodu,zo_file.zogrup,zo_file.zodate,zo_file.zooriu,zo_file.zoorig,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi090.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi090")
+VBox VBox1
+Folder pc837
+Page page01(text="Page01")
+Table s_geb
+{
+[geb01        |geb02               |geb03     |gea02               |gebac]
+[geb01        |geb02               |geb03     |gea02               |gebac]
+[geb01        |geb02               |geb03     |gea02               |gebac]
+[geb01        |geb02               |geb03     |gea02               |gebac]
+[geb01        |geb02               |geb03     |gea02               |gebac]
+[geb01        |geb02               |geb03     |gea02               |gebac]
+[geb01        |geb02               |geb03     |gea02               |gebac]
+[geb01        |geb02               |geb03     |gea02               |gebac]
+[geb01        |geb02               |geb03     |gea02               |gebac]
+[geb01        |geb02               |geb03     |gea02               |gebac]
+
+}
+END -- s_geb
+END -- page01
+END -- pc837
+Grid gr4626
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4626
+END -- VBox1
+END -- aooi090
+
+TABLES
+geb_file
+ATTRIBUTES
+Edit geb01=geb_file.geb01, tabIndex=1, title="Country Code", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit geb02=geb_file.geb02, tabIndex=2, title="Country Name";
+ButtonEdit geb03=geb_file.geb03, action=controlp, tabIndex=3, title="Area Code", image="zoom", comment="<^P> Query Area ";
+Edit gea02=formonly.gea02 type CHAR, tabIndex=4, title="Area", noEntry;
+CheckBox gebac=geb_file.gebacti, tabIndex=5, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_geb(geb_file.geb01,geb_file.geb02,geb_file.geb03,formonly.gea02,geb_file.gebacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

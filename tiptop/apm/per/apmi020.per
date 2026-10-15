@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi020")
+VBox VBox1
+Folder pc909
+Page page01(text="Main")
+VBox VBox2
+Grid gr4807
+{
+ <G group01                                             ><G group02                                   >
+  Flow Code           [pob01     ]                       [pob03                                   ]
+  Description         [poa02                         ]
+  Effective Date      [pob02       ]
+ <                                                      ><                                            >
+
+}
+END -- gr4807
+END -- VBox2
+END -- page01
+END -- pc909
+Grid gr4808
+{
+   [dummy01         ][dummy02    ][dummy03  ][dummy04   ]
+ 1.[poa11           ][pmc031     ][pob11    ][pob12     ]
+ 2.[poa21           ][pmc032     ][pob21    ][pob22     ]
+ 3.[poa31           ][pmc033     ][pob31    ][pob32     ]
+ 4.[poa41           ][pmc034     ][pob41    ][pob42     ]
+ 5.[poa51           ][pmc035     ][pob51    ][pob52     ]
+ 6.[poa61           ][pmc036     ][pob61    ][pob62     ]
+}
+END -- gr4808
+Grid gr4809
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr4809
+END -- VBox1
+END -- apmi020
+
+TABLES
+pob_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit pob01=pob_file.pob01, action=controlp, tabIndex=1, image="zoom", comment="Enter Code,No Blank. <^P>Qry Flow Code";
+Edit poa02=formonly.poa02 type CHAR, tabIndex=2, noEntry;
+DateEdit pob02=pob_file.pob02, tabIndex=3, comment="Enter this Pricing Effective Date";
+Group group02:group02, text="Pricing Base";
+RadioGroup pob03=pob_file.pob03, tabIndex=4, items=(("1", "Source Vender"),("2", "Upstream Vender"));
+Label dummy01:dummy01, text="Downstream Vender";
+Label dummy02:dummy02, text="Abbreviation";
+Label dummy03:dummy03, text="Pricing Method";
+Label dummy04:dummy04, text="Priving Ratio";
+Edit poa11=formonly.poa11 type CHAR, tabIndex=5, noEntry;
+Edit pmc031=formonly.pmc031 type CHAR, tabIndex=6, noEntry;
+ComboBox pob11=pob_file.pob11, tabIndex=7, queryEditable, comment="1:by Ratio 2:By Transfer Unit Price 3:0 if Unit Price =0, or same as 2", items=(("Item1", ""),("1", "1"),("2", "2"),("3", "3"));
+Edit pob12=pob_file.pob12, tabIndex=8, comment="Enter Percentage";
+Edit poa21=formonly.poa21 type CHAR, tabIndex=9, noEntry;
+Edit pmc032=formonly.pmc032 type CHAR, tabIndex=10, noEntry;
+ComboBox pob21=pob_file.pob21, tabIndex=11, queryEditable, comment="1:by Ratio 2:By Transfer Unit Price 3:0 if Unit Price =0, or same as 2", items=(("Item2", ""),("1", "1"),("2", "2"),("3", "3"));
+Edit pob22=pob_file.pob22, tabIndex=12, comment="Enter Percentage";
+Edit poa31=formonly.poa31 type CHAR, tabIndex=13, noEntry;
+Edit pmc033=formonly.pmc033 type CHAR, tabIndex=14, noEntry;
+ComboBox pob31=pob_file.pob31, tabIndex=15, queryEditable, comment="1:by Ratio 2:By Transfer Unit Price 3:0 if Unit Price =0, or same as 2", items=(("Item3", ""),("1", "1"),("2", "2"),("3", "3"));
+Edit pob32=pob_file.pob32, tabIndex=16, comment="Enter Percentage";
+Edit poa41=formonly.poa41 type CHAR, tabIndex=17, noEntry;
+Edit pmc034=formonly.pmc034 type CHAR, tabIndex=18, noEntry;
+ComboBox pob41=pob_file.pob41, tabIndex=19, queryEditable, comment="1:by Ratio 2:By Transfer Unit Price 3:0 if Unit Price =0, or same as 2", items=(("Item4", ""),("1", "1"),("2", "2"),("3", "3"));
+Edit pob42=pob_file.pob42, tabIndex=20, comment="Enter Percentage";
+Edit poa51=formonly.poa51 type CHAR, tabIndex=21, noEntry;
+Edit pmc035=formonly.pmc035 type CHAR, tabIndex=22, noEntry;
+ComboBox pob51=pob_file.pob51, tabIndex=23, queryEditable, comment="1:by Ratio 2:By Transfer Unit Price 3:0 if Unit Price =0, or same as 2", items=(("Item5", ""),("1", "1"),("2", "2"),("3", "3"));
+Edit pob52=pob_file.pob52, tabIndex=24, comment="Enter Percentage";
+Edit poa61=formonly.poa61 type CHAR, tabIndex=25, noEntry;
+Edit pmc036=formonly.pmc036 type CHAR, tabIndex=26, noEntry;
+ComboBox pob61=pob_file.pob61, tabIndex=27, queryEditable, comment="1:by Ratio 2:By Transfer Unit Price 3:0 if Unit Price =0, or same as 2", items=(("Item6", ""),("1", "1"),("2", "2"),("3", "3"));
+Edit pob62=pob_file.pob62, tabIndex=28, comment="Enter Percentage";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pob_file.pob01,formonly.poa02,pob_file.pob02,pob_file.pob03,formonly.poa11,formonly.pmc031,pob_file.pob11,pob_file.pob12,formonly.poa21,formonly.pmc032,pob_file.pob21,pob_file.pob22,formonly.poa31,formonly.pmc033,pob_file.pob31,pob_file.pob32,formonly.poa41,formonly.pmc034,pob_file.pob41,pob_file.pob42,formonly.poa51,formonly.pmc035,pob_file.pob51,pob_file.pob52,formonly.poa61,formonly.pmc036,pob_file.pob61,pob_file.pob62,formonly.cnt)
+END -- INSTRUCTIONS
+

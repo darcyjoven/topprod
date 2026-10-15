@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli140.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli140")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr2403
+{
+ Year  [ahi01 ]
+ Month [ahi02 ]        Cost Calculation Method  [ahi06   ]
+}
+END -- gr2403
+END -- page01
+END -- folder01
+Table s_ahi
+{
+[ahi03                         |ima02                         |ima021                        |ima25|ahi04             |ahi05             |ahi07   ]
+[ahi03                         |ima02                         |ima021                        |ima25|ahi04             |ahi05             |ahi07   ]
+[ahi03                         |ima02                         |ima021                        |ima25|ahi04             |ahi05             |ahi07   ]
+[ahi03                         |ima02                         |ima021                        |ima25|ahi04             |ahi05             |ahi07   ]
+[ahi03                         |ima02                         |ima021                        |ima25|ahi04             |ahi05             |ahi07   ]
+[ahi03                         |ima02                         |ima021                        |ima25|ahi04             |ahi05             |ahi07   ]
+[ahi03                         |ima02                         |ima021                        |ima25|ahi04             |ahi05             |ahi07   ]
+[ahi03                         |ima02                         |ima021                        |ima25|ahi04             |ahi05             |ahi07   ]
+[ahi03                         |ima02                         |ima021                        |ima25|ahi04             |ahi05             |ahi07   ]
+[ahi03                         |ima02                         |ima021                        |ima25|ahi04             |ahi05             |ahi07   ]
+}
+END -- s_ahi
+Grid gr2404
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2404
+END -- VBox1
+END -- agli140
+
+TABLES
+ahi_file
+ATTRIBUTES
+Edit ahi01=ahi_file.ahi01, tabIndex=1, not null, required;
+Edit ahi02=ahi_file.ahi02, tabIndex=2, not null, required;
+ComboBox ahi06=ahi_file.ahi06, tabIndex=12, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually Batch Cost"),("4", "Identify Manually Item Cost"),("5", "Identify Manually Store Profit Center"));
+ButtonEdit ahi03=ahi_file.ahi03, action=controlp, tabIndex=3, title="Item No.", not null, required, image="zoom", comment="<^P>Qry Item No.";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, title="Desc.", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, title="Spec.", noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=6, title="Unit", noEntry;
+Edit ahi04=ahi_file.ahi04, tabIndex=7, title="Cost Price", not null, required;
+Edit ahi05=ahi_file.ahi05, tabIndex=8, title="Inter Price", not null, required;
+ButtonEdit ahi07=ahi_file.ahi07, action=controlp, tabIndex=11, title=%"Category No.", image="zoom";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ahi(ahi_file.ahi03,formonly.ima02,formonly.ima021,formonly.ima25,ahi_file.ahi04,ahi_file.ahi05,ahi_file.ahi07)
+SCREEN RECORD Undefined(ahi_file.ahi01,ahi_file.ahi02,formonly.cnt,formonly.cn2,ahi_file.ahi06)
+END -- INSTRUCTIONS
+

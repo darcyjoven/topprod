@@ -1,0 +1,323 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asmi300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asmi300")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr865
+{
+ <G group011                                               > <G group012                                             >
+  Document            [smyslip]                                [smyauno                                          ]     [imgmksg]
+  Document Name       [smydesc             ]                                                                           [       ]
+  Module              [smysys     ]
+  Document Property   [smykind    ][ename0                ]
+  Document Type       [smy72      ][smy72_name            ]
+
+ <                                                         >  Warhouse Restric     [smyware                    ]
+                                                             <                                                       >
+
+}
+END -- gr865
+END -- page01
+Page info(text="Info")
+Grid gr866
+{
+ Record Owner        [smyuser   ] Last Modified by    [smymodu   ] Data Valid Code     [smyacti   ]
+ Department          [smygrup   ] Create/Modify Date  [smydate   ]
+ Record Orig.        [smyoriu   ]
+ Dept Orig.          [smyorig   ]
+}
+END -- gr866
+END -- info
+END -- folder01
+Folder folder02
+Page page02(text="General")
+HBox HBox1
+Grid gr867
+{
+ <G group02                                                                                              >
+  [smy58                         ]          Sub. Type [smy57_6                ]
+  [smy57_3                           ]                [                       ]
+   St-in Note/Run Card  [smy52  ]          [smy57_1     ] [smy57_4           ]
+   QC R. Note           [smy51  ]          [smy57_2    ]  [smy57_5             ]
+   M.ISS Note           [smy61  ]
+   Attribute Group      [smy62  ]
+   QC Note              [smy63  ]
+   PBI                  [smy75  ]
+  [smyprint               ]
+  [smydmy4                ]
+
+
+
+
+
+ <                                                                                                       >
+
+}
+END -- gr867
+Grid Grid4
+{
+
+ <G gb8                                                     >
+ [smy64                                                 ]
+ [                                                      ]
+ [                                                      ]
+ <                                                          >
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid4
+END -- HBox1
+END -- page02
+Page page04(text="Approve")
+Grid gr869
+{
+ <G group04                     >
+  [smyapr                     ]
+  [smyatsg                    ]
+   Approval Level  [smysign   ]
+   Approval Days   [smydays   ]
+   Priority        [smyprit   ]
+ <                              >
+
+}
+END -- gr869
+END -- page04
+Page page05(text="User Auth.")
+Grid gr870
+{
+ <G group05                                        >
+   Memo        [smymemo1                      ]
+   User Auth.  [smu02_display                     ]
+   Dept.Auth.  [smv02_display                     ]
+ <                                                 >
+
+}
+END -- gr870
+END -- page05
+Page page03(text="Accounting")
+Grid gr871
+{
+ <G group06                                                                                        >
+  Cost Account Class  [smydmy2   ]
+ [smydmy1                        ]
+ [smy56                          ]
+ [smy59                                              ]
+ [smy53                          ]
+
+ <                                                                                                 >
+
+
+}
+END -- gr871
+END -- page03
+Page page06(text=%"Slip")
+Grid Grid1
+{
+
+   [smy73                          ]
+
+   <G gb8_1                            >
+     W/O Slip             [smy69  ]
+     Issue Slip           [smy70  ]
+     Stock-in Slip        [smy71  ]
+   <                                   >
+
+
+
+
+
+}
+END -- Grid1
+END -- page06
+Page page07(text=%"Daily Doc.")
+VBox vb4
+Grid gr9_1
+{
+ <G gb10                             >
+  Stock-in Doc. Type        [smy67   ]
+  FQC Doc. Type             [smy68   ]
+  Sub PO Type               [smy76   ]
+  Sub Goods Receipt Type    [smy77   ]
+  Default Machine No.       [smy80   ]
+
+
+ <                                   >
+}
+END -- gr9_1
+END -- vb4
+END -- page07
+Page page08(text=%"Counting")
+Grid Grid2
+{
+
+ <G gb11                                   >
+   type          [smy78                 ]
+
+   WH            [smy79                 ]
+
+ <                                         >
+
+
+
+
+
+
+}
+END -- Grid2
+END -- page08
+Page userdefined_field(text=%"User Defined Field")
+Grid Grid3
+{
+
+ userdefined_field01[smyud01                 ]userdefined_field07[smyud07                 ]userdefined_field13[smyud13                ]
+                    [                        ]
+ userdefined_field02[smyud02                 ]userdefined_field08[smyud08                 ]userdefined_field14[smyud14                ]
+
+ userdefined_field03[smyud03                 ]userdefined_field09[smyud09                ] userdefined_field15[smyud15                ]
+
+ userdefined_field04[smyud04                 ]userdefined_field10[smyud10                ]
+
+ userdefined_field05[smyud05                 ]userdefined_field11[smyud11                ]
+
+ userdefined_field06[smyud06                 ]userdefined_field12[smyud12                ]
+
+}
+END -- Grid3
+END -- userdefined_field
+END -- folder02
+Table s_smz
+{
+[smz021                   |smz031                ]
+[smz021                   |smz031                ]
+[smz021                   |smz031                ]
+[smz021                   |smz031                ]
+[smz021                   |smz031                ]
+[smz021                   |smz031                ]
+[smz021                   |smz031                ]
+[smz021                   |smz031                ]
+[smz021                   |smz031                ]
+}
+END -- s_smz
+Grid gr872
+{
+ ---------- Rows [cnt   ] ---------- Warehouse Detail Count[cn2       ] ----------
+
+
+
+}
+END -- gr872
+END -- VBox1
+END -- asmi300
+
+TABLES
+smy_file
+ATTRIBUTES
+Group group011:group011;
+ButtonEdit smyslip=smy_file.smyslip, action=controlp, tabIndex=1, not null, required, image="zoom", upShift, comment="Key Field, No Blank/Repeated!      ";
+Edit smydesc=smy_file.smydesc, tabIndex=2, not null, required;
+ComboBox smysys=smy_file.smysys, tabIndex=3, not null, required, queryEditable, items=(("abm", "ABM(BOM Module)"),("aim", "AIM-INV Module"),("apm", "APM Module"),("asf", "ASF Module"),("aem", "AEM Module"),("asr", %"ASR Module"),("aqc", "AQC Module"));
+ButtonEdit smykind=smy_file.smykind, action=controlp, tabIndex=4, not null, required, image="zoom", upShift, comment="<^P>Qry Document Property";
+Edit ename0=formonly.ename0 type VARCHAR, tabIndex=5, noEntry;
+ButtonEdit smy72=smy_file.smy72, action=controlp, tabIndex=48, image="zoom";
+Edit smy72_name=formonly.smy72_name type VARCHAR, tabIndex=49, noEntry;
+Group group012:group012;
+CheckBox smyauno=smy_file.smyauno, tabIndex=6, text="Auto Numbering", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Document No. Given by System? ";
+ComboBox smyware=smy_file.smyware, tabIndex=7, not null, required, queryEditable, items=(("0", "Free"),("1", "Set Accepted W/H"),("2", "Set Accepted W/H /Loc "),("3", "Set Rejected W/H"),("4", "Set Rejected W/H /Loc  "));
+IMAGE imgmksg=formonly.imgmksg type VARCHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit smyuser=smy_file.smyuser, tabIndex=8, noEntry;
+Edit smymodu=smy_file.smymodu, tabIndex=9, noEntry;
+Edit smyacti=smy_file.smyacti, tabIndex=10, noEntry, upShift;
+Edit smygrup=smy_file.smygrup, tabIndex=11, noEntry;
+DateEdit smydate=smy_file.smydate, tabIndex=12, noEntry;
+Edit smyoriu=smy_file.smyoriu, tabIndex=46, noEntry;
+Edit smyorig=smy_file.smyorig, tabIndex=47, noEntry;
+Group group02:group02;
+CheckBox smy58=smy_file.smy58, tabIndex=13, text="Generate W/O Run Card?", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Generate W/O Run Card?";
+RadioGroup smy57_6=formonly.smy57_6 type VARCHAR, tabIndex=23, not null, required, items=(("1", "One to One"),("2", "One to Multi"));
+CheckBox smy57_3=formonly.smy57_3 type VARCHAR, tabIndex=14, text="Store-in Note #/Return Note #", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Store-in Note #/Return Note # ";
+ButtonEdit smy52=smy_file.smy52, action=controlp, tabIndex=15, image="zoom", comment="Enter St-in Note, If W/O, Enter Run Card <^P>Qry Documents";
+CheckBox smy57_1=formonly.smy57_1 type VARCHAR, tabIndex=24, text="Routing?", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Routing?";
+CheckBox smy57_4=formonly.smy57_4 type VARCHAR, tabIndex=25, text="Blanket PO ? ", not null, required, valueChecked = "Y", valueUnchecked = "N", comment=" By Blanket POFlow";
+ButtonEdit smy51=smy_file.smy51, action=controlp, tabIndex=16, image="zoom", comment="Enter QC/Return Note, <^P>Qry Documents";
+CheckBox smy57_2=formonly.smy57_2 type VARCHAR, tabIndex=26, text="FQC? ", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="FQC ? ";
+CheckBox smy57_5=formonly.smy57_5 type VARCHAR, tabIndex=27, text="Foreign Purchase", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Foreign Purchase";
+ButtonEdit smy61=smy_file.smy61, action=controlp, tabIndex=17, image="zoom", comment="Enter M.ISS Note, <^P>Qry Documents";
+ButtonEdit smy62=smy_file.smy62, action=controlp, tabIndex=18, image="zoom", comment="<^P>Qry Attribute Group";
+ButtonEdit smy63=smy_file.smy63, action=controlp, tabIndex=19, image="zoom", comment="Enter QC Note, <^P>Qry Documents";
+ButtonEdit smy75=smy_file.smy75, action=controlp, tabIndex=20, image="zoom", comment="Enter QC Note, <^P>Qry Documents";
+CheckBox smyprint=smy_file.smyprint, tabIndex=21, text="Print Now", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Auto Print After Doc Entered!";
+CheckBox smydmy4=smy_file.smydmy4, tabIndex=22, text="Confirm Now", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb8:gb8, text="Doc. Control of GPM Integration";
+RadioGroup smy64=smy_file.smy64, tabIndex=45, default = "1", not null, required, items=(("0", "No Control"),("1", "Control,Warning Message Only"),("2", "Control,Confirmation is not allowed if unmatched"));
+Group group04:group04;
+CheckBox smyapr=smy_file.smyapr, tabIndex=28, text="Approve?", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Doc to Approve ? ";
+CheckBox smyatsg=smy_file.smyatsg, tabIndex=29, text="Auto Approval", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Doc Approval Level Auto Issued by Module?";
+ButtonEdit smysign=smy_file.smysign, action=controlp, tabIndex=30, image="zoom", comment="Doc Approval Level Issued By Module, <^P>Qry Approval level";
+Edit smydays=smy_file.smydays, tabIndex=31;
+Edit smyprit=smy_file.smyprit, tabIndex=32;
+Group group05:group05;
+Edit smymemo1=smy_file.smymemo1, tabIndex=33;
+Edit smu02_display=formonly.smu02_display type VARCHAR, tabIndex=34, noEntry;
+Edit smv02_display=formonly.smv02_display type VARCHAR, tabIndex=35, noEntry;
+Group group06:group06;
+ComboBox smydmy2=smy_file.smydmy2, tabIndex=36, not null, required, queryEditable, items=(("1", "Purchase"),("2", "Sales"),("3", "Withdraw"),("4", "Transfer"),("5", "Adjust"),("X", "Un-Inventory Transaction"));
+CheckBox smydmy1=smy_file.smydmy1, tabIndex=37, text="Cost-PURCHASE", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox smy56=smy_file.smy56, tabIndex=38, text="Affect Idle Date?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox smy59=smy_file.smy59, tabIndex=39, text="Budget Control", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox smy53=smy_file.smy53, tabIndex=40, text="Inner Order", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox smy73=smy_file.smy73, tabIndex=50, text="Combination & Disassembly?", not null, valueChecked = "Y", valueUnchecked = "N";
+Group gb8_1:gb8_1, text="Combination & Disassembly ";
+ButtonEdit smy69=smy_file.smy69, action=controlp, tabIndex=51, image="zoom", comment="Enter St-in Note, If W/O, Enter Run Card <^P>Qry Documents";
+ButtonEdit smy70=smy_file.smy70, action=controlp, tabIndex=52, image="zoom", comment="Enter St-in Note, If W/O, Enter Run Card <^P>Qry Documents";
+ButtonEdit smy71=smy_file.smy71, action=controlp, tabIndex=53, image="zoom", comment="Enter St-in Note, If W/O, Enter Run Card <^P>Qry Documents";
+Group gb10:gb10, text="";
+ButtonEdit smy67=smy_file.smy67, action=controlp, tabIndex=54, image="zoom.png";
+ButtonEdit smy68=smy_file.smy68, action=controlp, tabIndex=55, image="zoom.png";
+ButtonEdit smy76=smy_file.smy76, action=controlp, tabIndex=56, image="zoom.png";
+ButtonEdit smy77=smy_file.smy77, action=controlp, tabIndex=57, image="zoom.png";
+ButtonEdit smy80=smy_file.smy80, action=controlp, tabIndex=75, image="zoom.png";
+Group gb11:gb11, text=%"";
+ComboBox smy78=smy_file.smy78, tabIndex=58, noEntry, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"));
+ButtonEdit smy79=smy_file.smy79, action=controlp, tabIndex=59, not null, required, image="zoom", upShift, comment="<^P>Qry Document Property";
+TextEdit smyud01=smy_file.smyud01, tabIndex=60;
+Edit smyud07=smy_file.smyud07, tabIndex=61;
+DateEdit smyud13=smy_file.smyud13, tabIndex=62;
+Edit smyud02=smy_file.smyud02, tabIndex=63;
+Edit smyud08=smy_file.smyud08, tabIndex=64;
+DateEdit smyud14=smy_file.smyud14, tabIndex=65;
+Edit smyud03=smy_file.smyud03, tabIndex=66;
+Edit smyud09=smy_file.smyud09, tabIndex=67;
+DateEdit smyud15=smy_file.smyud15, tabIndex=68;
+Edit smyud04=smy_file.smyud04, tabIndex=69;
+Edit smyud10=smy_file.smyud10, tabIndex=70;
+Edit smyud05=smy_file.smyud05, tabIndex=71;
+Edit smyud11=smy_file.smyud11, tabIndex=72;
+Edit smyud06=smy_file.smyud06, tabIndex=73;
+Edit smyud12=smy_file.smyud12, tabIndex=74;
+ButtonEdit smz021=formonly.smz021 type VARCHAR, action=controlp, tabIndex=41, title="Define Warehouse", image="zoom", comment="Enter Defined Warehouse, Use \'X*\'or\'XY*\' for 1st 1/2 Cd Matched   <^P>Qry Details <^T>Qry Warehouse";
+ButtonEdit smz031=formonly.smz031 type VARCHAR, action=controlp, tabIndex=42, title="Location", image="zoom", comment="Enter Defined Location, Use \'X*\'or\'XY*\' for 1st 1/2 Cd Matched   <^P>Qry Details <^T>Qry Location";
+Edit cnt=formonly.cnt type VARCHAR, tabIndex=43, noEntry;
+Edit cn2=formonly.cn2 type VARCHAR, tabIndex=44, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_smz(formonly.smz021,formonly.smz031)
+SCREEN RECORD Undefined(smy_file.smyslip,smy_file.smydesc,smy_file.smysys,smy_file.smykind,formonly.ename0,smy_file.smy72,formonly.smy72_name,smy_file.smyauno,smy_file.smyware,formonly.imgmksg,smy_file.smyuser,smy_file.smymodu,smy_file.smyacti,smy_file.smygrup,smy_file.smydate,smy_file.smyoriu,smy_file.smyorig,smy_file.smy58,formonly.smy57_3,smy_file.smy52,smy_file.smy51,smy_file.smy61,smy_file.smy62,smy_file.smy63,smy_file.smy75,smy_file.smyprint,smy_file.smydmy4,formonly.smy57_6,formonly.smy57_1,formonly.smy57_4,formonly.smy57_2,formonly.smy57_5,smy_file.smy64,smy_file.smyapr,smy_file.smyatsg,smy_file.smysign,smy_file.smydays,smy_file.smyprit,smy_file.smymemo1,formonly.smu02_display,formonly.smv02_display,smy_file.smydmy2,smy_file.smydmy1,smy_file.smy56,smy_file.smy59,smy_file.smy53,formonly.cnt,formonly.cn2,smy_file.smy73,smy_file.smy69,smy_file.smy70,smy_file.smy71,smy_file.smy67,smy_file.smy68,smy_file.smy76,smy_file.smy77,smy_file.smy78,smy_file.smy79,smy_file.smyud01,smy_file.smyud07,smy_file.smyud13,smy_file.smyud02,smy_file.smyud08,smy_file.smyud14,smy_file.smyud03,smy_file.smyud09,smy_file.smyud15,smy_file.smyud04,smy_file.smyud10,smy_file.smyud05,smy_file.smyud11,smy_file.smyud06,smy_file.smyud12,smy_file.smy80)
+END -- INSTRUCTIONS
+

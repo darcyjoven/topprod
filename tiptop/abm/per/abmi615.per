@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi615.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi615")
+Folder pc1231
+Page page01(text="Main")
+VBox vb3
+Table s_boi
+{
+[boi01     |boi02     |boi03               |boiacti   ]
+[boi01     |boi02     |boi03               |boiacti   ]
+[boi01     |boi02     |boi03               |boiacti   ]
+[boi01     |boi02     |boi03               |boiacti   ]
+[boi01     |boi02     |boi03               |boiacti   ]
+[boi01     |boi02     |boi03               |boiacti   ]
+[boi01     |boi02     |boi03               |boiacti   ]
+[boi01     |boi02     |boi03               |boiacti   ]
+[boi01     |boi02     |boi03               |boiacti   ]
+[boi01     |boi02     |boi03               |boiacti   ]
+
+}
+END -- s_boi
+Grid gr6168
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr6168
+END -- vb3
+END -- page01
+END -- pc1231
+END -- abmi615
+
+TABLES
+boi_file
+ATTRIBUTES
+Edit boi01=boi_file.boi01, tabIndex=1, title="Parameter Code", not null, required;
+Edit boi02=boi_file.boi02, tabIndex=2, title="Parameter Text", not null, required;
+Edit boi03=boi_file.boi03, tabIndex=3, title="Parameter Description";
+CheckBox boiacti=boi_file.boiacti, tabIndex=4, title="Validity?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_boi(boi_file.boi01,boi_file.boi02,boi_file.boi03,boi_file.boiacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

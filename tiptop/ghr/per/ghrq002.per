@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrq002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+HBox HBox1(splitter)
+Tree tree(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children)
+{
+[name             ]
+[name             ]
+[name             ]
+[name             ]
+[name             ]
+
+
+
+
+
+
+
+
+
+
+}
+END -- tree
+Folder Folder1
+Page Page1(action=page1, text=%"Page1")
+Table Table1
+{
+[hrap05      |hrap06                |hrap01        |hrap02        |hrap07        |hrap08      |hrao00       |hraa02        ]
+[hrap05      |hrap06                |hrap01        |hrap02        |hrap07        |hrap08      |hrao00       |hraa02        ]
+[hrap05      |hrap06                |hrap01        |hrap02        |hrap07        |hrap08      |hrao00       |hraa02        ]
+[hrap05      |hrap06                |hrap01        |hrap02        |hrap07        |hrap08      |hrao00       |hraa02        ]
+[hrap05      |hrap06                |hrap01        |hrap02        |hrap07        |hrap08      |hrao00       |hraa02        ]
+
+
+
+
+
+
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+END -- HBox1
+END -- ghrq000
+
+ATTRIBUTES
+Edit name=formonly.name, tabIndex=1, title=%"name", imageColumn=img;
+Phantom formonly.img;
+Phantom formonly.pid;
+Phantom formonly.id;
+Phantom formonly.has_children;
+Phantom formonly.expanded;
+Phantom formonly.level;
+Phantom formonly.treekey1;
+Phantom formonly.treekey2;
+Edit hrap05=formonly.hrap05 type VARCHAR, tabIndex=2, title=%"hrap05", noEntry;
+Edit hrap06=formonly.hrap06 type VARCHAR, tabIndex=3, title=%"hrap06", noEntry;
+Edit hrap01=formonly.hrap01 type VARCHAR, tabIndex=4, title=%"hrap01", noEntry;
+Edit hrap02=formonly.hrap02 type VARCHAR, tabIndex=5, title=%"hrap02", noEntry;
+CheckBox hrap07=formonly.hrap07 type VARCHAR, tabIndex=6, title=%"hrap07", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrap08=formonly.hrap08 type VARCHAR, tabIndex=7, title=%"hrap08", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit hrao00=formonly.hrao00 type VARCHAR, tabIndex=8, title=%"hrao00", noEntry;
+Edit hraa02=formonly.hraa02 type VARCHAR, tabIndex=9, title=%"hraa02", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tree(formonly.name,formonly.img,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.treekey1,formonly.treekey2)
+SCREEN RECORD s_hrap(formonly.hrap05,formonly.hrap06,formonly.hrap01,formonly.hrap02,formonly.hrap07,formonly.hrap08,formonly.hrao00,formonly.hraa02)
+END -- INSTRUCTIONS
+

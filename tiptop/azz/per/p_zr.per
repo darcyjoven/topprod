@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zr.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zr")
+VBox VBox1
+Folder pc714
+Page page01(text="Main")
+Grid gr3080
+{
+ <G group01                                  >
+  Program ID   [zr01      ]
+  Program Name [gaz03                        ]
+ <                                           >
+
+}
+END -- gr3080
+END -- page01
+END -- pc714
+Table s_zr
+{
+[zr02       |zr03       |gat03                  |gat06     |gat07   ]
+[zr02       |zr03       |gat03                  |gat06     |gat07   ]
+[zr02       |zr03       |gat03                  |gat06     |gat07   ]
+[zr02       |zr03       |gat03                  |gat06     |gat07   ]
+[zr02       |zr03       |gat03                  |gat06     |gat07   ]
+[zr02       |zr03       |gat03                  |gat06     |gat07   ]
+[zr02       |zr03       |gat03                  |gat06     |gat07   ]
+[zr02       |zr03       |gat03                  |gat06     |gat07   ]
+[zr02       |zr03       |gat03                  |gat06     |gat07   ]
+[zr02       |zr03       |gat03                  |gat06     |gat07   ]
+
+}
+END -- s_zr
+Grid gr3081
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3081
+END -- VBox1
+END -- p_zr
+
+TABLES
+zr_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit zr01=zr_file.zr01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=2, noEntry;
+Edit zr02=zr_file.zr02, tabIndex=3, title="Table ID", not null, required;
+ComboBox zr03=zr_file.zr03, tabIndex=4, title="Using Type", not null, required, items=(("S", %"Select"),("U", %"Update"),("I", %"Insert"),("D", %"Delete"));
+Edit gat03=formonly.gat03 type CHAR, tabIndex=5, title="Table Name", noEntry;
+Edit gat06=formonly.gat06 type CHAR, tabIndex=6, title="Module ID";
+ComboBox gat07=formonly.gat07 type CHAR, tabIndex=7, title="Using As", queryEditable, items=(("P", %"Parameter File"),("M", %"Master File"),("T", %"Tranaction File"),("S", %"Status File"),("B", %"Basis File"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zr(zr_file.zr02,zr_file.zr03,formonly.gat03,formonly.gat06,formonly.gat07)
+SCREEN RECORD Undefined(zr_file.zr01,formonly.gaz03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

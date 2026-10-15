@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt253.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt253")
+VBox vb4
+Folder folder01
+Page Page16(text=%"Basic Data")
+Grid gr13
+{
+
+ Adjusted No.[rvo01                 ]  Confirmation     [rvoconf     ]       [imgmksg]Memo[rvo04                            ]
+ Delivery No.[rvo02                 ]  Confirmation Date[rvocond     ]       [       ]    [                                 ]
+ Book Date   [rvo03          ]         Confirmed By     [rvoconu          |rvoconu_desc  ][                                 ]
+ Organization[rvoplant         ][rvoplant_desc     ]                                      [                                 ]
+
+}
+END -- gr13
+END -- Page16
+Page Info(text=%"Info")
+Grid gr12
+{
+ Record Owner        [rvouser   ] Last Modified by    [rvomodu   ] Data Valid Code     [rvoacti   ]
+ Department          [rvogrup   ] Modify Date         [rvodate   ] Create Date         [rvocrat   ]
+ Record Orig.        [rvooriu   ] Dept Orig.          [rvoorig   ]
+
+
+}
+END -- gr12
+END -- Info
+END -- folder01
+Table s_rvp
+{
+[rvp02|rvp03               |rvp04|ruc07     |rvn06          |rvn06_desc|rvn12          |rvn12_desc|rvn09               |ima02     |ima131    |ruc16   |ruc16_desc|ruc18          |ruc18_1        |rvp05          |rvp06   |rvp07          ]
+[rvp02|rvp03               |rvp04|ruc07     |rvn06          |rvn06_desc|rvn12          |rvn12_desc|rvn09               |ima02     |ima131    |ruc16   |ruc16_desc|ruc18          |ruc18_1        |rvp05          |rvp06   |rvp07          ]
+[rvp02|rvp03               |rvp04|ruc07     |rvn06          |rvn06_desc|rvn12          |rvn12_desc|rvn09               |ima02     |ima131    |ruc16   |ruc16_desc|ruc18          |ruc18_1        |rvp05          |rvp06   |rvp07          ]
+[rvp02|rvp03               |rvp04|ruc07     |rvn06          |rvn06_desc|rvn12          |rvn12_desc|rvn09               |ima02     |ima131    |ruc16   |ruc16_desc|ruc18          |ruc18_1        |rvp05          |rvp06   |rvp07          ]
+[rvp02|rvp03               |rvp04|ruc07     |rvn06          |rvn06_desc|rvn12          |rvn12_desc|rvn09               |ima02     |ima131    |ruc16   |ruc16_desc|ruc18          |ruc18_1        |rvp05          |rvp06   |rvp07          ]
+
+}
+END -- s_rvp
+Grid gr36
+{
+
+
+  ------ Rows[idx    ]/[cnt       ]  ----- Items[cn2        ]--------
+
+}
+END -- gr36
+END -- vb4
+END -- artt253
+
+TABLES
+rvp_file,
+rvo_file,
+rvn_file
+ATTRIBUTES
+ButtonEdit rvo01=rvo_file.rvo01, action=controlp, tabIndex=9, not null, image="zoom.png";
+ComboBox rvoconf=rvo_file.rvoconf, tabIndex=12, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+TextEdit rvo04=rvo_file.rvo04, tabIndex=14;
+ButtonEdit rvo02=rvo_file.rvo02, action=controlp, tabIndex=7, image="zoom.png";
+DateEdit rvocond=rvo_file.rvocond, tabIndex=11, noEntry;
+DateEdit rvo03=rvo_file.rvo03, tabIndex=8, not null;
+ButtonEdit rvoconu=rvo_file.rvoconu, action=controlp, tabIndex=10, noEntry, image="zoom.png";
+Edit rvoconu_desc=formonly.rvoconu_desc type CHAR, tabIndex=15, noEntry;
+ButtonEdit rvoplant=rvo_file.rvoplant, action=controlp, tabIndex=13, image="zoom.png";
+Edit rvoplant_desc=formonly.rvoplant_desc type CHAR, tabIndex=16, noEntry;
+Edit rvouser=rvo_file.rvouser, tabIndex=5, noEntry;
+Edit rvomodu=rvo_file.rvomodu, tabIndex=4, noEntry;
+Edit rvoacti=rvo_file.rvoacti, tabIndex=3, noEntry, upShift;
+Edit rvogrup=rvo_file.rvogrup, tabIndex=2, noEntry;
+DateEdit rvodate=rvo_file.rvodate, tabIndex=1, noEntry;
+DateEdit rvocrat=rvo_file.rvocrat, tabIndex=6, noEntry;
+Edit rvooriu=rvo_file.rvooriu, tabIndex=39, noEntry;
+Edit rvoorig=rvo_file.rvoorig, tabIndex=38, noEntry;
+Edit rvp02=rvp_file.rvp02, tabIndex=26, title="Line No.", not null;
+ButtonEdit rvp03=rvp_file.rvp03, action=controlp, tabIndex=27, title="Delivery No.", not null, image="zoom.png";
+Edit rvp04=rvp_file.rvp04, tabIndex=28, title="Delivery Line No.", not null;
+ComboBox ruc07=formonly.ruc07 type VARCHAR, tabIndex=17, title="Requirement Type", noEntry, not null, items=(("1", "Input"),("2", "Suggest Purchase"),("3", "S/O"),("4", "Dispatch"),("5", "POS"),("6", "Freight Charges"));
+Edit rvn06=rvn_file.rvn06, tabIndex=18, title="Requirement Org.", noEntry;
+Edit rvn06_desc=formonly.rvn06_desc type VARCHAR, tabIndex=19, title="Org.Name", noEntry;
+Edit rvn12=rvn_file.rvn12, tabIndex=20, title="Shipping Org.", noEntry;
+Edit rvn12_desc=formonly.rvn12_desc type CHAR, tabIndex=21, title="Org.Name", noEntry;
+ButtonEdit rvn09=rvn_file.rvn09, action=controlp, tabIndex=22, title="Sets No.", noEntry, image="zoom.png";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=29, title="Sets Name", noEntry;
+Edit ima131=formonly.ima131 type VARCHAR, tabIndex=37, title="Product Categories", noEntry;
+Edit ruc16=formonly.ruc16 type CHAR, tabIndex=33, title="Unit\n", noEntry;
+Edit ruc16_desc=formonly.ruc16_desc type CHAR, tabIndex=34, title="Unit Name", noEntry;
+Edit ruc18=formonly.ruc18 type CHAR, tabIndex=30, title="Requirement Qty", noEntry;
+Edit ruc18_1=formonly.ruc18_1 type CHAR, tabIndex=31, title="Unallocated Qty", noEntry;
+Edit rvp05=rvp_file.rvp05, tabIndex=32, title="Allocated Qty", noEntry;
+ComboBox rvp06=rvp_file.rvp06, tabIndex=35, title="Adjusted Method", not null, items=(("1", "Add"),("2", "Reduce"),("3", "Fixed"));
+Edit rvp07=rvp_file.rvp07, tabIndex=36, title="Adjusted Number", not null;
+Edit idx=formonly.idx type CHAR, tabIndex=24, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=23, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=25;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvp(rvp_file.rvp02,rvp_file.rvp03,rvp_file.rvp04,formonly.ruc07,rvn_file.rvn06,formonly.rvn06_desc,rvn_file.rvn12,formonly.rvn12_desc,rvn_file.rvn09,formonly.ima02,formonly.ima131,formonly.ruc16,formonly.ruc16_desc,formonly.ruc18,formonly.ruc18_1,rvp_file.rvp05,rvp_file.rvp06,rvp_file.rvp07)
+SCREEN RECORD Undefined(rvo_file.rvo01,rvo_file.rvoconf,formonly.imgmksg,rvo_file.rvo04,rvo_file.rvo02,rvo_file.rvocond,rvo_file.rvo03,rvo_file.rvoconu,formonly.rvoconu_desc,rvo_file.rvoplant,formonly.rvoplant_desc,rvo_file.rvouser,rvo_file.rvomodu,rvo_file.rvoacti,rvo_file.rvogrup,rvo_file.rvodate,rvo_file.rvocrat,rvo_file.rvooriu,rvo_file.rvoorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_tgrupmgr.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_tgrupmgr")
+VBox VBox1
+Grid gr3295
+{
+ <G group01                                                        >
+  Releative-Department Group ID          [zyw01     ]
+  Releative-Department Group Description [zyw02                    ]
+ <                                                                 >
+
+}
+END -- gr3295
+Table azz_zyw
+{
+[zyw04         |zx02           |zx03          |gem02           ]
+[zyw04         |zx02           |zx03          |gem02           ]
+[zyw04         |zx02           |zx03          |gem02           ]
+[zyw04         |zx02           |zx03          |gem02           ]
+[zyw04         |zx02           |zx03          |gem02           ]
+[zyw04         |zx02           |zx03          |gem02           ]
+[zyw04         |zx02           |zx03          |gem02           ]
+[zyw04         |zx02           |zx03          |gem02           ]
+[zyw04         |zx02           |zx03          |gem02           ]
+[zyw04         |zx02           |zx03          |gem02           ]
+
+}
+END -- azz_zyw
+Grid gr3296
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3296
+END -- VBox1
+END -- p_tgrupmgr
+
+TABLES
+zyw_file
+ATTRIBUTES
+Group group01:group01;
+Edit zyw01=zyw_file.zyw01, tabIndex=1, not null, required, comment="Key Value";
+Edit zyw02=zyw_file.zyw02, tabIndex=2, not null, required, scroll;
+ButtonEdit zyw04=zyw_file.zyw04, action=controlp, tabIndex=3, title="Maneger\'s No.", not null, required, image="zoom", scroll;
+Edit zx02=formonly.zx02 type CHAR, tabIndex=4, title="Maneger\'s Name", noEntry;
+Edit zx03=formonly.zx03 type CHAR, tabIndex=5, title="Department ID", noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=6, title="Department Name", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD azz_zyw(zyw_file.zyw04,formonly.zx02,formonly.zx03,formonly.gem02)
+SCREEN RECORD Undefined(zyw_file.zyw01,zyw_file.zyw02,formonly.cn2)
+END -- INSTRUCTIONS
+

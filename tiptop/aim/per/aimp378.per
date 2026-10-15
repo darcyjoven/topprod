@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp378.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimp378")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                             >
+  Transfer Note# [imm01                 ]
+ <                                      >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[g_bgjob                                 ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- aimp378
+
+TABLES
+imm_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit imm01=imm_file.imm01, action=controlp, tabIndex=1, image="zoom";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=2, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(imm_file.imm01,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

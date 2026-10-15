@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr331.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid4
+{
+     <G group3                                                   >
+        [label1            ]     [azp01                ]
+                              [dummy1                          ]
+     <                                                           >
+
+}
+END -- Grid4
+Grid Grid1
+{
+           <G group1                                                      >
+                [label2            ]    [ima131               ]
+                [label3            ]    [ruc04                ]
+                [label4            ]    [ruc07                ]
+                [label7            ]    [ruc27                ]
+           <                                                              >
+
+}
+END -- Grid1
+Group Group2(text=%"INPUT")
+Grid Grid3
+{
+
+   [a                                              ]
+   [                                               ]
+   [                                               ]
+   [                                               ]
+
+   [b                                     ]
+   [w                                     ]
+   [x                                     ]
+
+}
+END -- Grid3
+END -- Group2
+Grid Grid2
+{
+
+   [more                                          ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group3:Group3, text=%"QBE1";
+Label label1:Label1, text=%"Logistics Code";
+ButtonEdit azp01=formonly.azp01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Label dummy1:dummy1, text="LRDMDS,QY\'|\'H\';\'GK";
+Group group1:Group1, text=%"QBE2";
+Label label2:Label2, text=%"Product Class";
+ButtonEdit ima131=formonly.ima131 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Label label3:Label3, text=%"Item No.";
+ButtonEdit ruc04=formonly.ruc04 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Label label4:Label4, text=%"Source Type";
+ComboBox ruc07=formonly.ruc07 type CHAR, tabIndex=7, items=(("1", "Manual input"),("2", "Replenishment advice"),("3", "sales order
+"),("4", "Distribution of purchase"),("5", "pos order"),("6", "throwing turn"));
+Label label7:Label7, text=%"Transaction Date";
+DateEdit ruc27=formonly.ruc27 type DATE, tabIndex=4;
+RadioGroup a=formonly.a type CHAR, tabIndex=5, items=(("1", "Product"),("2", "Product + Logistics Code"),("3", "Product + Source Type"),("4", "Product + Logistics Code + Source Type"));
+CheckBox b=formonly.b type VARCHAR, tabIndex=8, text=%"Y/N Print detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox w=formonly.w type CHAR, tabIndex=9, text=%"Dimension list", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox x=formonly.x type CHAR, tabIndex=10, text=%"Print Group Data Y/N", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text=%"Other codition to print";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD ScreenRecord1(formonly.a)
+SCREEN RECORD Undefined(formonly.azp01,formonly.ima131,formonly.ruc04,formonly.ruc07,formonly.ruc27,formonly.b,formonly.more,formonly.w,formonly.x)
+END -- INSTRUCTIONS
+

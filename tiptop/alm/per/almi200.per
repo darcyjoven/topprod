@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi200")
+VBox vb3
+Folder pc2
+Page Page2(text=%"Main")
+Table s_lml
+{
+[lml01   |lml02   |oba02   |lmlstore|rtz13   |lmllegal|azt02   |lml04   |lmb03   |lml05   |lmc04   |lml06   ]
+[lml01   |lml02   |oba02   |lmlstore|rtz13   |lmllegal|azt02   |lml04   |lmb03   |lml05   |lmc04   |lml06   ]
+[lml01   |lml02   |oba02   |lmlstore|rtz13   |lmllegal|azt02   |lml04   |lmb03   |lml05   |lmc04   |lml06   ]
+[lml01   |lml02   |oba02   |lmlstore|rtz13   |lmllegal|azt02   |lml04   |lmb03   |lml05   |lmc04   |lml06   ]
+[lml01   |lml02   |oba02   |lmlstore|rtz13   |lmllegal|azt02   |lml04   |lmb03   |lml05   |lmc04   |lml06   ]
+
+}
+END -- s_lml
+END -- Page2
+END -- pc2
+Grid gr2
+{
+ ----------Rows[cn2   ]----------
+
+
+}
+END -- gr2
+END -- vb3
+END -- almi200
+
+TABLES
+lml_file
+ATTRIBUTES
+ButtonEdit lml01=lml_file.lml01, action=controlp, tabIndex=1, title="lml01", not null, required, image="zoom.png";
+ButtonEdit lml02=lml_file.lml02, action=controlp, tabIndex=2, title="lml02", not null, required, image="zoom.png";
+Edit oba02=formonly.oba02 type VARCHAR, tabIndex=3, title="oba02", noEntry;
+ButtonEdit lmlstore=lml_file.lmlstore, action=controlp, tabIndex=4, title="lmlstore", noEntry, not null, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=5, title="rtz13", noEntry;
+ButtonEdit lmllegal=lml_file.lmllegal, action=controlp, tabIndex=6, title="lmllegal", noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=7, title="azt02", noEntry;
+ButtonEdit lml04=lml_file.lml04, action=controlp, tabIndex=8, title="lml04", noEntry, not null, image="zoom.png";
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=9, title="lmb03", noEntry;
+ButtonEdit lml05=lml_file.lml05, action=controlp, tabIndex=10, title="lml05", noEntry, not null, image="zoom.png";
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=11, title="lmc04", noEntry;
+CheckBox lml06=lml_file.lml06, tabIndex=12, default = "Y", title="lml06", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lml(lml_file.lml01,lml_file.lml02,formonly.oba02,lml_file.lmlstore,formonly.rtz13,lml_file.lmllegal,formonly.azt02,lml_file.lml04,formonly.lmb03,lml_file.lml05,formonly.lmc04,lml_file.lml06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxi860.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxi860")
+VBox vb7
+Folder pc168
+Page page01(text="Main")
+Table s_bna
+{
+[bna01  |bna02               |bna05      |bna08            |bxr02     |bna03  ]
+[bna01  |bna02               |bna05      |bna08            |bxr02     |bna03  ]
+[bna01  |bna02               |bna05      |bna08            |bxr02     |bna03  ]
+[bna01  |bna02               |bna05      |bna08            |bxr02     |bna03  ]
+[bna01  |bna02               |bna05      |bna08            |bxr02     |bna03  ]
+[bna01  |bna02               |bna05      |bna08            |bxr02     |bna03  ]
+[bna01  |bna02               |bna05      |bna08            |bxr02     |bna03  ]
+[bna01  |bna02               |bna05      |bna08            |bxr02     |bna03  ]
+[bna01  |bna02               |bna05      |bna08            |bxr02     |bna03  ]
+[bna01  |bna02               |bna05      |bna08            |bxr02     |bna03  ]
+
+}
+END -- s_bna
+END -- page01
+END -- pc168
+Grid gr1057
+{
+  ----------Rows [cn2   ] ----------
+
+}
+END -- gr1057
+END -- vb7
+END -- abxi860
+
+TABLES
+bna_file
+ATTRIBUTES
+Edit bna01=bna_file.bna01, tabIndex=1, title="Type", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit bna02=bna_file.bna02, tabIndex=2, title="Document Name";
+ComboBox bna05=bna_file.bna05, tabIndex=3, title="Property", items=(("0", %"Other"),("1", %"Receiving Store-in Note"),("2", %"Local Sales Delivery Note"),("3", %"Export Delivery Note"),("4", %"Receipt"));
+ButtonEdit bna08=bna_file.bna08, action=controlp, tabIndex=4, title="Bond Reason code", image="zoom";
+Edit bxr02=formonly.bxr02 type CHAR, tabIndex=5, title="Desc", noEntry;
+CheckBox bna03=bna_file.bna03, tabIndex=6, title="Auto", valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bna(bna_file.bna01,bna_file.bna02,bna_file.bna05,bna_file.bna08,formonly.bxr02,bna_file.bna03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_per.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_per")
+VBox vb1
+Folder pc757
+Page page01(text="Page01")
+Grid gr3238
+{
+ <G group01                                      >
+  Form ID      [gav01               ]
+  Window Title [gaz03                            ]
+  Industry     [gav11            ]
+ [gav08                                          ]
+ <                                               >
+
+}
+END -- gr3238
+END -- page01
+END -- pc757
+Table s_gav
+{
+[gav02  |gae04               |gav0|gav03|gav04|gav16  |gav12 |gav13     |gav14   |gav15   |gav34     |gav32     |gav06                         |gav19     |functi|gav10     |gav09         ]
+[gav02  |gae04               |gav0|gav03|gav04|gav16  |gav12 |gav13     |gav14   |gav15   |gav34     |gav32     |gav06                         |gav19     |functi|gav10     |gav09         ]
+[gav02  |gae04               |gav0|gav03|gav04|gav16  |gav12 |gav13     |gav14   |gav15   |gav34     |gav32     |gav06                         |gav19     |functi|gav10     |gav09         ]
+[gav02  |gae04               |gav0|gav03|gav04|gav16  |gav12 |gav13     |gav14   |gav15   |gav34     |gav32     |gav06                         |gav19     |functi|gav10     |gav09         ]
+[gav02  |gae04               |gav0|gav03|gav04|gav16  |gav12 |gav13     |gav14   |gav15   |gav34     |gav32     |gav06                         |gav19     |functi|gav10     |gav09         ]
+[gav02  |gae04               |gav0|gav03|gav04|gav16  |gav12 |gav13     |gav14   |gav15   |gav34     |gav32     |gav06                         |gav19     |functi|gav10     |gav09         ]
+[gav02  |gae04               |gav0|gav03|gav04|gav16  |gav12 |gav13     |gav14   |gav15   |gav34     |gav32     |gav06                         |gav19     |functi|gav10     |gav09         ]
+[gav02  |gae04               |gav0|gav03|gav04|gav16  |gav12 |gav13     |gav14   |gav15   |gav34     |gav32     |gav06                         |gav19     |functi|gav10     |gav09         ]
+[gav02  |gae04               |gav0|gav03|gav04|gav16  |gav12 |gav13     |gav14   |gav15   |gav34     |gav32     |gav06                         |gav19     |functi|gav10     |gav09         ]
+[gav02  |gae04               |gav0|gav03|gav04|gav16  |gav12 |gav13     |gav14   |gav15   |gav34     |gav32     |gav06                         |gav19     |functi|gav10     |gav09         ]
+
+}
+END -- s_gav
+Grid gr3239
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3239
+END -- vb1
+END -- p_per
+
+TABLES
+gaz_file,
+gav_file,
+gae_file
+ATTRIBUTES
+Group group01:group01, text="Program";
+ButtonEdit gav01=gav_file.gav01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Value";
+Edit gaz03=gaz_file.gaz03, tabIndex=2, noEntry;
+ComboBox gav11=gav_file.gav11, tabIndex=3, not null, required;
+CheckBox gav08=gav_file.gav08, tabIndex=4, text="Editing a Customized PER-File Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gav02=gav_file.gav02, tabIndex=5, title="Field", not null, required, scroll;
+Edit gae04=gae_file.gae04, tabIndex=6, title="Description", noEntry;
+CheckBox gav0=gav_file.gav07, tabIndex=7, title="Key", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gav03=gav_file.gav03, tabIndex=8, title="Visble", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gav04=gav_file.gav04, tabIndex=9, title="Input", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gav16=gav_file.gav16, tabIndex=10, title="Sequence";
+Edit gav12=gav_file.gav12, tabIndex=11, title="Width";
+Edit gav13=gav_file.gav13, tabIndex=12, title="Page Code", noEntry;
+Edit gav14=gav_file.gav14, tabIndex=13, title="Horizontal";
+Edit gav15=gav_file.gav15, tabIndex=14, title="Vertical";
+Edit gav34=gav_file.gav34, tabIndex=15, title="Label Horizontal";
+ButtonEdit gav32=gav_file.gav32, action=controlp, tabIndex=21, title="Connect", image="zoom";
+Edit gav06=gav_file.gav06, tabIndex=16, title="Field Format";
+Edit gav19=gav_file.gav19, tabIndex=17, title="Query Function", noEntry, not null;
+CheckBox functi=formonly.function type VARCHAR, tabIndex=18, title="Function", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gav10=gav_file.gav10, tabIndex=19, title="Required", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gav09=gav_file.gav09, tabIndex=20, title="Allow Hidden", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gav(gav_file.gav02,gae_file.gae04,gav_file.gav07,gav_file.gav03,gav_file.gav04,gav_file.gav16,gav_file.gav12,gav_file.gav13,gav_file.gav14,gav_file.gav15,gav_file.gav34,gav_file.gav32,gav_file.gav06,gav_file.gav19,formonly.function,gav_file.gav10,gav_file.gav09)
+SCREEN RECORD Undefined(gav_file.gav01,gaz_file.gaz03,gav_file.gav11,gav_file.gav08,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

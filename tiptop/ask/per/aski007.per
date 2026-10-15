@@ -1,0 +1,133 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/aski007.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aski007")
+VBox vb2
+Folder pc2
+Page page3(text="Main")
+Grid gr4
+{
+ PBI.No   [skf01                ]     Style No  [skf02                  ]  [skf02_ima02                       ]      Machine No   [skf03               ]
+ date     [skf04                ]     Cloth No  [skf05                  ]  [skf05_ima02                       ]
+ Memo     [skf06                                          ]       [skf07     ]             [imgmksg ]
+          [                                               ]                                [        ]
+          [                                               ]
+
+}
+END -- gr4
+END -- page3
+Page page4(text="Info")
+Grid gr5
+{
+ Record Owner        [skfuser   ]   Last Modified by    [skfmodu   ]   Data Valid Code     [skfacti   ]
+ Department          [skfgrup   ]   Create/Modify Date  [skfdate   ]
+
+
+}
+END -- gr5
+END -- page4
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[skfud01                       ] userdefined_field07[skfud07        ] userdefined_field13[skfud13        ]
+                    [                              ] userdefined_field08[skfud08        ] userdefined_field14[skfud14        ]
+ userdefined_field02[skfud02        ]                userdefined_field09[skfud09        ] userdefined_field15[skfud15        ]
+ userdefined_field03[skfud03        ]                userdefined_field10[skfud10        ]
+ userdefined_field04[skfud04        ]                userdefined_field11[skfud11        ]
+ userdefined_field05[skfud05        ]                userdefined_field12[skfud12        ]
+ userdefined_field06[skfud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc2
+Table s_skg
+{
+[skg04       |skg05       |skg06       |skg07       |skg12        |skg08      |skg09          |skg10   |skg11                              |skgud01   |skgud02   |skgud03    |skgud04    |skgud05    |skgud06    |skgud07    |skgud08    |skgud09    |skgud10    |skgud11   |skgud12  |skgud13   |skgud14   |skgud15    ]
+[skg04       |skg05       |skg06       |skg07       |skg12        |skg08      |skg09          |skg10   |skg11                              |skgud01   |skgud02   |skgud03    |skgud04    |skgud05    |skgud06    |skgud07    |skgud08    |skgud09    |skgud10    |skgud11   |skgud12  |skgud13   |skgud14   |skgud15    ]
+[skg04       |skg05       |skg06       |skg07       |skg12        |skg08      |skg09          |skg10   |skg11                              |skgud01   |skgud02   |skgud03    |skgud04    |skgud05    |skgud06    |skgud07    |skgud08    |skgud09    |skgud10    |skgud11   |skgud12  |skgud13   |skgud14   |skgud15    ]
+[skg04       |skg05       |skg06       |skg07       |skg12        |skg08      |skg09          |skg10   |skg11                              |skgud01   |skgud02   |skgud03    |skgud04    |skgud05    |skgud06    |skgud07    |skgud08    |skgud09    |skgud10    |skgud11   |skgud12  |skgud13   |skgud14   |skgud15    ]
+[skg04       |skg05       |skg06       |skg07       |skg12        |skg08      |skg09          |skg10   |skg11                              |skgud01   |skgud02   |skgud03    |skgud04    |skgud05    |skgud06    |skgud07    |skgud08    |skgud09    |skgud10    |skgud11   |skgud12  |skgud13   |skgud14   |skgud15    ]
+
+}
+END -- s_skg
+Grid gr7
+{
+----------  Rows [cnt   ] / [cnt2  ] ----------
+
+}
+END -- gr7
+END -- vb2
+END -- aski007
+
+TABLES
+skg_file,
+skf_file
+ATTRIBUTES
+ButtonEdit skf01=skf_file.skf01, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+ButtonEdit skf02=skf_file.skf02, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+Edit skf02_ima02=formonly.skf02_ima02 type CHAR, tabIndex=19, noEntry;
+Edit skf03=skf_file.skf03, tabIndex=20, not null, required;
+DateEdit skf04=skf_file.skf04, tabIndex=21, not null, required;
+ButtonEdit skf05=skf_file.skf05, action=controlp, tabIndex=22, not null, required, image="zoom.png";
+Edit skf05_ima02=formonly.skf05_ima02 type CHAR, tabIndex=23, noEntry;
+TextEdit skf06=skf_file.skf06, tabIndex=24, stretch=NONE;
+CheckBox skf07=skf_file.skf07, tabIndex=25, text="skf07", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, width = 8 characters, height = 2 characters;
+Edit skfuser=skf_file.skfuser, tabIndex=1, noEntry;
+Edit skfmodu=skf_file.skfmodu, tabIndex=2, noEntry;
+Edit skfacti=skf_file.skfacti, tabIndex=3, noEntry, upShift;
+Edit skfgrup=skf_file.skfgrup, tabIndex=4, noEntry;
+DateEdit skfdate=skf_file.skfdate, tabIndex=5, noEntry;
+TextEdit skfud01=skf_file.skfud01, tabIndex=327, stretch=NONE;
+Edit skfud07=skf_file.skfud07, tabIndex=328;
+DateEdit skfud13=skf_file.skfud13, tabIndex=329;
+Edit skfud08=skf_file.skfud08, tabIndex=330;
+DateEdit skfud14=skf_file.skfud14, tabIndex=331;
+Edit skfud02=skf_file.skfud02, tabIndex=332;
+Edit skfud09=skf_file.skfud09, tabIndex=333;
+DateEdit skfud15=skf_file.skfud15, tabIndex=334;
+Edit skfud03=skf_file.skfud03, tabIndex=335;
+Edit skfud10=skf_file.skfud10, tabIndex=336;
+Edit skfud04=skf_file.skfud04, tabIndex=337;
+Edit skfud11=skf_file.skfud11, tabIndex=338;
+Edit skfud05=skf_file.skfud05, tabIndex=339;
+Edit skfud12=skf_file.skfud12, tabIndex=340;
+Edit skfud06=skf_file.skfud06, tabIndex=341;
+Edit skg04=skg_file.skg04, tabIndex=8, title="No.", not null, required;
+ButtonEdit skg05=skg_file.skg05, action=controlp, tabIndex=9, title="Atrribute1", image="zoom.png";
+ButtonEdit skg06=skg_file.skg06, action=controlp, tabIndex=10, title="Atrribute2", image="zoom.png";
+ButtonEdit skg07=skg_file.skg07, action=controlp, tabIndex=11, title="Atrribute3", image="zoom.png";
+ButtonEdit skg12=skg_file.skg12, action=controlp, tabIndex=12, title="Paper No.", not null, required, image="zoom.png";
+Edit skg08=skg_file.skg08, tabIndex=13, title="Grips No.", not null, required;
+Edit skg09=skg_file.skg09, tabIndex=14, title="Number", not null, required;
+Edit skg10=skg_file.skg10, tabIndex=15, title="Lot";
+Edit skg11=skg_file.skg11, tabIndex=18, title="memo";
+TextEdit skgud01=skg_file.skgud01, tabIndex=325, title="skgud01", stretch=NONE;
+Edit skgud02=skg_file.skgud02, tabIndex=342, title="skgud02";
+Edit skgud03=skg_file.skgud03, tabIndex=343, title="skgud03";
+Edit skgud04=skg_file.skgud04, tabIndex=344, title="skgud04";
+Edit skgud05=skg_file.skgud05, tabIndex=345, title="skgud05";
+Edit skgud06=skg_file.skgud06, tabIndex=346, title="skgud06";
+Edit skgud07=skg_file.skgud07, tabIndex=347, title="skgud07";
+Edit skgud08=skg_file.skgud08, tabIndex=348, title="skgud08";
+Edit skgud09=skg_file.skgud09, tabIndex=349, title="skgud09";
+Edit skgud10=skg_file.skgud10, tabIndex=350, title="skgud10";
+Edit skgud11=skg_file.skgud11, tabIndex=351, title="skgud11";
+Edit skgud12=skg_file.skgud12, tabIndex=352, title="skgud12";
+Edit skgud13=skg_file.skgud13, tabIndex=353, title="skgud13";
+Edit skgud14=skg_file.skgud14, tabIndex=354, title="skgud14";
+Edit skgud15=skg_file.skgud15, tabIndex=355, title="skgud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_skg(skg_file.skg04,skg_file.skg05,skg_file.skg06,skg_file.skg07,skg_file.skg12,skg_file.skg08,skg_file.skg09,skg_file.skg10,skg_file.skg11,skg_file.skgud01,skg_file.skgud02,skg_file.skgud03,skg_file.skgud04,skg_file.skgud05,skg_file.skgud06,skg_file.skgud07,skg_file.skgud08,skg_file.skgud09,skg_file.skgud10,skg_file.skgud11,skg_file.skgud12,skg_file.skgud13,skg_file.skgud14,skg_file.skgud15)
+SCREEN RECORD Undefined(skf_file.skf01,skf_file.skf02,formonly.skf02_ima02,skf_file.skf03,skf_file.skf04,skf_file.skf05,formonly.skf05_ima02,skf_file.skf06,skf_file.skf07,formonly.imgmksg,skf_file.skfuser,skf_file.skfmodu,skf_file.skfacti,skf_file.skfgrup,skf_file.skfdate,skf_file.skfud01,skf_file.skfud07,skf_file.skfud13,skf_file.skfud08,skf_file.skfud14,skf_file.skfud02,skf_file.skfud09,skf_file.skfud15,skf_file.skfud03,skf_file.skfud10,skf_file.skfud04,skf_file.skfud11,skf_file.skfud05,skf_file.skfud12,skf_file.skfud06,formonly.cnt,formonly.cnt2)
+END -- INSTRUCTIONS
+

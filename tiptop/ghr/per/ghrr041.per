@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghrr041.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+HBox HBox1
+Grid Grid1
+{
+
+            <G group1                          >
+             [label3   |bdate      ]
+             [label1   |hrat03           ]
+             [label2   |hrat04           ]
+            <                                  >
+           [more                      ]
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- HBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+Label label3:Label3, text=%"bdate";
+DateEdit bdate=formonly.bdate, tabIndex=1, not null, required;
+Label label1:Label1, text=%"hrat03";
+ButtonEdit hrat03=formonly.hrat03, action=controlp, tabIndex=1, not null, required, image="zoom";
+Label label2:Label2, text=%"hrat04";
+ButtonEdit hrat04=formonly.hrat04, action=controlp, tabIndex=1, image="zoom";
+CheckBox more=formonly.more, tabIndex=1, text=%"其他特殊打印条件", valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrat03,formonly.hrat04,formonly.bdate,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,76 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsp510.per created Wed Dec 31 05:30:02 2008
+-- File created from apsp510.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsp510")
+-- GRID
+-- GRID
+-- GRID
+-- HBOX
+-- GROUP
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID gr5375
+    {
+    <G group01                                   >
+     Item Master         [aa0                 ]
+     Supplier            [aa1                 ]
+    <                                            >
+
+
+    }
+    END -- GRID
+    GROUP g01( TEXT="INPUT")
+
+      HBOX 
+        GRID gr5376
+        {
+         P/R Date            [aa2         ]
+         P/R Doc.            [aa3               ]
+         P/R Employee        [aa4       ]
+         P/R Dept            [aa5       ]
+         P/R Max Line        [aa6       ]
+
+        }
+        END -- GRID
+        GRID gr5377
+        {
+        <G group02                        >
+        [aa7            ]
+        <                                 >
+
+
+        }
+        END -- GRID
+      END -- HBOX
+    END -- GROUP
+    GRID gr5378
+    {
+    [aa8                                                          ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  EDIT aa0=FORMONLY.pid, TABINDEX=1;
+  EDIT aa1=FORMONLY.sup_id, UPSHIFT, TABINDEX=2;
+  DATEEDIT aa2=FORMONLY.pmk04 TYPE DATE, TABINDEX=3;
+  BUTTONEDIT aa3=FORMONLY.pmk01, ACTION=controlp, COMMENT="<^P>Qry Documents", IMAGE="zoom", UPSHIFT, TABINDEX=4;
+  BUTTONEDIT aa4=FORMONLY.pmk12, ACTION=controlp, IMAGE="zoom", TABINDEX=5;
+  BUTTONEDIT aa5=FORMONLY.pmk13, ACTION=controlp, IMAGE="zoom", UPSHIFT, TABINDEX=6;
+  EDIT aa6=FORMONLY.mxno, UPSHIFT, TABINDEX=7;
+  GROUP group02 : group02, TEXT="P/R Sum Method";
+  RADIOGROUP aa7=FORMONLY.summary_flag, TABINDEX=8, ITEMS=(("0","ALL"),("1","Buyer"),("2","Item Group Code"));
+  CHECKBOX aa8=FORMONLY.g_bgjob, TEXT="Background Job", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=9;
+END

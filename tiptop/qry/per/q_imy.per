@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_imy.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Inter-Plant Transfer-in Note Details")
+Grid gr3773
+{
+ <T s_imy                                                                                     >
+ [check|imy01             |imy02    |imy03              |imy04    |imy05            |imy06   ]
+ [check|imy01             |imy02    |imy03              |imy04    |imy05            |imy06   ]
+ [check|imy01             |imy02    |imy03              |imy04    |imy05            |imy06   ]
+ [check|imy01             |imy02    |imy03              |imy04    |imy05            |imy06   ]
+ [check|imy01             |imy02    |imy03              |imy04    |imy05            |imy06   ]
+ [check|imy01             |imy02    |imy03              |imy04    |imy05            |imy06   ]
+ [check|imy01             |imy02    |imy03              |imy04    |imy05            |imy06   ]
+ [check|imy01             |imy02    |imy03              |imy04    |imy05            |imy06   ]
+ [check|imy01             |imy02    |imy03              |imy04    |imy05            |imy06   ]
+ [check|imy01             |imy02    |imy03              |imy04    |imy05            |imy06   ]
+ <                                                                                            >
+
+}
+END -- gr3773
+END -- q_imy
+
+TABLES
+imy_file
+ATTRIBUTES
+Table s_imy:s_imy;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit imy01=imy_file.imy01, tabIndex=2, title="Transfer-in Note#", noEntry;
+Edit imy02=imy_file.imy02, tabIndex=3, title="Line No.", noEntry;
+Edit imy03=imy_file.imy03, tabIndex=4, title="Transfer-out Note#", noEntry;
+Edit imy04=imy_file.imy04, tabIndex=5, title="Line No.", noEntry;
+Edit imy05=imy_file.imy05, tabIndex=6, title="Transfer Note#", noEntry;
+Edit imy06=imy_file.imy06, tabIndex=7, title="Line No.", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imy(formonly.check,imy_file.imy01,imy_file.imy02,imy_file.imy03,imy_file.imy04,imy_file.imy05,imy_file.imy06)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zy_k2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zy_k2")
+VBox VBox1
+Grid gr4
+{
+
+ [label1                                                     ]
+
+
+}
+END -- gr4
+Table s_azp1
+{
+[select |gaz01          |gaz03                               ]
+[select |gaz01          |gaz03                               ]
+[select |gaz01          |gaz03                               ]
+[select |gaz01          |gaz03                               ]
+[select |gaz01          |gaz03                               ]
+[select |gaz01          |gaz03                               ]
+[select |gaz01          |gaz03                               ]
+[select |gaz01          |gaz03                               ]
+[select |gaz01          |gaz03                               ]
+[select |gaz01          |gaz03                               ]
+[select |gaz01          |gaz03                               ]
+[select |gaz01          |gaz03                               ]
+
+}
+END -- s_azp1
+END -- VBox1
+END -- p_zy_k2
+
+TABLES
+gaz_file
+ATTRIBUTES
+Label label1:Label1, text=%"Checked if you want to update the authorithy.";
+CheckBox select=formonly.select, tabIndex=1, title="Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gaz01=gaz_file.gaz01, tabIndex=2, title="Program Code", noEntry;
+Edit gaz03=gaz_file.gaz03, tabIndex=3, title="Program Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zz(formonly.select,gaz_file.gaz01,gaz_file.gaz03)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artg806.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid2
+{
+ <G group1                                                        >
+  [label1      ][azw01                ]
+  [label2      ][lse01                ]
+  [label3      ][bdate          ]~[edate           ]
+
+ <                                                                >
+ <G group2                                                        >
+  [label5      ][type1               ]
+  [cb                                          ]
+ <                                                                >
+
+}
+END -- Grid2
+Grid Grid1
+{
+  [more                  ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+azw_file,
+lse_file
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+Label label1:Label1, text=%"Plant";
+ButtonEdit azw01=formonly.azw01 type like azw_file.azw01, action=controlp, tabIndex=1, not null, required, image="zoom", picture="";
+Label label2:Label2, text=%"Ivals";
+ButtonEdit lse01=formonly.lse01 type like lse_file.lse01, action=controlp, tabIndex=2, image="zoom";
+Label label3:Label3, text=%"Date";
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=3, not null, required;
+DateEdit edate=formonly.edate type CHAR, tabIndex=4, not null, required;
+Group group2:Group2, text=%"Group2";
+Label label5:Label5, text=%"Material state";
+ComboBox type1=formonly.type1 type CHAR, tabIndex=5, not null, required, items=(("Y", "Y"),("N", "N"),("ALL", "ALL"));
+CheckBox cb=formonly.cb type CHAR, tabIndex=6, default = "N", text=%"According to sales date print details ", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=7, default = "N", text=%"more", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azw01,formonly.lse01,formonly.bdate,formonly.edate,formonly.type1,formonly.cb,formonly.more)
+END -- INSTRUCTIONS
+

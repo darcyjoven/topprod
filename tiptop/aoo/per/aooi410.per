@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi410.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (image="zoom.png", spacing=normal, text="arti030")
+VBox vb3
+Folder pc4
+Page Page7(text=%"MAIN")
+Table s_rye
+{
+[rye01     |rye02     |rye03     |rye03_desc     |rye04   |rye04_desc       |rye05       |ryeac]
+[rye01     |rye02     |rye03     |rye03_desc     |rye04   |rye04_desc       |rye05       |ryeac]
+[rye01     |rye02     |rye03     |rye03_desc     |rye04   |rye04_desc       |rye05       |ryeac]
+[rye01     |rye02     |rye03     |rye03_desc     |rye04   |rye04_desc       |rye05       |ryeac]
+[rye01     |rye02     |rye03     |rye03_desc     |rye04   |rye04_desc       |rye05       |ryeac]
+
+}
+END -- s_rye
+END -- Page7
+END -- pc4
+Grid gr13
+{
+  ----------Rows[cn2   ]----------
+
+
+}
+END -- gr13
+END -- vb3
+END -- arti099
+
+TABLES
+rye_file
+ATTRIBUTES
+ComboBox rye01=rye_file.rye01, tabIndex=1, title="System Type", not null, required, items=(("alm", "ALM Module"),("abm", "ABM(BOM Module)"),("aim", "AIM-INV Module"),("apm", "APM Module"),("asf", "ASF Module"),("aem", "AEM Module"),("asr", "ASR Module"),("aqc", "AQC Module"),("art", "ART Module"),("axm", "AXM Module"),("atm", "ATM Module"));
+ButtonEdit rye02=rye_file.rye02, action=controlp, tabIndex=2, title="Kind Of Bill Of Document", not null, image="zoom.png";
+ButtonEdit rye03=rye_file.rye03, action=controlp, tabIndex=3, title="Default Bill", not null, image="zoom.png";
+Edit rye03_desc=formonly.rye03_desc type VARCHAR, tabIndex=4, title="Bill Name", noEntry;
+ButtonEdit rye04=rye_file.rye04, action=controlp, tabIndex=7, title="POS Default Bill", image="zoom.png";
+Edit rye04_desc=formonly.rye04_desc type VARCHAR, tabIndex=8, title="POS Bill Name", noEntry;
+ButtonEdit rye05=rye_file.rye05, action=controlp, tabIndex=9, title=%"Operating Org.", image="zoom";
+CheckBox ryeac=rye_file.ryeacti, tabIndex=5, default = "Y", title="Acti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rye(rye_file.rye01,rye_file.rye02,rye_file.rye03,formonly.rye03_desc,rye_file.rye04,formonly.rye04_desc,rye_file.rye05,rye_file.ryeacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

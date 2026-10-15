@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdi002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amdi002")
+VBox VBox1
+Folder pc683
+Page page01(text="Main")
+VBox VBox2
+Grid gr3664
+{
+  Declaring Department[ame01     ] [ame01_d             ]
+  Year                [ame02     ]
+  Period              [ame03     ]
+
+ <G group02                                               >
+  -1.Fixed Asset      [ame04               ]
+  -2.Other Goods      [ame05               ]
+  -3.Duty-Free Goods  [ame08               ]
+ <                                                        >
+ <G group03                                               >
+  Buy Foreign Labor   [ame06               ]
+  Accu.Tax To Offset  [ame07               ]
+  Tax Of Special      [ame09               ]
+  Tax Of Close Down   [ame10               ]
+  Back From Tax       [ame11               ]
+ <                                                        >
+
+}
+END -- gr3664
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr3665
+{
+ Record Owner        [ameuser   ] Last Modified by    [amemodu   ] Data Valid Code     [ameacti   ]
+ Department          [amegrup   ] Create/Modify Date  [amedate   ]
+ Record Orig.        [ameoriu   ]
+ Dept Orig.          [ameorig   ]
+}
+END -- gr3665
+END -- info
+END -- pc683
+Grid gr3666
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3666
+END -- VBox1
+END -- amdi002
+
+TABLES
+ame_file
+ATTRIBUTES
+Edit ame01=ame_file.ame01, tabIndex=1, not null, required, comment="Enter Applying Dept #";
+Edit ame01_d=formonly.ame01_d type CHAR, tabIndex=2, noEntry;
+Edit ame02=ame_file.ame02, tabIndex=3, not null, required, comment="Enter Year!";
+Edit ame03=ame_file.ame03, tabIndex=4, not null, required, comment="Enter Period!";
+Group group02:group02, text="Imports";
+Edit ame04=ame_file.ame04, tabIndex=5;
+Edit ame05=ame_file.ame05, tabIndex=6;
+Edit ame08=ame_file.ame08, tabIndex=7;
+Group group03:group03;
+Edit ame06=ame_file.ame06, tabIndex=8;
+Edit ame07=ame_file.ame07, tabIndex=9;
+Edit ame09=ame_file.ame09, tabIndex=10;
+Edit ame10=ame_file.ame10, tabIndex=11;
+Edit ame11=ame_file.ame11, tabIndex=12;
+Edit ameuser=ame_file.ameuser, tabIndex=13, noEntry;
+Edit amemodu=ame_file.amemodu, tabIndex=14, noEntry;
+Edit ameacti=ame_file.ameacti, tabIndex=15, noEntry, upShift;
+Edit amegrup=ame_file.amegrup, tabIndex=16, noEntry;
+DateEdit amedate=ame_file.amedate, tabIndex=17, noEntry;
+Edit ameoriu=ame_file.ameoriu, tabIndex=501, noEntry;
+Edit ameorig=ame_file.ameorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ame_file.ame01,formonly.ame01_d,ame_file.ame02,ame_file.ame03,ame_file.ame04,ame_file.ame05,ame_file.ame08,ame_file.ame06,ame_file.ame07,ame_file.ame09,ame_file.ame10,ame_file.ame11,ame_file.ameuser,ame_file.amemodu,ame_file.ameacti,ame_file.amegrup,ame_file.amedate,ame_file.ameoriu,ame_file.ameorig,formonly.cnt)
+END -- INSTRUCTIONS
+

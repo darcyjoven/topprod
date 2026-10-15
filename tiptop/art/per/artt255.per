@@ -1,0 +1,119 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt255.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt255")
+VBox vb4
+Folder folder01
+Page Page1(text=%"Basic Data")
+Grid gr1
+{
+
+  Adjust No.     [rui01               ]                             flow No.         [rui07          ]     [imgmksg  ]
+  Apply Org      [rui03          ][rui03_desc          ]                             [rui09    ]           [         ]
+  Source Type    [rui08          ]                                                   [rui10    ]           [         ]
+  Source No.     [rui02               ]                             Confirmation     [ruiconf   ]
+  shipment org   [rui04          ][rui04_desc          ]            Confirmation Date[ruicond   ][ruicont    ]
+  provider No.   [rui05          ][rui05_desc          ]            Confirmed By     [ruiconu        ][ruiconu_desc        ]
+  Memo           [rui06                                          ]  local plant No.  [ruiplant       ][ruiplant_desc       ]
+
+
+}
+END -- gr1
+END -- Page1
+Page Page2(text=%"Info")
+Grid gr12
+{
+ Record Owner        [ruiuser   ] Last Modified by    [ruimodu   ] Data Valid Code     [ruiacti   ]    Record Orig.     [ruioriu     ]
+ Department          [ruigrup   ] Modify Date         [ruidate   ] Create Date         [ruicrat   ]    Dept Orig.       [ruiorig     ]
+
+
+}
+END -- gr12
+END -- Page2
+END -- folder01
+VBox vb1
+Table s_ruj
+{
+[ruj02|ruj06     |ruj03               |ruj03_desc     |ruj04     |ruj04_de|ruj05       |ruj05_des|ruj07     |ruj07_desc|ruj12   |ruj08     |ruj09     |ruj10     |ruj10_desc|ruj11     ]
+[ruj02|ruj06     |ruj03               |ruj03_desc     |ruj04     |ruj04_de|ruj05       |ruj05_des|ruj07     |ruj07_desc|ruj12   |ruj08     |ruj09     |ruj10     |ruj10_desc|ruj11     ]
+[ruj02|ruj06     |ruj03               |ruj03_desc     |ruj04     |ruj04_de|ruj05       |ruj05_des|ruj07     |ruj07_desc|ruj12   |ruj08     |ruj09     |ruj10     |ruj10_desc|ruj11     ]
+[ruj02|ruj06     |ruj03               |ruj03_desc     |ruj04     |ruj04_de|ruj05       |ruj05_des|ruj07     |ruj07_desc|ruj12   |ruj08     |ruj09     |ruj10     |ruj10_desc|ruj11     ]
+[ruj02|ruj06     |ruj03               |ruj03_desc     |ruj04     |ruj04_de|ruj05       |ruj05_des|ruj07     |ruj07_desc|ruj12   |ruj08     |ruj09     |ruj10     |ruj10_desc|ruj11     ]
+
+}
+END -- s_ruj
+Grid gr6
+{
+
+  ------ Rows[idx    ]/[cnt       ]  ----- Items[cn2        ]--------
+
+
+}
+END -- gr6
+END -- vb1
+END -- vb4
+END -- artt255
+
+TABLES
+ruj_file,
+rui_file
+ATTRIBUTES
+ButtonEdit rui01=rui_file.rui01, action=controlp, tabIndex=8, not null, image="zoom.png";
+ButtonEdit rui07=rui_file.rui07, action=controlp, tabIndex=39, image="zoom.png";
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit rui03=rui_file.rui03, action=controlp, tabIndex=7, not null, image="zoom.png";
+Edit rui03_desc=formonly.rui03_desc type CHAR, tabIndex=9, noEntry;
+CheckBox rui09=rui_file.rui09, tabIndex=40, text="approve", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rui08=rui_file.rui08, tabIndex=35, items=(("0", "Manual input"),("1", "receiving report"),("2", "transferring order"));
+CheckBox rui10=rui_file.rui10, tabIndex=41, text="posting", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rui02=rui_file.rui02, action=controlp, tabIndex=47, image="zoom.png";
+ComboBox ruiconf=rui_file.ruiconf, tabIndex=12, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Void"));
+ButtonEdit rui04=rui_file.rui04, action=controlp, tabIndex=36, not null, image="zoom.png";
+Edit rui04_desc=formonly.rui04_desc type CHAR, tabIndex=37, noEntry;
+DateEdit ruicond=rui_file.ruicond, tabIndex=11, noEntry;
+TimeEdit ruicont=rui_file.ruicont, tabIndex=16;
+ButtonEdit rui05=rui_file.rui05, action=controlp, tabIndex=38, not null, image="zoom.png";
+Edit rui05_desc=formonly.rui05_desc type CHAR, tabIndex=15, noEntry;
+ButtonEdit ruiconu=rui_file.ruiconu, action=controlp, tabIndex=10, noEntry, image="zoom.png";
+Edit ruiconu_desc=formonly.ruiconu_desc type CHAR, tabIndex=13, noEntry;
+Edit rui06=rui_file.rui06, tabIndex=14;
+ButtonEdit ruiplant=rui_file.ruiplant, action=controlp, tabIndex=42, not null, image="zoom.png";
+Edit ruiplant_desc=formonly.ruiplant_desc type CHAR, tabIndex=43, noEntry;
+Edit ruiuser=rui_file.ruiuser, tabIndex=5, noEntry;
+Edit ruimodu=rui_file.ruimodu, tabIndex=4, noEntry;
+Edit ruiacti=rui_file.ruiacti, tabIndex=3, noEntry, upShift;
+Edit ruioriu=rui_file.ruioriu, tabIndex=45, noEntry;
+Edit ruigrup=rui_file.ruigrup, tabIndex=2, noEntry;
+DateEdit ruidate=rui_file.ruidate, tabIndex=1, noEntry;
+DateEdit ruicrat=rui_file.ruicrat, tabIndex=6, noEntry;
+Edit ruiorig=rui_file.ruiorig, tabIndex=46, noEntry;
+Edit ruj02=ruj_file.ruj02, tabIndex=17, title="Line No.", not null;
+ButtonEdit ruj06=ruj_file.ruj06, action=controlp, tabIndex=27, title="Provider", image="zoom.png";
+ButtonEdit ruj03=ruj_file.ruj03, action=controlp, tabIndex=18, title="Item No.", not null, image="zoom.png";
+Edit ruj03_desc=formonly.ruj03_desc type VARCHAR, tabIndex=22, title="Item Name", noEntry;
+ButtonEdit ruj04=ruj_file.ruj04, action=controlp, tabIndex=23, title="Unit", not null, image="zoom.png";
+Edit ruj04_de=formonly.ruj04_desc type VARCHAR, tabIndex=24, title="Unit Name", noEntry;
+ButtonEdit ruj05=ruj_file.ruj05, action=controlp, tabIndex=25, title="Warehouse(IN)", not null, image="zoom.png";
+Edit ruj05_des=formonly.ruj05_desc type CHAR, tabIndex=26, title="Warehouse(IN) Name", noEntry;
+ButtonEdit ruj07=ruj_file.ruj07, action=controlp, tabIndex=28, title="Warehouse(OUT)", image="zoom.png";
+Edit ruj07_desc=formonly.ruj07_desc type CHAR, tabIndex=29, title="Warehouse(OUT) Name", noEntry;
+ComboBox ruj12=ruj_file.ruj12, tabIndex=44, title="turn type", not null, required, items=(("1", "turn up"),("2", "turn down"));
+Edit ruj08=ruj_file.ruj08, tabIndex=30, title="Adjust Number", not null;
+Edit ruj09=ruj_file.ruj09, tabIndex=31, title="Approval Number", not null;
+ButtonEdit ruj10=ruj_file.ruj10, action=controlp, tabIndex=32, title="Adjust Reason", not null, image="zoom.png";
+Edit ruj10_desc=formonly.ruj10_desc type CHAR, tabIndex=34, title="Reason Name", noEntry;
+Edit ruj11=ruj_file.ruj11, tabIndex=33, title="Memo";
+Edit idx=formonly.idx type CHAR, tabIndex=19, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=21;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ruj(ruj_file.ruj02,ruj_file.ruj06,ruj_file.ruj03,formonly.ruj03_desc,ruj_file.ruj04,formonly.ruj04_desc,ruj_file.ruj05,formonly.ruj05_desc,ruj_file.ruj07,formonly.ruj07_desc,ruj_file.ruj12,ruj_file.ruj08,ruj_file.ruj09,ruj_file.ruj10,formonly.ruj10_desc,ruj_file.ruj11)
+SCREEN RECORD Undefined(rui_file.rui01,rui_file.rui07,formonly.imgmksg,rui_file.rui03,formonly.rui03_desc,rui_file.rui09,rui_file.rui08,rui_file.rui10,rui_file.rui02,rui_file.ruiconf,rui_file.rui04,formonly.rui04_desc,rui_file.ruicond,rui_file.ruicont,rui_file.rui05,formonly.rui05_desc,rui_file.ruiconu,formonly.ruiconu_desc,rui_file.rui06,rui_file.ruiplant,formonly.ruiplant_desc,rui_file.ruiuser,rui_file.ruimodu,rui_file.ruiacti,rui_file.ruioriu,rui_file.ruigrup,rui_file.ruidate,rui_file.ruicrat,rui_file.ruiorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

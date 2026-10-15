@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_m_pmm6.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Query P/O")
+VBox VBox1
+Grid gr3799
+{
+ Supplier No.        [vendor    ]
+
+}
+END -- gr3799
+Table s_pmm
+{
+[check |pmm01     |pmm02      |pmm04           |pmm07            |pmm20            |pmm12   |pmn04                                                         ]
+[check |pmm01     |pmm02      |pmm04           |pmm07            |pmm20            |pmm12   |pmn04                                                         ]
+[check |pmm01     |pmm02      |pmm04           |pmm07            |pmm20            |pmm12   |pmn04                                                         ]
+[check |pmm01     |pmm02      |pmm04           |pmm07            |pmm20            |pmm12   |pmn04                                                         ]
+[check |pmm01     |pmm02      |pmm04           |pmm07            |pmm20            |pmm12   |pmn04                                                         ]
+[check |pmm01     |pmm02      |pmm04           |pmm07            |pmm20            |pmm12   |pmn04                                                         ]
+[check |pmm01     |pmm02      |pmm04           |pmm07            |pmm20            |pmm12   |pmn04                                                         ]
+[check |pmm01     |pmm02      |pmm04           |pmm07            |pmm20            |pmm12   |pmn04                                                         ]
+[check |pmm01     |pmm02      |pmm04           |pmm07            |pmm20            |pmm12   |pmn04                                                         ]
+[check |pmm01     |pmm02      |pmm04           |pmm07            |pmm20            |pmm12   |pmn04                                                         ]
+
+}
+END -- s_pmm
+END -- VBox1
+END -- q_m_pmm6
+
+TABLES
+pmn_file,
+pmm_file
+ATTRIBUTES
+Edit vendor=formonly.vendor type CHAR, tabIndex=1;
+CheckBox check=formonly.check type CHAR, tabIndex=2, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmm01=pmm_file.pmm01, tabIndex=3, title="P/O No.", noEntry;
+Edit pmm02=pmm_file.pmm02, tabIndex=4, title="Property", noEntry;
+Edit pmm04=pmm_file.pmm04, tabIndex=5, title="Document Date", noEntry;
+Edit pmm07=pmm_file.pmm07, tabIndex=6, title="Document Class", noEntry;
+Edit pmm20=pmm_file.pmm20, tabIndex=7, title="Payment Method", noEntry;
+Edit pmm12=pmm_file.pmm12, tabIndex=8, title="Buyer", noEntry;
+Edit pmn04=pmn_file.pmn04, tabIndex=9, title="Item No.", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmm(formonly.check,pmm_file.pmm01,pmm_file.pmm02,pmm_file.pmm04,pmm_file.pmm07,pmm_file.pmm20,pmm_file.pmm12,pmn_file.pmn04)
+SCREEN RECORD Undefined(formonly.vendor)
+END -- INSTRUCTIONS
+

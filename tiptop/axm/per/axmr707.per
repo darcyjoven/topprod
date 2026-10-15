@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmr707.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr707")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                              >
+  Potential Cust. No.   [ofd01                  ]
+  Salesman No.          [ofd23                  ]
+  Cust. Level           [ofd10                  ]
+ <                                                                                       >
+ <G group02                                                                              >
+  Un-Liaised Days      [b  ]
+
+ <                                                                                       >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[more                 ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- axmr707
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ofd01=formonly.ofd01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit ofd23=formonly.ofd23 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit ofd10=formonly.ofd10 type CHAR, action=controlp, tabIndex=3, image="zoom", upShift;
+Group group02:group02, text="INPUT";
+Edit b=formonly.b type SMALLINT, tabIndex=4;
+CheckBox more=formonly.more type VARCHAR, tabIndex=5, text="Other Print Conditions", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ofd01,formonly.ofd23,formonly.ofd10,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglg802.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglr802")
+VBox VBox1
+Grid Grid1
+{
+  <G group1                                                          >
+     Book No.    [bookno              ]
+  <                                                                  >
+}
+END -- Grid1
+Grid gr2764
+{
+ <G group01                                                          >
+  Tran.Code Sequence  [aec051                          ]
+  Tran. Code Type     [aec052                          ]
+  Tran. Code          [aec05                           ]
+  Voucher Date        [aec02                           ]
+  Account NO.         [aec01                           ]
+ <                                                                   >
+}
+END -- gr2764
+Group group02(text="INPUT")
+Grid gr2765
+{
+
+ <G group03                                                         >
+  [s1                  ][s2                  ]
+ <                                                                  >
+ <G group04                                                         >
+  [t                                                          ]
+ <                                                                  >
+ <G group05                                                         >
+  [u                                                          ]
+  [e                                                          ]
+ <                                                                  >
+
+}
+END -- gr2765
+END -- group02
+Grid gr2766
+{
+[more                                                        ]
+
+
+}
+END -- gr2766
+END -- VBox1
+END -- aglr802
+
+TABLES
+aec_file
+ATTRIBUTES
+Group group1:Group1, text=%"INPUT";
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+Group group01:group01, text="QBE";
+ButtonEdit aec051=aec_file.aec051, action=controlp, tabIndex=1, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+ButtonEdit aec052=aec_file.aec052, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+ButtonEdit aec05=aec_file.aec05, action=controlp, tabIndex=3, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+DateEdit aec02=aec_file.aec02, tabIndex=4;
+ButtonEdit aec01=aec_file.aec01, action=controlp, tabIndex=5, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=6, queryEditable, items=(("3", "Voucher Date"),("4", "Account NO."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=7, queryEditable, items=(("3", "Voucher Date"),("4", "Account NO."));
+Group group04:group04, text="Control/Classification Item";
+RadioGroup t=formonly.t type CHAR, tabIndex=8, items=(("1", "Ctrl & Independent Account"),("2", "Classification Item"));
+Group group05:group05;
+CheckBox u=formonly.u type CHAR, tabIndex=9, text="Next Page By Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=10, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,aec_file.aec051,aec_file.aec052,aec_file.aec05,aec_file.aec02,aec_file.aec01,formonly.s1,formonly.s2,formonly.t,formonly.u,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

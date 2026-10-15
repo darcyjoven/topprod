@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxp910.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxp910")
+VBox VBox1
+Group g01(text="INPUT")
+Grid gr1087
+{
+  Closing Year        [g_yy      ]
+  Closing Date        [g_begin   ]-[g_end     ]
+ <G group01                                                         >
+ [g_step1                                                           ]
+ [g_step11                                                          ]
+ [g_step2                                                           ]
+ [g_step5                                                           ]
+ [g_step6                                                           ]
+ [g_step3                                                           ]
+ [g_step7                                                           ]
+ [g_step4                                                           ]
+ <                                                                  >
+
+}
+END -- gr1087
+END -- g01
+Grid gr1088
+{
+[g_bgjob   ]
+
+}
+END -- gr1088
+END -- VBox1
+END -- abxp910
+
+ATTRIBUTES
+Edit g_yy=formonly.g_yy type SMALLINT, tabIndex=1;
+DateEdit g_begin=formonly.g_begin type DATE, tabIndex=2;
+DateEdit g_end=formonly.g_end type DATE, tabIndex=3;
+Group group01:group01;
+CheckBox g_step1=formonly.g_step1 type CHAR, tabIndex=4, text="Delete All Current Year Closing Data(Exclusive Stock)", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_step11=formonly.g_step11 type CHAR, tabIndex=5, text="Delete All Stock Year Closing Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_step2=formonly.g_step2 type CHAR, tabIndex=6, text="Carry forward Last Year Balance to Current Year Beginning", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_step5=formonly.g_step5 type CHAR, tabIndex=7, text="Statistic Year Sale, Scrap, Sent-out", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_step6=formonly.g_step6 type CHAR, tabIndex=8, text="Yearly Sales, Scrap, Sent-out Equivalence", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_step3=formonly.g_step3 type CHAR, tabIndex=9, text="Inventory Equivalent Statistics(Finish Product,Semi-Product,Mat)", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_step7=formonly.g_step7 type CHAR, tabIndex=10, text="Generate Bonded Material Closing Report", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_step4=formonly.g_step4 type CHAR, tabIndex=11, text="Generate all Items Yearly Engineering Change Period Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=12, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_yy,formonly.g_begin,formonly.g_end,formonly.g_step1,formonly.g_step11,formonly.g_step2,formonly.g_step5,formonly.g_step6,formonly.g_step3,formonly.g_step7,formonly.g_step4,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxt001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxt001")
+VBox VBox1
+Folder pc176
+Page page01(text="Main")
+Grid gr1225
+{
+ Year                [bwe011 ]
+ Type                [bwe00                         ]
+ Label No.           [bwe01     ]
+ Item No.            [bwe03                         ] [ima15               ]
+ Desc                [ima02                         ]
+ Spec                [ima021                        ]
+ Bond GP Code        [ima1916                     ]
+ Bond GP Desc        [bxe02                     ]
+ Bond GP Spec        [bxe03                     ]
+ Effective Date      [bwg02        ]
+ QPA                 [bwg041       ]
+ Unit Qty            [bwe031       ]
+ Equivelant Qty      [bwe04           ]
+
+
+}
+END -- gr1225
+END -- page01
+END -- pc176
+Grid gr1226
+{
+  ----------Rows [cnt   ] ----------
+
+}
+END -- gr1226
+END -- VBox1
+END -- abxt001
+
+TABLES
+bwg_file,
+bwe_file,
+bxe_file,
+ima_file
+ATTRIBUTES
+Edit bwe011=bwe_file.bwe011, tabIndex=1, noEntry;
+ComboBox bwe00=bwe_file.bwe00, tabIndex=2, noEntry, items=(("S", "Stock Taking"),("W", "WIP Inventory Taking"),("P", "SUB W/O"));
+Edit bwe01=bwe_file.bwe01, tabIndex=3, noEntry;
+ButtonEdit bwe03=bwe_file.bwe03, action=controlp, tabIndex=4, noEntry, image="zoom";
+CheckBox ima15=ima_file.ima15, tabIndex=5, text="Bonded", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ima02=ima_file.ima02, tabIndex=6, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=7, noEntry;
+Edit ima1916=ima_file.ima1916, tabIndex=8, noEntry;
+Edit bxe02=bxe_file.bxe02, tabIndex=9, noEntry;
+Edit bxe03=bxe_file.bxe03, tabIndex=10, noEntry;
+Edit bwg02=bwg_file.bwg02, tabIndex=14, noEntry;
+Edit bwg041=bwg_file.bwg041, tabIndex=15, noEntry;
+Edit bwe031=bwe_file.bwe031, tabIndex=13;
+Edit bwe04=bwe_file.bwe04, tabIndex=11;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bwe_file.bwe011,bwe_file.bwe00,bwe_file.bwe01,bwe_file.bwe03,ima_file.ima15,ima_file.ima02,ima_file.ima021,ima_file.ima1916,bxe_file.bxe02,bxe_file.bxe03,bwe_file.bwe04,formonly.cnt,bwe_file.bwe031,bwg_file.bwg02,bwg_file.bwg041)
+END -- INSTRUCTIONS
+

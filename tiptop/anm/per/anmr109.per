@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr109.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr109")
+VBox VBox1
+Group group01(text="QBE")
+Grid gr1
+{
+ Due date            [nmd05               ]
+ Bank No.            [nmd03               ]
+ Notes type 1        [nmd06               ]
+}
+END -- gr1
+END -- group01
+Group group02(text="INPUT")
+Grid gr2
+{
+ Ending Date         [edate               ]
+
+}
+END -- gr2
+END -- group02
+Grid gr3
+{
+[more                                                        ]
+
+}
+END -- gr3
+END -- VBox1
+END -- anmr109
+
+ATTRIBUTES
+DateEdit nmd05=formonly.nmd05 type DATE, tabIndex=1;
+Edit nmd03=formonly.nmd03 type VARCHAR, tabIndex=2;
+Edit nmd06=formonly.nmd06 type VARCHAR, tabIndex=3;
+DateEdit edate=formonly.edate type DATE, tabIndex=4;
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nmd05,formonly.nmd03,formonly.nmd06,formonly.edate,formonly.more)
+END -- INSTRUCTIONS
+

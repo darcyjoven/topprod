@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp460.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"dimt_orderform")
+Folder pc8
+Page Page14(action=main, text=%"Basic Data")
+VBox VBox2
+Grid gr24
+{
+ PR No.        [pmk01_q         ]
+ PR Date       [pmk04_q         ]
+ Item No.      [pml04_q         ]
+
+
+
+}
+END -- gr24
+Table tb6
+{
+[sel  |wpc10   |pmk09   |pmc03  |pml04               |pml041              |ima021    |pml33         |pml07     |pml20     ]
+[sel  |wpc10   |pmk09   |pmc03  |pml04               |pml041              |ima021    |pml33         |pml07     |pml20     ]
+[sel  |wpc10   |pmk09   |pmc03  |pml04               |pml041              |ima021    |pml33         |pml07     |pml20     ]
+[sel  |wpc10   |pmk09   |pmc03  |pml04               |pml041              |ima021    |pml33         |pml07     |pml20     ]
+[sel  |wpc10   |pmk09   |pmc03  |pml04               |pml041              |ima021    |pml33         |pml07     |pml20     ]
+[sel  |wpc10   |pmk09   |pmc03  |pml04               |pml041              |ima021    |pml33         |pml07     |pml20     ]
+
+
+
+}
+END -- tb6
+Grid gr2
+{
+   [cn       ]
+
+
+
+
+
+}
+END -- gr2
+END -- VBox2
+END -- Page14
+END -- pc8
+END -- apmp460
+
+ATTRIBUTES
+ButtonEdit pmk01_q=formonly.pmk01_q type VARCHAR, action=CONTROLP, tabIndex=1, image="zoom.png";
+DateEdit pmk04_q=formonly.pmk04_q type DATE, tabIndex=2;
+ButtonEdit pml04_q=formonly.pml04_q type VARCHAR, action=CONTROLP, tabIndex=11, image="zoom.png";
+CheckBox sel=formonly.sel type CHAR, tabIndex=3, title="Choose", not null, valueChecked = "Y", valueUnchecked = "N";
+DateEdit wpc10=formonly.wpc10 type CHAR, tabIndex=14, title=%"wpc10", noEntry, required;
+Edit pmk09=formonly.pmk09 type VARCHAR, tabIndex=4, title="Vendor No.", noEntry;
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=12, title="Vendor Name", noEntry;
+Edit pml04=formonly.pml04 type VARCHAR, tabIndex=5, title="Item No.", noEntry;
+Edit pml041=formonly.pml041 type VARCHAR, tabIndex=6, title="Item", noEntry;
+Edit ima021=formonly.ima021 type DECIMAL, tabIndex=7, title="Spec.", noEntry;
+Edit pml33=formonly.pml33 type VARCHAR, tabIndex=8, title="Requirement Date", noEntry;
+Edit pml07=formonly.pml07 type DECIMAL, tabIndex=9, title="PR Unit", noEntry;
+Edit pml20=formonly.pml20 type CHAR, tabIndex=10, default = "0", title="PR Qty", noEntry;
+Edit cn=formonly.cn type CHAR, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pml(formonly.sel,formonly.wpc10,formonly.pmk09,formonly.pmc03,formonly.pml04,formonly.pml041,formonly.ima021,formonly.pml33,formonly.pml07,formonly.pml20)
+SCREEN RECORD Undefined(formonly.pmk01_q,formonly.pmk04_q,formonly.pml04_q,formonly.cn)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq610")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3185
+{
+  Item#               [imgg01                        ]  Warehouse           [imgg02    ]
+  Inv Unit            [ima25     ]                      Location            [imgg03    ]
+  Part Name Spec      [ima02                         ]  Lot#                [imgg04              ]
+  Specification       [ima021                        ]  Inv Unit            [imgg09    ]
+
+ <G group03                                                                                       >
+  Year / Period       [yy  ]/[mm]
+ <                                                                                                >
+
+}
+END -- gr3185
+END -- page01
+END -- folder01
+Table s_imkk
+{
+[imkk0|imkk06  |imkk081         |imkk082         |imkk083         |imkk084         |imkk085         |imkk09                ]
+[imkk0|imkk06  |imkk081         |imkk082         |imkk083         |imkk084         |imkk085         |imkk09                ]
+[imkk0|imkk06  |imkk081         |imkk082         |imkk083         |imkk084         |imkk085         |imkk09                ]
+[imkk0|imkk06  |imkk081         |imkk082         |imkk083         |imkk084         |imkk085         |imkk09                ]
+[imkk0|imkk06  |imkk081         |imkk082         |imkk083         |imkk084         |imkk085         |imkk09                ]
+[imkk0|imkk06  |imkk081         |imkk082         |imkk083         |imkk084         |imkk085         |imkk09                ]
+[imkk0|imkk06  |imkk081         |imkk082         |imkk083         |imkk084         |imkk085         |imkk09                ]
+[imkk0|imkk06  |imkk081         |imkk082         |imkk083         |imkk084         |imkk085         |imkk09                ]
+[imkk0|imkk06  |imkk081         |imkk082         |imkk083         |imkk084         |imkk085         |imkk09                ]
+[imkk0|imkk06  |imkk081         |imkk082         |imkk083         |imkk084         |imkk085         |imkk09                ]
+
+}
+END -- s_imkk
+Grid gr3186
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3186
+END -- VBox1
+END -- aimq610
+
+TABLES
+imgg_file,
+imkk_file
+ATTRIBUTES
+ButtonEdit imgg01=imgg_file.imgg01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit imgg02=imgg_file.imgg02, tabIndex=2, not null, required;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=3, noEntry;
+Edit imgg03=imgg_file.imgg03, tabIndex=4, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=5, noEntry;
+Edit imgg04=imgg_file.imgg04, tabIndex=6, not null, required;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=7, noEntry;
+Edit imgg09=imgg_file.imgg09, tabIndex=8;
+Group group03:group03;
+Edit yy=formonly.yy type CHAR, tabIndex=9;
+Edit mm=formonly.mm type CHAR, tabIndex=10;
+Edit imkk0=imkk_file.imkk05, tabIndex=11, title="Year";
+Edit imkk06=imkk_file.imkk06, tabIndex=12, title="Period";
+Edit imkk081=imkk_file.imkk081, tabIndex=13, title="Store-in";
+Edit imkk082=imkk_file.imkk082, tabIndex=14, title="Sales";
+Edit imkk083=imkk_file.imkk083, tabIndex=15, title="Withdraw";
+Edit imkk084=imkk_file.imkk084, tabIndex=16, title="Transfer";
+Edit imkk085=imkk_file.imkk085, tabIndex=17, title="Adjust";
+Edit imkk09=imkk_file.imkk09, tabIndex=18, title="End of Period Balance";
+Edit cnt=formonly.cnt type CHAR, tabIndex=19;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imkk(imkk_file.imkk05,imkk_file.imkk06,imkk_file.imkk081,imkk_file.imkk082,imkk_file.imkk083,imkk_file.imkk084,imkk_file.imkk085,imkk_file.imkk09)
+SCREEN RECORD Undefined(imgg_file.imgg01,imgg_file.imgg02,formonly.ima25,imgg_file.imgg03,formonly.ima02,imgg_file.imgg04,formonly.ima021,imgg_file.imgg09,formonly.yy,formonly.mm,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/test.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+HBox HBox1
+Table Table1
+{
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+
+
+
+
+
+}
+END -- Table1
+Grid Grid1
+{
+
+[button1    ]
+[button2    ]
+
+
+
+
+
+[button3    ]
+[button4    ]
+
+}
+END -- Grid1
+Table Table2
+{
+[edit3   |edit4   ]
+[edit3   |edit4   ]
+[edit3   |edit4   ]
+[edit3   |edit4   ]
+[edit3   |edit4   ]
+
+
+
+
+
+}
+END -- Table2
+END -- HBox1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Edit edit1=formonly.Edit1, tabIndex=1, title=%"Edit1";
+Edit edit2=formonly.Edit2, tabIndex=2, title=%"Edit2";
+Button button1:Button1, tabIndex=5, text=%"Button1";
+Button button2:Button2, tabIndex=6, text=%"Button2";
+Button button3:Button3, tabIndex=7, text=%"Button3";
+Button button4:Button4, tabIndex=8, text=%"Button4";
+Edit edit3=formonly.Edit3, tabIndex=3, title=%"Edit3";
+Edit edit4=formonly.Edit4, tabIndex=4, title=%"Edit4";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(formonly.Edit1,formonly.Edit2)
+SCREEN RECORD Record2(formonly.Edit3,formonly.Edit4)
+END -- INSTRUCTIONS
+

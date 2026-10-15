@@ -1,0 +1,438 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt210")
+Folder Folder1
+Page Page1(action=main, text=%"Page1")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox hb57
+Grid gr429
+{
+ Accounts #  [apa01             ]
+ Acct. Date  [apa02             ]
+ Bill Vender [apa05     ][pmc03     ]
+ Pay Vender  [apa06     ][apa07     ]
+
+}
+END -- gr429
+Grid gr430
+{
+ Empl.  [apa21     |gen02          ]
+ Dept.  [apa22     |gem02          ]
+ C.Ctr  [apa930    |gem02b         ]
+ Operat [apa76     ]
+
+}
+END -- gr430
+Grid gr431
+{
+ Voucher     [apa44             ]
+ Gp Pay. No. [apa992            ]
+ Status      [apa63    ][imgmksg]
+ [apamk][apa42 ][apa41 ][       ]
+ [apa79  ]
+}
+END -- gr431
+END -- hb57
+END -- page01
+Page info(text="Info")
+Grid gr432
+{
+ Record Owner        [apauser   ] Last Modified by    [apamodu   ] Data Valid Code     [apaacti   ]
+ Department          [apagrup   ] Create/Modify Date  [apadate     ]
+ Record Orig.        [apaoriu   ]
+ Dept Orig.          [apaorig   ]
+}
+END -- gr432
+END -- info
+END -- folder01
+Folder folder02
+Page page02(text="AP")
+HBox hb38
+Grid gr433
+{
+ Category  [apa36     ]
+ Desc      [apr02                         ]
+ Currency  [apa13     ]
+ Ex.Rate   [apa14               ]
+ Tax Type  [apa15     ]
+ Tax Rate% [apa16     ]
+ Invoice # [apa08             ]
+ Dec No.   [apa77          ]
+ Allowance [apa58          ]
+
+
+
+}
+END -- gr433
+Grid gr434
+{
+ Pay Method [apa11     ]
+ Type       [pma11     ]
+ Pay Date   [apa12     ]
+ Due Days   [apa24     ]
+ Due Date   [apa64     ]
+ Payment    [apa55       ]
+
+
+
+
+
+
+}
+END -- gr434
+Grid gr435
+{
+            [dummy01             ]            [dummy03             ]
+ Net Amt.   [apa31f              ]            [apa31               ]
+ Tax        [apa32f              ]            [apa32               ]
+ Discount   [apa60f              ]            [apa60               ]
+ Discount   [apa61f              ]            [apa61               ]
+ Deducted   [apa65f              ]            [apa65               ]
+ Restore    [apa37f              ]            [apa37               ]
+ A/P        [apa34f              ]            [apa34               ]
+ Paid       [apa35f              ]            [apa35               ]
+ Unpd       [apa35_uf            ]            [apa35_u             ]
+                                     Spread   [net                 ]
+
+}
+END -- gr435
+END -- hb38
+END -- page02
+Page page03(text="Invoice Amount")
+HBox hb39
+Grid gr436
+{
+  Hold      [apa19     ]
+  Desc.     [apo02       ]
+  Amt Hold  [apa20               ]
+
+
+
+
+}
+END -- gr436
+Grid gr437
+{
+  Different Code  [apa56     ]
+  Desc.           [apa56_name]
+  Different Amount[apa33               ]
+  Project No.     [apa66     ]
+  Memo            [apa25                        ]
+  Plant           [apa100    ][azp02     ]
+
+}
+END -- gr437
+Grid gr438
+{
+  Input Date[apainpd     ]
+  Multi-S/N [apa99          ]
+
+
+
+
+
+}
+END -- gr438
+END -- hb39
+END -- page03
+Page page04(text="Account Info")
+HBox hb42
+Grid gr439
+{
+  Before Tax[apa51    ]   [a51               ]
+  Tax       [apa52    ]   [a52               ]
+  A/P       [apa54    ]   [a54               ]
+
+
+
+
+
+
+
+}
+END -- gr439
+Grid gr440
+{
+  Before Tax No.2[apa511   ]   [a511              ]
+  Tax No.2       [apa521   ]   [a521              ]
+  A/P No.2       [apa541   ]   [a541              ]
+
+
+
+
+
+
+
+}
+END -- gr440
+END -- hb42
+END -- page04
+Page page05(text="Restore Info")
+Grid gr441
+{
+  Restore Bank [apa101    ]
+  Restore Trans[apa102    ]
+
+}
+END -- gr441
+END -- page05
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[apaud01                       ] userdefined_field07[apaud07        ] userdefined_field13[apaud13        ]
+                    [                              ] userdefined_field08[apaud08        ] userdefined_field14[apaud14        ]
+ userdefined_field02[apaud02        ]                userdefined_field09[apaud09        ] userdefined_field15[apaud15        ]
+ userdefined_field03[apaud03        ]                userdefined_field10[apaud10        ]
+ userdefined_field04[apaud04        ]                userdefined_field11[apaud11        ]
+ userdefined_field05[apaud05        ]                userdefined_field12[apaud12        ]
+ userdefined_field06[apaud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder02
+Table s_apb
+{
+[apb0|apb33         |apb11           |apb29|apb37   |apb21            |apb|apb34|apb01_unap      |apb06           |apb07|apb12         |apb27         |apb09    |apb28  |apb35     |apb36     |apb31           |apb32     |b32     |apb25     |b25       |apb251     |b251      |apb26 |b26       |apb930      |gem02c      |apb23               |apb24               |apb08               |apb10               |apbud01   |apbud02   |apbud03    |apbud04    |apbud05    |apbud06    |apbud07    |apbud08    |apbud09    |apbud10    |apbud11   |apbud12  |apbud13   |apbud14   |apbud15    ]
+[apb0|apb33         |apb11           |apb29|apb37   |apb21            |apb|apb34|apb01_unap      |apb06           |apb07|apb12         |apb27         |apb09    |apb28  |apb35     |apb36     |apb31           |apb32     |b32     |apb25     |b25       |apb251     |b251      |apb26 |b26       |apb930      |gem02c      |apb23               |apb24               |apb08               |apb10               |apbud01   |apbud02   |apbud03    |apbud04    |apbud05    |apbud06    |apbud07    |apbud08    |apbud09    |apbud10    |apbud11   |apbud12  |apbud13   |apbud14   |apbud15    ]
+[apb0|apb33         |apb11           |apb29|apb37   |apb21            |apb|apb34|apb01_unap      |apb06           |apb07|apb12         |apb27         |apb09    |apb28  |apb35     |apb36     |apb31           |apb32     |b32     |apb25     |b25       |apb251     |b251      |apb26 |b26       |apb930      |gem02c      |apb23               |apb24               |apb08               |apb10               |apbud01   |apbud02   |apbud03    |apbud04    |apbud05    |apbud06    |apbud07    |apbud08    |apbud09    |apbud10    |apbud11   |apbud12  |apbud13   |apbud14   |apbud15    ]
+[apb0|apb33         |apb11           |apb29|apb37   |apb21            |apb|apb34|apb01_unap      |apb06           |apb07|apb12         |apb27         |apb09    |apb28  |apb35     |apb36     |apb31           |apb32     |b32     |apb25     |b25       |apb251     |b251      |apb26 |b26       |apb930      |gem02c      |apb23               |apb24               |apb08               |apb10               |apbud01   |apbud02   |apbud03    |apbud04    |apbud05    |apbud06    |apbud07    |apbud08    |apbud09    |apbud10    |apbud11   |apbud12  |apbud13   |apbud14   |apbud15    ]
+[apb0|apb33         |apb11           |apb29|apb37   |apb21            |apb|apb34|apb01_unap      |apb06           |apb07|apb12         |apb27         |apb09    |apb28  |apb35     |apb36     |apb31           |apb32     |b32     |apb25     |b25       |apb251     |b251      |apb26 |b26       |apb930      |gem02c      |apb23               |apb24               |apb08               |apb10               |apbud01   |apbud02   |apbud03    |apbud04    |apbud05    |apbud06    |apbud07    |apbud08    |apbud09    |apbud10    |apbud11   |apbud12  |apbud13   |apbud14   |apbud15    ]
+[apb0|apb33         |apb11           |apb29|apb37   |apb21            |apb|apb34|apb01_unap      |apb06           |apb07|apb12         |apb27         |apb09    |apb28  |apb35     |apb36     |apb31           |apb32     |b32     |apb25     |b25       |apb251     |b251      |apb26 |b26       |apb930      |gem02c      |apb23               |apb24               |apb08               |apb10               |apbud01   |apbud02   |apbud03    |apbud04    |apbud05    |apbud06    |apbud07    |apbud08    |apbud09    |apbud10    |apbud11   |apbud12  |apbud13   |apbud14   |apbud15    ]
+[apb0|apb33         |apb11           |apb29|apb37   |apb21            |apb|apb34|apb01_unap      |apb06           |apb07|apb12         |apb27         |apb09    |apb28  |apb35     |apb36     |apb31           |apb32     |b32     |apb25     |b25       |apb251     |b251      |apb26 |b26       |apb930      |gem02c      |apb23               |apb24               |apb08               |apb10               |apbud01   |apbud02   |apbud03    |apbud04    |apbud05    |apbud06    |apbud07    |apbud08    |apbud09    |apbud10    |apbud11   |apbud12  |apbud13   |apbud14   |apbud15    ]
+[apb0|apb33         |apb11           |apb29|apb37   |apb21            |apb|apb34|apb01_unap      |apb06           |apb07|apb12         |apb27         |apb09    |apb28  |apb35     |apb36     |apb31           |apb32     |b32     |apb25     |b25       |apb251     |b251      |apb26 |b26       |apb930      |gem02c      |apb23               |apb24               |apb08               |apb10               |apbud01   |apbud02   |apbud03    |apbud04    |apbud05    |apbud06    |apbud07    |apbud08    |apbud09    |apbud10    |apbud11   |apbud12  |apbud13   |apbud14   |apbud15    ]
+[apb0|apb33         |apb11           |apb29|apb37   |apb21            |apb|apb34|apb01_unap      |apb06           |apb07|apb12         |apb27         |apb09    |apb28  |apb35     |apb36     |apb31           |apb32     |b32     |apb25     |b25       |apb251     |b251      |apb26 |b26       |apb930      |gem02c      |apb23               |apb24               |apb08               |apb10               |apbud01   |apbud02   |apbud03    |apbud04    |apbud05    |apbud06    |apbud07    |apbud08    |apbud09    |apbud10    |apbud11   |apbud12  |apbud13   |apbud14   |apbud15    ]
+[apb0|apb33         |apb11           |apb29|apb37   |apb21            |apb|apb34|apb01_unap      |apb06           |apb07|apb12         |apb27         |apb09    |apb28  |apb35     |apb36     |apb31           |apb32     |b32     |apb25     |b25       |apb251     |b251      |apb26 |b26       |apb930      |gem02c      |apb23               |apb24               |apb08               |apb10               |apbud01   |apbud02   |apbud03    |apbud04    |apbud05    |apbud06    |apbud07    |apbud08    |apbud09    |apbud10    |apbud11   |apbud12  |apbud13   |apbud14   |apbud15    ]
+
+}
+END -- s_apb
+Grid gr442
+{
+ ----------[label|idx   ]/[cnt   ]----- Rows[n2    ]----------                                                                                                                                                                                                                                                                                        ---------- Total  [apa57               ] ----------
+
+
+}
+END -- gr442
+END -- VBox1
+END -- Page1
+Page Page2(action=item_list, text=%"Page2")
+Table s_apa_1
+{
+[apa01_1             |apa02_1   |apa05_1   |pmc03_1                       |apa06_1   |apa07_1                       |apa36_1   |apr02_1                       |apa13_1   |apa15_1   |apa16_1    |apa08_1             |apa11_1   |pma02_1                       |apa12_1   |apa31f_1              |apa31_1               |apa34f_1              |apa34_1               |apa35f_1              |apa35_1               |apa44_1             |apa41_1   |apa63_l_1]
+[apa01_1             |apa02_1   |apa05_1   |pmc03_1                       |apa06_1   |apa07_1                       |apa36_1   |apr02_1                       |apa13_1   |apa15_1   |apa16_1    |apa08_1             |apa11_1   |pma02_1                       |apa12_1   |apa31f_1              |apa31_1               |apa34f_1              |apa34_1               |apa35f_1              |apa35_1               |apa44_1             |apa41_1   |apa63_l_1]
+[apa01_1             |apa02_1   |apa05_1   |pmc03_1                       |apa06_1   |apa07_1                       |apa36_1   |apr02_1                       |apa13_1   |apa15_1   |apa16_1    |apa08_1             |apa11_1   |pma02_1                       |apa12_1   |apa31f_1              |apa31_1               |apa34f_1              |apa34_1               |apa35f_1              |apa35_1               |apa44_1             |apa41_1   |apa63_l_1]
+[apa01_1             |apa02_1   |apa05_1   |pmc03_1                       |apa06_1   |apa07_1                       |apa36_1   |apr02_1                       |apa13_1   |apa15_1   |apa16_1    |apa08_1             |apa11_1   |pma02_1                       |apa12_1   |apa31f_1              |apa31_1               |apa34f_1              |apa34_1               |apa35f_1              |apa35_1               |apa44_1             |apa41_1   |apa63_l_1]
+[apa01_1             |apa02_1   |apa05_1   |pmc03_1                       |apa06_1   |apa07_1                       |apa36_1   |apr02_1                       |apa13_1   |apa15_1   |apa16_1    |apa08_1             |apa11_1   |pma02_1                       |apa12_1   |apa31f_1              |apa31_1               |apa34f_1              |apa34_1               |apa35f_1              |apa35_1               |apa44_1             |apa41_1   |apa63_l_1]
+[apa01_1             |apa02_1   |apa05_1   |pmc03_1                       |apa06_1   |apa07_1                       |apa36_1   |apr02_1                       |apa13_1   |apa15_1   |apa16_1    |apa08_1             |apa11_1   |pma02_1                       |apa12_1   |apa31f_1              |apa31_1               |apa34f_1              |apa34_1               |apa35f_1              |apa35_1               |apa44_1             |apa41_1   |apa63_l_1]
+[apa01_1             |apa02_1   |apa05_1   |pmc03_1                       |apa06_1   |apa07_1                       |apa36_1   |apr02_1                       |apa13_1   |apa15_1   |apa16_1    |apa08_1             |apa11_1   |pma02_1                       |apa12_1   |apa31f_1              |apa31_1               |apa34f_1              |apa34_1               |apa35f_1              |apa35_1               |apa44_1             |apa41_1   |apa63_l_1]
+[apa01_1             |apa02_1   |apa05_1   |pmc03_1                       |apa06_1   |apa07_1                       |apa36_1   |apr02_1                       |apa13_1   |apa15_1   |apa16_1    |apa08_1             |apa11_1   |pma02_1                       |apa12_1   |apa31f_1              |apa31_1               |apa34f_1              |apa34_1               |apa35f_1              |apa35_1               |apa44_1             |apa41_1   |apa63_l_1]
+[apa01_1             |apa02_1   |apa05_1   |pmc03_1                       |apa06_1   |apa07_1                       |apa36_1   |apr02_1                       |apa13_1   |apa15_1   |apa16_1    |apa08_1             |apa11_1   |pma02_1                       |apa12_1   |apa31f_1              |apa31_1               |apa34f_1              |apa34_1               |apa35f_1              |apa35_1               |apa44_1             |apa41_1   |apa63_l_1]
+[apa01_1             |apa02_1   |apa05_1   |pmc03_1                       |apa06_1   |apa07_1                       |apa36_1   |apr02_1                       |apa13_1   |apa15_1   |apa16_1    |apa08_1             |apa11_1   |pma02_1                       |apa12_1   |apa31f_1              |apa31_1               |apa34f_1              |apa34_1               |apa35f_1              |apa35_1               |apa44_1             |apa41_1   |apa63_l_1]
+
+
+}
+END -- s_apa_1
+END -- Page2
+END -- Folder1
+END -- aapt210
+
+TABLES
+apa_file,
+apb_file
+ATTRIBUTES
+ButtonEdit apa01=apa_file.apa01, action=controlp, tabIndex=1, not null, required, image="zoom", upShift, comment="<^P>Query Bill  ";
+DateEdit apa02=apa_file.apa02, tabIndex=2, not null, required;
+ButtonEdit apa05=apa_file.apa05, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Vender";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=4, noEntry;
+ButtonEdit apa06=apa_file.apa06, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Vender";
+Edit apa07=apa_file.apa07, tabIndex=6, not null, required;
+ButtonEdit apa21=apa_file.apa21, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Account Employee";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=8, noEntry;
+ButtonEdit apa22=apa_file.apa22, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Account Department";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=105, noEntry;
+ButtonEdit apa930=apa_file.apa930, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02b=formonly.gem02b type CHAR, tabIndex=11, noEntry;
+ComboBox apa76=apa_file.apa76, tabIndex=502, not null, required, items=(("1", "scale"),("2", "cost scale"),("3", "rate scale"),("4", "union"));
+Edit apa44=apa_file.apa44, tabIndex=12, noEntry;
+Edit apa992=apa_file.apa992, tabIndex=13, noEntry;
+ComboBox apa63=apa_file.apa63, tabIndex=14, noEntry, items=(("0", "Issue"),("1", "Approved"),("S", "Approving"),("R", "Approval rejected!"),("W", "Withdraw"),("9", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+CheckBox apamk=apa_file.apamksg, tabIndex=15, text="Approve?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apa42=apa_file.apa42, tabIndex=16, text="Void", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apa41=apa_file.apa41, tabIndex=17, text="Confirm", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apa79=formonly.apa79 type CHAR, tabIndex=503, text="adjust", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit apauser=apa_file.apauser, tabIndex=18, noEntry;
+Edit apamodu=apa_file.apamodu, tabIndex=19, noEntry;
+Edit apaacti=apa_file.apaacti, tabIndex=20, noEntry;
+Edit apagrup=apa_file.apagrup, tabIndex=21, noEntry;
+DateEdit apadate=apa_file.apadate, tabIndex=22, noEntry;
+Edit apaoriu=apa_file.apaoriu, tabIndex=497, noEntry;
+Edit apaorig=apa_file.apaorig, tabIndex=498, noEntry;
+ButtonEdit apa36=apa_file.apa36, action=controlp, tabIndex=23, not null, required, image="zoom", comment="<^P>Qry Account Cate";
+Edit apr02=formonly.apr02 type VARCHAR, tabIndex=24, noEntry;
+ButtonEdit apa13=apa_file.apa13, action=controlp, tabIndex=25, not null, required, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit apa14=apa_file.apa14, action=controlp, tabIndex=26, not null, required, image="zoom";
+ButtonEdit apa15=apa_file.apa15, action=controlp, tabIndex=27, not null, required, image="zoom", comment="<^P>Qry Tax Type";
+Edit apa16=apa_file.apa16, tabIndex=28, noEntry;
+Edit apa08=apa_file.apa08, tabIndex=29;
+ButtonEdit apa77=apa_file.apa77, action=controlp, tabIndex=499, not null, required, image="zoom";
+ComboBox apa58=apa_file.apa58, tabIndex=500, not null, required, queryEditable, items=(("1", "Billing Difference Allowance"),("2", "Return/Allowance"),("3", "Deduction/Allowance"));
+ButtonEdit apa11=apa_file.apa11, action=controlp, tabIndex=30, image="zoom", comment="<^P>Qry Payment Type";
+Edit pma11=formonly.pma11 type CHAR, tabIndex=31, noEntry;
+DateEdit apa12=apa_file.apa12, tabIndex=32;
+Edit apa24=apa_file.apa24, tabIndex=33, comment="Enter Ant. Note Due Dt, Non-Note Payt if Blank, 0:Demand Note, 30/60/90...:Term Bill";
+DateEdit apa64=apa_file.apa64, tabIndex=34;
+ComboBox apa55=apa_file.apa55, tabIndex=35, noEntry, queryEditable, items=(("1", "Transfer to A/P"),("2", "Direct Debit"));
+Label dummy01:dummy01, text="Original Currency";
+Label dummy03:dummy03, text="Home Currency";
+Edit apa31f=apa_file.apa31f, tabIndex=36, not null, required;
+Edit apa31=apa_file.apa31, tabIndex=37, not null, required;
+Edit apa32f=apa_file.apa32f, tabIndex=38, not null, required;
+Edit apa32=apa_file.apa32, tabIndex=39, not null, required;
+Edit apa60f=apa_file.apa60f, tabIndex=40, noEntry, not null, required;
+Edit apa60=apa_file.apa60, tabIndex=41, noEntry, not null, required;
+Edit apa61f=apa_file.apa61f, tabIndex=42, noEntry, not null, required;
+Edit apa61=apa_file.apa61, tabIndex=43, noEntry, not null, required;
+Edit apa65f=apa_file.apa65f, tabIndex=44, noEntry, not null, required;
+Edit apa65=apa_file.apa65, tabIndex=45, noEntry, not null, required;
+Edit apa37f=apa_file.apa37f, tabIndex=46, noEntry;
+Edit apa37=apa_file.apa37, tabIndex=47, noEntry;
+Edit apa34f=apa_file.apa34f, tabIndex=48, noEntry, not null, required;
+Edit apa34=apa_file.apa34, tabIndex=49, noEntry, not null, required;
+Edit apa35f=apa_file.apa35f, tabIndex=50, noEntry, not null, required;
+Edit apa35=apa_file.apa35, tabIndex=51, noEntry, not null, required;
+Edit apa35_uf=formonly.apa35_uf type CHAR, tabIndex=52, noEntry;
+Edit apa35_u=formonly.apa35_u type CHAR, tabIndex=53, noEntry;
+Edit net=formonly.net type CHAR, tabIndex=54;
+ButtonEdit apa19=apa_file.apa19, action=controlp, tabIndex=55, image="zoom", comment="<^P>Query On-Hold Reason";
+Edit apo02=formonly.apo02 type VARCHAR, tabIndex=56, noEntry;
+Edit apa20=apa_file.apa20, tabIndex=57;
+ComboBox apa56=apa_file.apa56, tabIndex=58, noEntry, queryEditable, items=(("0", "None"),("1", "Retain"),("2", "Price Difference"),("3", "Allowance"),("4", ""),("5", "Variation Counted to UNAP Difference"));
+Edit apa56_name=formonly.apa56_name type VARCHAR, tabIndex=59;
+Edit apa33=apa_file.apa33, tabIndex=60, noEntry, not null, required;
+ButtonEdit apa66=apa_file.apa66, action=controlp, tabIndex=61, image="zoom";
+Edit apa25=apa_file.apa25, tabIndex=62;
+ButtonEdit apa100=apa_file.apa100, action=controlp, tabIndex=63, image="zoom", comment="<^P> Qry Details";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=64, noEntry;
+DateEdit apainpd=apa_file.apainpd, tabIndex=65, noEntry;
+Edit apa99=apa_file.apa99, tabIndex=66, noEntry;
+ButtonEdit apa51=apa_file.apa51, action=controlp, tabIndex=67, image="zoom", comment="Enter debit account, Blank: Use Body Classification Item, <^P>Qry Account ";
+Edit a51=formonly.a51 type CHAR, tabIndex=106, noEntry;
+ButtonEdit apa52=apa_file.apa52, action=controlp, tabIndex=68, image="zoom", comment="Enter Tax Debit Acct of Purchase, <^P>Qry Account ";
+Edit a52=formonly.a52 type CHAR, tabIndex=107, noEntry;
+ButtonEdit apa54=apa_file.apa54, action=controlp, tabIndex=69, image="zoom", comment="Enter credit account of A/P, <^P>Qry Account  <^Y>Create Other Data";
+Edit a54=formonly.a54 type CHAR, tabIndex=108, noEntry;
+ButtonEdit apa511=apa_file.apa511, action=controlp, tabIndex=70, image="zoom", comment="Enter debit account, Blank: Use Body Classification Item, <^P>Qry Account ";
+Edit a511=formonly.a511 type CHAR, tabIndex=112, noEntry;
+ButtonEdit apa521=apa_file.apa521, action=controlp, tabIndex=71, image="zoom", comment="Enter Tax Debit Acct of Purchase, <^P>Qry Account ";
+Edit a521=formonly.a521 type CHAR, tabIndex=113, noEntry;
+ButtonEdit apa541=apa_file.apa541, action=controlp, tabIndex=72, image="zoom", comment="Enter credit account of A/P, <^P>Qry Account  <^Y>Create Other Data";
+Edit a541=formonly.a541 type CHAR, tabIndex=114, noEntry;
+ButtonEdit apa101=apa_file.apa101, action=controlp, tabIndex=73, image="zoom", comment="<^P>Qry Bank No. <^Y>Create Bank Basic";
+ButtonEdit apa102=apa_file.apa102, action=controlp, tabIndex=74, image="zoom", comment="<^P>Qry Bank No. <^Y>Create Bank Trans";
+TextEdit apaud01=apa_file.apaud01, tabIndex=323, stretch=NONE;
+Edit apaud07=apa_file.apaud07, tabIndex=324;
+DateEdit apaud13=apa_file.apaud13, tabIndex=325;
+Edit apaud08=apa_file.apaud08, tabIndex=326;
+DateEdit apaud14=apa_file.apaud14, tabIndex=327;
+Edit apaud02=apa_file.apaud02, tabIndex=328;
+Edit apaud09=apa_file.apaud09, tabIndex=329;
+DateEdit apaud15=apa_file.apaud15, tabIndex=330;
+Edit apaud03=apa_file.apaud03, tabIndex=331;
+Edit apaud10=apa_file.apaud10, tabIndex=332;
+Edit apaud04=apa_file.apaud04, tabIndex=333;
+Edit apaud11=apa_file.apaud11, tabIndex=334;
+Edit apaud05=apa_file.apaud05, tabIndex=335;
+Edit apaud12=apa_file.apaud12, tabIndex=336;
+Edit apaud06=apa_file.apaud06, tabIndex=337;
+Edit apb0=apb_file.apb02, tabIndex=75, title="Ln#", not null, required;
+Edit apb33=apb_file.apb33, tabIndex=76, title="Detail";
+Edit apb11=apb_file.apb11, tabIndex=77, title="Original Inv#";
+Edit apb29=apb_file.apb29, tabIndex=78, title="Type", noEntry;
+ButtonEdit apb37=apb_file.apb37, action=controlp, tabIndex=501, title="plant", not null, required, image="zoom.png";
+ButtonEdit apb21=apb_file.apb21, action=controlp, tabIndex=79, title="Goods Return", image="zoom", comment="<^P>Qry St-in Note";
+Edit apb=apb_file.apb22, tabIndex=80, title="L#";
+CheckBox apb34=apb_file.apb34, tabIndex=81, title="UNAP", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit apb01_unap=formonly.apb01_unap type CHAR, tabIndex=82, title="UNAP Account#", noEntry;
+Edit apb06=apb_file.apb06, tabIndex=83, title="P/O No.", noEntry;
+Edit apb07=apb_file.apb07, tabIndex=84, title="Lno#", noEntry;
+ButtonEdit apb12=apb_file.apb12, action=controlp, tabIndex=85, title="Item#", image="zoom";
+Edit apb27=apb_file.apb27, tabIndex=86, title="Part Name", noEntry;
+Edit apb09=apb_file.apb09, tabIndex=87, title="Qty";
+Edit apb28=apb_file.apb28, tabIndex=88, title="Unit", noEntry;
+ButtonEdit apb35=apb_file.apb35, action=controlp, tabIndex=89, title="Project No.", image="zoom";
+ButtonEdit apb36=apb_file.apb36, action=controlp, tabIndex=90, title="WBS No.", image="zoom";
+ButtonEdit apb31=apb_file.apb31, action=controlp, tabIndex=91, title="Expense No.", image="zoom", comment="<^P>Qry Expense No";
+ButtonEdit apb32=apb_file.apb32, action=controlp, tabIndex=92, title="Employer", not null, required, image="zoom", comment="<^P>Qry Vender <^Y>Add Misc Vender MISC:Misc Vender";
+Edit b32=formonly.b32 type CHAR, tabIndex=504, title=%"Employer Name", noEntry;
+ButtonEdit apb25=apb_file.apb25, action=controlp, tabIndex=93, title="Acc.Code", image="zoom", comment="Enter debit account, Blank:by Head Account, <^P>Qry Account ";
+Edit b25=formonly.b25 type CHAR, tabIndex=94, title="Acc.Name", noEntry;
+ButtonEdit apb251=apb_file.apb251, action=controlp, tabIndex=95, title="Acc.Code#2", image="zoom", comment="Enter debit account, Blank:by Head Account, <^P>Qry Account ";
+Edit b251=formonly.b251 type CHAR, tabIndex=96, title="Acc.Name", noEntry;
+ButtonEdit apb26=apb_file.apb26, action=controlp, tabIndex=97, title="Dept.", image="zoom", comment="Enter Department  , Blank:by Head Department, <^P>Qry Department";
+Edit b26=formonly.b26 type CHAR, tabIndex=98, title="Dept.Name", noEntry;
+ButtonEdit apb930=apb_file.apb930, action=controlp, tabIndex=99, title="Cost Center", image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02c=formonly.gem02c type CHAR, tabIndex=100, title="Desc", noEntry;
+Edit apb23=apb_file.apb23, tabIndex=101, title="F.C U/P";
+Edit apb24=apb_file.apb24, tabIndex=102, title="F.C Amt";
+Edit apb08=apb_file.apb08, tabIndex=103, title="H.C U/P";
+Edit apb10=apb_file.apb10, tabIndex=104, title="H.C Amt";
+TextEdit apbud01=apb_file.apbud01, tabIndex=105, title="apbud01", stretch=NONE;
+Edit apbud02=apb_file.apbud02, tabIndex=106, title="apbud02";
+Edit apbud03=apb_file.apbud03, tabIndex=107, title="apbud03";
+Edit apbud04=apb_file.apbud04, tabIndex=108, title="apbud04";
+Edit apbud05=apb_file.apbud05, tabIndex=109, title="apbud05";
+Edit apbud06=apb_file.apbud06, tabIndex=110, title="apbud06";
+Edit apbud07=apb_file.apbud07, tabIndex=111, title="apbud07";
+Edit apbud08=apb_file.apbud08, tabIndex=112, title="apbud08";
+Edit apbud09=apb_file.apbud09, tabIndex=113, title="apbud09";
+Edit apbud10=apb_file.apbud10, tabIndex=114, title="apbud10";
+Edit apbud11=apb_file.apbud11, tabIndex=115, title="apbud11";
+Edit apbud12=apb_file.apbud12, tabIndex=116, title="apbud12";
+Edit apbud13=apb_file.apbud13, tabIndex=117, title="apbud13";
+Edit apbud14=apb_file.apbud14, tabIndex=118, title="apbud14";
+Edit apbud15=apb_file.apbud15, tabIndex=119, title="apbud15";
+Label label:Label1, text=%"Details";
+Edit idx=formonly.idx type INTEGER, tabIndex=529;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=530;
+Edit n2=formonly.n2 type INTEGER, tabIndex=531;
+Edit apa57=apa_file.apa57, tabIndex=532, noEntry;
+Edit apa01_1=formonly.apa01_1 type VARCHAR, tabIndex=505, title=%"Accounts #", not null, scroll;
+DateEdit apa02_1=formonly.apa02_1 type DATE, tabIndex=506, title=%"Acct. Date";
+Edit apa05_1=formonly.apa05_1 type VARCHAR, tabIndex=507, title=%"Bill Vender", scroll;
+Edit pmc03_1=formonly.pmc03_1 type VARCHAR, tabIndex=508, title=%"pmc03", scroll;
+Edit apa06_1=formonly.apa06_1 type VARCHAR, tabIndex=509, title=%"Pay Vender", scroll;
+Edit apa07_1=formonly.apa07_1 type VARCHAR, tabIndex=510, title=%"apa07", scroll;
+Edit apa36_1=formonly.apa36_1 type VARCHAR, tabIndex=511, title=%"Restore Bank", scroll;
+Edit apr02_1=formonly.apr02_1 type VARCHAR, tabIndex=512, title=%"Desc.", scroll;
+Edit apa13_1=formonly.apa13_1 type VARCHAR, tabIndex=513, title=%"Currency", scroll;
+Edit apa15_1=formonly.apa15_1 type VARCHAR, tabIndex=514, title=%"Tax Type", scroll;
+Edit apa16_1=formonly.apa16_1 type DECIMAL(9,4), tabIndex=515, title=%"Tax Rate%", scroll;
+Edit apa08_1=formonly.apa08_1 type VARCHAR, tabIndex=516, title=%"Invoice #", scroll;
+Edit apa11_1=formonly.apa11_1 type VARCHAR, tabIndex=517, title=%"Invoice #", scroll;
+Edit pma02_1=formonly.pma02_1 type VARCHAR, tabIndex=518, title=%"pma02", scroll;
+DateEdit apa12_1=formonly.apa12_1 type DATE, tabIndex=519, title=%"Pay Date";
+Edit apa31f_1=formonly.apa31f_1 type CHAR, tabIndex=520, title=%"Net Amt.";
+Edit apa31_1=formonly.apa31_1 type CHAR, tabIndex=521, title=%"apa31";
+Edit apa34f_1=formonly.apa34f_1 type DECIMAL(20,6), tabIndex=522, title=%"A/P", not null, scroll;
+Edit apa34_1=formonly.apa34_1 type DECIMAL(20,6), tabIndex=523, title=%"apa34", not null, scroll;
+Edit apa35f_1=formonly.apa35f_1 type DECIMAL(20,6), tabIndex=524, title=%"Paid", not null, scroll;
+Edit apa35_1=formonly.apa35_1 type DECIMAL(20,6), tabIndex=525, title=%"apa35", not null, scroll;
+Edit apa44_1=formonly.apa44_1 type VARCHAR, tabIndex=526, title=%"Voucher", scroll;
+Edit apa41_1=formonly.apa41_1 type VARCHAR, tabIndex=527, title=%"apa41", scroll;
+ComboBox apa63_l_1=formonly.apa63_l_1 type VARCHAR, tabIndex=528, title="Status", noEntry, items=(("0", "Issue"),("1", "Approved"),("S", "Approving"),("R", "Approval rejected!"),("W", "Withdraw"),("9", "Void"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apb(apb_file.apb02,apb_file.apb33,apb_file.apb11,apb_file.apb29,apb_file.apb37,apb_file.apb21,apb_file.apb22,apb_file.apb34,formonly.apb01_unap,apb_file.apb06,apb_file.apb07,apb_file.apb12,apb_file.apb27,apb_file.apb09,apb_file.apb28,apb_file.apb31,apb_file.apb32,formonly.b32,apb_file.apb25,formonly.b25,apb_file.apb251,formonly.b251,apb_file.apb26,formonly.b26,apb_file.apb35,apb_file.apb36,apb_file.apb930,formonly.gem02c,apb_file.apb23,apb_file.apb24,apb_file.apb08,apb_file.apb10,apb_file.apbud01,apb_file.apbud02,apb_file.apbud03,apb_file.apbud04,apb_file.apbud05,apb_file.apbud06,apb_file.apbud07,apb_file.apbud08,apb_file.apbud09,apb_file.apbud10,apb_file.apbud11,apb_file.apbud12,apb_file.apbud13,apb_file.apbud14,apb_file.apbud15)
+SCREEN RECORD Undefined(apa_file.apa01,apa_file.apa02,apa_file.apa05,formonly.pmc03,apa_file.apa06,apa_file.apa07,apa_file.apa21,formonly.gen02,apa_file.apa22,formonly.gem02,apa_file.apa930,formonly.gem02b,apa_file.apa76,apa_file.apa44,apa_file.apa992,apa_file.apa63,formonly.imgmksg,apa_file.apamksg,apa_file.apa42,apa_file.apa41,formonly.apa79,apa_file.apauser,apa_file.apamodu,apa_file.apaacti,apa_file.apagrup,apa_file.apadate,apa_file.apaoriu,apa_file.apaorig,apa_file.apa36,formonly.apr02,apa_file.apa13,apa_file.apa14,apa_file.apa15,apa_file.apa16,apa_file.apa08,apa_file.apa77,apa_file.apa58,apa_file.apa11,formonly.pma11,apa_file.apa12,apa_file.apa24,apa_file.apa64,apa_file.apa55,apa_file.apa31f,apa_file.apa31,apa_file.apa32f,apa_file.apa32,apa_file.apa60f,apa_file.apa60,apa_file.apa61f,apa_file.apa61,apa_file.apa65f,apa_file.apa65,apa_file.apa37f,apa_file.apa37,apa_file.apa34f,apa_file.apa34,apa_file.apa35f,apa_file.apa35,formonly.apa35_uf,formonly.apa35_u,formonly.net,apa_file.apa19,formonly.apo02,apa_file.apa20,apa_file.apa56,formonly.apa56_name,apa_file.apa33,apa_file.apa66,apa_file.apa25,apa_file.apa100,formonly.azp02,apa_file.apainpd,apa_file.apa99,apa_file.apa51,formonly.a51,apa_file.apa52,formonly.a52,apa_file.apa54,formonly.a54,apa_file.apa511,formonly.a511,apa_file.apa521,formonly.a521,apa_file.apa541,formonly.a541,apa_file.apa101,apa_file.apa102,apa_file.apaud01,apa_file.apaud07,apa_file.apaud13,apa_file.apaud08,apa_file.apaud14,apa_file.apaud02,apa_file.apaud09,apa_file.apaud15,apa_file.apaud03,apa_file.apaud10,apa_file.apaud04,apa_file.apaud11,apa_file.apaud05,apa_file.apaud12,apa_file.apaud06,formonly.idx,formonly.cnt,formonly.n2,apa_file.apa57)
+SCREEN RECORD s_apa_1(formonly.apa01_1,formonly.apa02_1,formonly.apa05_1,formonly.pmc03_1,formonly.apa06_1,formonly.apa07_1,formonly.apa36_1,formonly.apr02_1,formonly.apa13_1,formonly.apa15_1,formonly.apa16_1,formonly.apa08_1,formonly.apa11_1,formonly.pma02_1,formonly.apa12_1,formonly.apa31f_1,formonly.apa31_1,formonly.apa34f_1,formonly.apa34_1,formonly.apa35f_1,formonly.apa35_1,formonly.apa44_1,formonly.apa41_1,formonly.apa63_l_1)
+END -- INSTRUCTIONS
+

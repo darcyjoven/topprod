@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi110")
+VBox vb3
+Folder pc451
+Page page01(text="Main")
+Table s_oba
+{
+[oba01          |oba02               |oba12     |oba13     |oba13_desc|oba14     |oba15     |oba10     |gem02     |oba11     |oba111    |oba16     |oba161    |oba17       |oba171       |obaacti   |obapos    ]
+[oba01          |oba02               |oba12     |oba13     |oba13_desc|oba14     |oba15     |oba10     |gem02     |oba11     |oba111    |oba16     |oba161    |oba17       |oba171       |obaacti   |obapos    ]
+[oba01          |oba02               |oba12     |oba13     |oba13_desc|oba14     |oba15     |oba10     |gem02     |oba11     |oba111    |oba16     |oba161    |oba17       |oba171       |obaacti   |obapos    ]
+[oba01          |oba02               |oba12     |oba13     |oba13_desc|oba14     |oba15     |oba10     |gem02     |oba11     |oba111    |oba16     |oba161    |oba17       |oba171       |obaacti   |obapos    ]
+[oba01          |oba02               |oba12     |oba13     |oba13_desc|oba14     |oba15     |oba10     |gem02     |oba11     |oba111    |oba16     |oba161    |oba17       |oba171       |obaacti   |obapos    ]
+[oba01          |oba02               |oba12     |oba13     |oba13_desc|oba14     |oba15     |oba10     |gem02     |oba11     |oba111    |oba16     |oba161    |oba17       |oba171       |obaacti   |obapos    ]
+[oba01          |oba02               |oba12     |oba13     |oba13_desc|oba14     |oba15     |oba10     |gem02     |oba11     |oba111    |oba16     |oba161    |oba17       |oba171       |obaacti   |obapos    ]
+[oba01          |oba02               |oba12     |oba13     |oba13_desc|oba14     |oba15     |oba10     |gem02     |oba11     |oba111    |oba16     |oba161    |oba17       |oba171       |obaacti   |obapos    ]
+[oba01          |oba02               |oba12     |oba13     |oba13_desc|oba14     |oba15     |oba10     |gem02     |oba11     |oba111    |oba16     |oba161    |oba17       |oba171       |obaacti   |obapos    ]
+[oba01          |oba02               |oba12     |oba13     |oba13_desc|oba14     |oba15     |oba10     |gem02     |oba11     |oba111    |oba16     |oba161    |oba17       |oba171       |obaacti   |obapos    ]
+
+}
+END -- s_oba
+END -- page01
+END -- pc451
+Grid gr2007
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr2007
+END -- vb3
+END -- axmi110
+
+TABLES
+oba_file
+ATTRIBUTES
+ButtonEdit oba01=oba_file.oba01, action=controlp, tabIndex=1, title="Product Class Code", not null, required, image="zoom.png";
+Edit oba02=oba_file.oba02, tabIndex=2, title="Class Name";
+Edit oba12=oba_file.oba12, tabIndex=8, title="oba12";
+ButtonEdit oba13=oba_file.oba13, action=controlp, tabIndex=10, title="oba13", image="zoom.png";
+Edit oba13_desc=formonly.oba13_desc type CHAR, tabIndex=9, title="oba13_desc", noEntry;
+Edit oba14=oba_file.oba14, tabIndex=12, title="oba14", noEntry;
+Edit oba15=oba_file.oba15, tabIndex=11, title="oba15", noEntry;
+ButtonEdit oba10=oba_file.oba10, action=controlp, tabIndex=3, title="Cost Center", image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=4, title="Center Desc", noEntry;
+ButtonEdit oba11=oba_file.oba11, action=controlp, tabIndex=5, title="Sales income entry", image="zoom", comment="<^P> Qry Sales income entry";
+ButtonEdit oba111=oba_file.oba111, action=controlp, tabIndex=7, title="Sales income entry(2) ", image="zoom.png";
+ButtonEdit oba16=oba_file.oba16, action=controlp, tabIndex=15, title=%"Sales Cost", image="zoom.png", comment=%"<^P> Qry Sales Cost entry";
+ButtonEdit oba161=oba_file.oba161, action=controlp, tabIndex=16, title=%"Sales Cost(2)", image="zoom.png", comment=%"<^P> Qry Sales Cost entry(2)";
+ButtonEdit oba17=formonly.oba17 type VARCHAR, action=controlp, tabIndex=17, title=%"Export Subject\n", image="zoom";
+ButtonEdit oba171=formonly.oba171 type VARCHAR, action=controlp, tabIndex=18, title=%"Export Subject(2)\n", image="zoom";
+CheckBox obaacti=oba_file.obaacti, tabIndex=13, title="obaacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox obapos=oba_file.obapos, tabIndex=14, title="obapos", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oba(oba_file.oba01,oba_file.oba02,oba_file.oba12,oba_file.oba13,formonly.oba13_desc,oba_file.oba14,oba_file.oba15,oba_file.oba10,formonly.gem02,oba_file.oba11,oba_file.oba111,oba_file.oba16,oba_file.oba161,formonly.oba17,formonly.oba171,oba_file.obaacti,oba_file.obapos)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

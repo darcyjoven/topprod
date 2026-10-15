@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_lrg.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Voucher Type")
+Grid gr3714
+{
+ <T s_aac                                                                      >
+ [check |lrf02       |lpx02         ]
+ [check |lrf02       |lpx02         ]
+ [check |lrf02       |lpx02         ]
+ [check |lrf02       |lpx02         ]
+ [check |lrf02       |lpx02         ]
+ [check |lrf02       |lpx02         ]
+ [check |lrf02       |lpx02         ]
+ [check |lrf02       |lpx02         ]
+ [check |lrf02       |lpx02         ]
+ [check |lrf02       |lpx02         ]
+ <                                                                             >
+
+}
+END -- gr3714
+END -- q_lrg
+
+TABLES
+lpx_file,
+lrf_file
+ATTRIBUTES
+Table s_aac:s_aac;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit lrf02=lrf_file.lrf02, tabIndex=2, title="Document", noEntry;
+Edit lpx02=lpx_file.lpx02, tabIndex=3, title="Auto Number", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lrg(formonly.check,lrf_file.lrf02,lpx_file.lpx02)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,72 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi119.per created Wed Jan 23 05:30:33 2008
+-- File created from axdi119.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi119")
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        GRID gr7762
+        {
+         Vehicle No.         [aa0       ]
+         Petrol Date         [aa1       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_ado
+    {
+    [aa2       |aa3                 |aa4           |aa5      |aa6     |aa7                 |aa8   ]
+    [aa2       |aa3                 |aa4           |aa5      |aa6     |aa7                 |aa8   ]
+    [aa2       |aa3                 |aa4           |aa5      |aa6     |aa7                 |aa8   ]
+    [aa2       |aa3                 |aa4           |aa5      |aa6     |aa7                 |aa8   ]
+    [aa2       |aa3                 |aa4           |aa5      |aa6     |aa7                 |aa8   ]
+    [aa2       |aa3                 |aa4           |aa5      |aa6     |aa7                 |aa8   ]
+    [aa2       |aa3                 |aa4           |aa5      |aa6     |aa7                 |aa8   ]
+    [aa2       |aa3                 |aa4           |aa5      |aa6     |aa7                 |aa8   ]
+    [aa2       |aa3                 |aa4           |aa5      |aa6     |aa7                 |aa8   ]
+    [aa2       |aa3                 |aa4           |aa5      |aa6     |aa7                 |aa8   ]
+    }
+    END -- TABLE
+    GRID gr7763
+    {
+     ---------- Rows [aa9   ] / [ab0   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES ado_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=ado_file.ado01, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=1;
+  EDIT aa1=ado_file.ado02, NOT NULL, REQUIRED, TABINDEX=2;
+  EDIT aa2=ado_file.ado03, NOT NULL, REQUIRED, TABINDEX=3, TITLE="Line No";
+  EDIT aa3=ado_file.ado04, NOT NULL, REQUIRED, TABINDEX=4, TITLE="Petrol Qty(Litre)";
+  EDIT aa4=ado_file.ado05, NOT NULL, REQUIRED, TABINDEX=5, TITLE="Sum";
+  BUTTONEDIT aa5=ado_file.ado06, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=6, TITLE="Driver";
+  EDIT aa6=FORMONLY.gen02, NOENTRY, TABINDEX=7, TITLE="Name";
+  EDIT aa7=ado_file.ado07, TABINDEX=8, TITLE="Petrol Site";
+  CHECKBOX aa8=ado_file.adoacti, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=9, TITLE="Valid";
+  EDIT aa9=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=10;
+  EDIT ab0=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=11;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_ado (ado_file.ado03, ado_file.ado04, ado_file.ado05, ado_file.ado06, FORMONLY.gen02, ado_file.ado07, ado_file.adoacti)
+END

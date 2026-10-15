@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr802.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+ <G group1                                                >
+  [label1           ]   [cfc07                   ]
+
+  [label2           ]   [cfc11                   ]
+ <                                                        >
+ <G group2                                                >
+  [label3           ]   [yy                    ]
+
+  [label4           ]   [mm                    ]
+
+  [label5           ]   [ccc07                 ]
+
+  [label6           ]   [ccc08                 ]
+ <                                                        >
+
+  [flag                          ]
+
+  [more                            ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+Label label1:Label1, text=%"Customer No";
+ButtonEdit cfc07=formonly.cfc07, action=controlp, tabIndex=3, not null, image="zoom";
+Label label2:Label2, text=%"Materials No";
+ButtonEdit cfc11=formonly.cfc11, action=controlp, tabIndex=4, not null, image="zoom";
+Group group2:Group2, text=%"Condition Option";
+Label label3:Label3, text=%"year";
+Edit yy=formonly.yy type INTEGER, tabIndex=5, not null;
+Label label4:Label4, text=%"month";
+Edit mm=formonly.mm type INTEGER, tabIndex=6, not null;
+Label label5:Label5, text=%"Type of cost";
+ComboBox ccc07=formonly.ccc07, tabIndex=7, not null, items=(("1", "Text"),("2", "Text"),("3", "Text"),("4", "Text"),("5", "Text"));
+Label label6:Label6, text=%"Category coding";
+ButtonEdit ccc08=formonly.ccc08, action=controlp, tabIndex=8, not null, image="zoom";
+CheckBox flag=formonly.flag, tabIndex=1, text=%"Print Detailed information", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more, tabIndex=2, text=%"more", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.flag,formonly.more,formonly.cfc07,formonly.cfc11,formonly.yy,formonly.mm,formonly.ccc07,formonly.ccc08)
+END -- INSTRUCTIONS
+

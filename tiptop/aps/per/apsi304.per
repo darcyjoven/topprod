@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi304.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi304")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr5423
+{
+ <G group01                                            >
+  Equipment Group Code [vme01                          ]
+ <                                                     >
+
+}
+END -- gr5423
+END -- page01
+END -- folder01
+Table s_vme
+{
+[vme02         |eci06           ]
+[vme02         |eci06           ]
+[vme02         |eci06           ]
+[vme02         |eci06           ]
+[vme02         |eci06           ]
+[vme02         |eci06           ]
+[vme02         |eci06           ]
+[vme02         |eci06           ]
+[vme02         |eci06           ]
+[vme02         |eci06           ]
+
+}
+END -- s_vme
+Grid gr5424
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5424
+END -- VBox1
+END -- apsi304
+
+TABLES
+vme_file
+ATTRIBUTES
+Group group01:group01;
+Edit vme01=vme_file.vme01, tabIndex=1, not null, required;
+ButtonEdit vme02=vme_file.vme02, action=controlp, tabIndex=2, title="Equipment No.", not null, required, image="zoom", comment="<^P>Query Equipment No.";
+Edit eci06=formonly.eci06 type VARCHAR, tabIndex=3, title="Name", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=4, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vme(vme_file.vme02,formonly.eci06)
+SCREEN RECORD Undefined(vme_file.vme01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,57 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi108.per created Wed Jan 23 05:30:30 2008
+-- File created from axdi108.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi108")
+-- TABLE
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1554
+      PAGE page01( TEXT="Page01")
+        TABLE   s_obs
+        {
+        [aa0               |aa1                           |aa2   ]
+        [aa0               |aa1                           |aa2   ]
+        [aa0               |aa1                           |aa2   ]
+        [aa0               |aa1                           |aa2   ]
+        [aa0               |aa1                           |aa2   ]
+        [aa0               |aa1                           |aa2   ]
+        [aa0               |aa1                           |aa2   ]
+        [aa0               |aa1                           |aa2   ]
+        [aa0               |aa1                           |aa2   ]
+        [aa0               |aa1                           |aa2   ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr7743
+    {
+     ----------Rows [aa3   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES obs_file
+
+ATTRIBUTES
+  EDIT aa0=obs_file.obs01, COMMENT="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ", NOT NULL, REQUIRED, TABINDEX=1, TITLE="Vehicle Brand";
+  EDIT aa1=obs_file.obs02, TABINDEX=2, TITLE="Description";
+  CHECKBOX aa2=obs_file.obsacti, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=3, TITLE="Valid?";
+  EDIT aa3=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=4;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_obs (obs_file.obs01, obs_file.obs02, obs_file.obsacti)
+END

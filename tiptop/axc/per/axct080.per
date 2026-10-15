@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct080.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct080")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1760
+{
+ YY  [srm0]
+ MM  [srm1]
+}
+END -- gr1760
+END -- page01
+END -- folder01
+Table s_srm
+{
+[srm03               |ima02               |ima021              |ima55|srm04            |srm05             |srm06                ]
+[srm03               |ima02               |ima021              |ima55|srm04            |srm05             |srm06                ]
+[srm03               |ima02               |ima021              |ima55|srm04            |srm05             |srm06                ]
+[srm03               |ima02               |ima021              |ima55|srm04            |srm05             |srm06                ]
+[srm03               |ima02               |ima021              |ima55|srm04            |srm05             |srm06                ]
+[srm03               |ima02               |ima021              |ima55|srm04            |srm05             |srm06                ]
+[srm03               |ima02               |ima021              |ima55|srm04            |srm05             |srm06                ]
+[srm03               |ima02               |ima021              |ima55|srm04            |srm05             |srm06                ]
+[srm03               |ima02               |ima021              |ima55|srm04            |srm05             |srm06                ]
+[srm03               |ima02               |ima021              |ima55|srm04            |srm05             |srm06                ]
+
+}
+END -- s_srm
+Grid gr1761
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1761
+END -- VBox1
+END -- axct080
+
+TABLES
+srm_file
+ATTRIBUTES
+Edit srm0=srm_file.srm01, tabIndex=1;
+Edit srm1=srm_file.srm02, tabIndex=2;
+ButtonEdit srm03=srm_file.srm03, action=controlp, tabIndex=3, title="Product No", not null, required, image="zoom", comment="Assign Add/Query Item#";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, title="P/N", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, title="Spec", noEntry;
+Edit ima55=formonly.ima55 type CHAR, tabIndex=6, title="Unit", noEntry;
+Edit srm04=srm_file.srm04, tabIndex=7, title="Qty";
+Edit srm05=srm_file.srm05, tabIndex=8, title="Labor Completion%";
+Edit srm06=srm_file.srm06, tabIndex=9, title="Overhead Completion%";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_srm(srm_file.srm03,formonly.ima02,formonly.ima021,formonly.ima55,srm_file.srm04,srm_file.srm05,srm_file.srm06)
+SCREEN RECORD Undefined(srm_file.srm01,srm_file.srm02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

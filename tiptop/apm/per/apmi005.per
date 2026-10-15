@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apmi005")
+VBox vb3
+Folder folder
+Page Page11(text=%"Main")
+Grid gr5
+{
+
+  Code [ppb01      ]
+  Name [ppa03                            ]
+
+}
+END -- gr5
+END -- Page11
+END -- folder
+Table s_ppb
+{
+[ppb02   |ppb03   ]
+[ppb02   |ppb03   ]
+[ppb02   |ppb03   ]
+[ppb02   |ppb03   ]
+[ppb02   |ppb03   ]
+[ppb02   |ppb03   ]
+[ppb02   |ppb03   ]
+[ppb02   |ppb03   ]
+[ppb02   |ppb03   ]
+[ppb02   |ppb03   ]
+
+}
+END -- s_ppb
+Grid gr5_
+{
+  ---------- Rows [cnt   ] ----------
+
+}
+END -- gr5_
+END -- vb3
+END -- apmi005
+
+TABLES
+ppb_file
+ATTRIBUTES
+ButtonEdit ppb01=ppb_file.ppb01, action=controlp, tabIndex=5, image="zoom";
+Edit ppa03=formonly.ppa03 type CHAR, tabIndex=1, noEntry;
+Edit ppb02=ppb_file.ppb02, tabIndex=2, title="Diff Rate";
+Edit ppb03=ppb_file.ppb03, tabIndex=3, title="Score";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ppb(ppb_file.ppb02,ppb_file.ppb03)
+SCREEN RECORD Undefined(ppb_file.ppb01,formonly.ppa03,formonly.cnt)
+END -- INSTRUCTIONS
+

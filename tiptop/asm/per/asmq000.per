@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asmq000.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asmq000")
+VBox VBox1
+Folder pc186
+Page page01(text="Main")
+Grid gr886
+{
+ <G group01                                                        >
+  Task Date          [smj03       ]-[smj04       ]
+  User               [smj01     ]
+  Task Type          [smj02     ]
+  Task Description   [p_desc1                                 ]
+  Terminal Type      [smj05               ]
+  Record Description [smj06                         ]
+                     [                              ]
+                     [                              ]
+ <                                                                 >
+ <G group02                                                       >
+  Task Date          [smj11       ]-[smj12       ]
+  User               [smj09     ]
+  Task Type          [smj10     ]
+  Task Description   [p_desc2                                 ]
+  Terminal Type      [smj13               ]
+  Record Description [smj14                         ]
+                     [                              ]
+                     [                              ]
+
+     ---------- Rows [ed15  ] ----------
+
+
+ <                                                                >
+
+}
+END -- gr886
+END -- page01
+END -- pc186
+END -- VBox1
+END -- asmq000
+
+TABLES
+smj_file
+ATTRIBUTES
+Group group01:group01, text="System Off Message";
+DateEdit smj03=smj_file.smj03, tabIndex=1, noEntry;
+DateEdit smj04=smj_file.smj04, tabIndex=2, noEntry;
+Edit smj01=smj_file.smj01, tabIndex=3, noEntry;
+Edit smj02=smj_file.smj02, tabIndex=4, noEntry;
+Edit p_desc1=formonly.p_desc1 type CHAR, tabIndex=5, noEntry;
+Edit smj05=smj_file.smj05, tabIndex=6, noEntry;
+TextEdit smj06=smj_file.smj06, tabIndex=7, noEntry, stretch=NONE;
+Group group02:group02, text="System ON Message";
+DateEdit smj11=smj_file.smj11, tabIndex=8, noEntry;
+DateEdit smj12=smj_file.smj12, tabIndex=9, noEntry;
+Edit smj09=smj_file.smj09, tabIndex=10, noEntry;
+Edit smj10=smj_file.smj10, tabIndex=11, noEntry;
+Edit p_desc2=formonly.p_desc2 type CHAR, tabIndex=12, noEntry;
+Edit smj13=smj_file.smj13, tabIndex=13, noEntry;
+TextEdit smj14=smj_file.smj14, tabIndex=14, noEntry, stretch=NONE;
+Edit ed15=formonly.ed15 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(smj_file.smj03,smj_file.smj04,smj_file.smj01,smj_file.smj02,formonly.p_desc1,smj_file.smj05,smj_file.smj06,smj_file.smj11,smj_file.smj12,smj_file.smj09,smj_file.smj10,formonly.p_desc2,smj_file.smj13,smj_file.smj14,formonly.ed15)
+END -- INSTRUCTIONS
+

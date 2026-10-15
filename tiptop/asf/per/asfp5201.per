@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp5201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp5201")
+VBox vb2
+Grid grid01
+{
+ <G group01                                                >
+  Item #                  [sfa03               ]
+  Part Name Specification [ima02                         ]
+  Specification           [ima021                        ]
+  Unit                    [sfa12_d             ]
+  Req.Qty                 [needqty             ]
+  Task No.                [sfa08_d             ]
+ <                                                         >
+
+}
+END -- grid01
+Table s_sfa
+{
+[sfa01      |sfa012       |sfa013    |sfa08  |sfa12|sfa05     |sfa06    |ot_qty              |av_qty              |tr_qty              |sfa062        |sfa30      |sfa31      |tmp99]
+[sfa01      |sfa012       |sfa013    |sfa08  |sfa12|sfa05     |sfa06    |ot_qty              |av_qty              |tr_qty              |sfa062        |sfa30      |sfa31      |tmp99]
+[sfa01      |sfa012       |sfa013    |sfa08  |sfa12|sfa05     |sfa06    |ot_qty              |av_qty              |tr_qty              |sfa062        |sfa30      |sfa31      |tmp99]
+[sfa01      |sfa012       |sfa013    |sfa08  |sfa12|sfa05     |sfa06    |ot_qty              |av_qty              |tr_qty              |sfa062        |sfa30      |sfa31      |tmp99]
+[sfa01      |sfa012       |sfa013    |sfa08  |sfa12|sfa05     |sfa06    |ot_qty              |av_qty              |tr_qty              |sfa062        |sfa30      |sfa31      |tmp99]
+[sfa01      |sfa012       |sfa013    |sfa08  |sfa12|sfa05     |sfa06    |ot_qty              |av_qty              |tr_qty              |sfa062        |sfa30      |sfa31      |tmp99]
+[sfa01      |sfa012       |sfa013    |sfa08  |sfa12|sfa05     |sfa06    |ot_qty              |av_qty              |tr_qty              |sfa062        |sfa30      |sfa31      |tmp99]
+[sfa01      |sfa012       |sfa013    |sfa08  |sfa12|sfa05     |sfa06    |ot_qty              |av_qty              |tr_qty              |sfa062        |sfa30      |sfa31      |tmp99]
+[sfa01      |sfa012       |sfa013    |sfa08  |sfa12|sfa05     |sfa06    |ot_qty              |av_qty              |tr_qty              |sfa062        |sfa30      |sfa31      |tmp99]
+[sfa01      |sfa012       |sfa013    |sfa08  |sfa12|sfa05     |sfa06    |ot_qty              |av_qty              |tr_qty              |sfa062        |sfa30      |sfa31      |tmp99]
+
+}
+END -- s_sfa
+Grid gr549
+{
+                                                                         Total Qty [tqty                ]
+
+}
+END -- gr549
+END -- vb2
+END -- asfp5201
+
+TABLES
+sfa_file
+ATTRIBUTES
+Group group01:group01;
+Edit sfa03=sfa_file.sfa03, tabIndex=1, noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=3, noEntry;
+Edit sfa12_d=formonly.sfa12_d type CHAR, tabIndex=4, noEntry;
+Edit needqty=formonly.needqty type DECIMAL, tabIndex=5, noEntry;
+Edit sfa08_d=formonly.sfa08_d type CHAR, tabIndex=6, noEntry;
+Edit sfa01=sfa_file.sfa01, tabIndex=7, title="Src W/O", noEntry;
+Edit sfa012=sfa_file.sfa012, tabIndex=8, title=%"Process Session No", noEntry;
+Edit sfa013=sfa_file.sfa013, tabIndex=9, title=%"sfa013", noEntry;
+Edit sfa08=sfa_file.sfa08, tabIndex=10, title="Task #", noEntry;
+Edit sfa12=sfa_file.sfa12, tabIndex=11, title="Unit", noEntry;
+Edit sfa05=sfa_file.sfa05, tabIndex=12, title="Q To-Iss", noEntry, not null, required;
+Edit sfa06=sfa_file.sfa06, tabIndex=13, title="Issud.Qt", noEntry, not null, required;
+Edit ot_qty=formonly.ot_qty type DECIMAL, tabIndex=14, title="Std-in Q", noEntry;
+Edit av_qty=formonly.av_qty type DECIMAL, tabIndex=15, title="Transfbl.Qty", noEntry;
+Edit tr_qty=formonly.tr_qty type DECIMAL, tabIndex=16, title="Qt To-Tr", comment="<^U>Clear Below Qty";
+Edit sfa062=sfa_file.sfa062, tabIndex=17, title="Over-Withdraw", noEntry, not null, required;
+ButtonEdit sfa30=sfa_file.sfa30, action=controlp, tabIndex=18, title="Warehouse", image="zoom", comment="<^P>Qry Inv Dtls";
+ButtonEdit sfa31=sfa_file.sfa31, action=controlp, tabIndex=19, title="Location", image="zoom", comment="<^P>Qry Location Details";
+Edit tmp99=formonly.tmp99 type CHAR, tabIndex=20, title="Lot";
+Edit tqty=formonly.tqty type DECIMAL, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfa(sfa_file.sfa01,sfa_file.sfa012,sfa_file.sfa013,sfa_file.sfa08,sfa_file.sfa12,sfa_file.sfa05,sfa_file.sfa06,formonly.ot_qty,formonly.av_qty,formonly.tr_qty,sfa_file.sfa062,sfa_file.sfa30,sfa_file.sfa31,formonly.tmp99)
+SCREEN RECORD Undefined(sfa_file.sfa03,formonly.ima02,formonly.ima021,formonly.sfa12_d,formonly.needqty,formonly.sfa08_d,formonly.tqty)
+END -- INSTRUCTIONS
+

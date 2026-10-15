@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almg640.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+   <G group1                                            >
+       [label1      ] [azw01                       ]
+       [labe]         [year_]/[mon_]~ [year1]/[mon1]
+       [dummy1                                     ]
+       [label2      ] [ima01                       ]
+       [a                           ]
+       [lab1]         [year2]/[mon2]~ [year3]/[mon3]
+   <                                                    >
+  [dummy2                                          ]
+  [more                            ]
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+Label label1:Label1, text=%"Plant";
+ButtonEdit azw01=formonly.azw01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Label labe:Label3, text=%"Date";
+Edit year_=formonly.year_sta type CHAR, tabIndex=2, not null, required;
+Edit mon_=formonly.mon_sta type CHAR, tabIndex=3, not null, required;
+Edit year1=formonly.year_end type CHAR, tabIndex=4, not null, required;
+Edit mon1=formonly.mon_end type VARCHAR, tabIndex=5, not null, required;
+Label dummy1:dummy1, text="LRDMDS,QY\'|\'H\';\'GK";
+Label label2:Label2, text=%"Product No";
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=6, image="zoom";
+CheckBox a=formonly.a type CHAR, tabIndex=7, text=%"Update Fair value", not null, valueChecked = "Y", valueUnchecked = "N";
+Label lab1:Label4, text=%"Date";
+Edit year2=formonly.year_sta_a type CHAR, tabIndex=8;
+Edit mon2=formonly.mon_sta_a type CHAR, tabIndex=9;
+Edit year3=formonly.year_end_a type CHAR, tabIndex=10;
+Edit mon3=formonly.mon_end_a type VARCHAR, tabIndex=11;
+Label dummy2:dummy2, text="LRDMDS,QY\'|\'H\';\'GK";
+CheckBox more=formonly.more type CHAR, tabIndex=12, text=%"more", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azw01,formonly.year_sta,formonly.mon_sta,formonly.year_end,formonly.mon_end,formonly.ima01,formonly.more,formonly.a,formonly.mon_end_a,formonly.year_end_a,formonly.mon_sta_a,formonly.year_sta_a)
+END -- INSTRUCTIONS
+

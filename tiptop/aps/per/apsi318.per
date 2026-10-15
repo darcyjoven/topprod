@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi318.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi318")
+VBox vb13
+Folder pc1046
+Page page01(text="Page01")
+Grid gr5427
+{
+ <G group01                                              >
+  Item No.            [vna01                           ]
+  Manufacturing Order [vna02                           ]
+  Warehouse No.       [vna03                           ]
+  Stock location      [vna04                          ]
+  Requirement Qty     [vna06          ]
+  Distributed Qty     [vna05          ]
+  Is Lock             [vna09               ]
+
+ <                                                       >
+}
+END -- gr5427
+END -- page01
+END -- pc1046
+Grid gr5428
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr5428
+END -- vb13
+END -- apsi318
+
+TABLES
+vna_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit vna01=vna_file.vna01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Item No.";
+ButtonEdit vna02=vna_file.vna02, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit vna03=vna_file.vna03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Warehouse No.";
+Edit vna04=vna_file.vna04, tabIndex=4;
+Edit vna06=vna_file.vna06, tabIndex=5, default = "0";
+Edit vna05=vna_file.vna05, tabIndex=6, default = "0", not null, required;
+ComboBox vna09=vna_file.vna09, tabIndex=8, default = "0", not null, required, items=(("0", "False"),("1", "True"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vna_file.vna01,vna_file.vna02,vna_file.vna03,vna_file.vna04,vna_file.vna06,vna_file.vna05,vna_file.vna09,formonly.cnt)
+END -- INSTRUCTIONS
+

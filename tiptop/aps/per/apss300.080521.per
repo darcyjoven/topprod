@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apss300.080521.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apss300")
+VBox vb2
+Grid gr5444
+{
+ <G group01                                                                       >
+  TIPTOP Data Base Code       [vly06               ][azp02     ]
+  TIPTOP DataBase Name/SID    [vly07               ]
+ <                                                                                >
+
+  <T s_vly                                                                                                    >
+  [vly01    |vly02     |vly03     |vly10     |vly04        |vly05                   |vly08  |vly09           ]
+  [vly01    |vly02     |vly03     |vly10     |vly04        |vly05                   |vly08  |vly09           ]
+  [vly01    |vly02     |vly03     |vly10     |vly04        |vly05                   |vly08  |vly09           ]
+  [vly01    |vly02     |vly03     |vly10     |vly04        |vly05                   |vly08  |vly09           ]
+  [vly01    |vly02     |vly03     |vly10     |vly04        |vly05                   |vly08  |vly09           ]
+  [vly01    |vly02     |vly03     |vly10     |vly04        |vly05                   |vly08  |vly09           ]
+  [vly01    |vly02     |vly03     |vly10     |vly04        |vly05                   |vly08  |vly09           ]
+  [vly01    |vly02     |vly03     |vly10     |vly04        |vly05                   |vly08  |vly09           ]
+  [vly01    |vly02     |vly03     |vly10     |vly04        |vly05                   |vly08  |vly09           ]
+  [vly01    |vly02     |vly03     |vly10     |vly04        |vly05                   |vly08  |vly09           ]
+  <                                                                                                           >
+
+}
+END -- gr5444
+Grid gr881
+{
+ ----------  Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr881
+END -- vb2
+END -- apss300
+
+TABLES
+vly_file
+ATTRIBUTES
+Group group01:group01, text="Basic Data";
+Edit vly06=formonly.vly06 type CHAR, tabIndex=7, noEntry;
+Edit azp02=formonly.azp02 type CHAR, tabIndex=11, noEntry;
+ButtonEdit vly07=vly_file.vly07, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+Table s_vly:s_vly;
+Edit vly01=vly_file.vly01, tabIndex=1, title="APS Version", not null, required;
+Edit vly02=formonly.vly02 type CHAR, tabIndex=12, title="vly02", noEntry;
+Edit vly03=vly_file.vly03, tabIndex=13, title="vly03", noEntry;
+ComboBox vly10=formonly.vly10 type CHAR, tabIndex=2, title="vly10", noEntry, items=(("1", "Not created"),("2", "Creating"),("3", "Created"),("4", "Deleting"));
+Edit vly04=vly_file.vly04, tabIndex=3, title="APS Data Base Code", not null, required;
+ButtonEdit vly05=vly_file.vly05, action=controlp, tabIndex=4, title="APS DataBase Name/SID", not null, required, image="zoom.png";
+Edit vly08=vly_file.vly08, tabIndex=5, title="vly08", not null, required;
+Edit vly09=vly_file.vly09, tabIndex=6, title="APS Server Port", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vly(vly_file.vly01,formonly.vly02,vly_file.vly03,formonly.vly10,vly_file.vly04,vly_file.vly05,vly_file.vly08,vly_file.vly09)
+SCREEN RECORD Undefined(formonly.vly06,formonly.azp02,vly_file.vly07,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

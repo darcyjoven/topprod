@@ -1,0 +1,128 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt300")
+VBox vb3
+Folder pc792
+Page page01(text="Main")
+VBox vb2
+Grid gr4483
+{
+ <G group01                                                                                                               >
+  Reference Doc #       [nme12                 ]             Counterpart Account  [nme06                   ]
+  Reference No.         [nme21]                              Account Name         [a                             ]
+  Transaction Doc # Type[nme22           ]                   Counterpart Account2 [nme061                  ]
+  Times                 [nme18           ]                   Account Name 2       [b                             ]
+  Note No.              [nme17           ]                   Collect/Pay Reason   [nme11      ]
+  Department No.        [nme15     ] [gem02      ]           Reason Name          [azf03                 ]
+  Transaction Code      [nme03     ] [nmc02      ]           Bank No.             [nme01      ]
+  Deposit/Withdraw Type [nmc03               ]               Bank Name            [nma02                 ]
+                                                             Currency             [nma10       ]
+  To/Fr(Vender/Customer)[nme13     ]                         Exchange Rate        [nme07                 ]
+                                                             O.C Amount           [nme04                 ]
+                                                             H.C Amount           [nme08                 ]
+                                                             Memo                 [nme05                         ]
+ <                                                                                                                        >
+ <G group02                                                                                                                  >
+  Bank Date             [nme02       ]                       Cash Variation Code   [nme14     ] [nml02                      ]
+  Account Date          [nme16       ]                       Adjustment Code       [nme09     ] [nmk02                  ][n]
+                                                             Account Checking Code [nme20     ]
+
+
+ <                                                                                                                           >
+
+}
+END -- gr4483
+END -- vb2
+END -- page01
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[nmeud01                       ] userdefined_field07[nmeud07        ] userdefined_field13[nmeud13        ]
+                    [                              ] userdefined_field08[nmeud08        ] userdefined_field14[nmeud14        ]
+ userdefined_field02[nmeud02        ]                userdefined_field09[nmeud09        ] userdefined_field15[nmeud15        ]
+ userdefined_field03[nmeud03        ]                userdefined_field10[nmeud10        ]
+ userdefined_field04[nmeud04        ]                userdefined_field11[nmeud11        ]
+ userdefined_field05[nmeud05        ]                userdefined_field12[nmeud12        ]
+ userdefined_field06[nmeud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc792
+Grid gr4484
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4484
+END -- vb3
+END -- anmt300
+
+TABLES
+nme_file,
+nmc_file,
+gem_file,
+nma_file,
+azf_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit nme12=nme_file.nme12, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit nme06=nme_file.nme06, action=controlp, tabIndex=19, image="zoom", comment="If Link to AGL, must be in AGL Ac.Table!Press <^P>Qry Account ";
+Edit nme21=nme_file.nme21, tabIndex=32;
+Edit a=formonly.a type CHAR, tabIndex=20, noEntry;
+ComboBox nme22=nme_file.nme22, tabIndex=33, items=(("01", "Payment"),("02", "Spent Cash Payment"),("03", "Direct Payment"),("04", "Spent Cash Direct Payment"),("05", "Conglomerate Transfer"),("06", "Pay Principal And Pay Interest of Conglomerate"),("07", "Bank Income/Expense"),("08", "Direct Collection"),("09", "Notes Receivable"),("10", "Notes Payable"),("11", "Advance Purchase Payment"),("12", "Update Advance Purchase Payment"),("13", "Cur Financing"),("14", "Medium And Long-term Investment"),("15", "The Credit Repays Principal"),("16", "The Credit Pays Interest"),("17", "Regular Deposit Slip"),("18", "Decides Saves Due Processing"),("19", "Decides Saves The Due Processing Interest"),("20", "Interest Income"),("21", "Foreign Exchange Business"),("22", "Investment Purchase"),("23", "Cover Securities FX."),("24", "End Of Month Revaluaction"),("X", "Internal Account"));
+ButtonEdit nme061=nme_file.nme061, action=controlp, tabIndex=21, image="zoom", comment="If Link to AGL, must be in AGL Ac.Table!Press <^P>Qry Account ";
+Edit nme18=nme_file.nme18, tabIndex=3;
+Edit b=formonly.b type CHAR, tabIndex=22, noEntry;
+Edit nme17=nme_file.nme17, tabIndex=5;
+ButtonEdit nme11=nme_file.nme11, action=controlp, tabIndex=2, image="zoom", comment="Press <^P>Qry Reason Code";
+ButtonEdit nme15=nme_file.nme15, action=controlp, tabIndex=7, image="zoom", comment="Press <^P>Query Department";
+Edit gem02=gem_file.gem02, tabIndex=8, noEntry;
+Edit azf03=azf_file.azf03, tabIndex=4, noEntry;
+ButtonEdit nme03=nme_file.nme03, action=controlp, tabIndex=10, image="zoom", comment="Key Field,       No Blank/Repeated!Press <^P>Qry Transaction Code";
+Edit nmc02=nmc_file.nmc02, tabIndex=11, noEntry;
+ButtonEdit nme01=nme_file.nme01, action=controlp, tabIndex=6, image="zoom", comment="Field & D/W Date Combined ,No Blank!Press <^P> Qry Bank ";
+ComboBox nmc03=nmc_file.nmc03, tabIndex=13, noEntry, queryEditable, items=(("1", "Deposit"),("2", "Withdraw"));
+Edit nma02=nma_file.nma02, tabIndex=9, noEntry;
+Edit nma10=nma_file.nma10, tabIndex=12, noEntry;
+Edit nme13=nme_file.nme13, tabIndex=16;
+Edit nme07=nme_file.nme07, tabIndex=14;
+Edit nme04=nme_file.nme04, tabIndex=15;
+Edit nme08=nme_file.nme08, tabIndex=17;
+Edit nme05=nme_file.nme05, tabIndex=18;
+Group group02:group02;
+DateEdit nme02=nme_file.nme02, tabIndex=23, comment="Field & Bank No. Combined ,No Blank!";
+ButtonEdit nme14=nme_file.nme14, action=controlp, tabIndex=24, image="zoom", comment="<^P>Qry Cash Variation Code";
+Edit nml02=formonly.nml02 type CHAR, tabIndex=25, noEntry;
+DateEdit nme16=nme_file.nme16, tabIndex=26;
+ButtonEdit nme09=nme_file.nme09, action=controlp, tabIndex=27, image="zoom", comment="Blank or in Bank Adj.Cd Table,Press<^P>Qry Bank Adjustment Code";
+Edit nmk02=formonly.nmk02 type CHAR, tabIndex=28, noEntry;
+Edit n=formonly.nmk03 type CHAR, tabIndex=29, noEntry;
+ComboBox nme20=nme_file.nme20, tabIndex=30, upShift, queryEditable, comment="Y:Account Checked Blank:Unchecked", items=(("Y", "Account Checked"));
+TextEdit nmeud01=nme_file.nmeud01, tabIndex=34, stretch=NONE;
+Edit nmeud07=nme_file.nmeud07, tabIndex=35;
+DateEdit nmeud13=nme_file.nmeud13, tabIndex=36;
+Edit nmeud08=nme_file.nmeud08, tabIndex=37;
+DateEdit nmeud14=nme_file.nmeud14, tabIndex=38;
+Edit nmeud02=nme_file.nmeud02, tabIndex=39;
+Edit nmeud09=nme_file.nmeud09, tabIndex=40;
+DateEdit nmeud15=nme_file.nmeud15, tabIndex=41;
+Edit nmeud03=nme_file.nmeud03, tabIndex=42;
+Edit nmeud10=nme_file.nmeud10, tabIndex=43;
+Edit nmeud04=nme_file.nmeud04, tabIndex=44;
+Edit nmeud11=nme_file.nmeud11, tabIndex=45;
+Edit nmeud05=nme_file.nmeud05, tabIndex=46;
+Edit nmeud12=nme_file.nmeud12, tabIndex=47;
+Edit nmeud06=nme_file.nmeud06, tabIndex=48;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=31, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nme_file.nme12,nme_file.nme06,nme_file.nme21,formonly.a,nme_file.nme22,nme_file.nme061,nme_file.nme18,formonly.b,nme_file.nme17,nme_file.nme11,nme_file.nme15,gem_file.gem02,azf_file.azf03,nme_file.nme03,nmc_file.nmc02,nme_file.nme01,nmc_file.nmc03,nma_file.nma02,nma_file.nma10,nme_file.nme13,nme_file.nme07,nme_file.nme04,nme_file.nme08,nme_file.nme05,nme_file.nme02,nme_file.nme14,formonly.nml02,nme_file.nme16,nme_file.nme09,formonly.nmk02,formonly.nmk03,nme_file.nme20,nme_file.nmeud01,nme_file.nmeud07,nme_file.nmeud13,nme_file.nmeud08,nme_file.nmeud14,nme_file.nmeud02,nme_file.nmeud09,nme_file.nmeud15,nme_file.nmeud03,nme_file.nmeud10,nme_file.nmeud04,nme_file.nmeud11,nme_file.nmeud05,nme_file.nmeud12,nme_file.nmeud06,formonly.cnt)
+END -- INSTRUCTIONS
+

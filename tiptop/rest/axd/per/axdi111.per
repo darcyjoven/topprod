@@ -1,0 +1,72 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi111.per created Wed Jan 23 05:30:31 2008
+-- File created from axdi111.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi111")
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        GRID gr7749
+        {
+         Maintainment Group            [aa0       ][aa1                 ]
+         Mileages that drived(km)      [aa2       ]
+         Years that drived             [aa3       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_obv
+    {
+    [aa4       |aa5                    |aa6                       |aa7  ]
+    [aa4       |aa5                    |aa6                       |aa7  ]
+    [aa4       |aa5                    |aa6                       |aa7  ]
+    [aa4       |aa5                    |aa6                       |aa7  ]
+    [aa4       |aa5                    |aa6                       |aa7  ]
+    [aa4       |aa5                    |aa6                       |aa7  ]
+    [aa4       |aa5                    |aa6                       |aa7  ]
+    [aa4       |aa5                    |aa6                       |aa7  ]
+    [aa4       |aa5                    |aa6                       |aa7  ]
+    [aa4       |aa5                    |aa6                       |aa7  ]
+    }
+    END -- TABLE
+    GRID gr7750
+    {
+     ----------Rows [aa8   ]/[aa9   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES obv_file,obu_file
+
+ATTRIBUTES
+  EDIT aa0=obv_file.obv01, NOT NULL, REQUIRED, TABINDEX=1;
+  EDIT aa1=obv_file.obv012, TABINDEX=2;
+  EDIT aa2=obv_file.obv04, TABINDEX=3;
+  EDIT aa3=obv_file.obv05, TABINDEX=4;
+  EDIT aa4=obv_file.obv02, NOT NULL, REQUIRED, TABINDEX=5, TITLE="Line No";
+  BUTTONEDIT aa5=obv_file.obv03, ACTION=controlp, COMMENT="KEY Field, No Blank/Repeated! <^P>Qry Detail <^O>Copy Previous Record! ", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=6, TITLE="Maintainment Item";
+  EDIT aa6=obu_file.obu02, NOENTRY, TABINDEX=7, TITLE="Description";
+  CHECKBOX aa7=obv_file.obvacti, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=8, TITLE="Valid";
+  EDIT aa8=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=9;
+  EDIT aa9=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=10;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_obv (obv_file.obv02, obv_file.obv03, obu_file.obu02, obv_file.obvacti)
+END

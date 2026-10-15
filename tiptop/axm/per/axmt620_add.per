@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt620_add.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"券号资料查询")
+VBox VBox1
+Folder Folder1
+Page Main(text=%"Page1")
+Table s_rxe
+{
+[rxe02|rxe03|rxe04               |rxe05               |rxe06               |lpx02               |rxe07     |lrz02               |rxe08               |rxe09               ]
+[rxe02|rxe03|rxe04               |rxe05               |rxe06               |lpx02               |rxe07     |lrz02               |rxe08               |rxe09               ]
+[rxe02|rxe03|rxe04               |rxe05               |rxe06               |lpx02               |rxe07     |lrz02               |rxe08               |rxe09               ]
+[rxe02|rxe03|rxe04               |rxe05               |rxe06               |lpx02               |rxe07     |lrz02               |rxe08               |rxe09               ]
+[rxe02|rxe03|rxe04               |rxe05               |rxe06               |lpx02               |rxe07     |lrz02               |rxe08               |rxe09               ]
+[rxe02|rxe03|rxe04               |rxe05               |rxe06               |lpx02               |rxe07     |lrz02               |rxe08               |rxe09               ]
+[rxe02|rxe03|rxe04               |rxe05               |rxe06               |lpx02               |rxe07     |lrz02               |rxe08               |rxe09               ]
+[rxe02|rxe03|rxe04               |rxe05               |rxe06               |lpx02               |rxe07     |lrz02               |rxe08               |rxe09               ]
+[rxe02|rxe03|rxe04               |rxe05               |rxe06               |lpx02               |rxe07     |lrz02               |rxe08               |rxe09               ]
+[rxe02|rxe03|rxe04               |rxe05               |rxe06               |lpx02               |rxe07     |lrz02               |rxe08               |rxe09               ]
+
+
+}
+END -- s_rxe
+END -- Main
+END -- Folder1
+Grid Grid1
+{
+
+   ----------  [label1    ] [cnt       ]   ----------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+rxe_file,
+lpx_file,
+lrz_file
+ATTRIBUTES
+Edit rxe02=rxe_file.rxe02, tabIndex=1, title=%"rxe02", noEntry, not null;
+Edit rxe03=rxe_file.rxe03, tabIndex=2, title=%"rxe03", not null;
+Edit rxe04=rxe_file.rxe04, tabIndex=3, title=%"rxe04", not null;
+Edit rxe05=rxe_file.rxe05, tabIndex=4, title=%"rxe05", not null;
+ButtonEdit rxe06=rxe_file.rxe06, action=controlp, tabIndex=5, title=%"rxe06", noEntry, not null, image="zoom.png";
+Edit lpx02=lpx_file.lpx02, tabIndex=6, title=%"lpx02", noEntry;
+ButtonEdit rxe07=rxe_file.rxe07, action=controlp, tabIndex=7, title=%"rxe07", noEntry, not null, image="zoom.png";
+Edit lrz02=lrz_file.lrz02, tabIndex=8, title=%"lrz02", noEntry;
+Edit rxe08=rxe_file.rxe08, tabIndex=9, title=%"rxe08", noEntry, not null;
+Edit rxe09=rxe_file.rxe09, tabIndex=10, title=%"rxe09", noEntry, not null;
+Label label1:Label1, text=%"Label1";
+Edit cnt=formonly.cnt type CHAR, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rxe(rxe_file.rxe02,rxe_file.rxe03,rxe_file.rxe04,rxe_file.rxe05,rxe_file.rxe06,lpx_file.lpx02,rxe_file.rxe07,lrz_file.lrz02,rxe_file.rxe08,rxe_file.rxe09)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

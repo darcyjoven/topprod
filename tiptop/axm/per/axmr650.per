@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmr650.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr650")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                               >
+  Delivery Note No.    [oft01              ]
+  Salesman             [oft04              ]
+  Agency/Agent Cust    [oft03              ]
+  Commission Year      [oft18              ]
+  Commission Month     [oft19              ]
+ <                                                                                        >
+
+}
+END -- Grid1
+Group g01(text="INPUT")
+Grid Grid2
+{
+ Generate Object      [c           ]
+ Data Period          [bdate       ]-[edate       ]
+ Data Property        [a                          ]
+[b                                    ]
+}
+END -- Grid2
+END -- g01
+Grid Grid3
+{
+[more                        ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- axmr650
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oft01=formonly.oft01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit oft04=formonly.oft04 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit oft03=formonly.oft03 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Edit oft18=formonly.oft18 type CHAR, tabIndex=4;
+Edit oft19=formonly.oft19 type CHAR, tabIndex=5;
+RadioGroup c=formonly.c type CHAR, tabIndex=6, not null, required, items=(("1", %"Agent"),("2", %"Agent Cust"));
+DateEdit bdate=formonly.bdate type DATE, tabIndex=7;
+DateEdit edate=formonly.edate type DATE, tabIndex=8;
+RadioGroup a=formonly.a type CHAR, tabIndex=9, items=(("1", %"By Agent"),("2", %"By Salesman"));
+CheckBox b=formonly.b type CHAR, tabIndex=10, text="If Different Data Quality, Jump Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=11, text="Other Print Conditions", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oft01,formonly.oft04,formonly.oft03,formonly.oft18,formonly.oft19,formonly.c,formonly.bdate,formonly.edate,formonly.a,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

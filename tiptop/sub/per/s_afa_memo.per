@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_afa_memo.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_afa_memo")
+Grid gr3865
+{
+ <T s_fam                                                     >
+ [fam02      |fam04          |fam05                          ]
+ [fam02      |fam04          |fam05                          ]
+ [fam02      |fam04          |fam05                          ]
+ [fam02      |fam04          |fam05                          ]
+ [fam02      |fam04          |fam05                          ]
+ [fam02      |fam04          |fam05                          ]
+ [fam02      |fam04          |fam05                          ]
+ [fam02      |fam04          |fam05                          ]
+ [fam02      |fam04          |fam05                          ]
+ [fam02      |fam04          |fam05                          ]
+ <                                                            >
+
+}
+END -- gr3865
+END -- s_afa_memo
+
+TABLES
+fam_file
+ATTRIBUTES
+Table s_fam:s_fam;
+Edit fam02=fam_file.fam02, tabIndex=1, title="Line No.", comment="0 Memo of whole page,123...Body memo   ";
+ComboBox fam04=fam_file.fam04, tabIndex=2, title="Before/After", not null, required, queryEditable, items=(("1", %"Print before Line #"),("2", %"Print after Line #"),("0", %"Internal Reference for Qry Only"));
+Edit fam05=fam_file.fam05, tabIndex=3, title="Memo", scroll, comment="Prt Body Memo aft Ln#, Limit char(30)";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fam(fam_file.fam02,fam_file.fam04,fam_file.fam05)
+END -- INSTRUCTIONS
+

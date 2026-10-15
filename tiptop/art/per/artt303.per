@@ -1,0 +1,181 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt303.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artt803")
+VBox vb3
+Folder pc2
+Page Page4(text=%"Page0")
+Grid gr8
+{
+
+ rae01   [rae01            ][rae01_desc         ] [rae11                    ]    rae15 [rae15           ]   rae21  [rae21           ]        [imgmksg]     [raq05                 ]
+ rae02   [rae02                 ]                 [rae26                    ]    rae16 [rae16           ]   raeconf[raeconf         ]        [       ]      raq06  [raq06          ]
+ rae03   [rae03                 |rae03_desc      ][rae27                    ]    rae17 [rae17           ]   raecond[raecond         |raecont       ]        raq07  [raq07          ]
+ raeplant[raeplant              |raeplant_desc   ][rae23                    ]    rae18 [rae18           ]   raeconu[raeconu         |raeconu_desc      ]
+ rae10   [rae10            ]                      [rae13                    ]    rae19 [rae19           ]   rahpos [raepos          ]
+ rae12   [rae12            ]                      [rae14                    ]    rae20 [rae20           ]   rae22  [rae22                       ]
+                                                  [rae24                    ]                                      [                            ]
+                                                  [rae25                    ]                                      [                            ]
+
+
+
+
+
+
+}
+END -- gr8
+END -- Page4
+Page Page7(text=%"Page3")
+Grid gr5
+{
+
+     Record Owner  [raeuser   ]       Last Modified by[raemodu   ]     Data Valid Code[raeacti   ]
+     Department    [raegrup   ]       Modify Date     [raedate   ]     Create Date    [raecrat   ]
+     Record Orig.  [raeoriu   ]       Dept Orig.      [raeorig   ]
+
+
+}
+END -- gr5
+END -- Page7
+END -- pc2
+Folder TimeSetting
+Page Time_Setting(text=%"Time Setting")
+Table s_rak
+{
+[rak05   |rak06   |rak07     |rak08   |rak09      |rak10     |rak11    |rakacti ]
+[rak05   |rak06   |rak07     |rak08   |rak09      |rak10     |rak11    |rakacti ]
+[rak05   |rak06   |rak07     |rak08   |rak09      |rak10     |rak11    |rakacti ]
+[rak05   |rak06   |rak07     |rak08   |rak09      |rak10     |rak11    |rakacti ]
+[rak05   |rak06   |rak07     |rak08   |rak09      |rak10     |rak11    |rakacti ]
+}
+END -- s_rak
+END -- Time_Setting
+END -- TimeSetting
+HBox HBox1
+Folder Condition
+Page Condition1(text=%"Condition")
+Table s_raf
+{
+[raf03   |raf04   |raf05   |rafacti ]
+[raf03   |raf04   |raf05   |rafacti ]
+[raf03   |raf04   |raf05   |rafacti ]
+[raf03   |raf04   |raf05   |rafacti ]
+[raf03   |raf04   |raf05   |rafacti ]
+}
+END -- s_raf
+END -- Condition1
+END -- Condition
+Folder AreaSetting
+Page Area_Setting(text=%"Area Setting")
+Table s_rag
+{
+[rag03   |rag04   |rag05        |rag05_desc         |rag06     |rag06_desc     |ragacti ]
+[rag03   |rag04   |rag05        |rag05_desc         |rag06     |rag06_desc     |ragacti ]
+[rag03   |rag04   |rag05        |rag05_desc         |rag06     |rag06_desc     |ragacti ]
+[rag03   |rag04   |rag05        |rag05_desc         |rag06     |rag06_desc     |ragacti ]
+[rag03   |rag04   |rag05        |rag05_desc         |rag06     |rag06_desc     |ragacti ]
+}
+END -- s_rag
+END -- Area_Setting
+END -- AreaSetting
+END -- HBox1
+Grid gr36
+{
+
+  ------ Rows[idx    ]/[cnt       ]  ----- Items[cn2        ]--------
+
+
+
+
+
+
+}
+END -- gr36
+END -- vb3
+END -- Form2
+
+TABLES
+raq_file,
+rak_file,
+rag_file,
+raf_file,
+rae_file
+ATTRIBUTES
+ButtonEdit rae01=rae_file.rae01, action=controlp, tabIndex=1, noEntry, not null, image="zoom.png";
+Edit rae01_desc=formonly.rae01_desc type CHAR, tabIndex=7, noEntry;
+CheckBox rae11=rae_file.rae11, tabIndex=10, default = "N", text=%"rae11", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit rae15=rae_file.rae15, tabIndex=18, not null;
+Edit rae21=rae_file.rae21, tabIndex=24;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+CheckBox raq05=raq_file.raq05, tabIndex=32, text=%"raq05\n", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rae02=rae_file.rae02, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+CheckBox rae26=rae_file.rae26, tabIndex=11, default = "N", text=%"rae26", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit rae16=rae_file.rae16, tabIndex=19, not null;
+ComboBox raeconf=rae_file.raeconf, tabIndex=25, noEntry, not null, items=(("Y", "Approved"),("N", "Unapproved"));
+DateEdit raq06=raq_file.raq06, tabIndex=33;
+ButtonEdit rae03=rae_file.rae03, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Edit rae03_desc=formonly.rae03_desc type CHAR, tabIndex=8, noEntry;
+CheckBox rae27=rae_file.rae27, tabIndex=12, default = "N", text="rae27", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit rae17=rae_file.rae17, tabIndex=20, not null;
+DateEdit raecond=rae_file.raecond, tabIndex=26, noEntry, century="";
+TimeEdit raecont=rae_file.raecont, tabIndex=30, noEntry;
+TimeEdit raq07=raq_file.raq07, tabIndex=34;
+ButtonEdit raeplant=rae_file.raeplant, action=controlp, tabIndex=4, noEntry, not null, image="zoom.png";
+Edit raeplant_desc=formonly.raeplant_desc type CHAR, tabIndex=9, noEntry;
+CheckBox rae23=rae_file.rae23, tabIndex=13, default = "N", text=%"rae23", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit rae18=rae_file.rae18, tabIndex=21, not null;
+ButtonEdit raeconu=rae_file.raeconu, action=controlp, tabIndex=27, noEntry, image="zoom.png";
+Edit raeconu_desc=formonly.raeconu_desc type CHAR, tabIndex=31, noEntry;
+ComboBox rae10=rae_file.rae10, tabIndex=5, items=(("1", "1"),("2", "2"),("3", "3"));
+CheckBox rae13=rae_file.rae13, tabIndex=14, default = "N", text=%"rae13", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit rae19=rae_file.rae19, tabIndex=22, not null;
+ComboBox raepos=rae_file.raepos, tabIndex=28, default = "N", noEntry, not null, items=(("1", "Add-No passed"),("2", "Modify-No passed"),("3", "Passed"));
+ComboBox rae12=rae_file.rae12, tabIndex=6, default = "N", not null, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"));
+CheckBox rae14=rae_file.rae14, tabIndex=15, default = "Y", text=%"rae14", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit rae20=rae_file.rae20, tabIndex=23, not null;
+TextEdit rae22=rae_file.rae22, tabIndex=29;
+CheckBox rae24=rae_file.rae24, tabIndex=16, default = "N", text=%"rae24", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rae25=rae_file.rae25, tabIndex=17, default = "N", text=%"rae25", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit raeuser=rae_file.raeuser, tabIndex=60, noEntry;
+Edit raemodu=rae_file.raemodu, tabIndex=59, noEntry;
+Edit raeacti=rae_file.raeacti, tabIndex=58, noEntry, upShift;
+Edit raegrup=rae_file.raegrup, tabIndex=57, noEntry;
+DateEdit raedate=rae_file.raedate, tabIndex=64, noEntry;
+DateEdit raecrat=rae_file.raecrat, tabIndex=61, noEntry;
+Edit raeoriu=rae_file.raeoriu, tabIndex=62, noEntry;
+Edit raeorig=rae_file.raeorig, tabIndex=63, noEntry;
+Edit rak05=rak_file.rak05, tabIndex=35, title="rak05", not null, required;
+DateEdit rak06=rak_file.rak06, tabIndex=36, title="rak06", not null, required;
+DateEdit rak07=rak_file.rak07, tabIndex=37, title="rak07", not null, required;
+TimeEdit rak08=rak_file.rak08, tabIndex=38, title=%"rak08", not null, required;
+TimeEdit rak09=rak_file.rak09, tabIndex=39, title=%"rak09", not null, required;
+ComboBox rak10=rak_file.rak10, tabIndex=40, title="rak10", items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"),("10", "10"),("11", "11"),("12", "12"),("13", "13"),("14", "14"),("15", "15"),("16", "16"),("17", "17"),("18", "18"),("19", "19"),("20", "20"),("21", "21"),("22", "22"),("23", "23"),("24", "24"),("25", "25"),("26", "26"),("27", "27"),("28", "28"),("29", "29"),("30", "30"),("31", "31"));
+ComboBox rak11=rak_file.rak11, tabIndex=41, title=%"rak11", items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"));
+CheckBox rakacti=rak_file.rakacti, tabIndex=42, default = "Y", title="rakacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit raf03=raf_file.raf03, tabIndex=43, title="raf03", not null, required;
+ComboBox raf04=raf_file.raf04, tabIndex=44, title="raf04", not null, required, items=(("1", "1"),("2", "2"));
+Edit raf05=raf_file.raf05, tabIndex=45, title="raf05", not null, required;
+CheckBox rafacti=raf_file.rafacti, tabIndex=46, default = "Y", title="rafacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rag03=rag_file.rag03, tabIndex=47, title="rag03", not null, required;
+ComboBox rag04=rag_file.rag04, tabIndex=48, title="rag04", not null, required, items=(("01", "Product"),("02", "Product Classification"),("03", "Category"),("04", "Brand"),("05", "Series"),("06", "Model"),("07", "Item Specification"),("08", "Attribute"),("09", "Price"));
+ButtonEdit rag05=rag_file.rag05, action=controlp, tabIndex=49, title="rag05", not null, required, image="zoom.png";
+Edit rag05_desc=formonly.rag05_desc type VARCHAR, tabIndex=50, title="rag05_desc", noEntry;
+ButtonEdit rag06=rag_file.rag06, action=controlp, tabIndex=51, title="rag06", not null, required, image="zoom.png";
+Edit rag06_desc=formonly.rag06_desc type CHAR, tabIndex=52, title="rag06_desc", noEntry;
+CheckBox ragacti=rag_file.ragacti, tabIndex=53, default = "Y", title="ragacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=54, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=55, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=56;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rae_file.rae01,formonly.rae01_desc,rae_file.rae11,rae_file.rae21,formonly.imgmksg,rae_file.rae02,rae_file.rae12,rae_file.raeconf,rae_file.rae03,formonly.rae03_desc,rae_file.rae13,rae_file.raecond,rae_file.raecont,rae_file.raeplant,formonly.raeplant_desc,rae_file.rae14,rae_file.raeconu,formonly.raeconu_desc,rae_file.rae15,rae_file.raepos,rae_file.rae16,rae_file.rae22,rae_file.rae17,rae_file.rae18,rae_file.rae10,rae_file.rae19,rae_file.rae20,rae_file.raeuser,rae_file.raemodu,rae_file.raeacti,rae_file.raegrup,rae_file.raedate,rae_file.raecrat,rae_file.raeoriu,rae_file.raeorig,formonly.idx,formonly.cnt,formonly.cn2,rae_file.rae23,rae_file.rae24,rae_file.rae25,rae_file.rae26,rae_file.rae27,raq_file.raq05,raq_file.raq06,raq_file.raq07)
+SCREEN RECORD s_raf(raf_file.raf03,raf_file.raf04,raf_file.raf05,raf_file.rafacti)
+SCREEN RECORD s_rag(rag_file.rag03,rag_file.rag04,rag_file.rag05,formonly.rag05_desc,rag_file.rag06,formonly.rag06_desc,rag_file.ragacti)
+SCREEN RECORD s_rak(rak_file.rak05,rak_file.rak06,rak_file.rak07,rak_file.rak08,rak_file.rak09,rak_file.rak10,rak_file.rak11,rak_file.rakacti)
+END -- INSTRUCTIONS
+

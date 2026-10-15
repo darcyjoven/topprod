@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmx210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr210")
+VBox VBox1
+Grid gr2323
+{
+ <G group01                                  >
+  Creidt Line Cust     [occ33               ]
+  Salesman No.         [occ04               ]
+  Dept No.             [occgrup             ]
+ <                                           >
+ <G group02                                  >
+  Data option          [n                 ]
+
+
+ <                                           >
+
+}
+END -- gr2323
+Grid gr2324
+{
+[more                                              ]
+
+}
+END -- gr2324
+END -- VBox1
+END -- axmr210
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit occ33=formonly.occ33 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit occ04=formonly.occ04 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+ButtonEdit occgrup=formonly.occgrup type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+Group group02:group02, text="INPUT";
+RadioGroup n=formonly.n type VARCHAR, tabIndex=4, items=(("1", "Over-Limit"),("2", "All"));
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.occ33,formonly.occ04,formonly.occgrup,formonly.n,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmx410.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr410")
+VBox VBox1
+Grid gr5081
+{
+ <G group01                                                     >
+  P/R No.      [pmk01                    ]
+  P/R Date     [pmk04                    ]
+  PR Category  [pmk07                    ]
+  P/R Employee [pmk12                    ]
+  Vender No.   [pmk09                    ]
+  P/O No.      [pmn01                    ]
+ <                                                              >
+
+}
+END -- gr5081
+Group group02(text="INPUT")
+Grid gr5082
+{
+ <G group03                                                        >
+  [s1                ] [s2                 ] [s3                  ]
+ <                                                                 >
+
+}
+END -- gr5082
+END -- group02
+Grid gr5083
+{
+ [more                                                            ]
+
+}
+END -- gr5083
+END -- VBox1
+END -- apmr410
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmk01=formonly.pmk01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit pmk04=formonly.pmk04 type DATE, tabIndex=2, comment="Enter Sequence combinations(MM/DD/YY)Date Range";
+Edit pmk07=formonly.pmk07 type VARCHAR, tabIndex=3;
+ButtonEdit pmk12=formonly.pmk12 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit pmk09=formonly.pmk09 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit pmn01=formonly.pmn01 type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+Group group03:group03, text="Print Data";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=7, items=(("1", "P/R No."),("2", "P/R Date"),("3", "PR Category"),("4", "P/R Employee"),("5", "Vender No."),("6", "P/O No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=8, items=(("1", "P/R No."),("2", "P/R Date"),("3", "PR Category"),("4", "P/R Employee"),("5", "Vender No."),("6", "P/O No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=9, items=(("1", "P/R No."),("2", "P/R Date"),("3", "PR Category"),("4", "P/R Employee"),("5", "Vender No."),("6", "P/O No."));
+CheckBox more=formonly.more type VARCHAR, tabIndex=10, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmk01,formonly.pmk04,formonly.pmk07,formonly.pmk12,formonly.pmk09,formonly.pmn01,formonly.s1,formonly.s2,formonly.s3,formonly.more)
+END -- INSTRUCTIONS
+

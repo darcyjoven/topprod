@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr404.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr404")
+VBox VBox1
+Grid gr2708
+{
+ <G group01                                                          >
+  Voucher NO.         [aba01               ]
+  Voucher Date        [aba02               ]
+  Entry Date          [aba05               ]
+  Source Code         [aba06               ]
+  Amount              [aba08               ]
+ <                                                                   >
+
+}
+END -- gr2708
+Group group02(text="INPUT")
+Grid gr2709
+{
+ <G group03                                                          >
+  To-Approve          [a                   ][a_name              ]
+ <                                                                   >
+ <G group04                                                          >
+  [s1                  ][s2                  ][s3                  ]
+ <                                                                   >
+ <G group05                                                          >
+  [b                                                           ]
+ <                                                                   >
+
+}
+END -- gr2709
+END -- group02
+Grid gr2710
+{
+[more                                                        ]
+
+}
+END -- gr2710
+END -- VBox1
+END -- aglr404
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit aba01=formonly.aba01 type VARCHAR, tabIndex=1;
+DateEdit aba02=formonly.aba02 type DATE, tabIndex=2;
+DateEdit aba05=formonly.aba05 type DATE, tabIndex=3;
+Edit aba06=formonly.aba06 type VARCHAR, tabIndex=4;
+Edit aba08=formonly.aba08 type CHAR, tabIndex=5;
+Group group03:group03;
+Edit a=formonly.a type VARCHAR, tabIndex=6;
+Edit a_name=formonly.a_name type VARCHAR, tabIndex=7;
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, queryEditable, items=(("1", "Voucher NO."),("2", "Voucher Date"),("3", "Entry Date"),("4", "Source Code"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=9, queryEditable, items=(("1", "Voucher NO."),("2", "Voucher Date"),("3", "Entry Date"),("4", "Source Code"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=10, queryEditable, items=(("1", "Voucher NO."),("2", "Voucher Date"),("3", "Entry Date"),("4", "Source Code"));
+Group group05:group05;
+CheckBox b=formonly.b type CHAR, tabIndex=11, text="Just Print Should Sign Voucher", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aba01,formonly.aba02,formonly.aba05,formonly.aba06,formonly.aba08,formonly.a,formonly.a_name,formonly.s1,formonly.s2,formonly.s3,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

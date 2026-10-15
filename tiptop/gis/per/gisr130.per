@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gis/42f/gisr130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gisr130")
+VBox VBox1
+Grid gr3491
+{
+ <G group01                                 >
+  Invoice No.         [isa01               ]
+  Invoice Date        [isa03               ]
+  Accounts No.        [isa04               ]
+  Customer No.        [isa05               ]
+ <                                          >
+
+}
+END -- gr3491
+Grid gr3492
+{
+[more                                 ]
+
+}
+END -- gr3492
+END -- VBox1
+END -- gisr130
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit isa01=formonly.isa01 type CHAR, tabIndex=1;
+DateEdit isa03=formonly.isa03 type CHAR, tabIndex=2;
+Edit isa04=formonly.isa04 type CHAR, tabIndex=3;
+Edit isa05=formonly.isa05 type CHAR, tabIndex=4;
+CheckBox more=formonly.more type VARCHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.isa01,formonly.isa03,formonly.isa04,formonly.isa05,formonly.more)
+END -- INSTRUCTIONS
+

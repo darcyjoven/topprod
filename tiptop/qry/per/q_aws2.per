@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_aws2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Query ModifyFlowUser")
+Grid gr3733
+{
+ <T s_aws2                                                           >
+ [check |empid      |empname        |depid          |depname        ]
+ [check |empid      |empname        |depid          |depname        ]
+ [check |empid      |empname        |depid          |depname        ]
+ [check |empid      |empname        |depid          |depname        ]
+ [check |empid      |empname        |depid          |depname        ]
+ [check |empid      |empname        |depid          |depname        ]
+ [check |empid      |empname        |depid          |depname        ]
+ [check |empid      |empname        |depid          |depname        ]
+ [check |empid      |empname        |depid          |depname        ]
+ [check |empid      |empname        |depid          |depname        ]
+ <                                                                   >
+
+}
+END -- gr3733
+END -- q_aws2
+
+ATTRIBUTES
+Table s_aws2:s_aws2;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit empid=formonly.empid type CHAR, tabIndex=2, title="employeeID";
+Edit empname=formonly.empname type CHAR, tabIndex=3, title="employeeName";
+Edit depid=formonly.depid type CHAR, tabIndex=4, title="departmentId";
+Edit depname=formonly.depname type CHAR, tabIndex=5, title="departmentName";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aws2(formonly.check,formonly.empid,formonly.empname,formonly.depid,formonly.depname)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artp400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form1")
+VBox vb2
+Group gb1(text="condition")
+Grid gr1
+{
+  sort    [rus07              ]   number [rua04          ]
+  vender  [rus11              ]
+  sign    [rus09              ]
+  plant   [rus13              ]
+
+
+
+}
+END -- gr1
+END -- gb1
+Table s_ogb
+{
+[status  |oga02     |ogb01      |ogb03   |ogb04      |ima02     |oga00     |oga03   |ogb12     |ogb14      |ogaplant]
+[status  |oga02     |ogb01      |ogb03   |ogb04      |ima02     |oga00     |oga03   |ogb12     |ogb14      |ogaplant]
+[status  |oga02     |ogb01      |ogb03   |ogb04      |ima02     |oga00     |oga03   |ogb12     |ogb14      |ogaplant]
+[status  |oga02     |ogb01      |ogb03   |ogb04      |ima02     |oga00     |oga03   |ogb12     |ogb14      |ogaplant]
+[status  |oga02     |ogb01      |ogb03   |ogb04      |ima02     |oga00     |oga03   |ogb12     |ogb14      |ogaplant]
+[status  |oga02     |ogb01      |ogb03   |ogb04      |ima02     |oga00     |oga03   |ogb12     |ogb14      |ogaplant]
+[status  |oga02     |ogb01      |ogb03   |ogb04      |ima02     |oga00     |oga03   |ogb12     |ogb14      |ogaplant]
+
+}
+END -- s_ogb
+END -- vb2
+END -- Form1
+
+TABLES
+rus_file,
+rua_file,
+ima_file,
+ogb_file,
+oga_file
+ATTRIBUTES
+ButtonEdit rus07=rus_file.rus07, action=controlp, tabIndex=1, image="zoom";
+Edit rua04=rua_file.rua04, tabIndex=5, not null, required;
+ButtonEdit rus11=rus_file.rus11, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit rus09=rus_file.rus09, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit rus13=rus_file.rus13, action=controlp, tabIndex=4, not null, required, image="zoom";
+CheckBox status=formonly.status type VARCHAR, tabIndex=6, title="status", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit oga02=oga_file.oga02, tabIndex=7, title="oga02", noEntry;
+Edit ogb01=ogb_file.ogb01, tabIndex=8, title="ogb01", noEntry;
+Edit ogb03=ogb_file.ogb03, tabIndex=9, title="ogb03", noEntry;
+Edit ogb04=ogb_file.ogb04, tabIndex=15, title=%"ogb04", noEntry;
+Edit ima02=ima_file.ima02, tabIndex=16, title=%"ima02", noEntry;
+ComboBox oga00=oga_file.oga00, tabIndex=10, title="oga00", noEntry, scroll, items=(("1", %"common scale"),("2", %"Buyer reject"));
+Edit oga03=oga_file.oga03, tabIndex=11, title="oga03", noEntry;
+Edit ogb12=ogb_file.ogb12, tabIndex=12, title="ogb12", noEntry;
+Edit ogb14=ogb_file.ogb14, tabIndex=13, title="ogb14", noEntry;
+Edit ogaplant=oga_file.ogaplant, tabIndex=14, title="ogaplant", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogb(formonly.status,oga_file.oga02,ogb_file.ogb01,ogb_file.ogb03,ogb_file.ogb04,ima_file.ima02,oga_file.oga00,oga_file.oga03,ogb_file.ogb12,ogb_file.ogb14,oga_file.ogaplant)
+SCREEN RECORD Undefined(rus_file.rus07,rua_file.rua04,rus_file.rus11,rus_file.rus09,rus_file.rus13)
+END -- INSTRUCTIONS
+

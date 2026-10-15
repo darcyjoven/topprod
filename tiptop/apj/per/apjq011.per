@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjq011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjq011")
+VBox vb3
+Folder pc1
+Page Page1(text=%"Basic Data")
+Grid gr1
+{
+
+ Year [pjt01     ]   Month[pjt02     ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table s_pjt
+{
+[pjt03         |pja02                                   |pjt10               |pjt11               |pjt12               |pjt13               |pjt14               |pjt15               |pjt16               |pjt17               |pjt18               |pjt19               |pjt20               |pjt21               ]
+[pjt03         |pja02                                   |pjt10               |pjt11               |pjt12               |pjt13               |pjt14               |pjt15               |pjt16               |pjt17               |pjt18               |pjt19               |pjt20               |pjt21               ]
+[pjt03         |pja02                                   |pjt10               |pjt11               |pjt12               |pjt13               |pjt14               |pjt15               |pjt16               |pjt17               |pjt18               |pjt19               |pjt20               |pjt21               ]
+[pjt03         |pja02                                   |pjt10               |pjt11               |pjt12               |pjt13               |pjt14               |pjt15               |pjt16               |pjt17               |pjt18               |pjt19               |pjt20               |pjt21               ]
+[pjt03         |pja02                                   |pjt10               |pjt11               |pjt12               |pjt13               |pjt14               |pjt15               |pjt16               |pjt17               |pjt18               |pjt19               |pjt20               |pjt21               ]
+[pjt03         |pja02                                   |pjt10               |pjt11               |pjt12               |pjt13               |pjt14               |pjt15               |pjt16               |pjt17               |pjt18               |pjt19               |pjt20               |pjt21               ]
+[pjt03         |pja02                                   |pjt10               |pjt11               |pjt12               |pjt13               |pjt14               |pjt15               |pjt16               |pjt17               |pjt18               |pjt19               |pjt20               |pjt21               ]
+
+}
+END -- s_pjt
+Grid gr10
+{
+
+ --------Rows[cnt    ]/ [cn2   ]------
+
+}
+END -- gr10
+END -- vb3
+END -- apjq011
+
+TABLES
+pjt_file
+ATTRIBUTES
+Edit pjt01=pjt_file.pjt01, tabIndex=2, not null, required;
+Edit pjt02=pjt_file.pjt02, tabIndex=1, not null, required;
+ButtonEdit pjt03=pjt_file.pjt03, action=controlp, tabIndex=3, title="Project No.", image="zoom.png";
+Edit pja02=formonly.pja02 type CHAR, tabIndex=4, title="Project Name", noEntry;
+Edit pjt10=pjt_file.pjt10, tabIndex=5, default = "0", title="Current Succeeded Amt", not null;
+Edit pjt11=pjt_file.pjt11, tabIndex=6, default = "0", title="Current Actual Material Cost", not null;
+Edit pjt12=pjt_file.pjt12, tabIndex=7, default = "0", title="Current Actual Other Costs Expenditures", not null;
+Edit pjt13=pjt_file.pjt13, tabIndex=8, default = "0", title="Current Listing in Advance Other Costs Expenditures", not null;
+Edit pjt14=pjt_file.pjt14, tabIndex=9, default = "0", title="Current Income", not null;
+Edit pjt15=pjt_file.pjt15, tabIndex=10, default = "0", title="Current External Income", not null;
+Edit pjt16=pjt_file.pjt16, tabIndex=11, default = "0", title="Current Carry Forward Income", not null;
+Edit pjt17=pjt_file.pjt17, tabIndex=12, default = "0", title="Current Carry Forward Material Cost", not null;
+Edit pjt18=pjt_file.pjt18, tabIndex=13, default = "0", title="Current Carry Forward Other Costs", not null;
+Edit pjt19=pjt_file.pjt19, tabIndex=14, default = "0", title="Planning Income", not null;
+Edit pjt20=pjt_file.pjt20, tabIndex=15, default = "0", title="Planning Material Cost", not null;
+Edit pjt21=pjt_file.pjt21, tabIndex=16, default = "0", title="Planning Other Costs", not null;
+Edit cnt=formonly.cnt type CHAR, tabIndex=18;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjt(pjt_file.pjt03,formonly.pja02,pjt_file.pjt10,pjt_file.pjt11,pjt_file.pjt12,pjt_file.pjt13,pjt_file.pjt14,pjt_file.pjt15,pjt_file.pjt16,pjt_file.pjt17,pjt_file.pjt18,pjt_file.pjt19,pjt_file.pjt20,pjt_file.pjt21)
+SCREEN RECORD Undefined(pjt_file.pjt01,pjt_file.pjt02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

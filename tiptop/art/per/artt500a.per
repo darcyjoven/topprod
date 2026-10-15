@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt500a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt500a")
+Folder pc3
+Page Page12(text=%"QBE")
+Grid gr8
+{
+
+    <G gb1                                                   >
+
+       Requirement Org.[ruc01               ]
+       Goods Acquire   [ruc06               ]
+       Delivery Dept.  [ruc26               ]
+       Vendor          [ruc10               ]
+       Type            [ima131              ]
+       Requirement Type[ruc28               ]
+    <                                                        >
+    <G gb2                                                   >
+
+       Issue Date      [ruc05_bdat]-[ruc05_edat]
+       Requirement Date[ruc27_bdat]-[ruc27_edat]
+
+    <                                                        >
+
+}
+END -- gr8
+END -- Page12
+END -- pc3
+END -- artt500a
+
+ATTRIBUTES
+Group gb1:gb1, text="CONSTRUCT";
+ButtonEdit ruc01=formonly.ruc01 type CHAR, action=controlp, tabIndex=5, image="zoom.png";
+ButtonEdit ruc06=formonly.ruc06 type CHAR, action=controlp, tabIndex=6, image="zoom.png";
+ButtonEdit ruc26=formonly.ruc26 type CHAR, action=controlp, tabIndex=7, image="zoom.png";
+ButtonEdit ruc10=formonly.ruc10 type CHAR, action=controlp, tabIndex=8, image="zoom.png";
+ButtonEdit ima131=formonly.ima131 type CHAR, action=controlp, tabIndex=9, image="zoom.png";
+ButtonEdit ruc28=formonly.ruc28 type CHAR, action=controlp, tabIndex=10, image="zoom.png";
+Group gb2:gb2, text="INPUT";
+DateEdit ruc05_bdat=formonly.ruc05_bdate type CHAR, tabIndex=1;
+DateEdit ruc05_edat=formonly.ruc05_edate type CHAR, tabIndex=2;
+DateEdit ruc27_bdat=formonly.ruc27_bdate type CHAR, tabIndex=3;
+DateEdit ruc27_edat=formonly.ruc27_edate type CHAR, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ruc01,formonly.ruc06,formonly.ruc26,formonly.ruc10,formonly.ima131,formonly.ruc28,formonly.ruc05_bdate,formonly.ruc05_edate,formonly.ruc27_bdate,formonly.ruc27_edate)
+END -- INSTRUCTIONS
+

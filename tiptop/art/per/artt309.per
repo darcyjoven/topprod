@@ -1,0 +1,123 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/art/4fd/artt309.tmp.per created 2010-08-03T05:23:43
+-- File created from /u3/tiptop/art/4fd/artt309.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="artt309")
+  VBox vb4                                                                                                                                                                                                                                                                                                  
+  Folder folder01                                                                                                                                                                                                                                                                                           
+  Page Page3(text=%"Basic Data")                                                                                                                                                                                                                                                                            
+   Grid gr4                                                                                                                                                                                                                                                                                                 
+   {                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                            
+    Change No.    [rwr01               ]                     Start Date[rwr06     ]   Confirmation     [rwrconf   ]     [imgmksg]Organization[rwrplant  |rwrplant_desc  ]                                                                                                                                   
+    Org.No.       [rwr02               |rwr02_desc          ]End Date  [rwr07     ]   Confirmation Date[rwrcond   ]     [       ]Memo        [rwr11                     ]                                                                                                                                   
+    Activity Code [rwr03               |rwr03_desc          ]Start Time[rwr08     ]   Confirmed By     [rwrconu        |rwrconu_]            [                          ]                                                                                                                                   
+    Promotion Type[rwr04          ]                          End Time  [rwr09     ]                    [rwrmksg       ]                      [                          ]                                                                                                                                   
+    Promotion No. [rwr05               |rwr05_desc          ]          [rwr10        ]Status           [rwr900    ]                          [                          ]                                                                                                                                   
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+   }                                                                                                                                                                                                                                                                                                        
+   END                                                                                                                                                                                                                                                                                                      
+  END -- Page                                                                                                                                                                                                                                                                                               
+  Page Page4(text=%"Info")                                                                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                                            
+       Grid gr8                                                                                                                                                                                                                                                                                             
+       {                                                                                                                                                                                                                                                                                                    
+        Record Owner        [rwruser   ] Last Modified by    [rwrmodu   ] Data Valid Code     [rwracti   ]                                                                                                                                                                                                  
+        Department          [rwrgrup   ] Modify Date         [rwrdate   ] Create Date         [rwrcrat   ]                                                                                                                                                                                                  
+        Record Orig.        [rwroriu   ] Dept Orig.          [rwrorig   ]                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                            
+       }                                                                                                                                                                                                                                                                                                    
+       END                                                                                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                                            
+  END -- Page                                                                                                                                                                                                                                                                                               
+  END -- Folder                                                                                                                                                                                                                                                                                             
+  Table s_rws                                                                                                                                                                                                                                                                                               
+  {                                                                                                                                                                                                                                                                                                         
+  [rws02|rws03|rws04   |rws04_desc     |gfe01     |gfe02     |rws05   |rws06   |rws07     |rws08     |rws09               |rws1]                                                                                                                                                                            
+  [rws02|rws03|rws04   |rws04_desc     |gfe01     |gfe02     |rws05   |rws06   |rws07     |rws08     |rws09               |rws1]                                                                                                                                                                            
+  [rws02|rws03|rws04   |rws04_desc     |gfe01     |gfe02     |rws05   |rws06   |rws07     |rws08     |rws09               |rws1]                                                                                                                                                                            
+  [rws02|rws03|rws04   |rws04_desc     |gfe01     |gfe02     |rws05   |rws06   |rws07     |rws08     |rws09               |rws1]                                                                                                                                                                            
+  [rws02|rws03|rws04   |rws04_desc     |gfe01     |gfe02     |rws05   |rws06   |rws07     |rws08     |rws09               |rws1]                                                                                                                                                                            
+  }                                                                                                                                                                                                                                                                                                         
+  END -- Table                                                                                                                                                                                                                                                                                              
+  Grid gr15                                                                                                                                                                                                                                                                                                 
+  {                                                                                                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                                                                                            
+    ------ Rows[idx     ]/[cnt     ]---Items[cn2     ]--------                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+  }                                                                                                                                                                                                                                                                                                         
+  END                                                                                                                                                                                                                                                                                                       
+  END -- VBox                                                                                                                                                                                                                                                                                               
+END -- Form
+
+TABLES
+rwr_file
+rws_file
+
+ATTRIBUTES
+ButtonEdit rwr01=rwr_file.rwr01, action=controlp, tabIndex=7, not null, image="zoom.png";
+DateEdit rwr06=rwr_file.rwr06, tabIndex=14;
+ComboBox rwrconf=rwr_file.rwrconf, tabIndex=23, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Void"));
+Image imgmksg=formonly.imgmksg;
+ButtonEdit rwrplant=rwr_file.rwrplant, action=controlp, tabIndex=24, noEntry, image="zoom.png";
+Edit rwrplant_desc=formonly.rwrplant_desc, tabIndex=27;
+ButtonEdit rwr02=rwr_file.rwr02, action=controlp, tabIndex=9, noEntry, image="zoom.png";
+Edit rwr02_desc=formonly.rwr02_desc, tabIndex=8;
+DateEdit rwr07=rwr_file.rwr07, tabIndex=15;
+DateEdit rwrcond=rwr_file.rwrcond, tabIndex=22, noEntry;
+TextEdit rwr11=rwr_file.rwr11, tabIndex=25;
+ButtonEdit rwr03=rwr_file.rwr03, action=controlp, tabIndex=11, not null, image="zoom.png";
+Edit rwr03_desc=formonly.rwr03_desc, tabIndex=10;
+TimeEdit rwr08=rwr_file.rwr08, tabIndex=16;
+ButtonEdit rwrconu=rwr_file.rwrconu, action=controlp, tabIndex=21, noEntry, image="zoom.png";
+Edit rwrconu_=formonly.rwrconu_desc, tabIndex=26;
+ComboBox rwr04=rwr_file.rwr04, tabIndex=12, not null, items=(("1", "Promotion"),("2", "Class"),("3", "Price Range"),("4", "Combination"),("6", "Full Amt"),("9", "Return Coupon"));
+TimeEdit rwr09=rwr_file.rwr09, tabIndex=17;
+CheckBox rwrmksg=rwr_file.rwrmksg, tabIndex=19, text="Approval?", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rwr05=rwr_file.rwr05, action=controlp, tabIndex=38, not null, image="zoom.png";
+Edit rwr05_desc=formonly.rwr05_desc type VARCHAR, tabIndex=13;
+CheckBox rwr10=rwr_file.rwr10, tabIndex=18, text=%"Validity?", not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rwr900=rwr_file.rwr900, tabIndex=20, noEntry, items=(("0", "Open
+"),("1", "Confirmed"),("9", "Void"),("S", "Approving"),("R", "Rejected"),("W", "Withdraw"));
+Edit rwruser=rwr_file.rwruser, tabIndex=5, noEntry;
+Edit rwrmodu=rwr_file.rwrmodu, tabIndex=4, noEntry;
+Edit rwracti=rwr_file.rwracti, tabIndex=3, noEntry, upShift;
+Edit rwrgrup=rwr_file.rwrgrup, tabIndex=2, noEntry;
+DateEdit rwrdate=rwr_file.rwrdate, tabIndex=1, noEntry;
+DateEdit rwrcrat=rwr_file.rwrcrat, tabIndex=6, noEntry;
+Edit rwroriu=rwr_file.rwroriu, tabIndex=44, noEntry;
+Edit rwrorig=rwr_file.rwrorig, tabIndex=45, noEntry;
+Edit rws02=rws_file.rws02, tabIndex=28, title="Line No.", not null;
+Edit rws03=rws_file.rws03, tabIndex=39, title="Change Line No.", not null;
+Edit rws04=rws_file.rws04, tabIndex=40, title="Change Code", noEntry;
+Edit rws04_desc=formonly.rws04_desc, tabIndex=41, title="Name", noEntry;
+Edit gfe01=formonly.gfe01, tabIndex=42, title="Unit", noEntry;
+Edit gfe02=formonly.gfe02, tabIndex=43, title="Unit Name", noEntry;
+DateEdit rws05=rws_file.rws05, tabIndex=29, title="Start Date", not null;
+DateEdit rws06=rws_file.rws06, tabIndex=31, title="End Date", not null;
+TimeEdit rws07=rws_file.rws07, tabIndex=30, title="Start Time";
+TimeEdit rws08=rws_file.rws08, tabIndex=32, title="End Time";
+Edit rws09=rws_file.rws09, tabIndex=33, title="Memo";
+CheckBox rws1=rws_file.rws10, tabIndex=34, title="Validity?", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx, tabIndex=36, noEntry;
+Edit cnt=formonly.cnt, tabIndex=35, noEntry;
+Edit cn2=formonly.cn2, tabIndex=37;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rws(rws_file.rws02, rws_file.rws03, rws_file.rws04, formonly.rws04_desc, formonly.gfe01, formonly.gfe02, rws_file.rws05, rws_file.rws06, rws_file.rws07, rws_file.rws08, rws_file.rws09, rws_file.rws10)
+END -- INSTRUCTIONS
+

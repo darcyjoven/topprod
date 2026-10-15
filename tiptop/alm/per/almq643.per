@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almq643.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq200")
+VBox vb8
+Group group01(text="Last Point")
+Table s_ltw
+{
+[ltw01         |ltw02       |ltw03         |ltw04         |ltw05        ]
+[ltw01         |ltw02       |ltw03         |ltw04         |ltw05        ]
+[ltw01         |ltw02       |ltw03         |ltw04         |ltw05        ]
+[ltw01         |ltw02       |ltw03         |ltw04         |ltw05        ]
+[ltw01         |ltw02       |ltw03         |ltw04         |ltw05        ]
+
+}
+END -- s_ltw
+END -- group01
+Group group02(text="Account")
+Table s_ltv
+{
+[ltv04   |ltv05  |ltv06          |ltv07           |ltv08       ]
+[ltv04   |ltv05  |ltv06          |ltv07           |ltv08       ]
+[ltv04   |ltv05  |ltv06          |ltv07           |ltv08       ]
+[ltv04   |ltv05  |ltv06          |ltv07           |ltv08       ]
+[ltv04   |ltv05  |ltv06          |ltv07           |ltv08       ]
+[ltv04   |ltv05  |ltv06          |ltv07           |ltv08       ]
+[ltv04   |ltv05  |ltv06          |ltv07           |ltv08       ]
+[ltv04   |ltv05  |ltv06          |ltv07           |ltv08       ]
+[ltv04   |ltv05  |ltv06          |ltv07           |ltv08       ]
+[ltv04   |ltv05  |ltv06          |ltv07           |ltv08       ]
+
+
+}
+END -- s_ltv
+END -- group02
+Grid gr2187
+{
+  ---------- Rows [cn2   ] / [cn3   ] --------
+
+
+
+
+
+
+
+
+
+}
+END -- gr2187
+END -- vb8
+END -- almq643
+
+TABLES
+ltw_file,
+ltv_file
+ATTRIBUTES
+Edit ltw01=ltw_file.ltw01, tabIndex=5, title="Year", noEntry;
+Edit ltw02=ltw_file.ltw02, tabIndex=2, title="Mon", noEntry;
+ButtonEdit ltw03=ltw_file.ltw03, action=controlp, tabIndex=3, title="Card No.", noEntry, image="zoom.png";
+ButtonEdit ltw04=ltw_file.ltw04, action=controlp, tabIndex=4, title="Plant", noEntry, image="zoom.png";
+Edit ltw05=ltw_file.ltw05, tabIndex=1, title="Last point", noEntry;
+ComboBox ltv04=ltv_file.ltv04, tabIndex=9, title=%"Category", items=(("1", "Add"),("2", "Out"),("3", "Void"));
+Edit ltv05=ltv_file.ltv05, tabIndex=7, title="Line #", noEntry, not null, required, comment="<^Y>Maint Other Data <^T>Maint Accessory/Spares";
+Edit ltv06=ltv_file.ltv06, tabIndex=7, title="Plant1", noEntry, not null, required, comment="<^P>Qry Details <^T>Maint Accessory/Spares <^E>FAS Prod.Comb.";
+Edit ltv07=ltv_file.ltv07, tabIndex=7, title="Parent No.", noEntry, not null, required, comment="<^P>Qry Details <^T>Maint Accessory/Spares <^E>FAS Prod.Comb.";
+Edit ltv08=ltv_file.ltv08, tabIndex=7, title="Point", noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=6, noEntry;
+Edit cn3=formonly.cn3 type INTEGER, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ltw(ltw_file.ltw01,ltw_file.ltw02,ltw_file.ltw03,ltw_file.ltw04,ltw_file.ltw05)
+SCREEN RECORD s_ltv(ltv_file.ltv04,ltv_file.ltv05,ltv_file.ltv06,ltv_file.ltv07,ltv_file.ltv08)
+SCREEN RECORD Undefined(formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

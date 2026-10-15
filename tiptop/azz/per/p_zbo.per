@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zbo.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"V-Point Express Report Relation Config")
+VBox vb2
+Group g01(text="V-Point Station")
+VBox vb1
+Grid gr3108
+{
+ <G group01                                                        >
+  Tiptop Plant NO .                  [gcf01                       ]
+  V-Point Express station IP address [gcf03                       ]
+  V-Point Express station name       [gcf04                       ]
+
+
+
+ <                                                                 >
+
+}
+END -- gr3108
+HBox hb1
+Grid gr3109
+{
+ <G group03                                                        >
+  [gcf02                                                          ]
+
+
+
+ <                                                                 >
+
+}
+END -- gr3109
+Grid gr3110
+{
+ <G group04                                                        >
+  [gcf05                                                          ]
+
+
+
+ <                                                                 >
+
+}
+END -- gr3110
+END -- hb1
+END -- vb1
+END -- g01
+Table s_gcg
+{
+[gcg06     |gaz03                               |gcg08        |gcg07                      |gcg09                |gcg10          |gcg11        ]
+[gcg06     |gaz03                               |gcg08        |gcg07                      |gcg09                |gcg10          |gcg11        ]
+[gcg06     |gaz03                               |gcg08        |gcg07                      |gcg09                |gcg10          |gcg11        ]
+[gcg06     |gaz03                               |gcg08        |gcg07                      |gcg09                |gcg10          |gcg11        ]
+[gcg06     |gaz03                               |gcg08        |gcg07                      |gcg09                |gcg10          |gcg11        ]
+[gcg06     |gaz03                               |gcg08        |gcg07                      |gcg09                |gcg10          |gcg11        ]
+[gcg06     |gaz03                               |gcg08        |gcg07                      |gcg09                |gcg10          |gcg11        ]
+[gcg06     |gaz03                               |gcg08        |gcg07                      |gcg09                |gcg10          |gcg11        ]
+[gcg06     |gaz03                               |gcg08        |gcg07                      |gcg09                |gcg10          |gcg11        ]
+[gcg06     |gaz03                               |gcg08        |gcg07                      |gcg09                |gcg10          |gcg11        ]
+
+}
+END -- s_gcg
+END -- vb2
+END -- p_zbo
+
+TABLES
+gcg_file,
+gcf_file
+ATTRIBUTES
+Group group01:group01, text="V-Point Express Standard Station";
+Edit gcf01=gcf_file.gcf01, tabIndex=1, noEntry, not null, required;
+Edit gcf03=gcf_file.gcf03, tabIndex=2, noEntry, not null, required;
+Edit gcf04=gcf_file.gcf04, tabIndex=3, noEntry, not null, required;
+Group group03:group03;
+RadioGroup gcf02=gcf_file.gcf02, tabIndex=4, default = "S", noEntry, not null, required, items=(("S", "Standard BI Station"),("E", "Exception BI Station"));
+Group group04:group04;
+RadioGroup gcf05=gcf_file.gcf05, tabIndex=5, noEntry, not null, required, items=(("0", "Repository Oracle"),("1", "Repository SQL"),("2", "Repository Informix"));
+ButtonEdit gcg06=gcg_file.gcg06, action=controlp, tabIndex=6, title="Program", not null, required, image="zoom";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=7, title="Programme Name", noEntry;
+ButtonEdit gcg08=gcg_file.gcg08, action=controlp, tabIndex=9, title="Report ID", image="zoom.png";
+Edit gcg07=gcg_file.gcg07, tabIndex=8, title="Prt Report Name", noEntry;
+ButtonEdit gcg09=gcg_file.gcg09, action=controlp, tabIndex=10, title="Button Report Name", required, image="zoom", hidden;
+Edit gcg10=gcg_file.gcg10, tabIndex=11, title="Buttion Rep ID", noEntry, hidden;
+Edit gcg11=gcg_file.gcg11, tabIndex=12, title="Report Type", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gcg(gcg_file.gcg06,formonly.gaz03,gcg_file.gcg08,gcg_file.gcg07,gcg_file.gcg09,gcg_file.gcg10,gcg_file.gcg11)
+SCREEN RECORD Undefined(gcf_file.gcf01,gcf_file.gcf03,gcf_file.gcf04,gcf_file.gcf02,gcf_file.gcf05)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amri504.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amri504")
+VBox VBox1
+Folder pc716
+Page page01(text="Page01")
+Table s_mse
+{
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+[mse01     |mse02                          ]
+
+}
+END -- s_mse
+END -- page01
+END -- pc716
+Grid gr3904
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3904
+END -- VBox1
+END -- amri504
+
+TABLES
+mse_file
+ATTRIBUTES
+Edit mse01=mse_file.mse01, tabIndex=1, title="Brand No.", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit mse02=mse_file.mse02, tabIndex=2, title="Assign Brand";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mse(mse_file.mse01,mse_file.mse02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

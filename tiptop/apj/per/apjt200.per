@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apjt200")
+VBox vb4
+Folder folder01
+Page page01(text=%"Main")
+Grid gr4833
+{
+ Network No.             [pjj01           ] Version       [pja03     ] NET Type       [pjj03           ]
+ Network Name            [pjj02                                 ]
+ Job Item Code           [pjj04          |pja02               ]
+
+ Network Planning Date:  [pjj05          ] --[pjj06          ]             [pjjconf     ]
+ Network Estimate Date:  [pjj07          ] --[pjj08          ]
+ Progress Actual Date:   [pjj09          ] --[pjj10          ]
+
+}
+END -- gr4833
+END -- page01
+Page info(text=%"Info")
+Grid gr4834
+{
+ Record Owner        [pjjuser   ]  Last Modified by    [pjjmodu   ]  Data Valid Code     [pjjacti   ]
+ Department          [pjjgrup   ]  Create/Modify Date  [pjjdate   ]
+ Record Orig.        [pjjoriu   ]
+ Dept Orig.          [pjjorig   ]
+}
+END -- gr4834
+END -- info
+END -- folder01
+Table s_pjk
+{
+[pjk02          |pjk03           |pjk04            |pjr02               |pjk05            |gem02            |pjk11                |pjb03     |pjk07                 |pjk13            ]
+[pjk02          |pjk03           |pjk04            |pjr02               |pjk05            |gem02            |pjk11                |pjb03     |pjk07                 |pjk13            ]
+[pjk02          |pjk03           |pjk04            |pjr02               |pjk05            |gem02            |pjk11                |pjb03     |pjk07                 |pjk13            ]
+[pjk02          |pjk03           |pjk04            |pjr02               |pjk05            |gem02            |pjk11                |pjb03     |pjk07                 |pjk13            ]
+[pjk02          |pjk03           |pjk04            |pjr02               |pjk05            |gem02            |pjk11                |pjb03     |pjk07                 |pjk13            ]
+[pjk02          |pjk03           |pjk04            |pjr02               |pjk05            |gem02            |pjk11                |pjb03     |pjk07                 |pjk13            ]
+[pjk02          |pjk03           |pjk04            |pjr02               |pjk05            |gem02            |pjk11                |pjb03     |pjk07                 |pjk13            ]
+[pjk02          |pjk03           |pjk04            |pjr02               |pjk05            |gem02            |pjk11                |pjb03     |pjk07                 |pjk13            ]
+[pjk02          |pjk03           |pjk04            |pjr02               |pjk05            |gem02            |pjk11                |pjb03     |pjk07                 |pjk13            ]
+[pjk02          |pjk03           |pjk04            |pjr02               |pjk05            |gem02            |pjk11                |pjb03     |pjk07                 |pjk13            ]
+[pjk02          |pjk03           |pjk04            |pjr02               |pjk05            |gem02            |pjk11                |pjb03     |pjk07                 |pjk13            ]
+}
+END -- s_pjk
+Grid gr4835
+{
+             Rows [idx   ]/ [cnt   ]  --- Details[cn2   ] ----------
+
+}
+END -- gr4835
+END -- vb4
+END -- apjt200
+
+TABLES
+pjk_file,
+pjj_file
+ATTRIBUTES
+Edit pjj01=pjj_file.pjj01, tabIndex=1, not null, required, comment=%"Key Field,No Blank/Repeated!,<^P>Qry Document Property";
+Edit pja03=formonly.pja03 type VARCHAR, tabIndex=2, noEntry;
+ComboBox pjj03=pjj_file.pjj03, tabIndex=13, not null, required, items=(("1", %"Standard Network"),("2", %"Item Type Network"));
+Edit pjj02=pjj_file.pjj02, tabIndex=3;
+ButtonEdit pjj04=pjj_file.pjj04, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit pja02=formonly.pja02 type VARCHAR, tabIndex=5, noEntry;
+DateEdit pjj05=pjj_file.pjj05, tabIndex=14, not null, required;
+DateEdit pjj06=pjj_file.pjj06, tabIndex=17, not null, required;
+CheckBox pjjconf=pjj_file.pjjconf, tabIndex=20, default = "N", text=%"pjjconf", noEntry, valueChecked = "Y", valueUnchecked = "N";
+DateEdit pjj07=pjj_file.pjj07, tabIndex=15, noEntry;
+DateEdit pjj08=pjj_file.pjj08, tabIndex=18, noEntry;
+DateEdit pjj09=pjj_file.pjj09, tabIndex=16, noEntry;
+DateEdit pjj10=pjj_file.pjj10, tabIndex=19, noEntry;
+Edit pjjuser=pjj_file.pjjuser, tabIndex=6, noEntry;
+Edit pjjmodu=pjj_file.pjjmodu, tabIndex=7, noEntry;
+Edit pjjacti=pjj_file.pjjacti, tabIndex=8, noEntry, upShift;
+Edit pjjgrup=pjj_file.pjjgrup, tabIndex=9, noEntry;
+DateEdit pjjdate=pjj_file.pjjdate, tabIndex=10, noEntry;
+Edit pjjoriu=pjj_file.pjjoriu, tabIndex=501, noEntry;
+Edit pjjorig=pjj_file.pjjorig, tabIndex=502, noEntry;
+Edit pjk02=pjk_file.pjk02, tabIndex=21, title=%"Promotion No.", not null, required;
+Edit pjk03=pjk_file.pjk03, tabIndex=22, title=%"Promotion Name";
+ButtonEdit pjk04=pjk_file.pjk04, action=controlp, tabIndex=23, title=%"Promotion Class.", not null, required, image="zoom.png";
+Edit pjr02=formonly.pjr02 type CHAR, tabIndex=24, title=%"Class. Description", noEntry;
+ButtonEdit pjk05=pjk_file.pjk05, action=controlp, tabIndex=25, title=%"Department Code", image="zoom.png";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=26, title=%"Department Name", noEntry;
+ButtonEdit pjk11=pjk_file.pjk11, action=controlp, tabIndex=27, title=%"Correspond WBS Item", not null, required, image="zoom.png";
+Edit pjb03=formonly.pjb03 type CHAR, tabIndex=28, title=%"WBS Name", noEntry;
+ComboBox pjk07=pjk_file.pjk07, tabIndex=29, default = "0", title=%"Progress Confirmation Method", noEntry, not null, required, items=(("0", %"Labor Confirm Modify"));
+CheckBox pjk13=pjk_file.pjk13, tabIndex=30, default = "N", title=%"Priority Work ?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type SMALLINT, tabIndex=11, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=31, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(pjj_file.pjj01,formonly.pja03,pjj_file.pjj03,pjj_file.pjj02,pjj_file.pjj04,formonly.pja02,pjj_file.pjj05,pjj_file.pjj06,pjj_file.pjjconf,pjj_file.pjj07,pjj_file.pjj08,pjj_file.pjj09,pjj_file.pjj10,pjj_file.pjjuser,pjj_file.pjjmodu,pjj_file.pjjacti,pjj_file.pjjgrup,pjj_file.pjjdate,pjj_file.pjjoriu,pjj_file.pjjorig,formonly.idx,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_pjk(pjk_file.pjk02,pjk_file.pjk03,pjk_file.pjk04,formonly.pjr02,pjk_file.pjk05,formonly.gem02,pjk_file.pjk11,formonly.pjb03,pjk_file.pjk07,pjk_file.pjk13)
+END -- INSTRUCTIONS
+

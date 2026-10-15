@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxi010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxi010")
+VBox VBox1
+Folder pc148
+Page page01(text="Main")
+VBox VBox2
+Grid gr1000
+{
+  Document       [bna01     ]
+  Document Name  [bna02               ]
+
+ [bna03               ]
+
+
+
+  Document Type  [bna05               ]
+ <G group01                                       >
+  Type           [bna06                         ]
+ <                                                >
+
+}
+END -- gr1000
+END -- VBox2
+END -- page01
+Page userdefined_field(text=%"User Defined Field")
+VBox VBox3
+Grid Grid1
+{
+ userdefined_field01[bnaud01                              ] userdefined_field08[bnaud08              ]
+                    [                                     ] userdefined_field09[bnaud09              ]
+ userdefined_field02[bnaud02              ]                 userdefined_field10[bnaud10              ]
+ userdefined_field03[bnaud03              ]                 userdefined_field11[bnaud11              ]
+ userdefined_field04[bnaud04              ]                 userdefined_field12[bnaud12              ]
+ userdefined_field05[bnaud05              ]                 userdefined_field13[bnaud13              ]
+ userdefined_field06[bnaud06              ]                 userdefined_field14[bnaud14              ]
+ userdefined_field07[bnaud07              ]                 userdefined_field15[bnaud15              ]
+
+
+
+
+
+}
+END -- Grid1
+END -- VBox3
+END -- userdefined_field
+END -- pc148
+Grid gr1001
+{
+  ----------Rows [cnt   ] ----------
+
+}
+END -- gr1001
+END -- VBox1
+END -- abxi010
+
+TABLES
+bna_file
+ATTRIBUTES
+Edit bna01=bna_file.bna01, tabIndex=1, upShift;
+Edit bna02=bna_file.bna02, tabIndex=2;
+CheckBox bna03=formonly.bna03 type CHAR, tabIndex=3, text="Auto Numbering", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox bna05=formonly.bna05 type VARCHAR, tabIndex=5, not null, required, items=(("1", "Release Order"),("A", "Snd Order"),("B", "Rcall Order"),("C", "Retire Order"),("D", "Charge Off Order"),("E", "Receipt Record"));
+Group group01:group01;
+RadioGroup bna06=formonly.bna06 type VARCHAR, tabIndex=6, not null, required, items=(("1", "Bonded Goods"),("2", "Duty-Free Goods"),("3", "Non-bonded goods"));
+TextEdit bnaud01=bna_file.bnaud01, tabIndex=8;
+Edit bnaud08=bna_file.bnaud08, tabIndex=15;
+Edit bnaud09=bna_file.bnaud09, tabIndex=16;
+Edit bnaud02=bna_file.bnaud02, tabIndex=9;
+Edit bnaud10=bna_file.bnaud10, tabIndex=17;
+Edit bnaud03=bna_file.bnaud03, tabIndex=10;
+Edit bnaud11=bna_file.bnaud11, tabIndex=18;
+Edit bnaud04=bna_file.bnaud04, tabIndex=11;
+Edit bnaud12=bna_file.bnaud12, tabIndex=19;
+Edit bnaud05=bna_file.bnaud05, tabIndex=12;
+DateEdit bnaud13=bna_file.bnaud13, tabIndex=20;
+Edit bnaud06=bna_file.bnaud06, tabIndex=13;
+DateEdit bnaud14=bna_file.bnaud14, tabIndex=21;
+Edit bnaud07=bna_file.bnaud07, tabIndex=14;
+DateEdit bnaud15=bna_file.bnaud15, tabIndex=22;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bna_file.bna01,bna_file.bna02,formonly.bna03,formonly.bna05,formonly.bna06,formonly.cnt,bna_file.bnaud01,bna_file.bnaud02,bna_file.bnaud03,bna_file.bnaud04,bna_file.bnaud05,bna_file.bnaud06,bna_file.bnaud07,bna_file.bnaud08,bna_file.bnaud09,bna_file.bnaud10,bna_file.bnaud11,bna_file.bnaud12,bna_file.bnaud13,bna_file.bnaud14,bna_file.bnaud15)
+END -- INSTRUCTIONS
+

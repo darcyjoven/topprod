@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoq800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"acoq800")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1366
+{
+ Company No.              [cnb01        ]
+ Company Name             [cnb04                      ]
+
+}
+END -- gr1366
+Grid gr1367
+{
+ Duty-Free Credit Line    [cnb12               ]
+ Duty-Free Credit Balance [diff                ]
+
+}
+END -- gr1367
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_cot
+{
+[seq  |cot01          |cot03        |cot04                         |cot0|cou08       |cot19      |cot21 |cov08        |desc  ]
+[seq  |cot01          |cot03        |cot04                         |cot0|cou08       |cot19      |cot21 |cov08        |desc  ]
+[seq  |cot01          |cot03        |cot04                         |cot0|cou08       |cot19      |cot21 |cov08        |desc  ]
+[seq  |cot01          |cot03        |cot04                         |cot0|cou08       |cot19      |cot21 |cov08        |desc  ]
+[seq  |cot01          |cot03        |cot04                         |cot0|cou08       |cot19      |cot21 |cov08        |desc  ]
+[seq  |cot01          |cot03        |cot04                         |cot0|cou08       |cot19      |cot21 |cov08        |desc  ]
+[seq  |cot01          |cot03        |cot04                         |cot0|cou08       |cot19      |cot21 |cov08        |desc  ]
+[seq  |cot01          |cot03        |cot04                         |cot0|cou08       |cot19      |cot21 |cov08        |desc  ]
+[seq  |cot01          |cot03        |cot04                         |cot0|cou08       |cot19      |cot21 |cov08        |desc  ]
+[seq  |cot01          |cot03        |cot04                         |cot0|cou08       |cot19      |cot21 |cov08        |desc  ]
+
+}
+END -- s_cot
+Grid gr1368
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1368
+END -- VBox1
+END -- acoq800
+
+ATTRIBUTES
+Edit cnb01=formonly.cnb01 type CHAR, tabIndex=1;
+Edit cnb04=formonly.cnb04 type CHAR, tabIndex=2;
+Edit cnb12=formonly.cnb12 type CHAR, tabIndex=3;
+Edit diff=formonly.diff type DECIMAL, tabIndex=4;
+Edit seq=formonly.seq type SMALLINT, tabIndex=5, title="Ln #";
+Edit cot01=formonly.cot01 type CHAR, tabIndex=6, title="Application No.";
+Edit cot03=formonly.cot03 type CHAR, tabIndex=7, title="Customs No.";
+Edit cot04=formonly.cot04 type CHAR, tabIndex=8, title="Name";
+Edit cot0=formonly.cot02 type CHAR, tabIndex=9, title="Ln#";
+DateEdit cou08=formonly.cou08 type CHAR, tabIndex=10, title="Import Date";
+Edit cot19=formonly.cot19 type CHAR, tabIndex=11, title="Asset Code";
+Edit cot21=formonly.cot21 type CHAR, tabIndex=12, title="Dept.";
+Edit cov08=formonly.cov08 type CHAR, tabIndex=13, title="Import Value";
+Edit desc=formonly.desc type CHAR, tabIndex=14, title="Status";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cot(formonly.seq,formonly.cot01,formonly.cot03,formonly.cot04,formonly.cot02,formonly.cou08,formonly.cot19,formonly.cot21,formonly.cov08,formonly.desc)
+SCREEN RECORD Undefined(formonly.cnb01,formonly.cnb04,formonly.cnb12,formonly.diff,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

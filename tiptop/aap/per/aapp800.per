@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapp800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapp800")
+VBox VBox1
+Grid gr97
+{
+ <G group01                                                                             >
+ [dummy01                                        ]
+  Category            [npp00               ]  Document No.        [npp01               ]
+  S/N                 [npp011              ]  Date                [npp02               ]
+ <                                                                                      >
+
+}
+END -- gr97
+Group g01(text="INPUT")
+HBox HBox1
+Grid gr98
+{
+ Source Plant        [splant              ]
+ Data Src            [x1                  ]
+ G/L Plant #         [p_plant   ]
+ G/L No.             [p_bookno  ]
+ G/L Vou Type        [gl_no               ]
+ G/L No.2            [p_bookno1 ]
+ G/L Vou Type 2      [gl_no1              ]
+ G/L Vou Date        [gl_date     ]
+}
+END -- gr98
+Grid gr99
+{
+ [gl_tran                 ]
+ <G group02                                 >
+ [gl_seq             ]
+ <                                          >
+
+
+
+
+}
+END -- gr99
+END -- HBox1
+END -- g01
+Grid gr100
+{
+ glno   [chr2                                                                          ]
+
+[g_bgjob                                                      ]
+}
+END -- gr100
+END -- VBox1
+END -- aapp800
+
+TABLES
+npp_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Label dummy01:dummy01, text="Sys :(LC)";
+Edit npp00=npp_file.npp00, tabIndex=1;
+Edit npp01=npp_file.npp01, tabIndex=2;
+Edit npp011=npp_file.npp011, tabIndex=3;
+DateEdit npp02=npp_file.npp02, tabIndex=4;
+Edit splant=formonly.splant type VARCHAR, tabIndex=5, required;
+ComboBox x1=formonly.x1 type CHAR, tabIndex=6, not null, required, queryEditable, items=(("1", "Ad.P Acct."),("2", "AN"),("3", "ARV"),("4", "Ad.P Pay"),("5", "Mdf Ad.P"),("6", "Mdf Ad.P Pay"),("7", "Clos"));
+Edit p_plant=formonly.p_plant type VARCHAR, tabIndex=7, required;
+Edit p_bookno=formonly.p_bookno type VARCHAR, tabIndex=8, required;
+ButtonEdit gl_no=formonly.gl_no type VARCHAR, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Documents";
+Edit p_bookno1=formonly.p_bookno1 type VARCHAR, tabIndex=10, required;
+ButtonEdit gl_no1=formonly.gl_no1 type VARCHAR, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Documents";
+DateEdit gl_date=formonly.gl_date type DATE, tabIndex=12;
+CheckBox gl_tran=formonly.gl_tran type CHAR, tabIndex=13, text="Carry Memo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Vou Summ.Mtd";
+RadioGroup gl_seq=formonly.gl_seq type CHAR, tabIndex=14, not null, required, items=(("0", "All"),("1", "By Doc"),("2", "By Dt"));
+Edit chr2=formonly.chr2 type CHAR, tabIndex=16, noEntry;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=15, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(npp_file.npp00,npp_file.npp01,npp_file.npp011,npp_file.npp02,formonly.splant,formonly.x1,formonly.p_plant,formonly.p_bookno,formonly.gl_no,formonly.p_bookno1,formonly.gl_no1,formonly.gl_date,formonly.gl_tran,formonly.gl_seq,formonly.chr2,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

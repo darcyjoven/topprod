@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdi100_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Confirm")
+Grid gr3675
+{
+ <G group01                                 >
+ [only_one                               ]
+ <                                          >
+ <G group02                                 >
+  Account# QBE            [amd01     ]
+  Account# Item QBE       [amd02     ]
+  Source Category         [amd021    ]
+  Declaring Year          [amd173    ]
+  Declaring Month         [amd174    ]
+  Invoice #               [amd03           ]
+  Declaring Department QBE[amd22     ]
+
+ <                                          >
+
+}
+END -- gr3675
+END -- amdi100_c
+
+TABLES
+amd_file
+ATTRIBUTES
+Group group01:group01, text="Confirm Condition";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, items=(("1", "Confirm this Accounts only"),("2", "Confirm by QBE Condition"));
+Group group02:group02, text="Enter Accounts Condition to Confirm:";
+Edit amd01=amd_file.amd01, tabIndex=2;
+Edit amd02=amd_file.amd02, tabIndex=3;
+ComboBox amd021=amd_file.amd021, tabIndex=4, queryEditable, items=(("1", "G/L"),("2", "A/P Allowance"),("3", "A/R"),("4", "Other"),("5", "A/P"));
+Edit amd173=amd_file.amd173, tabIndex=5;
+Edit amd174=amd_file.amd174, tabIndex=6;
+Edit amd03=amd_file.amd03, tabIndex=7;
+Edit amd22=amd_file.amd22, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,amd_file.amd01,amd_file.amd02,amd_file.amd021,amd_file.amd173,amd_file.amd174,amd_file.amd03,amd_file.amd22)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1082.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat1082")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Table s_fbh
+{
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh06               |fbh07                    |fbh12                 |fbh08                |fbh09                               |fbh10                 |fbh13               |fbh11                   ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh06               |fbh07                    |fbh12                 |fbh08                |fbh09                               |fbh10                 |fbh13               |fbh11                   ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh06               |fbh07                    |fbh12                 |fbh08                |fbh09                               |fbh10                 |fbh13               |fbh11                   ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh06               |fbh07                    |fbh12                 |fbh08                |fbh09                               |fbh10                 |fbh13               |fbh11                   ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh06               |fbh07                    |fbh12                 |fbh08                |fbh09                               |fbh10                 |fbh13               |fbh11                   ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh06               |fbh07                    |fbh12                 |fbh08                |fbh09                               |fbh10                 |fbh13               |fbh11                   ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh06               |fbh07                    |fbh12                 |fbh08                |fbh09                               |fbh10                 |fbh13               |fbh11                   ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh06               |fbh07                    |fbh12                 |fbh08                |fbh09                               |fbh10                 |fbh13               |fbh11                   ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh06               |fbh07                    |fbh12                 |fbh08                |fbh09                               |fbh10                 |fbh13               |fbh11                   ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh06               |fbh07                    |fbh12                 |fbh08                |fbh09                               |fbh10                 |fbh13               |fbh11                   ]
+
+}
+END -- s_fbh
+END -- page01
+Page info(text="Info")
+Grid gr2249
+{
+ Record Owner       [fbguser   ] Last Modified by   [fbgmodu   ] Confirm            [fbgconf   ] Depr-Tax           [fbgpost2  ]
+ Department         [fbggrup   ] Create/Modify Date [fbgdate   ] Depreciation       [fbgpost   ]
+ Record Orig.       [fbgoriu   ]
+ Dept Orig.         [fbgorig   ]
+}
+END -- gr2249
+END -- info
+END -- folder01
+Grid gr2250
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2250
+END -- VBox1
+END -- afat1082
+
+TABLES
+fbh_file,
+fbg_file
+ATTRIBUTES
+Edit fbh02=fbh_file.fbh02, tabIndex=1, title="Line No.", noEntry;
+Edit fbh03=fbh_file.fbh03, tabIndex=2, title="Property No.", noEntry;
+Edit fbh031=fbh_file.fbh031, tabIndex=3, title="Add No.", noEntry;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=4, title="Chinese Name", noEntry;
+Edit faj18=formonly.faj18 type CHAR, tabIndex=5, title="Unit", noEntry;
+Edit fbh04=fbh_file.fbh04, tabIndex=6, title="Quantity", noEntry;
+Edit fbh06=fbh_file.fbh06, tabIndex=7, title="Cost", noEntry;
+Edit fbh07=fbh_file.fbh07, tabIndex=8, title="Accumulated Depreciation", noEntry;
+Edit fbh12=fbh_file.fbh12, tabIndex=9, title="Deduction Preparation", noEntry;
+Edit fbh08=fbh_file.fbh08, tabIndex=10, title="Undepreciated Amount", noEntry;
+Edit fbh09=fbh_file.fbh09, tabIndex=11, title="Depreciation-Tax Home Currency Cost";
+Edit fbh10=fbh_file.fbh10, tabIndex=12, title="Depr-Tax Accumulation";
+Edit fbh13=fbh_file.fbh13, tabIndex=13, title="Depr-Tax Val-Deduct";
+Edit fbh11=fbh_file.fbh11, tabIndex=14, title="Undepreciated-Tax Amount";
+Edit fbguser=fbg_file.fbguser, tabIndex=15, noEntry;
+Edit fbgmodu=fbg_file.fbgmodu, tabIndex=16, noEntry;
+Edit fbgconf=fbg_file.fbgconf, tabIndex=17, noEntry;
+Edit fbgpost2=fbg_file.fbgpost2, tabIndex=18, noEntry;
+Edit fbggrup=fbg_file.fbggrup, tabIndex=19, noEntry;
+DateEdit fbgdate=fbg_file.fbgdate, tabIndex=20, noEntry;
+Edit fbgpost=fbg_file.fbgpost, tabIndex=21, noEntry;
+Edit fbgoriu=fbg_file.fbgoriu, tabIndex=501, noEntry;
+Edit fbgorig=fbg_file.fbgorig, tabIndex=502, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fbh(fbh_file.fbh02,fbh_file.fbh03,fbh_file.fbh031,formonly.faj06,formonly.faj18,fbh_file.fbh04,fbh_file.fbh06,fbh_file.fbh07,fbh_file.fbh12,fbh_file.fbh08,fbh_file.fbh09,fbh_file.fbh10,fbh_file.fbh13,fbh_file.fbh11)
+SCREEN RECORD Undefined(fbg_file.fbguser,fbg_file.fbgmodu,fbg_file.fbgconf,fbg_file.fbgpost2,fbg_file.fbggrup,fbg_file.fbgdate,fbg_file.fbgpost,fbg_file.fbgoriu,fbg_file.fbgorig,formonly.cn2)
+END -- INSTRUCTIONS
+

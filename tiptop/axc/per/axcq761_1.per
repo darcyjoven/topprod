@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq761_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcq761_1")
+VBox VBox1
+Grid Grid1
+{
+
+   Date Range[bdate           ][edate          ]   Cost Method[type                                        ]
+
+}
+END -- Grid1
+Table s_tlf
+{
+[tlf026                  |tlf027    |tlf01               |wocc02                            |oma08      |tlf10     |tlfc21    |wsaleamt      |l_wsale_tlf21 |l_rate    |gen02               |gem02     |warea_name     |ima131              |ima02                       |tlf036    |occ37     ]
+[tlf026                  |tlf027    |tlf01               |wocc02                            |oma08      |tlf10     |tlfc21    |wsaleamt      |l_wsale_tlf21 |l_rate    |gen02               |gem02     |warea_name     |ima131              |ima02                       |tlf036    |occ37     ]
+[tlf026                  |tlf027    |tlf01               |wocc02                            |oma08      |tlf10     |tlfc21    |wsaleamt      |l_wsale_tlf21 |l_rate    |gen02               |gem02     |warea_name     |ima131              |ima02                       |tlf036    |occ37     ]
+[tlf026                  |tlf027    |tlf01               |wocc02                            |oma08      |tlf10     |tlfc21    |wsaleamt      |l_wsale_tlf21 |l_rate    |gen02               |gem02     |warea_name     |ima131              |ima02                       |tlf036    |occ37     ]
+[tlf026                  |tlf027    |tlf01               |wocc02                            |oma08      |tlf10     |tlfc21    |wsaleamt      |l_wsale_tlf21 |l_rate    |gen02               |gem02     |warea_name     |ima131              |ima02                       |tlf036    |occ37     ]
+[tlf026                  |tlf027    |tlf01               |wocc02                            |oma08      |tlf10     |tlfc21    |wsaleamt      |l_wsale_tlf21 |l_rate    |gen02               |gem02     |warea_name     |ima131              |ima02                       |tlf036    |occ37     ]
+[tlf026                  |tlf027    |tlf01               |wocc02                            |oma08      |tlf10     |tlfc21    |wsaleamt      |l_wsale_tlf21 |l_rate    |gen02               |gem02     |warea_name     |ima131              |ima02                       |tlf036    |occ37     ]
+[tlf026                  |tlf027    |tlf01               |wocc02                            |oma08      |tlf10     |tlfc21    |wsaleamt      |l_wsale_tlf21 |l_rate    |gen02               |gem02     |warea_name     |ima131              |ima02                       |tlf036    |occ37     ]
+[tlf026                  |tlf027    |tlf01               |wocc02                            |oma08      |tlf10     |tlfc21    |wsaleamt      |l_wsale_tlf21 |l_rate    |gen02               |gem02     |warea_name     |ima131              |ima02                       |tlf036    |occ37     ]
+[tlf026                  |tlf027    |tlf01               |wocc02                            |oma08      |tlf10     |tlfc21    |wsaleamt      |l_wsale_tlf21 |l_rate    |gen02               |gem02     |warea_name     |ima131              |ima02                       |tlf036    |occ37     ]
+}
+END -- s_tlf
+Grid gr5449
+{
+ ----- Rows [cnt   ]-----   sum[tot                   ]  sum1[sum1                    ] sum2[sum2                    ]  sum3[sum3                      ]
+
+}
+END -- gr5449
+END -- VBox1
+END -- axcq761_1
+
+ATTRIBUTES
+DateEdit bdate=formonly.bdate type DATE, tabIndex=1;
+DateEdit edate=formonly.edate type DATE, tabIndex=2;
+ComboBox type=formonly.type type CHAR, tabIndex=3, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually��蝧餌�蝪∠高atch Cost"),("4", "Identify Manually��蝧餌�蝪∠�tem Cost"),("5", "Identify Manually��蝧餌�蝟抒�tore Profit Center"));
+Edit tlf026=formonly.tlf026 type VARCHAR, tabIndex=4, title=%"tlf026";
+Edit tlf027=formonly.tlf027 type VARCHAR, tabIndex=5, title=%"tlf027";
+Edit tlf01=formonly.tlf01 type VARCHAR, tabIndex=6, title=%"tlf01";
+Edit wocc02=formonly.wocc02 type VARCHAR, tabIndex=7, title=%"wocc02";
+ComboBox oma08=formonly.oma08 type VARCHAR, tabIndex=8, title=%"oma08", items=(("1", %"1"),("2", %"2"),("3", %"3"));
+Edit tlf10=formonly.tlf10 type VARCHAR, tabIndex=9, title=%"tlf10";
+Edit tlfc21=formonly.tlfc21 type VARCHAR, tabIndex=10, title=%"tlfc21";
+Edit wsaleamt=formonly.wsaleamt type VARCHAR, tabIndex=11, title=%"wsaleamt";
+Edit l_wsale_tlf21=formonly.l_wsale_tlf21 type VARCHAR, tabIndex=12, title=%"l_wsale_tlf21";
+Edit l_rate=formonly.l_rate type VARCHAR, tabIndex=13, title=%"l_rate";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=14, title=%"gen02";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=15, title=%"gem02";
+Edit warea_name=formonly.warea_name type VARCHAR, tabIndex=16, title=%"warea_name";
+Edit ima131=formonly.ima131 type VARCHAR, tabIndex=17, title=%"ima131";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=18, title=%"ima02";
+Edit tlf036=formonly.tlf036 type VARCHAR, tabIndex=19, title=%"tlf036";
+CheckBox occ37=formonly.occ37 type VARCHAR, tabIndex=20, title=%"occ37", text=%"", valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit tot=formonly.tot type DECIMAL, tabIndex=22, noEntry;
+Edit sum1=formonly.sum1 type DECIMAL, tabIndex=23, noEntry;
+Edit sum2=formonly.sum2 type DECIMAL, tabIndex=24, noEntry;
+Edit sum3=formonly.sum3 type DECIMAL, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.cnt)
+SCREEN RECORD s_tlf(formonly.tlf026,formonly.tlf027,formonly.tlf01,formonly.wocc02,formonly.oma08,formonly.tlf10,formonly.tlfc21,formonly.wsaleamt,formonly.l_wsale_tlf21,formonly.l_rate,formonly.gen02,formonly.gem02,formonly.warea_name,formonly.ima131,formonly.ima02,formonly.tlf036,formonly.occ37)
+SCREEN RECORD sum(formonly.sum1,formonly.sum2,formonly.sum3)
+SCREEN RECORD main(formonly.bdate,formonly.edate,formonly.type)
+SCREEN RECORD tot(formonly.tot)
+END -- INSTRUCTIONS
+

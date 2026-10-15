@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt122.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt122")
+VBox vb3
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr4
+{
+  Project No.          [pjb01              ]   Project Name               [pja02            ]
+  WBS No.              [pjma01             ]   WBS Description            [pjb03            ]
+  Estimation Start Date[pjb15              ]   Estimation Completion Date [pjb16            ]
+
+}
+END -- gr4
+END -- Page3
+END -- pc2
+Table s_pjma
+{
+[pjma0|pjma03              |pjy02            |pjma1|pjy0|pjy04               |pjma05              |amt                 |pjmaac]
+[pjma0|pjma03              |pjy02            |pjma1|pjy0|pjy04               |pjma05              |amt                 |pjmaac]
+[pjma0|pjma03              |pjy02            |pjma1|pjy0|pjy04               |pjma05              |amt                 |pjmaac]
+[pjma0|pjma03              |pjy02            |pjma1|pjy0|pjy04               |pjma05              |amt                 |pjmaac]
+[pjma0|pjma03              |pjy02            |pjma1|pjy0|pjy04               |pjma05              |amt                 |pjmaac]
+[pjma0|pjma03              |pjy02            |pjma1|pjy0|pjy04               |pjma05              |amt                 |pjmaac]
+[pjma0|pjma03              |pjy02            |pjma1|pjy0|pjy04               |pjma05              |amt                 |pjmaac]
+[pjma0|pjma03              |pjy02            |pjma1|pjy0|pjy04               |pjma05              |amt                 |pjmaac]
+[pjma0|pjma03              |pjy02            |pjma1|pjy0|pjy04               |pjma05              |amt                 |pjmaac]
+[pjma0|pjma03              |pjy02            |pjma1|pjy0|pjy04               |pjma05              |amt                 |pjmaac]
+
+}
+END -- s_pjma
+Grid gr8
+{
+
+ -----Rows [idx  |lb|cnt  ]----Item[cn2  ]------
+}
+END -- gr8
+END -- vb3
+END -- apjt122
+
+TABLES
+pjma_file
+ATTRIBUTES
+Edit pjb01=formonly.pjb01 type VARCHAR, tabIndex=1;
+Edit pja02=formonly.pja02 type VARCHAR, tabIndex=5;
+ButtonEdit pjma01=pjma_file.pjma01, action=controlp, tabIndex=2, not null, image="zoom.png";
+Edit pjb03=formonly.pjb03 type VARCHAR, tabIndex=3;
+DateEdit pjb15=formonly.pjb15 type DATE, tabIndex=4;
+DateEdit pjb16=formonly.pjb16 type DATE, tabIndex=6;
+Edit pjma0=pjma_file.pjma02, tabIndex=7, title="Line No.", not null;
+ButtonEdit pjma03=pjma_file.pjma03, action=controlp, tabIndex=8, title="Equipment Type", not null, image="zoom.png";
+Edit pjy02=formonly.pjy02 type VARCHAR, tabIndex=9, title="Name", noEntry, not null;
+Edit pjma1=pjma_file.pjma04, tabIndex=15, default = "1", title="Quantity", not null;
+Edit pjy0=formonly.pjy03 type VARCHAR, tabIndex=10, title="Pricing Unit", noEntry, not null;
+Edit pjy04=formonly.pjy04 type DECIMAL, tabIndex=16, title="Unit Expense", noEntry, not null;
+Edit pjma05=pjma_file.pjma05, tabIndex=11, default = "0", title="Requirement Qty(Run Time:hr)", not null;
+Edit amt=formonly.amt type DECIMAL, tabIndex=12, title="Requirement Amount", noEntry, not null;
+CheckBox pjmaac=pjma_file.pjmaacti, tabIndex=17, default = "Y", title="Valid Code", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=14;
+Label lb:lb4, text="/";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjma(pjma_file.pjma02,pjma_file.pjma03,formonly.pjy02,pjma_file.pjma04,formonly.pjy03,formonly.pjy04,pjma_file.pjma05,formonly.amt,pjma_file.pjmaacti)
+SCREEN RECORD Undefined(formonly.pjb01,formonly.pja02,pjma_file.pjma01,formonly.pjb03,formonly.pjb15,formonly.pjb16,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_pmk1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Query P/R Head")
+Grid gr3827
+{
+ <T s_pmk                                                                                    >
+ [check |pmk01            |pmk02               |pmk04           |pmk09      |pmk25          ]
+ [check |pmk01            |pmk02               |pmk04           |pmk09      |pmk25          ]
+ [check |pmk01            |pmk02               |pmk04           |pmk09      |pmk25          ]
+ [check |pmk01            |pmk02               |pmk04           |pmk09      |pmk25          ]
+ [check |pmk01            |pmk02               |pmk04           |pmk09      |pmk25          ]
+ [check |pmk01            |pmk02               |pmk04           |pmk09      |pmk25          ]
+ [check |pmk01            |pmk02               |pmk04           |pmk09      |pmk25          ]
+ [check |pmk01            |pmk02               |pmk04           |pmk09      |pmk25          ]
+ [check |pmk01            |pmk02               |pmk04           |pmk09      |pmk25          ]
+ [check |pmk01            |pmk02               |pmk04           |pmk09      |pmk25          ]
+ <                                                                                           >
+
+}
+END -- gr3827
+END -- q_pmk1
+
+TABLES
+pmk_file
+ATTRIBUTES
+Table s_pmk:s_pmk;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmk01=pmk_file.pmk01, tabIndex=2, title="P/R No.", noEntry;
+Edit pmk02=pmk_file.pmk02, tabIndex=3, title="Document Property", noEntry;
+Edit pmk04=pmk_file.pmk04, tabIndex=4, title="Document Date", noEntry;
+Edit pmk09=pmk_file.pmk09, tabIndex=5, title="Supplier", noEntry;
+Edit pmk25=pmk_file.pmk25, tabIndex=6, title="Status Code", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmk(formonly.check,pmk_file.pmk01,pmk_file.pmk02,pmk_file.pmk04,pmk_file.pmk09,pmk_file.pmk25)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr895.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr895")
+VBox VBox1
+Grid gr3390
+{
+ <G group01                                     >
+  Operating Date      [pic01               ]
+  Task Command No.    [pic03               ]
+  By User             [pic04               ]
+ <                                              >
+
+}
+END -- gr3390
+Grid gr3391
+{
+[more                                  ]
+
+}
+END -- gr3391
+END -- VBox1
+END -- aimr895
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit pic01=formonly.pic01 type DATE, tabIndex=1, comment="Enter by QBE    ";
+Edit pic03=formonly.pic03 type VARCHAR, tabIndex=2, comment="Enter by QBE    ";
+Edit pic04=formonly.pic04 type VARCHAR, tabIndex=3, comment="Enter by QBE    ";
+CheckBox more=formonly.more type VARCHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pic01,formonly.pic03,formonly.pic04,formonly.more)
+END -- INSTRUCTIONS
+

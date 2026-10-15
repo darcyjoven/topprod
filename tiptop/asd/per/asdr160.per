@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdr160.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asdr160")
+VBox VBox1
+Grid gr394
+{
+ <G group01                                                                             >
+  Cost Group          [ima12               ]  Source Code         [ima08               ]
+  Item No.            [inb04               ]  Reason code         [inb15               ]
+  Document No.        [ina01               ]  Dept No.            [ina04               ]
+ <                                                                                      >
+ <G group02                                                                             >
+  Data Date           [bdate       ]-[edate       ]
+  Cost year/month     [yy  ]/[mm]
+ <                                                                                      >
+
+}
+END -- gr394
+Grid gr395
+{
+[more                                                            ]
+
+}
+END -- gr395
+END -- VBox1
+END -- asdr160
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=1;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=2;
+ButtonEdit inb04=formonly.inb04 type VARCHAR, action=controlp, tabIndex=3, image="zoom", comment="<P>";
+Edit inb15=formonly.inb15 type VARCHAR, tabIndex=4;
+Edit ina01=formonly.ina01 type VARCHAR, tabIndex=5;
+Edit ina04=formonly.ina04 type VARCHAR, tabIndex=6;
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=7, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=8, not null, required;
+Edit yy=formonly.yy type SMALLINT, tabIndex=9, not null, required;
+Edit mm=formonly.mm type SMALLINT, tabIndex=10, not null, required;
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima12,formonly.ima08,formonly.inb04,formonly.inb15,formonly.ina01,formonly.ina04,formonly.bdate,formonly.edate,formonly.yy,formonly.mm,formonly.more)
+END -- INSTRUCTIONS
+

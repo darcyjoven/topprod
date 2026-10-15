@@ -1,0 +1,75 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdt930.per created Wed Jan 23 05:30:47 2008
+-- File created from axdt930.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdt930")
+-- GRID
+-- GRID
+-- HBOX
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        HBOX 
+          GRID gr7881
+          {
+           Trans-Out No.        [aa0               ]
+
+          }
+          END -- GRID
+          GRID gr7882
+          {
+           Trans-In Plant       [aa1       ]
+
+          }
+          END -- GRID
+        END -- HBOX
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_adg
+    {
+    [aa2              |aa3             |aa4      |aa5                   ]
+    [aa2              |aa3             |aa4      |aa5                   ]
+    [aa2              |aa3             |aa4      |aa5                   ]
+    [aa2              |aa3             |aa4      |aa5                   ]
+    [aa2              |aa3             |aa4      |aa5                   ]
+    [aa2              |aa3             |aa4      |aa5                   ]
+    [aa2              |aa3             |aa4      |aa5                   ]
+    [aa2              |aa3             |aa4      |aa5                   ]
+    [aa2              |aa3             |aa4      |aa5                   ]
+    [aa2              |aa3             |aa4      |aa5                   ]
+    }
+    END -- TABLE
+    GRID gr7883
+    {
+     ---------- Rows [aa6   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  BUTTONEDIT aa0=FORMONLY.adg01, ACTION=controlp, IMAGE="zoom", TABINDEX=1;
+  BUTTONEDIT aa1=FORMONLY.adg09, ACTION=controlp, IMAGE="zoom", TABINDEX=2;
+  EDIT aa2=FORMONLY.adg09b, NOENTRY, TABINDEX=3, TITLE="Trans-In Plant";
+  EDIT aa3=FORMONLY.adg01b, NOENTRY, TABINDEX=4, TITLE="Trans-Out No.";
+  EDIT aa4=FORMONLY.adg02, NOENTRY, TABINDEX=5, TITLE="Line No.";
+  EDIT aa5=FORMONLY.adg05, NOENTRY, TABINDEX=6, TITLE="Product No.";
+  EDIT aa6=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=7;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adg (FORMONLY.adg09b, FORMONLY.adg01b, FORMONLY.adg02, FORMONLY.adg05)
+END

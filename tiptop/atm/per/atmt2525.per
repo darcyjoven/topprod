@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmt2525.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmt2525")
+VBox VBox1
+Folder Folder1
+Page page01
+Grid Grid1
+{
+ <G group01                                                >
+  Cust P/N                 [ohb11                         ]
+  Extra P/N #              [ohb07     ]
+  Sales Unit               [ohb05     ]
+  Sales/Return Qty         [ohb12     ]
+  Item Unit                [l_ima25   ]
+  Conversion Rate          [ohb05_fac ]
+  Par/Ref Unit             [ohb913    ]
+  Par/Ref Conver Rate      [ohb914    ]
+  Par/Ref Qty              [ohb915    ]
+  Chi/Sales-Re Unit        [ohb910    ]
+  Chi/Sales-Re Conver Rate [ohb911    ]
+  Chi/Sales-Re Qty         [ohb912    ]
+  Inv.Unit                 [ohb15     ]
+  Conversion Rate          [ohb15_fac ]
+  Convert Store-in Qty     [ohb16     ]
+ <                                                         >
+
+}
+END -- Grid1
+END -- page01
+END -- Folder1
+END -- VBox1
+END -- atmt2525
+
+TABLES
+ohb_file
+ATTRIBUTES
+Group group01:group01, text="Mntn Other Data";
+Edit ohb11=ohb_file.ohb11, tabIndex=1;
+Edit ohb07=ohb_file.ohb07, tabIndex=2;
+Edit ohb05=ohb_file.ohb05, tabIndex=3, noEntry;
+Edit ohb12=ohb_file.ohb12, tabIndex=4, noEntry, not null, required;
+Edit l_ima25=formonly.l_ima25 type CHAR, tabIndex=5, noEntry;
+Edit ohb05_fac=ohb_file.ohb05_fac, tabIndex=6, not null, required;
+Edit ohb913=ohb_file.ohb913, tabIndex=7, noEntry;
+Edit ohb914=ohb_file.ohb914, tabIndex=8;
+Edit ohb915=ohb_file.ohb915, tabIndex=9, noEntry;
+Edit ohb910=ohb_file.ohb910, tabIndex=10, noEntry;
+Edit ohb911=ohb_file.ohb911, tabIndex=11;
+Edit ohb912=ohb_file.ohb912, tabIndex=12, noEntry;
+Edit ohb15=ohb_file.ohb15, tabIndex=13, noEntry;
+Edit ohb15_fac=ohb_file.ohb15_fac, tabIndex=14, not null, required;
+Edit ohb16=ohb_file.ohb16, tabIndex=15, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ohb_file.ohb11,ohb_file.ohb07,ohb_file.ohb05,ohb_file.ohb12,formonly.l_ima25,ohb_file.ohb05_fac,ohb_file.ohb913,ohb_file.ohb914,ohb_file.ohb915,ohb_file.ohb910,ohb_file.ohb911,ohb_file.ohb912,ohb_file.ohb15,ohb_file.ohb15_fac,ohb_file.ohb16)
+END -- INSTRUCTIONS
+

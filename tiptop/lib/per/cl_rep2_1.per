@@ -1,0 +1,33 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_rep2_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"cl_rep2_1")
+Grid gr3702
+{
+--------------------------------------------------
+
+    1. Print Date ..........:[g_pdate ]
+    2. To Whom .............:[g_towhom       ]
+    3. Report Language Type.:[g]
+    4. Copies ..............:[a]
+
+--------------------------------------------------
+}
+END -- gr3702
+END -- cl_rep2_1
+
+ATTRIBUTES
+Edit g_pdate=formonly.g_pdate type DATE, tabIndex=1, color = yellow;
+Edit g_towhom=formonly.g_towhom type VARCHAR, tabIndex=2, color = yellow;
+Edit g=formonly.g_rlang type VARCHAR, tabIndex=3, color = yellow;
+Edit a=formonly.g_copies type VARCHAR, tabIndex=4, color = yellow;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_pdate,formonly.g_towhom,formonly.g_rlang,formonly.g_copies)
+END -- INSTRUCTIONS
+

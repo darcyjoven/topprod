@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsp500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amsp500")
+Group g01
+VBox VBox1
+Grid gr3943
+{
+ Version Number         [ver_no    ]
+
+}
+END -- gr3943
+Grid gr3944
+{
+ <G group01                                                                >
+  Range of MPS Item #    [lot_no1           ][lot_no2             ]
+  Time Bucket Method     [buk_type  ][buk_code   ]
+  Plan Base Date         [forbdate  ]
+  Data Date Range        [bdate     ][edate      ]
+  PR/PO Delivery in advance allowed (Reschedule) Adjust Days [po_days   ]
+  W/O Delivery in advance allowed (Reschedule) Adjust Days   [wo_days   ]
+ [incl_id                                                  ]
+  Requirement Source     [incl_so   ]
+ [qty_type                                                 ]
+ [mss_expl                                                 ]
+ [sw                                                       ]
+ [g_bgjob                                                  ]
+ [mps_save                                                 ]
+
+  Keep MPS Plan No#      [mps_msa01       ]
+  Date Range             [mbdate    ][medate     ]
+ <                                                                         >
+
+}
+END -- gr3944
+END -- VBox1
+END -- g01
+END -- amsp500
+
+ATTRIBUTES
+Edit ver_no=formonly.ver_no type CHAR, tabIndex=1, not null, required;
+Group group01:group01;
+Edit lot_no1=formonly.lot_no1 type CHAR, tabIndex=2, not null, required, comment="Use \'*\' or \'?\'  For any character matched!";
+Edit lot_no2=formonly.lot_no2 type CHAR, tabIndex=3, comment="Use \'*\' or \'?\'  For any character matched!";
+ComboBox buk_type=formonly.buk_type type CHAR, tabIndex=4, noEntry, not null, required, items=(("1", "By Time Bucket No."),("2", "Day"),("3", "Week"),("4", "10-Day"),("5", "Month"));
+Edit buk_code=formonly.buk_code type CHAR, tabIndex=5, noEntry;
+DateEdit forbdate=formonly.forbdate type DATE, tabIndex=6, not null, required;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=7, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=8, not null, required;
+Edit po_days=formonly.po_days type CHAR, tabIndex=9, comment="0:No Advance Delivery Date -1:Advance days by Item Master";
+Edit wo_days=formonly.wo_days type CHAR, tabIndex=10, comment="0:No Advance Delivery Date -1:Advance days by Item Master";
+CheckBox incl_id=formonly.incl_id type CHAR, tabIndex=11, text="Add to Independent Requirement Table", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox incl_so=formonly.incl_so type CHAR, tabIndex=12, not null, required, items=(("1", "Order"),("2", "Forecast"),("3", "MAX"));
+CheckBox qty_type=formonly.qty_type type CHAR, tabIndex=13, text="Confirmed Qty For Forcast Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox mss_expl=formonly.mss_expl type CHAR, tabIndex=14, text="Parts Required For PLM Parts", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sw=formonly.sw type VARCHAR, tabIndex=15, text="Show that carries out course information", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=16, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox mps_save=formonly.mps_save type CHAR, tabIndex=17, text="Keep MPS PLAN", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit mps_msa01=formonly.mps_msa01 type CHAR, tabIndex=18;
+DateEdit mbdate=formonly.mbdate type DATE, tabIndex=19;
+DateEdit medate=formonly.medate type DATE, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ver_no,formonly.lot_no1,formonly.lot_no2,formonly.buk_type,formonly.buk_code,formonly.forbdate,formonly.bdate,formonly.edate,formonly.po_days,formonly.wo_days,formonly.incl_id,formonly.incl_so,formonly.qty_type,formonly.mss_expl,formonly.sw,formonly.g_bgjob,formonly.mps_save,formonly.mps_msa01,formonly.mbdate,formonly.medate)
+END -- INSTRUCTIONS
+

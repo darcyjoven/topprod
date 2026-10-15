@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct501")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1818
+{
+ Transfer Note#  [imm01               ]
+ Transfer Date   [imm02     ]
+ Memo            [imm09     ]
+}
+END -- gr1818
+Grid gr1819
+{
+ Confirm Code    [immconf ][imgmksg]
+                 [imm03   ][       ]
+
+}
+END -- gr1819
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1820
+{
+ Record Owner        [immuser   ]   Last Modified by    [immmodu   ]
+ Department          [immgrup   ]   Create/Modify Date  [immdate   ]
+ Record Orig.        [immoriu   ]
+ Dept Orig.          [immorig   ]
+}
+END -- gr1820
+END -- info
+END -- folder01
+Table s_imn
+{
+[imn0|imn03          |imn04          |imn05     |imn06 |imn09 |imn10  |imn15        |imn16     |imn17 |imn20 |imn091              |imn092              |imn22    ]
+[imn0|imn03          |imn04          |imn05     |imn06 |imn09 |imn10  |imn15        |imn16     |imn17 |imn20 |imn091              |imn092              |imn22    ]
+[imn0|imn03          |imn04          |imn05     |imn06 |imn09 |imn10  |imn15        |imn16     |imn17 |imn20 |imn091              |imn092              |imn22    ]
+[imn0|imn03          |imn04          |imn05     |imn06 |imn09 |imn10  |imn15        |imn16     |imn17 |imn20 |imn091              |imn092              |imn22    ]
+[imn0|imn03          |imn04          |imn05     |imn06 |imn09 |imn10  |imn15        |imn16     |imn17 |imn20 |imn091              |imn092              |imn22    ]
+[imn0|imn03          |imn04          |imn05     |imn06 |imn09 |imn10  |imn15        |imn16     |imn17 |imn20 |imn091              |imn092              |imn22    ]
+[imn0|imn03          |imn04          |imn05     |imn06 |imn09 |imn10  |imn15        |imn16     |imn17 |imn20 |imn091              |imn092              |imn22    ]
+[imn0|imn03          |imn04          |imn05     |imn06 |imn09 |imn10  |imn15        |imn16     |imn17 |imn20 |imn091              |imn092              |imn22    ]
+[imn0|imn03          |imn04          |imn05     |imn06 |imn09 |imn10  |imn15        |imn16     |imn17 |imn20 |imn091              |imn092              |imn22    ]
+[imn0|imn03          |imn04          |imn05     |imn06 |imn09 |imn10  |imn15        |imn16     |imn17 |imn20 |imn091              |imn092              |imn22    ]
+
+}
+END -- s_imn
+Grid gr1821
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1821
+END -- VBox1
+END -- axct501
+
+TABLES
+imn_file,
+imm_file
+ATTRIBUTES
+ButtonEdit imm01=imm_file.imm01, action=controlp, tabIndex=1, image="zoom";
+DateEdit imm02=imm_file.imm02, tabIndex=2, noEntry;
+Edit imm09=formonly.imm09 type CHAR, tabIndex=3;
+ComboBox immconf=imm_file.immconf, tabIndex=4, noEntry, items=(("N", "UnPosting"),("Y", "Posted"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+CheckBox imm03=imm_file.imm03, tabIndex=6, text="Post", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit immuser=imm_file.immuser, tabIndex=7, noEntry;
+Edit immmodu=imm_file.immmodu, tabIndex=8, noEntry;
+Edit immgrup=imm_file.immgrup, tabIndex=9, noEntry;
+DateEdit immdate=imm_file.immdate, tabIndex=10, noEntry;
+Edit immoriu=imm_file.immoriu, tabIndex=501, noEntry;
+Edit immorig=imm_file.immorig, tabIndex=502, noEntry;
+Edit imn0=imn_file.imn02, tabIndex=11, title="Ln#", noEntry;
+Edit imn03=imn_file.imn03, tabIndex=12, title="Item No.", noEntry;
+Edit imn04=imn_file.imn04, tabIndex=13, title="Trans.out W/H", noEntry;
+Edit imn05=imn_file.imn05, tabIndex=14, title="Location", noEntry;
+Edit imn06=imn_file.imn06, tabIndex=15, title="Lot#", noEntry;
+Edit imn09=imn_file.imn09, tabIndex=16, title="Unit", noEntry;
+Edit imn10=imn_file.imn10, tabIndex=17, title="Qty", noEntry;
+Edit imn15=imn_file.imn15, tabIndex=18, title="Trans.in W/H", noEntry;
+Edit imn16=imn_file.imn16, tabIndex=19, title="Location", noEntry;
+Edit imn17=imn_file.imn17, tabIndex=20, title="Lot#", noEntry;
+Edit imn20=imn_file.imn20, tabIndex=21, title="Unit", noEntry;
+Edit imn091=imn_file.imn091, tabIndex=22, title="U/P", not null, required;
+Edit imn092=imn_file.imn092, tabIndex=23, title="Amount", not null, required;
+Edit imn22=imn_file.imn22, tabIndex=24, title="Qty", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=25, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=26, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imn(imn_file.imn02,imn_file.imn03,imn_file.imn04,imn_file.imn05,imn_file.imn06,imn_file.imn09,imn_file.imn10,imn_file.imn15,imn_file.imn16,imn_file.imn17,imn_file.imn20,imn_file.imn091,imn_file.imn092,imn_file.imn22)
+SCREEN RECORD Undefined(imm_file.imm01,imm_file.imm02,formonly.imm09,imm_file.immconf,formonly.imgmksg,imm_file.imm03,imm_file.immuser,imm_file.immmodu,imm_file.immgrup,imm_file.immdate,imm_file.immoriu,imm_file.immorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

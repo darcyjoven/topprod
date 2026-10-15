@@ -1,0 +1,47 @@
+----------------------------------------------------------------------------------
+-- $Id:  p_instest_nj.per created 2009-11-13T17:14:21
+-- File created from p_instest_nj.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="p_instest_nj")
+  VBOX vb4
+    FOLDER pc8
+      PAGE Page1( TEXT="Main")
+        TABLE   s_bor
+        {
+        [aa0     |aa1            |aa2                           |aa3     ]
+        [aa0     |aa1            |aa2                           |aa3     ]
+        [aa0     |aa1            |aa2                           |aa3     ]
+        [aa0     |aa1            |aa2                           |aa3     ]
+        [aa0     |aa1            |aa2                           |aa3     ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr11
+    {
+     ------count[aa4   ]/[aa5   ]------
+
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES bor_file
+
+ATTRIBUTES
+  EDIT aa0=bor_file.bor01, NOT NULL, TABINDEX=3, TITLE="Item";
+  COMBOBOX aa1=bor_file.bor04, TABINDEX=6, TITLE="Function Name", ITEMS=(("1","insert"),("2","update"),("3","query"),("4","delete"),("5","copy"),("6","invalid"),("7","detail"),("8","exporttoexcel"),("9","exit"),("A","output"),("B","4fd"),("C","4gl"));
+  EDIT aa2=bor_file.bor02, NOT NULL, TABINDEX=5, TITLE="Test";
+  CHECKBOX aa3=bor_file.bor03, DEFAULT="N", NOT NULL, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=4, TITLE="Display";
+  EDIT aa4=FORMONLY.cnt, TABINDEX=1;
+  EDIT aa5=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=2;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_bor (bor_file.bor01, bor_file.bor04, bor_file.bor02, bor_file.bor03)
+END

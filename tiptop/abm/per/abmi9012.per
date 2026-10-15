@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi9012.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi9012")
+VBox VBox1
+Grid gr834
+{
+ <G group01                        >
+  (01)[bmr36                      ]
+  (02)[bmr37                      ]
+  (03)[bmr38                      ]
+  (04)[bmr39                      ]
+  (05)[bmr40                      ]
+  (06)[bmr41                      ]
+  (07)[bmr42                      ]
+  (08)[bmr43                      ]
+  (09)[bmr44                      ]
+  (10)[bmr45                      ]
+      [bmr46                      ]
+ <                                 >
+
+}
+END -- gr834
+END -- VBox1
+END -- abmi9012
+
+TABLES
+bmr_file
+ATTRIBUTES
+Group group01:group01, text="Design Affected after Change";
+CheckBox bmr36=bmr_file.bmr36, tabIndex=1, text="Firmware", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr37=bmr_file.bmr37, tabIndex=2, text="Sckematic", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr38=bmr_file.bmr38, tabIndex=3, text="PACKING", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr39=bmr_file.bmr39, tabIndex=4, text="QVL", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr40=bmr_file.bmr40, tabIndex=5, text="UL.CSA.FCC.VDE", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr41=bmr_file.bmr41, tabIndex=6, text="S/W", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr42=bmr_file.bmr42, tabIndex=7, text="BOM", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr43=bmr_file.bmr43, tabIndex=8, text="PCB", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr44=bmr_file.bmr44, tabIndex=9, text="Product Specification", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmr45=bmr_file.bmr45, tabIndex=10, text="Other", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit bmr46=bmr_file.bmr46, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bmr_file.bmr36,bmr_file.bmr37,bmr_file.bmr38,bmr_file.bmr39,bmr_file.bmr40,bmr_file.bmr41,bmr_file.bmr42,bmr_file.bmr43,bmr_file.bmr44,bmr_file.bmr45,bmr_file.bmr46)
+END -- INSTRUCTIONS
+

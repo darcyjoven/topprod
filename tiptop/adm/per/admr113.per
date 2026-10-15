@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/adm/42f/admr113.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"admr113")
+VBox VBox1
+Grid gr1599
+{
+ <G group01                                                                             >
+  Customer #          [occ01               ]  customer cate       [occ03               ]
+  Area                [occ20               ]  Country             [occ21               ]
+ <                                                                                      >
+ <G group02                                                                             >
+  Data Date           [bdate       ] - [edate       ]
+  New/Old Customer Base date [basdate     ]
+  Amount Base         [a                                                   ]
+ <                                                                                      >
+
+}
+END -- gr1599
+Grid gr1600
+{
+[more                                                            ]
+
+}
+END -- gr1600
+END -- VBox1
+END -- admr113
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit occ01=formonly.occ01 type VARCHAR, tabIndex=1;
+Edit occ03=formonly.occ03 type VARCHAR, tabIndex=2;
+Edit occ20=formonly.occ20 type VARCHAR, tabIndex=3;
+Edit occ21=formonly.occ21 type VARCHAR, tabIndex=4;
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=5;
+DateEdit edate=formonly.edate type DATE, tabIndex=6;
+DateEdit basdate=formonly.basdate type DATE, tabIndex=7;
+RadioGroup a=formonly.a type VARCHAR, tabIndex=8, items=(("1", "Enter Account"),("2", "Invoice"));
+CheckBox more=formonly.more type CHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.occ01,formonly.occ03,formonly.occ20,formonly.occ21,formonly.bdate,formonly.edate,formonly.basdate,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

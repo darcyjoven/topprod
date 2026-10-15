@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt785.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt785")
+VBox vb6
+Folder pc2
+Page Page3(text=%"Basic Data")
+Grid gr4
+{
+
+ Recover Present No.[lrm01             ]                 Confirmed Status[lrm08       ][imgmksg]
+ Store No.          [lrmplant    |rtz13               ]  Confirmed Person[lrm09       ][       ]
+ Corporation        [lrmlegal    |azt02               ]  Confirmed Date  [lrm10       ]
+ Return No.         [lrm02             ]                 Memo            [lrm11                         ]
+ Sales No.          [lrm03             ]                                 [                              ]
+ Voucher No.        [lrm04             ]                                 [                              ]
+ Return Amt.        [lrm05               ]
+ Date               [lrm06       ]
+ Compensation Amt.  [lrm07               ]
+
+}
+END -- gr4
+END -- Page3
+Page info(text=%"Info")
+Grid gr6
+{
+
+ Data User   [lrmuser   ] crat  [lrmcrat     ] Modify Date[lrmdate     ]
+ Data Group  [lrmgrup   ] Modify[lrmmodu     ]
+ Record Orig.[lrmoriu   ]
+ Dept Orig.  [lrmorig   ]
+
+
+
+
+}
+END -- gr6
+END -- info
+END -- pc2
+Table s_lrn
+{
+[lrn05             |lrn02                 |ima02                         |lrn03               |lrn04               ]
+[lrn05             |lrn02                 |ima02                         |lrn03               |lrn04               ]
+[lrn05             |lrn02                 |ima02                         |lrn03               |lrn04               ]
+[lrn05             |lrn02                 |ima02                         |lrn03               |lrn04               ]
+[lrn05             |lrn02                 |ima02                         |lrn03               |lrn04               ]
+}
+END -- s_lrn
+Grid gr5
+{
+ --------Rows[idx   ]/[cnt    ]  ---Details[cn2   ]------
+
+
+
+}
+END -- gr5
+END -- vb6
+END -- almt785
+
+TABLES
+lrn_file,
+lrm_file
+ATTRIBUTES
+ButtonEdit lrm01=lrm_file.lrm01, action=controlp, tabIndex=11, not null, required, image="zoom.png";
+ComboBox lrm08=lrm_file.lrm08, tabIndex=18, noEntry, items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit lrmplant=lrm_file.lrmplant, action=controlp, tabIndex=25, noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=27, noEntry;
+Edit lrm09=lrm_file.lrm09, tabIndex=19, noEntry;
+ButtonEdit lrmlegal=lrm_file.lrmlegal, action=controlp, tabIndex=26, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=28, noEntry;
+DateEdit lrm10=lrm_file.lrm10, tabIndex=20, noEntry;
+ButtonEdit lrm02=lrm_file.lrm02, action=controlp, tabIndex=12, not null, image="zoom.png";
+TextEdit lrm11=lrm_file.lrm11, tabIndex=21;
+Edit lrm03=lrm_file.lrm03, tabIndex=13, noEntry;
+Edit lrm04=lrm_file.lrm04, tabIndex=14, noEntry;
+Edit lrm05=lrm_file.lrm05, tabIndex=15, noEntry;
+DateEdit lrm06=lrm_file.lrm06, tabIndex=16, noEntry;
+Edit lrm07=lrm_file.lrm07, tabIndex=17, noEntry;
+Edit lrmuser=lrm_file.lrmuser, tabIndex=6, noEntry;
+DateEdit lrmcrat=lrm_file.lrmcrat, tabIndex=10, noEntry;
+DateEdit lrmdate=lrm_file.lrmdate, tabIndex=9, noEntry;
+Edit lrmgrup=lrm_file.lrmgrup, tabIndex=8, noEntry;
+Edit lrmmodu=lrm_file.lrmmodu, tabIndex=7, noEntry;
+Edit lrmoriu=lrm_file.lrmoriu, tabIndex=29, noEntry;
+Edit lrmorig=lrm_file.lrmorig, tabIndex=30, noEntry;
+ButtonEdit lrn05=lrn_file.lrn05, action=controlp, tabIndex=24, title="Sent Present No.", not null, required, image="zoom.png";
+ButtonEdit lrn02=lrn_file.lrn02, action=controlp, tabIndex=1, title="Present No.", not null, required, image="zoom.png";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, title="Present Name", noEntry;
+Edit lrn03=lrn_file.lrn03, tabIndex=22, title="Present Price", noEntry;
+Edit lrn04=lrn_file.lrn04, tabIndex=23, title="Compensation Prcie";
+Edit idx=formonly.idx type CHAR, tabIndex=3, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lrn(lrn_file.lrn05,lrn_file.lrn02,formonly.ima02,lrn_file.lrn03,lrn_file.lrn04)
+SCREEN RECORD Undefined(lrm_file.lrm01,lrm_file.lrm08,formonly.imgmksg,lrm_file.lrmplant,formonly.rtz13,lrm_file.lrm09,lrm_file.lrmlegal,formonly.azt02,lrm_file.lrm10,lrm_file.lrm02,lrm_file.lrm11,lrm_file.lrm03,lrm_file.lrm04,lrm_file.lrm05,lrm_file.lrm06,lrm_file.lrm07,lrm_file.lrmuser,lrm_file.lrmcrat,lrm_file.lrmdate,lrm_file.lrmgrup,lrm_file.lrmmodu,lrm_file.lrmoriu,lrm_file.lrmorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

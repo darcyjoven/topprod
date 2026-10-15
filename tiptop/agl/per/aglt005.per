@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglt005")
+VBox vb1
+Grid gr1
+{
+
+ Group Code   [axqq01       ]
+ comp_up      [axqq02       ]     zhangtao_up [axqq03       ]
+ comp         [axqq04       ]     zhangtao    [axqq041      ]
+ Year         [axqq06       ]     Month       [axqq07       ]     bizhong   [axqq12       ]
+
+}
+END -- gr1
+Table s_axqq
+{
+[axqq05       |axqq08      |axqq09            ]
+[axqq05       |axqq08      |axqq09            ]
+[axqq05       |axqq08      |axqq09            ]
+[axqq05       |axqq08      |axqq09            ]
+[axqq05       |axqq08      |axqq09            ]
+
+}
+END -- s_axqq
+Grid gr3_
+{
+
+  ---------- Rows [cnt       ]/ [cnt2      ]
+
+}
+END -- gr3_
+END -- vb1
+END -- aglt005
+
+TABLES
+axqq_file
+ATTRIBUTES
+ButtonEdit axqq01=axqq_file.axqq01, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+ButtonEdit axqq02=axqq_file.axqq02, action=controlp, tabIndex=12, not null, required, image="zoom.png";
+ButtonEdit axqq03=axqq_file.axqq03, action=controlp, tabIndex=13, image="zoom.png";
+ButtonEdit axqq04=axqq_file.axqq04, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+ButtonEdit axqq041=axqq_file.axqq041, action=controlp, tabIndex=9, image="zoom.png";
+Edit axqq06=axqq_file.axqq06, tabIndex=1, not null, required;
+Edit axqq07=axqq_file.axqq07, tabIndex=2, not null, required;
+Edit axqq12=axqq_file.axqq12, tabIndex=10;
+ButtonEdit axqq05=axqq_file.axqq05, action=controlp, tabIndex=4, title="axqq05", not null, required, image="zoom.png";
+Edit axqq08=axqq_file.axqq08, tabIndex=5, title="axqq08";
+Edit axqq09=axqq_file.axqq09, tabIndex=6, title="axqq09", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axqq(axqq_file.axqq05,axqq_file.axqq08,axqq_file.axqq09)
+SCREEN RECORD Undefined(axqq_file.axqq01,axqq_file.axqq02,axqq_file.axqq03,axqq_file.axqq04,axqq_file.axqq041,axqq_file.axqq06,axqq_file.axqq07,axqq_file.axqq12,formonly.cnt,formonly.cnt2)
+END -- INSTRUCTIONS
+

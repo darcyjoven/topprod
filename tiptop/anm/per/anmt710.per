@@ -1,0 +1,234 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/4fd/anmt710.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt710")
+VBox vb1
+Folder pc809
+Page page01(text="Main")
+Grid gr4529
+{
+ Source Plant        [nne43     ]                    Bank of Deposit     [nne05               ][nne051    ]                   [imgmksg]
+ Financing Doc#      [nne01             ][nne32     ]Bank Name           [nma02               ]                               [       ]
+ Applying Date       [nne02       ]                  Reference Doc #     [nne28           ]        Confirm                    [nneconf   ]
+ Date of Use         [nne03       ]                  Department          [nne44     ]              Voucher#                   [nneglno             ]
+ Contract Number     [nne30     ]                    Collateral          [nne07     ]              Last Interest Payment Date [nne33       ]
+ Credit Bank         [nne04     ]                    Interest Paytment   [nne08                ]   Closing Date               [nne26       ]
+                     [alg02                         ]Interest Paytment   [nneud02              ]
+ Financing Type      [nne06     ]                    Interest Type       [nne09     ]
+                     [nnn02               ]          Memo                [nneud13        ]
+                                                     Memo                [nne10               ]
+}
+END -- gr4529
+END -- page01
+Page info(text="Info")
+Grid gr4530
+{
+ Record Owner        [nneuser   ] Last Modified by    [nnemodu   ]
+ Department          [nnegrup   ] Create/Modify Date  [nnedate   ]
+ Record Orig.        [nneoriu   ]
+ Dept Orig.          [nneorig   ]
+}
+END -- gr4530
+END -- info
+END -- pc809
+Folder pc810
+Page page02(text="General")
+Grid gr4531
+{
+ Financing Period     [nne111      ]-[nne112      ]        Loan Interest Rate    [nne13     ]%           [nne41                          ]
+ Days                 [days]                               Interest Rate         [nne14     ]%            Company             [nne31     ]
+ Currency/Ex. Rate    [nne16     ] [nne17               ]  Handing Rate          [nneud07   ]%            Margin              [nne42               ]
+ Limit Exchange Rate  [nneex2              ]               Payment Date          [nne21       ]
+ O.C Financing        [nne12               ]               Interest Payment Date [nne22     ]
+ H.C Financing        [nne19               ]               O.C Paid              [nne27               ]
+                                                           H.C Paid              [nne20               ]
+}
+END -- gr4531
+END -- page02
+Page page03(text="Other")
+Grid gr4532
+{
+ Cash Variation           [nne18     ][nml02       ]           Margin Rt                [nne34     ]%   Margin              [nne291              ] Margin              [nne29               ]
+ Guaranty Bank            [nne35               ][nne38     ]   Underwriting Rate        [nne23     ]%   Underwriting Fee    [nne241              ] Underwriting Fee    [nne24               ]
+ Bank Name                [k                   ]               Visa Fee Rate            [nne36     ]%   Visa Fee            [nne371              ] Visa Fee            [nne37               ]
+ L/C NO.                  [nne15               ]               Deliver Server Rate      [nne45     ]%   Deliver Server Fee  [nne461              ] Deliver Server Fee  [nne46               ]
+ Promissory Note Discount [nne25               ]
+
+}
+END -- gr4532
+END -- page03
+Page page04(text="Account")
+Grid gr4533
+{
+ Debit:Cash In Bank        [nne_d1              ] [aag02_d1                      ]
+ Debit:Prepayment          [nne_d2              ] [aag02_d2                      ]
+ Debit:Margin              [nne_d4              ] [aag02_d4                      ]
+ Debit:Underwriting Fee    [nne_d5              ] [aag02_d5                      ]
+ Debit:Visa Fee            [nne_d6              ] [aag02_d6                      ]
+ Debit:Deliver Server Fee  [nne_d7              ] [aag02_d7                      ]
+ Credit:Notes Payable/Loan [nne_c1              ] [aag02_c1                      ]
+
+}
+END -- gr4533
+END -- page04
+Page page05(text="Account 2")
+Grid gr4534
+{
+ Debit:Cash In Bank        [nne_d11             ] [aag02_d11                     ]
+ Debit:Prepayment          [nne_d21             ] [aag02_d21                     ]
+ Debit:Margin              [nne_d41             ] [aag02_d41                     ]
+ Debit:Underwriting Fee    [nne_d51             ] [aag02_d51                     ]
+ Debit:Visa Fee            [nne_d61             ] [aag02_d61                     ]
+ Debit:Deliver Server Fee  [nne_d71             ] [aag02_d71                     ]
+ Credit:Notes Payable/Loan [nne_c11             ] [aag02_c11                     ]
+
+}
+END -- gr4534
+END -- page05
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[nneud01                       ] userdefined_field07                  userdefined_field13
+                    [                              ] userdefined_field08[nneud08        ] userdefined_field14[nneud14        ]
+ userdefined_field02                                 userdefined_field09[nneud09        ] userdefined_field15[nneud15        ]
+ userdefined_field03[nneud03        ]                userdefined_field10[nneud10        ]
+ userdefined_field04[nneud04        ]                userdefined_field11[nneud11        ]
+ userdefined_field05[nneud05        ]                userdefined_field12[nneud12        ]
+ userdefined_field06[nneud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc810
+Grid gr4535
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4535
+END -- vb1
+END -- anmt710
+
+TABLES
+nne_file
+ATTRIBUTES
+Edit nne43=nne_file.nne43, tabIndex=1;
+ButtonEdit nne05=nne_file.nne05, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Bank Common Data";
+ButtonEdit nne051=nne_file.nne051, action=controlp, tabIndex=3, image="zoom", comment="Enter CIB Transaction Code <^P>Query";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit nne01=nne_file.nne01, action=controlp, tabIndex=5, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Documents";
+CheckBox nne32=nne_file.nne32, tabIndex=6, text="Open", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nma02=formonly.nma02 type CHAR, tabIndex=7, noEntry;
+DateEdit nne02=nne_file.nne02, tabIndex=8;
+Edit nne28=nne_file.nne28, tabIndex=9;
+ComboBox nneconf=nne_file.nneconf, tabIndex=10, noEntry, not null, required, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Void"));
+DateEdit nne03=nne_file.nne03, tabIndex=11;
+ButtonEdit nne44=nne_file.nne44, action=controlp, tabIndex=12, image="zoom", comment="<^P>Query Department";
+Edit nneglno=nne_file.nneglno, tabIndex=13, noEntry;
+ButtonEdit nne30=nne_file.nne30, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P>Qry Contract #  ";
+ComboBox nne07=nne_file.nne07, tabIndex=15, not null, required, queryEditable, comment="Please Enter 1/2", items=(("1", "Credit Loan"),("2", "Mortgage Loan"));
+DateEdit nne33=nne_file.nne33, tabIndex=16;
+ButtonEdit nne04=nne_file.nne04, action=controlp, tabIndex=17, noEntry, not null, required, image="zoom", comment="<^P>Qry Bank Common Data";
+ComboBox nne08=nne_file.nne08, tabIndex=18, not null, required, queryEditable, comment="Please Enter 1/2/3/4/5/6", items=(("1", "Monthly Pay Interest"),("3", "Text"),("4", "Text"),("5", "Text"),("6", "Text"),("2", "Pay Principal & Interest"));
+DateEdit nne26=nne_file.nne26, tabIndex=19;
+Edit alg02=formonly.alg02 type CHAR, tabIndex=20, noEntry;
+ComboBox nneud02=nne_file.nneud02, tabIndex=99, not null, required, queryEditable, comment="Please Enter 1/2/3", items=(("1", "Text"),("2", "Text"),("3", "Text"));
+ButtonEdit nne06=nne_file.nne06, action=controlp, tabIndex=21, not null, required, image="zoom", comment="<^P>Qry Financing Type";
+ComboBox nne09=nne_file.nne09, tabIndex=22, not null, required, queryEditable, comment="Please Enter 1/2", items=(("1", "Fixed Interest"),("2", "Floating"));
+Edit nnn02=formonly.nnn02 type CHAR, tabIndex=23, noEntry;
+DateEdit nneud13=nne_file.nneud13, tabIndex=96;
+Edit nne10=nne_file.nne10, tabIndex=24;
+Edit nneuser=nne_file.nneuser, tabIndex=25, noEntry;
+Edit nnemodu=nne_file.nnemodu, tabIndex=26, noEntry;
+Edit nnegrup=nne_file.nnegrup, tabIndex=27, noEntry;
+DateEdit nnedate=nne_file.nnedate, tabIndex=28, noEntry;
+Edit nneoriu=nne_file.nneoriu, tabIndex=500, noEntry;
+Edit nneorig=nne_file.nneorig, tabIndex=501, noEntry;
+DateEdit nne111=nne_file.nne111, tabIndex=29, not null, required;
+DateEdit nne112=nne_file.nne112, tabIndex=30, not null, required;
+Edit nne13=nne_file.nne13, tabIndex=31, not null, required;
+CheckBox nne41=nne_file.nne41, tabIndex=32, text="Endorse Guarantee", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit days=formonly.days type CHAR, tabIndex=33;
+Edit nne14=nne_file.nne14, tabIndex=34, not null, required;
+ButtonEdit nne31=nne_file.nne31, action=controlp, tabIndex=35, image="zoom", comment="<^P>Query Guarantee Company";
+ButtonEdit nne16=nne_file.nne16, action=controlp, tabIndex=36, not null, required, image="zoom", comment="<^P>Qry Currency Table";
+ButtonEdit nne17=nne_file.nne17, action=controlp, tabIndex=37, not null, required, image="zoom", comment="<^P>Qry Currency Table";
+Edit nneud07=nne_file.nneud07, tabIndex=502;
+Edit nne42=nne_file.nne42, tabIndex=39;
+ButtonEdit nneex2=nne_file.nneex2, action=controlp, tabIndex=40, noEntry, image="zoom";
+DateEdit nne21=nne_file.nne21, tabIndex=38;
+Edit nne12=nne_file.nne12, tabIndex=42, not null, required;
+Edit nne22=nne_file.nne22, tabIndex=41, not null, required;
+Edit nne19=nne_file.nne19, tabIndex=44, not null, required;
+Edit nne27=nne_file.nne27, tabIndex=43, noEntry;
+Edit nne20=nne_file.nne20, tabIndex=45, noEntry;
+ButtonEdit nne18=nne_file.nne18, action=controlp, tabIndex=46, image="zoom", comment="<^P>Qry Cash Variation Code";
+Edit nml02=formonly.nml02 type VARCHAR, tabIndex=47, noEntry;
+Edit nne34=nne_file.nne34, tabIndex=48, not null, required;
+Edit nne291=nne_file.nne291, tabIndex=49;
+Edit nne29=nne_file.nne29, tabIndex=50;
+ButtonEdit nne35=nne_file.nne35, action=controlp, tabIndex=51, image="zoom", comment="<^P>Qry Bank    ";
+ButtonEdit nne38=nne_file.nne38, action=controlp, tabIndex=52, image="zoom", comment="Enter CIB Transaction Code <^P>Query";
+Edit nne23=nne_file.nne23, tabIndex=53, not null, required;
+Edit nne241=nne_file.nne241, tabIndex=54;
+Edit nne24=nne_file.nne24, tabIndex=55;
+Edit k=formonly.k type VARCHAR, tabIndex=56, noEntry;
+Edit nne36=nne_file.nne36, tabIndex=57, not null, required;
+Edit nne371=nne_file.nne371, tabIndex=58;
+Edit nne37=nne_file.nne37, tabIndex=59;
+ButtonEdit nne15=nne_file.nne15, action=controlp, tabIndex=60, image="zoom", comment="<^P> Qry L/C Receipt No.";
+Edit nne45=nne_file.nne45, tabIndex=61, not null, required;
+Edit nne461=nne_file.nne461, tabIndex=62;
+Edit nne46=nne_file.nne46, tabIndex=63;
+Edit nne25=nne_file.nne25, tabIndex=64, not null, required;
+ButtonEdit nne_d1=nne_file.nne_d1, action=controlp, tabIndex=65, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_d1=formonly.aag02_d1 type CHAR, tabIndex=66;
+ButtonEdit nne_d2=nne_file.nne_d2, action=controlp, tabIndex=67, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_d2=formonly.aag02_d2 type CHAR, tabIndex=68;
+ButtonEdit nne_d4=nne_file.nne_d4, action=controlp, tabIndex=69, image="zoom";
+Edit aag02_d4=formonly.aag02_d4 type CHAR, tabIndex=70;
+ButtonEdit nne_d5=nne_file.nne_d5, action=controlp, tabIndex=71, image="zoom";
+Edit aag02_d5=formonly.aag02_d5 type CHAR, tabIndex=72;
+ButtonEdit nne_d6=nne_file.nne_d6, action=controlp, tabIndex=73, image="zoom";
+Edit aag02_d6=formonly.aag02_d6 type CHAR, tabIndex=74;
+ButtonEdit nne_d7=nne_file.nne_d7, action=controlp, tabIndex=75, image="zoom";
+Edit aag02_d7=formonly.aag02_d7 type CHAR, tabIndex=76;
+ButtonEdit nne_c1=nne_file.nne_c1, action=controlp, tabIndex=77, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_c1=formonly.aag02_c1 type CHAR, tabIndex=78;
+ButtonEdit nne_d11=nne_file.nne_d11, action=controlp, tabIndex=79, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_d11=formonly.aag02_d11 type CHAR, tabIndex=80;
+ButtonEdit nne_d21=nne_file.nne_d21, action=controlp, tabIndex=81, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_d21=formonly.aag02_d21 type CHAR, tabIndex=82;
+ButtonEdit nne_d41=nne_file.nne_d41, action=controlp, tabIndex=83, image="zoom";
+Edit aag02_d41=formonly.aag02_d41 type CHAR, tabIndex=84;
+ButtonEdit nne_d51=nne_file.nne_d51, action=controlp, tabIndex=85, image="zoom";
+Edit aag02_d51=formonly.aag02_d51 type CHAR, tabIndex=86;
+ButtonEdit nne_d61=nne_file.nne_d61, action=controlp, tabIndex=87, image="zoom";
+Edit aag02_d61=formonly.aag02_d61 type CHAR, tabIndex=88;
+ButtonEdit nne_d71=nne_file.nne_d71, action=controlp, tabIndex=89, image="zoom";
+Edit aag02_d71=formonly.aag02_d71 type CHAR, tabIndex=90;
+ButtonEdit nne_c11=nne_file.nne_c11, action=controlp, tabIndex=91, image="zoom", comment="<^P>Open Window to Qry Acct";
+Edit aag02_c11=formonly.aag02_c11 type CHAR, tabIndex=92;
+TextEdit nneud01=nne_file.nneud01, tabIndex=95, stretch=NONE;
+Edit nneud08=nne_file.nneud08, tabIndex=97;
+DateEdit nneud14=nne_file.nneud14, tabIndex=98;
+Edit nneud09=nne_file.nneud09, tabIndex=100;
+DateEdit nneud15=nne_file.nneud15, tabIndex=101;
+Edit nneud03=nne_file.nneud03, tabIndex=102;
+Edit nneud10=nne_file.nneud10, tabIndex=103;
+Edit nneud04=nne_file.nneud04, tabIndex=104;
+Edit nneud11=nne_file.nneud11, tabIndex=105;
+Edit nneud05=nne_file.nneud05, tabIndex=106;
+Edit nneud12=nne_file.nneud12, tabIndex=107;
+Edit nneud06=nne_file.nneud06, tabIndex=108;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=93, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nne_file.nne43,nne_file.nne05,nne_file.nne051,formonly.imgmksg,nne_file.nne01,nne_file.nne32,formonly.nma02,nne_file.nne02,nne_file.nne28,nne_file.nneconf,nne_file.nne03,nne_file.nne44,nne_file.nneglno,nne_file.nne30,nne_file.nne07,nne_file.nne33,nne_file.nne04,nne_file.nne08,nne_file.nne26,formonly.alg02,nne_file.nne06,nne_file.nne09,formonly.nnn02,nne_file.nne10,nne_file.nneuser,nne_file.nnemodu,nne_file.nnegrup,nne_file.nnedate,nne_file.nneoriu,nne_file.nneorig,nne_file.nne111,nne_file.nne112,nne_file.nne13,nne_file.nne41,formonly.days,nne_file.nne14,nne_file.nne31,nne_file.nne16,nne_file.nne17,nne_file.nne21,nne_file.nne42,nne_file.nneex2,nne_file.nne22,nne_file.nne12,nne_file.nne27,nne_file.nne19,nne_file.nne20,nne_file.nne18,formonly.nml02,nne_file.nne34,nne_file.nne291,nne_file.nne29,nne_file.nne35,nne_file.nne38,nne_file.nne23,nne_file.nne241,nne_file.nne24,formonly.k,nne_file.nne36,nne_file.nne371,nne_file.nne37,nne_file.nne15,nne_file.nne45,nne_file.nne461,nne_file.nne46,nne_file.nne25,nne_file.nne_d1,formonly.aag02_d1,nne_file.nne_d2,formonly.aag02_d2,nne_file.nne_d4,formonly.aag02_d4,nne_file.nne_d5,formonly.aag02_d5,nne_file.nne_d6,formonly.aag02_d6,nne_file.nne_d7,formonly.aag02_d7,nne_file.nne_c1,formonly.aag02_c1,nne_file.nne_d11,formonly.aag02_d11,nne_file.nne_d21,formonly.aag02_d21,nne_file.nne_d41,formonly.aag02_d41,nne_file.nne_d51,formonly.aag02_d51,nne_file.nne_d61,formonly.aag02_d61,nne_file.nne_d71,formonly.aag02_d71,nne_file.nne_c11,formonly.aag02_c11,nne_file.nneud01,nne_file.nneud13,nne_file.nneud08,nne_file.nneud14,nne_file.nneud02,nne_file.nneud09,nne_file.nneud15,nne_file.nneud03,nne_file.nneud10,nne_file.nneud04,nne_file.nneud11,nne_file.nneud05,nne_file.nneud12,nne_file.nneud06,formonly.cnt,nne_file.nneud07)
+END -- INSTRUCTIONS
+

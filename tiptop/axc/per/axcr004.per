@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr004")
+VBox vb4
+Grid gr1566
+{
+ <G group01                                           >
+  Year/Month              [yy        ][mm        ]
+  Cost Calculation Method [type                ]
+ <                                                    >
+
+
+}
+END -- gr1566
+Grid gr1567
+{
+[a                                                        ]
+[more                                                     ]
+
+}
+END -- gr1567
+END -- vb4
+END -- axcr004
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+Edit yy=formonly.yy type SMALLINT, tabIndex=1;
+Edit mm=formonly.mm type SMALLINT, tabIndex=2;
+ComboBox type=formonly.type type VARCHAR, tabIndex=4, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+CheckBox a=formonly.a type CHAR, tabIndex=5, text="Write articulation table", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=3, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.type,formonly.more,formonly.a)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,125 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi3017.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"casfi3017")
+VBox vbox1
+Grid g00
+{
+ Item No.     [sfb05               ] Part Name     [ima02_a                       ]   Specification[ima021_a            ]
+ Operation No.[sfbiicd09           ] Production Qty[sfb08          |sfbiicd06      ]  Unit         [ima5]
+}
+END -- g00
+Group g01(text=%"Item")
+VBox vbox2
+Table s_sfa
+{
+[cho0 |sfa03                |ima02_b                  |ima021_b               ]
+[cho0 |sfa03                |ima02_b                  |ima021_b               ]
+[cho0 |sfa03                |ima02_b                  |ima021_b               ]
+}
+END -- s_sfa
+END -- vbox2
+END -- g01
+Group g02(text=%"Store/Location/Lot")
+VBox vbox3
+Table s_idc1
+{
+[cho1 |idc02        |idc03        |idc04           |idc07_1  |idc08_1        |idc08_a       |idc12_1        |idc12_a       |idc21_1        ]
+[cho1 |idc02        |idc03        |idc04           |idc07_1  |idc08_1        |idc08_a       |idc12_1        |idc12_a       |idc21_1        ]
+[cho1 |idc02        |idc03        |idc04           |idc07_1  |idc08_1        |idc08_a       |idc12_1        |idc12_a       |idc21_1        ]
+[cho1 |idc02        |idc03        |idc04           |idc07_1  |idc08_1        |idc08_a       |idc12_1        |idc12_a       |idc21_1        ]
+[cho1 |idc02        |idc03        |idc04           |idc07_1  |idc08_1        |idc08_a       |idc12_1        |idc12_a       |idc21_1        ]
+[cho1 |idc02        |idc03        |idc04           |idc07_1  |idc08_1        |idc08_a       |idc12_1        |idc12_a       |idc21_1        ]
+}
+END -- s_idc1
+Grid gr1
+{
+ Total of Stock-out Qty [idc08_a_t      ]  Total of Ref-Stock-out Qty [idc12_a_t      ]
+
+}
+END -- gr1
+END -- vbox3
+END -- g02
+Group g03(text=%"Mark/BIN")
+VBox vbox4
+Table s_idc2(wantFixedPageSize)
+{
+[cho2 |idc05         |idc06       |idc11     |idc07_2  |idc08_2        |idc08_b        |idc12_2        |idc12_b        |idc21_2        ]
+[cho2 |idc05         |idc06       |idc11     |idc07_2  |idc08_2        |idc08_b        |idc12_2        |idc12_b        |idc21_2        ]
+[cho2 |idc05         |idc06       |idc11     |idc07_2  |idc08_2        |idc08_b        |idc12_2        |idc12_b        |idc21_2        ]
+[cho2 |idc05         |idc06       |idc11     |idc07_2  |idc08_2        |idc08_b        |idc12_2        |idc12_b        |idc21_2        ]
+[cho2 |idc05         |idc06       |idc11     |idc07_2  |idc08_2        |idc08_b        |idc12_2        |idc12_b        |idc21_2        ]
+[cho2 |idc05         |idc06       |idc11     |idc07_2  |idc08_2        |idc08_b        |idc12_2        |idc12_b        |idc21_2        ]
+}
+END -- s_idc2
+Grid gr2
+{
+ Total of Stock-out Qty [idc08_b_t      ]  Total of Ref-Stock-out Qty [idc12_b_t      ]
+
+}
+END -- gr2
+END -- vbox4
+END -- g03
+Grid gr4
+{
+  ---------- Rows [cnt   ] / [cn2   ]  / [cn4   ] ----------
+
+}
+END -- gr4
+END -- vbox1
+END -- asfi3017
+
+TABLES
+sfa_file
+ATTRIBUTES
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=1, noEntry;
+Edit ima02_a=formonly.ima02_a type CHAR, tabIndex=2, noEntry;
+Edit ima021_a=formonly.ima021_a type CHAR, tabIndex=3, noEntry;
+Edit sfbiicd09=formonly.sfbiicd09 type CHAR, tabIndex=4, noEntry;
+Edit sfb08=formonly.sfb08 type CHAR, tabIndex=5, noEntry;
+Edit sfbiicd06=formonly.sfbiicd06 type CHAR, tabIndex=6, noEntry;
+Edit ima5=formonly.ima55 type CHAR, tabIndex=7, noEntry;
+CheckBox cho0=formonly.cho0, tabIndex=8, title=%"Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sfa03=sfa_file.sfa03, action=controlp, tabIndex=9, title=%"Issuing Item No.", not null, required, image="zoom", comment=%"<^P>Qry Item No.";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=10, title=%"Part Name", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=11, title=%"Specification", noEntry;
+CheckBox cho1=formonly.cho1, tabIndex=12, title=%"Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idc02=formonly.idc02 type CHAR, tabIndex=13, title=%"Warehouse", noEntry;
+Edit idc03=formonly.idc03 type CHAR, tabIndex=14, title=%"Location", noEntry;
+Edit idc04=formonly.idc04 type CHAR, tabIndex=15, title=%"Lot#", noEntry, not null, required;
+Edit idc07_1=formonly.idc07_1 type CHAR, tabIndex=16, title=%"Unit", noEntry;
+Edit idc08_1=formonly.idc08_1 type CHAR, tabIndex=17, title=%"Stock Qty", noEntry;
+Edit idc08_a=formonly.idc08_a type CHAR, tabIndex=18, title=%"Stock-out Qty", not null, required;
+Edit idc12_1=formonly.idc12_1 type CHAR, tabIndex=19, title=%"Ref-Stock Qty", noEntry;
+Edit idc12_a=formonly.idc12_a type CHAR, tabIndex=20, title=%"Ref-Stock-out Qty", not null, required;
+Edit idc21_1=formonly.idc21_1 type CHAR, tabIndex=21, title=%"Allocated Qty", noEntry;
+Edit idc08_a_t=formonly.idc08_a_t type CHAR, tabIndex=22;
+Edit idc12_a_t=formonly.idc12_a_t type CHAR, tabIndex=23;
+CheckBox cho2=formonly.cho2, tabIndex=24, title=%"Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idc05=formonly.idc05 type CHAR, tabIndex=25, title=%"Mark", noEntry;
+Edit idc06=formonly.idc06 type CHAR, tabIndex=26, title=%"BIN", noEntry;
+Edit idc11=formonly.idc11 type CHAR, tabIndex=27, title=%"Datecode", noEntry;
+Edit idc07_2=formonly.idc07_2 type CHAR, tabIndex=28, title=%"Unit", noEntry;
+Edit idc08_2=formonly.idc08_2 type CHAR, tabIndex=29, title=%"Stock Qty", noEntry;
+Edit idc08_b=formonly.idc08_b type CHAR, tabIndex=30, title=%"Stock-out Qty", not null, required;
+Edit idc12_2=formonly.idc12_2 type CHAR, tabIndex=31, title=%"Ref-Stock Qty", noEntry;
+Edit idc12_b=formonly.idc12_b type CHAR, tabIndex=32, title=%"Ref-Stock-out Qty", not null, required;
+Edit idc21_2=formonly.idc21_2 type CHAR, tabIndex=33, title=%"Allocated Qty", noEntry;
+Edit idc08_b_t=formonly.idc08_b_t type CHAR, tabIndex=34;
+Edit idc12_b_t=formonly.idc12_b_t type CHAR, tabIndex=35;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=36;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=37;
+Edit cn4=formonly.cn4 type INTEGER, tabIndex=38;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.sfb05,formonly.ima55,formonly.ima02_a,formonly.ima021_a,formonly.sfbiicd09,formonly.sfb08,formonly.sfbiicd06,formonly.idc08_a_t,formonly.idc12_a_t,formonly.idc08_b_t,formonly.idc12_b_t,formonly.cnt,formonly.cn2,formonly.cn4)
+SCREEN RECORD s_idc1(formonly.cho1,formonly.idc02,formonly.idc03,formonly.idc04,formonly.idc07_1,formonly.idc08_1,formonly.idc08_a,formonly.idc12_1,formonly.idc12_a,formonly.idc21_1)
+SCREEN RECORD s_idc2(formonly.cho2,formonly.idc05,formonly.idc06,formonly.idc11,formonly.idc07_2,formonly.idc08_2,formonly.idc08_b,formonly.idc12_2,formonly.idc12_b,formonly.idc21_2)
+SCREEN RECORD s_sfa(formonly.cho0,sfa_file.sfa03,formonly.ima02_b,formonly.ima021_b)
+END -- INSTRUCTIONS
+

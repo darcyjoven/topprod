@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amm/42f/ammp400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ammp400")
+VBox VBox1
+Grid gr3755
+{
+ <G group01                                  >
+  Document No.        [mmg01               ]
+  Run W/O             [mmg02               ]
+ <                                           >
+ <G group02                                  >
+  Issue Date          [g_date      ]
+  W/O Type            [ano       ]
+ <                                           >
+
+}
+END -- gr3755
+Grid gr3756
+{
+[g_bgj]
+
+}
+END -- gr3756
+END -- VBox1
+END -- ammp400
+
+TABLES
+mmg_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit mmg01=mmg_file.mmg01, tabIndex=1;
+Edit mmg02=mmg_file.mmg02, tabIndex=2;
+Group group02:group02, text="INPUT";
+DateEdit g_date=formonly.g_date type DATE, tabIndex=3, not null, required, color = yellow, comment="W/O Date and Bom effective date";
+ButtonEdit ano=formonly.ano type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P> Qry Documents";
+CheckBox g_bgj=formonly.g_bgjob type CHAR, tabIndex=5, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(mmg_file.mmg01,mmg_file.mmg02,formonly.g_date,formonly.ano,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

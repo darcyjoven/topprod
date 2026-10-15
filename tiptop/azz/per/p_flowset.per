@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_flowset.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_flowset")
+VBox VBox1
+Grid gr8
+{
+ Flow Name   [hisc01               ] Flow Crip  [hisc02                                                                        ]
+ Basic Object[hisc03               ] Object Name[hisf02                                                                        ]
+ Cond Field  [hisc04               ] Conditions [hisc05                                                                        ]
+}
+END -- gr8
+Table tb4
+{
+[hisd02     |hisf02a     |hisd03        |hisf02b     |hisd04   |hisd05     ]
+[hisd02     |hisf02a     |hisd03        |hisf02b     |hisd04   |hisd05     ]
+[hisd02     |hisf02a     |hisd03        |hisf02b     |hisd04   |hisd05     ]
+[hisd02     |hisf02a     |hisd03        |hisf02b     |hisd04   |hisd05     ]
+[hisd02     |hisf02a     |hisd03        |hisf02b     |hisd04   |hisd05     ]
+[hisd02     |hisf02a     |hisd03        |hisf02b     |hisd04   |hisd05     ]
+[hisd02     |hisf02a     |hisd03        |hisf02b     |hisd04   |hisd05     ]
+[hisd02     |hisf02a     |hisd03        |hisf02b     |hisd04   |hisd05     ]
+[hisd02     |hisf02a     |hisd03        |hisf02b     |hisd04   |hisd05     ]
+[hisd02     |hisf02a     |hisd03        |hisf02b     |hisd04   |hisd05     ]
+
+}
+END -- tb4
+Grid gr9
+{
+  ---------- Rows [idx   ]/[cnt   ]  ---  Details [cn2   ] ----------
+
+}
+END -- gr9
+END -- VBox1
+END -- p_flowset
+
+TABLES
+hisf_file,
+hisd_file,
+hisc_file
+ATTRIBUTES
+Edit hisc01=hisc_file.hisc01, tabIndex=1, not null, required;
+Edit hisc02=hisc_file.hisc02, tabIndex=2;
+ButtonEdit hisc03=hisc_file.hisc03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="Input the basic table. <^P>";
+Edit hisf02=hisf_file.hisf02, tabIndex=4, noEntry;
+ButtonEdit hisc04=hisc_file.hisc04, action=controlp, tabIndex=5, image="zoom", comment="Input the  condition field.<^P>";
+ButtonEdit hisc05=hisc_file.hisc05, action=controlp, tabIndex=6, image="zoom", comment="Input the  conditions .<^P>";
+ButtonEdit hisd02=hisd_file.hisd02, action=controlp, tabIndex=7, title="Object No", not null, required, image="zoom", comment="Input the table name. <^P>";
+Edit hisf02a=formonly.hisf02a type CHAR, tabIndex=8, title="Object Name", noEntry;
+ButtonEdit hisd03=hisd_file.hisd03, action=controlp, tabIndex=9, title="Relate Object", not null, required, image="zoom", comment="Input the relate table name. <^P>";
+Edit hisf02b=formonly.hisf02b type CHAR, tabIndex=10, title="Reltab Name", noEntry;
+ButtonEdit hisd04=hisd_file.hisd04, action=controlp, tabIndex=11, title="Relation", not null, required, image="zoom", comment="Input the relations. <^P>";
+ButtonEdit hisd05=hisd_file.hisd05, action=controlp, tabIndex=12, title="Conditions", image="zoom", comment="Input the conditions. <^P>";
+Edit idx=formonly.idx type SMALLINT, tabIndex=13, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=14, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hisd(hisd_file.hisd02,formonly.hisf02a,hisd_file.hisd03,formonly.hisf02b,hisd_file.hisd04,hisd_file.hisd05)
+SCREEN RECORD Undefined(hisc_file.hisc01,hisc_file.hisc02,hisc_file.hisc03,hisf_file.hisf02,hisc_file.hisc04,hisc_file.hisc05,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

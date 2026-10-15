@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft660y.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft660y")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr798
+{
+ <G group01                                             ><G group02                                          >
+  Item No.            [partno                        ]    Warehouse          [ware      ]
+  Return Qty          [tot_qty   ]                        Location           [loc       ]
+                                                          Lot No.            [lot                           ]
+ <                                                      ><                                                   >
+
+}
+END -- gr798
+END -- page01
+END -- folder01
+Table s_sfb
+{
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+
+}
+END -- s_sfb
+Grid gr799
+{
+ <G group03                                     ><G group04                                          >
+  [qty_t               ]                          [in_qty_t            ]
+ <                                              ><                                                   >
+
+}
+END -- gr799
+END -- VBox1
+END -- asft660y
+
+TABLES
+sfb_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit partno=formonly.partno type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P>Query. Can use \'*\'    .";
+Edit tot_qty=formonly.tot_qty type CHAR, tabIndex=2;
+Group group02:group02;
+Edit ware=formonly.ware type CHAR, tabIndex=3;
+Edit loc=formonly.loc type CHAR, tabIndex=4;
+Edit lot=formonly.lot type CHAR, tabIndex=5;
+Edit sfb05=sfb_file.sfb05, tabIndex=6, title="Item No.", noEntry;
+Edit sfb01=sfb_file.sfb01, tabIndex=7, title="W/O No.", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=8, title="Store-in Qty", noEntry;
+Edit y=formonly.y type CHAR, tabIndex=9, title="W/O to Store-in Blank", autoNext, upShift, comment="Y:W/O to Return Blank:NO Return";
+Edit in_qty=formonly.in_qty type CHAR, tabIndex=10, title="Return Qty";
+Group group03:group03, text="Stored-in Qty";
+Edit qty_t=formonly.qty_t type CHAR, tabIndex=11;
+Group group04:group04, text="Return Qty";
+Edit in_qty_t=formonly.in_qty_t type CHAR, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(sfb_file.sfb05,sfb_file.sfb01,formonly.qty,formonly.y,formonly.in_qty)
+SCREEN RECORD Undefined(formonly.partno,formonly.tot_qty,formonly.ware,formonly.loc,formonly.lot,formonly.qty_t,formonly.in_qty_t)
+END -- INSTRUCTIONS
+

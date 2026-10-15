@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli540.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli540")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr2422
+{
+  Budget No.           [gih01     ] [afa02                   ]
+  Department No.       [gih03     ] [gem02   ]
+ <G group01                                                    >
+ [gih02                           ]
+ <                                                             >
+
+}
+END -- gr2422
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr2423
+{
+ Record Owner        [gihuser   ]  Last Modified by    [gihmodu   ]  Data Valid Code     [gihacti   ]
+ Department          [gihgrup   ]  Create/Modify Date  [gihdate   ]
+
+    Record Orig.      [gihoriu     ]
+    Dept Orig.        [gihorig     ]
+}
+END -- gr2423
+END -- info
+END -- folder01
+Table s_gii
+{
+[gii04|gii05  |gii06         ]
+[gii04|gii05  |gii06         ]
+[gii04|gii05  |gii06         ]
+[gii04|gii05  |gii06         ]
+[gii04|gii05  |gii06         ]
+[gii04|gii05  |gii06         ]
+[gii04|gii05  |gii06         ]
+[gii04|gii05  |gii06         ]
+[gii04|gii05  |gii06         ]
+[gii04|gii05  |gii06         ]
+
+}
+END -- s_gii
+Grid gr2424
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2424
+END -- VBox1
+END -- agli540
+
+TABLES
+gii_file,
+gih_file
+ATTRIBUTES
+ButtonEdit gih01=gih_file.gih01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Budget No.  ";
+Edit afa02=formonly.afa02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit gih03=gih_file.gih03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P> Query Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=4, noEntry;
+Group group01:group01, text="Items";
+RadioGroup gih02=gih_file.gih02, tabIndex=5, not null, required, items=(("1", "Foreign Purchased"),("2", "Local Purchased"));
+Edit gihuser=gih_file.gihuser, tabIndex=6, noEntry;
+Edit gihmodu=gih_file.gihmodu, tabIndex=7, noEntry;
+Edit gihacti=gih_file.gihacti, tabIndex=8, noEntry, upShift;
+Edit gihgrup=gih_file.gihgrup, tabIndex=9, noEntry;
+DateEdit gihdate=gih_file.gihdate, tabIndex=10, noEntry;
+Edit gihoriu=gih_file.gihoriu, tabIndex=501, noEntry, not null;
+Edit gihorig=gih_file.gihorig, tabIndex=502, noEntry, not null;
+Edit gii04=gii_file.gii04, tabIndex=11, title="Year", not null, required;
+Edit gii05=gii_file.gii05, tabIndex=12, title="Period", not null, required;
+Edit gii06=gii_file.gii06, tabIndex=13, title="Amount", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=14, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gii(gii_file.gii04,gii_file.gii05,gii_file.gii06)
+SCREEN RECORD Undefined(gih_file.gih01,formonly.afa02,gih_file.gih03,formonly.gem02,gih_file.gih02,gih_file.gihuser,gih_file.gihmodu,gih_file.gihacti,gih_file.gihgrup,gih_file.gihdate,gih_file.gihoriu,gih_file.gihorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

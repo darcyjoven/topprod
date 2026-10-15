@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi206.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi206")
+VBox VBox1
+Folder pc296
+Page page01(text="Page01")
+Table s_toq
+{
+[toq01       |toq02                |toq03      |top02               |toqacti     ]
+[toq01       |toq02                |toq03      |top02               |toqacti     ]
+[toq01       |toq02                |toq03      |top02               |toqacti     ]
+[toq01       |toq02                |toq03      |top02               |toqacti     ]
+[toq01       |toq02                |toq03      |top02               |toqacti     ]
+[toq01       |toq02                |toq03      |top02               |toqacti     ]
+[toq01       |toq02                |toq03      |top02               |toqacti     ]
+[toq01       |toq02                |toq03      |top02               |toqacti     ]
+[toq01       |toq02                |toq03      |top02               |toqacti     ]
+[toq01       |toq02                |toq03      |top02               |toqacti     ]
+
+}
+END -- s_toq
+END -- page01
+END -- pc296
+Grid gr1339
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1339
+END -- VBox1
+END -- atmi206
+
+TABLES
+toq_file
+ATTRIBUTES
+Edit toq01=toq_file.toq01, tabIndex=1, title="Country NO.", not null, required, comment="KEY Field,No Blank/Repeated!";
+Edit toq02=toq_file.toq02, tabIndex=2, title="Country Name", not null, required, comment="No Blank/Repeated!";
+ButtonEdit toq03=toq_file.toq03, action=controlp, tabIndex=3, title="City No.", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit top02=formonly.top02 type VARCHAR, tabIndex=4, title="Name", noEntry;
+CheckBox toqacti=toq_file.toqacti, tabIndex=5, title="Valid?", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="No Blank/Repeated!";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_toq(toq_file.toq01,toq_file.toq02,toq_file.toq03,formonly.top02,toq_file.toqacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

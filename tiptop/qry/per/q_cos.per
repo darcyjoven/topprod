@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_cos.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Application No. Query")
+Grid gr3750
+{
+ <T s_cos                                                                                        >
+ [check |cos01            |cos03       |cos08                 |cnb04       |cos10    |desc      ]
+ [check |cos01            |cos03       |cos08                 |cnb04       |cos10    |desc      ]
+ [check |cos01            |cos03       |cos08                 |cnb04       |cos10    |desc      ]
+ [check |cos01            |cos03       |cos08                 |cnb04       |cos10    |desc      ]
+ [check |cos01            |cos03       |cos08                 |cnb04       |cos10    |desc      ]
+ [check |cos01            |cos03       |cos08                 |cnb04       |cos10    |desc      ]
+ [check |cos01            |cos03       |cos08                 |cnb04       |cos10    |desc      ]
+ [check |cos01            |cos03       |cos08                 |cnb04       |cos10    |desc      ]
+ [check |cos01            |cos03       |cos08                 |cnb04       |cos10    |desc      ]
+ [check |cos01            |cos03       |cos08                 |cnb04       |cos10    |desc      ]
+ <                                                                                               >
+
+}
+END -- gr3750
+END -- q_cos
+
+TABLES
+cnb_file,
+cos_file
+ATTRIBUTES
+Table s_cos:s_cos;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cos01=cos_file.cos01, tabIndex=2, title="Appl No.", noEntry;
+Edit cos03=cos_file.cos03, tabIndex=3, title="Appl Date", noEntry;
+Edit cos08=cos_file.cos08, tabIndex=4, title="Duty-Free Cert. No.", noEntry;
+Edit cnb04=cnb_file.cnb04, tabIndex=5, title="Appl Unit", noEntry;
+Edit cos10=cos_file.cos10, tabIndex=6, title="Status", noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=7, title="Desciption", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cos(formonly.check,cos_file.cos01,cos_file.cos03,cos_file.cos08,cnb_file.cnb04,cos_file.cos10,formonly.desc)
+END -- INSTRUCTIONS
+

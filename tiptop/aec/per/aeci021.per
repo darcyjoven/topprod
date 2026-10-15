@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci021.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci021")
+VBox VBox1
+Folder pc251
+Page page01(text="Main")
+Table s_sgf
+{
+[sgf01    |sgf02        |sgf03  |sgfac]
+[sgf01    |sgf02        |sgf03  |sgfac]
+[sgf01    |sgf02        |sgf03  |sgfac]
+[sgf01    |sgf02        |sgf03  |sgfac]
+[sgf01    |sgf02        |sgf03  |sgfac]
+[sgf01    |sgf02        |sgf03  |sgfac]
+[sgf01    |sgf02        |sgf03  |sgfac]
+[sgf01    |sgf02        |sgf03  |sgfac]
+[sgf01    |sgf02        |sgf03  |sgfac]
+[sgf01    |sgf02        |sgf03  |sgfac]
+
+}
+END -- s_sgf
+END -- page01
+END -- pc251
+Grid gr1626
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1626
+END -- VBox1
+END -- aeci021
+
+TABLES
+sgf_file
+ATTRIBUTES
+Edit sgf01=sgf_file.sgf01, tabIndex=1, title="Attribute", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit sgf02=sgf_file.sgf02, tabIndex=2, title="Description";
+Edit sgf03=sgf_file.sgf03, tabIndex=3, title="Class";
+CheckBox sgfac=sgf_file.sgfacti, tabIndex=4, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sgf(sgf_file.sgf01,sgf_file.sgf02,sgf_file.sgf03,sgf_file.sgfacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

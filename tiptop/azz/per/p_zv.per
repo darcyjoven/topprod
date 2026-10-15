@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zv.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_vprint")
+VBox VBox1
+Folder pc1
+Page page01(text="Page01")
+Grid gr1
+{
+ <G group01                                                                     >
+ [label3 ]      [zv02        ] [zx02                          ]
+ [label4       ][zv05        ] [zw02                          ]
+
+
+ <                                                                              >
+
+}
+END -- gr1
+END -- page01
+END -- pc1
+Table tb1
+{
+[zv01        |gaz03                         |zv06                |zv03        |zv03_desc             |zv09        |zv04                                   |zv07                          |zv08           |zvacti    ]
+[zv01        |gaz03                         |zv06                |zv03        |zv03_desc             |zv09        |zv04                                   |zv07                          |zv08           |zvacti    ]
+[zv01        |gaz03                         |zv06                |zv03        |zv03_desc             |zv09        |zv04                                   |zv07                          |zv08           |zvacti    ]
+[zv01        |gaz03                         |zv06                |zv03        |zv03_desc             |zv09        |zv04                                   |zv07                          |zv08           |zvacti    ]
+[zv01        |gaz03                         |zv06                |zv03        |zv03_desc             |zv09        |zv04                                   |zv07                          |zv08           |zvacti    ]
+[zv01        |gaz03                         |zv06                |zv03        |zv03_desc             |zv09        |zv04                                   |zv07                          |zv08           |zvacti    ]
+[zv01        |gaz03                         |zv06                |zv03        |zv03_desc             |zv09        |zv04                                   |zv07                          |zv08           |zvacti    ]
+[zv01        |gaz03                         |zv06                |zv03        |zv03_desc             |zv09        |zv04                                   |zv07                          |zv08           |zvacti    ]
+[zv01        |gaz03                         |zv06                |zv03        |zv03_desc             |zv09        |zv04                                   |zv07                          |zv08           |zvacti    ]
+[zv01        |gaz03                         |zv06                |zv03        |zv03_desc             |zv09        |zv04                                   |zv07                          |zv08           |zvacti    ]
+}
+END -- tb1
+Grid gr3
+{
+ ----------[labe][cnt   ][l][cn2   ] ----------
+
+
+
+
+}
+END -- gr3
+END -- VBox1
+END -- p_zv
+
+TABLES
+zv_file
+ATTRIBUTES
+Group group01:group01;
+Label label3:Label3, text=%"User ID";
+ButtonEdit zv02=zv_file.zv02, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!";
+Edit zx02=formonly.zx02 type VARCHAR, tabIndex=2, noEntry;
+Label label4:Label4, text=%"Category Code";
+ButtonEdit zv05=zv_file.zv05, action=controlp, tabIndex=3, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!";
+Edit zw02=formonly.zw02 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit zv01=zv_file.zv01, action=controlp, tabIndex=5, title="Program ID", not null, required, image="zoom", downShift, comment="KEYField,No Blank/Repeated!";
+Edit gaz03=formonly.gaz03 type VARCHAR, tabIndex=6, title="Program Name", noEntry;
+ButtonEdit zv06=zv_file.zv06, action=controlp, tabIndex=7, title="Report Template", not null, required, image="zoom", comment="KEYField,No Blank/Repeated!";
+ButtonEdit zv03=zv_file.zv03, action=controlp, tabIndex=14, title="Print Method", not null, required, image="zoom", upShift;
+Edit zv03_desc=formonly.zv03_desc, tabIndex=15, title=%"Print Method Description", noEntry;
+Edit zv09=zv_file.zv09, tabIndex=16, title=%"copies", not null, required;
+ComboBox zv04=zv_file.zv04, tabIndex=10, title="Compact Print Option", not null, queryEditable, items=(("1", %"VTCP Standard Print(A4:78 Letter:80 US SF:132 A3:162)"),("2", %"VTCP ET code Compact Print(A4:117 Letter:125 US SF:204 A3:243)"),("3", %"VTCP ET code Compact Print(A4:156 Letter:165 US SF:272 A3:324)"),("4", %"VTCP ET code Compact Print(A4:234 Letter:250 US SF:408 A3:486)"));
+ButtonEdit zv07=zv_file.zv07, action=controlp, tabIndex=9, title="Printer Name", image="zoom";
+CheckBox zv08=zv_file.zv08, tabIndex=8, title="Print Immediately", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Print Immediately and Auto close window.";
+CheckBox zvacti=zv_file.zvacti, tabIndex=13, title=%"Vaild", not null, valueChecked = "Y", valueUnchecked = "N";
+Label labe:Label2, text=%"Rows";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Label l:Label1, text=%"/";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zv(zv_file.zv01,formonly.gaz03,zv_file.zv06,zv_file.zv03,formonly.zv03_desc,zv_file.zv09,zv_file.zv04,zv_file.zv07,zv_file.zv08,zv_file.zvacti)
+SCREEN RECORD Undefined(zv_file.zv02,formonly.zx02,zv_file.zv05,formonly.zw02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

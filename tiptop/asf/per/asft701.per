@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft701")
+Folder pc164
+Page page01(text="Page01")
+VBox VBox1
+Table s_shd
+{
+[shd02     |shb03         |shd06                |shd03              |shd04           |shd05                   |shd16   |shd07     |shd13         |shd14                    |shd15        |shd10             |shd11                        |shd12             |shd18     |azf03     ]
+[shd02     |shb03         |shd06                |shd03              |shd04           |shd05                   |shd16   |shd07     |shd13         |shd14                    |shd15        |shd10             |shd11                        |shd12             |shd18     |azf03     ]
+[shd02     |shb03         |shd06                |shd03              |shd04           |shd05                   |shd16   |shd07     |shd13         |shd14                    |shd15        |shd10             |shd11                        |shd12             |shd18     |azf03     ]
+[shd02     |shb03         |shd06                |shd03              |shd04           |shd05                   |shd16   |shd07     |shd13         |shd14                    |shd15        |shd10             |shd11                        |shd12             |shd18     |azf03     ]
+[shd02     |shb03         |shd06                |shd03              |shd04           |shd05                   |shd16   |shd07     |shd13         |shd14                    |shd15        |shd10             |shd11                        |shd12             |shd18     |azf03     ]
+[shd02     |shb03         |shd06                |shd03              |shd04           |shd05                   |shd16   |shd07     |shd13         |shd14                    |shd15        |shd10             |shd11                        |shd12             |shd18     |azf03     ]
+[shd02     |shb03         |shd06                |shd03              |shd04           |shd05                   |shd16   |shd07     |shd13         |shd14                    |shd15        |shd10             |shd11                        |shd12             |shd18     |azf03     ]
+[shd02     |shb03         |shd06                |shd03              |shd04           |shd05                   |shd16   |shd07     |shd13         |shd14                    |shd15        |shd10             |shd11                        |shd12             |shd18     |azf03     ]
+[shd02     |shb03         |shd06                |shd03              |shd04           |shd05                   |shd16   |shd07     |shd13         |shd14                    |shd15        |shd10             |shd11                        |shd12             |shd18     |azf03     ]
+[shd02     |shb03         |shd06                |shd03              |shd04           |shd05                   |shd16   |shd07     |shd13         |shd14                    |shd15        |shd10             |shd11                        |shd12             |shd18     |azf03     ]
+
+}
+END -- s_shd
+END -- VBox1
+END -- page01
+END -- pc164
+END -- asft701
+
+TABLES
+shd_file
+ATTRIBUTES
+Edit shd02=shd_file.shd02, tabIndex=1, title="Line No.", not null, required;
+DateEdit shb03=formonly.shb03 type CHAR, tabIndex=2, title="Store-in Date", noEntry;
+ButtonEdit shd06=shd_file.shd06, action=controlp, tabIndex=3, title="Offline Item No.", not null, required, image="zoom", comment="<^P>Qry Item Coding";
+ButtonEdit shd03=shd_file.shd03, action=controlp, tabIndex=4, title="Offline Warehouse", not null, required, image="zoom", comment="<^P>Query Inventory Details <^T>Qry Warehouse";
+ButtonEdit shd04=shd_file.shd04, action=controlp, tabIndex=5, title="Offline Loc No.", image="zoom", comment="<^P>Query Inventory Details <^T>Qry Location";
+Edit shd05=shd_file.shd05, tabIndex=6, title="Offline Lot No.";
+Edit shd16=shd_file.shd16, tabIndex=14, title=%"Unit";
+Edit shd07=shd_file.shd07, tabIndex=7, title="Qty", not null, required;
+ButtonEdit shd13=shd_file.shd13, action=controlp, tabIndex=8, title="Par/Ref Unit", image="zoom", comment="<^P>Qry Details";
+Edit shd14=shd_file.shd14, tabIndex=9, title="Par/Ref Conversion Rate";
+Edit shd15=shd_file.shd15, tabIndex=10, title="Par/Ref Qty";
+ButtonEdit shd10=shd_file.shd10, action=controlp, tabIndex=11, title="Chi/Offline Unit", image="zoom", comment="<^P>Qry Details";
+Edit shd11=shd_file.shd11, tabIndex=12, title="Chi/Offline Conversion Rate";
+Edit shd12=shd_file.shd12, tabIndex=13, title="Chi/Offline Qty";
+ButtonEdit shd18=formonly.shd18 type VARCHAR, action=controlp, tabIndex=15, title=%"Reason Code", image="zoom";
+Edit azf03=formonly.azf03, tabIndex=16, title=%"Description ", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_shd(shd_file.shd02,formonly.shb03,shd_file.shd06,shd_file.shd03,shd_file.shd04,shd_file.shd05,shd_file.shd16,shd_file.shd07,shd_file.shd13,shd_file.shd14,shd_file.shd15,shd_file.shd10,shd_file.shd11,shd_file.shd12,formonly.shd18,formonly.azf03)
+END -- INSTRUCTIONS
+

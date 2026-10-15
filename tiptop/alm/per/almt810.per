@@ -1,0 +1,97 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/alm/4fd/almt810.tmp.per created 2010-10-25T17:56:48
+-- File created from /u3/tiptop/alm/4fd/almt810.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almt810")
+                                                                                                                                           
+      VBox vb6                                                                                                                             
+      Folder pc3                                                                                                                           
+      Page main(text=%"main")                                                                                                              
+                                                                                                                                           
+        Grid gr9                                                                                                                           
+        {                                                                                                                                  
+                                                                                                                                           
+           lsi01   [lsi01              ]                             lsi07  [lsi07             ]                                           
+           lsiplant[lsiplant       ] [lma02                ]         lsi08  [lsi08             ]                                           
+           lsilegal[lsilegal       ] [azt02                ]         lsi10  [lsi10             ] [imgmksg]                                 
+           lsi02   [lsi02              ]                             lsi11  [lsi11             ] [       ]                                 
+           lsi03   [lsi03              ]                             lsi12  [lsi12             ]                                           
+           lsi04   [lsi04              ]                             lsi09  [lsi09             ]                                           
+           lsi05   [lsi05              ]                                    [                  ]                                           
+           lne05   [lne05                     ]                                                                                            
+           lsi06   [lsi06              ]                                                                                                   
+                                                                                                                                           
+        }                                                                                                                                  
+        END                                                                                                                                
+      END -- Page                                                                                                                          
+      Page info(text=%"info")                                                                                                              
+                                                                                                                                           
+       Grid gr7                                                                                                                            
+       {                                                                                                                                   
+        Record Owner              [lsiuser   ]  Create Date             [lsicrat     ]      Data Valid Code     [lsiacti   ]               
+        Department                [lsigrup   ]  Last Modified by        [lsimodu     ]      Modify Date         [lsidate   ]               
+        Record Orig.              [lsioriu   ]                                                                                             
+        Dept Orig.                [lsiorig   ]                                                                                             
+                                                                                                                                           
+                                                                                                                                           
+                                                                                                                                           
+       }                                                                                                                                   
+       END                                                                                                                                 
+                                                                                                                                           
+      END -- Page                                                                                                                          
+      END -- Folder                                                                                                                        
+      Grid gr8                                                                                                                             
+      {                                                                                                                                    
+        ---------- Rows[idx   ]/[cnt   ] ----------                                                                                        
+                                                                                                                                           
+                                                                                                                                           
+      }                                                                                                                                    
+      END                                                                                                                                  
+      END -- VBox                                                                                                                          
+END -- Form
+
+TABLES
+lsi_file
+
+ATTRIBUTES
+ButtonEdit lsi01=lsi_file.lsi01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ButtonEdit lsi07=lsi_file.lsi07, action=controlp, tabIndex=10, noEntry, image="zoom.png";
+ButtonEdit lsiplant=lsi_file.lsiplant, action=controlp, tabIndex=2, noEntry, image="zoom.png";
+Edit lma02=formonly.lma02, tabIndex=24;
+ButtonEdit lsi08=lsi_file.lsi08, action=controlp, tabIndex=11, noEntry, image="zoom.png";
+ButtonEdit lsilegal=lsi_file.lsilegal, action=controlp, tabIndex=3, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02, tabIndex=25;
+ComboBox lsi10=lsi_file.lsi10, tabIndex=12, noEntry, items=(("N", "Unconfirmed"),("Y", "Confirm"));
+Image imgmksg=formonly.imgmksg;
+ButtonEdit lsi02=lsi_file.lsi02, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit lsi11=lsi_file.lsi11, tabIndex=13, noEntry;
+Edit lsi03=lsi_file.lsi03, tabIndex=5, noEntry;
+DateEdit lsi12=lsi_file.lsi12, tabIndex=15, noEntry;
+DateEdit lsi04=lsi_file.lsi04, tabIndex=6;
+TextEdit lsi09=lsi_file.lsi09, tabIndex=14;
+ButtonEdit lsi05=lsi_file.lsi05, action=controlp, tabIndex=7, noEntry, image="zoom.png";
+Edit lne05=formonly.lne05, tabIndex=8, noEntry;
+ButtonEdit lsi06=lsi_file.lsi06, action=controlp, tabIndex=9, noEntry, image="zoom.png";
+Edit lsiuser=lsi_file.lsiuser, tabIndex=16, noEntry;
+DateEdit lsicrat=lsi_file.lsicrat, tabIndex=20, noEntry;
+Edit lsiacti=lsi_file.lsiacti, tabIndex=18, noEntry, upShift;
+Edit lsigrup=lsi_file.lsigrup, tabIndex=19, noEntry;
+Edit lsimodu=lsi_file.lsimodu, tabIndex=17, noEntry;
+DateEdit lsidate=lsi_file.lsidate, tabIndex=21, noEntry;
+Edit lsioriu=lsi_file.lsioriu, tabIndex=501, noEntry;
+Edit lsiorig=lsi_file.lsiorig, tabIndex=502, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=23, noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

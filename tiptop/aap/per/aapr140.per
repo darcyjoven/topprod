@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr140.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr140")
+VBox VBox1
+Grid gr221
+{
+ <G group01                                                                              >
+  Shipment Vend       [rvv06               ]   Transaction Catetory[rvv03               ]
+  Date                [rvv09               ]   Currency            [pmm22               ]
+  Document NO.        [rvv01               ]   PO NO.              [rvb04               ]
+  Invoice NO.         [rvb22               ]   L/CRcpt             [rva04               ]
+
+ <                                                                                       >
+}
+END -- gr221
+Group group02(text="INPUT")
+Grid gr222
+{
+  Plant NO.           [azp01     ]
+ [a                   ]
+ [b                   ]
+
+ <G group03                                                      >
+  [v                             ]
+ <                                                               >
+ <G group04                                                      >
+  [s1                ][s2                 ][s3                  ]
+  [t1                ][t2                 ][t3                  ]
+  [u1                ][u2                 ][u3                  ]
+ <                                                               >
+
+}
+END -- gr222
+END -- group02
+Grid gr223
+{
+[more                                                        ]
+
+}
+END -- gr223
+END -- VBox1
+END -- aapr140
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit rvv06=formonly.rvv06 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ComboBox rvv03=formonly.rvv03 type VARCHAR, tabIndex=22, queryEditable, items=(("1", %"Store-in"),("2", %"QC/Return"),("3", %"Warehouse Return"));
+DateEdit rvv09=formonly.rvv09 type DATE, tabIndex=2;
+ButtonEdit pmm22=formonly.pmm22 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit rvv01=formonly.rvv01 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit rvb04=formonly.rvb04 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Edit rvb22=formonly.rvb22 type VARCHAR, tabIndex=6;
+Edit rva04=formonly.rva04 type VARCHAR, tabIndex=7;
+Edit azp01=formonly.azp01 type VARCHAR, tabIndex=8;
+CheckBox a=formonly.a type CHAR, tabIndex=9, text="Print Sample", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type CHAR, tabIndex=10, text="Print Zero Price", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Data Option";
+RadioGroup v=formonly.v type CHAR, tabIndex=11, default = "3", items=(("1", "Not Matchd"),("2", "Matchd"),("3", "All "));
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=12, queryEditable, items=(("1", "Shp.Vend"),("2", "Date    "),("3", "Doc No. "),("4", "Invoice NO."),("5", "Tran Cat"),("6", "Currency"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=13, queryEditable, items=(("1", "Shp.Vend"),("2", "Date    "),("3", "Doc No. "),("4", "Invoice NO."),("5", "Tran Cat"),("6", "Currency"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=14, queryEditable, items=(("1", "Shp.Vend"),("2", "Date    "),("3", "Doc No. "),("4", "Invoice NO."),("5", "Tran Cat"),("6", "Currency"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=15, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=16, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=17, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=18, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=19, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=20, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=21, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rvv06,formonly.rvv09,formonly.pmm22,formonly.rvv01,formonly.rvb04,formonly.rvb22,formonly.rva04,formonly.azp01,formonly.a,formonly.b,formonly.v,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.more,formonly.rvv03)
+END -- INSTRUCTIONS
+

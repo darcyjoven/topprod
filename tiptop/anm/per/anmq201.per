@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmq201")
+VBox vb6
+Folder pc772
+Page page01(text="Main")
+VBox vb5
+Table s_nmh
+{
+[nmh24         |nmh38     |nmh04              |nmh05          |nmh02               |nmh31        |nmh30                 |nmh21          |nmh01           ]
+[nmh24         |nmh38     |nmh04              |nmh05          |nmh02               |nmh31        |nmh30                 |nmh21          |nmh01           ]
+[nmh24         |nmh38     |nmh04              |nmh05          |nmh02               |nmh31        |nmh30                 |nmh21          |nmh01           ]
+[nmh24         |nmh38     |nmh04              |nmh05          |nmh02               |nmh31        |nmh30                 |nmh21          |nmh01           ]
+[nmh24         |nmh38     |nmh04              |nmh05          |nmh02               |nmh31        |nmh30                 |nmh21          |nmh01           ]
+[nmh24         |nmh38     |nmh04              |nmh05          |nmh02               |nmh31        |nmh30                 |nmh21          |nmh01           ]
+[nmh24         |nmh38     |nmh04              |nmh05          |nmh02               |nmh31        |nmh30                 |nmh21          |nmh01           ]
+[nmh24         |nmh38     |nmh04              |nmh05          |nmh02               |nmh31        |nmh30                 |nmh21          |nmh01           ]
+[nmh24         |nmh38     |nmh04              |nmh05          |nmh02               |nmh31        |nmh30                 |nmh21          |nmh01           ]
+[nmh24         |nmh38     |nmh04              |nmh05          |nmh02               |nmh31        |nmh30                 |nmh21          |nmh01           ]
+
+}
+END -- s_nmh
+Grid gr4149
+{
+                                    Number of Checks    [cnt2                ]                               Check Amount        [cnt3                ]
+
+}
+END -- gr4149
+END -- vb5
+END -- page01
+END -- pc772
+Grid gr4150
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4150
+END -- vb6
+END -- anmq201
+
+ATTRIBUTES
+ComboBox nmh24=formonly.nmh24 type CHAR, tabIndex=1, title="Note Status", noEntry, not null, required, queryEditable, items=(("1", %"Untransaction"),("2", %"Collection Discount"),("3", %"Pledge"),("4", %"Note discount"),("5", %"Transfer"),("6", %"Withdraw"),("7", %"Note Returned"),("8", %"Cash"));
+ComboBox nmh38=formonly.nmh38 type CHAR, tabIndex=12, title="Confirmation", items=(("Y", "Confirmed"),("N", "Uconfirmed"),("X", "Void"));
+DateEdit nmh04=formonly.nmh04 type DATE, tabIndex=2, title="Note Received Date";
+DateEdit nmh05=formonly.nmh05 type DATE, tabIndex=3, title="Due Date";
+Edit nmh02=formonly.nmh02 type CHAR, tabIndex=4, title="Face Value";
+Edit nmh31=formonly.nmh31 type CHAR, tabIndex=5, title="Check Number";
+Edit nmh30=formonly.nmh30 type CHAR, tabIndex=6, title="Customer Abbreviation", noEntry;
+Edit nmh21=formonly.nmh21 type CHAR, tabIndex=7, title="Remitting Bank";
+Edit nmh01=formonly.nmh01 type CHAR, tabIndex=8, title="Note Receipt#";
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=9, noEntry;
+Edit cnt3=formonly.cnt3 type DECIMAL, tabIndex=10, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmh(formonly.nmh24,formonly.nmh38,formonly.nmh04,formonly.nmh05,formonly.nmh02,formonly.nmh31,formonly.nmh30,formonly.nmh21,formonly.nmh01)
+SCREEN RECORD Undefined(formonly.cnt2,formonly.cnt3,formonly.cnt)
+END -- INSTRUCTIONS
+

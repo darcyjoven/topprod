@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp451.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp451")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4886
+{
+ <G group01                                    >
+  P/R No.             [pmk01             ]
+
+ <                                             >
+ <G group03                                    >
+ [y                            ]
+ <                                             >
+
+}
+END -- gr4886
+END -- page01
+END -- folder01
+Table s_pml
+{
+[sure |pml01          |pml02|pmk09_b   |pmc03_b        |pml04                |pml16_d           |qty              ]
+[sure |pml01          |pml02|pmk09_b   |pmc03_b        |pml04                |pml16_d           |qty              ]
+[sure |pml01          |pml02|pmk09_b   |pmc03_b        |pml04                |pml16_d           |qty              ]
+[sure |pml01          |pml02|pmk09_b   |pmc03_b        |pml04                |pml16_d           |qty              ]
+[sure |pml01          |pml02|pmk09_b   |pmc03_b        |pml04                |pml16_d           |qty              ]
+[sure |pml01          |pml02|pmk09_b   |pmc03_b        |pml04                |pml16_d           |qty              ]
+[sure |pml01          |pml02|pmk09_b   |pmc03_b        |pml04                |pml16_d           |qty              ]
+[sure |pml01          |pml02|pmk09_b   |pmc03_b        |pml04                |pml16_d           |qty              ]
+[sure |pml01          |pml02|pmk09_b   |pmc03_b        |pml04                |pml16_d           |qty              ]
+[sure |pml01          |pml02|pmk09_b   |pmc03_b        |pml04                |pml16_d           |qty              ]
+
+}
+END -- s_pml
+Grid gr4887
+{
+ [select_all    ] [cancel_all  ] Select Counts       [cn3       ]
+ ---------- Rows [cn2   ] ----------
+}
+END -- gr4887
+END -- VBox1
+END -- apmp451
+
+TABLES
+pml_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit pmk01=formonly.pmk01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Enter a P/R # to Close  <^P> Qry P/R ";
+Group group03:group03;
+CheckBox y=formonly.y type CHAR, tabIndex=2, text="Display closed data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sure=formonly.sure type CHAR, tabIndex=3, title="Sure", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pml01=pml_file.pml01, tabIndex=10, title="P/R No.", noEntry;
+Edit pml02=pml_file.pml02, tabIndex=4, title="Ln#", noEntry;
+Edit pmk09_b=formonly.pmk09_b type VARCHAR, tabIndex=11, title="Vender Code", noEntry;
+Edit pmc03_b=formonly.pmc03_b type VARCHAR, tabIndex=12, title="Vender", noEntry;
+Edit pml04=pml_file.pml04, tabIndex=5, title="Item No.", noEntry;
+Edit pml16_d=formonly.pml16_d type CHAR, tabIndex=6, title="Current Status", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=7, title="UnTransferred Qty", noEntry;
+Button select_all:select_all, comment="Select All";
+Button cancel_all:cancel_all, comment="Cancel All";
+Edit cn3=formonly.cn3 type CHAR, tabIndex=8;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pml(formonly.sure,pml_file.pml01,pml_file.pml02,formonly.pmk09_b,formonly.pmc03_b,pml_file.pml04,formonly.pml16_d,formonly.qty)
+SCREEN RECORD Undefined(formonly.pmk01,formonly.y,formonly.cn3,formonly.cn2)
+END -- INSTRUCTIONS
+

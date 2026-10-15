@@ -1,0 +1,77 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi110.per created Wed Jan 23 05:30:30 2008
+-- File created from axdi110.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi110")
+-- GRID
+-- PAGE
+-- GRID
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1556
+      PAGE page01( TEXT="Main")
+        GRID gr7746
+        {
+         Maintainment Item   [aa0       ] [aa1                 ]
+         Category            [aa2       ] [aa3       ]
+
+        <G group01                                                      >
+         Maintainment Content [aa4                                     ]
+                              [aa5                                     ]
+                              [aa6                                     ]
+                              [aa7                                     ]
+
+        <                                                               >
+
+
+        }
+        END -- GRID
+      END -- PAGE
+      PAGE info( TEXT="Info")
+        GRID gr7747
+        {
+         Record Owner        [aa8       ] Last Modified by    [aa9       ] Data Valid Code     [ab0       ]
+         Department          [ab1       ] Create/Modify Date  [ab2       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    GRID gr7748
+    {
+     ----------Rows [ab3   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES obu_file
+
+ATTRIBUTES
+  EDIT aa0=obu_file.obu01, COMMENT="KEY Field, No Blank/Repeated!", NOT NULL, REQUIRED, TABINDEX=1;
+  EDIT aa1=obu_file.obu02, TABINDEX=2;
+  COMBOBOX aa2=obu_file.obu03, NOT NULL, REQUIRED, TABINDEX=3, ITEMS=(("1","Maintain"),("2","Repair"));
+  EDIT aa3=FORMONLY.desc, NOENTRY, TABINDEX=4;
+  GROUP group01 : group01;
+  EDIT aa4=obu_file.obu04, TABINDEX=5;
+  EDIT aa5=obu_file.obu05, TABINDEX=6;
+  EDIT aa6=obu_file.obu06, TABINDEX=7;
+  EDIT aa7=obu_file.obu07, TABINDEX=8;
+  EDIT aa8=obu_file.obuuser, NOENTRY, TABINDEX=9;
+  EDIT aa9=obu_file.obumodu, NOENTRY, TABINDEX=10;
+  EDIT ab0=obu_file.obuacti, NOENTRY, TABINDEX=11;
+  EDIT ab1=obu_file.obugrup, NOENTRY, TABINDEX=12;
+  EDIT ab2=obu_file.obudate, NOENTRY, TABINDEX=13;
+  EDIT ab3=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=14;
+END

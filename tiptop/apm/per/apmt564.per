@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt564.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt564")
+Folder pc1013
+Page page01(text="Page01")
+Grid gr5317
+{
+ <G group01                            >
+ [pmn14                 ]
+ [pmn15                 ]
+  Delivery Date [pmn33       ]
+  Arriving Date [pmn34       ]
+  Store Date    [pmn35       ]
+  Confirm Date  [pmn36       ]
+  Arriving Date [pmn37       ]
+
+ <                                     >
+
+}
+END -- gr5317
+END -- page01
+END -- pc1013
+END -- apmt564
+
+TABLES
+pmn_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox pmn14=pmn_file.pmn14, tabIndex=1, text="Partial Delivery", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pmn15=pmn_file.pmn15, tabIndex=2, text="Receipt Early", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit pmn33=pmn_file.pmn33, tabIndex=3, not null, required;
+DateEdit pmn34=pmn_file.pmn34, tabIndex=4, not null, required;
+DateEdit pmn35=pmn_file.pmn35, tabIndex=5, not null, required;
+DateEdit pmn36=pmn_file.pmn36, tabIndex=6;
+DateEdit pmn37=pmn_file.pmn37, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pmn_file.pmn14,pmn_file.pmn15,pmn_file.pmn33,pmn_file.pmn34,pmn_file.pmn35,pmn_file.pmn36,pmn_file.pmn37)
+END -- INSTRUCTIONS
+

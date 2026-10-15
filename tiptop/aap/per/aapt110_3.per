@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt110_3")
+VBox VBox1
+Folder pc37
+Page page01(text="Main")
+Table s_apd
+{
+[apd0|apd03                         ]
+[apd0|apd03                         ]
+[apd0|apd03                         ]
+[apd0|apd03                         ]
+[apd0|apd03                         ]
+[apd0|apd03                         ]
+[apd0|apd03                         ]
+[apd0|apd03                         ]
+[apd0|apd03                         ]
+[apd0|apd03                         ]
+
+}
+END -- s_apd
+END -- page01
+END -- pc37
+END -- VBox1
+END -- aapt110_3
+
+TABLES
+apd_file
+ATTRIBUTES
+Edit apd0=apd_file.apd02, tabIndex=1, title="S/N", not null, required;
+Edit apd03=apd_file.apd03, tabIndex=2, title="Memo";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apd(apd_file.apd02,apd_file.apd03)
+END -- INSTRUCTIONS
+

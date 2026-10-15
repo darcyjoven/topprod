@@ -1,0 +1,144 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amm/42f/amms100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amms100")
+Folder pc697
+Page page01(text="Main")
+Grid gr3782
+{
+ <G group01                                                                                                >
+ [mmd01                         ]     W/O Type            [mmd011    ]
+ [mmd02                         ]     MISC Receipt Type   [mmd021    ]     Misc Reason         [mmd022    ]
+ [mmd03                         ]     Material Req.Type   [mmd031    ]
+ [mmd04                         ]     Store-in Note Type  [mmd041    ]
+ <                                                                                                         >
+ <G group02                                                                                                >
+ [mmd05                         ]     Purchase Requisite    [mmd051    ]
+ [mmd06                         ]     P/O Type              [mmd061    ]
+ [mmd07                         ]     Receipt Note          [mmd071    ]
+ [mmd08                         ]     Receiving Report Type [mmd081    ]
+ <                                                                                                         >
+ <G group03                                                                                                >
+ [mmd09                         ]     W/O Type              [mmd091    ]
+ [mmd10                         ]     P/O Type              [mmd101    ]
+ [mmd12                         ]     Material Req. Type    [mmd121    ]
+ [mmd13                         ]     Receipt Note          [mmd131    ]
+ [mmd14                         ]     Receiving Report Type [mmd141    ]
+ <                                                                                                         >
+ <G group04                                                                                                >
+  Mold labor. leads   [mmd15               ]
+  DR/Hour             [mmd16               ]
+ <                                                                                                         >
+
+}
+END -- gr3782
+END -- page01
+Page info(text="Info")
+Grid gr3783
+{
+ Record Owner        [mmduser   ] Last Modified by    [mmdmodu   ]
+ Department          [mmdgrup   ] Create/Modify Date  [mmddate   ]
+ Record Orig.        [mmdoriu   ]
+ Dept Orig.          [mmdorig   ]
+}
+END -- gr3783
+END -- info
+Page userdefined_field(text=%"User Defined Field")
+Grid Grid1
+{
+
+ userdefined_field01[mmdud01                 ]userdefined_field09[mmdud09                ]
+                    [                        ]
+ userdefined_field02[mmdud02                 ]userdefined_field10[mmdud10                ]
+
+ userdefined_field03[mmdud03                 ]userdefined_field11[mmdud11                ]
+
+ userdefined_field04[mmdud04                 ]userdefined_field12[mmdud12                ]
+
+ userdefined_field05[mmdud05                 ]userdefined_field13[mmdud13                ]
+
+ userdefined_field06[mmdud06                 ]userdefined_field14[mmdud14                ]
+
+ userdefined_field07[mmdud07                 ]userdefined_field15[mmdud15                ]
+
+ userdefined_field08[mmdud08                 ]
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- userdefined_field
+END -- pc697
+END -- amms100
+
+TABLES
+mmd_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox mmd01=mmd_file.mmd01, tabIndex=1, text="Manufactured-default c/f W/O", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit mmd011=mmd_file.mmd011, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Documents";
+CheckBox mmd02=mmd_file.mmd02, tabIndex=3, text="MISC Receipt Note", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit mmd021=mmd_file.mmd021, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Documents";
+ButtonEdit mmd022=mmd_file.mmd022, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Reason Code";
+CheckBox mmd03=mmd_file.mmd03, tabIndex=6, text="Material Requisite", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit mmd031=mmd_file.mmd031, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Documents";
+CheckBox mmd04=mmd_file.mmd04, tabIndex=8, text="Store-in Note", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit mmd041=mmd_file.mmd041, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Documents";
+Group group02:group02;
+CheckBox mmd05=mmd_file.mmd05, tabIndex=10, text="Purchase-Default c/f PR", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit mmd051=mmd_file.mmd051, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Documents";
+CheckBox mmd06=mmd_file.mmd06, tabIndex=12, text="P/O", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit mmd061=mmd_file.mmd061, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Documents";
+CheckBox mmd07=mmd_file.mmd07, tabIndex=14, text="Receipt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit mmd071=mmd_file.mmd071, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry Documents";
+CheckBox mmd08=mmd_file.mmd08, tabIndex=16, text=" Receiving Report", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit mmd081=mmd_file.mmd081, action=controlp, tabIndex=17, image="zoom", comment="<^P>Qry Documents";
+Group group03:group03;
+CheckBox mmd09=mmd_file.mmd09, tabIndex=18, text="Subcontracting-Default C/F W/O", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit mmd091=mmd_file.mmd091, action=controlp, tabIndex=19, image="zoom", comment="<^P>Qry Documents";
+CheckBox mmd10=mmd_file.mmd10, tabIndex=20, text="P/O", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit mmd101=mmd_file.mmd101, action=controlp, tabIndex=21, image="zoom", comment="<^P>Qry Documents";
+CheckBox mmd12=mmd_file.mmd12, tabIndex=22, text="Material Requisite", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit mmd121=mmd_file.mmd121, action=controlp, tabIndex=23, image="zoom", comment="<^P>Qry Documents";
+CheckBox mmd13=mmd_file.mmd13, tabIndex=24, text="Receipt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit mmd131=mmd_file.mmd131, action=controlp, tabIndex=25, image="zoom", comment="<^P>Qry Documents";
+CheckBox mmd14=mmd_file.mmd14, tabIndex=26, text="Receiving Report", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit mmd141=mmd_file.mmd141, action=controlp, tabIndex=27, image="zoom", comment="<^P>Qry Documents";
+Group group04:group04;
+Edit mmd15=mmd_file.mmd15, tabIndex=28;
+ButtonEdit mmd16=mmd_file.mmd16, action=controlp, tabIndex=29, image="zoom", comment="<^P>Qry Warehouse";
+Edit mmduser=formonly.mmduser type CHAR, tabIndex=30, noEntry;
+Edit mmdmodu=formonly.mmdmodu type CHAR, tabIndex=31, noEntry;
+Edit mmdgrup=formonly.mmdgrup type CHAR, tabIndex=32, noEntry;
+DateEdit mmddate=formonly.mmddate type CHAR, tabIndex=33, noEntry;
+Edit mmdoriu=formonly.mmdoriu type CHAR, tabIndex=501, noEntry;
+Edit mmdorig=formonly.mmdorig type CHAR, tabIndex=502, noEntry;
+TextEdit mmdud01=mmd_file.mmdud01, tabIndex=510;
+Edit mmdud09=mmd_file.mmdud09, tabIndex=511;
+Edit mmdud02=mmd_file.mmdud02, tabIndex=509;
+Edit mmdud10=mmd_file.mmdud10, tabIndex=512;
+Edit mmdud03=mmd_file.mmdud03, tabIndex=507;
+Edit mmdud11=mmd_file.mmdud11, tabIndex=514;
+Edit mmdud04=mmd_file.mmdud04, tabIndex=508;
+Edit mmdud12=mmd_file.mmdud12, tabIndex=513;
+Edit mmdud05=mmd_file.mmdud05, tabIndex=506;
+DateEdit mmdud13=mmd_file.mmdud13, tabIndex=515;
+Edit mmdud06=mmd_file.mmdud06, tabIndex=505;
+DateEdit mmdud14=mmd_file.mmdud14, tabIndex=516;
+Edit mmdud07=mmd_file.mmdud07, tabIndex=504;
+DateEdit mmdud15=mmd_file.mmdud15, tabIndex=517;
+Edit mmdud08=mmd_file.mmdud08, tabIndex=503;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(mmd_file.mmd01,mmd_file.mmd011,mmd_file.mmd02,mmd_file.mmd021,mmd_file.mmd022,mmd_file.mmd03,mmd_file.mmd031,mmd_file.mmd04,mmd_file.mmd041,mmd_file.mmd05,mmd_file.mmd051,mmd_file.mmd06,mmd_file.mmd061,mmd_file.mmd07,mmd_file.mmd071,mmd_file.mmd08,mmd_file.mmd081,mmd_file.mmd09,mmd_file.mmd091,mmd_file.mmd10,mmd_file.mmd101,mmd_file.mmd12,mmd_file.mmd121,mmd_file.mmd13,mmd_file.mmd131,mmd_file.mmd14,mmd_file.mmd141,mmd_file.mmd15,mmd_file.mmd16,formonly.mmduser,formonly.mmdmodu,formonly.mmdgrup,formonly.mmddate,formonly.mmdoriu,formonly.mmdorig,mmd_file.mmdud08,mmd_file.mmdud07,mmd_file.mmdud06,mmd_file.mmdud05,mmd_file.mmdud03,mmd_file.mmdud04,mmd_file.mmdud02,mmd_file.mmdud01,mmd_file.mmdud09,mmd_file.mmdud10,mmd_file.mmdud12,mmd_file.mmdud11,mmd_file.mmdud13,mmd_file.mmdud14,mmd_file.mmdud15)
+END -- INSTRUCTIONS
+

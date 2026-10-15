@@ -1,0 +1,116 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt605.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt605")
+VBox vb3
+Folder folder01
+Page Page3(text=%"Basic Data")
+Grid gr4
+{
+
+ Document     [rxp00     ]      POS Tran.NO.   [rxp07               ]Certificate Type[rxp13     ]          Confirmation     [rxpconf   ]          [imgmksg]
+ Document No. [rxp01           ]Customer No.   [rxp08     |rxp08_des]Certificate No. [rxp14               ]Confirmation Date[rxpcond   |rxpcont   |       ]
+ Transact Date[rxp02     ]      Customer Class.[rxp09     ]          Shipping Address[rxp15               ]Confirmed By     [rxpconu        |rxpconu_desc ]
+ Source From  [rxp03     ]      Member Card No.[rxp10               ]                [                    ]Organization     [rxpplant       |rxpplant_desc]
+ Source No.   [rxp04           ]Customer Name  [rxp11     ]          Clerk           [rxp16     |rxp16_des]Memo             [rxp17                        ]
+ Tran. Date   [rxp05     ]      Customer Tel.  [rxp12               ]                                                       [                             ]
+
+}
+END -- gr4
+END -- Page3
+Page info(text=%"Info")
+Grid gr8
+{
+ Record Owner[rxpuser   ]Last Modified by[rxpmodu   ]Data Valid Code[rxpacti   ]Ori.User  [rxporiu   ]
+ Department  [rxpgrup   ]Modify Date     [rxpdate   ]Create Date    [rxpcrat   ]Ori.Dept  [rxporig   ]
+
+
+}
+END -- gr8
+END -- info
+END -- folder01
+Table s_rxq
+{
+[rxq02|rxq03 |rxq04     |rxq05     |rxq06   |rxq06_desc|rxq07     |rxq08     |rxq09               |rxq1]
+[rxq02|rxq03 |rxq04     |rxq05     |rxq06   |rxq06_desc|rxq07     |rxq08     |rxq09               |rxq1]
+[rxq02|rxq03 |rxq04     |rxq05     |rxq06   |rxq06_desc|rxq07     |rxq08     |rxq09               |rxq1]
+[rxq02|rxq03 |rxq04     |rxq05     |rxq06   |rxq06_desc|rxq07     |rxq08     |rxq09               |rxq1]
+[rxq02|rxq03 |rxq04     |rxq05     |rxq06   |rxq06_desc|rxq07     |rxq08     |rxq09               |rxq1]
+}
+END -- s_rxq
+Grid gr15
+{
+
+  ------ Rows[idx     ]/[cnt       ]--- Items[cn2     ] --------
+
+
+
+}
+END -- gr15
+END -- vb3
+END -- artt605
+
+TABLES
+rxq_file,
+rxp_file
+ATTRIBUTES
+ComboBox rxp00=rxp_file.rxp00, tabIndex=14, noEntry, items=(("1", "Deposit"),("2", "Delivery"));
+Edit rxp07=rxp_file.rxp07, tabIndex=20;
+ComboBox rxp13=rxp_file.rxp13, tabIndex=27, not null, required, items=(("1", "ID"),("2", "Student_ID"),("3", "Police_ID"),("4", "Officer_ID"),("5", "Passport"),("6", "Other"));
+ComboBox rxpconf=rxp_file.rxpconf, tabIndex=3, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit rxp01=rxp_file.rxp01, action=controlp, tabIndex=15, not null, image="zoom.png";
+ButtonEdit rxp08=rxp_file.rxp08, action=controlp, tabIndex=21, noEntry, image="zoom.png";
+Edit rxp08_des=formonly.rxp08_desc type CHAR, tabIndex=25;
+Edit rxp14=rxp_file.rxp14, tabIndex=28;
+DateEdit rxpcond=rxp_file.rxpcond, tabIndex=2, noEntry;
+TimeEdit rxpcont=rxp_file.rxpcont, tabIndex=47, noEntry;
+DateEdit rxp02=rxp_file.rxp02, tabIndex=16, not null;
+ComboBox rxp09=rxp_file.rxp09, tabIndex=22, noEntry, items=(("1", "Paynow Customer"),("2", "Account Customer"));
+TextEdit rxp15=rxp_file.rxp15, tabIndex=30;
+ButtonEdit rxpconu=rxp_file.rxpconu, action=controlp, tabIndex=1, noEntry, image="zoom.png";
+Edit rxpconu_desc=formonly.rxpconu_desc type CHAR, tabIndex=5;
+ComboBox rxp03=rxp_file.rxp03, tabIndex=18, not null, items=(("1", "Bg Sale"),("2", "Out of order
+"),("P", "POS Sale"),("S", "POS Order"));
+Edit rxp10=rxp_file.rxp10, tabIndex=23, noEntry;
+ButtonEdit rxpplant=rxp_file.rxpplant, action=controlp, tabIndex=7, noEntry, image="zoom.png";
+Edit rxpplant_desc=formonly.rxpplant_desc type CHAR, tabIndex=6;
+ButtonEdit rxp04=rxp_file.rxp04, action=controlp, tabIndex=19, not null, image="zoom.png";
+Edit rxp11=rxp_file.rxp11, tabIndex=24, noEntry;
+ButtonEdit rxp16=rxp_file.rxp16, action=controlp, tabIndex=29, image="zoom.png";
+Edit rxp16_des=formonly.rxp16_desc type CHAR, tabIndex=31, noEntry;
+TextEdit rxp17=rxp_file.rxp17, tabIndex=4;
+DateEdit rxp05=rxp_file.rxp05, tabIndex=17, not null;
+Edit rxp12=rxp_file.rxp12, tabIndex=26;
+Edit rxpuser=rxp_file.rxpuser, tabIndex=12, noEntry;
+Edit rxpmodu=rxp_file.rxpmodu, tabIndex=11, noEntry;
+Edit rxpacti=rxp_file.rxpacti, tabIndex=10, noEntry, upShift;
+Edit rxporiu=rxp_file.rxporiu, tabIndex=45, noEntry;
+Edit rxpgrup=rxp_file.rxpgrup, tabIndex=9, noEntry;
+DateEdit rxpdate=rxp_file.rxpdate, tabIndex=8, noEntry;
+DateEdit rxpcrat=rxp_file.rxpcrat, tabIndex=13, noEntry;
+Edit rxporig=rxp_file.rxporig, tabIndex=46, noEntry;
+Edit rxq02=rxq_file.rxq02, tabIndex=32, title="Line NO.", not null, required;
+ButtonEdit rxq03=rxq_file.rxq03, action=controlp, tabIndex=33, title="Source SN", not null, image="zoom.png";
+ButtonEdit rxq04=rxq_file.rxq04, action=controlp, tabIndex=37, title="Goods No.", noEntry, image="zoom.png";
+Edit rxq05=rxq_file.rxq05, tabIndex=38, title="Goods Name", noEntry;
+ButtonEdit rxq06=rxq_file.rxq06, action=controlp, tabIndex=39, title="Unit", noEntry, image="zoom.png";
+Edit rxq06_desc=formonly.rxq06_desc type CHAR, tabIndex=40, title="Unit Name", noEntry;
+Edit rxq07=rxq_file.rxq07, tabIndex=41, title="Deposit/Delivery Number", noEntry;
+Edit rxq08=rxq_file.rxq08, tabIndex=42, title="Draw/Delivery Number", noEntry;
+Edit rxq09=rxq_file.rxq09, tabIndex=43, title="Memo";
+CheckBox rxq1=rxq_file.rxq10, tabIndex=44, title="Closing?", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=35, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=34, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=36;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rxq(rxq_file.rxq02,rxq_file.rxq03,rxq_file.rxq04,rxq_file.rxq05,rxq_file.rxq06,formonly.rxq06_desc,rxq_file.rxq07,rxq_file.rxq08,rxq_file.rxq09,rxq_file.rxq10)
+SCREEN RECORD Undefined(rxp_file.rxp00,rxp_file.rxp07,rxp_file.rxp13,rxp_file.rxpconf,formonly.imgmksg,rxp_file.rxp01,rxp_file.rxp08,formonly.rxp08_desc,rxp_file.rxp14,rxp_file.rxpcond,rxp_file.rxpcont,rxp_file.rxp02,rxp_file.rxp09,rxp_file.rxp15,rxp_file.rxpconu,formonly.rxpconu_desc,rxp_file.rxp03,rxp_file.rxp10,rxp_file.rxpplant,formonly.rxpplant_desc,rxp_file.rxp04,rxp_file.rxp11,rxp_file.rxp16,formonly.rxp16_desc,rxp_file.rxp17,rxp_file.rxp05,rxp_file.rxp12,rxp_file.rxpuser,rxp_file.rxpmodu,rxp_file.rxpacti,rxp_file.rxporiu,rxp_file.rxpgrup,rxp_file.rxpdate,rxp_file.rxpcrat,rxp_file.rxporig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

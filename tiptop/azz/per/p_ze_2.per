@@ -1,0 +1,29 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_ze_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_ze_2")
+Grid gr3100
+{
+ <G group01                                                   >
+  Enter Original File Name [file_name ]_[file_exten][dummy01 ]
+ <                                                            >
+
+}
+END -- gr3100
+END -- p_ze_2
+
+ATTRIBUTES
+Group group01:group01, text="Download Data";
+Edit file_name=formonly.file_name type VARCHAR, tabIndex=1, not null, required, comment="Enter File Name, can mark by module";
+Edit file_exten=formonly.file_extension type VARCHAR, tabIndex=2, not null, required, comment="Enter File Extension ";
+Label dummy01:dummy01, text=".txt";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.file_name,formonly.file_extension)
+END -- INSTRUCTIONS
+

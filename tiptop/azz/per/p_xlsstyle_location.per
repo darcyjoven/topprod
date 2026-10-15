@@ -1,0 +1,27 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_xlsstyle_location.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_xlsstyle_location")
+Grid gr3132
+{
+ Change [loc1][num1      ] to [loc2][num2      ]
+
+}
+END -- gr3132
+END -- p_xlsstyle_location
+
+ATTRIBUTES
+ComboBox loc1=formonly.loc1 type CHAR, tabIndex=1, not null, required, items=(("R", "R"),("C", "C"));
+Edit num1=formonly.num1 type CHAR, tabIndex=2, not null, required;
+ComboBox loc2=formonly.loc2 type CHAR, tabIndex=3, not null, required, items=(("R", "R"),("C", "C"));
+Edit num2=formonly.num2 type CHAR, tabIndex=4, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.loc1,formonly.num1,formonly.loc2,formonly.num2)
+END -- INSTRUCTIONS
+

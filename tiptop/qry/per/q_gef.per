@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_gef.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Code Regulation")
+VBox VBox1
+Grid gr3765
+{
+ Coding Category       [gef01     ][gei02               ]
+ Coding Property       [gei03     ]
+ Cur Segment/Total Seg [gef02     ]/[gei04     ]
+ Description           [gel06               ]
+ Coding Result         [no                                      ]
+ Coding Name           [desc                                    ]
+
+}
+END -- gr3765
+Table s_geg
+{
+[check|geg03                         |geg04                         ]
+[check|geg03                         |geg04                         ]
+[check|geg03                         |geg04                         ]
+[check|geg03                         |geg04                         ]
+[check|geg03                         |geg04                         ]
+[check|geg03                         |geg04                         ]
+[check|geg03                         |geg04                         ]
+[check|geg03                         |geg04                         ]
+[check|geg03                         |geg04                         ]
+[check|geg03                         |geg04                         ]
+
+}
+END -- s_geg
+END -- VBox1
+END -- q_gef
+
+TABLES
+gei_file,
+geg_file,
+gef_file
+ATTRIBUTES
+Edit gef01=gef_file.gef01, tabIndex=1, noEntry;
+Edit gei02=gei_file.gei02, tabIndex=2, noEntry;
+Edit gei03=gei_file.gei03, tabIndex=3, noEntry;
+Edit gef02=gef_file.gef02, tabIndex=4, noEntry;
+Edit gei04=gei_file.gei04, tabIndex=5, noEntry;
+Edit gel06=formonly.gel06 type CHAR, tabIndex=6, noEntry;
+Edit no=formonly.no type CHAR, tabIndex=7, noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=8, noEntry;
+CheckBox check=formonly.check type CHAR, tabIndex=9, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit geg03=geg_file.geg03, tabIndex=10, title="Code No.", noEntry;
+Edit geg04=geg_file.geg04, tabIndex=11, title="Code Description", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_geg(formonly.check,geg_file.geg03,geg_file.geg04)
+SCREEN RECORD Undefined(gef_file.gef01,gei_file.gei02,gei_file.gei03,gef_file.gef02,gei_file.gei04,formonly.gel06,formonly.no,formonly.desc)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/askt002a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="askt002a")
+Grid gr1
+{
+  line           [oeb03                  ]
+  Prefix         [skb11                  ]
+  Initial box    [skb12                  ]
+  Package Type   [skb07                  ]
+  PT No          [skb08a                 ]
+
+}
+END -- gr1
+END -- askt002a
+
+ATTRIBUTES
+Edit oeb03=formonly.oeb03 type CHAR, tabIndex=5;
+Edit skb11=formonly.skb11 type CHAR, tabIndex=1;
+Edit skb12=formonly.skb12 type CHAR, tabIndex=2;
+ComboBox skb07=formonly.skb07 type CHAR, tabIndex=3, not null, items=(("1", "Normal"),("2", "Mix"));
+ButtonEdit skb08a=formonly.skb08a type CHAR, action=controlp, tabIndex=4, image="zoom.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oeb03,formonly.skb11,formonly.skb12,formonly.skb07,formonly.skb08a)
+END -- INSTRUCTIONS
+

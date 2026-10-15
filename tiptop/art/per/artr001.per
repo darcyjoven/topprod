@@ -1,0 +1,101 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"artr001")
+VBox VBox1
+Grid gr1
+{
+   <G gb8                                      > <G gb13                       >
+   [g_method                                  ]  [g_rza01                     ]
+   <                                           > <                             >
+   <G gb1                                                                      >
+      Item No.        [ima01                           ]
+      Product Barcode [rta05                           ]
+      Vendor No.      [pmc01                           ]
+   <                                                                           >
+
+   <G gb7                                                                      >
+      Ship-to-Party [rva01                           ]
+
+      Receipt Date  [rva06                           ]
+   <                                                                           >
+   <G gb2                                        > <G gb3                      >
+   [g_rta04                                     ]  [g_pt1                   ]
+                                                   [g_pt2                     ]
+   <                                             > <                           >
+
+}
+END -- gr1
+Table s_rta
+{
+[sel   |ima01_1   |ima02       |rta05_1   |rta04    |ima021          |rta03   |qty        |rta06   |rta07   |rta08   |rta09   |rta10   |rta11   |ima1004 |ima1005 |ima1006 |ima1007 |ima1008 |ima1009 |agd03_a |agd03_b |rtau|rta1|rta|rt1|rt2|rta2|rta3|rta4|rta5|rta6]
+[sel   |ima01_1   |ima02       |rta05_1   |rta04    |ima021          |rta03   |qty        |rta06   |rta07   |rta08   |rta09   |rta10   |rta11   |ima1004 |ima1005 |ima1006 |ima1007 |ima1008 |ima1009 |agd03_a |agd03_b |rtau|rta1|rta|rt1|rt2|rta2|rta3|rta4|rta5|rta6]
+[sel   |ima01_1   |ima02       |rta05_1   |rta04    |ima021          |rta03   |qty        |rta06   |rta07   |rta08   |rta09   |rta10   |rta11   |ima1004 |ima1005 |ima1006 |ima1007 |ima1008 |ima1009 |agd03_a |agd03_b |rtau|rta1|rta|rt1|rt2|rta2|rta3|rta4|rta5|rta6]
+[sel   |ima01_1   |ima02       |rta05_1   |rta04    |ima021          |rta03   |qty        |rta06   |rta07   |rta08   |rta09   |rta10   |rta11   |ima1004 |ima1005 |ima1006 |ima1007 |ima1008 |ima1009 |agd03_a |agd03_b |rtau|rta1|rta|rt1|rt2|rta2|rta3|rta4|rta5|rta6]
+[sel   |ima01_1   |ima02       |rta05_1   |rta04    |ima021          |rta03   |qty        |rta06   |rta07   |rta08   |rta09   |rta10   |rta11   |ima1004 |ima1005 |ima1006 |ima1007 |ima1008 |ima1009 |agd03_a |agd03_b |rtau|rta1|rta|rt1|rt2|rta2|rta3|rta4|rta5|rta6]
+
+}
+END -- s_rta
+END -- VBox1
+END -- Form1
+
+ATTRIBUTES
+Group gb8:gb8, text="Query Method";
+RadioGroup g_method=formonly.g_method type VARCHAR, tabIndex=1, not null, required, orientation=horizontal, items=(("1", %"Regular Query"),("2", %"Stock-in Good Query"));
+Group gb13:gb13, text="Print Method";
+ComboBox g_rza01=formonly.g_rza01 type VARCHAR, tabIndex=2, not null, required;
+Group gb1:gb1, text="Regular Query";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=3, noEntry, image="zoom";
+ButtonEdit rta05=formonly.rta05 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit pmc01=formonly.pmc01 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Group gb7:gb7, text="Stock-in Good Query";
+ButtonEdit rva01=formonly.rva01 type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+DateEdit rva06=formonly.rva06 type DATE, tabIndex=7, century="";
+Group gb2:gb2, text="Barcode Type";
+RadioGroup g_rta04=formonly.g_rta04 type VARCHAR, tabIndex=8, not null, required, orientation=horizontal, items=(("0", %"ALL"),("1", %"Source Marking"),("2", %"Self Encoded"));
+Group gb3:gb3, text="Print Type";
+CheckBox g_pt1=formonly.g_pt1 type VARCHAR, tabIndex=9, text="Add to detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_pt2=formonly.g_pt2 type VARCHAR, tabIndex=10, text="Display the stock > 0", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sel=formonly.sel type VARCHAR, tabIndex=11, title="Check", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ima01_1=formonly.ima01_1 type VARCHAR, tabIndex=12, title="Item No.", noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=13, title="Item Name", noEntry;
+Edit rta05_1=formonly.rta05_1 type VARCHAR, tabIndex=14, title="Barcode", noEntry;
+ComboBox rta04=formonly.rta04 type VARCHAR, tabIndex=15, title="Barcode Type", noEntry, items=(("1", %"Source Marking"),("2", %"Self Encoded"));
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=16, title="Product Spec.", noEntry;
+Edit rta03=formonly.rta03 type VARCHAR, tabIndex=17, title="Unit", noEntry;
+Edit qty=formonly.qty type INTEGER, tabIndex=18, title="Print Qty", not null, required;
+Edit rta06=formonly.rta06 type CHAR, tabIndex=19, title=%"rta06";
+Edit rta07=formonly.rta07 type CHAR, tabIndex=20, title=%"rta07";
+Edit rta08=formonly.rta08 type CHAR, tabIndex=21, title=%"rta08";
+Edit rta09=formonly.rta09 type CHAR, tabIndex=22, title=%"rta09";
+Edit rta10=formonly.rta10 type CHAR, tabIndex=23, title=%"rta10";
+Edit rta11=formonly.rta11 type CHAR, tabIndex=24, title=%"rta11";
+Edit ima1004=formonly.ima1004 type CHAR, tabIndex=25, title=%"ima1004";
+Edit ima1005=formonly.ima1005 type CHAR, tabIndex=26, title=%"ima1005";
+Edit ima1006=formonly.ima1006 type CHAR, tabIndex=27, title=%"ima1006";
+Edit ima1007=formonly.ima1007 type CHAR, tabIndex=28, title=%"ima1007";
+Edit ima1008=formonly.ima1008 type CHAR, tabIndex=29, title=%"ima1008";
+Edit ima1009=formonly.ima1009 type CHAR, tabIndex=30, title=%"ima1009";
+Edit agd03_a=formonly.agd03_a type CHAR, tabIndex=31, title=%"agd03_a";
+Edit agd03_b=formonly.agd03_b type CHAR, tabIndex=32, title=%"agd03_b";
+Edit rtau=formonly.rtaud01 type CHAR, tabIndex=33, title=%"rtaud01";
+Edit rta1=formonly.rtaud02 type CHAR, tabIndex=34, title=%"rtaud02";
+Edit rta=formonly.rtaud03 type CHAR, tabIndex=35, title=%"rtaud03";
+Edit rt1=formonly.rtaud04 type CHAR, tabIndex=36, title=%"rtaud04";
+Edit rt2=formonly.rtaud05 type CHAR, tabIndex=37, title=%"rtaud05";
+Edit rta2=formonly.rtaud06 type CHAR, tabIndex=38, title=%"rtaud06";
+Edit rta3=formonly.rtaud07 type CHAR, tabIndex=39, title=%"rtaud07";
+Edit rta4=formonly.rtaud08 type CHAR, tabIndex=40, title=%"rtaud08";
+Edit rta5=formonly.rtaud09 type CHAR, tabIndex=41, title=%"rtaud09";
+Edit rta6=formonly.rtaud10 type CHAR, tabIndex=42, title=%"rtaud10";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rta(formonly.sel,formonly.ima01_1,formonly.ima02,formonly.rta05_1,formonly.rta04,formonly.rta06,formonly.rta07,formonly.rta08,formonly.rta09,formonly.rta10,formonly.rta11,formonly.ima1004,formonly.ima1005,formonly.ima1006,formonly.ima1007,formonly.ima1008,formonly.ima1009,formonly.agd03_a,formonly.agd03_b,formonly.rtaud01,formonly.rtaud02,formonly.rtaud03,formonly.rtaud04,formonly.rtaud05,formonly.rtaud06,formonly.rtaud07,formonly.rtaud08,formonly.rtaud09,formonly.rtaud10,formonly.ima021,formonly.rta03,formonly.qty)
+SCREEN RECORD Undefined(formonly.g_method,formonly.g_rza01,formonly.ima01,formonly.rta05,formonly.pmc01,formonly.rva01,formonly.rva06,formonly.g_rta04,formonly.g_pt1,formonly.g_pt2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmg503.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmr503")
+VBox VBox1
+Grid gr5100
+{
+ <G group01                                                     >
+  Delivery Date  [pmn33             ]
+  Confirmed Date [pmn36             ]
+  Arriving Date  [pmn34             ]
+  Item No.       [pmn04             ]
+  Vender No.     [pmm09             ]
+  PO No.         [pmm01             ]
+  Buyer          [pmm12             ]
+ <                                                              >
+
+}
+END -- gr5100
+Group group02(text="INPUT")
+Grid gr5101
+{
+ <G group03                                                          >
+ [s1                 ]  [s2                  ]  [s3                 ]
+ [t1                 ]  [t2                  ]  [t3                 ]
+ <                                                                   >
+ <G group04                                                          >
+ [c                                                                 ]
+ <                                                                   >
+
+}
+END -- gr5101
+END -- group02
+Grid gr5102
+{
+ [more                                                            ]
+
+}
+END -- gr5102
+END -- VBox1
+END -- apmr503
+
+TABLES
+pmm_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit pmn33=formonly.pmn33 type DATE, tabIndex=1;
+DateEdit pmn36=formonly.pmn36 type DATE, tabIndex=2;
+DateEdit pmn34=formonly.pmn34 type DATE, tabIndex=3;
+ButtonEdit pmn04=formonly.pmn04 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit pmm09=formonly.pmm09 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit pmm01=pmm_file.pmm01, action=controlp, tabIndex=15, not null, required, image="zoom", scroll;
+ButtonEdit pmm12=formonly.pmm12 type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=7, items=(("1", "Delivery Date"),("2", "Confirmed Date"),("3", "Arriving Date"),("4", "Item No."),("5", "Vender No."),("6", "Buyer"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=8, items=(("1", "Delivery Date"),("2", "Confirmed Date"),("3", "Arriving Date"),("4", "Item No."),("5", "Vender No."),("6", "Buyer"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=9, items=(("1", "Delivery Date"),("2", "Confirmed Date"),("3", "Arriving Date"),("4", "Item No."),("5", "Vender No."),("6", "Buyer"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="Print Data";
+CheckBox c=formonly.c type VARCHAR, tabIndex=13, text="Print Confirmed Delivery Schedul", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmn33,formonly.pmn36,formonly.pmn34,formonly.pmn04,formonly.pmm09,formonly.pmm12,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.c,formonly.more,pmm_file.pmm01)
+END -- INSTRUCTIONS
+

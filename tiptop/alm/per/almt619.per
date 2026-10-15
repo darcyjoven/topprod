@@ -1,0 +1,108 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt619.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almt610")
+VBox VBox1
+Folder tb01
+Page Main(text=%"Main")
+Grid gr10
+{
+
+ Document no.       [lry01                 ]                         Confirmed Status           [lry18                 |imgmksg   ]
+ Document date      [lry02                 ]                                                                           [          ]
+ Shop No.           [lryplant              |rtz13               ]    Confirmed Person           [lry19                 |gen02               ]
+ Corporation        [lrylegal              |azt02               ]    Confirmed Date             [lry20                 ]
+
+
+}
+END -- gr10
+END -- Main
+Page Info(text=%"Info")
+Grid gr11
+{
+  Record Owner [lryuser       ]   Created Date     [lrycrat      ]   Data Valid Code [lryacti      ]
+  Department   [lrygrup       ]   Last Modified by [lrymodu      ]   Modify Date     [lrydate      ]
+  Record Orig. [lryoriu       ]   Dept Orig.       [lryorig      ]
+
+
+}
+END -- gr11
+END -- Info
+END -- tb01
+Table s_lsp
+{
+[lsp04                 |lsp03                 |lsp02                 |lsp16                 |lsp15       |lsp14                 |lsp05       |lsp06       |lsp07     |lsp08     |lsp09       |lsp10     |lsp11     |lsp12     |lsp13     ]
+[lsp04                 |lsp03                 |lsp02                 |lsp16                 |lsp15       |lsp14                 |lsp05       |lsp06       |lsp07     |lsp08     |lsp09       |lsp10     |lsp11     |lsp12     |lsp13     ]
+[lsp04                 |lsp03                 |lsp02                 |lsp16                 |lsp15       |lsp14                 |lsp05       |lsp06       |lsp07     |lsp08     |lsp09       |lsp10     |lsp11     |lsp12     |lsp13     ]
+[lsp04                 |lsp03                 |lsp02                 |lsp16                 |lsp15       |lsp14                 |lsp05       |lsp06       |lsp07     |lsp08     |lsp09       |lsp10     |lsp11     |lsp12     |lsp13     ]
+[lsp04                 |lsp03                 |lsp02                 |lsp16                 |lsp15       |lsp14                 |lsp05       |lsp06       |lsp07     |lsp08     |lsp09       |lsp10     |lsp11     |lsp12     |lsp13     ]
+[lsp04                 |lsp03                 |lsp02                 |lsp16                 |lsp15       |lsp14                 |lsp05       |lsp06       |lsp07     |lsp08     |lsp09       |lsp10     |lsp11     |lsp12     |lsp13     ]
+[lsp04                 |lsp03                 |lsp02                 |lsp16                 |lsp15       |lsp14                 |lsp05       |lsp06       |lsp07     |lsp08     |lsp09       |lsp10     |lsp11     |lsp12     |lsp13     ]
+[lsp04                 |lsp03                 |lsp02                 |lsp16                 |lsp15       |lsp14                 |lsp05       |lsp06       |lsp07     |lsp08     |lsp09       |lsp10     |lsp11     |lsp12     |lsp13     ]
+[lsp04                 |lsp03                 |lsp02                 |lsp16                 |lsp15       |lsp14                 |lsp05       |lsp06       |lsp07     |lsp08     |lsp09       |lsp10     |lsp11     |lsp12     |lsp13     ]
+[lsp04                 |lsp03                 |lsp02                 |lsp16                 |lsp15       |lsp14                 |lsp05       |lsp06       |lsp07     |lsp08     |lsp09       |lsp10     |lsp11     |lsp12     |lsp13     ]
+
+}
+END -- s_lsp
+Grid gr6
+{
+ ------- Rows[idx ]/[cnt  ]------- item[cn2   ]-------
+
+
+}
+END -- gr6
+END -- VBox1
+END -- almt619
+
+TABLES
+lsp_file,
+lry_file
+ATTRIBUTES
+ButtonEdit lry01=lry_file.lry01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ComboBox lry18=lry_file.lry18, tabIndex=7, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+DateEdit lry02=lry_file.lry02, tabIndex=2, not null, required;
+ButtonEdit lryplant=lry_file.lryplant, action=controlp, tabIndex=3, noEntry, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit lry19=lry_file.lry19, action=controlp, tabIndex=8, noEntry, image="zoom.png";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=9, noEntry;
+ButtonEdit lrylegal=lry_file.lrylegal, action=controlp, tabIndex=5, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=6, noEntry;
+DateEdit lry20=lry_file.lry20, tabIndex=10, noEntry;
+Edit lryuser=lry_file.lryuser, tabIndex=11, noEntry;
+DateEdit lrycrat=lry_file.lrycrat, tabIndex=14, noEntry;
+Edit lryacti=lry_file.lryacti, tabIndex=17, noEntry;
+Edit lrygrup=lry_file.lrygrup, tabIndex=12, noEntry;
+Edit lrymodu=lry_file.lrymodu, tabIndex=15, noEntry;
+DateEdit lrydate=lry_file.lrydate, tabIndex=18, noEntry;
+Edit lryoriu=lry_file.lryoriu, tabIndex=13, noEntry;
+Edit lryorig=lry_file.lryorig, tabIndex=16, noEntry;
+ButtonEdit lsp04=lsp_file.lsp04, action=controlp, tabIndex=19, title=%"lsp04", not null, required, image="zoom.png";
+ButtonEdit lsp03=lsp_file.lsp03, action=controlp, tabIndex=20, title=%"lsp03", not null, required, image="zoom.png";
+ButtonEdit lsp02=lsp_file.lsp02, action=controlp, tabIndex=21, title=%"lsp02", image="zoom.png";
+ButtonEdit lsp16=lsp_file.lsp16, action=controlp, tabIndex=22, title="lsp16", image="zoom.png";
+DateEdit lsp15=lsp_file.lsp15, tabIndex=23, title="lsp15";
+ButtonEdit lsp14=lsp_file.lsp14, action=controlp, tabIndex=24, title="lsp14", image="zoom.png";
+DateEdit lsp05=lsp_file.lsp05, tabIndex=25, title="lsp05";
+DateEdit lsp06=lsp_file.lsp06, tabIndex=26, title="lsp06";
+Edit lsp07=lsp_file.lsp07, tabIndex=27, title="lsp07";
+Edit lsp08=lsp_file.lsp08, tabIndex=28, title="lsp08";
+DateEdit lsp09=lsp_file.lsp09, tabIndex=29, title="lsp09";
+Edit lsp10=lsp_file.lsp10, tabIndex=30, title="lsp10", not null;
+Edit lsp11=lsp_file.lsp11, tabIndex=31, title="lsp11";
+Edit lsp12=lsp_file.lsp12, tabIndex=32, title=%"lsp12";
+Edit lsp13=lsp_file.lsp13, tabIndex=33, title="lsp13";
+Edit idx=formonly.idx type SMALLINT, tabIndex=34, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=35, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=36, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lsp(lsp_file.lsp04,lsp_file.lsp03,lsp_file.lsp02,lsp_file.lsp16,lsp_file.lsp15,lsp_file.lsp14,lsp_file.lsp05,lsp_file.lsp06,lsp_file.lsp07,lsp_file.lsp08,lsp_file.lsp09,lsp_file.lsp10,lsp_file.lsp11,lsp_file.lsp12,lsp_file.lsp13)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2,lry_file.lryplant,formonly.rtz13,lry_file.lrylegal,formonly.azt02,lry_file.lry01,lry_file.lry02,lry_file.lry18,formonly.imgmksg,lry_file.lry19,lry_file.lry20,lry_file.lryuser,lry_file.lrycrat,lry_file.lryacti,lry_file.lrygrup,lry_file.lrymodu,lry_file.lrydate,lry_file.lryoriu,lry_file.lryorig,formonly.gen02)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt100")
+VBox vb7
+Folder pc3
+Page Page3(text=%"Basic Data")
+Grid gr5
+{
+
+  Budget Version [afd00     ]                                 Project No.            [afd04       |pja02              ]
+  Logistics      [afd01       ]                               WBS No.                [afd05                           ]
+  Budget Year    [afd02     ]                                 Budget Item            [afd06       |azf03                                       ]
+  Budget Dept.   [afd03       |gem02                         ]Account Code           [afd07                     |aag02                         ]
+  Created by     [afd08       |gen02                         ]
+  ----------------------------------------------------------------------------------------------------------------------------------------------
+  Budget Currency[afd09     ]                                 Budget Currency(Source)[afd11     ]
+  Yearly Budget  [afd10          ]                            Yearly Budget(Source)  [afd12          ]
+}
+END -- gr5
+END -- Page3
+Page Page8(text=%"Status")
+Grid gr13
+{
+
+ Data User [afduser   ] Modify     [afdmodu     ]  acti[afdacti   ]
+ Data Group[afdgrup   ] Modify Date[afddate     ]
+
+}
+END -- gr13
+END -- Page8
+END -- pc3
+Table s_afe
+{
+[afe08   |afe09               |afe10               |afe11               |afe12               ]
+[afe08   |afe09               |afe10               |afe11               |afe12               ]
+[afe08   |afe09               |afe10               |afe11               |afe12               ]
+[afe08   |afe09               |afe10               |afe11               |afe12               ]
+[afe08   |afe09               |afe10               |afe11               |afe12               ]
+[afe08   |afe09               |afe10               |afe11               |afe12               ]
+[afe08   |afe09               |afe10               |afe11               |afe12               ]
+[afe08   |afe09               |afe10               |afe11               |afe12               ]
+[afe08   |afe09               |afe10               |afe11               |afe12               ]
+
+}
+END -- s_afe
+Grid gr8
+{
+
+   --------Rows[idx   ]/[cnt    ] ---Details[cn2   ]------
+
+}
+END -- gr8
+END -- vb7
+END -- apjt100
+
+TABLES
+afe_file,
+afd_file
+ATTRIBUTES
+Edit afd00=afd_file.afd00, tabIndex=1, not null, required;
+ButtonEdit afd04=afd_file.afd04, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+Edit pja02=formonly.pja02 type CHAR, tabIndex=21, noEntry;
+ButtonEdit afd01=afd_file.afd01, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+ButtonEdit afd05=afd_file.afd05, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+Edit afd02=afd_file.afd02, tabIndex=2, not null, required;
+ButtonEdit afd06=afd_file.afd06, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=22, noEntry;
+ButtonEdit afd03=afd_file.afd03, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=19, noEntry;
+ButtonEdit afd07=afd_file.afd07, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=23, noEntry;
+ButtonEdit afd08=afd_file.afd08, action=controlp, tabIndex=5, not null, image="zoom.png";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=20, noEntry;
+ButtonEdit afd09=afd_file.afd09, action=controlp, tabIndex=10, not null, image="zoom.png";
+ButtonEdit afd11=afd_file.afd11, action=controlp, tabIndex=11, not null, image="zoom.png";
+Edit afd10=afd_file.afd10, tabIndex=12, default = "0", not null;
+Edit afd12=afd_file.afd12, tabIndex=13, default = "0", not null;
+Edit afduser=afd_file.afduser, tabIndex=27;
+Edit afdmodu=afd_file.afdmodu, tabIndex=28;
+Edit afdacti=afd_file.afdacti, tabIndex=29;
+Edit afdgrup=afd_file.afdgrup, tabIndex=30;
+DateEdit afddate=afd_file.afddate, tabIndex=31;
+Edit afe08=afe_file.afe08, tabIndex=14, title="Period", not null;
+Edit afe09=afe_file.afe09, tabIndex=15, title="Budget Amt", not null;
+Edit afe10=afe_file.afe10, tabIndex=16, title="Adjustment Amount", not null;
+Edit afe11=afe_file.afe11, tabIndex=17, title="Budget Amt(Source)", not null;
+Edit afe12=afe_file.afe12, tabIndex=18, title="Budget Amt(Source)", not null;
+Edit idx=formonly.idx type CHAR, tabIndex=24;
+Edit cnt=formonly.cnt type CHAR, tabIndex=26;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=25;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_afe(afe_file.afe08,afe_file.afe09,afe_file.afe10,afe_file.afe11,afe_file.afe12)
+SCREEN RECORD Undefined(afd_file.afd00,afd_file.afd04,formonly.pja02,afd_file.afd01,afd_file.afd05,afd_file.afd02,afd_file.afd06,formonly.azf03,afd_file.afd03,formonly.gem02,afd_file.afd07,formonly.aag02,afd_file.afd08,formonly.gen02,afd_file.afd09,afd_file.afd11,afd_file.afd10,afd_file.afd12,afd_file.afduser,afd_file.afdmodu,afd_file.afdacti,afd_file.afdgrup,afd_file.afddate,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglp301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglp301")
+VBox vb3
+Grid gr2474
+{
+ <G group01                            >
+   Group No.            [asa01     ]
+   Parent Company       [asa02     ]
+   Book No.             [asa03     ]
+   Inward Finscal Year  [yy        ]
+   asa06                [asa06     ]
+   Ending Period        [em        ]
+   Quarter              [q1        ]
+   Half a Year          [h1        ]
+ <                                     >
+}
+END -- gr2474
+Grid gr2475
+{
+ [g_bgjob                         ]
+
+
+}
+END -- gr2475
+END -- vb3
+END -- gglp301
+
+TABLES
+asa_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit asa01=asa_file.asa01, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Query Group Data";
+Edit asa02=asa_file.asa02, tabIndex=4, not null, required;
+Edit asa03=asa_file.asa03, tabIndex=5, not null, required;
+Edit yy=formonly.yy type CHAR, tabIndex=1, not null, required;
+ComboBox asa06=formonly.asa06 type CHAR, tabIndex=7, not null, required, items=(("1", "Month"),("2", "Quarter"),("3", "Half a Year"),("4", "Year"));
+Edit em=formonly.em type CHAR, tabIndex=2, not null, required;
+ComboBox q1=formonly.q1 type CHAR, tabIndex=8, not null, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox h1=formonly.h1 type CHAR, tabIndex=9, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=6, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(asa_file.asa01,asa_file.asa02,asa_file.asa03,formonly.yy,formonly.asa06,formonly.em,formonly.q1,formonly.h1,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

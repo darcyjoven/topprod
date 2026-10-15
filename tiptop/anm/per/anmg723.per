@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmg723.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmr723")
+VBox VBox1
+Group Group1
+Grid Grid1
+{
+ <G group01                                                          >
+  Contract Number     [nng01               ]
+  Applying Date       [nng02               ]
+  Date of Use         [nng03               ]
+ <                                                                   >
+ <G group02                                                          >
+  [n                                                              ]
+ <                                                                   >
+
+}
+END -- Grid1
+END -- Group1
+Grid Grid2
+{
+[more                                                        ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- anmr723
+
+TABLES
+nng_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit nng01=nng_file.nng01, tabIndex=1;
+DateEdit nng02=nng_file.nng02, tabIndex=2;
+Edit nng03=nng_file.nng03, tabIndex=3;
+Group group02:group02;
+RadioGroup n=formonly.n type CHAR, tabIndex=4, items=(("1", %"Confirmed"),("2", %"UnConfirmed"),("3", %"All "));
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nng_file.nng01,nng_file.nng02,nng_file.nng03,formonly.n,formonly.more)
+END -- INSTRUCTIONS
+

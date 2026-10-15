@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_dif_views.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form1")
+VBox vb3
+Grid gr1
+{
+
+  Compared virtual database [view_db        ]
+  View from                 [view_from      ]
+
+}
+END -- gr1
+Table tb1
+{
+[adjust    |dif_view       |dif_exp                                 ]
+[adjust    |dif_view       |dif_exp                                 ]
+[adjust    |dif_view       |dif_exp                                 ]
+[adjust    |dif_view       |dif_exp                                 ]
+[adjust    |dif_view       |dif_exp                                 ]
+[adjust    |dif_view       |dif_exp                                 ]
+[adjust    |dif_view       |dif_exp                                 ]
+[adjust    |dif_view       |dif_exp                                 ]
+[adjust    |dif_view       |dif_exp                                 ]
+[adjust    |dif_view       |dif_exp                                 ]
+[adjust    |dif_view       |dif_exp                                 ]
+[adjust    |dif_view       |dif_exp                                 ]
+[adjust    |dif_view       |dif_exp                                 ]
+[adjust    |dif_view       |dif_exp                                 ]
+[adjust    |dif_view       |dif_exp                                 ]
+
+}
+END -- tb1
+END -- vb3
+END -- Form1
+
+ATTRIBUTES
+ButtonEdit view_db=formonly.view_db type CHAR, action=controlp, tabIndex=2, image="zoom.png";
+Edit view_from=formonly.view_from type CHAR, tabIndex=1, noEntry;
+CheckBox adjust=formonly.adjust type CHAR, tabIndex=5, title="Adjustment", valueChecked = "Y", valueUnchecked = "N";
+Edit dif_view=formonly.dif_view type CHAR, tabIndex=3, title="View List";
+ComboBox dif_exp=formonly.dif_exp type CHAR, tabIndex=4, title="Difference explanation", items=(("0", "Actual table does not exist in Material DB."),("1", "In zta_file is view , but in database is synonym table. "),("2", "In zta_file is synonym table , but in database is view."),("3", "zta_file already alter table, but  view does not synchronously in database."),("4", "Actual table is synonym table in Material DB, please go to p_zta djust it manually."));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_dif(formonly.adjust,formonly.dif_view,formonly.dif_exp)
+SCREEN RECORD Undefined(formonly.view_db,formonly.view_from)
+END -- INSTRUCTIONS
+

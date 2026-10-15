@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt700_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axmt700_c")
+VBox vb2
+Folder pc2
+Page Page3(text=%"Detail Tax Code")
+Table tb2
+{
+[ogk02|ogk03|ogk0|gec02               |ogk05     |ogk06     |ogk07     |ogk08     |ogk08t    |ogk09     ]
+[ogk02|ogk03|ogk0|gec02               |ogk05     |ogk06     |ogk07     |ogk08     |ogk08t    |ogk09     ]
+[ogk02|ogk03|ogk0|gec02               |ogk05     |ogk06     |ogk07     |ogk08     |ogk08t    |ogk09     ]
+[ogk02|ogk03|ogk0|gec02               |ogk05     |ogk06     |ogk07     |ogk08     |ogk08t    |ogk09     ]
+[ogk02|ogk03|ogk0|gec02               |ogk05     |ogk06     |ogk07     |ogk08     |ogk08t    |ogk09     ]
+
+}
+END -- tb2
+END -- Page3
+END -- pc2
+Grid gr2
+{
+
+  ---------- Rows [cn2       ] ----------
+
+
+}
+END -- gr2
+END -- vb2
+END -- axmt700_c
+
+TABLES
+ogk_file,
+gec_file
+ATTRIBUTES
+Edit ogk02=ogk_file.ogk02, tabIndex=1, title=%"Line No.", noEntry;
+Edit ogk03=ogk_file.ogk03, tabIndex=2, title=%"Serial No.", noEntry;
+Edit ogk0=ogk_file.ogk04, tabIndex=3, title=%"Sales Tax Code", noEntry;
+Edit gec02=gec_file.gec02, tabIndex=10, title=%"Sales Tax Name", noEntry;
+Edit ogk05=ogk_file.ogk05, tabIndex=4, title=%"Tax Rate%", noEntry;
+Edit ogk06=ogk_file.ogk06, tabIndex=5, title=%"Fixed Tax Amount", noEntry;
+CheckBox ogk07=ogk_file.ogk07, tabIndex=6, title=%"Include Tax", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit ogk08=ogk_file.ogk08, tabIndex=7, title=%"Amt Excl. Tax", noEntry;
+Edit ogk08t=ogk_file.ogk08t, tabIndex=8, title=%"Amt Incl. Tax", noEntry;
+Edit ogk09=ogk_file.ogk09, tabIndex=9, title=%"Tax", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogk(ogk_file.ogk02,ogk_file.ogk03,ogk_file.ogk04,gec_file.gec02,ogk_file.ogk05,ogk_file.ogk06,ogk_file.ogk07,ogk_file.ogk08,ogk_file.ogk08t,ogk_file.ogk09)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli011_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli011_g")
+Folder pc2
+Page page01(text="Main")
+Grid gr3
+{
+ <G group02                                                   >
+  Generate Year/Period   [yy             ]/[mm             ]
+ <                                                            >
+}
+END -- gr3
+END -- page01
+END -- pc2
+END -- agli011_g
+
+ATTRIBUTES
+Group group02:group02, text="INPUT";
+Edit yy=formonly.yy type CHAR, tabIndex=1, not null, required;
+Edit mm=formonly.mm type CHAR, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.mm)
+END -- INSTRUCTIONS
+

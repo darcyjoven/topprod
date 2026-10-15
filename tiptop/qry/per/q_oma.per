@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_oma.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Query Accounts Receivable")
+Grid gr3819
+{
+ <T s_oma                                                                             >
+ [check|oma01           |oma02        |oma54t                   |oma56t              ]
+ [check|oma01           |oma02        |oma54t                   |oma56t              ]
+ [check|oma01           |oma02        |oma54t                   |oma56t              ]
+ [check|oma01           |oma02        |oma54t                   |oma56t              ]
+ [check|oma01           |oma02        |oma54t                   |oma56t              ]
+ [check|oma01           |oma02        |oma54t                   |oma56t              ]
+ [check|oma01           |oma02        |oma54t                   |oma56t              ]
+ [check|oma01           |oma02        |oma54t                   |oma56t              ]
+ [check|oma01           |oma02        |oma54t                   |oma56t              ]
+ [check|oma01           |oma02        |oma54t                   |oma56t              ]
+ <                                                                                    >
+
+}
+END -- gr3819
+END -- q_oma
+
+TABLES
+oma_file
+ATTRIBUTES
+Table s_oma:s_oma;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oma01=oma_file.oma01, tabIndex=2, title="Accounts Amount", noEntry;
+Edit oma02=oma_file.oma02, tabIndex=3, title="Account Date", noEntry;
+Edit oma54t=oma_file.oma54t, tabIndex=4, title="Original Currency Amount", noEntry, not null, required;
+Edit oma56t=oma_file.oma56t, tabIndex=5, title="Home Currency Amount", noEntry, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oma(formonly.check,oma_file.oma01,oma_file.oma02,oma_file.oma54t,oma_file.oma56t)
+END -- INSTRUCTIONS
+

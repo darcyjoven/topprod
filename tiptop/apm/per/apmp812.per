@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp812.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp812")
+VBox VBox1
+Group group01(text="P/O No. Details")
+Table s_pmm
+{
+[pmm01       |pmm04   |pmm09     |pmc03a    |pmm50      |pmc03b    |pmm12     |gen02     |pmm904    |pmm18  |pmm905 ]
+[pmm01       |pmm04   |pmm09     |pmc03a    |pmm50      |pmc03b    |pmm12     |gen02     |pmm904    |pmm18  |pmm905 ]
+[pmm01       |pmm04   |pmm09     |pmc03a    |pmm50      |pmc03b    |pmm12     |gen02     |pmm904    |pmm18  |pmm905 ]
+[pmm01       |pmm04   |pmm09     |pmc03a    |pmm50      |pmc03b    |pmm12     |gen02     |pmm904    |pmm18  |pmm905 ]
+[pmm01       |pmm04   |pmm09     |pmc03a    |pmm50      |pmc03b    |pmm12     |gen02     |pmm904    |pmm18  |pmm905 ]
+[pmm01       |pmm04   |pmm09     |pmc03a    |pmm50      |pmc03b    |pmm12     |gen02     |pmm904    |pmm18  |pmm905 ]
+[pmm01       |pmm04   |pmm09     |pmc03a    |pmm50      |pmc03b    |pmm12     |gen02     |pmm904    |pmm18  |pmm905 ]
+[pmm01       |pmm04   |pmm09     |pmc03a    |pmm50      |pmc03b    |pmm12     |gen02     |pmm904    |pmm18  |pmm905 ]
+[pmm01       |pmm04   |pmm09     |pmc03a    |pmm50      |pmc03b    |pmm12     |gen02     |pmm904    |pmm18  |pmm905 ]
+[pmm01       |pmm04   |pmm09     |pmc03a    |pmm50      |pmc03b    |pmm12     |gen02     |pmm904    |pmm18  |pmm905 ]
+
+}
+END -- s_pmm
+END -- group01
+Group group02
+Table s_pmn
+{
+[sure |pmn02|pmn04                  |pmn16_d           |qty                |pmn20        |pmn50       |pmn55        |pmn58      ]
+[sure |pmn02|pmn04                  |pmn16_d           |qty                |pmn20        |pmn50       |pmn55        |pmn58      ]
+[sure |pmn02|pmn04                  |pmn16_d           |qty                |pmn20        |pmn50       |pmn55        |pmn58      ]
+[sure |pmn02|pmn04                  |pmn16_d           |qty                |pmn20        |pmn50       |pmn55        |pmn58      ]
+[sure |pmn02|pmn04                  |pmn16_d           |qty                |pmn20        |pmn50       |pmn55        |pmn58      ]
+[sure |pmn02|pmn04                  |pmn16_d           |qty                |pmn20        |pmn50       |pmn55        |pmn58      ]
+[sure |pmn02|pmn04                  |pmn16_d           |qty                |pmn20        |pmn50       |pmn55        |pmn58      ]
+[sure |pmn02|pmn04                  |pmn16_d           |qty                |pmn20        |pmn50       |pmn55        |pmn58      ]
+[sure |pmn02|pmn04                  |pmn16_d           |qty                |pmn20        |pmn50       |pmn55        |pmn58      ]
+[sure |pmn02|pmn04                  |pmn16_d           |qty                |pmn20        |pmn50       |pmn55        |pmn58      ]
+
+}
+END -- s_pmn
+END -- group02
+Grid gr4949
+{
+ Select Counts       [cn3       ]
+ ---------- Rows [cn2   ] ----------
+}
+END -- gr4949
+END -- VBox1
+END -- apmp812
+
+TABLES
+pmn_file,
+pmm_file
+ATTRIBUTES
+ButtonEdit pmm01=pmm_file.pmm01, action=controlp, tabIndex=1, title="P/O No.", noEntry, image="zoom", comment="<^P> Qry pmm01";
+DateEdit pmm04=pmm_file.pmm04, tabIndex=2, title="P.Date", noEntry;
+ButtonEdit pmm09=pmm_file.pmm09, action=controlp, tabIndex=3, title="Supplier", noEntry, image="zoom", comment="<^P> Qry pmm09";
+Edit pmc03a=formonly.pmc03a type CHAR, tabIndex=4, title="Abb.", noEntry;
+ButtonEdit pmm50=pmm_file.pmm50, action=controlp, tabIndex=5, title="L.Supplier", noEntry, image="zoom", comment="<^P> Qry pmm50";
+Edit pmc03b=formonly.pmc03b type CHAR, tabIndex=6, title="Abb.", noEntry;
+ButtonEdit pmm12=pmm_file.pmm12, action=controlp, tabIndex=7, title="Buyer", noEntry, image="zoom", comment="<^P> Qry pmm12";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=8, title="Name", noEntry;
+ButtonEdit pmm904=pmm_file.pmm904, action=controlp, tabIndex=9, title="T.F Code", noEntry, image="zoom", comment="<^P> Qry pmm904";
+CheckBox pmm18=pmm_file.pmm18, tabIndex=10, title="C.firm", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pmm905=pmm_file.pmm905, tabIndex=11, title="Carry", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sure=formonly.sure type CHAR, tabIndex=12, title="Sure", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmn02=pmn_file.pmn02, tabIndex=13, title="Ln#", noEntry;
+Edit pmn04=pmn_file.pmn04, tabIndex=14, title="Item No.", noEntry;
+Edit pmn16_d=formonly.pmn16_d type CHAR, tabIndex=15, title="Current Status", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=16, title="Short-Delivery Qty", noEntry;
+Edit pmn20=pmn_file.pmn20, tabIndex=17, title="Purchase Qty", not null, required;
+Edit pmn50=pmn_file.pmn50, tabIndex=18, title="Receipt Qty", not null, required;
+Edit pmn55=pmn_file.pmn55, tabIndex=19, title="Qty Returned", not null, required;
+Edit pmn58=pmn_file.pmn58, tabIndex=20, title="W/H Ret.Qty";
+Edit cn3=formonly.cn3 type CHAR, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmm(pmm_file.pmm01,pmm_file.pmm04,pmm_file.pmm09,formonly.pmc03a,pmm_file.pmm50,formonly.pmc03b,pmm_file.pmm12,formonly.gen02,pmm_file.pmm904,pmm_file.pmm18,pmm_file.pmm905)
+SCREEN RECORD s_pmn(formonly.sure,pmn_file.pmn02,pmn_file.pmn04,formonly.pmn16_d,formonly.qty,pmn_file.pmn20,pmn_file.pmn50,pmn_file.pmn55,pmn_file.pmn58)
+SCREEN RECORD Undefined(formonly.cn3,formonly.cn2)
+END -- INSTRUCTIONS
+

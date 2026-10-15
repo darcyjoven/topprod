@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdr450.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdr450")
+VBox VBox1
+Grid gr448
+{
+ <G group01                                                                             >
+  Product Class       [tta02              ]
+ <                                                                                      >
+ <G group02                                                                             >
+  Select Data Year    [year]
+ <                                                                                      >
+
+}
+END -- gr448
+Grid gr449
+{
+[more                             ]
+
+}
+END -- gr449
+END -- VBox1
+END -- asdr450
+
+TABLES
+tta_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit tta02=tta_file.tta02, tabIndex=1, upShift;
+Group group02:group02, text="INPUT";
+Edit year=formonly.year type SMALLINT, tabIndex=2;
+CheckBox more=formonly.more type CHAR, tabIndex=3, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(tta_file.tta02,formonly.year,formonly.more)
+END -- INSTRUCTIONS
+

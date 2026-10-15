@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi121c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi121c")
+VBox VBox1
+Folder pc456
+Page page01(text="Page01")
+Grid gr2021
+{
+ <G group01                                           >
+  Enter Original Prodcut No. [old_no              ]
+  Enter new product number   [new_no              ]
+ <                                                    >
+
+}
+END -- gr2021
+END -- page01
+END -- pc456
+END -- VBox1
+END -- axmi121c
+
+ATTRIBUTES
+Group group01:group01;
+Edit old_no=formonly.old_no type CHAR, tabIndex=1, not null, required;
+Edit new_no=formonly.new_no type CHAR, tabIndex=2, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.old_no,formonly.new_no)
+END -- INSTRUCTIONS
+

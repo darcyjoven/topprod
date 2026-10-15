@@ -1,0 +1,123 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armt120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armt120")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr308
+{
+
+  RMA No.             [rma01           ]                   Salesman            [rma13     ][gen02     ]    [imgmksg]
+  Ln#                 [rmb02     ]                         Sales Department    [rma14     ][gem02     ]    [       ]
+  Customer Return     [rma03     ][rma04     ]             Confirm             [rmaconf   ]
+  Est.Delivery Date   [rma12     ]                         Handling Method     [rma09     ][rma09_desc          ]
+  Memo                [rma18                           ]
+
+ <G group03                                                                                                      >
+  Item P/N            [rmb03                         ]
+  Part Name           [rmb05                         ][rmb06                         ]
+  Unit                [rmb04     ]
+  Actual Received     [rmb12               ]
+ <                                                                                                               >
+
+}
+END -- gr308
+END -- page01
+Page info(text="Info")
+Grid gr309
+{
+ Record Owner        [rmauser   ]  Last Modified by    [rmamodu   ]  Data Valid Code     [rmavoid   ]
+ Department          [rmagrup   ]  Create/Modify Date  [rmadate   ]
+ Record Orig.        [rmaoriu   ]
+ Dept Orig.          [rmaorig   ]
+}
+END -- gr309
+END -- info
+END -- folder01
+Table s_rmc
+{
+[rmc02      |rmc07          |rmc08   |rmc14    |rmc16|rmc10  |rmc11     |rmc12               |rmc13               |rmc09  |rmc19               |rmc17       |rmc18           |rmc23           |rmc2|rmc21           |rmc22           ]
+[rmc02      |rmc07          |rmc08   |rmc14    |rmc16|rmc10  |rmc11     |rmc12               |rmc13               |rmc09  |rmc19               |rmc17       |rmc18           |rmc23           |rmc2|rmc21           |rmc22           ]
+[rmc02      |rmc07          |rmc08   |rmc14    |rmc16|rmc10  |rmc11     |rmc12               |rmc13               |rmc09  |rmc19               |rmc17       |rmc18           |rmc23           |rmc2|rmc21           |rmc22           ]
+[rmc02      |rmc07          |rmc08   |rmc14    |rmc16|rmc10  |rmc11     |rmc12               |rmc13               |rmc09  |rmc19               |rmc17       |rmc18           |rmc23           |rmc2|rmc21           |rmc22           ]
+[rmc02      |rmc07          |rmc08   |rmc14    |rmc16|rmc10  |rmc11     |rmc12               |rmc13               |rmc09  |rmc19               |rmc17       |rmc18           |rmc23           |rmc2|rmc21           |rmc22           ]
+[rmc02      |rmc07          |rmc08   |rmc14    |rmc16|rmc10  |rmc11     |rmc12               |rmc13               |rmc09  |rmc19               |rmc17       |rmc18           |rmc23           |rmc2|rmc21           |rmc22           ]
+[rmc02      |rmc07          |rmc08   |rmc14    |rmc16|rmc10  |rmc11     |rmc12               |rmc13               |rmc09  |rmc19               |rmc17       |rmc18           |rmc23           |rmc2|rmc21           |rmc22           ]
+[rmc02      |rmc07          |rmc08   |rmc14    |rmc16|rmc10  |rmc11     |rmc12               |rmc13               |rmc09  |rmc19               |rmc17       |rmc18           |rmc23           |rmc2|rmc21           |rmc22           ]
+[rmc02      |rmc07          |rmc08   |rmc14    |rmc16|rmc10  |rmc11     |rmc12               |rmc13               |rmc09  |rmc19               |rmc17       |rmc18           |rmc23           |rmc2|rmc21           |rmc22           ]
+[rmc02      |rmc07          |rmc08   |rmc14    |rmc16|rmc10  |rmc11     |rmc12               |rmc13               |rmc09  |rmc19               |rmc17       |rmc18           |rmc23           |rmc2|rmc21           |rmc22           ]
+
+}
+END -- s_rmc
+Grid gr310
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr310
+END -- VBox1
+END -- armt120
+
+TABLES
+rmc_file,
+rmb_file,
+rma_file
+ATTRIBUTES
+Edit rma01=rma_file.rma01, tabIndex=1, noEntry;
+Edit rma13=rma_file.rma13, tabIndex=2, noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=3, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit rmb02=rmb_file.rmb02, tabIndex=5;
+Edit rma14=rma_file.rma14, tabIndex=6, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=7, noEntry;
+Edit rma03=rma_file.rma03, tabIndex=8, noEntry;
+Edit rma04=rma_file.rma04, tabIndex=9, noEntry;
+Edit rmaconf=rma_file.rmaconf, tabIndex=10, noEntry, upShift;
+Edit rma12=rma_file.rma12, tabIndex=11, noEntry;
+Edit rma09=rma_file.rma09, tabIndex=12, noEntry;
+Edit rma09_desc=formonly.rma09_desc type CHAR, tabIndex=13, noEntry;
+Edit rma18=rma_file.rma18, tabIndex=14, noEntry;
+Group group03:group03, text="RMA Qty";
+Edit rmb03=rmb_file.rmb03, tabIndex=15, noEntry;
+Edit rmb05=rmb_file.rmb05, tabIndex=16, noEntry;
+Edit rmb06=rmb_file.rmb06, tabIndex=17, noEntry;
+Edit rmb04=rmb_file.rmb04, tabIndex=18, noEntry;
+Edit rmb12=rmb_file.rmb12, tabIndex=19, not null, required;
+Edit rmauser=rma_file.rmauser, tabIndex=20, noEntry;
+Edit rmamodu=rma_file.rmamodu, tabIndex=21, noEntry;
+Edit rmavoid=rma_file.rmavoid, tabIndex=22, noEntry, upShift;
+Edit rmagrup=rma_file.rmagrup, tabIndex=23, noEntry;
+DateEdit rmadate=rma_file.rmadate, tabIndex=24, noEntry;
+Edit rmaoriu=rma_file.rmaoriu, tabIndex=501, noEntry;
+Edit rmaorig=rma_file.rmaorig, tabIndex=502, noEntry;
+Edit rmc02=rmc_file.rmc02, tabIndex=25, title="Serial No.", not null, required, comment="Ctrl-Y Mntn RMA  Material Details";
+Edit rmc07=rmc_file.rmc07, tabIndex=26, title="S/N";
+Edit rmc08=rmc_file.rmc08, tabIndex=27, title="Fix Dt";
+ComboBox rmc14=rmc_file.rmc14, tabIndex=28, title="Fix Code", not null, required, queryEditable, comment="0.Unfix 1.Fix 2.Exchange", items=(("0", %"Unfix"),("1", %"Fix"),("2", %"Exchange"));
+CheckBox rmc16=rmc_file.rmc16, tabIndex=29, title="Guar", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rmc10=rmc_file.rmc10, tabIndex=30, title="W-hour", not null, required;
+Edit rmc11=rmc_file.rmc11, tabIndex=31, title="Wage Rate", not null, required;
+Edit rmc12=rmc_file.rmc12, tabIndex=32, title="Wage", not null, required;
+Edit rmc13=rmc_file.rmc13, tabIndex=33, title="Material Cost", not null, required;
+CheckBox rmc09=rmc_file.rmc09, tabIndex=34, title="Charge", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rmc19=rmc_file.rmc19, tabIndex=35, title="A/R Amount", not null, required;
+Edit rmc17=rmc_file.rmc17, tabIndex=36, title="Delivery Dt";
+Edit rmc18=rmc_file.rmc18, tabIndex=37, title="Guar period/Day";
+Edit rmc23=rmc_file.rmc23, tabIndex=38, title="Refr Doc#";
+Edit rmc2=rmc_file.rmc24, tabIndex=39, title="Ln#";
+ComboBox rmc21=rmc_file.rmc21, tabIndex=40, title="Charge Off Code", not null, required, queryEditable, comment="0.Unch.Off 1.R-Del Ch.O 2.Tr to S/R Ch.O 3.Scrp Ch.O", items=(("0", %"Unch.Off"),("1", %"R-Del Ch.O"),("2", %"Tr to S/R Ch.O"),("3", %"Scrp Ch.O"));
+Edit rmc22=rmc_file.rmc22, tabIndex=41, title="Charge Off Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=42, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=43, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rmc(rmc_file.rmc02,rmc_file.rmc07,rmc_file.rmc08,rmc_file.rmc14,rmc_file.rmc16,rmc_file.rmc10,rmc_file.rmc11,rmc_file.rmc12,rmc_file.rmc13,rmc_file.rmc09,rmc_file.rmc19,rmc_file.rmc17,rmc_file.rmc18,rmc_file.rmc23,rmc_file.rmc24,rmc_file.rmc21,rmc_file.rmc22)
+SCREEN RECORD Undefined(rma_file.rma01,rma_file.rma13,formonly.gen02,formonly.imgmksg,rmb_file.rmb02,rma_file.rma14,formonly.gem02,rma_file.rma03,rma_file.rma04,rma_file.rmaconf,rma_file.rma12,rma_file.rma09,formonly.rma09_desc,rma_file.rma18,rmb_file.rmb03,rmb_file.rmb05,rmb_file.rmb06,rmb_file.rmb04,rmb_file.rmb12,rma_file.rmauser,rma_file.rmamodu,rma_file.rmavoid,rma_file.rmagrup,rma_file.rmadate,rma_file.rmaoriu,rma_file.rmaorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

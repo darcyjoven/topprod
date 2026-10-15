@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq501")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2544
+{
+ Account #           [aao01                         ]
+ Account Name        [aag02                                             ]
+ Department No.      [aao02     ][gem02     ]
+}
+END -- gr2544
+Grid gr2545
+{
+ Year                [aao03     ]
+ Book No.            [aao00     ]
+
+}
+END -- gr2545
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_aao
+{
+[seq    |aao05                 |aao06                   |l_tot               ]
+[seq    |aao05                 |aao06                   |l_tot               ]
+[seq    |aao05                 |aao06                   |l_tot               ]
+[seq    |aao05                 |aao06                   |l_tot               ]
+[seq    |aao05                 |aao06                   |l_tot               ]
+[seq    |aao05                 |aao06                   |l_tot               ]
+[seq    |aao05                 |aao06                   |l_tot               ]
+[seq    |aao05                 |aao06                   |l_tot               ]
+[seq    |aao05                 |aao06                   |l_tot               ]
+[seq    |aao05                 |aao06                   |l_tot               ]
+
+}
+END -- s_aao
+Grid gr2546
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2546
+END -- VBox1
+END -- aglq501
+
+TABLES
+aao_file
+ATTRIBUTES
+ButtonEdit aao01=aao_file.aao01, action=controlp, tabIndex=1, image="zoom", fontPitch=fixed;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+Edit aao02=aao_file.aao02, tabIndex=3;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=4, noEntry;
+Edit aao03=aao_file.aao03, tabIndex=5;
+Edit aao00=aao_file.aao00, tabIndex=6;
+Edit seq=formonly.seq type VARCHAR, tabIndex=7, title="Period", noEntry;
+Edit aao05=aao_file.aao05, tabIndex=8, title="Debit Transaction Amt", noEntry;
+Edit aao06=aao_file.aao06, tabIndex=9, title="Credit Transaction Amt", noEntry;
+Edit l_tot=formonly.l_tot type DECIMAL, tabIndex=10, title="Accumulated balance", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aao(formonly.seq,aao_file.aao05,aao_file.aao06,formonly.l_tot)
+SCREEN RECORD Undefined(aao_file.aao01,formonly.aag02,aao_file.aao02,formonly.gem02,aao_file.aao03,aao_file.aao00,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

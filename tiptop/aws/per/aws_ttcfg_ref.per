@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_ttcfg_ref.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_ttcfg_ref")
+VBox VBox1
+Grid gr4
+{
+ <G group01                                                                        >
+  System ID [wsp03          ]
+ <                                                                                 >
+
+}
+END -- gr4
+Table tb2
+{
+[wsp04     |gaq03                    |wsp05                                   ]
+[wsp04     |gaq03                    |wsp05                                   ]
+[wsp04     |gaq03                    |wsp05                                   ]
+[wsp04     |gaq03                    |wsp05                                   ]
+[wsp04     |gaq03                    |wsp05                                   ]
+[wsp04     |gaq03                    |wsp05                                   ]
+[wsp04     |gaq03                    |wsp05                                   ]
+[wsp04     |gaq03                    |wsp05                                   ]
+[wsp04     |gaq03                    |wsp05                                   ]
+[wsp04     |gaq03                    |wsp05                                   ]
+[wsp04     |gaq03                    |wsp05                                   ]
+[wsp04     |gaq03                    |wsp05                                   ]
+[wsp04     |gaq03                    |wsp05                                   ]
+[wsp04     |gaq03                    |wsp05                                   ]
+[wsp04     |gaq03                    |wsp05                                   ]
+
+}
+END -- tb2
+Grid gr5
+{
+ ---------- Rows [cnt3  ] / [cnt4  ] ----------
+
+}
+END -- gr5
+END -- VBox1
+END -- aws_ttcfg_ref
+
+TABLES
+wsp_file
+ATTRIBUTES
+Group group01:group01;
+Edit wsp03=wsp_file.wsp03, tabIndex=1, not null, required;
+Edit wsp04=wsp_file.wsp04, tabIndex=2, title="ERP Col", not null, required;
+Edit gaq03=formonly.gaq03 type CHAR, tabIndex=3, title="Column Desc", noEntry;
+TextEdit wsp05=wsp_file.wsp05, tabIndex=4, title="Reference SQL", not null, required, stretch=NONE;
+Edit cnt3=formonly.cnt3 type SMALLINT, tabIndex=5, noEntry;
+Edit cnt4=formonly.cnt4 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wsp(wsp_file.wsp04,formonly.gaq03,wsp_file.wsp05)
+SCREEN RECORD Undefined(wsp_file.wsp03,formonly.cnt3,formonly.cnt4)
+END -- INSTRUCTIONS
+

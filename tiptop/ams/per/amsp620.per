@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsp620.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amsp620")
+VBox VBox1
+Grid gr3950
+{
+ <G group01                                 >
+  MPS Simulation Version [ver_no    ]
+  Rescource #            [rccp_ver  ]
+ [incl_wo                         ]
+ [incl_mps                        ]
+ [incl_plm                        ]
+ <                                          >
+
+}
+END -- gr3950
+Grid gr3951
+{
+[g_bgjob                                                       ]
+
+}
+END -- gr3951
+END -- VBox1
+END -- amsp620
+
+ATTRIBUTES
+Group group01:group01;
+Edit ver_no=formonly.ver_no type CHAR, tabIndex=1;
+Edit rccp_ver=formonly.rccp_ver type CHAR, tabIndex=2;
+CheckBox incl_wo=formonly.incl_wo type CHAR, tabIndex=3, text="W/O Include?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox incl_mps=formonly.incl_mps type CHAR, tabIndex=4, text="MPS Include?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox incl_plm=formonly.incl_plm type CHAR, tabIndex=5, text="PLM Include?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=6, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ver_no,formonly.rccp_ver,formonly.incl_wo,formonly.incl_mps,formonly.incl_plm,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

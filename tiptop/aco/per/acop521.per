@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acop521.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acop521")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1322
+{
+ Goods No.           [cra01     ]
+ Custom No.          [cra02     ]
+ Transaction Cate    [cra04     ]
+}
+END -- gr1322
+Grid gr1323
+{
+ [craconf     ]
+ HS Code             [cra05     ]
+ Customer No.        [cra03     ][occ02     ]
+}
+END -- gr1323
+END -- HBox1
+END -- page01
+END -- folder01
+Group group01(text="Transaction")
+VBox VBox2
+Table s_crb
+{
+[crb05              |crb06    |crb07          |crb08               |crb09               |crb10          |crb11|crb12       |crb13     ]
+[crb05              |crb06    |crb07          |crb08               |crb09               |crb10          |crb11|crb12       |crb13     ]
+[crb05              |crb06    |crb07          |crb08               |crb09               |crb10          |crb11|crb12       |crb13     ]
+[crb05              |crb06    |crb07          |crb08               |crb09               |crb10          |crb11|crb12       |crb13     ]
+[crb05              |crb06    |crb07          |crb08               |crb09               |crb10          |crb11|crb12       |crb13     ]
+[crb05              |crb06    |crb07          |crb08               |crb09               |crb10          |crb11|crb12       |crb13     ]
+[crb05              |crb06    |crb07          |crb08               |crb09               |crb10          |crb11|crb12       |crb13     ]
+[crb05              |crb06    |crb07          |crb08               |crb09               |crb10          |crb11|crb12       |crb13     ]
+[crb05              |crb06    |crb07          |crb08               |crb09               |crb10          |crb11|crb12       |crb13     ]
+[crb05              |crb06    |crb07          |crb08               |crb09               |crb10          |crb11|crb12       |crb13     ]
+
+}
+END -- s_crb
+END -- VBox2
+END -- group01
+Group group02(text="Customs Declaration Body")
+VBox VBox3
+Table s_crc
+{
+[crc05      |coc05       |crc06                   |crc07                    |crc08       |crc09         |crc11               |crc12       |cnm08      ]
+[crc05      |coc05       |crc06                   |crc07                    |crc08       |crc09         |crc11               |crc12       |cnm08      ]
+[crc05      |coc05       |crc06                   |crc07                    |crc08       |crc09         |crc11               |crc12       |cnm08      ]
+[crc05      |coc05       |crc06                   |crc07                    |crc08       |crc09         |crc11               |crc12       |cnm08      ]
+[crc05      |coc05       |crc06                   |crc07                    |crc08       |crc09         |crc11               |crc12       |cnm08      ]
+[crc05      |coc05       |crc06                   |crc07                    |crc08       |crc09         |crc11               |crc12       |cnm08      ]
+[crc05      |coc05       |crc06                   |crc07                    |crc08       |crc09         |crc11               |crc12       |cnm08      ]
+[crc05      |coc05       |crc06                   |crc07                    |crc08       |crc09         |crc11               |crc12       |cnm08      ]
+[crc05      |coc05       |crc06                   |crc07                    |crc08       |crc09         |crc11               |crc12       |cnm08      ]
+[crc05      |coc05       |crc06                   |crc07                    |crc08       |crc09         |crc11               |crc12       |cnm08      ]
+
+}
+END -- s_crc
+END -- VBox3
+END -- group02
+Grid gr1324
+{
+  ---------- Rows [cnt   ] / [cn2   ]-[cn4   ] ----------
+
+}
+END -- gr1324
+END -- VBox1
+END -- acop521
+
+TABLES
+crc_file,
+crb_file,
+cra_file
+ATTRIBUTES
+Edit cra01=cra_file.cra01, tabIndex=1, noEntry, not null, required, comment="KEY Field,No Blank/Repeated!";
+Edit cra02=cra_file.cra02, tabIndex=2, noEntry;
+ComboBox cra04=cra_file.cra04, tabIndex=3, noEntry, queryEditable, items=(("0", "Local Delivery"),("1", "Local Delivery"),("2", "Transfer/Export"),("5", "Local Delivery Return"),("6", "Direct Export Return"),("7", "Transfer/Export Return"));
+CheckBox craconf=cra_file.craconf, tabIndex=4, text="Confirm", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit cra05=cra_file.cra05, tabIndex=5, noEntry;
+Edit cra03=cra_file.cra03, tabIndex=6, noEntry;
+Edit occ02=formonly.occ02 type CHAR, tabIndex=7, noEntry;
+Edit crb05=crb_file.crb05, tabIndex=8, title="Document No.", not null, required;
+Edit crb06=crb_file.crb06, tabIndex=9, title="Line No.", not null, required;
+DateEdit crb07=formonly.crb07 type CHAR, tabIndex=10, title="Document Date", noEntry;
+Edit crb08=formonly.crb08 type CHAR, tabIndex=11, title="Item No.", noEntry;
+Edit crb09=formonly.crb09 type CHAR, tabIndex=12, title="Exchange Rate", noEntry;
+Edit crb10=formonly.crb10 type CHAR, tabIndex=13, title="Transation Qty", noEntry;
+Edit crb11=formonly.crb11 type CHAR, tabIndex=14, title="Unit", noEntry;
+Edit crb12=formonly.crb12 type CHAR, tabIndex=15, title="Bonded Qty", noEntry;
+Edit crb13=formonly.crb13 type CHAR, tabIndex=16, title="unit", noEntry;
+Edit crc05=crc_file.crc05, tabIndex=17, title="Book No.";
+Edit coc05=formonly.coc05 type CHAR, tabIndex=18, title="Expiry Date", noEntry;
+Edit crc06=crc_file.crc06, tabIndex=19, title="Customs Declaration No.";
+Edit crc07=crc_file.crc07, tabIndex=20, title="Customs Declaration Date";
+Edit crc08=formonly.crc08 type CHAR, tabIndex=21, title="Qty Applied", noEntry;
+Edit crc09=formonly.crc09 type CHAR, tabIndex=22, title="Available Qty", noEntry;
+Edit crc11=formonly.crc11 type CHAR, tabIndex=23, title="Not Carried/Dlieved", noEntry;
+Edit crc12=crc_file.crc12, tabIndex=24, title="Carried Qty";
+Edit cnm08=formonly.cnm08 type CHAR, tabIndex=25, title="Transfer To", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=26;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=27;
+Edit cn4=formonly.cn4 type SMALLINT, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_crb(crb_file.crb05,crb_file.crb06,formonly.crb07,formonly.crb08,formonly.crb09,formonly.crb10,formonly.crb11,formonly.crb12,formonly.crb13)
+SCREEN RECORD s_crc(crc_file.crc05,formonly.coc05,crc_file.crc06,crc_file.crc07,formonly.crc08,formonly.crc09,formonly.crc11,crc_file.crc12,formonly.cnm08)
+SCREEN RECORD Undefined(cra_file.cra01,cra_file.cra02,cra_file.cra04,cra_file.craconf,cra_file.cra05,cra_file.cra03,formonly.occ02,formonly.cnt,formonly.cn2,formonly.cn4)
+END -- INSTRUCTIONS
+

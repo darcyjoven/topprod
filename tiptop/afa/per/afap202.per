@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap202.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afap202")
+Folder pc354
+Page page01(text="Main")
+VBox VBox1
+Grid gr1910
+{
+
+ <G group01                                      >
+  Asset Category      [npp00               ]
+  Document No.        [npp01               ]
+  Serial No.          [npp011              ]
+  Date                [npp02               ]
+ <                                               >
+ <G group02                                      >
+  Enter user QBE        [b_user    ]-[e_user    ]
+  Gen. Ledger Plant No. [p_plant   ]
+  General Ledger No.    [p_bookno  ]
+  Gen. Ledger Voc. Type [gl_no               ]
+  General Ledger No.2   [p_bookno1 ]
+  Gen. Ledger Voc. Type2[gl_no1              ]
+  Gen. Ledger Voc. Date [gl_date     ]
+ [gl_tran                                    ]
+ <                                               >
+ <G group03                                      >
+ [gl_seq                                     ]
+ [                                           ]
+ [                                           ]
+ <                                               >
+
+}
+END -- gr1910
+Grid gr1911
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr1911
+END -- VBox1
+END -- page01
+END -- pc354
+END -- afap202
+
+TABLES
+npp_file
+ATTRIBUTES
+Group group01:group01, text="QBE:System(FA)";
+ComboBox npp00=npp_file.npp00, tabIndex=1, queryEditable, items=(("1", "Capitalization"),("2", "Transfer"),("4", "Sale"),("5", "Retire"),("6", "Charge off"),("7", "Improve"),("8", "Revaluate"),("9", "Adjust"),("10", "Depreciation"),("11", "Interest Capitalization"),("12", "Insurance"),("13", "Deduction Preparation"),("14", "Category Trans."));
+Edit npp01=npp_file.npp01, tabIndex=2;
+Edit npp011=npp_file.npp011, tabIndex=3;
+DateEdit npp02=npp_file.npp02, tabIndex=4;
+Group group02:group02, text="Input";
+Edit b_user=formonly.b_user type CHAR, tabIndex=5;
+Edit e_user=formonly.e_user type CHAR, tabIndex=6;
+Edit p_plant=formonly.p_plant type VARCHAR, tabIndex=7;
+Edit p_bookno=formonly.p_bookno type VARCHAR, tabIndex=8;
+ButtonEdit gl_no=formonly.gl_no type CHAR, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Documents ";
+Edit p_bookno1=formonly.p_bookno1 type VARCHAR, tabIndex=10;
+ButtonEdit gl_no1=formonly.gl_no1 type CHAR, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Qry Documents ";
+DateEdit gl_date=formonly.gl_date type DATE, tabIndex=12, not null, required;
+CheckBox gl_tran=formonly.gl_tran type CHAR, tabIndex=13, text="Carry Memo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Data Option";
+RadioGroup gl_seq=formonly.gl_seq type CHAR, tabIndex=14, items=(("0", "All"),("1", "By Document Number"),("2", "By Date"));
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=15, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(npp_file.npp00,npp_file.npp01,npp_file.npp011,npp_file.npp02,formonly.b_user,formonly.e_user,formonly.p_plant,formonly.p_bookno,formonly.gl_no,formonly.p_bookno1,formonly.gl_no1,formonly.gl_date,formonly.gl_tran,formonly.gl_seq,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

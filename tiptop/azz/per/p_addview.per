@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_addview.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_addview")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+  View Name    [vie01       ] Query Id  [vie02      ]
+  Query Sql    [vie03                                                             ]
+               [                                                                  ]
+               [                                                                  ]
+               [                                                                  ]
+               [                                                                  ]
+               [                                                                  ]
+               [                                                                  ]
+               [                                                                  ]
+
+
+ Other Nmae    [vie04                                                             ]
+
+               [vie05          ][vie06                                            ]
+
+               [vie07          ]       [vie08             ]      [vie09           ]
+
+
+
+}
+END -- Grid1
+END -- page01
+Page info(text="Info")
+Grid Grid2
+{
+ Record Owner[vieuser] Last Modify by      [viemodu] Date Valid Code[v]
+ Department  [viegrup] Create/Modify Data  [viedate         ]
+ Record Orig.[vieoriu]
+ Dept Orig.  [vieorig]
+}
+END -- Grid2
+END -- info
+END -- Folder1
+Grid Grid3
+{
+ --------[cnt  ]--------
+
+}
+END -- Grid3
+END -- VBox1
+END -- p_addview
+
+TABLES
+vie_file
+ATTRIBUTES
+Edit vie01=vie_file.vie01, tabIndex=1, not null, required, downShift;
+Edit vie02=vie_file.vie02, tabIndex=2, downShift;
+TextEdit vie03=vie_file.vie03, tabIndex=3, not null, required, stretch=NONE;
+TextEdit vie04=vie_file.vie04, tabIndex=4, stretch=NONE;
+ComboBox vie05=vie_file.vie05, tabIndex=5, not null, required, items=(("0", %"TO NONCE DATABASE"),("1", %"TO ALL DATABASE"));
+Edit vie06=vie_file.vie06, tabIndex=6, noEntry;
+CheckBox vie07=vie_file.vie07, tabIndex=7, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vie08=vie_file.vie08, tabIndex=8, noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vie09=vie_file.vie09, tabIndex=9, noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit vieuser=vie_file.vieuser, tabIndex=10, noEntry;
+Edit viemodu=vie_file.viemodu, tabIndex=11, noEntry;
+Edit v=vie_file.vieacti, tabIndex=12, noEntry, upShift;
+Edit viegrup=vie_file.viegrup, tabIndex=13, noEntry;
+DateEdit viedate=vie_file.viedate, tabIndex=14, noEntry;
+Edit vieoriu=vie_file.vieoriu, tabIndex=501, noEntry;
+Edit vieorig=vie_file.vieorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vie_file.vie01,vie_file.vie02,vie_file.vie03,vie_file.vie04,vie_file.vie05,vie_file.vie06,vie_file.vie07,vie_file.vie08,vie_file.vie09,vie_file.vieuser,vie_file.viemodu,vie_file.vieacti,vie_file.viegrup,vie_file.viedate,vie_file.vieoriu,vie_file.vieorig,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjr300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apjr300")
+VBox vb5
+Grid gr4672
+{
+ <G grpqbe                                       >
+  Project NO.         [pja01               ]
+  WBS No.             [pjb02               ]
+  Project Date        [pja05               ]
+  Department NO.      [pja09               ]
+  Employee NO.        [pja08               ]
+ <                                               >
+
+}
+END -- gr4672
+Grid gr4673
+{
+ [more                                 ]
+
+}
+END -- gr4673
+END -- vb5
+END -- apjr300
+
+TABLES
+pjb_file,
+pja_file
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+ButtonEdit pja01=pja_file.pja01, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit pjb02=pjb_file.pjb02, action=controlp, tabIndex=6, image="zoom.png";
+DateEdit pja05=pja_file.pja05, tabIndex=2;
+ButtonEdit pja09=pja_file.pja09, action=controlp, tabIndex=3, image="zoom.png";
+ButtonEdit pja08=pja_file.pja08, action=controlp, tabIndex=4, image="zoom.png";
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pja_file.pja01,pjb_file.pjb02,pja_file.pja05,pja_file.pja09,pja_file.pja08,formonly.more)
+END -- INSTRUCTIONS
+

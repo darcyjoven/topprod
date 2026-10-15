@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi163_e.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"atmi163_e")
+VBox VBox1
+Folder pc334
+Page page01(text="Main")
+Grid gr1405
+{
+ <G group01                                  >
+  Forecast Ver.       [a                    ]
+                      [a_desc               ]
+  Inst No.            [b                    ]
+                      [b_desc               ]
+  Amount Source       [c                    ]
+  Markup Type         [g                    ]
+  Percent             [h                    ]
+  Amount              [i                    ]
+ [j                    ]
+ <                                           >
+
+}
+END -- gr1405
+END -- page01
+END -- pc334
+END -- VBox1
+END -- atmi163_e
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit a_desc=formonly.a_desc type CHAR, tabIndex=2, noEntry;
+ButtonEdit b=formonly.b type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit b_desc=formonly.b_desc type CHAR, tabIndex=4, noEntry;
+ComboBox c=formonly.c type CHAR, tabIndex=5, not null, required, items=(("1", "History Amount"),("2", "Forecast Amount"));
+ComboBox g=formonly.g type CHAR, tabIndex=6, not null, required, items=(("1", "Fix Percent"),("2", "Fix Amount"));
+Edit h=formonly.h type CHAR, tabIndex=7;
+Edit i=formonly.i type CHAR, tabIndex=8;
+CheckBox j=formonly.j type CHAR, tabIndex=9, text="Expand to bottom", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.a_desc,formonly.b,formonly.b_desc,formonly.c,formonly.g,formonly.h,formonly.i,formonly.j)
+END -- INSTRUCTIONS
+

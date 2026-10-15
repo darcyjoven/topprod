@@ -1,0 +1,169 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi413.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfi413")
+VBox VBox5
+Folder pc122
+Page page01(text="Main")
+VBox VBox2
+HBox HBox1
+Grid gr769
+{
+ PBI NO.         [edh01               ]
+                 [sfc02                     ]
+ PBI S/N         [edh011         ]
+ Routing Sequence[edh013         ]
+ Cmpo.Ln #       [edh02     ]
+
+
+
+
+}
+END -- gr769
+Grid gr770
+{
+ Compo.No            [edh03                         ]
+ Part Name           [ima02_h2                      ]
+ Spec                [ima021_h2                     ]
+ Src.Cd              [ima08_2   ]
+ Eff.Date            [edh04       ]
+ Exp.Date            [edh05       ]
+
+
+
+}
+END -- gr770
+END -- HBox1
+HBox HBox2
+Group gb534
+Grid gr771
+{
+ Iss.Unit            [edh10     ]
+ Conv.R(Issu/Unit)   [edh10_fac ]
+ Conv.R(Issu/Cost)   [edh10_fac2]
+ QPA                 [edh06     ]
+ DQPA                [edh07     ]
+ Wast.%              [edh08     ]%
+ Chosn%              [edh23     ]%
+ Eng.Drw#            [edh11               ]
+ Inst.Loc            [edh13     ]
+}
+END -- gr771
+END -- gb534
+VBox VBox1
+Group gb535
+Grid gr772
+{
+ Task No.            [edh09     ]
+ Inpt T.B(DD)        [edh18     ]
+ diff ratio          [edh28     ]%
+ WO Open/Expl Opt    [edh19               ]
+}
+END -- gr772
+END -- gb535
+Group group05(text="Usg.Feat")
+Grid gr773
+{
+[edh14                                    ]
+[                                         ]
+[                                         ]
+[                                         ]
+}
+END -- gr773
+END -- group05
+END -- VBox1
+END -- HBox2
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr776
+{
+ Last Modified by    [edhmodu   ] Modify command from [edhcomm   ]
+ Create/Modify Date  [edhdate   ]
+}
+END -- gr776
+END -- info
+END -- pc122
+VBox VBox3
+VBox VBox4
+HBox HBox3
+Group gb537
+Grid gr774
+{
+ SUB Feat[edh16             ]
+[edh27                      ]
+[edh15                      ]
+}
+END -- gr774
+END -- gb537
+Group gb538
+Grid gr775
+{
+ Wharehouse          [edh25     ]
+ Location            [edh26     ]
+ ECN No.             [edh24           ]
+}
+END -- gr775
+END -- gb538
+END -- HBox3
+END -- VBox4
+END -- VBox3
+Grid gr777
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+}
+END -- gr777
+END -- VBox5
+END -- asfi413
+
+TABLES
+edh_file
+ATTRIBUTES
+ButtonEdit edh01=edh_file.edh01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ";
+Edit sfc02=formonly.sfc02 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit edh011=edh_file.edh011, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ";
+ButtonEdit edh013=edh_file.edh013, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ";
+Edit edh02=edh_file.edh02, tabIndex=5, required;
+ButtonEdit edh03=edh_file.edh03, action=controlp, tabIndex=6, required, color = green, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ,<^O>Maintian Brand";
+Edit ima02_h2=formonly.ima02_h2 type VARCHAR, tabIndex=7, noEntry;
+Edit ima021_h2=formonly.ima021_h2 type VARCHAR, tabIndex=8, noEntry;
+Edit ima08_2=formonly.ima08_2 type VARCHAR, tabIndex=9, noEntry;
+DateEdit edh04=edh_file.edh04, tabIndex=10, not null, required;
+DateEdit edh05=edh_file.edh05, tabIndex=11, comment="Modifying,<^P>BOM Description";
+ButtonEdit edh10=edh_file.edh10, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit  <^U>/<^T>Crt Item/ Unit Conv.  ";
+Edit edh10_fac=edh_file.edh10_fac, tabIndex=13, noEntry;
+Edit edh10_fac2=edh_file.edh10_fac2, tabIndex=14, noEntry;
+Edit edh06=edh_file.edh06, tabIndex=15;
+Edit edh07=edh_file.edh07, tabIndex=16;
+Edit edh08=edh_file.edh08, tabIndex=17;
+Edit edh23=edh_file.edh23, tabIndex=18, not null, required;
+Edit edh11=edh_file.edh11, tabIndex=19;
+Edit edh13=edh_file.edh13, tabIndex=20, comment="Chng,Press<^T>M-Insert Loc ";
+ButtonEdit edh09=edh_file.edh09, action=controlp, tabIndex=21, noEntry, image="zoom", comment="<^P> Qry Task No.";
+Edit edh18=edh_file.edh18, tabIndex=22, not null, required;
+Edit edh28=edh_file.edh28, tabIndex=23;
+ComboBox edh19=edh_file.edh19, tabIndex=24, not null, required, items=(("1", "No Exp"),("2", "No Expl, Auto Open WO"),("3", "Expl"),("4", "Open Window and Qry to Expl"));
+RadioGroup edh14=edh_file.edh14, tabIndex=25, not null, required, items=(("0", "required"),("1", "optional"),("2", "Recovery item"),("3", "Guest Supply"));
+Edit edhmodu=edh_file.edhmodu, tabIndex=32, noEntry;
+Edit edhcomm=edh_file.edhcomm, tabIndex=33, noEntry;
+DateEdit edhdate=edh_file.edhdate, tabIndex=34, noEntry;
+ComboBox edh16=edh_file.edh16, tabIndex=26, not null, required, comment="<^Y>Create REP or SUB   ", items=(("0", "No REP/SUB"),("1", "OK REPd"),("2", "OK SUBd"),("5", "SUB wth SET"),("7", "Rule."));
+CheckBox edh27=edh_file.edh27, tabIndex=27, text="Software object", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox edh15=edh_file.edh15, tabIndex=28, text="Consumption Feature", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit edh25=edh_file.edh25, action=controlp, tabIndex=29, image="zoom", comment="<^P> Qry W/H Table ,<^Y> Crt W/H Table ";
+ButtonEdit edh26=edh_file.edh26, action=controlp, tabIndex=30, image="zoom", comment="<^P> Qry Location    ,<^Y> Create Location ";
+Edit edh24=edh_file.edh24, tabIndex=31, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=35, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(edh_file.edh01,formonly.sfc02,edh_file.edh011,edh_file.edh013,edh_file.edh02,edh_file.edh03,formonly.ima02_h2,formonly.ima021_h2,formonly.ima08_2,edh_file.edh04,edh_file.edh05,edh_file.edh10,edh_file.edh10_fac,edh_file.edh10_fac2,edh_file.edh06,edh_file.edh07,edh_file.edh08,edh_file.edh23,edh_file.edh11,edh_file.edh13,edh_file.edh09,edh_file.edh18,edh_file.edh28,edh_file.edh19,edh_file.edh14,edh_file.edhmodu,edh_file.edhcomm,edh_file.edhdate,edh_file.edh16,edh_file.edh27,edh_file.edh15,edh_file.edh25,edh_file.edh26,edh_file.edh24,formonly.cnt)
+END -- INSTRUCTIONS
+

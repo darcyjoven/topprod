@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_m.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt110_m")
+VBox VBox1
+Table tn_0
+{
+[apv0|apv03        |apa07     |apa08           |apa14              |apv05    |apc08            |apc09             |un_payf             |un_pay              |apv04f            |apv04              |apx04f              |apx04               ]
+[apv0|apv03        |apa07     |apa08           |apa14              |apv05    |apc08            |apc09             |un_payf             |un_pay              |apv04f            |apv04              |apx04f              |apx04               ]
+[apv0|apv03        |apa07     |apa08           |apa14              |apv05    |apc08            |apc09             |un_payf             |un_pay              |apv04f            |apv04              |apx04f              |apx04               ]
+[apv0|apv03        |apa07     |apa08           |apa14              |apv05    |apc08            |apc09             |un_payf             |un_pay              |apv04f            |apv04              |apx04f              |apx04               ]
+[apv0|apv03        |apa07     |apa08           |apa14              |apv05    |apc08            |apc09             |un_payf             |un_pay              |apv04f            |apv04              |apx04f              |apx04               ]
+[apv0|apv03        |apa07     |apa08           |apa14              |apv05    |apc08            |apc09             |un_payf             |un_pay              |apv04f            |apv04              |apx04f              |apx04               ]
+[apv0|apv03        |apa07     |apa08           |apa14              |apv05    |apc08            |apc09             |un_payf             |un_pay              |apv04f            |apv04              |apx04f              |apx04               ]
+[apv0|apv03        |apa07     |apa08           |apa14              |apv05    |apc08            |apc09             |un_payf             |un_pay              |apv04f            |apv04              |apx04f              |apx04               ]
+[apv0|apv03        |apa07     |apa08           |apa14              |apv05    |apc08            |apc09             |un_payf             |un_pay              |apv04f            |apv04              |apx04f              |apx04               ]
+[apv0|apv03        |apa07     |apa08           |apa14              |apv05    |apc08            |apc09             |un_payf             |un_pay              |apv04f            |apv04              |apx04f              |apx04               ]
+
+}
+END -- tn_0
+Grid gr363
+{
+ <G group01                                                                            >
+  F.C Total          [apa65f              ]  H.C Total          [apa65               ]
+
+ <                                                                                     >
+
+}
+END -- gr363
+END -- VBox1
+END -- aapt110_m
+
+TABLES
+apv_file
+ATTRIBUTES
+Edit apv0=apv_file.apv02, tabIndex=1, title="Ln#", not null, required;
+ButtonEdit apv03=apv_file.apv03, action=controlp, tabIndex=2, title="Acc.# To-Off", not null, required, image="zoom", comment="<^P>Qry Account No. To Contra";
+Edit apa07=formonly.apa07 type CHAR, tabIndex=3, title="Vender", noEntry;
+Edit apa08=formonly.apa08 type CHAR, tabIndex=4, title="Invoice#", noEntry, upShift;
+Edit apa14=formonly.apa14 type CHAR, tabIndex=5, title="Ex Rate", noEntry;
+Edit apv05=apv_file.apv05, tabIndex=6, title="Line No.", not null, required;
+Edit apc08=formonly.apc08 type CHAR, tabIndex=7, title="F.C.Original$", noEntry;
+Edit apc09=formonly.apc09 type CHAR, tabIndex=8, title="H.C.Original$", noEntry;
+Edit un_payf=formonly.un_payf type CHAR, tabIndex=9, title="F.C.UnContra$", noEntry;
+Edit un_pay=formonly.un_pay type CHAR, tabIndex=10, title="H.C.UnContra$", noEntry;
+Edit apv04f=apv_file.apv04f, tabIndex=11, title="F.C.Contra$", not null, required;
+Edit apv04=apv_file.apv04, tabIndex=12, title="H.C.Contra$", not null, required;
+Edit apx04f=formonly.apx04f type CHAR, tabIndex=13, title="F.C Revert $";
+Edit apx04=formonly.apx04 type CHAR, tabIndex=14, title="H.C Revert $";
+Group group01:group01;
+Edit apa65f=formonly.apa65f type CHAR, tabIndex=15, noEntry;
+Edit apa65=formonly.apa65 type CHAR, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apv(apv_file.apv02,apv_file.apv03,formonly.apa07,apv_file.apv05,formonly.apa08,formonly.apa14,formonly.apc08,formonly.apc09,formonly.un_payf,formonly.un_pay,apv_file.apv04f,apv_file.apv04,formonly.apx04f,formonly.apx04)
+SCREEN RECORD tn_0(apv_file.apv02,apv_file.apv03,formonly.apa07,formonly.apa08,formonly.apa14,apv_file.apv05,formonly.apc08,formonly.apc09,formonly.un_payf,formonly.un_pay,apv_file.apv04f,apv_file.apv04,formonly.apx04f,formonly.apx04)
+SCREEN RECORD Undefined(formonly.apa65f,formonly.apa65)
+END -- INSTRUCTIONS
+

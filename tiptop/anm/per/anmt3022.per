@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt3022.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Undo Confirm")
+VBox VBox1
+Grid gr4492
+{
+ <G group01                                  >
+ [only_one                                  ]
+ <                                           >
+ <G group02                                  >
+ [dummy                                     ]
+  Income/Expense #     [nmg00               ]
+  Income/Expense Date  [nmg01               ]
+ <                                           >
+
+}
+END -- gr4492
+END -- VBox1
+END -- anmt3022
+
+TABLES
+nmg_file
+ATTRIBUTES
+Group group01:group01, text="Undo Confirm";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, items=(("1", "Cancel this Accounts Confirmation only"),("2", "Cancel Confirmation By QBE Condition"));
+Group group02:group02, text="QBE";
+Label dummy:dummy, text="Enter Accounts Condition to Cancel Confirmation:";
+Edit nmg00=nmg_file.nmg00, tabIndex=2;
+DateEdit nmg01=nmg_file.nmg01, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,nmg_file.nmg00,nmg_file.nmg01)
+END -- INSTRUCTIONS
+

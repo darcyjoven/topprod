@@ -1,0 +1,134 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi211.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi211")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1321
+{
+ Media No. [toj01               ][tof02                         ]
+ Brand     [toj02               ][tqa02                         ]
+ Memo      [toj03                                             ]
+
+}
+END -- gr1321
+END -- page01
+Page info(text="Info")
+Grid gr1322
+{
+ Record Owner        [tojuser   ]  Last Modified by    [tojmodu   ]  Data Valid Code     [tojacti   ]
+ Department          [tojgrup   ]  Create/Modify Date  [tojdate   ]
+ Record Orig.        [tojoriu   ]
+ Dept Orig.          [tojorig   ]
+}
+END -- gr1322
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[tojud01                       ] userdefined_field07[tojud07        ] userdefined_field13[tojud13        ]
+                    [                              ] userdefined_field08[tojud08        ] userdefined_field14[tojud14        ]
+ userdefined_field02[tojud02        ]                userdefined_field09[tojud09        ] userdefined_field15[tojud15        ]
+ userdefined_field03[tojud03        ]                userdefined_field10[tojud10        ]
+ userdefined_field04[tojud04        ]                userdefined_field11[tojud11        ]
+ userdefined_field05[tojud05        ]                userdefined_field12[tojud12        ]
+ userdefined_field06[tojud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_tok
+{
+[tok03     |tok04     |too02               |tok05     |tok06     |tok061              |tok062    |tok07     |tok08     |tok09               |tokud01   |tokud02   |tokud03    |tokud04    |tokud05    |tokud06    |tokud07    |tokud08    |tokud09    |tokud10    |tokud11   |tokud12  |tokud13   |tokud14   |tokud15    ]
+[tok03     |tok04     |too02               |tok05     |tok06     |tok061              |tok062    |tok07     |tok08     |tok09               |tokud01   |tokud02   |tokud03    |tokud04    |tokud05    |tokud06    |tokud07    |tokud08    |tokud09    |tokud10    |tokud11   |tokud12  |tokud13   |tokud14   |tokud15    ]
+[tok03     |tok04     |too02               |tok05     |tok06     |tok061              |tok062    |tok07     |tok08     |tok09               |tokud01   |tokud02   |tokud03    |tokud04    |tokud05    |tokud06    |tokud07    |tokud08    |tokud09    |tokud10    |tokud11   |tokud12  |tokud13   |tokud14   |tokud15    ]
+[tok03     |tok04     |too02               |tok05     |tok06     |tok061              |tok062    |tok07     |tok08     |tok09               |tokud01   |tokud02   |tokud03    |tokud04    |tokud05    |tokud06    |tokud07    |tokud08    |tokud09    |tokud10    |tokud11   |tokud12  |tokud13   |tokud14   |tokud15    ]
+[tok03     |tok04     |too02               |tok05     |tok06     |tok061              |tok062    |tok07     |tok08     |tok09               |tokud01   |tokud02   |tokud03    |tokud04    |tokud05    |tokud06    |tokud07    |tokud08    |tokud09    |tokud10    |tokud11   |tokud12  |tokud13   |tokud14   |tokud15    ]
+[tok03     |tok04     |too02               |tok05     |tok06     |tok061              |tok062    |tok07     |tok08     |tok09               |tokud01   |tokud02   |tokud03    |tokud04    |tokud05    |tokud06    |tokud07    |tokud08    |tokud09    |tokud10    |tokud11   |tokud12  |tokud13   |tokud14   |tokud15    ]
+[tok03     |tok04     |too02               |tok05     |tok06     |tok061              |tok062    |tok07     |tok08     |tok09               |tokud01   |tokud02   |tokud03    |tokud04    |tokud05    |tokud06    |tokud07    |tokud08    |tokud09    |tokud10    |tokud11   |tokud12  |tokud13   |tokud14   |tokud15    ]
+[tok03     |tok04     |too02               |tok05     |tok06     |tok061              |tok062    |tok07     |tok08     |tok09               |tokud01   |tokud02   |tokud03    |tokud04    |tokud05    |tokud06    |tokud07    |tokud08    |tokud09    |tokud10    |tokud11   |tokud12  |tokud13   |tokud14   |tokud15    ]
+[tok03     |tok04     |too02               |tok05     |tok06     |tok061              |tok062    |tok07     |tok08     |tok09               |tokud01   |tokud02   |tokud03    |tokud04    |tokud05    |tokud06    |tokud07    |tokud08    |tokud09    |tokud10    |tokud11   |tokud12  |tokud13   |tokud14   |tokud15    ]
+[tok03     |tok04     |too02               |tok05     |tok06     |tok061              |tok062    |tok07     |tok08     |tok09               |tokud01   |tokud02   |tokud03    |tokud04    |tokud05    |tokud06    |tokud07    |tokud08    |tokud09    |tokud10    |tokud11   |tokud12  |tokud13   |tokud14   |tokud15    ]
+
+}
+END -- s_tok
+Grid gr1323
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1323
+END -- VBox1
+END -- atmi211
+
+TABLES
+tok_file,
+toj_file
+ATTRIBUTES
+ButtonEdit toj01=toj_file.toj01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!,<^P>Qry Media No.";
+Edit tof02=formonly.tof02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit toj02=toj_file.toj02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!,<^P>Qry Brand ";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=4, noEntry;
+Edit toj03=toj_file.toj03, tabIndex=5;
+Edit tojuser=toj_file.tojuser, tabIndex=6, noEntry;
+Edit tojmodu=toj_file.tojmodu, tabIndex=7, noEntry;
+Edit tojacti=toj_file.tojacti, tabIndex=8, noEntry, upShift;
+Edit tojgrup=toj_file.tojgrup, tabIndex=9, noEntry;
+DateEdit tojdate=toj_file.tojdate, tabIndex=10, noEntry;
+Edit tojoriu=toj_file.tojoriu, tabIndex=501, noEntry;
+Edit tojorig=toj_file.tojorig, tabIndex=502, noEntry;
+TextEdit tojud01=toj_file.tojud01, tabIndex=326, stretch=NONE;
+Edit tojud07=toj_file.tojud07, tabIndex=327;
+DateEdit tojud13=toj_file.tojud13, tabIndex=328;
+Edit tojud08=toj_file.tojud08, tabIndex=329;
+DateEdit tojud14=toj_file.tojud14, tabIndex=330;
+Edit tojud02=toj_file.tojud02, tabIndex=331;
+Edit tojud09=toj_file.tojud09, tabIndex=332;
+DateEdit tojud15=toj_file.tojud15, tabIndex=333;
+Edit tojud03=toj_file.tojud03, tabIndex=334;
+Edit tojud10=toj_file.tojud10, tabIndex=335;
+Edit tojud04=toj_file.tojud04, tabIndex=336;
+Edit tojud11=toj_file.tojud11, tabIndex=337;
+Edit tojud05=toj_file.tojud05, tabIndex=338;
+Edit tojud12=toj_file.tojud12, tabIndex=339;
+Edit tojud06=toj_file.tojud06, tabIndex=340;
+Edit tok03=tok_file.tok03, tabIndex=11, title="Line#", not null, required;
+ButtonEdit tok04=tok_file.tok04, action=controlp, tabIndex=12, title="Province", not null, required, image="zoom", comment="<^P>Qry Province ";
+Edit too02=formonly.too02 type CHAR, tabIndex=13, title="Province name", noEntry;
+Edit tok05=tok_file.tok05, tabIndex=14, title="Popu.", noEntry, not null, required;
+Edit tok06=tok_file.tok06, tabIndex=15, title="Audience%";
+Edit tok061=formonly.tok061 type CHAR, tabIndex=16, title="Audience Qty", noEntry;
+Edit tok062=formonly.tok062 type CHAR, tabIndex=17, title="Apport%", noEntry;
+DateEdit tok07=tok_file.tok07, tabIndex=18, title="Start day";
+DateEdit tok08=tok_file.tok08, tabIndex=19, title="End date";
+Edit tok09=tok_file.tok09, tabIndex=20, title="Memo";
+TextEdit tokud01=tok_file.tokud01, tabIndex=325, title="tokud01", stretch=NONE;
+Edit tokud02=tok_file.tokud02, tabIndex=341, title="tokud02";
+Edit tokud03=tok_file.tokud03, tabIndex=342, title="tokud03";
+Edit tokud04=tok_file.tokud04, tabIndex=343, title="tokud04";
+Edit tokud05=tok_file.tokud05, tabIndex=344, title="tokud05";
+Edit tokud06=tok_file.tokud06, tabIndex=345, title="tokud06";
+Edit tokud07=tok_file.tokud07, tabIndex=346, title="tokud07";
+Edit tokud08=tok_file.tokud08, tabIndex=347, title="tokud08";
+Edit tokud09=tok_file.tokud09, tabIndex=348, title="tokud09";
+Edit tokud10=tok_file.tokud10, tabIndex=349, title="tokud10";
+Edit tokud11=tok_file.tokud11, tabIndex=350, title="tokud11";
+Edit tokud12=tok_file.tokud12, tabIndex=351, title="tokud12";
+Edit tokud13=tok_file.tokud13, tabIndex=352, title="tokud13";
+Edit tokud14=tok_file.tokud14, tabIndex=353, title="tokud14";
+Edit tokud15=tok_file.tokud15, tabIndex=354, title="tokud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tok(tok_file.tok03,tok_file.tok04,formonly.too02,tok_file.tok05,tok_file.tok06,formonly.tok061,formonly.tok062,tok_file.tok07,tok_file.tok08,tok_file.tok09,tok_file.tokud01,tok_file.tokud02,tok_file.tokud03,tok_file.tokud04,tok_file.tokud05,tok_file.tokud06,tok_file.tokud07,tok_file.tokud08,tok_file.tokud09,tok_file.tokud10,tok_file.tokud11,tok_file.tokud12,tok_file.tokud13,tok_file.tokud14,tok_file.tokud15)
+SCREEN RECORD Undefined(toj_file.toj01,formonly.tof02,toj_file.toj02,formonly.tqa02,toj_file.toj03,toj_file.tojuser,toj_file.tojmodu,toj_file.tojacti,toj_file.tojgrup,toj_file.tojdate,toj_file.tojoriu,toj_file.tojorig,toj_file.tojud01,toj_file.tojud07,toj_file.tojud13,toj_file.tojud08,toj_file.tojud14,toj_file.tojud02,toj_file.tojud09,toj_file.tojud15,toj_file.tojud03,toj_file.tojud10,toj_file.tojud04,toj_file.tojud11,toj_file.tojud05,toj_file.tojud12,toj_file.tojud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

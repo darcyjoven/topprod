@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr580.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr580")
+Folder pc146
+Page page01(text="Main")
+VBox VBox1
+Grid Grid1
+{
+
+ <G group01                                                                                                   >
+ [bst                                    ]
+ <                                                                                                            >
+
+
+}
+END -- Grid1
+Table s_bma
+{
+[cnt       |bma01                  |ima02               |bma06          |qty                 |num           ]
+[cnt       |bma01                  |ima02               |bma06          |qty                 |num           ]
+[cnt       |bma01                  |ima02               |bma06          |qty                 |num           ]
+[cnt       |bma01                  |ima02               |bma06          |qty                 |num           ]
+[cnt       |bma01                  |ima02               |bma06          |qty                 |num           ]
+[cnt       |bma01                  |ima02               |bma06          |qty                 |num           ]
+[cnt       |bma01                  |ima02               |bma06          |qty                 |num           ]
+[cnt       |bma01                  |ima02               |bma06          |qty                 |num           ]
+[cnt       |bma01                  |ima02               |bma06          |qty                 |num           ]
+[cnt       |bma01                  |ima02               |bma06          |qty                 |num           ]
+}
+END -- s_bma
+END -- VBox1
+END -- page01
+END -- pc146
+END -- asfr580
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:Group01, text=%"BOM Status";
+RadioGroup bst=formonly.bst, tabIndex=1, default = "3", not null, required, items=(("1", "UnConfirmed"),("2", "Confirmed"),("3", "All"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=2, title="Line No", noEntry;
+ButtonEdit bma01=formonly.bma01 type VARCHAR, action=controlp, tabIndex=3, title="Finished Product No.", image="zoom", comment="No Blank Field, <^P>Qry Item No.";
+Edit ima02=ima_file.ima02, tabIndex=4, title="Description", noEntry;
+Edit bma06=formonly.bma06 type CHAR, tabIndex=5, title="Alternate Code";
+Edit qty=formonly.qty type DECIMAL, tabIndex=6, title="Production Sets", comment="No Blank Field,must be greater then zero";
+Edit num=formonly.num type VARCHAR, tabIndex=7, title="Pre-NumberW/O";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bma(formonly.cnt,formonly.bma01,ima_file.ima02,formonly.bma06,formonly.qty,formonly.num)
+SCREEN RECORD Undefined(formonly.bst)
+END -- INSTRUCTIONS
+

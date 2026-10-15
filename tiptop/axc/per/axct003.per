@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct003")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+ Item No                        [can01                         ]
+ Part Name                      [ima02                         ]
+ Unit                           [ima25     ]
+ Adjustment Year                [can02     ]
+ Adjustment Month               [can03     ]
+ Reference Doc #                [can04               ]
+ Adjustment Description         [can05               ]
+ Current month Adjusting Amount [can06               ]
+}
+END -- Grid1
+END -- page01
+Page info(text="Info")
+Grid Grid2
+{
+ Record Owner        [canuser   ] Last Modified by    [canmodu   ]
+ Department          [cangrup   ] Create/Modify Date  [candate   ]
+ Record Orig.        [canoriu   ]
+ Dept Orig.          [canorig   ]
+}
+END -- Grid2
+END -- info
+END -- Folder1
+Grid Grid3
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- axct003
+
+TABLES
+can_file
+ATTRIBUTES
+Edit can01=can_file.can01, tabIndex=1, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=3, noEntry;
+Edit can02=can_file.can02, tabIndex=4, not null, required;
+Edit can03=can_file.can03, tabIndex=5, not null, required;
+Edit can04=can_file.can04, tabIndex=6, not null, required;
+Edit can05=can_file.can05, tabIndex=7;
+Edit can06=can_file.can06, tabIndex=8, not null, required;
+Edit canuser=can_file.canuser, tabIndex=9, noEntry;
+Edit canmodu=can_file.canmodu, tabIndex=10, noEntry;
+Edit cangrup=can_file.cangrup, tabIndex=11, noEntry;
+Edit candate=can_file.candate, tabIndex=12, noEntry;
+Edit canoriu=can_file.canoriu, tabIndex=501, noEntry;
+Edit canorig=can_file.canorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(can_file.can01,formonly.ima02,formonly.ima25,can_file.can02,can_file.can03,can_file.can04,can_file.can05,can_file.can06,can_file.canuser,can_file.canmodu,can_file.cangrup,can_file.candate,can_file.canoriu,can_file.canorig,formonly.cnt)
+END -- INSTRUCTIONS
+

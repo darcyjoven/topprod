@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglp801.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglp801")
+VBox vb4
+Group g01(text="INPUT")
+Grid gr2514
+{
+ Original Book No.      [o_abg00   ]
+ Carry to Book No.      [n_abg00   ]
+ Original Doc Type      [o_abg01   ]
+ Initial voucher date   [b_abg06     ]
+ Ending Voucher Date    [e_abg06     ]
+ Initial voucher No.    [b_abg01             ]
+ Ending Voucher No.     [e_abg01             ]
+
+}
+END -- gr2514
+END -- g01
+Grid gr2515
+{
+[g_compare                     ]
+[more                                                        ]
+
+}
+END -- gr2515
+Grid gr2516
+{
+ NOTE [dummy01                                               ]
+
+
+}
+END -- gr2516
+END -- vb4
+END -- aglp801
+
+ATTRIBUTES
+Edit o_abg00=formonly.o_abg00 type CHAR, tabIndex=1;
+Edit n_abg00=formonly.n_abg00 type CHAR, tabIndex=2;
+Edit o_abg01=formonly.o_abg01 type CHAR, tabIndex=6;
+DateEdit b_abg06=formonly.b_abg06 type DATE, tabIndex=3, not null;
+DateEdit e_abg06=formonly.e_abg06 type DATE, tabIndex=4, not null;
+Edit b_abg01=formonly.b_abg01 type CHAR, tabIndex=8;
+Edit e_abg01=formonly.e_abg01 type CHAR, tabIndex=9;
+CheckBox g_compare=formonly.g_compare type CHAR, tabIndex=7, default = "", text=%"by comparing old and new titl", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="(1)Confirm After Carry Data";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.o_abg00,formonly.n_abg00,formonly.o_abg01,formonly.b_abg06,formonly.e_abg06,formonly.more,formonly.g_compare,formonly.b_abg01,formonly.e_abg01)
+END -- INSTRUCTIONS
+

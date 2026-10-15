@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi010")
+VBox VBox1
+Folder pc185
+Page page01(text="Main")
+Table s_coy
+{
+[coyslip|coydesc             |coyauno    |coytype         |coyslip2       |coyud01        |coyud02   |coyud03     |coyud04        |coyud05       |coyud06      |coyud07          |coyud08          |coyud09          |coyud10    |coyud11    |coyud12    |coyud13   |coyud14   |coyud15    ]
+[coyslip|coydesc             |coyauno    |coytype         |coyslip2       |coyud01        |coyud02   |coyud03     |coyud04        |coyud05       |coyud06      |coyud07          |coyud08          |coyud09          |coyud10    |coyud11    |coyud12    |coyud13   |coyud14   |coyud15    ]
+[coyslip|coydesc             |coyauno    |coytype         |coyslip2       |coyud01        |coyud02   |coyud03     |coyud04        |coyud05       |coyud06      |coyud07          |coyud08          |coyud09          |coyud10    |coyud11    |coyud12    |coyud13   |coyud14   |coyud15    ]
+[coyslip|coydesc             |coyauno    |coytype         |coyslip2       |coyud01        |coyud02   |coyud03     |coyud04        |coyud05       |coyud06      |coyud07          |coyud08          |coyud09          |coyud10    |coyud11    |coyud12    |coyud13   |coyud14   |coyud15    ]
+[coyslip|coydesc             |coyauno    |coytype         |coyslip2       |coyud01        |coyud02   |coyud03     |coyud04        |coyud05       |coyud06      |coyud07          |coyud08          |coyud09          |coyud10    |coyud11    |coyud12    |coyud13   |coyud14   |coyud15    ]
+[coyslip|coydesc             |coyauno    |coytype         |coyslip2       |coyud01        |coyud02   |coyud03     |coyud04        |coyud05       |coyud06      |coyud07          |coyud08          |coyud09          |coyud10    |coyud11    |coyud12    |coyud13   |coyud14   |coyud15    ]
+[coyslip|coydesc             |coyauno    |coytype         |coyslip2       |coyud01        |coyud02   |coyud03     |coyud04        |coyud05       |coyud06      |coyud07          |coyud08          |coyud09          |coyud10    |coyud11    |coyud12    |coyud13   |coyud14   |coyud15    ]
+[coyslip|coydesc             |coyauno    |coytype         |coyslip2       |coyud01        |coyud02   |coyud03     |coyud04        |coyud05       |coyud06      |coyud07          |coyud08          |coyud09          |coyud10    |coyud11    |coyud12    |coyud13   |coyud14   |coyud15    ]
+[coyslip|coydesc             |coyauno    |coytype         |coyslip2       |coyud01        |coyud02   |coyud03     |coyud04        |coyud05       |coyud06      |coyud07          |coyud08          |coyud09          |coyud10    |coyud11    |coyud12    |coyud13   |coyud14   |coyud15    ]
+[coyslip|coydesc             |coyauno    |coytype         |coyslip2       |coyud01        |coyud02   |coyud03     |coyud04        |coyud05       |coyud06      |coyud07          |coyud08          |coyud09          |coyud10    |coyud11    |coyud12    |coyud13   |coyud14   |coyud15    ]
+
+}
+END -- s_coy
+END -- page01
+END -- pc185
+Grid gr1258
+{
+  ----------Rows [cn2   ] ----------
+
+}
+END -- gr1258
+END -- VBox1
+END -- acoi010
+
+TABLES
+coy_file
+ATTRIBUTES
+Edit coyslip=coy_file.coyslip, tabIndex=1, title="Doc.", not null, required, upShift, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! <^Y>User Authorization <^U>Dept Authorization";
+Edit coydesc=coy_file.coydesc, tabIndex=2, title="Doc.Name";
+CheckBox coyauno=coy_file.coyauno, tabIndex=3, title="Auto No.", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Enter Y or N ";
+ComboBox coytype=coy_file.coytype, tabIndex=5, title="Doc.Property", not null, required, queryEditable, items=(("00", %"Simulation Bond Form"),("05", %"Equivalent Material Note"),("10", %"Bond Application Form"),("11", %"Equipment Application Form"),("12", %"Addition Application (Export)"),("13", %"Addition Application (Import)"),("14", %"Customs Application Form"),("15", %"Transfer Application Form"),("16", %"Equipment Declaration"),("17", %"Duty-Free Equipment Declaration"),("18", %"Local Sales Application"),("19", %"Clearance Note"));
+ButtonEdit coyslip2=coy_file.coyslip2, action=CONTROLP, tabIndex=6, title="Correspond Doc", image="zoom";
+Edit coyud01=coy_file.coyud01, tabIndex=8, title=%"coyud01", scroll;
+Edit coyud02=coy_file.coyud02, tabIndex=9, title=%"coyud02", scroll;
+Edit coyud03=coy_file.coyud03, tabIndex=10, title=%"coyud03", scroll;
+Edit coyud04=coy_file.coyud04, tabIndex=11, title=%"coyud04", scroll;
+Edit coyud05=coy_file.coyud05, tabIndex=12, title=%"coyud05", scroll;
+Edit coyud06=coy_file.coyud06, tabIndex=13, title=%"coyud06", scroll;
+Edit coyud07=coy_file.coyud07, tabIndex=14, title=%"coyud07", scroll;
+Edit coyud08=coy_file.coyud08, tabIndex=15, title=%"coyud08", scroll;
+Edit coyud09=coy_file.coyud09, tabIndex=16, title=%"coyud09", scroll;
+Edit coyud10=coy_file.coyud10, tabIndex=17, title=%"coyud10", scroll;
+Edit coyud11=coy_file.coyud11, tabIndex=18, title=%"coyud11", scroll;
+Edit coyud12=coy_file.coyud12, tabIndex=19, title=%"coyud12", scroll;
+DateEdit coyud13=coy_file.coyud13, tabIndex=20, title=%"coyud13";
+DateEdit coyud14=coy_file.coyud14, tabIndex=21, title=%"coyud14";
+DateEdit coyud15=coy_file.coyud15, tabIndex=22, title=%"coyud15";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_coy(coy_file.coyslip,coy_file.coydesc,coy_file.coyauno,coy_file.coytype,coy_file.coyslip2,coy_file.coyud01,coy_file.coyud02,coy_file.coyud03,coy_file.coyud04,coy_file.coyud05,coy_file.coyud06,coy_file.coyud07,coy_file.coyud08,coy_file.coyud09,coy_file.coyud10,coy_file.coyud11,coy_file.coyud12,coy_file.coyud13,coy_file.coyud14,coy_file.coyud15)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

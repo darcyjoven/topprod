@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapp810.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapp810")
+VBox VBox1
+Grid gr101
+{
+ <G group01                                                       >
+  Enter General Ledger Plant No.             [p_plant   ]
+  Enter General Ledger Book No.              [p_acc     ]
+  Enter Original General Ledger Voucher No.  [g_existno           ]
+  Enter General Ledger Book No.2             [p_acc1    ]
+  Enter Original General Ledger Voucher No.2 [g_existno1          ]
+ <                                                                >
+
+}
+END -- gr101
+Grid gr102
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr102
+END -- VBox1
+END -- aapp810
+
+ATTRIBUTES
+Group group01:group01;
+Edit p_plant=formonly.p_plant type CHAR, tabIndex=1;
+Edit p_acc=formonly.p_acc type CHAR, tabIndex=2;
+ButtonEdit g_existno=formonly.g_existno type CHAR, action=controlp, tabIndex=3, image="zoom";
+Edit p_acc1=formonly.p_acc1 type CHAR, tabIndex=4, noEntry;
+Edit g_existno1=formonly.g_existno1 type CHAR, tabIndex=5, noEntry;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=6, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.p_plant,formonly.p_acc,formonly.g_existno,formonly.p_acc1,formonly.g_existno1,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

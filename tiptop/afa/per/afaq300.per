@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afaq300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afaq300")
+VBox VBox2
+Folder pc385
+Page page01(text="Main")
+VBox VBox1
+Grid gr1984
+{
+ Property No.        [faj02        ]                   Additional No.      [faj022               ]
+ Asset Category      [faj04        |fab02                   ]
+ Chinese Name        [faj06                         ]
+ English Name        [faj07                         ]  Date of Acquisition [faj25       ]
+ Spec. Model No.     [faj08                         ]  Date Recorded       [faj26       ]
+ Keeping Department  [faj20        |gem02           ]  Keeper              [faj19     ][gen02     ]
+ Qty                 [faj17        ]                   Home Currency Cost  [faj14               ]
+
+}
+END -- gr1984
+END -- VBox1
+END -- page01
+END -- pc385
+Grid gr1985
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1985
+END -- VBox2
+END -- afaq300
+
+TABLES
+faj_file
+ATTRIBUTES
+Edit faj02=faj_file.faj02, tabIndex=1;
+Edit faj022=faj_file.faj022, tabIndex=2;
+Edit faj04=faj_file.faj04, tabIndex=3;
+Edit fab02=formonly.fab02 type CHAR, tabIndex=5;
+Edit faj06=faj_file.faj06, tabIndex=4;
+Edit faj07=faj_file.faj07, tabIndex=6;
+DateEdit faj25=faj_file.faj25, tabIndex=7;
+Edit faj08=faj_file.faj08, tabIndex=8;
+DateEdit faj26=faj_file.faj26, tabIndex=9;
+Edit faj20=faj_file.faj20, tabIndex=10;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=11;
+Edit faj19=faj_file.faj19, tabIndex=12;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=13;
+Edit faj17=faj_file.faj17, tabIndex=14;
+Edit faj14=faj_file.faj14, tabIndex=15;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(faj_file.faj02,faj_file.faj022,faj_file.faj04,formonly.fab02,faj_file.faj06,faj_file.faj07,faj_file.faj25,faj_file.faj08,faj_file.faj26,faj_file.faj20,formonly.gem02,faj_file.faj19,formonly.gen02,faj_file.faj17,faj_file.faj14,formonly.cnt)
+END -- INSTRUCTIONS
+

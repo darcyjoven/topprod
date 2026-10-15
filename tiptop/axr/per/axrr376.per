@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrr376.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr376")
+VBox VBox1
+Grid gr6
+{
+ <G group01                                                                             >
+  Bill No.            [oma01               ] Customer No.        [oma03                ]
+  Accounts Category   [oma00               ] Entered By          [omauser              ]
+  Account No.         [oma18               ] Salesman            [oma14                ]
+  Invoice No.         [oma10               ]
+ <                                                                                      >
+}
+END -- gr6
+Group group03(text="INPUT")
+Grid gr7
+{
+
+  <G group1                                                                          >
+   [dummy       ]  [plant_1   ]   [plant_2   ]   [plant_3   ]  [plant_4   ]
+                   [plant_5   ]   [plant_6   ]   [plant_7   ]  [plant_8   ]
+  <                                                                                  >
+  Account Date        [bdate       ] [edate       ]
+ [b                             ]
+ [c                              ]
+
+ <G group05                                ><G group06                                 >
+ [type                ]                     [sort                          ]
+ <                                         ><                                          >
+
+}
+END -- gr7
+END -- group03
+Grid gr8
+{
+[more                                  ]
+
+}
+END -- gr8
+END -- VBox1
+END -- axrr376
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oma01=formonly.oma01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit oma03=formonly.oma03 type CHAR, action=controlp, tabIndex=2, image="zoom";
+Edit oma00=formonly.oma00 type CHAR, tabIndex=3;
+Edit omauser=formonly.omauser type CHAR, tabIndex=4;
+ButtonEdit oma18=formonly.oma18 type CHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit oma14=formonly.oma14 type CHAR, action=controlp, tabIndex=6, image="zoom";
+Edit oma10=formonly.oma10 type CHAR, tabIndex=7;
+Group group1:Group1, text=%"";
+Label dummy:dummy, text=%"Plant No";
+ButtonEdit plant_1=formonly.plant_1 type CHAR, action=controlp, tabIndex=15, image="zoom";
+ButtonEdit plant_2=formonly.plant_2 type CHAR, action=controlp, tabIndex=18, image="zoom";
+ButtonEdit plant_3=formonly.plant_3 type CHAR, action=controlp, tabIndex=19, image="zoom";
+ButtonEdit plant_4=formonly.plant_4 type CHAR, action=controlp, tabIndex=22, image="zoom";
+ButtonEdit plant_5=formonly.plant_5 type CHAR, action=controlp, tabIndex=16, image="zoom";
+ButtonEdit plant_6=formonly.plant_6 type CHAR, action=controlp, tabIndex=17, image="zoom";
+ButtonEdit plant_7=formonly.plant_7 type CHAR, action=controlp, tabIndex=20, image="zoom";
+ButtonEdit plant_8=formonly.plant_8 type CHAR, action=controlp, tabIndex=21, image="zoom";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=8;
+DateEdit edate=formonly.edate type DATE, tabIndex=9;
+CheckBox b=formonly.b type VARCHAR, tabIndex=10, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type CHAR, tabIndex=11, text="Deduct Allowance Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05, text="Data Contents";
+RadioGroup type=formonly.type type VARCHAR, tabIndex=12, items=(("1", "Affiliate"),("2", "Not Affiliate"),("3", "All "));
+Group group06:group06, text="Sequence";
+RadioGroup sort=formonly.sort type VARCHAR, tabIndex=13, items=(("1", "By Customer"),("2", "By Business"));
+CheckBox more=formonly.more type CHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oma01,formonly.oma03,formonly.oma00,formonly.omauser,formonly.oma18,formonly.oma14,formonly.oma10,formonly.bdate,formonly.edate,formonly.b,formonly.c,formonly.type,formonly.sort,formonly.more,formonly.plant_1,formonly.plant_5,formonly.plant_6,formonly.plant_2,formonly.plant_3,formonly.plant_7,formonly.plant_8,formonly.plant_4)
+END -- INSTRUCTIONS
+

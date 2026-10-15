@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdp190.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asdp190")
+VBox VBox1
+Grid gr376
+{
+ <G group01                                                 >
+  Calculating Year                   [yea                 ]
+  Standard Cost Reference Year/Month [ryea ]/[rm]
+  Direct Material Amount             [ma                  ]
+  Direct Labor Amount                [la                  ]
+  Overhead Amount                    [oh                  ]
+  Other Overhead Amount              [ot                  ]
+ <                                                          >
+
+}
+END -- gr376
+Grid gr377
+{
+ [g_bgj]
+
+}
+END -- gr377
+END -- VBox1
+END -- asdp190
+
+ATTRIBUTES
+Group group01:group01;
+Edit yea=formonly.yea type SMALLINT, tabIndex=1;
+Edit ryea=formonly.ryea type SMALLINT, tabIndex=2;
+Edit rm=formonly.rm type SMALLINT, tabIndex=3;
+Edit ma=formonly.ma type DECIMAL, tabIndex=4;
+Edit la=formonly.la type DECIMAL, tabIndex=5;
+Edit oh=formonly.oh type DECIMAL, tabIndex=6;
+Edit ot=formonly.ot type DECIMAL, tabIndex=7;
+CheckBox g_bgj=formonly.g_bgjob type CHAR, tabIndex=8, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yea,formonly.ryea,formonly.rm,formonly.ma,formonly.la,formonly.oh,formonly.ot,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_pay8.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="s_pay8")
+Folder pc2
+Page Page2(text=%"Main")
+Grid gr6
+{
+
+ Balance           [total               ]
+ Transfer Cards No.[rxy06                                   ]
+ Amount            [rxy05               ]
+ Charges           [rxy08               ]
+
+}
+END -- gr6
+END -- Page2
+END -- pc2
+END -- s_pay8
+
+TABLES
+rxy_file
+ATTRIBUTES
+Edit total=formonly.total type DECIMAL, tabIndex=4, noEntry;
+Edit rxy06=rxy_file.rxy06, tabIndex=1, not null;
+Edit rxy05=rxy_file.rxy05, tabIndex=2, not null;
+Edit rxy08=rxy_file.rxy08, tabIndex=3, not null;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.total,rxy_file.rxy06,rxy_file.rxy05,rxy_file.rxy08)
+END -- INSTRUCTIONS
+

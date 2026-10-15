@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt7001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt7001")
+VBox VBox1
+Grid gr52
+{
+ <G group01                                    >
+  W/O No.                [wono            ]
+  BOM Item               [part                ]
+  Expiry Date            [idate       ]
+ [a                                 ]
+  Estimated Transfer Qty [qty                 ]
+ <                                             >
+ <G group02                                    >
+  Warehouse              [imn04     ]
+  Location               [imn05     ]
+  Lot#                   [imn06     ]
+  Inventory Unit         [imn09     ]
+ <                                             >
+ <G group03                                    >
+  Warehouse              [imn15     ]
+  Location               [imn16     ]
+  Lot#                   [imn17     ]
+  Inventory Unit         [imn20     ]
+ <                                             >
+
+}
+END -- gr52
+END -- VBox1
+END -- aimt7001
+
+TABLES
+imn_file
+ATTRIBUTES
+Group group01:group01;
+Edit wono=formonly.wono type VARCHAR, tabIndex=1;
+ButtonEdit part=formonly.part type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+DateEdit idate=formonly.idate type DATE, tabIndex=3;
+CheckBox a=formonly.a type VARCHAR, tabIndex=4, text="to Bottom Level?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit qty=formonly.qty type DECIMAL, tabIndex=5;
+Group group02:group02, text="Estimated Transfer-out";
+Edit imn04=imn_file.imn04, tabIndex=6;
+Edit imn05=imn_file.imn05, tabIndex=7;
+Edit imn06=imn_file.imn06, tabIndex=8;
+Edit imn09=imn_file.imn09, tabIndex=9;
+Group group03:group03, text="Estimated Transfer-in";
+Edit imn15=imn_file.imn15, tabIndex=10;
+Edit imn16=imn_file.imn16, tabIndex=11;
+Edit imn17=imn_file.imn17, tabIndex=12;
+Edit imn20=imn_file.imn20, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.wono,formonly.part,formonly.idate,formonly.a,formonly.qty,imn_file.imn04,imn_file.imn05,imn_file.imn06,imn_file.imn09,imn_file.imn15,imn_file.imn16,imn_file.imn17,imn_file.imn20)
+END -- INSTRUCTIONS
+

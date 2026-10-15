@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp221.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmp221")
+VBox vb8
+Folder folder01
+Page page01(text="Main")
+Grid gr574
+{
+ Data Center [gev04         ][geu02               ]
+
+}
+END -- gr574
+END -- page01
+END -- folder01
+Table s_occ
+{
+[sel  |occ01           |occ02                 |occ03        |occ04    |occ05        |occ06      |occ22 |occ21 |occ20 |occ11     |occ1004 |occacti       ]
+[sel  |occ01           |occ02                 |occ03        |occ04    |occ05        |occ06      |occ22 |occ21 |occ20 |occ11     |occ1004 |occacti       ]
+[sel  |occ01           |occ02                 |occ03        |occ04    |occ05        |occ06      |occ22 |occ21 |occ20 |occ11     |occ1004 |occacti       ]
+[sel  |occ01           |occ02                 |occ03        |occ04    |occ05        |occ06      |occ22 |occ21 |occ20 |occ11     |occ1004 |occacti       ]
+[sel  |occ01           |occ02                 |occ03        |occ04    |occ05        |occ06      |occ22 |occ21 |occ20 |occ11     |occ1004 |occacti       ]
+
+}
+END -- s_occ
+Grid gr1292
+{
+  ---------- Rows [cnt   ] ----------
+
+}
+END -- gr1292
+END -- vb8
+END -- axmp221
+
+TABLES
+gev_file,
+geu_file
+ATTRIBUTES
+Edit gev04=gev_file.gev04, tabIndex=1;
+Edit geu02=geu_file.geu02, tabIndex=2;
+CheckBox sel=formonly.sel type CHAR, tabIndex=16, title="sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit occ01=formonly.occ01 type VARCHAR, action=controlp, tabIndex=4, title="Customer #", noEntry, image="zoom.png";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=5, title="Cust Abbr.", noEntry;
+ButtonEdit occ03=formonly.occ03 type VARCHAR, action=controlp, tabIndex=6, title="Cust Cate", noEntry, image="zoom.png";
+ButtonEdit occ04=formonly.occ04 type VARCHAR, action=controlp, tabIndex=7, title="Salesman", noEntry, image="zoom.png";
+ComboBox occ05=formonly.occ05 type VARCHAR, tabIndex=8, title="Tran. Status", noEntry, items=(("1", "Permanent"),("2", "Temporary"));
+ComboBox occ06=formonly.occ06 type VARCHAR, tabIndex=9, title="Property", noEntry, items=(("1", "Buyer"),("2", "Ship.Customer"),("3", "Accounting Customer"),("4", "Drawer"));
+ButtonEdit occ22=formonly.occ22 type VARCHAR, action=controlp, tabIndex=10, title="Local", noEntry, image="zoom.png";
+ButtonEdit occ21=formonly.occ21 type VARCHAR, action=controlp, tabIndex=11, title="Country", noEntry, image="zoom.png";
+ButtonEdit occ20=formonly.occ20 type VARCHAR, action=controlp, tabIndex=12, title="Area", noEntry, image="zoom.png";
+Edit occ11=formonly.occ11 type VARCHAR, tabIndex=13, title="Uniform#", noEntry;
+ComboBox occ1004=formonly.occ1004 type VARCHAR, tabIndex=14, title="Current Status", noEntry, items=(("0", "Issue"),("1", "Confirm"),("2", "Hung"),("3", "Stop"));
+Edit occacti=formonly.occacti type VARCHAR, tabIndex=15, title="Data Valid Code", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_occ(formonly.sel,formonly.occ01,formonly.occ02,formonly.occ03,formonly.occ04,formonly.occ05,formonly.occ06,formonly.occ22,formonly.occ21,formonly.occ20,formonly.occ11,formonly.occ1004,formonly.occacti)
+SCREEN RECORD Undefined(gev_file.gev04,geu_file.geu02,formonly.cnt)
+END -- INSTRUCTIONS
+

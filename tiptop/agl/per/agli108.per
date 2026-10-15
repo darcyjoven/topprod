@@ -1,0 +1,119 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli108.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli108")
+VBox VBox1
+Folder pc447
+Page page01(text="Main")
+VBox VBox2
+Grid gr2377
+{
+  Document            [aac01           ]      [imgmksg]
+  Name                [aac02               ]  [       ]
+  Voucher Property    [aac11               ]
+ [aac16               ]
+
+ <G group04                                          >
+ [aac03                                             ]
+ <                                                   >
+
+
+}
+END -- gr2377
+Grid gr2378
+{
+  Account Code       [aac04                                             ]
+  Account Name       [aag02                                             ]
+  Abstract           [aac17                                             ]
+ [aacauno             ]
+
+}
+END -- gr2378
+END -- VBox2
+END -- page01
+Page page02(text="General")
+Grid gr2379
+{
+ [aac12                                    ]
+ [aac13                                    ]
+  Memo               [aac09               ]
+  User Authorization [smu02_display                                     ]
+  Dept Authorization [smv02_display                                     ]
+}
+END -- gr2379
+END -- page02
+Page page03(text="Sign")
+Grid gr2380
+{
+ [aac08                                   ]
+  Days of Approval Done         [aacdays   ]
+  Approval Priority             [aacprit   ]
+ [aacatsg                                 ]
+  Fixed Level                   [aacsign   ]
+ [aacpass                                 ]
+}
+END -- gr2380
+END -- page03
+Page info(text="Info")
+Grid gr2381
+{
+ Record Owner        [aacuser   ]   Last Modified by    [aacmodu   ]   Data Valid Code     [aacacti   ]
+ Department          [aacgrup   ]   Create/Modify Date  [aacdate     ]
+ Record Orig.        [aacoriu   ]
+ Dept Orig.          [aacorig   ]
+}
+END -- gr2381
+END -- info
+END -- pc447
+Grid gr2382
+{
+  ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2382
+END -- VBox1
+END -- agli108
+
+TABLES
+aac_file
+ATTRIBUTES
+Edit aac01=aac_file.aac01, tabIndex=1, not null, required, comment="KEY Field, No Blank/Repeated!";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit aac02=aac_file.aac02, tabIndex=3;
+ComboBox aac11=aac_file.aac11, tabIndex=4, not null, required, queryEditable, items=(("1", "General"),("2", "Reverse"),("3", "Accrued"),("4", "Accrued Adjustment"),("7", "Carry forward"),("A", "Combination Adjust"));
+CheckBox aac16=aac_file.aac16, tabIndex=503, default = "N", text="aac16", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="No blank Field!";
+Group group04:group04, text="Property of Transfer";
+RadioGroup aac03=aac_file.aac03, tabIndex=5, not null, required, comment="No blank Field!", items=(("0", "Transfer Voucher"),("1", "Credit Voucher"),("2", "Cash Payment Voucher"));
+ButtonEdit aac04=aac_file.aac04, action=controlp, tabIndex=6, image="zoom", comment="<P> Qry Account     ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=7, noEntry;
+Edit aac17=aac_file.aac17, tabIndex=504, scroll;
+CheckBox aacauno=aac_file.aacauno, tabIndex=8, text="Auto Numbering", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="No blank Field!";
+CheckBox aac12=aac_file.aac12, tabIndex=10, text="Red Voucher", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="No blank Field!";
+CheckBox aac13=aac_file.aac13, tabIndex=11, text="Foreign Currency Document", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="No Blank Field!";
+Edit aac09=aac_file.aac09, tabIndex=12;
+Edit smu02_display=formonly.smu02_display type CHAR, tabIndex=13, noEntry;
+Edit smv02_display=formonly.smv02_display type CHAR, tabIndex=14, noEntry;
+CheckBox aac08=aac_file.aac08, tabIndex=15, text="Approve?", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="No blank Field!";
+Edit aacdays=aac_file.aacdays, tabIndex=16;
+Edit aacprit=aac_file.aacprit, tabIndex=17;
+CheckBox aacatsg=aac_file.aacatsg, tabIndex=18, text="Need Approval Then Auto Give Level", valueChecked = "Y", valueUnchecked = "N", comment="No blank Field!";
+ButtonEdit aacsign=aac_file.aacsign, action=controlp, tabIndex=19, image="zoom", comment="<P> Qry Fixed Level ";
+CheckBox aacpass=aac_file.aacpass, tabIndex=20, text="No Need to Approval Then Comfirm After Voucher", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="No blank Field!";
+Edit aacuser=aac_file.aacuser, tabIndex=21, noEntry;
+Edit aacmodu=aac_file.aacmodu, tabIndex=22, noEntry;
+Edit aacacti=aac_file.aacacti, tabIndex=23, noEntry, upShift;
+Edit aacgrup=aac_file.aacgrup, tabIndex=24, noEntry;
+DateEdit aacdate=aac_file.aacdate, tabIndex=25, noEntry;
+Edit aacoriu=aac_file.aacoriu, tabIndex=501, noEntry;
+Edit aacorig=aac_file.aacorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=26, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(aac_file.aac01,formonly.imgmksg,aac_file.aac02,aac_file.aac11,aac_file.aac03,aac_file.aac04,formonly.aag02,aac_file.aacauno,aac_file.aac12,aac_file.aac13,aac_file.aac09,formonly.smu02_display,formonly.smv02_display,aac_file.aac08,aac_file.aacdays,aac_file.aacprit,aac_file.aacatsg,aac_file.aacsign,aac_file.aacpass,aac_file.aacuser,aac_file.aacmodu,aac_file.aacacti,aac_file.aacgrup,aac_file.aacdate,aac_file.aacoriu,aac_file.aacorig,formonly.cnt,aac_file.aac16,aac_file.aac17)
+END -- INSTRUCTIONS
+

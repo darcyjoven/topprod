@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acor209.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acor209")
+VBox VBox1
+Grid gr1396
+{
+ <G group01                                   >
+  Bonded Register Book   [cok00          ]
+  Custom No.             [coc10          ]
+  Goods No.              [cok01          ]
+  Unit                   [cok02          ]
+
+ <                                            >
+
+}
+END -- gr1396
+Group group02(text="INPUT")
+Grid gr1397
+{
+ [a                                   ]
+ [b                                   ]
+}
+END -- gr1397
+END -- group02
+Grid gr1398
+{
+ [more                                                        ]
+
+}
+END -- gr1398
+Grid gr1399
+{
+[dummy02                                   ]
+[dummy01                                   ]
+}
+END -- gr1399
+END -- VBox1
+END -- acor209
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit cok00=formonly.cok00 type CHAR, tabIndex=1;
+Edit coc10=formonly.coc10 type CHAR, tabIndex=2;
+Edit cok01=formonly.cok01 type CHAR, tabIndex=3;
+Edit cok02=formonly.cok02 type CHAR, tabIndex=4;
+CheckBox a=formonly.a type VARCHAR, tabIndex=5, text="Convert HS Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=6, text="Skip To Another Page When Diferent Register Book No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy02:dummy02;
+Label dummy01:dummy01, text="dummy";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cok00,formonly.coc10,formonly.cok01,formonly.cok02,formonly.a,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

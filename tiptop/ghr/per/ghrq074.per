@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrq074.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table choose
+{
+[hrdf01  |hrdf02    |hrat02    |hrat03    |hraa02    |hrat04    |hrao02    |hrdf03    |hrdf04    |hrdf05    |hrdf06    |hrdf07    |hrdfacti  ]
+[hrdf01  |hrdf02    |hrat02    |hrat03    |hraa02    |hrat04    |hrao02    |hrdf03    |hrdf04    |hrdf05    |hrdf06    |hrdf07    |hrdfacti  ]
+[hrdf01  |hrdf02    |hrat02    |hrat03    |hraa02    |hrat04    |hrao02    |hrdf03    |hrdf04    |hrdf05    |hrdf06    |hrdf07    |hrdfacti  ]
+[hrdf01  |hrdf02    |hrat02    |hrat03    |hraa02    |hrat04    |hrao02    |hrdf03    |hrdf04    |hrdf05    |hrdf06    |hrdf07    |hrdfacti  ]
+[hrdf01  |hrdf02    |hrat02    |hrat03    |hraa02    |hrat04    |hrao02    |hrdf03    |hrdf04    |hrdf05    |hrdf06    |hrdf07    |hrdfacti  ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- choose
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+ ----------[label|cnt       ]----------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit hrdf01=formonly.hrdf01 type CHAR, tabIndex=13, title=%"hrdf01";
+ButtonEdit hrdf02=formonly.hrdf02 type CHAR, action=controlp, tabIndex=1, title=%"hrdf02", image="zoom";
+Edit hrat02=formonly.hrat02 type CHAR, tabIndex=2, title=%"hrat02";
+ButtonEdit hrat03=formonly.hrat03 type CHAR, action=controlp, tabIndex=3, title=%"hrat03", image="zoom";
+Edit hraa02=formonly.hraa02 type CHAR, tabIndex=4, title=%"hraa02";
+ButtonEdit hrat04=formonly.hrat04 type CHAR, action=controlp, tabIndex=5, title=%"hrat04", image="zoom";
+Edit hrao02=formonly.hrao02 type CHAR, tabIndex=6, title=%"hrao02";
+DateEdit hrdf03=formonly.hrdf03 type CHAR, tabIndex=7, title=%"hrdf03";
+Edit hrdf04=formonly.hrdf04 type CHAR, tabIndex=8, title=%"hrdf04";
+Edit hrdf05=formonly.hrdf05 type CHAR, tabIndex=9, title=%"hrdf05";
+ComboBox hrdf06=formonly.hrdf06 type CHAR, tabIndex=14, title=%"hrdf06", noEntry, items=(("0", "no"),("1", "yes"));
+Edit hrdf07=formonly.hrdf07 type CHAR, tabIndex=10, title=%"hrdf07";
+CheckBox hrdfacti=formonly.hrdfacti type CHAR, tabIndex=11, default = "Y", title=%"hrdfacti", text=%"", valueChecked = "Y", valueUnchecked = "N";
+Label label:Label1, text=%"cnt";
+Edit cnt=formonly.cnt type CHAR, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrdf(formonly.hrdf01,formonly.hrdf02,formonly.hrat02,formonly.hrat03,formonly.hraa02,formonly.hrat04,formonly.hrao02,formonly.hrdf03,formonly.hrdf04,formonly.hrdf05,formonly.hrdf06,formonly.hrdf07,formonly.hrdfacti)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

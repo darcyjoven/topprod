@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmr810.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmr810")
+VBox VBox1
+Grid gr985
+{
+ <G group01                                            >
+  Component No.        [item                      ]
+  Group Code           [class           ]
+  Other Group Code 1   [ima09           ]
+  Other Group Code 2   [ima10           ]
+  Other Group Code 3   [ima11           ]
+  Other Group Code 4   [ima12           ]
+
+ <                                                     >
+ <G group02                                  >
+  Expired Date         [effective   ]
+  Sort by              [arrange             ]
+ [blow                                      ]
+
+
+ <                                           >
+
+}
+END -- gr985
+Grid gr986
+{
+[more                                ]
+
+}
+END -- gr986
+END -- VBox1
+END -- abmr810
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit item=formonly.item type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit class=formonly.class type VARCHAR, tabIndex=2;
+Edit ima09=formonly.ima09 type VARCHAR, tabIndex=3;
+Edit ima10=formonly.ima10 type VARCHAR, tabIndex=4;
+Edit ima11=formonly.ima11 type VARCHAR, tabIndex=5;
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=6;
+Group group02:group02, text="INPUT";
+DateEdit effective=formonly.effective type DATE, tabIndex=7;
+ComboBox arrange=formonly.arrange type VARCHAR, tabIndex=8, not null, required, comment="1 \"by Master Item #\" 2 \"by Line #\"", items=(("1", "by Master Item No."),("2", "by Line No."));
+CheckBox blow=formonly.blow type VARCHAR, tabIndex=9, text="Level up if Master Item is phantom", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=10, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.item,formonly.class,formonly.ima09,formonly.ima10,formonly.ima11,formonly.ima12,formonly.effective,formonly.arrange,formonly.blow,formonly.more)
+END -- INSTRUCTIONS
+

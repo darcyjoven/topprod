@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxp801.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxp801")
+VBox VBox1
+Grid gr1078
+{
+ <G group01                                              >
+  Document No.        [tlf036              ]
+  Transaction Date    [tlf06               ]
+  Warehouse #         [tlf031              ]
+ <                                                       >
+ <G group02                                              >
+  [g_a                         ]
+
+  Note: [dummy01                                        ]
+        [dummy02                                        ]
+ <                                                       >
+
+}
+END -- gr1078
+Grid gr1079
+{
+[g_bgjob   ]
+
+}
+END -- gr1079
+END -- VBox1
+END -- abxp801
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit tlf036=formonly.tlf036 type CHAR, tabIndex=1;
+DateEdit tlf06=formonly.tlf06 type DATE, tabIndex=2;
+Edit tlf031=formonly.tlf031 type CHAR, tabIndex=3;
+Group group02:group02, text="INPUT";
+CheckBox g_a=formonly.g_a type CHAR, tabIndex=4, text="regerenate bxi and bxj", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="Task will Access tlf_file to ABX Doc Table,Accessed tlf909 set to \'Y\', No Access";
+Label dummy02:dummy02, text="If Error found,Cancel ABX Doc Table then Re-Access";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=5, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tlf036,formonly.tlf06,formonly.tlf031,formonly.g_a,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

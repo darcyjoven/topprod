@@ -1,0 +1,259 @@
+SCHEMA ds
+
+LAYOUT
+  VBOX
+    FOLDER
+      PAGE page01(TEXT="Main")
+        GRID
+          {
+           Inquiry List#       [pmw01       ] [smydesc   ]          
+           Inquiry Date        [pmw06       ]                       
+           Vender No.          [pmw03       ] [pmc03     ]          
+           Trans.Currency      [mw04      ]   [azi02               ]
+          }
+        END --GRID
+      END --PAGE
+      PAGE info (TEXT="Info")
+        GRID
+          {
+           Record Owner        [pmwuser   ]  Last Modified by    [pmwmodu   ]  Data Valid Code     [z         ]                                           
+           Department          [grup      ]  Create/Modify Date  [pmwdat    ]                                             
+          }
+        END --GRID
+      END --PAGE
+    END --FOLDER
+    TABLE
+      {
+       Line#  Item No.             Part Name                      Specification                  Inquiry Unit  Effective Date  Expiry Date  Min.Qty      Unit Price   Discount Rate%
+      [pmx2  |pmx08               |pmx081                        |pmx082                        |pmx9         |pmx04          |pmx05       |pmx03       |pmx06       |pmx7          ]
+      [pmx2  |pmx08               |pmx081                        |pmx082                        |pmx9         |pmx04          |pmx05       |pmx03       |pmx06       |pmx7          ]
+      [pmx2  |pmx08               |pmx081                        |pmx082                        |pmx9         |pmx04          |pmx05       |pmx03       |pmx06       |pmx7          ]
+      [pmx2  |pmx08               |pmx081                        |pmx082                        |pmx9         |pmx04          |pmx05       |pmx03       |pmx06       |pmx7          ]
+      [pmx2  |pmx08               |pmx081                        |pmx082                        |pmx9         |pmx04          |pmx05       |pmx03       |pmx06       |pmx7          ]
+      [pmx2  |pmx08               |pmx081                        |pmx082                        |pmx9         |pmx04          |pmx05       |pmx03       |pmx06       |pmx7          ]
+      [pmx2  |pmx08               |pmx081                        |pmx082                        |pmx9         |pmx04          |pmx05       |pmx03       |pmx06       |pmx7          ]
+      [pmx2  |pmx08               |pmx081                        |pmx082                        |pmx9         |pmx04          |pmx05       |pmx03       |pmx06       |pmx7          ]
+      [pmx2  |pmx08               |pmx081                        |pmx082                        |pmx9         |pmx04          |pmx05       |pmx03       |pmx06       |pmx7          ]
+      [pmx2  |pmx08               |pmx081                        |pmx082                        |pmx9         |pmx04          |pmx05       |pmx03       |pmx06       |pmx7          ]
+      }
+    END --TABLE
+    GRID
+      {
+        ---------- Rows [cnt   ] / [cn2   ] ----------  
+      }
+    END --GRID
+  END --VBOX
+END --LAYOUT
+
+TABLES pmw_file,pmx_file
+
+ATTRIBUTES
+  BUTTONEDIT pmw01   = pmw01,NOT NULL, REQUIRED, ACTION=CONTROLP, IMAGE="zoom", 
+                       COMMENTS = 'Key Field, No Blank/Repeated!    , <^P>Qry Document Property';
+             smydesc = FORMONLY.smydesc ,NOENTRY;
+  BUTTONEDIT pmw03   = pmw03, NOT NULL, REQUIRED, ACTION=CONTROLP, IMAGE="zoom", 
+                       COMMENTS='<^P>Qry Vender   ';
+             pmc03   = FORMONLY.pmc03 ,NOENTRY;
+  BUTTONEDIT mw04    = pmw04, NOT NULL, REQUIRED, ACTION=CONTROLP, IMAGE="zoom", 
+                       COMMENTS='<^P>Qry Currency';
+             azi02   = FORMONLY.azi02 ,NOENTRY;
+  DATEEDIT   pmw06   = pmw06;
+             pmx2    = pmx02,NOT NULL,REQUIRED;
+  BUTTONEDIT pmx08   = pmx08, ACTION=CONTROLP, IMAGE="zoom", 
+                       COMMENTS='<^P>Qry Item Master  <^Y>Create Item ';
+             pmx081  = pmx081,NOENTRY;
+             pmx082  = pmx082,NOENTRY;
+  BUTTONEDIT pmx9    = pmx09, ACTION=CONTROLP, IMAGE="zoom",
+                       COMMENTS='<^P>Qry Unit    ';
+  DATEEDIT   pmx04   = pmx04;
+  DATEEDIT   pmx05   = pmx05;
+             pmx03   = pmx03;
+             pmx06   = pmx06,NOT NULL,REQUIRED;
+             pmx7    = pmx07;
+             pmwuser = pmwuser, NOENTRY;
+             grup    = pmwgrup, NOENTRY;
+             pmwmodu = pmwmodu, NOENTRY;
+  DATEEDIT   pmwdat  = pmwdate, NOENTRY;
+             z       = pmwacti, NOENTRY, UPSHIFT;
+             cnt     = FORMONLY.cnt TYPE SMALLINT, NOENTRY  ;
+             cn2     = FORMONLY.cn2 TYPE SMALLINT, NOENTRY  ;
+END
+INSTRUCTIONS
+SCREEN RECORD
+  s_pmx[10](pmx02,pmx08,pmx081,pmx082,pmx09,pmx04,pmx05,pmx03,pmx06,pmx07)
+END
+▼---------------------------------------------------------------
+#  Per_version = '1.10.02-05.03.31(00000)'   #
+.
+系統名稱
+
+    apm 採購管理系統
+.
+程式名稱
+
+    apmi252  採購料件詢價維護作業
+.
+執行指令
+
+    apmi252
+.
+作業目的
+
+    1.本作業目的在於維護採購料件詢價資料。
+    2.本作業所建立詢價資料, 於採購單維護時, 可以自動引用以利採購數
+      量與價格的判斷決定。
+    3.採購料件詢價資料允許分量價格(不同數量允許不同價格)。能使詢價
+      資料的使用更富有彈性。
+.
+注意事項
+
+    1.系統參數的使用:
+      SMA# 38:是否可在請購/採購單維護作業處理中，同時輸入新的料件。
+      SMA# 60:料號輸入是否採分段輸入。
+    2.同一料件對同一供應商可以存在多筆的詢價資料, 但可用生效日及失
+      效日區間來決定下限數量及折扣比率。
+.
+操作功能
+
+    本作業為雙檔維護作業, 為方便使用者輸入, 單身採多行式處理.
+    在單頭部份, 提供下列功能鍵:
+           A,
+           Q,
+           N,
+           P,
+           U,
+           X,
+           R,
+           B,
+           C,
+           O,
+           H,
+           Es
+    在單身部份, 提供下列功能鍵:
+           F1
+           F2
+           F3
+           F4
+           ^N
+           Es
+.
+欄位說明
+
+    ●詢價單號 [pmw01] (C10) (R) :
+      －輸入單別須為存在 [製造管理系統單據性質檔]內，性質為 '6.詢價單'
+        之單別。
+      －可按 <^P> 開窗查詢單別資料[smy_file]。
+      －本欄位不可空白。
+      －本欄位不可重複。
+
+    ●廠商編號 [pmw03] (C10) (R&) :
+      －採購詢價之供應商編號。
+      －輸入時不可空白，輸入編號必須是存在於 [供應商基本資料檔] 。
+      －輸入時可按 <^P> 鍵以視窗方式查詢[供應商基本資料檔] 的資料。
+      －輸入時可按<^Y> 鍵以視窗方式建立[供應商基本資料檔] 的資料。
+      －廠商資料之目前狀況不為已核准時, 顯示警告訊息,並不可通過。
+      －廠商資料之廠商性質為付款廠商時, 顯示警告訊息,並不可通過。
+
+    ●詢價日期 [pmw06] (DATE) (O) :
+      －輸入前，預設值為系統日期，但可更改。
+
+    ●交易幣別 [pmw04] (C04) (R&) :
+      －預設為供應廠商基本資料的[慣用幣別]。
+      －輸入幣別需預先建在 [幣別檔] 中。
+      －輸入時可按 <^P> 鍵以視窗方式查詢[幣別主檔] 的資料。
+      －輸入後 [幣別檔] 內對應的 [幣別說明] 將自動顯示於右。
+
+    ●項次 [pmx02] (SINT) (R) :
+      －輸入時不可空白，本欄位與 [單據編號] 合併為唯一索引，不可重
+        複，若重複電腦自動檢查出並警告之。
+      －輸入前，預設值為最大項次加 1 。
+      －輸入詢價料件的項次，其值需為大於零之整數。
+
+    ●料件編號 [pmx08] (C20) (R&) :
+      －輸入編號需預先建在 [料件主檔]中。
+      －允許使用MISCxxxxxx輸入雜項料號。
+      －同一詢價單 料件編號+品名 須為UNIQUE。
+      －輸入時可按 <^P> 以視窗方式查詢 [料件主檔] 的資料。
+      －若參數 SMA# 30 設定允許在採購系統中新增料件基本資料，則輸入
+        時可按 <^Y> 以視窗方式建立 "料件基本資料"。
+
+    ●詢價單位 [pmx09] (C04) (R&) :
+      －預設為 [料件主檔] 中採購單位。
+      －輸入單位需預先建在 [單位資料檔] 中。
+      －輸入時可按 <^P> 鍵以視窗方式查詢 [單位資料檔] 的資料。
+
+    ●生效日期 [pmx04] (DATE) (R) :
+      －詢價料件價格之生效日期。
+      －輸入前，預設值沿用上筆，若上筆生效日期為空白則，則預設值為
+        詢價日期。
+
+    ●失效日期 [pmx05] (DATE) (O) :
+      －輸入值不可小於生效日期
+
+    ●下限數量 [pmx03] (D13,3) (R) :
+      －達到折扣標準之料件最少採購數量, 最小為「0」。
+      －注意分量價格必須先輸入下限數量小且價格高的項次。
+      －相同之料件、單位、下限數量的生效日期、失效日期不可重疊
+        例:
+         a =輸入之生效日   b=輸入之失效日
+         x =已存在生效日   y=已在之失效日
+        .失效日不為空白時以下情況表重疊會顯示錯誤訊息
+            (1) <-----+-------+------>
+                  a   x       y  b
+
+            (2) <-----+-------+------>
+                      x   a   y  b
+
+            (3) <-----+-------+------>
+                      x a b   y
+        .失效日為空白時以下情況表重疊會顯示錯誤訊息
+            (1) <-----+-------+------>
+                          a   y
+            (2) 已存在一筆失效日為空白者
+
+    ●詢價單價 [pmx06] (D13,3) (R) :
+      －單價不可小於等於零或空白。
+
+    ●折扣比率 [pmx07] (7,3) (R) :
+      －輸入料件採購達到或超過下限數量所能享用折扣比率，使用折扣比率
+        必須符合兩個條件:
+           1.達到下限數量。
+           2.採購日期在生效日期與失效日期的範圍之間。
+      －輸入值需大於零小於100。
+.
+
+欄位控制
+
+    條件欄位  被影響欄位                       NOENTRY成立條件
+    --------  -------------------------------  ---------------------------------------------------
+              pmw01                            p_cmd = 'u'
+
+    pmx08     pmx081,pmx082                    g_pmx[l_ac].pmx08[1,4] <> 'MISC'
+.
+報表格式
+
+                          鼎新電腦股份有限公司(dstest)
+                                                                    FROM:tiptop
+                              採購料件詢價資料簡表
+
+製表日期:00/06/30 17:14:49                                           頁次:1
+================================================================================
+ 詢價單號   詢價日期  廠商編號    廠商簡稱  幣別
+ ---------- -------- ----------  ---------- ----
+ QR1-020001 00/02/22 E           E          TWD
+
+項次         料件編號   詢價單位      詢價單價    折扣比率%    下限數量
+             品名規格                               生效日     失效日
+---- -------------------- ----    --------------  --------  --------------
+   1 3579E28              PCS              1.500     0.000           1.000
+     Screw                                        00/02/22
+   2 MISC                 PCS              1.500     0.000           1.000
+     MISC-001                                     00/06/30
+   3 MISC                 100M             3.000     0.000           2.000
+     MISC-002                                     00/06/30
+   4 MISC001              PCS              3.000     0.000           2.000
+     MISC-001                                     00/06/30
+================================================================================
+(apmi252)                                                               (結  束)
+.
+

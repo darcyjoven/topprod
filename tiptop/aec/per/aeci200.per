@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci200")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1628
+{
+ Product No.  [eda01               ]            [eda03                ][imgmksg]
+ Product Name [eda02                         ]   confirm [edaconf     ][       ]
+
+
+}
+END -- gr1628
+END -- page01
+Page info(text="Info")
+Grid gr1630
+{
+ Record Owner        [edauser   ] Last Modified by    [edamodu   ] Data Valid Code     [edaacti   ]
+ Department          [edagrup   ] Create/Modify Date  [edadate     ]
+ Record Orig.        [edaoriu   ]
+ Dept Orig.          [edaorig   ]
+}
+END -- gr1630
+END -- info
+END -- folder01
+Table s_edb
+{
+[edb0|edb03               |ima02         |ima021       |edb05     |edb06     |edb04     |edb07     ]
+[edb0|edb03               |ima02         |ima021       |edb05     |edb06     |edb04     |edb07     ]
+[edb0|edb03               |ima02         |ima021       |edb05     |edb06     |edb04     |edb07     ]
+[edb0|edb03               |ima02         |ima021       |edb05     |edb06     |edb04     |edb07     ]
+[edb0|edb03               |ima02         |ima021       |edb05     |edb06     |edb04     |edb07     ]
+[edb0|edb03               |ima02         |ima021       |edb05     |edb06     |edb04     |edb07     ]
+[edb0|edb03               |ima02         |ima021       |edb05     |edb06     |edb04     |edb07     ]
+[edb0|edb03               |ima02         |ima021       |edb05     |edb06     |edb04     |edb07     ]
+[edb0|edb03               |ima02         |ima021       |edb05     |edb06     |edb04     |edb07     ]
+[edb0|edb03               |ima02         |ima021       |edb05     |edb06     |edb04     |edb07     ]
+}
+END -- s_edb
+Grid gr1631
+{
+
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+}
+END -- gr1631
+END -- VBox1
+END -- aeci200
+
+TABLES
+edb_file,
+eda_file
+ATTRIBUTES
+ButtonEdit eda01=eda_file.eda01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Query Item  ";
+CheckBox eda03=eda_file.eda03, tabIndex=3, text="Permanent merger?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit eda02=eda_file.eda02, tabIndex=2;
+ComboBox edaconf=eda_file.edaconf, tabIndex=4, noEntry, items=(("Y", "Confirm"),("X", "Void"),("N", "Not Confirm"));
+Edit edauser=eda_file.edauser, tabIndex=5, noEntry;
+Edit edamodu=eda_file.edamodu, tabIndex=6, noEntry;
+Edit edaacti=eda_file.edaacti, tabIndex=7, noEntry;
+Edit edagrup=eda_file.edagrup, tabIndex=8, noEntry;
+DateEdit edadate=eda_file.edadate, tabIndex=9, noEntry;
+Edit edaoriu=eda_file.edaoriu, tabIndex=10, noEntry;
+Edit edaorig=eda_file.edaorig, tabIndex=11, noEntry;
+Edit edb0=edb_file.edb02, tabIndex=12, title="S/N", not null, required, comment="No Blank/Repeated Field";
+ButtonEdit edb03=edb_file.edb03, action=controlp, tabIndex=13, title="Item", not null, required, image="zoom", comment="No Blank Field <^P>Open window to Qry";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=14, title="Item Name", noEntry, comment="<^T>Product Routing Desc";
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=15, title="Item Specification", noEntry, comment="<^P>Open window to Qry Workstation ";
+Edit edb05=edb_file.edb05, tabIndex=16, title="Modulus", not null, required;
+Edit edb06=edb_file.edb06, tabIndex=17, title="Total Modulus", noEntry;
+ButtonEdit edb04=edb_file.edb04, action=controlp, tabIndex=18, title="Routing Code", not null, required, image="zoom", comment="<^P>Query Machine No.";
+ButtonEdit edb07=edb_file.edb07, action=controlp, tabIndex=19, title="Routing No.", not null, required, image="zoom";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_edb(edb_file.edb02,edb_file.edb03,formonly.ima02,formonly.ima021,edb_file.edb05,edb_file.edb06,edb_file.edb04,edb_file.edb07)
+SCREEN RECORD Undefined(eda_file.eda01,eda_file.eda03,formonly.imgmksg,eda_file.eda02,eda_file.edaconf,eda_file.edauser,eda_file.edamodu,eda_file.edaacti,eda_file.edagrup,eda_file.edadate,eda_file.edaoriu,eda_file.edaorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,158 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u53/tiptop/apm/42f/apmi650.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi650")
+VBox VBox1
+Folder pc933
+Page page01(text="Main")
+VBox VBox2
+Grid gr4876
+{
+ <G group01                                                                                                     >
+  Budget#        [pnr01     ] [afa02           ]          Year       [pnr0]
+  Department#    [pnr03   ]   [gem02     ]                Account#   [pnr02               ] [aag02           ]
+ <                                                                                                              >
+
+}
+END -- gr4876
+VBox VBox3
+Grid gr4877
+{
+ <G group02                              > <G group05                                                                           >
+ [pnr05                                ]    [dummy0][dummy02          ][dummy03          ][dummy04          ][dummy05          ]
+ <                                       >      1   [pns06_1          ][pns07_1          ][pns08_1          ][pns09_1          ]
+ <G group03                              >      2   [pns06_2          ][pns07_2          ][pns08_2          ][pns09_2          ]
+ [pnr06                                ]        3   [pns06_3          ][pns07_3          ][pns08_3          ][pns09_3          ]
+ <                                       >      4   [pns06_4          ][pns07_4          ][pns08_4          ][pns09_4          ]
+ <G group04                              >      5   [pns06_5          ][pns07_5          ][pns08_5          ][pns09_5          ]
+  Budget$             [pnr07            ]       6   [pns06_6          ][pns07_6          ][pns08_6          ][pns09_6          ]
+  Additional$         [pnr08            ]       7   [pns06_7          ][pns07_7          ][pns08_7          ][pns09_7          ]
+  Shift$              [pnr09            ]       8   [pns06_8          ][pns07_8          ][pns08_8          ][pns09_8          ]
+  Total$              [pnr10            ]       9   [pns06_9          ][pns07_9          ][pns08_9          ][pns09_9          ]
+                                               10   [pns06_10         ][pns07_10         ][pns08_10         ][pns09_10         ]
+                                               11   [pns06_11         ][pns07_11         ][pns08_11         ][pns09_11         ]
+                                               12   [pns06_12         ][pns07_12         ][pns08_12         ][pns09_12         ]
+                                               13   [pns06_13         ][pns07_13         ][pns08_13         ][pns09_13         ]
+ <                                       > <                                                                                    >
+
+}
+END -- gr4877
+END -- VBox3
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr4878
+{
+ Record Owner        [pnruser   ] Last Modified by    [pnrmodu   ]   Data Valid Code     [pnracti   ]
+ Department          [pnrgrup   ] Create/Modify Date  [pnrdate     ]
+ Record Orig.        [pnroriu   ]
+ Dept Orig.          [pnrorig   ]
+}
+END -- gr4878
+END -- info
+END -- pc933
+Grid gr4879
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4879
+END -- VBox1
+END -- apmi650
+
+TABLES
+pnr_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit pnr01=pnr_file.pnr01, action=controlp, tabIndex=1, image="zoom", comment="Key Field, No Blank/Repeated!      <^P>Qry Budget  ";
+Edit afa02=formonly.afa02 type CHAR, tabIndex=2, noEntry;
+Edit pnr0=pnr_file.pnr04, tabIndex=7, not null, required;
+ButtonEdit pnr03=pnr_file.pnr03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Query Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit pnr02=pnr_file.pnr02, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Account ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=6, noEntry;
+Group group02:group02, text="Over-Limit Control";
+RadioGroup pnr05=pnr_file.pnr05, tabIndex=8, comment="1:NO Control 2:Warn 3:Reject", items=(("1", "NO Control"),("2", "Warn"),("3", "Reject"));
+Group group05:group05;
+Label dummy0:dummy01, text="Period";
+Label dummy02:dummy02, text="Budget$";
+Label dummy03:dummy03, text="Additional$";
+Label dummy04:dummy04, text="Shift$";
+Label dummy05:dummy05, text="Monthly Total";
+Edit pns06_1=formonly.pns06_1 type CHAR, tabIndex=9;
+Edit pns07_1=formonly.pns07_1 type CHAR, tabIndex=10;
+Edit pns08_1=formonly.pns08_1 type CHAR, tabIndex=11, noEntry;
+Edit pns09_1=formonly.pns09_1 type CHAR, tabIndex=12, noEntry;
+Edit pns06_2=formonly.pns06_2 type CHAR, tabIndex=13;
+Edit pns07_2=formonly.pns07_2 type CHAR, tabIndex=14;
+Edit pns08_2=formonly.pns08_2 type CHAR, tabIndex=15, noEntry;
+Edit pns09_2=formonly.pns09_2 type CHAR, tabIndex=16, noEntry;
+Edit pns06_3=formonly.pns06_3 type CHAR, tabIndex=17;
+Edit pns07_3=formonly.pns07_3 type CHAR, tabIndex=18;
+Edit pns08_3=formonly.pns08_3 type CHAR, tabIndex=19, noEntry;
+Edit pns09_3=formonly.pns09_3 type CHAR, tabIndex=20, noEntry;
+Edit pns06_4=formonly.pns06_4 type CHAR, tabIndex=21;
+Edit pns07_4=formonly.pns07_4 type CHAR, tabIndex=22;
+Edit pns08_4=formonly.pns08_4 type CHAR, tabIndex=23, noEntry;
+Edit pns09_4=formonly.pns09_4 type CHAR, tabIndex=24, noEntry;
+Edit pns06_5=formonly.pns06_5 type CHAR, tabIndex=25;
+Edit pns07_5=formonly.pns07_5 type CHAR, tabIndex=26;
+Edit pns08_5=formonly.pns08_5 type CHAR, tabIndex=27, noEntry;
+Edit pns09_5=formonly.pns09_5 type CHAR, tabIndex=28, noEntry;
+Edit pns06_6=formonly.pns06_6 type CHAR, tabIndex=29;
+Edit pns07_6=formonly.pns07_6 type CHAR, tabIndex=30;
+Edit pns08_6=formonly.pns08_6 type CHAR, tabIndex=31, noEntry;
+Edit pns09_6=formonly.pns09_6 type CHAR, tabIndex=32, noEntry;
+Edit pns06_7=formonly.pns06_7 type CHAR, tabIndex=33;
+Edit pns07_7=formonly.pns07_7 type CHAR, tabIndex=34;
+Edit pns08_7=formonly.pns08_7 type CHAR, tabIndex=35, noEntry;
+Edit pns09_7=formonly.pns09_7 type CHAR, tabIndex=36, noEntry;
+Edit pns06_8=formonly.pns06_8 type CHAR, tabIndex=37;
+Edit pns07_8=formonly.pns07_8 type CHAR, tabIndex=38;
+Edit pns08_8=formonly.pns08_8 type CHAR, tabIndex=39, noEntry;
+Edit pns09_8=formonly.pns09_8 type CHAR, tabIndex=40, noEntry;
+Edit pns06_9=formonly.pns06_9 type CHAR, tabIndex=41;
+Edit pns07_9=formonly.pns07_9 type CHAR, tabIndex=42;
+Edit pns08_9=formonly.pns08_9 type CHAR, tabIndex=43, noEntry;
+Edit pns09_9=formonly.pns09_9 type CHAR, tabIndex=44, noEntry;
+Edit pns06_10=formonly.pns06_10 type CHAR, tabIndex=45;
+Edit pns07_10=formonly.pns07_10 type CHAR, tabIndex=46;
+Edit pns08_10=formonly.pns08_10 type CHAR, tabIndex=47, noEntry;
+Edit pns09_10=formonly.pns09_10 type CHAR, tabIndex=48, noEntry;
+Edit pns06_11=formonly.pns06_11 type CHAR, tabIndex=49;
+Edit pns07_11=formonly.pns07_11 type CHAR, tabIndex=50;
+Edit pns08_11=formonly.pns08_11 type CHAR, tabIndex=51, noEntry;
+Edit pns09_11=formonly.pns09_11 type CHAR, tabIndex=52, noEntry;
+Edit pns06_12=formonly.pns06_12 type CHAR, tabIndex=53;
+Edit pns07_12=formonly.pns07_12 type CHAR, tabIndex=54;
+Edit pns08_12=formonly.pns08_12 type CHAR, tabIndex=55, noEntry;
+Edit pns09_12=formonly.pns09_12 type CHAR, tabIndex=56, noEntry;
+Edit pns06_13=formonly.pns06_13 type CHAR, tabIndex=57;
+Edit pns07_13=formonly.pns07_13 type CHAR, tabIndex=58;
+Edit pns08_13=formonly.pns08_13 type CHAR, tabIndex=59, noEntry;
+Edit pns09_13=formonly.pns09_13 type CHAR, tabIndex=60, noEntry;
+Group group03:group03;
+CheckBox pnr06=pnr_file.pnr06, tabIndex=61, text="Defer", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04;
+Edit pnr07=pnr_file.pnr07, tabIndex=62;
+Edit pnr08=pnr_file.pnr08, tabIndex=63;
+Edit pnr09=pnr_file.pnr09, tabIndex=64, noEntry;
+Edit pnr10=pnr_file.pnr10, tabIndex=65, noEntry;
+Edit pnruser=pnr_file.pnruser, tabIndex=66, noEntry;
+Edit pnrmodu=pnr_file.pnrmodu, tabIndex=67, noEntry;
+Edit pnracti=pnr_file.pnracti, tabIndex=68, noEntry, upShift;
+Edit pnrgrup=pnr_file.pnrgrup, tabIndex=69, noEntry;
+DateEdit pnrdate=pnr_file.pnrdate, tabIndex=70, noEntry;
+Edit pnroriu=pnr_file.pnroriu, tabIndex=501, noEntry;
+Edit pnrorig=pnr_file.pnrorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=71, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pnr_file.pnr01,formonly.afa02,pnr_file.pnr04,pnr_file.pnr03,formonly.gem02,pnr_file.pnr02,formonly.aag02,pnr_file.pnr05,formonly.pns06_1,formonly.pns07_1,formonly.pns08_1,formonly.pns09_1,formonly.pns06_2,formonly.pns07_2,formonly.pns08_2,formonly.pns09_2,formonly.pns06_3,formonly.pns07_3,formonly.pns08_3,formonly.pns09_3,formonly.pns06_4,formonly.pns07_4,formonly.pns08_4,formonly.pns09_4,formonly.pns06_5,formonly.pns07_5,formonly.pns08_5,formonly.pns09_5,formonly.pns06_6,formonly.pns07_6,formonly.pns08_6,formonly.pns09_6,formonly.pns06_7,formonly.pns07_7,formonly.pns08_7,formonly.pns09_7,formonly.pns06_8,formonly.pns07_8,formonly.pns08_8,formonly.pns09_8,formonly.pns06_9,formonly.pns07_9,formonly.pns08_9,formonly.pns09_9,formonly.pns06_10,formonly.pns07_10,formonly.pns08_10,formonly.pns09_10,formonly.pns06_11,formonly.pns07_11,formonly.pns08_11,formonly.pns09_11,formonly.pns06_12,formonly.pns07_12,formonly.pns08_12,formonly.pns09_12,formonly.pns06_13,formonly.pns07_13,formonly.pns08_13,formonly.pns09_13,pnr_file.pnr06,pnr_file.pnr07,pnr_file.pnr08,pnr_file.pnr09,pnr_file.pnr10,pnr_file.pnruser,pnr_file.pnrmodu,pnr_file.pnracti,pnr_file.pnrgrup,pnr_file.pnrdate,pnr_file.pnroriu,pnr_file.pnrorig,formonly.cnt)
+END -- INSTRUCTIONS
+

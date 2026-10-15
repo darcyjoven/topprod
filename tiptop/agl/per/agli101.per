@@ -1,0 +1,135 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli101")
+VBox VBox2
+Folder folder01
+Page page01(text="Main")
+VBox VBox1
+HBox hb2
+Grid gr2359
+{
+ Book No.                      [aaa01     ]
+ Book No. Description          [aaa02               ]
+ Current year                  [aaa04     ]
+ Current Period                [aaa05     ]
+ Currency                      [aaa03     ]                [imgmks]
+ Last Posting date             [aaa06       ]              [      ]
+ Account Locking Date          [aaa07       ]
+ User Authorization            [aay02_desc                    ]
+
+}
+END -- gr2359
+Grid gr2360
+{
+ <G group01                                    >
+  Method of Monthly    [aaa09               ]
+ <                                             >
+ <G group02                                    >
+  Method of Yearly     [aaa10               ]
+ <                                             >
+
+
+
+}
+END -- gr2360
+END -- hb2
+Grid gr6
+{
+ Exchange Loss A/C               [aaa11                   ][aag02_1                                                          ]
+ Exchange Gain Account           [aaa12                   ][aag02_2                                                          ]
+ Curr. Period P/L(IS)            [aaa14                   ][aaa14_1                                                          ]
+ Cur. Period P/L(BS)             [aaa15                   ][aaa15_1                                                          ]
+ Acc.P/L Acc. Code               [aaa16                   ][aaa16_1                                                          ]
+[aaa13               ]
+
+}
+END -- gr6
+END -- VBox1
+END -- page01
+Page info(text="Info")
+Grid gr2361
+{
+ Record Owner        [aaauser   ]   Last Modified by    [aaamodu   ]   Data Valid Code     [aaaacti   ]
+ Department          [aaagrup   ]   Create/Modify Date  [aaadate     ]
+ Record Orig.        [aaaoriu   ]
+ Dept Orig.          [aaaorig   ]
+
+
+}
+END -- gr2361
+END -- info
+END -- folder01
+Table s_aaf
+{
+[aaf02      |aaf03                         ]
+[aaf02      |aaf03                         ]
+[aaf02      |aaf03                         ]
+[aaf02      |aaf03                         ]
+[aaf02      |aaf03                         ]
+[aaf02      |aaf03                         ]
+[aaf02      |aaf03                         ]
+[aaf02      |aaf03                         ]
+[aaf02      |aaf03                         ]
+[aaf02      |aaf03                         ]
+}
+END -- s_aaf
+Grid gr2362
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2362
+END -- VBox2
+END -- agli101
+
+TABLES
+aaf_file,
+aaa_file
+ATTRIBUTES
+Edit aaa01=aaa_file.aaa01, tabIndex=1, not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit aaa02=aaa_file.aaa02, tabIndex=2;
+Edit aaa04=aaa_file.aaa04, tabIndex=3, not null, required;
+Edit aaa05=aaa_file.aaa05, tabIndex=4, not null, required;
+ButtonEdit aaa03=aaa_file.aaa03, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P> Qry Currency";
+IMAGE imgmks=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+DateEdit aaa06=aaa_file.aaa06, tabIndex=7, noEntry;
+DateEdit aaa07=aaa_file.aaa07, tabIndex=8, noEntry;
+Edit aay02_desc=formonly.aay02_desc type CHAR, tabIndex=9, noEntry;
+Group group01:group01;
+RadioGroup aaa09=aaa_file.aaa09, tabIndex=10, not null, required, items=(("1", "To Close The Surface"),("2", "To Close The Books"));
+Group group02:group02;
+RadioGroup aaa10=aaa_file.aaa10, tabIndex=11, not null, required, items=(("1", "To Close The Surface"),("2", "To Close The Books"));
+ButtonEdit aaa11=aaa_file.aaa11, action=controlp, tabIndex=21, image="zoom";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=23, noEntry;
+ButtonEdit aaa12=formonly.aaa12 type CHAR, action=CONTROLP, tabIndex=22, image="zoom";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=24, not null;
+ButtonEdit aaa14=formonly.aaa14 type CHAR, action=controlp, tabIndex=27, image="zoom";
+Edit aaa14_1=formonly.aaa14_1 type CHAR, tabIndex=30, noEntry;
+ButtonEdit aaa15=formonly.aaa15 type CHAR, action=controlp, tabIndex=28, image="zoom";
+Edit aaa15_1=formonly.aaa15_1 type CHAR, tabIndex=31, noEntry;
+ButtonEdit aaa16=formonly.aaa16 type CHAR, action=controlp, tabIndex=29, image="zoom";
+Edit aaa16_1=formonly.aaa16_1 type CHAR, tabIndex=32, noEntry;
+CheckBox aaa13=aaa_file.aaa13, tabIndex=33, text=%"aaa_file.aaa13", not null, required, valueChecked = "Y", valueUnchecked = "N", comment=%"No blank Field!";
+Edit aaauser=aaa_file.aaauser, tabIndex=12, noEntry;
+Edit aaamodu=aaa_file.aaamodu, tabIndex=13, noEntry;
+Edit aaaacti=aaa_file.aaaacti, tabIndex=20, noEntry, upShift;
+Edit aaagrup=aaa_file.aaagrup, tabIndex=14, noEntry;
+DateEdit aaadate=aaa_file.aaadate, tabIndex=15, noEntry;
+Edit aaaoriu=aaa_file.aaaoriu, tabIndex=25, noEntry;
+Edit aaaorig=aaa_file.aaaorig, tabIndex=26, noEntry;
+ComboBox aaf02=aaf_file.aaf02, tabIndex=16, title="Language", not null, required, queryEditable;
+Edit aaf03=aaf_file.aaf03, tabIndex=17, title="Book(Company) Desc.", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aaf(aaf_file.aaf02,aaf_file.aaf03)
+SCREEN RECORD Undefined(aaa_file.aaa01,aaa_file.aaa02,aaa_file.aaa04,aaa_file.aaa05,aaa_file.aaa03,formonly.imgmksg,aaa_file.aaa06,aaa_file.aaa07,formonly.aay02_desc,aaa_file.aaa09,aaa_file.aaa10,aaa_file.aaa11,formonly.aag02_1,formonly.aaa12,formonly.aag02_2,aaa_file.aaauser,aaa_file.aaamodu,aaa_file.aaaacti,aaa_file.aaagrup,aaa_file.aaadate,aaa_file.aaaoriu,aaa_file.aaaorig,formonly.cnt,formonly.cn2,formonly.aaa14,formonly.aaa15,formonly.aaa16,formonly.aaa14_1,formonly.aaa15_1,formonly.aaa16_1,aaa_file.aaa13)
+END -- INSTRUCTIONS
+

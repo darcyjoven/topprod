@@ -1,0 +1,57 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsi208.per created Wed Dec 31 05:29:38 2008
+-- File created from apsi208.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsi204")
+-- GRID
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX vb2
+    FOLDER pc4
+      PAGE page01( TEXT="Page01")
+        GRID gr7
+        {
+        <G group01                                       >
+         Demand Order Id        [aa0                 ]
+         Can Consume            [aa1                 ]
+         Is Scheduled           [aa2                 ]
+         Priority               [aa3                 ]
+         Alloc Rule Id          [aa4                 ]
+         Ship Day               [aa5                 ]
+        <                                                >
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    GRID gr8
+    {
+     ----------Rows [aa6   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES aps_dom
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=aps_dom.do_id, NOT NULL, NOENTRY, REQUIRED, TABINDEX=1;
+  COMBOBOX aa1=aps_dom.can_csum, COMMENT="Enter  0/1", QUERYEDITABLE, TABINDEX=2, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX aa2=aps_dom.is_skl, COMMENT="Enter  0/1", QUERYEDITABLE, TABINDEX=4, ITEMS=(("0","False"),("1","True"));
+  EDIT aa3=aps_dom.priority, TABINDEX=5;
+  EDIT aa4=aps_dom.allo_rid, TABINDEX=6;
+  EDIT aa5=aps_dom.ship_day, TABINDEX=7;
+  EDIT aa6=FORMONLY.cnt, NOENTRY, TABINDEX=3;
+END

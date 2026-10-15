@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt543.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt543")
+Folder pc1006
+Page page01(text="Page01")
+Grid gr5310
+{
+ <G group01                                          >
+  Goods Received Department [pmm14     ][gem02_2   ]
+  Confirmed By              [pmm15     ][gen02_2   ]
+  Shipping Method           [pmm16     ]
+  Agent                     [pmm17     ][pmc03     ]
+
+ [pmm30                                          ]
+ <                                                   >
+ <G group02                                          >
+ [pmm44                                ]
+
+ <                                                   >
+
+}
+END -- gr5310
+END -- page01
+END -- pc1006
+END -- apmt543
+
+TABLES
+pmm_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit pmm14=pmm_file.pmm14, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry  Department";
+Edit gem02_2=formonly.gem02_2 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit pmm15=pmm_file.pmm15, action=controlp, tabIndex=3, image="zoom", comment="<^P> Qry  Employee    ";
+Edit gen02_2=formonly.gen02_2 type VARCHAR, tabIndex=4, noEntry;
+Edit pmm16=pmm_file.pmm16, tabIndex=5;
+ButtonEdit pmm17=pmm_file.pmm17, action=controlp, tabIndex=6, image="zoom", comment="<^P> Qry  Vender Common Data";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=7, noEntry;
+CheckBox pmm30=pmm_file.pmm30, tabIndex=8, text="Received Goods and Print Receipt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Deduct/Offset";
+RadioGroup pmm44=pmm_file.pmm44, tabIndex=9, items=(("1", "Deductible Cost and Expense"),("2", "Creditable Fixed Asset"),("3", "No-Deduct Cost and Expense"),("4", "No-Credit Fixed Asset"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pmm_file.pmm14,formonly.gem02_2,pmm_file.pmm15,formonly.gen02_2,pmm_file.pmm16,pmm_file.pmm17,formonly.pmc03,pmm_file.pmm30,pmm_file.pmm44)
+END -- INSTRUCTIONS
+

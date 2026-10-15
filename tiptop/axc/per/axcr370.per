@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr370.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr370")
+VBox vb4
+Grid gr21
+{
+ <G group01                                                                              >
+  Item No.            [ima01               ]  Cost Levels         [ima57               ]
+  Cost Group          [ima12               ]
+ <                                                                                       >
+ <G group02                                                                             >
+  Year                           [ccc0]
+  Period                         [cc]
+  Cost Calculation Method        [type                            ]
+  Select Checking Item           [itemx                           ]
+ <                                                                                      >
+
+}
+END -- gr21
+Grid gr22
+{
+[more                                                                ]
+
+}
+END -- gr22
+END -- vb4
+END -- axcr370
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<P>";
+Edit ima57=formonly.ima57 type CHAR, tabIndex=2;
+Edit ima12=formonly.ima12 type CHAR, tabIndex=3;
+Group group02:group02, text="INPUT";
+Edit ccc0=formonly.ccc02 type SMALLINT, tabIndex=4, comment="No Blank Field";
+Edit cc=formonly.ccc03 type SMALLINT, tabIndex=5;
+ComboBox type=formonly.type type CHAR, tabIndex=8, not null, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+ComboBox itemx=formonly.itemx type SMALLINT, tabIndex=6, items=(("0", "All"),("-88", "Cros-Ck Inv.Cost"),("-77", "Cros-Ck WIP Cost"),("-66", "Crs-Ck WIP-Compo Cost"),("-12", "CM with Misc Wtdw.Amt but no Qty"),("-13", "Bal.Qt=0,but Bal.Amt!=0"),("-14", "Cur.MM Bal.Qt(-)"),("-15", "CM Total Bal.Amt (-)"),("-16", "CM Mat. Bal.Amt (-)"),("-17", "CM Lbr. Bal.Amt (-)"),("-18", "CM Ovhd. Bal.Cost(-)"),("-19", "CM Prcs.Cost Bal(-)"),("-20", "CM Other Cost Bal(-)"),("-24", "CM Avg.U/P (-)"),("20", "CM Tr-o > LM Bal. +CM Input"),("25", "WIP Cost(Compo)EoP Amt (-)!"),("-21", "Diff.Amt > 5 OR < -5"),("35", "M.Itm Qt=0,but(BoP+Input)Amt<> 0"),("-22", "CM BoP Amt <> LM EoP Amt"),("45", "CM with Hour but no W/O or Clsd"),("50", "EoP Qty < 0"),("-23", "CM Bal.Qty <> MFG EoP Qty"),("-09", "Input<>Issuing !!"),("-10", "CM with Rework Wtdw.Qt but no Amt"),("-11", "CM with Misc Wtdw.Qt but no Amt"),("41", "WIP Trsf-o Amt (-)"),("51", "Itm# w/o Prod.Cate"),("52", "MFG RC/DN Deductd Unconf"),("53", "AXR Delivery Nt Unconf"),("54", "AAP Fore.Pur Unallo & Unconf"));
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima57,formonly.ima12,formonly.ccc02,formonly.ccc03,formonly.type,formonly.itemx,formonly.more)
+END -- INSTRUCTIONS
+

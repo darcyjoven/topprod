@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armr115.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armr115")
+VBox VBox1
+Grid gr343
+{
+ <G group01                                             >
+  RMA No.             [rma01               ]
+  Document Date       [rma07               ]
+  Customer No.        [rma03               ]
+ <                                                      >
+
+}
+END -- gr343
+Grid gr344
+{
+[more                                     ]
+
+}
+END -- gr344
+END -- VBox1
+END -- armr115
+
+TABLES
+rma_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit rma01=rma_file.rma01, tabIndex=1, upShift;
+DateEdit rma07=rma_file.rma07, tabIndex=2;
+ButtonEdit rma03=rma_file.rma03, action=controlp, tabIndex=3, image="zoom", upShift;
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rma_file.rma01,rma_file.rma07,rma_file.rma03,formonly.more)
+END -- INSTRUCTIONS
+

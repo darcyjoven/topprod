@@ -1,0 +1,112 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq580.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq580")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr5017
+{
+ P/O No.             [pon01     ]
+ Line No.            [pon02     ]
+ Purchased Item#     [pon04                         ]
+ P/N Spec            [pon041                        ]
+ Pur. Date           [pom04       ]
+ Status Code         [pon16     ]
+}
+END -- gr5017
+Grid gr5018
+{
+
+ Purchase Unit       [pon07     ]
+ Qty Applied         [pon20     ]
+ Transferred Qty     [pon21     ]
+ Qty Untransferred   [rest      ]
+
+}
+END -- gr5018
+Grid gr5019
+{
+ Par/Ref Unit        [pon83               ]
+ Par/Ref Qty         [pon85               ]
+ Chi/P/O Unit        [pon80               ]
+ Chi/P/O Qty         [pon82               ]
+
+
+}
+END -- gr5019
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_pmn
+{
+[pmm04   |pmn01     |pmn|pmn04           |pmn041                  |pmc03     |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   ]
+[pmm04   |pmn01     |pmn|pmn04           |pmn041                  |pmc03     |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   ]
+[pmm04   |pmn01     |pmn|pmn04           |pmn041                  |pmc03     |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   ]
+[pmm04   |pmn01     |pmn|pmn04           |pmn041                  |pmc03     |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   ]
+[pmm04   |pmn01     |pmn|pmn04           |pmn041                  |pmc03     |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   ]
+[pmm04   |pmn01     |pmn|pmn04           |pmn041                  |pmc03     |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   ]
+[pmm04   |pmn01     |pmn|pmn04           |pmn041                  |pmc03     |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   ]
+[pmm04   |pmn01     |pmn|pmn04           |pmn041                  |pmc03     |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   ]
+[pmm04   |pmn01     |pmn|pmn04           |pmn041                  |pmc03     |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   ]
+[pmm04   |pmn01     |pmn|pmn04           |pmn041                  |pmc03     |pmn20     |pmn07|pmn83         |pmn85        |pmn80         |pmn82         |pm|pmn33   ]
+
+}
+END -- s_pmn
+Grid gr5020
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------------------------------------------------------------------------------------------------------Pur.Qty Total       [sum                 ]
+
+}
+END -- gr5020
+END -- VBox1
+END -- apmq580
+
+TABLES
+pmn_file,
+pon_file,
+pom_file
+ATTRIBUTES
+Edit pon01=pon_file.pon01, tabIndex=1, color = green;
+Edit pon02=pon_file.pon02, tabIndex=2;
+ButtonEdit pon04=pon_file.pon04, action=controlp, tabIndex=3, noEntry, image="zoom";
+Edit pon041=pon_file.pon041, tabIndex=4, noEntry;
+DateEdit pom04=pom_file.pom04, tabIndex=5, noEntry;
+ComboBox pon16=pon_file.pon16, tabIndex=6, noEntry, queryEditable, items=(("X", "Planning Order Enter"),("0", "Open"),("1", "Approved"),("2", "Issueed P/O"),("6", "Close-Normal"),("7", "Close-OverReceived"),("8", "Close-Shortage"),("9", "Cancel"));
+Edit pon07=pon_file.pon07, tabIndex=7, noEntry;
+Edit pon20=pon_file.pon20, tabIndex=8, not null, required;
+Edit pon21=pon_file.pon21, tabIndex=9;
+Edit rest=formonly.rest type CHAR, tabIndex=10;
+Edit pon83=pon_file.pon83, tabIndex=11;
+Edit pon85=pon_file.pon85, tabIndex=12;
+Edit pon80=pon_file.pon80, tabIndex=13;
+Edit pon82=pon_file.pon82, tabIndex=14;
+DateEdit pmm04=formonly.pmm04 type DATE, tabIndex=15, title="Date";
+Edit pmn01=pmn_file.pmn01, tabIndex=16, title="P/O No.";
+Edit pmn=pmn_file.pmn02, tabIndex=17, title="Ln#";
+Edit pmn04=pmn_file.pmn04, tabIndex=18, title="Purchased Item#";
+Edit pmn041=pmn_file.pmn041, tabIndex=19, title="Part Name";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=20, title="Vender#";
+Edit pmn20=pmn_file.pmn20, tabIndex=21, title="Pur.Qty", not null, required;
+Edit pmn07=pmn_file.pmn07, tabIndex=22, title="Unit";
+Edit pmn83=pmn_file.pmn83, tabIndex=23, title="Par/Ref Unit";
+Edit pmn85=pmn_file.pmn85, tabIndex=24, title="Par/Ref Qty";
+Edit pmn80=pmn_file.pmn80, tabIndex=25, title="Chi/P/O Unit";
+Edit pmn82=pmn_file.pmn82, tabIndex=26, title="Chi/P/O Qty";
+ComboBox pm=pmn_file.pmn16, tabIndex=27, title="Sts", noEntry, queryEditable, items=(("X", %"Planning Order Enter"),("0", %"Open"),("1", %"Approved"),("2", %"Issueed P/O"),("6", %"Close-Normal"),("7", %"Close-OverReceived"),("8", %"Close-Shortage"),("9", %"Cancel"));
+DateEdit pmn33=pmn_file.pmn33, tabIndex=28, title="Date";
+Edit cnt=formonly.cnt type CHAR, tabIndex=29;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=30;
+Edit sum=formonly.sum type CHAR, tabIndex=31;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmn(formonly.pmm04,pmn_file.pmn01,pmn_file.pmn02,pmn_file.pmn04,pmn_file.pmn041,formonly.pmc03,pmn_file.pmn20,pmn_file.pmn07,pmn_file.pmn83,pmn_file.pmn85,pmn_file.pmn80,pmn_file.pmn82,pmn_file.pmn16,pmn_file.pmn33)
+SCREEN RECORD Undefined(pon_file.pon01,pon_file.pon02,pon_file.pon04,pon_file.pon041,pom_file.pom04,pon_file.pon16,pon_file.pon07,pon_file.pon20,pon_file.pon21,formonly.rest,pon_file.pon83,pon_file.pon85,pon_file.pon80,pon_file.pon82,formonly.cnt,formonly.cn2,formonly.sum)
+END -- INSTRUCTIONS
+

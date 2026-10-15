@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_qcf_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"FQC Query")
+Grid gr3834
+{
+ <T s_qcf                                                                                                                                                              >
+ [check |qcf01              |qcf02            |qcf021           |qcf03            |qcf091    |qty2                        |qty3                  |qty4                 ]
+ [check |qcf01              |qcf02            |qcf021           |qcf03            |qcf091    |qty2                        |qty3                  |qty4                 ]
+ [check |qcf01              |qcf02            |qcf021           |qcf03            |qcf091    |qty2                        |qty3                  |qty4                 ]
+ [check |qcf01              |qcf02            |qcf021           |qcf03            |qcf091    |qty2                        |qty3                  |qty4                 ]
+ [check |qcf01              |qcf02            |qcf021           |qcf03            |qcf091    |qty2                        |qty3                  |qty4                 ]
+ [check |qcf01              |qcf02            |qcf021           |qcf03            |qcf091    |qty2                        |qty3                  |qty4                 ]
+ [check |qcf01              |qcf02            |qcf021           |qcf03            |qcf091    |qty2                        |qty3                  |qty4                 ]
+ [check |qcf01              |qcf02            |qcf021           |qcf03            |qcf091    |qty2                        |qty3                  |qty4                 ]
+ [check |qcf01              |qcf02            |qcf021           |qcf03            |qcf091    |qty2                        |qty3                  |qty4                 ]
+ [check |qcf01              |qcf02            |qcf021           |qcf03            |qcf091    |qty2                        |qty3                  |qty4                 ]
+ <                                                                                                                                                                     >
+
+}
+END -- gr3834
+END -- q_qcf
+
+TABLES
+qcf_file
+ATTRIBUTES
+Table s_qcf:s_qcf;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit qcf01=qcf_file.qcf01, tabIndex=2, title="FQC Document No.", noEntry;
+Edit qcf02=qcf_file.qcf02, tabIndex=3, title="W/O No.", noEntry;
+Edit qcf021=qcf_file.qcf021, tabIndex=4, title="Item", noEntry;
+Edit qcf03=qcf_file.qcf03, tabIndex=5, title="Run Card No.", noEntry;
+Edit qcf091=qcf_file.qcf091, tabIndex=6, title="Good Qty", noEntry;
+Edit qty2=formonly.qty2 type DECIMAL, tabIndex=7, title="Available Qty to store-in";
+Edit qty3=formonly.qty3 type DECIMAL, tabIndex=8, title="Posted Store-in Qty";
+Edit qty4=formonly.qty4 type DECIMAL, tabIndex=9, title="Unposted Store-in Qty";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcf(formonly.check,qcf_file.qcf01,qcf_file.qcf02,qcf_file.qcf021,qcf_file.qcf03,qcf_file.qcf091,formonly.qty2,formonly.qty3,formonly.qty4)
+END -- INSTRUCTIONS
+

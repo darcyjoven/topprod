@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artg805.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid ds1
+{
+
+ <G group1                                          >
+ [label1    ][rcd01                 ]
+ [label2    ][azw01                 ]
+ [label3    ][rce03                 ]
+ [label4    ][bdate       |lab|edate       ]
+ <                                                  >
+ <G group2                                          >
+ [label6  |state              ]
+ [detail                      ]
+ <                                                  >
+
+[more                            ]
+
+}
+END -- ds1
+END -- VBox1
+END -- Form
+
+TABLES
+azw_file,
+rce_file,
+rcd_file
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+Label label1:Label1, text=%"rcd01";
+ButtonEdit rcd01=rcd_file.rcd01, action=controlp, tabIndex=1, image="zoom", scroll;
+Label label2:Label2, text=%"azw01";
+ButtonEdit azw01=azw_file.azw01, action=controlp, tabIndex=2, image="zoom", scroll;
+Label label3:Label3, text=%"rce03";
+ButtonEdit rce03=rce_file.rce03, action=controlp, tabIndex=3, not null, image="zoom", scroll;
+Label label4:Label4, text=%"Saledate";
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=4, not null, required;
+Label lab:Label5, text=%"~";
+DateEdit edate=formonly.edate type CHAR, tabIndex=5, not null, required;
+Group group2:Group2, text=%"Group2";
+Label label6:Label6, text=%"state";
+ComboBox state=formonly.state type CHAR, tabIndex=6, not null, items=(("Y", "Y"),("N", "N"),("A", "A"));
+CheckBox detail=formonly.detail type CHAR, tabIndex=7, text=%"detail", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=8, text=%"more", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(rcd_file.rcd01,azw_file.azw01,rce_file.rce03)
+SCREEN RECORD Undefined(formonly.bdate,formonly.edate,formonly.state,formonly.detail,formonly.more)
+END -- INSTRUCTIONS
+

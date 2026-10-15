@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr410.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr410")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                 >
+  Work/Order No.      [sfb01               ]
+  Product No.         [sfb05               ]
+  Component No.       [sfa03               ]
+ <                                          >
+
+}
+END -- gr1
+Grid gr2
+{
+[more                                     ]
+
+}
+END -- gr2
+END -- VBox1
+END -- asfr410
+
+TABLES
+sfb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit sfb05=formonly.sfb05 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit sfa03=formonly.sfa03 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfb_file.sfb01,formonly.sfb05,formonly.sfa03,formonly.more)
+END -- INSTRUCTIONS
+

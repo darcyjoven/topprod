@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq812.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsq812")
+VBox vb2
+Grid gr5444
+{
+ <G group01                                                                                                                                                                                                                                                                                     >
+  APS Version   [vob01               ]         PaperNo   [vob13_1                     ]   Partno    [vob07_1           ]
+  Save Version  [vob02               ]         Buyer     [pmm12_1     ][gen02         ]  [vob36_1   ]
+ <                                                                                                                                                                                                                                                                                              >
+ <T s_vob                                                                                                                                                                                                                                                                                >
+ [vob36 |vob13   |pmm25     |pmm1|pmm09|itemno  |vob07   |ima02   |vob11   |ischang|pmn20     |unst_qty   |vob33           |qty       |pmn34         |vob14            |pmn35         |vob40     |generate|vob17             |vob42     |vob08     |vob20     |vob04     |vob03     ]
+ [vob36 |vob13   |pmm25     |pmm1|pmm09|itemno  |vob07   |ima02   |vob11   |ischang|pmn20     |unst_qty   |vob33           |qty       |pmn34         |vob14            |pmn35         |vob40     |generate|vob17             |vob42     |vob08     |vob20     |vob04     |vob03     ]
+ [vob36 |vob13   |pmm25     |pmm1|pmm09|itemno  |vob07   |ima02   |vob11   |ischang|pmn20     |unst_qty   |vob33           |qty       |pmn34         |vob14            |pmn35         |vob40     |generate|vob17             |vob42     |vob08     |vob20     |vob04     |vob03     ]
+ [vob36 |vob13   |pmm25     |pmm1|pmm09|itemno  |vob07   |ima02   |vob11   |ischang|pmn20     |unst_qty   |vob33           |qty       |pmn34         |vob14            |pmn35         |vob40     |generate|vob17             |vob42     |vob08     |vob20     |vob04     |vob03     ]
+ [vob36 |vob13   |pmm25     |pmm1|pmm09|itemno  |vob07   |ima02   |vob11   |ischang|pmn20     |unst_qty   |vob33           |qty       |pmn34         |vob14            |pmn35         |vob40     |generate|vob17             |vob42     |vob08     |vob20     |vob04     |vob03     ]
+ [vob36 |vob13   |pmm25     |pmm1|pmm09|itemno  |vob07   |ima02   |vob11   |ischang|pmn20     |unst_qty   |vob33           |qty       |pmn34         |vob14            |pmn35         |vob40     |generate|vob17             |vob42     |vob08     |vob20     |vob04     |vob03     ]
+ [vob36 |vob13   |pmm25     |pmm1|pmm09|itemno  |vob07   |ima02   |vob11   |ischang|pmn20     |unst_qty   |vob33           |qty       |pmn34         |vob14            |pmn35         |vob40     |generate|vob17             |vob42     |vob08     |vob20     |vob04     |vob03     ]
+ [vob36 |vob13   |pmm25     |pmm1|pmm09|itemno  |vob07   |ima02   |vob11   |ischang|pmn20     |unst_qty   |vob33           |qty       |pmn34         |vob14            |pmn35         |vob40     |generate|vob17             |vob42     |vob08     |vob20     |vob04     |vob03     ]
+ [vob36 |vob13   |pmm25     |pmm1|pmm09|itemno  |vob07   |ima02   |vob11   |ischang|pmn20     |unst_qty   |vob33           |qty       |pmn34         |vob14            |pmn35         |vob40     |generate|vob17             |vob42     |vob08     |vob20     |vob04     |vob03     ]
+ [vob36 |vob13   |pmm25     |pmm1|pmm09|itemno  |vob07   |ima02   |vob11   |ischang|pmn20     |unst_qty   |vob33           |qty       |pmn34         |vob14            |pmn35         |vob40     |generate|vob17             |vob42     |vob08     |vob20     |vob04     |vob03     ]
+ <                                                                                                                                                                                                                                                                                       >
+
+
+}
+END -- gr5444
+Grid gr881
+{
+ ----------  Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr881
+END -- vb2
+END -- apsq812
+
+TABLES
+pmn_file,
+pmm_file,
+vob_file,
+ima_file
+ATTRIBUTES
+Group group01:group01, text="Basic Data";
+ButtonEdit vob01=formonly.vob01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Assign Add/Query Item#";
+ButtonEdit vob13_1=formonly.vob13_1 type VARCHAR, action=controlp, tabIndex=31, image="zoom", comment="Assign Add/Query Item#";
+ButtonEdit vob07_1=formonly.vob07_1 type VARCHAR, action=controlp, tabIndex=34, image="zoom", comment="Assign Add/Query Item#";
+Edit vob02=formonly.vob02 type CHAR, tabIndex=2;
+ButtonEdit pmm12_1=formonly.pmm12_1 type VARCHAR, action=controlp, tabIndex=32, image="zoom", comment="Assign Add/Query Item#";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=33, noEntry;
+CheckBox vob36_1=formonly.vob36_1 type VARCHAR, tabIndex=30, text="vob36", valueChecked = "Y", valueUnchecked = "N";
+Table s_vob:s_vob;
+CheckBox vob36=vob_file.vob36, tabIndex=3, title="vob36", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit vob13=vob_file.vob13, tabIndex=4, title="Source Doc. No.", noEntry;
+ComboBox pmm25=pmm_file.pmm25, tabIndex=5, title="pmm25", items=(("0", "0"),("1", "1"),("2", "2"),("6", "6"),("9", "9"),("S", "S"),("R", "R"),("W", "W"));
+ButtonEdit pmm1=pmm_file.pmm12, action=controlp, tabIndex=6, title="pmm12", image="zoom";
+ButtonEdit pmm09=pmm_file.pmm09, action=controlp, tabIndex=7, title="pmm09", image="zoom";
+Edit itemno=formonly.itemno type SMALLINT, tabIndex=8, title="Line No", noEntry;
+ButtonEdit vob07=vob_file.vob07, action=controlp, tabIndex=10, title="Item No.", image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=11, title="ima02", noEntry;
+ButtonEdit vob11=vob_file.vob11, action=controlp, tabIndex=12, title="Purchase Unit", image="zoom";
+CheckBox ischang=formonly.IsChange type CHAR, tabIndex=13, title="IsChange", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit pmn20=pmn_file.pmn20, tabIndex=14, title="pmn20", noEntry;
+Edit unst_qty=formonly.unst_qty type CHAR, tabIndex=15, title="unst_qty", noEntry;
+Edit vob33=vob_file.vob33, tabIndex=16, title="vob33", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=17, title="qty", noEntry;
+DateEdit pmn34=formonly.pmn34 type DATE, tabIndex=19, title="pmn34", noEntry;
+DateEdit vob14=formonly.vob14 type DATE, tabIndex=18, title="vob14";
+DateEdit pmn35=pmn_file.pmn35, tabIndex=20, title="pmn35", noEntry;
+Edit vob40=vob_file.vob40, tabIndex=25, title="vob40";
+ComboBox generate=formonly.generate type DECIMAL, tabIndex=21, title="generate", noEntry, items=(("0", "0"),("1", "1"));
+Edit vob17=vob_file.vob17, tabIndex=24, title="vob17", noEntry;
+ButtonEdit vob42=vob_file.vob42, action=controlp, tabIndex=9, title="Supply Rule", noEntry, image="zoom.png";
+Edit vob08=vob_file.vob08, tabIndex=28, title="vob08";
+Edit vob20=vob_file.vob20, tabIndex=27, title="vob20";
+Edit vob04=vob_file.vob04, tabIndex=26, title="vob04";
+Edit vob03=vob_file.vob03, tabIndex=29, title="vob03";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vob(vob_file.vob36,vob_file.vob13,pmm_file.pmm25,pmm_file.pmm12,pmm_file.pmm09,formonly.itemno,vob_file.vob07,ima_file.ima02,vob_file.vob11,formonly.IsChange,pmn_file.pmn20,formonly.unst_qty,vob_file.vob33,formonly.qty,formonly.pmn34,formonly.vob14,pmn_file.pmn35,vob_file.vob40,formonly.generate,vob_file.vob17,vob_file.vob42,vob_file.vob08,vob_file.vob20,vob_file.vob04,vob_file.vob03)
+SCREEN RECORD Undefined(formonly.vob01,formonly.vob13_1,formonly.vob07_1,formonly.vob02,formonly.pmm12_1,formonly.gen02,formonly.vob36_1,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

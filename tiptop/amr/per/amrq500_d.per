@@ -1,0 +1,33 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amrq500_d.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amrq500_d")
+Folder folder01
+Page page01(text="Page01")
+Grid gr2858
+{
+ <G group01                                        >
+  Version [ver         ]
+ [a                                           ]
+ <                                                 >
+
+}
+END -- gr2858
+END -- page01
+END -- folder01
+END -- amrq500_d
+
+ATTRIBUTES
+Group group01:group01, text="Input";
+Edit ver=formonly.ver type CHAR, tabIndex=1, not null, required;
+CheckBox a=formonly.a type VARCHAR, tabIndex=2, text="Download To C:TIPTOP?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ver,formonly.a)
+END -- INSTRUCTIONS
+

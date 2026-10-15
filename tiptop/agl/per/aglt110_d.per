@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt110_d.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglt110_d")
+VBox VBox1
+Grid gr2867
+{
+ <G group01                                 > <G group02                                           >
+  Declaring Year      [apk173    ]             Department         [apk22     ]
+  Declaring Month     [apk174    ]             Memo               [apk25               ]
+ <                                          > <                                                    >
+
+}
+END -- gr2867
+Table s_apk
+{
+[apk03           |apk04    |apl02       |apk05        |apk06               |apk07               |apk08               |apk171 |apk17  |apk]
+[apk03           |apk04    |apl02       |apk05        |apk06               |apk07               |apk08               |apk171 |apk17  |apk]
+[apk03           |apk04    |apl02       |apk05        |apk06               |apk07               |apk08               |apk171 |apk17  |apk]
+[apk03           |apk04    |apl02       |apk05        |apk06               |apk07               |apk08               |apk171 |apk17  |apk]
+[apk03           |apk04    |apl02       |apk05        |apk06               |apk07               |apk08               |apk171 |apk17  |apk]
+[apk03           |apk04    |apl02       |apk05        |apk06               |apk07               |apk08               |apk171 |apk17  |apk]
+[apk03           |apk04    |apl02       |apk05        |apk06               |apk07               |apk08               |apk171 |apk17  |apk]
+[apk03           |apk04    |apl02       |apk05        |apk06               |apk07               |apk08               |apk171 |apk17  |apk]
+[apk03           |apk04    |apl02       |apk05        |apk06               |apk07               |apk08               |apk171 |apk17  |apk]
+[apk03           |apk04    |apl02       |apk05        |apk06               |apk07               |apk08               |apk171 |apk17  |apk]
+
+}
+END -- s_apk
+Grid gr2868
+{
+ <G group03                                                                                                                           >
+  With Tax            [l_tot1              ]   Tax               [l_tot2              ]     No Tax              [l_tot3              ]
+ <                                                                                                                                    >
+
+}
+END -- gr2868
+END -- VBox1
+END -- aglt110_d
+
+TABLES
+apk_file
+ATTRIBUTES
+Group group01:group01;
+Edit apk173=apk_file.apk173, tabIndex=1;
+Edit apk174=apk_file.apk174, tabIndex=2;
+Group group02:group02;
+Edit apk22=apk_file.apk22, tabIndex=3;
+Edit apk25=apk_file.apk25, tabIndex=4;
+Edit apk03=apk_file.apk03, tabIndex=5, title="Invoice#";
+Edit apk04=apk_file.apk04, tabIndex=6, title="Uniform#";
+Edit apl02=formonly.apl02 type CHAR, tabIndex=7, title="Abbreviated", noEntry;
+Edit apk05=apk_file.apk05, tabIndex=8, title="Invoice Date";
+Edit apk06=apk_file.apk06, tabIndex=9, title="With Tax", not null, required;
+Edit apk07=apk_file.apk07, tabIndex=10, title="Tax", not null, required;
+Edit apk08=apk_file.apk08, tabIndex=11, title="No Tax", not null, required;
+Edit apk171=apk_file.apk171, tabIndex=12, title="Format", comment="Enter Correct format  PUR: 21/22/23/24/25  SLS: 31/32/33/34/35";
+Edit apk17=apk_file.apk17, tabIndex=13, title="Deduct", comment="1.Deductible Cost and Expense 2.Creditable Fixed Asset 3.No-Deduct Cost and Expense 4.No-Credit Fixed Asset";
+Edit apk=apk_file.apk172, tabIndex=14, title="Tax", comment="1.Taxable 2.0-Tax Rate 3.Exempted";
+Group group03:group03, text="Total";
+Edit l_tot1=formonly.l_tot1 type CHAR, tabIndex=15;
+Edit l_tot2=formonly.l_tot2 type CHAR, tabIndex=16;
+Edit l_tot3=formonly.l_tot3 type CHAR, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apk(apk_file.apk03,apk_file.apk04,formonly.apl02,apk_file.apk05,apk_file.apk06,apk_file.apk07,apk_file.apk08,apk_file.apk171,apk_file.apk17,apk_file.apk172)
+SCREEN RECORD Undefined(apk_file.apk173,apk_file.apk174,apk_file.apk22,apk_file.apk25,formonly.l_tot1,formonly.l_tot2,formonly.l_tot3)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,116 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_bi.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"BI Integration Station Config")
+VBox vb5
+HBox hb2
+Group gb5
+Grid gr4
+{
+  V-Point Version           [gcf10                                    ]
+ [gcf09                                    ]
+}
+END -- gr4
+END -- gb5
+Group group04(text="DataBase Type", hidden)
+Grid gr7
+{
+[gcf05                                        ]
+
+}
+END -- gr7
+END -- group04
+END -- hb2
+HBox hb3
+Group group01(text="V-Point Express Standard Station")
+Grid gr5
+{
+
+  Tiptop Plant NO .         [gcf01               ]
+  Express Station DB        [gcf06               ]
+  Express station IP        [gcf03               ]
+  Express station Port      [gcf07               ]
+  Express station name      [gcf04               ]
+  Express SOAP services URL [gch11                                             ]
+  Express Server User       [gch12               ]
+  Express Server Password   [gch13               ]
+
+
+
+}
+END -- gr5
+END -- group01
+Group group02(text="V-Point DB SQL Standard Station", hidden)
+Grid gr6
+{
+
+ Express DB Server IP    [gch06               ]
+ Express DB Server Port  [gch07               ]
+ Express DB(SQL)/SID(ORA)[gch08               ]
+ Express DB Server User  [gch09               ]
+ Express DB Server Pass  [gch10               ]
+
+}
+END -- gr6
+END -- group02
+END -- hb3
+Table s_bgch
+{
+[bgcf10            |bgcf09 |bgch01         |bgcf06     |bgch03     |bgch04          |bgch05       |bgch06       |bgch07      |bgch08          |bgch09      |bgch10       |bgcf07    |bgch12         |bgch13     |bgch11                                            ]
+[bgcf10            |bgcf09 |bgch01         |bgcf06     |bgch03     |bgch04          |bgch05       |bgch06       |bgch07      |bgch08          |bgch09      |bgch10       |bgcf07    |bgch12         |bgch13     |bgch11                                            ]
+[bgcf10            |bgcf09 |bgch01         |bgcf06     |bgch03     |bgch04          |bgch05       |bgch06       |bgch07      |bgch08          |bgch09      |bgch10       |bgcf07    |bgch12         |bgch13     |bgch11                                            ]
+[bgcf10            |bgcf09 |bgch01         |bgcf06     |bgch03     |bgch04          |bgch05       |bgch06       |bgch07      |bgch08          |bgch09      |bgch10       |bgcf07    |bgch12         |bgch13     |bgch11                                            ]
+[bgcf10            |bgcf09 |bgch01         |bgcf06     |bgch03     |bgch04          |bgch05       |bgch06       |bgch07      |bgch08          |bgch09      |bgch10       |bgcf07    |bgch12         |bgch13     |bgch11                                            ]
+
+}
+END -- s_bgch
+END -- vb5
+END -- p_bi
+
+TABLES
+gch_file,
+gcf_file
+ATTRIBUTES
+ComboBox gcf10=gcf_file.gcf10, tabIndex=26, not null, required, items=(("N", "V-Point3"),("Y", "V-Point4"),("U", "V-Point5"));
+CheckBox gcf09=gcf_file.gcf09, tabIndex=22, text="Express Integration with BI", not null, required, valueChecked = "Y", valueUnchecked = "N";
+RadioGroup gcf05=gcf_file.gcf05, tabIndex=17, not null, required, orientation=horizontal, items=(("0", "Oracle"),("1", "SQL Server"));
+ButtonEdit gcf01=gcf_file.gcf01, action=controlp, tabIndex=18, not null, required, image="zoom";
+ComboBox gcf06=gcf_file.gcf06, tabIndex=19, not null, required, initializer=initrpsdb;
+Edit gcf03=gcf_file.gcf03, tabIndex=20, not null, required;
+Edit gcf07=gcf_file.gcf07, tabIndex=31, not null, required;
+Edit gcf04=gcf_file.gcf04, tabIndex=21, not null, required, hidden;
+Edit gch11=gch_file.gch11, tabIndex=25, not null, required;
+Edit gch12=gch_file.gch12, tabIndex=23, not null, required;
+Edit gch13=gch_file.gch13, tabIndex=24, invisible;
+Edit gch06=gch_file.gch06, tabIndex=12, not null, required;
+Edit gch07=gch_file.gch07, tabIndex=13, not null, required;
+Edit gch08=gch_file.gch08, tabIndex=14, not null, required;
+Edit gch09=gch_file.gch09, tabIndex=15, not null, required;
+Edit gch10=gch_file.gch10, tabIndex=16, not null, required, invisible;
+CheckBox bgcf10=formonly.bgcf10 type CHAR, tabIndex=27, title="V-Point Version", valueChecked = "Y", valueUnchecked = "N";
+CheckBox bgcf09=formonly.bgcf09 type CHAR, tabIndex=5, title="BI", noEntry, valueChecked = "Y", valueUnchecked = "N", hidden;
+Edit bgch01=formonly.bgch01 type CHAR, tabIndex=1, title="Plant NO.", noEntry;
+Edit bgcf06=formonly.bgcf06 type CHAR, tabIndex=2, title="Station DB", noEntry, hidden;
+Edit bgch03=formonly.bgch03 type CHAR, tabIndex=3, title="station IP", noEntry;
+Edit bgch04=formonly.bgch04 type CHAR, tabIndex=4, title="Express station", noEntry, hidden;
+ComboBox bgch05=formonly.bgch05 type CHAR, tabIndex=6, title="DB Server", noEntry, hidden, items=(("0", %"Oracle"),("1", %"SQL"));
+Edit bgch06=formonly.bgch06 type CHAR, tabIndex=7, title="DB Server IP", noEntry, hidden;
+Edit bgch07=formonly.bgch07 type CHAR, tabIndex=8, title="Port", noEntry, hidden;
+Edit bgch08=formonly.bgch08 type CHAR, tabIndex=9, title="DB/SID", noEntry, hidden;
+Edit bgch09=formonly.bgch09 type CHAR, tabIndex=10, title="Server User", noEntry, hidden;
+Edit bgch10=formonly.bgch10 type CHAR, tabIndex=11, title="Server Password", noEntry, hidden, invisible;
+Edit bgcf07=formonly.bgcf07 type CHAR, tabIndex=32, title="Station Port";
+Edit bgch12=formonly.bgch12 type CHAR, tabIndex=28, title="Server User";
+Edit bgch13=formonly.bgch13 type CHAR, tabIndex=29, title="Server Password", invisible;
+Edit bgch11=formonly.bgch11 type CHAR, tabIndex=30, title="SOAP Services URL";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgch(formonly.bgcf10,formonly.bgcf09,formonly.bgch01,formonly.bgcf06,formonly.bgch03,formonly.bgch04,formonly.bgch05,formonly.bgch06,formonly.bgch07,formonly.bgch08,formonly.bgch09,formonly.bgch10,formonly.bgcf07,formonly.bgch12,formonly.bgch13,formonly.bgch11)
+SCREEN RECORD Undefined(gcf_file.gcf10,gcf_file.gcf09,gcf_file.gcf05,gcf_file.gcf01,gcf_file.gcf06,gcf_file.gcf03,gcf_file.gcf07,gcf_file.gcf04,gch_file.gch11,gch_file.gch12,gch_file.gch13,gch_file.gch06,gch_file.gch07,gch_file.gch08,gch_file.gch09,gch_file.gch10)
+END -- INSTRUCTIONS
+

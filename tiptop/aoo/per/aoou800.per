@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aoou800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aoou800")
+VBox VBox1
+Folder pc890
+Page page01(text="Page01")
+Grid gr4723
+{
+ <G group01                                      ><G group02                 >
+  [upload                                   ]     [backup_device           ]
+
+
+ <                                               ><                          >
+ <G group03                                                                  >
+  Original Downloaded File Name [fil]_[file_ext]
+  SCHEMA Table Name             [table_name    ]
+ <                                                                           >
+
+}
+END -- gr4723
+END -- page01
+END -- pc890
+END -- VBox1
+END -- aoou800
+
+ATTRIBUTES
+Group group01:group01;
+CheckBox upload=formonly.upload type VARCHAR, tabIndex=1, text="Upload from Original Backup Device?", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Enter Y:Upload, N:No    ";
+Group group02:group02, text="Backup Device";
+RadioGroup backup_device=formonly.backup_device type VARCHAR, tabIndex=2, required, items=(("1", "Tape"),("2", "Floppy"));
+Group group03:group03;
+Edit fil=formonly.file_name type VARCHAR, tabIndex=3, required;
+Edit file_ext=formonly.file_extension type VARCHAR, tabIndex=4;
+ButtonEdit table_name=formonly.table_name type VARCHAR, action=controlp, tabIndex=5, required, image="zoom", comment="<^P>Qry SCHEMA Table Name";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.upload,formonly.backup_device,formonly.file_name,formonly.file_extension,formonly.table_name)
+END -- INSTRUCTIONS
+

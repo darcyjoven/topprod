@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq410.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcq410")
+VBox vb10
+Folder folder01
+Page page01(text="Main")
+Grid gr1540
+{
+  Master Item#            [ccg04                         ][ima02                         ]     Unit                [ima25     ]
+  WO No.                  [ccg01           ]
+  YY/MM                   [ccg0]/[cc]
+  Cost Calculation Method [ccg06           ] Category No.  [ccg07                        ]
+
+ <G group02                                                                                    >
+  Qty  [ccg11               ][ccg21               ][ccg31               ][ccg91               ]
+  Cost [ccg12               ][ccg22               ][ccg32               ][ccg92               ]
+                             [ccg23               ]
+ <                                                                                             >
+
+}
+END -- gr1540
+END -- page01
+END -- folder01
+Table s_cch
+{
+[cch04              |cch05  |cch11              |cch21               |cch31                  |cch91           |cch12               |cch22               |cch32                  |cch92               ]
+[cch04              |cch05  |cch11              |cch21               |cch31                  |cch91           |cch12               |cch22               |cch32                  |cch92               ]
+[cch04              |cch05  |cch11              |cch21               |cch31                  |cch91           |cch12               |cch22               |cch32                  |cch92               ]
+[cch04              |cch05  |cch11              |cch21               |cch31                  |cch91           |cch12               |cch22               |cch32                  |cch92               ]
+[cch04              |cch05  |cch11              |cch21               |cch31                  |cch91           |cch12               |cch22               |cch32                  |cch92               ]
+[cch04              |cch05  |cch11              |cch21               |cch31                  |cch91           |cch12               |cch22               |cch32                  |cch92               ]
+[cch04              |cch05  |cch11              |cch21               |cch31                  |cch91           |cch12               |cch22               |cch32                  |cch92               ]
+[cch04              |cch05  |cch11              |cch21               |cch31                  |cch91           |cch12               |cch22               |cch32                  |cch92               ]
+[cch04              |cch05  |cch11              |cch21               |cch31                  |cch91           |cch12               |cch22               |cch32                  |cch92               ]
+[cch04              |cch05  |cch11              |cch21               |cch31                  |cch91           |cch12               |cch22               |cch32                  |cch92               ]
+
+}
+END -- s_cch
+Grid gr1541
+{
+ ---------- Rows [cnt   ] ---------- [dummy01                      ] Total [cch12_t             ][cch22_t             ][cch32_t             ][cch92_t             ]
+                                                                                                 [cch23_t             ]
+}
+END -- gr1541
+END -- vb10
+END -- axcq410
+
+TABLES
+cch_file,
+ccg_file
+ATTRIBUTES
+ButtonEdit ccg04=ccg_file.ccg04, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=3, noEntry;
+Edit ccg01=ccg_file.ccg01, tabIndex=4, not null, required;
+Edit ccg0=ccg_file.ccg02, tabIndex=5, not null, required;
+Edit cc=ccg_file.ccg03, tabIndex=6, not null, required;
+ComboBox ccg06=ccg_file.ccg06, tabIndex=32, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Specific-Batch Cost"),("4", "Individual-Item Cost"),("5", "Specific Identification-Cost by Store(Profit Center)"));
+ButtonEdit ccg07=ccg_file.ccg07, tabIndex=33, default = "' '", not null, required, image="zoom.png";
+Group group02:group02;
+Edit ccg11=ccg_file.ccg11, tabIndex=7, not null, required;
+Edit ccg21=ccg_file.ccg21, tabIndex=8, not null, required;
+Edit ccg31=ccg_file.ccg31, tabIndex=9, not null, required;
+Edit ccg91=ccg_file.ccg91, tabIndex=10, noEntry, not null, required;
+Edit ccg12=ccg_file.ccg12, tabIndex=11, noEntry, not null, required;
+Edit ccg22=ccg_file.ccg22, tabIndex=12, noEntry, not null, required;
+Edit ccg32=ccg_file.ccg32, tabIndex=13, noEntry, not null, required;
+Edit ccg92=ccg_file.ccg92, tabIndex=14, noEntry, not null, required;
+Edit ccg23=ccg_file.ccg23, tabIndex=15, noEntry, not null, required;
+ButtonEdit cch04=cch_file.cch04, action=controlp, tabIndex=16, title="Component No.", not null, required, image="zoom";
+Edit cch05=cch_file.cch05, tabIndex=17, title="Cate.", not null, required;
+Edit cch11=cch_file.cch11, tabIndex=18, title="Last Mon. Bal. Qty", not null, required;
+Edit cch21=cch_file.cch21, tabIndex=19, title="Curr.Mon Input Qty", not null, required;
+Edit cch31=cch_file.cch31, tabIndex=20, title="Curr.Mon Trans-out Qty", not null, required;
+Edit cch91=cch_file.cch91, tabIndex=21, title="EoM Balance Qty", not null, required;
+Edit cch12=cch_file.cch12, tabIndex=22, title="Last Mon. Bal. Amt", not null, required;
+Edit cch22=cch_file.cch22, tabIndex=23, title="Curr.Mon Input Amt", not null, required;
+Edit cch32=cch_file.cch32, tabIndex=24, title="Curr.Mon Trans-out Amt", not null, required;
+Edit cch92=cch_file.cch92, tabIndex=25, title="EoM Balance Amt", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=26, noEntry;
+Label dummy01:dummy01;
+Edit cch12_t=formonly.cch12_t type CHAR, tabIndex=27, noEntry;
+Edit cch22_t=formonly.cch22_t type CHAR, tabIndex=28, noEntry;
+Edit cch32_t=formonly.cch32_t type CHAR, tabIndex=29, noEntry;
+Edit cch92_t=formonly.cch92_t type CHAR, tabIndex=30, noEntry;
+Edit cch23_t=formonly.cch23_t type CHAR, tabIndex=31, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cch(cch_file.cch04,cch_file.cch05,cch_file.cch11,cch_file.cch21,cch_file.cch31,cch_file.cch91,cch_file.cch12,cch_file.cch22,cch_file.cch32,cch_file.cch92)
+SCREEN RECORD Undefined(ccg_file.ccg04,formonly.ima02,formonly.ima25,ccg_file.ccg01,ccg_file.ccg02,ccg_file.ccg03,ccg_file.ccg06,ccg_file.ccg07,ccg_file.ccg11,ccg_file.ccg21,ccg_file.ccg31,ccg_file.ccg91,ccg_file.ccg12,ccg_file.ccg22,ccg_file.ccg32,ccg_file.ccg92,ccg_file.ccg23,formonly.cnt,formonly.cch12_t,formonly.cch22_t,formonly.cch32_t,formonly.cch92_t,formonly.cch23_t)
+END -- INSTRUCTIONS
+

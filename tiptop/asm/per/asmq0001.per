@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asmq0001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asmq0001")
+VBox VBox1
+Folder pc187
+Page page01(text="Main")
+Grid gr888
+{
+ <G group01                                        >
+  [a                                          ]
+
+ <                                                 >
+ <G group02                                        >
+  Date                [date_1      ]-[date_2      ]
+ <                                                 >
+
+}
+END -- gr888
+END -- page01
+END -- pc187
+END -- VBox1
+END -- asmq0001
+
+ATTRIBUTES
+Group group01:group01, text="Qry Date Base";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=1, items=(("1", "System OFF Date"),("2", "System ON Date"));
+Group group02:group02, text="Qry Date QBE";
+DateEdit date_1=formonly.date_1 type DATE, tabIndex=2, comment="Decide Querying Date QBE \"Initial Date\"";
+DateEdit date_2=formonly.date_2 type DATE, tabIndex=3, comment="Decide Querying Date QBE \"Ending Date\"";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.date_1,formonly.date_2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr330.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr330")
+VBox VBox2
+Grid gr258
+{
+ <G group01                                                          >
+  Account Empl.       [apf04               ]
+  Payment Date        [apf02               ]
+  Payment Slip NO.    [apf01               ]
+  Paying Vender       [apf03               ]
+  Currency            [apf06               ]
+  Voucher No.         [apf44               ]
+ <                                                                   >
+
+}
+END -- gr258
+Group group04(text="INPUT")
+VBox VBox1
+Grid gr259
+{
+ <G group02                                                          >
+   [b                   ]      [i                   ]
+   [c                   ]      [j                   ]
+   [d                   ]      [k                   ]
+   [e                   ]      [l                   ]
+   [f                   ]      [n                   ]
+   [g                   ]      [o                   ]
+   [h                   ]      [p                   ]
+   [m                   ]
+ <                                                                   >
+
+ <G group03                                                          >
+  [s1             ]    [s2              ]
+  [t1             ]    [t2              ]
+  [u1             ]    [u2              ]
+ <                                                                   >
+
+
+
+}
+END -- gr259
+Grid gr261
+{
+
+  [conf            ]
+
+
+
+}
+END -- gr261
+END -- VBox1
+END -- group04
+Grid gr260
+{
+[more                                                        ]
+
+
+}
+END -- gr260
+END -- VBox2
+END -- aapr330
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit apf04=formonly.apf04 type VARCHAR, tabIndex=1;
+DateEdit apf02=formonly.apf02 type DATE, tabIndex=2;
+Edit apf01=formonly.apf01 type VARCHAR, tabIndex=3;
+Edit apf03=formonly.apf03 type VARCHAR, tabIndex=4;
+Edit apf06=formonly.apf06 type VARCHAR, tabIndex=5;
+Edit apf44=formonly.apf44 type VARCHAR, tabIndex=27;
+Group group02:group02, text="Please Choose Payment property";
+CheckBox b=formonly.b type CHAR, tabIndex=6, text="Check", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox i=formonly.i type CHAR, tabIndex=7, text="Prepay", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type CHAR, tabIndex=8, text="Transfer", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox j=formonly.j type CHAR, tabIndex=9, text="Suspense Debit", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type CHAR, tabIndex=10, text="Postage", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox k=formonly.k type CHAR, tabIndex=11, text="Charges", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=12, text="Exchange Profit", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox l=formonly.l type CHAR, tabIndex=13, text="T.T Charge", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type CHAR, tabIndex=14, text="Exchange Loss", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox n=formonly.n type CHAR, tabIndex=15, text="A/P TT", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type CHAR, tabIndex=16, text="Account To Offset", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox o=formonly.o type CHAR, tabIndex=17, text="Paid-for Draft", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=18, text="D.M", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox p=formonly.p type CHAR, tabIndex=19, text="Other", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox m=formonly.m type CHAR, tabIndex=28, text="Transfer ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=20, queryEditable, items=(("1", "Ac.Empl "),("2", "Pay.Date"),("3", "Pay.Slp NO."),("4", "Pay.Vend"),("5", "Currency"),("6", "Voucher No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=21, queryEditable, items=(("1", "Ac.Empl "),("2", "Pay.Date"),("3", "Pay.Slp NO."),("4", "Pay.Vend"),("5", "Currency"),("6", "Voucher No."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=22, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=23, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=24, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=25, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox conf=formonly.conf type CHAR, tabIndex=29, text="confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=26, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apf04,formonly.apf02,formonly.apf01,formonly.apf03,formonly.apf06,formonly.apf44,formonly.b,formonly.i,formonly.c,formonly.j,formonly.d,formonly.k,formonly.e,formonly.l,formonly.f,formonly.n,formonly.g,formonly.o,formonly.h,formonly.p,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.u1,formonly.u2,formonly.more,formonly.m,formonly.conf)
+END -- INSTRUCTIONS
+

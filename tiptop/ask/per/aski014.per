@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/aski014.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aski014")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Table s_slb
+{
+[slb01          |slb02             |slb03                     |slbact]
+[slb01          |slb02             |slb03                     |slbact]
+[slb01          |slb02             |slb03                     |slbact]
+[slb01          |slb02             |slb03                     |slbact]
+[slb01          |slb02             |slb03                     |slbact]
+[slb01          |slb02             |slb03                     |slbact]
+[slb01          |slb02             |slb03                     |slbact]
+[slb01          |slb02             |slb03                     |slbact]
+[slb01          |slb02             |slb03                     |slbact]
+[slb01          |slb02             |slb03                     |slbact]
+
+}
+END -- s_slb
+END -- page01
+END -- pc1
+Grid gr1
+{
+ ---------- Row [cn2   ] ----------
+
+}
+END -- gr1
+END -- VBox1
+END -- aski014
+
+TABLES
+slb_file
+ATTRIBUTES
+Edit slb01=slb_file.slb01, tabIndex=1, title="Item No", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit slb02=slb_file.slb02, tabIndex=2, title="Description";
+Edit slb03=slb_file.slb03, tabIndex=3, title="ENG Description";
+CheckBox slbact=slb_file.slbacti, tabIndex=4, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_slb(slb_file.slb01,slb_file.slb02,slb_file.slb03,slb_file.slbacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

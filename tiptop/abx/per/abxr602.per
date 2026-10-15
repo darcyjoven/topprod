@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr602.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxr500")
+VBox VBox1
+Grid gr1172
+{
+ <G group01                                >
+  Account Card No.  [bzc01            ]
+  Owner             [bzc03            ]
+  Undertaker        [bzc04            ]
+ <                                         >
+}
+END -- gr1172
+Group group02(text="INPUT")
+Grid gr1173
+{
+[y                              ]
+
+}
+END -- gr1173
+END -- group02
+Grid gr1174
+{
+[more                                    ]
+
+
+}
+END -- gr1174
+END -- VBox1
+END -- abxr602
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit bzc01=formonly.bzc01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit bzc03=formonly.bzc03 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit bzc04=formonly.bzc04 type CHAR, action=controlp, tabIndex=3, image="zoom";
+CheckBox y=formonly.y type CHAR, tabIndex=4, text="Print Account Amount Y Or N", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bzc01,formonly.bzc03,formonly.bzc04,formonly.y,formonly.more)
+END -- INSTRUCTIONS
+

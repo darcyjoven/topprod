@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrq001_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+[label1    ][jzdate           ]
+[xj                          ]
+[label2    ][hrao01           ]
+[llll      ][hrao02          ]
+
+
+
+
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"jzdate";
+DateEdit jzdate=formonly.jzdate, tabIndex=1, not null, required;
+CheckBox xj=formonly.xj, tabIndex=2, text=%"xj", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label2:Label2, text=%"hrao01";
+ButtonEdit hrao01=formonly.hrao01, action=controlp, tabIndex=3, not null, required, image="zoom";
+Label llll:llll, text=%"hrao02";
+Edit hrao02=formonly.hrao02, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.jzdate,formonly.xj,formonly.hrao01,formonly.hrao02)
+END -- INSTRUCTIONS
+

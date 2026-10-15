@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csft803.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+ [tc_hla01         ][tc_hla02             ]   [tc_hla07         ] [tc_hla03             ]         [tc_hla04      ] [imgmksg     ]
+
+ [tc_hla05         ][tc_hla06             ]   [tc_hla08         ] [tc_hla09             ]
+
+ [tc_hla00         ][tc_hla0a             ]   [tc_hla0b         ] [tc_hla0c             ]         [tc_hla0d          ][tc_hla0e             ]
+
+                                              [tc_hla10         ] [tc_hla11             ]         [tc_hla0f          ][tc_hla0g             ]
+
+                                              [label1           ] [tc_hla12             ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table Table1
+{
+[edit3   |tc_hlb02|tc_hlb03 |tc_hlb04|tc_hlb05|tc_hlb06|tc_hlb07|tc_hlbud02    ]
+[edit3   |tc_hlb02|tc_hlb03 |tc_hlb04|tc_hlb05|tc_hlb06|tc_hlb07|tc_hlbud02    ]
+[edit3   |tc_hlb02|tc_hlb03 |tc_hlb04|tc_hlb05|tc_hlb06|tc_hlb07|tc_hlbud02    ]
+[edit3   |tc_hlb02|tc_hlb03 |tc_hlb04|tc_hlb05|tc_hlb06|tc_hlb07|tc_hlbud02    ]
+[edit3   |tc_hlb02|tc_hlb03 |tc_hlb04|tc_hlb05|tc_hlb06|tc_hlb07|tc_hlbud02    ]
+
+}
+END -- Table1
+Grid Grid2
+{
+  ---------- Rows [idx   ]/[cnt   ]  ---  Details [cn2   ] ----------
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label tc_hla01:tc_hla01, text=%"Label1";
+ButtonEdit tc_hla02=formonly.tc_hla01, action=controlp, tabIndex=1, image="zoom";
+Label tc_hla07:tc_hla07, text=%"Label4";
+ButtonEdit tc_hla03=formonly.tc_hla07, action=controlp, tabIndex=8, image="zoom";
+CheckBox tc_hla04=formonly.tc_hla04, tabIndex=11, text=%"tc_hla04", valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg;
+Label tc_hla05:tc_hla02, text=%"Label2";
+DateEdit tc_hla06=formonly.tc_hla02, tabIndex=7;
+Label tc_hla08:tc_hla08, text=%"Label5";
+ButtonEdit tc_hla09=formonly.tc_hla08, action=controlp, tabIndex=9, image="zoom";
+Label tc_hla00:tc_hla03, text=%"Label3";
+Edit tc_hla0a=formonly.tc_hla03, tabIndex=6;
+Label tc_hla0b:tc_hla09, text=%"Label6";
+ButtonEdit tc_hla0c=formonly.tc_hla09, action=controlp, tabIndex=10, image="zoom";
+Label tc_hla0d:tc_hla05, text=%"Label8";
+DateEdit tc_hla0e=formonly.tc_hla05, tabIndex=12;
+Label tc_hla10:tc_hla10, text=%"Label7";
+ButtonEdit tc_hla11=formonly.tc_hla10, action=controlp, tabIndex=19, image="zoom";
+Label tc_hla0f:tc_hla06, text=%"Label9";
+Edit tc_hla0g=formonly.tc_hla06, tabIndex=13;
+Label label1:Label1, text=%"tc_hla11";
+Edit tc_hla12=formonly.tc_hla11, tabIndex=21;
+CheckBox edit3=formonly.Edit3, tabIndex=22, title=%"sel", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_hlb02=formonly.tc_hlb02, tabIndex=18, title=%"tc_hlb02";
+ButtonEdit tc_hlb03=formonly.tc_hlb03, action=controlp, tabIndex=2, title=%"tc_hlb03", noEntry, image="zoom";
+ButtonEdit tc_hlb04=formonly.tc_hlb04, action=controlp, tabIndex=14, title=%"tc_hlb04", image="zoom";
+Edit tc_hlb05=formonly.tc_hlb05, tabIndex=15, title=%"tc_hlb05";
+Edit tc_hlb06=formonly.tc_hlb06, tabIndex=16, title=%"tc_hlb06";
+Edit tc_hlb07=formonly.tc_hlb07, tabIndex=17, title=%"tc_hlb07";
+ButtonEdit tc_hlbud02=formonly.tc_hlbud02, action=controlp, tabIndex=20, title=%"tc_hlbud02", image="zoom";
+Edit idx=formonly.idx type SMALLINT, tabIndex=3, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=4, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_hla01,formonly.idx,formonly.cnt,formonly.cn2,formonly.tc_hla03,formonly.tc_hla02,formonly.tc_hla07,formonly.tc_hla08,formonly.tc_hla09,formonly.tc_hla04,formonly.tc_hla05,formonly.tc_hla06,formonly.tc_hla10,formonly.tc_hla11,formonly.imgmksg)
+SCREEN RECORD s_tc_hlb(formonly.Edit3,formonly.tc_hlb02,formonly.tc_hlb03,formonly.tc_hlb04,formonly.tc_hlb05,formonly.tc_hlb06,formonly.tc_hlb07,formonly.tc_hlbud02)
+END -- INSTRUCTIONS
+

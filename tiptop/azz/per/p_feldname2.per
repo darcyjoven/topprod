@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_feldname2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_feldname2")
+VBox VBox1
+Folder pc746
+Page page01(text="Main")
+Table s_gaq2
+{
+[gaq01      |gaq03                    |gaq07          |gck02              ]
+[gaq01      |gaq03                    |gaq07          |gck02              ]
+[gaq01      |gaq03                    |gaq07          |gck02              ]
+[gaq01      |gaq03                    |gaq07          |gck02              ]
+[gaq01      |gaq03                    |gaq07          |gck02              ]
+[gaq01      |gaq03                    |gaq07          |gck02              ]
+[gaq01      |gaq03                    |gaq07          |gck02              ]
+[gaq01      |gaq03                    |gaq07          |gck02              ]
+[gaq01      |gaq03                    |gaq07          |gck02              ]
+[gaq01      |gaq03                    |gaq07          |gck02              ]
+
+}
+END -- s_gaq2
+END -- page01
+END -- pc746
+Grid gr3194
+{
+  ROWS [cn3     ]
+
+}
+END -- gr3194
+END -- VBox1
+END -- p_feldname2
+
+TABLES
+gaq_file
+ATTRIBUTES
+Edit gaq01=gaq_file.gaq01, tabIndex=1, title="Field ID", noEntry;
+Edit gaq03=gaq_file.gaq03, tabIndex=2, title="Field Name Description", noEntry, scroll;
+ButtonEdit gaq07=gaq_file.gaq07, action=controlp, tabIndex=3, title="Field Type No", not null, required, image="zoom";
+Edit gck02=formonly.gck02 type CHAR, tabIndex=4, title="Attribute ShortName", noEntry;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gaq2(gaq_file.gaq01,gaq_file.gaq03,gaq_file.gaq07,formonly.gck02)
+SCREEN RECORD Undefined(formonly.cn3)
+END -- INSTRUCTIONS
+

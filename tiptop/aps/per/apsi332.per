@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi332.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi332")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr1633
+{
+
+  TOOLS_ID            [feb02                 ]
+
+}
+END -- gr1633
+END -- page01
+END -- folder01
+Table s_vms
+{
+[vnn02             |vnn021       |vnn03               |vnn031        ]
+[vnn02             |vnn021       |vnn03               |vnn031        ]
+[vnn02             |vnn021       |vnn03               |vnn031        ]
+[vnn02             |vnn021       |vnn03               |vnn031        ]
+[vnn02             |vnn021       |vnn03               |vnn031        ]
+[vnn02             |vnn021       |vnn03               |vnn031        ]
+[vnn02             |vnn021       |vnn03               |vnn031        ]
+[vnn02             |vnn021       |vnn03               |vnn031        ]
+[vnn02             |vnn021       |vnn03               |vnn031        ]
+[vnn02             |vnn021       |vnn03               |vnn031        ]
+
+}
+END -- s_vms
+Grid gr1635
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1635
+END -- vb2
+END -- apsi332
+
+TABLES
+vnn_file,
+feb_file
+ATTRIBUTES
+ButtonEdit feb02=feb_file.feb02, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Query Item  ";
+DateEdit vnn02=vnn_file.vnn02, tabIndex=2, title="Line#", not null, required;
+Edit vnn021=vnn_file.vnn021, tabIndex=6, title="STRTIME", not null, required, format="XX:XX", picture="XX:XX";
+DateEdit vnn03=vnn_file.vnn03, tabIndex=3, title="OrderNo";
+Edit vnn031=vnn_file.vnn031, tabIndex=7, title="ENDTIME", format="XX:XX", picture="XX:XX";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=4, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vnn(vnn_file.vnn02,vnn_file.vnn021,vnn_file.vnn03,vnn_file.vnn031)
+SCREEN RECORD Undefined(feb_file.feb02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglr310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gglr310")
+VBox VBox1
+Group g02(text=%"INPUT1")
+Grid Grid1
+{
+ Book NO.         [bookno         ]
+
+}
+END -- Grid1
+END -- g02
+Group gb20
+Grid gr11
+{
+ <G group01                                >
+  Account No.  [tah01                     ]
+ <                                         >
+ <G group02                                >
+  Year                [yy        ]
+  Initial Period      [m1        ]
+  Ending Period       [m2        ]
+
+
+  [h                                     ]
+  [e                                   ]
+ <                                         >
+
+}
+END -- gr11
+END -- gb20
+Grid gr12
+{
+[more                                 ]
+
+}
+END -- gr12
+END -- VBox1
+END -- gglr310
+
+ATTRIBUTES
+ButtonEdit bookno=formonly.bookno type CHAR, action=controlp, tabIndex=7, not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+Group group01:group01, text="QBE";
+ButtonEdit tah01=formonly.tah01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Group group02:group02, text="Input";
+Edit yy=formonly.yy type SMALLINT, tabIndex=2;
+Edit m1=formonly.m1 type SMALLINT, tabIndex=3;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=4;
+CheckBox h=formonly.h type CHAR, tabIndex=8, text="Monetary Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=5, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,formonly.tah01,formonly.yy,formonly.m1,formonly.m2,formonly.h,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

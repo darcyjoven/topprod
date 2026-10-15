@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi201")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+Grid gr4824
+{
+ Vender No.          [pmc01     ][pmc03     ]
+ Current Status      [pmc05      ]
+}
+END -- gr4824
+END -- page01
+END -- folder01
+Table s_pmd
+{
+[pmd06    |pmd02               |pmd03            |pmd05|pmd08       |pmd04               |pmd07                         ]
+[pmd06    |pmd02               |pmd03            |pmd05|pmd08       |pmd04               |pmd07                         ]
+[pmd06    |pmd02               |pmd03            |pmd05|pmd08       |pmd04               |pmd07                         ]
+[pmd06    |pmd02               |pmd03            |pmd05|pmd08       |pmd04               |pmd07                         ]
+[pmd06    |pmd02               |pmd03            |pmd05|pmd08       |pmd04               |pmd07                         ]
+[pmd06    |pmd02               |pmd03            |pmd05|pmd08       |pmd04               |pmd07                         ]
+[pmd06    |pmd02               |pmd03            |pmd05|pmd08       |pmd04               |pmd07                         ]
+[pmd06    |pmd02               |pmd03            |pmd05|pmd08       |pmd04               |pmd07                         ]
+[pmd06    |pmd02               |pmd03            |pmd05|pmd08       |pmd04               |pmd07                         ]
+[pmd06    |pmd02               |pmd03            |pmd05|pmd08       |pmd04               |pmd07                         ]
+}
+END -- s_pmd
+Grid gr4825
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+
+}
+END -- gr4825
+END -- vb1
+END -- apmi201
+
+TABLES
+pmd_file,
+pmc_file
+ATTRIBUTES
+Edit pmc01=formonly.pmc01 type CHAR, tabIndex=1;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, noEntry;
+ComboBox pmc05=pmc_file.pmc05, tabIndex=11, noEntry, not null, required, queryEditable, items=(("0", "Issue"),("1", "Confirm"),("2", "Hung"),("3", "Stop"));
+Edit pmd06=pmd_file.pmd06, tabIndex=3, title="Category", not null, required;
+Edit pmd02=pmd_file.pmd02, tabIndex=4, title="Contact Person", not null, required;
+Edit pmd03=pmd_file.pmd03, tabIndex=5, title="Telephone#";
+CheckBox pmd05=pmd_file.pmd05, tabIndex=6, default = "N", title="Main", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Only one Main Contact";
+CheckBox pmd08=pmd_file.pmd08, tabIndex=12, default = "N", title=%"Mail to?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmd04=pmd_file.pmd04, tabIndex=7, title="Memo";
+Edit pmd07=pmd_file.pmd07, tabIndex=8, title="E-mail address";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmd(pmd_file.pmd06,pmd_file.pmd02,pmd_file.pmd03,pmd_file.pmd05,pmd_file.pmd08,pmd_file.pmd04,pmd_file.pmd07)
+SCREEN RECORD Undefined(formonly.pmc01,formonly.pmc03,pmc_file.pmc05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

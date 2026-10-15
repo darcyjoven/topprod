@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli2031.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli2031")
+VBox VBox1
+Folder folder01
+Page page01(text="QBE")
+Grid gr989
+{
+  Source Account[asq01                   ]
+
+}
+END -- gr989
+END -- page01
+END -- folder01
+Group gb1884
+ScrollGrid gr2621
+{
+
+[dummy01                 ] [dummy02                 ]
+[ast03                   ] [aag02                   ]
+[ast03                   ] [aag02                   ]
+[ast03                   ] [aag02                   ]
+[ast03                   ] [aag02                   ]
+[ast03                   ] [aag02                   ]
+[ast03                   ] [aag02                   ]
+[ast03                   ] [aag02                   ]
+[ast03                   ] [aag02                   ]
+
+}
+END -- gr2621
+END -- gb1884
+Grid gr2404
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2404
+END -- VBox1
+END -- ggli2031
+
+TABLES
+ast_file
+ATTRIBUTES
+ButtonEdit asq01=formonly.asq01 type CHAR, action=controlp, tabIndex=1, noEntry, image="zoom", comment="<^P> Query Account No.";
+Label dummy01:dummy01, text="Source Acc.";
+Label dummy02:dummy02, text="Acc. Descript";
+ButtonEdit ast03=ast_file.ast03, action=controlp, tabIndex=2, image="zoom", comment="<^P> Query Account No.";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=5, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=3, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ast(ast_file.ast03,formonly.aag02)
+SCREEN RECORD Undefined(formonly.asq01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

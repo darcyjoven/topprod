@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi301s.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfi301s")
+VBox VBox1
+Folder pc108
+Page page01(text="Page01")
+Grid gr478
+{
+ <G group01                                           >
+  W/O No.             [sfb01           ]
+ <                                                    >
+
+}
+END -- gr478
+END -- page01
+END -- pc108
+Table s_she
+{
+[she02          ]
+[she02          ]
+[she02          ]
+[she02          ]
+[she02          ]
+[she02          ]
+[she02          ]
+[she02          ]
+[she02          ]
+[she02          ]
+
+}
+END -- s_she
+END -- VBox1
+END -- asfi301s
+
+TABLES
+she_file
+ATTRIBUTES
+Group group01:group01;
+Edit sfb01=formonly.sfb01 type CHAR, tabIndex=1, noEntry;
+Edit she02=she_file.she02, tabIndex=2, title="Serial No.", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_she(she_file.she02)
+SCREEN RECORD Undefined(formonly.sfb01)
+END -- INSTRUCTIONS
+

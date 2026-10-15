@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq403.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq403")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr3164
+{
+ Item No.            [ima01                         ]
+ Part Name Spec      [ima02                         ]
+ Specification       [ima021                        ]
+ Unit Cost           [unit      ]
+}
+END -- gr3164
+Grid gr3165
+{
+ Version             [ima05     ]
+ Source Code         [ima08     ]
+ Group Code          [ima06     ]
+ ABC Code            [ima07     ]
+}
+END -- gr3165
+Grid gr3166
+{
+ <G group01            >
+ [u                   ]
+ <                     >
+
+}
+END -- gr3166
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_img
+{
+[img02     |img03     |img04                   |img10          |img09|img34    |cost           |img19     |img36]
+[img02     |img03     |img04                   |img10          |img09|img34    |cost           |img19     |img36]
+[img02     |img03     |img04                   |img10          |img09|img34    |cost           |img19     |img36]
+[img02     |img03     |img04                   |img10          |img09|img34    |cost           |img19     |img36]
+[img02     |img03     |img04                   |img10          |img09|img34    |cost           |img19     |img36]
+[img02     |img03     |img04                   |img10          |img09|img34    |cost           |img19     |img36]
+[img02     |img03     |img04                   |img10          |img09|img34    |cost           |img19     |img36]
+[img02     |img03     |img04                   |img10          |img09|img34    |cost           |img19     |img36]
+[img02     |img03     |img04                   |img10          |img09|img34    |cost           |img19     |img36]
+[img02     |img03     |img04                   |img10          |img09|img34    |cost           |img19     |img36]
+
+}
+END -- s_img
+Grid gr3167
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3167
+END -- VBox1
+END -- aimq403
+
+TABLES
+ima_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Please by QBE, Enter Item# to Query";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=3;
+Edit unit=formonly.unit type CHAR, tabIndex=4, noEntry;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=5, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=6, noEntry;
+Edit ima06=formonly.ima06 type CHAR, tabIndex=7, noEntry;
+Edit ima07=formonly.ima07 type CHAR, tabIndex=8, noEntry;
+Group group01:group01, text="Cost Type";
+RadioGroup u=formonly.u type VARCHAR, tabIndex=9, items=(("1", "Standard"),("2", "Current"),("3", "Default"));
+Edit img02=formonly.img02 type CHAR, tabIndex=10, title="Warehouse", comment="Please by QBE, Enter W/H # to Query";
+Edit img03=formonly.img03 type CHAR, tabIndex=11, title="Location";
+Edit img04=formonly.img04 type CHAR, tabIndex=12, title="Lot#";
+Edit img10=formonly.img10 type CHAR, tabIndex=13, title="Inventory Qty";
+Edit img09=formonly.img09 type CHAR, tabIndex=14, title="Unit";
+Edit img34=formonly.img34 type CHAR, tabIndex=15, title="Conver Rt";
+Edit cost=formonly.cost type CHAR, tabIndex=16, title="Inv Cost";
+Edit img19=formonly.img19 type CHAR, tabIndex=17, title="Inv Class";
+Edit img36=formonly.img36 type CHAR, tabIndex=18, title="Look#";
+Edit cnt=formonly.cnt type CHAR, tabIndex=19;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(formonly.img02,formonly.img03,formonly.img04,formonly.img10,formonly.img09,formonly.img34,formonly.cost,formonly.img19,formonly.img36)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,formonly.unit,formonly.ima05,formonly.ima08,formonly.ima06,formonly.ima07,formonly.u,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

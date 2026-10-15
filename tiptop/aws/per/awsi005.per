@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/awsi005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"awsi005")
+VBox VBox1
+Folder pc2
+Page page01(text="Main")
+VBox VBox2
+Table s_waf
+{
+[waf01        |waf02    |waf03     ]
+[waf01        |waf02    |waf03     ]
+[waf01        |waf02    |waf03     ]
+[waf01        |waf02    |waf03     ]
+[waf01        |waf02    |waf03     ]
+[waf01        |waf02    |waf03     ]
+[waf01        |waf02    |waf03     ]
+[waf01        |waf02    |waf03     ]
+[waf01        |waf02    |waf03     ]
+[waf01        |waf02    |waf03     ]
+
+}
+END -- s_waf
+END -- VBox2
+END -- page01
+END -- pc2
+Grid gr3
+{
+ --------  Rows [cn2   ] ----------
+
+}
+END -- gr3
+END -- VBox1
+END -- awsi005
+
+TABLES
+waf_file
+ATTRIBUTES
+ButtonEdit waf01=waf_file.waf01, action=controlp, tabIndex=1, title="IP", not null, required, imageColumn=waf01, image="zoom";
+Edit waf02=waf_file.waf02, tabIndex=2, title="Des", imageColumn=waf02;
+Edit waf03=waf_file.waf03, tabIndex=3, title="Path", imageColumn=waf03;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_waf(waf_file.waf02,waf_file.waf03,waf_file.waf01)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

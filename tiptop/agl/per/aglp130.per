@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglp130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglp130")
+Grid gr2491
+{
+ <G group01                                       >
+  Update Year         [yy        ]
+  Period              [mm        ]
+  Initial Date        [b_date      ]
+  Ending Date         [e_date      ]
+  [yn                              ]
+ <                                                >
+}
+END -- gr2491
+END -- aglp130
+
+ATTRIBUTES
+Group group01:group01, text="Enter Condition to Update Data";
+Edit yy=formonly.yy type SMALLINT, tabIndex=1;
+Edit mm=formonly.mm type SMALLINT, tabIndex=2;
+DateEdit b_date=formonly.b_date type DATE, tabIndex=3;
+DateEdit e_date=formonly.e_date type DATE, tabIndex=4;
+CheckBox yn=formonly.yn type CHAR, tabIndex=5, text="yn", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.b_date,formonly.e_date,formonly.yn)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglg015.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglr015")
+Grid gr2472
+{
+ <G group01                                           >
+  Group Code                       [aej01         ]
+  Merger of individual             [aej02         ]
+  Merger of individual Book No.    [aej03         ]
+  Year                             [aej05         ]
+  Period                           [aej06         ]
+ [t                                    ]
+ [                                     ]
+ <                                                    >
+
+}
+END -- gr2472
+END -- aglr015
+
+TABLES
+aej_file
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+ButtonEdit aej01=aej_file.aej01, action=controlp, tabIndex=2, not null, required, image="zoom";
+ButtonEdit aej02=aej_file.aej02, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit aej03=aej_file.aej03, tabIndex=4, noEntry, not null, required;
+Edit aej05=aej_file.aej05, tabIndex=5, not null, required;
+Edit aej06=aej_file.aej06, tabIndex=6, not null, required;
+RadioGroup t=formonly.t type CHAR, tabIndex=1, items=(("1", "Accounted Currency A/C Balance Check List"),("2", "Accounted Currency Dimension A/C Balance Check List"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(aej_file.aej01,aej_file.aej02,aej_file.aej03,aej_file.aej05,aej_file.aej06,formonly.t)
+END -- INSTRUCTIONS
+

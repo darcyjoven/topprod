@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat5001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat5001")
+Folder folder01
+Page page01(text="Main")
+Table s_fdc
+{
+[fdc02        |fdc04        |fdc03          |fdc032    |fdc12                     |fdc05        |fdc06                   |fdc07           |fdc08          |fdc09     |fdc10             |fdc11    ]
+[fdc02        |fdc04        |fdc03          |fdc032    |fdc12                     |fdc05        |fdc06                   |fdc07           |fdc08          |fdc09     |fdc10             |fdc11    ]
+[fdc02        |fdc04        |fdc03          |fdc032    |fdc12                     |fdc05        |fdc06                   |fdc07           |fdc08          |fdc09     |fdc10             |fdc11    ]
+[fdc02        |fdc04        |fdc03          |fdc032    |fdc12                     |fdc05        |fdc06                   |fdc07           |fdc08          |fdc09     |fdc10             |fdc11    ]
+[fdc02        |fdc04        |fdc03          |fdc032    |fdc12                     |fdc05        |fdc06                   |fdc07           |fdc08          |fdc09     |fdc10             |fdc11    ]
+[fdc02        |fdc04        |fdc03          |fdc032    |fdc12                     |fdc05        |fdc06                   |fdc07           |fdc08          |fdc09     |fdc10             |fdc11    ]
+[fdc02        |fdc04        |fdc03          |fdc032    |fdc12                     |fdc05        |fdc06                   |fdc07           |fdc08          |fdc09     |fdc10             |fdc11    ]
+[fdc02        |fdc04        |fdc03          |fdc032    |fdc12                     |fdc05        |fdc06                   |fdc07           |fdc08          |fdc09     |fdc10             |fdc11    ]
+[fdc02        |fdc04        |fdc03          |fdc032    |fdc12                     |fdc05        |fdc06                   |fdc07           |fdc08          |fdc09     |fdc10             |fdc11    ]
+[fdc02        |fdc04        |fdc03          |fdc032    |fdc12                     |fdc05        |fdc06                   |fdc07           |fdc08          |fdc09     |fdc10             |fdc11    ]
+
+}
+END -- s_fdc
+END -- page01
+END -- folder01
+END -- afat5001
+
+TABLES
+fdc_file
+ATTRIBUTES
+Edit fdc02=fdc_file.fdc02, tabIndex=1, title="Serial No.", not null, required;
+Edit fdc04=fdc_file.fdc04, tabIndex=2, title="Object S/N", not null, required;
+ButtonEdit fdc03=fdc_file.fdc03, action=controlp, tabIndex=3, title="Property No.", not null, required, image="zoom", comment="<^P>Qry Data";
+Edit fdc032=fdc_file.fdc032, tabIndex=4, title="Add No.";
+Edit fdc12=fdc_file.fdc12, tabIndex=5, title="Chinese Name";
+ButtonEdit fdc05=fdc_file.fdc05, action=controlp, tabIndex=6, title="Depr. Dept", image="zoom", comment="<^P>Qry Data";
+Edit fdc06=fdc_file.fdc06, tabIndex=7, title="Undepreciated Balance";
+Edit fdc07=fdc_file.fdc07, tabIndex=8, title="Insurance Amt";
+Edit fdc08=fdc_file.fdc08, tabIndex=9, title="Premium Rate", not null, required;
+Edit fdc09=fdc_file.fdc09, tabIndex=10, title="Premium";
+Edit fdc10=fdc_file.fdc10, tabIndex=11, title="Prepaid Premium", noEntry;
+Edit fdc11=fdc_file.fdc11, tabIndex=12, title="Apportd.", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fdc(fdc_file.fdc02,fdc_file.fdc04,fdc_file.fdc03,fdc_file.fdc032,fdc_file.fdc12,fdc_file.fdc05,fdc_file.fdc06,fdc_file.fdc07,fdc_file.fdc08,fdc_file.fdc09,fdc_file.fdc10,fdc_file.fdc11)
+END -- INSTRUCTIONS
+

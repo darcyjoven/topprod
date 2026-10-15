@@ -1,0 +1,57 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi116.per created Wed Jan 23 05:30:32 2008
+-- File created from axdi116.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi116")
+-- TABLE
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1562
+      PAGE page01( TEXT="Page01")
+        TABLE   s_adj
+        {
+        [aa0                |aa1                 |aa2   ]
+        [aa0                |aa1                 |aa2   ]
+        [aa0                |aa1                 |aa2   ]
+        [aa0                |aa1                 |aa2   ]
+        [aa0                |aa1                 |aa2   ]
+        [aa0                |aa1                 |aa2   ]
+        [aa0                |aa1                 |aa2   ]
+        [aa0                |aa1                 |aa2   ]
+        [aa0                |aa1                 |aa2   ]
+        [aa0                |aa1                 |aa2   ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr7759
+    {
+     ----------Rows [aa3   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adj_file
+
+ATTRIBUTES
+  EDIT aa0=adj_file.adj01, COMMENT="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ", NOT NULL, REQUIRED, TABINDEX=1, TITLE="Dispatch Reason";
+  EDIT aa1=adj_file.adj02, TABINDEX=2, TITLE="Description";
+  CHECKBOX aa2=adj_file.adjacti, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=3, TITLE="Valid";
+  EDIT aa3=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=4;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adj (adj_file.adj01, adj_file.adj02, adj_file.adjacti)
+END

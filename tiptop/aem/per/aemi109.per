@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemi109.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemi109")
+VBox VBox1
+Folder pc304
+Page page01(text="Main")
+Table s_fis
+{
+[fis01  |fis02                         |fisac]
+[fis01  |fis02                         |fisac]
+[fis01  |fis02                         |fisac]
+[fis01  |fis02                         |fisac]
+[fis01  |fis02                         |fisac]
+[fis01  |fis02                         |fisac]
+[fis01  |fis02                         |fisac]
+[fis01  |fis02                         |fisac]
+[fis01  |fis02                         |fisac]
+[fis01  |fis02                         |fisac]
+
+}
+END -- s_fis
+END -- page01
+END -- pc304
+Grid gr1755
+{
+  ----------Rows [cn2   ]----------
+
+}
+END -- gr1755
+END -- VBox1
+END -- aemi109
+
+TABLES
+fis_file
+ATTRIBUTES
+Edit fis01=fis_file.fis01, tabIndex=1, title="Item", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ";
+Edit fis02=fis_file.fis02, tabIndex=2, title="Description";
+CheckBox fisac=fis_file.fisacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fis(fis_file.fis01,fis_file.fis02,fis_file.fisacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

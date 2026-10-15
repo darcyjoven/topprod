@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr430.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmr430")
+VBox vb3
+Group gb1
+Grid gr1
+{
+ <G group01                                                         >
+  Accepting Date      [gxc03               ]
+  Buying Currency     [gxc05               ]
+  Selling Currency    [gxc06               ]
+  Accepting Bank      [gxc07               ]
+ <                                                                  >
+}
+END -- gr1
+END -- gb1
+Group group05(text="INPUT")
+Grid gr2
+{
+ <G gb7                                                             >
+  Value Date          [gxc04               ]
+ <                                                                  >
+ <G group02                                                         >
+  [s1                  ][s2                  ][s3                  ]
+  [t1                  ][t2                  ][t3                  ]
+  [u1                  ][u2                  ][u3                  ]
+ <                                                                  >
+ <G group03                                 ><G group04              >
+  [a                                       ]  [b                   ]
+ <                                          ><                       >
+
+}
+END -- gr2
+END -- group05
+Grid gr3
+{
+[more                                                        ]
+
+}
+END -- gr3
+END -- vb3
+END -- anmr430
+
+TABLES
+gxc_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit gxc03=gxc_file.gxc03, tabIndex=1;
+Edit gxc05=gxc_file.gxc05, tabIndex=2;
+Edit gxc06=gxc_file.gxc06, tabIndex=17;
+Edit gxc07=gxc_file.gxc07, tabIndex=3;
+Group gb7:gb7;
+DateEdit gxc04=gxc_file.gxc04, tabIndex=4;
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=5, queryEditable, items=(("1", "Accepting Date"),("2", "Buying Currency"),("3", "Selling Currency"),("4", "Accepting Bank"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=6, queryEditable, items=(("1", "Accepting Date"),("2", "Buying Currency"),("3", "Selling Currency"),("4", "Accepting Bank"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=7, queryEditable, items=(("1", "Accepting Date"),("2", "Buying Currency"),("3", "Selling Currency"),("4", "Accepting Bank"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=8, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=11, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=12, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=13, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Transaction Property";
+RadioGroup a=formonly.a type CHAR, tabIndex=14, items=(("1", "Advance Purchase Forward Exchange"),("2", "Advance Sale Forward Exchange"));
+Group group04:group04, text="Delivery";
+RadioGroup b=formonly.b type CHAR, tabIndex=15, items=(("1", "Undelivered"),("2", "Delivered"),("3", "All "));
+CheckBox more=formonly.more type CHAR, tabIndex=16, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gxc_file.gxc03,gxc_file.gxc05,gxc_file.gxc06,gxc_file.gxc07,gxc_file.gxc04,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.a,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi330.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi330")
+VBox vb3
+Folder pc3
+Page Main(text=%"Main")
+Table s_lnj
+{
+[lnj01            |lnj02             |lnj03        ]
+[lnj01            |lnj02             |lnj03        ]
+[lnj01            |lnj02             |lnj03        ]
+[lnj01            |lnj02             |lnj03        ]
+[lnj01            |lnj02             |lnj03        ]
+[lnj01            |lnj02             |lnj03        ]
+[lnj01            |lnj02             |lnj03        ]
+[lnj01            |lnj02             |lnj03        ]
+
+}
+END -- s_lnj
+END -- Main
+END -- pc3
+Grid gr2
+{
+
+ ------ Rows [cn2    ] --------
+
+}
+END -- gr2
+END -- vb3
+END -- almi330
+
+TABLES
+lnj_file
+ATTRIBUTES
+ButtonEdit lnj01=lnj_file.lnj01, action=controlp, tabIndex=1, title="Exp.Doc.No.", not null, required, image="zoom.png";
+Edit lnj02=lnj_file.lnj02, tabIndex=2, title="Exp.Name";
+CheckBox lnj03=lnj_file.lnj03, tabIndex=3, default = "Y", title="valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lnj(lnj_file.lnj01,lnj_file.lnj02,lnj_file.lnj03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

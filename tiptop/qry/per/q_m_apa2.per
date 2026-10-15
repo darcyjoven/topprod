@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_m_apa2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Query A/P")
+VBox VBox1
+Grid gr3782
+{
+ Paying Vender                           [vendor    ]
+ Account Employee                        [emp_no    ]
+ Currency                                [cur       ]
+ Unpd Original Currency Amount tot       [tot                 ]
+
+}
+END -- gr3782
+Table s_apa
+{
+[check |apc01         |apa02           |apc02    |apc13_u             |apa25                         ]
+[check |apc01         |apa02           |apc02    |apc13_u             |apa25                         ]
+[check |apc01         |apa02           |apc02    |apc13_u             |apa25                         ]
+[check |apc01         |apa02           |apc02    |apc13_u             |apa25                         ]
+[check |apc01         |apa02           |apc02    |apc13_u             |apa25                         ]
+[check |apc01         |apa02           |apc02    |apc13_u             |apa25                         ]
+[check |apc01         |apa02           |apc02    |apc13_u             |apa25                         ]
+[check |apc01         |apa02           |apc02    |apc13_u             |apa25                         ]
+[check |apc01         |apa02           |apc02    |apc13_u             |apa25                         ]
+[check |apc01         |apa02           |apc02    |apc13_u             |apa25                         ]
+}
+END -- s_apa
+END -- VBox1
+END -- q_m_apa2
+
+TABLES
+apa_file,
+apc_file
+ATTRIBUTES
+Edit vendor=formonly.vendor type VARCHAR, tabIndex=1;
+Edit emp_no=formonly.emp_no type VARCHAR, tabIndex=2;
+Edit cur=formonly.cur type VARCHAR, tabIndex=3;
+Edit tot=formonly.tot type DECIMAL, tabIndex=4, noEntry;
+CheckBox check=formonly.check type CHAR, tabIndex=5, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit apc01=apc_file.apc01, tabIndex=6, title="Account No.", noEntry, not null, required;
+Edit apa02=apa_file.apa02, tabIndex=7, title="Account Date", noEntry;
+Edit apc02=apc_file.apc02, tabIndex=8, title="Line No.", noEntry, not null, required;
+Edit apc13_u=formonly.apc13_u type DECIMAL, tabIndex=9, title="UnContra\'d Amt", noEntry;
+Edit apa25=apa_file.apa25, tabIndex=10, title=%"Remark";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apa(formonly.check,apc_file.apc01,apa_file.apa02,apc_file.apc02,formonly.apc13_u,apa_file.apa25)
+SCREEN RECORD Undefined(formonly.vendor,formonly.emp_no,formonly.cur,formonly.tot)
+END -- INSTRUCTIONS
+

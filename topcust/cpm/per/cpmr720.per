@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cpm/4fd/cpmr720.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+
+  [rvu01           ]    [rvu02               ]
+
+  [rvu03           ]    [rvu04               ]
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Label rvu01:rvu01, text=%"Label1";
+ButtonEdit rvu02=formonly.rvu01, action=controlp, tabIndex=1, image="zoom";
+Label rvu03:rvu03, text=%"Label2";
+DateEdit rvu04=formonly.rvu03, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rvu01,formonly.rvu03)
+END -- INSTRUCTIONS
+

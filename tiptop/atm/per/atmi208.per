@@ -1,0 +1,156 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi208.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi208")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1331
+{
+ Region              [tod01     ][gea02               ]
+ Province            [tod02     ][too02               ]
+ City                [tod03     ][top02               ]
+ Country             [tod04     ][toq02               ]
+ City Category       [tod05     ][toa02               ]
+ Memo                [tod11                           ]
+
+}
+END -- gr1331
+Grid gr1332
+{
+ City Area           [tod06     ][dummy01]
+ Income perannual    [tod07     ][dummy02]
+ Amount of Population[tod08     ]
+ Amount of Door      [tod09     ]
+ Amount of non-farmer[tod10     ]
+
+
+}
+END -- gr1332
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1333
+{
+ Record Owner        [toduser   ] Last Modified by    [todmodu   ] Data Valid Code     [todacti   ]
+ Department          [todgrup   ] Create/Modify Date  [toddate   ]
+ Record Orig.        [todoriu   ]
+ Dept Orig.          [todorig   ]
+}
+END -- gr1333
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[todud01                       ] userdefined_field07[todud07        ] userdefined_field13[todud13        ]
+                    [                              ] userdefined_field08[todud08        ] userdefined_field14[todud14        ]
+ userdefined_field02[todud02        ]                userdefined_field09[todud09        ] userdefined_field15[todud15        ]
+ userdefined_field03[todud03        ]                userdefined_field10[todud10        ]
+ userdefined_field04[todud04        ]                userdefined_field11[todud11        ]
+ userdefined_field05[todud05        ]                userdefined_field12[todud12        ]
+ userdefined_field06[todud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_toe
+{
+[toe05     |toe06               |toe07                         |toeud01   |toeud02   |toeud03    |toeud04    |toeud05    |toeud06    |toeud07    |toeud08    |toeud09    |toeud10    |toeud11   |toeud12  |toeud13   |toeud14   |toeud15    ]
+[toe05     |toe06               |toe07                         |toeud01   |toeud02   |toeud03    |toeud04    |toeud05    |toeud06    |toeud07    |toeud08    |toeud09    |toeud10    |toeud11   |toeud12  |toeud13   |toeud14   |toeud15    ]
+[toe05     |toe06               |toe07                         |toeud01   |toeud02   |toeud03    |toeud04    |toeud05    |toeud06    |toeud07    |toeud08    |toeud09    |toeud10    |toeud11   |toeud12  |toeud13   |toeud14   |toeud15    ]
+[toe05     |toe06               |toe07                         |toeud01   |toeud02   |toeud03    |toeud04    |toeud05    |toeud06    |toeud07    |toeud08    |toeud09    |toeud10    |toeud11   |toeud12  |toeud13   |toeud14   |toeud15    ]
+[toe05     |toe06               |toe07                         |toeud01   |toeud02   |toeud03    |toeud04    |toeud05    |toeud06    |toeud07    |toeud08    |toeud09    |toeud10    |toeud11   |toeud12  |toeud13   |toeud14   |toeud15    ]
+[toe05     |toe06               |toe07                         |toeud01   |toeud02   |toeud03    |toeud04    |toeud05    |toeud06    |toeud07    |toeud08    |toeud09    |toeud10    |toeud11   |toeud12  |toeud13   |toeud14   |toeud15    ]
+[toe05     |toe06               |toe07                         |toeud01   |toeud02   |toeud03    |toeud04    |toeud05    |toeud06    |toeud07    |toeud08    |toeud09    |toeud10    |toeud11   |toeud12  |toeud13   |toeud14   |toeud15    ]
+[toe05     |toe06               |toe07                         |toeud01   |toeud02   |toeud03    |toeud04    |toeud05    |toeud06    |toeud07    |toeud08    |toeud09    |toeud10    |toeud11   |toeud12  |toeud13   |toeud14   |toeud15    ]
+[toe05     |toe06               |toe07                         |toeud01   |toeud02   |toeud03    |toeud04    |toeud05    |toeud06    |toeud07    |toeud08    |toeud09    |toeud10    |toeud11   |toeud12  |toeud13   |toeud14   |toeud15    ]
+[toe05     |toe06               |toe07                         |toeud01   |toeud02   |toeud03    |toeud04    |toeud05    |toeud06    |toeud07    |toeud08    |toeud09    |toeud10    |toeud11   |toeud12  |toeud13   |toeud14   |toeud15    ]
+
+}
+END -- s_toe
+Grid gr1334
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1334
+END -- VBox1
+END -- atmi208
+
+TABLES
+toe_file,
+tod_file
+ATTRIBUTES
+ButtonEdit tod01=tod_file.tod01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit gea02=formonly.gea02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit tod02=tod_file.tod02, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit too02=formonly.too02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit tod03=tod_file.tod03, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit top02=formonly.top02 type CHAR, tabIndex=6, noEntry;
+ButtonEdit tod04=tod_file.tod04, action=controlp, tabIndex=7, not null, required, image="zoom";
+Edit toq02=formonly.toq02 type CHAR, tabIndex=8, noEntry;
+ButtonEdit tod05=tod_file.tod05, action=controlp, tabIndex=9, image="zoom";
+Edit toa02=formonly.toa02 type CHAR, tabIndex=10, noEntry;
+Edit tod11=tod_file.tod11, tabIndex=11;
+Edit tod06=tod_file.tod06, tabIndex=12;
+Label dummy01:dummy01, text="sqare";
+Edit tod07=tod_file.tod07, tabIndex=13;
+Label dummy02:dummy02, text="yuan";
+Edit tod08=tod_file.tod08, tabIndex=14, not null, required;
+Edit tod09=tod_file.tod09, tabIndex=15;
+Edit tod10=tod_file.tod10, tabIndex=16;
+Edit toduser=tod_file.toduser, tabIndex=17, noEntry;
+Edit todmodu=tod_file.todmodu, tabIndex=18, noEntry;
+Edit todacti=tod_file.todacti, tabIndex=19, noEntry;
+Edit todgrup=tod_file.todgrup, tabIndex=20, noEntry;
+DateEdit toddate=tod_file.toddate, tabIndex=21, noEntry;
+Edit todoriu=tod_file.todoriu, tabIndex=501, noEntry;
+Edit todorig=tod_file.todorig, tabIndex=502, noEntry;
+TextEdit todud01=tod_file.todud01, tabIndex=326, stretch=NONE;
+Edit todud07=tod_file.todud07, tabIndex=327;
+DateEdit todud13=tod_file.todud13, tabIndex=328;
+Edit todud08=tod_file.todud08, tabIndex=329;
+DateEdit todud14=tod_file.todud14, tabIndex=330;
+Edit todud02=tod_file.todud02, tabIndex=331;
+Edit todud09=tod_file.todud09, tabIndex=332;
+DateEdit todud15=tod_file.todud15, tabIndex=333;
+Edit todud03=tod_file.todud03, tabIndex=334;
+Edit todud10=tod_file.todud10, tabIndex=335;
+Edit todud04=tod_file.todud04, tabIndex=336;
+Edit todud11=tod_file.todud11, tabIndex=337;
+Edit todud05=tod_file.todud05, tabIndex=338;
+Edit todud12=tod_file.todud12, tabIndex=339;
+Edit todud06=tod_file.todud06, tabIndex=340;
+ButtonEdit toe05=toe_file.toe05, action=controlp, tabIndex=22, title="Brand", not null, required, image="zoom";
+Edit toe06=toe_file.toe06, tabIndex=23, title="Standard turnover";
+Edit toe07=toe_file.toe07, tabIndex=24, title="Memo";
+TextEdit toeud01=toe_file.toeud01, tabIndex=325, title="toeud01", stretch=NONE;
+Edit toeud02=toe_file.toeud02, tabIndex=341, title="toeud02";
+Edit toeud03=toe_file.toeud03, tabIndex=342, title="toeud03";
+Edit toeud04=toe_file.toeud04, tabIndex=343, title="toeud04";
+Edit toeud05=toe_file.toeud05, tabIndex=344, title="toeud05";
+Edit toeud06=toe_file.toeud06, tabIndex=345, title="toeud06";
+Edit toeud07=toe_file.toeud07, tabIndex=346, title="toeud07";
+Edit toeud08=toe_file.toeud08, tabIndex=347, title="toeud08";
+Edit toeud09=toe_file.toeud09, tabIndex=348, title="toeud09";
+Edit toeud10=toe_file.toeud10, tabIndex=349, title="toeud10";
+Edit toeud11=toe_file.toeud11, tabIndex=350, title="toeud11";
+Edit toeud12=toe_file.toeud12, tabIndex=351, title="toeud12";
+Edit toeud13=toe_file.toeud13, tabIndex=352, title="toeud13";
+Edit toeud14=toe_file.toeud14, tabIndex=353, title="toeud14";
+Edit toeud15=toe_file.toeud15, tabIndex=354, title="toeud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=26;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_toe(toe_file.toe05,toe_file.toe06,toe_file.toe07,toe_file.toeud01,toe_file.toeud02,toe_file.toeud03,toe_file.toeud04,toe_file.toeud05,toe_file.toeud06,toe_file.toeud07,toe_file.toeud08,toe_file.toeud09,toe_file.toeud10,toe_file.toeud11,toe_file.toeud12,toe_file.toeud13,toe_file.toeud14,toe_file.toeud15)
+SCREEN RECORD Undefined(tod_file.tod01,formonly.gea02,tod_file.tod02,formonly.too02,tod_file.tod03,formonly.top02,tod_file.tod04,formonly.toq02,tod_file.tod05,formonly.toa02,tod_file.tod11,tod_file.tod06,tod_file.tod07,tod_file.tod08,tod_file.tod09,tod_file.tod10,tod_file.toduser,tod_file.todmodu,tod_file.todacti,tod_file.todgrup,tod_file.toddate,tod_file.todoriu,tod_file.todorig,tod_file.todud01,tod_file.todud07,tod_file.todud13,tod_file.todud08,tod_file.todud14,tod_file.todud02,tod_file.todud09,tod_file.todud15,tod_file.todud03,tod_file.todud10,tod_file.todud04,tod_file.todud11,tod_file.todud05,tod_file.todud12,tod_file.todud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

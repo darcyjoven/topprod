@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmu010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmu010")
+Grid gr5422
+{
+
+
+
+                         [dummy01                      ]
+                         [dummy02                      ]
+  ----------------------------------------------------------------------------
+           <G group01                                                  >
+            [a                                                 ]
+
+
+
+
+           <                                                           >
+
+}
+END -- gr5422
+END -- apmu010
+
+ATTRIBUTES
+Label dummy01:dummy01, text="Purchase System Approval";
+Label dummy02:dummy02, text="        Please Select";
+Group group01:group01;
+RadioGroup a=formonly.a type SMALLINT, tabIndex=1, items=(("1", "P/R Approval"),("2", "Purchase Approval"),("0", "End"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a)
+END -- INSTRUCTIONS
+

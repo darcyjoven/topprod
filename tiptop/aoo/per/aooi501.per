@@ -1,0 +1,172 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi501")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr4656
+{
+ <G group1                                                                                                    >
+  Expressions Number  [gep01                                   ]              Confirm             [gep03     ]
+  Description         [gep02                                   ]              Review Date         [gep04     ]
+  Group               [gep07     ][get02                       ]
+ <                                                                                                            >
+
+}
+END -- gr4656
+Grid gr4657
+{
+ <G group2                                                                                                                         >
+  Expressions         [gep05                                                                                                      ]
+                      [                                                                                                           ]
+                      [                                                                                                           ]
+                      [                                                                                                           ]
+                      [                                                                                                           ]
+                      [                                                                                                           ]
+                      [act01               ][act02                ][act03                 ]
+                      [acttest             ][res                                                                                  ]
+ <                                                                                                                                 >
+
+}
+END -- gr4657
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr4658
+{
+ Record Owner        [gepuser   ] Last Modified by    [gepmodu   ]
+ Department          [gepgrup   ] Create/Modify Date  [gepdate     ]
+ Record Orig.        [geporiu   ]
+ Dept Orig.          [geporig   ]
+}
+END -- gr4658
+END -- info
+Page example(text="Example")
+Grid gr4659
+{
+ [forex                                                                                                                  ]
+ [                                                                                                                       ]
+ [                                                                                                                       ]
+ [                                                                                                                       ]
+ [                                                                                                                       ]
+ [                                                                                                                       ]
+ [                                                                                                                       ]
+ [                                                                                                                       ]
+ [                                                                                                                       ]
+ [                                                                                                                       ]
+ [                                                                                                                       ]
+ [                                                                                                                       ]
+ [                                                                                                                       ]
+ [                                                                                                                       ]
+ [                                                                                                                       ]
+}
+END -- gr4659
+END -- example
+END -- folder01
+Folder folder
+Page page02(text="Variable")
+Table s_geq
+{
+[geq02     |geq03     |ges02               ]
+[geq02     |geq03     |ges02               ]
+[geq02     |geq03     |ges02               ]
+[geq02     |geq03     |ges02               ]
+[geq02     |geq03     |ges02               ]
+[geq02     |geq03     |ges02               ]
+[geq02     |geq03     |ges02               ]
+[geq02     |geq03     |ges02               ]
+[geq02     |geq03     |ges02               ]
+[geq02     |geq03     |ges02               ]
+
+}
+END -- s_geq
+END -- page02
+Page page03(text="Expression")
+Table s_ger
+{
+[ger02     |ger03     |gep2a               ]
+[ger02     |ger03     |gep2a               ]
+[ger02     |ger03     |gep2a               ]
+[ger02     |ger03     |gep2a               ]
+[ger02     |ger03     |gep2a               ]
+[ger02     |ger03     |gep2a               ]
+[ger02     |ger03     |gep2a               ]
+[ger02     |ger03     |gep2a               ]
+[ger02     |ger03     |gep2a               ]
+[ger02     |ger03     |gep2a               ]
+
+}
+END -- s_ger
+END -- page03
+Page page04(text="Description")
+Grid gr4660
+{
+ [gep06                                                                                                                 ]
+ [                                                                                                                      ]
+ [                                                                                                                      ]
+ [                                                                                                                      ]
+ [                                                                                                                      ]
+ [                                                                                                                      ]
+ [                                                                                                                      ]
+ [                                                                                                                      ]
+}
+END -- gr4660
+END -- page04
+END -- folder
+Grid gr4661
+{
+  ---------- Rows [cnt   ] / [cn2   ] / [cn3   ] ----------
+
+}
+END -- gr4661
+END -- VBox1
+END -- aooi501
+
+TABLES
+gep_file
+ATTRIBUTES
+Group group1:group1;
+Edit gep01=gep_file.gep01, tabIndex=1, not null, required, comment="KEY Field, No Blank/Repeated!";
+ComboBox gep03=gep_file.gep03, tabIndex=2, noEntry, not null, required, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Void"));
+Edit gep02=gep_file.gep02, tabIndex=3;
+DateEdit gep04=gep_file.gep04, tabIndex=4, noEntry;
+ButtonEdit gep07=gep_file.gep07, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Documents";
+Edit get02=formonly.get02 type CHAR, tabIndex=6, noEntry;
+Group group2:group2;
+TextEdit gep05=gep_file.gep05, tabIndex=7, not null, required, stretch=NONE;
+Button act01:act01, text="Select Const";
+Button act02:act02, text="Select Expression";
+Button act03:act03, text="Select Function";
+Button acttest:acttest, text="Formula Test";
+Edit res=formonly.res type CHAR, tabIndex=8;
+Edit gepuser=gep_file.gepuser, tabIndex=9, noEntry;
+Edit gepmodu=gep_file.gepmodu, tabIndex=10, noEntry;
+Edit gepgrup=gep_file.gepgrup, tabIndex=11, noEntry;
+DateEdit gepdate=gep_file.gepdate, tabIndex=12, noEntry;
+Edit geporiu=gep_file.geporiu, tabIndex=501, noEntry;
+Edit geporig=gep_file.geporig, tabIndex=502, noEntry;
+TextEdit forex=formonly.forex type CHAR, tabIndex=13, noEntry, stretch=NONE;
+Edit geq02=formonly.geq02 type CHAR, tabIndex=14, title="Ln No.";
+ButtonEdit geq03=formonly.geq03 type CHAR, action=controlp, tabIndex=15, title="Var.No", not null, required, image="zoom", comment="<^P>Qry Documents";
+Edit ges02=formonly.ges02 type CHAR, tabIndex=16, title="Name", noEntry;
+Edit ger02=formonly.ger02 type CHAR, tabIndex=17, title="Ln No.";
+ButtonEdit ger03=formonly.ger03 type CHAR, action=controlp, tabIndex=18, title="Exp.No", not null, required, image="zoom", comment="<^P>Qry Documents";
+Edit gep2a=formonly.gep2a type CHAR, tabIndex=19, title="Name", noEntry;
+TextEdit gep06=gep_file.gep06, tabIndex=20, noEntry, stretch=NONE;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_geq(formonly.geq02,formonly.geq03,formonly.ges02)
+SCREEN RECORD s_ger(formonly.ger02,formonly.ger03,formonly.gep2a)
+SCREEN RECORD Undefined(gep_file.gep01,gep_file.gep03,gep_file.gep02,gep_file.gep04,gep_file.gep07,formonly.get02,gep_file.gep05,formonly.res,gep_file.gepuser,gep_file.gepmodu,gep_file.gepgrup,gep_file.gepdate,gep_file.geporiu,gep_file.geporig,formonly.forex,gep_file.gep06,formonly.cnt,formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

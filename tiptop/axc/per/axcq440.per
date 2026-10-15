@@ -1,0 +1,130 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq440.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcq440")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+VBox VBox1
+HBox hb3
+Grid gr1550
+{
+ W/O No.                  [ccg01           ]
+ Master Item#             [ccg04                         ]
+ Operating Date           [sfb25     ]
+ Order#                   [sfb22           ]  Unit         [sfb221    ]
+ Cost Calculation Method  [ccg06           ]  Category No. [ccg07                              ]
+
+}
+END -- gr1550
+Grid gr1551
+{
+ Esitmated Production Qty [sfb08     ]
+ Complete/Store-in        [sfb09     ]
+ Complete Date            [sfb15     ]
+ Closing Date             [sfb38     ]
+
+
+}
+END -- gr1551
+END -- hb3
+Grid gr1552
+{
+ [dummy01]
+  ---------------------------------------------------------------------------------------------------------------------------------------------------
+ [dummy02]
+  [dummy03           ]       [dummy04          ]    [dummy05           ]    [dummy06           ]     [dummy07           ]      [dummy09     ]      [dummy10     ]    [dummy11     ]   [dummy08           ]
+[ccg22a              ]    [ccg22b              ]  [ccg22c              ]  [ccg22d              ]   [ccg22e              ]  [ccg22f          ]   [ccg22g         ] [ccg22h         ] [unit_amt            ]
+}
+END -- gr1552
+END -- VBox1
+END -- page01
+END -- folder01
+Table s_cch
+{
+[cch04               |cch22a              |cch22b              |cch22c              |cch22d              |cch22e              |cch22f          |cch22g            |cch22h             ]
+[cch04               |cch22a              |cch22b              |cch22c              |cch22d              |cch22e              |cch22f          |cch22g            |cch22h             ]
+[cch04               |cch22a              |cch22b              |cch22c              |cch22d              |cch22e              |cch22f          |cch22g            |cch22h             ]
+[cch04               |cch22a              |cch22b              |cch22c              |cch22d              |cch22e              |cch22f          |cch22g            |cch22h             ]
+[cch04               |cch22a              |cch22b              |cch22c              |cch22d              |cch22e              |cch22f          |cch22g            |cch22h             ]
+[cch04               |cch22a              |cch22b              |cch22c              |cch22d              |cch22e              |cch22f          |cch22g            |cch22h             ]
+[cch04               |cch22a              |cch22b              |cch22c              |cch22d              |cch22e              |cch22f          |cch22g            |cch22h             ]
+[cch04               |cch22a              |cch22b              |cch22c              |cch22d              |cch22e              |cch22f          |cch22g            |cch22h             ]
+}
+END -- s_cch
+Grid gr1553
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------   Total [cch22at             ][cch22bt             ][cch22ct             ][cch22dt            ][cch22et            |cch22ft           ][cch22gt             ][cch22ht             ]
+
+
+}
+END -- gr1553
+END -- vb4
+END -- axcq440
+
+TABLES
+sfb_file,
+cch_file,
+ccg_file
+ATTRIBUTES
+Edit ccg01=ccg_file.ccg01, tabIndex=1, not null, required;
+ButtonEdit ccg04=ccg_file.ccg04, action=controlp, tabIndex=2, not null, required, image="zoom";
+DateEdit sfb25=sfb_file.sfb25, tabIndex=3;
+Edit sfb22=sfb_file.sfb22, tabIndex=4;
+Edit sfb221=sfb_file.sfb221, tabIndex=5;
+ComboBox ccg06=ccg_file.ccg06, tabIndex=29, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually���衣�萃��渡�中��〉e Profit Center"));
+ButtonEdit ccg07=ccg_file.ccg07, action=controlp, tabIndex=30, not null, required, image="zoom.png";
+Edit sfb08=sfb_file.sfb08, tabIndex=6, not null, required;
+Edit sfb09=sfb_file.sfb09, tabIndex=7, not null, required;
+DateEdit sfb15=sfb_file.sfb15, tabIndex=8;
+DateEdit sfb38=sfb_file.sfb38, tabIndex=9;
+Label dummy01:dummy01;
+Label dummy02:dummy02;
+Label dummy03:dummy03, text="Material";
+Label dummy04:dummy04, text="Labor";
+Label dummy05:dummy05, text="Overhead 1";
+Label dummy06:dummy06, text="Processing";
+Label dummy07:dummy07, text="Overhead 2";
+Label dummy09:dummy09, text="Overhead 3";
+Label dummy10:dummy10, text="Overhead 4";
+Label dummy11:dummy11, text="Overhead 5";
+Label dummy08:dummy08, text="Unit Cost";
+Edit ccg22a=formonly.ccg22a type CHAR, tabIndex=10;
+Edit ccg22b=formonly.ccg22b type CHAR, tabIndex=11;
+Edit ccg22c=formonly.ccg22c type CHAR, tabIndex=12;
+Edit ccg22d=formonly.ccg22d type CHAR, tabIndex=13;
+Edit ccg22e=formonly.ccg22e type CHAR, tabIndex=14;
+Edit ccg22f=formonly.ccg22f type CHAR, tabIndex=31;
+Edit ccg22g=formonly.ccg22g type CHAR, tabIndex=32;
+Edit ccg22h=formonly.ccg22h type CHAR, tabIndex=33;
+Edit unit_amt=formonly.unit_amt type CHAR, tabIndex=15;
+ButtonEdit cch04=cch_file.cch04, action=controlp, tabIndex=16, title="Component No.", not null, required, image="zoom";
+Edit cch22a=cch_file.cch22a, tabIndex=17, title="Material", not null, required;
+Edit cch22b=cch_file.cch22b, tabIndex=18, title="Labor", not null, required;
+Edit cch22c=cch_file.cch22c, tabIndex=19, title="Overhead 1";
+Edit cch22d=cch_file.cch22d, tabIndex=20, title="Processing", not null, required;
+Edit cch22e=cch_file.cch22e, tabIndex=21, title="Overhead 2", not null, required;
+Edit cch22f=cch_file.cch22f, tabIndex=34, title="Overhead 3", required;
+Edit cch22g=cch_file.cch22g, tabIndex=35, title="Overhead 4", required;
+Edit cch22h=cch_file.cch22h, tabIndex=36, title="Overhead 5", required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23, noEntry;
+Edit cch22at=formonly.cch22at type CHAR, tabIndex=24;
+Edit cch22bt=formonly.cch22bt type CHAR, tabIndex=25;
+Edit cch22ct=formonly.cch22ct type CHAR, tabIndex=26;
+Edit cch22dt=formonly.cch22dt type CHAR, tabIndex=27;
+Edit cch22et=formonly.cch22et type CHAR, tabIndex=28;
+Edit cch22ft=formonly.cch22ft type CHAR, tabIndex=37;
+Edit cch22gt=formonly.cch22gt type CHAR, tabIndex=38;
+Edit cch22ht=formonly.cch22ht type CHAR, tabIndex=39;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cch(cch_file.cch04,cch_file.cch22a,cch_file.cch22b,cch_file.cch22c,cch_file.cch22d,cch_file.cch22e,cch_file.cch22f,cch_file.cch22g,cch_file.cch22h)
+SCREEN RECORD Undefined(ccg_file.ccg01,ccg_file.ccg04,sfb_file.sfb25,sfb_file.sfb22,sfb_file.sfb221,ccg_file.ccg06,ccg_file.ccg07,sfb_file.sfb08,sfb_file.sfb09,sfb_file.sfb15,sfb_file.sfb38,formonly.ccg22a,formonly.ccg22b,formonly.ccg22c,formonly.ccg22d,formonly.ccg22e,formonly.ccg22f,formonly.ccg22g,formonly.ccg22h,formonly.unit_amt,formonly.cnt,formonly.cn2,formonly.cch22at,formonly.cch22bt,formonly.cch22ct,formonly.cch22dt,formonly.cch22et,formonly.cch22ft,formonly.cch22gt,formonly.cch22ht)
+END -- INSTRUCTIONS
+

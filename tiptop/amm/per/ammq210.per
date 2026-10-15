@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amm/42f/ammq210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ammq210")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3760
+{
+ Vender/Department No. [mme03     ][pmc03     ]
+
+}
+END -- gr3760
+END -- page01
+END -- folder01
+Table s_mmf
+{
+[mme01           |mmf02 |mme02        |mme07      |mme06    |mmf07  |mmfact|mmf03            |mmf15            |mmc02                           |mmf10  |mmf01|mmf06                  |mmb14       ]
+[mme01           |mmf02 |mme02        |mme07      |mme06    |mmf07  |mmfact|mmf03            |mmf15            |mmc02                           |mmf10  |mmf01|mmf06                  |mmb14       ]
+[mme01           |mmf02 |mme02        |mme07      |mme06    |mmf07  |mmfact|mmf03            |mmf15            |mmc02                           |mmf10  |mmf01|mmf06                  |mmb14       ]
+[mme01           |mmf02 |mme02        |mme07      |mme06    |mmf07  |mmfact|mmf03            |mmf15            |mmc02                           |mmf10  |mmf01|mmf06                  |mmb14       ]
+[mme01           |mmf02 |mme02        |mme07      |mme06    |mmf07  |mmfact|mmf03            |mmf15            |mmc02                           |mmf10  |mmf01|mmf06                  |mmb14       ]
+[mme01           |mmf02 |mme02        |mme07      |mme06    |mmf07  |mmfact|mmf03            |mmf15            |mmc02                           |mmf10  |mmf01|mmf06                  |mmb14       ]
+[mme01           |mmf02 |mme02        |mme07      |mme06    |mmf07  |mmfact|mmf03            |mmf15            |mmc02                           |mmf10  |mmf01|mmf06                  |mmb14       ]
+[mme01           |mmf02 |mme02        |mme07      |mme06    |mmf07  |mmfact|mmf03            |mmf15            |mmc02                           |mmf10  |mmf01|mmf06                  |mmb14       ]
+[mme01           |mmf02 |mme02        |mme07      |mme06    |mmf07  |mmfact|mmf03            |mmf15            |mmc02                           |mmf10  |mmf01|mmf06                  |mmb14       ]
+[mme01           |mmf02 |mme02        |mme07      |mme06    |mmf07  |mmfact|mmf03            |mmf15            |mmc02                           |mmf10  |mmf01|mmf06                  |mmb14       ]
+
+}
+END -- s_mmf
+Grid gr3761
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3761
+END -- VBox1
+END -- ammq210
+
+TABLES
+mmb_file,
+mmf_file,
+mme_file
+ATTRIBUTES
+Edit mme03=mme_file.mme03, tabIndex=1;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, noEntry;
+Edit mme01=mme_file.mme01, tabIndex=3, title="Advice #";
+Edit mmf02=mmf_file.mmf02, tabIndex=4, title="Line#";
+Edit mme02=mme_file.mme02, tabIndex=5, title="DocumentDate";
+Edit mme07=mme_file.mme07, tabIndex=6, title="Req.Dept";
+Edit mme06=mme_file.mme06, tabIndex=7, title="Employee";
+Edit mmf07=mmf_file.mmf07, tabIndex=8, title="Source";
+Edit mmfact=mmf_file.mmfacti, tabIndex=9, title="Valid";
+Edit mmf03=mmf_file.mmf03, tabIndex=10, title="Demand material";
+Edit mmf15=mmf_file.mmf15, tabIndex=11, title="Processing Code";
+Edit mmc02=formonly.mmc02 type CHAR, tabIndex=12, title="ProcessingDescription", noEntry;
+Edit mmf10=mmf_file.mmf10, tabIndex=13, title="Qty", not null, required;
+Edit mmf01=mmf_file.mmf031, tabIndex=14, title="Unit";
+Edit mmf06=mmf_file.mmf06, tabIndex=15, title="ProcessingDescription";
+Edit mmb14=mmb_file.mmb14, tabIndex=16, title="CarryForward";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mmf(mme_file.mme01,mmf_file.mmf02,mme_file.mme02,mme_file.mme07,mme_file.mme06,mmf_file.mmf07,mmf_file.mmfacti,mmf_file.mmf03,mmf_file.mmf15,formonly.mmc02,mmf_file.mmf10,mmf_file.mmf031,mmf_file.mmf06,mmb_file.mmb14)
+SCREEN RECORD Undefined(mme_file.mme03,formonly.pmc03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

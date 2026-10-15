@@ -1,0 +1,474 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/4fd/asfi301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfi301")
+HBox HBox1
+Folder Folder1
+Page page_main(action=page_main, text=%"Page1")
+VBox vb2
+Folder folder01
+Page page01(text=%"Main")
+HBox hb5
+Grid gr452
+{
+ W/O No.           [sfb01               ]
+                   [smydesc             ]
+ Change Serial No. [sfb101       ]
+ Applicant         [sfb44         ][gen02   ]
+ Project No.       [sfb27         ][pja02   ]
+
+}
+END -- gr452
+Grid gr453
+{
+ Issue Date        [sfb81        ]
+ Style             [sfb02      ]
+ Complete Type     [sfb39      ]
+ sfbud04           [sfbud04    ]
+[suit                   ]
+
+}
+END -- gr453
+Grid gr454
+{
+ Confirm           [sfb87           ]
+ Status            [sfb04           ][imgmks]
+ Closing Status    [sf][sfb38       ][      ]
+ Approval status   [sfb43           |sfbmksg ]
+
+
+}
+END -- gr454
+END -- hb5
+END -- page01
+Page info(text=%"Info")
+Grid gr455
+{
+ Record Owner        [sfbuser   ]   Last Modified by    [sfbmodu   ]   Data Valid Code     [sfbacti   ]
+ Department          [sfbgrup   ]   Create/Modify Date  [sfbdate   ]
+ Record Orig.        [sfboriu   ]
+ Dept Orig.          [sfborig   ]
+
+}
+END -- gr455
+END -- info
+END -- folder01
+Folder folder02
+Page page02(text=%"WO(1)")
+HBox hb9
+Grid gr456
+{
+ Cost Center       [sfb98         ]
+                   [gem02         ]
+ Department/Plant  [sfb82         ]
+                   [pmc03         ]
+ Production Station[sfb102        ]
+ S/O               [sfb22               |sfb221]
+ Manufact          [sfb91               |sfb92 ]
+ Root WO No.       [sfb86               |sfbi|wafe]
+ Upper Lv. WO No.  [sfb89               ]
+ Store-in No.      [sfbiicd16         ] [sfbiicd17]
+
+
+}
+END -- gr456
+Grid gr457
+{
+ Item No.       [sfb05                   ][ima5]
+ Part Name      [ima02                         ]
+ Specification  [ima021                        ]
+ Operation No.  [sfbiicd09          ]
+ Body No.       [sfbiicd14          ]
+ Alternate      [sfb95               ]
+ Production Qty [sfb08      ][sfbiicd06  ]作业编号   [ecb06           ]
+ sfbud07        [sfbud07        ]
+ BOM Version    [sfb07     ]Exp.Dt[sfb071      ]
+                [sfb93     ]Rou.Cd[sfb06       ]
+ PBI No.        [sfb85               ]
+ Plan Lot No.   [sfb919                  ]
+}
+END -- gr457
+Grid gr458
+{
+ Est. Operating Date      [sfb13     ][sfb14     ]
+ Est. Complete Date       [sfb15     ][sfb16     ]
+ Act. Operating Date      [sfb25     ]
+ Issued Qty               [sfb081    ]
+ Completed Qty            [sfb09     ]
+ Scrap Qty                [sfb12     ]
+ Sche.Del Date            [sfb36     ]
+ Scheduled Delivery Date  [sfb37     ]
+ WO Process Change S/N    [sfb103    ]
+ Outcountry   [oeaslk01    ] [geb02        ]
+
+
+}
+END -- gr458
+END -- hb9
+END -- page02
+Page page03(text=%"WO(2)")
+HBox hb7
+Grid gr459
+{
+ [sfb23              ]
+ [sfb24              ]
+ [sfb41              ]
+ [sfb99              ]
+ [sfb94              ]
+ [sfb104             ]
+ Subcontracting Type [sfb100 ]
+ C/R Radio           [sfb34     ]
+ Priority            [sfb40     ]
+
+
+}
+END -- gr459
+Grid gr460
+{
+ Register Book No  [sfb97               ]
+
+ WBS No.           [sfb271      |pjb03     ]
+ Promotion No.     [sfb50       |pjk03     ]
+ Reason Code       [sfb51       |azf03     ]
+ Memo              [sfb96                          ]
+                   [                               ]
+                   [                               ]
+
+
+
+}
+END -- gr460
+Grid gr14
+{
+ Default Store-in W/H      [sfb30       ]
+ Default St-in Location    [sfb31       ]
+ Initial Scheduling Method [sfb32     ]
+ Latest Scheduling Method  [sfb33     ]
+ APS Document No.          [sfb222              ]
+ Approval No.              [sfb1001            ]
+[sfb1002                     ]
+ Release Order No.         [sfb1003       ]
+ sfbud10                   [sfbud10        ]
+
+
+}
+END -- gr14
+END -- hb7
+END -- page03
+Page pageiicd(text=%"ICD")
+HBox hicd
+Grid gricd1
+{
+ Next Step Vendor [sfbiicd01   ] [pmc03_next  ]
+ Wafer Vendor     [sfbiicd02   ] [pmc03_wafer ]
+ Wafer Vendor Site[sfbiicd03   ] [icq03       ]
+ Product Name     [ima02_product      ]
+ Return Lot No.   [sfbiicd13          ]
+ Datecode         [sfbiicd07          ]
+
+}
+END -- gricd1
+Grid gricd2
+{
+ B/D No.          [sfbiicd11     ]
+ Pkg Type         [sfbiicd12     ]
+ Pin Count        [sfbiicd18     ]
+  [sfbiicd10 ]
+
+
+
+}
+END -- gricd2
+END -- hicd
+END -- pageiicd
+Page userdefined_field(text=%"User Defined Field")
+Grid gru47
+{
+                                                                                          userdefined_field13[sfbud13        ]
+ [sfbud01                    ]                       userdefined_field08[sfbud08        ] userdefined_field14[sfbud14        ]
+ userdefined_field02[sfbud02        ]                userdefined_field09[sfbud09        ] userdefined_field15[sfbud15        ]
+                    [sfbud03   ]
+                                                     userdefined_field11[sfbud11        ] userdefined [remark                ]
+ userdefined_field05[sfbud05        ]                userdefined_field12[sfbud12        ]             [                      ]
+ userdefined_field06[sfbud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder02
+Table s_sfa
+{
+[sfa012    |ecu014              |sfa01|sfa27                |sfa08     |ecm03       |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfaiicd02          |sfa13               |sfa11                      |sfa16   |sfa161     |sfa100                   |sfaud08 |sfa05        |sfaiicd01     |sfaislk01      |sfa065             |sfa06      |sfaiicd04    |sfa062             |sfaiicd05    |short_qty |sfa063    |sfa064             |sfaiicd06           |sfa30            |sfa31           |sfa36       |mse02         |sfaiicd03           |sfaud01   |sfaud02 |sfaud03    |sfaud04    |sfaud05    |sfaud06    |sfaud07 |sfaud09    |sfaud10    |sfaud11   |sfaud12  |sfaud13   |sfaud14   |sfaud15    ]
+[sfa012    |ecu014              |sfa01|sfa27                |sfa08     |ecm03       |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfaiicd02          |sfa13               |sfa11                      |sfa16   |sfa161     |sfa100                   |sfaud08 |sfa05        |sfaiicd01     |sfaislk01      |sfa065             |sfa06      |sfaiicd04    |sfa062             |sfaiicd05    |short_qty |sfa063    |sfa064             |sfaiicd06           |sfa30            |sfa31           |sfa36       |mse02         |sfaiicd03           |sfaud01   |sfaud02 |sfaud03    |sfaud04    |sfaud05    |sfaud06    |sfaud07 |sfaud09    |sfaud10    |sfaud11   |sfaud12  |sfaud13   |sfaud14   |sfaud15    ]
+[sfa012    |ecu014              |sfa01|sfa27                |sfa08     |ecm03       |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfaiicd02          |sfa13               |sfa11                      |sfa16   |sfa161     |sfa100                   |sfaud08 |sfa05        |sfaiicd01     |sfaislk01      |sfa065             |sfa06      |sfaiicd04    |sfa062             |sfaiicd05    |short_qty |sfa063    |sfa064             |sfaiicd06           |sfa30            |sfa31           |sfa36       |mse02         |sfaiicd03           |sfaud01   |sfaud02 |sfaud03    |sfaud04    |sfaud05    |sfaud06    |sfaud07 |sfaud09    |sfaud10    |sfaud11   |sfaud12  |sfaud13   |sfaud14   |sfaud15    ]
+[sfa012    |ecu014              |sfa01|sfa27                |sfa08     |ecm03       |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfaiicd02          |sfa13               |sfa11                      |sfa16   |sfa161     |sfa100                   |sfaud08 |sfa05        |sfaiicd01     |sfaislk01      |sfa065             |sfa06      |sfaiicd04    |sfa062             |sfaiicd05    |short_qty |sfa063    |sfa064             |sfaiicd06           |sfa30            |sfa31           |sfa36       |mse02         |sfaiicd03           |sfaud01   |sfaud02 |sfaud03    |sfaud04    |sfaud05    |sfaud06    |sfaud07 |sfaud09    |sfaud10    |sfaud11   |sfaud12  |sfaud13   |sfaud14   |sfaud15    ]
+[sfa012    |ecu014              |sfa01|sfa27                |sfa08     |ecm03       |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfaiicd02          |sfa13               |sfa11                      |sfa16   |sfa161     |sfa100                   |sfaud08 |sfa05        |sfaiicd01     |sfaislk01      |sfa065             |sfa06      |sfaiicd04    |sfa062             |sfaiicd05    |short_qty |sfa063    |sfa064             |sfaiicd06           |sfa30            |sfa31           |sfa36       |mse02         |sfaiicd03           |sfaud01   |sfaud02 |sfaud03    |sfaud04    |sfaud05    |sfaud06    |sfaud07 |sfaud09    |sfaud10    |sfaud11   |sfaud12  |sfaud13   |sfaud14   |sfaud15    ]
+[sfa012    |ecu014              |sfa01|sfa27                |sfa08     |ecm03       |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfaiicd02          |sfa13               |sfa11                      |sfa16   |sfa161     |sfa100                   |sfaud08 |sfa05        |sfaiicd01     |sfaislk01      |sfa065             |sfa06      |sfaiicd04    |sfa062             |sfaiicd05    |short_qty |sfa063    |sfa064             |sfaiicd06           |sfa30            |sfa31           |sfa36       |mse02         |sfaiicd03           |sfaud01   |sfaud02 |sfaud03    |sfaud04    |sfaud05    |sfaud06    |sfaud07 |sfaud09    |sfaud10    |sfaud11   |sfaud12  |sfaud13   |sfaud14   |sfaud15    ]
+[sfa012    |ecu014              |sfa01|sfa27                |sfa08     |ecm03       |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfaiicd02          |sfa13               |sfa11                      |sfa16   |sfa161     |sfa100                   |sfaud08 |sfa05        |sfaiicd01     |sfaislk01      |sfa065             |sfa06      |sfaiicd04    |sfa062             |sfaiicd05    |short_qty |sfa063    |sfa064             |sfaiicd06           |sfa30            |sfa31           |sfa36       |mse02         |sfaiicd03           |sfaud01   |sfaud02 |sfaud03    |sfaud04    |sfaud05    |sfaud06    |sfaud07 |sfaud09    |sfaud10    |sfaud11   |sfaud12  |sfaud13   |sfaud14   |sfaud15    ]
+[sfa012    |ecu014              |sfa01|sfa27                |sfa08     |ecm03       |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfaiicd02          |sfa13               |sfa11                      |sfa16   |sfa161     |sfa100                   |sfaud08 |sfa05        |sfaiicd01     |sfaislk01      |sfa065             |sfa06      |sfaiicd04    |sfa062             |sfaiicd05    |short_qty |sfa063    |sfa064             |sfaiicd06           |sfa30            |sfa31           |sfa36       |mse02         |sfaiicd03           |sfaud01   |sfaud02 |sfaud03    |sfaud04    |sfaud05    |sfaud06    |sfaud07 |sfaud09    |sfaud10    |sfaud11   |sfaud12  |sfaud13   |sfaud14   |sfaud15    ]
+[sfa012    |ecu014              |sfa01|sfa27                |sfa08     |ecm03       |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfaiicd02          |sfa13               |sfa11                      |sfa16   |sfa161     |sfa100                   |sfaud08 |sfa05        |sfaiicd01     |sfaislk01      |sfa065             |sfa06      |sfaiicd04    |sfa062             |sfaiicd05    |short_qty |sfa063    |sfa064             |sfaiicd06           |sfa30            |sfa31           |sfa36       |mse02         |sfaiicd03           |sfaud01   |sfaud02 |sfaud03    |sfaud04    |sfaud05    |sfaud06    |sfaud07 |sfaud09    |sfaud10    |sfaud11   |sfaud12  |sfaud13   |sfaud14   |sfaud15    ]
+[sfa012    |ecu014              |sfa01|sfa27                |sfa08     |ecm03       |sfa26            |sfa28              |sfa03                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfaiicd02          |sfa13               |sfa11                      |sfa16   |sfa161     |sfa100                   |sfaud08 |sfa05        |sfaiicd01     |sfaislk01      |sfa065             |sfa06      |sfaiicd04    |sfa062             |sfaiicd05    |short_qty |sfa063    |sfa064             |sfaiicd06           |sfa30            |sfa31           |sfa36       |mse02         |sfaiicd03           |sfaud01   |sfaud02 |sfaud03    |sfaud04    |sfaud05    |sfaud06    |sfaud07 |sfaud09    |sfaud10    |sfaud11   |sfaud12  |sfaud13   |sfaud14   |sfaud15    ]
+
+
+
+}
+END -- s_sfa
+Grid gr461
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr461
+END -- vb2
+END -- page_main
+Page page_list(action=page_list, text=%"Page2")
+Table s_sfb_l
+{
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+[sfb01_l             |smydesc_l      |sfb44_l   |gen02_l   |sfb81_l |sfb02_l     |sfb39_l     |sfb87_l |sfb04_l   |sfb43_l   |sfbm|sfb82_l   |pmc03_l        |sfb05_l   |ima02_l        |ima021_l       |sfb08_l        |ima1|sfb93_|sfb06_l   ]
+}
+END -- s_sfb_l
+END -- page_list
+END -- Folder1
+END -- HBox1
+END -- asfi301
+
+TABLES
+sfai_file,
+sfb_file,
+sfbi_file,
+sfa_file
+ATTRIBUTES
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=1, not null, required, image="zoom", upShift, comment=%"Key Field, No Blank/Repeated!    , <^P>Qry Doc Pty ";
+Edit smydesc=formonly.smydesc type CHAR, tabIndex=2, noEntry;
+Edit sfb101=sfb_file.sfb101, tabIndex=3, noEntry;
+ButtonEdit sfb44=sfb_file.sfb44, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=5, noEntry;
+ButtonEdit sfb27=sfb_file.sfb27, action=controlp, tabIndex=73, image="zoom", comment=%"<^P> Qry Project";
+Edit pja02=formonly.pja02 type VARCHAR, tabIndex=74, noEntry;
+DateEdit sfb81=sfb_file.sfb81, tabIndex=6, not null, required;
+ComboBox sfb02=sfb_file.sfb02, tabIndex=7, not null, required, queryEditable, comment=%"1.Gnrl 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm 13.Predic 15.Trial ", items=(("1", %"Gnrl"),("5", %"Rework"),("7", %"Sub."),("8", %"Rwrk SUB"),("11", %"Disasm"),("13", %"Predic"),("15", %"Trial"));
+ComboBox sfb39=sfb_file.sfb39, tabIndex=8, not null, required, queryEditable, comment=%"1.Push System           2.Pull System ", items=(("1", %"Push"),("2", %"Pull"));
+ButtonEdit sfbud04=formonly.sfbud04, action=controlp, tabIndex=9, image="zoom";
+CheckBox suit=formonly.suit, tabIndex=195, text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox sfb87=sfb_file.sfb87, tabIndex=10, noEntry, queryEditable, items=(("Y", %"Confirm"),("N", %"Cancel"),("X", %"Void"));
+ComboBox sfb04=sfb_file.sfb04, tabIndex=11, noEntry, queryEditable, comment=%"1.Open 2.Rls 3.Prt 4.Iss.Mat 5.WIP 6.FQC 7.St-i 8.Clos", items=(("1", %"Gnrl"),("2", %"Rls"),("3", %"Prt"),("4", %"Iss.Mat"),("5", %"WIP"),("6", %"FQC"),("7", %"St-i"),("8", %"Clos"));
+IMAGE imgmks=formonly.imgmksg type CHAR, sizePolicy=dynamic, width = 6 characters, height = 2 characters;
+Edit sf=sfb_file.sfb28, tabIndex=12, noEntry, upShift;
+DateEdit sfb38=sfb_file.sfb38, tabIndex=13, noEntry, not null, required;
+ComboBox sfb43=sfb_file.sfb43, tabIndex=14, noEntry, not null, required, queryEditable, items=(("0", %"Open"),("1", %"Approved"),("9", %"Void"),("S", %"Approving"),("R", %"Approving Return"),("W", %"Withdraw"));
+CheckBox sfbmksg=sfb_file.sfbmksg, tabIndex=15, text=%"Approval", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sfbuser=sfb_file.sfbuser, tabIndex=16, noEntry;
+Edit sfbmodu=sfb_file.sfbmodu, tabIndex=18, noEntry;
+Edit sfbacti=sfb_file.sfbacti, tabIndex=20, noEntry, upShift;
+Edit sfbgrup=sfb_file.sfbgrup, tabIndex=17, noEntry;
+DateEdit sfbdate=sfb_file.sfbdate, tabIndex=19, noEntry;
+Edit sfboriu=sfb_file.sfboriu, tabIndex=21, noEntry;
+Edit sfborig=sfb_file.sfborig, tabIndex=22, noEntry;
+ButtonEdit sfb98=sfb_file.sfb98, action=controlp, tabIndex=23, image="zoom", comment=%"<^P>Q Cost Centr   Enter Cost Center for Labor & Ovhd Apport., No Blank!";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=24, noEntry;
+ButtonEdit sfb82=sfb_file.sfb82, action=controlp, tabIndex=25, image="zoom", comment=%"<^P>Qry Department";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=26, noEntry;
+ButtonEdit sfb102=formonly.sfb102 type CHAR, action=controlp, tabIndex=27, image="zoom";
+ButtonEdit sfb22=sfb_file.sfb22, action=controlp, tabIndex=28, image="zoom", comment=%"Enter Order # or Forecast WO #  <^P>Qry Order # <^T>Qry MPS Pln";
+Edit sfb221=sfb_file.sfb221, tabIndex=29, comment=%"Enter Order Line # or Forecast W/O Line #";
+ButtonEdit sfb91=sfb_file.sfb91, action=controlp, tabIndex=30, image="zoom", comment=%"Enter Manufacturing Advice";
+Edit sfb92=sfb_file.sfb92, tabIndex=31, comment=%"Enter Manufacturing Advice Line #";
+ButtonEdit sfb86=sfb_file.sfb86, action=controlp, tabIndex=32, image="zoom", comment=%"<^P>Qry W/O No.";
+ButtonEdit sfbi=sfbi_file.sfbiicd15, action=controlp, tabIndex=33, image="zoom", comment=%"<^P>Qry PO item";
+Button wafe:wafer, tabIndex=163, text=%"Wafer";
+ButtonEdit sfb89=sfb_file.sfb89, action=controlp, tabIndex=34, image="zoom", comment=%"";
+ButtonEdit sfbiicd16=sfbi_file.sfbiicd16, action=controlp, tabIndex=35, image="zoom", comment=%"<^P>Qry store-in No.";
+Edit sfbiicd17=sfbi_file.sfbiicd17, tabIndex=36;
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=37, not null, required, image="zoom", comment=%"<^P>Qry Item No.";
+Edit ima5=formonly.ima55 type CHAR, tabIndex=38, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=39, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=40, noEntry;
+ButtonEdit sfbiicd09=sfbi_file.sfbiicd09, action=controlp, tabIndex=41, image="zoom", comment=%"<^P>Qry Process No.";
+ButtonEdit sfbiicd14=sfbi_file.sfbiicd14, action=controlp, tabIndex=42, noEntry, image="zoom", comment=%"<^P>Qry ibody";
+ButtonEdit sfb95=sfb_file.sfb95, action=controlp, tabIndex=43, image="zoom", comment=%"<^P>Qry Alternate";
+Edit sfb08=sfb_file.sfb08, tabIndex=44, not null, required;
+Edit sfbiicd06=formonly.sfbiicd06 type CHAR, tabIndex=45;
+ButtonEdit ecb06=formonly.ecb06, action=controlp, tabIndex=194, image="zoom", hidden;
+Edit sfbud07=sfb_file.sfbud07, tabIndex=188, noEntry;
+Edit sfb07=sfb_file.sfb07, tabIndex=46, comment=%"Must Enter if Trial W/O";
+DateEdit sfb071=sfb_file.sfb071, tabIndex=47, not null, required;
+CheckBox sfb93=sfb_file.sfb93, tabIndex=48, text=%"Routing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sfb06=sfb_file.sfb06, action=controlp, tabIndex=49, image="zoom", comment=%"<^P>Qry Routing No.";
+ButtonEdit sfb85=sfb_file.sfb85, action=controlp, tabIndex=50, image="zoom";
+Edit sfb919=sfb_file.sfb919, tabIndex=51;
+DateEdit sfb13=sfb_file.sfb13, tabIndex=52, not null, required;
+Edit sfb14=sfb_file.sfb14, tabIndex=164, not null, required, picture="XX:XX";
+DateEdit sfb15=sfb_file.sfb15, tabIndex=53, not null, required;
+Edit sfb16=sfb_file.sfb16, tabIndex=165, not null, required;
+DateEdit sfb25=sfb_file.sfb25, tabIndex=54, noEntry;
+Edit sfb081=sfb_file.sfb081, tabIndex=55, noEntry, not null, required;
+Edit sfb09=sfb_file.sfb09, tabIndex=56, noEntry, not null, required;
+Edit sfb12=sfb_file.sfb12, tabIndex=57, noEntry, not null, required;
+DateEdit sfb36=sfb_file.sfb36, tabIndex=58, noEntry, not null, required;
+DateEdit sfb37=sfb_file.sfb37, tabIndex=59, noEntry, not null, required;
+Edit sfb103=sfb_file.sfb103, tabIndex=60, noEntry;
+Edit oeaslk01=formonly.oeaslk01 type CHAR, tabIndex=61;
+Edit geb02=formonly.geb02 type CHAR, tabIndex=62;
+CheckBox sfb23=sfb_file.sfb23, tabIndex=63, text=%"Allotment", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sfb24=sfb_file.sfb24, tabIndex=64, text=%"Routing", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sfb41=sfb_file.sfb41, tabIndex=65, text=%"Freeze", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sfb99=sfb_file.sfb99, tabIndex=66, text=%"Rework", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sfb94=sfb_file.sfb94, tabIndex=67, text=%"FQC", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sfb104=sfb_file.sfb104, tabIndex=68, text=%"WO.allocate", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox sfb100=sfb_file.sfb100, tabIndex=69, queryEditable, comment=%"1.One To One         2.One TO Multi  ", items=(("1", %"One To One"),("2", %"One TO Multi"));
+Edit sfb34=sfb_file.sfb34, tabIndex=70;
+Edit sfb40=sfb_file.sfb40, tabIndex=71, comment=%"Enter Priority!";
+ButtonEdit sfb97=sfb_file.sfb97, action=controlp, tabIndex=72, image="zoom", comment=%"<^P>Qry Register Book No";
+ButtonEdit sfb271=sfb_file.sfb271, action=controlp, tabIndex=75, image="zoom", comment=%"<^P> Qry Project-Sequence";
+Edit pjb03=formonly.pjb03 type VARCHAR, tabIndex=76, noEntry;
+ButtonEdit sfb50=sfb_file.sfb50, action=controlp, tabIndex=77, image="zoom", comment=%"<^P> Qry Project-Sequence";
+Edit pjk03=formonly.pjk03 type VARCHAR, tabIndex=78, noEntry;
+ButtonEdit sfb51=sfb_file.sfb51, action=controlp, tabIndex=79, image="zoom", comment=%"<^P> Qry Project-Sequence";
+Edit azf03=formonly.azf03 type VARCHAR, tabIndex=80, noEntry;
+TextEdit sfb96=sfb_file.sfb96, tabIndex=81;
+ButtonEdit sfb30=sfb_file.sfb30, action=controlp, tabIndex=82, image="zoom", comment=%"<^P> Qry Project-Sequence";
+ButtonEdit sfb31=sfb_file.sfb31, action=controlp, tabIndex=83, image="zoom", comment=%"<^P> Qry Project-Sequence";
+Edit sfb32=sfb_file.sfb32, tabIndex=84;
+Edit sfb33=sfb_file.sfb33, tabIndex=85;
+Edit sfb222=sfb_file.sfb222, tabIndex=86, noEntry;
+ButtonEdit sfb1001=sfb_file.sfb1001, action=controlp, tabIndex=87, image="zoom", comment=%"<^P>Qry Approval No";
+CheckBox sfb1002=sfb_file.sfb1002, tabIndex=88, text=%"Clearance", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit sfb1003=sfb_file.sfb1003, tabIndex=89, noEntry;
+Edit sfbud10=sfb_file.sfbud10, tabIndex=192;
+ButtonEdit sfbiicd01=sfbi_file.sfbiicd01, action=controlp, tabIndex=90, image="zoom", comment=%"<^P>Qry Supplier";
+Edit pmc03_next=formonly.pmc03_next type CHAR, tabIndex=91, noEntry;
+ButtonEdit sfbiicd02=sfbi_file.sfbiicd02, action=controlp, tabIndex=92, image="zoom", comment=%"<^P>Qry Wafer Supplier";
+Edit pmc03_wafer=formonly.pmc03_wafer type CHAR, tabIndex=93, noEntry;
+ButtonEdit sfbiicd03=sfbi_file.sfbiicd03, action=controlp, tabIndex=94, image="zoom", comment=%"<^P>Qry Wafer Site";
+Edit icq03=formonly.icq03 type CHAR, tabIndex=95, noEntry;
+Edit ima02_product=formonly.ima02_product type CHAR, tabIndex=96, noEntry;
+ButtonEdit sfbiicd13=sfbi_file.sfbiicd13, action=controlp, tabIndex=97, noEntry, image="zoom", comment=%"<^P>Qry Return Lot";
+ButtonEdit sfbiicd07=sfbi_file.sfbiicd07, action=controlp, tabIndex=98, noEntry, image="zoom", comment=%"<^P>Qry Date Code";
+Edit sfbiicd11=sfbi_file.sfbiicd11, tabIndex=99;
+Edit sfbiicd12=sfbi_file.sfbiicd12, tabIndex=100;
+Edit sfbiicd18=sfbi_file.sfbiicd18, tabIndex=101;
+CheckBox sfbiicd10=sfbi_file.sfbiicd10, tabIndex=102, text=%"Mulit-die", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit sfbud13=sfb_file.sfbud13, tabIndex=156;
+CheckBox sfbud01=sfb_file.sfbud01, tabIndex=153, text=%"MRP close", valueChecked = "Y", valueUnchecked = "N";
+Edit sfbud08=sfb_file.sfbud08, tabIndex=150;
+DateEdit sfbud14=sfb_file.sfbud14, tabIndex=154;
+Edit sfbud02=sfb_file.sfbud02, tabIndex=159;
+Edit sfbud09=sfb_file.sfbud09, tabIndex=155;
+DateEdit sfbud15=sfb_file.sfbud15, tabIndex=149;
+CheckBox sfbud03=formonly.sfbud03, tabIndex=177, text=%"CheckBox1", valueChecked = "Y", valueUnchecked = "N";
+Edit sfbud11=sfb_file.sfbud11, tabIndex=152;
+TextEdit remark=formonly.remark type VARCHAR, tabIndex=193;
+Edit sfbud05=sfb_file.sfbud05, tabIndex=151;
+Edit sfbud12=sfb_file.sfbud12, tabIndex=158;
+Edit sfbud06=sfb_file.sfbud06, tabIndex=157;
+ButtonEdit sfa012=sfa_file.sfa012, action=controlp, tabIndex=103, title=%"Process No.", not null, required, image="zoom";
+Edit ecu014=formonly.ecu014 type CHAR, tabIndex=104, title=%"Procrss Name", noEntry;
+Edit sfa01=sfa_file.sfa013, tabIndex=105, title=%"Routing Sequence", not null, required;
+ButtonEdit sfa27=sfa_file.sfa27, action=controlp, tabIndex=106, title=%"BOM Item No.", not null, required, image="zoom", comment=%"<^P>Qry Item #  , <^T>BOM Itm/Compo";
+ButtonEdit sfa08=sfa_file.sfa08, action=controlp, tabIndex=107, title=%"Task No.", not null, required, image="zoom", comment=%"<^P>Qry Task No.";
+Edit ecm03=formonly.ecm03 type INTEGER, tabIndex=108, title=%"ecm03";
+ComboBox sfa26=sfa_file.sfa26, tabIndex=109, title=%"Substitute code", not null, required, queryEditable, items=(("0", %"No REP/SUB"),("1", %"Old"),("2", %"M.It"),("3", %"Old(with New)"),("4", %"M.It(Sb-Itm)"),("5", %"M.It,SUB with SE"),("6", %"M.It,SET SUB"),("7", %"M.Rule Sub."),("8", %"M.Rule Su."),("9", %"M.Coor.Sub."),("A", %"M.Coor.Su."),("B", %"SUB.Coor.Item"),("C", %"SUB Rebate Item"),("U", %"REP Item"),("S", %"SUB Item"),("T", %"SET SUB Item"),("Z", %"Rule Sub."));
+Edit sfa28=sfa_file.sfa28, tabIndex=110, title=%"Substitution Ratio", not null, required, comment=%"Ori Mstr.Itm to SUB Itm Conv.R!(Enter Only if Code=\'S/U\'    )";
+ButtonEdit sfa03=sfa_file.sfa03, action=controlp, tabIndex=111, title=%"Issuing Item No.", not null, required, image="zoom", comment=%"<^P>Qry Item No.";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=112, title=%"Part Name", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=113, title=%"Specification", noEntry;
+ComboBox ima08_b=formonly.ima08_b type CHAR, tabIndex=114, title=%"Source Code", noEntry, queryEditable, comment=%"Enter  C/T/D/A/M/P/X/K/U/V/R/Z/S", items=(("C", %"Configurable Product"),("T", %"FAS Product"),("D", %"Feture"),("A", %"Family Product"),("M", %"Make Product"),("P", %"Purchase"),("X", %"Phantom"),("K", %"Kit"),("U", %"Manufactured Mass Item"),("V", %"Purchased Mass Item"),("R", %"Routable"),("Z", %"Miscellaneous"),("S", %"Subcontract"));
+ButtonEdit sfa12=sfa_file.sfa12, action=controlp, tabIndex=115, title=%"Issuing Unit", not null, required, image="zoom", comment=%"<^P>Query Unit";
+ButtonEdit sfaiicd02=sfai_file.sfaiicd02, action=controlp, tabIndex=116, title=%"Planned Issue Unit", noEntry, image="zoom", comment=%"<^P>Query Unit";
+Edit sfa13=sfa_file.sfa13, tabIndex=117, title=%"Conversion Rate", noEntry;
+ComboBox sfa11=sfa_file.sfa11, tabIndex=118, title=%"Flag", not null, required, queryEditable, items=(("N", %"General Item"),("E", %"Consumable Item"),("V", %"Mass Manufactured-Item"),("U", %"Mass Manufactured-Item"),("R", %"WIP Item"),("X", %"Reference"),("S", %"Recovery"),("C", %"Cust-Material"));
+Edit sfa16=sfa_file.sfa16, tabIndex=166, title=%"Standard QPA", noEntry;
+Edit sfa161=sfa_file.sfa161, tabIndex=119, title=%"Actual QPA", not null, required;
+Edit sfa100=sfa_file.sfa100, tabIndex=120, title=%"Issuing difference ratio", comment=%"Issuing difference ratio";
+Edit sfaud08=formonly.sfaud08, tabIndex=189, title=%"sfaud08";
+Edit sfa05=sfa_file.sfa05, tabIndex=121, title=%"Qty To Issue", not null, required;
+Edit sfaiicd01=sfai_file.sfaiicd01, tabIndex=122, title=%"Required Qty";
+Edit sfaislk01=sfai_file.sfaislk01, tabIndex=123, title=%"Code restraint chart Required Qty";
+Edit sfa065=sfa_file.sfa065, tabIndex=124, title=%"Inventory Loss Qty", not null, required;
+Edit sfa06=sfa_file.sfa06, tabIndex=125, title=%"Issued Qty", noEntry, not null, required;
+Edit sfaiicd04=sfai_file.sfaiicd04, tabIndex=126, title=%"Issued Qty(Ref.)", noEntry;
+Edit sfa062=sfa_file.sfa062, tabIndex=127, title=%"Qty Over-withdrawn", noEntry, not null, required;
+Edit sfaiicd05=sfai_file.sfaiicd05, tabIndex=128, title=%"Extend Qty(Ref.)", noEntry;
+Edit short_qty=formonly.short_qty type CHAR, tabIndex=129, title=%"Short Qty", noEntry;
+Edit sfa063=sfa_file.sfa063, tabIndex=130, title=%"Scrap Qty", noEntry, not null, required;
+Edit sfa064=sfa_file.sfa064, tabIndex=131, title=%"Inventory Loss Qty", noEntry, not null, required;
+CheckBox sfaiicd06=sfai_file.sfaiicd06, tabIndex=132, default = "N", title=%"multi_wh", text=%"", not null, valueChecked = "Y", valueUnchecked = "N", comment=%"<^P>Qry lot";
+ButtonEdit sfa30=sfa_file.sfa30, action=controlp, tabIndex=133, title=%"Assign Warehouse", image="zoom", comment=%"<^P>Qry Warehouse";
+ButtonEdit sfa31=sfa_file.sfa31, action=controlp, tabIndex=134, title=%"Assign Location", image="zoom", comment=%"<^P>Qry Warehouse";
+ButtonEdit sfa36=sfa_file.sfa36, action=controlp, tabIndex=135, title=%"Brand", image="zoom";
+Edit mse02=formonly.mse02 type CHAR, tabIndex=136, title=%"Brand Name", noEntry;
+ButtonEdit sfaiicd03=sfai_file.sfaiicd03, action=controlp, tabIndex=137, title=%"Issue Lot", image="zoom", comment=%"<^P>Qry lot";
+TextEdit sfaud01=sfa_file.sfaud01, tabIndex=138, title=%"sfaud01";
+Edit sfaud02=formonly.sfaud02, tabIndex=190, title=%"sfaud02";
+Edit sfaud03=sfa_file.sfaud03, tabIndex=139, title=%"sfaud03";
+Edit sfaud04=sfa_file.sfaud04, tabIndex=140, title=%"sfaud04";
+Edit sfaud05=sfa_file.sfaud05, tabIndex=141, title=%"sfaud05";
+Edit sfaud06=sfa_file.sfaud06, tabIndex=142, title=%"sfaud06";
+Edit sfaud07=formonly.sfaud07, tabIndex=191, title=%"sfaud07";
+Edit sfaud09=sfa_file.sfaud09, tabIndex=143, title=%"sfaud09";
+Edit sfaud10=sfa_file.sfaud10, tabIndex=144, title=%"sfaud10";
+Edit sfaud11=sfa_file.sfaud11, tabIndex=145, title=%"sfaud11";
+Edit sfaud12=sfa_file.sfaud12, tabIndex=146, title=%"sfaud12";
+Edit sfaud13=sfa_file.sfaud13, tabIndex=160, title=%"sfaud13";
+Edit sfaud14=sfa_file.sfaud14, tabIndex=161, title=%"sfaud14";
+Edit sfaud15=sfa_file.sfaud15, tabIndex=162, title=%"sfaud15";
+Edit cnt=formonly.cnt type CHAR, tabIndex=147;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=148;
+Edit sfb01_l=formonly.sfb01_l, tabIndex=167, title=%"sfb01_l";
+Edit smydesc_l=formonly.smydesc_l, tabIndex=168, title=%"smydesc_l";
+Edit sfb44_l=formonly.sfb44_l, tabIndex=169, title=%"sfb44_l";
+Edit gen02_l=formonly.gen02_l, tabIndex=170, title=%"gen02_l";
+DateEdit sfb81_l=formonly.sfb81_l, tabIndex=171, title=%"sfb81_l";
+ComboBox sfb02_l=formonly.sfb02_l, tabIndex=172, title=%"sfb02_l", items=(("1", "1"),("5", "5"),("7", "7"),("8", "8"),("11", "11"),("13", "13"),("15", "15"));
+ComboBox sfb39_l=formonly.sfb39_l, tabIndex=173, title=%"sfb39_l", items=(("1", "1"),("2", "2"));
+ComboBox sfb87_l=formonly.sfb87_l, tabIndex=174, title=%"sfb87_l", items=(("Y", "Y"),("X", "X"),("N", "N"));
+ComboBox sfb04_l=formonly.sfb04_l, tabIndex=175, title=%"sfb04_l", items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"));
+ComboBox sfb43_l=formonly.sfb43_l, tabIndex=176, title=%"sfb43_l", items=(("0", "0"),("1", "1"),("9", "9"),("S", "S"),("R", "R"),("W", "W"));
+CheckBox sfbm=formonly.sfbmksg_l, tabIndex=178, title=%"sfbmksg_l", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit sfb82_l=formonly.sfb82_l, tabIndex=179, title=%"sfb82_l";
+Edit pmc03_l=formonly.pmc03_l, tabIndex=180, title=%"pmc03_l";
+Edit sfb05_l=formonly.sfb05_l, tabIndex=181, title=%"sfb05_l";
+Edit ima02_l=formonly.ima02_l, tabIndex=182, title=%"ima02_l";
+Edit ima021_l=formonly.ima021_l, tabIndex=183, title=%"ima021_l";
+Edit sfb08_l=formonly.sfb08_l, tabIndex=184, title=%"sfb08_l";
+Edit ima1=formonly.ima55_l, tabIndex=185, title=%"ima55_l";
+CheckBox sfb93_=formonly.sfb93_l, tabIndex=186, title=%"sfb93_l", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit sfb06_l=formonly.sfb06_l, tabIndex=187, title=%"sfb06_l";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfa(sfa_file.sfa012,formonly.ecu014,sfa_file.sfa013,sfa_file.sfa27,sfa_file.sfa08,formonly.ecm03,sfa_file.sfa26,sfa_file.sfa28,sfa_file.sfa03,formonly.ima02_b,formonly.ima021_b,formonly.ima08_b,sfa_file.sfa12,sfai_file.sfaiicd02,sfa_file.sfa13,sfa_file.sfa11,sfa_file.sfa16,sfa_file.sfa161,sfa_file.sfa100,formonly.sfaud08,sfa_file.sfa05,sfai_file.sfaiicd01,sfai_file.sfaislk01,sfa_file.sfa065,sfa_file.sfa06,sfai_file.sfaiicd04,sfa_file.sfa062,sfai_file.sfaiicd05,formonly.short_qty,sfa_file.sfa063,sfa_file.sfa064,sfai_file.sfaiicd06,sfa_file.sfa30,sfa_file.sfa31,sfa_file.sfa36,formonly.mse02,sfai_file.sfaiicd03,sfa_file.sfaud01,formonly.sfaud02,sfa_file.sfaud03,sfa_file.sfaud04,sfa_file.sfaud05,sfa_file.sfaud06,formonly.sfaud07,sfa_file.sfaud09,sfa_file.sfaud10,sfa_file.sfaud11,sfa_file.sfaud12,sfa_file.sfaud13,sfa_file.sfaud14,sfa_file.sfaud15)
+SCREEN RECORD Undefined(sfb_file.sfb01,formonly.smydesc,sfb_file.sfb101,sfb_file.sfb44,formonly.gen02,sfb_file.sfb81,sfb_file.sfb02,sfb_file.sfb39,sfb_file.sfb87,sfb_file.sfb04,formonly.imgmksg,sfb_file.sfb28,sfb_file.sfb38,sfb_file.sfb43,sfb_file.sfbmksg,sfb_file.sfbuser,sfb_file.sfbmodu,sfb_file.sfbacti,sfb_file.sfbgrup,sfb_file.sfbdate,sfb_file.sfboriu,sfb_file.sfborig,sfb_file.sfb98,formonly.gem02,sfb_file.sfb82,formonly.pmc03,formonly.sfb102,sfb_file.sfb22,sfb_file.sfb221,sfb_file.sfb91,sfb_file.sfb92,sfb_file.sfb86,sfb_file.sfb89,sfbi_file.sfbiicd15,sfbi_file.sfbiicd16,sfbi_file.sfbiicd17,sfb_file.sfb05,formonly.ima55,formonly.ima02,formonly.ima021,sfbi_file.sfbiicd09,sfbi_file.sfbiicd14,sfb_file.sfb95,sfb_file.sfb08,formonly.sfbiicd06,sfb_file.sfb07,sfb_file.sfb071,sfb_file.sfb93,sfb_file.sfb06,sfb_file.sfb85,sfb_file.sfb919,sfb_file.sfb13,sfb_file.sfb15,sfb_file.sfb25,sfb_file.sfb081,sfb_file.sfb09,sfb_file.sfb12,sfb_file.sfb36,sfb_file.sfb37,sfb_file.sfb103,formonly.oeaslk01,formonly.geb02,sfb_file.sfb23,sfb_file.sfb24,sfb_file.sfb41,sfb_file.sfb99,sfb_file.sfb94,sfb_file.sfb104,sfb_file.sfb100,sfb_file.sfb34,sfb_file.sfb40,sfb_file.sfb97,sfb_file.sfb27,formonly.pja02,sfb_file.sfb271,formonly.pjb03,sfb_file.sfb50,formonly.pjk03,sfb_file.sfb51,formonly.azf03,sfb_file.sfb96,sfb_file.sfb30,sfb_file.sfb31,sfb_file.sfb32,sfb_file.sfb33,sfb_file.sfb222,sfb_file.sfb1001,sfb_file.sfb1002,sfb_file.sfb1003,sfbi_file.sfbiicd01,formonly.pmc03_next,sfbi_file.sfbiicd02,formonly.pmc03_wafer,sfbi_file.sfbiicd03,formonly.icq03,formonly.ima02_product,sfbi_file.sfbiicd13,sfbi_file.sfbiicd07,sfbi_file.sfbiicd11,sfbi_file.sfbiicd12,sfbi_file.sfbiicd18,sfbi_file.sfbiicd10,sfb_file.sfbud01,sfb_file.sfbud13,sfb_file.sfbud08,sfb_file.sfbud14,sfb_file.sfbud02,sfb_file.sfbud09,sfb_file.sfbud15,sfb_file.sfbud11,sfb_file.sfbud05,sfb_file.sfbud12,sfb_file.sfbud06,formonly.cnt,formonly.cn2,sfb_file.sfb14,sfb_file.sfb16,sfb_file.sfbud07,formonly.sfbud03,formonly.sfbud04,sfb_file.sfbud10,formonly.remark,formonly.ecb06,formonly.suit)
+SCREEN RECORD s_sfb_l(formonly.sfb01_l,formonly.smydesc_l,formonly.sfb44_l,formonly.gen02_l,formonly.sfb81_l,formonly.sfb02_l,formonly.sfb39_l,formonly.sfb87_l,formonly.sfb04_l,formonly.sfb43_l,formonly.sfbmksg_l,formonly.sfb82_l,formonly.pmc03_l,formonly.sfb05_l,formonly.ima02_l,formonly.ima021_l,formonly.sfb08_l,formonly.ima55_l,formonly.sfb93_l,formonly.sfb06_l)
+END -- INSTRUCTIONS
+

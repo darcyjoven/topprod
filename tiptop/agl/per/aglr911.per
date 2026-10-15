@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr911.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr911")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                                                  >
+     Book No.      [aba00               ]
+ <                                                                          >
+}
+END -- Grid1
+Grid gr2815
+{
+ <G group01                                                                 >
+  Voucher NO.         [aba01               ]
+  Voucher Date        [aba02               ]
+  Account NO.         [abb03               ]
+  Dept.No.            [abb05               ]
+  Tran.Code 1         [abb11               ]
+
+  Voucher Line NO.    [abb02               ]
+  Debit/Credit        [abb06               ]
+ <                                                                          >
+}
+END -- gr2815
+Group group02(text="INPUT")
+Grid gr2816
+{
+ <G group03                                                                 >
+  [s1                  ][s2                  ][s3                  ]
+  [t1                  ][t2                  ][t3                  ]
+  [u1                  ][u2                  ][u3                  ]
+ <                                                                          >
+ <G group04                                                                 >
+  [d                                                                     ]
+ <                                                                          >
+ <G group05                                                                 >
+  [e                                                                     ]
+      [k                                                                 ]
+ <                                                                          >
+
+}
+END -- gr2816
+END -- group02
+Grid gr2817
+{
+[m                                                           ]
+
+
+}
+END -- gr2817
+END -- VBox1
+END -- aglr911
+
+ATTRIBUTES
+Group group1:Group1, text=%"INPUT";
+ButtonEdit aba00=formonly.aba00 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+Group group01:group01, text="QBE";
+ButtonEdit aba01=formonly.aba01 type CHAR, action=controlp, tabIndex=20, image="zoom";
+DateEdit aba02=formonly.aba02 type DATE, tabIndex=1;
+ButtonEdit abb03=formonly.abb03 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit abb05=formonly.abb05 type CHAR, action=controlp, tabIndex=21, image="zoom";
+Edit abb11=formonly.abb11 type CHAR, tabIndex=3;
+Edit abb02=formonly.abb02 type CHAR, tabIndex=5;
+ComboBox abb06=formonly.abb06 type CHAR, tabIndex=19, items=(("1", "Debit"),("2", "Credit"));
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=6, queryEditable, items=(("1", "Voucher NO."),("2", "Vou Date"),("3", "Account NO."),("4", "Dept. No."),("5", "Tran.Code 1"),("6", "Book No."),("7", "Vou. Line NO."),("8", "Vou Dr/Cr"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=7, queryEditable, items=(("1", "Voucher NO."),("2", "Vou Date"),("3", "Account NO."),("4", "Dept. No."),("5", "Tran.Code 1"),("6", "Book No."),("7", "Vou. Line NO."),("8", "Vou Dr/Cr"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=8, queryEditable, items=(("1", "Voucher NO."),("2", "Vou Date"),("3", "Account NO."),("4", "Dept. No."),("5", "Tran.Code 1"),("6", "Book No."),("7", "Vou. Line NO."),("8", "Vou Dr/Cr"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=12, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=13, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="Data Option";
+RadioGroup d=formonly.d type CHAR, tabIndex=15, items=(("1", "Unposted"),("2", " Posted"),("3", "All "));
+Group group05:group05;
+CheckBox e=formonly.e type CHAR, tabIndex=16, text="Print Account name and memo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+RadioGroup k=formonly.k type CHAR, tabIndex=17, not null, required, items=(("1", "Print Account name memo"),("2", "Print Other name and memo"));
+CheckBox m=formonly.m type CHAR, tabIndex=18, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aba00,formonly.aba02,formonly.abb03,formonly.abb11,formonly.abb02,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.d,formonly.e,formonly.k,formonly.m,formonly.abb06,formonly.aba01,formonly.abb05)
+END -- INSTRUCTIONS
+

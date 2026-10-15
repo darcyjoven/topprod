@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gis/42f/giss010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"giss010")
+VBox VBox1
+Folder pc801
+Page page01(text="Basic Setting")
+Grid gr3497
+{
+ <G group01                                        >
+ [isf01                        ]
+  Goods Category    [isf02     ]
+ <                                                 >
+
+}
+END -- gr3497
+END -- page01
+Page userdefined_field(text=%"User Defined Field")
+Grid Grid1
+{
+
+ userdefined_field01[isfud01                 ]userdefined_field09[isfud09                ]
+                    [                        ]
+ userdefined_field02[isfud02                 ]userdefined_field10[isfud10                ]
+
+ userdefined_field03[isfud03                 ]userdefined_field11[isfud11                ]
+
+ userdefined_field04[isfud04                 ]userdefined_field12[isfud12                ]
+
+ userdefined_field05[isfud05                 ]userdefined_field13[isfud13                ]
+
+ userdefined_field06[isfud06                 ]userdefined_field14[isfud14                ]
+
+ userdefined_field07[isfud07                 ]userdefined_field15[isfud15                ]
+
+ userdefined_field08[isfud08                 ]
+
+}
+END -- Grid1
+END -- userdefined_field
+END -- pc801
+END -- VBox1
+END -- giss010
+
+TABLES
+isf_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox isf01=isf_file.isf01, tabIndex=1, text="Taxed When Invoice Export", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit isf02=isf_file.isf02, tabIndex=2, not null, required;
+TextEdit isfud01=isf_file.isfud01, tabIndex=3;
+Edit isfud09=isf_file.isfud09, tabIndex=17;
+Edit isfud02=isf_file.isfud02, tabIndex=4;
+Edit isfud10=isf_file.isfud10, tabIndex=16;
+Edit isfud03=isf_file.isfud03, tabIndex=5;
+Edit isfud11=isf_file.isfud11, tabIndex=15;
+Edit isfud04=isf_file.isfud04, tabIndex=6;
+Edit isfud12=isf_file.isfud12, tabIndex=14;
+Edit isfud05=isf_file.isfud05, tabIndex=7;
+DateEdit isfud13=isf_file.isfud13, tabIndex=13;
+Edit isfud06=isf_file.isfud06, tabIndex=8;
+DateEdit isfud14=isf_file.isfud14, tabIndex=12;
+Edit isfud07=isf_file.isfud07, tabIndex=9;
+DateEdit isfud15=isf_file.isfud15, tabIndex=11;
+Edit isfud08=isf_file.isfud08, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(isf_file.isf01,isf_file.isf02,isf_file.isfud01,isf_file.isfud02,isf_file.isfud03,isf_file.isfud04,isf_file.isfud05,isf_file.isfud06,isf_file.isfud07,isf_file.isfud08,isf_file.isfud15,isf_file.isfud14,isf_file.isfud13,isf_file.isfud12,isf_file.isfud11,isf_file.isfud10,isf_file.isfud09)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt310_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt310_2")
+Folder pc558
+Page page01(text="Page01")
+VBox VBox1
+Table s_oqd
+{
+[oqd02 |oqd03                          |oqd04               ]
+[oqd02 |oqd03                          |oqd04               ]
+[oqd02 |oqd03                          |oqd04               ]
+[oqd02 |oqd03                          |oqd04               ]
+[oqd02 |oqd03                          |oqd04               ]
+[oqd02 |oqd03                          |oqd04               ]
+[oqd02 |oqd03                          |oqd04               ]
+[oqd02 |oqd03                          |oqd04               ]
+[oqd02 |oqd03                          |oqd04               ]
+[oqd02 |oqd03                          |oqd04               ]
+
+}
+END -- s_oqd
+END -- VBox1
+END -- page01
+END -- pc558
+END -- axmt310_2
+
+TABLES
+oqd_file
+ATTRIBUTES
+Edit oqd02=oqd_file.oqd02, tabIndex=1, title="Line#", not null, required;
+Edit oqd03=oqd_file.oqd03, tabIndex=2, title="Expense Description", not null, required;
+Edit oqd04=oqd_file.oqd04, tabIndex=3, title="Estimate Amt", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oqd(oqd_file.oqd02,oqd_file.oqd03,oqd_file.oqd04)
+END -- INSTRUCTIONS
+

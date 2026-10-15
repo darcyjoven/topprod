@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aoos900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aoos900")
+Folder pc879
+Page page01(text=%"Basic System Environment")
+VBox VBox1
+Group group01(text=%"Plants")
+Grid gr4709
+{
+ [azz02                                          ]
+ [azz06                                          ]
+
+ <G group02                                     >
+  Default Plant Name   [azz03                  ]
+  Default Plant ID     [azz04                  ]
+ <                                              >
+ <G group1                                       >
+ [lb1                      |azz11               ]
+ [lb2                      |azz14               ]
+ [lb3                      |azz15               ]
+ [azz19                 ]
+ [azz17                                         ]
+ [azz18                                         ]
+ [azz16                                         ]
+ [msg                                          ]
+ [                                             ]
+ [                                             ]
+ [azz12                                       ]
+ [email       ][azz13                          ]
+ <                                               >
+
+}
+END -- gr4709
+END -- group01
+Grid gr4710
+{
+
+ <G group03                                      >
+ [azz05                                          ]
+ <                                               >
+}
+END -- gr4710
+END -- VBox1
+END -- page01
+END -- pc879
+END -- aoos900
+
+TABLES
+azz_file
+ATTRIBUTES
+CheckBox azz02=azz_file.azz02, tabIndex=1, text=%"Systems are Running in Multi-Plants Environment.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox azz06=azz_file.azz06, tabIndex=5, text=%"Enable Database Password Encode Function", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text=%"When Not in Multi-Plants";
+ButtonEdit azz03=azz_file.azz03, action=controlp, tabIndex=2, image="zoom";
+Edit azz04=azz_file.azz04, tabIndex=3, noEntry;
+Group group1:group1, text=%"Security Mode";
+Label lb1:lb1, text=%"Log When Every Program be Executed";
+ComboBox azz11=azz_file.azz11, tabIndex=9, items=(("1", "Always Log"),("2", "Log Only Including Personal Data"),("3", "No Log"));
+Label lb2:lb2, text=%"Log Action Need be Authorized";
+ComboBox azz14=azz_file.azz14, tabIndex=10, items=(("1", "Always Log"),("2", "No Log"));
+Label lb3:lb3, text=%"Log For Attachment File";
+ComboBox azz15=azz_file.azz15, tabIndex=11, items=(("1", "Always Log"),("2", "Just Log Insert,Delete,Modify"),("3", "No Log"));
+CheckBox azz19=azz_file.azz19, tabIndex=15, text=%"External Log Machine", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox azz17=azz_file.azz17, tabIndex=12, text=%"Hide Personal /Protexted Data When User Has No Authority", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox azz18=azz_file.azz18, tabIndex=14, text=%"Set up  Web Service data  with security When transfer", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox azz16=azz_file.azz16, tabIndex=6, text=%"Outgoing Mail Including Warning Message(Reference:p_ze PK:lib-287)", not null, valueChecked = "Y", valueUnchecked = "N";
+TextEdit msg=formonly.msg type VARCHAR, tabIndex=13;
+CheckBox azz12=azz_file.azz12, tabIndex=7, text=%"Notifity to System Administrator When \"p_unload\" been Executed", not null, valueChecked = "Y", valueUnchecked = "N";
+Label email:email, text=%"E-mail Address";
+Edit azz13=azz_file.azz13, tabIndex=8;
+Group group03:group03, text=%"Time Zone";
+CheckBox azz05=azz_file.azz05, tabIndex=4, text=%"Plants Divided into serval time zones.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(azz_file.azz02,azz_file.azz06,azz_file.azz03,azz_file.azz04,azz_file.azz05,azz_file.azz16,azz_file.azz12)
+SCREEN RECORD e_mail(azz_file.azz13)
+SCREEN RECORD Undefined_1(azz_file.azz11,azz_file.azz14,azz_file.azz15,azz_file.azz17,formonly.msg,azz_file.azz18,azz_file.azz19)
+END -- INSTRUCTIONS
+

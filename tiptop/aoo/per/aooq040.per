@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooq040.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aooq040")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr4685
+{
+ Table No. [tab       ]
+ Data No.  [key1                ][key2                ]
+           [key3                ][key4                ]
+}
+END -- gr4685
+END -- page01
+END -- folder01
+Table s_log
+{
+[col     |colname    |date              |user    |type     |old_val       |new_val     ]
+[col     |colname    |date              |user    |type     |old_val       |new_val     ]
+[col     |colname    |date              |user    |type     |old_val       |new_val     ]
+[col     |colname    |date              |user    |type     |old_val       |new_val     ]
+[col     |colname    |date              |user    |type     |old_val       |new_val     ]
+[col     |colname    |date              |user    |type     |old_val       |new_val     ]
+[col     |colname    |date              |user    |type     |old_val       |new_val     ]
+[col     |colname    |date              |user    |type     |old_val       |new_val     ]
+[col     |colname    |date              |user    |type     |old_val       |new_val     ]
+[col     |colname    |date              |user    |type     |old_val       |new_val     ]
+
+}
+END -- s_log
+Grid gr4686
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4686
+END -- VBox1
+END -- aooq040
+
+ATTRIBUTES
+Edit tab=formonly.tab type CHAR, tabIndex=1;
+Edit key1=formonly.key1 type CHAR, tabIndex=2;
+Edit key2=formonly.key2 type CHAR, tabIndex=3;
+Edit key3=formonly.key3 type CHAR, tabIndex=4;
+Edit key4=formonly.key4 type CHAR, tabIndex=5;
+Edit col=formonly.col type CHAR, tabIndex=6, title="Field";
+Edit colname=formonly.colname type CHAR, tabIndex=7, title="Field Name";
+DateEdit date=formonly.date type CHAR, tabIndex=8, title="Transaction Date";
+Edit user=formonly.user type CHAR, tabIndex=9, title="User";
+Edit type=formonly.type type CHAR, tabIndex=10, title="Category";
+Edit old_val=formonly.old_val type CHAR, tabIndex=11, title="Before Update";
+Edit new_val=formonly.new_val type CHAR, tabIndex=12, title="After Update";
+Edit cnt=formonly.cnt type CHAR, tabIndex=13;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_log(formonly.col,formonly.colname,formonly.date,formonly.user,formonly.type,formonly.old_val,formonly.new_val)
+SCREEN RECORD Undefined(formonly.tab,formonly.key1,formonly.key2,formonly.key3,formonly.key4,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

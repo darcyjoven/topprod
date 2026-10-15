@@ -1,0 +1,138 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt1001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglt0011")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+HBox hb2_
+Grid gr2845
+{
+
+  Data Source       [asj08               ]
+  Contra Type       [asj081                    ]
+  Adjustment No.    [asj01               ]
+  Adjustment Date   [asj02       ]
+  Year/Period       [asj0]  [as]
+
+
+
+
+
+
+
+}
+END -- gr2845
+Grid gr2846
+{
+
+ Group Code           [asj05      ]
+ Parent Company       [asj06      ]
+ Book No.             [asj07      ]
+ Curr On Ac           [asg06      ]
+ Memo                 [asj10                         ]
+
+
+
+
+
+
+
+}
+END -- gr2846
+Grid gr2847
+{
+
+ [asj09             ]
+ Confirm            [asjconf       ]
+ [imgmksg]
+ [       ]
+
+
+
+
+
+
+
+
+}
+END -- gr2847
+END -- hb2_
+END -- page01
+Page info(text="Info")
+Grid gr2848
+{
+ Record Owner        [asjuser   ]   Last Modified by    [asjmodu   ]
+ Department          [asjgrup   ]   Create/Modify Date  [asjdate     ]
+}
+END -- gr2848
+END -- info
+END -- folder01
+Table s_ask
+{
+[ask0|ask03       |aag02                                             |ask04                         |ask05            |a1|ask07               ]
+[ask0|ask03       |aag02                                             |ask04                         |ask05            |a1|ask07               ]
+[ask0|ask03       |aag02                                             |ask04                         |ask05            |a1|ask07               ]
+[ask0|ask03       |aag02                                             |ask04                         |ask05            |a1|ask07               ]
+[ask0|ask03       |aag02                                             |ask04                         |ask05            |a1|ask07               ]
+[ask0|ask03       |aag02                                             |ask04                         |ask05            |a1|ask07               ]
+[ask0|ask03       |aag02                                             |ask04                         |ask05            |a1|ask07               ]
+[ask0|ask03       |aag02                                             |ask04                         |ask05            |a1|ask07               ]
+[ask0|ask03       |aag02                                             |ask04                         |ask05            |a1|ask07               ]
+[ask0|ask03       |aag02                                             |ask04                         |ask05            |a1|ask07               ]
+
+}
+END -- s_ask
+Grid gr2849
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------                          Debit Amount        [asj11               ]                     Credit Amount       [asj12               ]
+
+}
+END -- gr2849
+END -- vb1
+END -- gglt1001
+
+TABLES
+ask_file,
+asj_file
+ATTRIBUTES
+ComboBox asj08=asj_file.asj08, tabIndex=5, noEntry, not null, required, queryEditable, items=(("1", "Manually"));
+RadioGroup asj081=asj_file.asj081, tabIndex=6, noEntry, items=(("8", "Assets conversion price"));
+ButtonEdit asj01=asj_file.asj01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Documents";
+DateEdit asj02=asj_file.asj02, tabIndex=2, not null, required;
+Edit asj0=asj_file.asj03, tabIndex=3;
+Edit as=asj_file.asj04, tabIndex=4;
+ButtonEdit asj05=asj_file.asj05, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Query Group Company Data";
+ButtonEdit asj06=asj_file.asj06, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Query Group Upper Company";
+Edit asj07=asj_file.asj07, tabIndex=9, noEntry;
+Edit asg06=formonly.asg06 type CHAR, tabIndex=10, noEntry;
+Edit asj10=asj_file.asj10, tabIndex=11;
+CheckBox asj09=asj_file.asj09, tabIndex=12, text="Adjust Spread", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y:Adjust Spread";
+ComboBox asjconf=asj_file.asjconf, tabIndex=13, noEntry, not null, required, comment="Y:Adjust Spread", items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit asjuser=asj_file.asjuser, tabIndex=14, noEntry;
+Edit asjmodu=asj_file.asjmodu, tabIndex=15, noEntry;
+Edit asjgrup=asj_file.asjgrup, tabIndex=16, noEntry;
+DateEdit asjdate=asj_file.asjdate, tabIndex=17, noEntry;
+Edit ask0=ask_file.ask02, tabIndex=18, title="Ln#", not null, required, comment="<^O>Copy Previous Row Body";
+ButtonEdit ask03=ask_file.ask03, action=controlp, tabIndex=19, title="Account No.", not null, required, image="zoom", comment="<^P>Qry Account # ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=20, title="Account Title", noEntry;
+ButtonEdit ask04=ask_file.ask04, action=controlp, tabIndex=21, title="Memo", image="zoom", comment="<^P>Qry Frequently Used Memo<.####>Dir Access Memo<^O>Copy Prev.Memo";
+Edit ask05=ask_file.ask05, tabIndex=22, title="Affil.(Cust/Ven)";
+ComboBox a1=ask_file.ask06, tabIndex=23, title="1/2", queryEditable, comment=" 1:Debit , 2:Credit", items=(("1", %"Debit"),("2", %"Credit"));
+Edit ask07=formonly.ask07 type INTEGER, tabIndex=24, title="Amount", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=26, noEntry;
+Edit asj11=asj_file.asj11, tabIndex=27, noEntry;
+Edit asj12=asj_file.asj12, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ask(ask_file.ask02,ask_file.ask03,formonly.aag02,ask_file.ask04,ask_file.ask05,ask_file.ask06,formonly.ask07)
+SCREEN RECORD Undefined(asj_file.asj08,asj_file.asj081,asj_file.asj01,asj_file.asj02,asj_file.asj03,asj_file.asj04,asj_file.asj05,asj_file.asj06,asj_file.asj07,formonly.asg06,asj_file.asj10,asj_file.asj09,asj_file.asjconf,formonly.imgmksg,asj_file.asjuser,asj_file.asjmodu,asj_file.asjgrup,asj_file.asjdate,formonly.cnt,formonly.cn2,asj_file.asj11,asj_file.asj12)
+END -- INSTRUCTIONS
+

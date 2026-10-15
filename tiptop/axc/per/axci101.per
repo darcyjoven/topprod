@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci101")
+Folder pc350
+Page page01(text="Main")
+Table s_cxi
+{
+[cxi01           |gem02           |cxi02       |azf03           |cxi03    |cxi04                   |aag02                                             |cxi041                  |aag021                                            |cxi05                   |gem02_5         ]
+[cxi01           |gem02           |cxi02       |azf03           |cxi03    |cxi04                   |aag02                                             |cxi041                  |aag021                                            |cxi05                   |gem02_5         ]
+[cxi01           |gem02           |cxi02       |azf03           |cxi03    |cxi04                   |aag02                                             |cxi041                  |aag021                                            |cxi05                   |gem02_5         ]
+[cxi01           |gem02           |cxi02       |azf03           |cxi03    |cxi04                   |aag02                                             |cxi041                  |aag021                                            |cxi05                   |gem02_5         ]
+[cxi01           |gem02           |cxi02       |azf03           |cxi03    |cxi04                   |aag02                                             |cxi041                  |aag021                                            |cxi05                   |gem02_5         ]
+[cxi01           |gem02           |cxi02       |azf03           |cxi03    |cxi04                   |aag02                                             |cxi041                  |aag021                                            |cxi05                   |gem02_5         ]
+[cxi01           |gem02           |cxi02       |azf03           |cxi03    |cxi04                   |aag02                                             |cxi041                  |aag021                                            |cxi05                   |gem02_5         ]
+[cxi01           |gem02           |cxi02       |azf03           |cxi03    |cxi04                   |aag02                                             |cxi041                  |aag021                                            |cxi05                   |gem02_5         ]
+[cxi01           |gem02           |cxi02       |azf03           |cxi03    |cxi04                   |aag02                                             |cxi041                  |aag021                                            |cxi05                   |gem02_5         ]
+[cxi01           |gem02           |cxi02       |azf03           |cxi03    |cxi04                   |aag02                                             |cxi041                  |aag021                                            |cxi05                   |gem02_5         ]
+
+}
+END -- s_cxi
+END -- page01
+Page info(text="Info")
+Grid gr1457
+{
+ <G grpinfo                            >
+  Data Detail Counts  [cnt       ]
+ <                                     >
+
+}
+END -- gr1457
+END -- info
+END -- pc350
+END -- axci101
+
+TABLES
+cxi_file
+ATTRIBUTES
+ButtonEdit cxi01=cxi_file.cxi01, action=controlp, tabIndex=1, title="Department Code", not null, required, image="zoom", comment="<^P>Qry Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=2, title="Department Name", noEntry;
+ButtonEdit cxi02=cxi_file.cxi02, action=controlp, tabIndex=3, title="Reason Code", not null, required, image="zoom", comment="<^P>Qry Reason Code";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=4, title="Description", noEntry;
+ComboBox cxi03=cxi_file.cxi03, tabIndex=5, title="Doc Cls.", not null, required, items=(("1", "Misc Receipt"),("2", "Misc Issue"),("3", "No Type"),("4", "Combination"),("5", "Dismantle"));
+ButtonEdit cxi04=cxi_file.cxi04, action=controlp, tabIndex=6, title="Account Code", not null, required, image="zoom", comment="<^P>Qry Account";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=7, title="Account Name", noEntry;
+ButtonEdit cxi041=cxi_file.cxi041, action=controlp, tabIndex=8, title="Account Code 2", not null, required, image="zoom", comment="<^P>Qry Account";
+Edit aag021=formonly.aag021 type CHAR, tabIndex=9, title="Account Name 2", noEntry;
+ButtonEdit cxi05=cxi_file.cxi05, action=controlp, tabIndex=10, title="Department Code Of Cost", not null, required, image="zoom", comment="<^P>Qry Department";
+Edit gem02_5=formonly.gem02_5 type CHAR, tabIndex=11, title="Department Name", noEntry;
+Group grpinfo:grpinfo;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cxi(cxi_file.cxi01,formonly.gem02,cxi_file.cxi02,formonly.azf03,cxi_file.cxi03,cxi_file.cxi04,formonly.aag02,cxi_file.cxi041,formonly.aag021,cxi_file.cxi05,formonly.gem02_5)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

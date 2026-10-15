@@ -1,0 +1,182 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdt204.per created Wed Jan 23 05:30:47 2008
+-- File created from axdt204.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdt204")
+-- GRID
+-- GRID
+-- HBOX
+-- GRID
+-- GRID
+-- HBOX
+-- VBOX
+-- PAGE
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        VBOX 
+          HBOX 
+            GRID gr7875
+            {
+            <G group01                                        >
+             Dispatch No      [aa0               ]
+             Date             [aa1       ]
+             Dispatch Reasons [aa2       ]
+             Leave DD/TT      [aa3       ][aa4       ]
+             Est Rt DD/TT     [aa5       ][aa6       ]
+             Memo             [aa7                           ]
+            <                                                 >
+
+
+            }
+            END -- GRID
+            GRID gr7876
+            {
+            <G group02                                        >
+             Person of Dispatch [aa8       ][aa9       ]
+             Department         [ab0       ][ab1       ]
+
+             Trsf Flow          [ab2       ]
+            <                                                 >
+
+
+
+
+            }
+            END -- GRID
+          END -- HBOX
+          HBOX 
+            GRID gr7877
+            {
+            <G group04                                        >
+             Vehicle No.      [ab3       ]
+             Driver           [ab4       ][ab5       ]
+             Accompanyist     [ab6       ][ab7       ]
+                              [ab8       ][ab9       ]
+                              [ac0       ][ac1       ]
+            <                                                 >
+
+
+            }
+            END -- GRID
+            GRID gr7878
+            {
+            <G group03                                            >
+             Status             [ac2       ][ac3       ][ac4    ]
+                                [ac5       ][ac6       ][       ]
+                                [ac7       ]
+            <                                                     >
+
+
+
+
+            }
+            END -- GRID
+          END -- HBOX
+        END -- VBOX
+      END -- PAGE
+      PAGE info( TEXT="Info")
+        GRID gr7879
+        {
+         Record Owner        [ac8       ]   Last Modified by    [ac9       ]   Data Valid Code     [ad0       ]
+         Department          [ad1       ]   Create/Modify Date  [ad2       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_adl
+    {
+    [ad3       |ad4               |ad5       |ad6        |ad7                     |ad8                |ad9                 |ae0                 |ae1                       |ae2    |ae3                 |ae4    ]
+    [ad3       |ad4               |ad5       |ad6        |ad7                     |ad8                |ad9                 |ae0                 |ae1                       |ae2    |ae3                 |ae4    ]
+    [ad3       |ad4               |ad5       |ad6        |ad7                     |ad8                |ad9                 |ae0                 |ae1                       |ae2    |ae3                 |ae4    ]
+    [ad3       |ad4               |ad5       |ad6        |ad7                     |ad8                |ad9                 |ae0                 |ae1                       |ae2    |ae3                 |ae4    ]
+    [ad3       |ad4               |ad5       |ad6        |ad7                     |ad8                |ad9                 |ae0                 |ae1                       |ae2    |ae3                 |ae4    ]
+    [ad3       |ad4               |ad5       |ad6        |ad7                     |ad8                |ad9                 |ae0                 |ae1                       |ae2    |ae3                 |ae4    ]
+    [ad3       |ad4               |ad5       |ad6        |ad7                     |ad8                |ad9                 |ae0                 |ae1                       |ae2    |ae3                 |ae4    ]
+    [ad3       |ad4               |ad5       |ad6        |ad7                     |ad8                |ad9                 |ae0                 |ae1                       |ae2    |ae3                 |ae4    ]
+    [ad3       |ad4               |ad5       |ad6        |ad7                     |ad8                |ad9                 |ae0                 |ae1                       |ae2    |ae3                 |ae4    ]
+    [ad3       |ad4               |ad5       |ad6        |ad7                     |ad8                |ad9                 |ae0                 |ae1                       |ae2    |ae3                 |ae4    ]
+    }
+    END -- TABLE
+    GRID gr7880
+    {
+     ---------- Rows [ae5   ] / [ae6   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adk_file,adl_file
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  BUTTONEDIT aa0=adk_file.adk01, ACTION=controlp, COMMENT="KEY Field, No Blank/Repeated!,<^P>Qry Dispatch No.", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=1;
+  DATEEDIT aa1=adk_file.adk02, TABINDEX=2;
+  BUTTONEDIT aa2=adk_file.adk03, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=3;
+  EDIT aa3=adk_file.adk04, NOT NULL, REQUIRED, TABINDEX=4;
+  EDIT aa4=adk_file.adk05, NOT NULL, REQUIRED, TABINDEX=5;
+  EDIT aa5=adk_file.adk06, TABINDEX=6;
+  EDIT aa6=adk_file.adk07, TABINDEX=7;
+  EDIT aa7=adk_file.adk16, TABINDEX=8;
+  GROUP group02 : group02;
+  BUTTONEDIT aa8=adk_file.adk13, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=9;
+  EDIT aa9=FORMONLY.gen02, NOENTRY, TABINDEX=10;
+  BUTTONEDIT ab0=adk_file.adk14, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=11;
+  EDIT ab1=FORMONLY.gem02, NOENTRY, TABINDEX=12;
+  BUTTONEDIT ab2=adk_file.adk15, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", TABINDEX=13;
+  GROUP group04 : group04;
+  BUTTONEDIT ab3=adk_file.adk08, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=14;
+  BUTTONEDIT ab4=adk_file.adk09, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=15;
+  EDIT ab5=FORMONLY.gen02a, NOENTRY, TABINDEX=16;
+  BUTTONEDIT ab6=adk_file.adk10, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", TABINDEX=17;
+  EDIT ab7=FORMONLY.gen02b, NOENTRY, TABINDEX=18;
+  BUTTONEDIT ab8=adk_file.adk11, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", TABINDEX=19;
+  EDIT ab9=FORMONLY.gen02c, NOENTRY, TABINDEX=20;
+  BUTTONEDIT ac0=adk_file.adk12, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", TABINDEX=21;
+  EDIT ac1=FORMONLY.gen02d, NOENTRY, TABINDEX=22;
+  GROUP group03 : group03;
+  EDIT ac2=adk_file.adk17, NOENTRY, TABINDEX=23;
+  EDIT ac3=FORMONLY.desc, NOENTRY, TABINDEX=24;
+  IMAGE ac4=FORMONLY.imgmksg, AUTOSCALE, WIDTH=7 CHARACTERS, HEIGHT=2 CHARACTERS;
+  CHECKBOX ac5=adk_file.adkmksg, TEXT="Approve", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=26;
+  EDIT ac6=adk_file.adksign, NOENTRY, TABINDEX=27;
+  CHECKBOX ac7=adk_file.adkconf, TEXT="Confirm", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=28;
+  EDIT ac8=adk_file.adkuser, NOENTRY, TABINDEX=29;
+  EDIT ac9=adk_file.adkmodu, NOENTRY, TABINDEX=30;
+  EDIT ad0=adk_file.adkacti, NOENTRY, UPSHIFT, TABINDEX=31;
+  EDIT ad1=adk_file.adkgrup, NOENTRY, TABINDEX=32;
+  EDIT ad2=adk_file.adkdate, NOENTRY, TABINDEX=33;
+  EDIT ad3=adl_file.adl02, NOT NULL, REQUIRED, TABINDEX=34, TITLE="Line No";
+  BUTTONEDIT ad4=adl_file.adl03, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=35, TITLE="Transfer-Out No";
+  EDIT ad5=adl_file.adl04, NOT NULL, REQUIRED, TABINDEX=36, TITLE="Line No";
+  EDIT ad6=FORMONLY.adg09, NOENTRY, TABINDEX=37, TITLE="In-Plant";
+  EDIT ad7=FORMONLY.adg10, NOENTRY, TABINDEX=38, TITLE="Transfer-in Warehouse";
+  EDIT ad8=adl_file.adl05, TABINDEX=39, TITLE="Transfer-Out Qty";
+  EDIT ad9=FORMONLY.adg11, NOENTRY, TABINDEX=40, TITLE="Transfer-Out Unit";
+  EDIT ae0=adl_file.adl06, TABINDEX=41, TITLE="Piece";
+  EDIT ae1=adl_file.adl07, TABINDEX=42, TITLE="Estimative Arrival Date";
+  EDIT ae2=adl_file.adl08, TABINDEX=43, TITLE="Time";
+  EDIT ae3=adl_file.adl09, TABINDEX=44, TITLE="Real Arrival Date";
+  EDIT ae4=adl_file.adl10, TABINDEX=45, TITLE="Time";
+  EDIT ae5=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=46;
+  EDIT ae6=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=47;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adl (adl_file.adl02, adl_file.adl03, adl_file.adl04, FORMONLY.adg09, FORMONLY.adg10, adl_file.adl05, FORMONLY.adg11, adl_file.adl06, adl_file.adl07, adl_file.adl08, adl_file.adl09, adl_file.adl10)
+END

@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi553.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"almi553")
+VBox vb7
+Folder pc6
+Page main(text=%"Main")
+Table s_lni
+{
+[lniplant|azp02   |lni04           |azp02_1       |lni08   |lni07   |oba02   |lni13   ]
+[lniplant|azp02   |lni04           |azp02_1       |lni08   |lni07   |oba02   |lni13   ]
+[lniplant|azp02   |lni04           |azp02_1       |lni08   |lni07   |oba02   |lni13   ]
+[lniplant|azp02   |lni04           |azp02_1       |lni08   |lni07   |oba02   |lni13   ]
+[lniplant|azp02   |lni04           |azp02_1       |lni08   |lni07   |oba02   |lni13   ]
+
+}
+END -- s_lni
+END -- main
+END -- pc6
+Grid gr2
+{
+ ----------Rows[cn2   ]----------
+
+}
+END -- gr2
+END -- vb7
+END -- Form6
+
+TABLES
+lni_file
+ATTRIBUTES
+Edit lniplant=lni_file.lniplant, tabIndex=1, title="lniplant", noEntry;
+Edit azp02=formonly.azp02 type CHAR, tabIndex=2, title="azp02", noEntry;
+ButtonEdit lni04=lni_file.lni04, action=controlp, tabIndex=3, title="lni04", not null, required, image="zoom.png";
+Edit azp02_1=formonly.azp02_1 type CHAR, tabIndex=4, title="azp02_1", noEntry;
+ButtonEdit lni08=lni_file.lni08, action=controlp, tabIndex=5, title="lni08", image="zoom.png";
+Edit lni07=lni_file.lni07, tabIndex=6, title="lni07", noEntry;
+Edit oba02=formonly.oba02 type CHAR, tabIndex=7, title="oba02", noEntry;
+CheckBox lni13=lni_file.lni13, tabIndex=8, title="lni13", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lni(lni_file.lniplant,formonly.azp02,lni_file.lni04,formonly.azp02_1,lni_file.lni08,lni_file.lni07,formonly.oba02,lni_file.lni13)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

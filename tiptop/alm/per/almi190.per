@@ -1,0 +1,58 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/alm/4fd/almi190.tmp.per created 2010-10-12T06:28:32
+-- File created from /u3/tiptop/alm/4fd/almi190.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almi190")
+                                                                                                                                                 
+ Folder pc13                                                                                                                                     
+ Page Main(text=%"Main")                                                                                                                         
+  VBox vb10                                                                                                                                      
+  Table s_lmk                                                                                                                                    
+  {                                                                                                                                              
+  [lmk01   |lmk02   |lmk03   |lmj02   |lmk04   |lmi02   |lmk05   ]                                                                               
+  [lmk01   |lmk02   |lmk03   |lmj02   |lmk04   |lmi02   |lmk05   ]                                                                               
+  [lmk01   |lmk02   |lmk03   |lmj02   |lmk04   |lmi02   |lmk05   ]                                                                               
+  [lmk01   |lmk02   |lmk03   |lmj02   |lmk04   |lmi02   |lmk05   ]                                                                               
+  [lmk01   |lmk02   |lmk03   |lmj02   |lmk04   |lmi02   |lmk05   ]                                                                               
+  }                                                                                                                                              
+  END -- Table                                                                                                                                   
+  Grid gr11                                                                                                                                      
+  {                                                                                                                                              
+   ----------Rows[cn2   ]----------                                                                                                              
+                                                                                                                                                 
+                                                                                                                                                 
+  }                                                                                                                                              
+  END                                                                                                                                            
+  END -- VBox                                                                                                                                    
+ END -- Page                                                                                                                                     
+ END -- Folder                                                                                                                                   
+                                                                                                                                                 
+                                                                                                                                                 
+END -- Form
+
+TABLES
+lmk_file
+
+ATTRIBUTES
+ButtonEdit lmk01=lmk_file.lmk01, action=controlp, tabIndex=1, title="lmk01", not null, required, image="zoom.png";
+Edit lmk02=lmk_file.lmk02, tabIndex=2, title="lmk02";
+ButtonEdit lmk03=lmk_file.lmk03, action=controlp, tabIndex=3, title="lmk03", not null, required, image="zoom.png";
+Edit lmj02=formonly.lmj02 type VARCHAR, tabIndex=4, title="lmj02", noEntry;
+ButtonEdit lmk04=lmk_file.lmk04, action=controlp, tabIndex=8, title="lmk04", noEntry, image="zoom.png";
+Edit lmi02=formonly.lmi02 type VARCHAR, tabIndex=7, title="lmi02", noEntry;
+CheckBox lmk05=lmk_file.lmk05, tabIndex=5, title="lmk05", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lmk(lmk_file.lmk01, lmk_file.lmk02, lmk_file.lmk03, formonly.lmj02, lmk_file.lmk04, formonly.lmi02, lmk_file.lmk05)
+END -- INSTRUCTIONS
+

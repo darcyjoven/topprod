@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acor308.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"acor308")
+VBox VBox1
+Grid gr1425
+{
+ <G grpqbe                                             >
+  Customs Declaration No. [cno06               ]
+  Goods No.               [cnp03               ]
+ <                                                     >
+
+}
+END -- gr1425
+Group group01
+Grid gr1426
+{
+[a                                      ]
+
+}
+END -- gr1426
+END -- group01
+Grid gr1427
+{
+[more                                        ]
+
+}
+END -- gr1427
+END -- VBox1
+END -- acor308
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+Edit cno06=formonly.cno06 type CHAR, tabIndex=1;
+Edit cnp03=formonly.cnp03 type CHAR, tabIndex=2;
+RadioGroup a=formonly.a type CHAR, tabIndex=3, items=(("1", "Carry forward"),("2", "Transfer"),("3", "All"));
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cno06,formonly.cnp03,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

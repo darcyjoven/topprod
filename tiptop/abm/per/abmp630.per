@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp630.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmp630")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr865
+{
+
+ Configuration Item No. [g_cpart             ]
+                        [ima02                         ]
+ FAS Product No.        [g_fasno             ]
+ Alternate Code         [g_bma06             ]
+ BOM Expiry Date        [g_date      ]
+
+}
+END -- gr865
+END -- page01
+END -- folder01
+Table s_bmb
+{
+[bmb02    |bmb03                |ma02                     |bmb06    |bmb1]
+[bmb02    |bmb03                |ma02                     |bmb06    |bmb1]
+[bmb02    |bmb03                |ma02                     |bmb06    |bmb1]
+[bmb02    |bmb03                |ma02                     |bmb06    |bmb1]
+[bmb02    |bmb03                |ma02                     |bmb06    |bmb1]
+[bmb02    |bmb03                |ma02                     |bmb06    |bmb1]
+[bmb02    |bmb03                |ma02                     |bmb06    |bmb1]
+[bmb02    |bmb03                |ma02                     |bmb06    |bmb1]
+[bmb02    |bmb03                |ma02                     |bmb06    |bmb1]
+[bmb02    |bmb03                |ma02                     |bmb06    |bmb1]
+
+}
+END -- s_bmb
+END -- VBox1
+END -- abmp630
+
+TABLES
+bmb_file
+ATTRIBUTES
+ButtonEdit g_cpart=formonly.g_cpart type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Items ";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit g_fasno=formonly.g_fasno type CHAR, tabIndex=3;
+Edit g_bma06=formonly.g_bma06 type CHAR, tabIndex=4;
+DateEdit g_date=formonly.g_date type DATE, tabIndex=5;
+Edit bmb02=bmb_file.bmb02, tabIndex=6, title="Sequence", comment="No Blank/Repeated, ^PRe-Select Combination Product";
+Edit bmb03=bmb_file.bmb03, tabIndex=7, title="FAS Component No.", comment="^PQry Item Master ";
+Edit ma02=formonly.ma02 type CHAR, tabIndex=8, title="Part Name", noEntry;
+Edit bmb06=bmb_file.bmb06, tabIndex=9, title="Unit Qty";
+Edit bmb1=bmb_file.bmb10, tabIndex=10, title="Unit";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmb(bmb_file.bmb02,bmb_file.bmb03,formonly.ma02,bmb_file.bmb06,bmb_file.bmb10)
+SCREEN RECORD Undefined(formonly.g_cpart,formonly.ima02,formonly.g_fasno,formonly.g_bma06,formonly.g_date)
+END -- INSTRUCTIONS
+

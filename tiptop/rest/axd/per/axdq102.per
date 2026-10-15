@@ -1,0 +1,75 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdq102.per created Wed Jan 23 05:30:36 2008
+-- File created from axdq102.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdq102")
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        GRID gr7792
+        {
+         Item No.            [aa0                 ][aa1                 ]
+         Lot No.             [aa2                 ]
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_adp
+    {
+    [aa3             |aa4          |aa5     |aa6              |aa7              |aa8                ]
+    [aa3             |aa4          |aa5     |aa6              |aa7              |aa8                ]
+    [aa3             |aa4          |aa5     |aa6              |aa7              |aa8                ]
+    [aa3             |aa4          |aa5     |aa6              |aa7              |aa8                ]
+    [aa3             |aa4          |aa5     |aa6              |aa7              |aa8                ]
+    [aa3             |aa4          |aa5     |aa6              |aa7              |aa8                ]
+    [aa3             |aa4          |aa5     |aa6              |aa7              |aa8                ]
+    [aa3             |aa4          |aa5     |aa6              |aa7              |aa8                ]
+    [aa3             |aa4          |aa5     |aa6              |aa7              |aa8                ]
+    [aa3             |aa4          |aa5     |aa6              |aa7              |aa8                ]
+    }
+    END -- TABLE
+    GRID gr7793
+    {
+     [aa9    ] ["                                   "][ab0              ]
+     ---------- Rows [ab1   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adp_file
+
+ATTRIBUTES
+  EDIT aa0=adp_file.adp02, COMMENT="Enter Goods No.", TABINDEX=1;
+  EDIT aa1=FORMONLY.ima02, NOENTRY, TABINDEX=2;
+  EDIT aa2=adp_file.adp03, TABINDEX=3;
+  EDIT aa3=adp_file.adp01, TABINDEX=4, TITLE="Customer No.";
+  EDIT aa4=FORMONLY.occ02, NOENTRY, TABINDEX=5, TITLE="Abbreviate";
+  EDIT aa5=adp_file.adp04, TABINDEX=6, TITLE="Unit";
+  EDIT aa6=adp_file.adp05, TABINDEX=7, TITLE="Inventory Qty";
+  DATEEDIT aa7=adp_file.adp06, TABINDEX=8, TITLE="Effective Date";
+  DATEEDIT aa8=adp_file.adp07, TABINDEX=9, TITLE="First Store-in Date";
+  LABEL aa9:dummy01, TEXT="Total :";
+  EDIT ab0=FORMONLY.tot, NOENTRY, TABINDEX=10;
+  EDIT ab1=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=11;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adp (adp_file.adp01, FORMONLY.occ02, adp_file.adp04, adp_file.adp05, adp_file.adp06, adp_file.adp07)
+END

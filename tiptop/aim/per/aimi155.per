@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi155.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi155")
+VBox VBox1
+Folder pc552
+Page page01(text="Page01")
+Grid gr3036
+{
+ <G group01                                           ><G group04                                 >
+  Apply Type          [imaa00     ]                     Inv Unit            [imaa25     ]
+  Apply No.           [imaano                        ]  Menu No.            [imaa03               ]
+  Item No.            [imaa01                        ]  Current Status      [imaa1010    ][imgmksg]
+  Part Name           [imaa02                        ]  [imaa92                          ][       ]
+  Src Cd              [imaa08    ]
+ <                                                    ><                                          >
+ <G group02                                                                                       >
+  Cost Center            [imaa34    ][gem02                         ]
+  Account                [imaa39                  ]
+  Cost Group             [imaa12    ]
+ <                                                                                                >
+ <G group03                                                                                       >
+  Direct material Cost Items            [imaa87    ][smg02_1                       ]
+  Indirect Material Apportionment Ratio [imaa871   ]
+  Cost Items                            [imaa872   ][smg02_2                       ]
+  Indirect labor Apportionment Ratio    [imaa873   ]
+  Cost Items                            [imaa874   ][smg02_3                       ]
+
+ <                                                                                                >
+
+}
+END -- gr3036
+END -- page01
+Page info(text="Info")
+Grid gr3037
+{
+ Record Owner        [imaauser  ] Last Modified by    [imaamodu  ] Data Valid Code     [imaaacti  ]
+ Department          [imaagrup  ] Create/Modify Date  [imaadate  ]
+ Record Orig.        [imaaoriu  ]
+ Dept Orig.          [imaaorig  ]
+}
+END -- gr3037
+END -- info
+END -- pc552
+Grid gr3038
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3038
+END -- VBox1
+END -- aimi155
+
+TABLES
+imaa_file
+ATTRIBUTES
+Group group01:group01;
+ComboBox imaa00=imaa_file.imaa00, tabIndex=1, noEntry, not null, required, queryEditable, items=(("I", "Insert"),("U", "Update"));
+ButtonEdit imaano=imaa_file.imaano, action=controlp, tabIndex=2, noEntry, not null, required, image="zoom", comment="<^P>Qry Documents";
+Edit imaa01=imaa_file.imaa01, tabIndex=3, not null, required, comment="Assign Item No. to Query   (QBE)                                 ";
+Edit imaa02=imaa_file.imaa02, tabIndex=4, noEntry;
+Edit imaa08=imaa_file.imaa08, tabIndex=5, noEntry;
+Group group04:group04;
+Edit imaa25=imaa_file.imaa25, tabIndex=6, noEntry;
+Edit imaa03=imaa_file.imaa03, tabIndex=7, noEntry;
+ComboBox imaa1010=imaa_file.imaa1010, tabIndex=8, noEntry, not null, required, items=(("0", "Issue"),("1", "Approved"),("2", "Carried"),("S", "Approving"),("R", "Approval rejected!"),("W", "Withdraw"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+CheckBox imaa92=imaa_file.imaa92, tabIndex=10, text="Approve?", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02;
+ButtonEdit imaa34=imaa_file.imaa34, action=controlp, tabIndex=11, image="zoom", comment="<^P> Qry Cost center     <^Y> Create Cost Center";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=12, noEntry;
+ButtonEdit imaa39=imaa_file.imaa39, action=controlp, tabIndex=13, image="zoom", comment="<^P> Qry Account      ";
+ButtonEdit imaa12=imaa_file.imaa12, action=controlp, tabIndex=14, image="zoom", comment="<^P> Qry Group Code   <^U> Qry Item with other Group Code  <^Y> Create Grouping Code";
+Group group03:group03;
+ButtonEdit imaa87=imaa_file.imaa87, action=controlp, tabIndex=15, image="zoom", comment="<^P> Qry Cost Items      <^Y> Create Cost Items";
+Edit smg02_1=formonly.smg02_1 type VARCHAR, tabIndex=16, noEntry;
+Edit imaa871=imaa_file.imaa871, tabIndex=17, not null, required;
+ButtonEdit imaa872=imaa_file.imaa872, action=controlp, tabIndex=18, image="zoom", comment="<^P> Qry Cost Items      <^Y> Create Cost Items";
+Edit smg02_2=formonly.smg02_2 type VARCHAR, tabIndex=19, noEntry;
+Edit imaa873=imaa_file.imaa873, tabIndex=20, not null, required;
+ButtonEdit imaa874=imaa_file.imaa874, action=controlp, tabIndex=21, image="zoom", comment="<^P> Qry Cost Items      <^Y> Create Cost Items";
+Edit smg02_3=formonly.smg02_3 type VARCHAR, tabIndex=22, noEntry;
+Edit imaauser=imaa_file.imaauser, tabIndex=23, noEntry;
+Edit imaamodu=imaa_file.imaamodu, tabIndex=24, noEntry;
+Edit imaaacti=imaa_file.imaaacti, tabIndex=25, noEntry, upShift;
+Edit imaagrup=imaa_file.imaagrup, tabIndex=26, noEntry;
+DateEdit imaadate=imaa_file.imaadate, tabIndex=27, noEntry;
+Edit imaaoriu=imaa_file.imaaoriu, tabIndex=501, noEntry;
+Edit imaaorig=imaa_file.imaaorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(imaa_file.imaa00,imaa_file.imaano,imaa_file.imaa01,imaa_file.imaa02,imaa_file.imaa08,imaa_file.imaa25,imaa_file.imaa03,imaa_file.imaa1010,formonly.imgmksg,imaa_file.imaa92,imaa_file.imaa34,formonly.gem02,imaa_file.imaa39,imaa_file.imaa12,imaa_file.imaa87,formonly.smg02_1,imaa_file.imaa871,imaa_file.imaa872,formonly.smg02_2,imaa_file.imaa873,imaa_file.imaa874,formonly.smg02_3,imaa_file.imaauser,imaa_file.imaamodu,imaa_file.imaaacti,imaa_file.imaagrup,imaa_file.imaadate,imaa_file.imaaoriu,imaa_file.imaaorig,formonly.cnt)
+END -- INSTRUCTIONS
+

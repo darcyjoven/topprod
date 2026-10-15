@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csub/4fd/cs_fifo.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"cl_show_array")
+VBox VBox1
+Grid Grid1
+{
+  [fifo_title                        ]                                                                    [fifo_out    ]
+
+
+
+
+}
+END -- Grid1
+Table s_fifo_img
+{
+[fifo_img|fifo_img01        |fifo_ima02  |fifo_ima021              |fifo_img02       |fifo_img03      |fifo_img04       |fifo_img09 |fifo_img10    |fifo_img18     ]
+[fifo_img|fifo_img01        |fifo_ima02  |fifo_ima021              |fifo_img02       |fifo_img03      |fifo_img04       |fifo_img09 |fifo_img10    |fifo_img18     ]
+[fifo_img|fifo_img01        |fifo_ima02  |fifo_ima021              |fifo_img02       |fifo_img03      |fifo_img04       |fifo_img09 |fifo_img10    |fifo_img18     ]
+[fifo_img|fifo_img01        |fifo_ima02  |fifo_ima021              |fifo_img02       |fifo_img03      |fifo_img04       |fifo_img09 |fifo_img10    |fifo_img18     ]
+[fifo_img|fifo_img01        |fifo_ima02  |fifo_ima021              |fifo_img02       |fifo_img03      |fifo_img04       |fifo_img09 |fifo_img10    |fifo_img18     ]
+[fifo_img|fifo_img01        |fifo_ima02  |fifo_ima021              |fifo_img02       |fifo_img03      |fifo_img04       |fifo_img09 |fifo_img10    |fifo_img18     ]
+[fifo_img|fifo_img01        |fifo_ima02  |fifo_ima021              |fifo_img02       |fifo_img03      |fifo_img04       |fifo_img09 |fifo_img10    |fifo_img18     ]
+[fifo_img|fifo_img01        |fifo_ima02  |fifo_ima021              |fifo_img02       |fifo_img03      |fifo_img04       |fifo_img09 |fifo_img10    |fifo_img18     ]
+[fifo_img|fifo_img01        |fifo_ima02  |fifo_ima021              |fifo_img02       |fifo_img03      |fifo_img04       |fifo_img09 |fifo_img10    |fifo_img18     ]
+[fifo_img|fifo_img01        |fifo_ima02  |fifo_ima021              |fifo_img02       |fifo_img03      |fifo_img04       |fifo_img09 |fifo_img10    |fifo_img18     ]
+}
+END -- s_fifo_img
+Grid gr3707
+{
+ Rows [fifo_cnt ]
+
+}
+END -- gr3707
+END -- VBox1
+END -- cs_fifo
+
+ATTRIBUTES
+LABEL fifo_title=formonly.fifo_title;
+Button fifo_out:fifo_out, tabIndex=12, text=%"excelout", image="", comment=%"Exit";
+CheckBox fifo_img=formonly.fifo_imgcheck, tabIndex=1, title=%"imgcheck", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit fifo_img01=formonly.fifo_img01 type CHAR, tabIndex=2, title="img01", noEntry, scroll;
+Edit fifo_ima02=formonly.fifo_ima02 type VARCHAR, tabIndex=3, title="ima02", noEntry, scroll;
+Edit fifo_ima021=formonly.fifo_ima021 type VARCHAR, tabIndex=4, title="ima021", noEntry, scroll;
+Edit fifo_img02=formonly.fifo_img02 type VARCHAR, tabIndex=5, title="img02", noEntry, scroll;
+Edit fifo_img03=formonly.fifo_img03 type VARCHAR, tabIndex=6, title="img03", noEntry, scroll;
+Edit fifo_img04=formonly.fifo_img04 type VARCHAR, tabIndex=7, title="img04", noEntry, scroll;
+Edit fifo_img09=formonly.fifo_img09, tabIndex=8, title=%"img09";
+Edit fifo_img10=formonly.fifo_img10 type DECIMAL, tabIndex=9, title="img10", noEntry, scroll;
+DateEdit fifo_img18=formonly.fifo_img18 type DATE, tabIndex=10, title="img18", noEntry;
+Edit fifo_cnt=formonly.fifo_cnt type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fifo_img(formonly.fifo_imgcheck,formonly.fifo_img01,formonly.fifo_ima02,formonly.fifo_ima021,formonly.fifo_img02,formonly.fifo_img03,formonly.fifo_img04,formonly.fifo_img09,formonly.fifo_img10,formonly.fifo_img18)
+SCREEN RECORD Undefined(formonly.fifo_cnt,formonly.fifo_title)
+END -- INSTRUCTIONS
+

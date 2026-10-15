@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/udmenu2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"User-Define Menu(udmenu1)")
+Folder pc692
+Page Page1025(text="User-Define Menu(udmenu1)")
+Grid gr3010
+{
+ [logo                ]
+ [zz01h     ][zz02h                                   ][level     ]
+
+ <G group01                                                                     >
+ [a1][m1                              ]  [b3][n3                              ]
+ [a2][m2                              ]  [b4][n4                              ]
+ [a3][m3                              ]  [b5][n5                              ]
+ [a4][m4                              ]  [b6][n6                              ]
+ [a5][m5                              ]  [b7][n7                              ]
+ [a6][m6                              ]  [b8][n8                              ]
+ [a7][m7                              ]  [b9][n9                              ]
+ [a8][m8                              ]  [b0][n0                              ]
+ [a9][m9                              ]  [c1][p1                              ]
+ [a0][m0                              ]  [c2][p2                              ]
+ [b1][n1                              ]  [c3][p3                              ]
+ [b2][n2                              ]  [c4][p4                              ]
+ <                                                                              >
+ <G group02                                                                     >
+ [path                          ]
+ [exit      ]
+  Enter Option (0.End ) or BY Button Active [l_ans     ]
+ <                                                                              >
+
+}
+END -- gr3010
+END -- Page1025
+Page Page1026(text="Info")
+Grid gr3011
+{
+ <G grpinfo                                  >
+  Detail Counts       [cnt       ]
+ <                                           >
+
+}
+END -- gr3011
+END -- Page1026
+END -- pc692
+END -- udmenu2
+
+ATTRIBUTES
+Button logo:logo, text="logo.bmp F35";
+Edit zz01h=formonly.zz01h type VARCHAR, tabIndex=1;
+Edit zz02h=formonly.zz02h type VARCHAR, tabIndex=2;
+Edit level=formonly.level type SMALLINT, tabIndex=3;
+Group group01:group01;
+Edit a1=formonly.a1 type CHAR, tabIndex=4, noEntry;
+Button m1:m1, text="F1";
+Edit b3=formonly.b3 type CHAR, tabIndex=5, noEntry;
+Button n3:n3, text="F13";
+Edit a2=formonly.a2 type CHAR, tabIndex=6, noEntry;
+Button m2:m2, text="F2";
+Edit b4=formonly.b4 type CHAR, tabIndex=7, noEntry;
+Button n4:n4, text="F14";
+Edit a3=formonly.a3 type CHAR, tabIndex=8, noEntry;
+Button m3:m3, text="F33";
+Edit b5=formonly.b5 type CHAR, tabIndex=9, noEntry;
+Button n5:n5, text="F15";
+Edit a4=formonly.a4 type CHAR, tabIndex=10, noEntry;
+Button m4:m4, text="F34";
+Edit b6=formonly.b6 type CHAR, tabIndex=11, noEntry;
+Button n6:n6, text="F16";
+Edit a5=formonly.a5 type CHAR, tabIndex=12, noEntry;
+Button m5:m5, text="F5";
+Edit b7=formonly.b7 type CHAR, tabIndex=13, noEntry;
+Button n7:n7, text="F17";
+Edit a6=formonly.a6 type CHAR, tabIndex=14, noEntry;
+Button m6:m6, text="F6";
+Edit b8=formonly.b8 type CHAR, tabIndex=15, noEntry;
+Button n8:n8, text="F18";
+Edit a7=formonly.a7 type CHAR, tabIndex=16, noEntry;
+Button m7:m7, text="F7";
+Edit b9=formonly.b9 type CHAR, tabIndex=17, noEntry;
+Button n9:n9, text="F19";
+Edit a8=formonly.a8 type CHAR, tabIndex=18, noEntry;
+Button m8:m8, text="F8";
+Edit b0=formonly.b0 type CHAR, tabIndex=19, noEntry;
+Button n0:n0, text="F20";
+Edit a9=formonly.a9 type CHAR, tabIndex=20, noEntry;
+Button m9:m9, text="F9";
+Edit c1=formonly.c1 type CHAR, tabIndex=21, noEntry;
+Button p1:p1, text="F21";
+Edit a0=formonly.a0 type CHAR, tabIndex=22, noEntry;
+Button m0:m0, text="F10";
+Edit c2=formonly.c2 type CHAR, tabIndex=23, noEntry;
+Button p2:p2, text="F22";
+Edit b1=formonly.b1 type CHAR, tabIndex=24, noEntry;
+Button n1:n1, text="F11";
+Edit c3=formonly.c3 type CHAR, tabIndex=25, noEntry;
+Button p3:p3, text="F23";
+Edit b2=formonly.b2 type CHAR, tabIndex=26, noEntry;
+Button n2:n2, text="F12";
+Edit c4=formonly.c4 type CHAR, tabIndex=27, noEntry;
+Button p4:p4, text="F24";
+Group group02:group02;
+Edit path=formonly.path type VARCHAR, tabIndex=28;
+Button exit:exit, text="F36";
+Edit l_ans=formonly.l_ans type SMALLINT, tabIndex=29;
+Group grpinfo:grpinfo;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=30;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.zz01h,formonly.zz02h,formonly.level,formonly.a1,formonly.b3,formonly.a2,formonly.b4,formonly.a3,formonly.b5,formonly.a4,formonly.b6,formonly.a5,formonly.b7,formonly.a6,formonly.b8,formonly.a7,formonly.b9,formonly.a8,formonly.b0,formonly.a9,formonly.c1,formonly.a0,formonly.c2,formonly.b1,formonly.c3,formonly.b2,formonly.c4,formonly.path,formonly.l_ans,formonly.cnt)
+END -- INSTRUCTIONS
+

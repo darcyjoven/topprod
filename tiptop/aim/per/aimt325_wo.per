@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt325_wo.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt325_wo")
+VBox vb2
+Grid gr4902
+{
+ <G group01                                                                            >
+
+  W/O No.             [sfb01               ]  W/O Date            [sfb13              ]
+  Group Code          [ima06               ]  Source Code         [ima08              ]
+ <                                                                                     >
+}
+END -- gr4902
+Grid gr4903
+{
+ Supply Ending Date  [sudate      ]
+
+
+}
+END -- gr4903
+END -- vb2
+END -- aimt325_wo
+
+TABLES
+sfb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=1, image="zoom";
+Edit sfb13=sfb_file.sfb13, tabIndex=2;
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=3;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=4;
+DateEdit sudate=formonly.sudate type DATE, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfb_file.sfb01,sfb_file.sfb13,formonly.ima06,formonly.ima08,formonly.sudate)
+END -- INSTRUCTIONS
+

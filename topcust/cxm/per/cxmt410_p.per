@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cxm/4fd/cxmt410_p.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Grid Grid1
+{
+
+ <T table1                                                                                                >
+ [oeb01   |oeb03   |oeb04   |oeb06   |ima021  |oeb12   ]
+ [oeb01   |oeb03   |oeb04   |oeb06   |ima021  |oeb12   ]
+ [oeb01   |oeb03   |oeb04   |oeb06   |ima021  |oeb12   ]
+ [oeb01   |oeb03   |oeb04   |oeb06   |ima021  |oeb12   ]
+ [oeb01   |oeb03   |oeb04   |oeb06   |ima021  |oeb12   ]
+
+
+ <                                                                                                        >
+
+}
+END -- Grid1
+END -- Form
+
+ATTRIBUTES
+Table table1:Table1;
+Edit oeb01=formonly.oeb01, tabIndex=1, title=%"oeb01";
+Edit oeb03=formonly.oeb03, tabIndex=2, title=%"oeb03";
+Edit oeb04=formonly.oeb04, tabIndex=3, title=%"oeb04";
+Edit oeb06=formonly.oeb06, tabIndex=4, title=%"oeb06";
+Edit ima021=formonly.ima021, tabIndex=5, title=%"ima021";
+Edit oeb12=formonly.oeb12, tabIndex=6, title=%"oeb12";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oeb_q(formonly.oeb01,formonly.oeb03,formonly.oeb04,formonly.oeb06,formonly.ima021,formonly.oeb12)
+END -- INSTRUCTIONS
+

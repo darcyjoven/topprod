@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli0011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli001")
+VBox vb7
+Folder folder01
+Page page01(text="Main")
+Grid gr2327
+{
+ Group No.           [ashh13              ]
+ Company No.         [ashh01              ]
+ Plant Name          [asg02               ]
+ Logistics code      [asg03               ]
+ Book No             [ashh00    ]
+
+
+}
+END -- gr2327
+END -- page01
+END -- folder01
+Table s_ashh
+{
+[ashh04            |ashh05                        |ashh06            |aag02                                             |ashh11               |ashh12               ]
+[ashh04            |ashh05                        |ashh06            |aag02                                             |ashh11               |ashh12               ]
+[ashh04            |ashh05                        |ashh06            |aag02                                             |ashh11               |ashh12               ]
+[ashh04            |ashh05                        |ashh06            |aag02                                             |ashh11               |ashh12               ]
+[ashh04            |ashh05                        |ashh06            |aag02                                             |ashh11               |ashh12               ]
+[ashh04            |ashh05                        |ashh06            |aag02                                             |ashh11               |ashh12               ]
+[ashh04            |ashh05                        |ashh06            |aag02                                             |ashh11               |ashh12               ]
+[ashh04            |ashh05                        |ashh06            |aag02                                             |ashh11               |ashh12               ]
+[ashh04            |ashh05                        |ashh06            |aag02                                             |ashh11               |ashh12               ]
+[ashh04            |ashh05                        |ashh06            |aag02                                             |ashh11               |ashh12               ]
+
+}
+END -- s_ashh
+Grid gr2328
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2328
+END -- vb7
+END -- ggli0011
+
+TABLES
+ashh_file
+ATTRIBUTES
+ButtonEdit ashh13=ashh_file.ashh13, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit ashh01=ashh_file.ashh01, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Query";
+Edit asg02=formonly.asg02 type CHAR, tabIndex=3, noEntry;
+Edit asg03=formonly.asg03 type CHAR, tabIndex=4, noEntry;
+Edit ashh00=formonly.ashh00 type VARCHAR, tabIndex=5, noEntry, not null, required;
+ButtonEdit ashh04=ashh_file.ashh04, action=controlp, tabIndex=6, title="Company Account #", not null, required, image="zoom", comment="<^P> Qry Account";
+Edit ashh05=ashh_file.ashh05, tabIndex=7, title="Company Account Name";
+ButtonEdit ashh06=ashh_file.ashh06, action=controlp, tabIndex=8, title="After Combine Acct", not null, required, image="zoom", comment="<^P> Qry Account";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=9, title="Account Name", noEntry;
+ComboBox ashh11=ashh_file.ashh11, tabIndex=10, title="Revalue Ex.Rate Type", not null, required, items=(("1", %"Now Ex.Rate"),("2", %"Hist Ex.Rate"),("3", %"Avg Ex.Rate"));
+ComboBox ashh12=ashh_file.ashh12, tabIndex=11, title="Convert Ex.Rate Type", not null, required, items=(("1", %"Now Ex.Rate"),("2", %"Hist Ex.Rate"),("3", %"Avg Ex.Rate"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ashh(ashh_file.ashh04,ashh_file.ashh05,ashh_file.ashh06,formonly.aag02,ashh_file.ashh11,ashh_file.ashh12)
+SCREEN RECORD Undefined(ashh_file.ashh13,ashh_file.ashh01,formonly.asg02,formonly.asg03,formonly.ashh00,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

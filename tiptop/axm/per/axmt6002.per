@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt6002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt6002")
+VBox VBox1
+Folder Folder1
+Page page01(text="Page01")
+Grid Grid1
+{
+ <G group01                                          >
+  Accounts Receivable Ratio [oga16] [oga11] [oga12]
+  Sales Cate 2              [oga26     ]
+  Collection Terms          [oga32     ]
+  A/R Date                  [oga13     ]
+  Note Due                  [oga14     ]
+  Account To Offset         [oga19           ]
+
+  Project#                  [oga46     ]
+  Ccount Classification     [oga15     ]
+  [oga07                                   ]
+  [oga20                                   ]
+
+ <                                                   >
+
+}
+END -- Grid1
+END -- page01
+END -- Folder1
+END -- VBox1
+END -- axmt6002
+
+TABLES
+oga_file
+ATTRIBUTES
+Group group01:group01;
+Edit oga16=oga_file.oga161, tabIndex=1, noEntry, not null, required;
+Edit oga11=oga_file.oga162, tabIndex=2, noEntry, not null, required;
+Edit oga12=oga_file.oga163, tabIndex=3, noEntry, not null, required;
+ButtonEdit oga26=oga_file.oga26, action=controlp, tabIndex=4, image="zoom", comment="<^P> Qry Details";
+ButtonEdit oga32=oga_file.oga32, action=controlp, tabIndex=5, noEntry, image="zoom", comment="<^P> Qry Details";
+DateEdit oga13=oga_file.oga11, tabIndex=6;
+Edit oga14=oga_file.oga12, tabIndex=7;
+Edit oga19=oga_file.oga19, tabIndex=8, noEntry;
+Edit oga46=oga_file.oga46, tabIndex=9;
+ButtonEdit oga15=oga_file.oga13, action=controlp, tabIndex=10, image="zoom", comment="<^P> Qry Details";
+CheckBox oga07=oga_file.oga07, tabIndex=11, text="Delivered Generate Voucher", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oga20=oga_file.oga20, tabIndex=12, text="Generate Entry", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oga_file.oga161,oga_file.oga162,oga_file.oga163,oga_file.oga26,oga_file.oga32,oga_file.oga11,oga_file.oga12,oga_file.oga19,oga_file.oga46,oga_file.oga13,oga_file.oga07,oga_file.oga20)
+END -- INSTRUCTIONS
+

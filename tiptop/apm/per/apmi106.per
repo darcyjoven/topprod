@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi106.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi106")
+VBox VBox1
+Folder pc916
+Page page01(text="Main")
+Table s_pmy
+{
+[pmy01              |pmy02               |pmyact]
+[pmy01              |pmy02               |pmyact]
+[pmy01              |pmy02               |pmyact]
+[pmy01              |pmy02               |pmyact]
+[pmy01              |pmy02               |pmyact]
+[pmy01              |pmy02               |pmyact]
+[pmy01              |pmy02               |pmyact]
+[pmy01              |pmy02               |pmyact]
+[pmy01              |pmy02               |pmyact]
+[pmy01              |pmy02               |pmyact]
+
+}
+END -- s_pmy
+END -- page01
+END -- pc916
+Grid gr4822
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4822
+END -- VBox1
+END -- apmi106
+
+TABLES
+pmy_file
+ATTRIBUTES
+Edit pmy01=pmy_file.pmy01, tabIndex=1, title="Vender Class Code", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit pmy02=pmy_file.pmy02, tabIndex=2, title="Description";
+CheckBox pmyact=pmy_file.pmyacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmy(pmy_file.pmy01,pmy_file.pmy02,pmy_file.pmyacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

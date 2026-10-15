@@ -1,0 +1,131 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt340.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"almt340")
+VBox vb01
+Folder folder01
+Page main(text=%"Main")
+Grid gr01
+{
+
+ [label4      ][lii01               ]                                   [label10     ][lii02        ]
+ [label5      ][liiplant            ][rtz13               ]             [label11     ][liiconf      ][imgmksg]
+ [label6      ][liilegal            ][azt02               ]             [label12     ][liiconu      ][       ]
+ [label7      ][lii05               ][tqa02               ]             [label13     ][liicond      ][liicont      ]
+ [label8      ][lii03               ][lmb03               ]             [label14     ][lii06                       ]
+ [label9      ][lii04               ][lmc04               ]                           [                            ]
+
+}
+END -- gr01
+END -- main
+Page info(text=%"Info")
+Grid gr02
+{
+
+ [label15     ][liiuser     ]            [label1      ][liimodu     ]             [label18     ][liiacti     ]
+ [label16     ][liigrup     ]            [label2      ][liidate     ]             [label19     ][liicrat     ]
+ [label17     ][liioriu     ]            [label3      ][liiorig     ]
+
+
+
+}
+END -- gr02
+END -- info
+END -- folder01
+Table s_lij
+{
+[lij02       |oaj02                    |oaj031    |lnj02               |lij03       |lnr02               |lij04       |lij05       |lij06   |lij07     |lij08     ]
+[lij02       |oaj02                    |oaj031    |lnj02               |lij03       |lnr02               |lij04       |lij05       |lij06   |lij07     |lij08     ]
+[lij02       |oaj02                    |oaj031    |lnj02               |lij03       |lnr02               |lij04       |lij05       |lij06   |lij07     |lij08     ]
+[lij02       |oaj02                    |oaj031    |lnj02               |lij03       |lnr02               |lij04       |lij05       |lij06   |lij07     |lij08     ]
+[lij02       |oaj02                    |oaj031    |lnj02               |lij03       |lnr02               |lij04       |lij05       |lij06   |lij07     |lij08     ]
+
+}
+END -- s_lij
+Grid gr03
+{
+
+     ----------[labe|idx    |la][cnt    ]----------[label20|cn2    ] ----------
+}
+END -- gr03
+END -- vb01
+END -- almt340
+
+TABLES
+lii_file,
+lij_file
+ATTRIBUTES
+Label label4:Label4, text=%"Project No.";
+ButtonEdit lii01=lii_file.lii01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Label label10:Label10, text=%"Document date";
+DateEdit lii02=lii_file.lii02, tabIndex=12, not null;
+Label label5:Label5, text=%"Store ID";
+ButtonEdit liiplant=lii_file.liiplant, action=controlp, tabIndex=2, noEntry, not null, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=3, noEntry;
+Label label11:Label11, text=%"Audit code";
+ComboBox liiconf=lii_file.liiconf, tabIndex=13, default = "N", noEntry, not null, items=(("Y", "Approved"),("N", "Unaudited"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Label label6:Label6, text=%"Legal person";
+ButtonEdit liilegal=lii_file.liilegal, action=controlp, tabIndex=4, noEntry, not null, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=5, noEntry;
+Label label12:Label12, text=%"Audit";
+ButtonEdit liiconu=lii_file.liiconu, action=controlp, tabIndex=14, noEntry, image="zoom.png";
+Label label7:Label7, text=%"Booth Application";
+ButtonEdit lii05=lii_file.lii05, action=controlp, tabIndex=6, not null, image="zoom.png";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=7, noEntry;
+Label label13:Label13, text=%"Audit date";
+DateEdit liicond=lii_file.liicond, tabIndex=15, noEntry;
+TimeEdit liicont=lii_file.liicont, tabIndex=16, noEntry;
+Label label8:Label8, text=%"Building code";
+ButtonEdit lii03=lii_file.lii03, action=controlp, tabIndex=8, image="zoom.png";
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=9, noEntry;
+Label label14:Label14, text=%"Meno";
+TextEdit lii06=lii_file.lii06, tabIndex=17;
+Label label9:Label9, text=%"Floor No.";
+ButtonEdit lii04=lii_file.lii04, action=controlp, tabIndex=10, image="zoom.png";
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=11, noEntry;
+Label label15:Label15, text=%"Data owner";
+Edit liiuser=lii_file.liiuser, tabIndex=18, noEntry;
+Label label1:Label1, text=%"Change of data";
+Edit liimodu=lii_file.liimodu, tabIndex=21, noEntry;
+Label label18:Label18, text=%"Data code";
+Edit liiacti=lii_file.liiacti, tabIndex=24, noEntry;
+Label label16:Label16, text=%"Data of groups";
+Edit liigrup=lii_file.liigrup, tabIndex=19, noEntry;
+Label label2:Label2, text=%"Recent change date";
+DateEdit liidate=lii_file.liidate, tabIndex=22, noEntry;
+Label label19:Label19, text=%"Data to create date";
+DateEdit liicrat=lii_file.liicrat, tabIndex=25, noEntry;
+Label label17:Label17, text=%"Data builder";
+Edit liioriu=lii_file.liioriu, tabIndex=20, noEntry;
+Label label3:Label3, text=%"Data creata Department";
+Edit liiorig=lii_file.liiorig, tabIndex=23, noEntry;
+ButtonEdit lij02=lij_file.lij02, action=controlp, tabIndex=26, title=%"Charge code", not null, required, image="zoom.png";
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=27, title=%"Cost of", noEntry;
+Edit oaj031=formonly.oaj031 type CHAR, tabIndex=28, title=%"Total cost of class number", noEntry;
+Edit lnj02=formonly.lnj02 type CHAR, tabIndex=29, title=%"Total cost of the class name", noEntry;
+ButtonEdit lij03=lij_file.lij03, action=controlp, tabIndex=30, title=%"Payment ID", not null, image="zoom.png";
+Edit lnr02=formonly.lnr02 type CHAR, tabIndex=31, title=%"Payment of", noEntry;
+ComboBox lij04=lij_file.lij04, tabIndex=32, title=%"Daily accounting algorithm", not null, items=(("1", "by year"),("2", "by month"));
+ComboBox lij05=lij_file.lij05, tabIndex=33, title=%"Accounting system", not null, items=(("0", "Accrual basis"),("1", "Cash basis"));
+CheckBox lij06=lij_file.lij06, tabIndex=34, default = "Y", title=%"Standard no", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit lij07=lij_file.lij07, tabIndex=35, title=%"Out of account", not null;
+Edit lij08=lij_file.lij08, tabIndex=36, title=%"The accounts", not null;
+Label labe:Label21, text=%"Rows";
+Edit idx=formonly.idx type CHAR, tabIndex=37;
+Label la:Label22, text=%"/";
+Edit cnt=formonly.cnt type CHAR, tabIndex=38;
+Label label20:Label20, text=%"Details";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=39;
+Phantom formonly.Phantom1 type CHAR;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lij(lij_file.lij02,formonly.oaj02,formonly.oaj031,formonly.lnj02,lij_file.lij03,formonly.lnr02,lij_file.lij04,lij_file.lij05,lij_file.lij06,lij_file.lij07,lij_file.lij08)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2,lii_file.liiuser,lii_file.liigrup,lii_file.liioriu,lii_file.liimodu,lii_file.liidate,lii_file.liiorig,lii_file.liiacti,lii_file.liicrat,lii_file.lii01,lii_file.liiplant,lii_file.liilegal,lii_file.lii05,lii_file.lii03,lii_file.lii04,formonly.rtz13,formonly.azt02,formonly.tqa02,formonly.lmb03,formonly.lmc04,lii_file.lii02,lii_file.liiconf,lii_file.liiconu,lii_file.liicond,lii_file.lii06,lii_file.liicont,formonly.imgmksg,formonly.Phantom1)
+END -- INSTRUCTIONS
+

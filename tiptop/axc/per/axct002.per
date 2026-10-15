@@ -1,0 +1,129 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct002")
+VBox vb12
+Folder pc4
+Page page01(text="Main")
+Grid gr11
+{
+ Item No.                 [ccb01                         ]
+                          [ima02                         ]
+ Unit                     [ima25     ]
+ Year/Month               [ccb0]       /  [cc]
+ Cost Calculation Method  [ccb06     ] Category No.  [ccb07                         ]
+ Adjust Des.              [ccb05               ]
+ Refer. Doc#              [ccb04           ]
+ ccb23                    [ccb23     ]
+[label1   ]               [ccbglno         ]
+ <G group02                                                                        >
+                       [dummy01                      ]
+  -  Material         [ccb22a                        ]
+  -  Labor            [ccb22b                        ]
+  -  Overhead 1       [ccb22c                        ]
+  -  Processing       [ccb22d                        ]
+  -  Overhead 2       [ccb22e                        ]
+  -  Overhead 3       [ccb22f                        ]
+  -  Overhead 4       [ccb22g                        ]
+  -  Overhead 5       [ccb22h                        ]
+  ----------------------------------------------------
+    Total Amount      [ccb22                         ]
+
+ <                                                                                 >
+
+}
+END -- gr11
+END -- page01
+Page info(text="Info")
+Grid gr12
+{
+ Record Owner        [ccbuser   ]   Last Modified by    [ccbmodu   ]
+ Department          [ccbgrup   ]   Create/Modify Date  [ccbdate   ]
+ Record Orig.        [ccboriu   ]
+ Dept Orig.          [ccborig   ]
+}
+END -- gr12
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[ccbud01                       ] userdefined_field07[ccbud07        ] userdefined_field13[ccbud13        ]
+                    [                              ] userdefined_field08[ccbud08        ] userdefined_field14[ccbud14        ]
+ userdefined_field02[ccbud02        ]                userdefined_field09[ccbud09        ] userdefined_field15[ccbud15        ]
+ userdefined_field03[ccbud03        ]                userdefined_field10[ccbud10        ]
+ userdefined_field04[ccbud04        ]                userdefined_field11[ccbud11        ]
+ userdefined_field05[ccbud05        ]                userdefined_field12[ccbud12        ]
+ userdefined_field06[ccbud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc4
+Grid gr13
+{
+ ---------- Rows [cnt   ] ----------
+
+
+}
+END -- gr13
+END -- vb12
+END -- axct002
+
+TABLES
+ccb_file
+ATTRIBUTES
+ButtonEdit ccb01=ccb_file.ccb01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=3, noEntry;
+Edit ccb0=ccb_file.ccb02, tabIndex=4, not null, required;
+Edit cc=ccb_file.ccb03, tabIndex=5, not null, required;
+ComboBox ccb06=ccb_file.ccb06, tabIndex=19, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Specific-Batch Cost"),("4", "Individual-Item Cost"),("5", "Specific Identification-Cost by Store(Profit Center)"));
+ButtonEdit ccb07=ccb_file.ccb07, action=controlp, tabIndex=20, not null, required, image="zoom.png";
+Edit ccb05=ccb_file.ccb05, tabIndex=6;
+Edit ccb04=ccb_file.ccb04, tabIndex=7;
+ComboBox ccb23=ccb_file.ccb23, tabIndex=503, noEntry, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+Label label1:Label1, text=%"ccbglno";
+Edit ccbglno=formonly.ccbglno, tabIndex=504, noEntry;
+Group group02:group02;
+Label dummy01:dummy01, text="Current month Adjusting Amount:";
+Edit ccb22a=ccb_file.ccb22a, tabIndex=8, not null, required;
+Edit ccb22b=ccb_file.ccb22b, tabIndex=9, not null, required;
+Edit ccb22c=ccb_file.ccb22c, tabIndex=10, not null, required;
+Edit ccb22d=ccb_file.ccb22d, tabIndex=11, not null, required;
+Edit ccb22e=ccb_file.ccb22e, tabIndex=12, not null, required;
+Edit ccb22f=ccb_file.ccb22f, tabIndex=21, default = "0", not null, required;
+Edit ccb22g=ccb_file.ccb22g, tabIndex=22, default = "0", not null, required;
+Edit ccb22h=ccb_file.ccb22h, tabIndex=23, not null, required;
+Edit ccb22=ccb_file.ccb22, tabIndex=13, noEntry, not null, required;
+Edit ccbuser=ccb_file.ccbuser, tabIndex=14, noEntry;
+Edit ccbmodu=ccb_file.ccbmodu, tabIndex=15, noEntry;
+Edit ccbgrup=ccb_file.ccbgrup, tabIndex=16, noEntry;
+DateEdit ccbdate=ccb_file.ccbdate, tabIndex=17, noEntry;
+Edit ccboriu=ccb_file.ccboriu, tabIndex=501, noEntry;
+Edit ccborig=ccb_file.ccborig, tabIndex=502, noEntry;
+TextEdit ccbud01=ccb_file.ccbud01, tabIndex=24, stretch=NONE;
+Edit ccbud07=ccb_file.ccbud07, tabIndex=25;
+DateEdit ccbud13=ccb_file.ccbud13, tabIndex=26;
+Edit ccbud08=ccb_file.ccbud08, tabIndex=27;
+DateEdit ccbud14=ccb_file.ccbud14, tabIndex=28;
+Edit ccbud02=ccb_file.ccbud02, tabIndex=29;
+Edit ccbud09=ccb_file.ccbud09, tabIndex=30;
+DateEdit ccbud15=ccb_file.ccbud15, tabIndex=31;
+Edit ccbud03=ccb_file.ccbud03, tabIndex=32;
+Edit ccbud10=ccb_file.ccbud10, tabIndex=33;
+Edit ccbud04=ccb_file.ccbud04, tabIndex=34;
+Edit ccbud11=ccb_file.ccbud11, tabIndex=35;
+Edit ccbud05=ccb_file.ccbud05, tabIndex=36;
+Edit ccbud12=ccb_file.ccbud12, tabIndex=37;
+Edit ccbud06=ccb_file.ccbud06, tabIndex=38;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ccb_file.ccb01,formonly.ima02,formonly.ima25,ccb_file.ccb02,ccb_file.ccb03,ccb_file.ccb06,ccb_file.ccb07,ccb_file.ccb05,ccb_file.ccb04,ccb_file.ccb23,ccb_file.ccb22a,ccb_file.ccb22b,ccb_file.ccb22c,ccb_file.ccb22d,ccb_file.ccb22e,ccb_file.ccb22f,ccb_file.ccb22g,ccb_file.ccb22h,ccb_file.ccb22,ccb_file.ccbuser,ccb_file.ccbmodu,ccb_file.ccbgrup,ccb_file.ccbdate,ccb_file.ccboriu,ccb_file.ccborig,ccb_file.ccbud01,ccb_file.ccbud07,ccb_file.ccbud13,ccb_file.ccbud08,ccb_file.ccbud14,ccb_file.ccbud02,ccb_file.ccbud09,ccb_file.ccbud15,ccb_file.ccbud03,ccb_file.ccbud10,ccb_file.ccbud04,ccb_file.ccbud11,ccb_file.ccbud05,ccb_file.ccbud12,ccb_file.ccbud06,formonly.cnt,formonly.ccbglno)
+END -- INSTRUCTIONS
+

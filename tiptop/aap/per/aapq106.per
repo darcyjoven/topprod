@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapq106.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapq106")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr112
+{
+ <G group01                                    ><G group02                                 >
+  Invoice No.        [apk03               ]      Accounts No.       [apk01                ]
+  Invoice Date       [apk05       ]              Before-Tax Amt     [apk08                ]
+  Vender No.         [apa06     ][apa07      ]   Tax                [apk07                ]
+ <                                             ><                                          >
+
+}
+END -- gr112
+END -- page01
+END -- folder01
+Table s_nmd
+{
+[payno           |seq |aph04|amtf                |amt                 |nmd02     |nmd05    |nmd04               ]
+[payno           |seq |aph04|amtf                |amt                 |nmd02     |nmd05    |nmd04               ]
+[payno           |seq |aph04|amtf                |amt                 |nmd02     |nmd05    |nmd04               ]
+[payno           |seq |aph04|amtf                |amt                 |nmd02     |nmd05    |nmd04               ]
+[payno           |seq |aph04|amtf                |amt                 |nmd02     |nmd05    |nmd04               ]
+[payno           |seq |aph04|amtf                |amt                 |nmd02     |nmd05    |nmd04               ]
+[payno           |seq |aph04|amtf                |amt                 |nmd02     |nmd05    |nmd04               ]
+[payno           |seq |aph04|amtf                |amt                 |nmd02     |nmd05    |nmd04               ]
+[payno           |seq |aph04|amtf                |amt                 |nmd02     |nmd05    |nmd04               ]
+[payno           |seq |aph04|amtf                |amt                 |nmd02     |nmd05    |nmd04               ]
+
+}
+END -- s_nmd
+Grid gr113
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr113
+END -- VBox1
+END -- aapq106
+
+ATTRIBUTES
+Group group01:group01;
+Edit apk03=formonly.apk03 type CHAR, tabIndex=1;
+DateEdit apk05=formonly.apk05 type DATE, tabIndex=2;
+ButtonEdit apa06=formonly.apa06 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Edit apa07=formonly.apa07 type CHAR, tabIndex=4;
+Group group02:group02;
+ButtonEdit apk01=formonly.apk01 type CHAR, action=controlp, tabIndex=5, image="zoom";
+Edit apk08=formonly.apk08 type CHAR, tabIndex=6;
+Edit apk07=formonly.apk07 type CHAR, tabIndex=7;
+Edit payno=formonly.payno type CHAR, tabIndex=8, title="Document #";
+Edit seq=formonly.seq type CHAR, tabIndex=9, title="Ln#";
+Edit aph04=formonly.aph04 type CHAR, tabIndex=10, title="Cate";
+Edit amtf=formonly.amtf type CHAR, tabIndex=11, title="Contra F.C";
+Edit amt=formonly.amt type CHAR, tabIndex=12, title="Contra H.C";
+Edit nmd02=formonly.nmd02 type CHAR, tabIndex=13, title="Check No.";
+Edit nmd05=formonly.nmd05 type CHAR, tabIndex=14, title="Due Date";
+Edit nmd04=formonly.nmd04 type CHAR, tabIndex=15, title="Face Value";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmd(formonly.payno,formonly.seq,formonly.aph04,formonly.amtf,formonly.amt,formonly.nmd02,formonly.nmd05,formonly.nmd04)
+SCREEN RECORD Undefined(formonly.apk03,formonly.apk05,formonly.apa06,formonly.apa07,formonly.apk01,formonly.apk08,formonly.apk07,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

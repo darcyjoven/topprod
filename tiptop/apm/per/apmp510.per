@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp510")
+VBox vb1
+Grid gr4912
+{
+ <G group01                                    >
+  P/R No         [pmk01                       ]
+  P/R Date       [pmk04                       ]
+  P/R Item No    [pml04                       ]
+ <                                             >
+
+}
+END -- gr4912
+Grid gr4913
+{
+ <G group02                             >
+  P/O Center     [pnx01     ]
+  Carry No       [pnx03                ]
+ <                                      >
+
+}
+END -- gr4913
+END -- vb1
+END -- apmp510
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmk01=formonly.pmk01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit pmk04=formonly.pmk04 type CHAR, tabIndex=2;
+ButtonEdit pml04=formonly.pml04 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Group group02:group02, text="INPUT";
+ButtonEdit pnx01=formonly.pnx01 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+Edit pnx03=formonly.pnx03 type CHAR, tabIndex=5, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmk01,formonly.pmk04,formonly.pml04,formonly.pnx01,formonly.pnx03)
+END -- INSTRUCTIONS
+

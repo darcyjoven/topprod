@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi710.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi710")
+VBox VBox1
+Folder pc758
+Page page01(text="Main")
+Table s_alg
+{
+[alg01       |alg02                         |alg021                                                      ]
+[alg01       |alg02                         |alg021                                                      ]
+[alg01       |alg02                         |alg021                                                      ]
+[alg01       |alg02                         |alg021                                                      ]
+[alg01       |alg02                         |alg021                                                      ]
+[alg01       |alg02                         |alg021                                                      ]
+[alg01       |alg02                         |alg021                                                      ]
+[alg01       |alg02                         |alg021                                                      ]
+[alg01       |alg02                         |alg021                                                      ]
+[alg01       |alg02                         |alg021                                                      ]
+
+}
+END -- s_alg
+END -- page01
+END -- pc758
+Grid gr4047
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4047
+END -- VBox1
+END -- anmi710
+
+TABLES
+alg_file
+ATTRIBUTES
+Edit alg01=alg_file.alg01, tabIndex=1, title="Credit Bank", not null, required, comment="Key Field, No Blank/Repeated!    ";
+Edit alg02=alg_file.alg02, tabIndex=2, title="Bank Abbreviation";
+Edit alg021=alg_file.alg021, tabIndex=3, title="Full Name";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_alg(alg_file.alg01,alg_file.alg02,alg_file.alg021)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

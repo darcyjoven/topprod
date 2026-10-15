@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft705a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="askt001a")
+Grid gr2
+{
+  Order No [skh13                      ]
+  PBI No   [skh02                      ]
+  Style No [skh03                      ]
+  Sequence [skh07          ]
+  Init No  [skh08                      ]
+
+}
+END -- gr2
+END -- askt001a
+
+ATTRIBUTES
+ButtonEdit skh13=formonly.skh13 type CHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit skh02=formonly.skh02 type CHAR, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit skh03=formonly.skh03 type CHAR, action=controlp, tabIndex=3, image="zoom.png";
+Edit skh07=formonly.skh07 type CHAR, tabIndex=4;
+ButtonEdit skh08=formonly.skh08 type CHAR, action=controlp, tabIndex=5, image="zoom.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.skh13,formonly.skh02,formonly.skh03,formonly.skh07,formonly.skh08)
+END -- INSTRUCTIONS
+

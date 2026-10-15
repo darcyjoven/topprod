@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apci201_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Main(text=%"Main")
+Table ds1
+{
+[ryx03                         |ryx04        |ryx05                         ]
+[ryx03                         |ryx04        |ryx05                         ]
+[ryx03                         |ryx04        |ryx05                         ]
+[ryx03                         |ryx04        |ryx05                         ]
+[ryx03                         |ryx04        |ryx05                         ]
+[ryx03                         |ryx04        |ryx05                         ]
+[ryx03                         |ryx04        |ryx05                         ]
+[ryx03                         |ryx04        |ryx05                         ]
+[ryx03                         |ryx04        |ryx05                         ]
+[ryx03                         |ryx04        |ryx05                         ]
+
+}
+END -- ds1
+END -- Main
+END -- Folder1
+Grid gr3034
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3034
+END -- VBox1
+END -- Form
+
+TABLES
+ryx_file
+ATTRIBUTES
+Edit ryx03=ryx_file.ryx03, tabIndex=1, title=%"ryx03", noEntry, not null, scroll;
+ComboBox ryx04=ryx_file.ryx04, tabIndex=2, title=%"ryx04", not null, scroll;
+Edit ryx05=ryx_file.ryx05, tabIndex=3, title=%"ryx05", scroll;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ryx(ryx_file.ryx03,ryx_file.ryx04,ryx_file.ryx05)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

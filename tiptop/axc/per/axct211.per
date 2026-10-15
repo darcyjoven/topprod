@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct211.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct211")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+HBox hb4
+Grid gr1782
+{
+ Cate                [cmi04     ]
+ Book No.            [cmi00          ]
+
+
+}
+END -- gr1782
+Grid gr1781
+{
+ Year                [cmi0]/[cm]
+ Wrk.Cntr            [cmi03     ]
+ Allocation Method   [cmi12          ]
+
+}
+END -- gr1781
+END -- hb4
+END -- page01
+END -- folder01
+Table s_cmi
+{
+[cmi05     |cmi06 |cmi07                       |cmi08                ]
+[cmi05     |cmi06 |cmi07                       |cmi08                ]
+[cmi05     |cmi06 |cmi07                       |cmi08                ]
+[cmi05     |cmi06 |cmi07                       |cmi08                ]
+[cmi05     |cmi06 |cmi07                       |cmi08                ]
+[cmi05     |cmi06 |cmi07                       |cmi08                ]
+[cmi05     |cmi06 |cmi07                       |cmi08                ]
+[cmi05     |cmi06 |cmi07                       |cmi08                ]
+[cmi05     |cmi06 |cmi07                       |cmi08                ]
+[cmi05     |cmi06 |cmi07                       |cmi08                ]
+
+}
+END -- s_cmi
+Grid gr1783
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------  Total       [cmi08_tot           ]
+
+ <G group03                                                        >
+ [dummy01                                                  ]
+ <                                                                 >
+
+
+}
+END -- gr1783
+END -- vb6
+END -- axct211
+
+TABLES
+cmi_file
+ATTRIBUTES
+ComboBox cmi04=cmi_file.cmi04, tabIndex=1, not null, required, items=(("1", "Labor"),("2", "Overhead 1"),("3", "Overhead 2"),("4", "Overhead 3"),("5", "Overhead 4"),("6", "Overhead 5"));
+ButtonEdit cmi00=cmi_file.cmi00, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Department";
+Edit cmi0=cmi_file.cmi01, tabIndex=3, not null, required;
+Edit cm=cmi_file.cmi02, tabIndex=4, not null, required;
+Edit cmi03=cmi_file.cmi03, tabIndex=5;
+ComboBox cmi12=cmi_file.cmi12, tabIndex=13, not null, required, items=(("1", "Actual Labor Hours"),("2", "Standard Labor Hours"),("3", "Standard Machine Hours"),("4", "Output Qty * Distribution Ratio"),("5", "Actual Machine Hours"));
+ButtonEdit cmi05=cmi_file.cmi05, action=controlp, tabIndex=6, title="Acct No.", not null, required, image="zoom", comment="<^P>Qry Account  MISC Represent Others  EXP Represent Curr Overhead Cost";
+ButtonEdit cmi06=cmi_file.cmi06, action=controlp, tabIndex=7, title="Dept", image="zoom", comment="<^P>Qry Department Account";
+Edit cmi07=cmi_file.cmi07, tabIndex=8, title="Name/Desc";
+Edit cmi08=cmi_file.cmi08, tabIndex=9, title="Curr Transaction Amt";
+Edit cnt=formonly.cnt type CHAR, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11, noEntry;
+Edit cmi08_tot=formonly.cmi08_tot type CHAR, tabIndex=12, noEntry;
+Group group03:group03;
+Label dummy01:dummy01, text="NOTE: The Processing pay in the W/O must be deduct";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cmi(cmi_file.cmi05,cmi_file.cmi06,cmi_file.cmi07,cmi_file.cmi08)
+SCREEN RECORD Undefined(cmi_file.cmi04,cmi_file.cmi00,cmi_file.cmi01,cmi_file.cmi02,cmi_file.cmi03,cmi_file.cmi12,formonly.cnt,formonly.cn2,formonly.cmi08_tot)
+END -- INSTRUCTIONS
+

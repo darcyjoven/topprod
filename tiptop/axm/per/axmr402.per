@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmr402.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr400")
+VBox vb2
+Grid gr1
+{
+ <G group01                                        >
+  Order No.            [oea01               ]
+  Order.Date           [oea02               ]
+  Item No.             [oeb04               ]
+ <                                                 >
+ <G group02                                       >
+  [a                                             ]
+   Final Date  [oeb32                 ]
+
+ <                                                >
+}
+END -- gr1
+Grid gr2
+{
+[more                                              ]
+
+}
+END -- gr2
+END -- vb2
+END -- axmr400
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oea01=formonly.oea01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit oea02=formonly.oea02 type DATE, tabIndex=2;
+ButtonEdit oeb04=formonly.oeb04 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Group group02:group02, text="INPUT";
+CheckBox a=formonly.a type VARCHAR, tabIndex=4, text="Print U/P Amount", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit oeb32=formonly.oeb32 type CHAR, tabIndex=6;
+CheckBox more=formonly.more type VARCHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oea01,formonly.oea02,formonly.oeb04,formonly.a,formonly.oeb32,formonly.more)
+END -- INSTRUCTIONS
+

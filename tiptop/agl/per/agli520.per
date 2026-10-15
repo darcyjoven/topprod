@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli520.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli520")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2418
+{
+ <G group01                                                                                >
+  Budget No.           [gic011    ] [afa02                         ]
+  Salesman             [gic016    ]            Department No.      [gic015     ]
+  Area Code            [gic014    ]            Customer No.        [gic012     ][occ02   ]
+  Year                 [gic017    ]            Product Class       [gic013     ]
+ <                                                                                         >
+
+}
+END -- gr2418
+END -- page01
+END -- folder01
+Table s_gic
+{
+[gic02 |gic04     |gic05 |gic06   |gic03       |gig07            |gig08             |gig09            ]
+[gic02 |gic04     |gic05 |gic06   |gic03       |gig07            |gig08             |gig09            ]
+[gic02 |gic04     |gic05 |gic06   |gic03       |gig07            |gig08             |gig09            ]
+[gic02 |gic04     |gic05 |gic06   |gic03       |gig07            |gig08             |gig09            ]
+[gic02 |gic04     |gic05 |gic06   |gic03       |gig07            |gig08             |gig09            ]
+[gic02 |gic04     |gic05 |gic06   |gic03       |gig07            |gig08             |gig09            ]
+[gic02 |gic04     |gic05 |gic06   |gic03       |gig07            |gig08             |gig09            ]
+[gic02 |gic04     |gic05 |gic06   |gic03       |gig07            |gig08             |gig09            ]
+[gic02 |gic04     |gic05 |gic06   |gic03       |gig07            |gig08             |gig09            ]
+[gic02 |gic04     |gic05 |gic06   |gic03       |gig07            |gig08             |gig09            ]
+
+}
+END -- s_gic
+Grid gr2419
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2419
+END -- VBox1
+END -- agli520
+
+TABLES
+gic_file,
+gig_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit gic011=gic_file.gic011, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Budget No.  ";
+Edit afa02=formonly.afa02 type CHAR, tabIndex=2, noEntry, color = yellow;
+ButtonEdit gic016=gic_file.gic016, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P> Qry Salesman  ";
+ButtonEdit gic015=gic_file.gic015, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P> Query Department";
+ButtonEdit gic014=gic_file.gic014, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>  Query Area ";
+ButtonEdit gic012=gic_file.gic012, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P> Qry Customer Common Data";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=7, noEntry;
+Edit gic017=gic_file.gic017, tabIndex=8, not null, required;
+ButtonEdit gic013=gic_file.gic013, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P> Qry Product Class.";
+Edit gic02=gic_file.gic02, tabIndex=10, title="Period", not null, required;
+Edit gic04=gic_file.gic04, tabIndex=11, title="U/P", not null, required;
+ButtonEdit gic05=gic_file.gic05, action=controlp, tabIndex=12, title="Curr.", not null, required, image="zoom", comment="<^P> Qry Currency";
+Edit gic06=gic_file.gic06, tabIndex=13, title="Ex.Rate", noEntry;
+Edit gic03=gic_file.gic03, tabIndex=14, title="Qty", not null, required;
+Edit gig07=gig_file.gig07, tabIndex=15, title="Unit Mat. Cost", noEntry;
+Edit gig08=gig_file.gig08, tabIndex=16, title="Unit Direct Labor", noEntry;
+Edit gig09=gig_file.gig09, tabIndex=17, title="Unit Prod.Expense", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gic(gic_file.gic02,gic_file.gic04,gic_file.gic05,gic_file.gic06,gic_file.gic03,gig_file.gig07,gig_file.gig08,gig_file.gig09)
+SCREEN RECORD Undefined(gic_file.gic011,formonly.afa02,gic_file.gic016,gic_file.gic015,gic_file.gic014,gic_file.gic012,formonly.occ02,gic_file.gic017,gic_file.gic013,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

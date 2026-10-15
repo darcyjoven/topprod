@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amri103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amri103")
+VBox VBox1
+Folder pc721
+Page page01(text="Page01")
+Grid gr3919
+{
+ <G group01                            >
+  Order Tp      [msi01     ]
+  Document Name [oaydesc             ]
+ <                                     >
+
+}
+END -- gr3919
+END -- page01
+Page info(text="Info")
+Grid gr3920
+{
+ Record Owner        [msiuser   ] Last Modified by    [msimodu   ] Data Valid Code     [msiacti   ]
+ Department          [msigrup   ] Create/Modify Date  [msidate   ]
+ Record Orig.        [msioriu   ]
+ Dept Orig.          [msiorig   ]
+}
+END -- gr3920
+END -- info
+END -- pc721
+Grid gr3921
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3921
+END -- VBox1
+END -- amri103
+
+TABLES
+msi_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit msi01=msi_file.msi01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Documents";
+Edit oaydesc=formonly.oaydesc type VARCHAR, tabIndex=2, noEntry;
+Edit msiuser=msi_file.msiuser, tabIndex=3, noEntry;
+Edit msimodu=msi_file.msimodu, tabIndex=4, noEntry;
+Edit msiacti=msi_file.msiacti, tabIndex=5, noEntry, upShift;
+Edit msigrup=msi_file.msigrup, tabIndex=6, noEntry;
+DateEdit msidate=msi_file.msidate, tabIndex=7, noEntry;
+Edit msioriu=msi_file.msioriu, tabIndex=501, noEntry;
+Edit msiorig=msi_file.msiorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(msi_file.msi01,formonly.oaydesc,msi_file.msiuser,msi_file.msimodu,msi_file.msiacti,msi_file.msigrup,msi_file.msidate,msi_file.msioriu,msi_file.msiorig,formonly.cnt)
+END -- INSTRUCTIONS
+

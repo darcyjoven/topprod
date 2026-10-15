@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghri014.leo.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(action=before, text=%"Before")
+Table ds1
+{
+[sel      |hrat01  |hrat02        |hrat03    |hraa12     |hrat04  |hrao02  |hrat05  |hras04     |hras06  |hras06_0  |hrat07    |status_0|hrat25    |hratid_0]
+[sel      |hrat01  |hrat02        |hrat03    |hraa12     |hrat04  |hrao02  |hrat05  |hras04     |hras06  |hras06_0  |hrat07    |status_0|hrat25    |hratid_0]
+[sel      |hrat01  |hrat02        |hrat03    |hraa12     |hrat04  |hrao02  |hrat05  |hras04     |hras06  |hras06_0  |hrat07    |status_0|hrat25    |hratid_0]
+[sel      |hrat01  |hrat02        |hrat03    |hraa12     |hrat04  |hrao02  |hrat05  |hras04     |hras06  |hras06_0  |hrat07    |status_0|hrat25    |hratid_0]
+[sel      |hrat01  |hrat02        |hrat03    |hraa12     |hrat04  |hrao02  |hrat05  |hras04     |hras06  |hras06_0  |hrat07    |status_0|hrat25    |hratid_0]
+
+}
+END -- ds1
+END -- Page1
+Page Page2(action=after, text=%"After")
+Table ds2
+{
+[sel1     |hrat01_1|hrat02_1      |hrat03_1  |hraa12_1   |hrat04_1|hrao02_1|hrat05_1|hras04_1   |hras06_1|hras06_01 |hrat07_1  |status_1|hrat25_1  |hratid_1]
+[sel1     |hrat01_1|hrat02_1      |hrat03_1  |hraa12_1   |hrat04_1|hrao02_1|hrat05_1|hras04_1   |hras06_1|hras06_01 |hrat07_1  |status_1|hrat25_1  |hratid_1]
+[sel1     |hrat01_1|hrat02_1      |hrat03_1  |hraa12_1   |hrat04_1|hrao02_1|hrat05_1|hras04_1   |hras06_1|hras06_01 |hrat07_1  |status_1|hrat25_1  |hratid_1]
+[sel1     |hrat01_1|hrat02_1      |hrat03_1  |hraa12_1   |hrat04_1|hrao02_1|hrat05_1|hras04_1   |hras06_1|hras06_01 |hrat07_1  |status_1|hrat25_1  |hratid_1]
+[sel1     |hrat01_1|hrat02_1      |hrat03_1  |hraa12_1   |hrat04_1|hrao02_1|hrat05_1|hras04_1   |hras06_1|hras06_01 |hrat07_1  |status_1|hrat25_1  |hratid_1]
+}
+END -- ds2
+END -- Page2
+Page Page3(action=all, text=%"All")
+Table ds3
+{
+[sel2     |hrat01_2|hrat02_2      |hrat03_2  |hraa12_2   |hrat04_2|hrao02_2|hrat05_2|hras04_2   |hras06_2|hras06_02 |hrat07_2  |status_2|hrat25_2  |hratid_2]
+[sel2     |hrat01_2|hrat02_2      |hrat03_2  |hraa12_2   |hrat04_2|hrao02_2|hrat05_2|hras04_2   |hras06_2|hras06_02 |hrat07_2  |status_2|hrat25_2  |hratid_2]
+[sel2     |hrat01_2|hrat02_2      |hrat03_2  |hraa12_2   |hrat04_2|hrao02_2|hrat05_2|hras04_2   |hras06_2|hras06_02 |hrat07_2  |status_2|hrat25_2  |hratid_2]
+[sel2     |hrat01_2|hrat02_2      |hrat03_2  |hraa12_2   |hrat04_2|hrao02_2|hrat05_2|hras04_2   |hras06_2|hras06_02 |hrat07_2  |status_2|hrat25_2  |hratid_2]
+[sel2     |hrat01_2|hrat02_2      |hrat03_2  |hraa12_2   |hrat04_2|hrao02_2|hrat05_2|hras04_2   |hras06_2|hras06_02 |hrat07_2  |status_2|hrat25_2  |hratid_2]
+}
+END -- ds3
+END -- Page3
+END -- Folder1
+Grid Grid1
+{
+
+ ---------- [label1    |cnt1      |lab|label3    |cnt2      ] ----------
+
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+hrat_file,
+hras_file,
+hraa_file,
+hrao_file
+ATTRIBUTES
+CheckBox sel=formonly.sel type CHAR, tabIndex=1, default = "N", title=%"sel", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit hrat01=hrat_file.hrat01, action=controlp, tabIndex=2, title=%"hrat01", noEntry;
+Edit hrat02=hrat_file.hrat02, tabIndex=3, title=%"hrat02", noEntry, scroll;
+Edit hrat03=hrat_file.hrat03, tabIndex=4, title=%"hrat03", noEntry;
+Edit hraa12=hraa_file.hraa12, tabIndex=5, title=%"hraa12", noEntry;
+Edit hrat04=hrat_file.hrat04, tabIndex=6, title=%"hrat04", noEntry;
+Edit hrao02=hrao_file.hrao02, tabIndex=7, title=%"hrao02", noEntry;
+Edit hrat05=hrat_file.hrat05, tabIndex=8, title=%"hrat05", noEntry;
+Edit hras04=hras_file.hras04, tabIndex=9, title=%"hras04", noEntry;
+Edit hras06=hras_file.hras06, tabIndex=10, title=%"hras06", noEntry;
+Edit hras06_0=formonly.hras06_0, tabIndex=11, title=%"hras06", noEntry;
+CheckBox hrat07=hrat_file.hrat07, tabIndex=12, title=%"hrat07", text=%"", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Edit status_0=formonly.status_0, tabIndex=13, title=%"status", noEntry;
+DateEdit hrat25=hrat_file.hrat25, tabIndex=14, title=%"hrat25", noEntry;
+Edit hratid_0=formonly.hratid_0, tabIndex=15, title=%"hratid", noEntry, invisible;
+CheckBox sel1=formonly.sel1 type CHAR, tabIndex=16, default = "N", title=%"sel", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit hrat01_1=formonly.hrat01_1 type like hrat_file.hrat01, action=controlp, tabIndex=17, title=%"hrat01", noEntry;
+Edit hrat02_1=formonly.hrat02_1 type like hrat_file.hrat02, tabIndex=18, title=%"hrat02", noEntry, scroll;
+Edit hrat03_1=formonly.hrat03_1 type like hrat_file.hrat03, tabIndex=19, title=%"hrat03", noEntry;
+Edit hraa12_1=formonly.hraa12_1 type like hraa_file.hraa12, tabIndex=20, title=%"hraa12", noEntry;
+Edit hrat04_1=formonly.hrat04_1 type like hrat_file.hrat04, tabIndex=21, title=%"hrat04", noEntry;
+Edit hrao02_1=formonly.hrao02_1 type like hrao_file.hrao02, tabIndex=22, title=%"hrao02", noEntry;
+Edit hrat05_1=formonly.hrat05_1 type like hrat_file.hrat05, tabIndex=23, title=%"hrat05", noEntry;
+Edit hras04_1=formonly.hras04_1 type like hras_file.hras04, tabIndex=24, title=%"hras04", noEntry;
+Edit hras06_1=formonly.hras06_1 type like hras_file.hras06, tabIndex=25, title=%"hras06", noEntry;
+Edit hras06_01=formonly.hras06_01, tabIndex=26, title=%"hras06", noEntry;
+CheckBox hrat07_1=formonly.hrat07_1 type like hrat_file.hrat07, tabIndex=27, title=%"hrat07", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit status_1=formonly.status_1, tabIndex=28, title=%"status_1", noEntry;
+DateEdit hrat25_1=formonly.hrat25_1 type like hrat_file.hrat25, tabIndex=29, title=%"hrat25", noEntry;
+Edit hratid_1=formonly.hratid_1 type VARCHAR, tabIndex=30, title=%"hratid_1", noEntry, invisible;
+CheckBox sel2=formonly.sel2 type CHAR, tabIndex=31, default = "N", title=%"sel", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit hrat01_2=formonly.hrat01_2 type like hrat_file.hrat01, action=controlp, tabIndex=32, title=%"hrat01", noEntry;
+Edit hrat02_2=formonly.hrat02_2 type like hrat_file.hrat02, tabIndex=33, title=%"hrat02", noEntry, scroll;
+Edit hrat03_2=formonly.hrat03_2 type like hrat_file.hrat03, tabIndex=34, title=%"hrat03", noEntry;
+Edit hraa12_2=formonly.hraa12_2 type like hraa_file.hraa12, tabIndex=35, title=%"hraa12", noEntry;
+Edit hrat04_2=formonly.hrat04_2 type like hrat_file.hrat04, tabIndex=36, title=%"hrat04", noEntry;
+Edit hrao02_2=formonly.hrao02_2 type like hrao_file.hrao02, tabIndex=37, title=%"hrao02", noEntry;
+Edit hrat05_2=formonly.hrat05_2 type like hrat_file.hrat05, tabIndex=38, title=%"hrat05", noEntry;
+Edit hras04_2=formonly.hras04_2 type like hras_file.hras04, tabIndex=39, title=%"hras04", noEntry;
+Edit hras06_2=formonly.hras06_2 type like hras_file.hras06, tabIndex=40, title=%"hras06", noEntry;
+Edit hras06_02=formonly.hras06_02, tabIndex=41, title=%"hras06", noEntry;
+CheckBox hrat07_2=formonly.hrat07_2 type like hrat_file.hrat07, tabIndex=42, title=%"hrat07", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit status_2=formonly.status_2, tabIndex=43, title=%"status_2", noEntry;
+DateEdit hrat25_2=formonly.hrat25_2 type like hrat_file.hrat25, tabIndex=44, title=%"hrat25", noEntry;
+Edit hratid_2=formonly.hratid_2, tabIndex=45, title=%"hratid_2", noEntry, invisible;
+Label label1:Label1, text=%"Count", sizePolicy=initial;
+Edit cnt1=formonly.cnt1, tabIndex=46;
+Label lab:Label2, text=%"/";
+Label label3:Label3, text=%"Selected";
+Edit cnt2=formonly.cnt2, tabIndex=47;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrat_bf(formonly.sel,hrat_file.hrat01,hrat_file.hrat02,hrat_file.hrat03,hraa_file.hraa12,hrat_file.hrat04,hrao_file.hrao02,hrat_file.hrat05,hras_file.hras04,hras_file.hras06,formonly.hras06_0,hrat_file.hrat07,formonly.status_0,hrat_file.hrat25,formonly.hratid_0)
+SCREEN RECORD Undefined(formonly.cnt1,formonly.cnt2)
+SCREEN RECORD s_hrat_af(formonly.sel1,formonly.hrat01_1,formonly.hrat02_1,formonly.hrat03_1,formonly.hraa12_1,formonly.hrat04_1,formonly.hrao02_1,formonly.hrat05_1,formonly.hras04_1,formonly.hras06_1,formonly.hras06_01,formonly.hrat07_1,formonly.status_1,formonly.hrat25_1,formonly.hratid_1)
+SCREEN RECORD s_hrat_all(formonly.sel2,formonly.hrat01_2,formonly.hrat02_2,formonly.hrat03_2,formonly.hraa12_2,formonly.hrat04_2,formonly.hrao02_2,formonly.hrat05_2,formonly.hras04_2,formonly.hras06_2,formonly.hras06_02,formonly.hrat07_2,formonly.status_2,formonly.hrat25_2,formonly.hratid_2)
+END -- INSTRUCTIONS
+

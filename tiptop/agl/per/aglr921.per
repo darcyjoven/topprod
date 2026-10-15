@@ -1,0 +1,104 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr921.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglr921")
+VBox VBox2
+Grid gr2826
+{
+ <G group01                                                                            >
+  Classification(1 )  [aag223              ]
+  Classification(2 )  [aag224              ]
+  Classification(3 )  [aag225              ]
+  Classification(4 )  [aag226              ]
+ [dummy01                                              ]
+ <                                                                                     >
+}
+END -- gr2826
+Group group03(text="INPUT")
+VBox VBox1
+Grid gr2827
+{
+
+ Book No.            [bookno             ]
+ Title number        [azh01     ] [azh02                        ]
+ <G group08                > <G group09                    >
+  Year                [yy1 ]   [yy2 ]
+  Initial Period      [m1  ]   [m3  ]
+  Enging Period       [m2  ]   [m4  ]
+ <                         > <                             >
+}
+END -- gr2827
+Grid gr2828
+{
+ <G group06                                  >
+  Bugget NO.          [afc01               ]
+  Last Period Nmae    [g                   ]
+  Decimal Digits      [dec                 ]
+  [choice                       ]
+  [cd                           ]
+ <                                           >
+}
+END -- gr2828
+Grid gr2829
+{
+
+ <G group05                                                                          >
+  [s1                  ][s2                  ]
+  [t1                  ][t2                  ]
+ <                                                                                   >
+}
+END -- gr2829
+END -- VBox1
+END -- group03
+Grid gr2830
+{
+[more                                                        ]
+
+
+
+
+}
+END -- gr2830
+END -- VBox2
+END -- aglr921
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit aag223=formonly.aag223 type VARCHAR, tabIndex=1;
+Edit aag224=formonly.aag224 type VARCHAR, tabIndex=2;
+Edit aag225=formonly.aag225 type VARCHAR, tabIndex=3;
+Edit aag226=formonly.aag226 type VARCHAR, tabIndex=4;
+Label dummy01:dummy01, text="NOTE:Press Enter to print all data; Do not use the condition *.";
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=22, not null, image="zoom.png";
+ButtonEdit azh01=formonly.azh01 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Edit azh02=formonly.azh02 type VARCHAR, tabIndex=6;
+Group group08:group08, text="1st Period";
+Edit yy1=formonly.yy1 type SMALLINT, tabIndex=7;
+Edit m1=formonly.m1 type SMALLINT, tabIndex=8;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=9;
+Group group09:group09, text="2st Period";
+Edit yy2=formonly.yy2 type SMALLINT, tabIndex=10;
+Edit m3=formonly.m3 type SMALLINT, tabIndex=11;
+Edit m4=formonly.m4 type SMALLINT, tabIndex=12;
+Group group06:group06;
+ButtonEdit afc01=formonly.afc01 type CHAR, action=controlp, tabIndex=23, image="zoom.png";
+ComboBox g=formonly.g type CHAR, tabIndex=14, not null, required, queryEditable, items=(("1", "Current Year"),("2", "Last Period"),("3", "Current Quarter"));
+Edit dec=formonly.dec type SMALLINT, tabIndex=13;
+CheckBox choice=formonly.choice type CHAR, tabIndex=15, text="Print Transaction Amount = 0", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox cd=formonly.cd type CHAR, tabIndex=16, text="Print total Amount", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=17, queryEditable, items=(("1", "Class.QBE(1 )"),("2", "Class.QBE(2 )"),("3", "Class.QBE(3 )"),("4", "Class.QBE(4)"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=18, queryEditable, items=(("1", "Class.QBE(1 )"),("2", "Class.QBE(2 )"),("3", "Class.QBE(3 )"),("4", "Class.QBE(4)"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=19, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=20, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=21, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aag223,formonly.aag224,formonly.aag225,formonly.aag226,formonly.bookno,formonly.azh01,formonly.azh02,formonly.yy1,formonly.m1,formonly.m2,formonly.yy2,formonly.m3,formonly.m4,formonly.afc01,formonly.g,formonly.dec,formonly.choice,formonly.cd,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.more)
+END -- INSTRUCTIONS
+

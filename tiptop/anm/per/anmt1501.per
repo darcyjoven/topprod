@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt1501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Generate Detail")
+VBox VBox1
+Grid gr4456
+{
+ <G group01                                  >
+ [dummy                                    ]
+  Due Date            [nmd05               ]
+  Drawing Slip #      [nmd01               ]
+  Note No.            [nmd02               ]
+  Paying Bank         [nmd03               ]
+ <                                           >
+
+}
+END -- gr4456
+END -- VBox1
+END -- anmt1501
+
+TABLES
+nmd_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Label dummy:dummy, text="Enter Condition to Generate Body:";
+DateEdit nmd05=nmd_file.nmd05, tabIndex=1;
+Edit nmd01=nmd_file.nmd01, tabIndex=2;
+Edit nmd02=nmd_file.nmd02, tabIndex=3;
+Edit nmd03=nmd_file.nmd03, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nmd_file.nmd05,nmd_file.nmd01,nmd_file.nmd02,nmd_file.nmd03)
+END -- INSTRUCTIONS
+

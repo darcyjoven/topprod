@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi221_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi221_2")
+VBox VBox1
+Folder pc473
+Page page01(text="Page01")
+Table s_oce
+{
+[oce02     |oce03                               |oce04                  |oce05                         ]
+[oce02     |oce03                               |oce04                  |oce05                         ]
+[oce02     |oce03                               |oce04                  |oce05                         ]
+[oce02     |oce03                               |oce04                  |oce05                         ]
+[oce02     |oce03                               |oce04                  |oce05                         ]
+[oce02     |oce03                               |oce04                  |oce05                         ]
+[oce02     |oce03                               |oce04                  |oce05                         ]
+[oce02     |oce03                               |oce04                  |oce05                         ]
+[oce02     |oce03                               |oce04                  |oce05                         ]
+[oce02     |oce03                               |oce04                  |oce05                         ]
+
+}
+END -- s_oce
+END -- page01
+END -- pc473
+END -- VBox1
+END -- axmi221_2
+
+TABLES
+oce_file
+ATTRIBUTES
+Edit oce02=oce_file.oce02, tabIndex=1, title="Position";
+Edit oce03=oce_file.oce03, tabIndex=2, title="Contact Name";
+Edit oce04=oce_file.oce04, tabIndex=3, title="Telephone";
+Edit oce05=oce_file.oce05, tabIndex=4, title="E-mail Address";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oce(oce_file.oce02,oce_file.oce03,oce_file.oce04,oce_file.oce05)
+END -- INSTRUCTIONS
+

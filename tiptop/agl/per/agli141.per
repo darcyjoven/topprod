@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli141.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli141")
+VBox vb2
+Folder folder01
+Page page01(text="Page01")
+Grid gr2407
+{
+ Sales Cost Center  [ahj01    ][gem02           ]
+ Year               [ahj02    ]
+ Month              [ahj03    ]
+}
+END -- gr2407
+END -- page01
+END -- folder01
+Table s_ahj
+{
+[ahj19       |ahj04               |ahj05    |ahj06                         |ahj061                        |ima021                        |ima25|ahj07       |ahj08       |ahj09       |ahj10       |ahj11       |ahj12       |ahj13       |ahj14       |ahj15              |gem02_b     |ahj16       |ahj17       |ahj18           ]
+[ahj19       |ahj04               |ahj05    |ahj06                         |ahj061                        |ima021                        |ima25|ahj07       |ahj08       |ahj09       |ahj10       |ahj11       |ahj12       |ahj13       |ahj14       |ahj15              |gem02_b     |ahj16       |ahj17       |ahj18           ]
+[ahj19       |ahj04               |ahj05    |ahj06                         |ahj061                        |ima021                        |ima25|ahj07       |ahj08       |ahj09       |ahj10       |ahj11       |ahj12       |ahj13       |ahj14       |ahj15              |gem02_b     |ahj16       |ahj17       |ahj18           ]
+[ahj19       |ahj04               |ahj05    |ahj06                         |ahj061                        |ima021                        |ima25|ahj07       |ahj08       |ahj09       |ahj10       |ahj11       |ahj12       |ahj13       |ahj14       |ahj15              |gem02_b     |ahj16       |ahj17       |ahj18           ]
+[ahj19       |ahj04               |ahj05    |ahj06                         |ahj061                        |ima021                        |ima25|ahj07       |ahj08       |ahj09       |ahj10       |ahj11       |ahj12       |ahj13       |ahj14       |ahj15              |gem02_b     |ahj16       |ahj17       |ahj18           ]
+[ahj19       |ahj04               |ahj05    |ahj06                         |ahj061                        |ima021                        |ima25|ahj07       |ahj08       |ahj09       |ahj10       |ahj11       |ahj12       |ahj13       |ahj14       |ahj15              |gem02_b     |ahj16       |ahj17       |ahj18           ]
+[ahj19       |ahj04               |ahj05    |ahj06                         |ahj061                        |ima021                        |ima25|ahj07       |ahj08       |ahj09       |ahj10       |ahj11       |ahj12       |ahj13       |ahj14       |ahj15              |gem02_b     |ahj16       |ahj17       |ahj18           ]
+[ahj19       |ahj04               |ahj05    |ahj06                         |ahj061                        |ima021                        |ima25|ahj07       |ahj08       |ahj09       |ahj10       |ahj11       |ahj12       |ahj13       |ahj14       |ahj15              |gem02_b     |ahj16       |ahj17       |ahj18           ]
+[ahj19       |ahj04               |ahj05    |ahj06                         |ahj061                        |ima021                        |ima25|ahj07       |ahj08       |ahj09       |ahj10       |ahj11       |ahj12       |ahj13       |ahj14       |ahj15              |gem02_b     |ahj16       |ahj17       |ahj18           ]
+[ahj19       |ahj04               |ahj05    |ahj06                         |ahj061                        |ima021                        |ima25|ahj07       |ahj08       |ahj09       |ahj10       |ahj11       |ahj12       |ahj13       |ahj14       |ahj15              |gem02_b     |ahj16       |ahj17       |ahj18           ]
+
+}
+END -- s_ahj
+Grid gr2408
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2408
+END -- vb2
+END -- agli141
+
+TABLES
+ahj_file
+ATTRIBUTES
+ButtonEdit ahj01=ahj_file.ahj01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Cost Center";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=2, noEntry;
+Edit ahj02=ahj_file.ahj02, tabIndex=3, not null, required;
+Edit ahj03=ahj_file.ahj03, tabIndex=4, not null, required;
+ButtonEdit ahj19=ahj_file.ahj19, action=controlp, tabIndex=26, title=%"Plant", not null, required, image="zoom.png";
+ButtonEdit ahj04=ahj_file.ahj04, action=controlp, tabIndex=5, title="Delivery Note No.", not null, required, image="zoom", comment="<^P>Qry Documents";
+ButtonEdit ahj05=ahj_file.ahj05, action=controlp, tabIndex=6, title="Line No.", not null, required, image="zoom", comment="<^P>Qry Documents Line No.";
+ButtonEdit ahj06=ahj_file.ahj06, action=controlp, tabIndex=7, title="Item No.", not null, required, image="zoom", comment="<^P>Qry Item No.";
+Edit ahj061=ahj_file.ahj061, tabIndex=8, title="Part Name", not null, required;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=9, title="Spec", noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=10, title="Unit", noEntry;
+Edit ahj07=ahj_file.ahj07, tabIndex=11, title="Qty", not null, required;
+Edit ahj08=ahj_file.ahj08, tabIndex=12, title="Cost U/P", not null, required;
+Edit ahj09=ahj_file.ahj09, tabIndex=13, title="Cost Amt", not null, required;
+Edit ahj10=ahj_file.ahj10, tabIndex=14, title="Inter U/P", not null, required;
+Edit ahj11=ahj_file.ahj11, tabIndex=15, title="Inter Amt", not null, required;
+Edit ahj12=ahj_file.ahj12, tabIndex=16, title="Sales U/P", not null, required;
+Edit ahj13=ahj_file.ahj13, tabIndex=17, title="Sales Amt", not null, required;
+Edit ahj14=ahj_file.ahj14, tabIndex=18, title="Inter Prof.", not null, required;
+ButtonEdit ahj15=ahj_file.ahj15, action=controlp, tabIndex=19, title="Appo. Cost Center", not null, required, image="zoom", comment="<^P>Qry Department No.";
+Edit gem02_b=formonly.gem02_b type CHAR, tabIndex=20, title="Dept Name", noEntry;
+Edit ahj16=ahj_file.ahj16, tabIndex=21, title="Appo. Rate", not null, required;
+Edit ahj17=ahj_file.ahj17, tabIndex=22, title="Appo. Amt", not null, required;
+Edit ahj18=ahj_file.ahj18, tabIndex=23, title="Entry Sheet No.", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ahj(ahj_file.ahj19,ahj_file.ahj04,ahj_file.ahj05,ahj_file.ahj06,ahj_file.ahj061,formonly.ima021,formonly.ima25,ahj_file.ahj07,ahj_file.ahj08,ahj_file.ahj09,ahj_file.ahj10,ahj_file.ahj11,ahj_file.ahj12,ahj_file.ahj13,ahj_file.ahj14,ahj_file.ahj15,formonly.gem02_b,ahj_file.ahj16,ahj_file.ahj17,ahj_file.ahj18)
+SCREEN RECORD Undefined(ahj_file.ahj01,formonly.gem02,ahj_file.ahj02,ahj_file.ahj03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

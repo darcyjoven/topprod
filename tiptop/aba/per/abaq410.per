@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abaq410.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"abaq410")
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox2
+HBox HBox1(splitter)
+VBox VBox1(splitter)
+Grid Grid1
+{
+ <G input                               >
+   [b         ]
+ <                                      >
+
+}
+END -- Grid1
+Table Table1
+{
+[oeb01       |oeb|oeb04   |ima02          |ima021     |oeb12   |oeb24   |sets    ]
+[oeb01       |oeb|oeb04   |ima02          |ima021     |oeb12   |oeb24   |sets    ]
+[oeb01       |oeb|oeb04   |ima02          |ima021     |oeb12   |oeb24   |sets    ]
+[oeb01       |oeb|oeb04   |ima02          |ima021     |oeb12   |oeb24   |sets    ]
+[oeb01       |oeb|oeb04   |ima02          |ima021     |oeb12   |oeb24   |sets    ]
+[oeb01       |oeb|oeb04   |ima02          |ima021     |oeb12   |oeb24   |sets    ]
+[oeb01       |oeb|oeb04   |ima02          |ima021     |oeb12   |oeb24   |sets    ]
+[oeb01       |oeb|oeb04   |ima02          |ima021     |oeb12   |oeb24   |sets    ]
+[oeb01       |oeb|oeb04   |ima02          |ima021     |oeb12   |oeb24   |sets    ]
+[oeb01       |oeb|oeb04   |ima02          |ima021     |oeb12   |oeb24   |sets    ]
+}
+END -- Table1
+END -- VBox1
+Table Table2
+{
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+[imgb01    |ibb0|imgb|img1|img2|imgb0|more |less ]
+
+
+
+
+}
+END -- Table2
+END -- HBox1
+Grid Grid3
+{
+
+ cn2    [cn2   ] /  [cn3   ]
+
+}
+END -- Grid3
+END -- VBox2
+END -- Page1
+END -- Folder1
+END -- abaq410
+
+ATTRIBUTES
+Group input:Input, text=%"Group1";
+CheckBox b=formonly.b type CHAR, tabIndex=1, text=%"CheckBox1", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oeb01=formonly.oeb01 type VARCHAR, action=controlp, tabIndex=2, title=%"oeb01", image="zoom";
+ButtonEdit oeb=formonly.oeb03 type SMALLINT, action=controlp, tabIndex=3, title=%"oeb03", image="zoom";
+ButtonEdit oeb04=formonly.oeb04 type VARCHAR, action=controlp, tabIndex=4, title=%"oeb04", image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=5, title=%"ima02", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=6, title=%"ima021", noEntry;
+Edit oeb12=formonly.oeb12 type DECIMAL, tabIndex=7, title=%"oeb12";
+Edit oeb24=formonly.oeb24 type DECIMAL, tabIndex=8, title=%"oeb24";
+Edit sets=formonly.sets type DECIMAL, tabIndex=9, title=%"sets";
+Edit imgb01=formonly.imgb01 type CHAR, tabIndex=10, title=%"imgb01";
+Edit ibb0=formonly.ibb05 type CHAR, tabIndex=11, title=%"ibb05";
+Edit imgb=formonly.imgb02 type CHAR, tabIndex=12, title=%"imgb02";
+Edit img1=formonly.imgb03 type CHAR, tabIndex=13, title=%"imgb03";
+Edit img2=formonly.imgb04 type CHAR, tabIndex=17, title=%"imgb04";
+Edit imgb0=formonly.imgb05 type DECIMAL, tabIndex=14, title=%"imgb05";
+Edit more=formonly.more type DECIMAL, tabIndex=15, title=%"more";
+Edit less=formonly.less type DECIMAL, tabIndex=16, title=%"less";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=18;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=19;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.b,formonly.cn2,formonly.cn3)
+SCREEN RECORD s_oeb(formonly.oeb01,formonly.oeb03,formonly.oeb04,formonly.ima02,formonly.ima021,formonly.oeb12,formonly.oeb24,formonly.sets)
+SCREEN RECORD s_imgb(formonly.imgb01,formonly.ibb05,formonly.imgb02,formonly.imgb03,formonly.imgb04,formonly.imgb05,formonly.more,formonly.less)
+END -- INSTRUCTIONS
+

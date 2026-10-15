@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt4003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrt4003")
+VBox VBox1
+Folder pc643
+Page page01(text="Main")
+Grid gr2710
+{
+ [dummy01                                                   ]
+ [sw1                        ]
+ [sw2                        ]
+ [sw3                        ]
+ [sw4                        ]
+}
+END -- gr2710
+END -- page01
+END -- pc643
+END -- VBox1
+END -- axrt4003
+
+ATTRIBUTES
+Label dummy01:dummy01, text="Generate Contra Account by Data Below";
+CheckBox sw1=formonly.sw1 type CHAR, tabIndex=1, text="Note Receivable", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sw2=formonly.sw2 type CHAR, tabIndex=2, text="T/T", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sw3=formonly.sw3 type CHAR, tabIndex=3, text="Account To Offset", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sw4=formonly.sw4 type CHAR, tabIndex=4, text="A/P", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sw1,formonly.sw2,formonly.sw3,formonly.sw4)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,179 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti009.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder pc1
+Page main(text=%"Main")
+Grid gr1
+{
+
+[label1    ][imaano                ]                        [label11   ] [imaa120               ]                       [imaa04                                ]
+[label2    ][imaa00                ]                        [label12   ] [imaa25                ]                       [                                      ]
+[label3    ][imaa01                ]                        [label13   ] [imaa44                ][imaa44_fac          ] [                                      ]
+[label4    ][imaa02                ]                        [label14   ] [imaa31                ][imaa31_fac          ] [                                      ]
+[label10   ][imaa021               ]                        [label15   ] [imaa54                ]                       [                                      ]
+[label5    ][imaa06                ][imz02               ]  [label16   ] [imaa12                ]                       [                                      ]
+[label6    ][imaa08                ]                        [label17   ] [imaa39                ]                       [update ]
+[label7    ][imaa131               ][oba02               ]  [label18   ] [imaa149               ]                       [imgmksg]
+[label8    ][imaa1005              ]                        [label32   ] [imaa1010              ]                       [       ]
+[label9    ][imaa1006              ]
+[label28   ][imaa1030              ]
+            [imaa154       ]
+            [imaa151       ]
+[label29   ][imaa940               ]
+[label30   ][imaa941               ]
+[label31   ][imaaag                ]
+}
+END -- gr1
+END -- main
+Page other(text=%"Other")
+Grid Grid2
+{
+
+ [label33   ][imaa1004              ]           [label41   ] [imaa09                ]
+ [label34   ][imaa1007              ]           [label42   ] [imaa10                ]
+ [label35   ][imaa1008              ]           [label43   ] [imaa11                ]
+ [label36   ][imaa1009              ]           [label44   ] [imaa531               ]
+ [label37   ][imaa915               ]
+ [label38   ][imaa45                ]
+ [label39   ][imaa46                ]
+ [label40   ][imaa47                ]
+
+
+}
+END -- Grid2
+END -- other
+Page info(text=%"Info")
+Grid Grid1
+{
+
+ [label19   ][imaauser       ]    [label22   ][imaamodu       ]      [label25   ][imaaacti       ]
+ [label20   ][imaagrup       ]    [label23   ][imaadate       ]
+ [label21   ][imaaoriu       ]    [label24   ][imaaorig       ]
+
+}
+END -- Grid1
+END -- info
+END -- pc1
+Grid gr3
+{
+
+  ------[label|idx  |la|cnt   ]
+
+}
+END -- gr3
+END -- VBox1
+END -- arti009
+
+TABLES
+imaa_file
+ATTRIBUTES
+Label label1:Label1, text=%"imaano";
+ButtonEdit imaano=imaa_file.imaano, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Label label11:Label11, text=%"imaa120";
+ComboBox imaa120=imaa_file.imaa120, tabIndex=17, default = "1", not null, items=(("1", "Requisition for control"),("2", "Purchase order to control"));
+IMAGE imaa04=formonly.imaa04, width = 300 pixels, height = 140 pixels;
+Label label2:Label2, text=%"imaa00";
+ComboBox imaa00=imaa_file.imaa00, tabIndex=2, default = "I", not null, required, queryEditable, items=(("I", "Insert"),("U", "Update"));
+Label label12:Label12, text=%"imaa25";
+ButtonEdit imaa25=imaa_file.imaa25, action=controlp, tabIndex=18, not null, image="zoom.png";
+Label label3:Label3, text=%"imaa01";
+ButtonEdit imaa01=imaa_file.imaa01, action=controlp, tabIndex=3, not null, image="zoom.png";
+Label label13:Label13, text=%"imaa44";
+ButtonEdit imaa44=imaa_file.imaa44, action=controlp, tabIndex=19, not null, image="zoom.png";
+Edit imaa44_fac=formonly.imaa44_fac, tabIndex=20, noEntry;
+Label label4:Label4, text=%"imaa02";
+Edit imaa02=imaa_file.imaa02, tabIndex=4, comment="<^Y> Mntn Extra P/N Spec";
+Label label14:Label14, text=%"imaa31";
+ButtonEdit imaa31=imaa_file.imaa31, action=controlp, tabIndex=21, not null, image="zoom.png";
+Edit imaa31_fac=formonly.imaa31_fac, tabIndex=22, noEntry;
+Label label10:Label10, text=%"imaa021";
+Edit imaa021=imaa_file.imaa021, tabIndex=50, scroll;
+Label label15:Label15, text=%"imaa54";
+ButtonEdit imaa54=imaa_file.imaa54, action=controlp, tabIndex=23, image="zoom.png";
+Label label5:Label5, text=%"imaa06";
+ButtonEdit imaa06=imaa_file.imaa06, action=controlp, tabIndex=5, not null, image="zoom.png";
+Edit imz02=formonly.imz02, tabIndex=6, noEntry;
+Label label16:Label16, text=%"imaa12";
+ButtonEdit imaa12=imaa_file.imaa12, action=controlp, tabIndex=24, image="zoom.png";
+Label label6:Label6, text=%"imaa08";
+ComboBox imaa08=imaa_file.imaa08, tabIndex=7, default = "P", not null, queryEditable, comment="Enter  C/T/D/A/M/P/X/K/U/V/R/Z/S", items=(("A", "Family Product"),("C", "Configurable Product"),("D", "Feture"),("K", "Kit"),("M", "Make Product"),("P", "Purchase"),("R", "Routable"),("S", "Subcontract"),("T", "FAS Product"),("U", "Manufactured Mass Item"),("V", "Purchased Mass Item"),("X", "Phantom"),("Z", "Miscellaneous"));
+Label label17:Label17, text=%"imaa39";
+ButtonEdit imaa39=imaa_file.imaa39, action=controlp, tabIndex=25, image="zoom.png";
+Button update:update, tabIndex=28, text="Update";
+Label label7:Label7, text=%"imaa131";
+ButtonEdit imaa131=imaa_file.imaa131, action=controlp, tabIndex=8, not null, image="zoom.png";
+Edit oba02=formonly.oba02, tabIndex=9, noEntry;
+Label label18:Label18, text=%"imaa149";
+ButtonEdit imaa149=imaa_file.imaa149, action=controlp, tabIndex=26, image="zoom.png";
+IMAGE imgmksg=formonly.imgmksg, autoScale, width = 7 characters, height = 2 characters;
+Label label8:Label8, text=%"imaa1005";
+ButtonEdit imaa1005=imaa_file.imaa1005, action=controlp, tabIndex=10, image="zoom.png";
+Label label32:Label32, text=%"imaa1010";
+ComboBox imaa1010=imaa_file.imaa1010, tabIndex=27, default = "0", noEntry, not null, items=(("0", "Open"),("1", "Approved"),("2", "Already running"),("S", "Signed to send"),("R", "Signed to send back"),("W", "Pumping and single"));
+Label label9:Label9, text=%"imaa1006";
+ButtonEdit imaa1006=imaa_file.imaa1006, action=controlp, tabIndex=11, image="zoom.png";
+Label label28:Label28, text=%"imaa1030";
+ButtonEdit imaa1030=imaa_file.imaa1030, action=controlp, tabIndex=51, image="zoom";
+CheckBox imaa154=imaa_file.imaa154, tabIndex=12, default = "N", text=%"imaa154", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox imaa151=imaa_file.imaa151, tabIndex=13, default = "N", text=%"imaa151", not null, valueChecked = "Y", valueUnchecked = "N";
+Label label29:Label29, text=%"imaa940";
+ButtonEdit imaa940=imaa_file.imaa940, action=controlp, tabIndex=14, image="zoom.png";
+Label label30:Label30, text=%"imaa941";
+ButtonEdit imaa941=imaa_file.imaa941, action=controlp, tabIndex=15, image="zoom.png";
+Label label31:Label31, text=%"imaaag";
+ButtonEdit imaaag=imaa_file.imaaag, action=controlp, tabIndex=16, image="zoom.png";
+Label label33:Label33, text=%"imaa1004";
+ButtonEdit imaa1004=imaa_file.imaa1004, action=controlp, tabIndex=29, image="zoom.png";
+Label label41:Label41, text=%"imaa09";
+ButtonEdit imaa09=imaa_file.imaa09, action=controlp, tabIndex=37, image="zoom.png";
+Label label34:Label34, text=%"imaa1007";
+ButtonEdit imaa1007=imaa_file.imaa1007, action=controlp, tabIndex=30, image="zoom.png";
+Label label42:Label42, text=%"imaa10";
+ButtonEdit imaa10=imaa_file.imaa10, action=controlp, tabIndex=38, image="zoom.png";
+Label label35:Label35, text=%"imaa1008";
+ButtonEdit imaa1008=imaa_file.imaa1008, action=controlp, tabIndex=31, image="zoom.png";
+Label label43:Label43, text=%"imaa11";
+ButtonEdit imaa11=imaa_file.imaa11, action=controlp, tabIndex=39, image="zoom.png";
+Label label36:Label36, text=%"imaa1009";
+ButtonEdit imaa1009=imaa_file.imaa1009, action=controlp, tabIndex=32, image="zoom.png";
+Label label44:Label44, text=%"imaa531";
+Edit imaa531=imaa_file.imaa531, tabIndex=40;
+Label label37:Label37, text=%"imaa915";
+ComboBox imaa915=imaa_file.imaa915, tabIndex=33, items=(("0", "No control"),("1", "Requisition for control"),("2", "Purchase order to control"),("3", "Both of them need to control"));
+Label label38:Label38, text=%"imaa45";
+Edit imaa45=imaa_file.imaa45, tabIndex=34, default = "1";
+Label label39:Label39, text=%"imaa46";
+Edit imaa46=imaa_file.imaa46, tabIndex=35, default = "0";
+Label label40:Label40, text=%"imaa47";
+Edit imaa47=imaa_file.imaa47, tabIndex=36, default = "0";
+Label label19:Label19, text=%"imaauser";
+Edit imaauser=imaa_file.imaauser, tabIndex=41, noEntry;
+Label label22:Label22, text=%"imaamodu";
+Edit imaamodu=imaa_file.imaamodu, tabIndex=44, noEntry;
+Label label25:Label25, text=%"imaaacti";
+Edit imaaacti=imaa_file.imaaacti, tabIndex=47, noEntry;
+Label label20:Label20, text=%"imaagrup";
+Edit imaagrup=imaa_file.imaagrup, tabIndex=42, noEntry;
+Label label23:Label23, text=%"imaadate";
+DateEdit imaadate=imaa_file.imaadate, tabIndex=45, noEntry;
+Label label21:Label21, text=%"imaaoriu";
+Edit imaaoriu=imaa_file.imaaoriu, tabIndex=43, noEntry;
+Label label24:Label24, text=%"imaaorig";
+Edit imaaorig=imaa_file.imaaorig, tabIndex=46, noEntry;
+Label label:Label26, text=%"Rows";
+Edit idx=formonly.idx type SMALLINT, tabIndex=48, noEntry;
+Label la:Label27, text=%"/";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=49, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,imaa_file.imaagrup,imaa_file.imaaoriu,imaa_file.imaauser,imaa_file.imaamodu,imaa_file.imaadate,imaa_file.imaaorig,imaa_file.imaaacti,imaa_file.imaa120,formonly.imz02,formonly.oba02,formonly.imaa44_fac,formonly.imaa31_fac,formonly.imaa04,formonly.imgmksg,imaa_file.imaano,imaa_file.imaa00,imaa_file.imaa01,imaa_file.imaa02,imaa_file.imaa06,imaa_file.imaa08,imaa_file.imaa131,imaa_file.imaa1005,imaa_file.imaa1006,imaa_file.imaaag,imaa_file.imaa25,imaa_file.imaa44,imaa_file.imaa31,imaa_file.imaa54,imaa_file.imaa12,imaa_file.imaa39,imaa_file.imaa1010,imaa_file.imaa1004,imaa_file.imaa1007,imaa_file.imaa1008,imaa_file.imaa1009,imaa_file.imaa915,imaa_file.imaa45,imaa_file.imaa46,imaa_file.imaa47,imaa_file.imaa09,imaa_file.imaa10,imaa_file.imaa11,imaa_file.imaa531,imaa_file.imaa154,imaa_file.imaa151,imaa_file.imaa940,imaa_file.imaa941,imaa_file.imaa149,imaa_file.imaa1030)
+SCREEN RECORD Record1(imaa_file.imaa021)
+END -- INSTRUCTIONS
+

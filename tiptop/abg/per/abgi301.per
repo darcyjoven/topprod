@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi301")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr619
+{
+ Customer [bhe00     ]
+
+}
+END -- gr619
+END -- page01
+END -- folder01
+Table s_bhe
+{
+[bhe01            |bhe06      |aag02                                             ]
+[bhe01            |bhe06      |aag02                                             ]
+[bhe01            |bhe06      |aag02                                             ]
+[bhe01            |bhe06      |aag02                                             ]
+[bhe01            |bhe06      |aag02                                             ]
+[bhe01            |bhe06      |aag02                                             ]
+[bhe01            |bhe06      |aag02                                             ]
+[bhe01            |bhe06      |aag02                                             ]
+[bhe01            |bhe06      |aag02                                             ]
+[bhe01            |bhe06      |aag02                                             ]
+
+}
+END -- s_bhe
+END -- VBox1
+END -- abgi301
+
+TABLES
+bhe_file
+ATTRIBUTES
+Edit bhe00=bhe_file.bhe00, tabIndex=1, not null, required, comment="2.Customer";
+ButtonEdit bhe01=bhe_file.bhe01, action=controlp, tabIndex=2, title="Customer No.", not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit bhe06=bhe_file.bhe06, action=controlp, tabIndex=3, title="Account", not null, required, image="zoom", comment="<^P>Qry Account";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=4, title="Account Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bhe(bhe_file.bhe01,bhe_file.bhe06,formonly.aag02)
+SCREEN RECORD Undefined(bhe_file.bhe00)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli201")
+VBox vb2
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ Year      [asw01     ] Group No. [asw03     ]                       sheetNo.    [asw18             ]
+ Period    [asw02     ] Parent Co.[asw031    ][asg02              ]  Sour.Curr.  [asw11             ]
+
+
+}
+END -- gr1
+END -- page01
+END -- pc1
+Table tb1
+{
+[asw04|asw05       |asw06      |asw07      |asg02_s             |asw08      |asg02_t             |asw09                   |aag02_a             |asw10                   |aag02_t             |asw19          |aag02_s |asw12               |asw13               |asw131          |asw14               |asw15          |asw16                     |asw17           ]
+[asw04|asw05       |asw06      |asw07      |asg02_s             |asw08      |asg02_t             |asw09                   |aag02_a             |asw10                   |aag02_t             |asw19          |aag02_s |asw12               |asw13               |asw131          |asw14               |asw15          |asw16                     |asw17           ]
+[asw04|asw05       |asw06      |asw07      |asg02_s             |asw08      |asg02_t             |asw09                   |aag02_a             |asw10                   |aag02_t             |asw19          |aag02_s |asw12               |asw13               |asw131          |asw14               |asw15          |asw16                     |asw17           ]
+[asw04|asw05       |asw06      |asw07      |asg02_s             |asw08      |asg02_t             |asw09                   |aag02_a             |asw10                   |aag02_t             |asw19          |aag02_s |asw12               |asw13               |asw131          |asw14               |asw15          |asw16                     |asw17           ]
+[asw04|asw05       |asw06      |asw07      |asg02_s             |asw08      |asg02_t             |asw09                   |aag02_a             |asw10                   |aag02_t             |asw19          |aag02_s |asw12               |asw13               |asw131          |asw14               |asw15          |asw16                     |asw17           ]
+[asw04|asw05       |asw06      |asw07      |asg02_s             |asw08      |asg02_t             |asw09                   |aag02_a             |asw10                   |aag02_t             |asw19          |aag02_s |asw12               |asw13               |asw131          |asw14               |asw15          |asw16                     |asw17           ]
+[asw04|asw05       |asw06      |asw07      |asg02_s             |asw08      |asg02_t             |asw09                   |aag02_a             |asw10                   |aag02_t             |asw19          |aag02_s |asw12               |asw13               |asw131          |asw14               |asw15          |asw16                     |asw17           ]
+[asw04|asw05       |asw06      |asw07      |asg02_s             |asw08      |asg02_t             |asw09                   |aag02_a             |asw10                   |aag02_t             |asw19          |aag02_s |asw12               |asw13               |asw131          |asw14               |asw15          |asw16                     |asw17           ]
+[asw04|asw05       |asw06      |asw07      |asg02_s             |asw08      |asg02_t             |asw09                   |aag02_a             |asw10                   |aag02_t             |asw19          |aag02_s |asw12               |asw13               |asw131          |asw14               |asw15          |asw16                     |asw17           ]
+[asw04|asw05       |asw06      |asw07      |asg02_s             |asw08      |asg02_t             |asw09                   |aag02_a             |asw10                   |aag02_t             |asw19          |aag02_s |asw12               |asw13               |asw131          |asw14               |asw15          |asw16                     |asw17           ]
+
+}
+END -- tb1
+Grid gr2
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2
+END -- vb2
+END -- ggli201
+
+TABLES
+asw_file
+ATTRIBUTES
+Edit asw01=asw_file.asw01, tabIndex=1, not null, required;
+ButtonEdit asw03=asw_file.asw03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Group No.";
+Edit asw18=formonly.asw18 type CHAR, tabIndex=26, noEntry;
+Edit asw02=asw_file.asw02, tabIndex=2, not null, required;
+ButtonEdit asw031=asw_file.asw031, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Parent Company";
+Edit asg02=formonly.asg02 type CHAR, tabIndex=5, noEntry;
+Edit asw11=asw_file.asw11, tabIndex=27, noEntry;
+Edit asw04=asw_file.asw04, tabIndex=6, title="Ln#", not null, required;
+ComboBox asw05=asw_file.asw05, tabIndex=7, title="Trans.Prop.", not null, required, items=(("1", %"Downstream"),("2", %"Backflow"),("3", %"Sideflow"),("4", %"Other"));
+ComboBox asw06=asw_file.asw06, tabIndex=8, title="Trans.Type", not null, required, items=(("1", "Inventory"),("2", "Tangible Asset(Territory)"),("3", "Tangible Asset"),("4", "Intangible Asset"),("5", "Other"));
+ButtonEdit asw07=asw_file.asw07, action=controlp, tabIndex=9, title="Sour.Comp.", not null, required, image="zoom", comment="<^P>Qry Company";
+Edit asg02_s=formonly.asg02_s type CHAR, tabIndex=10, title="Source Company Name", noEntry;
+ButtonEdit asw08=asw_file.asw08, action=controlp, tabIndex=11, title="Trans.Comp. Trans. Company Name", not null, required, image="zoom", comment="<^P>Qry Company";
+Edit asg02_t=formonly.asg02_t type CHAR, tabIndex=12, title="Trans. Company Name", noEntry;
+ButtonEdit asw09=asw_file.asw09, action=controlp, tabIndex=13, title="Account", not null, required, image="zoom", comment="<^P>Qry Account";
+Edit aag02_a=formonly.aag02_a type CHAR, tabIndex=14, title="Account Name", noEntry;
+ButtonEdit asw10=asw_file.asw10, action=controlp, tabIndex=15, title="Transaction Account", not null, required, image="zoom", comment="<^P>Qry Account";
+Edit aag02_t=formonly.aag02_t type CHAR, tabIndex=16, title="Trans. Account Name", noEntry;
+ButtonEdit asw19=asw_file.asw19, action=controlp, tabIndex=28, title=%"asw19", image="zoom";
+Edit aag02_s=formonly.aag02_s type CHAR, tabIndex=29, title=%"Edit2";
+Edit asw12=asw_file.asw12, tabIndex=17, title="Transaction Amount", not null, required;
+Edit asw13=asw_file.asw13, tabIndex=18, title="Trans. Profit/Loss", not null, required;
+Edit asw131=asw_file.asw131, tabIndex=19, title="Realize Prof/Loss", noEntry;
+Edit asw14=asw_file.asw14, tabIndex=20, title="Unrealize Prof/Loss", noEntry;
+Edit asw15=asw_file.asw15, tabIndex=21, title="Hoding %", not null, required;
+Edit asw16=asw_file.asw16, tabIndex=22, title="Share Unrealize Prof/Loss", not null, required;
+Edit asw17=asw_file.asw17, tabIndex=23, title="Doc. No.";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asw(asw_file.asw04,asw_file.asw05,asw_file.asw06,asw_file.asw07,formonly.asg02_s,asw_file.asw08,formonly.asg02_t,asw_file.asw09,formonly.aag02_a,asw_file.asw10,formonly.aag02_t,asw_file.asw19,formonly.aag02_s,asw_file.asw12,asw_file.asw13,asw_file.asw131,asw_file.asw14,asw_file.asw15,asw_file.asw16,asw_file.asw17)
+SCREEN RECORD Undefined(asw_file.asw01,asw_file.asw03,formonly.asw18,asw_file.asw02,asw_file.asw031,formonly.asg02,formonly.cnt,formonly.cn2,asw_file.asw11)
+END -- INSTRUCTIONS
+

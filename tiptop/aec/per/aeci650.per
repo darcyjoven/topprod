@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci650.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci650")
+VBox VBox1
+Folder pc269
+Page page01(text="Main")
+Grid gr1667
+{
+ Shift No.      [ecg01     ]
+ Description    [ecg02               ]
+ On Work Time   [ecg05     ]
+ After Work Time[ecg06     ]
+
+}
+END -- gr1667
+END -- page01
+Page info(text="Info")
+Grid gr1668
+{
+ Record Owner [ecguser   ] Last Modified by    [ecgmodu   ]   Data Valid Code [ecgacti   ]
+ Department   [ecggrup   ] Create/Modify Date  [ecgdate     ]
+ Record Orig. [ecgoriu   ]
+ Dept Orig.   [ecgorig   ]
+}
+END -- gr1668
+END -- info
+END -- pc269
+Grid gr1669
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1669
+END -- VBox1
+END -- aeci650
+
+TABLES
+ecg_file
+ATTRIBUTES
+Edit ecg01=ecg_file.ecg01, tabIndex=1, not null, required;
+Edit ecg02=ecg_file.ecg02, tabIndex=2;
+Edit ecg05=ecg_file.ecg05, tabIndex=503;
+Edit ecg06=ecg_file.ecg06, tabIndex=504;
+Edit ecguser=ecg_file.ecguser, tabIndex=3, noEntry;
+Edit ecgmodu=ecg_file.ecgmodu, tabIndex=4, noEntry;
+Edit ecgacti=ecg_file.ecgacti, tabIndex=5, noEntry, upShift;
+Edit ecggrup=ecg_file.ecggrup, tabIndex=6, noEntry;
+DateEdit ecgdate=ecg_file.ecgdate, tabIndex=7, noEntry;
+Edit ecgoriu=ecg_file.ecgoriu, tabIndex=501, noEntry;
+Edit ecgorig=ecg_file.ecgorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ecg_file.ecg01,ecg_file.ecg02,ecg_file.ecg05,ecg_file.ecg06,ecg_file.ecguser,ecg_file.ecgmodu,ecg_file.ecgacti,ecg_file.ecggrup,ecg_file.ecgdate,ecg_file.ecgoriu,ecg_file.ecgorig,formonly.cnt)
+END -- INSTRUCTIONS
+

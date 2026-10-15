@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi5201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi5201")
+VBox VBox1
+Folder pc498
+Page page01(text="Page01")
+Grid gr2114
+{
+ <G group01                                           >
+  Group Code          [ima06                         ]
+  Item No.            [ima01                         ]
+ <                                                    >
+
+}
+END -- gr2114
+END -- page01
+END -- pc498
+END -- VBox1
+END -- axmi5201
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit ima06=ima_file.ima06, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima06,ima_file.ima01)
+END -- INSTRUCTIONS
+

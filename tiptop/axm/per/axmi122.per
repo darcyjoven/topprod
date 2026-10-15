@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi122.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi122")
+VBox VBox1
+Folder pc457
+Page page01(text="Page01")
+Table s_ocl
+{
+[ocl01          |ocl02         |ocl03        |ocl04           |ocl05             |ocl06           |ocl07        ]
+[ocl01          |ocl02         |ocl03        |ocl04           |ocl05             |ocl06           |ocl07        ]
+[ocl01          |ocl02         |ocl03        |ocl04           |ocl05             |ocl06           |ocl07        ]
+[ocl01          |ocl02         |ocl03        |ocl04           |ocl05             |ocl06           |ocl07        ]
+[ocl01          |ocl02         |ocl03        |ocl04           |ocl05             |ocl06           |ocl07        ]
+[ocl01          |ocl02         |ocl03        |ocl04           |ocl05             |ocl06           |ocl07        ]
+[ocl01          |ocl02         |ocl03        |ocl04           |ocl05             |ocl06           |ocl07        ]
+[ocl01          |ocl02         |ocl03        |ocl04           |ocl05             |ocl06           |ocl07        ]
+[ocl01          |ocl02         |ocl03        |ocl04           |ocl05             |ocl06           |ocl07        ]
+[ocl01          |ocl02         |ocl03        |ocl04           |ocl05             |ocl06           |ocl07        ]
+
+}
+END -- s_ocl
+END -- page01
+END -- pc457
+Grid gr2022
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2022
+END -- VBox1
+END -- axmi122
+
+TABLES
+ocl_file
+ATTRIBUTES
+ButtonEdit ocl01=ocl_file.ocl01, action=controlp, tabIndex=1, title="Product Class", not null, required, image="zoom", comment="KEY Field, No Blank!";
+Edit ocl02=ocl_file.ocl02, tabIndex=2, title="Initial Code", not null, required, comment="KEY Field, No Blank!";
+Edit ocl03=ocl_file.ocl03, tabIndex=3, title="Ending Code", not null, required, comment="KEY Field, No Blank!";
+Edit ocl04=ocl_file.ocl04, tabIndex=4, title="Original Value", not null, required, comment="KEY Field, No Blank!";
+Edit ocl05=ocl_file.ocl05, tabIndex=5, title="Substitute Value", not null, required;
+DateEdit ocl06=ocl_file.ocl06, tabIndex=6, title="Effective Date", not null, required, comment="KEY Field, No Blank!";
+DateEdit ocl07=ocl_file.ocl07, tabIndex=7, title="Expiry Date";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ocl(ocl_file.ocl01,ocl_file.ocl02,ocl_file.ocl03,ocl_file.ocl04,ocl_file.ocl05,ocl_file.ocl06,ocl_file.ocl07)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

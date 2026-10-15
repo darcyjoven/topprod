@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi260.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi260")
+VBox vb8
+Folder pc7
+Page Main(text=%"Main")
+Grid gr18
+{
+ Category               [lms01          ]
+ Arithmetic             [lms02          ]
+ Mem                    [lms03          ]
+
+}
+END -- gr18
+END -- Main
+Page info(text=%"Info")
+Grid gr19
+{
+ Record Owner        [lmsuser   ] Last Modified by    [lmsmodu   ] Data Valid Code     [lmsacti   ]
+ Department          [lmsgrup   ] Create/Modify Date  [lmsdate   ] Create Date         [lmscrat   ]
+ Record Orig.        [lmsoriu   ]
+ Dept Orig.          [lmsorig   ]
+}
+END -- gr19
+END -- info
+END -- pc7
+Grid gr21
+{
+ ---------- Rows[cnt   ]----------
+
+
+}
+END -- gr21
+END -- vb8
+END -- almi260
+
+TABLES
+lms_file
+ATTRIBUTES
+ComboBox lms01=lms_file.lms01, tabIndex=1, not null, required, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"),("10", "10"),("11", "11"),("12", "12"));
+ButtonEdit lms02=lms_file.lms02, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Edit lms03=lms_file.lms03, tabIndex=3;
+Edit lmsuser=lms_file.lmsuser, tabIndex=4, noEntry;
+Edit lmsmodu=lms_file.lmsmodu, tabIndex=5, noEntry;
+Edit lmsacti=lms_file.lmsacti, tabIndex=6, noEntry, upShift;
+Edit lmsgrup=lms_file.lmsgrup, tabIndex=7, noEntry;
+DateEdit lmsdate=lms_file.lmsdate, tabIndex=8, noEntry;
+DateEdit lmscrat=lms_file.lmscrat, tabIndex=10, noEntry;
+Edit lmsoriu=lms_file.lmsoriu, tabIndex=11, noEntry;
+Edit lmsorig=lms_file.lmsorig, tabIndex=12, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lms_file.lms01,lms_file.lms02,lms_file.lms03,lms_file.lmsuser,lms_file.lmsmodu,lms_file.lmsacti,lms_file.lmsgrup,lms_file.lmsdate,lms_file.lmscrat,lms_file.lmsoriu,lms_file.lmsorig,formonly.cnt)
+END -- INSTRUCTIONS
+

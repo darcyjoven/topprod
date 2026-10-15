@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/afai501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai501")
+VBox VBox1
+Folder pc344
+Page page01(text="Main")
+Grid gr1882
+{
+ No.                 [npp01     ]
+ Voucher Date        [npp03       ]
+ Voucher No.         [nppglno             ]
+}
+END -- gr1882
+END -- page01
+END -- pc344
+Grid gr1883
+{
+ ---------- Rows [cnt   ]
+
+}
+END -- gr1883
+END -- VBox1
+END -- afai501
+
+TABLES
+npp_file
+ATTRIBUTES
+Edit npp01=npp_file.npp01, tabIndex=1, upShift;
+DateEdit npp03=npp_file.npp03, tabIndex=2;
+Edit nppglno=npp_file.nppglno, tabIndex=3;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(npp_file.npp01,npp_file.npp03,npp_file.nppglno,formonly.cnt)
+END -- INSTRUCTIONS
+

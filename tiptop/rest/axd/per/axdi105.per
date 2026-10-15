@@ -1,0 +1,99 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi105.per created Wed Jan 23 05:30:29 2008
+-- File created from axdi105.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi105")
+-- GRID
+-- PAGE
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        GRID gr7738
+        {
+        <G group01                                                            >
+          Ship Route No.      [aa0       ] [aa1                           ]
+          Initial Site        [aa2       ] [aa3                 ]
+          Destination Site    [aa4       ] [aa5                 ]
+        <                                                                     >
+
+
+        }
+        END -- GRID
+      END -- PAGE
+      PAGE info( TEXT="Info")
+        GRID gr7739
+        {
+         Record Owner        [aa6       ]   Last Modified by    [aa7       ]   Data Valid Code     [aa8       ]
+         Department          [aa9       ]   Create/Modify Date  [ab0       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_obo
+    {
+    [ab1    |ab2          |ab3           |ab4                    |ab5            |ab6                 |ab7                |ab8                 |ab9  ]
+    [ab1    |ab2          |ab3           |ab4                    |ab5            |ab6                 |ab7                |ab8                 |ab9  ]
+    [ab1    |ab2          |ab3           |ab4                    |ab5            |ab6                 |ab7                |ab8                 |ab9  ]
+    [ab1    |ab2          |ab3           |ab4                    |ab5            |ab6                 |ab7                |ab8                 |ab9  ]
+    [ab1    |ab2          |ab3           |ab4                    |ab5            |ab6                 |ab7                |ab8                 |ab9  ]
+    [ab1    |ab2          |ab3           |ab4                    |ab5            |ab6                 |ab7                |ab8                 |ab9  ]
+    [ab1    |ab2          |ab3           |ab4                    |ab5            |ab6                 |ab7                |ab8                 |ab9  ]
+    [ab1    |ab2          |ab3           |ab4                    |ab5            |ab6                 |ab7                |ab8                 |ab9  ]
+    [ab1    |ab2          |ab3           |ab4                    |ab5            |ab6                 |ab7                |ab8                 |ab9  ]
+    [ab1    |ab2          |ab3           |ab4                    |ab5            |ab6                 |ab7                |ab8                 |ab9  ]
+    }
+    END -- TABLE
+    GRID gr7740
+    {
+     ---------- Rows [ac0   ] / [ac1   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES obn_file,obo_file
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=obn_file.obn01, COMMENT="KEY Field, No Blank/Repeated!", NOT NULL, REQUIRED, TABINDEX=1;
+  EDIT aa1=obn_file.obn02, TABINDEX=2;
+  BUTTONEDIT aa2=obn_file.obn04, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=3;
+  EDIT aa3=FORMONLY.oac02, NOENTRY, TABINDEX=4;
+  BUTTONEDIT aa4=obn_file.obn05, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=5;
+  EDIT aa5=FORMONLY.oac02a, NOENTRY, TABINDEX=6;
+  EDIT aa6=obn_file.obnuser, NOENTRY, TABINDEX=7;
+  EDIT aa7=obn_file.obnmodu, NOENTRY, TABINDEX=8;
+  EDIT aa8=obn_file.obnacti, NOENTRY, UPSHIFT, TABINDEX=9;
+  EDIT aa9=obn_file.obngrup, NOENTRY, TABINDEX=10;
+  EDIT ab0=obn_file.obndate, NOENTRY, TABINDEX=11;
+  EDIT ab1=obo_file.obo02, NOT NULL, REQUIRED, TABINDEX=12, TITLE="Step";
+  COMBOBOX ab2=obo_file.obo03, NOT NULL, REQUIRED, TABINDEX=13, TITLE="Property", ITEMS=(("1","Ship"),("2","Load/Unload"),("3","Transport"));
+  EDIT ab3=FORMONLY.desc, NOENTRY, TABINDEX=14, TITLE="Description";
+  COMBOBOX ab4=obo_file.obo04, NOT NULL, REQUIRED, QUERYEDITABLE, TABINDEX=15, TITLE="Transportantion Type", ITEMS=(("O","Ocean"),("C","Container"),("H","House"),("A","Air"),("E","Express"),("X","Others"));
+  EDIT ab5=obo_file.obo05, NOENTRY, TABINDEX=16, TITLE="Initial Site";
+  EDIT ab6=FORMONLY.oac02b, NOENTRY, TABINDEX=17, TITLE="Description";
+  BUTTONEDIT ab7=obo_file.obo06, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=18, TITLE="Destination Site";
+  EDIT ab8=FORMONLY.oac02c, NOENTRY, TABINDEX=19, TITLE="Description";
+  EDIT ab9=obo_file.obo07, NOT NULL, REQUIRED, TABINDEX=20, TITLE="Used";
+  EDIT ac0=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=21;
+  EDIT ac1=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=22;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_obo (obo_file.obo02, obo_file.obo03, FORMONLY.desc, obo_file.obo04, obo_file.obo05, FORMONLY.oac02b, obo_file.obo06, FORMONLY.oac02c, obo_file.obo07)
+END

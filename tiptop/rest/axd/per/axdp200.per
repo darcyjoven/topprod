@@ -1,0 +1,91 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdp200.per created Wed Jan 23 05:30:35 2008
+-- File created from axdp200.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdp200")
+-- GRID
+-- GRID
+-- HBOX
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        HBOX 
+          GRID gr7782
+          {
+          <G group01                              >
+           Application Note    [aa0               ]
+           Application Date    [aa1       ]
+          <                                       >
+
+
+          }
+          END -- GRID
+          GRID gr7783
+          {
+          <G group02                        >
+           [aa2                           ]
+           [aa3                           ]
+          <                                 >
+
+
+          }
+          END -- GRID
+        END -- HBOX
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_ade
+    {
+    [aa4     |aa5       |aa6                     |aa7             |aa8                       |aa9               ]
+    [aa4     |aa5       |aa6                     |aa7             |aa8                       |aa9               ]
+    [aa4     |aa5       |aa6                     |aa7             |aa8                       |aa9               ]
+    [aa4     |aa5       |aa6                     |aa7             |aa8                       |aa9               ]
+    [aa4     |aa5       |aa6                     |aa7             |aa8                       |aa9               ]
+    [aa4     |aa5       |aa6                     |aa7             |aa8                       |aa9               ]
+    [aa4     |aa5       |aa6                     |aa7             |aa8                       |aa9               ]
+    [aa4     |aa5       |aa6                     |aa7             |aa8                       |aa9               ]
+    [aa4     |aa5       |aa6                     |aa7             |aa8                       |aa9               ]
+    [aa4     |aa5       |aa6                     |aa7             |aa8                       |aa9               ]
+    }
+    END -- TABLE
+    GRID gr7784
+    {
+     ----------Rows [ab0  ]----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES add_file,ade_file
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  BUTTONEDIT aa0=add_file.add01, ACTION=controlp, COMMENT="<^P>Qry Application Note ", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=1;
+  DATEEDIT aa1=add_file.add02, NOENTRY, TABINDEX=2;
+  GROUP group02 : group02;
+  CHECKBOX aa2=FORMONLY.a, TEXT="Close All the Items Of the Application", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=3;
+  CHECKBOX aa3=FORMONLY.y, TEXT="Display the Close Items", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=4;
+  CHECKBOX aa4=ade_file.ade13, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=5, TITLE="Close?";
+  EDIT aa5=ade_file.ade02, NOENTRY, TABINDEX=6, TITLE="Line No";
+  EDIT aa6=ade_file.ade03, NOENTRY, TABINDEX=7, TITLE="Item No.";
+  EDIT aa7=ade_file.ade05, NOENTRY, TABINDEX=8, TITLE="Applied Qty";
+  EDIT aa8=ade_file.ade12, NOENTRY, TABINDEX=9, TITLE="Transfered-out Qty";
+  EDIT aa9=ade_file.ade15, NOENTRY, TABINDEX=10, TITLE="Transfered-In Qty";
+  EDIT ab0=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=11;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_ade (ade_file.ade13, ade_file.ade02, ade_file.ade03, ade_file.ade05, ade_file.ade12, ade_file.ade15)
+END

@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/acs/42f/acsi301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acsi301")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1534
+{
+ <G group01                                           >
+  Item Group Code     [csf01     ]
+  Desc.               [imz02                         ]
+ <                                                    >
+ <G group02                                             >
+  Add. Cost Items     [csf02     ]
+  Cost Categorization [csf03     ][d01                 ]
+  Cost Desc.          [smg02               ]
+  Add.Cost            [csf05               ]
+  Add.Ratio           [csf04     ][dummy01   ]
+ <                                                      >
+
+}
+END -- gr1534
+END -- page01
+END -- folder01
+Table s_csg
+{
+[csg03              |smg02_t             |smg03  |d02           ]
+[csg03              |smg02_t             |smg03  |d02           ]
+[csg03              |smg02_t             |smg03  |d02           ]
+[csg03              |smg02_t             |smg03  |d02           ]
+[csg03              |smg02_t             |smg03  |d02           ]
+[csg03              |smg02_t             |smg03  |d02           ]
+[csg03              |smg02_t             |smg03  |d02           ]
+[csg03              |smg02_t             |smg03  |d02           ]
+[csg03              |smg02_t             |smg03  |d02           ]
+[csg03              |smg02_t             |smg03  |d02           ]
+
+}
+END -- s_csg
+Grid gr1535
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1535
+END -- VBox1
+END -- acsi301
+
+TABLES
+smg_file,
+csg_file,
+csf_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit csf01=csf_file.csf01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit imz02=formonly.imz02 type CHAR, tabIndex=2;
+Group group02:group02;
+ButtonEdit csf02=csf_file.csf02, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit csf03=csf_file.csf03, tabIndex=4, noEntry;
+Edit d01=formonly.d01 type CHAR, tabIndex=5;
+Edit smg02=smg_file.smg02, tabIndex=6, noEntry;
+Edit csf05=csf_file.csf05, tabIndex=7, not null, required;
+Edit csf04=csf_file.csf04, tabIndex=8, not null, required;
+Label dummy01:dummy01, text="%";
+ButtonEdit csg03=csg_file.csg03, action=controlp, tabIndex=9, title="Ratio Cost Items", not null, required, image="zoom";
+Edit smg02_t=formonly.smg02_t type VARCHAR, tabIndex=10, title="Description", noEntry;
+Edit smg03=smg_file.smg03, tabIndex=11, title="Cost", noEntry;
+Edit d02=formonly.d02 type VARCHAR, tabIndex=12, title="Categorization", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_csg(csg_file.csg03,formonly.smg02_t,smg_file.smg03,formonly.d02)
+SCREEN RECORD Undefined(csf_file.csf01,formonly.imz02,csf_file.csf02,csf_file.csf03,formonly.d01,smg_file.smg02,csf_file.csf05,csf_file.csf04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

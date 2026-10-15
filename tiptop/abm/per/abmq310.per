@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmq310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmq310")
+VBox VBox1
+Folder pc141
+Page page01(text="Main")
+Table s_azv
+{
+[azv01               |azv10               |azv02     |mse02     |azv03     |pmc03     |azv07     |azv04      |azv08   |azv05    |azv09     |azv06    ]
+[azv01               |azv10               |azv02     |mse02     |azv03     |pmc03     |azv07     |azv04      |azv08   |azv05    |azv09     |azv06    ]
+[azv01               |azv10               |azv02     |mse02     |azv03     |pmc03     |azv07     |azv04      |azv08   |azv05    |azv09     |azv06    ]
+[azv01               |azv10               |azv02     |mse02     |azv03     |pmc03     |azv07     |azv04      |azv08   |azv05    |azv09     |azv06    ]
+[azv01               |azv10               |azv02     |mse02     |azv03     |pmc03     |azv07     |azv04      |azv08   |azv05    |azv09     |azv06    ]
+[azv01               |azv10               |azv02     |mse02     |azv03     |pmc03     |azv07     |azv04      |azv08   |azv05    |azv09     |azv06    ]
+[azv01               |azv10               |azv02     |mse02     |azv03     |pmc03     |azv07     |azv04      |azv08   |azv05    |azv09     |azv06    ]
+[azv01               |azv10               |azv02     |mse02     |azv03     |pmc03     |azv07     |azv04      |azv08   |azv05    |azv09     |azv06    ]
+[azv01               |azv10               |azv02     |mse02     |azv03     |pmc03     |azv07     |azv04      |azv08   |azv05    |azv09     |azv06    ]
+[azv01               |azv10               |azv02     |mse02     |azv03     |pmc03     |azv07     |azv04      |azv08   |azv05    |azv09     |azv06    ]
+
+}
+END -- s_azv
+END -- page01
+END -- pc141
+Grid gr873
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr873
+END -- VBox1
+END -- abmq310
+
+TABLES
+azv_file
+ATTRIBUTES
+ButtonEdit azv01=azv_file.azv01, action=controlp, tabIndex=1, title="Item No.", noEntry, image="zoom";
+Edit azv10=azv_file.azv10, tabIndex=2, title="Desc", noEntry;
+Edit azv02=azv_file.azv02, tabIndex=3, title="Maker", noEntry;
+Edit mse02=formonly.mse02 type CHAR, tabIndex=4, title="Brand", noEntry;
+Edit azv03=azv_file.azv03, tabIndex=5, title="Supplr#", noEntry;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=6, title="Supplr", noEntry;
+Edit azv07=azv_file.azv07, tabIndex=7, title="User", noEntry;
+Edit azv04=azv_file.azv04, tabIndex=8, title="Apprvl.No.", noEntry;
+DateEdit azv08=azv_file.azv08, tabIndex=9, title="Tran.Dt", noEntry;
+DateEdit azv05=azv_file.azv05, tabIndex=10, title="Apprv.Dt";
+Edit azv09=azv_file.azv09, tabIndex=11, title="Time";
+ComboBox azv06=azv_file.azv06, tabIndex=12, title="Appr.Sts", noEntry, queryEditable, items=(("0", %"Sent"),("1", %"Testg."),("2", %"Cntsgn"),("3", %"Apprvd"),("4", %"Reject"),("X", %"N-Sent"));
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azv(azv_file.azv01,azv_file.azv10,azv_file.azv02,formonly.mse02,azv_file.azv03,formonly.pmc03,azv_file.azv07,azv_file.azv04,azv_file.azv08,azv_file.azv05,azv_file.azv09,azv_file.azv06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

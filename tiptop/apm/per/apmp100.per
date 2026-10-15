@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp100")
+VBox vb54
+Group g01
+VBox vb53
+Grid gr4883
+{
+ <G group01                                                                             >
+  Item No.            [ima01               ]  Group Code 1        [ima09               ]
+  Source QBE          [ima08               ]  Group Code 2        [ima10               ]
+  Group Code          [ima06               ]  Group Code 3        [ima11               ]
+                                              Group Code 4        [ima12               ]
+ <                                                                                      >
+ <G group02                                                                             >
+                                          [detail              ]
+  Inventory Cost Open YY/MM [yy   ][mm ]  [sales_detail        ]
+  Ending Date               [edate       ][minus               ]
+                                          [diff                ]  Diff\>      [rate      ]
+ <                                                                                      >
+}
+END -- gr4883
+Grid gr4884
+{
+ Rows                [no_tot    ]
+
+
+}
+END -- gr4884
+END -- vb53
+END -- g01
+Grid gr4885
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr4885
+END -- vb54
+END -- apmp100
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ima01=formonly.ima01 type VARCHAR, tabIndex=1;
+Edit ima09=formonly.ima09 type VARCHAR, tabIndex=2;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=3;
+Edit ima10=formonly.ima10 type VARCHAR, tabIndex=4;
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=5;
+Edit ima11=formonly.ima11 type VARCHAR, tabIndex=6;
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=7;
+Group group02:group02, text="INPUT";
+CheckBox detail=formonly.detail type VARCHAR, tabIndex=8, text="Print Detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit yy=formonly.yy type SMALLINT, tabIndex=9;
+Edit mm=formonly.mm type SMALLINT, tabIndex=10;
+CheckBox sales_detail=formonly.sales_detail type VARCHAR, tabIndex=11, text="Print Sales Detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit edate=formonly.edate type DATE, tabIndex=12;
+CheckBox minus=formonly.minus type VARCHAR, tabIndex=13, text="Print Minus", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox diff=formonly.diff type VARCHAR, tabIndex=14, text="Print Difference", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rate=formonly.rate type DECIMAL, tabIndex=15;
+Edit no_tot=formonly.no_tot type CHAR, tabIndex=16;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=17, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima09,formonly.ima08,formonly.ima10,formonly.ima06,formonly.ima11,formonly.ima12,formonly.detail,formonly.yy,formonly.mm,formonly.sales_detail,formonly.edate,formonly.minus,formonly.diff,formonly.rate,formonly.no_tot,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

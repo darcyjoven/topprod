@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti120_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="arti120_1")
+Folder pc1
+Page Page1(text=%"Page0")
+Grid gr1
+{
+
+        Tax Code     [rte08          ]
+                     [rte04        ]
+                     [rte05     ]
+                     [rte06     ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+END -- arti120_1
+
+ATTRIBUTES
+ButtonEdit rte08=formonly.rte08 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+CheckBox rte04=formonly.rte04 type CHAR, tabIndex=1, text="rte04", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rte05=formonly.rte05 type CHAR, tabIndex=2, text="rte05", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rte06=formonly.rte06 type CHAR, tabIndex=3, text="rte06", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rte08,formonly.rte04,formonly.rte05,formonly.rte06)
+END -- INSTRUCTIONS
+

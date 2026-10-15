@@ -1,0 +1,67 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi101.per created Wed Jan 23 05:30:28 2008
+-- File created from axdi101.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi101")
+-- TABLE
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1548
+      PAGE page01( TEXT="Page01")
+        TABLE   s_adc
+        {
+        [aa0         |aa1           |aa2         |aa3          |aa4     |aa5        |aa6                 |aa7                 |aa8             |aa9          |ab0       |ab1         |ab2    ]
+        [aa0         |aa1           |aa2         |aa3          |aa4     |aa5        |aa6                 |aa7                 |aa8             |aa9          |ab0       |ab1         |ab2    ]
+        [aa0         |aa1           |aa2         |aa3          |aa4     |aa5        |aa6                 |aa7                 |aa8             |aa9          |ab0       |ab1         |ab2    ]
+        [aa0         |aa1           |aa2         |aa3          |aa4     |aa5        |aa6                 |aa7                 |aa8             |aa9          |ab0       |ab1         |ab2    ]
+        [aa0         |aa1           |aa2         |aa3          |aa4     |aa5        |aa6                 |aa7                 |aa8             |aa9          |ab0       |ab1         |ab2    ]
+        [aa0         |aa1           |aa2         |aa3          |aa4     |aa5        |aa6                 |aa7                 |aa8             |aa9          |ab0       |ab1         |ab2    ]
+        [aa0         |aa1           |aa2         |aa3          |aa4     |aa5        |aa6                 |aa7                 |aa8             |aa9          |ab0       |ab1         |ab2    ]
+        [aa0         |aa1           |aa2         |aa3          |aa4     |aa5        |aa6                 |aa7                 |aa8             |aa9          |ab0       |ab1         |ab2    ]
+        [aa0         |aa1           |aa2         |aa3          |aa4     |aa5        |aa6                 |aa7                 |aa8             |aa9          |ab0       |ab1         |ab2    ]
+        [aa0         |aa1           |aa2         |aa3          |aa4     |aa5        |aa6                 |aa7                 |aa8             |aa9          |ab0       |ab1         |ab2    ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr7734
+    {
+     ----------Rows [ab3   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adc_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=adc_file.adc01, ACTION=controlp, COMMENT="<^P>Qry Plant No.", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=1, TITLE="Plant No.";
+  EDIT aa1=FORMONLY.azp02, NOENTRY, TABINDEX=2, TITLE="Name";
+  BUTTONEDIT aa2=adc_file.adc02, ACTION=controlp, COMMENT="<^P>Qry Warehouse No.", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=3, TITLE="Warehouse";
+  EDIT aa3=FORMONLY.imd02, NOENTRY, TABINDEX=4, TITLE="Name";
+  COMBOBOX aa4=adc_file.adc04, COMMENT="Warehouse Level,For Example 1:First-Class 2:Second-Class 3:Third-Class etc.", TABINDEX=5, TITLE="Level", ITEMS=(("1","First-Class"),("2","Second-Class"),("3","Third-Class etc."));
+  COMBOBOX aa5=adc_file.adc08, COMMENT="Enter S/I/C/O S:Normal WH I:In-Transit WH C:Manufacturer WH O:Leave with selling WH", NOT NULL, REQUIRED, TABINDEX=6, TITLE="Category", ITEMS=(("S","Normal WH"),("I","In-Transit"),("C","Manufacturer WH"),("O","Leave with selling WH"));
+  EDIT aa6=adc_file.adc05, TABINDEX=7, TITLE="Warehouse area";
+  EDIT aa7=adc_file.adc06, TABINDEX=8, TITLE="Warehouse Cubage";
+  EDIT aa8=adc_file.adc07, TABINDEX=9, TITLE="Max Stock Qty";
+  EDIT aa9=adc_file.adc09, COMMENT="Shipping Group No.", TABINDEX=10, TITLE="Ship Group";
+  BUTTONEDIT ab0=adc_file.adc10, ACTION=controlp, COMMENT="<^P> Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=11, TITLE="Site";
+  COMBOBOX ab1=adc_file.adc03, COMMENT="Enter 1/2 1:Provide for oneself 2:Tenemental WH", NOT NULL, REQUIRED, TABINDEX=12, TITLE="Ownership", ITEMS=(("1","Provide for oneself"),("2","Tenemental WH"));
+  CHECKBOX ab2=adc_file.adcacti, NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=13, TITLE="Active?";
+  EDIT ab3=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=14;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adc (adc_file.adc01, FORMONLY.azp02, adc_file.adc02, FORMONLY.imd02, adc_file.adc04, adc_file.adc08, adc_file.adc05, adc_file.adc06, adc_file.adc07, adc_file.adc09, adc_file.adc10, adc_file.adc03, adc_file.adcacti)
+END

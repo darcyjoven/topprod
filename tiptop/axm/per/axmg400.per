@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmg400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr400")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                        >
+  Order No.            [oea01               ]
+  Order.Date           [oea02               ]
+  Empl No.             [oea14               ]
+ <                                                 >
+ <G group02                                       >
+  [n                                             ]
+  [b                                             ]
+  [c                                             ]
+  [d                                             ]
+ <                                                >
+}
+END -- gr1
+Grid gr2
+{
+[more                                              ]
+
+}
+END -- gr2
+END -- VBox1
+END -- axmr400
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oea01=formonly.oea01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+DateEdit oea02=formonly.oea02 type DATE, tabIndex=2;
+ButtonEdit oea14=formonly.oea14 type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+Group group02:group02, text="INPUT";
+CheckBox n=formonly.n type VARCHAR, tabIndex=4, text="Print U/P Amount", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=5, text="Print Order Mark", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=7, text="Print Additional commodity", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=6, text="Print CUST ITEM NO.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oea01,formonly.oea02,formonly.oea14,formonly.n,formonly.b,formonly.d,formonly.more,formonly.c)
+END -- INSTRUCTIONS
+

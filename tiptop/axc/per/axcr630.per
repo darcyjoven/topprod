@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr630.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr630")
+VBox vb7
+Grid gr6
+{
+ <G group01                                                                             >
+  Item No.             [ccg01               ]
+ <                                                                                      >
+
+}
+END -- gr6
+Group g01(text="INPUT")
+Grid gr7
+{
+ <G group02                                      >  <G group03                        >
+  [dummy01                      ]                    [a                      ]
+   Idle               [i10  ]Days - To[i11  ]Days
+                      [i20  ]     -   [i21  ]       <                                 >
+                      [i30  ]     -   [i31  ]       <G group04                            >
+                      [i40  ]     -   [i41  ]        Cost Calculation Method [type      ]
+                      [i50  ]     -   [i51  ]        Calculating Base Date [bdate       ]
+                      [i60  ]     -   [i61  ]
+                      [i70  ]     -   [i71  ]
+ <                                               >  <                                     >
+
+}
+END -- gr7
+END -- g01
+Grid gr8
+{
+[more                                                       ]
+
+}
+END -- gr8
+END -- vb7
+END -- axcr630
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ccg01=formonly.ccg01 type CHAR, tabIndex=1;
+Group group02:group02;
+Label dummy01:dummy01, text="Idle Days Printing Option :";
+Edit i10=formonly.i10 type CHAR, tabIndex=2;
+Edit i11=formonly.i11 type CHAR, tabIndex=3;
+Edit i20=formonly.i20 type CHAR, tabIndex=4;
+Edit i21=formonly.i21 type CHAR, tabIndex=5;
+Edit i30=formonly.i30 type CHAR, tabIndex=6;
+Edit i31=formonly.i31 type CHAR, tabIndex=7;
+Edit i40=formonly.i40 type CHAR, tabIndex=8;
+Edit i41=formonly.i41 type CHAR, tabIndex=9;
+Edit i50=formonly.i50 type CHAR, tabIndex=10;
+Edit i51=formonly.i51 type CHAR, tabIndex=11;
+Edit i60=formonly.i60 type CHAR, tabIndex=12;
+Edit i61=formonly.i61 type CHAR, tabIndex=13;
+Edit i70=formonly.i70 type CHAR, tabIndex=14;
+Edit i71=formonly.i71 type CHAR, tabIndex=15;
+Group group03:group03, text="Sequence";
+RadioGroup a=formonly.a type CHAR, tabIndex=16, items=(("1", "By Work Order No."),("2", "By Item Number"));
+Group group04:group04;
+ComboBox type=formonly.type type CHAR, tabIndex=19, not null, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+DateEdit bdate=formonly.bdate type DATE, tabIndex=17;
+CheckBox more=formonly.more type CHAR, tabIndex=18, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ccg01,formonly.i10,formonly.i11,formonly.i20,formonly.i21,formonly.i30,formonly.i31,formonly.i40,formonly.i41,formonly.i50,formonly.i51,formonly.i60,formonly.i61,formonly.i70,formonly.i71,formonly.a,formonly.type,formonly.bdate,formonly.more)
+END -- INSTRUCTIONS
+

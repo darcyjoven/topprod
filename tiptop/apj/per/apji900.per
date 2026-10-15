@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apji900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apji900")
+VBox vb1
+Table s_pjy
+{
+[pjy01     |pjy02                         |pjy0|fab02   |pjy1|pjy04          |pjyac]
+[pjy01     |pjy02                         |pjy0|fab02   |pjy1|pjy04          |pjyac]
+[pjy01     |pjy02                         |pjy0|fab02   |pjy1|pjy04          |pjyac]
+[pjy01     |pjy02                         |pjy0|fab02   |pjy1|pjy04          |pjyac]
+[pjy01     |pjy02                         |pjy0|fab02   |pjy1|pjy04          |pjyac]
+[pjy01     |pjy02                         |pjy0|fab02   |pjy1|pjy04          |pjyac]
+[pjy01     |pjy02                         |pjy0|fab02   |pjy1|pjy04          |pjyac]
+[pjy01     |pjy02                         |pjy0|fab02   |pjy1|pjy04          |pjyac]
+[pjy01     |pjy02                         |pjy0|fab02   |pjy1|pjy04          |pjyac]
+[pjy01     |pjy02                         |pjy0|fab02   |pjy1|pjy04          |pjyac]
+[pjy01     |pjy02                         |pjy0|fab02   |pjy1|pjy04          |pjyac]
+[pjy01     |pjy02                         |pjy0|fab02   |pjy1|pjy04          |pjyac]
+[pjy01     |pjy02                         |pjy0|fab02   |pjy1|pjy04          |pjyac]
+[pjy01     |pjy02                         |pjy0|fab02   |pjy1|pjy04          |pjyac]
+
+}
+END -- s_pjy
+Grid gr1
+{
+
+   ------- Rows[cn2  ] --------
+
+}
+END -- gr1
+END -- vb1
+END -- apji900
+
+TABLES
+pjy_file
+ATTRIBUTES
+Edit pjy01=pjy_file.pjy01, tabIndex=1, title="Equipment Type", not null, required;
+Edit pjy02=pjy_file.pjy02, tabIndex=2, title="Name", not null, required;
+ButtonEdit pjy0=pjy_file.pjy05, action=controlp, tabIndex=3, title="Main Cate.", not null, required, image="zoom.png";
+Edit fab02=formonly.fab02 type CHAR, tabIndex=4, title="Description", noEntry;
+ButtonEdit pjy1=pjy_file.pjy03, action=controlp, tabIndex=5, title="Pricing Unit", not null, required, image="zoom.png";
+Edit pjy04=pjy_file.pjy04, tabIndex=6, default = "0", title="Unit Expense", not null, required;
+CheckBox pjyac=pjy_file.pjyacti, tabIndex=7, title="Valid Code", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type INTERVAL YEAR(2) TO YEAR, tabIndex=8, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjy(pjy_file.pjy01,pjy_file.pjy02,pjy_file.pjy05,formonly.fab02,pjy_file.pjy03,pjy_file.pjy04,pjy_file.pjyacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

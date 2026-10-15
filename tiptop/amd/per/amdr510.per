@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdr510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amdr510")
+VBox vb1
+Grid gr3730
+{
+ <G group01                                                              >
+  Invoice             [ome05               ]
+  Invoice Number      [ome01               ]
+  Invoice Date        [ome02               ]
+  Accounts No.        [ome16               ]
+  Entered By          [omeuser             ]
+ <                                                                       >
+
+}
+END -- gr3730
+Group group02(text="INPUT")
+Grid gr3731
+{
+ <G group03                                                             >
+
+  Accounts Property   [oma00    ]  [dummy01               ]
+
+ <                                                                      >
+ <G group04                                                              >
+ [order1                                  ]
+ <                                                                       >
+ <G group05                                                              >
+ [b                                       ]
+ <                                                                       >
+
+}
+END -- gr3731
+END -- group02
+Grid gr3732
+{
+[more                           ]
+
+}
+END -- gr3732
+END -- vb1
+END -- amdr510
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ome05=formonly.ome05 type CHAR, tabIndex=1;
+Edit ome01=formonly.ome01 type CHAR, tabIndex=2;
+DateEdit ome02=formonly.ome02 type DATE, tabIndex=3;
+Edit ome16=formonly.ome16 type CHAR, tabIndex=4;
+Edit omeuser=formonly.omeuser type CHAR, tabIndex=5;
+Group group03:group03;
+Edit oma00=formonly.oma00 type VARCHAR, tabIndex=6, comment="11.Deposit12.Delivery13.Balance14.MISC21.Allowance 22.Account To Offset23.Advance Receive24.Suspense Credit25.Discount31.Non-A/R Invoice";
+Label dummy01:dummy01, text="(Blank: All  )";
+Group group04:group04, text="Data Option";
+RadioGroup order1=formonly.order1 type VARCHAR, tabIndex=7, items=(("1", "By User"),("2", "By Invoice No."));
+Group group05:group05;
+CheckBox b=formonly.b type CHAR, tabIndex=8, text="Print Error Data Only", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ome05,formonly.ome01,formonly.ome02,formonly.ome16,formonly.omeuser,formonly.oma00,formonly.order1,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

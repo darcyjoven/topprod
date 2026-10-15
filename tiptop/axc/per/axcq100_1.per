@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq100_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcq100")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table s_ccc
+{
+[sfb01               |ccc01               |ima02               |ima021    |ccc08               |qty1           |qty2           |qty3           |tot1           |tot2           |tot3           ]
+[sfb01               |ccc01               |ima02               |ima021    |ccc08               |qty1           |qty2           |qty3           |tot1           |tot2           |tot3           ]
+[sfb01               |ccc01               |ima02               |ima021    |ccc08               |qty1           |qty2           |qty3           |tot1           |tot2           |tot3           ]
+[sfb01               |ccc01               |ima02               |ima021    |ccc08               |qty1           |qty2           |qty3           |tot1           |tot2           |tot3           ]
+[sfb01               |ccc01               |ima02               |ima021    |ccc08               |qty1           |qty2           |qty3           |tot1           |tot2           |tot3           ]
+[sfb01               |ccc01               |ima02               |ima021    |ccc08               |qty1           |qty2           |qty3           |tot1           |tot2           |tot3           ]
+[sfb01               |ccc01               |ima02               |ima021    |ccc08               |qty1           |qty2           |qty3           |tot1           |tot2           |tot3           ]
+[sfb01               |ccc01               |ima02               |ima021    |ccc08               |qty1           |qty2           |qty3           |tot1           |tot2           |tot3           ]
+[sfb01               |ccc01               |ima02               |ima021    |ccc08               |qty1           |qty2           |qty3           |tot1           |tot2           |tot3           ]
+[sfb01               |ccc01               |ima02               |ima021    |ccc08               |qty1           |qty2           |qty3           |tot1           |tot2           |tot3           ]
+[sfb01               |ccc01               |ima02               |ima021    |ccc08               |qty1           |qty2           |qty3           |tot1           |tot2           |tot3           ]
+[sfb01               |ccc01               |ima02               |ima021    |ccc08               |qty1           |qty2           |qty3           |tot1           |tot2           |tot3           ]
+[sfb01               |ccc01               |ima02               |ima021    |ccc08               |qty1           |qty2           |qty3           |tot1           |tot2           |tot3           ]
+[sfb01               |ccc01               |ima02               |ima021    |ccc08               |qty1           |qty2           |qty3           |tot1           |tot2           |tot3           ]
+}
+END -- s_ccc
+END -- Page1
+END -- Folder1
+Grid gr4619
+{
+ ----------  Rows [cn3   ] ----------     [sumqty01|sumqty1             ]  [sumqty02|sumqty2             ]  [sumqty03|sumqty3             ]
+                                          [sumtot01|sumtot1             ]  [sumtot02|sumtot2             ]  [sumtot03|sumtot3             ]
+}
+END -- gr4619
+END -- VBox1
+END -- axcq100_1
+
+TABLES
+ccc_file,
+sfb_file,
+ima_file
+ATTRIBUTES
+Edit sfb01=sfb_file.sfb01, tabIndex=1, title=%"sfb01";
+Edit ccc01=ccc_file.ccc01, tabIndex=2, title=%"ccc01";
+Edit ima02=ima_file.ima02, tabIndex=3, title="ima02";
+Edit ima021=ima_file.ima021, tabIndex=4, title=%"ima021";
+Edit ccc08=ccc_file.ccc08, tabIndex=5, title="ccc08", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit qty1=formonly.qty1 type DECIMAL(15,3), tabIndex=6, title="qty1";
+Edit qty2=formonly.qty2 type DECIMAL(15,3), tabIndex=7, title="qty2";
+Edit qty3=formonly.qty3 type DECIMAL(15,3), tabIndex=8, title="qty3";
+Edit tot1=formonly.tot1 type DECIMAL(20,6), tabIndex=9, title="tot1";
+Edit tot2=formonly.tot2 type DECIMAL(20,6), tabIndex=10, title="tot2";
+Edit tot3=formonly.tot3 type DECIMAL(20,6), tabIndex=11, title=%"tot3";
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=12, noEntry;
+Label sumqty01:sumqty01, text=%"sumqty1";
+Edit sumqty1=formonly.sumqty1 type DECIMAL, tabIndex=13, noEntry;
+Label sumqty02:sumqty02, text=%"sumqty2";
+Edit sumqty2=formonly.sumqty2 type DECIMAL, tabIndex=14, noEntry;
+Label sumqty03:sumqty03, text=%"sumqty3";
+Edit sumqty3=formonly.sumqty3 type DECIMAL, tabIndex=15, noEntry;
+Label sumtot01:sumtot01, text=%"sumtot1";
+Edit sumtot1=formonly.sumtot1 type DECIMAL, tabIndex=16, noEntry;
+Label sumtot02:sumtot02, text=%"sumtot2";
+Edit sumtot2=formonly.sumtot2 type DECIMAL, tabIndex=17, noEntry;
+Label sumtot03:sumtot03, text=%"sumtot3";
+Edit sumtot3=formonly.sumtot3 type DECIMAL, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cn3,formonly.sumtot1,formonly.sumqty1,formonly.sumqty2,formonly.sumtot2,formonly.sumqty3,formonly.sumtot3)
+SCREEN RECORD s_ccc(sfb_file.sfb01,ccc_file.ccc01,ima_file.ima02,ima_file.ima021,ccc_file.ccc08,formonly.qty1,formonly.qty2,formonly.qty3,formonly.tot1,formonly.tot2,formonly.tot3)
+END -- INSTRUCTIONS
+

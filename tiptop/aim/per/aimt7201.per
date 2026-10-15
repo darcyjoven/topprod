@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt7201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt7201")
+VBox VBox1
+Grid gr3482
+{
+ <G group01                                                    >
+  Inventory Detail Unit     [img09     ]
+  Item Inventory Unit       [ima25     ]
+  Conversion Rate           [img21     ]
+  Account of W/H / Location [img26                         ]
+  Inventory Class           [img19     ]
+  Look Code                 [img36     ]
+  Issuing priority          [img27     ]
+  Sales priority            [img28     ]
+  Project#                  [img35     ]
+ <                                                             >
+ <G group02                                                    >
+ [dummy01]
+ <                                                             >
+
+}
+END -- gr3482
+END -- VBox1
+END -- aimt7201
+
+TABLES
+img_file,
+ima_file
+ATTRIBUTES
+Group group01:group01;
+Edit img09=img_file.img09, tabIndex=1;
+Edit ima25=ima_file.ima25, tabIndex=2;
+Edit img21=img_file.img21, tabIndex=3, not null, required;
+Edit img26=img_file.img26, tabIndex=4;
+Edit img19=img_file.img19, tabIndex=5;
+Edit img36=img_file.img36, tabIndex=6;
+Edit img27=img_file.img27, tabIndex=7;
+Edit img28=img_file.img28, tabIndex=8;
+Edit img35=img_file.img35, tabIndex=9;
+Group group02:group02;
+Label dummy01:dummy01, text="If to Generate Inventory Details by Defaults,Set Parameter sma892";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(img_file.img09,ima_file.ima25,img_file.img21,img_file.img26,img_file.img19,img_file.img36,img_file.img27,img_file.img28,img_file.img35)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt800")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr5409
+{
+ P/O#               [pmz01                     ]
+ Ln#                [pmz02       ]
+ ---------------------------------------------------------------------------------------------------
+}
+END -- gr5409
+HBox HBox1
+Grid gr5410
+{
+ Order Qty          [pmn20               ]
+ Receipt Qty        [pmn50               ]
+ Delivery           [pmn33       ]
+ Arriving           [pmn34       ]
+ Store              [pmn35       ]
+}
+END -- gr5410
+Grid gr5411
+{
+ Item#                 [pmn04                         ]
+ Part Name             [pmn041                        ]
+ Specification         [ima021                        ]
+ Over/Short-Del.Limit% [pmn13     ]%
+[pmn14                                   ]
+}
+END -- gr5411
+END -- HBox1
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_pmz
+{
+[pmz03|pmz05        |pmz06                     |pmz07            |pmz08                    |pmz09                |pmz10         |gen02     |pmz11                      |pmz12                        |pmz13                        ]
+[pmz03|pmz05        |pmz06                     |pmz07            |pmz08                    |pmz09                |pmz10         |gen02     |pmz11                      |pmz12                        |pmz13                        ]
+[pmz03|pmz05        |pmz06                     |pmz07            |pmz08                    |pmz09                |pmz10         |gen02     |pmz11                      |pmz12                        |pmz13                        ]
+[pmz03|pmz05        |pmz06                     |pmz07            |pmz08                    |pmz09                |pmz10         |gen02     |pmz11                      |pmz12                        |pmz13                        ]
+[pmz03|pmz05        |pmz06                     |pmz07            |pmz08                    |pmz09                |pmz10         |gen02     |pmz11                      |pmz12                        |pmz13                        ]
+[pmz03|pmz05        |pmz06                     |pmz07            |pmz08                    |pmz09                |pmz10         |gen02     |pmz11                      |pmz12                        |pmz13                        ]
+[pmz03|pmz05        |pmz06                     |pmz07            |pmz08                    |pmz09                |pmz10         |gen02     |pmz11                      |pmz12                        |pmz13                        ]
+[pmz03|pmz05        |pmz06                     |pmz07            |pmz08                    |pmz09                |pmz10         |gen02     |pmz11                      |pmz12                        |pmz13                        ]
+[pmz03|pmz05        |pmz06                     |pmz07            |pmz08                    |pmz09                |pmz10         |gen02     |pmz11                      |pmz12                        |pmz13                        ]
+[pmz03|pmz05        |pmz06                     |pmz07            |pmz08                    |pmz09                |pmz10         |gen02     |pmz11                      |pmz12                        |pmz13                        ]
+
+}
+END -- s_pmz
+Grid gr5412
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5412
+END -- VBox1
+END -- apmt800
+
+TABLES
+pmn_file,
+pmz_file
+ATTRIBUTES
+ButtonEdit pmz01=pmz_file.pmz01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!     , <^P>Query P/O # ";
+ButtonEdit pmz02=pmz_file.pmz02, action=controlp, tabIndex=2, not null, required, image="zoom", comment="Field and [Document No.] Combined as Key Field, No Blank/Repeated!,<^P>Qry P/O Line #";
+Edit pmn20=pmn_file.pmn20, tabIndex=3, noEntry, not null, required;
+Edit pmn50=pmn_file.pmn50, tabIndex=4, noEntry, not null, required;
+DateEdit pmn33=pmn_file.pmn33, tabIndex=5, noEntry;
+DateEdit pmn34=pmn_file.pmn34, tabIndex=6, noEntry;
+DateEdit pmn35=pmn_file.pmn35, tabIndex=7, noEntry;
+Edit pmn04=pmn_file.pmn04, tabIndex=8, noEntry;
+Edit pmn041=formonly.pmn041 type CHAR, tabIndex=9, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=10, noEntry;
+Edit pmn13=pmn_file.pmn13, tabIndex=11, noEntry;
+CheckBox pmn14=pmn_file.pmn14, tabIndex=12, text="Partial Delivery", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmz03=pmz_file.pmz03, tabIndex=13, title="Ln#", noEntry;
+DateEdit pmz05=pmz_file.pmz05, tabIndex=14, title="Promise Date", noEntry;
+DateEdit pmz06=pmz_file.pmz06, tabIndex=15, title="Anticipated Delivery Date", not null, required, comment="When Field Entered,Press ";
+DateEdit pmz07=pmz_file.pmz07, tabIndex=16, title="Anticipated Date", not null, required;
+DateEdit pmz08=pmz_file.pmz08, tabIndex=17, title="Anticipated Arrivie Date", not null, required;
+Edit pmz09=pmz_file.pmz09, tabIndex=18, title="Comfirmed QTY", not null, required;
+Edit pmz10=pmz_file.pmz10, tabIndex=19, title="Confirmd By", not null, required;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=20, title="Name", noEntry;
+Edit pmz11=pmz_file.pmz11, tabIndex=21, title="Memo 1";
+Edit pmz12=pmz_file.pmz12, tabIndex=22, title="Memo 2";
+Edit pmz13=pmz_file.pmz13, tabIndex=23, title="Memo 3";
+Edit cnt=formonly.cnt type CHAR, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmz(pmz_file.pmz03,pmz_file.pmz05,pmz_file.pmz06,pmz_file.pmz07,pmz_file.pmz08,pmz_file.pmz09,pmz_file.pmz10,formonly.gen02,pmz_file.pmz11,pmz_file.pmz12,pmz_file.pmz13)
+SCREEN RECORD Undefined(pmz_file.pmz01,pmz_file.pmz02,pmn_file.pmn20,pmn_file.pmn50,pmn_file.pmn33,pmn_file.pmn34,pmn_file.pmn35,pmn_file.pmn04,formonly.pmn041,formonly.ima021,pmn_file.pmn13,pmn_file.pmn14,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

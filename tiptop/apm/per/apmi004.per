@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="apmi004")
+VBox vb17
+Folder pc6
+Page Page10(text=%"Main")
+Table s_ppa
+{
+[ppa01   |ppa02          |ppa03                                   ]
+[ppa01   |ppa02          |ppa03                                   ]
+[ppa01   |ppa02          |ppa03                                   ]
+[ppa01   |ppa02          |ppa03                                   ]
+[ppa01   |ppa02          |ppa03                                   ]
+
+}
+END -- s_ppa
+END -- Page10
+END -- pc6
+Grid gr29
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr29
+END -- vb17
+END -- apmi004
+
+ATTRIBUTES
+Edit ppa01=formonly.ppa01 type CHAR, tabIndex=3, title="Item No.";
+Edit ppa02=formonly.ppa02 type CHAR, tabIndex=1, title="Code";
+Edit ppa03=formonly.ppa03 type CHAR, tabIndex=2, title="Description";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ppa(formonly.ppa01,formonly.ppa02,formonly.ppa03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

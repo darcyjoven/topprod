@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asrr220.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asrr220")
+VBox VBox1
+Grid gr963
+{
+ <G group01                                                                      >
+  Issuing Note No.    [sfp01               ]
+  Picking Item Date   [sfp02               ]
+  Issuing Date        [sfp03               ]
+  Department No.      [sfp07               ]
+ <                                                                               >
+
+}
+END -- gr963
+Group group02(text="INPUT")
+Grid gr964
+{
+ Issuing Order By[q                          ]
+[p                              ]
+}
+END -- gr964
+END -- group02
+Grid gr965
+{
+[more                                           ]
+
+}
+END -- gr965
+END -- VBox1
+END -- asrr220
+
+TABLES
+sfp_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfp01=sfp_file.sfp01, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry IssuingNote No.";
+DateEdit sfp02=sfp_file.sfp02, tabIndex=2;
+DateEdit sfp03=sfp_file.sfp03, tabIndex=3;
+ButtonEdit sfp07=sfp_file.sfp07, action=controlp, tabIndex=4, image="zoom", comment="<^P> Qry  Department";
+RadioGroup q=formonly.q type VARCHAR, tabIndex=5, items=(("1", "Item + W/O"),("2", "W/O + Item"));
+CheckBox p=formonly.p type VARCHAR, tabIndex=6, text="Next Page by W/H Keeper?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfp_file.sfp01,sfp_file.sfp02,sfp_file.sfp03,sfp_file.sfp07,formonly.q,formonly.p,formonly.more)
+END -- INSTRUCTIONS
+

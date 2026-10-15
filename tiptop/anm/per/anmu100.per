@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmu100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmu100")
+VBox VBox1
+Grid gr4601
+{
+ <G group01                                              >
+  To Clear N/P Draw.Date   [nmd07              ]
+  To Clear N/P Due Date    [nmd05              ]
+  To Clear N/P Tran Date   [nmd13              ]
+  To Clr N/P Status        [nmd12              ]
+ <                                                       >
+
+}
+END -- gr4601
+Group p01(text="Input")
+VBox VBox2
+Grid gr4602
+{
+[download        ] File Name           [fil]_[file_ext]
+[backup          ]
+[cleanup         ]
+[more            ]
+}
+END -- gr4602
+END -- VBox2
+END -- p01
+END -- VBox1
+END -- anmu100
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit nmd07=formonly.nmd07 type DATE, tabIndex=1;
+DateEdit nmd05=formonly.nmd05 type DATE, tabIndex=2;
+DateEdit nmd13=formonly.nmd13 type DATE, tabIndex=3;
+Edit nmd12=formonly.nmd12 type VARCHAR, tabIndex=4;
+CheckBox download=formonly.download type VARCHAR, tabIndex=5, default = "N", text="Download?", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N", comment="Enter Y:Download, N:No  ";
+Edit fil=formonly.file_name type VARCHAR, tabIndex=6, default = "nmd", comment="Enter File Name";
+Edit file_ext=formonly.file_extension type DATE, tabIndex=7, default = "TODAY", format="YYMMDD", comment="Please Input Add Name Of File ";
+CheckBox backup=formonly.backup type VARCHAR, tabIndex=8, default = "N", text="Back up?", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N", comment="Enter Y:Back up  N:No Backup";
+CheckBox cleanup=formonly.cleanup type VARCHAR, tabIndex=9, default = "N", text="Clear?", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N", comment="Enter Y:Clear   N:No   ";
+CheckBox more=formonly.more type VARCHAR, tabIndex=10, default = "Y", text="Run Now ? ", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nmd07,formonly.nmd05,formonly.nmd13,formonly.nmd12,formonly.download,formonly.file_name,formonly.file_extension,formonly.backup,formonly.cleanup,formonly.more)
+END -- INSTRUCTIONS
+

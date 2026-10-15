@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq031.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq031")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr2520
+{
+
+
+ Group No.       [atc01       ]                  Group Book No.    [atc00     ]
+ Upper Company   [atc02       ]                  Upper Comp Book No[atc03     ]
+ Under Company   [atc04       ]                  Under Comp Book No[atc041    ]
+
+}
+END -- gr2520
+Grid gr2521
+{
+
+
+ Account No.         [atc05                   ]
+ Account Name        [aag02                                             ]
+ Year                [atc06     ]  Currency[atc12   ]
+
+}
+END -- gr2521
+END -- hb2
+END -- page01
+END -- folder01
+Table s_atc
+{
+[seq     |atc08               |atc09               |amt                 |atc10      |atc11       ]
+[seq     |atc08               |atc09               |amt                 |atc10      |atc11       ]
+[seq     |atc08               |atc09               |amt                 |atc10      |atc11       ]
+[seq     |atc08               |atc09               |amt                 |atc10      |atc11       ]
+[seq     |atc08               |atc09               |amt                 |atc10      |atc11       ]
+[seq     |atc08               |atc09               |amt                 |atc10      |atc11       ]
+[seq     |atc08               |atc09               |amt                 |atc10      |atc11       ]
+[seq     |atc08               |atc09               |amt                 |atc10      |atc11       ]
+[seq     |atc08               |atc09               |amt                 |atc10      |atc11       ]
+}
+END -- s_atc
+Grid gr2522
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr2522
+END -- vb2
+END -- gglq031
+
+TABLES
+atc_file
+ATTRIBUTES
+ButtonEdit atc01=atc_file.atc01, action=controlp, tabIndex=1, image="zoom";
+Edit atc00=atc_file.atc00, tabIndex=2, color = yellow;
+Edit atc02=atc_file.atc02, tabIndex=3;
+Edit atc03=atc_file.atc03, tabIndex=4;
+Edit atc04=atc_file.atc04, tabIndex=5;
+Edit atc041=atc_file.atc041, tabIndex=6;
+ButtonEdit atc05=atc_file.atc05, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Account # <^Y>Create Account  ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=8, noEntry;
+Edit atc06=atc_file.atc06, tabIndex=9;
+ButtonEdit atc12=atc_file.atc12, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Details";
+Edit seq=formonly.seq type VARCHAR, tabIndex=11, title="Period", noEntry;
+Edit atc08=atc_file.atc08, tabIndex=12, title="Debit Transaction Amt", noEntry, not null, required;
+Edit atc09=atc_file.atc09, tabIndex=13, title="Credit Transaction Amt", noEntry, not null, required;
+Edit amt=formonly.amt type CHAR, tabIndex=18, title=%"Balance";
+Edit atc10=atc_file.atc10, tabIndex=14, title="Debit Rows", noEntry;
+Edit atc11=atc_file.atc11, tabIndex=15, title="Credit Rows", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_atc(formonly.seq,atc_file.atc08,atc_file.atc09,formonly.amt,atc_file.atc10,atc_file.atc11)
+SCREEN RECORD Undefined(atc_file.atc01,atc_file.atc00,atc_file.atc02,atc_file.atc03,atc_file.atc04,atc_file.atc041,atc_file.atc05,formonly.aag02,atc_file.atc06,atc_file.atc12,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

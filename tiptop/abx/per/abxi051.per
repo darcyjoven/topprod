@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxi051.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxi051")
+Folder pc8
+Page page01(text="Main")
+VBox VBox1
+Grid gr24
+{
+ Item Mster     [bxd01           ]                   Bonded GP Code[ima1916           ]
+ Desc           [ima02               ]               Group Desc    [bxe02           ]
+ Spec           [ima021              ]               Group Spec    [bxe03           ]
+ Year           [bxd03   ]                           Month         [bxd0]
+ Order No.      [bxd05         ]                     Item          [bxd06]
+}
+END -- gr24
+HBox HBox1
+VBox VBox2
+Grid gr25
+{
+ <G group01                                  >
+  Accept Qty      [bxd07           ]
+  Return Qty      [bxd11           ]
+  Finish Qty      [bxd12           ]
+  Purchase Qty    [bxd13           ]
+  Sales Return Qty[bxd16           ]
+  Other Qty       [bxd17           ]
+ <                                           >
+
+}
+END -- gr25
+Grid gr26
+{
+ <G group02                                  >
+  End Qty         [bxd18           ]
+ <                                           >
+
+}
+END -- gr26
+END -- VBox2
+Grid gr27
+{
+ <G group03                                  >
+  Mui-Out Qty     [bxd08           ]
+  Charge Off Qty  [bxd09           ]
+  WO. Issue Qty   [bxd10           ]
+  Purchas Rtn Qty [bxd14           ]
+  Sales Tol Qty   [bxd15           ]
+ <                                           >
+
+
+
+
+
+
+
+
+}
+END -- gr27
+END -- HBox1
+Grid gr28
+{
+ ----------------- ROWS [cnt  ] ------------------
+
+}
+END -- gr28
+END -- VBox1
+END -- page01
+END -- pc8
+END -- abxi051
+
+TABLES
+bxd_file
+ATTRIBUTES
+ButtonEdit bxd01=bxd_file.bxd01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Item Master";
+Edit ima1916=formonly.ima1916 type CHAR, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit bxe02=formonly.bxe02 type CHAR, tabIndex=4, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, noEntry;
+Edit bxe03=formonly.bxe03 type CHAR, tabIndex=6, noEntry;
+Edit bxd03=bxd_file.bxd03, tabIndex=7, not null, required;
+Edit bxd0=bxd_file.bxd04, tabIndex=8, not null, required;
+ButtonEdit bxd05=bxd_file.bxd05, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P> Qry Order No.";
+Edit bxd06=bxd_file.bxd06, tabIndex=10, not null, required;
+Group group01:group01;
+Edit bxd07=bxd_file.bxd07, tabIndex=11, not null, required;
+Edit bxd11=bxd_file.bxd11, tabIndex=12, not null, required;
+Edit bxd12=bxd_file.bxd12, tabIndex=13, not null, required;
+Edit bxd13=bxd_file.bxd13, tabIndex=14, not null, required;
+Edit bxd16=bxd_file.bxd16, tabIndex=15, not null, required;
+Edit bxd17=bxd_file.bxd17, tabIndex=16, not null, required;
+Group group02:group02;
+Edit bxd18=bxd_file.bxd18, tabIndex=17, not null, required;
+Group group03:group03;
+Edit bxd08=bxd_file.bxd08, tabIndex=18, not null, required;
+Edit bxd09=bxd_file.bxd09, tabIndex=19, not null, required;
+Edit bxd10=bxd_file.bxd10, tabIndex=20, not null, required;
+Edit bxd14=bxd_file.bxd14, tabIndex=21, not null, required;
+Edit bxd15=bxd_file.bxd15, tabIndex=22, not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bxd_file.bxd01,formonly.ima1916,formonly.ima02,formonly.bxe02,formonly.ima021,formonly.bxe03,bxd_file.bxd03,bxd_file.bxd04,bxd_file.bxd05,bxd_file.bxd06,bxd_file.bxd07,bxd_file.bxd11,bxd_file.bxd12,bxd_file.bxd13,bxd_file.bxd16,bxd_file.bxd17,bxd_file.bxd18,bxd_file.bxd08,bxd_file.bxd09,bxd_file.bxd10,bxd_file.bxd14,bxd_file.bxd15,formonly.cnt)
+END -- INSTRUCTIONS
+

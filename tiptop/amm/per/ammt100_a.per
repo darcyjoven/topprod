@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amm/42f/ammt100_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ammt100_a")
+Grid gr3789
+{
+ <T s_mmn                                                    >
+ [mmn03 |mmn04                         |mmn05               ]
+ [mmn03 |mmn04                         |mmn05               ]
+ [mmn03 |mmn04                         |mmn05               ]
+ [mmn03 |mmn04                         |mmn05               ]
+ [mmn03 |mmn04                         |mmn05               ]
+ [mmn03 |mmn04                         |mmn05               ]
+ [mmn03 |mmn04                         |mmn05               ]
+ [mmn03 |mmn04                         |mmn05               ]
+ [mmn03 |mmn04                         |mmn05               ]
+ [mmn03 |mmn04                         |mmn05               ]
+ <                                                           >
+
+}
+END -- gr3789
+END -- ammt100_a
+
+TABLES
+mmn_file
+ATTRIBUTES
+Table s_mmn:s_mmn;
+Edit mmn03=mmn_file.mmn03, tabIndex=1, title="Line#";
+Edit mmn04=mmn_file.mmn04, tabIndex=2, title="Expense Description", not null, required;
+Edit mmn05=mmn_file.mmn05, tabIndex=3, title="Amount";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mmn(mmn_file.mmn03,mmn_file.mmn04,mmn_file.mmn05)
+END -- INSTRUCTIONS
+

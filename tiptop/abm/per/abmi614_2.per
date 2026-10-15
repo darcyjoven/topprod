@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi614_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="abmi614_1")
+VBox vb2
+Folder pc3
+Page Page4(text=%"Main")
+Grid gr9
+{
+  Parameter  [a1               ]      Parameter No.   [boi01            ]
+
+
+
+
+}
+END -- gr9
+END -- Page4
+END -- pc3
+Table s_boe
+{
+[a2             |boe78a            |a3                  ]
+[a2             |boe78a            |a3                  ]
+[a2             |boe78a            |a3                  ]
+[a2             |boe78a            |a3                  ]
+[a2             |boe78a            |a3                  ]
+[a2             |boe78a            |a3                  ]
+[a2             |boe78a            |a3                  ]
+[a2             |boe78a            |a3                  ]
+[a2             |boe78a            |a3                  ]
+[a2             |boe78a            |a3                  ]
+
+}
+END -- s_boe
+Grid gr12
+{
+----------  Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr12
+END -- vb2
+END -- abmi614_2
+
+ATTRIBUTES
+ComboBox a1=formonly.a1 type VARCHAR, tabIndex=6, default = "1", items=(("1", "Constant"),("2", "Variable:Host "),("3", "Variable:Part "));
+ComboBox boi01=formonly.boi01 type VARCHAR, tabIndex=7, not null;
+Edit a2=formonly.a2 type DECIMAL, tabIndex=1, title="Formula Order ", noEntry;
+Edit boe78a=formonly.boe78a type VARCHAR, tabIndex=2, title="Formula", noEntry, not null;
+Edit a3=formonly.a3 type DECIMAL, tabIndex=3, title="Input test value ", not null;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=4;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_boe(formonly.a2,formonly.boe78a,formonly.a3)
+SCREEN RECORD Undefined(formonly.a1,formonly.boi01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

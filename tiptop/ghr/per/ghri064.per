@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri064.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox1
+Grid Grid2
+{
+ <G group3                                                                                                               >
+  [label5       |hrat01    |hrat02              ]             [label17      |hrat25    ]
+  [label7       |hrat03    |hrat03_name         ]             [label14      |hrat04    |hrat04_name         ]
+  [label15      |hrat05    |hrat05_name         ]             [label16      |hrat06    |hrat06_name         ]
+ <                                                                                                                       >
+ <G group1                                                                                                               >
+  [label1       |hrcx02                       ]               [label3       |hrcx04    ]
+  [label2       |hrcx03  |hrag07              ]               [label4       |hrcx05    ]
+ <                                                                                                                       >
+ <G group2                                                                                                               >
+    [hrcx08    ]                                              [label18      |hrcx06    ]
+                                                              [label19      |hrcx07    ]
+ <                                                                                                                       >
+
+}
+END -- Grid2
+Grid Grid1
+{
+  ----------- cnt[cnt ]-------------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid ds1
+{
+
+[label8  |hrcxuser     ]               [label10 |hrcxmodu       ]
+[label9  |hrcxgrup     ]               [label11 |hrcxdate       ]
+[label13 |hrcxoriu     ]
+[label12 |hrcxorig     ]
+
+}
+END -- ds1
+END -- Page2
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Group group3:Group3, text=%"Group1";
+Label label5:Label5, text=%"hrat01", justify=right;
+ButtonEdit hrat01=formonly.hrat01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", scroll;
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=6;
+Label label17:Label17, text=%"hrat25", justify=right;
+DateEdit hrat25=formonly.hrat25 type CHAR, tabIndex=6, not null, required;
+Label label7:Label7, text=%"hrat03", justify=right;
+Edit hrat03=formonly.hrat03 type CHAR, tabIndex=6, not null, required;
+Edit hrat03_name=formonly.hrat03_name type CHAR, tabIndex=6, noEntry;
+Label label14:Label14, text=%"hrat04", justify=right;
+Edit hrat04=formonly.hrat04 type CHAR, tabIndex=6, not null, required;
+Edit hrat04_name=formonly.hrat04_name type CHAR, tabIndex=6, noEntry;
+Label label15:Label15, text=%"hrat05", justify=right;
+Edit hrat05=formonly.hrat05 type CHAR, tabIndex=6, not null, required, justify=left;
+Edit hrat05_name=formonly.hrat05_name type CHAR, tabIndex=6, noEntry;
+Label label16:Label16, text=%"hrat06", justify=right;
+Edit hrat06=formonly.hrat06 type CHAR, tabIndex=6;
+Edit hrat06_name=formonly.hrat06_name type CHAR, tabIndex=6, noEntry;
+Group group1:Group1, text=%"Group2";
+Label label1:Label1, text=%"hrcx02", justify=right;
+ButtonEdit hrcx02=formonly.hrcx02 type VARCHAR, action=controlp, tabIndex=2, not null, image="zoom", justify=left, scroll;
+Label label3:Label3, text=%"hrcx04", justify=right;
+DateEdit hrcx04=formonly.hrcx04 type DATE, tabIndex=2, not null, justify=right;
+Label label2:Label2, text=%"hrcx03", justify=right;
+ButtonEdit hrcx03=formonly.hrcx03 type VARCHAR, action=controlp, tabIndex=2, image="zoom", scroll;
+Edit hrag07=formonly.hrag07 type VARCHAR, tabIndex=7;
+Label label4:Label4, text=%"hrcx05", justify=right;
+Edit hrcx05=formonly.hrcx05 type VARCHAR, tabIndex=2, justify=left, picture="XX:XX";
+Group group2:Group2, text=%"Group3";
+CheckBox hrcx08=formonly.hrcx08 type VARCHAR, tabIndex=10, default = "N", text=%"CheckBox1", valueChecked = "Y", valueUnchecked = "N";
+Label label18:Label18, text=%"hrcx06", justify=right;
+DateEdit hrcx06=formonly.hrcx06 type DATE, tabIndex=6;
+Label label19:Label19, text=%"hrcx07", justify=right;
+Edit hrcx07=formonly.hrcx07 type VARCHAR, tabIndex=6, picture="XX:XX";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=19, noEntry;
+Label label8:Label8, text=%"hrcxuser";
+Edit hrcxuser=formonly.hrcxuser type VARCHAR, tabIndex=13, scroll;
+Label label10:Label10, text=%"hrcxmodu";
+Edit hrcxmodu=formonly.hrcxmodu type VARCHAR, tabIndex=15, scroll;
+Label label9:Label9, text=%"hrcxgrup";
+Edit hrcxgrup=formonly.hrcxgrup type VARCHAR, tabIndex=14, scroll;
+Label label11:Label11, text=%"hrcxdate";
+DateEdit hrcxdate=formonly.hrcxdate type DATE, tabIndex=16;
+Label label13:Label13, text=%"hrcxoriu";
+Edit hrcxoriu=formonly.hrcxoriu type VARCHAR, tabIndex=18, scroll;
+Label label12:Label12, text=%"hrcxorig";
+Edit hrcxorig=formonly.hrcxorig type VARCHAR, tabIndex=17, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(formonly.hrat01,formonly.hrcx02,formonly.hrcx03,formonly.hrcx04,formonly.hrcx05,formonly.hrcx06,formonly.hrcx07)
+SCREEN RECORD Undefined(formonly.hrat02,formonly.hrat03,formonly.hrat03_name,formonly.hrat04,formonly.hrat04_name,formonly.hrat05,formonly.hrat05_name,formonly.hrat06,formonly.hrat06_name,formonly.hrat25,formonly.hrag07,formonly.hrcx08,formonly.hrcxuser,formonly.hrcxgrup,formonly.hrcxmodu,formonly.hrcxdate,formonly.hrcxorig,formonly.hrcxoriu,formonly.cnt)
+END -- INSTRUCTIONS
+

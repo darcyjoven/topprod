@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr719.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmr719")
+VBox VBox1
+Group Group1
+Grid Grid1
+{
+ <G group01                                                         >
+  Financing Doc NO.   [nne01               ]
+  Applying Date       [nne02               ]
+  Credit Bank         [nne04               ]
+  Due Date            [nne112              ]
+  Financing Type      [nne06               ]
+  Currency            [nne16               ]
+ <                                                                  >
+
+}
+END -- Grid1
+END -- Group1
+Group group04(text="INPUT")
+Grid Grid2
+{
+ <G group02                                                          >
+  Date QBE            [bdate      ]-[edate       ]
+ <                                                                   >
+ <G group03                                                          >
+  [t                             ]
+ <                                                                   >
+
+}
+END -- Grid2
+END -- group04
+Grid Grid3
+{
+[more                                                        ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- anmr719
+
+TABLES
+nne_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit nne01=nne_file.nne01, tabIndex=1;
+DateEdit nne02=nne_file.nne02, tabIndex=2;
+Edit nne04=nne_file.nne04, tabIndex=3;
+DateEdit nne112=nne_file.nne112, tabIndex=4;
+Edit nne06=nne_file.nne06, tabIndex=5;
+Edit nne16=nne_file.nne16, tabIndex=6;
+Group group02:group02;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=7;
+DateEdit edate=formonly.edate type DATE, tabIndex=8;
+Group group03:group03, text="Data Option";
+RadioGroup t=formonly.t type CHAR, tabIndex=9, items=(("1", %"Closed"),("2", %"Unclosed"),("3", %"All "));
+CheckBox more=formonly.more type CHAR, tabIndex=10, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nne_file.nne01,nne_file.nne02,nne_file.nne04,nne_file.nne112,nne_file.nne06,nne_file.nne16,formonly.bdate,formonly.edate,formonly.t,formonly.more)
+END -- INSTRUCTIONS
+

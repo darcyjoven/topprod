@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdp100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amdp100")
+VBox vb6
+Group g01(text="INPUT")
+VBox vb5
+Grid gr3686
+{
+
+   Date Type  [type                                         ]
+  <G gb3                                                  >
+   [deduct       ]
+   [             ]
+  <                                                       >
+
+  <G group01                                              >
+  [a        ]
+  [         ]
+  [         ]
+  <                                                       >
+
+}
+END -- gr3686
+Grid gr3687
+{
+[upd                        ]
+[b                                   ]
+[d                                   ]
+ File Type[fil               ]
+          [                  ]
+          [                  ]
+          [                  ]
+ Media File Name(.TXT)               [rep       |dummy02             ]
+ Direct Deduction File Name          [rep1      |dummy03             ]
+ Declaring Department                [ama01     ]
+ Data Year/Month      [byy        ] /[bmm       ]-[emm       |dummy01             ]
+ [e                    ]
+
+
+
+
+
+}
+END -- gr3687
+END -- vb5
+END -- g01
+Grid gr3688
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr3688
+END -- vb6
+END -- amdp100
+
+ATTRIBUTES
+ComboBox type=formonly.type type CHAR, tabIndex=12, not null, required, items=(("1", "401"),("2", "403"));
+Group gb3:gb3, text="Deduction Type";
+RadioGroup deduct=formonly.deduct type CHAR, tabIndex=13, not null, required, items=(("1", "Ratio Deduction"),("2", "Direct Deduction"));
+Group group01:group01, text="Data Option";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=1, items=(("1", "Purchase"),("2", "Sales"),("3", "All"));
+CheckBox upd=formonly.upd type CHAR, tabIndex=15, text="Update Direct Deduct File", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type CHAR, tabIndex=2, text="Gen SLS Media Including 0-Tax Rate", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type CHAR, tabIndex=3, text="Purchase can\'t deduct", not null, required, valueChecked = "Y", valueUnchecked = "N";
+RadioGroup fil=formonly.fil type VARCHAR, tabIndex=6, items=(("1", "TXT:P/O data file"),("2", "TET:Sale/tax data file"),("3", "T01:Direct Deduction file"),("4", "T02:0 tax data file"));
+Edit rep=formonly.rep type VARCHAR, tabIndex=5, not null, required;
+Label dummy02:dummy02, text="(Use H.Q. Uniform No.)";
+Edit rep1=formonly.rep1 type CHAR, tabIndex=14;
+Label dummy03:dummy03, text="(Use H.Q. Uniform No.)";
+ButtonEdit ama01=formonly.ama01 type VARCHAR, action=CONTROLP, tabIndex=4, image="ZOOM";
+Edit byy=formonly.byy type SMALLINT, tabIndex=7;
+Edit bmm=formonly.bmm type SMALLINT, tabIndex=8;
+Edit emm=formonly.emm type SMALLINT, tabIndex=9;
+Label dummy01:dummy01, text="(century year)";
+CheckBox e=formonly.e type CHAR, tabIndex=11, text="Print TaxID Together?", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=10, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.type,formonly.deduct,formonly.a,formonly.upd,formonly.b,formonly.d,formonly.fil,formonly.rep,formonly.rep1,formonly.ama01,formonly.byy,formonly.bmm,formonly.emm,formonly.e,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

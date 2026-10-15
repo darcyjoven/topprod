@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq137.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq137")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr3142
+{
+ Item#               [ima01                         ]
+ Part Name           [ima02                         ]
+ Specification       [ima021                        ]
+}
+END -- gr3142
+Grid gr3143
+{
+ Source Code         [ima08     ]
+ Purchase Unit       [ima4]
+
+}
+END -- gr3143
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_sr
+{
+[x  |rvb01            |rva06   |rvb04            |rva05    |pmc03        |rvb07            |rvb31          ]
+[x  |rvb01            |rva06   |rvb04            |rva05    |pmc03        |rvb07            |rvb31          ]
+[x  |rvb01            |rva06   |rvb04            |rva05    |pmc03        |rvb07            |rvb31          ]
+[x  |rvb01            |rva06   |rvb04            |rva05    |pmc03        |rvb07            |rvb31          ]
+[x  |rvb01            |rva06   |rvb04            |rva05    |pmc03        |rvb07            |rvb31          ]
+[x  |rvb01            |rva06   |rvb04            |rva05    |pmc03        |rvb07            |rvb31          ]
+[x  |rvb01            |rva06   |rvb04            |rva05    |pmc03        |rvb07            |rvb31          ]
+[x  |rvb01            |rva06   |rvb04            |rva05    |pmc03        |rvb07            |rvb31          ]
+[x  |rvb01            |rva06   |rvb04            |rva05    |pmc03        |rvb07            |rvb31          ]
+[x  |rvb01            |rva06   |rvb04            |rva05    |pmc03        |rvb07            |rvb31          ]
+
+}
+END -- s_sr
+Grid gr3144
+{
+ ---------- Rows [cnt   ] / [cn2   ] ---------- Actual Received Qty Tot[rvb07_t             ] ---------- Qty on QC Tot       [rvb31_t             ] ----------
+
+}
+END -- gr3144
+END -- VBox1
+END -- aimq137
+
+TABLES
+rvb_file,
+rva_file,
+ima_file,
+pmc_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=3, noEntry;
+Edit ima08=ima_file.ima08, tabIndex=4, noEntry;
+Edit ima4=ima_file.ima44, tabIndex=5, noEntry;
+Edit x=formonly.x type CHAR, tabIndex=6, title="I/F", noEntry;
+Edit rvb01=rvb_file.rvb01, tabIndex=7, title="I/FQC Doc#", noEntry;
+DateEdit rva06=rva_file.rva06, tabIndex=8, title="Rece.Dt", noEntry;
+Edit rvb04=rvb_file.rvb04, tabIndex=9, title="PO/WO", noEntry;
+Edit rva05=rva_file.rva05, tabIndex=10, title="Vend/Dept", noEntry;
+Edit pmc03=pmc_file.pmc03, tabIndex=11, title="Abbreviation", noEntry;
+Edit rvb07=rvb_file.rvb07, tabIndex=12, title="Actual Rece.Qty", noEntry, not null, required;
+Edit rvb31=rvb_file.rvb31, tabIndex=13, title="Qty on QC", noEntry, not null, required;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=14, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=15, noEntry;
+Edit rvb07_t=formonly.rvb07_t type CHAR, tabIndex=16, noEntry;
+Edit rvb31_t=formonly.rvb31_t type CHAR, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sr(formonly.x,rvb_file.rvb01,rva_file.rva06,rvb_file.rvb04,rva_file.rva05,pmc_file.pmc03,rvb_file.rvb07,rvb_file.rvb31)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,ima_file.ima08,ima_file.ima44,formonly.cnt,formonly.cn2,formonly.rvb07_t,formonly.rvb31_t)
+END -- INSTRUCTIONS
+

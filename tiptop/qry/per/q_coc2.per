@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_coc2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Query Bonded")
+Grid gr3744
+{
+ <T s_coc                                                                                          >
+ [check |coc01       |coc02 |coc03             |coc04              |coc05       |coc07            ]
+ [check |coc01       |coc02 |coc03             |coc04              |coc05       |coc07            ]
+ [check |coc01       |coc02 |coc03             |coc04              |coc05       |coc07            ]
+ [check |coc01       |coc02 |coc03             |coc04              |coc05       |coc07            ]
+ [check |coc01       |coc02 |coc03             |coc04              |coc05       |coc07            ]
+ [check |coc01       |coc02 |coc03             |coc04              |coc05       |coc07            ]
+ [check |coc01       |coc02 |coc03             |coc04              |coc05       |coc07            ]
+ [check |coc01       |coc02 |coc03             |coc04              |coc05       |coc07            ]
+ [check |coc01       |coc02 |coc03             |coc04              |coc05       |coc07            ]
+ [check |coc01       |coc02 |coc03             |coc04              |coc05       |coc07            ]
+ <                                                                                                 >
+
+}
+END -- gr3744
+END -- q_coc2
+
+TABLES
+coc_file
+ATTRIBUTES
+Table s_coc:s_coc;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit coc01=coc_file.coc01, tabIndex=2, title="Application", noEntry;
+Edit coc02=coc_file.coc02, tabIndex=3, title="Curr.", noEntry;
+Edit coc03=coc_file.coc03, tabIndex=4, title="Register Book No.", noEntry;
+Edit coc04=coc_file.coc04, tabIndex=5, title="Bonded No.", noEntry;
+Edit coc05=coc_file.coc05, tabIndex=6, title="Expiry Date", noEntry;
+Edit coc07=coc_file.coc07, tabIndex=7, title="Date of Clearance", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_coc(formonly.check,coc_file.coc01,coc_file.coc02,coc_file.coc03,coc_file.coc04,coc_file.coc05,coc_file.coc07)
+END -- INSTRUCTIONS
+

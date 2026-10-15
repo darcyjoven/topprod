@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi216.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi216")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1308
+{
+ Upper Org. Code     [tqc01     ] Org. Name         [tqb02               ]
+ Eff. Date           [tqc02     ] Exp. Date         [tqc03      ]
+}
+END -- gr1308
+END -- page01
+Page info(text="Info")
+Grid gr1309
+{
+ Record Owner        [tqcuser   ] Last Modified by    [tqcmodu   ] Data Valid Code     [tqcacti   ]
+ Department          [tqcgrup   ] Create/Modify Date  [tqcdate   ]
+ Record Orig.        [tqcoriu   ]
+ Dept Orig.          [tqcorig   ]
+}
+END -- gr1309
+END -- info
+END -- folder01
+Table s_tqd
+{
+[tqd02     |tqd03               |tqb021              |tqd04      |tqa02               |tqd05     |tqd06     ]
+[tqd02     |tqd03               |tqb021              |tqd04      |tqa02               |tqd05     |tqd06     ]
+[tqd02     |tqd03               |tqb021              |tqd04      |tqa02               |tqd05     |tqd06     ]
+[tqd02     |tqd03               |tqb021              |tqd04      |tqa02               |tqd05     |tqd06     ]
+[tqd02     |tqd03               |tqb021              |tqd04      |tqa02               |tqd05     |tqd06     ]
+[tqd02     |tqd03               |tqb021              |tqd04      |tqa02               |tqd05     |tqd06     ]
+[tqd02     |tqd03               |tqb021              |tqd04      |tqa02               |tqd05     |tqd06     ]
+[tqd02     |tqd03               |tqb021              |tqd04      |tqa02               |tqd05     |tqd06     ]
+[tqd02     |tqd03               |tqb021              |tqd04      |tqa02               |tqd05     |tqd06     ]
+[tqd02     |tqd03               |tqb021              |tqd04      |tqa02               |tqd05     |tqd06     ]
+
+}
+END -- s_tqd
+Grid gr1310
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1310
+END -- VBox1
+END -- atmi216
+
+TABLES
+tqd_file,
+tqc_file
+ATTRIBUTES
+ButtonEdit tqc01=tqc_file.tqc01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit tqb02=formonly.tqb02 type CHAR, tabIndex=2, noEntry;
+DateEdit tqc02=tqc_file.tqc02, tabIndex=3;
+DateEdit tqc03=tqc_file.tqc03, tabIndex=4;
+Edit tqcuser=tqc_file.tqcuser, tabIndex=5, noEntry;
+Edit tqcmodu=tqc_file.tqcmodu, tabIndex=6, noEntry;
+Edit tqcacti=tqc_file.tqcacti, tabIndex=7, noEntry;
+Edit tqcgrup=tqc_file.tqcgrup, tabIndex=8, noEntry;
+DateEdit tqcdate=tqc_file.tqcdate, tabIndex=9, noEntry;
+Edit tqcoriu=tqc_file.tqcoriu, tabIndex=501, noEntry;
+Edit tqcorig=tqc_file.tqcorig, tabIndex=502, noEntry;
+Edit tqd02=tqd_file.tqd02, tabIndex=10, title="Seq", not null, required;
+ButtonEdit tqd03=tqd_file.tqd03, action=controlp, tabIndex=11, title="Sub-Org. Code", not null, required, image="zoom";
+Edit tqb021=formonly.tqb021 type CHAR, tabIndex=12, title="Org. Name", noEntry;
+ButtonEdit tqd04=tqd_file.tqd04, action=controlp, tabIndex=13, title="Chan. Code", image="zoom";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=14, title="Chan. Name", noEntry;
+DateEdit tqd05=tqd_file.tqd05, tabIndex=15, title="Eff. Date", not null, required;
+DateEdit tqd06=tqd_file.tqd06, tabIndex=16, title="Exp. Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tqd(tqd_file.tqd02,tqd_file.tqd03,formonly.tqb021,tqd_file.tqd04,formonly.tqa02,tqd_file.tqd05,tqd_file.tqd06)
+SCREEN RECORD Undefined(tqc_file.tqc01,formonly.tqb02,tqc_file.tqc02,tqc_file.tqc03,tqc_file.tqcuser,tqc_file.tqcmodu,tqc_file.tqcacti,tqc_file.tqcgrup,tqc_file.tqcdate,tqc_file.tqcoriu,tqc_file.tqcorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

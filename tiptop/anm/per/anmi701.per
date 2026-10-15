@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi701")
+VBox VBox1
+Folder pc756
+Page page01(text="Main")
+Table s_nab
+{
+[nab01   |nab02        |nab03                         ]
+[nab01   |nab02        |nab03                         ]
+[nab01   |nab02        |nab03                         ]
+[nab01   |nab02        |nab03                         ]
+[nab01   |nab02        |nab03                         ]
+[nab01   |nab02        |nab03                         ]
+[nab01   |nab02        |nab03                         ]
+[nab01   |nab02        |nab03                         ]
+[nab01   |nab02        |nab03                         ]
+[nab01   |nab02        |nab03                         ]
+
+}
+END -- s_nab
+END -- page01
+END -- pc756
+Grid gr4044
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4044
+END -- VBox1
+END -- anmi701
+
+TABLES
+nab_file
+ATTRIBUTES
+Edit nab01=nab_file.nab01, tabIndex=1, title="No.", not null, required, comment="Key Field, No Blank/Repeated!    ";
+Edit nab02=nab_file.nab02, tabIndex=2, title="Abbreviation";
+Edit nab03=nab_file.nab03, tabIndex=3, title="Full Name";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nab(nab_file.nab01,nab_file.nab02,nab_file.nab03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

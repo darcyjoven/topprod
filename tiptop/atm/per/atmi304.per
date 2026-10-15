@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi304.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="atmi304")
+VBox vb4
+Folder pc3
+Page Page6(text=%"Main\n")
+Grid gr8
+{
+ Vip No.             [vip01              ]Info        [vip05                 ]
+ Vip Category        [vip02              ]
+ Note                [vim02              ]
+ Commencement        [vip03              ]
+ Expiry date         [vip04              ]
+}
+END -- gr8
+END -- Page6
+Page Page7(text=%"Info")
+Grid gr9
+{
+ Record Owner    [vipuser       ]  Last Modified by     [vipmodu   ]  Data Valid Code    [vipacti   ]
+ Department      [vipgrup       ]  Create/Modify Date   [vipdate   ]
+}
+END -- gr9
+END -- Page7
+END -- pc3
+Folder pc4
+Page Page8(text=%"Cardholder")
+Grid gr10
+{
+ Name                [vip06               ]Gender     [vip10               ]
+ Birthday            [vip07               ]phone      [vip11               ]
+ Mobile phone        [vip08               ]text40     [vip12               ]
+ Address             [vip09                                                ]
+}
+END -- gr10
+END -- Page8
+END -- pc4
+Folder pc5
+Page Page10(text=%"Use")
+Grid gr11
+{
+ spend               [vip13               ]
+ Total Integral      [vip14               ]
+ Inter               [vip15               ]
+}
+END -- gr11
+END -- Page10
+END -- pc5
+Grid gr12
+{
+ ------Rows  [idx]/[cnt]-------
+
+}
+END -- gr12
+END -- vb4
+END -- atmi304
+
+TABLES
+vip_file,
+vim_file
+ATTRIBUTES
+Edit vip01=vip_file.vip01, tabIndex=1, not null, required;
+ComboBox vip05=vip_file.vip05, tabIndex=6, default = "1", noEntry, not null, required, items=(("1", "Not opened"),("2", "opening"),("3", "Suspended"));
+ButtonEdit vip02=vip_file.vip02, action=controlp, tabIndex=3, not null, image="zoom.png";
+Edit vim02=vim_file.vim02, tabIndex=2;
+DateEdit vip03=vip_file.vip03, tabIndex=4, not null;
+DateEdit vip04=vip_file.vip04, tabIndex=5;
+Edit vipuser=vip_file.vipuser, tabIndex=7, noEntry;
+Edit vipmodu=vip_file.vipmodu, tabIndex=10, noEntry;
+Edit vipacti=vip_file.vipacti, tabIndex=11, noEntry;
+Edit vipgrup=vip_file.vipgrup, tabIndex=8, noEntry;
+DateEdit vipdate=vip_file.vipdate, tabIndex=9, noEntry;
+Edit vip06=vip_file.vip06, tabIndex=12, not null;
+ComboBox vip10=vip_file.vip10, tabIndex=16, default = "F", not null, items=(("F", "female"),("M", "male"));
+DateEdit vip07=vip_file.vip07, tabIndex=14;
+Edit vip11=vip_file.vip11, tabIndex=17, not null;
+Edit vip08=vip_file.vip08, tabIndex=13;
+Edit vip12=vip_file.vip12, tabIndex=18, not null;
+TextEdit vip09=vip_file.vip09, tabIndex=15;
+Edit vip13=vip_file.vip13, tabIndex=19, not null;
+Edit vip14=vip_file.vip14, tabIndex=20, not null;
+Edit vip15=vip_file.vip15, tabIndex=21, not null;
+Edit idx=formonly.idx type SMALLFLOAT, tabIndex=23, noEntry;
+Edit cnt=formonly.cnt type SMALLFLOAT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vip_file.vip01,vip_file.vip05,vip_file.vip02,vim_file.vim02,vip_file.vip03,vip_file.vip04,vip_file.vipuser,vip_file.vipmodu,vip_file.vipacti,vip_file.vipgrup,vip_file.vipdate,vip_file.vip06,vip_file.vip10,vip_file.vip07,vip_file.vip11,vip_file.vip08,vip_file.vip12,vip_file.vip09,vip_file.vip13,vip_file.vip14,vip_file.vip15,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

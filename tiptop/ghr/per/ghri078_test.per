@@ -1,0 +1,141 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri078_test.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid3
+{
+  hrdk02[hrdk02    |hrdk02_1            ]  hrdk03[hrdk03              ]  hrdk04[hrdk04              ]
+  hrdk05[hrdk05                         ]  hrdk06[hrdk06              ]  hrdk10[hrdk10              ]
+        [hrdk07                         ]        [hrdk08              ]        [hrdk09              ]
+        [hrdk11                         ]  hrdk12[hrdk12              ]  hrdk13[hrdk13              ]
+
+
+}
+END -- Grid3
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+ [type               ]<T table2         >[hrdk15                                                                                    ]
+  <T table1         > [value   |name    ][                                                                                          ]
+  [hrdh12  |hrdh06  ] [value   |name    ][                                                                                          ]
+  [hrdh12  |hrdh06  ] [value   |name    ][                                                                                          ]
+  [hrdh12  |hrdh06  ] [value   |name    ] <T table3           >[fun1                     |fun2                     |fun4            ]
+  [hrdh12  |hrdh06  ] [value   |name    ] [id      |items   ]  [fun8                     |fun9                     |                ]
+  [hrdh12  |hrdh06  ]                     [id      |items   ]  [fun3        |fun5        |fun6        |fun7        |fun10           ]
+                                          [id      |items   ]  [fun11       |fun12       |fun13       |fun14       |fun15           ]
+                                          [id      |items   ]  [fun16       |fun17       |fun18       |fun19       |fun20           ]
+                                          [id      |items   ]  [fun21       |fun22       |fun23       |fun24       |fun25           ]
+                                                               [fun26       |fun27       |fun28       |fun29       |fun30           ]
+                                                               [fun31       |fun32       |fun33       |fun34       |                ]
+                                                               [fun35       |fun36       |fun37       |fun38       |fun39           ]
+                                                               [fun40       |fun41       |fun42       |fun43       |fun44           ]
+                                                               [fun45       |fun46       |fun47       |fun48       |fun49           ]
+  <                 > <                 > <                   >[fun50                    |fun51       |fun52                        ]
+
+}
+END -- Grid1
+Grid Grid2
+{
+  ---------- cnt[cnt ]--------
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrdk02=formonly.hrdk02 type VARCHAR, action=controlp, tabIndex=9, not null, required, image="zoom";
+Edit hrdk02_1=formonly.hrdk02_1 type VARCHAR, tabIndex=10, noEntry;
+Edit hrdk03=formonly.hrdk03 type VARCHAR, tabIndex=11, not null, required;
+ComboBox hrdk04=formonly.hrdk04, tabIndex=12;
+ComboBox hrdk05=formonly.hrdk05 type VARCHAR, tabIndex=13, not null, required;
+Edit hrdk06=formonly.hrdk06 type INTEGER, tabIndex=14, not null, required;
+Edit hrdk10=formonly.hrdk10 type VARCHAR, tabIndex=16;
+CheckBox hrdk07=formonly.hrdk07 type VARCHAR, tabIndex=15, text=%"hrdk07", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrdk08=formonly.hrdk08 type VARCHAR, tabIndex=17, text=%"hrdk08", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrdk09=formonly.hrdk09 type VARCHAR, tabIndex=18, text=%"hrdk09", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrdk11=formonly.hrdk11 type VARCHAR, tabIndex=19, text=%"hrdk11", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit hrdk12=formonly.hrdk12 type VARCHAR, tabIndex=20;
+ComboBox hrdk13=formonly.hrdk13 type VARCHAR, tabIndex=21, not null, required;
+ComboBox type=formonly.type type VARCHAR, tabIndex=8;
+Table table2:Table2;
+Edit value=formonly.value type VARCHAR, tabIndex=73, title=%"value", noEntry, hidden;
+Edit name=formonly.name type VARCHAR, tabIndex=2, title=%"name", noEntry;
+TextEdit hrdk15=formonly.hrdk15, tabIndex=3;
+Table table1:Table1;
+Edit hrdh12=formonly.hrdh12 type VARCHAR, tabIndex=74, title=%"hrdh12", noEntry, hidden;
+Edit hrdh06=formonly.hrdh06 type VARCHAR, tabIndex=1, title=%"hrdh06", noEntry;
+Table table3:Table3;
+Edit id=formonly.id type VARCHAR, tabIndex=72, title=%"id", noEntry, hidden;
+Edit items=formonly.items type VARCHAR, tabIndex=4, title=%"items", noEntry;
+Button fun1:fun1, tabIndex=5, text=%"Button1";
+Button fun2:fun2, tabIndex=6, text=%"Button2";
+Button fun4:fun4, tabIndex=22, text=%"Button4";
+Button fun8:fun8, tabIndex=26, text=%"Button8";
+Button fun9:fun9, tabIndex=27, text=%"Button9";
+Button fun3:fun3, tabIndex=7, text=%"Button3";
+Button fun5:fun5, tabIndex=23, text=%"Button5";
+Button fun6:fun6, tabIndex=24, text=%"Button6";
+Button fun7:fun7, tabIndex=25, text=%"Button7";
+Button fun10:fun10, tabIndex=28, text=%"Button10";
+Button fun11:fun11, tabIndex=29, text=%"Button11";
+Button fun12:fun12, tabIndex=30, text=%"Button12";
+Button fun13:fun13, tabIndex=31, text=%"Button13";
+Button fun14:fun14, tabIndex=32, text=%"Button14";
+Button fun15:fun15, tabIndex=33, text=%"Button15";
+Button fun16:fun16, tabIndex=34, text=%"Button16";
+Button fun17:fun17, tabIndex=35, text=%"Button17";
+Button fun18:fun18, tabIndex=36, text=%"Button18";
+Button fun19:fun19, tabIndex=37, text=%"Button19";
+Button fun20:fun20, tabIndex=38, text=%"Button20";
+Button fun21:fun21, tabIndex=39, text=%"Button21";
+Button fun22:fun22, tabIndex=40, text=%"Button22";
+Button fun23:fun23, tabIndex=41, text=%"Button23";
+Button fun24:fun24, tabIndex=42, text=%"Button24";
+Button fun25:fun25, tabIndex=43, text=%"Button25";
+Button fun26:fun26, tabIndex=44, text=%"Button26";
+Button fun27:fun27, tabIndex=45, text=%"Button27";
+Button fun28:fun28, tabIndex=46, text=%"Button28";
+Button fun29:fun29, tabIndex=47, text=%"Button29";
+Button fun30:fun30, tabIndex=48, text=%"Button30";
+Button fun31:fun31, tabIndex=49, text=%"Button31";
+Button fun32:fun32, tabIndex=50, text=%"Button32";
+Button fun33:fun33, tabIndex=51, text=%"Button33";
+Button fun34:fun34, tabIndex=52, text=%"Button34";
+Button fun35:fun35, tabIndex=53, text=%"Button35";
+Button fun36:fun36, tabIndex=54, text=%"Button36";
+Button fun37:fun37, tabIndex=55, text=%"Button37";
+Button fun38:fun38, tabIndex=56, text=%"Button38";
+Button fun39:fun39, tabIndex=57, text=%"Button39";
+Button fun40:fun40, tabIndex=58, text=%"Button40";
+Button fun41:fun41, tabIndex=59, text=%"Button41";
+Button fun42:fun42, tabIndex=60, text=%"Button42";
+Button fun43:fun43, tabIndex=61, text=%"Button43";
+Button fun44:fun44, tabIndex=62, text=%"Button44";
+Button fun45:fun45, tabIndex=63, text=%"Button45";
+Button fun46:fun46, tabIndex=64, text=%"Button46";
+Button fun47:fun47, tabIndex=65, text=%"Button47";
+Button fun48:fun48, tabIndex=66, text=%"Button48";
+Button fun49:fun49, tabIndex=67, text=%"Button49";
+Button fun50:fun50, tabIndex=68, text=%"Button50";
+Button fun51:fun51, tabIndex=69, text=%"Button51";
+Button fun52:fun52, tabIndex=70, text=%"Button52";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=71, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrdk15,formonly.type,formonly.hrdk02,formonly.hrdk02_1,formonly.hrdk03,formonly.hrdk04,formonly.hrdk05,formonly.hrdk06,formonly.hrdk07,formonly.hrdk10,formonly.hrdk08,formonly.hrdk09,formonly.hrdk11,formonly.hrdk12,formonly.hrdk13,formonly.cnt)
+SCREEN RECORD s_para(formonly.hrdh12,formonly.hrdh06)
+SCREEN RECORD s_val(formonly.value,formonly.name)
+SCREEN RECORD s_include(formonly.id,formonly.items)
+END -- INSTRUCTIONS
+

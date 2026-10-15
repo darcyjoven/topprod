@@ -1,0 +1,187 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct610")
+VBox vb21
+Folder pc9
+Page page01(text="Main")
+Grid gr24
+{
+ Master Item#              [cct04                         ]   Unit                [ima25     ]
+                           [ima02                         ]   Cost Levels         [ima57     ]
+ W/O No.                   [ccu01           ]                 Closing Date        [sfb38     ]
+ Year/Month                [ccu02     ] /[cc]
+ Cost Calculation Method   [ccu06     ] Category No.  [ccu07                                  ]
+ W/O Qty                   [sfb08     ]
+ Total Cost                [cct12               ][cct22               ][cct32               ][cct42               ][cct92               ]
+                                                 [cct23               ]
+ <G group02                                                                                                                        >
+  Component No.       [ccu04                         ] Unit                [ima25b    ]
+                      [ima02b              ] [dummy10] Cost Levels         [ima57b    ]
+  Component Cate      [ccu05               ]           Standard QPA        [sfa16     ] Actual QPA          [sfa161    ]
+ <                                                                                                                                 >
+ <G group03                                                                                                                        >
+                    [dummy01            ]+[dummy02            ]+[dummy03            ]+[dummy07            ]=[dummy08            ]
+  Qty              [ccu11               ][ccu21               ][ccu31               ][ccu41               ][ccu91               ]
+  -------------------------------------------------------------------------------------------------------------------------------
+  Material         [ccu12a              ][ccu22a              ][ccu32a              ][ccu42a              ][ccu92a              ]
+  Labor            [ccu12b              ][ccu22b              ][ccu32b              ][ccu42b              ][ccu92b              ]
+  Overhead 1       [ccu12c              ][ccu22c              ][ccu32c              ][ccu42c              ][ccu92c              ]
+  Process          [ccu12d              ][ccu22d              ][ccu32d              ][ccu42d              ][ccu92d              ]
+  Overhead 2       [ccu12e              ][ccu22e              ][ccu32e              ][ccu42e              ][ccu92e              ]
+  Overhead 3       [ccu12f              ][ccu22f              ][ccu32f              ][ccu42f              ][ccu92f              ]
+  Overhead 4       [ccu12g              ][ccu22g              ][ccu32g              ][ccu42g              ][ccu92g              ]
+  Overhead 5       [ccu12h              ][ccu22h              ][ccu32h              ][ccu42h              ][ccu92h              ]
+  -------------------------------------------------------------------------------------------------------------------------------
+  Subtotal         [ccu12               ][ccu22               ][ccu32               ][ccu42               ][ccu92               ]
+  AVG U/P          [ccu12u              ][ccu22u              ][ccu32u              ][ccu42u              ][ccu92u              ]
+
+
+ <                                                                                                                                 >
+
+}
+END -- gr24
+END -- page01
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[ccuud01                       ] userdefined_field07[ccuud07        ] userdefined_field13[ccuud13        ]
+                    [                              ] userdefined_field08[ccuud08        ] userdefined_field14[ccuud14        ]
+ userdefined_field02[ccuud02        ]                userdefined_field09[ccuud09        ] userdefined_field15[ccuud15        ]
+ userdefined_field03[ccuud03        ]                userdefined_field10[ccuud10        ]
+ userdefined_field04[ccuud04        ]                userdefined_field11[ccuud11        ]
+ userdefined_field05[ccuud05        ]                userdefined_field12[ccuud12        ]
+ userdefined_field06[ccuud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc9
+Grid gr25
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr25
+END -- vb21
+END -- axct610
+
+TABLES
+ccu_file,
+cct_file,
+sfb_file,
+sfa_file
+ATTRIBUTES
+ButtonEdit cct04=cct_file.cct04, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom";
+Edit ima25=formonly.ima25 type CHAR, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit ima57=formonly.ima57 type CHAR, tabIndex=4, noEntry;
+Edit ccu01=ccu_file.ccu01, tabIndex=5, not null, required;
+Edit sfb38=sfb_file.sfb38, tabIndex=6;
+Edit ccu02=ccu_file.ccu02, tabIndex=7, not null, required;
+Edit cc=ccu_file.ccu03, tabIndex=8, not null, required;
+ComboBox ccu06=ccu_file.ccu06, tabIndex=64, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually???Batch Cost"),("4", "Identify Manually???Item Cost"),("5", "Identify Manually???Store Profit Center"));
+ButtonEdit ccu07=ccu_file.ccu07, action=controlp, tabIndex=65, not null, required, image="zoom.png";
+Edit sfb08=formonly.sfb08 type CHAR, tabIndex=9, noEntry;
+Edit cct12=cct_file.cct12, tabIndex=10, noEntry, not null, required;
+Edit cct22=cct_file.cct22, tabIndex=11, noEntry, not null, required;
+Edit cct32=cct_file.cct32, tabIndex=12, noEntry, not null, required;
+Edit cct42=cct_file.cct42, tabIndex=13, noEntry, not null, required;
+Edit cct92=cct_file.cct92, tabIndex=14, noEntry, not null, required;
+Edit cct23=cct_file.cct23, tabIndex=15, noEntry, not null, required;
+Group group02:group02;
+ButtonEdit ccu04=ccu_file.ccu04, action=controlp, tabIndex=16, not null, required, image="zoom";
+Edit ima25b=formonly.ima25b type CHAR, tabIndex=17, noEntry;
+Edit ima02b=formonly.ima02b type CHAR, tabIndex=18, noEntry;
+Label dummy10:dummy10;
+Edit ima57b=formonly.ima57b type CHAR, tabIndex=19, noEntry;
+ComboBox ccu05=ccu_file.ccu05, tabIndex=20, not null, required, items=(("P", "Purchase"),("M", "Manufactured"),("R", "Rework"));
+Edit sfa16=sfa_file.sfa16, tabIndex=21;
+Edit sfa161=sfa_file.sfa161, tabIndex=22;
+Group group03:group03;
+Label dummy01:dummy01, text="Last Month  Balance";
+Label dummy02:dummy02, text="Current Month Input";
+Label dummy03:dummy03, text="Current Month Disassembled";
+Label dummy07:dummy07, text="Diff.";
+Label dummy08:dummy08, text="EoM Balance";
+Edit ccu11=ccu_file.ccu11, tabIndex=23, not null, required;
+Edit ccu21=ccu_file.ccu21, tabIndex=24, not null, required;
+Edit ccu31=ccu_file.ccu31, tabIndex=25, not null, required;
+Edit ccu41=ccu_file.ccu41, tabIndex=26, not null, required;
+Edit ccu91=ccu_file.ccu91, tabIndex=27, noEntry, not null, required;
+Edit ccu12a=ccu_file.ccu12a, tabIndex=28, not null, required;
+Edit ccu22a=ccu_file.ccu22a, tabIndex=29, not null, required;
+Edit ccu32a=ccu_file.ccu32a, tabIndex=30, not null, required;
+Edit ccu42a=ccu_file.ccu42a, tabIndex=31, not null, required;
+Edit ccu92a=ccu_file.ccu92a, tabIndex=32, noEntry, not null, required;
+Edit ccu12b=ccu_file.ccu12b, tabIndex=33, not null, required;
+Edit ccu22b=ccu_file.ccu22b, tabIndex=34, not null, required;
+Edit ccu32b=ccu_file.ccu32b, tabIndex=35, not null, required;
+Edit ccu42b=ccu_file.ccu42b, tabIndex=36, not null, required;
+Edit ccu92b=ccu_file.ccu92b, tabIndex=37, noEntry, not null, required;
+Edit ccu12c=ccu_file.ccu12c, tabIndex=38, not null, required;
+Edit ccu22c=ccu_file.ccu22c, tabIndex=39, not null, required;
+Edit ccu32c=ccu_file.ccu32c, tabIndex=40, not null, required;
+Edit ccu42c=ccu_file.ccu42c, tabIndex=41, not null, required;
+Edit ccu92c=ccu_file.ccu92c, tabIndex=42, noEntry, not null, required;
+Edit ccu12d=ccu_file.ccu12d, tabIndex=43, not null, required;
+Edit ccu22d=ccu_file.ccu22d, tabIndex=44, not null, required;
+Edit ccu32d=ccu_file.ccu32d, tabIndex=45, not null, required;
+Edit ccu42d=ccu_file.ccu42d, tabIndex=46, not null, required;
+Edit ccu92d=ccu_file.ccu92d, tabIndex=47, noEntry, not null, required;
+Edit ccu12e=ccu_file.ccu12e, tabIndex=48, not null, required;
+Edit ccu22e=ccu_file.ccu22e, tabIndex=49, not null, required;
+Edit ccu32e=ccu_file.ccu32e, tabIndex=50, not null, required;
+Edit ccu42e=ccu_file.ccu42e, tabIndex=51, not null, required;
+Edit ccu92e=ccu_file.ccu92e, tabIndex=52, noEntry, not null, required;
+Edit ccu12f=ccu_file.ccu12f, tabIndex=66, not null, required;
+Edit ccu22f=ccu_file.ccu22f, tabIndex=69, not null, required;
+Edit ccu32f=ccu_file.ccu32f, tabIndex=72, not null, required;
+Edit ccu42f=ccu_file.ccu42f, tabIndex=75, not null, required;
+Edit ccu92f=ccu_file.ccu92f, tabIndex=78, not null, required;
+Edit ccu12g=ccu_file.ccu12g, tabIndex=67, not null, required;
+Edit ccu22g=ccu_file.ccu22g, tabIndex=70, not null, required;
+Edit ccu32g=ccu_file.ccu32g, tabIndex=73, not null, required;
+Edit ccu42g=ccu_file.ccu42g, tabIndex=76, not null, required;
+Edit ccu92g=ccu_file.ccu92g, tabIndex=79, not null, required;
+Edit ccu12h=ccu_file.ccu12h, tabIndex=68, not null, required;
+Edit ccu22h=ccu_file.ccu22h, tabIndex=71, not null, required;
+Edit ccu32h=ccu_file.ccu32h, tabIndex=74, not null, required;
+Edit ccu42h=ccu_file.ccu42h, tabIndex=77, not null, required;
+Edit ccu92h=ccu_file.ccu92h, tabIndex=80, not null, required;
+Edit ccu12=ccu_file.ccu12, tabIndex=53, noEntry, not null, required;
+Edit ccu22=ccu_file.ccu22, tabIndex=54, noEntry, not null, required;
+Edit ccu32=ccu_file.ccu32, tabIndex=55, noEntry, not null, required;
+Edit ccu42=ccu_file.ccu42, tabIndex=56, noEntry, not null, required;
+Edit ccu92=ccu_file.ccu92, tabIndex=57, noEntry, not null, required;
+Edit ccu12u=formonly.ccu12u type CHAR, tabIndex=58, noEntry;
+Edit ccu22u=formonly.ccu22u type CHAR, tabIndex=59, noEntry;
+Edit ccu32u=formonly.ccu32u type CHAR, tabIndex=60, noEntry;
+Edit ccu42u=formonly.ccu42u type CHAR, tabIndex=61, noEntry;
+Edit ccu92u=formonly.ccu92u type CHAR, tabIndex=62, noEntry;
+TextEdit ccuud01=ccu_file.ccuud01, tabIndex=81, stretch=NONE;
+Edit ccuud07=ccu_file.ccuud07, tabIndex=87;
+DateEdit ccuud13=ccu_file.ccuud13, tabIndex=93;
+Edit ccuud08=ccu_file.ccuud08, tabIndex=88;
+DateEdit ccuud14=ccu_file.ccuud14, tabIndex=94;
+Edit ccuud02=ccu_file.ccuud02, tabIndex=82;
+Edit ccuud09=ccu_file.ccuud09, tabIndex=89;
+DateEdit ccuud15=ccu_file.ccuud15, tabIndex=95;
+Edit ccuud03=ccu_file.ccuud03, tabIndex=83;
+Edit ccuud10=ccu_file.ccuud10, tabIndex=90;
+Edit ccuud04=ccu_file.ccuud04, tabIndex=84;
+Edit ccuud11=ccu_file.ccuud11, tabIndex=91;
+Edit ccuud05=ccu_file.ccuud05, tabIndex=85;
+Edit ccuud12=ccu_file.ccuud12, tabIndex=92;
+Edit ccuud06=ccu_file.ccuud06, tabIndex=86;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=63, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cct_file.cct04,formonly.ima25,formonly.ima02,formonly.ima57,ccu_file.ccu01,sfb_file.sfb38,ccu_file.ccu02,ccu_file.ccu03,ccu_file.ccu06,ccu_file.ccu07,formonly.sfb08,cct_file.cct12,cct_file.cct22,cct_file.cct32,cct_file.cct42,cct_file.cct92,cct_file.cct23,ccu_file.ccu04,formonly.ima25b,formonly.ima02b,formonly.ima57b,ccu_file.ccu05,sfa_file.sfa16,sfa_file.sfa161,ccu_file.ccu11,ccu_file.ccu21,ccu_file.ccu31,ccu_file.ccu41,ccu_file.ccu91,ccu_file.ccu12a,ccu_file.ccu22a,ccu_file.ccu32a,ccu_file.ccu42a,ccu_file.ccu92a,ccu_file.ccu12b,ccu_file.ccu22b,ccu_file.ccu32b,ccu_file.ccu42b,ccu_file.ccu92b,ccu_file.ccu12c,ccu_file.ccu22c,ccu_file.ccu32c,ccu_file.ccu42c,ccu_file.ccu92c,ccu_file.ccu12d,ccu_file.ccu22d,ccu_file.ccu32d,ccu_file.ccu42d,ccu_file.ccu92d,ccu_file.ccu12e,ccu_file.ccu22e,ccu_file.ccu32e,ccu_file.ccu42e,ccu_file.ccu92e,ccu_file.ccu12f,ccu_file.ccu22f,ccu_file.ccu32f,ccu_file.ccu42f,ccu_file.ccu92f,ccu_file.ccu12g,ccu_file.ccu22g,ccu_file.ccu32g,ccu_file.ccu42g,ccu_file.ccu92g,ccu_file.ccu12h,ccu_file.ccu22h,ccu_file.ccu32h,ccu_file.ccu42h,ccu_file.ccu92h,ccu_file.ccu12,ccu_file.ccu22,ccu_file.ccu32,ccu_file.ccu42,ccu_file.ccu92,formonly.ccu12u,formonly.ccu22u,formonly.ccu32u,formonly.ccu42u,formonly.ccu92u,ccu_file.ccuud01,ccu_file.ccuud07,ccu_file.ccuud13,ccu_file.ccuud08,ccu_file.ccuud14,ccu_file.ccuud02,ccu_file.ccuud09,ccu_file.ccuud15,ccu_file.ccuud03,ccu_file.ccuud10,ccu_file.ccuud04,ccu_file.ccuud11,ccu_file.ccuud05,ccu_file.ccuud12,ccu_file.ccuud06,formonly.cnt)
+END -- INSTRUCTIONS
+

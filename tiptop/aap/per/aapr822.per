@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr822.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr822")
+VBox VBox1
+Grid gr313
+{
+ <G group01                                                                                                     >
+  Arriving No.                   [alh01               ]    Open L/C Category              [alh10               ]
+  Initial Interest Dt            [alh02               ]    Arriving Curr.                 [alh11               ]
+  Vender No.                     [alh05               ]    Voucher NO.                    [alh72               ]
+  Credit Bank                    [alh06               ]    re-debit                       [alh00               ]
+ <                                                                                                              >
+
+}
+END -- gr313
+Group group02(text="INPUT")
+Grid gr314
+{
+ [s1                  ][s2                   ][s3                    ]
+ [t1                  ][t2                   ][t3                    ]
+ [u1                  ][u2                   ][u3                    ]
+}
+END -- gr314
+END -- group02
+Grid gr315
+{
+[more                                                        ]
+
+}
+END -- gr315
+END -- VBox1
+END -- aapr822
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit alh01=formonly.alh01 type VARCHAR, tabIndex=1;
+Edit alh10=formonly.alh10 type VARCHAR, tabIndex=2;
+DateEdit alh02=formonly.alh02 type DATE, tabIndex=3;
+Edit alh11=formonly.alh11 type VARCHAR, tabIndex=4;
+Edit alh05=formonly.alh05 type VARCHAR, tabIndex=5;
+Edit alh72=formonly.alh72 type VARCHAR, tabIndex=6;
+Edit alh06=formonly.alh06 type VARCHAR, tabIndex=7;
+ComboBox alh00=formonly.alh00 type CHAR, tabIndex=8, queryEditable, items=(("1", "Before re-debit"),("2", "After re-debit"));
+ComboBox s1=formonly.s1 type CHAR, tabIndex=9, queryEditable, items=(("1", "AN No.  "),("2", "I.Int.Dt"),("3", "Vender NO."),("4", "Cr.Bank "),("5", "L/C Cate"),("6", "AN Curr "),("7", "Voucher NO."),("8", "(1)Ori AN(2)Cr Chg"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=10, queryEditable, items=(("1", "AN No.  "),("2", "I.Int.Dt"),("3", "Vender NO."),("4", "Cr.Bank "),("5", "L/C Cate"),("6", "AN Curr "),("7", "Voucher NO."),("8", "(1)Ori AN(2)Cr Chg"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=11, queryEditable, items=(("1", "AN No.  "),("2", "I.Int.Dt"),("3", "Vender NO."),("4", "Cr.Bank "),("5", "L/C Cate"),("6", "AN Curr "),("7", "Voucher NO."),("8", "(1)Ori AN(2)Cr Chg"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=13, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=14, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=15, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=16, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=17, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=18, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.alh01,formonly.alh10,formonly.alh02,formonly.alh11,formonly.alh05,formonly.alh72,formonly.alh06,formonly.alh00,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.more)
+END -- INSTRUCTIONS
+

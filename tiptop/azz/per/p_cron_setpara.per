@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_cron_setpara.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_cron_setpara")
+VBox vb2
+Folder pc2
+Page page01(text="Page01")
+Group group01(text="Main")
+VBox vb1
+HBox hb1
+Grid gr8
+{
+  Method [method   ]
+  [commod                                          ]
+  [commod5                                          ]
+  [commod2                                          ]
+  [commex                                           ]
+  [commod1                                          ]
+  [commod4                                          ]
+  [commod3                                          ]
+  [commex_1                                         ]
+  [commod1_1                                        ]
+  [commod4_1                                        ]
+  [commod3_1                                        ]
+
+ moth [moth      ] day [day       ]nday[diff      ]
+ week [week      ] weekday[weekday    ]
+  day  [nday      ]
+
+
+
+
+}
+END -- gr8
+END -- hb1
+END -- vb1
+END -- group01
+END -- page01
+END -- pc2
+END -- vb2
+END -- p_cron_setpara
+
+ATTRIBUTES
+ComboBox method=formonly.method type CHAR, tabIndex=1, not null, required, items=(("Y", "By Year"),("W", "By week"),("M", "By month"),("D", "By day"));
+LABEL commod=formonly.commod type CHAR;
+LABEL commod5=formonly.commod5 type CHAR;
+LABEL commod2=formonly.commod2 type CHAR;
+LABEL commex=formonly.commex type CHAR;
+LABEL commod1=formonly.commod1 type CHAR;
+LABEL commod4=formonly.commod4 type CHAR;
+LABEL commod3=formonly.commod3 type CHAR;
+LABEL commex_1=formonly.commex_1 type CHAR;
+LABEL commod1_1=formonly.commod1_1 type CHAR;
+LABEL commod4_1=formonly.commod4_1 type CHAR;
+LABEL commod3_1=formonly.commod3_1 type CHAR;
+Edit moth=formonly.moth type CHAR, tabIndex=9, not null, required;
+ComboBox day=formonly.day type CHAR, tabIndex=10, not null, required, initializer=initday2;
+ComboBox diff=formonly.diff type CHAR, tabIndex=14, not null, required, initializer=initday3, items=(("-1", "-1"));
+Edit week=formonly.week type CHAR, tabIndex=11, not null, required;
+ComboBox weekday=formonly.weekday type CHAR, tabIndex=12, not null, required, initializer=initweekday;
+Edit nday=formonly.nday type CHAR, tabIndex=13, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.method,formonly.commod,formonly.commod5,formonly.commod2,formonly.commex,formonly.commod1,formonly.commod4,formonly.commod3,formonly.commex_1,formonly.commod1_1,formonly.commod4_1,formonly.commod3_1,formonly.moth,formonly.day,formonly.week,formonly.weekday,formonly.nday,formonly.diff)
+END -- INSTRUCTIONS
+

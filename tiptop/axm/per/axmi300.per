@@ -1,0 +1,146 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi300")
+VBox vbox2
+Folder pc489
+Page page01(text=%"Main")
+VBox vbox1
+Grid grid01
+{
+   [dummy05              ]
+    Credit Rating [ocg01 ]
+}
+END -- grid01
+HBox hbox1
+Grid grid1
+{
+
+ [label1                                   ]
+
+  Accnt to Offset Amt Ckg.Rate [ocg]%[modif]
+  L/C Receipt Amount Ckg.Rate  [oc1]%[modi1]
+  Suspense Credit TT Ckg.Rate  [oc2]%[modi2]
+  Contra\'d Unconfirm Ckg.Rate  [oc3]%[modi3]
+  Outstanding N/R Ckg.Rate     [oc4]%[modi4]
+  Invoice A/R Cecking Ratio    [oc5]%[modi5]
+  Uninvoiced Delivery.Ckg.Rate [oc6]%[modi6]
+  Delivery Advice Ckg.Rate     [oc7]%[modi7]
+  Undelivered Ord Amt Ckg.Rate [oc8]%[modi8]
+ [ocg11                            ] [modi9]
+ [ocg12                            ] [modi0]
+
+}
+END -- grid1
+ScrollGrid gr2089
+{
+
+  [dummy01     ] [dummy02     ] [dummy03     ] [dummy022    ]
+
+  [och03_01    ] [och03_01    ] [och03_01    ] [och03_01    ]
+  [och03_02    ] [och03_02    ] [och03_02    ] [och03_02    ]
+  [och03_03    ] [och03_03    ] [och03_03    ] [och03_03    ]
+  [och03_04    ] [och03_04    ] [och03_04    ] [och03_04    ]
+  [och03_05    ] [och03_05    ] [och03_05    ] [och03_05    ]
+  [och03_06    ] [och03_06    ] [och03_06    ] [och03_06    ]
+  [och03_07    ] [och03_07    ] [och03_07    ] [och03_07    ]
+  [och03_08    ] [och03_08    ] [och03_08    ] [och03_08    ]
+  [och03_09    ] [och03_09    ] [och03_09    ] [och03_09    ]
+  [och03_10    ] [och03_10    ] [och03_10    ] [och03_10    ]
+  [och03_11    ] [och03_11    ] [och03_11    ] [och03_11    ]
+
+}
+END -- gr2089
+END -- hbox1
+END -- vbox1
+END -- page01
+Page info(text=%"Info")
+Grid gr2090
+{
+ Record Owner        [ocguser   ] Last Modified by    [ocgmodu   ] Data Valid Code     [ocgacti   ]
+ Department          [ocggrup   ] Create/Modify Date  [ocgdate     ]
+}
+END -- gr2090
+END -- info
+END -- pc489
+Grid gr2091
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2091
+END -- vbox2
+END -- axmi300
+
+TABLES
+ocg_file
+ATTRIBUTES
+Label dummy05:dummy05;
+Edit ocg01=ocg_file.ocg01, tabIndex=1, not null, required;
+Label label1:label1, text=%"";
+Edit ocg=ocg_file.ocg02, tabIndex=2;
+Button modif:modify01, tabIndex=30, text=%"Modify";
+Edit oc1=ocg_file.ocg03, tabIndex=4;
+Button modi1:modify02, tabIndex=31, text=%"Modify";
+Edit oc2=ocg_file.ocg04, tabIndex=6;
+Button modi2:modify03, tabIndex=32, text=%"Modify";
+Edit oc3=ocg_file.ocg05, tabIndex=8;
+Button modi3:modify04, tabIndex=33, text=%"Modify";
+Edit oc4=ocg_file.ocg06, tabIndex=10;
+Button modi4:modify05, tabIndex=34, text=%"Modify";
+Edit oc5=ocg_file.ocg07, tabIndex=12;
+Button modi5:modify06, tabIndex=35, text=%"Modify";
+Edit oc6=ocg_file.ocg08, tabIndex=14;
+Button modi6:modify07, tabIndex=36, text=%"Modify";
+Edit oc7=ocg_file.ocg09, tabIndex=16;
+Button modi7:modify08, tabIndex=37, text=%"Modify";
+Edit oc8=ocg_file.ocg10, tabIndex=18;
+Button modi8:modify09, tabIndex=38, text=%"Modify";
+CheckBox ocg11=ocg_file.ocg11, tabIndex=20, text=%"Check if Overdue", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Button modi9:modify10, tabIndex=39, text=%"Modify";
+CheckBox ocg12=ocg_file.ocg12, tabIndex=22, text=%"Check Overdue Uncash Note", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Button modi0:modify11, tabIndex=40, text=%"Modify";
+Label dummy01:dummy01, text=%"Source Plant";
+Label dummy02:dummy02, text=%"Source Plant";
+Label dummy03:dummy03, text=%"Source Plant";
+Label dummy022:dummy022, text=%"Source Plant";
+ButtonEdit och03_01=formonly.och03_01 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit och03_02=formonly.och03_02 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit och03_03=formonly.och03_03 type VARCHAR, action=controlp, tabIndex=7, image="zoom";
+ButtonEdit och03_04=formonly.och03_04 type VARCHAR, action=controlp, tabIndex=9, image="zoom";
+ButtonEdit och03_05=formonly.och03_05 type VARCHAR, action=controlp, tabIndex=11, image="zoom";
+ButtonEdit och03_06=formonly.och03_06 type VARCHAR, action=controlp, tabIndex=13, image="zoom";
+ButtonEdit och03_07=formonly.och03_07 type VARCHAR, action=controlp, tabIndex=15, image="zoom";
+ButtonEdit och03_08=formonly.och03_08 type VARCHAR, action=controlp, tabIndex=17, image="zoom";
+ButtonEdit och03_09=formonly.och03_09 type VARCHAR, action=controlp, tabIndex=19, image="zoom";
+ButtonEdit och03_10=formonly.och03_10 type VARCHAR, action=controlp, tabIndex=21, image="zoom";
+ButtonEdit och03_11=formonly.och03_11 type VARCHAR, action=controlp, tabIndex=23, image="zoom";
+Edit ocguser=ocg_file.ocguser, tabIndex=24, noEntry;
+Edit ocgmodu=ocg_file.ocgmodu, tabIndex=25, noEntry;
+Edit ocgacti=ocg_file.ocgacti, tabIndex=26, noEntry;
+Edit ocggrup=ocg_file.ocggrup, tabIndex=27, noEntry;
+DateEdit ocgdate=ocg_file.ocgdate, tabIndex=28, noEntry;
+Edit cnt=formonly.cnt type VARCHAR, tabIndex=29;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_och(formonly.och03_01,formonly.och03_02,formonly.och03_03,formonly.och03_04,formonly.och03_05,formonly.och03_06,formonly.och03_07,formonly.och03_08,formonly.och03_09,formonly.och03_10,formonly.och03_11)
+SCREEN RECORD s_undefined(ocg_file.ocg01,ocg_file.ocguser,ocg_file.ocgmodu,ocg_file.ocgacti,ocg_file.ocggrup,ocg_file.ocgdate,formonly.cnt)
+SCREEN RECORD undefined(ocg_file.ocg02,ocg_file.ocg03,ocg_file.ocg04,ocg_file.ocg05,ocg_file.ocg06,ocg_file.ocg07,ocg_file.ocg08,ocg_file.ocg09,ocg_file.ocg10,ocg_file.ocg11,ocg_file.ocg12)
+SCREEN RECORD s_och01(formonly.och03_01)
+SCREEN RECORD s_och02(formonly.och03_02)
+SCREEN RECORD s_och03(formonly.och03_03)
+SCREEN RECORD s_och04(formonly.och03_04)
+SCREEN RECORD s_och05(formonly.och03_05)
+SCREEN RECORD s_och06(formonly.och03_06)
+SCREEN RECORD s_och07(formonly.och03_07)
+SCREEN RECORD s_och08(formonly.och03_08)
+SCREEN RECORD s_och09(formonly.och03_09)
+SCREEN RECORD s_och10(formonly.och03_10)
+SCREEN RECORD s_och11(formonly.och03_11)
+END -- INSTRUCTIONS
+

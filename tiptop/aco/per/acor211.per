@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acor211.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"acor211")
+VBox VBox1
+Grid gr1403
+{
+ <G group01                                                                      >
+  Custom No.             [cob09          ]
+  Book No.               [coc03          ]
+  Goods No.              [cob01          ]
+  Vender No.             [cop05          ]
+
+ <                                                                               >
+
+}
+END -- gr1403
+Group group02(text="INPUT")
+Grid gr1404
+{
+ Date         [y1        ]-[y2        ]
+ [y                                                           ]
+
+}
+END -- gr1404
+END -- group02
+Grid gr1405
+{
+ [more                                                        ]
+
+}
+END -- gr1405
+END -- VBox1
+END -- acor211
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit cob09=formonly.cob09 type CHAR, tabIndex=1;
+Edit coc03=formonly.coc03 type CHAR, tabIndex=2;
+Edit cob01=formonly.cob01 type CHAR, tabIndex=3;
+Edit cop05=formonly.cop05 type CHAR, tabIndex=4;
+DateEdit y1=formonly.y1 type DATE, tabIndex=5, not null, required;
+DateEdit y2=formonly.y2 type DATE, tabIndex=6, not null, required;
+CheckBox y=formonly.y type VARCHAR, tabIndex=7, text="Convert HS Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cob09,formonly.coc03,formonly.cob01,formonly.cop05,formonly.y1,formonly.y2,formonly.y,formonly.more)
+END -- INSTRUCTIONS
+

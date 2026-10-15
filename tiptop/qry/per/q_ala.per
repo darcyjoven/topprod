@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_ala.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Opening L/C")
+Grid gr3723
+{
+ <T s_ala                                                                                                                                                                        >
+ [check |ala05   |ala01               |ala02    |ala04|ala23               |ala25               |ala26               |alb04            |alb11                                   ]
+ [check |ala05   |ala01               |ala02    |ala04|ala23               |ala25               |ala26               |alb04            |alb11                                   ]
+ [check |ala05   |ala01               |ala02    |ala04|ala23               |ala25               |ala26               |alb04            |alb11                                   ]
+ [check |ala05   |ala01               |ala02    |ala04|ala23               |ala25               |ala26               |alb04            |alb11                                   ]
+ [check |ala05   |ala01               |ala02    |ala04|ala23               |ala25               |ala26               |alb04            |alb11                                   ]
+ [check |ala05   |ala01               |ala02    |ala04|ala23               |ala25               |ala26               |alb04            |alb11                                   ]
+ [check |ala05   |ala01               |ala02    |ala04|ala23               |ala25               |ala26               |alb04            |alb11                                   ]
+ [check |ala05   |ala01               |ala02    |ala04|ala23               |ala25               |ala26               |alb04            |alb11                                   ]
+ [check |ala05   |ala01               |ala02    |ala04|ala23               |ala25               |ala26               |alb04            |alb11                                   ]
+ [check |ala05   |ala01               |ala02    |ala04|ala23               |ala25               |ala26               |alb04            |alb11                                   ]
+ <                                                                                                                                                                               >
+
+}
+END -- gr3723
+END -- q_ala
+
+TABLES
+alb_file,
+ala_file
+ATTRIBUTES
+Table s_ala:s_ala;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ala05=ala_file.ala05, tabIndex=2, title="Vender#", noEntry;
+Edit ala01=ala_file.ala01, tabIndex=3, title="Advance P/O", noEntry;
+Edit ala02=ala_file.ala02, tabIndex=4, title="Property", noEntry;
+Edit ala04=ala_file.ala04, tabIndex=5, title="Dept", noEntry;
+Edit ala23=ala_file.ala23, tabIndex=6, title="Open L/C Amt.", noEntry;
+Edit ala25=ala_file.ala25, tabIndex=7, title="Arriving Note$", noEntry;
+Edit ala26=ala_file.ala26, tabIndex=8, title="Arrival $", noEntry;
+Edit alb04=alb_file.alb04, tabIndex=9, title="P/O #", noEntry;
+Edit alb11=alb_file.alb11, tabIndex=10, title="Item #", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ala(formonly.check,ala_file.ala05,ala_file.ala01,ala_file.ala02,ala_file.ala04,ala_file.ala23,ala_file.ala25,ala_file.ala26,alb_file.alb04,alb_file.alb11)
+END -- INSTRUCTIONS
+

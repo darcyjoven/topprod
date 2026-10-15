@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglq600")
+VBox vb5
+Grid gr7
+{
+ <G qbe                                     >
+    Project   [afb01                     ]
+    Depart    [afb041                    ]
+    Subject   [afb02                     ]
+ <                                          >
+
+}
+END -- gr7
+Grid gr16
+{
+ <G input                                   >
+    Year  [yy                    ]
+    Month [mon1  ]  ----- [mon2  ]
+   [confirm   ]       [post      ]
+ <                                          >
+}
+END -- gr16
+Grid gr17
+{
+ <G group1                                  >
+  [project   ] [subject   ]  [depart    ]
+ <                                          >
+
+}
+END -- gr17
+END -- vb5
+END -- aglq600
+
+TABLES
+afb_file
+ATTRIBUTES
+Group qbe:QBE, text="QBE";
+ButtonEdit afb01=afb_file.afb01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ButtonEdit afb041=afb_file.afb041, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit afb02=afb_file.afb02, action=controlp, tabIndex=3, image="zoom";
+Group input:INPUT, text="INPUT";
+Edit yy=formonly.yy type CHAR, tabIndex=6, not null, required;
+Edit mon1=formonly.mon1 type CHAR, tabIndex=4, not null, required;
+Edit mon2=formonly.mon2 type CHAR, tabIndex=5, not null, required;
+CheckBox confirm=formonly.confirm type CHAR, tabIndex=10, text="Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox post=formonly.post type CHAR, tabIndex=11, text="Post", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group1:GROUP1, text="GROUP/SUM";
+CheckBox project=formonly.project type CHAR, tabIndex=7, text="Project", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox subject=formonly.subject type CHAR, tabIndex=9, text="Subject", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox depart=formonly.depart type CHAR, tabIndex=8, text="Depart", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(afb_file.afb01,afb_file.afb041,afb_file.afb02,formonly.yy,formonly.mon1,formonly.mon2,formonly.confirm,formonly.post,formonly.project,formonly.subject,formonly.depart)
+END -- INSTRUCTIONS
+

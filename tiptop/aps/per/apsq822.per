@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq822.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsq822")
+VBox vb1
+Grid gr5444
+{
+ <G group01                                                                                                                                               >
+  APS Version   [vod01           ]                      MO NO   [vod05_1             ]
+  Save Version  [vod02       ]                          PART NO [vod09_1         ]
+ [vod37    ]
+ <                                                                                                                                                        >
+}
+END -- gr5444
+Table s_voa1
+{
+[vod31|voh07            |isouts|vod05         |issue     |sfb04     |vod09           |ima02         |chang       |sfb13     |sfb14     |vod11                                   |sfb15        |sfb16     |vod10                                   |sfb08     |vod35       |qty    |vod34      |vod39 |sfb87 |vod20        |genera|gen_po    |sfb09     |sfb081    |vod03     ]
+[vod31|voh07            |isouts|vod05         |issue     |sfb04     |vod09           |ima02         |chang       |sfb13     |sfb14     |vod11                                   |sfb15        |sfb16     |vod10                                   |sfb08     |vod35       |qty    |vod34      |vod39 |sfb87 |vod20        |genera|gen_po    |sfb09     |sfb081    |vod03     ]
+[vod31|voh07            |isouts|vod05         |issue     |sfb04     |vod09           |ima02         |chang       |sfb13     |sfb14     |vod11                                   |sfb15        |sfb16     |vod10                                   |sfb08     |vod35       |qty    |vod34      |vod39 |sfb87 |vod20        |genera|gen_po    |sfb09     |sfb081    |vod03     ]
+[vod31|voh07            |isouts|vod05         |issue     |sfb04     |vod09           |ima02         |chang       |sfb13     |sfb14     |vod11                                   |sfb15        |sfb16     |vod10                                   |sfb08     |vod35       |qty    |vod34      |vod39 |sfb87 |vod20        |genera|gen_po    |sfb09     |sfb081    |vod03     ]
+[vod31|voh07            |isouts|vod05         |issue     |sfb04     |vod09           |ima02         |chang       |sfb13     |sfb14     |vod11                                   |sfb15        |sfb16     |vod10                                   |sfb08     |vod35       |qty    |vod34      |vod39 |sfb87 |vod20        |genera|gen_po    |sfb09     |sfb081    |vod03     ]
+[vod31|voh07            |isouts|vod05         |issue     |sfb04     |vod09           |ima02         |chang       |sfb13     |sfb14     |vod11                                   |sfb15        |sfb16     |vod10                                   |sfb08     |vod35       |qty    |vod34      |vod39 |sfb87 |vod20        |genera|gen_po    |sfb09     |sfb081    |vod03     ]
+[vod31|voh07            |isouts|vod05         |issue     |sfb04     |vod09           |ima02         |chang       |sfb13     |sfb14     |vod11                                   |sfb15        |sfb16     |vod10                                   |sfb08     |vod35       |qty    |vod34      |vod39 |sfb87 |vod20        |genera|gen_po    |sfb09     |sfb081    |vod03     ]
+[vod31|voh07            |isouts|vod05         |issue     |sfb04     |vod09           |ima02         |chang       |sfb13     |sfb14     |vod11                                   |sfb15        |sfb16     |vod10                                   |sfb08     |vod35       |qty    |vod34      |vod39 |sfb87 |vod20        |genera|gen_po    |sfb09     |sfb081    |vod03     ]
+[vod31|voh07            |isouts|vod05         |issue     |sfb04     |vod09           |ima02         |chang       |sfb13     |sfb14     |vod11                                   |sfb15        |sfb16     |vod10                                   |sfb08     |vod35       |qty    |vod34      |vod39 |sfb87 |vod20        |genera|gen_po    |sfb09     |sfb081    |vod03     ]
+[vod31|voh07            |isouts|vod05         |issue     |sfb04     |vod09           |ima02         |chang       |sfb13     |sfb14     |vod11                                   |sfb15        |sfb16     |vod10                                   |sfb08     |vod35       |qty    |vod34      |vod39 |sfb87 |vod20        |genera|gen_po    |sfb09     |sfb081    |vod03     ]
+
+}
+END -- s_voa1
+Grid gr881
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr881
+END -- vb1
+END -- apsq822
+
+TABLES
+voh_file,
+vod_file,
+sfb_file
+ATTRIBUTES
+Group group01:group01, text="Basic Data";
+ButtonEdit vod01=formonly.vod01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit vod05_1=formonly.vod05_1 type VARCHAR, action=controlp, tabIndex=30, not null, required, image="zoom";
+Edit vod02=formonly.vod02 type VARCHAR, tabIndex=2;
+ButtonEdit vod09_1=formonly.vod09_1 type VARCHAR, action=controlp, tabIndex=31, not null, required, image="zoom";
+CheckBox vod37=formonly.vod37 type CHAR, tabIndex=32, default = "N", text="vod37", valueChecked = "Y", valueUnchecked = "N";
+CheckBox vod31=formonly.vod37_1 type VARCHAR, tabIndex=3, title="change", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox voh07=voh_file.voh07, tabIndex=4, title="WO Change Code", noEntry, items=(("0", "No Change"),("1", "Inner WO To Outsourcing"),("2", "Outsourcing To Inner WO"),("3", "Outsourcing WO Change Vendor"),("4", "Operation No. To Outsourcing "),("5", "Outsourcing To Inner"),("6", "Outsourcing Change Vendor"),("7", "WO Routing Change"),("8", "Operation No. Change"),("9", "9"));
+CheckBox isouts=formonly.IsOutSource type CHAR, tabIndex=18, title="IsOutSource", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit vod05=vod_file.vod05, action=controlp, tabIndex=5, title="WO No.", noEntry, image="zoom";
+CheckBox issue=formonly.issue type CHAR, tabIndex=24, title="issue", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox sfb04=formonly.sfb04 type VARCHAR, tabIndex=14, title="sfb04", items=(("1", "開立"),("2", "發放"),("3", "料表已列印"),("4", "發料"),("5", "WIP"),("6", "F.Q.C"),("7", "入庫"),("8", "結案"));
+ButtonEdit vod09=vod_file.vod09, action=controlp, tabIndex=6, title="Item No.", noEntry, image="zoom";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=7, title="Item Name", noEntry;
+CheckBox chang=formonly.chang type VARCHAR, tabIndex=9, title="Source Is changed", valueChecked = "Y", valueUnchecked = "N";
+DateEdit sfb13=sfb_file.sfb13, tabIndex=21, title="sfb13", noEntry;
+Edit sfb14=formonly.sfb14 type CHAR, tabIndex=33, title="sfb14";
+Edit vod11=vod_file.vod11, tabIndex=19, title="vod11";
+DateEdit sfb15=sfb_file.sfb15, tabIndex=26, title="sfb15";
+Edit sfb16=formonly.sfb16 type CHAR, tabIndex=34, title="sfb16";
+Edit vod10=vod_file.vod10, tabIndex=8, title="Default Expected Finish";
+Edit sfb08=sfb_file.sfb08, tabIndex=16, title="sfb08", noEntry;
+Edit vod35=vod_file.vod35, tabIndex=13, title="Suggested Issue Qty";
+Edit qty=formonly.qty type CHAR, tabIndex=10, title="Just qty";
+Edit vod34=vod_file.vod34, tabIndex=20, title="vod34", noEntry;
+ComboBox vod39=vod_file.vod39, tabIndex=17, title="vod39", items=(("0", "Not Has Route"),("1", "Has Route"));
+ComboBox sfb87=formonly.sfb87 type CHAR, tabIndex=15, title="sfb87", noEntry, items=(("Y", "Y"),("N", "N"),("X", "X"));
+Edit vod20=vod_file.vod20, tabIndex=23, title="vod20", noEntry;
+ComboBox genera=formonly.generate type DECIMAL, tabIndex=22, title="generate", noEntry, items=(("0", "0"),("1", "1"));
+CheckBox gen_po=formonly.gen_po type CHAR, tabIndex=25, title="gen_po", valueChecked = "Y", valueUnchecked = "N";
+Edit sfb09=formonly.sfb09 type CHAR, tabIndex=28, title="sfb09";
+Edit sfb081=formonly.sfb081 type CHAR, tabIndex=27, title="sfb081";
+Edit vod03=formonly.vod03 type CHAR, tabIndex=29, title="vod03";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vod(formonly.vod37_1,voh_file.voh07,formonly.IsOutSource,vod_file.vod05,formonly.issue,formonly.sfb04,vod_file.vod09,formonly.ima02,formonly.chang,sfb_file.sfb13,formonly.sfb14,vod_file.vod11,sfb_file.sfb15,formonly.sfb16,vod_file.vod10,sfb_file.sfb08,vod_file.vod35,formonly.qty,vod_file.vod34,vod_file.vod39,formonly.sfb87,vod_file.vod20,formonly.generate,formonly.gen_po,formonly.sfb09,formonly.sfb081,formonly.vod03)
+SCREEN RECORD Undefined(formonly.vod01,formonly.vod05_1,formonly.vod02,formonly.vod09_1,formonly.vod37,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

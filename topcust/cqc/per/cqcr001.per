@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cqc/4fd/cqcr001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+
+  [label1          ][qcs021              ]
+
+  [lablel2         ][qcs04_start  ]  月
+
+  [label3          ][qcs04_end    ]  月
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"Label1";
+ButtonEdit qcs021=formonly.qcs021, action=controlp, tabIndex=1, image="zoom";
+Label lablel2:Lablel2, text=%"Label2";
+Edit qcs04_start=formonly.qcs04_start, tabIndex=2;
+Label label3:Label3, text=%"Label3";
+Edit qcs04_end=formonly.qcs04_end, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.qcs021,formonly.qcs04_start,formonly.qcs04_end)
+END -- INSTRUCTIONS
+

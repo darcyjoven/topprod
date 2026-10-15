@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt2901.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt2901")
+VBox vb27
+Folder pc1
+Page Main(text=%"Main")
+Table s_lnc
+{
+[lnc02         |tqa02       |lnc03         |geo02      ]
+[lnc02         |tqa02       |lnc03         |geo02      ]
+[lnc02         |tqa02       |lnc03         |geo02      ]
+[lnc02         |tqa02       |lnc03         |geo02      ]
+[lnc02         |tqa02       |lnc03         |geo02      ]
+
+}
+END -- s_lnc
+END -- Main
+END -- pc1
+Grid gr1
+{
+
+ ----- Rows [idx   ] --------
+
+
+}
+END -- gr1
+END -- vb27
+END -- almt2901
+
+TABLES
+lnc_file
+ATTRIBUTES
+ButtonEdit lnc02=lnc_file.lnc02, action=controlp, tabIndex=1, title="Brand Doc.No.", not null, required, image="zoom.png";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=2, title="Brand Name", noEntry;
+ButtonEdit lnc03=lnc_file.lnc03, action=controlp, tabIndex=3, title="Pla.O.DocNo.", not null, required, image="zoom.png";
+Edit geo02=formonly.geo02 type CHAR, tabIndex=4, title="Pla.O.name", noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lnc(lnc_file.lnc02,formonly.tqa02,lnc_file.lnc03,formonly.geo02)
+SCREEN RECORD Undefined(formonly.idx)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfq130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfq130")
+VBox VBox1
+Folder pc133
+Page page01(text="Page01")
+VBox VBox2
+Table s_sfb
+{
+[sfb82       |gem02   |sfb01           |sfb25          |sfb13          |sfb15          |sfb05                |ima02                    |ima021         |sfb08     ]
+[sfb82       |gem02   |sfb01           |sfb25          |sfb13          |sfb15          |sfb05                |ima02                    |ima021         |sfb08     ]
+[sfb82       |gem02   |sfb01           |sfb25          |sfb13          |sfb15          |sfb05                |ima02                    |ima021         |sfb08     ]
+[sfb82       |gem02   |sfb01           |sfb25          |sfb13          |sfb15          |sfb05                |ima02                    |ima021         |sfb08     ]
+[sfb82       |gem02   |sfb01           |sfb25          |sfb13          |sfb15          |sfb05                |ima02                    |ima021         |sfb08     ]
+[sfb82       |gem02   |sfb01           |sfb25          |sfb13          |sfb15          |sfb05                |ima02                    |ima021         |sfb08     ]
+[sfb82       |gem02   |sfb01           |sfb25          |sfb13          |sfb15          |sfb05                |ima02                    |ima021         |sfb08     ]
+[sfb82       |gem02   |sfb01           |sfb25          |sfb13          |sfb15          |sfb05                |ima02                    |ima021         |sfb08     ]
+[sfb82       |gem02   |sfb01           |sfb25          |sfb13          |sfb15          |sfb05                |ima02                    |ima021         |sfb08     ]
+[sfb82       |gem02   |sfb01           |sfb25          |sfb13          |sfb15          |sfb05                |ima02                    |ima021         |sfb08     ]
+
+}
+END -- s_sfb
+END -- VBox2
+END -- page01
+END -- pc133
+Grid gr566
+{
+ ---------- Rows [cn2    ]  ----------
+
+}
+END -- gr566
+END -- VBox1
+END -- asfq130
+
+TABLES
+sfb_file
+ATTRIBUTES
+ButtonEdit sfb82=sfb_file.sfb82, action=controlp, tabIndex=1, title="Department", image="zoom";
+Edit gem02=formonly.gem02, tabIndex=11, title=%"gem02", noEntry;
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=2, title="W/O#", image="zoom";
+DateEdit sfb25=sfb_file.sfb25, tabIndex=3, title="Issueing Date";
+DateEdit sfb13=sfb_file.sfb13, tabIndex=4, title="Operating Date";
+DateEdit sfb15=sfb_file.sfb15, tabIndex=5, title="Complete Date";
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=6, title="Item No.", image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=7, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=8, title="Specification", noEntry;
+Edit sfb08=sfb_file.sfb08, tabIndex=9, title="Prod.Qty", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(sfb_file.sfb82,formonly.gem02,sfb_file.sfb01,sfb_file.sfb25,sfb_file.sfb13,sfb_file.sfb15,sfb_file.sfb05,formonly.ima02,formonly.ima021,sfb_file.sfb08)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

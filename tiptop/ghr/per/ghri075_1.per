@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri075_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+         [label1    |bdate                     ]         [label2     |edate                ]
+
+         [label3    |xinbc     |xinbc_name     ]
+
+
+
+
+
+ <T table1                                                                                                                                                            >
+ [sure    |hrdg01  |hrdg03  |hrat02  |hrdg02  |hrdg04  |hrdg04_n|hrdg05  |hrbo15_1|hrdg06  |hrdg06_n|hrdg07  |hrbo15_2|hrdg08  |hrat04  |hrat05  |hrat25  |hrat19  ]
+ [sure    |hrdg01  |hrdg03  |hrat02  |hrdg02  |hrdg04  |hrdg04_n|hrdg05  |hrbo15_1|hrdg06  |hrdg06_n|hrdg07  |hrbo15_2|hrdg08  |hrat04  |hrat05  |hrat25  |hrat19  ]
+ [sure    |hrdg01  |hrdg03  |hrat02  |hrdg02  |hrdg04  |hrdg04_n|hrdg05  |hrbo15_1|hrdg06  |hrdg06_n|hrdg07  |hrbo15_2|hrdg08  |hrat04  |hrat05  |hrat25  |hrat19  ]
+ [sure    |hrdg01  |hrdg03  |hrat02  |hrdg02  |hrdg04  |hrdg04_n|hrdg05  |hrbo15_1|hrdg06  |hrdg06_n|hrdg07  |hrbo15_2|hrdg08  |hrat04  |hrat05  |hrat25  |hrat19  ]
+ [sure    |hrdg01  |hrdg03  |hrat02  |hrdg02  |hrdg04  |hrdg04_n|hrdg05  |hrbo15_1|hrdg06  |hrdg06_n|hrdg07  |hrbo15_2|hrdg08  |hrat04  |hrat05  |hrat25  |hrat19  ]
+
+
+
+
+
+
+
+ <                                                                                                                                                                    >
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Grid gr2716
+{
+  ---------- Rows [cnt1  ]  -----------
+
+
+}
+END -- gr2716
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"bdate";
+DateEdit bdate=formonly.bdate, tabIndex=19;
+Label label2:Label2, text=%"edate";
+DateEdit edate=formonly.edate, tabIndex=22;
+Label label3:Label3, text=%"xinbc";
+ButtonEdit xinbc=formonly.xinbc, action=controlp, tabIndex=20, image="zoom";
+Edit xinbc_name=formonly.xinbc_name, tabIndex=21, noEntry;
+Table table1:Table1;
+CheckBox sure=formonly.sure, tabIndex=7, default = "N", title=%"sure", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit hrdg01=formonly.hrdg01, tabIndex=9, title=%"hrdg01";
+ButtonEdit hrdg03=formonly.hrdg03, action=controlp, tabIndex=1, title=%"hrdg03", image="zoom";
+Edit hrat02=formonly.hrat02, tabIndex=2, title=%"hrat02";
+DateEdit hrdg02=formonly.hrdg02, tabIndex=3, title=%"hrdg02";
+ButtonEdit hrdg04=formonly.hrdg04, action=controlp, tabIndex=4, title=%"hrdg04", image="zoom";
+Edit hrdg04_n=formonly.hrdg04_name, tabIndex=5, title=%"hrdg04_name";
+Edit hrdg05=formonly.hrdg05, tabIndex=6, title=%"hrdg05", picture="XX:XX - XX:XX|XX:XX - XX:XX";
+Edit hrbo15_1=formonly.hrbo15_1, tabIndex=10, title=%"hrbo15_1";
+ButtonEdit hrdg06=formonly.hrdg06, action=controlp, tabIndex=15, title=%"hrdg06", image="zoom";
+Edit hrdg06_n=formonly.hrdg06_name, tabIndex=16, title=%"hrdg06_name";
+Edit hrdg07=formonly.hrdg07, tabIndex=17, title=%"hrdg07", picture="XX:XX-XX:XX|XX:XX-XX:XX";
+Edit hrbo15_2=formonly.hrbo15_2, tabIndex=23, title=%"hrbo15_2", noEntry;
+Edit hrdg08=formonly.hrdg08, tabIndex=18, title=%"hrdg08";
+ButtonEdit hrat04=formonly.hrat04, action=controlp, tabIndex=11, title=%"hrat04", image="zoom";
+ButtonEdit hrat05=formonly.hrat05, action=controlp, tabIndex=12, title=%"hrat05", image="zoom";
+DateEdit hrat25=formonly.hrat25, tabIndex=13, title=%"hrat25";
+ButtonEdit hrat19=formonly.hrat19, action=controlp, tabIndex=14, title=%"hrat19", image="zoom";
+Edit cnt1=formonly.cnt1 type CHAR, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrdg_1(formonly.sure,formonly.hrdg01,formonly.hrdg03,formonly.hrat02,formonly.hrdg02,formonly.hrdg04,formonly.hrdg04_name,formonly.hrdg05,formonly.hrbo15_1,formonly.hrdg06,formonly.hrdg06_name,formonly.hrdg07,formonly.hrbo15_2,formonly.hrdg08,formonly.hrat04,formonly.hrat05,formonly.hrat25,formonly.hrat19)
+SCREEN RECORD Undefined(formonly.cnt1,formonly.bdate,formonly.xinbc,formonly.xinbc_name,formonly.edate)
+END -- INSTRUCTIONS
+

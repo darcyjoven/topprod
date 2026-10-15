@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghrq006_zz.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder folder1
+Page page1(text=%"Page1")
+VBox VBox1
+Group group5(text=%"dzzry", hidden)
+Table s_hray_1(width = 0 characters, height = 0 characters)
+{
+[sel  |hrat01|hrat02 |hraa12 |hrao02|hras04|hrat25|hrat03|hrat26 |hrat19 ]
+[sel  |hrat01|hrat02 |hraa12 |hrao02|hras04|hrat25|hrat03|hrat26 |hrat19 ]
+[sel  |hrat01|hrat02 |hraa12 |hrao02|hras04|hrat25|hrat03|hrat26 |hrat19 ]
+[sel  |hrat01|hrat02 |hraa12 |hrao02|hras04|hrat25|hrat03|hrat26 |hrat19 ]
+[sel  |hrat01|hrat02 |hraa12 |hrao02|hras04|hrat25|hrat03|hrat26 |hrat19 ]
+}
+END -- s_hray_1
+END -- group5
+Group group4(text=%"zzxx")
+Grid grid1
+{
+
+[date         |zzdate         ][status       |zzstat      |z_n           ] [hray24 |hray21         ]
+
+}
+END -- grid1
+END -- group4
+Group group1(text=%"Direct manager")
+Grid grid2
+{
+
+[dirmemo                                                                                           ]
+[                                                                                                  ]
+
+}
+END -- grid2
+END -- group1
+Group group2(text=%"Department manager")
+Grid grid3
+{
+
+ [depmemo                                                                                          ]
+ [                                                                                                 ]
+
+}
+END -- grid3
+END -- group2
+Group group3(text=%"General manager")
+Grid grid4
+{
+
+ [genmemo                                                                                         ]
+ [                                                                                                ]
+
+}
+END -- grid4
+END -- group3
+END -- VBox1
+END -- page1
+END -- folder1
+END -- ghri010_1
+
+ATTRIBUTES
+Edit sel=formonly.sel type VARCHAR, tabIndex=16, title=%"sel", hidden;
+ButtonEdit hrat01=formonly.hrat01 type VARCHAR, action=controlp, tabIndex=7, title=%"hrat01", noEntry;
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=8, title=%"hrat02", noEntry, scroll;
+Edit hraa12=formonly.hraa12 type VARCHAR, tabIndex=9, title=%"hraa12", noEntry;
+Edit hrao02=formonly.hrao02 type VARCHAR, tabIndex=10, title=%"hrao02", noEntry;
+Edit hras04=formonly.hras04 type VARCHAR, tabIndex=11, title=%"hras04", noEntry;
+DateEdit hrat25=formonly.hrat25 type DATE, tabIndex=12, title=%"hrat25", noEntry;
+Edit hrat03=formonly.hrat02_1 type VARCHAR, tabIndex=13, title=%"hrat02_1", noEntry;
+DateEdit hrat26=formonly.hrat26 type DATE, tabIndex=14, title=%"hrat26", noEntry;
+Edit hrat19=formonly.hrat19 type VARCHAR, tabIndex=15, title=%"hrat19", noEntry;
+Label date:date, text=%"Label1";
+DateEdit zzdate=formonly.zzdate type CHAR, tabIndex=2, required;
+Label status:status, text=%"Label2";
+ButtonEdit zzstat=formonly.zzstat type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit z_n=formonly.z_n type CHAR, tabIndex=17;
+Label hray24:hray24, text=%"Label2";
+Edit hray21=formonly.hray24 type CHAR, tabIndex=4;
+TextEdit dirmemo=formonly.dirmemo type CHAR, tabIndex=6;
+TextEdit depmemo=formonly.depmemo type CHAR, tabIndex=5;
+TextEdit genmemo=formonly.genmemo type CHAR, tabIndex=1;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.zzdate,formonly.zzstat,formonly.z_n,formonly.depmemo,formonly.genmemo,formonly.dirmemo,formonly.hray24)
+SCREEN RECORD s_hray_1(formonly.sel,formonly.hrat01,formonly.hrat02,formonly.hraa12,formonly.hrao02,formonly.hras04,formonly.hrat25,formonly.hrat02_1,formonly.hrat26,formonly.hrat19)
+END -- INSTRUCTIONS
+

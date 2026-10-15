@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr490.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                             >
+   Logistics Code  [azp01                     ]
+   Cashier No.     [ryi01                     ]
+   Pay Kind        [ryd01                     ]
+ <                                                     >
+ <G group3                                             >
+   Date of payment [bdate          |la|edate          ]
+  [w                  ]
+  [x                  ]
+  [a                                      ]
+  [                                       ]
+ <                                                     >
+
+}
+END -- Grid1
+Grid gr132
+{
+[more                                     ]
+
+}
+END -- gr132
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"QBE1";
+ButtonEdit azp01=formonly.azp01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit ryi01=formonly.ryi01 type VARCHAR, action=controlp, tabIndex=8, image="zoom";
+ButtonEdit ryd01=formonly.ryd01 type VARCHAR, action=controlp, tabIndex=9, image="zoom";
+Group group3:Group3, text=%"Input";
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=3;
+Label la:Label5, text=%"~";
+DateEdit edate=formonly.edate type CHAR, tabIndex=4;
+CheckBox w=formonly.w type CHAR, tabIndex=5, text=%"Dimension list", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox x=formonly.x type CHAR, tabIndex=6, text=%"Print Group Data Y/N", not null, valueChecked = "Y", valueUnchecked = "N";
+RadioGroup a=formonly.a type CHAR, tabIndex=7, not null, items=(("1", "Operations Center"),("2", "Operations Center+Cashier"));
+CheckBox more=formonly.more type CHAR, tabIndex=2, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.bdate,formonly.edate,formonly.more,formonly.w,formonly.x,formonly.a,formonly.ryi01,formonly.ryd01)
+END -- INSTRUCTIONS
+

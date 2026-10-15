@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cim/4fd/cimq002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Table Table1
+{
+[ina00   |ina01      |ina02      |ina04       |gem02      |ecu03       |ina11        |inb03         |inb04      |ima02        |ima021       |inb05         |inb06       |inb07       |inb16   |inb09   |inb15   |azf03   |inb13   |inb14   ]
+[ina00   |ina01      |ina02      |ina04       |gem02      |ecu03       |ina11        |inb03         |inb04      |ima02        |ima021       |inb05         |inb06       |inb07       |inb16   |inb09   |inb15   |azf03   |inb13   |inb14   ]
+[ina00   |ina01      |ina02      |ina04       |gem02      |ecu03       |ina11        |inb03         |inb04      |ima02        |ima021       |inb05         |inb06       |inb07       |inb16   |inb09   |inb15   |azf03   |inb13   |inb14   ]
+[ina00   |ina01      |ina02      |ina04       |gem02      |ecu03       |ina11        |inb03         |inb04      |ima02        |ima021       |inb05         |inb06       |inb07       |inb16   |inb09   |inb15   |azf03   |inb13   |inb14   ]
+[ina00   |ina01      |ina02      |ina04       |gem02      |ecu03       |ina11        |inb03         |inb04      |ima02        |ima021       |inb05         |inb06       |inb07       |inb16   |inb09   |inb15   |azf03   |inb13   |inb14   ]
+
+}
+END -- Table1
+Grid gr1631
+{
+
+  / [cn2   ]
+
+}
+END -- gr1631
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ComboBox ina00=formonly.ina00, tabIndex=21, title=%"ina00", items=(("1", "1"),("3", "3"));
+ButtonEdit ina01=formonly.ina01, action=controlp, tabIndex=1, title=%"ina01", image="zoom";
+DateEdit ina02=formonly.ina02 type DATE, tabIndex=10, title=%"ina02";
+ButtonEdit ina04=formonly.ina04, action=controlp, tabIndex=3, title=%"ina04", image="zoom";
+ButtonEdit gem02=formonly.gem02, action=controlp, tabIndex=2, title=%"gem02", image="zoom";
+ButtonEdit ecu03=formonly.ecu03, action=controlp, tabIndex=14, title=%"ina11", image="zoom";
+Edit ina11=formonly.ina11, tabIndex=4, title=%"gen02";
+Edit inb03=formonly.inb03 type INTEGER, tabIndex=5, title=%"inb03";
+ButtonEdit inb04=formonly.inb04, action=controlp, tabIndex=6, title=%"inb04", image="zoom";
+Edit ima02=formonly.ima02, tabIndex=7, title=%"ima02";
+Edit ima021=formonly.ima021, tabIndex=11, title=%"ima021";
+Edit inb05=formonly.inb05, tabIndex=12, title=%"inb05";
+Edit inb06=formonly.inb06, tabIndex=13, title=%"inb06";
+Edit inb07=formonly.inb07, tabIndex=8, title=%"inb07";
+Edit inb16=formonly.inb16 type DECIMAL, tabIndex=15, title=%"inb16";
+Edit inb09=formonly.inb09 type DECIMAL, tabIndex=16, title=%"inb09";
+Edit inb15=formonly.inb15, tabIndex=17, title=%"inb15";
+Edit azf03=formonly.azf03, tabIndex=18, title=%"azf03";
+Edit inb13=formonly.inb13 type DECIMAL, tabIndex=19, title=%"inb13";
+Edit inb14=formonly.inb14 type DECIMAL, tabIndex=20, title=%"inb14";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cn2)
+SCREEN RECORD s_inb(formonly.ina00,formonly.ina01,formonly.ina02,formonly.ina04,formonly.gem02,formonly.ecu03,formonly.ina11,formonly.inb03,formonly.inb04,formonly.ima02,formonly.ima021,formonly.inb05,formonly.inb06,formonly.inb07,formonly.inb16,formonly.inb09,formonly.inb15,formonly.azf03,formonly.inb13,formonly.inb14)
+END -- INSTRUCTIONS
+

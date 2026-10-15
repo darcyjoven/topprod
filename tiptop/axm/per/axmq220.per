@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq220.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq220")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+Grid gr2238
+{
+ Customer            [occ01     ][occ02                         ]
+ Contact             [link                          ]
+}
+END -- gr2238
+END -- page01
+END -- folder01
+Table s_oeb
+{
+[oea01            |oea04             |oeb04             |oeb09|oeb06                         |oeb12       |oeb23           |acc_q            |oeb24         |oeb25            |oeb29            |unqty           |oeb15            |oeb16             ]
+[oea01            |oea04             |oeb04             |oeb09|oeb06                         |oeb12       |oeb23           |acc_q            |oeb24         |oeb25            |oeb29            |unqty           |oeb15            |oeb16             ]
+[oea01            |oea04             |oeb04             |oeb09|oeb06                         |oeb12       |oeb23           |acc_q            |oeb24         |oeb25            |oeb29            |unqty           |oeb15            |oeb16             ]
+[oea01            |oea04             |oeb04             |oeb09|oeb06                         |oeb12       |oeb23           |acc_q            |oeb24         |oeb25            |oeb29            |unqty           |oeb15            |oeb16             ]
+[oea01            |oea04             |oeb04             |oeb09|oeb06                         |oeb12       |oeb23           |acc_q            |oeb24         |oeb25            |oeb29            |unqty           |oeb15            |oeb16             ]
+[oea01            |oea04             |oeb04             |oeb09|oeb06                         |oeb12       |oeb23           |acc_q            |oeb24         |oeb25            |oeb29            |unqty           |oeb15            |oeb16             ]
+[oea01            |oea04             |oeb04             |oeb09|oeb06                         |oeb12       |oeb23           |acc_q            |oeb24         |oeb25            |oeb29            |unqty           |oeb15            |oeb16             ]
+[oea01            |oea04             |oeb04             |oeb09|oeb06                         |oeb12       |oeb23           |acc_q            |oeb24         |oeb25            |oeb29            |unqty           |oeb15            |oeb16             ]
+[oea01            |oea04             |oeb04             |oeb09|oeb06                         |oeb12       |oeb23           |acc_q            |oeb24         |oeb25            |oeb29            |unqty           |oeb15            |oeb16             ]
+[oea01            |oea04             |oeb04             |oeb09|oeb06                         |oeb12       |oeb23           |acc_q            |oeb24         |oeb25            |oeb29            |unqty           |oeb15            |oeb16             ]
+}
+END -- s_oeb
+Grid gr2239
+{
+ ---------- Rows [cnt   ] ----------
+
+
+
+
+
+}
+END -- gr2239
+END -- vb1
+END -- axmq220
+
+TABLES
+oeb_file,
+oea_file
+ATTRIBUTES
+Edit occ01=formonly.occ01 type CHAR, tabIndex=1;
+Edit occ02=formonly.occ02 type CHAR, tabIndex=2;
+Edit link=formonly.link type CHAR, tabIndex=3, noEntry;
+Edit oea01=oea_file.oea01, tabIndex=4, title="Order No.";
+Edit oea04=oea_file.oea04, tabIndex=5, title="Shipping Customer";
+Edit oeb04=oeb_file.oeb04, tabIndex=6, title="Product No.";
+Edit oeb09=oeb_file.oeb092, tabIndex=7, title="Lot#";
+Edit oeb06=oeb_file.oeb06, tabIndex=8, title="Part Name Specification";
+Edit oeb12=oeb_file.oeb12, tabIndex=9, title="Order Qty", not null, required;
+Edit oeb23=oeb_file.oeb23, tabIndex=10, title="Undelivered Qty", not null, required;
+Edit acc_q=formonly.acc_q type CHAR, tabIndex=11, title="Check/Accetp Qty", noEntry;
+Edit oeb24=oeb_file.oeb24, tabIndex=12, title="Delivered Qty", not null, required;
+Edit oeb25=oeb_file.oeb25, tabIndex=13, title="Sales/return Qty", not null, required;
+Edit oeb29=oeb_file.oeb29, tabIndex=18, title=%"Repay Qty", not null, required;
+Edit unqty=formonly.unqty type CHAR, tabIndex=14, title="Undelivered Qty", noEntry;
+DateEdit oeb15=oeb_file.oeb15, tabIndex=15, title="Agreed Del.Date";
+DateEdit oeb16=oeb_file.oeb16, tabIndex=16, title="Scheduled Del.Date";
+Edit cnt=formonly.cnt type CHAR, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oeb(oea_file.oea01,oea_file.oea04,oeb_file.oeb04,oeb_file.oeb092,oeb_file.oeb06,oeb_file.oeb12,oeb_file.oeb23,formonly.acc_q,oeb_file.oeb24,oeb_file.oeb25,oeb_file.oeb29,formonly.unqty,oeb_file.oeb15,oeb_file.oeb16)
+SCREEN RECORD Undefined(formonly.occ01,formonly.occ02,formonly.link,formonly.cnt)
+END -- INSTRUCTIONS
+

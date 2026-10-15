@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi309.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi309")
+VBox vb2
+Folder pc4
+Page page01(text="Page01")
+Grid gr7
+{
+ <G group01                                             >
+  Part Id                    [vmk01               ]
+  Supplier Id                [vmk02               ]
+  Max Lot Size               [vmk05               ]
+  Min Lot Size               [vmk20               ]
+  Pur Unit Lot Qty           [vmk21               ]
+  Var Lead Time              [vmk10               ]
+  Base Qty                   [vmk11               ]
+  Is Lastqty Combine         [vmk12               ]
+  LastQty Combine Limit      [vmk13               ]
+  Lot Sizing Rule            [vmk15               ]
+  Sfixed Lead Time           [vmk16               ]
+  Svar Lead Time             [vmk17               ]
+  Cust Type                  [vmk19               ]
+ <                                                      >
+
+}
+END -- gr7
+END -- page01
+END -- pc4
+Grid gr8
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr8
+END -- vb2
+END -- apsi309
+
+TABLES
+vmk_file
+ATTRIBUTES
+Group group01:group01;
+Edit vmk01=vmk_file.vmk01, tabIndex=1, noEntry, not null, required;
+Edit vmk02=vmk_file.vmk02, tabIndex=2, noEntry, not null, required;
+Edit vmk05=vmk_file.vmk05, tabIndex=4, default = "999999";
+Edit vmk20=vmk_file.vmk20, tabIndex=13, default = "999999";
+Edit vmk21=vmk_file.vmk21, tabIndex=14, default = "999999";
+Edit vmk10=vmk_file.vmk10, tabIndex=5, default = "0", not null, required;
+Edit vmk11=vmk_file.vmk11, tabIndex=6, default = "1", not null, required;
+ComboBox vmk12=vmk_file.vmk12, tabIndex=7, default = "0", not null, items=(("0", "False"),("1", "True"));
+Edit vmk13=vmk_file.vmk13, tabIndex=8, default = "1";
+ComboBox vmk15=vmk_file.vmk15, tabIndex=9, default = "0", not null, items=(("0", "Lot-for-Lot"),("1", "Generally"));
+Edit vmk16=vmk_file.vmk16, tabIndex=10, default = "0";
+Edit vmk17=vmk_file.vmk17, tabIndex=11, default = "0";
+ComboBox vmk19=vmk_file.vmk19, tabIndex=12, default = "0", noEntry, not null, items=(("1", "UnOut_Source"),("2", "Out_Source"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vmk_file.vmk01,vmk_file.vmk02,vmk_file.vmk05,vmk_file.vmk10,vmk_file.vmk11,vmk_file.vmk12,vmk_file.vmk13,vmk_file.vmk15,vmk_file.vmk16,vmk_file.vmk17,vmk_file.vmk19,formonly.cnt,vmk_file.vmk20,vmk_file.vmk21)
+END -- INSTRUCTIONS
+

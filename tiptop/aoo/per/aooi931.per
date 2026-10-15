@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi931.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi931")
+VBox vb2
+Folder folder01
+Page main(text="Main")
+Grid gr3257
+{
+
+ Corporate No. Belonged  [azw02       ][azt02               ]    Corporate DB [azw09               ]
+
+}
+END -- gr3257
+END -- main
+END -- folder01
+Table s_azw
+{
+[azw01           |azw08               |azw03     |azw04           |azw05                |azw06         |azwacti          |azwud01                       |azwud02                       |azwud03                       |azwud04                       |azwud05                       |azwud06                       |azwud07          |azwud08          |azwud09          |azwud10    |azwud11    |azwud12    |azwud13   |azwud14   |azwud15   ]
+[azw01           |azw08               |azw03     |azw04           |azw05                |azw06         |azwacti          |azwud01                       |azwud02                       |azwud03                       |azwud04                       |azwud05                       |azwud06                       |azwud07          |azwud08          |azwud09          |azwud10    |azwud11    |azwud12    |azwud13   |azwud14   |azwud15   ]
+[azw01           |azw08               |azw03     |azw04           |azw05                |azw06         |azwacti          |azwud01                       |azwud02                       |azwud03                       |azwud04                       |azwud05                       |azwud06                       |azwud07          |azwud08          |azwud09          |azwud10    |azwud11    |azwud12    |azwud13   |azwud14   |azwud15   ]
+[azw01           |azw08               |azw03     |azw04           |azw05                |azw06         |azwacti          |azwud01                       |azwud02                       |azwud03                       |azwud04                       |azwud05                       |azwud06                       |azwud07          |azwud08          |azwud09          |azwud10    |azwud11    |azwud12    |azwud13   |azwud14   |azwud15   ]
+[azw01           |azw08               |azw03     |azw04           |azw05                |azw06         |azwacti          |azwud01                       |azwud02                       |azwud03                       |azwud04                       |azwud05                       |azwud06                       |azwud07          |azwud08          |azwud09          |azwud10    |azwud11    |azwud12    |azwud13   |azwud14   |azwud15   ]
+[azw01           |azw08               |azw03     |azw04           |azw05                |azw06         |azwacti          |azwud01                       |azwud02                       |azwud03                       |azwud04                       |azwud05                       |azwud06                       |azwud07          |azwud08          |azwud09          |azwud10    |azwud11    |azwud12    |azwud13   |azwud14   |azwud15   ]
+[azw01           |azw08               |azw03     |azw04           |azw05                |azw06         |azwacti          |azwud01                       |azwud02                       |azwud03                       |azwud04                       |azwud05                       |azwud06                       |azwud07          |azwud08          |azwud09          |azwud10    |azwud11    |azwud12    |azwud13   |azwud14   |azwud15   ]
+[azw01           |azw08               |azw03     |azw04           |azw05                |azw06         |azwacti          |azwud01                       |azwud02                       |azwud03                       |azwud04                       |azwud05                       |azwud06                       |azwud07          |azwud08          |azwud09          |azwud10    |azwud11    |azwud12    |azwud13   |azwud14   |azwud15   ]
+[azw01           |azw08               |azw03     |azw04           |azw05                |azw06         |azwacti          |azwud01                       |azwud02                       |azwud03                       |azwud04                       |azwud05                       |azwud06                       |azwud07          |azwud08          |azwud09          |azwud10    |azwud11    |azwud12    |azwud13   |azwud14   |azwud15   ]
+[azw01           |azw08               |azw03     |azw04           |azw05                |azw06         |azwacti          |azwud01                       |azwud02                       |azwud03                       |azwud04                       |azwud05                       |azwud06                       |azwud07          |azwud08          |azwud09          |azwud10    |azwud11    |azwud12    |azwud13   |azwud14   |azwud15   ]
+
+
+}
+END -- s_azw
+Grid gr3258
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr3258
+END -- vb2
+END -- aooi701
+
+TABLES
+azw_file
+ATTRIBUTES
+ButtonEdit azw02=azw_file.azw02, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=2, noEntry;
+Edit azw09=azw_file.azw09, tabIndex=3, noEntry;
+Edit azw01=azw_file.azw01, tabIndex=4, title="Logistics Code", not null, required, upShift;
+Edit azw08=azw_file.azw08, tabIndex=5, title="Logestic Name", not null, required;
+ComboBox azw03=azw_file.azw03, tabIndex=6, title="Industry", not null, required;
+ComboBox azw04=azw_file.azw04, tabIndex=7, title="Industry Type", not null, required, items=(("1", "Manufacturing"),("2", "Retail"),("3", "Distribution"));
+Edit azw05=azw_file.azw05, tabIndex=8, title="Transaction Data DB", not null, required, downShift;
+Edit azw06=azw_file.azw06, tabIndex=9, title="Base Data DB", not null, required, downShift;
+CheckBox azwacti=azw_file.azwacti, tabIndex=10, default = "N", title="Data Valid Code", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit azwud01=azw_file.azwud01, tabIndex=13, title=%"azwud01", scroll;
+Edit azwud02=azw_file.azwud02, tabIndex=14, title=%"azwud02", scroll;
+Edit azwud03=azw_file.azwud03, tabIndex=15, title=%"azwud03", scroll;
+Edit azwud04=azw_file.azwud04, tabIndex=16, title=%"azwud04", scroll;
+Edit azwud05=azw_file.azwud05, tabIndex=17, title=%"azwud05", scroll;
+Edit azwud06=azw_file.azwud06, tabIndex=18, title=%"azwud06", scroll;
+Edit azwud07=azw_file.azwud07, tabIndex=19, title=%"azwud07", scroll;
+Edit azwud08=azw_file.azwud08, tabIndex=20, title=%"azwud08", scroll;
+Edit azwud09=azw_file.azwud09, tabIndex=21, title=%"azwud09", scroll;
+Edit azwud10=azw_file.azwud10, tabIndex=22, title=%"azwud10", scroll;
+Edit azwud11=azw_file.azwud11, tabIndex=23, title=%"azwud11", scroll;
+Edit azwud12=azw_file.azwud12, tabIndex=24, title=%"azwud12", scroll;
+DateEdit azwud13=azw_file.azwud13, tabIndex=25, title=%"azwud13";
+DateEdit azwud14=azw_file.azwud14, tabIndex=26, title=%"azwud14";
+DateEdit azwud15=azw_file.azwud15, tabIndex=27, title=%"azwud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azw(azw_file.azw01,azw_file.azw08,azw_file.azw03,azw_file.azw04,azw_file.azw05,azw_file.azw06,azw_file.azwacti,azw_file.azwud01,azw_file.azwud02,azw_file.azwud03,azw_file.azwud04,azw_file.azwud05,azw_file.azwud06,azw_file.azwud07,azw_file.azwud08,azw_file.azwud09,azw_file.azwud10,azw_file.azwud11,azw_file.azwud12,azw_file.azwud13,azw_file.azwud14,azw_file.azwud15)
+SCREEN RECORD Undefined(azw_file.azw02,formonly.azt02,azw_file.azw09,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdr230.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdr230")
+VBox VBox1
+Grid gr406
+{
+ <G group01                                                                              >
+  W/O No.             [ste04               ]   Closing Code        [ste31               ]
+  Cost Group          [ima12               ]   Product Class       [ima131              ]
+ <                                                                                       >
+
+}
+END -- gr406
+Group g01(text="INPUT")
+Grid gr407
+{
+ <G group02                                                                           >
+  Cost year/month     [yea ]/[mo]
+ <                                                                                    >
+ <G group03                                                                           >
+ [jump                                           ]
+ <                                                                                    >
+
+}
+END -- gr407
+END -- g01
+Grid gr408
+{
+[more                                                           ]
+
+}
+END -- gr408
+END -- VBox1
+END -- asdr230
+
+TABLES
+ste_file,
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ste04=ste_file.ste04, tabIndex=1;
+Edit ste31=ste_file.ste31, tabIndex=2;
+Edit ima12=ima_file.ima12, tabIndex=3;
+Edit ima131=ima_file.ima131, tabIndex=4;
+Group group02:group02;
+Edit yea=formonly.yea type SMALLINT, tabIndex=5, not null, required;
+Edit mo=formonly.mo type SMALLINT, tabIndex=6, not null, required;
+Group group03:group03;
+CheckBox jump=formonly.jump type CHAR, tabIndex=7, text="Next Page by Product?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ste_file.ste04,ste_file.ste31,ima_file.ima12,ima_file.ima131,formonly.yea,formonly.mo,formonly.jump,formonly.more)
+END -- INSTRUCTIONS
+

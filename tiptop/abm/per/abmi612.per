@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi612.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi612")
+VBox vb2
+Folder pc251
+Page page01(text="Main")
+Table s_bof
+{
+[bof01                    |bof01_ima02                             |bof01_ima021                            |bof02     |bof03                    |bof03_ima02                             |bof03_ima021                            |bof04          |bof05          |bof06     |bof07     ]
+[bof01                    |bof01_ima02                             |bof01_ima021                            |bof02     |bof03                    |bof03_ima02                             |bof03_ima021                            |bof04          |bof05          |bof06     |bof07     ]
+[bof01                    |bof01_ima02                             |bof01_ima021                            |bof02     |bof03                    |bof03_ima02                             |bof03_ima021                            |bof04          |bof05          |bof06     |bof07     ]
+[bof01                    |bof01_ima02                             |bof01_ima021                            |bof02     |bof03                    |bof03_ima02                             |bof03_ima021                            |bof04          |bof05          |bof06     |bof07     ]
+[bof01                    |bof01_ima02                             |bof01_ima021                            |bof02     |bof03                    |bof03_ima02                             |bof03_ima021                            |bof04          |bof05          |bof06     |bof07     ]
+[bof01                    |bof01_ima02                             |bof01_ima021                            |bof02     |bof03                    |bof03_ima02                             |bof03_ima021                            |bof04          |bof05          |bof06     |bof07     ]
+[bof01                    |bof01_ima02                             |bof01_ima021                            |bof02     |bof03                    |bof03_ima02                             |bof03_ima021                            |bof04          |bof05          |bof06     |bof07     ]
+[bof01                    |bof01_ima02                             |bof01_ima021                            |bof02     |bof03                    |bof03_ima02                             |bof03_ima021                            |bof04          |bof05          |bof06     |bof07     ]
+[bof01                    |bof01_ima02                             |bof01_ima021                            |bof02     |bof03                    |bof03_ima02                             |bof03_ima021                            |bof04          |bof05          |bof06     |bof07     ]
+[bof01                    |bof01_ima02                             |bof01_ima021                            |bof02     |bof03                    |bof03_ima02                             |bof03_ima021                            |bof04          |bof05          |bof06     |bof07     ]
+
+}
+END -- s_bof
+END -- page01
+END -- pc251
+Grid gr1625
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr1625
+END -- vb2
+END -- abmi612
+
+TABLES
+bof_file
+ATTRIBUTES
+ButtonEdit bof01=bof_file.bof01, action=controlp, tabIndex=1, title="Master Item No.", not null, required, image="zoom.png";
+Edit bof01_ima02=formonly.bof01_ima02 type VARCHAR, tabIndex=2, title="Master Item Name.", noEntry;
+Edit bof01_ima021=formonly.bof01_ima021 type VARCHAR, tabIndex=11, title=%"Master Item Spec.", noEntry;
+ComboBox bof02=bof_file.bof02, tabIndex=3, title="Category", not null, required, items=(("1", "Item No."),("2", "Main Group Code"));
+ButtonEdit bof03=bof_file.bof03, action=controlp, tabIndex=4, title="Component No./Main Group Code", not null, required, image="zoom.png";
+Edit bof03_ima02=formonly.bof03_ima02 type VARCHAR, tabIndex=5, title="Component Name/Main Group Code Name", noEntry;
+Edit bof03_ima021=formonly.bof03_ima021 type VARCHAR, tabIndex=12, title=%"Component Spec/Main Group Code Spec", noEntry;
+Edit bof04=bof_file.bof04, tabIndex=6, title="Production begin qty.", not null, required;
+Edit bof05=bof_file.bof05, tabIndex=7, title="Production end qty.", not null, required;
+Edit bof06=bof_file.bof06, tabIndex=8, title="Loss Rate", not null, required;
+Edit bof07=bof_file.bof07, tabIndex=10, title="loss value", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bof(bof_file.bof01,formonly.bof01_ima02,formonly.bof01_ima021,bof_file.bof02,bof_file.bof03,formonly.bof03_ima02,formonly.bof03_ima021,bof_file.bof04,bof_file.bof05,bof_file.bof06,bof_file.bof07)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

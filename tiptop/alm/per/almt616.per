@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt616.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"almt616")
+VBox vb5
+Folder pc3
+Page Main(text=%"Main")
+Grid gr10
+{
+
+ Shop No.       [lrwplant              |rtz13               ]        Fee               [lrw23                  ]
+ Corporation    [lrwlegal              |azt02               ]        New no.           [lrw09                  ]
+ Document no.   [lrw01                 ]                             New balance       [lrw11                  ]
+ Document date  [lrw15                 ]                             New points        [lrw12                  ]
+ Member ID      [lrw02                 ]                             New validity      [lrw13                  ]
+ Card           [lrw03                 ]                             Reason no.        [lrw14                  |azf03               ]
+ Card type      [lrw04                 ]                             Delivery No.      [lrw24                  ]
+ Card status    [lrw05                 ]                             Pos no.           [lrw25                  ]
+ Card balance   [lrw06                 ]                             Confirmed Status  [lrw16                  |imgmksg   ]
+ Card points    [lrw07                 ]                             Confirmed Person  [lrw17                  |          ]
+ Card validity  [lrw08                 ]                             Confirmed Date    [lrw18                  ]
+ Card discount  [lrw20                 ]                             Memo              [lrw19                  ]
+                                                                                       [                       ]
+
+}
+END -- gr10
+END -- Main
+Page Info(text=%"Info")
+Grid gr11
+{
+  Record Owner [lrwuser       ]   Created Date     [lrwcrat      ]   Data Valid Code [lrwacti      ]
+  Department   [lrwgrup       ]   Last Modified by [lrwmodu      ]   Modify Date     [lrwdate      ]
+  Record Orig. [lrworiu       ]   Dept Orig.       [lrworig      ]
+
+
+}
+END -- gr11
+END -- Info
+END -- pc3
+Grid gr3
+{
+  ------- Rows [idx  ] /  [cnt  ] --------
+
+
+}
+END -- gr3
+END -- vb5
+END -- Form5
+
+TABLES
+lrw_file
+ATTRIBUTES
+ButtonEdit lrwplant=lrw_file.lrwplant, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type VARCHAR, tabIndex=2, noEntry;
+Edit lrw23=lrw_file.lrw23, tabIndex=15;
+ButtonEdit lrwlegal=lrw_file.lrwlegal, action=controlp, tabIndex=3, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit lrw09=lrw_file.lrw09, action=controlp, tabIndex=16, not null, required, image="zoom.png";
+ButtonEdit lrw01=lrw_file.lrw01, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+Edit lrw11=lrw_file.lrw11, tabIndex=17, noEntry;
+DateEdit lrw15=lrw_file.lrw15, tabIndex=6, noEntry, not null, required;
+Edit lrw12=lrw_file.lrw12, tabIndex=18, noEntry;
+ButtonEdit lrw02=lrw_file.lrw02, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+DateEdit lrw13=lrw_file.lrw13, tabIndex=19;
+ButtonEdit lrw03=lrw_file.lrw03, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+ButtonEdit lrw14=lrw_file.lrw14, action=controlp, tabIndex=20, image="zoom.png";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=21, noEntry;
+Edit lrw04=lrw_file.lrw04, tabIndex=9, noEntry;
+ButtonEdit lrw24=lrw_file.lrw24, action=controlp, tabIndex=22, image="zoom.png";
+ComboBox lrw05=lrw_file.lrw05, tabIndex=10, noEntry, items=(("1", "Open"),("2", "Issue "),("3", "Void"),("4", "Off"),("5", "Loss
+"));
+Edit lrw25=lrw_file.lrw25, tabIndex=23, noEntry, scroll;
+Edit lrw06=lrw_file.lrw06, tabIndex=11, noEntry;
+ComboBox lrw16=lrw_file.lrw16, tabIndex=24, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit lrw07=lrw_file.lrw07, tabIndex=12, noEntry;
+ButtonEdit lrw17=lrw_file.lrw17, action=controlp, tabIndex=25, noEntry, image="zoom.png";
+DateEdit lrw08=lrw_file.lrw08, tabIndex=13, noEntry;
+DateEdit lrw18=lrw_file.lrw18, tabIndex=26, noEntry;
+Edit lrw20=lrw_file.lrw20, tabIndex=14, noEntry;
+TextEdit lrw19=lrw_file.lrw19, tabIndex=27;
+Edit lrwuser=lrw_file.lrwuser, tabIndex=28, noEntry;
+DateEdit lrwcrat=lrw_file.lrwcrat, tabIndex=31, noEntry;
+Edit lrwacti=lrw_file.lrwacti, tabIndex=34, noEntry;
+Edit lrwgrup=lrw_file.lrwgrup, tabIndex=29, noEntry;
+Edit lrwmodu=lrw_file.lrwmodu, tabIndex=32, noEntry;
+DateEdit lrwdate=lrw_file.lrwdate, tabIndex=35, noEntry;
+Edit lrworiu=lrw_file.lrworiu, tabIndex=30, noEntry;
+Edit lrworig=lrw_file.lrworig, tabIndex=33, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=36, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=37, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lrw_file.lrwplant,formonly.rtz13,lrw_file.lrw09,lrw_file.lrwlegal,formonly.azt02,lrw_file.lrw11,lrw_file.lrw01,lrw_file.lrw12,lrw_file.lrw02,lrw_file.lrw13,lrw_file.lrw03,lrw_file.lrw14,formonly.azf03,lrw_file.lrw04,lrw_file.lrw15,lrw_file.lrw05,lrw_file.lrw16,formonly.imgmksg,lrw_file.lrw06,lrw_file.lrw17,lrw_file.lrw07,lrw_file.lrw18,lrw_file.lrw08,lrw_file.lrw19,lrw_file.lrw20,lrw_file.lrwuser,lrw_file.lrwcrat,lrw_file.lrwacti,lrw_file.lrwgrup,lrw_file.lrwmodu,lrw_file.lrwdate,lrw_file.lrworiu,lrw_file.lrworig,formonly.idx,formonly.cnt,lrw_file.lrw23,lrw_file.lrw24)
+SCREEN RECORD Record1(lrw_file.lrw25)
+END -- INSTRUCTIONS
+

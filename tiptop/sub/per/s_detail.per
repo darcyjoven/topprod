@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_detail.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt4702")
+VBox VBox1
+Table s_rxy8
+{
+[rxy02|rxy03     |rxy33   |rxy05               |rxy06                                   |rxy32|rxy07     |rxy08               |rxy09               |rxy10       |rxy11                                   |rxy12     |rxy13     |rxy14     |rxy15     |rxy16|rxy17               |rxy19     |rxy23               |rxy21     |rxy22     ]
+[rxy02|rxy03     |rxy33   |rxy05               |rxy06                                   |rxy32|rxy07     |rxy08               |rxy09               |rxy10       |rxy11                                   |rxy12     |rxy13     |rxy14     |rxy15     |rxy16|rxy17               |rxy19     |rxy23               |rxy21     |rxy22     ]
+[rxy02|rxy03     |rxy33   |rxy05               |rxy06                                   |rxy32|rxy07     |rxy08               |rxy09               |rxy10       |rxy11                                   |rxy12     |rxy13     |rxy14     |rxy15     |rxy16|rxy17               |rxy19     |rxy23               |rxy21     |rxy22     ]
+[rxy02|rxy03     |rxy33   |rxy05               |rxy06                                   |rxy32|rxy07     |rxy08               |rxy09               |rxy10       |rxy11                                   |rxy12     |rxy13     |rxy14     |rxy15     |rxy16|rxy17               |rxy19     |rxy23               |rxy21     |rxy22     ]
+[rxy02|rxy03     |rxy33   |rxy05               |rxy06                                   |rxy32|rxy07     |rxy08               |rxy09               |rxy10       |rxy11                                   |rxy12     |rxy13     |rxy14     |rxy15     |rxy16|rxy17               |rxy19     |rxy23               |rxy21     |rxy22     ]
+
+}
+END -- s_rxy8
+Grid gr5
+{
+ --------Details[cn2   ]------
+
+}
+END -- gr5
+END -- VBox1
+END -- s_detail
+
+TABLES
+rxy_file
+ATTRIBUTES
+Edit rxy02=rxy_file.rxy02, tabIndex=1, title="Line No.";
+ComboBox rxy03=rxy_file.rxy03, tabIndex=2, title="Contributions Type", items=(("01", "Cash"),("02", "UnionPay cards"),("03", "Cheque"),("04", "Coupon"),("05", "Union Card"),("06", "Stored-value Cards"),("07", "Advance"),("08", "Manual Transfers"),("09", "Money Type"),("10", "Pay Discount"));
+CheckBox rxy33=rxy_file.rxy33, tabIndex=3, title=%"rxy33", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit rxy05=rxy_file.rxy05, tabIndex=4, title="Amount";
+Edit rxy06=rxy_file.rxy06, tabIndex=5, title="Number/votes/Account";
+Edit rxy32=rxy_file.rxy32, tabIndex=6, title=%"No.";
+Edit rxy07=rxy_file.rxy07, tabIndex=7, title="Charges Rate";
+Edit rxy08=rxy_file.rxy08, tabIndex=8, title="Charges";
+Edit rxy09=rxy_file.rxy09, tabIndex=9, title="Cheque Denomination";
+DateEdit rxy10=rxy_file.rxy10, tabIndex=10, title="Invoice Date";
+Edit rxy11=rxy_file.rxy11, tabIndex=11, title="Units";
+Edit rxy12=rxy_file.rxy12, tabIndex=12, title="Card Voucher Category No. ";
+Edit rxy13=rxy_file.rxy13, tabIndex=13, title="Coupon Denominations";
+Edit rxy14=rxy_file.rxy14, tabIndex=14, title="Coupon Start No.";
+Edit rxy15=rxy_file.rxy15, tabIndex=15, title="Coupon End No.";
+Edit rxy16=rxy_file.rxy16, tabIndex=16, title="Coupons Amount";
+Edit rxy17=rxy_file.rxy17, tabIndex=17, title="Cheque/Coupon Superfluous Amount";
+ComboBox rxy19=rxy_file.rxy19, tabIndex=18, title="rxy19", items=(("1", "dingjin"),("2", "zhan"),("3", "3"));
+Edit rxy23=formonly.rxy23 type CHAR, tabIndex=19, title=%"Is now integral", noEntry, not null;
+Edit rxy21=rxy_file.rxy21, tabIndex=20, title="Date", noEntry;
+Edit rxy22=rxy_file.rxy22, tabIndex=21, title="Time", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rxy8(rxy_file.rxy02,rxy_file.rxy03,rxy_file.rxy33,rxy_file.rxy05,rxy_file.rxy06,rxy_file.rxy32,rxy_file.rxy07,rxy_file.rxy08,rxy_file.rxy09,rxy_file.rxy10,rxy_file.rxy11,rxy_file.rxy12,rxy_file.rxy13,rxy_file.rxy14,rxy_file.rxy15,rxy_file.rxy16,rxy_file.rxy17,rxy_file.rxy19,formonly.rxy23,rxy_file.rxy21,rxy_file.rxy22)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

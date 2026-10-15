@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfq500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfq500")
+VBox vb2
+Folder pc142
+Page page01(text="Page01")
+VBox vb1
+Table s_sfm
+{
+[sfm00    |sfm03          |sfm01           |sfm07           |a     |sfm10 |sfm08           |sfm09                   |b     |sfm16        ]
+[sfm00    |sfm03          |sfm01           |sfm07           |a     |sfm10 |sfm08           |sfm09                   |b     |sfm16        ]
+[sfm00    |sfm03          |sfm01           |sfm07           |a     |sfm10 |sfm08           |sfm09                   |b     |sfm16        ]
+[sfm00    |sfm03          |sfm01           |sfm07           |a     |sfm10 |sfm08           |sfm09                   |b     |sfm16        ]
+[sfm00    |sfm03          |sfm01           |sfm07           |a     |sfm10 |sfm08           |sfm09                   |b     |sfm16        ]
+[sfm00    |sfm03          |sfm01           |sfm07           |a     |sfm10 |sfm08           |sfm09                   |b     |sfm16        ]
+[sfm00    |sfm03          |sfm01           |sfm07           |a     |sfm10 |sfm08           |sfm09                   |b     |sfm16        ]
+[sfm00    |sfm03          |sfm01           |sfm07           |a     |sfm10 |sfm08           |sfm09                   |b     |sfm16        ]
+[sfm00    |sfm03          |sfm01           |sfm07           |a     |sfm10 |sfm08           |sfm09                   |b     |sfm16        ]
+[sfm00    |sfm03          |sfm01           |sfm07           |a     |sfm10 |sfm08           |sfm09                   |b     |sfm16        ]
+
+}
+END -- s_sfm
+END -- vb1
+END -- page01
+END -- pc142
+Grid gr588
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr588
+END -- vb2
+END -- asfq500
+
+TABLES
+sfm_file
+ATTRIBUTES
+Edit sfm00=sfm_file.sfm00, tabIndex=1, title="S/N", noEntry;
+DateEdit sfm03=sfm_file.sfm03, tabIndex=2, title="Date of Change", noEntry;
+Edit sfm01=sfm_file.sfm01, tabIndex=3, title="Src W/O", noEntry;
+Edit sfm07=sfm_file.sfm07, tabIndex=4, title="Return Note No.", noEntry;
+Edit a=formonly.a type CHAR, tabIndex=5, title="Post", noEntry;
+ComboBox sfm10=sfm_file.sfm10, tabIndex=6, title="Shift", items=(("1", "all"),("2", "Item"),("3", "WO"));
+Edit sfm08=sfm_file.sfm08, tabIndex=7, title="Target W/O", noEntry;
+Edit sfm09=sfm_file.sfm09, tabIndex=8, title="Target W/O Issuing Note", noEntry;
+Edit b=formonly.b type CHAR, tabIndex=9, title="Post", noEntry;
+Edit sfm16=sfm_file.sfm16, tabIndex=10, title="Shift Set", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfm(sfm_file.sfm00,sfm_file.sfm03,sfm_file.sfm01,sfm_file.sfm07,formonly.a,sfm_file.sfm10,sfm_file.sfm08,sfm_file.sfm09,formonly.b,sfm_file.sfm16)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

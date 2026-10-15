@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_prod_detail.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_crosscfg")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Grid gr6
+{
+ <G group01                                                                                            >
+  name                    [name                 ]    timezone                   [timezone       ]
+ [label1                  |ver                  ]   [label4                     |retrytimes     ]
+ [label2                  |ip                   ]   [label5                     |retryinterval  ]
+ [label3                  |id                   ]   [label6                     |concurrence    ]
+  wsdl                    [wsdl                                                                 ]
+
+ <                                                                                                     >
+
+}
+END -- gr6
+END -- page01
+END -- pc1
+Folder Folder1
+Page page_tp(action=tp_list, text=%"TIPTOP Services List")
+Table s_srv
+{
+[wsr01                         |wsr03                                             ]
+[wsr01                         |wsr03                                             ]
+[wsr01                         |wsr03                                             ]
+[wsr01                         |wsr03                                             ]
+[wsr01                         |wsr03                                             ]
+[wsr01                         |wsr03                                             ]
+[wsr01                         |wsr03                                             ]
+[wsr01                         |wsr03                                             ]
+[wsr01                         |wsr03                                             ]
+[wsr01                         |wsr03                                             ]
+
+
+
+
+
+
+
+}
+END -- s_srv
+END -- page_tp
+END -- Folder1
+Grid gr8
+{
+ ---------- Rows [dcnt  ] / [dcn2  ] ----------
+
+
+}
+END -- gr8
+END -- VBox1
+END -- aws_prod_detail
+
+TABLES
+wsr_file,
+wap_file,
+azp_file
+ATTRIBUTES
+Group group01:group01;
+Edit name=formonly.name type VARCHAR, tabIndex=1, noEntry;
+Edit timezone=formonly.timezone type like azp_file.azp052, tabIndex=496;
+Label label1:Label1, text=%"ver";
+Edit ver=formonly.ver type VARCHAR, tabIndex=484, noEntry;
+Label label4:Label4, text=%"retrytimes";
+Edit retrytimes=formonly.retrytimes type like wap_file.wap05, tabIndex=497;
+Label label2:Label2, text=%"ip";
+Edit ip=formonly.ip type VARCHAR, tabIndex=484, noEntry;
+Label label5:Label5, text=%"retryinterval";
+Edit retryinterval=formonly.retryinterval type like wap_file.wap06, tabIndex=498;
+Label label3:Label3, text=%"id";
+Edit id=formonly.id type VARCHAR, tabIndex=495;
+Label label6:Label6, text=%"concurrence";
+Edit concurrence=formonly.concurrence type like wap_file.wap07, tabIndex=499;
+Edit wsdl=formonly.wsdl type like wap_file.wap03, tabIndex=1;
+Edit wsr01=formonly.wsr01 type like wsr_file.wsr01, tabIndex=493, title=%"wsr01", noEntry;
+Edit wsr03=formonly.wsr03 type like wsr_file.wsr03, tabIndex=494, title=%"wsr03", noEntry;
+Edit dcnt=formonly.dcnt type SMALLINT, tabIndex=3, noEntry;
+Edit dcn2=formonly.dcn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.wsdl,formonly.name,formonly.dcnt,formonly.dcn2,formonly.ver,formonly.ip,formonly.id,formonly.timezone,formonly.retrytimes,formonly.retryinterval,formonly.concurrence)
+SCREEN RECORD s_srv(formonly.wsr01,formonly.wsr03)
+END -- INSTRUCTIONS
+

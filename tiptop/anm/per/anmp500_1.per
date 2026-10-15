@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp500_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmp500_1")
+Grid gr4101
+{
+ <G group01                                                          >
+  Carry Rows          [g_cnt     ]
+  Carry Amt           [g_tot               ]
+  Initial Doc #       [g_start_no                           ]
+  Ending Doc #        [g_end_no                             ]
+ <                                                                   >
+ <G group02                                                          >
+  Carry Rows          [g_cnt2    ]
+  Carry Amt           [g_tot2              ]
+  Initial Doc #       [g_start_no2     ]
+  Ending Doc #        [g_end_no2       ]
+
+ <                                                                   >
+
+}
+END -- gr4101
+END -- anmp500_1
+
+ATTRIBUTES
+Group group01:group01, text="Check";
+Edit g_cnt=formonly.g_cnt type CHAR, tabIndex=1;
+Edit g_tot=formonly.g_tot type CHAR, tabIndex=2;
+Edit g_start_no=formonly.g_start_no type CHAR, tabIndex=3;
+Edit g_end_no=formonly.g_end_no type CHAR, tabIndex=4;
+Group group02:group02, text="TT";
+Edit g_cnt2=formonly.g_cnt2 type CHAR, tabIndex=5, color = yellow;
+Edit g_tot2=formonly.g_tot2 type CHAR, tabIndex=6, color = yellow;
+Edit g_start_no2=formonly.g_start_no2 type CHAR, tabIndex=7, color = yellow;
+Edit g_end_no2=formonly.g_end_no2 type CHAR, tabIndex=8, color = yellow;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_cnt,formonly.g_tot,formonly.g_start_no,formonly.g_end_no,formonly.g_cnt2,formonly.g_tot2,formonly.g_start_no2,formonly.g_end_no2)
+END -- INSTRUCTIONS
+

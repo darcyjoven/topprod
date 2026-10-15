@@ -1,0 +1,112 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi870.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi870")
+VBox VBox1
+Folder pc1
+Page main(text=%"main")
+Grid gr1
+{
+
+       lscstore [lscstore           |rtz13               ]     lsc18  [lsc18              |gec02               ]    lsc10  [lsc10             ]
+       lsclegal [lsclegal           |azt02               ]     lsc19  [lsc19              ]%   [lsc20         ]     lsc11  [lsc11             ][imgmksg]
+       lsc01    [lsc01                 ]                       lsc05  [lsc05             ]                          lsc14  [lsc14             ][       ]
+       lsc02    [lsc02              ]                          lsc06  [lsc06             ]                          lsc15  [lsc15             ]
+       lsc03    [lsc03              ]                          lne14  [lne14             ]                          lsc16  [lsc16             ]
+       lne05    [lne05                          ]              lne47  [lne47                       ]                       [lsc12        ]
+       lsc04    [lsc04              ]                          lne15  [lne15             ]                          lsc13  [lsc13             ]
+       lsb03    [lsb03              |lmb03               ]     lsc07  [lsc07             ]
+       lsb04    [lsb04              |lmc04               ]     lsc21  [lsc21             |oaj02               ]
+       lsb05    [lsb05              ]                          lsc08  [lsc08             ]
+       lsb06    [lsb06              ]                          lsc22  [lsc22             |oaj02_1             ]
+       lsb07    [lsb07                          ]              lsc09  [lsc09             ]
+       lsb08    [lsb08              ]                          lsc23  [lsc23             ]
+
+}
+END -- gr1
+END -- main
+Page info(text=%"info")
+Grid gr5
+{
+ Record Owner              [lscuser   ]  Create Date             [lsccrat     ]      Modify Date         [lscdate   ]
+ Department                [lscgrup   ]  Last Modified by        [lscmodu     ]
+ Record Orig.              [lscoriu   ]
+ Dept Orig.                [lscorig   ]
+
+}
+END -- gr5
+END -- info
+END -- pc1
+Grid gr9
+{
+  ---------- Rows[idx   ]/[cnt   ] ----------
+
+}
+END -- gr9
+END -- VBox1
+END -- almi870
+
+TABLES
+lsc_file
+ATTRIBUTES
+ButtonEdit lscstore=lsc_file.lscstore, action=controlp, tabIndex=1, noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13 type VARCHAR, tabIndex=35;
+ButtonEdit lsc18=lsc_file.lsc18, action=controlp, tabIndex=14, not null, required, image="zoom.png";
+Edit gec02=formonly.gec02 type VARCHAR, tabIndex=39, noEntry;
+Edit lsc10=lsc_file.lsc10, tabIndex=28, noEntry;
+ButtonEdit lsclegal=lsc_file.lsclegal, action=controlp, tabIndex=2, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type VARCHAR, tabIndex=36;
+Edit lsc19=lsc_file.lsc19, tabIndex=15, noEntry, not null, required;
+CheckBox lsc20=lsc_file.lsc20, tabIndex=16, text="ch2", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit lsc11=lsc_file.lsc11, tabIndex=29, noEntry;
+IMAGE imgmksg=formonly.imgmksg type VARCHAR;
+ButtonEdit lsc01=lsc_file.lsc01, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+DateEdit lsc05=lsc_file.lsc05, tabIndex=17, not null, required;
+ComboBox lsc14=lsc_file.lsc14, tabIndex=30, items=(("N", "Unconfirmed"),("Y", "Confirm"),("X", "Void"),("S", "termination"));
+Edit lsc02=lsc_file.lsc02, tabIndex=4, noEntry;
+DateEdit lsc06=lsc_file.lsc06, tabIndex=18, not null, required;
+Edit lsc15=lsc_file.lsc15, tabIndex=31, noEntry;
+ButtonEdit lsc03=lsc_file.lsc03, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+Edit lne14=formonly.lne14 type VARCHAR, tabIndex=19;
+DateEdit lsc16=lsc_file.lsc16, tabIndex=32, noEntry;
+Edit lne05=formonly.lne05 type VARCHAR, tabIndex=6, noEntry;
+Edit lne47=formonly.lne47 type VARCHAR, tabIndex=20;
+CheckBox lsc12=lsc_file.lsc12, tabIndex=33, text="lsc12", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit lsc04=lsc_file.lsc04, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+Edit lne15=formonly.lne15 type VARCHAR, tabIndex=21;
+ComboBox lsc13=lsc_file.lsc13, tabIndex=34, items=(("0", "Open "),("1", "Approved"),("S", "Approving"),("W", "Withdraw"),("R", "Rejected"));
+Edit lsb03=formonly.lsb03 type VARCHAR, tabIndex=8, noEntry;
+Edit lmb03=formonly.lmb03 type VARCHAR, tabIndex=37, noEntry;
+DateEdit lsc07=lsc_file.lsc07, tabIndex=22, not null, required;
+Edit lsb04=formonly.lsb04 type VARCHAR, tabIndex=9, noEntry;
+Edit lmc04=formonly.lmc04 type VARCHAR, tabIndex=38, noEntry;
+ButtonEdit lsc21=lsc_file.lsc21, action=controlp, tabIndex=23, image="zoom.png";
+Edit oaj02=formonly.oaj02 type VARCHAR, tabIndex=49, noEntry;
+ComboBox lsb05=formonly.lsb05 type VARCHAR, tabIndex=10, noEntry, items=(("0", "Inside"),("1", "Outside"),("2", "Rest"));
+Edit lsc08=lsc_file.lsc08, tabIndex=24;
+ComboBox lsb06=formonly.lsb06 type VARCHAR, tabIndex=11, noEntry, items=(("0", "east"),("1", "south"),("2", "west"),("3", "north"));
+ButtonEdit lsc22=lsc_file.lsc22, action=controlp, tabIndex=25, image="zoom.png";
+Edit oaj02_1=formonly.oaj02_1 type VARCHAR, tabIndex=50, noEntry;
+Edit lsb07=formonly.lsb07 type VARCHAR, tabIndex=12, noEntry;
+Edit lsc09=lsc_file.lsc09, tabIndex=26;
+Edit lsb08=formonly.lsb08 type VARCHAR, tabIndex=13, noEntry;
+Edit lsc23=lsc_file.lsc23, tabIndex=27, noEntry;
+Edit lscuser=lsc_file.lscuser, tabIndex=40, noEntry;
+DateEdit lsccrat=lsc_file.lsccrat, tabIndex=44, noEntry;
+DateEdit lscdate=lsc_file.lscdate, tabIndex=46, noEntry;
+Edit lscgrup=lsc_file.lscgrup, tabIndex=41, noEntry;
+Edit lscmodu=lsc_file.lscmodu, tabIndex=45, noEntry;
+Edit lscoriu=lsc_file.lscoriu, tabIndex=42, noEntry;
+Edit lscorig=lsc_file.lscorig, tabIndex=43, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=47, noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=48;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lsc_file.lscstore,formonly.rtz13,lsc_file.lsc05,lsc_file.lsclegal,formonly.azt02,lsc_file.lsc06,lsc_file.lsc01,formonly.lne14,lsc_file.lsc02,formonly.lne47,lsc_file.lsc03,formonly.lne15,formonly.lne05,lsc_file.lsc07,lsc_file.lsc18,formonly.gec02,lsc_file.lsc08,lsc_file.lsc19,lsc_file.lsc20,lsc_file.lsc09,lsc_file.lsc04,lsc_file.lsc10,formonly.lsb03,formonly.lmb03,lsc_file.lsc11,formonly.lsb04,formonly.lmc04,lsc_file.lsc12,formonly.lsb05,lsc_file.lsc13,formonly.imgmksg,formonly.lsb06,lsc_file.lsc14,formonly.lsb07,lsc_file.lsc15,formonly.lsb08,lsc_file.lsc16,lsc_file.lscuser,lsc_file.lsccrat,lsc_file.lscdate,lsc_file.lscgrup,lsc_file.lscmodu,lsc_file.lscoriu,lsc_file.lscorig,formonly.idx,formonly.cnt,lsc_file.lsc21,lsc_file.lsc22,lsc_file.lsc23,formonly.oaj02,formonly.oaj02_1)
+END -- INSTRUCTIONS
+

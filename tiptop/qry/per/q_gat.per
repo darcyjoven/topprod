@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_gat.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Frequently Used Memo")
+VBox VBox1
+Table s_gat
+{
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+[check|gat01     |gat03                         ]
+
+}
+END -- s_gat
+END -- VBox1
+END -- q_gat
+
+TABLES
+gat_file
+ATTRIBUTES
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gat01=gat_file.gat01, tabIndex=2, title="Table", noEntry;
+Edit gat03=gat_file.gat03, tabIndex=3, title="Table name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gat(formonly.check,gat_file.gat01,gat_file.gat03)
+END -- INSTRUCTIONS
+

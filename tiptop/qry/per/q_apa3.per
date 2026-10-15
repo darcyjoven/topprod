@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_apa3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Temp.Est.Ac to Contra")
+Grid gr3727
+{
+ <T s_apa                                                                                                                                             >
+ [check |apa00          |apc01          |apa54         |apa541        |apa22  |apc02    |amt1                            |amt2                       ]
+ [check |apa00          |apc01          |apa54         |apa541        |apa22  |apc02    |amt1                            |amt2                       ]
+ [check |apa00          |apc01          |apa54         |apa541        |apa22  |apc02    |amt1                            |amt2                       ]
+ [check |apa00          |apc01          |apa54         |apa541        |apa22  |apc02    |amt1                            |amt2                       ]
+ [check |apa00          |apc01          |apa54         |apa541        |apa22  |apc02    |amt1                            |amt2                       ]
+ [check |apa00          |apc01          |apa54         |apa541        |apa22  |apc02    |amt1                            |amt2                       ]
+ [check |apa00          |apc01          |apa54         |apa541        |apa22  |apc02    |amt1                            |amt2                       ]
+ [check |apa00          |apc01          |apa54         |apa541        |apa22  |apc02    |amt1                            |amt2                       ]
+ [check |apa00          |apc01          |apa54         |apa541        |apa22  |apc02    |amt1                            |amt2                       ]
+ [check |apa00          |apc01          |apa54         |apa541        |apa22  |apc02    |amt1                            |amt2                       ]
+ <                                                                                                                                                    >
+
+}
+END -- gr3727
+END -- q_apa3
+
+TABLES
+apa_file,
+apc_file
+ATTRIBUTES
+Table s_apa:s_apa;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit apa00=apa_file.apa00, tabIndex=2, title="Accounts Type", noEntry;
+Edit apc01=apc_file.apc01, tabIndex=3, title="Accounts No.", noEntry, not null, required;
+Edit apa54=apa_file.apa54, tabIndex=4, title="Account No.", noEntry;
+Edit apa541=apa_file.apa541, tabIndex=5, title="Account No.2", noEntry;
+Edit apa22=apa_file.apa22, tabIndex=6, title="Dept", noEntry;
+Edit apc02=apc_file.apc02, tabIndex=7, title="Line No.", noEntry, not null, required;
+Edit amt1=formonly.amt1 type CHAR, tabIndex=8, title="Original Currency$ not Contra", noEntry;
+Edit amt2=formonly.amt2 type CHAR, tabIndex=9, title="Home Currency $ not Contra", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apa(formonly.check,apa_file.apa00,apc_file.apc01,apa_file.apa54,apa_file.apa541,apa_file.apa22,apc_file.apc02,formonly.amt1,formonly.amt2)
+END -- INSTRUCTIONS
+

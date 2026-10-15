@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimg812.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr812")
+VBox vb6
+Grid gr3336
+{
+
+ <G gb9                                                                        >
+  Initial Label Code       [pid01                   ]
+ <                                                                             >
+ <G group01                                                                    >
+  No. of Blank Labels per W/O Printed [cnt          ]
+  Year Identification                 [yearstr      ]
+                                      [t                                      ]
+                                      [code                                   ]
+                                      [size                                   ]
+ <                                                                             >
+}
+END -- gr3336
+Grid gr3337
+{
+[more                                  ]
+
+
+}
+END -- gr3337
+END -- vb6
+END -- aimr812
+
+ATTRIBUTES
+Group gb9:gb9, text="QBE\n";
+ButtonEdit pid01=formonly.pid01 type VARCHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Label Table";
+Group group01:group01, text="INPUT";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=1;
+Edit yearstr=formonly.yearstr type VARCHAR, tabIndex=2;
+CheckBox t=formonly.t type VARCHAR, tabIndex=3, text="Next Page by workstation", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox code=formonly.code type VARCHAR, tabIndex=4, text="Print bar code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox size=formonly.size type VARCHAR, tabIndex=5, text="Use Pattern Label", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pid01,formonly.cnt,formonly.yearstr,formonly.t,formonly.code,formonly.size,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_credit2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Credit Balance")
+Grid gr3882
+{
+ <G group01                                           >
+  Contract Number     [nnp01     ]
+  Credit Bank         [nno02     ]
+  Category            [nnp03     ][nnn02              ]
+ <                                                    >
+ <G group02                                           >
+                      [dummy01][dummy02             ]
+  Omnibus Credit Line [nnp07  ][nnp09               ]
+  Credit              [np072  ][nnp09_2             ]
+  Omnibus Tran.Credit [used_amt1                    ]
+  Transaction Credit  [used_amt2                    ]
+  ----------------------------------------------------
+  Balance             [bal                          ]
+ <                                                    >
+
+}
+END -- gr3882
+END -- s_credit2
+
+ATTRIBUTES
+Group group01:group01;
+Edit nnp01=formonly.nnp01 type CHAR, tabIndex=1;
+Edit nno02=formonly.nno02 type VARCHAR, tabIndex=2;
+Edit nnp03=formonly.nnp03 type CHAR, tabIndex=3;
+Edit nnn02=formonly.nnn02 type VARCHAR, tabIndex=4;
+Group group02:group02;
+Label dummy01:dummy01, text="Curr.";
+Label dummy02:dummy02, text="Line of Credit";
+Edit nnp07=formonly.nnp07 type CHAR, tabIndex=5;
+Edit nnp09=formonly.nnp09 type CHAR, tabIndex=6;
+Edit np072=formonly.np072 type CHAR, tabIndex=7;
+Edit nnp09_2=formonly.nnp09_2 type CHAR, tabIndex=8;
+Edit used_amt1=formonly.used_amt1 type CHAR, tabIndex=9;
+Edit used_amt2=formonly.used_amt2 type CHAR, tabIndex=10;
+Edit bal=formonly.bal type CHAR, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nnp01,formonly.nno02,formonly.nnp03,formonly.nnn02,formonly.nnp07,formonly.nnp09,formonly.np072,formonly.nnp09_2,formonly.used_amt1,formonly.used_amt2,formonly.bal)
+END -- INSTRUCTIONS
+

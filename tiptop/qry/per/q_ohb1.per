@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_ohb1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Sales/Return Note")
+VBox VBox1
+Grid gr3817
+{
+ Accounts Customer  [oha03     ]
+
+
+}
+END -- gr3817
+Table s_ohb
+{
+[check|oha01                 |oha02         |ohb03       |ohb04          |ima02            |ima021             |ohb09        |imd02       |ohb091   |ime03       |ohb092       |ohb917           |ohb60               |ohb14               ]
+[check|oha01                 |oha02         |ohb03       |ohb04          |ima02            |ima021             |ohb09        |imd02       |ohb091   |ime03       |ohb092       |ohb917           |ohb60               |ohb14               ]
+[check|oha01                 |oha02         |ohb03       |ohb04          |ima02            |ima021             |ohb09        |imd02       |ohb091   |ime03       |ohb092       |ohb917           |ohb60               |ohb14               ]
+[check|oha01                 |oha02         |ohb03       |ohb04          |ima02            |ima021             |ohb09        |imd02       |ohb091   |ime03       |ohb092       |ohb917           |ohb60               |ohb14               ]
+[check|oha01                 |oha02         |ohb03       |ohb04          |ima02            |ima021             |ohb09        |imd02       |ohb091   |ime03       |ohb092       |ohb917           |ohb60               |ohb14               ]
+[check|oha01                 |oha02         |ohb03       |ohb04          |ima02            |ima021             |ohb09        |imd02       |ohb091   |ime03       |ohb092       |ohb917           |ohb60               |ohb14               ]
+[check|oha01                 |oha02         |ohb03       |ohb04          |ima02            |ima021             |ohb09        |imd02       |ohb091   |ime03       |ohb092       |ohb917           |ohb60               |ohb14               ]
+[check|oha01                 |oha02         |ohb03       |ohb04          |ima02            |ima021             |ohb09        |imd02       |ohb091   |ime03       |ohb092       |ohb917           |ohb60               |ohb14               ]
+[check|oha01                 |oha02         |ohb03       |ohb04          |ima02            |ima021             |ohb09        |imd02       |ohb091   |ime03       |ohb092       |ohb917           |ohb60               |ohb14               ]
+[check|oha01                 |oha02         |ohb03       |ohb04          |ima02            |ima021             |ohb09        |imd02       |ohb091   |ime03       |ohb092       |ohb917           |ohb60               |ohb14               ]
+}
+END -- s_ohb
+END -- VBox1
+END -- q_ohb1
+
+TABLES
+ime_file,
+imd_file,
+ima_file,
+ohb_file,
+oha_file
+ATTRIBUTES
+Edit oha03=formonly.oha03 type VARCHAR, tabIndex=1;
+CheckBox check=formonly.check type CHAR, tabIndex=2, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oha01=oha_file.oha01, tabIndex=3, title="Sales/Return Note No.", noEntry;
+Edit oha02=oha_file.oha02, tabIndex=4, title="Date", noEntry;
+Edit ohb03=ohb_file.ohb03, tabIndex=5, title="Line No.", noEntry;
+Edit ohb04=ohb_file.ohb04, tabIndex=6, title="Product No.", noEntry;
+Edit ima02=ima_file.ima02, tabIndex=7, title=%"Item Name", noEntry;
+Edit ima021=ima_file.ima021, tabIndex=8, title=%"Item Specification", noEntry;
+Edit ohb09=ohb_file.ohb09, tabIndex=9, title=%"WH";
+Edit imd02=imd_file.imd02, tabIndex=10, title=%"Store Name";
+Edit ohb091=ohb_file.ohb091, tabIndex=11, title="Location", noEntry;
+Edit ime03=ime_file.ime03, tabIndex=12, title=%"Location Name";
+Edit ohb092=ohb_file.ohb092, tabIndex=13, title=%"Lot No.";
+Edit ohb917=ohb_file.ohb917, tabIndex=14, title="Sales/Return Qty", noEntry, not null, required;
+Edit ohb60=ohb_file.ohb60, tabIndex=15, title="Allowance Qty Issued", noEntry, not null, required;
+Edit ohb14=ohb_file.ohb14, tabIndex=16, title=%"Amt Excl. Tax", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ohb(formonly.check,oha_file.oha01,oha_file.oha02,ohb_file.ohb03,ohb_file.ohb04,ima_file.ima02,ima_file.ima021,ohb_file.ohb09,imd_file.imd02,ohb_file.ohb091,ime_file.ime03,ohb_file.ohb092,ohb_file.ohb917,ohb_file.ohb60,ohb_file.ohb14)
+SCREEN RECORD Undefined(formonly.oha03)
+END -- INSTRUCTIONS
+

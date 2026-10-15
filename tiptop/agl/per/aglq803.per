@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq803.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq803")
+VBox vb5
+Folder folder01
+Page page01(text="Main")
+HBox hb5
+Grid gr2554
+{
+ Book No.            [aed00     ]
+ Account #           [aed01                         ]
+ Account Name        [aag02                                            ]
+ Year                [aed03     ]
+}
+END -- gr2554
+Grid gr2555
+{
+ Trans.Code          [aed011    ]
+ Transaction Type    [aed012    ][ahe02   ]
+ Transaction Value   [aed02               ]
+ Transaction Desc    [aee04                        ]
+}
+END -- gr2555
+END -- hb5
+END -- page01
+END -- folder01
+Table s_aed(unsortableColumns)
+{
+[seq    |aed05                 |aed06                  |summ            ]
+[seq    |aed05                 |aed06                  |summ            ]
+[seq    |aed05                 |aed06                  |summ            ]
+[seq    |aed05                 |aed06                  |summ            ]
+[seq    |aed05                 |aed06                  |summ            ]
+[seq    |aed05                 |aed06                  |summ            ]
+[seq    |aed05                 |aed06                  |summ            ]
+[seq    |aed05                 |aed06                  |summ            ]
+[seq    |aed05                 |aed06                  |summ            ]
+[seq    |aed05                 |aed06                  |summ            ]
+
+}
+END -- s_aed
+Grid gr2556
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2556
+END -- vb5
+END -- aglq803
+
+TABLES
+aed_file
+ATTRIBUTES
+ButtonEdit aed00=aed_file.aed00, action=controlp, tabIndex=15, not null, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+ButtonEdit aed01=aed_file.aed01, action=controlp, tabIndex=1, image="zoom";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+Edit aed03=aed_file.aed03, tabIndex=3;
+Edit aed011=aed_file.aed011, tabIndex=4;
+ButtonEdit aed012=aed_file.aed012, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+Edit ahe02=formonly.ahe02 type CHAR, tabIndex=6, noEntry;
+Edit aed02=aed_file.aed02, tabIndex=7;
+Edit aee04=formonly.aee04 type CHAR, tabIndex=8, noEntry;
+Edit seq=formonly.seq type CHAR, tabIndex=9, title="Period", noEntry;
+Edit aed05=aed_file.aed05, tabIndex=10, title="Debit Transaction Amt", noEntry;
+Edit aed06=aed_file.aed06, tabIndex=11, title="Credit Transaction Amt", noEntry;
+Edit summ=formonly.summ type CHAR, tabIndex=12, title="Balance", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aed(formonly.seq,aed_file.aed05,aed_file.aed06,formonly.summ)
+SCREEN RECORD Undefined(aed_file.aed00,aed_file.aed01,formonly.aag02,aed_file.aed03,aed_file.aed011,aed_file.aed012,formonly.ahe02,aed_file.aed02,formonly.aee04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

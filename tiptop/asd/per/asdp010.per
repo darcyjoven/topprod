@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdp010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asdp010")
+VBox VBox1
+Grid gr368
+{
+ <G group01                                                                  >
+  Calculating Year/Month[yy   ]/[mm]
+  Base Date             [dd          ]
+ <                                                                           >
+ <G group02                                                                  >
+  [dummy01         ]
+  [dummy02                                                                  ]
+  [dummy03                                                                  ]
+  [dummy04                                                                  ]
+ <                                                                           >
+
+}
+END -- gr368
+Grid gr369
+{
+ [g_bgjob                                                      ]
+
+}
+END -- gr369
+END -- VBox1
+END -- asdp010
+
+ATTRIBUTES
+Group group01:group01;
+Edit yy=formonly.yy type CHAR, tabIndex=1;
+Edit mm=formonly.mm type CHAR, tabIndex=2;
+DateEdit dd=formonly.dd type DATE, tabIndex=3;
+Group group02:group02;
+Label dummy01:dummy01, text="NOTICE:";
+Label dummy02:dummy02, text="1.Before run it, Confirm Item Master (Low Level Code)all Correct";
+Label dummy03:dummy03, text="2.No Transaction Control, so if any Error Message Displays, just Re-run it";
+Label dummy04:dummy04, text="3.For Costg.Mtd 0, use Last Per Std.Cost";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=4, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.dd,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

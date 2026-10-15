@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_feldtype.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_feldtype")
+VBox VBox1
+Folder pc747
+Page page01(text="Page01")
+Table s_gck
+{
+[gck01         |gck02           |gck03           |gck04        |gck05    |zx02     |gck06      ]
+[gck01         |gck02           |gck03           |gck04        |gck05    |zx02     |gck06      ]
+[gck01         |gck02           |gck03           |gck04        |gck05    |zx02     |gck06      ]
+[gck01         |gck02           |gck03           |gck04        |gck05    |zx02     |gck06      ]
+[gck01         |gck02           |gck03           |gck04        |gck05    |zx02     |gck06      ]
+[gck01         |gck02           |gck03           |gck04        |gck05    |zx02     |gck06      ]
+[gck01         |gck02           |gck03           |gck04        |gck05    |zx02     |gck06      ]
+[gck01         |gck02           |gck03           |gck04        |gck05    |zx02     |gck06      ]
+[gck01         |gck02           |gck03           |gck04        |gck05    |zx02     |gck06      ]
+[gck01         |gck02           |gck03           |gck04        |gck05    |zx02     |gck06      ]
+
+}
+END -- s_gck
+END -- page01
+END -- pc747
+Grid gr3195
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3195
+END -- VBox1
+END -- p_feldtype
+
+TABLES
+gck_file
+ATTRIBUTES
+Edit gck01=gck_file.gck01, tabIndex=1, title="Field AttrNo.", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit gck02=gck_file.gck02, tabIndex=2, title="Attr ShortName", not null, required;
+Edit gck03=gck_file.gck03, tabIndex=3, title="Data Type", not null, required;
+Edit gck04=gck_file.gck04, tabIndex=4, title="Description";
+Edit gck05=gck_file.gck05, tabIndex=5, title="Modifier", noEntry;
+Edit zx02=formonly.zx02 type CHAR, tabIndex=6, title="Name", noEntry;
+DateEdit gck06=gck_file.gck06, tabIndex=7, title="Modify Date", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gck(gck_file.gck01,gck_file.gck02,gck_file.gck03,gck_file.gck04,gck_file.gck05,formonly.zx02,gck_file.gck06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,121 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq930.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq930")
+VBox vb73
+Folder folder01
+Page page01(text="Main")
+VBox vb72
+HBox HBox1
+Grid gr2298
+{
+ Order No.    [oea01             ]
+ Order Date   [oea02       ]
+
+}
+END -- gr2298
+Grid gr2299
+{
+ Customer #   [oea03       ]
+ Ship To      [oea04       ]
+
+}
+END -- gr2299
+Grid gr2300
+{
+ Employee     [oea14       ]
+ Department   [oea15       ]
+
+}
+END -- gr2300
+Grid gr2301
+{
+ Confirm       [oeaconf   ]
+
+
+}
+END -- gr2301
+END -- HBox1
+Grid gr2302
+{
+ [dumm]     [dummy02             ]     [dummy03]     [dummy04         ]     [dummy05         ]     [dummy08             ]     [dummy06         ]     [dummy07          ]
+ [oeb0]     [oeb04               ]     [oeb05  ]     [oeb12           ]     [oeb24           ]     [acd_q               ]     [oeb25           ]     [oeb15            ]
+}
+END -- gr2302
+END -- vb72
+END -- page01
+END -- folder01
+Table s_ozf
+{
+[oga02         |oga01            |ogb03    |ozf09        |ozf04             |ozf05             |ozf07             |ozf08       ]
+[oga02         |oga01            |ogb03    |ozf09        |ozf04             |ozf05             |ozf07             |ozf08       ]
+[oga02         |oga01            |ogb03    |ozf09        |ozf04             |ozf05             |ozf07             |ozf08       ]
+[oga02         |oga01            |ogb03    |ozf09        |ozf04             |ozf05             |ozf07             |ozf08       ]
+[oga02         |oga01            |ogb03    |ozf09        |ozf04             |ozf05             |ozf07             |ozf08       ]
+[oga02         |oga01            |ogb03    |ozf09        |ozf04             |ozf05             |ozf07             |ozf08       ]
+[oga02         |oga01            |ogb03    |ozf09        |ozf04             |ozf05             |ozf07             |ozf08       ]
+[oga02         |oga01            |ogb03    |ozf09        |ozf04             |ozf05             |ozf07             |ozf08       ]
+[oga02         |oga01            |ogb03    |ozf09        |ozf04             |ozf05             |ozf07             |ozf08       ]
+[oga02         |oga01            |ogb03    |ozf09        |ozf04             |ozf05             |ozf07             |ozf08       ]
+}
+END -- s_ozf
+Grid gr2303
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2303
+END -- vb73
+END -- axmq930
+
+TABLES
+ozf_file,
+oeb_file,
+oea_file,
+ogb_file,
+oga_file
+ATTRIBUTES
+Edit oea01=oea_file.oea01, tabIndex=1;
+DateEdit oea02=oea_file.oea02, tabIndex=2;
+ButtonEdit oea03=oea_file.oea03, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit oea04=oea_file.oea04, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit oea14=oea_file.oea14, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit oea15=oea_file.oea15, action=controlp, tabIndex=6, image="zoom";
+ComboBox oeaconf=oea_file.oeaconf, tabIndex=7, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Void"));
+Label dumm:dummy01, text="Line#";
+Label dummy02:dummy02, text="Product No.";
+Label dummy03:dummy03, text="Unit";
+Label dummy04:dummy04, text="Qty";
+Label dummy05:dummy05, text="Qty Order";
+Label dummy08:dummy08, text="Check/Acc. Qty";
+Label dummy06:dummy06, text="Rreturn Qty";
+Label dummy07:dummy07, text="Del Date";
+Edit oeb0=oeb_file.oeb03, tabIndex=8;
+ButtonEdit oeb04=oeb_file.oeb04, action=controlp, tabIndex=9, image="zoom";
+ButtonEdit oeb05=oeb_file.oeb05, action=controlp, tabIndex=10, image="zoom";
+Edit oeb12=oeb_file.oeb12, tabIndex=11, not null, required;
+Edit oeb24=oeb_file.oeb24, tabIndex=12, not null, required;
+Edit acd_q=formonly.acd_q type DECIMAL, tabIndex=13;
+Edit oeb25=oeb_file.oeb25, tabIndex=14, not null, required;
+DateEdit oeb15=oeb_file.oeb15, tabIndex=15;
+DateEdit oga02=oga_file.oga02, tabIndex=16, title="Delivery Date";
+Edit oga01=oga_file.oga01, tabIndex=17, title="Advice No.";
+Edit ogb03=ogb_file.ogb03, tabIndex=18, title="Line No.";
+Edit ozf09=ozf_file.ozf09, tabIndex=19, title="Arrival Time";
+Edit ozf04=ozf_file.ozf04, tabIndex=20, title="Port of Departure";
+Edit ozf05=ozf_file.ozf05, tabIndex=21, title="Port of Unloading";
+Edit ozf07=ozf_file.ozf07, tabIndex=22, title="Goods Information";
+Edit ozf08=ozf_file.ozf08, tabIndex=23, title="Goods Place";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ozf(oga_file.oga02,oga_file.oga01,ogb_file.ogb03,ozf_file.ozf09,ozf_file.ozf04,ozf_file.ozf05,ozf_file.ozf07,ozf_file.ozf08)
+SCREEN RECORD Undefined(oea_file.oea01,oea_file.oea02,oea_file.oea03,oea_file.oea04,oea_file.oea14,oea_file.oea15,oea_file.oeaconf,oeb_file.oeb03,oeb_file.oeb04,oeb_file.oeb05,oeb_file.oeb12,oeb_file.oeb24,formonly.acd_q,oeb_file.oeb25,oeb_file.oeb15,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

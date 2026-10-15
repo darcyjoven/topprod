@@ -1,0 +1,111 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsq610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amsq610")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+VBox VBox2
+HBox HBox1
+Grid gr3969
+{
+ Resource#           [rqa01     ]
+ Description         [rpf02                 ]
+ Version#            [rqa02     ]
+}
+END -- gr3969
+Grid gr3970
+{
+ Inital Range        [rqa03       ][rqa04       ]
+ Memo                [rqa07                 ]
+
+}
+END -- gr3970
+END -- HBox1
+HBox HBox2
+Group gb2902
+Grid gr3971
+{
+[rpf07                              ]
+ Resource Qty  [rpf04               ]
+ Capacity Unit [rpf03               ]
+}
+END -- gr3971
+END -- gb2902
+Group gb2903
+Grid gr3972
+{
+ Avai.Capacity [rqa05               ]
+ Used Capacity [rqa06               ]
+[over                               ]
+}
+END -- gr3972
+END -- gb2903
+END -- HBox2
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_rqb
+{
+[rqb062             |rqb05  |t5_name |rqb06           |rqb01|rqb065              |rqb063          |rqb064         |rqb08         |rqb09          ]
+[rqb062             |rqb05  |t5_name |rqb06           |rqb01|rqb065              |rqb063          |rqb064         |rqb08         |rqb09          ]
+[rqb062             |rqb05  |t5_name |rqb06           |rqb01|rqb065              |rqb063          |rqb064         |rqb08         |rqb09          ]
+[rqb062             |rqb05  |t5_name |rqb06           |rqb01|rqb065              |rqb063          |rqb064         |rqb08         |rqb09          ]
+[rqb062             |rqb05  |t5_name |rqb06           |rqb01|rqb065              |rqb063          |rqb064         |rqb08         |rqb09          ]
+[rqb062             |rqb05  |t5_name |rqb06           |rqb01|rqb065              |rqb063          |rqb064         |rqb08         |rqb09          ]
+[rqb062             |rqb05  |t5_name |rqb06           |rqb01|rqb065              |rqb063          |rqb064         |rqb08         |rqb09          ]
+[rqb062             |rqb05  |t5_name |rqb06           |rqb01|rqb065              |rqb063          |rqb064         |rqb08         |rqb09          ]
+[rqb062             |rqb05  |t5_name |rqb06           |rqb01|rqb065              |rqb063          |rqb064         |rqb08         |rqb09          ]
+[rqb062             |rqb05  |t5_name |rqb06           |rqb01|rqb065              |rqb063          |rqb064         |rqb08         |rqb09          ]
+[rqb062             |rqb05  |t5_name |rqb06           |rqb01|rqb065              |rqb063          |rqb064         |rqb08         |rqb09          ]
+[rqb062             |rqb05  |t5_name |rqb06           |rqb01|rqb065              |rqb063          |rqb064         |rqb08         |rqb09          ]
+
+}
+END -- s_rqb
+Grid gr3973
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3973
+END -- VBox1
+END -- amsq610
+
+TABLES
+rqb_file
+ATTRIBUTES
+Edit rqa01=formonly.rqa01 type VARCHAR, tabIndex=1, noEntry;
+Edit rpf02=formonly.rpf02 type VARCHAR, tabIndex=2, noEntry;
+Edit rqa02=formonly.rqa02 type VARCHAR, tabIndex=3, noEntry;
+DateEdit rqa03=formonly.rqa03 type DATE, tabIndex=4, noEntry;
+DateEdit rqa04=formonly.rqa04 type DATE, tabIndex=5, noEntry;
+Edit rqa07=formonly.rqa07 type VARCHAR, tabIndex=6, noEntry;
+CheckBox rpf07=formonly.rpf07 type VARCHAR, tabIndex=7, text="Rough Capacity Include", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rpf04=formonly.rpf04 type DECIMAL, tabIndex=8, noEntry;
+Edit rpf03=formonly.rpf03 type VARCHAR, tabIndex=9, noEntry;
+Edit rqa05=formonly.rqa05 type DECIMAL, tabIndex=10, noEntry;
+Edit rqa06=formonly.rqa06 type DECIMAL, tabIndex=11, noEntry;
+CheckBox over=formonly.over type VARCHAR, tabIndex=12, text="Over Use", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rqb062=rqb_file.rqb062, tabIndex=13, title="Demand/Supply Date";
+Edit rqb05=rqb_file.rqb05, tabIndex=14, title="Cate.", comment=" 64:Work Order   65:MPS   66:PLM";
+Edit t5_name=formonly.t5_name type CHAR, tabIndex=15, title="Desc.";
+Edit rqb06=rqb_file.rqb06, tabIndex=16, title="Source Doc#";
+Edit rqb01=rqb_file.rqb061, tabIndex=17, title="Ln#";
+Edit rqb065=rqb_file.rqb065, tabIndex=18, title="Item#";
+Edit rqb063=rqb_file.rqb063, tabIndex=19, title="Operation Date";
+Edit rqb064=rqb_file.rqb064, tabIndex=20, title="Complete Date";
+Edit rqb08=rqb_file.rqb08, tabIndex=21, title="Qty";
+Edit rqb09=rqb_file.rqb09, tabIndex=22, title="Capacity Use";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rqb(rqb_file.rqb062,rqb_file.rqb05,formonly.t5_name,rqb_file.rqb06,rqb_file.rqb061,rqb_file.rqb065,rqb_file.rqb063,rqb_file.rqb064,rqb_file.rqb08,rqb_file.rqb09)
+SCREEN RECORD Undefined(formonly.rqa01,formonly.rpf02,formonly.rqa02,formonly.rqa03,formonly.rqa04,formonly.rqa07,formonly.rpf07,formonly.rpf04,formonly.rpf03,formonly.rqa05,formonly.rqa06,formonly.over,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

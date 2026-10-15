@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat1103")
+VBox VBox1
+Grid gr2265
+{
+ Sale Doc No.        [fbe01           ]              Bill No.         [fbe11     ]
+
+}
+END -- gr2265
+Table s_ome
+{
+[ome01           |ome02         |occ02          |ome211     |ome59               |ome59x              |ome59t              ]
+[ome01           |ome02         |occ02          |ome211     |ome59               |ome59x              |ome59t              ]
+[ome01           |ome02         |occ02          |ome211     |ome59               |ome59x              |ome59t              ]
+[ome01           |ome02         |occ02          |ome211     |ome59               |ome59x              |ome59t              ]
+[ome01           |ome02         |occ02          |ome211     |ome59               |ome59x              |ome59t              ]
+
+}
+END -- s_ome
+END -- VBox1
+END -- afat1103
+
+TABLES
+ome_file
+ATTRIBUTES
+Edit fbe01=formonly.fbe01 type CHAR, tabIndex=1, noEntry, color = yellow;
+Edit fbe11=formonly.fbe11 type CHAR, tabIndex=2, noEntry, color = yellow;
+Edit ome01=ome_file.ome01, tabIndex=3, title="Invoice#", noEntry, color = yellow;
+Edit ome02=ome_file.ome02, tabIndex=4, title="Invoice Date", noEntry, color = yellow;
+Edit occ02=formonly.occ02 type CHAR, tabIndex=5, title="Customer Name", noEntry, color = yellow;
+Edit ome211=ome_file.ome211, tabIndex=6, title="Tax Rate%", noEntry, color = yellow;
+Edit ome59=ome_file.ome59, tabIndex=7, title="Before Tax Amount", noEntry, not null, required, color = yellow;
+Edit ome59x=ome_file.ome59x, tabIndex=8, title="Tax Amount", noEntry, not null, required, color = yellow;
+Edit ome59t=ome_file.ome59t, tabIndex=9, title="With Tax Amount", noEntry, not null, required, color = yellow;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ome(ome_file.ome01,ome_file.ome02,formonly.occ02,ome_file.ome211,ome_file.ome59,ome_file.ome59x,ome_file.ome59t)
+SCREEN RECORD Undefined(formonly.fbe01,formonly.fbe11)
+END -- INSTRUCTIONS
+

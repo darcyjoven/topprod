@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt410_d.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axmt410_d")
+VBox vb6
+Folder pc1
+Page Page1(text=%"Detail Tax Code")
+Table tb2
+{
+[oeg02|oeb04               |oeb04_n             |oeg03|oeg0|gec02               |oeg05     |oeg06     |oeg07     |oeg08     |oeg08t    |oeg09     ]
+[oeg02|oeb04               |oeb04_n             |oeg03|oeg0|gec02               |oeg05     |oeg06     |oeg07     |oeg08     |oeg08t    |oeg09     ]
+[oeg02|oeb04               |oeb04_n             |oeg03|oeg0|gec02               |oeg05     |oeg06     |oeg07     |oeg08     |oeg08t    |oeg09     ]
+[oeg02|oeb04               |oeb04_n             |oeg03|oeg0|gec02               |oeg05     |oeg06     |oeg07     |oeg08     |oeg08t    |oeg09     ]
+[oeg02|oeb04               |oeb04_n             |oeg03|oeg0|gec02               |oeg05     |oeg06     |oeg07     |oeg08     |oeg08t    |oeg09     ]
+[oeg02|oeb04               |oeb04_n             |oeg03|oeg0|gec02               |oeg05     |oeg06     |oeg07     |oeg08     |oeg08t    |oeg09     ]
+
+}
+END -- tb2
+END -- Page1
+END -- pc1
+Grid gr2
+{
+
+ ---------- Rows [cn2    ] -----------
+
+}
+END -- gr2
+END -- vb6
+END -- axmt410_d
+
+TABLES
+oeg_file,
+oeb_file,
+gec_file
+ATTRIBUTES
+Edit oeg02=oeg_file.oeg02, tabIndex=1, title="Line No.", noEntry;
+Edit oeb04=oeb_file.oeb04, tabIndex=2, title="Product No.", noEntry;
+Edit oeb04_n=formonly.oeb04_n type VARCHAR, tabIndex=12, title="Product Name", noEntry;
+Edit oeg03=oeg_file.oeg03, tabIndex=3, title="Serial No.", noEntry;
+Edit oeg0=oeg_file.oeg04, tabIndex=4, title="Sales Tax Code", noEntry;
+Edit gec02=gec_file.gec02, tabIndex=5, title="Sales Tax Name", noEntry;
+Edit oeg05=oeg_file.oeg05, tabIndex=6, title="Tax Rate%", noEntry;
+Edit oeg06=oeg_file.oeg06, tabIndex=7, title="Fixed Tax Amount", noEntry;
+CheckBox oeg07=oeg_file.oeg07, tabIndex=10, title="Include Tax", valueChecked = "Y", valueUnchecked = "N";
+Edit oeg08=oeg_file.oeg08, tabIndex=9, title="Amt Excl. Tax", noEntry;
+Edit oeg08t=oeg_file.oeg08t, tabIndex=10, title="Amt Excl. Tax", noEntry;
+Edit oeg09=oeg_file.oeg09, tabIndex=11, title="Tax", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oeg(oeg_file.oeg02,oeb_file.oeb04,formonly.oeb04_n,oeg_file.oeg03,oeg_file.oeg04,gec_file.gec02,oeg_file.oeg05,oeg_file.oeg06,oeg_file.oeg07,oeg_file.oeg08,oeg_file.oeg08t,oeg_file.oeg09)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

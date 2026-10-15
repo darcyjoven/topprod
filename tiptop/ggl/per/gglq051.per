@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq051.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="gglq051")
+VBox vb2_
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+ atd01  [atd01       ]  asa02  [asa02       ]
+ atd03  [atd03 ]        aaz641 [aaz641]
+ atd04  [atd04 ]
+ atd02  [atd02       ]  atd02_1[atd02_1                       ]
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Group source(text="source")
+Table tb1
+{
+[atd05     |nml02     |atd06     ]
+[atd05     |nml02     |atd06     ]
+[atd05     |nml02     |atd06     ]
+[atd05     |nml02     |atd06     ]
+[atd05     |nml02     |atd06     ]
+
+}
+END -- tb1
+END -- source
+Group hedatkg(text="hedatkg")
+Table tb1_1
+{
+[atd05_1   |nml02_1   |atd06_1   ]
+[atd05_1   |nml02_1   |atd06_1   ]
+[atd05_1   |nml02_1   |atd06_1   ]
+[atd05_1   |nml02_1   |atd06_1   ]
+[atd05_1   |nml02_1   |atd06_1   ]
+
+}
+END -- tb1_1
+END -- hedatkg
+Grid gr2
+{
+ -----[cnt  ] -----[cn1  ] / [cn2  ]
+
+}
+END -- gr2
+END -- vb2_
+END -- gglq051
+
+ATTRIBUTES
+ButtonEdit atd01=formonly.atd01 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Edit asa02=formonly.asa02 type VARCHAR, tabIndex=6;
+Edit atd03=formonly.atd03 type SMALLINT, tabIndex=1;
+Edit aaz641=formonly.aaz641 type VARCHAR, tabIndex=7;
+Edit atd04=formonly.atd04 type SMALLINT, tabIndex=2;
+ButtonEdit atd02=formonly.atd02 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+Edit atd02_1=formonly.atd02_1 type VARCHAR, tabIndex=5;
+Edit atd05=formonly.atd05 type VARCHAR, tabIndex=9, title="atd05";
+Edit nml02=formonly.nml02 type VARCHAR, tabIndex=10, title="nml02";
+Edit atd06=formonly.atd06 type DECIMAL, tabIndex=8, title="atd06";
+Edit atd05_1=formonly.atd05_1 type VARCHAR, tabIndex=12, title="atd05_1";
+Edit nml02_1=formonly.nml02_1 type VARCHAR, tabIndex=13, title="nml02_1";
+Edit atd06_1=formonly.atd06_1 type DECIMAL, tabIndex=11, title="atd06_1";
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+Edit cn1=formonly.cn1 type CHAR, tabIndex=15;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_atd1(formonly.atd05,formonly.nml02,formonly.atd06)
+SCREEN RECORD s_atd2(formonly.atd05_1,formonly.nml02_1,formonly.atd06_1)
+SCREEN RECORD Undefined(formonly.atd01,formonly.asa02,formonly.aaz641,formonly.atd03,formonly.atd04,formonly.atd02,formonly.atd02_1,formonly.cnt,formonly.cn1,formonly.cn2)
+END -- INSTRUCTIONS
+

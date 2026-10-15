@@ -1,0 +1,90 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr520.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr520")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                                      >
+  Logistics Code[azp01             ]
+          [dummy1                          ]
+ <                                                              >
+}
+END -- Grid1
+Grid gr5125
+{
+ <G group01                                                     >
+  P/O No.       [pmm01             ]
+  Purchase Date [pmm04             ]
+  Supplier      [pmm09             ]
+  Item No.      [pmn04             ]
+  Delivery Date [pmn33             ]
+ <                                                              >
+}
+END -- gr5125
+Group group02(text="INPUT")
+VBox VBox2
+Grid gr5126
+{
+ <G group03                                                     >
+ [s1              ]  [s2               ]  [s3                ]
+ [t1              ]  [t2               ]  [t3                ]
+ [u1              ]  [u2               ]  [u3                ]
+ <                                                              >
+}
+END -- gr5126
+Grid gr5127
+{
+ Delivery In Advance Days Allowed [a                   ]
+ Over-Delivery Ratio Allowed      [c                   ]%
+ Back Order Days Allowed          [b                   ]
+ Short-Delivery Ratio Allowed     [d                   ]%
+
+}
+END -- gr5127
+END -- VBox2
+END -- group02
+Grid gr5128
+{
+ [more                                                            ]
+
+}
+END -- gr5128
+END -- VBox1
+END -- apmr520
+
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+ButtonEdit azp01=formonly.azp01 type VARCHAR, action=controlp, tabIndex=15, image="zoom.png";
+Label dummy1:dummy1, text="LRDMDS,QY\'|\'H\';\'GK";
+Group group01:group01, text="QBE-2";
+ButtonEdit pmm01=formonly.pmm01 type VARCHAR, action=controlp, tabIndex=16, image="zoom";
+DateEdit pmm04=formonly.pmm04 type DATE, tabIndex=16;
+ButtonEdit pmm09=formonly.pmm09 type VARCHAR, action=controlp, tabIndex=16, image="zoom";
+ButtonEdit pmn04=formonly.pmn04 type VARCHAR, action=controlp, tabIndex=16, image="zoom";
+DateEdit pmn33=formonly.pmn33 type DATE, tabIndex=16;
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=3, items=(("1", "P/O No."),("2", "Purchase Date"),("3", "Supplier"),("4", "Item No."),("5", "Delivery Date"),("6", "Logistics Code"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=4, items=(("1", "P/O No."),("2", "Purchase Date"),("3", "Supplier"),("4", "Item No."),("5", "Delivery Date"),("6", "Logistics Code"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=4, items=(("1", "P/O No."),("2", "Purchase Date"),("3", "Supplier"),("4", "Item No."),("5", "Delivery Date"),("6", "Logistics Code"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=5, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=5, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=6, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=7, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=8, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=9, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit a=formonly.a type SMALLINT, tabIndex=10;
+Edit c=formonly.c type DECIMAL, tabIndex=11;
+Edit b=formonly.b type SMALLINT, tabIndex=12;
+Edit d=formonly.d type DECIMAL, tabIndex=13;
+CheckBox more=formonly.more type VARCHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.pmm01,formonly.pmm04,formonly.pmm09,formonly.pmn04,formonly.pmn33,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.a,formonly.c,formonly.b,formonly.d,formonly.more)
+END -- INSTRUCTIONS
+

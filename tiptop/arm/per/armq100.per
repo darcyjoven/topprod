@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armq100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armq100")
+Folder pc84
+Page page01(text="Page01")
+VBox VBox1
+Table s_rmc
+{
+[rmc01           |rmc02|rmc04          |rmc06                   |rmc061                  |rmc05|rmc31      |rmc23           |rmc07          |rmc21           |rmc22           |rmc14    |rmc08    |rma03      |rma04                 |rmc32               |rmc26           |rmc29      |rmc30      ]
+[rmc01           |rmc02|rmc04          |rmc06                   |rmc061                  |rmc05|rmc31      |rmc23           |rmc07          |rmc21           |rmc22           |rmc14    |rmc08    |rma03      |rma04                 |rmc32               |rmc26           |rmc29      |rmc30      ]
+[rmc01           |rmc02|rmc04          |rmc06                   |rmc061                  |rmc05|rmc31      |rmc23           |rmc07          |rmc21           |rmc22           |rmc14    |rmc08    |rma03      |rma04                 |rmc32               |rmc26           |rmc29      |rmc30      ]
+[rmc01           |rmc02|rmc04          |rmc06                   |rmc061                  |rmc05|rmc31      |rmc23           |rmc07          |rmc21           |rmc22           |rmc14    |rmc08    |rma03      |rma04                 |rmc32               |rmc26           |rmc29      |rmc30      ]
+[rmc01           |rmc02|rmc04          |rmc06                   |rmc061                  |rmc05|rmc31      |rmc23           |rmc07          |rmc21           |rmc22           |rmc14    |rmc08    |rma03      |rma04                 |rmc32               |rmc26           |rmc29      |rmc30      ]
+[rmc01           |rmc02|rmc04          |rmc06                   |rmc061                  |rmc05|rmc31      |rmc23           |rmc07          |rmc21           |rmc22           |rmc14    |rmc08    |rma03      |rma04                 |rmc32               |rmc26           |rmc29      |rmc30      ]
+[rmc01           |rmc02|rmc04          |rmc06                   |rmc061                  |rmc05|rmc31      |rmc23           |rmc07          |rmc21           |rmc22           |rmc14    |rmc08    |rma03      |rma04                 |rmc32               |rmc26           |rmc29      |rmc30      ]
+[rmc01           |rmc02|rmc04          |rmc06                   |rmc061                  |rmc05|rmc31      |rmc23           |rmc07          |rmc21           |rmc22           |rmc14    |rmc08    |rma03      |rma04                 |rmc32               |rmc26           |rmc29      |rmc30      ]
+[rmc01           |rmc02|rmc04          |rmc06                   |rmc061                  |rmc05|rmc31      |rmc23           |rmc07          |rmc21           |rmc22           |rmc14    |rmc08    |rma03      |rma04                 |rmc32               |rmc26           |rmc29      |rmc30      ]
+[rmc01           |rmc02|rmc04          |rmc06                   |rmc061                  |rmc05|rmc31      |rmc23           |rmc07          |rmc21           |rmc22           |rmc14    |rmc08    |rma03      |rma04                 |rmc32               |rmc26           |rmc29      |rmc30      ]
+
+}
+END -- s_rmc
+Grid gr351
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr351
+END -- VBox1
+END -- page01
+END -- pc84
+END -- armq100
+
+TABLES
+rmc_file,
+rma_file
+ATTRIBUTES
+Edit rmc01=rmc_file.rmc01, tabIndex=1, title="RMA No.", upShift;
+Edit rmc02=rmc_file.rmc02, tabIndex=2, title="Ret#";
+Edit rmc04=rmc_file.rmc04, tabIndex=3, title="Product No.";
+Edit rmc06=rmc_file.rmc06, tabIndex=4, title="Part Name";
+Edit rmc061=rmc_file.rmc061, tabIndex=5, title="Specification";
+Edit rmc05=rmc_file.rmc05, tabIndex=6, title="Unit";
+Edit rmc31=rmc_file.rmc31, tabIndex=7, title="Qty";
+Edit rmc23=rmc_file.rmc23, tabIndex=8, title="Ref.Doc #", upShift;
+Edit rmc07=rmc_file.rmc07, tabIndex=9, title="S/N";
+ComboBox rmc21=rmc_file.rmc21, tabIndex=10, title="Charge Off Code", queryEditable, items=(("0", %"Unch.Off"),("1", %"R-Del Ch.O"),("2", %"Tr to S/R Ch.O"),("3", %"Scrp Ch.O"));
+Edit rmc22=rmc_file.rmc22, tabIndex=11, title="Charge Off Date";
+ComboBox rmc14=rmc_file.rmc14, tabIndex=12, title="Fix Code", queryEditable, items=(("0", %"Unfix"),("1", %"Fix"),("2", %"No Fix"),("3", %"Tr to S/R"),("4", %"Scrp"),("5", %"Fixd&Packd"),("6", %"Unfix&Packd"));
+Edit rmc08=rmc_file.rmc08, tabIndex=13, title="Fix Date";
+Edit rma03=rma_file.rma03, tabIndex=14, title="Customer #", upShift;
+Edit rma04=rma_file.rma04, tabIndex=15, title="Customer Abbreviation";
+Edit rmc32=rmc_file.rmc32, tabIndex=16, title="Extra Description";
+Edit rmc26=rmc_file.rmc26, tabIndex=17, title="Cust Confirm No", upShift;
+DateEdit rmc29=rmc_file.rmc29, tabIndex=18, title="Issue Date";
+DateEdit rmc30=rmc_file.rmc30, tabIndex=19, title="Reply Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rmc(rmc_file.rmc01,rmc_file.rmc02,rmc_file.rmc04,rmc_file.rmc06,rmc_file.rmc061,rmc_file.rmc05,rmc_file.rmc31,rmc_file.rmc23,rmc_file.rmc07,rmc_file.rmc21,rmc_file.rmc22,rmc_file.rmc14,rmc_file.rmc08,rma_file.rma03,rma_file.rma04,rmc_file.rmc32,rmc_file.rmc26,rmc_file.rmc29,rmc_file.rmc30)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp220.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp210")
+VBox VBox1
+Group group01(text="P/O Sheet")
+Table s_pmm
+{
+[a  |pmm04           |pmm01       |pmm02     |pmm09        |pmc03    |pmm22    |pmm21     |pmm12     |gen02     |pmm13     |gem02     |pmn02     |pmn04     |pmn041      |pmn07     |pmn20     |pmn50     |pmn53     |pmn58     ]
+[a  |pmm04           |pmm01       |pmm02     |pmm09        |pmc03    |pmm22    |pmm21     |pmm12     |gen02     |pmm13     |gem02     |pmn02     |pmn04     |pmn041      |pmn07     |pmn20     |pmn50     |pmn53     |pmn58     ]
+[a  |pmm04           |pmm01       |pmm02     |pmm09        |pmc03    |pmm22    |pmm21     |pmm12     |gen02     |pmm13     |gem02     |pmn02     |pmn04     |pmn041      |pmn07     |pmn20     |pmn50     |pmn53     |pmn58     ]
+[a  |pmm04           |pmm01       |pmm02     |pmm09        |pmc03    |pmm22    |pmm21     |pmm12     |gen02     |pmm13     |gem02     |pmn02     |pmn04     |pmn041      |pmn07     |pmn20     |pmn50     |pmn53     |pmn58     ]
+[a  |pmm04           |pmm01       |pmm02     |pmm09        |pmc03    |pmm22    |pmm21     |pmm12     |gen02     |pmm13     |gem02     |pmn02     |pmn04     |pmn041      |pmn07     |pmn20     |pmn50     |pmn53     |pmn58     ]
+[a  |pmm04           |pmm01       |pmm02     |pmm09        |pmc03    |pmm22    |pmm21     |pmm12     |gen02     |pmm13     |gem02     |pmn02     |pmn04     |pmn041      |pmn07     |pmn20     |pmn50     |pmn53     |pmn58     ]
+[a  |pmm04           |pmm01       |pmm02     |pmm09        |pmc03    |pmm22    |pmm21     |pmm12     |gen02     |pmm13     |gem02     |pmn02     |pmn04     |pmn041      |pmn07     |pmn20     |pmn50     |pmn53     |pmn58     ]
+[a  |pmm04           |pmm01       |pmm02     |pmm09        |pmc03    |pmm22    |pmm21     |pmm12     |gen02     |pmm13     |gem02     |pmn02     |pmn04     |pmn041      |pmn07     |pmn20     |pmn50     |pmn53     |pmn58     ]
+[a  |pmm04           |pmm01       |pmm02     |pmm09        |pmc03    |pmm22    |pmm21     |pmm12     |gen02     |pmm13     |gem02     |pmn02     |pmn04     |pmn041      |pmn07     |pmn20     |pmn50     |pmn53     |pmn58     ]
+[a  |pmm04           |pmm01       |pmm02     |pmm09        |pmc03    |pmm22    |pmm21     |pmm12     |gen02     |pmm13     |gem02     |pmn02     |pmn04     |pmn041      |pmn07     |pmn20     |pmn50     |pmn53     |pmn58     ]
+
+}
+END -- s_pmm
+END -- group01
+Group group02(text="Distributed")
+Table s_rvb
+{
+[rvb01            |rvb02    |rvb34             |rvb05               |ima02                |ima021                         |pmn07a       |rvb08       |rvb33       |rvb30        |rvb919                ]
+[rvb01            |rvb02    |rvb34             |rvb05               |ima02                |ima021                         |pmn07a       |rvb08       |rvb33       |rvb30        |rvb919                ]
+[rvb01            |rvb02    |rvb34             |rvb05               |ima02                |ima021                         |pmn07a       |rvb08       |rvb33       |rvb30        |rvb919                ]
+[rvb01            |rvb02    |rvb34             |rvb05               |ima02                |ima021                         |pmn07a       |rvb08       |rvb33       |rvb30        |rvb919                ]
+[rvb01            |rvb02    |rvb34             |rvb05               |ima02                |ima021                         |pmn07a       |rvb08       |rvb33       |rvb30        |rvb919                ]
+[rvb01            |rvb02    |rvb34             |rvb05               |ima02                |ima021                         |pmn07a       |rvb08       |rvb33       |rvb30        |rvb919                ]
+[rvb01            |rvb02    |rvb34             |rvb05               |ima02                |ima021                         |pmn07a       |rvb08       |rvb33       |rvb30        |rvb919                ]
+[rvb01            |rvb02    |rvb34             |rvb05               |ima02                |ima021                         |pmn07a       |rvb08       |rvb33       |rvb30        |rvb919                ]
+[rvb01            |rvb02    |rvb34             |rvb05               |ima02                |ima021                         |pmn07a       |rvb08       |rvb33       |rvb30        |rvb919                ]
+[rvb01            |rvb02    |rvb34             |rvb05               |ima02                |ima021                         |pmn07a       |rvb08       |rvb33       |rvb30        |rvb919                ]
+
+}
+END -- s_rvb
+END -- group02
+Grid gr2187
+{
+  ---------- Rows [cn2   ]-[cn3   ] ----------  [view][retu]
+
+}
+END -- gr2187
+END -- VBox1
+END -- apmp220
+
+TABLES
+rvb_file
+ATTRIBUTES
+CheckBox a=formonly.a type VARCHAR, tabIndex=10, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit pmm04=formonly.pmm04 type DATE, tabIndex=6, title="P/O Date", noEntry;
+ButtonEdit pmm01=formonly.pmm01 type CHAR, action=controlp, tabIndex=2, title="P/O No.", noEntry, image="zoom";
+ComboBox pmm02=formonly.pmm02 type CHAR, tabIndex=33, title="Document Property", noEntry, items=(("CAP", "Capital"),("EXP", "Expense"),("REG", "Regular"),("SUB", "Subcontracting"),("TAP", "Sub PO for"),("TRI", "Multi-angle Trade"));
+ButtonEdit pmm09=formonly.pmm09 type CHAR, action=controlp, tabIndex=1, title="Vendor", noEntry, image="zoom";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=3, title="Vendor Name", noEntry;
+ButtonEdit pmm22=formonly.pmm22 type CHAR, action=controlp, tabIndex=4, title="Currency", noEntry, image="zoom";
+ButtonEdit pmm21=formonly.pmm21 type CHAR, action=controlp, tabIndex=5, title="Tax", noEntry, image="zoom";
+ButtonEdit pmm12=formonly.pmm12 type CHAR, action=controlp, tabIndex=7, title="P/O Employee", noEntry, image="zoom";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=11, title="P/R Emp Name", noEntry;
+ButtonEdit pmm13=formonly.pmm13 type CHAR, action=controlp, tabIndex=12, title="Department", noEntry, image="zoom";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=13, title="Dept Name", noEntry;
+Edit pmn02=formonly.pmn02 type CHAR, tabIndex=32, title="Line#", noEntry, invisible;
+ButtonEdit pmn04=formonly.pmn04 type CHAR, action=controlp, tabIndex=14, title="Part No", noEntry, image="zoom";
+Edit pmn041=formonly.pmn041 type CHAR, tabIndex=15, title="Part Name", noEntry;
+ButtonEdit pmn07=formonly.pmn07 type CHAR, action=controlp, tabIndex=16, title="Pur Unit", noEntry, image="zoom";
+Edit pmn20=formonly.pmn20 type CHAR, tabIndex=17, title="Pur Qty", noEntry;
+Edit pmn50=formonly.pmn50 type CHAR, tabIndex=18, title="Deli Qty", noEntry;
+Edit pmn53=formonly.pmn53 type CHAR, tabIndex=19, title="Sto-in Qty";
+Edit pmn58=formonly.pmn58 type CHAR, tabIndex=20, title="Ret Qty";
+ButtonEdit rvb01=formonly.rvb01 type CHAR, action=controlp, tabIndex=21, title="Receiving Report No.", noEntry, image="zoom";
+Edit rvb02=formonly.rvb02 type CHAR, tabIndex=22, title="Line  No.", noEntry;
+ButtonEdit rvb34=formonly.rvb34 type CHAR, action=controlp, tabIndex=23, title="W/O No.", noEntry, image="zoom";
+ButtonEdit rvb05=formonly.rvb05 type CHAR, action=controlp, tabIndex=24, title="Item No.", noEntry, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=25, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=26, title="Spec", noEntry;
+ButtonEdit pmn07a=formonly.pmn07a type CHAR, action=controlp, tabIndex=27, title="Pur Unit", noEntry, image="zoom";
+Edit rvb08=formonly.rvb08 type CHAR, tabIndex=28, title="Rec Qty", noEntry;
+Edit rvb33=formonly.rvb33 type CHAR, tabIndex=29, title="Acceptable Qty", noEntry;
+Edit rvb30=formonly.rvb30 type CHAR, tabIndex=30, title="Store-in Qty", noEntry;
+Edit rvb919=rvb_file.rvb919, tabIndex=31, title=%"Lot Plan", noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=8, noEntry;
+Edit cn3=formonly.cn3 type INTEGER, tabIndex=9, noEntry;
+Button view:view, text="View";
+Button retu:return, text="Return";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmm(formonly.a,formonly.pmm04,formonly.pmm01,formonly.pmm02,formonly.pmm09,formonly.pmc03,formonly.pmm22,formonly.pmm21,formonly.pmm12,formonly.gen02,formonly.pmm13,formonly.gem02,formonly.pmn02,formonly.pmn04,formonly.pmn041,formonly.pmn07,formonly.pmn20,formonly.pmn50,formonly.pmn53,formonly.pmn58)
+SCREEN RECORD s_rvb(formonly.rvb01,formonly.rvb02,formonly.rvb34,formonly.rvb05,formonly.ima02,formonly.ima021,formonly.pmn07a,formonly.rvb08,formonly.rvb33,formonly.rvb30,rvb_file.rvb919)
+SCREEN RECORD Undefined(formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

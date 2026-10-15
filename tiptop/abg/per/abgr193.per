@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgr193.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abgr193")
+VBox VBox1
+Group group01(text="Input")
+Grid gr3
+{
+  Report Type     [rtype   ]
+  Report Stru.No. [a       ]
+  Group Number    [dept      ]
+  Budget Item     [budget    ]
+
+                  [dummy01 ][dummy02 ][dummy03 ][dummy04 ]
+  Report Name     [title1  ][title2  ][title3  ][title4  ]
+  Year            [yy1     ][yy2     ][yy3     ][yy4     ]
+  Initial/End     [bm]/[em] [b1]/[e1] [b2]/[e2] [b3]/[e3]
+                  [dummy05 ][dummy06 ][dummy07 ]
+                  [title5  ][title6  ][title7  ]
+                  [yy5     ][yy6     ][yy7     ]
+                  [b4]/[e4] [b5]/[e5] [b6]/[e6]
+
+
+  Combind Book    [ac1 ][ac2 ][ac3 ][ac4 ][ac5 ][ac6 ][ac7 ][ac8 ][ac9 ]
+
+ <G group02                            > <G group03                             >
+  amount unit     [d    ]                 [o                                 ]
+  Decimal Digits  [e    ]                 G/L Currency    [r                   ]
+  Print Min.Leve  [f    ]                 Convert Curr.   [p                   ]
+ <                                     >  * Ex.Rate       [q                   ]
+ <G group04                            >
+  [c                                 ]
+  [h                                 ]
+  [more                              ]
+ <                                     > <                                      >
+
+}
+END -- gr3
+END -- group01
+END -- VBox1
+END -- abgr193
+
+ATTRIBUTES
+ComboBox rtype=formonly.rtype type VARCHAR, tabIndex=1, comment="blank or zero means All", items=(("1", "Balance Sheet"),("2", "Income statement"));
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Qry Report No.";
+ButtonEdit dept=formonly.dept type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit budget=formonly.budget type CHAR, action=controlp, tabIndex=51, image="zoom.png";
+Label dummy01:dummy01, text="1st Period";
+Label dummy02:dummy02, text="2nd Period";
+Label dummy03:dummy03, text="3rd Period";
+Label dummy04:dummy04, text="4st Period";
+Edit title1=formonly.title1 type CHAR, tabIndex=4;
+Edit title2=formonly.title2 type CHAR, tabIndex=5;
+Edit title3=formonly.title3 type CHAR, tabIndex=6;
+Edit title4=formonly.title4 type CHAR, tabIndex=7;
+Edit yy1=formonly.yy1 type SMALLINT, tabIndex=8;
+Edit yy2=formonly.yy2 type SMALLINT, tabIndex=9;
+Edit yy3=formonly.yy3 type SMALLINT, tabIndex=10;
+Edit yy4=formonly.yy4 type SMALLINT, tabIndex=11;
+Edit bm=formonly.bm1 type SMALLINT, tabIndex=12;
+Edit em=formonly.em1 type SMALLINT, tabIndex=13;
+Edit b1=formonly.bm2 type SMALLINT, tabIndex=14;
+Edit e1=formonly.em2 type SMALLINT, tabIndex=15;
+Edit b2=formonly.bm3 type SMALLINT, tabIndex=16;
+Edit e2=formonly.em3 type SMALLINT, tabIndex=17;
+Edit b3=formonly.bm4 type SMALLINT, tabIndex=18;
+Edit e3=formonly.em4 type SMALLINT, tabIndex=19;
+Label dummy05:dummy05, text="5nd Period";
+Label dummy06:dummy06, text="6rd Period";
+Label dummy07:dummy07, text="7rd Period";
+Edit title5=formonly.title5 type CHAR, tabIndex=20;
+Edit title6=formonly.title6 type CHAR, tabIndex=21;
+Edit title7=formonly.title7 type CHAR, tabIndex=22;
+Edit yy5=formonly.yy5 type SMALLINT, tabIndex=23;
+Edit yy6=formonly.yy6 type SMALLINT, tabIndex=24;
+Edit yy7=formonly.yy7 type SMALLINT, tabIndex=25;
+Edit b4=formonly.bm5 type SMALLINT, tabIndex=26;
+Edit e4=formonly.em5 type SMALLINT, tabIndex=27;
+Edit b5=formonly.bm6 type SMALLINT, tabIndex=28;
+Edit e5=formonly.em6 type SMALLINT, tabIndex=29;
+Edit b6=formonly.bm7 type SMALLINT, tabIndex=30;
+Edit e6=formonly.em7 type SMALLINT, tabIndex=31;
+Edit ac1=formonly.ac1 type SMALLINT, tabIndex=32;
+Edit ac2=formonly.ac2 type SMALLINT, tabIndex=33;
+Edit ac3=formonly.ac3 type SMALLINT, tabIndex=34;
+Edit ac4=formonly.ac4 type SMALLINT, tabIndex=35;
+Edit ac5=formonly.ac5 type SMALLINT, tabIndex=36;
+Edit ac6=formonly.ac6 type SMALLINT, tabIndex=37;
+Edit ac7=formonly.ac7 type SMALLINT, tabIndex=38;
+Edit ac8=formonly.ac8 type SMALLINT, tabIndex=39;
+Edit ac9=formonly.ac9 type SMALLINT, tabIndex=40;
+Group group02:group02;
+ComboBox d=formonly.d type VARCHAR, tabIndex=41, not null, required, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+Edit e=formonly.e type CHAR, tabIndex=42;
+Edit f=formonly.f type SMALLINT, tabIndex=43, not null, required;
+Group group03:group03;
+CheckBox o=formonly.o type VARCHAR, tabIndex=44, text="Convert Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=45, noEntry;
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=46, not null, required, image="zoom", comment="<^P> Qry Currency";
+Edit q=formonly.q type DECIMAL, tabIndex=47;
+Group group04:group04;
+CheckBox c=formonly.c type VARCHAR, tabIndex=48, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type VARCHAR, tabIndex=49, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=50, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rtype,formonly.a,formonly.dept,formonly.budget,formonly.title1,formonly.title2,formonly.title3,formonly.title4,formonly.yy1,formonly.yy2,formonly.yy3,formonly.yy4,formonly.bm1,formonly.em1,formonly.bm2,formonly.em2,formonly.bm3,formonly.em3,formonly.bm4,formonly.em4,formonly.title5,formonly.title6,formonly.title7,formonly.yy5,formonly.yy6,formonly.yy7,formonly.bm5,formonly.em5,formonly.bm6,formonly.em6,formonly.bm7,formonly.em7,formonly.ac1,formonly.ac2,formonly.ac3,formonly.ac4,formonly.ac5,formonly.ac6,formonly.ac7,formonly.ac8,formonly.ac9,formonly.d,formonly.e,formonly.f,formonly.o,formonly.r,formonly.p,formonly.q,formonly.c,formonly.h,formonly.more)
+END -- INSTRUCTIONS
+

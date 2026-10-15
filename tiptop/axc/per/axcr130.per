@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr130")
+VBox vb23
+Grid gr1
+{
+ <G group01                                                                             >
+  Item No.i           [ima01               ]  Cost Group       [ima12               ]
+ <                                                                                      >
+
+}
+END -- gr1
+Group g01(text="INPUT")
+Grid gr2
+{
+ <G group02                                                                          >
+  Cost Calculation Method[type                ]
+  Printing Period        [yy1_b     ] [mm1_b     ]-[mm1_e     ]
+  title number           [azh01     ]
+                         [azh02                         ]
+  Conv.Curr/Base ExRt    [azk01     ]/[azk04               ]
+ [z                                                  ]
+ <                                                                                   >
+ <G group03                                                                          >
+ [dec                 ]
+ [                    ]
+ [                    ]
+ <                                                                                   >
+
+}
+END -- gr2
+END -- g01
+Grid gr3
+{
+[more                                                             ]
+
+}
+END -- gr3
+END -- vb23
+END -- axcr130
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit ima12=formonly.ima12 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Group group02:group02;
+ComboBox type=formonly.type type VARCHAR, tabIndex=13, not null, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+Edit yy1_b=formonly.yy1_b type CHAR, tabIndex=3, comment="No Blank Field";
+Edit mm1_b=formonly.mm1_b type CHAR, tabIndex=4, comment="No Blank Field";
+Edit mm1_e=formonly.mm1_e type CHAR, tabIndex=5, comment="No Blank Field";
+Edit azh01=formonly.azh01 type VARCHAR, tabIndex=6, comment="<^p> Qry Title No.";
+Edit azh02=formonly.azh02 type CHAR, tabIndex=7, noEntry;
+ButtonEdit azk01=formonly.azk01 type VARCHAR, action=controlp, tabIndex=8, image="zoom", upShift;
+ButtonEdit azk04=formonly.azk04 type DECIMAL, action=controlp, tabIndex=9, image="zoom";
+CheckBox z=formonly.z type CHAR, tabIndex=10, text="Print only Product Details", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Amount Unit";
+RadioGroup dec=formonly.dec type CHAR, tabIndex=11, items=(("1", "DR"),("2", "TH"),("3", "Ten TH"));
+CheckBox more=formonly.more type CHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima12,formonly.type,formonly.yy1_b,formonly.mm1_b,formonly.mm1_e,formonly.azh01,formonly.azh02,formonly.azk01,formonly.azk04,formonly.z,formonly.dec,formonly.more)
+END -- INSTRUCTIONS
+

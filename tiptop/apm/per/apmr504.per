@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr504.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr504")
+VBox VBox1
+Grid gr5103
+{
+ <G group01                                                     >
+  Item No.      [pmn04               ]
+  P/O No.       [pmm01               ]
+  Purchase Date [pmm04               ]
+  Vender No.    [pmm09               ]
+  Buyer         [pmm12               ]
+  P/R No.       [pmn24               ]
+ <                                                              >
+
+}
+END -- gr5103
+Group group02(text="INPUT")
+Grid gr5104
+{
+[y                                                            ]
+
+}
+END -- gr5104
+END -- group02
+Grid gr5105
+{
+ [more                                                            ]
+
+}
+END -- gr5105
+END -- VBox1
+END -- apmr504
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmn04=formonly.pmn04 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit pmm01=formonly.pmm01 type VARCHAR, tabIndex=2;
+DateEdit pmm04=formonly.pmm04 type DATE, tabIndex=3;
+Edit pmm09=formonly.pmm09 type VARCHAR, tabIndex=4;
+Edit pmm12=formonly.pmm12 type VARCHAR, tabIndex=5;
+Edit pmn24=formonly.pmn24 type VARCHAR, tabIndex=6;
+RadioGroup y=formonly.y type VARCHAR, tabIndex=7, items=(("1", "Approved"),("2", "Issued"),("3", "Closed"),("4", "Cancel"),("5", "All"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmn04,formonly.pmm01,formonly.pmm04,formonly.pmm09,formonly.pmm12,formonly.pmn24,formonly.y,formonly.more)
+END -- INSTRUCTIONS
+

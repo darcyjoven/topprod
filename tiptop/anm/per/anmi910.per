@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi910.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi910")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr4065
+{
+ Coffer Curr          [nqc01     ][azi02_1   ]
+ Logistics Curr       [nqc02     ][azi02_2   ]
+}
+END -- gr4065
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_nqc
+{
+[nqc03 |nqc04   |nqc05         ]
+[nqc03 |nqc04   |nqc05         ]
+[nqc03 |nqc04   |nqc05         ]
+[nqc03 |nqc04   |nqc05         ]
+[nqc03 |nqc04   |nqc05         ]
+[nqc03 |nqc04   |nqc05         ]
+[nqc03 |nqc04   |nqc05         ]
+[nqc03 |nqc04   |nqc05         ]
+[nqc03 |nqc04   |nqc05         ]
+[nqc03 |nqc04   |nqc05         ]
+
+}
+END -- s_nqc
+Grid gr4066
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4066
+END -- VBox1
+END -- anmi910
+
+TABLES
+nqc_file
+ATTRIBUTES
+Edit nqc01=nqc_file.nqc01, tabIndex=1, noEntry, not null, required;
+Edit azi02_1=formonly.azi02_1 type CHAR, tabIndex=2, noEntry;
+ButtonEdit nqc02=nqc_file.nqc02, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit azi02_2=formonly.azi02_2 type CHAR, tabIndex=4, noEntry;
+Edit nqc03=nqc_file.nqc03, tabIndex=5, title="Year", not null, required;
+Edit nqc04=nqc_file.nqc04, tabIndex=6, title="Prioed", not null, required;
+Edit nqc05=nqc_file.nqc05, tabIndex=7, title="Exchange Rate", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nqc(nqc_file.nqc03,nqc_file.nqc04,nqc_file.nqc05)
+SCREEN RECORD Undefined(nqc_file.nqc01,formonly.azi02_1,nqc_file.nqc02,formonly.azi02_2,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

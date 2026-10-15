@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_pmh3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Query Item/Supplier")
+Grid gr3825
+{
+ <T s_pmh                                                                            >
+ [check |pmh02          |pmc03          |pmh13      |unitprice      |unitpricet     ]
+ [check |pmh02          |pmc03          |pmh13      |unitprice      |unitpricet     ]
+ [check |pmh02          |pmc03          |pmh13      |unitprice      |unitpricet     ]
+ [check |pmh02          |pmc03          |pmh13      |unitprice      |unitpricet     ]
+ [check |pmh02          |pmc03          |pmh13      |unitprice      |unitpricet     ]
+ [check |pmh02          |pmc03          |pmh13      |unitprice      |unitpricet     ]
+ [check |pmh02          |pmc03          |pmh13      |unitprice      |unitpricet     ]
+ [check |pmh02          |pmc03          |pmh13      |unitprice      |unitpricet     ]
+ [check |pmh02          |pmc03          |pmh13      |unitprice      |unitpricet     ]
+ [check |pmh02          |pmc03          |pmh13      |unitprice      |unitpricet     ]
+ <                                                                                   >
+
+}
+END -- gr3825
+END -- q_pmh3
+
+TABLES
+pmh_file,
+pmc_file
+ATTRIBUTES
+Table s_pmh:s_pmh;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmh02=pmh_file.pmh02, tabIndex=2, title="Supplier No.", not null, required;
+Edit pmc03=pmc_file.pmc03, tabIndex=3, title="Abbreviation", not null, required;
+Edit pmh13=pmh_file.pmh13, tabIndex=4, title="Currency", not null, required;
+Edit unitprice=formonly.unitprice type CHAR, tabIndex=5, title="Get Unit Price", not null, required;
+Edit unitpricet=formonly.unitpricet type CHAR, tabIndex=6, title="GET Unit T. Pr", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmh(formonly.check,pmh_file.pmh02,pmc_file.pmc03,pmh_file.pmh13,formonly.unitprice,formonly.unitpricet)
+END -- INSTRUCTIONS
+

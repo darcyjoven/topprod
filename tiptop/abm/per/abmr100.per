@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmr100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmr100")
+VBox VBox1
+Grid gr902
+{
+ <G group01                                                         >
+  Master Item         [item                ]
+  Component           [com_part            ]
+  Version             [ver                 ]
+  Inst.Loc            [balloon             ]
+  Alternate Code      [acode               ]
+ <                                                                  >
+
+}
+END -- gr902
+Group group02(text="INPUT")
+Grid gr903
+{
+ <G group03                                                          >
+  Master Item Qty     [a                   ]
+ <                                                                   >
+ <G group04               ><G group05                               >
+ [s                   ]    [blow                                    ]
+                           [vender                                  ]
+                           [b                                       ]
+                           [d                                       ]
+ <                        ><                                        >
+}
+END -- gr903
+END -- group02
+Grid gr904
+{
+[more                                ]
+
+}
+END -- gr904
+END -- VBox1
+END -- abmr100
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit item=formonly.item type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit com_part=formonly.com_part type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit ver=formonly.ver type VARCHAR, tabIndex=3;
+Edit balloon=formonly.balloon type VARCHAR, tabIndex=4;
+Edit acode=formonly.acode type VARCHAR, tabIndex=5;
+Group group03:group03;
+Edit a=formonly.a type INTEGER, tabIndex=6;
+Group group04:group04, text="Document Sequence";
+RadioGroup s=formonly.s type VARCHAR, tabIndex=7, items=(("1", "Line No."),("2", "Component"),("3", "Inst.Loc"));
+Group group05:group05, text="Print Data";
+CheckBox blow=formonly.blow type VARCHAR, tabIndex=8, text="Explode Down Level if Phantom Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox vender=formonly.vender type VARCHAR, tabIndex=9, text="Print Brand", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=10, text="Print Description", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=11, text="Print Substitute Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.item,formonly.com_part,formonly.ver,formonly.balloon,formonly.acode,formonly.a,formonly.s,formonly.blow,formonly.vender,formonly.b,formonly.d,formonly.more)
+END -- INSTRUCTIONS
+

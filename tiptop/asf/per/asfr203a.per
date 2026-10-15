@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr203a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asfr203a")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                   >
+  Work/Order No.      [sfb01               ]
+  Issue Date          [sfb81               ]
+  Product No.         [sfb05               ]
+  Department/Vender   [sfb82               ]
+ <                                            >
+
+}
+END -- Grid1
+END -- VBox1
+END -- asfr203a
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit sfb01=formonly.sfb01 type CHAR, tabIndex=1;
+DateEdit sfb81=formonly.sfb81 type DATE, tabIndex=2;
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=3;
+Edit sfb82=formonly.sfb82 type CHAR, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfb01,formonly.sfb81,formonly.sfb05,formonly.sfb82)
+END -- INSTRUCTIONS
+

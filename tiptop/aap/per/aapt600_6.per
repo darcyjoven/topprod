@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt600_6.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Confirm")
+Grid gr483
+{
+ <G group01                                      >
+ [only_one                               ]
+ <                                               >
+ <G group02                                      >
+  Payment Slip# QBE       [aqe01           ]
+  Paying Date QBE         [aqe02       ]
+  Account Employee QBE    [aqe04     ]
+  Accounts Department QBE [aqe05     ]
+ <                                               >
+ <G group03                                      >
+  Confirmed Total Payment [l_amt               ]
+
+ <                                               >
+
+}
+END -- gr483
+END -- aapt600_6
+
+TABLES
+aqe_file
+ATTRIBUTES
+Group group01:group01, text="Confirm Condition";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, items=(("1", "Confirm this Accounts only"),("2", "Confirm by QBE Condition"));
+Group group02:group02, text="Enter Accounts Condition to Confirm:";
+Edit aqe01=aqe_file.aqe01, tabIndex=2, not null, required;
+DateEdit aqe02=aqe_file.aqe02, tabIndex=3;
+Edit aqe04=aqe_file.aqe04, tabIndex=4;
+Edit aqe05=aqe_file.aqe05, tabIndex=5;
+Group group03:group03;
+Edit l_amt=formonly.l_amt type DECIMAL, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,aqe_file.aqe01,aqe_file.aqe02,aqe_file.aqe04,aqe_file.aqe05,formonly.l_amt)
+END -- INSTRUCTIONS
+

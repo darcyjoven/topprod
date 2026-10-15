@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr080.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxr080")
+VBox vb10
+Grid gr1116
+{
+ <G group01                                   >
+  Cause                [a                   ]
+ <                                            >
+ <G group02                                           >
+  Delivery Date        [bdate       ] - [edate       ]
+
+ <                                                    >
+
+}
+END -- gr1116
+Grid gr1117
+{
+[more                          ]
+
+}
+END -- gr1117
+END -- vb10
+END -- abxr080
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit a=formonly.a type VARCHAR, tabIndex=1;
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=2;
+DateEdit edate=formonly.edate type DATE, tabIndex=3;
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.bdate,formonly.edate,formonly.more)
+END -- INSTRUCTIONS
+

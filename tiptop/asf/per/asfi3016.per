@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi3016.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt600e")
+VBox VBox1
+Folder pc599
+Page page01(text="Page01")
+Grid ds1
+{
+
+[label1 |sfaa01              ]
+[label2 |sfaa03                        ][label3 |sfaa08]
+[label4 |sfaa27                        ][label5 |sfaa]
+[label6 |sfaa012   ]                    [label7 |sfaa02]
+
+}
+END -- ds1
+END -- page01
+END -- pc599
+Table ds2
+{
+[sfaa30    |sfaa31    |sfaa32                  |sfaa05           |sfaa051          ]
+[sfaa30    |sfaa31    |sfaa32                  |sfaa05           |sfaa051          ]
+[sfaa30    |sfaa31    |sfaa32                  |sfaa05           |sfaa051          ]
+[sfaa30    |sfaa31    |sfaa32                  |sfaa05           |sfaa051          ]
+[sfaa30    |sfaa31    |sfaa32                  |sfaa05           |sfaa051          ]
+}
+END -- ds2
+END -- VBox1
+END -- axmt600e
+
+TABLES
+sfaa_file
+ATTRIBUTES
+Label label1:Label1, text=%"sfaa01";
+Edit sfaa01=sfaa_file.sfaa01, tabIndex=1, not null, scroll;
+Label label2:Label2, text=%"sfaa03";
+Edit sfaa03=sfaa_file.sfaa03, tabIndex=2, not null, scroll;
+Label label3:Label3, text=%"sfaa08";
+Edit sfaa08=sfaa_file.sfaa08, tabIndex=3, not null, scroll;
+Label label4:Label4, text=%"sfaa27";
+Edit sfaa27=sfaa_file.sfaa27, tabIndex=4, not null, scroll;
+Label label5:Label5, text=%"sfaa12";
+Edit sfaa=sfaa_file.sfaa12, tabIndex=5, not null, scroll;
+Label label6:Label6, text=%"sfaa012";
+Edit sfaa012=sfaa_file.sfaa012, tabIndex=6, not null, scroll;
+Label label7:Label7, text=%"sfaa013";
+Edit sfaa02=sfaa_file.sfaa013, tabIndex=7, not null, scroll;
+ButtonEdit sfaa30=sfaa_file.sfaa30, action=controlp, tabIndex=8, title=%"sfaa30", not null, image="zoom", scroll;
+ButtonEdit sfaa31=sfaa_file.sfaa31, action=controlp, tabIndex=9, title=%"sfaa31", image="zoom", scroll;
+ButtonEdit sfaa32=sfaa_file.sfaa32, action=controlp, tabIndex=10, title=%"sfaa32", image="zoom", scroll;
+Edit sfaa05=sfaa_file.sfaa05, tabIndex=11, title=%"sfaa05", not null, scroll;
+Edit sfaa051=sfaa_file.sfaa051, tabIndex=12, title=%"sfaa051", not null, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(sfaa_file.sfaa01,sfaa_file.sfaa03,sfaa_file.sfaa08,sfaa_file.sfaa27,sfaa_file.sfaa12,sfaa_file.sfaa012,sfaa_file.sfaa013)
+SCREEN RECORD s_sfaa(sfaa_file.sfaa30,sfaa_file.sfaa31,sfaa_file.sfaa32,sfaa_file.sfaa05,sfaa_file.sfaa051)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt710_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt710_2")
+Grid gr493
+{
+ <G group01                                             >
+  P/O No.QBE          [pmm01           ]
+  Pur Date QBE        [pmm04     ]
+  Pur Department QBE  [pmm13     ]
+  Buyer QBE           [pmm12     ]
+  Pur Item# QBE       [pmn04                         ]
+
+ <                                                      >
+
+}
+END -- gr493
+END -- aapt710_2
+
+TABLES
+pmn_file,
+pmm_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit pmm01=pmm_file.pmm01, tabIndex=1;
+Edit pmm04=pmm_file.pmm04, tabIndex=2;
+Edit pmm13=pmm_file.pmm13, tabIndex=3;
+Edit pmm12=pmm_file.pmm12, tabIndex=4;
+Edit pmn04=pmn_file.pmn04, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pmm_file.pmm01,pmm_file.pmm04,pmm_file.pmm13,pmm_file.pmm12,pmn_file.pmn04)
+END -- INSTRUCTIONS
+

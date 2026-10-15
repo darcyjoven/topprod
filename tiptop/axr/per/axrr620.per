@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrr620.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr620")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                                                                     >
+  Department No.      [oma15               ]
+  Employee No.        [oma14               ]
+  customer cate       [oca01               ]
+  Customer No.        [oma03               ]
+  Account No.         [oma18               ]
+ <                                                                                              >
+
+}
+END -- gr1
+Group group02(text="INPUT")
+VBox VBox2
+Grid gr2
+{
+ <G group03                                                                                     >
+  Aging Cate          [omi01     ]
+  Aging Section       [a1        ][a2        ][a3        ][a4        ][a5        ][a6        ]
+
+ <                                                                                              >
+
+}
+END -- gr2
+Grid gr3
+{
+ A/R Enter Account Date Opteion [x                  ]
+ A/R Enter Account Deadline     [edate       ]
+[detail                         ]
+[e                              ]
+}
+END -- gr3
+END -- VBox2
+END -- group02
+Grid gr4
+{
+[more                                             ]
+
+}
+END -- gr4
+END -- VBox1
+END -- axrr620
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oma15=formonly.oma15 type CHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit oma14=formonly.oma14 type CHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit oca01=formonly.oca01 type CHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit oma03=formonly.oma03 type CHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit oma18=formonly.oma18 type CHAR, action=controlp, tabIndex=14, image="zoom";
+Group group03:group03;
+ButtonEdit omi01=formonly.omi01 type CHAR, action=controlp, tabIndex=2, image="zoom.png";
+Edit a1=formonly.a1 type SMALLINT, tabIndex=3;
+Edit a2=formonly.a2 type SMALLINT, tabIndex=4;
+Edit a3=formonly.a3 type SMALLINT, tabIndex=5;
+Edit a4=formonly.a4 type SMALLINT, tabIndex=6;
+Edit a5=formonly.a5 type SMALLINT, tabIndex=7;
+Edit a6=formonly.a6 type SMALLINT, tabIndex=8;
+ComboBox x=formonly.x type CHAR, tabIndex=9, not null, required, items=(("1", "Account Date"),("2", "A/R Date"));
+DateEdit edate=formonly.edate type DATE, tabIndex=10;
+CheckBox detail=formonly.detail type CHAR, tabIndex=11, text="Print Detailed Account?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=12, text="Deduct Allowance Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oma15,formonly.oma14,formonly.oca01,formonly.oma03,formonly.omi01,formonly.a1,formonly.a2,formonly.a3,formonly.a4,formonly.a5,formonly.a6,formonly.x,formonly.edate,formonly.detail,formonly.e,formonly.more,formonly.oma18)
+END -- INSTRUCTIONS
+

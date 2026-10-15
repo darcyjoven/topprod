@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq760.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcq760")
+VBox vb1
+Folder pc833
+Page page01(text="Main")
+Table s_tlf
+{
+[tlf021   |tlf06   |tlf026  |tlf62   |tlf01   |ima02   |ima021  |tlfccost|tlf10   |amt01   |amt02   |amt03   |amt_d   |amt05   |amt06   |amt07   |amt08   |amt04   ]
+[tlf021   |tlf06   |tlf026  |tlf62   |tlf01   |ima02   |ima021  |tlfccost|tlf10   |amt01   |amt02   |amt03   |amt_d   |amt05   |amt06   |amt07   |amt08   |amt04   ]
+[tlf021   |tlf06   |tlf026  |tlf62   |tlf01   |ima02   |ima021  |tlfccost|tlf10   |amt01   |amt02   |amt03   |amt_d   |amt05   |amt06   |amt07   |amt08   |amt04   ]
+[tlf021   |tlf06   |tlf026  |tlf62   |tlf01   |ima02   |ima021  |tlfccost|tlf10   |amt01   |amt02   |amt03   |amt_d   |amt05   |amt06   |amt07   |amt08   |amt04   ]
+[tlf021   |tlf06   |tlf026  |tlf62   |tlf01   |ima02   |ima021  |tlfccost|tlf10   |amt01   |amt02   |amt03   |amt_d   |amt05   |amt06   |amt07   |amt08   |amt04   ]
+[tlf021   |tlf06   |tlf026  |tlf62   |tlf01   |ima02   |ima021  |tlfccost|tlf10   |amt01   |amt02   |amt03   |amt_d   |amt05   |amt06   |amt07   |amt08   |amt04   ]
+[tlf021   |tlf06   |tlf026  |tlf62   |tlf01   |ima02   |ima021  |tlfccost|tlf10   |amt01   |amt02   |amt03   |amt_d   |amt05   |amt06   |amt07   |amt08   |amt04   ]
+[tlf021   |tlf06   |tlf026  |tlf62   |tlf01   |ima02   |ima021  |tlfccost|tlf10   |amt01   |amt02   |amt03   |amt_d   |amt05   |amt06   |amt07   |amt08   |amt04   ]
+[tlf021   |tlf06   |tlf026  |tlf62   |tlf01   |ima02   |ima021  |tlfccost|tlf10   |amt01   |amt02   |amt03   |amt_d   |amt05   |amt06   |amt07   |amt08   |amt04   ]
+[tlf021   |tlf06   |tlf026  |tlf62   |tlf01   |ima02   |ima021  |tlfccost|tlf10   |amt01   |amt02   |amt03   |amt_d   |amt05   |amt06   |amt07   |amt08   |amt04   ]
+
+}
+END -- s_tlf
+END -- page01
+END -- pc833
+Grid gr4619
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4619
+END -- vb1
+END -- axcq760
+
+TABLES
+tlf_file,
+ima_file,
+tlfc_file
+ATTRIBUTES
+Edit tlf021=tlf_file.tlf021, tabIndex=1, title="tlf021", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit tlf06=tlf_file.tlf06, tabIndex=2, title="tlf06";
+Edit tlf026=tlf_file.tlf026, tabIndex=3, title="tlf026";
+Edit tlf62=tlf_file.tlf62, tabIndex=4, title="tlf62";
+ButtonEdit tlf01=tlf_file.tlf01, action=controlp, tabIndex=5, title="tlf01", image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=6, title="ima02";
+Edit ima021=formonly.ima021 type CHAR, tabIndex=19, title=%"ima021";
+Edit tlfccost=tlfc_file.tlfccost, tabIndex=7, title="tlfccost";
+Edit tlf10=tlf_file.tlf10, tabIndex=8, title="tlf10";
+Edit amt01=formonly.amt01 type CHAR, tabIndex=9, title="amt01";
+Edit amt02=formonly.amt02 type CHAR, tabIndex=10, title="amt02";
+Edit amt03=formonly.amt03 type CHAR, tabIndex=11, title="amt03";
+Edit amt_d=formonly.amt_d type CHAR, tabIndex=12, title="amt_d";
+Edit amt05=formonly.amt05 type CHAR, tabIndex=13, title="amt05";
+Edit amt06=formonly.amt06 type CHAR, tabIndex=14, title="amt06";
+Edit amt07=formonly.amt07 type CHAR, tabIndex=15, title="amt07";
+Edit amt08=formonly.amt08 type CHAR, tabIndex=16, title="amt08";
+Edit amt04=formonly.amt04 type CHAR, tabIndex=17, title="amt04";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tlf(tlf_file.tlf021,tlf_file.tlf06,tlf_file.tlf026,tlf_file.tlf62,tlf_file.tlf01,ima_file.ima02,formonly.ima021,tlfc_file.tlfccost,tlf_file.tlf10,formonly.amt01,formonly.amt02,formonly.amt03,formonly.amt_d,formonly.amt05,formonly.amt06,formonly.amt07,formonly.amt08,formonly.amt04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

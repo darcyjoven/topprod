@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmg550.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr550")
+VBox vb1
+Grid gr1
+{
+ <G group01                                                   >
+  Invoice Document No. [ofa01             ]
+  Invoice Date         [ofa02             ]
+ <                                                            >
+ <G group02                                                  >
+  [d                                      ]
+  Print Product Name Spec Desc Category [imc02               ]
+
+  [b                                      ]
+  [c                                      ]
+ <                                                           >
+}
+END -- gr1
+Grid gr2
+{
+[more                                   ]
+
+}
+END -- gr2
+END -- vb1
+END -- axmr550
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ofa01=formonly.ofa01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit ofa02=formonly.ofa02 type DATE, tabIndex=2;
+Group group02:group02, text="INPUT";
+CheckBox d=formonly.d type VARCHAR, tabIndex=3, text="Print CUST ITEM NO.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit imc02=formonly.imc02 type CHAR, tabIndex=4;
+CheckBox b=formonly.b type VARCHAR, tabIndex=6, text="Print Full Company Name for Internal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=7, text="Print Full Company Name for External", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ofa01,formonly.ofa02,formonly.d,formonly.imc02,formonly.b,formonly.c,formonly.more)
+END -- INSTRUCTIONS
+

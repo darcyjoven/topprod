@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr711.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmr711")
+VBox VBox1
+Group Group1
+Grid Grid1
+{
+ <G group01                                                         >
+  Financing Doc NO.   [nne01               ]
+  Applying Date       [nne02               ]
+  Date of Use         [nne03               ]
+  Financing Type      [nne06               ]
+ <                                                                  >
+ <G group02                                                         >
+  [n                                                               ]
+ <                                                                  >
+
+}
+END -- Grid1
+END -- Group1
+Grid Grid2
+{
+[more                                                        ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- anmr711
+
+TABLES
+nne_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit nne01=nne_file.nne01, tabIndex=1;
+DateEdit nne02=nne_file.nne02, tabIndex=2;
+DateEdit nne03=nne_file.nne03, tabIndex=3;
+Edit nne06=nne_file.nne06, tabIndex=4;
+Group group02:group02;
+RadioGroup n=formonly.n type CHAR, tabIndex=5, items=(("1", %"Confirmed"),("2", %"UnConfirmed"),("3", %"All "));
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nne_file.nne01,nne_file.nne02,nne_file.nne03,nne_file.nne06,formonly.n,formonly.more)
+END -- INSTRUCTIONS
+

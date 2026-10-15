@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp150.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcp150")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                                             >
+  Item No.            [ima01                         ]
+
+ <                                                                      >
+
+}
+END -- gr1
+Group group02(text="INPUT")
+Grid gr2
+{
+ <G group03                                                           >
+  Year/Month        [yy  ]/[mm  ]
+  Trans Date        [cmz70         ]
+  Rate              [cme06       ]
+ <                                                                    >
+ <G group04                                                           >
+ [s1                  ][s2                  ][s3                  ]
+
+ <                                                                    >
+
+}
+END -- gr2
+END -- group02
+Grid gr3
+{
+ <G group05                                                             >
+  Rows to Close       [no_tot    ]
+  Closed              [no_ok     ]
+  Item#               [p1                                     ]
+ <                                                                      >
+
+}
+END -- gr3
+Grid gr4
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr4
+END -- VBox1
+END -- axcp150
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Details";
+Group group03:group03;
+Edit yy=formonly.yy type SMALLINT, tabIndex=2, not null, required;
+Edit mm=formonly.mm type SMALLINT, tabIndex=3, not null, required;
+DateEdit cmz70=formonly.cmz70 type CHAR, tabIndex=4, not null, required;
+ComboBox cme06=formonly.cme06 type CHAR, tabIndex=5, not null, required, queryEditable, items=(("1", "Main Group Code"),("2", "Other Group 1"),("3", "Other Group 2"),("4", "Other Group 3"),("5", "Cost Group"),("6", "Product Class"));
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=6, not null, required, queryEditable, items=(("1", "In Qty"),("2", "Qty"),("3", "Item No"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=7, not null, required, queryEditable, items=(("1", "In Qty"),("2", "Qty"),("3", "Item No"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=8, not null, required, queryEditable, items=(("1", "In Qty"),("2", "Qty"),("3", "Item No"));
+Group group05:group05;
+Edit no_tot=formonly.no_tot type CHAR, tabIndex=9, noEntry;
+Edit no_ok=formonly.no_ok type CHAR, tabIndex=10, noEntry;
+Edit p1=formonly.p1 type CHAR, tabIndex=11, noEntry;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=12, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.yy,formonly.mm,formonly.cmz70,formonly.cme06,formonly.s1,formonly.s2,formonly.s3,formonly.no_tot,formonly.no_ok,formonly.p1,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

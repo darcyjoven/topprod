@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_gaz_item.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_gaz_item")
+VBox vb96
+Grid gr3203
+{
+ <G group01                                      >
+  Program ID       [gaz01                       ]
+ <                                               >
+
+}
+END -- gr3203
+Table sub_gaz
+{
+[gaz02|gaz03                                  |gaz06                                        |gaz05    ]
+[gaz02|gaz03                                  |gaz06                                        |gaz05    ]
+[gaz02|gaz03                                  |gaz06                                        |gaz05    ]
+[gaz02|gaz03                                  |gaz06                                        |gaz05    ]
+[gaz02|gaz03                                  |gaz06                                        |gaz05    ]
+
+}
+END -- sub_gaz
+END -- vb96
+END -- p_gaz_item
+
+TABLES
+gaz_file
+ATTRIBUTES
+Group group01:group01;
+Edit gaz01=gaz_file.gaz01, tabIndex=1, noEntry;
+ComboBox gaz02=gaz_file.gaz02, tabIndex=2, title="Lang", not null, required;
+Edit gaz03=gaz_file.gaz03, tabIndex=3, title="Program Name Description";
+Edit gaz06=gaz_file.gaz06, tabIndex=5, title="Report Title";
+CheckBox gaz05=gaz_file.gaz05, tabIndex=4, title="Customized", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD sub_gaz(gaz_file.gaz02,gaz_file.gaz03,gaz_file.gaz06,gaz_file.gaz05)
+SCREEN RECORD Undefined(gaz_file.gaz01)
+END -- INSTRUCTIONS
+

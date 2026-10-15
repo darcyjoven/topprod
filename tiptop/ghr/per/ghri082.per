@@ -1,0 +1,106 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri082.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(action=main, text=%"Page1")
+Grid Grid1
+{
+
+   hrdo02[hrdo02    |hrdo02_desc         ]
+   hrdo04[hrdo04                         ]
+   hrdo05[hrdo05                         ]
+   hrdo03[hrdo03    ]
+   hrdo06[hrdo06                         ]
+         [                               ]
+
+
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(action=info, text=%"Page2")
+Grid Grid2
+{
+  <G group1                      >   <G group2                          >  <G group3                             >
+   hrdouser[hrdouser  ]                hrdomodu[hrdomodu  ]                  hrdoacti[hrdoacti  ]
+   hrdogrup[hrdogrup  ]                hrdodate[hrdodate  ]
+   hrdooriu[hrdooriu  ]
+   hrdoorig[hrdoorig  ]
+
+
+
+
+  <                              >   <                                  >  <                                     >
+
+}
+END -- Grid2
+END -- Page2
+Page Page3(action=item_list, text=%"Page3")
+Table Table1
+{
+[hrdo02_b|hrat02_b|hrat03_b|hrat04_b|hrat05_b|hrat66_b|hrat19_b|hrdo04_b|hrdo05_b|hrdo03_b|hrdo06_b|hrdo01_b]
+[hrdo02_b|hrat02_b|hrat03_b|hrat04_b|hrat05_b|hrat66_b|hrat19_b|hrdo04_b|hrdo05_b|hrdo03_b|hrdo06_b|hrdo01_b]
+[hrdo02_b|hrat02_b|hrat03_b|hrat04_b|hrat05_b|hrat66_b|hrat19_b|hrdo04_b|hrdo05_b|hrdo03_b|hrdo06_b|hrdo01_b]
+[hrdo02_b|hrat02_b|hrat03_b|hrat04_b|hrat05_b|hrat66_b|hrat19_b|hrdo04_b|hrdo05_b|hrdo03_b|hrdo06_b|hrdo01_b]
+[hrdo02_b|hrat02_b|hrat03_b|hrat04_b|hrat05_b|hrat66_b|hrat19_b|hrdo04_b|hrdo05_b|hrdo03_b|hrdo06_b|hrdo01_b]
+
+
+
+
+}
+END -- Table1
+END -- Page3
+END -- Folder1
+Grid Grid3
+{
+  ---------- cnt[cnt ]----------
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrdo02=formonly.hrdo02 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrdo02_desc=formonly.hrdo02_desc type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit hrdo04=formonly.hrdo04 type VARCHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+ButtonEdit hrdo05=formonly.hrdo05 type VARCHAR, action=controlp, tabIndex=4, required, image="zoom";
+DateEdit hrdo03=formonly.hrdo03 type DATE, tabIndex=5, not null, required;
+TextEdit hrdo06=formonly.hrdo06 type VARCHAR, tabIndex=6;
+Group group1:Group1, text=%"";
+Edit hrdouser=formonly.hrdouser type VARCHAR, tabIndex=7, noEntry;
+Edit hrdogrup=formonly.hrdogrup type VARCHAR, tabIndex=8, noEntry;
+Edit hrdooriu=formonly.hrdooriu type VARCHAR, tabIndex=9, noEntry;
+Edit hrdoorig=formonly.hrdoorig type VARCHAR, tabIndex=10, noEntry;
+Group group2:Group2, text=%"";
+Edit hrdomodu=formonly.hrdomodu type VARCHAR, tabIndex=11, noEntry;
+DateEdit hrdodate=formonly.hrdodate type VARCHAR, tabIndex=12, noEntry;
+Group group3:Group3, text=%"";
+Edit hrdoacti=formonly.hrdoacti type VARCHAR, tabIndex=13, noEntry;
+Edit hrdo02_b=formonly.hrdo02_b type VARCHAR, tabIndex=14, title=%"hrdo02_b", noEntry;
+Edit hrat02_b=formonly.hrat02_b type VARCHAR, tabIndex=15, title=%"hrat02_b", noEntry;
+Edit hrat03_b=formonly.hrat03_b type VARCHAR, tabIndex=16, title=%"hrat03_b", noEntry;
+Edit hrat04_b=formonly.hrat04_b type VARCHAR, tabIndex=17, title=%"hrat04_b", noEntry;
+Edit hrat05_b=formonly.hrat05_b type VARCHAR, tabIndex=18, title=%"hrat05_b", noEntry;
+DateEdit hrat66_b=formonly.hrat66_b type DATE, tabIndex=19, title=%"hrat66_b", noEntry;
+Edit hrat19_b=formonly.hrat19_b type VARCHAR, tabIndex=20, title=%"hrat19_b", noEntry;
+Edit hrdo04_b=formonly.hrdo04_b type VARCHAR, tabIndex=21, title=%"hrdo04_b", noEntry;
+Edit hrdo05_b=formonly.hrdo05_b type VARCHAR, tabIndex=22, title=%"hrdo05_b", noEntry;
+DateEdit hrdo03_b=formonly.hrdo03_b type DATE, tabIndex=23, title=%"hrdo03_b", noEntry;
+TextEdit hrdo06_b=formonly.hrdo06_b type VARCHAR, tabIndex=24, title=%"hrdo06_b", noEntry;
+Edit hrdo01_b=formonly.hrdo01_b type VARCHAR, tabIndex=26, title=%"hrdo01_b", noEntry, hidden, invisible;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrdo02,formonly.hrdo02_desc,formonly.hrdo04,formonly.hrdo05,formonly.hrdo03,formonly.hrdo06,formonly.hrdouser,formonly.hrdogrup,formonly.hrdooriu,formonly.hrdoorig,formonly.hrdomodu,formonly.hrdodate,formonly.hrdoacti,formonly.cnt)
+SCREEN RECORD s_hrdo(formonly.hrdo02_b,formonly.hrat02_b,formonly.hrat03_b,formonly.hrat04_b,formonly.hrat05_b,formonly.hrat66_b,formonly.hrat19_b,formonly.hrdo04_b,formonly.hrdo05_b,formonly.hrdo03_b,formonly.hrdo06_b,formonly.hrdo01_b)
+END -- INSTRUCTIONS
+

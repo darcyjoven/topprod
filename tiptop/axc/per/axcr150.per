@@ -1,0 +1,152 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr150.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr150")
+VBox VBox3
+Group group01(text="QBE")
+VBox VBox1
+Grid gr1
+{
+ Item No.            [ima01               ]                                                      Cost Group          [ima12               ]
+ Product Class       [ima131              ]                                                      Other Group 3       [ima11               ]
+
+
+}
+END -- gr1
+Grid gr2
+{
+ <G group02                                                                     > <G group04                                                                                  >
+  Print Title[title                ]                                               Ranking By          [order     ]           [dummy01  ]
+                                                                                                                              [dummy02             ]
+                                                                                                                              [dummy03          ]
+  Option[data                       ]
+ <                                                                              > <                                                                                           >
+}
+END -- gr2
+END -- VBox1
+END -- group01
+Group group03(text="INPUT")
+VBox VBox2
+Grid gr3
+{
+ Period(1)[yy1_b     ]/[mm1_b     ]-[mm1_e     ]                           (7)[yy7_b     ]/[mm7_b     ]-[mm7_e     ]
+       (2)[yy2_b     ]/[mm2_b     ]-[mm2_e     ]                           (8)[yy8_b     ]/[mm8_b     ]-[mm8_e     ]
+       (3)[yy3_b     ]/[mm3_b     ]-[mm3_e     ]                           (9)[yy9_b     ]/[mm9_b     ]-[mm9_e     ]
+       (4)[yy4_b     ]/[mm4_b     ]-[mm4_e     ]                          (10)[yy10_b    ]/[mm10_b    ]-[mm10_e    ]
+       (5)[yy5_b     ]/[mm5_b     ]-[mm5_e     ]                          (11)[yy11_b    ]/[mm11_b    ]-[mm11_e    ]
+       (6)[yy6_b     ]/[mm6_b     ]-[mm6_e     ]                          (12)[yy12_b    ]/[mm12_b    ]-[mm12_e    ]
+
+
+
+}
+END -- gr3
+HBox HBox1
+Grid gr4
+{
+ <G group06                                                     >
+  Plant# [plant_1   ][plant_2   ][plant_3   ] [plant_4   ]
+         [plant_5   ][plant_6   ][plant_7   ] [plant_8   ]
+
+ <                                                              >
+
+
+
+
+}
+END -- gr4
+Grid gr5
+{
+ <G group08                                                     >
+  Cost Calculation Method  [type                      ]
+  Amount Unit[dec       ]        /
+  Conv.Curr/Base ExRt[azk01     ] [azk04              ]
+ [p_group                              ]
+ [sum_code                             ]
+ [p_group1                             ]
+ [more                                 ]
+ <                                                              >
+}
+END -- gr5
+END -- HBox1
+END -- VBox2
+END -- group03
+END -- VBox3
+END -- axcr150
+
+ATTRIBUTES
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=1, image="zoom", upShift;
+Edit ima12=formonly.ima12 type CHAR, tabIndex=2;
+Edit ima131=formonly.ima131 type CHAR, tabIndex=3, upShift;
+Edit ima11=formonly.ima11 type CHAR, tabIndex=4;
+Group group02:group02;
+ComboBox title=formonly.title type CHAR, tabIndex=5, not null, required, items=(("1", "Production & Rework"),("3", "Net Sales Amount"),("4", "Gross Sales"),("5", "Net/Gross Analysis"));
+RadioGroup data=formonly.data type CHAR, tabIndex=6, items=(("1", "Product Class"),("2", "Accounting Classification"));
+Group group04:group04;
+Edit order=formonly.order type CHAR, tabIndex=7;
+Label dummy01:dummy01, text="(0)Product";
+Label dummy02:dummy02, text="(1-12)Period Amount";
+Label dummy03:dummy03, text="(13)Total Amount";
+Edit yy1_b=formonly.yy1_b type CHAR, tabIndex=8, comment="No Blank Field";
+Edit mm1_b=formonly.mm1_b type CHAR, tabIndex=9, comment="No Blank Field";
+Edit mm1_e=formonly.mm1_e type CHAR, tabIndex=10, comment="No Blank Field";
+Edit yy7_b=formonly.yy7_b type CHAR, tabIndex=11;
+Edit mm7_b=formonly.mm7_b type CHAR, tabIndex=12;
+Edit mm7_e=formonly.mm7_e type CHAR, tabIndex=13;
+Edit yy2_b=formonly.yy2_b type CHAR, tabIndex=14;
+Edit mm2_b=formonly.mm2_b type CHAR, tabIndex=15;
+Edit mm2_e=formonly.mm2_e type CHAR, tabIndex=16;
+Edit yy8_b=formonly.yy8_b type CHAR, tabIndex=17;
+Edit mm8_b=formonly.mm8_b type CHAR, tabIndex=18;
+Edit mm8_e=formonly.mm8_e type CHAR, tabIndex=19;
+Edit yy3_b=formonly.yy3_b type CHAR, tabIndex=20;
+Edit mm3_b=formonly.mm3_b type CHAR, tabIndex=21;
+Edit mm3_e=formonly.mm3_e type CHAR, tabIndex=22;
+Edit yy9_b=formonly.yy9_b type CHAR, tabIndex=23;
+Edit mm9_b=formonly.mm9_b type CHAR, tabIndex=24;
+Edit mm9_e=formonly.mm9_e type CHAR, tabIndex=25;
+Edit yy4_b=formonly.yy4_b type CHAR, tabIndex=26;
+Edit mm4_b=formonly.mm4_b type CHAR, tabIndex=27;
+Edit mm4_e=formonly.mm4_e type CHAR, tabIndex=28;
+Edit yy10_b=formonly.yy10_b type CHAR, tabIndex=29;
+Edit mm10_b=formonly.mm10_b type CHAR, tabIndex=30;
+Edit mm10_e=formonly.mm10_e type CHAR, tabIndex=31;
+Edit yy5_b=formonly.yy5_b type CHAR, tabIndex=32;
+Edit mm5_b=formonly.mm5_b type CHAR, tabIndex=33;
+Edit mm5_e=formonly.mm5_e type CHAR, tabIndex=34;
+Edit yy11_b=formonly.yy11_b type CHAR, tabIndex=35;
+Edit mm11_b=formonly.mm11_b type CHAR, tabIndex=36;
+Edit mm11_e=formonly.mm11_e type CHAR, tabIndex=37;
+Edit yy6_b=formonly.yy6_b type CHAR, tabIndex=38;
+Edit mm6_b=formonly.mm6_b type CHAR, tabIndex=39;
+Edit mm6_e=formonly.mm6_e type CHAR, tabIndex=40;
+Edit yy12_b=formonly.yy12_b type CHAR, tabIndex=41;
+Edit mm12_b=formonly.mm12_b type CHAR, tabIndex=42;
+Edit mm12_e=formonly.mm12_e type CHAR, tabIndex=43;
+Group group06:group06;
+ButtonEdit plant_1=formonly.plant_1 type CHAR, action=controlp, tabIndex=44, image="zoom", upShift;
+ButtonEdit plant_2=formonly.plant_2 type CHAR, action=controlp, tabIndex=44, image="zoom", upShift;
+ButtonEdit plant_3=formonly.plant_3 type CHAR, action=controlp, tabIndex=44, image="zoom", upShift;
+ButtonEdit plant_4=formonly.plant_4 type CHAR, action=controlp, tabIndex=44, image="zoom", upShift;
+ButtonEdit plant_5=formonly.plant_5 type CHAR, action=controlp, tabIndex=44, image="zoom", upShift;
+ButtonEdit plant_6=formonly.plant_6 type CHAR, action=controlp, tabIndex=44, image="zoom", upShift;
+ButtonEdit plant_7=formonly.plant_7 type CHAR, action=controlp, tabIndex=44, image="zoom", upShift;
+ButtonEdit plant_8=formonly.plant_8 type CHAR, action=controlp, tabIndex=44, image="zoom", upShift;
+Group group08:group08;
+ComboBox type=formonly.type type VARCHAR, tabIndex=59, not null, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+RadioGroup dec=formonly.dec type CHAR, tabIndex=52, orientation=horizontal, items=(("1", "DR"),("2", "TH"),("3", "Ten TH"));
+ButtonEdit azk01=formonly.azk01 type VARCHAR, action=controlp, tabIndex=53, image="zoom", upShift;
+ButtonEdit azk04=formonly.azk04 type DECIMAL, action=controlp, tabIndex=54, image="zoom";
+CheckBox p_group=formonly.p_group type VARCHAR, tabIndex=55, text="Print Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sum_code=formonly.sum_code type CHAR, tabIndex=56, text="Allowance/Misc Invoice/For Internal Total\}", valueChecked = "Y", valueUnchecked = "N";
+CheckBox p_group1=formonly.p_group1 type VARCHAR, tabIndex=57, text="Print Group", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=58, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima12,formonly.ima131,formonly.ima11,formonly.title,formonly.data,formonly.order,formonly.yy1_b,formonly.mm1_b,formonly.mm1_e,formonly.yy7_b,formonly.mm7_b,formonly.mm7_e,formonly.yy2_b,formonly.mm2_b,formonly.mm2_e,formonly.yy8_b,formonly.mm8_b,formonly.mm8_e,formonly.yy3_b,formonly.mm3_b,formonly.mm3_e,formonly.yy9_b,formonly.mm9_b,formonly.mm9_e,formonly.yy4_b,formonly.mm4_b,formonly.mm4_e,formonly.yy10_b,formonly.mm10_b,formonly.mm10_e,formonly.yy5_b,formonly.mm5_b,formonly.mm5_e,formonly.yy11_b,formonly.mm11_b,formonly.mm11_e,formonly.yy6_b,formonly.mm6_b,formonly.mm6_e,formonly.yy12_b,formonly.mm12_b,formonly.mm12_e,formonly.type,formonly.dec,formonly.azk01,formonly.azk04,formonly.p_group,formonly.sum_code,formonly.p_group1,formonly.more,formonly.plant_1,formonly.plant_2,formonly.plant_3,formonly.plant_4,formonly.plant_5,formonly.plant_6,formonly.plant_7,formonly.plant_8)
+END -- INSTRUCTIONS
+

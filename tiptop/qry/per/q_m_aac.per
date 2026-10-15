@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_m_aac.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Voucher Type")
+Grid gr3778
+{
+ <T s_aac                                                                                             >
+ [check |aac01            |aac02               |aac11      |aacauno       |aacmxno          |aac03   ]
+ [check |aac01            |aac02               |aac11      |aacauno       |aacmxno          |aac03   ]
+ [check |aac01            |aac02               |aac11      |aacauno       |aacmxno          |aac03   ]
+ [check |aac01            |aac02               |aac11      |aacauno       |aacmxno          |aac03   ]
+ [check |aac01            |aac02               |aac11      |aacauno       |aacmxno          |aac03   ]
+ [check |aac01            |aac02               |aac11      |aacauno       |aacmxno          |aac03   ]
+ [check |aac01            |aac02               |aac11      |aacauno       |aacmxno          |aac03   ]
+ [check |aac01            |aac02               |aac11      |aacauno       |aacmxno          |aac03   ]
+ [check |aac01            |aac02               |aac11      |aacauno       |aacmxno          |aac03   ]
+ [check |aac01            |aac02               |aac11      |aacauno       |aacmxno          |aac03   ]
+ <                                                                                                    >
+
+}
+END -- gr3778
+END -- q_m_aac
+
+TABLES
+aac_file
+ATTRIBUTES
+Table s_aac:s_aac;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit aac01=aac_file.aac01, tabIndex=2, title="Document", noEntry;
+Edit aac02=aac_file.aac02, tabIndex=3, title="Document Name", noEntry;
+Edit aac11=aac_file.aac11, tabIndex=4, title="Property", noEntry;
+Edit aacauno=aac_file.aacauno, tabIndex=5, title="Auto Number", noEntry;
+Edit aacmxno=aac_file.aacmxno, tabIndex=6, title="Max Number", noEntry;
+Edit aac03=aac_file.aac03, tabIndex=7, title="Transfer", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aac(formonly.check,aac_file.aac01,aac_file.aac02,aac_file.aac11,aac_file.aacauno,aac_file.aacmxno,aac_file.aac03)
+END -- INSTRUCTIONS
+

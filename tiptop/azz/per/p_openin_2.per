@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_openin_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="p_openin_2")
+Folder pc1
+Page Page1(text=%"Main")
+Table tb3
+{
+[zoa03   |gaz03   |zoc02   |gat01   |sum_01  ]
+[zoa03   |gaz03   |zoc02   |gat01   |sum_01  ]
+[zoa03   |gaz03   |zoc02   |gat01   |sum_01  ]
+[zoa03   |gaz03   |zoc02   |gat01   |sum_01  ]
+[zoa03   |gaz03   |zoc02   |gat01   |sum_01  ]
+[zoa03   |gaz03   |zoc02   |gat01   |sum_01  ]
+[zoa03   |gaz03   |zoc02   |gat01   |sum_01  ]
+[zoa03   |gaz03   |zoc02   |gat01   |sum_01  ]
+[zoa03   |gaz03   |zoc02   |gat01   |sum_01  ]
+[zoa03   |gaz03   |zoc02   |gat01   |sum_01  ]
+
+}
+END -- tb3
+END -- Page1
+END -- pc1
+END -- p_openin_2
+
+TABLES
+gaz_file,
+zoc_file,
+zoa_file
+ATTRIBUTES
+Edit zoa03=zoa_file.zoa03, tabIndex=1, title="zoa03", not null, required;
+Edit gaz03=gaz_file.gaz03, tabIndex=2, title="gaz03";
+Edit zoc02=zoc_file.zoc02, tabIndex=5, title=%"zoc02", not null, required;
+Edit gat01=formonly.gat01 type CHAR, tabIndex=3, title=%"gat01";
+Edit sum_01=formonly.sum_01 type SMALLINT, tabIndex=4, title=%"sum_01", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zoa_1(zoa_file.zoa03,gaz_file.gaz03,zoc_file.zoc02,formonly.gat01,formonly.sum_01)
+END -- INSTRUCTIONS
+

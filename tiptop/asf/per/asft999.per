@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft999.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft999")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ Transfer Note[shx01        ]EmployeeNo[shx03     ]user [gen02      ]conf [shx04        ][shx07    ] [shx08    ]
+ date         [shx02        ]zuoyeNo   [shx05     ]zuoye[ecd02      ]PBI #[shx06        ]fp[shx09        ]
+}
+END -- gr1
+END -- page01
+Page info(text="Info")
+Grid gr2
+{
+ Record Owner        [shxuser      ]   Last Modified by    [shxmodu   ]
+ Department          [shxgrup      ]   Create/Modify Date  [shxdate   ]
+ Record Orig.        [shxoriu      ]
+ Dept Orig.          [shxorig      ]
+}
+END -- gr2
+END -- info
+END -- pc1
+Table s_shy
+{
+[shy02    |shy23 |shy24 |shy19  |gen021   |shy20     |skh13       |skh03       |skh04       |skh05      |tc_sakf009 |shy03    |shy06    |shy21       |shy07 |ima02        |wip       |shy08  |shy09 |shy10 |shy11 |shy12 |shy13 |shy14 |shy15 |shy16 |shy17 |shy18  ]
+[shy02    |shy23 |shy24 |shy19  |gen021   |shy20     |skh13       |skh03       |skh04       |skh05      |tc_sakf009 |shy03    |shy06    |shy21       |shy07 |ima02        |wip       |shy08  |shy09 |shy10 |shy11 |shy12 |shy13 |shy14 |shy15 |shy16 |shy17 |shy18  ]
+[shy02    |shy23 |shy24 |shy19  |gen021   |shy20     |skh13       |skh03       |skh04       |skh05      |tc_sakf009 |shy03    |shy06    |shy21       |shy07 |ima02        |wip       |shy08  |shy09 |shy10 |shy11 |shy12 |shy13 |shy14 |shy15 |shy16 |shy17 |shy18  ]
+[shy02    |shy23 |shy24 |shy19  |gen021   |shy20     |skh13       |skh03       |skh04       |skh05      |tc_sakf009 |shy03    |shy06    |shy21       |shy07 |ima02        |wip       |shy08  |shy09 |shy10 |shy11 |shy12 |shy13 |shy14 |shy15 |shy16 |shy17 |shy18  ]
+[shy02    |shy23 |shy24 |shy19  |gen021   |shy20     |skh13       |skh03       |skh04       |skh05      |tc_sakf009 |shy03    |shy06    |shy21       |shy07 |ima02        |wip       |shy08  |shy09 |shy10 |shy11 |shy12 |shy13 |shy14 |shy15 |shy16 |shy17 |shy18  ]
+[shy02    |shy23 |shy24 |shy19  |gen021   |shy20     |skh13       |skh03       |skh04       |skh05      |tc_sakf009 |shy03    |shy06    |shy21       |shy07 |ima02        |wip       |shy08  |shy09 |shy10 |shy11 |shy12 |shy13 |shy14 |shy15 |shy16 |shy17 |shy18  ]
+[shy02    |shy23 |shy24 |shy19  |gen021   |shy20     |skh13       |skh03       |skh04       |skh05      |tc_sakf009 |shy03    |shy06    |shy21       |shy07 |ima02        |wip       |shy08  |shy09 |shy10 |shy11 |shy12 |shy13 |shy14 |shy15 |shy16 |shy17 |shy18  ]
+
+}
+END -- s_shy
+Grid gr3
+{
+ ---------- Rows [cnt   ] ----------                      ---------- sum1 [sum1             ] ----------             ---------- sum2 [sum2        ] ----------
+
+}
+END -- gr3
+END -- VBox1
+END -- asft999
+
+TABLES
+shy_file,
+shx_file,
+ima_file
+ATTRIBUTES
+ButtonEdit shx01=shx_file.shx01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Document Property";
+ButtonEdit shx03=shx_file.shx03, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Work Center ";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=3, noEntry;
+ComboBox shx04=shx_file.shx04, tabIndex=4, noEntry, not null, required, items=(("Y", "Confirmed"),("N", "UnConfirm"));
+CheckBox shx07=shx_file.shx07, tabIndex=5, text="fpbgf";
+CheckBox shx08=shx_file.shx08, tabIndex=6, text="ttfpf";
+DateEdit shx02=shx_file.shx02, tabIndex=7, not null, required;
+ButtonEdit shx05=shx_file.shx05, action=controlp, tabIndex=8, image="zoom", comment="<^P>Query W/O No.";
+Edit ecd02=formonly.ecd02 type CHAR, tabIndex=9, noEntry;
+ButtonEdit shx06=shx_file.shx06, action=controlp, tabIndex=10, image="zoom";
+ButtonEdit shx09=shx_file.shx09, action=controlp, tabIndex=11, noEntry, image="zoom.png";
+Edit shxuser=shx_file.shxuser, tabIndex=12, noEntry;
+Edit shxmodu=shx_file.shxmodu, tabIndex=13, noEntry;
+Edit shxgrup=shx_file.shxgrup, tabIndex=14, noEntry;
+DateEdit shxdate=shx_file.shxdate, tabIndex=15, noEntry;
+Edit shxoriu=shx_file.shxoriu, tabIndex=501, noEntry;
+Edit shxorig=shx_file.shxorig, tabIndex=502, noEntry;
+Edit shy02=shy_file.shy02, tabIndex=16, title="Line No.";
+Edit shy23=shy_file.shy23, tabIndex=17, title="shy23";
+Edit shy24=shy_file.shy24, tabIndex=18, title="shy24";
+ButtonEdit shy19=shy_file.shy19, action=controlp, tabIndex=19, title="shy19", image="zoom";
+Edit gen021=formonly.gen021 type CHAR, tabIndex=20, title="emp.name", noEntry;
+ButtonEdit shy20=shy_file.shy20, action=controlp, tabIndex=21, title="shy20", image="zoom";
+Edit skh13=formonly.skh13 type CHAR, tabIndex=22, title="skh13", noEntry;
+Edit skh03=formonly.skh03 type CHAR, tabIndex=23, title="skh03", noEntry;
+Edit skh04=formonly.skh04 type CHAR, tabIndex=24, title="skh04", noEntry;
+Edit skh05=formonly.skh05 type CHAR, tabIndex=25, title="skh05", noEntry;
+Edit tc_sakf009=formonly.tc_sakf009 type CHAR, tabIndex=26, title="tc_sakf009", noEntry;
+ButtonEdit shy03=shy_file.shy03, action=controlp, tabIndex=27, title="shy03", not null, required, image="zoom", comment="<^P>Qry Document Property";
+ButtonEdit shy06=shy_file.shy06, action=controlp, tabIndex=28, title="shy06", not null, required, image="zoom";
+ButtonEdit shy21=shy_file.shy21, action=controlp, tabIndex=29, title="Work No", not null, required, image="zoom", comment="<^P>Query W/O No.";
+Edit shy07=shy_file.shy07, tabIndex=30, title="shy07", noEntry;
+Edit ima02=ima_file.ima02, tabIndex=31, title="ima02", noEntry;
+Edit wip=formonly.wip type CHAR, tabIndex=32, title="wip", noEntry;
+Edit shy08=shy_file.shy08, tabIndex=33, title="shy08";
+Edit shy09=shy_file.shy09, tabIndex=34, title="shy09";
+Edit shy10=shy_file.shy10, tabIndex=35, title="shy10";
+Edit shy11=shy_file.shy11, tabIndex=36, title="shy11";
+Edit shy12=shy_file.shy12, tabIndex=37, title="shy12";
+Edit shy13=shy_file.shy13, tabIndex=38, title="shy13";
+Edit shy14=shy_file.shy14, tabIndex=39, title="shy14";
+Edit shy15=shy_file.shy15, tabIndex=40, title="shy15";
+Edit shy16=shy_file.shy16, tabIndex=41, title="shy16";
+Edit shy17=shy_file.shy17, tabIndex=42, title="shy17";
+Edit shy18=shy_file.shy18, tabIndex=43, title="shy18";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=44, noEntry;
+Edit sum1=formonly.sum1 type CHAR, tabIndex=45, noEntry;
+Edit sum2=formonly.sum2 type CHAR, tabIndex=46, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_shy(shy_file.shy02,shy_file.shy23,shy_file.shy24,shy_file.shy19,formonly.gen021,shy_file.shy20,formonly.skh13,formonly.skh03,formonly.skh04,formonly.skh05,formonly.tc_sakf009,shy_file.shy03,shy_file.shy06,shy_file.shy21,shy_file.shy07,ima_file.ima02,formonly.wip,shy_file.shy08,shy_file.shy09,shy_file.shy10,shy_file.shy11,shy_file.shy12,shy_file.shy13,shy_file.shy14,shy_file.shy15,shy_file.shy16,shy_file.shy17,shy_file.shy18)
+SCREEN RECORD Undefined(shx_file.shx01,shx_file.shx03,formonly.gen02,shx_file.shx04,shx_file.shx07,shx_file.shx08,shx_file.shx02,shx_file.shx05,formonly.ecd02,shx_file.shx06,shx_file.shx09,shx_file.shxuser,shx_file.shxmodu,shx_file.shxgrup,shx_file.shxdate,shx_file.shxoriu,shx_file.shxorig,formonly.cnt,formonly.sum1,formonly.sum2)
+END -- INSTRUCTIONS
+

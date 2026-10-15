@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsq110")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr878
+{
+ APS Version [vzu01                     ]      Save Version [vzu02     ]
+
+
+}
+END -- gr878
+END -- page01
+END -- folder01
+Grid gr881
+{
+
+[bt01             ]
+[                 ]
+
+
+[bt10             ] -\>  [bt20             ]  -\>   [bt30             ]-\> [bt40             ]  -\> [bt50              ] -\>  [bt60              ]
+
+ <G gb1          >       <G gb1_1        >         <G gb1_2        >     <G gb1_3        >       <G gb1_4         >       <G gb1_5         >
+ [text10        ]        [text20        ]          [text30         ]     [text40         ]       [text50          ]       [text60          ]
+ <               >       <               >         <               >     <               >       <                >       <                >
+
+ <G gb7          >       <G gb9          >         <G gb9_2        >     <G gb9_3        >       <G gb9_4         >       <G gb9_5         >
+ [text10_1      ]        [text20_1      ]          [text30_1       ]     [text40_1       ]       [text50_1        ]       [text60_1        ]
+ <               >       <               >         <               >     <               >       <                >       <                >
+
+ <G gb7_1        >       <G gb9_1        >         <G gb9_6        >     <G gb9_7        >       <G gb9_8         >       <G gb9_9         >
+ [text10_2      ]        [text20_2      ]          [text30_2       ]     [text40_2       ]       [text50_2        ]       [text60_2        ]
+ <               >       <               >         <               >     <               >       <                >       <                >
+}
+END -- gr881
+Grid gr881_1
+{
+
+  ----------  Rows  [cnt   ]    ----------
+
+
+
+}
+END -- gr881_1
+END -- VBox1
+END -- apsq110
+
+TABLES
+vzu_file
+ATTRIBUTES
+ButtonEdit vzu01=vzu_file.vzu01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit vzu02=vzu_file.vzu02, tabIndex=1, not null, required;
+Button bt01:bt01, text="Restart";
+Button bt10:bt10, text="TP to Temp", image="http://10.40.40.30/cgi-bin/fglccgi/top3o/tiptop/pic/greenLight.jpg";
+Button bt20:bt20, text="Temp to APS", image="http://10.40.40.30/cgi-bin/fglccgi/top3o/tiptop/pic/greenLight.jpg";
+Button bt30:bt30, text="APS planning", image="http://10.40.40.30/cgi-bin/fglccgi/top3o/tiptop/pic/greenLight.jpg";
+Button bt40:bt40, text="Plan confirm", image="http://10.40.40.30/cgi-bin/fglccgi/top3o/tiptop/pic/greenLight.jpg";
+Button bt50:bt50, text="APS to Temp", image="http://10.40.40.30/cgi-bin/fglccgi/top3o/tiptop/pic/greenLight.jpg";
+Button bt60:bt60, text="APS  adjustment", image="http://10.40.40.30/cgi-bin/fglccgi/top3o/tiptop/pic/greenLight.jpg";
+Group gb1:gb1;
+LABEL text10=formonly.text10 type CHAR;
+Group gb1_1:gb1_1;
+LABEL text20=formonly.text20 type CHAR;
+Group gb1_2:gb1_2;
+LABEL text30=formonly.text30 type CHAR;
+Group gb1_3:gb1_3;
+LABEL text40=formonly.text40 type CHAR;
+Group gb1_4:gb1_4;
+LABEL text50=formonly.text50 type CHAR;
+Group gb1_5:gb1_5;
+LABEL text60=formonly.text60 type CHAR;
+Group gb7:gb7;
+LABEL text10_1=formonly.text10_1 type CHAR;
+Group gb9:gb9;
+LABEL text20_1=formonly.text20_1 type CHAR;
+Group gb9_2:gb9_2;
+LABEL text30_1=formonly.text30_1 type CHAR;
+Group gb9_3:gb9_3;
+LABEL text40_1=formonly.text40_1 type CHAR;
+Group gb9_4:gb9_4;
+LABEL text50_1=formonly.text50_1 type CHAR;
+Group gb9_5:gb9_5;
+LABEL text60_1=formonly.text60_1 type CHAR;
+Group gb7_1:gb7_1;
+LABEL text10_2=formonly.text10_2 type CHAR;
+Group gb9_1:gb9_1;
+LABEL text20_2=formonly.text20_2 type CHAR;
+Group gb9_6:gb9_6;
+LABEL text30_2=formonly.text30_2 type CHAR;
+Group gb9_7:gb9_7;
+LABEL text40_2=formonly.text40_2 type CHAR;
+Group gb9_8:gb9_8;
+LABEL text50_2=formonly.text50_2 type CHAR;
+Group gb9_9:gb9_9;
+LABEL text60_2=formonly.text60_2 type CHAR;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vzu_file.vzu01,vzu_file.vzu02,formonly.text10,formonly.text20,formonly.text30,formonly.text40,formonly.text50,formonly.text60,formonly.text10_1,formonly.text20_1,formonly.text30_1,formonly.text40_1,formonly.text50_1,formonly.text60_1,formonly.text10_2,formonly.text20_2,formonly.text30_2,formonly.text40_2,formonly.text50_2,formonly.text60_2,formonly.cnt)
+END -- INSTRUCTIONS
+

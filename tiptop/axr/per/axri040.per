@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axri040.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axri040")
+VBox VBox1
+Folder pc681
+Page page01(text="Main")
+Table s_ooc
+{
+[ooc01    |ooc02         |ooc03                   |aag02                    |ooc04                    |aag021                         ]
+[ooc01    |ooc02         |ooc03                   |aag02                    |ooc04                    |aag021                         ]
+[ooc01    |ooc02         |ooc03                   |aag02                    |ooc04                    |aag021                         ]
+[ooc01    |ooc02         |ooc03                   |aag02                    |ooc04                    |aag021                         ]
+[ooc01    |ooc02         |ooc03                   |aag02                    |ooc04                    |aag021                         ]
+[ooc01    |ooc02         |ooc03                   |aag02                    |ooc04                    |aag021                         ]
+[ooc01    |ooc02         |ooc03                   |aag02                    |ooc04                    |aag021                         ]
+[ooc01    |ooc02         |ooc03                   |aag02                    |ooc04                    |aag021                         ]
+[ooc01    |ooc02         |ooc03                   |aag02                    |ooc04                    |aag021                         ]
+[ooc01    |ooc02         |ooc03                   |aag02                    |ooc04                    |aag021                         ]
+
+}
+END -- s_ooc
+END -- page01
+END -- pc681
+Grid gr2967
+{
+ Detail Counts   [cn2        ]
+
+}
+END -- gr2967
+END -- VBox1
+END -- axri040
+
+TABLES
+ooc_file
+ATTRIBUTES
+Edit ooc01=ooc_file.ooc01, tabIndex=1, title="Category", not null, required, comment="KEY Field, No Blank/Rep  ,Enter No Number(0-9)Data! ";
+Edit ooc02=formonly.ooc02 type VARCHAR, tabIndex=2, title="Description";
+ButtonEdit ooc03=formonly.ooc03 type VARCHAR, action=controlp, tabIndex=3, title="Account #", not null, required, image="zoom", comment="<^P>Qry Account No. ";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=4, title="Account Title", noEntry;
+ButtonEdit ooc04=formonly.ooc04 type VARCHAR, action=controlp, tabIndex=5, title="Account2", not null, required, image="zoom", comment="<^P>Qry Account No. ";
+Edit aag021=formonly.aag021 type VARCHAR, tabIndex=6, title="Account2 Title", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ooc(ooc_file.ooc01,formonly.ooc02,formonly.ooc03,formonly.aag02,formonly.ooc04,formonly.aag021)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

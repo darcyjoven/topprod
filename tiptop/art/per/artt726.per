@@ -1,0 +1,127 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt726.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artt726")
+VBox vb2
+Folder pc1
+Page Page1(text=%"Main")
+HBox hb4
+Grid gr12
+{
+
+  Doc. Type      [rum00         ]
+  Rum01          [rum01         ]
+  Source Doc. No.[rum02         ]
+  Vendor         [rum03         |rum03_desc  ]
+  Rum04          [rum04         ]
+  by Staff       [rum05         |rum05_desc  ]
+
+
+}
+END -- gr12
+Grid gr13
+{
+
+ Approval Code[rumconf         ][imgmksg  ]
+ Approval Date[rumcond         ][         ]
+ Approver     [rumconu         |rumconu_desc]
+ Institution  [rumplant        |rumplant_des]
+ Memo         [rum06                        ]
+
+
+
+}
+END -- gr13
+END -- hb4
+END -- Page1
+Page Page2(text=%"Info")
+Grid gr5
+{
+
+ Record Owner[rumuser   ]  Last Modified by  [rummodu     ]  Data Valid Code[rumacti     ]  Record Orig.[rumoriu      ]
+ Department  [rumgrup   ]  Create/Modify Date[rumdate     ]  Create Date    [rumcrat     ]  Dept Orig.  [rumorig      ]
+
+
+
+}
+END -- gr5
+END -- Page2
+END -- pc1
+Table s_run
+{
+[run02   |run05       |run03   |run03_de|run04   |run04_de|run06   |run06_de|run07   |run08   |run09   |run10   |run11   |run12   |run13   ]
+[run02   |run05       |run03   |run03_de|run04   |run04_de|run06   |run06_de|run07   |run08   |run09   |run10   |run11   |run12   |run13   ]
+[run02   |run05       |run03   |run03_de|run04   |run04_de|run06   |run06_de|run07   |run08   |run09   |run10   |run11   |run12   |run13   ]
+[run02   |run05       |run03   |run03_de|run04   |run04_de|run06   |run06_de|run07   |run08   |run09   |run10   |run11   |run12   |run13   ]
+[run02   |run05       |run03   |run03_de|run04   |run04_de|run06   |run06_de|run07   |run08   |run09   |run10   |run11   |run12   |run13   ]
+[run02   |run05       |run03   |run03_de|run04   |run04_de|run06   |run06_de|run07   |run08   |run09   |run10   |run11   |run12   |run13   ]
+
+}
+END -- s_run
+Grid gr20
+{
+
+     ---------Rows[idx       ]/[cnt       ]--Item[cn2       ]---------
+
+}
+END -- gr20
+END -- vb2
+END -- Form1
+
+TABLES
+run_file,
+rum_file
+ATTRIBUTES
+ComboBox rum00=rum_file.rum00, tabIndex=9, not null, items=(("1", "entrance"),("2", "exeunt"));
+ButtonEdit rum01=rum_file.rum01, action=controlp, tabIndex=10, not null, image="zoom.png";
+ButtonEdit rum02=rum_file.rum02, action=controlp, tabIndex=11, not null, image="zoom.png";
+ButtonEdit rum03=rum_file.rum03, action=controlp, tabIndex=12, not null, required, image="zoom.png";
+Edit rum03_desc=formonly.rum03_desc type CHAR, tabIndex=16, noEntry;
+DateEdit rum04=rum_file.rum04, tabIndex=13, not null, required;
+ButtonEdit rum05=rum_file.rum05, action=controlp, tabIndex=14, image="zoom.png";
+Edit rum05_desc=formonly.rum05_desc type CHAR, tabIndex=15, noEntry;
+ComboBox rumconf=rum_file.rumconf, tabIndex=17, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+DateEdit rumcond=rum_file.rumcond, tabIndex=18;
+ButtonEdit rumconu=rum_file.rumconu, action=controlp, tabIndex=19, image="zoom.png";
+Edit rumconu_desc=formonly.rumconu_desc type CHAR, tabIndex=20, noEntry;
+ButtonEdit rumplant=rum_file.rumplant, action=controlp, tabIndex=21, image="zoom.png";
+Edit rumplant_des=formonly.rumplant_desc type CHAR, tabIndex=22, noEntry;
+Edit rum06=rum_file.rum06, tabIndex=23;
+Edit rumuser=rum_file.rumuser, tabIndex=1, noEntry;
+Edit rummodu=rum_file.rummodu, tabIndex=3, noEntry;
+Edit rumacti=rum_file.rumacti, tabIndex=6, default = "Y", noEntry;
+Edit rumoriu=rum_file.rumoriu, tabIndex=7, noEntry;
+Edit rumgrup=rum_file.rumgrup, tabIndex=2, noEntry;
+DateEdit rumdate=rum_file.rumdate, tabIndex=4, noEntry;
+DateEdit rumcrat=rum_file.rumcrat, tabIndex=5, noEntry;
+Edit rumorig=rum_file.rumorig, tabIndex=8, noEntry;
+ButtonEdit run02=run_file.run02, action=controlp, tabIndex=24, title="Line No.", not null, image="zoom.png";
+ButtonEdit run05=run_file.run05, action=controlp, tabIndex=41, title=%"Product Barcode", image="zoom.png";
+ButtonEdit run03=run_file.run03, action=controlp, tabIndex=25, title="Item No.", not null, required, image="zoom.png";
+Edit run03_de=formonly.run03_desc type CHAR, tabIndex=26, title="Product Name", noEntry;
+ButtonEdit run04=run_file.run04, action=controlp, tabIndex=27, title="Inventory Unit", noEntry, image="zoom.png";
+Edit run04_de=formonly.run04_desc type CHAR, tabIndex=28, title="Dept Name", noEntry;
+ButtonEdit run06=run_file.run06, action=controlp, tabIndex=29, title="Unit", not null, required, image="zoom.png";
+Edit run06_de=formonly.run06_desc type CHAR, tabIndex=30, title="Dept Name", noEntry;
+Edit run07=run_file.run07, tabIndex=31, title="Unit Conversion Rate", noEntry;
+Edit run08=run_file.run08, tabIndex=32, default = "0", title="Run08", noEntry;
+Edit run09=run_file.run09, tabIndex=33, default = "0", title="Returned Qty", noEntry;
+Edit run10=run_file.run10, tabIndex=34, title="Run10", not null, required;
+ButtonEdit run11=run_file.run11, action=controlp, tabIndex=35, title="WH", not null, image="zoom.png";
+ButtonEdit run12=run_file.run12, action=controlp, tabIndex=36, title="Location", image="zoom.png";
+ButtonEdit run13=run_file.run13, action=controlp, tabIndex=37, title="Lot No.", image="zoom.png";
+Edit idx=formonly.idx type CHAR, tabIndex=39, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=40, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=38, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_run(run_file.run02,run_file.run05,run_file.run03,formonly.run03_desc,run_file.run04,formonly.run04_desc,run_file.run06,formonly.run06_desc,run_file.run07,run_file.run08,run_file.run09,run_file.run10,run_file.run11,run_file.run12,run_file.run13)
+SCREEN RECORD Undefined(rum_file.rum00,rum_file.rum01,rum_file.rum02,rum_file.rum03,formonly.rum03_desc,rum_file.rum04,rum_file.rum05,formonly.rum05_desc,rum_file.rumconf,formonly.imgmksg,rum_file.rumcond,rum_file.rumconu,formonly.rumconu_desc,rum_file.rumplant,formonly.rumplant_desc,rum_file.rum06,rum_file.rumuser,rum_file.rummodu,rum_file.rumacti,rum_file.rumoriu,rum_file.rumgrup,rum_file.rumdate,rum_file.rumcrat,rum_file.rumorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

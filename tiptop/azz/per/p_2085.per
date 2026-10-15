@@ -1,0 +1,79 @@
+----------------------------------------------------------------------------------
+-- $Id:  p_2085.per created 2009-10-22T03:43:13
+-- File created from p_2085.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="p_2085")
+  VBOX vb2
+    FOLDER pc1
+      PAGE page01( TEXT="Basic Data")
+        GRID gr2
+        {
+        [aa0    ]        [aa1                 ]
+        [aa2        ]    [aa3                 ]
+        [aa4                                   ]
+
+
+        }
+        END -- GRID
+      END -- PAGE
+      PAGE page02( TEXT="蝯梯�鞈�")
+        GRID gr10
+        {
+            text....descripo
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   tb1
+    {
+    [aa5   |aa6       |aa7       |aa8       |aa9   |ab0   |ab1       ]
+    [aa5   |aa6       |aa7       |aa8       |aa9   |ab0   |ab1       ]
+    [aa5   |aa6       |aa7       |aa8       |aa9   |ab0   |ab1       ]
+    [aa5   |aa6       |aa7       |aa8       |aa9   |ab0   |ab1       ]
+    [aa5   |aa6       |aa7       |aa8       |aa9   |ab0   |ab1       ]
+    [aa5   |aa6       |aa7       |aa8       |aa9   |ab0   |ab1       ]
+    [aa5   |aa6       |aa7       |aa8       |aa9   |ab0   |ab1       ]
+    [aa5   |aa6       |aa7       |aa8       |aa9   |ab0   |ab1       ]
+    [aa5   |aa6       |aa7       |aa8       |aa9   |ab0   |ab1       ]
+    [aa5   |aa6       |aa7       |aa8       |aa9   |ab0   |ab1       ]
+    [aa5   |aa6       |aa7       |aa8       |aa9   |ab0   |ab1       ]
+    [aa5   |aa6       |aa7       |aa8       |aa9   |ab0   |ab1       ]
+    }
+    END -- TABLE
+    GRID gr3
+    {
+      ---------------- text1 [ab2       ] --------------------------------
+
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES gae_file
+
+ATTRIBUTES
+  LABEL aa0:lb1, TEXT="Form id";
+  EDIT aa1=gae_file.gae01, TABINDEX=1;
+  LABEL aa2:lb2, TEXT="Language Type";
+  EDIT aa3=gae_file.gae02, TABINDEX=2;
+  CHECKBOX aa4=gae_file.gae11, TEXT="Checked for Customerized", VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=3;
+  EDIT aa5=gae_file.gae03, TABINDEX=26713439, TITLE="gae03";
+  EDIT aa6=gae_file.gae04, TABINDEX=26713440, TITLE="gae04";
+  EDIT aa7=gae_file.gae05, TABINDEX=26713441, TITLE="gae05";
+  EDIT aa8=gae_file.gae06, TABINDEX=26713442, TITLE="gae06";
+  EDIT aa9=gae_file.gae07, TABINDEX=26713443, TITLE="gae07";
+  EDIT ab0=gae_file.gae08, TABINDEX=26713444, TITLE="gae08";
+  EDIT ab1=gae_file.gae09, TABINDEX=26713445, TITLE="gae09";
+  EDIT ab2=FORMONLY.ed28, TABINDEX=26713446;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_abc (gae_file.gae03, gae_file.gae04, gae_file.gae05, gae_file.gae06, gae_file.gae07, gae_file.gae08, gae_file.gae09)
+END

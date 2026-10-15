@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt256_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"artt256_1")
+Folder pc234
+Page page01(text="Page01")
+Grid gr1019
+{
+ <G group01                                        >
+  Flow Code    [ruo904    ]
+               [poz02                             ]
+  Downstream # [poy31     ][poy32     ][poy33     ]
+               [poy34     ][poy35     ][poy36     ]
+ <                                                 >
+
+}
+END -- gr1019
+END -- page01
+END -- pc234
+END -- artt256_1
+
+TABLES
+ruo_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit ruo904=ruo_file.ruo904, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Flow Code";
+Edit poz02=formonly.poz02 type CHAR, tabIndex=2, noEntry;
+Edit poy31=formonly.poy31 type CHAR, tabIndex=3, noEntry;
+Edit poy32=formonly.poy32 type CHAR, tabIndex=4, noEntry;
+Edit poy33=formonly.poy33 type CHAR, tabIndex=5, noEntry;
+Edit poy34=formonly.poy34 type CHAR, tabIndex=6, noEntry;
+Edit poy35=formonly.poy35 type CHAR, tabIndex=7, noEntry;
+Edit poy36=formonly.poy36 type CHAR, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ruo_file.ruo904,formonly.poz02,formonly.poy31,formonly.poy32,formonly.poy33,formonly.poy34,formonly.poy35,formonly.poy36)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglg902.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr902")
+VBox vb2
+Grid gr2796
+{
+ <G group01                                                              >
+  Entry Date          [aba05               ]
+  Voucher Date        [aba02               ]
+  Voucher NO.         [aba01               ]
+  Source              [aba06               ]
+ <                                                                       >
+}
+END -- gr2796
+Group group02(text="INPUT")
+Grid gr2797
+{
+ <G group03                                                              >
+   Book No.    [bookno              ]
+  [s1                  ][s2                  ]
+  [t1                  ][t2                  ]
+ <                                                                       >
+ <G group04                       ><G group05                            >
+  [d                             ]  [e                             ]
+ <                                ><                                     >
+  <G group06                                                              >
+   [f                                                                    ]
+   [h                                                                    ]
+  <                                                                       >
+}
+END -- gr2797
+END -- group02
+Grid gr2798
+{
+[m                                                           ]
+
+
+}
+END -- gr2798
+END -- vb2
+END -- aglr902
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit aba05=formonly.aba05 type DATE, tabIndex=1;
+DateEdit aba02=formonly.aba02 type DATE, tabIndex=2;
+Edit aba01=formonly.aba01 type VARCHAR, tabIndex=3;
+Edit aba06=formonly.aba06 type VARCHAR, tabIndex=4;
+Group group03:group03;
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=14, not null, required, image="zoom.png";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=5, queryEditable, items=(("1", "Entry Date"),("2", "Voucher Date"),("3", "Voucher NO."),("4", "Source"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=6, queryEditable, items=(("1", "Entry Date"),("2", "Voucher Date"),("3", "Voucher NO."),("4", "Source"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=7, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=8, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="Data Option 1";
+RadioGroup d=formonly.d type CHAR, tabIndex=9, items=(("1", "Unposted"),("2", " Posted"),("3", "All "));
+Group group05:group05, text="Data Option 2";
+RadioGroup e=formonly.e type CHAR, tabIndex=10, items=(("1", "Valid"),("2", "Void"),("3", "All "));
+Group group06:group06;
+CheckBox f=formonly.f type CHAR, tabIndex=11, text="Print extra memo?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=12, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox m=formonly.m type CHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aba05,formonly.aba02,formonly.aba01,formonly.aba06,formonly.bookno,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.d,formonly.e,formonly.f,formonly.h,formonly.m)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt4002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt4002")
+VBox VBox1
+Folder pc644
+Page page01(text="Main")
+Grid gr2711
+{
+ Times Printed       [ooaprsw   ]
+
+[ooa20                         ]
+}
+END -- gr2711
+END -- page01
+END -- pc644
+END -- VBox1
+END -- axrt4002
+
+TABLES
+ooa_file
+ATTRIBUTES
+Edit ooaprsw=ooa_file.ooaprsw, tabIndex=1;
+CheckBox ooa20=ooa_file.ooa20, tabIndex=2, text="Generate Entry", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ooa_file.ooaprsw,ooa_file.ooa20)
+END -- INSTRUCTIONS
+

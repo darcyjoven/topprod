@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amrq500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amrq500")
+VBox vb2
+Folder folder01
+Page page01(text=%"Main")
+HBox hb1
+Grid gr3873
+{
+ Version             [mss_v     ]
+ Item No.            [mss01                         ][ima02                           ]
+
+
+}
+END -- gr3873
+Grid gr3874
+{
+ Brand               [mss02     ][pmc03     ]
+ Plan Lot. No.       [msr919                        ]
+ ima45               [ima45               ]
+
+}
+END -- gr3874
+END -- hb1
+END -- page01
+END -- folder01
+ScrollGrid gr3875
+{
+
+  Serial No.             [mss00  ]    [mss00  ]    [mss00  ]    [mss00  ]    [mss00  ]    [mss00  ]    [mss00  ]
+  Time Bucket Day        [mss03     ] [mss03     ] [mss03     ] [mss03     ] [mss03     ] [mss03     ] [mss03     ]
+  -------------------------------------------------------------------------------------------------------------------
+  Qty Ordered            [mss041    ] [mss041    ] [mss041    ] [mss041    ] [mss041    ] [mss041    ] [mss041    ]
+  Planning Allotment     [mss043    ] [mss043    ] [mss043    ] [mss043    ] [mss043    ] [mss043    ] [mss043    ]
+  W/O Allotment          [mss044    ] [mss044    ] [mss044    ] [mss044    ] [mss044    ] [mss044    ] [mss044    ]
+  Inventory qty          [mss051    ] [mss051    ] [mss051    ] [mss051    ] [mss051    ] [mss051    ] [mss051    ]
+  Qty on QC              [mss052    ] [mss052    ] [mss052    ] [mss052    ] [mss052    ] [mss052    ] [mss052    ]
+  Substitute Qty         [mss053    ] [mss053    ] [mss053    ] [mss053    ] [mss053    ] [mss053    ] [mss053    ]
+  P/R Qty                [mss061    ] [mss061    ] [mss061    ] [mss061    ] [mss061    ] [mss061    ] [mss061    ]
+  Quantity On Pur.       [mss062    ] [mss062    ] [mss062    ] [mss062    ] [mss062    ] [mss062    ] [mss062    ]
+  Qt Out                 [mss063    ] [mss063    ] [mss063    ] [mss063    ] [mss063    ] [mss063    ] [mss063    ]
+  WIP Qty                [mss064    ] [mss064    ] [mss064    ] [mss064    ] [mss064    ] [mss064    ] [mss064    ]
+  Planned Prod. Qty      [mss065    ] [mss065    ] [mss065    ] [mss065    ] [mss065    ] [mss065    ] [mss065    ]
+  -------------------------------------------------------------------------------------------------------------------
+  Estimated Balance      [bal       ] [bal       ] [bal       ] [bal       ] [bal       ] [bal       ] [bal       ]
+  Reschedule Delivery    [mss07     ] [mss07     ] [mss07     ] [mss07     ] [mss07     ] [mss07     ] [mss07     ]
+  Estimated Balance      [mss08     ] [mss08     ] [mss08     ] [mss08     ] [mss08     ] [mss08     ] [mss08     ]
+  -------------------------------------------------------------------------------------------------------------------
+  PLM/PLP                [mss09     ] [mss09     ] [mss09     ] [mss09     ] [mss09     ] [mss09     ] [mss09     ]
+
+}
+END -- gr3875
+Grid gr3876
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3876
+END -- vb2
+END -- amrq500
+
+TABLES
+mss_file,
+msr_file
+ATTRIBUTES
+Edit mss_v=mss_file.mss_v, tabIndex=1, not null, required;
+Edit mss01=mss_file.mss01, tabIndex=2, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit mss02=mss_file.mss02, tabIndex=4, not null, required;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=5, noEntry;
+Edit msr919=msr_file.msr919, tabIndex=6, noEntry;
+Edit ima45=formonly.ima45, tabIndex=26;
+Edit mss00=mss_file.mss00, tabIndex=7;
+Edit mss03=mss_file.mss03, tabIndex=8, not null, required;
+Edit mss041=mss_file.mss041, tabIndex=9, noEntry;
+Edit mss043=mss_file.mss043, tabIndex=10, noEntry;
+Edit mss044=mss_file.mss044, tabIndex=11, noEntry;
+Edit mss051=mss_file.mss051, tabIndex=12, noEntry;
+Edit mss052=mss_file.mss052, tabIndex=13, noEntry;
+Edit mss053=mss_file.mss053, tabIndex=14, noEntry;
+Edit mss061=mss_file.mss061, tabIndex=15, noEntry;
+Edit mss062=mss_file.mss062, tabIndex=16, noEntry;
+Edit mss063=mss_file.mss063, tabIndex=17, noEntry;
+Edit mss064=mss_file.mss064, tabIndex=18, noEntry;
+Edit mss065=mss_file.mss065, tabIndex=19, noEntry;
+Edit bal=formonly.bal type CHAR, tabIndex=20, noEntry;
+Edit mss07=formonly.mss07 type CHAR, tabIndex=21, noEntry;
+Edit mss08=mss_file.mss08, tabIndex=22, noEntry;
+Edit mss09=mss_file.mss09, tabIndex=23, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mss(mss_file.mss00,mss_file.mss03,mss_file.mss041,mss_file.mss043,mss_file.mss044,mss_file.mss051,mss_file.mss052,mss_file.mss053,mss_file.mss061,mss_file.mss062,mss_file.mss063,mss_file.mss064,mss_file.mss065,formonly.bal,formonly.mss07,mss_file.mss08,mss_file.mss09)
+SCREEN RECORD Undefined(mss_file.mss_v,mss_file.mss01,formonly.ima02,mss_file.mss02,formonly.pmc03,msr_file.msr919,formonly.cnt,formonly.cn2,formonly.ima45)
+END -- INSTRUCTIONS
+

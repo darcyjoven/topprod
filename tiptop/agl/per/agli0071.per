@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli0071.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"agli0071")
+VBox VBox1
+Folder folder01
+Page page01(text=%"Main")
+Grid gr2343
+{
+ Book No.   [axo12        ]
+ Year       [axo01   ]
+ Month      [axo02   ]
+
+
+}
+END -- gr2343
+END -- page01
+END -- folder01
+Table s_axo
+{
+[axo14   |aya02           |axo15   |axl02           |axo04           ]
+[axo14   |aya02           |axo15   |axl02           |axo04           ]
+[axo14   |aya02           |axo15   |axl02           |axo04           ]
+[axo14   |aya02           |axo15   |axl02           |axo04           ]
+[axo14   |aya02           |axo15   |axl02           |axo04           ]
+[axo14   |aya02           |axo15   |axl02           |axo04           ]
+[axo14   |aya02           |axo15   |axl02           |axo04           ]
+[axo14   |aya02           |axo15   |axl02           |axo04           ]
+[axo14   |aya02           |axo15   |axl02           |axo04           ]
+[axo14   |aya02           |axo15   |axl02           |axo04           ]
+}
+END -- s_axo
+Grid gr2344
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2344
+END -- VBox1
+END -- agli0071
+
+TABLES
+axo_file
+ATTRIBUTES
+ButtonEdit axo12=axo_file.axo12, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit axo01=axo_file.axo01, tabIndex=2, not null, required;
+Edit axo02=axo_file.axo02, tabIndex=3, not null, required;
+ButtonEdit axo14=axo_file.axo14, action=controlp, tabIndex=4, title=%"Flow Category Code", not null, required, image="zoom", comment=%"<^P>Flow Category Code";
+Edit aya02=formonly.aya02 type CHAR, tabIndex=5, title=%"Description", noEntry;
+ButtonEdit axo15=axo_file.axo15, action=controlp, tabIndex=7, title=%"Group Code", not null, required, image="zoom", comment=%"<^P>Flow Category Code";
+Edit axl02=formonly.axl02 type CHAR, tabIndex=8, title=%"Description", noEntry;
+Edit axo04=axo_file.axo04, tabIndex=6, title=%"Transaction Amount", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axo(axo_file.axo14,formonly.aya02,axo_file.axo15,formonly.axl02,axo_file.axo04)
+SCREEN RECORD Undefined(axo_file.axo12,axo_file.axo01,axo_file.axo02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

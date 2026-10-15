@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrg301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr301")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                           >
+   Accounts No.        [oma01               ]
+   Account Date        [oma02               ]
+   Collecting Customer [oma03               ]
+   Account Employee    [oma14               ]
+   Accounts Department [oma15               ]
+   Accounts Category   [oma24               ]
+ <                                                                    >
+}
+END -- Grid1
+Group group02(text="INPUT")
+Grid Grid2
+{
+ <G group03                                                           >
+  [b                                       ]
+  [c                                       ]
+  [d                                       ]
+  [f                                       ]
+ <                                                                    >
+ <G group04                                                           >
+  [h                                       ]
+ <                                                                    >
+
+}
+END -- Grid2
+END -- group02
+Grid Grid3
+{
+[more                                              ]
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- axrr301
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oma01=formonly.oma01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+DateEdit oma02=formonly.oma02 type DATE, tabIndex=2;
+ButtonEdit oma03=formonly.oma03 type VARCHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+ButtonEdit oma14=formonly.oma14 type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+ButtonEdit oma15=formonly.oma15 type VARCHAR, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit oma24=formonly.oma24 type VARCHAR, tabIndex=6;
+Group group03:group03;
+CheckBox b=formonly.b type VARCHAR, tabIndex=7, text="Is Printed Print Again?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=8, text="Print voucher entry?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=9, text="Print Extra Memo?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox f=formonly.f type CHAR, tabIndex=10, not null, required, queryEditable, items=(("Item1", %""),("11", %"Deposit"),("12", %"Delivery"),("13", %"Balance"),("14", %"MISC"),("21", %"Allowance"),("22", %"Account To Offset"),("23", %"Advance Receive"),("24", %"Suspense Credit"),("25", %"Discount"),("31", %"Non-A/R Invoice"));
+Group group04:group04;
+RadioGroup h=formonly.h type VARCHAR, tabIndex=11, items=(("1", %"Confirmed"),("2", %"UnConfirmed"),("3", %"All "));
+CheckBox more=formonly.more type CHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oma01,formonly.oma02,formonly.oma03,formonly.oma14,formonly.oma15,formonly.oma24,formonly.b,formonly.c,formonly.d,formonly.f,formonly.h,formonly.more)
+END -- INSTRUCTIONS
+

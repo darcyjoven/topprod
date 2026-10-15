@@ -1,0 +1,56 @@
+
+DATABASE ds
+
+SCREEN
+{
+----------<F1>------------請購單維護作業(apmt420)-------<F2>-------[cnt  ]-
+請購單號:[pmk01     ] 
+請購日期:[pmk04   ]                           請 購 員:[pmk12   ][gen02   ]
+----------------------------------------------------------[cn3 ]/[cn2 ]---
+項次  料件編號/品名/規格  單位    請購量   交貨日期   轉採購量   PLP-NO.
+ ---  ------------------  ----  ---------  --------  ---------  ----------
+[l2 ][pml04             ][ml07][pml20    ][pml33   ][pml21    ][pml41     ]
+     [pml041                      ]
+     [ima021                      ]
+[l2 ][pml04             ][ml07][pml20    ][pml33   ][pml21    ][pml41     ]
+     [pml041                      ]
+     [ima021                      ]
+-----------------------------[pmkuser   ][grup  ][pmkmodu   ][pmkdat  ][z]-
+}
+
+TABLES pmk_file pml_file
+
+ATTRIBUTES
+pmk01 = pmk01, COLOR=YELLOW, REVERSE, 
+   COMMENTS= '本欄位為索引欄位, 不可空白或重複!, <P>查詢 單據性質';
+pmk04 = pmk04, COLOR=YELLOW;
+pmk12 = pmk12, COLOR=YELLOW, COMMENTS='<^P>查詢 員工資料';
+gen02 = FORMONLY.gen02, COLOR=YELLOW;
+cnt   = FORMONLY.cnt TYPE SMALLINT, COLOR=YELLOW, NOENTRY;
+cn2   = FORMONLY.cn2 TYPE SMALLINT, COLOR=YELLOW, NOENTRY;
+cn3   = FORMONLY.cn3 TYPE SMALLINT, COLOR=YELLOW, NOENTRY;
+l2    = pml02, COLOR=YELLOW, 
+        COMMENTS= "<^Y>維護特別說明資料 ";
+pml04 = pml04, COLOR=YELLOW, COMMENTS=
+        "'MISC':雜項請購 <^P>查詢料件資料 <^T>輸入廠商料號 <^U>查詢料件/廠商";
+pml041= pml041, COLOR=YELLOW;
+pml20 = pml20, COLOR=YELLOW;
+pml33 = pml33, COLOR=YELLOW, COMMENTS="<^E>維護 需求日,到廠日,到庫日";
+pml21 = pml21, COLOR=YELLOW, NOENTRY;
+pml41 = pml41, COLOR=YELLOW, NOENTRY;
+ml07  = pml07, COLOR=YELLOW, COMMENTS=
+        "<^P> 查詢 單位  <^Y> 建立 單位資料 <^U>/<^T> 建立 料件/單位換算資料";
+ima021= FORMONLY.ima021, COLOR=YELLOW, NOENTRY;
+pmkuser= pmkuser, COLOR=YELLOW, NOENTRY;
+grup   = pmkgrup, COLOR=YELLOW, NOENTRY;
+pmkmodu= pmkmodu, COLOR=YELLOW, NOENTRY;
+pmkdat = pmkdate, COLOR=YELLOW, NOENTRY;
+z      = pmkacti, COLOR=YELLOW, NOENTRY, UPSHIFT;
+END
+
+INSTRUCTIONS
+DELIMITERS '[]'
+SCREEN RECORD
+  s_pml[2](pml02,pml04,pml041,pml07,pml20,pml33,pml41,pml21,ima021)
+END 
+▼----------------------------------------------------------------

@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aicq027.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aicq027")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+  Item No.            [img01                         ]  Warehouse           [img02     ]
+  Part Name           [ima02                         ]  Location            [img03     ]
+  Specification       [ima021                        ]  Lot#                [img04                   ]
+  Source Code         [ima08     ]                      Inventory Unit      [img09     ]
+ <G group01                                           ><G group02                                           >
+  Year                [yy          ]                    Inv of the beginning of period [imk09               ]
+  Period              [mm          ]                    Current Inv                    [img10               ]
+ <                                                    ><                                                    >
+
+}
+END -- gr1
+END -- page01
+END -- pc1
+Table s_idd
+{
+[idd08       |cond            |idd30        |idd10       |idd15      |idd16      |idd05     |idd06     |idd13             |idd18      |idd07    |idd29                 ]
+[idd08       |cond            |idd30        |idd10       |idd15      |idd16      |idd05     |idd06     |idd13             |idd18      |idd07    |idd29                 ]
+[idd08       |cond            |idd30        |idd10       |idd15      |idd16      |idd05     |idd06     |idd13             |idd18      |idd07    |idd29                 ]
+[idd08       |cond            |idd30        |idd10       |idd15      |idd16      |idd05     |idd06     |idd13             |idd18      |idd07    |idd29                 ]
+[idd08       |cond            |idd30        |idd10       |idd15      |idd16      |idd05     |idd06     |idd13             |idd18      |idd07    |idd29                 ]
+[idd08       |cond            |idd30        |idd10       |idd15      |idd16      |idd05     |idd06     |idd13             |idd18      |idd07    |idd29                 ]
+[idd08       |cond            |idd30        |idd10       |idd15      |idd16      |idd05     |idd06     |idd13             |idd18      |idd07    |idd29                 ]
+[idd08       |cond            |idd30        |idd10       |idd15      |idd16      |idd05     |idd06     |idd13             |idd18      |idd07    |idd29                 ]
+[idd08       |cond            |idd30        |idd10       |idd15      |idd16      |idd05     |idd06     |idd13             |idd18      |idd07    |idd29                 ]
+[idd08       |cond            |idd30        |idd10       |idd15      |idd16      |idd05     |idd06     |idd13             |idd18      |idd07    |idd29                 ]
+
+}
+END -- s_idd
+Grid gr2
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2
+END -- VBox1
+END -- aicq027
+
+TABLES
+img_file,
+idd_file
+ATTRIBUTES
+ButtonEdit img01=img_file.img01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit img02=img_file.img02, tabIndex=2, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit img03=img_file.img03, tabIndex=4, not null, required;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, noEntry;
+Edit img04=img_file.img04, tabIndex=6, not null, required;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=7, noEntry;
+Edit img09=img_file.img09, tabIndex=8, noEntry;
+Group group01:group01;
+Edit yy=formonly.yy type SMALLINT, tabIndex=9;
+Edit mm=formonly.mm type SMALLINT, tabIndex=10;
+Group group02:group02;
+Edit imk09=formonly.imk09 type DECIMAL, tabIndex=11;
+Edit img10=img_file.img10, tabIndex=12, not null, required;
+DateEdit idd08=idd_file.idd08, tabIndex=13, title="Doc Dt", not null, required;
+Edit cond=formonly.cond type CHAR, tabIndex=14, title="Transaction Sts";
+Edit idd30=idd_file.idd30, tabIndex=15, title="Src Doc#";
+Edit idd10=idd_file.idd10, tabIndex=16, title="Target Doc#", not null, required;
+Edit idd15=idd_file.idd15, tabIndex=17, title="ibody";
+Edit idd16=idd_file.idd16, tabIndex=18, title="ibody-p";
+Edit idd05=idd_file.idd05, tabIndex=19, title="bin#", not null, required;
+Edit idd06=idd_file.idd06, tabIndex=20, title="bin", not null, required;
+Edit idd13=idd_file.idd13, tabIndex=21, title="Transaction Qty";
+Edit idd18=idd_file.idd18, tabIndex=22, title="die";
+Edit idd07=idd_file.idd07, tabIndex=23, title="Unit";
+Edit idd29=idd_file.idd29, tabIndex=24, title="Inv After Transaction";
+Edit cnt=formonly.cnt type CHAR, tabIndex=25;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=26;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_idd(idd_file.idd08,formonly.cond,idd_file.idd30,idd_file.idd10,idd_file.idd15,idd_file.idd16,idd_file.idd05,idd_file.idd06,idd_file.idd13,idd_file.idd18,idd_file.idd07,idd_file.idd29)
+SCREEN RECORD Undefined(img_file.img01,img_file.img02,formonly.ima02,img_file.img03,formonly.ima021,img_file.img04,formonly.ima08,img_file.img09,formonly.yy,formonly.mm,formonly.imk09,img_file.img10,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

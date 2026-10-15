@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt503.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="gglt503")
+VBox vb6
+Folder pc1
+Page Page1(text=%"Page0")
+VBox vb5
+Grid gr2
+{
+  ati01     [ati01            ]   ati02     [ati02            ]
+  ati01_1   [ati01_1          ]   ati03     [ati03            ]
+  ati01_2   [ati01_2          ]
+
+}
+END -- gr2
+Table tb2
+{
+[ati04        |ati05         |ati05_1     |ati06    |ati07     |ati08     |ati09   ]
+[ati04        |ati05         |ati05_1     |ati06    |ati07     |ati08     |ati09   ]
+[ati04        |ati05         |ati05_1     |ati06    |ati07     |ati08     |ati09   ]
+[ati04        |ati05         |ati05_1     |ati06    |ati07     |ati08     |ati09   ]
+[ati04        |ati05         |ati05_1     |ati06    |ati07     |ati08     |ati09   ]
+
+}
+END -- tb2
+END -- vb5
+END -- Page1
+END -- pc1
+Grid gr10
+{
+   ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr10
+END -- vb6
+END -- gglt503
+
+TABLES
+ati_file
+ATTRIBUTES
+ButtonEdit ati01=ati_file.ati01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ati02=ati_file.ati02, tabIndex=4, not null, required;
+Edit ati01_1=formonly.ati01_1 type CHAR, tabIndex=3;
+Edit ati03=ati_file.ati03, tabIndex=5, not null, required;
+Edit ati01_2=formonly.ati01_2 type CHAR, tabIndex=2;
+ButtonEdit ati04=ati_file.ati04, action=controlp, tabIndex=7, title="ati04", not null, required, image="zoom";
+ButtonEdit ati05=ati_file.ati05, action=controlp, tabIndex=9, title="ati05", not null, required, image="zoom";
+Edit ati05_1=formonly.ati05_1 type CHAR, tabIndex=12, title="ati05_1", noEntry;
+ComboBox ati06=ati_file.ati06, tabIndex=10, title="ati06", not null, required, items=(("+", "add"),("-", "decrease
+"));
+Edit ati07=ati_file.ati07, tabIndex=6, title="ati07";
+ButtonEdit ati08=ati_file.ati08, action=controlp, tabIndex=8, title="ati08", not null, required, image="zoom";
+Edit ati09=ati_file.ati09, tabIndex=11, title="ati09";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ati1(ati_file.ati04,ati_file.ati05,formonly.ati05_1,ati_file.ati06,ati_file.ati07,ati_file.ati08,ati_file.ati09)
+SCREEN RECORD Undefined(ati_file.ati01,ati_file.ati02,formonly.ati01_1,ati_file.ati03,formonly.ati01_2,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

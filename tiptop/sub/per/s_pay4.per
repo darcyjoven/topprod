@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_pay4.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="s_pay4")
+Table s_rxy
+{
+[rxy02     |rxy12    |rxy12_desc|lpx04      |rxy13     |rxy13_des|rxy14    |rxy15     |rxy16    |total    |rxy05    |rxy17      ]
+[rxy02     |rxy12    |rxy12_desc|lpx04      |rxy13     |rxy13_des|rxy14    |rxy15     |rxy16    |total    |rxy05    |rxy17      ]
+[rxy02     |rxy12    |rxy12_desc|lpx04      |rxy13     |rxy13_des|rxy14    |rxy15     |rxy16    |total    |rxy05    |rxy17      ]
+[rxy02     |rxy12    |rxy12_desc|lpx04      |rxy13     |rxy13_des|rxy14    |rxy15     |rxy16    |total    |rxy05    |rxy17      ]
+[rxy02     |rxy12    |rxy12_desc|lpx04      |rxy13     |rxy13_des|rxy14    |rxy15     |rxy16    |total    |rxy05    |rxy17      ]
+
+}
+END -- s_rxy
+END -- s_pay4
+
+TABLES
+rxy_file
+ATTRIBUTES
+Edit rxy02=rxy_file.rxy02, tabIndex=1, title="rxy02";
+ButtonEdit rxy12=rxy_file.rxy12, action=controlp, tabIndex=2, title="rxy12", not null, required, image="zoom";
+Edit rxy12_desc=formonly.rxy12_desc type VARCHAR, tabIndex=3, title="rxy12_desc", noEntry;
+Edit lpx04=formonly.lpx04 type VARCHAR, tabIndex=4, title="lpx04", noEntry;
+ButtonEdit rxy13=rxy_file.rxy13, action=controlp, tabIndex=5, title="rxy13", image="zoom";
+Edit rxy13_des=formonly.rxy13_desc type VARCHAR, tabIndex=6, title="rxy13_desc", noEntry;
+Edit rxy14=rxy_file.rxy14, tabIndex=7, title="rxy14", not null, required;
+Edit rxy15=rxy_file.rxy15, tabIndex=8, title="rxy15", not null, required;
+Edit rxy16=rxy_file.rxy16, tabIndex=9, title="rxy16", noEntry;
+Edit total=formonly.total type DECIMAL, tabIndex=10, title="total", noEntry;
+Edit rxy05=rxy_file.rxy05, tabIndex=11, title="rxy05", not null, required;
+Edit rxy17=rxy_file.rxy17, tabIndex=12, title="rxy17", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rxy(rxy_file.rxy02,rxy_file.rxy12,formonly.rxy12_desc,formonly.lpx04,rxy_file.rxy13,formonly.rxy13_desc,rxy_file.rxy14,rxy_file.rxy15,rxy_file.rxy16,formonly.total,rxy_file.rxy05,rxy_file.rxy17)
+END -- INSTRUCTIONS
+

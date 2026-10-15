@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp556.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp556")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4928
+{
+ <G group01                                                   >
+  PO #                [pmm01             ]
+  Vender # QBE        [pmm09     ][pmc03     ]
+
+ <                                                            >
+
+}
+END -- gr4928
+END -- page01
+END -- folder01
+Table s_pmn
+{
+[sure |pmn02 |pmn04                 |pmn16       |pmn20      ]
+[sure |pmn02 |pmn04                 |pmn16       |pmn20      ]
+[sure |pmn02 |pmn04                 |pmn16       |pmn20      ]
+[sure |pmn02 |pmn04                 |pmn16       |pmn20      ]
+[sure |pmn02 |pmn04                 |pmn16       |pmn20      ]
+[sure |pmn02 |pmn04                 |pmn16       |pmn20      ]
+[sure |pmn02 |pmn04                 |pmn16       |pmn20      ]
+[sure |pmn02 |pmn04                 |pmn16       |pmn20      ]
+[sure |pmn02 |pmn04                 |pmn16       |pmn20      ]
+[sure |pmn02 |pmn04                 |pmn16       |pmn20      ]
+
+}
+END -- s_pmn
+Grid gr4929
+{
+ [select_all    ] [cancel_all  ] Select Counts       [cn3       ]
+ ---------- Rows [cn2   ] ----------
+}
+END -- gr4929
+END -- VBox1
+END -- apmp556
+
+TABLES
+pmn_file,
+pmm_file,
+pmc_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit pmm01=pmm_file.pmm01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Input whole P/R to Freeze Return <^P> Query P/O  ";
+Edit pmm09=pmm_file.pmm09, tabIndex=2;
+Edit pmc03=pmc_file.pmc03, tabIndex=3;
+CheckBox sure=formonly.sure type CHAR, tabIndex=4, title="Sure", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmn02=pmn_file.pmn02, tabIndex=5, title="Ln #", noEntry;
+Edit pmn04=pmn_file.pmn04, tabIndex=6, title="Item No.", noEntry;
+Edit pmn16=formonly.pmn16 type CHAR, tabIndex=7, title="Status", noEntry;
+Edit pmn20=pmn_file.pmn20, tabIndex=8, title="Order Qt", noEntry, not null, required;
+Button select_all:select_all, comment="Select All";
+Button cancel_all:cancel_all, comment="Cancel All";
+Edit cn3=formonly.cn3 type CHAR, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmn(formonly.sure,pmn_file.pmn02,pmn_file.pmn04,formonly.pmn16,pmn_file.pmn20)
+SCREEN RECORD Undefined(pmm_file.pmm01,pmm_file.pmm09,pmc_file.pmc03,formonly.cn3,formonly.cn2)
+END -- INSTRUCTIONS
+

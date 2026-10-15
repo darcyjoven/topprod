@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgs101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgs101")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+  Overtime Hourly Salary Expense Item of Caculation Base [bgz21     ] +[bgz22     ] +[bgz23     ] +[bgz24     ] +[bgz25     ] +[bgz26     ]
+
+  Un-Overtime Expense Item                               [bgz27     ]   Double %[bgz28     ]
+  Overtime Expense Item                                  [bgz29     ]   Double %[bgz30     ]
+
+  Hourly Waged for Monthly Waged = Monthly Waged /       [bgz31     ]   Day     [bgz32     ] [dummy01   ].
+
+}
+END -- Grid1
+END -- page01
+END -- Folder1
+END -- VBox1
+END -- abgs101
+
+TABLES
+bgz_file
+ATTRIBUTES
+ButtonEdit bgz21=bgz_file.bgz21, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Expense Item";
+ButtonEdit bgz22=bgz_file.bgz22, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Expense Item";
+ButtonEdit bgz23=bgz_file.bgz23, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Expense Item";
+ButtonEdit bgz24=bgz_file.bgz24, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Expense Item";
+ButtonEdit bgz25=bgz_file.bgz25, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Expense Item";
+ButtonEdit bgz26=bgz_file.bgz26, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Expense Item";
+ButtonEdit bgz27=bgz_file.bgz27, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<>Qry Expense Item";
+Edit bgz28=bgz_file.bgz28, tabIndex=8;
+ButtonEdit bgz29=bgz_file.bgz29, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Expense Item";
+Edit bgz30=bgz_file.bgz30, tabIndex=10;
+Edit bgz31=bgz_file.bgz31, tabIndex=11, not null, required;
+Edit bgz32=bgz_file.bgz32, tabIndex=12, not null, required;
+Label dummy01:dummy01, text="Hour";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bgz_file.bgz21,bgz_file.bgz22,bgz_file.bgz23,bgz_file.bgz24,bgz_file.bgz25,bgz_file.bgz26,bgz_file.bgz27,bgz_file.bgz28,bgz_file.bgz29,bgz_file.bgz30,bgz_file.bgz31,bgz_file.bgz32)
+END -- INSTRUCTIONS
+

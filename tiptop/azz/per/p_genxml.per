@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_genxml.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="p_xsd")
+VBox vb6
+Group gb2
+VBox vb5
+Grid gr3
+{
+
+ Program Code [xmlname            ][gaz03                                 ]
+
+[xmlsql                                                                   ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+
+}
+END -- gr3
+Table tb5
+{
+[xml01          |xml02          |xml03     |xml04                         ]
+[xml01          |xml02          |xml03     |xml04                         ]
+[xml01          |xml02          |xml03     |xml04                         ]
+[xml01          |xml02          |xml03     |xml04                         ]
+[xml01          |xml02          |xml03     |xml04                         ]
+[xml01          |xml02          |xml03     |xml04                         ]
+[xml01          |xml02          |xml03     |xml04                         ]
+[xml01          |xml02          |xml03     |xml04                         ]
+[xml01          |xml02          |xml03     |xml04                         ]
+[xml01          |xml02          |xml03     |xml04                         ]
+
+}
+END -- tb5
+END -- vb5
+END -- gb2
+Group gb1(text="View XML Format ")
+Grid gr2
+{
+
+[out                                                                      ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+[                                                                         ]
+
+}
+END -- gr2
+END -- gb1
+END -- vb6
+END -- p_genxml
+
+ATTRIBUTES
+ButtonEdit xmlname=formonly.xmlname type CHAR, action=CONTROLP, tabIndex=3, not null, required, image="zoom.png";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=4, noEntry;
+TextEdit xmlsql=formonly.xmlsql type CHAR, tabIndex=2, stretch=both, scrollBars=both, sizePolicy=fixed;
+Edit xml01=formonly.xml01 type CHAR, tabIndex=5, title="Column ID", noEntry;
+Edit xml02=formonly.xml02 type CHAR, tabIndex=6, title="Type", noEntry;
+Edit xml03=formonly.xml03 type CHAR, tabIndex=7, title="Length", noEntry;
+Edit xml04=formonly.xml04 type CHAR, tabIndex=8, title="Default", comment="Date format, Enter: \"2007-01-01\"";
+TextEdit out=formonly.out type CHAR, tabIndex=1, stretch=both, scrollBars=both, sizePolicy=fixed;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_xml(formonly.xml01,formonly.xml02,formonly.xml03,formonly.xml04)
+SCREEN RECORD Undefined(formonly.xmlname,formonly.gaz03,formonly.xmlsql,formonly.out)
+END -- INSTRUCTIONS
+

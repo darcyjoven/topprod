@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfg108.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr108")
+VBox VBox1
+Grid gr611
+{
+ <G group01                                          >
+  Item No.            [sfa03               ]
+  Receipt No.         [rvb01               ]
+  Word/Order No.      [sfb01               ]
+  Department          [sfb82               ]
+  Production Item     [sfb05               ]
+  Picking Batch       [sfb85               ]
+ <                                                   >
+ <G group02                                          >
+  Requirement Date    [bdate       ]-[edate       ]
+  Receipt Date        [bdate1      ]-[edate1      ]
+ [c                      ]
+ [d                      ]
+ <                                                   >
+
+}
+END -- gr611
+Grid gr612
+{
+[more                            ]
+
+}
+END -- gr612
+END -- VBox1
+END -- asfr108
+
+TABLES
+rvb_file,
+sfb_file,
+sfa_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfa03=sfa_file.sfa03, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit rvb01=rvb_file.rvb01, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit sfb82=sfb_file.sfb82, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit sfb85=sfb_file.sfb85, action=controlp, tabIndex=6, image="zoom";
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=7;
+DateEdit edate=formonly.edate type DATE, tabIndex=8;
+DateEdit bdate1=formonly.bdate1 type DATE, tabIndex=9;
+DateEdit edate1=formonly.edate1 type DATE, tabIndex=10;
+CheckBox c=formonly.c type VARCHAR, tabIndex=11, text="Print Unissued?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=12, text="Print Shortage?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfa_file.sfa03,rvb_file.rvb01,sfb_file.sfb01,sfb_file.sfb82,sfb_file.sfb05,sfb_file.sfb85,formonly.bdate,formonly.edate,formonly.bdate1,formonly.edate1,formonly.c,formonly.d,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_onlinepp.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_onlinepp")
+VBox vb8
+Folder pc756
+Page page01(text="Page01")
+Table s_gbo
+{
+[gbo01          |gem02                 |gbo04             |gbo02               |gbo03                ]
+[gbo01          |gem02                 |gbo04             |gbo02               |gbo03                ]
+[gbo01          |gem02                 |gbo04             |gbo02               |gbo03                ]
+[gbo01          |gem02                 |gbo04             |gbo02               |gbo03                ]
+[gbo01          |gem02                 |gbo04             |gbo02               |gbo03                ]
+[gbo01          |gem02                 |gbo04             |gbo02               |gbo03                ]
+[gbo01          |gem02                 |gbo04             |gbo02               |gbo03                ]
+[gbo01          |gem02                 |gbo04             |gbo02               |gbo03                ]
+[gbo01          |gem02                 |gbo04             |gbo02               |gbo03                ]
+[gbo01          |gem02                 |gbo04             |gbo02               |gbo03                ]
+
+}
+END -- s_gbo
+END -- page01
+END -- pc756
+Grid gr3236
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3236
+END -- vb8
+END -- p_onlinepp
+
+TABLES
+gbo_file
+ATTRIBUTES
+ButtonEdit gbo01=gbo_file.gbo01, action=controlp, tabIndex=1, title="Department No.", noEntry, not null, required, image="zoom", comment="<^P>Qry Department No.";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=2, title="Department Abbreviate", noEntry;
+ComboBox gbo04=gbo_file.gbo04, tabIndex=6, title="Type", noEntry, items=(("1", "Department"),("2", "Department Group"));
+CheckBox gbo02=gbo_file.gbo02, tabIndex=3, title="Online People Limit", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gbo03=gbo_file.gbo03, tabIndex=4, title="Count";
+Edit cnt=formonly.cnt type CHAR, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gbo(gbo_file.gbo01,formonly.gem02,gbo_file.gbo04,gbo_file.gbo02,gbo_file.gbo03)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

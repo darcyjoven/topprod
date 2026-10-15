@@ -1,0 +1,156 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almq042.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almq042")
+VBox VBox4
+Folder pc3
+Page Page6(text=%"Basic Data")
+Grid gr10
+{
+
+ Shop No.    [luaplant    |rtz13               ] Building No.   [lnt08     ][lmb03               ]
+ Tenant No.  [lua06       |lua061              ] Floor No.      [lnt09     ][lmc04               ]
+ Contract No.[lua04             ]
+ Stall       [lua07             ]
+ Amount      [amt                 ]
+[label1      |lua09               ]
+
+}
+END -- gr10
+END -- Page6
+END -- pc3
+Folder Folder1
+Page Page1(action=fixup1, text=%"Sales of reconciliation")
+VBox VBox1
+Table s_lua
+{
+[lua01           |lua02     |lua03       |luaplant_1|rtz13_1             |lualegal  |azt02               |lua06_1   |lua061_1            |lua04_1         |lua07_1         |lua11       |lua12               |lua24           |lua08t              |oma57               |oma571              ]
+[lua01           |lua02     |lua03       |luaplant_1|rtz13_1             |lualegal  |azt02               |lua06_1   |lua061_1            |lua04_1         |lua07_1         |lua11       |lua12               |lua24           |lua08t              |oma57               |oma571              ]
+[lua01           |lua02     |lua03       |luaplant_1|rtz13_1             |lualegal  |azt02               |lua06_1   |lua061_1            |lua04_1         |lua07_1         |lua11       |lua12               |lua24           |lua08t              |oma57               |oma571              ]
+[lua01           |lua02     |lua03       |luaplant_1|rtz13_1             |lualegal  |azt02               |lua06_1   |lua061_1            |lua04_1         |lua07_1         |lua11       |lua12               |lua24           |lua08t              |oma57               |oma571              ]
+[lua01           |lua02     |lua03       |luaplant_1|rtz13_1             |lualegal  |azt02               |lua06_1   |lua061_1            |lua04_1         |lua07_1         |lua11       |lua12               |lua24           |lua08t              |oma57               |oma571              ]
+}
+END -- s_lua
+Grid gr8
+{
+ ---------- Rows [cn2   ]----------
+
+
+
+}
+END -- gr8
+END -- VBox1
+END -- Page1
+Page Page2(action=fixup2, text=%"Sales return to the Account")
+VBox VBox2
+Table s_ogb
+{
+[ogb01         |ogb03   |ogbplant        |ogb04   |ogb12       |ogb05   |ogb13   |ogb14   ]
+[ogb01         |ogb03   |ogbplant        |ogb04   |ogb12       |ogb05   |ogb13   |ogb14   ]
+[ogb01         |ogb03   |ogbplant        |ogb04   |ogb12       |ogb05   |ogb13   |ogb14   ]
+[ogb01         |ogb03   |ogbplant        |ogb04   |ogb12       |ogb05   |ogb13   |ogb14   ]
+[ogb01         |ogb03   |ogbplant        |ogb04   |ogb12       |ogb05   |ogb13   |ogb14   ]
+}
+END -- s_ogb
+Grid gr1
+{
+ ---------- Rows [cn3   ]----------
+
+
+
+}
+END -- gr1
+END -- VBox2
+END -- Page2
+Page Page3(action=fixup3, text=%"Charges on accounts")
+VBox VBox3
+Table s_ohb
+{
+[ohb01         |ohb03   |ohbplant        |ohb04   |ohb12   |ohb05   |ohb13   |ohb14   ]
+[ohb01         |ohb03   |ohbplant        |ohb04   |ohb12   |ohb05   |ohb13   |ohb14   ]
+[ohb01         |ohb03   |ohbplant        |ohb04   |ohb12   |ohb05   |ohb13   |ohb14   ]
+[ohb01         |ohb03   |ohbplant        |ohb04   |ohb12   |ohb05   |ohb13   |ohb14   ]
+[ohb01         |ohb03   |ohbplant        |ohb04   |ohb12   |ohb05   |ohb13   |ohb14   ]
+}
+END -- s_ohb
+Grid gr2
+{
+ ---------- Rows [cn4   ]----------
+
+
+
+}
+END -- gr2
+END -- VBox3
+END -- Page3
+END -- Folder1
+END -- VBox4
+END -- almq042
+
+TABLES
+lua_file,
+ogb_file,
+ohb_file
+ATTRIBUTES
+ButtonEdit luaplant=lua_file.luaplant, action=controlp, tabIndex=11, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=15, noEntry;
+Edit lnt08=formonly.lnt08 type CHAR, tabIndex=17, noEntry;
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=18, noEntry;
+ButtonEdit lua06=lua_file.lua06, action=controlp, tabIndex=12, not null, required, image="zoom.png";
+ButtonEdit lua061=lua_file.lua061, action=controlp, tabIndex=16, image="zoom.png";
+Edit lnt09=formonly.lnt09 type CHAR, tabIndex=19, noEntry;
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=20, noEntry;
+ButtonEdit lua04=lua_file.lua04, action=controlp, tabIndex=13, image="zoom.png";
+ButtonEdit lua07=lua_file.lua07, action=controlp, tabIndex=14, image="zoom.png";
+Edit amt=formonly.amt type CHAR, tabIndex=21;
+Label label1:Label1, text=%"tr date";
+DateEdit lua09=lua_file.lua09, tabIndex=46;
+Edit lua01=formonly.lua01 type CHAR, tabIndex=1, title="Free No.", noEntry;
+ComboBox lua02=formonly.lua02 type CHAR, tabIndex=2, title="Free Type", noEntry, items=(("01", "Deposit"),("02", "Income"),("10", "Costs"));
+DateEdit lua03=formonly.lua09 type CHAR, tabIndex=3, title="Documents Date", noEntry;
+Edit luaplant_1=formonly.luaplant_1 type CHAR, tabIndex=22, title="Store No.", noEntry;
+Edit rtz13_1=formonly.rtz13_1 type CHAR, tabIndex=23, title="Store Name", noEntry;
+Edit lualegal=formonly.lualegal type CHAR, tabIndex=28, title="Corporation", noEntry;
+Edit azt02=formonly.azt02 type CHAR, tabIndex=29, title="Corporation Title", noEntry;
+Edit lua06_1=formonly.lua06_1 type CHAR, tabIndex=24, title="Tenant No.", noEntry;
+Edit lua061_1=formonly.lua061_1 type CHAR, tabIndex=25, title="Tenant Name", noEntry;
+Edit lua04_1=formonly.lua04_1 type CHAR, tabIndex=26, title="Contract No.", noEntry;
+Edit lua07_1=formonly.lua07_1 type CHAR, tabIndex=27, title="Stall No.";
+ComboBox lua11=formonly.lua11 type CHAR, tabIndex=4, title="Source Operations", noEntry, items=(("0", "Potential Business"),("1", "Contract "),("2", "Advertising contract"),("3", "W.E.Cost"),("4", "Small Monthly Closing"),("5", "Big Monthly Closing"),("6", "Energy costs"));
+Edit lua12=formonly.lua12 type CHAR, tabIndex=5, title="Documents No.", noEntry;
+Edit lua24=formonly.lua24 type CHAR, tabIndex=6, title="Finance No.", noEntry;
+Edit lua08t=formonly.lua08t type CHAR, tabIndex=7, title="Tax Amt.", noEntry;
+Edit oma57=formonly.oma57 type CHAR, tabIndex=8, title="Paid Amt.", noEntry;
+Edit oma571=formonly.oma571 type CHAR, tabIndex=9, title="Non-payment", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=10;
+Edit ogb01=ogb_file.ogb01, tabIndex=30, title=%"Delivery Note No.";
+Edit ogb03=ogb_file.ogb03, tabIndex=31, title=%"Line No.";
+Edit ogbplant=ogb_file.ogbplant, tabIndex=34, title=%"Logistics Code";
+Edit ogb04=ogb_file.ogb04, tabIndex=35, title=%"Product No.";
+Edit ogb12=ogb_file.ogb12, tabIndex=36, title=%"Actual Ship. Qty";
+Edit ogb05=ogb_file.ogb05, tabIndex=37, title=%"Sales Unit";
+Edit ogb13=ogb_file.ogb13, tabIndex=38, title=%"Unit Price";
+Edit ogb14=ogb_file.ogb14, tabIndex=39, title=%"Before-Tax Amount";
+Edit cn3=formonly.cn3 type CHAR, tabIndex=47;
+Edit ohb01=ohb_file.ohb01, tabIndex=40, title=%"Pin Back No.";
+Edit ohb03=ohb_file.ohb03, tabIndex=32, title=%"Line No.";
+Edit ohbplant=ohb_file.ohbplant, tabIndex=33, title=%"Logistics Code";
+Edit ohb04=ohb_file.ohb04, tabIndex=41, title=%"Product No.";
+Edit ohb12=ohb_file.ohb12, tabIndex=42, title=%"Actual Ship. Qty";
+Edit ohb05=ohb_file.ohb05, tabIndex=43, title=%"Sales Unit";
+Edit ohb13=ohb_file.ohb13, tabIndex=44, title=%"Unit Price";
+Edit ohb14=ohb_file.ohb14, tabIndex=45, title=%"Before-Tax Amount";
+Edit cn4=formonly.cn4 type CHAR, tabIndex=48;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lua(formonly.lua01,formonly.lua02,formonly.lua09,formonly.luaplant_1,formonly.rtz13_1,formonly.lualegal,formonly.azt02,formonly.lua06_1,formonly.lua061_1,formonly.lua04_1,formonly.lua07_1,formonly.lua11,formonly.lua12,formonly.lua24,formonly.lua08t,formonly.oma57,formonly.oma571)
+SCREEN RECORD s_ogb(ogb_file.ogb01,ogb_file.ogb03,ogb_file.ogbplant,ogb_file.ogb04,ogb_file.ogb12,ogb_file.ogb05,ogb_file.ogb13,ogb_file.ogb14)
+SCREEN RECORD S_ohb(ohb_file.ohb01,ohb_file.ohb03,ohb_file.ohbplant,ohb_file.ohb04,ohb_file.ohb12,ohb_file.ohb05,ohb_file.ohb13,ohb_file.ohb14)
+SCREEN RECORD Undefined(lua_file.luaplant,formonly.rtz13,formonly.lnt08,formonly.lmb03,lua_file.lua06,lua_file.lua061,formonly.lnt09,formonly.lmc04,lua_file.lua04,lua_file.lua07,formonly.amt,lua_file.lua09,formonly.cn2,formonly.cn3,formonly.cn4)
+END -- INSTRUCTIONS
+

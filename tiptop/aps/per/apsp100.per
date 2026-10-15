@@ -1,0 +1,135 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsp100.per created Wed Dec 31 05:30:01 2008
+-- File created from apsp100.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsp100")
+-- GRID
+-- GRID
+-- GRID
+-- VBOX
+-- HBOX
+-- GROUP
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX vb18
+    GROUP g01
+
+      VBOX vb17
+        HBOX hb6
+          GRID gr5436
+          {
+          <G group01               > <G gb28                 >
+           [aa0            ]          [ab3            ]
+           [aa1            ]          [ab4              ]
+           [aa2            ]          [ab5            ]
+           [aa3            ]          [ab6            ]
+           [aa4            ]          [ab7                ]
+           [aa5                ]      [ab8                   ]
+           [aa6                    ]  [ab9                  ]
+           [aa7                  ]    [ac0            ]
+           [aa8            ]          [ac1            ]
+           [aa9            ]          [ac2            ]
+           [ab0            ]          [ac3              ]
+           [ab1              ]
+           [ab2              ]
+
+          <                        > <                       >
+
+
+          }
+          END -- GRID
+          GRID gr18
+          {
+           <G gb29                         >
+           [ac4                        ]
+           [ac5                        ]
+           [ac6                        ]
+
+
+
+           <                               >
+           <G gb30                        >
+           [ac7                  ]
+           [ac8                  ]
+           [ac9                    ]
+           [ad0                    ]
+
+
+           <                              >
+
+
+          }
+          END -- GRID
+        END -- HBOX
+        GRID gr22
+        {
+          <G gb31                                                       >
+            Plan Base Date     [ad1         ]
+            Data Date Range    [ad2         ]   -   [ad3         ]
+          <                                                             >
+
+
+        }
+        END -- GRID
+      END -- VBOX
+    END -- GROUP
+    GRID gr5439
+    {
+    [ad4          ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES aps_say
+
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="Common Data";
+  GROUP gb28 : gb28, TEXT="Common Data";
+  CHECKBOX aa0=aps_say.apsapg, TEXT="Alt Part Global Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=2;
+  CHECKBOX ab3=aps_say.apsrem, TEXT="Resource Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=15;
+  CHECKBOX aa1=aps_say.apsapm, TEXT="Alt Part Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=3;
+  CHECKBOX ab4=aps_say.apsrgm, TEXT="Resource Group Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=16;
+  CHECKBOX aa2=aps_say.apsbmm, TEXT="Bill of Material Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=4;
+  CHECKBOX ab5=aps_say.apsrom, TEXT="Route Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=17;
+  CHECKBOX aa3=aps_say.apscmm, TEXT="Customer Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=5;
+  CHECKBOX ab6=aps_say.apsslm, TEXT="Stock Location Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=18;
+  CHECKBOX aa4=aps_say.apsdcm, TEXT="Day Calendar Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=6;
+  CHECKBOX ab7=aps_say.apssim, TEXT="Supplier Item Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=19;
+  CHECKBOX aa5=aps_say.apsocm, TEXT="Demand Order Config Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=7;
+  CHECKBOX ab8=aps_say.apssrm, TEXT="Supply Rule Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=20;
+  CHECKBOX aa6=aps_say.apsiam1, TEXT="Inventory Allocation Table (W/O)", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=8;
+  CHECKBOX ab9=aps_say.apswhm, TEXT="Warehouse Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=21;
+  CHECKBOX aa7=aps_say.apsiam2, TEXT="Inventory Allocation Table (S/O)", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=9;
+  CHECKBOX ac0=aps_say.apswcm, TEXT="Week Calendar Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=22;
+  CHECKBOX aa8=aps_say.apsarm, TEXT="Item Alloc Rule Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=10;
+  CHECKBOX ac1=aps_say.apswmm, TEXT="Work Model Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=23;
+  CHECKBOX aa9=aps_say.apsimm, TEXT="Item Master Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=11;
+  CHECKBOX ac2=aps_say.apswsm, TEXT="WS Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=24;
+  CHECKBOX ab0=aps_say.apsirm, TEXT="Item Route Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=12;
+  CHECKBOX ac3=aps_say.apscim, TEXT="APS INI Config", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=25;
+  CHECKBOX ab1=aps_say.apspem, TEXT="Mfg Order Pegging Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=13;
+  CHECKBOX ab2=aps_say.apspfm, TEXT="Product Family Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=14;
+  GROUP gb29 : gb29, TEXT="Requirement";
+  CHECKBOX ac4=aps_say.apsdom1, TEXT="Demand Order Table (S/O Requirement)", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=26;
+  CHECKBOX ac5=aps_say.apsdom2, TEXT="Demand Order Table(Forcast Requirment)", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=27;
+  CHECKBOX ac6=aps_say.apsmrm, TEXT="Material Release Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=28;
+  GROUP gb30 : gb30, TEXT="Supply";
+  CHECKBOX ac7=aps_say.apsuim, TEXT="Unassigned Inventory Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=29;
+  CHECKBOX ac8=aps_say.apssmm, TEXT="Suggest Mfg Order Table", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=30;
+  CHECKBOX ac9=aps_say.apsspm1, TEXT="Suggest Purchase Order Table(P/R)", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=31;
+  CHECKBOX ad0=aps_say.apsspm2, TEXT="suggest Purchase Order Table(P/O)", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=32;
+  GROUP gb31 : gb31;
+  DATEEDIT ad1=aps_say.say02, TABINDEX=33;
+  DATEEDIT ad2=aps_say.dt_bdate, TABINDEX=34;
+  DATEEDIT ad3=aps_say.dt_edate, TABINDEX=35;
+  CHECKBOX ad4=FORMONLY.g_bgjob, TEXT="Background Job", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=1;
+END

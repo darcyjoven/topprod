@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_oga_oha.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Query Order")
+Grid gr3808
+{
+ <T s_oga                                                                        >
+ [check |oga01                             |oga02         |oga04               ]
+ [check |oga01                             |oga02         |oga04               ]
+ [check |oga01                             |oga02         |oga04               ]
+ [check |oga01                             |oga02         |oga04               ]
+ [check |oga01                             |oga02         |oga04               ]
+ [check |oga01                             |oga02         |oga04               ]
+ [check |oga01                             |oga02         |oga04               ]
+ [check |oga01                             |oga02         |oga04               ]
+ [check |oga01                             |oga02         |oga04               ]
+ [check |oga01                             |oga02         |oga04               ]
+ <                                                                               >
+
+}
+END -- gr3808
+END -- q_oga_oha
+
+TABLES
+oga_file
+ATTRIBUTES
+Table s_oga:s_oga;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oga01=oga_file.oga01, tabIndex=2, title="Ship. Order No. /Sales Return No.", noEntry;
+Edit oga02=oga_file.oga02, tabIndex=3, title="Ship Date", noEntry;
+Edit oga04=oga_file.oga04, tabIndex=4, title="Ship Customer", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oga(formonly.check,oga_file.oga01,oga_file.oga02,oga_file.oga04)
+END -- INSTRUCTIONS
+

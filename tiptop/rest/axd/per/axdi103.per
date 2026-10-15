@@ -1,0 +1,57 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi103.per created Wed Jan 23 05:30:28 2008
+-- File created from axdi103.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi103")
+-- TABLE
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1549
+      PAGE page01( TEXT="Page01")
+        TABLE   s_obm
+        {
+        [aa0     |aa1                 |aa2   ]
+        [aa0     |aa1                 |aa2   ]
+        [aa0     |aa1                 |aa2   ]
+        [aa0     |aa1                 |aa2   ]
+        [aa0     |aa1                 |aa2   ]
+        [aa0     |aa1                 |aa2   ]
+        [aa0     |aa1                 |aa2   ]
+        [aa0     |aa1                 |aa2   ]
+        [aa0     |aa1                 |aa2   ]
+        [aa0     |aa1                 |aa2   ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr7735
+    {
+     ----------Rows [aa3   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES obm_file
+
+ATTRIBUTES
+  EDIT aa0=obm_file.obm01, COMMENT="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ", NOT NULL, REQUIRED, TABINDEX=1, TITLE="Code";
+  EDIT aa1=obm_file.obm02, TABINDEX=2, TITLE="Description";
+  CHECKBOX aa2=obm_file.obmacti, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=3, TITLE="Valid?";
+  EDIT aa3=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=4;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_obm (obm_file.obm01, obm_file.obm02, obm_file.obmacti)
+END

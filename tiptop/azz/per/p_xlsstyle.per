@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_xlsstyle.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_xlsstyle")
+VBox VBox1
+Folder folder01
+Page page01
+Grid gr3135
+{
+ Excel Format  [gcc01     ]
+ Order By      [gcc02               ]
+}
+END -- gr3135
+END -- page01
+END -- folder01
+Table s_gcd
+{
+[gcd02 |gcd03     |gcd04          |gcd05             |gcd06     |gcd07     |gcd08               |gcd09               |gcd10      ]
+[gcd02 |gcd03     |gcd04          |gcd05             |gcd06     |gcd07     |gcd08               |gcd09               |gcd10      ]
+[gcd02 |gcd03     |gcd04          |gcd05             |gcd06     |gcd07     |gcd08               |gcd09               |gcd10      ]
+[gcd02 |gcd03     |gcd04          |gcd05             |gcd06     |gcd07     |gcd08               |gcd09               |gcd10      ]
+[gcd02 |gcd03     |gcd04          |gcd05             |gcd06     |gcd07     |gcd08               |gcd09               |gcd10      ]
+[gcd02 |gcd03     |gcd04          |gcd05             |gcd06     |gcd07     |gcd08               |gcd09               |gcd10      ]
+[gcd02 |gcd03     |gcd04          |gcd05             |gcd06     |gcd07     |gcd08               |gcd09               |gcd10      ]
+[gcd02 |gcd03     |gcd04          |gcd05             |gcd06     |gcd07     |gcd08               |gcd09               |gcd10      ]
+[gcd02 |gcd03     |gcd04          |gcd05             |gcd06     |gcd07     |gcd08               |gcd09               |gcd10      ]
+[gcd02 |gcd03     |gcd04          |gcd05             |gcd06     |gcd07     |gcd08               |gcd09               |gcd10      ]
+
+}
+END -- s_gcd
+Grid gr3136
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3136
+END -- VBox1
+END -- p_xlsstyle
+
+TABLES
+gcd_file,
+gcc_file
+ATTRIBUTES
+Edit gcc01=gcc_file.gcc01, tabIndex=1, not null, required;
+ButtonEdit gcc02=gcc_file.gcc02, action=controlp, tabIndex=2, not null, required, image="pen";
+Edit gcd02=gcd_file.gcd02, tabIndex=3, title="SN", not null, required;
+ComboBox gcd03=gcd_file.gcd03, tabIndex=4, title="Data Type", not null, required, items=(("1", %"fixed value"),("2", %"Table Select"),("3", %"Operational Pattern"));
+ButtonEdit gcd04=gcd_file.gcd04, action=controlp, tabIndex=5, title="Table Name", image="zoom";
+ButtonEdit gcd05=gcd_file.gcd05, action=controlp, tabIndex=6, title="Data Content", not null, required, image="zoom";
+CheckBox gcd06=gcd_file.gcd06, tabIndex=7, title="Condition", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gcd07=gcd_file.gcd07, tabIndex=8, title="Group", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gcd08=gcd_file.gcd08, tabIndex=9, title="Start Location";
+Edit gcd09=gcd_file.gcd09, tabIndex=10, title="End Location";
+ComboBox gcd10=gcd_file.gcd10, tabIndex=11, title="Arrangement", not null, required, items=(("1", %"Vertical"),("2", %"Horizontal"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gcd(gcd_file.gcd02,gcd_file.gcd03,gcd_file.gcd04,gcd_file.gcd05,gcd_file.gcd06,gcd_file.gcd07,gcd_file.gcd08,gcd_file.gcd09,gcd_file.gcd10)
+SCREEN RECORD Undefined(gcc_file.gcc01,gcc_file.gcc02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

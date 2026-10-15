@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapq104.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr590")
+VBox VBox1
+Grid Grid1
+{
+
+  Between     [bdate     ]    [edate     ]      [amt_sw    ]     [allo_sw   ]       [auto_gen  ]
+
+
+
+}
+END -- Grid1
+Table s_bma
+{
+[rvu00   |rvu01   |rvu03    |rvu04    |pmc03    |rvv31    |rvv031  |ima021  |rvv87   |rvv86   |rvv38   |rvv39f  |rvv39   |aqc_amt |rvb22   |alow    ]
+[rvu00   |rvu01   |rvu03    |rvu04    |pmc03    |rvv31    |rvv031  |ima021  |rvv87   |rvv86   |rvv38   |rvv39f  |rvv39   |aqc_amt |rvb22   |alow    ]
+[rvu00   |rvu01   |rvu03    |rvu04    |pmc03    |rvv31    |rvv031  |ima021  |rvv87   |rvv86   |rvv38   |rvv39f  |rvv39   |aqc_amt |rvb22   |alow    ]
+[rvu00   |rvu01   |rvu03    |rvu04    |pmc03    |rvv31    |rvv031  |ima021  |rvv87   |rvv86   |rvv38   |rvv39f  |rvv39   |aqc_amt |rvb22   |alow    ]
+[rvu00   |rvu01   |rvu03    |rvu04    |pmc03    |rvv31    |rvv031  |ima021  |rvv87   |rvv86   |rvv38   |rvv39f  |rvv39   |aqc_amt |rvb22   |alow    ]
+[rvu00   |rvu01   |rvu03    |rvu04    |pmc03    |rvv31    |rvv031  |ima021  |rvv87   |rvv86   |rvv38   |rvv39f  |rvv39   |aqc_amt |rvb22   |alow    ]
+[rvu00   |rvu01   |rvu03    |rvu04    |pmc03    |rvv31    |rvv031  |ima021  |rvv87   |rvv86   |rvv38   |rvv39f  |rvv39   |aqc_amt |rvb22   |alow    ]
+[rvu00   |rvu01   |rvu03    |rvu04    |pmc03    |rvv31    |rvv031  |ima021  |rvv87   |rvv86   |rvv38   |rvv39f  |rvv39   |aqc_amt |rvb22   |alow    ]
+[rvu00   |rvu01   |rvu03    |rvu04    |pmc03    |rvv31    |rvv031  |ima021  |rvv87   |rvv86   |rvv38   |rvv39f  |rvv39   |aqc_amt |rvb22   |alow    ]
+[rvu00   |rvu01   |rvu03    |rvu04    |pmc03    |rvv31    |rvv031  |ima021  |rvv87   |rvv86   |rvv38   |rvv39f  |rvv39   |aqc_amt |rvb22   |alow    ]
+
+
+}
+END -- s_bma
+Grid Grid2
+{
+
+  cn2[cn2       ]     Total [num               ]  Total1[total1            ]  Total2[total2              ]
+
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- asfr590
+
+ATTRIBUTES
+DateEdit bdate=formonly.bdate type DATE, tabIndex=1, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=2, not null, required;
+RadioGroup amt_sw=formonly.amt_sw type VARCHAR, tabIndex=3, items=(("1", "1"),("2", "2"));
+RadioGroup allo_sw=formonly.allo_sw type VARCHAR, tabIndex=4, items=(("1", "1"),("2", "2"));
+CheckBox auto_gen=formonly.auto_gen type VARCHAR, tabIndex=5, text=%"Y/N", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rvu00=formonly.rvu00 type VARCHAR, tabIndex=6, title="rvu00", items=(("1", "Store In"),("2", "QC return"),("3", "Store Return"));
+ButtonEdit rvu01=formonly.rvu01 type VARCHAR, action=controlp, tabIndex=7, title="rvu01", image="zoom", comment="<^P>Qry Item No. <^Y>Clear All Item # <^O>Copy Prev.Line";
+DateEdit rvu03=formonly.rvu03 type DATE, tabIndex=8, title="rvu03";
+ButtonEdit rvu04=formonly.rvu04 type VARCHAR, action=controlp, tabIndex=9, title="rvu04", image="zoom";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=10, title="pmc03";
+ButtonEdit rvv31=formonly.rvv31 type VARCHAR, action=controlp, tabIndex=11, title="rvv31", image="zoom";
+Edit rvv031=formonly.rvv031 type VARCHAR, tabIndex=12, title="rvv031", comment="No Blank Field,must be greater then zero";
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=13, title="ima021";
+Edit rvv87=formonly.rvv87 type DECIMAL, tabIndex=14, title=%"rvv87";
+ButtonEdit rvv86=formonly.rvv86 type VARCHAR, action=controlp, tabIndex=15, title=%"rvv86", image="zoom";
+Edit rvv38=formonly.rvv38 type DECIMAL, tabIndex=16, title=%"rvv38";
+Edit rvv39f=formonly.rvv39f type DECIMAL, tabIndex=17, title=%"rvv39f";
+Edit rvv39=formonly.rvv39 type DECIMAL, tabIndex=18, title=%"rvv39";
+Edit aqc_amt=formonly.aqc_amt type VARCHAR, tabIndex=19, title=%"aqc_amt";
+ButtonEdit rvb22=formonly.rvb22 type VARCHAR, action=controlp, tabIndex=20, title=%"rvb22", image="zoom";
+Edit alow=formonly.alow type VARCHAR, tabIndex=21, title=%"alow";
+Edit cn2=formonly.cn2 type DECIMAL, tabIndex=22, noEntry;
+Edit num=formonly.num type DECIMAL, tabIndex=23, noEntry;
+Edit total1=formonly.total1 type DECIMAL, tabIndex=24, noEntry;
+Edit total2=formonly.total2 type DECIMAL, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bma(formonly.rvu00,formonly.rvu01,formonly.rvu03,formonly.rvu04,formonly.pmc03,formonly.rvv31,formonly.rvv031,formonly.ima021,formonly.rvv87,formonly.rvv86,formonly.rvv38,formonly.rvv39f,formonly.rvv39,formonly.aqc_amt,formonly.rvb22,formonly.alow)
+SCREEN RECORD Undefined(formonly.bdate,formonly.edate,formonly.amt_sw,formonly.allo_sw,formonly.auto_gen,formonly.total1,formonly.total2,formonly.num,formonly.cn2)
+END -- INSTRUCTIONS
+

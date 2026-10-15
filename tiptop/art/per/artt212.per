@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt212.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt212")
+VBox vb13
+Folder pc1
+Page Page1(text=%"Page0")
+Grid gr1
+{
+ ruw00[ruw00            ]                     ruwconf   [ruwconf      ][imgmksg]               [ruw08         ]
+ ruw01[ruw01                 ]                ruwcond   [ruwcond      ][       ]          ruw09 [ruw09         ]
+ ruw02[ruw02                 |ruw02_desc     ]ruwconu   [ruwconu      ][ruwconu_desc   ] [ruwpos              ]
+ ruw03[ruw03                 ]                ruwcont   [ruwcont   ]
+ ruw04[ruw04            ]                     ruwplant  [ruwplant     ][ruwplant_desc  ]
+ ruw05[ruw05            ]    [ruw05_desc     ]ruw07     [ruw07                         ]
+ ruw06[ruw06            ]    [ruw06_desc     ]
+ Pos  [ruw10            ]
+
+}
+END -- gr1
+END -- Page1
+Page Page2(text=%"Page1")
+Grid gr2
+{
+ ruwuser[ruwuser   ]  ruwmodu[ruwmodu   ]  ruwacti[ruwacti    ]
+ ruwgrup[ruwgrup   ]  ruwdate[ruwdate   ]  ruwcrat[ruwcrat    ]
+ ruworiu[ruworiu   ]  ruworig[ruworig   ]
+
+
+
+}
+END -- gr2
+END -- Page2
+END -- pc1
+Table s_rux
+{
+[rux02   |rux03       |rux03_desc  |rux04      |rux04_desc  |rux05   |rux06     |rux07     |rux08    |rux09      ]
+[rux02   |rux03       |rux03_desc  |rux04      |rux04_desc  |rux05   |rux06     |rux07     |rux08    |rux09      ]
+[rux02   |rux03       |rux03_desc  |rux04      |rux04_desc  |rux05   |rux06     |rux07     |rux08    |rux09      ]
+[rux02   |rux03       |rux03_desc  |rux04      |rux04_desc  |rux05   |rux06     |rux07     |rux08    |rux09      ]
+[rux02   |rux03       |rux03_desc  |rux04      |rux04_desc  |rux05   |rux06     |rux07     |rux08    |rux09      ]
+[rux02   |rux03       |rux03_desc  |rux04      |rux04_desc  |rux05   |rux06     |rux07     |rux08    |rux09      ]
+}
+END -- s_rux
+Grid gr3
+{
+  ------  Rows [idx  ] / [cnt  ]  ---------  Details [cn2   ] ----------
+
+
+
+}
+END -- gr3
+END -- vb13
+END -- artt212
+
+TABLES
+ruw_file,
+rux_file
+ATTRIBUTES
+ComboBox ruw00=ruw_file.ruw00, tabIndex=14, noEntry, not null, required, items=(("1", "pandian"),("2", "pancha"));
+ComboBox ruwconf=ruw_file.ruwconf, tabIndex=7, noEntry, items=(("N", "un_confirm"),("Y", "confirm"),("X", "void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+CheckBox ruw08=ruw_file.ruw08, tabIndex=12, text="ch2", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ruw01=ruw_file.ruw01, action=controlp, tabIndex=1, not null, required, image="zoom";
+DateEdit ruwcond=ruw_file.ruwcond, tabIndex=8, noEntry;
+DateEdit ruw09=ruw_file.ruw09, tabIndex=13, noEntry;
+ButtonEdit ruw02=ruw_file.ruw02, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit ruw02_desc=formonly.ruw02_desc type VARCHAR, tabIndex=15, noEntry;
+ButtonEdit ruwconu=ruw_file.ruwconu, action=controlp, tabIndex=9, noEntry, image="zoom";
+Edit ruwconu_desc=formonly.ruwconu_desc type VARCHAR, tabIndex=17;
+CheckBox ruwpos=ruw_file.ruwpos, tabIndex=40, default = "N", text="ruwpos", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ruw03=ruw_file.ruw03, action=controlp, tabIndex=3, noEntry, image="zoom";
+TimeEdit ruwcont=ruw_file.ruwcont, tabIndex=39, noEntry;
+DateEdit ruw04=ruw_file.ruw04, tabIndex=4, noEntry;
+Edit ruwplant=ruw_file.ruwplant, tabIndex=10, noEntry;
+Edit ruwplant_desc=formonly.ruwplant_desc type VARCHAR, tabIndex=16;
+ButtonEdit ruw05=ruw_file.ruw05, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit ruw05_desc=formonly.ruw05_desc type VARCHAR, tabIndex=18;
+Edit ruw07=ruw_file.ruw07, tabIndex=11;
+ButtonEdit ruw06=ruw_file.ruw06, action=controlp, tabIndex=6, image="zoom";
+Edit ruw06_desc=formonly.ruw06_desc type VARCHAR, tabIndex=19;
+Edit ruw10=ruw_file.ruw10, tabIndex=43, noEntry;
+Edit ruwuser=ruw_file.ruwuser, tabIndex=20, noEntry;
+Edit ruwmodu=ruw_file.ruwmodu, tabIndex=21, noEntry;
+Edit ruwacti=ruw_file.ruwacti, tabIndex=22, noEntry;
+Edit ruwgrup=ruw_file.ruwgrup, tabIndex=23, noEntry;
+DateEdit ruwdate=ruw_file.ruwdate, tabIndex=24, noEntry;
+DateEdit ruwcrat=ruw_file.ruwcrat, tabIndex=25, noEntry;
+Edit ruworiu=ruw_file.ruworiu, tabIndex=41, noEntry;
+Edit ruworig=ruw_file.ruworig, tabIndex=42, noEntry;
+Edit rux02=rux_file.rux02, tabIndex=26, title="rux02", not null, required;
+ButtonEdit rux03=rux_file.rux03, action=controlp, tabIndex=27, title="rux03", not null, required, image="zoom";
+Edit rux03_desc=formonly.rux03_desc type VARCHAR, tabIndex=28, title="rux03_desc", noEntry;
+ButtonEdit rux04=rux_file.rux04, action=controlp, tabIndex=29, title="rux04", noEntry, image="zoom";
+Edit rux04_desc=formonly.rux04_desc type VARCHAR, tabIndex=30, title="rux04_desc", noEntry;
+Edit rux05=rux_file.rux05, tabIndex=31, title="rux05", noEntry;
+Edit rux06=rux_file.rux06, tabIndex=32, title="rux06", not null, required;
+Edit rux07=rux_file.rux07, tabIndex=33, title="rvx07", noEntry;
+Edit rux08=rux_file.rux08, tabIndex=34, title="rvx08", noEntry;
+Edit rux09=rux_file.rux09, tabIndex=35, title="rux09";
+Edit idx=formonly.idx type INTEGER, tabIndex=36;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=37;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=38;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rux(rux_file.rux02,rux_file.rux03,formonly.rux03_desc,rux_file.rux04,formonly.rux04_desc,rux_file.rux05,rux_file.rux06,rux_file.rux07,rux_file.rux08,rux_file.rux09)
+SCREEN RECORD Undefined(ruw_file.ruw00,ruw_file.ruwconf,formonly.imgmksg,ruw_file.ruw08,ruw_file.ruw01,ruw_file.ruwcond,ruw_file.ruw09,ruw_file.ruw02,formonly.ruw02_desc,ruw_file.ruwconu,formonly.ruwconu_desc,ruw_file.ruwpos,ruw_file.ruw03,ruw_file.ruwcont,ruw_file.ruw04,ruw_file.ruwplant,formonly.ruwplant_desc,ruw_file.ruw05,formonly.ruw05_desc,ruw_file.ruw07,ruw_file.ruw06,formonly.ruw06_desc,ruw_file.ruw10,ruw_file.ruwuser,ruw_file.ruwmodu,ruw_file.ruwacti,ruw_file.ruwgrup,ruw_file.ruwdate,ruw_file.ruwcrat,ruw_file.ruworiu,ruw_file.ruworig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi015.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi015")
+VBox VBox1
+Folder pc438
+Page page01(text="Main")
+Table s_ocr
+{
+[ocr01     |ocr02                                                                           ]
+[ocr01     |ocr02                                                                           ]
+[ocr01     |ocr02                                                                           ]
+[ocr01     |ocr02                                                                           ]
+[ocr01     |ocr02                                                                           ]
+[ocr01     |ocr02                                                                           ]
+[ocr01     |ocr02                                                                           ]
+[ocr01     |ocr02                                                                           ]
+[ocr01     |ocr02                                                                           ]
+[ocr01     |ocr02                                                                           ]
+
+}
+END -- s_ocr
+END -- page01
+END -- pc438
+Grid gr1990
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr1990
+END -- VBox1
+END -- axmi015
+
+TABLES
+ocr_file
+ATTRIBUTES
+Edit ocr01=ocr_file.ocr01, tabIndex=1, title="Code", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit ocr02=ocr_file.ocr02, tabIndex=2, title="Name";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ocr(ocr_file.ocr01,ocr_file.ocr02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr835.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxr835")
+VBox VBox1
+Grid gr1198
+{
+ <G group01                                       >
+  Item No.        [ima01                         ]
+  Bond Group Code [ima1916           ]
+  Item Style      [ima106              ]
+ <                                                >
+
+}
+END -- gr1198
+Group g01
+VBox VBox2
+Grid gr1199
+{
+ <G group02                    ><G group03                          >
+  Year               [yy  ]      [s1              ][s2             ]
+                                 [u1              ][u2             ]
+ <                             ><                                   >
+
+}
+END -- gr1199
+Grid gr1200
+{
+ [a                    ]
+ [c                    ]
+}
+END -- gr1200
+END -- VBox2
+END -- g01
+END -- VBox1
+END -- abxr835
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<P>Qry ima01";
+ButtonEdit ima1916=ima_file.ima1916, action=controlp, tabIndex=2, image="zoom", comment="<P>Qry Bond Group Code";
+Edit ima106=ima_file.ima106, tabIndex=3;
+Group group02:group02, text="INPUT";
+Edit yy=formonly.yy type VARCHAR, tabIndex=4;
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=5, items=(("1", "Item No."),("2", "Bonded Group Code"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=6, items=(("1", "Item No."),("2", "Bonded Group Code"));
+CheckBox u1=formonly.u1 type CHAR, tabIndex=7, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=8, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox a=formonly.a type CHAR, tabIndex=9, text="Print Bond Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type CHAR, tabIndex=10, text="Print Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima1916,ima_file.ima106,formonly.yy,formonly.s1,formonly.s2,formonly.u1,formonly.u2,formonly.a,formonly.c)
+END -- INSTRUCTIONS
+

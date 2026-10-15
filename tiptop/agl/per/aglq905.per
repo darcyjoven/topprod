@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq905.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq905")
+VBox vb5
+Folder folder01
+Page page01(text="Main")
+Grid gr2568
+{
+ Book.No             [aea00        ]
+ Account #           [aea01                         ]
+ Account Title       [aag02                                             ]
+ Level               [aag24     ]
+}
+END -- gr2568
+END -- page01
+END -- folder01
+Table s_aea
+{
+[aea02        |aba05      |aea03    |aba06  |abb04             |abb07_1             |abb07_2             ]
+[aea02        |aba05      |aea03    |aba06  |abb04             |abb07_1             |abb07_2             ]
+[aea02        |aba05      |aea03    |aba06  |abb04             |abb07_1             |abb07_2             ]
+[aea02        |aba05      |aea03    |aba06  |abb04             |abb07_1             |abb07_2             ]
+[aea02        |aba05      |aea03    |aba06  |abb04             |abb07_1             |abb07_2             ]
+[aea02        |aba05      |aea03    |aba06  |abb04             |abb07_1             |abb07_2             ]
+[aea02        |aba05      |aea03    |aba06  |abb04             |abb07_1             |abb07_2             ]
+[aea02        |aba05      |aea03    |aba06  |abb04             |abb07_1             |abb07_2             ]
+[aea02        |aba05      |aea03    |aba06  |abb04             |abb07_1             |abb07_2             ]
+[aea02        |aba05      |aea03    |aba06  |abb04             |abb07_1             |abb07_2             ]
+
+}
+END -- s_aea
+Grid gr2569
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2569
+END -- vb5
+END -- aglq905
+
+TABLES
+aea_file
+ATTRIBUTES
+ButtonEdit aea00=formonly.aea00 type CHAR, action=controlp, tabIndex=13, not null, image="zoom.png";
+ButtonEdit aea01=aea_file.aea01, action=controlp, tabIndex=1, image="zoom.png";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+Edit aag24=formonly.aag24 type CHAR, tabIndex=3;
+DateEdit aea02=aea_file.aea02, tabIndex=4, title="Voucher Date";
+DateEdit aba05=formonly.aba05 type CHAR, tabIndex=5, title="Entry Date", noEntry;
+Edit aea03=formonly.aea03 type CHAR, tabIndex=6, title="Voucher#", noEntry;
+Edit aba06=formonly.aba06 type CHAR, tabIndex=7, title="Source", noEntry;
+Edit abb04=formonly.abb04 type CHAR, tabIndex=8, title="Memo", noEntry;
+Edit abb07_1=formonly.abb07_1 type CHAR, tabIndex=9, title="Debit", noEntry;
+Edit abb07_2=formonly.abb07_2 type CHAR, tabIndex=10, title="Credit", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aea(aea_file.aea02,formonly.aba05,formonly.aea03,formonly.aba06,formonly.abb04,formonly.abb07_1,formonly.abb07_2)
+SCREEN RECORD Undefined(formonly.aea00,aea_file.aea01,formonly.aag02,formonly.aag24,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

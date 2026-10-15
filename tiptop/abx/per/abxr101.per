@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxr101")
+Grid gr1123
+{
+ <G group01                                        >
+  Item No. QBE        [b_part      ]-[e_part      ]
+  Begin Date          [b_date      ]
+  End Date            [e_date      ]
+  Date Printed        [g_pdate     ]
+  Initial Page        [p_page  ]
+  [l_c                            ]
+  [l_d                            ]
+
+ <                                                 >
+
+}
+END -- gr1123
+END -- abxr101
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+ButtonEdit b_part=formonly.b_part type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment=" <^P> Qry Item No.";
+ButtonEdit e_part=formonly.e_part type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment=" <^P> Qry Item No.";
+DateEdit b_date=formonly.b_date type DATE, tabIndex=3, not null, required;
+DateEdit e_date=formonly.e_date type DATE, tabIndex=4, not null, required;
+DateEdit g_pdate=formonly.g_pdate type DATE, tabIndex=5;
+Edit p_page=formonly.p_page type SMALLINT, tabIndex=6;
+CheckBox l_c=formonly.l_c type CHAR, tabIndex=7, text="Print Bond Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox l_d=formonly.l_d type CHAR, tabIndex=8, text="Print Zero Change", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.b_part,formonly.e_part,formonly.b_date,formonly.e_date,formonly.g_pdate,formonly.p_page,formonly.l_c,formonly.l_d)
+END -- INSTRUCTIONS
+

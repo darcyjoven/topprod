@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi060_syc.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi060")
+VBox VBox1
+Folder pc444
+Page page01(text="Main")
+Table s_oah
+{
+[oah01             |oah02                         |oah03          |oah04    |oah05      |oah06     ]
+[oah01             |oah02                         |oah03          |oah04    |oah05      |oah06     ]
+[oah01             |oah02                         |oah03          |oah04    |oah05      |oah06     ]
+[oah01             |oah02                         |oah03          |oah04    |oah05      |oah06     ]
+[oah01             |oah02                         |oah03          |oah04    |oah05      |oah06     ]
+[oah01             |oah02                         |oah03          |oah04    |oah05      |oah06     ]
+[oah01             |oah02                         |oah03          |oah04    |oah05      |oah06     ]
+[oah01             |oah02                         |oah03          |oah04    |oah05      |oah06     ]
+[oah01             |oah02                         |oah03          |oah04    |oah05      |oah06     ]
+[oah01             |oah02                         |oah03          |oah04    |oah05      |oah06     ]
+
+}
+END -- s_oah
+END -- page01
+END -- pc444
+Grid gr1999
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1999
+END -- VBox1
+END -- axmi060
+
+TABLES
+oah_file
+ATTRIBUTES
+Edit oah01=oah_file.oah01, tabIndex=1, title="Price Terms", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit oah02=oah_file.oah02, tabIndex=2, title="Description";
+ComboBox oah03=oah_file.oah03, tabIndex=3, title="Pricing Method", not null, required, queryEditable, items=(("0", %"Manual"),("1", %"from Product Master"),("2", %"from Product Price Master"),("3", %"from Customer's Last Purchasing Price"),("4", %"from Price List"));
+CheckBox oah04=oah_file.oah04, tabIndex=4, title="Freight", not null, required, valueChecked = "Y", valueUnchecked = "N", comment=" \'Y\':Quotation Incl Freight  \'N\':No  ";
+CheckBox oah05=oah_file.oah05, tabIndex=5, title="Insurance", not null, required, valueChecked = "Y", valueUnchecked = "N", comment=" \'Y\':Quotation Incl Premium  \'N\':No  ";
+CheckBox oah06=oah_file.oah06, tabIndex=6, title="Commission", not null, required, valueChecked = "Y", valueUnchecked = "N", comment=" \'Y\':Quotation Incl Commission  \'N\':No  ";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oah(oah_file.oah01,oah_file.oah02,oah_file.oah03,oah_file.oah04,oah_file.oah05,oah_file.oah06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

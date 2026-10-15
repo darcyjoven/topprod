@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli607.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+  Account not  [aai00               ]
+
+
+}
+END -- Grid1
+Grid Grid2
+{
+
+ <T table1                                                             >
+ [aai01    |aag02   |aai02   |ats02   |aai03   |atn02   |aai04   ]
+ [aai01    |aag02   |aai02   |ats02   |aai03   |atn02   |aai04   ]
+ [aai01    |aag02   |aai02   |ats02   |aai03   |atn02   |aai04   ]
+ [aai01    |aag02   |aai02   |ats02   |aai03   |atn02   |aai04   ]
+ [aai01    |aag02   |aai02   |ats02   |aai03   |atn02   |aai04   ]
+
+}
+END -- Grid2
+Grid Grid3
+{
+
+  ---------- [cnt   ] Rows[cn2   ] ----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+TABLES
+aai_file
+ATTRIBUTES
+ButtonEdit aai00=aai_file.aai00, action=controlp, tabIndex=8, required, image="zoom";
+Table table1:Table1;
+ButtonEdit aai01=aai_file.aai01, action=controlp, tabIndex=3, title=%"aai01", not null, required, image="zoom", scroll;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=1, title=%"aag02";
+ButtonEdit aai02=aai_file.aai02, action=controlp, tabIndex=2, title=%"aai02", not null, required, image="zoom";
+Edit ats02=formonly.ats02 type CHAR, tabIndex=4, title=%"ats02";
+ButtonEdit aai03=aai_file.aai03, action=controlp, tabIndex=5, title=%"aai03", not null, required, image="zoom";
+Edit atn02=formonly.atn02 type CHAR, tabIndex=6, title=%"atn02";
+Edit aai04=aai_file.aai04, tabIndex=7, title=%"aai04";
+Edit cnt=formonly.cnt type CHAR, tabIndex=9;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aai(aai_file.aai01,formonly.aag02,aai_file.aai02,formonly.ats02,aai_file.aai03,formonly.atn02,aai_file.aai04)
+SCREEN RECORD Undefined(aai_file.aai00,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

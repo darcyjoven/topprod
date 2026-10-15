@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri0901.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox vbox1
+Folder folder1
+Page page1(text=%"Page1")
+Grid grid1
+{
+ <G group1                                                                                         >
+   hrdv01[hrdv01              ]   hrat02[hrat02              ]   hrat17[hrat17    ]
+   hrat04[hrat04              ]   hrat05[hrat05              ]   hrat22[hrat22    ]
+   hrat42[hrat42              ]   hrat06[hrat06              ]   hrat25[hrat25    ]
+ <                                                                                                 >
+ <G group2                                                                                         >
+   hrdv02[hrdv02              ]  [hrdv02_n                                                  ]
+   hrdv04[hrdv04              ]   hrdv05[hrdv05              ]   hrdv06[hrdv06              ]
+   tyjnjs[tyjnjs              ]   hrdv03[hrdv03              ]
+   hrdv13[hrdv13                                                                            ]
+         [                                                                                  ]
+ <                                                                                                 >
+
+}
+END -- grid1
+END -- page1
+END -- folder1
+Table table1
+{
+[hrdv00  |hrdv07  |hrdv08  |hrdv09  |hrdv10  |hrdv11  |hrdv12  ]
+[hrdv00  |hrdv07  |hrdv08  |hrdv09  |hrdv10  |hrdv11  |hrdv12  ]
+[hrdv00  |hrdv07  |hrdv08  |hrdv09  |hrdv10  |hrdv11  |hrdv12  ]
+[hrdv00  |hrdv07  |hrdv08  |hrdv09  |hrdv10  |hrdv11  |hrdv12  ]
+[hrdv00  |hrdv07  |hrdv08  |hrdv09  |hrdv10  |hrdv11  |hrdv12  ]
+}
+END -- table1
+END -- vbox1
+END -- ghri0901
+
+ATTRIBUTES
+Group group1:group1, text=%"Group1";
+ButtonEdit hrdv01=formonly.hrdv01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=2, noEntry;
+Edit hrat17=formonly.hrat17 type VARCHAR, tabIndex=3, noEntry;
+Edit hrat04=formonly.hrat04 type VARCHAR, tabIndex=4, noEntry;
+Edit hrat05=formonly.hrat05 type VARCHAR, tabIndex=5, noEntry;
+Edit hrat22=formonly.hrat22 type VARCHAR, tabIndex=6, noEntry;
+Edit hrat42=formonly.hrat42 type VARCHAR, tabIndex=7, noEntry;
+Edit hrat06=formonly.hrat06 type VARCHAR, tabIndex=8, noEntry;
+DateEdit hrat25=formonly.hrat25 type DATETIME YEAR TO YEAR, tabIndex=9, noEntry;
+Group group2:group2, text=%"Group2";
+ButtonEdit hrdv02=formonly.hrdv02 type CHAR, action=controlp, tabIndex=10, not null, required, image="zoom";
+Edit hrdv02_n=formonly.hrdv02_n type CHAR, tabIndex=24;
+ButtonEdit hrdv04=formonly.hrdv04 type VARCHAR, action=controlp, tabIndex=11, not null, required, image="zoom";
+ButtonEdit hrdv05=formonly.hrdv05 type VARCHAR, action=controlp, tabIndex=12, not null, required, image="zoom";
+ButtonEdit hrdv06=formonly.hrdv06 type VARCHAR, action=controlp, tabIndex=13, not null, required, image="zoom";
+Edit tyjnjs=formonly.tyjnjs type DECIMAL, tabIndex=14;
+ComboBox hrdv03=formonly.hrdv03 type VARCHAR, tabIndex=15, not null, required;
+TextEdit hrdv13=formonly.hrdv13 type VARCHAR, tabIndex=16;
+Edit hrdv00=formonly.hrdv00 type VARCHAR, tabIndex=23, title=%"hrdv00", noEntry, hidden;
+ComboBox hrdv07=formonly.hrdv07 type VARCHAR, tabIndex=17, title=%"hrdv07", noEntry;
+ComboBox hrdv08=formonly.hrdv08 type VARCHAR, tabIndex=18, title=%"hrdv08", noEntry;
+Edit hrdv09=formonly.hrdv09 type DECIMAL, tabIndex=19, title=%"hrdv09";
+Edit hrdv10=formonly.hrdv10 type DECIMAL, tabIndex=20, title=%"hrdv10";
+Edit hrdv11=formonly.hrdv11 type DECIMAL, tabIndex=21, title=%"hrdv11";
+Edit hrdv12=formonly.hrdv12 type DECIMAL, tabIndex=22, title=%"hrdv12";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.hrdv01,formonly.hrat02,formonly.hrat17,formonly.hrat04,formonly.hrat05,formonly.hrat22,formonly.hrat42,formonly.hrat06,formonly.hrat25,formonly.hrdv02,formonly.hrdv02_n,formonly.hrdv03,formonly.hrdv04,formonly.hrdv05,formonly.hrdv06,formonly.tyjnjs,formonly.hrdv13)
+SCREEN RECORD s_hrdv(formonly.hrdv00,formonly.hrdv07,formonly.hrdv08,formonly.hrdv09,formonly.hrdv10,formonly.hrdv11,formonly.hrdv12)
+END -- INSTRUCTIONS
+

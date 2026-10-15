@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrp590.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrp590")
+VBox VBox1
+Grid gr2923
+{
+ <G group01                                                      >
+ [dummy01                                       ]
+  Category            [npp00               ]
+  Document No.        [npp01               ]
+  Serial No.          [npp011                        ]
+  Date                [npp02               ]
+ <                                                               >
+
+}
+END -- gr2923
+Group g01(text="INPUT")
+VBox VBox2
+Grid gr2924
+{
+  Enter user QBE              [b_user    ]-[e_user    ]
+  General Ledger Plant No.    [p_plant   ]
+  General Ledger No.          [p_bookno  ]
+  General Ledger Voucher Type [gl_no               ]
+  General Ledger No.2         [p_bookno1 ]
+  General Ledger Voucher Type2[gl_no1              ]
+  General Ledger Voucher Date [gl_date     ][dummy03                ]
+ [gl_tran                 ]  [gl_summary              ]
+ <G group02                                       >
+ [gl_seq                                   ]
+ <                                                >
+
+}
+END -- gr2924
+Grid gr2925
+{
+[dummy02                                             ]
+
+}
+END -- gr2925
+END -- VBox2
+END -- g01
+Grid gr2926
+{
+  glno1 [chr2                                                      ]
+
+[g_bgjob                                                      ]
+}
+END -- gr2926
+END -- VBox1
+END -- axrp590
+
+TABLES
+npp_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Label dummy01:dummy01, text="Module QBE(AR)";
+ComboBox npp00=npp_file.npp00, tabIndex=1, queryEditable, items=(("1", "Delivery"),("2", "Enter Account"),("3", "Contra"),("41", "L/C Receipt"),("42", "L/C Modify"),("43", "L/C Negotiation"));
+ButtonEdit npp01=npp_file.npp01, action=controlp, tabIndex=2, image="zoom";
+Edit npp011=npp_file.npp011, tabIndex=3;
+DateEdit npp02=npp_file.npp02, tabIndex=4;
+Edit b_user=formonly.b_user type CHAR, tabIndex=5;
+Edit e_user=formonly.e_user type CHAR, tabIndex=6;
+Edit p_plant=formonly.p_plant type VARCHAR, tabIndex=7, not null, required;
+Edit p_bookno=formonly.p_bookno type VARCHAR, tabIndex=8, not null, required;
+ButtonEdit gl_no=formonly.gl_no type VARCHAR, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Documents";
+Edit p_bookno1=formonly.p_bookno1 type VARCHAR, tabIndex=10, not null, required;
+ButtonEdit gl_no1=formonly.gl_no1 type VARCHAR, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Qry Documents";
+DateEdit gl_date=formonly.gl_date type DATE, tabIndex=12;
+Label dummy03:dummy03, text="(by original entry date if blank)";
+CheckBox gl_tran=formonly.gl_tran type CHAR, tabIndex=13, text="Carry memo? ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gl_summary=formonly.gl_summary type CHAR, tabIndex=17, text="Subject Summary", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Voucher Summarizing Method";
+RadioGroup gl_seq=formonly.gl_seq type VARCHAR, tabIndex=14, not null, required, items=(("0", "All"),("1", "By Document Number"),("2", "By Date"),("3", "By Customer"));
+Label dummy02:dummy02, text="NOTE:Carry only Confirmed Accts to G/L Voucher";
+Edit chr2=formonly.chr2 type CHAR, tabIndex=16, noEntry;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=15, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(npp_file.npp00,npp_file.npp01,npp_file.npp011,npp_file.npp02,formonly.b_user,formonly.e_user,formonly.p_plant,formonly.p_bookno,formonly.gl_no,formonly.p_bookno1,formonly.gl_no1,formonly.gl_date,formonly.gl_tran,formonly.gl_seq,formonly.chr2,formonly.g_bgjob,formonly.gl_summary)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdi100_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Document Data")
+Folder pc686
+Page page01(text="Page01")
+VBox vb1
+Grid gr3673
+{
+ <G group01                                                                          >
+  Customer No.           [amd40     ]
+  Abbreviation           [amd41     ]
+  Delivery/Account Date  [amd42       ]
+  Customs Clearance Date [amd43       ]
+  Export Type            [amd35     ]
+ <                                                                                   >
+ <G group02                                                                          >
+  Import Cigarette & Liquor Remark     [amd10               ]
+  Non-Customs-Certified Document Name  [amd36                                   ]
+  Number                               [amd37               ]
+  Via Customs Export Declaration Cate  [amd38               ]
+  Number                               [amd39               ]
+ <                                                                                   >
+
+}
+END -- gr3673
+END -- vb1
+END -- page01
+END -- pc686
+END -- amdi100_1
+
+TABLES
+amd_file
+ATTRIBUTES
+Group group01:group01;
+Edit amd40=amd_file.amd40, tabIndex=1;
+Edit amd41=amd_file.amd41, tabIndex=2;
+DateEdit amd42=amd_file.amd42, tabIndex=3;
+DateEdit amd43=amd_file.amd43, tabIndex=4;
+ComboBox amd35=amd_file.amd35, tabIndex=5, not null, required, queryEditable, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"));
+Group group02:group02;
+ComboBox amd10=amd_file.amd10, tabIndex=6, items=(("1", "Non-Customs-Certified Document Name"),("2", "Via Customs Export Declaration Cate"));
+Edit amd36=amd_file.amd36, tabIndex=7;
+Edit amd37=amd_file.amd37, tabIndex=8;
+Edit amd38=amd_file.amd38, tabIndex=9;
+Edit amd39=amd_file.amd39, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(amd_file.amd40,amd_file.amd41,amd_file.amd42,amd_file.amd43,amd_file.amd35,amd_file.amd10,amd_file.amd36,amd_file.amd37,amd_file.amd38,amd_file.amd39)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmu300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmu300")
+VBox VBox1
+Grid gr4609
+{
+ <G group01                                              >
+  To Clear CIB Tran Log Date   [nme02               ]
+ <                                                       >
+
+}
+END -- gr4609
+Group p01(text="Input")
+VBox VBox2
+Grid gr4610
+{
+[download        ] File Name           [fil]_[file_ext]
+[backup          ]
+[cleanup         ]
+[more            ]
+}
+END -- gr4610
+END -- VBox2
+END -- p01
+END -- VBox1
+END -- anmu300
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit nme02=formonly.nme02 type DATE, tabIndex=1;
+CheckBox download=formonly.download type VARCHAR, tabIndex=2, default = "N", text="Download?", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N", comment="Enter Y:Download, N:No  ";
+Edit fil=formonly.file_name type VARCHAR, tabIndex=3, default = "nmd", comment="Enter File Name";
+Edit file_ext=formonly.file_extension type DATE, tabIndex=4, default = "TODAY", format="YYMMDD", comment="Please Input Add Name Of File ";
+CheckBox backup=formonly.backup type VARCHAR, tabIndex=5, default = "N", text="Back up?", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N", comment="Enter Y:Back up  N:No Backup";
+CheckBox cleanup=formonly.cleanup type VARCHAR, tabIndex=6, default = "N", text="Clear?", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N", comment="Enter Y:Clear   N:No    ";
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, default = "Y", text="Run Now ? ", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nme02,formonly.download,formonly.file_name,formonly.file_extension,formonly.backup,formonly.cleanup,formonly.more)
+END -- INSTRUCTIONS
+

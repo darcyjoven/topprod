@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi050.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi050")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr4812
+{
+ Purchase Center      [pnv01     ][geu02     ]
+
+}
+END -- gr4812
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_pnv
+{
+[pnv02              |azp02       |pnv03     |pnv04     ]
+[pnv02              |azp02       |pnv03     |pnv04     ]
+[pnv02              |azp02       |pnv03     |pnv04     ]
+[pnv02              |azp02       |pnv03     |pnv04     ]
+[pnv02              |azp02       |pnv03     |pnv04     ]
+[pnv02              |azp02       |pnv03     |pnv04     ]
+[pnv02              |azp02       |pnv03     |pnv04     ]
+[pnv02              |azp02       |pnv03     |pnv04     ]
+[pnv02              |azp02       |pnv03     |pnv04     ]
+[pnv02              |azp02       |pnv03     |pnv04     ]
+
+}
+END -- s_pnv
+Grid gr4813
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4813
+END -- VBox1
+END -- apmi050
+
+TABLES
+pnv_file
+ATTRIBUTES
+ButtonEdit pnv01=pnv_file.pnv01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit geu02=formonly.geu02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit pnv02=pnv_file.pnv02, action=controlp, tabIndex=3, title="Requirement Plant", not null, required, image="zoom";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=4, title="Plant Name", noEntry;
+ButtonEdit pnv03=pnv_file.pnv03, action=controlp, tabIndex=5, title="P/O Note", not null, required, image="zoom";
+ButtonEdit pnv04=pnv_file.pnv04, action=controlp, tabIndex=6, title="P/O Flow", not null, required, image="zoom";
+Edit cnt=formonly.cnt type CHAR, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pnv(pnv_file.pnv02,formonly.azp02,pnv_file.pnv03,pnv_file.pnv04)
+SCREEN RECORD Undefined(pnv_file.pnv01,formonly.geu02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

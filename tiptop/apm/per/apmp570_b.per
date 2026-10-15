@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp570_b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp570_b")
+Grid gr4937
+{
+ <G group01                                                                                >
+  P/R No.             [pnn01               ]  Currency            [pnn06               ]
+  Vender No.          [pnn05               ]  Buyer               [pnn15               ]
+  Make No.            [pnnislk01           ]
+ <                                                                                         >
+ <G group02                                                                                >
+  P/O Type            [slip      ]              Purchase Date       [purdate     ]
+  Buyer               [pmm12     ][gen02     ]  Purchase Dept       [pmm13     ][gem02     ]
+ <                                                                                         >
+}
+END -- gr4937
+END -- apmp570_b
+
+TABLES
+pnn_file,
+pnni_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit pnn01=pnn_file.pnn01, tabIndex=1;
+Edit pnn06=pnn_file.pnn06, tabIndex=2;
+Edit pnn05=pnn_file.pnn05, tabIndex=3;
+Edit pnn15=pnn_file.pnn15, tabIndex=4;
+ButtonEdit pnnislk01=pnni_file.pnnislk01, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry  Doc Type";
+Group group02:group02, text="INPUT";
+ButtonEdit slip=formonly.slip type VARCHAR, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry  Doc Type";
+DateEdit purdate=formonly.purdate type DATE, tabIndex=7;
+ButtonEdit pmm12=formonly.pmm12 type CHAR, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Employee ";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=9, noEntry;
+ButtonEdit pmm13=formonly.pmm13 type CHAR, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry  Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pnn_file.pnn01,pnn_file.pnn06,pnn_file.pnn05,pnn_file.pnn15,pnni_file.pnnislk01,formonly.slip,formonly.purdate,formonly.pmm12,formonly.gen02,formonly.pmm13,formonly.gem02)
+END -- INSTRUCTIONS
+

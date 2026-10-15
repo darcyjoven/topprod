@@ -1,0 +1,176 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi030.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi030")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr4017
+{
+ Bank No.                   [nma01               ]
+ Bank Abbreviation          [nma02               ]
+ Bank Full Name             [nma03                         ]
+ Address                    [nma061                                  ]
+ Bank Tel                   [nma07               ]
+ Contact                    [nma08               ]
+ Last Acct. Checking Date   [nma21     ]
+[nma45          ]            [nma46          ]
+
+}
+END -- gr4017
+Grid gr4018
+{
+ Deposit Cate               [nma09     ]        [imgmksg]
+ Deposit Currency           [nma10     ]        [       ]
+ Bank Category              [nma28               ]
+ Cash in Bank Account Code  [nma05                         ]
+ Cash in Bank AccountCode2  [nma051                        ]
+ Pattern Print Program No.  [nma12     ]
+ Bank Category              [nma37               ]
+ Closing center of the bank [nma38     ][azp02               ]
+
+}
+END -- gr4018
+END -- hb1
+END -- page01
+Page page02(text="page02")
+Grid gr6
+{
+[nma43                                 ]
+ Account name         [nma44                             ]
+ Opening bank code    [nma39            ][nmt02          ]
+ Bank Account No.     [nma04                             ]
+ period balance date  [nma40            ]
+ O.C.B.period balance [nma41                 ]
+ H.C.B.period balance [nma42                 ]
+ Version No.          [nma47            ][noc02          ]
+
+
+}
+END -- gr6
+END -- page02
+Page info(text="Info")
+Grid gr4019
+{
+ Record Owner        [nmauser   ] Last Modified by    [nmamodu   ] Data Valid Code     [nmaacti   ]
+ Department          [nmagrup   ] Create/Modify Date  [nmadate   ]
+ Record Orig.        [nmaoriu   ]
+ Dept Orig.          [nmaorig   ]
+}
+END -- gr4019
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[nmaud01                       ] userdefined_field07[nmaud07        ] userdefined_field13[nmaud13        ]
+                    [                              ] userdefined_field08[nmaud08        ] userdefined_field14[nmaud14        ]
+ userdefined_field02[nmaud02        ]                userdefined_field09[nmaud09        ] userdefined_field15[nmaud15        ]
+ userdefined_field03[nmaud03        ]                userdefined_field10[nmaud10        ]
+ userdefined_field04[nmaud04        ]                userdefined_field11[nmaud11        ]
+ userdefined_field05[nmaud05        ]                userdefined_field12[nmaud12        ]
+ userdefined_field06[nmaud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_nna
+{
+[nna06        |nna021             |nna02 |nna04  |nna03       |nna05             ]
+[nna06        |nna021             |nna02 |nna04  |nna03       |nna05             ]
+[nna06        |nna021             |nna02 |nna04  |nna03       |nna05             ]
+[nna06        |nna021             |nna02 |nna04  |nna03       |nna05             ]
+[nna06        |nna021             |nna02 |nna04  |nna03       |nna05             ]
+[nna06        |nna021             |nna02 |nna04  |nna03       |nna05             ]
+[nna06        |nna021             |nna02 |nna04  |nna03       |nna05             ]
+[nna06        |nna021             |nna02 |nna04  |nna03       |nna05             ]
+[nna06        |nna021             |nna02 |nna04  |nna03       |nna05             ]
+[nna06        |nna021             |nna02 |nna04  |nna03       |nna05             ]
+}
+END -- s_nna
+Grid gr4020
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr4020
+END -- vb1
+END -- anmi030
+
+TABLES
+nma_file,
+nna_file
+ATTRIBUTES
+Edit nma01=nma_file.nma01, tabIndex=1, not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit nma02=nma_file.nma02, tabIndex=2;
+Edit nma03=nma_file.nma03, tabIndex=3;
+Edit nma061=nma_file.nma061, tabIndex=4, scroll;
+Edit nma07=nma_file.nma07, tabIndex=5;
+Edit nma08=nma_file.nma08, tabIndex=6;
+DateEdit nma21=nma_file.nma21, tabIndex=7, noEntry;
+CheckBox nma45=nma_file.nma45, tabIndex=53, default = "N", text="nma45", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nma46=nma_file.nma46, tabIndex=54, default = "N", text="nma46", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit nma09=nma_file.nma09, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry Deposit Cate <^Y>Create Cash in Bank Category";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit nma10=nma_file.nma10, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Currency <^Y>Create Currency";
+ComboBox nma28=nma_file.nma28, tabIndex=10, not null, required, queryEditable, items=(("1", "Ck.Account"),("2", "Savings Account"),("3", "Other"));
+ButtonEdit nma05=nma_file.nma05, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Qry Account No. ";
+ButtonEdit nma051=nma_file.nma051, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Account No. ";
+Edit nma12=nma_file.nma12, tabIndex=13;
+ComboBox nma37=nma_file.nma37, tabIndex=14, noEntry, not null, required, queryEditable, items=(("0", "Internal Account"),("1", "exterior Account"));
+Edit nma38=formonly.nma38 type CHAR, tabIndex=15, noEntry;
+Edit azp02=formonly.azp02 type CHAR, tabIndex=16, noEntry;
+CheckBox nma43=nma_file.nma43, tabIndex=17, default = "N", text="Use Internet Bank?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nma44=nma_file.nma44, tabIndex=51;
+ButtonEdit nma39=nma_file.nma39, action=controlp, tabIndex=19, image="zoom";
+Edit nmt02=formonly.nmt02 type VARCHAR, tabIndex=20, noEntry;
+Edit nma04=nma_file.nma04, tabIndex=52, not null, required;
+DateEdit nma40=nma_file.nma40, tabIndex=18;
+Edit nma41=nma_file.nma41, tabIndex=21, default = "0";
+Edit nma42=nma_file.nma42, tabIndex=22;
+ButtonEdit nma47=nma_file.nma47, action=controlp, tabIndex=503, image="zoom";
+Edit noc02=formonly.noc02 type CHAR, tabIndex=504, noEntry;
+Edit nmauser=nma_file.nmauser, tabIndex=23, noEntry;
+Edit nmamodu=nma_file.nmamodu, tabIndex=25, noEntry;
+Edit nmaacti=nma_file.nmaacti, tabIndex=27, noEntry, upShift;
+Edit nmagrup=nma_file.nmagrup, tabIndex=24, noEntry;
+DateEdit nmadate=nma_file.nmadate, tabIndex=26, noEntry;
+Edit nmaoriu=nma_file.nmaoriu, tabIndex=501, noEntry;
+Edit nmaorig=nma_file.nmaorig, tabIndex=502, noEntry;
+TextEdit nmaud01=nma_file.nmaud01, tabIndex=36, stretch=NONE;
+Edit nmaud07=nma_file.nmaud07, tabIndex=37;
+DateEdit nmaud13=nma_file.nmaud13, tabIndex=38;
+Edit nmaud08=nma_file.nmaud08, tabIndex=39;
+DateEdit nmaud14=nma_file.nmaud14, tabIndex=40;
+Edit nmaud02=nma_file.nmaud02, tabIndex=41;
+Edit nmaud09=nma_file.nmaud09, tabIndex=42;
+DateEdit nmaud15=nma_file.nmaud15, tabIndex=43;
+Edit nmaud03=nma_file.nmaud03, tabIndex=44;
+Edit nmaud10=nma_file.nmaud10, tabIndex=45;
+Edit nmaud04=nma_file.nmaud04, tabIndex=46;
+Edit nmaud11=nma_file.nmaud11, tabIndex=47;
+Edit nmaud05=nma_file.nmaud05, tabIndex=48;
+Edit nmaud12=nma_file.nmaud12, tabIndex=49;
+Edit nmaud06=nma_file.nmaud06, tabIndex=50;
+CheckBox nna06=nna_file.nna06, tabIndex=28, title="Print Check?", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Print Pattern Check?";
+DateEdit nna021=nna_file.nna021, tabIndex=29, title="Date of Note Taken", not null, required;
+Edit nna02=nna_file.nna02, tabIndex=30, title="Book#", not null, required;
+Edit nna04=nna_file.nna04, tabIndex=31, title="Digits", not null, required, comment="Enter Check # Digits";
+Edit nna03=nna_file.nna03, tabIndex=32, title="Next Check#";
+Edit nna05=nna_file.nna05, tabIndex=33, title="Last Serial Number", not null, required, comment="Enter Check Last Serial Numbers";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=34, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=35, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nna(nna_file.nna06,nna_file.nna021,nna_file.nna02,nna_file.nna04,nna_file.nna03,nna_file.nna05)
+SCREEN RECORD Undefined(nma_file.nma01,nma_file.nma02,nma_file.nma03,nma_file.nma061,nma_file.nma07,nma_file.nma08,nma_file.nma21,nma_file.nma45,nma_file.nma46,nma_file.nma09,formonly.imgmksg,nma_file.nma10,nma_file.nma28,nma_file.nma05,nma_file.nma051,nma_file.nma12,nma_file.nma37,formonly.nma38,formonly.azp02,nma_file.nma43,nma_file.nma44,nma_file.nma39,formonly.nmt02,nma_file.nma04,nma_file.nma40,nma_file.nma41,nma_file.nma42,nma_file.nmauser,nma_file.nmamodu,nma_file.nmaacti,nma_file.nmagrup,nma_file.nmadate,nma_file.nmaoriu,nma_file.nmaorig,nma_file.nmaud01,nma_file.nmaud07,nma_file.nmaud13,nma_file.nmaud08,nma_file.nmaud14,nma_file.nmaud02,nma_file.nmaud09,nma_file.nmaud15,nma_file.nmaud03,nma_file.nmaud10,nma_file.nmaud04,nma_file.nmaud11,nma_file.nmaud05,nma_file.nmaud12,nma_file.nmaud06,formonly.cnt,formonly.cn2,nma_file.nma47,formonly.noc02)
+END -- INSTRUCTIONS
+

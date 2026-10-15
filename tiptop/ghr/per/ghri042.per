@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghri042.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Folder Folder2
+Page Page2(text=%"Page2")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid ds1
+{
+
+ hrcb01     [hrcb01                         ]  hrcb02         [hrcb02                         ]
+ hrcb03     [hrcb03                                                                           ]
+            [                                                                                 ]
+            [                                                                                 ]
+
+}
+END -- ds1
+END -- Page1
+END -- Folder1
+Table Table1
+{
+[hrcb04     |hrcb05  |hrat01     |hrat02     |hrat03      |hrat03_name   |hrat04      |hrat04_name    |hrat05      |hrat05_name     |hrcb06     |hrcb07       ]
+[hrcb04     |hrcb05  |hrat01     |hrat02     |hrat03      |hrat03_name   |hrat04      |hrat04_name    |hrat05      |hrat05_name     |hrcb06     |hrcb07       ]
+[hrcb04     |hrcb05  |hrat01     |hrat02     |hrat03      |hrat03_name   |hrat04      |hrat04_name    |hrat05      |hrat05_name     |hrcb06     |hrcb07       ]
+[hrcb04     |hrcb05  |hrat01     |hrat02     |hrat03      |hrat03_name   |hrat04      |hrat04_name    |hrat05      |hrat05_name     |hrcb06     |hrcb07       ]
+[hrcb04     |hrcb05  |hrat01     |hrat02     |hrat03      |hrat03_name   |hrat04      |hrat04_name    |hrat05      |hrat05_name     |hrcb06     |hrcb07       ]
+
+}
+END -- Table1
+Grid Grid2
+{
+
+    -----------idx   [idx          ]cnt      [cnt           ] -----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Page2
+Page Page3(text=%"Page3")
+Table Table2
+{
+[hrcb01_x  |hrcb02_x           ]
+[hrcb01_x  |hrcb02_x           ]
+[hrcb01_x  |hrcb02_x           ]
+[hrcb01_x  |hrcb02_x           ]
+[hrcb01_x  |hrcb02_x           ]
+
+}
+END -- Table2
+END -- Page3
+END -- Folder2
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrcb01=formonly.hrcb01 type VARCHAR, action=controlp, tabIndex=1, not null, image="zoom", scroll;
+Edit hrcb02=formonly.hrcb02 type VARCHAR, tabIndex=2, not null, scroll;
+TextEdit hrcb03=formonly.hrcb03 type VARCHAR, tabIndex=3;
+Edit hrcb04=formonly.hrcb04, tabIndex=4, title=%"hrcb04", noEntry;
+Edit hrcb05=formonly.hrcb05, tabIndex=15, title=%"hrcb05";
+ButtonEdit hrat01=formonly.hrat01, action=controlp, tabIndex=5, title=%"hrat01", image="zoom";
+Edit hrat02=formonly.hrat02, tabIndex=6, title=%"hrat02";
+Edit hrat03=formonly.hrat03, tabIndex=7, title=%"hrat03";
+Edit hrat03_name=formonly.hrat03_name, tabIndex=12, title=%"hrat03_name";
+Edit hrat04=formonly.hrat04, tabIndex=8, title=%"hrat04";
+Edit hrat04_name=formonly.hrat04_name, tabIndex=13, title=%"hrat04_name";
+Edit hrat05=formonly.hrat05, tabIndex=9, title=%"hrat05";
+Edit hrat05_name=formonly.hrat05_name, tabIndex=14, title=%"hrat05_name";
+DateEdit hrcb06=formonly.hrcb06, tabIndex=16, title=%"hrcb06";
+DateEdit hrcb07=formonly.hrcb07, tabIndex=17, title=%"hrcb07";
+Edit idx=formonly.idx, tabIndex=10;
+Edit cnt=formonly.cnt, tabIndex=11;
+Edit hrcb01_x=formonly.hrcb01_x, tabIndex=18, title=%"hrcb01_x";
+Edit hrcb02_x=formonly.hrcb02_x, tabIndex=19, title=%"hrcb02_x";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(formonly.hrcb01,formonly.hrcb02,formonly.hrcb03)
+SCREEN RECORD s_hrcb(formonly.hrcb04,formonly.hrcb05,formonly.hrat01,formonly.hrat02,formonly.hrat03,formonly.hrat03_name,formonly.hrat04,formonly.hrat04_name,formonly.hrat05,formonly.hrat05_name,formonly.hrcb06,formonly.hrcb07)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt)
+SCREEN RECORD s_hrcb_1(formonly.hrcb01_x,formonly.hrcb02_x)
+END -- INSTRUCTIONS
+

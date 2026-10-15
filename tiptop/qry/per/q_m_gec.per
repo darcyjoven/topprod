@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_m_gec.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_m_gec")
+Grid gr3787
+{
+ <T s_gec                                                                    >
+ [check  |gec0|gec011 |gec02            |gec03                     |gec04   ]
+ [check  |gec0|gec011 |gec02            |gec03                     |gec04   ]
+ [check  |gec0|gec011 |gec02            |gec03                     |gec04   ]
+ [check  |gec0|gec011 |gec02            |gec03                     |gec04   ]
+ [check  |gec0|gec011 |gec02            |gec03                     |gec04   ]
+ [check  |gec0|gec011 |gec02            |gec03                     |gec04   ]
+ <                                                                           >
+
+}
+END -- gr3787
+END -- q_m_gec
+
+TABLES
+gec_file
+ATTRIBUTES
+Table s_gec:s_gec;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gec0=gec_file.gec01, tabIndex=2, title="Tax", noEntry;
+Edit gec011=gec_file.gec011, tabIndex=3, title="Type", noEntry;
+Edit gec02=gec_file.gec02, tabIndex=4, title="Description", noEntry;
+Edit gec03=gec_file.gec03, tabIndex=5, title="Account", noEntry;
+Edit gec04=gec_file.gec04, tabIndex=6, title="Tax Rate", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gec(formonly.check,gec_file.gec01,gec_file.gec011,gec_file.gec02,gec_file.gec03,gec_file.gec04)
+END -- INSTRUCTIONS
+

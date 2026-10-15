@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/asks001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asks001")
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ Size   [sla01      ]  [sla011       ]
+ Color  [sla02      ]  [sla021       ]
+ Length [sla03      ]  [sla031       ]
+ Catt   [sla04      ]  [sla041       ]
+
+}
+END -- gr1
+END -- page01
+END -- pc1
+END -- asks001
+
+TABLES
+sla_file
+ATTRIBUTES
+ButtonEdit sla01=sla_file.sla01, action=controlp, tabIndex=1, image="zoom";
+Edit sla011=sla_file.sla011, tabIndex=2;
+ButtonEdit sla02=sla_file.sla02, action=controlp, tabIndex=3, image="zoom";
+Edit sla021=sla_file.sla021, tabIndex=4;
+ButtonEdit sla03=sla_file.sla03, action=controlp, tabIndex=5, image="zoom";
+Edit sla031=sla_file.sla031, tabIndex=6;
+ButtonEdit sla04=sla_file.sla04, action=controlp, tabIndex=7, image="zoom";
+Edit sla041=sla_file.sla041, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sla_file.sla01,sla_file.sla011,sla_file.sla02,sla_file.sla021,sla_file.sla03,sla_file.sla031,sla_file.sla04,sla_file.sla041)
+END -- INSTRUCTIONS
+

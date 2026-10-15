@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aoos901.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aoos901")
+Folder pc880
+Page page01(text="Main")
+Grid gr4711
+{
+ <G group01                                          >
+ [welcome                                            ]
+ [                                                   ]
+ [                                                   ]
+ [                                                   ]
+ [                                                   ]
+ [                                                   ]
+ [                                                   ]
+ [                                                   ]
+ <                                                   >
+ <G group02                                          >
+  Enter Plant No.     [g_plant             ]
+
+  Time Zone           [azp052              ]
+
+ <                                                   >
+
+}
+END -- gr4711
+END -- page01
+END -- pc880
+END -- aoos901
+
+ATTRIBUTES
+Group group01:group01, text="Welcome";
+TextEdit welcome=formonly.welcome type CHAR, tabIndex=1, noEntry, stretch=NONE;
+Group group02:group02, text="Plant Code";
+ButtonEdit g_plant=formonly.g_plant type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ComboBox azp052=formonly.azp052 type CHAR, tabIndex=3, noEntry, items=(("GMT+12", "Auckland, Wellington, Fiji"),("GMT+11", "Magadon"),("GMT+10", "Sydney, Brisbane"),("GMT+9", "Toykoy, Osaka, Seoul"),("GMT+8", "Taipei, HongKong, Singapore"),("GMT+7", "HoChiMinh, Jakarta, Bangkok"),("GMT+6", "Colonbo"),("GMT+5", "Islamabad"),("GMT+4", "Abu Dhabi"),("GMT+3", "Moscow, Baghdad"),("GMT+2", "Israel, Athens, Bucharest"),("GMT+1", "Paris, Bern, Brussels"),("GMT", "Greenwich Mean Time, London"),("GMT-1", "Azores, Cape Verde Is."),("GMT-2", "Mid-Atlantic"),("GMT-3", "Buenos Aires"),("GMT-4", "Atlantic Time(Canada)"),("GMT-5", "Eastern Time of U.S & Canada"),("GMT-6", "Central Time of U.S, Mexico"),("GMT-7", "Mountain Time of U.S"),("GMT-8", "Pacific Time of U.S"),("GMT-9", "Alaska"),("GMT-10", "Hawaii"),("GMT-11", "Samoa"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.welcome,formonly.g_plant,formonly.azp052)
+END -- INSTRUCTIONS
+

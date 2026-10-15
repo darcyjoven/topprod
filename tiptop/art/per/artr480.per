@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr480.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid4
+{
+  <G group5                                                                     >
+     Logistics Code        [shop                   ]
+                           [dummy1                          ]
+    [label2             ]  [ima131                 ]
+    [label3             ]  [ima01                  ]
+
+
+  <                                                                             >
+
+
+}
+END -- Grid4
+Group Group2(text=%"INPUT")
+Grid Grid2
+{
+   [label4             |bdate           ]----[edate           ]
+
+   [label5             |a                     ]
+
+   [d                                              ]
+
+}
+END -- Grid2
+END -- Group2
+Grid Grid3
+{
+
+       [more                           ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group5:Group5, text=%"QBE1";
+ButtonEdit shop=formonly.shop type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Label dummy1:dummy1, text="LRDMDS,QY\'|\'H\';\'GK";
+Label label2:Label2, text=%"Product Class";
+ButtonEdit ima131=formonly.ima131 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Label label3:Label3, text=%"Item No.";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Label label4:Label4, text=%"date QBE";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=4;
+DateEdit edate=formonly.edate type DATE, tabIndex=5;
+Label label5:Label5, text=%"Segment number";
+ComboBox a=formonly.a type CHAR, tabIndex=6, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "6"),("6", "8"),("7", "12"),("8", "24"));
+CheckBox d=formonly.d type VARCHAR, tabIndex=7, text="The sales value of zero is displayed", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.shop,formonly.bdate,formonly.edate,formonly.a,formonly.d,formonly.more,formonly.ima131,formonly.ima01)
+END -- INSTRUCTIONS
+

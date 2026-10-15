@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armr150.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armr150")
+VBox VBox1
+Grid gr334
+{
+ <G group01                                             >
+  Customer No.        [rma03               ]
+  Document Date       [rma07               ]
+ <                                                      >
+
+}
+END -- gr334
+Group group02(text="INPUT")
+Grid gr335
+{
+ <G group03                                             >
+  Ending Date         [rmc08       ]
+ <                                                      >
+ <G group04                                             >
+ [choice                                            ]
+ <                                                      >
+
+}
+END -- gr335
+END -- group02
+Grid gr336
+{
+[more                                     ]
+
+}
+END -- gr336
+END -- VBox1
+END -- armr150
+
+TABLES
+rma_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit rma03=rma_file.rma03, action=controlp, tabIndex=1, image="zoom", upShift;
+DateEdit rma07=rma_file.rma07, tabIndex=2;
+Group group03:group03;
+DateEdit rmc08=formonly.rmc08 type DATE, tabIndex=3;
+Group group04:group04, text="Sequence";
+RadioGroup choice=formonly.choice type VARCHAR, tabIndex=4, items=(("1", "Customer No., Planned Re-Delivery Date"),("2", "Planned Re-Delivery Date, Customer No."));
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rma_file.rma03,rma_file.rma07,formonly.rmc08,formonly.choice,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,175 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt252.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt252")
+VBox VBox1
+Folder folder01
+Page Page16(text=%"Basic Data")
+Grid gr13
+{
+
+ Delivery No.    [rvm01                 ]              Confirmation     [rvmconf     ]               [imgmksg   ]     Memo   [rvm08               ]
+ Book Date       [rvm02          ]                     Confirmation Date[rvmcond     ]               [          ]            [                    ]
+ Delivery Group  [rvm03          |rvm03_desc         ] Confirmed By     [rvmconu     |rvmconu_desc   ]                       [                    ]
+ Requirement Date[rvm04          ]                     Org#             [rvmplant    |rvmplant_desc  ]                       [                    ]
+ Line Categories [rvm05          |rvm05_desc         ] Flow No.         [rvm09                                           ]   [                    ]
+                 [rvm06                ]
+                 [rvm07                  ]
+
+
+
+
+}
+END -- gr13
+END -- Page16
+Page Info(text=%"Info")
+Grid gr12
+{
+ Record Owner[rvmuser    ]        Last Modified by[rvmmodu    ]    Data Valid Code[rvmacti    ]
+ Department  [rvmgrup    ]        Modify Date     [rvmdate    ]    Create Date    [rvmcrat    ]
+ Record Orig.[rvmoriu    ]        Dept Orig.      [rvmorig    ]
+
+
+}
+END -- gr12
+END -- Info
+END -- folder01
+HBox HBox1(splitter)
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[rvn09        |ima02_1             |ima25            |gfe02       |ruc18_1 |ruc18_011   |rvn10_1       |img10        ]
+[rvn09        |ima02_1             |ima25            |gfe02       |ruc18_1 |ruc18_011   |rvn10_1       |img10        ]
+[rvn09        |ima02_1             |ima25            |gfe02       |ruc18_1 |ruc18_011   |rvn10_1       |img10        ]
+[rvn09        |ima02_1             |ima25            |gfe02       |ruc18_1 |ruc18_011   |rvn10_1       |img10        ]
+[rvn09        |ima02_1             |ima25            |gfe02       |ruc18_1 |ruc18_011   |rvn10_1       |img10        ]
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Folder Folder2
+Page Page2(text=%"Page2")
+Table Table2
+{
+[rvn11         |imd02                 |ruc18_2           |img10_1                 ]
+[rvn11         |imd02                 |ruc18_2           |img10_1                 ]
+[rvn11         |imd02                 |ruc18_2           |img10_1                 ]
+[rvn11         |imd02                 |ruc18_2           |img10_1                 ]
+[rvn11         |imd02                 |ruc18_2           |img10_1                 ]
+}
+END -- Table2
+END -- Page2
+END -- Folder2
+END -- HBox1
+Folder pc4
+Page Page7(action=fixup1, text=%"Detail")
+Table s_rvn
+{
+[rvn02|rvn03          |rvn04|rvn05     |rvn06          |rvn06_desc|rvn07          |rvn07_desc|rvn08     |rvn01               |ima02     |ima131    |ruc16   |ruc16_desc|ruc18          |ruc18_01       |rvn10          |rvn12     |rvn11_desc|rvn13     |rvn12_desc|ruc|rvn14     ]
+[rvn02|rvn03          |rvn04|rvn05     |rvn06          |rvn06_desc|rvn07          |rvn07_desc|rvn08     |rvn01               |ima02     |ima131    |ruc16   |ruc16_desc|ruc18          |ruc18_01       |rvn10          |rvn12     |rvn11_desc|rvn13     |rvn12_desc|ruc|rvn14     ]
+[rvn02|rvn03          |rvn04|rvn05     |rvn06          |rvn06_desc|rvn07          |rvn07_desc|rvn08     |rvn01               |ima02     |ima131    |ruc16   |ruc16_desc|ruc18          |ruc18_01       |rvn10          |rvn12     |rvn11_desc|rvn13     |rvn12_desc|ruc|rvn14     ]
+[rvn02|rvn03          |rvn04|rvn05     |rvn06          |rvn06_desc|rvn07          |rvn07_desc|rvn08     |rvn01               |ima02     |ima131    |ruc16   |ruc16_desc|ruc18          |ruc18_01       |rvn10          |rvn12     |rvn11_desc|rvn13     |rvn12_desc|ruc|rvn14     ]
+[rvn02|rvn03          |rvn04|rvn05     |rvn06          |rvn06_desc|rvn07          |rvn07_desc|rvn08     |rvn01               |ima02     |ima131    |ruc16   |ruc16_desc|ruc18          |ruc18_01       |rvn10          |rvn12     |rvn11_desc|rvn13     |rvn12_desc|ruc|rvn14     ]
+
+}
+END -- s_rvn
+END -- Page7
+END -- pc4
+Grid gr36
+{
+
+
+  ------ Rows[idx    ]/[cnt       ]  ----- Items[cn2        ]--------
+}
+END -- gr36
+END -- VBox1
+END -- artt252
+
+TABLES
+ruc_file,
+img_file,
+imd_file,
+rvn_file1=rvn_file,
+rvn_file,
+rvm_file,
+ima_file,
+gfe_file
+ATTRIBUTES
+ButtonEdit rvm01=rvm_file.rvm01, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+ComboBox rvmconf=rvm_file.rvmconf, tabIndex=12, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+TextEdit rvm08=rvm_file.rvm08, tabIndex=14;
+DateEdit rvm02=rvm_file.rvm02, tabIndex=8, not null;
+DateEdit rvmcond=rvm_file.rvmcond, tabIndex=11, noEntry;
+ButtonEdit rvm03=rvm_file.rvm03, action=controlp, tabIndex=9, not null, image="zoom.png";
+Edit rvm03_desc=formonly.rvm03_desc type CHAR, tabIndex=17, noEntry;
+ButtonEdit rvmconu=rvm_file.rvmconu, action=controlp, tabIndex=10, noEntry, image="zoom.png";
+Edit rvmconu_desc=formonly.rvmconu_desc type CHAR, tabIndex=15, noEntry;
+DateEdit rvm04=rvm_file.rvm04, tabIndex=29, not null;
+ButtonEdit rvmplant=rvm_file.rvmplant, action=controlp, tabIndex=13, noEntry, image="zoom.png";
+Edit rvmplant_desc=formonly.rvmplant_desc type CHAR, tabIndex=16, noEntry;
+ButtonEdit rvm05=rvm_file.rvm05, action=controlp, tabIndex=30, not null, image="zoom.png";
+Edit rvm05_desc=formonly.rvm05_desc type CHAR, tabIndex=31;
+Edit rvm09=rvm_file.rvm09, tabIndex=55, noEntry;
+CheckBox rvm06=rvm_file.rvm06, tabIndex=44, text="Provisional Lines?", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rvm07=rvm_file.rvm07, tabIndex=45, text="Automatic Sent Cars?", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit rvmuser=rvm_file.rvmuser, tabIndex=5, noEntry;
+Edit rvmmodu=rvm_file.rvmmodu, tabIndex=4, noEntry;
+Edit rvmacti=rvm_file.rvmacti, tabIndex=3, noEntry, upShift;
+Edit rvmgrup=rvm_file.rvmgrup, tabIndex=2, noEntry;
+DateEdit rvmdate=rvm_file.rvmdate, tabIndex=1, noEntry;
+DateEdit rvmcrat=rvm_file.rvmcrat, tabIndex=6, noEntry;
+Edit rvmoriu=rvm_file.rvmoriu, tabIndex=56, noEntry;
+Edit rvmorig=rvm_file.rvmorig, tabIndex=56, noEntry;
+Edit rvn09=rvn_file1.rvn09, tabIndex=57, title=%"rvn09";
+Edit ima02_1=formonly.ima02_1 type CHAR, tabIndex=58, title=%"ima02_1";
+Edit ima25=ima_file.ima25, tabIndex=59, title=%"ima25";
+Edit gfe02=gfe_file.gfe02, tabIndex=60, title=%"gfe02";
+Edit ruc18_1=formonly.ruc18_1 type CHAR, tabIndex=61, title=%"ruc18_1";
+Edit ruc18_011=formonly.ruc18_011 type CHAR, tabIndex=62, title=%"ruc18_011";
+Edit rvn10_1=formonly.rvn10_1 type CHAR, tabIndex=63, title=%"rvn10_1";
+Edit img10=img_file.img10, tabIndex=64, title=%"img10";
+Edit rvn11=rvn_file1.rvn11, tabIndex=65, title=%"rvn11";
+Edit imd02=imd_file.imd02, tabIndex=66, title=%"imd02";
+Edit ruc18_2=formonly.ruc18_2 type CHAR, tabIndex=67, title=%"ruc18_2";
+Edit img10_1=formonly.img10_1 type DECIMAL(15,0), tabIndex=68, title=%"img10_1";
+Edit rvn02=rvn_file.rvn02, tabIndex=28, title="Line No.", noEntry, not null;
+ButtonEdit rvn03=rvn_file.rvn03, action=controlp, tabIndex=32, title="Requirement No.", not null, required, image="zoom.png";
+Edit rvn04=rvn_file.rvn04, tabIndex=33, title="Requirement Line No.", not null, required;
+ComboBox rvn05=rvn_file.rvn05, tabIndex=18, title="Requirement Type", noEntry, items=(("1", "Replenishment"),("2", "Order"));
+Edit rvn06=rvn_file.rvn06, tabIndex=19, title="Requirement Org.", noEntry;
+Edit rvn06_desc=formonly.rvn06_desc type VARCHAR, tabIndex=20, title="Org.Name", noEntry;
+Edit rvn07=rvn_file.rvn07, tabIndex=21, title="Receiving Org.", noEntry;
+Edit rvn07_desc=formonly.rvn07_desc type CHAR, tabIndex=22, title="Org.Name", noEntry;
+Edit rvn08=rvn_file.rvn08, tabIndex=23, title="Lines No.", noEntry;
+ButtonEdit rvn01=rvn_file.rvn09, action=controlp, tabIndex=24, title="Goods No.", noEntry, image="zoom.png";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=34, title="Goods Name", noEntry;
+Edit ima131=formonly.ima131 type CHAR, tabIndex=35, title="Product Categories", noEntry;
+Edit ruc16=formonly.ruc16 type CHAR, tabIndex=46, title="Unit\n", noEntry;
+Edit ruc16_desc=formonly.ruc16_desc type CHAR, tabIndex=47, title="Unit Name", noEntry;
+Edit ruc18=formonly.ruc18 type CHAR, tabIndex=36, title="Requirement Qty", noEntry;
+Edit ruc18_01=formonly.ruc18_01 type CHAR, tabIndex=37, title="Unallocated Qty", noEntry;
+Edit rvn10=rvn_file.rvn10, tabIndex=38, title="Allocated Qty", not null, required;
+ButtonEdit rvn12=rvn_file.rvn11, action=controlp, tabIndex=39, title="Shipping Warehouse", not null, required, image="zoom.png";
+Edit rvn11_desc=formonly.rvn11_desc type VARCHAR, tabIndex=40, title="Warehouse Name", noEntry;
+Edit rvn13=rvn_file.rvn12, tabIndex=41, title="Shipping Org.", noEntry;
+Edit rvn12_desc=formonly.rvn12_desc type CHAR, tabIndex=42, title="Org. Name", noEntry;
+CheckBox ruc=ruc_file.ruc29, tabIndex=55, title="Delivery", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rvn14=rvn_file.rvn13, action=controlp, tabIndex=43, title="Triangular Trade Flow", not null, image="zoom.png";
+Edit idx=formonly.idx type CHAR, tabIndex=26, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=25, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=27;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvn(rvn_file.rvn02,rvn_file.rvn03,rvn_file.rvn04,rvn_file.rvn05,rvn_file.rvn06,formonly.rvn06_desc,rvn_file.rvn07,formonly.rvn07_desc,rvn_file.rvn08,rvn_file.rvn09,formonly.ima02,formonly.ima131,formonly.ruc16,formonly.ruc16_desc,formonly.ruc18,formonly.ruc18_01,rvn_file.rvn10,rvn_file.rvn11,formonly.rvn11_desc,rvn_file.rvn12,formonly.rvn12_desc,ruc_file.ruc29,rvn_file.rvn13)
+SCREEN RECORD Undefined(rvm_file.rvm01,rvm_file.rvm08,rvm_file.rvm02,rvm_file.rvmconf,formonly.imgmksg,rvm_file.rvm03,formonly.rvm03_desc,rvm_file.rvmcond,rvm_file.rvm04,rvm_file.rvmconu,formonly.rvmconu_desc,rvm_file.rvm05,formonly.rvm05_desc,rvm_file.rvm06,rvm_file.rvmplant,formonly.rvmplant_desc,rvm_file.rvm07,rvm_file.rvm09,rvm_file.rvmuser,rvm_file.rvmmodu,rvm_file.rvmacti,rvm_file.rvmgrup,rvm_file.rvmdate,rvm_file.rvmcrat,rvm_file.rvmoriu,rvm_file.rvmorig,formonly.idx,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_rvn1(rvn_file1.rvn09,formonly.ima02_1,ima_file.ima25,gfe_file.gfe02,formonly.ruc18_1,formonly.ruc18_011,formonly.rvn10_1,img_file.img10)
+SCREEN RECORD s_rvn2(rvn_file1.rvn11,imd_file.imd02,formonly.ruc18_2,formonly.img10_1)
+END -- INSTRUCTIONS
+

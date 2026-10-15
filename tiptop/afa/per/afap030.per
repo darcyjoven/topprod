@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap030.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"afap030")
+VBox vb49
+Grid gr1995
+{
+ <G grpqbe                                                                                            >
+  Asset Category      [faj04            ]
+  group No.           [faj93            ]
+  Property No.        [faj02            ]
+
+
+ <                                                                                                    >
+
+}
+END -- gr1995
+Group group01(text="INPUT")
+Grid gr1996
+{
+ <G group02                                       >
+ [a              ]
+ [               ]
+ <                                                >
+ Exch. Rate [rate      |dummy                      ]
+ <G group03                                       >
+ [b               ]
+ [                ] Years Durable [year      ]
+ <                                                >
+
+
+}
+END -- gr1996
+END -- group01
+Grid gr1997
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr1997
+END -- vb49
+END -- afap030
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+Edit faj04=formonly.faj04 type VARCHAR, tabIndex=3;
+Edit faj93=formonly.faj93 type VARCHAR, tabIndex=5, not null;
+ButtonEdit faj02=formonly.faj02 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+Group group02:group02, text="Opening Banlance Category";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=1, items=(("1", "Fax Voucher"),("2", "Finance Voucher 2"));
+Edit rate=formonly.rate type VARCHAR, tabIndex=6;
+Label dummy:dummy, text="Finance Voucher VS Finance Voucher 2 Rate";
+Group group03:group03, text="Data Default";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=2, items=(("1", "Finance Voucher 1"),("2", "User Defined year(s)"));
+Edit year=formonly.year type VARCHAR, tabIndex=7;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=8, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.faj04,formonly.faj93,formonly.faj02,formonly.a,formonly.rate,formonly.b,formonly.year,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

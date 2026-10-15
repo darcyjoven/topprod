@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr891.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group Group1(text=%"QBE Condition")
+Grid Grid1
+{
+
+ Operations center number          [azp01           ]
+
+ Products                          [ima131          ]
+
+ Product Code                      [ima01           ]
+
+ Category                          [ima1004         ]
+
+ Brand                             [ima1005         ]
+
+ Series                            [ima1006         ]
+
+
+}
+END -- Grid1
+END -- Group1
+Grid Grid2
+{
+
+          [more                                     ]
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit azp01=formonly.azp01 type VARCHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit ima131=formonly.ima131 type VARCHAR, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=3, image="zoom.png";
+ButtonEdit ima1004=formonly.ima1004 type VARCHAR, action=controlp, tabIndex=4, image="zoom.png";
+ButtonEdit ima1005=formonly.ima1005 type VARCHAR, action=controlp, tabIndex=5, image="zoom.png";
+ButtonEdit ima1006=formonly.ima1006 type VARCHAR, action=controlp, tabIndex=6, image="zoom.png";
+CheckBox more=formonly.more type CHAR, tabIndex=7, text=%"Other special conditions printed", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.ima131,formonly.ima01,formonly.ima1004,formonly.ima1005,formonly.ima1006,formonly.more)
+END -- INSTRUCTIONS
+

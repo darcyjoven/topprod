@@ -1,0 +1,193 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct400")
+VBox vb4
+Folder pc384
+Page page01(text="Main")
+Grid gr1800
+{
+ Master Item#             [ccg04                         ]   Labor Completion%    [srm05          ]
+                          [ima02                         ]   Overhead Completion% [srm06          ]
+ Unit                     [ima25     ]                       InQty                [sre11          ]
+ W/O No.                  [ccg01           ]                 Qty                  [srm04          ]
+ Year/Month               [ccg02   ]/[cc]
+ Cost Calculation Method  [ccg06   ]  Category No.  [ccg07                                        ]
+ <G group02                                                                                                                                                                  >
+                      [dummy01             ]+[dummy02            ]+[dummy03            ]+[dummy04            ]+[dummy05           ]=[dummy06            ][dummy11            ]
+                      [dummy07             ] [dummy08            ] [dummy09            ] [dummy10            ]
+  Work hour           [ccg20               ]
+  Qty                 [ccg11               ][ccg21               ]                      [ccg31               ]                      [ccg91              ]
+ [label1      ]                                                                         [ccg311              ]
+  Material            [ccg12a              ][ccg22a              ][ccg23a              ][ccg32a              ][ccg42a              ][ccg92a             ][up1                ]
+  Labor               [ccg12b              ][ccg22b              ][ccg23b              ][ccg32b              ][ccg42b              ][ccg92b             ][up2                ]
+  Overhead 1          [ccg12c              ][ccg22c              ][ccg23c              ][ccg32c              ][ccg42c              ][ccg92c             ][up3                ]
+  Process             [ccg12d              ][ccg22d              ][ccg23d              ][ccg32d              ][ccg42d              ][ccg92d             ]
+  Overhead 2          [ccg12e              ][ccg22e              ][ccg23e              ][ccg32e              ][ccg42e              ][ccg92e             ]
+  Overhead 3          [ccg12f              ][ccg22f              ][ccg23f              ][ccg32f              ][ccg42f              ][ccg92f             ]
+  Overhead 4          [ccg12g              ][ccg22g              ][ccg23g              ][ccg32g              ][ccg42g              ][ccg92g             ]
+  Overhead 5          [ccg12h              ][ccg22h              ][ccg23h              ][ccg32h              ][ccg42h              ][ccg92h             ]
+
+  Total               [ccg12               ][ccg22               ][ccg23               ][ccg32               ][ccg42               ][ccg92              ]
+
+ <                                                                                                                                                                           >
+
+}
+END -- gr1800
+END -- page01
+Page info(text="Info")
+Grid gr1801
+{
+ Record Owner        [ccguser   ]   Data Valid Code     [ccgtime   ]
+ Create/Modify Date  [ccgdate   ]
+ Record Orig.        [ccgoriu   ]
+ Dept Orig.          [ccgorig   ]
+}
+END -- gr1801
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[ccgud01                       ] userdefined_field07[ccgud07        ] userdefined_field13[ccgud13        ]
+                    [                              ] userdefined_field08[ccgud08        ] userdefined_field14[ccgud14        ]
+ userdefined_field02[ccgud02        ]                userdefined_field09[ccgud09        ] userdefined_field15[ccgud15        ]
+ userdefined_field03[ccgud03        ]                userdefined_field10[ccgud10        ]
+ userdefined_field04[ccgud04        ]                userdefined_field11[ccgud11        ]
+ userdefined_field05[ccgud05        ]                userdefined_field12[ccgud12        ]
+ userdefined_field06[ccgud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc384
+Grid gr1802
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr1802
+END -- vb4
+END -- axct400
+
+TABLES
+ccg_file
+ATTRIBUTES
+ButtonEdit ccg04=ccg_file.ccg04, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit srm05=formonly.srm05 type CHAR, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit srm06=formonly.srm06 type CHAR, tabIndex=4, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=5, noEntry;
+Edit sre11=formonly.sre11 type CHAR, tabIndex=6, noEntry;
+ButtonEdit ccg01=ccg_file.ccg01, action=controlp, tabIndex=7, not null, required, image="zoom";
+Edit srm04=formonly.srm04 type CHAR, tabIndex=8, noEntry;
+Edit ccg02=ccg_file.ccg02, tabIndex=9, not null, required;
+Edit cc=ccg_file.ccg03, tabIndex=10, not null, required;
+ComboBox ccg06=ccg_file.ccg06, tabIndex=60, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually?????蝪泳tch Cost"),("4", "Identify Manually??????tem Cost"),("5", "Identify Manually??????tore Profit Center"));
+ButtonEdit ccg07=ccg_file.ccg07, action=controlp, tabIndex=61, not null, required, image="zoom.png";
+Group group02:group02;
+Label dummy01:dummy01, text="Last Month";
+Label dummy02:dummy02, text="Curr.Month";
+Label dummy03:dummy03, text="Curr.Month";
+Label dummy04:dummy04, text="Curr.Month";
+Label dummy05:dummy05, text="Diff.";
+Label dummy06:dummy06, text="EoM Balance";
+Label dummy11:dummy11, text="Unit Cost";
+Label dummy07:dummy07, text="Balance";
+Label dummy08:dummy08, text="Raw Material";
+Label dummy09:dummy09, text="Semi-Prodt.";
+Label dummy10:dummy10, text="Trans-out";
+Edit ccg20=ccg_file.ccg20, tabIndex=11, not null, required;
+Edit ccg11=ccg_file.ccg11, tabIndex=12, not null, required;
+Edit ccg21=ccg_file.ccg21, tabIndex=13, not null, required;
+Edit ccg31=ccg_file.ccg31, tabIndex=14, not null, required;
+Edit ccg91=ccg_file.ccg91, tabIndex=15, noEntry, not null, required;
+Label label1:Label1, text=%"Scrapped";
+Edit ccg311=ccg_file.ccg311, tabIndex=16, not null, required;
+Edit ccg12a=ccg_file.ccg12a, tabIndex=17, not null, required;
+Edit ccg22a=ccg_file.ccg22a, tabIndex=18, not null, required;
+Edit ccg23a=ccg_file.ccg23a, tabIndex=19, not null, required;
+Edit ccg32a=ccg_file.ccg32a, tabIndex=20, not null, required;
+Edit ccg42a=ccg_file.ccg42a, tabIndex=21, not null, required;
+Edit ccg92a=ccg_file.ccg92a, tabIndex=22, noEntry, not null, required;
+Edit up1=formonly.up1 type CHAR, tabIndex=23, noEntry;
+Edit ccg12b=ccg_file.ccg12b, tabIndex=24, not null, required;
+Edit ccg22b=ccg_file.ccg22b, tabIndex=25, not null, required;
+Edit ccg23b=ccg_file.ccg23b, tabIndex=26, not null, required;
+Edit ccg32b=ccg_file.ccg32b, tabIndex=27, not null, required;
+Edit ccg42b=ccg_file.ccg42b, tabIndex=28, not null, required;
+Edit ccg92b=ccg_file.ccg92b, tabIndex=29, noEntry, not null, required;
+Edit up2=formonly.up2 type CHAR, tabIndex=30, noEntry;
+Edit ccg12c=ccg_file.ccg12c, tabIndex=31, not null, required;
+Edit ccg22c=ccg_file.ccg22c, tabIndex=32, not null, required;
+Edit ccg23c=ccg_file.ccg23c, tabIndex=33, not null, required;
+Edit ccg32c=ccg_file.ccg32c, tabIndex=34, not null, required;
+Edit ccg42c=ccg_file.ccg42c, tabIndex=35, not null, required;
+Edit ccg92c=ccg_file.ccg92c, tabIndex=36, noEntry, not null, required;
+Edit up3=formonly.up3 type CHAR, tabIndex=37, noEntry;
+Edit ccg12d=ccg_file.ccg12d, tabIndex=38, not null, required;
+Edit ccg22d=ccg_file.ccg22d, tabIndex=39, not null, required;
+Edit ccg23d=ccg_file.ccg23d, tabIndex=40, not null, required;
+Edit ccg32d=ccg_file.ccg32d, tabIndex=41, not null, required;
+Edit ccg42d=ccg_file.ccg42d, tabIndex=42, not null, required;
+Edit ccg92d=ccg_file.ccg92d, tabIndex=43, noEntry, not null, required;
+Edit ccg12e=ccg_file.ccg12e, tabIndex=44, not null, required;
+Edit ccg22e=ccg_file.ccg22e, tabIndex=45, not null, required;
+Edit ccg23e=ccg_file.ccg23e, tabIndex=46, not null, required;
+Edit ccg32e=ccg_file.ccg32e, tabIndex=47, not null, required;
+Edit ccg42e=ccg_file.ccg42e, tabIndex=48, not null, required;
+Edit ccg92e=ccg_file.ccg92e, tabIndex=49, noEntry, not null, required;
+Edit ccg12f=ccg_file.ccg12f, tabIndex=62, default = "0", not null, required;
+Edit ccg22f=ccg_file.ccg22f, tabIndex=65, default = "0", not null, required;
+Edit ccg23f=ccg_file.ccg23f, tabIndex=68, default = "0", not null, required;
+Edit ccg32f=ccg_file.ccg32f, tabIndex=71, default = "0", not null, required;
+Edit ccg42f=ccg_file.ccg42f, tabIndex=74, default = "0", not null, required;
+Edit ccg92f=ccg_file.ccg92f, tabIndex=77, default = "0", noEntry, not null, required;
+Edit ccg12g=ccg_file.ccg12g, tabIndex=63, default = "0", not null, required;
+Edit ccg22g=ccg_file.ccg22g, tabIndex=66, default = "0", not null, required;
+Edit ccg23g=ccg_file.ccg23g, tabIndex=69, default = "0", not null, required;
+Edit ccg32g=ccg_file.ccg32g, tabIndex=72, default = "0", not null, required;
+Edit ccg42g=ccg_file.ccg42g, tabIndex=75, default = "0", not null, required;
+Edit ccg92g=ccg_file.ccg92g, tabIndex=78, default = "0", noEntry, not null, required;
+Edit ccg12h=ccg_file.ccg12h, tabIndex=64, default = "0", not null, required;
+Edit ccg22h=ccg_file.ccg22h, tabIndex=67, default = "0", not null, required;
+Edit ccg23h=ccg_file.ccg23h, tabIndex=70, not null, required;
+Edit ccg32h=ccg_file.ccg32h, tabIndex=73, default = "0", not null, required;
+Edit ccg42h=ccg_file.ccg42h, tabIndex=76, default = "0", not null, required;
+Edit ccg92h=ccg_file.ccg92h, tabIndex=79, default = "0", noEntry, not null, required;
+Edit ccg12=ccg_file.ccg12, tabIndex=50, noEntry, not null, required;
+Edit ccg22=ccg_file.ccg22, tabIndex=51, noEntry, not null, required;
+Edit ccg23=ccg_file.ccg23, tabIndex=52, noEntry, not null, required;
+Edit ccg32=ccg_file.ccg32, tabIndex=53, noEntry, not null, required;
+Edit ccg42=ccg_file.ccg42, tabIndex=54, noEntry, not null, required;
+Edit ccg92=ccg_file.ccg92, tabIndex=55, noEntry, not null, required;
+Edit ccguser=ccg_file.ccguser, tabIndex=56, noEntry;
+Edit ccgtime=ccg_file.ccgtime, tabIndex=57, noEntry;
+DateEdit ccgdate=ccg_file.ccgdate, tabIndex=58, noEntry;
+Edit ccgoriu=ccg_file.ccgoriu, tabIndex=95, noEntry;
+Edit ccgorig=ccg_file.ccgorig, tabIndex=96, noEntry;
+TextEdit ccgud01=ccg_file.ccgud01, tabIndex=80, stretch=NONE;
+Edit ccgud07=ccg_file.ccgud07, tabIndex=81;
+DateEdit ccgud13=ccg_file.ccgud13, tabIndex=82;
+Edit ccgud08=ccg_file.ccgud08, tabIndex=83;
+DateEdit ccgud14=ccg_file.ccgud14, tabIndex=84;
+Edit ccgud02=ccg_file.ccgud02, tabIndex=85;
+Edit ccgud09=ccg_file.ccgud09, tabIndex=86;
+DateEdit ccgud15=ccg_file.ccgud15, tabIndex=87;
+Edit ccgud03=ccg_file.ccgud03, tabIndex=88;
+Edit ccgud10=ccg_file.ccgud10, tabIndex=89;
+Edit ccgud04=ccg_file.ccgud04, tabIndex=90;
+Edit ccgud11=ccg_file.ccgud11, tabIndex=91;
+Edit ccgud05=ccg_file.ccgud05, tabIndex=92;
+Edit ccgud12=ccg_file.ccgud12, tabIndex=93;
+Edit ccgud06=ccg_file.ccgud06, tabIndex=94;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=59, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ccg_file.ccg04,formonly.srm05,formonly.ima02,formonly.srm06,formonly.ima25,formonly.sre11,ccg_file.ccg01,formonly.srm04,ccg_file.ccg02,ccg_file.ccg03,ccg_file.ccg06,ccg_file.ccg07,ccg_file.ccg20,ccg_file.ccg11,ccg_file.ccg21,ccg_file.ccg31,ccg_file.ccg91,ccg_file.ccg12a,ccg_file.ccg22a,ccg_file.ccg23a,ccg_file.ccg32a,ccg_file.ccg42a,ccg_file.ccg92a,formonly.up1,ccg_file.ccg12b,ccg_file.ccg22b,ccg_file.ccg23b,ccg_file.ccg32b,ccg_file.ccg42b,ccg_file.ccg92b,formonly.up2,ccg_file.ccg12c,ccg_file.ccg22c,ccg_file.ccg23c,ccg_file.ccg32c,ccg_file.ccg42c,ccg_file.ccg92c,formonly.up3,ccg_file.ccg12d,ccg_file.ccg22d,ccg_file.ccg23d,ccg_file.ccg32d,ccg_file.ccg42d,ccg_file.ccg92d,ccg_file.ccg12e,ccg_file.ccg22e,ccg_file.ccg23e,ccg_file.ccg32e,ccg_file.ccg42e,ccg_file.ccg92e,ccg_file.ccg12f,ccg_file.ccg22f,ccg_file.ccg23f,ccg_file.ccg32f,ccg_file.ccg42f,ccg_file.ccg92f,ccg_file.ccg12g,ccg_file.ccg22g,ccg_file.ccg23g,ccg_file.ccg32g,ccg_file.ccg42g,ccg_file.ccg92g,ccg_file.ccg12h,ccg_file.ccg22h,ccg_file.ccg23h,ccg_file.ccg32h,ccg_file.ccg42h,ccg_file.ccg92h,ccg_file.ccg12,ccg_file.ccg22,ccg_file.ccg23,ccg_file.ccg32,ccg_file.ccg42,ccg_file.ccg92,ccg_file.ccguser,ccg_file.ccgtime,ccg_file.ccgdate,ccg_file.ccgoriu,ccg_file.ccgorig,ccg_file.ccgud01,ccg_file.ccgud07,ccg_file.ccgud13,ccg_file.ccgud08,ccg_file.ccgud14,ccg_file.ccgud02,ccg_file.ccgud09,ccg_file.ccgud15,ccg_file.ccgud03,ccg_file.ccgud10,ccg_file.ccgud04,ccg_file.ccgud11,ccg_file.ccgud05,ccg_file.ccgud12,ccg_file.ccgud06,formonly.cnt,ccg_file.ccg311)
+END -- INSTRUCTIONS
+

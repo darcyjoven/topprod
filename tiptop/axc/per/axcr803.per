@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr803.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox1
+Group Group01(text=%"QBE")
+Grid ds1
+{
+ occ01 [occ01                         ]
+ ima01 [ima01                         ]
+}
+END -- ds1
+END -- Group01
+Group Group02(text=%"INPUT")
+Grid Grid1
+{
+ yy     [yy                 ]
+ mm     [mm                 ]
+ ccc07  [ccc07              ]
+ ccc08  [ccc08              ]
+}
+END -- Grid1
+END -- Group02
+Grid Grid2
+{
+[cb1                                 ]
+[more                                ]
+}
+END -- Grid2
+END -- VBox1
+END -- Page1
+END -- Folder1
+END -- Form
+
+TABLES
+ccc_file,
+occ_file,
+ima_file
+ATTRIBUTES
+ButtonEdit occ01=occ_file.occ01, action=controlp, tabIndex=1, image="zoom.png", scroll;
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=2, image="zoom.png", scroll;
+Edit yy=formonly.yy, tabIndex=3, not null, required;
+Edit mm=formonly.mm, tabIndex=4, not null, required;
+ComboBox ccc07=ccc_file.ccc07, tabIndex=5, not null, required, items=(("1", "Text"),("2", "Text"),("3", "Text"),("4", "Text"));
+ButtonEdit ccc08=ccc_file.ccc08, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+CheckBox cb1=formonly.cb1, tabIndex=7, default = "N", text=%"CheckBox1", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more, tabIndex=8, default = "N", text=%"CheckBox2", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(occ_file.occ01,ima_file.ima01)
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,ccc_file.ccc07,ccc_file.ccc08,formonly.cb1,formonly.more)
+END -- INSTRUCTIONS
+

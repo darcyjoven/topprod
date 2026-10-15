@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi757.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="acoi757")
+VBox vb4
+Folder pc1
+Page Page1(text=%"MAIN")
+Table s_ceh
+{
+[ceh00     |ceh01    |ceh04             |ceh02           |ceh03                |ceh05   |ceh06      |ceh07       |ceh08           |ceh09         |ceh10             |ceh11        |ceh12         |cehacti   ]
+[ceh00     |ceh01    |ceh04             |ceh02           |ceh03                |ceh05   |ceh06      |ceh07       |ceh08           |ceh09         |ceh10             |ceh11        |ceh12         |cehacti   ]
+[ceh00     |ceh01    |ceh04             |ceh02           |ceh03                |ceh05   |ceh06      |ceh07       |ceh08           |ceh09         |ceh10             |ceh11        |ceh12         |cehacti   ]
+[ceh00     |ceh01    |ceh04             |ceh02           |ceh03                |ceh05   |ceh06      |ceh07       |ceh08           |ceh09         |ceh10             |ceh11        |ceh12         |cehacti   ]
+[ceh00     |ceh01    |ceh04             |ceh02           |ceh03                |ceh05   |ceh06      |ceh07       |ceh08           |ceh09         |ceh10             |ceh11        |ceh12         |cehacti   ]
+[ceh00     |ceh01    |ceh04             |ceh02           |ceh03                |ceh05   |ceh06      |ceh07       |ceh08           |ceh09         |ceh10             |ceh11        |ceh12         |cehacti   ]
+[ceh00     |ceh01    |ceh04             |ceh02           |ceh03                |ceh05   |ceh06      |ceh07       |ceh08           |ceh09         |ceh10             |ceh11        |ceh12         |cehacti   ]
+[ceh00     |ceh01    |ceh04             |ceh02           |ceh03                |ceh05   |ceh06      |ceh07       |ceh08           |ceh09         |ceh10             |ceh11        |ceh12         |cehacti   ]
+[ceh00     |ceh01    |ceh04             |ceh02           |ceh03                |ceh05   |ceh06      |ceh07       |ceh08           |ceh09         |ceh10             |ceh11        |ceh12         |cehacti   ]
+[ceh00     |ceh01    |ceh04             |ceh02           |ceh03                |ceh05   |ceh06      |ceh07       |ceh08           |ceh09         |ceh10             |ceh11        |ceh12         |cehacti   ]
+
+}
+END -- s_ceh
+END -- Page1
+END -- pc1
+Grid gr1
+{
+-----ROWS[cnt   ]-----
+
+}
+END -- gr1
+END -- vb4
+END -- acoi757
+
+TABLES
+ceh_file
+ATTRIBUTES
+ComboBox ceh00=ceh_file.ceh00, tabIndex=1, title="Segement", not null, required, items=(("1", "Finished Goods"),("2", "Material"));
+Edit ceh01=ceh_file.ceh01, tabIndex=2, title="Combine Serialno";
+ButtonEdit ceh04=ceh_file.ceh04, action=controlp, tabIndex=3, title="Customs Commodity Code", image="zoom";
+Edit ceh02=ceh_file.ceh02, tabIndex=4, title="Item Name";
+Edit ceh03=ceh_file.ceh03, tabIndex=5, title="Item Specification";
+Edit ceh05=ceh_file.ceh05, tabIndex=6, title="Unit Price", not null, required;
+ButtonEdit ceh06=ceh_file.ceh06, action=controlp, tabIndex=7, title="Declaration Unit", image="zoom";
+ButtonEdit ceh07=ceh_file.ceh07, action=controlp, tabIndex=8, title="Legal Unit", image="zoom";
+Edit ceh08=ceh_file.ceh08, tabIndex=9, title="Legal Unit Conv Rate", not null, required;
+ButtonEdit ceh09=ceh_file.ceh09, action=controlp, tabIndex=10, title="Second Legal Unit", image="zoom";
+Edit ceh10=ceh_file.ceh10, tabIndex=11, title="Second Unit Conv Rate", not null, required;
+Edit ceh11=ceh_file.ceh11, tabIndex=12, title="combine item no";
+ButtonEdit ceh12=ceh_file.ceh12, action=controlp, tabIndex=13, title="Combine Currency", image="zoom";
+CheckBox cehacti=ceh_file.cehacti, tabIndex=14, title="Valid Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ceh(ceh_file.ceh00,ceh_file.ceh01,ceh_file.ceh04,ceh_file.ceh02,ceh_file.ceh03,ceh_file.ceh05,ceh_file.ceh06,ceh_file.ceh07,ceh_file.ceh08,ceh_file.ceh09,ceh_file.ceh10,ceh_file.ceh11,ceh_file.ceh12,ceh_file.cehacti)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

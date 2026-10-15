@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli016.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli016")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2403
+{
+ Company No.[ayc01     ][axz02        ]       Year [ayc04    ]
+ Book No.   [ayc02     ]                      Month[ayc05    ]
+ Currency   [ayc03     ]
+
+}
+END -- gr2403
+END -- page01
+END -- folder01
+Table s_ayc
+{
+[ayc06   |ayc07           |ayc08|ayc09           |ayc10           |aag02           |ayc11 |ayc12       |ayc13   |axl02   ]
+[ayc06   |ayc07           |ayc08|ayc09           |ayc10           |aag02           |ayc11 |ayc12       |ayc13   |axl02   ]
+[ayc06   |ayc07           |ayc08|ayc09           |ayc10           |aag02           |ayc11 |ayc12       |ayc13   |axl02   ]
+[ayc06   |ayc07           |ayc08|ayc09           |ayc10           |aag02           |ayc11 |ayc12       |ayc13   |axl02   ]
+[ayc06   |ayc07           |ayc08|ayc09           |ayc10           |aag02           |ayc11 |ayc12       |ayc13   |axl02   ]
+[ayc06   |ayc07           |ayc08|ayc09           |ayc10           |aag02           |ayc11 |ayc12       |ayc13   |axl02   ]
+[ayc06   |ayc07           |ayc08|ayc09           |ayc10           |aag02           |ayc11 |ayc12       |ayc13   |axl02   ]
+[ayc06   |ayc07           |ayc08|ayc09           |ayc10           |aag02           |ayc11 |ayc12       |ayc13   |axl02   ]
+[ayc06   |ayc07           |ayc08|ayc09           |ayc10           |aag02           |ayc11 |ayc12       |ayc13   |axl02   ]
+[ayc06   |ayc07           |ayc08|ayc09           |ayc10           |aag02           |ayc11 |ayc12       |ayc13   |axl02   ]
+
+}
+END -- s_ayc
+Grid gr2404
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2404
+END -- VBox1
+END -- agli016
+
+TABLES
+ayc_file
+ATTRIBUTES
+ButtonEdit ayc01=ayc_file.ayc01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Company No.";
+Edit axz02=formonly.axz02 type CHAR, tabIndex=2, noEntry;
+Edit ayc04=ayc_file.ayc04, tabIndex=5, not null, required;
+Edit ayc02=ayc_file.ayc02, tabIndex=3, noEntry, not null, required;
+Edit ayc05=ayc_file.ayc05, tabIndex=6, not null, required;
+ButtonEdit ayc03=ayc_file.ayc03, action=controlp, tabIndex=4, noEntry, not null, required, image="zoom", comment="<^P>Currency";
+DateEdit ayc06=ayc_file.ayc06, tabIndex=7, title="Voucher Date", noEntry, not null, required;
+Edit ayc07=ayc_file.ayc07, tabIndex=8, title="Voucher No.", noEntry, not null, required;
+Edit ayc08=ayc_file.ayc08, tabIndex=9, title="Item No.", noEntry, not null, required;
+Edit ayc09=ayc_file.ayc09, tabIndex=10, title="Memo", noEntry, not null, required;
+ButtonEdit ayc10=ayc_file.ayc10, action=controlp, tabIndex=11, title="Account No.", noEntry, not null, required, image="zoom", comment="<^P>Account No.";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=12, title="Account Name", noEntry;
+ComboBox ayc11=ayc_file.ayc11, tabIndex=13, title="Dr/Cr", noEntry, not null, required, queryEditable, items=(("1", %"Debit"),("2", %"Credit"));
+Edit ayc12=ayc_file.ayc12, tabIndex=14, title="Amount", noEntry, not null, required;
+ButtonEdit ayc13=ayc_file.ayc13, action=controlp, tabIndex=15, title="Group Code", image="zoom", comment="<^P>Company No.";
+Edit axl02=formonly.axl02 type CHAR, tabIndex=16, title="Description", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ayc(ayc_file.ayc06,ayc_file.ayc07,ayc_file.ayc08,ayc_file.ayc09,ayc_file.ayc10,formonly.aag02,ayc_file.ayc11,ayc_file.ayc12,ayc_file.ayc13,formonly.axl02)
+SCREEN RECORD Undefined(ayc_file.ayc01,formonly.axz02,ayc_file.ayc04,ayc_file.ayc02,ayc_file.ayc05,ayc_file.ayc03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

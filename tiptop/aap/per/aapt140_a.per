@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt140_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt300_e")
+VBox VBox1
+Table s_oov
+{
+[oov0|oov03        |oma032    |oma10           |oma24               |oov05     |omc08               |omc09               |un_recf             |un_rec              |oov04f            |oov04               ]
+[oov0|oov03        |oma032    |oma10           |oma24               |oov05     |omc08               |omc09               |un_recf             |un_rec              |oov04f            |oov04               ]
+[oov0|oov03        |oma032    |oma10           |oma24               |oov05     |omc08               |omc09               |un_recf             |un_rec              |oov04f            |oov04               ]
+[oov0|oov03        |oma032    |oma10           |oma24               |oov05     |omc08               |omc09               |un_recf             |un_rec              |oov04f            |oov04               ]
+[oov0|oov03        |oma032    |oma10           |oma24               |oov05     |omc08               |omc09               |un_recf             |un_rec              |oov04f            |oov04               ]
+[oov0|oov03        |oma032    |oma10           |oma24               |oov05     |omc08               |omc09               |un_recf             |un_rec              |oov04f            |oov04               ]
+[oov0|oov03        |oma032    |oma10           |oma24               |oov05     |omc08               |omc09               |un_recf             |un_rec              |oov04f            |oov04               ]
+[oov0|oov03        |oma032    |oma10           |oma24               |oov05     |omc08               |omc09               |un_recf             |un_rec              |oov04f            |oov04               ]
+[oov0|oov03        |oma032    |oma10           |oma24               |oov05     |omc08               |omc09               |un_recf             |un_rec              |oov04f            |oov04               ]
+[oov0|oov03        |oma032    |oma10           |oma24               |oov05     |omc08               |omc09               |un_recf             |un_rec              |oov04f            |oov04               ]
+
+}
+END -- s_oov
+Grid gr2739
+{
+ <G group01                                                                            >
+  F.C Total          [oma55               ]  H.C Total          [oma57               ]
+
+ <                                                                                     >
+
+}
+END -- gr2739
+END -- VBox1
+END -- aapt140_a
+
+TABLES
+oov_file
+ATTRIBUTES
+Edit oov0=oov_file.oov02, tabIndex=1, title="Ln#", not null, required;
+ButtonEdit oov03=oov_file.oov03, action=controlp, tabIndex=2, title="Acc.# To-Off", not null, required, image="zoom", comment="<^P>Qry Account No. To Contra";
+Edit oma032=formonly.oma032 type CHAR, tabIndex=3, title="Customer", noEntry;
+Edit oma10=formonly.oma10 type CHAR, tabIndex=4, title="Invoice#", noEntry;
+Edit oma24=formonly.oma24 type CHAR, tabIndex=5, title="Ex Rate", noEntry;
+Edit oov05=oov_file.oov05, tabIndex=6, title="Line No.";
+Edit omc08=formonly.omc08 type CHAR, tabIndex=7, title="F.C.Original$", noEntry;
+Edit omc09=formonly.omc09 type CHAR, tabIndex=8, title="H.C.Original$", noEntry;
+Edit un_recf=formonly.un_recf type CHAR, tabIndex=9, title="F.C.UnContra$", noEntry;
+Edit un_rec=formonly.un_rec type CHAR, tabIndex=10, title="H.C.UnContra$", noEntry;
+Edit oov04f=oov_file.oov04f, tabIndex=11, title="F.C.Contra$", not null, required;
+Edit oov04=oov_file.oov04, tabIndex=12, title="H.C.Contra$";
+Group group01:group01;
+Edit oma55=formonly.oma55 type CHAR, tabIndex=13, noEntry;
+Edit oma57=formonly.oma57 type CHAR, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oov(oov_file.oov02,oov_file.oov03,formonly.oma032,formonly.oma10,formonly.oma24,oov_file.oov05,formonly.omc08,formonly.omc09,formonly.un_recf,formonly.un_rec,oov_file.oov04f,oov_file.oov04)
+SCREEN RECORD Undefined(formonly.oma55,formonly.oma57)
+END -- INSTRUCTIONS
+

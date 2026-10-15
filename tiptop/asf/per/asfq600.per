@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfq600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfq600")
+VBox vb3
+Folder pc144
+Page page01(text="Page01")
+Table s_sfb
+{
+[sfb82              |sfb01      |sfb04     |sfb13                   |sfb15                             |sfb36     |sfb05               |sfb08          |sfb09                 |srg        |qi       |qp              |s9p        ]
+[sfb82              |sfb01      |sfb04     |sfb13                   |sfb15                             |sfb36     |sfb05               |sfb08          |sfb09                 |srg        |qi       |qp              |s9p        ]
+[sfb82              |sfb01      |sfb04     |sfb13                   |sfb15                             |sfb36     |sfb05               |sfb08          |sfb09                 |srg        |qi       |qp              |s9p        ]
+[sfb82              |sfb01      |sfb04     |sfb13                   |sfb15                             |sfb36     |sfb05               |sfb08          |sfb09                 |srg        |qi       |qp              |s9p        ]
+[sfb82              |sfb01      |sfb04     |sfb13                   |sfb15                             |sfb36     |sfb05               |sfb08          |sfb09                 |srg        |qi       |qp              |s9p        ]
+[sfb82              |sfb01      |sfb04     |sfb13                   |sfb15                             |sfb36     |sfb05               |sfb08          |sfb09                 |srg        |qi       |qp              |s9p        ]
+[sfb82              |sfb01      |sfb04     |sfb13                   |sfb15                             |sfb36     |sfb05               |sfb08          |sfb09                 |srg        |qi       |qp              |s9p        ]
+[sfb82              |sfb01      |sfb04     |sfb13                   |sfb15                             |sfb36     |sfb05               |sfb08          |sfb09                 |srg        |qi       |qp              |s9p        ]
+[sfb82              |sfb01      |sfb04     |sfb13                   |sfb15                             |sfb36     |sfb05               |sfb08          |sfb09                 |srg        |qi       |qp              |s9p        ]
+[sfb82              |sfb01      |sfb04     |sfb13                   |sfb15                             |sfb36     |sfb05               |sfb08          |sfb09                 |srg        |qi       |qp              |s9p        ]
+
+}
+END -- s_sfb
+END -- page01
+END -- pc144
+Grid gr592
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr592
+END -- vb3
+END -- asfq600
+
+TABLES
+sfb_file
+ATTRIBUTES
+Edit sfb82=sfb_file.sfb82, tabIndex=1, title="Manufacturing Department";
+Edit sfb01=sfb_file.sfb01, tabIndex=2, title="W/O No.";
+ComboBox sfb04=sfb_file.sfb04, tabIndex=12, title="WO Status", queryEditable, items=(("1", "Open"),("2", "Release"),("3", "Printed"),("4", "Issueing"),("5", "WIP"),("6", "FQC"),("7", "Stock-In"),("8", "Close"));
+Edit sfb13=sfb_file.sfb13, tabIndex=3, title="Forecasted Initial Production Date";
+DateEdit sfb15=sfb_file.sfb15, tabIndex=4, title="Forecasted Ending Production Date";
+Edit sfb36=sfb_file.sfb36, tabIndex=13, title="Issue End Date";
+Edit sfb05=sfb_file.sfb05, tabIndex=5, title="Item No.";
+Edit sfb08=sfb_file.sfb08, tabIndex=6, title="Production Qty", not null, required;
+Edit sfb09=sfb_file.sfb09, tabIndex=7, title="Cmoplete/Store-in Qty", not null, required;
+Edit srg=formonly.srg type SMALLINT, tabIndex=14, title="Qty of Daily Report";
+Edit qi=formonly.qi type SMALLINT, tabIndex=8, title="FullSets", noEntry;
+Edit qp=formonly.qp type SMALLINT, tabIndex=9, title="Full-Sets Ratio", noEntry;
+Edit s9p=formonly.s9p type SMALLINT, tabIndex=10, title="Ratio", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(sfb_file.sfb82,sfb_file.sfb01,sfb_file.sfb04,sfb_file.sfb13,sfb_file.sfb15,sfb_file.sfb36,sfb_file.sfb05,sfb_file.sfb08,sfb_file.sfb09,formonly.srg,formonly.qi,formonly.qp,formonly.s9p)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

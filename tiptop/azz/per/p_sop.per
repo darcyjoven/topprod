@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_sop.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_sop")
+VBox VBox1
+Folder pc764
+Page page01(text="Page01")
+VBox VBox2
+Table s_gba
+{
+[gba01     |gba011                         |gba02     |gba021               |gba03     |gba04|gba05              |gba06  |gba07     |gem02      |gba08   |gen02   |gba09     |gba10               |gba11              |gba12               ]
+[gba01     |gba011                         |gba02     |gba021               |gba03     |gba04|gba05              |gba06  |gba07     |gem02      |gba08   |gen02   |gba09     |gba10               |gba11              |gba12               ]
+[gba01     |gba011                         |gba02     |gba021               |gba03     |gba04|gba05              |gba06  |gba07     |gem02      |gba08   |gen02   |gba09     |gba10               |gba11              |gba12               ]
+[gba01     |gba011                         |gba02     |gba021               |gba03     |gba04|gba05              |gba06  |gba07     |gem02      |gba08   |gen02   |gba09     |gba10               |gba11              |gba12               ]
+[gba01     |gba011                         |gba02     |gba021               |gba03     |gba04|gba05              |gba06  |gba07     |gem02      |gba08   |gen02   |gba09     |gba10               |gba11              |gba12               ]
+[gba01     |gba011                         |gba02     |gba021               |gba03     |gba04|gba05              |gba06  |gba07     |gem02      |gba08   |gen02   |gba09     |gba10               |gba11              |gba12               ]
+[gba01     |gba011                         |gba02     |gba021               |gba03     |gba04|gba05              |gba06  |gba07     |gem02      |gba08   |gen02   |gba09     |gba10               |gba11              |gba12               ]
+[gba01     |gba011                         |gba02     |gba021               |gba03     |gba04|gba05              |gba06  |gba07     |gem02      |gba08   |gen02   |gba09     |gba10               |gba11              |gba12               ]
+[gba01     |gba011                         |gba02     |gba021               |gba03     |gba04|gba05              |gba06  |gba07     |gem02      |gba08   |gen02   |gba09     |gba10               |gba11              |gba12               ]
+[gba01     |gba011                         |gba02     |gba021               |gba03     |gba04|gba05              |gba06  |gba07     |gem02      |gba08   |gen02   |gba09     |gba10               |gba11              |gba12               ]
+
+}
+END -- s_gba
+END -- VBox2
+END -- page01
+END -- pc764
+Grid gr3282
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3282
+END -- VBox1
+END -- p_sop
+
+TABLES
+gba_file
+ATTRIBUTES
+Edit gba01=gba_file.gba01, tabIndex=1, title="SOP Code", not null, required;
+Edit gba011=gba_file.gba011, tabIndex=2, title="SOP Code Desc.";
+Edit gba02=gba_file.gba02, tabIndex=3, title="Action#", not null, required;
+Edit gba021=gba_file.gba021, tabIndex=4, title="Action# Desc.";
+Edit gba03=gba_file.gba03, tabIndex=5, title="Version", not null, required;
+ComboBox gba04=gba_file.gba04, tabIndex=6, title="Lang", not null, required, queryEditable;
+TextEdit gba05=gba_file.gba05, tabIndex=7, title="Purpose", stretch=NONE;
+Edit gba06=gba_file.gba06, tabIndex=8, title="Module";
+ButtonEdit gba07=gba_file.gba07, action=controlp, tabIndex=9, title="Dept", image="zoom", comment="<^P> Query Department No.";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=10, title="Dept.desc.", noEntry;
+ButtonEdit gba08=gba_file.gba08, action=controlp, tabIndex=11, title="Person", image="zoom", comment="<^P> Query Employee No.";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=12, title="Name", noEntry;
+DateEdit gba09=gba_file.gba09, tabIndex=13, title="Date";
+Edit gba10=gba_file.gba10, tabIndex=14, title="Document";
+TextEdit gba11=gba_file.gba11, tabIndex=15, title="Memo", stretch=NONE;
+TextEdit gba12=gba_file.gba12, tabIndex=16, title="Test Record", stretch=NONE;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gba(gba_file.gba01,gba_file.gba011,gba_file.gba02,gba_file.gba021,gba_file.gba03,gba_file.gba04,gba_file.gba05,gba_file.gba06,gba_file.gba07,formonly.gem02,gba_file.gba08,formonly.gen02,gba_file.gba09,gba_file.gba10,gba_file.gba11,gba_file.gba12)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

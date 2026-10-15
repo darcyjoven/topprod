@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_k.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt110_k")
+VBox VBox1
+Folder pc38
+Page page01(text="Main")
+Table s_apc
+{
+[apc02    |apc03           |apc03_pma02         |apc04                 |apc05                 |apc06          |apc07                  |apc08                    |apc09               |apc10                  |apc11              |apc16                  |apc12             |apc14                  |apc15                  ]
+[apc02    |apc03           |apc03_pma02         |apc04                 |apc05                 |apc06          |apc07                  |apc08                    |apc09               |apc10                  |apc11              |apc16                  |apc12             |apc14                  |apc15                  ]
+[apc02    |apc03           |apc03_pma02         |apc04                 |apc05                 |apc06          |apc07                  |apc08                    |apc09               |apc10                  |apc11              |apc16                  |apc12             |apc14                  |apc15                  ]
+[apc02    |apc03           |apc03_pma02         |apc04                 |apc05                 |apc06          |apc07                  |apc08                    |apc09               |apc10                  |apc11              |apc16                  |apc12             |apc14                  |apc15                  ]
+[apc02    |apc03           |apc03_pma02         |apc04                 |apc05                 |apc06          |apc07                  |apc08                    |apc09               |apc10                  |apc11              |apc16                  |apc12             |apc14                  |apc15                  ]
+[apc02    |apc03           |apc03_pma02         |apc04                 |apc05                 |apc06          |apc07                  |apc08                    |apc09               |apc10                  |apc11              |apc16                  |apc12             |apc14                  |apc15                  ]
+[apc02    |apc03           |apc03_pma02         |apc04                 |apc05                 |apc06          |apc07                  |apc08                    |apc09               |apc10                  |apc11              |apc16                  |apc12             |apc14                  |apc15                  ]
+[apc02    |apc03           |apc03_pma02         |apc04                 |apc05                 |apc06          |apc07                  |apc08                    |apc09               |apc10                  |apc11              |apc16                  |apc12             |apc14                  |apc15                  ]
+[apc02    |apc03           |apc03_pma02         |apc04                 |apc05                 |apc06          |apc07                  |apc08                    |apc09               |apc10                  |apc11              |apc16                  |apc12             |apc14                  |apc15                  ]
+[apc02    |apc03           |apc03_pma02         |apc04                 |apc05                 |apc06          |apc07                  |apc08                    |apc09               |apc10                  |apc11              |apc16                  |apc12             |apc14                  |apc15                  ]
+
+}
+END -- s_apc
+END -- page01
+END -- pc38
+Grid gr361
+{
+ ----------Rows [cnk   ] ----------   Sum amt1   [amt1  ]            Sum amt2   [amt2  ]               Sum Pay1    [pay1  ]            Sum Pay2    [pay2  ]
+
+
+}
+END -- gr361
+END -- VBox1
+END -- aapt110_k
+
+TABLES
+apc_file
+ATTRIBUTES
+Edit apc02=apc_file.apc02, tabIndex=1, title="Line#", not null, required, comment="KEY Field, No Blank/Repeated!";
+ButtonEdit apc03=apc_file.apc03, action=controlp, tabIndex=2, title="Payment Method", not null, required, image="zoom";
+Edit apc03_pma02=formonly.apc03_pma02 type CHAR, tabIndex=3, title="Desc", noEntry;
+DateEdit apc04=apc_file.apc04, tabIndex=4, title="Accounts Payable Date", not null, required;
+DateEdit apc05=apc_file.apc05, tabIndex=5, title="Note Due Date Allowed", not null, required;
+Edit apc06=apc_file.apc06, tabIndex=6, title="Exchange Rate", noEntry;
+Edit apc07=apc_file.apc07, tabIndex=7, title="Reassess exchange rate", noEntry;
+Edit apc08=apc_file.apc08, tabIndex=8, title="Origignal Currency Total", not null, required;
+Edit apc09=apc_file.apc09, tabIndex=9, title="Home Currency Total", not null, required;
+Edit apc10=apc_file.apc10, tabIndex=10, title="Original Currency paid", noEntry;
+Edit apc11=apc_file.apc11, tabIndex=11, title="Home Currency Paid", noEntry;
+Edit apc16=apc_file.apc16, tabIndex=12, title="Ori. Curr. On-Hold Amt";
+Edit apc12=apc_file.apc12, tabIndex=13, title="Invoice No.", noEntry;
+Edit apc14=apc_file.apc14, tabIndex=19, title=%"Ori. Curr. Direct Contra Amount";
+Edit apc15=apc_file.apc15, tabIndex=20, title=%"Home Curr. Directly Contra Amt";
+Edit cnk=formonly.cnk type SMALLINT, tabIndex=14, noEntry;
+Edit amt1=formonly.amt1 type SMALLINT, tabIndex=15, noEntry;
+Edit amt2=formonly.amt2 type SMALLINT, tabIndex=17, noEntry;
+Edit pay1=formonly.pay1 type SMALLINT, tabIndex=16, noEntry;
+Edit pay2=formonly.pay2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apc(apc_file.apc02,apc_file.apc03,formonly.apc03_pma02,apc_file.apc04,apc_file.apc05,apc_file.apc06,apc_file.apc07,apc_file.apc08,apc_file.apc09,apc_file.apc10,apc_file.apc11,apc_file.apc16,apc_file.apc12,apc_file.apc14,apc_file.apc15)
+SCREEN RECORD Undefined(formonly.cnk,formonly.amt1,formonly.amt2,formonly.pay1,formonly.pay2)
+END -- INSTRUCTIONS
+

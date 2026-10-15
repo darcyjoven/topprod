@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft621y.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft621y")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr780
+{
+ <G group01                                             ><G group02                                          >
+  Item No.            [partno                        ]    Transfer Qty        [tot_qty   ]
+  Trans-out No.       [seq1      ]                        Trans-in No.        [seq2      ]
+ <                                                      ><                                                   >
+
+}
+END -- gr780
+END -- page01
+END -- folder01
+Table s_sfb
+{
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+[sfb05               |sfb01           |qty          |y                      |in_qty       ]
+
+}
+END -- s_sfb
+Grid gr781
+{
+ <G group03                                     ><G group04                                          >
+  [qty_t               ]                          [in_qty_t            ]
+ <                                              ><                                                   >
+
+}
+END -- gr781
+END -- VBox1
+END -- asft621y
+
+TABLES
+sfb_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit partno=formonly.partno type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P>Query,Can use \'*\'";
+Edit seq1=formonly.seq1 type CHAR, tabIndex=2;
+Group group02:group02;
+Edit tot_qty=formonly.tot_qty type CHAR, tabIndex=3;
+Edit seq2=formonly.seq2 type CHAR, tabIndex=4;
+Edit sfb05=sfb_file.sfb05, tabIndex=5, title="Item No.", noEntry;
+Edit sfb01=sfb_file.sfb01, tabIndex=6, title="W/O No.", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=7, title="Routing Qty", noEntry;
+Edit y=formonly.y type CHAR, tabIndex=8, title="W/O to Store-in Blank", autoNext, upShift, comment="Y:W/O to St-in Blank:No Store-in";
+Edit in_qty=formonly.in_qty type CHAR, tabIndex=9, title="Trans.Qty";
+Group group03:group03, text="Routing Qty";
+Edit qty_t=formonly.qty_t type CHAR, tabIndex=10;
+Group group04:group04, text="Transfer Qty";
+Edit in_qty_t=formonly.in_qty_t type CHAR, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(sfb_file.sfb05,sfb_file.sfb01,formonly.qty,formonly.y,formonly.in_qty)
+SCREEN RECORD Undefined(formonly.partno,formonly.seq1,formonly.tot_qty,formonly.seq2,formonly.qty_t,formonly.in_qty_t)
+END -- INSTRUCTIONS
+

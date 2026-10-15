@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcq112.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aqcq112")
+VBox VBox1
+Folder pc9
+Page page01(text="Page01")
+HBox HBox1
+Grid gr20
+{
+ Doc No.             [g_no            ](IQC/FQC/PQC)
+ Line No             [g_1       ]
+ Lot Seq.            [g_2       ]
+ SN                  [g_seq     ]
+}
+END -- gr20
+Grid gr21
+{
+ QC Items            [item      ][azf03                         ]
+ QC Qty              [qty       ]
+ QC Type             [a         ]
+ Up Under Limit      [upnum     ][donum     ]
+}
+END -- gr21
+END -- HBox1
+END -- page01
+END -- pc9
+Table s_num
+{
+[num      ]
+[num      ]
+[num      ]
+[num      ]
+[num      ]
+[num      ]
+[num      ]
+[num      ]
+[num      ]
+[num      ]
+
+}
+END -- s_num
+Grid gr22
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr22
+END -- VBox1
+END -- aqcq112
+
+ATTRIBUTES
+Edit g_no=formonly.g_no type CHAR, tabIndex=1, noEntry;
+Edit g_1=formonly.g_1 type CHAR, tabIndex=2, noEntry;
+Edit g_2=formonly.g_2 type CHAR, tabIndex=3, noEntry;
+Edit g_seq=formonly.g_seq type CHAR, tabIndex=4, noEntry;
+Edit item=formonly.item type CHAR, tabIndex=5, noEntry;
+Edit azf03=formonly.azf03 type CHAR, tabIndex=6, noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=7, noEntry;
+ComboBox a=formonly.a type CHAR, tabIndex=8, not null, required, queryEditable, items=(("1", "105D/E"),("2", "C=0"));
+Edit upnum=formonly.upnum type CHAR, tabIndex=9, noEntry;
+Edit donum=formonly.donum type CHAR, tabIndex=10, noEntry;
+Edit num=formonly.num type CHAR, tabIndex=11, title="Measures";
+Edit cnt=formonly.cnt type CHAR, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_num(formonly.num)
+SCREEN RECORD Undefined(formonly.g_no,formonly.g_1,formonly.g_2,formonly.g_seq,formonly.item,formonly.azf03,formonly.qty,formonly.a,formonly.upnum,formonly.donum,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

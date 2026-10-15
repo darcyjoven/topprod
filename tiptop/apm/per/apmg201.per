@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmg201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr201")
+VBox vb1
+Grid gr5040
+{
+ <G group01                                                             >
+  Supplier No.  [pmc01             ]  Country No.   [pmc02             ]
+  Local No.     [pmc908            ]  Country Code  [pmc07             ]
+  Area Code     [pmc06             ]  Contect Cate. [pmd06             ]
+ <                                                                      >
+}
+END -- gr5040
+Group group02(text="INPUT")
+Grid gr5041
+{
+ Print Data                      [b          ]
+ Columns/Page to Print(Maximum 3)[c ]
+ Greeting                        [d          ]
+                                 [e                            ]
+
+}
+END -- gr5041
+END -- group02
+Grid gr5042
+{
+ [more                                                                 ]
+
+
+}
+END -- gr5042
+END -- vb1
+END -- apmr201
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmc01=formonly.pmc01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit pmc02=formonly.pmc02 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit pmc908=formonly.pmc908 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit pmc07=formonly.pmc07 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit pmc06=formonly.pmc06 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit pmd06=formonly.pmd06 type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+ComboBox b=formonly.b type VARCHAR, tabIndex=7, not null, required, items=(("1", "Formal Address"),("2", "Invoice Address"),("3", "Note Mailing Address"));
+Edit c=formonly.c type SMALLINT, tabIndex=8, comment="Enter # of Columns/Page to Print, Maximum 3";
+ComboBox d=formonly.d type VARCHAR, tabIndex=9, not null, required, items=(("1", "To"),("2", "Dear"),("3", "Sin"),("4", "Attn"));
+Edit e=formonly.e type VARCHAR, tabIndex=10;
+CheckBox more=formonly.more type VARCHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmc01,formonly.pmc02,formonly.pmc908,formonly.pmc07,formonly.pmc06,formonly.pmd06,formonly.b,formonly.c,formonly.d,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

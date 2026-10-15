@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai030t.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai030t")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1802
+{
+ <G group01                                                                                >  <G group02                                    >
+  Data Year            [fad01     ]   Asset Account        [fad03                 ]           [fad05                                       ]
+  Data Month           [fad02     ]   Apportionment Cate   [fad04     ]
+  Account Name         [aag02                                             ]
+ <                                                                                         >  <                                             >
+
+}
+END -- gr1802
+END -- page01
+Page info(text="Info")
+Grid gr1803
+{
+ Record Owner       [faduser   ] Last Modified by   [fadmodu   ] Data Valid Code      [fadacti   ]
+ Department         [fadgrup   ] Create/Modify Date [faddate   ]
+ Record Orig.       [fadoriu   ]
+ Dept Orig.         [fadorig   ]
+}
+END -- gr1803
+END -- info
+END -- folder01
+Table s_fae
+{
+[fae05      |fae06   |fae07                 |aag02_1             |fae08        |fae09                            |aag02_2             ]
+[fae05      |fae06   |fae07                 |aag02_1             |fae08        |fae09                            |aag02_2             ]
+[fae05      |fae06   |fae07                 |aag02_1             |fae08        |fae09                            |aag02_2             ]
+[fae05      |fae06   |fae07                 |aag02_1             |fae08        |fae09                            |aag02_2             ]
+[fae05      |fae06   |fae07                 |aag02_1             |fae08        |fae09                            |aag02_2             ]
+[fae05      |fae06   |fae07                 |aag02_1             |fae08        |fae09                            |aag02_2             ]
+[fae05      |fae06   |fae07                 |aag02_1             |fae08        |fae09                            |aag02_2             ]
+[fae05      |fae06   |fae07                 |aag02_1             |fae08        |fae09                            |aag02_2             ]
+[fae05      |fae06   |fae07                 |aag02_1             |fae08        |fae09                            |aag02_2             ]
+[fae05      |fae06   |fae07                 |aag02_1             |fae08        |fae09                            |aag02_2             ]
+
+}
+END -- s_fae
+Grid gr1804
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1804
+END -- VBox1
+END -- afai030t
+
+TABLES
+fae_file,
+fad_file
+ATTRIBUTES
+Group group01:group01;
+Edit fad01=fad_file.fad01, tabIndex=1, not null, required;
+ButtonEdit fad03=fad_file.fad03, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Account Details ";
+Edit fad02=fad_file.fad02, tabIndex=3, not null, required;
+Edit fad04=fad_file.fad04, tabIndex=4, not null, required;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=5, noEntry;
+Group group02:group02, text="Apportionment Method";
+RadioGroup fad05=fad_file.fad05, tabIndex=6, not null, required, items=(("1", "Fixed Ratio"),("2", "Variable Ratio"));
+Edit faduser=fad_file.faduser, tabIndex=7, noEntry;
+Edit fadmodu=fad_file.fadmodu, tabIndex=8, noEntry;
+Edit fadacti=fad_file.fadacti, tabIndex=9, noEntry;
+Edit fadgrup=fad_file.fadgrup, tabIndex=10, noEntry;
+DateEdit faddate=fad_file.faddate, tabIndex=11, noEntry;
+Edit fadoriu=fad_file.fadoriu, tabIndex=501, noEntry;
+Edit fadorig=fad_file.fadorig, tabIndex=502, noEntry;
+Edit fae05=fae_file.fae05, tabIndex=12, title="Line No.", not null, required;
+ButtonEdit fae06=fae_file.fae06, action=controlp, tabIndex=13, title="Dept.", not null, required, image="zoom", comment="<^P>Qry Department No.";
+ButtonEdit fae07=fae_file.fae07, action=controlp, tabIndex=14, title="Depreciation Acct.", not null, required, image="zoom", comment="<^P>Qry Account No.";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=15, title="Account Title", noEntry;
+Edit fae08=fae_file.fae08, tabIndex=16, title="Apportion%", not null, required;
+ButtonEdit fae09=fae_file.fae09, action=controlp, tabIndex=17, title="Variable Ratio Numerator Acct.", not null, required, image="zoom", comment="<^P>Qry Account No.";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=18, title="Account Title", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fae(fae_file.fae05,fae_file.fae06,fae_file.fae07,formonly.aag02_1,fae_file.fae08,fae_file.fae09,formonly.aag02_2)
+SCREEN RECORD Undefined(fad_file.fad01,fad_file.fad03,fad_file.fad02,fad_file.fad04,formonly.aag02,fad_file.fad05,fad_file.faduser,fad_file.fadmodu,fad_file.fadacti,fad_file.fadgrup,fad_file.faddate,fad_file.fadoriu,fad_file.fadorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

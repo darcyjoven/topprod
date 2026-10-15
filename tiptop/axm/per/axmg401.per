@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmg401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr401")
+VBox vb2
+Grid gr1
+{
+ <G group01                                                                               >
+  Order No.            [oea01               ]
+  Order Date           [oea02               ]
+  Salesman             [oea14               ]
+ <                                                                                        >
+}
+END -- gr1
+Group g01(text="INPUT")
+VBox vb3
+Grid gr2
+{
+ <G group02                                >
+ [n                                      ]
+ <                                         >
+
+}
+END -- gr2
+Grid gr3
+{
+ [p                    ]
+ [d                               ]
+ [b                                                 ]
+ [c                                                 ]
+ [e                                                 ]
+}
+END -- gr3
+END -- vb3
+END -- g01
+Grid gr4
+{
+[more                                              ]
+
+
+}
+END -- gr4
+END -- vb2
+END -- axmr401
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit oea01=formonly.oea01 type CHAR, tabIndex=1;
+DateEdit oea02=formonly.oea02 type DATE, tabIndex=2;
+ButtonEdit oea14=formonly.oea14 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Group group02:group02, text="Title Options";
+RadioGroup n=formonly.n type VARCHAR, tabIndex=4, items=(("1", "Sales Confirmation"),("2", "Proforma Invoice"),("3", "Sales Contract"));
+CheckBox p=formonly.p type VARCHAR, tabIndex=5, text="Quantity Sum", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=6, text="PRINT CUST ITEM NO.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=8, text="Print Full Company Name for Internal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=9, text="Print Full Company Name for External", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=10, text="Print Additional Description Category", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other Print Option", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oea01,formonly.oea02,formonly.oea14,formonly.n,formonly.p,formonly.d,formonly.b,formonly.c,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

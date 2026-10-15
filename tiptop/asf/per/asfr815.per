@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr815.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asfr815")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                    >
+  Run Card            [shb16               ]
+  Work/Order No.      [shb05               ]
+  Item No.            [shb10               ]
+  Line/Shift          [shb08               ]
+  Task No.            [sgm04               ]
+  Machine No.         [sgm05               ]
+  Work Center No.     [sgm06               ]
+ <                                             >
+
+}
+END -- gr1
+Group group011(text="INPUT")
+VBox VBox2
+Grid gr2
+{
+ <G group02                                                            >
+ [s1                  ]  [s2                  ]  [s3                  ]
+ [t1                  ]  [t2                  ]  [t3                  ]
+ [u1                  ]  [u2                  ]  [u3                  ]
+ <                                                                     >
+
+}
+END -- gr2
+END -- VBox2
+END -- group011
+Grid gr3
+{
+[more                                      ]
+
+}
+END -- gr3
+END -- VBox1
+END -- asfr815
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit shb16=formonly.shb16 type VARCHAR, tabIndex=1, upShift;
+Edit shb05=formonly.shb05 type VARCHAR, tabIndex=2, upShift;
+ButtonEdit shb10=formonly.shb10 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Edit shb08=formonly.shb08 type VARCHAR, tabIndex=4, upShift;
+Edit sgm04=formonly.sgm04 type VARCHAR, tabIndex=5;
+Edit sgm05=formonly.sgm05 type VARCHAR, tabIndex=6;
+Edit sgm06=formonly.sgm06 type VARCHAR, tabIndex=7;
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, queryEditable, items=(("1", "Run Card"),("2", "Rounting S/N"),("3", "Item No."),("4", "Work/Order No."),("5", "Task No."),("6", "Machine No."),("7", "Work Center No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=9, queryEditable, items=(("1", "Run Card"),("2", "Rounting S/N"),("3", "Item No."),("4", "Work/Order No."),("5", "Task No."),("6", "Machine No."),("7", "Work Center No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=10, queryEditable, items=(("1", "Run Card"),("2", "Rounting S/N"),("3", "Item No."),("4", "Work/Order No."),("5", "Task No."),("6", "Machine No."),("7", "Work Center No."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=13, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=15, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=16, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=17, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.shb16,formonly.shb05,formonly.shb10,formonly.shb08,formonly.sgm04,formonly.sgm05,formonly.sgm06,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.more)
+END -- INSTRUCTIONS
+

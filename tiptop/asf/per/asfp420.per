@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp420.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp420")
+VBox VBox1
+Table s_sfb
+{
+[sure   |sfb01           |pmn01           |pmn02 |sfb05                |sfb15         |pmm09      |sfb08         |sfb09        |qty                 ]
+[sure   |sfb01           |pmn01           |pmn02 |sfb05                |sfb15         |pmm09      |sfb08         |sfb09        |qty                 ]
+[sure   |sfb01           |pmn01           |pmn02 |sfb05                |sfb15         |pmm09      |sfb08         |sfb09        |qty                 ]
+[sure   |sfb01           |pmn01           |pmn02 |sfb05                |sfb15         |pmm09      |sfb08         |sfb09        |qty                 ]
+[sure   |sfb01           |pmn01           |pmn02 |sfb05                |sfb15         |pmm09      |sfb08         |sfb09        |qty                 ]
+[sure   |sfb01           |pmn01           |pmn02 |sfb05                |sfb15         |pmm09      |sfb08         |sfb09        |qty                 ]
+[sure   |sfb01           |pmn01           |pmn02 |sfb05                |sfb15         |pmm09      |sfb08         |sfb09        |qty                 ]
+[sure   |sfb01           |pmn01           |pmn02 |sfb05                |sfb15         |pmm09      |sfb08         |sfb09        |qty                 ]
+[sure   |sfb01           |pmn01           |pmn02 |sfb05                |sfb15         |pmm09      |sfb08         |sfb09        |qty                 ]
+[sure   |sfb01           |pmn01           |pmn02 |sfb05                |sfb15         |pmm09      |sfb08         |sfb09        |qty                 ]
+
+}
+END -- s_sfb
+Grid gr540
+{
+ ---------Detail [cn3     ] ---- Choice Count [cn2    ] ----------
+
+}
+END -- gr540
+END -- VBox1
+END -- asfp420
+
+TABLES
+sfb_file,
+pmn_file,
+pmm_file
+ATTRIBUTES
+CheckBox sure=formonly.sure type CHAR, tabIndex=1, title="Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=2, title="W/O No.", noEntry, image="zoom";
+ButtonEdit pmn01=pmn_file.pmn01, action=controlp, tabIndex=3, title="P/O No.", noEntry, image="zoom";
+Edit pmn02=pmn_file.pmn02, tabIndex=4, title="Line#", noEntry, color = yellow;
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=5, title="Item #", noEntry, image="zoom";
+DateEdit sfb15=sfb_file.sfb15, tabIndex=6, title="Complete Date", noEntry;
+ButtonEdit pmm09=pmm_file.pmm09, action=controlp, tabIndex=7, title="Vender #", noEntry, image="zoom";
+Edit sfb08=sfb_file.sfb08, tabIndex=8, title="Ordr(Pro) Qty", noEntry, not null, required;
+Edit sfb09=sfb_file.sfb09, tabIndex=9, title="Complete Qty", noEntry, not null, required;
+Edit qty=formonly.qty type DECIMAL, tabIndex=10, title="Difference Qty", noEntry;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(formonly.sure,sfb_file.sfb01,pmn_file.pmn01,pmn_file.pmn02,sfb_file.sfb05,sfb_file.sfb15,pmm_file.pmm09,sfb_file.sfb08,sfb_file.sfb09,formonly.qty)
+SCREEN RECORD Undefined(formonly.cn3,formonly.cn2)
+END -- INSTRUCTIONS
+

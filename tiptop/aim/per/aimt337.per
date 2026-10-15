@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt337.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt337")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+  Inventory Taking Date[imgg14      ]
+  Adjustment Note No.  [tno               ]
+  Adjust Account       [credit                  ]
+  Cost Center          [dept      ][gem02     ]
+
+ <G group01                                                                                             >
+  Item#               [imgg01              ]           Multi Inventory Unit      [imgg09    ]
+  Part Name           [ima02                         ] Multi Inventory Qty       [imgg10              ]
+  Ver                 [ima05     ]                     Multi Inventory Qty       [imgg08              ]
+  Src Cd              [ima08     ]                     Profit/Loss               [diff                ]
+  Latest Inv Taking   [ima30       ]                   reason code               [reason              ]
+  Warehouse #         [imgg02    ]                     explain                   [azf03               ]
+  Location            [imgg03    ]
+  Lot#                [imgg04                  ]
+  Inventory Class     [imgg19    ]
+  Look Code           [imgg36    ]
+  W/H Mag.            [desc                     ]
+ <                                                                                                      >
+
+}
+END -- Grid1
+END -- page01
+END -- Folder1
+END -- VBox1
+END -- aimt337
+
+TABLES
+imgg_file,
+azf_file
+ATTRIBUTES
+DateEdit imgg14=imgg_file.imgg14, tabIndex=1, not null, required;
+ButtonEdit tno=formonly.tno type VARCHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Document Property";
+ButtonEdit credit=formonly.credit type CHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit dept=formonly.dept type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=5, noEntry;
+Group group01:group01;
+ButtonEdit imgg01=imgg_file.imgg01, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Item No.";
+ButtonEdit imgg09=imgg_file.imgg09, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Unit    ";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=8, noEntry;
+Edit imgg10=imgg_file.imgg10, tabIndex=9, noEntry, not null, required;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=10, noEntry;
+Edit imgg08=imgg_file.imgg08, tabIndex=11;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=12, noEntry;
+Edit diff=formonly.diff type CHAR, tabIndex=13, noEntry;
+DateEdit ima30=formonly.ima30 type DATE, tabIndex=14, noEntry;
+ButtonEdit reason=formonly.reason, action=controlp, tabIndex=21, image="zoom";
+ButtonEdit imgg02=imgg_file.imgg02, action=controlp, tabIndex=15, not null, required, image="zoom", comment="<^P>Qry Warehouse, <^Y>Create Warehouse";
+Edit azf03=azf_file.azf03, tabIndex=22, noEntry;
+ButtonEdit imgg03=formonly.imgg03 type VARCHAR, action=controlp, tabIndex=16, image="zoom", comment="<^P>Qry Location <^I>Qry Level/Look     <^Y>Create Location";
+ButtonEdit imgg04=formonly.imgg04 type VARCHAR, action=controlp, tabIndex=17, image="zoom", comment="<^P>Qry Lot No.  <^I>Qry Level/Look    ";
+Edit imgg19=formonly.imgg19 type CHAR, tabIndex=18, noEntry;
+Edit imgg36=formonly.imgg36 type CHAR, tabIndex=19, noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(imgg_file.imgg14,formonly.tno,formonly.credit,formonly.dept,formonly.gem02,imgg_file.imgg01,imgg_file.imgg09,formonly.ima02,imgg_file.imgg10,formonly.ima05,imgg_file.imgg08,formonly.ima08,formonly.diff,formonly.ima30,imgg_file.imgg02,formonly.imgg03,formonly.imgg04,formonly.imgg19,formonly.imgg36,formonly.desc,formonly.reason,azf_file.azf03)
+END -- INSTRUCTIONS
+

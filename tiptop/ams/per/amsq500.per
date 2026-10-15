@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsq500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amsq500")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3954
+{
+ Version             [mps_v     ]
+ Item#               [mps01                         ][ima02                         ]
+}
+END -- gr3954
+END -- page01
+END -- folder01
+ScrollGrid gr3955
+{
+
+ Seq#              [mps0]         [mps0]         [mps0]         [mps0]         [mps0]         [mps0]
+ Time Bucket Day   [mps03       ] [mps03       ] [mps03       ] [mps03       ] [mps03       ] [mps03       ]
+ ------------------------------------------------------------------------------------------------------------
+ Forecast Qty      [mps039      ] [mps039      ] [mps039      ] [mps039      ] [mps039      ] [mps039      ]
+ Qty Ordered       [mps041      ] [mps041      ] [mps041      ] [mps041      ] [mps041      ] [mps041      ]
+ Planning Allot.   [mps043      ] [mps043      ] [mps043      ] [mps043      ] [mps043      ] [mps043      ]
+ W/O Allotment     [mps044      ] [mps044      ] [mps044      ] [mps044      ] [mps044      ] [mps044      ]
+ Inventory qty     [mps051      ] [mps051      ] [mps051      ] [mps051      ] [mps051      ] [mps051      ]
+ Qty on QC         [mps052      ] [mps052      ] [mps052      ] [mps052      ] [mps052      ] [mps052      ]
+ P/R Qty           [mps061      ] [mps061      ] [mps061      ] [mps061      ] [mps061      ] [mps061      ]
+ Qty On Purchase   [mps062      ] [mps062      ] [mps062      ] [mps062      ] [mps062      ] [mps062      ]
+ Qt Out            [mps063      ] [mps063      ] [mps063      ] [mps063      ] [mps063      ] [mps063      ]
+ WIP Qty           [mps064      ] [mps064      ] [mps064      ] [mps064      ] [mps064      ] [mps064      ]
+ Pland Prod.Qty    [mps065      ] [mps065      ] [mps065      ] [mps065      ] [mps065      ] [mps065      ]
+ ------------------------------------------------------------------------------------------------------------
+ Estima. Balance   [bal         ] [bal         ] [bal         ] [bal         ] [bal         ] [bal         ]
+ Resched.Deliver   [mps07       ] [mps07       ] [mps07       ] [mps07       ] [mps07       ] [mps07       ]
+ Estima. Balance   [mps08       ] [mps08       ] [mps08       ] [mps08       ] [mps08       ] [mps08       ]
+ ------------------------------------------------------------------------------------------------------------
+ PLM/PLP           [mps09       ] [mps09       ] [mps09       ] [mps09       ] [mps09       ] [mps09       ]
+
+}
+END -- gr3955
+Grid gr3956
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3956
+END -- VBox1
+END -- amsq500
+
+TABLES
+mps_file
+ATTRIBUTES
+Edit mps_v=mps_file.mps_v, tabIndex=1;
+Edit mps01=mps_file.mps01, tabIndex=2;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit mps0=mps_file.mps00, tabIndex=4;
+Edit mps03=mps_file.mps03, tabIndex=5;
+Edit mps039=mps_file.mps039, tabIndex=6, noEntry;
+Edit mps041=mps_file.mps041, tabIndex=7, noEntry;
+Edit mps043=mps_file.mps043, tabIndex=8, noEntry;
+Edit mps044=mps_file.mps044, tabIndex=9, noEntry;
+Edit mps051=mps_file.mps051, tabIndex=10, noEntry;
+Edit mps052=mps_file.mps052, tabIndex=11, noEntry;
+Edit mps061=mps_file.mps061, tabIndex=12, noEntry;
+Edit mps062=mps_file.mps062, tabIndex=13, noEntry;
+Edit mps063=mps_file.mps063, tabIndex=14, noEntry;
+Edit mps064=mps_file.mps064, tabIndex=15, noEntry;
+Edit mps065=mps_file.mps065, tabIndex=16, noEntry;
+Edit bal=formonly.bal type CHAR, tabIndex=17, noEntry;
+Edit mps07=formonly.mps07 type CHAR, tabIndex=18, noEntry;
+Edit mps08=mps_file.mps08, tabIndex=19, noEntry;
+Edit mps09=mps_file.mps09, tabIndex=20, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mps(mps_file.mps00,mps_file.mps03,mps_file.mps039,mps_file.mps041,mps_file.mps043,mps_file.mps044,mps_file.mps051,mps_file.mps052,mps_file.mps061,mps_file.mps062,mps_file.mps063,mps_file.mps064,mps_file.mps065,formonly.bal,formonly.mps07,mps_file.mps08,mps_file.mps09)
+SCREEN RECORD Undefined(mps_file.mps_v,mps_file.mps01,formonly.ima02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

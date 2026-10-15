@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt3101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt3101")
+VBox vb3
+Folder pc1
+Page Main(text=%"Main")
+Table s_luf
+{
+[luf03        |tqa02      |luf04        |geo02      ]
+[luf03        |tqa02      |luf04        |geo02      ]
+[luf03        |tqa02      |luf04        |geo02      ]
+[luf03        |tqa02      |luf04        |geo02      ]
+[luf03        |tqa02      |luf04        |geo02      ]
+
+}
+END -- s_luf
+END -- Main
+END -- pc1
+Grid gr1
+{
+
+ ----- Rows [idx   ] --------
+
+
+}
+END -- gr1
+END -- vb3
+END -- almt3101
+
+TABLES
+luf_file
+ATTRIBUTES
+ButtonEdit luf03=luf_file.luf03, action=controlp, tabIndex=1, title="Brand Doc.No.", not null, required, image="zoom.png";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=2, title="Brand Name", noEntry;
+ButtonEdit luf04=luf_file.luf04, action=controlp, tabIndex=3, title="Pla.O.DocNo.", not null, required, image="zoom.png";
+Edit geo02=formonly.geo02 type CHAR, tabIndex=4, title="Pla.O.Name", noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_luf(luf_file.luf03,formonly.tqa02,luf_file.luf04,formonly.geo02)
+SCREEN RECORD Undefined(formonly.idx)
+END -- INSTRUCTIONS
+

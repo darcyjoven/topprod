@@ -1,0 +1,125 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi120")
+Folder Folder1
+Page main(action=main, text=%"main")
+VBox VBox1
+Grid ds1
+{
+
+[label1  |lmcstore            |rtz13               ]
+[label2  |lmclegal            |azt02               ]
+[label3  |lmc02               |lmb03               ]
+
+}
+END -- ds1
+Table s_lmc
+{
+[lmc03       |lmc04               |lmc08               |lmc09               |lmc11     |lmc12     |lmc06               |lmc10               |lmc05               |lmc07 ]
+[lmc03       |lmc04               |lmc08               |lmc09               |lmc11     |lmc12     |lmc06               |lmc10               |lmc05               |lmc07 ]
+[lmc03       |lmc04               |lmc08               |lmc09               |lmc11     |lmc12     |lmc06               |lmc10               |lmc05               |lmc07 ]
+[lmc03       |lmc04               |lmc08               |lmc09               |lmc11     |lmc12     |lmc06               |lmc10               |lmc05               |lmc07 ]
+[lmc03       |lmc04               |lmc08               |lmc09               |lmc11     |lmc12     |lmc06               |lmc10               |lmc05               |lmc07 ]
+[lmc03       |lmc04               |lmc08               |lmc09               |lmc11     |lmc12     |lmc06               |lmc10               |lmc05               |lmc07 ]
+
+}
+END -- s_lmc
+Grid gr3
+{
+ ----------indx[idx   |la|cnt   ]---------- [label|cn2   ] ----------
+
+}
+END -- gr3
+END -- VBox1
+END -- main
+Page main_list(action=main_list, text=%"main_list")
+VBox VBox2
+Table s_lmc_2
+{
+[lmcstor1  |rtz11   |lmclega1  |azt01   |lmc01     |lmb01   |lmc00     |lmc0a                         |lmc0b                 |lmc0c                 |lmc13  |lmc14  |lmc0d                 |lmc15                 |lmc0e                 |lmc0f  ]
+[lmcstor1  |rtz11   |lmclega1  |azt01   |lmc01     |lmb01   |lmc00     |lmc0a                         |lmc0b                 |lmc0c                 |lmc13  |lmc14  |lmc0d                 |lmc15                 |lmc0e                 |lmc0f  ]
+[lmcstor1  |rtz11   |lmclega1  |azt01   |lmc01     |lmb01   |lmc00     |lmc0a                         |lmc0b                 |lmc0c                 |lmc13  |lmc14  |lmc0d                 |lmc15                 |lmc0e                 |lmc0f  ]
+[lmcstor1  |rtz11   |lmclega1  |azt01   |lmc01     |lmb01   |lmc00     |lmc0a                         |lmc0b                 |lmc0c                 |lmc13  |lmc14  |lmc0d                 |lmc15                 |lmc0e                 |lmc0f  ]
+[lmcstor1  |rtz11   |lmclega1  |azt01   |lmc01     |lmb01   |lmc00     |lmc0a                         |lmc0b                 |lmc0c                 |lmc13  |lmc14  |lmc0d                 |lmc15                 |lmc0e                 |lmc0f  ]
+
+}
+END -- s_lmc_2
+Grid Grid1
+{
+
+   ----------[label6    ][cn3       ]----------
+
+}
+END -- Grid1
+END -- VBox2
+END -- main_list
+END -- Folder1
+END -- almi120
+
+TABLES
+rtz_file1=rtz_file,
+lmb_file1=lmb_file,
+lmc_file,
+lmb_file,
+azt_file1=azt_file,
+lmc_file1=lmc_file,
+azt_file,
+rtz_file,
+lmc_file2=lmc_file
+ATTRIBUTES
+Label label1:Label1, text=%"lmcstore";
+ButtonEdit lmcstore=lmc_file1.lmcstore, action=controlp, tabIndex=1, noEntry, not null, image="zoom", scroll;
+Edit rtz13=formonly.rtz13 type like rtz_file.rtz13, tabIndex=4, noEntry;
+Label label2:Label2, text=%"lmclegal";
+ButtonEdit lmclegal=lmc_file1.lmclegal, action=controlp, tabIndex=2, noEntry, not null, image="zoom", scroll;
+Edit azt02=formonly.azt02 type like azt_file.azt02, tabIndex=5, noEntry;
+Label label3:Label3, text=%"lmc02";
+ButtonEdit lmc02=lmc_file1.lmc02, action=controlp, tabIndex=3, not null, image="zoom", scroll;
+Edit lmb03=formonly.lmb03 type like lmb_file.lmb03, tabIndex=6, noEntry;
+ButtonEdit lmc03=lmc_file.lmc03, action=controlp, tabIndex=7, title="Storey No.", not null, image="zoom.png";
+Edit lmc04=lmc_file.lmc04, tabIndex=8, title="Storey Name";
+Edit lmc08=lmc_file.lmc08, tabIndex=9, title="Construction area";
+Edit lmc09=lmc_file.lmc09, tabIndex=10, default = "", title="Acti", not null, required;
+Edit lmc11=lmc_file.lmc11, tabIndex=11, title=%"Drawings building";
+Edit lmc12=lmc_file.lmc12, tabIndex=12, title=%"Drawings measurement area", not null, required;
+Edit lmc06=lmc_file.lmc06, tabIndex=13, title=%"Measurement area", noEntry, not null;
+Edit lmc10=lmc_file.lmc10, tabIndex=14, title=%"Building equally Shared rate", noEntry, not null;
+Edit lmc05=lmc_file.lmc05, tabIndex=15, title=%"Equally Shared coefficient", noEntry, not null;
+CheckBox lmc07=lmc_file.lmc07, tabIndex=16, default = "Y", title="Effective code", text="", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=17;
+Label la:Label4, text=%"/";
+Edit cnt=formonly.cnt type CHAR, tabIndex=18;
+Label label:Label5, text=%"count";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=19, noEntry;
+Edit lmcstor1=lmc_file2.lmcstore, tabIndex=20, title=%"lmcstore", noEntry, not null, scroll;
+Edit rtz11=rtz_file1.rtz13, tabIndex=21, title=%"Store name", noEntry;
+Edit lmclega1=lmc_file2.lmclegal, tabIndex=22, title=%"lmclegal", noEntry, not null, scroll;
+Edit azt01=azt_file1.azt02, tabIndex=23, title=%"legal name", noEntry;
+Edit lmc01=lmc_file2.lmc02, tabIndex=24, title=%"Storied building Numbers", noEntry, not null, scroll;
+Edit lmb01=lmb_file1.lmb03, tabIndex=25, title=%"Storied building name", noEntry;
+Edit lmc00=lmc_file1.lmc03, tabIndex=26, title=%"Storey No.", noEntry, not null, scroll;
+Edit lmc0a=lmc_file1.lmc04, tabIndex=27, title=%"lmc04", noEntry, scroll;
+Edit lmc0b=lmc_file1.lmc08, tabIndex=28, title=%"lmc08", noEntry, scroll;
+Edit lmc0c=lmc_file1.lmc09, tabIndex=29, title=%"lmc09", noEntry, scroll;
+Edit lmc13=lmc_file1.lmc11, tabIndex=30, title=%"lmc11", noEntry, scroll;
+Edit lmc14=lmc_file1.lmc12, tabIndex=31, title=%"lmc12", noEntry, scroll;
+Edit lmc0d=lmc_file1.lmc06, tabIndex=32, title=%"lmc06", noEntry, scroll;
+Edit lmc15=lmc_file1.lmc10, tabIndex=33, title=%"lmc10", noEntry, scroll;
+Edit lmc0e=lmc_file1.lmc05, tabIndex=34, title=%"lmc05", noEntry, scroll;
+Edit lmc0f=lmc_file1.lmc07, tabIndex=35, title=%"lmc07", noEntry, not null, scroll;
+Label label6:Label6, text=%"rowcont";
+Edit cn3=formonly.cn3 type CHAR, tabIndex=36;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lmc(lmc_file.lmc03,lmc_file.lmc04,lmc_file.lmc08,lmc_file.lmc09,lmc_file.lmc11,lmc_file.lmc12,lmc_file.lmc06,lmc_file.lmc10,lmc_file.lmc05,lmc_file.lmc07)
+SCREEN RECORD Undefined(formonly.cn2,formonly.rtz13,formonly.azt02,formonly.lmb03,formonly.cnt,formonly.idx,formonly.cn3)
+SCREEN RECORD Record1(lmc_file1.lmcstore,lmc_file1.lmclegal,lmc_file1.lmc02)
+SCREEN RECORD s_lmc_2(lmc_file2.lmcstore,rtz_file1.rtz13,lmc_file2.lmclegal,azt_file1.azt02,lmc_file2.lmc02,lmb_file1.lmb03,lmc_file1.lmc03,lmc_file1.lmc04,lmc_file1.lmc08,lmc_file1.lmc09,lmc_file1.lmc11,lmc_file1.lmc12,lmc_file1.lmc06,lmc_file1.lmc10,lmc_file1.lmc05,lmc_file1.lmc07)
+END -- INSTRUCTIONS
+

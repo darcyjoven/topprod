@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr803.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr803")
+VBox vb19
+Grid gr296
+{
+ <G group01                                                      >
+  Arrival Notify No.             [als01               ]
+  B/L Date                       [als02               ]
+  Dept. No.                      [als04               ]
+ <                                                               >
+
+}
+END -- gr296
+Group group02(text="INPUT")
+Grid gr297
+{
+  Bill of Lading Year and Month  [yymm      ]
+ [actual                                                      ]
+}
+END -- gr297
+END -- group02
+Grid gr298
+{
+[more                                                        ]
+
+}
+END -- gr298
+END -- vb19
+END -- aapr803
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit als01=formonly.als01 type VARCHAR, tabIndex=1;
+DateEdit als02=formonly.als02 type DATE, tabIndex=2;
+Edit als04=formonly.als04 type VARCHAR, tabIndex=3;
+Edit yymm=formonly.yymm type VARCHAR, tabIndex=4;
+CheckBox actual=formonly.actual type CHAR, tabIndex=5, text="Print actual amount of invoice", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.als01,formonly.als02,formonly.als04,formonly.yymm,formonly.actual,formonly.more)
+END -- INSTRUCTIONS
+

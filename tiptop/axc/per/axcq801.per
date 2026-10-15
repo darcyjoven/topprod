@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq801.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Form")
+VBox vbox1
+Folder folder1
+Page main(text=%"Main")
+Grid grid1
+{
+   Item No.  [cfa01                 ]                                      Year  [yy        ]      Number[cca11     ]
+   Item Des. [ima02                                                 ]      Month [mm        ]      Money [cca12     ]
+   Item Rule [ima021                                                ]
+   Unit      [ima25       ]
+
+}
+END -- grid1
+END -- main
+END -- folder1
+Table s_cfa
+{
+[cfa02    |cfa03 |cfa04        |cfa05        |cfa06    |cfa18   |cfa17    |cfa14    |cfa15    |cfa16      |cfa07               |cfa08               |cfa09               |cfa10               |cfa11               |cfa12               |cfa13               |cfalegal |cfa00   |cfaud01 |cfaud02 |cfaud03 |cfaud04 |cfaud05 |cfaud06 |cfaud07 |cfaud08 |cfaud09 |cfaud10 |cfaud11 |cfaud12 |cfaud13 |cfaud14 |cfaud15 ]
+[cfa02    |cfa03 |cfa04        |cfa05        |cfa06    |cfa18   |cfa17    |cfa14    |cfa15    |cfa16      |cfa07               |cfa08               |cfa09               |cfa10               |cfa11               |cfa12               |cfa13               |cfalegal |cfa00   |cfaud01 |cfaud02 |cfaud03 |cfaud04 |cfaud05 |cfaud06 |cfaud07 |cfaud08 |cfaud09 |cfaud10 |cfaud11 |cfaud12 |cfaud13 |cfaud14 |cfaud15 ]
+[cfa02    |cfa03 |cfa04        |cfa05        |cfa06    |cfa18   |cfa17    |cfa14    |cfa15    |cfa16      |cfa07               |cfa08               |cfa09               |cfa10               |cfa11               |cfa12               |cfa13               |cfalegal |cfa00   |cfaud01 |cfaud02 |cfaud03 |cfaud04 |cfaud05 |cfaud06 |cfaud07 |cfaud08 |cfaud09 |cfaud10 |cfaud11 |cfaud12 |cfaud13 |cfaud14 |cfaud15 ]
+[cfa02    |cfa03 |cfa04        |cfa05        |cfa06    |cfa18   |cfa17    |cfa14    |cfa15    |cfa16      |cfa07               |cfa08               |cfa09               |cfa10               |cfa11               |cfa12               |cfa13               |cfalegal |cfa00   |cfaud01 |cfaud02 |cfaud03 |cfaud04 |cfaud05 |cfaud06 |cfaud07 |cfaud08 |cfaud09 |cfaud10 |cfaud11 |cfaud12 |cfaud13 |cfaud14 |cfaud15 ]
+[cfa02    |cfa03 |cfa04        |cfa05        |cfa06    |cfa18   |cfa17    |cfa14    |cfa15    |cfa16      |cfa07               |cfa08               |cfa09               |cfa10               |cfa11               |cfa12               |cfa13               |cfalegal |cfa00   |cfaud01 |cfaud02 |cfaud03 |cfaud04 |cfaud05 |cfaud06 |cfaud07 |cfaud08 |cfaud09 |cfaud10 |cfaud11 |cfaud12 |cfaud13 |cfaud14 |cfaud15 ]
+
+}
+END -- s_cfa
+Grid gr3449
+{
+  ----- Row [cnt   ]/[cnt2  ]----- Rows[cnt3  ]
+
+
+}
+END -- gr3449
+END -- vbox1
+END -- axcq801
+
+TABLES
+cfa_file
+ATTRIBUTES
+ButtonEdit cfa01=formonly.cfa01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit yy=formonly.yy, tabIndex=5, not null, required;
+Edit cca11=formonly.cca11 type VARCHAR, tabIndex=7;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=2;
+Edit mm=formonly.mm, tabIndex=6, not null, required;
+Edit cca12=formonly.cca12 type VARCHAR, tabIndex=8;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=3;
+Edit ima25=formonly.ima25, tabIndex=4;
+Edit cfa02=formonly.cfa02 type SMALLINT, tabIndex=9, title=%"Line No.";
+Edit cfa03=formonly.cfa03 type VARCHAR, tabIndex=10, title=%"Code";
+ComboBox cfa04=formonly.cfa04 type SMALLINT, tabIndex=11, title=%"Out/In Code", items=(("1", %"IN"),("-1", %"OUT"),("0", %"Other"));
+Edit cfa05=formonly.cfa05 type VARCHAR, tabIndex=12, title=%"Ref.No.";
+Edit cfa06=formonly.cfa06 type SMALLINT, tabIndex=13, title=%"line no.";
+DateEdit cfa18=formonly.cfa18 type DATE, tabIndex=14, title=%"date";
+ButtonEdit cfa17=formonly.cfa17 type VARCHAR, action=controlp, tabIndex=15, title=%"unit", image="zoom";
+ButtonEdit cfa14=formonly.cfa14 type VARCHAR, action=controlp, tabIndex=16, title=%"warehouse", image="zoom";
+ButtonEdit cfa15=formonly.cfa15 type VARCHAR, action=controlp, tabIndex=17, title=%"storage", image="zoom";
+ButtonEdit cfa16=formonly.cfa16 type VARCHAR, action=controlp, tabIndex=18, title=%"lot", image="zoom";
+Edit cfa07=cfa_file.cfa07, tabIndex=19, title=%"number";
+Edit cfa08=cfa_file.cfa08, tabIndex=20, title=%"price";
+Edit cfa09=cfa_file.cfa09, tabIndex=21, title=%"money";
+Edit cfa10=cfa_file.cfa10, tabIndex=22, title=%"st.number";
+Edit cfa11=cfa_file.cfa11, tabIndex=23, title=%"st.money";
+Edit cfa12=cfa_file.cfa12, tabIndex=24, title=%"ave.cost";
+Edit cfa13=cfa_file.cfa13, tabIndex=25, title=%"ad.money";
+Edit cfalegal=formonly.cfalegal type VARCHAR, tabIndex=26, title=%"cfalegal";
+Edit cfa00=cfa_file.cfa00, tabIndex=45, title=%"cfa00";
+Edit cfaud01=formonly.cfaud01 type VARCHAR, tabIndex=27, title=%"cfaud01";
+Edit cfaud02=formonly.cfaud02 type VARCHAR, tabIndex=28, title=%"cfaud02";
+Edit cfaud03=formonly.cfaud03 type VARCHAR, tabIndex=29, title=%"cfaud03";
+Edit cfaud04=formonly.cfaud04 type VARCHAR, tabIndex=30, title=%"cfaud04";
+Edit cfaud05=formonly.cfaud05 type VARCHAR, tabIndex=31, title=%"cfaud05";
+Edit cfaud06=formonly.cfaud06 type VARCHAR, tabIndex=32, title=%"cfaud06";
+Edit cfaud07=formonly.cfaud07 type VARCHAR, tabIndex=33, title=%"cfaud07";
+Edit cfaud08=formonly.cfaud08 type VARCHAR, tabIndex=34, title=%"cfaud08";
+Edit cfaud09=formonly.cfaud09 type VARCHAR, tabIndex=35, title=%"cfaud09";
+Edit cfaud10=formonly.cfaud10 type VARCHAR, tabIndex=36, title=%"cfaud10";
+Edit cfaud11=formonly.cfaud11 type VARCHAR, tabIndex=37, title=%"cfaud11";
+Edit cfaud12=formonly.cfaud12 type VARCHAR, tabIndex=38, title=%"cfaud12";
+Edit cfaud13=formonly.cfaud13 type VARCHAR, tabIndex=39, title=%"cfaud13";
+Edit cfaud14=formonly.cfaud14 type VARCHAR, tabIndex=40, title=%"cfaud14";
+Edit cfaud15=formonly.cfaud15 type VARCHAR, tabIndex=41, title=%"cfaud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=42, noEntry;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=43, noEntry;
+Edit cnt3=formonly.cnt3 type SMALLINT, tabIndex=44, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.cfa01,formonly.ima02,formonly.ima021,formonly.ima25,formonly.mm,formonly.yy,formonly.cca11,formonly.cca12,formonly.cnt,formonly.cnt2,formonly.cnt3)
+SCREEN RECORD s_cfa(formonly.cfa02,formonly.cfa03,formonly.cfa04,formonly.cfa05,formonly.cfa06,formonly.cfa18,formonly.cfa17,formonly.cfa14,formonly.cfa15,formonly.cfa16,cfa_file.cfa07,cfa_file.cfa08,cfa_file.cfa09,cfa_file.cfa10,cfa_file.cfa11,cfa_file.cfa12,cfa_file.cfa13,formonly.cfalegal,cfa_file.cfa00,formonly.cfaud01,formonly.cfaud02,formonly.cfaud03,formonly.cfaud04,formonly.cfaud05,formonly.cfaud06,formonly.cfaud07,formonly.cfaud08,formonly.cfaud09,formonly.cfaud10,formonly.cfaud11,formonly.cfaud12,formonly.cfaud13,formonly.cfaud14,formonly.cfaud15)
+END -- INSTRUCTIONS
+

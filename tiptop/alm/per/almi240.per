@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi240.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi240")
+VBox vb12
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr4
+{
+ Category               [lmq01          ]
+ Arithmetic             [lmq02          ]
+ Mem                    [lmq03          ]
+
+}
+END -- gr4
+END -- Page3
+Page info(text=%"Info")
+Grid gr10
+{
+ Record Owner [lmquser   ]        Last Modified by    [lmqmodu   ] Data Valid Code     [lmqacti   ]
+ Department   [lmqgrup   ]        Create/Modify Date  [lmqdate   ] Create Date         [lmqcrat   ]
+ Record Orig. [lmqoriu   ]
+ Dept Orig.   [lmqorig   ]
+
+}
+END -- gr10
+END -- info
+END -- pc2
+Grid gr11
+{
+ ---------- Rows[cnt   ]----------
+
+
+}
+END -- gr11
+END -- vb12
+END -- almi240
+
+TABLES
+lmq_file
+ATTRIBUTES
+ComboBox lmq01=lmq_file.lmq01, tabIndex=6, not null, required, items=(("0", "Not Alliance"),("1", "Alliance"));
+ButtonEdit lmq02=lmq_file.lmq02, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+Edit lmq03=lmq_file.lmq03, tabIndex=8;
+Edit lmquser=lmq_file.lmquser, tabIndex=1, noEntry;
+Edit lmqmodu=lmq_file.lmqmodu, tabIndex=2, noEntry;
+Edit lmqacti=lmq_file.lmqacti, tabIndex=3, noEntry, upShift;
+Edit lmqgrup=lmq_file.lmqgrup, tabIndex=4, noEntry;
+DateEdit lmqdate=lmq_file.lmqdate, tabIndex=5, noEntry;
+DateEdit lmqcrat=lmq_file.lmqcrat, tabIndex=10, noEntry;
+Edit lmqoriu=lmq_file.lmqoriu, tabIndex=11, noEntry;
+Edit lmqorig=lmq_file.lmqorig, tabIndex=12, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lmq_file.lmq01,lmq_file.lmq02,lmq_file.lmq03,lmq_file.lmquser,lmq_file.lmqmodu,lmq_file.lmqacti,lmq_file.lmqgrup,lmq_file.lmqdate,lmq_file.lmqcrat,lmq_file.lmqoriu,lmq_file.lmqorig,formonly.cnt)
+END -- INSTRUCTIONS
+

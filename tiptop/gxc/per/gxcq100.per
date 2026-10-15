@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gxc/42f/gxcq100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gxcq100")
+VBox vb23
+Folder folder01
+Page page01(text="Main")
+Grid gr3622
+{
+ Item No.                  [cxa01                         ]    P/N [ima02                         ]
+ Year/Month                [cxa0][cx]                          Unit[ima2]
+ Cost Calculation Method   [cxa010    ] Category No. [cxa011                                      ]
+
+}
+END -- gr3622
+END -- page01
+END -- folder01
+Table s_cxa
+{
+[cxa04    |cxa05     |cxa06            |cxa07 |cxa08     |cxa09     |cxa091    |cxa092     |cxa093     |cxa094    |cxa095     |cxa096     |cxa097     |cxa098     |cxa10     |cxa11     |cxa111    |cxa112     |cxa113     |cxa114    |cxa115     |cxa116     |cxa117     |cxa118     |cxa1]
+[cxa04    |cxa05     |cxa06            |cxa07 |cxa08     |cxa09     |cxa091    |cxa092     |cxa093     |cxa094    |cxa095     |cxa096     |cxa097     |cxa098     |cxa10     |cxa11     |cxa111    |cxa112     |cxa113     |cxa114    |cxa115     |cxa116     |cxa117     |cxa118     |cxa1]
+[cxa04    |cxa05     |cxa06            |cxa07 |cxa08     |cxa09     |cxa091    |cxa092     |cxa093     |cxa094    |cxa095     |cxa096     |cxa097     |cxa098     |cxa10     |cxa11     |cxa111    |cxa112     |cxa113     |cxa114    |cxa115     |cxa116     |cxa117     |cxa118     |cxa1]
+[cxa04    |cxa05     |cxa06            |cxa07 |cxa08     |cxa09     |cxa091    |cxa092     |cxa093     |cxa094    |cxa095     |cxa096     |cxa097     |cxa098     |cxa10     |cxa11     |cxa111    |cxa112     |cxa113     |cxa114    |cxa115     |cxa116     |cxa117     |cxa118     |cxa1]
+[cxa04    |cxa05     |cxa06            |cxa07 |cxa08     |cxa09     |cxa091    |cxa092     |cxa093     |cxa094    |cxa095     |cxa096     |cxa097     |cxa098     |cxa10     |cxa11     |cxa111    |cxa112     |cxa113     |cxa114    |cxa115     |cxa116     |cxa117     |cxa118     |cxa1]
+[cxa04    |cxa05     |cxa06            |cxa07 |cxa08     |cxa09     |cxa091    |cxa092     |cxa093     |cxa094    |cxa095     |cxa096     |cxa097     |cxa098     |cxa10     |cxa11     |cxa111    |cxa112     |cxa113     |cxa114    |cxa115     |cxa116     |cxa117     |cxa118     |cxa1]
+[cxa04    |cxa05     |cxa06            |cxa07 |cxa08     |cxa09     |cxa091    |cxa092     |cxa093     |cxa094    |cxa095     |cxa096     |cxa097     |cxa098     |cxa10     |cxa11     |cxa111    |cxa112     |cxa113     |cxa114    |cxa115     |cxa116     |cxa117     |cxa118     |cxa1]
+[cxa04    |cxa05     |cxa06            |cxa07 |cxa08     |cxa09     |cxa091    |cxa092     |cxa093     |cxa094    |cxa095     |cxa096     |cxa097     |cxa098     |cxa10     |cxa11     |cxa111    |cxa112     |cxa113     |cxa114    |cxa115     |cxa116     |cxa117     |cxa118     |cxa1]
+[cxa04    |cxa05     |cxa06            |cxa07 |cxa08     |cxa09     |cxa091    |cxa092     |cxa093     |cxa094    |cxa095     |cxa096     |cxa097     |cxa098     |cxa10     |cxa11     |cxa111    |cxa112     |cxa113     |cxa114    |cxa115     |cxa116     |cxa117     |cxa118     |cxa1]
+[cxa04    |cxa05     |cxa06            |cxa07 |cxa08     |cxa09     |cxa091    |cxa092     |cxa093     |cxa094    |cxa095     |cxa096     |cxa097     |cxa098     |cxa10     |cxa11     |cxa111    |cxa112     |cxa113     |cxa114    |cxa115     |cxa116     |cxa117     |cxa118     |cxa1]
+
+}
+END -- s_cxa
+Grid gr3623
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr3623
+END -- vb23
+END -- gxcq100
+
+TABLES
+cxa_file
+ATTRIBUTES
+ButtonEdit cxa01=cxa_file.cxa01, action=controlp, tabIndex=1, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit cxa0=cxa_file.cxa02, tabIndex=3;
+Edit cx=cxa_file.cxa03, tabIndex=4;
+Edit ima2=formonly.ima25 type CHAR, tabIndex=5, noEntry;
+ComboBox cxa010=cxa_file.cxa010, tabIndex=51, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually嚗atch Cost"),("4", "Identify Manually嚗tem Cost"),("5", "Identify Manually嚗tore Profit Center"));
+ButtonEdit cxa011=cxa_file.cxa011, action=controlp, tabIndex=52, not null, required, image="zoom.png";
+DateEdit cxa04=cxa_file.cxa04, tabIndex=6, title="Tran Dte";
+Edit cxa05=cxa_file.cxa05, tabIndex=7, title="Tran Time";
+Edit cxa06=cxa_file.cxa06, tabIndex=8, title="Tran Nt";
+Edit cxa07=cxa_file.cxa07, tabIndex=9, title="Ln #";
+Edit cxa08=cxa_file.cxa08, tabIndex=10, title="Tran Qty";
+Edit cxa09=cxa_file.cxa09, tabIndex=11, title="Tran Amt", noEntry;
+Edit cxa091=cxa_file.cxa091, tabIndex=12, title="Tran Mat.";
+Edit cxa092=cxa_file.cxa092, tabIndex=13, title="Tran Labor";
+Edit cxa093=cxa_file.cxa093, tabIndex=14, title="Tran Ovhd1";
+Edit cxa094=cxa_file.cxa094, tabIndex=15, title="Tran Prcs";
+Edit cxa095=cxa_file.cxa095, tabIndex=16, title="Tran Ovhd2";
+Edit cxa096=cxa_file.cxa096, tabIndex=28, title="Tran Ovhd3", not null, required;
+Edit cxa097=cxa_file.cxa097, tabIndex=29, title="Tran Ovhd4", not null, required;
+Edit cxa098=cxa_file.cxa098, tabIndex=30, title="Tran Ovhd5", not null, required;
+Edit cxa10=cxa_file.cxa10, tabIndex=17, title="Used Qty";
+Edit cxa11=cxa_file.cxa11, tabIndex=18, title="Used Amt", noEntry;
+Edit cxa111=cxa_file.cxa111, tabIndex=19, title="Used Mat.";
+Edit cxa112=cxa_file.cxa112, tabIndex=20, title="Used Labor";
+Edit cxa113=cxa_file.cxa113, tabIndex=21, title="Used Ovhd1";
+Edit cxa114=cxa_file.cxa114, tabIndex=22, title="Used Prcs";
+Edit cxa115=cxa_file.cxa115, tabIndex=23, title="Used Ovhd2";
+Edit cxa116=cxa_file.cxa116, tabIndex=31, title="Used Ovhd3", not null, required;
+Edit cxa117=cxa_file.cxa117, tabIndex=32, title="Used Ovhd4", not null, required;
+Edit cxa118=cxa_file.cxa118, tabIndex=33, title="Used Ovhd5", not null, required;
+CheckBox cxa1=cxa_file.cxa15, tabIndex=24, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=50, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cxa(cxa_file.cxa04,cxa_file.cxa05,cxa_file.cxa06,cxa_file.cxa07,cxa_file.cxa08,cxa_file.cxa09,cxa_file.cxa091,cxa_file.cxa092,cxa_file.cxa093,cxa_file.cxa094,cxa_file.cxa095,cxa_file.cxa096,cxa_file.cxa097,cxa_file.cxa098,cxa_file.cxa10,cxa_file.cxa11,cxa_file.cxa111,cxa_file.cxa112,cxa_file.cxa113,cxa_file.cxa114,cxa_file.cxa115,cxa_file.cxa116,cxa_file.cxa117,cxa_file.cxa118,cxa_file.cxa15)
+SCREEN RECORD Undefined(cxa_file.cxa01,formonly.ima02,cxa_file.cxa02,cxa_file.cxa03,formonly.ima25,cxa_file.cxa010,cxa_file.cxa011,formonly.cnt)
+END -- INSTRUCTIONS
+

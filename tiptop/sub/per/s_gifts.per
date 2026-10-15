@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_gifts.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox vbox1
+Folder folder1
+Page page1(text=%"Page1")
+Table s_temp
+{
+[num     |sel         |rxn04   |rar03   |rar02   |lqw04   |lqw05   |rah21   |rah23   |ima01   |ima02   |rar06    |rar07   |qty     |qty1    |ras09   |lqw08_1 ]
+[num     |sel         |rxn04   |rar03   |rar02   |lqw04   |lqw05   |rah21   |rah23   |ima01   |ima02   |rar06    |rar07   |qty     |qty1    |ras09   |lqw08_1 ]
+[num     |sel         |rxn04   |rar03   |rar02   |lqw04   |lqw05   |rah21   |rah23   |ima01   |ima02   |rar06    |rar07   |qty     |qty1    |ras09   |lqw08_1 ]
+[num     |sel         |rxn04   |rar03   |rar02   |lqw04   |lqw05   |rah21   |rah23   |ima01   |ima02   |rar06    |rar07   |qty     |qty1    |ras09   |lqw08_1 ]
+[num     |sel         |rxn04   |rar03   |rar02   |lqw04   |lqw05   |rah21   |rah23   |ima01   |ima02   |rar06    |rar07   |qty     |qty1    |ras09   |lqw08_1 ]
+}
+END -- s_temp
+END -- page1
+END -- folder1
+Table s_lqw
+{
+[lqw07   |lqw08         |lqw08_desc  |lqw09             |lqw10            |lqw11      |lqw11_desc  |lqw12     |lqw13       ]
+[lqw07   |lqw08         |lqw08_desc  |lqw09             |lqw10            |lqw11      |lqw11_desc  |lqw12     |lqw13       ]
+[lqw07   |lqw08         |lqw08_desc  |lqw09             |lqw10            |lqw11      |lqw11_desc  |lqw12     |lqw13       ]
+[lqw07   |lqw08         |lqw08_desc  |lqw09             |lqw10            |lqw11      |lqw11_desc  |lqw12     |lqw13       ]
+[lqw07   |lqw08         |lqw08_desc  |lqw09             |lqw10            |lqw11      |lqw11_desc  |lqw12     |lqw13       ]
+}
+END -- s_lqw
+END -- vbox1
+END -- s_gifts
+
+ATTRIBUTES
+Edit num=formonly.num type CHAR, tabIndex=12, title=%"num", noEntry, not null, required;
+CheckBox sel=formonly.sel type CHAR, tabIndex=1, default = "", title=%"sel", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rxn04=formonly.rxn04 type CHAR, tabIndex=13, title=%"rxn04", noEntry, not null, required;
+ComboBox rar03=formonly.rar03 type VARCHAR, tabIndex=2, title=%"rar03", noEntry, not null, required, items=(("2", %"2"),("3", %"3"));
+ButtonEdit rar02=formonly.rar02 type CHAR, tabIndex=3, title=%"rar02", noEntry, not null, required;
+Edit lqw04=formonly.lqw04 type CHAR, tabIndex=25, title=%"lqw04", noEntry;
+Edit lqw05=formonly.lqw05 type CHAR, tabIndex=14, title=%"lqw05", noEntry;
+ComboBox rah21=formonly.rah21 type CHAR, tabIndex=4, title=%"rah21", noEntry, not null, required, items=(("1", %"1"),("2", %"2"));
+Edit rah23=formonly.rah23 type CHAR, tabIndex=5, title=%"rah23", noEntry, not null, required;
+Edit ima01=formonly.ima01 type CHAR, tabIndex=6, title=%"ima01", noEntry, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=7, title=%"ima02", noEntry;
+Edit rar06=formonly.rar06 type CHAR, tabIndex=8, title=%"rar06", noEntry, not null, required;
+Edit rar07=formonly.rar07 type CHAR, tabIndex=9, title=%"rar07", noEntry, not null, required;
+Edit qty=formonly.qty type CHAR, tabIndex=10, title=%"qty", noEntry, not null, required;
+Edit qty1=formonly.qty1 type CHAR, tabIndex=11, title=%"qty1", not null, required;
+Edit ras09=formonly.ras09 type CHAR, tabIndex=15, title=%"ras09", noEntry;
+Edit lqw08_1=formonly.lqw08_1 type CHAR, tabIndex=24, title=%"lqw08", noEntry;
+Edit lqw07=formonly.lqw07 type CHAR, tabIndex=26, title=%"lqw07", noEntry;
+ButtonEdit lqw08=formonly.lqw08 type CHAR, action=controlp, tabIndex=16, title=%"lqw08", noEntry;
+Edit lqw08_desc=formonly.lqw08_desc type CHAR, tabIndex=17, title=%"lqw08_desc", noEntry;
+ButtonEdit lqw09=formonly.lqw09 type CHAR, action=controlp, tabIndex=18, title=%"lqw09", not null, required, image="zoom";
+ButtonEdit lqw10=formonly.lqw10 type CHAR, action=controlp, tabIndex=19, title=%"lqw10", not null, required, image="zoom";
+ButtonEdit lqw11=formonly.lqw11 type CHAR, action=controlp, tabIndex=20, title=%"lqw11", noEntry;
+Edit lqw11_desc=formonly.lqw11_desc type CHAR, tabIndex=21, title=%"lqw11_desc", noEntry;
+Edit lqw12=formonly.lqw12 type CHAR, tabIndex=22, title=%"lqw12", noEntry;
+Edit lqw13=formonly.lqw13 type CHAR, tabIndex=23, title=%"lqw13", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_temp(formonly.num,formonly.sel,formonly.rxn04,formonly.rar03,formonly.rar02,formonly.lqw04,formonly.lqw05,formonly.rah21,formonly.rah23,formonly.ima01,formonly.ima02,formonly.rar06,formonly.rar07,formonly.qty,formonly.qty1,formonly.ras09,formonly.lqw08_1)
+SCREEN RECORD s_lqw(formonly.lqw07,formonly.lqw08,formonly.lqw08_desc,formonly.lqw09,formonly.lqw10,formonly.lqw11,formonly.lqw11_desc,formonly.lqw12,formonly.lqw13)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi184.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi184")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1363
+{
+ Vehicle No.         [ado01     ]
+ Petrol Date         [ado02     ]
+}
+END -- gr1363
+END -- page01
+END -- folder01
+Table s_ado
+{
+[ado03     |ado04               |ado05         |ado06    |gen02   |ado07               |adoact]
+[ado03     |ado04               |ado05         |ado06    |gen02   |ado07               |adoact]
+[ado03     |ado04               |ado05         |ado06    |gen02   |ado07               |adoact]
+[ado03     |ado04               |ado05         |ado06    |gen02   |ado07               |adoact]
+[ado03     |ado04               |ado05         |ado06    |gen02   |ado07               |adoact]
+[ado03     |ado04               |ado05         |ado06    |gen02   |ado07               |adoact]
+[ado03     |ado04               |ado05         |ado06    |gen02   |ado07               |adoact]
+[ado03     |ado04               |ado05         |ado06    |gen02   |ado07               |adoact]
+[ado03     |ado04               |ado05         |ado06    |gen02   |ado07               |adoact]
+[ado03     |ado04               |ado05         |ado06    |gen02   |ado07               |adoact]
+
+}
+END -- s_ado
+Grid gr1364
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1364
+END -- VBox1
+END -- atmi184
+
+TABLES
+ado_file
+ATTRIBUTES
+ButtonEdit ado01=ado_file.ado01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit ado02=ado_file.ado02, tabIndex=2, not null, required;
+Edit ado03=ado_file.ado03, tabIndex=3, title="Line No", not null, required;
+Edit ado04=ado_file.ado04, tabIndex=4, title="Petrol Qty(Litre)", not null, required;
+Edit ado05=ado_file.ado05, tabIndex=5, title="Sum", not null, required;
+ButtonEdit ado06=ado_file.ado06, action=controlp, tabIndex=6, title="Driver", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=7, title="Name", noEntry;
+Edit ado07=ado_file.ado07, tabIndex=8, title="Petrol Site";
+CheckBox adoact=ado_file.adoacti, tabIndex=9, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ado(ado_file.ado03,ado_file.ado04,ado_file.ado05,ado_file.ado06,formonly.gen02,ado_file.ado07,ado_file.adoacti)
+SCREEN RECORD Undefined(ado_file.ado01,ado_file.ado02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

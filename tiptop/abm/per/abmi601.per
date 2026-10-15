@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi601")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr751
+{
+ Master Item#  [bmb01                         ]
+ Part Name     [ima02                         ]
+ Specification [ima021                        ]
+ Unit          [ima25     ]
+ Alternate BOM [bmb29               ]
+ Eff.Date      [bmb04       ]
+ Exp.Date      [bmb05       ]
+}
+END -- gr751
+Grid gr752
+{
+ Component No. [bmb03                         ]
+ Part Name     [ima02b                        ]
+ Specification [ima021b                       ]
+ Unit          [ima25b    ]   Ln#    [bmb02   ]
+ QPA           [bmb06     ]
+ DQPA          [bmb07     ]
+
+}
+END -- gr752
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_bmt
+{
+[bmt|bmt06     |bmt07          ]
+[bmt|bmt06     |bmt07          ]
+[bmt|bmt06     |bmt07          ]
+[bmt|bmt06     |bmt07          ]
+[bmt|bmt06     |bmt07          ]
+[bmt|bmt06     |bmt07          ]
+[bmt|bmt06     |bmt07          ]
+[bmt|bmt06     |bmt07          ]
+[bmt|bmt06     |bmt07          ]
+[bmt|bmt06     |bmt07          ]
+
+}
+END -- s_bmt
+Grid gr753
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------                               Total        [tot             ]
+
+}
+END -- gr753
+END -- VBox1
+END -- abmi601
+
+TABLES
+bmt_file,
+bmb_file
+ATTRIBUTES
+ButtonEdit bmb01=bmb_file.bmb01, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=4, noEntry;
+Edit bmb29=bmb_file.bmb29, tabIndex=5, noEntry;
+DateEdit bmb04=bmb_file.bmb04, tabIndex=6, noEntry;
+DateEdit bmb05=bmb_file.bmb05, tabIndex=7, noEntry;
+Edit bmb03=bmb_file.bmb03, tabIndex=8, noEntry;
+Edit ima02b=formonly.ima02b type CHAR, tabIndex=9, noEntry;
+Edit ima021b=formonly.ima021b type CHAR, tabIndex=10, noEntry;
+Edit ima25b=formonly.ima25b type CHAR, tabIndex=11, noEntry;
+Edit bmb02=bmb_file.bmb02, tabIndex=12, noEntry;
+Edit bmb06=bmb_file.bmb06, tabIndex=13, noEntry;
+Edit bmb07=bmb_file.bmb07, tabIndex=14, noEntry;
+Edit bmt=bmt_file.bmt05, tabIndex=15, title="Ln#", not null, required;
+ButtonEdit bmt06=bmt_file.bmt06, action=controlp, tabIndex=16, title="Loc.Inst", image="zoom.png";
+Edit bmt07=bmt_file.bmt07, tabIndex=17, title="Qty";
+Edit cnt=formonly.cnt type CHAR, tabIndex=18, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=19, noEntry;
+Edit tot=formonly.tot type CHAR, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmt(bmt_file.bmt05,bmt_file.bmt06,bmt_file.bmt07)
+SCREEN RECORD Undefined(bmb_file.bmb01,formonly.ima02,formonly.ima021,formonly.ima25,bmb_file.bmb29,bmb_file.bmb04,bmb_file.bmb05,bmb_file.bmb03,formonly.ima02b,formonly.ima021b,formonly.ima25b,bmb_file.bmb02,bmb_file.bmb06,bmb_file.bmb07,formonly.cnt,formonly.cn2,formonly.tot)
+END -- INSTRUCTIONS
+

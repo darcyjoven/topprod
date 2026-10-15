@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq703.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gglq703")
+VBox VBox1
+Group g02(text=%"INPUT1")
+Grid Grid1
+{
+ Book No.           [o         ]
+
+}
+END -- Grid1
+END -- g02
+Grid gr2778
+{
+ <G group01                                  >
+  Account No.         [aag01               ]
+  Department No.      [aao02               ]
+ <                                           >
+}
+END -- gr2778
+Group group02(text="Input")
+Grid gr2779
+{
+ Year               [yy        ]
+ Month              [mm1       ] - [mm2       ]
+                    [b                                       ]
+                    [aag09                          ]
+                    [aag38                          ]
+
+
+
+
+}
+END -- gr2779
+END -- group02
+Grid gr2780
+{
+[more                                          ]
+
+}
+END -- gr2780
+END -- VBox1
+END -- gglq703
+
+ATTRIBUTES
+ButtonEdit o=formonly.o type CHAR, action=controlp, tabIndex=5, image="zoom.png";
+Group group01:group01, text="QBE";
+ButtonEdit aag01=formonly.aag01 type CHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit aao02=formonly.aao02 type CHAR, action=controlp, tabIndex=2, image="zoom.png";
+Edit yy=formonly.yy type CHAR, tabIndex=3, not null, required;
+Edit mm1=formonly.mm1 type CHAR, tabIndex=4, not null, required;
+Edit mm2=formonly.mm2 type CHAR, tabIndex=7, not null, required;
+CheckBox b=formonly.b type CHAR, tabIndex=8, text="Include Unposted Voucher", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag09=formonly.aag09 type CHAR, tabIndex=9, default = "N", text="Monetary Account", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag38=formonly.aag38 type CHAR, tabIndex=10, default = "N", text="Inter Income Account No.", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other Condition to Print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.o,formonly.aag01,formonly.aao02,formonly.yy,formonly.mm1,formonly.mm2,formonly.b,formonly.aag09,formonly.aag38,formonly.more)
+END -- INSTRUCTIONS
+

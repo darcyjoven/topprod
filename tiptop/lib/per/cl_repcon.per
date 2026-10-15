@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_repcon.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Extra Print Condition")
+VBox vb2
+Group group01
+Grid gr3703
+{
+ Report Date      [p_pdate     ]
+ Report Recipient [p_towhom       ]
+ Language         [p_lang    ]
+}
+END -- gr3703
+END -- group01
+Group group02
+Grid gr3704
+{
+ [p_bgjob  ]
+ Program User           [g_rep_user        ]
+ Authorization Category [g_rep_clas        ]
+ Report Template        [g_template        ]
+ CR Template Name       [g_rpt_name        ]
+}
+END -- gr3704
+END -- group02
+END -- vb2
+END -- cl_repcon
+
+ATTRIBUTES
+DateEdit p_pdate=formonly.p_pdate type CHAR, tabIndex=1;
+Edit p_towhom=formonly.p_towhom type CHAR, tabIndex=2;
+ComboBox p_lang=formonly.p_lang type CHAR, tabIndex=3, not null, required;
+CheckBox p_bgjob=formonly.p_bgjob type CHAR, tabIndex=4, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit g_rep_user=formonly.g_rep_user type CHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Program User";
+ButtonEdit g_rep_clas=formonly.g_rep_clas type CHAR, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Authorization Category";
+ButtonEdit g_template=formonly.g_template type CHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Template ";
+ButtonEdit g_rpt_name=formonly.g_rpt_name type CHAR, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry CR Template Name";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.p_pdate,formonly.p_towhom,formonly.p_lang,formonly.p_bgjob,formonly.g_rep_user,formonly.g_rep_clas,formonly.g_template,formonly.g_rpt_name)
+END -- INSTRUCTIONS
+

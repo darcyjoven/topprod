@@ -1,0 +1,134 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci401")
+VBox vb6
+Folder pc354
+Page page01(text="Main")
+Grid gr1468
+{
+ W/O No.                 [cxf01          ]
+                         [sfb05               ]
+ Task No                 [cxf012    ]
+ Open.Acct YM            [cxf0]/[cx]
+ Cost Calculation Method [cxf06        ] Category No.   [cxf07                                       ]
+ Component No.           [cxf04                         ]
+                         [ima02                         ]
+ Unit                    [ima25     ]
+ Componenet Category     [cxf05                         ]
+
+ <G group02                                              >
+     Eof Month. Qty   [cxf11     ]
+    [dummy01        ]
+  -  Material         [cxf12a              ]
+  -  Labor            [cxf12b              ]
+  -  Overhead 1       [cxf12c              ]
+  -  Processing       [cxf12d              ]
+  -  Overhead 2       [cxf12e              ]
+  -  Overhead 3       [cxf12f              ]
+  -  Overhead 4       [cxf12g              ]
+  -  Overhead 5       [cxf12h              ]
+
+  ------------------------------------------
+     Total Amount     [cxf12               ]
+
+
+
+ <                                                       >
+
+}
+END -- gr1468
+END -- page01
+Page info(text="Info")
+Grid gr1469
+{
+ Record Owner        [cxfuser   ]   Last Modified by    [cxfmodu   ]
+ Department          [cxfgrup   ]   Create/Modify Date  [cxfdate   ]
+ Record Orig.        [cxforiu   ]
+ Dept Orig.          [cxforig   ]
+}
+END -- gr1469
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[cxfud01                       ] userdefined_field07[cxfud07        ] userdefined_field13[cxfud13        ]
+                    [                              ] userdefined_field08[cxfud08        ] userdefined_field14[cxfud14        ]
+ userdefined_field02[cxfud02        ]                userdefined_field09[cxfud09        ] userdefined_field15[cxfud15        ]
+ userdefined_field03[cxfud03        ]                userdefined_field10[cxfud10        ]
+ userdefined_field04[cxfud04        ]                userdefined_field11[cxfud11        ]
+ userdefined_field05[cxfud05        ]                userdefined_field12[cxfud12        ]
+ userdefined_field06[cxfud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc354
+Grid gr1470
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr1470
+END -- vb6
+END -- axci401
+
+TABLES
+sfb_file,
+cxf_file
+ATTRIBUTES
+ButtonEdit cxf01=cxf_file.cxf01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit sfb05=sfb_file.sfb05, tabIndex=2;
+ButtonEdit cxf012=cxf_file.cxf012, action=controlp, tabIndex=3, image="zoom";
+Edit cxf0=cxf_file.cxf02, tabIndex=4, not null, required;
+Edit cx=cxf_file.cxf03, tabIndex=5, not null, required;
+ComboBox cxf06=cxf_file.cxf06, tabIndex=22, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Specific-Batch Cost"),("4", "Individual-Item Cost"),("5", "Specific Identification-Cost by Store(Profit Center)"));
+ButtonEdit cxf07=cxf_file.cxf07, action=controlp, tabIndex=23, not null, required, image="zoom.png";
+ButtonEdit cxf04=formonly.cxf04 type VARCHAR, action=controlp, tabIndex=6, image="zoom", comment="Blank: Master Item BoP Opening Acct, Enter Qty only";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=7, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=8, noEntry;
+Edit cxf05=cxf_file.cxf05, tabIndex=9, not null, required, upShift;
+Group group02:group02;
+Edit cxf11=cxf_file.cxf11, tabIndex=10;
+Label dummy01:dummy01, text="Eof Month Amt:";
+Edit cxf12a=cxf_file.cxf12a, tabIndex=11;
+Edit cxf12b=cxf_file.cxf12b, tabIndex=12;
+Edit cxf12c=cxf_file.cxf12c, tabIndex=13, not null, required;
+Edit cxf12d=cxf_file.cxf12d, tabIndex=14;
+Edit cxf12e=cxf_file.cxf12e, tabIndex=15, not null, required;
+Edit cxf12f=cxf_file.cxf12f, tabIndex=24, default = "0", not null, required;
+Edit cxf12g=cxf_file.cxf12g, tabIndex=25, default = "0", not null, required;
+Edit cxf12h=cxf_file.cxf12h, tabIndex=26, default = "0", not null, required;
+Edit cxf12=cxf_file.cxf12, tabIndex=16, noEntry;
+Edit cxfuser=cxf_file.cxfuser, tabIndex=17, noEntry;
+Edit cxfmodu=cxf_file.cxfmodu, tabIndex=18, noEntry;
+Edit cxfgrup=cxf_file.cxfgrup, tabIndex=19, noEntry;
+DateEdit cxfdate=cxf_file.cxfdate, tabIndex=20, noEntry;
+Edit cxforiu=cxf_file.cxforiu, tabIndex=501, noEntry;
+Edit cxforig=cxf_file.cxforig, tabIndex=502, noEntry;
+TextEdit cxfud01=cxf_file.cxfud01, tabIndex=27, stretch=NONE;
+Edit cxfud07=cxf_file.cxfud07, tabIndex=28;
+DateEdit cxfud13=cxf_file.cxfud13, tabIndex=29;
+Edit cxfud08=cxf_file.cxfud08, tabIndex=30;
+DateEdit cxfud14=cxf_file.cxfud14, tabIndex=31;
+Edit cxfud02=cxf_file.cxfud02, tabIndex=32;
+Edit cxfud09=cxf_file.cxfud09, tabIndex=33;
+DateEdit cxfud15=cxf_file.cxfud15, tabIndex=34;
+Edit cxfud03=cxf_file.cxfud03, tabIndex=35;
+Edit cxfud10=cxf_file.cxfud10, tabIndex=36;
+Edit cxfud04=cxf_file.cxfud04, tabIndex=37;
+Edit cxfud11=cxf_file.cxfud11, tabIndex=38;
+Edit cxfud05=cxf_file.cxfud05, tabIndex=39;
+Edit cxfud12=cxf_file.cxfud12, tabIndex=40;
+Edit cxfud06=cxf_file.cxfud06, tabIndex=41;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cxf_file.cxf01,sfb_file.sfb05,cxf_file.cxf012,cxf_file.cxf02,cxf_file.cxf03,cxf_file.cxf06,cxf_file.cxf07,formonly.cxf04,formonly.ima02,formonly.ima25,cxf_file.cxf05,cxf_file.cxf11,cxf_file.cxf12a,cxf_file.cxf12b,cxf_file.cxf12c,cxf_file.cxf12d,cxf_file.cxf12e,cxf_file.cxf12f,cxf_file.cxf12g,cxf_file.cxf12h,cxf_file.cxf12,cxf_file.cxfuser,cxf_file.cxfmodu,cxf_file.cxfgrup,cxf_file.cxfdate,cxf_file.cxforiu,cxf_file.cxforig,cxf_file.cxfud01,cxf_file.cxfud07,cxf_file.cxfud13,cxf_file.cxfud08,cxf_file.cxfud14,cxf_file.cxfud02,cxf_file.cxfud09,cxf_file.cxfud15,cxf_file.cxfud03,cxf_file.cxfud10,cxf_file.cxfud04,cxf_file.cxfud11,cxf_file.cxfud05,cxf_file.cxfud12,cxf_file.cxfud06,formonly.cnt)
+END -- INSTRUCTIONS
+

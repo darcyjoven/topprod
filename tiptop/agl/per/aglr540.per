@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr540.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglr540")
+VBox vb27
+Grid gr2720
+{
+ <G group01                                                                       >
+  Budget No.          [gie01               ]
+  Main Category       [gie02               ]
+  Equipment Name      [gie05               ]
+  Department No.      [gie03               ]
+ <                                                                                >
+
+}
+END -- gr2720
+Group group02(text="INPUT")
+Grid gr2721
+{
+ <G group03                                                                       >
+  Select Year/Month   [byy                 ]/[bmm                 ]
+                     -[eyy                 ]/[emm                 ]
+  Conv.Curr/Base ExRt [azk01               ]/[azk041              ]
+                      [azk02               ]/[azk042              ]
+                      [azk03               ]/[azk043              ]
+                      [azk04               ]/[azk044              ]
+ <                                                                                >
+ <G group04             ><G group05             ><G group06                       >
+  [choice              ]  [base                ]  [s                             ]
+
+ <                      ><                      ><                                >
+
+}
+END -- gr2721
+END -- group02
+Grid gr2722
+{
+[more                                                        ]
+
+}
+END -- gr2722
+END -- vb27
+END -- aglr540
+
+TABLES
+gie_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit gie01=gie_file.gie01, tabIndex=1;
+Edit gie02=gie_file.gie02, tabIndex=2;
+Edit gie05=gie_file.gie05, tabIndex=3;
+Edit gie03=gie_file.gie03, tabIndex=4;
+Group group03:group03;
+Edit byy=formonly.byy type CHAR, tabIndex=5;
+Edit bmm=formonly.bmm type CHAR, tabIndex=6;
+Edit eyy=formonly.eyy type CHAR, tabIndex=7;
+Edit emm=formonly.emm type CHAR, tabIndex=8;
+Edit azk01=formonly.azk01 type VARCHAR, tabIndex=9;
+Edit azk041=formonly.azk041 type DECIMAL, tabIndex=10;
+Edit azk02=formonly.azk02 type VARCHAR, tabIndex=11;
+Edit azk042=formonly.azk042 type DECIMAL, tabIndex=12;
+Edit azk03=formonly.azk03 type VARCHAR, tabIndex=13;
+Edit azk043=formonly.azk043 type DECIMAL, tabIndex=14;
+Edit azk04=formonly.azk04 type VARCHAR, tabIndex=15;
+Edit azk044=formonly.azk044 type DECIMAL, tabIndex=16;
+Group group04:group04, text="Print Method";
+RadioGroup choice=formonly.choice type CHAR, tabIndex=17, items=(("1", "Annual Report"),("2", "Quarterly report"),("3", "Monthly Report"));
+Group group05:group05, text="Amount Unit";
+RadioGroup base=formonly.base type CHAR, tabIndex=18, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+Group group06:group06, text="Format Option";
+RadioGroup s=formonly.s type CHAR, tabIndex=19, items=(("1", "Category"),("2", "Department"),("3", "Category+Department+Equipment Name"));
+CheckBox more=formonly.more type CHAR, tabIndex=20, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gie_file.gie01,gie_file.gie02,gie_file.gie05,gie_file.gie03,formonly.byy,formonly.bmm,formonly.eyy,formonly.emm,formonly.azk01,formonly.azk041,formonly.azk02,formonly.azk042,formonly.azk03,formonly.azk043,formonly.azk04,formonly.azk044,formonly.choice,formonly.base,formonly.s,formonly.more)
+END -- INSTRUCTIONS
+

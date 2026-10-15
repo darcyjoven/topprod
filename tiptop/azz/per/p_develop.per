@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_develop.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_develop")
+VBox vb2_
+Folder pc750
+Page page01(text="Page01")
+Grid gr3206
+{
+ Develop No.    [gfb01          ]        Status Code            [gfb02 ]
+ Forecast Date  [gfb05       ]           Forecast Hrs           [gfb06]
+
+ Program Id     [gfb04          ][zz02                                    ]
+ Programer      [gfb03     ][zx02      ] Realistic Programmer   [gfb14               ]
+                                         Customize Organization [gfb16               ]
+
+ Actuality Date [gfb07       ]           Job Hrs                [gfb08]
+
+ Memo           [gfb11                                                                   ]
+                [                                                                        ]
+                [                                                                        ]
+                [                                                                        ]
+                [                                                                        ]
+
+ Checker        [gfb09     |zx02_2    ]  Realistic Checker      [gfb15               ]
+ Checked Date   [gfb10       ]
+
+ Data Patch File Location  [gfb12                                                        ]
+ Alter Patch File Location [gfb13                                                        ]
+
+}
+END -- gr3206
+END -- page01
+END -- pc750
+Grid gr3207
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3207
+END -- vb2_
+END -- p_develop
+
+TABLES
+gfb_file
+ATTRIBUTES
+Edit gfb01=gfb_file.gfb01, tabIndex=1, not null, required;
+ComboBox gfb02=gfb_file.gfb02, tabIndex=5, noEntry, not null, required, items=(("1", "Appoint"),("2", "Developing"),("3", "Complete"),("4", "Checked"));
+DateEdit gfb05=gfb_file.gfb05, tabIndex=2;
+Edit gfb06=gfb_file.gfb06, tabIndex=3;
+ButtonEdit gfb04=gfb_file.gfb04, action=controlp, tabIndex=4, not null, required, image="zoom", downShift, comment="<^P> Qry Program Code";
+Edit zz02=formonly.zz02 type CHAR, tabIndex=6, noEntry;
+ButtonEdit gfb03=gfb_file.gfb03, action=controlp, tabIndex=7, image="zoom", downShift, comment="<^P> Qry Process Employee";
+Edit zx02=formonly.zx02 type CHAR, tabIndex=8, noEntry;
+Edit gfb14=gfb_file.gfb14, tabIndex=18;
+ComboBox gfb16=gfb_file.gfb16, tabIndex=19, not null;
+DateEdit gfb07=gfb_file.gfb07, tabIndex=9;
+Edit gfb08=gfb_file.gfb08, tabIndex=10;
+TextEdit gfb11=gfb_file.gfb11, tabIndex=11, stretch=both, scrollBars=both, style="fixedFont";
+ButtonEdit gfb09=gfb_file.gfb09, action=controlp, tabIndex=12, noEntry, image="zoom", comment="<^P> Qry Testing Employee";
+Edit zx02_2=formonly.zx02_2 type CHAR, tabIndex=13, noEntry;
+Edit gfb15=gfb_file.gfb15, tabIndex=20;
+DateEdit gfb10=gfb_file.gfb10, tabIndex=14, noEntry;
+Edit gfb12=gfb_file.gfb12, tabIndex=16, noEntry;
+Edit gfb13=gfb_file.gfb13, tabIndex=17;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gfb_file.gfb01,gfb_file.gfb02,gfb_file.gfb05,gfb_file.gfb06,gfb_file.gfb04,formonly.zz02,gfb_file.gfb03,formonly.zx02,gfb_file.gfb14,gfb_file.gfb16,gfb_file.gfb07,gfb_file.gfb08,gfb_file.gfb11,gfb_file.gfb09,formonly.zx02_2,gfb_file.gfb15,gfb_file.gfb10,gfb_file.gfb12,gfb_file.gfb13,formonly.cnt)
+END -- INSTRUCTIONS
+

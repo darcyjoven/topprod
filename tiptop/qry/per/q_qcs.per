@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_qcs.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Workstation")
+Grid gr3753
+{
+ <T s_qcs                                                          >
+ [check |ina01           |ina03     |inb03     |inb16     |qcs22   ]
+ [check |ina01           |ina03     |inb03     |inb16     |qcs22   ]
+ [check |ina01           |ina03     |inb03     |inb16     |qcs22   ]
+ [check |ina01           |ina03     |inb03     |inb16     |qcs22   ]
+ [check |ina01           |ina03     |inb03     |inb16     |qcs22   ]
+ [check |ina01           |ina03     |inb03     |inb16     |qcs22   ]
+ [check |ina01           |ina03     |inb03     |inb16     |qcs22   ]
+ [check |ina01           |ina03     |inb03     |inb16     |qcs22   ]
+ [check |ina01           |ina03     |inb03     |inb16     |qcs22   ]
+ [check |ina01           |ina03     |inb03     |inb16     |qcs22   ]
+ <                                                                 >
+
+}
+END -- gr3753
+END -- q_qcs
+
+TABLES
+qcs_file,
+inb_file,
+ina_file
+ATTRIBUTES
+Table s_qcs:s_qcs;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ina01=ina_file.ina01, tabIndex=2, title="Doc No.", noEntry;
+DateEdit ina03=ina_file.ina03, tabIndex=3, title="Entry Date";
+Edit inb03=inb_file.inb03, tabIndex=4, title="Dept No.", noEntry;
+Edit inb16=inb_file.inb16, tabIndex=5, title="Project No.";
+Edit qcs22=qcs_file.qcs22, tabIndex=6, title=%"qty";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcs(formonly.check,ina_file.ina01,ina_file.ina03,inb_file.inb03,inb_file.inb16,qcs_file.qcs22)
+END -- INSTRUCTIONS
+

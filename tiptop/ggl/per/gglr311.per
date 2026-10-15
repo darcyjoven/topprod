@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglr311.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglr311")
+VBox VBox1
+Group g02(text=%"INPUT1")
+Grid Grid1
+{
+ Book NO.        [bookno         ]
+
+}
+END -- Grid1
+END -- g02
+Grid gr17
+{
+ <G group01                                >
+  Cash Account No.  [aag01                ]
+
+ <                                         >
+}
+END -- gr17
+Group g01(text="INPUT")
+Grid gr18
+{
+ Year                [yyyy      ]
+ Initial Period      [mm        ]
+ Ending Period       [nn        ]
+
+[p                                       ]
+ Currency            [bb        ]
+[e                                       ]
+[h                                    ]
+
+}
+END -- gr18
+END -- g01
+Grid gr19
+{
+[more                                 ]
+
+
+}
+END -- gr19
+END -- VBox1
+END -- gglr311
+
+ATTRIBUTES
+ButtonEdit bookno=formonly.bookno type CHAR, action=controlp, tabIndex=9, not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+Group group01:group01, text="QBE";
+ButtonEdit aag01=formonly.aag01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit yyyy=formonly.yyyy type SMALLINT, tabIndex=2;
+Edit mm=formonly.mm type SMALLINT, tabIndex=3;
+Edit nn=formonly.nn type SMALLINT, tabIndex=4;
+CheckBox p=formonly.p type VARCHAR, tabIndex=5, text="Print Foreign Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit bb=formonly.bb type CHAR, action=controlp, tabIndex=6, image="zoom", upShift, comment="<^P>Qry Details";
+CheckBox e=formonly.e type CHAR, tabIndex=7, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=10, text="Monetary Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,formonly.aag01,formonly.yyyy,formonly.mm,formonly.nn,formonly.p,formonly.bb,formonly.e,formonly.h,formonly.more)
+END -- INSTRUCTIONS
+

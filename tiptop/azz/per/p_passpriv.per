@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_passpriv.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal)
+Folder page01
+Page Page1(text=%"Basic Data")
+VBox vb3
+Grid gr8
+{
+ <G group05                                                >
+ [gbt07                            ]
+ <                                                         >
+}
+END -- gr8
+Group group01(text="Password Update Period")
+Grid gr5
+{
+
+
+ Update Depend on          [gbt01         ]
+
+ <G group02                                                >
+  Expired Period           [gbt02         ]
+  Notice Before Expired    [gbt04         ]
+ <                                                         >
+
+ <G group03                                                >
+  Counts of login times    [gbt03         ]
+  Notice Before Expired    [gbt04_time    ]
+ <                                                         >
+}
+END -- gr5
+END -- group01
+Grid gr3_
+{
+ <G group04                                                  >
+  Password Minimun Length    [gbt05         ]
+  Password Strength          [gbt06                        ]
+  Password Same as Last      [gbt08         ]
+  Login Fail and Locked Cnt  [gbt10         ][dummy01      ]
+ <                                                           >
+
+}
+END -- gr3_
+END -- vb3
+END -- Page1
+Page Page2(text=%"Status")
+Grid grid01
+{
+ Last Modified by [gbtmodu        ] Last Modified on [gbtdate        ]
+ Data Group       [gbtgrup        ]
+
+}
+END -- grid01
+END -- Page2
+END -- page01
+END -- p_passpriv
+
+TABLES
+gbt_file
+ATTRIBUTES
+Group group05:group05, text="Encoding Function";
+CheckBox gbt07=gbt_file.gbt07, tabIndex=10, text="Enable User\'s Web Password Encoding Function", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox gbt01=gbt_file.gbt01, tabIndex=1, not null, required, items=(("0", "No Control"),("2", "Fixed Login Counts"),("1", "Fixed Period"));
+Group group02:group02, text="Control By Period", gridChildrenInParent;
+ComboBox gbt02=gbt_file.gbt02, tabIndex=2, not null, items=(("0", "No Control"),("7", "1 Week"),("15", "Half Month"),("30", "30 Days"),("90", "90 Days"),("180", "180 Days"),("365", "365 Days"));
+ComboBox gbt04=gbt_file.gbt04, tabIndex=4, not null, items=(("0", "No Notice"),("3", "Before 3 Days"),("5", "Before 5 Days"),("7", "Before 7 Days"));
+Group group03:group03, text="Control By Counts", gridChildrenInParent;
+ComboBox gbt03=gbt_file.gbt03, tabIndex=3, not null, items=(("0", "No Control"),("5", "5 Times"),("10", "10 Times"),("30", "30 Times"),("100", "100 Times"));
+ComboBox gbt04_time=formonly.gbt04_time type SMALLINT, tabIndex=13, not null, items=(("0", "No Notice"),("5", "Before 5 Times"),("10", "Before 10 Times"),("20", "Before 20 Times"));
+Group group04:group04, text="Password Restriction", gridChildrenInParent;
+ComboBox gbt05=gbt_file.gbt05, tabIndex=5, not null, required, items=(("0", "No Control"),("6", "Until 6 Chars."),("8", "Until 8 Chars."),("12", "Until 12 Chars."));
+ComboBox gbt06=gbt_file.gbt06, tabIndex=6, not null, required, items=(("N", "No: No Control"),("S", "Strong: Plus numeric, and punctuation characters"),("M", "Middle: Both alpha and numeric characters"),("Y", "Weak:Only check alpha without account"));
+ComboBox gbt08=gbt_file.gbt08, tabIndex=11, not null, items=(("Y", "Allow"),("N", "Deny"));
+Edit gbt10=gbt_file.gbt10, tabIndex=12, required;
+Label dummy01:dummy01, text="(0:Never Lock)";
+Edit gbtmodu=gbt_file.gbtmodu, tabIndex=9, noEntry;
+DateEdit gbtdate=gbt_file.gbtdate, tabIndex=7, noEntry;
+Edit gbtgrup=gbt_file.gbtgrup, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gbt_file.gbt07,gbt_file.gbt01,gbt_file.gbt02,gbt_file.gbt04,gbt_file.gbt03,formonly.gbt04_time,gbt_file.gbt05,gbt_file.gbt06,gbt_file.gbt08,gbt_file.gbt10,gbt_file.gbtmodu,gbt_file.gbtdate,gbt_file.gbtgrup)
+END -- INSTRUCTIONS
+

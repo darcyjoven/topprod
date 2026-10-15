@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_unpack2_patch_list.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="p_unpack2_patch_list")
+Table tb1
+{
+[sel     |filename                                          ]
+[sel     |filename                                          ]
+[sel     |filename                                          ]
+[sel     |filename                                          ]
+[sel     |filename                                          ]
+[sel     |filename                                          ]
+[sel     |filename                                          ]
+[sel     |filename                                          ]
+
+}
+END -- tb1
+END -- p_unpack2_patch_list
+
+ATTRIBUTES
+CheckBox sel=formonly.sel type CHAR, tabIndex=1, title="sel", valueChecked = "Y", valueUnchecked = "N";
+Edit filename=formonly.filename type CHAR, tabIndex=2, title="filename";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_list(formonly.sel,formonly.filename)
+END -- INSTRUCTIONS
+

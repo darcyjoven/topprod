@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri014_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+[date         |hrat01          |pname          ]
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label date:Date, text=%"Label1";
+ButtonEdit hrat01=formonly.hrat01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit pname=formonly.pname, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrat01,formonly.pname)
+END -- INSTRUCTIONS
+

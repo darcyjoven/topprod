@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoq500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"acoq500")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1332
+{
+ Application No.    [coc01          ]
+ Currency           [coc02          ]
+
+}
+END -- gr1332
+Grid gr1333
+{
+ Customs No.         [coc10     ]
+ Register Book No.   [coc03          ]
+ Bonded No.          [coc04          ]
+}
+END -- gr1333
+Grid gr1334
+{
+ Expiry Date         [coc05       ]
+ Date of Clearance   [coc07       ]
+
+}
+END -- gr1334
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_cod
+{
+[cod02|cod03          |cob02               |tot       |cod05       |cod10          |cod09         |cod091            |cod101          |cod102              |cod106         |cod104         ]
+[cod02|cod03          |cob02               |tot       |cod05       |cod10          |cod09         |cod091            |cod101          |cod102              |cod106         |cod104         ]
+[cod02|cod03          |cob02               |tot       |cod05       |cod10          |cod09         |cod091            |cod101          |cod102              |cod106         |cod104         ]
+[cod02|cod03          |cob02               |tot       |cod05       |cod10          |cod09         |cod091            |cod101          |cod102              |cod106         |cod104         ]
+[cod02|cod03          |cob02               |tot       |cod05       |cod10          |cod09         |cod091            |cod101          |cod102              |cod106         |cod104         ]
+[cod02|cod03          |cob02               |tot       |cod05       |cod10          |cod09         |cod091            |cod101          |cod102              |cod106         |cod104         ]
+[cod02|cod03          |cob02               |tot       |cod05       |cod10          |cod09         |cod091            |cod101          |cod102              |cod106         |cod104         ]
+[cod02|cod03          |cob02               |tot       |cod05       |cod10          |cod09         |cod091            |cod101          |cod102              |cod106         |cod104         ]
+[cod02|cod03          |cob02               |tot       |cod05       |cod10          |cod09         |cod091            |cod101          |cod102              |cod106         |cod104         ]
+[cod02|cod03          |cob02               |tot       |cod05       |cod10          |cod09         |cod091            |cod101          |cod102              |cod106         |cod104         ]
+
+}
+END -- s_cod
+Grid gr1335
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1335
+END -- VBox1
+END -- acoq500
+
+ATTRIBUTES
+Edit coc01=formonly.coc01 type CHAR, tabIndex=1;
+Edit coc02=formonly.coc02 type CHAR, tabIndex=2;
+Edit coc10=formonly.coc10 type CHAR, tabIndex=3;
+Edit coc03=formonly.coc03 type CHAR, tabIndex=4;
+Edit coc04=formonly.coc04 type CHAR, tabIndex=5;
+DateEdit coc05=formonly.coc05 type CHAR, tabIndex=6;
+DateEdit coc07=formonly.coc07 type DATE, tabIndex=7;
+Edit cod02=formonly.cod02 type CHAR, tabIndex=8, title="Ln #";
+Edit cod03=formonly.cod03 type CHAR, tabIndex=9, title="Goods No.";
+Edit cob02=formonly.cob02 type CHAR, tabIndex=10, title="P/N Spec.";
+Edit tot=formonly.tot type CHAR, tabIndex=11, title="Rest Qty";
+Edit cod05=formonly.cod05 type CHAR, tabIndex=12, title="Qty Applied";
+Edit cod10=formonly.cod10 type CHAR, tabIndex=13, title="Additional Qty";
+Edit cod09=formonly.cod09 type CHAR, tabIndex=14, title="Direct Export";
+Edit cod091=formonly.cod091 type CHAR, tabIndex=15, title="Direct Export Ret";
+Edit cod101=formonly.cod101 type CHAR, tabIndex=16, title="Transfer/Export";
+Edit cod102=formonly.cod102 type CHAR, tabIndex=17, title="Transfer/Export Ret";
+Edit cod106=formonly.cod106 type CHAR, tabIndex=18, title="Local/Sale Qty";
+Edit cod104=formonly.cod104 type CHAR, tabIndex=19, title="Local/Sale Ret";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cod(formonly.cod02,formonly.cod03,formonly.cob02,formonly.tot,formonly.cod05,formonly.cod10,formonly.cod09,formonly.cod091,formonly.cod101,formonly.cod102,formonly.cod106,formonly.cod104)
+SCREEN RECORD Undefined(formonly.coc01,formonly.coc02,formonly.coc10,formonly.coc03,formonly.coc04,formonly.coc05,formonly.coc07,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

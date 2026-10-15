@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cxc/4fd/cxcq908.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq231")
+VBox vb2_
+Folder folder01
+Page page01(text="Main")
+Grid gr3151
+{
+
+
+   Item No.      [yy             ]    [mm            ]
+
+
+}
+END -- gr3151
+END -- page01
+END -- folder01
+Table s_tlf
+{
+[cch02   |cch03   |sfb05               |cch12d              |cch22d              |ccg31               |cch32d              |cch92d              ]
+[cch02   |cch03   |sfb05               |cch12d              |cch22d              |ccg31               |cch32d              |cch92d              ]
+[cch02   |cch03   |sfb05               |cch12d              |cch22d              |ccg31               |cch32d              |cch92d              ]
+[cch02   |cch03   |sfb05               |cch12d              |cch22d              |ccg31               |cch32d              |cch92d              ]
+[cch02   |cch03   |sfb05               |cch12d              |cch22d              |ccg31               |cch32d              |cch92d              ]
+[cch02   |cch03   |sfb05               |cch12d              |cch22d              |ccg31               |cch32d              |cch92d              ]
+[cch02   |cch03   |sfb05               |cch12d              |cch22d              |ccg31               |cch32d              |cch92d              ]
+[cch02   |cch03   |sfb05               |cch12d              |cch22d              |ccg31               |cch32d              |cch92d              ]
+[cch02   |cch03   |sfb05               |cch12d              |cch22d              |ccg31               |cch32d              |cch92d              ]
+[cch02   |cch03   |sfb05               |cch12d              |cch22d              |ccg31               |cch32d              |cch92d              ]
+
+
+
+}
+END -- s_tlf
+Grid gr3152
+{
+
+ [label1      |cch12d_sum          ][label3      |ccg31_sum           ][label4      |cch32d_sum          ]
+ [label2      |cch22d_sum          ]                                   [label5      |cch92d_sum          ]
+  ---------- Rows[cn2       ] ----------
+
+}
+END -- gr3152
+END -- vb2_
+END -- cxcq904
+
+ATTRIBUTES
+Edit yy=formonly.yy type VARCHAR, tabIndex=1, not null, required;
+Edit mm=formonly.mm type VARCHAR, tabIndex=2, not null, required;
+Edit cch02=formonly.cch02, tabIndex=3, title=%"cch02";
+Edit cch03=formonly.cch03, tabIndex=4, title=%"cch03";
+Edit sfb05=formonly.sfb05, tabIndex=5, title=%"sfb05";
+Edit cch12d=formonly.cch12d, tabIndex=6, title=%"cch12d";
+Edit cch22d=formonly.cch22d, tabIndex=7, title=%"cch22d";
+Edit ccg31=formonly.ccg31, tabIndex=8, title=%"ccg31";
+Edit cch32d=formonly.cch32d, tabIndex=9, title=%"cch32d";
+Edit cch92d=formonly.cch92d, tabIndex=10, title=%"cch92d";
+Label label1:Label1, text=%"Label1";
+Edit cch12d_sum=formonly.cch12d_sum, tabIndex=12;
+Label label3:Label3, text=%"Label1";
+Edit ccg31_sum=formonly.ccg31_sum, tabIndex=14;
+Label label4:Label4, text=%"Label1";
+Edit cch32d_sum=formonly.cch32d_sum, tabIndex=15;
+Label label2:Label2, text=%"Label1";
+Edit cch22d_sum=formonly.cch22d_sum, tabIndex=13;
+Label label5:Label5, text=%"Label1";
+Edit cch92d_sum=formonly.cch92d_sum, tabIndex=16;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tlf(formonly.cch02,formonly.cch03,formonly.sfb05,formonly.cch12d,formonly.cch22d,formonly.ccg31,formonly.cch32d,formonly.cch92d)
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.cn2,formonly.cch12d_sum,formonly.cch22d_sum,formonly.ccg31_sum,formonly.cch32d_sum,formonly.cch92d_sum)
+END -- INSTRUCTIONS
+

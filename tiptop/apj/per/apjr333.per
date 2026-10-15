@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjr333.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apjr300")
+VBox VBox1
+Grid gr4748
+{
+ <G grpqbe                                        >
+  Project NO.         [pja01               ]
+  Project Date        [pja02               ]
+  Department NO.      [pja03               ]
+  Employee NO.        [pja04               ]
+ <                                                >
+
+}
+END -- gr4748
+Grid gr4749
+{
+ [more                                 ]
+
+}
+END -- gr4749
+END -- VBox1
+END -- apjr300
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+ButtonEdit pja01=formonly.pja01 type VARCHAR, action=controlp, tabIndex=1, image="zoom.png";
+DateEdit pja02=formonly.pja02 type CHAR, tabIndex=2;
+Edit pja03=formonly.pja03 type VARCHAR, tabIndex=3;
+Edit pja04=formonly.pja04 type VARCHAR, tabIndex=4;
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pja01,formonly.pja02,formonly.pja03,formonly.pja04,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmr320.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmr320")
+VBox VBox1
+Grid gr1173
+{
+ <G group01                                       >
+  Agent Cust     [oea1015   ]
+  Customer #     [oea03     ]
+  Customer Abbr. [oea032                        ]
+  Shipping Cust  [oea04     ]
+ <                                                >
+ <G group02                                       >
+  Order Date     [bdate     ]-[edate     ]
+
+ <                                                >
+
+}
+END -- gr1173
+Grid gr1174
+{
+ [more                                    ]
+
+}
+END -- gr1174
+END -- VBox1
+END -- atmr320
+
+TABLES
+oea_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oea1015=oea_file.oea1015, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit oea03=oea_file.oea03, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Details <^Y>Customer";
+Edit oea032=oea_file.oea032, tabIndex=3;
+ButtonEdit oea04=oea_file.oea04, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Details <^Y>Customer";
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=5, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=6, not null, required;
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other conditionto print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oea_file.oea1015,oea_file.oea03,oea_file.oea032,oea_file.oea04,formonly.bdate,formonly.edate,formonly.more)
+END -- INSTRUCTIONS
+

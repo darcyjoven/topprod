@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cqry/4fd/cq_ogb.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Delivery Note")
+VBox VBox1
+Grid gr3814
+{
+ Accounts Customer [oga03     ]
+
+}
+END -- gr3814
+Table s_ogb
+{
+[check|oga01_1     |oga02_1      |oga01             |oga02   |ogb03 |ogb04          |ima02            |ima021             |ogb09       |imd02       |ogb091   |ime03       |ogb092       |ogb917       |ogb60       |ogbud02     ]
+[check|oga01_1     |oga02_1      |oga01             |oga02   |ogb03 |ogb04          |ima02            |ima021             |ogb09       |imd02       |ogb091   |ime03       |ogb092       |ogb917       |ogb60       |ogbud02     ]
+[check|oga01_1     |oga02_1      |oga01             |oga02   |ogb03 |ogb04          |ima02            |ima021             |ogb09       |imd02       |ogb091   |ime03       |ogb092       |ogb917       |ogb60       |ogbud02     ]
+[check|oga01_1     |oga02_1      |oga01             |oga02   |ogb03 |ogb04          |ima02            |ima021             |ogb09       |imd02       |ogb091   |ime03       |ogb092       |ogb917       |ogb60       |ogbud02     ]
+[check|oga01_1     |oga02_1      |oga01             |oga02   |ogb03 |ogb04          |ima02            |ima021             |ogb09       |imd02       |ogb091   |ime03       |ogb092       |ogb917       |ogb60       |ogbud02     ]
+[check|oga01_1     |oga02_1      |oga01             |oga02   |ogb03 |ogb04          |ima02            |ima021             |ogb09       |imd02       |ogb091   |ime03       |ogb092       |ogb917       |ogb60       |ogbud02     ]
+[check|oga01_1     |oga02_1      |oga01             |oga02   |ogb03 |ogb04          |ima02            |ima021             |ogb09       |imd02       |ogb091   |ime03       |ogb092       |ogb917       |ogb60       |ogbud02     ]
+[check|oga01_1     |oga02_1      |oga01             |oga02   |ogb03 |ogb04          |ima02            |ima021             |ogb09       |imd02       |ogb091   |ime03       |ogb092       |ogb917       |ogb60       |ogbud02     ]
+[check|oga01_1     |oga02_1      |oga01             |oga02   |ogb03 |ogb04          |ima02            |ima021             |ogb09       |imd02       |ogb091   |ime03       |ogb092       |ogb917       |ogb60       |ogbud02     ]
+[check|oga01_1     |oga02_1      |oga01             |oga02   |ogb03 |ogb04          |ima02            |ima021             |ogb09       |imd02       |ogb091   |ime03       |ogb092       |ogb917       |ogb60       |ogbud02     ]
+}
+END -- s_ogb
+Grid Grid1
+{
+   tot_ogb04   [tot_ogb04     ]     tot_ogb12  [tot_ogb12      ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- q_ogb
+
+TABLES
+ime_file,
+imd_file,
+ima_file,
+ogb_file,
+oga_file
+ATTRIBUTES
+Edit oga03=formonly.oga03 type VARCHAR, tabIndex=1;
+CheckBox check=formonly.check type CHAR, tabIndex=2, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oga01_1=formonly.oga01_1, tabIndex=19, title=%"oga01_1";
+DateEdit oga02_1=formonly.oga02_1, tabIndex=20, title=%"oga02_1";
+Edit oga01=oga_file.oga01, tabIndex=3, title="Delivery Note No.", noEntry;
+DateEdit oga02=oga_file.oga02, tabIndex=4, title="Date", noEntry;
+Edit ogb03=ogb_file.ogb03, tabIndex=5, title="Line#", noEntry;
+Edit ogb04=ogb_file.ogb04, tabIndex=6, title="Product No.", noEntry;
+Edit ima02=ima_file.ima02, tabIndex=7, title=%"Item Name", noEntry;
+Edit ima021=ima_file.ima021, tabIndex=8, title=%"Item Specification", noEntry;
+Edit ogb09=ogb_file.ogb09, tabIndex=9, title=%"Shipping WH No.";
+Edit imd02=imd_file.imd02, tabIndex=10, title=%"Store Name";
+Edit ogb091=ogb_file.ogb091, tabIndex=11, title="Location", noEntry;
+Edit ime03=ime_file.ime03, tabIndex=12, title=%"Location Name";
+Edit ogb092=ogb_file.ogb092, tabIndex=13, title=%"Shipping Lot No.";
+Edit ogb917=ogb_file.ogb917, tabIndex=14, title="Delivery Qty", noEntry, not null, required;
+Edit ogb60=ogb_file.ogb60, tabIndex=15, title="Invoiced Qty", noEntry, not null, required;
+Edit ogbud02=formonly.ogbud02, tabIndex=16, title=%"ogbud02";
+Edit tot_ogb04=formonly.tot_ogb04, tabIndex=17;
+Edit tot_ogb12=formonly.tot_ogb12, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogb(formonly.check,formonly.oga01_1,formonly.oga02_1,oga_file.oga01,oga_file.oga02,ogb_file.ogb03,ogb_file.ogb04,ima_file.ima02,ima_file.ima021,ogb_file.ogb09,imd_file.imd02,ogb_file.ogb091,ime_file.ime03,ogb_file.ogb092,ogb_file.ogb917,ogb_file.ogb60,formonly.ogbud02)
+SCREEN RECORD Undefined(formonly.oga03,formonly.tot_ogb04,formonly.tot_ogb12)
+END -- INSTRUCTIONS
+

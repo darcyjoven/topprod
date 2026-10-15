@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt4205.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt4205")
+Folder pc984
+Page page01(text="Page01")
+Grid gr5268
+{
+ <G group01                                      >
+  Vender Item#  [pml06                         ]
+  Inquiry List# [pml03               ]
+
+ <                                               >
+
+}
+END -- gr5268
+END -- page01
+END -- pc984
+END -- apmt4205
+
+TABLES
+pml_file
+ATTRIBUTES
+Group group01:group01;
+Edit pml06=pml_file.pml06, tabIndex=1;
+Edit pml03=pml_file.pml03, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pml_file.pml06,pml_file.pml03)
+END -- INSTRUCTIONS
+

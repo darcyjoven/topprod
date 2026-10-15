@@ -1,0 +1,99 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axs/42f/axsi100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axsi100")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3000
+{
+ Target Doc No.      [osa01             ]           Sales Cate 1        [osa25     ] [oab021    ]     Currency           [osa23     ]
+ Date of Set         [osa02     ]                   Sales Cate 2        [osa26     ] [oab022    ]     Ex Rate            [osa24               ]
+ Target Cate         [osa05     ]                   Accounts Cust       [osa03     ] [occ021    ]     Product Class      [osa90     ]
+ Salesman            [osa14     ] [gen02     ]      Customer Class      [osa06     ] [oca02     ]
+ Department No.      [osa15     ] [gem02     ]      Shipping Cust       [osa04     ] [occ022    ]
+}
+END -- gr3000
+END -- page01
+Page info(text="Info")
+Grid gr3001
+{
+ Record Owner        [osauser   ] Last Modified by    [osamodu   ]
+ Department          [osagrup   ] Create/Modify Date  [osadate     ]
+ Record Orig.        [osaoriu   ]
+ Dept Orig.          [osaorig   ]
+}
+END -- gr3001
+END -- info
+END -- folder01
+Table s_osb
+{
+[osb02|osb03|osb04      |osb05      ]
+[osb02|osb03|osb04      |osb05      ]
+[osb02|osb03|osb04      |osb05      ]
+[osb02|osb03|osb04      |osb05      ]
+[osb02|osb03|osb04      |osb05      ]
+[osb02|osb03|osb04      |osb05      ]
+[osb02|osb03|osb04      |osb05      ]
+[osb02|osb03|osb04      |osb05      ]
+[osb02|osb03|osb04      |osb05      ]
+[osb02|osb03|osb04      |osb05      ]
+
+}
+END -- s_osb
+Grid gr3002
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3002
+END -- VBox1
+END -- axsi100
+
+TABLES
+osb_file,
+osa_file
+ATTRIBUTES
+ButtonEdit osa01=osa_file.osa01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Document Property";
+ButtonEdit osa25=osa_file.osa25, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Details";
+Edit oab021=formonly.oab021 type CHAR, tabIndex=3, noEntry;
+ButtonEdit osa23=osa_file.osa23, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Details";
+DateEdit osa02=osa_file.osa02, tabIndex=5, not null, required;
+ButtonEdit osa26=osa_file.osa26, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Details";
+Edit oab022=formonly.oab022 type CHAR, tabIndex=7, noEntry;
+ButtonEdit osa24=osa_file.osa24, action=controlp, tabIndex=8, image="zoom";
+ComboBox osa05=osa_file.osa05, tabIndex=9, not null, required, queryEditable, items=(("1", "Order"),("2", "Delivery"));
+ButtonEdit osa03=osa_file.osa03, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Details";
+Edit occ021=formonly.occ021 type CHAR, tabIndex=11, noEntry;
+ButtonEdit osa90=osa_file.osa90, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Details";
+ButtonEdit osa14=osa_file.osa14, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Details";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=14, noEntry;
+ButtonEdit osa06=osa_file.osa06, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry Details";
+Edit oca02=formonly.oca02 type CHAR, tabIndex=16, noEntry;
+ButtonEdit osa15=osa_file.osa15, action=controlp, tabIndex=17, image="zoom", comment="<^P>Qry Details";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=18, noEntry;
+ButtonEdit osa04=osa_file.osa04, action=controlp, tabIndex=19, image="zoom", comment="<^P>Qry Details";
+Edit occ022=formonly.occ022 type CHAR, tabIndex=20, noEntry;
+Edit osauser=osa_file.osauser, tabIndex=21, noEntry;
+Edit osamodu=osa_file.osamodu, tabIndex=22, noEntry;
+Edit osagrup=osa_file.osagrup, tabIndex=23, noEntry;
+DateEdit osadate=osa_file.osadate, tabIndex=24, noEntry;
+Edit osaoriu=osa_file.osaoriu, tabIndex=501, noEntry;
+Edit osaorig=osa_file.osaorig, tabIndex=502, noEntry;
+Edit osb02=osb_file.osb02, tabIndex=25, title="Year", not null, required;
+Edit osb03=osb_file.osb03, tabIndex=26, title="Per.", not null, required;
+Edit osb04=osb_file.osb04, tabIndex=27, title="F.C Target", not null, required;
+Edit osb05=osb_file.osb05, tabIndex=28, title="H.C Target", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=30, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_osb(osb_file.osb02,osb_file.osb03,osb_file.osb04,osb_file.osb05)
+SCREEN RECORD Undefined(osa_file.osa01,osa_file.osa25,formonly.oab021,osa_file.osa23,osa_file.osa02,osa_file.osa26,formonly.oab022,osa_file.osa24,osa_file.osa05,osa_file.osa03,formonly.occ021,osa_file.osa90,osa_file.osa14,formonly.gen02,osa_file.osa06,formonly.oca02,osa_file.osa15,formonly.gem02,osa_file.osa04,formonly.occ022,osa_file.osauser,osa_file.osamodu,osa_file.osagrup,osa_file.osadate,osa_file.osaoriu,osa_file.osaorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmp600")
+VBox VBox1
+Folder pc137
+Page page01(text="Main")
+Group g01
+VBox VBox2
+Grid gr850
+{
+ <G group01                                                       >
+  Enter Deleting Component# [bmb03               ]    Version [im]
+                            [ima02                         ]
+                            [ima021                        ]
+  Expiry Date               [vdate       ]
+ <                                                                >
+
+}
+END -- gr850
+Grid gr851
+{
+[y                                       ]
+[g_bgjob                                                      ]
+}
+END -- gr851
+END -- VBox2
+END -- g01
+END -- page01
+END -- pc137
+Grid gr852
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr852
+END -- VBox1
+END -- abmp600
+
+TABLES
+bmb_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit bmb03=bmb_file.bmb03, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Enter Component No. to Delete                 ";
+Edit im=formonly.ima05 type VARCHAR, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=3, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=4, noEntry;
+DateEdit vdate=formonly.vdate type DATE, tabIndex=5;
+CheckBox y=formonly.y type VARCHAR, tabIndex=6, text="Re-confirm bef delete item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=7, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type VARCHAR, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bmb_file.bmb03,formonly.ima05,formonly.ima02,formonly.ima021,formonly.vdate,formonly.y,formonly.g_bgjob,formonly.cnt)
+END -- INSTRUCTIONS
+

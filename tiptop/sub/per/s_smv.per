@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_smv.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_smv")
+Grid gr3929
+{
+ <T s_smv         >
+ [smv02 |gem02   ]
+ [smv02 |gem02   ]
+ [smv02 |gem02   ]
+ [smv02 |gem02   ]
+ [smv02 |gem02   ]
+ [smv02 |gem02   ]
+ <                >
+
+}
+END -- gr3929
+END -- s_smv
+
+TABLES
+smv_file
+ATTRIBUTES
+Table s_smv:s_smv;
+ButtonEdit smv02=smv_file.smv02, action=controlp, tabIndex=1, title="Dept No.", not null, required, image="zoom", comment="<^P> Qry Dept No.";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=2, title="Dept Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_smv(smv_file.smv02,formonly.gem02)
+END -- INSTRUCTIONS
+

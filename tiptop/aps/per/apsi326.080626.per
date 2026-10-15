@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi326.080626.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi326")
+VBox vb2_
+Grid gr5444
+{
+ <G group01                                      >
+    Product No.          [vms01             ]
+    Routing Code.        [vms02             ]
+    Routing Sequence.    [vms03             ]
+ <                                               >
+
+    <T s_vms                                 >
+    [vms05    |vms06     |vms04             ]
+    [vms05    |vms06     |vms04             ]
+    [vms05    |vms06     |vms04             ]
+    [vms05    |vms06     |vms04             ]
+    [vms05    |vms06     |vms04             ]
+    [vms05    |vms06     |vms04             ]
+    [vms05    |vms06     |vms04             ]
+    [vms05    |vms06     |vms04             ]
+    [vms05    |vms06     |vms04             ]
+    [vms05    |vms06     |vms04             ]
+    <                                        >
+
+}
+END -- gr5444
+Grid gr881
+{
+
+ ----------  Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr881
+END -- vb2_
+END -- apsi326
+
+TABLES
+vms_file
+ATTRIBUTES
+Group group01:group01, text="Basic Data";
+ButtonEdit vms01=vms_file.vms01, action=controlp, tabIndex=6, not null, required, image="zoom", comment="Assign Add/Query Item#";
+Edit vms02=vms_file.vms02, tabIndex=8, noEntry, not null, required;
+Edit vms03=vms_file.vms03, tabIndex=7, noEntry, not null, required;
+Table s_vms:s_vms;
+Edit vms05=vms_file.vms05, tabIndex=1, title="Item", noEntry, not null, required;
+Edit vms06=vms_file.vms06, tabIndex=4, title="Order No.", noEntry;
+ButtonEdit vms04=vms_file.vms04, tabIndex=5, title="APS Version Description";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=2, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vms(vms_file.vms05,vms_file.vms06,vms_file.vms04)
+SCREEN RECORD Undefined(vms_file.vms01,vms_file.vms02,vms_file.vms03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

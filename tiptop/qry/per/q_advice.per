@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_advice.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_advice")
+VBox vb3
+Grid gr3719
+{
+ <G group01                                                                                                                                   >
+  Advice No   [oga01           ]     Delivery Date [oga02       ]        Customer No   [oga03           ]
+
+ <                                                                                                                                            >
+
+
+}
+END -- gr3719
+Table s_ogb
+{
+[check |ogb01           |ogb03    |ogb04               |ogb06                         |ima021              |ogb12               |ogb1014  ]
+[check |ogb01           |ogb03    |ogb04               |ogb06                         |ima021              |ogb12               |ogb1014  ]
+[check |ogb01           |ogb03    |ogb04               |ogb06                         |ima021              |ogb12               |ogb1014  ]
+[check |ogb01           |ogb03    |ogb04               |ogb06                         |ima021              |ogb12               |ogb1014  ]
+[check |ogb01           |ogb03    |ogb04               |ogb06                         |ima021              |ogb12               |ogb1014  ]
+[check |ogb01           |ogb03    |ogb04               |ogb06                         |ima021              |ogb12               |ogb1014  ]
+[check |ogb01           |ogb03    |ogb04               |ogb06                         |ima021              |ogb12               |ogb1014  ]
+[check |ogb01           |ogb03    |ogb04               |ogb06                         |ima021              |ogb12               |ogb1014  ]
+[check |ogb01           |ogb03    |ogb04               |ogb06                         |ima021              |ogb12               |ogb1014  ]
+[check |ogb01           |ogb03    |ogb04               |ogb06                         |ima021              |ogb12               |ogb1014  ]
+}
+END -- s_ogb
+END -- vb3
+END -- q_advice
+
+TABLES
+ogb_file,
+oga_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit oga01=oga_file.oga01, tabIndex=1, not null, required;
+DateEdit oga02=oga_file.oga02, tabIndex=10, not null, required;
+ButtonEdit oga03=oga_file.oga03, action=controlp, tabIndex=11, not null, required, image="zoom";
+CheckBox check=formonly.check type CHAR, tabIndex=2, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ogb01=ogb_file.ogb01, tabIndex=3, title="Advice NO", noEntry;
+Edit ogb03=ogb_file.ogb03, tabIndex=4, title="Line No.", noEntry;
+Edit ogb04=ogb_file.ogb04, tabIndex=5, title="Product No.", noEntry;
+Edit ogb06=ogb_file.ogb06, tabIndex=6, title="Part Name Specification", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=7, title="Specification", noEntry;
+Edit ogb12=ogb_file.ogb12, tabIndex=8, title="Actual Delivery Qty", noEntry, not null, required;
+CheckBox ogb1014=ogb_file.ogb1014, tabIndex=9, title="ogb1014", noEntry, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogb(formonly.check,ogb_file.ogb01,ogb_file.ogb03,ogb_file.ogb04,ogb_file.ogb06,formonly.ima021,ogb_file.ogb12,ogb_file.ogb1014)
+SCREEN RECORD Undefined(oga_file.oga01,oga_file.oga02,oga_file.oga03)
+END -- INSTRUCTIONS
+

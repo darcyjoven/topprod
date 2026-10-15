@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq707_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq707_1")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr5447
+{
+  Book No.[o             ] Year[y         ] Period[m1  ]-[m2 ] [label1         |a           ] Document status [b           ][aag09       |aag38       ]  [e       ]
+
+}
+END -- gr5447
+END -- page01
+END -- folder01
+Table s_aed
+{
+[aed01                     |aag02                       |aed02           |ahe02_d             |yy        |mm        |pb_dc     |pb_bal                |d                          |c                           |dc      |bal             ]
+[aed01                     |aag02                       |aed02           |ahe02_d             |yy        |mm        |pb_dc     |pb_bal                |d                          |c                           |dc      |bal             ]
+[aed01                     |aag02                       |aed02           |ahe02_d             |yy        |mm        |pb_dc     |pb_bal                |d                          |c                           |dc      |bal             ]
+[aed01                     |aag02                       |aed02           |ahe02_d             |yy        |mm        |pb_dc     |pb_bal                |d                          |c                           |dc      |bal             ]
+[aed01                     |aag02                       |aed02           |ahe02_d             |yy        |mm        |pb_dc     |pb_bal                |d                          |c                           |dc      |bal             ]
+[aed01                     |aag02                       |aed02           |ahe02_d             |yy        |mm        |pb_dc     |pb_bal                |d                          |c                           |dc      |bal             ]
+[aed01                     |aag02                       |aed02           |ahe02_d             |yy        |mm        |pb_dc     |pb_bal                |d                          |c                           |dc      |bal             ]
+[aed01                     |aag02                       |aed02           |ahe02_d             |yy        |mm        |pb_dc     |pb_bal                |d                          |c                           |dc      |bal             ]
+[aed01                     |aag02                       |aed02           |ahe02_d             |yy        |mm        |pb_dc     |pb_bal                |d                          |c                           |dc      |bal             ]
+[aed01                     |aag02                       |aed02           |ahe02_d             |yy        |mm        |pb_dc     |pb_bal                |d                          |c                           |dc      |bal             ]
+}
+END -- s_aed
+Grid gr5449
+{
+ ----------- Rows [cnt   ] -----------
+
+}
+END -- gr5449
+END -- VBox1
+END -- gglq707_1
+
+ATTRIBUTES
+ButtonEdit o=formonly.o type CHAR, action=controlp, tabIndex=17, image="zoom";
+Edit y=formonly.y type SMALLINT, tabIndex=13;
+Edit m1=formonly.m1 type SMALLINT, tabIndex=14;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=15;
+Label label1:Label1, text=%"Dimension Sequence";
+ComboBox a=formonly.a type CHAR, tabIndex=18, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"),("10", "10"),("99", "99"));
+ComboBox b=formonly.b type CHAR, tabIndex=16, items=(("1", "ALL"),("2", "Confirmed"),("3", "Posted"));
+CheckBox aag09=formonly.aag09 type VARCHAR, tabIndex=19, default = "N", text="aag09", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag38=formonly.aag38 type VARCHAR, tabIndex=20, default = "N", text="aag38", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e, tabIndex=21, text=%"CE", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit aed01=formonly.aed01 type VARCHAR, action=controlp, tabIndex=2, title="Dimension Code", image="zoom";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=3, title="Dimension Description";
+ButtonEdit aed02=formonly.aed02 type VARCHAR, action=controlp, tabIndex=11, title=%"aed02", image="zoom";
+Edit ahe02_d=formonly.ahe02_d type VARCHAR, tabIndex=12, title=%"ahe02_d";
+Edit yy=formonly.yy type CHAR, tabIndex=4, title="yy";
+Edit mm=formonly.mm type CHAR, tabIndex=5, title="mm";
+Edit pb_dc=formonly.pb_dc type CHAR, tabIndex=6, title="DC(BOP)";
+Edit pb_bal=formonly.pb_bal type CHAR, tabIndex=7, title="Beginning";
+Edit d=formonly.d type CHAR, tabIndex=8, title="Debit Amount";
+Edit c=formonly.c type CHAR, tabIndex=9, title="Credit Amount";
+Edit dc=formonly.dc type CHAR, tabIndex=10, title="D/C";
+Edit bal=formonly.bal type CHAR, tabIndex=10, title="Balance";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aed(formonly.aed01,formonly.aag02,formonly.aed02,formonly.ahe02_d,formonly.yy,formonly.mm,formonly.pb_dc,formonly.pb_bal,formonly.d,formonly.c,formonly.dc,formonly.bal)
+SCREEN RECORD Undefined(formonly.cnt,formonly.y,formonly.m1,formonly.m2,formonly.b,formonly.o,formonly.a,formonly.aag09,formonly.aag38,formonly.e)
+END -- INSTRUCTIONS
+

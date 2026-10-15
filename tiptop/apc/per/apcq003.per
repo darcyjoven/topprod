@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apcq003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder p1
+Page p01(text=%"Page1")
+Grid gr01
+{
+
+[azw01        |azw02                ]
+[source       |sourc1               ]
+[date         |bdate                ]-------[edate                ]
+
+}
+END -- gr01
+END -- p01
+END -- p1
+Grid gr02
+{
+
+ <T s_shop                                                                                                                                               >
+ [shop                  |name                |dat1           |type           |pos                 |uerp           |erp            |show                  ]
+ [shop                  |name                |dat1           |type           |pos                 |uerp           |erp            |show                  ]
+ [shop                  |name                |dat1           |type           |pos                 |uerp           |erp            |show                  ]
+ [shop                  |name                |dat1           |type           |pos                 |uerp           |erp            |show                  ]
+ [shop                  |name                |dat1           |type           |pos                 |uerp           |erp            |show                  ]
+ [shop                  |name                |dat1           |type           |pos                 |uerp           |erp            |show                  ]
+ [shop                  |name                |dat1           |type           |pos                 |uerp           |erp            |show                  ]
+ [shop                  |name                |dat1           |type           |pos                 |uerp           |erp            |show                  ]
+ [shop                  |name                |dat1           |type           |pos                 |uerp           |erp            |show                  ]
+ [shop                  |name                |dat1           |type           |pos                 |uerp           |erp            |show                  ]
+
+
+}
+END -- gr02
+Grid gr03
+{
+ ---------- Rows [cnt   ]  ----------
+
+
+}
+END -- gr03
+END -- VBox1
+END -- apcq003
+
+ATTRIBUTES
+Label azw01:azw01, text=%"azw01";
+ButtonEdit azw02=formonly.azw01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Label source:source, text=%"source";
+ComboBox sourc1=formonly.source type VARCHAR, tabIndex=3, default = "0", items=(("0", "0"),("1", "1"),("2", "2"));
+Label date:date, text=%"date";
+DateEdit bdate=formonly.bdate type VARCHAR, tabIndex=2;
+DateEdit edate=formonly.edate type VARCHAR, tabIndex=13;
+Table s_shop:s_shop;
+Edit shop=formonly.shop, tabIndex=4, title=%"shop";
+Edit name=formonly.name, tabIndex=7, title=%"name";
+DateEdit dat1=formonly.date, tabIndex=12, title=%"date";
+ComboBox type=formonly.type, tabIndex=6, title=%"type", items=(("0", "0"),("1", "1"),("2", "2"));
+ComboBox pos=formonly.pos, tabIndex=8, title=%"pos", items=(("Y", "Y"),("N", "N"));
+Edit uerp=formonly.uerp, tabIndex=9, title=%"uerp";
+Edit erp=formonly.erp, tabIndex=10, title=%"erp";
+Edit show=formonly.show, tabIndex=11, title=%"show";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azw01,formonly.bdate,formonly.source,formonly.cnt,formonly.edate)
+SCREEN RECORD s_shop(formonly.shop,formonly.name,formonly.date,formonly.type,formonly.pos,formonly.uerp,formonly.erp,formonly.show)
+END -- INSTRUCTIONS
+

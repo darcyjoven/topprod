@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_gfe.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_gfe")
+Grid gr3714
+{
+ <T s_gfe                                  >
+ [check |gfe01       |gfe02               ]
+ [check |gfe01       |gfe02               ]
+ [check |gfe01       |gfe02               ]
+ [check |gfe01       |gfe02               ]
+ [check |gfe01       |gfe02               ]
+ [check |gfe01       |gfe02               ]
+ [check |gfe01       |gfe02               ]
+ [check |gfe01       |gfe02               ]
+ [check |gfe01       |gfe02               ]
+ [check |gfe01       |gfe02               ]
+ <                                         >
+
+}
+END -- gr3714
+END -- q_aac
+
+TABLES
+gfe_file
+ATTRIBUTES
+Table s_gfe:s_gfe;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gfe01=gfe_file.gfe01, tabIndex=2, title="Unit", noEntry;
+Edit gfe02=gfe_file.gfe02, tabIndex=3, title="Description", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gfe(formonly.check,gfe_file.gfe01,gfe_file.gfe02)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli1022_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="agli1022_a")
+VBox vb2
+Group gb1(text="INPUT")
+Grid gr2
+{
+ Book No.            [aag00     ]
+
+}
+END -- gr2
+END -- gb1
+Grid gr1
+{
+[a                         ]
+[b                           ]
+[c                         ]
+[d                        ]
+}
+END -- gr1
+END -- vb2
+END -- agli1022_a
+
+ATTRIBUTES
+ButtonEdit aag00=formonly.aag00 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+CheckBox a=formonly.a type CHAR, tabIndex=2, text="Dimension-5", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type CHAR, tabIndex=3, text="Dimension-6", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type CHAR, tabIndex=4, text="Dimension-7", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type CHAR, tabIndex=5, text="Dimension-8", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aag00,formonly.a,formonly.b,formonly.c,formonly.d)
+END -- INSTRUCTIONS
+

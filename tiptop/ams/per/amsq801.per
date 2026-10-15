@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsq801.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amsq801")
+VBox VBox1
+Folder pc737
+Page page01(text="Page01")
+Grid gr3974
+{
+ <G group01                                                                             >
+  Workstation         [rpj02               ][eca02                                     ]
+ <                                                                                      >
+ <G group02                                 ><G group03                                 >
+  Version             [rpj01               ]  Time Bucket         [rpj03               ]
+  Date                [mpb24               ]  Period              [rpj06     ][rpj07   ]
+  Initial Time Bucket [rpj03_b             ]  Total Capacity Hour [rpj10               ]
+  Ending Time Bucket  [rpj03_e             ]  Total Loading Hour  [rpj08               ]
+                                              Use Rate            [rate                ]
+ <                                          ><                                          >
+
+}
+END -- gr3974
+END -- page01
+END -- pc737
+Table s_rpj
+{
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+[rpj04               |ima02                         |rpj09        |rpj11      ]
+
+}
+END -- s_rpj
+Grid gr3975
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3975
+END -- VBox1
+END -- amsq801
+
+TABLES
+rpj_file
+ATTRIBUTES
+Group group01:group01;
+Edit rpj02=rpj_file.rpj02, tabIndex=1;
+Edit eca02=formonly.eca02 type CHAR, tabIndex=2, noEntry;
+Group group02:group02;
+Edit rpj01=rpj_file.rpj01, tabIndex=3;
+Edit mpb24=formonly.mpb24 type CHAR, tabIndex=4, noEntry;
+Edit rpj03_b=formonly.rpj03_b type CHAR, tabIndex=5;
+Edit rpj03_e=formonly.rpj03_e type SMALLINT, tabIndex=6;
+Group group03:group03;
+Edit rpj03=formonly.rpj03 type CHAR, tabIndex=7, noEntry;
+Edit rpj06=rpj_file.rpj06, tabIndex=8, noEntry;
+Edit rpj07=rpj_file.rpj07, tabIndex=9, noEntry;
+Edit rpj10=rpj_file.rpj10, tabIndex=10, noEntry;
+Edit rpj08=rpj_file.rpj08, tabIndex=11, noEntry;
+Edit rate=formonly.rate type DECIMAL, tabIndex=12, noEntry;
+Edit rpj04=rpj_file.rpj04, tabIndex=13, title="Item#", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=14, title="Part Name Specification", noEntry;
+Edit rpj09=rpj_file.rpj09, tabIndex=15, title="Load.Hour", noEntry;
+Edit rpj11=rpj_file.rpj11, tabIndex=16, title="calendar", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rpj(rpj_file.rpj04,formonly.ima02,rpj_file.rpj09,rpj_file.rpj11)
+SCREEN RECORD Undefined(rpj_file.rpj02,formonly.eca02,rpj_file.rpj01,formonly.mpb24,formonly.rpj03_b,formonly.rpj03_e,formonly.rpj03,rpj_file.rpj06,rpj_file.rpj07,rpj_file.rpj10,rpj_file.rpj08,formonly.rate,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

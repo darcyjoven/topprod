@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt940.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apmt940")
+VBox vb13
+Folder pc3
+Page Page4(text=%"Main\n")
+Grid gr6
+{
+
+  yymm          [ppe01     ]
+  Supplier No.  [ppe02              ]
+  Abbreviation  [pmc03              ]
+
+}
+END -- gr6
+END -- Page4
+END -- pc3
+VBox vb12
+Grid gr7
+{
+
+  <T tb2                                                    >
+  [ppe03   |ppa03   |ppe04   |ppe05   |ppe06      |ppe07   ]
+  [ppe03   |ppa03   |ppe04   |ppe05   |ppe06      |ppe07   ]
+  [ppe03   |ppa03   |ppe04   |ppe05   |ppe06      |ppe07   ]
+  [ppe03   |ppa03   |ppe04   |ppe05   |ppe06      |ppe07   ]
+  [ppe03   |ppa03   |ppe04   |ppe05   |ppe06      |ppe07   ]
+  <                                                         >
+}
+END -- gr7
+Grid gr12
+{
+  Rows   [cnt   ] / [cnt1  ]
+
+}
+END -- gr12
+END -- vb12
+END -- vb13
+END -- apmt940
+
+ATTRIBUTES
+Edit ppe01=formonly.ppe01 type CHAR, tabIndex=1;
+Edit ppe02=formonly.ppe02 type CHAR, tabIndex=2;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=3;
+Table tb2:tb2;
+Edit ppe03=formonly.ppe03 type CHAR, tabIndex=7, title="Code", noEntry;
+Edit ppa03=formonly.ppa03 type CHAR, tabIndex=9, title="Description", noEntry;
+Edit ppe04=formonly.ppe04 type CHAR, tabIndex=8, title="Score", noEntry;
+Edit ppe05=formonly.ppe05 type CHAR, tabIndex=4, title="Weights ", noEntry;
+Edit ppe06=formonly.ppe06 type CHAR, tabIndex=6, title="Weighted Score", noEntry;
+Edit ppe07=formonly.ppe07 type CHAR, tabIndex=5, title="Modify";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10, noEntry;
+Edit cnt1=formonly.cnt1 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ppe(formonly.ppe03,formonly.ppa03,formonly.ppe04,formonly.ppe05,formonly.ppe06,formonly.ppe07)
+SCREEN RECORD Undefined(formonly.ppe01,formonly.ppe02,formonly.pmc03,formonly.cnt,formonly.cnt1)
+END -- INSTRUCTIONS
+

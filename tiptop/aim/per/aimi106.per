@@ -1,0 +1,298 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi106.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi106")
+VBox VBox1
+Folder pc527
+Page page01(text="Main")
+VBox VBox2
+HBox HBox1
+Grid gr2952
+{
+  Item No.              [imb01                         ]
+  Part Name             [ima02                         ]
+  Specification         [ima021                        ]
+  Inventory Unit        [ima25     ]
+  Handling Status       [s         ]
+}
+END -- gr2952
+Grid gr2953
+{
+  Current ver/Src Cd    [ima05     ][ima08     ]
+  Standard Cost         [imb02               ]
+                        [imgmksg]
+                        [       ]
+
+}
+END -- gr2953
+END -- HBox1
+Folder pc528
+Page page02(text="Standard Cost")
+HBox HBox2
+Grid gr2954
+{
+ <G group04                                             >
+  Direct Material Cost           [imb111              ]
+  Mat. Overhead(Indirect Mat.)   [imb112              ]
+  Direct Labor Cost              [imb1131             ]
+  Labor Overhead(Indirect labor) [imb1132             ]
+  Machine Cost                   [imb119              ]
+  Fixed Overhead Cost            [imb114              ]
+  Variable Overhead Cost         [imb115              ]
+  Subcont Material Cost          [imb1151             ]
+  Subcont Labor                  [imb116              ]
+  Subcont Fixed Overhead Cost    [imb1171             ]
+  Subcont Variable Overhead Cost [imb1172             ]
+  Additional Cost                [imb120              ]
+  Purchase Cost/Unit Cost        [imb118              ]
+ <                                                      >
+
+}
+END -- gr2954
+Grid gr2955
+{
+ <G group05                                    >
+  [imb121              ]
+  [imb122              ]
+  [imb1231             ]
+  [imb1232             ]
+  [imb129              ]
+  [imb124              ]
+  [imb125              ]
+  [imb1251             ]
+  [imb126              ]
+  [imb1271             ]
+  [imb1272             ]
+  [imb130              ]
+  [d2                  ]
+ <                                             >
+
+}
+END -- gr2955
+END -- HBox2
+END -- page02
+Page page03(text="Current Cost")
+HBox HBox3
+Grid gr2956
+{
+ <G group06                                             >
+  Direct Material Cost           [imb211              ]
+  Mat. Overhead(Indirect Mat.)   [imb212              ]
+  Direct Labor Cost              [imb2131             ]
+  Labor Overhead(Indirect labor) [imb2132             ]
+  Machine Cost                   [imb219              ]
+  Fixed Overhead Cost            [imb214              ]
+  Variable Overhead Cost         [imb215              ]
+  Subcont Material Cost          [imb2151             ]
+  Subcont Labor                  [imb216              ]
+  Subcont Fixed Overhead Cost    [imb2171             ]
+  Subcont Variable Overhead Cost [imb2172             ]
+  Additional Cost                [imb220              ]
+  Purchase Cost/Unit Cost        [imb218              ]
+ <                                                      >
+
+}
+END -- gr2956
+Grid gr2957
+{
+ <G group07                                    >
+  [imb221              ]
+  [imb222              ]
+  [imb2231             ]
+  [imb2232             ]
+  [imb229              ]
+  [imb224              ]
+  [imb225              ]
+  [imb2251             ]
+  [imb226              ]
+  [imb2271             ]
+  [imb2272             ]
+  [imb230              ]
+  [d3                  ]
+ <                                             >
+
+}
+END -- gr2957
+END -- HBox3
+END -- page03
+Page page04(text="Default Cost")
+HBox HBox4
+Grid gr2958
+{
+ <G group08                                             >
+  Direct Material Cost           [imb311              ]
+  Mat. Overhead(Indirect Mat.)   [imb312              ]
+  Direct Labor Cost              [imb3131             ]
+  Labor Overhead(Indirect labor) [imb3132             ]
+  Machine Cost                   [imb319              ]
+  Fixed Overhead Cost            [imb314              ]
+  Variable Overhead Cost         [imb315              ]
+  Subcont Material Cost          [imb3151             ]
+  Subcont Labor                  [imb316              ]
+  Subcont Fixed Overhead Cost    [imb3171             ]
+  Subcont Variable Overhead Cost [imb3172             ]
+  Additional Cost                [imb320              ]
+  Purchase Cost/Unit Cost        [imb318              ]
+ <                                                      >
+
+}
+END -- gr2958
+Grid gr2959
+{
+ <G group09                                    >
+  [imb321              ]
+  [imb322              ]
+  [imb3231             ]
+  [imb3232             ]
+  [imb329              ]
+  [imb324              ]
+  [imb325              ]
+  [imb3251             ]
+  [imb326              ]
+  [imb3271             ]
+  [imb3272             ]
+  [imb330              ]
+  [d4                  ]
+ <                                             >
+
+}
+END -- gr2959
+END -- HBox4
+END -- page04
+END -- pc528
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr2960
+{
+ Record Owner        [imbuser   ] Last Modified by    [imbmodu   ] Data Valid Code     [imbacti   ]
+ Department          [imbgrup   ] Create/Modify Date  [imbdate   ]
+ Record Orig.        [imboriu   ]
+ Dept Orig.          [imborig   ]
+}
+END -- gr2960
+END -- info
+END -- pc527
+Grid gr2961
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2961
+END -- VBox1
+END -- aimi106
+
+TABLES
+imb_file
+ATTRIBUTES
+ButtonEdit imb01=imb_file.imb01, action=controlp, tabIndex=1, image="zoom", comment="Assign Item No. of Item Cost Element to Add/Query (QBE) <^P>Qry Item ";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=4, noEntry;
+Edit s=formonly.s type CHAR, tabIndex=5, upShift, comment="Enter Y/N to Qry or press ENTER";
+Edit ima05=formonly.ima05 type CHAR, tabIndex=6, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=7, noEntry;
+ComboBox imb02=imb_file.imb02, tabIndex=8, queryEditable, items=(("0", "Manually Direct Enter"),("1", "From Current Cost"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Group group04:group04, text="Current Level Cost";
+Edit imb111=imb_file.imb111, tabIndex=10, not null, required;
+Edit imb112=imb_file.imb112, tabIndex=11, not null, required;
+Edit imb1131=imb_file.imb1131, tabIndex=12, not null, required;
+Edit imb1132=imb_file.imb1132, tabIndex=13, not null, required;
+Edit imb119=imb_file.imb119, tabIndex=14, not null, required;
+Edit imb114=imb_file.imb114, tabIndex=15, not null, required;
+Edit imb115=imb_file.imb115, tabIndex=16, not null, required;
+Edit imb1151=imb_file.imb1151, tabIndex=17, not null, required;
+Edit imb116=imb_file.imb116, tabIndex=18, not null, required;
+Edit imb1171=imb_file.imb1171, tabIndex=19, not null, required;
+Edit imb1172=imb_file.imb1172, tabIndex=20, not null, required;
+Edit imb120=imb_file.imb120, tabIndex=21, not null, required;
+Edit imb118=imb_file.imb118, tabIndex=22, not null, required;
+Group group05:group05, text="Down Level Cost";
+Edit imb121=imb_file.imb121, tabIndex=23, not null, required;
+Edit imb122=imb_file.imb122, tabIndex=24, not null, required;
+Edit imb1231=imb_file.imb1231, tabIndex=25, not null, required;
+Edit imb1232=imb_file.imb1232, tabIndex=26, not null, required;
+Edit imb129=imb_file.imb129, tabIndex=27, not null, required;
+Edit imb124=imb_file.imb124, tabIndex=28, not null, required;
+Edit imb125=imb_file.imb125, tabIndex=29, not null, required;
+Edit imb1251=imb_file.imb1251, tabIndex=30, not null, required;
+Edit imb126=imb_file.imb126, tabIndex=31, not null, required;
+Edit imb1271=imb_file.imb1271, tabIndex=32, not null, required;
+Edit imb1272=imb_file.imb1272, tabIndex=33, not null, required;
+Edit imb130=imb_file.imb130, tabIndex=34, not null, required;
+Edit d2=formonly.d2 type DECIMAL, tabIndex=35;
+Group group06:group06, text="Current Level Cost";
+Edit imb211=imb_file.imb211, tabIndex=36, not null, required;
+Edit imb212=imb_file.imb212, tabIndex=37, not null, required;
+Edit imb2131=imb_file.imb2131, tabIndex=38, not null, required;
+Edit imb2132=imb_file.imb2132, tabIndex=39, not null, required;
+Edit imb219=imb_file.imb219, tabIndex=40, not null, required;
+Edit imb214=imb_file.imb214, tabIndex=41, not null, required;
+Edit imb215=imb_file.imb215, tabIndex=42, not null, required;
+Edit imb2151=imb_file.imb2151, tabIndex=43, not null, required;
+Edit imb216=imb_file.imb216, tabIndex=44, not null, required;
+Edit imb2171=imb_file.imb2171, tabIndex=45, not null, required;
+Edit imb2172=imb_file.imb2172, tabIndex=46, not null, required;
+Edit imb220=imb_file.imb220, tabIndex=47, not null, required;
+Edit imb218=imb_file.imb218, tabIndex=48, not null, required;
+Group group07:group07, text="Down Level Cost";
+Edit imb221=imb_file.imb221, tabIndex=49, not null, required;
+Edit imb222=imb_file.imb222, tabIndex=50, not null, required;
+Edit imb2231=imb_file.imb2231, tabIndex=51, not null, required;
+Edit imb2232=imb_file.imb2232, tabIndex=52, not null, required;
+Edit imb229=imb_file.imb229, tabIndex=53, not null, required;
+Edit imb224=imb_file.imb224, tabIndex=54, not null, required;
+Edit imb225=imb_file.imb225, tabIndex=55, not null, required;
+Edit imb2251=imb_file.imb2251, tabIndex=56, not null, required;
+Edit imb226=imb_file.imb226, tabIndex=57, not null, required;
+Edit imb2271=imb_file.imb2271, tabIndex=58, not null, required;
+Edit imb2272=imb_file.imb2272, tabIndex=59, not null, required;
+Edit imb230=imb_file.imb230, tabIndex=60, not null, required;
+Edit d3=formonly.d3 type DECIMAL, tabIndex=61;
+Group group08:group08, text="Current Level Cost";
+Edit imb311=imb_file.imb311, tabIndex=62, not null, required;
+Edit imb312=imb_file.imb312, tabIndex=63, not null, required;
+Edit imb3131=imb_file.imb3131, tabIndex=64, not null, required;
+Edit imb3132=imb_file.imb3132, tabIndex=65, not null, required;
+Edit imb319=imb_file.imb319, tabIndex=66, not null, required;
+Edit imb314=imb_file.imb314, tabIndex=67, not null, required;
+Edit imb315=imb_file.imb315, tabIndex=68, not null, required;
+Edit imb3151=imb_file.imb3151, tabIndex=69, not null, required;
+Edit imb316=imb_file.imb316, tabIndex=70, not null, required;
+Edit imb3171=imb_file.imb3171, tabIndex=71, not null, required;
+Edit imb3172=imb_file.imb3172, tabIndex=72, not null, required;
+Edit imb320=imb_file.imb320, tabIndex=73, not null, required;
+Edit imb318=imb_file.imb318, tabIndex=74, not null, required;
+Group group09:group09, text="Down Level Cost";
+Edit imb321=imb_file.imb321, tabIndex=75, not null, required;
+Edit imb322=imb_file.imb322, tabIndex=76, not null, required;
+Edit imb3231=imb_file.imb3231, tabIndex=77, not null, required;
+Edit imb3232=imb_file.imb3232, tabIndex=78, not null, required;
+Edit imb329=imb_file.imb329, tabIndex=79, not null, required;
+Edit imb324=imb_file.imb324, tabIndex=80, not null, required;
+Edit imb325=imb_file.imb325, tabIndex=81, not null, required;
+Edit imb3251=imb_file.imb3251, tabIndex=82, not null, required;
+Edit imb326=imb_file.imb326, tabIndex=83, not null, required;
+Edit imb3271=imb_file.imb3271, tabIndex=84, not null, required;
+Edit imb3272=imb_file.imb3272, tabIndex=85, not null, required;
+Edit imb330=imb_file.imb330, tabIndex=86, not null, required;
+Edit d4=formonly.d4 type DECIMAL, tabIndex=87;
+Edit imbuser=imb_file.imbuser, tabIndex=88, noEntry;
+Edit imbmodu=imb_file.imbmodu, tabIndex=89, noEntry;
+Edit imbacti=imb_file.imbacti, tabIndex=90, noEntry, upShift;
+Edit imbgrup=imb_file.imbgrup, tabIndex=91, noEntry;
+DateEdit imbdate=imb_file.imbdate, tabIndex=92, noEntry;
+Edit imboriu=imb_file.imboriu, tabIndex=501, noEntry;
+Edit imborig=imb_file.imborig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=93;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(imb_file.imb01,formonly.ima02,formonly.ima021,formonly.ima25,formonly.s,formonly.ima05,formonly.ima08,imb_file.imb02,formonly.imgmksg,imb_file.imb111,imb_file.imb112,imb_file.imb1131,imb_file.imb1132,imb_file.imb119,imb_file.imb114,imb_file.imb115,imb_file.imb1151,imb_file.imb116,imb_file.imb1171,imb_file.imb1172,imb_file.imb120,imb_file.imb118,imb_file.imb121,imb_file.imb122,imb_file.imb1231,imb_file.imb1232,imb_file.imb129,imb_file.imb124,imb_file.imb125,imb_file.imb1251,imb_file.imb126,imb_file.imb1271,imb_file.imb1272,imb_file.imb130,formonly.d2,imb_file.imb211,imb_file.imb212,imb_file.imb2131,imb_file.imb2132,imb_file.imb219,imb_file.imb214,imb_file.imb215,imb_file.imb2151,imb_file.imb216,imb_file.imb2171,imb_file.imb2172,imb_file.imb220,imb_file.imb218,imb_file.imb221,imb_file.imb222,imb_file.imb2231,imb_file.imb2232,imb_file.imb229,imb_file.imb224,imb_file.imb225,imb_file.imb2251,imb_file.imb226,imb_file.imb2271,imb_file.imb2272,imb_file.imb230,formonly.d3,imb_file.imb311,imb_file.imb312,imb_file.imb3131,imb_file.imb3132,imb_file.imb319,imb_file.imb314,imb_file.imb315,imb_file.imb3151,imb_file.imb316,imb_file.imb3171,imb_file.imb3172,imb_file.imb320,imb_file.imb318,imb_file.imb321,imb_file.imb322,imb_file.imb3231,imb_file.imb3232,imb_file.imb329,imb_file.imb324,imb_file.imb325,imb_file.imb3251,imb_file.imb326,imb_file.imb3271,imb_file.imb3272,imb_file.imb330,formonly.d4,imb_file.imbuser,imb_file.imbmodu,imb_file.imbacti,imb_file.imbgrup,imb_file.imbdate,imb_file.imboriu,imb_file.imborig,formonly.cnt)
+END -- INSTRUCTIONS
+

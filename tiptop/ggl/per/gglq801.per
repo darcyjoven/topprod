@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq801.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq801")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr3359
+{
+ Account NO.        [aec01                         ]
+ Account Name       [aag02                                             ]
+ Book No.           [aec00]
+
+}
+END -- gr3359
+Grid gr3360
+{
+ Trans. Sequence    [aec051    ]
+ Transaction Type   [aec052    ][ahe02   ]
+ Trans. Code        [aec05               ]
+ Trans. Name        [aee04               ]
+}
+END -- gr3360
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_aec
+{
+[aec02          |aec03          |abb24       |abb25                |abb07_1             |abb07f_1             |abb07_2             |abb07f_2              |abb99              ]
+[aec02          |aec03          |abb24       |abb25                |abb07_1             |abb07f_1             |abb07_2             |abb07f_2              |abb99              ]
+[aec02          |aec03          |abb24       |abb25                |abb07_1             |abb07f_1             |abb07_2             |abb07f_2              |abb99              ]
+[aec02          |aec03          |abb24       |abb25                |abb07_1             |abb07f_1             |abb07_2             |abb07f_2              |abb99              ]
+[aec02          |aec03          |abb24       |abb25                |abb07_1             |abb07f_1             |abb07_2             |abb07f_2              |abb99              ]
+[aec02          |aec03          |abb24       |abb25                |abb07_1             |abb07f_1             |abb07_2             |abb07f_2              |abb99              ]
+[aec02          |aec03          |abb24       |abb25                |abb07_1             |abb07f_1             |abb07_2             |abb07f_2              |abb99              ]
+[aec02          |aec03          |abb24       |abb25                |abb07_1             |abb07f_1             |abb07_2             |abb07f_2              |abb99              ]
+[aec02          |aec03          |abb24       |abb25                |abb07_1             |abb07f_1             |abb07_2             |abb07f_2              |abb99              ]
+[aec02          |aec03          |abb24       |abb25                |abb07_1             |abb07f_1             |abb07_2             |abb07f_2              |abb99              ]
+}
+END -- s_aec
+Grid gr3361
+{
+ ---------- Rows [cnt   ] / [cnt2  ] ----------
+
+
+
+
+}
+END -- gr3361
+END -- VBox1
+END -- gglq801
+
+TABLES
+aec_file
+ATTRIBUTES
+Edit aec01=aec_file.aec01, tabIndex=1;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+Edit aec00=aec_file.aec00, tabIndex=19;
+Edit aec051=aec_file.aec051, tabIndex=3;
+ButtonEdit aec052=aec_file.aec052, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+Edit ahe02=formonly.ahe02 type CHAR, tabIndex=5, noEntry;
+Edit aec05=aec_file.aec05, tabIndex=6;
+Edit aee04=formonly.aee04 type CHAR, tabIndex=7, noEntry;
+DateEdit aec02=aec_file.aec02, tabIndex=8, title="Voucher Date";
+Edit aec03=formonly.aec03 type CHAR, tabIndex=9, title="Voucher NO.", noEntry;
+Edit abb24=formonly.abb24 type CHAR, tabIndex=10, title="Currency";
+Edit abb25=formonly.abb25 type CHAR, tabIndex=11, title="Ex. Rate";
+Edit abb07_1=formonly.abb07_1 type CHAR, tabIndex=12, title="Debit", noEntry;
+Edit abb07f_1=formonly.abb07f_1 type CHAR, tabIndex=13, title="Debit O.C.Amount", noEntry;
+Edit abb07_2=formonly.abb07_2 type CHAR, tabIndex=14, title="Credit", noEntry;
+Edit abb07f_2=formonly.abb07f_2 type CHAR, tabIndex=15, title="Credit O.C.Amount", noEntry;
+Edit abb99=formonly.abb99 type CHAR, tabIndex=16, title="Balance", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aec(aec_file.aec02,formonly.aec03,formonly.abb24,formonly.abb25,formonly.abb07_1,formonly.abb07f_1,formonly.abb07_2,formonly.abb07f_2,formonly.abb99)
+SCREEN RECORD Undefined(aec_file.aec01,formonly.aag02,aec_file.aec00,aec_file.aec051,aec_file.aec052,formonly.ahe02,aec_file.aec05,formonly.aee04,formonly.cnt,formonly.cnt2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghri056_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Table Table1
+{
+[lei               |hrby05         |hrby06       ]
+[lei               |hrby05         |hrby06       ]
+[lei               |hrby05         |hrby06       ]
+[lei               |hrby05         |hrby06       ]
+[lei               |hrby05         |hrby06       ]
+
+}
+END -- Table1
+Grid Grid1
+{
+   ----[label1    |cn        ] -----
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit lei=formonly.lei, tabIndex=1, title=%"lei";
+Edit hrby05=formonly.hrby05, tabIndex=2, title=%"hrby05";
+Edit hrby06=formonly.hrby06, tabIndex=3, title=%"hrby06";
+Label label1:Label1, text=%"cn";
+Edit cn=formonly.cn, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrby(formonly.lei,formonly.hrby05,formonly.hrby06)
+SCREEN RECORD Undefined(formonly.cn)
+END -- INSTRUCTIONS
+

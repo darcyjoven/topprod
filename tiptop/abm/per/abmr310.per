@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmr310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmr310")
+VBox VBox1
+Grid gr915
+{
+ <G group01                                                          >
+  Item No.            [bmj01             ]
+  Maker No.           [bmj02             ]
+  Approval No.        [bmj10             ]
+  Approval Date       [bmj11             ]
+  Smpl Sent Date      [bmj06             ]
+ <                                                                   >
+
+}
+END -- gr915
+Group group02(text="INPUT")
+Grid gr916
+{
+ <G group03                                                          >
+ [h                                                           ]
+ <                                                                   >
+ <G group04                                                          >
+ [s1                  ][s2                  ][s3                  ]
+ [t1                  ][t2                  ][t3                  ]
+ <                                                                   >
+
+}
+END -- gr916
+END -- group02
+Grid gr917
+{
+[more                                ]
+
+}
+END -- gr917
+END -- VBox1
+END -- abmr310
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit bmj01=formonly.bmj01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit bmj02=formonly.bmj02 type VARCHAR, tabIndex=2;
+Edit bmj10=formonly.bmj10 type VARCHAR, tabIndex=3;
+DateEdit bmj11=formonly.bmj11 type DATE, tabIndex=4;
+DateEdit bmj06=formonly.bmj06 type DATE, tabIndex=5;
+Group group03:group03, text="Approval Status";
+RadioGroup h=formonly.h type VARCHAR, tabIndex=6, items=(("0", "Sample Sent"),("1", "Testing"),("2", "Countersign"),("3", "Approved"),("4", "Reject"),("5", "ALL"));
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=7, queryEditable, items=(("1", "Item No."),("2", "Maker No."),("3", "Approval No."),("4", "Approval Date"),("5", "Smpl Sent Dt"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=8, queryEditable, items=(("1", "Item No."),("2", "Maker No."),("3", "Approval No."),("4", "Approval Date"),("5", "Smpl Sent Dt"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=9, queryEditable, items=(("1", "Item No."),("2", "Maker No."),("3", "Approval No."),("4", "Approval Date"),("5", "Smpl Sent Dt"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bmj01,formonly.bmj02,formonly.bmj10,formonly.bmj11,formonly.bmj06,formonly.h,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.more)
+END -- INSTRUCTIONS
+

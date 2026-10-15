@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq240.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq240")
+VBox vb5
+Folder folder01
+Page page01(text="Main")
+Grid gr2244
+{
+ Customer            [occ01     ][occ02                          ]
+ Contact             [link                                       ]
+}
+END -- gr2244
+END -- page01
+END -- folder01
+Table s_oma
+{
+[oma00   |oma01            |oma02        |oma11    |oma16            |oma23    |oma54t              |oma55               ]
+[oma00   |oma01            |oma02        |oma11    |oma16            |oma23    |oma54t              |oma55               ]
+[oma00   |oma01            |oma02        |oma11    |oma16            |oma23    |oma54t              |oma55               ]
+[oma00   |oma01            |oma02        |oma11    |oma16            |oma23    |oma54t              |oma55               ]
+[oma00   |oma01            |oma02        |oma11    |oma16            |oma23    |oma54t              |oma55               ]
+[oma00   |oma01            |oma02        |oma11    |oma16            |oma23    |oma54t              |oma55               ]
+[oma00   |oma01            |oma02        |oma11    |oma16            |oma23    |oma54t              |oma55               ]
+[oma00   |oma01            |oma02        |oma11    |oma16            |oma23    |oma54t              |oma55               ]
+[oma00   |oma01            |oma02        |oma11    |oma16            |oma23    |oma54t              |oma55               ]
+[oma00   |oma01            |oma02        |oma11    |oma16            |oma23    |oma54t              |oma55               ]
+
+}
+END -- s_oma
+Grid gr2245
+{
+ ---------- Rows [cnt   ] ----------                    A/R Amt Tot [tot01               ]                Contra Amt Tot [tot02               ]
+
+}
+END -- gr2245
+END -- vb5
+END -- axmq240
+
+TABLES
+oma_file
+ATTRIBUTES
+ButtonEdit occ01=formonly.occ01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=2;
+Edit link=formonly.link type CHAR, tabIndex=3, noEntry;
+ComboBox oma00=oma_file.oma00, tabIndex=4, title="Category", not null, required, queryEditable, items=(("11", %"11.Deposit"),("12", %"12.Delivery"),("13", %"13.Balance"),("14", %"14.MISC"),("21", %"21.Allowance"),("22", %"22.Account To Offset"),("23", %"23.Advance Receive00"),("24", %"24.Suspense Credit"),("25", %"25.Discount"),("31", %"31.Non-A/R Invoice"));
+ButtonEdit oma01=oma_file.oma01, action=controlp, tabIndex=5, title="Accounts#", image="zoom";
+DateEdit oma02=oma_file.oma02, tabIndex=6, title="Account Date";
+DateEdit oma11=oma_file.oma11, tabIndex=7, title="A/R Date";
+Edit oma16=oma_file.oma16, tabIndex=8, title="Reference Doc#";
+ButtonEdit oma23=oma_file.oma23, action=controlp, tabIndex=9, title="Currency", image="zoom";
+Edit oma54t=oma_file.oma54t, tabIndex=10, title="A/R Amount", not null, required;
+Edit oma55=oma_file.oma55, tabIndex=11, title="Contra\'d Amt", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit tot01=formonly.tot01 type CHAR, tabIndex=13, noEntry;
+Edit tot02=formonly.tot02 type CHAR, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oma(oma_file.oma00,oma_file.oma01,oma_file.oma02,oma_file.oma11,oma_file.oma16,oma_file.oma23,oma_file.oma54t,oma_file.oma55)
+SCREEN RECORD Undefined(formonly.occ01,formonly.occ02,formonly.link,formonly.cnt,formonly.tot01,formonly.tot02)
+END -- INSTRUCTIONS
+

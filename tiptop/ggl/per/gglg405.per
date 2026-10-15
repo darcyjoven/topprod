@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglg405.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gglr405")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                      >
+  Book no.            [b         ]
+  Report Structure    [a         ]
+  Year Period         [yy        ]
+                      [bm        ]-[em        ]
+ <                                               >
+ <G group02                                      >
+ [e                                    ]
+ [h                                            ]
+ <                                               >
+}
+END -- gr1
+Grid gr2
+{
+[more                                 ]
+
+
+}
+END -- gr2
+END -- VBox1
+END -- gglr405
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P> Query Book No.";
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Report No.";
+Edit yy=formonly.yy type SMALLINT, tabIndex=3;
+Edit bm=formonly.bm type SMALLINT, tabIndex=4;
+Edit em=formonly.em type SMALLINT, tabIndex=5;
+Group group02:group02;
+CheckBox e=formonly.e type CHAR, tabIndex=6, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=8, text="Monetary Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.b,formonly.a,formonly.yy,formonly.bm,formonly.em,formonly.e,formonly.h,formonly.more)
+END -- INSTRUCTIONS
+

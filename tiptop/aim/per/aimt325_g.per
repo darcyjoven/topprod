@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt325_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt324_g")
+Folder pc985
+Page page01
+Grid gr5269
+{
+ <G group01                                      >
+  [a                           ]
+  [                            ]
+  [                            ]
+ <                                               >
+ <G gb2                                          >
+  Transfer-out WH               [imn04       ]
+  Transfer-out Location         [imn05       ]
+  Transfer-in WH                [imn15       ]
+  Transfer-in Location          [imn16       ]
+  Reason                        [imn28       ]
+ <                                               >
+
+
+
+}
+END -- gr5269
+END -- page01
+END -- pc985
+END -- aimt325_g
+
+ATTRIBUTES
+Group group01:group01, text="Body Entry By";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=1, items=(("1", "Enter"),("2", "Batch P/R by W/O Demand"),("3", "Expand P/R by BOM"));
+Group gb2:gb2;
+ButtonEdit imn04=formonly.imn04 type CHAR, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit imn05=formonly.imn05 type CHAR, action=controlp, tabIndex=3, image="zoom.png";
+ButtonEdit imn15=formonly.imn15 type CHAR, action=controlp, tabIndex=4, image="zoom.png";
+ButtonEdit imn16=formonly.imn16 type CHAR, action=controlp, tabIndex=5, image="zoom.png";
+ButtonEdit imn28=formonly.imn28 type CHAR, action=controlp, tabIndex=6, image="zoom.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.imn04,formonly.imn05,formonly.imn15,formonly.imn16,formonly.imn28)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi121.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox1
+Grid ds1
+{
+
+[label4  |lmystore  ]         [rtz13               ]
+[label3  |lmylegal  ]         [azt02               ]
+[label1  |lmy01     ]         [lmb03               ]
+[label2  |lmy02     ]         [lmc04               ]
+
+}
+END -- ds1
+Table ds2
+{
+[lmy03     |lmy04                         |lmy05               |lmy06               |lmy07               |lmyacti  ]
+[lmy03     |lmy04                         |lmy05               |lmy06               |lmy07               |lmyacti  ]
+[lmy03     |lmy04                         |lmy05               |lmy06               |lmy07               |lmyacti  ]
+[lmy03     |lmy04                         |lmy05               |lmy06               |lmy07               |lmyacti  ]
+[lmy03     |lmy04                         |lmy05               |lmy06               |lmy07               |lmyacti  ]
+}
+END -- ds2
+Grid Grid1
+{
+
+-------- [label][idx ] / [cnt ] -------- [labe1][cn2  ] --------
+}
+END -- Grid1
+END -- VBox1
+END -- Page1
+Page Page2(text=%"Page2")
+VBox VBox2
+Table ds3
+{
+[lmystor1  |rtz11     |lmylega1  |azt01      |lmy08     |lmb01      |lmy09     |lmc01        |lmy00     |lmy0a         |lmy0b      |lmy0c      |lmy0d      |lmyact1 ]
+[lmystor1  |rtz11     |lmylega1  |azt01      |lmy08     |lmb01      |lmy09     |lmc01        |lmy00     |lmy0a         |lmy0b      |lmy0c      |lmy0d      |lmyact1 ]
+[lmystor1  |rtz11     |lmylega1  |azt01      |lmy08     |lmb01      |lmy09     |lmc01        |lmy00     |lmy0a         |lmy0b      |lmy0c      |lmy0d      |lmyact1 ]
+[lmystor1  |rtz11     |lmylega1  |azt01      |lmy08     |lmb01      |lmy09     |lmc01        |lmy00     |lmy0a         |lmy0b      |lmy0c      |lmy0d      |lmyact1 ]
+[lmystor1  |rtz11     |lmylega1  |azt01      |lmy08     |lmb01      |lmy09     |lmc01        |lmy00     |lmy0a         |lmy0b      |lmy0c      |lmy0d      |lmyact1 ]
+
+}
+END -- ds3
+Grid Grid2
+{
+
+    ----------[cnt1      |cnt2      ]----------
+}
+END -- Grid2
+END -- VBox2
+END -- Page2
+END -- Folder1
+END -- Form
+
+TABLES
+lmy_file1=lmy_file,
+lmy_file,
+lmc_file,
+lmb_file,
+azt_file,
+rtz_file
+ATTRIBUTES
+Label label4:Label4, text=%"lmystore";
+ButtonEdit lmystore=lmy_file.lmystore, action=controlp, tabIndex=4, noEntry, not null, required, image="zoom", scroll;
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=5, noEntry;
+Label label3:Label3, text=%"lmylegal";
+ButtonEdit lmylegal=lmy_file.lmylegal, action=controlp, tabIndex=3, noEntry, not null, required, image="zoom", scroll;
+Edit azt02=formonly.azt02 type CHAR, tabIndex=6, noEntry;
+Label label1:Label1, text=%"lmy01";
+ButtonEdit lmy01=lmy_file.lmy01, action=controlp, tabIndex=1, not null, required, image="zoom", scroll;
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=7, noEntry;
+Label label2:Label2, text=%"lmy02";
+ButtonEdit lmy02=lmy_file.lmy02, action=controlp, tabIndex=2, not null, required, image="zoom", scroll;
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=8, noEntry;
+ButtonEdit lmy03=lmy_file.lmy03, action=controlp, tabIndex=9, title=%"lmy03", not null, required, image="zoom", scroll;
+Edit lmy04=lmy_file.lmy04, tabIndex=10, title=%"lmy04", scroll;
+Edit lmy05=lmy_file.lmy05, tabIndex=11, title=%"lmy05", noEntry, scroll;
+Edit lmy06=lmy_file.lmy06, tabIndex=12, title=%"lmy06", noEntry, scroll;
+Edit lmy07=lmy_file.lmy07, tabIndex=13, title=%"lmy07", noEntry, scroll;
+CheckBox lmyacti=lmy_file.lmyacti, tabIndex=14, title=%"lmyacti", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label:Label5, text=%"cnt";
+Edit idx=formonly.idx type CHAR, tabIndex=29;
+Edit cnt=formonly.cnt type CHAR, tabIndex=30;
+Label labe1:Label6, text=%"cnt2";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=31;
+Edit lmystor1=lmy_file1.lmystore, tabIndex=15, title=%"lmystore", not null, scroll;
+Edit rtz11=rtz_file.rtz13, tabIndex=16, title=%"rtz13", scroll;
+Edit lmylega1=lmy_file1.lmylegal, tabIndex=17, title=%"lmylegal", scroll;
+Edit azt01=azt_file.azt02, tabIndex=18, title=%"azt02", scroll;
+Edit lmy08=lmy_file1.lmy01, tabIndex=19, title=%"lmy01", not null, scroll;
+Edit lmb01=lmb_file.lmb03, tabIndex=20, title=%"lmb03", scroll;
+Edit lmy09=lmy_file1.lmy02, tabIndex=21, title=%"lmy02", not null, scroll;
+Edit lmc01=lmc_file.lmc04, tabIndex=22, title=%"lmc04", scroll;
+Edit lmy00=lmy_file1.lmy03, tabIndex=23, title=%"lmy03", not null, scroll;
+Edit lmy0a=lmy_file1.lmy04, tabIndex=24, title=%"lmy04", scroll;
+Edit lmy0b=lmy_file1.lmy05, tabIndex=25, title=%"lmy05", scroll;
+Edit lmy0c=lmy_file1.lmy06, tabIndex=26, title=%"lmy06", scroll;
+Edit lmy0d=lmy_file1.lmy07, tabIndex=27, title=%"lmy07", scroll;
+CheckBox lmyact1=lmy_file1.lmyacti, tabIndex=28, title=%"lmyacti", not null, valueChecked = "Y", valueUnchecked = "N";
+Label cnt1:cnt1, text=%"Label7";
+Edit cnt2=formonly.cnt1 type CHAR, tabIndex=32;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(lmy_file.lmy01,lmy_file.lmy02,lmy_file.lmylegal,lmy_file.lmystore,formonly.rtz13,formonly.azt02,formonly.lmb03,formonly.lmc04)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2,formonly.cnt1)
+SCREEN RECORD s_lmy(lmy_file.lmy03,lmy_file.lmy04,lmy_file.lmy05,lmy_file.lmy06,lmy_file.lmy07,lmy_file.lmyacti)
+SCREEN RECORD s_lmy_l(lmy_file1.lmystore,rtz_file.rtz13,lmy_file1.lmylegal,azt_file.azt02,lmy_file1.lmy01,lmb_file.lmb03,lmy_file1.lmy02,lmc_file.lmc04,lmy_file1.lmy03,lmy_file1.lmy04,lmy_file1.lmy05,lmy_file1.lmy06,lmy_file1.lmy07,lmy_file1.lmyacti)
+END -- INSTRUCTIONS
+

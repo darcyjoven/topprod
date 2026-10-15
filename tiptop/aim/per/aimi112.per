@@ -1,0 +1,164 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi112.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi112")
+VBox vb63
+Folder pc536
+Page page01(text="Main")
+Grid gr2985
+{
+ <G group01                                                                               ><G group06  >
+  Item Group Code     [imz01     ]                                                           [imgmksg]
+  Description         [imz02                         ]                                       [       ]
+  Source Code         [imz08     ]
+  Inventory Unit      [imz25     ]
+  Menu No.            [imz03               ]
+
+ <                                                                                        ><           >
+
+}
+END -- gr2985
+END -- page01
+Page info(text="Info")
+Grid gr2986
+{
+ Record Owner        [imzuser   ] Last Modified by    [imzmodu   ] Data Valid Code     [imzacti   ]
+ Department          [imzgrup   ] Create/Modify Date  [imzdate   ]
+ Record Orig.        [imzoriu   ]
+ Dept Orig.          [imzorig   ]
+}
+END -- gr2986
+END -- info
+END -- pc536
+Folder pc537
+Page page02(text="WO/LT/Routing")
+Grid gr2987
+{
+ <G group02                                 ><G group03                                            >
+ [imz70                    ]                   Fixed Lead Tm       [imz59    ]
+  Production Unit     [imz55               ]   Variable Lead Tm    [imz60    ]
+  Pro./Inv Con.Rt     [imz55_fac           ]   Vari Lead Tm Lot    [imz601   ]
+  W/O Explosion Option[imz110              ]   QC Lead Tm          [imz61    ]
+  Pro. Unit Lot Size  [imz56               ]   Accumulated Lead Tm [imz62    ]
+  Min. Production Qty [imz561              ]   ------------------------------------------------
+  Pro. Wastage Rt%    [imz562              ]   Default Routing Itm#[imz571                        ]
+                                               Default Routing#    [imz94 ] [ecu03      ]
+ <                                          >  WO complete         [imz153              ]
+                                             <                                                     >
+}
+END -- gr2987
+END -- page02
+Page page03(text="Planning/Issue/Store")
+HBox HBox1
+Grid gr2988
+{
+ <G group04                                >
+  Planner                 [imz67     ]
+                          [gen02     ]
+  Requirement Time Bucket [imz68     ]
+  Planning Time Bucket    [imz69     ]
+
+ <                                         >
+
+
+}
+END -- gr2988
+Grid gr2989
+{
+ <G group05                                   >
+   Issuing Unit          [imz63       ]
+   Issuing/Inv Con Rt    [imz63_fac          ]
+  [imz108                                    ]
+   Issuing unit Lot Qty  [imz64              ]
+   Min Issue Qty         [imz641             ]
+
+ <                                            >
+
+}
+END -- gr2989
+Grid gr2990
+{
+ <G group07                          >
+   Main WIP Warehouse    [imz136    ]
+   Main WIP Location     [imz137    ]
+
+ <                                   >
+
+
+
+
+}
+END -- gr2990
+END -- HBox1
+END -- page03
+END -- pc537
+Grid gr2991
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2991
+END -- vb63
+END -- aimi112
+
+TABLES
+imz_file
+ATTRIBUTES
+Group group01:group01;
+Edit imz01=imz_file.imz01, tabIndex=1, noEntry;
+Edit imz02=imz_file.imz02, tabIndex=2, noEntry;
+Edit imz08=imz_file.imz08, tabIndex=3, noEntry;
+Edit imz25=imz_file.imz25, tabIndex=4, noEntry;
+Edit imz03=imz_file.imz03, tabIndex=5, noEntry;
+Group group06:group06;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit imzuser=imz_file.imzuser, tabIndex=6, noEntry;
+Edit imzmodu=imz_file.imzmodu, tabIndex=7, noEntry;
+Edit imzacti=imz_file.imzacti, tabIndex=8, noEntry, upShift;
+Edit imzgrup=imz_file.imzgrup, tabIndex=9, noEntry;
+DateEdit imzdate=imz_file.imzdate, tabIndex=10, noEntry;
+Edit imzoriu=imz_file.imzoriu, tabIndex=501, noEntry;
+Edit imzorig=imz_file.imzorig, tabIndex=502, noEntry;
+Group group02:group02;
+CheckBox imz70=imz_file.imz70, tabIndex=11, text="Consumable", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit imz55=imz_file.imz55, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry  Unit  <^Y>Create Unit    <^U>/<^T>Create Item/Unit conversion";
+Edit imz55_fac=imz_file.imz55_fac, tabIndex=13;
+ComboBox imz110=imz_file.imz110, tabIndex=14, not null, required, queryEditable, items=(("1", "Not Explosion"),("2", "Not Explode but Auto Open W/O"),("3", "Explosion"),("4", "Ask For"));
+Edit imz56=imz_file.imz56, tabIndex=15;
+Edit imz561=imz_file.imz561, tabIndex=16;
+Edit imz562=imz_file.imz562, tabIndex=17;
+Group group03:group03;
+Edit imz59=imz_file.imz59, tabIndex=18;
+Edit imz60=imz_file.imz60, tabIndex=19;
+Edit imz601=imz_file.imz601, tabIndex=20;
+Edit imz61=imz_file.imz61, tabIndex=21;
+Edit imz62=imz_file.imz62, tabIndex=22;
+ButtonEdit imz571=imz_file.imz571, action=controlp, tabIndex=23, image="zoom", comment="<^P> Qry Routing Item";
+ButtonEdit imz94=imz_file.imz94, action=controlp, tabIndex=24, image="zoom", comment="<^P> Qry Routing NO.";
+Edit ecu03=formonly.ecu03 type CHAR, tabIndex=25, noEntry;
+Edit imz153=imz_file.imz153, tabIndex=26;
+Group group04:group04;
+ButtonEdit imz67=imz_file.imz67, action=controlp, tabIndex=27, image="zoom", comment="<^P> Qry  Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=28, noEntry;
+Edit imz68=imz_file.imz68, tabIndex=29;
+Edit imz69=imz_file.imz69, tabIndex=30;
+Group group05:group05;
+ButtonEdit imz63=imz_file.imz63, action=controlp, tabIndex=31, image="zoom", comment="<^P>Qry  Unit  <^Y>Create Unit    <^U>/<^T>Create Item/Unit conversion";
+Edit imz63_fac=imz_file.imz63_fac, tabIndex=32;
+CheckBox imz108=imz_file.imz108, tabIndex=33, text="Transfer before W/O Issuing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit imz64=imz_file.imz64, tabIndex=34;
+Edit imz641=imz_file.imz641, tabIndex=35;
+Group group07:group07;
+ButtonEdit imz136=imz_file.imz136, action=controlp, tabIndex=36, image="zoom", comment="<^P> Qry Warehouse";
+ButtonEdit imz137=imz_file.imz137, action=controlp, tabIndex=37, image="zoom", comment="<^P> Qry Warehouse/Location Data";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=38;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(imz_file.imz01,imz_file.imz02,imz_file.imz08,imz_file.imz25,imz_file.imz03,formonly.imgmksg,imz_file.imzuser,imz_file.imzmodu,imz_file.imzacti,imz_file.imzgrup,imz_file.imzdate,imz_file.imzoriu,imz_file.imzorig,imz_file.imz70,imz_file.imz55,imz_file.imz55_fac,imz_file.imz110,imz_file.imz56,imz_file.imz561,imz_file.imz562,imz_file.imz59,imz_file.imz60,imz_file.imz601,imz_file.imz61,imz_file.imz62,imz_file.imz571,imz_file.imz94,formonly.ecu03,imz_file.imz153,imz_file.imz67,formonly.gen02,imz_file.imz68,imz_file.imz69,imz_file.imz63,imz_file.imz63_fac,imz_file.imz108,imz_file.imz64,imz_file.imz641,imz_file.imz136,imz_file.imz137,formonly.cnt)
+END -- INSTRUCTIONS
+

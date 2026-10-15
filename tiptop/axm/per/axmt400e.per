@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt400e.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmt400e")
+VBox VBox1
+Folder pc571
+Page page01(text="Page01")
+Grid gr2505
+{
+ <G group01                            >
+  Order No.       [oeb01              ]
+  Order Line#     [oeb03              ]
+ <                                     >
+ <G group02                            >
+  Enter Purchase Requisite [slip      ]
+
+
+
+ [a                             ]
+
+
+
+
+
+ <                                     >
+
+
+
+}
+END -- gr2505
+END -- page01
+END -- pc571
+END -- VBox1
+END -- axmt400e
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit oeb01=formonly.oeb01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry OrderNo.   ";
+ButtonEdit oeb03=formonly.oeb03 type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Qry Order Line# ";
+Group group02:group02;
+ButtonEdit slip=formonly.slip type VARCHAR, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P> Qry PR Type  ";
+CheckBox a=formonly.a type CHAR, tabIndex=4, default = "N", text=%"BOM zhankai ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oeb01,formonly.oeb03,formonly.slip,formonly.a)
+END -- INSTRUCTIONS
+

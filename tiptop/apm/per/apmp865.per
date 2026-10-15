@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp865.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp865")
+VBox VBox1
+Grid gr4958
+{
+ <G group01                                  >
+  Delivery Note No.   [oga01               ]
+  Date                [oga02               ]
+ <                                           >
+
+}
+END -- gr4958
+Group g01(text="INPUT")
+VBox VBox2
+Grid gr4959
+{
+ A/P Enter Account Date [g_date      ][dummy01                ]
+
+}
+END -- gr4959
+END -- VBox2
+END -- g01
+Grid gr4960
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr4960
+END -- VBox1
+END -- apmp865
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit oga01=formonly.oga01 type CHAR, tabIndex=1, upShift;
+DateEdit oga02=formonly.oga02 type DATE, tabIndex=2;
+DateEdit g_date=formonly.g_date type DATE, tabIndex=3;
+Label dummy01:dummy01, text="(Blank:By O.Doc.D)";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=4, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oga01,formonly.oga02,formonly.g_date,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi123.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi123")
+VBox VBox1
+Folder folder01
+Page page01(text="main")
+Grid gr2023
+{
+  substitute grup [ocm01      ]
+  customer no.    [ocm05      ]
+  effective date  [ocm03      ]
+  expiry date     [ocm04      ]
+}
+END -- gr2023
+END -- page01
+END -- folder01
+Table s_ocm
+{
+[ocm02               |ima02                                  |ima021                        |ocm06  ]
+[ocm02               |ima02                                  |ima021                        |ocm06  ]
+
+}
+END -- s_ocm
+Grid gr2024
+{
+ ----------Rows[cnt]/[cnd]----------------
+
+}
+END -- gr2024
+END -- VBox1
+END -- axmi123
+
+TABLES
+ocm_file
+ATTRIBUTES
+Edit ocm01=ocm_file.ocm01, tabIndex=1, not null, required, comment="KEY Field,No Blank/Repeated!";
+ButtonEdit ocm05=ocm_file.ocm05, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Details";
+DateEdit ocm03=ocm_file.ocm03, tabIndex=3, not null, required;
+DateEdit ocm04=ocm_file.ocm04, tabIndex=4;
+ButtonEdit ocm02=ocm_file.ocm02, action=controlp, tabIndex=5, title="product no.", not null, required, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=6, title="product name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=7, title="product spec.", noEntry;
+Edit ocm06=ocm_file.ocm06, tabIndex=8, title="sub ln#";
+Edit cnt=formonly.cnt type CHAR, tabIndex=9, noEntry;
+Edit cnd=formonly.cnd type CHAR, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ocm(ocm_file.ocm02,formonly.ima02,formonly.ima021,ocm_file.ocm06)
+SCREEN RECORD Undefined(ocm_file.ocm01,ocm_file.ocm05,ocm_file.ocm03,ocm_file.ocm04,formonly.cnt,formonly.cnd)
+END -- INSTRUCTIONS
+

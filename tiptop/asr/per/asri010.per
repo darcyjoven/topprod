@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asri010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asri010")
+VBox VBox1
+Folder pc228
+Page page01(text="Main")
+Table s_eci
+{
+[eci01     |eci06               |eci03      |eca02             |eca06    |eci05   |eci09   |eciacti ]
+[eci01     |eci06               |eci03      |eca02             |eca06    |eci05   |eci09   |eciacti ]
+[eci01     |eci06               |eci03      |eca02             |eca06    |eci05   |eci09   |eciacti ]
+[eci01     |eci06               |eci03      |eca02             |eca06    |eci05   |eci09   |eciacti ]
+[eci01     |eci06               |eci03      |eca02             |eca06    |eci05   |eci09   |eciacti ]
+[eci01     |eci06               |eci03      |eca02             |eca06    |eci05   |eci09   |eciacti ]
+[eci01     |eci06               |eci03      |eca02             |eca06    |eci05   |eci09   |eciacti ]
+[eci01     |eci06               |eci03      |eca02             |eca06    |eci05   |eci09   |eciacti ]
+[eci01     |eci06               |eci03      |eca02             |eca06    |eci05   |eci09   |eciacti ]
+[eci01     |eci06               |eci03      |eca02             |eca06    |eci05   |eci09   |eciacti ]
+
+}
+END -- s_eci
+END -- page01
+END -- pc228
+Grid gr1001
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1001
+END -- VBox1
+END -- asri010
+
+TABLES
+eci_file
+ATTRIBUTES
+ButtonEdit eci01=eci_file.eci01, action=controlp, tabIndex=1, title="Mac No.", not null, required, image="zoom", comment="Key Field, No Blank/Repeated!    <^Y>Enter Item Detail";
+Edit eci06=eci_file.eci06, tabIndex=2, title="Machine Description", not null, required;
+ButtonEdit eci03=eci_file.eci03, action=controlp, tabIndex=3, title="WkCNo.", not null, required, image="zoom", comment=" <^P>Qry Work Center  <^Y>Create Work Center";
+Edit eca02=formonly.eca02 type CHAR, tabIndex=4, title="Description", noEntry;
+ComboBox eca06=formonly.eca06 type CHAR, tabIndex=5, title="Cap Type", noEntry, items=(("1", %"Machine Capacity"),("2", %"Labor Capacity"));
+Edit eci05=eci_file.eci05, tabIndex=6, title="Mac Cap", not null, required;
+Edit eci09=eci_file.eci09, tabIndex=7, title="Lab Cap", not null, required;
+CheckBox eciacti=eci_file.eciacti, tabIndex=8, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_eci(eci_file.eci01,eci_file.eci06,eci_file.eci03,formonly.eca02,formonly.eca06,eci_file.eci05,eci_file.eci09,eci_file.eciacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

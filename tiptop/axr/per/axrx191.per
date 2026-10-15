@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrx191.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group Group1(text=%"QBE")
+Grid Grid1
+{
+
+[label1          ][oma15                     ]
+[label2          ][oma14                     ]
+[label3          ][occ03                     ]
+[label4          ][oma03                     ]
+[label5          ][oma00                     ]
+
+}
+END -- Grid1
+END -- Group1
+Group Group2(text=%"INPUT")
+Grid Grid2
+{
+
+ [aly01          |aly02     ]
+
+ [aly1                            |a                ]
+ [aly2                            |edate            ]
+ [detail                        ]
+ [zr                            ]
+ [org                                    ]
+}
+END -- Grid2
+END -- Group2
+Grid Grid3
+{
+  [more                                    ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- axrr191
+
+TABLES
+occ_file,
+oma_file
+ATTRIBUTES
+Label label1:Label1, text=%"Department No.";
+ButtonEdit oma15=oma_file.oma15, action=controlp, tabIndex=1, image="zoom", scroll;
+Label label2:Label2, text=%"Employee No.";
+ButtonEdit oma14=oma_file.oma14, action=controlp, tabIndex=2, image="zoom", scroll;
+Label label3:Label3, text=%"Customer Cate";
+ButtonEdit occ03=occ_file.occ03, action=controlp, tabIndex=3, image="zoom", scroll;
+Label label4:Label4, text=%"Customer No.";
+ButtonEdit oma03=oma_file.oma03, action=controlp, tabIndex=4, image="zoom", scroll;
+Label label5:Label5, text=%"Accounts Category";
+ComboBox oma00=oma_file.oma00, tabIndex=11, queryEditable, comment="11.Deposit12.Delivery13.Balance14.MISC21.Allowance 22.Account To Offset23.Advance Receive24.Suspense Credit25.Discount31.Non-A/R Invoice", items=(("11", "11.Deposit"),("12", "12.Delivery"),("13", "13.Balance"),("14", "14.MISC"),("15", "15.Deposit"),("16", "16.Receipts "),("17", "17.AR"),("19", "19.Receipts "),("21", "21.Allowance"),("22", "22.Account To Offset"),("23", "23.Advance Receive00"),("24", "24.Suspense Credit"),("25", "25.Discount"),("26", "26.Advance Receipt"),("27", "27.daishou"),("28", "28.daitui"));
+Label aly01:aly01, text=%"Aging Cate";
+ButtonEdit aly02=formonly.aly01 type CHAR, action=controlp, tabIndex=10, image="zoom";
+Label aly1:aly1, text=%"A/R Enter Account Date Opteion";
+ComboBox a=formonly.a type CHAR, tabIndex=5, not null, items=(("1", "Account Date"),("2", "A/R Date"));
+Label aly2:aly2, text=%"A/R Enter Account Deadline";
+DateEdit edate=formonly.edate type CHAR, tabIndex=6;
+CheckBox detail=formonly.detail type CHAR, tabIndex=7, default = "N", text=%"Print Detailed Account?", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox zr=formonly.zr type CHAR, tabIndex=8, default = "N", text=%"Deduct Allowance Data", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox org=formonly.org type CHAR, tabIndex=12, default = "N", text=%"According to the org currency info", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=9, default = "N", text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(oma_file.oma15,oma_file.oma14,occ_file.occ03,oma_file.oma03)
+SCREEN RECORD Undefined(formonly.a,formonly.edate,formonly.detail,formonly.zr,formonly.more,formonly.aly01,oma_file.oma00,formonly.org)
+END -- INSTRUCTIONS
+

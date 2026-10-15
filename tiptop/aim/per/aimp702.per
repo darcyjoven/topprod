@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp702.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimp702")
+Grid gr3
+{
+ <G group01                                                                                                                                   >
+  Adjustment Note No. [adjno             ]                     Trsf-out Note#      [imy03           ]
+  Date of Adjustment  [adjdate     ]                           Trsf Note#          [imy05           ]
+  Trsf-out Plant      [plant     ][azp02               ]       Dept No.            [imm14     ][gem02    ]
+  Trsf-in Note#       [imy01             ]
+ <                                                                                                                                            >
+
+  <T s_imy                                                                                                                                                                                                              >
+  [s_no    |imy02   |imy04   |imy06   |imn03   |ima02   |ima0|ima08|imn04   |imn05   |imn06   |imn09|imn9301 |gem02b  |imn01|imn092 |ims06               |debit        |adjqty              |azf01     |azf03          ]
+  [s_no    |imy02   |imy04   |imy06   |imn03   |ima02   |ima0|ima08|imn04   |imn05   |imn06   |imn09|imn9301 |gem02b  |imn01|imn092 |ims06               |debit        |adjqty              |azf01     |azf03          ]
+  [s_no    |imy02   |imy04   |imy06   |imn03   |ima02   |ima0|ima08|imn04   |imn05   |imn06   |imn09|imn9301 |gem02b  |imn01|imn092 |ims06               |debit        |adjqty              |azf01     |azf03          ]
+  [s_no    |imy02   |imy04   |imy06   |imn03   |ima02   |ima0|ima08|imn04   |imn05   |imn06   |imn09|imn9301 |gem02b  |imn01|imn092 |ims06               |debit        |adjqty              |azf01     |azf03          ]
+  [s_no    |imy02   |imy04   |imy06   |imn03   |ima02   |ima0|ima08|imn04   |imn05   |imn06   |imn09|imn9301 |gem02b  |imn01|imn092 |ims06               |debit        |adjqty              |azf01     |azf03          ]
+  [s_no    |imy02   |imy04   |imy06   |imn03   |ima02   |ima0|ima08|imn04   |imn05   |imn06   |imn09|imn9301 |gem02b  |imn01|imn092 |ims06               |debit        |adjqty              |azf01     |azf03          ]
+  [s_no    |imy02   |imy04   |imy06   |imn03   |ima02   |ima0|ima08|imn04   |imn05   |imn06   |imn09|imn9301 |gem02b  |imn01|imn092 |ims06               |debit        |adjqty              |azf01     |azf03          ]
+  [s_no    |imy02   |imy04   |imy06   |imn03   |ima02   |ima0|ima08|imn04   |imn05   |imn06   |imn09|imn9301 |gem02b  |imn01|imn092 |ims06               |debit        |adjqty              |azf01     |azf03          ]
+  [s_no    |imy02   |imy04   |imy06   |imn03   |ima02   |ima0|ima08|imn04   |imn05   |imn06   |imn09|imn9301 |gem02b  |imn01|imn092 |ims06               |debit        |adjqty              |azf01     |azf03          ]
+  [s_no    |imy02   |imy04   |imy06   |imn03   |ima02   |ima0|ima08|imn04   |imn05   |imn06   |imn09|imn9301 |gem02b  |imn01|imn092 |ims06               |debit        |adjqty              |azf01     |azf03          ]
+  <                                                                                                                                                                                                                     >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr3
+END -- aimp702
+
+TABLES
+imy_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit adjno=formonly.adjno type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Document Property <^Y>Create Doc Property";
+Edit imy03=imy_file.imy03, tabIndex=4, noEntry;
+DateEdit adjdate=formonly.adjdate type DATE, tabIndex=2, not null, required;
+Edit imy05=imy_file.imy05, tabIndex=5, noEntry;
+ButtonEdit plant=formonly.plant type VARCHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Plant  ";
+Edit azp02=formonly.azp02 type VARCHAR, tabIndex=9;
+Edit imm14=formonly.imm14 type CHAR, tabIndex=6, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=8, noEntry;
+ButtonEdit imy01=imy_file.imy01, action=controlp, tabIndex=3, not null, required, image="zoom";
+Table s_imy:s_imy;
+Edit s_no=formonly.s_no type SMALLINT, tabIndex=11, title="Adjust Ln#";
+Edit imy02=imy_file.imy02, tabIndex=10, title="Trsf-in Line#";
+Edit imy04=imy_file.imy04, tabIndex=12, title="Trsf-out Line#", noEntry;
+Edit imy06=imy_file.imy06, tabIndex=13, title="Trsf Line #", noEntry;
+Edit imn03=formonly.imn03 type VARCHAR, tabIndex=14, title="Item No.", noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=15, title="Item Desc", noEntry;
+Edit ima0=formonly.ima05 type VARCHAR, tabIndex=16, title="Version", noEntry;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=17, title="Source Code", noEntry;
+Edit imn04=formonly.imn04 type VARCHAR, tabIndex=18, title="Warehouse #", noEntry;
+Edit imn05=formonly.imn05 type VARCHAR, tabIndex=19, title="Location", noEntry;
+Edit imn06=formonly.imn06 type VARCHAR, tabIndex=20, title="Lot#", noEntry;
+Edit imn09=formonly.imn09 type VARCHAR, tabIndex=21, title="Inv Unit", noEntry;
+Edit imn9301=formonly.imn9301 type VARCHAR, tabIndex=22, title="Cost Center", noEntry;
+Edit gem02b=formonly.gem02b type VARCHAR, tabIndex=23, title="Desc", noEntry;
+Edit imn01=formonly.imn091 type VARCHAR, tabIndex=24, title="Inv Class", noEntry;
+Edit imn092=formonly.imn092 type VARCHAR, tabIndex=25, title="Look Code", noEntry;
+Edit ims06=formonly.ims06 type DECIMAL, tabIndex=26, title="Book Trsf-Out Qty", noEntry;
+ButtonEdit debit=formonly.debit type CHAR, action=controlp, tabIndex=27, title="Adjust Account", image="zoom";
+Edit adjqty=formonly.adjqty type DECIMAL, tabIndex=28, title="Actual Trsf-out Qty";
+ButtonEdit azf01=formonly.azf01 type CHAR, action=controlp, tabIndex=29, title="Reason Code", image="zoom";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=30, title="Reason", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imy(formonly.s_no,imy_file.imy02,imy_file.imy04,imy_file.imy06,formonly.imn03,formonly.ima02,formonly.ima05,formonly.ima08,formonly.imn04,formonly.imn05,formonly.imn06,formonly.imn09,formonly.imn9301,formonly.gem02b,formonly.imn091,formonly.imn092,formonly.ims06,formonly.debit,formonly.adjqty,formonly.azf01,formonly.azf03)
+SCREEN RECORD Undefined(formonly.adjno,imy_file.imy03,formonly.adjdate,imy_file.imy05,formonly.plant,formonly.azp02,formonly.imm14,formonly.gem02,imy_file.imy01)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp5101_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="asfp5101_1")
+VBox vb2
+Grid gr1
+{
+
+  Item No.          [rvbs021                    ] Inventory Unit [ima25              ]
+  Item Name         [ima02                      ] Conversion Rate[fac                ]
+  Item Specification[ima021                     ] Stock          [qty                ]
+
+}
+END -- gr1
+Table tb1
+{
+[rvbs03        |rvbs04         |rvbs05            |rvbs06           |temp06           ]
+[rvbs03        |rvbs04         |rvbs05            |rvbs06           |temp06           ]
+[rvbs03        |rvbs04         |rvbs05            |rvbs06           |temp06           ]
+[rvbs03        |rvbs04         |rvbs05            |rvbs06           |temp06           ]
+[rvbs03        |rvbs04         |rvbs05            |rvbs06           |temp06           ]
+
+}
+END -- tb1
+END -- vb2
+END -- asfp5101_1
+
+ATTRIBUTES
+Edit rvbs021=formonly.rvbs021 type VARCHAR, tabIndex=1, noEntry;
+Edit ima25=formonly.ima25 type VARCHAR, tabIndex=4, noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=2, noEntry;
+Edit fac=formonly.fac type DECIMAL, tabIndex=5, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=3, not null;
+Edit qty=formonly.qty type DECIMAL, tabIndex=6, noEntry;
+Edit rvbs03=formonly.rvbs03 type VARCHAR, tabIndex=7, title="Serial No.", noEntry;
+Edit rvbs04=formonly.rvbs04 type VARCHAR, tabIndex=8, title="Lot No.", noEntry;
+DateEdit rvbs05=formonly.rvbs05 type DATE, tabIndex=9, title="Manufactured on", noEntry;
+Edit rvbs06=formonly.rvbs06 type DECIMAL, tabIndex=10, title="Source Qty", noEntry;
+Edit temp06=formonly.temp06 type DECIMAL, tabIndex=11, title="Qty";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvbs(formonly.rvbs03,formonly.rvbs04,formonly.rvbs05,formonly.rvbs06,formonly.temp06)
+SCREEN RECORD Undefined(formonly.rvbs021,formonly.ima25,formonly.ima02,formonly.fac,formonly.ima021,formonly.qty)
+END -- INSTRUCTIONS
+

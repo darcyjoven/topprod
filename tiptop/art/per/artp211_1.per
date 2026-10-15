@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artp211_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt211_1")
+Table s_rus
+{
+[status  |rus01      |rus04       |rusplant    |azp02     ]
+[status  |rus01      |rus04       |rusplant    |azp02     ]
+[status  |rus01      |rus04       |rusplant    |azp02     ]
+[status  |rus01      |rus04       |rusplant    |azp02     ]
+[status  |rus01      |rus04       |rusplant    |azp02     ]
+
+}
+END -- s_rus
+END -- artt211_1
+
+TABLES
+rus_file
+ATTRIBUTES
+CheckBox status=formonly.status type VARCHAR, tabIndex=1, title="status", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rus01=rus_file.rus01, tabIndex=2, title="rus01", noEntry;
+DateEdit rus04=rus_file.rus04, tabIndex=3, title=%"rus04", noEntry;
+Edit rusplant=rus_file.rusplant, tabIndex=4, title=%"rusplant", noEntry;
+Edit azp02=formonly.azp02 type CHAR, tabIndex=5, title=%"azp02", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rus(formonly.status,rus_file.rus01,rus_file.rus04,rus_file.rusplant,formonly.azp02)
+END -- INSTRUCTIONS
+

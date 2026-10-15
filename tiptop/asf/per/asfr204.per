@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr204.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr204")
+VBox vb1
+Grid gr1
+{
+ <G group01                                                                                          >
+  PBI NO              [g_sfc01         ]
+
+  Work/Order No.      [sfb01           ]  [sfb01           ]  [sfb01           ]  [sfb01           ]
+                      [sfb01           ]  [sfb01           ]  [sfb01           ]  [sfb01           ]
+                      [sfb01           ]  [sfb01           ]  [sfb01           ]  [sfb01           ]
+                      [sfb01           ]  [sfb01           ]  [sfb01           ]  [sfb01           ]
+ <                                                                                                   >
+
+}
+END -- gr1
+Group group03(text="INPUT")
+Grid gr2
+{
+ <G group04                                                               >
+  Trans-out Warehouse [from_w    ]  Trans-in Warehouse [to_w      ]
+  Location            [from_l    ]  Location           [to_l      ]
+  Transport Note      [tr_no     ]  Transport Date     [tr_date     ]
+ <                                                                        >
+ <G group06                                     > <G group05                          >
+  Task No.            [b_seq     ]-[e_seq     ]   [sub_flag                      ]
+  Warehouse Keeper    [b_keeper  ]-[e_keeper  ]
+  [order_sw                    ]
+  [qvl_flag                    ]
+  [a                           ]
+ <                                              > <                                   >
+
+}
+END -- gr2
+END -- group03
+Grid gr3
+{
+[more                                  ]
+
+}
+END -- gr3
+END -- vb1
+END -- asfr204
+
+TABLES
+sfb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit g_sfc01=formonly.g_sfc01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit sfb01=sfb_file.sfb01, tabIndex=2, comment="<^Y>Auto Generate";
+Group group04:group04;
+ButtonEdit from_w=formonly.from_w type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit to_w=formonly.to_w type CHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit from_l=formonly.from_l type CHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit to_l=formonly.to_l type CHAR, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit tr_no=formonly.tr_no type CHAR, action=controlp, tabIndex=7, image="zoom";
+DateEdit tr_date=formonly.tr_date type DATE, tabIndex=8;
+Group group06:group06;
+Edit b_seq=formonly.b_seq type CHAR, tabIndex=9;
+Edit e_seq=formonly.e_seq type CHAR, tabIndex=10;
+Edit b_keeper=formonly.b_keeper type CHAR, tabIndex=11, upShift;
+Edit e_keeper=formonly.e_keeper type CHAR, tabIndex=12, upShift;
+CheckBox order_sw=formonly.order_sw type VARCHAR, tabIndex=13, text="Sequence by W/H Keeper?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox qvl_flag=formonly.qvl_flag type CHAR, tabIndex=14, text="Print QVL.Data  ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox a=formonly.a type VARCHAR, tabIndex=15, text="Print only SMT Item List ?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05, text="SUB Item Method";
+RadioGroup sub_flag=formonly.sub_flag type CHAR, tabIndex=16, items=(("1", "None"),("2", "All Print"),("3", "Print if Inventory Short"));
+CheckBox more=formonly.more type CHAR, tabIndex=17, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_no(sfb_file.sfb01)
+SCREEN RECORD Undefined(formonly.g_sfc01,formonly.from_w,formonly.to_w,formonly.from_l,formonly.to_l,formonly.tr_no,formonly.tr_date,formonly.b_seq,formonly.e_seq,formonly.b_keeper,formonly.e_keeper,formonly.order_sw,formonly.qvl_flag,formonly.a,formonly.sub_flag,formonly.more)
+END -- INSTRUCTIONS
+

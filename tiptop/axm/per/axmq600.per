@@ -1,0 +1,104 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq600")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2272
+{
+  Delivery Note #       [oga01           ]
+  Delivery Date         [oga02       ]
+  Customs Clearance Date[oga021      ]
+  Advice Note #         [oga011          ]
+  Order No.             [oga16           ]
+  Accounts Customer     [oga03     ][oga032    ]
+  Shipping Customer     [oga04     ][occ02     ]
+  [ogaconf         ]
+}
+END -- gr2272
+Grid gr2273
+{
+ Salesman                [oga14     ][gen02     ]
+ Sales Departmen         [oga15     ][gem02     ]
+ Currency Exchange Rate  [oga23     ][oga24     ]
+ Before tax Delivery Amt [oga50                 ]
+ Before tax Deposit Amt  [oga52                 ]
+ Before tax invoice      [oga53                 ]
+ Before tax invoiced     [oga54                 ]
+
+}
+END -- gr2273
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_ogb
+{
+[ogb0|ogb12        |ogb13               |ogb14               |oma10            |omb12       |omb13               |omb14               ]
+[ogb0|ogb12        |ogb13               |ogb14               |oma10            |omb12       |omb13               |omb14               ]
+[ogb0|ogb12        |ogb13               |ogb14               |oma10            |omb12       |omb13               |omb14               ]
+[ogb0|ogb12        |ogb13               |ogb14               |oma10            |omb12       |omb13               |omb14               ]
+[ogb0|ogb12        |ogb13               |ogb14               |oma10            |omb12       |omb13               |omb14               ]
+[ogb0|ogb12        |ogb13               |ogb14               |oma10            |omb12       |omb13               |omb14               ]
+[ogb0|ogb12        |ogb13               |ogb14               |oma10            |omb12       |omb13               |omb14               ]
+[ogb0|ogb12        |ogb13               |ogb14               |oma10            |omb12       |omb13               |omb14               ]
+[ogb0|ogb12        |ogb13               |ogb14               |oma10            |omb12       |omb13               |omb14               ]
+[ogb0|ogb12        |ogb13               |ogb14               |oma10            |omb12       |omb13               |omb14               ]
+
+}
+END -- s_ogb
+Grid gr2274
+{
+ ---------- Rows [cnt   ] ---------- Deld.B-Tax$ Total  [ogb14tot            ] ---------- Invo B-Tax$ Total   [omb14tot            ] ----------
+
+}
+END -- gr2274
+END -- VBox1
+END -- axmq600
+
+TABLES
+oga_file
+ATTRIBUTES
+Edit oga01=oga_file.oga01, tabIndex=1, comment="Enter Query Condition by QBE";
+DateEdit oga02=oga_file.oga02, tabIndex=2, comment="Enter Query Condition by QBE";
+DateEdit oga021=oga_file.oga021, tabIndex=3, comment="Enter Query Condition by QBE";
+Edit oga011=oga_file.oga011, tabIndex=4, comment="Enter Query Condition by QBE";
+Edit oga16=oga_file.oga16, tabIndex=5, comment="Enter Query Condition by QBE";
+ButtonEdit oga03=formonly.oga03 type CHAR, action=controlp, tabIndex=6, image="zoom", comment="Enter Query Condition by QBE";
+Edit oga032=formonly.oga032 type CHAR, tabIndex=7, noEntry;
+ButtonEdit oga04=formonly.oga04 type CHAR, action=controlp, tabIndex=8, image="zoom", comment="Enter Query Condition by QBE";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=9, noEntry;
+CheckBox ogaconf=oga_file.ogaconf, tabIndex=10, text="Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oga14=formonly.oga14 type CHAR, action=controlp, tabIndex=11, image="zoom", comment="Enter Query Condition by QBE";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=12, noEntry;
+ButtonEdit oga15=formonly.oga15 type CHAR, action=controlp, tabIndex=13, image="zoom", comment="Enter Query Condition by QBE";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=14, noEntry;
+Edit oga23=oga_file.oga23, tabIndex=15, comment="Enter Query Condition by QBE";
+Edit oga24=formonly.oga24 type CHAR, tabIndex=16, noEntry;
+Edit oga50=formonly.oga50 type CHAR, tabIndex=17;
+Edit oga52=formonly.oga52 type CHAR, tabIndex=18;
+Edit oga53=formonly.oga53 type CHAR, tabIndex=19;
+Edit oga54=formonly.oga54 type CHAR, tabIndex=20;
+Edit ogb0=formonly.ogb03 type CHAR, tabIndex=21, title="Ln#";
+Edit ogb12=formonly.ogb12 type CHAR, tabIndex=22, title="Delivery Qty";
+Edit ogb13=formonly.ogb13 type CHAR, tabIndex=23, title="Delivery Unit Price";
+Edit ogb14=formonly.ogb14 type CHAR, tabIndex=24, title="Before-Tax Amount";
+Edit oma10=formonly.oma10 type CHAR, tabIndex=25, title="Invoice #";
+Edit omb12=formonly.omb12 type CHAR, tabIndex=26, title="Invoice Qty";
+Edit omb13=formonly.omb13 type CHAR, tabIndex=27, title="Invoice Unit Price";
+Edit omb14=formonly.omb14 type CHAR, tabIndex=28, title="Before-Tax Amount";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29, noEntry;
+Edit ogb14tot=formonly.ogb14tot type CHAR, tabIndex=30;
+Edit omb14tot=formonly.omb14tot type CHAR, tabIndex=31;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogb(formonly.ogb03,formonly.ogb12,formonly.ogb13,formonly.ogb14,formonly.oma10,formonly.omb12,formonly.omb13,formonly.omb14)
+SCREEN RECORD Undefined(oga_file.oga01,oga_file.oga02,oga_file.oga021,oga_file.oga011,oga_file.oga16,formonly.oga03,formonly.oga032,formonly.oga04,formonly.occ02,oga_file.ogaconf,formonly.oga14,formonly.gen02,formonly.oga15,formonly.gem02,oga_file.oga23,formonly.oga24,formonly.oga50,formonly.oga52,formonly.oga53,formonly.oga54,formonly.cnt,formonly.ogb14tot,formonly.omb14tot)
+END -- INSTRUCTIONS
+

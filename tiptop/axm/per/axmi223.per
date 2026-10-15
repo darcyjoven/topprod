@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi223.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi223")
+VBox VBox1
+Folder pc482
+Page page01(text="Page01")
+Group g01(text="Customer Shipping Mark")
+Table s_oci
+{
+[oci03       |oci11               ]
+[oci03       |oci11               ]
+[oci03       |oci11               ]
+[oci03       |oci11               ]
+[oci03       |oci11               ]
+[oci03       |oci11               ]
+[oci03       |oci11               ]
+[oci03       |oci11               ]
+[oci03       |oci11               ]
+[oci03       |oci11               ]
+
+}
+END -- s_oci
+END -- g01
+END -- page01
+END -- pc482
+END -- VBox1
+END -- axmi223
+
+TABLES
+oci_file
+ATTRIBUTES
+Edit oci03=oci_file.oci03, tabIndex=1, title="Serial #", not null, required;
+Edit oci11=oci_file.oci11, tabIndex=2, title="Description", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oci(oci_file.oci03,oci_file.oci11)
+END -- INSTRUCTIONS
+

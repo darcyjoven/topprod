@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfr014.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+[label3       |tc_shb14                      ]
+[label1       |tc_shb15                      ]
+[label2      ][tc_shb03                      ]
+[label4       |tc_shb04                      ]
+[label5       |tc_shb05                      ]
+[label6       |tc_shb08                      ]
+[label11      |ecd02                         ]
+[label7       |tc_shb09                      ]
+[label12      |eca02                         ]
+[label8       |tc_shb11                      ]
+[label13      |gen02                         ]
+[label9       |tc_shb12                      ]
+[label10      |tc_shb121                     ]
+[label14      |ima02                         ]
+[label15      |ima021                        ]
+
+[label16      |sfbud10                        ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- Form
+
+TABLES
+eca_file,
+gen_file,
+sfb_file,
+ima_file,
+ecd_file,
+tc_shb_file
+ATTRIBUTES
+Label label3:Label3, text=%"tc_shb14";
+DateEdit tc_shb14=formonly.tc_shb14 type CHAR, tabIndex=1;
+Label label1:Label1, text=%"tc_shb15";
+Edit tc_shb15=tc_shb_file.tc_shb15, tabIndex=2, scroll;
+Label label2:Label2, text=%"tc_shb03";
+ButtonEdit tc_shb03=tc_shb_file.tc_shb03, action=controlp, tabIndex=3, scroll;
+Label label4:Label4, text=%"tc_shb04";
+ButtonEdit tc_shb04=tc_shb_file.tc_shb04, action=controlp, tabIndex=4, scroll;
+Label label5:Label5, text=%"tc_shb05";
+ButtonEdit tc_shb05=tc_shb_file.tc_shb05, action=controlp, tabIndex=5, scroll;
+Label label6:Label6, text=%"tc_shb08";
+ButtonEdit tc_shb08=tc_shb_file.tc_shb08, action=controlp, tabIndex=6, scroll;
+Label label11:Label11, text=%"ecd02";
+Edit ecd02=ecd_file.ecd02, tabIndex=7, scroll;
+Label label7:Label7, text=%"tc_shb09";
+ButtonEdit tc_shb09=tc_shb_file.tc_shb09, action=controlp, tabIndex=8, scroll;
+Label label12:Label12, text=%"eca02";
+Edit eca02=eca_file.eca02, tabIndex=9, scroll;
+Label label8:Label8, text=%"tc_shb11";
+ButtonEdit tc_shb11=tc_shb_file.tc_shb11, action=controlp, tabIndex=10, scroll;
+Label label13:Label13, text=%"gen02";
+Edit gen02=gen_file.gen02, tabIndex=11, scroll;
+Label label9:Label9, text=%"tc_shb12";
+Edit tc_shb12=tc_shb_file.tc_shb12, tabIndex=12, scroll;
+Label label10:Label10, text=%"tc_shb121";
+Edit tc_shb121=tc_shb_file.tc_shb121, tabIndex=13, scroll;
+Label label14:Label14, text=%"ima02";
+Edit ima02=ima_file.ima02, tabIndex=14, scroll;
+Label label15:Label15, text=%"ima021";
+Edit ima021=ima_file.ima021, tabIndex=15, scroll;
+Label label16:Label16, text=%"sfbud10";
+Edit sfbud10=sfb_file.sfbud10, tabIndex=16, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_shb14,tc_shb_file.tc_shb15,tc_shb_file.tc_shb04,tc_shb_file.tc_shb05,tc_shb_file.tc_shb08,tc_shb_file.tc_shb09,tc_shb_file.tc_shb11,tc_shb_file.tc_shb12,tc_shb_file.tc_shb121,ecd_file.ecd02,eca_file.eca02,gen_file.gen02,ima_file.ima02,ima_file.ima021,sfb_file.sfbud10,tc_shb_file.tc_shb03)
+END -- INSTRUCTIONS
+

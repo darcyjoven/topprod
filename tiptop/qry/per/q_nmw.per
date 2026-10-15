@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_nmw.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Apportionment No.")
+Grid gr3722
+{
+
+ <T s_nmw                                                                                                                                       >
+ [check |nmw01      |nma03                           |nmw06|nmw03                |nmw04          |nmw05          |nna03         |pcnt           ]
+ [check |nmw01      |nma03                           |nmw06|nmw03                |nmw04          |nmw05          |nna03         |pcnt           ]
+ [check |nmw01      |nma03                           |nmw06|nmw03                |nmw04          |nmw05          |nna03         |pcnt           ]
+ [check |nmw01      |nma03                           |nmw06|nmw03                |nmw04          |nmw05          |nna03         |pcnt           ]
+ [check |nmw01      |nma03                           |nmw06|nmw03                |nmw04          |nmw05          |nna03         |pcnt           ]
+ [check |nmw01      |nma03                           |nmw06|nmw03                |nmw04          |nmw05          |nna03         |pcnt           ]
+ [check |nmw01      |nma03                           |nmw06|nmw03                |nmw04          |nmw05          |nna03         |pcnt           ]
+ [check |nmw01      |nma03                           |nmw06|nmw03                |nmw04          |nmw05          |nna03         |pcnt           ]
+ [check |nmw01      |nma03                           |nmw06|nmw03                |nmw04          |nmw05          |nna03         |pcnt           ]
+ [check |nmw01      |nma03                           |nmw06|nmw03                |nmw04          |nmw05          |nna03         |pcnt           ]
+ <                                                                                                                                              >
+
+
+}
+END -- gr3722
+END -- q_nmw
+
+TABLES
+nmw_file
+ATTRIBUTES
+Table s_nmw:s_nmw;
+CheckBox check=formonly.check type CHAR, tabIndex=9, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nmw01=nmw_file.nmw01, tabIndex=10, title="Bank No.", noEntry, comment="<^P>Qry Bank No.";
+Edit nma03=formonly.nma03 type VARCHAR, tabIndex=11, title="Name", noEntry;
+Edit nmw06=nmw_file.nmw06, tabIndex=12, title="Book#", noEntry;
+DateEdit nmw03=nmw_file.nmw03, tabIndex=13, title="Date of Note Taken", noEntry;
+Edit nmw04=nmw_file.nmw04, tabIndex=14, title="Initial No.", noEntry;
+Edit nmw05=nmw_file.nmw05, tabIndex=15, title="Ending No", noEntry;
+Edit nna03=formonly.nna03 type VARCHAR, tabIndex=16, title="Next Check No. to Print", noEntry;
+Edit pcnt=formonly.pcnt type SMALLINT, tabIndex=17, title="Available Pages", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmw(formonly.check,nmw_file.nmw01,formonly.nma03,nmw_file.nmw06,nmw_file.nmw03,nmw_file.nmw04,nmw_file.nmw05,formonly.nna03,formonly.pcnt)
+END -- INSTRUCTIONS
+

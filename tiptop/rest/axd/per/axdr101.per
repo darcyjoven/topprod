@@ -1,0 +1,54 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdr101.per created Wed Jan 23 05:30:38 2008
+-- File created from axdr101.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdr101")
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID gr7809
+    {
+     <G group01                                                    >
+      Customer No.        [aa0       ]
+      Goods No.           [aa1                 ]
+      Lot No.             [aa2                 ]
+     <                                                             >
+      <G group02                                                   >
+       Year               [aa3       ]
+       Month              [aa4       ]-[aa5       ]
+                          [aa6                    ]
+
+      <                                                            >
+
+
+    }
+    END -- GRID
+    GRID gr7810
+    {
+     [aa7                                     ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  EDIT aa0=FORMONLY.adr01, TABINDEX=1;
+  EDIT aa1=FORMONLY.adr02, TABINDEX=2;
+  EDIT aa2=FORMONLY.adr03, TABINDEX=3;
+  GROUP group02 : group02, TEXT="INPUT";
+  EDIT aa3=FORMONLY.yyyy, TABINDEX=4;
+  EDIT aa4=FORMONLY.m1, TABINDEX=5;
+  EDIT aa5=FORMONLY.m2, TABINDEX=6;
+  CHECKBOX aa6=FORMONLY.a TYPE VARCHAR, TEXT="Print Zero BoP Or No Tran. Curr.p", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=7;
+  CHECKBOX aa7=FORMONLY.more TYPE VARCHAR, TEXT="Other conditionto print", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=8;
+END

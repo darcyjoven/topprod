@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_omb1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Delivery Note")
+VBox VBox1
+Grid gr3814
+{
+ Accounts Customer [oma03     ]
+
+}
+END -- gr3814
+Table s_omb
+{
+[check|oma01             |omb03 |omb04          |omb48       ]
+[check|oma01             |omb03 |omb04          |omb48       ]
+[check|oma01             |omb03 |omb04          |omb48       ]
+[check|oma01             |omb03 |omb04          |omb48       ]
+[check|oma01             |omb03 |omb04          |omb48       ]
+[check|oma01             |omb03 |omb04          |omb48       ]
+[check|oma01             |omb03 |omb04          |omb48       ]
+[check|oma01             |omb03 |omb04          |omb48       ]
+[check|oma01             |omb03 |omb04          |omb48       ]
+[check|oma01             |omb03 |omb04          |omb48       ]
+
+}
+END -- s_omb
+END -- VBox1
+END -- q_ogb
+
+TABLES
+omb_file,
+oma_file
+ATTRIBUTES
+Edit oma03=formonly.oma03 type VARCHAR, tabIndex=1;
+CheckBox check=formonly.check type CHAR, tabIndex=2, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oma01=oma_file.oma01, tabIndex=3, title="Delivery Note No.", noEntry;
+Edit omb03=omb_file.omb03, tabIndex=4, title="Line#", noEntry;
+Edit omb04=omb_file.omb04, tabIndex=5, title="Product No.", noEntry;
+Edit omb48=omb_file.omb48, tabIndex=6, title="Invoiced Qty", noEntry, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_omb(formonly.check,oma_file.oma01,omb_file.omb03,omb_file.omb04,omb_file.omb48)
+SCREEN RECORD Undefined(formonly.oma03)
+END -- INSTRUCTIONS
+

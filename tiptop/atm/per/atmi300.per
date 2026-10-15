@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi300")
+VBox vb4
+Folder pc325
+Page page01(text="Main")
+Table s_try
+{
+[try01     |try02   |try03     |ima02     |oeb12          |oeb12_1        |try04          |try10               |try05   |try07 |try08|try09     |try06    ]
+[try01     |try02   |try03     |ima02     |oeb12          |oeb12_1        |try04          |try10               |try05   |try07 |try08|try09     |try06    ]
+[try01     |try02   |try03     |ima02     |oeb12          |oeb12_1        |try04          |try10               |try05   |try07 |try08|try09     |try06    ]
+[try01     |try02   |try03     |ima02     |oeb12          |oeb12_1        |try04          |try10               |try05   |try07 |try08|try09     |try06    ]
+[try01     |try02   |try03     |ima02     |oeb12          |oeb12_1        |try04          |try10               |try05   |try07 |try08|try09     |try06    ]
+[try01     |try02   |try03     |ima02     |oeb12          |oeb12_1        |try04          |try10               |try05   |try07 |try08|try09     |try06    ]
+[try01     |try02   |try03     |ima02     |oeb12          |oeb12_1        |try04          |try10               |try05   |try07 |try08|try09     |try06    ]
+[try01     |try02   |try03     |ima02     |oeb12          |oeb12_1        |try04          |try10               |try05   |try07 |try08|try09     |try06    ]
+[try01     |try02   |try03     |ima02     |oeb12          |oeb12_1        |try04          |try10               |try05   |try07 |try08|try09     |try06    ]
+[try01     |try02   |try03     |ima02     |oeb12          |oeb12_1        |try04          |try10               |try05   |try07 |try08|try09     |try06    ]
+
+}
+END -- s_try
+END -- page01
+END -- pc325
+Grid gr1390
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1390
+END -- vb4
+END -- atmi300
+
+TABLES
+try_file,
+oeb_file
+ATTRIBUTES
+ButtonEdit try01=try_file.try01, action=controlp, tabIndex=1, title="Order No.", image="zoom";
+Edit try02=try_file.try02, tabIndex=2, title="Order Line";
+ButtonEdit try03=try_file.try03, action=controlp, tabIndex=3, title="liao hao", image="zoom";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=4, title="Pin ming";
+Edit oeb12=oeb_file.oeb12, tabIndex=5, title="Yuan ying fan shu liang";
+Edit oeb12_1=formonly.oeb12_1 type DECIMAL, tabIndex=6, title="Yi fan shu liang ";
+Edit try04=try_file.try04, tabIndex=7, title="Xu bu fan shu liang ", required;
+Edit try10=try_file.try10, tabIndex=8, title="Yi bu fan shu liang";
+ButtonEdit try05=try_file.try05, action=controlp, tabIndex=9, title="Xiao shou dan wei ", image="zoom";
+ButtonEdit try07=try_file.try07, action=controlp, tabIndex=10, title="Lai yuan he tong hao ma ", image="zoom";
+Edit try08=try_file.try08, tabIndex=11, title="Lai yuan he tong xiang ci ";
+ButtonEdit try09=try_file.try09, action=controlp, tabIndex=12, title="Li you ma ", required, image="zoom";
+CheckBox try06=try_file.try06, tabIndex=13, title="Wu fan", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_try(try_file.try01,try_file.try02,try_file.try03,formonly.ima02,oeb_file.oeb12,formonly.oeb12_1,try_file.try04,try_file.try10,try_file.try05,try_file.try07,try_file.try08,try_file.try09,try_file.try06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdp020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amdp020")
+VBox vb33
+Grid gr3683
+{
+ <G group01                                               >
+  Department No.      [apa22               ]
+  Accounts Property   [apa00               ]
+  Accounts #          [apa01               ]
+  Account Date        [apa02               ]
+  Invoice Date        [apa09               ]
+  Invoice Number      [apa08               ]
+ <                                                        >
+}
+END -- gr3683
+Group g01
+Grid gr3684
+{
+  Voucher Type        [tran      ]
+  Dept Declaring Tax  [amd22     ]  [dummy01   ]
+ <G group02                                             >
+ [plant_1   ][plant_2   ][plant_3   ][plant_4   ]
+ [plant_5   ][plant_6   ][plant_7   ][plant_8   ]
+ <                                                      >
+
+}
+END -- gr3684
+END -- g01
+Grid gr3685
+{
+[g_bgjob                                       ]
+
+
+}
+END -- gr3685
+END -- vb33
+END -- amdp020
+
+TABLES
+apa_file,
+amd_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit apa22=apa_file.apa22, tabIndex=1;
+Edit apa00=apa_file.apa00, tabIndex=2;
+Edit apa01=apa_file.apa01, tabIndex=3;
+DateEdit apa02=apa_file.apa02, tabIndex=4;
+DateEdit apa09=apa_file.apa09, tabIndex=5;
+Edit apa08=apa_file.apa08, tabIndex=6;
+Edit tran=formonly.tran type VARCHAR, tabIndex=7;
+ButtonEdit amd22=amd_file.amd22, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Query Dept Declaring Tax No Blank Field";
+Label dummy01:dummy01, text="ALL";
+Group group02:group02, text="Plant No.";
+Edit plant_1=formonly.plant_1 type VARCHAR, tabIndex=9;
+Edit plant_2=formonly.plant_2 type VARCHAR, tabIndex=10;
+Edit plant_3=formonly.plant_3 type VARCHAR, tabIndex=11;
+Edit plant_4=formonly.plant_4 type VARCHAR, tabIndex=12;
+Edit plant_5=formonly.plant_5 type VARCHAR, tabIndex=13;
+Edit plant_6=formonly.plant_6 type VARCHAR, tabIndex=14;
+Edit plant_7=formonly.plant_7 type VARCHAR, tabIndex=15;
+Edit plant_8=formonly.plant_8 type VARCHAR, tabIndex=16;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=17, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(apa_file.apa22,apa_file.apa00,apa_file.apa01,apa_file.apa02,apa_file.apa09,apa_file.apa08,formonly.tran,amd_file.amd22,formonly.plant_1,formonly.plant_2,formonly.plant_3,formonly.plant_4,formonly.plant_5,formonly.plant_6,formonly.plant_7,formonly.plant_8,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

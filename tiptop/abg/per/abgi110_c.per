@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi110_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi110_c")
+Folder pc83
+Page page01(text="Main")
+Grid gr604
+{
+ Original Ver.  [old_ver             ]
+ Year           [oyy       ]
+ Customer #     [obgn013             ]
+ Department No. [obgn012             ]
+ Product Type   [obgn014             ]
+ Prd Unit       [obgn11    ]
+ Conv. Rt.      [obgn11_fac          ]
+ New Ver.       [new_ver             ]
+ Year           [nyy       ]
+}
+END -- gr604
+END -- page01
+END -- pc83
+END -- abgi110_c
+
+ATTRIBUTES
+Edit old_ver=formonly.old_ver type CHAR, tabIndex=1;
+Edit oyy=formonly.oyy type CHAR, tabIndex=2;
+Edit obgn013=formonly.obgn013 type CHAR, tabIndex=3;
+Edit obgn012=formonly.obgn012 type CHAR, tabIndex=4;
+Edit obgn014=formonly.obgn014 type CHAR, tabIndex=5;
+Edit obgn11=formonly.obgn11 type CHAR, tabIndex=6;
+Edit obgn11_fac=formonly.obgn11_fac type DECIMAL, tabIndex=7, noEntry;
+Edit new_ver=formonly.new_ver type CHAR, tabIndex=8;
+Edit nyy=formonly.nyy type CHAR, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.old_ver,formonly.oyy,formonly.obgn013,formonly.obgn012,formonly.obgn014,formonly.obgn11,formonly.obgn11_fac,formonly.new_ver,formonly.nyy)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmr730.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmr730")
+VBox VBox1
+Grid gr974
+{
+ <G group01                                  >
+  E.C.N. No.          [bmx01               ]
+  E.C.N.Date          [bmx02               ]
+  Alternate Code      [bmy29               ]
+ <                                           >
+}
+END -- gr974
+Grid gr3
+{
+
+   Bom Style    [bmx50              ]
+[more                                ]
+
+}
+END -- gr3
+END -- VBox1
+END -- abmr730
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit bmx01=formonly.bmx01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit bmx02=formonly.bmx02 type DATE, tabIndex=2;
+Edit bmy29=formonly.bmy29 type VARCHAR, tabIndex=3;
+ComboBox bmx50=formonly.bmx50 type VARCHAR, tabIndex=5, items=(("1", "Product Bom"),("2", "Process Bom"),("3", "All"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bmx01,formonly.bmx02,formonly.bmy29,formonly.bmx50,formonly.more)
+END -- INSTRUCTIONS
+

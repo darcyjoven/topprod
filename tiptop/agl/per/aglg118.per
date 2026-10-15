@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglg118.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid gr1
+{
+
+ <G group1                                                        >
+     Group No.                     [axi05               ]
+     Document No.                  [axi01               ]
+     Document date                 [axi02               ]
+     Adjustment period             [axi03       |axi04       ]
+     To source code                [axi08               ]
+     Type                          [axi081              ]
+ <                                                                >
+
+
+}
+END -- gr1
+Grid gr2
+{
+
+ <G g01                                                               >
+    [e         ]
+     Sort mode   [s            ]
+
+ <                                                                    >
+
+}
+END -- gr2
+Grid Grid3
+{
+
+ [m                                   ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+TABLES
+axi_file
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+ButtonEdit axi05=axi_file.axi05, action=controlp, tabIndex=1, image="zoom";
+Edit axi01=axi_file.axi01, tabIndex=2;
+DateEdit axi02=axi_file.axi02, tabIndex=3;
+Edit axi03=axi_file.axi03, tabIndex=6;
+Edit axi04=axi_file.axi04, tabIndex=7;
+Edit axi08=axi_file.axi08, tabIndex=4;
+Edit axi081=axi_file.axi081, tabIndex=5;
+Group g01:g01, text=%"INPUT";
+CheckBox e=formonly.e type VARCHAR, tabIndex=8, default = "Y", text="examine", valueChecked = "Y", valueUnchecked = "N";
+ComboBox s=formonly.s type CHAR, tabIndex=9, items=(("1", "By borrowing ranking"),("2", "The original entry"));
+CheckBox m=formonly.m type VARCHAR, tabIndex=10, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(axi_file.axi05,axi_file.axi01,axi_file.axi02,axi_file.axi08,axi_file.axi081,axi_file.axi03,axi_file.axi04,formonly.e,formonly.s,formonly.m)
+END -- INSTRUCTIONS
+

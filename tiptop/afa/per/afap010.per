@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afap010")
+VBox vbox1
+Grid gr1895
+{
+ <G group01                                       >
+  AFA Locking Date                  [faa09       ]
+  AFA Locking Date 2                [faa092      ]
+  Fixed Asset Depr-Tax Locking Date [faa13       ]
+
+
+
+ <                                                >
+
+}
+END -- gr1895
+Grid gr1896
+{
+ [g_bgjob                                                      ]
+
+
+
+}
+END -- gr1896
+END -- vbox1
+END -- afap010
+
+ATTRIBUTES
+Group group01:group01;
+DateEdit faa09=formonly.faa09 type DATE, tabIndex=1;
+DateEdit faa092=formonly.faa092 type DATE, tabIndex=1;
+DateEdit faa13=formonly.faa13 type DATE, tabIndex=2;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=4, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.faa09,formonly.faa092,formonly.faa13,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

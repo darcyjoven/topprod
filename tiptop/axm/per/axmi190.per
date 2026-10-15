@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi190.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi190")
+VBox VBox1
+Folder pc440
+Page page01(text="Main")
+Table s_ocn
+{
+[ocn01     |gen02            |ocn02      |ocn03            |ocn04     |ocn05      |ocn06      |ocn07            ]
+[ocn01     |gen02            |ocn02      |ocn03            |ocn04     |ocn05      |ocn06      |ocn07            ]
+[ocn01     |gen02            |ocn02      |ocn03            |ocn04     |ocn05      |ocn06      |ocn07            ]
+[ocn01     |gen02            |ocn02      |ocn03            |ocn04     |ocn05      |ocn06      |ocn07            ]
+[ocn01     |gen02            |ocn02      |ocn03            |ocn04     |ocn05      |ocn06      |ocn07            ]
+[ocn01     |gen02            |ocn02      |ocn03            |ocn04     |ocn05      |ocn06      |ocn07            ]
+[ocn01     |gen02            |ocn02      |ocn03            |ocn04     |ocn05      |ocn06      |ocn07            ]
+[ocn01     |gen02            |ocn02      |ocn03            |ocn04     |ocn05      |ocn06      |ocn07            ]
+[ocn01     |gen02            |ocn02      |ocn03            |ocn04     |ocn05      |ocn06      |ocn07            ]
+[ocn01     |gen02            |ocn02      |ocn03            |ocn04     |ocn05      |ocn06      |ocn07            ]
+
+}
+END -- s_ocn
+END -- page01
+END -- pc440
+Grid gr1992
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1992
+END -- VBox1
+END -- axmi190
+
+TABLES
+ocn_file
+ATTRIBUTES
+ButtonEdit ocn01=ocn_file.ocn01, action=controlp, tabIndex=1, title="No", not null, required, image="zoom", comment="<^P> Qry Details";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=2, title="Name", noEntry;
+Edit ocn02=ocn_file.ocn02, tabIndex=3, title="Amount 1", not null, required;
+Edit ocn03=ocn_file.ocn03, tabIndex=4, title="Amount 2", noEntry, not null, required;
+Edit ocn04=ocn_file.ocn04, tabIndex=5, title="Amount 3", noEntry, not null, required;
+DateEdit ocn05=ocn_file.ocn05, tabIndex=6, title="Date", not null, required;
+CheckBox ocn06=ocn_file.ocn06, tabIndex=7, title="Vaild", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ocn07=ocn_file.ocn07, tabIndex=8, title="Data";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ocn(ocn_file.ocn01,formonly.gen02,ocn_file.ocn02,ocn_file.ocn03,ocn_file.ocn04,ocn_file.ocn05,ocn_file.ocn06,ocn_file.ocn07)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

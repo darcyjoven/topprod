@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli501")
+VBox VBox1
+Folder pc476
+Page page01(text="Main")
+VBox VBox2
+Table s_atj
+{
+[atj01      |atj02                    |atj03     |atj05]
+[atj01      |atj02                    |atj03     |atj05]
+[atj01      |atj02                    |atj03     |atj05]
+[atj01      |atj02                    |atj03     |atj05]
+[atj01      |atj02                    |atj03     |atj05]
+[atj01      |atj02                    |atj03     |atj05]
+[atj01      |atj02                    |atj03     |atj05]
+[atj01      |atj02                    |atj03     |atj05]
+[atj01      |atj02                    |atj03     |atj05]
+[atj01      |atj02                    |atj03     |atj05]
+
+}
+END -- s_atj
+END -- VBox2
+END -- page01
+END -- pc476
+Grid gr2465
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr2465
+END -- VBox1
+END -- ggli501
+
+TABLES
+atj_file
+ATTRIBUTES
+Edit atj01=atj_file.atj01, tabIndex=1, title="Group Code", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit atj02=atj_file.atj02, tabIndex=2, title="Description";
+ComboBox atj03=atj_file.atj03, tabIndex=3, title="Var.Class", not null, required, queryEditable, items=(("1", %"Business Activity"),("2", %"Investment"),("3", %"Financial Activity"),("4", %"Beatkning Of Period Amount"),("5", %"End Of Period Amount"),("6", %"Expose The Matters"));
+Edit atj05=atj_file.atj05, tabIndex=4, title="Line";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_atj(atj_file.atj01,atj_file.atj02,atj_file.atj03,atj_file.atj05)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

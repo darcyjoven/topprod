@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi222.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi222")
+VBox VBox1
+Folder Folder1
+Page page01(text="Page01")
+VBox VBox2
+ScrollGrid ScrollGrid1
+{
+
+[dummy1   ][dummy2   ][dummy3                              ]
+[oci02    ][oci03    ][oci11                               ]
+                      [oci12                               ]
+                      [oci13                               ]
+                      [oci14                               ]
+[oci02    ][oci03    ][oci11                               ]
+                      [oci12                               ]
+                      [oci13                               ]
+                      [oci14                               ]
+[oci02    ][oci03    ][oci11                               ]
+                      [oci12                               ]
+                      [oci13                               ]
+                      [oci14                               ]
+
+}
+END -- ScrollGrid1
+END -- VBox2
+END -- page01
+END -- Folder1
+END -- VBox1
+END -- axmi222
+
+TABLES
+oci_file
+ATTRIBUTES
+Label dummy1:dummy1, text="Category";
+Label dummy2:dummy2, text="Serial";
+Label dummy3:dummy3, text="Description";
+ComboBox oci02=oci_file.oci02, tabIndex=1, not null, required, queryEditable, items=(("90", %"Notify"),("99", %"Consignee"));
+Edit oci03=oci_file.oci03, tabIndex=2, not null, required;
+Edit oci11=oci_file.oci11, tabIndex=3, not null, required;
+Edit oci12=oci_file.oci12, tabIndex=4;
+Edit oci13=oci_file.oci13, tabIndex=5;
+Edit oci14=oci_file.oci14, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oci(oci_file.oci02,oci_file.oci03,oci_file.oci11,oci_file.oci12,oci_file.oci13,oci_file.oci14)
+END -- INSTRUCTIONS
+

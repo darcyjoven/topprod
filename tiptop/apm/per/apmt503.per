@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt503.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt503")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr5280
+{
+ P/O No.  [pmm01           ]
+
+}
+END -- gr5280
+END -- page01
+Page info(text="Info")
+Grid gr5281
+{
+ Record Owner        [pmmuser   ]  Last Modified by    [pmmmodu   ]    Data Valid Code     [pmmacti   ]
+ Department          [pmmgrup   ]  Create/Modify Date  [pmmdate     ]
+ Record Orig.        [pmmoriu   ]
+ Dept Orig.          [pmmorig   ]
+}
+END -- gr5281
+END -- info
+END -- folder01
+Table s_pmp
+{
+[pmp03       |pmp04  |pmp05                                                   ]
+[pmp03       |pmp04  |pmp05                                                   ]
+[pmp03       |pmp04  |pmp05                                                   ]
+[pmp03       |pmp04  |pmp05                                                   ]
+[pmp03       |pmp04  |pmp05                                                   ]
+[pmp03       |pmp04  |pmp05                                                   ]
+[pmp03       |pmp04  |pmp05                                                   ]
+[pmp03       |pmp04  |pmp05                                                   ]
+[pmp03       |pmp04  |pmp05                                                   ]
+[pmp03       |pmp04  |pmp05                                                   ]
+
+}
+END -- s_pmp
+Grid gr5282
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5282
+END -- VBox1
+END -- apmt503
+
+TABLES
+pmp_file,
+pmm_file
+ATTRIBUTES
+Edit pmm01=pmm_file.pmm01, tabIndex=1, required, comment="Key Field, No Blank/Repeated!    ";
+Edit pmmuser=pmm_file.pmmuser, tabIndex=2, noEntry;
+Edit pmmmodu=pmm_file.pmmmodu, tabIndex=3, noEntry;
+Edit pmmacti=pmm_file.pmmacti, tabIndex=4, noEntry;
+Edit pmmgrup=pmm_file.pmmgrup, tabIndex=5, noEntry;
+DateEdit pmmdate=pmm_file.pmmdate, tabIndex=6, noEntry;
+Edit pmmoriu=pmm_file.pmmoriu, tabIndex=501, noEntry;
+Edit pmmorig=pmm_file.pmmorig, tabIndex=502, noEntry;
+DateEdit pmp03=pmp_file.pmp03, tabIndex=7, title="Date", not null, required, comment="Comb. with [Ln #] as Key Field,No Blank/Repeated!";
+Edit pmp04=pmp_file.pmp04, tabIndex=8, title="Line #", not null, required, comment="Comb. with [Date] as Key Field,No Blank/Repeated!";
+Edit pmp05=pmp_file.pmp05, tabIndex=9, title="Memo", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmp(pmp_file.pmp03,pmp_file.pmp04,pmp_file.pmp05)
+SCREEN RECORD Undefined(pmm_file.pmm01,pmm_file.pmmuser,pmm_file.pmmmodu,pmm_file.pmmacti,pmm_file.pmmgrup,pmm_file.pmmdate,pmm_file.pmmoriu,pmm_file.pmmorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

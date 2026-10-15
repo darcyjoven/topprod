@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdi001_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid ds1
+{
+[label1|ama98   ]%
+                        [dummy02                                    ]  [dummy07                             ]
+                        [dummy03   |dummy04   |dummy05   |dummy06   ]  [dummy08   |dummy09   |dummy10       ]
+                        [dummy16   |dummy17   |dummy18   |dummy19   ]  [dummy20   |dummy21   |dummy22       ]
+[dummy01             ]74[ama99     |ama100    |ama101    |ama102    ]76[ama103    |ama104    |ama105        ]
+[dummy11                                                                                                    ]
+[dummy14                                                                                                    ]
+[dummy15                                                                                                    ]
+
+}
+END -- ds1
+END -- Page1
+END -- Folder1
+END -- VBox1
+END -- Form
+
+TABLES
+ama_file
+ATTRIBUTES
+Label label1:Label1, text=%"ama98";
+Edit ama98=ama_file.ama98, tabIndex=1, not null, scroll;
+Label dummy02:dummy02, text=%"Buy buy countries to pay outside labor affairs forehead";
+Label dummy07:dummy07, text=%"Nadia heritage tax amount shall be the camp";
+Label dummy03:dummy03, text=%"total";
+Label dummy04:dummy04, text=%"For duty-free business use";
+Label dummy05:dummy05, text=%"For common use";
+Label dummy06:dummy06, text=%"For business use tax";
+Label dummy08:dummy08, text=%"total";
+Label dummy09:dummy09, text=%"For tax exemption for common use";
+Label dummy10:dummy10, text=%"For common use";
+Label dummy16:dummy16, text=%"(1)＝(2)＋(3)＋(4)";
+Label dummy17:dummy17, text=%"   (2)";
+Label dummy18:dummy18, text=%"   (3)";
+Label dummy19:dummy19, text=%"   (4)";
+Label dummy20:dummy20, text=%"(5)＝(6)＋(7)";
+Label dummy21:dummy21, text=%"(6)＝(2)×5%";
+Label dummy22:dummy22, text=%"(7) = (3) x not buckle worth ratio x 5%";
+Label dummy01:dummy01, text=%"Purchase of foreign labor services";
+Edit ama99=ama_file.ama99, tabIndex=2, noEntry, not null, scroll;
+Edit ama100=ama_file.ama100, tabIndex=3, not null, scroll;
+Edit ama101=ama_file.ama101, tabIndex=4, not null, scroll;
+Edit ama102=ama_file.ama102, tabIndex=5, not null, scroll;
+Edit ama103=ama_file.ama103, tabIndex=6, noEntry, not null, scroll;
+Edit ama104=ama_file.ama104, tabIndex=7, noEntry, not null, scroll;
+Edit ama105=ama_file.ama105, tabIndex=8, noEntry, not null, scroll;
+Label dummy11:dummy11, text=%"Label1";
+Label dummy14:dummy14, text=%"Label2";
+Label dummy15:dummy15, text=%"Label3";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(ama_file.ama98,ama_file.ama99,ama_file.ama100,ama_file.ama101,ama_file.ama102,ama_file.ama103,ama_file.ama104,ama_file.ama105)
+END -- INSTRUCTIONS
+

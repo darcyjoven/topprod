@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq600")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3183
+{
+  Item#               [img01                         ]  Warehouse           [img02     ]
+  Inv Unit            [ima25     ]                      Location            [img03     ]
+  Part Name Spec      [ima02                         ]  Lot#                [img04               ]
+  Specification       [ima021                        ]  Inv Unit            [img09     ]
+
+ <G group03                                                                                       >
+  Year / Period       [yy  ]/[mm]
+ <                                                                                                >
+
+}
+END -- gr3183
+END -- page01
+END -- folder01
+Table s_imk
+{
+[imk0|imk06  |imk081         |imk082         |imk083         |imk084         |imk085         |imk09                ]
+[imk0|imk06  |imk081         |imk082         |imk083         |imk084         |imk085         |imk09                ]
+[imk0|imk06  |imk081         |imk082         |imk083         |imk084         |imk085         |imk09                ]
+[imk0|imk06  |imk081         |imk082         |imk083         |imk084         |imk085         |imk09                ]
+[imk0|imk06  |imk081         |imk082         |imk083         |imk084         |imk085         |imk09                ]
+[imk0|imk06  |imk081         |imk082         |imk083         |imk084         |imk085         |imk09                ]
+[imk0|imk06  |imk081         |imk082         |imk083         |imk084         |imk085         |imk09                ]
+[imk0|imk06  |imk081         |imk082         |imk083         |imk084         |imk085         |imk09                ]
+[imk0|imk06  |imk081         |imk082         |imk083         |imk084         |imk085         |imk09                ]
+[imk0|imk06  |imk081         |imk082         |imk083         |imk084         |imk085         |imk09                ]
+
+}
+END -- s_imk
+Grid gr3184
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3184
+END -- VBox1
+END -- aimq600
+
+TABLES
+imk_file,
+img_file
+ATTRIBUTES
+ButtonEdit img01=img_file.img01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit img02=img_file.img02, tabIndex=2, not null, required;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=3, noEntry;
+Edit img03=img_file.img03, tabIndex=4, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=5, noEntry;
+Edit img04=img_file.img04, tabIndex=6, not null, required;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=7, noEntry;
+Edit img09=img_file.img09, tabIndex=8, noEntry;
+Group group03:group03;
+Edit yy=formonly.yy type CHAR, tabIndex=9;
+Edit mm=formonly.mm type CHAR, tabIndex=10;
+Edit imk0=imk_file.imk05, tabIndex=11, title="Year";
+Edit imk06=imk_file.imk06, tabIndex=12, title="Period";
+Edit imk081=imk_file.imk081, tabIndex=13, title="Store-in";
+Edit imk082=imk_file.imk082, tabIndex=14, title="Sales";
+Edit imk083=imk_file.imk083, tabIndex=15, title="Withdraw";
+Edit imk084=imk_file.imk084, tabIndex=16, title="Transfer";
+Edit imk085=imk_file.imk085, tabIndex=17, title="Adjust";
+Edit imk09=imk_file.imk09, tabIndex=18, title="End of Period Balance";
+Edit cnt=formonly.cnt type CHAR, tabIndex=19;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imk(imk_file.imk05,imk_file.imk06,imk_file.imk081,imk_file.imk082,imk_file.imk083,imk_file.imk084,imk_file.imk085,imk_file.imk09)
+SCREEN RECORD Undefined(img_file.img01,img_file.img02,formonly.ima25,img_file.img03,formonly.ima02,img_file.img04,formonly.ima021,img_file.img09,formonly.yy,formonly.mm,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,254 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cim/4fd/cimq200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+VBox VBox2
+Grid Grid1
+{
+
+ <G group3                                                           >         <G group1                                        >   <G group2                                        >
+       Label1     [tlf3              ]    [checkbox2           ]                  [order01                                 ]           [group01                                 ]
+       Label1     [tlf2                      ]                                    [order02                                 ]           [group02                                 ]
+                                                                                  [order03                                 ]           [group03                                 ]
+                                                                                  [order04                                 ]           [group04                                 ]
+                                                                                  [order05                                 ]           [group05                                 ]
+ <                                                                   >         <                                                >   <                                                >
+
+}
+END -- Grid1
+END -- VBox2
+Folder Folder1
+Page Page1(text=%"Detail")
+Table Table1
+{
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+[edit1   |edit2   ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Table1
+END -- Page1
+Page Page2(text=%"Group1")
+Table Table2
+{
+[edit3   |edit4   ]
+[edit3   |edit4   ]
+[edit3   |edit4   ]
+[edit3   |edit4   ]
+[edit3   |edit4   ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Table2
+END -- Page2
+Page Page3(text=%"Group2")
+Table Table6
+{
+[edit11  |edit12  ]
+[edit11  |edit12  ]
+[edit11  |edit12  ]
+[edit11  |edit12  ]
+[edit11  |edit12  ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Table6
+END -- Page3
+Page Page4(text=%"Group3")
+Table Table3
+{
+[edit5   |edit6   ]
+[edit5   |edit6   ]
+[edit5   |edit6   ]
+[edit5   |edit6   ]
+[edit5   |edit6   ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Table3
+END -- Page4
+Page Page5(text=%"Group4")
+Table Table4
+{
+[edit7   |edit8   ]
+[edit7   |edit8   ]
+[edit7   |edit8   ]
+[edit7   |edit8   ]
+[edit7   |edit8   ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Table4
+END -- Page5
+Page Page6(text=%"Group5")
+Table Table5
+{
+[edit9   |edit10  ]
+[edit9   |edit10  ]
+[edit9   |edit10  ]
+[edit9   |edit10  ]
+[edit9   |edit10  ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Table5
+END -- Page6
+END -- Folder1
+END -- VBox1
+END -- cimq200
+
+ATTRIBUTES
+Group group3:Group3, text=%"Group3";
+DateEdit tlf3=formonly.tlf3 type DATE, tabIndex=25;
+CheckBox checkbox2=formonly.CheckBox2, tabIndex=24, text=%"CheckBox1", valueChecked = "Y", valueUnchecked = "N";
+ComboBox tlf2=formonly.tlf2 type DATE, tabIndex=23;
+Group group1:Group1, text=%"Order.Col.";
+ButtonEdit order01=formonly.order01, action=controlp, tabIndex=13, image="zoom";
+ButtonEdit order02=formonly.order02, action=controlp, tabIndex=14, image="zoom";
+ButtonEdit order03=formonly.order03, action=controlp, tabIndex=15, image="zoom";
+ButtonEdit order04=formonly.order04, action=controlp, tabIndex=16, image="zoom";
+ButtonEdit order05=formonly.order05, action=controlp, tabIndex=17, image="zoom";
+Group group2:Group2, text=%"Group.Col.";
+ButtonEdit group01=formonly.group01, action=controlp, tabIndex=18, image="zoom";
+ButtonEdit group02=formonly.group02, action=controlp, tabIndex=19, image="zoom";
+ButtonEdit group03=formonly.group03, action=controlp, tabIndex=20, image="zoom";
+ButtonEdit group04=formonly.group04, action=controlp, tabIndex=21, image="zoom";
+ButtonEdit group05=formonly.group05, action=controlp, tabIndex=22, image="zoom";
+Edit edit1=formonly.Edit1, tabIndex=1, title=%"Edit1";
+Edit edit2=formonly.Edit2, tabIndex=2, title=%"Edit2";
+Edit edit3=formonly.Edit3, tabIndex=3, title=%"Edit3";
+Edit edit4=formonly.Edit4, tabIndex=4, title=%"Edit4";
+Edit edit11=formonly.Edit11, tabIndex=11, title=%"Edit11";
+Edit edit12=formonly.Edit12, tabIndex=12, title=%"Edit12";
+Edit edit5=formonly.Edit5, tabIndex=5, title=%"Edit5";
+Edit edit6=formonly.Edit6, tabIndex=6, title=%"Edit6";
+Edit edit7=formonly.Edit7, tabIndex=7, title=%"Edit7";
+Edit edit8=formonly.Edit8, tabIndex=8, title=%"Edit8";
+Edit edit9=formonly.Edit9, tabIndex=9, title=%"Edit9";
+Edit edit10=formonly.Edit10, tabIndex=10, title=%"Edit10";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(formonly.Edit1,formonly.Edit2)
+SCREEN RECORD Record2(formonly.Edit3,formonly.Edit4)
+SCREEN RECORD Record3(formonly.Edit5,formonly.Edit6)
+SCREEN RECORD Record4(formonly.Edit7,formonly.Edit8)
+SCREEN RECORD Record5(formonly.Edit9,formonly.Edit10)
+SCREEN RECORD Record6(formonly.Edit11,formonly.Edit12)
+SCREEN RECORD Undefined(formonly.order01,formonly.order02,formonly.order03,formonly.order04,formonly.order05,formonly.group01,formonly.group02,formonly.group03,formonly.group04,formonly.group05,formonly.tlf2,formonly.CheckBox2,formonly.tlf3)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi182.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi182")
+VBox VBox1
+Folder pc312
+Page page01(text="Page01")
+Table s_obz
+{
+[obz01              |obz02               |obz03               |obz04              |obz05             |obzact]
+[obz01              |obz02               |obz03               |obz04              |obz05             |obzact]
+[obz01              |obz02               |obz03               |obz04              |obz05             |obzact]
+[obz01              |obz02               |obz03               |obz04              |obz05             |obzact]
+[obz01              |obz02               |obz03               |obz04              |obz05             |obzact]
+[obz01              |obz02               |obz03               |obz04              |obz05             |obzact]
+[obz01              |obz02               |obz03               |obz04              |obz05             |obzact]
+[obz01              |obz02               |obz03               |obz04              |obz05             |obzact]
+[obz01              |obz02               |obz03               |obz04              |obz05             |obzact]
+[obz01              |obz02               |obz03               |obz04              |obz05             |obzact]
+
+}
+END -- s_obz
+END -- page01
+END -- pc312
+Grid gr1366
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1366
+END -- VBox1
+END -- atmi182
+
+TABLES
+obz_file
+ATTRIBUTES
+Edit obz01=obz_file.obz01, tabIndex=1, title="Vehicle Group No", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ";
+Edit obz02=obz_file.obz02, tabIndex=2, title="Description";
+Edit obz03=obz_file.obz03, tabIndex=3, title="Vehcile Header";
+Edit obz04=obz_file.obz04, tabIndex=4, title="Contact Phone 1";
+Edit obz05=obz_file.obz05, tabIndex=5, title="Contact Phone 2";
+CheckBox obzact=obz_file.obzacti, tabIndex=6, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_obz(obz_file.obz01,obz_file.obz02,obz_file.obz03,obz_file.obz04,obz_file.obz05,obz_file.obzacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

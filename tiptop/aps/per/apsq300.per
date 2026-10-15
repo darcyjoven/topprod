@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsq300")
+VBox vb2_
+Folder folder01
+Page page01(text="Main")
+Grid gr3960
+{
+ APS                 [apsrev              ]  SAVE    [saverev             ]
+ Product No.         [partno              ]  ProdName[ima02               ]
+ Qty                 [qty                 ]  Delivery Date   [atpdate     ]
+ Description         [desc                                                ]
+
+}
+END -- gr3960
+END -- page01
+END -- folder01
+ScrollGrid gr3961
+{
+
+ Period          [seq ]        [seq ]        [seq ]        [seq ]        [seq ]        [seq ]
+ Time Bucket Day [tbday       ][tbday       ][tbday       ][tbday       ][tbday       ][tbday       ]
+ Inventory       [invqty      ][invqty      ][invqty      ][invqty      ][invqty      ][invqty      ]
+ Pre_LastQty     [preqty      ][preqty      ][preqty      ][preqty      ][preqty      ][preqty      ]
+ ATP_QTY         [atpqty      ][atpqty      ][atpqty      ][atpqty      ][atpqty      ][atpqty      ]
+
+}
+END -- gr3961
+Grid gr3962
+{
+    ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3962
+END -- vb2_
+END -- apsq300
+
+ATTRIBUTES
+ButtonEdit apsrev=formonly.apsrev type VARCHAR, action=controlp, tabIndex=11, required, image="zoom";
+Edit saverev=formonly.saverev type CHAR, tabIndex=12, noEntry;
+ButtonEdit partno=formonly.partno type VARCHAR, action=controlp, tabIndex=1, required, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=3, required;
+Edit atpdate=formonly.atpdate type DATE, tabIndex=4;
+Edit desc=formonly.desc type CHAR, tabIndex=5;
+Edit seq=formonly.seq type CHAR, tabIndex=6, noEntry;
+Edit tbday=formonly.tbday type DATE, tabIndex=7;
+Edit invqty=formonly.invqty type CHAR, tabIndex=8, noEntry;
+Edit preqty=formonly.preqty type CHAR, tabIndex=9, noEntry;
+Edit atpqty=formonly.atpqty type CHAR, tabIndex=10, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mps(formonly.seq,formonly.tbday,formonly.invqty,formonly.preqty,formonly.atpqty)
+SCREEN RECORD Undefined(formonly.apsrev,formonly.saverev,formonly.partno,formonly.ima02,formonly.qty,formonly.atpdate,formonly.desc,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

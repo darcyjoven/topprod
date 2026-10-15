@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdi101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdi101")
+VBox VBox1
+Folder pc86
+Page page01(text="Main")
+Grid gr356
+{
+  W/O No.             [ste04                         ]             [ste31                         ]
+  Work Order Category [ste01     ]
+  Item No.            [ste05                         ] [imgmksg]
+                      [ima02                         ] [       ]
+  Year/Month          [ste0]/[st]
+
+ <G group03                                                                                       >
+                       [dummy01        ][dummy02    ][dummy03     ][dummy04       ][dummy05     ]
+                                        [dummy07    ][dummy08     ]
+  Qty                 [ste06     ]      [ste11     ] [ste16     ]                 [ste26     ]
+  Material            [ste07     ]      [ste12     ] [ste17     ]  [ste22     ]   [ste27     ]
+  Labor               [ste08     ]      [ste13     ] [ste18     ]  [ste23     ]   [ste28     ]
+  Overhead 1          [ste09     ]      [ste14     ] [ste19     ]  [ste24     ]   [ste29     ]
+  Overhead 2          [ste10     ]      [ste15     ] [ste20     ]  [ste25     ]   [ste30     ]
+  Processing Expense                    [ste32     ]
+
+ <                                                                                                >
+
+}
+END -- gr356
+END -- page01
+END -- pc86
+Grid gr357
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr357
+END -- VBox1
+END -- asdi101
+
+TABLES
+ste_file
+ATTRIBUTES
+ButtonEdit ste04=ste_file.ste04, action=controlp, tabIndex=1, image="zoom";
+CheckBox ste31=ste_file.ste31, tabIndex=2, text="Close", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox ste01=ste_file.ste01, tabIndex=3, not null, required, items=(("1", "Gnrl"),("5", "Rework"),("7", "Sub."),("8", "Rwrk SUB"),("11", "Disasm"),("13", "Predic"),("15", "Trial"));
+ButtonEdit ste05=ste_file.ste05, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Item No.";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=6, noEntry;
+Edit ste0=ste_file.ste02, tabIndex=7, not null, required;
+Edit st=ste_file.ste03, tabIndex=8, not null, required;
+Group group03:group03;
+Label dummy01:dummy01, text="Beginning Period";
+Label dummy02:dummy02, text="Current Mon.";
+Label dummy03:dummy03, text="Current Mon.";
+Label dummy04:dummy04, text="Variation Cost";
+Label dummy05:dummy05, text="End Period";
+Label dummy07:dummy07, text="   Input";
+Label dummy08:dummy08, text="   Complete";
+Edit ste06=ste_file.ste06, tabIndex=9;
+Edit ste11=ste_file.ste11, tabIndex=10;
+Edit ste16=ste_file.ste16, tabIndex=11;
+Edit ste26=ste_file.ste26, tabIndex=12;
+Edit ste07=ste_file.ste07, tabIndex=13;
+Edit ste12=ste_file.ste12, tabIndex=14;
+Edit ste17=ste_file.ste17, tabIndex=15;
+Edit ste22=ste_file.ste22, tabIndex=16;
+Edit ste27=ste_file.ste27, tabIndex=17;
+Edit ste08=ste_file.ste08, tabIndex=18;
+Edit ste13=ste_file.ste13, tabIndex=19;
+Edit ste18=ste_file.ste18, tabIndex=20;
+Edit ste23=ste_file.ste23, tabIndex=21;
+Edit ste28=ste_file.ste28, tabIndex=22;
+Edit ste09=ste_file.ste09, tabIndex=23;
+Edit ste14=ste_file.ste14, tabIndex=24;
+Edit ste19=ste_file.ste19, tabIndex=25;
+Edit ste24=ste_file.ste24, tabIndex=26;
+Edit ste29=ste_file.ste29, tabIndex=27;
+Edit ste10=ste_file.ste10, tabIndex=28;
+Edit ste15=ste_file.ste15, tabIndex=29;
+Edit ste20=ste_file.ste20, tabIndex=30;
+Edit ste25=ste_file.ste25, tabIndex=31;
+Edit ste30=ste_file.ste30, tabIndex=32;
+Edit ste32=ste_file.ste32, tabIndex=33;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=34, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ste_file.ste04,ste_file.ste31,ste_file.ste01,ste_file.ste05,formonly.imgmksg,formonly.ima02,ste_file.ste02,ste_file.ste03,ste_file.ste06,ste_file.ste11,ste_file.ste16,ste_file.ste26,ste_file.ste07,ste_file.ste12,ste_file.ste17,ste_file.ste22,ste_file.ste27,ste_file.ste08,ste_file.ste13,ste_file.ste18,ste_file.ste23,ste_file.ste28,ste_file.ste09,ste_file.ste14,ste_file.ste19,ste_file.ste24,ste_file.ste29,ste_file.ste10,ste_file.ste15,ste_file.ste20,ste_file.ste25,ste_file.ste30,ste_file.ste32,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/udmtree_search.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"udmtree_search")
+Folder pc690
+Page page01(action=exec_prog, text="Related Data")
+VBox VBox1
+Grid gr3007
+{
+[q_select                                             ][re_sel    ]      [sift_fld      ][sift_con                      ][sift_btn]
+
+}
+END -- gr3007
+Table s_data
+{
+[value          |gcm05         |gaz03                    |gcm06               |gcm07               ]
+[value          |gcm05         |gaz03                    |gcm06               |gcm07               ]
+[value          |gcm05         |gaz03                    |gcm06               |gcm07               ]
+[value          |gcm05         |gaz03                    |gcm06               |gcm07               ]
+[value          |gcm05         |gaz03                    |gcm06               |gcm07               ]
+[value          |gcm05         |gaz03                    |gcm06               |gcm07               ]
+[value          |gcm05         |gaz03                    |gcm06               |gcm07               ]
+[value          |gcm05         |gaz03                    |gcm06               |gcm07               ]
+[value          |gcm05         |gaz03                    |gcm06               |gcm07               ]
+[value          |gcm05         |gaz03                    |gcm06               |gcm07               ]
+
+}
+END -- s_data
+Group group01
+Grid gr3008
+{
+[btn_] [show]
+
+}
+END -- gr3008
+END -- group01
+END -- VBox1
+END -- page01
+Page page02(action=sel_file, text="File List")
+Table s_file
+{
+[file_name             |location                        |desc                         ]
+[file_name             |location                        |desc                         ]
+[file_name             |location                        |desc                         ]
+[file_name             |location                        |desc                         ]
+[file_name             |location                        |desc                         ]
+[file_name             |location                        |desc                         ]
+[file_name             |location                        |desc                         ]
+[file_name             |location                        |desc                         ]
+[file_name             |location                        |desc                         ]
+[file_name             |location                        |desc                         ]
+
+}
+END -- s_file
+END -- page02
+END -- pc690
+END -- udmtree_search
+
+ATTRIBUTES
+ComboBox q_select=formonly.q_select type CHAR, tabIndex=1, not null, required;
+Button re_sel:re_sel, text="Select";
+ComboBox sift_fld=formonly.sift_fld type CHAR, tabIndex=2, not null, required, items=(("1", "Conditioned Value"),("2", "Selected Value"));
+Edit sift_con=formonly.sift_con type CHAR, tabIndex=3, not null, required;
+Button sift_btn:sift_btn, text="Sift";
+Edit value=formonly.value type CHAR, tabIndex=4, title="Value", noEntry, scroll;
+Edit gcm05=formonly.gcm05 type CHAR, tabIndex=5, title="Program Code", noEntry, scroll;
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=6, title="Program Name", noEntry, scroll;
+Edit gcm06=formonly.gcm06 type CHAR, tabIndex=7, title="Key Value01", noEntry, scroll;
+Edit gcm07=formonly.gcm07 type CHAR, tabIndex=8, title="Key Value02", noEntry, scroll;
+Button btn_:btn_detail, tag="+", image="qs", comment="Utilize the data found to execute the corresponding process";
+Button show:show_data, image="qs2", comment="Utilize the data found to look for the value of other fields in the affiliated table";
+Edit file_name=formonly.file_name type CHAR, tabIndex=9, title="File Name", noEntry, scroll;
+Edit location=formonly.location type CHAR, tabIndex=10, title="Location", noEntry, scroll;
+Edit desc=formonly.desc type CHAR, tabIndex=11, title="Description", noEntry, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_data(formonly.value,formonly.gcm05,formonly.gaz03,formonly.gcm06,formonly.gcm07)
+SCREEN RECORD s_file(formonly.file_name,formonly.location,formonly.desc)
+SCREEN RECORD Undefined(formonly.q_select,formonly.sift_fld,formonly.sift_con)
+END -- INSTRUCTIONS
+

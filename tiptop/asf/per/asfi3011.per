@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi3011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Allotment Group List")
+Folder pc97
+Page page01(text="Main")
+VBox VBox1
+Table s_boa
+{
+[sfa29              |sfa03               |tot        |sfa26           |boa08                         ]
+[sfa29              |sfa03               |tot        |sfa26           |boa08                         ]
+[sfa29              |sfa03               |tot        |sfa26           |boa08                         ]
+[sfa29              |sfa03               |tot        |sfa26           |boa08                         ]
+[sfa29              |sfa03               |tot        |sfa26           |boa08                         ]
+[sfa29              |sfa03               |tot        |sfa26           |boa08                         ]
+[sfa29              |sfa03               |tot        |sfa26           |boa08                         ]
+[sfa29              |sfa03               |tot        |sfa26           |boa08                         ]
+[sfa29              |sfa03               |tot        |sfa26           |boa08                         ]
+[sfa29              |sfa03               |tot        |sfa26           |boa08                         ]
+
+}
+END -- s_boa
+END -- VBox1
+END -- page01
+Page info(text="Info")
+Grid gr462
+{
+ <G grpinfo                       >
+  Line No.            [cn1       ]
+  Detail Counts       [cn2       ]
+ <                                >
+
+}
+END -- gr462
+END -- info
+END -- pc97
+END -- asfi3011
+
+TABLES
+sfa_file
+ATTRIBUTES
+ButtonEdit sfa29=sfa_file.sfa29, action=controlp, tabIndex=1, title="Up Level Itme No.", image="zoom", comment="<^P>Qry Details Data";
+Edit sfa03=sfa_file.sfa03, tabIndex=2, title="Item No.", noEntry;
+Edit tot=formonly.tot type SMALLINT, tabIndex=3, title="Item Qty", noEntry;
+Edit sfa26=sfa_file.sfa26, tabIndex=4, title="Substitute code", noEntry;
+Edit boa08=formonly.boa08 type VARCHAR, tabIndex=5, title="Description", noEntry;
+Group grpinfo:grpinfo;
+Edit cn1=formonly.cn1 type CHAR, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_boa(sfa_file.sfa29,sfa_file.sfa03,formonly.tot,sfa_file.sfa26,formonly.boa08)
+SCREEN RECORD Undefined(formonly.cn1,formonly.cn2)
+END -- INSTRUCTIONS
+

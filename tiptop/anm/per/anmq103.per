@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmq103")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr4145
+{
+ Note No.            [nmd02     ]
+ Face Value          [nmd04               ]
+ Vender No.          [nmd08     ]
+ Vender Abbreviation [nmd24     ]
+}
+END -- gr4145
+Grid gr4146
+{
+ Payment Slip #      [nmd10           ]
+ Payment Slip Line # [nmd101      ]
+ Paying Bank         [nmd03       ]
+ Bank Abbreviation   [nma02           ]
+}
+END -- gr4146
+Grid gr4147
+{
+ Due Date            [nmd05       ]
+ Drawing Date        [nmd07       ]
+ Mail & Take Date    [nmd15       ]
+ Currency            [nmd21     ]
+}
+END -- gr4147
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_apa
+{
+[apa08           |apa09        |apa31               |apa32               |apa01           |apa20               ]
+[apa08           |apa09        |apa31               |apa32               |apa01           |apa20               ]
+[apa08           |apa09        |apa31               |apa32               |apa01           |apa20               ]
+[apa08           |apa09        |apa31               |apa32               |apa01           |apa20               ]
+[apa08           |apa09        |apa31               |apa32               |apa01           |apa20               ]
+[apa08           |apa09        |apa31               |apa32               |apa01           |apa20               ]
+[apa08           |apa09        |apa31               |apa32               |apa01           |apa20               ]
+[apa08           |apa09        |apa31               |apa32               |apa01           |apa20               ]
+[apa08           |apa09        |apa31               |apa32               |apa01           |apa20               ]
+[apa08           |apa09        |apa31               |apa32               |apa01           |apa20               ]
+
+}
+END -- s_apa
+Grid gr4148
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4148
+END -- VBox1
+END -- anmq103
+
+ATTRIBUTES
+Edit nmd02=formonly.nmd02 type CHAR, tabIndex=1;
+Edit nmd04=formonly.nmd04 type CHAR, tabIndex=2;
+Edit nmd08=formonly.nmd08 type CHAR, tabIndex=3;
+Edit nmd24=formonly.nmd24 type CHAR, tabIndex=4;
+Edit nmd10=formonly.nmd10 type CHAR, tabIndex=5;
+Edit nmd101=formonly.nmd101 type CHAR, tabIndex=6;
+Edit nmd03=formonly.nmd03 type CHAR, tabIndex=7;
+Edit nma02=formonly.nma02 type CHAR, tabIndex=8, noEntry;
+DateEdit nmd05=formonly.nmd05 type DATE, tabIndex=9;
+DateEdit nmd07=formonly.nmd07 type DATE, tabIndex=10;
+DateEdit nmd15=formonly.nmd15 type DATE, tabIndex=11;
+Edit nmd21=formonly.nmd21 type CHAR, tabIndex=12;
+Edit apa08=formonly.apa08 type CHAR, tabIndex=13, title="Invoice#";
+DateEdit apa09=formonly.apa09 type DATE, tabIndex=14, title="Invoice Date";
+Edit apa31=formonly.apa31 type CHAR, tabIndex=15, title="Before-Tax Amt";
+Edit apa32=formonly.apa32 type CHAR, tabIndex=16, title="Tax";
+Edit apa01=formonly.apa01 type CHAR, tabIndex=17, title="Bill No.";
+Edit apa20=formonly.apa20 type CHAR, tabIndex=18, title="Amt On-Hold";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apa(formonly.apa08,formonly.apa09,formonly.apa31,formonly.apa32,formonly.apa01,formonly.apa20)
+SCREEN RECORD Undefined(formonly.nmd02,formonly.nmd04,formonly.nmd08,formonly.nmd24,formonly.nmd10,formonly.nmd101,formonly.nmd03,formonly.nma02,formonly.nmd05,formonly.nmd07,formonly.nmd15,formonly.nmd21,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

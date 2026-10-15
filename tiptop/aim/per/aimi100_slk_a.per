@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi100_slk_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"aimi100_slk_a")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Basic Data")
+Table s_imaslk
+{
+[agc01         |agc02   |agc07      |agd02           |agd03        ]
+[agc01         |agc02   |agc07      |agd02           |agd03        ]
+[agc01         |agc02   |agc07      |agd02           |agd03        ]
+[agc01         |agc02   |agc07      |agd02           |agd03        ]
+[agc01         |agc02   |agc07      |agd02           |agd03        ]
+
+
+
+
+}
+END -- s_imaslk
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+ ------ [label1 |cnt     ] ------
+
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- aimi100_slk_a
+
+TABLES
+agd_file,
+agc_file
+ATTRIBUTES
+Edit agc01=agc_file.agc01, tabIndex=1, title=%"Attribute No.";
+Edit agc02=agc_file.agc02, tabIndex=2, title=%"Name";
+ComboBox agc07=agc_file.agc07, tabIndex=3, title=%"Attribute", items=(("1", "颜色"),("2", "尺码"));
+Edit agd02=agd_file.agd02, tabIndex=4, title=%"Attribute Value";
+Edit agd03=agd_file.agd03, tabIndex=5, title=%"Description";
+Label label1:Label1, text=%"Rows";
+Edit cnt=formonly.cnt type CHAR, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imaslk(agc_file.agc01,agc_file.agc02,agc_file.agc07,agd_file.agd02,agd_file.agd03)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

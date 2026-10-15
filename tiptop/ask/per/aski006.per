@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/aski006.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aski006")
+VBox vb7
+Folder pc3
+Page Page4(text=%"Main")
+Grid gr10
+{
+ Labor No           [skq01              ]           Product number        [skq02              ]       Confirmation Code  [skq08       ]
+ PBI                [sfb85              ]           Commodity Name        [ima02              ]                          [imgmksg ]
+ Order form No./No. [sfb22        |adb22]           Craft No.             [skq03              ]                          [        ]
+ Intend Begin Date  [sfb13              ]           Product Name          [ecm45              ]
+ Intend Finish Date [sfb15              ]           first Shift Date      [skq04              ]
+ Fact Begin Date    [sfb25              ]           Near Shift Date       [skq05              ]
+ Estimate quantity   [sfb08              ]           Production Department [skq06              ]
+ Storage Quantity   [sfb09              ]           Name                  [eca02              ]
+ Shift Number       [skr08a             ]           Note                  [skq07              ]
+
+}
+END -- gr10
+END -- Page4
+Page Page5(text=%"Info")
+Grid gr10_
+{
+ Record Owner  [skquser   ]    Last Modified by   [skqmodu   ]  Data Valid Code  [skqacti   ]
+ Department    [skqgrup   ]    Create/Modify Date [skqdate   ]
+
+
+}
+END -- gr10_
+END -- Page5
+END -- pc3
+Table s_skr
+{
+[skr03          |skr04             |skr05               |skr06         |skr07         |skr08                    ]
+[skr03          |skr04             |skr05               |skr06         |skr07         |skr08                    ]
+[skr03          |skr04             |skr05               |skr06         |skr07         |skr08                    ]
+[skr03          |skr04             |skr05               |skr06         |skr07         |skr08                    ]
+[skr03          |skr04             |skr05               |skr06         |skr07         |skr08                    ]
+[skr03          |skr04             |skr05               |skr06         |skr07         |skr08                    ]
+[skr03          |skr04             |skr05               |skr06         |skr07         |skr08                    ]
+[skr03          |skr04             |skr05               |skr06         |skr07         |skr08                    ]
+[skr03          |skr04             |skr05               |skr06         |skr07         |skr08                    ]
+[skr03          |skr04             |skr05               |skr06         |skr07         |skr08                    ]
+
+}
+END -- s_skr
+Grid gr12
+{
+----------  Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr12
+END -- vb7
+END -- aski006
+
+TABLES
+tableAlias1=skq_file,
+skr_file,
+skq_file
+ATTRIBUTES
+ButtonEdit skq01=skq_file.skq01, action=controlp, tabIndex=13, not null, required, image="zoom.png";
+Edit skq02=skq_file.skq02, tabIndex=24, noEntry;
+ComboBox skq08=tableAlias1.skq08, tabIndex=14, noEntry, items=(("N", "Un Confirmed"),("Y", "Confirmation Code"));
+Edit sfb85=formonly.sfb85 type CHAR, tabIndex=15;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=31;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit sfb22=formonly.sfb22 type CHAR, tabIndex=16;
+Edit adb22=formonly.adb221 type CHAR, tabIndex=23;
+ButtonEdit skq03=skq_file.skq03, action=controlp, tabIndex=30, required, image="zoom.png";
+DateEdit sfb13=formonly.sfb13 type CHAR, tabIndex=17;
+Edit ecm45=formonly.ecm45 type CHAR, tabIndex=29;
+DateEdit sfb15=formonly.sfb15 type CHAR, tabIndex=18;
+DateEdit skq04=skq_file.skq04, tabIndex=28, noEntry;
+DateEdit sfb25=formonly.sfb25 type CHAR, tabIndex=19;
+DateEdit skq05=skq_file.skq05, tabIndex=32, noEntry;
+Edit sfb08=formonly.sfb08 type CHAR, tabIndex=20;
+Edit skq06=skq_file.skq06, tabIndex=25, noEntry;
+Edit sfb09=formonly.sfb09 type CHAR, tabIndex=21;
+Edit eca02=formonly.eca02 type CHAR, tabIndex=26;
+Edit skr08a=formonly.skr08a type CHAR, tabIndex=22, noEntry;
+Edit skq07=skq_file.skq07, tabIndex=27;
+Edit skquser=skq_file.skquser, tabIndex=8, noEntry;
+Edit skqmodu=skq_file.skqmodu, tabIndex=9, noEntry;
+Edit skqacti=skq_file.skqacti, tabIndex=10, noEntry, upShift;
+Edit skqgrup=skq_file.skqgrup, tabIndex=11, noEntry;
+DateEdit skqdate=skq_file.skqdate, tabIndex=12, noEntry;
+ButtonEdit skr03=skr_file.skr03, action=controlp, tabIndex=1, title="Edition No.", not null, image="zoom.png";
+ButtonEdit skr04=skr_file.skr04, action=controlp, tabIndex=2, title="Part material No.", image="zoom.png";
+Edit skr05=formonly.skr05 type DECIMAL, tabIndex=3, title="Spot", noEntry, not null;
+Edit skr06=formonly.skr06 type DATE, tabIndex=4, title="Only piece", noEntry, not null;
+Edit skr07=skr_file.skr07, tabIndex=5, title="Good Articles", not null;
+Edit skr08=skr_file.skr08, tabIndex=33, title="Already Shifted Quantity ", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_skr(skr_file.skr03,skr_file.skr04,formonly.skr05,formonly.skr06,skr_file.skr07,skr_file.skr08)
+SCREEN RECORD Undefined(skq_file.skq01,skq_file.skq02,tableAlias1.skq08,formonly.sfb85,formonly.ima02,formonly.imgmksg,formonly.sfb22,formonly.adb221,skq_file.skq03,formonly.sfb13,formonly.ecm45,formonly.sfb15,skq_file.skq04,formonly.sfb25,skq_file.skq05,formonly.sfb08,skq_file.skq06,formonly.sfb09,formonly.eca02,formonly.skr08a,skq_file.skq07,skq_file.skquser,skq_file.skqmodu,skq_file.skqacti,skq_file.skqgrup,skq_file.skqdate,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

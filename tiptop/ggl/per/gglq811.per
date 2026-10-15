@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq811.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglr111")
+VBox VBox1
+Folder pc831
+Page page01(text="Page01")
+Grid gr1
+{
+
+ Book No.   [b         ]  [label2    |yy        ]  Decimal Digits [e         ] [o            ]   G/L Currency[r         ][c                         ]
+[label1    ][a         ]  [label5    |bm        ] [label3         |f         ]                   Ex.Rate     [q         ][g                              ]
+                                                  [label6         |d         ]                  [label4      |p         ][h                              ]
+
+}
+END -- gr1
+END -- page01
+END -- pc831
+Table s_aag
+{
+[aag01_l        |line_l   |sum1_l           |sum2_l           |aag01_r   |line_r  |sum1_r           |sum2_r               ]
+[aag01_l        |line_l   |sum1_l           |sum2_l           |aag01_r   |line_r  |sum1_r           |sum2_r               ]
+[aag01_l        |line_l   |sum1_l           |sum2_l           |aag01_r   |line_r  |sum1_r           |sum2_r               ]
+[aag01_l        |line_l   |sum1_l           |sum2_l           |aag01_r   |line_r  |sum1_r           |sum2_r               ]
+[aag01_l        |line_l   |sum1_l           |sum2_l           |aag01_r   |line_r  |sum1_r           |sum2_r               ]
+[aag01_l        |line_l   |sum1_l           |sum2_l           |aag01_r   |line_r  |sum1_r           |sum2_r               ]
+[aag01_l        |line_l   |sum1_l           |sum2_l           |aag01_r   |line_r  |sum1_r           |sum2_r               ]
+[aag01_l        |line_l   |sum1_l           |sum2_l           |aag01_r   |line_r  |sum1_r           |sum2_r               ]
+[aag01_l        |line_l   |sum1_l           |sum2_l           |aag01_r   |line_r  |sum1_r           |sum2_r               ]
+[aag01_l        |line_l   |sum1_l           |sum2_l           |aag01_r   |line_r  |sum1_r           |sum2_r               ]
+
+}
+END -- s_aag
+END -- VBox1
+END -- gglq811
+
+ATTRIBUTES
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=9, image="zoom", comment="<^P> Query Book No.";
+Label label2:Label2, text=%"Enter Year";
+Edit yy=formonly.yy type SMALLINT, tabIndex=11;
+Edit e=formonly.e type CHAR, tabIndex=15;
+CheckBox o=formonly.o type VARCHAR, tabIndex=18, text="Convert Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=19, noEntry;
+CheckBox c=formonly.c type VARCHAR, tabIndex=13, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label1:Label1, text=%"Report Structure No.";
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=10, image="zoom", comment="<^P> Qry Report No.";
+Label label5:Label5, text=%"Enter Period";
+Edit bm=formonly.bm type SMALLINT, tabIndex=12;
+Label label3:Label3, text=%"Print Minimum Level#";
+Edit f=formonly.f type SMALLINT, tabIndex=17;
+Edit q=formonly.q type DECIMAL, tabIndex=21;
+CheckBox g=formonly.g type VARCHAR, tabIndex=14, text="Is Include Audit Adjustment", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label6:Label6, text=%"unit";
+ComboBox d=formonly.d type CHAR, tabIndex=22, items=(("1", "DR"),("2", "TH"),("3", "TEN THOUSAND"),("4", "Million"));
+Label label4:Label4, text=%"Convert Currency";
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=20, image="zoom", comment="<^P> Qry Currency";
+CheckBox h=formonly.h type VARCHAR, tabIndex=16, text="Print by Acct Extra Desc", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit aag01_l=formonly.aag01_l type VARCHAR, tabIndex=1, title="Account Name", comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit line_l=formonly.line_l type CHAR, tabIndex=2, title="Line#";
+Edit sum1_l=formonly.sum1_l type CHAR, tabIndex=3, title="Sum Before Year";
+Edit sum2_l=formonly.sum2_l type CHAR, tabIndex=4, title="Sum After Period";
+Edit aag01_r=formonly.aag01_r type CHAR, tabIndex=5, title="Accout Name";
+Edit line_r=formonly.line_r type CHAR, tabIndex=6, title="Line#";
+Edit sum1_r=formonly.sum1_r type CHAR, tabIndex=7, title="Sum Before Year";
+Edit sum2_r=formonly.sum2_r type CHAR, tabIndex=8, title="Sum After Period";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aag(formonly.aag01_l,formonly.line_l,formonly.sum1_l,formonly.sum2_l,formonly.aag01_r,formonly.line_r,formonly.sum1_r,formonly.sum2_r)
+SCREEN RECORD Undefined(formonly.b,formonly.a,formonly.yy,formonly.bm,formonly.c,formonly.g,formonly.e,formonly.h,formonly.f,formonly.o,formonly.r,formonly.p,formonly.q,formonly.d)
+END -- INSTRUCTIONS
+

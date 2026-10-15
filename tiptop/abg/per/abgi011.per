@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi011")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr594
+{
+ Version             [bgl01     ]
+ Year                [bgl02     ]
+ Department          [bgl04     ] [gem02     ]
+}
+END -- gr594
+END -- page01
+END -- folder01
+Table s_bgl
+{
+[bgl03   |bgl05               |bgl06               |bgl07               ]
+[bgl03   |bgl05               |bgl06               |bgl07               ]
+[bgl03   |bgl05               |bgl06               |bgl07               ]
+[bgl03   |bgl05               |bgl06               |bgl07               ]
+[bgl03   |bgl05               |bgl06               |bgl07               ]
+[bgl03   |bgl05               |bgl06               |bgl07               ]
+[bgl03   |bgl05               |bgl06               |bgl07               ]
+[bgl03   |bgl05               |bgl06               |bgl07               ]
+[bgl03   |bgl05               |bgl06               |bgl07               ]
+[bgl03   |bgl05               |bgl06               |bgl07               ]
+
+}
+END -- s_bgl
+Grid gr595
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr595
+END -- VBox1
+END -- abgi011
+
+TABLES
+bgl_file
+ATTRIBUTES
+Edit bgl01=bgl_file.bgl01, tabIndex=1;
+Edit bgl02=bgl_file.bgl02, tabIndex=2, not null, required;
+ButtonEdit bgl04=bgl_file.bgl04, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Department No.";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=4, noEntry;
+Edit bgl03=bgl_file.bgl03, tabIndex=5, title="Month";
+Edit bgl05=bgl_file.bgl05, tabIndex=6, title="Total Labor";
+Edit bgl06=bgl_file.bgl06, tabIndex=7, title="Total Overhead";
+Edit bgl07=bgl_file.bgl07, tabIndex=8, title="Total Process";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgl(bgl_file.bgl03,bgl_file.bgl05,bgl_file.bgl06,bgl_file.bgl07)
+SCREEN RECORD Undefined(bgl_file.bgl01,bgl_file.bgl02,bgl_file.bgl04,formonly.gem02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

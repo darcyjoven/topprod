@@ -1,0 +1,111 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi640.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi640")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr794
+{
+ Configuration Item  [cbbcon              ]
+ Part Name           [ima02_1                       ]
+ Specification       [ima021_1                      ]
+ Sections            [cbb01     ]
+ Digits              [cbb02     ]
+}
+END -- gr794
+Grid gr795
+{
+ Feature Item        [cbb03               ]
+ Part Name           [ima02_2                       ]
+ Specification       [ima021_2                      ]
+ Codes Content       [cbb04     ]
+
+}
+END -- gr795
+Grid gr796
+{
+ [imgmksg]
+ [       ]
+
+
+
+}
+END -- gr796
+END -- hb1
+END -- page01
+Page info(text="Info")
+Grid gr797
+{
+ Record Owner        [cbbuser   ] Last Modified by    [cbbmodu   ] Data Valid Code     [cbbacti   ]
+ Department          [cbbgrup   ] Create/Modify Date  [cbbdate   ]
+ Record Orig.        [cbboriu   ]
+ Dept Orig.          [cbborig   ]
+
+}
+END -- gr797
+END -- info
+END -- folder01
+Table s_cbb
+{
+[cbb05               |ima02                         |ima021                        ]
+[cbb05               |ima02                         |ima021                        ]
+[cbb05               |ima02                         |ima021                        ]
+[cbb05               |ima02                         |ima021                        ]
+[cbb05               |ima02                         |ima021                        ]
+[cbb05               |ima02                         |ima021                        ]
+[cbb05               |ima02                         |ima021                        ]
+[cbb05               |ima02                         |ima021                        ]
+[cbb05               |ima02                         |ima021                        ]
+[cbb05               |ima02                         |ima021                        ]
+}
+END -- s_cbb
+Grid gr798
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr798
+END -- vb1
+END -- abmi640
+
+TABLES
+cbb_file
+ATTRIBUTES
+ButtonEdit cbbcon=cbb_file.cbbcon, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Configuration Item";
+Edit ima02_1=formonly.ima02_1 type CHAR, tabIndex=2, noEntry;
+Edit ima021_1=formonly.ima021_1 type CHAR, tabIndex=3, noEntry;
+Edit cbb01=cbb_file.cbb01, tabIndex=4, not null, required;
+Edit cbb02=cbb_file.cbb02, tabIndex=5, noEntry;
+ButtonEdit cbb03=cbb_file.cbb03, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Feature Item";
+Edit ima02_2=formonly.ima02_2 type CHAR, tabIndex=7, noEntry;
+Edit ima021_2=formonly.ima021_2 type CHAR, tabIndex=8, noEntry;
+Edit cbb04=cbb_file.cbb04, tabIndex=9, not null, required;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit cbbuser=cbb_file.cbbuser, tabIndex=11, noEntry;
+Edit cbbmodu=cbb_file.cbbmodu, tabIndex=12, noEntry;
+Edit cbbacti=cbb_file.cbbacti, tabIndex=13, noEntry, upShift;
+Edit cbbgrup=cbb_file.cbbgrup, tabIndex=14, noEntry;
+DateEdit cbbdate=cbb_file.cbbdate, tabIndex=15, noEntry;
+Edit cbboriu=cbb_file.cbboriu, tabIndex=501, noEntry;
+Edit cbborig=cbb_file.cbborig, tabIndex=502, noEntry;
+ButtonEdit cbb05=cbb_file.cbb05, action=controlp, tabIndex=16, title="Optional Item", not null, required, image="zoom", comment="<^P>Qry Item No.";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=17, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=18, title="Specification", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cbb(cbb_file.cbb05,formonly.ima02,formonly.ima021)
+SCREEN RECORD Undefined(cbb_file.cbbcon,formonly.ima02_1,formonly.ima021_1,cbb_file.cbb01,cbb_file.cbb02,cbb_file.cbb03,formonly.ima02_2,formonly.ima021_2,cbb_file.cbb04,formonly.imgmksg,cbb_file.cbbuser,cbb_file.cbbmodu,cbb_file.cbbacti,cbb_file.cbbgrup,cbb_file.cbbdate,cbb_file.cbboriu,cbb_file.cbborig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

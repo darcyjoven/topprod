@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zy_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zy_g")
+VBox VBox1
+Grid gr3052
+{
+ <G group01                                               >
+  Authorization Category             [g_zy01              ]
+  Authorization Category Description [zw02                ]
+ <                                                        >
+
+}
+END -- gr3052
+Table s_zz
+{
+[xxxx    |zz01         |zz02                      |zz011     |zz03             |zz10               ]
+[xxxx    |zz01         |zz02                      |zz011     |zz03             |zz10               ]
+[xxxx    |zz01         |zz02                      |zz011     |zz03             |zz10               ]
+[xxxx    |zz01         |zz02                      |zz011     |zz03             |zz10               ]
+[xxxx    |zz01         |zz02                      |zz011     |zz03             |zz10               ]
+[xxxx    |zz01         |zz02                      |zz011     |zz03             |zz10               ]
+[xxxx    |zz01         |zz02                      |zz011     |zz03             |zz10               ]
+[xxxx    |zz01         |zz02                      |zz011     |zz03             |zz10               ]
+[xxxx    |zz01         |zz02                      |zz011     |zz03             |zz10               ]
+[xxxx    |zz01         |zz02                      |zz011     |zz03             |zz10               ]
+
+}
+END -- s_zz
+END -- VBox1
+END -- p_zy_g
+
+TABLES
+zz_file
+ATTRIBUTES
+Group group01:group01;
+Edit g_zy01=formonly.g_zy01 type CHAR, tabIndex=1;
+Edit zw02=formonly.zw02 type CHAR, tabIndex=2, noEntry;
+CheckBox xxxx=formonly.xxxx type CHAR, tabIndex=3, title="Checked", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit zz01=zz_file.zz01, action=controlp, tabIndex=4, title="Program Code", noEntry, image="zoom", downShift, comment="<^P> Qry Program Name";
+Edit zz02=zz_file.zz02, tabIndex=5, title="Program Name", noEntry;
+ComboBox zz011=zz_file.zz011, tabIndex=6, title="Module ID", not null, required, queryEditable, comment="Which Module is the Program in. Fill it!";
+ComboBox zz03=zz_file.zz03, tabIndex=7, title="Program Category", queryEditable, items=(("I", %"Input/Create"),("M", %"Menu"),("O", %"Other"),("P", %"Process/Batch"),("Q", %"Query"),("R", %"Report"),("S", %"System Parameter"),("T", %"Transaction"),("U", %"Update"));
+ButtonEdit zz10=zz_file.zz10, action=controlp, tabIndex=8, title="Program Group", image="zoom", comment="zz10, Printing Default";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zz(formonly.xxxx,zz_file.zz01,zz_file.zz02,zz_file.zz011,zz_file.zz03,zz_file.zz10)
+SCREEN RECORD Undefined(formonly.g_zy01,formonly.zw02)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_h.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapt110_h")
+Grid gr358
+{
+ <G group01                                                      >
+  Account No.        [apa54     ][aag02                         ]
+  Project No.        [apa66     ][gja02                         ]
+  Transaction code 1 [apa67               ]
+  Transaction Code 2 [apa68               ]
+  Transaction code 3 [apa69               ]
+  Transaction Code 4 [apa70               ]
+  Budget No.         [apa71     ]
+
+ <                                                               >
+
+}
+END -- gr358
+END -- aapt110_h
+
+ATTRIBUTES
+Group group01:group01;
+Edit apa54=formonly.apa54 type CHAR, tabIndex=1, noEntry;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit apa66=formonly.apa66 type CHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Project No.";
+Edit gja02=formonly.gja02 type CHAR, tabIndex=4;
+ButtonEdit apa67=formonly.apa67 type CHAR, action=controlp, tabIndex=5, image="zoom", comment="Enter Transaction Code-1, <^P>Qry Transaction Code <^Y>Create transaction code";
+ButtonEdit apa68=formonly.apa68 type CHAR, action=controlp, tabIndex=6, image="zoom", comment="Enter Transaction Code-2, <^P>Qry Transaction Code <^Y>Create transaction code";
+ButtonEdit apa69=formonly.apa69 type CHAR, action=controlp, tabIndex=7, image="zoom", comment="Enter Transaction Code-3, <^P>Qry Transaction Code <^Y>Create transaction code";
+ButtonEdit apa70=formonly.apa70 type CHAR, action=controlp, tabIndex=8, image="zoom", comment="Enter Transaction Code-4, <^P>Qry Transaction Code <^Y>Create transaction code";
+Edit apa71=formonly.apa71 type CHAR, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apa54,formonly.aag02,formonly.apa66,formonly.gja02,formonly.apa67,formonly.apa68,formonly.apa69,formonly.apa70,formonly.apa71)
+END -- INSTRUCTIONS
+

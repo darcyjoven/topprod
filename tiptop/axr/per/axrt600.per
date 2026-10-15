@@ -1,0 +1,222 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt600")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr2699
+{
+ Account Slip No.    [aqe01             ]        Vender Code         [aqe03       ]     Confirmation Code   [aqe14     ]  [imgmksg]
+ Account Date        [aqe02       ]              Vender Abbreviation [aqe11       ]                         [aqemksg   ]  [       ]
+ Entry Date          [aqeinpd     ]                                                     Status Code         [aqe15     ]
+
+
+}
+END -- gr2699
+HBox HBox1
+Group g03
+Grid gr2700
+{
+ Currency        [aqe06     ]
+ Employee        [aqe04     ] Department    [aqe05       ]
+
+}
+END -- gr2700
+END -- g03
+Group g04(text="Oringinal Currency")
+Grid gr2701
+{
+ Original Currency Account Amount [aqe08f              ]
+ Original Currency Payment Amount [aqe09f              ]
+
+}
+END -- gr2701
+END -- g04
+Group g05(text="Home Currency")
+Grid gr2702
+{
+ Home Currency Account Amount [aqe08               ]
+ Home Currency Payment Amount [aqe09               ]
+
+}
+END -- gr2702
+END -- g05
+END -- HBox1
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr2703
+{
+ Record Owner        [aqeuser   ] Last Modified by    [aqemodu     ]   Data Valid Code     [aqeacti   ]
+ Department          [aqegrup   ] Create/Modify Date  [aqedate     ]
+ Record Orig.        [aqeoriu   ]
+ Dept Orig.          [aqeorig   ]
+}
+END -- gr2703
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[aqeud01                       ] userdefined_field07[aqeud07        ] userdefined_field13[aqeud13        ]
+                    [                              ] userdefined_field08[aqeud08        ] userdefined_field14[aqeud14        ]
+ userdefined_field02[aqeud02        ]                userdefined_field09[aqeud09        ] userdefined_field15[aqeud15        ]
+ userdefined_field03[aqeud03        ]                userdefined_field10[aqeud10        ]
+ userdefined_field04[aqeud04        ]                userdefined_field11[aqeud11        ]
+ userdefined_field05[aqeud05        ]                userdefined_field12[aqeud12        ]
+ userdefined_field06[aqeud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Group g01(text="Receive")
+Table s_aqg
+{
+[aqg02  |aqg03             |aqg04    |aqg14          |aqg15    |aqg08        |aqg05   |aqg051    |aqg11                   |nmc02  |aqg09    |aqg10         |aqg06f                           |aqg06                       |aqgud01   |aqgud02   |aqgud03    |aqgud04    |aqgud05    |aqgud06    |aqgud07    |aqgud08    |aqgud09    |aqgud10    |aqgud11   |aqgud12  |aqgud13   |aqgud14   |aqgud15    ]
+[aqg02  |aqg03             |aqg04    |aqg14          |aqg15    |aqg08        |aqg05   |aqg051    |aqg11                   |nmc02  |aqg09    |aqg10         |aqg06f                           |aqg06                       |aqgud01   |aqgud02   |aqgud03    |aqgud04    |aqgud05    |aqgud06    |aqgud07    |aqgud08    |aqgud09    |aqgud10    |aqgud11   |aqgud12  |aqgud13   |aqgud14   |aqgud15    ]
+[aqg02  |aqg03             |aqg04    |aqg14          |aqg15    |aqg08        |aqg05   |aqg051    |aqg11                   |nmc02  |aqg09    |aqg10         |aqg06f                           |aqg06                       |aqgud01   |aqgud02   |aqgud03    |aqgud04    |aqgud05    |aqgud06    |aqgud07    |aqgud08    |aqgud09    |aqgud10    |aqgud11   |aqgud12  |aqgud13   |aqgud14   |aqgud15    ]
+[aqg02  |aqg03             |aqg04    |aqg14          |aqg15    |aqg08        |aqg05   |aqg051    |aqg11                   |nmc02  |aqg09    |aqg10         |aqg06f                           |aqg06                       |aqgud01   |aqgud02   |aqgud03    |aqgud04    |aqgud05    |aqgud06    |aqgud07    |aqgud08    |aqgud09    |aqgud10    |aqgud11   |aqgud12  |aqgud13   |aqgud14   |aqgud15    ]
+[aqg02  |aqg03             |aqg04    |aqg14          |aqg15    |aqg08        |aqg05   |aqg051    |aqg11                   |nmc02  |aqg09    |aqg10         |aqg06f                           |aqg06                       |aqgud01   |aqgud02   |aqgud03    |aqgud04    |aqgud05    |aqgud06    |aqgud07    |aqgud08    |aqgud09    |aqgud10    |aqgud11   |aqgud12  |aqgud13   |aqgud14   |aqgud15    ]
+
+}
+END -- s_aqg
+END -- g01
+Group g02(text="Account")
+Table s_aqf
+{
+[aqf02  |aqf03             |aqf04        |aqf06    |omc04        |oma23    |omc06         |aqf05f                          |aqf05                       |aqf11        |aqf12          |aqf13 |aqf14            |aqf15                  |aqfud01   |aqfud02   |aqfud03    |aqfud04    |aqfud05    |aqfud06    |aqfud07    |aqfud08    |aqfud09    |aqfud10    |aqfud11   |aqfud12  |aqfud13   |aqfud14   |aqfud15    ]
+[aqf02  |aqf03             |aqf04        |aqf06    |omc04        |oma23    |omc06         |aqf05f                          |aqf05                       |aqf11        |aqf12          |aqf13 |aqf14            |aqf15                  |aqfud01   |aqfud02   |aqfud03    |aqfud04    |aqfud05    |aqfud06    |aqfud07    |aqfud08    |aqfud09    |aqfud10    |aqfud11   |aqfud12  |aqfud13   |aqfud14   |aqfud15    ]
+[aqf02  |aqf03             |aqf04        |aqf06    |omc04        |oma23    |omc06         |aqf05f                          |aqf05                       |aqf11        |aqf12          |aqf13 |aqf14            |aqf15                  |aqfud01   |aqfud02   |aqfud03    |aqfud04    |aqfud05    |aqfud06    |aqfud07    |aqfud08    |aqfud09    |aqfud10    |aqfud11   |aqfud12  |aqfud13   |aqfud14   |aqfud15    ]
+[aqf02  |aqf03             |aqf04        |aqf06    |omc04        |oma23    |omc06         |aqf05f                          |aqf05                       |aqf11        |aqf12          |aqf13 |aqf14            |aqf15                  |aqfud01   |aqfud02   |aqfud03    |aqfud04    |aqfud05    |aqfud06    |aqfud07    |aqfud08    |aqfud09    |aqfud10    |aqfud11   |aqfud12  |aqfud13   |aqfud14   |aqfud15    ]
+[aqf02  |aqf03             |aqf04        |aqf06    |omc04        |oma23    |omc06         |aqf05f                          |aqf05                       |aqf11        |aqf12          |aqf13 |aqf14            |aqf15                  |aqfud01   |aqfud02   |aqfud03    |aqfud04    |aqfud05    |aqfud06    |aqfud07    |aqfud08    |aqfud09    |aqfud10    |aqfud11   |aqfud12  |aqfud13   |aqfud14   |aqfud15    ]
+
+}
+END -- s_aqf
+END -- g02
+Grid gr2704
+{
+ ---------- Rows [cnt   ] / [cn2   ]-[cn4   ] ----------
+
+}
+END -- gr2704
+END -- VBox1
+END -- axrt600
+
+TABLES
+aqg_file,
+aqf_file,
+aqe_file
+ATTRIBUTES
+ButtonEdit aqe01=aqe_file.aqe01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Details ";
+ButtonEdit aqe03=aqe_file.aqe03, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Qry Details ";
+ComboBox aqe14=aqe_file.aqe14, tabIndex=3, noEntry, queryEditable, items=(("Y", "Confirmed"),("N", "UnConfirm"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+DateEdit aqe02=aqe_file.aqe02, tabIndex=5, not null, required;
+Edit aqe11=aqe_file.aqe11, tabIndex=6;
+CheckBox aqemksg=aqe_file.aqemksg, tabIndex=7, text="Approve?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit aqeinpd=aqe_file.aqeinpd, tabIndex=8, not null, required;
+ComboBox aqe15=aqe_file.aqe15, tabIndex=9, noEntry, queryEditable, items=(("0", "Issue"),("1", "Approved"),("S", "Approving"),("R", "Approval rejected!"),("W", "Withdraw"),("9", "Void"));
+ButtonEdit aqe06=aqe_file.aqe06, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P> Qry Details ";
+ButtonEdit aqe04=aqe_file.aqe04, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P> Qry Details ";
+ButtonEdit aqe05=aqe_file.aqe05, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P> Qry Details ";
+Edit aqe08f=aqe_file.aqe08f, tabIndex=13, noEntry;
+Edit aqe09f=aqe_file.aqe09f, tabIndex=14, noEntry;
+Edit aqe08=aqe_file.aqe08, tabIndex=15, noEntry;
+Edit aqe09=aqe_file.aqe09, tabIndex=16, noEntry;
+Edit aqeuser=aqe_file.aqeuser, tabIndex=17, noEntry;
+Edit aqemodu=aqe_file.aqemodu, tabIndex=18, noEntry;
+Edit aqeacti=aqe_file.aqeacti, tabIndex=19, noEntry, upShift;
+Edit aqegrup=aqe_file.aqegrup, tabIndex=20, noEntry;
+DateEdit aqedate=aqe_file.aqedate, tabIndex=21, noEntry;
+Edit aqeoriu=aqe_file.aqeoriu, tabIndex=501, noEntry;
+Edit aqeorig=aqe_file.aqeorig, tabIndex=502, noEntry;
+TextEdit aqeud01=aqe_file.aqeud01, tabIndex=327, stretch=NONE;
+Edit aqeud07=aqe_file.aqeud07, tabIndex=328;
+DateEdit aqeud13=aqe_file.aqeud13, tabIndex=329;
+Edit aqeud08=aqe_file.aqeud08, tabIndex=330;
+DateEdit aqeud14=aqe_file.aqeud14, tabIndex=331;
+Edit aqeud02=aqe_file.aqeud02, tabIndex=332;
+Edit aqeud09=aqe_file.aqeud09, tabIndex=333;
+DateEdit aqeud15=aqe_file.aqeud15, tabIndex=334;
+Edit aqeud03=aqe_file.aqeud03, tabIndex=335;
+Edit aqeud10=aqe_file.aqeud10, tabIndex=336;
+Edit aqeud04=aqe_file.aqeud04, tabIndex=337;
+Edit aqeud11=aqe_file.aqeud11, tabIndex=338;
+Edit aqeud05=aqe_file.aqeud05, tabIndex=339;
+Edit aqeud12=aqe_file.aqeud12, tabIndex=340;
+Edit aqeud06=aqe_file.aqeud06, tabIndex=341;
+Edit aqg02=aqg_file.aqg02, tabIndex=22, title="Ln #", not null, required;
+ButtonEdit aqg03=aqg_file.aqg03, action=controlp, tabIndex=23, title="Account Logistics", noEntry, not null, required, image="zoom", comment="<^P> Qry Details ";
+ComboBox aqg04=aqg_file.aqg04, tabIndex=24, title="Property", not null, required, queryEditable, items=(("1", %"Check"),("2", %"Transfer"));
+ButtonEdit aqg14=aqg_file.aqg14, action=controlp, tabIndex=25, title="AR Account No.", not null, required, image="zoom", comment="<^P> Qry Details ";
+Edit aqg15=aqg_file.aqg15, tabIndex=26, title="Line No.";
+ButtonEdit aqg08=aqg_file.aqg08, action=controlp, tabIndex=27, title="Drawing Bank", noEntry, image="zoom", comment="<^P> Qry Details ";
+ButtonEdit aqg05=aqg_file.aqg05, action=controlp, tabIndex=28, title="Account", noEntry, image="zoom", comment="<^P> Qry Details ";
+ButtonEdit aqg051=aqg_file.aqg051, action=controlp, tabIndex=29, title="Account 2", noEntry, image="zoom", comment="<^P> Qry Details ";
+ButtonEdit aqg11=aqg_file.aqg11, action=controlp, tabIndex=30, title="Bank Savings Change No.", noEntry, image="zoom", comment="<^P> Qry Details ";
+Edit nmc02=formonly.nmc02 type CHAR, tabIndex=31, title="Name", noEntry;
+ButtonEdit aqg09=aqg_file.aqg09, action=controlp, tabIndex=32, title="Currency", noEntry, image="zoom", comment="<^P> Qry Details ";
+Edit aqg10=aqg_file.aqg10, tabIndex=33, title="Exchange Rate", noEntry;
+Edit aqg06f=aqg_file.aqg06f, tabIndex=34, title="Original Currency Payment Amount", not null, required;
+Edit aqg06=aqg_file.aqg06, tabIndex=35, title="Home Currency Payment Amount", not null, required;
+TextEdit aqgud01=aqg_file.aqgud01, tabIndex=325, title="aqgud01", stretch=NONE;
+Edit aqgud02=aqg_file.aqgud02, tabIndex=342, title="aqgud02";
+Edit aqgud03=aqg_file.aqgud03, tabIndex=343, title="aqgud03";
+Edit aqgud04=aqg_file.aqgud04, tabIndex=344, title="aqgud04";
+Edit aqgud05=aqg_file.aqgud05, tabIndex=345, title="aqgud05";
+Edit aqgud06=aqg_file.aqgud06, tabIndex=346, title="aqgud06";
+Edit aqgud07=aqg_file.aqgud07, tabIndex=347, title="aqgud07";
+Edit aqgud08=aqg_file.aqgud08, tabIndex=348, title="aqgud08";
+Edit aqgud09=aqg_file.aqgud09, tabIndex=349, title="aqgud09";
+Edit aqgud10=aqg_file.aqgud10, tabIndex=350, title="aqgud10";
+Edit aqgud11=aqg_file.aqgud11, tabIndex=351, title="aqgud11";
+Edit aqgud12=aqg_file.aqgud12, tabIndex=352, title="aqgud12";
+Edit aqgud13=aqg_file.aqgud13, tabIndex=353, title="aqgud13";
+Edit aqgud14=aqg_file.aqgud14, tabIndex=354, title="aqgud14";
+Edit aqgud15=aqg_file.aqgud15, tabIndex=355, title="aqgud15";
+Edit aqf02=aqf_file.aqf02, tabIndex=36, title="Ln #", not null, required;
+ButtonEdit aqf03=aqf_file.aqf03, action=controlp, tabIndex=37, title="Account Logistics", not null, required, image="zoom", comment="<^P> Qry Details ";
+ButtonEdit aqf04=aqf_file.aqf04, action=controlp, tabIndex=38, title="Accounts No.", not null, required, image="zoom", comment="<^P> Qry Details ";
+Edit aqf06=aqf_file.aqf06, tabIndex=39, title="Line No.", not null, required;
+DateEdit omc04=formonly.omc04 type CHAR, tabIndex=40, title="Account Date", noEntry;
+Edit oma23=formonly.oma23 type CHAR, tabIndex=41, title="Currency", noEntry;
+Edit omc06=formonly.omc06 type CHAR, tabIndex=42, title="Exchange Rate", noEntry;
+Edit aqf05f=aqf_file.aqf05f, tabIndex=43, title="Original Currency Contra Amount", not null, required;
+Edit aqf05=aqf_file.aqf05, tabIndex=44, title="Home Currency Contra Amount", not null, required;
+ButtonEdit aqf11=aqf_file.aqf11, action=controlp, tabIndex=45, title="Account Type", not null, required, image="zoom", comment="<^P> Qry Details ";
+ButtonEdit aqf12=aqf_file.aqf12, action=controlp, tabIndex=46, title="Payment Method", not null, required, image="zoom", comment="<^P> Qry Details ";
+ButtonEdit aqf13=aqf_file.aqf13, action=controlp, tabIndex=47, title="Tax", not null, required, image="zoom", comment="<^P> Qry Details ";
+ButtonEdit aqf14=aqf_file.aqf14, action=controlp, tabIndex=48, title="Internal Account", not null, required, image="zoom", comment="<^P> Qry Details ";
+ButtonEdit aqf15=aqf_file.aqf15, action=controlp, tabIndex=49, title="Bank Savings Change No.", not null, required, image="zoom", comment="<^P> Qry Details ";
+TextEdit aqfud01=aqf_file.aqfud01, tabIndex=325, title="aqfud01", stretch=NONE;
+Edit aqfud02=aqf_file.aqfud02, tabIndex=356, title="aqfud02";
+Edit aqfud03=aqf_file.aqfud03, tabIndex=357, title="aqfud03";
+Edit aqfud04=aqf_file.aqfud04, tabIndex=358, title="aqfud04";
+Edit aqfud05=aqf_file.aqfud05, tabIndex=359, title="aqfud05";
+Edit aqfud06=aqf_file.aqfud06, tabIndex=360, title="aqfud06";
+Edit aqfud07=aqf_file.aqfud07, tabIndex=361, title="aqfud07";
+Edit aqfud08=aqf_file.aqfud08, tabIndex=362, title="aqfud08";
+Edit aqfud09=aqf_file.aqfud09, tabIndex=363, title="aqfud09";
+Edit aqfud10=aqf_file.aqfud10, tabIndex=364, title="aqfud10";
+Edit aqfud11=aqf_file.aqfud11, tabIndex=365, title="aqfud11";
+Edit aqfud12=aqf_file.aqfud12, tabIndex=366, title="aqfud12";
+Edit aqfud13=aqf_file.aqfud13, tabIndex=367, title="aqfud13";
+Edit aqfud14=aqf_file.aqfud14, tabIndex=368, title="aqfud14";
+Edit aqfud15=aqf_file.aqfud15, tabIndex=369, title="aqfud15";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=50;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=51;
+Edit cn4=formonly.cn4 type INTEGER, tabIndex=52;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aqg(aqg_file.aqg02,aqg_file.aqg03,aqg_file.aqg04,aqg_file.aqg14,aqg_file.aqg15,aqg_file.aqg08,aqg_file.aqg05,aqg_file.aqg051,aqg_file.aqg11,formonly.nmc02,aqg_file.aqg09,aqg_file.aqg10,aqg_file.aqg06f,aqg_file.aqg06,aqg_file.aqgud01,aqg_file.aqgud02,aqg_file.aqgud03,aqg_file.aqgud04,aqg_file.aqgud05,aqg_file.aqgud06,aqg_file.aqgud07,aqg_file.aqgud08,aqg_file.aqgud09,aqg_file.aqgud10,aqg_file.aqgud11,aqg_file.aqgud12,aqg_file.aqgud13,aqg_file.aqgud14,aqg_file.aqgud15)
+SCREEN RECORD s_aqf(aqf_file.aqf02,aqf_file.aqf03,aqf_file.aqf04,aqf_file.aqf06,formonly.omc04,formonly.oma23,formonly.omc06,aqf_file.aqf05f,aqf_file.aqf05,aqf_file.aqf11,aqf_file.aqf12,aqf_file.aqf13,aqf_file.aqf14,aqf_file.aqf15,aqf_file.aqfud01,aqf_file.aqfud02,aqf_file.aqfud03,aqf_file.aqfud04,aqf_file.aqfud05,aqf_file.aqfud06,aqf_file.aqfud07,aqf_file.aqfud08,aqf_file.aqfud09,aqf_file.aqfud10,aqf_file.aqfud11,aqf_file.aqfud12,aqf_file.aqfud13,aqf_file.aqfud14,aqf_file.aqfud15)
+SCREEN RECORD Undefined(aqe_file.aqe01,aqe_file.aqe03,aqe_file.aqe14,formonly.imgmksg,aqe_file.aqe02,aqe_file.aqe11,aqe_file.aqemksg,aqe_file.aqeinpd,aqe_file.aqe15,aqe_file.aqe06,aqe_file.aqe04,aqe_file.aqe05,aqe_file.aqe08f,aqe_file.aqe09f,aqe_file.aqe08,aqe_file.aqe09,aqe_file.aqeuser,aqe_file.aqemodu,aqe_file.aqeacti,aqe_file.aqegrup,aqe_file.aqedate,aqe_file.aqeoriu,aqe_file.aqeorig,aqe_file.aqeud01,aqe_file.aqeud07,aqe_file.aqeud13,aqe_file.aqeud08,aqe_file.aqeud14,aqe_file.aqeud02,aqe_file.aqeud09,aqe_file.aqeud15,aqe_file.aqeud03,aqe_file.aqeud10,aqe_file.aqeud04,aqe_file.aqeud11,aqe_file.aqeud05,aqe_file.aqeud12,aqe_file.aqeud06,formonly.cnt,formonly.cn2,formonly.cn4)
+END -- INSTRUCTIONS
+

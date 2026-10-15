@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr333.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr333")
+VBox vb2_
+Grid gr3257
+{
+ <G group01                                                          >
+  Transaction Category[ina00               ]
+  [dummy01          ][dummy03          ][dummy05          ]
+  [dummy02          ][dummy04          ][dummy06          ]
+  Transaction Note No.[ina01               ]
+  Transaction Date    [ina02               ]
+  Department No.      [ina04               ]
+  Category            [ima131              ]
+ <                                                                   >
+
+}
+END -- gr3257
+Group g01(text="INPUT")
+Grid gr3258
+{
+
+  STATE               [inaconf           ]
+ <G group02                                                         >
+ [s1                  ] [s2                  ] [s3                  ]
+ [t1                  ] [t2                  ] [t3                  ]
+ [u1                  ] [u2                  ] [u3                  ]
+ <                                                                  >
+}
+END -- gr3258
+END -- g01
+Grid gr3259
+{
+[more                                    ]
+
+}
+END -- gr3259
+END -- vb2_
+END -- aimr333
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ina00=formonly.ina00 type VARCHAR, tabIndex=1;
+Label dummy01:dummy01, text="1:Inventory MISC Issuing";
+Label dummy03:dummy03, text="3:Inventory MISC Receipt";
+Label dummy05:dummy05, text="5:Inventory MISC Scrap";
+Label dummy02:dummy02, text="2:WIP Misc Issue";
+Label dummy04:dummy04, text="4:WIP MISC Receipt";
+Label dummy06:dummy06, text="6:WIP MISC Scrap";
+ButtonEdit ina01=formonly.ina01 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+DateEdit ina02=formonly.ina02 type DATE, tabIndex=3;
+ButtonEdit ina04=formonly.ina04 type VARCHAR, action=controlp, tabIndex=4, image="zoom", comment="No. ";
+Edit ima131=formonly.ima131 type VARCHAR, tabIndex=5, comment="No. ";
+ComboBox inaconf=formonly.inaconf type CHAR, tabIndex=16, items=(("1", "Unconfirmed"),("2", "Confirmed"),("3", "Expired Count"),("4", "Obsolete"),("5", "All"));
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=6, queryEditable, items=(("1", "Transaction Category"),("2", "Transaction Note No."),("3", "Transaction Date"),("4", "Department No."),("5", "Category"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=7, queryEditable, items=(("1", "Transaction Category"),("2", "Transaction Note No."),("3", "Transaction Date"),("4", "Department No."),("5", "Category"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=8, queryEditable, items=(("1", "Transaction Category"),("2", "Transaction Note No."),("3", "Transaction Date"),("4", "Department No."),("5", "Category"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=12, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=13, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=15, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ina00,formonly.ina01,formonly.ina02,formonly.ina04,formonly.ima131,formonly.inaconf,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrr307.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox2
+Grid Grid1
+{
+ <G qbe                                                           >
+  hrat03   [hrat03     ]        hrat04   [hrat04     ]
+
+  hrat01   [hrat01     ]        hrat20   [hrat20     ]
+ <                                                                >
+
+ <G input                                                         >
+  bdate    [bdate      ]        edate    [edate      ]
+
+
+ <                                                                >
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- VBox2
+END -- Page1
+END -- Folder1
+END -- VBox1
+END -- ghrr301
+
+ATTRIBUTES
+Group qbe:QBE, text=%"QBE";
+ButtonEdit hrat03=formonly.hrat03 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit hrat04=formonly.hrat04 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit hrat01=formonly.hrat01 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit hrat20=formonly.hrat20 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+Group input:INPUT, text=%"INPUT";
+DateEdit bdate=formonly.bdate, tabIndex=5;
+DateEdit edate=formonly.edate, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrat01,formonly.hrat03,formonly.hrat04,formonly.hrat20,formonly.bdate,formonly.edate)
+END -- INSTRUCTIONS
+

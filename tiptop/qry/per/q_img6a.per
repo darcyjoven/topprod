@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_img6a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Add Inventory Pick")
+VBox vb2
+Grid gr2
+{
+ <G gb1                                                                                                                    >
+    old_sfs01 [old_sfs01       ]old_sfs02[old_] old_sfs04 [sfs04           ] old_sfs07[sfs07               ]
+    old_sfs03 [sfs03           ]                old_ima02 [old_ima02       ] sfa05    [sfa05               ]
+                                                old_ima021[old_ima021      ] tot_sfs05[tot_sfs05           ]
+
+ <                                                                                                                         >
+}
+END -- gr2
+Grid gr1280
+{
+ <T s_img                                                                                                   >
+ [check|img03      |img04             |img09|img10     |new_sfs05           |imgg09    |imgg10              ]
+ [check|img03      |img04             |img09|img10     |new_sfs05           |imgg09    |imgg10              ]
+ [check|img03      |img04             |img09|img10     |new_sfs05           |imgg09    |imgg10              ]
+ [check|img03      |img04             |img09|img10     |new_sfs05           |imgg09    |imgg10              ]
+ [check|img03      |img04             |img09|img10     |new_sfs05           |imgg09    |imgg10              ]
+ [check|img03      |img04             |img09|img10     |new_sfs05           |imgg09    |imgg10              ]
+ [check|img03      |img04             |img09|img10     |new_sfs05           |imgg09    |imgg10              ]
+ [check|img03      |img04             |img09|img10     |new_sfs05           |imgg09    |imgg10              ]
+ [check|img03      |img04             |img09|img10     |new_sfs05           |imgg09    |imgg10              ]
+ [check|img03      |img04             |img09|img10     |new_sfs05           |imgg09    |imgg10              ]
+ <                                                                                                          >
+
+}
+END -- gr1280
+END -- vb2
+END -- q_img6a
+
+TABLES
+sfs_file,
+img_file
+ATTRIBUTES
+Group gb1:gb1, text="gb1";
+Edit old_sfs01=formonly.old_sfs01 type VARCHAR, tabIndex=1, noEntry;
+Edit old_=formonly.old_sfs02 type SMALLINT, tabIndex=2, noEntry;
+Edit sfs04=sfs_file.sfs04, tabIndex=4, not null, required;
+Edit sfs07=sfs_file.sfs07, tabIndex=7, not null, required;
+Edit sfs03=sfs_file.sfs03, tabIndex=3, not null, required;
+Edit old_ima02=formonly.old_ima02 type VARCHAR, tabIndex=5, noEntry;
+Edit sfa05=formonly.sfa05 type DECIMAL, tabIndex=8, noEntry;
+Edit old_ima021=formonly.old_ima021 type VARCHAR, tabIndex=6, noEntry;
+Edit tot_sfs05=formonly.tot_sfs05 type DECIMAL, tabIndex=9, noEntry;
+Table s_img:s_img;
+CheckBox check=formonly.check type CHAR, tabIndex=10, title="Check", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit img03=img_file.img03, tabIndex=11, title="Location", noEntry, not null, required;
+Edit img04=img_file.img04, tabIndex=12, title="Lot#", noEntry, not null, required;
+Edit img09=img_file.img09, tabIndex=13, title="Unit", noEntry;
+Edit img10=img_file.img10, tabIndex=14, title="Inventory", noEntry, not null, required;
+Edit new_sfs05=formonly.new_sfs05 type DECIMAL, tabIndex=15, title="new_sfs05";
+Edit imgg09=formonly.imgg09 type VARCHAR, tabIndex=16, title="imgg09", noEntry;
+Edit imgg10=formonly.imgg10 type DECIMAL, tabIndex=17, title="imgg10", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(formonly.check,img_file.img03,img_file.img04,img_file.img09,img_file.img10,formonly.new_sfs05,formonly.imgg09,formonly.imgg10)
+SCREEN RECORD Undefined(formonly.old_sfs01,formonly.old_sfs02,sfs_file.sfs04,sfs_file.sfs07,sfs_file.sfs03,formonly.old_ima02,formonly.sfa05,formonly.old_ima021,formonly.tot_sfs05)
+END -- INSTRUCTIONS
+

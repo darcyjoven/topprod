@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_dev_datalist.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_dev_datelist")
+Folder pc749
+Page page01(text="Page01")
+VBox vb3
+Grid gr11
+{
+ Develop No. [gfd01         ]
+
+}
+END -- gr11
+Table s_gfd(wantFixedPageSize)
+{
+[gfd02|gfd04     |gfd06          |gfd07          ]
+[gfd02|gfd04     |gfd06          |gfd07          ]
+[gfd02|gfd04     |gfd06          |gfd07          ]
+[gfd02|gfd04     |gfd06          |gfd07          ]
+[gfd02|gfd04     |gfd06          |gfd07          ]
+[gfd02|gfd04     |gfd06          |gfd07          ]
+[gfd02|gfd04     |gfd06          |gfd07          ]
+[gfd02|gfd04     |gfd06          |gfd07          ]
+[gfd02|gfd04     |gfd06          |gfd07          ]
+[gfd02|gfd04     |gfd06          |gfd07          ]
+
+}
+END -- s_gfd
+Group group01(text="memo")
+Grid gr3204
+{
+  [dummy01                                                     ]
+  [dummy02                                                     ]
+  [dummy03                                                     ]
+  [dummy04                                                     ]
+  [dummy05                                                     ]
+  [dummy06                                                     ]
+  [dummy07                                                     ]
+  [dummy08                                                     ]
+  [dummy09                                                     ]
+  [dummy10                                                     ]
+}
+END -- gr3204
+END -- group01
+Grid gr3205
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3205
+END -- vb3
+END -- page01
+END -- pc749
+END -- p_dev_datalist
+
+TABLES
+gfd_file
+ATTRIBUTES
+Edit gfd01=gfd_file.gfd01, tabIndex=6;
+Edit gfd02=gfd_file.gfd02, tabIndex=1, title="Line", not null, required, comment="No Blank!";
+ComboBox gfd04=gfd_file.gfd04, tabIndex=2, title="Program", not null, required, queryEditable, comment="Enter 2|6|7|8|9|A|G|H|I ", items=(("1", "p_zz"),("2", "p_ze"),("3", "p_zmd"),("4", "p_perlang"),("5", "p_qry"),("6", "p_tabname"),("7", "p_feldname"),("8", "p_zaa"),("9", "p_query"),("A", "p_zaw"));
+Edit gfd06=gfd_file.gfd06, tabIndex=3, title="KEY col1", not null, required, comment="No Blank!";
+Edit gfd07=gfd_file.gfd07, tabIndex=4, title="KEY col2", noEntry, comment="No Blank!";
+Label dummy01:dummy01, text="* if you create new program or modify custom program, select \"1. p_zz\", it will together with link data, action data, form data.", style="fixedFont";
+Label dummy02:dummy02, text="* if you create modify message, select \"2. p_ze\".", style="fixedFont";
+Label dummy03:dummy03, text="* if you create new module, select \"3. p_zmd\", it will create correlate directory.", style="fixedFont";
+Label dummy04:dummy04, text="* if you modify text of form or change form setting, select \"4. p_perlang\".", style="fixedFont";
+Label dummy05:dummy05, text="* if you create or modify dynamic query window by p_qry, select \"5. p_qry\".", style="fixedFont";
+Label dummy06:dummy06, text="* if you create new table by p_zaa, select \"6. p_tabname\", it will together with table data, field data.", style="fixedFont";
+Label dummy07:dummy07, text="* if you alter table add field, select \"7. feldname\".", style="fixedFont";
+Label dummy08:dummy08, text="* if you create or modify report data, select \"8. p_zaa\".", style="fixedFont";
+Label dummy09:dummy09, text="* if you create or modify user define query report, select \"9. p_query\".", style="fixedFont";
+Label dummy10:dummy10, text="* if you create or modify crystal report name, select \"A. p_zaw\".", style="fixedFont";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gfd(gfd_file.gfd02,gfd_file.gfd04,gfd_file.gfd06,gfd_file.gfd07)
+SCREEN RECORD Undefined(gfd_file.gfd01,formonly.cn2)
+END -- INSTRUCTIONS
+

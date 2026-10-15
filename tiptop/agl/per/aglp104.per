@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglp104.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglp104")
+Folder pc1
+Page Page1(text=%"Page0")
+VBox vb11
+Grid gr7
+{
+
+  Data Center[gev04         ][geu02                       ]
+
+}
+END -- gr7
+Table s_aag
+{
+[sel     |aag00   |aag01       |aag02   |aag13   |aag04   |aag07   |aag08   |aag24   |aag05   |aag21   |aag23   |aagacti ]
+[sel     |aag00   |aag01       |aag02   |aag13   |aag04   |aag07   |aag08   |aag24   |aag05   |aag21   |aag23   |aagacti ]
+[sel     |aag00   |aag01       |aag02   |aag13   |aag04   |aag07   |aag08   |aag24   |aag05   |aag21   |aag23   |aagacti ]
+[sel     |aag00   |aag01       |aag02   |aag13   |aag04   |aag07   |aag08   |aag24   |aag05   |aag21   |aag23   |aagacti ]
+[sel     |aag00   |aag01       |aag02   |aag13   |aag04   |aag07   |aag08   |aag24   |aag05   |aag21   |aag23   |aagacti ]
+
+}
+END -- s_aag
+Grid gr12
+{
+  count[cnt  ]--
+
+}
+END -- gr12
+END -- vb11
+END -- Page1
+END -- pc1
+END -- aglp104
+
+TABLES
+aag_file,
+gev_file,
+geu_file
+ATTRIBUTES
+ButtonEdit gev04=gev_file.gev04, action=controlp, tabIndex=1, image="zoom.png";
+Edit geu02=geu_file.geu02, tabIndex=2;
+CheckBox sel=formonly.sel type VARCHAR, tabIndex=3, default = "N", title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit aag00=aag_file.aag00, tabIndex=4, title="Book No.", noEntry, not null, required;
+Edit aag01=aag_file.aag01, tabIndex=5, title="Account Code", noEntry, not null, required;
+Edit aag02=aag_file.aag02, tabIndex=6, title="Account Name", noEntry, not null, required;
+Edit aag13=aag_file.aag13, tabIndex=7, title="Extra Name", noEntry, not null, required;
+ComboBox aag04=aag_file.aag04, tabIndex=8, title="Account Type", noEntry, not null, required, items=(("1", "Balance item"),("2", "P/L item"));
+ComboBox aag07=aag_file.aag07, tabIndex=9, title="Control/Detail", noEntry, not null, required, items=(("1", "Control"),("2", "Subsidiary Ledger Account"),("3", "Independent"));
+Edit aag08=aag_file.aag08, tabIndex=10, title="Control Account", noEntry, not null, required;
+Edit aag24=aag_file.aag24, tabIndex=11, title="Account Level", noEntry, not null, required;
+CheckBox aag05=aag_file.aag05, tabIndex=12, title="Department Management", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag21=aag_file.aag21, tabIndex=13, title="Budget Control", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag23=aag_file.aag23, tabIndex=14, default = "N", title="Project Control", valueChecked = "Y", valueUnchecked = "N";
+CheckBox aagacti=aag_file.aagacti, tabIndex=15, title="Data Valid Code", valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aag(formonly.sel,aag_file.aag00,aag_file.aag01,aag_file.aag02,aag_file.aag13,aag_file.aag04,aag_file.aag07,aag_file.aag08,aag_file.aag24,aag_file.aag05,aag_file.aag21,aag_file.aag23,aag_file.aagacti)
+SCREEN RECORD Undefined(gev_file.gev04,geu_file.geu02,formonly.cnt)
+END -- INSTRUCTIONS
+

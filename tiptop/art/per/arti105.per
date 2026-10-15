@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti105.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="arti105")
+VBox VBox1
+Folder page0
+Page Page13(text=%"Page0")
+Table s_ryd
+{
+[ryd01     |ryd02     |ryd06               |ryd06_desc          |ryd10          |ryd04               |ryd07   |ryd08   |ryd11   |ryd12   |ryd13   |ryd09               |rydpos         |rydacti     ]
+[ryd01     |ryd02     |ryd06               |ryd06_desc          |ryd10          |ryd04               |ryd07   |ryd08   |ryd11   |ryd12   |ryd13   |ryd09               |rydpos         |rydacti     ]
+[ryd01     |ryd02     |ryd06               |ryd06_desc          |ryd10          |ryd04               |ryd07   |ryd08   |ryd11   |ryd12   |ryd13   |ryd09               |rydpos         |rydacti     ]
+[ryd01     |ryd02     |ryd06               |ryd06_desc          |ryd10          |ryd04               |ryd07   |ryd08   |ryd11   |ryd12   |ryd13   |ryd09               |rydpos         |rydacti     ]
+[ryd01     |ryd02     |ryd06               |ryd06_desc          |ryd10          |ryd04               |ryd07   |ryd08   |ryd11   |ryd12   |ryd13   |ryd09               |rydpos         |rydacti     ]
+
+}
+END -- s_ryd
+END -- Page13
+END -- page0
+Grid gr17
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr17
+END -- VBox1
+END -- arti105
+
+TABLES
+ryd_file
+ATTRIBUTES
+ComboBox ryd01=ryd_file.ryd01, tabIndex=1, title="ryd01", not null, required, items=(("01", "Cash"),("02", "UnionPay Card"),("03", "Check"),("04", "Certificate"),("05", "Certificate"),("06", "Stored-value Card"),("07", "Chong Advance"),("08", "Handwork Virement"),("09", "Integral"),("10", "Receivable_discount"));
+Edit ryd02=ryd_file.ryd02, tabIndex=2, title="ryd02", not null;
+ButtonEdit ryd06=ryd_file.ryd06, action=controlp, tabIndex=3, title=%"ryd06", not null, image="zoom.png";
+Edit ryd06_desc=formonly.ryd06_desc, tabIndex=4, title=%"ryd06_desc", noEntry;
+Edit ryd10=ryd_file.ryd10, tabIndex=5, title="ryd10", not null, required;
+Edit ryd04=ryd_file.ryd04, tabIndex=6, title="ryd04", not null;
+CheckBox ryd07=ryd_file.ryd07, tabIndex=7, default = "Y", title=%"ryd07", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ryd08=ryd_file.ryd08, tabIndex=8, default = "Y", title=%"ryd08", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ryd11=ryd_file.ryd11, tabIndex=9, default = "Y", title=%"ryd11", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ryd12=ryd_file.ryd12, tabIndex=10, default = "Y", title=%"ryd12", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ryd13=ryd_file.ryd13, tabIndex=11, default = "Y", title=%"ryd13", valueChecked = "Y", valueUnchecked = "N";
+Edit ryd09=ryd_file.ryd09, tabIndex=12, title=%"ryd09", not null;
+ComboBox rydpos=ryd_file.rydpos, tabIndex=13, title=%"rydpos", noEntry, not null, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+CheckBox rydacti=ryd_file.rydacti, tabIndex=14, default = "Y", title="rydacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ryd(ryd_file.ryd01,ryd_file.ryd02,ryd_file.ryd06,formonly.ryd06_desc,ryd_file.ryd10,ryd_file.ryd04,ryd_file.ryd07,ryd_file.ryd08,ryd_file.ryd11,ryd_file.ryd12,ryd_file.ryd13,ryd_file.ryd09,ryd_file.rydpos,ryd_file.rydacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

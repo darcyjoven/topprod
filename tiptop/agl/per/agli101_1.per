@@ -1,0 +1,30 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli101_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Grid grid
+{
+
+ Plant          [aaa17          ]
+ Plant Name     [aaa17_desc     ]
+
+}
+END -- grid
+END -- agli101_1
+
+TABLES
+aaa_file
+ATTRIBUTES
+ButtonEdit aaa17=aaa_file.aaa17, action=controlp, tabIndex=1, image="zoom", scroll;
+Edit aaa17_desc=formonly.aaa17_desc type VARCHAR, tabIndex=2, noEntry, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(aaa_file.aaa17)
+SCREEN RECORD Undefined(formonly.aaa17_desc)
+END -- INSTRUCTIONS
+

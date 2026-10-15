@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi002")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+Grid gr4803
+{
+ Flow Code            [pow01     ]
+ Description          [poz02                         ]
+ Effective Date       [pow02       ]
+ Plant No.            [pow03     ]
+ Currency             [curr      ]
+}
+END -- gr4803
+END -- page01
+END -- folder01
+Table s_pow
+{
+[pow05               |pow06               |powuser   |powgrup|powmodu     |powdate    ]
+[pow05               |pow06               |powuser   |powgrup|powmodu     |powdate    ]
+[pow05               |pow06               |powuser   |powgrup|powmodu     |powdate    ]
+[pow05               |pow06               |powuser   |powgrup|powmodu     |powdate    ]
+[pow05               |pow06               |powuser   |powgrup|powmodu     |powdate    ]
+[pow05               |pow06               |powuser   |powgrup|powmodu     |powdate    ]
+[pow05               |pow06               |powuser   |powgrup|powmodu     |powdate    ]
+[pow05               |pow06               |powuser   |powgrup|powmodu     |powdate    ]
+[pow05               |pow06               |powuser   |powgrup|powmodu     |powdate    ]
+[pow05               |pow06               |powuser   |powgrup|powmodu     |powdate    ]
+
+}
+END -- s_pow
+Grid gr4804
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr4804
+END -- vb1
+END -- apmi002
+
+TABLES
+pow_file
+ATTRIBUTES
+ButtonEdit pow01=pow_file.pow01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Enter Code, No Blank <^P>Qry Flow Code";
+Edit poz02=formonly.poz02 type CHAR, tabIndex=2, noEntry;
+DateEdit pow02=pow_file.pow02, tabIndex=3, not null, required, comment="Enter U/P Effective Date";
+ButtonEdit pow03=pow_file.pow03, action=controlp, tabIndex=4, not null, required, image="zoom", comment="Enter Plant # Using this U/P <^P>Qry Plant # of Flow Code";
+Edit curr=formonly.curr type CHAR, tabIndex=5, noEntry;
+ButtonEdit pow05=pow_file.pow05, action=controlp, tabIndex=6, title="Item No. QBE", not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit pow06=pow_file.pow06, tabIndex=7, title="U/P";
+Edit powuser=pow_file.powuser, tabIndex=8, title="Owner", noEntry;
+Edit powgrup=pow_file.powgrup, tabIndex=9, title="Dept.", noEntry;
+Edit powmodu=pow_file.powmodu, tabIndex=10, title="Modified By", noEntry;
+DateEdit powdate=pow_file.powdate, tabIndex=11, title="Date Modify", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pow(pow_file.pow05,pow_file.pow06,pow_file.powuser,pow_file.powgrup,pow_file.powmodu,pow_file.powdate)
+SCREEN RECORD Undefined(pow_file.pow01,formonly.poz02,pow_file.pow02,pow_file.pow03,formonly.curr,formonly.cnt)
+END -- INSTRUCTIONS
+

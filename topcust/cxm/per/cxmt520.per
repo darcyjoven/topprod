@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cxm/4fd/cxmt520.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2110
+{
+ Price No            [tc_xme00        ]
+ Price Terms         [tc_xme01  ]
+ Terms Desc          [oah02                         ]
+ Currency            [tc_xme02  ]
+ tc_xme06            [tc_xme06        ] [gec02                ]
+
+}
+END -- gr2110
+Grid gr2111
+{
+  Custom No [tc_xme03        ][tc_xme03_desc        ]
+   Memo     [tc_xme04                          ]      [imgmksg]
+            [                                  ]      [       ]
+            [                                  |tc_xme07            ]
+   Confirm  [tc_xmeconf          ] Confirm     [tc_xmeacti          ]
+
+}
+END -- gr2111
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr2112
+{
+ Record Owner        [tc_xmeuser] Last Modified by    [tc_xmemodu]
+ Department          [tc_xmegrup] Create/Modify Date  [tc_xmedate  ]
+ Record Orig.        [tc_xmeoriu]
+ Dept Orig.          [tc_xmeorig]
+}
+END -- gr2112
+END -- info
+END -- folder01
+Table s_xmf
+{
+[tc_xmf01          |tc_xmf03            |ima02               |ima021              |tc_xmf04   |tc_xmf05            |tc_xmf06       |tc_xmf07   |tc_xmf08  |tc_xmf10  |tc_xmf09|tc_xmf11    |tc_xmf13          ]
+[tc_xmf01          |tc_xmf03            |ima02               |ima021              |tc_xmf04   |tc_xmf05            |tc_xmf06       |tc_xmf07   |tc_xmf08  |tc_xmf10  |tc_xmf09|tc_xmf11    |tc_xmf13          ]
+[tc_xmf01          |tc_xmf03            |ima02               |ima021              |tc_xmf04   |tc_xmf05            |tc_xmf06       |tc_xmf07   |tc_xmf08  |tc_xmf10  |tc_xmf09|tc_xmf11    |tc_xmf13          ]
+[tc_xmf01          |tc_xmf03            |ima02               |ima021              |tc_xmf04   |tc_xmf05            |tc_xmf06       |tc_xmf07   |tc_xmf08  |tc_xmf10  |tc_xmf09|tc_xmf11    |tc_xmf13          ]
+[tc_xmf01          |tc_xmf03            |ima02               |ima021              |tc_xmf04   |tc_xmf05            |tc_xmf06       |tc_xmf07   |tc_xmf08  |tc_xmf10  |tc_xmf09|tc_xmf11    |tc_xmf13          ]
+[tc_xmf01          |tc_xmf03            |ima02               |ima021              |tc_xmf04   |tc_xmf05            |tc_xmf06       |tc_xmf07   |tc_xmf08  |tc_xmf10  |tc_xmf09|tc_xmf11    |tc_xmf13          ]
+[tc_xmf01          |tc_xmf03            |ima02               |ima021              |tc_xmf04   |tc_xmf05            |tc_xmf06       |tc_xmf07   |tc_xmf08  |tc_xmf10  |tc_xmf09|tc_xmf11    |tc_xmf13          ]
+[tc_xmf01          |tc_xmf03            |ima02               |ima021              |tc_xmf04   |tc_xmf05            |tc_xmf06       |tc_xmf07   |tc_xmf08  |tc_xmf10  |tc_xmf09|tc_xmf11    |tc_xmf13          ]
+[tc_xmf01          |tc_xmf03            |ima02               |ima021              |tc_xmf04   |tc_xmf05            |tc_xmf06       |tc_xmf07   |tc_xmf08  |tc_xmf10  |tc_xmf09|tc_xmf11    |tc_xmf13          ]
+[tc_xmf01          |tc_xmf03            |ima02               |ima021              |tc_xmf04   |tc_xmf05            |tc_xmf06       |tc_xmf07   |tc_xmf08  |tc_xmf10  |tc_xmf09|tc_xmf11    |tc_xmf13          ]
+}
+END -- s_xmf
+Grid gr2113
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2113
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit tc_xme00=formonly.tc_xme00, action=controlp, tabIndex=1, not null, required, image="zoom", upShift, comment=%"";
+ButtonEdit tc_xme01=formonly.tc_xme01 type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oah02=formonly.oah02 type CHAR, tabIndex=3, noEntry;
+ButtonEdit tc_xme02=formonly.tc_xme02 type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit tc_xme06=formonly.tc_xme06, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit gec02=formonly.gec02, tabIndex=6, noEntry;
+ButtonEdit tc_xme03=formonly.tc_xme03, action=controlp, tabIndex=7, image="zoom";
+Edit tc_xme03_desc=formonly.tc_xme03_desc, tabIndex=9;
+TextEdit tc_xme04=formonly.tc_xme04 type VARCHAR, tabIndex=8, stretch=NONE, wantNoReturns;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+CheckBox tc_xme07=formonly.tc_xme07 type VARCHAR, tabIndex=33, text=%"tc_xme07", valueChecked = "Y", valueUnchecked = "N";
+ComboBox tc_xmeconf=formonly.tc_xmeconf, tabIndex=10, items=(("Y", "已审核"),("N", %"未审核"));
+ComboBox tc_xmeacti=formonly.tc_xmeacti type VARCHAR, tabIndex=32, items=(("1", "已核准"),("2", "已关闭"),("S", "送签中"),("0", %"已开立"),("R", "已退回"),("W", "抽单"));
+Edit tc_xmeuser=formonly.tc_xmeuser type VARCHAR, tabIndex=18, noEntry;
+Edit tc_xmemodu=formonly.tc_xmemodu type VARCHAR, tabIndex=19, noEntry;
+Edit tc_xmegrup=formonly.tc_xmegrup type VARCHAR, tabIndex=20, noEntry;
+DateEdit tc_xmedate=formonly.tc_xmedate type DATE, tabIndex=21, noEntry;
+Edit tc_xmeoriu=formonly.tc_xmeoriu type VARCHAR, tabIndex=22, noEntry;
+Edit tc_xmeorig=formonly.tc_xmeorig type VARCHAR, tabIndex=23, noEntry;
+Edit tc_xmf01=formonly.tc_xmf01, tabIndex=11, title=%"No.";
+ButtonEdit tc_xmf03=formonly.tc_xmf03 type VARCHAR, action=controlp, tabIndex=12, title="Item No.", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=13, title="P/N", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=14, title="Spec", noEntry;
+ButtonEdit tc_xmf04=formonly.tc_xmf04 type VARCHAR, action=controlp, tabIndex=15, title="Sales Unit", not null, required, image="zoom";
+Edit tc_xmf05=formonly.tc_xmf05 type DECIMAL, tabIndex=16, title="Unit Price", not null, required, comment="<^Y>Under Field Modified the same this Price";
+Edit tc_xmf06=formonly.tc_xmf06, tabIndex=17, title=%"tc_xmf06", not null, required;
+Edit tc_xmf07=formonly.tc_xmf07, tabIndex=26, title=%"tc_xmf07", not null;
+Edit tc_xmf08=formonly.tc_xmf08, tabIndex=27, title=%"tc_xmf08", not null;
+Edit tc_xmf10=formonly.tc_xmf10, tabIndex=31, title=%"tc_xmf10", not null;
+Edit tc_xmf09=formonly.tc_xmf09, tabIndex=28, title=%"tc_xmf09";
+Edit tc_xmf11=formonly.tc_xmf11 type DECIMAL, tabIndex=29, title=%"tc_xmf11", noEntry;
+TextEdit tc_xmf13=formonly.tc_xmf13, tabIndex=30, title=%"tc_xmf13", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_xme01,formonly.oah02,formonly.tc_xme02,formonly.tc_xme04,formonly.tc_xmeuser,formonly.tc_xmemodu,formonly.tc_xmegrup,formonly.tc_xmedate,formonly.tc_xmeoriu,formonly.tc_xmeorig,formonly.tc_xme03,formonly.tc_xme00,formonly.cnt,formonly.cn2,formonly.tc_xmeconf,formonly.imgmksg,formonly.tc_xme03_desc,formonly.tc_xme06,formonly.gec02,formonly.tc_xmeacti,formonly.tc_xme07)
+SCREEN RECORD s_tc_xmf(formonly.tc_xmf01,formonly.tc_xmf03,formonly.ima02,formonly.ima021,formonly.tc_xmf04,formonly.tc_xmf05,formonly.tc_xmf06,formonly.tc_xmf07,formonly.tc_xmf08,formonly.tc_xmf10,formonly.tc_xmf09,formonly.tc_xmf11,formonly.tc_xmf13)
+END -- INSTRUCTIONS
+

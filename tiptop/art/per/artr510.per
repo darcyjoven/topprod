@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="artr510")
+VBox vb4
+Grid gr5_
+{
+ <G qbe1                                                             >
+    Logistics Code      [azp01                  ]
+ <                                                                   >
+}
+END -- gr5_
+Grid gr4
+{
+ <G qbe2                                                             >
+    Product No.          [ima131                 ]
+
+    Item No.             [ogb04                  ]
+ <                                                                   >
+}
+END -- gr4
+Grid gr5
+{
+  <G input                                                           >
+     Date Between       [yy1       ]~  [yy2       ]
+     Limit              [lim1      ]~  [lim2      ]
+     Cost Method        [type                     ]
+  <                                                                  >
+}
+END -- gr5
+Grid gr6
+{
+  <G sequence                                                        >
+    [s1                     ]     [s2                   ]
+  <                                                                  >
+}
+END -- gr6
+Grid gr7
+{
+
+ [more                              ]
+
+}
+END -- gr7
+END -- vb4
+END -- artr510
+
+ATTRIBUTES
+Group qbe1:QBE1, text="QBE1";
+ButtonEdit azp01=formonly.azp01 type CHAR, action=controlp, tabIndex=1, required, image="zoom.png";
+Group qbe2:QBE2, text="QBE2";
+ButtonEdit ima131=formonly.ima131 type CHAR, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit ogb04=formonly.ogb04 type CHAR, action=controlp, tabIndex=3, image="zoom.png";
+Group input:INPUT, text="INPUT";
+DateEdit yy1=formonly.yy1 type DATE, tabIndex=4, not null;
+DateEdit yy2=formonly.yy2 type DATE, tabIndex=5, not null;
+Edit lim1=formonly.lim1 type CHAR, tabIndex=6;
+Edit lim2=formonly.lim2 type CHAR, tabIndex=7;
+ComboBox type=formonly.type type CHAR, tabIndex=8, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+Group sequence:Sequence, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=9, items=(("1", "Incoming Num"),("2", "Incoming Amount"),("3", "Sales Num"),("4", "Sales Amount"),("5", "Maori"),("6", "Gross"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=10, items=(("1", "Incoming Num"),("2", "Incoming Amount"),("3", "Sales Num"),("4", "Sales Amount"),("5", "Maori"),("6", "Gross"));
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.ima131,formonly.ogb04,formonly.yy1,formonly.yy2,formonly.lim1,formonly.lim2,formonly.type,formonly.s1,formonly.s2,formonly.more)
+END -- INSTRUCTIONS
+

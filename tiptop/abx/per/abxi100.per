@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxi100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxi100")
+VBox VBox1
+Folder pc157
+Page page01(text="Main")
+VBox VBox2
+Table s_bxa
+{
+[bxa01              |bxa02              |bxa03                        |bxa04                        |bxa05              |pmc03                |bxa06     |bxa07    |bxa08                   |bxa09         |bxa10        |bxaacti        ]
+[bxa01              |bxa02              |bxa03                        |bxa04                        |bxa05              |pmc03                |bxa06     |bxa07    |bxa08                   |bxa09         |bxa10        |bxaacti        ]
+[bxa01              |bxa02              |bxa03                        |bxa04                        |bxa05              |pmc03                |bxa06     |bxa07    |bxa08                   |bxa09         |bxa10        |bxaacti        ]
+[bxa01              |bxa02              |bxa03                        |bxa04                        |bxa05              |pmc03                |bxa06     |bxa07    |bxa08                   |bxa09         |bxa10        |bxaacti        ]
+[bxa01              |bxa02              |bxa03                        |bxa04                        |bxa05              |pmc03                |bxa06     |bxa07    |bxa08                   |bxa09         |bxa10        |bxaacti        ]
+[bxa01              |bxa02              |bxa03                        |bxa04                        |bxa05              |pmc03                |bxa06     |bxa07    |bxa08                   |bxa09         |bxa10        |bxaacti        ]
+[bxa01              |bxa02              |bxa03                        |bxa04                        |bxa05              |pmc03                |bxa06     |bxa07    |bxa08                   |bxa09         |bxa10        |bxaacti        ]
+[bxa01              |bxa02              |bxa03                        |bxa04                        |bxa05              |pmc03                |bxa06     |bxa07    |bxa08                   |bxa09         |bxa10        |bxaacti        ]
+[bxa01              |bxa02              |bxa03                        |bxa04                        |bxa05              |pmc03                |bxa06     |bxa07    |bxa08                   |bxa09         |bxa10        |bxaacti        ]
+[bxa01              |bxa02              |bxa03                        |bxa04                        |bxa05              |pmc03                |bxa06     |bxa07    |bxa08                   |bxa09         |bxa10        |bxaacti        ]
+
+}
+END -- s_bxa
+END -- VBox2
+END -- page01
+END -- pc157
+Grid gr1023
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr1023
+END -- VBox1
+END -- abxi100
+
+TABLES
+bxa_file
+ATTRIBUTES
+Edit bxa01=bxa_file.bxa01, tabIndex=1, title="Approval No.", not null, required;
+ButtonEdit bxa02=bxa_file.bxa02, action=controlp, tabIndex=2, title="Item No.", not null, required, image="zoom", comment="<^P> Qry Item No.";
+Edit bxa03=bxa_file.bxa03, tabIndex=3, title="Part Name Specification";
+Edit bxa04=bxa_file.bxa04, tabIndex=4, title="Specification";
+ButtonEdit bxa05=bxa_file.bxa05, action=controlp, tabIndex=5, title="Subcont Vender No.", not null, required, image="zoom", comment="<^P> Qry Subcont Vender No.";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=6, title="Vender Abbreviation", noEntry;
+DateEdit bxa06=bxa_file.bxa06, tabIndex=7, title="Init Date", not null, required;
+DateEdit bxa07=bxa_file.bxa07, tabIndex=8, title="End Date", not null, required;
+Edit bxa08=bxa_file.bxa08, tabIndex=9, title="Approval Processing Qty", not null, required;
+Edit bxa09=bxa_file.bxa09, tabIndex=10, title="Approval Qty";
+Edit bxa10=bxa_file.bxa10, tabIndex=11, title="Memo";
+CheckBox bxaacti=bxa_file.bxaacti, tabIndex=12, title="Data Valid Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bxa(bxa_file.bxa01,bxa_file.bxa02,bxa_file.bxa03,bxa_file.bxa04,bxa_file.bxa05,formonly.pmc03,bxa_file.bxa06,bxa_file.bxa07,bxa_file.bxa08,bxa_file.bxa09,bxa_file.bxa10,bxa_file.bxaacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

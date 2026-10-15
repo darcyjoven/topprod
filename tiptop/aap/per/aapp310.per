@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapp310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapp310")
+VBox vb2
+Grid gr80
+{
+ <G group01                                                                              >
+  A/P Date            [apa12               ]   Shipping Vender     [apa05               ]
+  Payment Method      [apa11               ]   Paying Vender       [apa06               ]
+  Accounts #          [apa01               ]   Vender              [apa07               ]
+  Account Date        [apa02               ]   Payment Currency    [apa13               ]
+  Billing Empl        [apa21               ]   Accounts Category   [apa36               ]
+  Accounts Property   [apa00               ]   Note Due Date       [apa64               ]
+ <                                                                                       >
+}
+END -- gr80
+Group g02(text="INPUT 2")
+Grid gr82
+{
+ <G group03                                              >  <G group04                                                   >
+  Paying Employee          [emp_no    ]                        Credit Account           [np_actno            ]
+  Department               [dept      ]                                                 [aag02                         ]
+  Payment Slip             [tr_type   ]                        Credit Account 2         [np_actno1           ]
+  Payment Date             [pay_date    ]                                               [aag02_1                       ]
+ [assign                   ]                                   Cash Variation Code      [apf14     ]
+  curr1                     [curr      ]                      [post_fee_sw              ]    [sw_22                    ]
+  Payment Category         [pay_type                 ]        [sw_21                    ]    [sw_23                    ]
+  Drawing Note/Paying Bank [bankno              ]
+ <                                                       >  <                                                            >
+
+}
+END -- gr82
+END -- g02
+Grid gr83
+{
+[g_bgjob                                                      ]
+
+
+}
+END -- gr83
+END -- vb2
+END -- aapp310
+
+TABLES
+apa_file,
+apf_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit apa12=apa_file.apa12, tabIndex=1;
+ButtonEdit apa05=apa_file.apa05, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit apa11=apa_file.apa11, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit apa06=apa_file.apa06, action=controlp, tabIndex=4, image="zoom.png";
+ButtonEdit apa01=apa_file.apa01, action=controlp, tabIndex=5, image="zoom.png";
+Edit apa07=apa_file.apa07, tabIndex=6;
+DateEdit apa02=apa_file.apa02, tabIndex=7;
+ButtonEdit apa13=apa_file.apa13, action=controlp, tabIndex=8, image="zoom.png";
+ButtonEdit apa21=apa_file.apa21, action=controlp, tabIndex=9, image="zoom.png";
+ButtonEdit apa36=apa_file.apa36, action=controlp, tabIndex=10, image="zoom.png";
+ComboBox apa00=apa_file.apa00, tabIndex=28, queryEditable, items=(("11", "Purchase Invoice"),("12", "MISC Invoice"),("13", "Apply&Restore"),("15", "Advance Payment Appl."),("16", "Temp. Store-in"),("17", "Defray"),("21", "Allowance"),("22", "D.M."),("23", "Advance Payment"),("24", "Overpayment"),("25", "Defray to offset"),("26", "Temp. Store-out"));
+DateEdit apa64=apa_file.apa64, tabIndex=27;
+Group group03:group03;
+ButtonEdit emp_no=formonly.emp_no type VARCHAR, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P> Qry Employee";
+ButtonEdit dept=formonly.dept type VARCHAR, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P> Qry Department";
+ButtonEdit tr_type=formonly.tr_type type VARCHAR, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P> Qry Payment Slip";
+DateEdit pay_date=formonly.pay_date type DATE, tabIndex=14, not null, required;
+CheckBox assign=formonly.assign type CHAR, tabIndex=15, text="assign", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit curr=formonly.curr type VARCHAR, action=controlp, tabIndex=16, not null, required, image="zoom", comment="<^P> Qry Payment Slip";
+RadioGroup pay_type=formonly.pay_type type VARCHAR, tabIndex=18, not null, required, orientation=horizontal, items=(("1", "Check"),("2", "Transfer"),("C", "TT"));
+ButtonEdit bankno=formonly.bankno type CHAR, action=controlp, tabIndex=17, image="zoom";
+Group group04:group04;
+ButtonEdit np_actno=formonly.np_actno type VARCHAR, action=controlp, tabIndex=19, not null, required, image="zoom", comment="<^P>Qry Account";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=20, noEntry;
+ButtonEdit np_actno1=formonly.np_actno1 type VARCHAR, action=controlp, tabIndex=21, not null, required, image="zoom", comment="<^P>Qry Account";
+Edit aag02_1=formonly.aag02_1 type VARCHAR, tabIndex=22, noEntry;
+ButtonEdit apf14=apf_file.apf14, action=controlp, tabIndex=23, image="zoom", comment="<^P> Query Cash Variation Code";
+CheckBox post_fee_sw=formonly.post_fee_sw type CHAR, tabIndex=24, text="Postage (Charge)", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sw_22=formonly.sw_22 type CHAR, tabIndex=25, text="D.MContra", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sw_21=formonly.sw_21 type CHAR, tabIndex=26, text="Contra Return/Allowance", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sw_23=formonly.sw_23 type CHAR, tabIndex=27, text="Contra Advance Payment", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=28, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(apa_file.apa12,apa_file.apa05,apa_file.apa11,apa_file.apa06,apa_file.apa01,apa_file.apa07,apa_file.apa02,apa_file.apa13,apa_file.apa21,apa_file.apa36,apa_file.apa00,apa_file.apa64,formonly.emp_no,formonly.dept,formonly.tr_type,formonly.pay_date,formonly.assign,formonly.curr,formonly.pay_type,formonly.bankno,formonly.np_actno,formonly.aag02,formonly.np_actno1,formonly.aag02_1,apf_file.apf14,formonly.post_fee_sw,formonly.sw_22,formonly.sw_21,formonly.sw_23,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

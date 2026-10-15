@@ -1,0 +1,135 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti131.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="arti131")
+VBox vb4
+Folder folder01
+Page page09(text=%"Basic Data")
+Grid gr7
+{
+
+ Negotiation No.[rts01               ]                     Effective Date[rto08     ]Confirmation     [rtsconf        ]  [imgmksg]
+ Agreement Org. [rts02               |rts02_desc          ]End Date      [rto09     ]Confirmation Date[rtscond   ]       [       ]
+ Version No.    [rts03]                                    Agreement Date[rto10     ]Confirmed By     [rtsconu        |rtsconu_de]
+ Contract No.   [rts04               ]                     Abolition Date[rto11     ]Memo             [rts05                     ]
+ Vendor Code    [rto05               |rto05_desc          ]Effective Date[rts08     ]                 [                          ]
+ Tax Type       [rts06          |rts07     |gec07       ]  End Date      [rts09     ]                 [                          ]
+ Business Type  [rto06          ]                                                                     [                          ]
+ Organization   [rtsplant            |rtsplant_desc       ]                                           [                          ]
+
+}
+END -- gr7
+END -- page09
+Page Page6(text=%"Info")
+Grid gr18
+{
+ Record Owner        [rtsuser   ] Last Modified by    [rtsmodu   ] Data Valid Code     [rtsacti   ]
+ Department          [rtsgrup   ] Modify Date         [rtsdate   ] Create Date         [rtscrat   ]
+ Record Orig.        [rtsoriu   ] Dept Orig.          [rtsorig   ]
+
+
+
+
+}
+END -- gr18
+END -- Page6
+END -- folder01
+Table s_rtt
+{
+[rtt03|rtt04               |ima02               |ima021  |ima1004   |tqa02a    |ima1005   |tqa02b    |ima1009   |tqa02c    |ima1007   |tqa02d    |rtt05     |rtt05_desc     |rtt14     |rtt14_desc     |rtt06          |rtt06t         |rtt07|rtt08|rtt09|rtt10|rtt11|rtt12   |rtt13   |rtt15]
+[rtt03|rtt04               |ima02               |ima021  |ima1004   |tqa02a    |ima1005   |tqa02b    |ima1009   |tqa02c    |ima1007   |tqa02d    |rtt05     |rtt05_desc     |rtt14     |rtt14_desc     |rtt06          |rtt06t         |rtt07|rtt08|rtt09|rtt10|rtt11|rtt12   |rtt13   |rtt15]
+[rtt03|rtt04               |ima02               |ima021  |ima1004   |tqa02a    |ima1005   |tqa02b    |ima1009   |tqa02c    |ima1007   |tqa02d    |rtt05     |rtt05_desc     |rtt14     |rtt14_desc     |rtt06          |rtt06t         |rtt07|rtt08|rtt09|rtt10|rtt11|rtt12   |rtt13   |rtt15]
+[rtt03|rtt04               |ima02               |ima021  |ima1004   |tqa02a    |ima1005   |tqa02b    |ima1009   |tqa02c    |ima1007   |tqa02d    |rtt05     |rtt05_desc     |rtt14     |rtt14_desc     |rtt06          |rtt06t         |rtt07|rtt08|rtt09|rtt10|rtt11|rtt12   |rtt13   |rtt15]
+[rtt03|rtt04               |ima02               |ima021  |ima1004   |tqa02a    |ima1005   |tqa02b    |ima1009   |tqa02c    |ima1007   |tqa02d    |rtt05     |rtt05_desc     |rtt14     |rtt14_desc     |rtt06          |rtt06t         |rtt07|rtt08|rtt09|rtt10|rtt11|rtt12   |rtt13   |rtt15]
+}
+END -- s_rtt
+Grid gr14
+{
+
+  ------ Rows[idx     ]/[cnt     ]-----Items[cn2     ]---------
+
+
+
+
+}
+END -- gr14
+END -- vb4
+END -- arti131
+
+TABLES
+rtt_file,
+rts_file
+ATTRIBUTES
+ButtonEdit rts01=rts_file.rts01, action=controlp, tabIndex=2, not null, image="zoom.png";
+DateEdit rto08=formonly.rto08 type DATE, tabIndex=7, noEntry, not null;
+ComboBox rtsconf=rts_file.rtsconf, tabIndex=14, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit rts02=rts_file.rts02, action=controlp, tabIndex=4, noEntry, image="zoom.png";
+Edit rts02_desc=formonly.rts02_desc type CHAR, tabIndex=11, noEntry;
+DateEdit rto09=formonly.rto09 type DATE, tabIndex=8, noEntry, not null;
+DateEdit rtscond=rts_file.rtscond, tabIndex=16, noEntry;
+Edit rts03=rts_file.rts03, tabIndex=3, noEntry;
+DateEdit rto10=formonly.rto10 type DATE, tabIndex=9, noEntry;
+ButtonEdit rtsconu=rts_file.rtsconu, action=controlp, tabIndex=15, noEntry, image="zoom.png";
+Edit rtsconu_de=formonly.rtsconu_desc type VARCHAR, tabIndex=17, noEntry;
+ButtonEdit rts04=rts_file.rts04, action=controlp, tabIndex=28, not null, image="zoom.png";
+DateEdit rto11=formonly.rto11 type DATE, tabIndex=10, noEntry;
+TextEdit rts05=rts_file.rts05, tabIndex=18;
+ButtonEdit rto05=formonly.rto05 type VARCHAR, action=controlp, tabIndex=5, noEntry, not null, required, image="zoom.png";
+Edit rto05_desc=formonly.rto05_desc type CHAR, tabIndex=12, noEntry;
+DateEdit rts08=rts_file.rts08, tabIndex=60, not null;
+ButtonEdit rts06=rts_file.rts06, action=controlp, tabIndex=50, not null, image="zoom.png";
+Edit rts07=rts_file.rts07, tabIndex=51, noEntry;
+CheckBox gec07=formonly.gec07 type CHAR, tabIndex=52, text="With Tax", noEntry, valueChecked = "Y", valueUnchecked = "N";
+DateEdit rts09=rts_file.rts09, tabIndex=61, noEntry;
+ComboBox rto06=formonly.rto06 type VARCHAR, tabIndex=1, not null, required, items=(("1", "Sell"),("2", "Cost Sell"),("3", "Discount Rate Sell"),("4", "Unite Sell"));
+ButtonEdit rtsplant=rts_file.rtsplant, action=controlp, tabIndex=6, image="zoom.png";
+Edit rtsplant_desc=formonly.rtsplant_desc type CHAR, tabIndex=13, noEntry;
+Edit rtsuser=rts_file.rtsuser, tabIndex=23, noEntry;
+Edit rtsmodu=rts_file.rtsmodu, tabIndex=22, noEntry;
+Edit rtsacti=rts_file.rtsacti, tabIndex=21, noEntry, upShift;
+Edit rtsgrup=rts_file.rtsgrup, tabIndex=20, noEntry;
+DateEdit rtsdate=rts_file.rtsdate, tabIndex=24, noEntry;
+DateEdit rtscrat=rts_file.rtscrat, tabIndex=19, noEntry;
+Edit rtsoriu=rts_file.rtsoriu, tabIndex=59, noEntry;
+Edit rtsorig=rts_file.rtsorig, tabIndex=58, noEntry;
+Edit rtt03=rtt_file.rtt03, tabIndex=29, title="Line No.", not null;
+ButtonEdit rtt04=rtt_file.rtt04, action=controlp, tabIndex=30, title="Goods Code", not null, image="zoom.png";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=31, title="Goods Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=32, title="Spec.", noEntry;
+Edit ima1004=formonly.ima1004 type CHAR, tabIndex=33, title="Brand Class.", noEntry;
+Edit tqa02a=formonly.tqa02a type CHAR, tabIndex=54, title="Class Name", noEntry;
+Edit ima1005=formonly.ima1005 type CHAR, tabIndex=34, title="Brand", noEntry;
+Edit tqa02b=formonly.tqa02b type CHAR, tabIndex=55, title="Brand Name", noEntry;
+Edit ima1009=formonly.ima1009 type CHAR, tabIndex=35, title="Fancy", noEntry;
+Edit tqa02c=formonly.tqa02c type CHAR, tabIndex=56, title="Fancy Name", noEntry;
+Edit ima1007=formonly.ima1007 type CHAR, tabIndex=36, title="Size", noEntry;
+Edit tqa02d=formonly.tqa02d type CHAR, tabIndex=57, title="Size Name", noEntry;
+ButtonEdit rtt05=rtt_file.rtt05, action=controlp, tabIndex=37, title="Inventory Unit", noEntry, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rtt05_desc=formonly.rtt05_desc type CHAR, tabIndex=38, title="Unit Name", noEntry;
+ButtonEdit rtt14=rtt_file.rtt14, action=controlp, tabIndex=48, title="Purchase Unit", not null, image="zoom.png";
+Edit rtt14_desc=formonly.rtt14_desc type CHAR, tabIndex=49, title="Unit Name\n", noEntry;
+Edit rtt06=rtt_file.rtt06, tabIndex=39, title="Price Without Tax\n", not null;
+Edit rtt06t=rtt_file.rtt06t, tabIndex=53, title="Price With Tax", not null;
+Edit rtt07=rtt_file.rtt07, tabIndex=40, title="Purchase Qty\n";
+Edit rtt08=rtt_file.rtt08, tabIndex=41, title="Purchase Amt";
+Edit rtt09=rtt_file.rtt09, tabIndex=42, title="Premium";
+Edit rtt10=rtt_file.rtt10, tabIndex=43, title="Discount Rate%";
+Edit rtt11=rtt_file.rtt11, tabIndex=44, title="Balance Rate%\n", not null;
+Edit rtt12=rtt_file.rtt12, tabIndex=45, title="Min Purchase Qty\n", not null;
+Edit rtt13=rtt_file.rtt13, tabIndex=46, title="Purchase Lot\n", not null;
+CheckBox rtt15=rtt_file.rtt15, tabIndex=47, title="Inviald", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=26, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=25, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=27;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rtt(rtt_file.rtt03,rtt_file.rtt04,formonly.ima02,formonly.ima021,formonly.ima1004,formonly.tqa02a,formonly.ima1005,formonly.tqa02b,formonly.ima1009,formonly.tqa02c,formonly.ima1007,formonly.tqa02d,rtt_file.rtt05,formonly.rtt05_desc,rtt_file.rtt14,formonly.rtt14_desc,rtt_file.rtt06,rtt_file.rtt06t,rtt_file.rtt07,rtt_file.rtt08,rtt_file.rtt09,rtt_file.rtt10,rtt_file.rtt11,rtt_file.rtt12,rtt_file.rtt13,rtt_file.rtt15)
+SCREEN RECORD Undefined(rts_file.rts01,formonly.rto08,rts_file.rtsconf,formonly.imgmksg,rts_file.rts02,formonly.rts02_desc,formonly.rto09,rts_file.rtscond,rts_file.rts03,formonly.rto10,rts_file.rtsconu,formonly.rtsconu_desc,rts_file.rts04,formonly.rto11,rts_file.rts05,formonly.rto05,formonly.rto05_desc,rts_file.rts06,rts_file.rts07,formonly.gec07,formonly.rto06,rts_file.rtsplant,formonly.rtsplant_desc,rts_file.rtsuser,rts_file.rtsmodu,rts_file.rtsacti,rts_file.rtsgrup,rts_file.rtsdate,rts_file.rtscrat,rts_file.rtsoriu,rts_file.rtsorig,formonly.idx,formonly.cnt,formonly.cn2,rts_file.rts08,rts_file.rts09)
+END -- INSTRUCTIONS
+

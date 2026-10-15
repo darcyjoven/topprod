@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapi101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapi101")
+VBox VBox1
+Folder pc3
+Page page01(text="Main")
+Grid gr5
+{
+  Source              [apm10                         ]
+
+ <G group01                                                         >
+  Plant               [apm08     ]
+  Book No.            [apm09     ]
+
+  Account             [apm00                   ]
+                      [aag02                         ]
+  Vender No.          [apm01     ]
+  Vender Abbr.        [apm02     ]
+  Department          [apm03     ] [gem02   ]
+  Currency            [apm11     ]
+  Year                [apm04     ]
+  Period              [apm05     ]
+ <                                                                  >
+ <G group02                                  ><G group03                                >
+  Debit H. Amount     [apm06               ]   Credit H.Amount    [apm07               ]
+  Debit O. Amount     [apm06f              ]   Credit O.Amount    [apm07f              ]
+
+
+ <                                           ><                                         >
+
+}
+END -- gr5
+END -- page01
+END -- pc3
+Grid gr6
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr6
+END -- VBox1
+END -- aapi101
+
+TABLES
+apm_file
+ATTRIBUTES
+RadioGroup apm10=apm_file.apm10, tabIndex=1, items=(("0", "Open Account"),("1", "Monthly Closing"));
+Group group01:group01;
+Edit apm08=apm_file.apm08, tabIndex=2, not null, required;
+Edit apm09=apm_file.apm09, tabIndex=3, not null, required;
+ButtonEdit apm00=apm_file.apm00, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Account ";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=5, noEntry;
+ButtonEdit apm01=apm_file.apm01, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Vender #";
+Edit apm02=apm_file.apm02, tabIndex=7, not null, required;
+ButtonEdit apm03=apm_file.apm03, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry Department Name";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=9, noEntry;
+ButtonEdit apm11=apm_file.apm11, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit apm04=apm_file.apm04, tabIndex=11;
+Edit apm05=apm_file.apm05, tabIndex=12, not null, required;
+Group group02:group02, text="Home Currency";
+Edit apm06=apm_file.apm06, tabIndex=13;
+Edit apm06f=apm_file.apm06f, tabIndex=14;
+Group group03:group03, text="Original Currency";
+Edit apm07=apm_file.apm07, tabIndex=15;
+Edit apm07f=apm_file.apm07f, tabIndex=16;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(apm_file.apm10,apm_file.apm08,apm_file.apm09,apm_file.apm00,formonly.aag02,apm_file.apm01,apm_file.apm02,apm_file.apm03,formonly.gem02,apm_file.apm11,apm_file.apm04,apm_file.apm05,apm_file.apm06,apm_file.apm06f,apm_file.apm07,apm_file.apm07f,formonly.cnt)
+END -- INSTRUCTIONS
+

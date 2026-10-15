@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemq101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemq101")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1728
+{
+ Equipment No.      [fia01               ]
+ Name               [fia02                         ]
+}
+END -- gr1728
+END -- page01
+END -- folder01
+Table s_fim
+{
+[fim03         |fio02  |fim04      |fim05       |fim01          |fio05         |a1          |fio06          |fiu02       |fio07          |fja02       |fim06              |fim07              |fim08        |fim09     |fim10       |fim11   ]
+[fim03         |fio02  |fim04      |fim05       |fim01          |fio05         |a1          |fio06          |fiu02       |fio07          |fja02       |fim06              |fim07              |fim08        |fim09     |fim10       |fim11   ]
+[fim03         |fio02  |fim04      |fim05       |fim01          |fio05         |a1          |fio06          |fiu02       |fio07          |fja02       |fim06              |fim07              |fim08        |fim09     |fim10       |fim11   ]
+[fim03         |fio02  |fim04      |fim05       |fim01          |fio05         |a1          |fio06          |fiu02       |fio07          |fja02       |fim06              |fim07              |fim08        |fim09     |fim10       |fim11   ]
+[fim03         |fio02  |fim04      |fim05       |fim01          |fio05         |a1          |fio06          |fiu02       |fio07          |fja02       |fim06              |fim07              |fim08        |fim09     |fim10       |fim11   ]
+[fim03         |fio02  |fim04      |fim05       |fim01          |fio05         |a1          |fio06          |fiu02       |fio07          |fja02       |fim06              |fim07              |fim08        |fim09     |fim10       |fim11   ]
+[fim03         |fio02  |fim04      |fim05       |fim01          |fio05         |a1          |fio06          |fiu02       |fio07          |fja02       |fim06              |fim07              |fim08        |fim09     |fim10       |fim11   ]
+[fim03         |fio02  |fim04      |fim05       |fim01          |fio05         |a1          |fio06          |fiu02       |fio07          |fja02       |fim06              |fim07              |fim08        |fim09     |fim10       |fim11   ]
+[fim03         |fio02  |fim04      |fim05       |fim01          |fio05         |a1          |fio06          |fiu02       |fio07          |fja02       |fim06              |fim07              |fim08        |fim09     |fim10       |fim11   ]
+[fim03         |fio02  |fim04      |fim05       |fim01          |fio05         |a1          |fio06          |fiu02       |fio07          |fja02       |fim06              |fim07              |fim08        |fim09     |fim10       |fim11   ]
+
+}
+END -- s_fim
+Grid gr1729
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1729
+END -- VBox1
+END -- aemq101
+
+TABLES
+fia_file,
+fim_file
+ATTRIBUTES
+Edit fia01=fia_file.fia01, tabIndex=1;
+Edit fia02=fia_file.fia02, tabIndex=2;
+Edit fim03=fim_file.fim03, tabIndex=3, title="Maintain Item";
+Edit fio02=formonly.fio02 type CHAR, tabIndex=4, title="Name";
+DateEdit fim04=fim_file.fim04, tabIndex=5, title="Start Date";
+DateEdit fim05=fim_file.fim05, tabIndex=6, title="Finish Date";
+Edit fim01=fim_file.fim01, tabIndex=7, title="Work Order No.";
+Edit fio05=formonly.fio05 type CHAR, tabIndex=8, title="Maintain Type";
+Edit a1=formonly.a1 type CHAR, tabIndex=9, title="Description";
+Edit fio06=formonly.fio06 type CHAR, tabIndex=10, title="Maintain Cycle";
+Edit fiu02=formonly.fiu02 type CHAR, tabIndex=11, title="Description";
+Edit fio07=formonly.fio07 type CHAR, tabIndex=12, title="Maintain Scale";
+Edit fja02=formonly.fja02 type CHAR, tabIndex=13, title="Description";
+Edit fim06=fim_file.fim06, tabIndex=14, title="Prepared Work Time";
+Edit fim07=fim_file.fim07, tabIndex=15, title="Standard Work Time";
+CheckBox fim08=fim_file.fim08, tabIndex=16, title="Stop Machine", valueChecked = "Y", valueUnchecked = "N";
+Edit fim09=fim_file.fim09, tabIndex=17, title="Stop Time";
+Edit fim10=fim_file.fim10, tabIndex=18, title="Stop Reason";
+CheckBox fim11=fim_file.fim11, tabIndex=19, title="Finish", valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type CHAR, tabIndex=20;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=21;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fim(fim_file.fim03,formonly.fio02,fim_file.fim04,fim_file.fim05,fim_file.fim01,formonly.fio05,formonly.a1,formonly.fio06,formonly.fiu02,formonly.fio07,formonly.fja02,fim_file.fim06,fim_file.fim07,fim_file.fim08,fim_file.fim09,fim_file.fim10,fim_file.fim11)
+SCREEN RECORD Undefined(fia_file.fia01,fia_file.fia02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

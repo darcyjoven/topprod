@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zbr.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_zbr")
+VBox VBox1
+Grid gr3106
+{
+ <G group01                                    >
+  Requisition Note #  [zbc01     ]
+  Response Date       [zbc02       ]
+  Response Man        [zbc03     ]
+  Classification      [zbc06     ]
+ <                                             >
+ <G group02                                    >
+  Ending Date         [edate       ]
+ <                                             >
+
+}
+END -- gr3106
+Grid gr3107
+{
+[more                                        ]
+
+}
+END -- gr3107
+END -- VBox1
+END -- p_zbr
+
+ATTRIBUTES
+Group group01:group01;
+Edit zbc01=formonly.zbc01 type VARCHAR, tabIndex=1;
+DateEdit zbc02=formonly.zbc02 type DATE, tabIndex=2;
+Edit zbc03=formonly.zbc03 type VARCHAR, tabIndex=3;
+Edit zbc06=formonly.zbc06 type VARCHAR, tabIndex=4;
+Group group02:group02;
+DateEdit edate=formonly.edate type DATE, tabIndex=5;
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Enter Other Special Condition to Print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.zbc01,formonly.zbc02,formonly.zbc03,formonly.zbc06,formonly.edate,formonly.more)
+END -- INSTRUCTIONS
+

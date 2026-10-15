@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amri501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amri501")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr3908
+{
+ Component No.       [bmd01                         ]
+ Part Name           [ima02_h                       ]
+ Specification       [ima021_h                      ]
+ Inv Unit            [ima25_h   ]
+ Src Cd              [ima08_h   ]
+ REP/SUB Type        [bmd02               ]
+}
+END -- gr3908
+Grid gr3909
+{
+ Master Item #       [bmd08                         ]
+ Part Name           [ima02_h2                      ]
+ Specification       [ima021_h2                     ]
+ Inv Unit            [ima25_h2  ]
+ Src Cd              [ima08_h2  ]
+
+}
+END -- gr3909
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_bmd
+{
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+[bmd03 |bmd04               |ima02_b             |ima021_b           |bmd05            |bmd06        |bmd07           ]
+
+}
+END -- s_bmd
+Grid gr3910
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3910
+END -- VBox1
+END -- amri501
+
+TABLES
+bmd_file
+ATTRIBUTES
+ButtonEdit bmd01=bmd_file.bmd01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Query Item   ";
+Edit ima02_h=formonly.ima02_h type CHAR, tabIndex=2, noEntry;
+Edit ima021_h=formonly.ima021_h type CHAR, tabIndex=3, noEntry;
+Edit ima25_h=formonly.ima25_h type CHAR, tabIndex=4, noEntry;
+Edit ima08_h=formonly.ima08_h type CHAR, tabIndex=5, noEntry;
+RadioGroup bmd02=bmd_file.bmd02, tabIndex=6, not null, required, orientation=horizontal, items=(("1", "UTE"),("2", "SUB"));
+ButtonEdit bmd08=bmd_file.bmd08, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P> Query Item,    Enter\'ALL\'for All Master Item!";
+Edit ima02_h2=formonly.ima02_h2 type CHAR, tabIndex=8;
+Edit ima021_h2=formonly.ima021_h2 type CHAR, tabIndex=9;
+Edit ima25_h2=formonly.ima25_h2 type CHAR, tabIndex=10, noEntry;
+Edit ima08_h2=formonly.ima08_h2 type CHAR, tabIndex=11, noEntry;
+Edit bmd03=bmd_file.bmd03, tabIndex=12, title="Ln#", not null, required;
+ButtonEdit bmd04=bmd_file.bmd04, action=controlp, tabIndex=13, title="Substitute Item#", not null, required, image="zoom", comment="<^P> Query Item   ";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=14, title="Part Name", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=15, title="Spec.", noEntry;
+DateEdit bmd05=bmd_file.bmd05, tabIndex=16, title="Effective Date";
+DateEdit bmd06=bmd_file.bmd06, tabIndex=17, title="Expiry Date";
+Edit bmd07=bmd_file.bmd07, tabIndex=18, title="Substitute Qty";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmd(bmd_file.bmd03,bmd_file.bmd04,formonly.ima02_b,formonly.ima021_b,bmd_file.bmd05,bmd_file.bmd06,bmd_file.bmd07)
+SCREEN RECORD Undefined(bmd_file.bmd01,formonly.ima02_h,formonly.ima021_h,formonly.ima25_h,formonly.ima08_h,bmd_file.bmd02,bmd_file.bmd08,formonly.ima02_h2,formonly.ima021_h2,formonly.ima25_h2,formonly.ima08_h2,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

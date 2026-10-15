@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi120_r.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Batch Generate Account")
+Grid gr2329
+{
+ <G group01                                   >
+
+  bookno_old        [tag02               ]
+  aag02_old         [tag03               ]
+
+
+ <                                            >
+
+}
+END -- gr2329
+END -- aooi120_r
+
+TABLES
+tag_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit tag02=tag_file.tag02, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit tag03=tag_file.tag03, action=controlp, tabIndex=2, not null, required, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(tag_file.tag02,tag_file.tag03)
+END -- INSTRUCTIONS
+

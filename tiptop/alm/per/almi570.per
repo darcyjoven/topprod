@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi570.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt301")
+VBox vb6
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr23
+{
+
+ Enacting Institution  [lsl01                 |lsl01_desc     ]        Auditing Code          [lslconf     ][imgmksg   ]
+ Campaign No.          [lsl02                 ]                        Auditing Date          [lslcond     ][          ]
+ Campaign Name         [lsl03                                 ]        Auditing Personnel     [lslconu     ]
+                       [                                      ]        Memo                   [lsl06                     ]
+ Campaign Begin Date   [lsl04       ]                                                         [                          ]
+ Campaign End Date     [lsl05       ]
+
+}
+END -- gr23
+END -- Page1
+Page Page2(text=%"Info")
+Grid gr26
+{
+
+ Record Owner [lsluser   ]    Record Modify User [lslmodu   ]   Record Acti       [lslacti   ]
+ Record Group [lslgrup   ]    Last Modified Date [lsldate   ]   Record Creat Date [lslcrat   ]
+ Record Orig. [lsloriu   ]    Dept Orig.         [lslorig   ]
+
+}
+END -- gr26
+END -- Page2
+END -- pc1
+Grid gr25
+{
+  ----------Count[cnt       ]----------
+
+
+
+}
+END -- gr25
+END -- vb6
+END -- artt301
+
+TABLES
+lsl_file
+ATTRIBUTES
+ButtonEdit lsl01=lsl_file.lsl01, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom.png";
+Edit lsl01_desc=formonly.lsl01_desc type CHAR, tabIndex=2, noEntry;
+ComboBox lslconf=lsl_file.lslconf, tabIndex=6, default = "N", noEntry, items=(("Y", "Auditinged"),("N", "Not Auditinged"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit lsl02=lsl_file.lsl02, action=controlp, tabIndex=19, not null, required, image="zoom.png";
+DateEdit lslcond=lsl_file.lslcond, tabIndex=7, noEntry;
+TextEdit lsl03=lsl_file.lsl03, tabIndex=3;
+ButtonEdit lslconu=lsl_file.lslconu, action=controlp, tabIndex=8, noEntry, image="zoom.png";
+TextEdit lsl06=lsl_file.lsl06, tabIndex=9;
+DateEdit lsl04=lsl_file.lsl04, tabIndex=4, not null, required;
+DateEdit lsl05=lsl_file.lsl05, tabIndex=5, not null, required;
+Edit lsluser=lsl_file.lsluser, tabIndex=10, noEntry;
+Edit lslmodu=lsl_file.lslmodu, tabIndex=12, noEntry;
+Edit lslacti=lsl_file.lslacti, tabIndex=14, noEntry;
+Edit lslgrup=lsl_file.lslgrup, tabIndex=11, noEntry;
+DateEdit lsldate=lsl_file.lsldate, tabIndex=13, noEntry;
+DateEdit lslcrat=lsl_file.lslcrat, tabIndex=15, noEntry;
+Edit lsloriu=lsl_file.lsloriu, tabIndex=18, noEntry;
+Edit lslorig=lsl_file.lslorig, tabIndex=17, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lsl_file.lsl01,formonly.lsl01_desc,lsl_file.lslconf,formonly.imgmksg,lsl_file.lsl03,lsl_file.lslcond,lsl_file.lsl04,lsl_file.lslconu,lsl_file.lsl05,lsl_file.lsl06,lsl_file.lsluser,lsl_file.lslmodu,lsl_file.lslacti,lsl_file.lslgrup,lsl_file.lsldate,lsl_file.lslcrat,lsl_file.lsloriu,lsl_file.lslorig,formonly.cnt,lsl_file.lsl02)
+END -- INSTRUCTIONS
+

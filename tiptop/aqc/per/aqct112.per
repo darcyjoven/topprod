@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqct112.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqct112")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr195
+{
+ <G group01                             >
+  Receipt#            [qcv01           ]
+  Line No.            [qcv02     ]
+  Lot QC Sequence     [qcv021    ]
+ <                                      >
+
+}
+END -- gr195
+END -- page01
+END -- folder01
+Table s_qcv
+{
+[qcv03  |item     |azf03     |qcv04                                   ]
+[qcv03  |item     |azf03     |qcv04                                   ]
+[qcv03  |item     |azf03     |qcv04                                   ]
+[qcv03  |item     |azf03     |qcv04                                   ]
+[qcv03  |item     |azf03     |qcv04                                   ]
+[qcv03  |item     |azf03     |qcv04                                   ]
+[qcv03  |item     |azf03     |qcv04                                   ]
+[qcv03  |item     |azf03     |qcv04                                   ]
+[qcv03  |item     |azf03     |qcv04                                   ]
+[qcv03  |item     |azf03     |qcv04                                   ]
+
+}
+END -- s_qcv
+Grid gr196
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr196
+END -- VBox1
+END -- aqct112
+
+TABLES
+qcv_file
+ATTRIBUTES
+Group group01:group01;
+Edit qcv01=qcv_file.qcv01, tabIndex=1, noEntry;
+Edit qcv02=qcv_file.qcv02, tabIndex=2, noEntry;
+Edit qcv021=qcv_file.qcv021, tabIndex=3, noEntry;
+Edit qcv03=qcv_file.qcv03, tabIndex=4, title="Line #", not null, required;
+Edit item=formonly.item type CHAR, tabIndex=5, title="QC Items", noEntry;
+Edit azf03=formonly.azf03 type CHAR, tabIndex=6, title="Desc", noEntry;
+Edit qcv04=qcv_file.qcv04, tabIndex=7, title="Memo";
+Edit cnt=formonly.cnt type CHAR, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcv(qcv_file.qcv03,formonly.item,formonly.azf03,qcv_file.qcv04)
+SCREEN RECORD Undefined(qcv_file.qcv01,qcv_file.qcv02,qcv_file.qcv021,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

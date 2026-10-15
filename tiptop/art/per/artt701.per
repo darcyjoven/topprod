@@ -1,0 +1,128 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt701")
+VBox VBox1
+Folder pc1
+Page main(text=%"Main")
+Grid gr1
+{
+                                                                                                                                                  [imgmksg]
+ Gen vo No.   [rxf01               ]                     Order Amt     [rxf05               ]                     Appr.No.   [rxfconf             |       ]
+ Date         [rxf02               ]                     Deposit       [rxf06               ]                     Approver   [rxfconu             |gen021              ]
+ Plant        [rxf03               |rtz13               ]Receivable Amt[rxf07               ]                     Appr.on    [rxfcond             |rxfcont             ]
+ Order No.    [oea01               ]                     Received Amt  [rxf08               ]                     Plant      [rxfplant            |rtz131              ]
+ No.          [rxf04               ]                     Uncalled Amt  [amt                 ]                     Memo       [rxf13                                    ]
+ Customer No. [oga03               |occ02               ]Personal      [rxf09               |gen02               ]           [                                         ]
+ Card No.     [oga87               ]                     Depart No.    [rxf10               |gem02               ]           [                                         ]
+ Customer name[oga88               ]                     POS No.       [rxf11               ]
+ Tel          [oga89               ]                     Account No.   [rxf12               ]
+
+
+}
+END -- gr1
+END -- main
+Page info(text=%"Info")
+Grid gr2
+{
+
+ Data Owner  [rxfuser    ] Last Modified by   [rxfmodu   ] Valid Code  [rxfacti   ]
+ Department  [rxfgrup    ] Last Modified on   [rxfdate   ] create on   [rxfcrat   ]
+ Record Orig.[rxforiu    ]
+ Dept Orig.  [rxforig    ]
+
+}
+END -- gr2
+END -- info
+END -- pc1
+Table s_ogb
+{
+[ogb03     |ogb04               |ima02               |ogb05     |gfe02               |ogb12          |ogb13          |ogb14          |ogb14t         ]
+[ogb03     |ogb04               |ima02               |ogb05     |gfe02               |ogb12          |ogb13          |ogb14          |ogb14t         ]
+[ogb03     |ogb04               |ima02               |ogb05     |gfe02               |ogb12          |ogb13          |ogb14          |ogb14t         ]
+[ogb03     |ogb04               |ima02               |ogb05     |gfe02               |ogb12          |ogb13          |ogb14          |ogb14t         ]
+[ogb03     |ogb04               |ima02               |ogb05     |gfe02               |ogb12          |ogb13          |ogb14          |ogb14t         ]
+[ogb03     |ogb04               |ima02               |ogb05     |gfe02               |ogb12          |ogb13          |ogb14          |ogb14t         ]
+[ogb03     |ogb04               |ima02               |ogb05     |gfe02               |ogb12          |ogb13          |ogb14          |ogb14t         ]
+[ogb03     |ogb04               |ima02               |ogb05     |gfe02               |ogb12          |ogb13          |ogb14          |ogb14t         ]
+[ogb03     |ogb04               |ima02               |ogb05     |gfe02               |ogb12          |ogb13          |ogb14          |ogb14t         ]
+[ogb03     |ogb04               |ima02               |ogb05     |gfe02               |ogb12          |ogb13          |ogb14          |ogb14t         ]
+
+
+}
+END -- s_ogb
+Grid gr3
+{
+
+ ---------   Rows [idx   ] /[cnt   ] -------
+
+}
+END -- gr3
+END -- VBox1
+END -- artt701
+
+TABLES
+rxf_file,
+ogb_file
+ATTRIBUTES
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit rxf01=rxf_file.rxf01, action=controlp, tabIndex=1, image="zoom.png";
+Edit rxf05=rxf_file.rxf05, tabIndex=12;
+ComboBox rxfconf=rxf_file.rxfconf, tabIndex=23, default = "N", items=(("Y", "checked"),("N", "unchecked"),("X", "zufei"));
+DateEdit rxf02=rxf_file.rxf02, tabIndex=2;
+Edit rxf06=rxf_file.rxf06, tabIndex=13;
+ButtonEdit rxfconu=rxf_file.rxfconu, action=controlp, tabIndex=24, image="zoom.png";
+Edit gen021=formonly.gen021 type CHAR, tabIndex=25, noEntry;
+ButtonEdit rxf03=rxf_file.rxf03, action=controlp, tabIndex=3, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=4, noEntry;
+Edit rxf07=rxf_file.rxf07, tabIndex=14;
+DateEdit rxfcond=rxf_file.rxfcond, tabIndex=26;
+TimeEdit rxfcont=rxf_file.rxfcont, tabIndex=27;
+Edit oea01=formonly.oea01 type VARCHAR, tabIndex=5, noEntry;
+Edit rxf08=rxf_file.rxf08, tabIndex=15;
+ButtonEdit rxfplant=rxf_file.rxfplant, action=controlp, tabIndex=28, image="zoom.png";
+Edit rtz131=formonly.rtz131 type CHAR, tabIndex=29, noEntry;
+ButtonEdit rxf04=rxf_file.rxf04, action=controlp, tabIndex=6, image="zoom.png";
+Edit amt=formonly.amt type DECIMAL(20,6), tabIndex=16, noEntry;
+TextEdit rxf13=rxf_file.rxf13, tabIndex=30;
+Edit oga03=formonly.oga03 type VARCHAR, tabIndex=7, noEntry;
+Edit occ02=formonly.occ02 type CHAR, tabIndex=8, noEntry;
+ButtonEdit rxf09=rxf_file.rxf09, action=controlp, tabIndex=17, image="zoom.png";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=18, noEntry;
+Edit oga87=formonly.oga87 type VARCHAR, tabIndex=9, noEntry;
+ButtonEdit rxf10=rxf_file.rxf10, action=controlp, tabIndex=19, image="zoom.png";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=20, noEntry;
+Edit oga88=formonly.oga88 type VARCHAR, tabIndex=10, noEntry;
+ButtonEdit rxf11=rxf_file.rxf11, action=controlp, tabIndex=21, image="zoom.png";
+Edit oga89=formonly.oga89 type VARCHAR, tabIndex=11, noEntry;
+ButtonEdit rxf12=rxf_file.rxf12, action=controlp, tabIndex=22, image="zoom.png";
+Edit rxfuser=rxf_file.rxfuser, tabIndex=31, noEntry;
+Edit rxfmodu=rxf_file.rxfmodu, tabIndex=35, noEntry;
+Edit rxfacti=rxf_file.rxfacti, tabIndex=37, default = "Y", noEntry;
+Edit rxfgrup=rxf_file.rxfgrup, tabIndex=32, noEntry;
+DateEdit rxfdate=rxf_file.rxfdate, tabIndex=36, noEntry;
+DateEdit rxfcrat=rxf_file.rxfcrat, tabIndex=38, noEntry;
+Edit rxforiu=rxf_file.rxforiu, tabIndex=33, noEntry;
+Edit rxforig=rxf_file.rxforig, tabIndex=34, noEntry;
+Edit ogb03=ogb_file.ogb03, tabIndex=39, title=%"No.";
+ButtonEdit ogb04=ogb_file.ogb04, action=controlp, tabIndex=40, title="Product No.", image="zoom.png";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=41, title=%"Part Name", noEntry;
+ButtonEdit ogb05=ogb_file.ogb05, action=controlp, tabIndex=42, title=%"Unit", image="zoom.png";
+Edit gfe02=formonly.gfe02 type VARCHAR, tabIndex=43, title=%"Unit  name", noEntry;
+Edit ogb12=ogb_file.ogb12, tabIndex=44, title=%"Qty";
+Edit ogb13=ogb_file.ogb13, tabIndex=45, title=%"Unit Price";
+Edit ogb14=ogb_file.ogb14, tabIndex=46, title=%"Bef-Tax Amt";
+Edit ogb14t=ogb_file.ogb14t, tabIndex=47, title=%"Wth-Tax Amt";
+Edit idx=formonly.idx type SMALLINT, tabIndex=48, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=49, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogb(ogb_file.ogb03,ogb_file.ogb04,formonly.ima02,ogb_file.ogb05,formonly.gfe02,ogb_file.ogb12,ogb_file.ogb13,ogb_file.ogb14,ogb_file.ogb14t)
+SCREEN RECORD s_rxf(formonly.imgmksg,rxf_file.rxf01,rxf_file.rxf05,rxf_file.rxfconf,rxf_file.rxf02,rxf_file.rxf06,rxf_file.rxfconu,formonly.gen021,rxf_file.rxf03,formonly.rtz13,rxf_file.rxf07,rxf_file.rxfcond,rxf_file.rxfcont,formonly.oea01,rxf_file.rxf08,rxf_file.rxfplant,formonly.rtz131,rxf_file.rxf04,formonly.amt,rxf_file.rxf13,formonly.oga03,formonly.occ02,rxf_file.rxf09,formonly.gen02,formonly.oga87,rxf_file.rxf10,formonly.gem02,formonly.oga88,rxf_file.rxf11,formonly.oga89,rxf_file.rxf12,rxf_file.rxfuser,rxf_file.rxfmodu,rxf_file.rxfacti,rxf_file.rxfgrup,rxf_file.rxfdate,rxf_file.rxfcrat,rxf_file.rxforiu,rxf_file.rxforig,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

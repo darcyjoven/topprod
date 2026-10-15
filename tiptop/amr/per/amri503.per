@@ -1,0 +1,113 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/4fd/amri503.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amri503")
+VBox VBox2
+Folder pc717
+Page page01(text=%"Main")
+VBox VBox1
+Grid gr3905
+{
+ Version Number      [msr_v     ]
+ Latest Run          [msr01     ][msr02   ][msr03   ][msr04   ][msr05   ]
+}
+END -- gr3905
+Grid gr3906
+{
+ <G group02                                                                      >
+  Simulation Item No. Source      [lot_type         ]
+  BOM Explosion Levels            [lot_bm    ]
+  Source Code                     [lot_no1          ][lot_no2           ]
+  Plan Lot. No.                   [msr919                               ]
+  Demand/Supply Date QBE          [bdate     ][edate     ]
+  Time Bucket Method              [buk_type  ][buk_code    ]
+  PR/PO Delivery in advance allowed (Reschedule) Adjust Days[po_days   ]
+  W/O Delivery in advance allowed (Reschedule) Adjust Days  [wo_days   ]
+ [incl_id                                                     ]
+ [incl_mds                                                     ]
+  APS Version[msr10       ]Save Version[msr11       ]
+ [incl_so                                                     ]
+ [msb_expl                                                    ]
+ [mss_expl                                                    ]
+ [msr06                                                       ]
+ [msr07                                                       ]
+ [msr12                                                       ]
+ [msr09                                                       ]
+  Please Enter MRP Warehouse Version [msr08                   ]
+ <                                                                               >
+ <G group03                                                                      >
+  [msr15              ]        [msr19                   |msr20                   ]
+  [msr16              ]        [msr21                   |msr22                   ]
+  [msr17              ]        [msr23                   |msr24                   ]
+  [msr18              ]        [msr25                   ]
+ <                                                                               >
+}
+END -- gr3906
+END -- VBox1
+END -- page01
+END -- pc717
+Grid gr3907
+{
+
+
+
+ ----------Rows [cnt   ] ----------
+}
+END -- gr3907
+END -- VBox2
+END -- amri503
+
+ATTRIBUTES
+Edit msr_v=formonly.msr_v type CHAR, tabIndex=1;
+Edit msr01=formonly.msr01 type CHAR, tabIndex=2, noEntry;
+Edit msr02=formonly.msr02 type CHAR, tabIndex=3, noEntry;
+Edit msr03=formonly.msr03 type CHAR, tabIndex=4, noEntry;
+Edit msr04=formonly.msr04 type CHAR, tabIndex=5, noEntry;
+Edit msr05=formonly.msr05 type CHAR, tabIndex=6, noEntry;
+Group group02:group02;
+ComboBox lot_type=formonly.lot_type type CHAR, tabIndex=7, not null, required, items=(("1", %"MPSPlan"),("2", %"Actual Work Order"),("3", %"Customer Order"),("4", %"Item#"),("5", %"Specified WO"),("6", %"MDS Requirement"),("7", %"Specified order"));
+Edit lot_bm=formonly.lot_bm type CHAR, tabIndex=8, comment=%"0:No Exploding 1:Explode one Level 2:Explode two Levels ...";
+Edit lot_no1=formonly.lot_no1 type CHAR, tabIndex=9, comment=%"Use \'*\' or \'?\'  For any character matched!";
+Edit lot_no2=formonly.lot_no2 type CHAR, tabIndex=10, comment=%"Use \'*\' or \'?\'  For any character matched!";
+Edit msr919=formonly.msr919 type CHAR, tabIndex=11, noEntry;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=12;
+DateEdit edate=formonly.edate type DATE, tabIndex=13;
+ComboBox buk_type=formonly.buk_type type CHAR, tabIndex=14, not null, required, items=(("1", %"By Time Bucket No."),("2", %"Day"),("3", %"Week"),("4", %"10-Day"),("5", %"Month"));
+ButtonEdit buk_code=formonly.buk_code type CHAR, action=controlp, tabIndex=15, image="zoom.png";
+Edit po_days=formonly.po_days type CHAR, tabIndex=16, comment=%"0:No Advance Delivery Date -1:Advance days by Item Master";
+Edit wo_days=formonly.wo_days type CHAR, tabIndex=17, comment=%"0:No Advance Delivery Date -1:Advance days by Item Master";
+CheckBox incl_id=formonly.incl_id type CHAR, tabIndex=18, text=%"Add to Indep.Req.Table", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox incl_mds=formonly.incl_mds type CHAR, tabIndex=27, text=%"Add to MDS Requirement", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit msr10=formonly.msr10 type CHAR, action=controlp, tabIndex=28, image="zoom.png";
+ButtonEdit msr11=formonly.msr11 type CHAR, action=controlp, tabIndex=29, image="zoom.png";
+CheckBox incl_so=formonly.incl_so type CHAR, tabIndex=19, text=%"Add to Actl Order", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox msb_expl=formonly.msb_expl type CHAR, tabIndex=20, text=%"Add to MPS(Unfilled W/O) D/L Material Demand", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox mss_expl=formonly.mss_expl type CHAR, tabIndex=21, text=%"Parts Required For PLM Parts", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox msr06=formonly.msr06 type CHAR, tabIndex=22, text=%"Handling REP/SUB Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox msr07=formonly.msr07 type CHAR, tabIndex=23, text=%"Process Assigned Brand", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox msr12=formonly.msr12 type CHAR, tabIndex=30, text=%"Show list", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox msr09=formonly.msr09 type CHAR, tabIndex=24, text=%"Show that carries out course information", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit msr08=formonly.msr08 type CHAR, tabIndex=25;
+Group group03:group03, text=%"";
+CheckBox msr15=formonly.msr15, tabIndex=31, text=%"msr15", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit msr19=formonly.msr19, action=controlp, tabIndex=35, image="zoom", hidden;
+ButtonEdit msr20=formonly.msr20, action=controlp, tabIndex=36, image="zoom", hidden;
+CheckBox msr16=formonly.msr16, tabIndex=32, text=%"msr16", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit msr21=formonly.msr21, action=controlp, tabIndex=37, image="zoom", hidden;
+ButtonEdit msr22=formonly.msr22, action=controlp, tabIndex=38, image="zoom", hidden;
+CheckBox msr17=formonly.msr17, tabIndex=33, text=%"msr17", valueChecked = "Y", valueUnchecked = "N", hidden;
+DateEdit msr23=formonly.msr23 type DATE, tabIndex=39, hidden;
+DateEdit msr24=formonly.msr24 type DATE, tabIndex=40, hidden;
+CheckBox msr18=formonly.msr18, tabIndex=34, text=%"msr18", valueChecked = "Y", valueUnchecked = "N", hidden;
+DateEdit msr25=formonly.msr25 type DATE, tabIndex=41, hidden;
+Edit cnt=formonly.cnt type CHAR, tabIndex=26;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.msr_v,formonly.msr01,formonly.msr02,formonly.msr03,formonly.msr04,formonly.msr05,formonly.lot_type,formonly.lot_bm,formonly.lot_no1,formonly.lot_no2,formonly.msr919,formonly.bdate,formonly.edate,formonly.buk_type,formonly.buk_code,formonly.po_days,formonly.wo_days,formonly.incl_id,formonly.incl_mds,formonly.msr10,formonly.msr11,formonly.incl_so,formonly.msb_expl,formonly.mss_expl,formonly.msr06,formonly.msr07,formonly.msr12,formonly.msr09,formonly.msr08,formonly.cnt,formonly.msr15,formonly.msr16,formonly.msr17,formonly.msr18,formonly.msr19,formonly.msr20,formonly.msr21,formonly.msr22,formonly.msr23,formonly.msr24,formonly.msr25)
+END -- INSTRUCTIONS
+

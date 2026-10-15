@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi890.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi890")
+VBox vb2
+Folder main
+Page Page1(text=%"Page0")
+Grid gr1
+{
+
+   <T s_lse                                                                          >
+   [lse01          |lse02            |lse03                          |lse04       ]
+   [lse01          |lse02            |lse03                          |lse04       ]
+   [lse01          |lse02            |lse03                          |lse04       ]
+   [lse01          |lse02            |lse03                          |lse04       ]
+   [lse01          |lse02            |lse03                          |lse04       ]
+   [lse01          |lse02            |lse03                          |lse04       ]
+   [lse01          |lse02            |lse03                          |lse04       ]
+   <                                                                                 >
+
+
+}
+END -- gr1
+END -- Page1
+END -- main
+Grid gr3
+{
+ ----------Rows[cn2   ]----------
+
+}
+END -- gr3
+END -- vb2
+END -- almi890
+
+TABLES
+lse_file
+ATTRIBUTES
+Table s_lse:s_lse;
+ButtonEdit lse01=lse_file.lse01, action=controlp, tabIndex=1, title="lse01", not null, required, image="zoom.png";
+Edit lse02=lse_file.lse02, tabIndex=2, title="lse02";
+Edit lse03=lse_file.lse03, tabIndex=3, title=%"lse03";
+CheckBox lse04=lse_file.lse04, tabIndex=4, title=%"lse04", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lse(lse_file.lse01,lse_file.lse02,lse_file.lse03,lse_file.lse04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

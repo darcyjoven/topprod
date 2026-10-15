@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli0021.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli0021")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+Grid gr2331
+{
+
+ Group No.           [axbb01              ]
+ Parent Company      [axbb02              ]
+ Book No.            [axbb03    ]
+ Daugher Company     [axbb04              ]
+ Daugher Book No.    [axbb05    ]
+
+
+}
+END -- gr2331
+END -- page01
+END -- folder01
+Table s_axb
+{
+[axbb07   |axbb08      |axbb09                     |axbb10                     |aag02                      |axbb06    ]
+[axbb07   |axbb08      |axbb09                     |axbb10                     |aag02                      |axbb06    ]
+[axbb07   |axbb08      |axbb09                     |axbb10                     |aag02                      |axbb06    ]
+[axbb07   |axbb08      |axbb09                     |axbb10                     |aag02                      |axbb06    ]
+[axbb07   |axbb08      |axbb09                     |axbb10                     |aag02                      |axbb06    ]
+[axbb07   |axbb08      |axbb09                     |axbb10                     |aag02                      |axbb06    ]
+[axbb07   |axbb08      |axbb09                     |axbb10                     |aag02                      |axbb06    ]
+[axbb07   |axbb08      |axbb09                     |axbb10                     |aag02                      |axbb06    ]
+[axbb07   |axbb08      |axbb09                     |axbb10                     |aag02                      |axbb06    ]
+[axbb07   |axbb08      |axbb09                     |axbb10                     |aag02                      |axbb06    ]
+
+}
+END -- s_axb
+Grid gr2333
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2333
+END -- vb3
+END -- agli0021
+
+TABLES
+axbb_file
+ATTRIBUTES
+ButtonEdit axbb01=axbb_file.axbb01, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit axbb02=axbb_file.axbb02, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Company Data";
+ButtonEdit axbb03=axbb_file.axbb03, action=controlp, tabIndex=3, noEntry, not null, required, image="zoom", comment="<^P>Qry Book#";
+ButtonEdit axbb04=axbb_file.axbb04, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Qry Company Data";
+ButtonEdit axbb05=axbb_file.axbb05, action=controlp, tabIndex=12, noEntry, not null, required, image="zoom", comment="<^P>Qry Book#";
+Edit axbb07=axbb_file.axbb07, tabIndex=4, title="Hoding%", not null, required;
+Edit axbb08=axbb_file.axbb08, tabIndex=5, title="Investment", not null, required;
+Edit axbb09=axbb_file.axbb09, tabIndex=6, title="Stock", not null, required;
+ButtonEdit axbb10=axbb_file.axbb10, action=controlp, tabIndex=7, title="Account No.", not null, required, image="zoom", comment="<^P>Qry Account No.";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, title="Account Title", noEntry;
+DateEdit axbb06=axbb_file.axbb06, tabIndex=8, title="Tran.Date", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axbb(axbb_file.axbb07,axbb_file.axbb08,axbb_file.axbb09,axbb_file.axbb10,formonly.aag02,axbb_file.axbb06)
+SCREEN RECORD Undefined(axbb_file.axbb01,axbb_file.axbb02,axbb_file.axbb03,axbb_file.axbb04,axbb_file.axbb05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

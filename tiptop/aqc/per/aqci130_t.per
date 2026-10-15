@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqci130_t.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqci130_t")
+Folder pc6
+Page page01(text="Page01")
+Table s_ima
+{
+[ima01               |ima02                         |ima021                        |ima08       |ima100    |ima101   |ima102]
+[ima01               |ima02                         |ima021                        |ima08       |ima100    |ima101   |ima102]
+[ima01               |ima02                         |ima021                        |ima08       |ima100    |ima101   |ima102]
+[ima01               |ima02                         |ima021                        |ima08       |ima100    |ima101   |ima102]
+[ima01               |ima02                         |ima021                        |ima08       |ima100    |ima101   |ima102]
+[ima01               |ima02                         |ima021                        |ima08       |ima100    |ima101   |ima102]
+[ima01               |ima02                         |ima021                        |ima08       |ima100    |ima101   |ima102]
+[ima01               |ima02                         |ima021                        |ima08       |ima100    |ima101   |ima102]
+[ima01               |ima02                         |ima021                        |ima08       |ima100    |ima101   |ima102]
+[ima01               |ima02                         |ima021                        |ima08       |ima100    |ima101   |ima102]
+
+}
+END -- s_ima
+END -- page01
+Page info(text="Info")
+Grid gr13
+{
+ <G grpinfo                       >
+  Detail Counts       [cn2       ]
+ <                                >
+
+}
+END -- gr13
+END -- info
+END -- pc6
+END -- aqci130_t
+
+ATTRIBUTES
+Edit ima01=formonly.ima01 type CHAR, tabIndex=1, title="Item No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, title="Specification", noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=4, title="Source Code", noEntry;
+Edit ima100=formonly.ima100 type VARCHAR, tabIndex=5, title="QC Degree", upShift, comment="N.Normal QC T.Strict QC R.Reduced-Qty QC";
+Edit ima101=formonly.ima101 type VARCHAR, tabIndex=6, title="QC Class", upShift, comment="1.General     2.Special";
+Edit ima102=formonly.ima102 type VARCHAR, tabIndex=7, title="Level", upShift, comment="General:1/2/3   Special:1/2/3/4";
+Group grpinfo:grpinfo;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ima(formonly.ima01,formonly.ima02,formonly.ima021,formonly.ima08,formonly.ima100,formonly.ima101,formonly.ima102)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

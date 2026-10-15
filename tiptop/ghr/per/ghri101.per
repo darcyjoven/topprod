@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrad01    |hrad01_1      |hrad02     |hrad03     |hrad04     |hrad05    |hradacti      ]
+[hrad01    |hrad01_1      |hrad02     |hrad03     |hrad04     |hrad05    |hradacti      ]
+[hrad01    |hrad01_1      |hrad02     |hrad03     |hrad04     |hrad05    |hradacti      ]
+[hrad01    |hrad01_1      |hrad02     |hrad03     |hrad04     |hrad05    |hradacti      ]
+[hrad01    |hrad01_1      |hrad02     |hrad03     |hrad04     |hrad05    |hradacti      ]
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+  ----------------- cn2 [cn2  ]-----------------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrad01=formonly.hrad01 type VARCHAR, action=controlp, tabIndex=1, title=%"hrad01", not null, required, image="zoom";
+Edit hrad01_1=formonly.hrad01_1, tabIndex=8, title=%"hrad01_1", noEntry;
+ButtonEdit hrad02=formonly.hrad02 type VARCHAR, action=controlp, tabIndex=2, title=%"hrad02", not null, required, image="zoom";
+Edit hrad03=formonly.hrad03 type VARCHAR, tabIndex=4, title=%"hrad03";
+CheckBox hrad04=formonly.hrad04 type VARCHAR, tabIndex=5, title=%"hrad04", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit hrad05=formonly.hrad05 type VARCHAR, tabIndex=6, title=%"hrad05";
+CheckBox hradacti=formonly.hradacti type VARCHAR, tabIndex=7, title=%"hradacti", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrad(formonly.hrad01,formonly.hrad01_1,formonly.hrad02,formonly.hrad03,formonly.hrad04,formonly.hrad05,formonly.hradacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_ttcfg2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_ttcfg2")
+VBox vb2
+Folder pc1
+Page page01(text="Main")
+Grid gr6
+{
+ <G group01                                                                        >
+  Service ID    [wsr01                         ]
+  Service Desc  [wsr03                                                       ]
+  Function Name [wsr04                         ]
+ <                                                                                 >
+
+}
+END -- gr6
+END -- page01
+Page info(text="Info")
+Grid gr7
+{
+ Record Owner [wsruser   ] Last Modified by    [wsrmodu   ] Data Valid Code  [wsracti   ]
+ Department   [wsrgrup   ] Create/Modify Date  [wsrdate   ]
+ Record Orig. [wsroriu   ]
+ Dept Orig.   [wsrorig   ]
+
+
+}
+END -- gr7
+END -- info
+END -- pc1
+Table tb3
+{
+[wss04          |gaq03               |wss05          |wss06          ]
+[wss04          |gaq03               |wss05          |wss06          ]
+[wss04          |gaq03               |wss05          |wss06          ]
+[wss04          |gaq03               |wss05          |wss06          ]
+[wss04          |gaq03               |wss05          |wss06          ]
+[wss04          |gaq03               |wss05          |wss06          ]
+[wss04          |gaq03               |wss05          |wss06          ]
+[wss04          |gaq03               |wss05          |wss06          ]
+[wss04          |gaq03               |wss05          |wss06          ]
+[wss04          |gaq03               |wss05          |wss06          ]
+[wss04          |gaq03               |wss05          |wss06          ]
+[wss04          |gaq03               |wss05          |wss06          ]
+[wss04          |gaq03               |wss05          |wss06          ]
+[wss04          |gaq03               |wss05          |wss06          ]
+[wss04          |gaq03               |wss05          |wss06          ]
+
+}
+END -- tb3
+Grid gr8
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr8
+END -- vb2
+END -- aws_ttcfg2
+
+TABLES
+wss_file,
+wsr_file
+ATTRIBUTES
+Group group01:group01;
+Edit wsr01=wsr_file.wsr01, tabIndex=1, not null, required;
+Edit wsr03=wsr_file.wsr03, tabIndex=2;
+Edit wsr04=wsr_file.wsr04, tabIndex=3, not null, required;
+Edit wsruser=wsr_file.wsruser, tabIndex=4, noEntry;
+Edit wsrmodu=wsr_file.wsrmodu, tabIndex=5, noEntry;
+Edit wsracti=wsr_file.wsracti, tabIndex=6, noEntry, upShift;
+Edit wsrgrup=wsr_file.wsrgrup, tabIndex=7, noEntry;
+Edit wsrdate=wsr_file.wsrdate, tabIndex=8, noEntry;
+Edit wsroriu=wsr_file.wsroriu, tabIndex=501, noEntry;
+Edit wsrorig=wsr_file.wsrorig, tabIndex=502, noEntry;
+Edit wss04=wss_file.wss04, tabIndex=9, title="Column ID", not null, required;
+Edit gaq03=formonly.gaq03 type CHAR, tabIndex=10, title="Column Name", noEntry;
+Edit wss05=wss_file.wss05, tabIndex=11, title="Default";
+Edit wss06=wss_file.wss06, tabIndex=14, title="Mapping Column";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wss(wss_file.wss04,formonly.gaq03,wss_file.wss05,wss_file.wss06)
+SCREEN RECORD Undefined(wsr_file.wsr01,wsr_file.wsr03,wsr_file.wsr04,wsr_file.wsruser,wsr_file.wsrmodu,wsr_file.wsracti,wsr_file.wsrgrup,wsr_file.wsrdate,wsr_file.wsroriu,wsr_file.wsrorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

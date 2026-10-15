@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi150.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi150")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr722
+{
+ Component No.       [bel01                         ]
+ Part Name           [ima02_h                       ]
+ Specification       [ima021_h                      ]
+ Ver                 [ima05_]      Src       [ima08_]
+}
+END -- gr722
+Grid gr723
+{
+ Master Item#        [bel02                         ]
+ Part Name           [ima02_h2                      ]
+ Specification       [ima021_h2                     ]
+ Ver                 [ima051]      Src       [ima081]
+}
+END -- gr723
+Grid gr724
+{
+ Version             [bel011    ]
+
+
+
+}
+END -- gr724
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_bel
+{
+[bel03   |bel04        |mse02              |bmj10        |bmj11       |wdesc   |bel06         |pmc03                      ]
+[bel03   |bel04        |mse02              |bmj10        |bmj11       |wdesc   |bel06         |pmc03                      ]
+[bel03   |bel04        |mse02              |bmj10        |bmj11       |wdesc   |bel06         |pmc03                      ]
+[bel03   |bel04        |mse02              |bmj10        |bmj11       |wdesc   |bel06         |pmc03                      ]
+[bel03   |bel04        |mse02              |bmj10        |bmj11       |wdesc   |bel06         |pmc03                      ]
+[bel03   |bel04        |mse02              |bmj10        |bmj11       |wdesc   |bel06         |pmc03                      ]
+[bel03   |bel04        |mse02              |bmj10        |bmj11       |wdesc   |bel06         |pmc03                      ]
+[bel03   |bel04        |mse02              |bmj10        |bmj11       |wdesc   |bel06         |pmc03                      ]
+[bel03   |bel04        |mse02              |bmj10        |bmj11       |wdesc   |bel06         |pmc03                      ]
+[bel03   |bel04        |mse02              |bmj10        |bmj11       |wdesc   |bel06         |pmc03                      ]
+
+}
+END -- s_bel
+Grid gr725
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr725
+END -- VBox1
+END -- abmi150
+
+TABLES
+bel_file
+ATTRIBUTES
+ButtonEdit bel01=bel_file.bel01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Query Item   ";
+Edit ima02_h=formonly.ima02_h type CHAR, tabIndex=2, noEntry;
+Edit ima021_h=formonly.ima021_h type CHAR, tabIndex=3, noEntry;
+Edit ima05_=formonly.ima05_h type CHAR, tabIndex=4, noEntry;
+Edit ima08_=formonly.ima08_h type CHAR, tabIndex=5, noEntry;
+ButtonEdit bel02=bel_file.bel02, action=controlp, tabIndex=6, not null, required, image="zoom", comment="Enter ALL for All Items  <^P> Query Item   ";
+Edit ima02_h2=formonly.ima02_h2 type CHAR, tabIndex=7, noEntry;
+Edit ima021_h2=formonly.ima021_h2 type CHAR, tabIndex=8, noEntry;
+Edit ima051=formonly.ima05_h2 type CHAR, tabIndex=9, noEntry;
+Edit ima081=formonly.ima08_h2 type CHAR, tabIndex=10, noEntry;
+ButtonEdit bel011=bel_file.bel011, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Query Ver.no.";
+Edit bel03=bel_file.bel03, tabIndex=12, title="Seq", not null, required;
+ButtonEdit bel04=bel_file.bel04, action=controlp, tabIndex=13, title="Maker", not null, required, image="zoom", comment="<^P> Query Brand";
+Edit mse02=formonly.mse02 type CHAR, tabIndex=14, title="Brand(Maker) Name", noEntry;
+Edit bmj10=formonly.bmj10 type CHAR, tabIndex=15, title="Approval No.", noEntry;
+DateEdit bmj11=formonly.bmj11 type CHAR, tabIndex=16, title="Approval Dt", noEntry;
+Edit wdesc=formonly.wdesc type CHAR, tabIndex=17, title="Status", noEntry;
+ButtonEdit bel06=bel_file.bel06, action=controlp, tabIndex=18, title="Main Supplier", image="zoom", comment="<^P> Qry Supplier   ";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=19, title="Main Supplier Abbreviation", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bel(bel_file.bel03,bel_file.bel04,formonly.mse02,formonly.bmj10,formonly.bmj11,formonly.wdesc,bel_file.bel06,formonly.pmc03)
+SCREEN RECORD Undefined(bel_file.bel01,formonly.ima02_h,formonly.ima021_h,formonly.ima05_h,formonly.ima08_h,bel_file.bel02,formonly.ima02_h2,formonly.ima021_h2,formonly.ima05_h2,formonly.ima08_h2,bel_file.bel011,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almp557.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"almp557")
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr4
+{
+
+ Card Category [lph01             ]
+ Date          [date              ]
+
+
+}
+END -- gr4
+END -- Page3
+END -- pc2
+END -- Form2
+
+TABLES
+lph_file
+ATTRIBUTES
+ButtonEdit lph01=lph_file.lph01, action=controlp, tabIndex=1, image="zoom.png";
+DateEdit date=formonly.date type VARCHAR, tabIndex=2, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lph_file.lph01,formonly.date)
+END -- INSTRUCTIONS
+

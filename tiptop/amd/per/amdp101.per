@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdp101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amdp101")
+VBox VBox1
+Grid gr3689
+{
+ <G group01                                                           >
+  Declaring Department                      [ama01     ]
+  Data Year/Month                           [byy  ][bmm]-[eyy  ][emm]
+  Confirm to Update Declared Year and Month [ama08][ama]
+ <                                                                    >
+
+}
+END -- gr3689
+Grid gr3690
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr3690
+END -- VBox1
+END -- amdp101
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+ButtonEdit ama01=formonly.ama01 type VARCHAR, action=CONTROLP, tabIndex=1, image="ZOOM";
+Edit byy=formonly.byy type SMALLINT, tabIndex=2;
+Edit bmm=formonly.bmm type SMALLINT, tabIndex=3;
+Edit eyy=formonly.eyy type SMALLINT, tabIndex=4;
+Edit emm=formonly.emm type SMALLINT, tabIndex=5;
+Edit ama08=formonly.ama08 type SMALLINT, tabIndex=6;
+Edit ama=formonly.ama09 type SMALLINT, tabIndex=7;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=8, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ama01,formonly.byy,formonly.bmm,formonly.eyy,formonly.emm,formonly.ama08,formonly.ama09,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

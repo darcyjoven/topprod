@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi600_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi600_a")
+VBox vb2
+Folder pc251
+Page page01(text="Main")
+Table s_bmv
+{
+[bmv09     |bmv04                    |bmv04_agc02                             |bmv08     |bmv07                    |bmv07_agc02                             |bmv05          |bmv06          ]
+[bmv09     |bmv04                    |bmv04_agc02                             |bmv08     |bmv07                    |bmv07_agc02                             |bmv05          |bmv06          ]
+[bmv09     |bmv04                    |bmv04_agc02                             |bmv08     |bmv07                    |bmv07_agc02                             |bmv05          |bmv06          ]
+[bmv09     |bmv04                    |bmv04_agc02                             |bmv08     |bmv07                    |bmv07_agc02                             |bmv05          |bmv06          ]
+[bmv09     |bmv04                    |bmv04_agc02                             |bmv08     |bmv07                    |bmv07_agc02                             |bmv05          |bmv06          ]
+[bmv09     |bmv04                    |bmv04_agc02                             |bmv08     |bmv07                    |bmv07_agc02                             |bmv05          |bmv06          ]
+[bmv09     |bmv04                    |bmv04_agc02                             |bmv08     |bmv07                    |bmv07_agc02                             |bmv05          |bmv06          ]
+[bmv09     |bmv04                    |bmv04_agc02                             |bmv08     |bmv07                    |bmv07_agc02                             |bmv05          |bmv06          ]
+[bmv09     |bmv04                    |bmv04_agc02                             |bmv08     |bmv07                    |bmv07_agc02                             |bmv05          |bmv06          ]
+[bmv09     |bmv04                    |bmv04_agc02                             |bmv08     |bmv07                    |bmv07_agc02                             |bmv05          |bmv06          ]
+
+}
+END -- s_bmv
+END -- page01
+END -- pc251
+Grid gr1625
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1625
+END -- vb2
+END -- abmi600_a
+
+TABLES
+bmv_file
+ATTRIBUTES
+Edit bmv09=bmv_file.bmv09, tabIndex=9, default = "1", title="bmv09";
+ButtonEdit bmv04=bmv_file.bmv04, action=controlp, tabIndex=1, title="bmv04", not null, required, image="zoom.png";
+Edit bmv04_agc02=formonly.bmv04_agc02 type VARCHAR, tabIndex=2, title="bmv04_agc02", noEntry;
+ComboBox bmv08=bmv_file.bmv08, tabIndex=3, title="bmv08", not null, required, items=(("1", "get value"),("2", "for value"));
+ButtonEdit bmv07=bmv_file.bmv07, action=controlp, tabIndex=4, default = "2", title="bmv07", not null, required, image="zoom.png";
+Edit bmv07_agc02=formonly.bmv07_agc02 type VARCHAR, tabIndex=5, title="bmv07_agc02", noEntry;
+DateEdit bmv05=bmv_file.bmv05, tabIndex=7, title="bmv05", not null;
+DateEdit bmv06=bmv_file.bmv06, tabIndex=8, title="bmv06";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmv(bmv_file.bmv09,bmv_file.bmv04,formonly.bmv04_agc02,bmv_file.bmv08,bmv_file.bmv07,formonly.bmv07_agc02,bmv_file.bmv05,bmv_file.bmv06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afar760.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afar760")
+VBox VBox1
+Grid Grid1
+{
+ <G grpqbe                                  >
+  Application Form No.[fcb01               ]
+  Applying Date       [fcb02               ]
+ <                                          >
+
+}
+END -- Grid1
+Group group01(text="INPUT")
+Grid Grid2
+{
+ Option            [a                   ]
+
+}
+END -- Grid2
+END -- group01
+Grid Grid3
+{
+[more                                     ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- afar760
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+Edit fcb01=formonly.fcb01 type VARCHAR, tabIndex=1;
+DateEdit fcb02=formonly.fcb02 type DATE, tabIndex=2;
+ComboBox a=formonly.a type VARCHAR, tabIndex=3, items=(("1", %"detail"),("2", %"Summary"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.fcb01,formonly.fcb02,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

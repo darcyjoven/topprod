@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglg401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr401")
+VBox vb2
+Group group01(text="INPUT")
+Grid gr2706
+{
+ <G group02                                                                                                                        >
+                           [dummy01]          [dummy02]        [dummy03]         [dummy04]         [dummy05]
+  Source Method       [s1              ][s2              ][s3              ][s4              ][s5              ]
+  Name                [n1              ][n2              ][n3              ][n4              ][n5              ]
+  Year                [yy1             ][yy2             ][yy3             ][yy4             ][yy5             ]
+  Initial Period      [m1              ][m2              ][m3              ][m7              ][m8              ]
+  Ending Priod        [m4              ][m5              ][m6              ][m9              ][m0              ]
+ [a                                                                                          ]
+ <                                                                                                                                 >
+ <G group03                                                                                                                        >
+  [dummy06      ]
+     [dummy07                                                               ]
+     [dummy08                                                               ]
+     [dummy09                                                               ]
+     [dummy13                                                               ]
+    [dummy10                                                               ]
+    [dummy11                                                               ]
+    [dummy12                                                               ]
+ <                                                                                                                                 >
+
+}
+END -- gr2706
+END -- group01
+Grid gr2707
+{
+[more                                                        ]
+
+}
+END -- gr2707
+END -- vb2
+END -- aglr401
+
+ATTRIBUTES
+Group group02:group02;
+Label dummy01:dummy01, text="1st Period";
+Label dummy02:dummy02, text="2nd Period";
+Label dummy03:dummy03, text="3rd Period";
+Label dummy04:dummy04, text="4th Period";
+Label dummy05:dummy05, text="5th Period";
+Edit s1=formonly.s1 type VARCHAR, tabIndex=1;
+Edit s2=formonly.s2 type VARCHAR, tabIndex=6;
+Edit s3=formonly.s3 type VARCHAR, tabIndex=11;
+Edit s4=formonly.s4 type VARCHAR, tabIndex=16;
+Edit s5=formonly.s5 type VARCHAR, tabIndex=21;
+Edit n1=formonly.n1 type VARCHAR, tabIndex=2;
+Edit n2=formonly.n2 type VARCHAR, tabIndex=7;
+Edit n3=formonly.n3 type VARCHAR, tabIndex=12;
+Edit n4=formonly.n4 type VARCHAR, tabIndex=17;
+Edit n5=formonly.n5 type VARCHAR, tabIndex=22;
+Edit yy1=formonly.yy1 type SMALLINT, tabIndex=3;
+Edit yy2=formonly.yy2 type SMALLINT, tabIndex=8;
+Edit yy3=formonly.yy3 type SMALLINT, tabIndex=13;
+Edit yy4=formonly.yy4 type SMALLINT, tabIndex=18;
+Edit yy5=formonly.yy5 type SMALLINT, tabIndex=23;
+Edit m1=formonly.m1 type SMALLINT, tabIndex=4;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=9;
+Edit m3=formonly.m3 type SMALLINT, tabIndex=14;
+Edit m7=formonly.m7 type SMALLINT, tabIndex=19;
+Edit m8=formonly.m8 type SMALLINT, tabIndex=24;
+Edit m4=formonly.m4 type SMALLINT, tabIndex=5;
+Edit m5=formonly.m5 type SMALLINT, tabIndex=10;
+Edit m6=formonly.m6 type SMALLINT, tabIndex=15;
+Edit m9=formonly.m9 type SMALLINT, tabIndex=20;
+Edit m0=formonly.m0 type SMALLINT, tabIndex=25;
+CheckBox a=formonly.a type CHAR, tabIndex=26, text="Calculate Net Sales Amount AND Cost of Goods Sold BY Average Stocks Cost Method", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03;
+Label dummy06:dummy06, text="Source method:";
+Label dummy07:dummy07, text="1. Currency Period            2. Current Quarter      3. Current Year";
+Label dummy08:dummy08, text="4. Last Period                    5. Last 2 Periods";
+Label dummy09:dummy09, text="6. Last Year Same Period  7. Same Period of the Year before Last Year";
+Label dummy13:dummy13, text="8. Last Quarter                  9. Last 2 Quarters";
+Label dummy10:dummy10, text="10. Same Quarter of Last Year";
+Label dummy11:dummy11, text="11. same quarter of the year before last year";
+Label dummy12:dummy12, text="12. MTD                           13. QTD                  14. YTD";
+CheckBox more=formonly.more type CHAR, tabIndex=27, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.s1,formonly.s2,formonly.s3,formonly.s4,formonly.s5,formonly.n1,formonly.n2,formonly.n3,formonly.n4,formonly.n5,formonly.yy1,formonly.yy2,formonly.yy3,formonly.yy4,formonly.yy5,formonly.m1,formonly.m2,formonly.m3,formonly.m7,formonly.m8,formonly.m4,formonly.m5,formonly.m6,formonly.m9,formonly.m0,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

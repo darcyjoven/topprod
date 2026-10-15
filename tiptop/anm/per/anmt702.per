@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt702.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt702")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr4523
+{
+ Document No.        [nns01           ]
+
+}
+END -- gr4523
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_nns
+{
+[nns0|nns03     |nns04            |nmh06       |nmt02               |nmh03|nmh28               |nmh02               |nmh32               |nmh05       |nmh09       ]
+[nns0|nns03     |nns04            |nmh06       |nmt02               |nmh03|nmh28               |nmh02               |nmh32               |nmh05       |nmh09       ]
+[nns0|nns03     |nns04            |nmh06       |nmt02               |nmh03|nmh28               |nmh02               |nmh32               |nmh05       |nmh09       ]
+[nns0|nns03     |nns04            |nmh06       |nmt02               |nmh03|nmh28               |nmh02               |nmh32               |nmh05       |nmh09       ]
+[nns0|nns03     |nns04            |nmh06       |nmt02               |nmh03|nmh28               |nmh02               |nmh32               |nmh05       |nmh09       ]
+[nns0|nns03     |nns04            |nmh06       |nmt02               |nmh03|nmh28               |nmh02               |nmh32               |nmh05       |nmh09       ]
+[nns0|nns03     |nns04            |nmh06       |nmt02               |nmh03|nmh28               |nmh02               |nmh32               |nmh05       |nmh09       ]
+[nns0|nns03     |nns04            |nmh06       |nmt02               |nmh03|nmh28               |nmh02               |nmh32               |nmh05       |nmh09       ]
+[nns0|nns03     |nns04            |nmh06       |nmt02               |nmh03|nmh28               |nmh02               |nmh32               |nmh05       |nmh09       ]
+[nns0|nns03     |nns04            |nmh06       |nmt02               |nmh03|nmh28               |nmh02               |nmh32               |nmh05       |nmh09       ]
+
+}
+END -- s_nns
+Grid gr4524
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4524
+END -- VBox1
+END -- anmt702
+
+TABLES
+nns_file
+ATTRIBUTES
+Edit nns01=nns_file.nns01, tabIndex=1;
+Edit nns0=nns_file.nns02, tabIndex=2, title="Ln#", not null, required;
+ButtonEdit nns03=nns_file.nns03, action=controlp, tabIndex=3, title="Note No.", not null, required, image="zoom", comment="<^P>Qry Data";
+Edit nns04=nns_file.nns04, tabIndex=4, title="Document No.";
+Edit nmh06=formonly.nmh06 type CHAR, tabIndex=5, title="Paying Bank", noEntry;
+Edit nmt02=formonly.nmt02 type CHAR, tabIndex=6, title="Bank Name", noEntry;
+Edit nmh03=formonly.nmh03 type CHAR, tabIndex=7, title="Curr", noEntry;
+Edit nmh28=formonly.nmh28 type CHAR, tabIndex=8, title="Ex.Rate", noEntry;
+Edit nmh02=formonly.nmh02 type CHAR, tabIndex=9, title="H.C Face Value", noEntry;
+Edit nmh32=formonly.nmh32 type CHAR, tabIndex=10, title="O.C Face Value", noEntry;
+DateEdit nmh05=formonly.nmh05 type CHAR, tabIndex=11, title="Due Date", noEntry;
+DateEdit nmh09=formonly.nmh09 type CHAR, tabIndex=12, title="Cashing Date", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nns(nns_file.nns02,nns_file.nns03,nns_file.nns04,formonly.nmh06,formonly.nmt02,formonly.nmh03,formonly.nmh28,formonly.nmh02,formonly.nmh32,formonly.nmh05,formonly.nmh09)
+SCREEN RECORD Undefined(nns_file.nns01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

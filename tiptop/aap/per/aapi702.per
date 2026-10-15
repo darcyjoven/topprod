@@ -1,0 +1,157 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapi702.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapi702")
+VBox vb4
+Folder pc17
+Page page01(text="Main")
+Grid gr35
+{
+  Accounts Department                 [aps01     ][gem02     ]      [imgmksg]
+                                                                    [       ]
+
+ <G group01                                                                       >
+  Prepayment                          [aps14     ][aps14_d                       ]
+  Accounts Payable                    [aps22     ][aps22_d                       ]
+  Temporary Estimate A/P              [aps233    ][aps233d                       ]
+  Inventory In-Transit Accout         [aps234    ][aps234d                       ]
+  L/C Loan Account                    [aps25     ][aps25_d                       ]
+  Spread Loss Account                 [aps42     ][aps42_d                       ]
+  Spread Profit Account               [aps43     ][aps43_d                       ]
+  Inventory account                   [aps45     ][aps45_d                       ]
+  Enter Account Variation             [aps51     ][aps51_d                       ]
+  Interest Expense Temporary Estimate [aps52     ][aps52_d                       ]
+  Interest Payable Temporary Estimate [aps53     ][aps53_d                       ]
+  Interest Loss Account               [aps54     ][aps54_d                       ]
+  Interest Profit Account             [aps55     ][aps55_d                       ]
+  Estimated Premium Payable           [aps231    ][aps231_d                      ]
+ <                                                                                >
+}
+END -- gr35
+END -- page01
+Page page02(text="Main1")
+Grid gr36
+{
+ <G group02                                                                      >
+  Prepayment No.2                     [aps141    ][aps141_d                      ]
+  Accounts Payable No.2               [aps221    ][aps221_d                      ]
+  Temporary Estimate A/P No.2         [aps238    ][aps238d                       ]
+  Inventory In-Transit Accout No.2    [aps239    ][aps239d                       ]
+  L/C Loan Account No.2               [aps251    ][aps251_d                      ]
+  Spread Loss Account No.2            [aps421    ][aps421_d                      ]
+  Spread Profit Account No.2          [aps431    ][aps431_d                      ]
+  Inventory account No.2              [aps451    ][aps451_d                      ]
+  Enter Account Variation             [aps511    ][aps511_d                      ]
+  Interest Expense Temp Esti No.2     [aps521    ][aps521_d                      ]
+  Interest Payable Temp Esti No.2     [aps531    ][aps531_d                      ]
+  Interest Loss Account No.2          [aps541    ][aps541_d                      ]
+  Interest Profit Account No.2        [aps551    ][aps551_d                      ]
+  Estimated Premium Payable 2         [aps236    ][aps236_d                      ]
+ <                                                                               >
+
+}
+END -- gr36
+END -- page02
+Page info(text="Info")
+Grid gr37
+{
+ Record Owner        [apsuser   ] Last Modified by    [apsmodu   ] Data Valid Code     [apsacti   ]
+ Department          [apsgrup   ] Create/Modify Date  [apsdate     ]
+ Record Orig.        [apsoriu   ]
+ Dept Orig.          [apsorig   ]
+}
+END -- gr37
+END -- info
+END -- pc17
+Grid gr38
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr38
+END -- vb4
+END -- aapi702
+
+TABLES
+aps_file
+ATTRIBUTES
+ButtonEdit aps01=aps_file.aps01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Department name,KEY Field, No Blank/Repeated!";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=2, noEntry;
+IMAGE imgmksg=formonly.imgmksg type VARCHAR, autoScale, width = 7 characters, height = 2 characters;
+Group group01:group01;
+ButtonEdit aps14=aps_file.aps14, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Account";
+Edit aps14_d=formonly.aps14_d type VARCHAR, tabIndex=5;
+ButtonEdit aps22=aps_file.aps22, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Account";
+Edit aps22_d=formonly.aps22_d type VARCHAR, tabIndex=7;
+ButtonEdit aps233=aps_file.aps233, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Account";
+Edit aps233d=formonly.aps233d type VARCHAR, tabIndex=9;
+ButtonEdit aps234=aps_file.aps234, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Account";
+Edit aps234d=formonly.aps234d type VARCHAR, tabIndex=11;
+ButtonEdit aps25=aps_file.aps25, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Account";
+Edit aps25_d=formonly.aps25_d type VARCHAR, tabIndex=13;
+ButtonEdit aps42=aps_file.aps42, action=controlp, tabIndex=14, image="zoom", comment="<^P>Qry Account";
+Edit aps42_d=formonly.aps42_d type VARCHAR, tabIndex=15;
+ButtonEdit aps43=aps_file.aps43, action=controlp, tabIndex=16, image="zoom", comment="<^P>Qry Account";
+Edit aps43_d=formonly.aps43_d type VARCHAR, tabIndex=17;
+ButtonEdit aps45=aps_file.aps45, action=controlp, tabIndex=18, image="zoom", comment="<^P>Qry Account";
+Edit aps45_d=formonly.aps45_d type VARCHAR, tabIndex=19;
+ButtonEdit aps51=aps_file.aps51, action=controlp, tabIndex=20, image="zoom", comment="<^P>Qry Account";
+Edit aps51_d=formonly.aps51_d type VARCHAR, tabIndex=21;
+ButtonEdit aps52=aps_file.aps52, action=controlp, tabIndex=22, image="zoom", comment="<^P>Qry Account";
+Edit aps52_d=formonly.aps52_d type VARCHAR, tabIndex=23;
+ButtonEdit aps53=aps_file.aps53, action=controlp, tabIndex=24, image="zoom", comment="<^P>Qry Account";
+Edit aps53_d=formonly.aps53_d type VARCHAR, tabIndex=25;
+ButtonEdit aps54=aps_file.aps54, action=controlp, tabIndex=26, image="zoom", comment="<^P>Qry Account";
+Edit aps54_d=formonly.aps54_d type VARCHAR, tabIndex=27;
+ButtonEdit aps55=aps_file.aps55, action=controlp, tabIndex=28, image="zoom", comment="<^P>Qry Account";
+Edit aps55_d=formonly.aps55_d type VARCHAR, tabIndex=29;
+ButtonEdit aps231=aps_file.aps231, action=controlp, tabIndex=505, image="zoom", comment="<^P>Qry Account ";
+Edit aps231_d=formonly.aps231_d type VARCHAR, tabIndex=506;
+Group group02:group02;
+ButtonEdit aps141=aps_file.aps141, action=controlp, tabIndex=30, image="zoom", comment="<^P>Qry Account";
+Edit aps141_d=formonly.aps141_d type VARCHAR, tabIndex=31;
+ButtonEdit aps221=aps_file.aps221, action=controlp, tabIndex=32, image="zoom", comment="<^P>Qry Account";
+Edit aps221_d=formonly.aps221_d type VARCHAR, tabIndex=33;
+ButtonEdit aps238=aps_file.aps238, action=controlp, tabIndex=34, image="zoom", comment="<^P>Qry Account";
+Edit aps238d=formonly.aps238d type VARCHAR, tabIndex=35;
+ButtonEdit aps239=aps_file.aps239, action=controlp, tabIndex=36, image="zoom", comment="<^P>Qry Account";
+Edit aps239d=formonly.aps239d type VARCHAR, tabIndex=37;
+ButtonEdit aps251=aps_file.aps251, action=controlp, tabIndex=38, image="zoom", comment="<^P>Qry Account";
+Edit aps251_d=formonly.aps251_d type VARCHAR, tabIndex=39;
+ButtonEdit aps421=aps_file.aps421, action=controlp, tabIndex=40, image="zoom", comment="<^P>Qry Account";
+Edit aps421_d=formonly.aps421_d type VARCHAR, tabIndex=41;
+ButtonEdit aps431=aps_file.aps431, action=controlp, tabIndex=42, image="zoom", comment="<^P>Qry Account";
+Edit aps431_d=formonly.aps431_d type VARCHAR, tabIndex=43;
+ButtonEdit aps451=aps_file.aps451, action=controlp, tabIndex=44, image="zoom", comment="<^P>Qry Account";
+Edit aps451_d=formonly.aps451_d type VARCHAR, tabIndex=45;
+ButtonEdit aps511=aps_file.aps511, action=controlp, tabIndex=46, image="zoom", comment="<^P>Qry Account";
+Edit aps511_d=formonly.aps511_d type VARCHAR, tabIndex=47;
+ButtonEdit aps521=aps_file.aps521, action=controlp, tabIndex=48, image="zoom", comment="<^P>Qry Account";
+Edit aps521_d=formonly.aps521_d type VARCHAR, tabIndex=49;
+ButtonEdit aps531=aps_file.aps531, action=controlp, tabIndex=50, image="zoom", comment="<^P>Qry Account";
+Edit aps531_d=formonly.aps531_d type VARCHAR, tabIndex=51;
+ButtonEdit aps541=aps_file.aps541, action=controlp, tabIndex=52, image="zoom", comment="<^P>Qry Account";
+Edit aps541_d=formonly.aps541_d type VARCHAR, tabIndex=53;
+ButtonEdit aps551=aps_file.aps551, action=controlp, tabIndex=54, image="zoom", comment="<^P>Qry Account";
+Edit aps551_d=formonly.aps551_d type VARCHAR, tabIndex=55;
+ButtonEdit aps236=aps_file.aps236, action=controlp, tabIndex=503, image="zoom", comment="<^P>Qry Account ";
+Edit aps236_d=formonly.aps236_d type VARCHAR, tabIndex=504;
+Edit apsuser=aps_file.apsuser, tabIndex=56, noEntry;
+Edit apsmodu=aps_file.apsmodu, tabIndex=57, noEntry;
+Edit apsacti=aps_file.apsacti, tabIndex=58, noEntry;
+Edit apsgrup=aps_file.apsgrup, tabIndex=59, noEntry;
+DateEdit apsdate=aps_file.apsdate, tabIndex=60, noEntry;
+Edit apsoriu=aps_file.apsoriu, tabIndex=501, noEntry;
+Edit apsorig=aps_file.apsorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=61, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(aps_file.aps01,formonly.gem02,formonly.imgmksg,aps_file.aps14,formonly.aps14_d,aps_file.aps22,formonly.aps22_d,aps_file.aps233,formonly.aps233d,aps_file.aps234,formonly.aps234d,aps_file.aps25,formonly.aps25_d,aps_file.aps42,formonly.aps42_d,aps_file.aps43,formonly.aps43_d,aps_file.aps45,formonly.aps45_d,aps_file.aps51,formonly.aps51_d,aps_file.aps52,formonly.aps52_d,aps_file.aps53,formonly.aps53_d,aps_file.aps54,formonly.aps54_d,aps_file.aps55,formonly.aps55_d,aps_file.aps141,formonly.aps141_d,aps_file.aps221,formonly.aps221_d,aps_file.aps238,formonly.aps238d,aps_file.aps239,formonly.aps239d,aps_file.aps251,formonly.aps251_d,aps_file.aps421,formonly.aps421_d,aps_file.aps431,formonly.aps431_d,aps_file.aps451,formonly.aps451_d,aps_file.aps511,formonly.aps511_d,aps_file.aps521,formonly.aps521_d,aps_file.aps531,formonly.aps531_d,aps_file.aps541,formonly.aps541_d,aps_file.aps551,formonly.aps551_d,aps_file.apsuser,aps_file.apsmodu,aps_file.apsacti,aps_file.apsgrup,aps_file.apsdate,aps_file.apsoriu,aps_file.apsorig,formonly.cnt,aps_file.aps236,formonly.aps236_d,aps_file.aps231,formonly.aps231_d)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,149 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt403_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artt402_1")
+VBox VBox1
+Folder pc3
+Page Page3(text=%"WorkPlantAlteration")
+VBox VBox2
+Grid Grid1
+{
+
+    <G group2                                   >   <G group3                                    >
+
+         rbe28           [rbe28              ]          rbe28t           [rbe28t             ]
+         rbe29           [rbe29              ]          rbe29t           [rbe29t             ]
+         rbe31           [rbe31              ]          rbe31t           [rbe31t             ]
+
+
+
+    <                                           >   <                                            >
+}
+END -- Grid1
+ScrollGrid gr10
+{
+
+ [dummy1   ]              [dummy2    ] [dummy3    ] [dummy4    ] [dummy5    ] [dummy6        ] [dummy7   ]
+ [type     ] [before    ] [rbr07_1   ] [rbr08_1   ] [rbr09_1   ] [rbr10_1   ] [rbr11_1       ] [rbracti_1]
+             [after     ] [rbr07     ] [rbr08     ] [rbr09     ] [rbr10     ] [rbr11         ] [rbracti  ]
+
+ [type     ] [before    ] [rbr07_1   ] [rbr08_1   ] [rbr09_1   ] [rbr10_1   ] [rbr11_1       ] [rbracti_1]
+             [after     ] [rbr07     ] [rbr08     ] [rbr09     ] [rbr10     ] [rbr11         ] [rbracti  ]
+
+ [type     ] [before    ] [rbr07_1   ] [rbr08_1   ] [rbr09_1   ] [rbr10_1   ] [rbr11_1       ] [rbracti_1]
+             [after     ] [rbr07     ] [rbr08     ] [rbr09     ] [rbr10     ] [rbr11         ] [rbracti  ]
+
+}
+END -- gr10
+END -- VBox2
+END -- Page3
+END -- pc3
+Group Group1
+ScrollGrid gr1
+{
+
+ [dummy8   ]              [dummy9    ] [dummy10   ] [dummy11   ] [dummy12     ] [dummy13       ] [dummy14     ] [dummy15       ]  [dummy17       ][dummy16  ]
+ [type1    ] [before1   ] [rbs07_1   ] [rbs08_1   ] [rbs09_1   ] [rbs10_1     ] [rbs10_1_desc  ] [rbs11_1     ] [rbs11_1_desc  ]  [rbs12_1       ][rbsacti_1]
+             [after1    ] [rbs07     ] [rbs08     ] [rbs09     ] [rbs10       ] [rbs10_desc    ] [rbs11       ] [rbs11_desc    ]  [rbs12         ][rbsacti  ]
+
+ [type1    ] [before1   ] [rbs07_1   ] [rbs08_1   ] [rbs09_1   ] [rbs10_1     ] [rbs10_1_desc  ] [rbs11_1     ] [rbs11_1_desc  ]  [rbs12_1       ][rbsacti_1]
+             [after1    ] [rbs07     ] [rbs08     ] [rbs09     ] [rbs10       ] [rbs10_desc    ] [rbs11       ] [rbs11_desc    ]  [rbs12         ][rbsacti  ]
+
+ [type1    ] [before1   ] [rbs07_1   ] [rbs08_1   ] [rbs09_1   ] [rbs10_1     ] [rbs10_1_desc  ] [rbs11_1     ] [rbs11_1_desc  ]  [rbs12_1       ][rbsacti_1]
+             [after1    ] [rbs07     ] [rbs08     ] [rbs09     ] [rbs10       ] [rbs10_desc    ] [rbs11       ] [rbs11_desc    ]  [rbs12         ][rbsacti  ]
+
+}
+END -- gr1
+END -- Group1
+Grid gr16
+{
+
+ --- Items[cn1   ]---[cn2   ]---
+
+
+
+}
+END -- gr16
+END -- VBox1
+END -- Form3
+
+TABLES
+rbr_file,
+rbe_file,
+rbs_file
+ATTRIBUTES
+Group group2:Group2, text=%"before";
+ComboBox rbe28=rbe_file.rbe28, tabIndex=1, noEntry, not null, items=(("1", "exchanging"),("2", "exchanged"));
+ComboBox rbe29=rbe_file.rbe29, tabIndex=2, noEntry, not null, items=(("1", "chaoliang"),("2", "beiliang"));
+Edit rbe31=rbe_file.rbe31, tabIndex=3, noEntry, not null;
+Group group3:Group3, text=%"after";
+ComboBox rbe28t=rbe_file.rbe28t, tabIndex=4, not null, items=(("1", "exchanging"),("2", "exchanged"));
+ComboBox rbe29t=rbe_file.rbe29t, tabIndex=5, not null, items=(("1", "chaoliang"),("2", "beiliang"));
+Edit rbe31t=rbe_file.rbe31t, tabIndex=6, not null;
+Label dummy1:dummy1, text="type";
+Label dummy2:dummy2, text="rbr07";
+Label dummy3:dummy3, text="rbr08";
+Label dummy4:dummy4, text="rbr09";
+Label dummy5:dummy5, text="rbr10";
+Label dummy6:dummy6, text="rbr11";
+Label dummy7:dummy7, text="rbracti";
+ComboBox type=formonly.type type CHAR, tabIndex=7, noEntry, items=(("0", "Add"),("1", "Modify"));
+ComboBox before=formonly.before type CHAR, tabIndex=8, noEntry, items=(("0", "Original:"));
+Edit rbr07_1=formonly.rbr07_1 type SMALLINT, tabIndex=9, noEntry;
+Edit rbr08_1=formonly.rbr08_1 type SMALLINT, tabIndex=10, noEntry;
+Edit rbr09_1=formonly.rbr09_1 type SMALLINT, tabIndex=11, noEntry;
+Edit rbr10_1=formonly.rbr10_1 type CHAR, tabIndex=12, noEntry;
+Edit rbr11_1=formonly.rbr11_1 type CHAR, tabIndex=13, noEntry;
+CheckBox rbracti_1=formonly.rbracti_1 type CHAR, tabIndex=14, default = "Y", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox after=formonly.after type CHAR, tabIndex=15, noEntry, items=(("1", "Modify:"));
+Edit rbr07=rbr_file.rbr07, tabIndex=16, not null, required;
+Edit rbr08=rbr_file.rbr08, tabIndex=17, not null, required;
+Edit rbr09=rbr_file.rbr09, tabIndex=18, not null, required;
+Edit rbr10=rbr_file.rbr10, tabIndex=19, not null, required;
+Edit rbr11=rbr_file.rbr11, tabIndex=20, not null, required;
+CheckBox rbracti=rbr_file.rbracti, tabIndex=21, default = "Y", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy8:dummy8, text="type";
+Label dummy9:dummy9, text="rbs07";
+Label dummy10:dummy10, text="rbs08";
+Label dummy11:dummy11, text="rbs09";
+Label dummy12:dummy12, text="rbs10";
+Label dummy13:dummy13, text="rbs10_desc";
+Label dummy14:dummy14, text="rbs11";
+Label dummy15:dummy15, text="rbs11_desc";
+Label dummy17:dummy17, text="rbs12";
+Label dummy16:dummy16, text="rbsacti";
+ComboBox type1=formonly.type1 type CHAR, tabIndex=22, noEntry, items=(("0", "Add"),("1", "Modify"));
+ComboBox before1=formonly.before1 type CHAR, tabIndex=23, noEntry, items=(("0", "Original:"));
+Edit rbs07_1=formonly.rbs07_1 type SMALLINT, tabIndex=24, noEntry;
+Edit rbs08_1=formonly.rbs08_1 type SMALLINT, tabIndex=25, noEntry;
+ComboBox rbs09_1=formonly.rbs09_1 type SMALLINT, tabIndex=26, noEntry, items=(("01", "Product"),("02", "Product Classification"),("03", "Category"),("04", "Brand"),("05", "Series"),("06", "Model"),("07", "Item Specification"),("08", "Attribute"),("09", "Price"),("10", "Ticket"),("11", "11"));
+ButtonEdit rbs10_1=formonly.rbs10_1 type CHAR, action=controlp, tabIndex=27, noEntry, image="zoom";
+Edit rbs10_1_desc=formonly.rbs10_1_desc type CHAR, tabIndex=28, noEntry;
+ButtonEdit rbs11_1=formonly.rbs11_1 type SMALLINT, action=controlp, tabIndex=29, noEntry, image="zoom";
+Edit rbs11_1_desc=formonly.rbs11_1_desc type SMALLINT, tabIndex=30, noEntry;
+Edit rbs12_1=formonly.rbs12_1 type SMALLINT, tabIndex=31, noEntry;
+CheckBox rbsacti_1=formonly.rbsacti_1 type CHAR, tabIndex=32, default = "Y", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox after1=formonly.after1 type CHAR, tabIndex=33, noEntry, items=(("1", "Modify:"));
+Edit rbs07=rbs_file.rbs07, tabIndex=34, not null, required;
+Edit rbs08=rbs_file.rbs08, tabIndex=35, not null, required;
+ComboBox rbs09=rbs_file.rbs09, tabIndex=36, not null, required, items=(("01", "Product"),("02", "Product Classification"),("03", "Category"),("04", "Brand"),("05", "Series"),("06", "Model"),("07", "Item Specification"),("08", "Attribute"),("09", "Price"),("10", "Ticket"),("11", "11"));
+ButtonEdit rbs10=rbs_file.rbs10, action=controlp, tabIndex=37, not null, required, image="zoom";
+Edit rbs10_desc=formonly.rbs10_desc type DECIMAL, tabIndex=38, noEntry;
+ButtonEdit rbs11=rbs_file.rbs11, action=controlp, tabIndex=39, not null, required, image="zoom";
+Edit rbs11_desc=formonly.rbs11_desc type SMALLINT, tabIndex=40, noEntry;
+Edit rbs12=rbs_file.rbs12, tabIndex=41, noEntry;
+CheckBox rbsacti=rbs_file.rbsacti, tabIndex=42, default = "Y", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn1=formonly.cn1 type CHAR, tabIndex=43;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=44;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rbr(formonly.type,formonly.before,formonly.rbr07_1,formonly.rbr08_1,formonly.rbr09_1,formonly.rbr10_1,formonly.rbr11_1,formonly.rbracti_1,formonly.after,rbr_file.rbr07,rbr_file.rbr08,rbr_file.rbr09,rbr_file.rbr10,rbr_file.rbr11,rbr_file.rbracti)
+SCREEN RECORD s_rbs(formonly.type1,formonly.before1,formonly.rbs07_1,formonly.rbs08_1,formonly.rbs09_1,formonly.rbs10_1,formonly.rbs10_1_desc,formonly.rbs11_1,formonly.rbs11_1_desc,formonly.rbs12_1,formonly.rbsacti_1,formonly.after1,rbs_file.rbs07,rbs_file.rbs08,rbs_file.rbs09,rbs_file.rbs10,formonly.rbs10_desc,rbs_file.rbs11,formonly.rbs11_desc,rbs_file.rbs12,rbs_file.rbsacti)
+SCREEN RECORD Undefined(formonly.cn1,formonly.cn2,rbe_file.rbe28,rbe_file.rbe29,rbe_file.rbe31,rbe_file.rbe28t,rbe_file.rbe29t,rbe_file.rbe31t)
+END -- INSTRUCTIONS
+

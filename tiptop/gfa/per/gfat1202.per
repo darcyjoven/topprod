@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gfa/42f/gfat1202.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gfat1202")
+Folder pc778
+Page page01(text="Main")
+Table tn_0
+{
+[fbt02  |fbt03      |fbt031 |faj06                   |faj18  |fbt04                |fbt05                 |fbt06   |fbt07              |fbt11          |fbt12                 |fbt13      |fbt14           ]
+[fbt02  |fbt03      |fbt031 |faj06                   |faj18  |fbt04                |fbt05                 |fbt06   |fbt07              |fbt11          |fbt12                 |fbt13      |fbt14           ]
+[fbt02  |fbt03      |fbt031 |faj06                   |faj18  |fbt04                |fbt05                 |fbt06   |fbt07              |fbt11          |fbt12                 |fbt13      |fbt14           ]
+[fbt02  |fbt03      |fbt031 |faj06                   |faj18  |fbt04                |fbt05                 |fbt06   |fbt07              |fbt11          |fbt12                 |fbt13      |fbt14           ]
+[fbt02  |fbt03      |fbt031 |faj06                   |faj18  |fbt04                |fbt05                 |fbt06   |fbt07              |fbt11          |fbt12                 |fbt13      |fbt14           ]
+[fbt02  |fbt03      |fbt031 |faj06                   |faj18  |fbt04                |fbt05                 |fbt06   |fbt07              |fbt11          |fbt12                 |fbt13      |fbt14           ]
+[fbt02  |fbt03      |fbt031 |faj06                   |faj18  |fbt04                |fbt05                 |fbt06   |fbt07              |fbt11          |fbt12                 |fbt13      |fbt14           ]
+[fbt02  |fbt03      |fbt031 |faj06                   |faj18  |fbt04                |fbt05                 |fbt06   |fbt07              |fbt11          |fbt12                 |fbt13      |fbt14           ]
+[fbt02  |fbt03      |fbt031 |faj06                   |faj18  |fbt04                |fbt05                 |fbt06   |fbt07              |fbt11          |fbt12                 |fbt13      |fbt14           ]
+[fbt02  |fbt03      |fbt031 |faj06                   |faj18  |fbt04                |fbt05                 |fbt06   |fbt07              |fbt11          |fbt12                 |fbt13      |fbt14           ]
+
+}
+END -- tn_0
+END -- page01
+Page info(text="Info")
+Grid gr3340
+{
+ Record Owner        [fbsuser   ]   Last Modified by    [fbsmodu   ]
+ Department          [fbsgrup   ]   Create/Modify Date  [fbsdate   ]
+ Record Orig.        [fbsoriu   ]  [fbspost                       ]
+ Dept Orig.          [fbsorig   ]  [fbsconf                       ]
+[fbspost2                      ]
+}
+END -- gr3340
+END -- info
+END -- pc778
+END -- gfat1202
+
+TABLES
+fbt_file,
+fbs_file
+ATTRIBUTES
+Edit fbt02=fbt_file.fbt02, tabIndex=490, title="Line", noEntry;
+Edit fbt03=fbt_file.fbt03, tabIndex=491, title="Asset No.", noEntry;
+Edit fbt031=fbt_file.fbt031, tabIndex=492, title="Add.", noEntry;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=493, title="Name", noEntry;
+Edit faj18=formonly.faj18 type CHAR, tabIndex=494, title="Unit", noEntry;
+Edit fbt04=fbt_file.fbt04, tabIndex=495, title="Undepreciated Amount", noEntry;
+Edit fbt05=fbt_file.fbt05, tabIndex=496, title="Lstd Val-Dedct. Prep.", noEntry;
+Edit fbt06=fbt_file.fbt06, tabIndex=497, title="Trans.", noEntry;
+Edit fbt07=fbt_file.fbt07, tabIndex=498, title="Val-Dedct Prep.Amt", noEntry;
+Edit fbt11=fbt_file.fbt11, tabIndex=499, title="Undep.-Tax Amt", noEntry;
+Edit fbt12=fbt_file.fbt12, tabIndex=500, title="Listed-Tax Dedu.Prep.", noEntry;
+ComboBox fbt13=fbt_file.fbt13, tabIndex=501, title="Tax Trans.", not null, required, queryEditable, items=(("1", %"Increase"),("2", %"Deduct"));
+Edit fbt14=fbt_file.fbt14, tabIndex=502, title="Taxed Dedu.Prep.";
+Edit fbsuser=fbs_file.fbsuser, tabIndex=1, noEntry;
+Edit fbsmodu=fbs_file.fbsmodu, tabIndex=2, noEntry;
+Edit fbsgrup=fbs_file.fbsgrup, tabIndex=3, noEntry;
+Edit fbsdate=fbs_file.fbsdate, tabIndex=4, noEntry;
+Edit fbsoriu=fbs_file.fbsoriu, tabIndex=488, noEntry;
+CheckBox fbspost=fbs_file.fbspost, tabIndex=6, text="Depreciation", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fbsorig=fbs_file.fbsorig, tabIndex=489, noEntry;
+CheckBox fbsconf=fbs_file.fbsconf, tabIndex=5, text="Confirmation", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox fbspost2=fbs_file.fbspost2, tabIndex=7, text="Depreciation-Tax", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tn_0(fbt_file.fbt02,fbt_file.fbt03,fbt_file.fbt031,formonly.faj06,formonly.faj18,fbt_file.fbt04,fbt_file.fbt05,fbt_file.fbt06,fbt_file.fbt07,fbt_file.fbt11,fbt_file.fbt12,fbt_file.fbt13,fbt_file.fbt14)
+SCREEN RECORD Undefined(fbs_file.fbsuser,fbs_file.fbsmodu,fbs_file.fbsgrup,fbs_file.fbsdate,fbs_file.fbsoriu,fbs_file.fbspost,fbs_file.fbsorig,fbs_file.fbsconf,fbs_file.fbspost2)
+END -- INSTRUCTIONS
+

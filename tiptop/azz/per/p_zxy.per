@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zxy.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zxy")
+VBox vb1
+Folder folder01
+Page page01(text="Page01")
+Grid gr3057
+{
+ <G group01                     >
+  User ID        [zxy01         ]
+  User Name      [zx02          ]
+ <                              >
+
+}
+END -- gr3057
+END -- page01
+END -- folder01
+Table s_zxy
+{
+[zxy03        |azp02             ]
+[zxy03        |azp02             ]
+[zxy03        |azp02             ]
+[zxy03        |azp02             ]
+[zxy03        |azp02             ]
+[zxy03        |azp02             ]
+[zxy03        |azp02             ]
+[zxy03        |azp02             ]
+[zxy03        |azp02             ]
+[zxy03        |azp02             ]
+
+}
+END -- s_zxy
+Grid gr3058
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3058
+END -- vb1
+END -- p_zxy
+
+TABLES
+zx_file,
+zxy_file,
+azp_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit zxy01=zxy_file.zxy01, action=controlp, tabIndex=1, required, image="zoom";
+Edit zx02=zx_file.zx02, tabIndex=2, noEntry;
+ButtonEdit zxy03=zxy_file.zxy03, action=controlp, tabIndex=3, title="Plant No.", not null, required, image="zoom";
+Edit azp02=azp_file.azp02, tabIndex=4, title="Plant Name", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zxy(zxy_file.zxy03,azp_file.azp02)
+SCREEN RECORD Undefined(zxy_file.zxy01,zx_file.zx02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

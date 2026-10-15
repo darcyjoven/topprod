@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi032.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi032")
+VBox VBox1
+Folder pc440
+Page page01(text="Main")
+Table s_oad
+{
+[oad01     |oac02_1          |oad02      |oac02_2          |oad041    |oad042     |oad043     |oad051           |oad052             |oad053            ]
+[oad01     |oac02_1          |oad02      |oac02_2          |oad041    |oad042     |oad043     |oad051           |oad052             |oad053            ]
+[oad01     |oac02_1          |oad02      |oac02_2          |oad041    |oad042     |oad043     |oad051           |oad052             |oad053            ]
+[oad01     |oac02_1          |oad02      |oac02_2          |oad041    |oad042     |oad043     |oad051           |oad052             |oad053            ]
+[oad01     |oac02_1          |oad02      |oac02_2          |oad041    |oad042     |oad043     |oad051           |oad052             |oad053            ]
+[oad01     |oac02_1          |oad02      |oac02_2          |oad041    |oad042     |oad043     |oad051           |oad052             |oad053            ]
+[oad01     |oac02_1          |oad02      |oac02_2          |oad041    |oad042     |oad043     |oad051           |oad052             |oad053            ]
+[oad01     |oac02_1          |oad02      |oac02_2          |oad041    |oad042     |oad043     |oad051           |oad052             |oad053            ]
+[oad01     |oac02_1          |oad02      |oac02_2          |oad041    |oad042     |oad043     |oad051           |oad052             |oad053            ]
+[oad01     |oac02_1          |oad02      |oac02_2          |oad041    |oad042     |oad043     |oad051           |oad052             |oad053            ]
+
+}
+END -- s_oad
+END -- page01
+END -- pc440
+Grid gr1992
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1992
+END -- VBox1
+END -- axmi032
+
+TABLES
+oad_file
+ATTRIBUTES
+ButtonEdit oad01=oad_file.oad01, action=controlp, tabIndex=1, title="Loc.Code", not null, required, image="zoom", comment="<^P> Qry Details";
+Edit oac02_1=formonly.oac02_1 type CHAR, tabIndex=2, title="From", noEntry;
+ButtonEdit oad02=oad_file.oad02, action=controlp, tabIndex=3, title="Loc.Code", not null, required, image="zoom", comment="<^P> Qry Details";
+Edit oac02_2=formonly.oac02_2 type CHAR, tabIndex=4, title="Destination", noEntry;
+Edit oad041=oad_file.oad041, tabIndex=5, title="Freight 1", not null, required;
+Edit oad042=oad_file.oad042, tabIndex=6, title="Freight 2", not null, required;
+Edit oad043=oad_file.oad043, tabIndex=7, title="Freight 3", not null, required;
+Edit oad051=oad_file.oad051, tabIndex=8, title="Returns Freight 1", not null, required;
+Edit oad052=oad_file.oad052, tabIndex=9, title="Returns Freight 2", not null, required;
+Edit oad053=oad_file.oad053, tabIndex=10, title="Returns Freight 3", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oad(oad_file.oad01,formonly.oac02_1,oad_file.oad02,formonly.oac02_2,oad_file.oad041,oad_file.oad042,oad_file.oad043,oad_file.oad051,oad_file.oad052,oad_file.oad053)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

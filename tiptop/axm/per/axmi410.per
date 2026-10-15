@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi410.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Basic Data")
+Grid Grid1
+{
+      Struct No.          [odt01             ]
+      Struct Description  [odt02             ]
+      Coding Type         [odt07             ]
+      Superior Type       [odt03             ]  [tqa02          ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table s_odt(tag="s_odt")
+{
+[odt04   |tqa02_b |odt05   |odt06   ]
+[odt04   |tqa02_b |odt05   |odt06   ]
+[odt04   |tqa02_b |odt05   |odt06   ]
+[odt04   |tqa02_b |odt05   |odt06   ]
+[odt04   |tqa02_b |odt05   |odt06   ]
+}
+END -- s_odt
+Grid Grid2
+{
+
+  -----  Rows [idx       ] / [cnt       ] ------
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+odt_file
+ATTRIBUTES
+ButtonEdit odt01=odt_file.odt01, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+Edit odt02=odt_file.odt02, tabIndex=7;
+ButtonEdit odt07=odt_file.odt07, action=controlp, tabIndex=11, not null, required, image="zoom.png";
+ButtonEdit odt03=odt_file.odt03, action=controlp, tabIndex=6, not null, image="zoom.png";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=8, noEntry;
+ButtonEdit odt04=odt_file.odt04, action=controlp, tabIndex=1, title=%"Category", not null, required, image="zoom.png";
+Edit tqa02_b=formonly.tqa02_b type CHAR, tabIndex=2, title=%"Category Name", noEntry;
+Edit odt05=odt_file.odt05, tabIndex=3, default = "0", title=%"Rate%";
+Edit odt06=odt_file.odt06, tabIndex=4, default = "0", title=%"Quantity";
+Edit idx=formonly.idx type CHAR, tabIndex=10, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_odt(odt_file.odt04,formonly.tqa02_b,odt_file.odt05,odt_file.odt06)
+SCREEN RECORD Undefined(odt_file.odt01,odt_file.odt02,odt_file.odt07,odt_file.odt03,formonly.tqa02,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

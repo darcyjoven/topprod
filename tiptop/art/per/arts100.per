@@ -1,0 +1,163 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arts100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds1
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+
+     Date [rcj01             ]
+          [rcj09     ]
+     rcj12[rcj12             ]
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid ds1
+{
+
+[label|rcj02     ]
+[labe1|rcj03     ]
+
+}
+END -- ds1
+END -- Page2
+Page Page4(text=%"Page4")
+Grid Grid4
+{
+
+    [label4    ]  [rcj05        ]
+    [label5    ]  [rcj06        ]
+    [label6    ]  [rcj07        ]
+    [label7    ]  [rcj08        ]
+
+
+}
+END -- Grid4
+END -- Page4
+Page Page3(text=%"Page3")
+Grid Grid3
+{
+
+ [label3    |rcj04          |lpc02                         ]
+            [rcj16     ]
+
+
+}
+END -- Grid3
+END -- Page3
+Page Page5(text=%"Page5")
+Grid Grid5
+{
+
+ [label8    ] [rcj10          ]
+              [rcj11              ]
+
+}
+END -- Grid5
+END -- Page5
+Page Page6(text=%"Page6")
+Grid Grid6
+{
+
+        <G group1                                                  >
+
+             Touch screen     [rcj13                   ]
+
+             Major categories [rcj14                   ]
+
+             SmallClass       [rcj15                   ]
+
+
+
+        <                                                          >
+
+
+
+}
+END -- Grid6
+END -- Page6
+Page userdefined_field(text=%"User Defined Field")
+Grid Grid2
+{
+
+ userdefined_field01[rcjud01                 ]userdefined_field09[rcjud09                ]
+                    [                        ]
+ userdefined_field02[rcjud02                 ]userdefined_field10[rcjud10                ]
+
+ userdefined_field03[rcjud03                 ]userdefined_field11[rcjud11                ]
+
+ userdefined_field04[rcjud04                 ]userdefined_field12[rcjud12                ]
+
+ userdefined_field05[rcjud05                 ]userdefined_field13[rcjud13                ]
+
+ userdefined_field06[rcjud06                 ]userdefined_field14[rcjud14                ]
+
+ userdefined_field07[rcjud07                 ]userdefined_field15[rcjud15                ]
+
+ userdefined_field08[rcjud08                 ]
+
+}
+END -- Grid2
+END -- userdefined_field
+END -- Folder1
+END -- Form
+
+TABLES
+rcj_file
+ATTRIBUTES
+DateEdit rcj01=formonly.rcj01 type DATE, tabIndex=1;
+CheckBox rcj09=formonly.rcj09 type VARCHAR, tabIndex=2, text=%"rcj09", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rcj12=formonly.rcj12 type VARCHAR, tabIndex=3, not null, scroll, items=(("1", "Text"),("2", "Text"));
+Label label:Label1, text=%"rcj02";
+ButtonEdit rcj02=formonly.rcj02 type VARCHAR, action=controlp, tabIndex=4, image="zoom.png", scroll;
+Label labe1:Label2, text=%"rcj03";
+ComboBox rcj03=formonly.rcj03 type VARCHAR, tabIndex=5, not null, scroll, items=(("1", "Text"),("2", "Text"));
+Label label4:Label4, text=%"rcj05";
+ButtonEdit rcj05=formonly.rcj05 type VARCHAR, action=controlp, tabIndex=6, image="zoom", scroll;
+Label label5:Label5, text=%"rcj06";
+ButtonEdit rcj06=formonly.rcj06 type VARCHAR, action=controlp, tabIndex=7, image="zoom", scroll;
+Label label6:Label6, text=%"rcj07";
+ButtonEdit rcj07=formonly.rcj07 type VARCHAR, action=controlp, tabIndex=8, image="zoom", scroll;
+Label label7:Label7, text=%"rcj08";
+ButtonEdit rcj08=formonly.rcj08 type VARCHAR, action=controlp, tabIndex=9, image="zoom", scroll;
+Label label3:Label3, text=%"rcj04";
+ButtonEdit rcj04=formonly.rcj04 type VARCHAR, action=controlp, tabIndex=10, not null, image="zoom", scroll;
+Edit lpc02=formonly.lpc02 type VARCHAR, tabIndex=11, noEntry, scroll;
+CheckBox rcj16=rcj_file.rcj16, tabIndex=32, text=%"rcj16", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label8:Label8, text=%"rcj10";
+Edit rcj10=formonly.rcj10 type SMALLINT, tabIndex=12, not null, required, scroll;
+CheckBox rcj11=formonly.rcj11 type VARCHAR, tabIndex=13, text=%"rcj11", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group1:Group1, text=%"Group1";
+ComboBox rcj13=formonly.rcj13 type VARCHAR, tabIndex=14, default = "1", not null, required, items=(("1", "1"),("2", "2"));
+Edit rcj14=formonly.rcj14 type SMALLINT, tabIndex=15, default = "1", not null, required;
+Edit rcj15=formonly.rcj15 type SMALLINT, tabIndex=16, default = "99", not null, required;
+TextEdit rcjud01=formonly.rcjud01 type VARCHAR, tabIndex=17;
+Edit rcjud09=formonly.rcjud09 type DECIMAL(15,3), tabIndex=25;
+Edit rcjud02=formonly.rcjud02 type VARCHAR, tabIndex=18;
+Edit rcjud10=formonly.rcjud10 type INTEGER, tabIndex=26;
+Edit rcjud03=formonly.rcjud03 type VARCHAR, tabIndex=19;
+Edit rcjud11=formonly.rcjud11 type INTEGER, tabIndex=27;
+Edit rcjud04=formonly.rcjud04 type VARCHAR, tabIndex=20;
+Edit rcjud12=formonly.rcjud12 type INTEGER, tabIndex=28;
+Edit rcjud05=formonly.rcjud05 type VARCHAR, tabIndex=21;
+DateEdit rcjud13=formonly.rcjud13 type DATE, tabIndex=29;
+Edit rcjud06=formonly.rcjud06 type VARCHAR, tabIndex=22;
+DateEdit rcjud14=formonly.rcjud14 type DATE, tabIndex=30;
+Edit rcjud07=formonly.rcjud07 type DECIMAL(15,3), tabIndex=23;
+DateEdit rcjud15=formonly.rcjud15 type DATE, tabIndex=31;
+Edit rcjud08=formonly.rcjud08 type DECIMAL(15,3), tabIndex=24;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rcj01,formonly.rcjud01,formonly.rcjud02,formonly.rcjud03,formonly.rcjud04,formonly.rcjud05,formonly.rcjud06,formonly.rcjud07,formonly.rcjud08,formonly.rcjud09,formonly.rcjud10,formonly.rcjud11,formonly.rcjud12,formonly.rcjud13,formonly.rcjud14,formonly.rcjud15,formonly.rcj04,formonly.lpc02,formonly.rcj05,formonly.rcj06,formonly.rcj07,formonly.rcj08,formonly.rcj09,formonly.rcj10,formonly.rcj11,formonly.rcj12,formonly.rcj13,formonly.rcj14,formonly.rcj15,rcj_file.rcj16)
+SCREEN RECORD Record1(formonly.rcj02,formonly.rcj03)
+END -- INSTRUCTIONS
+

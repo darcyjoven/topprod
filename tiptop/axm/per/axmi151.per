@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi151.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi151")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2031
+{
+ Customer #          [obk02       ]
+ Customer Name       [occ02       ]
+}
+END -- gr2031
+END -- page01
+END -- folder01
+Table s_obk
+{
+[obk01         |ima02                         |ima021            |obk03               |obk04              |obk05     |obk07       |obk08                  |obk09          |obkuser   |obkgrup   |obkmodu       |obkdate       |obkacti   ]
+[obk01         |ima02                         |ima021            |obk03               |obk04              |obk05     |obk07       |obk08                  |obk09          |obkuser   |obkgrup   |obkmodu       |obkdate       |obkacti   ]
+[obk01         |ima02                         |ima021            |obk03               |obk04              |obk05     |obk07       |obk08                  |obk09          |obkuser   |obkgrup   |obkmodu       |obkdate       |obkacti   ]
+[obk01         |ima02                         |ima021            |obk03               |obk04              |obk05     |obk07       |obk08                  |obk09          |obkuser   |obkgrup   |obkmodu       |obkdate       |obkacti   ]
+[obk01         |ima02                         |ima021            |obk03               |obk04              |obk05     |obk07       |obk08                  |obk09          |obkuser   |obkgrup   |obkmodu       |obkdate       |obkacti   ]
+[obk01         |ima02                         |ima021            |obk03               |obk04              |obk05     |obk07       |obk08                  |obk09          |obkuser   |obkgrup   |obkmodu       |obkdate       |obkacti   ]
+[obk01         |ima02                         |ima021            |obk03               |obk04              |obk05     |obk07       |obk08                  |obk09          |obkuser   |obkgrup   |obkmodu       |obkdate       |obkacti   ]
+[obk01         |ima02                         |ima021            |obk03               |obk04              |obk05     |obk07       |obk08                  |obk09          |obkuser   |obkgrup   |obkmodu       |obkdate       |obkacti   ]
+[obk01         |ima02                         |ima021            |obk03               |obk04              |obk05     |obk07       |obk08                  |obk09          |obkuser   |obkgrup   |obkmodu       |obkdate       |obkacti   ]
+[obk01         |ima02                         |ima021            |obk03               |obk04              |obk05     |obk07       |obk08                  |obk09          |obkuser   |obkgrup   |obkmodu       |obkdate       |obkacti   ]
+
+}
+END -- s_obk
+Grid gr2032
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+}
+END -- gr2032
+END -- VBox1
+END -- axmi151
+
+TABLES
+obk_file
+ATTRIBUTES
+ButtonEdit obk02=obk_file.obk02, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Details";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit obk01=obk_file.obk01, action=controlp, tabIndex=3, title="Product No.", not null, required, image="zoom", comment="<^P> Qry Product No.";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, title="Part Name Specification", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, title="Specification", noEntry;
+Edit obk03=obk_file.obk03, tabIndex=6, title="Customer Part No.", not null, required, comment="Customer Part No.";
+DateEdit obk04=obk_file.obk04, tabIndex=7, title="Latest Order Date";
+ButtonEdit obk05=obk_file.obk05, action=controlp, tabIndex=8, title="Currency", not null, required, image="zoom", comment="<^P> Qry Details";
+ButtonEdit obk07=obk_file.obk07, action=controlp, tabIndex=9, title="Sales Unit", not null, required, image="zoom", comment="<^P> Qry Details";
+Edit obk08=obk_file.obk08, tabIndex=10, title="Last Order Unit Price";
+Edit obk09=obk_file.obk09, tabIndex=11, title="Last Order Qty";
+Edit obkuser=obk_file.obkuser, tabIndex=13, title="Record Owner", noEntry;
+Edit obkgrup=obk_file.obkgrup, tabIndex=14, title=%"Department", noEntry;
+Edit obkmodu=obk_file.obkmodu, tabIndex=15, title=%"Last Modified by", noEntry;
+DateEdit obkdate=obk_file.obkdate, tabIndex=16, title=%"Create/Modify Date", noEntry;
+CheckBox obkacti=obk_file.obkacti, tabIndex=17, title=%"Data Volid Code";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_obk(obk_file.obk01,formonly.ima02,formonly.ima021,obk_file.obk03,obk_file.obk04,obk_file.obk05,obk_file.obk07,obk_file.obk08,obk_file.obk09,obk_file.obkuser,obk_file.obkgrup,obk_file.obkmodu,obk_file.obkdate,obk_file.obkacti)
+SCREEN RECORD Undefined(obk_file.obk02,formonly.occ02,formonly.cnt)
+END -- INSTRUCTIONS
+

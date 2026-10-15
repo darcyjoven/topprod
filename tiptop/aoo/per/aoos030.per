@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aoos030.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aoos030")
+VBox VBox1
+Folder pc876
+Page page01(text="Main")
+Grid gr4706
+{
+ <G group01                                        >
+  Set Date Range      [azn01_b     ]-[azn01_e     ]
+
+  [dummy01                                        ]
+ <                                                 >
+
+}
+END -- gr4706
+END -- page01
+END -- pc876
+END -- VBox1
+END -- aoos030
+
+ATTRIBUTES
+Group group01:group01;
+DateEdit azn01_b=formonly.azn01_b type DATE, tabIndex=1, required;
+DateEdit azn01_e=formonly.azn01_e type DATE, tabIndex=2, required;
+Label dummy01:dummy01, text="**** Set Accounting Period before run task ****";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azn01_b,formonly.azn01_e)
+END -- INSTRUCTIONS
+

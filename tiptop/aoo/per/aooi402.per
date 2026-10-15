@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi402.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi402")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+Grid gr4649
+{
+ Coding Category     [gei01     ]          [gei08                          ]
+ Coding Description  [gei02               ]
+ Property            [gei03     ]          [geh04                  ]
+ Total Segment       [gei04     ]
+ Total Length        [gei05     ]
+}
+END -- gr4649
+END -- page01
+Page info(text="Info")
+Grid gr4650
+{
+ Record Owner        [geiuser   ] Last Modified by    [geimodu   ] Data Valid Code     [geiacti   ]
+ Department          [geigrup   ] Create/Modify Date  [geidate     ]
+ Record Orig.        [geioriu   ]
+ Dept Orig.          [geiorig   ]
+
+}
+END -- gr4650
+END -- info
+END -- folder01
+Table s_gel
+{
+[gel02        |gel06               |gel03   |gel04  |gel05     |gel07  ]
+[gel02        |gel06               |gel03   |gel04  |gel05     |gel07  ]
+[gel02        |gel06               |gel03   |gel04  |gel05     |gel07  ]
+[gel02        |gel06               |gel03   |gel04  |gel05     |gel07  ]
+[gel02        |gel06               |gel03   |gel04  |gel05     |gel07  ]
+[gel02        |gel06               |gel03   |gel04  |gel05     |gel07  ]
+[gel02        |gel06               |gel03   |gel04  |gel05     |gel07  ]
+[gel02        |gel06               |gel03   |gel04  |gel05     |gel07  ]
+[gel02        |gel06               |gel03   |gel04  |gel05     |gel07  ]
+[gel02        |gel06               |gel03   |gel04  |gel05     |gel07  ]
+
+}
+END -- s_gel
+Grid gr4651
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4651
+END -- vb1
+END -- aooi402
+
+TABLES
+gel_file,
+gei_file,
+geh_file
+ATTRIBUTES
+ButtonEdit gei01=gei_file.gei01, action=controlp, tabIndex=1, required, image="zoom";
+CheckBox gei08=gei_file.gei08, tabIndex=21, default = "N", text=%"Barcode use", valueChecked = "Y", valueUnchecked = "N";
+Edit gei02=gei_file.gei02, tabIndex=2, not null, required;
+ButtonEdit gei03=gei_file.gei03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Details";
+ComboBox geh04=geh_file.geh04, tabIndex=22, items=(("1", %"Item No."),("2", %"Customer No."),("3", %"Supplier No."),("4", %"Fixed Asset No."),("5", %"Lot No."),("6", %"Serial No."),("7", %"Bar Code"),("8", %"Membership No"),("9", "Site Numbers
+"),("A", "Booth Numbers"),("B", "Merchant code"),("C", "Warehouse numbers"),("D", "Order packing slip"),("E", "abat630"),("F", "Barcode batch number-Materials and parts"),("G", "Barcode batch number-work order"),("H", "Package No."));
+Edit gei04=gei_file.gei04, tabIndex=4, noEntry;
+Edit gei05=gei_file.gei05, tabIndex=5, noEntry;
+Edit geiuser=gei_file.geiuser, tabIndex=6, noEntry;
+Edit geimodu=gei_file.geimodu, tabIndex=7, noEntry;
+Edit geiacti=gei_file.geiacti, tabIndex=8, noEntry;
+Edit geigrup=gei_file.geigrup, tabIndex=9, noEntry;
+DateEdit geidate=gei_file.geidate, tabIndex=10, noEntry;
+Edit geioriu=gei_file.geioriu, tabIndex=19, noEntry;
+Edit geiorig=gei_file.geiorig, tabIndex=20, noEntry;
+Edit gel02=gel_file.gel02, tabIndex=11, title="Segment No.", not null, required, comment="<^U>Add 1 to Below All, <^Y>Re-Sort Line# from 1";
+Edit gel06=gel_file.gel06, tabIndex=12, title="Description";
+Edit gel03=gel_file.gel03, tabIndex=13, title="Length";
+ComboBox gel04=gel_file.gel04, tabIndex=14, title="Model", not null, required, comment="blank or 1.Fixed Value 2.IndependentSegment 3.Flow No.", items=(("1", %"Fixed Value"),("2", %"IndependentSegment"),("3", %"Flow No."),("4", %"Field"),("5", %"Year"),("6", %"Quarter"),("7", %"Month"),("8", %"Week"),("9", %"Day"),("A", %"Packaging structure number"),("B", %"Document a single number"),("C", %"Documents Item"));
+ButtonEdit gel05=gel_file.gel05, action=controlp, tabIndex=15, title="Desc", image="zoom", comment="<^P>Qry Details  Fixed Value Ought not to be System Symbol,ex *,_,%,? ";
+CheckBox gel07=gel_file.gel07, tabIndex=16, title="Display", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gel(gel_file.gel02,gel_file.gel06,gel_file.gel03,gel_file.gel04,gel_file.gel05,gel_file.gel07)
+SCREEN RECORD Undefined(gei_file.gei01,gei_file.gei02,gei_file.gei03,gei_file.gei04,gei_file.gei05,gei_file.geiuser,gei_file.geimodu,gei_file.geiacti,gei_file.geigrup,gei_file.geidate,gei_file.geioriu,gei_file.geiorig,formonly.cnt,formonly.cn2,gei_file.gei08,geh_file.geh04)
+END -- INSTRUCTIONS
+

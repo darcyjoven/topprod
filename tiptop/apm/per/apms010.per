@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apms010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apms010")
+Folder pc971
+Page page01(text="Main")
+VBox VBox1
+Grid gr5235
+{
+ <G group01                             >
+ [pod01                      ]
+ <                                      >
+ <G group02                             >
+ [pod02                              ]
+ [pod03                              ]
+ [pod04                              ]
+ [pod05                              ]
+ <                                      >
+ <G group03                             >
+ [pod08                             ]
+ <                                      >
+
+}
+END -- gr5235
+END -- VBox1
+END -- page01
+Page userdefined_field(text=%"User Defined Field")
+VBox VBox2
+Grid Grid1
+{
+ userdefined_field01[podud01                              ]
+                    [                                     ]
+                    [                                     ]
+ userdefined_field02[podud02              ]
+ userdefined_field03[podud03              ]
+ userdefined_field04[podud04              ]
+ userdefined_field05[podud05              ]
+ userdefined_field06[podud06              ]
+ userdefined_field07[podud07              ]
+ userdefined_field08[podud08              ]
+ userdefined_field09[podud09              ]
+ userdefined_field10[podud10              ]
+ userdefined_field11[podud11              ]
+ userdefined_field12[podud12              ]
+ userdefined_field13[podud13              ]
+ userdefined_field14[podud14              ]
+ userdefined_field15[podud15              ]
+
+}
+END -- Grid1
+END -- VBox2
+END -- userdefined_field
+END -- pc971
+END -- apms010
+
+TABLES
+pod_file
+ATTRIBUTES
+Group group01:group01, text="Triangle Trade Parament Setting";
+RadioGroup pod01=pod_file.pod01, tabIndex=1, not null, required, items=(("B", "Bank Buying"),("S", "Bank Selling"),("M", "Bank Average ExRt"),("C", "Customs Buy"),("D", "Customs Sell"));
+Group group02:group02;
+CheckBox pod02=pod_file.pod02, tabIndex=2, text="Allow P/O Unit Price 0?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pod03=pod_file.pod03, tabIndex=3, text="Re-calculating U/P While Transfred", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pod04=pod_file.pod04, tabIndex=4, text="Input Whole Doc", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pod05=pod_file.pod05, tabIndex=5, text="Input Whole Doc", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="";
+CheckBox pod08=pod_file.pod08, tabIndex=21, text="Carry Lot", not null, required, valueChecked = "Y", valueUnchecked = "N";
+TextEdit podud01=pod_file.podud01, tabIndex=6;
+Edit podud02=pod_file.podud02, tabIndex=7;
+Edit podud03=pod_file.podud03, tabIndex=8;
+Edit podud04=pod_file.podud04, tabIndex=9;
+Edit podud05=pod_file.podud05, tabIndex=10;
+Edit podud06=pod_file.podud06, tabIndex=11;
+Edit podud07=pod_file.podud07, tabIndex=12;
+Edit podud08=pod_file.podud08, tabIndex=13;
+Edit podud09=pod_file.podud09, tabIndex=14;
+Edit podud10=pod_file.podud10, tabIndex=15;
+Edit podud11=pod_file.podud11, tabIndex=16;
+Edit podud12=pod_file.podud12, tabIndex=17;
+DateEdit podud13=pod_file.podud13, tabIndex=18;
+DateEdit podud14=pod_file.podud14, tabIndex=19;
+DateEdit podud15=pod_file.podud15, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pod_file.pod01,pod_file.pod02,pod_file.pod03,pod_file.pod04,pod_file.pod05,pod_file.podud01,pod_file.podud02,pod_file.podud03,pod_file.podud04,pod_file.podud05,pod_file.podud06,pod_file.podud07,pod_file.podud08,pod_file.podud09,pod_file.podud10,pod_file.podud11,pod_file.podud12,pod_file.podud13,pod_file.podud14,pod_file.podud15,pod_file.pod08)
+END -- INSTRUCTIONS
+

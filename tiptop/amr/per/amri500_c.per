@@ -1,0 +1,33 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amri500_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amri500_c")
+Grid gr3912
+{
+ <G group01                                >
+  Original W/O#         [old_msa01       ]
+  New Work Order Number [new_msa01       ]
+  New Complete Date     [new_msb04   ]
+  New BOM Date          [new_msb07   ]
+ <                                         >
+
+}
+END -- gr3912
+END -- amri500_c
+
+ATTRIBUTES
+Group group01:group01;
+Edit old_msa01=formonly.old_msa01 type CHAR, tabIndex=1, not null, required;
+Edit new_msa01=formonly.new_msa01 type CHAR, tabIndex=2, not null, required;
+DateEdit new_msb04=formonly.new_msb04 type DATE, tabIndex=3;
+DateEdit new_msb07=formonly.new_msb07 type DATE, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.old_msa01,formonly.new_msa01,formonly.new_msb04,formonly.new_msb07)
+END -- INSTRUCTIONS
+

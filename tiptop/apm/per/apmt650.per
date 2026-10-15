@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u53/tiptop/apm/42f/apmt650.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt650")
+VBox VBox1
+Folder pc1024
+Page page01(text="Main")
+Grid gr5357
+{
+  Date of Shift [pnt01       ]                  [pntconf   ]  [imgmksg]
+  Record        [pnt02       ]                                [       ]
+
+ <G group03                                  > <G group04                                  >
+  Budget#  [pnt031    ][afa02_1         ]       Budget#  [pnt041    ][afa02_2         ]
+  Account# [pnt032                  ]           Account# [pnt042                  ]
+           [aag02_1                 ]                    [aag02_2                 ]
+  Dept#    [pnt033    ][gem02_1   ]             Dept#    [pnt043    ] [gem02_2   ]
+  Year     [pnt0]                               Year     [pnt1]
+  Period   [pn]                                 Period   [p1]
+ <                                           > <                                           >
+ <G group05                                                                                >
+  Current Shift Amount [pnt05               ]
+ <                                                                                         >
+ <G group06                                  > <G group07                                  >
+  Original Budget$ [pns06_1             ]       Original Budget$ [pns06_2             ]
+  Additional$      [pns07_1             ]       Additional$      [pns07_2             ]
+  Shift$           [pns08_1             ]       Shift$           [pns08_2             ]
+  Total$           [pns09_1             ]       Total$           [pns09_2             ]
+
+ <                                           > <                                           >
+
+}
+END -- gr5357
+END -- page01
+Page info(text="Info")
+Grid gr5358
+{
+ Record Owner        [pntuser   ]  Last Modified by    [pntmodu   ]    Data Valid Code     [pntacti   ]
+ Department          [pntgrup   ]  Create/Modify Date  [pntdate     ]
+ Record Orig.        [pntoriu   ]
+ Dept Orig.          [pntorig   ]
+}
+END -- gr5358
+END -- info
+END -- pc1024
+Grid gr5359
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr5359
+END -- VBox1
+END -- apmt650
+
+TABLES
+pnt_file
+ATTRIBUTES
+DateEdit pnt01=pnt_file.pnt01, tabIndex=1;
+CheckBox pntconf=pnt_file.pntconf, tabIndex=2, text="Confirmed", noEntry, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit pnt02=pnt_file.pnt02, tabIndex=4, noEntry;
+Group group03:group03, text="Source";
+ButtonEdit pnt031=pnt_file.pnt031, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Budget#    <^T>Qry P/R / P/O Budget";
+Edit afa02_1=formonly.afa02_1 type CHAR, tabIndex=6, noEntry;
+ButtonEdit pnt032=pnt_file.pnt032, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Account ";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=8, noEntry;
+ButtonEdit pnt033=pnt_file.pnt033, action=controlp, tabIndex=9, image="zoom", comment="<^P>Query Department";
+Edit gem02_1=formonly.gem02_1 type CHAR, tabIndex=10, noEntry;
+Edit pnt0=pnt_file.pnt034, tabIndex=11;
+Edit pn=pnt_file.pnt035, tabIndex=12;
+Group group04:group04, text="Opject";
+ButtonEdit pnt041=pnt_file.pnt041, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Budget  ";
+Edit afa02_2=formonly.afa02_2 type CHAR, tabIndex=14, noEntry;
+ButtonEdit pnt042=pnt_file.pnt042, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry Account ";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=16, noEntry;
+ButtonEdit pnt043=pnt_file.pnt043, action=controlp, tabIndex=17, image="zoom", comment="<^P>Query Department";
+Edit gem02_2=formonly.gem02_2 type CHAR, tabIndex=18, noEntry;
+Edit pnt1=pnt_file.pnt044, tabIndex=19;
+Edit p1=pnt_file.pnt045, tabIndex=20;
+Group group05:group05;
+Edit pnt05=pnt_file.pnt05, tabIndex=21;
+Group group06:group06;
+Edit pns06_1=formonly.pns06_1 type CHAR, tabIndex=22;
+Edit pns07_1=formonly.pns07_1 type CHAR, tabIndex=23;
+Edit pns08_1=formonly.pns08_1 type CHAR, tabIndex=24;
+Edit pns09_1=formonly.pns09_1 type CHAR, tabIndex=25;
+Group group07:group07;
+Edit pns06_2=formonly.pns06_2 type CHAR, tabIndex=26;
+Edit pns07_2=formonly.pns07_2 type CHAR, tabIndex=27;
+Edit pns08_2=formonly.pns08_2 type CHAR, tabIndex=28;
+Edit pns09_2=formonly.pns09_2 type CHAR, tabIndex=29;
+Edit pntuser=pnt_file.pntuser, tabIndex=30, noEntry;
+Edit pntmodu=pnt_file.pntmodu, tabIndex=31, noEntry;
+Edit pntacti=pnt_file.pntacti, tabIndex=32, noEntry, upShift;
+Edit pntgrup=pnt_file.pntgrup, tabIndex=33, noEntry;
+DateEdit pntdate=pnt_file.pntdate, tabIndex=34, noEntry;
+Edit pntoriu=pnt_file.pntoriu, tabIndex=501, noEntry;
+Edit pntorig=pnt_file.pntorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=35, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pnt_file.pnt01,pnt_file.pntconf,formonly.imgmksg,pnt_file.pnt02,pnt_file.pnt031,formonly.afa02_1,pnt_file.pnt032,formonly.aag02_1,pnt_file.pnt033,formonly.gem02_1,pnt_file.pnt034,pnt_file.pnt035,pnt_file.pnt041,formonly.afa02_2,pnt_file.pnt042,formonly.aag02_2,pnt_file.pnt043,formonly.gem02_2,pnt_file.pnt044,pnt_file.pnt045,pnt_file.pnt05,formonly.pns06_1,formonly.pns07_1,formonly.pns08_1,formonly.pns09_1,formonly.pns06_2,formonly.pns07_2,formonly.pns08_2,formonly.pns09_2,pnt_file.pntuser,pnt_file.pntmodu,pnt_file.pntacti,pnt_file.pntgrup,pnt_file.pntdate,pnt_file.pntoriu,pnt_file.pntorig,formonly.cnt)
+END -- INSTRUCTIONS
+

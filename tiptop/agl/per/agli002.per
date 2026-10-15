@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli002")
+VBox VBox2
+Folder folder01
+Page page01(text=%"Main")
+VBox VBox1
+Grid gr2331
+{
+ Group No.           [axa01              ]         [axa04               ]  Year      [axa10     ]    Period    [axa11     ]
+ Parent Company      [axa02               ]        <G gb1                                                                >
+ Plant Name          [axz02               ]         [axa09                                ]
+ Logistics code      [axz03               ]          Avg. Exchange Rate [axa05                                ]
+ Book No.            [axa03     ]                    Conbine Month      [axa06              ]
+                                                   <                                                                     >
+}
+END -- gr2331
+END -- VBox1
+END -- page01
+Page info(text=%"Info")
+Grid gr2332
+{
+ Record Owner        [axauser   ]   Last Modified by    [axamodu   ]
+ Department          [axagrup   ]   Create/Modify Date  [axadate     ]
+
+
+}
+END -- gr2332
+END -- info
+END -- folder01
+Table s_axb
+{
+[axb04       |axz02b              |axb05 |axb14   |axb15   ]
+[axb04       |axz02b              |axb05 |axb14   |axb15   ]
+[axb04       |axz02b              |axb05 |axb14   |axb15   ]
+[axb04       |axz02b              |axb05 |axb14   |axb15   ]
+[axb04       |axz02b              |axb05 |axb14   |axb15   ]
+[axb04       |axz02b              |axb05 |axb14   |axb15   ]
+[axb04       |axz02b              |axb05 |axb14   |axb15   ]
+[axb04       |axz02b              |axb05 |axb14   |axb15   ]
+[axb04       |axz02b              |axb05 |axb14   |axb15   ]
+[axb04       |axz02b              |axb05 |axb14   |axb15   ]
+}
+END -- s_axb
+Grid gr2333
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2333
+END -- VBox2
+END -- agli002
+
+TABLES
+axb_file,
+axa_file
+ATTRIBUTES
+ButtonEdit axa01=axa_file.axa01, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+CheckBox axa04=axa_file.axa04, tabIndex=15, text=%"IS topest Company", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit axa10=axa_file.axa10, tabIndex=19, noEntry;
+Edit axa11=axa_file.axa11, tabIndex=20, noEntry;
+ButtonEdit axa02=axa_file.axa02, action=controlp, tabIndex=2, not null, required, image="zoom", comment=%"<^P>Qry Company Data";
+Group gb1:gb1;
+CheckBox axa09=axa_file.axa09, tabIndex=16, text=%"Combination of Separate Accounts", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox axa05=axa_file.axa05, tabIndex=17, not null, required, items=(("1", %"NewText"),("2", %"NewText"),("3", %"Text"));
+ComboBox axa06=axa_file.axa06, tabIndex=18, not null, required, items=(("1", %"Month"),("2", %"Quarter"),("3", %"Half A Year"),("4", %"Yer"));
+Edit axz02=formonly.axz02 type VARCHAR, tabIndex=3, noEntry;
+Edit axz03=formonly.axz03 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit axa03=axa_file.axa03, action=controlp, tabIndex=5, noEntry, not null, required, image="zoom", comment=%"<^P>Qry Book#";
+Edit axauser=axa_file.axauser, tabIndex=7, noEntry;
+Edit axamodu=axa_file.axamodu, tabIndex=8, noEntry;
+Edit axagrup=axa_file.axagrup, tabIndex=1, noEntry;
+DateEdit axadate=axa_file.axadate, tabIndex=9, noEntry;
+ButtonEdit axb04=axb_file.axb04, action=controlp, tabIndex=10, title=%"Daughter Co", not null, required, image="zoom", comment=%"<^P>Qry Company Data";
+Edit axz02b=formonly.axz02b type VARCHAR, tabIndex=11, title=%"Co.Name", noEntry;
+ButtonEdit axb05=axb_file.axb05, action=controlp, tabIndex=12, title=%"Book#", not null, required, image="zoom", comment=%"<^P>Qry Book#";
+Edit axb14=axb_file.axb14, tabIndex=21, title=%"Year", noEntry;
+Edit axb15=axb_file.axb15, tabIndex=22, title=%"Edit1", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(axa_file.axa01,axa_file.axa04,axa_file.axa11,axa_file.axa10,axa_file.axa02,axa_file.axa09,axa_file.axa05,axa_file.axa06,formonly.axz02,formonly.axz03,axa_file.axa03,axa_file.axauser,axa_file.axamodu,axa_file.axagrup,axa_file.axadate,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_axb(axb_file.axb04,formonly.axz02b,axb_file.axb05,axb_file.axb14,axb_file.axb15)
+END -- INSTRUCTIONS
+

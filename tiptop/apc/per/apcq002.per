@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apcq002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder p1
+Page p01(text=%"Page1")
+Grid gr01
+{
+
+[plant        |azw01                ]
+[source       |sourc1               ]
+[date         |bdate                ]--------[edate                ]
+
+}
+END -- gr01
+END -- p01
+END -- p1
+Grid gr02
+{
+
+  <T s_shop                                                                                                                           >
+  [shop                  |name                |dat1                  |type                |saleno                |tot_amt             ]
+  [shop                  |name                |dat1                  |type                |saleno                |tot_amt             ]
+  [shop                  |name                |dat1                  |type                |saleno                |tot_amt             ]
+  [shop                  |name                |dat1                  |type                |saleno                |tot_amt             ]
+  [shop                  |name                |dat1                  |type                |saleno                |tot_amt             ]
+  [shop                  |name                |dat1                  |type                |saleno                |tot_amt             ]
+  [shop                  |name                |dat1                  |type                |saleno                |tot_amt             ]
+  [shop                  |name                |dat1                  |type                |saleno                |tot_amt             ]
+  [shop                  |name                |dat1                  |type                |saleno                |tot_amt             ]
+  [shop                  |name                |dat1                  |type                |saleno                |tot_amt             ]
+
+
+}
+END -- gr02
+Grid gr03
+{
+ ---------- Rows [cnt   ]  ----------
+
+
+}
+END -- gr03
+END -- VBox1
+END -- apcq002
+
+ATTRIBUTES
+Label plant:Plant, text=%"Plant";
+ButtonEdit azw01=formonly.azw01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Label source:Source, text=%"Source";
+ComboBox sourc1=formonly.Source type VARCHAR, tabIndex=3, default = "0", items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+Label date:Date, text=%"Date";
+DateEdit bdate=formonly.bdate type VARCHAR, tabIndex=2;
+DateEdit edate=formonly.edate type VARCHAR, tabIndex=11;
+Table s_shop:s_shop;
+Edit shop=formonly.SHOP, tabIndex=4, title=%"SHOP";
+Edit name=formonly.NAME, tabIndex=10, title=%"NAME";
+DateEdit dat1=formonly.DATE, tabIndex=5, title=%"DATE";
+ComboBox type=formonly.TYPE, tabIndex=7, title=%"TYPE", items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+Edit saleno=formonly.SALENO, tabIndex=8, title=%"SALENO";
+Edit tot_amt=formonly.TOT_AMT type VARCHAR, tabIndex=9, title=%"TOT_AMT";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azw01,formonly.bdate,formonly.Source,formonly.cnt,formonly.edate)
+SCREEN RECORD s_shop(formonly.SHOP,formonly.NAME,formonly.DATE,formonly.TYPE,formonly.SALENO,formonly.TOT_AMT)
+END -- INSTRUCTIONS
+

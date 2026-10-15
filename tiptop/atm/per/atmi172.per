@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi172.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi172")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+Grid gr1384
+{
+ <G group01                                                           >
+   Ship Route No.      [obn01     ] [obn02                         ]
+   Initial Site        [obn04     ] [oac02               ]
+   Destination Site    [obn05     ] [oac02a              ]
+   Shipping Center     [obn06     ] [obn06_desc          ]
+   Shipment No.        [obn07     ] [obn07_desc          ]
+   Circuitry Sort      [obn08     ] [obn08_desc          ]
+
+
+ <                                                                    >
+
+}
+END -- gr1384
+END -- page01
+Page info(text="Info")
+Grid gr1385
+{
+ Record Owner [obnuser   ]          Last Modified by   [obnmodu   ]    Data Valid Code [obnacti   ]
+ Department   [obngrup   ]          Create/Modify Date [obndate   ]
+ Record Orig. [obnoriu   ]
+ Dept Orig.   [obnorig   ]
+
+}
+END -- gr1385
+END -- info
+END -- folder01
+Table s_obo
+{
+[obo02  |obo03        |desc          |obo04                  |obo05          |oac02b              |obo06              |oac02c              |obo07]
+[obo02  |obo03        |desc          |obo04                  |obo05          |oac02b              |obo06              |oac02c              |obo07]
+[obo02  |obo03        |desc          |obo04                  |obo05          |oac02b              |obo06              |oac02c              |obo07]
+[obo02  |obo03        |desc          |obo04                  |obo05          |oac02b              |obo06              |oac02c              |obo07]
+[obo02  |obo03        |desc          |obo04                  |obo05          |oac02b              |obo06              |oac02c              |obo07]
+[obo02  |obo03        |desc          |obo04                  |obo05          |oac02b              |obo06              |oac02c              |obo07]
+[obo02  |obo03        |desc          |obo04                  |obo05          |oac02b              |obo06              |oac02c              |obo07]
+[obo02  |obo03        |desc          |obo04                  |obo05          |oac02b              |obo06              |oac02c              |obo07]
+[obo02  |obo03        |desc          |obo04                  |obo05          |oac02b              |obo06              |oac02c              |obo07]
+[obo02  |obo03        |desc          |obo04                  |obo05          |oac02b              |obo06              |oac02c              |obo07]
+
+}
+END -- s_obo
+Grid gr1386
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1386
+END -- vb1
+END -- atmi172
+
+TABLES
+obo_file,
+obn_file
+ATTRIBUTES
+Group group01:group01;
+Edit obn01=obn_file.obn01, tabIndex=1, not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit obn02=obn_file.obn02, tabIndex=2;
+ButtonEdit obn04=obn_file.obn04, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit oac02=formonly.oac02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit obn05=obn_file.obn05, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit oac02a=formonly.oac02a type CHAR, tabIndex=6, noEntry;
+ButtonEdit obn06=obn_file.obn06, action=controlp, tabIndex=23, not null, image="zoom.png";
+Edit obn06_desc=formonly.obn06_desc type CHAR, tabIndex=26, noEntry;
+ButtonEdit obn07=obn_file.obn07, action=controlp, tabIndex=24, not null, image="zoom.png";
+Edit obn07_desc=formonly.obn07_desc type CHAR, tabIndex=27, noEntry;
+ButtonEdit obn08=obn_file.obn08, action=controlp, tabIndex=25, not null, image="zoom.png";
+Edit obn08_desc=formonly.obn08_desc type CHAR, tabIndex=28, noEntry;
+Edit obnuser=obn_file.obnuser, tabIndex=7, noEntry;
+Edit obnmodu=obn_file.obnmodu, tabIndex=8, noEntry;
+Edit obnacti=obn_file.obnacti, tabIndex=9, noEntry, upShift;
+Edit obngrup=obn_file.obngrup, tabIndex=10, noEntry;
+DateEdit obndate=obn_file.obndate, tabIndex=11, noEntry, century="";
+Edit obnoriu=obn_file.obnoriu, tabIndex=501, noEntry;
+Edit obnorig=obn_file.obnorig, tabIndex=502, noEntry;
+Edit obo02=obo_file.obo02, tabIndex=12, title="Step", not null, required;
+ComboBox obo03=obo_file.obo03, tabIndex=13, title="Property", not null, required, items=(("1", %"Ship"),("2", %"Load/Unload"),("3", %"Transport"));
+Edit desc=formonly.desc type CHAR, tabIndex=14, title="Description", noEntry;
+ComboBox obo04=obo_file.obo04, tabIndex=15, title="Transportantion Type", not null, required, queryEditable, items=(("O", %"Ocean"),("C", %"Container"),("H", %"House"),("A", %"Air"),("E", %"Express"),("X", %"Others"));
+Edit obo05=obo_file.obo05, tabIndex=16, title="Initial Site", noEntry;
+Edit oac02b=formonly.oac02b type CHAR, tabIndex=17, title="Description", noEntry;
+ButtonEdit obo06=obo_file.obo06, action=controlp, tabIndex=18, title="Destination Site", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit oac02c=formonly.oac02c type CHAR, tabIndex=19, title="Description", noEntry;
+Edit obo07=obo_file.obo07, tabIndex=20, title="Used", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_obo(obo_file.obo02,obo_file.obo03,formonly.desc,obo_file.obo04,obo_file.obo05,formonly.oac02b,obo_file.obo06,formonly.oac02c,obo_file.obo07)
+SCREEN RECORD Undefined(obn_file.obn01,obn_file.obn02,obn_file.obn04,formonly.oac02,obn_file.obn05,formonly.oac02a,obn_file.obn06,formonly.obn06_desc,obn_file.obn07,formonly.obn07_desc,obn_file.obn08,formonly.obn08_desc,obn_file.obnuser,obn_file.obnmodu,obn_file.obnacti,obn_file.obngrup,obn_file.obndate,obn_file.obnoriu,obn_file.obnorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

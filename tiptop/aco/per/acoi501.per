@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi501")
+VBox VBox1
+Folder pc195
+Page page01(text="Main")
+Grid gr1289
+{
+ Document No.        [cop01           ]
+ Line No.            [cop02     ]
+ Document Date       [cop03       ]                                  [copconf           ]
+ Vender No.          [cop05     ]                                    [cop20             ]
+ Abbreviation        [cop06     ]                                    [cop22             ]
+ Item No.            [cop04                         ]
+                     [ima02                         ]
+ Transaction Qty     [cop14               ][cop15   ]
+ Packing/Invoice No. [cop12               ]
+ ---------------------------------------------------------------------------------------------------
+ Customs No.         [cop19          ]                Goods No.           [cop11          ]
+ Declaration No.     [cop07               ] [dummy01] Declaration Date    [cop08          ]
+ Register Book No.   [cop18          ]                Bonded No.          [cop09          ]
+ Convert Fac         [cop21      ]                    Import              [cop10                   ]
+ Bonded Qty          [cop16      ][cop17  ]
+
+}
+END -- gr1289
+END -- page01
+Page info(text="Info")
+Grid gr1290
+{
+ Record Owner        [copuser   ] Last Modified by    [copmodu   ] Data Valid Code     [copacti   ]
+ Department          [copgrup   ] Create/Modify Date  [copdate     ]
+ Record Orig.        [coporiu   ]
+ Dept Orig.          [coporig   ]
+}
+END -- gr1290
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[copud01                       ] userdefined_field07[copud07        ] userdefined_field13[copud13        ]
+                    [                              ] userdefined_field08[copud08        ] userdefined_field14[copud14        ]
+ userdefined_field02[copud02        ]                userdefined_field09[copud09        ] userdefined_field15[copud15        ]
+ userdefined_field03[copud03        ]                userdefined_field10[copud10        ]
+ userdefined_field04[copud04        ]                userdefined_field11[copud11        ]
+ userdefined_field05[copud05        ]                userdefined_field12[copud12        ]
+ userdefined_field06[copud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc195
+Grid gr1291
+{
+  ----------Rows [cnt   ] ----------
+
+}
+END -- gr1291
+END -- VBox1
+END -- acoi501
+
+TABLES
+cop_file
+ATTRIBUTES
+Edit cop01=cop_file.cop01, tabIndex=1, not null, required, comment="KEYField,No Blank!";
+Edit cop02=cop_file.cop02, tabIndex=2, not null, required;
+DateEdit cop03=cop_file.cop03, tabIndex=3;
+CheckBox copconf=cop_file.copconf, tabIndex=4, text="Confirm", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit cop05=cop_file.cop05, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Vender  ";
+CheckBox cop20=cop_file.cop20, tabIndex=6, text="Declaration", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit cop06=cop_file.cop06, tabIndex=7;
+CheckBox cop22=cop_file.cop22, tabIndex=8, text="Post", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit cop04=cop_file.cop04, action=controlp, tabIndex=9, image="zoom", comment="<^P>Query Item  ";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=10, noEntry;
+Edit cop14=cop_file.cop14, tabIndex=11;
+ButtonEdit cop15=cop_file.cop15, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Unit";
+Edit cop12=cop_file.cop12, tabIndex=13;
+ButtonEdit cop19=cop_file.cop19, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit cop11=cop_file.cop11, action=controlp, tabIndex=15, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit cop07=cop_file.cop07, tabIndex=16;
+Label dummy01:dummy01;
+DateEdit cop08=cop_file.cop08, tabIndex=17;
+ButtonEdit cop18=cop_file.cop18, action=controlp, tabIndex=18, not null, required, image="zoom", comment="<^P>Qry Details ";
+ButtonEdit cop09=cop_file.cop09, action=controlp, tabIndex=19, image="zoom", comment="<^P>Qry Details ";
+Edit cop21=cop_file.cop21, tabIndex=20, noEntry;
+ComboBox cop10=cop_file.cop10, tabIndex=21, not null, required, queryEditable, items=(("1", "Direct Import"),("2", "Transfer/Import"),("3", "Domestic Purchase"),("4", "Direct Import Return"),("5", "Transfer/Import Return"),("6", "Domestic Purchase Return"),("7", "Scrap"));
+Edit cop16=cop_file.cop16, tabIndex=22, noEntry;
+ButtonEdit cop17=cop_file.cop17, action=controlp, tabIndex=23, noEntry, image="zoom", comment="<^P>Qry Unit";
+Edit copuser=cop_file.copuser, tabIndex=24, noEntry;
+Edit copmodu=cop_file.copmodu, tabIndex=25, noEntry;
+Edit copacti=cop_file.copacti, tabIndex=26, noEntry, upShift;
+Edit copgrup=cop_file.copgrup, tabIndex=27, noEntry;
+DateEdit copdate=cop_file.copdate, tabIndex=28, noEntry;
+Edit coporiu=cop_file.coporiu, tabIndex=501, noEntry;
+Edit coporig=cop_file.coporig, tabIndex=502, noEntry;
+TextEdit copud01=cop_file.copud01, tabIndex=30, stretch=NONE;
+Edit copud07=cop_file.copud07, tabIndex=31;
+DateEdit copud13=cop_file.copud13, tabIndex=32;
+Edit copud08=cop_file.copud08, tabIndex=33;
+DateEdit copud14=cop_file.copud14, tabIndex=34;
+Edit copud02=cop_file.copud02, tabIndex=35;
+Edit copud09=cop_file.copud09, tabIndex=36;
+DateEdit copud15=cop_file.copud15, tabIndex=37;
+Edit copud03=cop_file.copud03, tabIndex=38;
+Edit copud10=cop_file.copud10, tabIndex=39;
+Edit copud04=cop_file.copud04, tabIndex=40;
+Edit copud11=cop_file.copud11, tabIndex=41;
+Edit copud05=cop_file.copud05, tabIndex=42;
+Edit copud12=cop_file.copud12, tabIndex=43;
+Edit copud06=cop_file.copud06, tabIndex=44;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cop_file.cop01,cop_file.cop02,cop_file.cop03,cop_file.copconf,cop_file.cop05,cop_file.cop20,cop_file.cop06,cop_file.cop22,cop_file.cop04,formonly.ima02,cop_file.cop14,cop_file.cop15,cop_file.cop12,cop_file.cop19,cop_file.cop11,cop_file.cop07,cop_file.cop08,cop_file.cop18,cop_file.cop09,cop_file.cop21,cop_file.cop10,cop_file.cop16,cop_file.cop17,cop_file.copuser,cop_file.copmodu,cop_file.copacti,cop_file.copgrup,cop_file.copdate,cop_file.coporiu,cop_file.coporig,cop_file.copud01,cop_file.copud07,cop_file.copud13,cop_file.copud08,cop_file.copud14,cop_file.copud02,cop_file.copud09,cop_file.copud15,cop_file.copud03,cop_file.copud10,cop_file.copud04,cop_file.copud11,cop_file.copud05,cop_file.copud12,cop_file.copud06,formonly.cnt)
+END -- INSTRUCTIONS
+

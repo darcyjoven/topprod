@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/awsi007.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"awsi007")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+VBox VBox2
+Grid gr1
+{
+  Service Id    [wah01    ]   Object Id  [wah02               ]   Object Name  [wah03         ]
+  Service Desc  [wah04                                                                        ]
+  TIPTOP Id     [wah08         ]
+}
+END -- gr1
+Grid gr2
+{
+  [wah05 ]               [wah06 ]               [wah07 ]                [wah09 ]
+
+}
+END -- gr2
+END -- VBox2
+END -- page01
+END -- pc1
+Table s_wai
+{
+[wai03         |wai04   |gaq03      |wai05   |wai06    |wai07  |wai08 |wai09 |wai10  |wai11 |wai12  |wai13 |wai14  ]
+
+}
+END -- s_wai
+Grid gr3
+{
+  ---------Rows[cnt   ]/[cn2  ]-----------
+
+}
+END -- gr3
+END -- VBox1
+END -- awsi007
+
+TABLES
+wai_file,
+wah_file
+ATTRIBUTES
+ButtonEdit wah01=wah_file.wah01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit wah02=wah_file.wah02, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit wah03=wah_file.wah03, tabIndex=3;
+Edit wah04=wah_file.wah04, tabIndex=4;
+ButtonEdit wah08=wah_file.wah08, action=controlp, tabIndex=5, not null, required, image="zoom";
+CheckBox wah05=wah_file.wah05, tabIndex=6, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox wah06=wah_file.wah06, tabIndex=7, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox wah07=wah_file.wah07, tabIndex=8, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox wah09=wah_file.wah09, tabIndex=9, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit wai03=wai_file.wai03, tabIndex=10, title="ObjectId", not null, required;
+ButtonEdit wai04=wai_file.wai04, action=controlp, tabIndex=11, title="TIPcol", not null, required, image="zoom";
+Edit gaq03=formonly.gaq03 type CHAR, tabIndex=12, title="TIPcolName", noEntry;
+Edit wai05=wai_file.wai05, tabIndex=13, title="FiedId", not null, required;
+Edit wai06=wai_file.wai06, tabIndex=14, title="FiedName", not null, required;
+ComboBox wai07=wai_file.wai07, tabIndex=15, title="Type", not null, required, items=(("C", %"C"),("D", %"D"),("N", %"N"));
+Edit wai08=wai_file.wai08, tabIndex=16, title="Len", not null, required;
+CheckBox wai09=wai_file.wai09, tabIndex=17, title="Req", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox wai10=wai_file.wai10, tabIndex=18, title="Change", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit wai11=wai_file.wai11, tabIndex=19, title="Des";
+Edit wai12=wai_file.wai12, tabIndex=20, title="Begin";
+Edit wai13=wai_file.wai13, tabIndex=21, title="End";
+Edit wai14=wai_file.wai14, tabIndex=22, title="Fault";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wai(wai_file.wai03,wai_file.wai04,formonly.gaq03,wai_file.wai05,wai_file.wai06,wai_file.wai07,wai_file.wai08,wai_file.wai09,wai_file.wai10,wai_file.wai11,wai_file.wai12,wai_file.wai13,wai_file.wai14)
+SCREEN RECORD Undefined(wah_file.wah01,wah_file.wah02,wah_file.wah03,wah_file.wah04,wah_file.wah08,wah_file.wah05,wah_file.wah06,wah_file.wah07,wah_file.wah09,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapq101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapq101")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr107
+{
+ Plant               [apm08     ]        Book No.      [apm0]
+ Account Title       [apm00     ][aag02                     ]
+ Paying Vender       [apm01     ][apm02   ]
+ Department          [apm03     ]
+ Currency            [apm11     ]        Year          [apm1]
+}
+END -- gr107
+END -- page01
+END -- folder01
+Table s_apm
+{
+[apm05  |apm06f    |apm07f     |balf        |apm06      |apm07      |bal        ]
+[apm05  |apm06f    |apm07f     |balf        |apm06      |apm07      |bal        ]
+[apm05  |apm06f    |apm07f     |balf        |apm06      |apm07      |bal        ]
+[apm05  |apm06f    |apm07f     |balf        |apm06      |apm07      |bal        ]
+[apm05  |apm06f    |apm07f     |balf        |apm06      |apm07      |bal        ]
+[apm05  |apm06f    |apm07f     |balf        |apm06      |apm07      |bal        ]
+[apm05  |apm06f    |apm07f     |balf        |apm06      |apm07      |bal        ]
+[apm05  |apm06f    |apm07f     |balf        |apm06      |apm07      |bal        ]
+[apm05  |apm06f    |apm07f     |balf        |apm06      |apm07      |bal        ]
+[apm05  |apm06f    |apm07f     |balf        |apm06      |apm07      |bal        ]
+
+}
+END -- s_apm
+Grid gr108
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr108
+END -- VBox1
+END -- aapq101
+
+TABLES
+apm_file
+ATTRIBUTES
+ButtonEdit apm08=apm_file.apm08, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit apm0=apm_file.apm09, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit apm00=apm_file.apm00, action=controlp, tabIndex=3, image="zoom";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=4;
+ButtonEdit apm01=apm_file.apm01, action=controlp, tabIndex=5, image="zoom";
+Edit apm02=apm_file.apm02, tabIndex=6, noEntry;
+ButtonEdit apm03=apm_file.apm03, action=controlp, tabIndex=7, image="zoom";
+ButtonEdit apm11=apm_file.apm11, action=controlp, tabIndex=8, image="zoom";
+Edit apm1=apm_file.apm04, tabIndex=9;
+Edit apm05=apm_file.apm05, tabIndex=10, title="Period";
+Edit apm06f=apm_file.apm06f, tabIndex=11, title="O.C.Debit";
+Edit apm07f=apm_file.apm07f, tabIndex=12, title="O.C.Credit";
+Edit balf=formonly.balf type CHAR, tabIndex=13, title="O.C.Balance";
+Edit apm06=apm_file.apm06, tabIndex=14, title="H.C.Debit";
+Edit apm07=apm_file.apm07, tabIndex=15, title="H.C.Credit";
+Edit bal=formonly.bal type CHAR, tabIndex=16, title="H.C.Balance";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apm(apm_file.apm05,apm_file.apm06f,apm_file.apm07f,formonly.balf,apm_file.apm06,apm_file.apm07,formonly.bal)
+SCREEN RECORD Undefined(apm_file.apm08,apm_file.apm09,apm_file.apm00,formonly.aag02,apm_file.apm01,apm_file.apm02,apm_file.apm03,apm_file.apm11,apm_file.apm04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi060.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axmi060")
+VBox VBox1
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+
+    Price Code[oah01          ]
+    Price Name[oah02                         ]
+   [oah04            ][oah07                  ]  [oah05                    ] [oah06                         ][oah08              ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table s_ohi
+{
+[ohi02     |ohi03      |ohi04                  |type          ]
+[ohi02     |ohi03      |ohi04                  |type          ]
+[ohi02     |ohi03      |ohi04                  |type          ]
+[ohi02     |ohi03      |ohi04                  |type          ]
+[ohi02     |ohi03      |ohi04                  |type          ]
+
+}
+END -- s_ohi
+Grid gr2
+{
+  ----------Rows[idx   ]/[cnt    ]----------detail[cn2    ]
+
+
+}
+END -- gr2
+END -- VBox1
+END -- axmi060
+
+TABLES
+oah_file,
+ohi_file
+ATTRIBUTES
+Edit oah01=oah_file.oah01, tabIndex=1, not null, required;
+Edit oah02=oah_file.oah02, tabIndex=2;
+CheckBox oah04=oah_file.oah04, tabIndex=3, text="oah04", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oah07=oah_file.oah07, tabIndex=4, text="oah04", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oah05=oah_file.oah05, tabIndex=5, text="B/C Type Price Mutex", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oah06=oah_file.oah06, tabIndex=6, text="Group AND Type Price Mutex", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oah08=oah_file.oah08, tabIndex=14, text="Zero Price", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ohi02=ohi_file.ohi02, tabIndex=7, title="Groud ID", not null, required;
+Edit ohi03=ohi_file.ohi03, tabIndex=8, title="Items", not null, required;
+ComboBox ohi04=ohi_file.ohi04, tabIndex=9, title=%"Price Code", not null, required, items=(("A1", "atmi227"),("A2", "arti121"),("A3", "axmi121"),("A4", "axmi140"),("A5", "axmi150"),("A6", "axmi520"),("B1", "axmi530"),("B2", "axmi540"),("C1", "atmt233"),("C2", "artt301"),("C3", "axmi500"),("C4", "axmi510"));
+ComboBox type=formonly.type type VARCHAR, tabIndex=10, title=%"Price Type", noEntry, items=(("A", "Base Price"),("B", "You Hui"),("C", "Scale"));
+Edit idx=formonly.idx type CHAR, tabIndex=11;
+Edit cnt=formonly.cnt type CHAR, tabIndex=12;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ohi(ohi_file.ohi02,ohi_file.ohi03,ohi_file.ohi04,formonly.type)
+SCREEN RECORD Undefined(oah_file.oah01,oah_file.oah02,oah_file.oah04,oah_file.oah05,oah_file.oah06,formonly.idx,formonly.cnt,formonly.cn2,oah_file.oah07,oah_file.oah08)
+END -- INSTRUCTIONS
+

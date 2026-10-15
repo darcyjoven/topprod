@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr006.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr006")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                                              >
+
+  Year            [yy        ]
+  Month           [m1        ] - [m2        ]
+
+
+  title number    [azh01     ]
+  Report Title    [azh02                               ]
+
+  [b                                                       ]
+  [c                                                       ]
+  Report Data Sequence:
+  [d                                                                 ]
+  [                                                                  ]
+ <                                                                       >
+
+}
+END -- gr1
+Grid gr2
+{
+[more                                                                ]
+
+
+}
+END -- gr2
+END -- VBox1
+END -- axcr006
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+Edit yy=formonly.yy type SMALLINT, tabIndex=1;
+Edit m1=formonly.m1 type SMALLINT, tabIndex=2;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=3;
+ButtonEdit azh01=formonly.azh01 type CHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P>Query";
+Edit azh02=formonly.azh02 type CHAR, tabIndex=5;
+CheckBox b=formonly.b type VARCHAR, tabIndex=6, text="Print order code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=7, default = "Y", text="Print non-zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+RadioGroup d=formonly.d type CHAR, tabIndex=9, default = "1", not null, items=(("1", "Raw Materials/Semi Finished Product/Finished Product/Commodity"),("2", "Commodity/Finished Product/Semi Finished Product/Raw Materials"));
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.m1,formonly.m2,formonly.azh01,formonly.azh02,formonly.b,formonly.c,formonly.more,formonly.d)
+END -- INSTRUCTIONS
+

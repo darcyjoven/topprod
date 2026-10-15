@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr506.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr506")
+VBox VBox1
+Grid gr3285
+{
+ <G group01                                               >
+  Item No.            [img01               ]
+  Warehouse No.       [img02               ]
+  Location            [img03               ]
+  Lot No.             [img04               ]
+ <                                                        >
+ <G group02                                               >
+ [a                                                 ]
+ <                                                        >
+
+}
+END -- gr3285
+Grid gr3286
+{
+[more                                              ]
+
+}
+END -- gr3286
+END -- VBox1
+END -- aimr506
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit img01=formonly.img01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit img02=formonly.img02 type VARCHAR, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit img03=formonly.img03 type VARCHAR, action=controlp, tabIndex=3, image="zoom.png";
+ButtonEdit img04=formonly.img04 type VARCHAR, action=controlp, tabIndex=4, image="zoom.png";
+Group group02:group02, text="INPUT";
+CheckBox a=formonly.a type VARCHAR, tabIndex=5, text="Print Only Inventory Voided Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.img01,formonly.img02,formonly.img03,formonly.img04,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

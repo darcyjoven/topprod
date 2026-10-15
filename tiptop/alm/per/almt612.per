@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt612.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"almt612")
+VBox VBox1
+Folder pc1
+Page Main(text=%"Main")
+Grid gr1
+{
+ Store No.    [lruplant              |rtz13             ]    Pos No.      [lru10               ]
+ Corporation  [lrulegal              |azt02             ]    Document Date[lru05           ]
+ Doc. Type    [lru00                 ]                       Approval Code[lru06           |imgmksg ]
+ Doc No.      [lru01                 ]                       Approver     [lru07           |        ]
+ Member No.   [lru02                 ]                       Approval Date[lru08           ]
+ Card Category[lru03                 |lph02             ]    Remark       [lru09                         ]
+ lru04        [lru04                 |azf03             ]                 [                              ]
+
+}
+END -- gr1
+END -- Main
+Page info(text=%"Info")
+Grid gr3
+{
+
+ Data Owner  [lruuser   ] Last Modified by   [lrumodu       ]    Create on   [lrucrat     ]
+ Department  [lrugrup   ] Last Modified on   [lrudate       ]    Acti        [lruacti     ]
+ Record Orig.[lruoriu   ]
+ Dept Orig.  [lruorig   ]
+
+
+
+}
+END -- gr3
+END -- info
+END -- pc1
+Table s_lrv
+{
+[lrv02                         |lrv03       |lrv04       ]
+[lrv02                         |lrv03       |lrv04       ]
+[lrv02                         |lrv03       |lrv04       ]
+[lrv02                         |lrv03       |lrv04       ]
+[lrv02                         |lrv03       |lrv04       ]
+
+}
+END -- s_lrv
+Grid gr4
+{
+
+ ------- Rows [idx ]/ [cnt  ]---item [cn2   ]-------
+
+}
+END -- gr4
+END -- VBox1
+END -- Form2
+
+TABLES
+lrv_file,
+lru_file
+ATTRIBUTES
+ButtonEdit lruplant=lru_file.lruplant, action=controlp, tabIndex=1, noEntry, not null, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=5, noEntry;
+Edit lru10=lru_file.lru10, tabIndex=31, noEntry, scroll;
+ButtonEdit lrulegal=lru_file.lrulegal, action=controlp, tabIndex=11, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=12, noEntry;
+DateEdit lru05=lru_file.lru05, tabIndex=25, noEntry;
+ComboBox lru00=lru_file.lru00, tabIndex=24, noEntry, not null, items=(("1", "Void"),("2", "off"),("3", "lost"),("4", "Renewal"));
+ComboBox lru06=lru_file.lru06, tabIndex=9, default = "N", noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit lru01=lru_file.lru01, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Edit lru07=lru_file.lru07, tabIndex=8, noEntry;
+ButtonEdit lru02=lru_file.lru02, action=controlp, tabIndex=4, image="zoom.png";
+DateEdit lru08=lru_file.lru08, tabIndex=7, noEntry;
+ButtonEdit lru03=lru_file.lru03, action=controlp, tabIndex=3, image="zoom.png";
+Edit lph02=formonly.lph02 type CHAR, tabIndex=6, noEntry;
+TextEdit lru09=lru_file.lru09, tabIndex=10;
+ButtonEdit lru04=lru_file.lru04, action=controlp, tabIndex=22, image="zoom.png";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=23;
+Edit lruuser=lru_file.lruuser, tabIndex=13, noEntry;
+Edit lrumodu=lru_file.lrumodu, tabIndex=15, noEntry;
+DateEdit lrucrat=lru_file.lrucrat, tabIndex=17, noEntry;
+Edit lrugrup=lru_file.lrugrup, tabIndex=14, noEntry;
+DateEdit lrudate=lru_file.lrudate, tabIndex=16, noEntry;
+Edit lruacti=lru_file.lruacti, tabIndex=30, noEntry;
+Edit lruoriu=lru_file.lruoriu, tabIndex=18, noEntry;
+Edit lruorig=lru_file.lruorig, tabIndex=19, noEntry;
+ButtonEdit lrv02=lrv_file.lrv02, action=controlp, tabIndex=20, title="lrv02", not null, required, image="zoom.png";
+DateEdit lrv03=lrv_file.lrv03, tabIndex=21, title="lrv03", noEntry;
+DateEdit lrv04=lrv_file.lrv04, tabIndex=26, title=%"lrv04";
+Edit idx=formonly.idx type SMALLINT, tabIndex=27, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lrv(lrv_file.lrv02,lrv_file.lrv03,lrv_file.lrv04)
+SCREEN RECORD Undefined(lru_file.lruplant,formonly.rtz13,lru_file.lru05,lru_file.lrulegal,formonly.azt02,lru_file.lru06,formonly.imgmksg,lru_file.lru00,lru_file.lru07,lru_file.lru01,lru_file.lru08,lru_file.lru02,lru_file.lru09,lru_file.lru03,formonly.lph02,lru_file.lru04,formonly.azf03,lru_file.lruuser,lru_file.lrumodu,lru_file.lrucrat,lru_file.lrugrup,lru_file.lrudate,lru_file.lruacti,lru_file.lruoriu,lru_file.lruorig,formonly.idx,formonly.cnt,formonly.cn2)
+SCREEN RECORD Record1(lru_file.lru10)
+END -- INSTRUCTIONS
+

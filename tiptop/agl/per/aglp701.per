@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglp701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglp701")
+Group gb1
+Grid gr1
+{
+  <G gb2                                          >
+    Year                [g_year    ]
+    Period              [g_month   ]
+    User QBE            [b_user    ]-[e_user    ]
+    GL Logistics Code   [p_plant   ]
+    GL Book No.         [p_bookno  ]
+    Voucher Doc. Type   [gl_no     ]
+    GL Book No.(2)      [p_bookno1 ]
+    Voucher Doc. Type(2)[gl_no1    ]
+    Voucher Date        [gl_date   ]
+  <                                               >
+ [dummy01                                   ]
+ [g_bgjob                ]
+
+}
+END -- gr1
+END -- gb1
+END -- aglp701
+
+ATTRIBUTES
+Group gb2:gb2, text="gb2";
+Edit g_year=formonly.g_year type VARCHAR, tabIndex=1, not null, required;
+Edit g_month=formonly.g_month type VARCHAR, tabIndex=2, not null, required;
+Edit b_user=formonly.b_user type VARCHAR, tabIndex=3, not null, required;
+Edit e_user=formonly.e_user type VARCHAR, tabIndex=4, not null, required;
+Edit p_plant=formonly.p_plant type VARCHAR, tabIndex=5, not null, required;
+Edit p_bookno=formonly.p_bookno type VARCHAR, tabIndex=6, not null, required;
+ButtonEdit gl_no=formonly.gl_no type VARCHAR, action=controlp, tabIndex=7, not null, required, image="zoom";
+Edit p_bookno1=formonly.p_bookno1 type VARCHAR, tabIndex=8, not null, required;
+ButtonEdit gl_no1=formonly.gl_no1 type VARCHAR, action=controlp, tabIndex=9, not null, required, image="zoom";
+DateEdit gl_date=formonly.gl_date type VARCHAR, tabIndex=10, not null, required;
+Label dummy01:dummy01, text="NOTE: This Process Only for Confirmed AR";
+CheckBox g_bgjob=formonly.g_bgjob type VARCHAR, tabIndex=11, text="Background Job", valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_year,formonly.g_month,formonly.b_user,formonly.e_user,formonly.p_plant,formonly.p_bookno,formonly.gl_no,formonly.p_bookno1,formonly.gl_no1,formonly.gl_date,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

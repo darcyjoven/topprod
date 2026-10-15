@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq135.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+[label3|bm             ]      [label4|em             ]
+[label2|apa05                 |pmc03                 ]
+[label5|apb12                 |ima02                 ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table ds1
+{
+[apa02     |apa00        |apa01               |apb02 |apb21               |apb22 |rvv87            |rvv39                 |apb09            |apb10                 |apa01_c             |apb02_|apb09_c          |apb10_c               |num1             |amt1                  |num2             |amt2                  ]
+[apa02     |apa00        |apa01               |apb02 |apb21               |apb22 |rvv87            |rvv39                 |apb09            |apb10                 |apa01_c             |apb02_|apb09_c          |apb10_c               |num1             |amt1                  |num2             |amt2                  ]
+[apa02     |apa00        |apa01               |apb02 |apb21               |apb22 |rvv87            |rvv39                 |apb09            |apb10                 |apa01_c             |apb02_|apb09_c          |apb10_c               |num1             |amt1                  |num2             |amt2                  ]
+[apa02     |apa00        |apa01               |apb02 |apb21               |apb22 |rvv87            |rvv39                 |apb09            |apb10                 |apa01_c             |apb02_|apb09_c          |apb10_c               |num1             |amt1                  |num2             |amt2                  ]
+[apa02     |apa00        |apa01               |apb02 |apb21               |apb22 |rvv87            |rvv39                 |apb09            |apb10                 |apa01_c             |apb02_|apb09_c          |apb10_c               |num1             |amt1                  |num2             |amt2                  ]
+[apa02     |apa00        |apa01               |apb02 |apb21               |apb22 |rvv87            |rvv39                 |apb09            |apb10                 |apa01_c             |apb02_|apb09_c          |apb10_c               |num1             |amt1                  |num2             |amt2                  ]
+[apa02     |apa00        |apa01               |apb02 |apb21               |apb22 |rvv87            |rvv39                 |apb09            |apb10                 |apa01_c             |apb02_|apb09_c          |apb10_c               |num1             |amt1                  |num2             |amt2                  ]
+[apa02     |apa00        |apa01               |apb02 |apb21               |apb22 |rvv87            |rvv39                 |apb09            |apb10                 |apa01_c             |apb02_|apb09_c          |apb10_c               |num1             |amt1                  |num2             |amt2                  ]
+[apa02     |apa00        |apa01               |apb02 |apb21               |apb22 |rvv87            |rvv39                 |apb09            |apb10                 |apa01_c             |apb02_|apb09_c          |apb10_c               |num1             |amt1                  |num2             |amt2                  ]
+[apa02     |apa00        |apa01               |apb02 |apb21               |apb22 |rvv87            |rvv39                 |apb09            |apb10                 |apa01_c             |apb02_|apb09_c          |apb10_c               |num1             |amt1                  |num2             |amt2                  ]
+
+}
+END -- ds1
+Grid Grid2
+{
+
+     ----------[rows|idx  |row|cnt  ]-----[row1|cn2  ]----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+apa_file,
+rvv_file,
+apb_file
+ATTRIBUTES
+Label label3:Label3, text=%"Label3";
+DateEdit bm=formonly.bm type CHAR, tabIndex=1, not null;
+Label label4:Label4, text=%"Label3";
+DateEdit em=formonly.em type CHAR, tabIndex=2, not null;
+Label label2:Label2, text=%"Label2";
+ButtonEdit apa05=apa_file.apa05, action=controlp, tabIndex=4, image="zoom";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=6, noEntry;
+Label label5:Label5, text=%"Label2";
+ButtonEdit apb12=apb_file.apb12, action=controlp, tabIndex=5, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=7, noEntry;
+Edit apa02=apa_file.apa02, tabIndex=8, title=%"apa02", scroll;
+ComboBox apa00=apa_file.apa00, tabIndex=9, title=%"apa00", scroll, items=(("16", "Text"),("26", "Text"));
+Edit apa01=apa_file.apa01, tabIndex=10, title=%"apa01", not null, scroll;
+Edit apb02=apb_file.apb02, tabIndex=11, title=%"apb02", not null, scroll;
+Edit apb21=apb_file.apb21, tabIndex=12, title=%"apb21", scroll;
+Edit apb22=apb_file.apb22, tabIndex=13, title=%"apb22", scroll;
+Edit rvv87=rvv_file.rvv87, tabIndex=14, title=%"rvv87", scroll;
+Edit rvv39=rvv_file.rvv39, tabIndex=15, title=%"rvv39", scroll;
+Edit apb09=apb_file.apb09, tabIndex=16, title=%"apb09", scroll;
+Edit apb10=apb_file.apb10, tabIndex=17, title=%"apb10", scroll;
+Edit apa01_c=formonly.apa01_c type VARCHAR, tabIndex=26, title=%"apa01_c", not null, scroll;
+Edit apb02_=formonly.apb02_c type SMALLINT, tabIndex=27, title=%"apb02_c", not null, scroll;
+Edit apb09_c=formonly.apb09_c type DECIMAL(15,3), tabIndex=18, title=%"apb09_c", scroll;
+Edit apb10_c=formonly.apb10_c type DECIMAL(20,6), tabIndex=19, title=%"apb10_c", scroll;
+Edit num1=formonly.num1 type DECIMAL(15,3), tabIndex=20, title=%"num1", scroll;
+Edit amt1=formonly.amt1 type DECIMAL(20,6), tabIndex=21, title=%"amt1", scroll;
+Edit num2=formonly.num2 type DECIMAL(15,3), tabIndex=22, title=%"num2", scroll;
+Edit amt2=formonly.amt2 type DECIMAL(20,6), tabIndex=23, title=%"amt2", scroll;
+Label rows:Rows1, text=%"Label6";
+Edit idx=formonly.idx type CHAR, tabIndex=24;
+Label row:Rows2, text=%"/";
+Edit cnt=formonly.cnt type CHAR, tabIndex=25;
+Label row1:Rows, text=%"Label6";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bm,formonly.em,formonly.cn2,apa_file.apa05,apb_file.apb12,formonly.pmc03,formonly.ima02,formonly.idx,formonly.cnt)
+SCREEN RECORD s_apa(apa_file.apa02,apa_file.apa00,apa_file.apa01,apb_file.apb02,apb_file.apb21,apb_file.apb22,rvv_file.rvv87,rvv_file.rvv39,apb_file.apb09,apb_file.apb10,formonly.apa01_c,formonly.apb02_c,formonly.apb09_c,formonly.apb10_c,formonly.num1,formonly.amt1,formonly.num2,formonly.amt2)
+END -- INSTRUCTIONS
+

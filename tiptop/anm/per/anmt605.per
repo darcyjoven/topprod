@@ -1,0 +1,127 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt605.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt605")
+VBox VBox1
+Folder pc11
+Page page01(text="Main")
+Grid gr49
+{
+ Buy No.             [gsh01               ]   Investment Doc No.  [gsh03               ]   Confirm             [gshconf     ]
+ Buy Date            [gsh02       ]           Investment Type     [gsb05     ]                                      [imgmksg]
+                                                                                                                    [       ]
+                                                                  [gsa02               ]   Voucher NO.         [gsh21       ]
+ Department          [gsh26       ]           Investment Object   [gsb06               ]   Voucher Date        [gsh22       ]
+ ----------------------------------------------------------------------------------------------------------------------------
+ Buy Qty             [gsh05               ]   Expense No          [gsh13     ]             Issuing Slip No.#1  [gsh27       ]
+ Buy H.C. Unit Price [gsh04               ]   Expense Name        [gsf02        ]          Issuing Slip No.#2  [gsh28       ]
+ Deposit Account No  [gsh07               ]   Deposit Account No  [gsh14               ]
+ Curr/Rate           [gsh08 ][gsh09       ]   Curr/Rate           [gsh15 ][gsh16       ]
+ Deposit/Withd Trans [gsh10               ]   Deposit/Withd Trans [gsh17               ]
+ Cash Variation      [gsh11               ]   Cash Variation      [gsh18         ]
+ Buy O.C. Amount     [gsh12               ]   Expense O.C. Amount [gsh19               ]
+ Buy H.C. Amount     [gsh06               ]   Expense H.C. Amount [gsh20               ]
+
+}
+END -- gr49
+END -- page01
+Page info(text="Info")
+Grid gr50
+{
+ Record Owner        [gshuser   ] Last Modified by    [gshmodu   ]
+ Department          [gshgrup   ] Create/Modify Date  [gshdate   ]
+ Record Orig.        [gshoriu   ]
+ Dept Orig.          [gshorig   ]
+}
+END -- gr50
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[gshud01                       ] userdefined_field07[gshud07        ] userdefined_field13[gshud13        ]
+                    [                              ] userdefined_field08[gshud08        ] userdefined_field14[gshud14        ]
+ userdefined_field02[gshud02        ]                userdefined_field09[gshud09        ] userdefined_field15[gshud15        ]
+ userdefined_field03[gshud03        ]                userdefined_field10[gshud10        ]
+ userdefined_field04[gshud04        ]                userdefined_field11[gshud11        ]
+ userdefined_field05[gshud05        ]                userdefined_field12[gshud12        ]
+ userdefined_field06[gshud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc11
+Grid gr52
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr52
+END -- VBox1
+END -- anmt605
+
+TABLES
+gsh_file
+ATTRIBUTES
+ButtonEdit gsh01=gsh_file.gsh01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Documents";
+ButtonEdit gsh03=gsh_file.gsh03, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Investment Case No.";
+ComboBox gshconf=gsh_file.gshconf, tabIndex=3, noEntry, not null, required, items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "Void"));
+DateEdit gsh02=gsh_file.gsh02, tabIndex=4;
+Edit gsb05=formonly.gsb05 type VARCHAR, tabIndex=5;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit gsa02=formonly.gsa02 type VARCHAR, tabIndex=7, noEntry;
+Edit gsh21=gsh_file.gsh21, tabIndex=8, noEntry;
+ButtonEdit gsh26=gsh_file.gsh26, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Query Department Code";
+Edit gsb06=formonly.gsb06 type CHAR, tabIndex=10;
+DateEdit gsh22=gsh_file.gsh22, tabIndex=11, noEntry;
+Edit gsh05=gsh_file.gsh05, tabIndex=12, not null, required;
+ButtonEdit gsh13=gsh_file.gsh13, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P>Qry Expense No.";
+Edit gsh27=gsh_file.gsh27, tabIndex=14, noEntry;
+Edit gsh04=gsh_file.gsh04, tabIndex=15, not null, required;
+Edit gsf02=formonly.gsf02 type CHAR, tabIndex=16;
+Edit gsh28=gsh_file.gsh28, tabIndex=17, noEntry;
+ButtonEdit gsh07=gsh_file.gsh07, action=controlp, tabIndex=18, not null, required, image="zoom", comment="<^P>Qry Bank Account No.";
+ButtonEdit gsh14=gsh_file.gsh14, action=controlp, tabIndex=19, not null, required, image="zoom", comment="<^P>Qry Bank Account No.";
+ButtonEdit gsh08=gsh_file.gsh08, action=controlp, tabIndex=20, noEntry, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit gsh09=gsh_file.gsh09, action=controlp, tabIndex=21, not null, required, image="zoom";
+ButtonEdit gsh15=gsh_file.gsh15, action=controlp, tabIndex=22, noEntry, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit gsh16=gsh_file.gsh16, action=controlp, tabIndex=23, not null, required, image="zoom";
+ButtonEdit gsh10=gsh_file.gsh10, action=controlp, tabIndex=24, not null, required, image="zoom", comment="<^P>Qry Withdraw/Deposit Transation";
+ButtonEdit gsh17=gsh_file.gsh17, action=controlp, tabIndex=25, not null, required, image="zoom", comment="<^P>Qry Withdraw/Deposit Transation";
+ButtonEdit gsh11=gsh_file.gsh11, action=controlp, tabIndex=26, not null, required, image="zoom", comment="<^P>Query Cash Variation Code";
+ButtonEdit gsh18=gsh_file.gsh18, action=controlp, tabIndex=27, not null, required, image="zoom", comment="<^P>Query Cash Variation Code";
+Edit gsh12=gsh_file.gsh12, tabIndex=28, not null, required;
+Edit gsh19=gsh_file.gsh19, tabIndex=29, not null, required;
+Edit gsh06=gsh_file.gsh06, tabIndex=30, not null, required;
+Edit gsh20=gsh_file.gsh20, tabIndex=31, not null, required;
+Edit gshuser=gsh_file.gshuser, tabIndex=32, noEntry;
+Edit gshmodu=gsh_file.gshmodu, tabIndex=33, noEntry;
+Edit gshgrup=gsh_file.gshgrup, tabIndex=34, noEntry;
+DateEdit gshdate=gsh_file.gshdate, tabIndex=35, noEntry;
+Edit gshoriu=gsh_file.gshoriu, tabIndex=501, noEntry;
+Edit gshorig=gsh_file.gshorig, tabIndex=502, noEntry;
+TextEdit gshud01=gsh_file.gshud01, tabIndex=38, stretch=NONE;
+Edit gshud07=gsh_file.gshud07, tabIndex=39;
+DateEdit gshud13=gsh_file.gshud13, tabIndex=40;
+Edit gshud08=gsh_file.gshud08, tabIndex=41;
+DateEdit gshud14=gsh_file.gshud14, tabIndex=42;
+Edit gshud02=gsh_file.gshud02, tabIndex=43;
+Edit gshud09=gsh_file.gshud09, tabIndex=44;
+DateEdit gshud15=gsh_file.gshud15, tabIndex=45;
+Edit gshud03=gsh_file.gshud03, tabIndex=46;
+Edit gshud10=gsh_file.gshud10, tabIndex=47;
+Edit gshud04=gsh_file.gshud04, tabIndex=48;
+Edit gshud11=gsh_file.gshud11, tabIndex=49;
+Edit gshud05=gsh_file.gshud05, tabIndex=50;
+Edit gshud12=gsh_file.gshud12, tabIndex=51;
+Edit gshud06=gsh_file.gshud06, tabIndex=52;
+Edit cnt=formonly.cnt type CHAR, tabIndex=36, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gsh_file.gsh01,gsh_file.gsh03,gsh_file.gshconf,gsh_file.gsh02,formonly.gsb05,formonly.imgmksg,formonly.gsa02,gsh_file.gsh21,gsh_file.gsh26,formonly.gsb06,gsh_file.gsh22,gsh_file.gsh05,gsh_file.gsh13,gsh_file.gsh27,gsh_file.gsh04,formonly.gsf02,gsh_file.gsh28,gsh_file.gsh07,gsh_file.gsh14,gsh_file.gsh08,gsh_file.gsh09,gsh_file.gsh15,gsh_file.gsh16,gsh_file.gsh10,gsh_file.gsh17,gsh_file.gsh11,gsh_file.gsh18,gsh_file.gsh12,gsh_file.gsh19,gsh_file.gsh06,gsh_file.gsh20,gsh_file.gshuser,gsh_file.gshmodu,gsh_file.gshgrup,gsh_file.gshdate,gsh_file.gshoriu,gsh_file.gshorig,gsh_file.gshud01,gsh_file.gshud07,gsh_file.gshud13,gsh_file.gshud08,gsh_file.gshud14,gsh_file.gshud02,gsh_file.gshud09,gsh_file.gshud15,gsh_file.gshud03,gsh_file.gshud10,gsh_file.gshud04,gsh_file.gshud11,gsh_file.gshud05,gsh_file.gshud12,gsh_file.gshud06,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asrt303.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asrt303")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr939
+{
+ <G group01                                     > <G group02                                  >
+  Data Source[qcs00      ]                         Check Day [qcs04      ]
+  RepNo/Ln#  [qcs01           ][qcs02]             Send Day  [qcs041    ]
+  Seqance    [qcs05      ]                         Send Qty  [qcs22     ]
+  Item No.   [qcs021                         ]     Check Day [qcs06     ]
+  Desc       [ima02_a                        ]     Good Qty  [qcs091    ]
+  Spec       [ima021_a                       ]     Result    [qcs09     ][des1      ]
+                                                   Checker   [qcs13     ][gen02     ]
+
+ <                                              > <                                           >
+
+}
+END -- gr939
+END -- page01
+END -- folder01
+Table s_srq
+{
+[srq03|srq05                      |ima02_b                       |ima021_b                      |bmm05 |srq12|srq06  |srq13           |srq09     |srq10     |srq11   |srq08                          ]
+[srq03|srq05                      |ima02_b                       |ima021_b                      |bmm05 |srq12|srq06  |srq13           |srq09     |srq10     |srq11   |srq08                          ]
+[srq03|srq05                      |ima02_b                       |ima021_b                      |bmm05 |srq12|srq06  |srq13           |srq09     |srq10     |srq11   |srq08                          ]
+[srq03|srq05                      |ima02_b                       |ima021_b                      |bmm05 |srq12|srq06  |srq13           |srq09     |srq10     |srq11   |srq08                          ]
+[srq03|srq05                      |ima02_b                       |ima021_b                      |bmm05 |srq12|srq06  |srq13           |srq09     |srq10     |srq11   |srq08                          ]
+[srq03|srq05                      |ima02_b                       |ima021_b                      |bmm05 |srq12|srq06  |srq13           |srq09     |srq10     |srq11   |srq08                          ]
+[srq03|srq05                      |ima02_b                       |ima021_b                      |bmm05 |srq12|srq06  |srq13           |srq09     |srq10     |srq11   |srq08                          ]
+[srq03|srq05                      |ima02_b                       |ima021_b                      |bmm05 |srq12|srq06  |srq13           |srq09     |srq10     |srq11   |srq08                          ]
+[srq03|srq05                      |ima02_b                       |ima021_b                      |bmm05 |srq12|srq06  |srq13           |srq09     |srq10     |srq11   |srq08                          ]
+[srq03|srq05                      |ima02_b                       |ima021_b                      |bmm05 |srq12|srq06  |srq13           |srq09     |srq10     |srq11   |srq08                          ]
+
+}
+END -- s_srq
+Grid gr940
+{
+ ---------- Rows [cnt   ] / [cn2   ] --------------
+
+}
+END -- gr940
+END -- VBox1
+END -- asrt303
+
+TABLES
+qcs_file,
+srq_file
+ATTRIBUTES
+Group group01:group01;
+Edit qcs00=qcs_file.qcs00, tabIndex=1, noEntry;
+Edit qcs01=qcs_file.qcs01, tabIndex=2, noEntry;
+Edit qcs02=qcs_file.qcs02, tabIndex=3, noEntry;
+Edit qcs05=qcs_file.qcs05, tabIndex=4, noEntry;
+Edit qcs021=qcs_file.qcs021, tabIndex=5, noEntry;
+Edit ima02_a=formonly.ima02_a type CHAR, tabIndex=6, noEntry;
+Edit ima021_a=formonly.ima021_a type CHAR, tabIndex=7, noEntry;
+Group group02:group02;
+DateEdit qcs04=qcs_file.qcs04, tabIndex=8, noEntry;
+DateEdit qcs041=qcs_file.qcs041, tabIndex=9, noEntry;
+Edit qcs22=qcs_file.qcs22, tabIndex=10, noEntry;
+DateEdit qcs06=qcs_file.qcs06, tabIndex=11, noEntry;
+Edit qcs091=qcs_file.qcs091, tabIndex=12, noEntry;
+Edit qcs09=qcs_file.qcs09, tabIndex=13, noEntry;
+Edit des1=formonly.des1 type CHAR, tabIndex=14, noEntry;
+Edit qcs13=qcs_file.qcs13, tabIndex=15, noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=16, noEntry;
+Edit srq03=srq_file.srq03, tabIndex=17, title="Ln#";
+ButtonEdit srq05=srq_file.srq05, action=controlp, tabIndex=18, title="Contact Product", image="zoom", comment="<^P>Qry Contact Product";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=19, title="Desc", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=20, title="Spec", noEntry;
+CheckBox bmm05=formonly.bmm05 type VARCHAR, tabIndex=21, title="Valid", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit srq12=srq_file.srq12, tabIndex=22, title="Unit", noEntry;
+Edit srq06=srq_file.srq06, tabIndex=23, title="Qty";
+Edit srq13=srq_file.srq13, tabIndex=24, title="Trans Rate";
+ButtonEdit srq09=srq_file.srq09, action=controlp, tabIndex=25, title="WareHouse", image="zoom", comment="<^P>Qry Warehouse";
+ButtonEdit srq10=srq_file.srq10, action=controlp, tabIndex=26, title="Loc", image="zoom", comment="<^P>Qry Loc";
+ButtonEdit srq11=srq_file.srq11, action=controlp, tabIndex=27, title="Lot", image="zoom", comment="<^P>Qry Lot";
+Edit srq08=srq_file.srq08, tabIndex=28, title="Memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=30, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_srq(srq_file.srq03,srq_file.srq05,formonly.ima02_b,formonly.ima021_b,formonly.bmm05,srq_file.srq12,srq_file.srq06,srq_file.srq13,srq_file.srq09,srq_file.srq10,srq_file.srq11,srq_file.srq08)
+SCREEN RECORD Undefined(qcs_file.qcs00,qcs_file.qcs01,qcs_file.qcs02,qcs_file.qcs05,qcs_file.qcs021,formonly.ima02_a,formonly.ima021_a,qcs_file.qcs04,qcs_file.qcs041,qcs_file.qcs22,qcs_file.qcs06,qcs_file.qcs091,qcs_file.qcs09,formonly.des1,qcs_file.qcs13,formonly.gen02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

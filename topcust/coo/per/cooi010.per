@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topstd/topcust/coo/4fd/cooi010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi010")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+ Empl.No             [azb01     ]
+ Name                [gen02     ]
+ Password            [azb02     ]
+ Department No.      [gen03     ][gem02       ]
+ Position            [gen04               ]
+ Amount              [azb06               ]
+
+}
+END -- Grid1
+END -- page01
+Page info(text="Info")
+Grid Grid2
+{
+ Record Owner        [azbuser   ] Last Modified by    [azbmodu   ] Data Valid Code     [azbacti   ]
+ Department          [azbgrup   ] Create/Modify Date  [azbdate   ]
+ Record Orig.        [azboriu   ]
+ Dept Orig.          [azborig   ]
+}
+END -- Grid2
+END -- info
+END -- Folder1
+Grid Grid3
+{
+ ---------- Rows [idx   ]/[cnt   ] ----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- cooi010
+
+TABLES
+azb_file
+ATTRIBUTES
+ButtonEdit azb01=azb_file.azb01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=2, noEntry;
+Edit azb02=azb_file.azb02, tabIndex=3;
+Edit gen03=formonly.gen03 type CHAR, tabIndex=4, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=5, noEntry;
+Edit gen04=formonly.gen04 type CHAR, tabIndex=6, noEntry;
+Edit azb06=azb_file.azb06, tabIndex=7;
+Edit azbuser=azb_file.azbuser, tabIndex=8, noEntry;
+Edit azbmodu=azb_file.azbmodu, tabIndex=9, noEntry;
+Edit azbacti=azb_file.azbacti, tabIndex=10, noEntry, upShift;
+Edit azbgrup=azb_file.azbgrup, tabIndex=11, noEntry;
+DateEdit azbdate=azb_file.azbdate, tabIndex=12, noEntry;
+Edit azboriu=azb_file.azboriu, tabIndex=501, noEntry;
+Edit azborig=azb_file.azborig, tabIndex=502, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=13, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(azb_file.azb01,formonly.gen02,azb_file.azb02,formonly.gen03,formonly.gem02,formonly.gen04,azb_file.azb06,azb_file.azbuser,azb_file.azbmodu,azb_file.azbacti,azb_file.azbgrup,azb_file.azbdate,azb_file.azboriu,azb_file.azborig,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

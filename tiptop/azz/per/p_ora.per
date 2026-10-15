@@ -1,0 +1,438 @@
+----------------------------------------------------------------------------------
+-- $Id:  p_ora.per created 2009-11-13T17:16:50
+-- File created from p_ora.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="p_ora")
+-- PAGE
+-- GRID
+-- GRID
+-- VBOX
+-- PAGE
+-- GRID
+-- GRID
+-- GRID
+-- VBOX
+-- PAGE
+-- TABLE
+-- GRID
+-- GRID
+-- VBOX
+-- PAGE
+-- TABLE
+-- GRID
+-- GRID
+-- VBOX
+-- PAGE
+-- TABLE
+-- GRID
+-- GRID
+-- HBOX
+-- GRID
+-- GRID
+-- GRID
+-- VBOX
+-- PAGE
+-- TABLE
+-- GRID
+-- VBOX
+-- PAGE
+-- FOLDER
+-- LAYOUT
+-- 
+
+  FOLDER pc1
+    PAGE page01( TEXT="Diagnose", ACTION=page01)
+      VBOX vb1
+        GRID gr3
+        {
+           <G sga_diag                                                       >
+           [aa0                                                             ]
+           <                                                                 >
+
+
+        }
+        END -- GRID
+        GRID gr4
+        {
+           <G event_diag                                                     >
+           [aa1                                                             ]
+           <                                                                 >
+
+
+        }
+        END -- GRID
+        GRID gr5
+        {
+           <G hit_diag                                                       >
+           [aa2                                                             ]
+           <                                                                 >
+
+
+        }
+        END -- GRID
+        GRID gr6
+        {
+           <G sql_diag                                                       >
+           [aa3                                                             ]
+           <                                                                 >
+
+
+        }
+        END -- GRID
+        GRID gr7
+        {
+           <G ses_diag                                                       >
+           [aa4                                                             ]
+           <                                                                 >
+
+
+        }
+        END -- GRID
+        GRID gr8
+        {
+           <G tbs_diag                                                       >
+           [aa5                                                             ]
+           <                                                                 >
+
+
+        }
+        END -- GRID
+
+      END -- VBOX
+    END -- PAGE
+    PAGE page02( TEXT="SGA", ACTION=page02)
+      VBOX vb2
+        GRID gr9
+        {
+         <G sga                                                                                    >
+         [aa6                                                                                      ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         <                                                                                         >
+
+
+        }
+        END -- GRID
+        GRID gr10
+        {
+         <G hitratio                                                                               >
+         [aa7                                                                                      ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         <                                                                                         >
+
+
+        }
+        END -- GRID
+      END -- VBOX
+    END -- PAGE
+    PAGE page03( TEXT="Event", ACTION=page03)
+      VBOX vb3
+        GRID gr11
+        {
+         <G system_event                                                                           >
+         [aa8                                                                                      ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         <                                                                                         >
+
+
+        }
+        END -- GRID
+        GRID gr12
+        {
+         <G session_event                                                                          >
+         [aa9                                                                                      ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         <                                                                                         >
+
+
+        }
+        END -- GRID
+        GRID gr13
+        {
+         <G session_wait                                                                           >
+         [ab0                                                                                      ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         [                                                                                         ]
+         <                                                                                         >
+
+
+        }
+        END -- GRID
+      END -- VBOX
+    END -- PAGE
+    PAGE page04( TEXT="Sql Analysis", ACTION=page04)
+      VBOX vb4
+        TABLE   
+        {
+        [ab1    |ab2                                        |ab3         |ab4         |ab5       |ab6       |ab7         ]
+        [ab1    |ab2                                        |ab3         |ab4         |ab5       |ab6       |ab7         ]
+        [ab1    |ab2                                        |ab3         |ab4         |ab5       |ab6       |ab7         ]
+        [ab1    |ab2                                        |ab3         |ab4         |ab5       |ab6       |ab7         ]
+        [ab1    |ab2                                        |ab3         |ab4         |ab5       |ab6       |ab7         ]
+        [ab1    |ab2                                        |ab3         |ab4         |ab5       |ab6       |ab7         ]
+        [ab1    |ab2                                        |ab3         |ab4         |ab5       |ab6       |ab7         ]
+        [ab1    |ab2                                        |ab3         |ab4         |ab5       |ab6       |ab7         ]
+        [ab1    |ab2                                        |ab3         |ab4         |ab5       |ab6       |ab7         ]
+        [ab1    |ab2                                        |ab3         |ab4         |ab5       |ab6       |ab7         ]
+        }
+        END -- TABLE
+        GRID gr14
+        {
+        <G spec                                                                                    >
+        [ab8                                                                                       ]
+        [                                                                                          ]
+        [                                                                                          ]
+        [                                                                                          ]
+        [                                                                                          ]
+        <                                                                                          >
+
+
+        }
+        END -- GRID
+        GRID gr15
+        {
+         ----Rows[ab9    ]----
+
+        }
+        END -- GRID
+      END -- VBOX
+    END -- PAGE
+    PAGE page05( TEXT="Session", ACTION=page05)
+      VBOX vb5
+        TABLE   
+        {
+        [ac0    |ac1       |ac2       |ac3        |ac4     |ac5        |ac6                        ]
+        [ac0    |ac1       |ac2       |ac3        |ac4     |ac5        |ac6                        ]
+        [ac0    |ac1       |ac2       |ac3        |ac4     |ac5        |ac6                        ]
+        [ac0    |ac1       |ac2       |ac3        |ac4     |ac5        |ac6                        ]
+        [ac0    |ac1       |ac2       |ac3        |ac4     |ac5        |ac6                        ]
+        [ac0    |ac1       |ac2       |ac3        |ac4     |ac5        |ac6                        ]
+        [ac0    |ac1       |ac2       |ac3        |ac4     |ac5        |ac6                        ]
+        [ac0    |ac1       |ac2       |ac3        |ac4     |ac5        |ac6                        ]
+        [ac0    |ac1       |ac2       |ac3        |ac4     |ac5        |ac6                        ]
+        [ac0    |ac1       |ac2       |ac3        |ac4     |ac5        |ac6                        ]
+        }
+        END -- TABLE
+        GRID gr16
+        {
+        <G gb13                                                                                     >
+        [ac7                                                                                        ]
+        <                                                                                           >
+
+
+        }
+        END -- GRID
+        GRID gr17
+        {
+         ----Rows[ac8    ]----
+
+        }
+        END -- GRID
+      END -- VBOX
+    END -- PAGE
+    PAGE page06( TEXT="Space Usage", ACTION=page06)
+      VBOX vb6
+        TABLE   
+        {
+        [ac9        |ad0                                      |ad1         |ad2        |ad3       |ad4        |ad5        ]
+        [ac9        |ad0                                      |ad1         |ad2        |ad3       |ad4        |ad5        ]
+        [ac9        |ad0                                      |ad1         |ad2        |ad3       |ad4        |ad5        ]
+        [ac9        |ad0                                      |ad1         |ad2        |ad3       |ad4        |ad5        ]
+        [ac9        |ad0                                      |ad1         |ad2        |ad3       |ad4        |ad5        ]
+        [ac9        |ad0                                      |ad1         |ad2        |ad3       |ad4        |ad5        ]
+        [ac9        |ad0                                      |ad1         |ad2        |ad3       |ad4        |ad5        ]
+        [ac9        |ad0                                      |ad1         |ad2        |ad3       |ad4        |ad5        ]
+        [ac9        |ad0                                      |ad1         |ad2        |ad3       |ad4        |ad5        ]
+        [ac9        |ad0                                      |ad1         |ad2        |ad3       |ad4        |ad5        ]
+        }
+        END -- TABLE
+        HBOX hb1
+          GRID gr18
+          {
+           Tbs Name [ad6         ]
+           File     [ad7                           ]
+           Size     [ad8       ]M
+
+          }
+          END -- GRID
+          GRID gr19
+          {
+           [ad9       ]
+           Max Size [ae0       ]M
+           Inc Size [ae1       ]M
+
+          }
+          END -- GRID
+        END -- HBOX
+        GRID gr20
+        {
+         [ae2       ]
+
+        }
+        END -- GRID
+        GRID gr21
+        {
+         ["   "]
+         ["   "]
+         ["   "]
+         ["   "]
+         ["   "]
+
+        }
+        END -- GRID
+        GRID gr22
+        {
+         ----Rows[ae3    ]----
+
+        }
+        END -- GRID
+
+      END -- VBOX
+    END -- PAGE
+    PAGE page07( TEXT="Parameters", ACTION=page07)
+      VBOX vb7
+        TABLE   
+        {
+        [ae4      |ae5     |ae6       |ae7      |ae8     |ae9                      |af0                 |af1                 ]
+        [ae4      |ae5     |ae6       |ae7      |ae8     |ae9                      |af0                 |af1                 ]
+        [ae4      |ae5     |ae6       |ae7      |ae8     |ae9                      |af0                 |af1                 ]
+        [ae4      |ae5     |ae6       |ae7      |ae8     |ae9                      |af0                 |af1                 ]
+        [ae4      |ae5     |ae6       |ae7      |ae8     |ae9                      |af0                 |af1                 ]
+        [ae4      |ae5     |ae6       |ae7      |ae8     |ae9                      |af0                 |af1                 ]
+        [ae4      |ae5     |ae6       |ae7      |ae8     |ae9                      |af0                 |af1                 ]
+        [ae4      |ae5     |ae6       |ae7      |ae8     |ae9                      |af0                 |af1                 ]
+        [ae4      |ae5     |ae6       |ae7      |ae8     |ae9                      |af0                 |af1                 ]
+        [ae4      |ae5     |ae6       |ae7      |ae8     |ae9                      |af0                 |af1                 ]
+        }
+        END -- TABLE
+        GRID gr23
+        {
+         ----Rows[af2    ]----
+
+        }
+        END -- GRID
+      END -- VBOX
+    END -- PAGE
+  END -- FOLDER
+END
+TABLES gra_file
+
+ATTRIBUTES
+  GROUP sga_diag : sga_diag, TEXT="SGA";
+  LABEL aa0=FORMONLY.sga_info;
+  GROUP event_diag : event_diag, TEXT="Event";
+  LABEL aa1=FORMONLY.event_info;
+  GROUP hit_diag : hit_diag, TEXT="HitRatio";
+  LABEL aa2=FORMONLY.hit_info;
+  GROUP sql_diag : sql_diag, TEXT="Sql";
+  LABEL aa3=FORMONLY.sql_info;
+  GROUP ses_diag : ses_diag, TEXT="Session";
+  LABEL aa4=FORMONLY.ses_info;
+  GROUP tbs_diag : tbs_diag, TEXT="Tablespace";
+  LABEL aa5=FORMONLY.tbs_info;
+  GROUP sga : sga, TEXT="SGA";
+  CANVAS aa6 : c4;
+  GROUP hitratio : hitratio, TEXT="HitRatio";
+  CANVAS aa7 : c5;
+  GROUP system_event : system_event, TEXT="system_event";
+  CANVAS aa8 : c1;
+  GROUP session_event : session_event, TEXT="session_event";
+  CANVAS aa9 : c2;
+  GROUP session_wait : session_wait, TEXT="session_wait";
+  CANVAS ab0 : c3;
+  EDIT ab1=FORMONLY.p4_pid, NOENTRY, TABINDEX=7, TITLE="Pid";
+  EDIT ab2=FORMONLY.p4_sqltext, NOENTRY, TABINDEX=8, TITLE="Sqltext";
+  EDIT ab3=FORMONLY.p4_dr, NOENTRY, TABINDEX=9, TITLE="Disk Reads";
+  EDIT ab4=FORMONLY.p4_bf, NOENTRY, TABINDEX=10, TITLE="Buff Gets";
+  EDIT ab5=FORMONLY.p4_mem, NOENTRY, TABINDEX=11, TITLE="Mem";
+  EDIT ab6=FORMONLY.p4_cpu, NOENTRY, TABINDEX=12, TITLE="Cpu";
+  EDIT ab7=FORMONLY.p4_execs, NOENTRY, TABINDEX=13, TITLE="Execs";
+  GROUP spec : spec, TEXT="Specification";
+  LABEL ab8=FORMONLY.p4_spec;
+  EDIT ab9=FORMONLY.cn4, NOENTRY, TABINDEX=15;
+  EDIT ac0=FORMONLY.p5_sid, NOENTRY, TABINDEX=16, TITLE="sid";
+  EDIT ac1=FORMONLY.p5_serial, NOENTRY, TABINDEX=17, TITLE="serial";
+  EDIT ac2=FORMONLY.p5_dbuser, NOENTRY, TABINDEX=18, TITLE="db_user";
+  EDIT ac3=FORMONLY.p5_osuser, NOENTRY, TABINDEX=19, TITLE="os_user";
+  EDIT ac4=FORMONLY.p5_pid, NOENTRY, TABINDEX=20, TITLE="pid";
+  EDIT ac5=FORMONLY.p5_machine, NOENTRY, TABINDEX=21, TITLE="machine";
+  EDIT ac6=FORMONLY.p5_sqltext, NOENTRY, TABINDEX=22, TITLE="sqltext";
+  GROUP gb13 : gb13, TEXT="detail";
+  LABEL ac7=FORMONLY.p5_detl;
+  EDIT ac8=FORMONLY.cn5, NOENTRY, TABINDEX=24;
+  EDIT ac9=FORMONLY.p6_tbsname, NOENTRY, TABINDEX=25, TITLE="Tbs name";
+  EDIT ad0=FORMONLY.p6_fname, NOENTRY, TABINDEX=26, TITLE="File name";
+  EDIT ad1=FORMONLY.p6_alloc, NOENTRY, TABINDEX=27, TITLE="Alloc(M)";
+  EDIT ad2=FORMONLY.p6_used, NOENTRY, TABINDEX=28, TITLE="Used(M)";
+  EDIT ad3=FORMONLY.p6_free, NOENTRY, TABINDEX=29, TITLE="Free";
+  EDIT ad4=FORMONLY.p6_percent, NOENTRY, TABINDEX=30, TITLE="Percent";
+  EDIT ad5=FORMONLY.p6_autoext, NOENTRY, TABINDEX=31, TITLE="Auto Ext";
+  BUTTONEDIT ad6=FORMONLY.p6_tbs, ACTION=controlp, IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=32;
+  EDIT ad7=FORMONLY.p6_file, NOT NULL, REQUIRED, TABINDEX=33;
+  EDIT ad8=FORMONLY.p6_size, NOT NULL, PICTURE="#####", REQUIRED, TABINDEX=34;
+  CHECKBOX ad9=FORMONLY.p6_ext, TEXT="Auto Extend", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=35;
+  EDIT ae0=FORMONLY.p6_msize, PICTURE="###", TABINDEX=36;
+  EDIT ae1=FORMONLY.p6_isize, PICTURE="###", TABINDEX=37;
+  BUTTON ae2 : add_file, TEXT="Add Datafile";
+  EDIT ae3=FORMONLY.cn6, NOENTRY, TABINDEX=38;
+  EDIT ae4=gra_file.gra01, NOT NULL, REQUIRED, TABINDEX=39, TITLE="name";
+  COMBOBOX ae5=gra_file.gra02, NOT NULL, REQUIRED, TABINDEX=40, TITLE="rlt", ITEMS=(("<","<"),("=","="),(">",">"));
+  EDIT ae6=gra_file.gra03, TABINDEX=41, TITLE="value";
+  COMBOBOX ae7=gra_file.gra04, NOT NULL, REQUIRED, TABINDEX=42, TITLE="catalog", ITEMS=(("SGA","SGA"),("Event","Event"),("HitRatio","HitRatio"),("Sql","Sql"),("Session","Session"),("Tablespace","Tablespace"));
+  CHECKBOX ae8=gra_file.gra05, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=43, TITLE="active";
+  EDIT ae9=gra_file.gra06, TABINDEX=44, TITLE="sql";
+  EDIT af0=gra_file.gra07, TABINDEX=45, TITLE="info";
+  EDIT af1=gra_file.gra08, TABINDEX=46, TITLE="suggestion";
+  EDIT af2=FORMONLY.cn7, NOENTRY, TABINDEX=47;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_p4_sql (FORMONLY.p4_pid, FORMONLY.p4_sqltext, FORMONLY.p4_dr, FORMONLY.p4_bf, FORMONLY.p4_mem, FORMONLY.p4_cpu, FORMONLY.p4_execs)
+  SCREEN RECORD s_p5_ses (FORMONLY.p5_sid, FORMONLY.p5_serial, FORMONLY.p5_dbuser, FORMONLY.p5_osuser, FORMONLY.p5_pid, FORMONLY.p5_machine, FORMONLY.p5_sqltext)
+  SCREEN RECORD s_p6_tbs (FORMONLY.p6_tbsname, FORMONLY.p6_fname, FORMONLY.p6_alloc, FORMONLY.p6_used, FORMONLY.p6_free, FORMONLY.p6_percent, FORMONLY.p6_autoext)
+  SCREEN RECORD s_p7_para (gra_file.gra01, gra_file.gra02, gra_file.gra03, gra_file.gra04, gra_file.gra05, gra_file.gra06, gra_file.gra07, gra_file.gra08)
+END
+-- -------------------------------------------------------------------------
+--  Per_version = '3.10.02-09.12.23(00001)'   #
+-- 
+

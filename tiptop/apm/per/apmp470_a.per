@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp470_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp470_a")
+VBox vb3
+Grid gr4902
+{
+ <G group01                                                                             >
+  Make No.            [sfcislk01           ]
+  W/O No.             [sfb01               ]  W/O Date            [sfb13               ]
+  Group Code          [ima06               ]  Source Code         [ima08               ]
+ <                                                                                      >
+}
+END -- gr4902
+Grid gr4
+{
+ <G gb3                                                                           >
+  Time Area           [abdate      ]—— [aedate    ]
+ <                                                                                >
+}
+END -- gr4
+Grid gr4903
+{
+ <G group02                                                             >
+ [a                              ] [b                               ]
+ [c                              ] [d                               ]
+ [e                              ] [f                               ]
+ <                                                                      >
+}
+END -- gr4903
+Grid gr4904
+{
+[g                                                          ]
+
+
+}
+END -- gr4904
+END -- vb3
+END -- apmp470_a
+
+TABLES
+sfb_file,
+sfci_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfcislk01=sfci_file.sfcislk01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=2, image="zoom";
+Edit sfb13=sfb_file.sfb13, tabIndex=3;
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=4;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=5;
+Group gb3:gb3;
+DateEdit abdate=formonly.abdate type DATE, tabIndex=6;
+DateEdit aedate=formonly.aedate type CHAR, tabIndex=7;
+Group group02:group02, text="Print Data";
+CheckBox a=formonly.a type VARCHAR, tabIndex=8, text="Available Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=9, text="QC Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=10, text="P/R Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=11, text="Purchase Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=12, text="WIP Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type VARCHAR, tabIndex=13, text="Allotted Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type VARCHAR, tabIndex=14, text="Suggested amount include safety stock?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfci_file.sfcislk01,sfb_file.sfb01,sfb_file.sfb13,formonly.ima06,formonly.ima08,formonly.abdate,formonly.aedate,formonly.a,formonly.b,formonly.c,formonly.d,formonly.e,formonly.f,formonly.g)
+END -- INSTRUCTIONS
+

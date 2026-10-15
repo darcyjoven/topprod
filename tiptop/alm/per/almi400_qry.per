@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi400_qry.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox1
+Table ds1
+{
+[liw03 |liw04     |oaj02   |liw05_desc   |liw06     |liw07     |liw08     |liw09                 |liw10                 |liw11                 |liw12                 |liw13                 |liw14                 |liw14_desc   |liw15                 |liw16               |liw18   |liw17    |liw02 ]
+[liw03 |liw04     |oaj02   |liw05_desc   |liw06     |liw07     |liw08     |liw09                 |liw10                 |liw11                 |liw12                 |liw13                 |liw14                 |liw14_desc   |liw15                 |liw16               |liw18   |liw17    |liw02 ]
+[liw03 |liw04     |oaj02   |liw05_desc   |liw06     |liw07     |liw08     |liw09                 |liw10                 |liw11                 |liw12                 |liw13                 |liw14                 |liw14_desc   |liw15                 |liw16               |liw18   |liw17    |liw02 ]
+[liw03 |liw04     |oaj02   |liw05_desc   |liw06     |liw07     |liw08     |liw09                 |liw10                 |liw11                 |liw12                 |liw13                 |liw14                 |liw14_desc   |liw15                 |liw16               |liw18   |liw17    |liw02 ]
+[liw03 |liw04     |oaj02   |liw05_desc   |liw06     |liw07     |liw08     |liw09                 |liw10                 |liw11                 |liw12                 |liw13                 |liw14                 |liw14_desc   |liw15                 |liw16               |liw18   |liw17    |liw02 ]
+
+}
+END -- ds1
+Grid Grid1
+{
+
+ [label1    |liw09_c             ]  [label2    |liw10_c             ]  [label3    |liw11_c             ]  [label4    |liw12_c             ]
+
+ [label5    |liw13_c             ]  [label6    |liw14_c             ]  [label7    |liw14_desc_c        ]  [label8    |liw15_c             ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- Page1
+END -- Folder1
+END -- Form
+
+TABLES
+liw_file
+ATTRIBUTES
+Edit liw03=liw_file.liw03, tabIndex=1, title=%"liw03", not null, scroll;
+Edit liw04=liw_file.liw04, tabIndex=2, title=%"liw04", scroll;
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=16, title=%"oaj02";
+Edit liw05_desc=formonly.liw05_desc type CHAR, tabIndex=17, title=%"liw05_desc";
+Edit liw06=liw_file.liw06, tabIndex=3, title=%"liw06", scroll;
+Edit liw07=liw_file.liw07, tabIndex=4, title=%"liw07", scroll;
+Edit liw08=liw_file.liw08, tabIndex=5, title=%"liw08", scroll;
+Edit liw09=liw_file.liw09, tabIndex=6, title=%"liw09", scroll;
+Edit liw10=liw_file.liw10, tabIndex=7, title=%"liw10", scroll;
+Edit liw11=liw_file.liw11, tabIndex=8, title=%"liw11", scroll;
+Edit liw12=liw_file.liw12, tabIndex=9, title=%"liw12", scroll;
+Edit liw13=liw_file.liw13, tabIndex=10, title=%"liw13", scroll;
+Edit liw14=liw_file.liw14, tabIndex=11, title=%"liw14", scroll;
+Edit liw14_desc=formonly.liw14_desc type CHAR, tabIndex=18, title=%"liw14_desc";
+Edit liw15=liw_file.liw15, tabIndex=12, title=%"liw15", scroll;
+Edit liw16=liw_file.liw16, tabIndex=13, title=%"liw16", scroll;
+Edit liw18=formonly.liw18 type VARCHAR, tabIndex=27, title=%"liw18";
+CheckBox liw17=liw_file.liw17, tabIndex=14, default = "N", title=%"liw17", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit liw02=liw_file.liw02, tabIndex=15, title=%"liw02", scroll;
+Label label1:Label1, text=%"Label1";
+Edit liw09_c=formonly.liw09_c type CHAR, tabIndex=19;
+Label label2:Label2, text=%"Label2";
+Edit liw10_c=formonly.liw10_c type CHAR, tabIndex=20;
+Label label3:Label3, text=%"Label3";
+Edit liw11_c=formonly.liw11_c type CHAR, tabIndex=21;
+Label label4:Label4, text=%"Label4";
+Edit liw12_c=formonly.liw12_c type CHAR, tabIndex=22;
+Label label5:Label5, text=%"Label5";
+Edit liw13_c=formonly.liw13_c type CHAR, tabIndex=23;
+Label label6:Label6, text=%"Label6";
+Edit liw14_c=formonly.liw14_c type CHAR, tabIndex=24;
+Label label7:Label7, text=%"Label7";
+Edit liw14_desc_c=formonly.liw14_desc_c type CHAR, tabIndex=25;
+Label label8:Label8, text=%"Label8";
+Edit liw15_c=formonly.liw15_c type CHAR, tabIndex=26;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_liw(liw_file.liw03,liw_file.liw04,formonly.oaj02,formonly.liw05_desc,liw_file.liw06,liw_file.liw07,liw_file.liw08,liw_file.liw09,liw_file.liw10,liw_file.liw11,liw_file.liw12,liw_file.liw13,liw_file.liw14,formonly.liw14_desc,liw_file.liw15,liw_file.liw16,formonly.liw18,liw_file.liw17,liw_file.liw02)
+SCREEN RECORD Undefined(formonly.liw09_c,formonly.liw10_c,formonly.liw11_c,formonly.liw12_c,formonly.liw13_c,formonly.liw14_c,formonly.liw14_desc_c,formonly.liw15_c)
+END -- INSTRUCTIONS
+

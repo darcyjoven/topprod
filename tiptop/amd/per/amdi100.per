@@ -1,0 +1,161 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdi100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amdi100")
+VBox VBox1
+Folder pc685
+Page page01(text="Main")
+HBox HBox1
+Grid gr3669
+{
+ Accounts #                         [amd01               ][amd02]
+ Source Category                    [amd021    ]
+ Voucher #                          [amd28               ]
+ Declaring Dept                     [amd22     ][gem02     ]
+ Data Year-Month                    [amd1]-[am]
+[amd29                              ]
+ POS No.                            [amd126    ]
+ Invoice Copies                     [amd031              ]
+ Invoice #                          [amd03               ]
+ Ending Invoice #                   [amd032              ]
+ Voucher Date                       [amd05       ]
+ Counterpart Uniform#               [amd04               ]
+ Issue Type                         [amd033              ]
+ Format #                           [amd171    ]
+ Deduction #                        [amd17     ]
+ Tax Type                           [amd172    ]
+ Sales Amount                       [amd08               ]
+ Business Tax                       [amd07               ]
+ With-Tax Amount                    [amd06               ]
+ Additional Remark                              [amd]
+
+}
+END -- gr3669
+Grid gr3670
+{
+[amd30               ]            [imgmksg]
+ Tax ID              [ama03     ] [       ]
+ Uniform#            [ama02               ]
+ Plant No.           [amd25               ]
+ Declaring Year-Month[amd2]-[a1]
+ Serial Number       [amd175    ]
+ Sells the fixed     [amd44              ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr3670
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr3671
+{
+ Record Owner        [amduser   ] Last Modified by    [amdmodu   ]
+ Department          [amdgrup   ] Create/Modify Date  [amddate   ]
+ Record Orig.        [amdoriu   ]
+ Dept Orig.          [amdorig   ]
+}
+END -- gr3671
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[amdud01                       ] userdefined_field07[amdud07        ] userdefined_field13[amdud13        ]
+                    [                              ] userdefined_field08[amdud08        ] userdefined_field14[amdud14        ]
+ userdefined_field02[amdud02        ]                userdefined_field09[amdud09        ] userdefined_field15[amdud15        ]
+ userdefined_field03[amdud03        ]                userdefined_field10[amdud10        ]
+ userdefined_field04[amdud04        ]                userdefined_field11[amdud11        ]
+ userdefined_field05[amdud05        ]                userdefined_field12[amdud12        ]
+ userdefined_field06[amdud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc685
+Grid gr3672
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3672
+END -- VBox1
+END -- amdi100
+
+TABLES
+amd_file
+ATTRIBUTES
+Edit amd01=amd_file.amd01, tabIndex=1, noEntry, not null, required;
+Edit amd02=amd_file.amd02, tabIndex=2, noEntry, not null, required;
+ComboBox amd021=amd_file.amd021, tabIndex=3, noEntry, not null, required, items=(("1", "G/L"),("2", "A/P Allowance"),("3", "A/R"),("4", "Other"),("5", "A/P"),("6", "Org. Business Data"));
+Edit amd28=amd_file.amd28, tabIndex=4;
+ButtonEdit amd22=amd_file.amd22, action=controlp, tabIndex=5, not null, image="zoom", comment="<^P>Query Department";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=6, noEntry;
+Edit amd1=amd_file.amd173, tabIndex=7, not null, required;
+Edit am=amd_file.amd174, tabIndex=8, not null, required;
+CheckBox amd29=amd_file.amd29, tabIndex=9, text="CHECK", not null, required, valueUnchecked = 2;
+Edit amd126=amd_file.amd126, tabIndex=505;
+ComboBox amd031=amd_file.amd031, tabIndex=49, items=(("0", "Receipt of Park"),("2", "Duplicate"),("3", "Triplicate"),("4", "Receipt"),("5", "Other Voucher"),("6", "Cash Register"),("X", "No"));
+Edit amd03=amd_file.amd03, tabIndex=10, comment="Enter Business tax prepaid by customs receipt when Decl Fm is 28";
+Edit amd032=amd_file.amd032, tabIndex=504;
+DateEdit amd05=amd_file.amd05, tabIndex=11, not null;
+Edit amd04=amd_file.amd04, tabIndex=12;
+ComboBox amd033=amd_file.amd033, tabIndex=503, queryEditable, items=(("1", "Computer-Issued"),("2", "Manually Open"));
+ComboBox amd171=amd_file.amd171, tabIndex=13, queryEditable, comment="PUR: 21/22/23/24/25/26/27/28/29 SLS: 31/32/33/34/35/36/37/38", items=(("21", "21"),("22", "22"),("23", "23"),("24", "24"),("25", "25"),("26", "26"),("27", "27"),("28", "28"),("29", "29"),("31", "31"),("32", "32"),("33", "33"),("34", "34"),("35", "35"),("36", "36"),("37", "37"),("38", "38"));
+ComboBox amd17=amd_file.amd17, tabIndex=14, queryEditable, items=(("1", "Deductible Cost and Expense"),("2", "Creditable Fixed Asset"),("3", "No deductible Cost and Expense"),("4", "No Creditable Fixed Asset"));
+ComboBox amd172=amd_file.amd172, tabIndex=15, not null, required, items=(("1", "Taxable"),("2", "0-Tax Rate"),("3", "Exempted"),("4", "Taxable and Exempted"),("D", "Blank"),("F", "void"));
+Edit amd08=amd_file.amd08, tabIndex=16, not null, required, comment="Enter Tax Principal when Declaration Format is 28";
+Edit amd07=amd_file.amd07, tabIndex=17, not null, required, color = yellow;
+Edit amd06=amd_file.amd06, tabIndex=18, noEntry, not null, required;
+Edit amd=amd_file.amd09, tabIndex=19, upShift, comment="A.Collected Data";
+CheckBox amd30=amd_file.amd30, tabIndex=20, text="Confirm", noEntry, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type VARCHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit ama03=formonly.ama03 type VARCHAR, tabIndex=22, noEntry;
+Edit ama02=formonly.ama02 type VARCHAR, tabIndex=23, noEntry;
+Edit amd25=amd_file.amd25, tabIndex=24, noEntry;
+Edit amd2=amd_file.amd26, tabIndex=25, noEntry;
+Edit a1=amd_file.amd27, tabIndex=26, noEntry;
+Edit amd175=amd_file.amd175, tabIndex=27, noEntry;
+ComboBox amd44=amd_file.amd44, tabIndex=50, queryEditable, comment="PUR: 21/22/23/24/25/26/27/28/29 SLS: 31/32/33/34/35/36/37/38", items=(("1", "Sales land "),("2", "Sells other fixed assets "),("3", "Blank "));
+Edit amduser=amd_file.amduser, tabIndex=28, noEntry;
+Edit amdmodu=amd_file.amdmodu, tabIndex=29, noEntry;
+Edit amdgrup=amd_file.amdgrup, tabIndex=30, noEntry;
+DateEdit amddate=amd_file.amddate, tabIndex=31, noEntry;
+Edit amdoriu=amd_file.amdoriu, tabIndex=501, noEntry;
+Edit amdorig=amd_file.amdorig, tabIndex=502, noEntry;
+TextEdit amdud01=amd_file.amdud01, tabIndex=34, stretch=NONE;
+Edit amdud07=amd_file.amdud07, tabIndex=35;
+DateEdit amdud13=amd_file.amdud13, tabIndex=36;
+Edit amdud08=amd_file.amdud08, tabIndex=37;
+DateEdit amdud14=amd_file.amdud14, tabIndex=38;
+Edit amdud02=amd_file.amdud02, tabIndex=39;
+Edit amdud09=amd_file.amdud09, tabIndex=40;
+DateEdit amdud15=amd_file.amdud15, tabIndex=41;
+Edit amdud03=amd_file.amdud03, tabIndex=42;
+Edit amdud10=amd_file.amdud10, tabIndex=43;
+Edit amdud04=amd_file.amdud04, tabIndex=44;
+Edit amdud11=amd_file.amdud11, tabIndex=45;
+Edit amdud05=amd_file.amdud05, tabIndex=46;
+Edit amdud12=amd_file.amdud12, tabIndex=47;
+Edit amdud06=amd_file.amdud06, tabIndex=48;
+Edit cnt=formonly.cnt type VARCHAR, tabIndex=32;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(amd_file.amd01,amd_file.amd02,amd_file.amd021,amd_file.amd28,amd_file.amd22,formonly.gem02,amd_file.amd173,amd_file.amd174,amd_file.amd29,amd_file.amd031,amd_file.amd03,amd_file.amd05,amd_file.amd04,amd_file.amd171,amd_file.amd17,amd_file.amd172,amd_file.amd08,amd_file.amd07,amd_file.amd06,amd_file.amd09,amd_file.amd30,formonly.imgmksg,formonly.ama03,formonly.ama02,amd_file.amd25,amd_file.amd26,amd_file.amd27,amd_file.amd175,amd_file.amd44,amd_file.amduser,amd_file.amdmodu,amd_file.amdgrup,amd_file.amddate,amd_file.amdoriu,amd_file.amdorig,amd_file.amdud01,amd_file.amdud07,amd_file.amdud13,amd_file.amdud08,amd_file.amdud14,amd_file.amdud02,amd_file.amdud09,amd_file.amdud15,amd_file.amdud03,amd_file.amdud10,amd_file.amdud04,amd_file.amdud11,amd_file.amdud05,amd_file.amdud12,amd_file.amdud06,formonly.cnt,amd_file.amd033,amd_file.amd032,amd_file.amd126)
+END -- INSTRUCTIONS
+

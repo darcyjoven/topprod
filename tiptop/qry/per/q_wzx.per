@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_wzx.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_ima\n")
+Grid gr3714
+{
+ <T s_ima                                  >
+ [check |wzx01       |wxz02               ]
+ [check |wzx01       |wxz02               ]
+ [check |wzx01       |wxz02               ]
+ [check |wzx01       |wxz02               ]
+ [check |wzx01       |wxz02               ]
+ [check |wzx01       |wxz02               ]
+ [check |wzx01       |wxz02               ]
+ [check |wzx01       |wxz02               ]
+ [check |wzx01       |wxz02               ]
+ [check |wzx01       |wxz02               ]
+ <                                         >
+
+}
+END -- gr3714
+END -- q_aac
+
+ATTRIBUTES
+Table s_ima:s_ima;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit wzx01=formonly.wzx01 type VARCHAR, tabIndex=2, title="User No.", noEntry;
+Edit wxz02=formonly.wxz02 type VARCHAR, tabIndex=3, title="User Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wzx(formonly.check,formonly.wzx01,formonly.wxz02)
+END -- INSTRUCTIONS
+

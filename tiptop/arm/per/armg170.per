@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armg170.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"armr170")
+VBox VBox1
+Grid gr330
+{
+ <G group01                                             >
+  RMA Re-Delivery No. [rme01               ]
+  Document Date       [rme02               ]
+  Customer No.        [rme03               ]
+ <                                                      >
+ <G group02                                             >
+  [a                                                 ]
+  [b                                                 ]
+ <                                                      >
+}
+END -- gr330
+Grid gr331
+{
+[more                                     ]
+
+
+}
+END -- gr331
+END -- VBox1
+END -- armr170
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit rme01=formonly.rme01 type VARCHAR, tabIndex=1, upShift;
+DateEdit rme02=formonly.rme02 type DATE, tabIndex=2;
+ButtonEdit rme03=formonly.rme03 type VARCHAR, action=controlp, tabIndex=3, image="zoom", upShift;
+Group group02:group02, text="INPUT";
+CheckBox a=formonly.a type VARCHAR, tabIndex=4, text="Print Part Name Spec", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=5, text="Print MISC Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rme01,formonly.rme02,formonly.rme03,formonly.a,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

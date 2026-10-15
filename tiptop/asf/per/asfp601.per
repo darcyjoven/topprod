@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp601")
+Grid Grid1
+{
+ <G group01                                  >
+  W/O No.             [sfb01               ]
+  Prod.Item           [sfb05               ]
+ <                                           >
+ <G group02                                  >
+ [a                                       ]
+ <                                           >
+
+}
+END -- Grid1
+END -- asfp601
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfb01=formonly.sfb01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit sfb05=formonly.sfb05 type CHAR, action=controlp, tabIndex=2, image="zoom";
+Group group02:group02, text="INPUT";
+CheckBox a=formonly.a type VARCHAR, tabIndex=3, text="Re-confirm before delete?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfb01,formonly.sfb05,formonly.a)
+END -- INSTRUCTIONS
+

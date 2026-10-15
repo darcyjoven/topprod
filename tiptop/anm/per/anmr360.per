@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr360.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmr360")
+VBox VBox1
+Group group01(text="QBE")
+Grid Grid1
+{
+ Bank No. QBE                  [nma01                         ]
+
+}
+END -- Grid1
+END -- group01
+Group group02(text="INPUT")
+Grid Grid2
+{
+ Base Date                       [sdate                         ]
+ Base Currency                   [scur                          ]
+ Base Exchange Rate              [sex                           ]
+ Adjustment Exchange Profit Acct [nms12                         ]
+ Adjustment Exchange Loss Account[nms13                         ]
+
+[chg                                                        ]
+
+}
+END -- Grid2
+END -- group02
+Grid Grid3
+{
+[more                                                        ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- anmr360
+
+TABLES
+nms_file
+ATTRIBUTES
+Edit nma01=formonly.nma01 type CHAR, tabIndex=1;
+DateEdit sdate=formonly.sdate type DATE, tabIndex=2;
+ButtonEdit scur=formonly.scur type DATE, action=controlp, tabIndex=3, image="zoom";
+Edit sex=formonly.sex type CHAR, tabIndex=4;
+ButtonEdit nms12=formonly.nms12 type like nms_file.nms12, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Account  ";
+ButtonEdit nms13=formonly.nms13 type like nms_file.nms13, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Account  ";
+CheckBox chg=formonly.chg type CHAR, tabIndex=6, text="Generate Transaction Log?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nma01,formonly.sdate,formonly.scur,formonly.sex,formonly.nms12,formonly.chg,formonly.more,formonly.nms13)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amrp600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amrp600")
+VBox VBox1
+Group group01
+Grid gr3879
+{
+ Version Number                                            [msu000    ]
+ PR/PO Delivery in advance allowed (Reschedule) Adjust Days[po_days   ]
+}
+END -- gr3879
+END -- group01
+Table s_msv
+{
+[msv031     |plantname              |msv032               ]
+[msv031     |plantname              |msv032               ]
+[msv031     |plantname              |msv032               ]
+[msv031     |plantname              |msv032               ]
+[msv031     |plantname              |msv032               ]
+[msv031     |plantname              |msv032               ]
+[msv031     |plantname              |msv032               ]
+[msv031     |plantname              |msv032               ]
+[msv031     |plantname              |msv032               ]
+[msv031     |plantname              |msv032               ]
+
+}
+END -- s_msv
+END -- VBox1
+END -- amrp600
+
+ATTRIBUTES
+Edit msu000=formonly.msu000 type CHAR, tabIndex=1, not null, required;
+Edit po_days=formonly.po_days type CHAR, tabIndex=2, comment="0:No Advance Delivery Date -1:Advance days by Item Master";
+ButtonEdit msv031=formonly.msv031 type CHAR, action=controlp, tabIndex=3, title="Plant No.", not null, required, image="zoom", comment="<^P> Qry Plant Code";
+Edit plantname=formonly.plantname type CHAR, tabIndex=4, title="Plant Name", noEntry;
+ButtonEdit msv032=formonly.msv032 type CHAR, action=controlp, tabIndex=5, title="MRP Version", not null, required, image="zoom", comment="<^P> Qry Sub-Plant MRP Version";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_msv(formonly.msv031,formonly.plantname,formonly.msv032)
+SCREEN RECORD Undefined(formonly.msu000,formonly.po_days)
+END -- INSTRUCTIONS
+

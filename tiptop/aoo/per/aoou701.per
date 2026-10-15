@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aoou701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aoou701")
+VBox VBox1
+Grid gr4721
+{
+  Document Selection: [tr]
+
+  [dummy01                      ][dummy31                         ]
+  [dummy02                      ][dummy32                         ]
+  [dummy03                      ][dummy41                         ]
+  [dummy04                      ][dummy42                         ]
+  [dummy05                      ][dummy43                         ]
+  [dummy06                      ][dummy44                         ]
+  [dummy07                      ][dummy45                         ]
+  [dummy08                      ][dummy46                         ]
+  [dummy11                      ][dummy51                         ]
+  [dummy12                      ][dummy52                         ]
+  [dummy21                      ][dummy61                         ]
+  [dummy22                      ][dummy62                         ]
+  [dummy23                      ][dummy73                         ]
+  [dummy24                      ][dummy74                         ]
+ <G group01                                                         >
+  Initial No.         [bno                     ]
+  Ending No.          [eno                     ]
+  Initial Digits      [bd]
+  Ending digit        [ed]
+  Data Date QBE       [bdate       ] To              [edate       ]
+  [d                                 ]
+  [y                                 ]
+ <                                                                  >
+
+
+}
+END -- gr4721
+END -- VBox1
+END -- aoou701
+
+ATTRIBUTES
+Edit tr=formonly.tr_seq type SMALLINT, tabIndex=1;
+Label dummy01:dummy01, text="(1)Item No.";
+Label dummy31:dummy31, text="(31)A/P Account No.           ";
+Label dummy02:dummy02, text="(2)Transfer Note#";
+Label dummy32:dummy32, text="(32)Payment Slip #            ";
+Label dummy03:dummy03, text="(3)Borrowing Note No.         ";
+Label dummy41:dummy41, text="(41)Quotation No.             ";
+Label dummy04:dummy04, text="(4)Repaying Note #            ";
+Label dummy42:dummy42, text="(42)Sales Order#              ";
+Label dummy05:dummy05, text="(5)Scrap Note#                ";
+Label dummy43:dummy43, text="(43)Delivery Note No.         ";
+Label dummy06:dummy06, text="(6)W/O No.                    ";
+Label dummy44:dummy44, text="(44)Sales/Return Note#        ";
+Label dummy07:dummy07, text="(7)Inventory Taking Label #   ";
+Label dummy45:dummy45, text="(45)Invoice #                 ";
+Label dummy08:dummy08, text="(8)Transfer Note#             ";
+Label dummy46:dummy46, text="(46)A/R Account No.           ";
+Label dummy11:dummy11, text="(11)ECR #                     ";
+Label dummy51:dummy51, text="(51)voucher No.               ";
+Label dummy12:dummy12, text="(12)ECN No.                   ";
+Label dummy52:dummy52, text="(52)Voucher General No.       ";
+Label dummy21:dummy21, text="(21)P/R No.                   ";
+Label dummy61:dummy61, text="(61)TLFSource Doc #           ";
+Label dummy22:dummy22, text="(22)P/O No.                   ";
+Label dummy62:dummy62, text="(62)TLFTarget Doc No.         ";
+Label dummy23:dummy23, text="(23)Receipt#                  ";
+Label dummy73:dummy73, text="(73)Advance Purchase Order No.";
+Label dummy24:dummy24, text="(24)STI/MR #                  ";
+Label dummy74:dummy74, text="(74)Bill Retired #            ";
+Group group01:group01;
+Edit bno=formonly.bno type VARCHAR, tabIndex=2;
+Edit eno=formonly.eno type VARCHAR, tabIndex=3;
+Edit bd=formonly.bd type VARCHAR, tabIndex=4;
+Edit ed=formonly.ed type VARCHAR, tabIndex=5;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=6;
+DateEdit edate=formonly.edate type DATE, tabIndex=7;
+CheckBox d=formonly.d type CHAR, tabIndex=8, text="Sequential Check", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox y=formonly.y type CHAR, tabIndex=9, text="Print Exist NO.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tr_seq,formonly.bno,formonly.eno,formonly.bd,formonly.ed,formonly.bdate,formonly.edate,formonly.d,formonly.y)
+END -- INSTRUCTIONS
+

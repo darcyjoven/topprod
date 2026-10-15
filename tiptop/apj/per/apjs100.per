@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjs100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjs100")
+Group reason(text="reason")
+Grid gr1
+{
+  demand of material    [pju01              ] [azf03_1       ]
+  demand of laber       [pju02              ] [azf03_2       ]
+  demand of facility    [pju03              ] [azf03_3       ]
+  demand of cost        [pju04              ] [azf03_4       ]
+
+
+}
+END -- gr1
+END -- reason
+END -- apjs100
+
+TABLES
+pju_file
+ATTRIBUTES
+ButtonEdit pju01=pju_file.pju01, action=controlp, tabIndex=1, image="zoom.png";
+Edit azf03_1=formonly.azf03_1 type CHAR, tabIndex=2, noEntry;
+ButtonEdit pju02=pju_file.pju02, action=controlp, tabIndex=3, image="zoom.png";
+Edit azf03_2=formonly.azf03_2 type CHAR, tabIndex=4, noEntry;
+ButtonEdit pju03=pju_file.pju03, action=controlp, tabIndex=5, image="zoom.png";
+Edit azf03_3=formonly.azf03_3 type CHAR, tabIndex=6, noEntry;
+ButtonEdit pju04=pju_file.pju04, action=controlp, tabIndex=7, image="zoom.png";
+Edit azf03_4=formonly.azf03_4 type CHAR, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pju_file.pju01,formonly.azf03_1,pju_file.pju02,formonly.azf03_2,pju_file.pju03,formonly.azf03_3,pju_file.pju04,formonly.azf03_4)
+END -- INSTRUCTIONS
+

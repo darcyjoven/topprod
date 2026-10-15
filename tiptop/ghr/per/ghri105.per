@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri105.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hram02    |hraa02        |hram01       |hrag07          |hram03    |hram04      |hram15        |hram05  |hram06      |hram07  |hram08  |hram09  |hram10      |hram14       |hram11  |hram12  |hram13             ]
+[hram02    |hraa02        |hram01       |hrag07          |hram03    |hram04      |hram15        |hram05  |hram06      |hram07  |hram08  |hram09  |hram10      |hram14       |hram11  |hram12  |hram13             ]
+[hram02    |hraa02        |hram01       |hrag07          |hram03    |hram04      |hram15        |hram05  |hram06      |hram07  |hram08  |hram09  |hram10      |hram14       |hram11  |hram12  |hram13             ]
+[hram02    |hraa02        |hram01       |hrag07          |hram03    |hram04      |hram15        |hram05  |hram06      |hram07  |hram08  |hram09  |hram10      |hram14       |hram11  |hram12  |hram13             ]
+[hram02    |hraa02        |hram01       |hrag07          |hram03    |hram04      |hram15        |hram05  |hram06      |hram07  |hram08  |hram09  |hram10      |hram14       |hram11  |hram12  |hram13             ]
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+  ----------------[label|cn2     ]------------------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hram02=formonly.hram02 type VARCHAR, action=controlp, tabIndex=1, title=%"hram02", not null, required, image="zoom";
+Edit hraa02=formonly.hraa02 type VARCHAR, tabIndex=2, title=%"hraa02", noEntry;
+ButtonEdit hram01=formonly.hram01 type VARCHAR, action=controlp, tabIndex=3, title=%"hram01", not null, required, image="zoom";
+Edit hrag07=formonly.hrag07 type VARCHAR, tabIndex=4, title=%"hrag07", noEntry;
+Edit hram03=formonly.hram03 type VARCHAR, tabIndex=5, title=%"hram03";
+Edit hram04=formonly.hram04 type INTEGER, tabIndex=6, title=%"hram04", not null, required;
+Edit hram15=formonly.hram15 type VARCHAR, tabIndex=17, title=%"hram15", noEntry;
+CheckBox hram05=formonly.hram05 type VARCHAR, tabIndex=7, title=%"hram05", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox hram06=formonly.hram06 type VARCHAR, tabIndex=8, title=%"hram06", items=(("YYYY", "YYYY"),("YY", "YY"));
+CheckBox hram07=formonly.hram07 type VARCHAR, tabIndex=9, title=%"hram07", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hram08=formonly.hram08 type VARCHAR, tabIndex=10, title=%"hram08", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hram09=formonly.hram09 type VARCHAR, tabIndex=11, title=%"hram09", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox hram10=formonly.hram10 type VARCHAR, tabIndex=12, title=%"hram10", items=(("1", "kongge"),("2", "xiahuaxian"));
+Edit hram14=formonly.hram14 type VARCHAR, tabIndex=13, title=%"hram14", noEntry;
+CheckBox hram11=formonly.hram11 type VARCHAR, tabIndex=14, title=%"hram11", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hram12=formonly.hram12 type VARCHAR, tabIndex=15, title=%"hram12", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+TextEdit hram13=formonly.hram13 type VARCHAR, tabIndex=16, title=%"hram13";
+Label label:Label1, text=%"Label1";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hram(formonly.hram02,formonly.hraa02,formonly.hram01,formonly.hrag07,formonly.hram03,formonly.hram04,formonly.hram15,formonly.hram05,formonly.hram06,formonly.hram07,formonly.hram08,formonly.hram09,formonly.hram10,formonly.hram14,formonly.hram11,formonly.hram12,formonly.hram13)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

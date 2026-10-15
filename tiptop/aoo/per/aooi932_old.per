@@ -1,0 +1,121 @@
+----------------------------------------------------------------------------------
+-- $Id:  aooi932.per created 2009-12-17T11:11:02
+-- File created from aooi932.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="aooi932")
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  FOLDER folder01
+    PAGE page01( TEXT="營運中心")
+      VBOX vb3
+        HBOX hb4
+          TABLE   tree
+          {
+          [aa0     |aa1     ]
+          [aa0     |aa1     ]
+          [aa0     |aa1     ]
+          [aa0     |aa1     ]
+          [aa0     |aa1     ]
+          [aa0     |aa1     ]
+          [aa0     |aa1     ]
+          [aa0     |aa1     ]
+          [aa0     |aa1     ]
+          [aa0     |aa1     ]
+          [aa0     |aa1     ]
+          [aa0     |aa1     ]
+          [aa0     |aa1     ]
+          }
+          END -- TABLE
+          GRID gr6
+          {
+
+          [aa2    ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          }
+          END -- GRID
+          VBOX vb13
+            GRID gr2387
+            {
+             Logistics Code  [aa3       ]
+             Logestic Name   [aa4       ]
+
+
+            }
+            END -- GRID
+            TABLE   s_azw
+            {
+            [aa5       |aa6     ]
+            [aa5       |aa6     ]
+            [aa5       |aa6     ]
+            [aa5       |aa6     ]
+            [aa5       |aa6     ]
+            [aa5       |aa6     ]
+            [aa5       |aa6     ]
+            [aa5       |aa6     ]
+            [aa5       |aa6     ]
+            [aa5       |aa6     ]
+            [aa5       |aa6     ]
+            [aa5       |aa6     ]
+            [aa5       |aa6     ]
+            }
+            END -- TABLE
+          END -- VBOX
+        END -- HBOX
+        GRID gr2388
+        {
+          ---------- Rows [aa7   ] / [aa8   ] ----------
+
+
+
+        }
+        END -- GRID
+      END -- VBOX
+    END -- PAGE
+  END -- FOLDER
+END
+TABLES azw_file
+
+ATTRIBUTES
+  EDIT aa0=FORMONLY.Col14, TABINDEX=5, TITLE="Col2";
+  EDIT aa1=FORMONLY.Col13, TABINDEX=6, TITLE="Col1";
+  BUTTON aa2 : addchild, TEXT=">", IMAGE="next2";
+  BUTTONEDIT aa3=azw_file.azw07, ACTION=controlp, COMMENT="<^P>Query Department", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=3;
+  EDIT aa4=FORMONLY.azp02n TYPE VARCHAR, NOENTRY, TABINDEX=4;
+  BUTTONEDIT aa5=azw_file.azw01, ACTION=controlp, COMMENT="<^P>Query Department", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=7, TITLE="Sub-Dept.";
+  EDIT aa6=FORMONLY.azp02, NOENTRY, TABINDEX=8, TITLE="Desc.";
+  EDIT aa7=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=1;
+  EDIT aa8=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=2;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD tree (FORMONLY.Col14, FORMONLY.Col13)
+  SCREEN RECORD s_azw (azw_file.azw01, FORMONLY.azp02)
+END

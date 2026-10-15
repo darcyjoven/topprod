@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi178.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi178")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1374
+{
+ Maintainment Group            [obv01     ][obv012              ]
+ Mileages that drived(km)      [obv04     ]
+ Years that drived             [obv05     ]
+}
+END -- gr1374
+END -- page01
+END -- folder01
+Table s_obv
+{
+[obv02     |obv03                  |obu02                     |obvac]
+[obv02     |obv03                  |obu02                     |obvac]
+[obv02     |obv03                  |obu02                     |obvac]
+[obv02     |obv03                  |obu02                     |obvac]
+[obv02     |obv03                  |obu02                     |obvac]
+[obv02     |obv03                  |obu02                     |obvac]
+[obv02     |obv03                  |obu02                     |obvac]
+[obv02     |obv03                  |obu02                     |obvac]
+[obv02     |obv03                  |obu02                     |obvac]
+[obv02     |obv03                  |obu02                     |obvac]
+
+}
+END -- s_obv
+Grid gr1375
+{
+ ----------Rows [cnt   ]/[cn2   ] ----------
+
+}
+END -- gr1375
+END -- VBox1
+END -- atmi178
+
+TABLES
+obv_file,
+obu_file
+ATTRIBUTES
+Edit obv01=obv_file.obv01, tabIndex=1, not null, required;
+Edit obv012=obv_file.obv012, tabIndex=2;
+Edit obv04=obv_file.obv04, tabIndex=3;
+Edit obv05=obv_file.obv05, tabIndex=4;
+Edit obv02=obv_file.obv02, tabIndex=5, title="Line No", not null, required;
+ButtonEdit obv03=obv_file.obv03, action=controlp, tabIndex=6, title="Maintainment Item", not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Detail <^O>Copy Previous Record! ";
+Edit obu02=obu_file.obu02, tabIndex=7, title="Description", noEntry;
+CheckBox obvac=obv_file.obvacti, tabIndex=8, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_obv(obv_file.obv02,obv_file.obv03,obu_file.obu02,obv_file.obvacti)
+SCREEN RECORD Undefined(obv_file.obv01,obv_file.obv012,obv_file.obv04,obv_file.obv05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

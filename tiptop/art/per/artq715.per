@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq715.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artq715")
+VBox vb2
+Group gb1(text="Counting List")
+Table s_ruu
+{
+[ruuplant|ruuplan1|ruu01   |ruu02   |ruu03   |ruu04   |ruu04_de|jce02|ruu05   |ruu05_de|ruu06   |ruu900  |ruuconf |ruucond |ruucont |ruuconu |ruuconu_|ruucrat |ruudate |ruugrup |ruumodu |ruuuser |ruuacti ]
+[ruuplant|ruuplan1|ruu01   |ruu02   |ruu03   |ruu04   |ruu04_de|jce02|ruu05   |ruu05_de|ruu06   |ruu900  |ruuconf |ruucond |ruucont |ruuconu |ruuconu_|ruucrat |ruudate |ruugrup |ruumodu |ruuuser |ruuacti ]
+[ruuplant|ruuplan1|ruu01   |ruu02   |ruu03   |ruu04   |ruu04_de|jce02|ruu05   |ruu05_de|ruu06   |ruu900  |ruuconf |ruucond |ruucont |ruuconu |ruuconu_|ruucrat |ruudate |ruugrup |ruumodu |ruuuser |ruuacti ]
+[ruuplant|ruuplan1|ruu01   |ruu02   |ruu03   |ruu04   |ruu04_de|jce02|ruu05   |ruu05_de|ruu06   |ruu900  |ruuconf |ruucond |ruucont |ruuconu |ruuconu_|ruucrat |ruudate |ruugrup |ruumodu |ruuuser |ruuacti ]
+[ruuplant|ruuplan1|ruu01   |ruu02   |ruu03   |ruu04   |ruu04_de|jce02|ruu05   |ruu05_de|ruu06   |ruu900  |ruuconf |ruucond |ruucont |ruuconu |ruuconu_|ruucrat |ruudate |ruugrup |ruumodu |ruuuser |ruuacti ]
+
+}
+END -- s_ruu
+END -- gb1
+Group gb2(text="Counting Details")
+Table s_ruv
+{
+[ruv02     |ruv03     |ruv04     |ruv04_desc|ruv05     |ruv05_desc|ruv06     |ruv10     ]
+[ruv02     |ruv03     |ruv04     |ruv04_desc|ruv05     |ruv05_desc|ruv06     |ruv10     ]
+[ruv02     |ruv03     |ruv04     |ruv04_desc|ruv05     |ruv05_desc|ruv06     |ruv10     ]
+[ruv02     |ruv03     |ruv04     |ruv04_desc|ruv05     |ruv05_desc|ruv06     |ruv10     ]
+[ruv02     |ruv03     |ruv04     |ruv04_desc|ruv05     |ruv05_desc|ruv06     |ruv10     ]
+
+}
+END -- s_ruv
+END -- gb2
+Grid gr4
+{
+[view      |return    ]
+
+
+
+}
+END -- gr4
+Grid gr5
+{
+
+  -----Rows[idx     ]/[cnt       ]---------- [cn2       ]
+
+
+}
+END -- gr5
+END -- vb2
+END -- artq715
+
+TABLES
+ruv_file,
+ruu_file
+ATTRIBUTES
+ButtonEdit ruuplant=ruu_file.ruuplant, action=controlp, tabIndex=1, title="Org#", not null, image="zoom.png";
+Edit ruuplan1=formonly.ruuplant_desc type CHAR, tabIndex=2, title="Org#Desc";
+Edit ruu01=ruu_file.ruu01, tabIndex=3, title="Counting List NO.";
+Edit ruu02=ruu_file.ruu02, tabIndex=4, title="Counting Plan";
+DateEdit ruu03=ruu_file.ruu03, tabIndex=5, title="Counting Date";
+ButtonEdit ruu04=ruu_file.ruu04, action=controlp, tabIndex=6, title="Counting WH", image="zoom.png";
+Edit ruu04_de=formonly.ruu04_desc type VARCHAR, tabIndex=7, title="WH Name", noEntry;
+CheckBox jce02=formonly.jce02 type VARCHAR, tabIndex=8, title="WH No.\n", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ruu05=ruu_file.ruu05, action=controlp, tabIndex=9, title="Counting Employee", image="zoom.png";
+Edit ruu05_de=formonly.ruu05_desc type VARCHAR, tabIndex=10, title="Name\n", noEntry;
+Edit ruu06=ruu_file.ruu06, tabIndex=17, title="Memo";
+ComboBox ruu900=ruu_file.ruu900, tabIndex=18, title="Status Code", items=(("0", "open"),("1", "confirm"),("2", "Generate"));
+ComboBox ruuconf=ruu_file.ruuconf, tabIndex=19, title="Confirmation", items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "Void"));
+DateEdit ruucond=ruu_file.ruucond, tabIndex=20, title="Confirmed Date";
+TimeEdit ruucont=ruu_file.ruucont, tabIndex=21, title="Confirmed Time";
+ButtonEdit ruuconu=ruu_file.ruuconu, action=controlp, tabIndex=22, title="Confirmed By", image="zoom.png";
+Edit ruuconu_=formonly.ruuconu_desc type CHAR, tabIndex=23, title="Name", noEntry;
+DateEdit ruucrat=ruu_file.ruucrat, tabIndex=28, title="Create Date";
+DateEdit ruudate=ruu_file.ruudate, tabIndex=29, title="Modify Date";
+Edit ruugrup=ruu_file.ruugrup, tabIndex=30, title="Dept.";
+ButtonEdit ruumodu=ruu_file.ruumodu, action=controlp, tabIndex=31, title="Modifyed By", image="zoom.png";
+ButtonEdit ruuuser=ruu_file.ruuuser, action=controlp, tabIndex=32, title="Data Owner", image="zoom.png";
+CheckBox ruuacti=ruu_file.ruuacti, tabIndex=33, title="Data Valid Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ruv02=ruv_file.ruv02, tabIndex=11, title="Line No.";
+Edit ruv03=ruv_file.ruv03, tabIndex=12, title="Shelf No.";
+ButtonEdit ruv04=ruv_file.ruv04, action=controlp, tabIndex=13, title="Goods NO.", image="zoom.png";
+Edit ruv04_desc=formonly.ruv04_desc type CHAR, tabIndex=24, title="Goods Name", noEntry;
+ButtonEdit ruv05=ruv_file.ruv05, action=controlp, tabIndex=14, title="Inventory Unit", image="zoom.png";
+Edit ruv05_desc=formonly.ruv05_desc type CHAR, tabIndex=25, title="Unit Name", noEntry;
+Edit ruv06=ruv_file.ruv06, tabIndex=15, title="Actual Count Qty";
+Edit ruv10=ruv_file.ruv10, tabIndex=16, title="Memo";
+Button view:view, text="view";
+Button return:return, text="return";
+Edit idx=formonly.idx type SMALLINT, tabIndex=27;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=26, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=34;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ruu(ruu_file.ruuplant,formonly.ruuplant_desc,ruu_file.ruu01,ruu_file.ruu02,ruu_file.ruu03,ruu_file.ruu04,formonly.ruu04_desc,formonly.jce02,ruu_file.ruu05,formonly.ruu05_desc,ruu_file.ruu06,ruu_file.ruu900,ruu_file.ruuconf,ruu_file.ruucond,ruu_file.ruucont,ruu_file.ruuconu,formonly.ruuconu_desc,ruu_file.ruucrat,ruu_file.ruudate,ruu_file.ruugrup,ruu_file.ruumodu,ruu_file.ruuuser,ruu_file.ruuacti)
+SCREEN RECORD s_ruv(ruv_file.ruv02,ruv_file.ruv03,ruv_file.ruv04,formonly.ruv04_desc,ruv_file.ruv05,formonly.ruv05_desc,ruv_file.ruv06,ruv_file.ruv10)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

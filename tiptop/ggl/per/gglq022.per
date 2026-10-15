@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq022.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq022")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+HBox hb5
+Grid gr2523
+{
+
+
+ Group No.       [ass01       ]                Group Book No.     [ass00      ]
+ Upper Company   [ass02       ]                Upper Comp Book No [ass03      ]
+ Under Company   [ass04       ]                Under Comp Book No [ass041     ]
+ Year            [ass08       ]                Currency           [ass14      ]
+
+
+}
+END -- gr2523
+Grid gr2524
+{
+
+
+ Account No.         [ass05                         ]
+ Account Name        [aag02                                             ]
+ Trans.Code          [ass06     ]
+ Trans.Value         [ass07             ]
+
+
+}
+END -- gr2524
+END -- hb5
+END -- page01
+END -- folder01
+Table s_ass
+{
+[seq    |ass10               |ass11               |amt1                |ass18               |ass19               |amt2                |ass20               |ass21               |amt3                |ass16     |ass17     ]
+[seq    |ass10               |ass11               |amt1                |ass18               |ass19               |amt2                |ass20               |ass21               |amt3                |ass16     |ass17     ]
+[seq    |ass10               |ass11               |amt1                |ass18               |ass19               |amt2                |ass20               |ass21               |amt3                |ass16     |ass17     ]
+[seq    |ass10               |ass11               |amt1                |ass18               |ass19               |amt2                |ass20               |ass21               |amt3                |ass16     |ass17     ]
+[seq    |ass10               |ass11               |amt1                |ass18               |ass19               |amt2                |ass20               |ass21               |amt3                |ass16     |ass17     ]
+[seq    |ass10               |ass11               |amt1                |ass18               |ass19               |amt2                |ass20               |ass21               |amt3                |ass16     |ass17     ]
+[seq    |ass10               |ass11               |amt1                |ass18               |ass19               |amt2                |ass20               |ass21               |amt3                |ass16     |ass17     ]
+[seq    |ass10               |ass11               |amt1                |ass18               |ass19               |amt2                |ass20               |ass21               |amt3                |ass16     |ass17     ]
+[seq    |ass10               |ass11               |amt1                |ass18               |ass19               |amt2                |ass20               |ass21               |amt3                |ass16     |ass17     ]
+[seq    |ass10               |ass11               |amt1                |ass18               |ass19               |amt2                |ass20               |ass21               |amt3                |ass16     |ass17     ]
+
+}
+END -- s_ass
+Grid gr2525
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2525
+END -- vb4
+END -- gglq022
+
+TABLES
+ass_file
+ATTRIBUTES
+ButtonEdit ass01=ass_file.ass01, action=controlp, tabIndex=1, image="zoom";
+Edit ass00=ass_file.ass00, tabIndex=2, color = yellow;
+Edit ass02=ass_file.ass02, tabIndex=3;
+Edit ass03=ass_file.ass03, tabIndex=4;
+Edit ass04=ass_file.ass04, tabIndex=5;
+Edit ass041=ass_file.ass041, tabIndex=6;
+Edit ass08=ass_file.ass08, tabIndex=7;
+ButtonEdit ass14=ass_file.ass14, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Details";
+ButtonEdit ass05=ass_file.ass05, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Account # <^Y>Create Account  ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=10, noEntry;
+Edit ass06=ass_file.ass06, tabIndex=11;
+Edit ass07=ass_file.ass07, tabIndex=12;
+Edit seq=formonly.seq type CHAR, tabIndex=13, title="Period", noEntry;
+Edit ass10=ass_file.ass10, tabIndex=14, title="Debit Transaction Amt", noEntry;
+Edit ass11=ass_file.ass11, tabIndex=15, title="Credit", noEntry;
+Edit amt1=formonly.amt1 type CHAR, tabIndex=24, title=%"Balance";
+Edit ass18=ass_file.ass18, tabIndex=20, title="Subsidiary Debit Amt (Book Curr)";
+Edit ass19=ass_file.ass19, tabIndex=21, title="Subsidiary Credit Amt (Book Curr)";
+Edit amt2=formonly.amt2 type CHAR, tabIndex=25, title=%"Balance";
+Edit ass20=ass_file.ass20, tabIndex=22, title="Subsidiary Debit Amt (Functional Curr)";
+Edit ass21=ass_file.ass21, tabIndex=23, title="Subsidiary Credit Amt (Functional Curr)";
+Edit amt3=formonly.amt3 type CHAR, tabIndex=26, title=%"Balance";
+Edit ass16=ass_file.ass16, tabIndex=18, title="Function Currency Exch Rate";
+Edit ass17=ass_file.ass17, tabIndex=19, title="Combined Currency Exch Rate";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ass(formonly.seq,ass_file.ass10,ass_file.ass11,formonly.amt1,ass_file.ass18,ass_file.ass19,formonly.amt2,ass_file.ass20,ass_file.ass21,formonly.amt3,ass_file.ass16,ass_file.ass17)
+SCREEN RECORD Undefined(ass_file.ass01,ass_file.ass00,ass_file.ass02,ass_file.ass03,ass_file.ass04,ass_file.ass041,ass_file.ass08,ass_file.ass14,ass_file.ass05,formonly.aag02,ass_file.ass06,ass_file.ass07,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

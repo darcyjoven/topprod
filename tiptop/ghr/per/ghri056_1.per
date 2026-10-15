@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri056_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+ hrcp06_1 [bm1       ]---[em1       ]
+ hrcp06_2 [bm2       ]---[em2       ]
+ hrcp06_3 [bm3       ]---[em3       ]
+ hrcp06_4 [bm4       ]---[em4       ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Edit bm1=formonly.bm1 type CHAR, tabIndex=1;
+Edit em1=formonly.em1 type CHAR, tabIndex=2;
+Edit bm2=formonly.bm2 type CHAR, tabIndex=3;
+Edit em2=formonly.em2 type CHAR, tabIndex=4;
+Edit bm3=formonly.bm3 type CHAR, tabIndex=5;
+Edit em3=formonly.em3 type CHAR, tabIndex=7;
+Edit bm4=formonly.bm4 type CHAR, tabIndex=6;
+Edit em4=formonly.em4 type CHAR, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bm1,formonly.em1,formonly.bm2,formonly.em2,formonly.bm3,formonly.bm4,formonly.em3,formonly.em4)
+END -- INSTRUCTIONS
+

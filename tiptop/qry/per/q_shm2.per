@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_shm2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"RUN CARD Qry Routing ")
+Grid gr3847
+{
+ <T s_shm                                                                                        >
+ [check  |shm01       |shm012        |shm05               |shm08          |shm09                ]
+ [check  |shm01       |shm012        |shm05               |shm08          |shm09                ]
+ [check  |shm01       |shm012        |shm05               |shm08          |shm09                ]
+ [check  |shm01       |shm012        |shm05               |shm08          |shm09                ]
+ [check  |shm01       |shm012        |shm05               |shm08          |shm09                ]
+ [check  |shm01       |shm012        |shm05               |shm08          |shm09                ]
+ [check  |shm01       |shm012        |shm05               |shm08          |shm09                ]
+ [check  |shm01       |shm012        |shm05               |shm08          |shm09                ]
+ [check  |shm01       |shm012        |shm05               |shm08          |shm09                ]
+ [check  |shm01       |shm012        |shm05               |shm08          |shm09                ]
+ <                                                                                               >
+
+}
+END -- gr3847
+END -- q_shm2
+
+TABLES
+shm_file
+ATTRIBUTES
+Table s_shm:s_shm;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit shm01=shm_file.shm01, tabIndex=2, title="Run Card", noEntry;
+Edit shm012=shm_file.shm012, tabIndex=3, title="W/O No.", noEntry;
+Edit shm05=shm_file.shm05, tabIndex=4, title="Item No.", noEntry;
+Edit shm08=shm_file.shm08, tabIndex=5, title="Production Qty", noEntry, not null, required;
+Edit shm09=shm_file.shm09, tabIndex=6, title="Cmoplete/Store-in Qty", noEntry, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_shm(formonly.check,shm_file.shm01,shm_file.shm012,shm_file.shm05,shm_file.shm08,shm_file.shm09)
+END -- INSTRUCTIONS
+

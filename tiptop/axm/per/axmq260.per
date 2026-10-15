@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq260.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq260")
+VBox vb7
+Folder folder01
+Page page01(text="Main")
+Grid gr2246
+{
+ Customer            [occ01     ][occ02                    ]
+ Contact             [link                                 ]
+}
+END -- gr2246
+END -- page01
+END -- folder01
+Table s_ola
+{
+[ola01                      |ola02         |ola06    |tot                        |ola04                |ola25        |ola26        ]
+[ola01                      |ola02         |ola06    |tot                        |ola04                |ola25        |ola26        ]
+[ola01                      |ola02         |ola06    |tot                        |ola04                |ola25        |ola26        ]
+[ola01                      |ola02         |ola06    |tot                        |ola04                |ola25        |ola26        ]
+[ola01                      |ola02         |ola06    |tot                        |ola04                |ola25        |ola26        ]
+[ola01                      |ola02         |ola06    |tot                        |ola04                |ola25        |ola26        ]
+[ola01                      |ola02         |ola06    |tot                        |ola04                |ola25        |ola26        ]
+[ola01                      |ola02         |ola06    |tot                        |ola04                |ola25        |ola26        ]
+[ola01                      |ola02         |ola06    |tot                        |ola04                |ola25        |ola26        ]
+[ola01                      |ola02         |ola06    |tot                        |ola04                |ola25        |ola26        ]
+
+}
+END -- s_ola
+Grid gr2247
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2247
+END -- vb7
+END -- axmq260
+
+TABLES
+occ_file,
+ola_file
+ATTRIBUTES
+ButtonEdit occ01=occ_file.occ01, action=controlp, tabIndex=1, image="zoom";
+Edit occ02=occ_file.occ02, tabIndex=2;
+Edit link=formonly.link type CHAR, tabIndex=3, noEntry;
+ButtonEdit ola01=ola_file.ola01, action=controlp, tabIndex=4, title="Letter Of Credit Receipt#", image="zoom";
+DateEdit ola02=ola_file.ola02, tabIndex=5, title="Date Received";
+ButtonEdit ola06=ola_file.ola06, action=controlp, tabIndex=6, title="Currency", image="zoom";
+Edit tot=formonly.tot type CHAR, tabIndex=7, title="Unnegotiated Credit Letter";
+Edit ola04=ola_file.ola04, tabIndex=8, title="Letter Of Credit No.";
+Edit ola25=ola_file.ola25, tabIndex=9, title="L.Shipping";
+Edit ola26=ola_file.ola26, tabIndex=10, title="L.Negotiation";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ola(ola_file.ola01,ola_file.ola02,ola_file.ola06,formonly.tot,ola_file.ola04,ola_file.ola25,ola_file.ola26)
+SCREEN RECORD Undefined(occ_file.occ01,occ_file.occ02,formonly.link,formonly.cnt)
+END -- INSTRUCTIONS
+

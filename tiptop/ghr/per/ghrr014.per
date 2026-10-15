@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrr014.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+  hrat03   [hrat03       ][hrat03_name  ]
+  l_year   [l_year       ]
+  l_month  [l_month      ]
+
+
+
+[qj                ]
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hrat03=formonly.hrat03 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrat03_name=formonly.hrat03_name, tabIndex=3;
+Edit l_year=formonly.l_year, tabIndex=5, not null, required;
+Edit l_month=formonly.l_month, tabIndex=4, not null, required;
+CheckBox qj=formonly.qj type VARCHAR, tabIndex=2, text=%"qj";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrat03,formonly.qj,formonly.hrat03_name,formonly.l_month,formonly.l_year)
+END -- INSTRUCTIONS
+

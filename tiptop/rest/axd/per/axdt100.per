@@ -1,0 +1,119 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdt100.per created Wed Jan 23 05:30:44 2008
+-- File created from axdt100.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdt100")
+-- GRID
+-- GRID
+-- GRID
+-- HBOX
+-- PAGE
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        HBOX 
+          GRID gr7852
+          {
+           Adjustment No.      [aa0               ]
+           Adjustment Date     [aa1       ]
+           Memo                [aa2                   ]
+
+          }
+          END -- GRID
+          GRID gr7853
+          {
+           Customer            [aa3       ] [aa4     ]
+           Employee            [aa5       ] [aa6     ]
+           Department          [aa7       ] [aa8     ]
+
+          }
+          END -- GRID
+          GRID gr7854
+          {
+                               [aa9       ][ab0    ]
+                               [ab1       ][       ]
+
+          }
+          END -- GRID
+        END -- HBOX
+      END -- PAGE
+      PAGE info( TEXT="Info")
+        GRID gr7855
+        {
+         Record Owner        [ab2       ]   Last Modified by    [ab3       ]   Data Valid Code     [ab4       ]
+         Department          [ab5       ]   Create/Modify Date  [ab6       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_adt
+    {
+    [ab7       |ab8                   |ab9                       |ac0    |ac1            |ac2                 |ac3                 ]
+    [ab7       |ab8                   |ab9                       |ac0    |ac1            |ac2                 |ac3                 ]
+    [ab7       |ab8                   |ab9                       |ac0    |ac1            |ac2                 |ac3                 ]
+    [ab7       |ab8                   |ab9                       |ac0    |ac1            |ac2                 |ac3                 ]
+    [ab7       |ab8                   |ab9                       |ac0    |ac1            |ac2                 |ac3                 ]
+    [ab7       |ab8                   |ab9                       |ac0    |ac1            |ac2                 |ac3                 ]
+    [ab7       |ab8                   |ab9                       |ac0    |ac1            |ac2                 |ac3                 ]
+    [ab7       |ab8                   |ab9                       |ac0    |ac1            |ac2                 |ac3                 ]
+    [ab7       |ab8                   |ab9                       |ac0    |ac1            |ac2                 |ac3                 ]
+    [ab7       |ab8                   |ab9                       |ac0    |ac1            |ac2                 |ac3                 ]
+    }
+    END -- TABLE
+    GRID gr7856
+    {
+     ---------- Rows [ac4   ] / [ac5   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES ads_file,adt_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=ads_file.ads01, ACTION=controlp, COMMENT="KEY Field, No Blank/Repeated!,<^P>Qry Chan No.", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=1;
+  DATEEDIT aa1=ads_file.ads02, NOT NULL, REQUIRED, TABINDEX=2;
+  EDIT aa2=ads_file.ads06, TABINDEX=3;
+  BUTTONEDIT aa3=ads_file.ads03, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=4;
+  EDIT aa4=FORMONLY.occ02, NOENTRY, TABINDEX=5;
+  BUTTONEDIT aa5=ads_file.ads04, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=6;
+  EDIT aa6=FORMONLY.gen02, NOENTRY, TABINDEX=7;
+  BUTTONEDIT aa7=ads_file.ads05, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=8;
+  EDIT aa8=FORMONLY.gem02, NOENTRY, TABINDEX=9;
+  CHECKBOX aa9=ads_file.adsconf, TEXT="Confirm", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=10;
+  IMAGE ab0=FORMONLY.imgmksg, AUTOSCALE, WIDTH=7 CHARACTERS, HEIGHT=2 CHARACTERS;
+  CHECKBOX ab1=ads_file.adspost, TEXT="Post", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=12;
+  EDIT ab2=ads_file.adsuser, NOENTRY, TABINDEX=13;
+  EDIT ab3=ads_file.adsmodu, NOENTRY, TABINDEX=14;
+  EDIT ab4=ads_file.adsacti, NOENTRY, UPSHIFT, TABINDEX=15;
+  EDIT ab5=ads_file.adsgrup, NOENTRY, TABINDEX=16;
+  EDIT ab6=ads_file.adsdate, NOENTRY, TABINDEX=17;
+  EDIT ab7=adt_file.adt02, TABINDEX=18, TITLE="Line No";
+  BUTTONEDIT ab8=adt_file.adt03, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=19, TITLE="Item No.";
+  EDIT ab9=FORMONLY.ima02, NOENTRY, TABINDEX=20, TITLE="Part Name Specification";
+  EDIT ac0=adt_file.adt05, NOENTRY, TABINDEX=21, TITLE="Unit";
+  EDIT ac1=adt_file.adt06, NOT NULL, REQUIRED, TABINDEX=22, TITLE="Qty";
+  EDIT ac2=adt_file.adt04, TABINDEX=23, TITLE="Lot No.";
+  EDIT ac3=adt_file.adt07, TABINDEX=24, TITLE="Memo";
+  EDIT ac4=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=25;
+  EDIT ac5=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=26;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adt (adt_file.adt02, adt_file.adt03, FORMONLY.ima02, adt_file.adt05, adt_file.adt06, adt_file.adt04, adt_file.adt07)
+END

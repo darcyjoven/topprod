@@ -1,0 +1,54 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdr221.per created Wed Jan 23 05:30:42 2008
+-- File created from axdr221.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdr221")
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID 
+    {
+     <G group01                                                 >
+      Item No.            [aa0                 ]
+      Employee No.        [aa1                 ]
+      Department No.      [aa2                 ]
+     <                                                          >
+     <G group02                                                 >
+      Transfer Category   [aa3       ]
+      Periond             [aa4       ]-[aa5       ]
+                          [aa6                 ]
+
+     <                                                          >
+
+
+    }
+    END -- GRID
+    GRID 
+    {
+     [aa7                     ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  BUTTONEDIT aa0=FORMONLY.obc01, ACTION=controlp, IMAGE="zoom", TABINDEX=1;
+  EDIT aa1=FORMONLY.obc04, TABINDEX=2;
+  EDIT aa2=FORMONLY.obc05, TABINDEX=3;
+  GROUP group02 : group02, TEXT="INPUT";
+  COMBOBOX aa3=FORMONLY.a, COMMENT="Please insert 1/2/3", NOT NULL, REQUIRED, QUERYEDITABLE, TABINDEX=4, ITEMS=(("1","YY+MM"),("2","YY+WK"),("3","YY+MM+10DAY"));
+  DATEEDIT aa4=FORMONLY.bdate TYPE DATE, TABINDEX=5;
+  DATEEDIT aa5=FORMONLY.edate TYPE DATE, TABINDEX=6;
+  CHECKBOX aa6=FORMONLY.b TYPE VARCHAR, TEXT="Print Detail?", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=7;
+  CHECKBOX aa7=FORMONLY.more TYPE VARCHAR, TEXT="Other condition to print", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=8;
+END

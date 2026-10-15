@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi706.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi706")
+VBox VBox1
+Folder pc513
+Page page01(text="Main")
+Grid gr2159
+{
+ [dummy01                                       ]
+  Potential Customer No. [ofe01     ][ofd02     ]
+  Level Adjustable Date  [ofe02       ]
+  Change Employee No.    [ofe03     ][gen02_3   ]
+ [dummy02                                       ]
+
+ <G group02                                                 >
+  Level Before Change    [ofe04     ][ofc02               ]
+  Level After Change     [ofe05     ][ofc02_1             ]
+  Level Change Reason    [ofe08                         ]
+ <                                                          >
+ <G group03                                                 >
+  Sales Before Change    [ofe06     ][gen02     ]
+  Sales After Change     [ofe07     ][gen02_2   ]
+ <                                                          >
+
+}
+END -- gr2159
+END -- page01
+Page info(text="Info")
+Grid gr2160
+{
+ Record Owner        [ofeuser   ] Last Modified by    [ofemodu   ] Data Valid Code     [ofeacti   ]
+ Department          [ofegrup   ] Create/Modify Date  [ofedate     ]
+ Record Orig.        [ofeoriu   ]
+ Dept Orig.          [ofeorig   ]
+}
+END -- gr2160
+END -- info
+END -- pc513
+Grid gr2161
+{
+ ---------- Rows [cnt   ] ----------
+
+
+}
+END -- gr2161
+END -- VBox1
+END -- axmi706
+
+TABLES
+ofe_file
+ATTRIBUTES
+Label dummy01:dummy01;
+ButtonEdit ofe01=ofe_file.ofe01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Details";
+Edit ofd02=formonly.ofd02 type CHAR, tabIndex=2, noEntry;
+DateEdit ofe02=ofe_file.ofe02, tabIndex=3;
+ButtonEdit ofe03=ofe_file.ofe03, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Details";
+Edit gen02_3=formonly.gen02_3 type CHAR, tabIndex=5, noEntry;
+Label dummy02:dummy02;
+Group group02:group02;
+Edit ofe04=ofe_file.ofe04, tabIndex=6, noEntry;
+Edit ofc02=formonly.ofc02 type CHAR, tabIndex=7, noEntry;
+ButtonEdit ofe05=ofe_file.ofe05, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Details";
+Edit ofc02_1=formonly.ofc02_1 type CHAR, tabIndex=9, noEntry;
+Edit ofe08=ofe_file.ofe08, tabIndex=10;
+Group group03:group03;
+Edit ofe06=ofe_file.ofe06, tabIndex=11, noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=12, noEntry;
+ButtonEdit ofe07=ofe_file.ofe07, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Details";
+Edit gen02_2=formonly.gen02_2 type CHAR, tabIndex=14, noEntry;
+Edit ofeuser=ofe_file.ofeuser, tabIndex=15, noEntry;
+Edit ofemodu=ofe_file.ofemodu, tabIndex=16, noEntry;
+Edit ofeacti=ofe_file.ofeacti, tabIndex=17, noEntry, upShift;
+Edit ofegrup=ofe_file.ofegrup, tabIndex=18, noEntry;
+DateEdit ofedate=ofe_file.ofedate, tabIndex=19, noEntry;
+Edit ofeoriu=ofe_file.ofeoriu, tabIndex=501, noEntry;
+Edit ofeorig=ofe_file.ofeorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ofe_file.ofe01,formonly.ofd02,ofe_file.ofe02,ofe_file.ofe03,formonly.gen02_3,ofe_file.ofe04,formonly.ofc02,ofe_file.ofe05,formonly.ofc02_1,ofe_file.ofe08,ofe_file.ofe06,formonly.gen02,ofe_file.ofe07,formonly.gen02_2,ofe_file.ofeuser,ofe_file.ofemodu,ofe_file.ofeacti,ofe_file.ofegrup,ofe_file.ofedate,ofe_file.ofeoriu,ofe_file.ofeorig,formonly.cnt)
+END -- INSTRUCTIONS
+

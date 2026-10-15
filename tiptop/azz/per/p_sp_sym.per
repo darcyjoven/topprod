@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_sp_sym.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_feldtype")
+VBox VBox1
+Folder pc747
+Page page01(text="Page01")
+Table s_gfq
+{
+[gfq01                       |gfq02                      ]
+[gfq01                       |gfq02                      ]
+[gfq01                       |gfq02                      ]
+[gfq01                       |gfq02                      ]
+[gfq01                       |gfq02                      ]
+[gfq01                       |gfq02                      ]
+[gfq01                       |gfq02                      ]
+[gfq01                       |gfq02                      ]
+[gfq01                       |gfq02                      ]
+[gfq01                       |gfq02                      ]
+
+}
+END -- s_gfq
+END -- page01
+END -- pc747
+Grid gr3195
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3195
+END -- VBox1
+END -- p_sp_sym
+
+TABLES
+gfq_file
+ATTRIBUTES
+Edit gfq01=gfq_file.gfq01, tabIndex=1, title="Field AttrNo.", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit gfq02=gfq_file.gfq02, tabIndex=2, title="Attr ShortName", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gfq(gfq_file.gfq01,gfq_file.gfq02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

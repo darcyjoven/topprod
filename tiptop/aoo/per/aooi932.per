@@ -1,0 +1,140 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi932.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"aooi932")
+Folder folder01
+Page page01(text=%"Plant")
+VBox VBox2
+HBox HBox1
+Tree Tree1(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="folder_i932", imageCollapsed="folder_i932", imageLeaf="leaf_i932", width = 21 characters)
+{
+[name               ]
+[name               ]
+[name               ]
+[name               ]
+[name               ]
+[name               ]
+[name               ]
+[name               ]
+[name               ]
+[name               ]
+
+
+
+}
+END -- Tree1
+Grid gr6
+{
+
+[addchil]
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr6
+VBox VBox1
+Grid gr2387
+{
+[label1       ]  [azw07     ]
+[label2      ]   [azp02n    ]
+}
+END -- gr2387
+Table s_azw
+{
+[azw01     |azp02   ]
+[azw01     |azp02   ]
+[azw01     |azp02   ]
+}
+END -- s_azw
+HBox hb5
+Table tb6
+{
+[azwe01  |azwe02  |azwc02  ]
+[azwe01  |azwe02  |azwc02  ]
+[azwe01  |azwe02  |azwc02  ]
+[azwe01  |azwe02  |azwc02  ]
+[azwe01  |azwe02  |azwc02  ]
+}
+END -- tb6
+Grid gr10
+{
+
+[adj_gup  ]
+
+
+
+
+}
+END -- gr10
+END -- hb5
+END -- VBox1
+END -- HBox1
+Grid gr2388
+{
+  ----------[labe][cnt   ][l][cn2   ] ----------
+
+
+
+
+
+
+}
+END -- gr2388
+END -- VBox2
+END -- page01
+END -- folder01
+END -- aooi932
+
+TABLES
+azw_file,
+azwe_file,
+azwc_file
+ATTRIBUTES
+LABEL name=formonly.name type CHAR, title=%"PlantTree", unsortable;
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.path type CHAR;
+Phantom formonly.treekey1 type CHAR;
+Phantom formonly.azp02_t type CHAR;
+Phantom formonly.azw02 type CHAR;
+Button addchil:addchild, tabIndex=17, image="next2";
+Label label1:Label1, text=%"Logistics Code";
+Edit azw07=azw_file.azw07, tabIndex=3, noEntry;
+Label label2:Label2, text=%"Logestic Name";
+Edit azp02n=formonly.azp02n type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit azw01=azw_file.azw01, action=controlp, tabIndex=7, title=%"Sub-Dept.", not null, required, image="zoom", comment=%"<^P>Query Department";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=8, title=%"Desc.", noEntry;
+Phantom formonly.azw02n type CHAR;
+LABEL azwe01=azwe_file.azwe01, title=%"Table Name";
+LABEL azwe02=azwe_file.azwe02, title=%"Data Group";
+LABEL azwc02=azwc_file.azwc02, title=%"Data Group Desc.";
+Button adj_gup:adj_gup, tabIndex=19, text=%"Adjust Data Group";
+Label labe:Label3, text=%"Rows";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=1, noEntry;
+Label l:Label4, text=%"/";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.azp02_t,formonly.azw02,formonly.path,formonly.treekey1)
+SCREEN RECORD s_azw(azw_file.azw01,formonly.azp02,formonly.azw02n)
+SCREEN RECORD s_azwe(azwe_file.azwe01,azwe_file.azwe02,azwc_file.azwc02)
+SCREEN RECORD Undefined(azw_file.azw07,formonly.azp02n,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apcr010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                                           >
+ [label1       |azw01                ]
+
+ <                                                                   >
+ <G group2                                                           >
+ [date         |dat1                 ]
+ [source       |sourc1               ]
+
+
+ <                                                                   >
+
+}
+END -- Grid1
+Grid Grid4
+{
+ [more                 ]
+
+}
+END -- Grid4
+END -- VBox1
+END -- Form
+
+TABLES
+azw_file
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+Label label1:Label1, text=%"Plant";
+ButtonEdit azw01=formonly.azw01 type like azw_file.azw01, action=controlp, tabIndex=1, image="zoom";
+Group group2:Group2, text=%"Group2";
+Label date:date, text=%"date";
+DateEdit dat1=formonly.date type VARCHAR, tabIndex=3;
+Label source:source, text=%"source";
+ComboBox sourc1=formonly.source type like azw_file.azw01, tabIndex=4, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+CheckBox more=formonly.more type CHAR, tabIndex=2, default = "N", text=%"more", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azw01,formonly.more,formonly.date,formonly.source)
+END -- INSTRUCTIONS
+

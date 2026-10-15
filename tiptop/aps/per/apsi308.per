@@ -1,0 +1,90 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi308.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi308")
+VBox vb2_
+Folder pc4
+Page page01(text="Page01")
+Grid gr7
+{
+
+ <G group01                                   > <G gb2                                                 >
+  Item No.           [vmi01               ]        Origin Place Id           [vmi40               ]
+  Lot Sizing Rule    [vmi03               ]        Production Line Id        [vmi44               ]
+  Integer Type       [vmi05               ]        Production Line Name      [vmi45               ]
+  Max of Lot Qty     [vmi08               ]        Is Break Point            [vmi47               ]
+  Key Meterial       [vmi11               ]        Ideal Factor              [vmi49               ]
+  Consolidated       [vmi15               ]        Allowance Factor          [vmi50               ]
+  MO Late Toleranc   [vmi16               ]        Continuous Lot Condtion 1 [vmi51               ]
+  PO late Tolerance  [vmi17               ]        Continuous Lot Condtion 2 [vmi52               ]
+  Lst Cmb            [vmi23               ]        Continuous Lot Condtion 3 [vmi53               ]
+  Lst Cblm           [vmi24               ]        Continuous Lot Condtion 4 [vmi54               ]
+  Is Cnsn            [vmi25               ]        Continuous Lot Condtion 5 [vmi55               ]
+  Item Group Code    [vmi28               ]        Backward                  [vmi56               ]
+  Sfixed Lead Time   [vmi35               ]        Transfer Lot Size         [vmi60               ]
+  Supply Rule Id     [vmi36               ]        Is Batch                  [vmi57               ]
+  Cons-bucket size   [vmi37               ]        Issue by Vendor\'s Ratio   [vmi64               ]
+  Alt Ratio          [vmi38               ]        supplier_ratio_threshold  [vmi65               ]
+ <                                            > <                                                      >
+
+}
+END -- gr7
+END -- page01
+END -- pc4
+Grid gr8
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr8
+END -- vb2_
+END -- apsi308
+
+TABLES
+vmi_file
+ATTRIBUTES
+Group group01:group01;
+Edit vmi01=vmi_file.vmi01, tabIndex=1, noEntry, not null, required;
+ComboBox vmi03=vmi_file.vmi03, tabIndex=2, default = "0", not null, queryEditable, items=(("0", "lot-fot-lot"),("1", "Incremental Lot Size Rule"));
+ComboBox vmi05=vmi_file.vmi05, tabIndex=3, default = "0", not null, queryEditable, comment="Enter  0/1", items=(("0", "False"),("1", "True"));
+Edit vmi08=vmi_file.vmi08, tabIndex=4, default = "999999", not null, required;
+ComboBox vmi11=vmi_file.vmi11, tabIndex=5, default = "0", not null, queryEditable, comment="Enter  0/1", items=(("0", "False"),("1", "True"));
+ComboBox vmi15=vmi_file.vmi15, tabIndex=6, default = "0", not null, queryEditable, comment="Enter  0/1", items=(("0", "False"),("1", "True"));
+Edit vmi16=vmi_file.vmi16, tabIndex=8, default = "0";
+Edit vmi17=vmi_file.vmi17, tabIndex=9, default = "0";
+ComboBox vmi23=vmi_file.vmi23, tabIndex=10, default = "0", not null, queryEditable, comment="Enter  0/1", items=(("0", "False"),("1", "True"));
+Edit vmi24=vmi_file.vmi24, tabIndex=11, default = "1";
+ComboBox vmi25=vmi_file.vmi25, tabIndex=12, default = "0", not null, queryEditable, comment="Enter  0/1", items=(("0", "False"),("1", "True"));
+Edit vmi28=vmi_file.vmi28, tabIndex=17;
+Edit vmi35=vmi_file.vmi35, tabIndex=14, default = "0";
+Edit vmi36=vmi_file.vmi36, tabIndex=16;
+Edit vmi37=vmi_file.vmi37, tabIndex=7, default = "7";
+Edit vmi38=vmi_file.vmi38, tabIndex=15, default = "0";
+Group gb2:gb2;
+Edit vmi40=vmi_file.vmi40, tabIndex=18;
+Edit vmi44=vmi_file.vmi44, tabIndex=19;
+Edit vmi45=vmi_file.vmi45, tabIndex=20;
+ComboBox vmi47=vmi_file.vmi47, tabIndex=21, default = "0", not null, queryEditable, items=(("0", "False"),("1", "True"));
+Edit vmi49=vmi_file.vmi49, tabIndex=23, default = "1", not null, required;
+Edit vmi50=vmi_file.vmi50, tabIndex=22, default = "1", not null, required;
+Edit vmi51=vmi_file.vmi51, tabIndex=24;
+Edit vmi52=vmi_file.vmi52, tabIndex=25;
+Edit vmi53=vmi_file.vmi53, tabIndex=26;
+Edit vmi54=vmi_file.vmi54, tabIndex=27;
+Edit vmi55=vmi_file.vmi55, tabIndex=28;
+ComboBox vmi56=vmi_file.vmi56, tabIndex=30, not null, required, items=(("0", "Forward"),("1", "Backward"));
+Edit vmi60=vmi_file.vmi60, tabIndex=29;
+ComboBox vmi57=vmi_file.vmi57, tabIndex=31, items=(("0", "N"),("1", "Y"));
+ComboBox vmi64=vmi_file.vmi64, tabIndex=33, not null, required, items=(("0", "N"),("1", "Y"));
+Edit vmi65=vmi_file.vmi65, tabIndex=32, not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vmi_file.vmi01,vmi_file.vmi03,vmi_file.vmi05,vmi_file.vmi08,vmi_file.vmi11,vmi_file.vmi15,vmi_file.vmi16,vmi_file.vmi17,vmi_file.vmi23,vmi_file.vmi24,vmi_file.vmi25,vmi_file.vmi28,vmi_file.vmi35,vmi_file.vmi36,vmi_file.vmi37,vmi_file.vmi38,vmi_file.vmi40,vmi_file.vmi44,vmi_file.vmi45,vmi_file.vmi47,vmi_file.vmi49,vmi_file.vmi50,vmi_file.vmi51,vmi_file.vmi52,vmi_file.vmi53,vmi_file.vmi54,vmi_file.vmi55,vmi_file.vmi56,vmi_file.vmi60,vmi_file.vmi57,vmi_file.vmi64,vmi_file.vmi65,formonly.cnt)
+END -- INSTRUCTIONS
+

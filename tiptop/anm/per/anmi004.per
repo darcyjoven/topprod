@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Main")
+Grid Grid1
+{
+
+[nai01     ] [nai02          ]
+[nai03     ] [nai04          ]
+[label3    ] [nai05          ]
+[label4    ] [nai06          ]
+[label5    ] [nai07          ]
+[label6    ] [nai08          ]
+[label7    ] [nai09                             ]
+             [                                  ]
+             [                                  ]
+             [                                  ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Grid Grid3
+{
+
+ ---------- Rows [idx   ]/[cnt   ] ----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+TABLES
+nai_file
+ATTRIBUTES
+Label nai01:nai01, text=%"Type";
+ComboBox nai02=nai_file.nai01, tabIndex=4, items=(("1", "Comp"),("2", "Bank"));
+Label nai03:nai02, text=%"Bank Code";
+ButtonEdit nai04=nai_file.nai02, action=controlp, tabIndex=5, image="zoom";
+Label label3:Label3, text=%"Year";
+Edit nai05=nai_file.nai03, tabIndex=1, not null, scroll;
+Label label4:Label4, text=%"Month";
+Edit nai06=nai_file.nai04, tabIndex=2, not null, scroll;
+Label label5:Label5, text=%"Dr/Cr";
+ComboBox nai07=nai_file.nai05, tabIndex=6, items=(("1", "Dr"),("2", "Cr"));
+Label label6:Label6, text=%"Money";
+Edit nai08=nai_file.nai06, tabIndex=3, not null, scroll;
+Label label7:Label7, text=%"Memo";
+TextEdit nai09=nai_file.nai07, tabIndex=7;
+Edit idx=formonly.idx type SMALLINT, tabIndex=8, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(nai_file.nai03,nai_file.nai04,nai_file.nai06)
+SCREEN RECORD Undefined(nai_file.nai01,nai_file.nai02,nai_file.nai05,nai_file.nai07,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

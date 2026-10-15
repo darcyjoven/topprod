@@ -1,0 +1,85 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/alm/4fd/almi790.tmp.per created 2010-10-25T17:52:26
+-- File created from /u3/tiptop/alm/4fd/almi790.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almi790")
+                                                                                                                                  
+     VBox vb2                                                                                                                     
+     Folder pc1                                                                                                                   
+     Page main(text=%"main")                                                                                                      
+                                                                                                                                  
+       Grid gr1                                                                                                                   
+       {                                                                                                                          
+                                                                                                                                  
+          lsgstore[lsgstore                 ]  [lma02                ]                                                            
+          lsglegal[lsglegal                 ]  [azt02                ]                                                            
+          lsg01   [lsg01                    ]                                                                                     
+          lsg02   [lsg02                    ]                                                                                     
+          lsg04   [lsg04                    ][imgmksg]                                                                            
+          lsg05   [lsg05                    ][       ]                                                                            
+          lsg06   [lsg06                    ]                                                                                     
+                                                                                                                                  
+       }                                                                                                                          
+       END                                                                                                                        
+     END -- Page                                                                                                                  
+     Page info(text=%"Info")                                                                                                      
+                                                                                                                                  
+      Grid gr5                                                                                                                    
+      {                                                                                                                           
+       Record Owner              [lsguser   ]  Create Date             [lsgcrat     ]      Data Valid Code     [lsgacti   ]       
+       Department                [lsggrup   ]  Last Modified by        [lsgmodu     ]      Modify Date         [lsgdate   ]       
+       Record Orig.              [lsgoriu   ]                                                                                     
+       Dept Orig.                [lsgorig   ]                                                                                     
+                                                                                                                                  
+      }                                                                                                                           
+      END                                                                                                                         
+                                                                                                                                  
+     END -- Page                                                                                                                  
+     END -- Folder                                                                                                                
+     Grid gr6                                                                                                                     
+     {                                                                                                                            
+       ---------- Rows[idx   ]/[cnt   ] ----------                                                                                
+                                                                                                                                  
+                                                                                                                                  
+     }                                                                                                                            
+     END                                                                                                                          
+     END -- VBox                                                                                                                  
+END -- Form
+
+TABLES
+lsg_file
+
+ATTRIBUTES
+ButtonEdit lsgstore=lsg_file.lsgstore, action=controlp, tabIndex=1, noEntry, image="zoom.png";
+Edit lma02=formonly.lma02, tabIndex=2;
+ButtonEdit lsglegal=lsg_file.lsglegal, action=controlp, tabIndex=3, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02, tabIndex=4;
+Edit lsg01=lsg_file.lsg01, tabIndex=5, not null, required;
+Edit lsg02=lsg_file.lsg02, tabIndex=6, not null, required;
+ComboBox lsg04=lsg_file.lsg04, tabIndex=7, noEntry, items=(("N", "Unconfirmed"),("Y", "Confirm"));
+Image imgmksg=formonly.imgmksg;
+Edit lsg05=lsg_file.lsg05, tabIndex=8, noEntry;
+DateEdit lsg06=lsg_file.lsg06, tabIndex=9, noEntry;
+Edit lsguser=lsg_file.lsguser, tabIndex=10, noEntry;
+DateEdit lsgcrat=lsg_file.lsgcrat, tabIndex=14, noEntry;
+Edit lsgacti=lsg_file.lsgacti, tabIndex=12, noEntry, upShift;
+Edit lsggrup=lsg_file.lsggrup, tabIndex=13, noEntry;
+Edit lsgmodu=lsg_file.lsgmodu, tabIndex=11, noEntry;
+DateEdit lsgdate=lsg_file.lsgdate, tabIndex=15, noEntry;
+Edit lsgoriu=lsg_file.lsgoriu, tabIndex=501, noEntry;
+Edit lsgorig=lsg_file.lsgorig, tabIndex=502, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=17, noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

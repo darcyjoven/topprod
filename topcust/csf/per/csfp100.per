@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfp100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp3221")
+Grid gr534
+{
+ <G group01                                                             >
+  W/O No.             [sfb01               ]
+  Item No.            [sfb05               ] Ending  [ecb02             ]
+  Sales Order         [sfb22               ]
+  Project No          [sfb15               ]
+  PBI No              [sfb85               ]
+ <                                                                      >
+
+
+}
+END -- gr534
+END -- csfp100
+
+TABLES
+sfb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=1, image="zoom", comment="Enter QBE Condition";
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=2, image="zoom", comment="Enter QBE Condition";
+ButtonEdit ecb02=formonly.ecb02 type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+DateEdit sfb22=sfb_file.sfb22, tabIndex=3, comment="Enter QBE Condition";
+DateEdit sfb15=formonly.sfb15 type VARCHAR, tabIndex=4, comment="Enter QBE Condition";
+Edit sfb85=sfb_file.sfb85, tabIndex=5, hidden, invisible, comment="Enter QBE Condition";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfb_file.sfb01,sfb_file.sfb05,sfb_file.sfb22,formonly.sfb15,sfb_file.sfb85,formonly.ecb02)
+END -- INSTRUCTIONS
+

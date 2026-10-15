@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armt150.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armt150")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr291
+{
+ RMA Document No.      [rma01               ]
+ Customer Return       [rma03     ][rma04     ]
+ Memo                  [rma18                                   ]
+}
+END -- gr291
+Grid gr292
+{
+ Receipt Date          [rma20     ]
+ Checking & Rece.Dt    [rma21     ]
+ Anticipated Re-Del.Dt [rma12     ]
+}
+END -- gr292
+Grid gr293
+{
+ Confirm             [rmaconf   ]  [imgmksg]
+ Receiving           [rmarecv   ]  [       ]
+ Valid               [rmavoid   ]
+}
+END -- gr293
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_rmc
+{
+[rmc07          |rmc02|rmc04               |rmc06                         |rmc061                        |rmc31|ima131    |rmc05     |rmc25 |rmc32                                                       ]
+[rmc07          |rmc02|rmc04               |rmc06                         |rmc061                        |rmc31|ima131    |rmc05     |rmc25 |rmc32                                                       ]
+[rmc07          |rmc02|rmc04               |rmc06                         |rmc061                        |rmc31|ima131    |rmc05     |rmc25 |rmc32                                                       ]
+[rmc07          |rmc02|rmc04               |rmc06                         |rmc061                        |rmc31|ima131    |rmc05     |rmc25 |rmc32                                                       ]
+[rmc07          |rmc02|rmc04               |rmc06                         |rmc061                        |rmc31|ima131    |rmc05     |rmc25 |rmc32                                                       ]
+[rmc07          |rmc02|rmc04               |rmc06                         |rmc061                        |rmc31|ima131    |rmc05     |rmc25 |rmc32                                                       ]
+[rmc07          |rmc02|rmc04               |rmc06                         |rmc061                        |rmc31|ima131    |rmc05     |rmc25 |rmc32                                                       ]
+[rmc07          |rmc02|rmc04               |rmc06                         |rmc061                        |rmc31|ima131    |rmc05     |rmc25 |rmc32                                                       ]
+[rmc07          |rmc02|rmc04               |rmc06                         |rmc061                        |rmc31|ima131    |rmc05     |rmc25 |rmc32                                                       ]
+[rmc07          |rmc02|rmc04               |rmc06                         |rmc061                        |rmc31|ima131    |rmc05     |rmc25 |rmc32                                                       ]
+
+}
+END -- s_rmc
+Grid gr294
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr294
+END -- VBox1
+END -- armt150
+
+TABLES
+rmc_file,
+rma_file
+ATTRIBUTES
+ButtonEdit rma01=rma_file.rma01, action=controlp, tabIndex=1, image="zoom", upShift;
+Edit rma03=rma_file.rma03, tabIndex=2, noEntry;
+Edit rma04=rma_file.rma04, tabIndex=3, noEntry;
+Edit rma18=rma_file.rma18, tabIndex=4, noEntry;
+DateEdit rma20=rma_file.rma20, tabIndex=5, not null, required;
+DateEdit rma21=rma_file.rma21, tabIndex=6, not null, required;
+DateEdit rma12=rma_file.rma12, tabIndex=7, not null, required;
+Edit rmaconf=rma_file.rmaconf, tabIndex=8, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit rmarecv=rma_file.rmarecv, tabIndex=10, noEntry;
+Edit rmavoid=rma_file.rmavoid, tabIndex=11, noEntry;
+Edit rmc07=rmc_file.rmc07, tabIndex=12, title="S/N";
+Edit rmc02=rmc_file.rmc02, tabIndex=13, title="Ret#", not null, required, comment="<^O> Copy Previous Data";
+ButtonEdit rmc04=rmc_file.rmc04, action=controlp, tabIndex=14, title="Item No.", not null, required, image="zoom", comment="<^P> Query Item   ";
+Edit rmc06=rmc_file.rmc06, tabIndex=15, title="Part Name", noEntry;
+Edit rmc061=rmc_file.rmc061, tabIndex=16, title="Specification", noEntry;
+Edit rmc31=rmc_file.rmc31, tabIndex=17, title="Qty";
+Edit ima131=formonly.ima131 type VARCHAR, tabIndex=18, title="Product", noEntry;
+Edit rmc05=rmc_file.rmc05, tabIndex=19, title="Clss Unit", not null, required, comment="<^P> Qry Unit     ";
+ButtonEdit rmc25=rmc_file.rmc25, action=controlp, tabIndex=20, title="Model", image="zoom", comment="<^P> Qry Model";
+Edit rmc32=rmc_file.rmc32, tabIndex=21, title="Desc";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rmc(rmc_file.rmc07,rmc_file.rmc02,rmc_file.rmc04,rmc_file.rmc06,rmc_file.rmc061,rmc_file.rmc31,formonly.ima131,rmc_file.rmc05,rmc_file.rmc25,rmc_file.rmc32)
+SCREEN RECORD Undefined(rma_file.rma01,rma_file.rma03,rma_file.rma04,rma_file.rma18,rma_file.rma20,rma_file.rma21,rma_file.rma12,rma_file.rmaconf,formonly.imgmksg,rma_file.rmarecv,rma_file.rmavoid,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

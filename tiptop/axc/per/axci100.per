@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci100")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1455
+{
+ Type                [npp00]                                        Voucher No.         [nppglno             ]
+ No.                 [npp01           ]                                   Voucher Date        [npp03       ]
+
+}
+END -- gr1455
+END -- page01
+END -- folder01
+Table s_npq
+{
+[npq02      |npq03         |aag02                                             |npq05        |npq06 |npq07                |npq04                         |npq15  |npq08      |npq11           |npq12           |npq13           |npq14           |npq31           |npq32           |npq33           |npq34           |npq35           |npq36            |npq37          ]
+[npq02      |npq03         |aag02                                             |npq05        |npq06 |npq07                |npq04                         |npq15  |npq08      |npq11           |npq12           |npq13           |npq14           |npq31           |npq32           |npq33           |npq34           |npq35           |npq36            |npq37          ]
+[npq02      |npq03         |aag02                                             |npq05        |npq06 |npq07                |npq04                         |npq15  |npq08      |npq11           |npq12           |npq13           |npq14           |npq31           |npq32           |npq33           |npq34           |npq35           |npq36            |npq37          ]
+[npq02      |npq03         |aag02                                             |npq05        |npq06 |npq07                |npq04                         |npq15  |npq08      |npq11           |npq12           |npq13           |npq14           |npq31           |npq32           |npq33           |npq34           |npq35           |npq36            |npq37          ]
+[npq02      |npq03         |aag02                                             |npq05        |npq06 |npq07                |npq04                         |npq15  |npq08      |npq11           |npq12           |npq13           |npq14           |npq31           |npq32           |npq33           |npq34           |npq35           |npq36            |npq37          ]
+[npq02      |npq03         |aag02                                             |npq05        |npq06 |npq07                |npq04                         |npq15  |npq08      |npq11           |npq12           |npq13           |npq14           |npq31           |npq32           |npq33           |npq34           |npq35           |npq36            |npq37          ]
+[npq02      |npq03         |aag02                                             |npq05        |npq06 |npq07                |npq04                         |npq15  |npq08      |npq11           |npq12           |npq13           |npq14           |npq31           |npq32           |npq33           |npq34           |npq35           |npq36            |npq37          ]
+[npq02      |npq03         |aag02                                             |npq05        |npq06 |npq07                |npq04                         |npq15  |npq08      |npq11           |npq12           |npq13           |npq14           |npq31           |npq32           |npq33           |npq34           |npq35           |npq36            |npq37          ]
+[npq02      |npq03         |aag02                                             |npq05        |npq06 |npq07                |npq04                         |npq15  |npq08      |npq11           |npq12           |npq13           |npq14           |npq31           |npq32           |npq33           |npq34           |npq35           |npq36            |npq37          ]
+[npq02      |npq03         |aag02                                             |npq05        |npq06 |npq07                |npq04                         |npq15  |npq08      |npq11           |npq12           |npq13           |npq14           |npq31           |npq32           |npq33           |npq34           |npq35           |npq36            |npq37          ]
+
+}
+END -- s_npq
+Grid gr1456
+{
+ ---------- Rows [cnt   ] / [cn2   ] ---------------  Debit Total         [npq07_t1            ] ----- Credit Total        [npq07_t2            ]
+
+}
+END -- gr1456
+END -- VBox1
+END -- axci100
+
+TABLES
+npq_file,
+npp_file
+ATTRIBUTES
+Edit npp00=npp_file.npp00, tabIndex=1, not null, required;
+Edit nppglno=npp_file.nppglno, tabIndex=2;
+Edit npp01=npp_file.npp01, tabIndex=3, not null, required, upShift;
+DateEdit npp03=npp_file.npp03, tabIndex=4;
+Edit npq02=npq_file.npq02, tabIndex=5, title="Line No.", not null, required;
+ButtonEdit npq03=npq_file.npq03, action=controlp, tabIndex=6, title="Account No.", not null, required, image="zoom", comment="<^P>Qry Account ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=7, title="Name", noEntry;
+ButtonEdit npq05=npq_file.npq05, action=controlp, tabIndex=8, title="Department", image="zoom", comment="<^P>Qry Department ";
+ComboBox npq06=npq_file.npq06, tabIndex=9, title="1/2", not null, required, items=(("1", %"Dredit"),("2", %"Credit"));
+Edit npq07=formonly.npq07 type CHAR, tabIndex=10, title="Home Currency Amount", not null, required;
+ButtonEdit npq04=npq_file.npq04, action=controlp, tabIndex=11, title="Memo", image="zoom", comment="Enter     <^P>Qry Budget# ";
+ButtonEdit npq15=npq_file.npq15, action=controlp, tabIndex=12, title="Budget", image="zoom", comment="Enter Budget No.,     <^P>Qry Budget# ";
+ButtonEdit npq08=npq_file.npq08, action=controlp, tabIndex=13, title="Project", image="zoom", comment="Enter project number, <^P>Qry Project No.";
+ButtonEdit npq11=npq_file.npq11, action=controlp, tabIndex=14, title="Transact Code 1", image="zoom", comment="Enter Transaction code -1, <^P>Qry Transaction Code";
+ButtonEdit npq12=npq_file.npq12, action=controlp, tabIndex=15, title="Transact Code 2", image="zoom", comment="Enter Transaction code -2, <^P>Qry Transaction Code";
+ButtonEdit npq13=npq_file.npq13, action=controlp, tabIndex=16, title="Transact Code 3", image="zoom", comment="Enter Transaction code -3, <^P>Qry Transaction Code";
+ButtonEdit npq14=npq_file.npq14, action=controlp, tabIndex=17, title="Transact Code 4", image="zoom", comment="Enter Transaction code -4, <^P>Qry Transaction Code";
+ButtonEdit npq31=npq_file.npq31, action=controlp, tabIndex=18, title="Transact Code 5", image="zoom", comment="Enter Transaction code -5, <^P>Qry Transaction Code";
+ButtonEdit npq32=npq_file.npq32, action=controlp, tabIndex=19, title="Transact Code 6", image="zoom", comment="Enter Transaction code -6, <^P>Qry Transaction Code";
+ButtonEdit npq33=npq_file.npq33, action=controlp, tabIndex=20, title="Transact Code 7", image="zoom", comment="Enter Transaction code -7, <^P>Qry Transaction Code";
+ButtonEdit npq34=npq_file.npq34, action=controlp, tabIndex=21, title="Transact Code 8", image="zoom", comment="Enter Transaction code -8, <^P>Qry Transaction Code";
+ButtonEdit npq35=npq_file.npq35, action=controlp, tabIndex=22, title="Transact Code 9", image="zoom", comment="Enter Transaction code -9, <^P>Qry Transaction Code";
+ButtonEdit npq36=npq_file.npq36, action=controlp, tabIndex=23, title="Transact Code 10", image="zoom", comment="Enter Transaction code -10, <^P>Qry Transaction Code";
+ButtonEdit npq37=npq_file.npq37, action=controlp, tabIndex=24, title="relation person", image="zoom", comment="Enter Relation Person, <^P>Qry Relation Person";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=26, noEntry;
+Edit npq07_t1=formonly.npq07_t1 type DECIMAL, tabIndex=27, noEntry;
+Edit npq07_t2=formonly.npq07_t2 type DECIMAL, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_npq(npq_file.npq02,npq_file.npq03,formonly.aag02,npq_file.npq05,npq_file.npq06,formonly.npq07,npq_file.npq04,npq_file.npq15,npq_file.npq08,npq_file.npq11,npq_file.npq12,npq_file.npq13,npq_file.npq14,npq_file.npq31,npq_file.npq32,npq_file.npq33,npq_file.npq34,npq_file.npq35,npq_file.npq36,npq_file.npq37)
+SCREEN RECORD Undefined(npp_file.npp00,npp_file.nppglno,npp_file.npp01,npp_file.npp03,formonly.cnt,formonly.cn2,formonly.npq07_t1,formonly.npq07_t2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_ccc.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_ccc")
+VBox vb1
+Folder pc850
+Page page01(text="Page01")
+Grid gr3874
+{
+ <G group01                                           >
+  Cust No.      [g_occ33   ][l_occ02             ]
+  Ln of Cr      [curr      ][stot                ]
+
+  1.Ac T-Off                [s51                 ]+
+  2.L/C Rcpt.$              [s52                 ]+
+  3.Fin Sus.Cr-Ck           [s53                 ]+
+  4.Fin Sus.Cr-TT           [s54                 ]+
+  B.Unconf Cn. A/R          [s55                 ]+
+  5.N/R                     [s61                 ]-
+  6.A/R                     [s62                 ]-
+  7.Del Untrsd to AR        [s63                 ]-
+  8.Del.Advice Amt          [s66                 ]-
+  9.Untrsfd to Del.         [s64                 ]-
+  D.Borrow                  [s67                 ]-
+  -------------------------------------------------
+  Cred.Bal                  [sbal                ]
+  -------------------------------------------------
+  A.Ovrdue A/R $            [s65                 ]
+  C.Overdue Uncash Note     [s70                 ]
+
+
+
+
+ <                                                    >
+
+}
+END -- gr3874
+END -- page01
+END -- pc850
+END -- vb1
+END -- s_ccc
+
+ATTRIBUTES
+Group group01:group01;
+Edit g_occ33=formonly.g_occ33 type CHAR, tabIndex=1;
+Edit l_occ02=formonly.l_occ02 type CHAR, tabIndex=2;
+Edit curr=formonly.curr type CHAR, tabIndex=3;
+Edit stot=formonly.stot type CHAR, tabIndex=4;
+Edit s51=formonly.s51 type CHAR, tabIndex=5;
+Edit s52=formonly.s52 type CHAR, tabIndex=6;
+Edit s53=formonly.s53 type CHAR, tabIndex=7;
+Edit s54=formonly.s54 type CHAR, tabIndex=8;
+Edit s55=formonly.s55 type CHAR, tabIndex=9;
+Edit s61=formonly.s61 type CHAR, tabIndex=10;
+Edit s62=formonly.s62 type CHAR, tabIndex=11;
+Edit s63=formonly.s63 type CHAR, tabIndex=12;
+Edit s66=formonly.s66 type CHAR, tabIndex=13;
+Edit s64=formonly.s64 type CHAR, tabIndex=14;
+Edit s67=formonly.s67 type CHAR, tabIndex=15;
+Edit sbal=formonly.sbal type CHAR, tabIndex=16;
+Edit s65=formonly.s65 type CHAR, tabIndex=17;
+Edit s70=formonly.s70 type CHAR, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_occ33,formonly.l_occ02,formonly.curr,formonly.stot,formonly.s51,formonly.s52,formonly.s53,formonly.s54,formonly.s55,formonly.s61,formonly.s62,formonly.s63,formonly.s66,formonly.s64,formonly.s67,formonly.sbal,formonly.s65,formonly.s70)
+END -- INSTRUCTIONS
+

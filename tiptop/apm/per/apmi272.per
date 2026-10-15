@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi272.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi272")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr2110
+{
+ Price Terms         [poi01      |pnz02                         ]
+ Currency            [poi02      |azi02                         ]
+ Tax Type/Rate       [poi04      |poi05|gec07              ]
+
+}
+END -- gr2110
+Grid gr2111
+{
+ Memo              [poi03                             ]
+                   [                                  ]
+                   [                                  ]
+
+}
+END -- gr2111
+END -- hb1
+END -- page01
+Page info(text="Info")
+Grid gr2112
+{
+ Record Owner        [poiuser   ] Last Modified by    [poimodu   ]
+ Department          [poigrup   ] Create/Modify Date  [poidate        ]
+ Record Orig.        [poioriu   ]
+ Dept Orig.          [poiorig   ]
+}
+END -- gr2112
+END -- info
+END -- folder01
+Table s_poj
+{
+[poj03               |ima02               |ima021              |poj04      |poj05          |poj06               |poj06t              |poj07    ]
+[poj03               |ima02               |ima021              |poj04      |poj05          |poj06               |poj06t              |poj07    ]
+[poj03               |ima02               |ima021              |poj04      |poj05          |poj06               |poj06t              |poj07    ]
+[poj03               |ima02               |ima021              |poj04      |poj05          |poj06               |poj06t              |poj07    ]
+[poj03               |ima02               |ima021              |poj04      |poj05          |poj06               |poj06t              |poj07    ]
+[poj03               |ima02               |ima021              |poj04      |poj05          |poj06               |poj06t              |poj07    ]
+[poj03               |ima02               |ima021              |poj04      |poj05          |poj06               |poj06t              |poj07    ]
+[poj03               |ima02               |ima021              |poj04      |poj05          |poj06               |poj06t              |poj07    ]
+[poj03               |ima02               |ima021              |poj04      |poj05          |poj06               |poj06t              |poj07    ]
+[poj03               |ima02               |ima021              |poj04      |poj05          |poj06               |poj06t              |poj07    ]
+
+}
+END -- s_poj
+Grid gr2113
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2113
+END -- vb1
+END -- apmi272
+
+TABLES
+poj_file,
+poi_file
+ATTRIBUTES
+ButtonEdit poi01=poi_file.poi01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit pnz02=formonly.pnz02 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit poi02=poi_file.poi02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit azi02=formonly.azi02 type VARCHAR, tabIndex=18, noEntry;
+ButtonEdit poi04=poi_file.poi04, action=controlp, tabIndex=19, not null, required, image="zoom.png";
+Edit poi05=poi_file.poi05, tabIndex=20, noEntry, not null, required;
+CheckBox gec07=formonly.gec07 type VARCHAR, tabIndex=21, text="Taxed Including\n", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+TextEdit poi03=poi_file.poi03, tabIndex=4, stretch=NONE, wantNoReturns;
+Edit poiuser=poi_file.poiuser, tabIndex=5, noEntry;
+Edit poimodu=poi_file.poimodu, tabIndex=6, noEntry;
+Edit poigrup=poi_file.poigrup, tabIndex=7, noEntry;
+DateEdit poidate=poi_file.poidate, tabIndex=8, noEntry;
+Edit poioriu=poi_file.poioriu, tabIndex=501, noEntry;
+Edit poiorig=poi_file.poiorig, tabIndex=502, noEntry;
+ButtonEdit poj03=poj_file.poj03, action=controlp, tabIndex=9, title="Item No.", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=10, title="P/N", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=11, title="Spec", noEntry;
+ButtonEdit poj04=poj_file.poj04, action=controlp, tabIndex=12, title="Sales Unit", not null, required, image="zoom";
+DateEdit poj05=poj_file.poj05, tabIndex=13, title="Eff.Date", not null, required;
+Edit poj06=poj_file.poj06, tabIndex=14, title="Unit Price Excluding Tax", not null, required, comment="<^Y>Under Field Modified the same this Price";
+Edit poj06t=poj_file.poj06t, tabIndex=22, title="Unit Price Including Tax", not null, required;
+Edit poj07=poj_file.poj07, tabIndex=15, title="Discount", not null, required, comment="<^Y>Under Field Modified the same this Discount";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_poj(poj_file.poj03,formonly.ima02,formonly.ima021,poj_file.poj04,poj_file.poj05,poj_file.poj06,poj_file.poj06t,poj_file.poj07)
+SCREEN RECORD Undefined(poi_file.poi01,formonly.pnz02,poi_file.poi02,formonly.azi02,poi_file.poi04,poi_file.poi05,formonly.gec07,poi_file.poi03,poi_file.poiuser,poi_file.poimodu,poi_file.poigrup,poi_file.poidate,poi_file.poioriu,poi_file.poiorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aoop603.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aoop603")
+VBox vb2_
+Folder folder01
+Page page01(text="Main")
+Grid gr574
+{
+ Data Center [gev04         ][geu02               ]
+
+}
+END -- gr574
+END -- page01
+END -- folder01
+Table s_tables
+{
+[sel   |prog         |gaz03                        |zr02        |gat03                          |temp_tb                       ]
+[sel   |prog         |gaz03                        |zr02        |gat03                          |temp_tb                       ]
+[sel   |prog         |gaz03                        |zr02        |gat03                          |temp_tb                       ]
+[sel   |prog         |gaz03                        |zr02        |gat03                          |temp_tb                       ]
+[sel   |prog         |gaz03                        |zr02        |gat03                          |temp_tb                       ]
+[sel   |prog         |gaz03                        |zr02        |gat03                          |temp_tb                       ]
+[sel   |prog         |gaz03                        |zr02        |gat03                          |temp_tb                       ]
+[sel   |prog         |gaz03                        |zr02        |gat03                          |temp_tb                       ]
+[sel   |prog         |gaz03                        |zr02        |gat03                          |temp_tb                       ]
+[sel   |prog         |gaz03                        |zr02        |gat03                          |temp_tb                       ]
+}
+END -- s_tables
+END -- vb2_
+END -- aoop603
+
+TABLES
+gev_file,
+geu_file
+ATTRIBUTES
+Edit gev04=gev_file.gev04, tabIndex=1;
+Edit geu02=geu_file.geu02, tabIndex=2;
+CheckBox sel=formonly.sel type VARCHAR, tabIndex=3, title="sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit prog=formonly.prog type VARCHAR, tabIndex=4, title="Program Id", noEntry;
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=7, title="Program Name", noEntry;
+Edit zr02=formonly.zr02 type CHAR, tabIndex=5, title="Table Id", noEntry;
+Edit gat03=formonly.gat03 type CHAR, tabIndex=6, title="Table Name", noEntry;
+Edit temp_tb=formonly.temp_tb type CHAR, tabIndex=8, title=%"temp_tb", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tables(formonly.sel,formonly.prog,formonly.gaz03,formonly.zr02,formonly.gat03,formonly.temp_tb)
+SCREEN RECORD Undefined(gev_file.gev04,geu_file.geu02)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aicp021.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aicp021")
+VBox vb2
+Folder pc3
+Page page01(text="Main")
+Grid gr5
+{
+ Vendor No.  [ide01   ][pmc03      ]  Return Date    [ide04   ]                    When Data exist[ide07                ]
+ Category    [ide02   ]               Return Datafile[ide05                     ]  [ide08           ]
+ Receipt Doc.[ide03   ][smydesc    ]  Field Separator[ide06   ]                    ide16          [ide16     ]
+
+
+}
+END -- gr5
+END -- page01
+END -- pc3
+Table tb3
+{
+[idf03 |idf04       |idf05    |feldname             ]
+[idf03 |idf04       |idf05    |feldname             ]
+[idf03 |idf04       |idf05    |feldname             ]
+[idf03 |idf04       |idf05    |feldname             ]
+[idf03 |idf04       |idf05    |feldname             ]
+[idf03 |idf04       |idf05    |feldname             ]
+[idf03 |idf04       |idf05    |feldname             ]
+[idf03 |idf04       |idf05    |feldname             ]
+[idf03 |idf04       |idf05    |feldname             ]
+[idf03 |idf04       |idf05    |feldname             ]
+
+}
+END -- tb3
+Grid gr6
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr6
+END -- vb2
+END -- aicp021
+
+TABLES
+idf_file,
+ide_file
+ATTRIBUTES
+ButtonEdit ide01=ide_file.ide01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Vendor No.";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, noEntry;
+DateEdit ide04=ide_file.ide04, tabIndex=6, not null, required;
+ComboBox ide07=ide_file.ide07, tabIndex=9, not null, required, queryEditable, items=(("0", "Delete old data"),("1", "Decline to uoload"));
+ComboBox ide02=ide_file.ide02, tabIndex=3, not null, required, queryEditable, items=(("0", "Body"),("1", "Not Test Wafer"),("2", "Tested Wafer"),("3", "Not Test IC"),("4", "Tested IC"),("9", "Other"));
+Edit ide05=ide_file.ide05, tabIndex=7, not null, required;
+CheckBox ide08=ide_file.ide08, tabIndex=10, text="From c:\tiptop to update", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ide03=ide_file.ide03, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P> Qry Receipt Doc.";
+Edit smydesc=formonly.smydesc type CHAR, tabIndex=5, noEntry;
+ComboBox ide06=ide_file.ide06, tabIndex=8, not null, required, queryEditable, items=(("0", "Tab sign"),("1", "Semicolon sign"),("2", "Comma sign"));
+Edit ide16=ide_file.ide16, tabIndex=11, not null, required;
+Edit idf03=idf_file.idf03, tabIndex=12, title="Sequence", not null, required;
+ButtonEdit idf04=idf_file.idf04, action=controlp, tabIndex=13, title="Table No.", noEntry, image="zoom", comment="<^P> Qry Table No.";
+ButtonEdit idf05=idf_file.idf05, action=controlp, tabIndex=14, title="Field No.", not null, required, image="zoom", comment="<^P> Qry Field No.";
+Edit feldname=formonly.feldname type CHAR, tabIndex=15, title="Field name", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_idf(idf_file.idf03,idf_file.idf04,idf_file.idf05,formonly.feldname)
+SCREEN RECORD Undefined(ide_file.ide01,formonly.pmc03,ide_file.ide04,ide_file.ide07,ide_file.ide02,ide_file.ide05,ide_file.ide08,ide_file.ide03,formonly.smydesc,ide_file.ide06,ide_file.ide16,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi100_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi100_c")
+VBox VBox1
+Grid gr694
+{
+ <G group01                                               >
+  Original Master Item No.[old_no                        ]
+  Original Alternate Code [old_bmo06           ]
+  Version                 [verno1    ]
+  New Master Item No      [new_no                        ]
+  New Alternate Code      [new_bmo06           ]
+  Copied Version          [verno2    ]
+ <                                                        >
+ <G group02                                     >
+ [ans_3                                        ]
+ [ans_4                                        ]
+ [ans_5                                        ]
+ [ans_6                                        ]
+ <                                              >
+
+}
+END -- gr694
+END -- VBox1
+END -- abmi100_c
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit old_no=formonly.old_no type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry  Testing Item";
+Edit old_bmo06=formonly.old_bmo06 type CHAR, tabIndex=2;
+Edit verno1=formonly.verno1 type VARCHAR, tabIndex=3, not null, required;
+ButtonEdit new_no=formonly.new_no type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P> Qry  Testing Item <^Y>Create ";
+Edit new_bmo06=formonly.new_bmo06 type CHAR, tabIndex=5;
+Edit verno2=formonly.verno2 type VARCHAR, tabIndex=6;
+Group group02:group02;
+CheckBox ans_3=formonly.ans_3 type CHAR, tabIndex=7, text="Copy Description?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ans_4=formonly.ans_4 type CHAR, tabIndex=8, text="Copy Component Brand?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ans_5=formonly.ans_5 type CHAR, tabIndex=9, text="Copy Instert Location?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ans_6=formonly.ans_6 type CHAR, tabIndex=10, text="Copy REP/SUB Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.old_no,formonly.old_bmo06,formonly.verno1,formonly.new_no,formonly.new_bmo06,formonly.verno2,formonly.ans_3,formonly.ans_4,formonly.ans_5,formonly.ans_6)
+END -- INSTRUCTIONS
+

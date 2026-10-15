@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="anmp301")
+VBox vb1
+Grid gr6
+{
+ bankcode[a               ][b                   ]
+
+}
+END -- gr6
+Grid gr2
+{
+ F.Download date[a_b_date    ]L.download date[a_e_date    ]
+ B.Download date[b_date      ]E.download date[e_date      ]
+
+ [bgjob                       ]
+}
+END -- gr2
+END -- vb1
+END -- anmp301
+
+ATTRIBUTES
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit b=formonly.b type VARCHAR, tabIndex=2, noEntry;
+DateEdit a_b_date=formonly.a_b_date type DATE, tabIndex=3, noEntry;
+DateEdit a_e_date=formonly.a_e_date type DATE, tabIndex=4, noEntry;
+DateEdit b_date=formonly.b_date type DATE, tabIndex=5, not null, required;
+DateEdit e_date=formonly.e_date type DATE, tabIndex=6, not null, required;
+CheckBox bgjob=formonly.bgjob type VARCHAR, tabIndex=7, default = "N", text="background", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.b,formonly.a_b_date,formonly.a_e_date,formonly.b_date,formonly.e_date,formonly.bgjob)
+END -- INSTRUCTIONS
+

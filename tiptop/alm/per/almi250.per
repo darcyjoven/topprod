@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi250.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi250")
+VBox vb14
+Folder pc5
+Page Main(text=%"Main")
+Grid gr12
+{
+ Category               [lmr01          |oba02         ]
+ Arithmetic             [lmr02          ]
+ Mem                    [lmr03          ]
+}
+END -- gr12
+END -- Main
+Page info(text=%"Info")
+Grid gr13
+{
+ Record Owner        [lmruser   ] Last Modified by    [lmrmodu   ] Data Valid Code     [lmracti   ]
+ Department          [lmrgrup   ] Create/Modify Date  [lmrdate   ] Create Date         [lmrcrat   ]
+ Record Orig.        [lmroriu   ]
+ Dept Orig.          [lmrorig   ]
+
+
+}
+END -- gr13
+END -- info
+END -- pc5
+Grid gr14
+{
+ ---------- Rows[cnt   ]----------
+
+}
+END -- gr14
+END -- vb14
+END -- almi250
+
+TABLES
+lmr_file
+ATTRIBUTES
+ButtonEdit lmr01=lmr_file.lmr01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit oba02=formonly.oba02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit lmr02=lmr_file.lmr02, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Edit lmr03=lmr_file.lmr03, tabIndex=3;
+Edit lmruser=lmr_file.lmruser, tabIndex=6, noEntry;
+Edit lmrmodu=lmr_file.lmrmodu, tabIndex=10, noEntry;
+Edit lmracti=lmr_file.lmracti, tabIndex=12, noEntry, upShift;
+Edit lmrgrup=lmr_file.lmrgrup, tabIndex=7, noEntry;
+DateEdit lmrdate=lmr_file.lmrdate, tabIndex=11, noEntry;
+DateEdit lmrcrat=lmr_file.lmrcrat, tabIndex=13, noEntry;
+Edit lmroriu=lmr_file.lmroriu, tabIndex=8, noEntry;
+Edit lmrorig=lmr_file.lmrorig, tabIndex=9, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lmr_file.lmr01,formonly.oba02,lmr_file.lmr02,lmr_file.lmr03,lmr_file.lmruser,lmr_file.lmrmodu,lmr_file.lmracti,lmr_file.lmrgrup,lmr_file.lmrdate,lmr_file.lmrcrat,lmr_file.lmroriu,lmr_file.lmrorig,formonly.cnt)
+END -- INSTRUCTIONS
+

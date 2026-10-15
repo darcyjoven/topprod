@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gis/42f/gisr200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gisr200")
+VBox VBox1
+Grid gr3493
+{
+ <G group01                                                                             >
+  Invoice No.         [ise01               ]  Invoice Date        [ise03               ]
+  Accounts No.        [ise04               ]  Invoice Type        [ise062              ]
+  Data Source         [ise00               ]  Status Code         [ise07               ]
+ <                                                                                      >
+ <G group02                                                                              >
+  [s1                   ] [s2                    ] [s3                     ]
+  [t1                   ] [t2                    ] [t3                     ]
+  [u1                   ] [u2                    ] [u3                     ]
+ <                                                                                       >
+
+}
+END -- gr3493
+Grid gr3494
+{
+[more                                                           ]
+
+}
+END -- gr3494
+END -- VBox1
+END -- gisr200
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ise01=formonly.ise01 type CHAR, tabIndex=1;
+DateEdit ise03=formonly.ise03 type CHAR, tabIndex=2;
+Edit ise04=formonly.ise04 type CHAR, tabIndex=3;
+Edit ise062=formonly.ise062 type CHAR, tabIndex=4;
+Edit ise00=formonly.ise00 type CHAR, tabIndex=5;
+Edit ise07=formonly.ise07 type CHAR, tabIndex=6;
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=7, queryEditable, items=(("1", "Invoice No."),("2", "Invoice Date"),("3", "Accounts"),("4", "Invoice Type"),("5", "Data Source"),("6", "Status Code"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=8, queryEditable, items=(("1", "Invoice No."),("2", "Invoice Date"),("3", "Accounts"),("4", "Invoice Type"),("5", "Data Source"),("6", "Status Code"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=9, queryEditable, items=(("1", "Invoice No."),("2", "Invoice Date"),("3", "Accounts"),("4", "Invoice Type"),("5", "Data Source"),("6", "Status Code"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=13, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=15, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=16, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ise01,formonly.ise03,formonly.ise04,formonly.ise062,formonly.ise00,formonly.ise07,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.more)
+END -- INSTRUCTIONS
+

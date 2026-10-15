@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft700_tch1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"asft700_tch1", windowStyle="touch1")
+VBox vb6
+HBox hb7
+Group gb5(style="touch-bg1")
+Grid gr11_(style="touch-font")
+{
+               [re]
+
+  User ID.     [shb04       ][gen02           ]
+  Work No.     [shb05       ]
+  Routing NO.  [sfb06       ]
+  Workstation  [shb07       ][eca02           ]
+  Routing Seq. [shb06       ]
+
+
+
+
+
+
+
+}
+END -- gr11_
+END -- gb5
+Group gb3(style="touch-bg2")
+HBox hb6
+Grid gr11(style="touch-bg2")
+{
+
+[ima04                      ]
+[                           ]
+[                           ]
+[                           ]
+[                           ]
+[                           ]
+[                           ]
+
+
+
+
+
+}
+END -- gr11
+Grid gr22(style="touch-detail")
+{
+[te_ima01                     ]
+[                             ]
+[                             ]
+[                             ]
+[                             ]
+[                             ]
+[                             ]
+[                             ]
+[                             ]
+[                             ]
+[                             ]
+[                             ]
+[                             ]
+}
+END -- gr22
+END -- hb6
+END -- gb3
+END -- hb7
+Folder pc2(style="touch-bg3")
+Page page3(text=%"Page0", style="touch-bg3")
+Group flowchar(style="touch-bg3")
+Grid gr60
+{
+
+
+}
+END -- gr60
+END -- flowchar
+END -- page3
+END -- pc2
+END -- vb6
+END -- asft700_tch1
+
+TABLES
+shb_file
+ATTRIBUTES
+Button re:report_start, tabIndex=98, image="", fontPitch=variable, sizePolicy=dynamic, style="touch-btn1";
+Edit shb04=shb_file.shb04, tabIndex=12, not null, required;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=8, noEntry;
+Edit shb05=shb_file.shb05, tabIndex=11, not null, required;
+Edit sfb06=formonly.sfb06 type CHAR, tabIndex=14, noEntry;
+Edit shb07=shb_file.shb07, tabIndex=9;
+Edit eca02=formonly.eca02 type CHAR, tabIndex=10, noEntry;
+Edit shb06=shb_file.shb06, tabIndex=13, noEntry;
+IMAGE ima04=formonly.ima04 type CHAR, sizePolicy=dynamic, width = 300 characters, height = 140 characters;
+TextEdit te_ima01=formonly.te_ima01 type CHAR, tabIndex=97;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(shb_file.shb04,formonly.gen02,shb_file.shb05,formonly.sfb06,shb_file.shb07,formonly.eca02,shb_file.shb06,formonly.ima04,formonly.te_ima01)
+END -- INSTRUCTIONS
+

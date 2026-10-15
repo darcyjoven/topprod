@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi020")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4614
+{
+ Approval Level      [aze0]
+ Description         [aze02                         ]
+                     [aze03                         ]
+                     [aze04                         ]
+ Condition           [aze10                                                       ]
+                     [aze11                                                       ]
+ Approval Note       [aze09                 ]
+[aze07                                      ]
+}
+END -- gr4614
+END -- page01
+Page info(text="Info")
+Grid gr4615
+{
+ Record Owner        [azeuser   ] Last Modified by    [azemodu   ] Data Valid Code     [azeacti   ]
+ Department          [azegrup   ] Create/Modify Date  [azedate   ]
+ Record Orig.        [azeoriu   ]
+ Dept Orig.          [azeorig   ]
+}
+END -- gr4615
+END -- info
+END -- folder01
+Table s_azc
+{
+[azc02    |azc03        |gen02    |gen03          |gem02            |azc04       ]
+[azc02    |azc03        |gen02    |gen03          |gem02            |azc04       ]
+[azc02    |azc03        |gen02    |gen03          |gem02            |azc04       ]
+[azc02    |azc03        |gen02    |gen03          |gem02            |azc04       ]
+[azc02    |azc03        |gen02    |gen03          |gem02            |azc04       ]
+[azc02    |azc03        |gen02    |gen03          |gem02            |azc04       ]
+[azc02    |azc03        |gen02    |gen03          |gem02            |azc04       ]
+[azc02    |azc03        |gen02    |gen03          |gem02            |azc04       ]
+[azc02    |azc03        |gen02    |gen03          |gem02            |azc04       ]
+[azc02    |azc03        |gen02    |gen03          |gem02            |azc04       ]
+
+}
+END -- s_azc
+Grid gr4616
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4616
+END -- VBox1
+END -- aooi020
+
+TABLES
+aze_file,
+azc_file
+ATTRIBUTES
+Edit aze0=aze_file.aze01, tabIndex=1, not null, required, sample="MMMMM", comment="KEY Field, No Blank/Repeated!";
+Edit aze02=aze_file.aze02, tabIndex=2, not null, required;
+Edit aze03=aze_file.aze03, tabIndex=3;
+Edit aze04=aze_file.aze04, tabIndex=4;
+Edit aze10=aze_file.aze10, tabIndex=5;
+Edit aze11=aze_file.aze11, tabIndex=6;
+ComboBox aze09=aze_file.aze09, tabIndex=7, not null, required, queryEditable, items=(("1", "Quotation"),("2", "P/R"),("3", "P/O"),("4", "Voucher"),("5", "S/O"),("6", "Voucher Sheet"),("7", "Frequently Used Voucher"),("9", "Transfer"),("10", "Engineering Change Requisite"),("11", "A/P"),("12", "Payment Slip"),("13", "Sales Order(Local)Delivery Note"),("14", "Sales Order(Export)Delivery Note"),("15", "Sales Allowance Note"),("16", "Sales/Return Note No"),("17", "Advance Received Payment Slip"),("18", "Re-Delivery Export Doc"),("19", "Receipt Contra"),("20", "Opening L/C"),("21", "Bill Retired"),("22", "Debit Memo"),("23", "Credit Memo"),("24", "Bad Debit"),("25", "Order"),("26", "Order Change"));
+CheckBox aze07=aze_file.aze07, tabIndex=8, text="Need to Check", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit azeuser=aze_file.azeuser, tabIndex=9, noEntry;
+Edit azemodu=aze_file.azemodu, tabIndex=10, noEntry;
+Edit azeacti=aze_file.azeacti, tabIndex=11, noEntry, upShift;
+Edit azegrup=aze_file.azegrup, tabIndex=12, noEntry;
+DateEdit azedate=aze_file.azedate, tabIndex=13, noEntry;
+Edit azeoriu=aze_file.azeoriu, tabIndex=501, noEntry;
+Edit azeorig=aze_file.azeorig, tabIndex=502, noEntry;
+Edit azc02=azc_file.azc02, tabIndex=14, title="Sequence", not null, required;
+ButtonEdit azc03=azc_file.azc03, action=controlp, tabIndex=15, title="Employee No.", not null, required, image="zoom", comment="<^P>Qry Approver    ";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=16, title="Name", noEntry;
+Edit gen03=formonly.gen03 type CHAR, tabIndex=17, title="Department No.", noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=18, title="Department Name", noEntry;
+Edit azc04=azc_file.azc04, tabIndex=19, title="Memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azc(azc_file.azc02,azc_file.azc03,formonly.gen02,formonly.gen03,formonly.gem02,azc_file.azc04)
+SCREEN RECORD Undefined(aze_file.aze01,aze_file.aze02,aze_file.aze03,aze_file.aze04,aze_file.aze10,aze_file.aze11,aze_file.aze09,aze_file.aze07,aze_file.azeuser,aze_file.azemodu,aze_file.azeacti,aze_file.azegrup,aze_file.azedate,aze_file.azeoriu,aze_file.azeorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

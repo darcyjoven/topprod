@@ -1,0 +1,111 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi270.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi270")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+HBox hb3
+Grid gr2102
+{
+ Price Term No.[pof01          |pnz02                         ]
+ Currency      [pof02          |azi02                         ]
+ Eff.Date      [pof03          ]
+ Exp.Date      [pof06          ]
+ Vendor No.    [pof04          |pmc03                         ]
+ Payment Term  [pof05          |pma02                         ]
+}
+END -- gr2102
+Grid gr2103
+{
+ Tax Type/Rate[pof08       |pof09]%[gec07     ]
+ Memo         [pof07                         ]
+              [                              ]
+              [                              ]
+
+
+}
+END -- gr2103
+END -- hb3
+END -- page01
+Page info(text="Info")
+Grid gr2104
+{
+ Record Owner [pofuser   ]        Last Modified by    [pofmodu   ]
+ Department   [pofgrup   ]        Create/Modify Date  [pofdate        ]
+ Record Orig. [poforiu   ]
+ Dept Orig.   [poforig   ]
+
+
+}
+END -- gr2104
+END -- info
+END -- folder01
+Table s_pog
+{
+[pog06               |ima02               |ima021              |pog07    |pog08               |pog08t              |pog09    ]
+[pog06               |ima02               |ima021              |pog07    |pog08               |pog08t              |pog09    ]
+[pog06               |ima02               |ima021              |pog07    |pog08               |pog08t              |pog09    ]
+[pog06               |ima02               |ima021              |pog07    |pog08               |pog08t              |pog09    ]
+[pog06               |ima02               |ima021              |pog07    |pog08               |pog08t              |pog09    ]
+[pog06               |ima02               |ima021              |pog07    |pog08               |pog08t              |pog09    ]
+[pog06               |ima02               |ima021              |pog07    |pog08               |pog08t              |pog09    ]
+[pog06               |ima02               |ima021              |pog07    |pog08               |pog08t              |pog09    ]
+[pog06               |ima02               |ima021              |pog07    |pog08               |pog08t              |pog09    ]
+[pog06               |ima02               |ima021              |pog07    |pog08               |pog08t              |pog09    ]
+
+}
+END -- s_pog
+Grid gr2105
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2105
+END -- vb3
+END -- apmi270
+
+TABLES
+pog_file,
+pof_file
+ATTRIBUTES
+ButtonEdit pof01=pof_file.pof01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>QRY Price Iterms";
+Edit pnz02=formonly.pnz02 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit pof02=pof_file.pof02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>QRY Currency";
+Edit azi02=formonly.azi02 type VARCHAR, tabIndex=4, noEntry;
+DateEdit pof03=pof_file.pof03, tabIndex=5, not null, required;
+DateEdit pof06=pof_file.pof06, tabIndex=6, not null, required;
+ButtonEdit pof04=pof_file.pof04, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=8, noEntry;
+ButtonEdit pof05=pof_file.pof05, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Edit pma02=formonly.pma02 type VARCHAR, tabIndex=10, noEntry;
+ButtonEdit pof08=pof_file.pof08, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit pof09=pof_file.pof09, tabIndex=12, noEntry, not null, required;
+CheckBox gec07=formonly.gec07 type VARCHAR, tabIndex=13, text="Taxed", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+TextEdit pof07=pof_file.pof07, tabIndex=14, stretch=NONE, wantNoReturns;
+Edit pofuser=pof_file.pofuser, tabIndex=15, noEntry;
+Edit pofmodu=pof_file.pofmodu, tabIndex=17, noEntry;
+Edit pofgrup=pof_file.pofgrup, tabIndex=16, noEntry;
+DateEdit pofdate=pof_file.pofdate, tabIndex=18, noEntry;
+Edit poforiu=pof_file.poforiu, tabIndex=501, noEntry;
+Edit poforig=pof_file.poforig, tabIndex=502, noEntry;
+ButtonEdit pog06=pog_file.pog06, action=controlp, tabIndex=19, title="Item No.", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=20, title="Item Name", noEntry, not null, required;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=21, title="Item Spec.", noEntry, not null, required;
+ButtonEdit pog07=pog_file.pog07, action=controlp, tabIndex=22, title="Unit", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit pog08=pog_file.pog08, tabIndex=23, title="Unit Price Exclude Tax", not null, required;
+Edit pog08t=pog_file.pog08t, tabIndex=24, title="Unit Price Include Tax", not null, required, comment="<^Y>Under Field Modified the same this Discount$";
+Edit pog09=pog_file.pog09, tabIndex=25, title="Discount Rate", not null, required, comment="<^Y>Under Field Modified the same this Discount";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=26, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pog(pog_file.pog06,formonly.ima02,formonly.ima021,pog_file.pog07,pog_file.pog08,pog_file.pog08t,pog_file.pog09)
+SCREEN RECORD Undefined(pof_file.pof01,formonly.pnz02,pof_file.pof02,formonly.azi02,pof_file.pof03,pof_file.pof06,pof_file.pof04,formonly.pmc03,pof_file.pof05,formonly.pma02,pof_file.pof08,pof_file.pof09,formonly.gec07,pof_file.pof07,pof_file.pofuser,pof_file.pofmodu,pof_file.pofgrup,pof_file.pofdate,pof_file.poforiu,pof_file.poforig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

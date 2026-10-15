@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq305_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="anmq305_2")
+VBox VBox1
+Grid gr5
+{
+
+ bankcode    [nma01             ][nma02               ]
+ Trans_type  [noa05             ][azf03               ]
+ Version     [noa02             ][noa03               ]
+
+}
+END -- gr5
+END -- VBox1
+END -- anmq305_2
+
+TABLES
+nma_file,
+noa_file
+ATTRIBUTES
+ButtonEdit nma01=nma_file.nma01, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit nma02=formonly.nma02 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit noa05=noa_file.noa05, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit azf03=formonly.azf03 type VARCHAR, tabIndex=5, noEntry;
+ButtonEdit noa02=noa_file.noa02, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit noa03=formonly.noa03 type CHAR, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(noa_file.noa05,nma_file.nma01,noa_file.noa02,formonly.nma02,formonly.azf03,formonly.noa03)
+END -- INSTRUCTIONS
+

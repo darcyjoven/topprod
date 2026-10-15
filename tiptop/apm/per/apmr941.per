@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr941.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apmr941")
+VBox vb11
+Grid gr28
+{
+ <G gb12                                                                  >
+     Supplier No.        [pmc01                    ]
+     Supplier Class Code [pmy01                    ]
+ <                                                                        >
+ <G gb7                                                                   >
+    Year/Month           [yy    ] - [mm ]
+ <                                                                        >
+
+}
+END -- gr28
+Grid gr29
+{
+[more                                                            ]
+
+}
+END -- gr29
+END -- vb11
+END -- apmr941
+
+ATTRIBUTES
+Group gb12:gb12, text="QBE\n";
+ButtonEdit pmc01=formonly.pmc01 type CHAR, tabIndex=1;
+ButtonEdit pmy01=formonly.pmy01 type CHAR, tabIndex=2;
+Group gb7:gb7, text="INPUT\n";
+Edit yy=formonly.yy type CHAR, tabIndex=4, not null, required;
+Edit mm=formonly.mm type CHAR, tabIndex=5;
+CheckBox more=formonly.more type VARCHAR, tabIndex=3, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmc01,formonly.pmy01,formonly.yy,formonly.mm,formonly.more)
+END -- INSTRUCTIONS
+

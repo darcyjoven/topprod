@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli942.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli942")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2468
+{
+ Year                [gix06     ]
+ Period              [gix07     ]
+ Book No.            [gix00     ]
+}
+END -- gr2468
+Grid gr2469
+{
+ Group Code          [gix01     ]
+ Group Desc          [giq02                  ]
+
+}
+END -- gr2469
+Grid gr2470
+{
+ Account No.         [gix02                   ]
+ Account Name        [aag02                                             ]
+
+}
+END -- gr2470
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_gix
+{
+[gix03          |gix04                         |gix05               ]
+[gix03          |gix04                         |gix05               ]
+[gix03          |gix04                         |gix05               ]
+[gix03          |gix04                         |gix05               ]
+[gix03          |gix04                         |gix05               ]
+[gix03          |gix04                         |gix05               ]
+[gix03          |gix04                         |gix05               ]
+[gix03          |gix04                         |gix05               ]
+[gix03          |gix04                         |gix05               ]
+[gix03          |gix04                         |gix05               ]
+
+}
+END -- s_gix
+Grid gr2471
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2471
+END -- VBox1
+END -- agli942
+
+TABLES
+gix_file
+ATTRIBUTES
+Edit gix06=gix_file.gix06, tabIndex=1;
+Edit gix07=gix_file.gix07, tabIndex=2;
+ButtonEdit gix00=gix_file.gix00, action=controlp, tabIndex=12, image="zoom.png", comment="<^P>Query Group Code";
+ButtonEdit gix01=gix_file.gix01, action=controlp, tabIndex=3, image="zoom", comment="<^P>Query Group Code";
+Edit giq02=formonly.giq02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit gix02=gix_file.gix02, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Query Account No.";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=6, noEntry;
+Edit gix03=gix_file.gix03, tabIndex=7, title="No.", not null, required;
+Edit gix04=gix_file.gix04, tabIndex=8, title="Description";
+Edit gix05=gix_file.gix05, tabIndex=9, title="Amount";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gix(gix_file.gix03,gix_file.gix04,gix_file.gix05)
+SCREEN RECORD Undefined(gix_file.gix06,gix_file.gix07,gix_file.gix00,gix_file.gix01,formonly.giq02,gix_file.gix02,formonly.aag02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

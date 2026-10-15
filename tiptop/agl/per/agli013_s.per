@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli013_s.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli013_s")
+VBox vb1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ Year      [axx01     ]
+ Period    [axx02     ]
+ Group No. [axx03     ]
+ Parent Co.[axx031    ][axz02              ]
+}
+END -- gr1
+END -- page01
+END -- pc1
+Table s_axx
+{
+[axx04|axx05      |axx06        |axx07               |axx08               ]
+[axx04|axx05      |axx06        |axx07               |axx08               ]
+[axx04|axx05      |axx06        |axx07               |axx08               ]
+[axx04|axx05      |axx06        |axx07               |axx08               ]
+[axx04|axx05      |axx06        |axx07               |axx08               ]
+[axx04|axx05      |axx06        |axx07               |axx08               ]
+[axx04|axx05      |axx06        |axx07               |axx08               ]
+[axx04|axx05      |axx06        |axx07               |axx08               ]
+[axx04|axx05      |axx06        |axx07               |axx08               ]
+[axx04|axx05      |axx06        |axx07               |axx08               ]
+
+}
+END -- s_axx
+Grid gr2
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2
+END -- vb1
+END -- agli013_s
+
+TABLES
+axx_file
+ATTRIBUTES
+Edit axx01=axx_file.axx01, tabIndex=1, not null, required;
+Edit axx02=axx_file.axx02, tabIndex=2, not null, required;
+ButtonEdit axx03=axx_file.axx03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Group No.";
+ButtonEdit axx031=axx_file.axx031, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Parent Company";
+Edit axz02=formonly.axz02 type CHAR, tabIndex=5, noEntry;
+Edit axx04=axx_file.axx04, tabIndex=6, title="Ln#", not null, required;
+Edit axx05=axx_file.axx05, tabIndex=7, title="Share Year";
+Edit axx06=axx_file.axx06, tabIndex=8, title="Share Period";
+Edit axx07=axx_file.axx07, tabIndex=9, title="Share Amount";
+Edit axx08=axx_file.axx08, tabIndex=10, title="Combine Curr. Amount";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axx(axx_file.axx04,axx_file.axx05,axx_file.axx06,axx_file.axx07,axx_file.axx08)
+SCREEN RECORD Undefined(axx_file.axx01,axx_file.axx02,axx_file.axx03,axx_file.axx031,formonly.axz02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

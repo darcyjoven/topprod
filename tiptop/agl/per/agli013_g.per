@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli013_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli013_g")
+Folder pc329
+Page page01(text="Main")
+Grid gr1397
+{
+ <G group01                                         >
+  Year         [axv01          ]
+  Period       [axv02          ]
+  Group No.    [axv03          ]
+  Parent Co.   [axv031         ]
+  Ln#          [axv04          ]
+  Currency     [axv11          ]
+ <                                                  >
+
+}
+END -- gr1397
+END -- page01
+END -- pc329
+END -- agli013_g
+
+TABLES
+axv_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit axv01=axv_file.axv01, tabIndex=1;
+Edit axv02=axv_file.axv02, tabIndex=2;
+ButtonEdit axv03=axv_file.axv03, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit axv031=axv_file.axv031, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Parent Company";
+Edit axv04=axv_file.axv04, tabIndex=5;
+ButtonEdit axv11=axv_file.axv11, action=CONTROLP, tabIndex=6, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(axv_file.axv01,axv_file.axv02,axv_file.axv03,axv_file.axv031,axv_file.axv04,axv_file.axv11)
+END -- INSTRUCTIONS
+

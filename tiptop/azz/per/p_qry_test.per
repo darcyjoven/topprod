@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_qry_test.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_qry_test")
+VBox VBox1
+Grid gr3276
+{
+ <G group01                                                >
+  Query Function         [q_form                           ]
+  Items of Returnings    [q_retno                          ]
+ <                                                         >
+
+}
+END -- gr3276
+Group group02(text="Input Test Parameters")
+Grid gr3277
+{
+ [dummy01               ][state                                   ]
+ [dummy02               ][construct                               ]
+  Where Condiction(prog) [where                                   ]
+                         [                                        ]
+  Maximun Rows in a Page [pagecount   ]
+  Default Values 1-5     [default1    ][default2    ][default3    ]
+                         [default4    ][default5    ]
+  Argement Values 1-9    [arg1        ][arg2        ][arg3        ]
+                         [arg4        ][arg5        ][arg6        ]
+                         [arg7        ][arg8        ][arg9        ]
+ <G group03                                                       >
+  Return Item Index      [multiret_ind]
+ <                                                                >
+
+}
+END -- gr3277
+END -- group02
+END -- VBox1
+END -- p_qry_test
+
+ATTRIBUTES
+Group group01:group01, text="Testing Function Data";
+Edit q_form=formonly.q_form type CHAR, tabIndex=1;
+Edit q_retno=formonly.q_retno type VARCHAR, tabIndex=2;
+Label dummy01:dummy01, text="Testing Mode";
+RadioGroup state=formonly.state type CHAR, tabIndex=3, not null, required, orientation=horizontal, items=(("c", "Construct Mode"),("i", "Input Mode"));
+Label dummy02:dummy02, text="Test Re-Construct";
+RadioGroup construct=formonly.construct type CHAR, tabIndex=4, orientation=horizontal, items=(("Y", "Yes"),("N", "No"));
+TextEdit where=formonly.where type CHAR, tabIndex=5, stretch=NONE;
+Edit pagecount=formonly.pagecount type CHAR, tabIndex=6;
+Edit default1=formonly.default1 type CHAR, tabIndex=7;
+Edit default2=formonly.default2 type CHAR, tabIndex=8;
+Edit default3=formonly.default3 type CHAR, tabIndex=9;
+Edit default4=formonly.default4 type CHAR, tabIndex=10;
+Edit default5=formonly.default5 type CHAR, tabIndex=11;
+Edit arg1=formonly.arg1 type CHAR, tabIndex=12;
+Edit arg2=formonly.arg2 type CHAR, tabIndex=13;
+Edit arg3=formonly.arg3 type CHAR, tabIndex=14;
+Edit arg4=formonly.arg4 type CHAR, tabIndex=15;
+Edit arg5=formonly.arg5 type CHAR, tabIndex=16;
+Edit arg6=formonly.arg6 type CHAR, tabIndex=17;
+Edit arg7=formonly.arg7 type CHAR, tabIndex=18;
+Edit arg8=formonly.arg8 type CHAR, tabIndex=19;
+Edit arg9=formonly.arg9 type CHAR, tabIndex=20;
+Group group03:group03, text="Input Construct Mode Parameters";
+ComboBox multiret_ind=formonly.multiret_index type CHAR, tabIndex=21, queryEditable;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.q_form,formonly.q_retno,formonly.state,formonly.construct,formonly.where,formonly.pagecount,formonly.default1,formonly.default2,formonly.default3,formonly.default4,formonly.default5,formonly.arg1,formonly.arg2,formonly.arg3,formonly.arg4,formonly.arg5,formonly.arg6,formonly.arg7,formonly.arg8,formonly.arg9,formonly.multiret_index)
+END -- INSTRUCTIONS
+

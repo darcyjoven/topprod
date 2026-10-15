@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/csfi009.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"bace file")
+Grid Grid1
+{
+
+ tc_hrf01     [tc_hrf01              ]                                   tc_hrf06                   [tc_hrf06             ]
+ tc_hrf02     [tc_hrf02              ]                                   tc_hrf07                   [tc_hrf07             ]
+ tc_hrf03     [tc_hrf03              ]                                   tc_hrfconf                 [tc_hrfconf           ]
+ tc_hrf04     [tc_hrf04              ]                                   tc_hrfcond                 [tc_hrfcond           ]
+ tc_hrf05     [tc_hrf05              ]                                   tc_hrfconu/tc_hrfconu_desc [tc_hrfconu           ][tc_hrfconu_desc   ]
+
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"sitiation")
+Grid Grid2
+{
+
+ tc_hrfuser[tc_hrfuser             ]                    tc_hrfmodu [tc_hrfmodu             ]            tc_hrfacti[tc_hrfacti            ]
+ tc_hrfgrup[tc_hrfgrup             ]                    tc_hrfdate [tc_hrfdate             ]            tc_hrfcrat[tc_hrfcrat             ]
+ tc_hrforiu[tc_hrforiu             ]                    tc_hrforig [tc_hrforig             ]
+
+}
+END -- Grid2
+END -- Page2
+END -- Folder1
+Grid Grid3
+{
+
+
+  -----------th    [th           ]num    [num           ]   -----------
+
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit tc_hrf01=formonly.tc_hrf01, action=controlp, tabIndex=1, not null, image="zoom";
+Edit tc_hrf06=formonly.tc_hrf06, tabIndex=3;
+Edit tc_hrf02=formonly.tc_hrf02, tabIndex=2;
+Edit tc_hrf07=formonly.tc_hrf07, tabIndex=7;
+DateEdit tc_hrf03=formonly.tc_hrf03, tabIndex=4;
+ComboBox tc_hrfconf=formonly.tc_hrfconf, tabIndex=8, initializer=未审核, scroll, items=(("N", "未审核"),("Y", %"已审核"));
+DateEdit tc_hrf04=formonly.tc_hrf04, tabIndex=5;
+DateEdit tc_hrfcond=formonly.tc_hrfcond, tabIndex=9;
+ComboBox tc_hrf05=formonly.tc_hrf05 type VARCHAR, tabIndex=6, initializer=男, scroll, items=(("0", "男"),("1", "女"));
+ButtonEdit tc_hrfconu=formonly.tc_hrfconu, action=controlp, tabIndex=10, image="zoom";
+Edit tc_hrfconu_desc=formonly.tc_hrfconu_desc, tabIndex=11;
+Edit tc_hrfuser=formonly.tc_hrfuser, tabIndex=12, noEntry;
+Edit tc_hrfmodu=formonly.tc_hrfmodu, tabIndex=15, noEntry;
+Edit tc_hrfacti=formonly.tc_hrfacti, tabIndex=19, noEntry, scroll;
+Edit tc_hrfgrup=formonly.tc_hrfgrup, tabIndex=13, noEntry;
+DateEdit tc_hrfdate=formonly.tc_hrfdate, tabIndex=17, noEntry;
+DateEdit tc_hrfcrat=formonly.tc_hrfcrat, tabIndex=18;
+Edit tc_hrforiu=formonly.tc_hrforiu, tabIndex=14, noEntry;
+Edit tc_hrforig=formonly.tc_hrforig, tabIndex=16, noEntry;
+Edit th=formonly.th, tabIndex=20;
+Edit num=formonly.num, tabIndex=21;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_hrf01,formonly.tc_hrf02,formonly.tc_hrf06,formonly.tc_hrf03,formonly.tc_hrf04,formonly.tc_hrf05,formonly.tc_hrf07,formonly.tc_hrfconf,formonly.tc_hrfcond,formonly.tc_hrfconu,formonly.tc_hrfconu_desc,formonly.tc_hrfuser,formonly.tc_hrfgrup,formonly.tc_hrforiu,formonly.tc_hrfmodu,formonly.tc_hrforig,formonly.tc_hrfdate,formonly.tc_hrfcrat,formonly.tc_hrfacti,formonly.th,formonly.num)
+END -- INSTRUCTIONS
+

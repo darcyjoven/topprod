@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdq100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdq100")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr380
+{
+ Work Order Category [stf01              ]
+ W/O No.             [stf04           ]
+ Year/Month          [stf0]/[st]
+}
+END -- gr380
+Grid gr381
+{
+ Item No.            [sfb05                         ]
+                     [ima02a                        ]
+
+}
+END -- gr381
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_stf
+{
+[stf05               |stf06            |stf07               |ima02                         |stf11      |stf08    |stf09    |stf10          ]
+[stf05               |stf06            |stf07               |ima02                         |stf11      |stf08    |stf09    |stf10          ]
+[stf05               |stf06            |stf07               |ima02                         |stf11      |stf08    |stf09    |stf10          ]
+[stf05               |stf06            |stf07               |ima02                         |stf11      |stf08    |stf09    |stf10          ]
+[stf05               |stf06            |stf07               |ima02                         |stf11      |stf08    |stf09    |stf10          ]
+[stf05               |stf06            |stf07               |ima02                         |stf11      |stf08    |stf09    |stf10          ]
+[stf05               |stf06            |stf07               |ima02                         |stf11      |stf08    |stf09    |stf10          ]
+[stf05               |stf06            |stf07               |ima02                         |stf11      |stf08    |stf09    |stf10          ]
+[stf05               |stf06            |stf07               |ima02                         |stf11      |stf08    |stf09    |stf10          ]
+[stf05               |stf06            |stf07               |ima02                         |stf11      |stf08    |stf09    |stf10          ]
+[stf05               |stf06            |stf07               |ima02                         |stf11      |stf08    |stf09    |stf10          ]
+[stf05               |stf06            |stf07               |ima02                         |stf11      |stf08    |stf09    |stf10          ]
+
+}
+END -- s_stf
+Grid gr382
+{
+ ---------- Rows [cnt   ]/[cn2   ] ----------
+
+}
+END -- gr382
+END -- VBox1
+END -- asdq100
+
+TABLES
+stf_file
+ATTRIBUTES
+ComboBox stf01=stf_file.stf01, tabIndex=1, noEntry, not null, required, queryEditable, items=(("1", "Gnrl"),("5", "Rework"),("7", "Sub."),("8", "Rwrk Sub"),("11", "Disasm"),("13", "Predic"),("15", "Trial"));
+Edit stf04=stf_file.stf04, tabIndex=2;
+Edit stf0=stf_file.stf02, tabIndex=3;
+Edit st=stf_file.stf03, tabIndex=4;
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=5;
+Edit ima02a=formonly.ima02a type CHAR, tabIndex=6, noEntry;
+Edit stf05=stf_file.stf05, tabIndex=7, title="Material Requisite";
+DateEdit stf06=stf_file.stf06, tabIndex=8, title="Withdraw Return";
+Edit stf07=stf_file.stf07, tabIndex=9, title="Item#";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=10, title="Part Name Specification", noEntry;
+Edit stf11=stf_file.stf11, tabIndex=11, title="Warehouse";
+Edit stf08=stf_file.stf08, tabIndex=12, title="Qty";
+Edit stf09=stf_file.stf09, tabIndex=13, title="Unit Cost";
+Edit stf10=stf_file.stf10, tabIndex=14, title="Standard Cost";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_stf(stf_file.stf05,stf_file.stf06,stf_file.stf07,formonly.ima02,stf_file.stf11,stf_file.stf08,stf_file.stf09,stf_file.stf10)
+SCREEN RECORD Undefined(stf_file.stf01,stf_file.stf04,stf_file.stf02,stf_file.stf03,formonly.sfb05,formonly.ima02a,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

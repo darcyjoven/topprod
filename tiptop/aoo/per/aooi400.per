@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi400")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4645
+{
+ Coding Category       [gef01     ][gei02               ]
+ Coding Property       [gei03     ][geh02               ]
+ Cur Segment/Total Seg [gef02     ]/[gei04     ]
+ Length/Total Len      [gef03     ]/[gei05     ]
+ Model                 [gef05     ][desc      ][gel05     ]
+ Description           [gel06               ]
+ Last Code No.         [gef04                         ]
+}
+END -- gr4645
+END -- page01
+Page info(text="Info")
+Grid gr4646
+{
+ Record Owner        [gefuser   ] Last Modified by    [gefmodu   ] Data Valid Code     [gefacti   ]
+ Department          [gefgrup   ] Create/Modify Date  [gefdate   ]
+ Record Orig.        [geforiu   ]
+ Dept Orig.          [geforig   ]
+}
+END -- gr4646
+END -- info
+END -- folder01
+Table s_geg
+{
+[geg02     |geg03                         |geg04                         ]
+[geg02     |geg03                         |geg04                         ]
+[geg02     |geg03                         |geg04                         ]
+[geg02     |geg03                         |geg04                         ]
+[geg02     |geg03                         |geg04                         ]
+[geg02     |geg03                         |geg04                         ]
+[geg02     |geg03                         |geg04                         ]
+[geg02     |geg03                         |geg04                         ]
+[geg02     |geg03                         |geg04                         ]
+[geg02     |geg03                         |geg04                         ]
+[geg02     |geg03                         |geg04                         ]
+
+}
+END -- s_geg
+Grid gr4647
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4647
+END -- VBox1
+END -- aooi400
+
+TABLES
+geg_file,
+gef_file
+ATTRIBUTES
+ButtonEdit gef01=gef_file.gef01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Required! <^P> Qry Coding Category";
+Edit gei02=formonly.gei02 type VARCHAR, tabIndex=2, noEntry;
+Edit gei03=formonly.gei03 type VARCHAR, tabIndex=3, noEntry;
+Edit geh02=formonly.geh02 type VARCHAR, tabIndex=4, noEntry;
+Edit gef02=gef_file.gef02, tabIndex=5;
+Edit gei04=formonly.gei04 type SMALLINT, tabIndex=6, noEntry;
+Edit gef03=gef_file.gef03, tabIndex=7, noEntry;
+Edit gei05=formonly.gei05 type SMALLINT, tabIndex=8, noEntry;
+Edit gef05=gef_file.gef05, tabIndex=9, noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=10, noEntry;
+Edit gel05=formonly.gel05 type CHAR, tabIndex=11, noEntry;
+Edit gel06=formonly.gel06 type CHAR, tabIndex=12, noEntry;
+ButtonEdit gef04=gef_file.gef04, action=controlp, tabIndex=13, image="zoom", comment="<^P> Qry Details";
+Edit gefuser=gef_file.gefuser, tabIndex=14, noEntry;
+Edit gefmodu=gef_file.gefmodu, tabIndex=15, noEntry;
+Edit gefacti=gef_file.gefacti, tabIndex=16, noEntry;
+Edit gefgrup=gef_file.gefgrup, tabIndex=17, noEntry;
+DateEdit gefdate=gef_file.gefdate, tabIndex=18, noEntry;
+Edit geforiu=gef_file.geforiu, tabIndex=501, noEntry;
+Edit geforig=gef_file.geforig, tabIndex=502, noEntry;
+Edit geg02=geg_file.geg02, tabIndex=19, title="Line No.", not null, required;
+Edit geg03=geg_file.geg03, tabIndex=20, title="Code No.", not null, required, comment="Ought not to be System Symbol,ex *,_,%,? ";
+Edit geg04=geg_file.geg04, tabIndex=21, title="Code Description";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_geg(geg_file.geg02,geg_file.geg03,geg_file.geg04)
+SCREEN RECORD Undefined(gef_file.gef01,formonly.gei02,formonly.gei03,formonly.geh02,gef_file.gef02,formonly.gei04,gef_file.gef03,formonly.gei05,gef_file.gef05,formonly.desc,formonly.gel05,formonly.gel06,gef_file.gef04,gef_file.gefuser,gef_file.gefmodu,gef_file.gefacti,gef_file.gefgrup,gef_file.gefdate,gef_file.geforiu,gef_file.geforig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

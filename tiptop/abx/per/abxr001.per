@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxr001")
+Grid gr1089
+{
+ <G group01                                 >
+  Category             [bw]
+  Item No.             [bwe03              ]
+  Bonded               [im]
+
+ <                                          >
+
+}
+END -- gr1089
+END -- abxr001
+
+TABLES
+bwe_file,
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit bw=bwe_file.bwe00, tabIndex=1, noEntry, upShift, comment="S:Stock Taking  W:WIP Inventory Taking";
+ButtonEdit bwe03=bwe_file.bwe03, action=controlp, tabIndex=2, image="zoom";
+Edit im=ima_file.ima15, tabIndex=3, noEntry, upShift;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bwe_file.bwe00,bwe_file.bwe03,ima_file.ima15)
+END -- INSTRUCTIONS
+

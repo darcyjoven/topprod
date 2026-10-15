@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri043_m.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[sel     |hrat01  |hrat02  |hrat03  |hraa12  |hrat04  |hrao02  |hrat05  |hras04  ]
+[sel     |hrat01  |hrat02  |hrat03  |hraa12  |hrat04  |hrao02  |hrat05  |hras04  ]
+[sel     |hrat01  |hrat02  |hrat03  |hraa12  |hrat04  |hrao02  |hrat05  |hras04  ]
+[sel     |hrat01  |hrat02  |hrat03  |hraa12  |hrat04  |hrao02  |hrat05  |hras04  ]
+[sel     |hrat01  |hrat02  |hrat03  |hraa12  |hrat04  |hrao02  |hrat05  |hras04  ]
+
+
+
+
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+CheckBox sel=formonly.sel type VARCHAR, tabIndex=1, title=%"sel", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit hrat01=formonly.hrat01 type VARCHAR, tabIndex=2, title=%"hrat01", noEntry;
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=3, title=%"hrat02", noEntry;
+Edit hrat03=formonly.hrat03 type VARCHAR, tabIndex=4, title=%"hrat03", noEntry;
+Edit hraa12=formonly.hraa12 type VARCHAR, tabIndex=5, title=%"hraa12", noEntry;
+Edit hrat04=formonly.hrat04 type VARCHAR, tabIndex=6, title=%"hrat04", noEntry;
+Edit hrao02=formonly.hrao02 type VARCHAR, tabIndex=7, title=%"hrao02", noEntry;
+Edit hrat05=formonly.hrat05 type VARCHAR, tabIndex=8, title=%"hrat05", noEntry;
+Edit hras04=formonly.hras04 type VARCHAR, tabIndex=9, title=%"hras04", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrat(formonly.sel,formonly.hrat01,formonly.hrat02,formonly.hrat03,formonly.hraa12,formonly.hrat04,formonly.hrao02,formonly.hrat05,formonly.hras04)
+END -- INSTRUCTIONS
+

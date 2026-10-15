@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acop762.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="acop762")
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+  <G gb4                                     >
+   Sn             [cei02               ]
+   Product Code   [cei03               ]
+
+  <                                          >
+  <G gb5                                     >
+  [dummy02 |cei01                     ]
+   Invalid?[cei15                     ]
+   Excel File Name[file_name           ]
+  [dummy01                                   ]
+  [bg_job      ]
+  <                                          >
+}
+END -- gr1
+END -- Page1
+END -- pc1
+END -- acop762
+
+TABLES
+cei_file
+ATTRIBUTES
+Group gb4:gb4, text="QBE Condition";
+Edit cei02=cei_file.cei02, tabIndex=1;
+ButtonEdit cei03=cei_file.cei03, action=controlp, tabIndex=2, image="zoom";
+Group gb5:gb5, text="Input";
+Label dummy02:dummy02, text="Product Type";
+RadioGroup cei01=formonly.cei01 type CHAR, tabIndex=5, default = "1", not null, required, orientation=horizontal, items=(("1", "Production"),("2", "Material"));
+RadioGroup cei15=formonly.cei15 type CHAR, tabIndex=6, default = "N", not null, required, orientation=horizontal, items=(("N", "Unconfirm"),("Y", "Confirm"));
+Edit file_name=formonly.file_name type VARCHAR, tabIndex=3, not null, required;
+Label dummy01:dummy01, text="File Path: c:\\tiptop";
+CheckBox bg_job=formonly.bg_job type CHAR, tabIndex=4, default = "N", text="background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cei_file.cei02,cei_file.cei03,formonly.cei01,formonly.cei15,formonly.file_name,formonly.bg_job)
+END -- INSTRUCTIONS
+

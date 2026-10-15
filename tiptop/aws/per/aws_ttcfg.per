@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_ttcfg.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_ttcfg")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Grid gr6
+{
+ <G group01                                                                        >
+  Service ID [wsm01               ]
+  Table ID   [wsm02               ][gat03                              ]
+ <                                                                                 >
+
+}
+END -- gr6
+END -- page01
+Page info(text="Info")
+Grid gr7
+{
+   Record Owner [wsmuser   ] Last Modified by    [wsmmodu   ] Data Valid Code  [wsmacti   ]
+   Department   [wsmgrup   ] Create/Modify Date  [wsmdate   ]
+   Record Orig. [wsmoriu   ]
+   Dept Orig.   [wsmorig   ]
+}
+END -- gr7
+END -- info
+END -- pc1
+Table tb3
+{
+[wsn03     |gaq03                    |wsn04          ]
+[wsn03     |gaq03                    |wsn04          ]
+[wsn03     |gaq03                    |wsn04          ]
+[wsn03     |gaq03                    |wsn04          ]
+[wsn03     |gaq03                    |wsn04          ]
+[wsn03     |gaq03                    |wsn04          ]
+[wsn03     |gaq03                    |wsn04          ]
+[wsn03     |gaq03                    |wsn04          ]
+[wsn03     |gaq03                    |wsn04          ]
+[wsn03     |gaq03                    |wsn04          ]
+[wsn03     |gaq03                    |wsn04          ]
+[wsn03     |gaq03                    |wsn04          ]
+[wsn03     |gaq03                    |wsn04          ]
+[wsn03     |gaq03                    |wsn04          ]
+[wsn03     |gaq03                    |wsn04          ]
+
+}
+END -- tb3
+Grid gr8
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr8
+END -- VBox1
+END -- aws_ttcfg
+
+TABLES
+wsn_file,
+wsm_file
+ATTRIBUTES
+Group group01:group01;
+Edit wsm01=wsm_file.wsm01, tabIndex=1, not null, required;
+ButtonEdit wsm02=wsm_file.wsm02, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit gat03=formonly.gat03 type CHAR, tabIndex=3, noEntry;
+Edit wsmuser=wsm_file.wsmuser, tabIndex=4, noEntry;
+Edit wsmmodu=wsm_file.wsmmodu, tabIndex=5, noEntry;
+Edit wsmacti=wsm_file.wsmacti, tabIndex=6, noEntry, upShift;
+Edit wsmgrup=wsm_file.wsmgrup, tabIndex=7, noEntry;
+Edit wsmdate=wsm_file.wsmdate, tabIndex=8, noEntry;
+Edit wsmoriu=wsm_file.wsmoriu, tabIndex=501, noEntry;
+Edit wsmorig=wsm_file.wsmorig, tabIndex=502, noEntry;
+Edit wsn03=wsn_file.wsn03, tabIndex=9, title="Column ID", not null, required;
+Edit gaq03=formonly.gaq03 type CHAR, tabIndex=10, title="Column Desc", noEntry;
+Edit wsn04=wsn_file.wsn04, tabIndex=11, title="Default";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wsn(wsn_file.wsn03,formonly.gaq03,wsn_file.wsn04)
+SCREEN RECORD Undefined(wsm_file.wsm01,wsm_file.wsm02,formonly.gat03,wsm_file.wsmuser,wsm_file.wsmmodu,wsm_file.wsmacti,wsm_file.wsmgrup,wsm_file.wsmdate,wsm_file.wsmoriu,wsm_file.wsmorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

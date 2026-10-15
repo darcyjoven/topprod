@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi602.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi602")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr754
+{
+ Master Item No.     [bma01                         ]
+ Part Name           [ima02_h                       ]
+ Specification       [ima021_h                      ]
+ Expiry Date         [vdate       ]
+}
+END -- gr754
+Grid gr755
+{
+ Version             [ima05_h   ]
+ Source Code         [ima08_h   ]
+ Unit                [ima55     ]
+ Alternate Code      [bma06               ]
+}
+END -- gr755
+END -- hb1
+END -- page01
+END -- folder01
+Table s_bmb
+{
+[bmb0|bmb03               |ima02_b                       |ima021_b                      |ima0|bmb1|bmb04    |bmb05    |bmb06  |bmb07  |bmb09   |bmb19    |bmb15  |bmb27  |bmb18   ]
+[bmb0|bmb03               |ima02_b                       |ima021_b                      |ima0|bmb1|bmb04    |bmb05    |bmb06  |bmb07  |bmb09   |bmb19    |bmb15  |bmb27  |bmb18   ]
+[bmb0|bmb03               |ima02_b                       |ima021_b                      |ima0|bmb1|bmb04    |bmb05    |bmb06  |bmb07  |bmb09   |bmb19    |bmb15  |bmb27  |bmb18   ]
+[bmb0|bmb03               |ima02_b                       |ima021_b                      |ima0|bmb1|bmb04    |bmb05    |bmb06  |bmb07  |bmb09   |bmb19    |bmb15  |bmb27  |bmb18   ]
+[bmb0|bmb03               |ima02_b                       |ima021_b                      |ima0|bmb1|bmb04    |bmb05    |bmb06  |bmb07  |bmb09   |bmb19    |bmb15  |bmb27  |bmb18   ]
+[bmb0|bmb03               |ima02_b                       |ima021_b                      |ima0|bmb1|bmb04    |bmb05    |bmb06  |bmb07  |bmb09   |bmb19    |bmb15  |bmb27  |bmb18   ]
+[bmb0|bmb03               |ima02_b                       |ima021_b                      |ima0|bmb1|bmb04    |bmb05    |bmb06  |bmb07  |bmb09   |bmb19    |bmb15  |bmb27  |bmb18   ]
+[bmb0|bmb03               |ima02_b                       |ima021_b                      |ima0|bmb1|bmb04    |bmb05    |bmb06  |bmb07  |bmb09   |bmb19    |bmb15  |bmb27  |bmb18   ]
+[bmb0|bmb03               |ima02_b                       |ima021_b                      |ima0|bmb1|bmb04    |bmb05    |bmb06  |bmb07  |bmb09   |bmb19    |bmb15  |bmb27  |bmb18   ]
+[bmb0|bmb03               |ima02_b                       |ima021_b                      |ima0|bmb1|bmb04    |bmb05    |bmb06  |bmb07  |bmb09   |bmb19    |bmb15  |bmb27  |bmb18   ]
+}
+END -- s_bmb
+Grid gr756
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr756
+END -- vb4
+END -- abmi602
+
+TABLES
+bmb_file,
+bma_file
+ATTRIBUTES
+ButtonEdit bma01=bma_file.bma01, action=controlp, tabIndex=1, image="zoom";
+Edit ima02_h=formonly.ima02_h type CHAR, tabIndex=2, noEntry;
+Edit ima021_h=formonly.ima021_h type CHAR, tabIndex=3, noEntry;
+DateEdit vdate=formonly.vdate type DATE, tabIndex=4;
+Edit ima05_h=formonly.ima05_h type CHAR, tabIndex=5, noEntry;
+Edit ima08_h=formonly.ima08_h type CHAR, tabIndex=6, noEntry;
+Edit ima55=formonly.ima55 type CHAR, tabIndex=7, noEntry;
+Edit bma06=formonly.bma06 type CHAR, tabIndex=8, noEntry;
+Edit bmb0=formonly.bmb02 type CHAR, tabIndex=9, title="Ln #", noEntry;
+Edit bmb03=formonly.bmb03 type CHAR, tabIndex=10, title="Component No", noEntry;
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=11, title="P/N", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=12, title="Specification", noEntry;
+Edit ima0=formonly.ima08_b type CHAR, tabIndex=13, title="Src", noEntry;
+Edit bmb1=bmb_file.bmb10, tabIndex=14, title="Unit", noEntry;
+DateEdit bmb04=formonly.bmb04 type CHAR, tabIndex=15, title="Eff.Date", noEntry;
+DateEdit bmb05=formonly.bmb05 type CHAR, tabIndex=16, title="Exp.Date", noEntry;
+Edit bmb06=formonly.bmb06 type CHAR, tabIndex=17, title="QPA", noEntry;
+Edit bmb07=formonly.bmb07 type CHAR, tabIndex=18, title="DQPA", noEntry;
+ButtonEdit bmb09=bmb_file.bmb09, action=controlp, tabIndex=19, title="Task No.", image="zoom", comment="<^P> Qry Task No.";
+ComboBox bmb19=bmb_file.bmb19, tabIndex=20, title="Expl Opt", not null, required, queryEditable, items=(("1", %"No Exp"),("2", %"No Expl,Auto Open WO"),("3", %"Expl"),("4", %"Open Window and Qry to Expl?"));
+CheckBox bmb15=bmb_file.bmb15, tabIndex=24, title="Consumption", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmb27=bmb_file.bmb27, tabIndex=21, title="Belong", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Software Object?";
+Edit bmb18=bmb_file.bmb18, tabIndex=25, title=%"Time Bucket of Material Input", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmb(formonly.bmb02,formonly.bmb03,formonly.ima02_b,formonly.ima021_b,formonly.ima08_b,bmb_file.bmb10,formonly.bmb04,formonly.bmb05,formonly.bmb06,formonly.bmb07,bmb_file.bmb09,bmb_file.bmb19,bmb_file.bmb15,bmb_file.bmb27,bmb_file.bmb18)
+SCREEN RECORD Undefined(bma_file.bma01,formonly.ima02_h,formonly.ima021_h,formonly.vdate,formonly.ima05_h,formonly.ima08_h,formonly.ima55,formonly.bma06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

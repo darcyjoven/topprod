@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_gpmtrn.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"GPM trans Config")
+VBox VBox1
+Table s_trans
+{
+[chk01 |wgd01      |gat03       ]
+[chk01 |wgd01      |gat03       ]
+[chk01 |wgd01      |gat03       ]
+[chk01 |wgd01      |gat03       ]
+[chk01 |wgd01      |gat03       ]
+[chk01 |wgd01      |gat03       ]
+[chk01 |wgd01      |gat03       ]
+[chk01 |wgd01      |gat03       ]
+[chk01 |wgd01      |gat03       ]
+[chk01 |wgd01      |gat03       ]
+
+}
+END -- s_trans
+Grid gr1427
+{
+ ----------Rows [cn2] ----------
+
+}
+END -- gr1427
+END -- VBox1
+END -- aws_gpmtrn
+
+ATTRIBUTES
+CheckBox chk01=formonly.chk01 type CHAR, tabIndex=1, title="ifupd", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit wgd01=formonly.wgd01 type CHAR, tabIndex=2, title="Table Name", noEntry;
+Edit gat03=formonly.gat03 type CHAR, tabIndex=3, title="Table Memo", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_trans(formonly.chk01,formonly.wgd01,formonly.gat03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

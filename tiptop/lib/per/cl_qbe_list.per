@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_qbe_list.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"cl_qbe_list")
+Grid gr3697
+{
+ <T s_gbm                                                                                                                >
+ [gbm06   |gbm07           |gbm08  |gbm01   |gbm02 |gbm04               |gbm05                  |cont                   ]
+ [gbm06   |gbm07           |gbm08  |gbm01   |gbm02 |gbm04               |gbm05                  |cont                   ]
+ [gbm06   |gbm07           |gbm08  |gbm01   |gbm02 |gbm04               |gbm05                  |cont                   ]
+ [gbm06   |gbm07           |gbm08  |gbm01   |gbm02 |gbm04               |gbm05                  |cont                   ]
+ [gbm06   |gbm07           |gbm08  |gbm01   |gbm02 |gbm04               |gbm05                  |cont                   ]
+ [gbm06   |gbm07           |gbm08  |gbm01   |gbm02 |gbm04               |gbm05                  |cont                   ]
+ [gbm06   |gbm07           |gbm08  |gbm01   |gbm02 |gbm04               |gbm05                  |cont                   ]
+ [gbm06   |gbm07           |gbm08  |gbm01   |gbm02 |gbm04               |gbm05                  |cont                   ]
+ [gbm06   |gbm07           |gbm08  |gbm01   |gbm02 |gbm04               |gbm05                  |cont                   ]
+ [gbm06   |gbm07           |gbm08  |gbm01   |gbm02 |gbm04               |gbm05                  |cont                   ]
+ <                                                                                                                       >
+
+}
+END -- gr3697
+END -- cl_qbe_list
+
+TABLES
+gbm_file
+ATTRIBUTES
+Table s_gbm:s_gbm;
+CheckBox gbm06=gbm_file.gbm06, tabIndex=1, title="Default", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gbm07=gbm_file.gbm07, tabIndex=2, title="Set Immediately", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gbm08=gbm_file.gbm08, tabIndex=3, title="Share", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gbm01=gbm_file.gbm01, tabIndex=4, title="QBE SN.", noEntry;
+Edit gbm02=gbm_file.gbm02, tabIndex=5, title="User", noEntry;
+Edit gbm04=gbm_file.gbm04, tabIndex=6, title="Condition Code", noEntry;
+Edit gbm05=gbm_file.gbm05, tabIndex=7, title="Memo";
+Edit cont=formonly.cont type CHAR, tabIndex=8, title="Content";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gbm(gbm_file.gbm06,gbm_file.gbm07,gbm_file.gbm08,gbm_file.gbm01,gbm_file.gbm02,gbm_file.gbm04,gbm_file.gbm05,formonly.cont)
+END -- INSTRUCTIONS
+

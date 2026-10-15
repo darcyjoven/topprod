@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai040.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai040")
+VBox VBox1
+Folder pc321
+Page page01(text="Main")
+Table s_faf
+{
+[faf01              |faf02                                                       |faf03           |fafact]
+[faf01              |faf02                                                       |faf03           |fafact]
+[faf01              |faf02                                                       |faf03           |fafact]
+[faf01              |faf02                                                       |faf03           |fafact]
+[faf01              |faf02                                                       |faf03           |fafact]
+[faf01              |faf02                                                       |faf03           |fafact]
+[faf01              |faf02                                                       |faf03           |fafact]
+[faf01              |faf02                                                       |faf03           |fafact]
+[faf01              |faf02                                                       |faf03           |fafact]
+[faf01              |faf02                                                       |faf03           |fafact]
+
+}
+END -- s_faf
+END -- page01
+END -- pc321
+Grid gr1805
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1805
+END -- VBox1
+END -- afai040
+
+TABLES
+faf_file
+ATTRIBUTES
+Edit faf01=faf_file.faf01, tabIndex=1, title="Storing Location", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit faf02=faf_file.faf02, tabIndex=2, title="Location Desc";
+ButtonEdit faf03=faf_file.faf03, action=controlp, tabIndex=3, title="Storing Plant", image="zoom", comment="<^P>Qry Plant ";
+CheckBox fafact=faf_file.fafacti, tabIndex=4, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_faf(faf_file.faf01,faf_file.faf02,faf_file.faf03,faf_file.fafacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

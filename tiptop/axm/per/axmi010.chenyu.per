@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi010.chenyu.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi010")
+VBox vb6
+Folder pc437
+Page page01(text="Main")
+VBox vb5
+Table s_oay
+{
+[oaysl|oaydesc             |oayauno  |oayconf  |oayprnt  |oaydmy6  |oaytype  |oay11    |oay12    |oayapr   |oaysign   |oay13                      |oay14                |oay15      |oay16     |oay19               |oay17     |oay18               |oay20       |oay22           |oay24     |oayacti   ]
+[oaysl|oaydesc             |oayauno  |oayconf  |oayprnt  |oaydmy6  |oaytype  |oay11    |oay12    |oayapr   |oaysign   |oay13                      |oay14                |oay15      |oay16     |oay19               |oay17     |oay18               |oay20       |oay22           |oay24     |oayacti   ]
+[oaysl|oaydesc             |oayauno  |oayconf  |oayprnt  |oaydmy6  |oaytype  |oay11    |oay12    |oayapr   |oaysign   |oay13                      |oay14                |oay15      |oay16     |oay19               |oay17     |oay18               |oay20       |oay22           |oay24     |oayacti   ]
+[oaysl|oaydesc             |oayauno  |oayconf  |oayprnt  |oaydmy6  |oaytype  |oay11    |oay12    |oayapr   |oaysign   |oay13                      |oay14                |oay15      |oay16     |oay19               |oay17     |oay18               |oay20       |oay22           |oay24     |oayacti   ]
+[oaysl|oaydesc             |oayauno  |oayconf  |oayprnt  |oaydmy6  |oaytype  |oay11    |oay12    |oayapr   |oaysign   |oay13                      |oay14                |oay15      |oay16     |oay19               |oay17     |oay18               |oay20       |oay22           |oay24     |oayacti   ]
+[oaysl|oaydesc             |oayauno  |oayconf  |oayprnt  |oaydmy6  |oaytype  |oay11    |oay12    |oayapr   |oaysign   |oay13                      |oay14                |oay15      |oay16     |oay19               |oay17     |oay18               |oay20       |oay22           |oay24     |oayacti   ]
+[oaysl|oaydesc             |oayauno  |oayconf  |oayprnt  |oaydmy6  |oaytype  |oay11    |oay12    |oayapr   |oaysign   |oay13                      |oay14                |oay15      |oay16     |oay19               |oay17     |oay18               |oay20       |oay22           |oay24     |oayacti   ]
+[oaysl|oaydesc             |oayauno  |oayconf  |oayprnt  |oaydmy6  |oaytype  |oay11    |oay12    |oayapr   |oaysign   |oay13                      |oay14                |oay15      |oay16     |oay19               |oay17     |oay18               |oay20       |oay22           |oay24     |oayacti   ]
+[oaysl|oaydesc             |oayauno  |oayconf  |oayprnt  |oaydmy6  |oaytype  |oay11    |oay12    |oayapr   |oaysign   |oay13                      |oay14                |oay15      |oay16     |oay19               |oay17     |oay18               |oay20       |oay22           |oay24     |oayacti   ]
+[oaysl|oaydesc             |oayauno  |oayconf  |oayprnt  |oaydmy6  |oaytype  |oay11    |oay12    |oayapr   |oaysign   |oay13                      |oay14                |oay15      |oay16     |oay19               |oay17     |oay18               |oay20       |oay22           |oay24     |oayacti   ]
+
+}
+END -- s_oay
+Grid gr1988
+{
+ <G group01                                                                      >
+  PS.[dummy01                                                                   ]
+ <                                                                               >
+
+}
+END -- gr1988
+END -- vb5
+END -- page01
+END -- pc437
+Grid gr1989
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1989
+END -- vb6
+END -- axmi010
+
+TABLES
+oay_file
+ATTRIBUTES
+Edit oaysl=oay_file.oayslip, tabIndex=1, title="Doc", not null, required, upShift, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! <^Y>User Authorization <^U>Dept Authorization ";
+Edit oaydesc=oay_file.oaydesc, tabIndex=2, title="Doc Name";
+CheckBox oayauno=oay_file.oayauno, tabIndex=3, title="Auto Num", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oayconf=oay_file.oayconf, tabIndex=4, title="Auto Cnf", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oayprnt=oay_file.oayprnt, tabIndex=5, title="Prt Now", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox oaydmy6=oay_file.oaydmy6, tabIndex=6, title="Num.Mtd", not null, required, queryEditable, items=(("1", %"Serial Number"),("2", %"By Year and Month"),("3", %"By Year and Week"),("4", %"By Year,Month and Day"));
+ComboBox oaytype=oay_file.oaytype, tabIndex=7, title="Doc Pty", not null, required, queryEditable, items=(("00", "Bond"),("01", "Project"),("02", "Customer Inventory"),("03", "Consign Inventory"),("04", "Cash Discount"),("09", "Customer Apply"),("10", "Quot"),("19", "Vehicle Dispatch"),("20", "Cont"),("21", "Order Sheet"),("22", "borrow order"),("30", "Gnrl.Ord"),("32", "Exch.Ord"),("33", "Od,to Offsh.WH"),("34", "Od,Offs.WH Del"),("40", "DA"),("43", "DA, to Offsh.WH"),("44", "DA,Offsh.WH Del"),("46", "DA,Int-BU Sls"),("50", "DN"),("51", "borrow DN"),("53", "DN,to Offsh.WH"),("54", "DN,Offsh.WH Del"),("56", "DN,Int-BU Sls"),("55", "INVOICE"),("58", "Client QC"),("59", "Client QC/Return"),("60", "SR"),("61", "Mix"),("62", "estimated"),("80", "Est."),("90", "C-Com"),("12", "New Code"));
+CheckBox oay11=oay_file.oay11, tabIndex=8, title="Gen A/R", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oay12=oay_file.oay12, tabIndex=9, title="Aff Idle", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oayapr=oay_file.oayapr, tabIndex=10, title="Approve?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oaysign=oay_file.oaysign, action=controlp, tabIndex=11, title="Appr.Lvl", image="zoom", upShift, comment="<^P>Qry Approval Level";
+CheckBox oay13=oay_file.oay13, tabIndex=12, title="Invoice Amount Limit(Y/N)", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oay14=oay_file.oay14, tabIndex=13, title="Invoice Amount Limit", not null, required;
+CheckBox oay15=oay_file.oay15, tabIndex=14, title="Affe. Achi", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oay16=oay_file.oay16, action=controlp, tabIndex=15, title="DM Doc", image="zoom", comment="<^P>Qry DM Doc";
+ButtonEdit oay19=oay_file.oay19, action=controlp, tabIndex=16, title="Delieve Reason", image="zoom", comment="<^P>Qry Delieve Reason";
+ButtonEdit oay17=oay_file.oay17, action=controlp, tabIndex=17, title="SR Doc", image="zoom", comment="<^P>Qry SR Doc";
+ButtonEdit oay18=oay_file.oay18, action=controlp, tabIndex=18, title="Reject Reason", image="zoom", comment="<^P>Qry Reject Reason";
+ButtonEdit oay20=oay_file.oay20, action=controlp, tabIndex=19, title="Credit Code", image="zoom", comment="<^P>Qry Credit Code";
+ButtonEdit oay22=oay_file.oay22, action=controlp, tabIndex=20, title="Attribute Group", image="zoom", comment="<^P>Qry Attribute Group";
+CheckBox oay24=oay_file.oay24, tabIndex=21, title="Inner Order", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oayacti=oay_file.oayacti, tabIndex=22, title="Valid Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group01:group01;
+Label dummy01:dummy01, text="Invo Amt\'Used In China and Doc Pty for 50.DM & 60.SR,Will Be Enter";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oay(oay_file.oayslip,oay_file.oaydesc,oay_file.oayauno,oay_file.oayconf,oay_file.oayprnt,oay_file.oaydmy6,oay_file.oaytype,oay_file.oay11,oay_file.oay12,oay_file.oayapr,oay_file.oaysign,oay_file.oay13,oay_file.oay14,oay_file.oay15,oay_file.oay16,oay_file.oay19,oay_file.oay17,oay_file.oay18,oay_file.oay20,oay_file.oay22,oay_file.oay24,oay_file.oayacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

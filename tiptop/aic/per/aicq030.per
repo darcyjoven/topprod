@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aicq030.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aicq030")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3183
+{
+  Item#               [idx01                         ]  Warehouse           [idx02     ]
+  Part Name Spec      [ima02                         ]  Location            [idx03     ]
+  Specification       [ima021                        ]  Lot#                [idx04               ]
+
+
+ <G group03                                                                                       >
+  Year / Period       [yy  ]/[mm]
+ <                                                                                                >
+
+}
+END -- gr3183
+END -- page01
+END -- folder01
+Table s_imk
+{
+[idx0|idx06 |idx10 |idx11   |idx081        |idx082        |idx083        |idx084        |idx085        |idx09            ]
+[idx0|idx06 |idx10 |idx11   |idx081        |idx082        |idx083        |idx084        |idx085        |idx09            ]
+[idx0|idx06 |idx10 |idx11   |idx081        |idx082        |idx083        |idx084        |idx085        |idx09            ]
+[idx0|idx06 |idx10 |idx11   |idx081        |idx082        |idx083        |idx084        |idx085        |idx09            ]
+[idx0|idx06 |idx10 |idx11   |idx081        |idx082        |idx083        |idx084        |idx085        |idx09            ]
+[idx0|idx06 |idx10 |idx11   |idx081        |idx082        |idx083        |idx084        |idx085        |idx09            ]
+[idx0|idx06 |idx10 |idx11   |idx081        |idx082        |idx083        |idx084        |idx085        |idx09            ]
+[idx0|idx06 |idx10 |idx11   |idx081        |idx082        |idx083        |idx084        |idx085        |idx09            ]
+[idx0|idx06 |idx10 |idx11   |idx081        |idx082        |idx083        |idx084        |idx085        |idx09            ]
+[idx0|idx06 |idx10 |idx11   |idx081        |idx082        |idx083        |idx084        |idx085        |idx09            ]
+
+}
+END -- s_imk
+Grid gr3184
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3184
+END -- VBox1
+END -- aicq030
+
+TABLES
+idx_file
+ATTRIBUTES
+ButtonEdit idx01=idx_file.idx01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit idx02=idx_file.idx02, tabIndex=2, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, noEntry;
+Edit idx03=idx_file.idx03, tabIndex=3, not null, required;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=6, noEntry;
+Edit idx04=idx_file.idx04, tabIndex=5, not null, required;
+Group group03:group03;
+Edit yy=formonly.yy type CHAR, tabIndex=7;
+Edit mm=formonly.mm type CHAR, tabIndex=8;
+Edit idx0=idx_file.idx05, tabIndex=9, title="Year";
+Edit idx06=idx_file.idx06, tabIndex=10, title="Period";
+Edit idx10=idx_file.idx10, tabIndex=19, title="Mark";
+Edit idx11=idx_file.idx11, tabIndex=20, title="BIN";
+Edit idx081=idx_file.idx081, tabIndex=11, title="Store-in";
+Edit idx082=idx_file.idx082, tabIndex=12, title="Sales";
+Edit idx083=idx_file.idx083, tabIndex=13, title="Withdraw";
+Edit idx084=idx_file.idx084, tabIndex=14, title="Transfer";
+Edit idx085=idx_file.idx085, tabIndex=15, title="Adjust";
+Edit idx09=idx_file.idx09, tabIndex=16, title="End of Period Balance";
+Edit cnt=formonly.cnt type CHAR, tabIndex=17;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_idx(idx_file.idx05,idx_file.idx06,idx_file.idx10,idx_file.idx11,idx_file.idx081,idx_file.idx082,idx_file.idx083,idx_file.idx084,idx_file.idx085,idx_file.idx09)
+SCREEN RECORD Undefined(idx_file.idx01,idx_file.idx02,idx_file.idx03,formonly.ima02,idx_file.idx04,formonly.ima021,formonly.yy,formonly.mm,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

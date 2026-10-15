@@ -1,0 +1,233 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct460.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct460")
+VBox vb2
+Folder pc388
+Page page01(text="Main")
+Grid gr1811
+{
+ Master Item#           [ccg04                         ]                    Unit        [ima25     ]
+                        [ima02                         ]                    Cost Levels [ima57     ]
+ WO No.                 [cxh01           ]                                  Pro R.No.   [cxh013         ] Pro.No.   [cxh014    ]
+ Cost Cnt               [cxh011    ]                                        Task No.    [cxh012    ][ecd02     ]
+ YY/MM                  [cxh02     ]                                        /           [cx]
+ Cost Calculation Method[cxh06           ]                                  Category No.[cxh07                                   ]
+ [dummy08]
+ WIP Qty             [ccg11               ][ccg21               ][ccg31               ][ccg41               ][ccg91               ][ccg23               ]
+ Cost                [ccg12               ][ccg22               ][ccg32               ][ccg42               ][ccg92               ]
+
+ <G group03                                                                                                >
+  Compo.No            [cxh04                         ] [dummy09          ] Unit                [ima25b    ]
+                      [ima02b                        ]                     Cost Levels         [ima57b    ]
+ <                                                                                                         >
+ <G group05                                                                                                                                                                                                                        >
+  Cate [c1]
+        [dummy01            ] [dummy02             ][dummy03             ][dummy04            ]+[dummy05            ] [dummy06             ][dummy10            ] [dummy11            ] [dummy12            ] [dummy07           ]
+  BoP  [cxh11               ][cxh12a              ][cxh12b              ][cxh12c              ][cxh12d              ][cxh12e              ][cxh12f              ][cxh12g              ][cxh12h              ][cxh12              ]
+  CuIn [cxh21               ][cxh22a              ][cxh22b              ][cxh22c              ][cxh22d              ][cxh22e              ][cxh22f              ][cxh22g              ][cxh22h              ][cxh22              ]
+  PeIn [cxh24               ][cxh25a              ][cxh25b              ][cxh25c              ][cxh25d              ][cxh25e              ][cxh25f              ][cxh25g              ][cxh25h              ][cxh25              ]
+  LaIn [cxh26               ][cxh27a              ][cxh27b              ][cxh27c              ][cxh27d              ][cxh27e              ][cxh27f              ][cxh27g              ][cxh27h              ][cxh27              ]
+  DaIn [cxh28               ][cxh29a              ][cxh29b              ][cxh29c              ][cxh29d              ][cxh29e              ][cxh29f              ][cxh29g              ][cxh29h              ][cxh29              ]
+  ChDo [cxh31               ][cxh32a              ][cxh32b              ][cxh32c              ][cxh32d              ][cxh32e              ][cxh32f              ][cxh32g              ][cxh32h              ][cxh32              ]
+  Rtir [cxh33               ][cxh34a              ][cxh34b              ][cxh34c              ][cxh34d              ][cxh34e              ][cxh34f              ][cxh34g              ][cxh34h              ][cxh34              ]
+  LaOu [cxh35               ][cxh36a              ][cxh36b              ][cxh36c              ][cxh36d              ][cxh36e              ][cxh36f              ][cxh36g              ][cxh36h              ][cxh36              ]
+  DnSt [cxh37               ][cxh38a              ][cxh38b              ][cxh38c              ][cxh38d              ][cxh38e              ][cxh38f              ][cxh38g              ][cxh38h              ][cxh38              ]
+  DaOu [cxh39               ][cxh40a              ][cxh40b              ][cxh40c              ][cxh40d              ][cxh40e              ][cxh40f              ][cxh40g              ][cxh40h              ][cxh40              ]
+  BaOu [cxh41               ][cxh42a              ][cxh42b              ][cxh42c              ][cxh42d              ][cxh42e              ][cxh42f              ][cxh42g              ][cxh42h              ][cxh42              ]
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Bal. [cxh91               ][cxh92a              ][cxh92b              ][cxh92c              ][cxh92d              ][cxh92e              ][cxh92f              ][cxh92g              ][cxh92h              ][cxh92              ]
+ <                                                                                                                                                                                                                                 >
+
+}
+END -- gr1811
+END -- page01
+END -- pc388
+Grid gr1812
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr1812
+END -- vb2
+END -- axct460
+
+TABLES
+cxh_file,
+ccg_file
+ATTRIBUTES
+ButtonEdit ccg04=ccg_file.ccg04, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom";
+Edit ima25=formonly.ima25 type CHAR, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit ima57=formonly.ima57 type CHAR, tabIndex=4, noEntry;
+Edit cxh01=cxh_file.cxh01, tabIndex=5, not null, required;
+ButtonEdit cxh013=cxh_file.cxh013, action=controlp, tabIndex=150, image="zoom.png";
+Edit cxh014=cxh_file.cxh014, tabIndex=151;
+Edit cxh011=cxh_file.cxh011, tabIndex=6, not null, required;
+Edit cxh012=cxh_file.cxh012, tabIndex=7, not null, required;
+Edit ecd02=formonly.ecd02 type CHAR, tabIndex=8, noEntry;
+Edit cxh02=cxh_file.cxh02, tabIndex=9, not null, required;
+Edit cx=cxh_file.cxh03, tabIndex=10, not null, required;
+ComboBox cxh06=cxh_file.cxh06, tabIndex=112, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually锟筋織铦存挅鎶掞拷锟戒顬ㄦ啞飾绘棳ch Cost"),("4", "Identify Manually锟筋織铦存挅鎶掞拷锟戒偪锟芥懓飫斾粙m Cost"),("5", "Identify Manually锟筋織瀛电铦忥暈锟界槰鑿熲€滆潽飬瀍 Profit Center"));
+ButtonEdit cxh07=cxh_file.cxh07, action=controlp, tabIndex=113, image="zoom.png";
+Label dummy08:dummy08;
+Edit ccg11=ccg_file.ccg11, tabIndex=11, noEntry, not null, required;
+Edit ccg21=ccg_file.ccg21, tabIndex=12, noEntry, not null, required;
+Edit ccg31=ccg_file.ccg31, tabIndex=13, noEntry, not null, required;
+Edit ccg41=ccg_file.ccg41, tabIndex=14, noEntry;
+Edit ccg91=ccg_file.ccg91, tabIndex=15, noEntry, not null, required;
+Edit ccg23=ccg_file.ccg23, tabIndex=16, noEntry, not null, required;
+Edit ccg12=ccg_file.ccg12, tabIndex=17, noEntry, not null, required;
+Edit ccg22=ccg_file.ccg22, tabIndex=18, noEntry, not null, required;
+Edit ccg32=ccg_file.ccg32, tabIndex=19, noEntry, not null, required;
+Edit ccg42=ccg_file.ccg42, tabIndex=20, noEntry, not null, required;
+Edit ccg92=ccg_file.ccg92, tabIndex=21, noEntry, not null, required;
+Group group03:group03;
+ButtonEdit cxh04=cxh_file.cxh04, action=controlp, tabIndex=22, not null, required, image="zoom";
+Label dummy09:dummy09;
+Edit ima25b=formonly.ima25b type CHAR, tabIndex=23, noEntry;
+Edit ima02b=formonly.ima02b type CHAR, tabIndex=24, noEntry;
+Edit ima57b=formonly.ima57b type CHAR, tabIndex=25, noEntry;
+Group group05:group05;
+Edit c1=cxh_file.cxh05, tabIndex=26, not null, required;
+Label dummy01:dummy01, text="Qty";
+Label dummy02:dummy02, text="Material";
+Label dummy03:dummy03, text="Labor";
+Label dummy04:dummy04, text="Overhead 1";
+Label dummy05:dummy05, text="Processing";
+Label dummy06:dummy06, text="Overhead 2";
+Label dummy10:dummy10, text="Overhead 3";
+Label dummy11:dummy11, text="Overhead 4";
+Label dummy12:dummy12, text="Overhead 5";
+Label dummy07:dummy07, text="Total";
+Edit cxh11=cxh_file.cxh11, tabIndex=27, not null, required;
+Edit cxh12a=cxh_file.cxh12a, tabIndex=28, not null, required;
+Edit cxh12b=cxh_file.cxh12b, tabIndex=29, not null, required;
+Edit cxh12c=cxh_file.cxh12c, tabIndex=30, not null, required;
+Edit cxh12d=cxh_file.cxh12d, tabIndex=31, not null, required;
+Edit cxh12e=cxh_file.cxh12e, tabIndex=32, not null, required;
+Edit cxh12f=cxh_file.cxh12f, tabIndex=114, not null, required;
+Edit cxh12g=cxh_file.cxh12g, tabIndex=115, not null, required;
+Edit cxh12h=cxh_file.cxh12h, tabIndex=116, not null, required;
+Edit cxh12=cxh_file.cxh12, tabIndex=33, noEntry, not null, required;
+Edit cxh21=cxh_file.cxh21, tabIndex=34, not null, required;
+Edit cxh22a=cxh_file.cxh22a, tabIndex=35, not null, required;
+Edit cxh22b=cxh_file.cxh22b, tabIndex=36, not null, required;
+Edit cxh22c=cxh_file.cxh22c, tabIndex=37, not null, required;
+Edit cxh22d=cxh_file.cxh22d, tabIndex=38, not null, required;
+Edit cxh22e=cxh_file.cxh22e, tabIndex=39, not null, required;
+Edit cxh22f=cxh_file.cxh22f, tabIndex=117, not null, required;
+Edit cxh22g=cxh_file.cxh22g, tabIndex=127, not null, required;
+Edit cxh22h=cxh_file.cxh22h, tabIndex=137, not null, required;
+Edit cxh22=cxh_file.cxh22, tabIndex=40, noEntry, not null, required;
+Edit cxh24=cxh_file.cxh24, tabIndex=41, not null, required;
+Edit cxh25a=cxh_file.cxh25a, tabIndex=42, not null, required;
+Edit cxh25b=cxh_file.cxh25b, tabIndex=43, not null, required;
+Edit cxh25c=cxh_file.cxh25c, tabIndex=44, not null, required;
+Edit cxh25d=cxh_file.cxh25d, tabIndex=45, not null, required;
+Edit cxh25e=cxh_file.cxh25e, tabIndex=46, not null, required;
+Edit cxh25f=cxh_file.cxh25f, tabIndex=118, not null, required;
+Edit cxh25g=cxh_file.cxh25g, tabIndex=128, not null, required;
+Edit cxh25h=cxh_file.cxh25h, tabIndex=138, not null, required;
+Edit cxh25=cxh_file.cxh25, tabIndex=47, noEntry, not null, required;
+Edit cxh26=cxh_file.cxh26, tabIndex=48, not null, required;
+Edit cxh27a=cxh_file.cxh27a, tabIndex=49, not null, required;
+Edit cxh27b=cxh_file.cxh27b, tabIndex=50, not null, required;
+Edit cxh27c=cxh_file.cxh27c, tabIndex=51, not null, required;
+Edit cxh27d=cxh_file.cxh27d, tabIndex=52, not null, required;
+Edit cxh27e=cxh_file.cxh27e, tabIndex=53, not null, required;
+Edit cxh27f=cxh_file.cxh27f, tabIndex=119, not null, required;
+Edit cxh27g=cxh_file.cxh27g, tabIndex=129, not null, required;
+Edit cxh27h=cxh_file.cxh27h, tabIndex=139, not null, required;
+Edit cxh27=cxh_file.cxh27, tabIndex=54, noEntry, not null, required;
+Edit cxh28=cxh_file.cxh28, tabIndex=55, not null, required;
+Edit cxh29a=cxh_file.cxh29a, tabIndex=56, not null, required;
+Edit cxh29b=cxh_file.cxh29b, tabIndex=57, not null, required;
+Edit cxh29c=cxh_file.cxh29c, tabIndex=58, not null, required;
+Edit cxh29d=cxh_file.cxh29d, tabIndex=59, not null, required;
+Edit cxh29e=cxh_file.cxh29e, tabIndex=60, not null, required;
+Edit cxh29f=cxh_file.cxh29f, tabIndex=120, not null, required;
+Edit cxh29g=cxh_file.cxh29g, tabIndex=130, not null, required;
+Edit cxh29h=cxh_file.cxh29h, tabIndex=140, not null, required;
+Edit cxh29=cxh_file.cxh29, tabIndex=61, noEntry, not null, required;
+Edit cxh31=cxh_file.cxh31, tabIndex=62, not null, required;
+Edit cxh32a=cxh_file.cxh32a, tabIndex=63, not null, required;
+Edit cxh32b=cxh_file.cxh32b, tabIndex=64, not null, required;
+Edit cxh32c=cxh_file.cxh32c, tabIndex=65, not null, required;
+Edit cxh32d=cxh_file.cxh32d, tabIndex=66, not null, required;
+Edit cxh32e=cxh_file.cxh32e, tabIndex=67, not null, required;
+Edit cxh32f=cxh_file.cxh32f, tabIndex=121, not null, required;
+Edit cxh32g=cxh_file.cxh32g, tabIndex=131, not null, required;
+Edit cxh32h=cxh_file.cxh32h, tabIndex=141, not null, required;
+Edit cxh32=cxh_file.cxh32, tabIndex=68, noEntry, not null, required;
+Edit cxh33=cxh_file.cxh33, tabIndex=69, not null, required;
+Edit cxh34a=cxh_file.cxh34a, tabIndex=70, not null, required;
+Edit cxh34b=cxh_file.cxh34b, tabIndex=71, not null, required;
+Edit cxh34c=cxh_file.cxh34c, tabIndex=72, not null, required;
+Edit cxh34d=cxh_file.cxh34d, tabIndex=73, not null, required;
+Edit cxh34e=cxh_file.cxh34e, tabIndex=74, not null, required;
+Edit cxh34f=cxh_file.cxh34f, tabIndex=122, not null, required;
+Edit cxh34g=cxh_file.cxh34g, tabIndex=132, not null, required;
+Edit cxh34h=cxh_file.cxh34h, tabIndex=142, not null, required;
+Edit cxh34=cxh_file.cxh34, tabIndex=75, noEntry, not null, required;
+Edit cxh35=cxh_file.cxh35, tabIndex=76, not null, required;
+Edit cxh36a=cxh_file.cxh36a, tabIndex=77, not null, required;
+Edit cxh36b=cxh_file.cxh36b, tabIndex=78, not null, required;
+Edit cxh36c=cxh_file.cxh36c, tabIndex=79, not null, required;
+Edit cxh36d=cxh_file.cxh36d, tabIndex=80, not null, required;
+Edit cxh36e=cxh_file.cxh36e, tabIndex=81, not null, required;
+Edit cxh36f=cxh_file.cxh36f, tabIndex=123, not null, required;
+Edit cxh36g=cxh_file.cxh36g, tabIndex=133, not null, required;
+Edit cxh36h=cxh_file.cxh36h, tabIndex=143, not null, required;
+Edit cxh36=cxh_file.cxh36, tabIndex=82, noEntry, not null, required;
+Edit cxh37=cxh_file.cxh37, tabIndex=83, not null, required;
+Edit cxh38a=cxh_file.cxh38a, tabIndex=84, not null, required;
+Edit cxh38b=cxh_file.cxh38b, tabIndex=85, not null, required;
+Edit cxh38c=cxh_file.cxh38c, tabIndex=86, not null, required;
+Edit cxh38d=cxh_file.cxh38d, tabIndex=87, not null, required;
+Edit cxh38e=cxh_file.cxh38e, tabIndex=88, not null, required;
+Edit cxh38f=cxh_file.cxh38f, tabIndex=124, not null, required;
+Edit cxh38g=cxh_file.cxh38g, tabIndex=134, not null, required;
+Edit cxh38h=cxh_file.cxh38h, tabIndex=144, not null, required;
+Edit cxh38=cxh_file.cxh38, tabIndex=89, noEntry, not null, required;
+Edit cxh39=cxh_file.cxh39, tabIndex=90, not null, required;
+Edit cxh40a=cxh_file.cxh40a, tabIndex=91, not null, required;
+Edit cxh40b=cxh_file.cxh40b, tabIndex=92, not null, required;
+Edit cxh40c=cxh_file.cxh40c, tabIndex=93, not null, required;
+Edit cxh40d=cxh_file.cxh40d, tabIndex=94, not null, required;
+Edit cxh40e=cxh_file.cxh40e, tabIndex=95, not null, required;
+Edit cxh40f=cxh_file.cxh40f, tabIndex=125, not null, required;
+Edit cxh40g=cxh_file.cxh40g, tabIndex=135, not null, required;
+Edit cxh40h=cxh_file.cxh40h, tabIndex=145, not null, required;
+Edit cxh40=cxh_file.cxh40, tabIndex=96, noEntry, not null, required;
+Edit cxh41=cxh_file.cxh41, tabIndex=97, not null, required;
+Edit cxh42a=cxh_file.cxh42a, tabIndex=98, not null, required;
+Edit cxh42b=cxh_file.cxh42b, tabIndex=99, not null, required;
+Edit cxh42c=cxh_file.cxh42c, tabIndex=100, not null, required;
+Edit cxh42d=cxh_file.cxh42d, tabIndex=101, not null, required;
+Edit cxh42e=cxh_file.cxh42e, tabIndex=102, not null, required;
+Edit cxh42f=cxh_file.cxh42f, tabIndex=126, not null, required;
+Edit cxh42g=cxh_file.cxh42g, tabIndex=136, not null, required;
+Edit cxh42h=cxh_file.cxh42h, tabIndex=146, not null, required;
+Edit cxh42=cxh_file.cxh42, tabIndex=103, noEntry, not null, required;
+Edit cxh91=cxh_file.cxh91, tabIndex=104, noEntry, not null, required;
+Edit cxh92a=cxh_file.cxh92a, tabIndex=105, noEntry, not null, required;
+Edit cxh92b=cxh_file.cxh92b, tabIndex=106, noEntry, not null, required;
+Edit cxh92c=cxh_file.cxh92c, tabIndex=107, noEntry, not null, required;
+Edit cxh92d=cxh_file.cxh92d, tabIndex=108, noEntry, not null, required;
+Edit cxh92e=cxh_file.cxh92e, tabIndex=109, noEntry, not null, required;
+Edit cxh92f=cxh_file.cxh92f, tabIndex=147, not null, required;
+Edit cxh92g=cxh_file.cxh92g, tabIndex=148, not null, required;
+Edit cxh92h=cxh_file.cxh92h, tabIndex=149, not null, required;
+Edit cxh92=cxh_file.cxh92, tabIndex=110, noEntry, not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=111, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ccg_file.ccg04,formonly.ima25,formonly.ima02,formonly.ima57,cxh_file.cxh01,cxh_file.cxh013,cxh_file.cxh014,cxh_file.cxh011,cxh_file.cxh012,formonly.ecd02,cxh_file.cxh02,cxh_file.cxh03,cxh_file.cxh06,cxh_file.cxh07,ccg_file.ccg11,ccg_file.ccg21,ccg_file.ccg31,ccg_file.ccg41,ccg_file.ccg91,ccg_file.ccg23,ccg_file.ccg12,ccg_file.ccg22,ccg_file.ccg32,ccg_file.ccg42,ccg_file.ccg92,cxh_file.cxh04,formonly.ima25b,formonly.ima02b,formonly.ima57b,cxh_file.cxh05,cxh_file.cxh11,cxh_file.cxh12a,cxh_file.cxh12b,cxh_file.cxh12c,cxh_file.cxh12d,cxh_file.cxh12e,cxh_file.cxh12f,cxh_file.cxh12g,cxh_file.cxh12h,cxh_file.cxh12,cxh_file.cxh21,cxh_file.cxh22a,cxh_file.cxh22b,cxh_file.cxh22c,cxh_file.cxh22d,cxh_file.cxh22e,cxh_file.cxh22f,cxh_file.cxh22g,cxh_file.cxh22h,cxh_file.cxh22,cxh_file.cxh24,cxh_file.cxh25a,cxh_file.cxh25b,cxh_file.cxh25c,cxh_file.cxh25d,cxh_file.cxh25e,cxh_file.cxh25f,cxh_file.cxh25g,cxh_file.cxh25h,cxh_file.cxh25,cxh_file.cxh26,cxh_file.cxh27a,cxh_file.cxh27b,cxh_file.cxh27c,cxh_file.cxh27d,cxh_file.cxh27e,cxh_file.cxh27f,cxh_file.cxh27g,cxh_file.cxh27h,cxh_file.cxh27,cxh_file.cxh28,cxh_file.cxh29a,cxh_file.cxh29b,cxh_file.cxh29c,cxh_file.cxh29d,cxh_file.cxh29e,cxh_file.cxh29f,cxh_file.cxh29g,cxh_file.cxh29h,cxh_file.cxh29,cxh_file.cxh31,cxh_file.cxh32a,cxh_file.cxh32b,cxh_file.cxh32c,cxh_file.cxh32d,cxh_file.cxh32e,cxh_file.cxh32f,cxh_file.cxh32g,cxh_file.cxh32h,cxh_file.cxh32,cxh_file.cxh33,cxh_file.cxh34a,cxh_file.cxh34b,cxh_file.cxh34c,cxh_file.cxh34d,cxh_file.cxh34e,cxh_file.cxh34f,cxh_file.cxh34g,cxh_file.cxh34h,cxh_file.cxh34,cxh_file.cxh35,cxh_file.cxh36a,cxh_file.cxh36b,cxh_file.cxh36c,cxh_file.cxh36d,cxh_file.cxh36e,cxh_file.cxh36f,cxh_file.cxh36g,cxh_file.cxh36h,cxh_file.cxh36,cxh_file.cxh37,cxh_file.cxh38a,cxh_file.cxh38b,cxh_file.cxh38c,cxh_file.cxh38d,cxh_file.cxh38e,cxh_file.cxh38f,cxh_file.cxh38g,cxh_file.cxh38h,cxh_file.cxh38,cxh_file.cxh39,cxh_file.cxh40a,cxh_file.cxh40b,cxh_file.cxh40c,cxh_file.cxh40d,cxh_file.cxh40e,cxh_file.cxh40f,cxh_file.cxh40g,cxh_file.cxh40h,cxh_file.cxh40,cxh_file.cxh41,cxh_file.cxh42a,cxh_file.cxh42b,cxh_file.cxh42c,cxh_file.cxh42d,cxh_file.cxh42e,cxh_file.cxh42f,cxh_file.cxh42g,cxh_file.cxh42h,cxh_file.cxh42,cxh_file.cxh91,cxh_file.cxh92a,cxh_file.cxh92b,cxh_file.cxh92c,cxh_file.cxh92d,cxh_file.cxh92e,cxh_file.cxh92f,cxh_file.cxh92g,cxh_file.cxh92h,cxh_file.cxh92,formonly.cnt)
+END -- INSTRUCTIONS
+

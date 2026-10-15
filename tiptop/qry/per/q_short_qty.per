@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_short_qty.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Routing")
+Grid gr3755
+{
+
+
+ <T s_short_qty                                                                                                                                                                                                                                                                    >
+ [check |sfb01      |sfb13              |sfb05             |sfa012       |sfa013    |sfa03         |sfa08   |sfa12   |sfa27         |sfa28   |short_qt|sfa06     |sfa062    |sfa063    |sfa064    |sfa065    |sfa066    |sfb04     |sfb08     |sfb081    |sfb09     |sfb94     ]
+ [check |sfb01      |sfb13              |sfb05             |sfa012       |sfa013    |sfa03         |sfa08   |sfa12   |sfa27         |sfa28   |short_qt|sfa06     |sfa062    |sfa063    |sfa064    |sfa065    |sfa066    |sfb04     |sfb08     |sfb081    |sfb09     |sfb94     ]
+ [check |sfb01      |sfb13              |sfb05             |sfa012       |sfa013    |sfa03         |sfa08   |sfa12   |sfa27         |sfa28   |short_qt|sfa06     |sfa062    |sfa063    |sfa064    |sfa065    |sfa066    |sfb04     |sfb08     |sfb081    |sfb09     |sfb94     ]
+ [check |sfb01      |sfb13              |sfb05             |sfa012       |sfa013    |sfa03         |sfa08   |sfa12   |sfa27         |sfa28   |short_qt|sfa06     |sfa062    |sfa063    |sfa064    |sfa065    |sfa066    |sfb04     |sfb08     |sfb081    |sfb09     |sfb94     ]
+ [check |sfb01      |sfb13              |sfb05             |sfa012       |sfa013    |sfa03         |sfa08   |sfa12   |sfa27         |sfa28   |short_qt|sfa06     |sfa062    |sfa063    |sfa064    |sfa065    |sfa066    |sfb04     |sfb08     |sfb081    |sfb09     |sfb94     ]
+ [check |sfb01      |sfb13              |sfb05             |sfa012       |sfa013    |sfa03         |sfa08   |sfa12   |sfa27         |sfa28   |short_qt|sfa06     |sfa062    |sfa063    |sfa064    |sfa065    |sfa066    |sfb04     |sfb08     |sfb081    |sfb09     |sfb94     ]
+ [check |sfb01      |sfb13              |sfb05             |sfa012       |sfa013    |sfa03         |sfa08   |sfa12   |sfa27         |sfa28   |short_qt|sfa06     |sfa062    |sfa063    |sfa064    |sfa065    |sfa066    |sfb04     |sfb08     |sfb081    |sfb09     |sfb94     ]
+ [check |sfb01      |sfb13              |sfb05             |sfa012       |sfa013    |sfa03         |sfa08   |sfa12   |sfa27         |sfa28   |short_qt|sfa06     |sfa062    |sfa063    |sfa064    |sfa065    |sfa066    |sfb04     |sfb08     |sfb081    |sfb09     |sfb94     ]
+ [check |sfb01      |sfb13              |sfb05             |sfa012       |sfa013    |sfa03         |sfa08   |sfa12   |sfa27         |sfa28   |short_qt|sfa06     |sfa062    |sfa063    |sfa064    |sfa065    |sfa066    |sfb04     |sfb08     |sfb081    |sfb09     |sfb94     ]
+ [check |sfb01      |sfb13              |sfb05             |sfa012       |sfa013    |sfa03         |sfa08   |sfa12   |sfa27         |sfa28   |short_qt|sfa06     |sfa062    |sfa063    |sfa064    |sfa065    |sfa066    |sfb04     |sfb08     |sfb081    |sfb09     |sfb94     ]
+ <                                                                                                                                                                                                                                                                                 >
+}
+END -- gr3755
+END -- q_short_qty
+
+TABLES
+sfb_file,
+sfa_file
+ATTRIBUTES
+Table s_short_qty:s_short_qty;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sfb01=sfb_file.sfb01, tabIndex=2, title="Task No.", noEntry;
+DateEdit sfb13=sfb_file.sfb13, tabIndex=3, title="Task Description";
+Edit sfb05=sfb_file.sfb05, tabIndex=4, title="Product No.";
+Edit sfa012=sfa_file.sfa012, tabIndex=22, title="Process No.";
+Edit sfa013=sfa_file.sfa013, tabIndex=23, title="Pro No.";
+Edit sfa03=sfa_file.sfa03, tabIndex=18, title="Item No.";
+Edit sfa08=formonly.sfa08 type CHAR, tabIndex=20, title=%"sfa08";
+Edit sfa12=formonly.sfa12 type CHAR, tabIndex=21, title=%"sfa12";
+Edit sfa27=sfa_file.sfa27, tabIndex=5, title="BOM Item No.";
+Edit sfa28=sfa_file.sfa28, tabIndex=6, title="Substitution Ratio";
+Edit short_qt=formonly.short_qty type CHAR, tabIndex=19, title=%"short";
+Edit sfa06=sfa_file.sfa06, tabIndex=12, title="Issued Qty";
+Edit sfa062=sfa_file.sfa062, tabIndex=13, title="Unplaned Issued";
+Edit sfa063=sfa_file.sfa063, tabIndex=14, title="Scrap Qty";
+Edit sfa064=sfa_file.sfa064, tabIndex=15, title="Inventory Loss Qty";
+Edit sfa065=sfa_file.sfa065, tabIndex=16, title="Indent Qty";
+Edit sfa066=sfa_file.sfa066, tabIndex=17, title="Indent Qty Delivered";
+ComboBox sfb04=sfb_file.sfb04, tabIndex=7, title="Status Code", items=(("2", "Release"),("3", "Picking List Printed"),("4", "Issuing"),("5", "WIP"),("6", "FQC"));
+Edit sfb08=sfb_file.sfb08, tabIndex=8, title="Production Qty";
+Edit sfb081=sfb_file.sfb081, tabIndex=9, title="Issued Qty";
+Edit sfb09=sfb_file.sfb09, tabIndex=10, title="Completed Qty";
+Edit sfb94=sfb_file.sfb94, tabIndex=11, title="FQC";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_short_qty(formonly.check,sfb_file.sfb01,sfb_file.sfb13,sfb_file.sfb05,sfa_file.sfa012,sfa_file.sfa013,sfa_file.sfa03,formonly.sfa08,formonly.sfa12,sfa_file.sfa27,sfa_file.sfa28,formonly.short_qty,sfa_file.sfa06,sfa_file.sfa062,sfa_file.sfa063,sfa_file.sfa064,sfa_file.sfa065,sfa_file.sfa066,sfb_file.sfb04,sfb_file.sfb08,sfb_file.sfb081,sfb_file.sfb09,sfb_file.sfb94)
+END -- INSTRUCTIONS
+

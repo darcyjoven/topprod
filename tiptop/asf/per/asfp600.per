@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp600")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr550
+{
+ W/O No.             [wo_no           ]
+ Prod.Item           [part_no             ]
+
+}
+END -- gr550
+Grid gr551
+{
+[c                                                          ]
+
+
+}
+END -- gr551
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_sfb
+{
+[sfb01           |sfb05               |sfb07   |sfb071      |sfb06       ]
+[sfb01           |sfb05               |sfb07   |sfb071      |sfb06       ]
+[sfb01           |sfb05               |sfb07   |sfb071      |sfb06       ]
+[sfb01           |sfb05               |sfb07   |sfb071      |sfb06       ]
+[sfb01           |sfb05               |sfb07   |sfb071      |sfb06       ]
+[sfb01           |sfb05               |sfb07   |sfb071      |sfb06       ]
+[sfb01           |sfb05               |sfb07   |sfb071      |sfb06       ]
+[sfb01           |sfb05               |sfb07   |sfb071      |sfb06       ]
+[sfb01           |sfb05               |sfb07   |sfb071      |sfb06       ]
+[sfb01           |sfb05               |sfb07   |sfb071      |sfb06       ]
+
+}
+END -- s_sfb
+Grid gr552
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr552
+END -- VBox1
+END -- asfp600
+
+TABLES
+sfb_file
+ATTRIBUTES
+ButtonEdit wo_no=formonly.wo_no type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit part_no=formonly.part_no type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+CheckBox c=formonly.c type VARCHAR, tabIndex=3, text="Reassign Expiry Date & Routing #", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sfb01=sfb_file.sfb01, tabIndex=4, title="W/O#", noEntry;
+Edit sfb05=sfb_file.sfb05, tabIndex=5, title="Item No.", noEntry;
+Edit sfb07=sfb_file.sfb07, tabIndex=6, title="Version";
+DateEdit sfb071=sfb_file.sfb071, tabIndex=7, title="Expiry Date";
+Edit sfb06=sfb_file.sfb06, tabIndex=8, title="Routing Code";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(sfb_file.sfb01,sfb_file.sfb05,sfb_file.sfb07,sfb_file.sfb071,sfb_file.sfb06)
+SCREEN RECORD Undefined(formonly.wo_no,formonly.part_no,formonly.c,formonly.cn2)
+END -- INSTRUCTIONS
+

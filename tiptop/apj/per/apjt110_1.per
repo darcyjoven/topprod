@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt110_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Start Confirmation")
+Grid gr4779
+{
+ <G group01                          >
+  Enter Confd Line NO.[pjb02     ]
+ <                                   >
+ <G group02                          >
+  Actual Start Date   [pjb11       ]
+ <                                   >
+
+}
+END -- gr4779
+END -- apjt110_1
+
+TABLES
+pjb_file
+ATTRIBUTES
+Group group01:group01;
+Edit pjb02=pjb_file.pjb02, tabIndex=1;
+Group group02:group02;
+DateEdit pjb11=pjb_file.pjb11, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pjb_file.pjb02,pjb_file.pjb11)
+END -- INSTRUCTIONS
+

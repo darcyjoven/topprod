@@ -1,0 +1,64 @@
+----------------------------------------------------------------------------------
+-- $Id:  p_test_nj.per created 2010-04-15T15:52:14
+-- File created from p_test_nj.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="p_test_nj")
+  VBOX vb5
+    FOLDER pc2
+      PAGE Page2( TEXT="Basic Data")
+        GRID gr2
+        {
+
+            Proj No.     [aa0                 ] [aa1            ]
+
+            Prog Name    [aa2                 ]
+
+            QC           [aa3                 ] [aa4            ]
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_boq
+    {
+    [aa5       |aa6            |aa7                           |aa8       ]
+    [aa5       |aa6            |aa7                           |aa8       ]
+    [aa5       |aa6            |aa7                           |aa8       ]
+    [aa5       |aa6            |aa7                           |aa8       ]
+    [aa5       |aa6            |aa7                           |aa8       ]
+    }
+    END -- TABLE
+    GRID gr12
+    {
+      ----------count[aa9       ]/[ab0   ]----------
+
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES bop_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=bop_file.bop01, ACTION=controlp, IMAGE="zoom.png", NOT NULL, TABINDEX=1;
+  EDIT aa1=FORMONLY.bop01_kpj02, TABINDEX=9;
+  BUTTONEDIT aa2=bop_file.bop02, ACTION=controlp, IMAGE="zoom.png", NOT NULL, TABINDEX=2;
+  BUTTONEDIT aa3=bop_file.bop03, ACTION=controlp, IMAGE="zoom.png", NOT NULL, TABINDEX=3;
+  EDIT aa4=FORMONLY.bop03_gen02, TABINDEX=10;
+  EDIT aa5=FORMONLY.boq03, NOT NULL, NOENTRY, TABINDEX=4, TITLE="Item";
+  COMBOBOX aa6=FORMONLY.boq06, NOENTRY, TABINDEX=11, TITLE="Function Name", ITEMS=(("1","insert"),("2","update"),("3","query"),("4","delete"),("5","copy"),("6","invalid"),("7","detail"),("8","exporttoexcel"),("9","exit"),("A","output"),("B","4fd"),("C","4gl"));
+  EDIT aa7=FORMONLY.boq04, NOT NULL, NOENTRY, TABINDEX=5, TITLE="Text Content";
+  CHECKBOX aa8=FORMONLY.boq05, DEFAULT="N", NOT NULL, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=6, TITLE="Texted";
+  EDIT aa9=FORMONLY.cnt, TABINDEX=7;
+  EDIT ab0=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=8;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_boq (FORMONLY.boq03, FORMONLY.boq06, FORMONLY.boq04, FORMONLY.boq05)
+END

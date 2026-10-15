@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topstd/topcust/cgl/4fd/cglp010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglp010")
+VBox vb2
+Grid gr35
+{
+
+  Year        [axi03        ]
+  Month       [axi04        ]
+  zuqun       [axi05        ]
+  gt          [aac01        ]
+
+}
+END -- gr35
+Grid gr24
+{
+[g_bgjob                      ]
+
+}
+END -- gr24
+END -- vb2
+END -- aglp010
+
+TABLES
+axi_file
+ATTRIBUTES
+Edit axi03=axi_file.axi03, tabIndex=1, not null, required;
+Edit axi04=axi_file.axi04, tabIndex=2, not null, required;
+ButtonEdit axi05=axi_file.axi05, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+ButtonEdit aac01=formonly.aac01 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=5, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(axi_file.axi03,axi_file.axi04,axi_file.axi05,formonly.aac01,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq0002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglq0002")
+VBox vb5
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+
+  Group Code           [aem01         ]  Group Book No.                [aem00         ] Dimension Value 1 [aem16         ]   Dimension Value 5  [aem05         ]
+  Merger of individual [aem02         ]  Merger of individual Book No. [aem03         ] Dimension Value 2 [aem17         ]   Dimension Value 6  [aem06         ]
+  Year                 [aem09         ]  Currency                      [aem15         ] Dimension Value 3 [aem18         ]   Dimension Value 7  [aem07         ]
+  Acct No.             [aem04         ]                                                 Dimension Value 4 [aem19         ]   Dimension Value 8  [aem08         ]
+  Acct Title           [aag02                                          ]
+
+
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table tb1
+{
+[aem10   |aem11               |aem12               |amt                 |aem13       |aem14       ]
+[aem10   |aem11               |aem12               |amt                 |aem13       |aem14       ]
+[aem10   |aem11               |aem12               |amt                 |aem13       |aem14       ]
+[aem10   |aem11               |aem12               |amt                 |aem13       |aem14       ]
+[aem10   |aem11               |aem12               |amt                 |aem13       |aem14       ]
+}
+END -- tb1
+Grid gr2
+{
+
+ Rows [idx ] / [cnt   ] --- item [cn2  ]
+
+
+
+}
+END -- gr2
+END -- vb5
+END -- aglq0002
+
+TABLES
+aem_file
+ATTRIBUTES
+ButtonEdit aem01=aem_file.aem01, action=controlp, tabIndex=1, image="zoom";
+Edit aem00=aem_file.aem00, tabIndex=6;
+Edit aem16=aem_file.aem16, tabIndex=9, not null, required;
+Edit aem05=aem_file.aem05, tabIndex=13;
+Edit aem02=aem_file.aem02, tabIndex=2;
+Edit aem03=aem_file.aem03, tabIndex=7;
+Edit aem17=aem_file.aem17, tabIndex=10, not null, required;
+Edit aem06=aem_file.aem06, tabIndex=14;
+Edit aem09=aem_file.aem09, tabIndex=3;
+ButtonEdit aem15=aem_file.aem15, action=controlp, tabIndex=8, image="zoom";
+Edit aem18=aem_file.aem18, tabIndex=11, not null, required;
+Edit aem07=aem_file.aem07, tabIndex=15;
+ButtonEdit aem04=aem_file.aem04, action=controlp, tabIndex=4, image="zoom";
+Edit aem19=aem_file.aem19, tabIndex=12, not null, required;
+Edit aem08=aem_file.aem08, tabIndex=16;
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=5;
+Edit aem10=aem_file.aem10, tabIndex=17, title="Period";
+Edit aem11=aem_file.aem11, tabIndex=18, title="Debit Amt";
+Edit aem12=aem_file.aem12, tabIndex=19, title="Credit Amount";
+Edit amt=formonly.amt type CHAR, tabIndex=20, title=%"Balance";
+Edit aem13=aem_file.aem13, tabIndex=21, title="Debit Rows";
+Edit aem14=aem_file.aem14, tabIndex=22, title="Credit Rows";
+Edit idx=formonly.idx type INTERVAL YEAR(2) TO YEAR, tabIndex=23;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=24;
+Edit cn2=formonly.cn2 type INTERVAL YEAR(2) TO YEAR, tabIndex=25;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aem(aem_file.aem10,aem_file.aem11,aem_file.aem12,formonly.amt,aem_file.aem13,aem_file.aem14)
+SCREEN RECORD Undefined(aem_file.aem01,aem_file.aem00,aem_file.aem05,aem_file.aem02,aem_file.aem03,aem_file.aem06,aem_file.aem09,aem_file.aem15,aem_file.aem07,aem_file.aem04,aem_file.aem08,formonly.aag02,formonly.idx,formonly.cnt,formonly.cn2,aem_file.aem16,aem_file.aem17,aem_file.aem18,aem_file.aem19)
+END -- INSTRUCTIONS
+

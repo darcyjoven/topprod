@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp930.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aimr930")
+VBox vb1
+Grid gr1
+{
+ <G gb2                                                                  >
+    Item No.        [ima01                                   ]
+    Group Code      [ima06     ]
+ <                                                                       >
+ <G input                                                                >
+    date            [bdate     ]~ [edate     ]
+    Safe Rt.        [fac       ]
+    Time Bucket     [buk       ]
+    Model           [sty                 ]
+
+   [upd                        ]
+ <                                                                       >
+
+}
+END -- gr1
+Grid gr9
+{
+   [g_bgjob                  ]
+
+}
+END -- gr9
+END -- vb1
+END -- aimp930
+
+ATTRIBUTES
+Group gb2:gb2, text="QBE\n";
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit ima06=formonly.ima06 type CHAR, action=controlp, tabIndex=7, image="zoom.png";
+Group input:INPUT, text="INPUT";
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=2, required;
+DateEdit edate=formonly.edate type CHAR, tabIndex=3, required;
+ComboBox fac=formonly.fac type CHAR, tabIndex=4, not null, items=(("1", "90%"),("2", "95%"),("3", "99%"));
+ComboBox buk=formonly.buk type CHAR, tabIndex=5, not null, items=(("1", "Month
+"),("2", "10-Day"),("3", "Week
+"),("4", "Day"));
+ComboBox sty=formonly.sty type CHAR, tabIndex=9, not null, items=(("1", "By Forecast "));
+CheckBox upd=formonly.upd type CHAR, tabIndex=6, default = "N", text="Update the field of \"Safe.Inv\"", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=8, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima06,formonly.bdate,formonly.edate,formonly.fac,formonly.buk,formonly.sty,formonly.upd,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

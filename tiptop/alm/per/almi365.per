@@ -1,0 +1,240 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi365.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid ds1
+{
+
+[label1  |lip01                 ]                  [label9  |lip09               |lmy04          ]         [lipmksg        ]
+[label2  |lip02 ]                                  [label10 |lip10               |oba02          ][label19 |lip19          |imgmksg]
+[label3  |lip03          ]                         [label11 |lip11               |tqa02          ][label25 |lipconf        |       ]
+[label4  |lip04     ]                              [label12 |lip12               ]                [label27 |lipconu        |gen02_1        ]
+[label5  |lip05                 ]                  [label13 |lip13               ]                [label24 |lipcond        |lipcont        ]
+[label32 |lip051                ]                  [label14 |lip14               ]                [label20 |lip20          |gen02_2        ]
+[label6  |lip06                 |oaj02          ]  [label15 |lip15               ]                [label21 |lip21          ]
+[label36 |lipplant              |rtz13          ]           [lip16               ]                [label22 |lip22                          ]
+[label31 |liplegal              |azt02          ]  [label16 |desc                ]                         [                               ]
+[label7  |lip07                 |lmb03          ]  [label17 |lip17               |gen02          ]         [                               ]
+[label8  |lip08                 |lmc04          ]  [label18 |lip18               ]
+
+}
+END -- ds1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid1
+{
+   [label26 |lipuser        ] [label33 |lipmodu        ]  [label23 |lipacti        ]
+   [label30 |lipgrup        ] [label29 |lipdate        ]  [label28 |lipcrat        ]
+   [label35 |liporiu        ] [label34 |liporig        ]
+
+
+
+}
+END -- Grid1
+END -- Page2
+END -- Folder1
+Folder Folder2
+Page page3(text=%"Page3")
+Table s_liq
+{
+[liq02 |liq03               |liq04     |liq05     |liq06                 |liq061                |liq09                 ]
+[liq02 |liq03               |liq04     |liq05     |liq06                 |liq061                |liq09                 ]
+[liq02 |liq03               |liq04     |liq05     |liq06                 |liq061                |liq09                 ]
+[liq02 |liq03               |liq04     |liq05     |liq06                 |liq061                |liq09                 ]
+[liq02 |liq03               |liq04     |liq05     |liq06                 |liq061                |liq09                 ]
+}
+END -- s_liq
+END -- page3
+Page page4(text=%"Page4")
+Table s_liq1
+{
+[liq02_|liq03_1             |liq04_1   |liq05_1   |liq07   |liq081_1  |liq082_1  |liq071 |liq072           |liq073 |liq074          |liq09_1   ]
+[liq02_|liq03_1             |liq04_1   |liq05_1   |liq07   |liq081_1  |liq082_1  |liq071 |liq072           |liq073 |liq074          |liq09_1   ]
+[liq02_|liq03_1             |liq04_1   |liq05_1   |liq07   |liq081_1  |liq082_1  |liq071 |liq072           |liq073 |liq074          |liq09_1   ]
+[liq02_|liq03_1             |liq04_1   |liq05_1   |liq07   |liq081_1  |liq082_1  |liq071 |liq072           |liq073 |liq074          |liq09_1   ]
+[liq02_|liq03_1             |liq04_1   |liq05_1   |liq07   |liq081_1  |liq082_1  |liq071 |liq072           |liq073 |liq074          |liq09_1   ]
+}
+END -- s_liq1
+END -- page4
+Page page5(text=%"Page5")
+Table s_liq2
+{
+[liq021|liq03_2             |liq04_2   |liq05_2   |liq08  |liq081    |liq082    |liq083    |liq084    |liq09_2   ]
+[liq021|liq03_2             |liq04_2   |liq05_2   |liq08  |liq081    |liq082    |liq083    |liq084    |liq09_2   ]
+[liq021|liq03_2             |liq04_2   |liq05_2   |liq08  |liq081    |liq082    |liq083    |liq084    |liq09_2   ]
+[liq021|liq03_2             |liq04_2   |liq05_2   |liq08  |liq081    |liq082    |liq083    |liq084    |liq09_2   ]
+[liq021|liq03_2             |liq04_2   |liq05_2   |liq08  |liq081    |liq082    |liq083    |liq084    |liq09_2   ]
+}
+END -- s_liq2
+END -- page5
+END -- Folder2
+Grid gr1
+{
+
+ -----[label|idx1   |la|cn1    ]------[label41   |cn2       ]------
+
+}
+END -- gr1
+END -- VBox1
+END -- Form
+
+TABLES
+oaj_file,
+lmy_file,
+gen_file,
+liq_file,
+lip_file,
+lmc_file,
+lmb_file,
+oba_file,
+azt_file,
+rtz_file,
+tqa_file
+ATTRIBUTES
+Label label1:Label1, text=%"lip01";
+ButtonEdit lip01=lip_file.lip01, action=controlp, tabIndex=1, not null, image="zoom", scroll;
+Label label9:Label9, text=%"lip09";
+ButtonEdit lip09=lip_file.lip09, action=controlp, tabIndex=17, noEntry, image="zoom", scroll;
+Edit lmy04=lmy_file.lmy04, tabIndex=18, noEntry;
+CheckBox lipmksg=lip_file.lipmksg, tabIndex=32, default = "N", text=%"lip_file.lipmksg", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Label label2:Label2, text=%"lip02";
+Edit lip02=lip_file.lip02, tabIndex=2, noEntry, not null, scroll;
+Label label10:Label10, text=%"lip10";
+ButtonEdit lip10=lip_file.lip10, action=controlp, tabIndex=19, noEntry, image="zoom", scroll;
+Edit oba02=oba_file.oba02, tabIndex=20, noEntry;
+Label label19:Label19, text=%"lip19";
+ComboBox lip19=lip_file.lip19, tabIndex=33, default = "N", noEntry, not null, scroll, items=(("0", "open"),("1", "Already approved
+"),("S", "Send sign of"),("W", "Smoke single"),("R", "Send sign returned"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, width = 10 characters, height = 2 characters;
+Label label3:Label3, text=%"lip03";
+DateEdit lip03=lip_file.lip03, tabIndex=3, not null;
+Label label11:Label11, text=%"lip11";
+ButtonEdit lip11=lip_file.lip11, action=controlp, tabIndex=21, not null, image="zoom", scroll;
+Edit tqa02=tqa_file.tqa02, tabIndex=22, noEntry;
+Label label25:Label25, text=%"lipconf";
+ComboBox lipconf=lip_file.lipconf, tabIndex=34, default = "N", noEntry, not null, scroll, items=(("Y", "Already audit"),("N", "Not audit"),("S", "termination"));
+Label label4:Label4, text=%"lip04";
+ComboBox lip04=lip_file.lip04, tabIndex=4, not null, scroll, items=(("1", "Quota standards
+"),("2", "Proportion standard
+"),("3", "Segmentation standard
+"));
+Label label12:Label12, text=%"lip12";
+ComboBox lip12=lip_file.lip12, tabIndex=23, noEntry, not null, scroll, items=(("1", "year"),("2", "season
+"),("3", "month"),("4", "day"),("5", "contract
+"));
+Label label27:Label27, text=%"lipconu";
+ButtonEdit lipconu=lip_file.lipconu, action=controlp, tabIndex=35, noEntry, image="zoom", scroll;
+Edit gen02_1=formonly.gen02_1 type CHAR, tabIndex=36, noEntry;
+Label label5:Label5, text=%"lip05";
+ButtonEdit lip05=lip_file.lip05, action=controlp, tabIndex=5, image="zoom", scroll;
+Label label13:Label13, text=%"lip13";
+ComboBox lip13=lip_file.lip13, tabIndex=24, noEntry, not null, scroll, items=(("1", "Business area of
+"),("2", "Measurement area"),("3", "number"),("4", "The amount
+"),("5", "Proportion"));
+Label label24:Label24, text=%"lipcond";
+DateEdit lipcond=lip_file.lipcond, tabIndex=37, noEntry;
+TimeEdit lipcont=lip_file.lipcont, tabIndex=38, noEntry;
+Label label32:Label32, text=%"lip051";
+Edit lip051=lip_file.lip051, tabIndex=6, noEntry;
+Label label14:Label14, text=%"lip14";
+DateEdit lip14=lip_file.lip14, tabIndex=25, not null;
+Label label20:Label20, text=%"lip20";
+ButtonEdit lip20=lip_file.lip20, action=controlp, tabIndex=39, noEntry, image="zoom", scroll;
+Edit gen02_2=formonly.gen02_2 type CHAR, tabIndex=40, noEntry;
+Label label6:Label6, text=%"lip06";
+ButtonEdit lip06=lip_file.lip06, action=controlp, tabIndex=7, not null, image="zoom", scroll;
+Edit oaj02=oaj_file.oaj02, tabIndex=8, noEntry;
+Label label15:Label15, text=%"lip15";
+DateEdit lip15=lip_file.lip15, tabIndex=26, not null;
+Label label21:Label21, text=%"lip21";
+DateEdit lip21=lip_file.lip21, tabIndex=41, noEntry;
+Label label36:Label36, text=%"lipplant";
+ButtonEdit lipplant=lip_file.lipplant, action=controlp, tabIndex=9, noEntry, not null, image="zoom", scroll;
+Edit rtz13=rtz_file.rtz13, tabIndex=10, noEntry;
+CheckBox lip16=lip_file.lip16, tabIndex=27, text=%"lip_file.lip16", not null, valueChecked = "Y", valueUnchecked = "N";
+Label label22:Label22, text=%"lip22";
+TextEdit lip22=lip_file.lip22, tabIndex=42;
+Label label31:Label31, text=%"liplegal";
+ButtonEdit liplegal=lip_file.liplegal, action=controlp, tabIndex=11, noEntry, not null, image="zoom", scroll;
+Edit azt02=azt_file.azt02, tabIndex=12, noEntry;
+Label label16:Label16, text=%"An average increase";
+Edit desc=formonly.desc type DECIMAL, tabIndex=28;
+Label label7:Label7, text=%"lip07";
+ButtonEdit lip07=lip_file.lip07, action=controlp, tabIndex=13, noEntry, image="zoom", scroll;
+Edit lmb03=lmb_file.lmb03, tabIndex=14, noEntry;
+Label label17:Label17, text=%"lip17";
+ButtonEdit lip17=lip_file.lip17, action=controlp, tabIndex=29, image="zoom", scroll;
+Edit gen02=gen_file.gen02, tabIndex=30, noEntry;
+Label label8:Label8, text=%"lip08";
+ButtonEdit lip08=lip_file.lip08, action=controlp, tabIndex=15, noEntry, image="zoom", scroll, comment=%"controlp";
+Edit lmc04=lmc_file.lmc04, tabIndex=16, noEntry;
+Label label18:Label18, text=%"lip18";
+DateEdit lip18=lip_file.lip18, tabIndex=31;
+Label label26:Label26, text=%"lipuser";
+Edit lipuser=lip_file.lipuser, tabIndex=43, noEntry;
+Label label33:Label33, text=%"lipmodu";
+Edit lipmodu=lip_file.lipmodu, tabIndex=46, noEntry, scroll;
+Label label23:Label23, text=%"lipacti";
+Edit lipacti=lip_file.lipacti, tabIndex=49, noEntry, not null, scroll;
+Label label30:Label30, text=%"lipgrup";
+Edit lipgrup=lip_file.lipgrup, tabIndex=44, noEntry, scroll;
+Label label29:Label29, text=%"lipdate";
+DateEdit lipdate=lip_file.lipdate, tabIndex=47, noEntry;
+Label label28:Label28, text=%"lipcrat";
+DateEdit lipcrat=lip_file.lipcrat, tabIndex=50, noEntry;
+Label label35:Label35, text=%"liporiu";
+Edit liporiu=lip_file.liporiu, tabIndex=45, noEntry, scroll;
+Label label34:Label34, text=%"liporig";
+Edit liporig=lip_file.liporig, tabIndex=48, noEntry, scroll;
+Edit liq02=liq_file.liq02, tabIndex=51, title=%"liq02", not null, scroll;
+ButtonEdit liq03=liq_file.liq03, action=controlp, tabIndex=52, title=%"liq03", not null, image="zoom", scroll;
+DateEdit liq04=liq_file.liq04, tabIndex=53, title=%"liq04", not null;
+DateEdit liq05=liq_file.liq05, tabIndex=54, title=%"liq05", not null;
+Edit liq06=liq_file.liq06, tabIndex=55, title=%"liq06", noEntry, scroll;
+Edit liq061=liq_file.liq061, tabIndex=56, title=%"liq061", not null, scroll;
+Edit liq09=liq_file.liq09, tabIndex=57, title=%"liq09", noEntry, scroll;
+Edit liq02_=formonly.liq02_1 type SMALLINT, tabIndex=58, title=%"liq02", not null, scroll;
+ButtonEdit liq03_1=formonly.liq03_1 type VARCHAR, action=controlp, tabIndex=59, title=%"liq03", not null, image="zoom", scroll;
+DateEdit liq04_1=formonly.liq04_1 type DATE, tabIndex=60, title=%"liq04", not null;
+DateEdit liq05_1=formonly.liq05_1 type DATE, tabIndex=61, title=%"liq05", not null;
+ComboBox liq07=liq_file.liq07, tabIndex=62, title=%"liq07", not null, scroll, items=(("1", "Sales amount"));
+Edit liq081_1=formonly.liq081_1 type DECIMAL(20,6), tabIndex=63, title=%"liq081", scroll;
+Edit liq082_1=formonly.liq082_1 type DECIMAL(20,6), tabIndex=64, title=%"liq082", scroll;
+Edit liq071=liq_file.liq071, tabIndex=65, title=%"liq071", noEntry, not null, scroll;
+Edit liq072=liq_file.liq072, tabIndex=66, title=%"liq072", noEntry, not null, scroll;
+Edit liq073=liq_file.liq073, tabIndex=67, title=%"liq073", not null, scroll;
+Edit liq074=liq_file.liq074, tabIndex=68, title=%"liq074", not null, scroll;
+Edit liq09_1=formonly.liq09_1 type DECIMAL(20,6), tabIndex=69, title=%"liq09", noEntry, scroll;
+Edit liq021=formonly.liq02_2 type SMALLINT, tabIndex=70, title=%"liq02", not null, scroll;
+ButtonEdit liq03_2=formonly.liq03_2 type VARCHAR, action=controlp, tabIndex=71, title=%"liq03", not null, image="zoom", scroll;
+DateEdit liq04_2=formonly.liq04_2 type DATE, tabIndex=72, title=%"liq04", not null;
+DateEdit liq05_2=formonly.liq05_2 type DATE, tabIndex=73, title=%"liq05", not null;
+ComboBox liq08=liq_file.liq08, tabIndex=74, title=%"liq08", not null, scroll, items=(("1", "According to the area
+"));
+Edit liq081=liq_file.liq081, tabIndex=75, title=%"liq081", not null, scroll;
+Edit liq082=liq_file.liq082, tabIndex=76, title=%"liq082", not null, scroll;
+Edit liq083=liq_file.liq083, tabIndex=77, title=%"liq083", noEntry, not null, scroll;
+Edit liq084=liq_file.liq084, tabIndex=78, title=%"liq084", not null, scroll;
+Edit liq09_2=formonly.liq09_2 type DECIMAL(20,6), tabIndex=79, title=%"liq09", noEntry, scroll;
+Label label:Label37, text=%"Rows";
+Edit idx1=formonly.idx1 type SMALLINT, tabIndex=80, noEntry;
+Label la:Label40, text=%"/";
+Edit cn1=formonly.cn1 type SMALLINT, tabIndex=81, noEntry;
+Label label41:Label41, text=%"detail1";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=82;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lip_file.lip01,lip_file.lip09,lip_file.lip02,lip_file.lip10,lip_file.lip03,lip_file.lip11,lip_file.lip04,lip_file.lip12,lip_file.lip05,lip_file.lip13,lip_file.lipmksg,lip_file.lip14,lip_file.lip19,lip_file.lip06,lip_file.lip15,lip_file.lipconf,lip_file.lipplant,lip_file.lip16,lip_file.lipconu,lip_file.liplegal,lip_file.lipcond,lip_file.lipcont,lip_file.lip07,lip_file.lip17,lip_file.lip20,lip_file.lip08,lip_file.lip18,lip_file.lip21,lip_file.lip22,lip_file.lipdate,lip_file.lipmodu,lip_file.liporiu,lip_file.lipacti,lip_file.lipcrat,lip_file.lipgrup,lip_file.liporig,oaj_file.oaj02,rtz_file.rtz13,azt_file.azt02,lmb_file.lmb03,lmc_file.lmc04,lmy_file.lmy04,oba_file.oba02,tqa_file.tqa02,gen_file.gen02,formonly.gen02_1,formonly.gen02_2,formonly.desc,formonly.idx1,formonly.cn1,formonly.cn2,formonly.imgmksg,lip_file.lipuser,lip_file.lip051)
+SCREEN RECORD s_liq(liq_file.liq02,liq_file.liq03,liq_file.liq04,liq_file.liq05,liq_file.liq06,liq_file.liq061,liq_file.liq09)
+SCREEN RECORD s_liq1(formonly.liq02_1,formonly.liq03_1,formonly.liq04_1,formonly.liq05_1,liq_file.liq07,formonly.liq081_1,formonly.liq082_1,liq_file.liq071,liq_file.liq072,liq_file.liq073,liq_file.liq074,formonly.liq09_1)
+SCREEN RECORD s_liq2(formonly.liq02_2,formonly.liq03_2,formonly.liq04_2,formonly.liq05_2,liq_file.liq08,liq_file.liq081,liq_file.liq082,liq_file.liq083,liq_file.liq084,formonly.liq09_2)
+END -- INSTRUCTIONS
+

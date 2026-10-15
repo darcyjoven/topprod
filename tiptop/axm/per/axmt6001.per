@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt6001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt6001")
+VBox vb2
+Folder pc5
+Page page01(text="Page01")
+Grid gr7
+{
+ <G group01                                                                                                                                 >
+  Address code        [oga044    ]
+  Address             [oap041                            ]
+                      [oap042                            ]
+                      [oap043                            ]
+                      [oap044                            ]
+                      [oap045                            ]
+  From                [oga41     ][oac02               ]
+  Destination         [oga42     ][oac02_2             ]
+ <                                                                                                                                          >
+ <G group02                                                        ><G group03                                                              >
+  Shipping Type       [oga43               ][oga43_desc          ]   Customs Clear.Date         [oga021    ]
+  Mark Number         [oga44     ]                                   Export Type                [oga35               ]
+  Price Terms         [oga31     ][oah02                 ]           Non-Customs-Certif Documt  [oga36                                   ]
+  Collection Terms    [oga32     ][oag02                 ]           Number                     [oga37               ]
+  Other Condition     [oga33                             ]           Via Customs Expt/D Cate    [oga38     ]
+  Ship Name/No.       [oga47               ]                         Number                     [oga39               ]
+                      [oga48               ]                         Declaration No.            [oga71     ]
+  Sailing on/about    [oga49                 ]                      <                                                                       >
+                                                                    <G group04                                                              >
+                                                                     Deliver to Offshore W/H      [oga910    ]
+                                                                     Location                     [oga911    ]
+ <                                                                 ><                                                                       >
+
+
+}
+END -- gr7
+END -- page01
+END -- pc5
+END -- vb2
+END -- axmt6001
+
+TABLES
+oap_file,
+oga_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit oga044=oga_file.oga044, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Details";
+Edit oap041=oap_file.oap041, tabIndex=2;
+Edit oap042=oap_file.oap042, tabIndex=3;
+Edit oap043=oap_file.oap043, tabIndex=4;
+Edit oap044=oap_file.oap044, tabIndex=5;
+Edit oap045=oap_file.oap045, tabIndex=6;
+ButtonEdit oga41=oga_file.oga41, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Details";
+Edit oac02=formonly.oac02 type CHAR, tabIndex=8, noEntry;
+ButtonEdit oga42=oga_file.oga42, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Details";
+Edit oac02_2=formonly.oac02_2 type CHAR, tabIndex=10, noEntry;
+Group group02:group02;
+ButtonEdit oga43=oga_file.oga43, action=controlp, tabIndex=11, image="zoom";
+Edit oga43_desc=formonly.oga43_desc type CHAR, tabIndex=30, noEntry;
+ButtonEdit oga44=oga_file.oga44, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Details";
+ButtonEdit oga31=oga_file.oga31, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Details";
+Edit oah02=formonly.oah02 type CHAR, tabIndex=14, noEntry;
+ButtonEdit oga32=oga_file.oga32, action=controlp, tabIndex=15, noEntry, image="zoom", comment="<^P>Qry Details";
+Edit oag02=formonly.oag02 type CHAR, tabIndex=16, noEntry;
+Edit oga33=oga_file.oga33, tabIndex=17;
+Edit oga47=oga_file.oga47, tabIndex=18;
+Edit oga48=oga_file.oga48, tabIndex=19;
+DateEdit oga49=oga_file.oga49, tabIndex=20;
+Group group03:group03, gridChildrenInParent;
+DateEdit oga021=oga_file.oga021, tabIndex=21;
+ComboBox oga35=oga_file.oga35, tabIndex=22, queryEditable, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"));
+Edit oga36=oga_file.oga36, tabIndex=23;
+Edit oga37=oga_file.oga37, tabIndex=24;
+Edit oga38=oga_file.oga38, tabIndex=25;
+Edit oga39=oga_file.oga39, tabIndex=26;
+ButtonEdit oga71=oga_file.oga71, action=CONTROLP, tabIndex=29, image="zoom";
+Group group04:group04, gridChildrenInParent;
+Edit oga910=oga_file.oga910, tabIndex=27, noEntry;
+Edit oga911=oga_file.oga911, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oga_file.oga044,oap_file.oap041,oap_file.oap042,oap_file.oap043,oap_file.oap044,oap_file.oap045,oga_file.oga41,formonly.oac02,oga_file.oga42,formonly.oac02_2,oga_file.oga43,formonly.oga43_desc,oga_file.oga44,oga_file.oga31,formonly.oah02,oga_file.oga32,formonly.oag02,oga_file.oga33,oga_file.oga47,oga_file.oga48,oga_file.oga49,oga_file.oga021,oga_file.oga35,oga_file.oga36,oga_file.oga37,oga_file.oga38,oga_file.oga39,oga_file.oga71,oga_file.oga910,oga_file.oga911)
+END -- INSTRUCTIONS
+

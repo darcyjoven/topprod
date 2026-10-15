@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici021.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aici021")
+VBox vb2_
+Folder folder01
+Page page01(text="Main")
+Grid gr1462
+{
+ Item No. [idr01                    ]
+
+}
+END -- gr1462
+END -- page01
+END -- folder01
+Table s_idr
+{
+[idr02     |occ02                    |idr03     |idr04               ]
+[idr02     |occ02                    |idr03     |idr04               ]
+[idr02     |occ02                    |idr03     |idr04               ]
+[idr02     |occ02                    |idr03     |idr04               ]
+[idr02     |occ02                    |idr03     |idr04               ]
+[idr02     |occ02                    |idr03     |idr04               ]
+[idr02     |occ02                    |idr03     |idr04               ]
+[idr02     |occ02                    |idr03     |idr04               ]
+}
+END -- s_idr
+Grid gr1464
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr1464
+END -- vb2_
+END -- aici021
+
+TABLES
+idr_file
+ATTRIBUTES
+ButtonEdit idr01=idr_file.idr01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit idr02=idr_file.idr02, action=controlp, tabIndex=2, title="Customer No.", not null, required, image="zoom", comment="Key Field, No Blank/Repeated!     <^P> Qry Group Code";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=3, title="Customer Abbr.", noEntry;
+DateEdit idr03=idr_file.idr03, tabIndex=4, title="Effective Date", not null, required;
+Edit idr04=idr_file.idr04, tabIndex=5, title="Minimax Unit Price", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_idr(idr_file.idr02,formonly.occ02,idr_file.idr03,idr_file.idr04)
+SCREEN RECORD Undefined(idr_file.idr01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

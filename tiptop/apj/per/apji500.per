@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apji500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apji500")
+VBox vb2
+Folder pc2
+Page Page1(text=%"Basic Data")
+Table s_pjr
+{
+[pjr01 |pjr02                         |pjract]
+[pjr01 |pjr02                         |pjract]
+[pjr01 |pjr02                         |pjract]
+[pjr01 |pjr02                         |pjract]
+[pjr01 |pjr02                         |pjract]
+[pjr01 |pjr02                         |pjract]
+[pjr01 |pjr02                         |pjract]
+[pjr01 |pjr02                         |pjract]
+
+}
+END -- s_pjr
+END -- Page1
+END -- pc2
+Grid gr16
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr16
+END -- vb2
+END -- apji500
+
+TABLES
+pjr_file
+ATTRIBUTES
+Edit pjr01=pjr_file.pjr01, tabIndex=1, title="Category No.", not null;
+Edit pjr02=pjr_file.pjr02, tabIndex=2, title="Description", not null;
+CheckBox pjract=pjr_file.pjracti, tabIndex=3, title="Validity", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjr(pjr_file.pjr01,pjr_file.pjr02,pjr_file.pjracti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

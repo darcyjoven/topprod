@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_gre.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (minWidth=70, minHeight=10, spacing=normal, text="cl_gre")
+VBox VBox1
+Table s_gdw
+{
+[pick|gsf03                         |gdw03 |gdw09         ]
+[pick|gsf03                         |gdw03 |gdw09         ]
+[pick|gsf03                         |gdw03 |gdw09         ]
+[pick|gsf03                         |gdw03 |gdw09         ]
+[pick|gsf03                         |gdw03 |gdw09         ]
+[pick|gsf03                         |gdw03 |gdw09         ]
+[pick|gsf03                         |gdw03 |gdw09         ]
+}
+END -- s_gdw
+Grid Grid1
+{
+[label1       ][outputformat                  |layout_ed|set_defau]
+               [sampledata]
+
+}
+END -- Grid1
+END -- VBox1
+END -- cl_gre
+
+TABLES
+gsf_file,
+gdw_file
+ATTRIBUTES
+CheckBox pick=formonly.pick type VARCHAR, tabIndex=3, default = "N", title=%"Select", valueChecked = "Y", valueUnchecked = "N";
+Edit gsf03=gsf_file.gsf03, tabIndex=2, title=%"Report Template Description", noEntry;
+CheckBox gdw03=gdw_file.gdw03, tabIndex=2, default = "N", title=%"custom", text=%"", valueChecked = "Y", valueUnchecked = "N";
+Edit gdw09=gdw_file.gdw09, tabIndex=2, title=%"FileList", noEntry;
+Phantom gdw_file.gdw11;
+Phantom gdw_file.gdw12;
+Phantom gdw_file.gdw13;
+Phantom gdw_file.gdw14;
+Phantom gdw_file.gdw15;
+Phantom gdw_file.gdw02;
+Phantom gdw_file.gdw08;
+Phantom gdw_file.gdw05;
+Phantom gdw_file.gdw04;
+Phantom gdw_file.gdw17;
+Phantom gdw_file.gdw06;
+Label label1:Label1, text=%"Report Format";
+ComboBox outputformat=formonly.outputformat type VARCHAR, tabIndex=4, not null, required, items=(("1", "SVG"),("2", "PDF"),("3", "XLS"),("4", "XLS (sheet)"),("5", "XLSX"),("6", "XLSX (sheet)"),("7", "RTF"),("8", "HTML"),("9", "Mail"));
+Button layout_ed:layout_edit, tabIndex=5, text="", image="GReditor-16.png";
+Button set_defau:set_default, tabIndex=6, text="";
+CheckBox sampledata=formonly.sampledata type VARCHAR, tabIndex=1, default = "N", text="Sampledata", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sampledata,formonly.outputformat)
+SCREEN RECORD s_gdw(formonly.pick,gsf_file.gsf03,gdw_file.gdw03,gdw_file.gdw09,gdw_file.gdw11,gdw_file.gdw12,gdw_file.gdw13,gdw_file.gdw14,gdw_file.gdw15,gdw_file.gdw02,gdw_file.gdw08,gdw_file.gdw05,gdw_file.gdw04,gdw_file.gdw17,gdw_file.gdw06)
+END -- INSTRUCTIONS
+

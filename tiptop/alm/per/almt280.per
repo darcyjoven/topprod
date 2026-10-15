@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt280.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt280")
+VBox VBox1
+Folder pc1
+Page Main(text=%"Main")
+Grid gr1
+{
+
+ BillNo     [lna01                 ]                 sponsor  [lna13                         ] Regis.    [lna22       ]
+ Sou.S.D.N  [lna02                 |rtz13          ] Spo.Tel  [lna14                         ] hireA.    [lna23       ]
+ Mer.No.    [lna03                 ]                 Repr.    [lna15                         ] Appr.No.  [lna26       |imgmks]
+ for short  [lna04                 ]                 ReprTel  [lna16                         ] Approver  [lna27       |      ]
+ for full   [lna05                                 ] Oper.    [lna17                         ] Appr.on   [lna28       ]
+ quality    [lna06                 ]                 O.Tel.   [lna18                         ] memo      [lna29              ]
+ Area       [lna09                 ]                 email    [lna19                         ]           [                   ]
+ Manager    [lna11                 ]                 website  [lna20                         ]           [                   ]
+ Tel.       [lna12                 ]                 Fax      [lna21                         ]
+
+}
+END -- gr1
+END -- Main
+Page info(text=%"Info")
+Grid gr2
+{
+
+ Data Owner  [lnauser   ]  Last Modified on   [lnadate      ]    create on          [lnacrat     ]
+ Department  [lnagrup   ]  Last Modified by   [lnamodu     ]
+ Record Orig.[lnaoriu   ]
+ Dept Orig.  [lnaorig   ]
+
+
+
+
+
+
+}
+END -- gr2
+END -- info
+END -- pc1
+Table s_lif
+{
+[lif02          |tqa02                         |lif03                         |lifacti                ]
+[lif02          |tqa02                         |lif03                         |lifacti                ]
+[lif02          |tqa02                         |lif03                         |lifacti                ]
+[lif02          |tqa02                         |lif03                         |lifacti                ]
+[lif02          |tqa02                         |lif03                         |lifacti                ]
+}
+END -- s_lif
+Grid gr3
+{
+
+ ------ indx [indx  ]/ [cnt    ] -------[label1   |cnt2   ]----------
+
+}
+END -- gr3
+END -- VBox1
+END -- almt280
+
+TABLES
+lna_file,
+lif_file,
+tqa_file
+ATTRIBUTES
+ButtonEdit lna01=lna_file.lna01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit lna13=lna_file.lna13, tabIndex=11;
+Edit lna22=lna_file.lna22, tabIndex=20;
+ButtonEdit lna02=lna_file.lna02, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=9, noEntry;
+Edit lna14=lna_file.lna14, tabIndex=12;
+Edit lna23=lna_file.lna23, tabIndex=21;
+ButtonEdit lna03=lna_file.lna03, action=controlp, tabIndex=3, image="zoom.png";
+Edit lna15=lna_file.lna15, tabIndex=13;
+ComboBox lna26=lna_file.lna26, tabIndex=22, default = "N", noEntry, not null, required, items=(("N", "unchecked"),("Y", "checked"),("X", "zuofei"));
+IMAGE imgmks=formonly.imgmksg type CHAR;
+Edit lna04=lna_file.lna04, tabIndex=4, not null, required;
+Edit lna16=lna_file.lna16, tabIndex=14;
+Edit lna27=lna_file.lna27, tabIndex=23, noEntry, not null, required;
+Edit lna05=lna_file.lna05, tabIndex=5;
+Edit lna17=lna_file.lna17, tabIndex=15;
+DateEdit lna28=lna_file.lna28, tabIndex=24, noEntry, not null, required;
+ComboBox lna06=lna_file.lna06, tabIndex=6, not null, required, items=(("1", "ming"),("2", "guo"),("3", "si"),("4", "he"),("5", "duo"));
+Edit lna18=lna_file.lna18, tabIndex=16;
+TextEdit lna29=lna_file.lna29, tabIndex=25;
+Edit lna09=lna_file.lna09, tabIndex=7;
+Edit lna19=lna_file.lna19, tabIndex=17;
+Edit lna11=lna_file.lna11, tabIndex=8;
+Edit lna20=lna_file.lna20, tabIndex=18;
+Edit lna12=lna_file.lna12, tabIndex=10;
+Edit lna21=lna_file.lna21, tabIndex=19;
+Edit lnauser=lna_file.lnauser, tabIndex=26, noEntry;
+DateEdit lnadate=lna_file.lnadate, tabIndex=30, noEntry;
+DateEdit lnacrat=lna_file.lnacrat, tabIndex=32, noEntry;
+Edit lnagrup=lna_file.lnagrup, tabIndex=27, noEntry;
+Edit lnamodu=lna_file.lnamodu, tabIndex=31, noEntry;
+Edit lnaoriu=lna_file.lnaoriu, tabIndex=28, noEntry;
+Edit lnaorig=lna_file.lnaorig, tabIndex=29, noEntry;
+ButtonEdit lif02=lif_file.lif02, action=controlp, tabIndex=33, title=%"lif02", not null, required, image="zoom.png", scroll;
+Edit tqa02=tqa_file.tqa02, tabIndex=34, title=%"tqa02", noEntry, scroll;
+Edit lif03=lif_file.lif03, tabIndex=35, title=%"lif03", scroll;
+CheckBox lifacti=lif_file.lifacti, tabIndex=36, default = "Y", title=%"lifacti", text=%"", not null, valueChecked = "Y";
+Edit indx=formonly.indx type SMALLINT, tabIndex=37, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=38, noEntry;
+Label label1:Label1, text=%"Label1";
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=39, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lna_file.lna01,lna_file.lna12,lna_file.lna22,lna_file.lna02,formonly.rtz13,lna_file.lna13,lna_file.lna23,lna_file.lna03,lna_file.lna14,lna_file.lna26,formonly.imgmksg,lna_file.lna04,lna_file.lna15,lna_file.lna27,lna_file.lna05,lna_file.lna16,lna_file.lna28,lna_file.lna06,lna_file.lna17,lna_file.lna29,lna_file.lna18,lna_file.lna19,lna_file.lna09,lna_file.lna20,lna_file.lna11,lna_file.lna21,lna_file.lnauser,lna_file.lnacrat,lna_file.lnadate,lna_file.lnagrup,lna_file.lnamodu,lna_file.lnaoriu,lna_file.lnaorig,formonly.indx,formonly.cnt,formonly.cnt2)
+SCREEN RECORD s_lif(lif_file.lif02,tqa_file.tqa02,lif_file.lif03,lif_file.lifacti)
+END -- INSTRUCTIONS
+

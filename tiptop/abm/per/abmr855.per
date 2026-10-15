@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmr855.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmr855")
+Grid gr997
+{
+ <G group01                                          >
+  Sub Master Item No. [bma01               ]
+                      [ima02                         ]
+  Alternate Code      [bma06_1             ]
+  ECN No.             [bma02     ]
+  Expired Date        [vdate1      ]
+  Date of Change      [bma03       ]
+  Date From           [bmx07       ]
+  Date To             [bmx08       ]
+ <                                                   >
+ <G group02                                          >
+  Sub Master Item No. [bma01b              ]
+                      [ima02b                        ]
+  Alternate Code      [bma06_2             ]
+  ECN No.             [bma02b    ]
+  Expired Date        [vdate2      ]
+  Date of Change      [bma03b      ]
+  Date From           [bmx07b      ]
+  Date To             [bmx08b      ]
+ <                                                   >
+ <G group03                                          >
+  Substitute Quantity [x           ]
+ <                                                   >
+ <G group04                                          >
+  [f                                        ]
+ <                                                   >
+
+}
+END -- gr997
+END -- abmr855
+
+ATTRIBUTES
+Group group01:group01, text="Original";
+ButtonEdit bma01=formonly.bma01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit bma06_1=formonly.bma06_1 type VARCHAR, tabIndex=3;
+Edit bma02=formonly.bma02 type CHAR, tabIndex=4, noEntry;
+DateEdit vdate1=formonly.vdate1 type DATE, tabIndex=5;
+DateEdit bma03=formonly.bma03 type CHAR, tabIndex=6, noEntry;
+DateEdit bmx07=formonly.bmx07 type DATE, tabIndex=7, noEntry;
+DateEdit bmx08=formonly.bmx08 type DATE, tabIndex=8, noEntry;
+Group group02:group02, text="New";
+ButtonEdit bma01b=formonly.bma01b type CHAR, action=controlp, tabIndex=9, image="zoom";
+Edit ima02b=formonly.ima02b type CHAR, tabIndex=10, noEntry;
+Edit bma06_2=formonly.bma06_2 type VARCHAR, tabIndex=11;
+Edit bma02b=formonly.bma02b type CHAR, tabIndex=12, noEntry;
+DateEdit vdate2=formonly.vdate2 type DATE, tabIndex=13;
+DateEdit bma03b=formonly.bma03b type CHAR, tabIndex=14, noEntry;
+DateEdit bmx07b=formonly.bmx07b type DATE, tabIndex=15, noEntry;
+DateEdit bmx08b=formonly.bmx08b type DATE, tabIndex=16, noEntry;
+Group group03:group03, text="Substitute Quantity";
+Edit x=formonly.x type CHAR, tabIndex=17;
+Group group04:group04;
+CheckBox f=formonly.f type CHAR, tabIndex=18, text="Print Inventory Short Item only", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bma01,formonly.ima02,formonly.bma06_1,formonly.bma02,formonly.vdate1,formonly.bma03,formonly.bmx07,formonly.bmx08,formonly.bma01b,formonly.ima02b,formonly.bma06_2,formonly.bma02b,formonly.vdate2,formonly.bma03b,formonly.bmx07b,formonly.bmx08b,formonly.x,formonly.f)
+END -- INSTRUCTIONS
+

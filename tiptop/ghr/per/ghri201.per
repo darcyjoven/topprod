@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ghri021")
+Folder pc1
+Page page111(action=main, text=%"page111")
+VBox VBox1
+Folder pc2
+Page page01(text=%"page01")
+Grid gr1
+{
+
+   hree05[hree05          |hree05_1       ]      hree01 [hree01          |hrai04         ]
+   hree02[hree02          |hrdk03         ]      hree03 [hree03          |aag02          ]
+   hree04[hree04          ]
+
+
+
+}
+END -- gr1
+END -- page01
+Page page02(text=%"page02")
+Grid gr2
+{
+
+ hreeuser    [hreeuser  ]          hreedate      [hreedate  ]
+ hreegrup    [hreegrup  ]          hreeoriu      [hreeoriu  ]
+ hreemodu    [hreemodu  ]          hreeorig      [hreeorig  ]
+ hreeacti    [hreeacti  ]
+
+
+}
+END -- gr2
+END -- page02
+END -- pc2
+Grid grid3
+{
+  ---------- cnt[cnt]----------
+
+
+
+
+}
+END -- grid3
+END -- VBox1
+END -- page111
+Page page112(action=item_list, text=%"page112")
+Table s_hree
+{
+[hree05a     |hree05a_1   |hree01a     |hrai04a     |hree02a    |hrdk03a      |hree03a     |aag02a      |hree04a      ]
+[hree05a     |hree05a_1   |hree01a     |hrai04a     |hree02a    |hrdk03a      |hree03a     |aag02a      |hree04a      ]
+[hree05a     |hree05a_1   |hree01a     |hrai04a     |hree02a    |hrdk03a      |hree03a     |aag02a      |hree04a      ]
+[hree05a     |hree05a_1   |hree01a     |hrai04a     |hree02a    |hrdk03a      |hree03a     |aag02a      |hree04a      ]
+[hree05a     |hree05a_1   |hree01a     |hrai04a     |hree02a    |hrdk03a      |hree03a     |aag02a      |hree04a      ]
+[hree05a     |hree05a_1   |hree01a     |hrai04a     |hree02a    |hrdk03a      |hree03a     |aag02a      |hree04a      ]
+[hree05a     |hree05a_1   |hree01a     |hrai04a     |hree02a    |hrdk03a      |hree03a     |aag02a      |hree04a      ]
+[hree05a     |hree05a_1   |hree01a     |hrai04a     |hree02a    |hrdk03a      |hree03a     |aag02a      |hree04a      ]
+[hree05a     |hree05a_1   |hree01a     |hrai04a     |hree02a    |hrdk03a      |hree03a     |aag02a      |hree04a      ]
+[hree05a     |hree05a_1   |hree01a     |hrai04a     |hree02a    |hrdk03a      |hree03a     |aag02a      |hree04a      ]
+}
+END -- s_hree
+END -- page112
+END -- pc1
+END -- ghri021
+
+ATTRIBUTES
+ButtonEdit hree05=formonly.hree05 type VARCHAR, action=controlp, tabIndex=17, not null, required, image="zoom";
+Edit hree05_1=formonly.hree05_1 type VARCHAR, tabIndex=18, noEntry;
+ButtonEdit hree01=formonly.hree01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrai04=formonly.hrai04 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit hree02=formonly.hree02 type VARCHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit hrdk03=formonly.hrdk03 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit hree03=formonly.hree03 type VARCHAR, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=6, noEntry;
+ComboBox hree04=formonly.hree04 type VARCHAR, tabIndex=7, not null, required, items=(("1", %"1"),("2", "2"));
+Edit hreeuser=formonly.hreeuser type VARCHAR, tabIndex=9, noEntry;
+DateEdit hreedate=formonly.hreedate type DATE, tabIndex=10, noEntry;
+Edit hreegrup=formonly.hreegrup type VARCHAR, tabIndex=11, noEntry;
+Edit hreeoriu=formonly.hreeoriu type VARCHAR, tabIndex=12, noEntry;
+Edit hreemodu=formonly.hreemodu type VARCHAR, tabIndex=13, noEntry;
+Edit hreeorig=formonly.hreeorig type VARCHAR, tabIndex=14, noEntry, upShift;
+Edit hreeacti=formonly.hreeacti type VARCHAR, tabIndex=15, noEntry;
+Edit cnt=formonly.cnt type DECIMAL, tabIndex=8, noEntry;
+Edit hree05a=formonly.hree05a type VARCHAR, tabIndex=19, title=%"hree05", noEntry;
+Edit hree05a_1=formonly.hree05a_1 type VARCHAR, tabIndex=20, title=%"hree05_1", noEntry;
+Edit hree01a=formonly.hree01a type VARCHAR, tabIndex=16, title=%"hree01", noEntry;
+Edit hrai04a=formonly.hrai04a type VARCHAR, tabIndex=16, title=%"hrai04", noEntry;
+Edit hree02a=formonly.hree02a type VARCHAR, tabIndex=16, title=%"hree02", noEntry;
+Edit hrdk03a=formonly.hrdk03a type VARCHAR, tabIndex=16, title=%"hrdk03", noEntry;
+Edit hree03a=formonly.hree03a type VARCHAR, tabIndex=16, title=%"hree03", noEntry;
+Edit aag02a=formonly.aag02a type VARCHAR, tabIndex=16, title=%"aag02", noEntry;
+ComboBox hree04a=formonly.hree04a type VARCHAR, tabIndex=16, title=%"hree04", noEntry, items=(("1", %"1"),("2", %"2"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD page01(formonly.hree01,formonly.hree02,formonly.hree03,formonly.hree04,formonly.hrai04,formonly.hrdk03,formonly.aag02)
+SCREEN RECORD page02(formonly.hreeoriu,formonly.hreeorig,formonly.hreeuser,formonly.hreedate,formonly.hreegrup,formonly.hreemodu,formonly.hreeacti)
+SCREEN RECORD s_hree(formonly.hree05a,formonly.hree05a_1,formonly.hree01a,formonly.hrai04a,formonly.hree02a,formonly.hrdk03a,formonly.hree03a,formonly.aag02a,formonly.hree04a)
+SCREEN RECORD Undefined(formonly.cnt,formonly.hree05,formonly.hree05_1)
+END -- INSTRUCTIONS
+

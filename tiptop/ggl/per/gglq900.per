@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq701_1")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr5447
+{
+  [choice             ]   Conditions[a             ]option[b             ] [n           |labe|yy        |lab1|mm        |e            ]
+
+
+}
+END -- gr5447
+END -- page01
+END -- folder01
+Table s_alz
+{
+[alz01       |occ02           |alz14           |aag02                |nma01               |nma02               |alz10   |alz13f              |alz13               |cf                  |c              |df_cf               |df_c                |alz09f              |alz09               |df                  |d                   |df_tf               |df_t                ]
+[alz01       |occ02           |alz14           |aag02                |nma01               |nma02               |alz10   |alz13f              |alz13               |cf                  |c              |df_cf               |df_c                |alz09f              |alz09               |df                  |d                   |df_tf               |df_t                ]
+[alz01       |occ02           |alz14           |aag02                |nma01               |nma02               |alz10   |alz13f              |alz13               |cf                  |c              |df_cf               |df_c                |alz09f              |alz09               |df                  |d                   |df_tf               |df_t                ]
+[alz01       |occ02           |alz14           |aag02                |nma01               |nma02               |alz10   |alz13f              |alz13               |cf                  |c              |df_cf               |df_c                |alz09f              |alz09               |df                  |d                   |df_tf               |df_t                ]
+[alz01       |occ02           |alz14           |aag02                |nma01               |nma02               |alz10   |alz13f              |alz13               |cf                  |c              |df_cf               |df_c                |alz09f              |alz09               |df                  |d                   |df_tf               |df_t                ]
+[alz01       |occ02           |alz14           |aag02                |nma01               |nma02               |alz10   |alz13f              |alz13               |cf                  |c              |df_cf               |df_c                |alz09f              |alz09               |df                  |d                   |df_tf               |df_t                ]
+[alz01       |occ02           |alz14           |aag02                |nma01               |nma02               |alz10   |alz13f              |alz13               |cf                  |c              |df_cf               |df_c                |alz09f              |alz09               |df                  |d                   |df_tf               |df_t                ]
+[alz01       |occ02           |alz14           |aag02                |nma01               |nma02               |alz10   |alz13f              |alz13               |cf                  |c              |df_cf               |df_c                |alz09f              |alz09               |df                  |d                   |df_tf               |df_t                ]
+[alz01       |occ02           |alz14           |aag02                |nma01               |nma02               |alz10   |alz13f              |alz13               |cf                  |c              |df_cf               |df_c                |alz09f              |alz09               |df                  |d                   |df_tf               |df_t                ]
+[alz01       |occ02           |alz14           |aag02                |nma01               |nma02               |alz10   |alz13f              |alz13               |cf                  |c              |df_cf               |df_c                |alz09f              |alz09               |df                  |d                   |df_tf               |df_t                ]
+}
+END -- s_alz
+Grid gr5449
+{
+ ----------- Rows [cnt   ] -----------
+
+}
+END -- gr5449
+END -- VBox1
+END -- gglq701_1
+
+TABLES
+alz_file
+ATTRIBUTES
+RadioGroup choice=formonly.choice, tabIndex=24, not null, required, justify=left, orientation=horizontal, items=(("1", "1"),("2", "2"));
+ComboBox a=formonly.a type CHAR, tabIndex=1, not null, required;
+ComboBox b=formonly.b type VARCHAR, tabIndex=2, not null, required, items=(("1", "AR"),("2", "AP"),("3", "NM"),("4", "FA"),("5", "GL"));
+ComboBox n=formonly.n, tabIndex=27, not null, required, items=(("1", "1"),("2", "2"),("3", "3"));
+Label labe:Label1, text=%"yy";
+Edit yy=formonly.yy, tabIndex=21;
+Label lab1:Label2, text=%"mm";
+Edit mm=formonly.mm, tabIndex=22;
+CheckBox e=formonly.e type CHAR, tabIndex=3, text="Aggregated By Curr.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit alz01=formonly.alz01 type VARCHAR, action=controlp, tabIndex=4, title=%"Customer", image="zoom";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=5, title=%"Customer name";
+ButtonEdit alz14=formonly.alz14 type VARCHAR, action=controlp, tabIndex=6, title="Account title", image="zoom";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=7, title="Account name";
+Edit nma01=formonly.nma01 type VARCHAR, tabIndex=25, title=%"Bank Code";
+Edit nma02=formonly.nma02 type VARCHAR, tabIndex=26, title=%"Bank Name";
+Edit alz10=alz_file.alz10, tabIndex=23, title=%"Currency";
+Edit alz13f=formonly.alz13f type CHAR, tabIndex=8, title=%"org currency current amount";
+Edit alz13=formonly.alz13 type CHAR, tabIndex=9, title="The current amount of currency";
+Edit cf=formonly.cf type CHAR, tabIndex=10, title="cf";
+Edit c=formonly.c type CHAR, tabIndex=11, title=%"c";
+Edit df_cf=formonly.df_cf type CHAR, tabIndex=12, title="df_cf";
+Edit df_c=formonly.df_c type CHAR, tabIndex=13, title=%"df_c";
+Edit alz09f=formonly.alz09f type CHAR, tabIndex=14, title=%"alz09f";
+Edit alz09=formonly.alz09 type CHAR, tabIndex=15, title="alz09";
+Edit df=formonly.df type CHAR, tabIndex=16, title=%"df";
+Edit d=formonly.d type CHAR, tabIndex=17, title=%"d";
+Edit df_tf=formonly.df_tf type CHAR, tabIndex=18, title="df_tf";
+Edit df_t=formonly.df_t type CHAR, tabIndex=19, title="df_t";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_alz(formonly.alz01,formonly.occ02,formonly.alz14,formonly.aag02,formonly.nma01,formonly.nma02,alz_file.alz10,formonly.alz13f,formonly.alz13,formonly.cf,formonly.c,formonly.df_cf,formonly.df_c,formonly.alz09f,formonly.alz09,formonly.df,formonly.d,formonly.df_tf,formonly.df_t)
+SCREEN RECORD Undefined(formonly.b,formonly.cnt,formonly.a,formonly.e,formonly.yy,formonly.mm,formonly.choice,formonly.n)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_chart_gfp.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Table Table1
+{
+[gfp03   |gfp04_na|gfp04_de]
+[gfp03   |gfp04_na|gfp04_de]
+[gfp03   |gfp04_na|gfp04_de]
+[gfp03   |gfp04_na|gfp04_de]
+[gfp03   |gfp04_na|gfp04_de]
+}
+END -- Table1
+END -- Form
+
+TABLES
+gfp_file
+ATTRIBUTES
+Phantom formonly.gfp01 type CHAR;
+ComboBox gfp03=gfp_file.gfp03, tabIndex=1, title=%"gfp03";
+Edit gfp04_na=formonly.gfp04_name type VARCHAR, tabIndex=2, title=%"gfp04_name";
+Edit gfp04_de=formonly.gfp04_desc type VARCHAR, tabIndex=3, title=%"gfp04_desc";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gfp(formonly.gfp01,gfp_file.gfp03,formonly.gfp04_name,formonly.gfp04_desc)
+END -- INSTRUCTIONS
+

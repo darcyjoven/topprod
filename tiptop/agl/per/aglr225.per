@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr225.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr225")
+VBox VBox1
+Group group01(text="INPUT")
+VBox VBox2
+Grid gr2698
+{
+ <G group02                                                        >
+  [rtype                                                       ]
+ <                                                                 >
+
+}
+END -- gr2698
+Grid gr2699
+{
+  Book No.            [b                     ]
+  Report Structure No.[a                     ]
+  Transaction Code    [x                     ]
+
+ <G group04                                                        >
+                            [dummy01]              [dummy02]
+   Enter Name          [title1              ][title2              ]
+   Enter Year          [yy1                 ][yy2                 ]
+   Initial Period      [bm1                 ][bm2                 ]
+   Ending Period       [em1                 ][em2                 ]
+ <                                                                 >
+
+}
+END -- gr2699
+Grid gr2700
+{
+   Decimal Digits      [e                   ]
+   Print Minimum Level#[f                   ]
+   Amount Unit         [d                   ]
+  [c                             ]
+  [h                             ]
+
+ <G group08                                                        >
+  [o                                       ]
+   G/L Curr.           [r                   ]
+   Convert Curr.       [p                   ]
+   * Ex.Rate           [q                   ]
+ <                                                                 >
+
+}
+END -- gr2700
+END -- VBox2
+END -- group01
+Grid gr2701
+{
+[more                                                        ]
+
+}
+END -- gr2701
+END -- VBox1
+END -- aglr225
+
+ATTRIBUTES
+Group group02:group02, text="Report Type";
+RadioGroup rtype=formonly.rtype type CHAR, tabIndex=1, items=(("1", "Balance Sheet"),("2", "Income statement"));
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit x=formonly.x type VARCHAR, tabIndex=4;
+Group group04:group04;
+Label dummy01:dummy01, text="1st Period";
+Label dummy02:dummy02, text="2nd Period";
+Edit title1=formonly.title1 type CHAR, tabIndex=5;
+Edit title2=formonly.title2 type CHAR, tabIndex=6;
+Edit yy1=formonly.yy1 type SMALLINT, tabIndex=7;
+Edit yy2=formonly.yy2 type SMALLINT, tabIndex=8;
+Edit bm1=formonly.bm1 type SMALLINT, tabIndex=9;
+Edit bm2=formonly.bm2 type SMALLINT, tabIndex=10;
+Edit em1=formonly.em1 type SMALLINT, tabIndex=11;
+Edit em2=formonly.em2 type SMALLINT, tabIndex=12;
+Edit e=formonly.e type CHAR, tabIndex=13;
+Edit f=formonly.f type SMALLINT, tabIndex=14;
+ComboBox d=formonly.d type CHAR, tabIndex=15, not null, required, queryEditable, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+CheckBox c=formonly.c type CHAR, tabIndex=16, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=17, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group08:group08;
+CheckBox o=formonly.o type CHAR, tabIndex=18, text="Convert Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=19, noEntry;
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=20, image="zoom";
+Edit q=formonly.q type DECIMAL, tabIndex=21;
+CheckBox more=formonly.more type CHAR, tabIndex=22, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rtype,formonly.b,formonly.a,formonly.x,formonly.title1,formonly.title2,formonly.yy1,formonly.yy2,formonly.bm1,formonly.bm2,formonly.em1,formonly.em2,formonly.e,formonly.f,formonly.d,formonly.c,formonly.h,formonly.o,formonly.r,formonly.p,formonly.q,formonly.more)
+END -- INSTRUCTIONS
+

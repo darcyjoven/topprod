@@ -1,0 +1,150 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_gr_diff_rep.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+HBox HBox1
+Group group1(text=%"Original Report")
+Tree rp_tree(parentIdColumn=parentid, idColumn=id, expandedColumn=is_expand)
+{
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+[node_name             |node_typ|diff   ]
+}
+END -- rp_tree
+END -- group1
+Grid Grid1
+{
+[next_diff ]
+[merge_node]
+[del       ]
+[addtoright]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+Group group2(text=%"Upload Report")
+Tree rp_tree_new(parentIdColumn=parentid_new, idColumn=id_new, expandedColumn=is_expand_new)
+{
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+[node_name_new         |node_ty1|diff_ne]
+}
+END -- rp_tree_new
+END -- group2
+END -- HBox1
+HBox HBox2
+Group group3(text=%"Attributes")
+Table old_attrs
+{
+[attr_nam|attr_val]
+[attr_nam|attr_val]
+[attr_nam|attr_val]
+[attr_nam|attr_val]
+[attr_nam|attr_val]
+}
+END -- old_attrs
+END -- group3
+Group Group4(text=%"Attributes")
+Table new_attrs
+{
+[attr_na1|attr_va1]
+[attr_na1|attr_va1]
+[attr_na1|attr_va1]
+[attr_na1|attr_va1]
+[attr_na1|attr_va1]
+}
+END -- new_attrs
+END -- Group4
+END -- HBox2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+LABEL node_name=formonly.node_name type CHAR, title=%"Name", unsortable;
+Phantom formonly.id type CHAR;
+Phantom formonly.parentid type CHAR;
+LABEL node_typ=formonly.node_type type CHAR, title=%"Type", unsortable;
+LABEL diff=formonly.diff type CHAR, title=%"Compare", unsortable, unmovable, unhidable;
+Phantom formonly.is_expand type BOOLEAN;
+Phantom formonly.node_id type CHAR;
+Button next_diff:next_diff, tabIndex=8, text=%"Find Next";
+Button merge_node:merge_node, tabIndex=7, text=%"Merge All";
+Button del:del, tabIndex=5, text=%"Delete Selected";
+Button addtoright:addtoright, tabIndex=6, text=%">>";
+LABEL node_name_new=formonly.node_name_new type CHAR, title=%"Name", unsortable;
+LABEL node_ty1=formonly.node_type_new type CHAR, title=%"Type", unsortable;
+LABEL diff_ne=formonly.diff_new type CHAR, title=%"Compare", unsortable, unmovable, unhidable;
+Phantom formonly.id_new type CHAR;
+Phantom formonly.parentid_new type CHAR;
+Phantom formonly.is_expand_new type BOOLEAN;
+Phantom formonly.node_id_new type CHAR;
+Edit attr_nam=formonly.attr_name type CHAR, tabIndex=1, title=%"Name";
+Edit attr_val=formonly.attr_value type CHAR, tabIndex=2, title=%"Value";
+Edit attr_na1=formonly.attr_name_new type CHAR, tabIndex=3, title=%"Name";
+Edit attr_va1=formonly.attr_value_new type CHAR, tabIndex=4, title=%"Value";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD rp_tree(formonly.id,formonly.parentid,formonly.node_type,formonly.node_name,formonly.is_expand,formonly.diff,formonly.node_id)
+SCREEN RECORD rp_tree_new(formonly.id_new,formonly.parentid_new,formonly.node_type_new,formonly.node_name_new,formonly.is_expand_new,formonly.diff_new,formonly.node_id_new)
+SCREEN RECORD old_attrs(formonly.attr_name,formonly.attr_value)
+SCREEN RECORD new_attrs(formonly.attr_name_new,formonly.attr_value_new)
+END -- INSTRUCTIONS
+

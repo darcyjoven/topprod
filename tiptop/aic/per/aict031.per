@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aict031.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aict031")
+VBox vb2
+HBox hb2
+Grid gr1
+{
+ <G group01                                          >
+  icy01            [icy01                ][icy02    ]
+  ogb31            [ogb31                ][ogb32    ]
+ <                                                   >
+
+
+
+
+
+}
+END -- gr1
+Grid gr2
+{
+ <G group02                                                                     >
+  ogb04            [ogb04                      ][ima02          ]
+  ogb05            [ogb05    ]
+  ogb12            [ogb12               ]
+  ogbiicd02         [ogbiicd02           ]
+  hold_qty         [hold_qty            ]
+  unhold_qty       [unhold_qty          ]
+ <                                                                              >
+
+}
+END -- gr2
+END -- hb2
+Table s_icy
+{
+[icy03 |icy04 |icy05            |icy06  |icy07  |icy08            |icy09            |icy10       |icy11       |icy12       |icy13               |icy14]
+[icy03 |icy04 |icy05            |icy06  |icy07  |icy08            |icy09            |icy10       |icy11       |icy12       |icy13               |icy14]
+[icy03 |icy04 |icy05            |icy06  |icy07  |icy08            |icy09            |icy10       |icy11       |icy12       |icy13               |icy14]
+[icy03 |icy04 |icy05            |icy06  |icy07  |icy08            |icy09            |icy10       |icy11       |icy12       |icy13               |icy14]
+[icy03 |icy04 |icy05            |icy06  |icy07  |icy08            |icy09            |icy10       |icy11       |icy12       |icy13               |icy14]
+[icy03 |icy04 |icy05            |icy06  |icy07  |icy08            |icy09            |icy10       |icy11       |icy12       |icy13               |icy14]
+[icy03 |icy04 |icy05            |icy06  |icy07  |icy08            |icy09            |icy10       |icy11       |icy12       |icy13               |icy14]
+[icy03 |icy04 |icy05            |icy06  |icy07  |icy08            |icy09            |icy10       |icy11       |icy12       |icy13               |icy14]
+[icy03 |icy04 |icy05            |icy06  |icy07  |icy08            |icy09            |icy10       |icy11       |icy12       |icy13               |icy14]
+[icy03 |icy04 |icy05            |icy06  |icy07  |icy08            |icy09            |icy10       |icy11       |icy12       |icy13               |icy14]
+
+}
+END -- s_icy
+Grid gr3
+{
+ ---------- ROWS [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3
+END -- vb2
+END -- aict031
+
+TABLES
+icy_file
+ATTRIBUTES
+Group group01:group01;
+Edit icy01=icy_file.icy01, tabIndex=1, noEntry, not null, required;
+Edit icy02=icy_file.icy02, tabIndex=2, noEntry, not null, required;
+Edit ogb31=formonly.ogb31 type CHAR, tabIndex=3, noEntry;
+Edit ogb32=formonly.ogb32 type CHAR, tabIndex=4, noEntry;
+Group group02:group02;
+Edit ogb04=formonly.ogb04 type CHAR, tabIndex=5, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=6, noEntry;
+Edit ogb05=formonly.ogb05 type CHAR, tabIndex=7, noEntry;
+Edit ogb12=formonly.ogb12 type CHAR, tabIndex=8, noEntry;
+Edit ogbiicd02=formonly.ogbiicd02 type CHAR, tabIndex=9, noEntry;
+Edit hold_qty=formonly.hold_qty type CHAR, tabIndex=10, noEntry;
+Edit unhold_qty=formonly.unhold_qty type CHAR, tabIndex=11, noEntry;
+Edit icy03=icy_file.icy03, tabIndex=12, title="icy03", noEntry, not null, required;
+CheckBox icy04=icy_file.icy04, tabIndex=13, title="icy04", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit icy05=icy_file.icy05, tabIndex=14, title="icy05", noEntry;
+Edit icy06=icy_file.icy06, tabIndex=15, title="icy06", noEntry;
+Edit icy07=icy_file.icy07, tabIndex=16, title="icy07", noEntry;
+Edit icy08=icy_file.icy08, tabIndex=17, title="icy08", noEntry;
+Edit icy09=icy_file.icy09, tabIndex=18, title="icy09", noEntry;
+Edit icy10=icy_file.icy10, tabIndex=19, title="icy10", noEntry;
+Edit icy11=icy_file.icy11, tabIndex=20, title="icy11", noEntry;
+Edit icy12=icy_file.icy12, tabIndex=21, title="icy12", not null, required;
+Edit icy13=icy_file.icy13, tabIndex=22, title="icy13", noEntry;
+CheckBox icy14=icy_file.icy14, tabIndex=23, title="icy14", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_icy(icy_file.icy03,icy_file.icy04,icy_file.icy05,icy_file.icy06,icy_file.icy07,icy_file.icy08,icy_file.icy09,icy_file.icy10,icy_file.icy11,icy_file.icy12,icy_file.icy13,icy_file.icy14)
+SCREEN RECORD Undefined(icy_file.icy01,icy_file.icy02,formonly.ogb31,formonly.ogb32,formonly.ogb04,formonly.ima02,formonly.ogb05,formonly.ogb12,formonly.ogbiicd02,formonly.hold_qty,formonly.unhold_qty,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

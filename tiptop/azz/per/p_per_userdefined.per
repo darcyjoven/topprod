@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_per_userdefined.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_per_userdefined")
+VBox vb3
+Group group03
+Grid gr1
+{
+ Form Name  [gbr01               ]
+ Field Name [gbr02               ]
+[gbr03                           ]
+}
+END -- gr1
+END -- group03
+Group group01(text="Setting")
+Grid gr2
+{
+  Reference  [gbr04               ]
+ [tab_sel        ][fld_sel        ]
+  Dynamic Query   [gbr08          ]
+ [gbr05                           ]
+ <G group02                       >
+  Range Start     [gbr06          ]
+  Range End       [gbr07          ]
+ <                                >
+
+}
+END -- gr2
+END -- group01
+END -- vb3
+END -- p_per_userdefined
+
+TABLES
+gbr_file
+ATTRIBUTES
+Edit gbr01=gbr_file.gbr01, tabIndex=9;
+Edit gbr02=gbr_file.gbr02, tabIndex=10;
+CheckBox gbr03=gbr_file.gbr03, tabIndex=3, text="Customized", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit gbr04=gbr_file.gbr04, tabIndex=4, scroll;
+Button tab_sel:tab_sel, text="Select Table";
+Button fld_sel:fld_sel, text="Select Field";
+ButtonEdit gbr08=gbr_file.gbr08, action=controlp, tabIndex=5, image="zoom", comment="Query Dynamic Query Program";
+CheckBox gbr05=gbr_file.gbr05, tabIndex=6, text="Range Setting", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Input Range";
+Edit gbr06=gbr_file.gbr06, tabIndex=7;
+Edit gbr07=gbr_file.gbr07, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gbr_file.gbr01,gbr_file.gbr02,gbr_file.gbr03,gbr_file.gbr04,gbr_file.gbr08,gbr_file.gbr05,gbr_file.gbr06,gbr_file.gbr07)
+END -- INSTRUCTIONS
+

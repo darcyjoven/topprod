@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp845.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmp845")
+VBox VBox1
+Grid gr2211
+{
+ <G group01                                                        >
+  Delivery Note #     [oga01               ]
+  Delivery Date       [oga02               ]
+  Tax Type            [oga21               ]
+  Department No.      [oga15               ]
+ <                                                                 >
+ <G group02                                                        >
+  Sales Return Type   [g_oga09              ]
+ <                                                                 >
+ <G group03                                                        >
+  Accounts Receivable Enter Account Date [g_date      ]
+                                         [dummy01                ]
+ <                                                                 >
+
+}
+END -- gr2211
+Grid gr2212
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr2212
+END -- VBox1
+END -- axmp845
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit oga01=formonly.oga01 type CHAR, tabIndex=1, upShift;
+DateEdit oga02=formonly.oga02 type DATE, tabIndex=2;
+Edit oga21=formonly.oga21 type CHAR, tabIndex=3;
+Edit oga15=formonly.oga15 type CHAR, tabIndex=4;
+Group group02:group02, text="INPUT";
+ComboBox g_oga09=formonly.g_oga09 type CHAR, tabIndex=5, default = "4", not null, required, queryEditable, items=(("4", "Sales"),("6", "SUB P/O"));
+Group group03:group03, text="INPUT";
+DateEdit g_date=formonly.g_date type DATE, tabIndex=6;
+Label dummy01:dummy01, text="(By original doc date if blank)";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=7, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oga01,formonly.oga02,formonly.oga21,formonly.oga15,formonly.g_oga09,formonly.g_date,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

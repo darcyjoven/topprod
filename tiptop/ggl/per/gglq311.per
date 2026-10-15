@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq311.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq311")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+Grid gr5447
+{
+
+ Account No.         [aea05                   ][aag02                                   ]
+ Year                [yy        ]               Month [mm        ]                        Curr   [curr      ]
+
+}
+END -- gr5447
+END -- page01
+END -- folder01
+Table s_abb
+{
+[aea02          |aea03           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea02          |aea03           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea02          |aea03           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea02          |aea03           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea02          |aea03           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea02          |aea03           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea02          |aea03           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea02          |aea03           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea02          |aea03           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aea02          |aea03           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+
+}
+END -- s_abb
+Grid gr5449
+{
+ ----------- Rows [cnt   ] -----------
+
+}
+END -- gr5449
+END -- vb3
+END -- gglq301
+
+TABLES
+aag_file,
+abb_file,
+aea_file
+ATTRIBUTES
+Edit aea05=aea_file.aea05, tabIndex=1;
+Edit aag02=aag_file.aag02, tabIndex=5;
+Edit yy=formonly.yy type VARCHAR, tabIndex=2;
+Edit mm=formonly.mm type VARCHAR, tabIndex=3;
+Edit curr=formonly.curr type CHAR, tabIndex=32;
+DateEdit aea02=aea_file.aea02, tabIndex=6, title="Voucher Date";
+Edit aea03=aea_file.aea03, tabIndex=7, title="Voucher No.";
+Edit abb04=abb_file.abb04, tabIndex=8, title="Memo";
+Edit abb24=abb_file.abb24, tabIndex=9, title="Currency";
+Edit df=formonly.df type CHAR, tabIndex=11, title="Debit Amount (Trans. Curr.)";
+Edit abb25_d=formonly.abb25_d type DECIMAL, tabIndex=10, title="Exchange Rate";
+Edit d=formonly.d type CHAR, tabIndex=17, title="Debit Amount (Local. Curr.)";
+Edit cf=formonly.cf type CHAR, tabIndex=16, title="Credit Amount (Trans. Curr.)";
+Edit abb25_c=formonly.abb25_c type CHAR, tabIndex=30, title="Exchange Rate";
+Edit c=formonly.c type CHAR, tabIndex=15, title="Credit Amount (Local. Curr.)";
+Edit dc=formonly.dc type CHAR, tabIndex=14, title="D/C";
+Edit balf=formonly.balf type CHAR, tabIndex=13, title="Balance T.C Amt";
+Edit abb25_bal=formonly.abb25_bal type CHAR, tabIndex=31, title="Exchange Rate";
+Edit bal=formonly.bal type CHAR, tabIndex=12, title="Balance L.C Amt";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abb(aea_file.aea02,aea_file.aea03,abb_file.abb04,abb_file.abb24,formonly.df,formonly.abb25_d,formonly.d,formonly.cf,formonly.abb25_c,formonly.c,formonly.dc,formonly.balf,formonly.abb25_bal,formonly.bal)
+SCREEN RECORD Undefined(aea_file.aea05,aag_file.aag02,formonly.yy,formonly.mm,formonly.curr,formonly.cnt)
+END -- INSTRUCTIONS
+

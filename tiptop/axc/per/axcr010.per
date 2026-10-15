@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr010")
+VBox vb3
+Grid gr1
+{
+ <G group01                                                                             >
+  Item No.            [ima01               ]   Grp Code 1          [ima09               ]
+  Account             [ima39               ]   Group Code 2        [ima10               ]
+  Source              [ima08               ]   Grp Code 3          [ima11               ]
+  Main Grp Code       [ima06               ]   Group Code 4        [ima12               ]
+ <                                                                                      >
+ <G group02                                                                            >
+  Year/Month              [yy        ][mm     ]
+  Cost Calculation Method [type               ]
+ [n                                           ]
+ <                                                                                     >
+
+}
+END -- gr1
+Grid gr2
+{
+[more                                                                   ]
+
+}
+END -- gr2
+END -- vb3
+END -- axcr010
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima09=formonly.ima09 type VARCHAR, tabIndex=2;
+Edit ima39=formonly.ima39 type VARCHAR, tabIndex=3;
+Edit ima10=formonly.ima10 type VARCHAR, tabIndex=4;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=5;
+Edit ima11=formonly.ima11 type VARCHAR, tabIndex=6;
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=7;
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=8;
+Group group02:group02, text="INPUT";
+Edit yy=formonly.yy type SMALLINT, tabIndex=9;
+Edit mm=formonly.mm type SMALLINT, tabIndex=10;
+ComboBox type=formonly.type type CHAR, tabIndex=11, not null, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+CheckBox n=formonly.n type VARCHAR, tabIndex=12, text="Print Detail?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima09,formonly.ima39,formonly.ima10,formonly.ima08,formonly.ima11,formonly.ima06,formonly.ima12,formonly.yy,formonly.mm,formonly.type,formonly.n,formonly.more)
+END -- INSTRUCTIONS
+

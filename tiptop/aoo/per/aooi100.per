@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi100")
+VBox VBox1
+Folder pc838
+Page page01(text="Page01")
+Table s_gea
+{
+[gea01|gea02               |geaac]
+[gea01|gea02               |geaac]
+[gea01|gea02               |geaac]
+[gea01|gea02               |geaac]
+[gea01|gea02               |geaac]
+[gea01|gea02               |geaac]
+[gea01|gea02               |geaac]
+[gea01|gea02               |geaac]
+[gea01|gea02               |geaac]
+[gea01|gea02               |geaac]
+
+}
+END -- s_gea
+END -- page01
+END -- pc838
+Grid gr4627
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4627
+END -- VBox1
+END -- aooi100
+
+TABLES
+gea_file
+ATTRIBUTES
+Edit gea01=gea_file.gea01, tabIndex=1, title="Area", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit gea02=gea_file.gea02, tabIndex=2, title="Description";
+CheckBox geaac=gea_file.geaacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gea(gea_file.gea01,gea_file.gea02,gea_file.geaacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

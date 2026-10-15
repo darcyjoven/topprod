@@ -1,0 +1,106 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci711.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci711")
+VBox vb3
+Folder folder01
+Page page01(text="Page01")
+HBox hb2
+Grid gr1686
+{
+ Run Card    [shm01                   ]
+ W/O No.     [shm012               ]
+ Product No. [shm05               ]
+ P/N         [ima02                         ]
+ P/N Spec.   [ima021                        ]
+
+}
+END -- gr1686
+Grid gr1687
+{
+ Routing Code       [shm06     ]
+ Pro.Code           [sgm012          ]
+ Routing S/N        [sgm03     ]
+ Routing Desc       [sgm45              ]
+ Production Station [sgm06     ]
+
+}
+END -- gr1687
+Grid gr1688
+{
+ Work Center Desc           [eca02              ]
+ Production Qty             [shm08     ]
+ Lot Size Stnd Work Hr      [sgm14     ]
+ Lot Size Stnd Machine Time [sgm16     ]
+ Lot Size Routing Labor     [sgm49     ]
+
+}
+END -- gr1688
+END -- hb2
+END -- page01
+END -- folder01
+Table s_sgn
+{
+[sgn05 |sga02            |sga03           |sgn06    |sgn07          |sgn08           |sgn10           |sgn11            |sgn09      ]
+[sgn05 |sga02            |sga03           |sgn06    |sgn07          |sgn08           |sgn10           |sgn11            |sgn09      ]
+[sgn05 |sga02            |sga03           |sgn06    |sgn07          |sgn08           |sgn10           |sgn11            |sgn09      ]
+[sgn05 |sga02            |sga03           |sgn06    |sgn07          |sgn08           |sgn10           |sgn11            |sgn09      ]
+[sgn05 |sga02            |sga03           |sgn06    |sgn07          |sgn08           |sgn10           |sgn11            |sgn09      ]
+[sgn05 |sga02            |sga03           |sgn06    |sgn07          |sgn08           |sgn10           |sgn11            |sgn09      ]
+}
+END -- s_sgn
+Grid gr1689
+{
+  ---------- Rows [cnt   ] / [cn2   ] --------Stnd Labor (Second) [sgm14a         ]        Stnd Machine (Second) [sgm16a        ]         Routing Labor    [sgm49a         ]
+
+}
+END -- gr1689
+END -- vb3
+END -- aeci711
+
+TABLES
+sga_file,
+sgn_file,
+sgm_file,
+shm_file
+ATTRIBUTES
+Edit shm01=shm_file.shm01, tabIndex=1;
+Edit shm012=shm_file.shm012, tabIndex=2;
+Edit shm05=shm_file.shm05, tabIndex=3;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, noEntry;
+Edit shm06=shm_file.shm06, tabIndex=6;
+ButtonEdit sgm012=sgm_file.sgm012, action=controlp, tabIndex=29, image="zoom.png";
+Edit sgm03=sgm_file.sgm03, tabIndex=7;
+Edit sgm45=sgm_file.sgm45, tabIndex=8;
+Edit sgm06=sgm_file.sgm06, tabIndex=9;
+Edit eca02=formonly.eca02 type CHAR, tabIndex=10;
+Edit shm08=shm_file.shm08, tabIndex=11, not null, required;
+Edit sgm14=sgm_file.sgm14, tabIndex=12;
+Edit sgm16=sgm_file.sgm16, tabIndex=13;
+Edit sgm49=sgm_file.sgm49, tabIndex=14;
+ButtonEdit sgn05=sgn_file.sgn05, action=controlp, tabIndex=15, title="Cell#", not null, required, image="zoom", comment="<^P>Open window Qry Cell No.";
+Edit sga02=sga_file.sga02, tabIndex=16, title="Name", noEntry;
+Edit sga03=sga_file.sga03, tabIndex=17, title="Specification", noEntry;
+Edit sgn06=sgn_file.sgn06, tabIndex=18, title="Parts Qty", not null, required;
+Edit sgn07=sgn_file.sgn07, tabIndex=19, title="Unit Labor Tm", noEntry;
+Edit sgn08=sgn_file.sgn08, tabIndex=20, title="Cell Labor Hour", noEntry;
+Edit sgn10=sgn_file.sgn10, tabIndex=21, title="Unit Machine Tm", noEntry;
+Edit sgn11=sgn_file.sgn11, tabIndex=22, title="Cell Machine Hr", noEntry;
+Edit sgn09=sgn_file.sgn09, tabIndex=23, title="Uint Labor", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+Edit sgm14a=formonly.sgm14a type CHAR, tabIndex=26;
+Edit sgm16a=formonly.sgm16a type CHAR, tabIndex=27;
+Edit sgm49a=formonly.sgm49a type CHAR, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sgn(sgn_file.sgn05,sga_file.sga02,sga_file.sga03,sgn_file.sgn06,sgn_file.sgn07,sgn_file.sgn08,sgn_file.sgn10,sgn_file.sgn11,sgn_file.sgn09)
+SCREEN RECORD Undefined(shm_file.shm01,shm_file.shm012,shm_file.shm05,formonly.ima02,formonly.ima021,shm_file.shm06,sgm_file.sgm012,sgm_file.sgm03,sgm_file.sgm45,sgm_file.sgm06,formonly.eca02,shm_file.shm08,sgm_file.sgm14,sgm_file.sgm16,sgm_file.sgm49,formonly.cnt,formonly.cn2,formonly.sgm14a,formonly.sgm16a,formonly.sgm49a)
+END -- INSTRUCTIONS
+

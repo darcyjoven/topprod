@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi701")
+VBox vb2
+Folder folder01
+Page page01(text="Page01")
+Grid gr3257
+{
+
+ Corporate No. Belonged  [azw02       ][azt02               ]
+
+}
+END -- gr3257
+END -- page01
+END -- folder01
+Table tb2
+{
+[azw01           |azp02          |azw03     |azw04           |azw05                |azw06         |azwacti          ]
+[azw01           |azp02          |azw03     |azw04           |azw05                |azw06         |azwacti          ]
+[azw01           |azp02          |azw03     |azw04           |azw05                |azw06         |azwacti          ]
+[azw01           |azp02          |azw03     |azw04           |azw05                |azw06         |azwacti          ]
+[azw01           |azp02          |azw03     |azw04           |azw05                |azw06         |azwacti          ]
+[azw01           |azp02          |azw03     |azw04           |azw05                |azw06         |azwacti          ]
+[azw01           |azp02          |azw03     |azw04           |azw05                |azw06         |azwacti          ]
+[azw01           |azp02          |azw03     |azw04           |azw05                |azw06         |azwacti          ]
+[azw01           |azp02          |azw03     |azw04           |azw05                |azw06         |azwacti          ]
+[azw01           |azp02          |azw03     |azw04           |azw05                |azw06         |azwacti          ]
+
+}
+END -- tb2
+Grid gr3258
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3258
+END -- vb2
+END -- aooi701
+
+TABLES
+azw_file
+ATTRIBUTES
+ButtonEdit azw02=azw_file.azw02, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit azw01=azw_file.azw01, action=controlp, tabIndex=5, title="Logistics Code", not null, required, image="zoom";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=6, title="Logestic Name", noEntry;
+ComboBox azw03=azw_file.azw03, tabIndex=7, title="Industry";
+ComboBox azw04=azw_file.azw04, tabIndex=8, title="Industry Type", items=(("1", "Manufacturing"),("2", "Retail"),("3", "Distribution"));
+ButtonEdit azw05=azw_file.azw05, action=controlp, tabIndex=9, title="Transaction Data DB", not null, required, image="zoom";
+ButtonEdit azw06=azw_file.azw06, action=controlp, tabIndex=10, title="Base Data DB", noEntry, image="zoom";
+CheckBox azwacti=azw_file.azwacti, tabIndex=11, default = "N", title="Data Valid Code", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=1, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tb2(azw_file.azw01,formonly.azp02,azw_file.azw03,azw_file.azw04,azw_file.azw05,azw_file.azw06,azw_file.azwacti)
+SCREEN RECORD Undefined(azw_file.azw02,formonly.azt02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

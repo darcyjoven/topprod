@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi501_y.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi501_y")
+Grid gr1292
+{
+ <G group01                                              >
+  [only_one                                             ]
+ <                                                       >
+ <G group02                                              >
+  Document No.        [cop01           ]
+  Document Date       [cop03       ]
+  Vender No.          [cop05     ]
+  Goods No.           [cop11     ]
+ <                                                       >
+
+}
+END -- gr1292
+END -- acoi501_y
+
+TABLES
+cop_file
+ATTRIBUTES
+Group group01:group01, text="Confirm Condition";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, items=(("1", "Confirm this Accounts only"),("2", "According to QBE Condition"));
+Group group02:group02, text="QBE";
+Edit cop01=cop_file.cop01, tabIndex=2;
+DateEdit cop03=cop_file.cop03, tabIndex=3;
+Edit cop05=cop_file.cop05, tabIndex=4;
+Edit cop11=cop_file.cop11, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,cop_file.cop01,cop_file.cop03,cop_file.cop05,cop_file.cop11)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,141 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/4fd/p_email.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_efcfg2")
+VBox VBox1
+Folder pc1
+Page page01(action=main, text="Main")
+Grid gr1
+{
+ <G head                                         >  <G contact                                                                                    >
+   Program Code  [tc_maa01                     ]        Charge   [tc_maa03     ] Mail    [tc_maa03_mail     ]  Tel   [tc_maa03_tel      ]
+                                                        IT       [tc_maa04     ] Mail    [tc_maa04_mail     ]  Tel   [tc_maa04_tel      ]
+  [tc_maa02                                    ]    <                                                                                             >
+  [                                            ]
+ <                                               >
+ <G prepare                                                             >  <G attachment                                                          >
+  [peparewarn                                                         ]    [attachwarn                                                          ]
+   procedures[tc_maa06                                                ]    [tc_maa07         ]    [tc_maa05         ]   [tc_maa25               ]
+ <                                                                      >   attach type[tc_maa24          ]     name[tc_maa08                   ]
+                                                                            attachments[tc_maa09                                                ]
+ <G cron                                                                >  <                                                                      >
+  [cronwarn                                                            ]   <G info                                                                >
+  [tc_maa10   ]   cycle    [tc_maa11                                   ]    Record Owner [tc_maauser]Record Time[tc_maacrtt       ][tc_maaacti   ]
+  [tc_maa12                                                            ]    Modify User  [tc_maamod ]Modify Time[tc_maamodt       ]
+  [                                                                    ]
+ <                                                                      >  <                                                                      >
+
+ <G mail                                                                                                                                          >
+  [mailwarn                                                                                                                                      ]
+   subject  [tc_maa13                                                   ] to         [tc_maa16                                                   ]
+   add      [tc_maa14               ]      [tc_maa15              ]       cc         [tc_maa17                                                   ]
+                                                                          bcc        [tc_maa18                                                   ]
+  [tc_maa19            |tc_maa20            ][tc_maa21            ]     [tc_maa22              ]
+ [tc_maa23                                                                                                                                        ]
+ [                                                                                                                                                ]
+ [                                                                                                                                                ]
+ [                                                                                                                                                ]
+ [                                                                                                                                                ]
+ [                                                                                                                                                ]
+ <                                                                                                                                                >
+
+}
+END -- gr1
+END -- page01
+Page page02(action=item_list, text=%"Detail")
+Table s_tc_maa_d
+{
+[tc_maa01_d      |tc_maa02_d              |tc_maa03_d  |tc_maa04_d  |tc_maa08_d           |tc_maa12_d     |tc_maa13_d             |tc_maa16_d             |tc_maa23_d               |tc_maa26|tc_maamo|tc_maamodt_d     ]
+[tc_maa01_d      |tc_maa02_d              |tc_maa03_d  |tc_maa04_d  |tc_maa08_d           |tc_maa12_d     |tc_maa13_d             |tc_maa16_d             |tc_maa23_d               |tc_maa26|tc_maamo|tc_maamodt_d     ]
+[tc_maa01_d      |tc_maa02_d              |tc_maa03_d  |tc_maa04_d  |tc_maa08_d           |tc_maa12_d     |tc_maa13_d             |tc_maa16_d             |tc_maa23_d               |tc_maa26|tc_maamo|tc_maamodt_d     ]
+[tc_maa01_d      |tc_maa02_d              |tc_maa03_d  |tc_maa04_d  |tc_maa08_d           |tc_maa12_d     |tc_maa13_d             |tc_maa16_d             |tc_maa23_d               |tc_maa26|tc_maamo|tc_maamodt_d     ]
+[tc_maa01_d      |tc_maa02_d              |tc_maa03_d  |tc_maa04_d  |tc_maa08_d           |tc_maa12_d     |tc_maa13_d             |tc_maa16_d             |tc_maa23_d               |tc_maa26|tc_maamo|tc_maamodt_d     ]
+[tc_maa01_d      |tc_maa02_d              |tc_maa03_d  |tc_maa04_d  |tc_maa08_d           |tc_maa12_d     |tc_maa13_d             |tc_maa16_d             |tc_maa23_d               |tc_maa26|tc_maamo|tc_maamodt_d     ]
+[tc_maa01_d      |tc_maa02_d              |tc_maa03_d  |tc_maa04_d  |tc_maa08_d           |tc_maa12_d     |tc_maa13_d             |tc_maa16_d             |tc_maa23_d               |tc_maa26|tc_maamo|tc_maamodt_d     ]
+[tc_maa01_d      |tc_maa02_d              |tc_maa03_d  |tc_maa04_d  |tc_maa08_d           |tc_maa12_d     |tc_maa13_d             |tc_maa16_d             |tc_maa23_d               |tc_maa26|tc_maamo|tc_maamodt_d     ]
+[tc_maa01_d      |tc_maa02_d              |tc_maa03_d  |tc_maa04_d  |tc_maa08_d           |tc_maa12_d     |tc_maa13_d             |tc_maa16_d             |tc_maa23_d               |tc_maa26|tc_maamo|tc_maamodt_d     ]
+[tc_maa01_d      |tc_maa02_d              |tc_maa03_d  |tc_maa04_d  |tc_maa08_d           |tc_maa12_d     |tc_maa13_d             |tc_maa16_d             |tc_maa23_d               |tc_maa26|tc_maamo|tc_maamodt_d     ]
+
+}
+END -- s_tc_maa_d
+END -- page02
+END -- pc1
+Grid gr7
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr7
+END -- VBox1
+END -- p_email
+
+ATTRIBUTES
+Group head:head, text="head", comment="";
+ButtonEdit tc_maa01=formonly.tc_maa01 type VARCHAR, action=controlp, tabIndex=1, noEntry, not null, image="zoom";
+Edit tc_maa02=formonly.tc_maa02 type VARCHAR, tabIndex=2;
+Group contact:contact, text=%"contact";
+ButtonEdit tc_maa03=formonly.tc_maa03 type VARCHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit tc_maa03_mail=formonly.tc_maa03_mail type VARCHAR, tabIndex=4;
+Edit tc_maa03_tel=formonly.tc_maa03_tel type VARCHAR, tabIndex=5;
+ButtonEdit tc_maa04=formonly.tc_maa04 type VARCHAR, action=controlp, tabIndex=6, not null, required, image="zoom";
+Edit tc_maa04_mail=formonly.tc_maa04_mail type VARCHAR, tabIndex=7;
+Edit tc_maa04_tel=formonly.tc_maa04_tel type VARCHAR, tabIndex=8;
+Group prepare:prepare, text=%"prepare";
+LABEL peparewarn=formonly.peparewarn, color = blue, sizePolicy=fixed;
+ButtonEdit tc_maa06=formonly.tc_maa06 type VARCHAR, action=controlp, tabIndex=9, image="zoom";
+Group attachment:attachment, text=%"attachment";
+LABEL attachwarn=formonly.attachwarn, color = blue, sizePolicy=dynamic;
+CheckBox tc_maa07=formonly.tc_maa07 type VARCHAR, tabIndex=10, text=%"has attach", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tc_maa05=formonly.tc_maa05 type VARCHAR, tabIndex=11, text=%"include this", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tc_maa25=formonly.tc_maa25, tabIndex=47, text=%"send without attach", not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox tc_maa24=formonly.tc_maa24 type VARCHAR, tabIndex=45;
+Edit tc_maa08=formonly.tc_maa08 type VARCHAR, tabIndex=12;
+ButtonEdit tc_maa09=formonly.tc_maa09 type VARCHAR, action=controlp, tabIndex=13, image="zoom";
+Group cron:cron, text=%"cron";
+LABEL cronwarn=formonly.cronwarn, color = blue, sizePolicy=fixed;
+CheckBox tc_maa10=formonly.tc_maa10, tabIndex=14, text=%"cron", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_maa11=formonly.tc_maa11 type VARCHAR, tabIndex=15;
+TextEdit tc_maa12=formonly.tc_maa12 type VARCHAR, tabIndex=46, noEntry;
+Group info:info, text=%"info";
+Edit tc_maauser=formonly.tc_maauser type VARCHAR, tabIndex=16, noEntry;
+Edit tc_maacrtt=formonly.tc_maacrtt type VARCHAR, tabIndex=17, noEntry;
+CheckBox tc_maaacti=formonly.tc_maaacti, tabIndex=18, text=%"void", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_maamod=formonly.tc_maamod type VARCHAR, tabIndex=19, noEntry;
+Edit tc_maamodt=formonly.tc_maamodt type VARCHAR, tabIndex=20, noEntry;
+Group mail:mail, text=%"mail";
+LABEL mailwarn=formonly.mailwarn, color = blue;
+Edit tc_maa13=formonly.tc_maa13 type VARCHAR, tabIndex=21, not null, required;
+ButtonEdit tc_maa16=formonly.tc_maa16 type VARCHAR, action=controlp, tabIndex=24, not null, required, image="zoom";
+CheckBox tc_maa14=formonly.tc_maa14 type VARCHAR, tabIndex=22, text=%"date", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tc_maa15=formonly.tc_maa15 type VARCHAR, tabIndex=23, text=%"time", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit tc_maa17=formonly.tc_maa17 type VARCHAR, action=controlp, tabIndex=25, image="zoom";
+ButtonEdit tc_maa18=formonly.tc_maa18 type VARCHAR, action=controlp, tabIndex=26, image="zoom";
+CheckBox tc_maa19=formonly.tc_maa19, tabIndex=27, text=%"include charge", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tc_maa20=formonly.tc_maa20, tabIndex=28, text=%"include IT", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tc_maa21=formonly.tc_maa21, tabIndex=29, text=%"include warning", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox tc_maa22=formonly.tc_maa22, tabIndex=30, text=%"include template", not null, valueChecked = "Y", valueUnchecked = "N";
+TextEdit tc_maa23=formonly.tc_maa23 type VARCHAR, tabIndex=31;
+Edit tc_maa01_d=formonly.tc_maa01_d type VARCHAR, tabIndex=33, title=%"tc_maa01_d";
+Edit tc_maa02_d=formonly.tc_maa02_d, tabIndex=34, title=%"tc_maa02_d";
+Edit tc_maa03_d=formonly.tc_maa03_d, tabIndex=35, title=%"tc_maa03_d";
+Edit tc_maa04_d=formonly.tc_maa04_d, tabIndex=36, title=%"tc_maa04_d";
+Edit tc_maa08_d=formonly.tc_maa08_d, tabIndex=37, title=%"tc_maa08_d";
+Edit tc_maa12_d=formonly.tc_maa12_d, tabIndex=38, title=%"tc_maa12_d";
+Edit tc_maa13_d=formonly.tc_maa13_d, tabIndex=39, title=%"tc_maa13_d";
+Edit tc_maa16_d=formonly.tc_maa16_d, tabIndex=40, title=%"tc_maa16_d";
+Edit tc_maa23_d=formonly.tc_maa23_d, tabIndex=41, title=%"tc_maa23_d";
+CheckBox tc_maa26=formonly.tc_maa22_d, tabIndex=42, title=%"tc_maa22_d", text=%"", valueChecked = "Y", valueUnchecked = "N";
+Edit tc_maamo=formonly.tc_maamod_d type VARCHAR, tabIndex=43, title=%"tc_maamod_d";
+Edit tc_maamodt_d=formonly.tc_maamodt_d, tabIndex=44, title=%"tc_maamodt_d";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=32, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_maa01,formonly.tc_maa02,formonly.tc_maa03,formonly.tc_maa03_mail,formonly.tc_maa03_tel,formonly.tc_maa04,formonly.tc_maa04_mail,formonly.tc_maa04_tel,formonly.tc_maa05,formonly.tc_maa06,formonly.tc_maa07,formonly.tc_maa08,formonly.tc_maa09,formonly.tc_maa10,formonly.tc_maa11,formonly.tc_maa12,formonly.tc_maa13,formonly.tc_maa14,formonly.tc_maa15,formonly.tc_maa16,formonly.tc_maa17,formonly.tc_maa18,formonly.tc_maa19,formonly.tc_maa20,formonly.tc_maa21,formonly.tc_maa22,formonly.tc_maa23,formonly.tc_maauser,formonly.tc_maamod,formonly.tc_maacrtt,formonly.tc_maamodt,formonly.tc_maaacti,formonly.mailwarn,formonly.cronwarn,formonly.attachwarn,formonly.peparewarn,formonly.cnt,formonly.tc_maa24,formonly.tc_maa25)
+SCREEN RECORD s_tc_maa_d(formonly.tc_maa01_d,formonly.tc_maa02_d,formonly.tc_maa03_d,formonly.tc_maa04_d,formonly.tc_maa08_d,formonly.tc_maa12_d,formonly.tc_maa13_d,formonly.tc_maa16_d,formonly.tc_maa22_d,formonly.tc_maa23_d,formonly.tc_maamod_d,formonly.tc_maamodt_d)
+END -- INSTRUCTIONS
+

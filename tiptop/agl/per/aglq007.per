@@ -1,0 +1,130 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq007.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq007")
+VBox vb12
+Folder pc1
+Page page1(text=%"Main")
+Grid gr1
+{
+
+  Group Code                     [aej01         ]      Year                           [aej05         ]
+  Group Book No.                 [aej00         ]      Period                         [aej06         ]
+  Merger of individual           [aej02         ]      Currency                       [aej11         ]
+  Merger of individual Book No.  [aej03         ]      Balance Sheet/Income Statament [aag04         ]
+
+}
+END -- gr1
+END -- page1
+END -- pc1
+Folder pc2
+Page page2(action=page2, text=%"Combined Entity A/C Balance")
+VBox vb9
+Table s_aej
+{
+[aah01          |aag02               |aah04               |aah05               |amt1                |aej04               |aag02_1             |aej07               |aej08               |amt2                ]
+[aah01          |aag02               |aah04               |aah05               |amt1                |aej04               |aag02_1             |aej07               |aej08               |amt2                ]
+[aah01          |aag02               |aah04               |aah05               |amt1                |aej04               |aag02_1             |aej07               |aej08               |amt2                ]
+[aah01          |aag02               |aah04               |aah05               |amt1                |aej04               |aag02_1             |aej07               |aej08               |amt2                ]
+[aah01          |aag02               |aah04               |aah05               |amt1                |aej04               |aag02_1             |aej07               |aej08               |amt2                ]
+[aah01          |aag02               |aah04               |aah05               |amt1                |aej04               |aag02_1             |aej07               |aej08               |amt2                ]
+}
+END -- s_aej
+Grid gr8
+{
+ --- Rows [cn2  ] ---
+
+}
+END -- gr8
+END -- vb9
+END -- page2
+Page page3(action=page3, text=%"A/C Balance of Combined Entity Dimension Codes")
+VBox vb7
+Table tb2
+{
+[aed01     |aag01               |aed0|aed02          |aed05               |aed06               |amt3                |aek04     |aag02_3             |aek05          |aek08               |aek09               |amt4                ]
+[aed01     |aag01               |aed0|aed02          |aed05               |aed06               |amt3                |aek04     |aag02_3             |aek05          |aek08               |aek09               |amt4                ]
+[aed01     |aag01               |aed0|aed02          |aed05               |aed06               |amt3                |aek04     |aag02_3             |aek05          |aek08               |aek09               |amt4                ]
+[aed01     |aag01               |aed0|aed02          |aed05               |aed06               |amt3                |aek04     |aag02_3             |aek05          |aek08               |aek09               |amt4                ]
+[aed01     |aag01               |aed0|aed02          |aed05               |aed06               |amt3                |aek04     |aag02_3             |aek05          |aek08               |aek09               |amt4                ]
+[aed01     |aag01               |aed0|aed02          |aed05               |aed06               |amt3                |aek04     |aag02_3             |aek05          |aek08               |aek09               |amt4                ]
+}
+END -- tb2
+Grid gr7
+{
+ ---  Rows[cn3  ] ---
+
+}
+END -- gr7
+END -- vb7
+END -- page3
+END -- pc2
+Grid gr8_
+{
+      ---------- Rows [cnt   ] ----------          GL Total Debit Amount       [sumaah04            ]               GL Total Credit Amount       [sumaah05             ]              GL Total Balance                 [sumamt1             ]
+
+                                                   Total Debit in Combined Curr[sumaej07            ]               Total Credit in Combined Curr[sumaej08             ]              Total Balance in Combined Curr   [sumamt2             ]
+}
+END -- gr8_
+END -- vb12
+END -- aglq007
+
+TABLES
+aah_file,
+aag_file,
+aek_file,
+aej_file,
+aed_file
+ATTRIBUTES
+ButtonEdit aej01=aej_file.aej01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit aej05=aej_file.aej05, tabIndex=5, not null, required;
+Edit aej00=aej_file.aej00, tabIndex=2, not null, required;
+Edit aej06=aej_file.aej06, tabIndex=6, not null, required;
+Edit aej02=aej_file.aej02, tabIndex=3, not null, required;
+ButtonEdit aej11=aej_file.aej11, action=controlp, tabIndex=7, not null, required, image="zoom";
+Edit aej03=aej_file.aej03, tabIndex=4, not null, required;
+ComboBox aag04=formonly.aag04 type VARCHAR, tabIndex=41, not null, required, queryEditable, items=(("1", %"Balance Sheet"),("2", %"Income Statement"));
+Edit aah01=aah_file.aah01, tabIndex=18, title=%"Account Code", not null, required;
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=31, title=%"Account Name\n", noEntry;
+Edit aah04=aah_file.aah04, tabIndex=19, title=%"Debit Amt.", not null, required;
+Edit aah05=aah_file.aah05, tabIndex=20, title=%"Credit Amount", not null, required;
+Edit amt1=formonly.amt1 type CHAR, tabIndex=28, title=%"Balance", noEntry;
+Edit aej04=aej_file.aej04, tabIndex=8, title=%"Acct No.", not null, required;
+Edit aag02_1=formonly.aag02_1 type VARCHAR, tabIndex=23, title=%"Account Name\n", noEntry;
+Edit aej07=aej_file.aej07, tabIndex=9, title=%"Debit Amt", not null, required;
+Edit aej08=aej_file.aej08, tabIndex=10, title=%"Credit Amount", not null, required;
+Edit amt2=formonly.amt2 type CHAR, tabIndex=21, title=%"Balance", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11;
+Edit aed01=aed_file.aed01, tabIndex=22, title=%"Account Code", noEntry, not null, required;
+Edit aag01=aag_file.aag02, tabIndex=22, title=%"Account Name\n", noEntry;
+Edit aed0=aed_file.aed011, tabIndex=38, title=%"Dimension Sequence", noEntry, not null, required;
+Edit aed02=aed_file.aed02, tabIndex=37, title=%"Dimension Value", noEntry, not null, required;
+Edit aed05=aed_file.aed05, tabIndex=36, title=%"Total Debit Amount", noEntry;
+Edit aed06=aed_file.aed06, tabIndex=35, title=%"Credit Amt.", noEntry;
+Edit amt3=formonly.amt3 type CHAR, tabIndex=34, title=%"Balance", noEntry;
+Edit aek04=aek_file.aek04, tabIndex=33, title=%"Acct No.", noEntry, not null, required;
+Edit aag02_3=formonly.aag02_3 type VARCHAR, tabIndex=32, title=%"Account Name\n", noEntry;
+Edit aek05=aek_file.aek05, tabIndex=31, title=%"Dimension Value", noEntry, not null, required;
+Edit aek08=aek_file.aek08, tabIndex=29, title=%"Debit Amt", noEntry, not null, required;
+Edit aek09=aek_file.aek09, tabIndex=26, title=%"Credit Amount", noEntry, not null, required;
+Edit amt4=formonly.amt4 type CHAR, tabIndex=24, title=%"Balance", noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=39;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=40, noEntry;
+Edit sumaah04=formonly.sumaah04 type DECIMAL, tabIndex=42, noEntry;
+Edit sumaah05=formonly.sumaah05 type DECIMAL, tabIndex=44, noEntry;
+Edit sumamt1=formonly.sumamt1 type DECIMAL, tabIndex=46, noEntry;
+Edit sumaej07=formonly.sumaej07 type DECIMAL, tabIndex=43, noEntry;
+Edit sumaej08=formonly.sumaej08 type DECIMAL, tabIndex=45, noEntry;
+Edit sumamt2=formonly.sumamt2 type DECIMAL, tabIndex=47, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(aej_file.aej01,aej_file.aej05,aej_file.aej00,aej_file.aej06,aej_file.aej02,aej_file.aej11,aej_file.aej03,formonly.aag04,formonly.cn2,formonly.cn3,formonly.cnt,formonly.sumaah04,formonly.sumaej07,formonly.sumaah05,formonly.sumaej08,formonly.sumamt1,formonly.sumamt2)
+SCREEN RECORD s_aek(aed_file.aed01,aag_file.aag02,aed_file.aed011,aed_file.aed02,aed_file.aed05,aed_file.aed06,formonly.amt3,aek_file.aek04,formonly.aag02_3,aek_file.aek05,aek_file.aek08,aek_file.aek09,formonly.amt4)
+SCREEN RECORD s_aej(aah_file.aah01,formonly.aag02,aah_file.aah04,aah_file.aah05,formonly.amt1,aej_file.aej04,formonly.aag02_1,aej_file.aej07,aej_file.aej08,formonly.amt2)
+END -- INSTRUCTIONS
+

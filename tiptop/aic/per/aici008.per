@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici008.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aici008")
+VBox vb2
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr1
+{
+
+ Item No.     [icg01                                     ]
+ Item Desc.   [ima02                                                       ]
+
+}
+END -- gr1
+END -- Page3
+END -- pc2
+Grid gr3
+{
+ <T tb1                                                                                                                                                                                                      >
+ [icg03       |pmc03               |icg02          |icg16            |icg17               |icg18                         |icg19                         |icg20                         |icg21                ]
+ [icg03       |pmc03               |icg02          |icg16            |icg17               |icg18                         |icg19                         |icg20                         |icg21                ]
+ [icg03       |pmc03               |icg02          |icg16            |icg17               |icg18                         |icg19                         |icg20                         |icg21                ]
+ [icg03       |pmc03               |icg02          |icg16            |icg17               |icg18                         |icg19                         |icg20                         |icg21                ]
+ [icg03       |pmc03               |icg02          |icg16            |icg17               |icg18                         |icg19                         |icg20                         |icg21                ]
+ [icg03       |pmc03               |icg02          |icg16            |icg17               |icg18                         |icg19                         |icg20                         |icg21                ]
+ [icg03       |pmc03               |icg02          |icg16            |icg17               |icg18                         |icg19                         |icg20                         |icg21                ]
+ [icg03       |pmc03               |icg02          |icg16            |icg17               |icg18                         |icg19                         |icg20                         |icg21                ]
+ [icg03       |pmc03               |icg02          |icg16            |icg17               |icg18                         |icg19                         |icg20                         |icg21                ]
+ [icg03       |pmc03               |icg02          |icg16            |icg17               |icg18                         |icg19                         |icg20                         |icg21                ]
+ <                                                                                                                                                                                                           >
+}
+END -- gr3
+Grid gr3_
+{
+
+----------Count [cnt    ]/ [cn2    ]----------
+}
+END -- gr3_
+END -- vb2
+END -- aici008
+
+TABLES
+icg_file
+ATTRIBUTES
+ButtonEdit icg01=formonly.icg01 type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=1, noEntry;
+Table tb1:tb1;
+ButtonEdit icg03=formonly.icg03 type VARCHAR, action=controlp, tabIndex=3, title="Vendor", not null, required, image="zoom.png";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=4, title="Abbreviations", noEntry;
+ButtonEdit icg02=icg_file.icg02, action=controlp, tabIndex=13, title="Operation No.", not null, image="zoom.png";
+CheckBox icg16=formonly.icg16 type VARCHAR, tabIndex=8, default = "N", title="Default Vendor", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit icg17=formonly.icg17 type VARCHAR, tabIndex=7, title="Invalid Date";
+Edit icg18=formonly.icg18 type VARCHAR, tabIndex=6, title="Tray Plate Specifications";
+Edit icg19=formonly.icg19 type VARCHAR, tabIndex=5, title="Cut Through Mode";
+Edit icg20=formonly.icg20 type VARCHAR, tabIndex=9, title="Cutting Way";
+Edit icg21=formonly.icg21 type DECIMAL, tabIndex=10, default = "0", title="D/S HOLDING YIELD (%)", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_icg(formonly.icg03,formonly.pmc03,icg_file.icg02,formonly.icg16,formonly.icg17,formonly.icg18,formonly.icg19,formonly.icg20,formonly.icg21)
+SCREEN RECORD Undefined(formonly.icg01,formonly.ima02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

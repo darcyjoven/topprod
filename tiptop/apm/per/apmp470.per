@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp470.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp470")
+VBox vb1
+Grid gr4901
+{
+ <G group01                                                                                           >
+  P/R No.             [pmk01           ]
+  P/R Property        [pmk02           ]
+  P/R Date            [pmk04           ]
+ <                                                                                                    >
+
+}
+END -- gr4901
+Table s_pml
+{
+[pml0|pml4|pml04                |pml041                     |pml08    |req_qty             |ima27               |al_qty              |avl_stk             |qc_qty              |po_qty              |pr_qty              |wo_qty              |sh_qty              |pml1|pml09           |su_qty              |pml35   ]
+[pml0|pml4|pml04                |pml041                     |pml08    |req_qty             |ima27               |al_qty              |avl_stk             |qc_qty              |po_qty              |pr_qty              |wo_qty              |sh_qty              |pml1|pml09           |su_qty              |pml35   ]
+[pml0|pml4|pml04                |pml041                     |pml08    |req_qty             |ima27               |al_qty              |avl_stk             |qc_qty              |po_qty              |pr_qty              |wo_qty              |sh_qty              |pml1|pml09           |su_qty              |pml35   ]
+[pml0|pml4|pml04                |pml041                     |pml08    |req_qty             |ima27               |al_qty              |avl_stk             |qc_qty              |po_qty              |pr_qty              |wo_qty              |sh_qty              |pml1|pml09           |su_qty              |pml35   ]
+[pml0|pml4|pml04                |pml041                     |pml08    |req_qty             |ima27               |al_qty              |avl_stk             |qc_qty              |po_qty              |pr_qty              |wo_qty              |sh_qty              |pml1|pml09           |su_qty              |pml35   ]
+[pml0|pml4|pml04                |pml041                     |pml08    |req_qty             |ima27               |al_qty              |avl_stk             |qc_qty              |po_qty              |pr_qty              |wo_qty              |sh_qty              |pml1|pml09           |su_qty              |pml35   ]
+[pml0|pml4|pml04                |pml041                     |pml08    |req_qty             |ima27               |al_qty              |avl_stk             |qc_qty              |po_qty              |pr_qty              |wo_qty              |sh_qty              |pml1|pml09           |su_qty              |pml35   ]
+[pml0|pml4|pml04                |pml041                     |pml08    |req_qty             |ima27               |al_qty              |avl_stk             |qc_qty              |po_qty              |pr_qty              |wo_qty              |sh_qty              |pml1|pml09           |su_qty              |pml35   ]
+[pml0|pml4|pml04                |pml041                     |pml08    |req_qty             |ima27               |al_qty              |avl_stk             |qc_qty              |po_qty              |pr_qty              |wo_qty              |sh_qty              |pml1|pml09           |su_qty              |pml35   ]
+[pml0|pml4|pml04                |pml041                     |pml08    |req_qty             |ima27               |al_qty              |avl_stk             |qc_qty              |po_qty              |pr_qty              |wo_qty              |sh_qty              |pml1|pml09           |su_qty              |pml35   ]
+
+}
+END -- s_pml
+END -- vb1
+END -- apmp470
+
+TABLES
+pml_file,
+pmk_file
+ATTRIBUTES
+Group group01:group01;
+Edit pmk01=pmk_file.pmk01, tabIndex=1;
+Edit pmk02=pmk_file.pmk02, tabIndex=2;
+DateEdit pmk04=pmk_file.pmk04, tabIndex=3;
+Edit pml0=pml_file.pml02, tabIndex=4, title="Ln#", noEntry;
+Edit pml4=pml_file.pml42, tabIndex=5, title="SUB", noEntry;
+Edit pml04=pml_file.pml04, tabIndex=6, title="Item No.", noEntry;
+Edit pml041=pml_file.pml041, tabIndex=7, title="P/N Spec", noEntry;
+Edit pml08=pml_file.pml08, tabIndex=8, title="Inv Unit", noEntry;
+Edit req_qty=formonly.req_qty type DECIMAL, tabIndex=9, title="This Req", noEntry;
+Edit ima27=formonly.ima27 type DECIMAL, tabIndex=10, title="Safe.Inv", noEntry;
+Edit al_qty=formonly.al_qty type DECIMAL, tabIndex=11, title="Dist Qty", noEntry;
+Edit avl_stk=formonly.avl_stk type DECIMAL, tabIndex=12, title="Avail.Qty(Supply)", noEntry;
+Edit qc_qty=formonly.qc_qty type DECIMAL, tabIndex=13, title="QC Qty(Supply)", noEntry;
+Edit po_qty=formonly.po_qty type DECIMAL, tabIndex=14, title="Pur Qty(Supply)", noEntry;
+Edit pr_qty=formonly.pr_qty type DECIMAL, tabIndex=15, title="Qty PR\'d(Supply)", noEntry;
+Edit wo_qty=formonly.wo_qty type DECIMAL, tabIndex=16, title="WIP Qty(Supply)", noEntry;
+Edit sh_qty=formonly.sh_qty type DECIMAL, tabIndex=17, title="Balance", noEntry;
+Edit pml1=pml_file.pml07, tabIndex=20, title="Unit", noEntry;
+Edit pml09=pml_file.pml09, tabIndex=21, title="Conv.Rate", noEntry;
+Edit su_qty=formonly.su_qty type DECIMAL, tabIndex=18, title="Cur P/R";
+DateEdit pml35=formonly.pml35 type DATE, tabIndex=19, title="St-in Dt";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pml(pml_file.pml02,pml_file.pml42,pml_file.pml04,pml_file.pml041,pml_file.pml08,formonly.req_qty,formonly.ima27,formonly.al_qty,formonly.avl_stk,formonly.qc_qty,formonly.po_qty,formonly.pr_qty,formonly.wo_qty,formonly.sh_qty,pml_file.pml07,pml_file.pml09,formonly.su_qty,formonly.pml35)
+SCREEN RECORD Undefined(pmk_file.pmk01,pmk_file.pmk02,pmk_file.pmk04)
+END -- INSTRUCTIONS
+

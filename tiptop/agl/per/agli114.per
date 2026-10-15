@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli114.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli114")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2391
+{
+ User ID             [abf01          ]
+ User Name           [zx02           ]
+}
+END -- gr2391
+END -- page01
+END -- folder01
+Table s_abf
+{
+[abf02      |abe02   ]
+[abf02      |abe02   ]
+[abf02      |abe02   ]
+[abf02      |abe02   ]
+[abf02      |abe02   ]
+[abf02      |abe02   ]
+[abf02      |abe02   ]
+[abf02      |abe02   ]
+[abf02      |abe02   ]
+[abf02      |abe02   ]
+
+}
+END -- s_abf
+Grid gr2392
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2392
+END -- VBox1
+END -- agli114
+
+TABLES
+abf_file
+ATTRIBUTES
+ButtonEdit abf01=abf_file.abf01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Employee";
+Edit zx02=formonly.zx02 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit abf02=abf_file.abf02, action=controlp, tabIndex=3, title="Group Code", not null, required, image="zoom", comment="<^P>Qry Print Group";
+Edit abe02=formonly.abe02 type VARCHAR, tabIndex=4, title="Desc.", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abf(abf_file.abf02,formonly.abe02)
+SCREEN RECORD Undefined(abf_file.abf01,formonly.zx02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi080.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi080")
+VBox vb1
+Folder pc836
+Page page01(text="Page01")
+Table s_azf
+{
+[azf01|azf02               |azf03                         |azfac]
+[azf01|azf02               |azf03                         |azfac]
+[azf01|azf02               |azf03                         |azfac]
+[azf01|azf02               |azf03                         |azfac]
+[azf01|azf02               |azf03                         |azfac]
+[azf01|azf02               |azf03                         |azfac]
+[azf01|azf02               |azf03                         |azfac]
+[azf01|azf02               |azf03                         |azfac]
+[azf01|azf02               |azf03                         |azfac]
+[azf01|azf02               |azf03                         |azfac]
+
+}
+END -- s_azf
+END -- page01
+END -- pc836
+Grid gr4625
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr4625
+END -- vb1
+END -- aooi080
+
+TABLES
+azf_file
+ATTRIBUTES
+Edit azf01=azf_file.azf01, tabIndex=1, title="Code", not null, required, comment="No Blank  ";
+ComboBox azf02=azf_file.azf02, tabIndex=2, title="Cate", not null, required, queryEditable, comment="No Blank  , Enter 2 3 4 5 6 8 A D E F G S R Z", items=(("2", "Reason Code"),("5", "Deduction No."),("6", "QC Code"),("8", "Mat.Cate"),("A", "Wtdw Bnd.Mat"),("D", "Othr Group Code 1"),("E", "Othr Group Code 2"),("F", "Othr Group Code 3"),("G", "Cost Group"),("S", "Payment Result"),("R", "Payment Required Status"),("Z", "Product No."),("T", "Bank Cart Trans.Type"));
+Edit azf03=azf_file.azf03, tabIndex=3, title="Desc";
+CheckBox azfac=azf_file.azfacti, tabIndex=4, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azf(azf_file.azf01,azf_file.azf02,azf_file.azf03,azf_file.azfacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

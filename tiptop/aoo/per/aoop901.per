@@ -1,0 +1,87 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/aoo/4fd/aoop901.tmp.per created 2011-01-12T23:52:59
+-- File created from /u3/tiptop/aoo/4fd/aoop901.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text=%"aoop901")
+                                                                                                      
+   VBox vb2                                                                                           
+   Grid gr2474                                                                                        
+   {                                                                                                  
+    <G group01                                                                    >                   
+     Logistics Code to be Generated                       [azp01     ]                                
+     Logistics Name to be Generated                       [azp02               ]                      
+     DB Code to be Generated                              [azp03_1             ]                      
+    [demo                                 ]                                                           
+     Referred DB Code                                     [azp03_2             ]                      
+     Default Source Industry of \<Basic Data\>            [ind                 ]                      
+    <                                                                             >                   
+                                                                                                      
+   }                                                                                                  
+   END                                                                                                
+   Grid gr4                                                                                           
+   {                                                                                                  
+    <G gb3                                                                               >            
+      accept the password of user ds5 :         [ed4          ]                                       
+      Re-enter the password of user ds5 :       [ed4_1        ]                                       
+                                                                                                      
+      accept the password of user ds :          [ed4_2        ]                                       
+      Re-enter the password of user ds :        [ed4_3        ]                                       
+                                                                                                      
+      accept the password of user system :      [ed4_4        ]                                       
+      Re-enter the password of user system :    [ed4_5        ]                                       
+                                                                                                      
+      accept the password of user sys :         [ed4_6        ]                                       
+      Re-enter the password of user sys :       [ed4_7        ]                                       
+    <                                                                                    >            
+   }                                                                                                  
+   END                                                                                                
+   Grid gr5                                                                                           
+   {                                                                                                  
+    <G gb3_1                                                                             >            
+      Please entry the DB name (NON-DS USER)    [ed4_8        ]                                       
+                                                                                                      
+      accept the password of user ds5 :         [ed4_9        ]                                       
+      Re-enter the password of user ds5 :       [ed4_10       ]                                       
+    <                                                                                    >            
+                                                                                                      
+                                                                                                      
+   }                                                                                                  
+   END                                                                                                
+   END -- VBox                                                                                        
+END -- Form
+
+
+ATTRIBUTES
+Group group01:group01;
+Edit azp01=formonly.azp01, tabIndex=1, not null, required;
+Edit azp02=formonly.azp02, tabIndex=2;
+Edit azp03_1=formonly.azp03_1, tabIndex=3, not null, required;
+CheckBox demo=formonly.demo, tabIndex=4, text="Demo Data Required for DB Generated?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit azp03_2=formonly.azp03_2 type VARCHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P>Query Group Data";
+ComboBox ind=formonly.ind type VARCHAR, tabIndex=6, not null, required, items=(("std", "std:Common Industries"),("icd", "icd:IC Design"),("slk", "slk:Clothing Industry"));
+Group gb3:gb3, text="gb3";
+Edit ed4=formonly.ed4, tabIndex=7, not null;
+Edit ed4_1=formonly.ed4_1, tabIndex=8, not null;
+Edit ed4_2=formonly.ed4_2, tabIndex=9, not null;
+Edit ed4_3=formonly.ed4_3, tabIndex=10, not null;
+Edit ed4_4=formonly.ed4_4, tabIndex=11, not null;
+Edit ed4_5=formonly.ed4_5, tabIndex=12, not null;
+Edit ed4_6=formonly.ed4_6, tabIndex=13, not null;
+Edit ed4_7=formonly.ed4_7, tabIndex=14, not null;
+Group gb3_1:gb3_1, text="gb3";
+Edit ed4_8=formonly.ed4_8, tabIndex=15;
+Edit ed4_9=formonly.ed4_9, tabIndex=16;
+Edit ed4_10=formonly.ed4_10, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

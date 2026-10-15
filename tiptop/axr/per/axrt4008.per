@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt4008.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt4008")
+VBox VBox1
+Folder pc639
+Page page01(text="Main")
+Grid gr2706
+{
+ <G group01                                                 >
+ [gen_sw                                                  ]
+
+
+
+
+ <                                                          >
+
+}
+END -- gr2706
+END -- page01
+END -- pc639
+END -- VBox1
+END -- axrt4008
+
+ATTRIBUTES
+Group group01:group01, text="A/R Auto Contra Type";
+RadioGroup gen_sw=formonly.gen_sw type VARCHAR, tabIndex=1, items=(("0", "Not Auto Contra(Manually Contra)"),("1", "Auto Generate All Contra"),("2", "Contra to Debit=Credit"),("3", "Open Window to Select"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.gen_sw)
+END -- INSTRUCTIONS
+

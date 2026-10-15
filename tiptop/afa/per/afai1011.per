@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai1011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai1011")
+Grid gr1858
+{
+ <G group01                                                                 >
+  Asset Account       [fak53                         ][aag02_1             ]
+ <                                                                          >
+ <G group02                                                                 >
+ [fak23                                               ]
+ <                                                                          >
+ <G group03                                                                 >
+  Apportioning Dept.  [fak24     ]
+  Accu. Depr.Account  [fak54                         ][aag02_2             ]
+  Depreciation Acct.  [fak55                         ][aag02_3             ]
+ [fak37                                             ]
+  Bonded              [fak38     ][c1                  ]
+  Insure              [fak39     ][d1                  ]
+  Duty-Free           [fak40     ][e1                  ]
+  Mortgage            [fak41     ][f1                  ]
+  Credit              [fak42     ][g1                  ]
+ <                                                                          >
+ <G group04                                                                 >
+  Home Currency       [fak421    ]%
+  Foreign Currency    [fak422    ]%
+  Tax Revamped Life   [fak423    ][dummy01]
+  Usage               [fak56               ]
+ <                                                                          >
+
+}
+END -- gr1858
+END -- afai1011
+
+TABLES
+fak_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit fak53=fak_file.fak53, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Account Detail <^Y>Multi-Department Depreciation Account";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=2, noEntry;
+Group group02:group02, text="Apportionment Method";
+RadioGroup fak23=fak_file.fak23, tabIndex=3, not null, required, items=(("1", "Single Department Apportionment"),("2", "Multi-Department Apportionment"));
+Group group03:group03;
+ButtonEdit fak24=fak_file.fak24, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Query Department <^T>Qry Multi-Dept Expense Apportionment <^Y>Multi-Department Depreciation Apportionment";
+ButtonEdit fak54=fak_file.fak54, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Account Detail";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=6, noEntry;
+ButtonEdit fak55=fak_file.fak55, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Account Detail";
+Edit aag02_3=formonly.aag02_3 type CHAR, tabIndex=8, noEntry;
+CheckBox fak37=fak_file.fak37, tabIndex=9, text="Capitalize Directly", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox fak38=fak_file.fak38, tabIndex=10, not null, required, queryEditable, items=(("0", "Non-Bonded "),("1", "Bondable "));
+Edit c1=formonly.c1 type CHAR, tabIndex=11, noEntry;
+ComboBox fak39=fak_file.fak39, tabIndex=12, not null, required, queryEditable, items=(("0", "No Insurance "),("1", "To Insure "),("2", "Insured"));
+Edit d1=formonly.d1 type CHAR, tabIndex=13, noEntry;
+ComboBox fak40=fak_file.fak40, tabIndex=14, not null, required, queryEditable, items=(("0", "Not Free"),("1", "Exmptbl"),("2", "Applying "),("3", "Credtd"),("4", "Oper Dele"),("5", "T-Fr Dele"),("6", "Oper Appr"));
+Edit e1=formonly.e1 type CHAR, tabIndex=15, noEntry;
+ComboBox fak41=fak_file.fak41, tabIndex=16, not null, required, queryEditable, items=(("0", "NO Mortgage "),("1", "UnMortgaged"),("2", "Applying "),("3", "Partially Set"),("4", "Set All"));
+Edit f1=formonly.f1 type CHAR, tabIndex=17, noEntry;
+ComboBox fak42=fak_file.fak42, tabIndex=18, not null, required, queryEditable, items=(("0", "NO Credit"),("1", "Creditable "),("2", "Applying "),("3", "Authority Approved"),("4", "Authority Delete "),("5", "IRA Delete"));
+Edit g1=formonly.g1 type CHAR, tabIndex=19, noEntry;
+Group group04:group04, text="Credit Rate";
+Edit fak421=fak_file.fak421, tabIndex=20;
+Edit fak422=fak_file.fak422, tabIndex=21;
+Edit fak423=fak_file.fak423, tabIndex=22;
+Label dummy01:dummy01, text="Month";
+Edit fak56=fak_file.fak56, tabIndex=23;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fak_file.fak53,formonly.aag02_1,fak_file.fak23,fak_file.fak24,fak_file.fak54,formonly.aag02_2,fak_file.fak55,formonly.aag02_3,fak_file.fak37,fak_file.fak38,formonly.c1,fak_file.fak39,formonly.d1,fak_file.fak40,formonly.e1,fak_file.fak41,formonly.f1,fak_file.fak42,formonly.g1,fak_file.fak421,fak_file.fak422,fak_file.fak423,fak_file.fak56)
+END -- INSTRUCTIONS
+

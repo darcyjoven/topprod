@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_scrtyitem.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox vbox1
+Table ds1
+{
+[gdu01     |gdu02               |gdu07           |gdu03     |gdu04     |gdu05     |gdu06      ]
+[gdu01     |gdu02               |gdu07           |gdu03     |gdu04     |gdu05     |gdu06      ]
+[gdu01     |gdu02               |gdu07           |gdu03     |gdu04     |gdu05     |gdu06      ]
+[gdu01     |gdu02               |gdu07           |gdu03     |gdu04     |gdu05     |gdu06      ]
+[gdu01     |gdu02               |gdu07           |gdu03     |gdu04     |gdu05     |gdu06      ]
+[gdu01     |gdu02               |gdu07           |gdu03     |gdu04     |gdu05     |gdu06      ]
+[gdu01     |gdu02               |gdu07           |gdu03     |gdu04     |gdu05     |gdu06      ]
+[gdu01     |gdu02               |gdu07           |gdu03     |gdu04     |gdu05     |gdu06      ]
+[gdu01     |gdu02               |gdu07           |gdu03     |gdu04     |gdu05     |gdu06      ]
+[gdu01     |gdu02               |gdu07           |gdu03     |gdu04     |gdu05     |gdu06      ]
+}
+END -- ds1
+Grid grid1
+{
+
+  <G group1                                                        >
+    [ex                                                      ]
+    [                                                        ]
+    [                                                        ]
+  <                                                                >
+}
+END -- grid1
+END -- vbox1
+END -- p_scrtyitem
+
+TABLES
+gdu_file
+ATTRIBUTES
+Edit gdu01=gdu_file.gdu01, tabIndex=1, title=%"gdu01", not null, required, scroll;
+Edit gdu02=gdu_file.gdu02, tabIndex=2, title=%"gdu02", scroll;
+ComboBox gdu07=gdu_file.gdu07, tabIndex=8, title=%"gdu07";
+Edit gdu03=gdu_file.gdu03, tabIndex=3, title=%"gdu03", scroll;
+Edit gdu04=gdu_file.gdu04, tabIndex=4, title=%"gdu04", scroll;
+Edit gdu05=gdu_file.gdu05, tabIndex=5, title=%"gdu05", scroll;
+Edit gdu06=gdu_file.gdu06, tabIndex=6, title=%"gdu06", scroll;
+Group group1:group1, text=%"Type Preview";
+TextEdit ex=formonly.ex type VARCHAR, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.ex)
+SCREEN RECORD s_gdu(gdu_file.gdu01,gdu_file.gdu02,gdu_file.gdu03,gdu_file.gdu04,gdu_file.gdu05,gdu_file.gdu06,gdu_file.gdu07)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abar300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"abar300")
+VBox VBox1
+Grid Grid1
+{
+
+  <G group1                                                 >
+
+        iba01      [iba01                          ]
+        ibf03      [ibf03                          ]
+        ibf04      [ibf04                          ]
+        ibf05      [ibf05                          ]
+        ibf06      [ibf06                          ]
+        ibf07      [ibf07                          ]
+  <                                                         >
+
+}
+END -- Grid1
+Grid gr2312
+{
+[more                                            ]
+
+}
+END -- gr2312
+END -- VBox1
+END -- abar300
+
+ATTRIBUTES
+Group group1:group1, text=%"QBE";
+ButtonEdit iba01=formonly.iba01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ibf03=formonly.ibf03 type CHAR, tag="", tabIndex=4;
+DateEdit ibf04=formonly.ibf04 type DATE, tabIndex=5;
+ButtonEdit ibf05=formonly.ibf05 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit ibf06=formonly.ibf06 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ibf07=formonly.ibf07 type CHAR, action=controlp, tabIndex=6, image="zoom";
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.iba01,formonly.ibf05,formonly.ibf06,formonly.ibf03,formonly.ibf04,formonly.ibf07,formonly.more)
+END -- INSTRUCTIONS
+

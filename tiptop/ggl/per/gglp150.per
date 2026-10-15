@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglp150.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gglp150")
+VBox VBox1
+Grid gr2
+{
+ Format Definition File        [a                   ]
+ Company Organization Code     [b                   ]
+ Software Version              [c                   ]
+ Start Date                    [d                   ]
+ Account No. File              [e                   ]
+ Balance Of Year File          [f                   ]
+ Accounting Year               [g                   ]
+ Accounting Voucher File       [h                   ]
+ Select Voucher Year/Month     [i   ]/[j   ]
+ Book No                       [bookn]
+
+ [k                            ]
+ [dummy01                                          ]
+
+}
+END -- gr2
+END -- VBox1
+END -- gglp150
+
+ATTRIBUTES
+Edit a=formonly.a type VARCHAR, tabIndex=1, not null, required, comment="Enter the path and filename to keep the Format Definition File . Default is :SHCZ.TXT ";
+Edit b=formonly.b type VARCHAR, tabIndex=2, not null, required, comment="3201137980 ";
+Edit c=formonly.c type VARCHAR, tabIndex=3, not null, required, comment="Enter Software Version . Ex:1.1";
+Edit d=formonly.d type DATE, tabIndex=4, not null, required;
+Edit e=formonly.e type VARCHAR, tabIndex=5, not null, required, comment="Enter the path and filename to keep the Account No. File . Default is :ACCOUNT.TXT ";
+Edit f=formonly.f type VARCHAR, tabIndex=6, not null, required;
+Edit g=formonly.g type VARCHAR, tabIndex=7, not null, required;
+Edit h=formonly.h type VARCHAR, tabIndex=8, not null, required, comment="Enter the path and filename to keep the Accounting Voucher File . Default is :VOUCHER.TXT ";
+Edit i=formonly.i type CHAR, tabIndex=9;
+Edit j=formonly.j type CHAR, tabIndex=10;
+ButtonEdit bookn=formonly.bookno type CHAR, action=controlp, tabIndex=12, not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+CheckBox k=formonly.k type CHAR, tabIndex=11, text="Export to Client", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="Notice:The file is created in the current directory";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.b,formonly.c,formonly.d,formonly.e,formonly.f,formonly.g,formonly.h,formonly.i,formonly.j,formonly.bookno,formonly.k)
+END -- INSTRUCTIONS
+

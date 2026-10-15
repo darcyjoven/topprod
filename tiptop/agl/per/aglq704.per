@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq704.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglq704")
+VBox vb3
+Grid gr1
+{
+
+  Book No  [oct00     ]                         Selling Action Code   [oct11     ]           AR No.      [oct01     ]
+
+  Year     [oct09     ]                         Customer              [oct23     ]
+
+  Month    [oct10     ]                         Dept                  [oct24     ]
+
+}
+END -- gr1
+Table tb1
+{
+[oct00_2 |oct09_1 |oct10_1 |oct01_1 |oct02_1 |oct11_1  |oct23_1   |oct24_1     |oct16      |sum5    |oct12           |sum1            |sum2            |sum3            |sum4            ]
+[oct00_2 |oct09_1 |oct10_1 |oct01_1 |oct02_1 |oct11_1  |oct23_1   |oct24_1     |oct16      |sum5    |oct12           |sum1            |sum2            |sum3            |sum4            ]
+[oct00_2 |oct09_1 |oct10_1 |oct01_1 |oct02_1 |oct11_1  |oct23_1   |oct24_1     |oct16      |sum5    |oct12           |sum1            |sum2            |sum3            |sum4            ]
+[oct00_2 |oct09_1 |oct10_1 |oct01_1 |oct02_1 |oct11_1  |oct23_1   |oct24_1     |oct16      |sum5    |oct12           |sum1            |sum2            |sum3            |sum4            ]
+[oct00_2 |oct09_1 |oct10_1 |oct01_1 |oct02_1 |oct11_1  |oct23_1   |oct24_1     |oct16      |sum5    |oct12           |sum1            |sum2            |sum3            |sum4            ]
+}
+END -- tb1
+END -- vb3
+END -- aglq704
+
+TABLES
+oct_file
+ATTRIBUTES
+ComboBox oct00=oct_file.oct00, tabIndex=1, not null, required, items=(("0", "Financial Account"),("1", "Management Acct"));
+ButtonEdit oct11=oct_file.oct11, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit oct01=oct_file.oct01, tabIndex=22;
+Edit oct09=oct_file.oct09, tabIndex=1, not null, required;
+Edit oct23=oct_file.oct23, tabIndex=1;
+Edit oct10=oct_file.oct10, tabIndex=1, not null, required;
+Edit oct24=oct_file.oct24, tabIndex=1;
+ComboBox oct00_2=formonly.oct00_2 type VARCHAR, tabIndex=7, title="Book No", items=(("0", "Financial Account"),("1", "Management Acct"));
+Edit oct09_1=formonly.oct09_1 type SMALLINT, tabIndex=7, title="Year";
+Edit oct10_1=formonly.oct10_1 type SMALLINT, tabIndex=7, title="Month";
+Edit oct01_1=formonly.oct01_1 type CHAR, tabIndex=7, title=%"AR No.";
+Edit oct02_1=formonly.oct02_1 type CHAR, tabIndex=7, title=%"Item";
+Edit oct11_1=formonly.oct11_1 type VARCHAR, tabIndex=7, title="Selling Action Code";
+Edit oct23_1=formonly.oct23_1 type VARCHAR, tabIndex=7, title="Customer";
+Edit oct24_1=formonly.oct24_1 type VARCHAR, tabIndex=7, title="Dept";
+ComboBox oct16=oct_file.oct16, tabIndex=7, title="Cate.", items=(("1", "Total Deferred Income"),("3", "Allowance"));
+Edit sum5=formonly.sum5 type CHAR, tabIndex=7, title=%"Beginning";
+Edit oct12=oct_file.oct12, tabIndex=7, title="oct12";
+Edit sum1=formonly.sum1 type DECIMAL, tabIndex=7, title="sum1";
+Edit sum2=formonly.sum2 type DECIMAL, tabIndex=7, title="sum2";
+Edit sum3=formonly.sum3 type DECIMAL, tabIndex=7, title="sum3";
+Edit sum4=formonly.sum4 type DECIMAL, tabIndex=7, title="sum4";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oct(formonly.oct00_2,formonly.oct09_1,formonly.oct10_1,formonly.oct01_1,formonly.oct02_1,formonly.oct11_1,formonly.oct23_1,formonly.oct24_1,oct_file.oct16,formonly.sum5,oct_file.oct12,formonly.sum1,formonly.sum2,formonly.sum3,formonly.sum4)
+SCREEN RECORD Undefined(oct_file.oct00,oct_file.oct11,oct_file.oct09,oct_file.oct23,oct_file.oct10,oct_file.oct24,oct_file.oct01)
+END -- INSTRUCTIONS
+

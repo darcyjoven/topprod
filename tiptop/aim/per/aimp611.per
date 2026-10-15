@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp611.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimp611")
+VBox vb1
+Grid gr1
+{
+ <G group01                                                                             >
+  Item No.            [img01               ]  Warehouse #         [img02               ]
+  Location #          [img03               ]  Lot#                [img04               ]
+  Warehouse Kpr       [ima23               ]  Source Code         [ima08               ]
+ <                                                                                      >
+ <G group02                                                                             >
+  Last Period/Year                         [g_yy      ][g_mm      ]
+  [show                                                                     ]
+  [chkimk                                                                   ]
+  Check Statistic Table Ending Year Period [b_yy      ][b_mm      ]
+ <                                                                                      >
+ <G group03                                                                             >
+  [dummy01                                                                   ]
+
+ <                                                                                      >
+
+}
+END -- gr1
+Grid gr2
+{
+[g_bgjob                                 ]
+
+}
+END -- gr2
+END -- vb1
+END -- aimp611
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit img01=formonly.img01 type VARCHAR, tabIndex=1;
+Edit img02=formonly.img02 type VARCHAR, tabIndex=2;
+Edit img03=formonly.img03 type VARCHAR, tabIndex=3;
+Edit img04=formonly.img04 type VARCHAR, tabIndex=4;
+Edit ima23=formonly.ima23 type VARCHAR, tabIndex=5;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=6;
+Group group02:group02, text="INPUT";
+Edit g_yy=formonly.g_yy type SMALLINT, tabIndex=7;
+Edit g_mm=formonly.g_mm type SMALLINT, tabIndex=8;
+CheckBox show=formonly.show type VARCHAR, tabIndex=9, text="Show that cairries out course information", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox chkimk=formonly.chkimk type VARCHAR, tabIndex=10, text="Check Statistic Table imk_file", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit b_yy=formonly.b_yy type SMALLINT, tabIndex=11;
+Edit b_mm=formonly.b_mm type SMALLINT, tabIndex=12;
+Group group03:group03;
+Label dummy01:dummy01, text="Task Objective: Compare img/imk Inventory by Doc Date";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=13, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.img01,formonly.img02,formonly.img03,formonly.img04,formonly.ima23,formonly.ima08,formonly.g_yy,formonly.g_mm,formonly.show,formonly.chkimk,formonly.b_yy,formonly.b_mm,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

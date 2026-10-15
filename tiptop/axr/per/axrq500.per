@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrq500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrq500")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2909
+{
+ Plant           [ooo10     ]      Book No.            [ooo11     ]              Customer            [ooo01       ][ooo02       ]
+ Year            [ooo06     ]      Account #           [ooo03               ]    Account Title       [aag02                                             ]
+ Department      [ooo04     ]      Currency            [ooo05     ]
+}
+END -- gr2909
+END -- page01
+END -- folder01
+Table s_ooo
+{
+[ooo07  |ooo08d                  |ooo08c                    |bal8                      |ooo09d              |ooo09c               |bal9                  ]
+[ooo07  |ooo08d                  |ooo08c                    |bal8                      |ooo09d              |ooo09c               |bal9                  ]
+[ooo07  |ooo08d                  |ooo08c                    |bal8                      |ooo09d              |ooo09c               |bal9                  ]
+[ooo07  |ooo08d                  |ooo08c                    |bal8                      |ooo09d              |ooo09c               |bal9                  ]
+[ooo07  |ooo08d                  |ooo08c                    |bal8                      |ooo09d              |ooo09c               |bal9                  ]
+[ooo07  |ooo08d                  |ooo08c                    |bal8                      |ooo09d              |ooo09c               |bal9                  ]
+[ooo07  |ooo08d                  |ooo08c                    |bal8                      |ooo09d              |ooo09c               |bal9                  ]
+[ooo07  |ooo08d                  |ooo08c                    |bal8                      |ooo09d              |ooo09c               |bal9                  ]
+[ooo07  |ooo08d                  |ooo08c                    |bal8                      |ooo09d              |ooo09c               |bal9                  ]
+[ooo07  |ooo08d                  |ooo08c                    |bal8                      |ooo09d              |ooo09c               |bal9                  ]
+
+}
+END -- s_ooo
+Grid gr2910
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2910
+END -- VBox1
+END -- axrq500
+
+TABLES
+ooo_file
+ATTRIBUTES
+Edit ooo10=ooo_file.ooo10, tabIndex=1;
+Edit ooo11=ooo_file.ooo11, tabIndex=2;
+Edit ooo01=ooo_file.ooo01, tabIndex=3;
+Edit ooo02=ooo_file.ooo02, tabIndex=4, noEntry;
+Edit ooo06=ooo_file.ooo06, tabIndex=5;
+Edit ooo03=ooo_file.ooo03, tabIndex=6;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=7, noEntry;
+Edit ooo04=ooo_file.ooo04, tabIndex=8;
+Edit ooo05=ooo_file.ooo05, tabIndex=9;
+Edit ooo07=ooo_file.ooo07, tabIndex=10, title="Period";
+Edit ooo08d=ooo_file.ooo08d, tabIndex=11, title="Original Currency Debit", not null, required;
+Edit ooo08c=ooo_file.ooo08c, tabIndex=12, title="Original Currency Credit", not null, required;
+Edit bal8=formonly.bal8 type CHAR, tabIndex=13, title="Original Currency Balance";
+Edit ooo09d=ooo_file.ooo09d, tabIndex=14, title="Home Currency Debit", not null, required;
+Edit ooo09c=ooo_file.ooo09c, tabIndex=15, title="Home Currency Credit", not null, required;
+Edit bal9=formonly.bal9 type CHAR, tabIndex=16, title="Home Currency Balance";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ooo(ooo_file.ooo07,ooo_file.ooo08d,ooo_file.ooo08c,formonly.bal8,ooo_file.ooo09d,ooo_file.ooo09c,formonly.bal9)
+SCREEN RECORD Undefined(ooo_file.ooo10,ooo_file.ooo11,ooo_file.ooo01,ooo_file.ooo02,ooo_file.ooo06,ooo_file.ooo03,formonly.aag02,ooo_file.ooo04,ooo_file.ooo05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

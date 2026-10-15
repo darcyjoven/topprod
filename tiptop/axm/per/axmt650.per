@@ -1,0 +1,363 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt650.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt650")
+Folder Folder2
+Page page_m(action=main, text=%"Main Screen")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr2664
+{
+ Shipment Type     [oga00                ][oga08               ]
+ Delivery Note No. [oga01                       |oaydesc   ]
+ Keyin Date        [oga69             ]
+ Delivery Date     [oga02             ]
+
+
+
+}
+END -- gr2664
+Grid gr2665
+{
+ Customer No.        [oga03     ][oga032    ]  [imgmksg]
+ Shipping Customer   [oga04     ][occ02     ]  [       ]
+ Collect Customer    [oga18     ][oga18_ds   ]
+
+
+
+
+}
+END -- gr2665
+END -- hb1
+END -- page01
+Page info(text="Info")
+Grid gr2666
+{
+ Record Owner        [ogauser   ]  Last Modified by    [ogamodu   ]
+ Department          [ogagrup   ]  Create/Modify Date  [ogadate     ]
+ Record Orig.        [ogaoriu   ]
+ Dept Orig.          [ogaorig   ]
+
+
+
+}
+END -- gr2666
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[ogaud01                       ] userdefined_field07[ogaud07        ] userdefined_field13[ogaud13        ]
+                    [                              ] userdefined_field08[ogaud08        ] userdefined_field14[ogaud14        ]
+                    [ogaud02        ]                userdefined_field09[ogaud09        ] userdefined_field15[ogaud15        ]
+ userdefined_field03[ogaud03        ]                userdefined_field10[ogaud10        ]
+ userdefined_field04[ogaud04        ]                userdefined_field11[ogaud11        ]
+ userdefined_field05[ogaud05        ]                userdefined_field12[ogaud12        ]
+ userdefined_field06[ogaud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Folder folder02
+Page page02(text="Shipment 1")
+HBox hb2
+Group gb1889
+Grid gr2667
+{
+ Customs Clear.Date  [oga021    ]
+ Shipping Address    [addr                ]
+                     [                    ]
+ Transfer No.        [oga70               ]
+
+
+
+}
+END -- gr2667
+END -- gb1889
+Group gb1890
+Grid gr2668
+{
+ Salesman            [oga14     ][gen02     ]
+ Sales Department    [oga15     ][gem02     ]
+[oga903                                     ]
+
+
+
+
+}
+END -- gr2668
+END -- gb1890
+Group gb1891
+Grid gr2669
+{
+  Confirm             [ogaconf   ]
+ [oga30                                            ]
+ [ogapost                                          ]
+
+
+
+
+}
+END -- gr2669
+END -- gb1891
+END -- hb2
+END -- page02
+Page page03(text="Shipment 2")
+HBox hb3
+Group gb1892
+Grid gr2670
+{
+ Sls Class           [oga25     ][oab02     ]
+ Curr Exchange Rate  [oga23     ][oga24               ]
+ Tax Type            [oga21     ][og]%[oga212 ][oga213    ]
+
+
+
+
+}
+END -- gr2670
+END -- gb1892
+Group gb1893
+Grid gr2671
+{
+ Account type        [oga13       ]
+ Invoice             [oga05       ]
+ Bill No.            [oga10           ]
+
+
+
+
+}
+END -- gr2671
+END -- gb1893
+END -- hb3
+END -- page03
+Page Page3(text=%"Misc")
+Grid Grid1
+{
+ [oga65              ]
+  Estimated Receipt Date [oga72           ]
+  Check/Receive No.      [oga01a          ]
+  Check/Return No.       [oga01b          ]
+
+}
+END -- Grid1
+END -- Page3
+END -- folder02
+Folder Folder1
+Page Page1(text=%"Page1")
+Table s_ogb
+{
+[ogb03    |ogb04               |ogb06                         |ima021                   |ogb092                  |ogb1001     |ogb17                |ogb09            |ogb091                |ogb05      |ogb12           |ogb913        |ogb914                   |ogb915          |ogb910            |ogb911                       |ogb912          |ogb916         |ogb917          |ogb50        |ogb51        |ogb41          |ogb42           |ogb43     |ogb37               |ogb13               |ogb14                |ogb14t                 |ogb930      |gem02c      |ogb908          |ogbud01   |ogbud02   |ogbud03    |ogbud04    |ogbud05    |ogbud06    |ogbud07    |ogbud08    |ogbud09    |ogbud10    |ogbud11   |ogbud12  |ogbud13   |ogbud14   |ogbud15|ogbiicd02     |ogbiicd03 |ogbiicd04 |ogbiicd0|ogbiicd1|ogbiicd2]
+[ogb03    |ogb04               |ogb06                         |ima021                   |ogb092                  |ogb1001     |ogb17                |ogb09            |ogb091                |ogb05      |ogb12           |ogb913        |ogb914                   |ogb915          |ogb910            |ogb911                       |ogb912          |ogb916         |ogb917          |ogb50        |ogb51        |ogb41          |ogb42           |ogb43     |ogb37               |ogb13               |ogb14                |ogb14t                 |ogb930      |gem02c      |ogb908          |ogbud01   |ogbud02   |ogbud03    |ogbud04    |ogbud05    |ogbud06    |ogbud07    |ogbud08    |ogbud09    |ogbud10    |ogbud11   |ogbud12  |ogbud13   |ogbud14   |ogbud15|ogbiicd02     |ogbiicd03 |ogbiicd04 |ogbiicd0|ogbiicd1|ogbiicd2]
+[ogb03    |ogb04               |ogb06                         |ima021                   |ogb092                  |ogb1001     |ogb17                |ogb09            |ogb091                |ogb05      |ogb12           |ogb913        |ogb914                   |ogb915          |ogb910            |ogb911                       |ogb912          |ogb916         |ogb917          |ogb50        |ogb51        |ogb41          |ogb42           |ogb43     |ogb37               |ogb13               |ogb14                |ogb14t                 |ogb930      |gem02c      |ogb908          |ogbud01   |ogbud02   |ogbud03    |ogbud04    |ogbud05    |ogbud06    |ogbud07    |ogbud08    |ogbud09    |ogbud10    |ogbud11   |ogbud12  |ogbud13   |ogbud14   |ogbud15|ogbiicd02     |ogbiicd03 |ogbiicd04 |ogbiicd0|ogbiicd1|ogbiicd2]
+[ogb03    |ogb04               |ogb06                         |ima021                   |ogb092                  |ogb1001     |ogb17                |ogb09            |ogb091                |ogb05      |ogb12           |ogb913        |ogb914                   |ogb915          |ogb910            |ogb911                       |ogb912          |ogb916         |ogb917          |ogb50        |ogb51        |ogb41          |ogb42           |ogb43     |ogb37               |ogb13               |ogb14                |ogb14t                 |ogb930      |gem02c      |ogb908          |ogbud01   |ogbud02   |ogbud03    |ogbud04    |ogbud05    |ogbud06    |ogbud07    |ogbud08    |ogbud09    |ogbud10    |ogbud11   |ogbud12  |ogbud13   |ogbud14   |ogbud15|ogbiicd02     |ogbiicd03 |ogbiicd04 |ogbiicd0|ogbiicd1|ogbiicd2]
+[ogb03    |ogb04               |ogb06                         |ima021                   |ogb092                  |ogb1001     |ogb17                |ogb09            |ogb091                |ogb05      |ogb12           |ogb913        |ogb914                   |ogb915          |ogb910            |ogb911                       |ogb912          |ogb916         |ogb917          |ogb50        |ogb51        |ogb41          |ogb42           |ogb43     |ogb37               |ogb13               |ogb14                |ogb14t                 |ogb930      |gem02c      |ogb908          |ogbud01   |ogbud02   |ogbud03    |ogbud04    |ogbud05    |ogbud06    |ogbud07    |ogbud08    |ogbud09    |ogbud10    |ogbud11   |ogbud12  |ogbud13   |ogbud14   |ogbud15|ogbiicd02     |ogbiicd03 |ogbiicd04 |ogbiicd0|ogbiicd1|ogbiicd2]
+[ogb03    |ogb04               |ogb06                         |ima021                   |ogb092                  |ogb1001     |ogb17                |ogb09            |ogb091                |ogb05      |ogb12           |ogb913        |ogb914                   |ogb915          |ogb910            |ogb911                       |ogb912          |ogb916         |ogb917          |ogb50        |ogb51        |ogb41          |ogb42           |ogb43     |ogb37               |ogb13               |ogb14                |ogb14t                 |ogb930      |gem02c      |ogb908          |ogbud01   |ogbud02   |ogbud03    |ogbud04    |ogbud05    |ogbud06    |ogbud07    |ogbud08    |ogbud09    |ogbud10    |ogbud11   |ogbud12  |ogbud13   |ogbud14   |ogbud15|ogbiicd02     |ogbiicd03 |ogbiicd04 |ogbiicd0|ogbiicd1|ogbiicd2]
+[ogb03    |ogb04               |ogb06                         |ima021                   |ogb092                  |ogb1001     |ogb17                |ogb09            |ogb091                |ogb05      |ogb12           |ogb913        |ogb914                   |ogb915          |ogb910            |ogb911                       |ogb912          |ogb916         |ogb917          |ogb50        |ogb51        |ogb41          |ogb42           |ogb43     |ogb37               |ogb13               |ogb14                |ogb14t                 |ogb930      |gem02c      |ogb908          |ogbud01   |ogbud02   |ogbud03    |ogbud04    |ogbud05    |ogbud06    |ogbud07    |ogbud08    |ogbud09    |ogbud10    |ogbud11   |ogbud12  |ogbud13   |ogbud14   |ogbud15|ogbiicd02     |ogbiicd03 |ogbiicd04 |ogbiicd0|ogbiicd1|ogbiicd2]
+[ogb03    |ogb04               |ogb06                         |ima021                   |ogb092                  |ogb1001     |ogb17                |ogb09            |ogb091                |ogb05      |ogb12           |ogb913        |ogb914                   |ogb915          |ogb910            |ogb911                       |ogb912          |ogb916         |ogb917          |ogb50        |ogb51        |ogb41          |ogb42           |ogb43     |ogb37               |ogb13               |ogb14                |ogb14t                 |ogb930      |gem02c      |ogb908          |ogbud01   |ogbud02   |ogbud03    |ogbud04    |ogbud05    |ogbud06    |ogbud07    |ogbud08    |ogbud09    |ogbud10    |ogbud11   |ogbud12  |ogbud13   |ogbud14   |ogbud15|ogbiicd02     |ogbiicd03 |ogbiicd04 |ogbiicd0|ogbiicd1|ogbiicd2]
+[ogb03    |ogb04               |ogb06                         |ima021                   |ogb092                  |ogb1001     |ogb17                |ogb09            |ogb091                |ogb05      |ogb12           |ogb913        |ogb914                   |ogb915          |ogb910            |ogb911                       |ogb912          |ogb916         |ogb917          |ogb50        |ogb51        |ogb41          |ogb42           |ogb43     |ogb37               |ogb13               |ogb14                |ogb14t                 |ogb930      |gem02c      |ogb908          |ogbud01   |ogbud02   |ogbud03    |ogbud04    |ogbud05    |ogbud06    |ogbud07    |ogbud08    |ogbud09    |ogbud10    |ogbud11   |ogbud12  |ogbud13   |ogbud14   |ogbud15|ogbiicd02     |ogbiicd03 |ogbiicd04 |ogbiicd0|ogbiicd1|ogbiicd2]
+[ogb03    |ogb04               |ogb06                         |ima021                   |ogb092                  |ogb1001     |ogb17                |ogb09            |ogb091                |ogb05      |ogb12           |ogb913        |ogb914                   |ogb915          |ogb910            |ogb911                       |ogb912          |ogb916         |ogb917          |ogb50        |ogb51        |ogb41          |ogb42           |ogb43     |ogb37               |ogb13               |ogb14                |ogb14t                 |ogb930      |gem02c      |ogb908          |ogbud01   |ogbud02   |ogbud03    |ogbud04    |ogbud05    |ogbud06    |ogbud07    |ogbud08    |ogbud09    |ogbud10    |ogbud11   |ogbud12  |ogbud13   |ogbud14   |ogbud15|ogbiicd02     |ogbiicd03 |ogbiicd04 |ogbiicd0|ogbiicd1|ogbiicd2]
+}
+END -- s_ogb
+END -- Page1
+Page Page2(text=%"Page2")
+Table s_rvbs
+{
+[rvbs02|rvbs021                       |ima02                         |ima022                        |rvbs01|rvbs04                        |rvbs03                        |rvbs05    |rvbs06           |r|rvbs08              |rvbs13  ]
+[rvbs02|rvbs021                       |ima02                         |ima022                        |rvbs01|rvbs04                        |rvbs03                        |rvbs05    |rvbs06           |r|rvbs08              |rvbs13  ]
+[rvbs02|rvbs021                       |ima02                         |ima022                        |rvbs01|rvbs04                        |rvbs03                        |rvbs05    |rvbs06           |r|rvbs08              |rvbs13  ]
+[rvbs02|rvbs021                       |ima02                         |ima022                        |rvbs01|rvbs04                        |rvbs03                        |rvbs05    |rvbs06           |r|rvbs08              |rvbs13  ]
+[rvbs02|rvbs021                       |ima02                         |ima022                        |rvbs01|rvbs04                        |rvbs03                        |rvbs05    |rvbs06           |r|rvbs08              |rvbs13  ]
+
+
+}
+END -- s_rvbs
+END -- Page2
+END -- Folder1
+Grid gr2672
+{
+  ---------- Rows [cnt   ] / [cn2    ] ----------                                                                                           Before-Tax Amt      [oga50               ]----------
+
+}
+END -- gr2672
+END -- VBox1
+END -- page_m
+Page page_in(action=info_list, text=%"List")
+Table s_oga_l
+{
+[oga00_l              |oga08_l             |oga01_l           |oga02_l           |oga03_l   |oga032_l  |oga04_l   |occ02_l   |oga14_l   |gen02_l   |oga15_l   |gem02_l   |ogaconf_l |ogapost_l     ]
+[oga00_l              |oga08_l             |oga01_l           |oga02_l           |oga03_l   |oga032_l  |oga04_l   |occ02_l   |oga14_l   |gen02_l   |oga15_l   |gem02_l   |ogaconf_l |ogapost_l     ]
+[oga00_l              |oga08_l             |oga01_l           |oga02_l           |oga03_l   |oga032_l  |oga04_l   |occ02_l   |oga14_l   |gen02_l   |oga15_l   |gem02_l   |ogaconf_l |ogapost_l     ]
+[oga00_l              |oga08_l             |oga01_l           |oga02_l           |oga03_l   |oga032_l  |oga04_l   |occ02_l   |oga14_l   |gen02_l   |oga15_l   |gem02_l   |ogaconf_l |ogapost_l     ]
+[oga00_l              |oga08_l             |oga01_l           |oga02_l           |oga03_l   |oga032_l  |oga04_l   |occ02_l   |oga14_l   |gen02_l   |oga15_l   |gem02_l   |ogaconf_l |ogapost_l     ]
+}
+END -- s_oga_l
+END -- page_in
+END -- Folder2
+END -- axmt650
+
+TABLES
+ogbi_file,
+ima_file1=ima_file,
+ima_file,
+rvbs_file,
+ogb_file,
+oga_file
+ATTRIBUTES
+ComboBox oga00=oga_file.oga00, tabIndex=1, not null, required, queryEditable, items=(("1", "Normal Delivery"));
+ComboBox oga08=oga_file.oga08, tabIndex=2, not null, required, queryEditable, items=(("1", "Local Sales"),("2", "Export"),("3", "As Export(ACO System)"));
+ButtonEdit oga01=oga_file.oga01, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oaydesc=formonly.oaydesc type CHAR, tabIndex=4, noEntry;
+DateEdit oga69=oga_file.oga69, tabIndex=516, not null, required;
+DateEdit oga02=oga_file.oga02, tabIndex=517, not null, required;
+ButtonEdit oga03=oga_file.oga03, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oga032=oga_file.oga032, tabIndex=6;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit oga04=oga_file.oga04, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=8, noEntry;
+ButtonEdit oga18=oga_file.oga18, action=controlp, tabIndex=9, image="zoom", comment="<^P> Qry Details";
+Edit oga18_ds=formonly.oga18_ds type CHAR, tabIndex=10, noEntry;
+Edit ogauser=oga_file.ogauser, tabIndex=11, noEntry;
+Edit ogamodu=oga_file.ogamodu, tabIndex=12, noEntry;
+Edit ogagrup=oga_file.ogagrup, tabIndex=13, noEntry;
+DateEdit ogadate=oga_file.ogadate, tabIndex=14, noEntry;
+Edit ogaoriu=oga_file.ogaoriu, tabIndex=500, noEntry;
+Edit ogaorig=oga_file.ogaorig, tabIndex=501, noEntry;
+TextEdit ogaud01=oga_file.ogaud01, tabIndex=326, stretch=NONE;
+Edit ogaud07=oga_file.ogaud07, tabIndex=327;
+DateEdit ogaud13=oga_file.ogaud13, tabIndex=328;
+Edit ogaud08=oga_file.ogaud08, tabIndex=329;
+DateEdit ogaud14=oga_file.ogaud14, tabIndex=330;
+Edit ogaud02=oga_file.ogaud02, tabIndex=331;
+Edit ogaud09=oga_file.ogaud09, tabIndex=332;
+DateEdit ogaud15=oga_file.ogaud15, tabIndex=333;
+Edit ogaud03=oga_file.ogaud03, tabIndex=334;
+Edit ogaud10=oga_file.ogaud10, tabIndex=335;
+Edit ogaud04=oga_file.ogaud04, tabIndex=336;
+Edit ogaud11=oga_file.ogaud11, tabIndex=337;
+Edit ogaud05=oga_file.ogaud05, tabIndex=338;
+Edit ogaud12=oga_file.ogaud12, tabIndex=339;
+Edit ogaud06=oga_file.ogaud06, tabIndex=340;
+DateEdit oga021=oga_file.oga021, tabIndex=15;
+TextEdit addr=formonly.addr type CHAR, tabIndex=16, stretch=NONE;
+Edit oga70=oga_file.oga70, tabIndex=503, noEntry;
+ButtonEdit oga14=oga_file.oga14, action=controlp, tabIndex=17, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=18, noEntry;
+ButtonEdit oga15=oga_file.oga15, action=controlp, tabIndex=19, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=20, noEntry;
+CheckBox oga903=oga_file.oga903, tabIndex=21, text="Release Credit Checking", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox ogaconf=oga_file.ogaconf, tabIndex=22, noEntry, not null, required, queryEditable, items=(("Y", "Yes"),("N", "No"),("X", "Void)"));
+CheckBox oga30=oga_file.oga30, tabIndex=23, text="Packing List Confirmation", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ogapost=oga_file.ogapost, tabIndex=24, text="Delivery Deducted", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oga25=oga_file.oga25, action=controlp, tabIndex=25, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oab02=formonly.oab02 type CHAR, tabIndex=26, noEntry;
+ButtonEdit oga23=oga_file.oga23, action=controlp, tabIndex=27, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit oga24=oga_file.oga24, action=controlp, tabIndex=28, image="zoom";
+ButtonEdit oga21=oga_file.oga21, action=controlp, tabIndex=29, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit og=oga_file.oga211, tabIndex=30, noEntry;
+ComboBox oga212=oga_file.oga212, tabIndex=31, noEntry, items=(("0", "Receipt of Park"),("2", "Duplicate"),("3", "Triplicate"),("4", "Receipt"),("5", "Other Voucher"),("6", "Cash Register"),("X", "No"));
+CheckBox oga213=oga_file.oga213, tabIndex=32, text="with Tax", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oga13=oga_file.oga13, action=controlp, tabIndex=33, image="zoom";
+Edit oga05=oga_file.oga05, tabIndex=34;
+Edit oga10=oga_file.oga10, tabIndex=35, noEntry;
+CheckBox oga65=oga_file.oga65, tabIndex=524, text="Delivery QC", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit oga72=oga_file.oga72, tabIndex=525;
+ButtonEdit oga01a=formonly.oga01a, action=controlp, tabIndex=526, noEntry, image="zoom", comment="<^P>Qry Documents";
+ButtonEdit oga01b=formonly.oga01b, action=controlp, tabIndex=527, noEntry, image="zoom", comment="<^P>Qry Documents";
+Edit ogb03=ogb_file.ogb03, tabIndex=36, title="Line No.", not null, required, comment="<^Y> Maint Other Data <^T> Inventory Detail (FM)";
+ButtonEdit ogb04=ogb_file.ogb04, action=controlp, tabIndex=37, title="Product No.", not null, required, image="zoom", comment="<^P> Query Item";
+Edit ogb06=ogb_file.ogb06, tabIndex=38, title="Part Name Specification";
+Edit ima021=formonly.ima021 type CHAR, tabIndex=39, title="Specification", noEntry;
+ButtonEdit ogb092=ogb_file.ogb092, action=controlp, tabIndex=40, title="Delivery Lot No.", image="zoom";
+ButtonEdit ogb1001=ogb_file.ogb1001, action=controlp, tabIndex=41, title="Reason Code", image="zoom";
+CheckBox ogb17=ogb_file.ogb17, tabIndex=42, title="M-W/H/Lc/Lt Delivery", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Multi-Warehouse Delivery.";
+ButtonEdit ogb09=ogb_file.ogb09, action=controlp, tabIndex=43, title="Delivery W/H No.", image="zoom.png";
+ButtonEdit ogb091=ogb_file.ogb091, action=controlp, tabIndex=44, title="Delivery Location No.", image="zoom.png";
+ButtonEdit ogb05=ogb_file.ogb05, action=controlp, tabIndex=45, title="Sales Unit", image="zoom.png";
+Edit ogb12=ogb_file.ogb12, tabIndex=46, title="Actual Delivery Qty", not null, required, comment="<^P>Qry Inventory Demand/Supply Details";
+ButtonEdit ogb913=ogb_file.ogb913, action=controlp, tabIndex=47, title="Par/Ref Unit", image="zoom", comment="<^P>Qry Details";
+Edit ogb914=ogb_file.ogb914, tabIndex=48, title="Par/Ref Conversion Rate";
+Edit ogb915=ogb_file.ogb915, tabIndex=49, title="Par/Ref Qty";
+ButtonEdit ogb910=ogb_file.ogb910, action=controlp, tabIndex=50, title="Chi/Deliver Unit", image="zoom", comment="<^P>Qry Details";
+Edit ogb911=ogb_file.ogb911, tabIndex=51, title="Chi/Deliver Conversion Rate";
+Edit ogb912=ogb_file.ogb912, tabIndex=52, title="Chi/Deliver Qty";
+ButtonEdit ogb916=ogb_file.ogb916, action=controlp, tabIndex=53, title="Valuation Unit", image="zoom", comment="<^P>Qry Details";
+Edit ogb917=ogb_file.ogb917, tabIndex=54, title="Valuation Qty";
+Edit ogb50=formonly.ogb50, tabIndex=528, title=%"Sum Sign Quantity";
+Edit ogb51=formonly.ogb51, tabIndex=529, title=%"Sum Return Quantity";
+ButtonEdit ogb41=ogb_file.ogb41, action=controlp, tabIndex=55, title="Project No.", image="zoom";
+ButtonEdit ogb42=ogb_file.ogb42, action=controlp, tabIndex=56, title="WBS No.", image="zoom";
+ButtonEdit ogb43=ogb_file.ogb43, action=controlp, tabIndex=57, title="Activity No.", image="zoom";
+Edit ogb37=formonly.ogb37 type DECIMAL, tabIndex=502, default = "0", title=%"base price", noEntry, not null;
+Edit ogb13=ogb_file.ogb13, tabIndex=58, title="Ori Curr Unit Price", not null, required;
+Edit ogb14=ogb_file.ogb14, tabIndex=59, title="Ori Curr Bef-Tax Amt", noEntry, not null, required;
+Edit ogb14t=ogb_file.ogb14t, tabIndex=60, title="Ori Curr After-Tax Amt", noEntry, not null, required;
+ButtonEdit ogb930=ogb_file.ogb930, action=controlp, tabIndex=61, title="Cost Center", not null, required, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02c=formonly.gem02c type CHAR, tabIndex=62, title="Desc", noEntry;
+ButtonEdit ogb908=ogb_file.ogb908, action=controlp, tabIndex=63, title="Register Book No.", image="zoom", comment="<^P>Query Register Book No.";
+TextEdit ogbud01=ogb_file.ogbud01, tabIndex=324, title="ogbud01", stretch=NONE;
+Edit ogbud02=ogb_file.ogbud02, tabIndex=341, title="ogbud02";
+Edit ogbud03=ogb_file.ogbud03, tabIndex=342, title="ogbud03";
+Edit ogbud04=ogb_file.ogbud04, tabIndex=343, title="ogbud04";
+Edit ogbud05=ogb_file.ogbud05, tabIndex=344, title="ogbud05";
+Edit ogbud06=ogb_file.ogbud06, tabIndex=345, title="ogbud06";
+Edit ogbud07=ogb_file.ogbud07, tabIndex=346, title="ogbud07";
+Edit ogbud08=ogb_file.ogbud08, tabIndex=347, title="ogbud08";
+Edit ogbud09=ogb_file.ogbud09, tabIndex=348, title="ogbud09";
+Edit ogbud10=ogb_file.ogbud10, tabIndex=349, title="ogbud10";
+Edit ogbud11=ogb_file.ogbud11, tabIndex=350, title="ogbud11";
+Edit ogbud12=ogb_file.ogbud12, tabIndex=351, title="ogbud12";
+Edit ogbud13=ogb_file.ogbud13, tabIndex=352, title="ogbud13";
+Edit ogbud14=ogb_file.ogbud14, tabIndex=353, title="ogbud14";
+Edit ogbud15=ogb_file.ogbud15, tabIndex=354, title="ogbud15";
+Edit ogbiicd02=ogbi_file.ogbiicd02, tabIndex=518, title="spare part";
+ComboBox ogbiicd03=ogbi_file.ogbiicd03, tabIndex=519, title="style", items=(("1", %"general"),("2", %"yangpin"),("3", %"spare part"));
+Edit ogbiicd04=ogbi_file.ogbiicd04, tabIndex=520, title="tape reel";
+Edit ogbiicd0=ogbi_file.ogbiicd028, tabIndex=521, title=%"ogbiicd028";
+ButtonEdit ogbiicd1=ogbi_file.ogbiicd029, action=controlp, tabIndex=522, title=%"ogbiicd029", image="zoom";
+ButtonEdit ogbiicd2=ogbi_file.ogbiicd07, action=controlp, tabIndex=523, title="End User", image="zoom";
+Edit rvbs02=rvbs_file.rvbs02, tabIndex=504, title=%"rvbs02", not null, scroll;
+Edit rvbs021=rvbs_file.rvbs021, tabIndex=505, title=%"rvbs021", scroll;
+Edit ima02=ima_file1.ima02, tabIndex=506, title=%"ima02", scroll;
+Edit ima022=ima_file1.ima021, tabIndex=507, title=%"ima021", scroll;
+Edit rvbs01=rvbs_file.rvbs022, tabIndex=508, title=%"rvbs022", not null, scroll;
+Edit rvbs04=rvbs_file.rvbs04, tabIndex=509, title=%"rvbs04", not null, scroll;
+Edit rvbs03=rvbs_file.rvbs03, tabIndex=510, title=%"rvbs03", not null, scroll;
+DateEdit rvbs05=rvbs_file.rvbs05, tabIndex=511, title=%"rvbs05";
+Edit rvbs06=rvbs_file.rvbs06, tabIndex=512, title=%"rvbs06", scroll;
+ComboBox r=rvbs_file.rvbs07, tabIndex=513, title=%"rvbs07", scroll, items=(("1", "dd"),("2", "gd"),("3", "za"));
+Edit rvbs08=rvbs_file.rvbs08, tabIndex=514, title=%"rvbs08", not null, scroll;
+Edit rvbs13=rvbs_file.rvbs13, tabIndex=515, title=%"rvbs13";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=64, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=65, noEntry;
+Edit oga50=oga_file.oga50, tabIndex=66, noEntry, not null, required;
+ComboBox oga00_l=formonly.oga00_l type VARCHAR, tabIndex=530, title=%"oga00", scroll, items=(("1", "Normal Delivery"));
+ComboBox oga08_l=formonly.oga08_l type VARCHAR, tabIndex=531, title=%"oga08", scroll, items=(("1", "Local Sales"),("2", "Export"),("3", "As Export(ACO System)"));
+Edit oga01_l=formonly.oga01_l type VARCHAR, tabIndex=532, title=%"oga01", not null, scroll;
+DateEdit oga02_l=formonly.oga02_l type DATE, tabIndex=533, title=%"oga02";
+Edit oga03_l=formonly.oga03_l type VARCHAR, tabIndex=534, title=%"oga03", scroll;
+Edit oga032_l=formonly.oga032_l type VARCHAR, tabIndex=535, title=%"oga032", scroll;
+Edit oga04_l=formonly.oga04_l type VARCHAR, tabIndex=536, title=%"oga04", scroll;
+Edit occ02_l=formonly.occ02_l type VARCHAR, tabIndex=537, title=%"occ02", scroll;
+Edit oga14_l=formonly.oga14_l type VARCHAR, tabIndex=538, title=%"oga14", scroll;
+Edit gen02_l=formonly.gen02_l type VARCHAR, tabIndex=539, title=%"gen02", scroll;
+Edit oga15_l=formonly.oga15_l type VARCHAR, tabIndex=540, title=%"oga15", scroll;
+Edit gem02_l=formonly.gem02_l type VARCHAR, tabIndex=541, title=%"gem02", scroll;
+ComboBox ogaconf_l=formonly.ogaconf_l type VARCHAR, tabIndex=542, title=%"ogaconf", scroll, items=(("Y", "Yes"),("N", "No"),("X", "Void"));
+CheckBox ogapost_l=formonly.ogapost_l type VARCHAR, tabIndex=543, title=%"ogapost", valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogb(ogb_file.ogb03,ogb_file.ogb04,ogb_file.ogb06,formonly.ima021,ogb_file.ogb092,ogb_file.ogb1001,ogb_file.ogb17,ogb_file.ogb09,ogb_file.ogb091,ogb_file.ogb05,ogb_file.ogb12,ogb_file.ogb913,ogb_file.ogb914,ogb_file.ogb915,ogb_file.ogb910,ogb_file.ogb911,ogb_file.ogb912,ogb_file.ogb916,ogb_file.ogb917,formonly.ogb50,formonly.ogb51,ogb_file.ogb41,ogb_file.ogb42,ogb_file.ogb43,formonly.ogb37,ogb_file.ogb13,ogb_file.ogb14,ogb_file.ogb14t,ogb_file.ogb930,formonly.gem02c,ogb_file.ogb908,ogb_file.ogbud01,ogb_file.ogbud02,ogb_file.ogbud03,ogb_file.ogbud04,ogb_file.ogbud05,ogb_file.ogbud06,ogb_file.ogbud07,ogb_file.ogbud08,ogb_file.ogbud09,ogb_file.ogbud10,ogb_file.ogbud11,ogb_file.ogbud12,ogb_file.ogbud13,ogb_file.ogbud14,ogb_file.ogbud15,ogbi_file.ogbiicd02,ogbi_file.ogbiicd03,ogbi_file.ogbiicd04,ogbi_file.ogbiicd028,ogbi_file.ogbiicd029,ogbi_file.ogbiicd07)
+SCREEN RECORD Undefined(oga_file.oga00,oga_file.oga08,oga_file.oga01,formonly.oaydesc,oga_file.oga03,oga_file.oga032,formonly.imgmksg,oga_file.oga04,formonly.occ02,oga_file.oga18,formonly.oga18_ds,oga_file.ogauser,oga_file.ogamodu,oga_file.ogagrup,oga_file.ogadate,oga_file.ogaoriu,oga_file.ogaorig,oga_file.ogaud01,oga_file.ogaud07,oga_file.ogaud13,oga_file.ogaud08,oga_file.ogaud14,oga_file.ogaud02,oga_file.ogaud09,oga_file.ogaud15,oga_file.ogaud03,oga_file.ogaud10,oga_file.ogaud04,oga_file.ogaud11,oga_file.ogaud05,oga_file.ogaud12,oga_file.ogaud06,oga_file.oga021,formonly.addr,oga_file.oga70,oga_file.oga14,formonly.gen02,oga_file.oga15,formonly.gem02,oga_file.oga903,oga_file.ogaconf,oga_file.oga30,oga_file.ogapost,oga_file.oga25,formonly.oab02,oga_file.oga23,oga_file.oga24,oga_file.oga21,oga_file.oga211,oga_file.oga212,oga_file.oga213,oga_file.oga13,oga_file.oga05,oga_file.oga10,formonly.cnt,formonly.cn2,oga_file.oga50,oga_file.oga69,oga_file.oga02,oga_file.oga65,oga_file.oga72,formonly.oga01a,formonly.oga01b)
+SCREEN RECORD s_rvbs(rvbs_file.rvbs02,rvbs_file.rvbs021,ima_file1.ima02,ima_file1.ima021,rvbs_file.rvbs022,rvbs_file.rvbs04,rvbs_file.rvbs03,rvbs_file.rvbs05,rvbs_file.rvbs06,rvbs_file.rvbs07,rvbs_file.rvbs08,rvbs_file.rvbs13)
+SCREEN RECORD s_oga_l(formonly.oga00_l,formonly.oga08_l,formonly.oga01_l,formonly.oga02_l,formonly.oga03_l,formonly.oga032_l,formonly.oga04_l,formonly.occ02_l,formonly.oga14_l,formonly.gen02_l,formonly.oga15_l,formonly.gem02_l,formonly.ogaconf_l,formonly.ogapost_l)
+END -- INSTRUCTIONS
+

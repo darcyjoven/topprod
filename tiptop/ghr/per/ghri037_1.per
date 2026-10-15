@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri037_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+  <G group1                                                                                                                      >
+   [label1         |bcardno             |label6         |label3         |hrat01_c            ]
+   [label2         |ecardno             ]               [label9         |bdate               ]
+  <                                                                                                                              >
+  <G group2                                          > <G group3      ><G group4                                                 >
+   <T table1                                        >    [label4   ]     <T table2                                        >
+   [sel     |hrbw02        |hrat01     |hrat02  ]        [         ]     [sel_1   |hrbw02_1      |hrat01_1|hrat02_1]
+   [sel     |hrbw02        |hrat01     |hrat02  ]        [label5   ]     [sel_1   |hrbw02_1      |hrat01_1|hrat02_1]
+   [sel     |hrbw02        |hrat01     |hrat02  ]        [         ]     [sel_1   |hrbw02_1      |hrat01_1|hrat02_1]
+   [sel     |hrbw02        |hrat01     |hrat02  ]       [ok2         ]   [sel_1   |hrbw02_1      |hrat01_1|hrat02_1]
+   [sel     |hrbw02        |hrat01     |hrat02  ]                        [sel_1   |hrbw02_1      |hrat01_1|hrat02_1]
+                                                        [moveright   ]
+
+                                                        [moveleft    ]
+
+                                                        [moveup      ]
+   <                                                >                    <                                                >
+                                                        [movedown    ]
+
+  <                                                  >  [save        ] <                                                         >
+  <G group5                                          >                 <G group6                                                 >
+   -----[label7    |cn1       ]-----                                     -----[label8   |cn2       ]-----
+  <                                                  > <              ><                                                         >
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+Label label1:Label1, text=%"Label1";
+Edit bcardno=formonly.bcardno, tabIndex=1, not null, required;
+Label label6:Label6, text=%"";
+Label label3:Label3, text=%"Label3";
+ButtonEdit hrat01_c=formonly.hrat01_c, action=controlp, tabIndex=1, image="zoom.png";
+Label label2:Label2, text=%"Label2";
+Edit ecardno=formonly.ecardno, tabIndex=1, not null, required;
+Label label9:Label9, text=%"Label9";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=4;
+Group group2:Group2, text=%"Group2";
+Table table1:Table1;
+CheckBox sel=formonly.sel, tabIndex=1, title=%"sel", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit hrbw02=formonly.hrbw02, tabIndex=1, title=%"hrbw02", noEntry;
+Edit hrat01=formonly.hrat01, tabIndex=1, title=%"hrat01", noEntry;
+Edit hrat02=formonly.hrat02, tabIndex=1, title=%"hrat02", noEntry;
+Group group3:Group3, text=%"";
+Label label4:Label4, text=%"";
+Label label5:Label5, text=%"";
+Button ok2:ok2, tabIndex=2, text=%"", image="ok2.png";
+Button moveright:moveright, tabIndex=1, text=%"", image="next2.png", fontPitch=variable;
+Button moveleft:moveleft, tabIndex=1, text=%"", image="prev2.png", fontPitch=variable;
+Button moveup:moveup, tabIndex=1, text=%"", image="up.png", fontPitch=variable;
+Button movedown:movedown, tabIndex=1, text=%"", image="down.png", fontPitch=variable;
+Button save:save, tabIndex=3, text=%"", image="save.png";
+Group group4:Group4, text=%"Group4";
+Table table2:Table2;
+CheckBox sel_1=formonly.sel_1, tabIndex=1, title=%"sel", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit hrbw02_1=formonly.hrbw02_1, tabIndex=1, title=%"hrbw02", noEntry;
+Edit hrat01_1=formonly.hrat01_1, tabIndex=1, title=%"hrat01", noEntry;
+Edit hrat02_1=formonly.hrat02_1, tabIndex=1, title=%"hrat02", noEntry;
+Group group5:Group5, text=%"";
+Label label7:Label7, text=%"Label7";
+Edit cn1=formonly.cn1, tabIndex=1;
+Group group6:Group6, text=%"";
+Label label8:Label8, text=%"Label8";
+Edit cn2=formonly.cn2, tabIndex=1;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bcardno,formonly.ecardno,formonly.hrat01_c,formonly.cn1,formonly.cn2,formonly.bdate)
+SCREEN RECORD s_hrat(formonly.sel,formonly.hrbw02,formonly.hrat01,formonly.hrat02)
+SCREEN RECORD s_hrbw(formonly.sel_1,formonly.hrbw02_1,formonly.hrat01_1,formonly.hrat02_1)
+END -- INSTRUCTIONS
+

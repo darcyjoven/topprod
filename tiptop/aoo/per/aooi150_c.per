@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi150_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi150_c")
+VBox VBox1
+Folder pc844
+Page page01(text="Page01")
+VBox VBox2
+Table s_gec
+{
+[gec01|gec02               |gec011  |gec03                   |aag02                      |gec031                         |aag021                   |gec05         |gec06      |gec04     |gec07    |gec08           |gecacti|gecpos ]
+[gec01|gec02               |gec011  |gec03                   |aag02                      |gec031                         |aag021                   |gec05         |gec06      |gec04     |gec07    |gec08           |gecacti|gecpos ]
+[gec01|gec02               |gec011  |gec03                   |aag02                      |gec031                         |aag021                   |gec05         |gec06      |gec04     |gec07    |gec08           |gecacti|gecpos ]
+[gec01|gec02               |gec011  |gec03                   |aag02                      |gec031                         |aag021                   |gec05         |gec06      |gec04     |gec07    |gec08           |gecacti|gecpos ]
+[gec01|gec02               |gec011  |gec03                   |aag02                      |gec031                         |aag021                   |gec05         |gec06      |gec04     |gec07    |gec08           |gecacti|gecpos ]
+[gec01|gec02               |gec011  |gec03                   |aag02                      |gec031                         |aag021                   |gec05         |gec06      |gec04     |gec07    |gec08           |gecacti|gecpos ]
+[gec01|gec02               |gec011  |gec03                   |aag02                      |gec031                         |aag021                   |gec05         |gec06      |gec04     |gec07    |gec08           |gecacti|gecpos ]
+[gec01|gec02               |gec011  |gec03                   |aag02                      |gec031                         |aag021                   |gec05         |gec06      |gec04     |gec07    |gec08           |gecacti|gecpos ]
+[gec01|gec02               |gec011  |gec03                   |aag02                      |gec031                         |aag021                   |gec05         |gec06      |gec04     |gec07    |gec08           |gecacti|gecpos ]
+
+
+}
+END -- s_gec
+Grid gr4636
+{
+ <G group01                                                                   >   <G group02                                                                 >
+  [dummy01                                                              ]          [dummy08                                                ]
+  [dummy11                            ][dummy02                              ]     [dummy17                   ][dummy09                                  ]
+  [dummy12                            ][dummy03                              ]     [dummy18                   ][dummy10                                  ]
+  [dummy13                            ][dummy04                              ]
+  [dummy14                            ][dummy05                              ]
+  [dummy15                            ][dummy06                              ]
+  [dummy16                            ][dummy07                              ]
+  [dummy19                            ][dummy20                              ]
+
+
+ <                                                                            >   <                                                                          >
+}
+END -- gr4636
+END -- VBox2
+END -- page01
+END -- pc844
+Grid gr4637
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4637
+END -- VBox1
+END -- aooi150_c
+
+TABLES
+gec_file
+ATTRIBUTES
+Edit gec01=gec_file.gec01, tabIndex=1, title="Tax", comment="KEYField,No Blank!";
+Edit gec02=gec_file.gec02, tabIndex=2, title="Type";
+ComboBox gec011=gec_file.gec011, tabIndex=3, title="Line ID", not null, required, queryEditable, items=(("1", %"Purchase"),("2", %"Sales"));
+ButtonEdit gec03=gec_file.gec03, action=controlp, tabIndex=4, title="Account", image="zoom", comment="<^P>Qry Account  ";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=5, title="Account Title", noEntry;
+ButtonEdit gec031=gec_file.gec031, action=controlp, tabIndex=6, title="Accout2", image="zoom", comment="<^P>Qry Account  ";
+Edit aag021=formonly.aag021 type VARCHAR, tabIndex=7, title="Account Title2", noEntry;
+ComboBox gec05=gec_file.gec05, tabIndex=8, title="Invoic Copies", items=(("A", %"A"),("B", %"B"),("C", %"C"),("G", %"G"),("N", %"N"),("S", %"S"),("T", %"T"),("W", %"W"),("X", %"X"),("Z", %"Z"));
+ComboBox gec06=gec_file.gec06, tabIndex=9, title="Property", not null, required, queryEditable, items=(("1", %"Taxable"),("2", %"Zero Tax Rate"),("3", %"Tax-Free"));
+Edit gec04=gec_file.gec04, tabIndex=10, title="Tax Rate%", not null, required;
+CheckBox gec07=gec_file.gec07, tabIndex=11, title="With Tax", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox gec08=gec_file.gec08, tabIndex=12, title="Declaration Format", noEntry, queryEditable, comment="PUR: 21/22/23/24/25/26/27/28/29 SLS: 31/32/33/34/35/36/37/38/ No    :XX", items=(("21", %"21"),("22", %"22"),("23", %"23"),("24", %"24"),("25", %"25"),("26", %"26"),("27", %"27"),("28", %"28"),("29", %"29"),("31", %"31"),("32", %"32"),("33", %"33"),("34", %"34"),("35", %"35"),("36", %"36"),("37", %"37"),("38", %"38"),("XX", %"XX"));
+CheckBox gecacti=gec_file.gecacti, tabIndex=13, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox gecpos=gec_file.gecpos, tabIndex=15, title=%"POS", noEntry, items=(("1", "Add-No passed"),("2", "Modify-No passed"),("3", "Passed"),("4", "Modifying-No passed"));
+Group group01:group01;
+Label dummy01:dummy01, text="Purchasing Invoice Category : A.Agric Purchase Evidence";
+Label dummy11:dummy11;
+Label dummy02:dummy02, text="T.Transportation Invoice ";
+Label dummy12:dummy12;
+Label dummy03:dummy03, text="W.Abolish Goods Purchase Evidence";
+Label dummy13:dummy13;
+Label dummy04:dummy04, text="Z.Other";
+Label dummy14:dummy14;
+Label dummy05:dummy05, text="S.Withhold Invoice ";
+Label dummy15:dummy15;
+Label dummy06:dummy06, text="N.non-withhold invoice ";
+Label dummy16:dummy16;
+Label dummy07:dummy07, text="G.Customhouse Impose duty-paid proof";
+Label dummy19:dummy19;
+Label dummy20:dummy20, text="X.No application";
+Group group02:group02;
+Label dummy08:dummy08, text="Sales Invoice Category : A.Appreciate Tax Invoice  ";
+Label dummy17:dummy17;
+Label dummy09:dummy09, text="B.Normal Invoice         ";
+Label dummy18:dummy18;
+Label dummy10:dummy10, text="C.Exempt Invoice   ";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gec(gec_file.gec01,gec_file.gec02,gec_file.gec011,gec_file.gec03,formonly.aag02,gec_file.gec031,formonly.aag021,gec_file.gec05,gec_file.gec06,gec_file.gec04,gec_file.gec07,gec_file.gec08,gec_file.gecacti,gec_file.gecpos)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

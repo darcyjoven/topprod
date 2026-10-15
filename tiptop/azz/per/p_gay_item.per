@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_gay_item.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_gay_item")
+VBox VBox1
+Grid gr3202
+{
+ <G group01                       >
+  Setting Language ID [gay]
+ <                                >
+
+}
+END -- gr3202
+Table sub_gay
+{
+[gay02    |gay03                    ]
+[gay02    |gay03                    ]
+[gay02    |gay03                    ]
+[gay02    |gay03                    ]
+[gay02    |gay03                    ]
+[gay02    |gay03                    ]
+[gay02    |gay03                    ]
+[gay02    |gay03                    ]
+[gay02    |gay03                    ]
+[gay02    |gay03                    ]
+
+}
+END -- sub_gay
+END -- VBox1
+END -- p_gay_item
+
+TABLES
+gay_file
+ATTRIBUTES
+Group group01:group01;
+Edit gay=gay_file.gay01, tabIndex=1, not null, required, comment="Key,No Blank/Repeated!";
+ComboBox gay02=gay_file.gay02, tabIndex=2, title="Language", not null, required;
+Edit gay03=gay_file.gay03, tabIndex=3, title="Language Description", not null, required, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD sub_gay(gay_file.gay02,gay_file.gay03)
+SCREEN RECORD Undefined(gay_file.gay01)
+END -- INSTRUCTIONS
+

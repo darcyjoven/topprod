@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acop300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acop300")
+Folder pc199
+Page page01(text="Main")
+VBox VBox1
+Grid gr1304
+{
+ <G group01                                  >
+  Item No.             [img01               ]
+  Warehous             [img02               ]
+  Location             [img03               ]
+  Lot No.              [img04               ]
+ <                                           >
+ <G group02                                  >
+ [a                                         ]
+ <                                           >
+
+}
+END -- gr1304
+Grid gr1305
+{
+[dummy01                                   ]
+[dummy02                                   ]
+}
+END -- gr1305
+Grid gr1306
+{
+[g_bgj]
+
+}
+END -- gr1306
+END -- VBox1
+END -- page01
+END -- pc199
+END -- acop300
+
+TABLES
+img_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit img01=img_file.img01, tabIndex=1, not null, required;
+Edit img02=img_file.img02, tabIndex=2, not null, required;
+Edit img03=img_file.img03, tabIndex=3, not null, required;
+Edit img04=img_file.img04, tabIndex=4, not null, required;
+Group group02:group02, text="Data Type";
+CheckBox a=formonly.a type CHAR, tabIndex=5, text="Wastage%", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="dummy";
+Label dummy02:dummy02, text="dummy";
+CheckBox g_bgj=formonly.g_bgjob type CHAR, tabIndex=6, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(img_file.img01,img_file.img02,img_file.img03,img_file.img04,formonly.a,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

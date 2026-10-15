@@ -1,0 +1,29 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp400b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asfp400b")
+Grid gr537
+{
+ <G group01                        >
+  Closing Date       [g_closeday  ]
+ [g_flag                         ]
+ <                                 >
+
+}
+END -- gr537
+END -- asfp400b
+
+ATTRIBUTES
+Group group01:group01;
+DateEdit g_closeday=formonly.g_closeday type CHAR, tabIndex=1, not null, required;
+CheckBox g_flag=formonly.g_flag type CHAR, tabIndex=2, text="Select Only : Sets finished >=WO Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_closeday,formonly.g_flag)
+END -- INSTRUCTIONS
+

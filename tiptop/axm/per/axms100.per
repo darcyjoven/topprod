@@ -1,0 +1,279 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axms100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axms100")
+Folder pc2
+Page page01(text="Connection")
+Grid gr3
+{
+ <G group01                                                          >
+  [oaz01                                                          ]
+ <                                                                   >
+ <G group02                        ><G group03                       >
+  [oaz02                          ]
+   Plant# where AGL Is [oaz02p    ]  [oaz102                       ]
+   AGL Module Book No. [oaz02b    ]  [oaz103                       ]
+  [oaz03                          ]  [oaz104                       ]
+  [oaz04                          ] <                                >
+  [oaz05                          ] <G group04                       >
+  [oaz06                          ]  Accnt Lock Date   [oaz09       ]
+
+
+
+ <                                 ><                                >
+
+}
+END -- gr3
+END -- page01
+Page page02(text="Credit Control")
+Grid gr4
+{
+ <G group05                                                >
+  Credit Over Limit On-Hold Code [oaz11     ]
+ <                                                         >
+ <G group06                                                > <G group07                                                        >
+ [oaz121                          ]                          [oaz141                        ]
+ <                                                         > <                                                                 >
+ <G group08                                                > <G group09                                                        >
+ [oaz122                          ]                          [oaz142                        ]
+ <                                                         > <                                                                 >
+ <G group10                                                > <G group11                                                        >
+ [oaz131                          ]                          [oaz211                        ]
+ <                                                         > <                                                                 >
+ <G group12                                                > <G group13                                                        >
+ [oaz132                          ]                          [oaz212                        ]
+
+
+
+
+
+ <                                                         > <                                                                 >
+
+}
+END -- gr4
+END -- page02
+Page page03(text="Order Control")
+Grid gr5
+{
+ <G group14                                         ><G group17                      >
+  Order Maint. Default Initial Version# [oaz41     ]  [oaz52                        ]
+  [oaz46                                        ]
+  [oaz44                                        ]
+  [oaz43                                        ]
+  [oaz19                                        ]
+  [oaz108                                       ]
+ <                                                  ><                               >
+ <G group15                                         ><G group18                      >
+  Local Order Body Max.Rows             [oaz681    ]  [oaz70                        ]
+  Overseas Order Body Max.Rows          [oaz682    ]
+  Routing Data of Estimate S/N Interval [oaz25     ]
+  Default Order Over-Delivery Ratio%    [oaz201    ] <                               >
+ <                                                  >
+ <G group16                                                            >
+ [oaz184                                ]            Rate [oaz185     ]
+
+
+
+
+ <                                                                     >
+
+}
+END -- gr5
+END -- page03
+Page page04(text="Main")
+Grid gr6
+{
+ <G group19                                  ><G group23                                                           >
+ [oaz65                                     ] [oaz67                             ]
+ <                                           ><                                                                    >
+ <G group20                                  ><G gb31                                                              >
+ [oaz66                                     ] [oaz81                             ]
+                                              <                                                                    >
+ <                                           ><G group24                                                           >
+ <G group21                                  >[oaz22                             ]
+ [oaz71                                     ] <                                                                    >
+ <                                           ><G group25                                                           >
+ <G group22                                  >[oaz62                             ]
+ [oaz61                                     ] [oaz63                                    ]
+ <                                           ><                                                                    >
+ <G group30                                  ><G group26                                                           >
+   Cust Warehouse     [oaz78     ]            [oaz64                             ]
+   Transfer Document  [oaz79     ]            <                                                                    >
+                                              <G group27                                                           >
+ <                                           > Local Delivery Note Max.Rows [oaz6]
+ <G group29                                  > Overseas Delivery Nt Max Rows[oaz1]
+ [oaz23                                     ] <                                                                    >
+ [oaz42                                     ] <G group28                                                           >
+                                              [oaz94                                    ]
+
+
+ <                                           ><                                                                    >
+ <G group31                                                                                                        >
+  On Check Warehouse  [oaz74     ]  Check/Return Warehouse  [oaz76     ]
+  On Check Loc        [oaz75     ]  Check/Return Loc        [oaz77     ]
+
+ <                                                                                                                 >
+ <G group2                                                                                                          >
+  [oaz92                                    ]         Billing No    [oaz97         ]
+  [oaz93                                    ]         Receivable No [oaz98         ]
+  [oaz107                                   ]        [oaz100                                       ]
+   Invoice Warehouse         [oaz95     ]            [oaz106                                    ]
+ <                                                                                                                  >
+
+}
+END -- gr6
+END -- page04
+Page page05(text="Discount Parameters")
+Grid gr7
+{
+
+   Discount Doc. Default Document  [oaz80           ]
+
+
+}
+END -- gr7
+END -- page05
+Page page06(text=%"Fee")
+Grid gr27
+{
+  <G gp1                                                   > <G gp2                                       >
+   Default Sales Promotion Fee No.   [oaz83            ]      oaz89         [oaz89            ]
+   Default Wholesale Fee No.         [oaz84            ]      Reason Code   [oaz88            ]
+   Default Associator Fee No.        [oaz85            ]      oaz90         [oaz90            ]
+   Default Return Ticket Fee No.     [oaz86            ]      Reason Code   [oaz91            ]
+   Return Ticket Fee Calculate Mode  [oaz87            ]
+  <                                                        > <                                            >
+
+
+
+
+
+
+}
+END -- gr27
+END -- page06
+END -- pc2
+END -- axms100
+
+TABLES
+oaz_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox oaz01=oaz_file.oaz01, tabIndex=1, text="Open AXM Module to Users?         ", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y: Normal use N: For Qry Printing only, No Add, Modify, Delete, Qry";
+Group group02:group02, text="Linking Set";
+CheckBox oaz02=oaz_file.oaz02, tabIndex=2, text="Link to AGL Module", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oaz02p=oaz_file.oaz02p, tabIndex=3;
+Edit oaz02b=oaz_file.oaz02b, tabIndex=4;
+CheckBox oaz03=oaz_file.oaz03, tabIndex=5, text="Link to MFG System", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz04=oaz_file.oaz04, tabIndex=6, text="Link to ANM Module", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz05=oaz_file.oaz05, tabIndex=7, text="Link to AXR Module", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz06=oaz_file.oaz06, tabIndex=8, text="Generate MPS Transaction Log", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Store out Set";
+CheckBox oaz102=oaz_file.oaz102, tabIndex=9, text="Multi-Warehouse Store-out", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz103=oaz_file.oaz103, tabIndex=10, text="Multi-location Store-out", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz104=oaz_file.oaz104, tabIndex=11, text="Multi-Lot No. Store-out", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04;
+DateEdit oaz09=oaz_file.oaz09, tabIndex=12;
+Group group05:group05;
+ButtonEdit oaz11=oaz_file.oaz11, action=controlp, tabIndex=13, image="zoom", comment="<^P> Qry Hold Code";
+Group group06:group06, text="When Prt Order,Credit Over-Lmt Handl.Mtd";
+RadioGroup oaz121=oaz_file.oaz121, tabIndex=14, items=(("0", "NO Checking"),("1", "Warn"));
+Group group07:group07, text="Prt Deli.Note,Hand Mth if Over-Lmt";
+RadioGroup oaz141=oaz_file.oaz141, tabIndex=15, items=(("0", "NO Checking"),("1", "Warn"));
+Group group08:group08, text="Confirm Order,Handling Method if Over-Lmt";
+RadioGroup oaz122=oaz_file.oaz122, tabIndex=16, items=(("0", "NO Checking"),("1", "Warn and Hold"),("2", "Reject"));
+Group group09:group09, text="Conf Deli.Note,Handl.Mtd if Over-Lmt";
+RadioGroup oaz142=oaz_file.oaz142, tabIndex=17, items=(("0", "NO Checking"),("1", "Warn"),("2", "Reject"));
+Group group10:group10, text="Prt Del.Advice, Credit Ov-Lmt Handl.Mtd";
+RadioGroup oaz131=oaz_file.oaz131, tabIndex=18, items=(("0", "NO Checking"),("1", "Warn"));
+Group group11:group11, text="Creidt Line Exhange Rate Bas";
+RadioGroup oaz211=oaz_file.oaz211, tabIndex=19, items=(("1", "By A/R Exchange Rt"),("2", "Current Exhange Rate"));
+Group group12:group12, text="When Conf Del.Adv, Cred Ov-Lmt Handl.Mtd";
+RadioGroup oaz132=oaz_file.oaz132, tabIndex=20, items=(("0", "NO Checking"),("1", "Warn"),("2", "Reject"));
+Group group13:group13, text="Creidt Line Curr Exhange Rate Base";
+RadioGroup oaz212=oaz_file.oaz212, tabIndex=21, not null, required, items=(("B", "Bank Buying"),("S", "Bank Selling"),("M", "Bank Average ExRt"),("C", "Customs Buy"),("D", "Customs Sell"));
+Group group14:group14;
+Edit oaz41=oaz_file.oaz41, tabIndex=22;
+CheckBox oaz46=oaz_file.oaz46, tabIndex=23, text="Ent Ord Itm#,Conv by Cust Pt#", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz44=oaz_file.oaz44, tabIndex=24, text="Upd Cust Tab once Conf Od", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz43=oaz_file.oaz43, tabIndex=25, text="Open Win Ent Othr once Ordr Bdy Entd", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz19=oaz_file.oaz19, tabIndex=26, text="S.O. Production Plant Distribution", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz108=oaz_file.oaz108, tabIndex=73, text="Add new inspect data?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group17:group17, text="Ex.Rate for Local Sales";
+RadioGroup oaz52=oaz_file.oaz52, tabIndex=27, not null, required, items=(("B", "Bank Buying"),("S", "Bank Selling"),("M", "Bank Average ExRt"),("C", "Customs Buy"),("D", "Customs Sell"));
+Group group15:group15;
+Edit oaz681=oaz_file.oaz681, tabIndex=28;
+Edit oaz682=oaz_file.oaz682, tabIndex=29;
+Edit oaz25=oaz_file.oaz25, tabIndex=30, upShift;
+Edit oaz201=oaz_file.oaz201, tabIndex=31;
+Group group18:group18, text="Ex.Rate for Export";
+RadioGroup oaz70=oaz_file.oaz70, tabIndex=32, not null, required, items=(("B", "Bank Buying"),("S", "Bank Selling"),("M", "Bank Average ExRt"),("C", "Customs Buy"),("D", "Customs Sell"));
+Group group16:group16, text="S/O  U/P < First U/P Handling Method";
+RadioGroup oaz184=oaz_file.oaz184, tabIndex=33, items=(("R", "Reject"),("W", "Warn"),("N", "NO Checking"));
+Edit oaz185=oaz_file.oaz185, tabIndex=34, upShift;
+Group group19:group19, text="Order# Entered To Delivery Note Checking Method";
+RadioGroup oaz65=oaz_file.oaz65, tabIndex=35, items=(("0", "Blank"),("1", "No Blank"));
+Group group23:group23, text="Delivery Note # Source of Packing List";
+RadioGroup oaz67=oaz_file.oaz67, tabIndex=36, items=(("1", "Delivery Advice"),("2", "Delivery Note"));
+Group group20:group20, text="Ckg.Mtd for Del.Nt entered to Sls/Ret.Nt";
+RadioGroup oaz66=oaz_file.oaz66, tabIndex=37, items=(("0", "Blank"),("1", "No Blank"));
+Group gb31:gb31;
+CheckBox oaz81=oaz_file.oaz81, tabIndex=38, text="Lot Control?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group24:group24;
+CheckBox oaz22=oaz_file.oaz22, tabIndex=38, text="Updt Del.Note Qt when Conf Packing List", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group21:group21, text="Method for Auto Delivery Transaction Dtl";
+RadioGroup oaz71=oaz_file.oaz71, tabIndex=39, items=(("1", "Same as Prod."),("2", "img_file Def,Lot same as Prod.Ln#"));
+Group group25:group25;
+CheckBox oaz62=oaz_file.oaz62, tabIndex=40, text="Transfer to A/R aft Local Sales Delivery confirmed", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz63=oaz_file.oaz63, tabIndex=42, text="Sales/Return Note Translate To A/R ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group22:group22, text="Inventory Deduction Method after Del Conf";
+RadioGroup oaz61=oaz_file.oaz61, tabIndex=41, items=(("1", "Ded Now (No Ask)"),("2", "Ded Now"),("3", "Ded Later"));
+Group group30:group30;
+ButtonEdit oaz78=oaz_file.oaz78, action=controlp, tabIndex=52, image="zoom", comment="<^P> Qry Warehouse";
+ButtonEdit oaz79=formonly.oaz79 type CHAR, action=controlp, tabIndex=53, image="zoom";
+Group group26:group26, text="Updt Del.Note Qty when Confirm Packing List";
+RadioGroup oaz64=oaz_file.oaz64, tabIndex=44, items=(("Y", "Cnt Del as Uninvo.Sls Rcvg"),("N", "Not Cnt Del as Uninvo.Sls Rc"),("O", "by Cust.Order"));
+Group group27:group27;
+Edit oaz6=oaz_file.oaz691, tabIndex=46;
+Edit oaz1=oaz_file.oaz692, tabIndex=47, upShift;
+Group group29:group29, text="Method of Finished Product Substitute when Del";
+CheckBox oaz23=oaz_file.oaz23, tabIndex=43, text="Finished Product Substitute when Del", not null, required, valueChecked = "Y", valueUnchecked = "N";
+RadioGroup oaz42=oaz_file.oaz42, tabIndex=45, items=(("1", "By Product Cate"),("2", "By Substitute"));
+Group group28:group28;
+CheckBox oaz94=oaz_file.oaz94, tabIndex=64, text="Cust. Repeatedly  Receipt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group31:group31, text="Delivery/Check";
+ButtonEdit oaz74=oaz_file.oaz74, action=controlp, tabIndex=48, image="zoom", comment="<^P> Qry Warehouse";
+ButtonEdit oaz76=oaz_file.oaz76, action=controlp, tabIndex=49, image="zoom", comment="<^P> Qry Warehouse";
+ButtonEdit oaz75=oaz_file.oaz75, action=controlp, tabIndex=50, image="zoom", comment="<^P> Qry Loc";
+ButtonEdit oaz77=oaz_file.oaz77, action=controlp, tabIndex=51, image="zoom", comment="<^P> Qry Loc";
+Group group2:Group2, text=%"Send Product";
+CheckBox oaz92=oaz_file.oaz92, tabIndex=65, text="Posting Method On Invoice Way", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oaz97=oaz_file.oaz97, action=controlp, tabIndex=68, image="zoom.png";
+CheckBox oaz93=oaz_file.oaz93, tabIndex=66, text="Send Product Managerment", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oaz98=oaz_file.oaz98, action=controlp, tabIndex=69, image="zoom.png";
+CheckBox oaz107=oaz_file.oaz107, tabIndex=72, default = "N", text=%"Do give out commodity entry", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz100=oaz_file.oaz100, tabIndex=70, default = "N", text=%"Audit immediately transferred receivable", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oaz95=oaz_file.oaz95, action=controlp, tabIndex=67, image="zoom", comment="<^P> Qry Loc";
+CheckBox oaz106=oaz_file.oaz106, tabIndex=71, default = "N", text=%"Audit immediately posting", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oaz80=oaz_file.oaz80, action=controlp, tabIndex=54, not null, required, image="zoom.png";
+Group gp1:gp1, text=%"";
+ButtonEdit oaz83=oaz_file.oaz83, action=controlp, tabIndex=55, image="zoom.png";
+ButtonEdit oaz84=oaz_file.oaz84, action=controlp, tabIndex=56, image="zoom.png";
+ButtonEdit oaz85=oaz_file.oaz85, action=controlp, tabIndex=57, image="zoom.png";
+ButtonEdit oaz86=oaz_file.oaz86, action=controlp, tabIndex=58, image="zoom.png";
+ComboBox oaz87=oaz_file.oaz87, tabIndex=59, not null, required, items=(("1", "Sell Sum"),("2", "Return Ticket Sum"));
+Group gp2:gp2, text=%"";
+ComboBox oaz89=oaz_file.oaz89, tabIndex=61, not null, required, items=(("1", "Sales"),("2", "MISC"));
+ButtonEdit oaz88=oaz_file.oaz88, action=controlp, tabIndex=60, image="zoom.png";
+ComboBox oaz90=oaz_file.oaz90, tabIndex=62, not null, required, items=(("1", "Sales"),("2", "MISC"));
+ButtonEdit oaz91=oaz_file.oaz91, action=controlp, tabIndex=63, image="zoom.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oaz_file.oaz01,oaz_file.oaz02,oaz_file.oaz02p,oaz_file.oaz02b,oaz_file.oaz03,oaz_file.oaz04,oaz_file.oaz05,oaz_file.oaz06,oaz_file.oaz102,oaz_file.oaz103,oaz_file.oaz104,oaz_file.oaz09,oaz_file.oaz11,oaz_file.oaz121,oaz_file.oaz141,oaz_file.oaz122,oaz_file.oaz142,oaz_file.oaz131,oaz_file.oaz211,oaz_file.oaz132,oaz_file.oaz212,oaz_file.oaz41,oaz_file.oaz46,oaz_file.oaz44,oaz_file.oaz43,oaz_file.oaz19,oaz_file.oaz52,oaz_file.oaz681,oaz_file.oaz682,oaz_file.oaz25,oaz_file.oaz201,oaz_file.oaz70,oaz_file.oaz184,oaz_file.oaz185,oaz_file.oaz65,oaz_file.oaz67,oaz_file.oaz66,oaz_file.oaz81,oaz_file.oaz22,oaz_file.oaz71,oaz_file.oaz62,oaz_file.oaz61,oaz_file.oaz63,oaz_file.oaz78,formonly.oaz79,oaz_file.oaz64,oaz_file.oaz23,oaz_file.oaz42,oaz_file.oaz691,oaz_file.oaz692,oaz_file.oaz74,oaz_file.oaz76,oaz_file.oaz75,oaz_file.oaz77,oaz_file.oaz80,oaz_file.oaz83,oaz_file.oaz84,oaz_file.oaz85,oaz_file.oaz86,oaz_file.oaz87,oaz_file.oaz88,oaz_file.oaz89,oaz_file.oaz90,oaz_file.oaz91,oaz_file.oaz94,oaz_file.oaz92,oaz_file.oaz93,oaz_file.oaz95,oaz_file.oaz97,oaz_file.oaz98,oaz_file.oaz100,oaz_file.oaz106,oaz_file.oaz107,oaz_file.oaz108)
+END -- INSTRUCTIONS
+

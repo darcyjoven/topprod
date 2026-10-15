@@ -1,0 +1,58 @@
+----------------------------------------------------------------------------------
+-- $Id:  p_itm.per created 2009-11-13T17:15:49
+-- File created from p_itm.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="aooi030")
+-- TABLE
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX vb2
+    FOLDER pc831
+      PAGE page01( TEXT="Page01")
+        TABLE   s_kpo
+        {
+        [aa0            |aa1                   |aa2              |aa3                  ]
+        [aa0            |aa1                   |aa2              |aa3                  ]
+        [aa0            |aa1                   |aa2              |aa3                  ]
+        [aa0            |aa1                   |aa2              |aa3                  ]
+        [aa0            |aa1                   |aa2              |aa3                  ]
+        [aa0            |aa1                   |aa2              |aa3                  ]
+        [aa0            |aa1                   |aa2              |aa3                  ]
+        [aa0            |aa1                   |aa2              |aa3                  ]
+        [aa0            |aa1                   |aa2              |aa3                  ]
+        [aa0            |aa1                   |aa2              |aa3                  ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr4617
+    {
+     ----------Rows [aa4   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES kpo_file,gen_file
+
+ATTRIBUTES
+  EDIT aa0=kpo_file.kpo01, COMMENT="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!", NOT NULL, REQUIRED, TABINDEX=1, TITLE="Project No.";
+  EDIT aa1=kpo_file.kpo02, TABINDEX=2, TITLE="Project Description";
+  BUTTONEDIT aa2=kpo_file.kpo03, ACTION=controlp, IMAGE="zoom.png", TABINDEX=4, TITLE="Charge Person";
+  EDIT aa3=gen_file.gen02, NOENTRY, TABINDEX=5, TITLE="Name";
+  EDIT aa4=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=3;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_kpo (kpo_file.kpo01, kpo_file.kpo02, kpo_file.kpo03, gen_file.gen02)
+END

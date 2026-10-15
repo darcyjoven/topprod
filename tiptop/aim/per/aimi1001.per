@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi1001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi1001")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                     >
+  Inventory            [a         ]
+  Sales Data           [b         ]
+  Purchase             [c         ]
+  Production Management[d         ]
+  Cost                 [e         ]
+  Cost Element Value   [f         ]
+  Cost Items Structure [g         ]
+  Part Name Spec Desc  [h         ]
+ <                                              >
+
+}
+END -- Grid1
+END -- VBox1
+END -- aimi1001
+
+ATTRIBUTES
+Group group01:group01, text="Item Master Process Status";
+Edit a=formonly.a type CHAR, tabIndex=1, noEntry;
+Edit b=formonly.b type CHAR, tabIndex=2, noEntry;
+Edit c=formonly.c type CHAR, tabIndex=3, noEntry;
+Edit d=formonly.d type CHAR, tabIndex=4, noEntry;
+Edit e=formonly.e type CHAR, tabIndex=5, noEntry;
+Edit f=formonly.f type CHAR, tabIndex=6, noEntry;
+Edit g=formonly.g type CHAR, tabIndex=7, noEntry;
+Edit h=formonly.h type CHAR, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.b,formonly.c,formonly.d,formonly.e,formonly.f,formonly.g,formonly.h)
+END -- INSTRUCTIONS
+

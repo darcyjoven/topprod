@@ -1,0 +1,235 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_gengr.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox4
+Grid Grid1
+{
+[label1    |prog      |progname            |grprog    ]
+[label2    |reporttype|sets      ]
+[label3    |papersize |label6     |paperori  ]
+[label7    |lang      |fontname          ]
+}
+END -- Grid1
+Folder Folder1
+Page Page1(text=%"Fields Setting")
+HBox HBox1
+Table table1(doubleClick=skip1)
+{
+[fieldatt|fldid1  |alias1  ]
+[fieldatt|fldid1  |alias1  ]
+[fieldatt|fldid1  |alias1  ]
+[fieldatt|fldid1  |alias1  ]
+[fieldatt|fldid1  |alias1  ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- table1
+VBox VBox3
+Group Master(text=%"Master")
+HBox HBox2
+Table table2(doubleClick=skip1)
+{
+[fieldat1|fldid2  |alias2  ]
+[fieldat1|fldid2  |alias2  ]
+[fieldat1|fldid2  |alias2  ]
+[fieldat1|fldid2  |alias2  ]
+[fieldat1|fldid2  |alias2  ]
+
+
+}
+END -- table2
+Table table3(doubleClick=skip1)
+{
+[fieldat2|fldid3  |alias3  ]
+[fieldat2|fldid3  |alias3  ]
+[fieldat2|fldid3  |alias3  ]
+[fieldat2|fldid3  |alias3  ]
+[fieldat2|fldid3  |alias3  ]
+
+
+}
+END -- table3
+END -- HBox2
+END -- Master
+Group Detail(text=%"Detail")
+VBox VBox1
+Table table4(doubleClick=skip1)
+{
+[fieldat3|fldid4  |alias4  ]
+[fieldat3|fldid4  |alias4  ]
+[fieldat3|fldid4  |alias4  ]
+[fieldat3|fldid4  |alias4  ]
+[fieldat3|fldid4  |alias4  ]
+}
+END -- table4
+Table table5(doubleClick=skip1)
+{
+[fieldat4|fldid5  |alias5  ]
+[fieldat4|fldid5  |alias5  ]
+[fieldat4|fldid5  |alias5  ]
+[fieldat4|fldid5  |alias5  ]
+[fieldat4|fldid5  |alias5  ]
+}
+END -- table5
+Table table6(doubleClick=skip1)
+{
+[fieldat5|fldid6  |alias6  ]
+[fieldat5|fldid6  |alias6  ]
+[fieldat5|fldid6  |alias6  ]
+[fieldat5|fldid6  |alias6  ]
+[fieldat5|fldid6  |alias6  ]
+}
+END -- table6
+END -- VBox1
+END -- Detail
+END -- VBox3
+END -- HBox1
+END -- Page1
+Page Page2(text=%"Order By")
+VBox VBox2
+Table table_ord(doubleClick=skip1)
+{
+[no1  |fid1           |fname1              |grup1  |order1    |nextpage1]
+[no1  |fid1           |fname1              |grup1  |order1    |nextpage1]
+[no1  |fid1           |fname1              |grup1  |order1    |nextpage1]
+[no1  |fid1           |fname1              |grup1  |order1    |nextpage1]
+[no1  |fid1           |fname1              |grup1  |order1    |nextpage1]
+[no1  |fid1           |fname1              |grup1  |order1    |nextpage1]
+[no1  |fid1           |fname1              |grup1  |order1    |nextpage1]
+[no1  |fid1           |fname1              |grup1  |order1    |nextpage1]
+[no1  |fid1           |fname1              |grup1  |order1    |nextpage1]
+[no1  |fid1           |fname1              |grup1  |order1    |nextpage1]
+}
+END -- table_ord
+Grid gr6014
+{
+ ---------[labe][cnt   ] ----------
+
+}
+END -- gr6014
+END -- VBox2
+END -- Page2
+Page Page3(text=%"Compute")
+VBox VBox5
+Table table_comp(doubleClick=skip1)
+{
+[no2  |fid2           |fname2              |aggr2     |disp2          ]
+[no2  |fid2           |fname2              |aggr2     |disp2          ]
+[no2  |fid2           |fname2              |aggr2     |disp2          ]
+[no2  |fid2           |fname2              |aggr2     |disp2          ]
+[no2  |fid2           |fname2              |aggr2     |disp2          ]
+[no2  |fid2           |fname2              |aggr2     |disp2          ]
+[no2  |fid2           |fname2              |aggr2     |disp2          ]
+[no2  |fid2           |fname2              |aggr2     |disp2          ]
+[no2  |fid2           |fname2              |aggr2     |disp2          ]
+[no2  |fid2           |fname2              |aggr2     |disp2          ]
+}
+END -- table_comp
+Grid gr1
+{
+ ---------[lab1][cnt1  ] ----------
+
+}
+END -- gr1
+END -- VBox5
+END -- Page3
+END -- Folder1
+END -- VBox4
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"prog";
+ButtonEdit prog=formonly.prog type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit progname=formonly.progname type VARCHAR, tabIndex=2, noEntry;
+Edit grprog=formonly.grprog type VARCHAR, tabIndex=31, noEntry, hidden;
+Label label2:Label2, text=%"report type";
+ComboBox reporttype=formonly.reporttype type VARCHAR, tabIndex=3, not null, required, items=(("1", %"Voucher"),("2", %"Detail Report"),("3", %"Statistics"),("4", %"Tracking Report"),("5", %"None"));
+CheckBox sets=formonly.sets type VARCHAR, tabIndex=5, default = "N", text=%"Sets", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N", hidden;
+Label label3:Label3, text=%"paper size";
+ComboBox papersize=formonly.papersize type VARCHAR, tabIndex=4, not null, required, queryEditable, items=(("A4", "A4"),("x0", "x0"),("A3", "A3"),("A2", "A2"),("A1", "A1"),("A0", "A0"),("s1", "s1"),("s0", "s0"),("Letter", "Letter"),("US Std Fanfold", "US Std Fanfold"),("Statement", "Statement"));
+Label label6:Label6, text=%"paper orientation";
+ComboBox paperori=formonly.paperori type VARCHAR, tabIndex=32, not null, required, queryEditable, items=(("P", "P:Portait"),("L", "L:Landscape"));
+Label label7:Label7, text=%"language";
+ComboBox lang=formonly.lang type VARCHAR, tabIndex=33, not null, required, queryEditable;
+Edit fontname=formonly.fontname type VARCHAR, tabIndex=34, not null, required;
+IMAGE fieldatt=formonly.fieldattr1 type VARCHAR, title=%"field attribute";
+Edit fldid1=formonly.fldid1 type VARCHAR, tabIndex=6, title=%"field";
+Edit alias1=formonly.alias1 type VARCHAR, tabIndex=7, title=%"alias";
+IMAGE fieldat1=formonly.fieldattr2 type VARCHAR, title=%"field attribute";
+Edit fldid2=formonly.fldid2 type VARCHAR, tabIndex=8, title=%"field";
+Edit alias2=formonly.alias2 type VARCHAR, tabIndex=9, title=%"alias";
+IMAGE fieldat2=formonly.fieldattr3 type VARCHAR, title=%"field attribute";
+Edit fldid3=formonly.fldid3 type VARCHAR, tabIndex=10, title=%"field";
+Edit alias3=formonly.alias3 type VARCHAR, tabIndex=11, title=%"alias";
+IMAGE fieldat3=formonly.fieldattr4 type VARCHAR, title=%"field attribute";
+Edit fldid4=formonly.fldid4 type VARCHAR, tabIndex=12, title=%"field";
+Edit alias4=formonly.alias4 type VARCHAR, tabIndex=13, title=%"alias";
+IMAGE fieldat4=formonly.fieldattr5 type VARCHAR, title=%"field attribute";
+Edit fldid5=formonly.fldid5 type VARCHAR, tabIndex=14, title=%"field";
+Edit alias5=formonly.alias5 type VARCHAR, tabIndex=15, title=%"alias";
+IMAGE fieldat5=formonly.fieldattr6 type VARCHAR, title=%"field attribute";
+Edit fldid6=formonly.fldid6 type VARCHAR, tabIndex=16, title=%"field";
+Edit alias6=formonly.alias6 type VARCHAR, tabIndex=17, title=%"alias";
+Edit no1=formonly.no1 type SMALLINT, tabIndex=18, title=%"No.", noEntry, not null, required;
+ComboBox fid1=formonly.fid1 type VARCHAR, tabIndex=19, title=%"Field ID", not null, required, downShift, queryEditable;
+Edit fname1=formonly.fname1 type VARCHAR, tabIndex=20, title=%"Field Name", noEntry;
+CheckBox grup1=formonly.grup1 type VARCHAR, tabIndex=21, default = "Y", title=%"Group?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox order1=formonly.order1 type VARCHAR, tabIndex=22, default = "1", title=%"Order", not null, required, items=(("1", %"ASCending order"),("2", %"DESCending order"));
+CheckBox nextpage1=formonly.nextpage1 type VARCHAR, tabIndex=23, default = "N", title=%"NextPage", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label labe:Label4, text=%"Rows";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29, noEntry;
+Edit no2=formonly.no2 type SMALLINT, tabIndex=24, title=%"No.", noEntry, not null, required;
+ComboBox fid2=formonly.fid2 type VARCHAR, tabIndex=25, title=%"Field ID", not null, required, downShift, queryEditable;
+Edit fname2=formonly.fname2 type VARCHAR, tabIndex=26, title=%"Field Name", noEntry;
+ComboBox aggr2=formonly.aggr2 type VARCHAR, tabIndex=27, default = "A", title=%"Aggr.", not null, required, items=(("A", %"Subtotal"),("B", %"Grand total"),("C", %"Subtotal & Grand total"),("D", %"Sub average"),("E", %"Grand average"),("F", %"Sub average & Grand average"));
+ComboBox disp2=formonly.disp2 type VARCHAR, tabIndex=28, default = "1", title=%"Display", not null, required, items=(("1", %"Field Name + Aggr."),("2", %"Only Aggr."),("3", %"Not Display"));
+Label lab1:Label5, text=%"Rows";
+Edit cnt1=formonly.cnt1 type SMALLINT, tabIndex=30, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD sr1(formonly.fldid1,formonly.alias1,formonly.fieldattr1)
+SCREEN RECORD sr2(formonly.fldid2,formonly.alias2,formonly.fieldattr2)
+SCREEN RECORD sr3(formonly.fldid3,formonly.alias3,formonly.fieldattr3)
+SCREEN RECORD sr5(formonly.fldid5,formonly.alias5,formonly.fieldattr5)
+SCREEN RECORD sr4(formonly.fldid4,formonly.alias4,formonly.fieldattr4)
+SCREEN RECORD sr6(formonly.fldid6,formonly.alias6,formonly.fieldattr6)
+SCREEN RECORD sr_ord(formonly.no1,formonly.fid1,formonly.fname1,formonly.grup1,formonly.order1,formonly.nextpage1)
+SCREEN RECORD sr_comp(formonly.no2,formonly.fid2,formonly.fname2,formonly.aggr2,formonly.disp2)
+SCREEN RECORD sr_cnt(formonly.cnt)
+SCREEN RECORD sr_cnt1(formonly.cnt1)
+SCREEN RECORD sr(formonly.papersize,formonly.paperori,formonly.reporttype,formonly.prog,formonly.progname,formonly.sets,formonly.grprog)
+SCREEN RECORD Undefined(formonly.lang,formonly.fontname)
+END -- INSTRUCTIONS
+

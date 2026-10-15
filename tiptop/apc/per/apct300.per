@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apct300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid ds1
+{
+
+ rxs01  [rxs01                 ]                              rxs05    [rxs05       ][rxspost   ]    [imgmksg]
+ rxs02  [rxs02        ]                                       rxsconf  [rxsconf     ]                [       ]
+ rxs03  [rxs03        ][rxs03_desc      ]                     rxsconu  [rxsconu     ][rxsconu_desc ]
+ gen03  [gen03        ][gen03_desc      ]                     rxscond  [rxscond     ][rxscont      ]
+ rxs04  [rxs04                               ]                rxsplant [rxsplant    ][rxsplant_desc]
+
+}
+END -- ds1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid ds2
+{
+
+ rxsuser[rxsuser   ]        rxsmodu[rxsmodu   ]
+ rxsgrup[rxsgrup   ]        rxsdate[rxsdate   ]
+ rxsoriu[rxsoriu   ]        rxsacti[rxsacti   ]
+ rxsorig[rxsorig   ]        rxscrat[rxscrat   ]
+
+}
+END -- ds2
+END -- Page2
+END -- Folder1
+Table ds3
+{
+[rxt02 |rxt03     |rxt04     |rxt05      |rxt06               |rxt16   |rxt07                         |rxt08   |rxt09               |rxt10                         |rxt11                         |rxt12                 |rxt13                 |rxt18               |rxt14     |rxt15   |rxt17   ]
+[rxt02 |rxt03     |rxt04     |rxt05      |rxt06               |rxt16   |rxt07                         |rxt08   |rxt09               |rxt10                         |rxt11                         |rxt12                 |rxt13                 |rxt18               |rxt14     |rxt15   |rxt17   ]
+[rxt02 |rxt03     |rxt04     |rxt05      |rxt06               |rxt16   |rxt07                         |rxt08   |rxt09               |rxt10                         |rxt11                         |rxt12                 |rxt13                 |rxt18               |rxt14     |rxt15   |rxt17   ]
+[rxt02 |rxt03     |rxt04     |rxt05      |rxt06               |rxt16   |rxt07                         |rxt08   |rxt09               |rxt10                         |rxt11                         |rxt12                 |rxt13                 |rxt18               |rxt14     |rxt15   |rxt17   ]
+[rxt02 |rxt03     |rxt04     |rxt05      |rxt06               |rxt16   |rxt07                         |rxt08   |rxt09               |rxt10                         |rxt11                         |rxt12                 |rxt13                 |rxt18               |rxt14     |rxt15   |rxt17   ]
+
+}
+END -- ds3
+Grid gr501
+{
+ ---------- Rows [cnt   ] / [cn3   ]-------- Detail [cn2   ]----------
+
+}
+END -- gr501
+END -- VBox1
+END -- Form
+
+TABLES
+gen_file,
+rxt_file,
+rxs_file
+ATTRIBUTES
+ButtonEdit rxs01=rxs_file.rxs01, action=controlp, tabIndex=1, not null, image="zoom", scroll;
+ComboBox rxs05=rxs_file.rxs05, tabIndex=8, not null, scroll, items=(("0", "Text"),("1", "Text"),("2", "Text"),("S", "Text"),("R", "Text"),("W", "Text"),("9", "Text"));
+CheckBox rxspost=rxs_file.rxspost, tabIndex=9, text=%"rxspost", not null, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale;
+DateEdit rxs02=rxs_file.rxs02, tabIndex=2;
+ComboBox rxsconf=rxs_file.rxsconf, tabIndex=10, not null, scroll, items=(("N", "Text"),("Y", "Text"),("X", "Text"));
+ButtonEdit rxs03=rxs_file.rxs03, action=controlp, tabIndex=3, image="zoom", scroll;
+Edit rxs03_desc=formonly.rxs03_desc, tabIndex=4;
+ButtonEdit rxsconu=rxs_file.rxsconu, action=controlp, tabIndex=11, image="zoom", scroll;
+Edit rxsconu_desc=formonly.rxsconu_desc, tabIndex=12;
+ButtonEdit gen03=gen_file.gen03, action=controlp, tabIndex=5, image="zoom";
+Edit gen03_desc=formonly.gen03_desc, tabIndex=6;
+DateEdit rxscond=rxs_file.rxscond, tabIndex=13;
+TimeEdit rxscont=rxs_file.rxscont, tabIndex=14, scroll;
+TextEdit rxs04=rxs_file.rxs04, tabIndex=7;
+ButtonEdit rxsplant=rxs_file.rxsplant, action=controlp, tabIndex=15, not null, image="zoom", scroll;
+Edit rxsplant_desc=formonly.rxsplant_desc, tabIndex=16;
+Edit rxsuser=rxs_file.rxsuser, tabIndex=17, scroll;
+Edit rxsmodu=rxs_file.rxsmodu, tabIndex=21, scroll;
+Edit rxsgrup=rxs_file.rxsgrup, tabIndex=18, scroll;
+DateEdit rxsdate=rxs_file.rxsdate, tabIndex=22;
+Edit rxsoriu=rxs_file.rxsoriu, tabIndex=19, scroll;
+Edit rxsacti=rxs_file.rxsacti, tabIndex=23, not null, scroll;
+Edit rxsorig=rxs_file.rxsorig, tabIndex=20, scroll;
+DateEdit rxscrat=rxs_file.rxscrat, tabIndex=24;
+Edit rxt02=rxt_file.rxt02, tabIndex=25, title=%"rxt02", not null, scroll;
+ButtonEdit rxt03=rxt_file.rxt03, action=controlp, tabIndex=26, title=%"rxt03", image="zoom", scroll;
+Edit rxt04=rxt_file.rxt04, tabIndex=27, title=%"rxt04", scroll;
+ComboBox rxt05=rxt_file.rxt05, tabIndex=28, title=%"rxt05", not null, scroll, items=(("0", "Text"),("1", "Text"),("2", "Text"),("3", "Text"),("4", "Text"),("5", "Text"),("6", "Text"),("7", "Text"),("8", "Text"),("9", "Text"),("10", "Text"),("11", "Text"),("12", "Text"),("13", "Text"),("14", "Text"),("15", "Text"),("16", "Text"),("17", "Text"));
+Edit rxt06=rxt_file.rxt06, tabIndex=29, title=%"rxt06", scroll;
+ComboBox rxt16=rxt_file.rxt16, tabIndex=30, title=%"rxt16", not null, scroll, items=(("1", "Text"),("2", "Text"));
+Edit rxt07=rxt_file.rxt07, tabIndex=31, title=%"rxt07", scroll;
+ComboBox rxt08=rxt_file.rxt08, tabIndex=32, title=%"rxt08", not null, scroll, items=(("1", "Text"),("2", "Text"),("3", "Text"),("4", "Text"),("5", "Text"),("6", "Text"),("7", "Text"),("8", "Text"),("9", "Text"),("10", "Text"),("11", "Text"),("12", "Text"),("13", "Text"));
+Edit rxt09=rxt_file.rxt09, tabIndex=33, title=%"rxt09", scroll;
+Edit rxt10=rxt_file.rxt10, tabIndex=34, title=%"rxt10", scroll;
+Edit rxt11=rxt_file.rxt11, tabIndex=35, title=%"rxt11", scroll;
+Edit rxt12=rxt_file.rxt12, tabIndex=36, title=%"rxt12", scroll;
+Edit rxt13=rxt_file.rxt13, tabIndex=37, title=%"rxt13", scroll;
+Edit rxt18=rxt_file.rxt18, tabIndex=38, title=%"rxt18";
+DateEdit rxt14=rxt_file.rxt14, tabIndex=39, title=%"rxt14";
+TimeEdit rxt15=rxt_file.rxt15, tabIndex=40, title=%"rxt15";
+ComboBox rxt17=rxt_file.rxt17, tabIndex=41, title=%"rxt17", not null, scroll, items=(("2", "Text"),("3", "Text"),("4", "Text"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=42, noEntry;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=43, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=44, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(rxs_file.rxs01,rxs_file.rxs02,rxs_file.rxs03,rxs_file.rxs04,rxs_file.rxs05,rxs_file.rxsconf,rxs_file.rxsconu,rxs_file.rxscond,rxs_file.rxscont,rxs_file.rxsplant)
+SCREEN RECORD Undefined(rxs_file.rxspost,gen_file.gen03,formonly.gen03_desc,formonly.rxs03_desc,formonly.rxsconu_desc,formonly.rxsplant_desc,formonly.cnt,formonly.cn3,formonly.cn2,formonly.imgmksg)
+SCREEN RECORD Record2(rxs_file.rxsuser,rxs_file.rxsgrup,rxs_file.rxsoriu,rxs_file.rxsorig,rxs_file.rxsmodu,rxs_file.rxsdate,rxs_file.rxsacti,rxs_file.rxscrat)
+SCREEN RECORD s_rxt(rxt_file.rxt02,rxt_file.rxt03,rxt_file.rxt04,rxt_file.rxt05,rxt_file.rxt06,rxt_file.rxt16,rxt_file.rxt07,rxt_file.rxt08,rxt_file.rxt09,rxt_file.rxt10,rxt_file.rxt11,rxt_file.rxt12,rxt_file.rxt13,rxt_file.rxt18,rxt_file.rxt14,rxt_file.rxt15,rxt_file.rxt17)
+END -- INSTRUCTIONS
+

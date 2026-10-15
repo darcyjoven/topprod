@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri012.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page page1(action=pg1, text=%"yzzry")
+Table ds1
+{
+[sel      |hray01  |hrax02          |hraa12     |hrao02  |hras04     |hray02    |hray03    |zg_part   |hray04   |zg_post    |hray05   |cf_name   |hray06  |hray07  |result  ]
+[sel      |hray01  |hrax02          |hraa12     |hrao02  |hras04     |hray02    |hray03    |zg_part   |hray04   |zg_post    |hray05   |cf_name   |hray06  |hray07  |result  ]
+[sel      |hray01  |hrax02          |hraa12     |hrao02  |hras04     |hray02    |hray03    |zg_part   |hray04   |zg_post    |hray05   |cf_name   |hray06  |hray07  |result  ]
+[sel      |hray01  |hrax02          |hraa12     |hrao02  |hras04     |hray02    |hray03    |zg_part   |hray04   |zg_post    |hray05   |cf_name   |hray06  |hray07  |result  ]
+[sel      |hray01  |hrax02          |hraa12     |hrao02  |hras04     |hray02    |hray03    |zg_part   |hray04   |zg_post    |hray05   |cf_name   |hray06  |hray07  |result  ]
+
+}
+END -- ds1
+END -- page1
+Page Page2(action=pg2, text=%"ygdry")
+Table Table1
+{
+[sel_1   |hray01_1|hrax02_1|hraa12_1|hrao02_1|hras04_1|hray02_1|hray03_1|zg_part_|hray04_1|zg_post_|hray05_1|cf_name_|hray06_1|hray07_1|result_1]
+[sel_1   |hray01_1|hrax02_1|hraa12_1|hrao02_1|hras04_1|hray02_1|hray03_1|zg_part_|hray04_1|zg_post_|hray05_1|cf_name_|hray06_1|hray07_1|result_1]
+[sel_1   |hray01_1|hrax02_1|hraa12_1|hrao02_1|hras04_1|hray02_1|hray03_1|zg_part_|hray04_1|zg_post_|hray05_1|cf_name_|hray06_1|hray07_1|result_1]
+[sel_1   |hray01_1|hrax02_1|hraa12_1|hrao02_1|hras04_1|hray02_1|hray03_1|zg_part_|hray04_1|zg_post_|hray05_1|cf_name_|hray06_1|hray07_1|result_1]
+[sel_1   |hray01_1|hrax02_1|hraa12_1|hrao02_1|hras04_1|hray02_1|hray03_1|zg_part_|hray04_1|zg_post_|hray05_1|cf_name_|hray06_1|hray07_1|result_1]
+
+}
+END -- Table1
+END -- Page2
+END -- Folder1
+Grid Grid1
+{
+
+ ---------- [label1    |cnt1      |lab|label3    |cnt2      ] ----------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+hray_file,
+hrax_file,
+hras_file,
+hraa_file,
+hrao_file
+ATTRIBUTES
+CheckBox sel=formonly.sel type CHAR, tabIndex=1, default = "N", title=%"sel", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit hray01=hray_file.hray01, action=controlp, tabIndex=11, title=%"hray01";
+Edit hrax02=hrax_file.hrax02, tabIndex=2, title=%"hrax02", noEntry, scroll;
+Edit hraa12=hraa_file.hraa12, tabIndex=3, title=%"hraa12", noEntry;
+Edit hrao02=hrao_file.hrao02, tabIndex=4, title=%"hrao02", noEntry;
+Edit hras04=hras_file.hras04, tabIndex=5, title=%"hras04", noEntry;
+DateEdit hray02=hray_file.hray02, tabIndex=6, title=%"hray02", noEntry;
+ButtonEdit hray03=hray_file.hray03, action=controlp, tabIndex=7, title=%"hray03", noEntry;
+DateEdit zg_part=formonly.zg_part type DATE, tabIndex=8, title=%"zg_part", noEntry;
+ButtonEdit hray04=hray_file.hray04, action=controlp, tabIndex=12, title=%"hray04", noEntry;
+Edit zg_post=formonly.zg_post, tabIndex=13, title=%"zg_post", noEntry;
+ButtonEdit hray05=hray_file.hray05, action=controlp, tabIndex=14, title=%"hray05";
+Edit cf_name=formonly.cf_name, tabIndex=15, title=%"cf_name", noEntry;
+Edit hray06=hray_file.hray06, tabIndex=16, title=%"hray06", noEntry;
+Edit hray07=hray_file.hray07, tabIndex=17, title=%"hray07", noEntry;
+Edit result=formonly.result, tabIndex=18, title=%"result", noEntry;
+CheckBox sel_1=formonly.sel_1 type VARCHAR, tabIndex=19, title=%"sel_1", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit hray01_1=formonly.hray01_1 type VARCHAR, action=controlp, tabIndex=20, title=%"hray01_1", image="zoom";
+Edit hrax02_1=formonly.hrax02_1 type VARCHAR, tabIndex=21, title=%"hrax02_1", noEntry;
+Edit hraa12_1=formonly.hraa12_1 type VARCHAR, tabIndex=22, title=%"hraa12_1", noEntry;
+Edit hrao02_1=formonly.hrao02_1 type VARCHAR, tabIndex=23, title=%"hrao02_1", noEntry;
+Edit hras04_1=formonly.hras04_1 type VARCHAR, tabIndex=24, title=%"hras04_1", noEntry;
+DateEdit hray02_1=formonly.hray02_1 type DATE, tabIndex=25, title=%"hray02_1", noEntry;
+ButtonEdit hray03_1=formonly.hray03_1 type VARCHAR, action=controlp, tabIndex=26, title=%"hray03_1", noEntry, image="zoom";
+Edit zg_part_=formonly.zg_part_1 type VARCHAR, tabIndex=27, title=%"zg_part_1", noEntry;
+ButtonEdit hray04_1=formonly.hray04_1 type VARCHAR, action=controlp, tabIndex=28, title=%"hray04_1", noEntry, image="zoom";
+Edit zg_post_=formonly.zg_post_1 type VARCHAR, tabIndex=29, title=%"zg_post_1", noEntry;
+ButtonEdit hray05_1=formonly.hray05_1 type VARCHAR, action=controlp, tabIndex=30, title=%"hray05_1", noEntry, image="zoom";
+Edit cf_name_=formonly.cf_name_1 type VARCHAR, tabIndex=31, title=%"cf_name_1", noEntry;
+Edit hray06_1=formonly.hray06_1 type VARCHAR, tabIndex=32, title=%"hray06_1", noEntry;
+Edit hray07_1=formonly.hray07_1 type VARCHAR, tabIndex=33, title=%"hray07_1", noEntry;
+Edit result_1=formonly.result_1 type VARCHAR, tabIndex=34, title=%"result_1", noEntry;
+Label label1:Label1, text=%"Count", sizePolicy=initial;
+Edit cnt1=formonly.cnt1, tabIndex=9;
+Label lab:Label2, text=%"/";
+Label label3:Label3, text=%"Selected";
+Edit cnt2=formonly.cnt2, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hray(formonly.sel,hray_file.hray01,hrax_file.hrax02,hraa_file.hraa12,hrao_file.hrao02,hras_file.hras04,hray_file.hray02,hray_file.hray03,formonly.zg_part,hray_file.hray04,formonly.zg_post,hray_file.hray05,formonly.cf_name,hray_file.hray06,hray_file.hray07,formonly.result)
+SCREEN RECORD Undefined(formonly.cnt1,formonly.cnt2)
+SCREEN RECORD s_hray_1(formonly.sel_1,formonly.hray01_1,formonly.hrax02_1,formonly.hraa12_1,formonly.hrao02_1,formonly.hras04_1,formonly.hray02_1,formonly.hray03_1,formonly.zg_part_1,formonly.hray04_1,formonly.zg_post_1,formonly.hray05_1,formonly.cf_name_1,formonly.hray06_1,formonly.hray07_1,formonly.result_1)
+END -- INSTRUCTIONS
+

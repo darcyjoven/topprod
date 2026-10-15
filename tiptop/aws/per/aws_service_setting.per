@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_service_setting.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="Service_setting")
+VBox vb3
+Grid gr4
+{
+ <G group01                                                                                                 >
+   Service ID                        [wgf01             ]
+   GPM SOAP Services URL             [wgf02                                            ]
+   GPM HTTP Services URL             [wgf03                                            ]
+   GPM SOAP Services URL example     [s04                                                                 ]
+   GPM HTTP Services URL example     [s05                                                                 ]
+ <                                                                                                          >
+
+}
+END -- gr4
+Table s_bwgf
+{
+[bwgf01       |bwgf02                                            |bwgf03                                            ]
+[bwgf01       |bwgf02                                            |bwgf03                                            ]
+[bwgf01       |bwgf02                                            |bwgf03                                            ]
+[bwgf01       |bwgf02                                            |bwgf03                                            ]
+[bwgf01       |bwgf02                                            |bwgf03                                            ]
+
+}
+END -- s_bwgf
+END -- vb3
+END -- aws_service_setting
+
+TABLES
+wgf_file
+ATTRIBUTES
+Group group01:group01, text="Service Setting";
+Edit wgf01=wgf_file.wgf01, tabIndex=1, not null, required;
+Edit wgf02=wgf_file.wgf02, tabIndex=2, not null, required;
+Edit wgf03=wgf_file.wgf03, tabIndex=3;
+Edit s04=formonly.s04 type VARCHAR, tabIndex=4, noEntry;
+Edit s05=formonly.s05 type VARCHAR, tabIndex=5, noEntry;
+Edit bwgf01=formonly.bwgf01 type CHAR, tabIndex=5, title="Service ID", noEntry;
+Edit bwgf02=formonly.bwgf02 type CHAR, tabIndex=6, title="SOAP Services URL", noEntry;
+Edit bwgf03=formonly.bwgf03 type CHAR, tabIndex=7, title="HTTP Services URL", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bwgf(formonly.bwgf01,formonly.bwgf02,formonly.bwgf03)
+SCREEN RECORD Undefined(wgf_file.wgf01,wgf_file.wgf02,wgf_file.wgf03,formonly.s04,formonly.s05)
+END -- INSTRUCTIONS
+

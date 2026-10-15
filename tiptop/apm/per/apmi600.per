@@ -1,0 +1,338 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi600")
+Folder pc34
+Page Page94(action=main, text=%"Page0")
+VBox VBox1
+Folder pc929
+Page page01(action=main_pg, text="Main")
+HBox hb1
+Grid gr4855
+{
+ Vendor No.            [pmc01     ]
+ Abbreviation          [pmc03     ]
+ Full Name             [pmc081                                  ]
+                       [pmc082                                  ]
+ Uniform#              [pmc24               ][pmc903            ]
+ Data Property         [pmc14     ]
+ Data Source           [pmc1920   ]
+
+
+}
+END -- gr4855
+Grid gr4856
+{
+ Vendor Classification [pmc02     ][pmy02               ]
+ Vendor Property       [pmc30     ]
+ Paying Vendor         [pmc04     ] [pmc03_d   ]
+ Delivery Vendor       [pmc901    ] [pmc03_e   ]
+ Current Status        [pmc05     ] [imgmksg]
+                                    [       ]
+
+
+
+}
+END -- gr4856
+END -- hb1
+END -- page01
+Page info(action=info_pg, text="Info")
+Grid gr4857
+{
+ Record Owner        [pmcuser   ]  Last Modified by    [pmcmodu   ]   Data Valid Code   [pmcacti   ]
+ Department          [pmcgrup   ]  Create/Modify Date  [pmcdate     ] Create Date       [pmccrat   ]
+ Record Orig.        [pmcoriu   ]
+ Dept Orig.          [pmcorig   ]
+}
+END -- gr4857
+END -- info
+END -- pc929
+Folder pc930
+Page page02(text="Used Setting")
+Grid gr4858
+{
+ <G group02                                                          ><G group03                                   > <G group06                                                            >
+  Payment Terms         [pmc17     ] [pma02               ]           [pmc48                              ]              Agence NO.          [pmc930         ][pmc930_desc          ]
+  Price Terms           [pmc49     ] [pnz02                         ]  Submit Promise          [pmc902    ]              Slivery Day         [pmc58          ]
+  Used Currency         [pmc22     ] [azi02               ]            Note Recipt             [pmc27     ]              Purchase Interval   [pmc59          ]
+  Used Tax              [pmc47     ] [gec02               ]            Cash Note Due Date      [pmc50     ]             [dummy01           ] [week01]    [week02]     [week03]
+  Used Commission       [pmc54     ]                                   Term Note Due Date      [pmc51     ]                                  [week04]    [week05]     [week06]
+  Used Language         [pmc911    ]                                   Charge(Postage/Transfer)[pmc28     ]                                  [week07]
+  Closing Date          [pmc29   ]                                     Incl./Excl. charges     [pmc281    ]
+                                                                       [pmc912                            ]
+                                                                       [pmc913                                    ]
+
+
+
+ <                                                                   ><                                            > <                                                                     >
+
+}
+END -- gr4858
+END -- page02
+Page page03(text="Vendor Information")
+Grid gr4859
+{
+ <G group04                                               ><G group05                                               >
+  Local #       [pmc908    ] [geo02          ]
+  Country #     [pmc07     ] [geb02          ]              Account         [pmc56                  ]
+  Area Code     [pmc06     ] [gea02          ]              Remitting Bank  [pmc55     ] [nmt02                    ]
+  ZIP Code      [pmc904    ]                                type            [pmc57               ]
+  Address       [pmc091                        ]            Phone           [pmc10               ]
+                [pmc092                        ]            Fax             [pmc11               ]
+                [pmc093                        ]            Telx            [pmc12               ]
+                [pmc094                        ]            Evaluation Date [pmc1917             ]
+                [pmc095                        ]            Evaluation Score[pmc1918   ]
+  Invoice       [pmc52                                   ]  Evaluation Grade[pmc]
+  Mail          [pmc53                                   ]
+  Ship Address  [pmc15     ] Bill Address  [pmc16     ]
+  Print Barcode [pmc61      ]
+
+
+
+
+
+ <                                                        ><                                                        >
+
+}
+END -- gr4859
+END -- page03
+Page page04(text="Bond Information")
+Grid gr4860
+{
+ Bond-in Reason Code[pmc1912    ]
+ Reason Code Desc1  [reason1         ]
+ Bond-re Reason Code[pmc1913    ]
+ Reason Code Desc1  [reason2         ]
+ Customs Doc        [pmc1914    ]
+ Bond Sales         [pmc1915    ]
+ Manager            [pmc1916    ]
+
+
+}
+END -- gr4860
+END -- page04
+Page Page05(text=%"VMI Information")
+Grid gr17
+{
+ <G gb6                                             ><G gb5                                                      >
+ [pmc914            ]                                 VMI Settling Receipt             [pmc919                  ]
+  VMI Store               [pmc915                  ]  VMI Settling Stock-In Note       [pmc920                  ]
+  VMI Location            [pmc916                  ]  VMI Settling Return Note         [pmc921                  ]
+  VMI Settling Store      [pmc917                  ]  VMI Misc. Issue                  [pmc922                  ]
+  VMI Settling Location   [pmc918                  ]  VMI Misc. Receipt                [pmc923                  ]
+ <                                                  ><                                                           >
+
+}
+END -- gr17
+END -- Page05
+Page userdefined_field(text="User Defined Field")
+Grid gr4861
+{
+ userdefined_field01 [pmcud01              ] userdefined_field07 [pmcud07           ]  userdefined_field10 [pmcud10           ]
+                     [                     ] userdefined_field08 [pmcud08           ]  userdefined_field11 [pmcud11           ]
+ userdefined_field02 [pmcud02           ]    userdefined_field09 [pmcud09           ]  userdefined_field12 [pmcud12           ]
+ userdefined_field03 [pmcud03           ]                                              userdefined_field13 [pmcud13           ]
+ userdefined_field04 [pmcud04           ]                                              userdefined_field14 [pmcud14           ]
+ userdefined_field05 [pmcud05           ]                                              userdefined_field15 [pmcud15           ]
+ userdefined_field06 [pmcud06           ]
+
+}
+END -- gr4861
+END -- userdefined_field
+END -- pc930
+Grid gr4862
+{
+ ----------Rows[idx ]/ [cnt   ] ----------
+
+
+
+
+}
+END -- gr4862
+END -- VBox1
+END -- Page94
+Page page95(action=vendor_list, text=%"page95")
+Table s_pmc_l
+{
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+[pmc01_l_1 |pmc03_l_1   |pmc081_l_1                              |pmc24_l_1           |pmc14_l_1    |pmc02_l_1            |pmc30_l_1      |pmc04_l_1    |pmc901_l_1     |pmc05_l_1     |pmcacti_l_1    |pmc1920_l_1]
+
+}
+END -- s_pmc_l
+END -- page95
+END -- pc34
+END -- apmi600
+
+TABLES
+pmc_file
+ATTRIBUTES
+ButtonEdit pmc01=pmc_file.pmc01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Vender no. Terms";
+ButtonEdit pmc03=pmc_file.pmc03, action=update_item, tabIndex=2, image="pen", comment="Maintain field data in Multi. Language";
+Edit pmc081=pmc_file.pmc081, tabIndex=3;
+Edit pmc082=pmc_file.pmc082, tabIndex=4;
+Edit pmc24=pmc_file.pmc24, tabIndex=5;
+CheckBox pmc903=pmc_file.pmc903, tabIndex=6, text="Affiliate?  ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox pmc14=pmc_file.pmc14, tabIndex=7, not null, required, queryEditable, comment="1.Pur Vender 2.Misc Vender 3.Employee 4.Agent 5.Advertisement Agent 6.Agent Cust ", items=(("1", "Pur Vender"),("2", "Misc Vender"),("3", "Employee"),("4", "Agent"),("5", "Advertisement Agent"),("6", "Agent Cust"));
+ButtonEdit pmc1920=pmc_file.pmc1920, action=controlp, tabIndex=8, noEntry, not null, required, image="zoom";
+ButtonEdit pmc02=pmc_file.pmc02, action=controlp, tabIndex=9, image="zoom", comment="<^P>Query Vender Classification Code";
+Edit pmy02=formonly.pmy02 type CHAR, tabIndex=10;
+ComboBox pmc30=pmc_file.pmc30, tabIndex=11, not null, required, queryEditable, comment="1.Supplier 2.Payer Vender 3.Both", items=(("1", "Supplier"),("2", "Payer Vender"),("3", "Both"));
+ButtonEdit pmc04=pmc_file.pmc04, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Paying Vender, <^Y>Create Paying Vender";
+Edit pmc03_d=formonly.pmc03_d type CHAR, tabIndex=13;
+ButtonEdit pmc901=pmc_file.pmc901, action=controlp, tabIndex=14, image="zoom", comment="<^P>Query ";
+Edit pmc03_e=formonly.pmc03_e type CHAR, tabIndex=15;
+ComboBox pmc05=pmc_file.pmc05, tabIndex=16, noEntry, not null, required, queryEditable, items=(("0", "Issue"),("1", "Confirm"),("2", "Hung"),("3", "Stop"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit pmcuser=pmc_file.pmcuser, tabIndex=17, noEntry;
+Edit pmcmodu=pmc_file.pmcmodu, tabIndex=18, noEntry;
+Edit pmcacti=pmc_file.pmcacti, tabIndex=19, noEntry, upShift;
+Edit pmcgrup=pmc_file.pmcgrup, tabIndex=20, noEntry;
+DateEdit pmcdate=pmc_file.pmcdate, tabIndex=21, noEntry;
+DateEdit pmccrat=pmc_file.pmccrat, tabIndex=114, noEntry;
+Edit pmcoriu=pmc_file.pmcoriu, tabIndex=119, noEntry;
+Edit pmcorig=pmc_file.pmcorig, tabIndex=120, noEntry;
+Group group02:group02;
+ButtonEdit pmc17=pmc_file.pmc17, action=controlp, tabIndex=22, not null, required, image="zoom", comment="<^P>Qry Payment Terms";
+Edit pma02=formonly.pma02 type CHAR, tabIndex=23, noEntry;
+ButtonEdit pmc49=pmc_file.pmc49, action=controlp, tabIndex=24, not null, required, image="zoom", comment="<^P>Qry Price Terms";
+Edit pnz02=formonly.pnz02 type CHAR, tabIndex=25, noEntry;
+ButtonEdit pmc22=pmc_file.pmc22, action=controlp, tabIndex=26, not null, required, image="zoom", comment="<^P>Qry Currency ";
+Edit azi02=formonly.azi02 type CHAR, tabIndex=27;
+ButtonEdit pmc47=pmc_file.pmc47, action=controlp, tabIndex=28, not null, required, image="zoom", comment="<^P>Qry Tax Type ";
+Edit gec02=formonly.gec02 type CHAR, tabIndex=29;
+ButtonEdit pmc54=pmc_file.pmc54, action=controlp, tabIndex=30, image="zoom", comment="<^P>Qry Details";
+ComboBox pmc911=pmc_file.pmc911, tabIndex=31, not null, required, queryEditable, comment="0.Tradition Chinese 1.English 2.Simply Chinese", items=(("0", "Tradition Chinese"),("1", "English"),("2", "Simply Chinese"));
+Edit pmc29=pmc_file.pmc29, tabIndex=32;
+Group group03:group03;
+CheckBox pmc48=pmc_file.pmc48, tabIndex=33, text="No Endorsement", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox pmc902=pmc_file.pmc902, tabIndex=34, not null, required, queryEditable, comment="0.Not Need 1.Not Pay 2.Submitted", items=(("0", "Not Need"),("1", "Not Pay"),("2", "Submitted"));
+ComboBox pmc27=pmc_file.pmc27, tabIndex=35, not null, required, queryEditable, comment="1.Mail 2.Take 3.Other", items=(("1", "Mail"),("2", "Take"),("3", "Other"));
+Edit pmc50=pmc_file.pmc50, tabIndex=36;
+Edit pmc51=pmc_file.pmc51, tabIndex=37;
+Edit pmc28=pmc_file.pmc28, tabIndex=38;
+ComboBox pmc281=pmc_file.pmc281, tabIndex=39, default = "0", not null, required, items=(("0", "Incl. charges"),("1", "Excl. charges"));
+CheckBox pmc912=pmc_file.pmc912, tabIndex=40, text="Mail TO vendor?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pmc913=pmc_file.pmc913, tabIndex=41, text="Cross-check prepayment with that on PO", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group06:group06;
+ButtonEdit pmc930=pmc_file.pmc930, action=controlp, tabIndex=118, image="zoom.png";
+Edit pmc930_desc=formonly.pmc930_desc type CHAR, tabIndex=115, noEntry;
+Edit pmc58=pmc_file.pmc58, tabIndex=116;
+Edit pmc59=pmc_file.pmc59, tabIndex=117;
+Label dummy01:dummy01, text="Purchase Week";
+CheckBox week01=formonly.week01 type CHAR, tabIndex=121, default = "1", text=%"01", not null, valueChecked = 1, valueUnchecked = 0;
+CheckBox week02=formonly.week02 type CHAR, tabIndex=122, default = "1", text=%"02", not null, valueChecked = 1, valueUnchecked = 0;
+CheckBox week03=formonly.week03 type CHAR, tabIndex=123, default = "1", text=%"03", not null, valueChecked = 1, valueUnchecked = 0;
+CheckBox week04=formonly.week04 type CHAR, tabIndex=124, default = "1", text=%"04", not null, valueChecked = 1, valueUnchecked = 0;
+CheckBox week05=formonly.week05 type CHAR, tabIndex=125, default = "1", text=%"05", not null, valueChecked = 1, valueUnchecked = 0;
+CheckBox week06=formonly.week06 type CHAR, tabIndex=126, default = "1", text=%"06", not null, valueChecked = 1, valueUnchecked = 0;
+CheckBox week07=formonly.week07 type CHAR, tabIndex=127, default = "1", text=%"07", not null, valueChecked = 1, valueUnchecked = 0;
+Group group04:group04;
+ButtonEdit pmc908=pmc_file.pmc908, action=controlp, tabIndex=42, image="zoom", comment="<^P>Qry Local ";
+Edit geo02=formonly.geo02 type VARCHAR, tabIndex=43, noEntry;
+ButtonEdit pmc07=pmc_file.pmc07, action=controlp, tabIndex=44, image="zoom";
+Edit geb02=formonly.geb02 type VARCHAR, tabIndex=45, noEntry;
+ButtonEdit pmc06=pmc_file.pmc06, action=controlp, tabIndex=46, image="zoom";
+Edit gea02=formonly.gea02 type VARCHAR, tabIndex=47, noEntry;
+Edit pmc904=pmc_file.pmc904, tabIndex=48;
+Edit pmc091=pmc_file.pmc091, tabIndex=49;
+Edit pmc092=pmc_file.pmc092, tabIndex=50;
+Edit pmc093=pmc_file.pmc093, tabIndex=51;
+Edit pmc094=pmc_file.pmc094, tabIndex=52;
+Edit pmc095=pmc_file.pmc095, tabIndex=53;
+Edit pmc52=pmc_file.pmc52, tabIndex=54, comment="Enter Vender Invoice Address";
+Edit pmc53=pmc_file.pmc53, tabIndex=55;
+ButtonEdit pmc15=pmc_file.pmc15, action=controlp, tabIndex=56, image="zoom", comment="<^P>Qry Shipping Address <^Y>Create Delivery Address";
+ButtonEdit pmc16=pmc_file.pmc16, action=controlp, tabIndex=57, image="zoom", comment="<^P>Qry Bill Address  <^Y>Create Bill Address";
+ComboBox pmc61=pmc_file.pmc61, tabIndex=58, not null, required, items=(("N", "No Generated"),("1", "barcode style：Product Barcode"),("2", "barcode style：Product Barcode：Purchase Order+Line No."));
+Group group05:group05;
+Edit pmc56=pmc_file.pmc56, tabIndex=59;
+ButtonEdit pmc55=pmc_file.pmc55, action=controlp, tabIndex=60, image="zoom", comment="<^P>Qry All Banks     ";
+Edit nmt02=formonly.nmt02 type VARCHAR, tabIndex=128, noEntry;
+ComboBox pmc57=pmc_file.pmc57, tabIndex=61, items=(("10", "Mail"),("11", "Fax"),("12", "E-mail"),("14", "Fax & E-mail"),("99", "no note"));
+Edit pmc10=pmc_file.pmc10, tabIndex=62;
+Edit pmc11=pmc_file.pmc11, tabIndex=63;
+Edit pmc12=pmc_file.pmc12, tabIndex=64;
+Edit pmc1917=formonly.pmc1917 type CHAR, tabIndex=65, noEntry;
+Edit pmc1918=formonly.pmc1918 type CHAR, tabIndex=66, noEntry;
+Edit pmc=formonly.pmc1919 type CHAR, tabIndex=67, noEntry;
+ButtonEdit pmc1912=pmc_file.pmc1912, action=controlp, tabIndex=68, image="zoom", comment="<^P>Qry reason ";
+Edit reason1=formonly.reason1 type CHAR, tabIndex=69, noEntry;
+ButtonEdit pmc1913=pmc_file.pmc1913, action=controlp, tabIndex=70, image="zoom", comment="<^P>Qry reason ";
+Edit reason2=formonly.reason2 type CHAR, tabIndex=71, noEntry;
+Edit pmc1914=pmc_file.pmc1914, tabIndex=72;
+Edit pmc1915=pmc_file.pmc1915, tabIndex=73;
+Edit pmc1916=pmc_file.pmc1916, tabIndex=74;
+Group gb6:gb6;
+CheckBox pmc914=pmc_file.pmc914, tabIndex=75, default = "N", text="VMI Magagement", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit pmc915=pmc_file.pmc915, action=controlp, tabIndex=76, not null, required, image="zoom";
+ButtonEdit pmc916=pmc_file.pmc916, action=controlp, tabIndex=77, not null, required, image="zoom";
+ButtonEdit pmc917=pmc_file.pmc917, action=controlp, tabIndex=78, not null, required, image="zoom";
+ButtonEdit pmc918=pmc_file.pmc918, action=controlp, tabIndex=79, not null, required, image="zoom";
+Group gb5:gb5;
+ButtonEdit pmc919=pmc_file.pmc919, action=controlp, tabIndex=80, not null, required, image="zoom";
+ButtonEdit pmc920=pmc_file.pmc920, action=controlp, tabIndex=81, not null, required, image="zoom";
+ButtonEdit pmc921=pmc_file.pmc921, action=controlp, tabIndex=82, not null, required, image="zoom";
+ButtonEdit pmc922=pmc_file.pmc922, action=controlp, tabIndex=83, not null, required, image="zoom";
+ButtonEdit pmc923=pmc_file.pmc923, action=controlp, tabIndex=84, not null, required, image="zoom";
+TextEdit pmcud01=pmc_file.pmcud01, tabIndex=85, stretch=NONE;
+Edit pmcud07=pmc_file.pmcud07, tabIndex=91, scroll;
+Edit pmcud10=pmc_file.pmcud10, tabIndex=94, scroll;
+Edit pmcud08=pmc_file.pmcud08, tabIndex=92, scroll;
+Edit pmcud11=pmc_file.pmcud11, tabIndex=95, scroll;
+Edit pmcud02=pmc_file.pmcud02, tabIndex=86;
+Edit pmcud09=pmc_file.pmcud09, tabIndex=93, scroll;
+Edit pmcud12=pmc_file.pmcud12, tabIndex=96, scroll;
+Edit pmcud03=pmc_file.pmcud03, tabIndex=87;
+DateEdit pmcud13=pmc_file.pmcud13, tabIndex=97;
+Edit pmcud04=pmc_file.pmcud04, tabIndex=88;
+DateEdit pmcud14=pmc_file.pmcud14, tabIndex=98;
+Edit pmcud05=pmc_file.pmcud05, tabIndex=89;
+DateEdit pmcud15=pmc_file.pmcud15, tabIndex=99;
+Edit pmcud06=pmc_file.pmcud06, tabIndex=90;
+Edit idx=formonly.idx type CHAR, tabIndex=100, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=101, noEntry;
+Edit pmc01_l_1=formonly.pmc01_l_1 type VARCHAR, tabIndex=102, title="Vendor No.";
+Edit pmc03_l_1=formonly.pmc03_l_1 type VARCHAR, tabIndex=103, title="Abbreviation";
+Edit pmc081_l_1=formonly.pmc081_l_1 type VARCHAR, tabIndex=104, title="Full Name";
+Edit pmc24_l_1=formonly.pmc24_l_1 type VARCHAR, tabIndex=105, title="Uniform#";
+ComboBox pmc14_l_1=formonly.pmc14_l_1 type VARCHAR, tabIndex=106, title="Data Property", items=(("1", "Shipment Vendor"),("2", "Miscellaneous Vendor"),("3", "Staff"),("4", "Agents"),("5", "Advertisement Agent"),("6", "Substituting Delivery Vendor"));
+Edit pmc02_l_1=formonly.pmc02_l_1 type VARCHAR, tabIndex=107, title="Vendor Classification";
+ComboBox pmc30_l_1=formonly.pmc30_l_1 type VARCHAR, tabIndex=108, title="Vendor Property", items=(("1", "Shipping Companies"),("2", "Vendor Payments"),("3", "Both"));
+Edit pmc04_l_1=formonly.pmc04_l_1 type VARCHAR, tabIndex=109, title="Paying Vendor";
+Edit pmc901_l_1=formonly.pmc901_l_1 type VARCHAR, tabIndex=110, title="Delivery Vendor";
+ComboBox pmc05_l_1=formonly.pmc05_l_1 type VARCHAR, tabIndex=111, title="Current Status", items=(("0", "Open"),("1", "Confirm"),("2", "Hang"),("3", "Untransaction"));
+Edit pmcacti_l_1=formonly.pmcacti_l_1 type VARCHAR, tabIndex=112, title="Data Valid Code";
+Edit pmc1920_l_1=formonly.pmc1920_l_1 type VARCHAR, tabIndex=113, title="Data Source";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmc_l(formonly.pmc01_l_1,formonly.pmc03_l_1,formonly.pmc081_l_1,formonly.pmc24_l_1,formonly.pmc14_l_1,formonly.pmc02_l_1,formonly.pmc30_l_1,formonly.pmc04_l_1,formonly.pmc901_l_1,formonly.pmc05_l_1,formonly.pmcacti_l_1,formonly.pmc1920_l_1)
+SCREEN RECORD Undefined(pmc_file.pmc01,pmc_file.pmc03,pmc_file.pmc081,pmc_file.pmc082,pmc_file.pmc24,pmc_file.pmc903,pmc_file.pmc14,pmc_file.pmc1920,pmc_file.pmc02,formonly.pmy02,pmc_file.pmc30,pmc_file.pmc04,formonly.pmc03_d,pmc_file.pmc901,formonly.pmc03_e,pmc_file.pmc05,formonly.imgmksg,pmc_file.pmcuser,pmc_file.pmcmodu,pmc_file.pmcacti,pmc_file.pmcgrup,pmc_file.pmcdate,pmc_file.pmccrat,pmc_file.pmcoriu,pmc_file.pmcorig,pmc_file.pmc17,formonly.pma02,pmc_file.pmc49,formonly.pnz02,pmc_file.pmc22,formonly.azi02,pmc_file.pmc47,formonly.gec02,pmc_file.pmc54,pmc_file.pmc911,pmc_file.pmc29,pmc_file.pmc48,pmc_file.pmc902,pmc_file.pmc27,pmc_file.pmc50,pmc_file.pmc51,pmc_file.pmc28,pmc_file.pmc281,pmc_file.pmc912,pmc_file.pmc913,pmc_file.pmc930,formonly.pmc930_desc,pmc_file.pmc58,pmc_file.pmc59,pmc_file.pmc908,formonly.geo02,pmc_file.pmc07,formonly.geb02,pmc_file.pmc06,formonly.gea02,pmc_file.pmc904,pmc_file.pmc091,pmc_file.pmc092,pmc_file.pmc093,pmc_file.pmc094,pmc_file.pmc095,pmc_file.pmc52,pmc_file.pmc53,pmc_file.pmc15,pmc_file.pmc16,pmc_file.pmc61,pmc_file.pmc56,pmc_file.pmc55,pmc_file.pmc57,pmc_file.pmc10,pmc_file.pmc11,pmc_file.pmc12,formonly.pmc1917,formonly.pmc1918,formonly.pmc1919,pmc_file.pmc1912,formonly.reason1,pmc_file.pmc1913,formonly.reason2,pmc_file.pmc1914,pmc_file.pmc1915,pmc_file.pmc1916,pmc_file.pmc914,pmc_file.pmc915,pmc_file.pmc916,pmc_file.pmc917,pmc_file.pmc918,pmc_file.pmc919,pmc_file.pmc920,pmc_file.pmc921,pmc_file.pmc922,pmc_file.pmc923,pmc_file.pmcud01,pmc_file.pmcud07,pmc_file.pmcud10,pmc_file.pmcud08,pmc_file.pmcud11,pmc_file.pmcud02,pmc_file.pmcud09,pmc_file.pmcud12,pmc_file.pmcud03,pmc_file.pmcud13,pmc_file.pmcud04,pmc_file.pmcud14,pmc_file.pmcud05,pmc_file.pmcud15,pmc_file.pmcud06,formonly.idx,formonly.cnt,formonly.week01,formonly.week02,formonly.week03,formonly.week04,formonly.week05,formonly.week06,formonly.week07,formonly.nmt02)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq821_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsq821_1")
+VBox vb3
+Folder pc3
+Page page01(text=%"Main")
+Grid gr8
+{
+  APS Version     [vod01               ]                                   Dept/Fabricator [sfb82               ]
+  Save Version    [vod02       ]                                           WO Date         [sfb81               ]
+  WO No.          [vod05               ]                                   Confirm         [sfb87         ]
+  Item No.        [vod09               ]                                   WO Type         [sfb02         ]
+  Item Name       [ima02                                 ]
+  Item Spec       [ima021                                ]
+
+
+
+}
+END -- gr8
+END -- page01
+END -- pc3
+Table s_vof
+{
+[vo|v1|v2|v3|voi10         |vof05         |vof06       |ecd02                 |vof17      |eca02                 |vof08     |vof09        |sub  |vof10         |vof11        ]
+[vo|v1|v2|v3|voi10         |vof05         |vof06       |ecd02                 |vof17      |eca02                 |vof08     |vof09        |sub  |vof10         |vof11        ]
+[vo|v1|v2|v3|voi10         |vof05         |vof06       |ecd02                 |vof17      |eca02                 |vof08     |vof09        |sub  |vof10         |vof11        ]
+[vo|v1|v2|v3|voi10         |vof05         |vof06       |ecd02                 |vof17      |eca02                 |vof08     |vof09        |sub  |vof10         |vof11        ]
+[vo|v1|v2|v3|voi10         |vof05         |vof06       |ecd02                 |vof17      |eca02                 |vof08     |vof09        |sub  |vof10         |vof11        ]
+[vo|v1|v2|v3|voi10         |vof05         |vof06       |ecd02                 |vof17      |eca02                 |vof08     |vof09        |sub  |vof10         |vof11        ]
+[vo|v1|v2|v3|voi10         |vof05         |vof06       |ecd02                 |vof17      |eca02                 |vof08     |vof09        |sub  |vof10         |vof11        ]
+[vo|v1|v2|v3|voi10         |vof05         |vof06       |ecd02                 |vof17      |eca02                 |vof08     |vof09        |sub  |vof10         |vof11        ]
+[vo|v1|v2|v3|voi10         |vof05         |vof06       |ecd02                 |vof17      |eca02                 |vof08     |vof09        |sub  |vof10         |vof11        ]
+[vo|v1|v2|v3|voi10         |vof05         |vof06       |ecd02                 |vof17      |eca02                 |vof08     |vof09        |sub  |vof10         |vof11        ]
+}
+END -- s_vof
+Grid gr881
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr881
+END -- vb3
+END -- apsq821_1
+
+TABLES
+voi_file,
+eca_file,
+vof_file,
+vod_file,
+sfb_file,
+ecd_file
+ATTRIBUTES
+ButtonEdit vod01=vod_file.vod01, action=controlp, tabIndex=27, image="zoom";
+Edit sfb82=sfb_file.sfb82, tabIndex=20;
+Edit vod02=vod_file.vod02, tabIndex=26;
+DateEdit sfb81=sfb_file.sfb81, tabIndex=4;
+ButtonEdit vod05=vod_file.vod05, action=controlp, tabIndex=3, image="zoom";
+ComboBox sfb87=sfb_file.sfb87, tabIndex=5, items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "Cancel"));
+ButtonEdit vod09=vod_file.vod09, action=controlp, tabIndex=7, image="zoom";
+ComboBox sfb02=sfb_file.sfb02, tabIndex=6, items=(("1", "General WO"),("11", "Disassembly WO"),("13", "Forecast WO"),("15", "Sampling WO"),("5", "Rework WO"),("7", "Sub. Order"),("8", "Rework Sub. WO"));
+Edit ima02=formonly.ima02 type CHAR, tabIndex=8;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=19;
+Edit vo=vof_file.vof01, tabIndex=21, title="vof01";
+Edit v1=vof_file.vof02, tabIndex=22, title="vof02";
+Edit v2=vof_file.vof03, tabIndex=23, title="vof03";
+Edit v3=vof_file.vof04, tabIndex=24, title="vof04";
+ComboBox voi10=voi_file.voi10, tabIndex=25, title="APS Change Code", items=(("1", "No Change"),("2", "Inner WO To Outsourcing"),("3", "Outsourcing Change Vendor"),("4", "WO Routing Change"));
+Edit vof05=vof_file.vof05, tabIndex=9, title="Routing Sequence";
+ButtonEdit vof06=vof_file.vof06, action=controlp, tabIndex=10, title="Operation No.", image="zoom";
+Edit ecd02=ecd_file.ecd02, tabIndex=11, title="Operation Description";
+ButtonEdit vof17=vof_file.vof17, action=controlp, tabIndex=12, title="Workstation No.", image="zoom";
+Edit eca02=eca_file.eca02, tabIndex=14, title="Description";
+Edit vof08=vof_file.vof08, tabIndex=13, title="Earliest Start Date allowed";
+Edit vof09=vof_file.vof09, tabIndex=15, title="Latest Finish Date allowed";
+CheckBox sub=formonly.sub type CHAR, tabIndex=16, title="Sub", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit vof10=vof_file.vof10, tabIndex=17, title="Resource Group No.";
+Edit vof11=vof_file.vof11, tabIndex=18, title="Resource No.";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=1, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vof(vof_file.vof01,vof_file.vof02,vof_file.vof03,vof_file.vof04,voi_file.voi10,vof_file.vof05,vof_file.vof06,ecd_file.ecd02,vof_file.vof17,eca_file.eca02,vof_file.vof08,vof_file.vof09,formonly.sub,vof_file.vof10,vof_file.vof11)
+SCREEN RECORD Undefined(vod_file.vod01,sfb_file.sfb82,vod_file.vod02,sfb_file.sfb81,vod_file.vod05,sfb_file.sfb87,vod_file.vod09,sfb_file.sfb02,formonly.ima02,formonly.ima021,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

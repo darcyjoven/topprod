@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi4001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="apsi4001 優先序自訂")
+Folder pc2
+Page SORT(text=%"Page01")
+Grid gr6
+{
+ <G gb6                                                    >
+
+   [order01     ]  [order02     ]   [order03     ]
+
+
+    order kind of SO Type           [order04     ]
+
+    reorder vmu_file                [order0]
+                                    [      ]
+ <                                                         >
+
+}
+END -- gr6
+END -- SORT
+END -- pc2
+END -- apsi4001
+
+ATTRIBUTES
+Group gb6:gb6, text="sort";
+ComboBox order01=formonly.order01 type VARCHAR, tabIndex=1, default = "1", required, items=(("1", "Item No."),("2", "Customer"),("3", "Salesman"),("4", "SO Type"),("5", "Shipping Date"));
+ComboBox order02=formonly.order02 type VARCHAR, tabIndex=2, default = "2", required, items=(("1", "Item No."),("2", "Customer"),("3", "Salesman"),("4", "SO Type"),("5", "Shipping Date"));
+ComboBox order03=formonly.order03 type VARCHAR, tabIndex=3, default = "3", required, items=(("1", "Item No."),("2", "Customer"),("3", "Salesman"),("4", "SO Type"),("5", "Shipping Date"));
+ComboBox order04=formonly.order04 type VARCHAR, tabIndex=4, not null, items=(("R", "order"),("F", "forcast"));
+RadioGroup order0=formonly.order05 type VARCHAR, tabIndex=5, not null, required, items=(("Y", "Yes"),("N", "No"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.order01,formonly.order02,formonly.order03,formonly.order04,formonly.order05)
+END -- INSTRUCTIONS
+

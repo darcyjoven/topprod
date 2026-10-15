@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmr864.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr864")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                                                  >
+    Logistics Code        [azp01                         ]
+                          [dummy1                                            ]
+ <                                                                           >
+ <G group1                                                                   >
+    Product Class         [ima131                        ]
+    Brand                 [ima1005                       ]
+
+ <                                                                           >
+ <G group02                                                                  >
+
+    Cost Calculation Type [type01                        ]
+    Compare Type          [type02                        ]
+    Base Date             [yy01     ] / [mm01 ]
+    Compare Date          [yy02     ] / [mm02 ]
+ <                                                                           >
+}
+END -- gr1
+Grid gr2
+{
+
+ [more                                              ]
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr2
+END -- VBox1
+END -- axmr864
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit azp01=formonly.azp01 type CHAR, action=controlp, tabIndex=1, not null, image="zoom";
+Label dummy1:dummy1, text="LRDMDS,QY\'|\'H\';\'GK";
+Group group1:group1, text=%"QBE 2";
+ButtonEdit ima131=formonly.ima131 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit ima1005=formonly.ima1005 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Group group02:group02, text="INPUT";
+ComboBox type01=formonly.type01 type CHAR, tabIndex=10, not null, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+ComboBox type02=formonly.type02 type SMALLINT, tabIndex=4, default = "1", not null, items=(("1", "yy"),("2", "yymm"));
+Edit yy01=formonly.yy01 type INTEGER, tabIndex=6, not null, required;
+Edit mm01=formonly.mm01 type INTEGER, tabIndex=7, not null, required;
+Edit yy02=formonly.yy02 type INTEGER, tabIndex=8;
+Edit mm02=formonly.mm02 type INTEGER, tabIndex=9;
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.ima131,formonly.ima1005,formonly.type01,formonly.type02,formonly.yy01,formonly.mm01,formonly.yy02,formonly.mm02,formonly.more)
+END -- INSTRUCTIONS
+

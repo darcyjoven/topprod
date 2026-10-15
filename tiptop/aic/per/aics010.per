@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aics010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aics010")
+Grid gr1
+{
+ <G woset                            > <G tempset                                                     >
+ [ica04                      ]          Temp Store      [ica05           ]
+ [ica44                      ]          Temp Location   [ica06           ]
+ <                                   >  Path            [ica43                                 ][brow]
+ <G woset_1                          >  Return Store    [ica28           ]
+ [ica32                           ]     Return Price    [ica45           ]
+ <                                   > <                                                              >
+ <G poset                            > <G gb8                                                         >
+ [ica33                           ]     [ica40                        ]
+ <                                   >
+ <G gb13                             >
+  Def Issuing Doc.Type   [ica41     ]  <                                                              >
+  Def Issuing Doc.Type   [ica042    ]
+ <                                   >
+
+}
+END -- gr1
+END -- aics010
+
+TABLES
+ica_file
+ATTRIBUTES
+Group woset:WOSet, text="WOSet";
+CheckBox ica04=ica_file.ica04, tabIndex=1, default = "N", text="Check WO", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ica44=ica_file.ica44, tabIndex=10, default = "Y", text="Auto Generate Issu.Nt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group tempset:TempSet, text="TempSet";
+ButtonEdit ica05=ica_file.ica05, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+ButtonEdit ica06=ica_file.ica06, action=controlp, tabIndex=6, default = "NULL", image="zoom.png";
+Edit ica43=ica_file.ica43, tabIndex=7, not null, required;
+Button brow:browse, text="Browse";
+ButtonEdit ica28=ica_file.ica28, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+ComboBox ica45=ica_file.ica45, tabIndex=12, default = "1", not null, required, items=(("1", "By Return Data"),("2", "By PO Quotation"),("3", "By PO"));
+Group woset_1:WOSet_1, text="PriceSet";
+CheckBox ica32=ica_file.ica32, tabIndex=2, default = "N", text="Sub.FT,Price from Receipt Level", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group poset:POSet, text="POSet";
+CheckBox ica33=ica_file.ica33, tabIndex=11, default = "N", text="PO Auto Release ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb8:gb8, text="New Code Applied Process";
+CheckBox ica40=ica_file.ica40, tabIndex=9, default = "N", text="New Code Applied Process?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb13:gb13, text="Issue Setting";
+ButtonEdit ica41=ica_file.ica41, action=controlp, tabIndex=3, default = "NULL", not null, required, image="zoom.png";
+ButtonEdit ica042=ica_file.ica042, action=controlp, tabIndex=4, default = "NULL", not null, required, image="zoom.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ica_file.ica04,ica_file.ica05,ica_file.ica06,ica_file.ica43,ica_file.ica28,ica_file.ica32,ica_file.ica41,ica_file.ica042,ica_file.ica40,ica_file.ica44,ica_file.ica33,ica_file.ica45)
+END -- INSTRUCTIONS
+

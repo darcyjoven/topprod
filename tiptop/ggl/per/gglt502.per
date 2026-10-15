@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt502.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="gglt502")
+VBox vb6
+Folder pc1
+Page Page1(text=%"Page0")
+VBox vb5
+Grid gr2
+{
+ Group number  [ate01            ]   ate04  [ate04            ]
+ Top Companies [ate01_1          ]   ate05  [ate05            ]
+ Set of books  [ate01_2          ]
+
+}
+END -- gr2
+Table tb2
+{
+[ate02        |ate06         |ate06_1     |ate07    |ate08     |ate03     |ate09   |ate09_1  |ate10     |ate11     ]
+[ate02        |ate06         |ate06_1     |ate07    |ate08     |ate03     |ate09   |ate09_1  |ate10     |ate11     ]
+[ate02        |ate06         |ate06_1     |ate07    |ate08     |ate03     |ate09   |ate09_1  |ate10     |ate11     ]
+[ate02        |ate06         |ate06_1     |ate07    |ate08     |ate03     |ate09   |ate09_1  |ate10     |ate11     ]
+[ate02        |ate06         |ate06_1     |ate07    |ate08     |ate03     |ate09   |ate09_1  |ate10     |ate11     ]
+
+}
+END -- tb2
+END -- vb5
+END -- Page1
+END -- pc1
+Grid gr10
+{
+   ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr10
+END -- vb6
+END -- gglt502
+
+TABLES
+ate_file
+ATTRIBUTES
+ButtonEdit ate01=ate_file.ate01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ate04=ate_file.ate04, tabIndex=4, not null, required;
+Edit ate01_1=formonly.ate01_1 type CHAR, tabIndex=3;
+Edit ate05=ate_file.ate05, tabIndex=5, not null, required;
+Edit ate01_2=formonly.ate01_2 type CHAR, tabIndex=2;
+ButtonEdit ate02=ate_file.ate02, action=controlp, tabIndex=11, title="ate02", not null, required, image="zoom";
+ButtonEdit ate06=ate_file.ate06, action=controlp, tabIndex=13, title="ate06", not null, required, image="zoom";
+Edit ate06_1=formonly.ate06_1 type CHAR, tabIndex=18, title="ate06_1", noEntry;
+ComboBox ate07=ate_file.ate07, tabIndex=14, title="ate07", items=(("+", "add"),("-", "decrease
+"));
+Edit ate08=ate_file.ate08, tabIndex=10, title="atd08";
+ButtonEdit ate03=ate_file.ate03, action=controlp, tabIndex=12, title="ate03", not null, required, image="zoom";
+ButtonEdit ate09=ate_file.ate09, action=controlp, tabIndex=15, title="ate09", not null, required, image="zoom";
+Edit ate09_1=formonly.ate09_1 type CHAR, tabIndex=19, title="ate09_1", noEntry;
+ComboBox ate10=ate_file.ate10, tabIndex=16, title="ate10", items=(("+", "add"),("-", "decrease
+"));
+Edit ate11=ate_file.ate11, tabIndex=17, title="ate11";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ate1(ate_file.ate02,ate_file.ate06,formonly.ate06_1,ate_file.ate07,ate_file.ate08,ate_file.ate03,ate_file.ate09,formonly.ate09_1,ate_file.ate10,ate_file.ate11)
+SCREEN RECORD Undefined(ate_file.ate01,ate_file.ate04,formonly.ate01_1,ate_file.ate05,formonly.ate01_2,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

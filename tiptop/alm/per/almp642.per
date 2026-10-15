@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almp642.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+   <G group1                                            >
+
+       [labe]         [year ]/[mon ]
+       [dummy1                                     ]
+
+   <                                                    >
+
+
+  [g_bgjob                         ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+Label labe:Label3, text=%"Date";
+Edit year=formonly.year type CHAR, tabIndex=1, not null, required;
+Edit mon=formonly.mon type CHAR, tabIndex=2, not null, required;
+Label dummy1:dummy1, text="LRDMDS,QY\'|\'H\';\'GK";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=3, text=%"Background Job", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.year,formonly.mon,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

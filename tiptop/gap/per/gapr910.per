@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gap/42f/gapr910.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gapr910")
+VBox VBox1
+Grid gr3317
+{
+ <G group01                      >
+  Vender No. QBE     [npq21     ]
+  Accounts No. QBE   [npp01     ]
+ <                               >
+}
+END -- gr3317
+Group group03(text="Input")
+VBox VBox2
+Grid gr3318
+{
+  Book No.                [o         ]
+  Account Title No.       [a                   ]
+  Enter Account Start Date[bdate     ]
+  Ending Date             [edate     ]
+ [b                                            ]
+  Currency                [c         ]
+ <G group02                                       >
+ [d                                             ]
+ <                                                >
+}
+END -- gr3318
+Grid gr3319
+{
+[e                                             ]
+
+
+}
+END -- gr3319
+END -- VBox2
+END -- group03
+Grid gr3320
+{
+ [more                                          ]
+
+
+}
+END -- gr3320
+END -- VBox1
+END -- gapr910
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit npq21=formonly.npq21 type CHAR, tabIndex=1;
+Edit npp01=formonly.npp01 type CHAR, tabIndex=2;
+Edit o=formonly.o type CHAR, tabIndex=6;
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P> Qry Account No.";
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=4;
+DateEdit edate=formonly.edate type CHAR, tabIndex=5;
+CheckBox b=formonly.b type CHAR, tabIndex=7, text="Print Original Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit c=formonly.c type CHAR, action=controlp, tabIndex=8, image="zoom", upShift, comment="<^P> Qry Currency No.";
+Group group02:group02, text="Data Option";
+RadioGroup d=formonly.d type CHAR, tabIndex=9, items=(("1", "Confirmed"),("2", "UnConfirmed"),("3", "All"));
+CheckBox e=formonly.e type CHAR, tabIndex=10, text="Print BoP=0 and Have no changed Vender in current period", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other Condition to Print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.npq21,formonly.npp01,formonly.o,formonly.a,formonly.bdate,formonly.edate,formonly.b,formonly.c,formonly.d,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

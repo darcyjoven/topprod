@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_nag.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Table ds1
+{
+[nag04     |nag05               |nag06    |nme16     |nmc03      |nme08                 ]
+[nag04     |nag05               |nag06    |nme16     |nmc03      |nme08                 ]
+[nag04     |nag05               |nag06    |nme16     |nmc03      |nme08                 ]
+[nag04     |nag05               |nag06    |nme16     |nmc03      |nme08                 ]
+[nag04     |nag05               |nag06    |nme16     |nmc03      |nme08                 ]
+
+
+}
+END -- ds1
+END -- Form
+
+TABLES
+nag_file,
+nme_file,
+nmc_file
+ATTRIBUTES
+ComboBox nag04=nag_file.nag04, tabIndex=5, title=%"nag04", items=(("1", "Auto"),("2", "Hand"));
+Edit nag05=nag_file.nag05, tabIndex=1, title=%"nag05", scroll;
+Edit nag06=nag_file.nag06, tabIndex=2, title=%"nag06", scroll;
+Edit nme16=nme_file.nme16, tabIndex=3, title=%"nme16", scroll;
+ComboBox nmc03=nmc_file.nmc03, tabIndex=6, title=%"nmc03", items=(("1", "Dr"),("2", "Cr"));
+Edit nme08=nme_file.nme08, tabIndex=4, title=%"nme08", scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nag(nag_file.nag04,nag_file.nag05,nag_file.nag06,nme_file.nme16,nmc_file.nmc03,nme_file.nme08)
+END -- INSTRUCTIONS
+

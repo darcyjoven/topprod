@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_gr_lang.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_temp_lang")
+VBox VBox1
+Folder pc721
+Page page01(text="Main")
+Table s_gfs
+{
+[gfs01        |gfs02     |gfs03                                                            ]
+[gfs01        |gfs02     |gfs03                                                            ]
+[gfs01        |gfs02     |gfs03                                                            ]
+[gfs01        |gfs02     |gfs03                                                            ]
+[gfs01        |gfs02     |gfs03                                                            ]
+[gfs01        |gfs02     |gfs03                                                            ]
+[gfs01        |gfs02     |gfs03                                                            ]
+[gfs01        |gfs02     |gfs03                                                            ]
+[gfs01        |gfs02     |gfs03                                                            ]
+[gfs01        |gfs02     |gfs03                                                            ]
+
+}
+END -- s_gfs
+END -- page01
+Page info(text="Info", hidden)
+Grid gr3102
+{
+ <G grpinfo                            >
+  Data Detail Counts  [cn2       ]
+ <                                     >
+
+}
+END -- gr3102
+END -- info
+END -- pc721
+END -- VBox1
+END -- p_gr_lang
+
+TABLES
+gfs_file
+ATTRIBUTES
+Edit gfs01=formonly.gfs01 type like gfs_file.gfs01, tabIndex=1, title="Template Code", noEntry, not null, required, comment="This Field & Language are Key,No Blank/Repeated!";
+ComboBox gfs02=formonly.gfs02 type like gfs_file.gfs02, tabIndex=2, title="Language", not null, required, queryEditable;
+Edit gfs03=formonly.gfs03 type like gfs_file.gfs03, tabIndex=3, title="Template Description", scroll;
+Group grpinfo:grpinfo;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gfs(formonly.gfs01,formonly.gfs02,formonly.gfs03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

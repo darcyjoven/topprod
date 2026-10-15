@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmq510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmq510")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr886
+{
+ Component No.       [bmb03                        ]
+ Item Name           [ima02                         ]
+ Specification       [ima021                        ]
+ Expired Date        [g_vdate     ]
+}
+END -- gr886
+Grid gr887
+{
+ Current Version     [ima05     ]
+ Sorce Code          [ima08     ]
+ Issue Unit          [ima63     ]
+
+}
+END -- gr887
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_bmb
+{
+[bmb0|bmb01           |ima02_b                       |ima021_b                      |bmb06   |bmb08     |bmb13    |bmb29           ]
+[bmb0|bmb01           |ima02_b                       |ima021_b                      |bmb06   |bmb08     |bmb13    |bmb29           ]
+[bmb0|bmb01           |ima02_b                       |ima021_b                      |bmb06   |bmb08     |bmb13    |bmb29           ]
+[bmb0|bmb01           |ima02_b                       |ima021_b                      |bmb06   |bmb08     |bmb13    |bmb29           ]
+[bmb0|bmb01           |ima02_b                       |ima021_b                      |bmb06   |bmb08     |bmb13    |bmb29           ]
+[bmb0|bmb01           |ima02_b                       |ima021_b                      |bmb06   |bmb08     |bmb13    |bmb29           ]
+[bmb0|bmb01           |ima02_b                       |ima021_b                      |bmb06   |bmb08     |bmb13    |bmb29           ]
+[bmb0|bmb01           |ima02_b                       |ima021_b                      |bmb06   |bmb08     |bmb13    |bmb29           ]
+[bmb0|bmb01           |ima02_b                       |ima021_b                      |bmb06   |bmb08     |bmb13    |bmb29           ]
+[bmb0|bmb01           |ima02_b                       |ima021_b                      |bmb06   |bmb08     |bmb13    |bmb29           ]
+
+}
+END -- s_bmb
+Grid gr888
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr888
+END -- VBox1
+END -- abmq510
+
+TABLES
+bmb_file
+ATTRIBUTES
+ButtonEdit bmb03=bmb_file.bmb03, action=controlp, tabIndex=1, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+DateEdit g_vdate=formonly.g_vdate type DATE, tabIndex=4;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=5, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=6, noEntry;
+Edit ima63=formonly.ima63 type CHAR, tabIndex=7, noEntry;
+Edit bmb0=bmb_file.bmb02, tabIndex=8, title="Ln#";
+Edit bmb01=bmb_file.bmb01, tabIndex=9, title="Master Item No.", not null, required;
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=10, title="Part Name", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=11, title="Specification", noEntry;
+Edit bmb06=bmb_file.bmb06, tabIndex=12, title="QPA";
+Edit bmb08=bmb_file.bmb08, tabIndex=13, title="Wastage %";
+Edit bmb13=bmb_file.bmb13, tabIndex=14, title="Inst.Loc";
+Edit bmb29=bmb_file.bmb29, tabIndex=15, title="Alternate Code";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmb(bmb_file.bmb02,bmb_file.bmb01,formonly.ima02_b,formonly.ima021_b,bmb_file.bmb06,bmb_file.bmb08,bmb_file.bmb13,bmb_file.bmb29)
+SCREEN RECORD Undefined(bmb_file.bmb03,formonly.ima02,formonly.ima021,formonly.g_vdate,formonly.ima05,formonly.ima08,formonly.ima63,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

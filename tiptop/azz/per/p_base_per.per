@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_base_per.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_base_per")
+VBox vb2_
+Folder pc1
+Page Page1(text=%"Basic Data")
+Grid gr3
+{
+
+ Program ID    [gax01            ]
+ Program Name  [gaz03                           ]
+ Industry      [smb03            ]
+ Module        [zz011        ][dummy01               ]
+}
+END -- gr3
+END -- Page1
+END -- pc1
+Table s_gax
+{
+[gax02          |gae04                                |gax04  |gax05  |gax03]
+[gax02          |gae04                                |gax04  |gax05  |gax03]
+[gax02          |gae04                                |gax04  |gax05  |gax03]
+[gax02          |gae04                                |gax04  |gax05  |gax03]
+[gax02          |gae04                                |gax04  |gax05  |gax03]
+[gax02          |gae04                                |gax04  |gax05  |gax03]
+[gax02          |gae04                                |gax04  |gax05  |gax03]
+[gax02          |gae04                                |gax04  |gax05  |gax03]
+[gax02          |gae04                                |gax04  |gax05  |gax03]
+[gax02          |gae04                                |gax04  |gax05  |gax03]
+
+}
+END -- s_gax
+Grid gr3156
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3156
+END -- vb2_
+END -- p_base_per
+
+TABLES
+gaz_file,
+gax_file,
+smb_file,
+gae_file,
+zz_file
+ATTRIBUTES
+ButtonEdit gax01=gax_file.gax01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit gaz03=gaz_file.gaz03, tabIndex=2, noEntry;
+Edit smb03=smb_file.smb03, tabIndex=10, noEntry;
+Edit zz011=zz_file.zz011, tabIndex=9, noEntry;
+Label dummy01:dummy01, text="Defined in \"Program Data(p_zz)\"";
+Edit gax02=gax_file.gax02, tabIndex=3, title="PER ID", scroll;
+Edit gae04=gae_file.gae04, tabIndex=4, title="PER Description", noEntry;
+CheckBox gax04=gax_file.gax04, tabIndex=6, title="Show Descriptions", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Generates Field Descriptions in Online help file Automatically.";
+CheckBox gax05=gax_file.gax05, tabIndex=8, title="Customerized File", valueChecked = "Y", valueUnchecked = "N", comment="Checked If it is a Customerized File";
+CheckBox gax03=gax_file.gax03, tabIndex=5, title="Existed", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Checked if it\'s a Existed File";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gax(gax_file.gax02,gae_file.gae04,gax_file.gax04,gax_file.gax05,gax_file.gax03)
+SCREEN RECORD Undefined(gax_file.gax01,gaz_file.gaz03,smb_file.smb03,zz_file.zz011,formonly.cnt)
+END -- INSTRUCTIONS
+

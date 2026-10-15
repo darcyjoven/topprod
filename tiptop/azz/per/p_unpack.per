@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_unpack.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_unpack")
+VBox VBox1
+Folder pc2
+Page page01(text="Main")
+HBox HBox1
+Grid gr3
+{
+  Enter The Patch File  [a                             ]  [b                   ]
+
+
+
+}
+END -- gr3
+END -- HBox1
+END -- page01
+END -- pc2
+Table s_no
+{
+[select |row |chang         |zl05          |zl09     |zl01        |zl08      |zl00      |alter         |zl15                                                         |zl06                                                         ]
+[select |row |chang         |zl05          |zl09     |zl01        |zl08      |zl00      |alter         |zl15                                                         |zl06                                                         ]
+[select |row |chang         |zl05          |zl09     |zl01        |zl08      |zl00      |alter         |zl15                                                         |zl06                                                         ]
+[select |row |chang         |zl05          |zl09     |zl01        |zl08      |zl00      |alter         |zl15                                                         |zl06                                                         ]
+[select |row |chang         |zl05          |zl09     |zl01        |zl08      |zl00      |alter         |zl15                                                         |zl06                                                         ]
+[select |row |chang         |zl05          |zl09     |zl01        |zl08      |zl00      |alter         |zl15                                                         |zl06                                                         ]
+[select |row |chang         |zl05          |zl09     |zl01        |zl08      |zl00      |alter         |zl15                                                         |zl06                                                         ]
+[select |row |chang         |zl05          |zl09     |zl01        |zl08      |zl00      |alter         |zl15                                                         |zl06                                                         ]
+[select |row |chang         |zl05          |zl09     |zl01        |zl08      |zl00      |alter         |zl15                                                         |zl06                                                         ]
+[select |row |chang         |zl05          |zl09     |zl01        |zl08      |zl00      |alter         |zl15                                                         |zl06                                                         ]
+
+}
+END -- s_no
+Grid gr4
+{
+[dummy0]
+[zl15_detail                                                                                                                   ]
+[                                                                                                                              ]
+[                                                                                                                              ]
+[                                                                                                                              ]
+[                                                                                                                              ]
+[                                                                                                                              ]
+[dummy1]
+[zl06_detail                                                                                                                   ]
+[                                                                                                                              ]
+[                                                                                                                              ]
+[                                                                                                                              ]
+[                                                                                                                              ]
+ ---------- Rows [cn2   ] ----------
+
+
+
+}
+END -- gr4
+END -- VBox1
+END -- p_unpack
+
+ATTRIBUTES
+Edit a=formonly.a type CHAR, tabIndex=1, not null, required;
+CheckBox b=formonly.b type CHAR, tabIndex=16, text="Compile and Link", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox select=formonly.select type CHAR, tabIndex=2, title="Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit row=formonly.row type SMALLINT, tabIndex=3, title="Row", noEntry;
+Edit chang=formonly.chang type CHAR, tabIndex=4, title="Chang or Not", noEntry;
+Edit zl05=formonly.zl05 type CHAR, tabIndex=5, title="Program", noEntry;
+Edit zl09=formonly.zl09 type CHAR, tabIndex=6, title="Edition", noEntry;
+Edit zl01=formonly.zl01 type CHAR, tabIndex=7, title="BUG Date", noEntry;
+Edit zl08=formonly.zl08 type CHAR, tabIndex=8, title="Bill No.", noEntry;
+Edit zl00=formonly.zl00 type CHAR, tabIndex=9, title="Flow No.", noEntry;
+Edit alter=formonly.alter type CHAR, tabIndex=10, title="alter table", noEntry;
+TextEdit zl15=formonly.zl15 type CHAR, tabIndex=11, title="Problem", noEntry, required, stretch=NONE, wantNoReturns;
+TextEdit zl06=formonly.zl06 type CHAR, tabIndex=12, title="Summary", noEntry, required, stretch=NONE, wantNoReturns;
+Label dummy0:dummy01, text="Problem";
+TextEdit zl15_detail=formonly.zl15_detail type CHAR, tabIndex=13, stretch=NONE, scrollBars=both, style="fixedFont";
+Label dummy1:dummy02, text="Summary";
+TextEdit zl06_detail=formonly.zl06_detail type CHAR, tabIndex=14, stretch=NONE, scrollBars=both, style="fixedFont";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_no(formonly.select,formonly.row,formonly.chang,formonly.zl05,formonly.zl09,formonly.zl01,formonly.zl08,formonly.zl00,formonly.alter,formonly.zl15,formonly.zl06)
+SCREEN RECORD Undefined(formonly.a,formonly.b,formonly.zl15_detail,formonly.zl06_detail,formonly.cn2)
+END -- INSTRUCTIONS
+

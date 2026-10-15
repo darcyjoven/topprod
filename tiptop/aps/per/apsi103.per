@@ -1,0 +1,61 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsi103.per created Wed Dec 31 05:29:33 2008
+-- File created from apsi103.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsi103")
+-- TABLE
+-- PAGE
+-- GRID
+-- PAGE
+-- FOLDER
+-- LAYOUT
+-- 
+
+  FOLDER pc1014
+    PAGE page01( TEXT="Page01")
+      TABLE   s_aps
+      {
+      [aa0                 |aa1         |aa2                 ]
+      [aa0                 |aa1         |aa2                 ]
+      [aa0                 |aa1         |aa2                 ]
+      [aa0                 |aa1         |aa2                 ]
+      [aa0                 |aa1         |aa2                 ]
+      [aa0                 |aa1         |aa2                 ]
+      [aa0                 |aa1         |aa2                 ]
+      [aa0                 |aa1         |aa2                 ]
+      [aa0                 |aa1         |aa2                 ]
+      [aa0                 |aa1         |aa2                 ]
+      }
+      END -- TABLE
+    END -- PAGE
+    PAGE info( TEXT="Info")
+      GRID gr5347
+      {
+      <G grpinfo                     >
+       Detail Counts      [aa3       ]
+      <                              >
+
+
+      }
+      END -- GRID
+    END -- PAGE
+  END -- FOLDER
+END
+TABLES aps_sad
+
+ATTRIBUTES
+  EDIT aa0=aps_sad.dcaln_id, NOT NULL, REQUIRED, TABINDEX=1, TITLE="Day Calendar NO.";
+  DATEEDIT aa1=aps_sad.d_date, NOT NULL, REQUIRED, TABINDEX=2, TITLE="Date";
+  EDIT aa2=aps_sad.wm_id, TABINDEX=3, TITLE="Work Model";
+  GROUP grpinfo : grpinfo;
+  EDIT aa3=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=4;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_aps (aps_sad.dcaln_id, aps_sad.d_date, aps_sad.wm_id)
+END

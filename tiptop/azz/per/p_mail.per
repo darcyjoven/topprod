@@ -1,0 +1,158 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/4fd/p_mail.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_query")
+VBox vb4
+Folder folder01
+Page page01(text=%"Main")
+Grid gr6008
+{
+  Query ID   [zai01               ]
+  Query Name [zai02               ]
+  Query Desc [zai03                                             ]
+
+
+}
+END -- gr6008
+END -- page01
+Page info(text=%"Info")
+Grid gr6009
+{
+   Record Owner [zaiuser   ] Last Modified by    [zaimodu   ]
+   Department   [zaigrup   ] Create/Modify Date  [zaidate   ]
+   Record Orig. [zaioriu   ]
+   Dept Orig.   [zaiorig   ]
+}
+END -- gr6009
+END -- info
+END -- folder01
+Folder pc1193
+Page page02(action=query_process, text=%"Process", hidden)
+Table s_zaj
+{
+[zaj02     |zaj03   |zaj04        |zaj05               |zaj06                         ]
+[zaj02     |zaj03   |zaj04        |zaj05               |zaj06                         ]
+[zaj02     |zaj03   |zaj04        |zaj05               |zaj06                         ]
+[zaj02     |zaj03   |zaj04        |zaj05               |zaj06                         ]
+[zaj02     |zaj03   |zaj04        |zaj05               |zaj06                         ]
+[zaj02     |zaj03   |zaj04        |zaj05               |zaj06                         ]
+[zaj02     |zaj03   |zaj04        |zaj05               |zaj06                         ]
+[zaj02     |zaj03   |zaj04        |zaj05               |zaj06                         ]
+[zaj02     |zaj03   |zaj04        |zaj05               |zaj06                         ]
+[zaj02     |zaj03   |zaj04        |zaj05               |zaj06                         ]
+}
+END -- s_zaj
+END -- page02
+Page page03(action=query_sql, text=%"SQL")
+VBox vbox1
+Grid gr6010
+{
+ [zak02                                     ]
+ [                                          ]
+ [                                          ]
+ [                                          ]
+ [                                          ]
+ [                                          ]
+ [                                          ]
+ [                                          ]
+ [                                          ]
+ [                                          ]
+}
+END -- gr6010
+Table s_zal
+{
+[zal02|zal03     |zal04          |zal05               |zal09     |zal08     |zal06                         ]
+[zal02|zal03     |zal04          |zal05               |zal09     |zal08     |zal06                         ]
+[zal02|zal03     |zal04          |zal05               |zal09     |zal08     |zal06                         ]
+[zal02|zal03     |zal04          |zal05               |zal09     |zal08     |zal06                         ]
+[zal02|zal03     |zal04          |zal05               |zal09     |zal08     |zal06                         ]
+[zal02|zal03     |zal04          |zal05               |zal09     |zal08     |zal06                         ]
+[zal02|zal03     |zal04          |zal05               |zal09     |zal08     |zal06                         ]
+[zal02|zal03     |zal04          |zal05               |zal09     |zal08     |zal06                         ]
+[zal02|zal03     |zal04          |zal05               |zal09     |zal08     |zal06                         ]
+[zal02|zal03     |zal04          |zal05               |zal09     |zal08     |zal06                         ]
+}
+END -- s_zal
+END -- vbox1
+END -- page03
+Page page07(action=query_field, text=%"Field Setting")
+Table s_zat
+{
+[zat|tzal04         |tzal05              |zat03      |zat12       |zat04           |zat05 |zat06  |zat07  |zat08     |zat09                        |zat11     ]
+[zat|tzal04         |tzal05              |zat03      |zat12       |zat04           |zat05 |zat06  |zat07  |zat08     |zat09                        |zat11     ]
+[zat|tzal04         |tzal05              |zat03      |zat12       |zat04           |zat05 |zat06  |zat07  |zat08     |zat09                        |zat11     ]
+[zat|tzal04         |tzal05              |zat03      |zat12       |zat04           |zat05 |zat06  |zat07  |zat08     |zat09                        |zat11     ]
+[zat|tzal04         |tzal05              |zat03      |zat12       |zat04           |zat05 |zat06  |zat07  |zat08     |zat09                        |zat11     ]
+[zat|tzal04         |tzal05              |zat03      |zat12       |zat04           |zat05 |zat06  |zat07  |zat08     |zat09                        |zat11     ]
+[zat|tzal04         |tzal05              |zat03      |zat12       |zat04           |zat05 |zat06  |zat07  |zat08     |zat09                        |zat11     ]
+[zat|tzal04         |tzal05              |zat03      |zat12       |zat04           |zat05 |zat06  |zat07  |zat08     |zat09                        |zat11     ]
+[zat|tzal04         |tzal05              |zat03      |zat12       |zat04           |zat05 |zat06  |zat07  |zat08     |zat09                        |zat11     ]
+[zat|tzal04         |tzal05              |zat03      |zat12       |zat04           |zat05 |zat06  |zat07  |zat08     |zat09                        |zat11     ]
+}
+END -- s_zat
+END -- page07
+END -- pc1193
+Grid gr6014
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr6014
+END -- vb4
+END -- p_query
+
+TABLES
+zal_file,
+zak_file,
+zaj_file,
+zai_file,
+zat_file
+ATTRIBUTES
+ButtonEdit zai01=zai_file.zai01, action=controlp, tabIndex=1, not null, required, image="zoom", downShift;
+Edit zai02=zai_file.zai02, tabIndex=2;
+Edit zai03=zai_file.zai03, tabIndex=3;
+Edit zaiuser=zai_file.zaiuser, tabIndex=4, noEntry;
+Edit zaimodu=zai_file.zaimodu, tabIndex=6, noEntry;
+Edit zaigrup=zai_file.zaigrup, tabIndex=5, noEntry;
+DateEdit zaidate=zai_file.zaidate, tabIndex=7, noEntry;
+Edit zaioriu=zai_file.zaioriu, tabIndex=466, noEntry;
+Edit zaiorig=zai_file.zaiorig, tabIndex=467, noEntry;
+Edit zaj02=zaj_file.zaj02, tabIndex=8, title=%"Ln#", not null, required;
+CheckBox zaj03=zaj_file.zaj03, tabIndex=9, title=%"Active?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox zaj04=zaj_file.zaj04, tabIndex=10, title=%"Source Cate.", not null, required, items=(("A", %"p_sql"),("B", %"p_zz"),("C", %"command"));
+Edit zaj05=zaj_file.zaj05, tabIndex=11, title=%"Execution Command", not null, required;
+Edit zaj06=zaj_file.zaj06, tabIndex=12, title=%"Process Memo";
+TextEdit zak02=zak_file.zak02, tabIndex=13, stretch=x, scrollBars=both, style="fixedFont";
+Edit zal02=zal_file.zal02, tabIndex=14, title=%"No.", noEntry, not null, required;
+ComboBox zal03=zal_file.zal03, tabIndex=15, title=%"Language", noEntry, not null, required, queryEditable;
+Edit zal04=zal_file.zal04, tabIndex=16, title=%"Field ID", not null, required;
+Edit zal05=zal_file.zal05, tabIndex=17, title=%"Field Name";
+ComboBox zal09=zal_file.zal09, tabIndex=18, title=%"Attribute", not null, required, items=(("A", %"Unit Price"),("B", %"Amount"),("C", %"Exchange rate"),("D", %"Total"),("E", %"Quantity"),("F", %"Number"),("G", %"Other"),("J", %"Char"),("K", %"Document No."),("L", %"Multi-Unit"),("M", %"Alternate BOM"),("N", %"Item No."),("O", %"Employee No."),("P", %"Dept. No."),("Q", %"Date"),("R", %"Acct. No."),("S", %"Item Description"),("T", %"Specification"));
+Edit zal08=zal_file.zal08, tabIndex=19, title=%"Width", not null, required;
+Edit zal06=zal_file.zal06, tabIndex=20, title=%"File Memo";
+Edit zat=zat_file.zat02, tabIndex=21, title=%"No. Field ID", noEntry, not null, required;
+Edit tzal04=formonly.tzal04 type CHAR, tabIndex=22, noEntry, downShift;
+Edit tzal05=formonly.tzal05 type CHAR, tabIndex=23, title=%"Field Name", noEntry;
+ComboBox zat03=zat_file.zat03, tabIndex=24, title=%"Output Dis. Construct Seq.", not null, required, items=(("Y", %"Display"),("N", %"Hidden"),("M", %"By Multi Unit"),("P", %"By Profit Center"),("V", %"By Valuation Unit"),("X", %"By Multi-AGL Book"));
+Edit zat12=zat_file.zat12, tabIndex=25, title=%"Per Width", not null, required;
+Edit zat04=zat_file.zat04, tabIndex=26;
+CheckBox zat05=zat_file.zat05, tabIndex=27, title=%"QBE?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit zat06=zat_file.zat06, action=controlp, tabIndex=28, title=%"QBE ID", not null, required, image="zoom";
+CheckBox zat07=zat_file.zat07, tabIndex=29, title=%"Dec?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox zat08=zat_file.zat08, tabIndex=30, title=%"Attribute", not null, required, items=(("1", %"Unit Cost"),("2", %"Amount"),("3", %"Subtotal/Total"),("4", %"Rate"),("5", %"User Define"),("6", "date"));
+Edit zat09=zat_file.zat09, tabIndex=31, title=%"Currency/Decimal", not null, required;
+CheckBox zat11=zat_file.zat11, tabIndex=32, title=%"Replace", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zaj(zaj_file.zaj02,zaj_file.zaj03,zaj_file.zaj04,zaj_file.zaj05,zaj_file.zaj06)
+SCREEN RECORD s_zat(zat_file.zat02,formonly.tzal04,formonly.tzal05,zat_file.zat03,zat_file.zat12,zat_file.zat04,zat_file.zat05,zat_file.zat06,zat_file.zat07,zat_file.zat08,zat_file.zat09,zat_file.zat11)
+SCREEN RECORD s_zal(zal_file.zal02,zal_file.zal03,zal_file.zal04,zal_file.zal05,zal_file.zal09,zal_file.zal08,zal_file.zal06)
+SCREEN RECORD Undefined(zai_file.zai01,zai_file.zai02,zai_file.zai03,zai_file.zaiuser,zai_file.zaimodu,zai_file.zaigrup,zai_file.zaidate,zai_file.zaioriu,zai_file.zaiorig,zak_file.zak02,formonly.cnt)
+END -- INSTRUCTIONS
+

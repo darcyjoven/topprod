@@ -1,0 +1,126 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/4fd/azzi900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+HBox HBox1
+Grid Grid1
+{
+
+    prog              [prog                             ]    mode       [mode                ]
+    desc              [desc                             ]
+
+    type              [typ                              ]   [cust         ]
+    author            [author                           ]    dat        [dat                  ]
+    gui               [gui                              ]
+    rpt               [rpt                              ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+Grid Grid2
+{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid2
+END -- HBox1
+END -- Form
+
+ATTRIBUTES
+Edit prog=formonly.prog, tabIndex=1, not null, required;
+ComboBox mode=formonly.mode, tabIndex=2, not null, required;
+Edit desc=formonly.desc, tabIndex=3, not null, required;
+ComboBox typ=formonly.typ, tabIndex=4, not null, required;
+CheckBox cust=formonly.cust, tabIndex=5, text=%"cust", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit author=formonly.author, tabIndex=6, not null, required;
+DateEdit dat=formonly.dat, tabIndex=7, not null, required;
+ButtonEdit gui=formonly.gui, action=controlp, tabIndex=8, image="zoom";
+ButtonEdit rpt=formonly.rpt, action=controlp, tabIndex=9, noEntry, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.prog,formonly.desc,formonly.mode,formonly.typ,formonly.author,formonly.dat,formonly.cust,formonly.gui,formonly.rpt)
+END -- INSTRUCTIONS
+

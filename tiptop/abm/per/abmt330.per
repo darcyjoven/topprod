@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmt330.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmt330")
+VBox vb8_
+Folder folder01
+Page page01(text="Main")
+Grid gr4833
+{
+
+ bnm01             [bnm01               |smydesc      ]                 bnm05    [bnm05           ][pmc03        ]
+ bnm02             [bnm02           ]
+ bnm03             [bnm03           |gen02        ]                     bnm08    [bnm08           ][imgmksg]
+ bnm04             [bnm04           |gem02        ]                              [bnmmksg   ]
+ bnm06             [bnm06           ]
+}
+END -- gr4833
+END -- page01
+Page info(text="Info")
+Grid gr4834
+{
+ Record Owner        [bnmuser   ]  Last Modified by    [bnmmodu   ]  Data Valid Code     [bnmacti   ]
+ Department          [bnmgrup   ]  Create/Modify Date  [bnmdate   ]
+ Record Orig.        [bnmoriu   ]
+ Dept Orig.          [bnmorig   ]
+}
+END -- gr4834
+END -- info
+END -- folder01
+Table s_bnn
+{
+[bnn02    |bnn03           |ima02              |ima021              |bnn04         |bnn05            |bnn08      |bnn09     |bnn06        |bnn10     |bnn07               ]
+[bnn02    |bnn03           |ima02              |ima021              |bnn04         |bnn05            |bnn08      |bnn09     |bnn06        |bnn10     |bnn07               ]
+[bnn02    |bnn03           |ima02              |ima021              |bnn04         |bnn05            |bnn08      |bnn09     |bnn06        |bnn10     |bnn07               ]
+[bnn02    |bnn03           |ima02              |ima021              |bnn04         |bnn05            |bnn08      |bnn09     |bnn06        |bnn10     |bnn07               ]
+[bnn02    |bnn03           |ima02              |ima021              |bnn04         |bnn05            |bnn08      |bnn09     |bnn06        |bnn10     |bnn07               ]
+}
+END -- s_bnn
+Grid gr4835
+{
+  ---------- Rows [idx   ]/[cnt   ]  ---  Details [cn2   ] ----------
+
+
+
+}
+END -- gr4835
+END -- vb8_
+END -- abmt330
+
+TABLES
+gen_file,
+gem_file,
+bnn_file,
+bnm_file,
+ima_file,
+pmc_file
+ATTRIBUTES
+ButtonEdit bnm01=bnm_file.bnm01, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Edit smydesc=formonly.smydesc type CHAR, tabIndex=10, noEntry;
+ButtonEdit bnm05=bnm_file.bnm05, action=controlp, tabIndex=17, not null, required, image="zoom.png";
+Edit pmc03=pmc_file.pmc03, tabIndex=18, noEntry;
+DateEdit bnm02=bnm_file.bnm02, tabIndex=11;
+ButtonEdit bnm03=bnm_file.bnm03, action=controlp, tabIndex=12, image="zoom.png";
+Edit gen02=gen_file.gen02, tabIndex=13, noEntry;
+ComboBox bnm08=bnm_file.bnm08, tabIndex=19, noEntry, items=(("0", "Issue"),("1", "Approved"),("9", "Void"),("S", "Approving"),("R", "Approving Return"),("W", "Cancel"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit bnm04=bnm_file.bnm04, action=controlp, tabIndex=14, image="zoom.png";
+Edit gem02=gem_file.gem02, tabIndex=15, noEntry;
+CheckBox bnmmksg=bnm_file.bnmmksg, tabIndex=503, text=%"Approve?", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox bnm06=bnm_file.bnm06, tabIndex=16, not null, required, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+Edit bnmuser=bnm_file.bnmuser, tabIndex=1, noEntry;
+Edit bnmmodu=bnm_file.bnmmodu, tabIndex=2, noEntry;
+Edit bnmacti=bnm_file.bnmacti, tabIndex=3, noEntry, upShift;
+Edit bnmgrup=bnm_file.bnmgrup, tabIndex=4, noEntry;
+DateEdit bnmdate=bnm_file.bnmdate, tabIndex=5, noEntry;
+Edit bnmoriu=bnm_file.bnmoriu, tabIndex=501, noEntry;
+Edit bnmorig=bnm_file.bnmorig, tabIndex=502, noEntry;
+Edit bnn02=bnn_file.bnn02, tabIndex=20, title="bnn02";
+ButtonEdit bnn03=bnn_file.bnn03, action=controlp, tabIndex=21, title="bnn03", not null, required, image="zoom.png";
+Edit ima02=ima_file.ima02, tabIndex=26, title="ima02", noEntry;
+Edit ima021=ima_file.ima021, tabIndex=27, title="ima021", noEntry;
+ButtonEdit bnn04=bnn_file.bnn04, action=controlp, tabIndex=22, title="controlp", not null, required, image="zoom.png";
+Edit bnn05=bnn_file.bnn05, tabIndex=23, title="bnn05";
+Edit bnn08=bnn_file.bnn08, tabIndex=28, title="bnn08";
+DateEdit bnn09=bnn_file.bnn09, tabIndex=29, title="bnn09";
+Edit bnn06=bnn_file.bnn06, tabIndex=24, title="bnn06";
+DateEdit bnn10=bnn_file.bnn10, tabIndex=30, title="bnn10";
+Edit bnn07=bnn_file.bnn07, tabIndex=25, title="bnn07";
+Edit idx=formonly.idx type SMALLINT, tabIndex=6, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bnn(bnn_file.bnn02,bnn_file.bnn03,ima_file.ima02,ima_file.ima021,bnn_file.bnn04,bnn_file.bnn05,bnn_file.bnn08,bnn_file.bnn09,bnn_file.bnn06,bnn_file.bnn10,bnn_file.bnn07)
+SCREEN RECORD Undefined(bnm_file.bnm01,formonly.smydesc,bnm_file.bnm05,pmc_file.pmc03,bnm_file.bnm02,bnm_file.bnm03,gen_file.gen02,bnm_file.bnm08,formonly.imgmksg,bnm_file.bnm04,gem_file.gem02,bnm_file.bnm06,bnm_file.bnmuser,bnm_file.bnmmodu,bnm_file.bnmacti,bnm_file.bnmgrup,bnm_file.bnmdate,bnm_file.bnmoriu,bnm_file.bnmorig,formonly.idx,formonly.cnt,formonly.cn2,bnm_file.bnmmksg)
+END -- INSTRUCTIONS
+

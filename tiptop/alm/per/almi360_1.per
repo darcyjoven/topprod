@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi360_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi360_1")
+VBox vb18
+Folder pc1
+Page Main(text=%"Main")
+Table s_lmx
+{
+[lmx08         |lmx09         ]
+[lmx08         |lmx09         ]
+[lmx08         |lmx09         ]
+[lmx08         |lmx09         ]
+[lmx08         |lmx09         ]
+
+}
+END -- s_lmx
+END -- Main
+END -- pc1
+Grid gr1
+{
+
+  ---- Rows [cnt   ] ------
+
+}
+END -- gr1
+END -- vb18
+END -- almi360_1
+
+TABLES
+lmx_file
+ATTRIBUTES
+ButtonEdit lmx08=lmx_file.lmx08, action=controlp, tabIndex=1, title="Sta.Doc.No.", not null, required, image="zoom.png";
+Edit lmx09=lmx_file.lmx09, tabIndex=2, title="Exp.Standard", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lmx(lmx_file.lmx08,lmx_file.lmx09)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

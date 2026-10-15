@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_ecm1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Routing Qty Query")
+Grid gr3758
+{
+ <T s_ecm                                                                                                                              >
+ [check |ecm03                  |ecm04   |ecm301        |ecm302                |ecm303                    |ecm291        |qty         ]
+ [check |ecm03                  |ecm04   |ecm301        |ecm302                |ecm303                    |ecm291        |qty         ]
+ [check |ecm03                  |ecm04   |ecm301        |ecm302                |ecm303                    |ecm291        |qty         ]
+ [check |ecm03                  |ecm04   |ecm301        |ecm302                |ecm303                    |ecm291        |qty         ]
+ [check |ecm03                  |ecm04   |ecm301        |ecm302                |ecm303                    |ecm291        |qty         ]
+ [check |ecm03                  |ecm04   |ecm301        |ecm302                |ecm303                    |ecm291        |qty         ]
+ [check |ecm03                  |ecm04   |ecm301        |ecm302                |ecm303                    |ecm291        |qty         ]
+ [check |ecm03                  |ecm04   |ecm301        |ecm302                |ecm303                    |ecm291        |qty         ]
+ [check |ecm03                  |ecm04   |ecm301        |ecm302                |ecm303                    |ecm291        |qty         ]
+ [check |ecm03                  |ecm04   |ecm301        |ecm302                |ecm303                    |ecm291        |qty         ]
+ <                                                                                                                                     >
+
+}
+END -- gr3758
+END -- q_ecm1
+
+TABLES
+ecm_file
+ATTRIBUTES
+Table s_ecm:s_ecm;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ecm03=ecm_file.ecm03, tabIndex=2, title="Routing S/N Task No.", noEntry;
+Edit ecm04=ecm_file.ecm04, tabIndex=3, title="Goods", noEntry;
+Edit ecm301=ecm_file.ecm301, tabIndex=4, title="Transfer-in", noEntry;
+Edit ecm302=ecm_file.ecm302, tabIndex=5, title="+Rework Transfer-in", noEntry;
+Edit ecm303=ecm_file.ecm303, tabIndex=6, title="+Work Order Transfer-in", noEntry;
+Edit ecm291=ecm_file.ecm291, tabIndex=7, title="-Checked-in", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=8, title="=To Check-in", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ecm(formonly.check,ecm_file.ecm03,ecm_file.ecm04,ecm_file.ecm301,ecm_file.ecm302,ecm_file.ecm303,ecm_file.ecm291,formonly.qty)
+END -- INSTRUCTIONS
+

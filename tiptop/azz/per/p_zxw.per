@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zxw.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zxw")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr3059
+{
+ <G group01                      ><G group02                      >
+  User ID      [zxw01       ]      Target Plant [dbs              ]
+  User Name    [zx02             ] Plant Name   [dbsname          ]
+ <                               ><                               >
+
+}
+END -- gr3059
+END -- page01
+END -- folder01
+Table s_zxw
+{
+[zxw02    |zxw03 |zxw04                          |gaz03                                  |zxw05                      |zxw06                          |zxw07                                |zxw08       ]
+[zxw02    |zxw03 |zxw04                          |gaz03                                  |zxw05                      |zxw06                          |zxw07                                |zxw08       ]
+[zxw02    |zxw03 |zxw04                          |gaz03                                  |zxw05                      |zxw06                          |zxw07                                |zxw08       ]
+[zxw02    |zxw03 |zxw04                          |gaz03                                  |zxw05                      |zxw06                          |zxw07                                |zxw08       ]
+[zxw02    |zxw03 |zxw04                          |gaz03                                  |zxw05                      |zxw06                          |zxw07                                |zxw08       ]
+[zxw02    |zxw03 |zxw04                          |gaz03                                  |zxw05                      |zxw06                          |zxw07                                |zxw08       ]
+[zxw02    |zxw03 |zxw04                          |gaz03                                  |zxw05                      |zxw06                          |zxw07                                |zxw08       ]
+[zxw02    |zxw03 |zxw04                          |gaz03                                  |zxw05                      |zxw06                          |zxw07                                |zxw08       ]
+[zxw02    |zxw03 |zxw04                          |gaz03                                  |zxw05                      |zxw06                          |zxw07                                |zxw08       ]
+[zxw02    |zxw03 |zxw04                          |gaz03                                  |zxw05                      |zxw06                          |zxw07                                |zxw08       ]
+
+}
+END -- s_zxw
+Grid gr3060
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3060
+END -- VBox1
+END -- p_zxw
+
+TABLES
+gaz_file,
+zxw_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit zxw01=zxw_file.zxw01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field,No Blank/Repeated!";
+Edit zx02=formonly.zx02 type VARCHAR, tabIndex=2, noEntry;
+Group group02:group02;
+Edit dbs=formonly.dbs type CHAR, tabIndex=3, noEntry;
+Edit dbsname=formonly.dbsname type CHAR, tabIndex=4, noEntry;
+Edit zxw02=zxw_file.zxw02, tabIndex=5, title="Line No.", not null, required;
+ComboBox zxw03=zxw_file.zxw03, tabIndex=6, title="Class", not null, required, queryEditable, comment="1:Authorization Category 2:Program#", items=(("1", %"Authorization Category"),("2", %"Program ID"));
+ButtonEdit zxw04=zxw_file.zxw04, action=controlp, tabIndex=7, title="Program Code/Authoriz Category", not null, required, image="zoom";
+Edit gaz03=gaz_file.gaz03, tabIndex=8, title="Program ID/Authorization Category Code", noEntry;
+Edit zxw05=zxw_file.zxw05, tabIndex=9, title="Available Functions", noEntry, scroll;
+ComboBox zxw06=zxw_file.zxw06, tabIndex=10, title="Non-self\'s Data Dealing Method", queryEditable, comment="Set User\'s Authorization to Access Other Owner\'s Data", items=(("0", %"Can Query,Modify,Delete"),("1", %"Can Query,Modify,But Delete"),("2", %"Can Query,But Modify,Can Delete"),("3", %"Can Query,But Modify,nor Delete"),("4", %"Can't Query,nor Modify,nor Delete"));
+ComboBox zxw07=zxw_file.zxw07, tabIndex=11, title="Non-Same Dept.\'s Data Dealing Method", queryEditable, comment="Set User\'s Authorization to Access Other Dept\'s Data", items=(("0", %"Different Dept., Can Query,Modify,Delete"),("1", %"Different Dept., Can Query,Modify,But Delete"),("2", %"Different Dept., Can Query,But Modify,Can Delete"),("3", %"Different Dept., Can Query,But Modify,nor Delete"),("8", %"In Relative Dept, Can Query,Modify,Delete"),("5", %"In Relative Dept, Can Query,Modify,But Delete"),("6", %"In Relative Dept, Can Query,But Modify,Can Delete"),("7", %"In Relative Dept, Can Query,But Modify,nor Delete"),("4", %"Different Dept., Can't Query,nor Modify,nor Delete"));
+ComboBox zxw08=zxw_file.zxw08, tabIndex=12, title="Detail Auth", noEntry, queryEditable, items=(("0", %"Can Insert,Delete"),("1", %"Can Insert,But Delete"),("2", %"Cannot Insert,Can Delete"),("3", %"Cannot Insert,nor Delete"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zxw(zxw_file.zxw02,zxw_file.zxw03,zxw_file.zxw04,gaz_file.gaz03,zxw_file.zxw05,zxw_file.zxw06,zxw_file.zxw07,zxw_file.zxw08)
+SCREEN RECORD Undefined(zxw_file.zxw01,formonly.zx02,formonly.dbs,formonly.dbsname,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

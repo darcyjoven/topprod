@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_erp_sch.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"p_create_schema")
+Table tb1(unsortableColumns, unmovableColumns, unhidableColumns)
+{
+[legal   |legal_db|schema  |is_virtu|target_s]
+[legal   |legal_db|schema  |is_virtu|target_s]
+[legal   |legal_db|schema  |is_virtu|target_s]
+[legal   |legal_db|schema  |is_virtu|target_s]
+[legal   |legal_db|schema  |is_virtu|target_s]
+[legal   |legal_db|schema  |is_virtu|target_s]
+[legal   |legal_db|schema  |is_virtu|target_s]
+[legal   |legal_db|schema  |is_virtu|target_s]
+[legal   |legal_db|schema  |is_virtu|target_s]
+[legal   |legal_db|schema  |is_virtu|target_s]
+[legal   |legal_db|schema  |is_virtu|target_s]
+[legal   |legal_db|schema  |is_virtu|target_s]
+[legal   |legal_db|schema  |is_virtu|target_s]
+
+}
+END -- tb1
+END -- Form1
+
+ATTRIBUTES
+Edit legal=formonly.legal type CHAR, tabIndex=2, title="legal", noEntry, not null, required;
+Edit legal_db=formonly.legal_db type CHAR, tabIndex=3, title="legal_db", noEntry, not null, required, downShift;
+Edit schema=formonly.schema type CHAR, tabIndex=4, title="schema", noEntry, not null, required;
+CheckBox is_virtu=formonly.is_virtual type CHAR, tabIndex=5, title="is_virtual", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit target_s=formonly.target_schema type CHAR, tabIndex=6, title="target_schema", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tb1(formonly.legal,formonly.legal_db,formonly.schema,formonly.is_virtual,formonly.target_schema)
+END -- INSTRUCTIONS
+

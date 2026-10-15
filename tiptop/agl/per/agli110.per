@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli110")
+VBox vb2
+Table s_axf
+{
+[axff05    |axff06        |axff01              |axff01_desc         |axff07              |axff02              |axff02_desc             |ax|axff04                  |axff04_desc             |axffa]
+[axff05    |axff06        |axff01              |axff01_desc         |axff07              |axff02              |axff02_desc             |ax|axff04                  |axff04_desc             |axffa]
+[axff05    |axff06        |axff01              |axff01_desc         |axff07              |axff02              |axff02_desc             |ax|axff04                  |axff04_desc             |axffa]
+[axff05    |axff06        |axff01              |axff01_desc         |axff07              |axff02              |axff02_desc             |ax|axff04                  |axff04_desc             |axffa]
+[axff05    |axff06        |axff01              |axff01_desc         |axff07              |axff02              |axff02_desc             |ax|axff04                  |axff04_desc             |axffa]
+[axff05    |axff06        |axff01              |axff01_desc         |axff07              |axff02              |axff02_desc             |ax|axff04                  |axff04_desc             |axffa]
+[axff05    |axff06        |axff01              |axff01_desc         |axff07              |axff02              |axff02_desc             |ax|axff04                  |axff04_desc             |axffa]
+[axff05    |axff06        |axff01              |axff01_desc         |axff07              |axff02              |axff02_desc             |ax|axff04                  |axff04_desc             |axffa]
+[axff05    |axff06        |axff01              |axff01_desc         |axff07              |axff02              |axff02_desc             |ax|axff04                  |axff04_desc             |axffa]
+[axff05    |axff06        |axff01              |axff01_desc         |axff07              |axff02              |axff02_desc             |ax|axff04                  |axff04_desc             |axffa]
+
+}
+END -- s_axf
+Grid gr2335
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2335
+END -- vb2
+END -- agli110
+
+TABLES
+axff_file
+ATTRIBUTES
+CheckBox axff05=axff_file.axff05, tabIndex=12, title="Capital Stock", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox axff06=axff_file.axff06, tabIndex=11, title="Source of Account Balance", not null, required, items=(("1", "Period Blance Before Combined"),("2", "Account Transaction Code Contra Balance Before Combined"));
+ButtonEdit axff01=axff_file.axff01, action=controlp, tabIndex=1, title="Source Acct Code", not null, required, image="zoom", comment="Key Field, No Blank/Repeated! <^P>Query Account Data";
+Edit axff01_desc=formonly.axff01_desc type CHAR, tabIndex=2, title="Descriptopn", noEntry;
+ComboBox axff07=axff_file.axff07, tabIndex=13, title="Source of Account Balance", not null, required, items=(("1", "Period Blance Before Combined(axg_file)"),("2", "Account Transaction Code Contra Balance Before Combined(axk_file)"));
+ButtonEdit axff02=axff_file.axff02, action=controlp, tabIndex=3, title="Contra\'d Acct.Code", not null, required, image="zoom", comment="<^P>Query Account Data";
+Edit axff02_desc=formonly.axff02_desc type CHAR, tabIndex=4, title="Description", noEntry;
+CheckBox ax=axff_file.axff03, tabIndex=5, title="%", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit axff04=axff_file.axff04, action=controlp, tabIndex=6, title="Odds Homologous Acc.", image="zoom", comment="<^P>Query Account Data";
+Edit axff04_desc=formonly.axff04_desc type CHAR, tabIndex=7, title="Description", noEntry;
+CheckBox axffa=axff_file.axffacti, tabIndex=8, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axff(axff_file.axff05,axff_file.axff06,axff_file.axff01,formonly.axff01_desc,axff_file.axff07,axff_file.axff02,formonly.axff02_desc,axff_file.axff03,axff_file.axff04,formonly.axff04_desc,axff_file.axffacti)
+SCREEN RECORD Undefined(formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt4003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt4003")
+VBox VBox1
+Folder pc565
+Page page01(text="Main")
+Grid gr2500
+{
+ <G group01                                                                         >
+ [oea901                               ]
+ [oea902                               ]
+  Triangle Trade Flow Code              [oea904    ][poz02                         ]
+  Downstream Vender No.                 [poy31     ] [poy32     ] [poy33     ]
+                                        [poy34     ] [poy35     ] [poy36     ]
+  Downstream Vender Referring to Cust # [oea911    ] [oea912    ] [oea913    ]
+                                        [oea914    ] [oea915    ] [oea916    ]
+  Customer Order No.                    [oea10               ]
+  Sales Declaration Method              [oea903    ]
+ [oea905                               ]
+ <                                                                                  >
+
+}
+END -- gr2500
+END -- page01
+END -- pc565
+END -- VBox1
+END -- axmt4003
+
+TABLES
+oea_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox oea901=oea_file.oea901, tabIndex=1, text="Triangle Trade Order", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oea902=oea_file.oea902, tabIndex=2, text="Final Order  ", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oea904=oea_file.oea904, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Flow Code";
+Edit poz02=formonly.poz02 type CHAR, tabIndex=4, noEntry;
+Edit poy31=formonly.poy31 type CHAR, tabIndex=5, noEntry;
+Edit poy32=formonly.poy32 type CHAR, tabIndex=6, noEntry;
+Edit poy33=formonly.poy33 type CHAR, tabIndex=7, noEntry;
+Edit poy34=formonly.poy34 type CHAR, tabIndex=8, noEntry;
+Edit poy35=formonly.poy35 type CHAR, tabIndex=9, noEntry;
+Edit poy36=formonly.poy36 type CHAR, tabIndex=10, noEntry;
+ButtonEdit oea911=oea_file.oea911, action=controlp, tabIndex=11, noEntry, image="zoom", comment="<^P>Qry Customer Code";
+ButtonEdit oea912=oea_file.oea912, action=controlp, tabIndex=12, noEntry, image="zoom", comment="<^P>Qry Customer Code";
+ButtonEdit oea913=oea_file.oea913, action=controlp, tabIndex=13, noEntry, image="zoom", comment="<^P>Qry Customer Code";
+ButtonEdit oea914=oea_file.oea914, action=controlp, tabIndex=14, noEntry, image="zoom", comment="<^P>Qry Customer Code";
+ButtonEdit oea915=oea_file.oea915, action=controlp, tabIndex=15, noEntry, image="zoom", comment="<^P>Qry Customer Code";
+ButtonEdit oea916=oea_file.oea916, action=controlp, tabIndex=16, noEntry, image="zoom", comment="<^P>Qry Customer Code";
+Edit oea10=oea_file.oea10, tabIndex=17;
+ComboBox oea903=oea_file.oea903, tabIndex=18, noEntry, not null, required, queryEditable, comment="1.Total 2.Diff 3.Zero", items=(("1", "1.Total"),("2", "2.Diff"),("3", "3.Zero"));
+CheckBox oea905=oea_file.oea905, tabIndex=19, text="Carry", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oea_file.oea901,oea_file.oea902,oea_file.oea904,formonly.poz02,formonly.poy31,formonly.poy32,formonly.poy33,formonly.poy34,formonly.poy35,formonly.poy36,oea_file.oea911,oea_file.oea912,oea_file.oea913,oea_file.oea914,oea_file.oea915,oea_file.oea916,oea_file.oea10,oea_file.oea903,oea_file.oea905)
+END -- INSTRUCTIONS
+

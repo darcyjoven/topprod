@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr902.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr902")
+VBox vb2
+Grid gr5212
+{
+ <G group01                                                     >
+  P/O No.       [pmm01               ]
+  Purchase Date [pmm04               ]
+  Vender No.    [pmm09               ]
+ <                                                              >
+
+}
+END -- gr5212
+Group group02(text="INPUT")
+Grid gr5213
+{
+[d                                                            ]
+[e                                                            ]
+[f                                                            ]
+
+}
+END -- gr5213
+END -- group02
+Grid gr5214
+{
+ [more                                                  ]
+
+}
+END -- gr5214
+END -- vb2
+END -- apmr902
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit pmm01=formonly.pmm01 type VARCHAR, tabIndex=1;
+DateEdit pmm04=formonly.pmm04 type DATE, tabIndex=2;
+Edit pmm09=formonly.pmm09 type VARCHAR, tabIndex=3;
+CheckBox d=formonly.d type VARCHAR, tabIndex=4, text="Print Payment Info", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=5, text="Print Receipt?  ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type VARCHAR, tabIndex=6, text="Print Internal Data?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmm01,formonly.pmm04,formonly.pmm09,formonly.d,formonly.e,formonly.f,formonly.more)
+END -- INSTRUCTIONS
+

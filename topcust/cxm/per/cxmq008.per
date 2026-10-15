@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cxm/4fd/cxmq008.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi200")
+VBox VBox1
+Folder pc555
+Page page01(text="Main")
+Table s_omf_1
+{
+[sfv04     |ima02     |ima021  |sum_sfv09   ]
+[sfv04     |ima02     |ima021  |sum_sfv09   ]
+[sfv04     |ima02     |ima021  |sum_sfv09   ]
+[sfv04     |ima02     |ima021  |sum_sfv09   ]
+[sfv04     |ima02     |ima021  |sum_sfv09   ]
+[sfv04     |ima02     |ima021  |sum_sfv09   ]
+[sfv04     |ima02     |ima021  |sum_sfv09   ]
+[sfv04     |ima02     |ima021  |sum_sfv09   ]
+[sfv04     |ima02     |ima021  |sum_sfv09   ]
+[sfv04     |ima02     |ima021  |sum_sfv09   ]
+
+}
+END -- s_omf_1
+END -- page01
+END -- pc555
+Grid gr3045
+{
+      sum1      [sum1             ]
+
+
+}
+END -- gr3045
+END -- VBox1
+END -- cxmq007
+
+ATTRIBUTES
+ButtonEdit sfv04=formonly.sfv04 type VARCHAR, tabIndex=1, title="sfv04", not null, required, comment="Assign";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=2, title="ima02", not null, required;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=3, title="ima021", not null, required;
+Edit sum_sfv09=formonly.sum_sfv09 type DECIMAL, tabIndex=5, title=%"sum_sfv09";
+Edit sum1=formonly.sum1 type DECIMAL, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfv_1(formonly.sfv04,formonly.ima02,formonly.ima021,formonly.sum_sfv09)
+SCREEN RECORD Undefined(formonly.sum1)
+END -- INSTRUCTIONS
+

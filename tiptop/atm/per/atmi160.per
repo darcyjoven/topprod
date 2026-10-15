@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi160.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi160")
+VBox VBox1
+Folder pc325
+Page page01(text="Main")
+Table s_odb
+{
+[odb01     |odb02               |odb03     |odb04       |odb05     |odb06     |odb09 |odb07           |tqb02               |odb08 |odbac]
+[odb01     |odb02               |odb03     |odb04       |odb05     |odb06     |odb09 |odb07           |tqb02               |odb08 |odbac]
+[odb01     |odb02               |odb03     |odb04       |odb05     |odb06     |odb09 |odb07           |tqb02               |odb08 |odbac]
+[odb01     |odb02               |odb03     |odb04       |odb05     |odb06     |odb09 |odb07           |tqb02               |odb08 |odbac]
+[odb01     |odb02               |odb03     |odb04       |odb05     |odb06     |odb09 |odb07           |tqb02               |odb08 |odbac]
+[odb01     |odb02               |odb03     |odb04       |odb05     |odb06     |odb09 |odb07           |tqb02               |odb08 |odbac]
+[odb01     |odb02               |odb03     |odb04       |odb05     |odb06     |odb09 |odb07           |tqb02               |odb08 |odbac]
+[odb01     |odb02               |odb03     |odb04       |odb05     |odb06     |odb09 |odb07           |tqb02               |odb08 |odbac]
+[odb01     |odb02               |odb03     |odb04       |odb05     |odb06     |odb09 |odb07           |tqb02               |odb08 |odbac]
+[odb01     |odb02               |odb03     |odb04       |odb05     |odb06     |odb09 |odb07           |tqb02               |odb08 |odbac]
+
+}
+END -- s_odb
+END -- page01
+END -- pc325
+Grid gr1390
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1390
+END -- VBox1
+END -- atmi160
+
+TABLES
+odb_file
+ATTRIBUTES
+Edit odb01=odb_file.odb01, tabIndex=1, title="Version #", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit odb02=odb_file.odb02, tabIndex=2, title="Version Name", not null, required;
+DateEdit odb03=odb_file.odb03, tabIndex=3, title="Plan.Date", not null, required;
+ComboBox odb04=odb_file.odb04, tabIndex=4, title="Time Bucket", not null, required, queryEditable, items=(("1", %"Quarter"),("2", %"Month"),("3", %"10-Day"),("4", %"Week"),("5", %"Day"));
+DateEdit odb05=odb_file.odb05, tabIndex=5, title="Init.Date", not null, required;
+DateEdit odb06=odb_file.odb06, tabIndex=6, title="End Date", not null, required;
+ButtonEdit odb09=odb_file.odb09, action=controlp, tabIndex=7, title="Curr.", not null, required, image="zoom";
+ButtonEdit odb07=odb_file.odb07, action=controlp, tabIndex=8, title="Upper Org. Code", not null, required, image="zoom";
+Edit tqb02=formonly.tqb02 type CHAR, tabIndex=9, title="Upper Org. Name", noEntry;
+CheckBox odb08=odb_file.odb08, tabIndex=10, title="Carry", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox odbac=odb_file.odbacti, tabIndex=11, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_odb(odb_file.odb01,odb_file.odb02,odb_file.odb03,odb_file.odb04,odb_file.odb05,odb_file.odb06,odb_file.odb09,odb_file.odb07,formonly.tqb02,odb_file.odb08,odb_file.odbacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

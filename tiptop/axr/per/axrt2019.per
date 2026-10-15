@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt2019.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt2019")
+VBox VBox1
+Folder pc663
+Page page01(text="Main")
+Grid gr2757
+{
+ <G group01                                        >
+ [only_one                       ]
+
+ <                                                 >
+ <G group02                                        >
+  L/C Receipt #          [ole01     ]
+  L/C Receiving Date QBE [ole09     ]
+  Account Employee QBE   [oleuser             ]
+  Accounts Department    [olegrup             ]
+ <                                                 >
+
+}
+END -- gr2757
+END -- page01
+END -- pc663
+END -- VBox1
+END -- axrt2019
+
+TABLES
+ole_file
+ATTRIBUTES
+Group group01:group01, text="Option";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, not null, required, items=(("1", "Generate this Doc only"),("2", "Generate by QBE Condition"));
+Group group02:group02, text="Enter Sales L/C Condition to Gen Entry Sheet";
+Edit ole01=ole_file.ole01, tabIndex=2;
+DateEdit ole09=ole_file.ole09, tabIndex=3;
+Edit oleuser=ole_file.oleuser, tabIndex=4;
+Edit olegrup=ole_file.olegrup, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,ole_file.ole01,ole_file.ole09,ole_file.oleuser,ole_file.olegrup)
+END -- INSTRUCTIONS
+

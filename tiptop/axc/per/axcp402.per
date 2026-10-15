@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp402.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcp402")
+VBox VBox1
+Grid gr1518
+{
+ <G group01                                                              >
+  W/O No.             [sfb01               ]
+  Planned Prod.Date   [sfb13               ]
+  Issue Date          [sfb81               ]
+ <                                                                       >
+ <G group02                                                              >
+ [sw_1                                                      ]
+ [sw_2                                                      ]
+ <                                                                       >
+
+}
+END -- gr1518
+Grid gr1519
+{
+ [dummy01                                                             ]
+ [dummy02                                                             ]
+}
+END -- gr1519
+Grid gr1520
+{
+ [g_bgjob                                                      ]
+
+}
+END -- gr1520
+END -- VBox1
+END -- axcp402
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit sfb01=formonly.sfb01 type CHAR, tabIndex=1;
+DateEdit sfb13=formonly.sfb13 type DATE, tabIndex=2;
+DateEdit sfb81=formonly.sfb81 type DATE, tabIndex=3;
+Group group02:group02, text="INPUT";
+CheckBox sw_1=formonly.sw_1 type CHAR, tabIndex=4, text="Set General W/O", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sw_2=formonly.sw_2 type CHAR, tabIndex=5, text="Set SUB W/O", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="NOTE:For all W/O, if Down Level Item Cost Level equal or smaller than";
+Label dummy02:dummy02, text="W/O Product Cost Levels, Rework code(sfb99)Auto Set\'Y\'";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=6, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfb01,formonly.sfb13,formonly.sfb81,formonly.sw_1,formonly.sw_2,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

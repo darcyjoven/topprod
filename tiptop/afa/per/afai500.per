@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai500")
+VBox VBox1
+Folder pc343
+Page page01(text="Main")
+Grid gr1879
+{
+ Policy No.          [fdd01          ]
+ Property No.        [fdd02       ][fdd022    ]
+ Chines Name         [faj02                         ]
+ Year Month          [fdd03     ][fdd033    ]
+ Department          [fdd04       ][gem02     ]
+ Cur. Period Premium [fdd05               ]
+
+ Premium Acct        [fdd08                         ] Premium Acct2       [fdd081                        ]
+                     [aag02_1                       ]                     [aag02_3                       ]
+ Prepaid Premium     [fdd09                         ] Prepaid Premium2    [fdd091                        ]
+                     [aag02_2                       ]                     [aag02_4                       ]
+
+ Voucher No          [fdd06               ]           Voucher No          [fdd062              ]
+ Date                [fdd07               ]           Date                [fdd072              ]
+
+}
+END -- gr1879
+END -- page01
+Page info(text="Info")
+Grid gr1880
+{
+ Record Owner      [fdduser   ] Last Modified By  [fddmodu   ]
+ Department        [fddgrup   ] Create/MidifyDate [fdddate   ]
+ Record Orig.      [fddoriu   ]
+ Dept Orig.        [fddorig   ]
+}
+END -- gr1880
+END -- info
+END -- pc343
+Grid gr1881
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1881
+END -- VBox1
+END -- afai500
+
+TABLES
+fdd_file
+ATTRIBUTES
+Edit fdd01=fdd_file.fdd01, tabIndex=1, not null, required;
+ButtonEdit fdd02=fdd_file.fdd02, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Data ";
+Edit fdd022=fdd_file.fdd022, tabIndex=3, not null, required;
+Edit faj02=formonly.faj02 type CHAR, tabIndex=4, noEntry;
+Edit fdd03=fdd_file.fdd03, tabIndex=5, not null, required;
+Edit fdd033=fdd_file.fdd033, tabIndex=6, not null, required;
+ButtonEdit fdd04=fdd_file.fdd04, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=8, noEntry;
+Edit fdd05=fdd_file.fdd05, tabIndex=9;
+ButtonEdit fdd08=fdd_file.fdd08, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit fdd081=fdd_file.fdd081, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Account ";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=12, noEntry;
+Edit aag02_3=formonly.aag02_3 type CHAR, tabIndex=13, noEntry;
+ButtonEdit fdd09=fdd_file.fdd09, action=controlp, tabIndex=14, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit fdd091=fdd_file.fdd091, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry Account ";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=16, noEntry;
+Edit aag02_4=formonly.aag02_4 type CHAR, tabIndex=17, noEntry;
+Edit fdd06=fdd_file.fdd06, tabIndex=18, noEntry;
+Edit fdd062=fdd_file.fdd062, tabIndex=18, noEntry;
+DateEdit fdd07=fdd_file.fdd07, tabIndex=19, noEntry;
+DateEdit fdd072=fdd_file.fdd072, tabIndex=19, noEntry;
+Edit fdduser=fdd_file.fdduser, tabIndex=20, noEntry;
+Edit fddmodu=fdd_file.fddmodu, tabIndex=21, noEntry;
+Edit fddgrup=fdd_file.fddgrup, tabIndex=22, noEntry;
+DateEdit fdddate=fdd_file.fdddate, tabIndex=23, noEntry;
+Edit fddoriu=fdd_file.fddoriu, tabIndex=25, noEntry;
+Edit fddorig=fdd_file.fddorig, tabIndex=26, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fdd_file.fdd01,fdd_file.fdd02,fdd_file.fdd022,formonly.faj02,fdd_file.fdd03,fdd_file.fdd033,fdd_file.fdd04,formonly.gem02,fdd_file.fdd05,fdd_file.fdd08,fdd_file.fdd081,formonly.aag02_1,formonly.aag02_3,fdd_file.fdd09,fdd_file.fdd091,formonly.aag02_2,formonly.aag02_4,fdd_file.fdd06,fdd_file.fdd062,fdd_file.fdd07,fdd_file.fdd072,fdd_file.fdduser,fdd_file.fddmodu,fdd_file.fddgrup,fdd_file.fdddate,formonly.cnt,fdd_file.fddoriu,fdd_file.fddorig)
+END -- INSTRUCTIONS
+

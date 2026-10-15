@@ -1,0 +1,172 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afas010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afas010")
+Folder pc8
+Page page01(text="Main")
+Grid gr35
+{
+[faa01                                                 ]
+ Plant # where AGL is          [faa02p    ]
+ General Ledger Book           [faa02b    ]
+
+ Depreciation Expense by       [faa20                  ]
+
+[faa24                                                 ]
+
+ Interest Rate                 [faa26                  ]
+
+ Enter Yearly Rate                         [faa27     ] %
+ Amortize Depreciation after Entry Recorded[faa15              ]
+
+[faa23                                                ]
+ Re-amortize Residual Life                 [faa25     ]
+ AFA Module Current Year/Period            [faa07]-[fa]
+ Module Locking Date                       [faa09       ]
+ AFA Current Year/Period                   [faa11]-[f1]
+ Account Locking Date                      [faa13       ]
+
+[faa31                                                ]
+ General Ledger Book2          [faa02c    ]
+ Amortize Depreciation after Entry Recorded[faa152             ]
+[faa232                                               ]
+ AFA Module Current Year/Period            [faa02]-[f2]
+ Module Locking Date                       [faa092      ]
+}
+END -- gr35
+END -- page01
+Page page02(text="General")
+VBox vb17
+Grid gr36
+{
+ [faa19                                                 ]
+  Work Sheet S/N Used           [faa191    ]
+ [faa03                                                 ]
+  Asset Serial No. Used         [faa031    ]
+ [faa04                                                 ]
+ [faa05                                                 ]
+ [faa06                                                 ]
+ <G group01                                              >
+ [faa28                                                 ]
+
+ <                                                       >
+}
+END -- gr36
+Grid gr37
+{
+[faa16                                                 ]
+ Accessory Initial No.         [faa17     ]
+ Surcharge Initial No.         [faa18     ]
+ Sheet Carried,Property # Last Codes is S/N[faa21     ]
+ Additional # Last Codes is S/N            [faa22     ]
+}
+END -- gr37
+Grid gr38
+{
+[faa29                                                 ]
+[faa30                                                 ]
+
+}
+END -- gr38
+END -- vb17
+END -- page02
+Page userdefined_field(text=%"User Defined Field")
+Grid Grid1
+{
+
+ userdefined_field01[faaud01                 ]userdefined_field09[faaud09                ]
+                    [                        ]
+ userdefined_field02[faaud02                 ]userdefined_field10[faaud10                ]
+
+ userdefined_field03[faaud03                 ]userdefined_field11[faaud11                ]
+
+ userdefined_field04[faaud04                 ]userdefined_field12[faaud12                ]
+
+ userdefined_field05[faaud05                 ]userdefined_field13[faaud13                ]
+
+ userdefined_field06[faaud06                 ]userdefined_field14[faaud14                ]
+
+ userdefined_field07[faaud07                 ]userdefined_field15[faaud15                ]
+
+ userdefined_field08[faaud08                 ]
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- userdefined_field
+END -- pc8
+END -- afas010
+
+TABLES
+faa_file
+ATTRIBUTES
+CheckBox faa01=faa_file.faa01, tabIndex=1, text="Open AFA Module to Users", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y:Normal use N:Only for Print/Query";
+ButtonEdit faa02p=faa_file.faa02p, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Plant Common Data";
+ButtonEdit faa02b=faa_file.faa02b, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Book No.";
+RadioGroup faa20=faa_file.faa20, tabIndex=5, comment="Depreciation Expense by (1.Asset 2.Dept)", items=(("1", "Asset"),("2", "Department"));
+CheckBox faa24=faa_file.faa24, tabIndex=6, text="Check Storing Plant?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+RadioGroup faa26=faa_file.faa26, tabIndex=7, items=(("1", "Yearly Interest Rate"),("2", "Monthly Interest Rate"));
+Edit faa27=faa_file.faa27, tabIndex=8;
+ComboBox faa15=faa_file.faa15, tabIndex=9, not null, required, queryEditable, items=(("1", "Next Month"),("2", "Current Month"),("3", "CM if bef 15th"),("4", "Current Month(% of Record Date to End of Month)"));
+CheckBox faa23=faa_file.faa23, tabIndex=10, text="Amortize Depreciation if Cur.MM Settlement?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit faa25=faa_file.faa25, tabIndex=11;
+Edit faa07=faa_file.faa07, tabIndex=12;
+Edit fa=faa_file.faa08, tabIndex=13;
+DateEdit faa09=faa_file.faa09, tabIndex=14;
+Edit faa11=faa_file.faa11, tabIndex=15;
+Edit f1=faa_file.faa12, tabIndex=16;
+DateEdit faa13=faa_file.faa13, tabIndex=17;
+CheckBox faa31=faa_file.faa31, tabIndex=33, text="Use Financial Report 2", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit faa02c=faa_file.faa02c, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Book No.";
+ComboBox faa152=faa_file.faa152, tabIndex=49, not null, required, queryEditable, items=(("1", "Next Month"),("2", "Current Month"),("3", "CM if bef 15th"),("4", "Current Month(% of Record Date to End of Month)"));
+CheckBox faa232=faa_file.faa232, tabIndex=50, text="Amortize Depreciation if Cur.MM Settlement?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit faa02=faa_file.faa072, tabIndex=51;
+Edit f2=faa_file.faa082, tabIndex=52;
+DateEdit faa092=faa_file.faa092, tabIndex=53;
+CheckBox faa19=faa_file.faa19, tabIndex=18, text="Auto Numbering Sheet S/N", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit faa191=faa_file.faa191, tabIndex=19, comment=" Work Sheet S/N Used";
+CheckBox faa03=faa_file.faa03, tabIndex=20, text="Auto Numbering Asset S/N", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit faa031=faa_file.faa031, tabIndex=21, comment="Auto Numbering Asset S/N";
+CheckBox faa04=faa_file.faa04, tabIndex=22, text="When Enter Fixed Asset,Asset Serial Number Can Be Blank", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox faa05=faa_file.faa05, tabIndex=23, text="When Enter Fixed Asset,Property # Blank", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox faa06=faa_file.faa06, tabIndex=24, text="Default Property No. same as Serial Number ?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group01:group01, text="Asset Sale Exch. Rt Mtd";
+RadioGroup faa28=faa_file.faa28, tabIndex=25, not null, required, items=(("B", "Bank Buying"),("S", "Bank Selling"),("M", "Bank Average ExRt"),("C", "Customs Buy"),("D", "Customs Sell"));
+CheckBox faa16=faa_file.faa16, tabIndex=26, text="Mix Numbering Accessories and Expense", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit faa17=faa_file.faa17, tabIndex=27;
+Edit faa18=faa_file.faa18, tabIndex=28;
+Edit faa21=faa_file.faa21, tabIndex=29;
+Edit faa22=faa_file.faa22, tabIndex=30;
+CheckBox faa29=faa_file.faa29, tabIndex=31, text="Deposit Asset to Clearing Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox faa30=faa_file.faa30, tabIndex=32, text="List/Depreciate unused Asset", not null, required, valueChecked = "Y", valueUnchecked = "N";
+TextEdit faaud01=faa_file.faaud01, tabIndex=45;
+Edit faaud09=faa_file.faaud09, tabIndex=34;
+Edit faaud02=faa_file.faaud02, tabIndex=35;
+Edit faaud10=faa_file.faaud10, tabIndex=36;
+Edit faaud03=faa_file.faaud03, tabIndex=37;
+Edit faaud11=faa_file.faaud11, tabIndex=38;
+Edit faaud04=faa_file.faaud04, tabIndex=39;
+Edit faaud12=faa_file.faaud12, tabIndex=40;
+Edit faaud05=faa_file.faaud05, tabIndex=42;
+DateEdit faaud13=faa_file.faaud13, tabIndex=46;
+Edit faaud06=faa_file.faaud06, tabIndex=41;
+DateEdit faaud14=faa_file.faaud14, tabIndex=47;
+Edit faaud07=faa_file.faaud07, tabIndex=43;
+DateEdit faaud15=faa_file.faaud15, tabIndex=48;
+Edit faaud08=faa_file.faaud08, tabIndex=44;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(faa_file.faa01,faa_file.faa02p,faa_file.faa02b,faa_file.faa02c,faa_file.faa20,faa_file.faa24,faa_file.faa26,faa_file.faa27,faa_file.faa15,faa_file.faa23,faa_file.faa25,faa_file.faa07,faa_file.faa08,faa_file.faa09,faa_file.faa11,faa_file.faa12,faa_file.faa13,faa_file.faa19,faa_file.faa191,faa_file.faa03,faa_file.faa031,faa_file.faa04,faa_file.faa05,faa_file.faa06,faa_file.faa28,faa_file.faa16,faa_file.faa17,faa_file.faa18,faa_file.faa21,faa_file.faa22,faa_file.faa29,faa_file.faa30,faa_file.faa31,faa_file.faaud09,faa_file.faaud02,faa_file.faaud10,faa_file.faaud03,faa_file.faaud11,faa_file.faaud04,faa_file.faaud12,faa_file.faaud06,faa_file.faaud05,faa_file.faaud07,faa_file.faaud08,faa_file.faaud01,faa_file.faaud13,faa_file.faaud14,faa_file.faaud15,faa_file.faa152,faa_file.faa232,faa_file.faa072,faa_file.faa082,faa_file.faa092)
+END -- INSTRUCTIONS
+

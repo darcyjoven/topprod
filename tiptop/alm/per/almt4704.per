@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt4704.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt4704")
+VBox vb4
+Folder pc5
+Page Page12(text=%"Basic Data")
+Grid gr13
+{
+ Coupon Tot. Amt.[lsy041              ]
+ Coupon Amtount  [lsy042              ]
+ Coupon Amt.     [lsy04               ]
+}
+END -- gr13
+END -- Page12
+END -- pc5
+Table s_lsy2
+{
+[lsy02           |lsy03               ]
+[lsy02           |lsy03               ]
+[lsy02           |lsy03               ]
+[lsy02           |lsy03               ]
+
+}
+END -- s_lsy2
+Folder pc2
+Page Page2(action=fixup3, text=%"Info2")
+Table s_lro(wantFixedPageSize)
+{
+[lro01           |lro02           |lro03           |lpx02               |lqe03     |lrz02               ]
+[lro01           |lro02           |lro03           |lpx02               |lqe03     |lrz02               ]
+[lro01           |lro02           |lro03           |lpx02               |lqe03     |lrz02               ]
+[lro01           |lro02           |lro03           |lpx02               |lqe03     |lrz02               ]
+[lro01           |lro02           |lro03           |lpx02               |lqe03     |lrz02               ]
+[lro01           |lro02           |lro03           |lpx02               |lqe03     |lrz02               ]
+[lro01           |lro02           |lro03           |lpx02               |lqe03     |lrz02               ]
+[lro01           |lro02           |lro03           |lpx02               |lqe03     |lrz02               ]
+[lro01           |lro02           |lro03           |lpx02               |lqe03     |lrz02               ]
+[lro01           |lro02           |lro03           |lpx02               |lqe03     |lrz02               ]
+[lro01           |lro02           |lro03           |lpx02               |lqe03     |lrz02               ]
+[lro01           |lro02           |lro03           |lpx02               |lqe03     |lrz02               ]
+[lro01           |lro02           |lro03           |lpx02               |lqe03     |lrz02               ]
+
+}
+END -- s_lro
+END -- Page2
+END -- pc2
+Grid gr12
+{
+  --- Details1[cn2   ] ----Details2[cn3    ] --------
+
+}
+END -- gr12
+END -- vb4
+END -- almt4704
+
+TABLES
+lsy_file
+ATTRIBUTES
+Edit lsy041=formonly.lsy041 type DECIMAL, tabIndex=6, noEntry;
+Edit lsy042=formonly.lsy042 type CHAR, tabIndex=13, noEntry;
+Edit lsy04=lsy_file.lsy04, tabIndex=12, not null;
+Edit lsy02=lsy_file.lsy02, tabIndex=9, title="Payment No.", noEntry;
+Edit lsy03=lsy_file.lsy03, tabIndex=10, title="lsy03", noEntry;
+Edit lro01=formonly.lro01 type VARCHAR, tabIndex=1, title="Payment No.", noEntry;
+Edit lro02=formonly.lro02 type VARCHAR, tabIndex=2, title="Coupon No.", noEntry;
+Edit lro03=formonly.lro03 type CHAR, tabIndex=7, title="Coupon Type No.", noEntry;
+Edit lpx02=formonly.lpx02 type CHAR, tabIndex=8, title="Coupon Type Name", noEntry;
+Edit lqe03=formonly.lqe03 type CHAR, tabIndex=3, title="Coupon Amt. No.", noEntry;
+Edit lrz02=formonly.lrz02 type CHAR, tabIndex=4, title="Coupon Amt.", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=5, noEntry;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lsy2(lsy_file.lsy02,lsy_file.lsy03)
+SCREEN RECORD s_lro(formonly.lro01,formonly.lro02,formonly.lro03,formonly.lpx02,formonly.lqe03,formonly.lrz02)
+SCREEN RECORD Undefined(formonly.lsy041,formonly.lsy042,lsy_file.lsy04,formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

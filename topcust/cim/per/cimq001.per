@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cim/4fd/cimq001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq400")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr3157
+{
+
+ g_bdate [g_bdate              ]  ----    g_edate [g_edate              ]
+
+
+}
+END -- gr3157
+END -- hb1
+END -- page01
+END -- folder01
+Table s_img
+{
+[imn03     |ima02     |ima021      |imn04     |imn15          |imn09          |imn10        ]
+[imn03     |ima02     |ima021      |imn04     |imn15          |imn09          |imn10        ]
+[imn03     |ima02     |ima021      |imn04     |imn15          |imn09          |imn10        ]
+[imn03     |ima02     |ima021      |imn04     |imn15          |imn09          |imn10        ]
+[imn03     |ima02     |ima021      |imn04     |imn15          |imn09          |imn10        ]
+[imn03     |ima02     |ima021      |imn04     |imn15          |imn09          |imn10        ]
+[imn03     |ima02     |ima021      |imn04     |imn15          |imn09          |imn10        ]
+[imn03     |ima02     |ima021      |imn04     |imn15          |imn09          |imn10        ]
+[imn03     |ima02     |ima021      |imn04     |imn15          |imn09          |imn10        ]
+[imn03     |ima02     |ima021      |imn04     |imn15          |imn09          |imn10        ]
+
+}
+END -- s_img
+Grid gr3160
+{
+  ----------[cn2   ] ----------
+
+}
+END -- gr3160
+END -- vb1
+END -- aimq400
+
+ATTRIBUTES
+DateEdit g_bdate=formonly.g_bdate type DATE, tabIndex=1, not null, required, comment="Please by QBE, Enter Item# to Query";
+DateEdit g_edate=formonly.g_edate type DATE, tabIndex=10, not null, required, comment="Please by QBE, Enter Item# to Query";
+ButtonEdit imn03=formonly.imn03 type CHAR, action=controlp, tabIndex=2, title="imn03", image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, title="ima02";
+Edit ima021=formonly.ima021 type CHAR, tabIndex=4, title="ima021";
+ButtonEdit imn04=formonly.imn04 type CHAR, action=controlp, tabIndex=5, title="imn04", image="zoom";
+ButtonEdit imn15=formonly.imn15 type CHAR, action=controlp, tabIndex=6, title="imn15", image="zoom";
+ButtonEdit imn09=formonly.imn09 type CHAR, action=controlp, tabIndex=7, title="imn09", image="zoom";
+Edit imn10=formonly.imn10 type DECIMAL, tabIndex=8, title="imn10";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imn(formonly.imn03,formonly.ima02,formonly.ima021,formonly.imn04,formonly.imn15,formonly.imn09,formonly.imn10)
+SCREEN RECORD Undefined(formonly.g_bdate,formonly.cn2,formonly.g_edate)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici022.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aici022")
+VBox VBox1
+Folder pc2
+Page Page3(text=%"Main")
+Table s_ids
+{
+[ids01                   |ids02     |ids03     |ids04     |idsacti ]
+[ids01                   |ids02     |ids03     |ids04     |idsacti ]
+[ids01                   |ids02     |ids03     |ids04     |idsacti ]
+[ids01                   |ids02     |ids03     |ids04     |idsacti ]
+[ids01                   |ids02     |ids03     |ids04     |idsacti ]
+[ids01                   |ids02     |ids03     |ids04     |idsacti ]
+[ids01                   |ids02     |ids03     |ids04     |idsacti ]
+[ids01                   |ids02     |ids03     |ids04     |idsacti ]
+[ids01                   |ids02     |ids03     |ids04     |idsacti ]
+[ids01                   |ids02     |ids03     |ids04     |idsacti ]
+
+}
+END -- s_ids
+END -- Page3
+END -- pc2
+Grid gr1
+{
+   --------Rows[cn2       ]
+
+}
+END -- gr1
+END -- VBox1
+END -- aici022
+
+TABLES
+ids_file
+ATTRIBUTES
+ButtonEdit ids01=ids_file.ids01, action=controlp, tabIndex=1, title="Lot No.", not null, required, image="zoom";
+ComboBox ids02=ids_file.ids02, tabIndex=2, title="Hold type", not null, required, items=(("1", "Before"),("2", "After"));
+ComboBox ids03=ids_file.ids03, tabIndex=3, title=%"Item Status", noEntry, items=(("0", "Body"),("1", "No Test Wafer"),("2", "Tested Wafer"),("3", "No Test IC"),("4", "Tested IC"),("9", "Other"),("W", "WIP"));
+ComboBox ids04=ids_file.ids04, tabIndex=4, title=%"Lock status", not null, required, items=(("0", "Body"),("1", "No Test Wafer"),("2", "Tested Wafer"),("3", "No Test IC"),("4", "Tested IC"));
+CheckBox idsacti=ids_file.idsacti, tabIndex=5, title=%"Valid Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ids(ids_file.ids01,ids_file.ids02,ids_file.ids03,ids_file.ids04,ids_file.idsacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

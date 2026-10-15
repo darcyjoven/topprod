@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrg303.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr303")
+VBox VBox1
+Grid gr244
+{
+ <G group01                                                      >
+  Accounts NO.        [oma01               ]
+  Account Date        [oma02               ]
+  Paying Vender       [oma68               ]
+ <                                                               >
+ <G group02                                                      >
+  [choice                     ]
+ <                                                               >
+}
+END -- gr244
+Grid gr245
+{
+[more                                                        ]
+
+
+}
+END -- gr245
+END -- VBox1
+END -- axrr303
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit oma01=formonly.oma01 type VARCHAR, tabIndex=1;
+DateEdit oma02=formonly.oma02 type DATE, tabIndex=2;
+Edit oma68=formonly.oma68 type VARCHAR, tabIndex=3;
+Group group02:group02, text="INPUT";
+RadioGroup choice=formonly.choice type CHAR, tabIndex=4, default = "1", items=(("1", "Allowance to be Offset"),("2", "Accounts to be Offset"));
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oma01,formonly.oma02,formonly.oma68,formonly.choice,formonly.more)
+END -- INSTRUCTIONS
+

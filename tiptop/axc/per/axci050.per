@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci050.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci050")
+VBox VBox1
+Folder pc346
+Page page01(text="Main")
+Table s_cac
+{
+[cac01      |cac02      |cab02             |cac03    ]
+[cac01      |cac02      |cab02             |cac03    ]
+[cac01      |cac02      |cab02             |cac03    ]
+[cac01      |cac02      |cab02             |cac03    ]
+[cac01      |cac02      |cab02             |cac03    ]
+[cac01      |cac02      |cab02             |cac03    ]
+[cac01      |cac02      |cab02             |cac03    ]
+[cac01      |cac02      |cab02             |cac03    ]
+[cac01      |cac02      |cab02             |cac03    ]
+[cac01      |cac02      |cab02             |cac03    ]
+
+}
+END -- s_cac
+END -- page01
+END -- pc346
+Grid gr1450
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr1450
+END -- VBox1
+END -- axci050
+
+TABLES
+cac_file
+ATTRIBUTES
+ButtonEdit cac01=cac_file.cac01, action=controlp, tabIndex=1, title="Cost Cnt", not null, required, image="zoom", comment="<^P>Query Cost Cnt  <^O>Copy Prev.";
+ButtonEdit cac02=cac_file.cac02, action=controlp, tabIndex=2, title="Cost Itm", not null, required, image="zoom", comment="<^P>Qry Cost Items";
+Edit cab02=formonly.cab02 type CHAR, tabIndex=3, title="Cost Item Desc", noEntry;
+Edit cac03=cac_file.cac03, tabIndex=4, title="Appo.Rt", comment="Input Appo.Rt In Cost Item";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cac(cac_file.cac01,cac_file.cac02,formonly.cab02,cac_file.cac03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

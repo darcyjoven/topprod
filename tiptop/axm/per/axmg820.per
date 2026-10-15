@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmg820.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr820")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                                                               >
+  P/O No.              [pmm01               ]  Pur Dept             [pmm13               ]
+  Pur Date             [pmm04               ]  Buyer                [pmm12               ]
+  Supplier             [pmm09               ]  Flow Code            [oea904              ]
+
+ <                                                                                        >
+}
+END -- gr1
+Grid gr2
+{
+[more                                              ]
+
+
+}
+END -- gr2
+END -- VBox1
+END -- axmr820
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmm01=formonly.pmm01 type VARCHAR, action=controlp, tabIndex=1, image="zoom.png";
+Edit pmm13=formonly.pmm13 type VARCHAR, tabIndex=2;
+DateEdit pmm04=formonly.pmm04 type DATE, tabIndex=3;
+Edit pmm12=formonly.pmm12 type VARCHAR, tabIndex=6;
+Edit pmm09=formonly.pmm09 type VARCHAR, tabIndex=4;
+Edit oea904=formonly.oea904 type VARCHAR, tabIndex=5;
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmm01,formonly.pmm13,formonly.pmm04,formonly.pmm12,formonly.pmm09,formonly.oea904,formonly.more)
+END -- INSTRUCTIONS
+

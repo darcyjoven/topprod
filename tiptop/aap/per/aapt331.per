@@ -1,0 +1,253 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt331.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt331")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox vb11
+HBox hb4
+Grid gr469
+{
+ Payment Slip #      [apf01             ]
+ Payment Date        [apf02        ]
+ Input Date          [apfinpd      ]
+
+
+
+
+}
+END -- gr469
+Grid gr470
+{
+ Paying Vender       [apf03        ]
+ Abbreviation        [apf12        ]
+ Uniform#            [apf13        ]
+
+
+
+
+}
+END -- gr470
+Grid gr471
+{
+ Voucher             [apf44           ]  [imgmksg]
+ Confirm             [apf41           ]  [       ]
+ Gp Pay. No.         [apf992          ]
+ Status              [apf42               ]
+ type                [apf47           ]
+[apfmksg    ]        [apf45     ]
+
+}
+END -- gr471
+END -- hb4
+Grid gr472
+{
+ <G group01                          ><G group02                               > <G group03                               > <G group04                              >
+  Curr.               [apf06     ]     Cash Tran.Code [apf14     ]                Acct. $           [apf08f              ]   Acct. $          [apf08               ]
+  Reason for Payment  [apf11     ]     Empl.          [apf04     |gen02        ]  Overpay $         [apf09f              ]   Overpay $        [apf09               ]
+  Payment Desc.       [azf03         ] Dept.          [apf05     |gem02        ]  Payment $         [apf10f              ]   Payment $        [apf10               ]
+
+
+ <                                   ><                                        > <                                        > <                                       >
+}
+END -- gr472
+END -- vb11
+END -- page01
+Page info(text="Info")
+Grid gr473
+{
+ Record Owner              [apfuser   ] Last Modified by          [apfmodu   ] Data Valid Code           [apfacti   ]
+ Department                [apfgrup   ] Create/Modify Date        [apfdate     ]
+ Record Orig.              [apforiu   ]
+ Dept Orig.                [apforig   ]
+}
+END -- gr473
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[apfud01                       ] userdefined_field07[apfud07        ] userdefined_field13[apfud13        ]
+                    [                              ] userdefined_field08[apfud08        ] userdefined_field14[apfud14        ]
+ userdefined_field02[apfud02        ]                userdefined_field09[apfud09        ] userdefined_field15[apfud15        ]
+ userdefined_field03[apfud03        ]                userdefined_field10[apfud10        ]
+ userdefined_field04[apfud04        ]                userdefined_field11[apfud11        ]
+ userdefined_field05[apfud05        ]                userdefined_field12[apfud12        ]
+ userdefined_field06[apfud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Group g01(text="Contra Part")
+Table s_apg
+{
+[apg02|apg04         |apg06    |apa02     |apa13 |apa14     |apg05f              |apg05               |apgud01   |apgud02   |apgud03    |apgud04    |apgud05    |apgud06    |apgud07    |apgud08    |apgud09    |apgud10    |apgud11   |apgud12  |apgud13   |apgud14   |apgud15    ]
+[apg02|apg04         |apg06    |apa02     |apa13 |apa14     |apg05f              |apg05               |apgud01   |apgud02   |apgud03    |apgud04    |apgud05    |apgud06    |apgud07    |apgud08    |apgud09    |apgud10    |apgud11   |apgud12  |apgud13   |apgud14   |apgud15    ]
+[apg02|apg04         |apg06    |apa02     |apa13 |apa14     |apg05f              |apg05               |apgud01   |apgud02   |apgud03    |apgud04    |apgud05    |apgud06    |apgud07    |apgud08    |apgud09    |apgud10    |apgud11   |apgud12  |apgud13   |apgud14   |apgud15    ]
+[apg02|apg04         |apg06    |apa02     |apa13 |apa14     |apg05f              |apg05               |apgud01   |apgud02   |apgud03    |apgud04    |apgud05    |apgud06    |apgud07    |apgud08    |apgud09    |apgud10    |apgud11   |apgud12  |apgud13   |apgud14   |apgud15    ]
+[apg02|apg04         |apg06    |apa02     |apa13 |apa14     |apg05f              |apg05               |apgud01   |apgud02   |apgud03    |apgud04    |apgud05    |apgud06    |apgud07    |apgud08    |apgud09    |apgud10    |apgud11   |apgud12  |apgud13   |apgud14   |apgud15    ]
+
+}
+END -- s_apg
+END -- g01
+Group g02(text="Payment Part")
+Table s_aph(wantFixedPageSize)
+{
+[aph0|aph03  |aph26     |aph26_de|aph21   |aph25   |aph22   |apr02   |aph08   |aph04      |aph041      |aph17    |aph23   |aph24   |aph16          |nmc02          |aph07    |aph09    |aph13|aph14               |aph05f              |aph05           |aph18      |aph19   |aph20   |aphud01   |aphud02   |aphud03    |aphud04    |aphud05    |aphud06    |aphud07    |aphud08    |a|b|c|d|e|f|g]
+[aph0|aph03  |aph26     |aph26_de|aph21   |aph25   |aph22   |apr02   |aph08   |aph04      |aph041      |aph17    |aph23   |aph24   |aph16          |nmc02          |aph07    |aph09    |aph13|aph14               |aph05f              |aph05           |aph18      |aph19   |aph20   |aphud01   |aphud02   |aphud03    |aphud04    |aphud05    |aphud06    |aphud07    |aphud08    |a|b|c|d|e|f|g]
+[aph0|aph03  |aph26     |aph26_de|aph21   |aph25   |aph22   |apr02   |aph08   |aph04      |aph041      |aph17    |aph23   |aph24   |aph16          |nmc02          |aph07    |aph09    |aph13|aph14               |aph05f              |aph05           |aph18      |aph19   |aph20   |aphud01   |aphud02   |aphud03    |aphud04    |aphud05    |aphud06    |aphud07    |aphud08    |a|b|c|d|e|f|g]
+[aph0|aph03  |aph26     |aph26_de|aph21   |aph25   |aph22   |apr02   |aph08   |aph04      |aph041      |aph17    |aph23   |aph24   |aph16          |nmc02          |aph07    |aph09    |aph13|aph14               |aph05f              |aph05           |aph18      |aph19   |aph20   |aphud01   |aphud02   |aphud03    |aphud04    |aphud05    |aphud06    |aphud07    |aphud08    |a|b|c|d|e|f|g]
+[aph0|aph03  |aph26     |aph26_de|aph21   |aph25   |aph22   |apr02   |aph08   |aph04      |aph041      |aph17    |aph23   |aph24   |aph16          |nmc02          |aph07    |aph09    |aph13|aph14               |aph05f              |aph05           |aph18      |aph19   |aph20   |aphud01   |aphud02   |aphud03    |aphud04    |aphud05    |aphud06    |aphud07    |aphud08    |a|b|c|d|e|f|g]
+
+}
+END -- s_aph
+END -- g02
+Grid gr474
+{
+  ---------- Rows [cnt   ] / [cn2   ]-[cn4   ] ----------
+
+}
+END -- gr474
+END -- VBox1
+END -- aapt331
+
+TABLES
+apr_file,
+azf_file,
+aph_file,
+apg_file,
+apf_file
+ATTRIBUTES
+ButtonEdit apf01=apf_file.apf01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Payment Slip#";
+DateEdit apf02=apf_file.apf02, tabIndex=2, not null, required;
+DateEdit apfinpd=apf_file.apfinpd, tabIndex=13, noEntry;
+ButtonEdit apf03=apf_file.apf03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Paying Vender, Enter MISC MISC Vender , Enter EMPL Employee";
+Edit apf12=formonly.apf12 type CHAR, tabIndex=4;
+Edit apf13=formonly.apf13 type CHAR, tabIndex=5;
+Edit apf44=apf_file.apf44, tabIndex=6, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ComboBox apf41=apf_file.apf41, tabIndex=7, noEntry, not null, required, items=(("Y", "Confirmed"),("N", "UnConfirm"),("X", "Void"));
+Edit apf992=apf_file.apf992, tabIndex=8, noEntry;
+ComboBox apf42=apf_file.apf42, tabIndex=9, noEntry, queryEditable, items=(("0", "Issue"),("1", "Approved"),("S", "Approving"),("R", "Approval rejected!"),("W", "Withdraw"),("9", "Void"));
+ComboBox apf47=apf_file.apf47, tabIndex=10, noEntry, items=(("Item1", "1"),("Item2", "1"));
+CheckBox apfmksg=apf_file.apfmksg, tabIndex=11, text="Approval", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apf45=formonly.apf45 type VARCHAR, tabIndex=12, default = "N", text="Export", not null, valueChecked = "Y", valueUnchecked = "N";
+Group group01:group01;
+ButtonEdit apf06=apf_file.apf06, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P> Qry Currency Exchange Rate";
+ButtonEdit apf11=apf_file.apf11, action=controlp, tabIndex=15, image="zoom", comment="<^P> Qry Paying Reason";
+Edit azf03=azf_file.azf03, tabIndex=16, noEntry;
+Group group02:group02;
+ButtonEdit apf14=apf_file.apf14, action=controlp, tabIndex=17, image="zoom", comment="<^P> Query Cash Variation Code";
+ButtonEdit apf04=apf_file.apf04, action=controlp, tabIndex=18, not null, required, image="zoom", comment="<^P> Qry Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=115, noEntry;
+ButtonEdit apf05=apf_file.apf05, action=controlp, tabIndex=19, not null, required, image="zoom", comment="<^P> Qry Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=114, noEntry;
+Group group03:group03, text="Original Currency";
+Edit apf08f=apf_file.apf08f, tabIndex=20, noEntry;
+Edit apf09f=apf_file.apf09f, tabIndex=21, noEntry;
+Edit apf10f=apf_file.apf10f, tabIndex=22, noEntry;
+Group group04:group04, text="Home Currency";
+Edit apf08=apf_file.apf08, tabIndex=23, noEntry;
+Edit apf09=apf_file.apf09, tabIndex=24, noEntry;
+Edit apf10=apf_file.apf10, tabIndex=25, noEntry;
+Edit apfuser=apf_file.apfuser, tabIndex=26, noEntry;
+Edit apfmodu=apf_file.apfmodu, tabIndex=30, noEntry;
+Edit apfacti=apf_file.apfacti, tabIndex=32, noEntry, upShift;
+Edit apfgrup=apf_file.apfgrup, tabIndex=27, noEntry;
+DateEdit apfdate=apf_file.apfdate, tabIndex=31, noEntry;
+Edit apforiu=apf_file.apforiu, tabIndex=28, noEntry;
+Edit apforig=apf_file.apforig, tabIndex=29, noEntry;
+TextEdit apfud01=apf_file.apfud01, tabIndex=33, stretch=NONE;
+Edit apfud07=apf_file.apfud07, tabIndex=39;
+DateEdit apfud13=apf_file.apfud13, tabIndex=45;
+Edit apfud08=apf_file.apfud08, tabIndex=40;
+DateEdit apfud14=apf_file.apfud14, tabIndex=46;
+Edit apfud02=apf_file.apfud02, tabIndex=34;
+Edit apfud09=apf_file.apfud09, tabIndex=41;
+DateEdit apfud15=apf_file.apfud15, tabIndex=47;
+Edit apfud03=apf_file.apfud03, tabIndex=35;
+Edit apfud10=apf_file.apfud10, tabIndex=42;
+Edit apfud04=apf_file.apfud04, tabIndex=36;
+Edit apfud11=apf_file.apfud11, tabIndex=43;
+Edit apfud05=apf_file.apfud05, tabIndex=37;
+Edit apfud12=apf_file.apfud12, tabIndex=44;
+Edit apfud06=apf_file.apfud06, tabIndex=38;
+Edit apg02=apg_file.apg02, tabIndex=48, title="Ln #", not null, required;
+ButtonEdit apg04=apg_file.apg04, action=controlp, tabIndex=49, title="Accounts #", not null, required, image="zoom", comment="<^P> Qry Account Number";
+Edit apg06=apg_file.apg06, tabIndex=50, title="Line No.", not null, required;
+DateEdit apa02=formonly.apa02 type CHAR, tabIndex=51, title="Acct.Date", noEntry;
+Edit apa13=formonly.apa13 type CHAR, tabIndex=52, title="Curr.", noEntry;
+Edit apa14=formonly.apa14 type CHAR, tabIndex=53, title="Ex. Rate", noEntry;
+Edit apg05f=apg_file.apg05f, tabIndex=54, title="F.C Account", not null, required;
+Edit apg05=apg_file.apg05, tabIndex=55, title="H.C Accounts", not null, required;
+TextEdit apgud01=apg_file.apgud01, tabIndex=56, title="apgud01", stretch=NONE;
+Edit apgud02=apg_file.apgud02, tabIndex=57, title="apgud02";
+Edit apgud03=apg_file.apgud03, tabIndex=58, title="apgud03";
+Edit apgud04=apg_file.apgud04, tabIndex=59, title="apgud04";
+Edit apgud05=apg_file.apgud05, tabIndex=60, title="apgud05";
+Edit apgud06=apg_file.apgud06, tabIndex=61, title="apgud06";
+Edit apgud07=apg_file.apgud07, tabIndex=62, title="apgud07";
+Edit apgud08=apg_file.apgud08, tabIndex=63, title="apgud08";
+Edit apgud09=apg_file.apgud09, tabIndex=64, title="apgud09";
+Edit apgud10=apg_file.apgud10, tabIndex=65, title="apgud10";
+Edit apgud11=apg_file.apgud11, tabIndex=66, title="apgud11";
+Edit apgud12=apg_file.apgud12, tabIndex=67, title="apgud12";
+Edit apgud13=apg_file.apgud13, tabIndex=68, title="apgud13";
+Edit apgud14=apg_file.apgud14, tabIndex=69, title="apgud14";
+Edit apgud15=apg_file.apgud15, tabIndex=70, title="apgud15";
+Edit aph0=aph_file.aph02, tabIndex=71, title="Ln#", not null, required, comment="<^T>Qry D/W Transaction Code";
+ComboBox aph03=aph_file.aph03, tabIndex=72, title="Cate", not null, required, comment="<^Y>Maintain";
+ButtonEdit aph26=aph_file.aph26, action=controlp, tabIndex=73, title=%"aph26", image="zoom";
+Edit aph26_de=formonly.aph26_desc, tabIndex=74, title=%"aph26_desc", noEntry;
+Edit aph21=aph_file.aph21, tabIndex=75, title=%"Transf sale Vender";
+Edit aph25=aph_file.aph25, tabIndex=76, title=%"Edit1", noEntry;
+Edit aph22=aph_file.aph22, tabIndex=77, title=%"Edit1";
+Edit apr02=apr_file.apr02, tabIndex=78, title=%"Edit1";
+ButtonEdit aph08=aph_file.aph08, action=controlp, tabIndex=79, title="Bank", image="zoom", comment="<^P> Qry Bank    ";
+ButtonEdit aph04=aph_file.aph04, action=controlp, tabIndex=80, title="Title/Acct", not null, required, image="zoom", comment="<^P> Qry Title or Account #";
+ButtonEdit aph041=aph_file.aph041, action=controlp, tabIndex=81, title="Title/Acct2", not null, required, image="zoom", comment="<^P> Qry Title or Account #2";
+Edit aph17=aph_file.aph17, tabIndex=82, title="Line No.", not null, required;
+Edit aph23=aph_file.aph23, tabIndex=83, title=%"Edit1", noEntry;
+Edit aph24=aph_file.aph24, tabIndex=84, title=%"Edit1";
+ButtonEdit aph16=aph_file.aph16, action=controlp, tabIndex=85, title="CIB.Trans.Code", not null, required, image="zoom", comment="<^P> Qry Bank    ";
+Edit nmc02=formonly.nmc02 type CHAR, tabIndex=86, title="CIB.Trans.Name", noEntry;
+DateEdit aph07=aph_file.aph07, tabIndex=87, title="Due Date";
+CheckBox aph09=aph_file.aph09, tabIndex=88, title="Transfer", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit aph13=aph_file.aph13, tabIndex=89, title="Curr", not null, required;
+ButtonEdit aph14=aph_file.aph14, action=controlp, tabIndex=90, title="Ex. Rate", not null, required, image="zoom";
+Edit aph05f=aph_file.aph05f, tabIndex=91, title="Contra F.C Pay", not null, required;
+Edit aph05=aph_file.aph05, tabIndex=92, title="Contra H.C Pay", not null, required;
+ButtonEdit aph18=aph_file.aph18, action=controlp, tabIndex=93, title="Import/Export", image="zoom";
+ComboBox aph19=aph_file.aph19, tabIndex=94, title="Charge Type", items=(("1", "SHA"),("2", "BEN"),("3", "OUR"));
+ComboBox aph20=aph_file.aph20, tabIndex=95, title="Full Amt Reached", items=(("1", "Y"));
+TextEdit aphud01=aph_file.aphud01, tabIndex=96, title="aphud01", stretch=NONE;
+Edit aphud02=aph_file.aphud02, tabIndex=97, title="aphud02";
+Edit aphud03=aph_file.aphud03, tabIndex=98, title="aphud03";
+Edit aphud04=aph_file.aphud04, tabIndex=99, title="aphud04";
+Edit aphud05=aph_file.aphud05, tabIndex=100, title="aphud05";
+Edit aphud06=aph_file.aphud06, tabIndex=101, title="aphud06";
+Edit aphud07=aph_file.aphud07, tabIndex=102, title="aphud07";
+Edit aphud08=aph_file.aphud08, tabIndex=103, title="aphud08";
+Edit a=aph_file.aphud09, tabIndex=104, title="aphud09";
+Edit b=aph_file.aphud10, tabIndex=105, title="aphud10";
+Edit c=aph_file.aphud11, tabIndex=106, title="aphud11";
+Edit d=aph_file.aphud12, tabIndex=107, title="aphud12";
+Edit e=aph_file.aphud13, tabIndex=108, title="aphud13";
+Edit f=aph_file.aphud14, tabIndex=109, title="aphud14";
+Edit g=aph_file.aphud15, tabIndex=110, title="aphud15";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=111;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=112;
+Edit cn4=formonly.cn4 type INTEGER, tabIndex=113;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apg(apg_file.apg02,apg_file.apg04,apg_file.apg06,formonly.apa02,formonly.apa13,formonly.apa14,apg_file.apg05f,apg_file.apg05,apg_file.apgud01,apg_file.apgud02,apg_file.apgud03,apg_file.apgud04,apg_file.apgud05,apg_file.apgud06,apg_file.apgud07,apg_file.apgud08,apg_file.apgud09,apg_file.apgud10,apg_file.apgud11,apg_file.apgud12,apg_file.apgud13,apg_file.apgud14,apg_file.apgud15)
+SCREEN RECORD s_aph(aph_file.aph02,aph_file.aph03,aph_file.aph26,formonly.aph26_desc,aph_file.aph21,aph_file.aph25,aph_file.aph22,apr_file.apr02,aph_file.aph08,aph_file.aph04,aph_file.aph041,aph_file.aph17,aph_file.aph23,aph_file.aph24,aph_file.aph16,formonly.nmc02,aph_file.aph07,aph_file.aph09,aph_file.aph13,aph_file.aph14,aph_file.aph05f,aph_file.aph05,aph_file.aph18,aph_file.aph19,aph_file.aph20,aph_file.aphud01,aph_file.aphud02,aph_file.aphud03,aph_file.aphud04,aph_file.aphud05,aph_file.aphud06,aph_file.aphud07,aph_file.aphud08,aph_file.aphud09,aph_file.aphud10,aph_file.aphud11,aph_file.aphud12,aph_file.aphud13,aph_file.aphud14,aph_file.aphud15)
+SCREEN RECORD Undefined(apf_file.apf01,apf_file.apf02,apf_file.apfinpd,apf_file.apf03,formonly.apf12,formonly.apf13,apf_file.apf44,formonly.imgmksg,apf_file.apf41,apf_file.apf992,apf_file.apf42,apf_file.apfmksg,formonly.apf45,apf_file.apf06,apf_file.apf11,azf_file.azf03,apf_file.apf14,apf_file.apf04,apf_file.apf05,apf_file.apf08f,apf_file.apf09f,apf_file.apf10f,apf_file.apf08,apf_file.apf09,apf_file.apf10,apf_file.apfuser,apf_file.apfmodu,apf_file.apfacti,apf_file.apfgrup,apf_file.apfdate,apf_file.apforiu,apf_file.apforig,apf_file.apfud01,apf_file.apfud07,apf_file.apfud13,apf_file.apfud08,apf_file.apfud14,apf_file.apfud02,apf_file.apfud09,apf_file.apfud15,apf_file.apfud03,apf_file.apfud10,apf_file.apfud04,apf_file.apfud11,apf_file.apfud05,apf_file.apfud12,apf_file.apfud06,formonly.cnt,formonly.cn2,formonly.cn4,formonly.gem02,formonly.gen02,apf_file.apf47)
+END -- INSTRUCTIONS
+

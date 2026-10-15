@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi001")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+HBox HBox1
+Grid Grid1
+{
+ <G group01                                                                                   >
+  Goods No.           [cnd01          ]                            [cndconf         ][imgmksg]
+  Part Name           [cob02                                   ]                     [       ]
+  Specification       [cob021                                  ]
+  Register Book No.   [cnd02          ]
+  Year                [cnd03          ]
+  Month               [cnd04          ]
+  Usage               [cnd05          ]
+  Unit                [cnd08          ]
+ <                                                                                            >
+ <G group02                             ><G group03                                           >
+  Quantity            [cnd09          ]   Type                [cnd06          ]
+                                          Client/Supplier     [cnd07     ]
+                                          Carried/Not Dlieved [cnd10          ]
+                                          Not Carried/Dlieved [cnd11          ]
+                                          Carried/Not Receivd [cnd12          ]
+                                          Not Carried/Receivd [cnd13          ]
+ <                                      ><                                                    >
+
+
+}
+END -- Grid1
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid Grid2
+{
+ Record Owner        [cnduser   ] Last Modified by    [cndmodu   ] Data Valid Code     [cndacti   ]
+ Department          [cndgrup   ] Create/Modify Date  [cnddate   ]
+ Record Orig.        [cndoriu   ]
+ Dept Orig.          [cndorig   ]
+}
+END -- Grid2
+END -- info
+END -- Folder1
+Grid Grid3
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- acoi001
+
+TABLES
+cnd_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit cnd01=cnd_file.cnd01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Goods No.";
+CheckBox cndconf=cnd_file.cndconf, tabIndex=2, text="Confirm", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Enter Y or N ";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit cob02=formonly.cob02 type CHAR, tabIndex=4, noEntry;
+Edit cob021=formonly.cob021 type CHAR, tabIndex=5, noEntry;
+ButtonEdit cnd02=cnd_file.cnd02, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Register Book No.";
+Edit cnd03=cnd_file.cnd03, tabIndex=7, not null, required;
+Edit cnd04=cnd_file.cnd04, tabIndex=8, not null, required;
+ComboBox cnd05=cnd_file.cnd05, tabIndex=9, not null, required, queryEditable, items=(("1", %"Process Flow"),("2", %"Store-In/Out"),("3", %"Scrap Store-In/Out"),("4", %"Client/Supplier"));
+ButtonEdit cnd08=cnd_file.cnd08, action=controlp, tabIndex=10, noEntry, not null, required, image="zoom", comment="<^P>Qry details";
+Group group02:group02;
+Edit cnd09=cnd_file.cnd09, tabIndex=11, not null, required;
+Group group03:group03;
+ComboBox cnd06=cnd_file.cnd06, tabIndex=12, queryEditable, items=(("1", %"Client"),("2", %"Supplier"));
+ButtonEdit cnd07=cnd_file.cnd07, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry details";
+Edit cnd10=cnd_file.cnd10, tabIndex=14, not null, required;
+Edit cnd11=cnd_file.cnd11, tabIndex=15, not null, required;
+Edit cnd12=cnd_file.cnd12, tabIndex=16, not null, required;
+Edit cnd13=cnd_file.cnd13, tabIndex=17, not null, required;
+Edit cnduser=cnd_file.cnduser, tabIndex=18, noEntry;
+Edit cndmodu=cnd_file.cndmodu, tabIndex=19, noEntry;
+Edit cndacti=cnd_file.cndacti, tabIndex=20, noEntry, upShift;
+Edit cndgrup=cnd_file.cndgrup, tabIndex=21, noEntry;
+Edit cnddate=cnd_file.cnddate, tabIndex=22, noEntry;
+Edit cndoriu=cnd_file.cndoriu, tabIndex=501, noEntry;
+Edit cndorig=cnd_file.cndorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cnd_file.cnd01,cnd_file.cndconf,formonly.imgmksg,formonly.cob02,formonly.cob021,cnd_file.cnd02,cnd_file.cnd03,cnd_file.cnd04,cnd_file.cnd05,cnd_file.cnd08,cnd_file.cnd09,cnd_file.cnd06,cnd_file.cnd07,cnd_file.cnd10,cnd_file.cnd11,cnd_file.cnd12,cnd_file.cnd13,cnd_file.cnduser,cnd_file.cndmodu,cnd_file.cndacti,cnd_file.cndgrup,cnd_file.cnddate,cnd_file.cndoriu,cnd_file.cndorig,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,59 @@
+----------------------------------------------------------------------------------
+-- $Id:  axds040.per created Wed Jan 23 05:30:44 2008
+-- File created from axds040.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axds040")
+-- TABLE
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1580
+      PAGE page01( TEXT="Page01")
+        TABLE   s_adx
+        {
+        [aa0                  |aa1                 |aa2                   |aa3           |aa4   ]
+        [aa0                  |aa1                 |aa2                   |aa3           |aa4   ]
+        [aa0                  |aa1                 |aa2                   |aa3           |aa4   ]
+        [aa0                  |aa1                 |aa2                   |aa3           |aa4   ]
+        [aa0                  |aa1                 |aa2                   |aa3           |aa4   ]
+        [aa0                  |aa1                 |aa2                   |aa3           |aa4   ]
+        [aa0                  |aa1                 |aa2                   |aa3           |aa4   ]
+        [aa0                  |aa1                 |aa2                   |aa3           |aa4   ]
+        [aa0                  |aa1                 |aa2                   |aa3           |aa4   ]
+        [aa0                  |aa1                 |aa2                   |aa3           |aa4   ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr7851
+    {
+     ----------Rows [aa5   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adx_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=adx_file.adx01, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=1, TITLE="Transfer-out Plant";
+  BUTTONEDIT aa1=adx_file.adx02, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=2, TITLE="Sales Return Slip";
+  COMBOBOX aa2=adx_file.adx03, COMMENT="Please insert 1/2/3/4/5", NOT NULL, REQUIRED, TABINDEX=3, TITLE="Sales Return Method", ITEMS=(("1","Sales Return/Allowance"),("2","No Allowance. Change goods and Deliver"),("3","Neither Allowance Nor Changing"),("4","Allowance and Deliver according to the Original Order"),("5","Allowance"));
+  EDIT aa3=FORMONLY.desc TYPE VARCHAR, NOENTRY, TABINDEX=4, TITLE="Description";
+  CHECKBOX aa4=adx_file.adxacti, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=5, TITLE="Valid?";
+  EDIT aa5=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=6;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adx (adx_file.adx01, adx_file.adx02, adx_file.adx03, FORMONLY.desc, adx_file.adxacti)
+END

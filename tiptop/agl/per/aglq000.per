@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq000.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglp000")
+VBox vb2
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+
+  Group Code                    [aej01         ]   Acct No.   [aej04         ]
+  Group Book No.                [aej00         ]   Acct Title [aag02                        ]
+  Merger of individual          [aej02         ]   Year       [aej05         ]
+  Merger of individual Book No. [aej03         ]   Currency   [aej11         ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table tb1
+{
+[aej06   |aej07          |aej08          |amt                 |aej09       |aej10       ]
+[aej06   |aej07          |aej08          |amt                 |aej09       |aej10       ]
+[aej06   |aej07          |aej08          |amt                 |aej09       |aej10       ]
+[aej06   |aej07          |aej08          |amt                 |aej09       |aej10       ]
+[aej06   |aej07          |aej08          |amt                 |aej09       |aej10       ]
+[aej06   |aej07          |aej08          |amt                 |aej09       |aej10       ]
+[aej06   |aej07          |aej08          |amt                 |aej09       |aej10       ]
+}
+END -- tb1
+Grid gr2
+{
+
+ Rows [idx ] / [cnt   ] --- item [cn2  ]
+
+
+
+
+}
+END -- gr2
+END -- vb2
+END -- aglq000
+
+TABLES
+aej_file
+ATTRIBUTES
+ButtonEdit aej01=aej_file.aej01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit aej04=aej_file.aej04, action=controlp, tabIndex=5, image="zoom";
+Edit aej00=aej_file.aej00, tabIndex=2;
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=6;
+Edit aej02=aej_file.aej02, tabIndex=3;
+Edit aej05=aej_file.aej05, tabIndex=7;
+Edit aej03=aej_file.aej03, tabIndex=4;
+ButtonEdit aej11=aej_file.aej11, action=controlp, tabIndex=8, image="zoom";
+Edit aej06=aej_file.aej06, tabIndex=9, title="Period";
+Edit aej07=aej_file.aej07, tabIndex=10, title="Debit Amt";
+Edit aej08=aej_file.aej08, tabIndex=11, title="Credit Amount";
+Edit amt=formonly.amt type CHAR, tabIndex=17, title=%"Balance";
+Edit aej09=aej_file.aej09, tabIndex=12, title="Debit Rows";
+Edit aej10=aej_file.aej10, tabIndex=13, title="Credit Rows";
+Edit idx=formonly.idx type INTERVAL YEAR(2) TO YEAR, tabIndex=16;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=14;
+Edit cn2=formonly.cn2 type INTERVAL YEAR(2) TO YEAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aej(aej_file.aej06,aej_file.aej07,aej_file.aej08,formonly.amt,aej_file.aej09,aej_file.aej10)
+SCREEN RECORD Undefined(aej_file.aej01,aej_file.aej04,aej_file.aej00,formonly.aag02,aej_file.aej02,aej_file.aej05,aej_file.aej03,aej_file.aej11,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq600a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq600a")
+VBox vb8
+Folder folder01
+Page page01(text="Main")
+Grid gr3121
+{
+ Item No.            [imks01               ]            Year    [imks05            ]
+ Wh                  [imks02                ]           Month   [imks06            ]
+ Lot                 [imks03                                                  ]
+ Loe                 [imks04    ]
+
+}
+END -- gr3121
+END -- page01
+END -- folder01
+Table s_imks
+{
+[imks10    |imks11 |imks081  |imks082    |imks083   |imks084  |imks085   |imks09    |imks12     ]
+[imks10    |imks11 |imks081  |imks082    |imks083   |imks084  |imks085   |imks09    |imks12     ]
+[imks10    |imks11 |imks081  |imks082    |imks083   |imks084  |imks085   |imks09    |imks12     ]
+[imks10    |imks11 |imks081  |imks082    |imks083   |imks084  |imks085   |imks09    |imks12     ]
+[imks10    |imks11 |imks081  |imks082    |imks083   |imks084  |imks085   |imks09    |imks12     ]
+[imks10    |imks11 |imks081  |imks082    |imks083   |imks084  |imks085   |imks09    |imks12     ]
+[imks10    |imks11 |imks081  |imks082    |imks083   |imks084  |imks085   |imks09    |imks12     ]
+[imks10    |imks11 |imks081  |imks082    |imks083   |imks084  |imks085   |imks09    |imks12     ]
+[imks10    |imks11 |imks081  |imks082    |imks083   |imks084  |imks085   |imks09    |imks12     ]
+[imks10    |imks11 |imks081  |imks082    |imks083   |imks084  |imks085   |imks09    |imks12     ]
+}
+END -- s_imks
+END -- vb8
+END -- aimq600a
+
+TABLES
+imks_file
+ATTRIBUTES
+Edit imks01=imks_file.imks01, tabIndex=2, not null, required;
+Edit imks05=imks_file.imks05, tabIndex=10;
+Edit imks02=imks_file.imks02, tabIndex=2, not null, required;
+Edit imks06=imks_file.imks06, tabIndex=11;
+Edit imks03=imks_file.imks03, tabIndex=3, noEntry, not null, required;
+Edit imks04=imks_file.imks04, tabIndex=4, noEntry, not null, required;
+Edit imks10=imks_file.imks10, tabIndex=5, title="Serial No.", noEntry, not null, required;
+Edit imks11=imks_file.imks11, tabIndex=6, title="lot No.", noEntry;
+Edit imks081=imks_file.imks081, tabIndex=7, title="Current in", noEntry;
+Edit imks082=imks_file.imks082, tabIndex=8, title="Current sale";
+Edit imks083=imks_file.imks083, tabIndex=15, title=%"Current mod";
+Edit imks084=imks_file.imks084, tabIndex=9, title="Crruent Trans ", noEntry, not null, required;
+Edit imks085=imks_file.imks085, tabIndex=12, title="Current mod";
+Edit imks09=imks_file.imks09, tabIndex=13, title="End quantity";
+Edit imks12=imks_file.imks12, tabIndex=14, title="Belonged No.";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imks(imks_file.imks10,imks_file.imks11,imks_file.imks081,imks_file.imks082,imks_file.imks083,imks_file.imks084,imks_file.imks085,imks_file.imks09,imks_file.imks12)
+SCREEN RECORD Undefined(imks_file.imks01,imks_file.imks05,imks_file.imks02,imks_file.imks06,imks_file.imks03,imks_file.imks04)
+END -- INSTRUCTIONS
+

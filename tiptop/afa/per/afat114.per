@@ -1,0 +1,166 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat114.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat114")
+VBox vb10
+Folder folder01
+Page page01(text="Main")
+HBox hb7
+Grid gr2200
+{
+ Transaction Doc.    [fbx01             ]
+ Transaction Date    [fbx02       ]
+ Applicant           [fbx03     ][gen02     ]
+ Applying Department [fbx04     ][gem02     ]
+ Applying Date       [fbx05       ]
+
+
+
+
+}
+END -- gr2200
+Grid gr2201
+{
+ Voucher No.         [fbx07               ]
+ Voucher Date        [fbx08       ]
+ Voucher No.         [fbx072              ]
+ Voucher Date        [fbx082      ]
+
+
+
+
+
+}
+END -- gr2201
+Grid gr2202
+{
+ Confirm             [fbxconf   ][imgmksg]
+[fbxpost           ]             [       ]
+[fbxmksg   ]
+ Status              [fbx06     ]
+
+
+
+
+
+}
+END -- gr2202
+END -- hb7
+END -- page01
+Page info(text="Info")
+Grid gr2203
+{
+ Record Owner       [fbxuser   ] Last Modified by   [fbxmodu   ]
+ Department         [fbxgrup   ] Create/Modify Date [fbxdate   ]
+ Record Orig.       [fbxoriu   ]
+ Dept Orig.         [fbxorig   ]
+}
+END -- gr2203
+END -- info
+Page userdefined_field1(text=%"User Defined Field")
+Grid gru47_1
+{
+ userdefined_field01[fbxud01                       ] userdefined_field07[fbxud07        ] userdefined_field13[fbxud13        ]
+                    [                              ] userdefined_field08[fbxud08        ] userdefined_field14[fbxud14        ]
+ userdefined_field02[fbxud02        ]                userdefined_field09[fbxud09        ] userdefined_field15[fbxud15        ]
+ userdefined_field03[fbxud03        ]                userdefined_field10[fbxud10        ]
+ userdefined_field04[fbxud04        ]                userdefined_field11[fbxud11        ]
+ userdefined_field05[fbxud05        ]                userdefined_field12[fbxud12        ]
+ userdefined_field06[fbxud06        ]
+
+
+}
+END -- gru47_1
+END -- userdefined_field1
+END -- folder01
+Table s_fby
+{
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby05         |fby06         |fby07         |fby08         |fby09         |fby10         |fby11         ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby05         |fby06         |fby07         |fby08         |fby09         |fby10         |fby11         ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby05         |fby06         |fby07         |fby08         |fby09         |fby10         |fby11         ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby05         |fby06         |fby07         |fby08         |fby09         |fby10         |fby11         ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby05         |fby06         |fby07         |fby08         |fby09         |fby10         |fby11         ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby05         |fby06         |fby07         |fby08         |fby09         |fby10         |fby11         ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby05         |fby06         |fby07         |fby08         |fby09         |fby10         |fby11         ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby05         |fby06         |fby07         |fby08         |fby09         |fby10         |fby11         ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby05         |fby06         |fby07         |fby08         |fby09         |fby10         |fby11         ]
+[fby02      |fby03          |fby031    |faj06         |fby04         |fby05         |fby06         |fby07         |fby08         |fby09         |fby10         |fby11         ]
+
+}
+END -- s_fby
+Grid gr2204
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2204
+END -- vb10
+END -- afat114
+
+TABLES
+fby_file,
+fbx_file
+ATTRIBUTES
+ButtonEdit fbx01=fbx_file.fbx01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Documents";
+DateEdit fbx02=fbx_file.fbx02, tabIndex=2, not null, required;
+ButtonEdit fbx03=fbx_file.fbx03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=4;
+ButtonEdit fbx04=fbx_file.fbx04, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Query Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=6;
+DateEdit fbx05=fbx_file.fbx05, tabIndex=31;
+Edit fbx07=fbx_file.fbx07, tabIndex=32, noEntry;
+DateEdit fbx08=fbx_file.fbx08, tabIndex=12, noEntry;
+Edit fbx072=fbx_file.fbx072, tabIndex=11, noEntry;
+DateEdit fbx082=fbx_file.fbx082, tabIndex=13, noEntry;
+ComboBox fbxconf=fbx_file.fbxconf, tabIndex=7, noEntry, not null, required, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+CheckBox fbxpost=fbx_file.fbxpost, tabIndex=8, text="fbxpost", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox fbxmksg=fbx_file.fbxmksg, tabIndex=9, text="fbxmksg", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox fbx06=fbx_file.fbx06, tabIndex=10, noEntry, not null, required, items=(("0", "Open"),("1", "Approved"),("9", "Void"),("S", "Approving"),("R", "Approving Return"),("W", "Cancel"));
+Edit fbxuser=fbx_file.fbxuser, tabIndex=14, noEntry;
+Edit fbxmodu=fbx_file.fbxmodu, tabIndex=15, noEntry;
+Edit fbxgrup=fbx_file.fbxgrup, tabIndex=16, noEntry;
+DateEdit fbxdate=fbx_file.fbxdate, tabIndex=17, noEntry;
+Edit fbxoriu=fbx_file.fbxoriu, tabIndex=50, noEntry;
+Edit fbxorig=fbx_file.fbxorig, tabIndex=49, noEntry;
+TextEdit fbxud01=fbx_file.fbxud01, tabIndex=34, stretch=NONE;
+Edit fbxud07=fbx_file.fbxud07, tabIndex=35;
+DateEdit fbxud13=fbx_file.fbxud13, tabIndex=36;
+Edit fbxud08=fbx_file.fbxud08, tabIndex=37;
+DateEdit fbxud14=fbx_file.fbxud14, tabIndex=38;
+Edit fbxud02=fbx_file.fbxud02, tabIndex=39;
+Edit fbxud09=fbx_file.fbxud09, tabIndex=40;
+DateEdit fbxud15=fbx_file.fbxud15, tabIndex=41;
+Edit fbxud03=fbx_file.fbxud03, tabIndex=42;
+Edit fbxud10=fbx_file.fbxud10, tabIndex=43;
+Edit fbxud04=fbx_file.fbxud04, tabIndex=44;
+Edit fbxud11=fbx_file.fbxud11, tabIndex=45;
+Edit fbxud05=fbx_file.fbxud05, tabIndex=46;
+Edit fbxud12=fbx_file.fbxud12, tabIndex=47;
+Edit fbxud06=fbx_file.fbxud06, tabIndex=48;
+Edit fby02=fby_file.fby02, tabIndex=18, title="Line No.", not null, required;
+ButtonEdit fby03=fby_file.fby03, action=controlp, tabIndex=19, title="Property No.", not null, required, image="zoom", comment="<^P>Qry Asset ";
+Edit fby031=fby_file.fby031, tabIndex=20, title="Add No.", not null;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=21, title="Chinese Name", noEntry;
+Edit fby04=fby_file.fby04, tabIndex=22, title="Old Asset Category", noEntry;
+Edit fby05=fby_file.fby05, tabIndex=23, title="Old Asset Account", noEntry;
+Edit fby06=fby_file.fby06, tabIndex=24, title="Old Accumulated Depreciation Account", noEntry;
+Edit fby07=fby_file.fby07, tabIndex=25, title="Old Depreciation Account", noEntry;
+ButtonEdit fby08=fby_file.fby08, action=controlp, tabIndex=26, title="New Asset Category", not null, image="zoom";
+ButtonEdit fby09=fby_file.fby09, action=controlp, tabIndex=33, title="New Asset Category", not null, required, image="zoom";
+ButtonEdit fby10=fby_file.fby10, action=controlp, tabIndex=27, title="New Accumulated Depreciation Account", not null, required, image="zoom", comment="<^P>Query Department <^T>Qry Apportionment Category <^Y>Apportionment Category";
+ButtonEdit fby11=fby_file.fby11, action=controlp, tabIndex=28, title="New Depreciation Account", not null, image="zoom", comment="<^P>Qry Account";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=30, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fby(fby_file.fby02,fby_file.fby03,fby_file.fby031,formonly.faj06,fby_file.fby04,fby_file.fby05,fby_file.fby06,fby_file.fby07,fby_file.fby08,fby_file.fby09,fby_file.fby10,fby_file.fby11)
+SCREEN RECORD Undefined(fbx_file.fbx01,fbx_file.fbx02,fbx_file.fbx03,formonly.gen02,fbx_file.fbx04,formonly.gem02,fbx_file.fbx05,fbx_file.fbx07,fbx_file.fbx08,fbx_file.fbx072,fbx_file.fbx082,fbx_file.fbxconf,formonly.imgmksg,fbx_file.fbxpost,fbx_file.fbxmksg,fbx_file.fbx06,fbx_file.fbxuser,fbx_file.fbxmodu,fbx_file.fbxgrup,fbx_file.fbxdate,fbx_file.fbxud01,fbx_file.fbxud07,fbx_file.fbxud13,fbx_file.fbxud08,fbx_file.fbxud14,fbx_file.fbxud02,fbx_file.fbxud09,fbx_file.fbxud15,fbx_file.fbxud03,fbx_file.fbxud10,fbx_file.fbxud04,fbx_file.fbxud11,fbx_file.fbxud05,fbx_file.fbxud12,fbx_file.fbxud06,formonly.cnt,formonly.cn2,fbx_file.fbxorig,fbx_file.fbxoriu)
+END -- INSTRUCTIONS
+

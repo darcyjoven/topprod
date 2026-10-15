@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_pom.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Untransferred P/O Data Query")
+Grid gr3832
+{
+ <T s_pom                                                                                                 >
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |rest           ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |rest           ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |rest           ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |rest           ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |rest           ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |rest           ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |rest           ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |rest           ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |rest           ]
+ [check |pom01            |pom09        |pmc03          |pon02      |pon04               |rest           ]
+ <                                                                                                        >
+
+}
+END -- gr3832
+END -- q_pom
+
+TABLES
+pon_file,
+pom_file,
+pmc_file
+ATTRIBUTES
+Table s_pom:s_pom;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pom01=pom_file.pom01, tabIndex=2, title="P/O No.", noEntry;
+Edit pom09=pom_file.pom09, tabIndex=3, title="Vender No.", noEntry;
+Edit pmc03=pmc_file.pmc03, tabIndex=4, title="Vender Abbr.", noEntry;
+Edit pon02=pon_file.pon02, tabIndex=5, title="Line No.", noEntry;
+Edit pon04=pon_file.pon04, tabIndex=6, title="Item No.", noEntry;
+Edit rest=formonly.rest type CHAR, tabIndex=7, title="Undelivered Qty", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pom(formonly.check,pom_file.pom01,pom_file.pom09,pmc_file.pmc03,pon_file.pon02,pon_file.pon04,formonly.rest)
+END -- INSTRUCTIONS
+

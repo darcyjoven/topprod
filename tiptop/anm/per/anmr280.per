@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr280.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr280")
+VBox VBox1
+Group group01(text="QBE")
+Grid Grid1
+{
+ Customer NO.        [nmh11              ]
+ Received Date       [nmh04              ]
+ Due Date            [nmh05              ]
+ Anticiptd Cashing Dt[nmh09              ]
+ Note Receipt NO.    [nmh01              ]
+ Notes type 1        [nmh10              ]
+}
+END -- Grid1
+END -- group01
+Group group02(text="INPUT")
+Grid Grid2
+{
+ <G group03                                                                                        >
+  [s1                            ][s2                            ][s3                            ]
+  [t1                            ][t2                            ][t3                            ]
+  [u1                            ][u2                            ][u3                            ]
+ <                                                                                                 >
+ <G group04                                                                                        >
+  [a                                                           ]
+ <                                                                                                 >
+
+}
+END -- Grid2
+END -- group02
+Grid Grid3
+{
+[more                                                        ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- anmr280
+
+ATTRIBUTES
+Edit nmh11=formonly.nmh11 type VARCHAR, tabIndex=1;
+DateEdit nmh04=formonly.nmh04 type DATE, tabIndex=2;
+DateEdit nmh05=formonly.nmh05 type DATE, tabIndex=3;
+DateEdit nmh09=formonly.nmh09 type DATE, tabIndex=4;
+Edit nmh01=formonly.nmh01 type VARCHAR, tabIndex=5;
+Edit nmh10=formonly.nmh10 type VARCHAR, tabIndex=6;
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=7, queryEditable, items=(("1", %"Customer NO."),("2", %"Note Rece.Date"),("3", %"Due Date"),("4", %"Antici.Cash.Date"),("5", %"Note Receipt NO."),("6", %"Note Type 1"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=8, queryEditable, items=(("1", %"Customer NO."),("2", %"Note Rece.Date"),("3", %"Due Date"),("4", %"Antici.Cash.Date"),("5", %"Note Receipt NO."),("6", %"Note Type 1"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=9, queryEditable, items=(("1", %"Customer NO."),("2", %"Note Rece.Date"),("3", %"Due Date"),("4", %"Antici.Cash.Date"),("5", %"Note Receipt NO."),("6", %"Note Type 1"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=13, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=15, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="Data Option";
+RadioGroup a=formonly.a type CHAR, tabIndex=16, items=(("1", %"{Contra'd}"),("2", %"{UnContra}"),("3", %"{All}"));
+CheckBox more=formonly.more type CHAR, tabIndex=17, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nmh11,formonly.nmh04,formonly.nmh05,formonly.nmh09,formonly.nmh01,formonly.nmh10,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

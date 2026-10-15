@@ -1,0 +1,42 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/agl/4fd/s_post.tmp.per created 2010-04-30T00:41:53
+-- File created from /u3/tiptop/agl/4fd/s_post.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA formonly
+
+
+
+
+LAYOUT(spacing=normal, text=%"s_post")
+VBox VBox1                             
+Grid gr2894                            
+{                                      
+ Voucher Date         [aba02       ]   
+ Voucher No.          [aba01       ]   
+ Voucher Ln#          [abb02       ]   
+ Number of Posted     [count       ]   
+ Number of Imbalance  [count1      ]   
+ Number of UnApprove  [count2      ]   
+ Number of UnPrint    [count3      ]   
+}                                      
+END                                    
+END -- VBox                            
+END -- Form
+
+
+ATTRIBUTES
+DateEdit aba02=formonly.aba02 type DATE, tabIndex=1;
+Edit aba01=formonly.aba01, tabIndex=2;
+Edit abb02=formonly.abb02, tabIndex=3;
+Edit count=formonly.count, tabIndex=4;
+Edit count1=formonly.count1, tabIndex=5;
+Edit count2=formonly.count2, tabIndex=6;
+Edit count3=formonly.count3, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

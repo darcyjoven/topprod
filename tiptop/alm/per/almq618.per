@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almq618.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almq618")
+VBox vb4
+Table lsm
+{
+[lsm01        |lsm15        |lsm02        |lsm03        |lsm05         |lsm04       |lsm06       |lsm08     |lsm09   |lsm10   |lsm11   |lsm12   |lsm13   |lsm14   |lsmstore  ]
+[lsm01        |lsm15        |lsm02        |lsm03        |lsm05         |lsm04       |lsm06       |lsm08     |lsm09   |lsm10   |lsm11   |lsm12   |lsm13   |lsm14   |lsmstore  ]
+[lsm01        |lsm15        |lsm02        |lsm03        |lsm05         |lsm04       |lsm06       |lsm08     |lsm09   |lsm10   |lsm11   |lsm12   |lsm13   |lsm14   |lsmstore  ]
+[lsm01        |lsm15        |lsm02        |lsm03        |lsm05         |lsm04       |lsm06       |lsm08     |lsm09   |lsm10   |lsm11   |lsm12   |lsm13   |lsm14   |lsmstore  ]
+[lsm01        |lsm15        |lsm02        |lsm03        |lsm05         |lsm04       |lsm06       |lsm08     |lsm09   |lsm10   |lsm11   |lsm12   |lsm13   |lsm14   |lsmstore  ]
+[lsm01        |lsm15        |lsm02        |lsm03        |lsm05         |lsm04       |lsm06       |lsm08     |lsm09   |lsm10   |lsm11   |lsm12   |lsm13   |lsm14   |lsmstore  ]
+[lsm01        |lsm15        |lsm02        |lsm03        |lsm05         |lsm04       |lsm06       |lsm08     |lsm09   |lsm10   |lsm11   |lsm12   |lsm13   |lsm14   |lsmstore  ]
+}
+END -- lsm
+Grid gr4
+{
+ ---------- Rows [cn2   ] ----------
+
+
+}
+END -- gr4
+END -- vb4
+END -- almq618
+
+TABLES
+lsm_file
+ATTRIBUTES
+ButtonEdit lsm01=lsm_file.lsm01, action=controlp, tabIndex=1, title="lsm01", image="zoom.png";
+ComboBox lsm15=lsm_file.lsm15, tabIndex=2, title=%"lsm15", items=(("1", "ERP"),("2", "POS"),("3", "CYTZ"));
+ComboBox lsm02=lsm_file.lsm02, tabIndex=3, title="lsm02", items=(("1", "jiaokuan"),("2", "xiaotui"),("3", "huanquan"),("4", "huanwu"),("5", "bu"),("6", "qing"),("7", "lschd"),("8", "lsxtd"),("9", "9"),("A", "A"));
+ButtonEdit lsm03=lsm_file.lsm03, action=controlp, tabIndex=4, title="lsm03", image="zoom.png";
+DateEdit lsm05=lsm_file.lsm05, tabIndex=5, title="lsm05";
+Edit lsm04=lsm_file.lsm04, tabIndex=6, title="lsm04";
+DateEdit lsm06=lsm_file.lsm06, tabIndex=7, title="lsm06";
+Edit lsm08=lsm_file.lsm08, tabIndex=8, title=%"lsm08";
+Edit lsm09=lsm_file.lsm09, tabIndex=9, title=%"lsm09";
+Edit lsm10=lsm_file.lsm10, tabIndex=10, title=%"lsm10";
+Edit lsm11=lsm_file.lsm11, tabIndex=11, title=%"lsm11";
+Edit lsm12=lsm_file.lsm12, tabIndex=12, title=%"lsm12";
+Edit lsm13=lsm_file.lsm13, tabIndex=13, title=%"lsm13";
+DateEdit lsm14=lsm_file.lsm14, tabIndex=14, title=%"lsm14";
+ButtonEdit lsmstore=lsm_file.lsmstore, action=controlp, tabIndex=15, title=%"lsmstore", image="zoom.png";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lsm(lsm_file.lsm01,lsm_file.lsm15,lsm_file.lsm02,lsm_file.lsm03,lsm_file.lsm05,lsm_file.lsm04,lsm_file.lsm06,lsm_file.lsm08,lsm_file.lsm09,lsm_file.lsm10,lsm_file.lsm11,lsm_file.lsm12,lsm_file.lsm13,lsm_file.lsm14,lsm_file.lsmstore)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"artr002")
+VBox vb3
+Grid gr2
+{
+
+  <G gb8                                                              > <G gb6                                >
+  [g_method                                                         ]     [g_rza01                           ]
+  <                                                                   > <                                     >
+  <G gb1                                                                                                      >
+     Item No.        [ima01                ]
+     Product Barcode [rta05                ]
+  <                                                                                                           >
+  <G gb7                                                                                                      >
+     Customized Price Change No. [rtm01                ]
+     Price Strategy              [rti01                ]
+     Approval Date               [rtmcond              ]
+     Effective Date              [rtm03                ]
+  <                                                                                                           >
+  <G gb9                                                                                                      >
+   Price Promotion No.[rab02                ]
+   Approval Date      [rabcond              ]
+   Start Date         [rac12                ]
+   Ending Date        [rac13                ]
+  <                                                                                                           >
+
+  <G gb3                                                                                                      >
+  [g_pt1                         ]
+  [g_pt2                        ]
+  <                                                                                                           >
+
+}
+END -- gr2
+Table s_rta
+{
+[sel   |ima01_1   |ima02       |rta05_1   |ima021          |rta03   |rtg05       |rtg06       |rtmcond_|rtm03_1          |rac05           |rac09            |rac12_1      |rac13_1       |rac14       |rac15     |qty         ]
+[sel   |ima01_1   |ima02       |rta05_1   |ima021          |rta03   |rtg05       |rtg06       |rtmcond_|rtm03_1          |rac05           |rac09            |rac12_1      |rac13_1       |rac14       |rac15     |qty         ]
+[sel   |ima01_1   |ima02       |rta05_1   |ima021          |rta03   |rtg05       |rtg06       |rtmcond_|rtm03_1          |rac05           |rac09            |rac12_1      |rac13_1       |rac14       |rac15     |qty         ]
+[sel   |ima01_1   |ima02       |rta05_1   |ima021          |rta03   |rtg05       |rtg06       |rtmcond_|rtm03_1          |rac05           |rac09            |rac12_1      |rac13_1       |rac14       |rac15     |qty         ]
+[sel   |ima01_1   |ima02       |rta05_1   |ima021          |rta03   |rtg05       |rtg06       |rtmcond_|rtm03_1          |rac05           |rac09            |rac12_1      |rac13_1       |rac14       |rac15     |qty         ]
+
+}
+END -- s_rta
+END -- vb3
+END -- Form2
+
+ATTRIBUTES
+Group gb8:gb8, text="Query Method";
+RadioGroup g_method=formonly.g_method type VARCHAR, tabIndex=1, not null, required, orientation=horizontal, items=(("1", %"Regular Query"),("2", %"Change Price Query"),("3", %"Special Price Query"));
+Group gb6:gb6, text="Print Method";
+ComboBox g_rza01=formonly.g_rza01 type VARCHAR, tabIndex=2, not null, required;
+Group gb1:gb1, text="Regular Query", fontPitch=fixed;
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit rta05=formonly.rta05 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+Group gb7:gb7, text="Change Price Query", fontPitch=fixed;
+ButtonEdit rtm01=formonly.rtm01 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit rti01=formonly.rti01 type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+DateEdit rtmcond=formonly.rtmcond type DATE, tabIndex=7, century="";
+DateEdit rtm03=formonly.rtm03 type DATE, tabIndex=8, century="";
+Group gb9:gb9, text="Special Price Query", fontPitch=fixed;
+ButtonEdit rab02=formonly.rab02 type VARCHAR, action=controlp, tabIndex=9, image="zoom";
+DateEdit rabcond=formonly.rabcond type DATE, tabIndex=10;
+DateEdit rac12=formonly.rac12 type DATE, tabIndex=11;
+DateEdit rac13=formonly.rac13 type DATE, tabIndex=12;
+Group gb3:gb3, text="Print Type", fontPitch=fixed;
+CheckBox g_pt1=formonly.g_pt1 type VARCHAR, tabIndex=13, text="Add to detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_pt2=formonly.g_pt2 type VARCHAR, tabIndex=14, text="Display the stock > 0", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sel=formonly.sel type VARCHAR, tabIndex=15, title="Check", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ima01_1=formonly.ima01_1 type VARCHAR, tabIndex=16, title="Item No.", noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=17, title="Item Name", noEntry;
+Edit rta05_1=formonly.rta05_1 type VARCHAR, tabIndex=18, title="Barcode", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=19, title="Product Spec.", noEntry;
+Edit rta03=formonly.rta03 type VARCHAR, tabIndex=20, title="Unit", noEntry;
+Edit rtg05=formonly.rtg05 type DECIMAL, tabIndex=21, title="Sales Price", noEntry, justify=right;
+Edit rtg06=formonly.rtg06 type VARCHAR, tabIndex=22, title="Member Price", noEntry, justify=right;
+DateEdit rtmcond_=formonly.rtmcond_1 type DATE, tabIndex=23, title="Approval Date", noEntry;
+DateEdit rtm03_1=formonly.rtm03_1 type DATE, tabIndex=24, title="Effective Date", noEntry;
+Edit rac05=formonly.rac05 type VARCHAR, tabIndex=25, title="Promotion Price", noEntry, justify=right;
+Edit rac09=formonly.rac09 type DECIMAL, tabIndex=26, title="Member Promotion Price", noEntry, justify=right;
+DateEdit rac12_1=formonly.rac12_1 type DATE, tabIndex=27, title="Promotion Start Time", noEntry;
+DateEdit rac13_1=formonly.rac13_1 type DATE, tabIndex=28, title="Promotion Ending Time", noEntry;
+Edit rac14=formonly.rac14 type VARCHAR, tabIndex=29, title="Promotion Start Time", noEntry;
+Edit rac15=formonly.rac15 type VARCHAR, tabIndex=30, title="Promotion Ending Time", noEntry;
+Edit qty=formonly.qty type INTEGER, tabIndex=31, title="Print Qty", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rta(formonly.sel,formonly.ima01_1,formonly.ima02,formonly.rta05_1,formonly.ima021,formonly.rta03,formonly.rtg05,formonly.rtg06,formonly.rtmcond_1,formonly.rtm03_1,formonly.rac05,formonly.rac09,formonly.rac12_1,formonly.rac13_1,formonly.rac14,formonly.rac15,formonly.qty)
+SCREEN RECORD Undefined(formonly.g_method,formonly.g_rza01,formonly.ima01,formonly.rta05,formonly.rtm01,formonly.rti01,formonly.rtmcond,formonly.rtm03,formonly.rab02,formonly.rabcond,formonly.rac12,formonly.rac13,formonly.g_pt1,formonly.g_pt2)
+END -- INSTRUCTIONS
+

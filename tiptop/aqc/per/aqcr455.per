@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcr455.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqcr455")
+VBox VBox1
+Grid gr153
+{
+ <G group01                                                           >
+  FQC Document No. .  [qcf01               ]
+  Item No.            [qcf021              ]
+  Run Card            [qcf03               ]
+  Work/Order No.      [qcf02               ]
+  Inspector           [qcf13               ]
+ <                                                                    >
+
+}
+END -- gr153
+Grid gr154
+{
+[more                                     ]
+
+}
+END -- gr154
+END -- VBox1
+END -- aqcr455
+
+TABLES
+qcf_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit qcf01=qcf_file.qcf01, tabIndex=1;
+ButtonEdit qcf021=qcf_file.qcf021, action=controlp, tabIndex=2, image="zoom", comment="<P>";
+Edit qcf03=qcf_file.qcf03, tabIndex=3;
+Edit qcf02=qcf_file.qcf02, tabIndex=4;
+Edit qcf13=qcf_file.qcf13, tabIndex=5;
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(qcf_file.qcf01,qcf_file.qcf021,qcf_file.qcf03,qcf_file.qcf02,qcf_file.qcf13,formonly.more)
+END -- INSTRUCTIONS
+

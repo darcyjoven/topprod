@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gis/42f/gisp110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gisp110")
+Folder pc797
+Page page01(text="Main")
+VBox VBox1
+Grid gr3480
+{
+ <G group01                                            >
+  Bill No.             [isa04               ]
+  Customer No.         [isa05               ]
+  Invoice Type         [isa062                        ]
+  Data Source          [isa00               ]
+ <                                                     >
+ <G group02                                            >
+ [b                                                   ]
+ [d                                                   ]
+ [e                                                   ]
+ [dummy01                                             ]
+
+ <                                                     >
+
+}
+END -- gr3480
+END -- VBox1
+END -- page01
+END -- pc797
+END -- gisp110
+
+TABLES
+isa_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit isa04=isa_file.isa04, tabIndex=1;
+Edit isa05=isa_file.isa05, tabIndex=2;
+ComboBox isa062=isa_file.isa062, tabIndex=3, queryEditable, items=(("A", "Appreciate Tax Invoice"),("B", "Normal Invoice"),("C", "Exempt Invoice"));
+Edit isa00=isa_file.isa00, tabIndex=4;
+Group group02:group02;
+CheckBox b=formonly.b type CHAR, tabIndex=5, text="Update Status Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type CHAR, tabIndex=6, text="Taxed Amount", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=7, text="Export to Client", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="dummy";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(isa_file.isa04,isa_file.isa05,isa_file.isa062,isa_file.isa00,formonly.b,formonly.d,formonly.e)
+END -- INSTRUCTIONS
+

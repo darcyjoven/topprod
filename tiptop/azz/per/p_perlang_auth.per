@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_perlang_auth.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_perlang_auth")
+VBox VBox1
+Grid gr3259
+{
+ <G group01                                 >
+  Program ID          [gaj01               ]
+  Field Name          [gaj02               ]
+ <                                          >
+
+}
+END -- gr3259
+Table s_gaj
+{
+[gaj03           |gaj04        |gaj05          |gaj06       ]
+[gaj03           |gaj04        |gaj05          |gaj06       ]
+[gaj03           |gaj04        |gaj05          |gaj06       ]
+[gaj03           |gaj04        |gaj05          |gaj06       ]
+[gaj03           |gaj04        |gaj05          |gaj06       ]
+[gaj03           |gaj04        |gaj05          |gaj06       ]
+[gaj03           |gaj04        |gaj05          |gaj06       ]
+[gaj03           |gaj04        |gaj05          |gaj06       ]
+[gaj03           |gaj04        |gaj05          |gaj06       ]
+
+}
+END -- s_gaj
+END -- VBox1
+END -- p_perlang_auth
+
+TABLES
+gaj_file
+ATTRIBUTES
+Group group01:group01;
+Edit gaj01=gaj_file.gaj01, tabIndex=1, noEntry;
+Edit gaj02=gaj_file.gaj02, tabIndex=2, noEntry;
+ButtonEdit gaj03=gaj_file.gaj03, action=controlp, tabIndex=3, title="Visible Group", image="zoom", scroll;
+ButtonEdit gaj04=gaj_file.gaj04, action=controlp, tabIndex=4, title="Hide Group", image="zoom", scroll;
+ButtonEdit gaj05=gaj_file.gaj05, action=controlp, tabIndex=5, title="Visible User", image="zoom", scroll;
+ButtonEdit gaj06=gaj_file.gaj06, action=controlp, tabIndex=6, title="Hide User", image="zoom", scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gaj(gaj_file.gaj03,gaj_file.gaj04,gaj_file.gaj05,gaj_file.gaj06)
+SCREEN RECORD Undefined(gaj_file.gaj01,gaj_file.gaj02)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi557_range.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder folder
+Page Main(text=%"Main")
+Table s_lrd
+{
+[lrd02            |azp02                         |lrdac]
+[lrd02            |azp02                         |lrdac]
+[lrd02            |azp02                         |lrdac]
+[lrd02            |azp02                         |lrdac]
+[lrd02            |azp02                         |lrdac]
+[lrd02            |azp02                         |lrdac]
+[lrd02            |azp02                         |lrdac]
+[lrd02            |azp02                         |lrdac]
+[lrd02            |azp02                         |lrdac]
+[lrd02            |azp02                         |lrdac]
+
+
+}
+END -- s_lrd
+END -- Main
+END -- folder
+Grid Grid1
+{
+
+  --------  item[cnt_a]--------
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+lrd_file,
+azp_file
+ATTRIBUTES
+ButtonEdit lrd02=lrd_file.lrd02, action=controlp, tabIndex=1, title=%"Store No.", not null, image="zoom", scroll;
+Edit azp02=azp_file.azp02, tabIndex=2, title=%"Name of store", noEntry, scroll;
+CheckBox lrdac=lrd_file.lrdacti, tabIndex=3, title=%"Actived", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt_a=formonly.cnt_a type SMALLINT, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lrd(lrd_file.lrd02,azp_file.azp02,lrd_file.lrdacti)
+SCREEN RECORD Undefined(formonly.cnt_a)
+END -- INSTRUCTIONS
+

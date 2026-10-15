@@ -1,0 +1,117 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi122.per created Wed Jan 23 05:30:33 2008
+-- File created from axdi122.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi122")
+-- GRID
+-- GRID
+-- HBOX
+-- PAGE
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        HBOX 
+          GRID gr7764
+          {
+           Dispatch No.                  [aa0             ]
+           Date                          [aa1       ]
+           Leave Date/Time               [aa2       ] [aa3       ]
+           Estimative Return Dare/Time   [aa4       ] [aa5       ]
+
+          }
+          END -- GRID
+          GRID gr7765
+          {
+           Vehicle No.         [aa6       ]
+           Person of Dispatch  [aa7       ] [aa8       ]
+           Department          [aa9       ] [ab0       ]
+           Transfer Flow       [ab1       ]
+                               [ab2                    ]
+
+          }
+          END -- GRID
+        END -- HBOX
+      END -- PAGE
+      PAGE info( TEXT="Info")
+        GRID gr7766
+        {
+         Record Owner        [ab3       ]   Last Modified by    [ab4       ]   Data Valid Code     [ab5       ]
+         Department          [ab6       ]   Create/Modify Date  [ab7       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_adm
+    {
+    [ab8       |ab9        |ac0           |ac1     |ac2                 |ac3      |ac4     |ac5           |ac6              ]
+    [ab8       |ab9        |ac0           |ac1     |ac2                 |ac3      |ac4     |ac5           |ac6              ]
+    [ab8       |ab9        |ac0           |ac1     |ac2                 |ac3      |ac4     |ac5           |ac6              ]
+    [ab8       |ab9        |ac0           |ac1     |ac2                 |ac3      |ac4     |ac5           |ac6              ]
+    [ab8       |ab9        |ac0           |ac1     |ac2                 |ac3      |ac4     |ac5           |ac6              ]
+    [ab8       |ab9        |ac0           |ac1     |ac2                 |ac3      |ac4     |ac5           |ac6              ]
+    [ab8       |ab9        |ac0           |ac1     |ac2                 |ac3      |ac4     |ac5           |ac6              ]
+    [ab8       |ab9        |ac0           |ac1     |ac2                 |ac3      |ac4     |ac5           |ac6              ]
+    [ab8       |ab9        |ac0           |ac1     |ac2                 |ac3      |ac4     |ac5           |ac6              ]
+    [ab8       |ab9        |ac0           |ac1     |ac2                 |ac3      |ac4     |ac5           |ac6              ]
+    }
+    END -- TABLE
+    GRID gr7767
+    {
+     ---------- Rows [ac7   ] / [ac8   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adk_file,adm_file
+
+ATTRIBUTES
+  EDIT aa0=adk_file.adk01, COMMENT="Qry of Dipatching No.(QBE)", TABINDEX=1;
+  EDIT aa1=adk_file.adk02, NOENTRY, TABINDEX=2;
+  EDIT aa2=adk_file.adk04, NOENTRY, TABINDEX=3;
+  EDIT aa3=adk_file.adk05, NOENTRY, TABINDEX=4;
+  EDIT aa4=adk_file.adk06, NOENTRY, TABINDEX=5;
+  EDIT aa5=adk_file.adk07, NOENTRY, TABINDEX=6;
+  EDIT aa6=adk_file.adk08, NOENTRY, TABINDEX=7;
+  EDIT aa7=adk_file.adk13, NOENTRY, TABINDEX=8;
+  EDIT aa8=FORMONLY.gen02, NOENTRY, TABINDEX=9;
+  EDIT aa9=adk_file.adk14, NOENTRY, TABINDEX=10;
+  EDIT ab0=FORMONLY.gem02, NOENTRY, TABINDEX=11;
+  EDIT ab1=adk_file.adk15, COLOR=YELLOW, NOENTRY, TABINDEX=12;
+  CHECKBOX ab2=adk_file.adkconf, TEXT="Confirm", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=13;
+  EDIT ab3=adk_file.adkuser, NOENTRY, TABINDEX=14;
+  EDIT ab4=adk_file.adkmodu, NOENTRY, TABINDEX=15;
+  EDIT ab5=adk_file.adkacti, NOENTRY, UPSHIFT, TABINDEX=16;
+  EDIT ab6=adk_file.adkgrup, NOENTRY, TABINDEX=17;
+  EDIT ab7=adk_file.adkdate, NOENTRY, TABINDEX=18;
+  EDIT ab8=adm_file.adm02, NOT NULL, REQUIRED, TABINDEX=19, TITLE="Line No";
+  COMBOBOX ab9=adm_file.adm03, NOT NULL, REQUIRED, TABINDEX=20, TITLE="Category", ITEMS=(("1","Letter"),("2","Goods"));
+  EDIT ac0=FORMONLY.desc, NOENTRY, TABINDEX=21, TITLE="Description";
+  EDIT ac1=adm_file.adm04, TABINDEX=22, TITLE="Piece";
+  EDIT ac2=adm_file.adm05, TABINDEX=23, TITLE="Description";
+  BUTTONEDIT ac3=adm_file.adm06, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", TABINDEX=24, TITLE="Client";
+  EDIT ac4=FORMONLY.gen02a, NOENTRY, TABINDEX=25, TITLE="Name";
+  EDIT ac5=adm_file.adm08, TABINDEX=26, TITLE="Consignee";
+  EDIT ac6=adm_file.adm07, TABINDEX=27, TITLE="Consignee Company";
+  EDIT ac7=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=28;
+  EDIT ac8=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=29;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adm (adm_file.adm02, adm_file.adm03, FORMONLY.desc, adm_file.adm04, adm_file.adm05, adm_file.adm06, FORMONLY.gen02a, adm_file.adm08, adm_file.adm07)
+END

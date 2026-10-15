@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt620_b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axmt620_b")
+VBox vb11
+Folder pc7
+Page Page7(text=%"Basic Data")
+Table tb7
+{
+[ogi02|ogi03|ogi0|gec02               |ogi05     |ogi06     |ogi07     |ogi08     |ogi08t    |ogi09     ]
+[ogi02|ogi03|ogi0|gec02               |ogi05     |ogi06     |ogi07     |ogi08     |ogi08t    |ogi09     ]
+[ogi02|ogi03|ogi0|gec02               |ogi05     |ogi06     |ogi07     |ogi08     |ogi08t    |ogi09     ]
+[ogi02|ogi03|ogi0|gec02               |ogi05     |ogi06     |ogi07     |ogi08     |ogi08t    |ogi09     ]
+[ogi02|ogi03|ogi0|gec02               |ogi05     |ogi06     |ogi07     |ogi08     |ogi08t    |ogi09     ]
+
+}
+END -- tb7
+END -- Page7
+END -- pc7
+Grid gr7
+{
+
+  ---------- Rows[cn2       ] ----------
+
+}
+END -- gr7
+END -- vb11
+END -- axmt620_b
+
+TABLES
+ogi_file
+ATTRIBUTES
+Edit ogi02=ogi_file.ogi02, tabIndex=1, title="Line No.", noEntry;
+Edit ogi03=ogi_file.ogi03, tabIndex=2, title="Serial No.", noEntry;
+Edit ogi0=ogi_file.ogi04, tabIndex=4, title="Sales Tax Code", noEntry;
+Edit gec02=formonly.gec02 type VARCHAR, tabIndex=10, title="Sales Tax Name", noEntry;
+Edit ogi05=ogi_file.ogi05, tabIndex=4, title="Tax Rate%", noEntry;
+Edit ogi06=ogi_file.ogi06, tabIndex=5, title="Fixed Tax Amount", noEntry;
+CheckBox ogi07=ogi_file.ogi07, tabIndex=6, title="Include Tax", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit ogi08=ogi_file.ogi08, tabIndex=7, title="Amt Excl. Tax", noEntry;
+Edit ogi08t=ogi_file.ogi08t, tabIndex=8, title="Amt Incl. Tax", noEntry;
+Edit ogi09=ogi_file.ogi09, tabIndex=9, title="Tax", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogi(ogi_file.ogi02,ogi_file.ogi03,ogi_file.ogi04,formonly.gec02,ogi_file.ogi05,ogi_file.ogi06,ogi_file.ogi07,ogi_file.ogi08,ogi_file.ogi08t,ogi_file.ogi09)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

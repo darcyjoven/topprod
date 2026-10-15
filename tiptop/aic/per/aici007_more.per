@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici007_more.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="aici007_more")
+Folder pc6
+Page Page7(text=%"More")
+HBox hb2
+Grid gr6
+{
+
+ operator1        [operator1         ]
+
+ formular1        [formular1        ]
+
+ des1             [des1      ]
+
+}
+END -- gr6
+Grid gr9
+{
+
+ operand  [operand      ]
+
+
+
+
+
+}
+END -- gr9
+Grid gr10
+{
+
+ operator2        [operator2         ]
+
+ formular2        [formular2        ]
+
+ des2             [des2      ]
+
+}
+END -- gr10
+END -- hb2
+END -- Page7
+END -- pc6
+END -- aici007_more
+
+ATTRIBUTES
+ComboBox operator1=formonly.operator1 type CHAR, tabIndex=1, not null, required, items=(("0", "TEST TIME FOR WAFER"),("1", "INDEX TIME FOR WAFER"),("2", "TEST TIME FOR DIE"),("3", "INDEX TIME FOR DIE"),("4", "Hour Rate"),("5", "Dut"),("6", "Formular Code"),("7", "operator"),("8", "GROSS DIE"),("9", "FACTOR"));
+ButtonEdit formular1=formonly.formular1 type CHAR, action=controlp, tabIndex=2, image="D:\\Program Files\\FourJs\\gdc\\pics\\zoom.png", comment="Query Formular";
+Edit des1=formonly.des1 type CHAR, tabIndex=3, noEntry;
+ComboBox operand=formonly.operand type CHAR, tabIndex=4, items=(("+", "+"),("-", "-"),("*", "*"),("/", "/"));
+ComboBox operator2=formonly.operator2 type CHAR, tabIndex=5, not null, required, items=(("0", "TEST TIME FOR WAFER"),("1", "INDEX TIME FOR WAFER"),("2", "TEST TIME FOR DIE"),("3", "INDEX TIME FOR DIE"),("4", "Hour Rate"),("5", "Dut"),("6", "Formular Code"),("7", "operator"),("8", "GROSS DIE"),("9", "FACTOR"));
+ButtonEdit formular2=formonly.formular2 type CHAR, action=controlp, tabIndex=6, image="D:\\Program Files\\FourJs\\gdc\\pics\\zoom.png", comment="Query Formular";
+Edit des2=formonly.des2 type CHAR, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.operator1,formonly.formular1,formonly.des1,formonly.operand,formonly.operator2,formonly.formular2,formonly.des2)
+END -- INSTRUCTIONS
+

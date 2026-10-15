@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt3021.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt3021")
+VBox VBox1
+Grid gr3409
+{
+ <G group01                                                                     >
+  Inventory Unit/Inventory Unit Conversion Rate [ima25_fac][ima2]
+  Account of Warehouse/Location                 [img26                         ]
+  Inventory Class                               [img19     ]
+  Look Code                                     [img36     ]
+  Issuing priority                              [img27     ]
+  Sales priority                                [img28     ]
+  Project#                                      [img35_2   ]
+ <                                                                              >
+
+}
+END -- gr3409
+END -- VBox1
+END -- aimt3021
+
+TABLES
+img_file,
+ima_file
+ATTRIBUTES
+Group group01:group01;
+Edit ima25_fac=formonly.ima25_fac type SMALLINT, tabIndex=1;
+Edit ima2=ima_file.ima25, tabIndex=2, noEntry;
+ButtonEdit img26=img_file.img26, action=controlp, tabIndex=3, image="zoom", comment="Press <^P>Qry Account ";
+Edit img19=img_file.img19, tabIndex=4;
+Edit img36=img_file.img36, tabIndex=5;
+Edit img27=img_file.img27, tabIndex=6;
+Edit img28=img_file.img28, tabIndex=7;
+ButtonEdit img35_2=formonly.img35_2 type CHAR, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Project #, <^Y>Project     ";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima25_fac,ima_file.ima25,img_file.img26,img_file.img19,img_file.img36,img_file.img27,img_file.img28,formonly.img35_2)
+END -- INSTRUCTIONS
+

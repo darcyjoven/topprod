@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi350_p.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+ <G group1                            >
+    [label1    ][lmb02           ]
+    [label2    ][lmc03           ]
+    [label3    ][lmy03           ]
+    [label4    ][oba01           ]
+ <                                    >
+ <G group2                            >
+    [label5    ][lik07           ]
+    [label6    ][lik08           ]
+    [label7    ][lik09           ]
+    [label8    ][lik10           ]
+                [detail          ]
+ <                                    >
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+lmy_file,
+lmc_file,
+lmb_file,
+oba_file,
+lik_file
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+Label label1:Label1, text=%"lmb02";
+ButtonEdit lmb02=lmb_file.lmb02, action=controlp, tabIndex=1, image="zoom", scroll;
+Label label2:Label2, text=%"lmc03";
+ButtonEdit lmc03=lmc_file.lmc03, action=controlp, tabIndex=2, image="zoom", scroll;
+Label label3:Label3, text=%"lmy03";
+ButtonEdit lmy03=lmy_file.lmy03, action=controlp, tabIndex=3, image="zoom", scroll;
+Label label4:Label4, text=%"oba01";
+ButtonEdit oba01=oba_file.oba01, action=controlp, tabIndex=4, image="zoom", scroll;
+Group group2:Group2, text=%"INPUT";
+Label label5:Label5, text=%"lik07";
+ButtonEdit lik07=lik_file.lik07, action=controlp, tabIndex=5, not null, image="zoom", scroll;
+Label label6:Label6, text=%"lik08";
+ComboBox lik08=lik_file.lik08, tabIndex=6, not null, scroll, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"));
+Label label7:Label7, text=%"lik09";
+ComboBox lik09=lik_file.lik09, tabIndex=7, not null, scroll, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "Proportion"));
+Label label8:Label8, text=%"lik10";
+ComboBox lik10=lik_file.lik10, tabIndex=8, not null, scroll, items=(("1", "1"),("2", "2"),("3", "3"));
+CheckBox detail=formonly.detail type CHAR, tabIndex=9, text=%"detail", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lmb_file.lmb02,lmc_file.lmc03,lmy_file.lmy03,oba_file.oba01,lik_file.lik07,lik_file.lik08,lik_file.lik09,lik_file.lik10,formonly.detail)
+END -- INSTRUCTIONS
+

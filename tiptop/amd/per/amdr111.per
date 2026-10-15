@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdr111.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amdr111")
+VBox VBox1
+Grid gr3702
+{
+ <G group01                                                     >
+  Accounts No.        [amd01               ]
+  Invoice No.         [amd03               ]
+  Voucher No.         [amd28               ]
+ <                                                              >
+
+}
+END -- gr3702
+Group group02(text="INPUT")
+Grid gr3703
+{
+
+
+
+  Data Year/Month     [amd173_b  ]   [amd174_b  ]
+  To                  [amd173_e  ]   [amd174_e  ]
+
+ <G group04                                                     >
+ [f                                       ]
+ <                                                              >
+
+}
+END -- gr3703
+END -- group02
+Grid gr3704
+{
+[more                                        ]
+
+}
+END -- gr3704
+END -- VBox1
+END -- amdr111
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit amd01=formonly.amd01 type CHAR, tabIndex=1;
+Edit amd03=formonly.amd03 type VARCHAR, tabIndex=2;
+Edit amd28=formonly.amd28 type CHAR, tabIndex=3;
+Edit amd173_b=formonly.amd173_b type SMALLINT, tabIndex=13, comment="No Blank Field";
+Edit amd174_b=formonly.amd174_b type SMALLINT, tabIndex=14;
+Edit amd173_e=formonly.amd173_e type SMALLINT, tabIndex=15, comment="No Blank Field";
+Edit amd174_e=formonly.amd174_e type SMALLINT, tabIndex=16;
+Group group04:group04, text="Data Option";
+RadioGroup f=formonly.f type VARCHAR, tabIndex=17, items=(("1", "Under Tax 500 DR(contain)"),("2", "Tax 500 DR above"),("3", "All "));
+CheckBox more=formonly.more type CHAR, tabIndex=18, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.amd01,formonly.amd03,formonly.amd28,formonly.amd173_b,formonly.amd174_b,formonly.amd173_e,formonly.amd174_e,formonly.f,formonly.more)
+END -- INSTRUCTIONS
+

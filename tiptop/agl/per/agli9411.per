@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli9411.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli9411")
+VBox vb3_
+Folder folder01
+Page page01(text="Main")
+Grid gr2466
+{
+ Group No.          [giww05              ]
+ Company No.        [giww06              ]
+ Plant Name         [axz02               ]
+ Logistics code     [axz03               ]
+ Book No.           [giww00    ]
+ Group Code         [giww01    ]
+ Group Desc         [giqq02                 ]
+}
+END -- gr2466
+END -- page01
+END -- folder01
+Table s_gis
+{
+[giww02                    |aag02                                             |giww03     |giww04   ]
+[giww02                    |aag02                                             |giww03     |giww04   ]
+[giww02                    |aag02                                             |giww03     |giww04   ]
+[giww02                    |aag02                                             |giww03     |giww04   ]
+[giww02                    |aag02                                             |giww03     |giww04   ]
+[giww02                    |aag02                                             |giww03     |giww04   ]
+[giww02                    |aag02                                             |giww03     |giww04   ]
+[giww02                    |aag02                                             |giww03     |giww04   ]
+[giww02                    |aag02                                             |giww03     |giww04   ]
+[giww02                    |aag02                                             |giww03     |giww04   ]
+
+}
+END -- s_gis
+Grid gr2467
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2467
+END -- vb3_
+END -- agli9411
+
+TABLES
+aag_file,
+giww_file
+ATTRIBUTES
+ButtonEdit giww05=giww_file.giww05, action=controlp, tabIndex=11, not null, required, image="zoom";
+ButtonEdit giww06=giww_file.giww06, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P> Query";
+Edit axz02=formonly.axz02 type CHAR, tabIndex=12, noEntry;
+Edit axz03=formonly.axz03 type CHAR, tabIndex=13, noEntry;
+Edit giww00=formonly.giww00 type CHAR, tabIndex=9;
+ButtonEdit giww01=giww_file.giww01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Query Group Code";
+Edit giqq02=formonly.giqq02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit giww02=giww_file.giww02, action=controlp, tabIndex=3, title="Account No.", not null, required, image="zoom", comment="<^P>Qry Account # ";
+Edit aag02=aag_file.aag02, tabIndex=4, title="Account Title", noEntry;
+ComboBox giww03=giww_file.giww03, tabIndex=5, title="Add/Deduct", not null, required, queryEditable, items=(("+", %"Total(+)"),("-", %"Total(-)"));
+ComboBox giww04=giww_file.giww04, tabIndex=6, title="Tran.Type", not null, required, queryEditable, items=(("1", %"Variation"),("2", %"Beginning of Period"),("3", %"End of Period"),("4", %"Manually"),("5", %"Debit Transaction"),("6", %"Credit Transaction"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_giww(giww_file.giww02,aag_file.aag02,giww_file.giww03,giww_file.giww04)
+SCREEN RECORD Undefined(giww_file.giww05,giww_file.giww06,formonly.axz02,formonly.axz03,formonly.giww00,giww_file.giww01,formonly.giqq02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

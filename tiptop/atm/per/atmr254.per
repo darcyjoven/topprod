@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmr254.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"atmr254")
+VBox VBox1
+Grid gr1191
+{
+ <G group01                              >
+  Application No    [tsk01           ]
+  Anticipated Date  [tsk18           ]
+  Requirement Plant [tsk03           ]
+  Request Store     [tsk17           ]
+  Info              [tsk05           ]
+  Item No.          [tsl03           ]
+ <                                       >
+
+}
+END -- gr1191
+Grid gr1192
+{
+ <G group02                              >
+  [a                                 ]
+  [more                              ]
+ <                                       >
+
+}
+END -- gr1192
+END -- VBox1
+END -- atmr254
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit tsk01=formonly.tsk01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+DateEdit tsk18=formonly.tsk18 type DATE, tabIndex=2;
+ButtonEdit tsk03=formonly.tsk03 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit tsk17=formonly.tsk17 type CHAR, action=controlp, tabIndex=4, image="zoom";
+ComboBox tsk05=formonly.tsk05 type CHAR, tabIndex=5, noEntry, items=(("1", "Issue"),("2", "Confirm"),("3", "Confirmed"),("4", "order created"));
+ButtonEdit tsl03=formonly.tsl03 type CHAR, action=controlp, tabIndex=6, image="zoom";
+Group group02:group02, text="INPUT";
+CheckBox a=formonly.a type VARCHAR, tabIndex=7, text="print order list or not", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tsk01,formonly.tsk18,formonly.tsk03,formonly.tsk17,formonly.tsk05,formonly.tsl03,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

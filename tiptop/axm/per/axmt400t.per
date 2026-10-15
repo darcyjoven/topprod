@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt400t.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axmt400t")
+Grid gr25
+{
+
+
+         Out Date    [oeb15              ]
+         Wrap No.    [oeb931             ] [oeb931_obi02    ]
+          Box Num    [oeb932             ]
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr25
+END -- axmt400t
+
+TABLES
+oeb_file
+ATTRIBUTES
+DateEdit oeb15=oeb_file.oeb15, tabIndex=3;
+ButtonEdit oeb931=oeb_file.oeb931, tabIndex=4;
+Edit oeb931_obi02=formonly.oeb931_obi02 type CHAR, tabIndex=1, noEntry;
+Edit oeb932=oeb_file.oeb932, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oeb_file.oeb15,oeb_file.oeb931,formonly.oeb931_obi02,oeb_file.oeb932)
+END -- INSTRUCTIONS
+

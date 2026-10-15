@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_data_belong.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_data_belong")
+VBox vb3
+Folder folder01
+Page page01(text="Basic Data")
+Grid gr4675
+{
+ <G group01                                                                 >
+  Maintain Table   [gfk01          ][gat03                               ]
+  Data Owner Filed [gfk02          ][gfk02_name                          ]
+  Data Group Filed [gfk03          ][gfk03_name                          ]
+ <                                                                          >
+
+}
+END -- gr4675
+END -- page01
+END -- folder01
+Grid gr5
+{
+ ---------- Rows [idx   ]/[cnt   ] ----------
+
+}
+END -- gr5
+END -- vb3
+END -- p_auth_filter
+
+TABLES
+gfk_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit gfk01=gfk_file.gfk01, action=controlp, tabIndex=1, not null, required, image="zoom", downShift, comment="KEY Field, No Blank/Repeated!, <^P>Qry Program Name";
+Edit gat03=formonly.gat03 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit gfk02=gfk_file.gfk02, action=controlp, tabIndex=3, image="zoom";
+Edit gfk02_name=formonly.gfk02_name type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit gfk03=gfk_file.gfk03, action=controlp, tabIndex=5, image="zoom";
+Edit gfk03_name=formonly.gfk03_name type VARCHAR, tabIndex=6, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=7, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gfk_file.gfk01,formonly.gat03,gfk_file.gfk02,formonly.gfk02_name,gfk_file.gfk03,formonly.gfk03_name,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq007_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcq007_1")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                        >
+  Date Range          [bdate       ]-[edate       ]
+ <                                                 >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[a                        ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- axcq007_1
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=2, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=3, not null, required;
+CheckBox a=formonly.a type CHAR, tabIndex=1, text=%"Write articulation table", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.bdate,formonly.edate)
+END -- INSTRUCTIONS
+

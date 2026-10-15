@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afaq1022.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afaq1022")
+Folder Folder1
+Page page01(text="Main")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                  ><G group2                                    >
+  Depreciation Method [fap68     ]            Asset Account       [fap58               ]
+  Rest Life           [fap69     ]Month       Accu. Depr. Account [fap59               ]
+  Default Res. Value  [fap70               ]  Depreciation Account[fap60               ]
+  Home Currency Cost  [fap711              ]  Quantity            [fap66               ]
+  Adjustment Cost     [fap71               ]  Charge off Qty      [fap67               ]
+  Charge off Cost     [fap73               ]  Keeping Department  [fap63     ][gem02     ]
+  Accu. Depreciation  [fap72               ]  Employee            [fap64     ][gen02     ]
+  Char. Off Accu. Depr[fap74               ]  Location            [fap65               ]
+ <                                          ><                                            >
+
+}
+END -- Grid1
+END -- VBox1
+END -- page01
+END -- Folder1
+END -- afaq1022
+
+TABLES
+fap_file
+ATTRIBUTES
+Group group1:group1;
+Edit fap68=fap_file.fap68, tabIndex=1, noEntry;
+Edit fap69=fap_file.fap69, tabIndex=2, noEntry;
+Edit fap70=fap_file.fap70, tabIndex=3, noEntry;
+Edit fap711=fap_file.fap711, tabIndex=4, noEntry;
+Edit fap71=fap_file.fap71, tabIndex=5, noEntry;
+Edit fap73=fap_file.fap73, tabIndex=6, noEntry;
+Edit fap72=fap_file.fap72, tabIndex=7, noEntry;
+Edit fap74=fap_file.fap74, tabIndex=8, noEntry;
+Group group2:group2;
+Edit fap58=fap_file.fap58, tabIndex=9, noEntry;
+Edit fap59=fap_file.fap59, tabIndex=10, noEntry;
+Edit fap60=fap_file.fap60, tabIndex=11, noEntry;
+Edit fap66=fap_file.fap66, tabIndex=12, noEntry;
+Edit fap67=fap_file.fap67, tabIndex=13, noEntry;
+Edit fap63=fap_file.fap63, tabIndex=14, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=15;
+Edit fap64=fap_file.fap64, tabIndex=16, noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=17;
+Edit fap65=fap_file.fap65, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fap_file.fap68,fap_file.fap69,fap_file.fap70,fap_file.fap711,fap_file.fap71,fap_file.fap73,fap_file.fap72,fap_file.fap74,fap_file.fap58,fap_file.fap59,fap_file.fap60,fap_file.fap66,fap_file.fap67,fap_file.fap63,formonly.gem02,fap_file.fap64,formonly.gen02,fap_file.fap65)
+END -- INSTRUCTIONS
+

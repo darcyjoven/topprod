@@ -1,0 +1,118 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_demo.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_demo")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+Grid gr3175
+{
+ Inquiry List#       [pmw01           ] [smydesc   ]
+ Inquiry Date        [pmw06       ]
+ Trans.Currency      [pmw04     ]   [azi02               ]
+ Tax Type            [pmw05       ] [pmw051    ] [gec07           ]
+}
+END -- gr3175
+END -- page01
+Page info(text="Info")
+Grid gr3176
+{
+ Record Owner        [pmwuser   ]  Last Modified by    [pmwmodu   ]  Data Valid Code     [pmwacti   ]
+ Department          [pmwgrup   ]  Create/Modify Date  [pmwdate   ]
+ Record Orig.        [pmworiu   ]
+ Dept Orig.          [pmworig   ]
+}
+END -- gr3176
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gr3177
+{
+ userdefined_field001        [imaud01                                            ]
+                             [                                                   ]
+ userdefined_field002        [imaud02           ]
+ userdefined_field003        [imaud07           ]
+ userdefined_field004        [imaud13           ]
+}
+END -- gr3177
+END -- userdefined_field
+END -- folder01
+Table s_pmx
+{
+[pmx02 |pmx12     |pmc03       |pmx08               |pmx081                        |pmx082                        |pmx10     |pmx13     |pmx09         |ima44         |ima908       |pmx04          |pmx05       |pmx03       |pmx06               |pmx06t              |pmx07         ]
+[pmx02 |pmx12     |pmc03       |pmx08               |pmx081                        |pmx082                        |pmx10     |pmx13     |pmx09         |ima44         |ima908       |pmx04          |pmx05       |pmx03       |pmx06               |pmx06t              |pmx07         ]
+[pmx02 |pmx12     |pmc03       |pmx08               |pmx081                        |pmx082                        |pmx10     |pmx13     |pmx09         |ima44         |ima908       |pmx04          |pmx05       |pmx03       |pmx06               |pmx06t              |pmx07         ]
+[pmx02 |pmx12     |pmc03       |pmx08               |pmx081                        |pmx082                        |pmx10     |pmx13     |pmx09         |ima44         |ima908       |pmx04          |pmx05       |pmx03       |pmx06               |pmx06t              |pmx07         ]
+[pmx02 |pmx12     |pmc03       |pmx08               |pmx081                        |pmx082                        |pmx10     |pmx13     |pmx09         |ima44         |ima908       |pmx04          |pmx05       |pmx03       |pmx06               |pmx06t              |pmx07         ]
+[pmx02 |pmx12     |pmc03       |pmx08               |pmx081                        |pmx082                        |pmx10     |pmx13     |pmx09         |ima44         |ima908       |pmx04          |pmx05       |pmx03       |pmx06               |pmx06t              |pmx07         ]
+[pmx02 |pmx12     |pmc03       |pmx08               |pmx081                        |pmx082                        |pmx10     |pmx13     |pmx09         |ima44         |ima908       |pmx04          |pmx05       |pmx03       |pmx06               |pmx06t              |pmx07         ]
+[pmx02 |pmx12     |pmc03       |pmx08               |pmx081                        |pmx082                        |pmx10     |pmx13     |pmx09         |ima44         |ima908       |pmx04          |pmx05       |pmx03       |pmx06               |pmx06t              |pmx07         ]
+[pmx02 |pmx12     |pmc03       |pmx08               |pmx081                        |pmx082                        |pmx10     |pmx13     |pmx09         |ima44         |ima908       |pmx04          |pmx05       |pmx03       |pmx06               |pmx06t              |pmx07         ]
+[pmx02 |pmx12     |pmc03       |pmx08               |pmx081                        |pmx082                        |pmx10     |pmx13     |pmx09         |ima44         |ima908       |pmx04          |pmx05       |pmx03       |pmx06               |pmx06t              |pmx07         ]
+
+}
+END -- s_pmx
+Grid gr3179
+{
+  ---------- Rows [idx   ]/[cnt   ]  ---  Details [cn2   ] ----------
+
+}
+END -- gr3179
+END -- vb3
+END -- p_demo
+
+TABLES
+ima_file,
+pmx_file,
+tableAlias1=pmx_file,
+pmw_file
+ATTRIBUTES
+Edit pmw01=pmw_file.pmw01, tabIndex=1, not null, required, comment="Key Field,No Blank/Repeated!,<^P>Qry Document Property";
+Edit smydesc=formonly.smydesc type CHAR, tabIndex=2, noEntry;
+DateEdit pmw06=pmw_file.pmw06, tabIndex=3;
+Edit pmw04=pmw_file.pmw04, tabIndex=4, not null, required, comment="<^P>Qry Currency";
+Edit azi02=formonly.azi02 type CHAR, tabIndex=5, noEntry;
+Edit pmw05=pmw_file.pmw05, tabIndex=6, not null, required, comment="<^P>Qry Details";
+Edit pmw051=pmw_file.pmw051, tabIndex=7, noEntry;
+CheckBox gec07=formonly.gec07 type CHAR, tabIndex=8, text="With Tax", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit pmwuser=pmw_file.pmwuser, tabIndex=29, noEntry;
+Edit pmwmodu=pmw_file.pmwmodu, tabIndex=30, noEntry;
+Edit pmwacti=pmw_file.pmwacti, tabIndex=31, noEntry, upShift;
+Edit pmwgrup=pmw_file.pmwgrup, tabIndex=36, noEntry;
+DateEdit pmwdate=pmw_file.pmwdate, tabIndex=37, noEntry;
+Edit pmworiu=pmw_file.pmworiu, tabIndex=502, noEntry;
+Edit pmworig=pmw_file.pmworig, tabIndex=503, noEntry;
+TextEdit imaud01=ima_file.imaud01, tabIndex=32;
+Edit imaud02=ima_file.imaud02, tabIndex=33, scroll;
+Edit imaud07=ima_file.imaud07, tabIndex=34, scroll;
+DateEdit imaud13=ima_file.imaud13, tabIndex=35;
+Edit pmx02=pmx_file.pmx02, tabIndex=9, title="Line#", not null, required;
+Edit pmx12=pmx_file.pmx12, tabIndex=10, title="Vendor No", not null, required, comment="<^P>Qry Vender";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=11, title="Vendor name", noEntry;
+Edit pmx08=pmx_file.pmx08, tabIndex=12, title="Item No.", not null, required, comment="<^P>Qry Item Master  <^Y>Create Item ";
+Edit pmx081=pmx_file.pmx081, tabIndex=13, title="Part Name", noEntry;
+Edit pmx082=pmx_file.pmx082, tabIndex=14, title="Specification", noEntry;
+Edit pmx10=pmx_file.pmx10, tabIndex=15, title="Task No", not null, required;
+ButtonEdit pmx13=tableAlias1.pmx13, tabIndex=16, title=%"Cell No.", image="zoom";
+Edit pmx09=pmx_file.pmx09, tabIndex=17, title="Inquiry Unit", not null, required, comment="<^P>Qry Unit    ";
+Edit ima44=formonly.ima44 type CHAR, tabIndex=18, title="Purchase Unit", noEntry;
+Edit ima908=formonly.ima908 type CHAR, tabIndex=19, title="Price Unit", noEntry;
+DateEdit pmx04=pmx_file.pmx04, tabIndex=20, title="Effective Date";
+DateEdit pmx05=pmx_file.pmx05, tabIndex=21, title="Expiry Date";
+Edit pmx03=pmx_file.pmx03, tabIndex=22, title="Min.Qty";
+Edit pmx06=pmx_file.pmx06, tabIndex=23, title="Unit Price", not null, required;
+Edit pmx06t=pmx_file.pmx06t, tabIndex=24, title="Tax Price", not null, required;
+Edit pmx07=pmx_file.pmx07, tabIndex=25, title="Discount Rate%";
+Edit idx=formonly.idx type SMALLINT, tabIndex=26, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=27, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmx(pmx_file.pmx02,pmx_file.pmx12,formonly.pmc03,pmx_file.pmx08,pmx_file.pmx081,pmx_file.pmx082,pmx_file.pmx10,tableAlias1.pmx13,pmx_file.pmx09,formonly.ima44,formonly.ima908,pmx_file.pmx04,pmx_file.pmx05,pmx_file.pmx03,pmx_file.pmx06,pmx_file.pmx06t,pmx_file.pmx07)
+SCREEN RECORD Undefined(pmw_file.pmw01,formonly.smydesc,pmw_file.pmw06,pmw_file.pmw04,formonly.azi02,pmw_file.pmw05,pmw_file.pmw051,formonly.gec07,pmw_file.pmwuser,pmw_file.pmwmodu,pmw_file.pmwacti,pmw_file.pmwgrup,pmw_file.pmwdate,pmw_file.pmworiu,pmw_file.pmworig,ima_file.imaud01,ima_file.imaud02,ima_file.imaud07,ima_file.imaud13,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

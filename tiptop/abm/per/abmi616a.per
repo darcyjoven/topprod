@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi616a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi616a")
+Folder pc6
+Page page01(text="page01")
+Grid gr14
+{
+ Sheet Number        [boj09           ]
+ Sheet Date          [boj11       ]
+ Master Item No.     [boj01                         ]
+ Alternate Code      [boj06               ]
+
+}
+END -- gr14
+END -- page01
+END -- pc6
+END -- abmi616a
+
+TABLES
+boj_file
+ATTRIBUTES
+Edit boj09=boj_file.boj09, tabIndex=1;
+DateEdit boj11=boj_file.boj11, tabIndex=2;
+Edit boj01=boj_file.boj01, tabIndex=3;
+Edit boj06=boj_file.boj06, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(boj_file.boj09,boj_file.boj11,boj_file.boj01,boj_file.boj06)
+END -- INSTRUCTIONS
+

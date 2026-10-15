@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asrt330.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asrt330")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr937
+{
+ Inventory Taking Date [srn01     ]           Year [srn09] Month [srn10]
+ Warehouse             [srn03     ]
+ Loc.                  [srn04     ]
+ Lot.                  [srn05               ]
+}
+END -- gr937
+END -- page01
+END -- folder01
+Table s_srn
+{
+[srn02                         |ima02                         |ima021                        |srn06|srn07     |srn08     ]
+[srn02                         |ima02                         |ima021                        |srn06|srn07     |srn08     ]
+[srn02                         |ima02                         |ima021                        |srn06|srn07     |srn08     ]
+[srn02                         |ima02                         |ima021                        |srn06|srn07     |srn08     ]
+[srn02                         |ima02                         |ima021                        |srn06|srn07     |srn08     ]
+[srn02                         |ima02                         |ima021                        |srn06|srn07     |srn08     ]
+[srn02                         |ima02                         |ima021                        |srn06|srn07     |srn08     ]
+[srn02                         |ima02                         |ima021                        |srn06|srn07     |srn08     ]
+[srn02                         |ima02                         |ima021                        |srn06|srn07     |srn08     ]
+[srn02                         |ima02                         |ima021                        |srn06|srn07     |srn08     ]
+
+}
+END -- s_srn
+Grid gr938
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr938
+END -- VBox1
+END -- asrt330
+
+TABLES
+srn_file
+ATTRIBUTES
+DateEdit srn01=srn_file.srn01, tabIndex=1, not null, required;
+Edit srn09=srn_file.srn09, tabIndex=2, noEntry;
+Edit srn10=srn_file.srn10, tabIndex=3, noEntry;
+ButtonEdit srn03=srn_file.srn03, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Warehouse";
+Edit srn04=srn_file.srn04, tabIndex=5;
+Edit srn05=srn_file.srn05, tabIndex=6;
+ButtonEdit srn02=srn_file.srn02, action=controlp, tabIndex=7, title="Item No.", not null, required, image="zoom", comment="<^P>Qry Item No.";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=8, title="Desc.", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=9, title="Spec.", noEntry;
+ButtonEdit srn06=srn_file.srn06, action=controlp, tabIndex=10, title="Unit", not null, required, image="zoom", comment="<^P>Qry Unit";
+Edit srn07=srn_file.srn07, tabIndex=11, title="End Qty", noEntry;
+Edit srn08=srn_file.srn08, tabIndex=12, title="Inv Qty", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_srn(srn_file.srn02,formonly.ima02,formonly.ima021,srn_file.srn06,srn_file.srn07,srn_file.srn08)
+SCREEN RECORD Undefined(srn_file.srn01,srn_file.srn09,srn_file.srn10,srn_file.srn03,srn_file.srn04,srn_file.srn05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

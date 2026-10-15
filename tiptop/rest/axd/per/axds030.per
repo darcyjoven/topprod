@@ -1,0 +1,62 @@
+----------------------------------------------------------------------------------
+-- $Id:  axds030.per created Wed Jan 23 05:30:44 2008
+-- File created from axds030.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axds030")
+-- TABLE
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1579
+      PAGE page01( TEXT="Page01")
+        TABLE   s_adw
+        {
+        [aa0                 |aa1                     |aa2           |aa3     |aa4        |aa5     |aa6           |aa7   ]
+        [aa0                 |aa1                     |aa2           |aa3     |aa4        |aa5     |aa6           |aa7   ]
+        [aa0                 |aa1                     |aa2           |aa3     |aa4        |aa5     |aa6           |aa7   ]
+        [aa0                 |aa1                     |aa2           |aa3     |aa4        |aa5     |aa6           |aa7   ]
+        [aa0                 |aa1                     |aa2           |aa3     |aa4        |aa5     |aa6           |aa7   ]
+        [aa0                 |aa1                     |aa2           |aa3     |aa4        |aa5     |aa6           |aa7   ]
+        [aa0                 |aa1                     |aa2           |aa3     |aa4        |aa5     |aa6           |aa7   ]
+        [aa0                 |aa1                     |aa2           |aa3     |aa4        |aa5     |aa6           |aa7   ]
+        [aa0                 |aa1                     |aa2           |aa3     |aa4        |aa5     |aa6           |aa7   ]
+        [aa0                 |aa1                     |aa2           |aa3     |aa4        |aa5     |aa6           |aa7   ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr7850
+    {
+     ----------Rows [aa8   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adw_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=adw_file.adw01, ACTION=controlp, COMMENT="KEY Field,No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=1, TITLE="Transfer-in Plant";
+  BUTTONEDIT aa1=adw_file.adw02, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=2, TITLE="Warehouse Return Slip";
+  BUTTONEDIT aa2=adw_file.adw03, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=3, TITLE="Department";
+  EDIT aa3=FORMONLY.gem02 TYPE VARCHAR, NOENTRY, TABINDEX=4, TITLE="Name";
+  BUTTONEDIT aa4=adw_file.adw04, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=5, TITLE="Employee";
+  EDIT aa5=FORMONLY.gen02 TYPE VARCHAR, NOENTRY, TABINDEX=6, TITLE="Name";
+  BUTTONEDIT aa6=adw_file.adw05, ACTION=controlp, COMMENT="No Blank/Repeated!,<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=7, TITLE="Reason Code";
+  CHECKBOX aa7=adw_file.adwacti, COMMENT="No Blank/Repeated!", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=8, TITLE="Valid?";
+  EDIT aa8=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=9;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adw (adw_file.adw01, adw_file.adw02, adw_file.adw03, FORMONLY.gem02, adw_file.adw04, FORMONLY.gen02, adw_file.adw05, adw_file.adwacti)
+END

@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_gr_grw.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"複製報表相關資訊")
+VBox VBox1
+Grid gr3119
+{
+
+   <G group2                                                                          >
+    [label1      ]   [gdw01_o      ][gaz03_o          ][label10      |gdw02_o      ]
+    [label2      ]   [gdw05_o      ][zx02_o           ][label9  ]    [gdw06_o    ]
+    [label3       ]  [gdw04_o      ][zw02_o           ][gdw03_o               ]
+   <                                                                                  >
+
+   <G group3                                                                         >
+    [label4      ]   [gdw01_n      ][gaz03_n          ][label8       |gdw02_n      ]
+    [label5      ]   [gdw05_n      ][zx02_n           ][label7  ]    [gdw06_n    ]
+    [label6       ]  [gdw04_n      ][zw02_n           ][gdw03_n               ]
+   <                                                                                 >
+
+   <G group1                                                                         >
+   [chk_grw                                      ]  [chk_grw_w          ]
+   [chk_replang                                  ]  [chk_replang_w      ]
+   [chk_4rp                                      ]  [chk_4rp_w          ]
+   <                                                                                 >
+
+
+}
+END -- gr3119
+END -- VBox1
+END -- s_gr_grw
+
+TABLES
+gdw_file
+ATTRIBUTES
+Group group2:Group2, text=%"Group2";
+Label label1:Label1, text=%"Program Code";
+Edit gdw01_o=formonly.gdw01_o type VARCHAR, tabIndex=1, not null, required, downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Edit gaz03_o=formonly.gaz03_o type VARCHAR, tabIndex=2;
+Label label10:Label10, text=%"Template code";
+Edit gdw02_o=formonly.gdw02_o type VARCHAR, tabIndex=12, not null, required, downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Label label2:Label2, text=%"Program user";
+Edit gdw05_o=formonly.gdw05_o type like gdw_file.gdw05, tabIndex=3, not null, required, downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Edit zx02_o=formonly.zx02_o type VARCHAR, tabIndex=4;
+Label label9:Label9, text=%"Industry";
+Edit gdw06_o=formonly.gdw06_o type VARCHAR, tabIndex=13, not null, required, downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Label label3:Label3, text=%"Program Class";
+Edit gdw04_o=formonly.gdw04_o type VARCHAR, tabIndex=5, not null, required, downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Edit zw02_o=formonly.zw02_o type VARCHAR, tabIndex=6;
+CheckBox gdw03_o=formonly.gdw03_o type VARCHAR, tabIndex=14, default = "Y", text="Editing a Customerlized Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group3:Group3, text=%"Group3";
+Label label4:Label4, text=%"Program Code";
+ButtonEdit gdw01_n=formonly.gdw01_n type VARCHAR, action=controlp, tabIndex=7, not null, required, image="zoom", scroll;
+Edit gaz03_n=formonly.gaz03_n type VARCHAR, tabIndex=8;
+Label label8:Label8, text=%"Template code";
+Edit gdw02_n=formonly.gdw02_n type VARCHAR, tabIndex=19, not null, required, downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Label label5:Label5, text=%"Program User";
+ButtonEdit gdw05_n=formonly.gdw05_n type VARCHAR, action=controlp, tabIndex=15, not null, required, image="zoom", scroll;
+Edit zx02_n=formonly.zx02_n type VARCHAR, tabIndex=16;
+Label label7:Label7, text=%"Industry";
+ComboBox gdw06_n=formonly.gdw06_n type VARCHAR, tabIndex=20, not null, required, downShift, comment="KEYField,No Blank/Repeated!";
+Label label6:Label6, text=%"Program Class";
+ButtonEdit gdw04_n=formonly.gdw04_n type VARCHAR, action=controlp, tabIndex=17, not null, required, image="zoom", scroll;
+Edit zw02_n=formonly.zw02_n type VARCHAR, tabIndex=18;
+CheckBox gdw03_n=formonly.gdw03_n type VARCHAR, tabIndex=21, default = "Y", text="Editing a Customerlized Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group1:Group1, text=%"Group1";
+CheckBox chk_grw=formonly.chk_grw type VARCHAR, tabIndex=9, default = "Y", text="GR Template", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox chk_grw_w=formonly.chk_grw_w, tabIndex=22, default = "Y", text=%"gdw_override", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox chk_replang=formonly.chk_replang type VARCHAR, tabIndex=10, default = "Y", text="GR lang", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox chk_replang_w=formonly.chk_replang_w, tabIndex=23, default = "Y", text=%"grlang_override", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox chk_4rp=formonly.chk_4rp type VARCHAR, tabIndex=11, default = "Y", text="GR 4rp", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox chk_4rp_w=formonly.chk_4rp_w, tabIndex=24, default = "Y", text=%"4rp_override", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.gdw01_o,formonly.gaz03_o,formonly.gdw02_o,formonly.gdw05_o,formonly.zx02_o,formonly.gdw04_o,formonly.zw02_o,formonly.gdw06_o,formonly.gdw03_o,formonly.gdw01_n,formonly.gaz03_n,formonly.gdw02_n,formonly.gdw05_n,formonly.zx02_n,formonly.gdw04_n,formonly.zw02_n,formonly.gdw06_n,formonly.gdw03_n,formonly.chk_grw,formonly.chk_grw_w,formonly.chk_replang,formonly.chk_replang_w,formonly.chk_4rp,formonly.chk_4rp_w)
+END -- INSTRUCTIONS
+

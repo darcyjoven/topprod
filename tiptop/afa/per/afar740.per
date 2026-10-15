@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afar740.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afar740")
+VBox vb3
+Grid gr1
+{
+ <G grpqbe                                                                             >
+  Date Recorded       [faj26               ]  Accounts No.        [faj45               ]
+  Asset Category      [faj04               ]  P/O No.             [faj47               ]
+  Import No.          [faj49               ]  Keeping Department  [faj20               ]
+ <                                                                                     >
+
+}
+END -- gr1
+Group group02(text="INPUT")
+Grid gr2
+{
+ [a                                                    ]
+
+ <G group01                                                                        >
+ [s1                     ]         [s4                     ]
+ [s2                     ]         [s5                     ]
+ [s3                     ]
+ <                                                                                 >
+
+}
+END -- gr2
+END -- group02
+Grid gr3
+{
+[more                                        ]
+
+}
+END -- gr3
+END -- vb3
+END -- afar740
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+DateEdit faj26=formonly.faj26 type DATE, tabIndex=1;
+Edit faj45=formonly.faj45 type VARCHAR, tabIndex=2;
+Edit faj04=formonly.faj04 type VARCHAR, tabIndex=3;
+Edit faj47=formonly.faj47 type VARCHAR, tabIndex=4;
+Edit faj49=formonly.faj49 type VARCHAR, tabIndex=5;
+Edit faj20=formonly.faj20 type VARCHAR, tabIndex=6;
+CheckBox a=formonly.a type VARCHAR, tabIndex=7, text="Print only not yet investment credited", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group01:group01, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, queryEditable, items=(("1", "Date Recorded"),("2", "Asset Category"),("3", "Budget No."),("4", "Import No."),("5", "Accounts #"),("6", "P/O No."),("7", "Keeping Department"));
+ComboBox s4=formonly.s4 type CHAR, tabIndex=9, queryEditable, items=(("1", "Date Recorded"),("2", "Asset Category"),("3", "Budget No."),("4", "Import No."),("5", "Accounts #"),("6", "P/O No."),("7", "Keeping Department"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=10, queryEditable, items=(("1", "Date Recorded"),("2", "Asset Category"),("3", "Budget No."),("4", "Import No."),("5", "Accounts #"),("6", "P/O No."),("7", "Keeping Department"));
+ComboBox s5=formonly.s5 type CHAR, tabIndex=11, queryEditable, items=(("1", "Date Recorded"),("2", "Asset Category"),("3", "Budget No."),("4", "Import No."),("5", "Accounts #"),("6", "P/O No."),("7", "Keeping Department"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=12, queryEditable, items=(("1", "Date Recorded"),("2", "Asset Category"),("3", "Budget No."),("4", "Import No."),("5", "Accounts #"),("6", "P/O No."),("7", "Keeping Department"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.faj26,formonly.faj45,formonly.faj04,formonly.faj47,formonly.faj49,formonly.faj20,formonly.a,formonly.s1,formonly.s4,formonly.s2,formonly.s5,formonly.s3,formonly.more)
+END -- INSTRUCTIONS
+

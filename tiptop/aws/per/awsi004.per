@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/awsi004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"awsi004")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ ReportID    [wad01         |gaz06                                 ]
+ System ID   [wad06         ]
+ User        [wad04         |zx02            ] [wad05               ]
+ Commond     [wad03                          ]
+}
+END -- gr1
+END -- page01
+END -- pc1
+Table s_wae
+{
+[wae02     |wae03     |wae04               |wae05      |wae06     |wae07      |wae08     |wae09      |wae10     |wae11     |wae12     ]
+[wae02     |wae03     |wae04               |wae05      |wae06     |wae07      |wae08     |wae09      |wae10     |wae11     |wae12     ]
+[wae02     |wae03     |wae04               |wae05      |wae06     |wae07      |wae08     |wae09      |wae10     |wae11     |wae12     ]
+[wae02     |wae03     |wae04               |wae05      |wae06     |wae07      |wae08     |wae09      |wae10     |wae11     |wae12     ]
+[wae02     |wae03     |wae04               |wae05      |wae06     |wae07      |wae08     |wae09      |wae10     |wae11     |wae12     ]
+[wae02     |wae03     |wae04               |wae05      |wae06     |wae07      |wae08     |wae09      |wae10     |wae11     |wae12     ]
+[wae02     |wae03     |wae04               |wae05      |wae06     |wae07      |wae08     |wae09      |wae10     |wae11     |wae12     ]
+[wae02     |wae03     |wae04               |wae05      |wae06     |wae07      |wae08     |wae09      |wae10     |wae11     |wae12     ]
+[wae02     |wae03     |wae04               |wae05      |wae06     |wae07      |wae08     |wae09      |wae10     |wae11     |wae12     ]
+[wae02     |wae03     |wae04               |wae05      |wae06     |wae07      |wae08     |wae09      |wae10     |wae11     |wae12     ]
+}
+END -- s_wae
+Grid gr2
+{
+  ---------- Rows [cnt      ]/[cn2       ]  -------------
+
+
+}
+END -- gr2
+END -- VBox1
+END -- awsi004
+
+TABLES
+wae_file,
+wad_file
+ATTRIBUTES
+ButtonEdit wad01=wad_file.wad01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!    , <^P>";
+Edit gaz06=formonly.gaz06 type VARCHAR, tabIndex=1, noEntry;
+Edit wad06=wad_file.wad06, tabIndex=1;
+ButtonEdit wad04=wad_file.wad04, action=controlp, tabIndex=1, image="zoom.png";
+Edit zx02=formonly.zx02 type CHAR, tabIndex=1, noEntry;
+CheckBox wad05=wad_file.wad05, tabIndex=1, text="Is It a Hard-Coding Program?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit wad03=wad_file.wad03, tabIndex=1;
+Edit wae02=wae_file.wae02, tabIndex=1, title="Para. No.", not null, required;
+Edit wae03=wae_file.wae03, tabIndex=1, title="Para.Name";
+ButtonEdit wae04=formonly.wae04 type VARCHAR, action=update_name, tabIndex=1, title="Message", image="pen.png";
+ComboBox wae05=wae_file.wae05, tabIndex=1, title="Para. Type", items=(("C", %"VARCHAR"),("D", %"Date"),("N", %"Number"),("I", %"Interger"));
+Edit wae06=wae_file.wae06, tabIndex=1, title="Length";
+CheckBox wae07=wae_file.wae07, tabIndex=1, title="need", valueChecked = "Y", valueUnchecked = "N";
+ComboBox wae08=wae_file.wae08, tabIndex=1, title="Control", items=(("EDIT", %"EDIT"),("COMB", %"COMBOBOX"));
+Edit wae09=wae_file.wae09, tabIndex=1, title="Begin";
+Edit wae10=wae_file.wae10, tabIndex=1, title="End";
+Edit wae11=wae_file.wae11, tabIndex=1, title="List";
+Edit wae12=wae_file.wae12, tabIndex=1, title="Fault", comment="#CURDATE#:嚙踝蕭 ; #CURUSER#:嚙諄歹蕭; 嚙漿";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=1, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wae(wae_file.wae02,wae_file.wae03,formonly.wae04,wae_file.wae05,wae_file.wae06,wae_file.wae07,wae_file.wae08,wae_file.wae09,wae_file.wae10,wae_file.wae11,wae_file.wae12)
+SCREEN RECORD Undefined(wad_file.wad01,formonly.gaz06,wad_file.wad06,wad_file.wad04,formonly.zx02,wad_file.wad05,wad_file.wad03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

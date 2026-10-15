@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axri120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axri120")
+VBox vb2
+Grid gr2969
+{
+
+ Invoice [oon01 ]  /[oon0] - [oon1]
+
+
+
+}
+END -- gr2969
+Table s_oom
+{
+[oon04     |oon05     |qty    |oon06    |oon07      |oon08    ]
+[oon04     |oon05     |qty    |oon06    |oon07      |oon08    ]
+[oon04     |oon05     |qty    |oon06    |oon07      |oon08    ]
+[oon04     |oon05     |qty    |oon06    |oon07      |oon08    ]
+[oon04     |oon05     |qty    |oon06    |oon07      |oon08    ]
+[oon04     |oon05     |qty    |oon06    |oon07      |oon08    ]
+[oon04     |oon05     |qty    |oon06    |oon07      |oon08    ]
+[oon04     |oon05     |qty    |oon06    |oon07      |oon08    ]
+[oon04     |oon05     |qty    |oon06    |oon07      |oon08    ]
+[oon04     |oon05     |qty    |oon06    |oon07      |oon08    ]
+
+
+}
+END -- s_oom
+Grid gr2970
+{
+
+ ---------- Total Pages [tot1      ]
+
+
+}
+END -- gr2970
+END -- vb2
+END -- axri020
+
+TABLES
+oon_file
+ATTRIBUTES
+Edit oon01=oon_file.oon01, tabIndex=1, not null, required;
+Edit oon0=oon_file.oon02, tabIndex=2, not null, required;
+Edit oon1=oon_file.oon03, tabIndex=3, not null, required;
+Edit oon04=oon_file.oon04, tabIndex=10, title="Start Invoice ", not null, required;
+Edit oon05=oon_file.oon05, tabIndex=4, title="End Invoice", not null, required;
+Edit qty=formonly.qty type VARCHAR, tabIndex=5, title="Quantity", noEntry;
+Edit oon06=oon_file.oon06, tabIndex=6, title="Declared VAT No.", not null, required;
+Edit oon07=oon_file.oon07, tabIndex=7, title="Batch", not null, required;
+CheckBox oon08=oon_file.oon08, tabIndex=9, title=%"Create Invoice?", text=%"", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit tot1=formonly.tot1 type INTEGER, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oom(oon_file.oon04,oon_file.oon05,formonly.qty,oon_file.oon06,oon_file.oon07,oon_file.oon08)
+SCREEN RECORD Undefined(oon_file.oon01,oon_file.oon02,oon_file.oon03,formonly.tot1)
+END -- INSTRUCTIONS
+

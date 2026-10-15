@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_xglang_3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_replang")
+Folder folder01
+Page Page1(text="main")
+Grid gr3257
+{
+
+[label1      ] [gdr01             ]
+[label2       ][gdr02             ]
+[overwrite                       ]
+
+}
+END -- gr3257
+END -- Page1
+END -- folder01
+END -- p_xglang
+
+TABLES
+gdr_file
+ATTRIBUTES
+Label label1:Label1, text=%"Program Code";
+ButtonEdit gdr01=gdr_file.gdr01, action=controlp, tabIndex=1, image="zoom", downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Label label2:Label2, text=%"Template Code";
+Edit gdr02=gdr_file.gdr02, tabIndex=2;
+CheckBox overwrite=formonly.overwrite type VARCHAR, tabIndex=3, text="Overwrite", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gdr_file.gdr01,gdr_file.gdr02,formonly.overwrite)
+END -- INSTRUCTIONS
+

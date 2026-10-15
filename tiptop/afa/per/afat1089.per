@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1089.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat1089")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+Table s_fbh2
+{
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh062              |fbh072                   |fbh082                |fbh122               ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh062              |fbh072                   |fbh082                |fbh122               ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh062              |fbh072                   |fbh082                |fbh122               ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh062              |fbh072                   |fbh082                |fbh122               ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh062              |fbh072                   |fbh082                |fbh122               ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh062              |fbh072                   |fbh082                |fbh122               ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh062              |fbh072                   |fbh082                |fbh122               ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh062              |fbh072                   |fbh082                |fbh122               ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh062              |fbh072                   |fbh082                |fbh122               ]
+[fbh02      |fbh03          |fbh031    |faj06                    |faj18  |fbh04      |fbh062              |fbh072                   |fbh082                |fbh122               ]
+
+}
+END -- s_fbh2
+END -- page01
+END -- folder01
+Grid gr2250
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2250
+END -- vb1
+END -- afat1089
+
+TABLES
+fbh_file
+ATTRIBUTES
+Edit fbh02=fbh_file.fbh02, tabIndex=1, title="Line No.", noEntry;
+Edit fbh03=fbh_file.fbh03, tabIndex=2, title="Property No.", noEntry;
+Edit fbh031=fbh_file.fbh031, tabIndex=3, title="Add No.", noEntry;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=4, title="Chinese Name", noEntry;
+Edit faj18=formonly.faj18 type CHAR, tabIndex=5, title="Unit", noEntry;
+Edit fbh04=fbh_file.fbh04, tabIndex=6, title="Quantity", noEntry;
+Edit fbh062=fbh_file.fbh062, tabIndex=7, title="Cost", not null, required;
+Edit fbh072=fbh_file.fbh072, tabIndex=8, title="Accumulated Depreciation", not null, required;
+Edit fbh082=fbh_file.fbh082, tabIndex=9, title="Deduction Preparation", not null, required;
+Edit fbh122=fbh_file.fbh122, tabIndex=10, title="Undepreciated Amount", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fbh2(fbh_file.fbh02,fbh_file.fbh03,fbh_file.fbh031,formonly.faj06,formonly.faj18,fbh_file.fbh04,fbh_file.fbh062,fbh_file.fbh072,fbh_file.fbh082,fbh_file.fbh122)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,290 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cbm/4fd/cbmq102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi600")
+Folder pc2
+Page page4(action=main, text="Main")
+VBox VBox3
+HBox HBox2(splitter)
+Tree tree1(parentIdColumn=pid1, idColumn=id1, expandedColumn=expanded1, isNodeColumn=has_children1, imageExpanded="open", imageCollapsed="folder", imageLeaf="file")
+{
+[name1                                |s1        |s2         |s3        ]
+[name1                                |s1        |s2         |s3        ]
+[name1                                |s1        |s2         |s3        ]
+[name1                                |s1        |s2         |s3        ]
+[name1                                |s1        |s2         |s3        ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- tree1
+VBox VBox2
+Folder folder01
+Page new(text="Main")
+Grid gr3121
+{
+ <G group01                                                                     ><G group02                                                                                      >
+  Item No.            [bma01                                                   ]  Available Qty             [avl_stk        ]    Invaild Qty       [img_q          ]
+  Part Name Spec      [ima02                                                   ]  -------------------------------------------
+  Spec                [ima021                                                  ]  - Qty Ordered             [oeb_q          ]
+  Version             [ima05     ]                                                - W/O Allotment Qty       [sfa_q1         ]    cll               [sfe_c          ]
+  Group Cd            [ima06     ]                                                - W/O Shortage Qty        [sfa_q2         ]
+  Inv Unit            [ima25     ]                                                + W/O xiaban              [sfa_xiaban     ]
+  Src Cd              [ima08     ]                                                + W/O liuzhi              [sfa_liuzhi     ]
+  Covering Goods      [ima37     ]                                                -------------------------------------------
+ <                                                                              > + P/R Qty                 [pml_q          ]
+ <G group043                         > <G group044                              > + Purchase Qty            [pmn_q          ]
+ [ima906             ]                  Par/Ref Unit   [ima907    ]               + W/O WIP Qty             [sfb_q1         ]
+ <                                   > <                                        > + Sub.WIP Qty             [sfb_q2         ]
+ <G group03                                                                     > ( Sub.IQC Qty on QC )     [rvb_q2         ]
+ [ima70                                    ]                                      + IQC Qty on QC           [rvb_q          ]
+ [ima15                                    ]                                      + FQC Qty on QC           [qcf_q          ]
+                                                                                  -------------------------------------------
+                                                                                  ima27                     [ima27          ]
+                                                                                  -------------------------------------------
+                                                                                  = Estimated Available Qty [atp_qty        ]
+                                                                                   Unusable Qty             [unavl_stk      ]
+                                                                                   Allocated Qty            [sie_q          ]
+ <                                                                              ><                                                                                               >
+
+}
+END -- gr3121
+END -- new
+END -- folder01
+Folder Folder1
+Page Page1(text=%"Inventory Detail")
+Table s_img
+{
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+[img02               |imd02   |img03  |ime03   |img04  |img23  |img10           |img18   |sig05           |img0|img38   ]
+}
+END -- s_img
+END -- Page1
+Page Page2(text=%"Lot Serial No. Detail")
+Table s_imgs
+{
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+[imgs02    |im02    |imgs03    |im03    |imgs04         |imgs06             |imgs05         |imgs09         |imgs|imgs08    |imgs10 |imgs11      ]
+
+}
+END -- s_imgs
+END -- Page2
+END -- Folder1
+END -- VBox2
+END -- HBox2
+END -- VBox3
+END -- page4
+Page page5(action=list_pg, text="bom_list")
+VBox VBox1
+Table s_bma_l
+{
+[bma01_l                |bma06_l            |ima02_l                     |ima021_l                |ima55_l    |ima05_l     |ima08_l      |bma05_l       |bma08_l          ]
+[bma01_l                |bma06_l            |ima02_l                     |ima021_l                |ima55_l    |ima05_l     |ima08_l      |bma05_l       |bma08_l          ]
+[bma01_l                |bma06_l            |ima02_l                     |ima021_l                |ima55_l    |ima05_l     |ima08_l      |bma05_l       |bma08_l          ]
+[bma01_l                |bma06_l            |ima02_l                     |ima021_l                |ima55_l    |ima05_l     |ima08_l      |bma05_l       |bma08_l          ]
+[bma01_l                |bma06_l            |ima02_l                     |ima021_l                |ima55_l    |ima05_l     |ima08_l      |bma05_l       |bma08_l          ]
+[bma01_l                |bma06_l            |ima02_l                     |ima021_l                |ima55_l    |ima05_l     |ima08_l      |bma05_l       |bma08_l          ]
+[bma01_l                |bma06_l            |ima02_l                     |ima021_l                |ima55_l    |ima05_l     |ima08_l      |bma05_l       |bma08_l          ]
+[bma01_l                |bma06_l            |ima02_l                     |ima021_l                |ima55_l    |ima05_l     |ima08_l      |bma05_l       |bma08_l          ]
+[bma01_l                |bma06_l            |ima02_l                     |ima021_l                |ima55_l    |ima05_l     |ima08_l      |bma05_l       |bma08_l          ]
+[bma01_l                |bma06_l            |ima02_l                     |ima021_l                |ima55_l    |ima05_l     |ima08_l      |bma05_l       |bma08_l          ]
+
+}
+END -- s_bma_l
+HBox HBox1(splitter)
+Tree tree(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file")
+{
+[name                                                                          ]
+[name                                                                          ]
+[name                                                                          ]
+[name                                                                          ]
+[name                                                                          ]
+
+
+
+
+
+}
+END -- tree
+Grid grid_tree
+{
+ [ima04                                                                  ]
+ [                                                                       ]
+ [                                                                       ]
+ [                                                                       ]
+ [                                                                       ]
+ [                                                                       ]
+ [                                                                       ]
+ [                                                                       ]
+ [                                                                       ]
+ [                                                                       ]
+ [                                                                       ]
+}
+END -- grid_tree
+END -- HBox1
+END -- VBox1
+END -- page5
+END -- pc2
+END -- cbmq102
+
+TABLES
+sig_file,
+img_file,
+imgs_file,
+ima_file
+ATTRIBUTES
+LABEL name1=formonly.name1 type VARCHAR, title=%"", sizePolicy=dynamic;
+Edit s1=formonly.s1 type DECIMAL, tabIndex=7, title=%"s1", sizePolicy=dynamic;
+Edit s2=formonly.s2 type DECIMAL, tabIndex=8, title=%"s2", sizePolicy=dynamic;
+Edit s3=formonly.s3 type VARCHAR, tabIndex=9, title=%"s3", sizePolicy=dynamic;
+Phantom formonly.pid1 type VARCHAR;
+Phantom formonly.id1 type VARCHAR;
+Phantom formonly.has_children1 type VARCHAR;
+Phantom formonly.expanded1 type VARCHAR;
+Phantom formonly.level1 type VARCHAR;
+Phantom formonly.path1 type VARCHAR;
+Phantom formonly.treekey3 type VARCHAR;
+Phantom formonly.treekey4 type VARCHAR;
+Group group01:group01;
+ButtonEdit bma01=formonly.bma01 type VARCHAR, action=controlp, tabIndex=36, not null, required, image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=37;
+Edit ima021=ima_file.ima021, tabIndex=38, noEntry;
+Edit ima05=ima_file.ima05, tabIndex=39, noEntry;
+Edit ima06=ima_file.ima06, tabIndex=40, noEntry;
+Edit ima25=ima_file.ima25, tabIndex=41, noEntry;
+Edit ima08=ima_file.ima08, tabIndex=42, noEntry;
+Edit ima37=ima_file.ima37, tabIndex=43, noEntry;
+Group group02:group02;
+Edit avl_stk=formonly.avl_stk type DECIMAL, tabIndex=44, not null, required;
+Edit img_q=formonly.img_q type DECIMAL, tabIndex=45, not null, required;
+Edit oeb_q=formonly.oeb_q type CHAR, tabIndex=46;
+Edit sfa_q1=formonly.sfa_q1 type CHAR, tabIndex=47;
+Edit sfe_c=formonly.sfe_c type DECIMAL, tabIndex=48, not null, required;
+Edit sfa_q2=formonly.sfa_q2 type CHAR, tabIndex=49;
+Edit sfa_xiaban=formonly.sfa_xiaban type VARCHAR, tabIndex=50;
+Edit sfa_liuzhi=formonly.sfa_liuzhi type VARCHAR, tabIndex=51;
+Edit pml_q=formonly.pml_q type CHAR, tabIndex=52;
+Edit pmn_q=formonly.pmn_q type CHAR, tabIndex=53;
+Edit sfb_q1=formonly.sfb_q1 type CHAR, tabIndex=54;
+Edit sfb_q2=formonly.sfb_q2 type CHAR, tabIndex=55;
+Edit rvb_q2=formonly.rvb_q2 type CHAR, tabIndex=56;
+Edit rvb_q=formonly.rvb_q type CHAR, tabIndex=57;
+Edit qcf_q=formonly.qcf_q type CHAR, tabIndex=58;
+Edit ima27=formonly.ima27 type CHAR, tabIndex=59;
+Edit atp_qty=formonly.atp_qty type CHAR, tabIndex=60;
+Edit unavl_stk=formonly.unavl_stk type DECIMAL, tabIndex=61, not null, required;
+Edit sie_q=formonly.sie_q type CHAR, tabIndex=62;
+Group group043:group043, text="Unit Control", hidden;
+RadioGroup ima906=ima_file.ima906, tabIndex=63, not null, required, hidden, items=(("1", "Single Unit"),("2", "Child/Parent Unit"),("3", "Reference Unit"));
+Group group044:group044, hidden;
+ButtonEdit ima907=ima_file.ima907, action=controlp, tabIndex=64, image="zoom", hidden;
+Group group03:group03;
+CheckBox ima70=ima_file.ima70, tabIndex=65, text="Consumable Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ima15=ima_file.ima15, tabIndex=66, text="Bonded Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit img02=img_file.img02, tabIndex=13, title="WH/Loc/Lot", not null, required;
+Edit imd02=formonly.imd02, tabIndex=14, title=%"imd02";
+Edit img03=img_file.img03, tabIndex=15, title="Loc", not null, required;
+Edit ime03=formonly.ime03, tabIndex=16, title=%"ime03";
+Edit img04=img_file.img04, tabIndex=17, title="Lot", not null, required;
+CheckBox img23=img_file.img23, tabIndex=18, title="Use W/H", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit img10=img_file.img10, tabIndex=19, title="Inventory Qty", not null, required;
+Edit img18=formonly.img18, tabIndex=20, title=%"img18";
+Edit sig05=sig_file.sig05, tabIndex=21, title=%"Allocated Qty";
+Edit img0=img_file.img09, tabIndex=22, title="Unit";
+Edit img38=img_file.img38, tabIndex=23, title=%"Remark";
+Edit imgs02=imgs_file.imgs02, tabIndex=24, title="WH", noEntry;
+Edit im02=formonly.im02, tabIndex=25, title=%"im02";
+Edit imgs03=imgs_file.imgs03, tabIndex=26, title="Location", noEntry;
+Edit im03=formonly.im03, tabIndex=27, title=%"im03";
+Edit imgs04=imgs_file.imgs04, tabIndex=28, title="Lot No.", noEntry;
+Edit imgs06=imgs_file.imgs06, tabIndex=29, title="Manufacturing Lot No.", noEntry;
+Edit imgs05=imgs_file.imgs05, tabIndex=30, title=%"Serial No.";
+DateEdit imgs09=imgs_file.imgs09, tabIndex=31, title="Manufactured on", noEntry;
+Edit imgs=imgs_file.imgs07, tabIndex=32, title=%"Unit", noEntry;
+Edit imgs08=imgs_file.imgs08, tabIndex=33, title=%"Quantity", noEntry;
+ComboBox imgs10=imgs_file.imgs10, tabIndex=34, title=%"Type", noEntry, queryEditable, items=(("1", "SO"),("2", "Work Order"),("3", "Project"));
+Edit imgs11=imgs_file.imgs11, tabIndex=35, title=%"Document No.";
+Edit bma01_l=formonly.bma01_l type VARCHAR, tabIndex=1, title="Part Number", noEntry;
+Edit bma06_l=formonly.bma06_l type VARCHAR, tabIndex=1, title="Alternate Code";
+Edit ima02_l=formonly.ima02_l type VARCHAR, tabIndex=1, title="Part Name", noEntry;
+Edit ima021_l=formonly.ima021_l type VARCHAR, tabIndex=1, title="Specification", noEntry;
+Edit ima55_l=formonly.ima55_l type VARCHAR, tabIndex=2, title="UOM", noEntry;
+Edit ima05_l=formonly.ima05_l type VARCHAR, tabIndex=3, title="Cur Vers", noEntry;
+ComboBox ima08_l=formonly.ima08_l type VARCHAR, tabIndex=4, title="Source Code", items=(("C", %"Configurable Product"),("T", %"FAS Product"),("D", %"Feture"),("A", %"Family Product"),("M", %"Make Product"),("P", %"Purchase"),("X", %"Phantom"),("K", %"Kit"),("U", %"Manufactured Mass Item"),("V", %"Purchased Mass Item"),("R", %"Routable"),("Z", %"Miscellaneous"),("S", %"Subcontract"));
+Edit bma05_l=formonly.bma05_l type VARCHAR, tabIndex=5, title="Pay Date", noEntry;
+Edit bma08_l=formonly.bma08_l type VARCHAR, tabIndex=6, title="Data Source", noEntry;
+LABEL name=formonly.name type VARCHAR;
+Phantom formonly.pid type VARCHAR;
+Phantom formonly.id type VARCHAR;
+Phantom formonly.has_children type VARCHAR;
+Phantom formonly.expanded type VARCHAR;
+Phantom formonly.level type VARCHAR;
+Phantom formonly.path type VARCHAR;
+Phantom formonly.treekey1 type VARCHAR;
+Phantom formonly.treekey2 type VARCHAR;
+IMAGE ima04=formonly.ima04 type VARCHAR, autoScale, stretch=both, width = 71 characters, height = 11 characters;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bma_l(formonly.bma01_l,formonly.bma06_l,formonly.ima02_l,formonly.ima021_l,formonly.ima55_l,formonly.ima05_l,formonly.ima08_l,formonly.bma05_l,formonly.bma08_l)
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.path,formonly.treekey1,formonly.treekey2)
+SCREEN RECORD Undefined(formonly.ima04,formonly.bma01,ima_file.ima02,ima_file.ima021,ima_file.ima05,ima_file.ima06,ima_file.ima25,ima_file.ima08,ima_file.ima37,formonly.avl_stk,formonly.img_q,formonly.oeb_q,formonly.sfa_q1,formonly.sfe_c,formonly.sfa_q2,formonly.sfa_xiaban,formonly.sfa_liuzhi,formonly.pml_q,formonly.pmn_q,formonly.sfb_q1,formonly.sfb_q2,formonly.rvb_q2,formonly.rvb_q,formonly.qcf_q,formonly.ima27,formonly.atp_qty,formonly.unavl_stk,formonly.sie_q,ima_file.ima906,ima_file.ima907,ima_file.ima70,ima_file.ima15)
+SCREEN RECORD tree1(formonly.name1,formonly.s1,formonly.s2,formonly.s3,formonly.pid1,formonly.id1,formonly.has_children1,formonly.expanded1,formonly.level1,formonly.path1,formonly.treekey3,formonly.treekey4)
+SCREEN RECORD s_img(img_file.img02,formonly.imd02,img_file.img03,formonly.ime03,img_file.img04,img_file.img23,img_file.img10,formonly.img18,sig_file.sig05,img_file.img09,img_file.img38)
+SCREEN RECORD s_imgs(imgs_file.imgs02,formonly.im02,imgs_file.imgs03,formonly.im03,imgs_file.imgs04,imgs_file.imgs06,imgs_file.imgs05,imgs_file.imgs09,imgs_file.imgs07,imgs_file.imgs08,imgs_file.imgs10,imgs_file.imgs11)
+END -- INSTRUCTIONS
+

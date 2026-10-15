@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_err.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Error Message")
+Grid gr3669
+{
+ <G group01                                     >
+  [error_message                               ]
+  [                                            ]
+  [                                            ]
+  [                                            ]
+  [                                            ]
+
+               [action_ok]
+ <                                              >
+
+}
+END -- gr3669
+END -- cl_err
+
+ATTRIBUTES
+Group group01:group01, text="Error Message";
+TextEdit error_message=formonly.error_message type CHAR, tabIndex=1, stretch=NONE;
+Button action_ok:action_ok, text="Ok", image="ok", comment="Press Ok to continue";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.error_message)
+END -- INSTRUCTIONS
+

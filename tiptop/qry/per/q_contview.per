@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_contview.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Report Continuous View")
+Grid gr3748
+{
+ <T s_zad                                                                  >
+ [zad08     |zad09          |zad10         |zadmemo                       ]
+ [zad08     |zad09          |zad10         |zadmemo                       ]
+ [zad08     |zad09          |zad10         |zadmemo                       ]
+ [zad08     |zad09          |zad10         |zadmemo                       ]
+ [zad08     |zad09          |zad10         |zadmemo                       ]
+ [zad08     |zad09          |zad10         |zadmemo                       ]
+ [zad08     |zad09          |zad10         |zadmemo                       ]
+ [zad08     |zad09          |zad10         |zadmemo                       ]
+ [zad08     |zad09          |zad10         |zadmemo                       ]
+ [zad08     |zad09          |zad10         |zadmemo                       ]
+ <                                                                         >
+
+}
+END -- gr3748
+END -- q_contview
+
+TABLES
+zad_file
+ATTRIBUTES
+Table s_zad:s_zad;
+Edit zad08=zad_file.zad08, tabIndex=1, title="CView No.", noEntry;
+ComboBox zad09=zad_file.zad09, tabIndex=2, title="CView Category", noEntry, items=(("1", %"Program No."),("2", %"SQL No."));
+Edit zad10=zad_file.zad10, tabIndex=3, title="CView Content", noEntry;
+Edit zadmemo=formonly.zadmemo type CHAR, tabIndex=4, title="Memo", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zad(zad_file.zad08,zad_file.zad09,zad_file.zad10,formonly.zadmemo)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi200")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr616
+{
+ Version         [bgq01     ] Year  [bgq02     ]
+ Department No.  [bgq05     ][gem02     ]
+ Account         [bgq04                         ]
+                 [aag02                         ]
+}
+END -- gr616
+Grid gr4
+{
+ Project No.     [bgq051           ][pja02                  ]
+ WBS No.         [bgq052           ]
+ Budget Item     [bgq053           ][azf03                  ]
+
+}
+END -- gr4
+END -- hb1
+END -- page01
+END -- folder01
+Table s_bgq
+{
+[bgq03 |bgq06               |bgq061                |bgq07                   |bgq08               |amt1                |amt2                    ]
+[bgq03 |bgq06               |bgq061                |bgq07                   |bgq08               |amt1                |amt2                    ]
+[bgq03 |bgq06               |bgq061                |bgq07                   |bgq08               |amt1                |amt2                    ]
+[bgq03 |bgq06               |bgq061                |bgq07                   |bgq08               |amt1                |amt2                    ]
+[bgq03 |bgq06               |bgq061                |bgq07                   |bgq08               |amt1                |amt2                    ]
+[bgq03 |bgq06               |bgq061                |bgq07                   |bgq08               |amt1                |amt2                    ]
+[bgq03 |bgq06               |bgq061                |bgq07                   |bgq08               |amt1                |amt2                    ]
+[bgq03 |bgq06               |bgq061                |bgq07                   |bgq08               |amt1                |amt2                    ]
+[bgq03 |bgq06               |bgq061                |bgq07                   |bgq08               |amt1                |amt2                    ]
+[bgq03 |bgq06               |bgq061                |bgq07                   |bgq08               |amt1                |amt2                    ]
+
+}
+END -- s_bgq
+Grid gr617
+{
+ ------Rows [cnt   ]------
+
+}
+END -- gr617
+END -- vb2
+END -- abgi200
+
+TABLES
+bgq_file
+ATTRIBUTES
+Edit bgq01=bgq_file.bgq01, tabIndex=1, not null, required;
+Edit bgq02=bgq_file.bgq02, tabIndex=2, not null, required;
+ButtonEdit bgq05=bgq_file.bgq05, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Department";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit bgq04=bgq_file.bgq04, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Account No.";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=6, noEntry;
+ButtonEdit bgq051=bgq_file.bgq051, action=controlp, tabIndex=7, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit pja02=formonly.pja02 type VARCHAR, tabIndex=8, noEntry;
+ButtonEdit bgq052=bgq_file.bgq052, action=controlp, tabIndex=9, required, image="zoom.png";
+ButtonEdit bgq053=bgq_file.bgq053, action=controlp, tabIndex=10, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit azf03=formonly.azf03 type VARCHAR, tabIndex=11, noEntry;
+Edit bgq03=bgq_file.bgq03, tabIndex=12, title="Month", not null, required;
+Edit bgq06=bgq_file.bgq06, tabIndex=12, title="Budget Tran", not null, required;
+Edit bgq061=bgq_file.bgq061, tabIndex=12, title="Budget Tran Apportion";
+Edit bgq07=bgq_file.bgq07, tabIndex=13, title="Budget Amt Accumulation", noEntry;
+Edit bgq08=bgq_file.bgq08, tabIndex=14, title="Addition Budget", noEntry;
+Edit amt1=formonly.amt1 type DECIMAL, tabIndex=15, title="Actual Tran", noEntry;
+Edit amt2=formonly.amt2 type DECIMAL, tabIndex=16, title="Actual Tran Accumulation", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgq(bgq_file.bgq03,bgq_file.bgq06,bgq_file.bgq061,bgq_file.bgq07,bgq_file.bgq08,formonly.amt1,formonly.amt2)
+SCREEN RECORD Undefined(bgq_file.bgq01,bgq_file.bgq02,bgq_file.bgq05,formonly.gem02,bgq_file.bgq04,formonly.aag02,bgq_file.bgq051,formonly.pja02,bgq_file.bgq052,bgq_file.bgq053,formonly.azf03,formonly.cnt)
+END -- INSTRUCTIONS
+

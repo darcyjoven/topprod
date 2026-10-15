@@ -1,0 +1,131 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_crdata_set.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_crview_set")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+Grid gr6008
+{
+  Program Code        [gcy01               ][gaz03                                   ]
+  User                [gcy04               ][zx02                ] [gcy02     ]
+  Permission Category [gcy03               ][zw02                ] [gcy05     ]
+
+}
+END -- gr6008
+END -- page01
+Page info(text="Info")
+Grid gr6009
+{
+   Record Owner [gcyuser   ] Last Modified by    [gcymodu   ]
+   Department   [gcygrup   ] Create/Modify Date  [gcydate   ]
+   Record Orig. [gcyoriu   ]
+   Dept Orig.   [gcyorig   ]
+}
+END -- gr6009
+END -- info
+END -- folder01
+Folder pc1193
+Page page03(action=query_sql, text="SQL")
+VBox vb5
+Grid gr6010
+{
+ [gda05                                                                 ]
+ [                                                                      ]
+ [                                                                      ]
+ [                                                                      ]
+ [                                                                      ]
+ [                                                                      ]
+ [                                                                      ]
+ [                                                                      ]
+ [                                                                      ]
+ [                                                                      ]
+}
+END -- gr6010
+HBox hb4
+Table s_gcz
+{
+[gcz05|gcz06     |gcz07          |gcz08               |gcz11     |gcz10   |gcz12   |gcz09                         ]
+[gcz05|gcz06     |gcz07          |gcz08               |gcz11     |gcz10   |gcz12   |gcz09                         ]
+[gcz05|gcz06     |gcz07          |gcz08               |gcz11     |gcz10   |gcz12   |gcz09                         ]
+[gcz05|gcz06     |gcz07          |gcz08               |gcz11     |gcz10   |gcz12   |gcz09                         ]
+[gcz05|gcz06     |gcz07          |gcz08               |gcz11     |gcz10   |gcz12   |gcz09                         ]
+[gcz05|gcz06     |gcz07          |gcz08               |gcz11     |gcz10   |gcz12   |gcz09                         ]
+[gcz05|gcz06     |gcz07          |gcz08               |gcz11     |gcz10   |gcz12   |gcz09                         ]
+[gcz05|gcz06     |gcz07          |gcz08               |gcz11     |gcz10   |gcz12   |gcz09                         ]
+[gcz05|gcz06     |gcz07          |gcz08               |gcz11     |gcz10   |gcz12   |gcz09                         ]
+[gcz05|gcz06     |gcz07          |gcz08               |gcz11     |gcz10   |gcz12   |gcz09                         ]
+
+}
+END -- s_gcz
+Grid gr6017
+{
+[up  ]
+
+[down]
+
+
+
+
+
+
+
+
+
+}
+END -- gr6017
+END -- hb4
+END -- vb5
+END -- page03
+END -- pc1193
+Grid gr6014
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr6014
+END -- vb6
+END -- p_crview_set
+
+TABLES
+gcz_file,
+gcy_file,
+gda_file
+ATTRIBUTES
+ButtonEdit gcy01=gcy_file.gcy01, action=controlp, tabIndex=1, not null, required, image="zoom", downShift;
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=52;
+ButtonEdit gcy04=gcy_file.gcy04, action=controlp, tabIndex=56, not null, required, image="zoom";
+Edit zx02=formonly.zx02 type CHAR, tabIndex=57;
+CheckBox gcy02=gcy_file.gcy02, tabIndex=2, text="Customerlized", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit gcy03=gcy_file.gcy03, action=controlp, tabIndex=54, not null, required, image="zoom";
+Edit zw02=formonly.zw02 type CHAR, tabIndex=55;
+CheckBox gcy05=gcy_file.gcy05, tabIndex=53, text="Active ?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gcyuser=gcy_file.gcyuser, tabIndex=3, noEntry;
+Edit gcymodu=gcy_file.gcymodu, tabIndex=5, noEntry;
+Edit gcygrup=gcy_file.gcygrup, tabIndex=4, noEntry;
+DateEdit gcydate=gcy_file.gcydate, tabIndex=6, noEntry;
+Edit gcyoriu=gcy_file.gcyoriu, tabIndex=501, noEntry;
+Edit gcyorig=gcy_file.gcyorig, tabIndex=502, noEntry;
+TextEdit gda05=gda_file.gda05, tabIndex=12, stretch=x, scrollBars=both, style="fixedFont";
+Edit gcz05=gcz_file.gcz05, tabIndex=13, title="No.", noEntry, not null, required;
+ComboBox gcz06=gcz_file.gcz06, tabIndex=14, title="Language", noEntry, not null, required, queryEditable;
+Edit gcz07=gcz_file.gcz07, tabIndex=15, title="Field ID", noEntry, not null, required;
+Edit gcz08=gcz_file.gcz08, tabIndex=16, title="Field Name";
+ComboBox gcz11=gcz_file.gcz11, tabIndex=17, title="Attribute", not null, required, items=(("A", %"Unit Price"),("B", %"Amount"),("C", %"Exchange rate"),("D", %"Total"),("E", %"Quantity"),("F", %"Number"),("G", %"Other"),("J", %"Char"),("K", %"Document No."),("L", %"Multi-Unit"),("M", %"Alternate BOM"),("N", %"Item No."),("O", %"Employee No."),("P", %"Dept. No."),("Q", %"Date"),("R", %"Acct. No."),("S", %"Item Description"),("T", %"Specification"));
+Edit gcz10=gcz_file.gcz10, tabIndex=18, title="Width", not null, required;
+CheckBox gcz12=gcz_file.gcz12, tabIndex=19, title="Hidden", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gcz09=gcz_file.gcz09, tabIndex=58, title="File Memo";
+Button up:up, image="arrup";
+Button down:down, image="arrdown";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=51, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gcz(gcz_file.gcz05,gcz_file.gcz06,gcz_file.gcz07,gcz_file.gcz08,gcz_file.gcz11,gcz_file.gcz10,gcz_file.gcz12,gcz_file.gcz09)
+SCREEN RECORD Undefined(gcy_file.gcy01,formonly.gaz03,gcy_file.gcy04,formonly.zx02,gcy_file.gcy02,gcy_file.gcy03,formonly.zw02,gcy_file.gcy05,gcy_file.gcyuser,gcy_file.gcymodu,gcy_file.gcygrup,gcy_file.gcydate,gcy_file.gcyoriu,gcy_file.gcyorig,gda_file.gda05,formonly.cnt)
+END -- INSTRUCTIONS
+

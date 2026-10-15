@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zw.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zw")
+VBox VBox1
+Folder pc708
+Page page01(text="Main")
+VBox VBox2
+Table s_zw
+{
+[zw01        |zw02       |zw03        |zw04         |zw05         |zw06            |zwacti]
+[zw01        |zw02       |zw03        |zw04         |zw05         |zw06            |zwacti]
+[zw01        |zw02       |zw03        |zw04         |zw05         |zw06            |zwacti]
+[zw01        |zw02       |zw03        |zw04         |zw05         |zw06            |zwacti]
+[zw01        |zw02       |zw03        |zw04         |zw05         |zw06            |zwacti]
+[zw01        |zw02       |zw03        |zw04         |zw05         |zw06            |zwacti]
+[zw01        |zw02       |zw03        |zw04         |zw05         |zw06            |zwacti]
+[zw01        |zw02       |zw03        |zw04         |zw05         |zw06            |zwacti]
+[zw01        |zw02       |zw03        |zw04         |zw05         |zw06            |zwacti]
+[zw01        |zw02       |zw03        |zw04         |zw05         |zw06            |zwacti]
+
+}
+END -- s_zw
+END -- VBox2
+END -- page01
+END -- pc708
+Grid gr3067
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr3067
+END -- VBox1
+END -- p_zw
+
+TABLES
+zw_file
+ATTRIBUTES
+Edit zw01=zw_file.zw01, tabIndex=1, title="Auth.Cate #", not null, required, comment="KEY Field,No Blank/Repeated!";
+Edit zw02=zw_file.zw02, tabIndex=2, title="Cate Desc";
+ButtonEdit zw03=zw_file.zw03, action=controlp, tabIndex=3, title="MENU No.", image="zoom", downShift, scroll;
+ComboBox zw04=zw_file.zw04, tabIndex=4, title="Idel Setting", not null, required, items=(("1", %"Not Control"),("2", %"Idle Setting By Authority"),("3", %"Idle Setting By Whole System"));
+ComboBox zw05=zw_file.zw05, tabIndex=5, title="Idel Process", not null, required, items=(("1", %"Only give a warning"),("2", %"After warning,forced program closed"),("3", %"forced program closed"));
+Edit zw06=zw_file.zw06, tabIndex=6, title="Idel Time (Sec)", not null, required;
+CheckBox zwacti=zw_file.zwacti, tabIndex=7, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zw(zw_file.zw01,zw_file.zw02,zw_file.zw03,zw_file.zw04,zw_file.zw05,zw_file.zw06,zw_file.zwacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

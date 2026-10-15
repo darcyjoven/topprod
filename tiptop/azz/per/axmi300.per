@@ -1,0 +1,140 @@
+----------------------------------------------------------------------------------
+-- File created from /u53/tiptop/azz/42f/axmi300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text=%"axmi300")
+VBox VBox1
+Folder pc489
+Page page01(text="Main")
+VBox VBox2
+Grid grid01
+{
+   [dummy05              ]
+    Credit Rating [ocg01 ]
+
+}
+END
+ScrollGrid gr2089
+{
+
+                                             [dummy01    ]  [dummy01    ]  [dummy01    ]  [dummy01    ]
+ Accnt to Offset Amt Ckg.Rate [ocg]% [modif] [och03_01    ] [och03_01    ] [och03_01    ] [och03_01    ]
+ L/C Receipt Amount Ckg.Rate  [oc1]% [modi1] [och03_02    ] [och03_02    ] [och03_02    ] [och03_02    ]
+ Suspense Credit TT Ckg.Rate  [oc2]% [modi2] [och03_03    ] [och03_03    ] [och03_03    ] [och03_03    ]
+ Contra'd Unconfirm Ckg.Rate  [oc3]% [modi3] [och03_04    ] [och03_04    ] [och03_04    ] [och03_04    ]
+ Outstanding N/R Ckg.Rate     [oc4]% [modi4] [och03_05    ] [och03_05    ] [och03_05    ] [och03_05    ]
+ Invoice A/R Cecking Ratio    [oc5]% [modi5] [och03_06    ] [och03_06    ] [och03_06    ] [och03_06    ]
+ Uninvoiced Delivery.Ckg.Rate [oc6]% [modi6] [och03_07    ] [och03_07    ] [och03_07    ] [och03_07    ]
+ Delivery Advice Ckg.Rate     [oc7]% [modi7] [och03_08    ] [och03_08    ] [och03_08    ] [och03_08    ]
+ Undelivered Ord Amt Ckg.Rate [oc8]% [modi8] [och03_09    ] [och03_09    ] [och03_09    ] [och03_09    ]
+[ocg11                            ]  [modi9] [och03_10    ] [och03_10    ] [och03_10    ] [och03_10    ]
+[ocg12                            ]  [modi0] [och03_11    ] [och03_11    ] [och03_11    ] [och03_11    ]
+
+}
+END -- ScrollGrid
+END -- VBox
+END -- Page
+Page info(text="Info")
+Grid gr2090
+{
+ Record Owner        [ocguser   ] Last Modified by    [ocgmodu   ] Data Valid Code     [ocgacti   ]
+ Department          [ocggrup   ] Create/Modify Date  [ocgdate     ]
+ Record Orig.        [ocgoriu   ]
+ Dept Orig.          [ocgorig   ]
+}
+END
+
+
+
+
+
+
+
+
+
+
+
+
+END -- Page
+END -- Folder
+Grid gr2091
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END
+END -- VBox
+END -- Form
+
+TABLES
+ocg_file
+
+ATTRIBUTES
+Label dummy05:dummy05;
+Edit ocg01=ocg_file.ocg01, tabIndex=1, not null, required;
+Label dummy01=formonly.dummy01;
+Edit ocg=ocg_file.ocg02, tabIndex=2;
+Button modif:modify01, text="Modify";
+ButtonEdit och03_01=formonly.och03_01, action=controlp, tabIndex=3, image="zoom";
+Edit oc1=ocg_file.ocg03, tabIndex=4;
+Button modi1:modify02, text="Modify";
+ButtonEdit och03_02=formonly.och03_02, action=controlp, tabIndex=5, image="zoom";
+Edit oc2=ocg_file.ocg04, tabIndex=6;
+Button modi2:modify03, text="Modify";
+ButtonEdit och03_03=formonly.och03_03, action=controlp, tabIndex=7, image="zoom";
+Edit oc3=ocg_file.ocg05, tabIndex=8;
+Button modi3:modify04, text="Modify";
+ButtonEdit och03_04=formonly.och03_04, action=controlp, tabIndex=9, image="zoom";
+Edit oc4=ocg_file.ocg06, tabIndex=10;
+Button modi4:modify05, text="Modify";
+ButtonEdit och03_05=formonly.och03_05, action=controlp, tabIndex=11, image="zoom";
+Edit oc5=ocg_file.ocg07, tabIndex=12;
+Button modi5:modify06, text="Modify";
+ButtonEdit och03_06=formonly.och03_06, action=controlp, tabIndex=13, image="zoom";
+Edit oc6=ocg_file.ocg08, tabIndex=14;
+Button modi6:modify07, text="Modify";
+ButtonEdit och03_07=formonly.och03_07, action=controlp, tabIndex=15, image="zoom";
+Edit oc7=ocg_file.ocg09, tabIndex=16;
+Button modi7:modify08, text="Modify";
+ButtonEdit och03_08=formonly.och03_08, action=controlp, tabIndex=17, image="zoom";
+Edit oc8=ocg_file.ocg10, tabIndex=18;
+Button modi8:modify09, text="Modify";
+ButtonEdit och03_09=formonly.och03_09, action=controlp, tabIndex=19, image="zoom";
+CheckBox ocg11=ocg_file.ocg11, tabIndex=20, text="ocg11", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Button modi9:modify10, text="Modify";
+ButtonEdit och03_10=formonly.och03_10, action=controlp, tabIndex=21, image="zoom";
+CheckBox ocg12=ocg_file.ocg12, tabIndex=22, text="ocg12", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Button modi0:modify11, text="Modify";
+ButtonEdit och03_11=formonly.och03_11, action=controlp, tabIndex=23, image="zoom";
+Edit ocguser=ocg_file.ocguser, tabIndex=24;
+Edit ocgmodu=ocg_file.ocgmodu, tabIndex=25;
+Edit ocgacti=ocg_file.ocgacti, tabIndex=26;
+Edit ocggrup=ocg_file.ocggrup, tabIndex=27;
+DateEdit ocgdate=ocg_file.ocgdate, tabIndex=28;
+Edit ocgoriu=ocg_file.ocgoriu, tabIndex=501;
+Edit ocgorig=ocg_file.ocgorig, tabIndex=502;
+Edit cnt=formonly.cnt, tabIndex=29;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_och(formonly.och03_01, formonly.och03_02, formonly.och03_03, formonly.och03_04, formonly.och03_05, formonly.och03_06, formonly.och03_07, formonly.och03_08, formonly.och03_09, formonly.och03_10, formonly.och03_11)
+SCREEN RECORD s_och01(formonly.och03_01)
+SCREEN RECORD s_och02(formonly.och03_02)
+SCREEN RECORD s_och03(formonly.och03_03)
+SCREEN RECORD s_och04(formonly.och03_04)
+SCREEN RECORD s_och05(formonly.och03_05)
+SCREEN RECORD s_och06(formonly.och03_06)
+SCREEN RECORD s_och07(formonly.och03_07)
+SCREEN RECORD s_och08(formonly.och03_08)
+SCREEN RECORD s_och09(formonly.och03_09)
+SCREEN RECORD s_och10(formonly.och03_10)
+SCREEN RECORD s_och11(formonly.och03_11)
+SCREEN RECORD Undefined(ocg_file.ocg01, ocg_file.ocg02, ocg_file.ocg03, ocg_file.ocg04, ocg_file.ocg05, ocg_file.ocg06, ocg_file.ocg07, ocg_file.ocg08, ocg_file.ocg09, ocg_file.ocg10, ocg_file.ocg11, ocg_file.ocg12, ocg_file.ocguser, ocg_file.ocgmodu, ocg_file.ocgacti, ocg_file.ocggrup, ocg_file.ocgdate, ocg_file.ocgoriu, ocg_file.ocgorig, formonly.cnt)
+SCREEN RECORD Record1(formonly.dummy01)
+END -- INSTRUCTIONS
+

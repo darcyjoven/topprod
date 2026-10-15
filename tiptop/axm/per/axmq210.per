@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq210")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+VBox vb3
+Grid gr2236
+{
+ Creidt Line Cust    [occ33     ]                           Line of Credit      [tot                 ]
+ Abbreviation        [occ02     ]                           Currency of Credit  [curr      ]
+ Contact             [link                          ]
+}
+END -- gr2236
+END -- vb3
+END -- page01
+END -- folder01
+Table s_oma
+{
+[plant    |tradetype         |oma11           |oma01      |oma23|oma50               |weight  |balance             ]
+[plant    |tradetype         |oma11           |oma01      |oma23|oma50               |weight  |balance             ]
+[plant    |tradetype         |oma11           |oma01      |oma23|oma50               |weight  |balance             ]
+[plant    |tradetype         |oma11           |oma01      |oma23|oma50               |weight  |balance             ]
+[plant    |tradetype         |oma11           |oma01      |oma23|oma50               |weight  |balance             ]
+[plant    |tradetype         |oma11           |oma01      |oma23|oma50               |weight  |balance             ]
+[plant    |tradetype         |oma11           |oma01      |oma23|oma50               |weight  |balance             ]
+[plant    |tradetype         |oma11           |oma01      |oma23|oma50               |weight  |balance             ]
+[plant    |tradetype         |oma11           |oma01      |oma23|oma50               |weight  |balance             ]
+[plant    |tradetype         |oma11           |oma01      |oma23|oma50               |weight  |balance             ]
+
+}
+END -- s_oma
+Grid gr2237
+{
+ ----------- Rows [cnt   ] ---------- Tran.Amt Total [l_tot               ] ---------- Cred.Bal Total [l_bal               ] ----------
+
+}
+END -- gr2237
+END -- vb4
+END -- axmq210
+
+TABLES
+oma_file
+ATTRIBUTES
+ButtonEdit occ33=formonly.occ33 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit tot=formonly.tot type CHAR, tabIndex=1, noEntry;
+Edit occ02=formonly.occ02 type CHAR, tabIndex=2;
+Edit curr=formonly.curr type CHAR, tabIndex=3, noEntry;
+Edit link=formonly.link type CHAR, tabIndex=4, noEntry;
+Edit plant=formonly.plant type CHAR, tabIndex=5, title="Plant #";
+Edit tradetype=formonly.tradetype type CHAR, tabIndex=6, title="Transaction Cate", noEntry;
+DateEdit oma11=oma_file.oma11, tabIndex=7, title="Forecasted Date";
+Edit oma01=oma_file.oma01, tabIndex=8, title="Document#";
+Edit oma23=oma_file.oma23, tabIndex=9, title="Curr";
+Edit oma50=oma_file.oma50, tabIndex=10, title="Trans Amount", not null, required;
+Edit weight=formonly.weight type CHAR, tabIndex=11, title="Weights";
+Edit balance=formonly.balance type CHAR, tabIndex=12, title="Credit Balance";
+Edit cnt=formonly.cnt type CHAR, tabIndex=13, noEntry;
+Edit l_tot=formonly.l_tot type CHAR, tabIndex=14, noEntry;
+Edit l_bal=formonly.l_bal type CHAR, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oma(formonly.plant,formonly.tradetype,oma_file.oma11,oma_file.oma01,oma_file.oma23,oma_file.oma50,formonly.weight,formonly.balance)
+SCREEN RECORD Undefined(formonly.occ33,formonly.tot,formonly.occ02,formonly.curr,formonly.link,formonly.cnt,formonly.l_tot,formonly.l_bal)
+END -- INSTRUCTIONS
+

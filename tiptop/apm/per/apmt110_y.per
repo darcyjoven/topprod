@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt110_y.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt110_y")
+Folder pc975
+Page page01(text="Page01")
+HBox HBox1
+Grid gr5243
+{
+ <G group01                          >
+  Receipt Qty      [rvb08      ]
+  Redeipt DeadLIne [rvb12       ]
+  Vender Lot       [rvb13           ]
+  QC Lot#          [rvb17           ]
+ <                                   >
+ <G group02                  >
+  Container#    [rvb14     ]
+  Container Qty [rvb16     ]
+  Capacity      [rvb15     ]
+ <                           >
+
+}
+END -- gr5243
+END -- HBox1
+END -- page01
+END -- pc975
+END -- apmt110_y
+
+TABLES
+rvb_file
+ATTRIBUTES
+Group group01:group01;
+Edit rvb08=rvb_file.rvb08, tabIndex=1, not null, required;
+DateEdit rvb12=rvb_file.rvb12, tabIndex=2;
+Edit rvb13=rvb_file.rvb13, tabIndex=3;
+Edit rvb17=rvb_file.rvb17, tabIndex=4;
+Group group02:group02;
+Edit rvb14=rvb_file.rvb14, tabIndex=5;
+Edit rvb16=rvb_file.rvb16, tabIndex=6;
+Edit rvb15=rvb_file.rvb15, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rvb_file.rvb08,rvb_file.rvb12,rvb_file.rvb13,rvb_file.rvb17,rvb_file.rvb14,rvb_file.rvb16,rvb_file.rvb15)
+END -- INSTRUCTIONS
+

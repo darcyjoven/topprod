@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/tophr/tiptop/ghr/4fd/cghrr031.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder folder1
+Page page1(text=%"Page1")
+VBox VBox1
+Grid grid1
+{
+
+  hrat03   [hrat01       ]
+  hrat04   [hrat04       ]
+  hrat01   [hraou02      ]
+
+
+
+}
+END -- grid1
+Grid Grid2
+{
+
+   hrat01   [l_hrbl02     ]
+
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- page1
+END -- folder1
+END -- ghrr111
+
+ATTRIBUTES
+ButtonEdit hrat01=formonly.hrat01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit hrat04=formonly.hrat04 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit hraou02=formonly.hraou02 type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+ButtonEdit l_hrbl02=formonly.l_hrbl02 type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tm(formonly.hrat01,formonly.hraou02,formonly.hrat04,formonly.l_hrbl02)
+END -- INSTRUCTIONS
+

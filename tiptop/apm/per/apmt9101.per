@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt9101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt9101")
+Folder pc1041
+Page page01(text="Page01")
+VBox VBox1
+Table s_pnd
+{
+[pnd0|pnd04                                                                 ]
+[pnd0|pnd04                                                                 ]
+[pnd0|pnd04                                                                 ]
+[pnd0|pnd04                                                                 ]
+[pnd0|pnd04                                                                 ]
+[pnd0|pnd04                                                                 ]
+[pnd0|pnd04                                                                 ]
+[pnd0|pnd04                                                                 ]
+[pnd0|pnd04                                                                 ]
+[pnd0|pnd04                                                                 ]
+
+}
+END -- s_pnd
+END -- VBox1
+END -- page01
+END -- pc1041
+END -- apmt9101
+
+TABLES
+pnd_file
+ATTRIBUTES
+Edit pnd0=pnd_file.pnd03, tabIndex=1, title="Ln#";
+Edit pnd04=pnd_file.pnd04, tabIndex=2, title="Memo";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pnd(pnd_file.pnd03,pnd_file.pnd04)
+END -- INSTRUCTIONS
+

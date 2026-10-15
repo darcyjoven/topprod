@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_adg.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_adg")
+VBox VBox1
+Folder pc844
+Page page01(text="Page01")
+Table s_adg
+{
+[check |adg01            |adg02   |adg05           |adg09      |adg10          |adg12         |adg17        ]
+[check |adg01            |adg02   |adg05           |adg09      |adg10          |adg12         |adg17        ]
+[check |adg01            |adg02   |adg05           |adg09      |adg10          |adg12         |adg17        ]
+[check |adg01            |adg02   |adg05           |adg09      |adg10          |adg12         |adg17        ]
+[check |adg01            |adg02   |adg05           |adg09      |adg10          |adg12         |adg17        ]
+[check |adg01            |adg02   |adg05           |adg09      |adg10          |adg12         |adg17        ]
+[check |adg01            |adg02   |adg05           |adg09      |adg10          |adg12         |adg17        ]
+[check |adg01            |adg02   |adg05           |adg09      |adg10          |adg12         |adg17        ]
+[check |adg01            |adg02   |adg05           |adg09      |adg10          |adg12         |adg17        ]
+[check |adg01            |adg02   |adg05           |adg09      |adg10          |adg12         |adg17        ]
+
+}
+END -- s_adg
+END -- page01
+END -- pc844
+END -- VBox1
+END -- q_adg
+
+TABLES
+adg_file
+ATTRIBUTES
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit adg01=adg_file.adg01, tabIndex=2, title="Tr-ou No", noEntry;
+Edit adg02=adg_file.adg02, tabIndex=3, title="Line#", noEntry;
+Edit adg05=adg_file.adg05, tabIndex=4, title="Item No.", noEntry;
+Edit adg09=adg_file.adg09, tabIndex=5, title="In-Plant", noEntry;
+Edit adg10=adg_file.adg10, tabIndex=6, title="In-Warehouse", noEntry;
+Edit adg12=adg_file.adg12, tabIndex=7, title="Trn-Out Qty", noEntry;
+Edit adg17=adg_file.adg17, tabIndex=8, title="Trnd-in Qty", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_adg(formonly.check,adg_file.adg01,adg_file.adg02,adg_file.adg05,adg_file.adg09,adg_file.adg10,adg_file.adg12,adg_file.adg17)
+END -- INSTRUCTIONS
+

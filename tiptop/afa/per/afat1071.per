@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1071.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat1071")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                             >
+  Depr.-Tax Acq. Cost [fbd14               ]
+  Depr.-Tax Accu.     [fbd15               ]
+  Depr.-Tax Rest Life [fbd16               ]
+  Depr.-Tax Est. Res. [fbd17               ]
+  Cost After Trans.   [fbd19               ]
+  Accu.Depr.Af. Trans.[fbd20               ]
+  Life After Trans.   [fbd21               ]
+  Res. after Trans.   [fbd22               ]
+ <                                                     >
+
+}
+END -- Grid1
+END -- VBox1
+END -- afat1071
+
+TABLES
+fbd_file
+ATTRIBUTES
+Group group1:group1;
+Edit fbd14=fbd_file.fbd14, tabIndex=1, noEntry;
+Edit fbd15=fbd_file.fbd15, tabIndex=2, noEntry;
+Edit fbd16=fbd_file.fbd16, tabIndex=3, noEntry;
+Edit fbd17=fbd_file.fbd17, tabIndex=4, noEntry;
+Edit fbd19=fbd_file.fbd19, tabIndex=5;
+Edit fbd20=fbd_file.fbd20, tabIndex=6;
+Edit fbd21=fbd_file.fbd21, tabIndex=7;
+Edit fbd22=fbd_file.fbd22, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fbd_file.fbd14,fbd_file.fbd15,fbd_file.fbd16,fbd_file.fbd17,fbd_file.fbd19,fbd_file.fbd20,fbd_file.fbd21,fbd_file.fbd22)
+END -- INSTRUCTIONS
+

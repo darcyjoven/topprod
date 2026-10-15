@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt206.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt206")
+VBox vb3
+Folder pc1
+Page Page1(text=%"Basic Data")
+Grid gr1
+{
+
+     Net No        [pjdb01         ]        Net Name       [pjj02                                   ]
+
+     Activity No   [pjdb02         ]        Activity Name  [pjk03                                   ]
+
+     Begin Date    [pjk16          ]        Finish Date    [pjk17          ]
+
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table s_pjdb
+{
+[pjdb03    |azf03          |pjdb04         |aag02               |pjdb05         |aag02_2             |pjdb06                   |pjdbac]
+[pjdb03    |azf03          |pjdb04         |aag02               |pjdb05         |aag02_2             |pjdb06                   |pjdbac]
+[pjdb03    |azf03          |pjdb04         |aag02               |pjdb05         |aag02_2             |pjdb06                   |pjdbac]
+[pjdb03    |azf03          |pjdb04         |aag02               |pjdb05         |aag02_2             |pjdb06                   |pjdbac]
+[pjdb03    |azf03          |pjdb04         |aag02               |pjdb05         |aag02_2             |pjdb06                   |pjdbac]
+
+}
+END -- s_pjdb
+Grid gr6
+{
+    ----------count[cnt       ]----------
+
+}
+END -- gr6
+END -- vb3
+END -- apjt206
+
+TABLES
+pjdb_file
+ATTRIBUTES
+ButtonEdit pjdb01=pjdb_file.pjdb01, action=controlp, tabIndex=12, not null, image="zoom.png";
+Edit pjj02=formonly.pjj02 type VARCHAR, tabIndex=9, not null;
+ButtonEdit pjdb02=pjdb_file.pjdb02, action=controlp, tabIndex=13, not null, image="zoom.png";
+Edit pjk03=formonly.pjk03 type VARCHAR, tabIndex=10, not null;
+DateEdit pjk16=formonly.pjk16 type DATE, tabIndex=14, not null;
+DateEdit pjk17=formonly.pjk17 type DATE, tabIndex=15, not null;
+ButtonEdit pjdb03=pjdb_file.pjdb03, action=controlp, tabIndex=1, title="Fee No", not null, image="zoom.png";
+Edit azf03=formonly.azf03 type VARCHAR, tabIndex=2, title="Fee Ins", noEntry, not null;
+ButtonEdit pjdb04=pjdb_file.pjdb04, action=controlp, tabIndex=3, title="Account Code", not null, image="zoom.png";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=4, title="Account Name", noEntry, not null;
+ButtonEdit pjdb05=pjdb_file.pjdb05, action=controlp, tabIndex=5, title="Account Code", not null, image="zoom.png";
+Edit aag02_2=formonly.aag02_2 type VARCHAR, tabIndex=6, title="Account Name", noEntry, not null;
+Edit pjdb06=pjdb_file.pjdb06, tabIndex=7, title="Intending sum", not null;
+CheckBox pjdbac=pjdb_file.pjdbacti, tabIndex=8, default = "Y", title="Acti", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type CHAR, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjdb(pjdb_file.pjdb03,formonly.azf03,pjdb_file.pjdb04,formonly.aag02,pjdb_file.pjdb05,formonly.aag02_2,pjdb_file.pjdb06,pjdb_file.pjdbacti)
+SCREEN RECORD Undefined(pjdb_file.pjdb01,formonly.pjj02,pjdb_file.pjdb02,formonly.pjk03,formonly.pjk16,formonly.pjk17,formonly.cnt)
+END -- INSTRUCTIONS
+

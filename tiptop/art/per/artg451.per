@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artg451.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid2
+{
+ <G group1                                     >
+   Logistics Code  [azp01                     ]
+                   [dummy1                    ]
+ <                                             >
+ <G group3                                     >
+   Product Class   [ima131                    ]
+   Item No.        [ogb04                     ]
+   Customer No.    [oga03                     ]
+   Member No.      [lpk01                     ]
+   Selling Date    [oga02                     ]
+ <                                             >
+ <G group4                                     >
+    [a                                       ]
+    [                                        ]
+ <                                             >
+}
+END -- Grid2
+Grid gr1
+{
+[more                                     ]
+
+}
+END -- gr1
+END -- VBox1
+END -- Form
+
+TABLES
+lpk_file,
+ima_file,
+ogb_file,
+azp_file,
+oga_file
+ATTRIBUTES
+Group group1:Group1, text=%"QBE1";
+ButtonEdit azp01=azp_file.azp01, action=controlp, tabIndex=3, not null, required, image="zoom";
+Label dummy1:dummy1, text="LRDMDS,QY\'|\'H\';\'GK";
+Group group3:Group3, text=%"QBE2";
+ButtonEdit ima131=ima_file.ima131, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ogb04=ogb_file.ogb04, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit oga03=oga_file.oga03, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit lpk01=lpk_file.lpk01, action=controlp, tabIndex=3, image="zoom";
+DateEdit oga02=oga_file.oga02, tabIndex=3;
+Group group4:Group4, text=%"Print Option";
+RadioGroup a=formonly.a type CHAR, tabIndex=4, items=(("1", "Sort"),("2", "Sort+Operations Center"));
+CheckBox more=formonly.more type CHAR, tabIndex=3, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(azp_file.azp01,ima_file.ima131,ogb_file.ogb04,oga_file.oga03,lpk_file.lpk01,oga_file.oga02,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

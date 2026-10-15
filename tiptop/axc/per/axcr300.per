@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr300")
+VBox vb4
+Grid gr1
+{
+ <G group01                                                    >
+  Item No.            [ccc01                         ]
+ <                                                             >
+ <G group02                                                    >
+  Base Year/Month        [yy1       ][mm1       ]
+  Comparing Year Month   [yy2       ][mm2       ]
+  If Difference is +/-   [x         ]%[dummy01                ]
+  Cost Calculation Method[type                ]
+ <                                                             >
+}
+END -- gr1
+Grid gr2
+{
+[more                                               ]
+
+}
+END -- gr2
+END -- vb4
+END -- axcr300
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ccc01=formonly.ccc01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<P>";
+Group group02:group02, text="INPUT";
+Edit yy1=formonly.yy1 type CHAR, tabIndex=2;
+Edit mm1=formonly.mm1 type CHAR, tabIndex=3;
+Edit yy2=formonly.yy2 type CHAR, tabIndex=4;
+Edit mm2=formonly.mm2 type CHAR, tabIndex=5;
+Edit x=formonly.x type CHAR, tabIndex=6;
+Label dummy01:dummy01, text="Rnd Above,then Print it";
+ComboBox type=formonly.type type CHAR, tabIndex=8, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ccc01,formonly.yy1,formonly.mm1,formonly.yy2,formonly.mm2,formonly.x,formonly.type,formonly.more)
+END -- INSTRUCTIONS
+

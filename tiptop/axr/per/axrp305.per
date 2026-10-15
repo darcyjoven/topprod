@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrp305.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axrp305")
+VBox VBox1
+Grid gr47
+{
+ <G group05                                     >
+  Plant      [azw01      ]
+ <                                              >
+
+}
+END -- gr47
+Group gb8(text="QBE")
+Grid gr4
+{
+   Return No.           [rxa01        ]
+   Order No.            [rxa02        ]
+   Advance receipt No.  [oma01        ]
+   Customer No.         [rxa03        ]
+
+}
+END -- gr4
+END -- gb8
+Group gb9(text="INPUT")
+Grid gr6
+{
+   Employee                 [emp          ]
+   Dept                     [dept         ]
+   Red Accout Bill          [con_no       ]
+   Collection Date          [col_date     ]
+                            [dummy01   ]
+
+}
+END -- gr6
+END -- gb9
+END -- VBox1
+END -- axrp305
+
+TABLES
+azw_file,
+rxa_file,
+oma_file
+ATTRIBUTES
+Group group05:group05, text="QBE1";
+ButtonEdit azw01=azw_file.azw01, action=controlp, tabIndex=9, image="zoom", comment="<^P> Qry Documents";
+ButtonEdit rxa01=rxa_file.rxa01, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit rxa02=rxa_file.rxa02, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit oma01=oma_file.oma01, action=controlp, tabIndex=3, image="zoom.png";
+ButtonEdit rxa03=rxa_file.rxa03, action=controlp, tabIndex=4, image="zoom.png";
+ButtonEdit emp=formonly.emp type VARCHAR, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+ButtonEdit dept=formonly.dept type VARCHAR, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+ButtonEdit con_no=formonly.con_no type VARCHAR, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+DateEdit col_date=formonly.col_date type DATE, tabIndex=8;
+Label dummy01:dummy01, text=%"dummy01";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(azw_file.azw01,rxa_file.rxa01,rxa_file.rxa02,oma_file.oma01,rxa_file.rxa03,formonly.emp,formonly.dept,formonly.con_no,formonly.col_date)
+END -- INSTRUCTIONS
+

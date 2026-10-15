@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr117.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr117")
+VBox vb5
+Grid gr6
+{
+ <G group01                                 >
+  Cost Group          [ima12               ]
+  Item No.            [ima01               ]
+ <                                          >
+
+}
+END -- gr6
+Group g01(text="INPUT")
+Grid gr7
+{
+ <G group02                                                               >
+    Stock Year&Month[yy  ]/[mm ]
+    Cost Calculation Method[type          ]
+    Exclude Ware    [w1        ][w2        ][w3        ][w4        ]
+                    [w5        ][w6        ][w7        ][w8        ]
+    Date Range      [bdate     ]      -     [edate     ]
+    Exclude Note    [n1        ][n2        ][n3        ][n4        ]
+                    [n5        ][n6        ][n7        ][n8        ]
+    Cost Group[ima12a    ] EXP Rate[i1        ] GssPofit[j1        ]
+    Cost Group[ima12b    ] EXP Rate[i2        ] GssPofit[j2        ]
+    Cost Group[ima12c    ] EXP Rate[i3        ] GssPofit[j3        ]
+    Cost Group[ima12d    ] EXP Rate[i4        ] GssPofit[j4        ]
+    Cost Group[ima12e    ] EXP Rate[i5        ] GssPofit[j5        ]
+    Cost Group[ima12f    ] EXP Rate[i6        ] GssPofit[j6        ]
+    Cost Group[ima12g    ] EXP Rate[i7        ] GssPofit[j7        ]
+    Cost Group[ima12h    ] EXP Rate[i8        ] GssPofit[j8        ]
+
+ <                                                                        >
+
+}
+END -- gr7
+END -- g01
+Grid gr8
+{
+[more                                                           ]
+
+}
+END -- gr8
+END -- vb5
+END -- axcr117
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=1;
+Edit ima01=formonly.ima01 type VARCHAR, tabIndex=2;
+Group group02:group02;
+Edit yy=formonly.yy type CHAR, tabIndex=3;
+Edit mm=formonly.mm type CHAR, tabIndex=4;
+ComboBox type=formonly.type type CHAR, tabIndex=48, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+Edit w1=formonly.w1 type CHAR, tabIndex=5;
+Edit w2=formonly.w2 type CHAR, tabIndex=6;
+Edit w3=formonly.w3 type CHAR, tabIndex=7;
+Edit w4=formonly.w4 type CHAR, tabIndex=8;
+Edit w5=formonly.w5 type CHAR, tabIndex=9;
+Edit w6=formonly.w6 type CHAR, tabIndex=10;
+Edit w7=formonly.w7 type CHAR, tabIndex=11;
+Edit w8=formonly.w8 type CHAR, tabIndex=12;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=13;
+DateEdit edate=formonly.edate type DATE, tabIndex=14;
+Edit n1=formonly.n1 type CHAR, tabIndex=15;
+Edit n2=formonly.n2 type CHAR, tabIndex=16;
+Edit n3=formonly.n3 type CHAR, tabIndex=17;
+Edit n4=formonly.n4 type CHAR, tabIndex=18;
+Edit n5=formonly.n5 type CHAR, tabIndex=19;
+Edit n6=formonly.n6 type CHAR, tabIndex=20;
+Edit n7=formonly.n7 type CHAR, tabIndex=21;
+Edit n8=formonly.n8 type CHAR, tabIndex=22;
+Edit ima12a=formonly.ima12a type VARCHAR, tabIndex=23;
+Edit i1=formonly.i1 type CHAR, tabIndex=24;
+Edit j1=formonly.j1 type CHAR, tabIndex=25;
+Edit ima12b=formonly.ima12b type VARCHAR, tabIndex=26;
+Edit i2=formonly.i2 type CHAR, tabIndex=27;
+Edit j2=formonly.j2 type CHAR, tabIndex=28;
+Edit ima12c=formonly.ima12c type VARCHAR, tabIndex=29;
+Edit i3=formonly.i3 type CHAR, tabIndex=30;
+Edit j3=formonly.j3 type CHAR, tabIndex=31;
+Edit ima12d=formonly.ima12d type VARCHAR, tabIndex=32;
+Edit i4=formonly.i4 type CHAR, tabIndex=33;
+Edit j4=formonly.j4 type CHAR, tabIndex=34;
+Edit ima12e=formonly.ima12e type VARCHAR, tabIndex=35;
+Edit i5=formonly.i5 type CHAR, tabIndex=36;
+Edit j5=formonly.j5 type CHAR, tabIndex=37;
+Edit ima12f=formonly.ima12f type VARCHAR, tabIndex=38;
+Edit i6=formonly.i6 type CHAR, tabIndex=39;
+Edit j6=formonly.j6 type CHAR, tabIndex=40;
+Edit ima12g=formonly.ima12g type VARCHAR, tabIndex=41;
+Edit i7=formonly.i7 type CHAR, tabIndex=42;
+Edit j7=formonly.j7 type CHAR, tabIndex=43;
+Edit ima12h=formonly.ima12h type VARCHAR, tabIndex=44;
+Edit i8=formonly.i8 type CHAR, tabIndex=45;
+Edit j8=formonly.j8 type CHAR, tabIndex=46;
+CheckBox more=formonly.more type CHAR, tabIndex=47, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima12,formonly.ima01,formonly.yy,formonly.mm,formonly.type,formonly.w1,formonly.w2,formonly.w3,formonly.w4,formonly.w5,formonly.w6,formonly.w7,formonly.w8,formonly.bdate,formonly.edate,formonly.n1,formonly.n2,formonly.n3,formonly.n4,formonly.n5,formonly.n6,formonly.n7,formonly.n8,formonly.ima12a,formonly.i1,formonly.j1,formonly.ima12b,formonly.i2,formonly.j2,formonly.ima12c,formonly.i3,formonly.j3,formonly.ima12d,formonly.i4,formonly.j4,formonly.ima12e,formonly.i5,formonly.j5,formonly.ima12f,formonly.i6,formonly.j6,formonly.ima12g,formonly.i7,formonly.j7,formonly.ima12h,formonly.i8,formonly.j8,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_flow.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_flow")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr3197
+{
+ <G group01                                                           >
+  Process ID          [gaf01     ]
+  Process Abbreviation[gaf02                 ]
+  Description         [gaf03                                         ]
+                      [                                              ]
+                      [                                              ]
+ [gaf04                                                              ]
+ [gafacti                                                            ]
+ <                                                                    >
+}
+END -- gr3197
+END -- page01
+Page info(text="Info")
+Grid gr3198
+{
+
+ Record Owner        [gafuser   ]
+ Department          [gafgrup   ]
+ Last Modified By    [gafmodu   ]
+ Last Modified Date  [gafdate   ]
+ Record Orig.        [gaforiu   ]
+ Dept Orig.          [gaforig   ]
+}
+END -- gr3198
+END -- info
+END -- folder01
+Table s_gag
+{
+[gag02      |gag03        |gaz03               |gag04           |gag14               |gag17               |gag05       |gag11      |gag06                         |gag07                       |gag08                      |gag09                       |gaz03_2                  |gag15                      |gag10    |gag12      |gag13                                 ]
+[gag02      |gag03        |gaz03               |gag04           |gag14               |gag17               |gag05       |gag11      |gag06                         |gag07                       |gag08                      |gag09                       |gaz03_2                  |gag15                      |gag10    |gag12      |gag13                                 ]
+[gag02      |gag03        |gaz03               |gag04           |gag14               |gag17               |gag05       |gag11      |gag06                         |gag07                       |gag08                      |gag09                       |gaz03_2                  |gag15                      |gag10    |gag12      |gag13                                 ]
+[gag02      |gag03        |gaz03               |gag04           |gag14               |gag17               |gag05       |gag11      |gag06                         |gag07                       |gag08                      |gag09                       |gaz03_2                  |gag15                      |gag10    |gag12      |gag13                                 ]
+[gag02      |gag03        |gaz03               |gag04           |gag14               |gag17               |gag05       |gag11      |gag06                         |gag07                       |gag08                      |gag09                       |gaz03_2                  |gag15                      |gag10    |gag12      |gag13                                 ]
+[gag02      |gag03        |gaz03               |gag04           |gag14               |gag17               |gag05       |gag11      |gag06                         |gag07                       |gag08                      |gag09                       |gaz03_2                  |gag15                      |gag10    |gag12      |gag13                                 ]
+[gag02      |gag03        |gaz03               |gag04           |gag14               |gag17               |gag05       |gag11      |gag06                         |gag07                       |gag08                      |gag09                       |gaz03_2                  |gag15                      |gag10    |gag12      |gag13                                 ]
+[gag02      |gag03        |gaz03               |gag04           |gag14               |gag17               |gag05       |gag11      |gag06                         |gag07                       |gag08                      |gag09                       |gaz03_2                  |gag15                      |gag10    |gag12      |gag13                                 ]
+[gag02      |gag03        |gaz03               |gag04           |gag14               |gag17               |gag05       |gag11      |gag06                         |gag07                       |gag08                      |gag09                       |gaz03_2                  |gag15                      |gag10    |gag12      |gag13                                 ]
+[gag02      |gag03        |gaz03               |gag04           |gag14               |gag17               |gag05       |gag11      |gag06                         |gag07                       |gag08                      |gag09                       |gaz03_2                  |gag15                      |gag10    |gag12      |gag13                                 ]
+
+}
+END -- s_gag
+Grid gr3199
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3199
+END -- VBox1
+END -- p_flow
+
+TABLES
+gag_file,
+gaf_file
+ATTRIBUTES
+Group group01:group01;
+Edit gaf01=gaf_file.gaf01, tabIndex=1, required;
+Edit gaf02=gaf_file.gaf02, tabIndex=2;
+TextEdit gaf03=gaf_file.gaf03, tabIndex=3, stretch=NONE;
+CheckBox gaf04=gaf_file.gaf04, tabIndex=28, text="Auto gen?", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gafacti=gaf_file.gafacti, tabIndex=4, text="This Record is Active.", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit gafuser=gaf_file.gafuser, tabIndex=5, noEntry;
+Edit gafgrup=gaf_file.gafgrup, tabIndex=6, noEntry;
+Edit gafmodu=gaf_file.gafmodu, tabIndex=7, noEntry;
+DateEdit gafdate=gaf_file.gafdate, tabIndex=8, noEntry;
+Edit gaforiu=gaf_file.gaforiu, tabIndex=501, noEntry;
+Edit gaforig=gaf_file.gaforig, tabIndex=502, noEntry;
+Edit gag02=gag_file.gag02, tabIndex=9, title="Line No.";
+ButtonEdit gag03=gag_file.gag03, action=controlp, tabIndex=10, title="Program ID", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=11, title="Program Name", noEntry;
+ComboBox gag04=gag_file.gag04, tabIndex=12, title="Function Type", not null, required, queryEditable, items=(("I", %"Insert"),("U", %"Update"),("D", %"Delete"),("Y", %"Confirm"),("S", %"Post"),("V", %"Void"));
+ComboBox gag14=gag_file.gag14, tabIndex=13, title="Send Mail Condition", not null, required, queryEditable, items=(("1", %"No Limit"),("2", %"By Document"));
+Edit gag17=gag_file.gag17, tabIndex=14, title="Condition", not null, required, scroll, comment="Please Use \"|\" to Separate Documents";
+ComboBox gag05=gag_file.gag05, tabIndex=15, title="Send Mail", not null, required, queryEditable, comment="Notified By E-Mail", items=(("0", %"Not Notified"),("1", %"Notified ASAP"),("2", %"Batch Notified"));
+ButtonEdit gag11=gag_file.gag11, action=controlp, tabIndex=16, title="Nextone", not null, required, image="zoom", scroll, comment="Enter Employee No. <^P>Qry Employee No.";
+Edit gag06=gag_file.gag06, tabIndex=17, title="Noticed List", scroll;
+Edit gag07=gag_file.gag07, tabIndex=18, title="C.C.List", scroll;
+Edit gag08=gag_file.gag08, tabIndex=19, title="Message", scroll;
+ButtonEdit gag09=gag_file.gag09, action=controlp, tabIndex=20, title="Suggest to Run Program ID", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit gaz03_2=formonly.gaz03_2 type CHAR, tabIndex=21, title="Program Name", noEntry;
+ComboBox gag15=gag_file.gag15, tabIndex=22, title="Suggest Executing Function", not null, required, queryEditable, items=(("0", %"Not Assign"),("1", %"Query"),("2", %"Insert"));
+ComboBox gag10=gag_file.gag10, tabIndex=23, title="Rank", queryEditable, items=(("A", %"Emergency"),("B", %"Important"),("C", %"Normal"),("D", %"Notice"),("E", %"Log"));
+Edit gag12=gag_file.gag12, tabIndex=24, title="Deadline";
+Edit gag13=gag_file.gag13, tabIndex=25, title="Noticed After Deadline";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=26, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gag(gag_file.gag02,gag_file.gag03,formonly.gaz03,gag_file.gag04,gag_file.gag14,gag_file.gag17,gag_file.gag05,gag_file.gag11,gag_file.gag06,gag_file.gag07,gag_file.gag08,gag_file.gag09,formonly.gaz03_2,gag_file.gag15,gag_file.gag10,gag_file.gag12,gag_file.gag13)
+SCREEN RECORD Undefined(gaf_file.gaf01,gaf_file.gaf02,gaf_file.gaf03,gaf_file.gaf04,gaf_file.gafacti,gaf_file.gafuser,gaf_file.gafgrup,gaf_file.gafmodu,gaf_file.gafdate,gaf_file.gaforiu,gaf_file.gaforig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

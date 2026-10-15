@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfi510_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Table Table1
+{
+[sfs04       |sfs05       |sfsud07     ]
+[sfs04       |sfs05       |sfsud07     ]
+[sfs04       |sfs05       |sfsud07     ]
+[sfs04       |sfs05       |sfsud07     ]
+[sfs04       |sfs05       |sfsud07     ]
+
+
+
+}
+END -- Table1
+END -- Form
+
+ATTRIBUTES
+Edit sfs04=formonly.sfs04, tabIndex=1, title=%"sfs04";
+Edit sfs05=formonly.sfs05, tabIndex=2, title=%"sfs05";
+Edit sfsud07=formonly.sfsud07, tabIndex=3, title=%"sfsud07";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfs_1(formonly.sfs04,formonly.sfs05,formonly.sfsud07)
+END -- INSTRUCTIONS
+

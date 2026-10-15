@@ -1,0 +1,175 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cec/4fd/cecq040.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"cecq040")
+VBox vb4
+Group group01
+HBox hb2
+Grid gr568
+{
+ W/O No.     [sfb01_q                       ]
+ Item No.    [sfb05_q                       ]
+ Item No.    [sfb06_q             ]
+
+
+
+
+
+}
+END -- gr568
+Grid gr569
+{
+  Antici        [sgm01_q                       ]
+  Antici        [sgm03_q              ]
+  Antici        [sgm04_q              ]
+  Antici        [sgm06_q              ]
+
+
+
+
+}
+END -- gr569
+Grid gr570
+{
+
+
+
+
+
+
+
+
+}
+END -- gr570
+END -- hb2
+END -- group01
+Folder pc135
+Page page01(action=sgm, text="sgm")
+Table s_sgm
+{
+[sgm01             |sgm03_par   |sgm11   |ima02             |ima021            |sgm03   |sgm04     |sgm45           |sgm06     |eca02         |sgm65       |sgm301      |sgm302      |sgm311      |sgm313      |sgm314      |sgm312      |sgmwip      |sgmin       |sgmunin     ]
+
+}
+END -- s_sgm
+END -- page01
+Page page02(action=sfb, text="sfb")
+Table s_sfb
+{
+[sfb01           |sfb05       |sfb06   |ima02_1         |ima021_1        |sfa08       |ecd02       |ecd07       |eca02_1     |sfbwip      |sfbunin     ]
+
+}
+END -- s_sfb
+END -- page02
+Page page03(action=ecd, text="ecd")
+Table s_ecd
+{
+[ima01_2     |ima02_2         |ima021_2        |ecd01_2     |ecd02_2         |ecd07_2     |eca02_2         |ecdwip      |ecdunin     ]
+
+}
+END -- s_ecd
+END -- page03
+Page page04(action=eca, text="eca")
+Table s_eca
+{
+[ima01_3     |ima02_3         |ima021_3        |ecd07_3     |eca02_3         |ecawip      |ecaunin     ]
+
+}
+END -- s_eca
+END -- page04
+Page page05(action=ima, text="ima")
+Table s_ima
+{
+[ima01_4     |ima02_4         |ima021_4        |imawip      |imaunin     ]
+
+}
+END -- s_ima
+END -- page05
+END -- pc135
+Grid gr571
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr571
+END -- vb4
+END -- cecq040
+
+ATTRIBUTES
+ButtonEdit sfb01_q=formonly.sfb01_q type VARCHAR, action=controlp, tabIndex=1, image="zoom", upShift;
+ButtonEdit sfb05_q=formonly.sfb05_q type VARCHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Item No.";
+Edit sfb06_q=formonly.sfb06_q type VARCHAR, tabIndex=3, comment="<^P>Qry Item No.";
+ButtonEdit sgm01_q=formonly.sgm01_q type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+Edit sgm03_q=formonly.sgm03_q type VARCHAR, tabIndex=5;
+ButtonEdit sgm04_q=formonly.sgm04_q type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit sgm06_q=formonly.sgm06_q type VARCHAR, action=controlp, tabIndex=33, image="zoom";
+Edit sgm01=formonly.sgm01, tabIndex=13, title=%"sgm01";
+Edit sgm03_par=formonly.sgm03_par, tabIndex=14, title=%"sgm03_par";
+Edit sgm11=formonly.sgm11, tabIndex=15, title=%"sgm11";
+Edit ima02=formonly.ima02, tabIndex=16, title=%"ima02";
+Edit ima021=formonly.ima021, tabIndex=17, title=%"ima021";
+Edit sgm03=formonly.sgm03, tabIndex=18, title=%"sgm03";
+Edit sgm04=formonly.sgm04, tabIndex=19, title=%"sgm04";
+Edit sgm45=formonly.sgm45, tabIndex=20, title=%"sgm45";
+Edit sgm06=formonly.sgm06, tabIndex=21, title=%"sgm06";
+Edit eca02=formonly.eca02, tabIndex=22, title=%"eca02";
+Edit sgm65=formonly.sgm65 type DECIMAL, tabIndex=23, title=%"sgm65";
+Edit sgm301=formonly.sgm301 type DECIMAL, tabIndex=24, title=%"sgm301";
+Edit sgm302=formonly.sgm302 type DECIMAL, tabIndex=25, title=%"sgm302";
+Edit sgm311=formonly.sgm311 type DECIMAL, tabIndex=26, title=%"sgm311";
+Edit sgm313=formonly.sgm313 type DECIMAL, tabIndex=27, title=%"sgm313";
+Edit sgm314=formonly.sgm314 type DECIMAL, tabIndex=28, title=%"sgm314";
+Edit sgm312=formonly.sgm312 type DECIMAL, tabIndex=29, title=%"sgm312";
+Edit sgmwip=formonly.sgmwip type DECIMAL, tabIndex=30, title=%"sgmwip";
+Edit sgmin=formonly.sgmin type DECIMAL, tabIndex=31, title=%"sgmin";
+Edit sgmunin=formonly.sgmunin type DECIMAL, tabIndex=32, title=%"sgmunin";
+Edit sfb01=formonly.sfb01 type CHAR, tabIndex=8, title="sfb01", not null, required;
+Edit sfb05=formonly.sfb05, tabIndex=34, title=%"sfb05";
+Edit sfb06=formonly.sfb06, tabIndex=35, title=%"sfb06";
+Edit ima02_1=formonly.ima02_1, tabIndex=36, title=%"ima02_1";
+Edit ima021_1=formonly.ima021_1, tabIndex=37, title=%"ima021_1";
+Edit sfa08=formonly.sfa08, tabIndex=38, title=%"sfa08";
+Edit ecd02=formonly.ecd02, tabIndex=39, title=%"ecd02";
+Edit ecd07=formonly.ecd07, tabIndex=40, title=%"ecd07";
+Edit eca02_1=formonly.eca02_1, tabIndex=41, title=%"eca02_1";
+Edit sfbwip=formonly.sfbwip type DECIMAL, tabIndex=42, title=%"sfbwip";
+Edit sfbunin=formonly.sfbunin type DECIMAL, tabIndex=43, title=%"sfbunin";
+Edit ima01_2=formonly.ima01_2 type CHAR, tabIndex=9, title="ima01_2", not null, required;
+Edit ima02_2=formonly.ima02_2, tabIndex=44, title=%"ima02_2";
+Edit ima021_2=formonly.ima021_2, tabIndex=45, title=%"ima021_2";
+Edit ecd01_2=formonly.ecd01_2, tabIndex=46, title=%"ecd01_2";
+Edit ecd02_2=formonly.ecd02_2, tabIndex=47, title=%"ecd02_2";
+Edit ecd07_2=formonly.ecd07_2, tabIndex=48, title=%"ecd07_2";
+Edit eca02_2=formonly.eca02_2, tabIndex=49, title=%"eca02_2";
+Edit ecdwip=formonly.ecdwip type DECIMAL, tabIndex=50, title=%"ecdwip";
+Edit ecdunin=formonly.ecdunin type DECIMAL, tabIndex=51, title=%"ecdunin";
+Edit ima01_3=formonly.ima01_3 type CHAR, tabIndex=10, title="ima01_3", not null, required;
+Edit ima02_3=formonly.ima02_3, tabIndex=52, title=%"ima02_3";
+Edit ima021_3=formonly.ima021_3, tabIndex=53, title=%"ima021_3";
+Edit ecd07_3=formonly.ecd07_3, tabIndex=54, title=%"ecd07_3";
+Edit eca02_3=formonly.eca02_3, tabIndex=55, title=%"eca02_3";
+Edit ecawip=formonly.ecawip, tabIndex=56, title=%"ecawip";
+Edit ecaunin=formonly.ecaunin, tabIndex=57, title=%"ecaunin";
+Edit ima01_4=formonly.ima01_4 type CHAR, tabIndex=7, title="ima01_4", not null, required;
+Edit ima02_4=formonly.ima02_4, tabIndex=58, title=%"ima02_4";
+Edit ima021_4=formonly.ima021_4, tabIndex=59, title=%"ima021_4";
+Edit imawip=formonly.imawip type DECIMAL, tabIndex=60, title=%"imawip";
+Edit imaunin=formonly.imaunin type DECIMAL, tabIndex=61, title=%"imaunin";
+Edit cnt=formonly.cnt type CHAR, tabIndex=11;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ima(formonly.ima01_4,formonly.ima02_4,formonly.ima021_4,formonly.imawip,formonly.imaunin)
+SCREEN RECORD s_sfa(formonly.sfb01,formonly.sfb05,formonly.sfb06,formonly.ima02_1,formonly.ima021_1,formonly.sfa08,formonly.ecd02,formonly.ecd07,formonly.eca02_1,formonly.sfbwip,formonly.sfbunin)
+SCREEN RECORD s_ecd(formonly.ima01_2,formonly.ima02_2,formonly.ima021_2,formonly.ecd01_2,formonly.ecd02_2,formonly.ecd07_2,formonly.eca02_2,formonly.ecdwip,formonly.ecdunin)
+SCREEN RECORD s_eca(formonly.ima01_3,formonly.ima02_3,formonly.ima021_3,formonly.ecd07_3,formonly.eca02_3,formonly.ecawip,formonly.ecaunin)
+SCREEN RECORD s_sgm(formonly.sgm01,formonly.sgm03_par,formonly.sgm11,formonly.ima02,formonly.ima021,formonly.sgm03,formonly.sgm04,formonly.sgm45,formonly.sgm06,formonly.eca02,formonly.sgm65,formonly.sgm301,formonly.sgm302,formonly.sgm311,formonly.sgm313,formonly.sgm314,formonly.sgm312,formonly.sgmwip,formonly.sgmin,formonly.sgmunin)
+SCREEN RECORD Undefined(formonly.sfb01_q,formonly.sfb05_q,formonly.sgm01_q,formonly.cnt,formonly.cn2,formonly.sfb06_q,formonly.sgm03_q,formonly.sgm04_q,formonly.sgm06_q)
+END -- INSTRUCTIONS
+

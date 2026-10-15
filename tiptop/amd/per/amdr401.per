@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdr401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amdr401")
+VBox vb2
+Grid gr3721
+{
+ <G group01                                                                                      >
+  [a                             ]
+  Declaring Department[amd22     ]
+  Data Year/Month     [amd173_b  ]/[amd174_b  ]-[amd174_e ][dummy01             ]
+  Declaration Date    [pdate       ]
+  Report Templet      [t                 ]
+ <                                                                                               >
+}
+END -- gr3721
+Grid gr3722
+{
+[more                           ]
+
+}
+END -- gr3722
+END -- vb2
+END -- amdr401
+
+TABLES
+amd_file
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+CheckBox a=formonly.a type CHAR, tabIndex=1, text="Print TaxID Together?  ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit amd22=amd_file.amd22, tabIndex=2;
+Edit amd173_b=formonly.amd173_b type SMALLINT, tabIndex=3, comment="No Blank Field";
+Edit amd174_b=formonly.amd174_b type SMALLINT, tabIndex=4, comment="No Blank Field";
+Edit amd174_e=formonly.amd174_e type SMALLINT, tabIndex=5, comment="No Blank Field";
+Label dummy01:dummy01, text="(century year)";
+DateEdit pdate=formonly.pdate type DATE, tabIndex=6;
+RadioGroup t=formonly.t type CHAR, tabIndex=8, default = "1", not null, required, orientation=horizontal, items=(("1", "Templet1"),("2", "Templet2"));
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,amd_file.amd22,formonly.amd173_b,formonly.amd174_b,formonly.amd174_e,formonly.pdate,formonly.t,formonly.more)
+END -- INSTRUCTIONS
+

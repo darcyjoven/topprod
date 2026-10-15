@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdp202.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amdp202")
+VBox VBox1
+Grid gr193
+{
+
+ <G group01                                                >
+  Invoice No.              [ome01               ]
+
+  Shipping Order           [oga01               ]
+
+  Invoice Date             [ome02               ]
+
+  Customer No.             [occ01               ]
+
+  Main Store Number        [occ74               ]
+ <                                                         >
+}
+END -- gr193
+Grid gr194
+{
+
+ <G group2                                                  >
+   Select Invoice Copies   [s1            ]
+
+   Select System           [s2           ]
+
+  [t1                     ]      [t2            ]
+
+   Drawer Uniform NO.      [s3             ]
+
+   Declaring Dept Code     [ama01       ]
+
+  [t3                             ]
+ <                                                          >
+}
+END -- gr194
+Grid gr195
+{
+
+ [dummy01                                                  ]
+
+
+}
+END -- gr195
+END -- VBox1
+END -- amdp202
+
+TABLES
+occ_file,
+ome_file,
+oga_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ome01=ome_file.ome01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit oga01=oga_file.oga01, action=controlp, tabIndex=2, not null, required, image="zoom";
+DateEdit ome02=ome_file.ome02, tabIndex=3;
+ButtonEdit occ01=occ_file.occ01, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit occ74=occ_file.occ74, action=controlp, tabIndex=9, image="zoom";
+Group group2:group2, text="INPUT";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=6, not null, required, queryEditable, items=(("0", "Park Receipt"),("2", "Duplicate"),("3", "Triplicate"),("5", "Other Voucher"),("6", "Cash Register"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=5, not null, required, queryEditable, items=(("1", "RT-MART"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=7, default = "N", text="Add Pring Item Specification", valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=8, default = "N", text="Export Gift Data", valueChecked = "Y", valueUnchecked = "N";
+ComboBox s3=formonly.s3 type CHAR, tabIndex=10, not null, required, queryEditable, items=(("1", "Registration No."),("2", "Declaring Dept Code"));
+ButtonEdit ama01=formonly.ama01 type VARCHAR, action=controlp, tabIndex=11, image="zoom";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=12, default = "N", text="Export Void  Invoice", valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="EXPORT：$TEMPDIR";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ome_file.ome01,oga_file.oga01,ome_file.ome02,occ_file.occ01,occ_file.occ74,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.s3,formonly.ama01,formonly.t3)
+END -- INSTRUCTIONS
+

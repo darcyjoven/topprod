@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli106.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="agli106")
+VBox vb1
+Folder pc1
+Page Info(text=%"Info")
+Table tb2
+{
+[aal01        |axz02     |aal02             |aal03              ]
+[aal01        |axz02     |aal02             |aal03              ]
+[aal01        |axz02     |aal02             |aal03              ]
+[aal01        |axz02     |aal02             |aal03              ]
+[aal01        |axz02     |aal02             |aal03              ]
+[aal01        |axz02     |aal02             |aal03              ]
+
+}
+END -- tb2
+END -- Info
+END -- pc1
+Grid gr1
+{
+  ---------- cnt [cn2       ] ----------
+
+}
+END -- gr1
+END -- vb1
+END -- agli106
+
+TABLES
+axz_file,
+aal_file
+ATTRIBUTES
+ButtonEdit aal01=aal_file.aal01, action=controlp, tabIndex=2, title="Company No.", not null, required, image="zoom";
+Edit axz02=axz_file.axz02, tabIndex=5, title="Name", noEntry;
+Edit aal02=aal_file.aal02, tabIndex=3, title="affiliate(Before)", not null, required;
+Edit aal03=aal_file.aal03, tabIndex=4, title="affiliate(After)";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aal(aal_file.aal01,axz_file.axz02,aal_file.aal02,aal_file.aal03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

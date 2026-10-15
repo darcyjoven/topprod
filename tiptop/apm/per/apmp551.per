@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp551.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp551")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4918
+{
+ <G group01                                    >
+  P/O No.          [pmm01                ]
+  Vender Code      [pmm09      ]  [pmc03     ]
+ <                                             >
+ <G group03                                    >
+ [y                            ]
+ <                                             >
+
+}
+END -- gr4918
+END -- page01
+END -- folder01
+Table s_pmn
+{
+[sure |pmn02|pmn04                  |pmn16             |qty               ]
+[sure |pmn02|pmn04                  |pmn16             |qty               ]
+[sure |pmn02|pmn04                  |pmn16             |qty               ]
+[sure |pmn02|pmn04                  |pmn16             |qty               ]
+[sure |pmn02|pmn04                  |pmn16             |qty               ]
+[sure |pmn02|pmn04                  |pmn16             |qty               ]
+[sure |pmn02|pmn04                  |pmn16             |qty               ]
+[sure |pmn02|pmn04                  |pmn16             |qty               ]
+[sure |pmn02|pmn04                  |pmn16             |qty               ]
+[sure |pmn02|pmn04                  |pmn16             |qty               ]
+}
+END -- s_pmn
+Grid gr4919
+{
+ [select_all    ] [cancel_all  ] Select Counts       [cn3       ]
+ ---------- Rows [cn2   ] ----------
+
+
+}
+END -- gr4919
+END -- VBox1
+END -- apmp551
+
+TABLES
+pmn_file,
+pmm_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit pmm01=pmm_file.pmm01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Enter a P/O # to Close  <^P> Query P/O  ";
+Edit pmm09=formonly.pmm09 type CHAR, tabIndex=2, noEntry;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=3, noEntry;
+Group group03:group03;
+CheckBox y=formonly.y type CHAR, tabIndex=4, text="Display closed data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sure=formonly.sure type CHAR, tabIndex=5, title="Sure", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmn02=pmn_file.pmn02, tabIndex=6, title="Ln#", noEntry;
+Edit pmn04=pmn_file.pmn04, tabIndex=7, title="Item No.", noEntry;
+ComboBox pmn16=formonly.pmn16 type VARCHAR, tabIndex=8, title="Current Status", noEntry, queryEditable, items=(("0", %"Open"),("1", %"Confirmed"),("2", %"Trans-out"),("6", %"Finish-Normal"),("7", %"Finish-Long"),("8", %"Finish-Short"),("9", %"Cancel"),("X", %"Trans-in"));
+Edit qty=formonly.qty type CHAR, tabIndex=9, title="Short-Delivery Qty", noEntry;
+Button select_all:select_all, comment="Select All";
+Button cancel_all:cancel_all, comment="Cancel All";
+Edit cn3=formonly.cn3 type CHAR, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmn(formonly.sure,pmn_file.pmn02,pmn_file.pmn04,formonly.pmn16,formonly.qty)
+SCREEN RECORD Undefined(pmm_file.pmm01,formonly.pmm09,formonly.pmc03,formonly.y,formonly.cn3,formonly.cn2)
+END -- INSTRUCTIONS
+

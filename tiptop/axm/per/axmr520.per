@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmr520.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr520")
+VBox VBox1
+Grid gr5125
+{
+ <G group01                                                     >
+  Order No.            [oea01               ]
+  Order Dt             [oea02               ]
+  Cust                 [oea03               ]
+  Item No.             [oeb04               ]
+  Date                 [oeb15               ]
+
+ <                                                              >
+}
+END -- gr5125
+Group group02(text="INPUT")
+VBox VBox2
+Grid gr5126
+{
+ <G group03                                                     >
+ [s1              ]  [s2               ]  [s3                ]
+ [t1              ]  [t2               ]  [t3                ]
+ [u1              ]  [u2               ]  [u3                ]
+ <                                                              >
+}
+END -- gr5126
+Grid gr5127
+{
+ Delivery In Advance Days Allowed [a                   ]
+ Over-Delivery Ratio Allowed      [c                   ]%
+ Back Order Days Allowed          [b                   ]
+ Short-Delivery Ratio Allowed     [d                   ]%
+
+}
+END -- gr5127
+END -- VBox2
+END -- group02
+Grid gr5128
+{
+ [more                                                            ]
+
+}
+END -- gr5128
+END -- VBox1
+END -- axmr520
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oea01=formonly.oea01 type VARCHAR, action=controlp, tabIndex=17, image="zoom";
+DateEdit oea02=formonly.oea02 type DATE, tabIndex=17;
+ButtonEdit oea03=formonly.oea03 type VARCHAR, action=controlp, tabIndex=17, image="zoom";
+ButtonEdit oeb04=formonly.oeb04 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit oeb15=formonly.oeb15 type DATE, tabIndex=2;
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=3, items=(("1", "Order No."),("2", "Order Dt"),("3", "Cust"),("4", "Item No."),("5", "Date"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=4, items=(("1", "Order No."),("2", "Order Dt"),("3", "Cust"),("4", "Item No."),("5", "Date"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=5, items=(("1", "Order No."),("2", "Order Dt"),("3", "Cust"),("4", "Item No."),("5", "Date"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=6, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=7, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=8, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=9, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=10, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=11, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit a=formonly.a type SMALLINT, tabIndex=12, not null, required;
+Edit c=formonly.c type DECIMAL, tabIndex=13, not null, required;
+Edit b=formonly.b type SMALLINT, tabIndex=14, not null, required;
+Edit d=formonly.d type DECIMAL, tabIndex=15, not null, required;
+CheckBox more=formonly.more type VARCHAR, tabIndex=16, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oea01,formonly.oea02,formonly.oea03,formonly.oeb04,formonly.oeb15,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.a,formonly.c,formonly.b,formonly.d,formonly.more)
+END -- INSTRUCTIONS
+

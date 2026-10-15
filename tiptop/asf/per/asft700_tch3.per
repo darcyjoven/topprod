@@ -1,0 +1,180 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft700_tch3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"asft700_tch3", windowStyle="touch1")
+HBox hb10
+VBox vb5
+HBox hb9(style="touch-bg1")
+Group gb7
+Grid gr809(style="touch-font")
+{
+ Operating Time            [shb021_]：[shb0211]
+ Time of Report            [shb031_]：[shb0311]
+ Good Trans-out            [shb111            ]
+ Bonus                     [shb115            ]
+ Direct Scrap              [shb112            ]
+ Rework/Trans-out          [shb113            ]
+ Next Routing              [shb12             ]
+ Direct Off-Line           [shb114            ]
+ Work Order Transfer-out   [shb17             ]
+
+
+
+
+
+}
+END -- gr809
+END -- gb7
+Group gb9(style="touch-bg4")
+Grid gr11
+{
+[count   ]
+[c7|c8|c9]
+[c4|c5|c6]
+[c1|c2|c3]
+[c0|cd|ce]
+[enter   ]
+
+
+
+
+
+
+
+
+}
+END -- gr11
+END -- gb9
+END -- hb9
+HBox hb5(style="touch-bg1")
+Group gb4
+Grid gr24(style="touch-font")
+{
+ W/O No.        [shb05                    ]
+ Item No.       [shb10                    ]
+ P/N            [ima02                    ]
+ Spec           [ima021                   ]
+
+
+
+
+
+
+
+
+
+}
+END -- gr24
+END -- gb4
+Group gb8
+Grid gr25(style="touch-font")
+{
+ User ID.       [shb04                    ]
+ Routing Seq    [shb06                    ]
+ Work Center    [eca02                    ]
+ Line/Shift     [ecg02                    ]
+ Operation No.  [shb081                   ]
+
+
+
+
+
+
+
+
+}
+END -- gr25
+END -- gb8
+END -- hb5
+END -- vb5
+Group gb3(style="touch-bg5")
+Grid gr6
+{
+
+[report_ok ]
+[          ]
+
+[report_can]
+[          ]
+
+[report_bac]
+[          ]
+
+[routing_st]
+[          ]
+
+[report_his]
+[          ]
+
+[prepare_st]
+[          ]
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr6
+END -- gb3
+END -- hb10
+END -- asft700_tch3
+
+TABLES
+shb_file
+ATTRIBUTES
+ComboBox shb021_=formonly.shb021_h type VARCHAR, tabIndex=8, not null, required;
+ComboBox shb0211=formonly.shb021_m type VARCHAR, tabIndex=9, not null, required;
+ComboBox shb031_=formonly.shb031_h type VARCHAR, tabIndex=10, not null, required;
+ComboBox shb0311=formonly.shb031_m type VARCHAR, tabIndex=11, not null, required;
+Edit shb111=shb_file.shb111, tabIndex=1, not null, required;
+Edit shb115=shb_file.shb115, tabIndex=2, not null, required;
+Edit shb112=shb_file.shb112, tabIndex=3, not null, required;
+Edit shb113=shb_file.shb113, tabIndex=4, not null, required;
+ComboBox shb12=formonly.shb12 type VARCHAR, tabIndex=7;
+Edit shb114=shb_file.shb114, tabIndex=5, not null, required;
+Edit shb17=shb_file.shb17, tabIndex=6, not null, required;
+Edit count=formonly.count type CHAR, tabIndex=18, style="touch-font2";
+Button c7:c7, tabIndex=22, image="calculator_7", sizePolicy=dynamic, style="touch-btn1";
+Button c8:c8, tabIndex=23, image="calculator_8", sizePolicy=dynamic, style="touch-btn1";
+Button c9:c9, tabIndex=24, image="calculator_9", sizePolicy=dynamic, style="touch-btn1";
+Button c4:c4, tabIndex=25, image="calculator_4", sizePolicy=dynamic, style="touch-btn1";
+Button c5:c5, tabIndex=26, image="calculator_5", sizePolicy=dynamic, style="touch-btn1";
+Button c6:c6, tabIndex=27, image="calculator_6", sizePolicy=dynamic, style="touch-btn1";
+Button c1:c1, tabIndex=28, image="calculator_1", sizePolicy=dynamic, style="touch-btn1";
+Button c2:c2, tabIndex=29, image="calculator_2", sizePolicy=dynamic, style="touch-btn1";
+Button c3:c3, tabIndex=30, image="calculator_3", sizePolicy=dynamic, style="touch-btn1";
+Button c0:c0, tabIndex=31, image="calculator_0", sizePolicy=dynamic, style="touch-btn1";
+Button cd:cdot, tabIndex=32, image="calculator_dot", sizePolicy=dynamic, style="touch-btn1";
+Button ce:ce, tabIndex=33, image="calculator_ce", sizePolicy=dynamic, style="touch-btn1";
+Button enter:enter, tabIndex=34, image="calculator_enter", sizePolicy=dynamic, style="touch-btn1";
+Edit shb05=shb_file.shb05, tabIndex=12, noEntry;
+Edit shb10=formonly.shb10 type CHAR, tabIndex=16, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=14, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=15, noEntry;
+Edit shb04=formonly.shb04 type CHAR, tabIndex=13, noEntry;
+Edit shb06=formonly.shb06 type CHAR, tabIndex=19, noEntry;
+Edit eca02=formonly.eca02 type CHAR, tabIndex=21, noEntry;
+Edit ecg02=formonly.ecg02 type CHAR, tabIndex=20, noEntry;
+Edit shb081=formonly.shb081 type CHAR, tabIndex=17, noEntry;
+Button report_ok:report_ok, tabIndex=35, image="", sizePolicy=dynamic, style="touch-btn1";
+Button report_can:report_cancel, tabIndex=36, image="", sizePolicy=dynamic, style="touch-btn1";
+Button report_bac:report_back, tabIndex=37, image="", sizePolicy=dynamic, style="touch-btn1";
+Button routing_st:routing_status, tabIndex=38, image="", sizePolicy=dynamic, style="touch-btn1";
+Button report_his:report_history, tabIndex=39, image="", sizePolicy=dynamic, style="touch-btn1";
+Button prepare_st:prepare_status, tabIndex=40, image="", sizePolicy=dynamic, style="touch-btn1";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.shb021_h,formonly.shb021_m,formonly.shb031_h,formonly.shb031_m,shb_file.shb111,shb_file.shb115,shb_file.shb112,shb_file.shb113,formonly.shb12,shb_file.shb114,shb_file.shb17,formonly.count,shb_file.shb05,formonly.shb10,formonly.ima02,formonly.ima021,formonly.shb04,formonly.shb06,formonly.eca02,formonly.ecg02,formonly.shb081)
+END -- INSTRUCTIONS
+

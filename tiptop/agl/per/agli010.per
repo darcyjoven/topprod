@@ -1,0 +1,207 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli010")
+VBox vb8
+Folder pc438
+Page page01(text="Main")
+VBox VBox1
+HBox hb1
+Grid gr2348
+{
+ Area             [giu00             ]
+ Data Source      [giu39             ]
+
+
+}
+END -- gr2348
+Grid gr2349
+{
+ Account Code        [giu01         ]
+
+
+
+}
+END -- gr2349
+Grid gr2350
+{
+ Account Name        [giu02                            ]   [imgmksg]
+                                                           [       ]
+
+
+}
+END -- gr2350
+END -- hb1
+Grid gr2351
+{
+ <G group01                                         ><G group02                                                            >
+  Property                       [giu03         ]     Control Details               [giu07                            ]
+  Balance Sheet/Income Statament [giu04         ]     Control Account Code          [giu08                            ]
+  Balance                        [giu06         ]     Account Level                 [giu24        ]
+ [giu09                  ]                            [giu05                        ]
+  Counting Unit                  [giu12         ]     [giu21                        ]
+ [giu38               ]                               [giu23                        ]
+ <                                                  > [giu42                                        ]
+ <G group03                                         >
+  Expense Gategory               [giu221        ]
+  Account Gategory 1             [giu223        ]
+  Account Gategory 2             [giu224        ]
+  Account Gategory 3             [giu225        ]
+  Account Gategory 4             [giu226        ]
+  Financial Analysis Category    [giu19            ]
+ <                                                  ><                                                                     >
+}
+END -- gr2351
+HBox hb2
+Grid gr2352
+{
+ Extra Name          [giu13                                             ]
+
+
+}
+END -- gr2352
+Grid gr2353
+{
+ Memo                [giu14                                      ]
+
+
+}
+END -- gr2353
+END -- hb2
+END -- VBox1
+END -- page01
+Page tcc(text="Trans")
+Grid gr2354
+{
+ <G group04                                                                                   >
+  [giu20                                                          ]
+  Contra Voucher Line Detail Account Type  [giu222                ]
+                                           [dummy01    ][dummy02             ][dummy03       ]
+
+  Transcation Code-1 Name                  [giu15      ][ahe02_1             ][giu151        ]
+  Transcation Code-2 Name                  [giu16      ][ahe02_2             ][giu161        ]
+  Transcation Code-3 Name                  [giu17      ][ahe02_3             ][giu171        ]
+  Transcation Code-4 Name                  [giu18      ][ahe02_4             ][giu181        ]
+  Transcation Code-5 Name                  [giu31      ][ahe02_5             ][giu311        ]
+  Transcation Code-6 Name                  [giu32      ][ahe02_6             ][giu321        ]
+  Transcation Code-7 Name                  [giu33      ][ahe02_7             ][giu331        ]
+  Transcation Code-8 Name                  [giu34      ][ahe02_8             ][giu341        ]
+  Transcation Code-9 Name                  [giu35      ][ahe02_9             ][giu351        ]
+  Transcation Code-10 Name                 [giu36      ][ahe02_10            ][giu361        ]
+  Transcation Code-11 Name                 [giu37      ][ahe02_11            ][giu371        ]
+ <                                                                                            >
+
+}
+END -- gr2354
+END -- tcc
+Page info(text="Info")
+Grid gr2355
+{
+ Record Owner        [giuuser   ]   Last Modified by    [giumodu   ]   Data Valid Code     [giuacti   ]
+ Department          [giugrup   ]   Create/Modify Date  [giudate   ]
+ Record Orig.        [giuoriu   ]
+ Dept Orig.          [giuorig   ]
+
+
+}
+END -- gr2355
+END -- info
+END -- pc438
+Grid gr2356
+{
+  ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2356
+END -- vb8
+END -- agli010
+
+TABLES
+giu_file
+ATTRIBUTES
+ComboBox giu00=giu_file.giu00, tabIndex=1, not null, required, queryEditable, items=(("0", "Taiwan"),("1", "Europe"),("2", "Chinese Mainla,nd"),("3", "American"),("A", "National Interface Standard"));
+ButtonEdit giu39=giu_file.giu39, action=controlp, tabIndex=4, noEntry, image="zoom.png";
+Edit giu01=giu_file.giu01, tabIndex=2, not null, required, comment="Key Field, No Blank/Repeated";
+Edit giu02=giu_file.giu02, tabIndex=3, not null, required, comment="<^Y> Account Extra Description (FM)";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Group group01:group01, text="Attribute";
+ComboBox giu03=giu_file.giu03, tabIndex=5, not null, required, queryEditable, items=(("2", "Account"),("4", "Carry Forward"));
+ComboBox giu04=giu_file.giu04, tabIndex=6, not null, required, queryEditable, items=(("1", "Balance Sheet"),("2", "Income Statement"));
+ComboBox giu06=giu_file.giu06, tabIndex=7, not null, required, queryEditable, items=(("1", "Debit Balance"),("2", "Credit Balance"));
+CheckBox giu09=giu_file.giu09, tabIndex=8, text="Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit giu12=giu_file.giu12, tabIndex=9;
+CheckBox giu38=giu_file.giu38, tabIndex=10, text="Inter Income Account No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Control";
+ComboBox giu07=giu_file.giu07, tabIndex=17, not null, required, queryEditable, items=(("1", "Control Account"),("2", "Detail Account"),("3", "Independent Account"));
+ButtonEdit giu08=giu_file.giu08, action=controlp, tabIndex=18, not null, required, image="zoom", comment="<^P>Qry Account No. ";
+Edit giu24=giu_file.giu24, tabIndex=19, comment="99:Last    Level";
+CheckBox giu05=giu_file.giu05, tabIndex=20, text="Department Management", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox giu21=giu_file.giu21, tabIndex=21, text="Budget Control", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox giu23=giu_file.giu23, tabIndex=22, text="Project Control", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox giu42=giu_file.giu42, tabIndex=23, text="Generate Entry By Account Balance Type", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Category";
+ComboBox giu221=giu_file.giu221, tabIndex=11, queryEditable, items=(("F", "Fixed"),("V", "Variable"));
+ButtonEdit giu223=giu_file.giu223, action=controlp, tabIndex=12, image="zoom", comment="<^P> Qry Account Class.";
+ButtonEdit giu224=giu_file.giu224, action=controlp, tabIndex=13, image="zoom", comment="<^P> Qry Account Class.";
+ButtonEdit giu225=giu_file.giu225, action=controlp, tabIndex=14, image="zoom", comment="<^P> Qry Account Class.";
+ButtonEdit giu226=giu_file.giu226, action=controlp, tabIndex=15, image="zoom", comment="<^P> Qry Account Class.";
+ComboBox giu19=giu_file.giu19, tabIndex=16, required, queryEditable, items=(("1", "Current Assets-Cash"),("2", "Current Assets-Short-Term Investments"),("3", "Current Assets-Accounts Receivable"),("4", "Current Liabilities-Allowance for Uncollectible Accounts-Accounts Receivable"),("5", "Current Assets-Inventory"),("6", "Current Liabilities-Allowance for Reduction of Inventory to Market"),("7", "Current Assets-Prepaid Expenses"),("8", "Current Assets-Others"),("9", "Funds and Long-term Investments-Funds"),("10", "Funds and Long-term Investments-Long-term Investments"),("11", "Funds and Long-term Investments-Long-term Receivables"),("12", "Property, Plant, and Equipments"),("13", "Other Assets"),("14", "Current Liabilities-Short-Term Borrowings"),("15", "Current Liabilities-Accounts Payable"),("16", "Current Liabilities-Advance Receipts"),("17", "Long-Term Liabilities"),("18", "Current Liabilities-Others"),("19", "Capital"),("20", "Surplus From Assets"),("21", "Retained Earnings"),("22", "Cumulative Transation Adjustment"),("23", "Sales Revenue"),("24", "Other Income"),("25", "Cost of Goods Sold"),("26", "Cost of Goods Sold-Other"),("27", "Operation Expenses"),("28", "Non-Operation Revenue and Expenses, Other Income"),("29", "Income Taxes"),("30", "Other"),("31", "Interest Expense"),("32", "Intangible Asset"),("33", "Other Liabilities"),("34", "Unrealize Revaluate Appreciate"),("35", "Long_term Investments"),("36", "Stock"),("37", "Expense"));
+Edit giu13=giu_file.giu13, tabIndex=24, comment="Report Structure Extra Desc";
+Edit giu14=giu_file.giu14, tabIndex=25;
+Group group04:group04, text="Transcation Code Control";
+CheckBox giu20=giu_file.giu20, tabIndex=26, text="Contra Voucher Line Details Control", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox giu222=giu_file.giu222, tabIndex=27, queryEditable, items=(("1", "Debit"),("2", "Credit"));
+Label dummy01:dummy01, text="giu31";
+Label dummy02:dummy02, text="ahe02";
+Label dummy03:dummy03, text="giu311";
+ButtonEdit giu15=giu_file.giu15, action=controlp, tabIndex=28, image="zoom", comment="<^P>Qry ahe01";
+Edit ahe02_1=formonly.ahe02_1 type CHAR, tabIndex=29, noEntry;
+ComboBox giu151=giu_file.giu151, tabIndex=30, queryEditable, comment="Control Method", items=(("1", "Enter, or Blank"),("2", "Enter, No Checking"),("3", "Enter and Checking"));
+ButtonEdit giu16=giu_file.giu16, action=controlp, tabIndex=31, image="zoom", comment="<^P>Qry ahe01";
+Edit ahe02_2=formonly.ahe02_2 type CHAR, tabIndex=32, noEntry;
+ComboBox giu161=giu_file.giu161, tabIndex=33, queryEditable, comment="Control Method", items=(("1", "Enter, or Blank"),("2", "Enter, No Checking"),("3", "Enter and Checking"));
+ButtonEdit giu17=giu_file.giu17, action=controlp, tabIndex=34, image="zoom", comment="<^P>Qry ahe01";
+Edit ahe02_3=formonly.ahe02_3 type CHAR, tabIndex=35, noEntry;
+ComboBox giu171=giu_file.giu171, tabIndex=36, queryEditable, comment="Control Method", items=(("1", "Enter, or Blank"),("2", "Enter, No Checking"),("3", "Enter and Checking"));
+ButtonEdit giu18=giu_file.giu18, action=controlp, tabIndex=37, image="zoom", comment="<^P>Qry ahe01";
+Edit ahe02_4=formonly.ahe02_4 type CHAR, tabIndex=38, noEntry;
+ComboBox giu181=giu_file.giu181, tabIndex=39, queryEditable, comment="Control Method", items=(("1", "Enter, or Blank"),("2", "Enter, No Checking"),("3", "Enter and Checking"));
+ButtonEdit giu31=giu_file.giu31, action=controlp, tabIndex=40, image="zoom", comment="<^P>Qry ahe01";
+Edit ahe02_5=formonly.ahe02_5 type CHAR, tabIndex=41, noEntry;
+ComboBox giu311=giu_file.giu311, tabIndex=42, queryEditable, comment="Control Method", items=(("1", "Enter, or Blank"),("2", "Enter, No Checking"),("3", "Enter and Checking"));
+ButtonEdit giu32=giu_file.giu32, action=controlp, tabIndex=43, image="zoom", comment="<^P>Qry ahe01";
+Edit ahe02_6=formonly.ahe02_6 type CHAR, tabIndex=44, noEntry;
+ComboBox giu321=giu_file.giu321, tabIndex=45, queryEditable, comment="Control Method", items=(("1", "Enter, or Blank"),("2", "Enter, No Checking"),("3", "Enter and Checking"));
+ButtonEdit giu33=giu_file.giu33, action=controlp, tabIndex=46, image="zoom", comment="<^P>Qry ahe01";
+Edit ahe02_7=formonly.ahe02_7 type CHAR, tabIndex=47, noEntry;
+ComboBox giu331=giu_file.giu331, tabIndex=48, queryEditable, comment="Control Method", items=(("1", "Enter, or Blank"),("2", "Enter, No Checking"),("3", "Enter and Checking"));
+ButtonEdit giu34=giu_file.giu34, action=controlp, tabIndex=49, image="zoom", comment="<^P>Qry ahe01";
+Edit ahe02_8=formonly.ahe02_8 type CHAR, tabIndex=50, noEntry;
+ComboBox giu341=giu_file.giu341, tabIndex=51, queryEditable, comment="Control Method", items=(("1", "Enter, or Blank"),("2", "Enter, No Checking"),("3", "Enter and Checking"));
+ButtonEdit giu35=giu_file.giu35, action=controlp, tabIndex=52, image="zoom", comment="<^P>Qry ahe01";
+Edit ahe02_9=formonly.ahe02_9 type CHAR, tabIndex=53, noEntry;
+ComboBox giu351=giu_file.giu351, tabIndex=54, queryEditable, comment="Control Method", items=(("1", "Enter, or Blank"),("2", "Enter, No Checking"),("3", "Enter and Checking"));
+ButtonEdit giu36=giu_file.giu36, action=controlp, tabIndex=55, image="zoom", comment="<^P>Qry ahe01";
+Edit ahe02_10=formonly.ahe02_10 type CHAR, tabIndex=56, noEntry;
+ComboBox giu361=giu_file.giu361, tabIndex=57, queryEditable, comment="Control Method", items=(("1", "Enter, or Blank"),("2", "Enter, No Checking"),("3", "Enter and Checking"));
+ButtonEdit giu37=giu_file.giu37, action=controlp, tabIndex=58, image="zoom", comment="<^P>Qry ahe01";
+Edit ahe02_11=formonly.ahe02_11 type CHAR, tabIndex=59, noEntry;
+ComboBox giu371=giu_file.giu371, tabIndex=60, queryEditable, comment="Control Method", items=(("1", "Enter, or Blank"),("2", "Enter, No Checking"),("3", "Enter and Checking"),("4", "Enter and Checking and NOT NULL"));
+Edit giuuser=giu_file.giuuser, tabIndex=61, noEntry;
+Edit giumodu=giu_file.giumodu, tabIndex=62, noEntry;
+Edit giuacti=giu_file.giuacti, tabIndex=63, noEntry;
+Edit giugrup=giu_file.giugrup, tabIndex=64, noEntry;
+DateEdit giudate=giu_file.giudate, tabIndex=65, noEntry;
+Edit giuoriu=giu_file.giuoriu, tabIndex=66, noEntry;
+Edit giuorig=giu_file.giuorig, tabIndex=67, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=69, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(giu_file.giu00,giu_file.giu39,giu_file.giu01,giu_file.giu02,formonly.imgmksg,giu_file.giu03,giu_file.giu04,giu_file.giu06,giu_file.giu09,giu_file.giu12,giu_file.giu38,giu_file.giu07,giu_file.giu08,giu_file.giu24,giu_file.giu05,giu_file.giu21,giu_file.giu23,giu_file.giu42,giu_file.giu221,giu_file.giu223,giu_file.giu224,giu_file.giu225,giu_file.giu226,giu_file.giu19,giu_file.giu13,giu_file.giu14,giu_file.giu20,giu_file.giu222,giu_file.giu15,formonly.ahe02_1,giu_file.giu151,giu_file.giu16,formonly.ahe02_2,giu_file.giu161,giu_file.giu17,formonly.ahe02_3,giu_file.giu171,giu_file.giu18,formonly.ahe02_4,giu_file.giu181,giu_file.giu31,formonly.ahe02_5,giu_file.giu311,giu_file.giu32,formonly.ahe02_6,giu_file.giu321,giu_file.giu33,formonly.ahe02_7,giu_file.giu331,giu_file.giu34,formonly.ahe02_8,giu_file.giu341,giu_file.giu35,formonly.ahe02_9,giu_file.giu351,giu_file.giu36,formonly.ahe02_10,giu_file.giu361,giu_file.giu37,formonly.ahe02_11,giu_file.giu371,giu_file.giuuser,giu_file.giumodu,giu_file.giuacti,giu_file.giugrup,giu_file.giudate,giu_file.giuoriu,giu_file.giuorig,formonly.cnt)
+END -- INSTRUCTIONS
+

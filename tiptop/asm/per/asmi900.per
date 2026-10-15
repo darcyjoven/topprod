@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asmi900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asmi900")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr874
+{
+ <G group01                                             >
+  Report #            [smw01     ]
+  Report Length       [smw06     ]
+  Report Name         [smw02                         ]
+ <                                                      >
+
+}
+END -- gr874
+END -- page01
+Page info(text="Info")
+Grid gr875
+{
+ Record Owner        [smwuser   ] Last Modified by    [smwmodu   ] Data Valid Code     [smwacti   ]
+ Department          [smwgrup   ] Create/Modify Date  [smwdate   ]
+ Record Orig.        [smworiu   ]
+ Dept Orig.          [smworig   ]
+}
+END -- gr875
+END -- info
+END -- folder01
+Table s_smx
+{
+[smx02|smx03|smx04|smx05     |descr                         |smx06 ]
+[smx02|smx03|smx04|smx05     |descr                         |smx06 ]
+[smx02|smx03|smx04|smx05     |descr                         |smx06 ]
+[smx02|smx03|smx04|smx05     |descr                         |smx06 ]
+[smx02|smx03|smx04|smx05     |descr                         |smx06 ]
+[smx02|smx03|smx04|smx05     |descr                         |smx06 ]
+[smx02|smx03|smx04|smx05     |descr                         |smx06 ]
+[smx02|smx03|smx04|smx05     |descr                         |smx06 ]
+[smx02|smx03|smx04|smx05     |descr                         |smx06 ]
+[smx02|smx03|smx04|smx05     |descr                         |smx06 ]
+
+}
+END -- s_smx
+Grid gr876
+{
+ --------- Rows [cnt   ] / [cn2   ]---------
+
+}
+END -- gr876
+END -- VBox1
+END -- asmi900
+
+TABLES
+smx_file,
+smw_file
+ATTRIBUTES
+Group group01:group01;
+Edit smw01=smw_file.smw01, tabIndex=1, not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit smw06=smw_file.smw06, tabIndex=2, noEntry;
+Edit smw02=smw_file.smw02, tabIndex=3, comment="<^T>Contents of Head";
+Edit smwuser=smw_file.smwuser, tabIndex=4, noEntry;
+Edit smwmodu=smw_file.smwmodu, tabIndex=5, noEntry;
+Edit smwacti=smw_file.smwacti, tabIndex=6, noEntry, upShift;
+Edit smwgrup=smw_file.smwgrup, tabIndex=7, noEntry;
+DateEdit smwdate=smw_file.smwdate, tabIndex=8, noEntry;
+Edit smworiu=smw_file.smworiu, tabIndex=501, noEntry;
+Edit smworig=smw_file.smworig, tabIndex=502, noEntry;
+Edit smx02=smx_file.smx02, tabIndex=9, title="Line", not null, required;
+Edit smx03=smx_file.smx03, tabIndex=10, title="Cols", not null, required;
+Edit smx04=smx_file.smx04, tabIndex=11, title="Num", not null, required, comment="No Repeated Line # + Field #";
+ButtonEdit smx05=smx_file.smx05, action=controlp, tabIndex=12, title="Col NO.", not null, required, image="zoom", comment="<^P>Qry Field   ";
+Edit descr=formonly.descr type CHAR, tabIndex=13, title="Field Source", noEntry;
+Edit smx06=smx_file.smx06, tabIndex=14, title="Length", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_smx(smx_file.smx02,smx_file.smx03,smx_file.smx04,smx_file.smx05,formonly.descr,smx_file.smx06)
+SCREEN RECORD Undefined(smw_file.smw01,smw_file.smw06,smw_file.smw02,smw_file.smwuser,smw_file.smwmodu,smw_file.smwacti,smw_file.smwgrup,smw_file.smwdate,smw_file.smworiu,smw_file.smworig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

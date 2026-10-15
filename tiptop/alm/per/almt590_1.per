@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt590_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"almi553")
+VBox vb7
+Folder pc6
+Page main(text=%"Main")
+Table s_lni
+{
+[lszplant|azp02   |lsz03           |azp02_1       |lsz05   |lsz04   |oba02   |lsz10   ]
+[lszplant|azp02   |lsz03           |azp02_1       |lsz05   |lsz04   |oba02   |lsz10   ]
+[lszplant|azp02   |lsz03           |azp02_1       |lsz05   |lsz04   |oba02   |lsz10   ]
+[lszplant|azp02   |lsz03           |azp02_1       |lsz05   |lsz04   |oba02   |lsz10   ]
+[lszplant|azp02   |lsz03           |azp02_1       |lsz05   |lsz04   |oba02   |lsz10   ]
+
+}
+END -- s_lni
+END -- main
+END -- pc6
+Grid gr2
+{
+ ----------Rows[cn2   ]----------
+
+}
+END -- gr2
+END -- vb7
+END -- Form6
+
+TABLES
+lsz_file
+ATTRIBUTES
+Edit lszplant=lsz_file.lszplant, tabIndex=1, title="lszplant", noEntry;
+Edit azp02=formonly.azp02 type CHAR, tabIndex=2, title="azp02", noEntry;
+ButtonEdit lsz03=lsz_file.lsz03, action=controlp, tabIndex=3, title="lsz03", not null, required, image="zoom.png";
+Edit azp02_1=formonly.azp02_1 type CHAR, tabIndex=4, title="azp02_1", noEntry;
+ButtonEdit lsz05=lsz_file.lsz05, action=controlp, tabIndex=5, title="lsz05", image="zoom.png";
+Edit lsz04=lsz_file.lsz04, tabIndex=6, title="lsz04", noEntry;
+Edit oba02=formonly.oba02 type CHAR, tabIndex=7, title="oba02", noEntry;
+CheckBox lsz10=lsz_file.lsz10, tabIndex=8, title="lsz10", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lsz(lsz_file.lszplant,formonly.azp02,lsz_file.lsz03,formonly.azp02_1,lsz_file.lsz05,lsz_file.lsz04,formonly.oba02,lsz_file.lsz10)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

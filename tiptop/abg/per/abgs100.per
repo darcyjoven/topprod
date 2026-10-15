@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgs100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgs100")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                 >
+  Budget Year                 [bgz14     ]
+  Estimated Adjust            [bgz15     ]%
+  Adjust Salary Initial Month [bgz16     ]
+ <                                                          >
+ <G group02                                                 >
+  Expense Apportionment 1st Quarter Weights[bgz17     ]
+  Expense Apportionment 2nd Quarter Weights[bgz18     ]
+  Expense Apportionment 3rd Quarter Weights[bgz19     ]
+  Expense Apportionment 4th Quarter Weights[bgz20     ]
+ <                                                          >
+ <G group03                                                          >
+  Base Pay Expense Item        [bgz33     ][bgs02               ]
+  Labor Insurance Expense Item [bgz34     ][bgs02_1             ]
+  Health Insurance Expense Item[bgz35     ][bgs02_2             ]
+ <                                                                   >
+
+}
+END -- Grid1
+END -- VBox1
+END -- abgs100
+
+TABLES
+bgz_file
+ATTRIBUTES
+Group group01:group01;
+Edit bgz14=bgz_file.bgz14, tabIndex=1, not null, required;
+Edit bgz15=bgz_file.bgz15, tabIndex=2, not null, required;
+Edit bgz16=bgz_file.bgz16, tabIndex=3, not null, required;
+Group group02:group02;
+Edit bgz17=bgz_file.bgz17, tabIndex=4, not null, required;
+Edit bgz18=bgz_file.bgz18, tabIndex=5, not null, required;
+Edit bgz19=bgz_file.bgz19, tabIndex=6, not null, required;
+Edit bgz20=bgz_file.bgz20, tabIndex=7, not null, required;
+Group group03:group03;
+ButtonEdit bgz33=bgz_file.bgz33, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry Expense Item";
+Edit bgs02=formonly.bgs02 type CHAR, tabIndex=9, noEntry;
+ButtonEdit bgz34=bgz_file.bgz34, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry Expense Item";
+Edit bgs02_1=formonly.bgs02_1 type CHAR, tabIndex=11, noEntry;
+ButtonEdit bgz35=bgz_file.bgz35, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Expense Item";
+Edit bgs02_2=formonly.bgs02_2 type CHAR, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bgz_file.bgz14,bgz_file.bgz15,bgz_file.bgz16,bgz_file.bgz17,bgz_file.bgz18,bgz_file.bgz19,bgz_file.bgz20,bgz_file.bgz33,formonly.bgs02,bgz_file.bgz34,formonly.bgs02_1,bgz_file.bgz35,formonly.bgs02_2)
+END -- INSTRUCTIONS
+

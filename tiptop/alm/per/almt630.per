@@ -1,0 +1,121 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt630.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almt630")
+VBox vb3
+Folder pc2
+Page main(text="Main")
+Grid gr4
+{
+ Doc No.        [lpv01               ]                    <G group1                      >  <G group2                      >
+ Store No.      [lpvplant            |rtz13            ]    lpv35      [lpv35           ]     lpv36      [lpv36           ]
+ legal          [lpvlegal            |azt02            ]    lpv21      [lpv21           ]     lpv22      [lpv22           ]
+ card No.       [lpv03               ]                      lpv23      [lpv23           ]     lpv231     [lpv231          ]
+ kinds No.      [lpv12               |lph02            ]    lpv24      [lpv24           ]     lpv232     [lpv232          ]
+ balance        [lpv04               ]                      lpv25      [lpv25           ]     lpv241     [lpv241          ]
+ Discount rat   [lpv05               ]                      lpv26      [lpv26           ]     lpv242     [lpv242          ]
+ Refund amount  [lpv07               ]                      lpv27      [lpv27           ]     lpv33      [lpv33           ]
+ amount         [lpv14               |imgmksg]              lpv28      [lpv28           ]     lpv34      [lpv34           ]
+ status         [lpv08               |       ]              lpv29      [lpv29           ]
+ checker        [lpv09               ]                      lpv30      [lpv30           ]
+ checkda        [lpv10               ]                      lpv31      [lpv31           ]
+ Contra No.     [lpv13               ]                      lpv32      [lpv32           ]
+ Pos no.        [lpv15               ]
+ memo           [lpv11                       ]              ----------------------------      ----------------------------
+                [                            ]              sum1       [sum1            ]     sum2       [sum2            ]
+                                                          <                              >  <                              >
+
+
+
+}
+END -- gr4
+END -- main
+Page info(text="Info")
+Grid gr5
+{
+
+ owner [lpvuser   ]              modu[lpvmodu       ]       acti [lpvacti   ]
+ grup  [lpvgrup   ]              date[lpvdate       ]       crat [lpvcrat   ]
+ Oriu. [lpvoriu   ]              Orig[lpvorig       ]
+
+}
+END -- gr5
+END -- info
+END -- pc2
+Grid gr6
+{
+
+ ------- Rows[idx ]/ [cnt  ]-------
+
+}
+END -- gr6
+END -- vb3
+END -- almt630
+
+TABLES
+lpv_file
+ATTRIBUTES
+ButtonEdit lpv01=lpv_file.lpv01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Group group1:Group1, text=%"return cash";
+Edit lpv35=lpv_file.lpv35, tabIndex=519, noEntry;
+Edit lpv21=lpv_file.lpv21, tabIndex=499, noEntry;
+Edit lpv23=lpv_file.lpv23, tabIndex=500, noEntry;
+Edit lpv24=lpv_file.lpv24, tabIndex=502, noEntry;
+Edit lpv25=lpv_file.lpv25, tabIndex=501, noEntry;
+Edit lpv26=lpv_file.lpv26, tabIndex=504, noEntry;
+Edit lpv27=lpv_file.lpv27, tabIndex=505, noEntry;
+Edit lpv28=lpv_file.lpv28, tabIndex=506, noEntry;
+Edit lpv29=lpv_file.lpv29, tabIndex=503, noEntry;
+Edit lpv30=lpv_file.lpv30, tabIndex=509, noEntry;
+Edit lpv31=lpv_file.lpv31, tabIndex=508, noEntry;
+Edit lpv32=lpv_file.lpv32, tabIndex=507, noEntry;
+Edit sum1=formonly.sum1 type SMALLINT, tabIndex=517, noEntry;
+Group group2:Group2, text=%"no-return cash";
+Edit lpv36=lpv_file.lpv36, tabIndex=520, noEntry;
+Edit lpv22=lpv_file.lpv22, tabIndex=516, noEntry;
+Edit lpv231=lpv_file.lpv231, tabIndex=515, noEntry;
+Edit lpv232=lpv_file.lpv232, tabIndex=514, noEntry;
+Edit lpv241=lpv_file.lpv241, tabIndex=513, noEntry;
+Edit lpv242=lpv_file.lpv242, tabIndex=512, noEntry;
+Edit lpv33=lpv_file.lpv33, tabIndex=511, noEntry;
+Edit lpv34=lpv_file.lpv34, tabIndex=510, noEntry;
+Edit sum2=formonly.sum2 type SMALLINT, tabIndex=518, noEntry;
+ButtonEdit lpvplant=lpv_file.lpvplant, action=controlp, tabIndex=24, noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=23, noEntry;
+ButtonEdit lpvlegal=lpv_file.lpvlegal, action=controlp, tabIndex=26, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=25, noEntry;
+ButtonEdit lpv03=lpv_file.lpv03, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+ButtonEdit lpv12=lpv_file.lpv12, action=controlp, tabIndex=17, noEntry, image="zoom.png";
+Edit lph02=formonly.lph02 type CHAR, tabIndex=4, noEntry;
+Edit lpv04=lpv_file.lpv04, tabIndex=6, noEntry;
+Edit lpv05=lpv_file.lpv05, tabIndex=8, noEntry;
+Edit lpv07=lpv_file.lpv07, tabIndex=2, noEntry;
+Edit lpv14=lpv_file.lpv14, tabIndex=498, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ComboBox lpv08=lpv_file.lpv08, tabIndex=5, default = "N", noEntry, not null, required, items=(("Y", "checked"),("N", "unchecked"),("X", "void"));
+Edit lpv09=lpv_file.lpv09, tabIndex=7, noEntry, not null, required;
+DateEdit lpv10=lpv_file.lpv10, tabIndex=9, noEntry, not null, required;
+Edit lpv13=lpv_file.lpv13, tabIndex=22, noEntry;
+Edit lpv15=lpv_file.lpv15, tabIndex=521, noEntry, scroll;
+TextEdit lpv11=lpv_file.lpv11, tabIndex=10, stretch=NONE;
+Edit lpvuser=lpv_file.lpvuser, tabIndex=11, noEntry;
+Edit lpvmodu=lpv_file.lpvmodu, tabIndex=12, noEntry;
+Edit lpvacti=lpv_file.lpvacti, tabIndex=13, default = "Y", noEntry;
+Edit lpvgrup=lpv_file.lpvgrup, tabIndex=14, noEntry;
+DateEdit lpvdate=lpv_file.lpvdate, tabIndex=15, noEntry;
+DateEdit lpvcrat=lpv_file.lpvcrat, tabIndex=16, noEntry;
+Edit lpvoriu=lpv_file.lpvoriu, tabIndex=495, noEntry;
+Edit lpvorig=lpv_file.lpvorig, tabIndex=496, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=18, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=497, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lpv_file.lpv01,lpv_file.lpv07,lpv_file.lpvplant,formonly.rtz13,lpv_file.lpv14,lpv_file.lpvlegal,formonly.azt02,lpv_file.lpv08,formonly.imgmksg,lpv_file.lpv03,lpv_file.lpv09,lpv_file.lpv12,formonly.lph02,lpv_file.lpv10,lpv_file.lpv04,lpv_file.lpv13,lpv_file.lpv05,lpv_file.lpv11,lpv_file.lpvuser,lpv_file.lpvmodu,lpv_file.lpvacti,lpv_file.lpvgrup,lpv_file.lpvdate,lpv_file.lpvcrat,lpv_file.lpvoriu,lpv_file.lpvorig,formonly.idx,formonly.cnt,lpv_file.lpv21,lpv_file.lpv23,lpv_file.lpv25,lpv_file.lpv24,lpv_file.lpv29,lpv_file.lpv26,lpv_file.lpv27,lpv_file.lpv28,lpv_file.lpv32,lpv_file.lpv31,lpv_file.lpv30,lpv_file.lpv34,lpv_file.lpv33,lpv_file.lpv242,lpv_file.lpv241,lpv_file.lpv232,lpv_file.lpv231,lpv_file.lpv22,formonly.sum1,formonly.sum2,lpv_file.lpv35,lpv_file.lpv36)
+SCREEN RECORD Record1(lpv_file.lpv15)
+END -- INSTRUCTIONS
+

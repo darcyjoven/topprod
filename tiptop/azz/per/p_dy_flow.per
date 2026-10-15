@@ -1,0 +1,115 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_dy_flow.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_dy_flow")
+VBox VBox1
+Grid grid01
+{
+ <G group01                                                                >
+  Main Flow Category ID [gbk01          ]
+ [dummy01                                                               ]
+ <                                                                         >
+
+}
+END -- grid01
+Folder pc743
+Page page01(action=modify_layer1, text="Layer1")
+Table s_gbk1
+{
+[gbk02_1     |gbk04_1  |gbk03_1                      |gbk05_1         |gbk06_1           ]
+[gbk02_1     |gbk04_1  |gbk03_1                      |gbk05_1         |gbk06_1           ]
+[gbk02_1     |gbk04_1  |gbk03_1                      |gbk05_1         |gbk06_1           ]
+[gbk02_1     |gbk04_1  |gbk03_1                      |gbk05_1         |gbk06_1           ]
+[gbk02_1     |gbk04_1  |gbk03_1                      |gbk05_1         |gbk06_1           ]
+
+}
+END -- s_gbk1
+END -- page01
+Page page02(action=modify_layer2, text="Layer2")
+VBox VBox2
+Grid gr3185
+{
+ Sub Category Layer ID [gbk01_1        ]
+
+}
+END -- gr3185
+Table s_gbk2
+{
+[gbk02_2     |gbk04_2  |gbk03_2                      |gbk05_2         |gbk06_2           ]
+[gbk02_2     |gbk04_2  |gbk03_2                      |gbk05_2         |gbk06_2           ]
+[gbk02_2     |gbk04_2  |gbk03_2                      |gbk05_2         |gbk06_2           ]
+[gbk02_2     |gbk04_2  |gbk03_2                      |gbk05_2         |gbk06_2           ]
+[gbk02_2     |gbk04_2  |gbk03_2                      |gbk05_2         |gbk06_2           ]
+
+}
+END -- s_gbk2
+END -- VBox2
+END -- page02
+Page page03(action=modify_layer3, text="Layer3")
+VBox VBox3
+Grid gr3186
+{
+ Sub Category Layer ID [gbk01_2        ]
+
+}
+END -- gr3186
+Table s_gbk3
+{
+[gbk02_3     |gbk04_3  |gbk03_3                      |gbk05_3         |gbk06_3           ]
+[gbk02_3     |gbk04_3  |gbk03_3                      |gbk05_3         |gbk06_3           ]
+[gbk02_3     |gbk04_3  |gbk03_3                      |gbk05_3         |gbk06_3           ]
+[gbk02_3     |gbk04_3  |gbk03_3                      |gbk05_3         |gbk06_3           ]
+[gbk02_3     |gbk04_3  |gbk03_3                      |gbk05_3         |gbk06_3           ]
+
+}
+END -- s_gbk3
+END -- VBox3
+END -- page03
+END -- pc743
+Grid gr3187
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3187
+END -- VBox1
+END -- p_dy_flow
+
+TABLES
+gbk_file
+ATTRIBUTES
+Group group01:group01;
+Edit gbk01=gbk_file.gbk01, tabIndex=1, not null, required;
+Label dummy01:dummy01, text="If the flow Node is not program, must be use \'dummy\' name";
+Edit gbk02_1=formonly.gbk02_1 type CHAR, tabIndex=2, title="Sequence", not null, required;
+ComboBox gbk04_1=formonly.gbk04_1 type CHAR, tabIndex=3, title="Language", not null, required, queryEditable;
+Edit gbk03_1=formonly.gbk03_1 type CHAR, tabIndex=4, title="Sub Category or Program Code", not null, required;
+TextEdit gbk05_1=formonly.gbk05_1 type CHAR, tabIndex=5, title="Button Name", stretch=NONE;
+Edit gbk06_1=formonly.gbk06_1 type CHAR, tabIndex=6, title="Button Comment", scroll;
+Edit gbk01_1=formonly.gbk01_1 type CHAR, tabIndex=7;
+Edit gbk02_2=formonly.gbk02_2 type CHAR, tabIndex=8, title="Sequence", not null, required;
+ComboBox gbk04_2=formonly.gbk04_2 type CHAR, tabIndex=9, title="Language", not null, required, queryEditable;
+Edit gbk03_2=formonly.gbk03_2 type CHAR, tabIndex=10, title="Sub Category or Program Code", not null, required;
+TextEdit gbk05_2=formonly.gbk05_2 type CHAR, tabIndex=11, title="Button Name", stretch=NONE;
+Edit gbk06_2=formonly.gbk06_2 type CHAR, tabIndex=12, title="Button Comment", scroll;
+Edit gbk01_2=formonly.gbk01_2 type CHAR, tabIndex=13;
+Edit gbk02_3=formonly.gbk02_3 type CHAR, tabIndex=14, title="Sequence", not null, required;
+ComboBox gbk04_3=formonly.gbk04_3 type CHAR, tabIndex=15, title="Language", not null, required, queryEditable;
+Edit gbk03_3=formonly.gbk03_3 type CHAR, tabIndex=16, title="Sub Category or Program Code", not null, required;
+TextEdit gbk05_3=formonly.gbk05_3 type CHAR, tabIndex=17, title="Button Name", stretch=NONE;
+Edit gbk06_3=formonly.gbk06_3 type CHAR, tabIndex=18, title="Button Comment", scroll;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gbk1(formonly.gbk02_1,formonly.gbk04_1,formonly.gbk03_1,formonly.gbk05_1,formonly.gbk06_1)
+SCREEN RECORD s_gbk2(formonly.gbk02_2,formonly.gbk04_2,formonly.gbk03_2,formonly.gbk05_2,formonly.gbk06_2)
+SCREEN RECORD s_gbk3(formonly.gbk02_3,formonly.gbk04_3,formonly.gbk03_3,formonly.gbk05_3,formonly.gbk06_3)
+SCREEN RECORD Undefined(gbk_file.gbk01,formonly.gbk01_1,formonly.gbk01_2,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

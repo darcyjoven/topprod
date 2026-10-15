@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi221_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi221_1")
+VBox vb2
+Folder pc471
+Page page01(text="Page01")
+ScrollGrid gr2058
+{
+
+[dummy01       ][dummy02     ][dummy03    ][dummy04                             ]
+[ocd02         ][ocd03       ][ocd04      |ocd221                             ]
+                                          [ocd222                             ]
+                                          [ocd223                             ]
+                                          [ocd230                             ]
+                                          [ocd231                             ]
+[ocd02         ][ocd03       ][ocd04      |ocd221                             ]
+                                          [ocd222                             ]
+                                          [ocd223                             ]
+                                          [ocd230                             ]
+                                          [ocd231                             ]
+[ocd02         ][ocd03       ][ocd04      |ocd221                             ]
+                                          [ocd222                             ]
+                                          [ocd223                             ]
+                                          [ocd230                             ]
+                                          [ocd231                             ]
+
+}
+END -- gr2058
+END -- page01
+END -- pc471
+Grid gr2059
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2059
+END -- vb2
+END -- axmi221_1
+
+TABLES
+ocd_file
+ATTRIBUTES
+Label dummy01:dummy01, text="Address Code";
+Label dummy02:dummy02, text="Description";
+Label dummy03:dummy03, text="ZIP Code";
+Label dummy04:dummy04, text="Address";
+ButtonEdit ocd02=ocd_file.ocd02, action=controlp, tabIndex=1, image="zoom", comment="No Blank/Repeated Field";
+Edit ocd03=ocd_file.ocd03, tabIndex=2;
+Edit ocd04=ocd_file.ocd04, tabIndex=3;
+Edit ocd221=ocd_file.ocd221, tabIndex=4;
+Edit ocd222=ocd_file.ocd222, tabIndex=5;
+Edit ocd223=ocd_file.ocd223, tabIndex=6;
+Edit ocd230=ocd_file.ocd230, tabIndex=8;
+Edit ocd231=ocd_file.ocd231, tabIndex=9;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry, color = yellow;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ocd(ocd_file.ocd02,ocd_file.ocd03,ocd_file.ocd04,ocd_file.ocd221,ocd_file.ocd222,ocd_file.ocd223,ocd_file.ocd230,ocd_file.ocd231)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

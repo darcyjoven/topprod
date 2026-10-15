@@ -1,0 +1,127 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axs/42f/axsr100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axsr100")
+Folder pc1
+Page page01(text="Main")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                 ><G group02                                 >
+  Plant No.           [azp01               ]  Currency            [oea23               ]
+  Department No.      [oea15               ]  Product Class       [ima131              ]
+  Salesman            [oea14               ]  Main group Cd       [ima06               ]
+  Sales Class.(1)     [oea25               ]  Product No.         [ima01               ]
+  Sls Class.(2)       [oea26               ]  Area                [occ20               ]
+  Accounts Cust       [oea03               ]  Country             [occ21               ]
+  Acc Cust Cls.       [oca01               ]  Local               [occ22               ]
+  Shipping Cust       [oea04               ]
+ <                                          > Other group Cd(1)   [ima09               ]
+                                              Other group Cd(2)   [ima10               ]
+                                              Other group Cd(3)   [ima11               ]
+                                             <                                          >
+}
+END -- gr1
+END -- VBox1
+END -- page01
+Page page02(text="Data")
+VBox VBox2
+Group group03(text="INPUT")
+VBox VBox3
+Grid gr2
+{
+ <G group04                                                                           >
+ [s1                  ] [s2                  ] [s3                  ]
+ <                                                                                    >
+
+
+}
+END -- gr2
+Group group05(text="Input")
+VBox VBox4
+Grid gr3
+{
+ <G group06           ><G group07           ><G group08                                    >
+ [a1                  ][b1                  ] Year                [y1        ]
+                                              Period              [m1b       ]-[m1e       ]
+                                              Print Rows          [pr        ]
+
+ <                    ><                    ><                                             >
+
+}
+END -- gr3
+END -- VBox4
+END -- group05
+Grid gr4
+{
+ <G group10           ><G group11                                                               >
+ [ch                  ][z                                                 ]
+                       [w                                                 ]
+                       [y                                                 ]
+ <                    ><                                                                        >
+}
+END -- gr4
+END -- VBox3
+END -- group03
+Grid gr5
+{
+[more                        ]
+
+}
+END -- gr5
+END -- VBox2
+END -- page02
+END -- pc1
+END -- axsr100
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit azp01=formonly.azp01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit oea15=formonly.oea15 type VARCHAR, tabIndex=2;
+Edit oea14=formonly.oea14 type VARCHAR, tabIndex=3;
+Edit oea25=formonly.oea25 type VARCHAR, tabIndex=4;
+Edit oea26=formonly.oea26 type VARCHAR, tabIndex=5;
+Edit oea03=formonly.oea03 type VARCHAR, tabIndex=6;
+Edit oca01=formonly.oca01 type VARCHAR, tabIndex=7;
+Edit oea04=formonly.oea04 type VARCHAR, tabIndex=8;
+Group group02:group02, text="QBE";
+Edit oea23=formonly.oea23 type VARCHAR, tabIndex=9;
+Edit ima131=formonly.ima131 type VARCHAR, tabIndex=10;
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=11;
+Edit ima01=formonly.ima01 type VARCHAR, tabIndex=12;
+Edit occ20=formonly.occ20 type VARCHAR, tabIndex=13;
+Edit occ21=formonly.occ21 type VARCHAR, tabIndex=14;
+Edit occ22=formonly.occ22 type VARCHAR, tabIndex=15;
+ButtonEdit ima09=formonly.ima09 type VARCHAR, action=controlp, tabIndex=30, image="zoom";
+ButtonEdit ima10=formonly.ima10 type VARCHAR, action=controlp, tabIndex=31, image="zoom";
+ButtonEdit ima11=formonly.ima11 type VARCHAR, action=controlp, tabIndex=32, image="zoom";
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=16, queryEditable, items=(("1", "Plant No."),("2", "Department No."),("3", "Salesman"),("4", "Sales Class.(1)"),("5", "Sales Class.(2)"),("6", "Accounts Cust."),("7", "Ac. Cust. Class."),("8", "Shipping Cust."),("9", "On-Hd No."),("a", "Product Class"),("b", "Main group code"),("c", "Product No."),("d", "Area"),("e", "Country"),("f", "Local"),("g", "Other Group Code(1)"),("h", "Other Group Code(2)"),("i", "Other Group Code(3)"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=17, queryEditable, items=(("1", "Plant No."),("2", "Department No."),("3", "Salesman"),("4", "Sales Class.(1)"),("5", "Sales Class.(2)"),("6", "Accounts Cust."),("7", "Ac. Cust. Class."),("8", "Shipping Cust."),("9", "On-Hd No."),("a", "Product Class"),("b", "Main group code"),("c", "Product No."),("d", "Area"),("e", "Country"),("f", "Local"),("g", "Other Group Code(1)"),("h", "Other Group Code(2)"),("i", "Other Group Code(3)"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=18, queryEditable, items=(("1", "Plant No."),("2", "Department No."),("3", "Salesman"),("4", "Sales Class.(1)"),("5", "Sales Class.(2)"),("6", "Accounts Cust."),("7", "Ac. Cust. Class."),("8", "Shipping Cust."),("9", "On-Hd No."),("a", "Product Class"),("b", "Main group code"),("c", "Product No."),("d", "Area"),("e", "Country"),("f", "Local"),("g", "Other Group Code(1)"),("h", "Other Group Code(2)"),("i", "Other Group Code(3)"));
+Group group06:group06;
+RadioGroup a1=formonly.a1 type VARCHAR, tabIndex=19, items=(("1", "Curr MM"),("2", "Curr Qt"),("3", "Curr YY"),("4", "Lst Prd"));
+Group group07:group07;
+RadioGroup b1=formonly.b1 type VARCHAR, tabIndex=20, items=(("1", "Odr Actl"),("2", "Odr Tgt"),("3", "Del Actl"),("4", "Del Tgt"));
+Group group08:group08;
+Edit y1=formonly.y1 type SMALLINT, tabIndex=21;
+Edit m1b=formonly.m1b type SMALLINT, tabIndex=22;
+Edit m1e=formonly.m1e type SMALLINT, tabIndex=23;
+Edit pr=formonly.pr type INTEGER, tabIndex=24;
+Group group10:group10, text="Curr Type";
+RadioGroup ch=formonly.ch type VARCHAR, tabIndex=25, items=(("1", "Original Currency"),("2", "Home Currency"));
+Group group11:group11, text="Print Data";
+CheckBox z=formonly.z type VARCHAR, tabIndex=26, text="Delivery Qty/Amount Deduct Sales/Return Qty/Amount", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox w=formonly.w type VARCHAR, tabIndex=27, text="Prt Conf Order", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox y=formonly.y type VARCHAR, tabIndex=28, text="Prt oly Pst Del.Nt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=29, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.oea15,formonly.oea14,formonly.oea25,formonly.oea26,formonly.oea03,formonly.oca01,formonly.oea04,formonly.oea23,formonly.ima131,formonly.ima06,formonly.ima01,formonly.occ20,formonly.occ21,formonly.occ22,formonly.s1,formonly.s2,formonly.s3,formonly.b1,formonly.y1,formonly.m1b,formonly.m1e,formonly.pr,formonly.ch,formonly.z,formonly.w,formonly.y,formonly.more,formonly.ima09,formonly.ima10,formonly.ima11,formonly.a1)
+END -- INSTRUCTIONS
+

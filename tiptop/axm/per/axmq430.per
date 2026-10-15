@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq430.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq430")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2260
+{
+ Order No.           [oea01              ]
+ Order Date          [oea02       ]
+ Modified Version    [oea06       ]
+ Accounts Customer   [oea03       ][oea032    ]
+ Shipping Customer   [oea04       ][occ02     ]
+}
+END -- gr2260
+Grid gr2261
+{
+ Employee            [oea14     ]
+ Department          [oea15     ]
+ On-Hold Reason      [oeahold   ]
+[oeaconf            ]
+
+}
+END -- gr2261
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_oem
+{
+[oem03|oem0|oem04       |oem06       |oem07  |oem10n          |oem11n       |oem12n      |oem13n              |oem15n       ]
+[oem03|oem0|oem04       |oem06       |oem07  |oem10n          |oem11n       |oem12n      |oem13n              |oem15n       ]
+[oem03|oem0|oem04       |oem06       |oem07  |oem10n          |oem11n       |oem12n      |oem13n              |oem15n       ]
+[oem03|oem0|oem04       |oem06       |oem07  |oem10n          |oem11n       |oem12n      |oem13n              |oem15n       ]
+[oem03|oem0|oem04       |oem06       |oem07  |oem10n          |oem11n       |oem12n      |oem13n              |oem15n       ]
+[oem03|oem0|oem04       |oem06       |oem07  |oem10n          |oem11n       |oem12n      |oem13n              |oem15n       ]
+[oem03|oem0|oem04       |oem06       |oem07  |oem10n          |oem11n       |oem12n      |oem13n              |oem15n       ]
+[oem03|oem0|oem04       |oem06       |oem07  |oem10n          |oem11n       |oem12n      |oem13n              |oem15n       ]
+[oem03|oem0|oem04       |oem06       |oem07  |oem10n          |oem11n       |oem12n      |oem13n              |oem15n       ]
+[oem03|oem0|oem04       |oem06       |oem07  |oem10n          |oem11n       |oem12n      |oem13n              |oem15n       ]
+}
+END -- s_oem
+Grid gr2262
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr2262
+END -- VBox1
+END -- axmq430
+
+TABLES
+oem_file,
+oea_file
+ATTRIBUTES
+Edit oea01=oea_file.oea01, tabIndex=1;
+DateEdit oea02=oea_file.oea02, tabIndex=2;
+Edit oea06=oea_file.oea06, tabIndex=3;
+ButtonEdit oea03=oea_file.oea03, action=controlp, tabIndex=4, image="zoom";
+Edit oea032=oea_file.oea032, tabIndex=5, noEntry;
+ButtonEdit oea04=oea_file.oea04, action=controlp, tabIndex=6, image="zoom";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=7, noEntry;
+ButtonEdit oea14=oea_file.oea14, action=controlp, tabIndex=8, image="zoom";
+ButtonEdit oea15=oea_file.oea15, action=controlp, tabIndex=9, image="zoom";
+Edit oeahold=oea_file.oeahold, tabIndex=10;
+CheckBox oeaconf=oea_file.oeaconf, tabIndex=11, text="Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oem03=oem_file.oem03, tabIndex=12, title="Line";
+Edit oem0=oem_file.oem08, tabIndex=13, title="Ver";
+DateEdit oem04=oem_file.oem04, tabIndex=14, title="Date Modify";
+Edit oem06=oem_file.oem06, tabIndex=15, title="Modified By";
+ComboBox oem07=oem_file.oem07, tabIndex=16, title="Action", items=(("A", %"Add"),("U", %"Update"),("R", %"Remove"));
+Edit oem10n=oem_file.oem10n, tabIndex=17, title="Product No.";
+Edit oem11n=oem_file.oem11n, tabIndex=18, title="Lot#";
+Edit oem12n=oem_file.oem12n, tabIndex=19, title="Qty";
+Edit oem13n=oem_file.oem13n, tabIndex=20, title="Unit Price";
+Edit oem15n=oem_file.oem15n, tabIndex=21, title="Delivery Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oem(oem_file.oem03,oem_file.oem08,oem_file.oem04,oem_file.oem06,oem_file.oem07,oem_file.oem10n,oem_file.oem11n,oem_file.oem12n,oem_file.oem13n,oem_file.oem15n)
+SCREEN RECORD Undefined(oea_file.oea01,oea_file.oea02,oea_file.oea06,oea_file.oea03,oea_file.oea032,oea_file.oea04,formonly.occ02,oea_file.oea14,oea_file.oea15,oea_file.oeahold,oea_file.oeaconf,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

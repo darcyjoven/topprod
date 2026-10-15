@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_bmp1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Cmpo Data Q ")
+Grid gr3739
+{
+ <T s_bmp                                                                    >
+ [check|bmp01                 |bmp03                 |ima02                 ]
+ [check|bmp01                 |bmp03                 |ima02                 ]
+ [check|bmp01                 |bmp03                 |ima02                 ]
+ [check|bmp01                 |bmp03                 |ima02                 ]
+ [check|bmp01                 |bmp03                 |ima02                 ]
+ [check|bmp01                 |bmp03                 |ima02                 ]
+ [check|bmp01                 |bmp03                 |ima02                 ]
+ [check|bmp01                 |bmp03                 |ima02                 ]
+ [check|bmp01                 |bmp03                 |ima02                 ]
+ [check|bmp01                 |bmp03                 |ima02                 ]
+ <                                                                           >
+
+}
+END -- gr3739
+END -- q_bmp1
+
+TABLES
+bmp_file
+ATTRIBUTES
+Table s_bmp:s_bmp;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit bmp01=bmp_file.bmp01, tabIndex=2, title="Part Number", noEntry;
+Edit bmp03=bmp_file.bmp03, tabIndex=3, title="Component", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, title="Goods Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmp(formonly.check,bmp_file.bmp01,bmp_file.bmp03,formonly.ima02)
+END -- INSTRUCTIONS
+

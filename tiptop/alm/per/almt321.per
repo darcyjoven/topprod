@@ -1,0 +1,134 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt321.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Main")
+Grid ds1
+{
+
+[label1    |lig01                    ]                               [label11   |lig09                 |oaj02                         ]
+[label2    |ligplant                 |rtz13                         ][label12   |lig10                 ]
+[label3    |liglegal                 |azt02                         ][label13   |lig11                 ]
+[label4    |lig02                    |lmb03                         ][label14   |lig12                 ]
+[label5    |lig03                    |lmc04                         ][label15   |lig13                 |gen02                         ]
+[label6    |lig04                    |lmf13                         ][label16   |ligconf               ][imgmksg]
+[label7    |lig05                    ]                               [label17   |ligconu               ][       ]
+[label8    |lig06                    ]                               [label18   |ligcond               ]
+[label9    |lig07                    |lig07_desc                    ][label19   |lig14                           ]
+[label10   |lig08                    ]                                          [                                ]
+                                                                                [                                ]
+
+}
+END -- ds1
+END -- Page1
+Page Page2(text=%"Info")
+Grid ds2
+{
+
+[label27   |liguser             ]   [label24   ][ligmodu             ]  [label20   |ligacti             ]
+[label23   |liggrup             ]   [label22   ][ligdate             ]  [label21   |ligcrat             ]
+[label26   |ligoriu             ]   [label25   ][ligorig             ]
+
+
+
+
+
+
+
+
+}
+END -- ds2
+END -- Page2
+END -- Folder1
+Grid gr3
+{
+
+ ------ Rows [idx   ]/ [cnt    ] -------
+
+}
+END -- gr3
+END -- VBox1
+END -- Form
+
+TABLES
+lig_file
+ATTRIBUTES
+Label label1:Label1, text=%"lig01";
+ButtonEdit lig01=lig_file.lig01, action=controlp, tabIndex=1, not null, image="zoom.png", scroll;
+Label label11:Label11, text=%"lig09";
+ButtonEdit lig09=lig_file.lig09, action=controlp, tabIndex=11, not null, image="zoom.png", scroll;
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=26, noEntry;
+Label label2:Label2, text=%"ligplant";
+ButtonEdit ligplant=lig_file.ligplant, action=controlp, tabIndex=2, noEntry, not null, required, image="zoom.png", scroll;
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=20, noEntry;
+Label label12:Label12, text=%"lig10";
+Edit lig10=lig_file.lig10, tabIndex=12, not null, scroll;
+Label label3:Label3, text=%"liglegal";
+ButtonEdit liglegal=lig_file.liglegal, action=controlp, tabIndex=3, noEntry, not null, required, image="zoom.png", scroll;
+Edit azt02=formonly.azt02 type CHAR, tabIndex=21, noEntry;
+Label label13:Label13, text=%"lig11";
+ButtonEdit lig11=lig_file.lig11, action=controlp, tabIndex=13, noEntry, image="zoom.png", scroll;
+Label label4:Label4, text=%"lig02";
+ButtonEdit lig02=lig_file.lig02, action=controlp, tabIndex=4, image="zoom.png", scroll;
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=22, noEntry;
+Label label14:Label14, text=%"lig12";
+DateEdit lig12=lig_file.lig12, tabIndex=14;
+Label label5:Label5, text=%"lig03";
+ButtonEdit lig03=lig_file.lig03, action=controlp, tabIndex=5, image="zoom.png", scroll;
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=23, noEntry;
+Label label15:Label15, text=%"lig13";
+ButtonEdit lig13=lig_file.lig13, action=controlp, tabIndex=15, image="zoom.png", scroll;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=27, noEntry;
+Label label6:Label6, text=%"lig04";
+ButtonEdit lig04=lig_file.lig04, action=controlp, tabIndex=6, not null, image="zoom.png", scroll;
+TextEdit lmf13=formonly.lmf13 type CHAR, tabIndex=24;
+Label label16:Label16, text=%"ligconf";
+ComboBox ligconf=lig_file.ligconf, tabIndex=16, noEntry, not null, scroll, items=(("Y", "Y"),("N", "N"),("X", "X"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Label label7:Label7, text=%"lig05";
+ComboBox lig05=lig_file.lig05, tabIndex=7, not null, scroll, items=(("1", "1"),("2", "2"),("3", "3"));
+Label label17:Label17, text=%"ligconu";
+Edit ligconu=lig_file.ligconu, tabIndex=17, noEntry, scroll;
+Label label8:Label8, text=%"lig06";
+ButtonEdit lig06=lig_file.lig06, action=controlp, tabIndex=8, not null, image="zoom.png", scroll;
+Label label18:Label18, text=%"ligcond";
+DateEdit ligcond=lig_file.ligcond, tabIndex=18, noEntry;
+Label label9:Label9, text=%"lig07";
+ButtonEdit lig07=lig_file.lig07, action=controlp, tabIndex=9, noEntry, not null, image="zoom", scroll;
+Edit lig07_desc=formonly.lig07_desc type CHAR, tabIndex=25, noEntry;
+Label label19:Label19, text=%"lig14";
+TextEdit lig14=lig_file.lig14, tabIndex=19;
+Label label10:Label10, text=%"lig08";
+Edit lig08=lig_file.lig08, tabIndex=10, not null, scroll;
+Label label27:Label27, text=%"liguser";
+Edit liguser=lig_file.liguser, tabIndex=28, noEntry, scroll;
+Label label24:Label24, text=%"ligmodu";
+Edit ligmodu=lig_file.ligmodu, tabIndex=31, noEntry, scroll;
+Label label20:Label20, text=%"ligacti";
+Edit ligacti=lig_file.ligacti, tabIndex=34, default = "Y", noEntry, not null, scroll;
+Label label23:Label23, text=%"liggrup";
+Edit liggrup=lig_file.liggrup, tabIndex=29, noEntry, scroll;
+Label label22:Label22, text=%"ligdate";
+DateEdit ligdate=lig_file.ligdate, tabIndex=32, noEntry;
+Label label21:Label21, text=%"ligcrat";
+DateEdit ligcrat=lig_file.ligcrat, tabIndex=35, noEntry;
+Label label26:Label26, text=%"ligoriu";
+Edit ligoriu=lig_file.ligoriu, tabIndex=30, noEntry, scroll;
+Label label25:Label25, text=%"ligorig";
+Edit ligorig=lig_file.ligorig, tabIndex=33, noEntry, scroll;
+Edit idx=formonly.idx type SMALLINT, tabIndex=36, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=37, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(lig_file.lig01,lig_file.ligplant,lig_file.liglegal,lig_file.lig02,lig_file.lig03,lig_file.lig04,lig_file.lig05,lig_file.lig06,lig_file.lig07,lig_file.lig08,lig_file.lig09,lig_file.lig10,lig_file.lig11,lig_file.lig12,lig_file.lig13,lig_file.ligconf,lig_file.ligconu,lig_file.ligcond,lig_file.lig14)
+SCREEN RECORD Undefined(formonly.rtz13,formonly.azt02,formonly.lmb03,formonly.lmc04,formonly.lmf13,formonly.lig07_desc,formonly.oaj02,formonly.gen02,formonly.idx,formonly.cnt,formonly.imgmksg)
+SCREEN RECORD Record2(lig_file.ligacti,lig_file.ligcrat,lig_file.ligdate,lig_file.liggrup,lig_file.ligmodu,lig_file.ligorig,lig_file.ligoriu,lig_file.liguser)
+END -- INSTRUCTIONS
+

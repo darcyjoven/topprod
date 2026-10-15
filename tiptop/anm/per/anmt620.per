@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt620.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt620")
+VBox VBox1
+Folder pc803
+Page page01(text="Main")
+Table s_gsl
+{
+[gsl01          |gsb03           |gsb05           |gsb06              |gsl02           |gsl03        |gsl04              |gslact]
+[gsl01          |gsb03           |gsb05           |gsb06              |gsl02           |gsl03        |gsl04              |gslact]
+[gsl01          |gsb03           |gsb05           |gsb06              |gsl02           |gsl03        |gsl04              |gslact]
+[gsl01          |gsb03           |gsb05           |gsb06              |gsl02           |gsl03        |gsl04              |gslact]
+[gsl01          |gsb03           |gsb05           |gsb06              |gsl02           |gsl03        |gsl04              |gslact]
+[gsl01          |gsb03           |gsb05           |gsb06              |gsl02           |gsl03        |gsl04              |gslact]
+[gsl01          |gsb03           |gsb05           |gsb06              |gsl02           |gsl03        |gsl04              |gslact]
+[gsl01          |gsb03           |gsb05           |gsb06              |gsl02           |gsl03        |gsl04              |gslact]
+[gsl01          |gsb03           |gsb05           |gsb06              |gsl02           |gsl03        |gsl04              |gslact]
+[gsl01          |gsb03           |gsb05           |gsb06              |gsl02           |gsl03        |gsl04              |gslact]
+
+}
+END -- s_gsl
+END -- page01
+END -- pc803
+Grid gr4518
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4518
+END -- VBox1
+END -- anmt620
+
+TABLES
+gsl_file
+ATTRIBUTES
+ButtonEdit gsl01=gsl_file.gsl01, action=controlp, tabIndex=1, title="Investment No.", not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!";
+Edit gsb03=formonly.gsb03 type CHAR, tabIndex=2, title="Investment Date", noEntry;
+Edit gsb05=formonly.gsb05 type CHAR, tabIndex=3, title="Investment Type", noEntry;
+Edit gsb06=formonly.gsb06 type CHAR, tabIndex=4, title="Investment Object", noEntry;
+DateEdit gsl02=gsl_file.gsl02, tabIndex=5, title="Curr Value Date", not null, required;
+Edit gsl03=gsl_file.gsl03, tabIndex=6, title="Curr Value", not null, required;
+Edit gsl04=gsl_file.gsl04, tabIndex=7, title="Memo";
+CheckBox gslact=gsl_file.gslacti, tabIndex=8, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gsl(gsl_file.gsl01,formonly.gsb03,formonly.gsb05,formonly.gsb06,gsl_file.gsl02,gsl_file.gsl03,gsl_file.gsl04,gsl_file.gslacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

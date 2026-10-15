@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrr605.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group Group1(text=%"QBE")
+Grid Grid1
+{
+
+   [label7    ][tc_ima11            ]
+
+}
+END -- Grid1
+END -- Group1
+Group Group2(text=%"INPUT")
+Grid Grid2
+{
+
+    [label1    |l_type        ]
+    [label10   |l_year        ]
+    [label13   |l_month       ]
+    [gen_safeqty         ]
+
+}
+END -- Grid2
+END -- Group2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label label7:Label7, text=%"tc_ima11";
+ButtonEdit tc_ima11=formonly.tc_ima11 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Label label1:Label1, text=%"y1";
+ComboBox l_type=formonly.l_type type DECIMAL, tabIndex=5, not null, required, items=(("1", "1"),("2", "2"));
+Label label10:Label10, text=%"y1";
+Edit l_year=formonly.l_year type DECIMAL, tabIndex=2, not null, required;
+Label label13:Label13, text=%"y2";
+Edit l_month=formonly.l_month type DECIMAL, tabIndex=3, not null, required;
+CheckBox gen_safeqty=formonly.gen_safeqty type CHAR, tabIndex=4, text=%"gen_safeqty", valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_ima11,formonly.l_year,formonly.l_month,formonly.gen_safeqty,formonly.l_type)
+END -- INSTRUCTIONS
+

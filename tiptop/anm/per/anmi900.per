@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi900")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+VBox vb2
+Grid gr4063
+{
+ Logistics No.        [nqb01     ][azp02               ]
+ Logistics Curr       [aza17     ]
+}
+END -- gr4063
+END -- vb2
+END -- page01
+END -- folder01
+Table s_nqb
+{
+[nqb02    |nqb03         ]
+[nqb02    |nqb03         ]
+[nqb02    |nqb03         ]
+[nqb02    |nqb03         ]
+[nqb02    |nqb03         ]
+[nqb02    |nqb03         ]
+[nqb02    |nqb03         ]
+[nqb02    |nqb03         ]
+[nqb02    |nqb03         ]
+[nqb02    |nqb03         ]
+
+}
+END -- s_nqb
+Grid gr4064
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4064
+END -- vb3
+END -- anmi900
+
+TABLES
+nqb_file
+ATTRIBUTES
+ButtonEdit nqb01=nqb_file.nqb01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=2, noEntry;
+Edit aza17=formonly.aza17 type CHAR, tabIndex=3, noEntry;
+DateEdit nqb02=nqb_file.nqb02, tabIndex=4, title="Date";
+Edit nqb03=nqb_file.nqb03, tabIndex=5, title="Revolving Fund", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nqb(nqb_file.nqb02,nqb_file.nqb03)
+SCREEN RECORD Undefined(nqb_file.nqb01,formonly.azp02,formonly.aza17,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

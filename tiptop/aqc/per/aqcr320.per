@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcr320.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqcr320")
+VBox VBox1
+Grid gr123
+{
+ <G group01                                          >
+  Vender No.          [qcs03               ]
+  Item No.            [qcs021              ]
+  No-Good Cause       [qcu04               ]
+ <                                                   >
+ <G group02                                          >
+  Date Range          [bdate       ] - [edate       ]
+ <                                                   >
+
+}
+END -- gr123
+Grid gr124
+{
+[more                                     ]
+
+}
+END -- gr124
+END -- VBox1
+END -- aqcr320
+
+TABLES
+qcu_file,
+qcs_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit qcs03=qcs_file.qcs03, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit qcs021=qcs_file.qcs021, action=controlp, tabIndex=2, image="zoom";
+Edit qcu04=qcu_file.qcu04, tabIndex=3;
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=4;
+DateEdit edate=formonly.edate type DATE, tabIndex=5;
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(qcs_file.qcs03,qcs_file.qcs021,qcu_file.qcu04,formonly.bdate,formonly.edate,formonly.more)
+END -- INSTRUCTIONS
+

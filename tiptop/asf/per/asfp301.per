@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/4fd/asfp301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asfp301")
+VBox vbox1
+Folder folder01
+Page page01(text=%"Main")
+HBox hbox1
+Grid gr518
+{
+ Source W/O          [sfb01                ]
+ Production Item#    [sfb05               ]
+ Part Name           [ima02                         ]
+ Specification       [ima021                        ]
+
+
+
+}
+END -- gr518
+Grid gr519
+{
+ Esitma.Prod.Qty     [sfb08     ]
+ Expiry Date         [sfb071      ]
+ Prod Begin Date     [sfb13       ]
+ Prod End Date       [sfb15       ]
+
+
+
+}
+END -- gr519
+Grid gr520
+{
+ Issue Date          [sfb81       ]
+ Exploded Level      [sfb42     ]
+[sfc_sw                        ]
+ Plan Lot No.        [sfb919                        ]
+
+
+
+}
+END -- gr520
+END -- hbox1
+END -- page01
+END -- folder01
+Table s_new
+{
+[new_part             |ima02_1             |ima021_1            |new_qty      |b_date         |e_date        |new_no     |wo_type           |ven_no             |new_bmb19             |new_img |new_pid |new_id  ]
+[new_part             |ima02_1             |ima021_1            |new_qty      |b_date         |e_date        |new_no     |wo_type           |ven_no             |new_bmb19             |new_img |new_pid |new_id  ]
+[new_part             |ima02_1             |ima021_1            |new_qty      |b_date         |e_date        |new_no     |wo_type           |ven_no             |new_bmb19             |new_img |new_pid |new_id  ]
+[new_part             |ima02_1             |ima021_1            |new_qty      |b_date         |e_date        |new_no     |wo_type           |ven_no             |new_bmb19             |new_img |new_pid |new_id  ]
+[new_part             |ima02_1             |ima021_1            |new_qty      |b_date         |e_date        |new_no     |wo_type           |ven_no             |new_bmb19             |new_img |new_pid |new_id  ]
+[new_part             |ima02_1             |ima021_1            |new_qty      |b_date         |e_date        |new_no     |wo_type           |ven_no             |new_bmb19             |new_img |new_pid |new_id  ]
+[new_part             |ima02_1             |ima021_1            |new_qty      |b_date         |e_date        |new_no     |wo_type           |ven_no             |new_bmb19             |new_img |new_pid |new_id  ]
+[new_part             |ima02_1             |ima021_1            |new_qty      |b_date         |e_date        |new_no     |wo_type           |ven_no             |new_bmb19             |new_img |new_pid |new_id  ]
+[new_part             |ima02_1             |ima021_1            |new_qty      |b_date         |e_date        |new_no     |wo_type           |ven_no             |new_bmb19             |new_img |new_pid |new_id  ]
+[new_part             |ima02_1             |ima021_1            |new_qty      |b_date         |e_date        |new_no     |wo_type           |ven_no             |new_bmb19             |new_img |new_pid |new_id  ]
+}
+END -- s_new
+END -- vbox1
+END -- asfp301
+
+ATTRIBUTES
+ButtonEdit sfb01=formonly.sfb01 type CHAR, action=controlp, tabIndex=1, image="zoom", upShift, comment=%"<^P> Qry Source W/O Data";
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=2;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=4;
+Edit sfb08=formonly.sfb08 type CHAR, tabIndex=5;
+DateEdit sfb071=formonly.sfb071 type DATE, tabIndex=6;
+DateEdit sfb13=formonly.sfb13 type DATE, tabIndex=7;
+DateEdit sfb15=formonly.sfb15 type DATE, tabIndex=8;
+DateEdit sfb81=formonly.sfb81 type CHAR, tabIndex=9;
+Edit sfb42=formonly.sfb42 type CHAR, tabIndex=10;
+CheckBox sfc_sw=formonly.sfc_sw type CHAR, tabIndex=11, text=%"Generate PBI?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sfb919=formonly.sfb919 type CHAR, tabIndex=12;
+Edit new_part=formonly.new_part type CHAR, tabIndex=13, title=%"Production Item#", noEntry;
+Edit ima02_1=formonly.ima02_1 type CHAR, tabIndex=14, title=%"P/N", noEntry;
+Edit ima021_1=formonly.ima021_1 type CHAR, tabIndex=15, title=%"Spec.", noEntry;
+Edit new_qty=formonly.new_qty type CHAR, tabIndex=16, title=%"Produced Qty";
+DateEdit b_date=formonly.b_date type DATE, tabIndex=17, title=%"Operating Date", not null, required;
+DateEdit e_date=formonly.e_date type DATE, tabIndex=18, title=%"Complete Date", not null, required;
+ButtonEdit new_no=formonly.new_no type CHAR, action=controlp, tabIndex=19, title=%"W/O#", not null, required, image="zoom";
+ComboBox wo_type=formonly.wo_type type CHAR, tabIndex=20, title=%"Cate.", not null, required, queryEditable, comment=%"1.Gnrl 7.Sub. ", items=(("1", %"Plant General W/O"),("7", %"Subcontracting W/O"));
+ButtonEdit ven_no=formonly.ven_no type CHAR, action=controlp, tabIndex=21, title=%"Department/Vender", image="zoom";
+ComboBox new_bmb19=formonly.new_bmb19 type CHAR, tabIndex=22, title=%"Open W/O Expl Opt", not null, required, queryEditable, items=(("1", %"No Exp"),("2", %"No Expl,Auto Open WO"),("3", %"Expl"),("4", %"Open Window and Qry to Expl?"));
+Edit new_img=formonly.new_img, tabIndex=24, title=%"new_img";
+Edit new_pid=formonly.new_pid, tabIndex=25, default = "", title=%"new_pid", noEntry;
+Edit new_id=formonly.new_id, tabIndex=23, default = "", title=%"new_id", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_new(formonly.new_part,formonly.ima02_1,formonly.ima021_1,formonly.new_qty,formonly.b_date,formonly.e_date,formonly.new_no,formonly.wo_type,formonly.ven_no,formonly.new_bmb19,formonly.new_img,formonly.new_pid,formonly.new_id)
+SCREEN RECORD Undefined(formonly.sfb01,formonly.sfb05,formonly.ima02,formonly.ima021,formonly.sfb08,formonly.sfb071,formonly.sfb13,formonly.sfb15,formonly.sfb81,formonly.sfb42,formonly.sfc_sw,formonly.sfb919)
+END -- INSTRUCTIONS
+

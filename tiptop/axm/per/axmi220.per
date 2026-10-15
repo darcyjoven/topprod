@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi220.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi220")
+VBox VBox1
+Folder pc467
+Page page01(text="Main")
+Table s_occ
+{
+[occ01      |occ02        |occ03           |occ04      |occ05               |occ06     |occ22  |occ21     |occ20        |occ11               |occ1004              |occacti         ]
+[occ01      |occ02        |occ03           |occ04      |occ05               |occ06     |occ22  |occ21     |occ20        |occ11               |occ1004              |occacti         ]
+[occ01      |occ02        |occ03           |occ04      |occ05               |occ06     |occ22  |occ21     |occ20        |occ11               |occ1004              |occacti         ]
+[occ01      |occ02        |occ03           |occ04      |occ05               |occ06     |occ22  |occ21     |occ20        |occ11               |occ1004              |occacti         ]
+[occ01      |occ02        |occ03           |occ04      |occ05               |occ06     |occ22  |occ21     |occ20        |occ11               |occ1004              |occacti         ]
+[occ01      |occ02        |occ03           |occ04      |occ05               |occ06     |occ22  |occ21     |occ20        |occ11               |occ1004              |occacti         ]
+[occ01      |occ02        |occ03           |occ04      |occ05               |occ06     |occ22  |occ21     |occ20        |occ11               |occ1004              |occacti         ]
+[occ01      |occ02        |occ03           |occ04      |occ05               |occ06     |occ22  |occ21     |occ20        |occ11               |occ1004              |occacti         ]
+[occ01      |occ02        |occ03           |occ04      |occ05               |occ06     |occ22  |occ21     |occ20        |occ11               |occ1004              |occacti         ]
+[occ01      |occ02        |occ03           |occ04      |occ05               |occ06     |occ22  |occ21     |occ20        |occ11               |occ1004              |occacti         ]
+
+}
+END -- s_occ
+END -- page01
+END -- pc467
+Grid gr2042
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2042
+END -- VBox1
+END -- axmi220
+
+TABLES
+occ_file
+ATTRIBUTES
+ButtonEdit occ01=occ_file.occ01, action=controlp, tabIndex=1, title="Customer #", not null, required, image="zoom", comment="<^P> Qry Details ";
+Edit occ02=occ_file.occ02, tabIndex=2, title="Abbreviation";
+ButtonEdit occ03=occ_file.occ03, action=controlp, tabIndex=3, title="Classification", image="zoom", comment="<^P> Qry Details ";
+ButtonEdit occ04=occ_file.occ04, action=controlp, tabIndex=4, title="Salesman", image="zoom", comment="<^P> Qry Details ";
+ComboBox occ05=occ_file.occ05, tabIndex=5, title="Permanent/Temporary", not null, required, queryEditable, items=(("1", %"Permanent"),("2", %"Temporary"));
+ComboBox occ06=occ_file.occ06, tabIndex=6, title="Property", not null, required, queryEditable, items=(("1", "Buyer"),("2", "Ship.Customer"),("3", "Collecting Customer"),("4", "Drawer"));
+ButtonEdit occ22=occ_file.occ22, action=controlp, tabIndex=7, title="Local", image="zoom", comment="<^P> Qry Details ";
+ButtonEdit occ21=occ_file.occ21, action=controlp, tabIndex=8, title="Country", image="zoom", comment="<^P> Qry Details ";
+ButtonEdit occ20=occ_file.occ20, action=controlp, tabIndex=9, title="Area", image="zoom", comment="<^P> Qry Details ";
+Edit occ11=occ_file.occ11, tabIndex=10, title="Uniform#";
+ComboBox occ1004=occ_file.occ1004, tabIndex=11, title="Status Code", noEntry, not null, required, queryEditable, items=(("0", %"Issue"),("1", %"Confirm"),("2", %"Hung"),("3", %"Stop"));
+ComboBox occacti=occ_file.occacti, tabIndex=12, title="Data Valid Code", noEntry, not null, required, queryEditable, items=(("P", %"Processing"),("Y", %"Confirm"),("H", %"Hung"),("N", %"Invalid"));
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_occ(occ_file.occ01,occ_file.occ02,occ_file.occ03,occ_file.occ04,occ_file.occ05,occ_file.occ06,occ_file.occ22,occ_file.occ21,occ_file.occ20,occ_file.occ11,occ_file.occ1004,occ_file.occacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

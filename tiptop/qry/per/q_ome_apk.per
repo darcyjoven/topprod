@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_ome_apk.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_gem_pmc")
+Grid gr3793
+{
+ <T s_ome                                                                                 >
+ [check  |a       |ome01        |ome02     |ome04          |ome043                        ]
+ [check  |a       |ome01        |ome02     |ome04          |ome043                        ]
+ [check  |a       |ome01        |ome02     |ome04          |ome043                        ]
+ [check  |a       |ome01        |ome02     |ome04          |ome043                        ]
+ [check  |a       |ome01        |ome02     |ome04          |ome043                        ]
+ [check  |a       |ome01        |ome02     |ome04          |ome043                        ]
+ [check  |a       |ome01        |ome02     |ome04          |ome043                        ]
+ [check  |a       |ome01        |ome02     |ome04          |ome043                        ]
+ [check  |a       |ome01        |ome02     |ome04          |ome043                        ]
+ [check  |a       |ome01        |ome02     |ome04          |ome043                        ]
+
+}
+END -- gr3793
+END -- q_ome_apk
+
+TABLES
+ome_file
+ATTRIBUTES
+Table s_ome:s_ome;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox a=formonly.a, tabIndex=4, title=%"a", items=(("1", "Sales"),("2", "Purchase"),("3", "ALL"));
+Edit ome01=ome_file.ome01, tabIndex=2, title="Invoice No.", noEntry;
+DateEdit ome02=ome_file.ome02, tabIndex=3, title="Invoice Date", noEntry;
+Edit ome04=ome_file.ome04, tabIndex=5, title=%"Customer #/Vendor No.";
+Edit ome043=ome_file.ome043, tabIndex=6, title=%"Company Name/Vendor Full Name";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ome(formonly.check,formonly.a,ome_file.ome01,ome_file.ome02,ome_file.ome04,ome_file.ome043)
+END -- INSTRUCTIONS
+

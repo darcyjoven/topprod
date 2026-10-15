@@ -1,0 +1,25 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_ask_entry.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_ask_entry")
+Grid gr3869
+{
+ Process No    [p_no               ]
+ Entry Sheet of This Doc. has already Exist [choice        ]
+}
+END -- gr3869
+END -- s_ask_entry
+
+ATTRIBUTES
+Edit p_no=formonly.p_no type CHAR, tabIndex=1, noEntry;
+RadioGroup choice=formonly.choice type CHAR, tabIndex=2, orientation=horizontal, items=(("1", "Follow It"),("2", "Regenerate"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.p_no,formonly.choice)
+END -- INSTRUCTIONS
+

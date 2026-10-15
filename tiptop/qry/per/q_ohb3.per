@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_ohb3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Sales/Return Note")
+VBox VBox1
+Grid gr3818
+{
+ Accounts Customer  [oha03     ]
+
+}
+END -- gr3818
+Table s_ohb
+{
+[check|oha01                 |oha02         |ohb03       |ohb1007      |ohb14             |ohb14t       |ohb1012            ]
+[check|oha01                 |oha02         |ohb03       |ohb1007      |ohb14             |ohb14t       |ohb1012            ]
+[check|oha01                 |oha02         |ohb03       |ohb1007      |ohb14             |ohb14t       |ohb1012            ]
+[check|oha01                 |oha02         |ohb03       |ohb1007      |ohb14             |ohb14t       |ohb1012            ]
+[check|oha01                 |oha02         |ohb03       |ohb1007      |ohb14             |ohb14t       |ohb1012            ]
+[check|oha01                 |oha02         |ohb03       |ohb1007      |ohb14             |ohb14t       |ohb1012            ]
+[check|oha01                 |oha02         |ohb03       |ohb1007      |ohb14             |ohb14t       |ohb1012            ]
+[check|oha01                 |oha02         |ohb03       |ohb1007      |ohb14             |ohb14t       |ohb1012            ]
+[check|oha01                 |oha02         |ohb03       |ohb1007      |ohb14             |ohb14t       |ohb1012            ]
+[check|oha01                 |oha02         |ohb03       |ohb1007      |ohb14             |ohb14t       |ohb1012            ]
+
+}
+END -- s_ohb
+END -- VBox1
+END -- q_ohb3
+
+TABLES
+ohb_file,
+oha_file
+ATTRIBUTES
+Edit oha03=formonly.oha03 type VARCHAR, tabIndex=1;
+CheckBox check=formonly.check type CHAR, tabIndex=2, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oha01=oha_file.oha01, tabIndex=3, title="Sales/Return Note No.", noEntry;
+Edit oha02=oha_file.oha02, tabIndex=4, title="Date", noEntry;
+Edit ohb03=ohb_file.ohb03, tabIndex=5, title="Line No.", noEntry;
+Edit ohb1007=ohb_file.ohb1007, tabIndex=6, title="Discount No", noEntry;
+Edit ohb14=ohb_file.ohb14, tabIndex=7, title="Before-Tax Amount", noEntry, not null, required;
+Edit ohb14t=ohb_file.ohb14t, tabIndex=8, title="With-Tax Amt", noEntry, not null, required;
+Edit ohb1012=ohb_file.ohb1012, tabIndex=9, title="Present", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ohb(formonly.check,oha_file.oha01,oha_file.oha02,ohb_file.ohb03,ohb_file.ohb1007,ohb_file.ohb14,ohb_file.ohb14t,ohb_file.ohb1012)
+SCREEN RECORD Undefined(formonly.oha03)
+END -- INSTRUCTIONS
+

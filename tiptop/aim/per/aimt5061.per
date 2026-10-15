@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt5061.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt5061")
+VBox VBox1
+Grid gr3053
+{
+ <G group01                                           >
+  Item No.            [ima01                         ]
+  Group Code          [ima06                         ]
+  Other group code 1  [ima09                         ]
+  Other group code 2  [ima10                         ]
+  Other group code 3  [ima11                         ]
+  Other group code 4  [ima12                         ]
+ <                                                    >
+ <G group02                                     >
+  [g_defstk ]
+
+   Warehouse          [g_stk               ]
+   Location           [g_loc               ]
+ <                                              >
+
+}
+END -- gr3053
+END -- VBox1
+END -- aimt5061
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ima01=ima_file.ima01, tabIndex=1, not null, required;
+Edit ima06=ima_file.ima06, tabIndex=2;
+Edit ima09=ima_file.ima09, tabIndex=3;
+Edit ima10=ima_file.ima10, tabIndex=4;
+Edit ima11=ima_file.ima11, tabIndex=5;
+Edit ima12=ima_file.ima12, tabIndex=6;
+Group group02:group02, text="INPUT";
+CheckBox g_defstk=formonly.g_defstk type VARCHAR, tabIndex=9, default = "", text="Default STK", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit g_stk=formonly.g_stk type VARCHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Warehouse";
+ButtonEdit g_loc=formonly.g_loc type VARCHAR, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Warehouse/Location";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima06,ima_file.ima09,ima_file.ima10,ima_file.ima11,ima_file.ima12,formonly.g_stk,formonly.g_loc,formonly.g_defstk)
+END -- INSTRUCTIONS
+

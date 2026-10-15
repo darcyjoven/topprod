@@ -1,0 +1,128 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi616.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi616")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+HBox hb12
+Grid gr736
+{
+ Sheet Number        [boj09           ]
+ Sheet Date          [boj11       ]
+ Master Item No.     [boj01                         ]
+ Item Description    [ima02_h                       ]
+
+}
+END -- gr736
+Grid gr737
+{
+ Item Specification  [ima021_h                      ]
+ Alternate Code      [boj06               ]
+ Production Unit     [ima55     ]
+ Source Code         [ima08_h   ]
+
+}
+END -- gr737
+Grid gr738
+{
+ Appearance Code     [boj10     ]
+ Comb.Mod            [boj04       ]   [imgmksg]
+ Pay Date            [boj05       ]   [       ]
+
+
+}
+END -- gr738
+END -- hb12
+END -- page01
+Page info(text="Info")
+Grid gr739
+{
+ Record Owner        [bojuser   ] Last Modified by    [bojmodu   ] Data Valid Code     [bojacti   ]
+ Department          [bojgrup   ] Create/Modify Date  [bojdate   ]
+ Record Orig.        [bojoriu   ]
+ Dept Orig.          [bojorig   ]
+}
+END -- gr739
+END -- info
+END -- folder01
+Table s_bok
+{
+[bok32     |bok0|bok30             |bok03               |ima02_b                       |ima021_b                      |ima|bok09 |bok16 |bok14|bok04    |bok05      |bok06  |bok07       |bok10|bok08   |bok19          |bok24           |bok13                 |bok34     ]
+[bok32     |bok0|bok30             |bok03               |ima02_b                       |ima021_b                      |ima|bok09 |bok16 |bok14|bok04    |bok05      |bok06  |bok07       |bok10|bok08   |bok19          |bok24           |bok13                 |bok34     ]
+[bok32     |bok0|bok30             |bok03               |ima02_b                       |ima021_b                      |ima|bok09 |bok16 |bok14|bok04    |bok05      |bok06  |bok07       |bok10|bok08   |bok19          |bok24           |bok13                 |bok34     ]
+[bok32     |bok0|bok30             |bok03               |ima02_b                       |ima021_b                      |ima|bok09 |bok16 |bok14|bok04    |bok05      |bok06  |bok07       |bok10|bok08   |bok19          |bok24           |bok13                 |bok34     ]
+[bok32     |bok0|bok30             |bok03               |ima02_b                       |ima021_b                      |ima|bok09 |bok16 |bok14|bok04    |bok05      |bok06  |bok07       |bok10|bok08   |bok19          |bok24           |bok13                 |bok34     ]
+[bok32     |bok0|bok30             |bok03               |ima02_b                       |ima021_b                      |ima|bok09 |bok16 |bok14|bok04    |bok05      |bok06  |bok07       |bok10|bok08   |bok19          |bok24           |bok13                 |bok34     ]
+[bok32     |bok0|bok30             |bok03               |ima02_b                       |ima021_b                      |ima|bok09 |bok16 |bok14|bok04    |bok05      |bok06  |bok07       |bok10|bok08   |bok19          |bok24           |bok13                 |bok34     ]
+[bok32     |bok0|bok30             |bok03               |ima02_b                       |ima021_b                      |ima|bok09 |bok16 |bok14|bok04    |bok05      |bok06  |bok07       |bok10|bok08   |bok19          |bok24           |bok13                 |bok34     ]
+[bok32     |bok0|bok30             |bok03               |ima02_b                       |ima021_b                      |ima|bok09 |bok16 |bok14|bok04    |bok05      |bok06  |bok07       |bok10|bok08   |bok19          |bok24           |bok13                 |bok34     ]
+[bok32     |bok0|bok30             |bok03               |ima02_b                       |ima021_b                      |ima|bok09 |bok16 |bok14|bok04    |bok05      |bok06  |bok07       |bok10|bok08   |bok19          |bok24           |bok13                 |bok34     ]
+
+}
+END -- s_bok
+Grid gr740
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr740
+END -- vb4
+END -- abmi616
+
+TABLES
+bok_file,
+boj_file
+ATTRIBUTES
+ButtonEdit boj09=boj_file.boj09, action=controlp, tabIndex=1, required, image="zoom", comment="<^P> Query Item,     <^Y> Create Item Master";
+DateEdit boj11=boj_file.boj11, tabIndex=2, not null, required;
+ButtonEdit boj01=boj_file.boj01, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P> Query Item,     <^Y> Create Item Master";
+Edit ima02_h=formonly.ima02_h type CHAR, tabIndex=4, noEntry;
+Edit ima021_h=formonly.ima021_h type CHAR, tabIndex=5, noEntry;
+Edit boj06=boj_file.boj06, tabIndex=6, not null, required;
+Edit ima55=formonly.ima55 type CHAR, tabIndex=7, noEntry;
+ComboBox ima08_h=formonly.ima08_h type CHAR, tabIndex=8, noEntry, not null, required, items=(("C", "Configurable Product"),("T", "FAS Product"),("D", "Feture"),("A", "Family Product"),("M", "Make Product"),("P", "Purchase"),("X", "Phantom"),("K", "Kit"),("U", "Manufactured Mass Item"),("V", "Purchased Mass Item"),("R", "Routable"),("Z", "Miscellaneous"),("S", "Subcontract"));
+ComboBox boj10=boj_file.boj10, tabIndex=9, items=(("0", "open"),("1", "confirm"),("2", "issue"),("X", "Voided"));
+Edit boj04=boj_file.boj04, tabIndex=10;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+DateEdit boj05=boj_file.boj05, tabIndex=11, not null, required;
+Edit bojuser=boj_file.bojuser, tabIndex=12, noEntry;
+Edit bojmodu=boj_file.bojmodu, tabIndex=13, noEntry;
+Edit bojacti=boj_file.bojacti, tabIndex=14, noEntry;
+Edit bojgrup=boj_file.bojgrup, tabIndex=15, noEntry;
+DateEdit bojdate=boj_file.bojdate, tabIndex=16, noEntry;
+Edit bojoriu=boj_file.bojoriu, tabIndex=501, noEntry;
+Edit bojorig=boj_file.bojorig, tabIndex=502, noEntry;
+Edit bok32=bok_file.bok32, tabIndex=17, title="Sheet No.", not null, required;
+Edit bok0=bok_file.bok02, tabIndex=18, title="Seq", not null, required, comment="If \"Update\", press    <^Y>[BOM Desc],<^E>[Mtn REP/SUB],<^T>Insert Loc   ";
+ComboBox bok30=bok_file.bok30, tabIndex=19, title="Calculation type", not null, required, queryEditable, items=(("1", "Fix"));
+ButtonEdit bok03=bok_file.bok03, action=controlp, tabIndex=20, title="Component Part No", not null, required, image="zoom", comment="<^P> Query Item,     <^Y> Create Item   <^O>Crt Compo.Brand  ";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=21, title="Part Name", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=22, title="Specification", noEntry;
+Edit ima=formonly.ima08_b type CHAR, tabIndex=23, title="Src", noEntry;
+ButtonEdit bok09=bok_file.bok09, action=controlp, tabIndex=24, title="Task#", image="zoom", comment="<^P>Qry Task No.!";
+ComboBox bok16=bok_file.bok16, tabIndex=25, title="R/SUB", not null, required, queryEditable, items=(("0", %"No REP/SUB"),("1", %"New, with Old Itm(UTE)"),("2", %"M.Item, with Sub-Item(SUB)"),("5", %"M.Item Can To Do SUB With SET"));
+ComboBox bok14=bok_file.bok14, tabIndex=26, title="Slct", not null, required, queryEditable, items=(("0", %"Required"),("1", %"Optional"));
+DateEdit bok04=bok_file.bok04, tabIndex=27, title="Eff.Date", not null, required;
+DateEdit bok05=bok_file.bok05, tabIndex=28, title="Exp.Date";
+Edit bok06=bok_file.bok06, tabIndex=29, title="QPA", not null, required;
+Edit bok07=bok_file.bok07, tabIndex=30, title="DQPA";
+ButtonEdit bok10=bok_file.bok10, action=controlp, tabIndex=31, title="Unit", not null, required, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit  <^U>/<^T> Crt Item/ Unit Conv.  ";
+Edit bok08=bok_file.bok08, tabIndex=32, title="Wastg.%", not null, required;
+ComboBox bok19=bok_file.bok19, tabIndex=33, title="Open W/O", not null, required, queryEditable, items=(("1", %"No Exp"),("2", %"No Expl,Auto Open WO"),("3", %"Expl"),("4", %"Open Window and Qry to Expl?"));
+Edit bok24=bok_file.bok24, tabIndex=34, title="ECN No", noEntry;
+ButtonEdit bok13=bok_file.bok13, action=controlp, tabIndex=35, title="Inst.Loc", noEntry, image="zoom.png";
+CheckBox bok34=bok_file.bok34, tabIndex=36, default = "N", title="Cons. Purchase", valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=37, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=38, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bok(bok_file.bok32,bok_file.bok02,bok_file.bok30,bok_file.bok03,formonly.ima02_b,formonly.ima021_b,formonly.ima08_b,bok_file.bok09,bok_file.bok16,bok_file.bok14,bok_file.bok04,bok_file.bok05,bok_file.bok06,bok_file.bok07,bok_file.bok10,bok_file.bok08,bok_file.bok19,bok_file.bok24,bok_file.bok13,bok_file.bok34)
+SCREEN RECORD Undefined(boj_file.boj09,boj_file.boj11,boj_file.boj01,formonly.ima02_h,formonly.ima021_h,boj_file.boj06,formonly.ima55,formonly.ima08_h,boj_file.boj10,boj_file.boj04,formonly.imgmksg,boj_file.boj05,boj_file.bojuser,boj_file.bojmodu,boj_file.bojacti,boj_file.bojgrup,boj_file.bojdate,boj_file.bojoriu,boj_file.bojorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

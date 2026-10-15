@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi008.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi008")
+VBox VBox1
+Folder pc77
+Page page01(text="Page01")
+Table s_bgt
+{
+[bgt01              |bgt02            |bgt03             |bgt04           ]
+[bgt01              |bgt02            |bgt03             |bgt04           ]
+[bgt01              |bgt02            |bgt03             |bgt04           ]
+[bgt01              |bgt02            |bgt03             |bgt04           ]
+[bgt01              |bgt02            |bgt03             |bgt04           ]
+[bgt01              |bgt02            |bgt03             |bgt04           ]
+[bgt01              |bgt02            |bgt03             |bgt04           ]
+[bgt01              |bgt02            |bgt03             |bgt04           ]
+[bgt01              |bgt02            |bgt03             |bgt04           ]
+[bgt01              |bgt02            |bgt03             |bgt04           ]
+
+}
+END -- s_bgt
+END -- page01
+END -- pc77
+Grid gr586
+{
+ ----------Rows [cn2  ] ----------
+
+}
+END -- gr586
+END -- VBox1
+END -- abgi008
+
+TABLES
+bgt_file
+ATTRIBUTES
+Edit bgt01=bgt_file.bgt01, tabIndex=1, title="Wage Class Begin", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit bgt02=bgt_file.bgt02, tabIndex=2, title="Wage Class End";
+Edit bgt03=bgt_file.bgt03, tabIndex=3, title="Insurance Labor", not null, required;
+Edit bgt04=bgt_file.bgt04, tabIndex=4, title="Insurance Health", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgt(bgt_file.bgt01,bgt_file.bgt02,bgt_file.bgt03,bgt_file.bgt04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

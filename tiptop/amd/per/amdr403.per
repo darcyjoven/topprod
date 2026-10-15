@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdr403.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amdr403")
+VBox VBox1
+Grid gr3723
+{
+ <G group01                                                                                      >
+  [a                             ]
+  Declaring Department[amd22     ]
+  Data Year/Month     [amd173_b  ]/[amd174_b  ]-[amd174_e  ][dummy01             ]
+  Declaration Date    [pdate     ]
+  deduct              [deduct              ]
+  rep                 [rep                 ]
+  Report Templet      [t                   ]
+ <                                                                                               >
+}
+END -- gr3723
+Grid gr3724
+{
+[more                           ]
+
+}
+END -- gr3724
+END -- VBox1
+END -- amdr403
+
+TABLES
+amd_file
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+CheckBox a=formonly.a type CHAR, tabIndex=1, text="Print TaxID Together?  ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit amd22=amd_file.amd22, tabIndex=2;
+Edit amd173_b=formonly.amd173_b type SMALLINT, tabIndex=3, comment="No Blank Field";
+Edit amd174_b=formonly.amd174_b type SMALLINT, tabIndex=4, comment="No Blank Field";
+Edit amd174_e=formonly.amd174_e type SMALLINT, tabIndex=5, comment="No Blank Field";
+Label dummy01:dummy01, text="(century year)";
+DateEdit pdate=formonly.pdate type DATE, tabIndex=6;
+RadioGroup deduct=formonly.deduct type CHAR, tabIndex=9, not null, required, orientation=horizontal, items=(("1", "m1"),("2", "m2"));
+ComboBox rep=formonly.rep type CHAR, tabIndex=10, not null, required, items=(("1", "403"),("2", "403_1"),("3", "403_2"));
+RadioGroup t=formonly.t type CHAR, tabIndex=8, default = "1", not null, required, orientation=horizontal, items=(("1", "Templet1"),("2", "Templet2"));
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,amd_file.amd22,formonly.amd173_b,formonly.amd174_b,formonly.amd174_e,formonly.pdate,formonly.t,formonly.more,formonly.deduct,formonly.rep)
+END -- INSTRUCTIONS
+

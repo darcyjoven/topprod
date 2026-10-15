@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cqc/4fd/cqcq317.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aqcq317")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr38
+{
+ <G group01                                            >
+  Item No.            [qcs021                        ]
+  Specification       [ima02                         ]
+  QC Date Range       [bdate       ]-[edate       ]
+ <                                                     >
+
+}
+END -- gr38
+END -- page01
+END -- folder01
+Table s_qct
+{
+[qcs03      |pmc03       |pmc081                   |qcsud031       |qcsud032       |qcsud03   |qcs221         |qcs222         |qcs22     ]
+[qcs03      |pmc03       |pmc081                   |qcsud031       |qcsud032       |qcsud03   |qcs221         |qcs222         |qcs22     ]
+[qcs03      |pmc03       |pmc081                   |qcsud031       |qcsud032       |qcsud03   |qcs221         |qcs222         |qcs22     ]
+[qcs03      |pmc03       |pmc081                   |qcsud031       |qcsud032       |qcsud03   |qcs221         |qcs222         |qcs22     ]
+[qcs03      |pmc03       |pmc081                   |qcsud031       |qcsud032       |qcsud03   |qcs221         |qcs222         |qcs22     ]
+[qcs03      |pmc03       |pmc081                   |qcsud031       |qcsud032       |qcsud03   |qcs221         |qcs222         |qcs22     ]
+[qcs03      |pmc03       |pmc081                   |qcsud031       |qcsud032       |qcsud03   |qcs221         |qcs222         |qcs22     ]
+[qcs03      |pmc03       |pmc081                   |qcsud031       |qcsud032       |qcsud03   |qcs221         |qcs222         |qcs22     ]
+[qcs03      |pmc03       |pmc081                   |qcsud031       |qcsud032       |qcsud03   |qcs221         |qcs222         |qcs22     ]
+[qcs03      |pmc03       |pmc081                   |qcsud031       |qcsud032       |qcsud03   |qcs221         |qcs222         |qcs22     ]
+
+}
+END -- s_qct
+Grid gr39
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr39
+END -- VBox1
+END -- aqcq317
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit qcs021=formonly.qcs021 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=3;
+DateEdit edate=formonly.edate type CHAR, tabIndex=4;
+Edit qcs03=formonly.qcs03 type VARCHAR, tabIndex=5, title="Vender No.";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=6, title="Vender Name", noEntry;
+Edit pmc081=formonly.pmc081 type VARCHAR, tabIndex=14, title=%"pmc081";
+Edit qcsud031=formonly.qcsud031 type DECIMAL, tabIndex=7, title="QC Items";
+Edit qcsud032=formonly.qcsud032 type DECIMAL, tabIndex=8, title="QC Name";
+Edit qcsud03=formonly.qcsud03 type VARCHAR, tabIndex=11, title="NO-Good %";
+Edit qcs221=formonly.qcs221 type DECIMAL, tabIndex=9, title="QC Qty";
+Edit qcs222=formonly.qcs222 type DECIMAL, tabIndex=10, title="NO-Good Qty";
+Edit qcs22=formonly.qcs22 type VARCHAR, tabIndex=12, title="Judge";
+Edit cnt=formonly.cnt type CHAR, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qct(formonly.qcs03,formonly.pmc03,formonly.pmc081,formonly.qcsud031,formonly.qcsud032,formonly.qcsud03,formonly.qcs221,formonly.qcs222,formonly.qcs22)
+SCREEN RECORD Undefined(formonly.qcs021,formonly.ima02,formonly.bdate,formonly.edate,formonly.cnt)
+END -- INSTRUCTIONS
+

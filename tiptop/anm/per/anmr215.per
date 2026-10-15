@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr215.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr215")
+VBox VBox1
+Group group01(text="QBE")
+Grid Grid1
+{
+ Customer NO.        [nmh11               ]
+ Notes type 1        [nmh10               ]
+ Notes type 2        [nmh29               ]
+ Note Receipt NO.    [nmh01               ]
+}
+END -- Grid1
+END -- group01
+Group group02(text="INPUT")
+Grid Grid2
+{
+  Voucher Date Period [bdate       ]-[edate       ]
+
+ <G group03                                                          >
+  [s                                                          ]
+ <                                                                   >
+
+}
+END -- Grid2
+END -- group02
+Grid Grid3
+{
+[more                                                        ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- anmr215
+
+ATTRIBUTES
+Edit nmh11=formonly.nmh11 type VARCHAR, tabIndex=1;
+Edit nmh10=formonly.nmh10 type VARCHAR, tabIndex=2;
+Edit nmh29=formonly.nmh29 type VARCHAR, tabIndex=3;
+Edit nmh01=formonly.nmh01 type VARCHAR, tabIndex=4;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=5;
+DateEdit edate=formonly.edate type DATE, tabIndex=6;
+Group group03:group03, text="Sumamry Method";
+RadioGroup s=formonly.s type CHAR, tabIndex=7, items=(("1", %"Customer NO."),("2", %"Notes type 1"),("3", %"Notes type 2"),("4", %"Note Receipt NO."));
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nmh11,formonly.nmh10,formonly.nmh29,formonly.nmh01,formonly.bdate,formonly.edate,formonly.s,formonly.more)
+END -- INSTRUCTIONS
+

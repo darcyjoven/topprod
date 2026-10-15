@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asmq999.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asmq999")
+VBox VBox1
+Folder pc192
+Page page01(text="Main")
+Grid gr900
+{
+ <G group01                                                     >
+  Task Date           [smi03       ]-[smi04       ]
+  User                [smi01     ]
+  Task Type           [smi02     ]
+  Task Description    [p_desc                                  ]
+  Terminal Type       [smi05                         ]
+  Record Description  [smi06                         ]
+                      [                              ]
+                      [                              ]
+ <                                                              >
+
+}
+END -- gr900
+END -- page01
+END -- pc192
+END -- VBox1
+END -- asmq999
+
+TABLES
+smi_file
+ATTRIBUTES
+Group group01:group01;
+DateEdit smi03=smi_file.smi03, tabIndex=1, noEntry;
+DateEdit smi04=smi_file.smi04, tabIndex=2, noEntry;
+Edit smi01=smi_file.smi01, tabIndex=3, noEntry;
+Edit smi02=smi_file.smi02, tabIndex=4, noEntry;
+Edit p_desc=formonly.p_desc type CHAR, tabIndex=5, noEntry;
+Edit smi05=smi_file.smi05, tabIndex=6, noEntry;
+TextEdit smi06=smi_file.smi06, tabIndex=7, noEntry, stretch=NONE;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(smi_file.smi03,smi_file.smi04,smi_file.smi01,smi_file.smi02,formonly.p_desc,smi_file.smi05,smi_file.smi06)
+END -- INSTRUCTIONS
+

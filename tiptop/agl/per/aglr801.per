@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr801.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglr801")
+VBox VBox1
+Grid Grid1
+{
+
+ <G group1                                                    >
+  Book No.            [bookno                          ]
+ <                                                            >
+}
+END -- Grid1
+Grid gr2761
+{
+ <G group01                                                   >
+  Account Code        [aec01                           ]
+  Tran.Code Sequence  [aec051                          ]
+  Tran. Code Type     [aec052                          ]
+  Tran. Code          [aec05                           ]
+  Voucher Date        [aec02                           ]
+ <                                                            >
+}
+END -- gr2761
+Group group02(text="INPUT")
+Grid gr2762
+{
+
+ [t                                                         ]
+ [e                                                         ]
+ Control/Classification Item  [u                   ]
+
+}
+END -- gr2762
+END -- group02
+Grid gr2763
+{
+[more                                                        ]
+
+
+}
+END -- gr2763
+END -- VBox1
+END -- aglr801
+
+TABLES
+aec_file
+ATTRIBUTES
+Group group1:Group1, text=%"INPUT";
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=10, not null, required, image="zoom.png";
+Group group01:group01, text="QBE";
+ButtonEdit aec01=aec_file.aec01, action=controlp, tabIndex=1, required, image="zoom.png";
+ButtonEdit aec051=aec_file.aec051, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit aec052=aec_file.aec052, action=controlp, tabIndex=3, not null, required, image="zoom.png", comment="<^P>Qry Transaction Type";
+ButtonEdit aec05=aec_file.aec05, action=controlp, tabIndex=4, required, image="zoom.png";
+DateEdit aec02=aec_file.aec02, tabIndex=5;
+CheckBox t=formonly.t type CHAR, tabIndex=6, text="Next Page By Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=7, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox u=formonly.u type CHAR, tabIndex=8, not null, required, queryEditable, items=(("1", "Ctrl & Independent Account"),("2", "Classification Item"));
+CheckBox more=formonly.more type CHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,aec_file.aec01,aec_file.aec051,aec_file.aec052,aec_file.aec05,aec_file.aec02,formonly.t,formonly.e,formonly.u,formonly.more)
+END -- INSTRUCTIONS
+

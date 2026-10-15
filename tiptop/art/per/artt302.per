@@ -1,0 +1,176 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt302.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artt302")
+VBox vb2
+Folder pc4
+Page Page5(text=%"Basic Data")
+Grid gr4
+{
+
+  Rab01   [rab01            ]   [rab01_desc           ]   [rab04                    ]  Rabconf[rabconf       ]      [imgmksg]        [raq05                 ]
+  Rab02   [rab02                 ]                        [rab10                     ]                              [       ]         raq06  [raq06          ]
+  Rab03   [rab03                 |rab03_desc          ]   [rab07                    ]  Rabcond[rabcond       |rabcont       ]         raq07  [raq07          ]
+  Rabplant[rabplant              |rabplant_desc       ]   [rab05                    ]  Rabconu[rabconu       |rabconu_desc           ]
+  Rab11   [rab11                                      ]   [rab06                    ]
+                                                          [rab08                    ]
+                                                          [rab09                    ]
+
+}
+END -- gr4
+END -- Page5
+Page Page11(text=%"Info")
+Grid gr6
+{
+
+    Record Owner        [rabuser   ] Last Modified by    [rabmodu   ] Data Valid Code     [rabacti   ]
+    Department          [rabgrup   ] Modify Date         [rabdate   ] Create Date         [rabcrat   ]
+    Record Orig.        [raboriu   ] Dept Orig.          [raborig   ]
+
+
+}
+END -- gr6
+END -- Page11
+END -- pc4
+Folder Condition
+Page condition1(text=%"Condition")
+Table s_rac(height = 7 lines)
+{
+[rac03   |rac04   |rac05   |rac06   |rac07   |rac08   |rac09   |rac10   |rac11   |racacti |racpos  ]
+[rac03   |rac04   |rac05   |rac06   |rac07   |rac08   |rac09   |rac10   |rac11   |racacti |racpos  ]
+[rac03   |rac04   |rac05   |rac06   |rac07   |rac08   |rac09   |rac10   |rac11   |racacti |racpos  ]
+[rac03   |rac04   |rac05   |rac06   |rac07   |rac08   |rac09   |rac10   |rac11   |racacti |racpos  ]
+[rac03   |rac04   |rac05   |rac06   |rac07   |rac08   |rac09   |rac10   |rac11   |racacti |racpos  ]
+
+}
+END -- s_rac
+END -- condition1
+END -- Condition
+HBox HBox1
+Folder TimeSetting
+Page Time_Setting(text=%"Time Setting")
+Table s_rak
+{
+[rak04|rak05|rak06   |rak07  |rak08   |rak09   |rak10     |rak11    |rakacti ]
+[rak04|rak05|rak06   |rak07  |rak08   |rak09   |rak10     |rak11    |rakacti ]
+[rak04|rak05|rak06   |rak07  |rak08   |rak09   |rak10     |rak11    |rakacti ]
+[rak04|rak05|rak06   |rak07  |rak08   |rak09   |rak10     |rak11    |rakacti ]
+[rak04|rak05|rak06   |rak07  |rak08   |rak09   |rak10     |rak11    |rakacti ]
+[rak04|rak05|rak06   |rak07  |rak08   |rak09   |rak10     |rak11    |rakacti ]
+[rak04|rak05|rak06   |rak07  |rak08   |rak09   |rak10     |rak11    |rakacti ]
+
+}
+END -- s_rak
+END -- Time_Setting
+END -- TimeSetting
+Folder AreaSetting
+Page Area_Setting(text=%"Area Setting")
+Table s_rad
+{
+[rad03   |rad04   |rad05     |rad05_desc         |rad06     |rad06_desc     |radacti ]
+[rad03   |rad04   |rad05     |rad05_desc         |rad06     |rad06_desc     |radacti ]
+[rad03   |rad04   |rad05     |rad05_desc         |rad06     |rad06_desc     |radacti ]
+[rad03   |rad04   |rad05     |rad05_desc         |rad06     |rad06_desc     |radacti ]
+[rad03   |rad04   |rad05     |rad05_desc         |rad06     |rad06_desc     |radacti ]
+[rad03   |rad04   |rad05     |rad05_desc         |rad06     |rad06_desc     |radacti ]
+[rad03   |rad04   |rad05     |rad05_desc         |rad06     |rad06_desc     |radacti ]
+
+}
+END -- s_rad
+END -- Area_Setting
+END -- AreaSetting
+END -- HBox1
+Grid gr36
+{
+
+
+  ------ Rows[idx    ]/[cnt       ]  ----- Items[cn2        ]--------
+
+
+}
+END -- gr36
+END -- vb2
+END -- Form2
+
+TABLES
+raq_file,
+rak_file,
+rad_file,
+rac_file,
+rab_file
+ATTRIBUTES
+ButtonEdit rab01=rab_file.rab01, action=controlp, tabIndex=1, noEntry, not null, image="zoom.png";
+Edit rab01_desc=formonly.rab01_desc type CHAR, tabIndex=11, noEntry;
+CheckBox rab04=rab_file.rab04, tabIndex=5, default = "N", text=%"Rab04", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rabconf=rab_file.rabconf, tabIndex=12, noEntry, not null, items=(("Y", "Approved"),("N", "Unapproved"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+CheckBox raq05=raq_file.raq05, tabIndex=53, text=%"raq05", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rab02=rab_file.rab02, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+CheckBox rab10=rab_file.rab10, tabIndex=18, default = "N", text=%"Rab10", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit raq06=raq_file.raq06, tabIndex=55;
+ButtonEdit rab03=rab_file.rab03, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Edit rab03_desc=formonly.rab03_desc type CHAR, tabIndex=9, noEntry;
+CheckBox rab07=rab_file.rab07, tabIndex=15, default = "N", text=%"Rab07", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit rabcond=rab_file.rabcond, tabIndex=7, noEntry, century="";
+TimeEdit rabcont=rab_file.rabcont, tabIndex=16;
+TimeEdit raq07=raq_file.raq07, tabIndex=54;
+ButtonEdit rabplant=rab_file.rabplant, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit rabplant_desc=formonly.rabplant_desc type CHAR, tabIndex=10, noEntry;
+CheckBox rab05=rab_file.rab05, tabIndex=6, default = "N", text=%"Rab05", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rabconu=rab_file.rabconu, action=controlp, tabIndex=8, noEntry, image="zoom.png";
+Edit rabconu_desc=formonly.rabconu_desc type CHAR, tabIndex=14, noEntry;
+Edit rab11=rab_file.rab11, tabIndex=13;
+CheckBox rab06=rab_file.rab06, tabIndex=17, default = "Y", text=%"Rab06", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rab08=rab_file.rab08, tabIndex=20, default = "N", text=%"Rab08", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rab09=rab_file.rab09, tabIndex=19, default = "N", text=%"Rab09", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rabuser=rab_file.rabuser, tabIndex=24, noEntry;
+Edit rabmodu=rab_file.rabmodu, tabIndex=23, noEntry;
+Edit rabacti=rab_file.rabacti, tabIndex=22, noEntry, upShift;
+Edit rabgrup=rab_file.rabgrup, tabIndex=21, noEntry;
+DateEdit rabdate=rab_file.rabdate, tabIndex=28, noEntry;
+DateEdit rabcrat=rab_file.rabcrat, tabIndex=25, noEntry;
+Edit raboriu=rab_file.raboriu, tabIndex=26, noEntry;
+Edit raborig=rab_file.raborig, tabIndex=27, noEntry;
+Edit rac03=rac_file.rac03, tabIndex=29, title="rac03", not null, required;
+ComboBox rac04=rac_file.rac04, tabIndex=30, title="rac04", not null, required, items=(("1", "temai"),("2", "zhekou"),("3", "zherang"));
+Edit rac05=rac_file.rac05, tabIndex=31, title="rac05", not null, required;
+Edit rac06=rac_file.rac06, tabIndex=32, title="rac06", not null, required;
+Edit rac07=rac_file.rac07, tabIndex=33, title="rac07", not null, required;
+ComboBox rac08=rac_file.rac08, tabIndex=34, default = "N", title="rac08", not null, required, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"));
+Edit rac09=rac_file.rac09, tabIndex=35, title="rac09", not null, required;
+Edit rac10=rac_file.rac10, tabIndex=36, title="rac10", not null, required;
+Edit rac11=rac_file.rac11, tabIndex=37, title="rac11", not null, required;
+CheckBox racacti=rac_file.racacti, tabIndex=38, default = "Y", title="racacti", not null, required, valueChecked = "Y";
+ComboBox racpos=rac_file.racpos, tabIndex=39, default = "N", title="racpos", noEntry, items=(("1", "Add-No passed"),("2", "Modify-No passed"),("3", "Passed"));
+Edit rak04=rak_file.rak04, tabIndex=50, title="rak04", not null, required;
+Edit rak05=rak_file.rak05, tabIndex=52, title=%"rak05";
+DateEdit rak06=rak_file.rak06, tabIndex=50, title="rak06", not null, required;
+DateEdit rak07=rak_file.rak07, tabIndex=50, title="rak07", not null, required;
+TimeEdit rak08=rak_file.rak08, tabIndex=51, title=%"rak08", not null, required;
+TimeEdit rak09=rak_file.rak09, tabIndex=50, title=%"rak09", not null, required;
+ComboBox rak10=rak_file.rak10, tabIndex=50, title="rak10", items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"),("10", "10"),("11", "11"),("12", "12"),("13", "13"),("14", "14"),("15", "15"),("16", "16"),("17", "17"),("18", "18"),("19", "19"),("20", "20"),("21", "21"),("22", "22"),("23", "23"),("24", "24"),("25", "25"),("26", "26"),("27", "27"),("28", "28"),("29", "29"),("30", "30"),("31", "31"));
+ComboBox rak11=rak_file.rak11, tabIndex=50, title=%"rak11", items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"));
+CheckBox rakacti=rak_file.rakacti, tabIndex=50, default = "Y", title="rakacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rad03=rad_file.rad03, tabIndex=40, title="rad03", not null, required;
+ComboBox rad04=rad_file.rad04, tabIndex=41, title="rad04", not null, required, items=(("01", "1"),("02", "2"),("03", "3"),("04", "4"),("05", "5"),("06", "6"),("07", "7"),("08", "8"),("09", "9"));
+ButtonEdit rad05=rad_file.rad05, action=controlp, tabIndex=42, title="rad05", not null, required, image="zoom.png";
+Edit rad05_desc=formonly.rad05_desc type CHAR, tabIndex=43, title="rad05_desc", noEntry;
+ButtonEdit rad06=rad_file.rad06, action=controlp, tabIndex=44, title="rad06", not null, required, image="zoom.png";
+Edit rad06_desc=formonly.rad06_desc type CHAR, tabIndex=45, title="rad06_desc", noEntry;
+CheckBox radacti=rad_file.radacti, tabIndex=46, default = "Y", title="radacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=47, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=48, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=49;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rac(rac_file.rac03,rac_file.rac04,rac_file.rac05,rac_file.rac06,rac_file.rac07,rac_file.rac08,rac_file.rac09,rac_file.rac10,rac_file.rac11,rac_file.racacti,rac_file.racpos)
+SCREEN RECORD s_rad(rad_file.rad03,rad_file.rad04,rad_file.rad05,formonly.rad05_desc,rad_file.rad06,formonly.rad06_desc,rad_file.radacti)
+SCREEN RECORD Undefined(rab_file.rab01,formonly.rab01_desc,rab_file.rab04,rab_file.rabconf,formonly.imgmksg,rab_file.rab02,rab_file.rab05,rab_file.rab03,formonly.rab03_desc,rab_file.rab06,rab_file.rabcond,rab_file.rabcont,rab_file.rabplant,formonly.rabplant_desc,rab_file.rabconu,formonly.rabconu_desc,rab_file.rab11,rab_file.rab07,rab_file.rab08,rab_file.rab09,rab_file.rab10,rab_file.rabuser,rab_file.rabmodu,rab_file.rabacti,rab_file.rabgrup,rab_file.rabdate,rab_file.rabcrat,rab_file.raboriu,rab_file.raborig,formonly.idx,formonly.cnt,formonly.cn2,raq_file.raq05,raq_file.raq07,raq_file.raq06)
+SCREEN RECORD s_rak(rak_file.rak04,rak_file.rak05,rak_file.rak06,rak_file.rak07,rak_file.rak08,rak_file.rak09,rak_file.rak10,rak_file.rak11,rak_file.rakacti)
+END -- INSTRUCTIONS
+

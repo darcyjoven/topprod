@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmx440.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr440")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                               >
+  Product No.          [oeb04               ]
+  Order No.            [oea01               ]
+  Order Date           [oea02               ]
+  Empl No.             [oea14               ]
+  Dept No.             [oea15               ]
+
+ <                                                                                        >
+
+}
+END -- Grid1
+Group g01(text="INPUT")
+VBox VBox2
+Grid Grid2
+{
+ Time Bucket Method   [c                    ][rpg01       ]
+ Initial Date         [date        ]
+ Data Option 1        [a                    ]
+ Data Option 2        [b                    ]
+ Data Option 3        [o                    ]
+}
+END -- Grid2
+END -- VBox2
+END -- g01
+Grid Grid3
+{
+[more                                              ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- axmr440
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oeb04=formonly.oeb04 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit oea01=formonly.oea01 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+DateEdit oea02=formonly.oea02 type DATE, tabIndex=3;
+ButtonEdit oea14=formonly.oea14 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit oea15=formonly.oea15 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+ComboBox c=formonly.c type VARCHAR, tabIndex=6, not null, required, items=(("1", %"By Time Bucket No."),("2", %"Day"),("3", %"Week"),("4", %"10-Day"),("5", %"Month"));
+ButtonEdit rpg01=formonly.rpg01 type VARCHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P>Time Bucket # QBE";
+DateEdit date=formonly.date type DATE, tabIndex=8;
+ComboBox a=formonly.a type VARCHAR, tabIndex=9, items=(("1", %"Confirmed"),("2", %"UnConfirmed"),("3", %"All"));
+ComboBox b=formonly.b type VARCHAR, tabIndex=10, items=(("1", %"Held"),("2", %"Unheld"),("3", %"All"));
+ComboBox o=formonly.o type VARCHAR, tabIndex=11, items=(("1", %"Agreed Delivery Date"),("2", %"Scheduled Delivery Date"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=12, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oeb04,formonly.oea01,formonly.oea02,formonly.oea14,formonly.oea15,formonly.c,formonly.rpg01,formonly.date,formonly.a,formonly.b,formonly.o,formonly.more)
+END -- INSTRUCTIONS
+

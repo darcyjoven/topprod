@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt3103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt3103")
+VBox vb2
+Folder pc1
+Page Main(text=%"Basic Data")
+Table s_luh
+{
+[luhstore     |rtz13            |luhlegal    |azt02     |luh04         |luh05        |luh06     |luh07      ]
+[luhstore     |rtz13            |luhlegal    |azt02     |luh04         |luh05        |luh06     |luh07      ]
+[luhstore     |rtz13            |luhlegal    |azt02     |luh04         |luh05        |luh06     |luh07      ]
+[luhstore     |rtz13            |luhlegal    |azt02     |luh04         |luh05        |luh06     |luh07      ]
+[luhstore     |rtz13            |luhlegal    |azt02     |luh04         |luh05        |luh06     |luh07      ]
+
+}
+END -- s_luh
+END -- Main
+END -- pc1
+Grid gr2
+{
+  -------Rows [idx     ] -------
+
+
+}
+END -- gr2
+END -- vb2
+END -- almt3103
+
+TABLES
+luh_file
+ATTRIBUTES
+ButtonEdit luhstore=luh_file.luhstore, action=controlp, tabIndex=2, title="Store No.", noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=5, title="Store Name", noEntry;
+ButtonEdit luhlegal=luh_file.luhlegal, action=controlp, tabIndex=8, title=%"Corporation", noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=9, title=%"Corporation Title", noEntry;
+ComboBox luh04=luh_file.luh04, tabIndex=3, title="Corporation Initial Status", items=(("0", "unchecked"),("1", "keqianye"),("2", "clear"));
+ComboBox luh05=luh_file.luh05, tabIndex=4, title="Expected Change Status", items=(("0", "uncheck"),("1", "keqiny"),("2", "clear"));
+CheckBox luh06=luh_file.luh06, tabIndex=6, default = "N", title="Approval Result", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox luh07=luh_file.luh07, tabIndex=7, title="Corporation Status", noEntry, items=(("0", "un"),("1", "qian"),("2", "clear"));
+Edit idx=formonly.idx type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_luh(luh_file.luhstore,formonly.rtz13,luh_file.luhlegal,formonly.azt02,luh_file.luh04,luh_file.luh05,luh_file.luh06,luh_file.luh07)
+SCREEN RECORD Undefined(formonly.idx)
+END -- INSTRUCTIONS
+

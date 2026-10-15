@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp430.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp430")
+VBox VBox1
+Folder pc128
+Page page01(text="Main")
+Table s_sfb
+{
+[sfb01           |sfb05                |sfb08       |sfb09        |sfb04          |sfb02         |sfb41  ]
+[sfb01           |sfb05                |sfb08       |sfb09        |sfb04          |sfb02         |sfb41  ]
+[sfb01           |sfb05                |sfb08       |sfb09        |sfb04          |sfb02         |sfb41  ]
+[sfb01           |sfb05                |sfb08       |sfb09        |sfb04          |sfb02         |sfb41  ]
+[sfb01           |sfb05                |sfb08       |sfb09        |sfb04          |sfb02         |sfb41  ]
+[sfb01           |sfb05                |sfb08       |sfb09        |sfb04          |sfb02         |sfb41  ]
+[sfb01           |sfb05                |sfb08       |sfb09        |sfb04          |sfb02         |sfb41  ]
+[sfb01           |sfb05                |sfb08       |sfb09        |sfb04          |sfb02         |sfb41  ]
+[sfb01           |sfb05                |sfb08       |sfb09        |sfb04          |sfb02         |sfb41  ]
+[sfb01           |sfb05                |sfb08       |sfb09        |sfb04          |sfb02         |sfb41  ]
+
+}
+END -- s_sfb
+END -- page01
+END -- pc128
+Grid gr542
+{
+ ---------- Rows [cn2    ] ----------
+
+}
+END -- gr542
+END -- VBox1
+END -- asfp430
+
+TABLES
+sfb_file
+ATTRIBUTES
+Edit sfb01=sfb_file.sfb01, tabIndex=1, title="WO No.", noEntry;
+Edit sfb05=sfb_file.sfb05, tabIndex=2, title="Item #", noEntry;
+Edit sfb08=sfb_file.sfb08, tabIndex=3, title="Produce Qty", noEntry, not null, required;
+Edit sfb09=sfb_file.sfb09, tabIndex=4, title="Complete Qty", noEntry, not null, required;
+ComboBox sfb04=sfb_file.sfb04, tabIndex=5, title="WO Status Code", noEntry, comment="1.Open 2.Rls 3.Prt 4.Iss.Mat 5.WIP 6.FQC 7.St-i 8.Clos", items=(("1", %"Gnrl"),("2", %"Rls"),("3", %"Prt"),("4", %"Iss.Mat"),("5", %"WIP"),("6", %"FQC"),("7", %"St-i"),("8", %"Clos"));
+ComboBox sfb02=sfb_file.sfb02, tabIndex=6, title="WO Style Code", noEntry, comment="1.Gnrl 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm 13.Predic 15.Trial ", items=(("1", %"Gnrl"),("5", %"Rework"),("7", %"Sub."),("8", %"Rwrk SUB"),("11", %"Disasm"),("13", %"Predic"),("15", %"Trial"));
+CheckBox sfb41=sfb_file.sfb41, tabIndex=7, title="Freeze", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Been Frozen";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(sfb_file.sfb01,sfb_file.sfb05,sfb_file.sfb08,sfb_file.sfb09,sfb_file.sfb04,sfb_file.sfb02,sfb_file.sfb41)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

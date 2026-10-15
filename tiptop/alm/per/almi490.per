@@ -1,0 +1,53 @@
+----------------------------------------------------------------------------------
+-- File created from /u53/tiptop/alm/42f/almi490.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almi490")
+
+Folder pc3
+Page Main(text=%"Main")
+ VBox vb3
+ Table s_lpb
+ {
+ [lpb01   |lpb02   |lpb03   |lpbpos  ]
+ [lpb01   |lpb02   |lpb03   |lpbpos  ]
+ [lpb01   |lpb02   |lpb03   |lpbpos  ]
+ [lpb01   |lpb02   |lpb03   |lpbpos  ]
+ [lpb01   |lpb02   |lpb03   |lpbpos  ]
+ }
+ END -- Table
+ Grid gr3
+ {
+  ----------Rows[cn2   ]----------
+
+
+ }
+ END
+ END -- VBox
+END -- Page
+END -- Folder
+
+
+END -- Form
+
+TABLES
+lpb_file
+
+ATTRIBUTES
+ButtonEdit lpb01=lpb_file.lpb01, action=controlp, tabIndex=1, title="lpb01", not null, required, image="zoom.png";
+Edit lpb02=lpb_file.lpb02, tabIndex=2, title="lpb02";
+CheckBox lpb03=lpb_file.lpb03, tabIndex=5, title=%"lpb03", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lpbpos=lpb_file.lpbpos, tabIndex=7, title=%"lpbpos", text=%"POS", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lpb(lpb_file.lpb01, lpb_file.lpb02, lpb_file.lpb03, lpb_file.lpbpos)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

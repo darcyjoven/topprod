@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli2035.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli2035")
+VBox vb1
+Folder pc1
+Page page01
+Grid gr1
+{
+  Opposite Account[asq02                   ]
+
+}
+END -- gr1
+END -- page01
+END -- pc1
+Group group01
+Table Table1
+{
+[asuu03                  |aag02                   |asuu04      |asuu05        |asuu06        ]
+[asuu03                  |aag02                   |asuu04      |asuu05        |asuu06        ]
+[asuu03                  |aag02                   |asuu04      |asuu05        |asuu06        ]
+[asuu03                  |aag02                   |asuu04      |asuu05        |asuu06        ]
+[asuu03                  |aag02                   |asuu04      |asuu05        |asuu06        ]
+[asuu03                  |aag02                   |asuu04      |asuu05        |asuu06        ]
+[asuu03                  |aag02                   |asuu04      |asuu05        |asuu06        ]
+[asuu03                  |aag02                   |asuu04      |asuu05        |asuu06        ]
+[asuu03                  |aag02                   |asuu04      |asuu05        |asuu06        ]
+[asuu03                  |aag02                   |asuu04      |asuu05        |asuu06        ]
+
+}
+END -- Table1
+END -- group01
+Grid gr2
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2
+END -- vb1
+END -- ggli2035
+
+TABLES
+asuu_file
+ATTRIBUTES
+ButtonEdit asq02=formonly.asq02 type CHAR, action=controlp, tabIndex=1, noEntry, image="zoom", comment="<^P> Query Account No.";
+ButtonEdit asuu03=asuu_file.asuu03, action=controlp, tabIndex=2, title="Opposite Acc.", not null, required, image="zoom", comment="<^P> Query Account No.";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=8, title="Acc. Descript", noEntry;
+CheckBox asuu04=asuu_file.asuu04, tabIndex=3, title="Opposite set", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox asuu05=asuu_file.asuu05, tabIndex=4, title="Stock Reverses", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox asuu06=asuu_file.asuu06, tabIndex=5, title="Minority stock", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asuu(asuu_file.asuu03,formonly.aag02,asuu_file.asuu04,asuu_file.asuu05,asuu_file.asuu06)
+SCREEN RECORD Undefined(formonly.asq02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct900")
+VBox VBox1
+Folder pc838
+Page page01(text="Main")
+Table s_cxk
+{
+[cxk01              |cxk02                  |cxk03                 |cxk04               |cxk05           ]
+[cxk01              |cxk02                  |cxk03                 |cxk04               |cxk05           ]
+[cxk01              |cxk02                  |cxk03                 |cxk04               |cxk05           ]
+[cxk01              |cxk02                  |cxk03                 |cxk04               |cxk05           ]
+[cxk01              |cxk02                  |cxk03                 |cxk04               |cxk05           ]
+[cxk01              |cxk02                  |cxk03                 |cxk04               |cxk05           ]
+[cxk01              |cxk02                  |cxk03                 |cxk04               |cxk05           ]
+[cxk01              |cxk02                  |cxk03                 |cxk04               |cxk05           ]
+[cxk01              |cxk02                  |cxk03                 |cxk04               |cxk05           ]
+[cxk01              |cxk02                  |cxk03                 |cxk04               |cxk05           ]
+
+}
+END -- s_cxk
+END -- page01
+END -- pc838
+Grid gr4627
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4627
+END -- VBox1
+END -- axct900
+
+ATTRIBUTES
+ButtonEdit cxk01=formonly.cxk01 type VARCHAR, action=controlp, tabIndex=1, title="Item No.", not null, required, image="zoom";
+Edit cxk02=formonly.cxk02 type VARCHAR, tabIndex=2, title="Item Description", not null, required;
+Edit cxk03=formonly.cxk03 type CHAR, tabIndex=4, title="Item Specification", not null, required;
+Edit cxk04=formonly.cxk04 type DECIMAL, tabIndex=5, title="Trans. Unit Price", not null, required;
+DateEdit cxk05=formonly.cxk05 type DATE, tabIndex=6, title="Created Date", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cxk(formonly.cxk01,formonly.cxk02,formonly.cxk03,formonly.cxk04,formonly.cxk05)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

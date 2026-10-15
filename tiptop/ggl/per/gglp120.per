@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglp120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gglp120")
+Grid gr1
+{
+ <G group1                                              >
+  Format Define File  [a                   ]
+  Unit Org Code       [b                   ]
+  Software Vision     [c                   ]
+  Start Date          [d                   ]
+ <                                                      >
+ <G group2                                              >
+  Acct. Title File    [e                   ]
+ <                                                      >
+ <G group3                                              >
+  Year Beg. Bal. File [f                   ]
+  Select Account Year [g                   ]
+ <                                                      >
+ <G group4                                              >
+  Account Voucher File[h                   ]
+  Select Voucher Date [i                   ]
+ <                                                      >
+ <G group5                                             >
+  Book No.            [bookn]
+ [dummy01                                              ]
+ <                                                     >
+}
+END -- gr1
+END -- gglp120
+
+ATTRIBUTES
+Group group1:group1, text="Format Define File";
+Edit a=formonly.a type VARCHAR, tabIndex=1, comment="Input keep format define file path, default path:GSHCZ.TXT ";
+Edit b=formonly.b type VARCHAR, tabIndex=2, comment="Input Unit Organization Code, Ex:G3201137980 ";
+Edit c=formonly.c type VARCHAR, tabIndex=3, comment="Input software vision, Ex:1.1 ";
+DateEdit d=formonly.d type DATE, tabIndex=4, comment="Input start date ";
+Group group2:group2, text="Account Title File";
+Edit e=formonly.e type VARCHAR, tabIndex=5, comment="Input account title file path, default path:ACCOUNT.TXT ";
+Group group3:group3, text="Year Beginning Balance File";
+Edit f=formonly.f type VARCHAR, tabIndex=6, comment="Input Year Beginning Balance File path, default path:BALANCE.TXT ";
+Edit g=formonly.g type VARCHAR, tabIndex=7, comment="Input account year ";
+Group group4:group4, text="Account Voucher File";
+Edit h=formonly.h type VARCHAR, tabIndex=8, comment="Input account voucher file path, default path:VOUCHER.TXT ";
+DateEdit i=formonly.i type DATE, tabIndex=9, comment="The space mean export all perion, otherwise export input date ";
+Group group5:group5;
+ButtonEdit bookn=formonly.bookno type CHAR, action=controlp, tabIndex=10, not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+Label dummy01:dummy01, text="NOTE:The default path that save file is recent dir.";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.b,formonly.c,formonly.d,formonly.e,formonly.f,formonly.g,formonly.h,formonly.i,formonly.bookno)
+END -- INSTRUCTIONS
+

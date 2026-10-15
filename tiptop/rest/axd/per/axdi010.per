@@ -1,0 +1,64 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi010.per created Wed Jan 23 05:30:28 2008
+-- File created from axdi010.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi010")
+-- TABLE
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc394
+      PAGE page01( TEXT="Page01")
+        TABLE   s_adz
+        {
+        [aa0   |aa1                 |aa2           |aa3            |aa4         |aa5             |aa6        |aa7           |aa8        |aa9           ]
+        [aa0   |aa1                 |aa2           |aa3            |aa4         |aa5             |aa6        |aa7           |aa8        |aa9           ]
+        [aa0   |aa1                 |aa2           |aa3            |aa4         |aa5             |aa6        |aa7           |aa8        |aa9           ]
+        [aa0   |aa1                 |aa2           |aa3            |aa4         |aa5             |aa6        |aa7           |aa8        |aa9           ]
+        [aa0   |aa1                 |aa2           |aa3            |aa4         |aa5             |aa6        |aa7           |aa8        |aa9           ]
+        [aa0   |aa1                 |aa2           |aa3            |aa4         |aa5             |aa6        |aa7           |aa8        |aa9           ]
+        [aa0   |aa1                 |aa2           |aa3            |aa4         |aa5             |aa6        |aa7           |aa8        |aa9           ]
+        [aa0   |aa1                 |aa2           |aa3            |aa4         |aa5             |aa6        |aa7           |aa8        |aa9           ]
+        [aa0   |aa1                 |aa2           |aa3            |aa4         |aa5             |aa6        |aa7           |aa8        |aa9           ]
+        [aa0   |aa1                 |aa2           |aa3            |aa4         |aa5             |aa6        |aa7           |aa8        |aa9           ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr1830
+    {
+     ----------Rows [ab0   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adz_file
+
+ATTRIBUTES
+  EDIT aa0=adz_file.adzslip, COMMENT="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! <^Y>User Authorization <^U>Dept Authorization ", NOT NULL, REQUIRED, UPSHIFT, TABINDEX=1, TITLE="Slip";
+  EDIT aa1=adz_file.adzdesc, TABINDEX=2, TITLE="Description";
+  CHECKBOX aa2=adz_file.adzauno, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=3, TITLE="Auto Number";
+  CHECKBOX aa3=adz_file.adzconf, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=4, TITLE="Auto Confirm";
+  CHECKBOX aa4=adz_file.adzprnt, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=5, TITLE="Print Now";
+  COMBOBOX aa5=adz_file.adzdmy6, NOT NULL, REQUIRED, TABINDEX=6, TITLE="Number Method", ITEMS=(("1","Serial Number"),("2","By Year and Month"),("3","By Year and Week"),("4","By Year,Month and Day"));
+  COMBOBOX aa6=adz_file.adztype, COMMENT="No Blank  , Enter 10 11 12 13 14 15 16 17 18 19 20", NOT NULL, REQUIRED, QUERYEDITABLE, TABINDEX=7, TITLE="Property", ITEMS=(("10","Trsf Appl(Inner)"),("11","Trsf Appl(Outer)"),("12","Trsf Appl(Out-Ret)"),("13","Trsf-out(Inner)"),("14","Trsf-out(Outer)"),("15","Trsf-out(Out-Ret)"),("16","Trsf-in(Inner)"),("17","Trsf-in(Outer)"),("18","Trsf-in(Out-Ret)"),("19","Vehicle Dispatch"),("20","Customer Inventory"));
+  CHECKBOX aa7=adz_file.adz11, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=8, TITLE="Affect Idle";
+  CHECKBOX aa8=adz_file.adzapr, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=9, TITLE="Approve?";
+  BUTTONEDIT aa9=adz_file.adzsign, ACTION=controlp, COMMENT="<^P>Qry Approval Level", IMAGE="zoom", TABINDEX=10, TITLE="Approve level";
+  EDIT ab0=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=11;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adz (adz_file.adzslip, adz_file.adzdesc, adz_file.adzauno, adz_file.adzconf, adz_file.adzprnt, adz_file.adzdmy6, adz_file.adztype, adz_file.adz11, adz_file.adzapr, adz_file.adzsign)
+END

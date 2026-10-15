@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi614_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="abmi614_1")
+Folder pc3
+Page Page4(text=%"Main")
+VBox vb2
+Grid gr9
+{
+
+ Expressions    [a1                                                                                                    ]
+                [                                                                                                      ]
+                [                                                                                                      ]
+                [                                                                                                      ]
+                [                                                                                                      ]
+                [                                                                                                      ]
+                 select PT   [a4                 ]       select Pr       [a6                     ]
+                 select F    [a5                 ]                       [act03                  ]
+
+}
+END -- gr9
+Table s_boe
+{
+[a2                  |boe78a            |a3                  ]
+[a2                  |boe78a            |a3                  ]
+[a2                  |boe78a            |a3                  ]
+[a2                  |boe78a            |a3                  ]
+[a2                  |boe78a            |a3                  ]
+[a2                  |boe78a            |a3                  ]
+[a2                  |boe78a            |a3                  ]
+[a2                  |boe78a            |a3                  ]
+[a2                  |boe78a            |a3                  ]
+[a2                  |boe78a            |a3                  ]
+
+}
+END -- s_boe
+END -- vb2
+END -- Page4
+END -- pc3
+END -- abmi614_1
+
+ATTRIBUTES
+TextEdit a1=formonly.a1 type CHAR, tabIndex=1, noEntry;
+ComboBox a4=formonly.a4 type CHAR, tabIndex=2, items=(("1", "const"),("2", "varible:host"),("3", "varible:part"));
+ComboBox a6=formonly.a6 type CHAR, tabIndex=7;
+ComboBox a5=formonly.a5 type CHAR, tabIndex=3, items=(("1", "+"),("2", "-"),("3", "*"),("4", "/"),("5", "("),("6", ")"));
+Button act03:act03, text="Back";
+Edit a2=formonly.a2 type DECIMAL, tabIndex=4, title="Formula Order ", noEntry;
+Edit boe78a=formonly.boe78a type VARCHAR, tabIndex=5, title="Formula", noEntry, not null;
+Edit a3=formonly.a3 type DECIMAL, tabIndex=6, title="Input test value ";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_boe(formonly.a2,formonly.boe78a,formonly.a3)
+SCREEN RECORD Undefined(formonly.a1,formonly.a4,formonly.a6,formonly.a5)
+END -- INSTRUCTIONS
+

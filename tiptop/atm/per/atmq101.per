@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmq101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmq101")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1272
+{
+ <G group01                                             >
+  Document No.        [ogb01               ][ogb03]
+  Date                [oga02     ]
+  Delivery Customer   [oga04     ][occ02               ]
+  Delivery Address    [oga044    ]
+ <                                                      >
+
+}
+END -- gr1272
+Grid gr1273
+{
+ <G group02                                      >
+  Item No.  [ogb04                         ]
+  Part Name [ogb06                         ]
+  Unit      [ogb05     ]
+  Quantity  [ogb12               ]
+ <                                               >
+
+}
+END -- gr1273
+Grid gr1274
+{
+ <G group03                                      >
+  Chi/Sales Unit      [ogb910    ]
+  Chi/Sales Qty       [ogb912              ]
+  Par/Ref Unit        [ogb913    ]
+  Par/Ref Qty         [ogb915              ]
+ <                                               >
+
+}
+END -- gr1274
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_sr
+{
+[r         |adl01               |adl02     |adk08     |adk04       |adk05     |adl07       |adl08       |adl20      |adl05               |adl15            |adl17               |adl12              |adl14               ]
+[r         |adl01               |adl02     |adk08     |adk04       |adk05     |adl07       |adl08       |adl20      |adl05               |adl15            |adl17               |adl12              |adl14               ]
+[r         |adl01               |adl02     |adk08     |adk04       |adk05     |adl07       |adl08       |adl20      |adl05               |adl15            |adl17               |adl12              |adl14               ]
+[r         |adl01               |adl02     |adk08     |adk04       |adk05     |adl07       |adl08       |adl20      |adl05               |adl15            |adl17               |adl12              |adl14               ]
+[r         |adl01               |adl02     |adk08     |adk04       |adk05     |adl07       |adl08       |adl20      |adl05               |adl15            |adl17               |adl12              |adl14               ]
+[r         |adl01               |adl02     |adk08     |adk04       |adk05     |adl07       |adl08       |adl20      |adl05               |adl15            |adl17               |adl12              |adl14               ]
+[r         |adl01               |adl02     |adk08     |adk04       |adk05     |adl07       |adl08       |adl20      |adl05               |adl15            |adl17               |adl12              |adl14               ]
+[r         |adl01               |adl02     |adk08     |adk04       |adk05     |adl07       |adl08       |adl20      |adl05               |adl15            |adl17               |adl12              |adl14               ]
+[r         |adl01               |adl02     |adk08     |adk04       |adk05     |adl07       |adl08       |adl20      |adl05               |adl15            |adl17               |adl12              |adl14               ]
+[r         |adl01               |adl02     |adk08     |adk04       |adk05     |adl07       |adl08       |adl20      |adl05               |adl15            |adl17               |adl12              |adl14               ]
+
+}
+END -- s_sr
+Grid gr1275
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr1275
+END -- VBox1
+END -- atmq101
+
+TABLES
+adk_file,
+ogb_file,
+oga_file,
+adl_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit ogb01=ogb_file.ogb01, action=controlp, tabIndex=1, image="zoom";
+Edit ogb03=ogb_file.ogb03, tabIndex=2;
+DateEdit oga02=oga_file.oga02, tabIndex=3;
+ButtonEdit oga04=oga_file.oga04, action=controlp, tabIndex=4, image="zoom";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=5, noEntry;
+ButtonEdit oga044=oga_file.oga044, action=controlp, tabIndex=6, image="zoom";
+Group group02:group02;
+ButtonEdit ogb04=ogb_file.ogb04, action=controlp, tabIndex=7, image="zoom";
+Edit ogb06=ogb_file.ogb06, tabIndex=8;
+Edit ogb05=ogb_file.ogb05, tabIndex=9;
+Edit ogb12=ogb_file.ogb12, tabIndex=10, not null, required;
+Group group03:group03;
+Edit ogb910=ogb_file.ogb910, tabIndex=11;
+Edit ogb912=ogb_file.ogb912, tabIndex=12;
+Edit ogb913=ogb_file.ogb913, tabIndex=13;
+Edit ogb915=ogb_file.ogb915, tabIndex=14;
+Edit r=formonly.r type SMALLINT, tabIndex=15, title="Line No";
+ButtonEdit adl01=adl_file.adl01, action=controlp, tabIndex=16, title="Vehicle Dispatch #", image="zoom";
+Edit adl02=adl_file.adl02, tabIndex=17, title="Line No";
+ButtonEdit adk08=adk_file.adk08, action=controlp, tabIndex=18, title="Vehicle #", image="zoom";
+DateEdit adk04=adk_file.adk04, tabIndex=19, title="Leave Date";
+Edit adk05=adk_file.adk05, tabIndex=20, title="Leave Ti.";
+DateEdit adl07=adl_file.adl07, tabIndex=21, title="Arr. Date";
+Edit adl08=adl_file.adl08, tabIndex=22, title="Arr. Time";
+Edit adl20=adl_file.adl20, tabIndex=23, title="Department";
+Edit adl05=adl_file.adl05, tabIndex=24, title="Dispatch Qty";
+Edit adl15=adl_file.adl15, tabIndex=25, title="Par/Ref Unit";
+Edit adl17=adl_file.adl17, tabIndex=26, title="Par/Ref Qty";
+Edit adl12=adl_file.adl12, tabIndex=27, title="Chi/Sales Unit";
+Edit adl14=adl_file.adl14, tabIndex=28, title="Chi/Sales Qty";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sr(formonly.r,adl_file.adl01,adl_file.adl02,adk_file.adk08,adk_file.adk04,adk_file.adk05,adl_file.adl07,adl_file.adl08,adl_file.adl20,adl_file.adl05,adl_file.adl15,adl_file.adl17,adl_file.adl12,adl_file.adl14)
+SCREEN RECORD Undefined(ogb_file.ogb01,ogb_file.ogb03,oga_file.oga02,oga_file.oga04,formonly.occ02,oga_file.oga044,ogb_file.ogb04,ogb_file.ogb06,ogb_file.ogb05,ogb_file.ogb12,ogb_file.ogb910,ogb_file.ogb912,ogb_file.ogb913,ogb_file.ogb915,formonly.cnt)
+END -- INSTRUCTIONS
+

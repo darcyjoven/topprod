@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt685_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt685_1")
+Grid gr355
+{
+  <G group01                                            >
+   Coupon Bit   [lpx21               ]
+   Fix Bit      [lpx22               ]
+   Fix Code     [lpx23               ]
+   Float Bit    [lpx24               ]
+  <                                                     >
+  <G gb2                                             >
+    Begin No.    [beg_no              ]
+    End No.      [end_no              ]
+  <                                                  >
+
+}
+END -- gr355
+END -- almt685_1
+
+ATTRIBUTES
+Group group01:group01, text="Coupon Data";
+Edit lpx21=formonly.lpx21 type VARCHAR, tabIndex=1, noEntry;
+Edit lpx22=formonly.lpx22 type VARCHAR, tabIndex=2, noEntry;
+Edit lpx23=formonly.lpx23 type VARCHAR, tabIndex=3, noEntry;
+Edit lpx24=formonly.lpx24 type VARCHAR, tabIndex=4, noEntry;
+Group gb2:gb2, text="Input Range";
+Edit beg_no=formonly.beg_no type VARCHAR, tabIndex=5, not null, required;
+Edit end_no=formonly.end_no type VARCHAR, tabIndex=6, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.lpx21,formonly.lpx22,formonly.lpx23,formonly.lpx24,formonly.beg_no,formonly.end_no)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi250_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi250_1")
+VBox VBox1
+Folder pc476
+Page page01(text="Main")
+HBox HBox1
+Grid gr2062
+{
+ <G group01                                                          >
+  Customer #            [occa01         ]
+  Cust Abbr.            [occa02                        ]
+  Current Status        [occa1004   ][imgmksg]
+                                     [       ]
+  Tax Regi#             [occa1017       ]
+  Tax Regi Valid Dt.FR  [occa1018       ]    TO [occa1019       ]
+  Taxpayer Idnt Cd      [occa1020       ]
+  Full Invoice Name     [occa1021                                ]
+ <                                                                   >
+
+}
+END -- gr2062
+Grid gr2063
+{
+ <G group02                                                       >
+  Customer Property   [occa06     ]
+  Invoice Cust        [occa1022  ] [occa02a             ]
+  OutStanding Cust    [occa1024  ] [tqb02               ]
+  Cost Cust           [occa1025  ] [tqb02a              ]
+  CK Account Date     [occa1026  ]
+  MAX Discount Ratio  [occa1028  ]%
+ <                                                                >
+
+
+
+}
+END -- gr2063
+END -- HBox1
+END -- page01
+END -- pc476
+END -- VBox1
+END -- axmi250_1
+
+TABLES
+occa_file
+ATTRIBUTES
+Group group01:group01;
+Edit occa01=occa_file.occa01, tabIndex=1, noEntry, not null, required;
+Edit occa02=occa_file.occa02, tabIndex=2, noEntry, not null, required;
+ComboBox occa1004=occa_file.occa1004, tabIndex=16, noEntry, not null, required, items=(("0", "Issue"),("1", "Approved"),("2", "Carried"),("S", "Approving"),("R", "Approval rejected!"),("W", "Withdraw"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit occa1017=occa_file.occa1017, tabIndex=3;
+DateEdit occa1018=occa_file.occa1018, tabIndex=4;
+DateEdit occa1019=occa_file.occa1019, tabIndex=5;
+Edit occa1020=occa_file.occa1020, tabIndex=6;
+Edit occa1021=occa_file.occa1021, tabIndex=7, not null, required;
+Group group02:group02;
+ComboBox occa06=occa_file.occa06, tabIndex=17, not null, required, queryEditable, items=(("1", "Buyer"),("2", "Ship.Customer"),("3", "Collecting Customer"),("4", "Biller"));
+ButtonEdit occa1022=occa_file.occa1022, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Customs #";
+Edit occa02a=formonly.occa02a type CHAR, tabIndex=9, noEntry;
+ButtonEdit occa1024=occa_file.occa1024, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry Organize #";
+Edit tqb02=formonly.tqb02 type CHAR, tabIndex=11, noEntry;
+ButtonEdit occa1025=occa_file.occa1025, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Organize #";
+Edit tqb02a=formonly.tqb02a type CHAR, tabIndex=13, noEntry;
+Edit occa1026=occa_file.occa1026, tabIndex=14;
+Edit occa1028=occa_file.occa1028, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(occa_file.occa01,occa_file.occa02,occa_file.occa1004,formonly.imgmksg,occa_file.occa1017,occa_file.occa1018,occa_file.occa1019,occa_file.occa1020,occa_file.occa1021,occa_file.occa06,occa_file.occa1022,formonly.occa02a,occa_file.occa1024,formonly.tqb02,occa_file.occa1025,formonly.tqb02a,occa_file.occa1026,occa_file.occa1028)
+END -- INSTRUCTIONS
+

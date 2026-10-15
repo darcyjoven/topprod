@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr860.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr860")
+VBox vb5
+Grid gr3382
+{
+ <G group01                                                            >
+  Label No.           [pia01               ]
+  Item No.            [pia02               ]
+  Warehouse No.       [pia03               ]
+  Location            [pia04               ]
+  Lot No.             [pia05               ]
+  Source Code         [ima08               ]
+  Warehouse Keeper    [ima23               ]
+  Type                [pia931              ]
+ <                                                                     >
+
+}
+END -- gr3382
+Group group02(text="INPUT")
+Grid gr3383
+{
+ <G group03                                                             >
+ [a                                                           ]
+ <                                                                      >
+ <G group04                                                             >
+ [s1                  ] [s2                  ] [s3                  ]
+ [t1                  ] [t2                  ] [t3                  ]
+ <                                                                      >
+
+}
+END -- gr3383
+END -- group02
+Grid gr3384
+{
+[more                                  ]
+
+}
+END -- gr3384
+END -- vb5
+END -- aimr860
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit pia01=formonly.pia01 type VARCHAR, tabIndex=1;
+ButtonEdit pia02=formonly.pia02 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit pia03=formonly.pia03 type VARCHAR, tabIndex=3;
+Edit pia04=formonly.pia04 type VARCHAR, tabIndex=4;
+Edit pia05=formonly.pia05 type VARCHAR, tabIndex=5;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=6;
+Edit ima23=formonly.ima23 type VARCHAR, tabIndex=7;
+Edit pia931=formonly.pia931 type VARCHAR, tabIndex=8, default = "1", noEntry, not null;
+Group group03:group03, text="Checking Method for not InvTaking";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=9, items=(("1", "User 1  "),("2", "User 2  "),("3", "Both"));
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=10, queryEditable, items=(("1", "Label No."),("2", "Item No."),("3", "Warehouse"),("4", "Location"),("5", "Lot No."),("6", "Source Code"),("7", "Warehouse Keeper"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=11, queryEditable, items=(("1", "Label No."),("2", "Item No."),("3", "Warehouse"),("4", "Location"),("5", "Lot No."),("6", "Source Code"),("7", "Warehouse Keeper"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=12, queryEditable, items=(("1", "Label No."),("2", "Item No."),("3", "Warehouse"),("4", "Location"),("5", "Lot No."),("6", "Source Code"),("7", "Warehouse Keeper"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=13, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=14, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=15, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=16, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pia01,formonly.pia02,formonly.pia03,formonly.pia04,formonly.pia05,formonly.ima08,formonly.ima23,formonly.pia931,formonly.a,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.more)
+END -- INSTRUCTIONS
+

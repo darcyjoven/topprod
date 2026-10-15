@@ -1,0 +1,106 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq007.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid2
+{
+
+ Date Range          [bdate       ]-[edate       ]
+
+}
+END -- Grid2
+Folder Folder1
+Page page1(action=page1, text=%"page1")
+Table s_imp
+{
+[imo01               |imp02 |imo02     |imo03     |imp03                         |ima02                         |ima021                        |ima2|imp04            |imp09                 |imp10                 ]
+[imo01               |imp02 |imo02     |imo03     |imp03                         |ima02                         |ima021                        |ima2|imp04            |imp09                 |imp10                 ]
+[imo01               |imp02 |imo02     |imo03     |imp03                         |ima02                         |ima021                        |ima2|imp04            |imp09                 |imp10                 ]
+[imo01               |imp02 |imo02     |imo03     |imp03                         |ima02                         |ima021                        |ima2|imp04            |imp09                 |imp10                 ]
+[imo01               |imp02 |imo02     |imo03     |imp03                         |ima02                         |ima021                        |ima2|imp04            |imp09                 |imp10                 ]
+[imo01               |imp02 |imo02     |imo03     |imp03                         |ima02                         |ima021                        |ima2|imp04            |imp09                 |imp10                 ]
+[imo01               |imp02 |imo02     |imo03     |imp03                         |ima02                         |ima021                        |ima2|imp04            |imp09                 |imp10                 ]
+[imo01               |imp02 |imo02     |imo03     |imp03                         |ima02                         |ima021                        |ima2|imp04            |imp09                 |imp10                 ]
+[imo01               |imp02 |imo02     |imo03     |imp03                         |ima02                         |ima021                        |ima2|imp04            |imp09                 |imp10                 ]
+[imo01               |imp02 |imo02     |imo03     |imp03                         |ima02                         |ima021                        |ima2|imp04            |imp09                 |imp10                 ]
+}
+END -- s_imp
+END -- page1
+Page page2(action=page2, text=%"page2")
+Table s_imr
+{
+[imr00   |imr01               |imq02 |imr09     |imq03               |imq04 |imq05                         |abp27                         |bmq021                        |chr4|imq07            |imq11                 |imq12                 ]
+[imr00   |imr01               |imq02 |imr09     |imq03               |imq04 |imq05                         |abp27                         |bmq021                        |chr4|imq07            |imq11                 |imq12                 ]
+[imr00   |imr01               |imq02 |imr09     |imq03               |imq04 |imq05                         |abp27                         |bmq021                        |chr4|imq07            |imq11                 |imq12                 ]
+[imr00   |imr01               |imq02 |imr09     |imq03               |imq04 |imq05                         |abp27                         |bmq021                        |chr4|imq07            |imq11                 |imq12                 ]
+[imr00   |imr01               |imq02 |imr09     |imq03               |imq04 |imq05                         |abp27                         |bmq021                        |chr4|imq07            |imq11                 |imq12                 ]
+[imr00   |imr01               |imq02 |imr09     |imq03               |imq04 |imq05                         |abp27                         |bmq021                        |chr4|imq07            |imq11                 |imq12                 ]
+[imr00   |imr01               |imq02 |imr09     |imq03               |imq04 |imq05                         |abp27                         |bmq021                        |chr4|imq07            |imq11                 |imq12                 ]
+[imr00   |imr01               |imq02 |imr09     |imq03               |imq04 |imq05                         |abp27                         |bmq021                        |chr4|imq07            |imq11                 |imq12                 ]
+[imr00   |imr01               |imq02 |imr09     |imq03               |imq04 |imq05                         |abp27                         |bmq021                        |chr4|imq07            |imq11                 |imq12                 ]
+[imr00   |imr01               |imq02 |imr09     |imq03               |imq04 |imq05                         |abp27                         |bmq021                        |chr4|imq07            |imq11                 |imq12                 ]
+}
+END -- s_imr
+END -- page2
+END -- Folder1
+Grid Grid1
+{
+ ----------Rows [cn2   ] ---------- [label1 |qty                 ][label2 |tot                 ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+ima_file,
+imr_file,
+imq_file,
+imp_file,
+imo_file
+ATTRIBUTES
+Edit bdate=formonly.bdate type DATE, tabIndex=1, not null, required;
+Edit edate=formonly.edate type DATE, tabIndex=2, not null, required;
+Edit imo01=imo_file.imo01, tabIndex=3, title=%"imo01", noEntry, not null, scroll;
+Edit imp02=imp_file.imp02, tabIndex=4, title=%"imp02", noEntry, not null, scroll;
+Edit imo02=imo_file.imo02, tabIndex=5, title=%"imo02", noEntry, scroll;
+Edit imo03=imo_file.imo03, tabIndex=6, title=%"imo03", noEntry, scroll;
+Edit imp03=imp_file.imp03, tabIndex=7, title=%"imp03", noEntry, scroll;
+Edit ima02=ima_file.ima02, tabIndex=8, title=%"ima02", noEntry, scroll;
+Edit ima021=ima_file.ima021, tabIndex=9, title=%"ima021", noEntry, scroll;
+Edit ima2=ima_file.ima25, tabIndex=10, title=%"ima25", noEntry, scroll;
+Edit imp04=imp_file.imp04, tabIndex=11, title=%"imp04", noEntry, scroll;
+Edit imp09=imp_file.imp09, tabIndex=12, title=%"imp09", noEntry, scroll;
+Edit imp10=imp_file.imp10, tabIndex=13, title=%"imp10", noEntry, scroll;
+ComboBox imr00=imr_file.imr00, tabIndex=14, title=%"imr00", noEntry, items=(("1", "ysch"),("2", "yjch"));
+Edit imr01=imr_file.imr01, tabIndex=15, title=%"imr01", noEntry, not null, scroll;
+Edit imq02=imq_file.imq02, tabIndex=16, title=%"imq02", noEntry, not null, scroll;
+Edit imr09=imr_file.imr09, tabIndex=17, title=%"imr09", noEntry, scroll;
+Edit imq03=imq_file.imq03, tabIndex=18, title=%"imq03", noEntry, scroll;
+Edit imq04=imq_file.imq04, tabIndex=19, title=%"imq04", noEntry, scroll;
+Edit imq05=imq_file.imq05, tabIndex=20, title=%"imq05", noEntry, scroll;
+Edit abp27=formonly.abp27 type like ima_file.ima02, tabIndex=21, title=%"abp27", noEntry, scroll;
+Edit bmq021=formonly.bmq021 type like ima_file.ima021, tabIndex=22, title=%"bmq021", noEntry, scroll;
+Edit chr4=formonly.chr4 type like ima_file.ima25, tabIndex=23, title=%"chr4", noEntry, scroll;
+Edit imq07=imq_file.imq07, tabIndex=24, title=%"imq07", noEntry, scroll;
+Edit imq11=imq_file.imq11, tabIndex=25, title=%"imq11", noEntry, scroll;
+Edit imq12=imq_file.imq12, tabIndex=26, title=%"imq12", noEntry, scroll;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=27, noEntry;
+Label label1:Label1, text=%"Qty";
+Edit qty=formonly.qty type CHAR, tabIndex=28, noEntry;
+Label label2:Label2, text=%"tot";
+Edit tot=formonly.tot type CHAR, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imp(imo_file.imo01,imp_file.imp02,imo_file.imo02,imo_file.imo03,imp_file.imp03,ima_file.ima02,ima_file.ima021,ima_file.ima25,imp_file.imp04,imp_file.imp09,imp_file.imp10)
+SCREEN RECORD Record(formonly.cn2,formonly.qty,formonly.tot)
+SCREEN RECORD s_imr(imr_file.imr00,imr_file.imr01,imq_file.imq02,imr_file.imr09,imq_file.imq03,imq_file.imq04,imq_file.imq05,formonly.abp27,formonly.bmq021,formonly.chr4,imq_file.imq07,imq_file.imq11,imq_file.imq12)
+SCREEN RECORD Undefined(formonly.bdate,formonly.edate)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,154 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acot300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acot300")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1466
+{
+ Application No      [cog01             ]
+ Date                [cog02       ]
+ Currency            [coc02       ]
+
+}
+END -- gr1466
+Grid gr1467
+{
+ Customs No.         [cog05       ]
+ Register Book No.   [cog03               ]
+ Bonded No.          [coc04               ]
+
+}
+END -- gr1467
+Grid gr1468
+{
+ Confirm        [cogconf      ]
+ [imgmksg]
+ [       ]
+
+}
+END -- gr1468
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1469
+{
+ Record Owner        [coguser   ] Last Modified by    [cogmodu   ] Data Valid Code     [cogacti   ]
+ Department          [coggrup   ] Create/Modify Date  [cogdate     ]
+ Record Orig.        [cogoriu   ]
+ Dept Orig.          [cogorig   ]
+}
+END -- gr1469
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[cogud01                       ] userdefined_field07[cogud07        ] userdefined_field13[cogud13        ]
+                    [                              ] userdefined_field08[cogud08        ] userdefined_field14[cogud14        ]
+ userdefined_field02[cogud02        ]                userdefined_field09[cogud09        ] userdefined_field15[cogud15        ]
+ userdefined_field03[cogud03        ]                userdefined_field10[cogud10        ]
+ userdefined_field04[cogud04        ]                userdefined_field11[cogud11        ]
+ userdefined_field05[cogud05        ]                userdefined_field12[cogud12        ]
+ userdefined_field06[cogud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_coh
+{
+[coh02    |coh03          |cob02                         |coh041 |coh05     |coh06  |coh07   |coh08       |cohud01   |cohud02   |cohud03    |cohud04    |cohud05    |cohud06    |cohud07    |cohud08    |cohud09    |cohud10    |cohud11   |cohud12  |cohud13   |cohud14   |cohud15    ]
+[coh02    |coh03          |cob02                         |coh041 |coh05     |coh06  |coh07   |coh08       |cohud01   |cohud02   |cohud03    |cohud04    |cohud05    |cohud06    |cohud07    |cohud08    |cohud09    |cohud10    |cohud11   |cohud12  |cohud13   |cohud14   |cohud15    ]
+[coh02    |coh03          |cob02                         |coh041 |coh05     |coh06  |coh07   |coh08       |cohud01   |cohud02   |cohud03    |cohud04    |cohud05    |cohud06    |cohud07    |cohud08    |cohud09    |cohud10    |cohud11   |cohud12  |cohud13   |cohud14   |cohud15    ]
+[coh02    |coh03          |cob02                         |coh041 |coh05     |coh06  |coh07   |coh08       |cohud01   |cohud02   |cohud03    |cohud04    |cohud05    |cohud06    |cohud07    |cohud08    |cohud09    |cohud10    |cohud11   |cohud12  |cohud13   |cohud14   |cohud15    ]
+[coh02    |coh03          |cob02                         |coh041 |coh05     |coh06  |coh07   |coh08       |cohud01   |cohud02   |cohud03    |cohud04    |cohud05    |cohud06    |cohud07    |cohud08    |cohud09    |cohud10    |cohud11   |cohud12  |cohud13   |cohud14   |cohud15    ]
+[coh02    |coh03          |cob02                         |coh041 |coh05     |coh06  |coh07   |coh08       |cohud01   |cohud02   |cohud03    |cohud04    |cohud05    |cohud06    |cohud07    |cohud08    |cohud09    |cohud10    |cohud11   |cohud12  |cohud13   |cohud14   |cohud15    ]
+[coh02    |coh03          |cob02                         |coh041 |coh05     |coh06  |coh07   |coh08       |cohud01   |cohud02   |cohud03    |cohud04    |cohud05    |cohud06    |cohud07    |cohud08    |cohud09    |cohud10    |cohud11   |cohud12  |cohud13   |cohud14   |cohud15    ]
+[coh02    |coh03          |cob02                         |coh041 |coh05     |coh06  |coh07   |coh08       |cohud01   |cohud02   |cohud03    |cohud04    |cohud05    |cohud06    |cohud07    |cohud08    |cohud09    |cohud10    |cohud11   |cohud12  |cohud13   |cohud14   |cohud15    ]
+[coh02    |coh03          |cob02                         |coh041 |coh05     |coh06  |coh07   |coh08       |cohud01   |cohud02   |cohud03    |cohud04    |cohud05    |cohud06    |cohud07    |cohud08    |cohud09    |cohud10    |cohud11   |cohud12  |cohud13   |cohud14   |cohud15    ]
+[coh02    |coh03          |cob02                         |coh041 |coh05     |coh06  |coh07   |coh08       |cohud01   |cohud02   |cohud03    |cohud04    |cohud05    |cohud06    |cohud07    |cohud08    |cohud09    |cohud10    |cohud11   |cohud12  |cohud13   |cohud14   |cohud15    ]
+
+}
+END -- s_coh
+Grid gr1470
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------                         Add/Minus Total     [cog04               ]
+
+}
+END -- gr1470
+END -- VBox1
+END -- acot300
+
+TABLES
+coh_file,
+cog_file
+ATTRIBUTES
+ButtonEdit cog01=cog_file.cog01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Doc Type";
+DateEdit cog02=cog_file.cog02, tabIndex=2;
+Edit coc02=formonly.coc02 type VARCHAR, tabIndex=3;
+ButtonEdit cog05=cog_file.cog05, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit cog03=cog_file.cog03, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit coc04=formonly.coc04 type VARCHAR, tabIndex=6;
+ComboBox cogconf=cog_file.cogconf, tabIndex=7, noEntry, not null, required, comment="Enter Y or N ", items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit coguser=cog_file.coguser, tabIndex=9, noEntry;
+Edit cogmodu=cog_file.cogmodu, tabIndex=10, noEntry;
+Edit cogacti=cog_file.cogacti, tabIndex=11, noEntry, upShift;
+Edit coggrup=cog_file.coggrup, tabIndex=12, noEntry;
+DateEdit cogdate=cog_file.cogdate, tabIndex=13, noEntry;
+Edit cogoriu=cog_file.cogoriu, tabIndex=501, noEntry;
+Edit cogorig=cog_file.cogorig, tabIndex=502, noEntry;
+TextEdit cogud01=cog_file.cogud01, tabIndex=327, stretch=NONE;
+Edit cogud07=cog_file.cogud07, tabIndex=328;
+DateEdit cogud13=cog_file.cogud13, tabIndex=329;
+Edit cogud08=cog_file.cogud08, tabIndex=330;
+DateEdit cogud14=cog_file.cogud14, tabIndex=331;
+Edit cogud02=cog_file.cogud02, tabIndex=332;
+Edit cogud09=cog_file.cogud09, tabIndex=333;
+DateEdit cogud15=cog_file.cogud15, tabIndex=334;
+Edit cogud03=cog_file.cogud03, tabIndex=335;
+Edit cogud10=cog_file.cogud10, tabIndex=336;
+Edit cogud04=cog_file.cogud04, tabIndex=337;
+Edit cogud11=cog_file.cogud11, tabIndex=338;
+Edit cogud05=cog_file.cogud05, tabIndex=339;
+Edit cogud12=cog_file.cogud12, tabIndex=340;
+Edit cogud06=cog_file.cogud06, tabIndex=341;
+ButtonEdit coh02=coh_file.coh02, action=controlp, tabIndex=14, title="Ln No.", not null, required, image="zoom", comment="<^P>Query Bond #, enter Bond S/N";
+Edit coh03=coh_file.coh03, tabIndex=15, title="Goods No.", noEntry, not null, required;
+Edit cob02=formonly.cob02 type VARCHAR, tabIndex=16, title="Part Name", noEntry;
+Edit coh041=coh_file.coh041, tabIndex=17, title="Ver.", noEntry;
+Edit coh05=coh_file.coh05, tabIndex=18, title="+/- Qty", comment="If Decrease Qty, enter \"-\" value";
+Edit coh06=coh_file.coh06, tabIndex=19, title="Unit", noEntry;
+Edit coh07=coh_file.coh07, tabIndex=20, title="U/P", noEntry;
+Edit coh08=coh_file.coh08, tabIndex=21, title="+/- Amount", noEntry;
+TextEdit cohud01=coh_file.cohud01, tabIndex=325, title="cohud01", stretch=NONE;
+Edit cohud02=coh_file.cohud02, tabIndex=342, title="cohud02";
+Edit cohud03=coh_file.cohud03, tabIndex=343, title="cohud03";
+Edit cohud04=coh_file.cohud04, tabIndex=344, title="cohud04";
+Edit cohud05=coh_file.cohud05, tabIndex=345, title="cohud05";
+Edit cohud06=coh_file.cohud06, tabIndex=346, title="cohud06";
+Edit cohud07=coh_file.cohud07, tabIndex=347, title="cohud07";
+Edit cohud08=coh_file.cohud08, tabIndex=348, title="cohud08";
+Edit cohud09=coh_file.cohud09, tabIndex=349, title="cohud09";
+Edit cohud10=coh_file.cohud10, tabIndex=350, title="cohud10";
+Edit cohud11=coh_file.cohud11, tabIndex=351, title="cohud11";
+Edit cohud12=coh_file.cohud12, tabIndex=352, title="cohud12";
+Edit cohud13=coh_file.cohud13, tabIndex=353, title="cohud13";
+Edit cohud14=coh_file.cohud14, tabIndex=354, title="cohud14";
+Edit cohud15=coh_file.cohud15, tabIndex=355, title="cohud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23, noEntry;
+Edit cog04=cog_file.cog04, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_coh(coh_file.coh02,coh_file.coh03,formonly.cob02,coh_file.coh041,coh_file.coh05,coh_file.coh06,coh_file.coh07,coh_file.coh08,coh_file.cohud01,coh_file.cohud02,coh_file.cohud03,coh_file.cohud04,coh_file.cohud05,coh_file.cohud06,coh_file.cohud07,coh_file.cohud08,coh_file.cohud09,coh_file.cohud10,coh_file.cohud11,coh_file.cohud12,coh_file.cohud13,coh_file.cohud14,coh_file.cohud15)
+SCREEN RECORD Undefined(cog_file.cog01,cog_file.cog02,formonly.coc02,cog_file.cog05,cog_file.cog03,formonly.coc04,cog_file.cogconf,formonly.imgmksg,cog_file.coguser,cog_file.cogmodu,cog_file.cogacti,cog_file.coggrup,cog_file.cogdate,cog_file.cogoriu,cog_file.cogorig,cog_file.cogud01,cog_file.cogud07,cog_file.cogud13,cog_file.cogud08,cog_file.cogud14,cog_file.cogud02,cog_file.cogud09,cog_file.cogud15,cog_file.cogud03,cog_file.cogud10,cog_file.cogud04,cog_file.cogud11,cog_file.cogud05,cog_file.cogud12,cog_file.cogud06,formonly.cnt,formonly.cn2,cog_file.cog04)
+END -- INSTRUCTIONS
+

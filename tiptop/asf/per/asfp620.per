@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp620.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp620")
+VBox VBox1
+Grid gr558
+{
+ <G group01                                  >
+  W/O Style           [sfb02               ]
+  W/O No.             [sfb01               ]
+  Prod.Item           [sfb05               ]
+  Operating Date      [sfb13               ]
+  Complete Date       [sfb15               ]
+ <                                           >
+}
+END -- gr558
+Group g01(text="INPUT")
+HBox HBox1
+Grid gr559
+{
+ <G group02                     >
+ [s                           ]
+ <                              >
+
+}
+END -- gr559
+Grid gr560
+{
+              [c                                            ]
+              [f                                            ]
+              [g                                            ]
+
+}
+END -- gr560
+END -- HBox1
+END -- g01
+END -- VBox1
+END -- asfp620
+
+TABLES
+sfb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ComboBox sfb02=sfb_file.sfb02, tabIndex=1, comment="1.Gnrl 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm 15.Trial ", items=(("1", "Gnrl"),("5", "Rework"),("7", "Sub."),("8", "Rwrk SUB"),("11", "Disasm"),("15", "Trial"));
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=3, image="zoom";
+DateEdit sfb13=sfb_file.sfb13, tabIndex=4;
+DateEdit sfb15=sfb_file.sfb15, tabIndex=5;
+Group group02:group02, text="W/O Release Seq";
+RadioGroup s=formonly.s type VARCHAR, tabIndex=6, items=(("1", "Priority"),("2", "Critical Ratio"),("3", "Operating Date"),("4", "Complete Date"));
+CheckBox c=formonly.c type VARCHAR, tabIndex=7, text="Confirm one-by-one?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type VARCHAR, tabIndex=8, text="Continue if cannot Generate Allotment?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type VARCHAR, tabIndex=9, text="Continue if cannot Generate Routing Tracing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfb_file.sfb02,sfb_file.sfb01,sfb_file.sfb05,sfb_file.sfb13,sfb_file.sfb15,formonly.s,formonly.c,formonly.f,formonly.g)
+END -- INSTRUCTIONS
+

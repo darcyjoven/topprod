@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aecr650.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aecr650")
+VBox VBox1
+Grid gr1709
+{
+ <G group01                                                                             >
+  W/O No.             [ecm01             ]  Finished Product#   [ecm03_par         ]
+  Task Serial#        [ecm03             ]
+ <                                                                                      >
+ <G group02                                                                             >
+ [s1                  ]  [s2                  ]  [s3                  ]
+ <                                                                                      >
+
+}
+END -- gr1709
+Grid gr1710
+{
+[more                                       ]
+
+}
+END -- gr1710
+END -- VBox1
+END -- aecr650
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ecm01=formonly.ecm01 type CHAR, tabIndex=1, comment="Enter Query Condition by QBE";
+Edit ecm03_par=formonly.ecm03_par type CHAR, tabIndex=2, comment="Enter Query Condition by QBE";
+Edit ecm03=formonly.ecm03 type CHAR, tabIndex=3, comment="Enter Query Condition by QBE";
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=4, queryEditable, items=(("1", "W/O No. "),("2", "Finished Product #"),("3", "Task Serial Number"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=5, queryEditable, items=(("1", "W/O No. "),("2", "Finished Product #"),("3", "Task Serial Number"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=6, queryEditable, items=(("1", "W/O No. "),("2", "Finished Product #"),("3", "Task Serial Number"));
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ecm01,formonly.ecm03_par,formonly.ecm03,formonly.s1,formonly.s2,formonly.s3,formonly.more)
+END -- INSTRUCTIONS
+

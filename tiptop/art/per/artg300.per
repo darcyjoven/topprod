@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artg300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="artr300")
+VBox VBox1
+Group gb5(text=%"QBE")
+Grid Grid1
+{
+
+     Logistics Code         [azp01                  ]
+                       [dummy1                          ]
+}
+END -- Grid1
+END -- gb5
+Group gb1(text="QBE-2")
+Grid gr1
+{
+     Product Classification [ima131                 ]
+     Item No.               [rvv31                  ]
+     Vendor No.             [rvu04                  ]
+     Transaction Date       [rvu03                  ]
+
+}
+END -- gr1
+END -- gb1
+Group gb2(text="Input")
+Grid gr12
+{
+
+ [w                          ]
+ [x                          ]
+ <G gb4                                                                >
+     [t                                              ]
+     [                                               ]
+     [                                               ]
+ <                                                                     >
+ <G gb3                                                               >
+  [s1                 ]  [s2                 ]   [s3                ]
+ <                                                                    >
+
+}
+END -- gr12
+END -- gb2
+Grid gr5
+{
+[more                                                                ]
+
+}
+END -- gr5
+END -- VBox1
+END -- artr300
+
+ATTRIBUTES
+ButtonEdit azp01=formonly.azp01 type CHAR, action=controlp, tabIndex=2, required, image="zoom.png";
+Label dummy1:dummy1, text="LRDMDS,QY\'|\'H\';\'GK";
+ButtonEdit ima131=formonly.ima131 type CHAR, action=controlp, tabIndex=3, image="zoom.png";
+ButtonEdit rvv31=formonly.rvv31 type CHAR, action=controlp, tabIndex=4, image="zoom.png";
+ButtonEdit rvu04=formonly.rvu04 type CHAR, action=controlp, tabIndex=5, image="zoom.png";
+DateEdit rvu03=formonly.rvu03 type CHAR, tabIndex=10;
+CheckBox w=formonly.w type CHAR, tabIndex=12, text=%"Dimension list", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox x=formonly.x type CHAR, tabIndex=11, text=%"Print Group Data Y/N", not null, valueChecked = "Y", valueUnchecked = "N";
+Group gb4:gb4, text="Print Option";
+RadioGroup t=formonly.t type CHAR, tabIndex=8, items=(("1", "Logistics Statistics"),("2", "Logistics + Product Classification"),("3", "Logistics + Product"));
+Group gb3:gb3, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=9, items=(("1", "1:Logistics Code"),("2", "2:Product Classification"),("3", "3:Item No."),("4", "4:Vendor No."),("5", "5:Transaction Date"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=6, items=(("1", "Logistics Code"),("2", "Product Classification"),("3", "Item No."),("4", "Vendor No."),("5", "Transaction Date"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=7, items=(("1", "Logistics Code"),("2", "Product Classification"),("3", "Item No."),("4", "Vendor No."),("5", "Transaction Date"));
+CheckBox more=formonly.more type CHAR, tabIndex=1, text="Other codition to print";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.ima131,formonly.rvv31,formonly.rvu04,formonly.rvu03,formonly.s1,formonly.s2,formonly.s3,formonly.t,formonly.more,formonly.x,formonly.w)
+END -- INSTRUCTIONS
+

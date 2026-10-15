@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi330.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi330")
+VBox vb2_
+Folder folder01
+Page page01(text="Main")
+Grid gr1633
+{
+
+  TOOLS GROUP NO      [vnk01                 ]
+  TOOLS GROUP NAME    [vnk02                 ]
+  TOOLS GROUP DESC    [vnk03                 ]
+
+}
+END -- gr1633
+END -- page01
+END -- folder01
+Table s_vnl
+{
+[vnl02      |fea02       |fea031              ]
+[vnl02      |fea02       |fea031              ]
+[vnl02      |fea02       |fea031              ]
+[vnl02      |fea02       |fea031              ]
+[vnl02      |fea02       |fea031              ]
+[vnl02      |fea02       |fea031              ]
+[vnl02      |fea02       |fea031              ]
+[vnl02      |fea02       |fea031              ]
+[vnl02      |fea02       |fea031              ]
+[vnl02      |fea02       |fea031              ]
+
+}
+END -- s_vnl
+Grid gr1635
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1635
+END -- vb2_
+END -- apsi330
+
+TABLES
+vnl_file,
+vnk_file,
+fea_file
+ATTRIBUTES
+ButtonEdit vnk01=vnk_file.vnk01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Query Item  ";
+Edit vnk02=vnk_file.vnk02, tabIndex=2, comment="Combine Product No. as Key Field,No Blank/Repeated!";
+Edit vnk03=vnk_file.vnk03, tabIndex=3;
+ButtonEdit vnl02=vnl_file.vnl02, action=controlp, tabIndex=4, title="Mold Category", not null, required, image="zoom";
+Edit fea02=fea_file.fea02, tabIndex=5, title="Mold Name", noEntry;
+Edit fea031=fea_file.fea031, tabIndex=8, title="Mold Specification", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vnl(vnl_file.vnl02,fea_file.fea02,fea_file.fea031)
+SCREEN RECORD Undefined(vnk_file.vnk01,vnk_file.vnk02,vnk_file.vnk03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

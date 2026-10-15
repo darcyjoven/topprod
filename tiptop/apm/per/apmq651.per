@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq651.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq651")
+VBox vb3
+Folder folder01
+Page paeg01(text="Main")
+HBox hb3
+Grid gr5023
+{
+ Book No.            [afb00     ]
+ Year                [afb03     ]
+ Budget No.          [afb01     ]
+ Budget Name         [azf03     ]
+
+
+}
+END -- gr5023
+Grid gr5024
+{
+ Account#            [afb02               ]
+ Account Name        [aag02                                             ]
+ Department No.      [afb041    ]
+ Department Name     [gem02     ]
+ Ad hoc No.           [afb042    ]
+ Wbs No.              [afb04     ]
+}
+END -- gr5024
+END -- hb3
+END -- paeg01
+END -- folder01
+Table s_sr
+{
+[pns05  |pns09               |all_amt             |amt1                |amt2                |amt3                |amt4                |amt5                |amt6                |res_amt             ]
+[pns05  |pns09               |all_amt             |amt1                |amt2                |amt3                |amt4                |amt5                |amt6                |res_amt             ]
+[pns05  |pns09               |all_amt             |amt1                |amt2                |amt3                |amt4                |amt5                |amt6                |res_amt             ]
+[pns05  |pns09               |all_amt             |amt1                |amt2                |amt3                |amt4                |amt5                |amt6                |res_amt             ]
+[pns05  |pns09               |all_amt             |amt1                |amt2                |amt3                |amt4                |amt5                |amt6                |res_amt             ]
+[pns05  |pns09               |all_amt             |amt1                |amt2                |amt3                |amt4                |amt5                |amt6                |res_amt             ]
+[pns05  |pns09               |all_amt             |amt1                |amt2                |amt3                |amt4                |amt5                |amt6                |res_amt             ]
+[pns05  |pns09               |all_amt             |amt1                |amt2                |amt3                |amt4                |amt5                |amt6                |res_amt             ]
+[pns05  |pns09               |all_amt             |amt1                |amt2                |amt3                |amt4                |amt5                |amt6                |res_amt             ]
+[pns05  |pns09               |all_amt             |amt1                |amt2                |amt3                |amt4                |amt5                |amt6                |res_amt             ]
+}
+END -- s_sr
+Grid gr5025
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr5025
+END -- vb3
+END -- apmq651
+
+TABLES
+pns_file,
+afb_file
+ATTRIBUTES
+Edit afb00=afb_file.afb00, tabIndex=1;
+Edit afb03=afb_file.afb03, tabIndex=2;
+Edit afb01=afb_file.afb01, tabIndex=3;
+Edit azf03=formonly.azf03 type CHAR, tabIndex=4, noEntry;
+Edit afb02=afb_file.afb02, tabIndex=5;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=6, noEntry;
+Edit afb041=afb_file.afb041, tabIndex=7;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=8, noEntry;
+Edit afb042=afb_file.afb042, tabIndex=9;
+Edit afb04=afb_file.afb04, tabIndex=10;
+Edit pns05=pns_file.pns05, tabIndex=11, title="Period", noEntry;
+Edit pns09=pns_file.pns09, tabIndex=12, title="Budget$", noEntry;
+Edit all_amt=formonly.all_amt type CHAR, tabIndex=13, title="amt_all", noEntry;
+Edit amt1=formonly.amt1 type CHAR, tabIndex=14, title="-(1)", noEntry;
+Edit amt2=formonly.amt2 type CHAR, tabIndex=15, title="-(2)", noEntry;
+Edit amt3=formonly.amt3 type CHAR, tabIndex=16, title="-(3)", noEntry;
+Edit amt4=formonly.amt4 type CHAR, tabIndex=17, title="-(4)", noEntry;
+Edit amt5=formonly.amt5 type CHAR, tabIndex=18, title="-(5)", noEntry;
+Edit amt6=formonly.amt6 type CHAR, tabIndex=19, title="-(6)", noEntry;
+Edit res_amt=formonly.res_amt type CHAR, tabIndex=20, title="=Available Balance", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sr(pns_file.pns05,pns_file.pns09,formonly.all_amt,formonly.amt1,formonly.amt2,formonly.amt3,formonly.amt4,formonly.amt5,formonly.amt6,formonly.res_amt)
+SCREEN RECORD Undefined(afb_file.afb00,afb_file.afb03,afb_file.afb01,formonly.azf03,afb_file.afb02,formonly.aag02,afb_file.afb041,formonly.gem02,afb_file.afb042,afb_file.afb04,formonly.cnt)
+END -- INSTRUCTIONS
+

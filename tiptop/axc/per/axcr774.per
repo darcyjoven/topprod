@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr774.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr774")
+VBox vb15
+Grid gr1
+{
+ <G group01                                                                            >
+  Cost Group          [ima12               ]  Cost Levels         [ima57               ]
+  ource Code          [ima08               ]  Prod. Item#         [ccg04               ]
+  W/O No              [ccg01               ]
+ <                                                                                     >
+ <G group02                                                                            >
+  Year/Month          [yy  ][mm]  - [yy2 ][m1]
+  Cost Calculation Method   [type1           ]
+                      [type       ]
+ [dummy01   ]         [           ]
+                      [           ]
+ <                                                                                     >
+}
+END -- gr1
+Grid gr2
+{
+[more                                                                 ]
+
+}
+END -- gr2
+END -- vb15
+END -- axcr774
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima12=formonly.ima12 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit ima57=formonly.ima57 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit ima08=formonly.ima08 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ccg04=formonly.ccg04 type VARCHAR, action=controlp, tabIndex=4, image="zoom", upShift, comment="<P>";
+ButtonEdit ccg01=formonly.ccg01 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Group group02:group02, text="INPUT";
+Edit yy=formonly.yy type CHAR, tabIndex=6;
+Edit mm=formonly.mm type CHAR, tabIndex=7;
+Edit yy2=formonly.yy2 type CHAR, tabIndex=9, not null, required;
+Edit m1=formonly.mm2 type CHAR, tabIndex=10, not null, required;
+ComboBox type1=formonly.type1 type CHAR, tabIndex=12, not null, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+RadioGroup type=formonly.type type CHAR, tabIndex=11, items=(("1", "General WO"),("2", "Sub. Order"),("3", "All"));
+Label dummy01:dummy01, text="Data Contents";
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima12,formonly.ima57,formonly.ima08,formonly.ccg04,formonly.ccg01,formonly.yy,formonly.mm,formonly.yy2,formonly.mm2,formonly.type1,formonly.type,formonly.more)
+END -- INSTRUCTIONS
+

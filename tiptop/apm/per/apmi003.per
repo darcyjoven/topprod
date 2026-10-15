@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi003")
+VBox VBox1
+Folder pc908
+Page page01(text="Main")
+Table s_poe
+{
+[poe01        |occ02      |poe02          |oba02               |poe03    |ima02      |poe04          |poy04     |azp02       |poe05       ]
+[poe01        |occ02      |poe02          |oba02               |poe03    |ima02      |poe04          |poy04     |azp02       |poe05       ]
+[poe01        |occ02      |poe02          |oba02               |poe03    |ima02      |poe04          |poy04     |azp02       |poe05       ]
+[poe01        |occ02      |poe02          |oba02               |poe03    |ima02      |poe04          |poy04     |azp02       |poe05       ]
+[poe01        |occ02      |poe02          |oba02               |poe03    |ima02      |poe04          |poy04     |azp02       |poe05       ]
+[poe01        |occ02      |poe02          |oba02               |poe03    |ima02      |poe04          |poy04     |azp02       |poe05       ]
+[poe01        |occ02      |poe02          |oba02               |poe03    |ima02      |poe04          |poy04     |azp02       |poe05       ]
+[poe01        |occ02      |poe02          |oba02               |poe03    |ima02      |poe04          |poy04     |azp02       |poe05       ]
+[poe01        |occ02      |poe02          |oba02               |poe03    |ima02      |poe04          |poy04     |azp02       |poe05       ]
+[poe01        |occ02      |poe02          |oba02               |poe03    |ima02      |poe04          |poy04     |azp02       |poe05       ]
+
+}
+END -- s_poe
+END -- page01
+END -- pc908
+Grid gr4806
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4806
+END -- VBox1
+END -- apmi003
+
+TABLES
+poe_file
+ATTRIBUTES
+ButtonEdit poe01=poe_file.poe01, action=controlp, tabIndex=1, title="Customer No", not null, required, image="zoom", comment="<^P> Qry Cust No.";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=2, title="Cust Name", noEntry;
+ButtonEdit poe02=poe_file.poe02, action=controlp, tabIndex=3, title="Product Class", not null, required, image="zoom", comment="<^P> Qry Product Class.";
+Edit oba02=formonly.oba02 type CHAR, tabIndex=4, title="Product Class Name", noEntry;
+ButtonEdit poe03=poe_file.poe03, action=controlp, tabIndex=5, title="Item No", not null, required, image="zoom", comment="<^P> Qry Item No.";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=6, title="Item Name", noEntry;
+ButtonEdit poe04=poe_file.poe04, action=controlp, tabIndex=7, title="Inner Flow No", not null, required, image="zoom", comment="<^P> Qry Inner Flow No.";
+Edit poy04=formonly.poy04 type CHAR, tabIndex=8, title="Plant No", noEntry;
+Edit azp02=formonly.azp02 type CHAR, tabIndex=9, title="Plant Name", noEntry;
+ButtonEdit poe05=poe_file.poe05, action=controlp, tabIndex=10, title="Def P/O No", not null, required, image="zoom", comment="<^P> Qry P/O No.";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_poe(poe_file.poe01,formonly.occ02,poe_file.poe02,formonly.oba02,poe_file.poe03,formonly.ima02,poe_file.poe04,formonly.poy04,formonly.azp02,poe_file.poe05)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

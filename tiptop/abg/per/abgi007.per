@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi007.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi007")
+VBox VBox1
+Folder pc76
+Page page01(text="Page01")
+Table s_bgs
+{
+[bgs01         |bgs02   |bgs03 ]
+[bgs01         |bgs02   |bgs03 ]
+[bgs01         |bgs02   |bgs03 ]
+[bgs01         |bgs02   |bgs03 ]
+[bgs01         |bgs02   |bgs03 ]
+[bgs01         |bgs02   |bgs03 ]
+[bgs01         |bgs02   |bgs03 ]
+[bgs01         |bgs02   |bgs03 ]
+[bgs01         |bgs02   |bgs03 ]
+[bgs01         |bgs02   |bgs03 ]
+
+}
+END -- s_bgs
+END -- page01
+END -- pc76
+Grid gr585
+{
+ ----------Rows [cn2  ] ----------
+
+}
+END -- gr585
+END -- VBox1
+END -- abgi007
+
+TABLES
+bgs_file
+ATTRIBUTES
+Edit bgs01=bgs_file.bgs01, tabIndex=1, title="Expense No.", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit bgs02=bgs_file.bgs02, tabIndex=2, title="Name";
+CheckBox bgs03=bgs_file.bgs03, tabIndex=3, title="Adjust", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgs(bgs_file.bgs01,bgs_file.bgs02,bgs_file.bgs03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci041_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axci041_g")
+Grid gr1439
+{
+  <G gb4                                                                >
+   Cost Article           [cda02      ]
+   Allocation Method      [cda06          ]
+   Category               [cda04     ]
+   Overhead Type          [cda08     ]
+  <                                                                     >
+
+ <G gb6                                                                >
+  Cost Center       [ecd01     ]
+  Account Code      [aag01     ]
+  Dept              [gem01     ]
+ <                                                                     >
+
+}
+END -- gr1439
+END -- axci041_g
+
+ATTRIBUTES
+Group gb4:gb4, text="Input";
+ComboBox cda02=formonly.cda02 type CHAR, tabIndex=1, not null, required, items=(("1", "Labor"),("2", "Overhead 1"),("3", "Overhead 2"),("4", "Overhead 3"),("5", "Overhead 4"),("6", "Overhead 5"));
+ComboBox cda06=formonly.cda06 type VARCHAR, tabIndex=2, not null, required, items=(("1", "Actual Labor Hours"),("2", "Standard Labor Hours"),("3", "Standard Machine Hours"),("4", "Output Qty * Distribution Ratio"),("5", "Actual Machine Hours"));
+ComboBox cda04=formonly.cda04 type CHAR, tabIndex=3, not null, required, items=(("1", "One Departement"),("2", "Multi. Departments"));
+ComboBox cda08=formonly.cda08 type CHAR, tabIndex=4, not null, required, items=(("1", "Fixed"),("2", "Vraiable"));
+Group gb6:gb6, text="Construct";
+ButtonEdit ecd01=formonly.ecd01 type CHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Account";
+ButtonEdit aag01=formonly.aag01 type CHAR, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Account";
+ButtonEdit gem01=formonly.gem01 type CHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Account";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cda02,formonly.cda06,formonly.cda04,formonly.cda08,formonly.ecd01,formonly.aag01,formonly.gem01)
+END -- INSTRUCTIONS
+

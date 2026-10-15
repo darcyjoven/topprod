@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri0781.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ghri0781")
+VBox VBox1
+Table s_hred
+{
+[hred01       |hred02        |hred03        |hred04        |hredacti     ]
+[hred01       |hred02        |hred03        |hred04        |hredacti     ]
+[hred01       |hred02        |hred03        |hred04        |hredacti     ]
+[hred01       |hred02        |hred03        |hred04        |hredacti     ]
+[hred01       |hred02        |hred03        |hred04        |hredacti     ]
+[hred01       |hred02        |hred03        |hred04        |hredacti     ]
+[hred01       |hred02        |hred03        |hred04        |hredacti     ]
+[hred01       |hred02        |hred03        |hred04        |hredacti     ]
+[hred01       |hred02        |hred03        |hred04        |hredacti     ]
+
+
+
+
+
+
+
+
+
+}
+END -- s_hred
+END -- VBox1
+END -- ghri0781
+
+ATTRIBUTES
+Edit hred01=formonly.hred01 type DECIMAL, tabIndex=1, title=%"hred01", noEntry;
+Edit hred02=formonly.hred02 type VARCHAR, tabIndex=2, title=%"hred02", not null, required;
+Edit hred03=formonly.hred03 type VARCHAR, tabIndex=3, title=%"hred03", not null, required;
+Edit hred04=formonly.hred04 type VARCHAR, tabIndex=4, title=%"hred04", noEntry;
+CheckBox hredacti=formonly.hredacti type VARCHAR, tabIndex=5, title=%"hredacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hred(formonly.hred01,formonly.hred02,formonly.hred03,formonly.hred04,formonly.hredacti)
+END -- INSTRUCTIONS
+

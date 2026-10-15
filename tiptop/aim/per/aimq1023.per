@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq1023.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimq1023")
+Grid gr3126
+{
+ <T s_bbb3                                                                                                   >
+ [bmx07       |bmx01    |bmz03    |bmz02               |bmg03             |bmy03   |bmy19          |bmy06   ]
+ [bmx07       |bmx01    |bmz03    |bmz02               |bmg03             |bmy03   |bmy19          |bmy06   ]
+ [bmx07       |bmx01    |bmz03    |bmz02               |bmg03             |bmy03   |bmy19          |bmy06   ]
+ [bmx07       |bmx01    |bmz03    |bmz02               |bmg03             |bmy03   |bmy19          |bmy06   ]
+ [bmx07       |bmx01    |bmz03    |bmz02               |bmg03             |bmy03   |bmy19          |bmy06   ]
+ [bmx07       |bmx01    |bmz03    |bmz02               |bmg03             |bmy03   |bmy19          |bmy06   ]
+ [bmx07       |bmx01    |bmz03    |bmz02               |bmg03             |bmy03   |bmy19          |bmy06   ]
+ [bmx07       |bmx01    |bmz03    |bmz02               |bmg03             |bmy03   |bmy19          |bmy06   ]
+ [bmx07       |bmx01    |bmz03    |bmz02               |bmg03             |bmy03   |bmy19          |bmy06   ]
+ [bmx07       |bmx01    |bmz03    |bmz02               |bmg03             |bmy03   |bmy19          |bmy06   ]
+ <                                                                                                           >
+
+}
+END -- gr3126
+END -- aimq1023
+
+ATTRIBUTES
+Table s_bbb3:s_bbb3;
+Edit bmx07=formonly.bmx07 type CHAR, tabIndex=1, title="ECN Eff.Dt";
+Edit bmx01=formonly.bmx01 type CHAR, tabIndex=2, title="ECN No.";
+Edit bmz03=formonly.bmz03 type CHAR, tabIndex=3, title="Version";
+Edit bmz02=formonly.bmz02 type CHAR, tabIndex=4, title="Change Master Item";
+Edit bmg03=formonly.bmg03 type CHAR, tabIndex=5, title="Change Statement";
+ComboBox bmy03=formonly.bmy03 type VARCHAR, tabIndex=6, title="In/Out", not null, required, queryEditable, items=(("1", %"Delete"),("2", %"Disable"),("3", %"Append"),("4", %"Modify"));
+Edit bmy19=formonly.bmy19 type CHAR, tabIndex=7, title="Change Method";
+Edit bmy06=formonly.bmy06 type CHAR, tabIndex=8, title="QPA.";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bbb3(formonly.bmx07,formonly.bmx01,formonly.bmz03,formonly.bmz02,formonly.bmg03,formonly.bmy03,formonly.bmy19,formonly.bmy06)
+END -- INSTRUCTIONS
+

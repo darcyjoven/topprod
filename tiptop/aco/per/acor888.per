@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acor888.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acor888")
+VBox VBox1
+Grid gr1449
+{
+ <G group01                                                         >
+  Register Book No. [cok00          ]
+  Bonded No.        [cok01          ]
+  Bonded Unit       [cok02          ]
+ <                                                                  >
+ <G group02                                                         >
+  [y                                                 ]
+ <                                                                  >
+
+}
+END -- gr1449
+Grid gr1450
+{
+  [more                                             ]
+
+}
+END -- gr1450
+END -- VBox1
+END -- acor888
+
+TABLES
+cok_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit cok00=cok_file.cok00, tabIndex=1;
+Edit cok01=cok_file.cok01, tabIndex=2;
+Edit cok02=cok_file.cok02, tabIndex=3;
+Group group02:group02, text="Input";
+CheckBox y=formonly.y type CHAR, tabIndex=4, text="Convert HS Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cok_file.cok00,cok_file.cok01,cok_file.cok02,formonly.y,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="arti110")
+VBox vb3
+Folder pc2
+Page Page1(text=%"Basic Data")
+Grid gr8
+{
+
+ Institution No.  [rty01      ][rty01_desc     ] Institution Type  [tqa01     ][tqa01_desc     ] Superior Institution  [azw07     ][azw07_desc     ]
+
+}
+END -- gr8
+END -- Page1
+END -- pc2
+Table s_rty
+{
+[rty02     |rty02_desc     |rty14          |rty15             |rty03     |rty04     |rty04_desc     |rty12     |rty12_desc|rty05     |rty06     |rty07     |rty08     |rty09     |rty10     |rty11     |rtyacti   |rty13     ]
+[rty02     |rty02_desc     |rty14          |rty15             |rty03     |rty04     |rty04_desc     |rty12     |rty12_desc|rty05     |rty06     |rty07     |rty08     |rty09     |rty10     |rty11     |rtyacti   |rty13     ]
+[rty02     |rty02_desc     |rty14          |rty15             |rty03     |rty04     |rty04_desc     |rty12     |rty12_desc|rty05     |rty06     |rty07     |rty08     |rty09     |rty10     |rty11     |rtyacti   |rty13     ]
+[rty02     |rty02_desc     |rty14          |rty15             |rty03     |rty04     |rty04_desc     |rty12     |rty12_desc|rty05     |rty06     |rty07     |rty08     |rty09     |rty10     |rty11     |rtyacti   |rty13     ]
+[rty02     |rty02_desc     |rty14          |rty15             |rty03     |rty04     |rty04_desc     |rty12     |rty12_desc|rty05     |rty06     |rty07     |rty08     |rty09     |rty10     |rty11     |rtyacti   |rty13     ]
+}
+END -- s_rty
+Grid gr12
+{
+  ----------Count[cnt       ]/[cn2       ]----------
+
+
+
+}
+END -- gr12
+END -- vb3
+END -- arti110
+
+TABLES
+rty_file
+ATTRIBUTES
+ButtonEdit rty01=rty_file.rty01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit rty01_desc=formonly.rty01_desc type VARCHAR, tabIndex=2, noEntry;
+Edit tqa01=formonly.tqa01 type VARCHAR, tabIndex=3, noEntry;
+Edit tqa01_desc=formonly.tqa01_desc type CHAR, tabIndex=4, noEntry;
+Edit azw07=formonly.azw07 type VARCHAR, tabIndex=5, noEntry;
+Edit azw07_desc=formonly.azw07_desc type CHAR, tabIndex=6, noEntry;
+ButtonEdit rty02=rty_file.rty02, action=controlp, tabIndex=7, title="Merchandise No.", not null, required, image="zoom.png";
+Edit rty02_desc=formonly.rty02_desc type CHAR, tabIndex=8, title="Merchandise Name", noEntry;
+ButtonEdit rty14=rty_file.rty14, action=controlp, tabIndex=25, title=%"Default Cost Unit", image="zoom";
+ButtonEdit rty15=rty_file.rty15, action=controlp, tabIndex=26, title=%"Default Non-Cost Store", image="zoom";
+ComboBox rty03=rty_file.rty03, tabIndex=9, title="PO Type", not null, required, items=(("1", "Indent"),("2", "Unit PO Immediacy Provide"),("3", "Unit PO-Distribute"),("4", "Monopoly Purchase and Purchase"));
+ButtonEdit rty04=rty_file.rty04, action=controlp, tabIndex=10, title="Shipping Center", image="zoom.png";
+Edit rty04_desc=formonly.rty04_desc type CHAR, tabIndex=11, title="Institution Name", noEntry;
+ButtonEdit rty12=rty_file.rty12, action=controlp, tabIndex=12, title="Stock Center", image="zoom.png";
+Edit rty12_desc=formonly.rty12_desc type CHAR, tabIndex=13, title="Stock Center Name", noEntry;
+ButtonEdit rty05=rty_file.rty05, action=controlp, tabIndex=14, title="Main Vendor", not null, required, image="zoom.png";
+ComboBox rty06=rty_file.rty06, tabIndex=15, title="Running Mode", noEntry, not null, required, items=(("1", "Sell"),("2", "Sell Goods On a Commission Basis (Cost)"),("3", "Sell Goods On a Commission Basis (Deduction%)"),("4", "Pool"));
+Edit rty07=rty_file.rty07, tabIndex=16, title="Able To Exceed %";
+Edit rty08=rty_file.rty08, tabIndex=17, title="Safety Storage";
+Edit rty09=rty_file.rty09, tabIndex=18, title="Re-Order Quantity";
+ButtonEdit rty10=rty_file.rty10, action=controlp, tabIndex=19, title="Stock Multangular-Trade Flow", image="zoom.png";
+ButtonEdit rty11=rty_file.rty11, action=controlp, tabIndex=20, title="Send Back Goods Multangular-Trade Flow", image="zoom.png";
+CheckBox rtyacti=rty_file.rtyacti, tabIndex=21, default = "Y", title="Acti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rty13=formonly.rty13 type CHAR, tabIndex=22, title="Max. Stock";
+Edit cnt=formonly.cnt type CHAR, tabIndex=23;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=24;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rty(rty_file.rty02,formonly.rty02_desc,rty_file.rty14,rty_file.rty15,rty_file.rty03,rty_file.rty04,formonly.rty04_desc,rty_file.rty12,formonly.rty12_desc,rty_file.rty05,rty_file.rty06,rty_file.rty07,rty_file.rty08,rty_file.rty09,rty_file.rty10,rty_file.rty11,rty_file.rtyacti,formonly.rty13)
+SCREEN RECORD Undefined(rty_file.rty01,formonly.rty01_desc,formonly.tqa01,formonly.tqa01_desc,formonly.azw07,formonly.azw07_desc,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

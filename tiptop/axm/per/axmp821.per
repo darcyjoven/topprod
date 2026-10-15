@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp821.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmp821")
+Grid gr2206
+{
+ <G group01                                   >
+  Delivery Advice No.   [oga01               ]
+  Delivery Advice Date  [oga02               ]
+ <                                            >
+
+}
+END -- gr2206
+END -- axmp821
+
+TABLES
+oga_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit oga01=oga_file.oga01, action=controlp, tabIndex=1, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+DateEdit oga02=oga_file.oga02, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oga_file.oga01,oga_file.oga02)
+END -- INSTRUCTIONS
+

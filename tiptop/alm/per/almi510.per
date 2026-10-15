@@ -1,0 +1,53 @@
+----------------------------------------------------------------------------------
+-- File created from /u53/tiptop/alm/42f/almi510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almi510")
+ Folder pc4
+ Page Main(text=%"Main")
+ VBox vb4
+ Table s_lpd
+ {
+ [lpd01   |lpd02   |lpd03   |lpdpos  ]
+ [lpd01   |lpd02   |lpd03   |lpdpos  ]
+ [lpd01   |lpd02   |lpd03   |lpdpos  ]
+ [lpd01   |lpd02   |lpd03   |lpdpos  ]
+ [lpd01   |lpd02   |lpd03   |lpdpos  ]
+ }
+ END -- Table
+ Grid gr5
+ {
+  ----------Rows[cn2   ]----------
+
+
+ }
+ END
+ END -- VBox
+ END -- Page
+ END -- Folder
+
+
+
+END -- Form
+
+TABLES
+lpd_file
+
+ATTRIBUTES
+ButtonEdit lpd01=lpd_file.lpd01, action=controlp, tabIndex=2, title="lpd01", not null, required, image="zoom.png";
+Edit lpd02=lpd_file.lpd02, tabIndex=3, title="lpd02";
+CheckBox lpd03=lpd_file.lpd03, tabIndex=4, title="lpd03", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lpdpos=lpd_file.lpdpos, tabIndex=5, title=%"lpdpos", text=%"POS", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lpd(lpd_file.lpd01, lpd_file.lpd02, lpd_file.lpd03, lpd_file.lpdpos)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap710.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afap710")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1944
+{
+ Application No.     [fcb01             ]
+ Applying Date       [fcb02     ]
+
+}
+END -- gr1944
+Grid gr1945
+{
+ Author. Appr. Date  [fcb03       ]
+ IRA Approval Date   [fcb05       ]
+
+}
+END -- gr1945
+Grid gr1946
+{
+ Author. Appr. No.   [fcb04               ]
+ IRA Approval No.    [fcb06               ]
+
+}
+END -- gr1946
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_fcc
+{
+[sure   |fcc02      |fcc03          |fcc031    |fcc06                         |fcc13       ]
+[sure   |fcc02      |fcc03          |fcc031    |fcc06                         |fcc13       ]
+[sure   |fcc02      |fcc03          |fcc031    |fcc06                         |fcc13       ]
+[sure   |fcc02      |fcc03          |fcc031    |fcc06                         |fcc13       ]
+[sure   |fcc02      |fcc03          |fcc031    |fcc06                         |fcc13       ]
+[sure   |fcc02      |fcc03          |fcc031    |fcc06                         |fcc13       ]
+[sure   |fcc02      |fcc03          |fcc031    |fcc06                         |fcc13       ]
+[sure   |fcc02      |fcc03          |fcc031    |fcc06                         |fcc13       ]
+[sure   |fcc02      |fcc03          |fcc031    |fcc06                         |fcc13       ]
+[sure   |fcc02      |fcc03          |fcc031    |fcc06                         |fcc13       ]
+
+}
+END -- s_fcc
+Grid gr1947
+{
+ [seleall   ]
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+}
+END -- gr1947
+END -- VBox1
+END -- afap710
+
+TABLES
+fcc_file,
+fcb_file
+ATTRIBUTES
+ButtonEdit fcb01=fcb_file.fcb01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Credit Application";
+DateEdit fcb02=fcb_file.fcb02, tabIndex=2, noEntry;
+DateEdit fcb03=fcb_file.fcb03, tabIndex=3, noEntry;
+DateEdit fcb05=fcb_file.fcb05, tabIndex=4, not null;
+Edit fcb04=fcb_file.fcb04, tabIndex=5, noEntry;
+Edit fcb06=fcb_file.fcb06, tabIndex=6, not null;
+CheckBox sure=formonly.sure type CHAR, tabIndex=7, title="Appr", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fcc02=fcc_file.fcc02, tabIndex=8, title="Line No.", noEntry;
+Edit fcc03=fcc_file.fcc03, tabIndex=9, title="Property No.", noEntry;
+Edit fcc031=fcc_file.fcc031, tabIndex=10, title="Add No.", noEntry;
+Edit fcc06=fcc_file.fcc06, tabIndex=11, title="English Name", noEntry;
+Edit fcc13=fcc_file.fcc13, tabIndex=12, title="Cost";
+Button seleall:seleall, comment="Comment for button Select all";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fcc(formonly.sure,fcc_file.fcc02,fcc_file.fcc03,fcc_file.fcc031,fcc_file.fcc06,fcc_file.fcc13)
+SCREEN RECORD Undefined(fcb_file.fcb01,fcb_file.fcb02,fcb_file.fcb03,fcb_file.fcb05,fcb_file.fcb04,fcb_file.fcb06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

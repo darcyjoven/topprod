@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_rvv2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Store-in/Return after Receiving")
+Grid gr3840
+{
+ <T s_rvv                                                               >
+ [check  |rvv01        |rvv02    |rvv03       |rvv03_na|rvv17          ]
+ [check  |rvv01        |rvv02    |rvv03       |rvv03_na|rvv17          ]
+ [check  |rvv01        |rvv02    |rvv03       |rvv03_na|rvv17          ]
+ [check  |rvv01        |rvv02    |rvv03       |rvv03_na|rvv17          ]
+ [check  |rvv01        |rvv02    |rvv03       |rvv03_na|rvv17          ]
+ [check  |rvv01        |rvv02    |rvv03       |rvv03_na|rvv17          ]
+ [check  |rvv01        |rvv02    |rvv03       |rvv03_na|rvv17          ]
+ [check  |rvv01        |rvv02    |rvv03       |rvv03_na|rvv17          ]
+ [check  |rvv01        |rvv02    |rvv03       |rvv03_na|rvv17          ]
+ [check  |rvv01        |rvv02    |rvv03       |rvv03_na|rvv17          ]
+ <                                                                      >
+
+}
+END -- gr3840
+END -- q_rvv2
+
+TABLES
+rvv_file
+ATTRIBUTES
+Table s_rvv:s_rvv;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rvv01=rvv_file.rvv01, tabIndex=2, title="Document No.", noEntry, color = yellow;
+Edit rvv02=rvv_file.rvv02, tabIndex=3, title="Line No.", noEntry, color = yellow;
+Edit rvv03=rvv_file.rvv03, tabIndex=4, title="Category", noEntry, color = yellow;
+Edit rvv03_na=formonly.rvv03_name type CHAR, tabIndex=5, title="Name", noEntry, color = yellow;
+Edit rvv17=rvv_file.rvv17, tabIndex=6, title="Qty not matched", noEntry, color = yellow;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvv(formonly.check,rvv_file.rvv01,rvv_file.rvv02,rvv_file.rvv03,formonly.rvv03_name,rvv_file.rvv17)
+END -- INSTRUCTIONS
+

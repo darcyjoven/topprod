@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi710.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi710")
+VBox vb12
+Folder pc1
+Page Main(text=%"Main")
+Table s_lqf
+{
+[lqf01         |lqf02        |lqf03         |lqf04   ]
+[lqf01         |lqf02        |lqf03         |lqf04   ]
+[lqf01         |lqf02        |lqf03         |lqf04   ]
+[lqf01         |lqf02        |lqf03         |lqf04   ]
+[lqf01         |lqf02        |lqf03         |lqf04   ]
+[lqf01         |lqf02        |lqf03         |lqf04   ]
+[lqf01         |lqf02        |lqf03         |lqf04   ]
+
+}
+END -- s_lqf
+END -- Main
+END -- pc1
+Grid gr1
+{
+
+  ------Rows [idx   ]------
+
+}
+END -- gr1
+END -- vb12
+END -- almi710
+
+TABLES
+lqf_file
+ATTRIBUTES
+ButtonEdit lqf01=lqf_file.lqf01, action=controlp, tabIndex=1, title="Sa.Pro.DocNo", not null, required, image="zoom.png";
+Edit lqf02=lqf_file.lqf02, tabIndex=2, title="Sa.Pro.name";
+Edit lqf03=lqf_file.lqf03, tabIndex=3, title="Sa.Pro.Desc.";
+CheckBox lqf04=lqf_file.lqf04, tabIndex=4, default = "Y", title="valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lqf(lqf_file.lqf01,lqf_file.lqf02,lqf_file.lqf03,lqf_file.lqf04)
+SCREEN RECORD Undefined(formonly.idx)
+END -- INSTRUCTIONS
+

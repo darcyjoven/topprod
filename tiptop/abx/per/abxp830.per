@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxp830.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxp830")
+VBox VBox1
+Grid gr1085
+{
+ <G group01                                 >
+
+  Calculating Year/Month  [g_yy]/[g_]
+
+  NOTE   [dummy01                           ]
+ <                                          >
+
+}
+END -- gr1085
+Grid gr1086
+{
+[g_bgjob   ]
+
+}
+END -- gr1086
+END -- VBox1
+END -- abxp830
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+Edit g_yy=formonly.g_yy type SMALLINT, tabIndex=1;
+Edit g_=formonly.g_mm type SMALLINT, tabIndex=2;
+Label dummy01:dummy01, text="Confirm Current Bonded MM Statistics Done before running the task";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=3, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_yy,formonly.g_mm,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

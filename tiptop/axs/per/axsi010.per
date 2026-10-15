@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axs/42f/axsi010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axsi010")
+VBox vb1
+Folder pc689
+Page page01(text="Main")
+Table s_osy
+{
+[osysl|osydesc             |osyauno  |osytype        |osyud01        |osyud02       |osyud03       |osyud04       |osyud05        |osyud06        |osyud07          |osyud08          |osyud09          |osyud10    |osyud11    |osyud12     |osyud13   |osyud14    |osyud15    ]
+[osysl|osydesc             |osyauno  |osytype        |osyud01        |osyud02       |osyud03       |osyud04       |osyud05        |osyud06        |osyud07          |osyud08          |osyud09          |osyud10    |osyud11    |osyud12     |osyud13   |osyud14    |osyud15    ]
+[osysl|osydesc             |osyauno  |osytype        |osyud01        |osyud02       |osyud03       |osyud04       |osyud05        |osyud06        |osyud07          |osyud08          |osyud09          |osyud10    |osyud11    |osyud12     |osyud13   |osyud14    |osyud15    ]
+[osysl|osydesc             |osyauno  |osytype        |osyud01        |osyud02       |osyud03       |osyud04       |osyud05        |osyud06        |osyud07          |osyud08          |osyud09          |osyud10    |osyud11    |osyud12     |osyud13   |osyud14    |osyud15    ]
+[osysl|osydesc             |osyauno  |osytype        |osyud01        |osyud02       |osyud03       |osyud04       |osyud05        |osyud06        |osyud07          |osyud08          |osyud09          |osyud10    |osyud11    |osyud12     |osyud13   |osyud14    |osyud15    ]
+[osysl|osydesc             |osyauno  |osytype        |osyud01        |osyud02       |osyud03       |osyud04       |osyud05        |osyud06        |osyud07          |osyud08          |osyud09          |osyud10    |osyud11    |osyud12     |osyud13   |osyud14    |osyud15    ]
+[osysl|osydesc             |osyauno  |osytype        |osyud01        |osyud02       |osyud03       |osyud04       |osyud05        |osyud06        |osyud07          |osyud08          |osyud09          |osyud10    |osyud11    |osyud12     |osyud13   |osyud14    |osyud15    ]
+[osysl|osydesc             |osyauno  |osytype        |osyud01        |osyud02       |osyud03       |osyud04       |osyud05        |osyud06        |osyud07          |osyud08          |osyud09          |osyud10    |osyud11    |osyud12     |osyud13   |osyud14    |osyud15    ]
+[osysl|osydesc             |osyauno  |osytype        |osyud01        |osyud02       |osyud03       |osyud04       |osyud05        |osyud06        |osyud07          |osyud08          |osyud09          |osyud10    |osyud11    |osyud12     |osyud13   |osyud14    |osyud15    ]
+[osysl|osydesc             |osyauno  |osytype        |osyud01        |osyud02       |osyud03       |osyud04       |osyud05        |osyud06        |osyud07          |osyud08          |osyud09          |osyud10    |osyud11    |osyud12     |osyud13   |osyud14    |osyud15    ]
+
+}
+END -- s_osy
+END -- page01
+END -- pc689
+Grid gr3003
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr3003
+END -- vb1
+END -- axsi010
+
+TABLES
+osy_file
+ATTRIBUTES
+Edit osysl=osy_file.osyslip, tabIndex=1, title="Doc", not null, required, upShift, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! <^Y>User Authorization <^U>Dept Authorization";
+Edit osydesc=osy_file.osydesc, tabIndex=2, title="Doc Name";
+CheckBox osyauno=osy_file.osyauno, tabIndex=3, title="Auto No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox osytype=osy_file.osytype, tabIndex=4, title="Doc Pty", not null, required;
+Edit osyud01=osy_file.osyud01, tabIndex=6, title=%"osyud01", scroll;
+Edit osyud02=osy_file.osyud02, tabIndex=7, title=%"osyud02", scroll;
+Edit osyud03=osy_file.osyud03, tabIndex=8, title=%"osyud03", scroll;
+Edit osyud04=osy_file.osyud04, tabIndex=9, title=%"osyud04", scroll;
+Edit osyud05=osy_file.osyud05, tabIndex=10, title=%"osyud05", scroll;
+Edit osyud06=osy_file.osyud06, tabIndex=11, title=%"osyud06", scroll;
+Edit osyud07=osy_file.osyud07, tabIndex=12, title=%"osyud07", scroll;
+Edit osyud08=osy_file.osyud08, tabIndex=13, title=%"osyud08", scroll;
+Edit osyud09=osy_file.osyud09, tabIndex=14, title=%"osyud09", scroll;
+Edit osyud10=osy_file.osyud10, tabIndex=15, title=%"osyud10", scroll;
+Edit osyud11=osy_file.osyud11, tabIndex=16, title=%"osyud11", scroll;
+Edit osyud12=osy_file.osyud12, tabIndex=17, title=%"osyud12", scroll;
+DateEdit osyud13=osy_file.osyud13, tabIndex=18, title=%"osyud13";
+DateEdit osyud14=osy_file.osyud14, tabIndex=19, title=%"osyud14";
+DateEdit osyud15=osy_file.osyud15, tabIndex=20, title=%"osyud15";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_osy(osy_file.osyslip,osy_file.osydesc,osy_file.osyauno,osy_file.osytype,osy_file.osyud01,osy_file.osyud02,osy_file.osyud03,osy_file.osyud04,osy_file.osyud05,osy_file.osyud06,osy_file.osyud07,osy_file.osyud08,osy_file.osyud09,osy_file.osyud10,osy_file.osyud11,osy_file.osyud12,osy_file.osyud13,osy_file.osyud14,osy_file.osyud15)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

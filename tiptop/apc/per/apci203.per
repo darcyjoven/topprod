@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apci203.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox2
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox1
+Grid ds1
+{
+
+[label1 ] [ryr01             ]  [label2|ryr02               ] [label|ryr03  ]      [label4|ryrpos         ]
+
+}
+END -- ds1
+HBox HBox1
+Table ds2
+{
+[rys02               |rys02_desc          |rys03     |rysacti   ]
+[rys02               |rys02_desc          |rys03     |rysacti   ]
+[rys02               |rys02_desc          |rys03     |rysacti   ]
+[rys02               |rys02_desc          |rys03     |rysacti   ]
+[rys02               |rys02_desc          |rys03     |rysacti   ]
+}
+END -- ds2
+Table ds3
+{
+[ryt03               |ryt03_desc          |ryt04     |rytacti   ]
+[ryt03               |ryt03_desc          |ryt04     |rytacti   ]
+[ryt03               |ryt03_desc          |ryt04     |rytacti   ]
+[ryt03               |ryt03_desc          |ryt04     |rytacti   ]
+[ryt03               |ryt03_desc          |ryt04     |rytacti   ]
+}
+END -- ds3
+END -- HBox1
+END -- VBox1
+END -- Page1
+Page Page2(text=%"Page2")
+Table ds4
+{
+[ryr04               |ryr05               |ryr06 |ryrpo1         |rys01             |rys02_desc1         |rys04     |rysact1   |ryt01               |ryt03_desc1         |ryt02   |rytact1]
+[ryr04               |ryr05               |ryr06 |ryrpo1         |rys01             |rys02_desc1         |rys04     |rysact1   |ryt01               |ryt03_desc1         |ryt02   |rytact1]
+[ryr04               |ryr05               |ryr06 |ryrpo1         |rys01             |rys02_desc1         |rys04     |rysact1   |ryt01               |ryt03_desc1         |ryt02   |rytact1]
+[ryr04               |ryr05               |ryr06 |ryrpo1         |rys01             |rys02_desc1         |rys04     |rysact1   |ryt01               |ryt03_desc1         |ryt02   |rytact1]
+[ryr04               |ryr05               |ryr06 |ryrpo1         |rys01             |rys02_desc1         |rys04     |rysact1   |ryt01               |ryt03_desc1         |ryt02   |rytact1]
+}
+END -- ds4
+END -- Page2
+END -- Folder1
+Grid Grid1
+{
+
+  -------[label5  |idx       |la|cnt       ] ------- [label7   |cn2       ] ---------- [label8    |cn3       ] ----------
+
+}
+END -- Grid1
+END -- VBox2
+END -- Form
+
+TABLES
+ryt_file,
+rys_file,
+ryr_file,
+rys_file1=rys_file,
+ryt_file1=ryt_file,
+ryr_file1=ryr_file
+ATTRIBUTES
+Label label1:Label1, text=%"ryr01";
+ButtonEdit ryr01=ryr_file.ryr01, action=controlp, tabIndex=1, not null, image="zoom", scroll;
+Label label2:Label2, text=%"ryr02";
+Edit ryr02=ryr_file.ryr02, tabIndex=2, not null, scroll;
+Label label:Label3, text=%"ryr03";
+Edit ryr03=ryr_file.ryr03, tabIndex=3, scroll;
+Label label4:Label4, text=%"ryrpos";
+ComboBox ryrpos=ryr_file.ryrpos, tabIndex=4, noEntry, not null, scroll, items=(("1", "New not preach"),("2", "Change not preach"),("3", "Already download"),("4", "Change, not preach"));
+ButtonEdit rys02=rys_file.rys02, action=controlp, tabIndex=5, title=%"rys02", not null, image="zoom", scroll;
+Edit rys02_desc=formonly.rys02_desc, tabIndex=6, title=%"rys02_desc", noEntry;
+ComboBox rys03=rys_file.rys03, tabIndex=7, title=%"rys03", not null, scroll, items=(("1", "available"),("2", "not with"));
+CheckBox rysacti=rys_file.rysacti, tabIndex=8, default = "N", title="rysacti", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ryt03=ryt_file.ryt03, action=controlp, tabIndex=9, title=%"ryt03", not null, image="zoom", scroll;
+Edit ryt03_desc=formonly.ryt03_desc, tabIndex=10, title=%"ryt03_desc", noEntry;
+ComboBox ryt04=ryt_file.ryt04, tabIndex=11, title=%"ryt04", not null, scroll, items=(("1", "Can use can be authorized by himself"),("2", "Can use can be authorized to others"),("3", "Can use authorized to others"),("4", "Do not use can be authorized to others"),("5", "Do not use cannot be authorized"));
+CheckBox rytacti=ryt_file.rytacti, tabIndex=12, default = "N", title="rytacti", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ryr04=ryr_file1.ryr01, action=controlp, tabIndex=13, title=%"ryr01", noEntry, not null, image="zoom", scroll;
+Edit ryr05=ryr_file1.ryr02, tabIndex=14, title=%"ryr02", noEntry, scroll;
+Edit ryr06=ryr_file1.ryr03, tabIndex=15, title=%"ryr03", noEntry, scroll;
+ComboBox ryrpo1=ryr_file1.ryrpos, tabIndex=16, title=%"ryrpos", noEntry, not null, scroll, items=(("1", "New not preach"),("2", "Change not preach"),("3", "Already download"),("4", "Change, not preach"));
+ButtonEdit rys01=rys_file1.rys02, action=controlp, tabIndex=17, title=%"rys02", noEntry, not null, image="zoom", scroll;
+Edit rys02_desc1=formonly.rys02_desc1, tabIndex=18, title=%"rys02_desc1", noEntry;
+ComboBox rys04=rys_file1.rys03, tabIndex=19, title=%"rys03", noEntry, not null, scroll, items=(("1", "available"),("2", "not with"));
+CheckBox rysact1=rys_file1.rysacti, tabIndex=20, default = "Y", title="rysacti", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ryt01=ryt_file1.ryt03, action=controlp, tabIndex=21, title=%"ryt03", noEntry, not null, image="zoom", scroll;
+Edit ryt03_desc1=formonly.ryt03_desc1, tabIndex=22, title=%"ryt03_desc1", noEntry;
+ComboBox ryt02=ryt_file1.ryt04, tabIndex=23, title=%"ryt04", noEntry, not null, scroll, items=(("1", "Can use can be authorized by himself"),("2", "Can use can be authorized to others"),("3", "Can use authorized to others"),("4", "Do not use can be authorized to others"),("5", "Do not use cannot be authorized"));
+CheckBox rytact1=ryt_file1.rytacti, tabIndex=24, default = "N", title="rytacti", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Label label5:Label5, text=%"Label5";
+Edit idx=formonly.idx, tabIndex=25;
+Label la:Label6, text=%"/";
+Edit cnt=formonly.cnt, tabIndex=26;
+Label label7:Label7, text=%"Label7";
+Edit cn2=formonly.cn2, tabIndex=27;
+Label label8:Label8, text=%"Label8";
+Edit cn3=formonly.cn3, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(ryr_file.ryr01,ryr_file.ryr02,ryr_file.ryr03,ryr_file.ryrpos)
+SCREEN RECORD s_rys(rys_file.rys02,formonly.rys02_desc,rys_file.rys03,rys_file.rysacti)
+SCREEN RECORD s_ryt(ryt_file.ryt03,formonly.ryt03_desc,ryt_file.ryt04,ryt_file.rytacti)
+SCREEN RECORD s_ryr(ryr_file1.ryr01,ryr_file1.ryr02,ryr_file1.ryr03,ryr_file1.ryrpos,rys_file1.rys02,formonly.rys02_desc1,rys_file1.rys03,rys_file1.rysacti,ryt_file1.ryt03,formonly.ryt03_desc1,ryt_file1.ryt04,ryt_file1.rytacti)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

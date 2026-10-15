@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt300d.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt300d")
+Folder pc652
+Page page01(text="Main")
+VBox VBox1
+Table s_oob
+{
+[oob15    |ooa01        |oob02     |ooa02           |oob08       |oob09             |oob10            ]
+[oob15    |ooa01        |oob02     |ooa02           |oob08       |oob09             |oob10            ]
+[oob15    |ooa01        |oob02     |ooa02           |oob08       |oob09             |oob10            ]
+[oob15    |ooa01        |oob02     |ooa02           |oob08       |oob09             |oob10            ]
+[oob15    |ooa01        |oob02     |ooa02           |oob08       |oob09             |oob10            ]
+[oob15    |ooa01        |oob02     |ooa02           |oob08       |oob09             |oob10            ]
+[oob15    |ooa01        |oob02     |ooa02           |oob08       |oob09             |oob10            ]
+[oob15    |ooa01        |oob02     |ooa02           |oob08       |oob09             |oob10            ]
+[oob15    |ooa01        |oob02     |ooa02           |oob08       |oob09             |oob10            ]
+[oob15    |ooa01        |oob02     |ooa02           |oob08       |oob09             |oob10            ]
+
+}
+END -- s_oob
+Grid gr2730
+{
+ ---------- Contra Ori.Curr Total [oob09_t             ] ---------- Contra Home Curr Total [oob10_t             ] ----------
+
+}
+END -- gr2730
+END -- VBox1
+END -- page01
+END -- pc652
+END -- axrt300d
+
+TABLES
+oob_file,
+ooa_file
+ATTRIBUTES
+Edit oob15=oob_file.oob15, tabIndex=1, title="Line No.", not null, required, color = yellow;
+Edit ooa01=ooa_file.ooa01, tabIndex=2, title="Contra Slip#";
+Edit oob02=oob_file.oob02, tabIndex=3, title="Line No.";
+DateEdit ooa02=ooa_file.ooa02, tabIndex=4, title="Contra Date";
+Edit oob08=oob_file.oob08, tabIndex=5, title="Contra ExRt";
+Edit oob09=oob_file.oob09, tabIndex=6, title="Contra Ori.Curr", not null, required;
+Edit oob10=oob_file.oob10, tabIndex=7, title="Contra Home Curr", not null, required;
+Edit oob09_t=formonly.oob09_t type CHAR, tabIndex=8;
+Edit oob10_t=formonly.oob10_t type CHAR, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oob(oob_file.oob15,ooa_file.ooa01,oob_file.oob02,ooa_file.ooa02,oob_file.oob08,oob_file.oob09,oob_file.oob10)
+SCREEN RECORD Undefined(formonly.oob09_t,formonly.oob10_t)
+END -- INSTRUCTIONS
+

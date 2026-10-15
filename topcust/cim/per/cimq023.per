@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cim/4fd/cimq023.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfq301")
+VBox vb4
+Group group01
+HBox hb2
+Grid gr568
+{
+ begin       [begindate                     ]
+ end         [enddate                       ]
+ end         [ima01                         ]
+ end         [oga03                         ]
+
+
+
+
+}
+END -- gr568
+END -- hb2
+END -- group01
+Folder pc135
+Page page01(action=totalpage, text="Total")
+Table s_total
+{
+[item                |inamt           |stockamt        |stockpercent|outamt          |outpercent  |firstin     |firstout    |lastout     ]
+
+}
+END -- s_total
+END -- page01
+Page page02(action=inpage, text="In")
+Table s_sfb
+{
+[sfb01                |sfb81       |sfb05           |sfb081          ]
+
+}
+END -- s_sfb
+END -- page02
+Page page03(action=outpage, text="Out")
+Table s_oga
+{
+[oga01             |oga02       |ogb03       |ogb04                |ogb12             ]
+
+}
+END -- s_oga
+END -- page03
+Page page04(action=stockpage, text="Stock")
+Table s_sfu
+{
+[sfu01             |sfu02       |sfv03     |sfv04           |sfv09           ]
+
+}
+END -- s_sfu
+END -- page04
+END -- pc135
+Grid gr571
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr571
+END -- vb4
+END -- cimq023
+
+ATTRIBUTES
+DateEdit begindate=formonly.begindate type DATE, tabIndex=1;
+DateEdit enddate=formonly.enddate type DATE, tabIndex=2, comment="<^P>Qry Item No.";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit oga03=formonly.oga03 type VARCHAR, action=controlp, tabIndex=29, image="zoom";
+Edit item=formonly.item type VARCHAR, tabIndex=4, title=%"item", noEntry;
+Edit inamt=formonly.inamt type DECIMAL, tabIndex=5, title=%"inamt", noEntry;
+DateEdit stockamt=formonly.stockamt type DECIMAL, tabIndex=6, title=%"stockamt", noEntry;
+Edit stockpercent=formonly.stockpercent type DECIMAL, tabIndex=7, title=%"stockpercent", noEntry;
+Edit outamt=formonly.outamt type DECIMAL, tabIndex=8, title=%"outamt", noEntry;
+DateEdit outpercent=formonly.outpercent type DECIMAL, tabIndex=9, title=%"outpercent", noEntry;
+DateEdit firstin=formonly.firstin type DATE, tabIndex=10, title=%"firstin", noEntry;
+DateEdit firstout=formonly.firstout type DATE, tabIndex=11, title=%"firstout", noEntry;
+DateEdit lastout=formonly.lastout type DATE, tabIndex=12, title=%"lastout", noEntry;
+Edit sfb01=formonly.sfb01, tabIndex=13, title=%"sfb01", noEntry;
+DateEdit sfb81=formonly.sfb81, tabIndex=14, title=%"sfb81", noEntry;
+Edit sfb05=formonly.sfb05, tabIndex=15, title=%"sfb05", noEntry;
+Edit sfb081=formonly.sfb081 type DECIMAL, tabIndex=16, title=%"sfb081", noEntry;
+Edit oga01=formonly.oga01, tabIndex=17, title=%"oga01", noEntry;
+DateEdit oga02=formonly.oga02 type DATE, tabIndex=18, title=%"oga02", noEntry;
+Edit ogb03=formonly.ogb03 type INTEGER, tabIndex=19, title=%"ogb03", noEntry;
+Edit ogb04=formonly.ogb04, tabIndex=20, title=%"ogb04", noEntry;
+Edit ogb12=formonly.ogb12, tabIndex=21, title=%"ogb12", noEntry;
+Edit sfu01=formonly.sfu01, tabIndex=22, title=%"sfu01", noEntry;
+DateEdit sfu02=formonly.sfu02 type DATE, tabIndex=23, title=%"sfu02", noEntry;
+Edit sfv03=formonly.sfv03 type INTEGER, tabIndex=24, title=%"sfv03", noEntry;
+Edit sfv04=formonly.sfv04, tabIndex=25, title=%"sfv04", noEntry;
+DateEdit sfv09=formonly.sfv09 type DECIMAL, tabIndex=26, title=%"sfv09", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=27;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_total(formonly.item,formonly.inamt,formonly.stockamt,formonly.stockpercent,formonly.outamt,formonly.outpercent,formonly.firstin,formonly.firstout,formonly.lastout)
+SCREEN RECORD s_sfb(formonly.sfb01,formonly.sfb81,formonly.sfb05,formonly.sfb081)
+SCREEN RECORD s_oga(formonly.oga01,formonly.oga02,formonly.ogb03,formonly.ogb04,formonly.ogb12)
+SCREEN RECORD s_sfu(formonly.sfu01,formonly.sfu02,formonly.sfv03,formonly.sfv04,formonly.sfv09)
+SCREEN RECORD Undefined(formonly.begindate,formonly.enddate,formonly.cnt,formonly.cn2,formonly.ima01,formonly.oga03)
+END -- INSTRUCTIONS
+

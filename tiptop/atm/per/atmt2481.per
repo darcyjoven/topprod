@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmt2481.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Client Return Note")
+Grid gr1056
+{
+ <G group01                                 >
+  Client Return Slip       [oga01     ]
+  Client Return W/H        [cware     ]
+  Client Return Location   [cloc      ]
+ <                                          >
+
+}
+END -- gr1056
+END -- atmt2481
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit oga01=formonly.oga01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Doc.Slip";
+ButtonEdit cware=formonly.cware type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom", upShift, comment="<^P> Qry Warehouse";
+ButtonEdit cloc=formonly.cloc type CHAR, action=controlp, tabIndex=3, image="zoom", upShift, comment="<^P> Qry Warehouse/Location";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oga01,formonly.cware,formonly.cloc)
+END -- INSTRUCTIONS
+

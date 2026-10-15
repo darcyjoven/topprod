@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gxr/42f/gxrp610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gxrp610")
+VBox VBox1
+Grid gr3642
+{
+ <G group01                                                >
+ [p_type                                          ]
+ <                                                         >
+ <G group02                                                >
+  General Ledger Plant No.    [p_plant            ]
+  General Ledger No.          [p_bookno ]
+  General Ledger No.2         [p_bookno1]
+  General Ledger Voucher Type [gl_no              ]
+  General Ledger Voucher Type2[gl_no1             ]
+  General Ledger Voucher Date [gl_date            ]
+ <                                                         >
+ <G group03                                                >
+ [gl_tran                                         ]
+ <                                                         >
+
+}
+END -- gr3642
+Grid gr3643
+{
+[g_bgjob                                                       ]
+
+}
+END -- gr3643
+END -- VBox1
+END -- gxrp610
+
+ATTRIBUTES
+Group group01:group01, text="Module";
+RadioGroup p_type=formonly.p_type type CHAR, tabIndex=1, items=(("1", "Accounts Receivable"),("2", "Accounts Payable"),("3", "Cash In Bank"),("4", "Note Receivable"),("5", "Notes Payable"));
+Group group02:group02;
+Edit p_plant=formonly.p_plant type VARCHAR, tabIndex=2;
+Edit p_bookno=formonly.p_bookno type VARCHAR, tabIndex=3;
+Edit p_bookno1=formonly.p_bookno1 type VARCHAR, tabIndex=4;
+ButtonEdit gl_no=formonly.gl_no type VARCHAR, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Documents";
+ButtonEdit gl_no1=formonly.gl_no1 type VARCHAR, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Documents";
+DateEdit gl_date=formonly.gl_date type DATE, tabIndex=7, not null, required;
+Group group03:group03;
+CheckBox gl_tran=formonly.gl_tran type VARCHAR, tabIndex=8, text="Carry memo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=9, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.p_type,formonly.p_plant,formonly.p_bookno,formonly.p_bookno1,formonly.gl_no,formonly.gl_no1,formonly.gl_date,formonly.gl_tran,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

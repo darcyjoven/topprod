@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsq600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amsq600")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3967
+{
+ [dummy01                                 ]
+ MPS Item#           [mpg01                         ][ima02                         ]
+ [dummy02                                 ]
+}
+END -- gr3967
+END -- page01
+END -- folder01
+Table s_mpg
+{
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+[mpg02           |mpg03          |mpg04           |mpg05        |mpg06    |mpg07               |mpg08               |mpg09    ]
+
+}
+END -- s_mpg
+Grid gr3968
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3968
+END -- VBox1
+END -- amsq600
+
+TABLES
+mpg_file
+ATTRIBUTES
+Label dummy01:dummy01;
+Edit mpg01=mpg_file.mpg01, tabIndex=1;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=2, noEntry;
+Label dummy02:dummy02;
+Edit mpg02=mpg_file.mpg02, tabIndex=3, title="Order#";
+Edit mpg03=mpg_file.mpg03, tabIndex=4, title="Required Ln#";
+Edit mpg04=mpg_file.mpg04, tabIndex=5, title="Required Date";
+Edit mpg05=mpg_file.mpg05, tabIndex=6, title="Qty";
+Edit mpg06=mpg_file.mpg06, tabIndex=7, title="Status";
+Edit mpg07=mpg_file.mpg07, tabIndex=8, title="Source Item#";
+Edit mpg08=mpg_file.mpg08, tabIndex=9, title="Transaction Date";
+Edit mpg09=mpg_file.mpg09, tabIndex=10, title="Source";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mpg(mpg_file.mpg02,mpg_file.mpg03,mpg_file.mpg04,mpg_file.mpg05,mpg_file.mpg06,mpg_file.mpg07,mpg_file.mpg08,mpg_file.mpg09)
+SCREEN RECORD Undefined(mpg_file.mpg01,formonly.ima02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

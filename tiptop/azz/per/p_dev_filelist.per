@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_dev_filelist.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_dev_filelist")
+Folder pc143
+Page page01(text="Page01")
+VBox vb2
+Grid gr5
+{
+ Develop No. [gfc01         ]
+
+}
+END -- gr5
+Table s_gfc(wantFixedPageSize)
+{
+[che|gfc|gfc03|gfc04|gfc05          |gfc07|gfc08   |gfc09   |gfc10   |gfc11   |gfc12       |gfc06    ]
+[che|gfc|gfc03|gfc04|gfc05          |gfc07|gfc08   |gfc09   |gfc10   |gfc11   |gfc12       |gfc06    ]
+[che|gfc|gfc03|gfc04|gfc05          |gfc07|gfc08   |gfc09   |gfc10   |gfc11   |gfc12       |gfc06    ]
+[che|gfc|gfc03|gfc04|gfc05          |gfc07|gfc08   |gfc09   |gfc10   |gfc11   |gfc12       |gfc06    ]
+[che|gfc|gfc03|gfc04|gfc05          |gfc07|gfc08   |gfc09   |gfc10   |gfc11   |gfc12       |gfc06    ]
+[che|gfc|gfc03|gfc04|gfc05          |gfc07|gfc08   |gfc09   |gfc10   |gfc11   |gfc12       |gfc06    ]
+[che|gfc|gfc03|gfc04|gfc05          |gfc07|gfc08   |gfc09   |gfc10   |gfc11   |gfc12       |gfc06    ]
+[che|gfc|gfc03|gfc04|gfc05          |gfc07|gfc08   |gfc09   |gfc10   |gfc11   |gfc12       |gfc06    ]
+[che|gfc|gfc03|gfc04|gfc05          |gfc07|gfc08   |gfc09   |gfc10   |gfc11   |gfc12       |gfc06    ]
+[che|gfc|gfc03|gfc04|gfc05          |gfc07|gfc08   |gfc09   |gfc10   |gfc11   |gfc12       |gfc06    ]
+
+}
+END -- s_gfc
+Group group01(text="memo")
+Grid gr556
+{
+  [dummy01                                                     ]
+  [dummy02                                                     ]
+  [dummy03                                                     ]
+}
+END -- gr556
+END -- group01
+Grid gr557
+{
+            Rows [cn2   ]
+
+}
+END -- gr557
+END -- vb2
+END -- page01
+END -- pc143
+END -- p_dev_filelist
+
+TABLES
+gfc_file
+ATTRIBUTES
+Edit gfc01=gfc_file.gfc01, tabIndex=38, noEntry;
+CheckBox che=formonly.check type VARCHAR, tabIndex=51, title=%"Check", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit gfc=gfc_file.gfc02, tabIndex=39, title="Line", not null, required, comment="No Blank!";
+ComboBox gfc03=gfc_file.gfc03, tabIndex=40, title="Module", not null, required;
+ComboBox gfc04=gfc_file.gfc04, tabIndex=41, title="Menu", not null, required, items=(("4gl", "4gl"),("4fd", "4fd"));
+Edit gfc05=gfc_file.gfc05, tabIndex=42, title="Program Name", not null, required, comment="No Blank!";
+ComboBox gfc07=gfc_file.gfc07, tabIndex=43, title="Status", items=(("0", "Lock"),("1", "Unlock"));
+Edit gfc08=gfc_file.gfc08, tabIndex=44, title="Owner", noEntry;
+Edit gfc09=gfc_file.gfc09, tabIndex=45, title="Lock Date", noEntry;
+Edit gfc10=gfc_file.gfc10, tabIndex=46, title="Last Download", noEntry;
+Edit gfc11=gfc_file.gfc11, tabIndex=47, title="Last Upload", noEntry;
+Edit gfc12=gfc_file.gfc12, tabIndex=49, title="Download Location", noEntry;
+Edit gfc06=gfc_file.gfc06, tabIndex=48, title="Memo";
+Label dummy01:dummy01, text="* Download or upload file will use \"C:\\tiptop\\4gl\" or \"C:\\tiptop\\4fd\" at client, be sure this folder is exist.", style="fixedFont";
+Label dummy02:dummy02, text="* if menu select \"4gl\", auto booking \"4ad\",\"4tm\" file and correlate date automatically.", style="fixedFont";
+Label dummy03:dummy03, text="* if menu select \"4fd\", auto booking \"per\",\"sdd\" file and correlate date automatically.", style="fixedFont";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=50, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gfc(formonly.check,gfc_file.gfc02,gfc_file.gfc03,gfc_file.gfc04,gfc_file.gfc05,gfc_file.gfc07,gfc_file.gfc08,gfc_file.gfc09,gfc_file.gfc10,gfc_file.gfc11,gfc_file.gfc12,gfc_file.gfc06)
+SCREEN RECORD Undefined(gfc_file.gfc01,formonly.cn2)
+END -- INSTRUCTIONS
+

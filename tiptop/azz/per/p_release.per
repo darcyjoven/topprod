@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/4fd/p_release.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox2
+Grid Grid1
+{
+
+  tc_rel01      [tc_rel01                   ]               tc_rel03    [tc_rel03           ] [gen02            ]
+  tc_rel02      [tc_rel02           ]
+                                                                        [tc_rel10                     ]
+  tc_rel04      [tc_rel04                   ]
+  tc_rel05      [tc_rel05                        ]          tc_rel06    [tc_rel06                        ]
+
+  tc_rel07      [tc_rel07                                                                                ]
+  tc_rel08      [tc_rel08                  ]
+  tc_rel09      [tc_rel09                                                                                ]
+
+  tc_rel11      [tc_rel11                                                                                ]
+                [                                                                                        ]
+                [                                                                                        ]
+                [                                                                                        ]
+                [                                                                                        ]
+  tc_rel12      [tc_rel12                         ]
+
+}
+END -- Grid1
+Grid Grid2(hidden)
+{
+
+  Label1       [tc_rel13                        ]           Label1     [tc_rel22                        ]
+  Label1       [tc_rel14                        ]           Label1     [tc_rel23                        ]
+  Label1       [tc_rel15                        ]           Label1     [tc_rel24                        ]
+  Label1       [tc_rel16                        ]           Label1     [tc_rel25                        ]
+  Label1       [tc_rel21                        ]
+}
+END -- Grid2
+END -- VBox2
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid3
+{
+
+  tc_rel17      [tc_rel17                    ]
+  tc_rel18      [tc_rel18                    ]
+  tc_rel19      [tc_rel19                    ]
+  tc_rel20      [tc_rel20                    ]
+
+
+
+
+
+}
+END -- Grid3
+END -- Page2
+END -- Folder1
+Grid Grid4
+{
+       ------[cnt     ]/[cnt1    ]  ------
+
+}
+END -- Grid4
+END -- VBox1
+END -- p_release
+
+ATTRIBUTES
+ButtonEdit tc_rel01=formonly.tc_rel01, action=controlp, tabIndex=1, noEntry, not null, image="zoom";
+ButtonEdit tc_rel03=formonly.tc_rel03, action=controlp, tabIndex=2, image="zoom";
+LABEL gen02=formonly.gen02;
+DateEdit tc_rel02=formonly.tc_rel02 type DATE, tabIndex=3, noEntry;
+CheckBox tc_rel10=formonly.tc_rel10, tabIndex=5, text=%"check", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox tc_rel04=formonly.tc_rel04, tabIndex=4, not null, required, items=(("1", "feat"),("2", "fix"),("3", "rebuild"),("4", "init"),("5", "style"));
+Edit tc_rel05=formonly.tc_rel05, tabIndex=6;
+Edit tc_rel06=formonly.tc_rel06, tabIndex=7;
+Edit tc_rel07=formonly.tc_rel07, tabIndex=8, not null, required;
+DateEdit tc_rel08=formonly.tc_rel08 type DATE, tabIndex=9, not null;
+ButtonEdit tc_rel09=formonly.tc_rel09, action=controlp, tabIndex=10, image="zoom";
+TextEdit tc_rel11=formonly.tc_rel11, tabIndex=11;
+ButtonEdit tc_rel12=formonly.tc_rel12, action=controlp, tabIndex=12, image="zoom";
+Edit tc_rel13=formonly.tc_rel13, tabIndex=13;
+Edit tc_rel22=formonly.tc_rel22, tabIndex=14;
+Edit tc_rel14=formonly.tc_rel14, tabIndex=15;
+Edit tc_rel23=formonly.tc_rel23, tabIndex=16;
+Edit tc_rel15=formonly.tc_rel15, tabIndex=17;
+DateEdit tc_rel24=formonly.tc_rel24 type DATE, tabIndex=18;
+Edit tc_rel16=formonly.tc_rel16, tabIndex=19;
+DateEdit tc_rel25=formonly.tc_rel25 type DATE, tabIndex=20;
+Edit tc_rel21=formonly.tc_rel21, tabIndex=21;
+Edit tc_rel17=formonly.tc_rel17, tabIndex=24, noEntry;
+Edit tc_rel18=formonly.tc_rel18, tabIndex=25, noEntry;
+Edit tc_rel19=formonly.tc_rel19, tabIndex=26, noEntry;
+Edit tc_rel20=formonly.tc_rel20, tabIndex=27, noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=22;
+Edit cnt1=formonly.cnt1 type INTEGER, tabIndex=23;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_rel01,formonly.tc_rel02,formonly.tc_rel03,formonly.tc_rel04,formonly.tc_rel05,formonly.tc_rel06,formonly.tc_rel07,formonly.tc_rel08,formonly.tc_rel09,formonly.tc_rel10,formonly.tc_rel11,formonly.tc_rel12,formonly.tc_rel13,formonly.tc_rel14,formonly.tc_rel15,formonly.tc_rel16,formonly.tc_rel21,formonly.tc_rel22,formonly.tc_rel23,formonly.tc_rel24,formonly.tc_rel25,formonly.tc_rel17,formonly.tc_rel19,formonly.tc_rel18,formonly.tc_rel20,formonly.cnt,formonly.cnt1,formonly.gen02)
+END -- INSTRUCTIONS
+

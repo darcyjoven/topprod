@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp190.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcp190")
+VBox VBox1
+Grid gr1494
+{
+ <G group01                                                        >
+  Date                [bdate       ]-[edate       ]
+  Document            [bslip     ]-[eslip   ]
+  Item#               [bpart               ]-[epart               ]
+  Cost Levels         [b_lev     ]-[e_lev   ]
+  Cost Warehouse      [b_stk     ]-[e_stk   ]
+ <                                                                 >
+ <G group02                       ><G group03                      >
+ [order_flag          ]            [report_flag                   ]
+ <                                ><                               >
+ <G group04                                                        >
+  Plant#              [p_plant   ]
+  General Ledger No.  [p_bookno  ]
+  Carry Voucher Type  [gl_no               ]
+  Carry Voucher Date  [gl_date     ]
+ <                                                                 >
+
+}
+END -- gr1494
+Grid gr1495
+{
+[more                                                 ]
+
+}
+END -- gr1495
+END -- VBox1
+END -- axcp190
+
+ATTRIBUTES
+Group group01:group01;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=1;
+DateEdit edate=formonly.edate type DATE, tabIndex=2;
+Edit bslip=formonly.bslip type CHAR, tabIndex=3;
+Edit eslip=formonly.eslip type CHAR, tabIndex=4;
+ButtonEdit bpart=formonly.bpart type CHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit epart=formonly.epart type CHAR, action=controlp, tabIndex=6, image="zoom";
+Edit b_lev=formonly.b_lev type CHAR, tabIndex=7;
+Edit e_lev=formonly.e_lev type CHAR, tabIndex=8;
+Edit b_stk=formonly.b_stk type CHAR, tabIndex=9;
+Edit e_stk=formonly.e_stk type CHAR, tabIndex=10;
+Group group02:group02, text="Voucher Summary Method";
+RadioGroup order_flag=formonly.order_flag type CHAR, tabIndex=11, items=(("1", "Document"),("2", "All"));
+Group group03:group03, text="Check List Print Method";
+RadioGroup report_flag=formonly.report_flag type CHAR, tabIndex=12, items=(("1", "detail"),("2", "Summary"));
+Group group04:group04;
+Edit p_plant=formonly.p_plant type CHAR, tabIndex=13;
+Edit p_bookno=formonly.p_bookno type CHAR, tabIndex=14;
+ButtonEdit gl_no=formonly.gl_no type VARCHAR, action=controlp, tabIndex=15, not null, required, image="zoom", comment="Blank: No Voucher now, Print Checking List only";
+DateEdit gl_date=formonly.gl_date type DATE, tabIndex=16, not null, required;
+CheckBox more=formonly.more type CHAR, tabIndex=17, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bdate,formonly.edate,formonly.bslip,formonly.eslip,formonly.bpart,formonly.epart,formonly.b_lev,formonly.e_lev,formonly.b_stk,formonly.e_stk,formonly.order_flag,formonly.report_flag,formonly.p_plant,formonly.p_bookno,formonly.gl_no,formonly.gl_date,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_aqc_memo.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_aqc_memo")
+Grid gr3868
+{
+ <T s_qao                                                 >
+ [qao03|qa|qao04|qao06                                   ]
+ [qao03|qa|qao04|qao06                                   ]
+ [qao03|qa|qao04|qao06                                   ]
+ [qao03|qa|qao04|qao06                                   ]
+ [qao03|qa|qao04|qao06                                   ]
+ [qao03|qa|qao04|qao06                                   ]
+ [qao03|qa|qao04|qao06                                   ]
+ [qao03|qa|qao04|qao06                                   ]
+ [qao03|qa|qao04|qao06                                   ]
+ [qao03|qa|qao04|qao06                                   ]
+ <                                                        >
+
+}
+END -- gr3868
+END -- s_aqc_memo
+
+TABLES
+qao_file
+ATTRIBUTES
+Table s_qao:s_qao;
+Edit qao03=qao_file.qao03, tabIndex=1, title="Ln #", not null, required, comment="0 Page Memo   ,123...Body Memo   ";
+ComboBox qa=qao_file.qao05, tabIndex=2, title="Loc", not null, required, comment="1.Print before Line # 2.Print after Line # 0.Internal Reference for Qry Only", items=(("1", %"Print Before Line#"),("2", %"Print After Line#"),("0", %"Internal Reference For Qry Only"));
+Edit qao04=qao_file.qao04, tabIndex=3, title="Ln #";
+Edit qao06=qao_file.qao06, tabIndex=4, title="Memo", comment="Prt Body Memo aft Ln#, Limit char(30)";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qao(qao_file.qao03,qao_file.qao05,qao_file.qao04,qao_file.qao06)
+END -- INSTRUCTIONS
+

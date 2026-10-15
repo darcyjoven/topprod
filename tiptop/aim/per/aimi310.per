@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi310")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr3053
+{
+  Attribute Group Code   [aga01        ]
+  Description            [aga02                      ]
+}
+END -- gr3053
+END -- page01
+Page info(text="info")
+Grid gr3054
+{
+  Record Owner [agauser   ] Last Modified By   [agamodu    ] Data Valid Code[agaacti]
+  Department   [agagrup   ] Create/Modify Date [agadate    ]
+  Record Orig. [agaoriu   ]
+  Dept Orig.   [agaorig   ]
+}
+END -- gr3054
+END -- info
+END -- folder01
+Table s_agb
+{
+[agb02  |agb03            |agc02            |agc03     |agbslk01  |agbslk02  |agbslk03  |agb04     ]
+[agb02  |agb03            |agc02            |agc03     |agbslk01  |agbslk02  |agbslk03  |agb04     ]
+[agb02  |agb03            |agc02            |agc03     |agbslk01  |agbslk02  |agbslk03  |agb04     ]
+[agb02  |agb03            |agc02            |agc03     |agbslk01  |agbslk02  |agbslk03  |agb04     ]
+[agb02  |agb03            |agc02            |agc03     |agbslk01  |agbslk02  |agbslk03  |agb04     ]
+[agb02  |agb03            |agc02            |agc03     |agbslk01  |agbslk02  |agbslk03  |agb04     ]
+}
+END -- s_agb
+Grid gr3055
+{
+  -------- Rows [cnt  ]/[cn2  ] ---------
+
+
+}
+END -- gr3055
+END -- vb2
+END -- aimi310
+
+TABLES
+agc_file,
+agb_file,
+aga_file
+ATTRIBUTES
+ButtonEdit aga01=aga_file.aga01, action=controlp, tabIndex=1, image="zoom.png";
+Edit aga02=aga_file.aga02, tabIndex=2, not null, required;
+Edit agauser=aga_file.agauser, tabIndex=3, noEntry;
+Edit agamodu=aga_file.agamodu, tabIndex=4, noEntry;
+Edit agaacti=aga_file.agaacti, tabIndex=5, noEntry, upShift;
+Edit agagrup=aga_file.agagrup, tabIndex=6, noEntry;
+DateEdit agadate=aga_file.agadate, tabIndex=7, noEntry;
+Edit agaoriu=aga_file.agaoriu, tabIndex=501, noEntry;
+Edit agaorig=aga_file.agaorig, tabIndex=502, noEntry;
+Edit agb02=agb_file.agb02, tabIndex=8, title="Seq", not null, required;
+ButtonEdit agb03=agb_file.agb03, action=controlp, tabIndex=9, title="Detail Attribute", not null, required, image="zoom";
+Edit agc02=agc_file.agc02, tabIndex=10, title="Description", noEntry, not null, required;
+Edit agc03=agc_file.agc03, tabIndex=11, title="Digits";
+CheckBox agbslk01=agb_file.agbslk01, tabIndex=14, title="Scale", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox agbslk02=agb_file.agbslk02, tabIndex=15, title="weight\n", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox agbslk03=agb_file.agbslk03, tabIndex=16, title="wash", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox agb04=agb_file.agb04, tabIndex=17, title="Attribute scale", not null, items=(("X", ":ONE"),("Y", ":TWO"),("Z", ":THREE"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_agb(agb_file.agb02,agb_file.agb03,agc_file.agc02,agc_file.agc03,agb_file.agbslk01,agb_file.agbslk02,agb_file.agbslk03,agb_file.agb04)
+SCREEN RECORD Undefined(aga_file.aga01,aga_file.aga02,aga_file.agauser,aga_file.agamodu,aga_file.agaacti,aga_file.agagrup,aga_file.agadate,aga_file.agaoriu,aga_file.agaorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

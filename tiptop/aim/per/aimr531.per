@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr531.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr531")
+VBox VBox1
+Grid gr3305
+{
+ <G group01                                               >
+  Anticip. Repay Date [imp06               ]
+  Vender No.          [imo03               ]
+  Vender Abbreviation [imo04               ]
+  Borrowing Note No.  [imo01               ]
+  Item No.            [imp03               ]
+ <                                                        >
+
+}
+END -- gr3305
+Group g01(text="INPUT")
+Grid gr3306
+{
+ <G group02                                               >
+ [s                                                      ]
+ <                                                        >
+
+}
+END -- gr3306
+END -- g01
+Grid gr3307
+{
+[more                                                   ]
+
+}
+END -- gr3307
+END -- VBox1
+END -- aimr531
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit imp06=formonly.imp06 type DATE, tabIndex=1;
+ButtonEdit imo03=formonly.imo03 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit imo04=formonly.imo04 type VARCHAR, tabIndex=3;
+ButtonEdit imo01=formonly.imo01 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit imp03=formonly.imp03 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Group group02:group02, text="Sequence";
+RadioGroup s=formonly.s type VARCHAR, tabIndex=6, items=(("1", "Anticipated Repay Date/Item No."),("2", "Item No./Anticipated Repay Date"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.imp06,formonly.imo03,formonly.imo04,formonly.imo01,formonly.imp03,formonly.s,formonly.more)
+END -- INSTRUCTIONS
+

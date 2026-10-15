@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amm/42f/ammp300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ammp300")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr3751
+{
+ Part Requisition #   [mma01             ]
+ Development Document [mma02           ]
+ Run W/O #            [mma021          ][mma03     ]
+ Item No.             [mma05                 ][mma051    ]
+}
+END -- gr3751
+Grid gr3752
+{
+ Document Date        [mma07       ]
+ Production Qty       [mma09     ][mma10     ]
+ Requirement          [mma14     ]
+ Department           [mma15     ]
+}
+END -- gr3752
+Grid gr3753
+{
+ Category             [mma20     ]
+                      [desc      ]
+ Confirm              [mma17     ]
+ Valid                [mmaacti   ]
+}
+END -- gr3753
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_mmb
+{
+[mmb02 |mmbact|mmb05           |mmb07        |mmb08             |desc1        |mmb16               |mmb17     |mmb18  |mmb19   |mmb20    |mmb14         |mmb141           |mmb06                         ]
+[mmb02 |mmbact|mmb05           |mmb07        |mmb08             |desc1        |mmb16               |mmb17     |mmb18  |mmb19   |mmb20    |mmb14         |mmb141           |mmb06                         ]
+[mmb02 |mmbact|mmb05           |mmb07        |mmb08             |desc1        |mmb16               |mmb17     |mmb18  |mmb19   |mmb20    |mmb14         |mmb141           |mmb06                         ]
+[mmb02 |mmbact|mmb05           |mmb07        |mmb08             |desc1        |mmb16               |mmb17     |mmb18  |mmb19   |mmb20    |mmb14         |mmb141           |mmb06                         ]
+[mmb02 |mmbact|mmb05           |mmb07        |mmb08             |desc1        |mmb16               |mmb17     |mmb18  |mmb19   |mmb20    |mmb14         |mmb141           |mmb06                         ]
+[mmb02 |mmbact|mmb05           |mmb07        |mmb08             |desc1        |mmb16               |mmb17     |mmb18  |mmb19   |mmb20    |mmb14         |mmb141           |mmb06                         ]
+[mmb02 |mmbact|mmb05           |mmb07        |mmb08             |desc1        |mmb16               |mmb17     |mmb18  |mmb19   |mmb20    |mmb14         |mmb141           |mmb06                         ]
+[mmb02 |mmbact|mmb05           |mmb07        |mmb08             |desc1        |mmb16               |mmb17     |mmb18  |mmb19   |mmb20    |mmb14         |mmb141           |mmb06                         ]
+[mmb02 |mmbact|mmb05           |mmb07        |mmb08             |desc1        |mmb16               |mmb17     |mmb18  |mmb19   |mmb20    |mmb14         |mmb141           |mmb06                         ]
+[mmb02 |mmbact|mmb05           |mmb07        |mmb08             |desc1        |mmb16               |mmb17     |mmb18  |mmb19   |mmb20    |mmb14         |mmb141           |mmb06                         ]
+
+}
+END -- s_mmb
+Grid gr3754
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3754
+END -- VBox1
+END -- ammp300
+
+TABLES
+mmb_file,
+mma_file
+ATTRIBUTES
+ButtonEdit mma01=mma_file.mma01, action=controlp, tabIndex=1, noEntry, image="zoom.png";
+Edit mma02=mma_file.mma02, tabIndex=2, noEntry;
+Edit mma021=mma_file.mma021, tabIndex=3, noEntry;
+Edit mma03=mma_file.mma03, tabIndex=4, noEntry, comment="Run W/O Allotment";
+Edit mma05=mma_file.mma05, tabIndex=5, noEntry;
+Edit mma051=mma_file.mma051, tabIndex=6, noEntry;
+DateEdit mma07=mma_file.mma07, tabIndex=7, noEntry;
+Edit mma09=mma_file.mma09, tabIndex=8, noEntry, not null, required;
+Edit mma10=mma_file.mma10, tabIndex=9, noEntry;
+Edit mma14=mma_file.mma14, tabIndex=10, noEntry, comment="Requirement Category";
+Edit mma15=mma_file.mma15, tabIndex=11, noEntry;
+Edit mma20=mma_file.mma20, tabIndex=12, noEntry, comment="Molde Type:1.smelting 2.Moldes 3.Mechanics 4.Other";
+Edit desc=formonly.desc type VARCHAR, tabIndex=13, noEntry;
+Edit mma17=mma_file.mma17, tabIndex=14, noEntry;
+Edit mmaacti=mma_file.mmaacti, tabIndex=15, noEntry;
+Edit mmb02=mmb_file.mmb02, tabIndex=16, title="Line#", noEntry;
+Edit mmbact=mmb_file.mmbacti, tabIndex=17, title="Valid", noEntry;
+Edit mmb05=mmb_file.mmb05, tabIndex=18, title="Processing Code", noEntry;
+Edit mmb07=mmb_file.mmb07, tabIndex=19, title="Source Code", noEntry, comment="Source Code";
+Edit mmb08=mmb_file.mmb08, tabIndex=20, title="Vender/Department", noEntry;
+Edit desc1=formonly.desc1 type VARCHAR, tabIndex=21, title="Abbreviation", noEntry;
+Edit mmb16=mmb_file.mmb16, tabIndex=22, title="Unit Price", not null, required, comment="MF Carry Forward Unit Price! ";
+Edit mmb17=mmb_file.mmb17, tabIndex=23, title="Work hour", not null, required, comment="MF Carry Forward Work Hour! ";
+Edit mmb18=mmb_file.mmb18, tabIndex=24, title="Qty", not null, required, comment="MF Carry Forward Qty! ";
+Edit mmb19=mmb_file.mmb19, tabIndex=25, title="Wage", noEntry;
+DateEdit mmb20=mmb_file.mmb20, tabIndex=26, title="Date", not null, required, comment="MF Carry Forward Date! ";
+CheckBox mmb14=mmb_file.mmb14, tabIndex=27, title="Carry forward", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit mmb141=mmb_file.mmb141, tabIndex=28, title="Carry forward NO", noEntry, comment="C/f No. ";
+Edit mmb06=mmb_file.mmb06, tabIndex=29, title="Specification", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=30;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=31;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mmb(mmb_file.mmb02,mmb_file.mmbacti,mmb_file.mmb05,mmb_file.mmb07,mmb_file.mmb08,formonly.desc1,mmb_file.mmb16,mmb_file.mmb17,mmb_file.mmb18,mmb_file.mmb19,mmb_file.mmb20,mmb_file.mmb14,mmb_file.mmb141,mmb_file.mmb06)
+SCREEN RECORD Undefined(mma_file.mma01,mma_file.mma02,mma_file.mma021,mma_file.mma03,mma_file.mma05,mma_file.mma051,mma_file.mma07,mma_file.mma09,mma_file.mma10,mma_file.mma14,mma_file.mma15,mma_file.mma20,formonly.desc,mma_file.mma17,mma_file.mmaacti,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

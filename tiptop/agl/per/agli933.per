@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli933.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli933")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+Grid gr2466
+{
+ Group No.           [gin05           ]
+ Company No.         [gin06           ]
+ Plant Name          [axz02           ]
+ Book No.            [gin00           ]
+
+}
+END -- gr2466
+END -- page01
+END -- folder01
+Table s_gir
+{
+[gin01      |gir02                    |gir03     |gir04  |gir05]
+[gin01      |gir02                    |gir03     |gir04  |gir05]
+[gin01      |gir02                    |gir03     |gir04  |gir05]
+[gin01      |gir02                    |gir03     |gir04  |gir05]
+[gin01      |gir02                    |gir03     |gir04  |gir05]
+[gin01      |gir02                    |gir03     |gir04  |gir05]
+[gin01      |gir02                    |gir03     |gir04  |gir05]
+[gin01      |gir02                    |gir03     |gir04  |gir05]
+[gin01      |gir02                    |gir03     |gir04  |gir05]
+[gin01      |gir02                    |gir03     |gir04  |gir05]
+
+}
+END -- s_gir
+Table s_gin
+{
+[gin02                     |aag02                                             |gin03      |gin04    ]
+[gin02                     |aag02                                             |gin03      |gin04    ]
+[gin02                     |aag02                                             |gin03      |gin04    ]
+[gin02                     |aag02                                             |gin03      |gin04    ]
+[gin02                     |aag02                                             |gin03      |gin04    ]
+[gin02                     |aag02                                             |gin03      |gin04    ]
+[gin02                     |aag02                                             |gin03      |gin04    ]
+[gin02                     |aag02                                             |gin03      |gin04    ]
+[gin02                     |aag02                                             |gin03      |gin04    ]
+[gin02                     |aag02                                             |gin03      |gin04    ]
+
+}
+END -- s_gin
+Grid gr2467
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2467
+END -- vb3
+END -- agli933
+
+TABLES
+aag_file,
+gin_file,
+gir_file
+ATTRIBUTES
+ButtonEdit gin05=gin_file.gin05, action=controlp, tabIndex=13, image="zoom", comment="<^P>Query Group Code";
+ButtonEdit gin06=gin_file.gin06, action=controlp, tabIndex=14, image="zoom", comment="<^P>Query Group Code";
+Edit axz02=formonly.axz02 type CHAR, tabIndex=15, noEntry;
+ButtonEdit gin00=gin_file.gin00, action=controlp, tabIndex=7, image="zoom", comment="<^P>Query Group Code";
+ButtonEdit gin01=gin_file.gin01, action=controlp, tabIndex=8, title="Group Code", not null, required, image="zoom";
+Edit gir02=gir_file.gir02, tabIndex=9, title="Description";
+ComboBox gir03=gir_file.gir03, tabIndex=10, title="Var.Class", not null, required, queryEditable, items=(("1", %"Business Activity"),("2", %"Investment"),("3", %"Financial Activity"),("4", %"Beginning Of Period Amount"),("5", %"End Of Period Amount"));
+CheckBox gir04=gir_file.gir04, tabIndex=11, title="Combin", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gir05=gir_file.gir05, tabIndex=12, title="Line";
+ButtonEdit gin02=gin_file.gin02, action=controlp, tabIndex=1, title="Account No.", not null, required, image="zoom", comment="<^P>Qry Account # ";
+Edit aag02=aag_file.aag02, tabIndex=2, title="Account Title", noEntry;
+ComboBox gin03=gin_file.gin03, tabIndex=3, title="Add/Deduct", not null, required, queryEditable, items=(("+", %"Total(+)"),("-", %"Total(-)"));
+ComboBox gin04=gin_file.gin04, tabIndex=4, title="Tran.Type", not null, required, queryEditable, items=(("1", %"Variation"),("2", %"Beginning of Period"),("3", %"End of Period"),("4", %"Manually"),("5", %"Debit Transaction"),("6", %"Credit Transaction"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gin(gin_file.gin02,aag_file.aag02,gin_file.gin03,gin_file.gin04)
+SCREEN RECORD s_gir(gin_file.gin01,gir_file.gir02,gir_file.gir03,gir_file.gir04,gir_file.gir05)
+SCREEN RECORD Undefined(gin_file.gin05,gin_file.gin06,formonly.axz02,gin_file.gin00,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

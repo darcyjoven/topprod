@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrr160.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr160")
+VBox vb17
+Grid gr32
+{
+ <G group01                                                                     >
+  Accounts Customer             [ooa03                ]
+ <                                                                              >
+
+}
+END -- gr32
+Group group02(text="INPUT")
+Grid gr33
+{
+ <G group04                                                                    >
+  Initial Collecting Date       [sdate               ]
+  Ending Collecting Date        [rdate               ]
+ <                                                                             >
+
+}
+END -- gr33
+END -- group02
+Group gb53
+Grid gr34
+{
+[more                                              ]
+
+}
+END -- gr34
+END -- gb53
+END -- vb17
+END -- axrr160
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ooa03=formonly.ooa03 type CHAR, tabIndex=1;
+Group group04:group04;
+DateEdit sdate=formonly.sdate type DATE, tabIndex=2;
+DateEdit rdate=formonly.rdate type DATE, tabIndex=3;
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ooa03,formonly.sdate,formonly.rdate,formonly.more)
+END -- INSTRUCTIONS
+

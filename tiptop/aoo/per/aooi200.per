@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi200")
+VBox VBox1
+Folder pc846
+Page page01(text="Page01")
+Grid gr4639
+{
+ <G group01                                             >   [imgmksg]
+  Project#             [gja01     ]                         [       ]
+  Project Name         [gja02                         ]
+  Project Initial Date [gja03       ]
+  Project Ending Date  [gja04       ]
+ <                                                      >
+
+}
+END -- gr4639
+END -- page01
+Page info(text="Info")
+Grid gr4640
+{
+ Record Owner        [gjauser   ] Last Modified by    [gjamodu   ] Data Valid Code     [gjaacti   ]
+ Department          [gjagrup   ] Create/Modify Date  [gjadate   ]
+ Record Orig.        [gjaoriu   ]
+ Dept Orig.          [gjaorig   ]
+}
+END -- gr4640
+END -- info
+END -- pc846
+Grid gr4641
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4641
+END -- VBox1
+END -- aooi200
+
+TABLES
+gja_file
+ATTRIBUTES
+Group group01:group01;
+Edit gja01=gja_file.gja01, tabIndex=1, comment="Key Field, No Blank/Repeated!   ";
+Edit gja02=gja_file.gja02, tabIndex=2;
+DateEdit gja03=gja_file.gja03, tabIndex=3;
+DateEdit gja04=gja_file.gja04, tabIndex=4;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit gjauser=gja_file.gjauser, tabIndex=6, noEntry;
+Edit gjamodu=gja_file.gjamodu, tabIndex=7, noEntry;
+Edit gjaacti=gja_file.gjaacti, tabIndex=8, noEntry, upShift;
+Edit gjagrup=gja_file.gjagrup, tabIndex=9, noEntry;
+DateEdit gjadate=gja_file.gjadate, tabIndex=10, noEntry;
+Edit gjaoriu=gja_file.gjaoriu, tabIndex=501, noEntry;
+Edit gjaorig=gja_file.gjaorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gja_file.gja01,gja_file.gja02,gja_file.gja03,gja_file.gja04,formonly.imgmksg,gja_file.gjauser,gja_file.gjamodu,gja_file.gjaacti,gja_file.gjagrup,gja_file.gjadate,gja_file.gjaoriu,gja_file.gjaorig,formonly.cnt)
+END -- INSTRUCTIONS
+

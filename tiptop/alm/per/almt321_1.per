@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt321_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form1")
+Folder pc1
+Page Page1(text=%"Page0")
+Grid gr5
+{
+
+     Expenses List No    [g_lua01         ]
+
+     date                [g_dd            ]
+
+}
+END -- gr5
+END -- Page1
+END -- pc1
+END -- Form1
+
+ATTRIBUTES
+ButtonEdit g_lua01=formonly.g_lua01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+DateEdit g_dd=formonly.g_dd type CHAR, tabIndex=2, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_lua01,formonly.g_dd)
+END -- INSTRUCTIONS
+

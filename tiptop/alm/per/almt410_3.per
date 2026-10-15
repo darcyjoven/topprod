@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt410_3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt410_3")
+Folder pc1
+Page Main(text=%"Preferencial")
+Grid gr9
+{
+ <G gb1                                                                                                >
+   Fare No.    [loe03     ]              Discount Rate    [loe04     ]
+   Fare Name   [oaj02               ]    Monthes For Free [loe05     ]
+ <                                                                                                     >
+
+ <G gb2                                                                                                >
+  [dummy01   ]         [dummy02         ][dummy03         ][dummy04         ][dummy05         ]
+   Qty In Current Shop [loe07           ][loe08           ][loe09           ][loe10           ]
+   Qty In Current Zone [loe071          ][loe081          ][loe091          ][loe101          ]
+   Qty In Other Zone   [loe072          ][loe082          ][loe092          ][loe102          ]
+
+ <                                                                                                     >
+
+}
+END -- gr9
+END -- Main
+END -- pc1
+END -- almt410_3
+
+TABLES
+loe_file
+ATTRIBUTES
+Group gb1:gb1, text="Preferencial Payment Type";
+Edit loe03=loe_file.loe03, tabIndex=1;
+Edit loe04=loe_file.loe04, tabIndex=3;
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=2;
+Edit loe05=loe_file.loe05, tabIndex=4;
+Group gb2:gb2, text="Alliance And Catenation";
+Label dummy01:dummy01, text="Type";
+Label dummy02:dummy02, text="Catenation Qty";
+Label dummy03:dummy03, text="Discount Rate";
+Label dummy04:dummy04, text="Combined Discount";
+Label dummy05:dummy05, text="Final Discount";
+Edit loe07=loe_file.loe07, tabIndex=5;
+Edit loe08=loe_file.loe08, tabIndex=8;
+Edit loe09=loe_file.loe09, tabIndex=11;
+Edit loe10=loe_file.loe10, tabIndex=14;
+Edit loe071=loe_file.loe071, tabIndex=6;
+Edit loe081=loe_file.loe081, tabIndex=9;
+Edit loe091=loe_file.loe091, tabIndex=12;
+Edit loe101=loe_file.loe101, tabIndex=15;
+Edit loe072=loe_file.loe072, tabIndex=7;
+Edit loe082=loe_file.loe082, tabIndex=10;
+Edit loe092=loe_file.loe092, tabIndex=13;
+Edit loe102=loe_file.loe102, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(loe_file.loe03,loe_file.loe04,formonly.oaj02,loe_file.loe05,loe_file.loe07,loe_file.loe08,loe_file.loe09,loe_file.loe10,loe_file.loe071,loe_file.loe081,loe_file.loe091,loe_file.loe101,loe_file.loe072,loe_file.loe082,loe_file.loe092,loe_file.loe102)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amrr603.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amrr603")
+VBox VBox1
+Grid gr3815
+{
+ <G group01                                       >
+  Time Bucket day      [msu03       ]
+  Confine Vender No.   [msu02       ]
+  Item No.             [msu01               ]
+ <                                                >
+
+}
+END -- gr3815
+Group g01(text="INPUT")
+VBox VBox2
+Grid gr3816
+{
+  Simulation Version  [msu000    ]
+ <G group02                                                              >
+  [s1                  ] [s2                   ] [s3                    ]
+  [t1                  ] [t2                   ] [t3                    ]
+
+ <                                                                       >
+
+}
+END -- gr3816
+END -- VBox2
+END -- g01
+Grid gr3817
+{
+[more                                              ]
+
+}
+END -- gr3817
+END -- VBox1
+END -- amrr603
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit msu03=formonly.msu03 type DATE, tabIndex=1;
+ButtonEdit msu02=formonly.msu02 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit msu01=formonly.msu01 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Edit msu000=formonly.msu000 type CHAR, tabIndex=4, not null, required;
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=5, queryEditable, items=(("1", "Item No."),("2", "Vendor"),("3", "Time Bucket day"),("4", "Source Plant"),("5", "Target Plant"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=6, queryEditable, items=(("1", "Item No."),("2", "Vendor"),("3", "Time Bucket day"),("4", "Source Plant"),("5", "Target Plant"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=7, queryEditable, items=(("1", "Item No."),("2", "Vendor"),("3", "Time Bucket day"),("4", "Source Plant"),("5", "Target Plant"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=8, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.msu03,formonly.msu02,formonly.msu01,formonly.msu000,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.more)
+END -- INSTRUCTIONS
+

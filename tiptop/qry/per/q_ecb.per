@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_ecb.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Routing ")
+Grid gr3754
+{
+ <T s_ecb                                                                  >
+ [check|ecb01                  |ecb02        |ecb03       |ecb06          ]
+ [check|ecb01                  |ecb02        |ecb03       |ecb06          ]
+ [check|ecb01                  |ecb02        |ecb03       |ecb06          ]
+ [check|ecb01                  |ecb02        |ecb03       |ecb06          ]
+ [check|ecb01                  |ecb02        |ecb03       |ecb06          ]
+ [check|ecb01                  |ecb02        |ecb03       |ecb06          ]
+ [check|ecb01                  |ecb02        |ecb03       |ecb06          ]
+ [check|ecb01                  |ecb02        |ecb03       |ecb06          ]
+ [check|ecb01                  |ecb02        |ecb03       |ecb06          ]
+ [check|ecb01                  |ecb02        |ecb03       |ecb06          ]
+ <                                                                         >
+
+}
+END -- gr3754
+END -- q_ecb
+
+TABLES
+ecb_file
+ATTRIBUTES
+Table s_ecb:s_ecb;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ecb01=ecb_file.ecb01, tabIndex=2, title="Item No.", noEntry;
+Edit ecb02=ecb_file.ecb02, tabIndex=3, title="Routing Code", noEntry;
+Edit ecb03=ecb_file.ecb03, tabIndex=4, title="Task Serial", noEntry;
+Edit ecb06=ecb_file.ecb06, tabIndex=5, title="Number Task No.", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ecb(formonly.check,ecb_file.ecb01,ecb_file.ecb02,ecb_file.ecb03,ecb_file.ecb06)
+END -- INSTRUCTIONS
+

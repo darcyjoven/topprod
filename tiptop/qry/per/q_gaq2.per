@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_gaq2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Frequently Used Memo")
+VBox VBox1
+Table s_gaq2
+{
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+[check|gaq01      |gaq03                         ]
+
+}
+END -- s_gaq2
+END -- VBox1
+END -- q_gaq2
+
+TABLES
+gaq_file
+ATTRIBUTES
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gaq01=gaq_file.gaq01, tabIndex=2, title="No.", noEntry;
+Edit gaq03=gaq_file.gaq03, tabIndex=3, title="Memo", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gaq2(formonly.check,gaq_file.gaq01,gaq_file.gaq03)
+END -- INSTRUCTIONS
+

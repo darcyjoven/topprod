@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"ghri200")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Main")
+Grid ds1
+{
+
+[hrec02    |hrec01          ][hrec03  ] [hrec04        ]  [hrec05  |hrec06        ]
+[herc05    |hrec07          ]
+[hrec08    |hrec09          |hrag07          ]
+[hrec00    |hrec0a          ]
+[hreba03   |hreba01         ]
+[hrec0b    |hrec0c          ]                    [hrecconf|hreccon1  ]
+[hrec0d    |hrec0e          ]
+[hreba03_ne|hreba03_new     ]
+
+}
+END -- ds1
+END -- Page1
+Page Page2(text=%"Info")
+Grid ds2
+{
+
+[hrecacti   |hrecact1      ]   [hrecmodu   |hrecmod1      ]   [hrecdate   |hrecdat1      ]
+[hrecgrup   |hrecgru1      ]   [hrecoriu   |hrecori1      ]
+[hrecuser   |hrecuse1      ]   [hrecorig   |hrecori2      ]
+
+
+
+
+
+}
+END -- ds2
+END -- Page2
+END -- Folder1
+Grid Grid3
+{
+ ---------- Rows [idx   ]/[cnt   ] ----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- ghri200
+
+ATTRIBUTES
+Label hrec02:hrec02, text=%"hrec02";
+ComboBox hrec01=formonly.hrec02 type VARCHAR, tabIndex=1;
+Label hrec03:hrec03, text=%"hrec03";
+Edit hrec04=formonly.hrec03 type DECIMAL, tabIndex=2, noEntry;
+Label hrec05:hrec04, text=%"hrec04";
+Edit hrec06=formonly.hrec04 type DECIMAL, tabIndex=3, noEntry;
+Label herc05:herc05, text=%"hrec05";
+DateEdit hrec07=formonly.hrec05 type DATE, tabIndex=4;
+Label hrec08:hrec06, text=%"hrec06";
+ButtonEdit hrec09=formonly.hrec06 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Edit hrag07=formonly.hrag07 type VARCHAR, tabIndex=6, noEntry;
+Label hrec00:hrec07, text=%"hrec07";
+ComboBox hrec0a=formonly.hrec07 type VARCHAR, tabIndex=7, items=(("01", %"01"),("02", %"02"),("03", %"03"),("04", %"04"),("05", %"05"),("06", %"06"),("07", %"07"),("08", %"08"),("09", %"09"),("10", %"10"),("11", %"11"),("12", %"12"));
+Label hreba03:hreba03, text=%"hreba03";
+Edit hreba01=formonly.hreba03 type DECIMAL, tabIndex=8, noEntry;
+Label hrec0b:hrec08, text=%"hrec08";
+Edit hrec0c=formonly.hrec08 type DECIMAL, tabIndex=9;
+Label hrecconf:hrecconf, text=%"hrecconf", justify=right;
+ComboBox hreccon1=formonly.hrecconf type VARCHAR, tabIndex=21, noEntry, items=(("Y", %"Y"),("N", %"N"));
+Label hrec0d:hrec09, text=%"hrec09";
+Edit hrec0e=formonly.hrec09 type DECIMAL, tabIndex=10;
+Label hreba03_ne:hreba03_new, text=%"hreba03_new";
+Edit hreba03_new=formonly.hreba03_new type DECIMAL, tabIndex=11, noEntry;
+Label hrecacti:hrecacti, text=%"hrecacti";
+Edit hrecact1=formonly.hrecacti type VARCHAR, tabIndex=12, noEntry;
+Label hrecmodu:hrecmodu, text=%"hrecmodu";
+Edit hrecmod1=formonly.hrecmodu type VARCHAR, tabIndex=15, noEntry;
+Label hrecdate:hrecdate, text=%"hrecdate";
+DateEdit hrecdat1=formonly.hrecdate type DATE, tabIndex=18, noEntry;
+Label hrecgrup:hrecgrup, text=%"hrecgrup";
+Edit hrecgru1=formonly.hrecgrup type VARCHAR, tabIndex=13, noEntry;
+Label hrecoriu:hrecoriu, text=%"hrecoriu";
+Edit hrecori1=formonly.hrecoriu type VARCHAR, tabIndex=16, noEntry;
+Label hrecuser:hrecuser, text=%"hrecuser";
+Edit hrecuse1=formonly.hrecuser type VARCHAR, tabIndex=14, noEntry;
+Label hrecorig:hrecorig, text=%"hrecorig";
+Edit hrecori2=formonly.hrecorig type VARCHAR, tabIndex=17, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=19, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrec02,formonly.hrec03,formonly.hrec04,formonly.hrec05,formonly.hrec06,formonly.hrag07,formonly.hrec07,formonly.hreba03,formonly.hrec08,formonly.hrec09,formonly.hreba03_new,formonly.hrecacti,formonly.hrecmodu,formonly.hrecdate,formonly.hrecgrup,formonly.hrecoriu,formonly.hrecuser,formonly.hrecorig,formonly.idx,formonly.cnt,formonly.hrecconf)
+END -- INSTRUCTIONS
+

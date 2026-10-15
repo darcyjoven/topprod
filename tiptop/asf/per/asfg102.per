@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfg102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr102")
+VBox vb2
+Grid gr596
+{
+ <G group01                                   >
+  Work/Order No.      [sfb01               ]
+  Production Item     [sfb05               ]
+  Memo Manfactr Dept  [sfb82               ]
+ <                                            >
+ <G group02                                  >
+ [a                                         ]
+ [b                                         ]
+ [c                                         ]
+ [d                                         ]
+ [e                                         ]
+ [f                                         ]
+ <                                           >
+}
+END -- gr596
+Grid gr597
+{
+[more                                    ]
+
+}
+END -- gr597
+END -- vb2
+END -- asfr102
+
+TABLES
+sfb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit sfb82=sfb_file.sfb82, action=controlp, tabIndex=3, image="zoom";
+Group group02:group02, text="INPUT";
+CheckBox a=formonly.a type VARCHAR, tabIndex=4, text="Print Allotment", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=5, text="Print Routing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=6, text="Print Order Memo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=7, text="Print Order Mark", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=8, text="Print W/O Memo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type VARCHAR, tabIndex=10, text="Print W/O Barcode", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfb_file.sfb01,sfb_file.sfb05,sfb_file.sfb82,formonly.a,formonly.b,formonly.c,formonly.d,formonly.e,formonly.f,formonly.more)
+END -- INSTRUCTIONS
+

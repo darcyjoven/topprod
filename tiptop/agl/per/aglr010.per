@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr010")
+VBox vb14
+Group group01(text="INPUT")
+Grid gr2706
+{
+  <G group04                                                                                          >
+   Group Code     [axa01             ]
+   Parent Company [axa02             ]
+   axa06          [axa06             ]
+   Book No.       [axa03]
+   Combine Book   [b    ]
+  <                                                                                                   >
+
+
+  <G group02                                                                                          >
+                            [dummy01]          [dummy02]        [dummy03]         [dummy04]
+   Year                [yy1             ][yy2             ][yy3             ][yy4             ]
+   Ending Period       [m4              ][m5              ][m6              ][m9              ]
+   Quarter             [q1              ][q2              ][q3              ][q4              ]
+   Half a Year         [h1              ][h2              ][h3              ][h4              ]
+  [a                                                                                          ]
+  <                                                                                                   >
+
+}
+END -- gr2706
+END -- group01
+Grid gr2707
+{
+
+[more                                                        ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr2707
+END -- vb14
+END -- aglr010
+
+ATTRIBUTES
+Group group04:group04;
+ButtonEdit axa01=formonly.axa01 type VARCHAR, action=controlp, tabIndex=11, not null, required, image="zoom";
+ButtonEdit axa02=formonly.axa02 type CHAR, action=controlp, tabIndex=12, not null, required, image="zoom";
+ComboBox axa06=formonly.axa06 type VARCHAR, tabIndex=15, items=(("1", "Month"),("2", "Quarter"),("3", "Half a Year"),("4", "Year"));
+Edit axa03=formonly.axa03 type CHAR, tabIndex=13, noEntry;
+Edit b=formonly.b type CHAR, tabIndex=14, noEntry;
+Group group02:group02;
+Label dummy01:dummy01, text="1st Period";
+Label dummy02:dummy02, text="2nd Period";
+Label dummy03:dummy03, text="3rd Period";
+Label dummy04:dummy04, text="4th Period";
+Edit yy1=formonly.yy1 type SMALLINT, tabIndex=1;
+Edit yy2=formonly.yy2 type SMALLINT, tabIndex=3;
+Edit yy3=formonly.yy3 type SMALLINT, tabIndex=5;
+Edit yy4=formonly.yy4 type SMALLINT, tabIndex=7;
+Edit m4=formonly.m4 type SMALLINT, tabIndex=2;
+Edit m5=formonly.m5 type SMALLINT, tabIndex=4;
+Edit m6=formonly.m6 type SMALLINT, tabIndex=6;
+Edit m9=formonly.m9 type SMALLINT, tabIndex=8;
+ComboBox q1=formonly.q1 type VARCHAR, tabIndex=16, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox q2=formonly.q2 type VARCHAR, tabIndex=17, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox q3=formonly.q3 type VARCHAR, tabIndex=18, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox q4=formonly.q4 type VARCHAR, tabIndex=19, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox h1=formonly.h1 type VARCHAR, tabIndex=20, items=(("1", "First Half Year"),("2", "Second Half Year"));
+ComboBox h2=formonly.h2 type VARCHAR, tabIndex=21, items=(("1", "First Half Year"),("2", "Second Half Year"));
+ComboBox h3=formonly.h3 type VARCHAR, tabIndex=22, items=(("1", "First Half Year"),("2", "Second Half Year"));
+ComboBox h4=formonly.h4 type VARCHAR, tabIndex=23, items=(("1", "First Half Year"),("2", "Second Half Year"));
+CheckBox a=formonly.a type CHAR, tabIndex=9, text="Calculate Net Sales Amount AND Cost of Goods Sold BY Average Stocks Cost Method", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=10, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.axa01,formonly.axa02,formonly.axa06,formonly.axa03,formonly.b,formonly.yy1,formonly.yy2,formonly.yy3,formonly.yy4,formonly.m4,formonly.m5,formonly.m6,formonly.m9,formonly.q1,formonly.q2,formonly.q3,formonly.q4,formonly.h1,formonly.h2,formonly.h3,formonly.h4,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

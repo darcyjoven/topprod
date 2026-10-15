@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq004")
+VBox vb5
+Folder folder01
+Page page01(text="Main")
+HBox hb5
+Grid gr2523
+{
+
+
+ Group No.       [axkk01      ]                Group Book No.     [axkk00     ]
+ Upper Company   [axkk02      ]                Upper Comp Book No [axkk03     ]
+ Under Company   [axkk04      ]                Under Comp Book No [axkk041    ]
+ Year            [axkk08      ]                Currency           [axkk14     ]
+
+
+}
+END -- gr2523
+Grid gr2524
+{
+
+
+ Account No.         [axkk05                        ]
+ Account Name        [aag02                                             ]
+ Trans.Code          [axkk06    ]
+ Trans.Value         [axkk07            ]
+
+
+}
+END -- gr2524
+END -- hb5
+END -- page01
+END -- folder01
+Table s_axkk
+{
+[seq    |axkk10              |axkk11              |summ                ]
+[seq    |axkk10              |axkk11              |summ                ]
+[seq    |axkk10              |axkk11              |summ                ]
+[seq    |axkk10              |axkk11              |summ                ]
+[seq    |axkk10              |axkk11              |summ                ]
+[seq    |axkk10              |axkk11              |summ                ]
+[seq    |axkk10              |axkk11              |summ                ]
+[seq    |axkk10              |axkk11              |summ                ]
+[seq    |axkk10              |axkk11              |summ                ]
+[seq    |axkk10              |axkk11              |summ                ]
+
+}
+END -- s_axkk
+Grid gr2525
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2525
+END -- vb5
+END -- aglq004
+
+TABLES
+axkk_file
+ATTRIBUTES
+ButtonEdit axkk01=axkk_file.axkk01, action=controlp, tabIndex=1, image="zoom";
+Edit axkk00=axkk_file.axkk00, tabIndex=2, color = yellow;
+Edit axkk02=axkk_file.axkk02, tabIndex=3;
+Edit axkk03=axkk_file.axkk03, tabIndex=4;
+Edit axkk04=axkk_file.axkk04, tabIndex=5;
+Edit axkk041=axkk_file.axkk041, tabIndex=6;
+Edit axkk08=axkk_file.axkk08, tabIndex=7;
+ButtonEdit axkk14=axkk_file.axkk14, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Details";
+ButtonEdit axkk05=axkk_file.axkk05, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Account # <^Y>Create Account  ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=10, noEntry;
+Edit axkk06=axkk_file.axkk06, tabIndex=11;
+Edit axkk07=axkk_file.axkk07, tabIndex=12;
+Edit seq=formonly.seq type CHAR, tabIndex=13, title="Period", noEntry;
+Edit axkk10=axkk_file.axkk10, tabIndex=14, title="Debit Transaction Amt", noEntry;
+Edit axkk11=axkk_file.axkk11, tabIndex=15, title="Credit", noEntry;
+Edit summ=formonly.summ type CHAR, tabIndex=18, title=%"Balance";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axkk(formonly.seq,axkk_file.axkk10,axkk_file.axkk11,formonly.summ)
+SCREEN RECORD Undefined(axkk_file.axkk01,axkk_file.axkk00,axkk_file.axkk02,axkk_file.axkk03,axkk_file.axkk04,axkk_file.axkk041,axkk_file.axkk08,axkk_file.axkk14,axkk_file.axkk05,formonly.aag02,axkk_file.axkk06,axkk_file.axkk07,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

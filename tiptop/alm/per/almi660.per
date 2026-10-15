@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi660.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi660")
+VBox VBox1
+Folder pc4
+Page Page7(text=%"Main")
+Grid gr15
+{
+
+  lpx01   [lpx01               ]                      [lpx07     ]       [lpx36     ]
+  lpx02   [lpx02               ]                      [lpx31               ]
+  lpx03   [lpx03               ]                      [lpx05     ]
+  lpx04   [lpx04               ]                       lpx29   [lpx29               ]
+  lpx21   [lpx21               ]                      [lpx08     ]
+  lpx22   [lpx22               ]                       lpx10   [lpx10               ]
+  lpx23   [lpx23               ]                       lpx35   [lpx35               ]
+  lpx24   [lpx24               ]                       POS?    [lpxpos              ]
+  lpx26   [lpx26               ]                       lpx15   [lpx15               |imgmksg]
+  lpx28   [lpx28               |lrz02               ]  lpx16   [lpx16               |       ]
+  lpx37   [lpx37               ]                       lpx17   [lpx17               ]
+ [lpx38                       ]                        lpx18   [lpx18                       ]
+  lpx33   [lpx33               |gec02               ]          [                            ]
+  POS?    [lpx32               |lpx32_desc          ]
+
+
+}
+END -- gr15
+END -- Page7
+Page Page8(text=%"Info")
+Grid gr10
+{
+
+ Data User [lpxuser   ] crat  [lpxcrat     ] acti       [lpxacti     ]
+ Data Group[lpxgrup   ] Modify[lpxmodu     ] Modify Date[lpxdate     ]
+ lpxoriu   [lpxoriu   ]
+ lpxorig   [lpxorig   ]
+
+
+
+
+
+}
+END -- gr10
+END -- Page8
+END -- pc4
+Grid gr14
+{
+  -------Rows[idx   ]/[cnt    ]------
+
+}
+END -- gr14
+END -- VBox1
+END -- almi660
+
+TABLES
+lpx_file,
+gec_file
+ATTRIBUTES
+ButtonEdit lpx01=lpx_file.lpx01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+CheckBox lpx07=lpx_file.lpx07, tabIndex=18, default = "N", text="lpx07", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lpx36=lpx_file.lpx36, tabIndex=19, default = "N", text="lpx36", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit lpx02=lpx_file.lpx02, tabIndex=2;
+CheckBox lpx31=lpx_file.lpx31, tabIndex=20, text="lpx31", not null, valueChecked = "Y", valueUnchecked = "N";
+DateEdit lpx03=lpx_file.lpx03, tabIndex=3;
+CheckBox lpx05=lpx_file.lpx05, tabIndex=21, default = "N", text="lpx05", not null, valueChecked = "Y", valueUnchecked = "N";
+DateEdit lpx04=lpx_file.lpx04, tabIndex=4;
+Edit lpx29=lpx_file.lpx29, tabIndex=22;
+Edit lpx21=lpx_file.lpx21, tabIndex=5, not null;
+CheckBox lpx08=lpx_file.lpx08, tabIndex=23, default = "N", text="lpx08", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit lpx22=lpx_file.lpx22, tabIndex=6, not null;
+Edit lpx10=lpx_file.lpx10, tabIndex=24;
+Edit lpx23=lpx_file.lpx23, tabIndex=7;
+Edit lpx35=lpx_file.lpx35, tabIndex=25, noEntry, not null;
+Edit lpx24=lpx_file.lpx24, tabIndex=8, not null;
+ComboBox lpxpos=lpx_file.lpxpos, tabIndex=26, default = "N", noEntry, not null, items=(("1", "Add-No passed"),("2", "Modify-No passed"),("3", "Passed"));
+ComboBox lpx26=lpx_file.lpx26, tabIndex=9, not null, items=(("1", "Coupons"),("2", "Consumer Card"));
+ComboBox lpx15=lpx_file.lpx15, tabIndex=27, noEntry, not null, items=(("Y", "Confirmed"),("N", "UnConfirmed"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit lpx28=lpx_file.lpx28, action=controlp, tabIndex=10, not null, required, image="zoom.png";
+Edit lrz02=formonly.lrz02 type CHAR, tabIndex=11, noEntry;
+Edit lpx16=lpx_file.lpx16, tabIndex=28, noEntry;
+Edit lpx37=lpx_file.lpx37, tabIndex=12;
+DateEdit lpx17=lpx_file.lpx17, tabIndex=29, noEntry;
+CheckBox lpx38=lpx_file.lpx38, tabIndex=13, default = "N", text="lpx38", not null, valueChecked = "Y", valueUnchecked = "N";
+TextEdit lpx18=lpx_file.lpx18, tabIndex=30;
+ButtonEdit lpx33=formonly.lpx33 type VARCHAR, action=controlp, tabIndex=14, not null, image="zoom";
+Edit gec02=gec_file.gec02, tabIndex=15, noEntry;
+ButtonEdit lpx32=lpx_file.lpx32, action=controlp, tabIndex=16, not null, image="zoom.png";
+Edit lpx32_desc=formonly.lpx32_desc type CHAR, tabIndex=17;
+Edit lpxuser=lpx_file.lpxuser, tabIndex=31, noEntry;
+DateEdit lpxcrat=lpx_file.lpxcrat, tabIndex=35, noEntry;
+Edit lpxacti=lpx_file.lpxacti, tabIndex=37, noEntry;
+Edit lpxgrup=lpx_file.lpxgrup, tabIndex=32, noEntry;
+Edit lpxmodu=lpx_file.lpxmodu, tabIndex=36, noEntry;
+DateEdit lpxdate=lpx_file.lpxdate, tabIndex=38, noEntry;
+Edit lpxoriu=lpx_file.lpxoriu, tabIndex=33;
+Edit lpxorig=lpx_file.lpxorig, tabIndex=34;
+Edit idx=formonly.idx type CHAR, tabIndex=39;
+Edit cnt=formonly.cnt type CHAR, tabIndex=40;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lpx_file.lpx01,lpx_file.lpx21,lpx_file.lpx02,lpx_file.lpx22,lpx_file.lpx05,lpx_file.lpx23,lpx_file.lpx29,lpx_file.lpx24,lpx_file.lpx26,lpx_file.lpx07,lpx_file.lpx28,formonly.lrz02,lpx_file.lpx08,lpx_file.lpx32,formonly.lpx32_desc,lpx_file.lpx10,lpx_file.lpxpos,formonly.imgmksg,lpx_file.lpx15,lpx_file.lpx31,lpx_file.lpx16,lpx_file.lpx17,lpx_file.lpx18,lpx_file.lpxuser,lpx_file.lpxcrat,lpx_file.lpxacti,lpx_file.lpxgrup,lpx_file.lpxmodu,lpx_file.lpxdate,lpx_file.lpxoriu,lpx_file.lpxorig,formonly.idx,formonly.cnt,formonly.lpx33,gec_file.gec02,lpx_file.lpx35,lpx_file.lpx03,lpx_file.lpx04,lpx_file.lpx36,lpx_file.lpx38,lpx_file.lpx37)
+END -- INSTRUCTIONS
+

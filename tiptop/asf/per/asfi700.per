@@ -1,0 +1,115 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfi700")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr508
+{
+ W/O No.             [sha01                 ]
+ Product Item        [sfb05                         ]
+ Part Name           [ima02                         ]
+ Spec                [ima021                        ]
+ Process No.         [sha012      |ecu014                        ]
+ Routing S/N         [sha02       ]
+ Task No.            [ecm04       |ecm45                         ]
+ Workstation         [ecm06       ]
+ Machine#            [ecm05               ]
+
+}
+END -- gr508
+Grid gr509
+{
+ Date                [sha04       ]
+ Time(Hr:Mn:Sc)      [sha041      ]
+ Shift#              [sha03       ]
+ Shift Desc          [ecg02               ]
+ Check inQty         [sha05       ]
+ Employee#           [sha06       ]
+ Employee Name       [gen02       ]
+ Memo                [sha07                         ]
+                     [                              ]
+
+}
+END -- gr509
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr510
+{
+ Record Owner        [shauser   ]   Last Modified by    [shamodu   ]
+ Department          [shagrup   ]   Create/Modify Date  [shadate   ]
+ Record Orig.        [shaoriu   ]
+ Dept Orig.          [shaorig   ]
+}
+END -- gr510
+END -- info
+END -- folder01
+Table s_ecbb
+{
+[ecb|ecbb10                                                      ]
+[ecb|ecbb10                                                      ]
+[ecb|ecbb10                                                      ]
+[ecb|ecbb10                                                      ]
+[ecb|ecbb10                                                      ]
+[ecb|ecbb10                                                      ]
+[ecb|ecbb10                                                      ]
+[ecb|ecbb10                                                      ]
+[ecb|ecbb10                                                      ]
+[ecb|ecbb10                                                      ]
+}
+END -- s_ecbb
+Grid gr511
+{
+ ---------- Rows [cnt   ] ----------
+
+
+}
+END -- gr511
+END -- VBox1
+END -- asfi700
+
+TABLES
+sha_file
+ATTRIBUTES
+ButtonEdit sha01=sha_file.sha01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Query W/O # ";
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=4, noEntry;
+ButtonEdit sha012=sha_file.sha012, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit ecu014=formonly.ecu014 type CHAR, tabIndex=6, noEntry;
+ButtonEdit sha02=sha_file.sha02, action=controlp, tabIndex=7, not null, required, image="zoom";
+ButtonEdit ecm04=formonly.ecm04 type CHAR, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry Task #  ";
+Edit ecm45=formonly.ecm45 type CHAR, tabIndex=9, noEntry;
+Edit ecm06=formonly.ecm06 type CHAR, tabIndex=10, noEntry;
+Edit ecm05=formonly.ecm05 type CHAR, tabIndex=11, noEntry;
+DateEdit sha04=sha_file.sha04, tabIndex=12, not null, required;
+Edit sha041=sha_file.sha041, tabIndex=13, not null, required, picture="XX:XX:XX";
+ButtonEdit sha03=sha_file.sha03, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P>Qry Shift";
+Edit ecg02=formonly.ecg02 type CHAR, tabIndex=15, noEntry;
+Edit sha05=sha_file.sha05, tabIndex=16, not null, required;
+ButtonEdit sha06=sha_file.sha06, action=controlp, tabIndex=17, not null, required, image="zoom", comment="<^P>Qry Employee Common Data";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=18, noEntry;
+TextEdit sha07=sha_file.sha07, tabIndex=19, stretch=NONE;
+Edit shauser=sha_file.shauser, tabIndex=20, noEntry;
+Edit shamodu=sha_file.shamodu, tabIndex=24, noEntry;
+Edit shagrup=sha_file.shagrup, tabIndex=21, noEntry;
+DateEdit shadate=sha_file.shadate, tabIndex=25, noEntry;
+Edit shaoriu=sha_file.shaoriu, tabIndex=22, noEntry;
+Edit shaorig=sha_file.shaorig, tabIndex=23, noEntry;
+Edit ecb=formonly.ecbb09 type VARCHAR, tabIndex=26, title="Ln#";
+Edit ecbb10=formonly.ecbb10 type VARCHAR, tabIndex=27, title="Description";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ecbb(formonly.ecbb09,formonly.ecbb10)
+SCREEN RECORD Undefined(sha_file.sha01,formonly.sfb05,formonly.ima02,formonly.ima021,sha_file.sha012,formonly.ecu014,sha_file.sha02,formonly.ecm04,formonly.ecm45,formonly.ecm06,formonly.ecm05,sha_file.sha04,sha_file.sha041,sha_file.sha03,formonly.ecg02,sha_file.sha05,sha_file.sha06,formonly.gen02,sha_file.sha07,sha_file.shauser,sha_file.shamodu,sha_file.shagrup,sha_file.shadate,sha_file.shaoriu,sha_file.shaorig,formonly.cnt)
+END -- INSTRUCTIONS
+

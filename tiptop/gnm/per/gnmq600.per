@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gnm/42f/gnmq600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gnmq600")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3504
+{
+[g_detail                                ]   Year                [oox01     ]
+                                             Period              [oox02     ]
+}
+END -- gr3504
+END -- page01
+Page Page1(text=%"Info")
+Grid Grid1
+{
+ Record Owner        [ooxuser   ]  Last Modified by    [ooxmodu   ]   Data Valid Code   [ooxacti   ]
+ Department          [ooxgrup   ]  Create/Modify Date  [ooxdate     ] Create Date       [ooxcrat   ]
+ Record Orig.        [ooxoriu   ]
+ Dept Orig.          [ooxorig   ]
+}
+END -- Grid1
+END -- Page1
+END -- folder01
+Table s_oox
+{
+[oox03          |oox04|oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03          |oox04|oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03          |oox04|oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03          |oox04|oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03          |oox04|oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03          |oox04|oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03          |oox04|oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03          |oox04|oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03          |oox04|oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+[oox03          |oox04|oox05  |oox06               |oox07                |oox11               |oox08               |oox09               |oox10               ]
+
+}
+END -- s_oox
+Grid gr3505
+{
+ Total               [g_tot               ]
+
+}
+END -- gr3505
+Grid gr3506
+{
+ ---------- Rows [cnt   ]/[cn2   ] ----------
+
+}
+END -- gr3506
+END -- VBox1
+END -- gnmq600
+
+TABLES
+oox_file
+ATTRIBUTES
+CheckBox g_detail=formonly.g_detail type CHAR, tabIndex=1, text="Qry Detailed Special          ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oox01=oox_file.oox01, tabIndex=2;
+Edit oox02=oox_file.oox02, tabIndex=3;
+Edit ooxuser=oox_file.ooxuser, tabIndex=15, noEntry;
+Edit ooxmodu=oox_file.ooxmodu, tabIndex=16, noEntry;
+Edit ooxacti=oox_file.ooxacti, tabIndex=17, noEntry, upShift;
+Edit ooxgrup=oox_file.ooxgrup, tabIndex=18, noEntry;
+DateEdit ooxdate=oox_file.ooxdate, tabIndex=19, noEntry;
+DateEdit ooxcrat=oox_file.ooxcrat, tabIndex=20, noEntry;
+Edit ooxoriu=oox_file.ooxoriu, tabIndex=21, noEntry;
+Edit ooxorig=oox_file.ooxorig, tabIndex=22, noEntry;
+Edit oox03=oox_file.oox03, tabIndex=4, title="Bank/I/E No.";
+Edit oox04=oox_file.oox04, tabIndex=14, title=%"Ln #";
+Edit oox05=oox_file.oox05, tabIndex=5, title="Curr";
+Edit oox06=oox_file.oox06, tabIndex=6, title="LM ExRt";
+Edit oox07=oox_file.oox07, tabIndex=7, title="Rval.ExR";
+Edit oox11=oox_file.oox11, tabIndex=23, title="UnCn T.c";
+Edit oox08=oox_file.oox08, tabIndex=8, title="UnCn H.C";
+Edit oox09=oox_file.oox09, tabIndex=9, title="R-Va H.C";
+Edit oox10=oox_file.oox10, tabIndex=10, title="Ex.Pr/Lo";
+Edit g_tot=formonly.g_tot type CHAR, tabIndex=11;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oox(oox_file.oox03,oox_file.oox04,oox_file.oox05,oox_file.oox06,oox_file.oox07,oox_file.oox11,oox_file.oox08,oox_file.oox09,oox_file.oox10)
+SCREEN RECORD Undefined(formonly.g_detail,oox_file.oox01,oox_file.oox02,formonly.g_tot,formonly.cnt,formonly.cn2,oox_file.ooxuser,oox_file.ooxmodu,oox_file.ooxacti,oox_file.ooxgrup,oox_file.ooxdate,oox_file.ooxcrat,oox_file.ooxoriu,oox_file.ooxorig)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft6201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft6201")
+Folder pc644
+Page page01(text="Main")
+Grid gr2711
+{
+
+ [rg1            ]
+ [               ]
+ [               ]
+  <G group02                             >
+    WH       [ima35     ]
+    Location [ima36     ]
+  <                                      >
+
+}
+END -- gr2711
+END -- page01
+END -- pc644
+END -- asft6201
+
+TABLES
+ima_file
+ATTRIBUTES
+RadioGroup rg1=formonly.rg1 type VARCHAR, tabIndex=1, not null, required, items=(("1", "By Main Store"),("2", "By WO Detail Store"),("3", "Assign Store"));
+Group group02:group02;
+ButtonEdit ima35=ima_file.ima35, action=controlp, tabIndex=2, image="zoom", comment="<^P> Qry Warehouse";
+ButtonEdit ima36=ima_file.ima36, action=controlp, tabIndex=3, image="zoom", comment="<^P> Qry Warehouse/Location Data";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rg1,ima_file.ima35,ima_file.ima36)
+END -- INSTRUCTIONS
+

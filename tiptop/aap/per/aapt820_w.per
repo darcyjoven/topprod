@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt820_w.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Dute Pay")
+Grid gr556
+{
+ <G group01                         >
+  Tax Type            [apa15     ]
+  Tax Rate            [apa16     ]%
+  Category            [apa36     ]
+ <                                  >
+ <G group02                         >
+  Change Date         [l_date      ]
+
+ <                                  >
+
+}
+END -- gr556
+END -- aapt820_w
+
+TABLES
+apa_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit apa15=apa_file.apa15, action=controlp, tabIndex=1, image="zoom", comment="Press <^P>Qry Tax Tp";
+Edit apa16=apa_file.apa16, tabIndex=2;
+ButtonEdit apa36=apa_file.apa36, action=controlp, tabIndex=3, image="zoom", comment="Press <^P>Qry Category";
+Group group02:group02;
+DateEdit l_date=formonly.l_date type DATE, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(apa_file.apa15,apa_file.apa16,apa_file.apa36,formonly.l_date)
+END -- INSTRUCTIONS
+

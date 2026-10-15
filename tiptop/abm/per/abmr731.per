@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmr731.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmr731")
+VBox VBox1
+Grid gr976
+{
+   <G group01                                  >
+    E.C.N. No.          [bmx01               ]
+    E.C.N.Date          [bmx02               ]
+    Type of Change      [bmy03               ]
+    Alternate Code      [bmy29               ]
+   <                                           >
+}
+END -- gr976
+Group g01(text="INPUT")
+Grid gr977
+{
+ <G group02                                >
+ [a                             ]
+ [b                             ]
+ [c                             ]
+  Bom Style [bmx50                     ]
+ <                                         >
+
+}
+END -- gr977
+END -- g01
+Grid gr978
+{
+[more                                ]
+
+}
+END -- gr978
+END -- VBox1
+END -- abmr731
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit bmx01=formonly.bmx01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit bmx02=formonly.bmx02 type DATE, tabIndex=2;
+Edit bmy03=formonly.bmy03 type CHAR, tabIndex=3;
+Edit bmy29=formonly.bmy29 type CHAR, tabIndex=4;
+Group group02:group02, text="Print Data";
+CheckBox a=formonly.a type VARCHAR, tabIndex=5, text="P/R data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=6, text="Purchase", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=7, text="Goods Receipt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox bmx50=formonly.bmx50 type CHAR, tabIndex=9, items=(("1", "Product Bom"),("2", "Process Bom"),("3", "ALL"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bmx01,formonly.bmx02,formonly.bmy03,formonly.bmy29,formonly.a,formonly.b,formonly.c,formonly.bmx50,formonly.more)
+END -- INSTRUCTIONS
+

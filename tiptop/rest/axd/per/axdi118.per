@@ -1,0 +1,77 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi118.per created Wed Jan 23 05:30:33 2008
+-- File created from axdi118.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi118")
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        GRID gr7760
+        {
+         Vehicle No.         [aa0       ]
+         Init Date           [aa1       ]
+         End Date            [aa2       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_adn
+    {
+    [aa3       |aa4      |aa5    |aa6               |aa7      |aa8           |aa9           |ab0            |ab1           |ab2                           |ab3  ]
+    [aa3       |aa4      |aa5    |aa6               |aa7      |aa8           |aa9           |ab0            |ab1           |ab2                           |ab3  ]
+    [aa3       |aa4      |aa5    |aa6               |aa7      |aa8           |aa9           |ab0            |ab1           |ab2                           |ab3  ]
+    [aa3       |aa4      |aa5    |aa6               |aa7      |aa8           |aa9           |ab0            |ab1           |ab2                           |ab3  ]
+    [aa3       |aa4      |aa5    |aa6               |aa7      |aa8           |aa9           |ab0            |ab1           |ab2                           |ab3  ]
+    [aa3       |aa4      |aa5    |aa6               |aa7      |aa8           |aa9           |ab0            |ab1           |ab2                           |ab3  ]
+    [aa3       |aa4      |aa5    |aa6               |aa7      |aa8           |aa9           |ab0            |ab1           |ab2                           |ab3  ]
+    [aa3       |aa4      |aa5    |aa6               |aa7      |aa8           |aa9           |ab0            |ab1           |ab2                           |ab3  ]
+    [aa3       |aa4      |aa5    |aa6               |aa7      |aa8           |aa9           |ab0            |ab1           |ab2                           |ab3  ]
+    [aa3       |aa4      |aa5    |aa6               |aa7      |aa8           |aa9           |ab0            |ab1           |ab2                           |ab3  ]
+    }
+    END -- TABLE
+    GRID gr7761
+    {
+     ----------Rows [ab4   ]----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adn_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=adn_file.adn01, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=1;
+  DATEEDIT aa1=adn_file.adn02, NOT NULL, REQUIRED, TABINDEX=2;
+  DATEEDIT aa2=adn_file.adn03, NOT NULL, REQUIRED, TABINDEX=3;
+  EDIT aa3=adn_file.adn04, NOT NULL, REQUIRED, TABINDEX=4, TITLE="Line no";
+  BUTTONEDIT aa4=adn_file.adn05, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, REVERSE, TABINDEX=5, TITLE="Driver";
+  EDIT aa5=FORMONLY.gen02, NOENTRY, TABINDEX=6, TITLE="Name";
+  BUTTONEDIT aa6=adn_file.adn06, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", REVERSE, TABINDEX=7, TITLE="Dispatch No.";
+  EDIT aa7=adn_file.adn07, TABINDEX=8, TITLE="Reason";
+  DATEEDIT aa8=adn_file.adn08, TABINDEX=9, TITLE="Return Date";
+  EDIT aa9=adn_file.adn09, TABINDEX=10, TITLE="Return Time";
+  EDIT ab0=adn_file.adn10, NOT NULL, REQUIRED, TABINDEX=11, TITLE="Init Mileage";
+  EDIT ab1=adn_file.adn11, NOT NULL, REQUIRED, TABINDEX=12, TITLE="END Mileage";
+  EDIT ab2=adn_file.adn12, TABINDEX=13, TITLE="Memo";
+  CHECKBOX ab3=adn_file.adnacti, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=14, TITLE="Valid";
+  EDIT ab4=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=15;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adn (adn_file.adn04, adn_file.adn05, FORMONLY.gen02, adn_file.adn06, adn_file.adn07, adn_file.adn08, adn_file.adn09, adn_file.adn10, adn_file.adn11, adn_file.adn12, adn_file.adnacti)
+END

@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi102")
+VBox vb8
+Folder pc840
+Page page01(text="Page01")
+Table s_smc
+{
+[smc01  |smc03       |smc02          |smc04              |smc05               |smcacti     ]
+[smc01  |smc03       |smc02          |smc04              |smc05               |smcacti     ]
+[smc01  |smc03       |smc02          |smc04              |smc05               |smcacti     ]
+[smc01  |smc03       |smc02          |smc04              |smc05               |smcacti     ]
+[smc01  |smc03       |smc02          |smc04              |smc05               |smcacti     ]
+[smc01  |smc03       |smc02          |smc04              |smc05               |smcacti     ]
+[smc01  |smc03       |smc02          |smc04              |smc05               |smcacti     ]
+[smc01  |smc03       |smc02          |smc04              |smc05               |smcacti     ]
+[smc01  |smc03       |smc02          |smc04              |smc05               |smcacti     ]
+[smc01  |smc03       |smc02          |smc04              |smc05               |smcacti     ]
+
+}
+END -- s_smc
+END -- page01
+END -- pc840
+Grid gr4629
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr4629
+END -- vb8
+END -- aooi102
+
+TABLES
+smc_file
+ATTRIBUTES
+ButtonEdit smc01=smc_file.smc01, action=controlp, tabIndex=1, title="A Unit", not null, required, image="zoom", comment="<^P> Qry Unit <^Y> Create Unit";
+Edit smc03=smc_file.smc03, tabIndex=2, title="A Unit Qty";
+ButtonEdit smc02=smc_file.smc02, action=controlp, tabIndex=3, title="Convert B unit", not null, required, image="zoom", comment="<^P> Qry Unit <^Y> Create Unit";
+Edit smc04=smc_file.smc04, tabIndex=4, title="Convert B Unit Qty";
+Edit smc05=smc_file.smc05, tabIndex=5, title="Description";
+CheckBox smcacti=smc_file.smcacti, tabIndex=6, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_smc(smc_file.smc01,smc_file.smc03,smc_file.smc02,smc_file.smc04,smc_file.smc05,smc_file.smcacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

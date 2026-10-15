@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri079_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox vbox1
+Grid grid1
+{
+
+ <G group2                                                            >                  <G group4                                                      >
+  <T table1                                                          >                     <T table2                                                   >
+  [sel     |hrdk01    |hrdk03        |hrdk04  |hrdk13  |hrdkud01     ]                     [sel_1   |hrdla02       |hrdk03_1|hrdk04_1|hrdk13_1|hrdkud02]
+  [sel     |hrdk01    |hrdk03        |hrdk04  |hrdk13  |hrdkud01     ]                     [sel_1   |hrdla02       |hrdk03_1|hrdk04_1|hrdk13_1|hrdkud02]
+  [sel     |hrdk01    |hrdk03        |hrdk04  |hrdk13  |hrdkud01     ]  <G group3      >   [sel_1   |hrdla02       |hrdk03_1|hrdk04_1|hrdk13_1|hrdkud02]
+  [sel     |hrdk01    |hrdk03        |hrdk04  |hrdk13  |hrdkud01     ]    [label4   ]      [sel_1   |hrdla02       |hrdk03_1|hrdk04_1|hrdk13_1|hrdkud02]
+  [sel     |hrdk01    |hrdk03        |hrdk04  |hrdk13  |hrdkud01     ]    [         ]      [sel_1   |hrdla02       |hrdk03_1|hrdk04_1|hrdk13_1|hrdkud02]
+                                                                          [label5   ]
+                                                                          [         ]
+                                                                         [ok2         ]
+
+                                                                         [moveright   ]
+
+                                                                         [moveleft    ]
+
+                                                                         [moveup      ]
+
+                                                                         [movedown    ]
+  <                                                                  >                     <                                                           >
+ <                                                                    >  [save        ]  <                                                              >
+  <G group5                                          >                                   <G group6                                                 >
+   -----[label7    |cn1       ]-----                                                       -----[label8   ][cn2     ] -----
+  <                                                  >                  <              > <                                                         >
+}
+END -- grid1
+END -- vbox1
+END -- ghri079_1
+
+ATTRIBUTES
+Group group2:group2, text=%"Group2";
+Table table1:table1, width = 68 characters;
+CheckBox sel=formonly.sel type CHAR, tabIndex=1, title=%"sel", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit hrdk01=formonly.hrdk01 type CHAR, tabIndex=1, title=%"hrdk01", noEntry;
+Edit hrdk03=formonly.hrdk03 type CHAR, tabIndex=1, title=%"hrdk03", noEntry;
+Edit hrdk04=formonly.hrdk04 type CHAR, tabIndex=1, title=%"hrdk04", noEntry;
+Edit hrdk13=formonly.hrdk13 type CHAR, tabIndex=2, title=%"hrdk13", noEntry;
+Edit hrdkud01=formonly.hrdkud01 type CHAR, tabIndex=3, title=%"hrdkud01", noEntry;
+Group group4:group4, text=%"Group4";
+Table table2:table2, width = 61 characters;
+CheckBox sel_1=formonly.sel_1 type CHAR, tabIndex=1, title=%"sel", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit hrdla02=formonly.hrdla02 type CHAR, tabIndex=1, title=%"hrdla02", noEntry;
+Edit hrdk03_1=formonly.hrdk03_1 type CHAR, tabIndex=1, title=%"hrdk03", noEntry;
+Edit hrdk04_1=formonly.hrdk04_1 type CHAR, tabIndex=5, title=%"hrdk04";
+Edit hrdk13_1=formonly.hrdk13_1 type CHAR, tabIndex=1, title=%"hrdk13", noEntry;
+Edit hrdkud02=formonly.hrdkud01_1 type CHAR, tabIndex=4, title=%"hrdkud01";
+Group group3:group3, text=%"";
+Label label4:label4, text=%"";
+Label label5:label5, text=%"";
+Button ok2:ok2, tabIndex=1, text=%"", image="ok2.png";
+Button moveright:moveright, tabIndex=1, text=%"", image="next2.png", fontPitch=variable;
+Button moveleft:moveleft, tabIndex=1, text=%"", image="prev2.png", fontPitch=variable;
+Button moveup:moveup, tabIndex=1, text=%"", image="up.png", fontPitch=variable;
+Button movedown:movedown, tabIndex=1, text=%"", image="down.png", fontPitch=variable;
+Button save:save, tabIndex=1, text=%"", image="save.png";
+Group group5:group5, text=%"";
+Label label7:label7, text=%"Label7";
+Edit cn1=formonly.cn1 type CHAR, tabIndex=6;
+Group group6:group6, text=%"";
+Label label8:label8, text=%"Label8";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrdk(formonly.sel,formonly.hrdk01,formonly.hrdk03,formonly.hrdk04,formonly.hrdk13,formonly.hrdkud01)
+SCREEN RECORD s_hrdla(formonly.sel_1,formonly.hrdla02,formonly.hrdk03_1,formonly.hrdk04_1,formonly.hrdk13_1,formonly.hrdkud01_1)
+SCREEN RECORD Undefined(formonly.cn1,formonly.cn2)
+END -- INSTRUCTIONS
+

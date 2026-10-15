@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt6005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt6005")
+VBox VBox1
+Folder pc594
+Page page01(text="Page01")
+Grid gr2567
+{
+ <G group01                                                    >
+  Planned Delivery Qty            [ogb18     ]
+  Customer Part No.               [ogb11               ]
+  Extra P/N #                     [ogb07     ]
+  Sales Unit                      [ogb05     ]
+  Delivery Qty                    [ogb12     ]
+  Item Unit                       [l_ima25   ]
+  Conversion Rate                 [ogb05_fac ]
+  Par/Ref Unit                    [ogb913    ]
+  Par/Ref Conversion Rate         [ogb914    ]
+  Par/Ref Qty                     [ogb915    ]
+  Chi/Deliver Unit                [ogb910    ]
+  Chi/Deliver Conversion Rate     [ogb911    ]
+  Chi/Deliver Qty                 [ogb912    ]
+  Inventory Unit                  [ogb15     ]
+  Conversion Rate                 [ogb15_fac ]
+  Convert Del Qty                 [ogb16     ]
+ <                                                             >
+
+}
+END -- gr2567
+END -- page01
+END -- pc594
+END -- VBox1
+END -- axmt6005
+
+TABLES
+ogb_file
+ATTRIBUTES
+Group group01:group01;
+Edit ogb18=ogb_file.ogb18, tabIndex=1, not null, required;
+Edit ogb11=ogb_file.ogb11, tabIndex=2;
+Edit ogb07=ogb_file.ogb07, tabIndex=3;
+Edit ogb05=ogb_file.ogb05, tabIndex=4, noEntry;
+Edit ogb12=ogb_file.ogb12, tabIndex=5, noEntry, not null, required;
+Edit l_ima25=formonly.l_ima25 type CHAR, tabIndex=6, noEntry;
+Edit ogb05_fac=ogb_file.ogb05_fac, tabIndex=7, not null, required;
+Edit ogb913=ogb_file.ogb913, tabIndex=8, noEntry;
+Edit ogb914=ogb_file.ogb914, tabIndex=9;
+Edit ogb915=ogb_file.ogb915, tabIndex=10, noEntry;
+Edit ogb910=ogb_file.ogb910, tabIndex=11, noEntry;
+Edit ogb911=ogb_file.ogb911, tabIndex=12;
+Edit ogb912=ogb_file.ogb912, tabIndex=13, noEntry;
+Edit ogb15=ogb_file.ogb15, tabIndex=14, noEntry;
+Edit ogb15_fac=ogb_file.ogb15_fac, tabIndex=15, not null, required;
+Edit ogb16=ogb_file.ogb16, tabIndex=16, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ogb_file.ogb18,ogb_file.ogb11,ogb_file.ogb07,ogb_file.ogb05,ogb_file.ogb12,formonly.l_ima25,ogb_file.ogb05_fac,ogb_file.ogb913,ogb_file.ogb914,ogb_file.ogb915,ogb_file.ogb910,ogb_file.ogb911,ogb_file.ogb912,ogb_file.ogb15,ogb_file.ogb15_fac,ogb_file.ogb16)
+END -- INSTRUCTIONS
+

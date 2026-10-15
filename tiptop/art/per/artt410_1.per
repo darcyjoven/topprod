@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt410_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt411_1")
+VBox vb5
+Folder pc3
+Page Page4(text=%"Basic Data")
+Table s_pcnf
+{
+[pcnf0|pcnf03    |pcnf05              |pcnf06              |pcnf07    |pcnf08        |pcnf09              |pcnf10      |pcnf11          |pcnf12    |pcnf13|pcnf14    ]
+[pcnf0|pcnf03    |pcnf05              |pcnf06              |pcnf07    |pcnf08        |pcnf09              |pcnf10      |pcnf11          |pcnf12    |pcnf13|pcnf14    ]
+[pcnf0|pcnf03    |pcnf05              |pcnf06              |pcnf07    |pcnf08        |pcnf09              |pcnf10      |pcnf11          |pcnf12    |pcnf13|pcnf14    ]
+[pcnf0|pcnf03    |pcnf05              |pcnf06              |pcnf07    |pcnf08        |pcnf09              |pcnf10      |pcnf11          |pcnf12    |pcnf13|pcnf14    ]
+[pcnf0|pcnf03    |pcnf05              |pcnf06              |pcnf07    |pcnf08        |pcnf09              |pcnf10      |pcnf11          |pcnf12    |pcnf13|pcnf14    ]
+
+}
+END -- s_pcnf
+END -- Page4
+END -- pc3
+Grid gr5
+{
+ --------Details[cn2   ]------
+
+}
+END -- gr5
+END -- vb5
+END -- artt411_1
+
+ATTRIBUTES
+Edit pcnf0=formonly.pcnf02 type SMALLINT, tabIndex=16, title="Line No.", not null, required;
+ComboBox pcnf03=formonly.pcnf03 type VARCHAR, tabIndex=17, title="Contributions Type", not null, required, items=(("01", "Cash"),("02", "UnionPay cards"),("03", "Cheque"),("04", "Coupon"),("05", "Union Card"),("06", "Stored-value Cards"),("07", "Advance"),("08", "Manual Transfers"));
+Edit pcnf05=formonly.pcnf05 type DECIMAL, tabIndex=18, title="Amount";
+Edit pcnf06=formonly.pcnf06 type VARCHAR, tabIndex=19, title="Number/votes/Account";
+DateEdit pcnf07=formonly.pcnf07 type DATE, tabIndex=20, title="Charges Rate";
+Edit pcnf08=formonly.pcnf08 type VARCHAR, tabIndex=21, title="Charges";
+Edit pcnf09=formonly.pcnf09 type DECIMAL, tabIndex=22, title="Cheque Denomination";
+Edit pcnf10=formonly.pcnf10 type DECIMAL, tabIndex=23, title="Invoice Date";
+Edit pcnf11=formonly.pcnf11 type DECIMAL, tabIndex=24, title="Units";
+Edit pcnf12=formonly.pcnf12 type DECIMAL, tabIndex=25, title="Card Voucher Category No. ";
+ComboBox pcnf13=formonly.pcnf13 type VARCHAR, tabIndex=26, title="Coupon Denominations", items=(("1", "20"),("2", "0.005"),("3", "0.006"),("4", "0.025"),("5", "0.032"));
+Edit pcnf14=formonly.pcnf14 type DECIMAL, tabIndex=28, title="pcnf14", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pcnf(formonly.pcnf02,formonly.pcnf03,formonly.pcnf05,formonly.pcnf06,formonly.pcnf07,formonly.pcnf08,formonly.pcnf09,formonly.pcnf10,formonly.pcnf11,formonly.pcnf12,formonly.pcnf13,formonly.pcnf14)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

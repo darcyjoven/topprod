@@ -1,0 +1,150 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"asfi610")
+Folder pc1
+Page Page1(text=%"Main")
+VBox VBox1
+Grid gr1
+{
+  Allocate No. [sia01                   ]Entry Date     [sia02        ]  Approval Date    [sia03         ]  [siaconf  ]        [imgmksg]
+  Allocate Type[sia04           ]        Allocate Method[sia05        ]  Dept No.         [sia06         ]  [gem02         ]   [       ]
+  Lot No.      [sia07        ]           Remark         [sia08                                                             ]
+
+
+}
+END -- gr1
+Folder Folder1
+Page Page3(text=%"Data")
+Grid gr2
+{
+ <T s_sib1                                                                                                    >
+ [sib02           |sib04          |sfb05         |ima02           |ima021              |sib03                ]
+ [sib02           |sib04          |sfb05         |ima02           |ima021              |sib03                ]
+ [sib02           |sib04          |sfb05         |ima02           |ima021              |sib03                ]
+ [sib02           |sib04          |sfb05         |ima02           |ima021              |sib03                ]
+ [sib02           |sib04          |sfb05         |ima02           |ima021              |sib03                ]
+ [sib02           |sib04          |sfb05         |ima02           |ima021              |sib03                ]
+ [sib02           |sib04          |sfb05         |ima02           |ima021              |sib03                ]
+ [sib02           |sib04          |sfb05         |ima02           |ima021              |sib03                ]
+ [sib02           |sib04          |sfb05         |ima02           |ima021              |sib03                ]
+ [sib02           |sib04          |sfb05         |ima02           |ima021              |sib03                ]
+
+
+ <                                                                                                            >
+}
+END -- gr2
+END -- Page3
+END -- Folder1
+Grid gr3
+{
+ <T s_sic                                                                                                                                                                                                                            >
+ [sic0|sic03           |sic15   |sic04         |ima01       |ima022      |sic05         |sic012  |ecm014  |sic11    |sic013  |sfa05      |sfa06       |sic06       |sic07     |sic07_fa|sic08       |sic09    |sic10        |sic16   ]
+ [sic0|sic03           |sic15   |sic04         |ima01       |ima022      |sic05         |sic012  |ecm014  |sic11    |sic013  |sfa05      |sfa06       |sic06       |sic07     |sic07_fa|sic08       |sic09    |sic10        |sic16   ]
+ [sic0|sic03           |sic15   |sic04         |ima01       |ima022      |sic05         |sic012  |ecm014  |sic11    |sic013  |sfa05      |sfa06       |sic06       |sic07     |sic07_fa|sic08       |sic09    |sic10        |sic16   ]
+ [sic0|sic03           |sic15   |sic04         |ima01       |ima022      |sic05         |sic012  |ecm014  |sic11    |sic013  |sfa05      |sfa06       |sic06       |sic07     |sic07_fa|sic08       |sic09    |sic10        |sic16   ]
+ [sic0|sic03           |sic15   |sic04         |ima01       |ima022      |sic05         |sic012  |ecm014  |sic11    |sic013  |sfa05      |sfa06       |sic06       |sic07     |sic07_fa|sic08       |sic09    |sic10        |sic16   ]
+ [sic0|sic03           |sic15   |sic04         |ima01       |ima022      |sic05         |sic012  |ecm014  |sic11    |sic013  |sfa05      |sfa06       |sic06       |sic07     |sic07_fa|sic08       |sic09    |sic10        |sic16   ]
+ [sic0|sic03           |sic15   |sic04         |ima01       |ima022      |sic05         |sic012  |ecm014  |sic11    |sic013  |sfa05      |sfa06       |sic06       |sic07     |sic07_fa|sic08       |sic09    |sic10        |sic16   ]
+ [sic0|sic03           |sic15   |sic04         |ima01       |ima022      |sic05         |sic012  |ecm014  |sic11    |sic013  |sfa05      |sfa06       |sic06       |sic07     |sic07_fa|sic08       |sic09    |sic10        |sic16   ]
+ [sic0|sic03           |sic15   |sic04         |ima01       |ima022      |sic05         |sic012  |ecm014  |sic11    |sic013  |sfa05      |sfa06       |sic06       |sic07     |sic07_fa|sic08       |sic09    |sic10        |sic16   ]
+ [sic0|sic03           |sic15   |sic04         |ima01       |ima022      |sic05         |sic012  |ecm014  |sic11    |sic013  |sfa05      |sfa06       |sic06       |sic07     |sic07_fa|sic08       |sic09    |sic10        |sic16   ]
+
+ <                                                                                                                                                                                                                                   >
+
+}
+END -- gr3
+Grid Grid1
+{
+
+    ---------Rows [cnt   ] / [cn3   ] - [cn2   ]---------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Page1
+Page Page2(text=%"info")
+Grid gr5
+{
+
+   Record Owner  [siauser          ]  Last Modified by      [siamodu       ]   Data Valid Code    [siaac]
+   Department    [siagrup          ]  Create/Modify Date    [siadate        ]
+   Record Orig.  [siaoriu          ]
+   Dept Orig.    [siaorig          ]
+
+}
+END -- gr5
+END -- Page2
+END -- pc1
+END -- Form1
+
+TABLES
+gem_file,
+sfb_file,
+sfa_file,
+sic_file,
+sib_file,
+sia_file,
+ima_file
+ATTRIBUTES
+ButtonEdit sia01=sia_file.sia01, action=controlp, tabIndex=1, image="zoom";
+DateEdit sia02=sia_file.sia02, tabIndex=2, not null, required, century="";
+DateEdit sia03=sia_file.sia03, tabIndex=3, noEntry, century="";
+CheckBox siaconf=sia_file.siaconf, tabIndex=38, text="siaconf", noEntry, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale;
+ComboBox sia04=sia_file.sia04, tabIndex=4, not null, required, items=(("1", "Allocate"),("2", "Un-Allocate"));
+ComboBox sia05=sia_file.sia05, tabIndex=5, not null, required, items=(("1", "Allocating"),("2", "Allocating by Sets"),("3", "Order Allocate"),("4", "Misc Issue Allocate"),("5", "Transfer Allocate"));
+ButtonEdit sia06=sia_file.sia06, action=controlp, tabIndex=6, image="zoom";
+Edit gem02=gem_file.gem02, tabIndex=8, noEntry;
+ButtonEdit sia07=sia_file.sia07, action=controlp, tabIndex=7, image="zoom";
+Edit sia08=sia_file.sia08, tabIndex=9;
+Table s_sib1:s_sib1;
+ButtonEdit sib02=sib_file.sib02, action=controlp, tabIndex=39, title="WO No.", not null, required, image="zoom";
+ButtonEdit sib04=sib_file.sib04, action=controlp, tabIndex=40, title="Operation Sequence", not null, required, image="zoom";
+Edit sfb05=sfb_file.sfb05, tabIndex=41, title="Issue Item", noEntry;
+Edit ima02=ima_file.ima02, tabIndex=42, title="P/N", noEntry;
+Edit ima021=ima_file.ima021, tabIndex=43, title="Spec", noEntry;
+Edit sib03=sib_file.sib03, tabIndex=44, title="Allocated Setting QTY", not null, required;
+Table s_sic:s_sic;
+Edit sic0=sic_file.sic02, tabIndex=10, title="Line No.", not null, required;
+ButtonEdit sic03=sic_file.sic03, action=controlp, tabIndex=11, title="WO No.", not null, required, image="zoom";
+Edit sic15=sic_file.sic15, tabIndex=12, title=%"Order Line#", not null, required;
+ButtonEdit sic04=sic_file.sic04, action=controlp, tabIndex=13, title="BOM Item No.", not null, required, image="zoom";
+Edit ima01=formonly.ima02 type VARCHAR, tabIndex=45, title=%"Desc", noEntry;
+Edit ima022=formonly.ima021 type VARCHAR, tabIndex=46, title=%"Spec", noEntry;
+ButtonEdit sic05=sic_file.sic05, action=controlp, tabIndex=14, title="Issue Item", not null, required, image="zoom";
+ButtonEdit sic012=sic_file.sic012, action=controlp, tabIndex=15, title=%"Process No.", not null, image="zoom";
+Edit ecm014=formonly.ecm014 type CHAR, tabIndex=16, title=%"Process Desc", noEntry;
+Edit sic11=sic_file.sic11, tabIndex=17, title="Operation Sequence";
+ButtonEdit sic013=sic_file.sic013, action=controlp, tabIndex=18, title=%"Routing S/N", not null, image="zoom";
+Edit sfa05=sfa_file.sfa05, tabIndex=19, title="Required Qty", noEntry;
+Edit sfa06=sfa_file.sfa06, tabIndex=20, title="Issued Qty", noEntry;
+Edit sic06=sic_file.sic06, tabIndex=21, title="Allocate Qty", not null, required;
+ButtonEdit sic07=sic_file.sic07, action=controlp, tabIndex=22, title="Unit Conversion Rate", image="zoom";
+Edit sic07_fa=sic_file.sic07_fac, tabIndex=23, title=%"Edit1", noEntry;
+ButtonEdit sic08=sic_file.sic08, action=controlp, tabIndex=24, title="WH", not null, required, image="zoom";
+ButtonEdit sic09=sic_file.sic09, action=controlp, tabIndex=25, title="Location", image="zoom";
+ButtonEdit sic10=sic_file.sic10, action=controlp, tabIndex=26, title="Lot No.", image="zoom";
+Edit sic16=sic_file.sic16, tabIndex=27, title=%"Memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28, noEntry;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=29;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=30;
+Edit siauser=sia_file.siauser, tabIndex=31, noEntry;
+Edit siamodu=sia_file.siamodu, tabIndex=32, noEntry;
+Edit siaac=sia_file.siaacti, tabIndex=33, noEntry;
+Edit siagrup=sia_file.siagrup, tabIndex=34, noEntry;
+DateEdit siadate=sia_file.siadate, tabIndex=35, noEntry, century="";
+Edit siaoriu=sia_file.siaoriu, tabIndex=36, noEntry;
+Edit siaorig=sia_file.siaorig, tabIndex=37, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sic(sic_file.sic02,sic_file.sic03,sic_file.sic15,sic_file.sic04,formonly.ima02,formonly.ima021,sic_file.sic05,sic_file.sic012,formonly.ecm014,sic_file.sic11,sic_file.sic013,sfa_file.sfa05,sfa_file.sfa06,sic_file.sic06,sic_file.sic07,sic_file.sic07_fac,sic_file.sic08,sic_file.sic09,sic_file.sic10,sic_file.sic16)
+SCREEN RECORD Undefined(sia_file.sia01,sia_file.sia02,sia_file.sia03,sia_file.siaconf,formonly.imgmksg,sia_file.sia04,sia_file.sia05,sia_file.sia06,gem_file.gem02,sia_file.sia07,sia_file.sia08,formonly.cnt,formonly.cn3,formonly.cn2,sia_file.siauser,sia_file.siamodu,sia_file.siaacti,sia_file.siagrup,sia_file.siadate,sia_file.siaoriu,sia_file.siaorig)
+SCREEN RECORD s_sib(sib_file.sib02,sib_file.sib04,sfb_file.sfb05,ima_file.ima02,ima_file.ima021,sib_file.sib03)
+END -- INSTRUCTIONS
+

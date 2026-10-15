@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi190.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi190")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3039
+{
+ Detailed Part Name Code[imv01     ]          [imgmksg]
+ Description            [imv02               ][       ]
+ Digits                 [imv03     ]
+}
+END -- gr3039
+END -- page01
+Page info(text="Info")
+Grid gr3040
+{
+ Record Owner        [imvuser   ] Last Modified by    [imvmodu   ] Data Valid Code     [imvacti   ]
+ Department          [imvgrup   ] Create/Modify Date  [imvdate   ]
+ Record Orig.        [imvoriu   ]
+ Dept Orig.          [imvorig   ]
+}
+END -- gr3040
+END -- info
+END -- folder01
+Table s_imw
+{
+[imw0|imw03              ]
+[imw0|imw03              ]
+[imw0|imw03              ]
+[imw0|imw03              ]
+[imw0|imw03              ]
+[imw0|imw03              ]
+[imw0|imw03              ]
+[imw0|imw03              ]
+[imw0|imw03              ]
+[imw0|imw03              ]
+
+}
+END -- s_imw
+Grid gr3041
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3041
+END -- VBox1
+END -- aimi190
+
+TABLES
+imw_file,
+imv_file
+ATTRIBUTES
+ButtonEdit imv01=imv_file.imv01, action=controlp, tabIndex=1, image="zoom.png";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit imv02=imv_file.imv02, tabIndex=3, not null, required;
+Edit imv03=imv_file.imv03, tabIndex=4, not null, required;
+Edit imvuser=imv_file.imvuser, tabIndex=5, noEntry;
+Edit imvmodu=imv_file.imvmodu, tabIndex=6, noEntry;
+Edit imvacti=imv_file.imvacti, tabIndex=7, noEntry, upShift;
+Edit imvgrup=imv_file.imvgrup, tabIndex=8, noEntry;
+DateEdit imvdate=imv_file.imvdate, tabIndex=9, noEntry;
+Edit imvoriu=imv_file.imvoriu, tabIndex=501, noEntry;
+Edit imvorig=imv_file.imvorig, tabIndex=502, noEntry;
+Edit imw0=imw_file.imw02, tabIndex=10, title="Ln#", not null, required;
+Edit imw03=imw_file.imw03, tabIndex=11, title="Detailed Part Name", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imw(imw_file.imw02,imw_file.imw03)
+SCREEN RECORD Undefined(imv_file.imv01,formonly.imgmksg,imv_file.imv02,imv_file.imv03,imv_file.imvuser,imv_file.imvmodu,imv_file.imvacti,imv_file.imvgrup,imv_file.imvdate,imv_file.imvoriu,imv_file.imvorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

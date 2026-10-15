@@ -1,0 +1,93 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/alm/4fd/almt830.tmp.per created 2010-10-25T17:57:04
+-- File created from /u3/tiptop/alm/4fd/almt830.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almi830")
+                                                                                      
+    VBox vb6                                                                          
+    Folder pc2                                                                        
+    Page Page3(text=%"Main")                                                          
+    Grid gr4                                                                          
+    {                                                                                 
+                                                                                      
+      lsk01    [lsk01             ]            lsk05  [lsk05           ]              
+      lskplant [lskplant    |lma02           ] lsk06  [lsk06               ]          
+      lsklegal [lsklegal    |azt02           ] lsk07  [lsk07               ]          
+      lsk02    [lsk02             ]            lsk08  [lsk08       ]                  
+      lsk03    [lsk03     ]                    lsk09  [lsk09       ][imgmksg]         
+      lne05    [lne05               ]          lsk10  [lsk10       ][       ]         
+      lsk04    [lsk04           ]              lsk11  [lsk11       ]                  
+                                                                                      
+    }                                                                                 
+    END                                                                               
+    END -- Page                                                                       
+    Page info(text=%"Info")                                                           
+    Grid gr5                                                                          
+    {                                                                                 
+                                                                                      
+     Data User   [lskuser   ] crat  [lskcrat     ]  acti       [lskacti   ]           
+     Data Group  [lskgrup   ] Modify[lskmodu     ]  Modify Date[lskdate     ]         
+     Record Orig.[lskoriu   ]                                                         
+     Dept Orig.  [lskorig   ]                                                         
+                                                                                      
+                                                                                      
+                                                                                      
+                                                                                      
+    }                                                                                 
+    END                                                                               
+    END -- Page                                                                       
+    END -- Folder                                                                     
+    Grid gr6                                                                          
+    {                                                                                 
+      -------Rows[idx   ]/[cnt    ]------                                             
+                                                                                      
+                                                                                      
+    }                                                                                 
+    END                                                                               
+    END -- VBox                                                                       
+END -- Form
+
+TABLES
+lsk_file
+
+ATTRIBUTES
+ButtonEdit lsk01=lsk_file.lsk01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ComboBox lsk05=lsk_file.lsk05, tabIndex=6, not null, items=(("0", "Sales certificate"),("1", "Contributions certificate"),("2", "Refund certificate"));
+ButtonEdit lskplant=lsk_file.lskplant, action=controlp, tabIndex=21, noEntry, image="zoom.png";
+Edit lma02=formonly.lma02, tabIndex=24, noEntry;
+Edit lsk06=lsk_file.lsk06, tabIndex=10, not null;
+ButtonEdit lsklegal=lsk_file.lsklegal, action=controlp, tabIndex=22, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02, tabIndex=23, noEntry;
+Edit lsk07=lsk_file.lsk07, tabIndex=11, not null;
+ButtonEdit lsk02=lsk_file.lsk02, action=controlp, tabIndex=2, not null, image="zoom.png";
+DateEdit lsk08=lsk_file.lsk08, tabIndex=7, not null;
+Edit lsk03=lsk_file.lsk03, tabIndex=3, noEntry;
+ComboBox lsk09=lsk_file.lsk09, tabIndex=8, noEntry, items=(("Y", "Confirmed"),("N", "UnConfirmed"));
+Image imgmksg=formonly.imgmksg;
+Edit lne05=formonly.lne05, tabIndex=4, noEntry;
+Edit lsk10=lsk_file.lsk10, tabIndex=12, noEntry;
+Edit lsk04=lsk_file.lsk04, tabIndex=5, noEntry;
+DateEdit lsk11=lsk_file.lsk11, tabIndex=9, noEntry;
+Edit lskuser=formonly.lskuser type VARCHAR, tabIndex=13, noEntry;
+DateEdit lskcrat=formonly.lskcrat, tabIndex=18, noEntry;
+Edit lskacti=formonly.lskacti type VARCHAR, tabIndex=15, noEntry;
+Edit lskgrup=formonly.lskgrup type VARCHAR, tabIndex=16, noEntry;
+Edit lskmodu=formonly.lskmodu type VARCHAR, tabIndex=14, noEntry;
+DateEdit lskdate=formonly.lskdate type DATE, tabIndex=17, noEntry;
+Edit lskoriu=formonly.lskoriu type VARCHAR, tabIndex=25, noEntry;
+Edit lskorig=formonly.lskorig type VARCHAR, tabIndex=26, noEntry;
+Edit idx=formonly.idx, tabIndex=19;
+Edit cnt=formonly.cnt, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

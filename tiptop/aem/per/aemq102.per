@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemq102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemq102")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1724
+{
+ Device No.         [fia01               ]
+ Name               [fia02                         ]
+ Spare Part No.     [fjb03     ]
+ Name               [ima02                         ]
+
+}
+END -- gr1724
+Grid gr1725
+{
+ Inventory          [fiw04     ]
+ Location           [fiw05     ]
+ Loc No.            [fiw06                         ]
+ Unit               [img09     ]
+
+}
+END -- gr1725
+Grid gr1726
+{
+ Start Date         [bdate     ]
+ BoP Inventory      [imk09               ]
+ Current Inventory  [img10               ]
+
+
+}
+END -- gr1726
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_fiw
+{
+[fiv05         |fiv00              |b               |c               |fiw07|fiw07_fac         |fiw08           |d                     ]
+[fiv05         |fiv00              |b               |c               |fiw07|fiw07_fac         |fiw08           |d                     ]
+[fiv05         |fiv00              |b               |c               |fiw07|fiw07_fac         |fiw08           |d                     ]
+[fiv05         |fiv00              |b               |c               |fiw07|fiw07_fac         |fiw08           |d                     ]
+[fiv05         |fiv00              |b               |c               |fiw07|fiw07_fac         |fiw08           |d                     ]
+[fiv05         |fiv00              |b               |c               |fiw07|fiw07_fac         |fiw08           |d                     ]
+[fiv05         |fiv00              |b               |c               |fiw07|fiw07_fac         |fiw08           |d                     ]
+[fiv05         |fiv00              |b               |c               |fiw07|fiw07_fac         |fiw08           |d                     ]
+[fiv05         |fiv00              |b               |c               |fiw07|fiw07_fac         |fiw08           |d                     ]
+[fiv05         |fiv00              |b               |c               |fiw07|fiw07_fac         |fiw08           |d                     ]
+}
+END -- s_fiw
+Grid gr1727
+{
+  ---------- Rows [cnt   ] ----------
+
+
+
+
+
+}
+END -- gr1727
+END -- VBox1
+END -- aemq102
+
+TABLES
+fia_file,
+fiw_file
+ATTRIBUTES
+ButtonEdit fia01=fia_file.fia01, action=controlp, tabIndex=1, image="zoom";
+Edit fia02=fia_file.fia02, tabIndex=2;
+ButtonEdit fjb03=formonly.fjb03 type CHAR, action=controlp, tabIndex=3, noEntry, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit fiw04=formonly.fiw04 type CHAR, action=controlp, tabIndex=5, noEntry, image="zoom";
+ButtonEdit fiw05=formonly.fiw05 type CHAR, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit fiw06=formonly.fiw06 type CHAR, action=controlp, tabIndex=7, image="zoom";
+Edit img09=formonly.img09 type CHAR, tabIndex=8;
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=9;
+Edit imk09=formonly.imk09 type CHAR, tabIndex=10;
+Edit img10=formonly.img10 type CHAR, tabIndex=11;
+DateEdit fiv05=formonly.fiv05 type CHAR, tabIndex=12, title="Document Date";
+ComboBox fiv00=formonly.fiv00 type CHAR, tabIndex=13, title="Transaction Status", items=(("1", %"Material Issue"),("2", %"Material Return"));
+Edit b=formonly.b type CHAR, tabIndex=14, title="Source Doc No.";
+Edit c=formonly.c type CHAR, tabIndex=15, title="Target Doc No.";
+Edit fiw07=fiw_file.fiw07, tabIndex=16, title="Unit";
+Edit fiw07_fac=fiw_file.fiw07_fac, tabIndex=17, title="Conversion Rate";
+Edit fiw08=fiw_file.fiw08, tabIndex=18, title="Transaction Qty";
+Edit d=formonly.d type CHAR, tabIndex=19, title="Transacted Inventory";
+Edit cnt=formonly.cnt type CHAR, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fiw(formonly.fiv05,formonly.fiv00,formonly.b,formonly.c,fiw_file.fiw07,fiw_file.fiw08,formonly.d,fiw_file.fiw07_fac)
+SCREEN RECORD Undefined(fia_file.fia01,fia_file.fia02,formonly.fjb03,formonly.ima02,formonly.fiw04,formonly.fiw05,formonly.fiw06,formonly.img09,formonly.bdate,formonly.imk09,formonly.img10,formonly.cnt)
+END -- INSTRUCTIONS
+

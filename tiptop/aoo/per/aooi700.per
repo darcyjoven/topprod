@@ -1,0 +1,127 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox2(splitter)
+Folder Folder1
+Page Page1(text=%"Page1")
+VBox VBox3
+HBox HBox1(splitter)
+Tree tree(parentIdColumn=pid, idColumn=id, expandedColumn=explanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file")
+{
+[name                 ]
+[name                 ]
+[name                 ]
+[name                 ]
+[name                 ]
+[name                 ]
+[name                 ]
+[name                 ]
+[name                 ]
+[name                 ]
+
+
+
+
+
+
+
+
+
+}
+END -- tree
+VBox VBox1
+Folder Folder2
+Page Page3(text=%"Main")
+Grid Grid1
+{
+ Process ID              [gga01                    ]     Directions [gga03                                               ]
+ Process Name            [gga02                    ]                [                                                    ]
+                                                                    [                                                    ]
+
+}
+END -- Grid1
+END -- Page3
+END -- Folder2
+Table s_ggb
+{
+[ggb02     |ggb03                         |gaz03   |gg|g1|ggb06                                       |ggb07                         |g2]
+[ggb02     |ggb03                         |gaz03   |gg|g1|ggb06                                       |ggb07                         |g2]
+[ggb02     |ggb03                         |gaz03   |gg|g1|ggb06                                       |ggb07                         |g2]
+[ggb02     |ggb03                         |gaz03   |gg|g1|ggb06                                       |ggb07                         |g2]
+[ggb02     |ggb03                         |gaz03   |gg|g1|ggb06                                       |ggb07                         |g2]
+
+
+
+}
+END -- s_ggb
+END -- VBox1
+END -- HBox1
+END -- VBox3
+END -- Page1
+Page Page2(text=%"Info")
+Grid gr1630
+{
+ Record Owner        [ggauser   ] Last Modified by    [ggamodu     ]   Data Valid Code     [ggaacti   ]
+ Department          [ggagrup   ] Create/Modify Date  [ggadate     ]
+ Record Orig.        [ggaoriu   ]
+ Dept Orig.          [ggaorig   ]
+}
+END -- gr1630
+END -- Page2
+END -- Folder1
+Grid gr1631
+{
+
+  ----------  Rows [cnt   ] / [cn2   ] ----------
+}
+END -- gr1631
+END -- VBox2
+END -- Form
+
+TABLES
+ggb_file,
+gga_file,
+gaz_file
+ATTRIBUTES
+LABEL name=formonly.name type VARCHAR, title=%"";
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.explanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.path type CHAR;
+Phantom formonly.treekey1 type CHAR;
+Phantom formonly.treekey2 type CHAR;
+ButtonEdit gga01=gga_file.gga01, action=controlp, tabIndex=1, not null, required, image="zoom";
+TextEdit gga03=gga_file.gga03, tabIndex=3;
+Edit gga02=gga_file.gga02, tabIndex=2;
+Edit ggb02=ggb_file.ggb02, tabIndex=4, title=%"ggb02", not null, required, scroll;
+ButtonEdit ggb03=ggb_file.ggb03, action=controlp, tabIndex=5, title=%"ggb03", not null, required, image="zoom", scroll;
+Edit gaz03=gaz_file.gaz03, tabIndex=6, title=%"gaz03", noEntry;
+CheckBox gg=ggb_file.ggb04, tabIndex=7, default = "Y", title=%"ggb04", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g1=ggb_file.ggb05, tabIndex=8, default = "Y", title=%"ggb05", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit ggb06=ggb_file.ggb06, tabIndex=9, title=%"ggb06", scroll;
+Edit ggb07=ggb_file.ggb07, tabIndex=10, title=%"ggb07", scroll;
+CheckBox g2=ggb_file.ggbacti, tabIndex=11, default = "Y", title=%"ggbacti", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit ggauser=gga_file.ggauser, tabIndex=12, noEntry;
+Edit ggamodu=gga_file.ggamodu, tabIndex=13, noEntry;
+Edit ggaacti=gga_file.ggaacti, tabIndex=14, noEntry;
+Edit ggagrup=gga_file.ggagrup, tabIndex=15, noEntry;
+DateEdit ggadate=gga_file.ggadate, tabIndex=16, noEntry;
+Edit ggaoriu=gga_file.ggaoriu, tabIndex=17, noEntry;
+Edit ggaorig=gga_file.ggaorig, tabIndex=18, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.explanded,formonly.level,formonly.path,formonly.treekey1,formonly.treekey2)
+SCREEN RECORD Undefined(gga_file.gga01,gga_file.gga02,gga_file.ggauser,gga_file.ggamodu,gga_file.ggaacti,gga_file.ggagrup,gga_file.ggadate,gga_file.ggaoriu,gga_file.ggaorig,formonly.cnt,formonly.cn2,gga_file.gga03)
+SCREEN RECORD s_ggb(ggb_file.ggb02,ggb_file.ggb03,gaz_file.gaz03,ggb_file.ggb04,ggb_file.ggb05,ggb_file.ggb06,ggb_file.ggb07,ggb_file.ggbacti)
+END -- INSTRUCTIONS
+

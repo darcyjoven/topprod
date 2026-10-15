@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi033.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi033")
+VBox VBox1
+Folder pc744
+Page page01(text="Main")
+Table s_nmk
+{
+[nmk01        |nmk02       |nmk03                    |nmkact]
+[nmk01        |nmk02       |nmk03                    |nmkact]
+[nmk01        |nmk02       |nmk03                    |nmkact]
+[nmk01        |nmk02       |nmk03                    |nmkact]
+[nmk01        |nmk02       |nmk03                    |nmkact]
+[nmk01        |nmk02       |nmk03                    |nmkact]
+[nmk01        |nmk02       |nmk03                    |nmkact]
+[nmk01        |nmk02       |nmk03                    |nmkact]
+[nmk01        |nmk02       |nmk03                    |nmkact]
+[nmk01        |nmk02       |nmk03                    |nmkact]
+
+}
+END -- s_nmk
+END -- page01
+END -- pc744
+Grid gr4023
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4023
+END -- VBox1
+END -- anmi033
+
+TABLES
+nmk_file
+ATTRIBUTES
+Edit nmk01=nmk_file.nmk01, tabIndex=1, title="Adjust Code", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit nmk02=nmk_file.nmk02, tabIndex=2, title="Adjust Desc";
+ComboBox nmk03=nmk_file.nmk03, tabIndex=3, title="Cash in Bank Method(+/-)", not null, required, queryEditable, comment="Method (+/-)", items=(("+", %"+"),("-", %"-"));
+CheckBox nmkact=nmk_file.nmkacti, tabIndex=4, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmk(nmk_file.nmk01,nmk_file.nmk02,nmk_file.nmk03,nmk_file.nmkacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

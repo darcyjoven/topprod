@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zzw.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zzw")
+Folder pc696
+Page page01(text="Main")
+Table s_zzw
+{
+[zzw01        |zzw02                                                     |zzw03         |zzw04  |zzw05  |zzw06  |zzw07       |zzw0]
+[zzw01        |zzw02                                                     |zzw03         |zzw04  |zzw05  |zzw06  |zzw07       |zzw0]
+[zzw01        |zzw02                                                     |zzw03         |zzw04  |zzw05  |zzw06  |zzw07       |zzw0]
+[zzw01        |zzw02                                                     |zzw03         |zzw04  |zzw05  |zzw06  |zzw07       |zzw0]
+[zzw01        |zzw02                                                     |zzw03         |zzw04  |zzw05  |zzw06  |zzw07       |zzw0]
+[zzw01        |zzw02                                                     |zzw03         |zzw04  |zzw05  |zzw06  |zzw07       |zzw0]
+[zzw01        |zzw02                                                     |zzw03         |zzw04  |zzw05  |zzw06  |zzw07       |zzw0]
+[zzw01        |zzw02                                                     |zzw03         |zzw04  |zzw05  |zzw06  |zzw07       |zzw0]
+[zzw01        |zzw02                                                     |zzw03         |zzw04  |zzw05  |zzw06  |zzw07       |zzw0]
+[zzw01        |zzw02                                                     |zzw03         |zzw04  |zzw05  |zzw06  |zzw07       |zzw0]
+
+}
+END -- s_zzw
+END -- page01
+Page info(text="Info")
+Grid gr3028
+{
+ <G grpinfo                                           >
+  Detail Counts       [cn2       ]
+ <                                                    >
+
+}
+END -- gr3028
+END -- info
+END -- pc696
+END -- p_zzw
+
+TABLES
+zzw_file
+ATTRIBUTES
+ButtonEdit zzw01=zzw_file.zzw01, action=controlp, tabIndex=1, title="Program Code", not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Program No.!";
+Edit zzw02=zzw_file.zzw02, tabIndex=2, title="Parameter_(Fields 1st Field Ending 2nd Field Ending", not null, required, comment="Last Para is Report Name Position ";
+CheckBox zzw03=zzw_file.zzw03, tabIndex=3, title="Produce graph", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit zzw04=zzw_file.zzw04, tabIndex=4, title="X axis", comment="X-axis Data Source Field";
+Edit zzw05=zzw_file.zzw05, tabIndex=5, title="Y axis", comment="Y-axis Data Source Field";
+Edit zzw06=zzw_file.zzw06, tabIndex=6, title="Z axis", comment="Z-axis Data Source Field";
+Edit zzw07=zzw_file.zzw07, tabIndex=7, title="Graphic No.", comment="Chart Default Graphic Code,If no Setg, ask when conv. to Excel";
+Edit zzw0=zzw_file.zzw08, tabIndex=8, title="Font", comment="Chart Default Font";
+Group grpinfo:grpinfo;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zzw(zzw_file.zzw01,zzw_file.zzw02,zzw_file.zzw03,zzw_file.zzw04,zzw_file.zzw05,zzw_file.zzw06,zzw_file.zzw07,zzw_file.zzw08)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

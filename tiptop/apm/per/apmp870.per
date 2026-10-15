@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp870.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp870")
+VBox VBox1
+Grid gr4961
+{
+ <G group01                                 >
+ [rvu00                            ]
+ <                                          >
+ <G group02                                 >
+  Trn.No.             [rvu01           ]
+ <                                          >
+
+}
+END -- gr4961
+Grid gr4962
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr4962
+END -- VBox1
+END -- apmp870
+
+ATTRIBUTES
+Group group01:group01, text="Transaction Category";
+RadioGroup rvu00=formonly.rvu00 type CHAR, tabIndex=1, not null, required, items=(("1", "Store-in(Undo Bill Note)"),("3", "WH/Return(Undo Allowance Note)"));
+Group group02:group02;
+ButtonEdit rvu01=formonly.rvu01 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=3, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rvu00,formonly.rvu01,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

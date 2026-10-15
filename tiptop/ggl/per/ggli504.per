@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli504.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli504")
+VBox VBox1
+Folder pc475
+Page page01(text="Main")
+Grid ds1
+{
+
+ Year [atm04     ]     Period[atm05     ]     Group Code[atm06               ]
+
+}
+END -- ds1
+END -- page01
+END -- pc475
+Table s_atm
+{
+[atm00|atm01|atm02                                                  |atm03               ]
+[atm00|atm01|atm02                                                  |atm03               ]
+[atm00|atm01|atm02                                                  |atm03               ]
+[atm00|atm01|atm02                                                  |atm03               ]
+[atm00|atm01|atm02                                                  |atm03               ]
+[atm00|atm01|atm02                                                  |atm03               ]
+[atm00|atm01|atm02                                                  |atm03               ]
+[atm00|atm01|atm02                                                  |atm03               ]
+[atm00|atm01|atm02                                                  |atm03               ]
+[atm00|atm01|atm02                                                  |atm03               ]
+
+}
+END -- s_atm
+Grid gr2464
+{
+ ---------- Rows [cnt   ]/[cn2   ] ----------
+
+
+}
+END -- gr2464
+END -- VBox1
+END -- ggli504
+
+TABLES
+atm_file
+ATTRIBUTES
+Edit atm04=atm_file.atm04, tabIndex=6, not null, scroll;
+Edit atm05=atm_file.atm05, tabIndex=7, not null, scroll;
+ButtonEdit atm06=atm_file.atm06, action=controlp, tabIndex=8, not null, image="zoom", scroll, comment=%"";
+CheckBox atm00=atm_file.atm00, tabIndex=1, title="Comb", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit atm01=atm_file.atm01, tabIndex=2, title="Seq.", not null, required;
+Edit atm02=atm_file.atm02, tabIndex=3, title="Description";
+Edit atm03=atm_file.atm03, tabIndex=4, title="Amount";
+Edit cnt=formonly.cnt type CHAR, tabIndex=9;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_atm(atm_file.atm00,atm_file.atm01,atm_file.atm02,atm_file.atm03)
+SCREEN RECORD Undefined(formonly.cn2,formonly.cnt)
+SCREEN RECORD Record1(atm_file.atm04,atm_file.atm05,atm_file.atm06)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr714.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asfr714")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                    >
+  Work/Order No.      [shb05               ]
+  Item No.            [shb10               ]
+  Line/Shift          [shb08               ]
+ <                                             >
+ <G group02                                    >
+  Data Date           [ddate       ]
+ <                                             >
+
+}
+END -- Grid1
+END -- VBox1
+END -- asfr714
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit shb05=formonly.shb05 type VARCHAR, tabIndex=1, upShift;
+ButtonEdit shb10=formonly.shb10 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit shb08=formonly.shb08 type VARCHAR, tabIndex=3, upShift;
+Group group02:group02, text="INPUT";
+DateEdit ddate=formonly.ddate type DATE, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.shb05,formonly.shb10,formonly.shb08,formonly.ddate)
+END -- INSTRUCTIONS
+

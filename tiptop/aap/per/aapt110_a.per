@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt110_a")
+VBox VBox1
+Table s_apb
+{
+[apb|apb12                |apb15    |apb08               |apb10               |apb13f              |apb13               |apb14f              |apb14                ]
+[apb|apb12                |apb15    |apb08               |apb10               |apb13f              |apb13               |apb14f              |apb14                ]
+[apb|apb12                |apb15    |apb08               |apb10               |apb13f              |apb13               |apb14f              |apb14                ]
+[apb|apb12                |apb15    |apb08               |apb10               |apb13f              |apb13               |apb14f              |apb14                ]
+[apb|apb12                |apb15    |apb08               |apb10               |apb13f              |apb13               |apb14f              |apb14                ]
+[apb|apb12                |apb15    |apb08               |apb10               |apb13f              |apb13               |apb14f              |apb14                ]
+[apb|apb12                |apb15    |apb08               |apb10               |apb13f              |apb13               |apb14f              |apb14                ]
+[apb|apb12                |apb15    |apb08               |apb10               |apb13f              |apb13               |apb14f              |apb14                ]
+[apb|apb12                |apb15    |apb08               |apb10               |apb13f              |apb13               |apb14f              |apb14                ]
+[apb|apb12                |apb15    |apb08               |apb10               |apb13f              |apb13               |apb14f              |apb14                ]
+
+}
+END -- s_apb
+Grid gr350
+{
+ <G group01                               > <G group02                                        >
+  F.C Variation Amt [apa33f              ]   Billing Allowance Amt. F.C [apa60f              ]
+  H.C Variation Amt [apa33               ]   Billing Allowance Amt. H.C [apa60               ]
+  F.C Total         [apb14f_t            ]   Tax : F.C                  [apa61f              ]
+  H.C Total         [apb14_t             ]   Tax : H.C                  [apa61               ]
+
+ <                                        > <                                                 >
+
+}
+END -- gr350
+END -- VBox1
+END -- aapt110_a
+
+TABLES
+apb_file
+ATTRIBUTES
+Edit apb=apb_file.apb02, tabIndex=1, title="Ln#", noEntry;
+Edit apb12=apb_file.apb12, tabIndex=2, title="Item No.", noEntry;
+Edit apb15=apb_file.apb15, tabIndex=3, title="Adj. Qty";
+Edit apb08=apb_file.apb08, tabIndex=4, title="F.C U/P", noEntry;
+Edit apb10=apb_file.apb10, tabIndex=5, title="F.C Amt", noEntry;
+Edit apb13f=apb_file.apb13f, tabIndex=6, title="F.C U/P Var";
+Edit apb13=apb_file.apb13, tabIndex=7, title="H.C U/P Var";
+Edit apb14f=apb_file.apb14f, tabIndex=8, title="F.C Amt Var";
+Edit apb14=apb_file.apb14, tabIndex=9, title="H.C Amt Var";
+Group group01:group01;
+Edit apa33f=formonly.apa33f type CHAR, tabIndex=10;
+Edit apa33=formonly.apa33 type CHAR, tabIndex=11;
+Edit apb14f_t=formonly.apb14f_t type CHAR, tabIndex=12;
+Edit apb14_t=formonly.apb14_t type CHAR, tabIndex=13;
+Group group02:group02;
+Edit apa60f=formonly.apa60f type CHAR, tabIndex=14;
+Edit apa60=formonly.apa60 type CHAR, tabIndex=15;
+Edit apa61f=formonly.apa61f type CHAR, tabIndex=16;
+Edit apa61=formonly.apa61 type CHAR, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apb(apb_file.apb02,apb_file.apb12,apb_file.apb15,apb_file.apb08,apb_file.apb10,apb_file.apb13f,apb_file.apb13,apb_file.apb14f,apb_file.apb14)
+SCREEN RECORD Undefined(formonly.apa33f,formonly.apa33,formonly.apb14f_t,formonly.apb14_t,formonly.apa60f,formonly.apa60,formonly.apa61f,formonly.apa61)
+END -- INSTRUCTIONS
+

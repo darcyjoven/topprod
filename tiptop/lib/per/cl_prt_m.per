@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_prt_m.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Report Output")
+VBox VBox1
+Group group01(text="Options")
+HBox HBox1
+Grid Grid1
+{
+ [choice         ]
+
+
+
+}
+END -- Grid1
+Grid Grid2
+{
+ [choice2        ]
+ [choice3        ]
+ [choice4        ]
+
+}
+END -- Grid2
+END -- HBox1
+END -- group01
+Group group02(text="Print Range")
+Grid Grid3
+{
+  Total pages [pagenum   ]
+  Print Range [startpage ] ~ [endpage   ]
+}
+END -- Grid3
+END -- group02
+END -- VBox1
+END -- cl_prt_m
+
+ATTRIBUTES
+RadioGroup choice=formonly.choice type CHAR, tabIndex=1, items=(("1", %"System Printer"),("L", %"Local Printer"),("O", %"Rich Format Output"),("V", %"View"),("N", %"VPrint"),("J", %"JavaMail"),("H", %"CK History."));
+ComboBox choice2=formonly.choice2 type CHAR, tabIndex=2, not null, required, queryEditable, items=(("1", %"System Printer-1"),("2", %"System Printer-2"),("3", %"System Printer-3"),("4", %"System Printer-4"),("5", %"System Printer-5"),("6", %"System Printer-6"),("7", %"System Printer-7"),("8", %"System Printer-8"),("9", %"System Printer-9"));
+ComboBox choice3=formonly.choice3 type CHAR, tabIndex=3, not null, required, queryEditable, items=(("1", %"VTCP Standard Print(A4:78 Letter:80 US SF:132 A3:162)"),("2", %"VTCP ET code Compact Print(A4:117 Letter:125 US SF:204 A3:243)"),("3", %"VTCP ET code Compact Print(A4:156 Letter:165 US SF:272 A3:324)"),("4", %"VTCP ET code Compact Print(A4:234 Letter:250 US SF:408 A3:486)"),("5", %"Add Control Code ^L for Page Jumping"),("6", %"EPSON Standard Print(82,136)"),("7", %"EPSON Compact Print(112,181)"),("8", %"EPSON Compact Print(126,204)"),("9", %"GDC Local Printer List"));
+ComboBox choice4=formonly.choice4 type CHAR, tabIndex=4, not null, required, queryEditable, items=(("T", %"Text File"),("D", %"Microsoft Office Word"),("X", %"Microsoft Office Excel"),("W", %"DataSystems CallViewer"),("H", %"Microsoft Internet Explorer(HTML)"),("P", %"Adobe Acrobat PDF"),("M", %"Dynamic Table(Marge)"),("S", %"Dynamic Table(Pages)"),("C", %"Report Continuous View"));
+Edit pagenum=formonly.pagenum type CHAR, tabIndex=5;
+Edit startpage=formonly.startpage type CHAR, tabIndex=6;
+Edit endpage=formonly.endpage type CHAR, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.choice,formonly.choice2,formonly.choice3,formonly.choice4,formonly.pagenum,formonly.startpage,formonly.endpage)
+END -- INSTRUCTIONS
+

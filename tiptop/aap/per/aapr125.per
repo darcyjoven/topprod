@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr125.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr125")
+VBox VBox1
+Grid gr205
+{
+ <G group01                                                   >
+  Paying Vender       [apa06               ]
+  Accounts Currency   [apa13               ]
+  Account Date        [apa02               ]
+  Accounts NO.        [apa01               ]
+  Shipping Vender     [apa05               ]
+  On-Hold Code        [apa19               ]
+  Credit Account      [apa54               ]
+ <                                                            >
+ <G group02                                                   >
+  [h                            ]
+ <                                                            >
+
+}
+END -- gr205
+Grid gr206
+{
+[more                                                        ]
+
+}
+END -- gr206
+END -- VBox1
+END -- aapr125
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit apa06=formonly.apa06 type VARCHAR, tabIndex=1;
+Edit apa13=formonly.apa13 type VARCHAR, tabIndex=2;
+DateEdit apa02=formonly.apa02 type DATE, tabIndex=3;
+Edit apa01=formonly.apa01 type VARCHAR, tabIndex=4;
+Edit apa05=formonly.apa05 type VARCHAR, tabIndex=5;
+Edit apa19=formonly.apa19 type VARCHAR, tabIndex=6;
+Edit apa54=formonly.apa54 type CHAR, tabIndex=7;
+Group group02:group02, text="INPUT";
+RadioGroup h=formonly.h type CHAR, tabIndex=8, default = "1", items=(("1", "Confirmed"),("2", "UnConfirmed"),("3", "All "));
+CheckBox more=formonly.more type CHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apa06,formonly.apa13,formonly.apa02,formonly.apa01,formonly.apa05,formonly.apa19,formonly.apa54,formonly.h,formonly.more)
+END -- INSTRUCTIONS
+

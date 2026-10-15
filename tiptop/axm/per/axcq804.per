@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axcq804.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page main(text=%"Page1")
+Grid Grid1
+{
+
+[label1  |yy         ]   [label2  |mm         ]   [c                     ]
+
+}
+END -- Grid1
+END -- main
+END -- Folder1
+Table ds1
+{
+[cfc11               |cfc13               |ima021              |cfc17   |cfc14          |imd02          |cfc141         |ime03          |cfc142         |sum1           |sum2           |diff           ]
+[cfc11               |cfc13               |ima021              |cfc17   |cfc14          |imd02          |cfc141         |ime03          |cfc142         |sum1           |sum2           |diff           ]
+[cfc11               |cfc13               |ima021              |cfc17   |cfc14          |imd02          |cfc141         |ime03          |cfc142         |sum1           |sum2           |diff           ]
+[cfc11               |cfc13               |ima021              |cfc17   |cfc14          |imd02          |cfc141         |ime03          |cfc142         |sum1           |sum2           |diff           ]
+[cfc11               |cfc13               |ima021              |cfc17   |cfc14          |imd02          |cfc141         |ime03          |cfc142         |sum1           |sum2           |diff           ]
+[cfc11               |cfc13               |ima021              |cfc17   |cfc14          |imd02          |cfc141         |ime03          |cfc142         |sum1           |sum2           |diff           ]
+[cfc11               |cfc13               |ima021              |cfc17   |cfc14          |imd02          |cfc141         |ime03          |cfc142         |sum1           |sum2           |diff           ]
+[cfc11               |cfc13               |ima021              |cfc17   |cfc14          |imd02          |cfc141         |ime03          |cfc142         |sum1           |sum2           |diff           ]
+[cfc11               |cfc13               |ima021              |cfc17   |cfc14          |imd02          |cfc141         |ime03          |cfc142         |sum1           |sum2           |diff           ]
+[cfc11               |cfc13               |ima021              |cfc17   |cfc14          |imd02          |cfc141         |ime03          |cfc142         |sum1           |sum2           |diff           ]
+
+}
+END -- ds1
+Grid Grid2
+{
+   ---------------[label5  |cn2       ]---------------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+cfc_file,
+ime_file,
+imd_file,
+ima_file
+ATTRIBUTES
+Label label1:Label1, text=%"Year";
+Edit yy=formonly.yy, tabIndex=1, not null;
+Label label2:Label2, text=%"Month";
+Edit mm=formonly.mm, tabIndex=2, not null;
+CheckBox c=formonly.c, tabIndex=3, text=%"CheckBox1", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit cfc11=cfc_file.cfc11, action=controlp, tabIndex=4, title=%"cfc11", not null, image="zoom", scroll;
+Edit cfc13=cfc_file.cfc13, tabIndex=5, title=%"cfc13", scroll;
+Edit ima021=ima_file.ima021, tabIndex=7, title=%"ima021";
+ButtonEdit cfc17=cfc_file.cfc17, action=controlp, tabIndex=6, title=%"cfc17", not null, image="zoom", scroll;
+ButtonEdit cfc14=cfc_file.cfc14, action=controlp, tabIndex=12, title=%"cfc14", image="zoom";
+Edit imd02=imd_file.imd02, tabIndex=15, title=%"imd02", noEntry;
+Edit cfc141=cfc_file.cfc141, tabIndex=14, title=%"cfc141";
+Edit ime03=ime_file.ime03, tabIndex=16, title=%"ime03", noEntry;
+Edit cfc142=cfc_file.cfc142, tabIndex=8, title=%"cfc142";
+Edit sum1=formonly.sum1, tabIndex=13, title=%"sum1";
+Edit sum2=formonly.sum2, tabIndex=10, title=%"sum2";
+Edit diff=formonly.diff, tabIndex=9, title=%"diff";
+Label label5:Label5, text=%"Label5";
+Edit cn2=formonly.cn2, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.c,formonly.cn2)
+SCREEN RECORD s_cfc(cfc_file.cfc11,cfc_file.cfc13,ima_file.ima021,cfc_file.cfc17,cfc_file.cfc14,imd_file.imd02,cfc_file.cfc141,ime_file.ime03,cfc_file.cfc142,formonly.sum1,formonly.sum2,formonly.diff)
+END -- INSTRUCTIONS
+

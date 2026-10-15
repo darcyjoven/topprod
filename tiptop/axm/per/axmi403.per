@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi403.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"axmi403")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Basic Data")
+Grid Grid1
+{
+
+ [label1          ][odo01           ] [label2             ][odl02                    ]
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table s_odo
+{
+[odo02       |occ02          |odo03          |odo04     ]
+[odo02       |occ02          |odo03          |odo04     ]
+[odo02       |occ02          |odo03          |odo04     ]
+[odo02       |occ02          |odo03          |odo04     ]
+[odo02       |occ02          |odo03          |odo04     ]
+}
+END -- s_odo
+Grid Grid2
+{
+
+  ---- [label3|idx     ][lab|cnt       ] ----
+
+
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- axmi403
+
+TABLES
+odl_file,
+occ_file,
+odo_file
+ATTRIBUTES
+Label label1:Label1, text=%"Subcription No.";
+ButtonEdit odo01=odo_file.odo01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Label label2:Label2, text=%"Subcription theme";
+Edit odl02=odl_file.odl02, tabIndex=8, noEntry;
+ButtonEdit odo02=odo_file.odo02, action=controlp, tabIndex=2, title=%"Custom No.", not null, required, image="zoom.png";
+Edit occ02=occ_file.occ02, tabIndex=3, title=%"Custom Abbr.", noEntry;
+Edit odo03=odo_file.odo03, tabIndex=4, title=%"Quantity";
+Edit odo04=odo_file.odo04, tabIndex=5, title=%"Amount";
+Label label3:Label3, text=%"Rows";
+Edit idx=formonly.idx type CHAR, tabIndex=6;
+Label lab:Label4, text=%"/";
+Edit cnt=formonly.cnt type CHAR, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_odo(odo_file.odo02,occ_file.occ02,odo_file.odo03,odo_file.odo04)
+SCREEN RECORD Undefined(odo_file.odo01,odl_file.odl02,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_smy2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Document Type")
+Grid gr3849
+{
+ <T s_smy                                                   >
+ [check  |smyslip |smydesc         |smyauno     |smydmy5   ]
+ [check  |smyslip |smydesc         |smyauno     |smydmy5   ]
+ [check  |smyslip |smydesc         |smyauno     |smydmy5   ]
+ [check  |smyslip |smydesc         |smyauno     |smydmy5   ]
+ [check  |smyslip |smydesc         |smyauno     |smydmy5   ]
+ [check  |smyslip |smydesc         |smyauno     |smydmy5   ]
+ [check  |smyslip |smydesc         |smyauno     |smydmy5   ]
+ [check  |smyslip |smydesc         |smyauno     |smydmy5   ]
+ [check  |smyslip |smydesc         |smyauno     |smydmy5   ]
+ [check  |smyslip |smydesc         |smyauno     |smydmy5   ]
+ <                                                          >
+
+}
+END -- gr3849
+END -- q_smy2
+
+TABLES
+smy_file
+ATTRIBUTES
+Table s_smy:s_smy;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit smyslip=smy_file.smyslip, tabIndex=2, title="Doc", noEntry;
+Edit smydesc=smy_file.smydesc, tabIndex=3, title="Doc Name", noEntry;
+Edit smyauno=smy_file.smyauno, tabIndex=4, title="Auto No.", noEntry;
+Edit smydmy5=smy_file.smydmy5, tabIndex=5, title="No. Method", noEntry, comment="1.Serial Number 2.By Year and Month                                               3.By Year and Week 4.By Year,Month and Day";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_smy(formonly.check,smy_file.smyslip,smy_file.smydesc,smy_file.smyauno,smy_file.smydmy5)
+END -- INSTRUCTIONS
+

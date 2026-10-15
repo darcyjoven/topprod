@@ -1,0 +1,29 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt600_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt600_2")
+Grid Grid1
+{
+ <G group01                                   >
+  Enter Plant #                 [aqg03       ]
+  Enter Type                    [b           ]
+ <                                            >
+
+}
+END -- Grid1
+END -- axrt600_2
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit aqg03=formonly.aqg03 type CHAR, tabIndex=1, noEntry;
+ComboBox b=formonly.b type CHAR, tabIndex=2, queryEditable, items=(("1", %"Check"),("2", %"Transfer"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aqg03,formonly.b)
+END -- INSTRUCTIONS
+

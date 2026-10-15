@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp6101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmp6101")
+VBox VBox1
+Grid gr4945
+{
+ <G group01                                                        >
+  P/O No.             [pmm01                 ]
+  Vender No.          [pmm09     ][pmc03     ]
+ <                                                                 >
+
+}
+END -- gr4945
+Table s_pmn
+{
+[pmn04                |pmn02|pmn41      |sfb251    |pmn20      |pmn0]
+[pmn04                |pmn02|pmn41      |sfb251    |pmn20      |pmn0]
+[pmn04                |pmn02|pmn41      |sfb251    |pmn20      |pmn0]
+[pmn04                |pmn02|pmn41      |sfb251    |pmn20      |pmn0]
+[pmn04                |pmn02|pmn41      |sfb251    |pmn20      |pmn0]
+[pmn04                |pmn02|pmn41      |sfb251    |pmn20      |pmn0]
+[pmn04                |pmn02|pmn41      |sfb251    |pmn20      |pmn0]
+[pmn04                |pmn02|pmn41      |sfb251    |pmn20      |pmn0]
+[pmn04                |pmn02|pmn41      |sfb251    |pmn20      |pmn0]
+[pmn04                |pmn02|pmn41      |sfb251    |pmn20      |pmn0]
+
+}
+END -- s_pmn
+END -- VBox1
+END -- apmp6101
+
+TABLES
+pmn_file,
+sfb_file,
+pmm_file,
+pmc_file
+ATTRIBUTES
+Group group01:group01;
+Edit pmm01=pmm_file.pmm01, tabIndex=1, noEntry;
+Edit pmm09=pmm_file.pmm09, tabIndex=2, noEntry;
+Edit pmc03=pmc_file.pmc03, tabIndex=3, noEntry;
+Edit pmn04=pmn_file.pmn04, tabIndex=4, title="Item No.", noEntry;
+Edit pmn02=pmn_file.pmn02, tabIndex=5, title="Ln#", noEntry;
+Edit pmn41=pmn_file.pmn41, tabIndex=6, title="W/O#", noEntry;
+Edit sfb251=sfb_file.sfb251, tabIndex=7, title="Issu.Date", noEntry;
+Edit pmn20=pmn_file.pmn20, tabIndex=8, title="Qty", noEntry, not null, required;
+Edit pmn0=pmn_file.pmn07, tabIndex=9, title="Unit", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmn(pmn_file.pmn04,pmn_file.pmn02,pmn_file.pmn41,sfb_file.sfb251,pmn_file.pmn20,pmn_file.pmn07)
+SCREEN RECORD Undefined(pmm_file.pmm01,pmm_file.pmm09,pmc_file.pmc03)
+END -- INSTRUCTIONS
+

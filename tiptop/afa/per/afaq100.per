@@ -1,0 +1,142 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afaq100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afaq100")
+VBox VBox2
+VBox VBox1
+Folder pc376
+Page page01(text="Main")
+Grid gr1967
+{
+ <G group01                                                                                                     >
+  Property No.        [fap02     ][dummy01]              Keeping Dept        [fap17     ][gem02     ]
+  Additional No.      [fap021    ]                       Keeper              [fap18     ]
+  Serial No.          [fap01     ]                       Apportioning Dept   [fap15     ][fap16     ]
+  Transaction No.     [fap03     ][fap03_disp]           Asset Status        [fap05     ]
+  Transaction Note No.[fap50           ][fap501    ]     Depreciation Mtd    [fap06     ][fap06_disp          ]
+  Transaction Date    [fap04       ]
+ <                                                                                                              >
+ <G group02                                                                                                     >
+  Qty                 [fap20               ]   [dummy02] Undepreciated Amt   [fap101              ]
+  H.C Cost            [fap09               ]             Est.Rsdl            [fap08               ]
+  Adjustment Cost     [fap10               ]             Rest Life(Mths.)    [fap07     ]
+  Accumulated Depr.   [fap11               ]             Charge off Cost     [fap22               ]
+  Charge off Qty      [fap21     ]                       Char.Off Accu.Depr. [fap23               ]
+ <                                                                                                              >
+
+}
+END -- gr1967
+END -- page01
+Page page03(text=%"Main 2")
+Grid gr1
+{
+ <G gb3                                                                                                        >
+  Apportioning Dept   [fap152    ][fap162    ]
+  Asset Status        [fap052    ]
+  Depreciation Mtd    [fap062    ][fap06_disp2         ]
+ <                                                                                                             >
+ <G gb4                                                                                                        >
+                                                         Undepreciated Amt   [fap1012             ]
+  H.C Cost            [fap092              ]             Est.Rsdl            [fap082              ]
+  Adjustment Cost     [fap103              ]             Rest Life(Mths.)    [fap072    ]
+  Accumulated Depr.   [fap112              ]             Charge off Cost     [fap562              ]
+  Charge off Qty      [fap212    ]                       Char.Off Accu.Depr. [fap232              ]
+
+
+ <                                                                                                             >
+
+}
+END -- gr1
+END -- page03
+Page page02(text="Acct Info")
+Grid gr1968
+{
+ <G group03                                 ><G group04                                 >
+  Asset Account       [fap12               ]  Asset Account2      [fap121              ]
+  Accu. Depr.Acc.     [fap13               ]  Accu. Depr.Acc2.    [fap131              ]
+  Depr.Acc.           [fap14          ]       Depr.Acc2.          [fap141         ]
+ <                                          ><                                          >
+
+}
+END -- gr1968
+END -- page02
+END -- pc376
+END -- VBox1
+Grid gr1969
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr1969
+END -- VBox2
+END -- afaq100
+
+TABLES
+fap_file
+ATTRIBUTES
+Group group01:group01;
+Edit fap02=fap_file.fap02, tabIndex=1;
+Label dummy01:dummy01;
+Edit fap17=fap_file.fap17, tabIndex=3;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=4;
+Edit fap021=fap_file.fap021, tabIndex=2;
+Edit fap18=fap_file.fap18, tabIndex=6;
+Edit fap01=fap_file.fap01, tabIndex=5;
+Edit fap15=fap_file.fap15, tabIndex=9, comment="1.Single Department 2.Multi-Department";
+Edit fap16=fap_file.fap16, tabIndex=10;
+Edit fap03=fap_file.fap03, tabIndex=7, comment="0.New Purchase 1.Capital 2.Inventory Taking 3.Transfer 4.Sale 5.Retire 6.Charege Off 7.Improve 8.Re-Value 9.Adjust";
+Edit fap03_disp=formonly.fap03_disp type CHAR, tabIndex=8;
+Edit fap05=fap_file.fap05, tabIndex=13, comment="0.Acquire 1.Capitalization 2.Depreciation 3.Send 4.Depreciated 5.Sale 6.Charge off 7.Re-Amortize 8.Improve 9.Revaluate";
+Edit fap50=fap_file.fap50, tabIndex=11;
+Edit fap501=fap_file.fap501, tabIndex=12;
+Edit fap06=fap_file.fap06, tabIndex=15, comment="0.No-Depreciation 1.Residual with Average Method 2.No Residual with Average Method 3.Fixed Rate Descending 4.Output Qty method 5.Other";
+Edit fap06_disp=formonly.fap06_disp type CHAR, tabIndex=16;
+DateEdit fap04=fap_file.fap04, tabIndex=14;
+Group group02:group02;
+Edit fap20=fap_file.fap20, tabIndex=17;
+Label dummy02:dummy02;
+Edit fap101=fap_file.fap101, tabIndex=18;
+Edit fap09=fap_file.fap09, tabIndex=19;
+Edit fap08=fap_file.fap08, tabIndex=20;
+Edit fap10=fap_file.fap10, tabIndex=21;
+Edit fap07=fap_file.fap07, tabIndex=22;
+Edit fap11=fap_file.fap11, tabIndex=23;
+Edit fap22=fap_file.fap22, tabIndex=24;
+Edit fap21=fap_file.fap21, tabIndex=25;
+Edit fap23=fap_file.fap23, tabIndex=26;
+Group gb3:gb3;
+Edit fap152=fap_file.fap152, tabIndex=34, not null, required, comment="1.Single Department 2.Multi-Department";
+Edit fap162=fap_file.fap162, tabIndex=34;
+Edit fap052=fap_file.fap052, tabIndex=34, not null, required, comment="0.Acquire 1.Capitalization 2.Depreciation 3.Send 4.Depreciated 5.Sale 6.Charge off 7.Re-Amortize 8.Improve 9.Revaluate";
+Edit fap062=fap_file.fap062, tabIndex=34, not null, required, comment="0.No-Depreciation 1.Residual with Average Method 2.No Residual with Average Method 3.Fixed Rate Descending 4.Output Qty method 5.Other";
+Edit fap06_disp2=formonly.fap06_disp2 type CHAR, tabIndex=34;
+Group gb4:gb4;
+Edit fap1012=fap_file.fap1012, tabIndex=34, not null, required;
+Edit fap092=fap_file.fap092, tabIndex=34, not null, required;
+Edit fap082=fap_file.fap082, tabIndex=34, not null, required;
+Edit fap103=fap_file.fap103, tabIndex=34, not null, required;
+Edit fap072=fap_file.fap072, tabIndex=34;
+Edit fap112=fap_file.fap112, tabIndex=34, not null, required;
+Edit fap562=fap_file.fap562, tabIndex=34, not null, required;
+Edit fap212=fap_file.fap212, tabIndex=34;
+Edit fap232=fap_file.fap232, tabIndex=34, not null, required;
+Group group03:group03;
+Edit fap12=fap_file.fap12, tabIndex=27;
+Edit fap13=fap_file.fap13, tabIndex=28;
+Edit fap14=fap_file.fap14, tabIndex=29;
+Group group04:group04;
+Edit fap121=fap_file.fap121, tabIndex=30;
+Edit fap131=fap_file.fap131, tabIndex=31;
+Edit fap141=fap_file.fap141, tabIndex=32;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fap_file.fap02,fap_file.fap17,formonly.gem02,fap_file.fap021,fap_file.fap18,fap_file.fap01,fap_file.fap15,fap_file.fap16,fap_file.fap03,formonly.fap03_disp,fap_file.fap05,fap_file.fap50,fap_file.fap501,fap_file.fap06,formonly.fap06_disp,fap_file.fap04,fap_file.fap20,fap_file.fap101,fap_file.fap09,fap_file.fap08,fap_file.fap10,fap_file.fap07,fap_file.fap11,fap_file.fap22,fap_file.fap21,fap_file.fap23,fap_file.fap152,fap_file.fap162,fap_file.fap052,fap_file.fap062,formonly.fap06_disp2,fap_file.fap1012,fap_file.fap092,fap_file.fap082,fap_file.fap103,fap_file.fap072,fap_file.fap112,fap_file.fap562,fap_file.fap212,fap_file.fap232,fap_file.fap12,fap_file.fap13,fap_file.fap14,fap_file.fap121,fap_file.fap131,fap_file.fap141,formonly.cnt)
+END -- INSTRUCTIONS
+

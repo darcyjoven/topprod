@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cec/4fd/cecp200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapp102")
+VBox vb4
+Grid gr41
+{
+ <G group01                                                         >
+  ecu01     [ecu01                ]     [bom                ]
+  ecu02     [ecu02                ]     [bom_exp            ]
+ <                                                                  >
+}
+END -- gr41
+Grid gr42
+{
+[g_bgjob                                                     ]
+
+}
+END -- gr42
+END -- vb4
+END -- aapp102
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit ecu01=formonly.ecu01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+CheckBox bom=formonly.bom type CHAR, tabIndex=3, text="bom", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ecu02=formonly.ecu02 type VARCHAR, tabIndex=2;
+CheckBox bom_exp=formonly.bom_exp type CHAR, tabIndex=4, text="bom_exp", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=5, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ecu01,formonly.bom_exp,formonly.g_bgjob,formonly.ecu02,formonly.bom)
+END -- INSTRUCTIONS
+

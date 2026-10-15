@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi300")
+Folder pc1045
+Page page01(text="Page01")
+Table s_vma
+{
+[vma01          |vma02_1     |vma02     |vma03_1     |vma03      |vma04   |vma05         |vma06           |vma|vm1|vma0|vm2|vm3|vm4]
+[vma01          |vma02_1     |vma02     |vma03_1     |vma03      |vma04   |vma05         |vma06           |vma|vm1|vma0|vm2|vm3|vm4]
+[vma01          |vma02_1     |vma02     |vma03_1     |vma03      |vma04   |vma05         |vma06           |vma|vm1|vma0|vm2|vm3|vm4]
+[vma01          |vma02_1     |vma02     |vma03_1     |vma03      |vma04   |vma05         |vma06           |vma|vm1|vma0|vm2|vm3|vm4]
+[vma01          |vma02_1     |vma02     |vma03_1     |vma03      |vma04   |vma05         |vma06           |vma|vm1|vma0|vm2|vm3|vm4]
+[vma01          |vma02_1     |vma02     |vma03_1     |vma03      |vma04   |vma05         |vma06           |vma|vm1|vma0|vm2|vm3|vm4]
+[vma01          |vma02_1     |vma02     |vma03_1     |vma03      |vma04   |vma05         |vma06           |vma|vm1|vma0|vm2|vm3|vm4]
+[vma01          |vma02_1     |vma02     |vma03_1     |vma03      |vma04   |vma05         |vma06           |vma|vm1|vma0|vm2|vm3|vm4]
+[vma01          |vma02_1     |vma02     |vma03_1     |vma03      |vma04   |vma05         |vma06           |vma|vm1|vma0|vm2|vm3|vm4]
+[vma01          |vma02_1     |vma02     |vma03_1     |vma03      |vma04   |vma05         |vma06           |vma|vm1|vma0|vm2|vm3|vm4]
+
+}
+END -- s_vma
+END -- page01
+Page info(text="Info")
+Grid gr5426
+{
+ <G grpinfo                     >
+  Detail Counts      [cn2       ]
+ <                              >
+
+}
+END -- gr5426
+END -- info
+END -- pc1045
+END -- apsi300
+
+TABLES
+vma_file
+ATTRIBUTES
+Edit vma01=vma_file.vma01, tabIndex=1, title="Work Model No.", not null, required;
+Edit vma02_1=formonly.vma02_1 type CHAR, tabIndex=8, title="Start Time(Time)";
+Edit vma02=vma_file.vma02, tabIndex=2, default = "0", title="Start Time(Sec)", not null, required;
+Edit vma03_1=formonly.vma03_1 type CHAR, tabIndex=9, title="Ending Time(Time)";
+Edit vma03=vma_file.vma03, tabIndex=3, title="Ending Time(Sec)", not null, required;
+ComboBox vma04=vma_file.vma04, tabIndex=4, title="Work Type", not null, required, queryEditable, comment="0:Not Work Time 1:Work Time", items=(("0", %"Not Work Time"),("1", %"Time"));
+Edit vma05=vma_file.vma05, tabIndex=5, title="Model Name", scroll;
+Edit vma06=vma_file.vma06, tabIndex=6, title="Model Description", scroll;
+Edit vma=formonly.vma02_1a type CHAR, tabIndex=10, title=%"vma02_1a";
+Edit vm1=formonly.vma02_1b type CHAR, tabIndex=12, title=%"vma02_1b";
+Edit vma0=formonly.vma02_1c type CHAR, tabIndex=11, title=%"vma02_1c";
+Edit vm2=formonly.vma03_1a type CHAR, tabIndex=13, title=%"vma03_1a";
+Edit vm3=formonly.vma03_1b type CHAR, tabIndex=15, title=%"vma03_1b";
+Edit vm4=formonly.vma03_1c type CHAR, tabIndex=14, title=%"vma03_1c";
+Group grpinfo:grpinfo;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vma(vma_file.vma01,formonly.vma02_1,vma_file.vma02,formonly.vma03_1,vma_file.vma03,vma_file.vma04,vma_file.vma05,vma_file.vma06,formonly.vma02_1a,formonly.vma02_1b,formonly.vma02_1c,formonly.vma03_1a,formonly.vma03_1b,formonly.vma03_1c)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi5502.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="s_alm_effect")
+VBox vb5
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr5
+{
+
+  Version No.[lni01             ]
+  Category   [lni02       ]
+  Version    [lni03       ]
+  Shop No.   [lniplant    |lma02               ]
+  Corporate  [lnilegal    |azt02               ]
+
+}
+END -- gr5
+END -- Page3
+END -- pc2
+Table s_lni
+{
+[lni05       |lmi02               |lni06       |lmj02               |lni07       |lmk02               |lni08               |lni09       |lni10       |lni11     |lni12       |lni13   ]
+[lni05       |lmi02               |lni06       |lmj02               |lni07       |lmk02               |lni08               |lni09       |lni10       |lni11     |lni12       |lni13   ]
+[lni05       |lmi02               |lni06       |lmj02               |lni07       |lmk02               |lni08               |lni09       |lni10       |lni11     |lni12       |lni13   ]
+[lni05       |lmi02               |lni06       |lmj02               |lni07       |lmk02               |lni08               |lni09       |lni10       |lni11     |lni12       |lni13   ]
+[lni05       |lmi02               |lni06       |lmj02               |lni07       |lmk02               |lni08               |lni09       |lni10       |lni11     |lni12       |lni13   ]
+
+}
+END -- s_lni
+Grid gr4
+{
+ --------Rows[idx   ]/[cnt    ]  ---Details[cn2   ]------
+
+}
+END -- gr4
+END -- vb5
+END -- almi5502
+
+TABLES
+lni_file
+ATTRIBUTES
+ButtonEdit lni01=lni_file.lni01, action=controlp, tabIndex=10, not null, required, image="zoom.png";
+ComboBox lni02=lni_file.lni02, tabIndex=11, not null, items=(("0", "Discount Return Certificates"),("1", "Direct discount"),("2", "Discount Return Cash"),("3", "Activities gifts"),("4", "Card"),("5", "Certificates"));
+Edit lni03=lni_file.lni03, tabIndex=17, noEntry;
+ButtonEdit lniplant=lni_file.lniplant, tabIndex=19, image="zoom.png";
+Edit lma02=formonly.lma02 type CHAR, tabIndex=18, noEntry;
+ButtonEdit lnilegal=lni_file.lnilegal, action=controlp, tabIndex=22, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=21, noEntry;
+ButtonEdit lni05=lni_file.lni05, action=controlp, tabIndex=4, title="Major categories No.", not null, image="zoom.png";
+Edit lmi02=formonly.lmi02 type CHAR, tabIndex=12, title="Major categories Name", noEntry;
+ButtonEdit lni06=lni_file.lni06, action=controlp, tabIndex=5, title="Category No.", not null, image="zoom.png";
+Edit lmj02=formonly.lmj02 type CHAR, tabIndex=13, title="Category Name", noEntry;
+ButtonEdit lni07=lni_file.lni07, action=controlp, tabIndex=6, title="Small Categories No.", not null, image="zoom.png";
+Edit lmk02=formonly.lmk02 type CHAR, tabIndex=14, title="Small Categories Name", noEntry;
+ButtonEdit lni08=lni_file.lni08, action=controlp, tabIndex=7, title="Stalls No.", not null, required, image="zoom.png";
+DateEdit lni09=lni_file.lni09, tabIndex=8, title="Commencement";
+DateEdit lni10=lni_file.lni10, tabIndex=9, title="Expiry date";
+Edit lni11=lni_file.lni11, tabIndex=15, title="Modify", noEntry;
+DateEdit lni12=lni_file.lni12, tabIndex=16, title="Modify Date", noEntry;
+Edit lni13=lni_file.lni13, tabIndex=20, title="Acti", noEntry;
+Edit idx=formonly.idx type CHAR, tabIndex=1, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=3, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lni(lni_file.lni05,formonly.lmi02,lni_file.lni06,formonly.lmj02,lni_file.lni07,formonly.lmk02,lni_file.lni08,lni_file.lni09,lni_file.lni10,lni_file.lni11,lni_file.lni12,lni_file.lni13)
+SCREEN RECORD Undefined(lni_file.lni01,lni_file.lni02,lni_file.lni03,lni_file.lniplant,formonly.lma02,lni_file.lnilegal,formonly.azt02,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

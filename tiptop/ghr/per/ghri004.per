@@ -1,0 +1,138 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(action=main, text=%"Page1")
+Grid Grid2
+{
+ <G group1                              >
+  hrar01[hrar01    |hrar01_1            ]
+  hrar02[hrar02    |hrar02_1            ]
+  hrar03[hrar03                         ]
+  hrar04[hrar04                         ]
+  hrar06[hrar06    |hrar06_1            ]
+  hrar05[hrar05                         ]
+
+ <                                      >
+
+}
+END -- Grid2
+END -- Page1
+Page Page2(action=info, text=%"Page2")
+HBox HBox1
+Grid Grid3
+{
+
+ hraruser[hraruser                       ]
+ hrargrup[hrargrup                       ]
+ hraroriu[hraroriu                       ]
+ hrarorig[hrarorig                       ]
+
+
+
+}
+END -- Grid3
+Grid Grid4
+{
+
+      hrarmodu[hrarmodu                       ]
+      hraracti[hraracti                       ]
+      hrardate[hrardate  ]
+
+
+
+
+}
+END -- Grid4
+Grid Grid6
+{
+
+
+
+
+
+
+
+
+}
+END -- Grid6
+Grid Grid5
+{
+
+
+
+
+
+
+
+
+}
+END -- Grid5
+END -- HBox1
+END -- Page2
+Page Page3(action=item_list, text=%"Page3")
+Table Table1
+{
+[hrar01_b  |hrar01_1_b     |hrar02_b  |hrar02_1_b    |hrar03_b  |hrar04_b  |hrar06_b  |hrar06_1_b   |hrar05_b  |hraracti_]
+[hrar01_b  |hrar01_1_b     |hrar02_b  |hrar02_1_b    |hrar03_b  |hrar04_b  |hrar06_b  |hrar06_1_b   |hrar05_b  |hraracti_]
+[hrar01_b  |hrar01_1_b     |hrar02_b  |hrar02_1_b    |hrar03_b  |hrar04_b  |hrar06_b  |hrar06_1_b   |hrar05_b  |hraracti_]
+[hrar01_b  |hrar01_1_b     |hrar02_b  |hrar02_1_b    |hrar03_b  |hrar04_b  |hrar06_b  |hrar06_1_b   |hrar05_b  |hraracti_]
+[hrar01_b  |hrar01_1_b     |hrar02_b  |hrar02_1_b    |hrar03_b  |hrar04_b  |hrar06_b  |hrar06_1_b   |hrar05_b  |hraracti_]
+
+
+}
+END -- Table1
+END -- Page3
+END -- Folder1
+Grid Grid1
+{
+ -------------- cnt[cnt ]----------------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"";
+ButtonEdit hrar01=formonly.hrar01 type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit hrar01_1=formonly.hrar01_1 type VARCHAR, tabIndex=3, noEntry;
+ButtonEdit hrar02=formonly.hrar02 type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+Edit hrar02_1=formonly.hrar02_1 type VARCHAR, tabIndex=5, noEntry;
+Edit hrar03=formonly.hrar03 type VARCHAR, tabIndex=6, not null, required;
+Edit hrar04=formonly.hrar04 type VARCHAR, tabIndex=7, not null, required;
+ButtonEdit hrar06=formonly.hrar06 type VARCHAR, action=controlp, tabIndex=8, not null, required, image="zoom";
+Edit hrar06_1=formonly.hrar06_1 type VARCHAR, tabIndex=26, noEntry;
+Edit hrar05=formonly.hrar05 type VARCHAR, tabIndex=9;
+Edit hraruser=formonly.hraruser type VARCHAR, tabIndex=12, noEntry;
+Edit hrargrup=formonly.hrargrup type VARCHAR, tabIndex=13, noEntry;
+Edit hraroriu=formonly.hraroriu type VARCHAR, tabIndex=14, noEntry;
+Edit hrarorig=formonly.hrarorig type VARCHAR, tabIndex=15, noEntry;
+Edit hrarmodu=formonly.hrarmodu type VARCHAR, tabIndex=16, noEntry;
+Edit hraracti=formonly.hraracti type VARCHAR, tabIndex=18, noEntry;
+DateEdit hrardate=formonly.hrardate type DATE, tabIndex=17, noEntry;
+Edit hrar01_b=formonly.hrar01_b type VARCHAR, tabIndex=10, title=%"hrar01_b";
+Edit hrar01_1_b=formonly.hrar01_1_b type VARCHAR, tabIndex=11, title=%"hrar01_1_b";
+Edit hrar02_b=formonly.hrar02_b type VARCHAR, tabIndex=19, title=%"hrar02_b";
+Edit hrar02_1_b=formonly.hrar02_1_b type VARCHAR, tabIndex=20, title=%"hrar02_1_b";
+Edit hrar03_b=formonly.hrar03_b type VARCHAR, tabIndex=21, title=%"hrar03_b";
+Edit hrar04_b=formonly.hrar04_b type VARCHAR, tabIndex=22, title=%"hrar04_b";
+Edit hrar06_b=formonly.hrar06_b type VARCHAR, tabIndex=23, title=%"hrar06_b";
+Edit hrar06_1_b=formonly.hrar06_1_b type VARCHAR, tabIndex=27, title=%"hrar06_1_b";
+Edit hrar05_b=formonly.hrar05_b type VARCHAR, tabIndex=24, title=%"hrar05_b";
+Edit hraracti_=formonly.hraracti_b type VARCHAR, tabIndex=25, title=%"hraracti_b";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cnt,formonly.hrar01,formonly.hrar01_1,formonly.hrar02,formonly.hrar02_1,formonly.hrar03,formonly.hrar04,formonly.hrar06,formonly.hrar05,formonly.hraruser,formonly.hrargrup,formonly.hraroriu,formonly.hrarorig,formonly.hrarmodu,formonly.hrardate,formonly.hraracti,formonly.hrar06_1)
+SCREEN RECORD s_hrar_b(formonly.hrar01_b,formonly.hrar01_1_b,formonly.hrar02_b,formonly.hrar02_1_b,formonly.hrar03_b,formonly.hrar04_b,formonly.hrar06_b,formonly.hrar06_1_b,formonly.hrar05_b,formonly.hraracti_b)
+END -- INSTRUCTIONS
+

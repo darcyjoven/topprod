@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/aski0111.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aski0111")
+Folder pc2
+Page page01(text="Page01")
+Table s_skx
+{
+[skx03       |skx07                  |ima02_7           |skx04       |skx05       |skx06       ]
+[skx03       |skx07                  |ima02_7           |skx04       |skx05       |skx06       ]
+[skx03       |skx07                  |ima02_7           |skx04       |skx05       |skx06       ]
+[skx03       |skx07                  |ima02_7           |skx04       |skx05       |skx06       ]
+[skx03       |skx07                  |ima02_7           |skx04       |skx05       |skx06       ]
+[skx03       |skx07                  |ima02_7           |skx04       |skx05       |skx06       ]
+[skx03       |skx07                  |ima02_7           |skx04       |skx05       |skx06       ]
+[skx03       |skx07                  |ima02_7           |skx04       |skx05       |skx06       ]
+[skx03       |skx07                  |ima02_7           |skx04       |skx05       |skx06       ]
+[skx03       |skx07                  |ima02_7           |skx04       |skx05       |skx06       ]
+
+}
+END -- s_skx
+END -- page01
+END -- pc2
+END -- aski0111
+
+TABLES
+skx_file
+ATTRIBUTES
+Edit skx03=skx_file.skx03, tabIndex=1, title="skx03", not null, required;
+ButtonEdit skx07=skx_file.skx07, action=controlp, tabIndex=2, title="skx07", not null, required, image="zoom";
+Edit ima02_7=formonly.ima02_7 type CHAR, tabIndex=3, title="ima02_7", noEntry;
+Edit skx04=skx_file.skx04, tabIndex=4, title="skx04", not null, required;
+Edit skx05=skx_file.skx05, tabIndex=5, title="skx05", not null, required;
+Edit skx06=skx_file.skx06, tabIndex=6, title="skx06", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_skx(skx_file.skx03,skx_file.skx07,formonly.ima02_7,skx_file.skx04,skx_file.skx05,skx_file.skx06)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri044_r.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+[label1    |hrcda03   |hrcda03_name        ]
+[label2    |hrcda05                        ]
+[label3    |hrcda15                        ]
+           [                               ]
+           [                               ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table Table1
+{
+[chk  |hrcda16 |hrcda17  |hrcda03b|hrcda03b_name|hrcda02 |hrcda01 |hrcda04    |hrat02  |hrat04  |hrat17  |hrat05  |hrcda05b|hrcda06 |hrcda07 |hrcda08 |hrcda09 |hrcda10 |hrcda15b      ]
+[chk  |hrcda16 |hrcda17  |hrcda03b|hrcda03b_name|hrcda02 |hrcda01 |hrcda04    |hrat02  |hrat04  |hrat17  |hrat05  |hrcda05b|hrcda06 |hrcda07 |hrcda08 |hrcda09 |hrcda10 |hrcda15b      ]
+[chk  |hrcda16 |hrcda17  |hrcda03b|hrcda03b_name|hrcda02 |hrcda01 |hrcda04    |hrat02  |hrat04  |hrat17  |hrat05  |hrcda05b|hrcda06 |hrcda07 |hrcda08 |hrcda09 |hrcda10 |hrcda15b      ]
+[chk  |hrcda16 |hrcda17  |hrcda03b|hrcda03b_name|hrcda02 |hrcda01 |hrcda04    |hrat02  |hrat04  |hrat17  |hrat05  |hrcda05b|hrcda06 |hrcda07 |hrcda08 |hrcda09 |hrcda10 |hrcda15b      ]
+[chk  |hrcda16 |hrcda17  |hrcda03b|hrcda03b_name|hrcda02 |hrcda01 |hrcda04    |hrat02  |hrat04  |hrat17  |hrat05  |hrcda05b|hrcda06 |hrcda07 |hrcda08 |hrcda09 |hrcda10 |hrcda15b      ]
+
+}
+END -- Table1
+Grid Grid2
+{
+ ----------[label4|cn2 ]---------
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"Label1";
+ButtonEdit hrcda03=formonly.hrcda03, action=controlp, tabIndex=1, image="zoom";
+Edit hrcda03_name=formonly.hrcda03_name, tabIndex=2;
+Label label2:Label2, text=%"Label2";
+DateEdit hrcda05=formonly.hrcda05, tabIndex=3;
+Label label3:Label3, text=%"Label3";
+TextEdit hrcda15=formonly.hrcda15, tabIndex=4;
+CheckBox chk=formonly.chk, tabIndex=5, title=%"Edit1", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrcda16=formonly.hrcda16, tabIndex=6, title=%"Edit1", text=%"", valueChecked = "Y", valueUnchecked = "N";
+ComboBox hrcda17=formonly.hrcda17, tabIndex=7, title=%"Edit1", items=(("1", "Text"),("2", "Text"),("3", "Text"),("4", "Text"));
+Edit hrcda03b=formonly.hrcda03b, tabIndex=8, title=%"Edit1";
+Edit hrcda03b_name=formonly.hrcda03b_name, tabIndex=9, title=%"Edit1";
+Edit hrcda02=formonly.hrcda02, tabIndex=10, title=%"Edit1";
+Edit hrcda01=formonly.hrcda01, tabIndex=11, title=%"Edit1";
+ButtonEdit hrcda04=formonly.hrcda04, action=controlp, tabIndex=12, title=%"Edit2", image="zoom";
+Edit hrat02=formonly.hrat02, tabIndex=13, title=%"Edit1";
+Edit hrat04=formonly.hrat04, tabIndex=14, title=%"Edit2";
+Edit hrat17=formonly.hrat17, tabIndex=15, title=%"Edit1";
+Edit hrat05=formonly.hrat05, tabIndex=16, title=%"Edit1";
+DateEdit hrcda05b=formonly.hrcda05b type DATE, tabIndex=17, title=%"Edit1";
+Edit hrcda06=formonly.hrcda06, tabIndex=18, title=%"Edit2";
+DateEdit hrcda07=formonly.hrcda07 type DATE, tabIndex=19, title=%"Edit3";
+Edit hrcda08=formonly.hrcda08, tabIndex=20, title=%"Edit4";
+Edit hrcda09=formonly.hrcda09, tabIndex=21, title=%"Edit1";
+ButtonEdit hrcda10=formonly.hrcda10, action=controlp, tabIndex=22, title=%"Edit1", image="zoom";
+TextEdit hrcda15b=formonly.hrcda15b, tabIndex=23, title=%"Edit1";
+Label label4:Label4, text=%"Label4";
+Edit cn2=formonly.cn2, tabIndex=24;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrcda03,formonly.hrcda03_name,formonly.hrcda05,formonly.hrcda15,formonly.cn2)
+SCREEN RECORD s_revoke(formonly.chk,formonly.hrcda16,formonly.hrcda17,formonly.hrcda03b,formonly.hrcda03b_name,formonly.hrcda02,formonly.hrcda01,formonly.hrcda04,formonly.hrat02,formonly.hrat04,formonly.hrat17,formonly.hrat05,formonly.hrcda05b,formonly.hrcda06,formonly.hrcda07,formonly.hrcda08,formonly.hrcda09,formonly.hrcda10,formonly.hrcda15b)
+END -- INSTRUCTIONS
+

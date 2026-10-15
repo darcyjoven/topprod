@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abap110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abap610")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                             >
+  Item No.            [imgb01              ]  Warehouse #         [imgb02              ]
+  Location #          [imgb03              ]  Lot#                [imgb04              ]
+
+ <                                                                                      >
+ <G group02                                                                             >
+  Year of Last Period [g_yy      ]
+  Last Per/YY         [g_mm      ][dummy01                                   ]
+  [show                          ]
+ <                                                                                      >
+
+ <G group03                                                                             >
+  [dummy02                                                                   ]
+  [dummy03                                                                   ]
+ <                                                                                      >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[g_bgjob                                 ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- abap110
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit imgb01=formonly.imgb01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit imgb02=formonly.imgb02 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit imgb03=formonly.imgb03 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit imgb04=formonly.imgb04 type VARCHAR, tabIndex=4;
+Group group02:group02, text="INPUT";
+Edit g_yy=formonly.g_yy type SMALLINT, tabIndex=5, not null, required;
+Edit g_mm=formonly.g_mm type SMALLINT, tabIndex=6, not null, required;
+Label dummy01:dummy01, text="(Correct IMK_FILE End of Period Inventory)";
+CheckBox show=formonly.show type VARCHAR, tabIndex=7, text="Show that carries out course information", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03;
+Label dummy02:dummy02, text="Task Objective: Update img and ima Inventory by Doc Date";
+Label dummy03:dummy03, text="Conf \'imk_file\' Last End of Period Inv.Qty Correct bef run this task";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=8, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.imgb01,formonly.imgb02,formonly.imgb03,formonly.imgb04,formonly.g_yy,formonly.g_mm,formonly.show,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

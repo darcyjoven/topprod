@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cxc/4fd/cxcp001n.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asfi301m")
+Folder pc107
+Page page01(text="Main")
+HBox HBox1
+Grid gr477
+{
+    Note Type [ship  ]
+    people    [peo   ][gen02     ]
+    data      [dat      ]
+    Warehouse [stk       ]
+
+
+
+
+}
+END -- gr477
+Grid gr1
+{
+    Note Type [ship1 ]
+    Department[dept  ][gem02_1   ]
+    Reason    [reas  ][azf03     ]
+    people    [peo1  ][gen1      ]
+    data      [dat1     ]
+    project   [pro  ]
+    Location  [loc       ]
+
+}
+END -- gr1
+END -- HBox1
+END -- page01
+END -- pc107
+END -- cxcp001n
+
+ATTRIBUTES
+ButtonEdit ship=formonly.ship type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry ship no";
+ButtonEdit peo=formonly.peo, action=controlp, tabIndex=4, not null, required, image="zoom";
+Edit gen02=formonly.gen02, tabIndex=5;
+DateEdit dat=formonly.dat, tabIndex=3, not null, required;
+ButtonEdit stk=formonly.stk type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry stk";
+ButtonEdit ship1=formonly.ship1 type CHAR, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry ship no";
+ButtonEdit dept=formonly.dept type CHAR, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Department";
+Edit gem02_1=formonly.gem02_1 type CHAR, tabIndex=8, noEntry;
+ButtonEdit reas=formonly.reas type CHAR, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Reason";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=10, noEntry;
+ButtonEdit peo1=formonly.peo1, action=controlp, tabIndex=11, not null, required, image="zoom";
+Edit gen1=formonly.gen1, tabIndex=12;
+DateEdit dat1=formonly.dat1, tabIndex=13;
+ButtonEdit pro=formonly.pro, action=controlp, tabIndex=14, image="zoom";
+ButtonEdit loc=formonly.loc type CHAR, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry loc";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ship,formonly.stk,formonly.dat,formonly.peo,formonly.gen02,formonly.ship1,formonly.dept,formonly.gem02_1,formonly.reas,formonly.azf03,formonly.peo1,formonly.gen1,formonly.dat1,formonly.pro,formonly.loc)
+END -- INSTRUCTIONS
+

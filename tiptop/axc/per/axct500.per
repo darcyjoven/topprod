@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct500")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1813
+{
+ Document Type [ina00                 ]
+ Document No.  [ina01             ][smydesc   ]
+ Document Date [ina02     ]
+ Department    [ina04     ][gem02     ]
+
+}
+END -- gr1813
+Grid gr1814
+{
+ Cause        [ina05     ][azf03     ][te:     ][imgmksg]
+ Project      [ina06     ]                      [       ]
+ Memo         [ina07               ]
+ Confirm Code [inaconf   ][inapos]
+
+}
+END -- gr1814
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1815
+{
+ Record Owner [inauser   ]   Last Modified by   [inamodu   ]
+ Department   [inagrup   ]   Create/Modify Date [inadate   ]
+ Record Orig. [inaoriu   ]
+ Dept Orig.   [inaorig   ]
+}
+END -- gr1815
+END -- info
+END -- folder01
+Table s_inb
+{
+[inb03|inb04               |ima02     |inb07   |inb05      |inb06     |inb08 |inb08_fac|inb09      |inb15   |azf01     |inb13               |inb132              |inb133              |inb134              |inb135              |inb136              |inb137              |inb138              |inb14               ]
+[inb03|inb04               |ima02     |inb07   |inb05      |inb06     |inb08 |inb08_fac|inb09      |inb15   |azf01     |inb13               |inb132              |inb133              |inb134              |inb135              |inb136              |inb137              |inb138              |inb14               ]
+[inb03|inb04               |ima02     |inb07   |inb05      |inb06     |inb08 |inb08_fac|inb09      |inb15   |azf01     |inb13               |inb132              |inb133              |inb134              |inb135              |inb136              |inb137              |inb138              |inb14               ]
+[inb03|inb04               |ima02     |inb07   |inb05      |inb06     |inb08 |inb08_fac|inb09      |inb15   |azf01     |inb13               |inb132              |inb133              |inb134              |inb135              |inb136              |inb137              |inb138              |inb14               ]
+[inb03|inb04               |ima02     |inb07   |inb05      |inb06     |inb08 |inb08_fac|inb09      |inb15   |azf01     |inb13               |inb132              |inb133              |inb134              |inb135              |inb136              |inb137              |inb138              |inb14               ]
+[inb03|inb04               |ima02     |inb07   |inb05      |inb06     |inb08 |inb08_fac|inb09      |inb15   |azf01     |inb13               |inb132              |inb133              |inb134              |inb135              |inb136              |inb137              |inb138              |inb14               ]
+[inb03|inb04               |ima02     |inb07   |inb05      |inb06     |inb08 |inb08_fac|inb09      |inb15   |azf01     |inb13               |inb132              |inb133              |inb134              |inb135              |inb136              |inb137              |inb138              |inb14               ]
+[inb03|inb04               |ima02     |inb07   |inb05      |inb06     |inb08 |inb08_fac|inb09      |inb15   |azf01     |inb13               |inb132              |inb133              |inb134              |inb135              |inb136              |inb137              |inb138              |inb14               ]
+[inb03|inb04               |ima02     |inb07   |inb05      |inb06     |inb08 |inb08_fac|inb09      |inb15   |azf01     |inb13               |inb132              |inb133              |inb134              |inb135              |inb136              |inb137              |inb138              |inb14               ]
+[inb03|inb04               |ima02     |inb07   |inb05      |inb06     |inb08 |inb08_fac|inb09      |inb15   |azf01     |inb13               |inb132              |inb133              |inb134              |inb135              |inb136              |inb137              |inb138              |inb14               ]
+}
+END -- s_inb
+Grid gr1816
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr1816
+END -- VBox1
+END -- axct500
+
+TABLES
+azf_file,
+inb_file,
+ina_file
+ATTRIBUTES
+ComboBox ina00=ina_file.ina00, tabIndex=1, not null, required, queryEditable, items=(("1", "Inv M.Iss"),("2", "WIP M.Iss"),("3", "Inv M.Rc"),("4", "WIP M.Rc"),("5", "Inv Scrp"),("6", "WIP Scrp"));
+ButtonEdit ina01=ina_file.ina01, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Details";
+Edit smydesc=formonly.smydesc type CHAR, tabIndex=3;
+DateEdit ina02=ina_file.ina02, tabIndex=4, noEntry;
+ButtonEdit ina04=ina_file.ina04, action=controlp, tabIndex=5, noEntry, image="zoom";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=6, noEntry;
+Edit ina05=ina_file.ina05, tabIndex=7, noEntry;
+Edit azf03=formonly.azf03 type CHAR, tabIndex=8, noEntry;
+Label te:text6430;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit ina06=ina_file.ina06, action=controlp, tabIndex=10, noEntry, image="zoom";
+Edit ina07=ina_file.ina07, tabIndex=11;
+ComboBox inaconf=ina_file.inaconf, tabIndex=12, noEntry, items=(("Y", "Post"),("N", "Post Return"),("X", "Void"));
+CheckBox inapos=ina_file.inapost, tabIndex=13, noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit inauser=ina_file.inauser, tabIndex=14, noEntry;
+Edit inamodu=ina_file.inamodu, tabIndex=15, noEntry;
+Edit inagrup=ina_file.inagrup, tabIndex=16, noEntry;
+DateEdit inadate=ina_file.inadate, tabIndex=17, noEntry;
+Edit inaoriu=ina_file.inaoriu, tabIndex=501, noEntry;
+Edit inaorig=ina_file.inaorig, tabIndex=502, noEntry;
+Edit inb03=inb_file.inb03, tabIndex=18, title="Ln#", noEntry;
+Edit inb04=inb_file.inb04, tabIndex=19, title="Item No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=20, title="P/N Desc.", noEntry;
+Edit inb07=inb_file.inb07, tabIndex=21, title="Lot#", noEntry;
+Edit inb05=inb_file.inb05, tabIndex=22, title="Warehouse", noEntry;
+Edit inb06=inb_file.inb06, tabIndex=23, title="Location", noEntry;
+Edit inb08=inb_file.inb08, tabIndex=24, title="Unit", noEntry;
+Edit inb08_fac=inb_file.inb08_fac, tabIndex=25, title="Rate", noEntry, not null, required;
+Edit inb09=inb_file.inb09, tabIndex=26, title="Qty", noEntry, not null, required;
+Edit inb15=inb_file.inb15, tabIndex=27, title="Reason", noEntry;
+Edit azf01=azf_file.azf03, tabIndex=32, title="Reason Desc.", noEntry;
+Edit inb13=inb_file.inb13, tabIndex=28, title="Unit Price", not null, required;
+Edit inb132=inb_file.inb132, tabIndex=503, title=%"Artificial unit price\n", not null;
+Edit inb133=inb_file.inb133, tabIndex=504, title=%"Cost unit price 1\n", not null;
+Edit inb134=inb_file.inb134, tabIndex=505, title=%"Processing Unit Price\n", not null;
+Edit inb135=inb_file.inb135, tabIndex=506, title=%"Cost unit price 2", not null;
+Edit inb136=inb_file.inb136, tabIndex=507, title=%"Cost unit price 3", not null;
+Edit inb137=inb_file.inb137, tabIndex=508, title=%"Cost unit price 4", not null;
+Edit inb138=inb_file.inb138, tabIndex=509, title=%"Cost unit price 5", not null;
+Edit inb14=inb_file.inb14, tabIndex=29, title="Amount", noEntry, not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=30, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=31, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_inb(inb_file.inb03,inb_file.inb04,formonly.ima02,inb_file.inb07,inb_file.inb05,inb_file.inb06,inb_file.inb08,inb_file.inb08_fac,inb_file.inb09,inb_file.inb15,azf_file.azf03,inb_file.inb13,inb_file.inb132,inb_file.inb133,inb_file.inb134,inb_file.inb135,inb_file.inb136,inb_file.inb137,inb_file.inb138,inb_file.inb14)
+SCREEN RECORD Undefined(ina_file.ina00,ina_file.ina01,formonly.smydesc,ina_file.ina02,ina_file.ina04,formonly.gem02,ina_file.ina05,formonly.azf03,formonly.imgmksg,ina_file.ina06,ina_file.ina07,ina_file.inaconf,ina_file.inapost,ina_file.inauser,ina_file.inamodu,ina_file.inagrup,ina_file.inadate,ina_file.inaoriu,ina_file.inaorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

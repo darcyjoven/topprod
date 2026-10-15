@@ -1,0 +1,112 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli112.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"agli112")
+VBox vb11
+Folder folder01
+Page page01(text=%"Main")
+HBox hb3
+Grid grid_tree
+{
+ <TREE tree1         >
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ <                   >
+
+
+
+}
+END -- grid_tree
+Grid Grid1
+{
+
+[addchil]
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+VBox vb10
+Grid gr2387
+{
+ Upper Department    [abd01     ]
+ Department Name     [gem02n    ]
+}
+END -- gr2387
+Table s_abd
+{
+[abd02     |gem02   ]
+[abd02     |gem02   ]
+[abd02     |gem02   ]
+[abd02     |gem02   ]
+[abd02     |gem02   ]
+[abd02     |gem02   ]
+[abd02     |gem02   ]
+[abd02     |gem02   ]
+[abd02     |gem02   ]
+[abd02     |gem02   ]
+}
+END -- s_abd
+END -- vb10
+END -- hb3
+END -- page01
+END -- folder01
+Grid gr2388
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2388
+END -- vb11
+END -- agli112
+
+TABLES
+abd_file
+ATTRIBUTES
+Tree tree1:Tree1, parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file", width = 21 characters;
+LABEL name=formonly.name type CHAR, unsortable;
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.path type CHAR;
+Phantom formonly.treekey1 type CHAR;
+Phantom formonly.treekey2 type CHAR;
+Button addchil:addchild, tabIndex=17, image="next2";
+ButtonEdit abd01=abd_file.abd01, action=controlp, tabIndex=3, not null, required, image="zoom", comment=%"<^P>Query Department";
+Edit gem02n=formonly.gem02n type CHAR, tabIndex=3, noEntry;
+ButtonEdit abd02=abd_file.abd02, action=controlp, tabIndex=3, title=%"Sub-Dept.", not null, required, image="zoom", comment=%"<^P>Query Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=3, title=%"Desc.", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=2, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.path,formonly.treekey1,formonly.treekey2)
+SCREEN RECORD s_abd(abd_file.abd02,formonly.gem02)
+SCREEN RECORD Undefined(abd_file.abd01,formonly.gem02n,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

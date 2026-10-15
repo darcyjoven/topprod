@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi551a_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"asfi501a_2")
+VBox vb1
+Grid gr2
+{
+ <T s_sib_1                     >
+ [chk    |sib02                 ]
+ [chk    |sib02                 ]
+ [chk    |sib02                 ]
+ [chk    |sib02                 ]
+ [chk    |sib02                 ]
+ [chk    |sib02                 ]
+ [chk    |sib02                 ]
+ [chk    |sib02                 ]
+ [chk    |sib02                 ]
+ [chk    |sib02                 ]
+ [chk    |sib02                 ]
+ <                              >
+
+}
+END -- gr2
+Grid gr2_
+{
+  ---------[cnt2     ]---------
+
+}
+END -- gr2_
+END -- vb1
+END -- Form2
+
+TABLES
+sib_file
+ATTRIBUTES
+Table s_sib_1:s_sib_1;
+CheckBox chk=formonly.chk type VARCHAR, tabIndex=1, title="check", valueChecked = "Y", valueUnchecked = "N";
+Edit sib02=sib_file.sib02, tabIndex=2, title="WO.NO";
+Edit cnt2=formonly.cnt2 type INTEGER, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sib_1(formonly.chk,sib_file.sib02)
+SCREEN RECORD Undefined(formonly.cnt2)
+END -- INSTRUCTIONS
+

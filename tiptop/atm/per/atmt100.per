@@ -1,0 +1,242 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmt100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmt100")
+VBox VBox2
+Folder folder01
+Page page01(text="Main")
+VBox VBox1
+HBox hb1
+Grid gr1165
+{
+ <G group01                                        >
+  Dispatch No      [adk01             ]
+  Date             [adk02     ]
+  Dispatch Reasons [adk03     ]
+  Leave DD/TT      [adk04     ][adk05     ]
+  Est Rt DD/TT     [adk06     ][adk07     ]
+  Memo             [adk16                         ]
+
+
+ <                                                 >
+
+}
+END -- gr1165
+Grid gr1166
+{
+ <G group02                                        >
+  Person of Dispatch [adk13     ][gen02     ]
+  Department         [adk14     ][gem02     ]
+
+  Trsf Flow          [adk15     ]
+
+
+
+
+ <                                                 >
+
+}
+END -- gr1166
+END -- hb1
+HBox hb2
+Grid gr1167
+{
+ <G group04                                        >
+  Vehicle No.      [adk08     ]
+  Driver           [adk09     ][gen02a    ]
+  Accompanyist     [adk10     ][gen02b    ]
+                   [adk11     ][gen02c    ]
+                   [adk12     ][gen02d    ]
+
+
+ <                                                 >
+
+
+}
+END -- gr1167
+Grid gr1168
+{
+ <G group03                                            >
+                               [imgmksg]
+  Confirm        [adkconf   ]  [       ]
+  Confirm Date   [adkcond   ]
+  Confirmed By   [adkconu   |adkconu_de]
+  Org#           [adkplant  |adkplant_d]
+
+
+ <                                                     >
+
+
+}
+END -- gr1168
+END -- hb2
+END -- VBox1
+END -- page01
+Page info(text="Info")
+Grid gr1169
+{
+ Record Owner [adkuser   ]          Last Modified by    [adkmodu   ]     Data Valid Code [adkacti   ]       Record Orig. [adkoriu   ]
+ Department   [adkgrup   ]          Create/Modify Date  [adkdate   ]                                        Dept Orig.   [adkorig   ]
+
+
+}
+END -- gr1169
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[adkud01                       ] userdefined_field07[adkud07        ] userdefined_field13[adkud13        ]
+                    [                              ] userdefined_field08[adkud08        ] userdefined_field14[adkud14        ]
+ userdefined_field02[adkud02        ]                userdefined_field09[adkud09        ] userdefined_field15[adkud15        ]
+ userdefined_field03[adkud03        ]                userdefined_field10[adkud10        ]
+ userdefined_field04[adkud04        ]                userdefined_field11[adkud11        ]
+ userdefined_field05[adkud05        ]                userdefined_field12[adkud12        ]
+ userdefined_field06[adkud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_adl
+{
+[adl02     |adl11       |adl03             |adl04     |ruc|oga04    |occ02         |oga044       |ogb04       |ogb06     |ima021         |adl20      |adl05             |adl15         |adl16        |adl17       |adl12          |adl13          |adl14         |adl18    |adl19       |adl06  |adl07             |adl08    |adl09       |adl10      |adlud01   |adlud02   |adlud03    |adlud04    |adlud05    |adlud06    |adlud07    |adlud08    |adlud09    |adlud10    |adlud11   |adlud12  |adlud13   |adlud14   |adlud15    ]
+[adl02     |adl11       |adl03             |adl04     |ruc|oga04    |occ02         |oga044       |ogb04       |ogb06     |ima021         |adl20      |adl05             |adl15         |adl16        |adl17       |adl12          |adl13          |adl14         |adl18    |adl19       |adl06  |adl07             |adl08    |adl09       |adl10      |adlud01   |adlud02   |adlud03    |adlud04    |adlud05    |adlud06    |adlud07    |adlud08    |adlud09    |adlud10    |adlud11   |adlud12  |adlud13   |adlud14   |adlud15    ]
+[adl02     |adl11       |adl03             |adl04     |ruc|oga04    |occ02         |oga044       |ogb04       |ogb06     |ima021         |adl20      |adl05             |adl15         |adl16        |adl17       |adl12          |adl13          |adl14         |adl18    |adl19       |adl06  |adl07             |adl08    |adl09       |adl10      |adlud01   |adlud02   |adlud03    |adlud04    |adlud05    |adlud06    |adlud07    |adlud08    |adlud09    |adlud10    |adlud11   |adlud12  |adlud13   |adlud14   |adlud15    ]
+[adl02     |adl11       |adl03             |adl04     |ruc|oga04    |occ02         |oga044       |ogb04       |ogb06     |ima021         |adl20      |adl05             |adl15         |adl16        |adl17       |adl12          |adl13          |adl14         |adl18    |adl19       |adl06  |adl07             |adl08    |adl09       |adl10      |adlud01   |adlud02   |adlud03    |adlud04    |adlud05    |adlud06    |adlud07    |adlud08    |adlud09    |adlud10    |adlud11   |adlud12  |adlud13   |adlud14   |adlud15    ]
+[adl02     |adl11       |adl03             |adl04     |ruc|oga04    |occ02         |oga044       |ogb04       |ogb06     |ima021         |adl20      |adl05             |adl15         |adl16        |adl17       |adl12          |adl13          |adl14         |adl18    |adl19       |adl06  |adl07             |adl08    |adl09       |adl10      |adlud01   |adlud02   |adlud03    |adlud04    |adlud05    |adlud06    |adlud07    |adlud08    |adlud09    |adlud10    |adlud11   |adlud12  |adlud13   |adlud14   |adlud15    ]
+[adl02     |adl11       |adl03             |adl04     |ruc|oga04    |occ02         |oga044       |ogb04       |ogb06     |ima021         |adl20      |adl05             |adl15         |adl16        |adl17       |adl12          |adl13          |adl14         |adl18    |adl19       |adl06  |adl07             |adl08    |adl09       |adl10      |adlud01   |adlud02   |adlud03    |adlud04    |adlud05    |adlud06    |adlud07    |adlud08    |adlud09    |adlud10    |adlud11   |adlud12  |adlud13   |adlud14   |adlud15    ]
+[adl02     |adl11       |adl03             |adl04     |ruc|oga04    |occ02         |oga044       |ogb04       |ogb06     |ima021         |adl20      |adl05             |adl15         |adl16        |adl17       |adl12          |adl13          |adl14         |adl18    |adl19       |adl06  |adl07             |adl08    |adl09       |adl10      |adlud01   |adlud02   |adlud03    |adlud04    |adlud05    |adlud06    |adlud07    |adlud08    |adlud09    |adlud10    |adlud11   |adlud12  |adlud13   |adlud14   |adlud15    ]
+[adl02     |adl11       |adl03             |adl04     |ruc|oga04    |occ02         |oga044       |ogb04       |ogb06     |ima021         |adl20      |adl05             |adl15         |adl16        |adl17       |adl12          |adl13          |adl14         |adl18    |adl19       |adl06  |adl07             |adl08    |adl09       |adl10      |adlud01   |adlud02   |adlud03    |adlud04    |adlud05    |adlud06    |adlud07    |adlud08    |adlud09    |adlud10    |adlud11   |adlud12  |adlud13   |adlud14   |adlud15    ]
+[adl02     |adl11       |adl03             |adl04     |ruc|oga04    |occ02         |oga044       |ogb04       |ogb06     |ima021         |adl20      |adl05             |adl15         |adl16        |adl17       |adl12          |adl13          |adl14         |adl18    |adl19       |adl06  |adl07             |adl08    |adl09       |adl10      |adlud01   |adlud02   |adlud03    |adlud04    |adlud05    |adlud06    |adlud07    |adlud08    |adlud09    |adlud10    |adlud11   |adlud12  |adlud13   |adlud14   |adlud15    ]
+[adl02     |adl11       |adl03             |adl04     |ruc|oga04    |occ02         |oga044       |ogb04       |ogb06     |ima021         |adl20      |adl05             |adl15         |adl16        |adl17       |adl12          |adl13          |adl14         |adl18    |adl19       |adl06  |adl07             |adl08    |adl09       |adl10      |adlud01   |adlud02   |adlud03    |adlud04    |adlud05    |adlud06    |adlud07    |adlud08    |adlud09    |adlud10    |adlud11   |adlud12  |adlud13   |adlud14   |adlud15    ]
+}
+END -- s_adl
+Grid gr1170
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+
+
+
+
+}
+END -- gr1170
+END -- VBox2
+END -- atmt100
+
+TABLES
+adk_file,
+adl_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit adk01=adk_file.adk01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!,<^P>Qry Dispatch No.";
+DateEdit adk02=adk_file.adk02, tabIndex=2;
+ButtonEdit adk03=adk_file.adk03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Detail";
+DateEdit adk04=adk_file.adk04, tabIndex=4, not null, required;
+Edit adk05=adk_file.adk05, tabIndex=5, not null, required;
+DateEdit adk06=adk_file.adk06, tabIndex=6;
+Edit adk07=adk_file.adk07, tabIndex=7;
+Edit adk16=adk_file.adk16, tabIndex=8;
+Group group02:group02;
+ButtonEdit adk13=adk_file.adk13, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=10, noEntry;
+ButtonEdit adk14=adk_file.adk14, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=12, noEntry;
+ButtonEdit adk15=adk_file.adk15, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Detail";
+Group group04:group04;
+ButtonEdit adk08=adk_file.adk08, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P>Qry Detail";
+ButtonEdit adk09=adk_file.adk09, action=controlp, tabIndex=15, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit gen02a=formonly.gen02a type CHAR, tabIndex=16, noEntry;
+ButtonEdit adk10=adk_file.adk10, action=controlp, tabIndex=17, image="zoom", comment="<^P>Qry Detail";
+Edit gen02b=formonly.gen02b type CHAR, tabIndex=18, noEntry;
+ButtonEdit adk11=adk_file.adk11, action=controlp, tabIndex=19, image="zoom", comment="<^P>Qry Detail";
+Edit gen02c=formonly.gen02c type CHAR, tabIndex=20, noEntry;
+ButtonEdit adk12=adk_file.adk12, action=controlp, tabIndex=21, image="zoom", comment="<^P>Qry Detail";
+Edit gen02d=formonly.gen02d type CHAR, tabIndex=22, noEntry;
+Group group03:group03;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ComboBox adkconf=adk_file.adkconf, tabIndex=24, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+DateEdit adkcond=adk_file.adkcond, tabIndex=354, noEntry;
+ButtonEdit adkconu=adk_file.adkconu, action=controlp, tabIndex=355, noEntry, image="zoom.png";
+Edit adkconu_de=formonly.adkconu_desc type CHAR, tabIndex=356, noEntry;
+ButtonEdit adkplant=adk_file.adkplant, action=controlp, tabIndex=353, noEntry, image="zoom.png";
+Edit adkplant_d=formonly.adkplant_desc type CHAR, tabIndex=357, noEntry;
+Edit adkuser=adk_file.adkuser, tabIndex=25, noEntry;
+Edit adkmodu=adk_file.adkmodu, tabIndex=26, noEntry;
+Edit adkacti=adk_file.adkacti, tabIndex=27, noEntry, upShift;
+Edit adkoriu=adk_file.adkoriu, tabIndex=498, noEntry;
+Edit adkgrup=adk_file.adkgrup, tabIndex=28, noEntry;
+DateEdit adkdate=adk_file.adkdate, tabIndex=29, noEntry;
+Edit adkorig=adk_file.adkorig, tabIndex=499, noEntry;
+TextEdit adkud01=adk_file.adkud01, tabIndex=324, stretch=NONE;
+Edit adkud07=adk_file.adkud07, tabIndex=325;
+DateEdit adkud13=adk_file.adkud13, tabIndex=326;
+Edit adkud08=adk_file.adkud08, tabIndex=327;
+DateEdit adkud14=adk_file.adkud14, tabIndex=328;
+Edit adkud02=adk_file.adkud02, tabIndex=329;
+Edit adkud09=adk_file.adkud09, tabIndex=330;
+DateEdit adkud15=adk_file.adkud15, tabIndex=331;
+Edit adkud03=adk_file.adkud03, tabIndex=332;
+Edit adkud10=adk_file.adkud10, tabIndex=333;
+Edit adkud04=adk_file.adkud04, tabIndex=334;
+Edit adkud11=adk_file.adkud11, tabIndex=335;
+Edit adkud05=adk_file.adkud05, tabIndex=336;
+Edit adkud12=adk_file.adkud12, tabIndex=337;
+Edit adkud06=adk_file.adkud06, tabIndex=338;
+Edit adl02=adl_file.adl02, tabIndex=30, title="Line No", not null, required;
+ComboBox adl11=adl_file.adl11, tabIndex=31, title="Data Source", not null, required, items=(("1", "Delivery Advice"),("2", "Delivery Note No."),("3", "Delivery No."));
+ButtonEdit adl03=adl_file.adl03, action=controlp, tabIndex=32, title="Transfer-Out No", not null, required, image="zoom", comment="<^P>Qry Detail";
+ButtonEdit adl04=adl_file.adl04, action=controlp, tabIndex=33, title="Line No", not null, required, image="zoom", comment="<^P>Qry Detail";
+CheckBox ruc=formonly.ruc29 type VARCHAR, tabIndex=358, title="Delivery", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit oga04=formonly.oga04 type CHAR, tabIndex=34, title="Deliver", noEntry;
+Edit occ02=formonly.occ02 type CHAR, tabIndex=35, title="Abbreviation", noEntry;
+Edit oga044=formonly.oga044 type CHAR, tabIndex=36, title="Address code", noEntry;
+Edit ogb04=formonly.ogb04 type CHAR, tabIndex=37, title="Product No.", noEntry;
+Edit ogb06=formonly.ogb06 type CHAR, tabIndex=38, title="P/N", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=39, title="Spec", noEntry;
+ButtonEdit adl20=adl_file.adl20, action=controlp, tabIndex=40, title="Sales Unit", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit adl05=adl_file.adl05, tabIndex=41, title="Transfer-Out Qty";
+ButtonEdit adl15=adl_file.adl15, action=controlp, tabIndex=42, title="Par/Ref Unit", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit adl16=adl_file.adl16, tabIndex=43, title="Par/Ref rate";
+Edit adl17=adl_file.adl17, tabIndex=44, title="Par/Ref Qty";
+ButtonEdit adl12=adl_file.adl12, action=controlp, tabIndex=45, title="Chi/Sales Unit", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit adl13=adl_file.adl13, tabIndex=46, title="Chi/Sales rate";
+Edit adl14=adl_file.adl14, tabIndex=47, title="Chi/Sales Qty";
+ButtonEdit adl18=adl_file.adl18, action=controlp, tabIndex=48, title="V. Unit", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit adl19=adl_file.adl19, tabIndex=49, title="V. Quantity";
+Edit adl06=adl_file.adl06, tabIndex=50, title="Piece";
+DateEdit adl07=adl_file.adl07, tabIndex=51, title="Estimative Date";
+Edit adl08=adl_file.adl08, tabIndex=52, title="Time";
+DateEdit adl09=adl_file.adl09, tabIndex=53, title="Real Date", noEntry;
+Edit adl10=adl_file.adl10, tabIndex=54, title="Time", noEntry;
+TextEdit adlud01=adl_file.adlud01, tabIndex=322, title="adlud01", stretch=NONE;
+Edit adlud02=adl_file.adlud02, tabIndex=339, title="adlud02";
+Edit adlud03=adl_file.adlud03, tabIndex=340, title="adlud03";
+Edit adlud04=adl_file.adlud04, tabIndex=341, title="adlud04";
+Edit adlud05=adl_file.adlud05, tabIndex=342, title="adlud05";
+Edit adlud06=adl_file.adlud06, tabIndex=343, title="adlud06";
+Edit adlud07=adl_file.adlud07, tabIndex=344, title="adlud07";
+Edit adlud08=adl_file.adlud08, tabIndex=345, title="adlud08";
+Edit adlud09=adl_file.adlud09, tabIndex=346, title="adlud09";
+Edit adlud10=adl_file.adlud10, tabIndex=347, title="adlud10";
+Edit adlud11=adl_file.adlud11, tabIndex=348, title="adlud11";
+Edit adlud12=adl_file.adlud12, tabIndex=349, title="adlud12";
+Edit adlud13=adl_file.adlud13, tabIndex=350, title="adlud13";
+Edit adlud14=adl_file.adlud14, tabIndex=351, title="adlud14";
+Edit adlud15=adl_file.adlud15, tabIndex=352, title="adlud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=55, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=56, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_adl(adl_file.adl02,adl_file.adl11,adl_file.adl03,adl_file.adl04,formonly.ruc29,formonly.oga04,formonly.occ02,formonly.oga044,formonly.ogb04,formonly.ogb06,formonly.ima021,adl_file.adl20,adl_file.adl05,adl_file.adl15,adl_file.adl16,adl_file.adl17,adl_file.adl12,adl_file.adl13,adl_file.adl14,adl_file.adl18,adl_file.adl19,adl_file.adl06,adl_file.adl07,adl_file.adl08,adl_file.adl09,adl_file.adl10,adl_file.adlud01,adl_file.adlud02,adl_file.adlud03,adl_file.adlud04,adl_file.adlud05,adl_file.adlud06,adl_file.adlud07,adl_file.adlud08,adl_file.adlud09,adl_file.adlud10,adl_file.adlud11,adl_file.adlud12,adl_file.adlud13,adl_file.adlud14,adl_file.adlud15)
+SCREEN RECORD Undefined(adk_file.adk01,adk_file.adk02,adk_file.adk03,adk_file.adk04,adk_file.adk05,adk_file.adk06,adk_file.adk07,adk_file.adk16,adk_file.adk13,formonly.gen02,adk_file.adk14,formonly.gem02,adk_file.adk15,adk_file.adk08,adk_file.adk09,formonly.gen02a,adk_file.adk10,formonly.gen02b,adk_file.adk11,formonly.gen02c,adk_file.adk12,formonly.gen02d,formonly.imgmksg,adk_file.adkconf,adk_file.adkcond,adk_file.adkconu,formonly.adkconu_desc,adk_file.adkplant,formonly.adkplant_desc,adk_file.adkuser,adk_file.adkmodu,adk_file.adkacti,adk_file.adkoriu,adk_file.adkgrup,adk_file.adkdate,adk_file.adkorig,adk_file.adkud01,adk_file.adkud07,adk_file.adkud13,adk_file.adkud08,adk_file.adkud14,adk_file.adkud02,adk_file.adkud09,adk_file.adkud15,adk_file.adkud03,adk_file.adkud10,adk_file.adkud04,adk_file.adkud11,adk_file.adkud05,adk_file.adkud12,adk_file.adkud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

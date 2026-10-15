@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglp000")
+VBox VBox1
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+
+  Group Code                    [asm01         ]       Combined Year   [asm20         ]             Acct No.   [asm04         ]
+  Group Book No.                [asm00         ]       Combined Month  [asm21         ]             Acct Title [aag02                        ]
+  Merger of individual          [asm02         ]                                                    Year       [asm05         ]
+  Merger of individual Book No. [asm03         ]                                                    Currency   [asm11         ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table tb1
+{
+[asm06   |asm07          |asm08          |amt                 |asm09       |asm10       ]
+[asm06   |asm07          |asm08          |amt                 |asm09       |asm10       ]
+[asm06   |asm07          |asm08          |amt                 |asm09       |asm10       ]
+[asm06   |asm07          |asm08          |amt                 |asm09       |asm10       ]
+[asm06   |asm07          |asm08          |amt                 |asm09       |asm10       ]
+[asm06   |asm07          |asm08          |amt                 |asm09       |asm10       ]
+[asm06   |asm07          |asm08          |amt                 |asm09       |asm10       ]
+
+
+}
+END -- tb1
+Grid gr2
+{
+
+ Rows [idx ] / [cnt   ] --- item [cn2  ]
+
+}
+END -- gr2
+END -- VBox1
+END -- gglq011
+
+TABLES
+asm_file
+ATTRIBUTES
+ButtonEdit asm01=asm_file.asm01, action=controlp, tabIndex=1, image="zoom";
+Edit asm20=asm_file.asm20, tabIndex=18;
+ButtonEdit asm04=asm_file.asm04, action=controlp, tabIndex=5, image="zoom";
+Edit asm00=asm_file.asm00, tabIndex=2;
+Edit asm21=asm_file.asm21, tabIndex=19;
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=6;
+Edit asm02=asm_file.asm02, tabIndex=3;
+Edit asm05=asm_file.asm05, tabIndex=7;
+Edit asm03=asm_file.asm03, tabIndex=4;
+ButtonEdit asm11=asm_file.asm11, action=controlp, tabIndex=8, image="zoom";
+Edit asm06=asm_file.asm06, tabIndex=9, title="Period";
+Edit asm07=asm_file.asm07, tabIndex=10, title="Debit Amt";
+Edit asm08=asm_file.asm08, tabIndex=11, title="Credit Amount";
+Edit amt=formonly.amt type CHAR, tabIndex=17, title=%"Balance";
+Edit asm09=asm_file.asm09, tabIndex=12, title="Debit Rows";
+Edit asm10=asm_file.asm10, tabIndex=13, title="Credit Rows";
+Edit idx=formonly.idx type INTERVAL YEAR(2) TO YEAR, tabIndex=16;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=14;
+Edit cn2=formonly.cn2 type INTERVAL YEAR(2) TO YEAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asm(asm_file.asm06,asm_file.asm07,asm_file.asm08,formonly.amt,asm_file.asm09,asm_file.asm10)
+SCREEN RECORD Undefined(asm_file.asm01,asm_file.asm04,asm_file.asm00,formonly.aag02,asm_file.asm02,asm_file.asm05,asm_file.asm03,asm_file.asm11,formonly.idx,formonly.cnt,formonly.cn2,asm_file.asm20,asm_file.asm21)
+END -- INSTRUCTIONS
+

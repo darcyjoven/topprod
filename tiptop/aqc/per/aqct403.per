@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqct403.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqct403")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr197
+{
+ <G group01                                           > <G group02                         >
+  FQC Doc No.         [qcf01           ]                 Unit                [ima55     ]
+  W/O No.             [qcf02           ]                 QC Date             [qcf04       ]
+  Result              [qcf09     ][des1     ]            Q Sent              [qcf22     ]
+  Item No.            [qcf021                        ]   Q Pass              [qcf091    ]
+                      [ima02d                        ]   FQC Confirm         [qcf14     ]
+ <                                                    > <                                  >
+
+}
+END -- gr197
+END -- page01
+END -- folder01
+Table s_qde
+{
+[qde0|qde05                      |ima02                         |ima021                        |bmm05 |qde12|qde06  |qde13           |qde09     |qde10     |qde11   |qde08                          ]
+[qde0|qde05                      |ima02                         |ima021                        |bmm05 |qde12|qde06  |qde13           |qde09     |qde10     |qde11   |qde08                          ]
+[qde0|qde05                      |ima02                         |ima021                        |bmm05 |qde12|qde06  |qde13           |qde09     |qde10     |qde11   |qde08                          ]
+[qde0|qde05                      |ima02                         |ima021                        |bmm05 |qde12|qde06  |qde13           |qde09     |qde10     |qde11   |qde08                          ]
+[qde0|qde05                      |ima02                         |ima021                        |bmm05 |qde12|qde06  |qde13           |qde09     |qde10     |qde11   |qde08                          ]
+[qde0|qde05                      |ima02                         |ima021                        |bmm05 |qde12|qde06  |qde13           |qde09     |qde10     |qde11   |qde08                          ]
+[qde0|qde05                      |ima02                         |ima021                        |bmm05 |qde12|qde06  |qde13           |qde09     |qde10     |qde11   |qde08                          ]
+[qde0|qde05                      |ima02                         |ima021                        |bmm05 |qde12|qde06  |qde13           |qde09     |qde10     |qde11   |qde08                          ]
+[qde0|qde05                      |ima02                         |ima021                        |bmm05 |qde12|qde06  |qde13           |qde09     |qde10     |qde11   |qde08                          ]
+[qde0|qde05                      |ima02                         |ima021                        |bmm05 |qde12|qde06  |qde13           |qde09     |qde10     |qde11   |qde08                          ]
+
+}
+END -- s_qde
+Grid gr198
+{
+ ---------- Rows [cnt   ] / [cn2   ] ------------------------------------------ Sum                 [tot       ]
+
+}
+END -- gr198
+END -- VBox1
+END -- aqct403
+
+TABLES
+qde_file
+ATTRIBUTES
+Group group01:group01;
+Edit qcf01=formonly.qcf01 type CHAR, tabIndex=1, noEntry;
+Edit qcf02=formonly.qcf02 type CHAR, tabIndex=2, noEntry;
+Edit qcf09=formonly.qcf09 type CHAR, tabIndex=3, noEntry;
+Edit des1=formonly.des1 type CHAR, tabIndex=4, noEntry;
+Edit qcf021=formonly.qcf021 type CHAR, tabIndex=5, noEntry;
+Edit ima02d=formonly.ima02d type CHAR, tabIndex=6, noEntry;
+Group group02:group02;
+Edit ima55=formonly.ima55 type CHAR, tabIndex=7, noEntry;
+DateEdit qcf04=formonly.qcf04 type CHAR, tabIndex=8, noEntry;
+Edit qcf22=formonly.qcf22 type CHAR, tabIndex=9, noEntry;
+Edit qcf091=formonly.qcf091 type CHAR, tabIndex=10, noEntry;
+Edit qcf14=formonly.qcf14 type CHAR, tabIndex=11, noEntry, upShift;
+Edit qde0=qde_file.qde03, tabIndex=12, title="Ln#", not null, required;
+ButtonEdit qde05=qde_file.qde05, action=controlp, tabIndex=13, title="Corelation Product Itme No", not null, required, image="zoom", comment="<^P>Qry Prod.Structure or Co.Prod.Data";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=14, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=15, title="Specification", noEntry;
+Edit bmm05=formonly.bmm05 type CHAR, tabIndex=16, title="Valid", noEntry, color = yellow, upShift, comment="Co.Pro Item # valid?";
+Edit qde12=qde_file.qde12, tabIndex=17, title="Unit", noEntry;
+Edit qde06=qde_file.qde06, tabIndex=18, title="Qty", not null, required;
+Edit qde13=qde_file.qde13, tabIndex=19, title="for Prod.Conv.%", noEntry;
+ButtonEdit qde09=qde_file.qde09, action=controlp, tabIndex=20, title="W/H", image="zoom", comment="<^P>Qry Warehouse";
+ButtonEdit qde10=qde_file.qde10, action=controlp, tabIndex=21, title="Loc", image="zoom", comment="<^P>Qry Location";
+Edit qde11=qde_file.qde11, tabIndex=22, title="Lot No.";
+Edit qde08=qde_file.qde08, tabIndex=23, title="Memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+Edit tot=formonly.tot type CHAR, tabIndex=26, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qde(qde_file.qde03,qde_file.qde05,formonly.ima02,formonly.ima021,formonly.bmm05,qde_file.qde12,qde_file.qde06,qde_file.qde13,qde_file.qde09,qde_file.qde10,qde_file.qde11,qde_file.qde08)
+SCREEN RECORD Undefined(formonly.qcf01,formonly.qcf02,formonly.qcf09,formonly.des1,formonly.qcf021,formonly.ima02d,formonly.ima55,formonly.qcf04,formonly.qcf22,formonly.qcf091,formonly.qcf14,formonly.cnt,formonly.cn2,formonly.tot)
+END -- INSTRUCTIONS
+

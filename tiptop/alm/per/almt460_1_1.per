@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u53/tiptop/alm/42f/almt460_1_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="atmr4601_1_1")
+VBox vb3
+Folder pc4
+Page Page7(text=%"Main")
+Table s_lqg
+{
+[sel  |lqg01           |lqg02     |lqg03     |lqf02                         |lqf03                         |lqj03       |lqj04   |lqj05   |lqj06       |lqj07   |lqj08   ]
+[sel  |lqg01           |lqg02     |lqg03     |lqf02                         |lqf03                         |lqj03       |lqj04   |lqj05   |lqj06       |lqj07   |lqj08   ]
+[sel  |lqg01           |lqg02     |lqg03     |lqf02                         |lqf03                         |lqj03       |lqj04   |lqj05   |lqj06       |lqj07   |lqj08   ]
+[sel  |lqg01           |lqg02     |lqg03     |lqf02                         |lqf03                         |lqj03       |lqj04   |lqj05   |lqj06       |lqj07   |lqj08   ]
+[sel  |lqg01           |lqg02     |lqg03     |lqf02                         |lqf03                         |lqj03       |lqj04   |lqj05   |lqj06       |lqj07   |lqj08   ]
+
+}
+END -- s_lqg
+END -- Page7
+END -- pc4
+Grid gr8
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr8
+END -- vb3
+END -- almt460_1_1
+
+TABLES
+lqg_file
+ATTRIBUTES
+CheckBox sel=formonly.sel type CHAR, tabIndex=2, title="", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit lqg01=lqg_file.lqg01, tabIndex=3, title="Promotion No.", noEntry;
+ComboBox lqg02=formonly.lqg02 type CHAR, tabIndex=4, title="Promotion Type", noEntry, items=(("0", "Discount Fanquan"),("1", "Direct discount"),("2", "Fanquan back now"),("3", "Activities gifts"));
+Edit lqg03=formonly.lqg03 type CHAR, tabIndex=5, title="Promotional Theme No.", noEntry;
+Edit lqf02=formonly.lqf02 type CHAR, tabIndex=6, title="Promotional theme Name", noEntry;
+Edit lqf03=formonly.lqf03 type CHAR, tabIndex=7, title="Promotional Theme Description", noEntry;
+DateEdit lqj03=formonly.lqj03 type CHAR, tabIndex=8, title="Start Date", noEntry;
+Edit lqj04=formonly.lqj04 type CHAR, tabIndex=9, title="Start Hour", noEntry;
+Edit lqj05=formonly.lqj05 type CHAR, tabIndex=10, title="Start Minutes", noEntry;
+DateEdit lqj06=formonly.lqj06 type CHAR, tabIndex=11, title="End Date", noEntry;
+Edit lqj07=formonly.lqj07 type CHAR, tabIndex=12, title="End Hour", noEntry;
+Edit lqj08=formonly.lqj08 type CHAR, tabIndex=13, title="End Minutes", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lqg(formonly.sel,lqg_file.lqg01,formonly.lqg02,formonly.lqg03,formonly.lqf02,formonly.lqf03,formonly.lqj03,formonly.lqj04,formonly.lqj05,formonly.lqj06,formonly.lqj07,formonly.lqj08)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

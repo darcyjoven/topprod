@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqci104.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqci104")
+VBox vb3
+Folder pc6
+Page Page10(text=%"Page01")
+Table s_qca
+{
+[qdf01    |qdf02       |qdf03           |qdf04          ]
+[qdf01    |qdf02       |qdf03           |qdf04          ]
+[qdf01    |qdf02       |qdf03           |qdf04          ]
+[qdf01    |qdf02       |qdf03           |qdf04          ]
+[qdf01    |qdf02       |qdf03           |qdf04          ]
+[qdf01    |qdf02       |qdf03           |qdf04          ]
+[qdf01    |qdf02       |qdf03           |qdf04          ]
+[qdf01    |qdf02       |qdf03           |qdf04          ]
+[qdf01    |qdf02       |qdf03           |qdf04          ]
+[qdf01    |qdf02       |qdf03           |qdf04          ]
+
+}
+END -- s_qca
+END -- Page10
+END -- pc6
+Grid gr4
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4
+END -- vb3
+END -- aqci104
+
+TABLES
+qdf_file
+ATTRIBUTES
+ComboBox qdf01=qdf_file.qdf01, tabIndex=3, title="Level", not null, required, queryEditable, comment="Enter  1/2/3/4", items=(("1", "I"),("2", "II"),("3", "III"),("4", "IV"),("5", "V"),("6", "VI"),("7", "VII"),("R", "Reduced-Qty QC"),("T", "Strict QC"));
+Edit qdf02=qdf_file.qdf02, tabIndex=4, title="Sample Code", not null, required, upShift;
+Edit qdf03=qdf_file.qdf03, tabIndex=1, title="Initial Lot Qty", noEntry;
+Edit qdf04=qdf_file.qdf04, tabIndex=2, title="Ending Lot Qty", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qdf(qdf_file.qdf01,qdf_file.qdf02,qdf_file.qdf03,qdf_file.qdf04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp160.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmp160")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4081
+{
+ Taken Date              [pdate     ]
+ Vender No. QBE          [nmd08     ]
+ Vender Abbreviation QBE [nmd24     ]
+ Note No. QBE            [nmd02     ]
+ Drawing Date QBE        [nmd07     ]
+}
+END -- gr4081
+END -- page01
+END -- folder01
+Table s_nmd
+{
+[choic|nmd24_1             |nmd02b     |nmd04               |nmd07b       |nmd05    |nmd10           ]
+[choic|nmd24_1             |nmd02b     |nmd04               |nmd07b       |nmd05    |nmd10           ]
+[choic|nmd24_1             |nmd02b     |nmd04               |nmd07b       |nmd05    |nmd10           ]
+[choic|nmd24_1             |nmd02b     |nmd04               |nmd07b       |nmd05    |nmd10           ]
+[choic|nmd24_1             |nmd02b     |nmd04               |nmd07b       |nmd05    |nmd10           ]
+[choic|nmd24_1             |nmd02b     |nmd04               |nmd07b       |nmd05    |nmd10           ]
+[choic|nmd24_1             |nmd02b     |nmd04               |nmd07b       |nmd05    |nmd10           ]
+[choic|nmd24_1             |nmd02b     |nmd04               |nmd07b       |nmd05    |nmd10           ]
+[choic|nmd24_1             |nmd02b     |nmd04               |nmd07b       |nmd05    |nmd10           ]
+[choic|nmd24_1             |nmd02b     |nmd04               |nmd07b       |nmd05    |nmd10           ]
+
+}
+END -- s_nmd
+Grid gr4082
+{
+ [take_all    ] [withdraw_none]
+  ---------- Rows [cnt   ] / [cmt   ] ----------
+}
+END -- gr4082
+END -- VBox1
+END -- anmp160
+
+ATTRIBUTES
+DateEdit pdate=formonly.pdate type DATE, tabIndex=1;
+Edit nmd08=formonly.nmd08 type VARCHAR, tabIndex=2;
+Edit nmd24=formonly.nmd24 type VARCHAR, tabIndex=3;
+Edit nmd02=formonly.nmd02 type CHAR, tabIndex=4;
+DateEdit nmd07=formonly.nmd07 type DATE, tabIndex=5;
+CheckBox choic=formonly.choice type CHAR, tabIndex=6, title="Take", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nmd24_1=formonly.nmd24_1 type CHAR, tabIndex=7, title="Vender Abbreviation", noEntry;
+Edit nmd02b=formonly.nmd02b type CHAR, tabIndex=8, title="Note No.", noEntry;
+Edit nmd04=formonly.nmd04 type CHAR, tabIndex=9, title="Face Value", noEntry;
+DateEdit nmd07b=formonly.nmd07b type CHAR, tabIndex=10, title="Drawing Date", noEntry;
+DateEdit nmd05=formonly.nmd05 type CHAR, tabIndex=11, title="Due Date", noEntry;
+Edit nmd10=formonly.nmd10 type CHAR, tabIndex=12, title="Payment Slip#", noEntry;
+Button take_all:take_all, comment="Take All";
+Button withdraw_none:withdraw_none, comment="Withdraw None";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cmt=formonly.cmt type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmd(formonly.choice,formonly.nmd24_1,formonly.nmd02b,formonly.nmd04,formonly.nmd07b,formonly.nmd05,formonly.nmd10)
+SCREEN RECORD Undefined(formonly.pdate,formonly.nmd08,formonly.nmd24,formonly.nmd02,formonly.nmd07,formonly.cnt,formonly.cmt)
+END -- INSTRUCTIONS
+

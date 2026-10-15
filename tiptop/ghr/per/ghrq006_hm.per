@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrq006_hm.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox3
+Folder Folder1
+Page Page1(text=%"Main")
+VBox VBox1
+Group Group1(text=%"Group1")
+Grid Grid2(hidden)
+{
+ [label1    |hrbj02                         ]
+ [label15   |hrbj01                         ]        [label6    |hrat05    |hrat05_name         ]
+ [label2    |g_hrat01                       ]        [label7    |hrbj07    |hrbj07_name         ]
+ [label3    |hrbj03                         ]        [label9    |hrbj04    |hrbj04_name         ]
+ [label4    |hrat03    |hrat03_name         ]        [label24   |hrbj05                         ]
+ [label5    |hrat04    |hrat04_name         ]        [label8    |hrbj06    ]
+
+}
+END -- Grid2
+END -- Group1
+Group Group2(text=%"Group2")
+Grid Grid3
+{
+
+[label10   |hrbj08    |hrbj08_name         ]         [label27   |hrbj13                         ]
+[label11   |hrbj09    |hrbj09_name         ]         [label13   |hrbj14                         ]
+[label25   |hrbj10                         ]         [label14   |hrbj15    |hrbj15_name         ]
+[label12   |hrbj11                         ]         [label28   |hrbj16                         ]
+[label26   |hrbj12                         ]         [label44   |hrbj17    ]
+[label45   |hrbj18                                                                              ]
+           [                                                                                    ]
+
+
+}
+END -- Grid3
+END -- Group2
+END -- VBox1
+END -- Page1
+END -- Folder1
+Grid Grid5(hidden)
+{
+
+  [label16  ]  [idx  |lab|cnt  ]
+
+}
+END -- Grid5
+END -- VBox3
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"Label1";
+Edit hrbj02=formonly.hrbj02, tabIndex=30, noEntry;
+Label label15:Label15, text=%"Label15";
+ButtonEdit hrbj01=formonly.hrbj01, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom";
+Label label6:Label6, text=%"Label6";
+Edit hrat05=formonly.hrat05, tabIndex=8, noEntry;
+Edit hrat05_name=formonly.hrat05_name, tabIndex=9, noEntry;
+Label label2:Label2, text=%"Label2";
+ButtonEdit g_hrat01=formonly.g_hrat01, action=controlp, tabIndex=2, image="zoom";
+Label label7:Label7, text=%"Label7";
+ButtonEdit hrbj07=formonly.hrbj07, action=controlp, tabIndex=10, not null, required, image="zoom";
+Edit hrbj07_name=formonly.hrbj07_name, tabIndex=11;
+Label label3:Label3, text=%"Label3";
+Edit hrbj03=formonly.hrbj03, tabIndex=3, not null, required;
+Label label9:Label9, text=%"Label9";
+ButtonEdit hrbj04=formonly.hrbj04, action=controlp, tabIndex=13, not null, required, image="zoom";
+Edit hrbj04_name=formonly.hrbj04_name, tabIndex=14;
+Label label4:Label4, text=%"Label4";
+Edit hrat03=formonly.hrat03, tabIndex=4, noEntry;
+Edit hrat03_name=formonly.hrat03_name, tabIndex=5, noEntry;
+Label label24:Label24, text=%"Label24";
+Edit hrbj05=formonly.hrbj05, tabIndex=15, not null, required;
+Label label5:Label5, text=%"Label5";
+Edit hrat04=formonly.hrat04, tabIndex=6, noEntry;
+Edit hrat04_name=formonly.hrat04_name, tabIndex=7, noEntry;
+Label label8:Label8, text=%"Label8";
+DateEdit hrbj06=formonly.hrbj06, tabIndex=12, not null, required;
+Label label10:Label10, text=%"Label10", hidden;
+ButtonEdit hrbj08=formonly.hrbj08, action=controlp, tabIndex=16, image="zoom", hidden;
+Edit hrbj08_name=formonly.hrbj08_name, tabIndex=17, noEntry, hidden;
+Label label27:Label27, text=%"Label27", hidden;
+Edit hrbj13=formonly.hrbj13, tabIndex=23, hidden;
+Label label11:Label11, text=%"Label11", hidden;
+ButtonEdit hrbj09=formonly.hrbj09, action=controlp, tabIndex=18, image="zoom", hidden;
+Edit hrbj09_name=formonly.hrbj09_name, tabIndex=19, noEntry, hidden;
+Label label13:Label13, text=%"Label13", hidden;
+Edit hrbj14=formonly.hrbj14 type DATE, tabIndex=24, hidden;
+Label label25:Label25, text=%"Label25", hidden;
+Edit hrbj10=formonly.hrbj10, tabIndex=20, hidden;
+Label label14:Label14, text=%"Label14", hidden;
+ButtonEdit hrbj15=formonly.hrbj15 type DATE, action=controlp, tabIndex=25, image="zoom", hidden;
+Edit hrbj15_name=formonly.hrbj15_name, tabIndex=26, hidden;
+Label label12:Label12, text=%"Label12", hidden;
+Edit hrbj11=formonly.hrbj11, tabIndex=21, hidden;
+Label label28:Label28, text=%"Label28", hidden;
+Edit hrbj16=formonly.hrbj16, tabIndex=27, hidden;
+Label label26:Label26, text=%"Label26", hidden;
+Edit hrbj12=formonly.hrbj12, tabIndex=22, hidden;
+Label label44:Label44, text=%"Label44";
+DateEdit hrbj17=formonly.hrbj17 type DATE, tabIndex=31, not null, required;
+Label label45:Label45, text=%"Label45", hidden;
+TextEdit hrbj18=formonly.hrbj18 type VARCHAR, tabIndex=32, hidden;
+Label label16:Label16, text=%"Label16";
+Edit idx=formonly.idx, tabIndex=28;
+Label lab:labe, text=%"/";
+Edit cnt=formonly.cnt, tabIndex=29;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_hrat01,formonly.hrbj03,formonly.hrat03,formonly.hrat04,formonly.hrat05,formonly.hrbj07,formonly.hrbj06,formonly.hrbj08,formonly.hrbj09,formonly.hrbj11,formonly.hrbj14,formonly.hrbj15,formonly.hrbj01,formonly.idx,formonly.cnt,formonly.hrbj08_name,formonly.hrbj09_name,formonly.hrat03_name,formonly.hrat04_name,formonly.hrat05_name,formonly.hrbj07_name,formonly.hrbj04,formonly.hrbj04_name,formonly.hrbj05,formonly.hrbj10,formonly.hrbj12,formonly.hrbj13,formonly.hrbj16,formonly.hrbj15_name,formonly.hrbj02,formonly.hrbj17,formonly.hrbj18)
+END -- INSTRUCTIONS
+

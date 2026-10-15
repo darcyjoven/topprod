@@ -1,0 +1,187 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gis/42f/gist200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi100")
+Folder pc10
+Page page01(action=main_pg, text="Main")
+HBox hb16
+VBox vb9
+Grid gr39
+{
+ <G group012                                                                                                 >
+  [open_card         ]  [get               ]  [generate_invoice  ]   Type No.     [type                  ]
+                                                                     Status No.   [stat                  ]
+  [invalid_invoice   ]  [print_invoice     ]  [close_card        ]   Invoice No.  [inv                   ]
+ <                                                                                                           >
+
+
+
+}
+END -- gr39
+HBox hb15
+Grid gr14
+{
+ <G gb19                                           >
+
+  [att1                                         ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+ <                                                 >
+
+
+
+
+}
+END -- gr14
+Grid gr14_1
+{
+ <G gb19_1                                         >
+
+  [att2                                         ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+  [                                             ]
+
+                                   [exist_system]
+ <                                                 >
+
+
+}
+END -- gr14_1
+END -- hb15
+END -- vb9
+Grid gr17
+{
+ [att3                                         ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+
+ [att4                                         ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+
+ [att5                                         ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+ [                                             ]
+
+
+
+
+
+}
+END -- gr17
+END -- hb16
+END -- page01
+END -- pc10
+END -- aimi100
+
+ATTRIBUTES
+Group group012:group012, text="Interface Method";
+Button open_card:open_card, text="Open JS Card";
+Button get:get, text="Get Information";
+Button generate_invoice:generate_invoice, text="Generate Invoice";
+Edit type=formonly.type type DECIMAL, tabIndex=13;
+Edit stat=formonly.stat type DECIMAL, tabIndex=13;
+Button invalid_invoice:invalid_invoice, text="Blank Invoice Out";
+Button print_invoice:print_invoice, text="Print Invoice";
+Button close_card:close_card, text="Close JS Card";
+Edit inv=formonly.inv type DECIMAL, tabIndex=13;
+Group gb19:gb19, text="Interface Attribute";
+TextEdit att1=formonly.att1 type CHAR, tabIndex=14;
+Group gb19_1:gb19_1, text="Invoice Information";
+TextEdit att2=formonly.att2 type CHAR, tabIndex=15;
+Button exist_system:exist_system, text="Exit";
+TextEdit att3=formonly.att3 type CHAR, tabIndex=16;
+TextEdit att4=formonly.att4 type CHAR, tabIndex=17;
+TextEdit att5=formonly.att5 type CHAR, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.type,formonly.stat,formonly.inv,formonly.att1,formonly.att2,formonly.att3,formonly.att4,formonly.att5)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/cxmq002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Table Table1
+{
+[oga02   |oga01   |oga032  |ogb04   |ogb06   |ogb05       |ogb12      |ogb31   |ogb13   |sum1    |tran_1     |tran_no |occ02   |oga24   |oeb13   |diference1 |ogapost |oga23   |ogbud02 ]
+[oga02   |oga01   |oga032  |ogb04   |ogb06   |ogb05       |ogb12      |ogb31   |ogb13   |sum1    |tran_1     |tran_no |occ02   |oga24   |oeb13   |diference1 |ogapost |oga23   |ogbud02 ]
+[oga02   |oga01   |oga032  |ogb04   |ogb06   |ogb05       |ogb12      |ogb31   |ogb13   |sum1    |tran_1     |tran_no |occ02   |oga24   |oeb13   |diference1 |ogapost |oga23   |ogbud02 ]
+[oga02   |oga01   |oga032  |ogb04   |ogb06   |ogb05       |ogb12      |ogb31   |ogb13   |sum1    |tran_1     |tran_no |occ02   |oga24   |oeb13   |diference1 |ogapost |oga23   |ogbud02 ]
+[oga02   |oga01   |oga032  |ogb04   |ogb06   |ogb05       |ogb12      |ogb31   |ogb13   |sum1    |tran_1     |tran_no |occ02   |oga24   |oeb13   |diference1 |ogapost |oga23   |ogbud02 ]
+
+
+
+
+
+
+
+
+}
+END -- Table1
+Grid gr3162
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+
+
+
+
+
+}
+END -- gr3162
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+DateEdit oga02=formonly.oga02, tabIndex=1, title=%"oga02";
+ButtonEdit oga01=formonly.oga01, action=controlp, tabIndex=2, title=%"oga01", image="zoom";
+Edit oga032=formonly.oga032, tabIndex=3, title=%"oga032";
+Edit ogb04=formonly.ogb04, tabIndex=4, title=%"ogb04";
+Edit ogb06=formonly.ogb06, tabIndex=5, title=%"ogb06";
+Edit ogb05=formonly.ogb05, tabIndex=6, title=%"ogb05";
+Edit ogb12=formonly.ogb12, tabIndex=7, title=%"ogb12";
+Edit ogb31=formonly.ogb31, tabIndex=8, title=%"ogb31";
+Edit ogb13=formonly.ogb13, tabIndex=9, title=%"ogb13";
+Edit sum1=formonly.sum1, tabIndex=10, title=%"sum1";
+Edit tran_1=formonly.tran_1, tabIndex=11, title=%"Transport ";
+Edit tran_no=formonly.tran_no, tabIndex=14, title=%"Transport No";
+Edit occ02=formonly.occ02, tabIndex=15, title=%"occ02";
+Edit oga24=formonly.oga24, tabIndex=16, title=%"oga24";
+Edit oeb13=formonly.oeb13, tabIndex=17, title=%"oeb13";
+Edit diference1=formonly.diference1, tabIndex=18, title=%"diference1";
+CheckBox ogapost=formonly.ogapost, tabIndex=19, title=%"ogapost", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit oga23=formonly.oga23, tabIndex=20, title=%"oga23";
+Edit ogbud02=formonly.ogbud02 type DECIMAL, tabIndex=21, title=%"ogbud02";
+Edit cnt=formonly.cnt type CHAR, tabIndex=12;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cxm(formonly.oga02,formonly.oga01,formonly.oga032,formonly.ogb04,formonly.ogb06,formonly.ogb05,formonly.ogb12,formonly.ogb31,formonly.ogb13,formonly.sum1,formonly.tran_1,formonly.tran_no,formonly.occ02,formonly.oga24,formonly.oeb13,formonly.diference1,formonly.ogapost,formonly.oga23,formonly.ogbud02)
+SCREEN RECORD Undefined(formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

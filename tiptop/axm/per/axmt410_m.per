@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt410_m.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt410_m")
+VBox vbox1
+Folder pc658
+Page page01(text="Page01")
+Grid gr1993
+{
+ Type     [oeaa02        ]
+ Amount   [p_amt         ]
+}
+END -- gr1993
+END -- page01
+END -- pc658
+Table s_oeaa
+{
+[oeaa03               |oeaa04     |oag02               |oeaa05     |oeaa06               |oeaa07               |oeaa08               ]
+[oeaa03               |oeaa04     |oag02               |oeaa05     |oeaa06               |oeaa07               |oeaa08               ]
+[oeaa03               |oeaa04     |oag02               |oeaa05     |oeaa06               |oeaa07               |oeaa08               ]
+[oeaa03               |oeaa04     |oag02               |oeaa05     |oeaa06               |oeaa07               |oeaa08               ]
+[oeaa03               |oeaa04     |oag02               |oeaa05     |oeaa06               |oeaa07               |oeaa08               ]
+[oeaa03               |oeaa04     |oag02               |oeaa05     |oeaa06               |oeaa07               |oeaa08               ]
+[oeaa03               |oeaa04     |oag02               |oeaa05     |oeaa06               |oeaa07               |oeaa08               ]
+[oeaa03               |oeaa04     |oag02               |oeaa05     |oeaa06               |oeaa07               |oeaa08               ]
+[oeaa03               |oeaa04     |oag02               |oeaa05     |oeaa06               |oeaa07               |oeaa08               ]
+[oeaa03               |oeaa04     |oag02               |oeaa05     |oeaa06               |oeaa07               |oeaa08               ]
+
+}
+END -- s_oeaa
+Grid gr2738
+{
+ ----------Rows [cn2   ] ----------
+
+
+
+}
+END -- gr2738
+END -- vbox1
+END -- axmt410_m
+
+TABLES
+oeaa_file
+ATTRIBUTES
+ComboBox oeaa02=formonly.oeaa02 type VARCHAR, tabIndex=1, not null, required, queryEditable, items=(("1", %"Deposit"),("2", %"Balance"));
+Edit p_amt=formonly.p_amt type CHAR, tabIndex=2, noEntry;
+Edit oeaa03=oeaa_file.oeaa03, tabIndex=2, title="Ln#", not null, required;
+ButtonEdit oeaa04=oeaa_file.oeaa04, action=controlp, tabIndex=3, title="Collection Terms", not null, required, image="zoom", comment="Qry Collection Terms No. ";
+Edit oag02=formonly.oag02 type CHAR, tabIndex=4, title="Description", noEntry;
+DateEdit oeaa05=oeaa_file.oeaa05, tabIndex=5, title="Rec. Date", not null, required;
+DateEdit oeaa06=oeaa_file.oeaa06, tabIndex=6, title="Note Date", not null, required;
+Edit oeaa07=oeaa_file.oeaa07, tabIndex=7, title="Exchange Rate", noEntry;
+Edit oeaa08=oeaa_file.oeaa08, tabIndex=8, title="Ori Curr Rece W-Tax", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oeaa(oeaa_file.oeaa03,oeaa_file.oeaa04,formonly.oag02,oeaa_file.oeaa05,oeaa_file.oeaa06,oeaa_file.oeaa07,oeaa_file.oeaa08)
+SCREEN RECORD Undefined(formonly.oeaa02,formonly.p_amt,formonly.cn2)
+END -- INSTRUCTIONS
+

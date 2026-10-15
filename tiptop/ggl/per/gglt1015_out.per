@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt1015_out.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglt1015_out")
+Folder pc2
+Page page01(text="Main")
+Grid gr3
+{
+ <G group01                                                   >
+  Year                   [asx01          ]
+  Period                 [asx02          ]
+  Group No.              [asx03          ]
+  Parent Co.             [asx031         ]
+  Ln#                    [asx04          ]
+  Transaction Property   [asx05          ]
+  Transaction Type       [asx06          ]
+  Source Company         [asx07          ]
+  Transaction Company    [asx08          ]
+ <                                                            >
+ <G group02                                                   >
+  Current Year/Period    [yy             ]/[mm             ]
+
+
+ <                                                            >
+
+}
+END -- gr3
+END -- page01
+END -- pc2
+END -- gglt1015_out
+
+TABLES
+asx_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit asx01=asx_file.asx01, tabIndex=1;
+Edit asx02=asx_file.asx02, tabIndex=2;
+ButtonEdit asx03=asx_file.asx03, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit asx031=asx_file.asx031, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Parent Company";
+Edit asx04=asx_file.asx04, tabIndex=5;
+ComboBox asx05=asx_file.asx05, tabIndex=6, items=(("1", "Downstream"),("2", "Backflow"),("3", "Sideflow"),("4", "Other"));
+ComboBox asx06=asx_file.asx06, tabIndex=7, items=(("1", "Inventory"),("2", "Tangible Asset(Territory)"),("3", "Tangible Asset"),("4", "Intangible Asset"),("5", "Other"));
+ButtonEdit asx07=asx_file.asx07, action=controlp, tabIndex=8, image="zoom";
+ButtonEdit asx08=asx_file.asx08, action=controlp, tabIndex=9, image="zoom";
+Group group02:group02, text="INPUT";
+Edit yy=formonly.yy type CHAR, tabIndex=10;
+Edit mm=formonly.mm type CHAR, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(asx_file.asx01,asx_file.asx02,asx_file.asx03,asx_file.asx031,asx_file.asx04,asx_file.asx05,asx_file.asx06,asx_file.asx07,asx_file.asx08,formonly.yy,formonly.mm)
+END -- INSTRUCTIONS
+

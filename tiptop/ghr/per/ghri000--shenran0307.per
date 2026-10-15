@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri000--shenran0307.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ghri000")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+  <G group1                                                                                              >
+   hraa01[hraa01    ]                                                      hraa02[hraa02    ]
+   hraa12[hraa12                             ]
+   hraa03[hraa03                             ]
+   hraa10[hraa10    |hraa10_1  ]                                           hraa05[hraa05    |hraa05_1  ]
+  [hraa07          ]                                                       hraa04[hraa04    ]
+   hraa15[hraa15    ]                                                      hraa18[hraa18    |hraa18_1  ]
+   hraa31[hraa31    |hraa31_1  ]                                           hraa32[hraa32    ]
+  [hraa16          ]                                                       hraa33[hraa33    ]
+  [hraa] [hraa08    ]                                                     [hraa09|hraa06    ]
+         [update1   ]                                                            [update2   ]
+
+  <                                                                                                      >
+  <G group2                                                                                              >
+   hraa19[hraa19    ]                                                                 hraa20[hraa20    ]
+   hraa21[hraa21    ]                                                                 hraa22[hraa22    ]
+   hraa23[hraa23    ]                                                                 hraa24[hraa24    ]
+   hraa25[hraa25    ]                                                                 hraa26[hraa26    ]
+  <                                                                                                      >
+  <G group3                                                                                              >
+   [hraa00                                                                                              ]
+   [                                                                                                    ]
+   [                                                                                                    ]
+   [                                                                                                    ]
+  <                                                                                                      >
+
+}
+END -- Grid1
+END -- page01
+Page info(text="Info")
+Grid Grid2
+{
+ Record Owner        [hraauser  ] Last Modified by    [hraamodu  ] Data Valid Code     [hraaacti  ]
+ Department          [hraagrup  ] Create/Modify Date  [hraadate  ]
+ Record Orig.        [hraaoriu  ]
+ Dept Orig.          [hraaorig  ]
+}
+END -- Grid2
+END -- info
+END -- Folder1
+Grid Grid3
+{
+ ---------- Rows [idx   ]/[cnt   ] ----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- ghri000
+
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+Edit hraa01=formonly.hraa01, tabIndex=496, not null, required;
+Edit hraa02=formonly.hraa02, tabIndex=497, not null, required;
+Edit hraa12=formonly.hraa12, tabIndex=498, not null, required;
+Edit hraa03=formonly.hraa03, tabIndex=499;
+ButtonEdit hraa10=formonly.hraa10 type VARCHAR, action=controlp, tabIndex=500, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Edit hraa10_1=formonly.hraa10_1, tabIndex=521;
+ButtonEdit hraa05=formonly.hraa05 type VARCHAR, action=controlp, tabIndex=501, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Edit hraa05_1=formonly.hraa05_1, tabIndex=523;
+CheckBox hraa07=formonly.hraa07, tabIndex=502, text=%"hraa07", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit hraa04=formonly.hraa04, tabIndex=503;
+ComboBox hraa15=formonly.hraa15, tabIndex=504, items=(("0", "0"),("1", "1"),("2", "2"));
+ButtonEdit hraa18=formonly.hraa18 type VARCHAR, action=controlp, tabIndex=518, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Edit hraa18_1=formonly.hraa18_1, tabIndex=524;
+ButtonEdit hraa31=formonly.hraa31 type VARCHAR, action=controlp, tabIndex=506, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Edit hraa31_1=formonly.hraa31_1, tabIndex=522;
+Edit hraa32=formonly.hraa32 type VARCHAR, tabIndex=505, noEntry;
+CheckBox hraa16=formonly.hraa16, tabIndex=507, text=%"hraa16", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit hraa33=formonly.hraa33 type VARCHAR, tabIndex=519;
+Label hraa:hraa08, text=%"hraa08";
+IMAGE hraa08=formonly.hraa08 type CHAR, sizePolicy=dynamic, width = 150 pixels, height = 70 pixels;
+Label hraa09:hraa09, text=%"hraa09";
+IMAGE hraa06=formonly.hraa09 type CHAR, sizePolicy=dynamic, width = 150 pixels, height = 70 pixels;
+Button update1:update1, tabIndex=516, text=%"update1";
+Button update2:update2, tabIndex=517, text=%"update2";
+Group group2:Group2, text=%"Group2";
+Edit hraa19=formonly.hraa19, tabIndex=508;
+Edit hraa20=formonly.hraa20, tabIndex=509;
+Edit hraa21=formonly.hraa21, tabIndex=510;
+Edit hraa22=formonly.hraa22, tabIndex=511;
+Edit hraa23=formonly.hraa23, tabIndex=512;
+Edit hraa24=formonly.hraa24, tabIndex=514;
+Edit hraa25=formonly.hraa25, tabIndex=513;
+Edit hraa26=formonly.hraa26, tabIndex=515;
+Group group3:Group3, text=%"Group3";
+TextEdit hraa00=formonly.hraa06, tabIndex=520;
+Edit hraauser=formonly.hraauser type VARCHAR, tabIndex=1, noEntry;
+Edit hraamodu=formonly.hraamodu type VARCHAR, tabIndex=2, noEntry;
+Edit hraaacti=formonly.hraaacti type VARCHAR, tabIndex=3, noEntry, upShift;
+Edit hraagrup=formonly.hraagrup type VARCHAR, tabIndex=4, noEntry;
+DateEdit hraadate=formonly.hraadate type DATE, tabIndex=5, noEntry;
+Edit hraaoriu=formonly.hraaoriu type VARCHAR, tabIndex=494, noEntry;
+Edit hraaorig=formonly.hraaorig type VARCHAR, tabIndex=495, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=6, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hraauser,formonly.hraamodu,formonly.hraaacti,formonly.hraagrup,formonly.hraadate,formonly.hraaoriu,formonly.hraaorig,formonly.idx,formonly.cnt,formonly.hraa01,formonly.hraa02,formonly.hraa12,formonly.hraa03,formonly.hraa10,formonly.hraa05,formonly.hraa07,formonly.hraa04,formonly.hraa15,formonly.hraa32,formonly.hraa31,formonly.hraa16,formonly.hraa19,formonly.hraa20,formonly.hraa21,formonly.hraa22,formonly.hraa23,formonly.hraa25,formonly.hraa24,formonly.hraa26,formonly.hraa08,formonly.hraa09,formonly.hraa18,formonly.hraa33,formonly.hraa06,formonly.hraa10_1,formonly.hraa31_1,formonly.hraa05_1,formonly.hraa18_1)
+END -- INSTRUCTIONS
+

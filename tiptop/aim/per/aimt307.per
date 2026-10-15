@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt307.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt307")
+VBox VBox1
+Folder pc593
+Page page01(text="Main")
+Grid gr3415
+{
+  Inventory Taking Date[img14       ]
+  Adjustment Note No.  [tno                     ]
+  Adjust Account       [credit                  ]
+  Cost Center          [dept      ][gem02     ]
+
+ <G group01                                                                                       >
+  Item#               [img01                         ] Inventory Unit      [img09     ]
+  Part Name           [ima02                         ] Inventory Qty       [img10               ]
+  Ver                 [ima05     ]                     Inventory Qty       [img08               ]
+  Src Cd              [ima08     ]                     Profit/Loss         [diff                ]
+  Latest Inv Taking   [ima30       ]                   reason code         [reason              ]
+  Warehouse #         [img02     ]                     explain             [azf03               ]
+  Location            [img03     ]
+  Lot#                [img04                   ]
+  Inventory Class     [img19     ]
+  Look Code           [img36     ]
+  W/H Mag.            [desc                     ]
+ <                                                                                                >
+
+}
+END -- gr3415
+END -- page01
+END -- pc593
+END -- VBox1
+END -- aimt307
+
+TABLES
+img_file,
+azf_file
+ATTRIBUTES
+DateEdit img14=img_file.img14, tabIndex=1, not null, required;
+ButtonEdit tno=formonly.tno type VARCHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Document Property";
+ButtonEdit credit=formonly.credit type CHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit dept=formonly.dept type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=5, noEntry;
+Group group01:group01;
+ButtonEdit img01=img_file.img01, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Item No.";
+ButtonEdit img09=img_file.img09, action=controlp, tabIndex=7, noEntry, image="zoom", comment="<^P>Qry Unit    ";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=8, noEntry;
+Edit img10=img_file.img10, tabIndex=9, noEntry, not null, required;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=10, noEntry;
+Edit img08=img_file.img08, tabIndex=11;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=12, noEntry;
+Edit diff=formonly.diff type CHAR, tabIndex=13, noEntry;
+DateEdit ima30=formonly.ima30 type DATE, tabIndex=14, noEntry;
+ButtonEdit reason=formonly.reason type CHAR, action=controlp, tabIndex=21, image="zoom";
+ButtonEdit img02=img_file.img02, action=controlp, tabIndex=15, not null, required, image="zoom", comment="<^P>Qry Warehouse, <^Y>Create Warehouse";
+Edit azf03=azf_file.azf03, tabIndex=22, noEntry;
+ButtonEdit img03=formonly.img03 type VARCHAR, action=controlp, tabIndex=16, image="zoom", comment="<^P>Qry Location <^I>Qry Level/Look     <^Y>Create Location";
+ButtonEdit img04=formonly.img04 type VARCHAR, action=controlp, tabIndex=17, image="zoom", comment="<^P>Qry Lot No.  <^I>Qry Level/Look    ";
+Edit img19=formonly.img19 type CHAR, tabIndex=18, noEntry;
+Edit img36=formonly.img36 type CHAR, tabIndex=19, noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(img_file.img14,formonly.tno,formonly.credit,formonly.dept,formonly.gem02,img_file.img01,img_file.img09,formonly.ima02,img_file.img10,formonly.ima05,img_file.img08,formonly.ima08,formonly.diff,formonly.ima30,img_file.img02,formonly.img03,formonly.img04,formonly.img19,formonly.img36,formonly.desc,formonly.reason,azf_file.azf03)
+END -- INSTRUCTIONS
+

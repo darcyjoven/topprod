@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"aglq800")
+VBox VBox1
+Grid grid_tree
+{
+ <T s_aba                                      ><TREE tree1            >
+ [aba01     |aba02     |aba06     |aba20     ]  [name              ]
+ [aba01     |aba02     |aba06     |aba20     ]  [name              ]
+ [aba01     |aba02     |aba06     |aba20     ]  [name              ]
+ [aba01     |aba02     |aba06     |aba20     ]  [name              ]
+ [aba01     |aba02     |aba06     |aba20     ]  [name              ]
+
+
+ <                                             ><                      >
+}
+END -- grid_tree
+Grid Grid1
+{
+
+ ----------[labe|cnt   ]----------
+
+}
+END -- Grid1
+END -- VBox1
+END -- aglq800
+
+TABLES
+aba_file
+ATTRIBUTES
+Table s_aba:s_aba;
+ButtonEdit aba01=aba_file.aba01, action=controlp, tabIndex=1, title=%"Voucher NO.", not null, image="zoom.png", scroll;
+DateEdit aba02=aba_file.aba02, tabIndex=1, title=%"Voucher Date";
+Edit aba06=aba_file.aba06, tabIndex=1, title=%"Source Code", not null;
+ComboBox aba20=aba_file.aba20, tabIndex=1, title=%"Status Code", noEntry, not null, required, items=(("0", "Open"),("1", "Approved"),("S", "Approving"),("R", "Approving Return"),("W", "Cancel"));
+Tree tree1:Tree1, parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file";
+LABEL name=formonly.name type CHAR;
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.path type CHAR;
+Phantom formonly.treekey1 type CHAR;
+Phantom formonly.treekey2 type CHAR;
+Label labe:Label1, text=%"Rows";
+Edit cnt=formonly.cnt type CHAR, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aba(aba_file.aba01,aba_file.aba02,aba_file.aba06,aba_file.aba20)
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.path,formonly.treekey1,formonly.treekey2)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

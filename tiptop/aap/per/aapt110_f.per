@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_f.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapt110_f")
+Grid gr356
+{
+ <G group01                     > <G group02                   >
+ [ans1                        ]   [ans                        ]
+ <                              > <                            >
+ <G group03                              > <G group04                            >
+  F.C B-Tax Amt  [apa31f              ]     H.C B-Tax Amt  [apa31               ]
+  F.C Tax        [apa32f              ]     H.C Tax        [apa32               ]
+  F.C Tot Amt.   [apa34f              ]     H.C Totl Amt   [apa34               ]
+                                            Tax. Principal [tot28               ]
+
+ <                                       > <                                     >
+
+}
+END -- gr356
+END -- aapt110_f
+
+ATTRIBUTES
+Group group01:group01;
+CheckBox ans1=formonly.ans1 type CHAR, tabIndex=1, text="Update Original Currency Acct", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02;
+CheckBox ans=formonly.ans type CHAR, tabIndex=2, text="Update Home Currency Acct", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03;
+Edit apa31f=formonly.apa31f type CHAR, tabIndex=3;
+Edit apa32f=formonly.apa32f type CHAR, tabIndex=4;
+Edit apa34f=formonly.apa34f type CHAR, tabIndex=5, noEntry;
+Group group04:group04;
+Edit apa31=formonly.apa31 type CHAR, tabIndex=6;
+Edit apa32=formonly.apa32 type CHAR, tabIndex=7;
+Edit apa34=formonly.apa34 type CHAR, tabIndex=8, noEntry;
+Edit tot28=formonly.tot28 type CHAR, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ans1,formonly.ans,formonly.apa31f,formonly.apa32f,formonly.apa34f,formonly.apa31,formonly.apa32,formonly.apa34,formonly.tot28)
+END -- INSTRUCTIONS
+

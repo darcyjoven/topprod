@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_icdin_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"s_icdin_1")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                    >
+  From    [numf                ]
+  To      [numt                ]
+
+ <                                             >
+
+}
+END -- gr1
+END -- VBox1
+END -- s_icdin_1
+
+ATTRIBUTES
+Group group01:group01, text="From/To Mark";
+Edit numf=formonly.numf type INTEGER, tabIndex=1;
+Edit numt=formonly.numt type INTEGER, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.numt,formonly.numf)
+END -- INSTRUCTIONS
+

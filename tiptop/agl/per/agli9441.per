@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli9441.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli9441")
+VBox vb13
+Folder pc475
+Page page01(text="Main")
+HBox hb3
+Grid gr2468
+{
+ Group No.         [giyy06              ]
+ Company No.       [giyy07              ]
+ Plant Name        [axz02               ]
+ Logistics code    [axz03               ]
+ Book No.          [axz05               ]
+
+}
+END -- gr2468
+Grid gr8
+{
+ year        [giyy04    ]
+ peri        [giyy05    ]
+
+
+
+
+}
+END -- gr8
+END -- hb3
+END -- page01
+END -- pc475
+Table s_gim
+{
+[giyy0|giyy02                                                 |giyy03              ]
+[giyy0|giyy02                                                 |giyy03              ]
+[giyy0|giyy02                                                 |giyy03              ]
+[giyy0|giyy02                                                 |giyy03              ]
+[giyy0|giyy02                                                 |giyy03              ]
+[giyy0|giyy02                                                 |giyy03              ]
+
+}
+END -- s_gim
+Grid gr2464
+{
+
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+}
+END -- gr2464
+END -- vb13
+END -- agli9441
+
+TABLES
+giyy_file
+ATTRIBUTES
+ButtonEdit giyy06=giyy_file.giyy06, action=controlp, tabIndex=12, not null, required, image="zoom";
+ButtonEdit giyy07=giyy_file.giyy07, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P> Query";
+Edit axz02=formonly.axz02 type CHAR, tabIndex=13, noEntry;
+Edit axz03=formonly.axz03 type CHAR, tabIndex=14, noEntry;
+Edit axz05=formonly.axz05 type CHAR, tabIndex=15;
+Edit giyy04=formonly.giyy04 type CHAR, tabIndex=6, not null, required;
+Edit giyy05=formonly.giyy05 type CHAR, tabIndex=7, not null, required;
+Edit giyy0=giyy_file.giyy01, tabIndex=8, title="Seq.", not null, required;
+Edit giyy02=giyy_file.giyy02, tabIndex=9, title="Description";
+Edit giyy03=giyy_file.giyy03, tabIndex=10, title="Amount";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_giyy(giyy_file.giyy01,giyy_file.giyy02,giyy_file.giyy03)
+SCREEN RECORD Undefined(giyy_file.giyy06,giyy_file.giyy07,formonly.axz02,formonly.axz03,formonly.axz05,formonly.giyy04,formonly.giyy05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_idc.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Inventory Detail")
+Grid gr3768
+{
+ <T s_idc                                                                             >
+ [check|idc02      |idc03      |idc04                    |idc07|idc08     |idc12     ]
+ [check|idc02      |idc03      |idc04                    |idc07|idc08     |idc12     ]
+ [check|idc02      |idc03      |idc04                    |idc07|idc08     |idc12     ]
+ [check|idc02      |idc03      |idc04                    |idc07|idc08     |idc12     ]
+ [check|idc02      |idc03      |idc04                    |idc07|idc08     |idc12     ]
+ [check|idc02      |idc03      |idc04                    |idc07|idc08     |idc12     ]
+ [check|idc02      |idc03      |idc04                    |idc07|idc08     |idc12     ]
+ [check|idc02      |idc03      |idc04                    |idc07|idc08     |idc12     ]
+ [check|idc02      |idc03      |idc04                    |idc07|idc08     |idc12     ]
+ [check|idc02      |idc03      |idc04                    |idc07|idc08     |idc12     ]
+ <                                                                                    >
+
+}
+END -- gr3768
+END -- q_idc
+
+TABLES
+idc_file
+ATTRIBUTES
+Table s_idc:s_idc;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idc02=idc_file.idc02, tabIndex=2, title="Warehouse", noEntry, not null, required;
+Edit idc03=idc_file.idc03, tabIndex=3, title="Location", noEntry, not null, required;
+Edit idc04=idc_file.idc04, tabIndex=4, title="Lot#", noEntry, not null, required;
+Edit idc07=idc_file.idc07, tabIndex=5, title="Unit", noEntry;
+Edit idc08=idc_file.idc08, tabIndex=6, title="Qty", noEntry, not null, required;
+Edit idc12=idc_file.idc12, tabIndex=7, title="Die", noEntry, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_idc(formonly.check,idc_file.idc02,idc_file.idc03,idc_file.idc04,idc_file.idc07,idc_file.idc08,idc_file.idc12)
+END -- INSTRUCTIONS
+

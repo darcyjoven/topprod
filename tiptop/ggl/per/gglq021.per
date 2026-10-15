@@ -1,0 +1,158 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq021.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq021")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr2517
+{
+
+
+ Group No.       [asr01       ]                Group Book No.     [asr00     ]
+ Upper Company   [asr02       ]                Upper Comp Book No [asr03     ]
+ Under Company   [asr04       ]                Under Comp Book No [asr041    ]
+
+}
+END -- gr2517
+Grid gr2518
+{
+
+
+ Year                [asr06     ]
+ Period              [asr07     ]
+ Currency            [asr12     ]
+
+}
+END -- gr2518
+Grid gr11
+{
+
+ Balance Sheet/Income Statament   [aag04      ]
+
+
+
+
+}
+END -- gr11
+END -- hb2
+END -- page01
+END -- folder01
+Folder pc4
+Page page1(action=page1, text=%"Period Blance Before Combined")
+VBox vb5
+Table s_asr
+{
+[asr05               |aag02                                   |asr13               |asr14               |amt1                |asr18     |asr15               |asr16               |amt2                |asr19     |asr08               |asr09               |amt3                |asr10      |asr11        ]
+[asr05               |aag02                                   |asr13               |asr14               |amt1                |asr18     |asr15               |asr16               |amt2                |asr19     |asr08               |asr09               |amt3                |asr10      |asr11        ]
+[asr05               |aag02                                   |asr13               |asr14               |amt1                |asr18     |asr15               |asr16               |amt2                |asr19     |asr08               |asr09               |amt3                |asr10      |asr11        ]
+[asr05               |aag02                                   |asr13               |asr14               |amt1                |asr18     |asr15               |asr16               |amt2                |asr19     |asr08               |asr09               |amt3                |asr10      |asr11        ]
+[asr05               |aag02                                   |asr13               |asr14               |amt1                |asr18     |asr15               |asr16               |amt2                |asr19     |asr08               |asr09               |amt3                |asr10      |asr11        ]
+[asr05               |aag02                                   |asr13               |asr14               |amt1                |asr18     |asr15               |asr16               |amt2                |asr19     |asr08               |asr09               |amt3                |asr10      |asr11        ]
+[asr05               |aag02                                   |asr13               |asr14               |amt1                |asr18     |asr15               |asr16               |amt2                |asr19     |asr08               |asr09               |amt3                |asr10      |asr11        ]
+}
+END -- s_asr
+Grid gr9
+{
+  --- Rows [cnt3 ] ---
+
+
+}
+END -- gr9
+END -- vb5
+END -- page1
+Page page2(action=page2, text=%"Account Transaction Code Contra Balance Before Combined")
+VBox vb6
+Table tb4
+{
+[ass05               |aag02_1                                 |ass06     |ass07               |ass18               |ass19               |amt4                |ass16     |ass20               |ass21               |amt5                |ass17     |ass10               |ass11               |amt6                |ass12               |ass13               ]
+[ass05               |aag02_1                                 |ass06     |ass07               |ass18               |ass19               |amt4                |ass16     |ass20               |ass21               |amt5                |ass17     |ass10               |ass11               |amt6                |ass12               |ass13               ]
+[ass05               |aag02_1                                 |ass06     |ass07               |ass18               |ass19               |amt4                |ass16     |ass20               |ass21               |amt5                |ass17     |ass10               |ass11               |amt6                |ass12               |ass13               ]
+[ass05               |aag02_1                                 |ass06     |ass07               |ass18               |ass19               |amt4                |ass16     |ass20               |ass21               |amt5                |ass17     |ass10               |ass11               |amt6                |ass12               |ass13               ]
+[ass05               |aag02_1                                 |ass06     |ass07               |ass18               |ass19               |amt4                |ass16     |ass20               |ass21               |amt5                |ass17     |ass10               |ass11               |amt6                |ass12               |ass13               ]
+}
+END -- tb4
+Grid gr9_1
+{
+  --- Rows [cnt4 ] ---
+
+
+}
+END -- gr9_1
+END -- vb6
+END -- page2
+END -- pc4
+Grid gr2519
+{
+ ---------- Rows [cnt   ] ----------                                 Debit Amount        [sumasr08            ]                          Credit Amount       [sumasr09            ]
+
+
+}
+END -- gr2519
+END -- VBox1
+END -- gglq021
+
+TABLES
+ass_file,
+asr_file
+ATTRIBUTES
+ButtonEdit asr01=asr_file.asr01, action=controlp, tabIndex=1, image="zoom";
+Edit asr00=asr_file.asr00, tabIndex=2, color = yellow;
+Edit asr02=asr_file.asr02, tabIndex=3;
+Edit asr03=asr_file.asr03, tabIndex=4;
+Edit asr04=asr_file.asr04, tabIndex=5;
+Edit asr041=asr_file.asr041, tabIndex=6;
+Edit asr06=asr_file.asr06, tabIndex=7;
+Edit asr07=asr_file.asr07, tabIndex=8;
+ButtonEdit asr12=asr_file.asr12, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Details";
+ComboBox aag04=formonly.aag04 type VARCHAR, tabIndex=19, not null, required, queryEditable, items=(("1", "Balance Sheet"),("2", "Income Statement"));
+ButtonEdit asr05=asr_file.asr05, action=controlp, tabIndex=10, title="Account No.", image="zoom", comment="<^P>Qry Account # <^Y>Create Account  ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=11, title="Account Name", noEntry;
+Edit asr13=asr_file.asr13, tabIndex=28, title="Subsidiary Debit Amt (Book Curr)";
+Edit asr14=asr_file.asr14, tabIndex=29, title="Subsidiary Credit Amt (Book Curr)";
+Edit amt1=formonly.amt1 type CHAR, tabIndex=40, title="Balance";
+Edit asr18=formonly.asr18 type CHAR, tabIndex=41, title="Function Currency Exch Rate";
+Edit asr15=asr_file.asr15, tabIndex=30, title="Subsidiary Debit Amt (Functional Curr)";
+Edit asr16=asr_file.asr16, tabIndex=31, title="Subsidiary Credit Amt (Functional Curr)";
+Edit amt2=formonly.amt2 type CHAR, tabIndex=55, title="Balance";
+Edit asr19=formonly.asr19 type CHAR, tabIndex=36, title="Combined Currency Exch Rate";
+Edit asr08=asr_file.asr08, tabIndex=12, title="Debit Transaction Amt", noEntry, not null, required;
+Edit asr09=asr_file.asr09, tabIndex=13, title="Credit Transaction Amt", noEntry, not null, required;
+Edit amt3=formonly.amt3 type CHAR, tabIndex=53, title="Balance";
+Edit asr10=asr_file.asr10, tabIndex=14, title="Debit Rows", noEntry;
+Edit asr11=asr_file.asr11, tabIndex=15, title="Credit Rows", noEntry;
+Edit cnt3=formonly.cnt3 type SMALLINT, tabIndex=20;
+Edit ass05=ass_file.ass05, tabIndex=22, title="Account Code";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=23, title="Account Name\n";
+Edit ass06=ass_file.ass06, tabIndex=25, title=%"Dimension Sequence";
+Edit ass07=ass_file.ass07, tabIndex=44, title=%"Dimension Value";
+Edit ass18=ass_file.ass18, tabIndex=43, title=%"Subsidiary Debit Amt (Trans Curr)";
+Edit ass19=ass_file.ass19, tabIndex=42, title=%"Subsidiary Credit Amt (Trans Curr)";
+Edit amt4=formonly.amt4 type CHAR, tabIndex=39, title=%"Balance";
+Edit ass16=ass_file.ass16, tabIndex=38, title=%"Function Currency Exch Rate";
+Edit ass20=ass_file.ass20, tabIndex=37, title=%"Subsidiary Debit Amt (Functional Curr)";
+Edit ass21=ass_file.ass21, tabIndex=35, title=%"Subsidiary Credit Amt (Functional Curr)";
+Edit amt5=formonly.amt5 type CHAR, tabIndex=34, title=%"Balance";
+Edit ass17=ass_file.ass17, tabIndex=33, title=%"Combined Currency Exch Rate";
+Edit ass10=ass_file.ass10, tabIndex=32, title=%"Total lender sum";
+Edit ass11=ass_file.ass11, tabIndex=27, title=%"Credit Amt.";
+Edit amt6=formonly.amt6 type CHAR, tabIndex=56, title=%"Balance";
+Edit ass12=ass_file.ass12, tabIndex=26, title=%"Total lender lots";
+Edit ass13=ass_file.ass13, tabIndex=24, title=%"Total Credit Counts";
+Edit cnt4=formonly.cnt4 type SMALLINT, tabIndex=21;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit sumasr08=formonly.sumasr08 type DECIMAL, tabIndex=17, noEntry;
+Edit sumasr09=formonly.sumasr09 type DECIMAL, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ass(ass_file.ass05,formonly.aag02_1,ass_file.ass06,ass_file.ass07,ass_file.ass18,ass_file.ass19,formonly.amt4,ass_file.ass16,ass_file.ass20,ass_file.ass21,formonly.amt5,ass_file.ass17,ass_file.ass10,ass_file.ass11,formonly.amt6,ass_file.ass12,ass_file.ass13)
+SCREEN RECORD s_asr(asr_file.asr05,formonly.aag02,asr_file.asr13,asr_file.asr14,formonly.amt1,formonly.asr18,asr_file.asr15,asr_file.asr16,formonly.amt2,formonly.asr19,asr_file.asr08,asr_file.asr09,formonly.amt3,asr_file.asr10,asr_file.asr11)
+SCREEN RECORD Undefined(asr_file.asr01,asr_file.asr00,asr_file.asr02,asr_file.asr03,asr_file.asr04,asr_file.asr041,asr_file.asr06,asr_file.asr07,asr_file.asr12,formonly.aag04,formonly.cnt3,formonly.cnt4,formonly.cnt,formonly.sumasr08,formonly.sumasr09)
+END -- INSTRUCTIONS
+

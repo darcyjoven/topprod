@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglr600")
+VBox vb3
+Grid gr1
+{
+ <G gb1                                           >
+  Budget Item              [abb36            ]
+  Acct No.                 [abb03            ]
+ <                                                >
+ <G gb2                                           >
+  Book No.                 [bookno         ]
+  Year                     [yy             ]
+  Period                   [m1 ]  ---  [m2 ]
+  Transaction Code         [a              ]
+
+
+ <                                                >
+ <G gb3                                           >
+  The Value of Dimension   [abbx           ]
+ <                                                >
+
+}
+END -- gr1
+Grid gr6
+{
+[more                                              ]
+
+}
+END -- gr6
+END -- vb3
+END -- aglr600
+
+TABLES
+abb_file
+ATTRIBUTES
+Group gb1:gb1, text="QBE";
+Edit abb36=abb_file.abb36, tabIndex=1;
+Edit abb03=abb_file.abb03, tabIndex=2;
+Group gb2:gb2, text="INPUT";
+ButtonEdit bookno=formonly.bookno type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit yy=formonly.yy type CHAR, tabIndex=5, not null, required;
+Edit m1=formonly.m1 type CHAR, tabIndex=6, not null, required;
+Edit m2=formonly.m2 type CHAR, tabIndex=7, not null, required;
+Edit a=formonly.a type CHAR, tabIndex=8, not null, required;
+Group gb3:gb3, text="QBE_2";
+Edit abbx=formonly.abbx type VARCHAR, tabIndex=3;
+CheckBox more=formonly.more type CHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(abb_file.abb36,abb_file.abb03,formonly.bookno,formonly.yy,formonly.m1,formonly.m2,formonly.a,formonly.abbx,formonly.more)
+END -- INSTRUCTIONS
+

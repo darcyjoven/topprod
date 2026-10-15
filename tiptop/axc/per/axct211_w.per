@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct211_w.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct211_w")
+Grid gr1787
+{
+ <G group01                                             >
+  Item No.    [tlf01                         ]
+  Dept        [tlf19     ]
+ <                                                      >
+ <G group02                                                     >
+  Year               [cmi0]
+  Period             [cm]
+  Work Center        [cmi03 ]
+  Book No.           [cmi00 ]
+  Allocation Method  [cmi12          ]
+  U/P Sorce          [g_type                                  ]
+
+
+ <                                                              >
+
+}
+END -- gr1787
+END -- axct211_w
+
+TABLES
+cmi_file,
+tlf_file
+ATTRIBUTES
+Group group01:group01;
+Edit tlf01=tlf_file.tlf01, tabIndex=1;
+Edit tlf19=tlf_file.tlf19, tabIndex=2;
+Group group02:group02;
+Edit cmi0=cmi_file.cmi01, tabIndex=3, not null, required;
+Edit cm=cmi_file.cmi02, tabIndex=4, not null, required;
+Edit cmi03=cmi_file.cmi03, tabIndex=5;
+Edit cmi00=cmi_file.cmi00, tabIndex=7;
+ComboBox cmi12=cmi_file.cmi12, tabIndex=8, not null, required, items=(("1", "Actual Labor Hours"),("2", "Standard Labor Hours"),("3", "Standard Machine Hours"),("4", "Output Qty * Distribution Ratio"),("5", "Actual Machine Hours"));
+RadioGroup g_type=formonly.g_type type CHAR, tabIndex=6, not null, required, items=(("1", "Last Period Unit Price"),("2", "Currency Period Unit Price"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(tlf_file.tlf01,tlf_file.tlf19,cmi_file.cmi01,cmi_file.cmi02,cmi_file.cmi03,cmi_file.cmi00,cmi_file.cmi12,formonly.g_type)
+END -- INSTRUCTIONS
+

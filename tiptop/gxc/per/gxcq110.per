@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gxc/42f/gxcq110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gxcq110")
+VBox vb26
+Folder folder01
+Page page01(text="Main")
+Grid gr3624
+{
+ Item No.  [cxb01                         ]   P/N [ima02                         ]
+ Year/Month[cxb0][cx]                         Unit[ima2]
+ Cost Calculation Method [cxb010    ] Category No.[cxb011                        ]
+}
+END -- gr3624
+END -- page01
+END -- folder01
+Table s_cxb
+{
+[cxb04    |cxb05     |cxb06            |cxb1|cxb08     |cxb09     |cxb091    |cxb092    |cxb093    |cxb094    |cxb095    |cxb096    |cxb097    |cxb098    ]
+[cxb04    |cxb05     |cxb06            |cxb1|cxb08     |cxb09     |cxb091    |cxb092    |cxb093    |cxb094    |cxb095    |cxb096    |cxb097    |cxb098    ]
+[cxb04    |cxb05     |cxb06            |cxb1|cxb08     |cxb09     |cxb091    |cxb092    |cxb093    |cxb094    |cxb095    |cxb096    |cxb097    |cxb098    ]
+[cxb04    |cxb05     |cxb06            |cxb1|cxb08     |cxb09     |cxb091    |cxb092    |cxb093    |cxb094    |cxb095    |cxb096    |cxb097    |cxb098    ]
+[cxb04    |cxb05     |cxb06            |cxb1|cxb08     |cxb09     |cxb091    |cxb092    |cxb093    |cxb094    |cxb095    |cxb096    |cxb097    |cxb098    ]
+[cxb04    |cxb05     |cxb06            |cxb1|cxb08     |cxb09     |cxb091    |cxb092    |cxb093    |cxb094    |cxb095    |cxb096    |cxb097    |cxb098    ]
+[cxb04    |cxb05     |cxb06            |cxb1|cxb08     |cxb09     |cxb091    |cxb092    |cxb093    |cxb094    |cxb095    |cxb096    |cxb097    |cxb098    ]
+[cxb04    |cxb05     |cxb06            |cxb1|cxb08     |cxb09     |cxb091    |cxb092    |cxb093    |cxb094    |cxb095    |cxb096    |cxb097    |cxb098    ]
+[cxb04    |cxb05     |cxb06            |cxb1|cxb08     |cxb09     |cxb091    |cxb092    |cxb093    |cxb094    |cxb095    |cxb096    |cxb097    |cxb098    ]
+[cxb04    |cxb05     |cxb06            |cxb1|cxb08     |cxb09     |cxb091    |cxb092    |cxb093    |cxb094    |cxb095    |cxb096    |cxb097    |cxb098    ]
+
+}
+END -- s_cxb
+Grid gr3625
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr3625
+END -- vb26
+END -- gxcq110
+
+TABLES
+cxb_file
+ATTRIBUTES
+ButtonEdit cxb01=cxb_file.cxb01, action=controlp, tabIndex=1, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit cxb0=cxb_file.cxb02, tabIndex=3;
+Edit cx=cxb_file.cxb03, tabIndex=4;
+Edit ima2=formonly.ima25 type CHAR, tabIndex=5, noEntry;
+ComboBox cxb010=cxb_file.cxb010, tabIndex=18, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually嚗atch Cost"),("4", "Identify Manually嚗tem Cost"),("5", "Identify Manually嚗tore Profit Center"));
+ButtonEdit cxb011=cxb_file.cxb011, action=controlp, tabIndex=19, not null, required, image="zoom.png";
+DateEdit cxb04=cxb_file.cxb04, tabIndex=6, title="Tran Dte";
+Edit cxb05=cxb_file.cxb05, tabIndex=7, title="Tran Time";
+Edit cxb06=cxb_file.cxb06, tabIndex=8, title="Tran.Nt#";
+Edit cxb1=cxb_file.cxb07, tabIndex=9, title="Ln#";
+Edit cxb08=cxb_file.cxb08, tabIndex=10, title="EoP Qty";
+Edit cxb09=cxb_file.cxb09, tabIndex=11, title="EoP Amt", noEntry;
+Edit cxb091=cxb_file.cxb091, tabIndex=12, title="Mat.";
+Edit cxb092=cxb_file.cxb092, tabIndex=13, title="Labor";
+Edit cxb093=cxb_file.cxb093, tabIndex=14, title="Ovhd 1";
+Edit cxb094=cxb_file.cxb094, tabIndex=15, title="Prcs";
+Edit cxb095=cxb_file.cxb095, tabIndex=16, title="Ovhd 2";
+Edit cxb096=cxb_file.cxb096, tabIndex=20, title=%"Ovhd 3", not null, required;
+Edit cxb097=cxb_file.cxb097, tabIndex=21, title=%"Ovhd 4", not null, required;
+Edit cxb098=cxb_file.cxb098, tabIndex=22, title=%"Ovhd 5", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cxb(cxb_file.cxb04,cxb_file.cxb05,cxb_file.cxb06,cxb_file.cxb07,cxb_file.cxb08,cxb_file.cxb09,cxb_file.cxb091,cxb_file.cxb092,cxb_file.cxb093,cxb_file.cxb094,cxb_file.cxb095,cxb_file.cxb096,cxb_file.cxb097,cxb_file.cxb098)
+SCREEN RECORD Undefined(cxb_file.cxb01,formonly.ima02,cxb_file.cxb02,cxb_file.cxb03,formonly.ima25,cxb_file.cxb010,cxb_file.cxb011,formonly.cnt)
+END -- INSTRUCTIONS
+

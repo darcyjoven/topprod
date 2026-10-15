@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr802.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid ds1
+{
+ <G group1                                         >
+ [label1  |rch01               ]
+ [label2  |rch05               ]
+ <                                                 >
+ <G group2                                                       >
+ [label3    |byear     |la|bmonth    |l1|eyear     |l2|emonth    ]
+ [label7    |state            ]
+ <                                                               >
+
+[more                            ]
+
+
+}
+END -- ds1
+END -- VBox1
+END -- Form
+
+TABLES
+rch_file
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+Label label1:Label1, text=%"rch01";
+ButtonEdit rch01=rch_file.rch01, action=controlp, tabIndex=1, not null, image="zoom", scroll;
+Label label2:Label2, text=%"rch05";
+ButtonEdit rch05=rch_file.rch05, action=controlp, tabIndex=2, not null, image="zoom", scroll;
+Group group2:Group2, text=%"INPUT";
+Label label3:Label3, text=%"Year/Month";
+Edit byear=formonly.byear type CHAR, tabIndex=4, not null, required;
+Label la:Label4, text=%"/";
+Edit bmonth=formonly.bmonth type CHAR, tabIndex=5, not null, required;
+Label l1:Label5, text=%"~";
+Edit eyear=formonly.eyear type CHAR, tabIndex=6, not null, required;
+Label l2:Label6, text=%"/";
+Edit emonth=formonly.emonth type CHAR, tabIndex=7, not null, required;
+Label label7:Label7, text=%"State";
+ComboBox state=formonly.state type CHAR, tabIndex=8, not null, items=(("Y", "Y"),("N", "N"),("A", "A"));
+CheckBox more=formonly.more type CHAR, tabIndex=3, text=%"more", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(rch_file.rch01,rch_file.rch05)
+SCREEN RECORD Undefined(formonly.more,formonly.byear,formonly.bmonth,formonly.eyear,formonly.emonth,formonly.state)
+END -- INSTRUCTIONS
+

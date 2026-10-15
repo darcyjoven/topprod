@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi600_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi600_1")
+Folder pc859
+Page page01(text="Common Data")
+Table s_gev
+{
+[gev01            |gev02                         ]
+[gev01            |gev02                         ]
+[gev01            |gev02                         ]
+[gev01            |gev02                         ]
+[gev01            |gev02                         ]
+[gev01            |gev02                         ]
+[gev01            |gev02                         ]
+[gev01            |gev02                         ]
+[gev01            |gev02                         ]
+[gev01            |gev02                         ]
+
+}
+END -- s_gev
+END -- page01
+END -- pc859
+END -- aooi600_1
+
+TABLES
+gev_file
+ATTRIBUTES
+ComboBox gev01=gev_file.gev01, tabIndex=1, title="Data Type", not null, required, queryEditable, items=(("0", "Basic Data"),("1", "Item"),("2", "BOM"),("3", "ECN"),("4", "Customer"),("5", "Vendor"),("6", "Account"),("7", "Price"));
+ButtonEdit gev02=gev_file.gev02, action=controlp, tabIndex=2, title="Logestic", not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Logestic";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gev(gev_file.gev01,gev_file.gev02)
+END -- INSTRUCTIONS
+

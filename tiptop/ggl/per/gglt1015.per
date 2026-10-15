@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt1015.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglt1015")
+VBox vb5
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ Year      [asx01     ] Group No. [asx03     ]
+ Period    [asx02     ] Parent Co.[asx031    ][asg02              ]
+
+}
+END -- gr1
+END -- page01
+END -- pc1
+Table tb1
+{
+[asx04|asx05       |asx06      |asx07      |asg02_s             |asx08      |asg02_t             |asx11       |asx09      |aag02_a   |asx10     |aag02_t   |asx21     |aag02_s   |asx16                     |asx17            |asx18         |asx19              |asx20]
+[asx04|asx05       |asx06      |asx07      |asg02_s             |asx08      |asg02_t             |asx11       |asx09      |aag02_a   |asx10     |aag02_t   |asx21     |aag02_s   |asx16                     |asx17            |asx18         |asx19              |asx20]
+[asx04|asx05       |asx06      |asx07      |asg02_s             |asx08      |asg02_t             |asx11       |asx09      |aag02_a   |asx10     |aag02_t   |asx21     |aag02_s   |asx16                     |asx17            |asx18         |asx19              |asx20]
+[asx04|asx05       |asx06      |asx07      |asg02_s             |asx08      |asg02_t             |asx11       |asx09      |aag02_a   |asx10     |aag02_t   |asx21     |aag02_s   |asx16                     |asx17            |asx18         |asx19              |asx20]
+[asx04|asx05       |asx06      |asx07      |asg02_s             |asx08      |asg02_t             |asx11       |asx09      |aag02_a   |asx10     |aag02_t   |asx21     |aag02_s   |asx16                     |asx17            |asx18         |asx19              |asx20]
+[asx04|asx05       |asx06      |asx07      |asg02_s             |asx08      |asg02_t             |asx11       |asx09      |aag02_a   |asx10     |aag02_t   |asx21     |aag02_s   |asx16                     |asx17            |asx18         |asx19              |asx20]
+[asx04|asx05       |asx06      |asx07      |asg02_s             |asx08      |asg02_t             |asx11       |asx09      |aag02_a   |asx10     |aag02_t   |asx21     |aag02_s   |asx16                     |asx17            |asx18         |asx19              |asx20]
+[asx04|asx05       |asx06      |asx07      |asg02_s             |asx08      |asg02_t             |asx11       |asx09      |aag02_a   |asx10     |aag02_t   |asx21     |aag02_s   |asx16                     |asx17            |asx18         |asx19              |asx20]
+[asx04|asx05       |asx06      |asx07      |asg02_s             |asx08      |asg02_t             |asx11       |asx09      |aag02_a   |asx10     |aag02_t   |asx21     |aag02_s   |asx16                     |asx17            |asx18         |asx19              |asx20]
+[asx04|asx05       |asx06      |asx07      |asg02_s             |asx08      |asg02_t             |asx11       |asx09      |aag02_a   |asx10     |aag02_t   |asx21     |aag02_s   |asx16                     |asx17            |asx18         |asx19              |asx20]
+
+}
+END -- tb1
+Grid gr2
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2
+END -- vb5
+END -- gglt1015
+
+TABLES
+asx_file
+ATTRIBUTES
+Edit asx01=asx_file.asx01, tabIndex=1, not null, required;
+ButtonEdit asx03=asx_file.asx03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Group No.";
+Edit asx02=asx_file.asx02, tabIndex=2, not null, required;
+ButtonEdit asx031=asx_file.asx031, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Parent Company";
+Edit asg02=formonly.asg02 type CHAR, tabIndex=5, noEntry;
+Edit asx04=asx_file.asx04, tabIndex=6, title="Ln#", not null, required;
+ComboBox asx05=asx_file.asx05, tabIndex=7, title="Trans.Prop.", noEntry, items=(("1", %"Downstream"),("2", %"Backflow"),("3", %"Sideflow"),("4", %"Other"));
+ComboBox asx06=asx_file.asx06, tabIndex=8, title="Trans.Type", noEntry, items=(("1", %"Inventory"),("2", %"Tangible Asset"),("3", %"Intangible Asset"),("4", %"Other"));
+ButtonEdit asx07=asx_file.asx07, action=controlp, tabIndex=9, title="Sour.Comp.", noEntry, image="zoom", comment="<^P>Qry Company";
+Edit asg02_s=formonly.asg02_s type CHAR, tabIndex=10, title="Source Company Name", noEntry;
+ButtonEdit asx08=asx_file.asx08, action=controlp, tabIndex=11, title="Trans.Comp.", noEntry, image="zoom", comment="<^P>Qry Company";
+Edit asg02_t=formonly.asg02_t type CHAR, tabIndex=12, title="Trans. Company Name", noEntry;
+ButtonEdit asx11=asx_file.asx11, action=controlp, tabIndex=13, title="Sour. Curr.", noEntry, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit asx09=asx_file.asx09, action=controlp, tabIndex=21, title="asx09", not null, required, image="zoom";
+Edit aag02_a=formonly.aag02_a type CHAR, tabIndex=24, title="aag02_a", noEntry;
+ButtonEdit asx10=asx_file.asx10, action=controlp, tabIndex=22, title="asx10", not null, required, image="zoom";
+Edit aag02_t=formonly.aag02_t type CHAR, tabIndex=25, title="aag02_t", noEntry;
+ButtonEdit asx21=asx_file.asx21, action=controlp, tabIndex=23, title="asx12", not null, required, image="zoom";
+Edit aag02_s=formonly.aag02_s type CHAR, tabIndex=26, title="aag02_s", noEntry;
+Edit asx16=asx_file.asx16, tabIndex=14, title="Share Unrealize Prof/Loss", noEntry;
+Edit asx17=asx_file.asx17, tabIndex=15, title="Tot Share Period", not null, required;
+Edit asx18=asx_file.asx18, tabIndex=16, title="Shared Period", not null, required;
+Edit asx19=asx_file.asx19, tabIndex=17, title="Shared Amount", not null, required;
+CheckBox asx20=asx_file.asx20, tabIndex=18, title="Clos", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asx(asx_file.asx04,asx_file.asx05,asx_file.asx06,asx_file.asx07,formonly.asg02_s,asx_file.asx08,formonly.asg02_t,asx_file.asx11,asx_file.asx09,formonly.aag02_a,asx_file.asx10,formonly.aag02_t,asx_file.asx21,formonly.aag02_s,asx_file.asx16,asx_file.asx17,asx_file.asx18,asx_file.asx19,asx_file.asx20)
+SCREEN RECORD Undefined(asx_file.asx01,asx_file.asx03,asx_file.asx02,asx_file.asx031,formonly.asg02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

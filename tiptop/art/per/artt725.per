@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt725.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form1")
+VBox vb1
+Folder pc1
+Page page1(text=%"Base Data")
+Grid gr1
+{
+
+ ruk00  [ruk00           ]               rukconf [rukconf      ] [imgmksg ]
+ ruk01  [ruk01           ]               rukcond [rukcond      ] [        ]
+ ruk02  [ruk02           ]               rukconu [rukconu      ][rukconu_desc ]
+ ruk03  [ruk03           |ruk03_desc  ]  rukplant[rukplant     ][rukplant_desc]
+ ruk04  [ruk04           ]               ruk06   [ruk06                        ]
+ ruk05  [ruk05           |ruk05_desc  ]          [                             ]
+
+}
+END -- gr1
+END -- page1
+Page Page2(text=%"Status")
+Grid gr2
+{
+
+  rukuser[rukuser   ]    rukmodu[rukmodu   ]  rukacti[rukacti  ]   rukorig[rukorig   ]
+  rukgrup[rukgrup   ]    rukmodu[rukdate   ]  rukcrat[rukcrat  ]   rukoriu[rukoriu   ]
+
+}
+END -- gr2
+END -- Page2
+END -- pc1
+Table s_rul
+{
+[rul02  |rul03               |rul03_de|rul04     |rul04_de|rul05        |rul06     |rul06_de|rul07               |rul08   |rul09               |rul10               |rul11      |rul12      |rul13               ]
+[rul02  |rul03               |rul03_de|rul04     |rul04_de|rul05        |rul06     |rul06_de|rul07               |rul08   |rul09               |rul10               |rul11      |rul12      |rul13               ]
+[rul02  |rul03               |rul03_de|rul04     |rul04_de|rul05        |rul06     |rul06_de|rul07               |rul08   |rul09               |rul10               |rul11      |rul12      |rul13               ]
+[rul02  |rul03               |rul03_de|rul04     |rul04_de|rul05        |rul06     |rul06_de|rul07               |rul08   |rul09               |rul10               |rul11      |rul12      |rul13               ]
+[rul02  |rul03               |rul03_de|rul04     |rul04_de|rul05        |rul06     |rul06_de|rul07               |rul08   |rul09               |rul10               |rul11      |rul12      |rul13               ]
+
+}
+END -- s_rul
+Grid gr3
+{
+  ---------Rows[idx   ]/[cnt   ]------------detail[cn2    ]---------
+
+}
+END -- gr3
+END -- vb1
+END -- Form1
+
+TABLES
+rul_file,
+ruk_file
+ATTRIBUTES
+ComboBox ruk00=ruk_file.ruk00, tabIndex=1, noEntry, items=(("1", "in store"),("2", "out store"));
+ComboBox rukconf=ruk_file.rukconf, tabIndex=6, noEntry, items=(("Y", "Confirm"),("N", "Unconfirm"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit ruk01=ruk_file.ruk01, action=controlp, tabIndex=2, not null, required, image="zoom";
+DateEdit rukcond=ruk_file.rukcond, tabIndex=5, noEntry;
+ButtonEdit ruk02=ruk_file.ruk02, action=controlp, tabIndex=40, not null, required, image="zoom";
+ButtonEdit rukconu=ruk_file.rukconu, action=controlp, tabIndex=8, noEntry, image="zoom";
+Edit rukconu_desc=formonly.rukconu_desc type CHAR, tabIndex=37, noEntry;
+ButtonEdit ruk03=ruk_file.ruk03, action=controlp, tabIndex=10, noEntry, image="zoom";
+Edit ruk03_desc=formonly.ruk03_desc type CHAR, tabIndex=38, noEntry;
+Edit rukplant=ruk_file.rukplant, tabIndex=9, noEntry;
+Edit rukplant_desc=formonly.rukplant_desc type CHAR, tabIndex=39, noEntry;
+DateEdit ruk04=ruk_file.ruk04, tabIndex=3, not null, required;
+TextEdit ruk06=ruk_file.ruk06, tabIndex=7;
+ButtonEdit ruk05=ruk_file.ruk05, action=controlp, tabIndex=4, image="zoom";
+Edit ruk05_desc=formonly.ruk05_desc type CHAR, tabIndex=36, noEntry;
+Edit rukuser=ruk_file.rukuser, tabIndex=17, noEntry;
+Edit rukmodu=ruk_file.rukmodu, tabIndex=13, noEntry;
+Edit rukacti=ruk_file.rukacti, tabIndex=16, noEntry;
+Edit rukorig=ruk_file.rukorig, tabIndex=14, noEntry;
+Edit rukgrup=ruk_file.rukgrup, tabIndex=18, noEntry;
+DateEdit rukdate=ruk_file.rukdate, tabIndex=12, noEntry;
+DateEdit rukcrat=ruk_file.rukcrat, tabIndex=11, noEntry;
+Edit rukoriu=ruk_file.rukoriu, tabIndex=15, noEntry;
+ButtonEdit rul02=rul_file.rul02, action=controlp, tabIndex=19, title="rul02", not null, required, image="zoom";
+ButtonEdit rul03=rul_file.rul03, action=controlp, tabIndex=20, title="rul03", noEntry, image="zoom";
+Edit rul03_de=formonly.rul03_desc type CHAR, tabIndex=30, title="rul03_desc", noEntry;
+ButtonEdit rul04=rul_file.rul04, action=controlp, tabIndex=21, title="rul04", noEntry, image="zoom";
+Edit rul04_de=formonly.rul04_desc type CHAR, tabIndex=31, title="rul04_desc", noEntry;
+Edit rul05=rul_file.rul05, tabIndex=22, title="rul05", noEntry;
+ButtonEdit rul06=rul_file.rul06, action=controlp, tabIndex=23, title="rul06", not null, required, image="zoom";
+Edit rul06_de=formonly.rul06_desc type CHAR, tabIndex=32, title="rul06_desc", noEntry;
+Edit rul07=rul_file.rul07, tabIndex=24, title="rul07", noEntry;
+Edit rul08=rul_file.rul08, tabIndex=41, title="rul08", noEntry;
+Edit rul09=rul_file.rul09, tabIndex=25, title="rul09", noEntry;
+Edit rul10=rul_file.rul10, tabIndex=26, title="rul10", not null, required;
+ButtonEdit rul11=rul_file.rul11, action=controlp, tabIndex=27, title="rul11", not null, required, image="zoom";
+ButtonEdit rul12=rul_file.rul12, action=controlp, tabIndex=28, title="rul12", image="zoom";
+ButtonEdit rul13=rul_file.rul13, action=controlp, tabIndex=29, title="rul13", image="zoom";
+Edit idx=formonly.idx type CHAR, tabIndex=33;
+Edit cnt=formonly.cnt type CHAR, tabIndex=34;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=35;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rul(rul_file.rul02,rul_file.rul03,formonly.rul03_desc,rul_file.rul04,formonly.rul04_desc,rul_file.rul05,rul_file.rul06,formonly.rul06_desc,rul_file.rul07,rul_file.rul08,rul_file.rul09,rul_file.rul10,rul_file.rul11,rul_file.rul12,rul_file.rul13)
+SCREEN RECORD Undefined(ruk_file.ruk00,ruk_file.rukconf,formonly.imgmksg,ruk_file.ruk01,ruk_file.rukcond,ruk_file.ruk02,ruk_file.rukconu,formonly.rukconu_desc,ruk_file.ruk03,formonly.ruk03_desc,ruk_file.rukplant,formonly.rukplant_desc,ruk_file.ruk04,ruk_file.ruk06,ruk_file.ruk05,formonly.ruk05_desc,ruk_file.rukuser,ruk_file.rukmodu,ruk_file.rukacti,ruk_file.rukorig,ruk_file.rukgrup,ruk_file.rukdate,ruk_file.rukcrat,ruk_file.rukoriu,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

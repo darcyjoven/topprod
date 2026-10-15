@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfp101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp3221")
+Grid gr534
+{
+ <G group01                                                                            >
+
+  Item No.            [sfb05               ] Ending  [ecb02             ]
+  Sales Order         [sfb22               ]
+  Project No          [sfb15               ]
+  PBI No              [sfb85               ]
+
+  Ending              [ecb03               ] Ending  [ecb06             ]
+  Ending              [fcnt                ]         [ecb17                      ]
+
+
+
+
+
+
+ <                                                                                     >
+
+}
+END -- gr534
+END -- csfp100
+
+TABLES
+sfb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=1, image="zoom", comment="Enter QBE Condition";
+ButtonEdit ecb02=formonly.ecb02 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+DateEdit sfb22=sfb_file.sfb22, tabIndex=2, comment="Enter QBE Condition";
+DateEdit sfb15=formonly.sfb15 type VARCHAR, tabIndex=3, comment="Enter QBE Condition";
+Edit sfb85=sfb_file.sfb85, tabIndex=4, hidden, invisible, comment="Enter QBE Condition";
+ButtonEdit ecb03=formonly.ecb03 type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit ecb06=formonly.ecb06 type VARCHAR, action=controlp, tabIndex=7, image="zoom";
+Edit fcnt=formonly.fcnt type INTEGER, tabIndex=8, justify=right;
+LABEL ecb17=formonly.ecb17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfb_file.sfb05,sfb_file.sfb22,formonly.sfb15,sfb_file.sfb85,formonly.fcnt,formonly.ecb17,formonly.ecb02,formonly.ecb03,formonly.ecb06)
+END -- INSTRUCTIONS
+

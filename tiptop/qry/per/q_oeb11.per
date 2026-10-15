@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_oeb11.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Order")
+Grid gr7
+{
+ <T s_oeb                                                 >
+ [check|oeb03 |oeb04          |oeb12      |oeb28        ]
+ [check|oeb03 |oeb04          |oeb12      |oeb28        ]
+ [check|oeb03 |oeb04          |oeb12      |oeb28        ]
+ [check|oeb03 |oeb04          |oeb12      |oeb28        ]
+ [check|oeb03 |oeb04          |oeb12      |oeb28        ]
+ [check|oeb03 |oeb04          |oeb12      |oeb28        ]
+ [check|oeb03 |oeb04          |oeb12      |oeb28        ]
+ [check|oeb03 |oeb04          |oeb12      |oeb28        ]
+ [check|oeb03 |oeb04          |oeb12      |oeb28        ]
+ [check|oeb03 |oeb04          |oeb12      |oeb28        ]
+ <                                                        >
+}
+END -- gr7
+END -- q_oeb111
+
+TABLES
+oeb_file
+ATTRIBUTES
+Table s_oeb:s_oeb;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oeb03=oeb_file.oeb03, tabIndex=2, title="Line#", noEntry;
+Edit oeb04=oeb_file.oeb04, tabIndex=3, title="Product No.", noEntry;
+Edit oeb12=oeb_file.oeb12, tabIndex=4, title="Order qty", noEntry, not null, required;
+Edit oeb28=oeb_file.oeb28, tabIndex=5, title="Delivered Qty", noEntry, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oeb(formonly.check,oeb_file.oeb03,oeb_file.oeb04,oeb_file.oeb12,oeb_file.oeb28)
+END -- INSTRUCTIONS
+

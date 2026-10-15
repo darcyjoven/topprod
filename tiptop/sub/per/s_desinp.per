@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_desinp.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_desinp")
+VBox VBox1
+Grid grid01
+{
+ <G group01                                                              >
+  Part Name Type      [imu01     ]
+  Description         [imu02                         ]
+ <                                                                       >
+ <G group02                                                              >
+  Section             [a         ]
+  Detailed P/N(Digits [d         ])
+ <                                                                       >
+
+}
+END -- grid01
+Table s_imw
+{
+[imw03             ]
+[imw03             ]
+[imw03             ]
+[imw03             ]
+[imw03             ]
+[imw03             ]
+
+}
+END -- s_imw
+Grid gr3885
+{
+ <G group03                                           >
+  Enter Detailed Part Name [c                   ]
+ <                                                    >
+ <G group04                                                              >
+  Part Name Specification after Combined [b                             ]
+ <                                                                       >
+
+}
+END -- gr3885
+END -- VBox1
+END -- s_desinp
+
+TABLES
+imw_file,
+imu_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit imu01=imu_file.imu01, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Part Name Type <^Y>Create Part Name Type";
+Edit imu02=imu_file.imu02, tabIndex=2, noEntry;
+Group group02:group02;
+Edit a=formonly.a type CHAR, tabIndex=3, noEntry;
+Edit d=formonly.d type CHAR, tabIndex=4, noEntry;
+Edit imw03=imw_file.imw03, tabIndex=5, title="Detailed Part Name";
+Group group03:group03;
+Edit c=formonly.c type CHAR, tabIndex=6;
+Group group04:group04;
+Edit b=formonly.b type CHAR, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imw(imw_file.imw03)
+SCREEN RECORD Undefined(imu_file.imu01,imu_file.imu02,formonly.a,formonly.d,formonly.c,formonly.b)
+END -- INSTRUCTIONS
+

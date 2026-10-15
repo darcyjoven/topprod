@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq630.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq630")
+VBox vb37
+Folder pc541
+Page page01(text="Main")
+VBox vb36
+Group gb1564
+Grid gr2281
+{
+ Product S/N         [ogbb02              ]
+
+}
+END -- gr2281
+END -- gb1564
+Group gb1565
+Grid gr2282
+{
+ Product No.         [ogb04               ]
+ P/N Name            [ima02                         ]
+ Specification       [ima021                        ]
+}
+END -- gr2282
+END -- gb1565
+Group gb1566
+Grid gr2283
+{
+ Customer No.        [oga03       ] [oga032   ]                Salesman            [oga14     ] [gen02    ]
+ Delivery No.        [ogb01           ][ogb03               ]  Department          [oga15     ] [gem02    ]
+ Order No.           [ogb31           ][ogb32               ]
+}
+END -- gr2283
+END -- gb1566
+Group gb1567
+Grid gr2284
+{
+ FQC Doc.#           [qci01           ]                        NO-Good Qty         [qty         ]
+ Inspector           [qcf13       ] [gen02_q   ]
+}
+END -- gr2284
+END -- gb1567
+Group gb1568
+Grid gr2285
+{
+ W/O No.             [sfb01           ]                                           Routing Code        [sfb06     ]
+ Version             [sfb07       ]
+}
+END -- gr2285
+END -- gb1568
+END -- vb36
+END -- page01
+END -- pc541
+Grid gr2286
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2286
+END -- vb37
+END -- axmq630
+
+TABLES
+ogbb_file
+ATTRIBUTES
+Edit ogbb02=ogbb_file.ogbb02, tabIndex=1;
+Edit ogb04=formonly.ogb04 type CHAR, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=4, noEntry;
+Edit oga03=formonly.oga03 type CHAR, tabIndex=5, noEntry;
+Edit oga032=formonly.oga032 type CHAR, tabIndex=6, noEntry;
+Edit oga14=formonly.oga14 type CHAR, tabIndex=7, noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=8, noEntry;
+Edit ogb01=formonly.ogb01 type CHAR, tabIndex=9, noEntry;
+Edit ogb03=formonly.ogb03 type CHAR, tabIndex=10, noEntry;
+Edit oga15=formonly.oga15 type CHAR, tabIndex=11, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=12, noEntry;
+Edit ogb31=formonly.ogb31 type CHAR, tabIndex=13, noEntry;
+Edit ogb32=formonly.ogb32 type CHAR, tabIndex=14, noEntry;
+Edit qci01=formonly.qci01 type CHAR, tabIndex=15, noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=16, noEntry;
+Edit qcf13=formonly.qcf13 type CHAR, tabIndex=17, noEntry;
+Edit gen02_q=formonly.gen02_q type CHAR, tabIndex=18, noEntry;
+Edit sfb01=formonly.sfb01 type CHAR, tabIndex=19, noEntry;
+Edit sfb06=formonly.sfb06 type CHAR, tabIndex=20, noEntry;
+Edit sfb07=formonly.sfb07 type CHAR, tabIndex=21, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ogbb_file.ogbb02,formonly.ogb04,formonly.ima02,formonly.ima021,formonly.oga03,formonly.oga032,formonly.oga14,formonly.gen02,formonly.ogb01,formonly.ogb03,formonly.oga15,formonly.gem02,formonly.ogb31,formonly.ogb32,formonly.qci01,formonly.qty,formonly.qcf13,formonly.gen02_q,formonly.sfb01,formonly.sfb06,formonly.sfb07,formonly.cnt)
+END -- INSTRUCTIONS
+

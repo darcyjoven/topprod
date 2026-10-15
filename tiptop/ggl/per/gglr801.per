@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglr801.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglr801")
+VBox VBox1
+Group Group1(text="input")
+Grid Grid2
+{
+
+     Book No.       [aec00     ]
+
+}
+END -- Grid2
+END -- Group1
+Grid gr1
+{
+ <G group01                                  >
+  Account              [aec01               ]
+  Trans. Code Sequence [aec051              ]
+  Tran. Code Type      [aec052              ]
+  Trans.code           [aec05               ]
+  Voucher Date         [aec02               ]
+ <                                           >
+}
+END -- gr1
+Group g01(text="INPUT")
+Grid gr2
+{
+
+[t                                         ]
+[h                                  ]
+
+ <G group03                                  >
+ [u                                         ]
+ <                                           >
+
+}
+END -- gr2
+END -- g01
+Grid gr3
+{
+[more                                 ]
+
+
+}
+END -- gr3
+END -- VBox1
+END -- gglr801
+
+TABLES
+aec_file
+ATTRIBUTES
+ButtonEdit aec00=aec_file.aec00, action=controlp, tabIndex=6, image="zoom.png";
+Group group01:group01, text="QBE";
+ButtonEdit aec01=aec_file.aec01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit aec051=aec_file.aec051, tabIndex=2;
+ButtonEdit aec052=aec_file.aec052, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+Edit aec05=aec_file.aec05, tabIndex=4;
+Edit aec02=aec_file.aec02, tabIndex=5;
+CheckBox t=formonly.t type CHAR, tabIndex=7, text="Next Page By Account", valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=10, text="Monetary Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Control/Classification Item";
+RadioGroup u=formonly.u type CHAR, tabIndex=8, items=(("1", "Ctrl & Independent Account"),("2", "Classification Item"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(aec_file.aec00,aec_file.aec01,aec_file.aec051,aec_file.aec052,aec_file.aec05,aec_file.aec02,formonly.t,formonly.h,formonly.u,formonly.more)
+END -- INSTRUCTIONS
+

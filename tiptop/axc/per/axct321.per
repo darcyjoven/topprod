@@ -1,0 +1,140 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct321.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt330")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr462
+{
+ Cost Calculate Category  [cdg04                 ]
+ Book No.                 [cdg01   ]
+ Legal                    [cdglegal][azt02        ]
+
+
+
+}
+END -- gr462
+Grid gr463
+{
+ Year   [cdg0]    Month   [cd]
+ Entry  [cdg05               ]                     [imgmksg]
+ glno   [nppglno             ]     [cdgconf  ]     [       ]
+
+
+
+}
+END -- gr463
+END -- hb2
+END -- page01
+Page info(text="Info")
+Grid gr466
+{
+
+   Record Orig.     [cdgoriu     ]
+   Dept Orig.       [cdgorig     ]
+
+
+
+}
+END -- gr466
+END -- info
+END -- folder01
+Table s_cdg
+{
+[cdg06         |cdg12             |cdg07        |cdg13       |cdg14         |cdg08          |ima02                |cdg09               |aag02          |cdg10         |cdg11             |cdg11a           |cdg11b           |cdg11c          |cdg11d          |cdg11e        |cdg11f        |cdg11g         |cdg11h           ]
+[cdg06         |cdg12             |cdg07        |cdg13       |cdg14         |cdg08          |ima02                |cdg09               |aag02          |cdg10         |cdg11             |cdg11a           |cdg11b           |cdg11c          |cdg11d          |cdg11e        |cdg11f        |cdg11g         |cdg11h           ]
+[cdg06         |cdg12             |cdg07        |cdg13       |cdg14         |cdg08          |ima02                |cdg09               |aag02          |cdg10         |cdg11             |cdg11a           |cdg11b           |cdg11c          |cdg11d          |cdg11e        |cdg11f        |cdg11g         |cdg11h           ]
+[cdg06         |cdg12             |cdg07        |cdg13       |cdg14         |cdg08          |ima02                |cdg09               |aag02          |cdg10         |cdg11             |cdg11a           |cdg11b           |cdg11c          |cdg11d          |cdg11e        |cdg11f        |cdg11g         |cdg11h           ]
+[cdg06         |cdg12             |cdg07        |cdg13       |cdg14         |cdg08          |ima02                |cdg09               |aag02          |cdg10         |cdg11             |cdg11a           |cdg11b           |cdg11c          |cdg11d          |cdg11e        |cdg11f        |cdg11g         |cdg11h           ]
+
+}
+END -- s_cdg
+Table s_cdh
+{
+[cdh07          |ima02_2                |cdh08               |aag02_2        |cdh09             |cdh10              |cdh10a              |cdh10b               |cdh10c          |cdh10d              |cdh10e          |cdh10f          |cdh10g         |cdh10h          ]
+[cdh07          |ima02_2                |cdh08               |aag02_2        |cdh09             |cdh10              |cdh10a              |cdh10b               |cdh10c          |cdh10d              |cdh10e          |cdh10f          |cdh10g         |cdh10h          ]
+[cdh07          |ima02_2                |cdh08               |aag02_2        |cdh09             |cdh10              |cdh10a              |cdh10b               |cdh10c          |cdh10d              |cdh10e          |cdh10f          |cdh10g         |cdh10h          ]
+[cdh07          |ima02_2                |cdh08               |aag02_2        |cdh09             |cdh10              |cdh10a              |cdh10b               |cdh10c          |cdh10d              |cdh10e          |cdh10f          |cdh10g         |cdh10h          ]
+[cdh07          |ima02_2                |cdh08               |aag02_2        |cdh09             |cdh10              |cdh10a              |cdh10b               |cdh10c          |cdh10d              |cdh10e          |cdh10f          |cdh10g         |cdh10h          ]
+
+}
+END -- s_cdh
+Grid gr467
+{
+  ---------- Rows [cnt   ] / [cn2   ]-[cn4   ] ----------
+
+
+}
+END -- gr467
+END -- VBox1
+END -- axct321
+
+TABLES
+cdg_file,
+aag_file,
+npp_file,
+azt_file,
+cdh_file
+ATTRIBUTES
+ComboBox cdg04=cdg_file.cdg04, tabIndex=1, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+ButtonEdit cdg01=cdg_file.cdg01, action=controlp, tabIndex=2, image="zoom";
+Edit cdglegal=cdg_file.cdglegal, tabIndex=3;
+Edit azt02=azt_file.azt02, tabIndex=4;
+Edit cdg0=cdg_file.cdg02, tabIndex=5;
+Edit cd=cdg_file.cdg03, tabIndex=6;
+Edit cdg05=cdg_file.cdg05, tabIndex=7;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit nppglno=npp_file.nppglno, tabIndex=8;
+CheckBox cdgconf=cdg_file.cdgconf, tabIndex=9, text="cdgconf", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit cdgoriu=cdg_file.cdgoriu, tabIndex=10, noEntry;
+Edit cdgorig=cdg_file.cdgorig, tabIndex=11, noEntry;
+Edit cdg06=cdg_file.cdg06, tabIndex=12, title="Type Code", noEntry;
+Edit cdg12=formonly.cdg12 type CHAR, tabIndex=13, title="Cost Center", noEntry;
+Edit cdg07=cdg_file.cdg07, tabIndex=14, title="Work Order", noEntry;
+ComboBox cdg13=cdg_file.cdg13, tabIndex=15, title=%"Work Type", items=(("1", "Text"),("5", "Text"),("7", "Text"),("8", "Text"),("11", "Text"),("13", "Text"),("15", "Text"));
+Edit cdg14=cdg_file.cdg14, tabIndex=16, title=%"Factory";
+Edit cdg08=cdg_file.cdg08, tabIndex=17, title="Main Item", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=18, title="Item Name";
+ButtonEdit cdg09=cdg_file.cdg09, action=controlp, tabIndex=19, title="Cost Acc", image="zoom";
+Edit aag02=aag_file.aag02, tabIndex=20, title="Acc Name", noEntry;
+Edit cdg10=cdg_file.cdg10, tabIndex=21, title="Qty", noEntry;
+Edit cdg11=cdg_file.cdg11, tabIndex=22, title="Amt", noEntry;
+Edit cdg11a=cdg_file.cdg11a, tabIndex=23, title="Material", noEntry;
+Edit cdg11b=cdg_file.cdg11b, tabIndex=24, title="Man Cost", noEntry;
+Edit cdg11c=cdg_file.cdg11c, tabIndex=25, title="Cost 1", noEntry;
+Edit cdg11d=cdg_file.cdg11d, tabIndex=26, title="Make Cost", noEntry;
+Edit cdg11e=cdg_file.cdg11e, tabIndex=27, title="Cost 2", noEntry;
+Edit cdg11f=cdg_file.cdg11f, tabIndex=28, title="Cost 3", noEntry;
+Edit cdg11g=cdg_file.cdg11g, tabIndex=29, title="Cost 4", noEntry;
+Edit cdg11h=cdg_file.cdg11h, tabIndex=30, title="Cost 5", noEntry;
+Edit cdh07=cdh_file.cdh07, tabIndex=31, title="Sub Item", noEntry;
+Edit ima02_2=formonly.ima02_2 type CHAR, tabIndex=32, title="Item name2";
+ButtonEdit cdh08=cdh_file.cdh08, action=controlp, tabIndex=33, title="Account", image="zoom";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=34, title="Acc Name", noEntry;
+Edit cdh09=cdh_file.cdh09, tabIndex=35, title="Qty2", noEntry, required;
+Edit cdh10=cdh_file.cdh10, tabIndex=36, title="Amt", noEntry;
+Edit cdh10a=cdh_file.cdh10a, tabIndex=37, title="Material", noEntry;
+Edit cdh10b=cdh_file.cdh10b, tabIndex=38, title="Man Cost", noEntry;
+Edit cdh10c=cdh_file.cdh10c, tabIndex=39, title="Cost 1", noEntry;
+Edit cdh10d=cdh_file.cdh10d, tabIndex=40, title="Make Cost", noEntry;
+Edit cdh10e=cdh_file.cdh10e, tabIndex=41, title="Cost 2", noEntry;
+Edit cdh10f=cdh_file.cdh10f, tabIndex=42, title="Cost 3", noEntry;
+Edit cdh10g=cdh_file.cdh10g, tabIndex=43, title="Cost 4", noEntry;
+Edit cdh10h=cdh_file.cdh10h, tabIndex=44, title="Cost 5", noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=45;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=46;
+Edit cn4=formonly.cn4 type INTEGER, tabIndex=47;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cdg(cdg_file.cdg06,formonly.cdg12,cdg_file.cdg07,cdg_file.cdg13,cdg_file.cdg14,cdg_file.cdg08,formonly.ima02,cdg_file.cdg09,aag_file.aag02,cdg_file.cdg10,cdg_file.cdg11,cdg_file.cdg11a,cdg_file.cdg11b,cdg_file.cdg11c,cdg_file.cdg11d,cdg_file.cdg11e,cdg_file.cdg11f,cdg_file.cdg11g,cdg_file.cdg11h)
+SCREEN RECORD s_cdh(cdh_file.cdh07,formonly.ima02_2,cdh_file.cdh08,formonly.aag02_2,cdh_file.cdh09,cdh_file.cdh10,cdh_file.cdh10a,cdh_file.cdh10b,cdh_file.cdh10c,cdh_file.cdh10d,cdh_file.cdh10e,cdh_file.cdh10f,cdh_file.cdh10g,cdh_file.cdh10h)
+SCREEN RECORD Undefined(cdg_file.cdg04,cdg_file.cdg01,cdg_file.cdglegal,azt_file.azt02,cdg_file.cdg02,cdg_file.cdg03,cdg_file.cdg05,formonly.imgmksg,npp_file.nppglno,cdg_file.cdgconf,cdg_file.cdgoriu,cdg_file.cdgorig,formonly.cnt,formonly.cn2,formonly.cn4)
+END -- INSTRUCTIONS
+

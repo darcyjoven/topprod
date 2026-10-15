@@ -1,0 +1,115 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agls101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agls103")
+Folder pc505
+Page page04(text="Merge Financial Statement")
+Grid gr2843
+{
+
+[label19                        ]                 [aaz641    ]
+[label18                         ]                [aaz86     ]
+[label17                         ]                [aaz120    ]
+[label16                                      ]   [aaz87     ]
+[label14                          ]               [aaz113    ]
+[label15                          ]               [aaz114    ]
+
+[label3                            ]              [aaz131    ]
+[label13       ]                                  [aaz128    ]
+[label12              ]                           [aaz129    ]
+[label]
+[dummy1                 ]
+[label4                              ]            [aaz100    ]
+[label5                                     ]     [aaz101    ]
+[label6                                    ]      [aaz109    ]
+[label7                       ]                   [aaz111    ]
+[label8                               ]           [aaz110    ]
+[label9                  ]                        [aaz112    ]
+[label10                                       ]  [aaz102    ]
+[label11                                   ]      [aaz103    ]
+
+
+
+
+
+
+}
+END -- gr2843
+END -- page04
+Page Page1(text=%"Import Data Setting")
+Grid Grid1
+{
+[label1               ][aaz130                 ]
+
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Closing Account Setting")
+Grid Grid2
+{
+
+[label20             ]   [aaz642    ]
+[aaz643                                            ]
+
+
+}
+END -- Grid2
+END -- Page2
+END -- pc505
+END -- agls101
+
+TABLES
+aaz_file
+ATTRIBUTES
+Label label19:Label19, text=%"Consolidated Report A/C";
+ButtonEdit aaz641=aaz_file.aaz641, action=controlp, tabIndex=7, not null, required, image="zoom";
+Label label18:Label18, text=%"Re-Measure Exchange Gain";
+ButtonEdit aaz86=aaz_file.aaz86, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+Label label17:Label17, text=%"Re-Measure Exchange Loss";
+ButtonEdit aaz120=aaz_file.aaz120, action=controlp, tabIndex=14, image="zoom";
+Label label16:Label16, text=%"Translation Adjustment AccountingCode";
+ButtonEdit aaz87=aaz_file.aaz87, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+Label label14:Label14, text=%"Current Period Profit(IS)";
+ButtonEdit aaz113=aaz_file.aaz113, action=controlp, tabIndex=12, image="zoom";
+Label label15:Label15, text=%"Current Period Profit(BS)";
+ButtonEdit aaz114=aaz_file.aaz114, action=controlp, tabIndex=13, image="zoom";
+Label label3:Label3, text=%"Accumulated Profit/Loss Account Code";
+ButtonEdit aaz131=aaz_file.aaz131, action=controlp, tabIndex=18, image="zoom";
+Label label13:Label13, text=%"Minority Stock";
+ButtonEdit aaz128=aaz_file.aaz128, action=controlp, tabIndex=16, image="zoom";
+Label label12:Label12, text=%"Minority Stock Profit";
+ButtonEdit aaz129=aaz_file.aaz129, action=controlp, tabIndex=17, image="zoom";
+Label label:Label2, text=%" ";
+Label dummy1:dummy1, text=%"A Permanent Investment:";
+Label label4:Label4, text=%"Combination Sales-in Account";
+ButtonEdit aaz100=aaz_file.aaz100, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+Label label5:Label5, text=%"Combination Assets Exchange Account";
+ButtonEdit aaz101=aaz_file.aaz101, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+Label label6:Label6, text=%"Unrealized Sales Revenues (Related-Party Transactions)";
+ButtonEdit aaz109=aaz_file.aaz109, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+Label label7:Label7, text=%"Unrealized Sales Loss";
+ButtonEdit aaz111=aaz_file.aaz111, action=controlp, tabIndex=10, image="zoom.png";
+Label label8:Label8, text=%"Deferred Credit (Related-Party Transactions)";
+ButtonEdit aaz110=aaz_file.aaz110, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+Label label9:Label9, text=%"Deferred Credits";
+ButtonEdit aaz112=aaz_file.aaz112, action=controlp, tabIndex=11, image="zoom.png";
+Label label10:Label10, text=%"Combination Current Profit & Loss Acc.";
+ButtonEdit aaz102=aaz_file.aaz102, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+Label label11:Label11, text=%"Combination Investment Profit Acc.";
+ButtonEdit aaz103=aaz_file.aaz103, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+Label label1:Label1, text=%"Import Data Type (Non-TIPTOP)";
+ComboBox aaz130=aaz_file.aaz130, tabIndex=15, not null, required, items=(("1", "Transaction Amt"),("2", "Accumulated Balance"));
+Label label20:Label20, text=%"Account Locking Date";
+DateEdit aaz642=aaz_file.aaz642, tabIndex=19, noEntry;
+CheckBox aaz643=aaz_file.aaz643, tabIndex=20, text=%"Whether the subsidiary in conjunction Closing Account", valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(aaz_file.aaz641,aaz_file.aaz86,aaz_file.aaz120,aaz_file.aaz87,aaz_file.aaz113,aaz_file.aaz114,aaz_file.aaz100,aaz_file.aaz101,aaz_file.aaz109,aaz_file.aaz111,aaz_file.aaz110,aaz_file.aaz112,aaz_file.aaz102,aaz_file.aaz103,aaz_file.aaz130,aaz_file.aaz128,aaz_file.aaz129,aaz_file.aaz131,aaz_file.aaz642,aaz_file.aaz643)
+END -- INSTRUCTIONS
+

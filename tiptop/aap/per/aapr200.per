@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapr200")
+Grid gr238
+{
+ <G group01                                               >
+  Accounts Payable Date         [apf02               ]
+  Employee No                   [apf03               ]
+  Name                          [apf12               ]
+ <                                                        >
+ <G group02                                               >
+  Enter Bank Recording Date     [apf43       ]
+ <                                                        >
+
+}
+END -- gr238
+END -- aapr200
+
+TABLES
+apf_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit apf02=apf_file.apf02, tabIndex=1;
+ButtonEdit apf03=apf_file.apf03, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Vender #";
+Edit apf12=apf_file.apf12, tabIndex=3;
+Group group02:group02, text="INPUT";
+DateEdit apf43=formonly.apf43 type DATE, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(apf_file.apf02,apf_file.apf03,apf_file.apf12,formonly.apf43)
+END -- INSTRUCTIONS
+

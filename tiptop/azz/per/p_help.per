@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_help.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_help")
+VBox vb2
+Grid gr1
+{
+ <G group01                                                                             >
+  Program ID [gaz01       ][gaz03                             ]
+  Language   [gaz02       ]
+ [showflag                ][show_h]
+ [dummy01                                              ]
+ <                                                                                      >
+ <G group02                                                                             >
+ [txthelp                                                                               ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ [                                                                                      ]
+ <                                                                                      >
+}
+END -- gr1
+Grid gr2
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2
+END -- vb2
+END -- p_help
+
+TABLES
+gaz_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit gaz01=gaz_file.gaz01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit gaz03=gaz_file.gaz03, tabIndex=2, noEntry;
+ComboBox gaz02=gaz_file.gaz02, tabIndex=3, queryEditable;
+CheckBox showflag=formonly.showflag type VARCHAR, tabIndex=4, text="Preview Html-Help File", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Button show_h:show_help, text="Update";
+Label dummy01:dummy01, text=" * Show all description of industry fields, but procuce separately.";
+Group group02:group02, text="Help Description";
+TextEdit txthelp=formonly.txthelp type CHAR, tabIndex=5, stretch=NONE;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gaz_file.gaz01,gaz_file.gaz03,gaz_file.gaz02,formonly.showflag,formonly.txthelp,formonly.cnt)
+END -- INSTRUCTIONS
+

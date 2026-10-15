@@ -1,0 +1,200 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/4fd/aimi103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi103")
+VBox VBox1
+Folder pc522
+Page page01(text="Main")
+Grid gr2937
+{
+ <G group01                                           ><G group10                                  >
+  Item No.            [ima01                         ]   [ima04                                 ]
+  Part Name           [ima02                         ]   [                                      ]
+  Specification       [ima021                        ]   [                                      ]
+  Source Code         [ima08     ]                       [                                      ]
+  Current version     [ima05     ]                       [                                      ]
+  Inventory Unit      [ima25     ]                       [                                      ]
+  Menu No.            [ima03               ]             [                                      ]
+  Handling Status     [s         ]                       [upda]
+                                                         [imgmksg]
+ <                                                    ><                                           >
+
+}
+END -- gr2937
+END -- page01
+Page info(text="Info")
+Grid gr2938
+{
+ Record Owner        [imauser   ] Last Modified by    [imamodu   ] Data Valid Code     [imaacti   ]
+ Department          [imagrup   ] Create/Modify Date  [imadate   ]
+ Record Orig.        [imaoriu   ]
+ Dept Orig.          [imaorig   ]
+}
+END -- gr2938
+END -- info
+END -- pc522
+Folder pc523
+Page page02(text="Pur.Info")
+Grid gr2939
+{
+ <G group03                                           ><G group02                                 >
+  Buyer               [ima43     ][gen02     ]          Pur Unit Lot Qty    [ima45               ]
+  Purchase Unit       [ima44     ]                      Min Purchase Qty    [ima46               ]
+  Conversion Rt       [ima44_fac           ]            Economic Order Qty  [ima51               ]
+  replace pur princ   [ima150              ]            Avg.Order Qty       [ima52               ]
+  PO/BLANKET PO       [ima152              ]            Pur. Wastage Ratio% [ima47               ]
+ [ima926                          ]                    <                                          >
+ [ima927                          ]
+ <                                                    >
+
+}
+END -- gr2939
+END -- page02
+Page page03(text="Price & L/T")
+Grid gr2940
+{
+ <G group05                                           ><G group04                                         >
+  Main Supplier       [ima54     ][pmc03     ]          Paper Tm              [ima50     ]
+  Price Unit          [ima908  ]                        Delivery lead Tm      [ima48     ]
+  Vend Dist.Qty       [ima104              ]            Arriving Lead Tm      [ima49     ]
+  Lst Purchase U/P    [ima53               ]            Store-in Lead Tm      [ima491    ]
+  Avg Pur.U/P(H.C)    [ima91               ]            MRP Advance Delivery Days Allowed [ima72 ]
+  Market Price(H.C)   [ima531              ]            MRP Delay Delivery Days Allowed   [ima721]
+  Transaction Dt      [ima532      ]                    Delivery warning days [ima171    ]
+ <                                                    > Transport warning days[ima172    ]
+                                                       <                                                  >
+}
+END -- gr2940
+END -- page03
+Page page04(text="QC")
+Grid gr2941
+{
+ <G group06                                   ><G group09                                          >
+  Purchase Feature    [ima103    ]             [ima24                          ]
+  Covering Policy     [ima37     ]             [dummy01                        ]
+  Safety Inv          [ima27               ]      [ima100                      ]
+  Covering Point Qty  [ima38               ]
+  Covering Qty        [ima99               ]   [dummy02                        ]
+  Period Purchase Qty [ima88               ]      [ima101                      ]
+  # of Pur Period     [ima89]MM/[ima90][dummy0]   [                            ]
+  Lst purchase Dt     [ima881    ]                [                            ]
+  Mat.Cate            [ima109    ]              Level                [ima102    ]
+  userdefined_field11 [imaud11           ]     <                                                   >
+ <                                            >
+}
+END -- gr2941
+END -- page04
+Page page05(text="Coffer Purchase")
+Grid gr2942
+{
+ <G group11                                   >
+  [ima913                        ]
+  Purchase Center     [ima914    ][geu02     ]
+ <                                            >
+
+}
+END -- gr2942
+END -- page05
+END -- pc523
+Grid gr2943
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+}
+END -- gr2943
+END -- VBox1
+END -- aimi103
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Assign Item No. to Query   (QBE)";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=3, noEntry;
+Edit ima08=ima_file.ima08, tabIndex=4, noEntry;
+Edit ima05=ima_file.ima05, tabIndex=5, noEntry;
+Edit ima25=ima_file.ima25, tabIndex=6, noEntry;
+Edit ima03=ima_file.ima03, tabIndex=7, noEntry;
+Edit s=formonly.s type CHAR, tabIndex=8, upShift, comment="Check to Qry or press ENTER";
+Group group10:group10;
+IMAGE ima04=formonly.ima04 type CHAR, sizePolicy=fixed, width = 300 pixels, height = 140 pixels;
+Button upda:update, text="Update";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters;
+Edit imauser=ima_file.imauser, tabIndex=9, noEntry;
+Edit imamodu=ima_file.imamodu, tabIndex=10, noEntry;
+Edit imaacti=ima_file.imaacti, tabIndex=11, noEntry, upShift;
+Edit imagrup=ima_file.imagrup, tabIndex=12, noEntry;
+DateEdit imadate=ima_file.imadate, tabIndex=13, noEntry;
+Edit imaoriu=ima_file.imaoriu, tabIndex=56, noEntry;
+Edit imaorig=ima_file.imaorig, tabIndex=57, noEntry;
+Group group03:group03;
+ButtonEdit ima43=ima_file.ima43, action=controlp, tabIndex=14, image="zoom", comment="<^P> Qry  Employee";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=15, noEntry;
+ButtonEdit ima44=ima_file.ima44, action=controlp, tabIndex=16, not null, required, image="zoom", comment="<^P>Qry  Unit  <^Y>Create Unit    <^U>/<^T>Create Item/Unit conversion";
+Edit ima44_fac=ima_file.ima44_fac, tabIndex=17, noEntry;
+ComboBox ima150=ima_file.ima150, tabIndex=52, not null, required, items=(("0", "nothing"),("1", "princ"),("2", "group"));
+ComboBox ima152=ima_file.ima152, tabIndex=53, not null, required, items=(("0", "nothing"),("1", "princle"),("2", "group"));
+CheckBox ima926=ima_file.ima926, tabIndex=55, default = "N", text="AVL ?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ima927=ima_file.ima927, tabIndex=58, default = "N", text="WEB Purchase Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02;
+Edit ima45=ima_file.ima45, tabIndex=18, not null, required;
+Edit ima46=ima_file.ima46, tabIndex=19, not null, required;
+Edit ima51=ima_file.ima51, tabIndex=20, not null, required;
+Edit ima52=ima_file.ima52, tabIndex=21, not null, required;
+Edit ima47=ima_file.ima47, tabIndex=22, not null, required;
+Group group05:group05;
+ButtonEdit ima54=ima_file.ima54, action=controlp, tabIndex=23, image="zoom", comment="<^P> Qry Supplier    <^Y> Create Supplier";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=24, noEntry;
+ButtonEdit ima908=ima_file.ima908, action=controlp, tabIndex=54, image="zoom";
+Edit ima104=ima_file.ima104, tabIndex=25, not null, required;
+Edit ima53=ima_file.ima53, tabIndex=26, not null, required;
+Edit ima91=ima_file.ima91, tabIndex=27, noEntry;
+Edit ima531=ima_file.ima531, tabIndex=28, not null, required;
+DateEdit ima532=ima_file.ima532, tabIndex=29;
+Group group04:group04;
+Edit ima50=ima_file.ima50, tabIndex=30, not null, required;
+Edit ima48=ima_file.ima48, tabIndex=31, not null, required;
+Edit ima49=ima_file.ima49, tabIndex=32, not null, required;
+Edit ima491=ima_file.ima491, tabIndex=33, not null, required;
+Edit ima72=ima_file.ima72, tabIndex=34;
+Edit ima721=ima_file.ima721, tabIndex=59;
+Edit ima171=ima_file.ima171, tabIndex=61;
+Edit ima172=ima_file.ima172, tabIndex=60;
+Group group06:group06;
+ComboBox ima103=ima_file.ima103, tabIndex=35, not null, required, queryEditable, items=(("0", "Local Purchase"),("1", "Foreign Purchase"),("2", "Other"));
+ComboBox ima37=ima_file.ima37, tabIndex=36, not null, required, queryEditable, items=(("0", "Reorder point"),("1", "MPS"),("2", "MRP"),("3", "FAS"),("4", "Production by Order"),("5", "Pur of Period"));
+Edit ima27=ima_file.ima27, tabIndex=37, not null, required;
+Edit ima38=ima_file.ima38, tabIndex=38, not null, required;
+Edit ima99=ima_file.ima99, tabIndex=39, not null, required;
+Edit ima88=ima_file.ima88, tabIndex=40;
+Edit ima89=ima_file.ima89, tabIndex=41;
+Edit ima90=ima_file.ima90, tabIndex=42;
+Label dummy0:dummy03, text="DD";
+DateEdit ima881=ima_file.ima881, tabIndex=43, noEntry;
+ButtonEdit ima109=ima_file.ima109, action=controlp, tabIndex=62, image="zoom", comment=%"<^P>Qry Code(Material Cate)  <^Y> Create Code (Mat.Cate)";
+Edit imaud11=ima_file.imaud11, tabIndex=63, scroll;
+Group group09:group09;
+CheckBox ima24=ima_file.ima24, tabIndex=44, text="QC?   ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="QC Degree";
+RadioGroup ima100=formonly.ima100 type VARCHAR, tabIndex=45, not null, required, items=(("N", "Normal QC"),("T", "Strict QC"),("R", "Reduced-Qty QC"));
+Label dummy02:dummy02, text="QC Class";
+RadioGroup ima101=formonly.ima101 type VARCHAR, tabIndex=46, not null, required, items=(("1", "General"),("2", "Special"),("3", "1916(count)"),("4", "1916(measurement)"));
+ComboBox ima102=formonly.ima102 type VARCHAR, tabIndex=47, not null, required, upShift, queryEditable, comment="General:1/2/3   Special:1/2/3/4", items=(("1", "Normal/Special/1916"),("2", "Normal/Special/1916"),("3", "Normal/Special/1916"),("4", "Special/1916"),("5", "1916"),("6", "1916"),("7", "1916"));
+Group group11:group11;
+CheckBox ima913=ima_file.ima913, tabIndex=48, text="Purchase", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ima914=ima_file.ima914, action=controlp, tabIndex=49, image="zoom";
+Edit geu02=formonly.geu02 type CHAR, tabIndex=50, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=51;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,ima_file.ima08,ima_file.ima05,ima_file.ima25,ima_file.ima03,formonly.s,formonly.ima04,formonly.imgmksg,ima_file.imauser,ima_file.imamodu,ima_file.imaacti,ima_file.imagrup,ima_file.imadate,ima_file.imaoriu,ima_file.imaorig,ima_file.ima43,formonly.gen02,ima_file.ima44,ima_file.ima44_fac,ima_file.ima150,ima_file.ima152,ima_file.ima926,ima_file.ima927,ima_file.ima45,ima_file.ima46,ima_file.ima51,ima_file.ima52,ima_file.ima47,ima_file.ima54,formonly.pmc03,ima_file.ima908,ima_file.ima104,ima_file.ima53,ima_file.ima91,ima_file.ima531,ima_file.ima532,ima_file.ima50,ima_file.ima48,ima_file.ima49,ima_file.ima491,ima_file.ima72,ima_file.ima103,ima_file.ima37,ima_file.ima27,ima_file.ima38,ima_file.ima99,ima_file.ima88,ima_file.ima89,ima_file.ima90,ima_file.ima881,ima_file.ima24,formonly.ima100,formonly.ima101,formonly.ima102,ima_file.ima913,ima_file.ima914,formonly.geu02,formonly.cnt,ima_file.ima721,ima_file.ima172,ima_file.ima171,ima_file.ima109,ima_file.imaud11)
+END -- INSTRUCTIONS
+

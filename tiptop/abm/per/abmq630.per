@@ -1,0 +1,101 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmq630.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmq630")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr894
+{
+ Master Item No.     [bma01                         ]
+ Item Name           [ima02                         ]
+ Specification       [ima021                        ]
+ Expired Date        [g_vdate     ]
+ Alternate Code      [bma06               ]
+}
+END -- gr894
+Grid gr895
+{
+ Current Version     [ima05     ]
+ Source Code         [ima08     ]
+ Pro Unit            [ima55     ]
+
+
+}
+END -- gr895
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr896
+{
+ Record Owner        [bmauser   ] Last Modified by    [bmamodu   ] Data Valid Code     [bmaacti   ]
+ Department          [bmagrup   ] Create/Modify Date  [bmadate   ]
+ Record Orig.        [bmaoriu   ]
+ Dept Orig.          [bmaorig   ]
+}
+END -- gr896
+END -- info
+END -- folder01
+Table s_bmb
+{
+[bmb02  |bmb03          |ima02_b                  |ima021_b               |bmb13                  |qvl1                ]
+[bmb02  |bmb03          |ima02_b                  |ima021_b               |bmb13                  |qvl1                ]
+[bmb02  |bmb03          |ima02_b                  |ima021_b               |bmb13                  |qvl1                ]
+[bmb02  |bmb03          |ima02_b                  |ima021_b               |bmb13                  |qvl1                ]
+[bmb02  |bmb03          |ima02_b                  |ima021_b               |bmb13                  |qvl1                ]
+[bmb02  |bmb03          |ima02_b                  |ima021_b               |bmb13                  |qvl1                ]
+[bmb02  |bmb03          |ima02_b                  |ima021_b               |bmb13                  |qvl1                ]
+[bmb02  |bmb03          |ima02_b                  |ima021_b               |bmb13                  |qvl1                ]
+[bmb02  |bmb03          |ima02_b                  |ima021_b               |bmb13                  |qvl1                ]
+[bmb02  |bmb03          |ima02_b                  |ima021_b               |bmb13                  |qvl1                ]
+
+}
+END -- s_bmb
+Grid gr897
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr897
+END -- VBox1
+END -- abmq630
+
+TABLES
+bmb_file,
+bma_file
+ATTRIBUTES
+ButtonEdit bma01=bma_file.bma01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+DateEdit g_vdate=formonly.g_vdate type DATE, tabIndex=4;
+Edit bma06=formonly.bma06 type CHAR, tabIndex=5;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=6, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=7, noEntry;
+Edit ima55=formonly.ima55 type CHAR, tabIndex=8, noEntry;
+Edit bmauser=bma_file.bmauser, tabIndex=9, noEntry;
+Edit bmamodu=bma_file.bmamodu, tabIndex=10, noEntry;
+Edit bmaacti=bma_file.bmaacti, tabIndex=11, noEntry;
+Edit bmagrup=bma_file.bmagrup, tabIndex=12, noEntry;
+DateEdit bmadate=bma_file.bmadate, tabIndex=13, noEntry;
+Edit bmaoriu=bma_file.bmaoriu, tabIndex=501, noEntry;
+Edit bmaorig=bma_file.bmaorig, tabIndex=502, noEntry;
+Edit bmb02=formonly.bmb02 type CHAR, tabIndex=14, title="LN#", noEntry;
+ButtonEdit bmb03=bmb_file.bmb03, action=controlp, tabIndex=15, title="Component No.", image="zoom";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=16, title="Part Name", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=17, title="Specification", noEntry;
+Edit bmb13=formonly.bmb13 type CHAR, tabIndex=18, title="Inst.Loc", noEntry;
+Edit qvl1=formonly.qvl1 type CHAR, tabIndex=19, title="Assigned Brand", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmb(formonly.bmb02,bmb_file.bmb03,formonly.ima02_b,formonly.ima021_b,formonly.bmb13,formonly.qvl1)
+SCREEN RECORD Undefined(bma_file.bma01,formonly.ima02,formonly.ima021,formonly.g_vdate,formonly.bma06,formonly.ima05,formonly.ima08,formonly.ima55,bma_file.bmauser,bma_file.bmamodu,bma_file.bmaacti,bma_file.bmagrup,bma_file.bmadate,bma_file.bmaoriu,bma_file.bmaorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

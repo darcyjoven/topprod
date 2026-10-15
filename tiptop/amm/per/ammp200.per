@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amm/42f/ammp200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ammp200")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr3744
+{
+ Advice #            [mmj01           ]
+ Issue Date          [mmj02       ]
+ Supplier            [mmj03     ][pmc03     ]
+ Tax Type            [mmj11     ][gec02               ]
+ Price Terms         [mmj14     ][pnz02                         ]
+ Shipping Address    [mmj04     ][pmc15                         ]
+ Bill Address        [mmj05     ][pmc16                         ]
+}
+END -- gr3744
+Grid gr3745
+{
+ Employee            [mmj06     ][gen02     ]
+ Department          [mmj07     ][gem02     ]
+ Payment Method      [mmj10     ]
+ Currency            [mmj12     ]
+ Work hour           [mmj15     ]
+ Amount              [mmj13               ]
+
+}
+END -- gr3745
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_mmk
+{
+[mmk02 |mmk03                |mmk01|mmk04           |mmk11             |mmk111|mmk09        |mmk10    |mmk13     |mmk05   |mmk06                |mmk14                           |mmk091        |mmk12               |mmk15      |mmc02                 ]
+[mmk02 |mmk03                |mmk01|mmk04           |mmk11             |mmk111|mmk09        |mmk10    |mmk13     |mmk05   |mmk06                |mmk14                           |mmk091        |mmk12               |mmk15      |mmc02                 ]
+[mmk02 |mmk03                |mmk01|mmk04           |mmk11             |mmk111|mmk09        |mmk10    |mmk13     |mmk05   |mmk06                |mmk14                           |mmk091        |mmk12               |mmk15      |mmc02                 ]
+[mmk02 |mmk03                |mmk01|mmk04           |mmk11             |mmk111|mmk09        |mmk10    |mmk13     |mmk05   |mmk06                |mmk14                           |mmk091        |mmk12               |mmk15      |mmc02                 ]
+[mmk02 |mmk03                |mmk01|mmk04           |mmk11             |mmk111|mmk09        |mmk10    |mmk13     |mmk05   |mmk06                |mmk14                           |mmk091        |mmk12               |mmk15      |mmc02                 ]
+[mmk02 |mmk03                |mmk01|mmk04           |mmk11             |mmk111|mmk09        |mmk10    |mmk13     |mmk05   |mmk06                |mmk14                           |mmk091        |mmk12               |mmk15      |mmc02                 ]
+[mmk02 |mmk03                |mmk01|mmk04           |mmk11             |mmk111|mmk09        |mmk10    |mmk13     |mmk05   |mmk06                |mmk14                           |mmk091        |mmk12               |mmk15      |mmc02                 ]
+[mmk02 |mmk03                |mmk01|mmk04           |mmk11             |mmk111|mmk09        |mmk10    |mmk13     |mmk05   |mmk06                |mmk14                           |mmk091        |mmk12               |mmk15      |mmc02                 ]
+[mmk02 |mmk03                |mmk01|mmk04           |mmk11             |mmk111|mmk09        |mmk10    |mmk13     |mmk05   |mmk06                |mmk14                           |mmk091        |mmk12               |mmk15      |mmc02                 ]
+[mmk02 |mmk03                |mmk01|mmk04           |mmk11             |mmk111|mmk09        |mmk10    |mmk13     |mmk05   |mmk06                |mmk14                           |mmk091        |mmk12               |mmk15      |mmc02                 ]
+
+}
+END -- s_mmk
+Grid gr3746
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3746
+END -- VBox1
+END -- ammp200
+
+TABLES
+mmk_file,
+mmj_file
+ATTRIBUTES
+Edit mmj01=mmj_file.mmj01, tabIndex=1, noEntry;
+DateEdit mmj02=mmj_file.mmj02, tabIndex=2, noEntry;
+Edit mmj03=mmj_file.mmj03, tabIndex=3, noEntry;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=4, noEntry;
+Edit mmj11=mmj_file.mmj11, tabIndex=5, noEntry;
+Edit gec02=formonly.gec02 type CHAR, tabIndex=6, noEntry;
+Edit mmj14=mmj_file.mmj14, tabIndex=7, noEntry;
+Edit pnz02=formonly.pnz02 type CHAR, tabIndex=8, noEntry;
+Edit mmj04=mmj_file.mmj04, tabIndex=9, noEntry;
+Edit pmc15=formonly.pmc15 type CHAR, tabIndex=10, noEntry;
+Edit mmj05=mmj_file.mmj05, tabIndex=11, noEntry;
+Edit pmc16=formonly.pmc16 type CHAR, tabIndex=12, noEntry;
+Edit mmj06=mmj_file.mmj06, tabIndex=13, noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=14, noEntry;
+Edit mmj07=mmj_file.mmj07, tabIndex=15, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=16, noEntry;
+Edit mmj10=mmj_file.mmj10, tabIndex=17, noEntry;
+Edit mmj12=mmj_file.mmj12, tabIndex=18, noEntry;
+Edit mmj15=mmj_file.mmj15, tabIndex=19, noEntry;
+Edit mmj13=mmj_file.mmj13, tabIndex=20, noEntry;
+Edit mmk02=mmk_file.mmk02, tabIndex=21, title="Line#";
+Edit mmk03=mmk_file.mmk03, tabIndex=22, title="Item No", noEntry;
+Edit mmk01=mmk_file.mmk031, tabIndex=23, title="Unit", noEntry;
+Edit mmk04=mmk_file.mmk04, tabIndex=24, title="Drw#", noEntry;
+Edit mmk11=mmk_file.mmk11, tabIndex=25, title="Requisition Note#", noEntry;
+Edit mmk111=mmk_file.mmk111, tabIndex=26, title="Line#", noEntry;
+DateEdit mmk09=mmk_file.mmk09, tabIndex=27, title="Initial Date", noEntry;
+Edit mmk10=mmk_file.mmk10, tabIndex=28, title="Qty", noEntry, not null, required;
+Edit mmk13=mmk_file.mmk13, tabIndex=29, title="Work hour", noEntry;
+Edit mmk05=mmk_file.mmk05, tabIndex=30, title="Version", noEntry;
+Edit mmk06=mmk_file.mmk06, tabIndex=31, title="Specification Desc.", noEntry;
+Edit mmk14=mmk_file.mmk14, tabIndex=32, title="Memo", noEntry;
+DateEdit mmk091=mmk_file.mmk091, tabIndex=33, title="Complete Date", noEntry;
+Edit mmk12=mmk_file.mmk12, tabIndex=34, title="Unit Price", noEntry, not null, required;
+Edit mmk15=mmk_file.mmk15, tabIndex=35, title="Processing", noEntry;
+Edit mmc02=formonly.mmc02 type CHAR, tabIndex=36, title="Processing Description", noEntry;
+Edit cnt=formonly.cnt type VARCHAR, tabIndex=37, noEntry;
+Edit cn2=formonly.cn2 type VARCHAR, tabIndex=38, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mmk(mmk_file.mmk02,mmk_file.mmk03,mmk_file.mmk031,mmk_file.mmk04,mmk_file.mmk11,mmk_file.mmk111,mmk_file.mmk09,mmk_file.mmk10,mmk_file.mmk13,mmk_file.mmk05,mmk_file.mmk06,mmk_file.mmk14,mmk_file.mmk091,mmk_file.mmk12,mmk_file.mmk15,formonly.mmc02)
+SCREEN RECORD Undefined(mmj_file.mmj01,mmj_file.mmj02,mmj_file.mmj03,formonly.pmc03,mmj_file.mmj11,formonly.gec02,mmj_file.mmj14,formonly.pnz02,mmj_file.mmj04,formonly.pmc15,mmj_file.mmj05,formonly.pmc16,mmj_file.mmj06,formonly.gen02,mmj_file.mmj07,formonly.gem02,mmj_file.mmj10,mmj_file.mmj12,mmj_file.mmj15,mmj_file.mmj13,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

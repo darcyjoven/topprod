@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsp353.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apsp353")
+VBox vb27
+Grid gr5
+{
+ <G group01                                                                           >
+  gen01  [gen01               ]          gen03   [gen03               ]
+
+
+
+
+
+ <                                                                                    >
+
+}
+END -- gr5
+Group g01(text="INPUT")
+Grid gr6
+{
+  <G group02                                              >
+   [a                     ] [b                        ]
+  <                                                       >
+
+  <G group04                       >
+   [c       ]
+   [        ]
+
+
+  <                                >
+
+
+
+
+
+
+
+}
+END -- gr6
+END -- g01
+END -- vb27
+END -- apsp353
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit gen01=formonly.gen01 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit gen03=formonly.gen03 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Group group02:group02, text="Sequence";
+ComboBox a=formonly.a type CHAR, tabIndex=1, not null, required, queryEditable, items=(("1", "gen01"),("2", "gen03"));
+ComboBox b=formonly.b type CHAR, tabIndex=2, not null, required, queryEditable, items=(("1", "gen01"),("2", "gen03"));
+Group group04:group04, text="Data Option";
+RadioGroup c=formonly.c type VARCHAR, tabIndex=3, items=(("1", "Insert"),("2", "Append"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.gen01,formonly.gen03,formonly.a,formonly.b,formonly.c)
+END -- INSTRUCTIONS
+

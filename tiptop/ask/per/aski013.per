@@ -1,0 +1,96 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/aski013.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aski013")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+  M-no    [skc01            ] Item_no1 [skc02               ][ima02                       ] [sk]
+  Bed-no  [skc03            ] Date [skc04               ]   Color[skc06      ][agd03      ]
+  Item_no2[skc08            ][ima02_1                       ]
+}
+END -- gr1
+END -- page01
+Page info(text="Info")
+Grid gr2
+{
+ Record Owner        [skcuser       ]   Last Modified by    [skcmodu       ]
+ Department          [skcgrup       ]   Create/Modify Date  [skcdate       ]
+ Record Orig.        [skcoriu       ]
+ Dept Orig.          [skcorig       ]
+}
+END -- gr2
+END -- info
+END -- pc1
+Table s_ski
+{
+[ski04 |ski13      |c     |ski05       |ski12      |ski06       |agd03_1  |ski07       |ski08       |ski09       |ski10       |b          |ski11         ]
+[ski04 |ski13      |c     |ski05       |ski12      |ski06       |agd03_1  |ski07       |ski08       |ski09       |ski10       |b          |ski11         ]
+[ski04 |ski13      |c     |ski05       |ski12      |ski06       |agd03_1  |ski07       |ski08       |ski09       |ski10       |b          |ski11         ]
+[ski04 |ski13      |c     |ski05       |ski12      |ski06       |agd03_1  |ski07       |ski08       |ski09       |ski10       |b          |ski11         ]
+[ski04 |ski13      |c     |ski05       |ski12      |ski06       |agd03_1  |ski07       |ski08       |ski09       |ski10       |b          |ski11         ]
+[ski04 |ski13      |c     |ski05       |ski12      |ski06       |agd03_1  |ski07       |ski08       |ski09       |ski10       |b          |ski11         ]
+[ski04 |ski13      |c     |ski05       |ski12      |ski06       |agd03_1  |ski07       |ski08       |ski09       |ski10       |b          |ski11         ]
+[ski04 |ski13      |c     |ski05       |ski12      |ski06       |agd03_1  |ski07       |ski08       |ski09       |ski10       |b          |ski11         ]
+[ski04 |ski13      |c     |ski05       |ski12      |ski06       |agd03_1  |ski07       |ski08       |ski09       |ski10       |b          |ski11         ]
+[ski04 |ski13      |c     |ski05       |ski12      |ski06       |agd03_1  |ski07       |ski08       |ski09       |ski10       |b          |ski11         ]
+
+}
+END -- s_ski
+Grid gr3
+{
+ ---------- Rows [cnt   ] / [cn3   ] ----------
+
+}
+END -- gr3
+END -- VBox1
+END -- aski013
+
+TABLES
+skc_file,
+ski_file
+ATTRIBUTES
+ButtonEdit skc01=skc_file.skc01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit skc02=skc_file.skc02, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+CheckBox sk=skc_file.skcconf, tabIndex=4, text="skcconf", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit skc03=skc_file.skc03, tabIndex=5, not null, required;
+DateEdit skc04=skc_file.skc04, tabIndex=6, not null, required;
+ButtonEdit skc06=skc_file.skc06, action=controlp, tabIndex=7, not null, required, image="zoom";
+Edit agd03=formonly.agd03 type CHAR, tabIndex=8, noEntry;
+ButtonEdit skc08=skc_file.skc08, action=controlp, tabIndex=9, not null, required, image="zoom";
+Edit ima02_1=formonly.ima02_1 type CHAR, tabIndex=10, noEntry;
+Edit skcuser=skc_file.skcuser, tabIndex=11, noEntry;
+Edit skcmodu=skc_file.skcmodu, tabIndex=12, noEntry;
+Edit skcgrup=skc_file.skcgrup, tabIndex=13, noEntry;
+DateEdit skcdate=skc_file.skcdate, tabIndex=14, noEntry;
+Edit skcoriu=skc_file.skcoriu, tabIndex=501, noEntry;
+Edit skcorig=skc_file.skcorig, tabIndex=502, noEntry;
+Edit ski04=ski_file.ski04, tabIndex=15, title="Ln#", not null, required;
+Edit ski13=ski_file.ski13, tabIndex=16, title="maijiai";
+Edit c=formonly.c type CHAR, tabIndex=17, title="c", noEntry;
+Edit ski05=ski_file.ski05, tabIndex=18, title="buhao";
+Edit ski12=ski_file.ski12, tabIndex=19, title="LOT";
+ButtonEdit ski06=ski_file.ski06, action=controlp, tabIndex=20, title="Color", not null, required, image="zoom";
+Edit agd03_1=formonly.agd03_1 type CHAR, tabIndex=21, title="Colorinfo buchang", noEntry;
+Edit ski07=ski_file.ski07, tabIndex=22, title="buchang";
+Edit ski08=ski_file.ski08, tabIndex=23, title="zhanshu";
+Edit ski09=ski_file.ski09, tabIndex=24, title="Used", not null, required;
+Edit ski10=ski_file.ski10, tabIndex=25, title="Left";
+Edit b=formonly.b type CHAR, tabIndex=26, title="Surplus", noEntry;
+Edit ski11=ski_file.ski11, tabIndex=27, title="Memo";
+Edit cnt=formonly.cnt type CHAR, tabIndex=28, noEntry;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ski(ski_file.ski04,ski_file.ski13,formonly.c,ski_file.ski05,ski_file.ski12,ski_file.ski06,formonly.agd03_1,ski_file.ski07,ski_file.ski08,ski_file.ski09,ski_file.ski10,formonly.b,ski_file.ski11)
+SCREEN RECORD Undefined(skc_file.skc01,skc_file.skc02,formonly.ima02,skc_file.skcconf,skc_file.skc03,skc_file.skc04,skc_file.skc06,formonly.agd03,skc_file.skc08,formonly.ima02_1,skc_file.skcuser,skc_file.skcmodu,skc_file.skcgrup,skc_file.skcdate,skc_file.skcoriu,skc_file.skcorig,formonly.cnt,formonly.cn3)
+END -- INSTRUCTIONS
+

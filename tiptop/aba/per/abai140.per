@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abai140.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"cxmi130")
+VBox VBox1
+Grid Grid1
+{
+
+     [label4   |ibc00         ]                       [label5    |ibc08        |oba02         ]
+     [tc_pak001|ibc01                            ]    [tc_pak003 |ibc03      ] [label1    |ibc07     ]
+
+
+}
+END -- Grid1
+HBox HBox1(splitter)
+Tree tree(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file", width = 21 characters)
+{
+[name                            ]
+[name                            ]
+[name                            ]
+[name                            ]
+[name                            ]
+[name                            ]
+[name                            ]
+[name                            ]
+[name                            ]
+[name                            ]
+
+}
+END -- tree
+Table s_ibc
+{
+[ibc02       |ibc04              |ima02_desc                                   |ibc06   |ibc05     ]
+[ibc02       |ibc04              |ima02_desc                                   |ibc06   |ibc05     ]
+[ibc02       |ibc04              |ima02_desc                                   |ibc06   |ibc05     ]
+[ibc02       |ibc04              |ima02_desc                                   |ibc06   |ibc05     ]
+[ibc02       |ibc04              |ima02_desc                                   |ibc06   |ibc05     ]
+
+
+
+
+
+
+}
+END -- s_ibc
+END -- HBox1
+Grid Grid2
+{
+
+  ----[label2|idx   ]/[cnt    ] --------- [label3 |cn2    ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- cxmi140
+
+TABLES
+ibc_file
+ATTRIBUTES
+Label label4:Label4, text=%"Label4";
+ComboBox ibc00=formonly.ibc00 type CHAR, tabIndex=12, noEntry, items=(("1", "Material"),("2", "Order"));
+Label label5:Label5, text=%"Label5";
+ButtonEdit ibc08=formonly.ibc08 type CHAR, action=controlp, tabIndex=13, not null, required, image="zoom";
+Edit oba02=formonly.oba02 type CHAR, tabIndex=14, noEntry;
+Label tc_pak001:tc_pak001, text=%"Label1";
+ButtonEdit ibc01=ibc_file.ibc01, action=controlp, tabIndex=4, image="zoom";
+Label tc_pak003:tc_pak003, text=%"Label1";
+Edit ibc03=ibc_file.ibc03, tabIndex=5;
+Label label1:Label1, text=%"Label1";
+Edit ibc07=formonly.ibc07 type CHAR, tabIndex=8;
+LABEL name=formonly.name type CHAR, title=%"stree";
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.desc type CHAR;
+Phantom formonly.bmb06 type DECIMAL;
+Edit ibc02=formonly.ibc02 type SMALLINT, tabIndex=2, title=%"ibc02", noEntry;
+ButtonEdit ibc04=ibc_file.ibc04, action=controlp, tabIndex=3, title=%"ibc04", noEntry, image="zoom";
+Edit ima02_desc=formonly.ima02_desc type VARCHAR, tabIndex=1, title=%"ima02_desc", noEntry;
+Edit ibc06=ibc_file.ibc06, tabIndex=7, title=%"ibc06", not null, required;
+Edit ibc05=ibc_file.ibc05, tabIndex=6, title=%"ibc05", not null, required;
+Label label2:Label2, text=%"Rows";
+Edit idx=formonly.idx type CHAR, tabIndex=9;
+Edit cnt=formonly.cnt type CHAR, tabIndex=10;
+Label label3:Label3, text=%"count";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.desc,formonly.bmb06)
+SCREEN RECORD s_ibc(formonly.ibc02,ibc_file.ibc04,formonly.ima02_desc,ibc_file.ibc06,ibc_file.ibc05)
+SCREEN RECORD Undefined(ibc_file.ibc01,ibc_file.ibc03,formonly.ibc07,formonly.idx,formonly.cnt,formonly.cn2,formonly.ibc00,formonly.ibc08,formonly.oba02)
+END -- INSTRUCTIONS
+

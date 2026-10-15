@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft660.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft660")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr795
+{
+ <G group01                                  ><G group02                                     >
+  FQC Document No.   [sfu03           ]        Reason                 [sfu05     ]
+  Category           [sfu00     ]              Description            [azf03               ]
+  Document Name      [smydesc             ]    Project                [sfu06     ]
+  Store-in Note No.  [sfu01             ]      Memo                   [sfu07               ]
+  Store-in Date      [sfu02       ]            PBI No.                [sfu08           ]
+  Department No.     [sfu04     ][gem02     ]  Material Requisite No. [sfu09           ]
+                                              [sfupost                ]
+ <                                           ><                                              >
+
+}
+END -- gr795
+END -- page01
+Page info(text="Info")
+Grid gr796
+{
+ Record Owner        [sfuuser   ]  Last Modified by    [sfumodu   ]
+ Department          [sfugrup   ]  Create/Modify Date  [sfudate   ]
+ Record Orig.        [sfuoriu   ]
+ Dept Orig.          [sfuorig   ]
+}
+END -- gr796
+END -- info
+END -- folder01
+Table s_sfv
+{
+[sfv03    |sfv11           |sfv04               |ima02                         |ima021                        |sfv08          |sfv05     |sfv06    |sfv07     |sfv09        |sfv12           ]
+[sfv03    |sfv11           |sfv04               |ima02                         |ima021                        |sfv08          |sfv05     |sfv06    |sfv07     |sfv09        |sfv12           ]
+[sfv03    |sfv11           |sfv04               |ima02                         |ima021                        |sfv08          |sfv05     |sfv06    |sfv07     |sfv09        |sfv12           ]
+[sfv03    |sfv11           |sfv04               |ima02                         |ima021                        |sfv08          |sfv05     |sfv06    |sfv07     |sfv09        |sfv12           ]
+[sfv03    |sfv11           |sfv04               |ima02                         |ima021                        |sfv08          |sfv05     |sfv06    |sfv07     |sfv09        |sfv12           ]
+[sfv03    |sfv11           |sfv04               |ima02                         |ima021                        |sfv08          |sfv05     |sfv06    |sfv07     |sfv09        |sfv12           ]
+[sfv03    |sfv11           |sfv04               |ima02                         |ima021                        |sfv08          |sfv05     |sfv06    |sfv07     |sfv09        |sfv12           ]
+[sfv03    |sfv11           |sfv04               |ima02                         |ima021                        |sfv08          |sfv05     |sfv06    |sfv07     |sfv09        |sfv12           ]
+[sfv03    |sfv11           |sfv04               |ima02                         |ima021                        |sfv08          |sfv05     |sfv06    |sfv07     |sfv09        |sfv12           ]
+[sfv03    |sfv11           |sfv04               |ima02                         |ima021                        |sfv08          |sfv05     |sfv06    |sfv07     |sfv09        |sfv12           ]
+
+}
+END -- s_sfv
+Grid gr797
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr797
+END -- VBox1
+END -- asft660
+
+TABLES
+sfv_file,
+sfu_file
+ATTRIBUTES
+Group group01:group01;
+Edit sfu03=sfu_file.sfu03, tabIndex=1, noEntry;
+Edit sfu00=sfu_file.sfu00, tabIndex=2, noEntry, comment="2.Store-In/Return";
+Edit smydesc=formonly.smydesc type VARCHAR, tabIndex=3, noEntry;
+ButtonEdit sfu01=sfu_file.sfu01, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Document Property";
+DateEdit sfu02=sfu_file.sfu02, tabIndex=5;
+ButtonEdit sfu04=sfu_file.sfu04, action=controlp, tabIndex=6, image="zoom", comment="<^P>Query Department";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=7, noEntry;
+Group group02:group02;
+ButtonEdit sfu05=sfu_file.sfu05, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Reason Table";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=9, noEntry;
+Edit sfu06=sfu_file.sfu06, tabIndex=10;
+Edit sfu07=sfu_file.sfu07, tabIndex=11;
+Edit sfu08=sfu_file.sfu08, tabIndex=12;
+Edit sfu09=sfu_file.sfu09, tabIndex=13;
+CheckBox sfupost=sfu_file.sfupost, tabIndex=14, text="Post", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sfuuser=sfu_file.sfuuser, tabIndex=15, noEntry;
+Edit sfumodu=sfu_file.sfumodu, tabIndex=16, noEntry;
+Edit sfugrup=sfu_file.sfugrup, tabIndex=17, noEntry;
+DateEdit sfudate=sfu_file.sfudate, tabIndex=18, noEntry;
+Edit sfuoriu=sfu_file.sfuoriu, tabIndex=501, noEntry;
+Edit sfuorig=sfu_file.sfuorig, tabIndex=502, noEntry;
+Edit sfv03=sfv_file.sfv03, tabIndex=19, title="Line No.", comment="<^Y>Open & Select Unst-In W/O by Item #, Batch Generate St-in Note Body";
+ButtonEdit sfv11=sfv_file.sfv11, action=controlp, tabIndex=20, title="W/O No.", image="zoom", comment="<^P>Query W/O   ";
+Edit sfv04=sfv_file.sfv04, tabIndex=21, title="Item No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=22, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=23, title="Specification", noEntry;
+Edit sfv08=sfv_file.sfv08, tabIndex=24, title="Inventory Unit", noEntry;
+ButtonEdit sfv05=sfv_file.sfv05, action=controlp, tabIndex=25, title="Warehouse", not null, required, image="zoom", comment="<^P>Qry Details <^T>Qry Warehouse";
+ButtonEdit sfv06=sfv_file.sfv06, action=controlp, tabIndex=26, title="Location", image="zoom", comment="<^P>Qry Details <^T>Qry Location";
+ButtonEdit sfv07=sfv_file.sfv07, action=controlp, tabIndex=27, title="Lot No.", image="zoom", comment="<^P>Qry Details";
+Edit sfv09=sfv_file.sfv09, tabIndex=28, title="Store-in Qty";
+Edit sfv12=sfv_file.sfv12, tabIndex=29, title="Memo", comment="Enter Invoice # when Sub.W/O St-in,Transfer to A/P";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=30, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=31, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfv(sfv_file.sfv03,sfv_file.sfv11,sfv_file.sfv04,formonly.ima02,formonly.ima021,sfv_file.sfv08,sfv_file.sfv05,sfv_file.sfv06,sfv_file.sfv07,sfv_file.sfv09,sfv_file.sfv12)
+SCREEN RECORD Undefined(sfu_file.sfu03,sfu_file.sfu00,formonly.smydesc,sfu_file.sfu01,sfu_file.sfu02,sfu_file.sfu04,formonly.gem02,sfu_file.sfu05,formonly.azf03,sfu_file.sfu06,sfu_file.sfu07,sfu_file.sfu08,sfu_file.sfu09,sfu_file.sfupost,sfu_file.sfuuser,sfu_file.sfumodu,sfu_file.sfugrup,sfu_file.sfudate,sfu_file.sfuoriu,sfu_file.sfuorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

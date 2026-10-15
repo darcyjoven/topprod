@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr180.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimr180")
+VBox VBox1
+Grid gr3226
+{
+ <G group01                                                  >
+  Menu Reference No.  [ima03               ]
+  Source Code         [ima08               ]
+  Item No.            [ima01               ]
+ <                                                           >
+
+}
+END -- gr3226
+Grid gr3227
+{
+[more                                    ]
+
+}
+END -- gr3227
+END -- VBox1
+END -- aimr180
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ima03=ima_file.ima03, tabIndex=1, comment="Enter Query Condition by QBE-Menu Reference No.";
+Edit ima08=ima_file.ima08, tabIndex=2, comment="Enter Query Condition by QBE-Source Code";
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=3, not null, required, image="zoom", comment="Enter Query Condition by QBE-Item No.";
+CheckBox more=formonly.more type VARCHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima03,ima_file.ima08,ima_file.ima01,formonly.more)
+END -- INSTRUCTIONS
+

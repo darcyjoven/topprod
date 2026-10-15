@@ -1,0 +1,124 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi557.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Main(text=%"Main")
+Grid Grid1
+{
+
+   code [lra01               ]                     POS             [lrapos            ]
+   desc [lra02                         ]           confirm         [lraconf           ]
+                                                   confpeople      [lra03             |zx02                          ]
+                                                   confdate        [lra04             ]
+                                                   note            [lra05                         ]
+                                                                   [                              ]
+                                                                   [                              ]
+
+
+
+}
+END -- Grid1
+END -- Main
+Page Info(text=%"Info")
+Grid Grid2
+{
+
+ owner           [lrauser   ]        modu   [lramodu        ]             actived[lraac]
+ grup            [lragrup   ]        date   [lradate        ]
+ Record Orig.    [lraoriu   ]
+ Dept Orig.      [lraorig   ]
+
+
+
+
+
+
+}
+END -- Grid2
+END -- Info
+END -- Folder1
+Table s_lrb
+{
+[lrb02 |lrb03                 |lrb04                         |lrb05       |lpc02                         |lrb06     |lrb07 |lrb08|lrbac]
+[lrb02 |lrb03                 |lrb04                         |lrb05       |lpc02                         |lrb06     |lrb07 |lrb08|lrbac]
+[lrb02 |lrb03                 |lrb04                         |lrb05       |lpc02                         |lrb06     |lrb07 |lrb08|lrbac]
+[lrb02 |lrb03                 |lrb04                         |lrb05       |lpc02                         |lrb06     |lrb07 |lrb08|lrbac]
+[lrb02 |lrb03                 |lrb04                         |lrb05       |lpc02                         |lrb06     |lrb07 |lrb08|lrbac]
+}
+END -- s_lrb
+Table s_lrc
+{
+[lrc02 |lrc03     |lrc04                         |tqa02                         |lrc05   |gfe02                         |lrcac]
+[lrc02 |lrc03     |lrc04                         |tqa02                         |lrc05   |gfe02                         |lrcac]
+[lrc02 |lrc03     |lrc04                         |tqa02                         |lrc05   |gfe02                         |lrcac]
+[lrc02 |lrc03     |lrc04                         |tqa02                         |lrc05   |gfe02                         |lrcac]
+[lrc02 |lrc03     |lrc04                         |tqa02                         |lrc05   |gfe02                         |lrcac]
+}
+END -- s_lrc
+Grid Grid3
+{
+
+ -------- Rows[idx  ]/[cnt  ]----- Item1[cn2  ]----- Item2[cn3  ]--------
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+TABLES
+lpc_file,
+lrc_file,
+lrb_file,
+gfe_file,
+lra_file,
+tqa_file
+ATTRIBUTES
+ButtonEdit lra01=lra_file.lra01, action=controlp, tabIndex=1, not null, image="zoom", scroll;
+ComboBox lrapos=lra_file.lrapos, tabIndex=3, noEntry, not null, scroll, items=(("1", "no pos insert"),("2", "no pos update"),("3", "pos"));
+Edit lra02=lra_file.lra02, tabIndex=2, not null, scroll;
+ComboBox lraconf=lra_file.lraconf, tabIndex=4, noEntry, not null, scroll, items=(("N", "unconfirm"),("Y", "confirm"));
+ButtonEdit lra03=lra_file.lra03, action=controlp, tabIndex=5, noEntry, image="zoom", scroll;
+Edit zx02=formonly.zx02 type VARCHAR, tabIndex=6, noEntry, scroll;
+DateEdit lra04=lra_file.lra04, tabIndex=7, noEntry;
+TextEdit lra05=lra_file.lra05, tabIndex=8;
+Edit lrauser=lra_file.lrauser, tabIndex=9, scroll;
+Edit lramodu=lra_file.lramodu, tabIndex=13, scroll;
+Edit lraac=lra_file.lraacti, tabIndex=15, noEntry, not null, scroll;
+Edit lragrup=lra_file.lragrup, tabIndex=10, scroll;
+DateEdit lradate=lra_file.lradate, tabIndex=14;
+Edit lraoriu=lra_file.lraoriu, tabIndex=11, scroll;
+Edit lraorig=lra_file.lraorig, tabIndex=12, scroll;
+Edit lrb02=lrb_file.lrb02, tabIndex=16, title=%"Item", not null, scroll;
+ButtonEdit lrb03=lrb_file.lrb03, action=controlp, tabIndex=17, title=%"Card type code", not null, image="zoom", scroll;
+Edit lrb04=lrb_file.lrb04, tabIndex=18, title=%"Name of card types", noEntry, scroll;
+ButtonEdit lrb05=lrb_file.lrb05, action=controlp, tabIndex=19, title=%"Day number", not null, image="zoom", scroll;
+Edit lpc02=lpc_file.lpc02, tabIndex=20, title=%"Day name", noEntry, scroll;
+ComboBox lrb06=lrb_file.lrb06, tabIndex=21, title=%"Date type", not null, scroll, items=(("1", "same day"),("2", "same month"));
+Edit lrb07=lrb_file.lrb07, tabIndex=22, title=%"Max selection number", not null, scroll;
+CheckBox lrb08=lrb_file.lrb08, tabIndex=23, title=%"Allow repeated gifts ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lrbac=lrb_file.lrbacti, tabIndex=24, title=%"Actived", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit lrc02=lrc_file.lrc02, tabIndex=25, title=%"Item", not null, scroll;
+ComboBox lrc03=lrc_file.lrc03, tabIndex=26, title=%"Data type", not null, scroll, items=(("01", "Product"),("02", "Products"),("03", "Category"),("04", "Brand"),("05", "Series"),("06", "Type"),("07", "Specification"),("08", "Attribute
+"),("09", "Price"),("10", "Ticket"),("11", "Reach the present value"));
+ButtonEdit lrc04=lrc_file.lrc04, action=controlp, tabIndex=27, title=%"Code", not null, image="zoom", scroll;
+Edit tqa02=tqa_file.tqa02, tabIndex=28, title=%"Code desc", noEntry, scroll;
+ButtonEdit lrc05=lrc_file.lrc05, action=controlp, tabIndex=29, title=%"Unit", image="zoom", scroll;
+Edit gfe02=gfe_file.gfe02, tabIndex=30, title=%"Unit name", noEntry, scroll;
+CheckBox lrcac=lrc_file.lrcacti, tabIndex=31, title=%"lrcacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type SMALLINT, tabIndex=32;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=33;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=34;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=35;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lra_file.lra01,lra_file.lra02,lra_file.lrapos,lra_file.lraconf,lra_file.lra03,formonly.zx02,lra_file.lra04,lra_file.lra05,lra_file.lrauser,lra_file.lragrup,lra_file.lraoriu,lra_file.lraorig,lra_file.lramodu,lra_file.lradate,formonly.idx,formonly.cnt,formonly.cn2,formonly.cn3,lra_file.lraacti)
+SCREEN RECORD s_lrb(lrb_file.lrb02,lrb_file.lrb03,lrb_file.lrb04,lrb_file.lrb05,lpc_file.lpc02,lrb_file.lrb06,lrb_file.lrb07,lrb_file.lrb08,lrb_file.lrbacti)
+SCREEN RECORD s_lrc(lrc_file.lrc02,lrc_file.lrc03,lrc_file.lrc04,tqa_file.tqa02,lrc_file.lrc05,gfe_file.gfe02,lrc_file.lrcacti)
+END -- INSTRUCTIONS
+

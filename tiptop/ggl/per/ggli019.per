@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli019.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="ggli019")
+VBox vb2
+Folder pc1
+Page Main(text=%"Main")
+Grid gr1
+{
+
+  Group No.           [ath02                ]
+  Company No.         [ath01                ]
+  Plant Name          [asg02                ]
+  Logistics code      [asg03                ]
+  Book No             [ath00                ]
+
+}
+END -- gr1
+END -- Main
+END -- pc1
+Table s_ath
+{
+[ath03              |ath04       |ath05       |ath06             |atg02       |atg03       |ath07       |ath08       ]
+[ath03              |ath04       |ath05       |ath06             |atg02       |atg03       |ath07       |ath08       ]
+[ath03              |ath04       |ath05       |ath06             |atg02       |atg03       |ath07       |ath08       ]
+[ath03              |ath04       |ath05       |ath06             |atg02       |atg03       |ath07       |ath08       ]
+[ath03              |ath04       |ath05       |ath06             |atg02       |atg03       |ath07       |ath08       ]
+[ath03              |ath04       |ath05       |ath06             |atg02       |atg03       |ath07       |ath08       ]
+
+}
+END -- s_ath
+Grid gr4
+{
+  ---------- Rows  [cnt ] /  [cn2  ] ----------
+
+}
+END -- gr4
+END -- vb2
+END -- ggli019
+
+TABLES
+ath_file,
+atg_file
+ATTRIBUTES
+ButtonEdit ath02=ath_file.ath02, action=controlp, tabIndex=1, not null, image="zoom";
+ButtonEdit ath01=ath_file.ath01, action=controlp, tabIndex=2, not null, image="zoom";
+Edit asg02=formonly.asg02 type VARCHAR, tabIndex=3, noEntry;
+Edit asg03=formonly.asg03 type VARCHAR, tabIndex=4, noEntry;
+Edit ath00=ath_file.ath00, tabIndex=5, noEntry;
+Edit ath03=ath_file.ath03, tabIndex=6, title="ath03", not null, required;
+Edit ath04=ath_file.ath04, tabIndex=7, title="ath04", noEntry;
+ComboBox ath05=ath_file.ath05, tabIndex=8, title=%"ath05", noEntry, items=(("10", %"Business Activity Income"),("11", %"Business Activity Expenditure"),("20", %"Investment Income"),("21", %"Investment Expenditure"),("30", %"Financial Activity Income"),("31", %"Financial Activity Expenditure"),("40", %"Influence"));
+ButtonEdit ath06=ath_file.ath06, action=controlp, tabIndex=9, title="ath06", not null, required, image="zoom";
+Edit atg02=atg_file.atg02, tabIndex=10, title=%"atg02", noEntry;
+ComboBox atg03=atg_file.atg03, tabIndex=11, title=%"atg03", noEntry, items=(("10", %"Business Activity Income"),("11", %"Business Activity Expenditure"),("20", %"Investment Income"),("21", %"Investment Expenditure"),("30", %"Financial Activity Income"),("31", %"Financial Activity Expenditure"),("40", %"Influence"));
+ComboBox ath07=ath_file.ath07, tabIndex=12, title=%"ath07", items=(("1", "Now Ex.Rate"),("2", "Hist Ex.Rate"),("3", "Avg Ex.Rate"));
+ComboBox ath08=ath_file.ath08, tabIndex=13, title=%"ath08", items=(("1", "Now Ex.Rate"),("2", "Hist Ex.Rate"),("3", "Avg Ex.Rate"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ath(ath_file.ath03,ath_file.ath04,ath_file.ath05,ath_file.ath06,atg_file.atg02,atg_file.atg03,ath_file.ath07,ath_file.ath08)
+SCREEN RECORD Undefined(ath_file.ath02,ath_file.ath01,formonly.asg02,formonly.asg03,ath_file.ath00,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

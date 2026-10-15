@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_dc_usermail.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry User Name Or User\'s e-Mail Address")
+Grid gr3931
+{
+ <T s_zx                                                                     >
+ [check|gen01        |gen02        |gen03       |gen06                      ]
+ [check|gen01        |gen02        |gen03       |gen06                      ]
+ [check|gen01        |gen02        |gen03       |gen06                      ]
+ [check|gen01        |gen02        |gen03       |gen06                      ]
+ [check|gen01        |gen02        |gen03       |gen06                      ]
+ [check|gen01        |gen02        |gen03       |gen06                      ]
+ [check|gen01        |gen02        |gen03       |gen06                      ]
+ [check|gen01        |gen02        |gen03       |gen06                      ]
+ [check|gen01        |gen02        |gen03       |gen06                      ]
+ [check|gen01        |gen02        |gen03       |gen06                      ]
+ <                                                                           >
+
+}
+END -- gr3931
+END -- s_dc_usermail
+
+TABLES
+gen_file
+ATTRIBUTES
+Table s_zx:s_zx;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gen01=gen_file.gen01, tabIndex=2, title="User ID", noEntry;
+Edit gen02=gen_file.gen02, tabIndex=3, title="User Name", noEntry;
+Edit gen03=gen_file.gen03, tabIndex=4, title="Dept", noEntry;
+Edit gen06=gen_file.gen06, tabIndex=5, title="E-Mail Address", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zx(formonly.check,gen_file.gen01,gen_file.gen02,gen_file.gen03,gen_file.gen06)
+END -- INSTRUCTIONS
+

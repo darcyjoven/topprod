@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_rvaaqc3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Qry Work Item")
+Grid gr3837
+{
+ <T s_rva                                                                                        >
+ [check |rva01         |rvb02   |rva02      |rva05   |rva03  |rva06        |rvb05       |qcs22   ]
+ [check |rva01         |rvb02   |rva02      |rva05   |rva03  |rva06        |rvb05       |qcs22   ]
+ [check |rva01         |rvb02   |rva02      |rva05   |rva03  |rva06        |rvb05       |qcs22   ]
+ [check |rva01         |rvb02   |rva02      |rva05   |rva03  |rva06        |rvb05       |qcs22   ]
+ [check |rva01         |rvb02   |rva02      |rva05   |rva03  |rva06        |rvb05       |qcs22   ]
+ [check |rva01         |rvb02   |rva02      |rva05   |rva03  |rva06        |rvb05       |qcs22   ]
+ [check |rva01         |rvb02   |rva02      |rva05   |rva03  |rva06        |rvb05       |qcs22   ]
+ [check |rva01         |rvb02   |rva02      |rva05   |rva03  |rva06        |rvb05       |qcs22   ]
+ [check |rva01         |rvb02   |rva02      |rva05   |rva03  |rva06        |rvb05       |qcs22   ]
+ [check |rva01         |rvb02   |rva02      |rva05   |rva03  |rva06        |rvb05       |qcs22   ]
+ <                                                                                               >
+
+}
+END -- gr3837
+END -- q_rvaaqc3
+
+ATTRIBUTES
+Table s_rva:s_rva;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rva01=formonly.rva01 type CHAR, tabIndex=2, title="Receiving No.";
+Edit rvb02=formonly.rvb02 type CHAR, tabIndex=3, title="Line No";
+Edit rva02=formonly.rva02 type CHAR, tabIndex=4, title="P/O No.";
+Edit rva05=formonly.rva05 type CHAR, tabIndex=5, title="Vendor";
+Edit rva03=formonly.rva03 type CHAR, tabIndex=6, title="Prior.";
+DateEdit rva06=formonly.rva06 type DATE, tabIndex=7, title="Receipt Date";
+Edit rvb05=formonly.rvb05 type CHAR, tabIndex=8, title="Item No";
+Edit qcs22=formonly.qcs22, tabIndex=9, title=%"Qty";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rva(formonly.check,formonly.rva01,formonly.rvb02,formonly.rva02,formonly.rva05,formonly.rva03,formonly.rva06,formonly.rvb05,formonly.qcs22)
+END -- INSTRUCTIONS
+

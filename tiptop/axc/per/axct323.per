@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct323.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct323")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr462
+{
+ Cost Calculate Category  [cdk04                 ]
+ Book No.                 [cdk01   ]
+ Legal                    [cdklegal][azt02        ]
+
+
+
+}
+END -- gr462
+Grid gr463
+{
+ Year   [cdk0]    Month   [cd]
+ Entry  [cdk10               ]                   [imgmksg]
+ glno   [nppglno             ]     [cdkconf  ]   [       ]
+
+
+
+}
+END -- gr463
+END -- hb2
+END -- page01
+END -- folder01
+Table s_cdk
+{
+[cdk05         |cdk11              |cdk06          |ima02     |cdk13            |aag02_2       |cdk07               |aag02          |cdk08        |cdk09             ]
+[cdk05         |cdk11              |cdk06          |ima02     |cdk13            |aag02_2       |cdk07               |aag02          |cdk08        |cdk09             ]
+[cdk05         |cdk11              |cdk06          |ima02     |cdk13            |aag02_2       |cdk07               |aag02          |cdk08        |cdk09             ]
+}
+END -- s_cdk
+Grid gr467
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr467
+END -- vb2
+END -- axct323
+
+TABLES
+aag_file,
+npp_file,
+azt_file,
+cdk_file
+ATTRIBUTES
+ComboBox cdk04=cdk_file.cdk04, tabIndex=231, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+ButtonEdit cdk01=cdk_file.cdk01, action=controlp, tabIndex=231, image="zoom";
+Edit cdklegal=cdk_file.cdklegal, tabIndex=232;
+Edit azt02=azt_file.azt02, tabIndex=233;
+Edit cdk0=cdk_file.cdk02, tabIndex=234;
+Edit cd=cdk_file.cdk03, tabIndex=235;
+Edit cdk10=cdk_file.cdk10, tabIndex=1;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit nppglno=npp_file.nppglno, tabIndex=236;
+CheckBox cdkconf=cdk_file.cdkconf, tabIndex=247, text="cdkconf", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit cdk05=cdk_file.cdk05, tabIndex=237, title="Type Code", noEntry;
+Edit cdk11=formonly.cdk11 type CHAR, tabIndex=244, title="Cost Center", noEntry;
+Edit cdk06=cdk_file.cdk06, tabIndex=239, title="Main Item", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=243, title="ima02";
+ButtonEdit cdk13=cdk_file.cdk13, action=controlp, tabIndex=245, title="Cost Acc", image="zoom";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=246, title="Acc Name2", noEntry;
+ButtonEdit cdk07=cdk_file.cdk07, action=controlp, tabIndex=240, title="Cost Acc", image="zoom";
+Edit aag02=aag_file.aag02, tabIndex=241, title="Acc Name", noEntry;
+Edit cdk08=cdk_file.cdk08, tabIndex=238, title="cdk08", noEntry;
+Edit cdk09=cdk_file.cdk09, tabIndex=242, title="Amt", noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=2;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cdk(cdk_file.cdk05,formonly.cdk11,cdk_file.cdk06,formonly.ima02,cdk_file.cdk13,formonly.aag02_2,cdk_file.cdk07,aag_file.aag02,cdk_file.cdk08,cdk_file.cdk09)
+SCREEN RECORD Undefined(cdk_file.cdk04,cdk_file.cdk01,cdk_file.cdklegal,azt_file.azt02,cdk_file.cdk02,cdk_file.cdk03,cdk_file.cdk10,formonly.imgmksg,npp_file.nppglno,cdk_file.cdkconf,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

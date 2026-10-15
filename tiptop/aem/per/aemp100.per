@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemp100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemp100")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1737
+{
+ Device No.     [e                   ] Maintain Type   [a         ]
+                [d         ]           Maintain Cycle  [b         ]
+ Maintain Scale [c         ]
+ Work Order Type[f                 ]   Work Order Style[k         ]
+}
+END -- gr1737
+END -- page01
+END -- folder01
+Table s_fia
+{
+[fia01               |fia02                         |fjc03           |fio05           |desc          |fio06            |fiu02         |fio07            |fja02         |fio08          |fio03            |fio04         ]
+[fia01               |fia02                         |fjc03           |fio05           |desc          |fio06            |fiu02         |fio07            |fja02         |fio08          |fio03            |fio04         ]
+[fia01               |fia02                         |fjc03           |fio05           |desc          |fio06            |fiu02         |fio07            |fja02         |fio08          |fio03            |fio04         ]
+[fia01               |fia02                         |fjc03           |fio05           |desc          |fio06            |fiu02         |fio07            |fja02         |fio08          |fio03            |fio04         ]
+[fia01               |fia02                         |fjc03           |fio05           |desc          |fio06            |fiu02         |fio07            |fja02         |fio08          |fio03            |fio04         ]
+[fia01               |fia02                         |fjc03           |fio05           |desc          |fio06            |fiu02         |fio07            |fja02         |fio08          |fio03            |fio04         ]
+[fia01               |fia02                         |fjc03           |fio05           |desc          |fio06            |fiu02         |fio07            |fja02         |fio08          |fio03            |fio04         ]
+[fia01               |fia02                         |fjc03           |fio05           |desc          |fio06            |fiu02         |fio07            |fja02         |fio08          |fio03            |fio04         ]
+[fia01               |fia02                         |fjc03           |fio05           |desc          |fio06            |fiu02         |fio07            |fja02         |fio08          |fio03            |fio04         ]
+[fia01               |fia02                         |fjc03           |fio05           |desc          |fio06            |fiu02         |fio07            |fja02         |fio08          |fio03            |fio04         ]
+
+}
+END -- s_fia
+Grid gr1738
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr1738
+END -- VBox1
+END -- aemp100
+
+TABLES
+fia_file,
+fjc_file,
+fio_file
+ATTRIBUTES
+ButtonEdit e=formonly.e type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Detail";
+ComboBox a=formonly.a type CHAR, tabIndex=2, items=(("1", "Maintain"),("2", "Repair"));
+CheckBox d=formonly.d type CHAR, tabIndex=3, text="Stop Machine", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit b=formonly.b type CHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P> Qry Detail";
+ButtonEdit c=formonly.c type CHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Detail";
+ButtonEdit f=formonly.f type CHAR, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P> Qry Detail";
+ButtonEdit k=formonly.k type CHAR, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P> Qry Detail";
+Edit fia01=fia_file.fia01, tabIndex=8, title="Device No.", noEntry;
+Edit fia02=fia_file.fia02, tabIndex=9, title="Description", noEntry;
+ButtonEdit fjc03=fjc_file.fjc03, action=controlp, tabIndex=10, title="Maintain Item", not null, required, image="zoom", comment="<^P> Qry Detail";
+Edit fio05=fio_file.fio05, tabIndex=11, title="Maintain Type", noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=12, title="Description", noEntry;
+Edit fio06=fio_file.fio06, tabIndex=13, title="Maintain Cycle", noEntry;
+Edit fiu02=formonly.fiu02 type CHAR, tabIndex=14, title="Description", noEntry;
+Edit fio07=fio_file.fio07, tabIndex=15, title="Maintain Scale", noEntry;
+Edit fja02=formonly.fja02 type CHAR, tabIndex=16, title="Description", noEntry;
+Edit fio08=fio_file.fio08, tabIndex=17, title="Stop Machine", noEntry;
+Edit fio03=fio_file.fio03, tabIndex=18, title="Prepared Hours", noEntry;
+Edit fio04=fio_file.fio04, tabIndex=19, title="Standard Hours", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fia(fia_file.fia01,fia_file.fia02,fjc_file.fjc03,fio_file.fio05,formonly.desc,fio_file.fio06,formonly.fiu02,fio_file.fio07,formonly.fja02,fio_file.fio08,fio_file.fio03,fio_file.fio04)
+SCREEN RECORD Undefined(formonly.e,formonly.a,formonly.d,formonly.b,formonly.c,formonly.f,formonly.k,formonly.cn2)
+END -- INSTRUCTIONS
+

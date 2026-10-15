@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt617.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"almt617")
+VBox vb4
+Folder pc5
+Page main(text=%"Main")
+Grid gr10
+{
+
+ Shop No.       [lrxplant              ][rtz13               ]      Document date     [lrx05                  ]
+ Corporation    [lrxlegal              ][azt02               ]      Confirmed Status  [lrx06                  ][imgmksg   ]
+ Document no.   [lrx01                 ]                            Confirmed Person  [lrx07                  ][          ]
+ Card no.       [lrx02                 ]                            Confirmed Date    [lrx08                  ]
+ Member ID      [lrx03                 ]                            Memo              [lrx09                  ]
+ Reason no.     [lrx04                 ][azf03               ]                        [                       ]
+
+
+}
+END -- gr10
+END -- main
+Page info(text=%"Info")
+Grid gr11
+{
+
+  Record Owner [lrxuser   ]       Created Date      [lrxcrat      ]    Data Valid Code         [lrxacti   ]
+  Department   [lrxgrup   ]       Last Modified by  [lrxmodu   ]       Modify Date             [lrxdate   ]
+  Record Orig. [lrxoriu   ]       Dept Orig.        [lrxorig   ]
+
+
+
+
+}
+END -- gr11
+END -- info
+END -- pc5
+Grid gr3
+{
+  ------- Rows [idx  ] /  [cnt  ] --------
+
+}
+END -- gr3
+END -- vb4
+END -- almt617
+
+TABLES
+lrx_file
+ATTRIBUTES
+ButtonEdit lrxplant=lrx_file.lrxplant, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type VARCHAR, tabIndex=2, noEntry;
+DateEdit lrx05=lrx_file.lrx05, tabIndex=10, noEntry, not null, required;
+ButtonEdit lrxlegal=lrx_file.lrxlegal, action=controlp, tabIndex=3, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=4, noEntry;
+ComboBox lrx06=lrx_file.lrx06, tabIndex=11, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit lrx01=lrx_file.lrx01, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+ButtonEdit lrx07=lrx_file.lrx07, action=controlp, tabIndex=12, noEntry, image="zoom.png";
+ButtonEdit lrx02=lrx_file.lrx02, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+DateEdit lrx08=lrx_file.lrx08, tabIndex=13, noEntry;
+ButtonEdit lrx03=lrx_file.lrx03, action=controlp, tabIndex=7, noEntry, image="zoom.png";
+TextEdit lrx09=lrx_file.lrx09, tabIndex=14;
+ButtonEdit lrx04=lrx_file.lrx04, action=controlp, tabIndex=8, image="zoom.png";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=9, noEntry;
+Edit lrxuser=lrx_file.lrxuser, tabIndex=15, noEntry;
+DateEdit lrxcrat=lrx_file.lrxcrat, tabIndex=21, noEntry;
+Edit lrxacti=lrx_file.lrxacti, tabIndex=20, noEntry;
+Edit lrxgrup=lrx_file.lrxgrup, tabIndex=16, noEntry;
+Edit lrxmodu=lrx_file.lrxmodu, tabIndex=18, noEntry;
+DateEdit lrxdate=lrx_file.lrxdate, tabIndex=22, noEntry;
+Edit lrxoriu=lrx_file.lrxoriu, tabIndex=17, noEntry;
+Edit lrxorig=lrx_file.lrxorig, tabIndex=19, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=24, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lrx_file.lrxplant,formonly.rtz13,lrx_file.lrx05,lrx_file.lrxlegal,formonly.azt02,lrx_file.lrx06,formonly.imgmksg,lrx_file.lrx01,lrx_file.lrx07,lrx_file.lrx02,lrx_file.lrx08,lrx_file.lrx03,lrx_file.lrx09,lrx_file.lrx04,formonly.azf03,lrx_file.lrxuser,lrx_file.lrxcrat,lrx_file.lrxacti,lrx_file.lrxgrup,lrx_file.lrxmodu,lrx_file.lrxdate,lrx_file.lrxoriu,lrx_file.lrxorig,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

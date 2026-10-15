@@ -1,0 +1,96 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi705.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi705")
+VBox VBox1
+Folder pc512
+Page page01(text="Main")
+Grid gr2156
+{
+ [dummy01                                      ]
+  Salesman No.           [ofg01     ] [gen02   ]      [imgmksg]
+  Date                   [ofg02       ]               [       ]
+  Potential Customer No. [ofg03     ] [ofd02   ]
+  Deal Pos%              [ofg04     ]
+ [dummy02                                      ]
+
+ <G group02                                                                     >
+  Job Description        [ofg05                                             ]
+                         [ofg051                                            ]
+                         [ofg052                                            ]
+                         [ofg053                                            ]
+                         [ofg054                                            ]
+ <                                                                              >
+ <G group03                                                                     >
+  Customer State         [ofg06                                             ]
+                         [ofg061                                            ]
+                         [ofg062                                            ]
+                         [ofg063                                            ]
+                         [ofg064                                            ]
+ <                                                                              >
+
+}
+END -- gr2156
+END -- page01
+Page info(text="Info")
+Grid gr2157
+{
+ Record Owner        [ofguser   ] Last Modified by    [ofgmodu   ] Data Valid Code     [ofgacti   ]
+ Department          [ofggrup   ] Create/Modify Date  [ofgdate     ]
+ Record Orig.        [ofgoriu   ]
+ Dept Orig.          [ofgorig   ]
+}
+END -- gr2157
+END -- info
+END -- pc512
+Grid gr2158
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2158
+END -- VBox1
+END -- axmi705
+
+TABLES
+ofg_file
+ATTRIBUTES
+Label dummy01:dummy01;
+ButtonEdit ofg01=ofg_file.ofg01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Details";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=2, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+DateEdit ofg02=ofg_file.ofg02, tabIndex=4;
+ButtonEdit ofg03=ofg_file.ofg03, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Details";
+Edit ofd02=formonly.ofd02 type CHAR, tabIndex=6, noEntry;
+Edit ofg04=ofg_file.ofg04, tabIndex=7;
+Label dummy02:dummy02;
+Group group02:group02;
+Edit ofg05=ofg_file.ofg05, tabIndex=8;
+Edit ofg051=ofg_file.ofg051, tabIndex=9;
+Edit ofg052=ofg_file.ofg052, tabIndex=10;
+Edit ofg053=ofg_file.ofg053, tabIndex=11;
+Edit ofg054=ofg_file.ofg054, tabIndex=12;
+Group group03:group03;
+Edit ofg06=ofg_file.ofg06, tabIndex=13;
+Edit ofg061=ofg_file.ofg061, tabIndex=14;
+Edit ofg062=ofg_file.ofg062, tabIndex=15;
+Edit ofg063=ofg_file.ofg063, tabIndex=16;
+Edit ofg064=ofg_file.ofg064, tabIndex=17;
+Edit ofguser=ofg_file.ofguser, tabIndex=18, noEntry;
+Edit ofgmodu=ofg_file.ofgmodu, tabIndex=19, noEntry;
+Edit ofgacti=ofg_file.ofgacti, tabIndex=20, noEntry, upShift;
+Edit ofggrup=ofg_file.ofggrup, tabIndex=21, noEntry;
+DateEdit ofgdate=ofg_file.ofgdate, tabIndex=22, noEntry;
+Edit ofgoriu=ofg_file.ofgoriu, tabIndex=501, noEntry;
+Edit ofgorig=ofg_file.ofgorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ofg_file.ofg01,formonly.gen02,formonly.imgmksg,ofg_file.ofg02,ofg_file.ofg03,formonly.ofd02,ofg_file.ofg04,ofg_file.ofg05,ofg_file.ofg051,ofg_file.ofg052,ofg_file.ofg053,ofg_file.ofg054,ofg_file.ofg06,ofg_file.ofg061,ofg_file.ofg062,ofg_file.ofg063,ofg_file.ofg064,ofg_file.ofguser,ofg_file.ofgmodu,ofg_file.ofgacti,ofg_file.ofggrup,ofg_file.ofgdate,ofg_file.ofgoriu,ofg_file.ofgorig,formonly.cnt)
+END -- INSTRUCTIONS
+

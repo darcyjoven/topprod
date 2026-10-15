@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_gr_history.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_gr_history")
+VBox vb3
+Folder pc712
+Page page01(text="Basic Data")
+HBox hb3
+Grid gr3075(comment="dept")
+{
+
+ Program Code   [gdy01             |gaz03                           ]
+ Preserved Class[gdy02         ]
+
+
+}
+END -- gr3075
+END -- hb3
+END -- page01
+END -- pc712
+HBox HBox1
+Table s_gdy
+{
+[gdy03             |zw02                |gdy05     |gdy04    ]
+[gdy03             |zw02                |gdy05     |gdy04    ]
+[gdy03             |zw02                |gdy05     |gdy04    ]
+[gdy03             |zw02                |gdy05     |gdy04    ]
+[gdy03             |zw02                |gdy05     |gdy04    ]
+[gdy03             |zw02                |gdy05     |gdy04    ]
+[gdy03             |zw02                |gdy05     |gdy04    ]
+[gdy03             |zw02                |gdy05     |gdy04    ]
+[gdy03             |zw02                |gdy05     |gdy04    ]
+[gdy03             |zw02                |gdy05     |gdy04    ]
+
+
+
+
+
+
+
+
+}
+END -- s_gdy
+END -- HBox1
+Grid gr3077
+{
+  ---------- Rows [cnt   ]  [cn2   ]  ----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr3077
+END -- vb3
+END -- p_gr_history
+
+TABLES
+zw_file,
+gaz_file,
+gdy_file,
+gdy_file3=gdy_file
+ATTRIBUTES
+ButtonEdit gdy01=gdy_file.gdy01, action=controlp, tabIndex=2, not null, required, image="zoom", downShift, scroll, comment="KEYField,No Blank/Repeated!";
+Edit gaz03=gaz_file.gaz03, tabIndex=2, noEntry;
+ComboBox gdy02=gdy_file.gdy02, tabIndex=2, items=(("1", "1:全部"),("2", "2:權限類別"),("3", "3:使用者編號"));
+ButtonEdit gdy03=gdy_file3.gdy03, action=controlp, tabIndex=2, title="User", not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!";
+Edit zw02=zw_file.zw02, tabIndex=2, title="User Name", noEntry, comment="No blank Field!";
+ComboBox gdy05=gdy_file.gdy05, tabIndex=8, title=%"Copied", items=(("0", "Default"),("1", "00r-09r"),("2", "00r-19r"),("3", "00r-29r"),("4", "00r-39r"),("5", "00r-49r"));
+CheckBox gdy04=gdy_file3.gdy04, tabIndex=2, title="Valid?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=1, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cnt,gdy_file.gdy01,gdy_file.gdy02,gaz_file.gaz03,formonly.cn2)
+SCREEN RECORD s_gdy(gdy_file3.gdy03,zw_file.zw02,gdy_file.gdy05,gdy_file3.gdy04)
+END -- INSTRUCTIONS
+

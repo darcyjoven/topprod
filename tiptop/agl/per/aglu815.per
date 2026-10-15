@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglu815.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglu815")
+VBox VBox1
+Grid gr2892
+{
+ <G group01                                               >
+  Accounting Year QBE to clear   [aah02                  ]
+  Period QBE to clear            [aah03                  ]
+ <                                                        >
+
+}
+END -- gr2892
+Group g01(text="Input")
+VBox VBox2
+Grid gr2893
+{
+[download        ] File Name           [fil]_[file_ext]
+[backup          ]
+[cleanup         ] <G group02                           >
+[more            ] [backup_device                     ]
+                   <                                    >
+
+}
+END -- gr2893
+END -- VBox2
+END -- g01
+END -- VBox1
+END -- aglu815
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit aah02=formonly.aah02 type CHAR, tabIndex=1;
+Edit aah03=formonly.aah03 type CHAR, tabIndex=2;
+CheckBox download=formonly.download type VARCHAR, tabIndex=3, default = "N", text="Download?", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N", comment="Enter Y:Download, N:No  ";
+Edit fil=formonly.file_name type VARCHAR, tabIndex=4, default = "nmd", comment="Enter File Name";
+Edit file_ext=formonly.file_extension type DATE, tabIndex=5, default = "TODAY", format="YYMMDD", comment="Please Input Attchement Name Of File ";
+CheckBox backup=formonly.backup type VARCHAR, tabIndex=6, default = "N", text="Back up?", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N", comment="Enter Y:Back up  N:No Backup";
+CheckBox cleanup=formonly.cleanup type VARCHAR, tabIndex=7, default = "N", text="Clear?", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N", comment="Enter Y:Clear   N:No    ";
+Group group02:group02, text="Backup Device";
+RadioGroup backup_device=formonly.backup_device type VARCHAR, tabIndex=8, default = "1", INCLUDE = (1, 2), items=(("1", "Tape"),("2", "Floppy"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=9, default = "Y", text="Run Now ? ", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aah02,formonly.aah03,formonly.download,formonly.file_name,formonly.file_extension,formonly.backup,formonly.cleanup,formonly.backup_device,formonly.more)
+END -- INSTRUCTIONS
+

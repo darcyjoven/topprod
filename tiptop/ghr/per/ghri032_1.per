@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri032_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+[label1  |hrbn02    |hrag07              ]
+[label2  |hrbn04                         ]
+[label3  |hrbn03                         ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table Table1
+{
+[num     |hrbn01    |hrat02  |hrao02  |hrat05  |hrat25  |hrbn06  ]
+[num     |hrbn01    |hrat02  |hrao02  |hrat05  |hrat25  |hrbn06  ]
+[num     |hrbn01    |hrat02  |hrao02  |hrat05  |hrat25  |hrbn06  ]
+[num     |hrbn01    |hrat02  |hrao02  |hrat05  |hrat25  |hrbn06  ]
+[num     |hrbn01    |hrat02  |hrao02  |hrat05  |hrat25  |hrbn06  ]
+
+}
+END -- Table1
+Grid Grid2
+{
+
+ --------[label4  |cnt     ]--------
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"Label1";
+ButtonEdit hrbn02=formonly.hrbn02 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrag07=formonly.hrag07 type CHAR, tabIndex=2;
+Label label2:Label2, text=%"Label2";
+DateEdit hrbn04=formonly.hrbn04 type CHAR, tabIndex=3, not null, required;
+Label label3:Label3, text=%"Label3";
+DateEdit hrbn03=formonly.hrbn03 type CHAR, tabIndex=4, not null, required;
+Edit num=formonly.num type CHAR, tabIndex=5, title=%"num";
+ButtonEdit hrbn01=formonly.hrbn01 type CHAR, action=controlp, tabIndex=6, title=%"hrbn01", not null, required, image="zoom";
+Edit hrat02=formonly.hrat02 type CHAR, tabIndex=7, title=%"hrat02";
+Edit hrao02=formonly.hrao02 type CHAR, tabIndex=8, title=%"hrao02";
+Edit hrat05=formonly.hrat05 type CHAR, tabIndex=9, title=%"hrat05";
+Edit hrat25=formonly.hrat25 type CHAR, tabIndex=10, title=%"hrat25";
+Edit hrbn06=formonly.hrbn06 type CHAR, tabIndex=11, title=%"hrbn06";
+Label label4:Label4, text=%"Label4";
+Edit cnt=formonly.cnt type CHAR, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrbn02,formonly.hrag07,formonly.hrbn04,formonly.hrbn03,formonly.cnt)
+SCREEN RECORD s_hrbn(formonly.num,formonly.hrbn01,formonly.hrat02,formonly.hrao02,formonly.hrat05,formonly.hrat25,formonly.hrbn06)
+END -- INSTRUCTIONS
+

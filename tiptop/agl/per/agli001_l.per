@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli001_l.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"aglt001_l")
+Folder folder01
+Page page01(text=%"Page01")
+Grid gr2842
+{
+ <G group01                                       >
+  Source Data Name    [file                       ]
+ [dummy01                                        ]
+ [dummy01_2                                      ]
+
+ <                                                >
+
+}
+END -- gr2842
+END -- page01
+END -- folder01
+END -- agli001_l
+
+ATTRIBUTES
+Group group01:group01, text=%"QBE";
+Edit file=formonly.file type CHAR, tabIndex=1, not null, required;
+Label dummy01:dummy01, text=%"Upload From C:TIPTOP,excel use unicode TXT";
+Label dummy01_2:dummy01_2, text=%"ex:test.txt";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.file)
+END -- INSTRUCTIONS
+

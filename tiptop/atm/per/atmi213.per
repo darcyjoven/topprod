@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi213.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi213")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+HBox HBox1
+Grid gr1315
+{
+ Bond No.            [ton01       ]
+ Bond Line No.       [ton02     ]
+
+}
+END -- gr1315
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_ton
+{
+[ton03     |ton04        |toc02                |toa02                           |ton05       |tor02                           |ton06        |ton07      |ton08      |ton09      |ton10               ]
+[ton03     |ton04        |toc02                |toa02                           |ton05       |tor02                           |ton06        |ton07      |ton08      |ton09      |ton10               ]
+[ton03     |ton04        |toc02                |toa02                           |ton05       |tor02                           |ton06        |ton07      |ton08      |ton09      |ton10               ]
+[ton03     |ton04        |toc02                |toa02                           |ton05       |tor02                           |ton06        |ton07      |ton08      |ton09      |ton10               ]
+[ton03     |ton04        |toc02                |toa02                           |ton05       |tor02                           |ton06        |ton07      |ton08      |ton09      |ton10               ]
+[ton03     |ton04        |toc02                |toa02                           |ton05       |tor02                           |ton06        |ton07      |ton08      |ton09      |ton10               ]
+[ton03     |ton04        |toc02                |toa02                           |ton05       |tor02                           |ton06        |ton07      |ton08      |ton09      |ton10               ]
+[ton03     |ton04        |toc02                |toa02                           |ton05       |tor02                           |ton06        |ton07      |ton08      |ton09      |ton10               ]
+[ton03     |ton04        |toc02                |toa02                           |ton05       |tor02                           |ton06        |ton07      |ton08      |ton09      |ton10               ]
+[ton03     |ton04        |toc02                |toa02                           |ton05       |tor02                           |ton06        |ton07      |ton08      |ton09      |ton10               ]
+
+}
+END -- s_ton
+Grid gr1316
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1316
+END -- VBox1
+END -- atmi213
+
+TABLES
+ton_file
+ATTRIBUTES
+ButtonEdit ton01=ton_file.ton01, action=controlp, tabIndex=1, not null, required, color = black reverse, image="zoom", comment="KEY Field,No Blank/Repeated!";
+ButtonEdit ton02=ton_file.ton02, action=controlp, tabIndex=2, not null, required, color = black reverse, image="zoom", comment="KEY Field,No Blank/Repeated!";
+Edit ton03=ton_file.ton03, tabIndex=3, title="Line No.", not null, required, color = black reverse, comment="KEY Field,No Blank/Repeated!";
+ButtonEdit ton04=ton_file.ton04, action=controlp, tabIndex=4, title="Material No.", not null, required, color = black reverse, image="zoom", comment="No Blank/Repeated!";
+Edit toc02=formonly.toc02 type VARCHAR, tabIndex=5, title="Name", noEntry;
+Edit toa02=formonly.toa02 type VARCHAR, tabIndex=6, title="Unit", noEntry;
+ButtonEdit ton05=ton_file.ton05, action=controlp, tabIndex=7, title="Program No.", image="zoom";
+Edit tor02=formonly.tor02 type VARCHAR, tabIndex=8, title="Name", noEntry;
+Edit ton06=ton_file.ton06, tabIndex=9, title="Program sect";
+Edit ton07=ton_file.ton07, tabIndex=10, title="time", not null, required, color = black reverse, comment="No Blank/Repeated!";
+DateEdit ton08=ton_file.ton08, tabIndex=11, title="Issue date", not null, required;
+Edit ton09=ton_file.ton09, tabIndex=12, title="Issue time", not null, required, picture="XX:XX";
+Edit ton10=ton_file.ton10, tabIndex=13, title="Memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=14, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ton(ton_file.ton03,ton_file.ton04,formonly.toc02,formonly.toa02,ton_file.ton05,formonly.tor02,ton_file.ton06,ton_file.ton07,ton_file.ton08,ton_file.ton09,ton_file.ton10)
+SCREEN RECORD Undefined(ton_file.ton01,ton_file.ton02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

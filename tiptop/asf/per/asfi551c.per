@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi551c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfi501c")
+Folder pc117
+Page page01(text="Page01")
+Table s_sfs
+{
+[sfs04               |sfs07     |sfs08    |sfs09      |img09        |img10           |sfs06        |sfs05           ]
+[sfs04               |sfs07     |sfs08    |sfs09      |img09        |img10           |sfs06        |sfs05           ]
+[sfs04               |sfs07     |sfs08    |sfs09      |img09        |img10           |sfs06        |sfs05           ]
+[sfs04               |sfs07     |sfs08    |sfs09      |img09        |img10           |sfs06        |sfs05           ]
+[sfs04               |sfs07     |sfs08    |sfs09      |img09        |img10           |sfs06        |sfs05           ]
+[sfs04               |sfs07     |sfs08    |sfs09      |img09        |img10           |sfs06        |sfs05           ]
+[sfs04               |sfs07     |sfs08    |sfs09      |img09        |img10           |sfs06        |sfs05           ]
+[sfs04               |sfs07     |sfs08    |sfs09      |img09        |img10           |sfs06        |sfs05           ]
+[sfs04               |sfs07     |sfs08    |sfs09      |img09        |img10           |sfs06        |sfs05           ]
+[sfs04               |sfs07     |sfs08    |sfs09      |img09        |img10           |sfs06        |sfs05           ]
+
+}
+END -- s_sfs
+END -- page01
+END -- pc117
+END -- asfi501c
+
+TABLES
+sfs_file,
+img_file
+ATTRIBUTES
+Edit sfs04=sfs_file.sfs04, tabIndex=1, title="Item No.";
+Edit sfs07=sfs_file.sfs07, tabIndex=2, title="Warehouse";
+Edit sfs08=sfs_file.sfs08, tabIndex=3, title="Location";
+Edit sfs09=sfs_file.sfs09, tabIndex=4, title="Lot No.";
+Edit img09=img_file.img09, tabIndex=7, title=%"Inven Unit";
+Edit img10=img_file.img10, tabIndex=5, title="Inven.Qty", not null, required;
+Edit sfs06=sfs_file.sfs06, tabIndex=8, title=%"Issue Unit";
+Edit sfs05=sfs_file.sfs05, tabIndex=6, title="Issuing Qty";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfs(sfs_file.sfs04,sfs_file.sfs07,sfs_file.sfs08,sfs_file.sfs09,img_file.img09,img_file.img10,sfs_file.sfs06,sfs_file.sfs05)
+END -- INSTRUCTIONS
+

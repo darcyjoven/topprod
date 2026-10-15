@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi221_y.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi221_y")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+ <G group01                                                                                    >
+  Used Tax            [occ41     ] [gec02               ]   Used Currency       [occ42     ]
+  Used Sales Class.   [occ43     ] [oab02     ]             Used Language       [occ55     ]
+  Used Shipping Type  [occ47     ]                         [occ57                          ]
+  Used Location-From  [occ48     ]TO[occ49     ]           [occ56                          ]
+  Port of Unloading   [occ50     ]
+ <                                                                                             >
+ <G group02                                                        >
+  Used Invoice        [occ08     ]
+  Used Price Terms    [occ44     ] [oah02                         ]
+  Use Collection Tms  [occ45     ] [oag02                         ]
+  Used Other Terms    [occ46                                   ]
+  Used Commission %   [occ53     ]
+  Discount Ratio      [occ32     ]
+  Used FORWARDER      [occ51     ] [pmc03     ]
+  Used NOTIFY         [occ52                                   ]
+  Memo                [occ701                        ]
+                      [                              ]
+                      [                              ]
+                      [                              ]
+ <                                                                 >
+
+}
+END -- Grid1
+END -- page01
+END -- Folder1
+END -- VBox1
+END -- axmi221_y
+
+TABLES
+occ_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit occ41=occ_file.occ41, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Details";
+Edit gec02=formonly.gec02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit occ42=occ_file.occ42, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit occ43=occ_file.occ43, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Details";
+Edit oab02=formonly.oab02 type CHAR, tabIndex=5, noEntry;
+ComboBox occ55=occ_file.occ55, tabIndex=6, not null, required, queryEditable, items=(("0", %"Chinese"),("1", %"English"),("2", %"Other"));
+ButtonEdit occ47=occ_file.occ47, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Details";
+CheckBox occ57=occ_file.occ57, tabIndex=8, text="Need Packing List", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit occ48=occ_file.occ48, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Shipping Location";
+ButtonEdit occ49=occ_file.occ49, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Shipping Location";
+CheckBox occ56=occ_file.occ56, tabIndex=11, text="Delivery Advice", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit occ50=occ_file.occ50, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Details";
+Group group02:group02;
+Edit occ08=occ_file.occ08, tabIndex=13, upShift;
+ButtonEdit occ44=occ_file.occ44, action=controlp, tabIndex=14, image="zoom", comment="<^P>Qry Details";
+Edit oah02=formonly.oah02 type CHAR, tabIndex=15;
+ButtonEdit occ45=occ_file.occ45, action=controlp, tabIndex=16, image="zoom", comment="<^P>Qry Details";
+Edit oag02=formonly.oag02 type CHAR, tabIndex=17;
+Edit occ46=occ_file.occ46, tabIndex=18;
+Edit occ53=occ_file.occ53, tabIndex=19;
+Edit occ32=occ_file.occ32, tabIndex=20;
+ButtonEdit occ51=occ_file.occ51, action=controlp, tabIndex=21, image="zoom", comment="<^P>Qry Details";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=22;
+Edit occ52=occ_file.occ52, tabIndex=23;
+TextEdit occ701=occ_file.occ701, tabIndex=24, stretch=NONE;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(occ_file.occ41,formonly.gec02,occ_file.occ42,occ_file.occ43,formonly.oab02,occ_file.occ55,occ_file.occ47,occ_file.occ57,occ_file.occ48,occ_file.occ49,occ_file.occ56,occ_file.occ50,occ_file.occ08,occ_file.occ44,formonly.oah02,occ_file.occ45,formonly.oag02,occ_file.occ46,occ_file.occ53,occ_file.occ32,occ_file.occ51,formonly.pmc03,occ_file.occ52,occ_file.occ701)
+END -- INSTRUCTIONS
+

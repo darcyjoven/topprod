@@ -1,0 +1,109 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfq302.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfq302")
+VBox vb8
+Group Group1(text=%"")
+HBox hb5
+Grid gr452
+{
+ W/O No.         [sfb01             ]
+                 [smydesc             ]
+ Issue Date      [sfb81        ]
+ Style           [sfb02      ]
+
+
+
+}
+END -- gr452
+Grid gr453
+{
+ Applicant      [sfb44         ][gen02      ]
+ Item No.       [sfb05                   ]
+ Part Name      [ima02                         ]
+ Specification  [ima021                        ]
+ Production Qty [sfb08      ]
+
+
+}
+END -- gr453
+Grid gr454
+{
+ Confirm      [sfb87           ]
+ Status       [sfb04           ]
+
+
+
+
+
+}
+END -- gr454
+END -- hb5
+END -- Group1
+Tree tree(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file")
+{
+[name                          |s1                            |a02     |a021    |s2          ]
+[name                          |s1                            |a02     |a021    |s2          ]
+[name                          |s1                            |a02     |a021    |s2          ]
+[name                          |s1                            |a02     |a021    |s2          ]
+[name                          |s1                            |a02     |a021    |s2          ]
+[name                          |s1                            |a02     |a021    |s2          ]
+[name                          |s1                            |a02     |a021    |s2          ]
+[name                          |s1                            |a02     |a021    |s2          ]
+[name                          |s1                            |a02     |a021    |s2          ]
+[name                          |s1                            |a02     |a021    |s2          ]
+
+}
+END -- tree
+Grid gr577
+{
+ ---------- Rows[cnt   ] ----------
+
+
+
+
+}
+END -- gr577
+END -- vb8
+END -- asfq302
+
+TABLES
+sfb_file
+ATTRIBUTES
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=1, not null, required, image="zoom", upShift, comment=%"Key Field, No Blank/Repeated!    , <^P>Qry Doc Pty ";
+Edit smydesc=formonly.smydesc type CHAR, tabIndex=2, noEntry;
+DateEdit sfb81=sfb_file.sfb81, tabIndex=3, not null, required;
+ComboBox sfb02=sfb_file.sfb02, tabIndex=4, not null, required, queryEditable, comment=%"1.Gnrl 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm 13.Predic 15.Trial ", items=(("1", %"Gnrl"),("5", %"Rework"),("7", %"Sub."),("8", %"Rwrk SUB"),("11", %"Disasm"),("13", %"Predic"),("15", %"Trial"));
+ButtonEdit sfb44=sfb_file.sfb44, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=14, noEntry;
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=6, not null, required, image="zoom", comment=%"<^P>Qry Item No.";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=7, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=8, noEntry;
+Edit sfb08=sfb_file.sfb08, tabIndex=9, not null, required;
+ComboBox sfb87=sfb_file.sfb87, tabIndex=10, noEntry, queryEditable, items=(("Y", %"Confirm"),("N", %"Cancel"),("X", %"Void"));
+ComboBox sfb04=sfb_file.sfb04, tabIndex=11, noEntry, queryEditable, comment=%"1.Open 2.Rls 3.Prt 4.Iss.Mat 5.WIP 6.FQC 7.St-i 8.Clos", items=(("1", %"Gnrl"),("2", %"Rls"),("3", %"Prt"),("4", %"Iss.Mat"),("5", %"WIP"),("6", %"FQC"),("7", %"St-i"),("8", %"Clos"));
+LABEL name=formonly.name, title=%"W/O No.";
+Edit s1=formonly.s1, tabIndex=12, title=%"Item No.";
+Edit a02=formonly.a02, tabIndex=16, title=%"ima02";
+Edit a021=formonly.a021, tabIndex=17, title=%"ima021";
+Edit s2=formonly.s2 type DECIMAL, tabIndex=13, title=%"Production Qty";
+Phantom formonly.pid;
+Phantom formonly.id;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.path type CHAR;
+Phantom formonly.treekey1 type CHAR;
+Phantom formonly.treekey2 type CHAR;
+Edit cnt=formonly.cnt type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfb_file.sfb01,formonly.smydesc,sfb_file.sfb81,sfb_file.sfb02,sfb_file.sfb44,sfb_file.sfb05,formonly.ima02,formonly.ima021,sfb_file.sfb08,sfb_file.sfb87,sfb_file.sfb04,formonly.gen02,formonly.cnt)
+SCREEN RECORD tree(formonly.name,formonly.s1,formonly.a02,formonly.a021,formonly.s2,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.path,formonly.treekey1,formonly.treekey2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,214 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cxm/4fd/cxmt400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt110")
+VBox vb2
+Folder pc3
+Page Page5(text=%"main")
+HBox HBox2
+Grid Grid1
+{
+
+
+  tc_ofa01       [tc_ofa01                 ]
+  tc_ofa02       [tc_ofa02                 ]
+  tc_ofa03       [tc_ofa03                 ]  [occ02                        ]
+  tc_ofa04       [tc_ofa04                 ]  [gen02                        ]
+  tc_ofa11       [tc_ofa11                                                  ]
+                 [                                                          ]
+                 [                                                          ]
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+Grid Grid3
+{
+
+
+  tc_ofa05          [tc_ofa05                ]     [tc_ofa06                             ]
+  tc_ofa07          [tc_ofa07                ]     [tc_ofa08                  ]
+                    [tc_ofa09                ]     [tc_ofa10                  ]
+ [tc_ofa12        ] [tc_ofa13                ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid3
+END -- HBox2
+END -- Page5
+Page Page1(text=%"Page1")
+HBox HBox1
+Grid Grid2
+{
+
+ Project No.[tc_ofauser          ]  Project No.  [tc_ofamodu          ]
+ Project No.[tc_ofagrup          ]  Project No.  [tc_ofadate          ]
+
+ Project No.[tc_ofaoriu          ]
+ Project No.[tc_ofaorig          ]
+
+
+
+
+
+
+
+
+
+}
+END -- Grid2
+END -- HBox1
+END -- Page1
+END -- pc3
+Folder Folder1
+Page Page2(text=%"Page2")
+Table s_tc_ofb
+{
+[tc_ofb02  |tc_ofb03      |ima02           |ima021          |tc_ofb04|tc_ofb05    |tc_ofb06    |tc_ofb07    |tc_ofb08    |tc_ofb09  |tc_ofb10    ]
+[tc_ofb02  |tc_ofb03      |ima02           |ima021          |tc_ofb04|tc_ofb05    |tc_ofb06    |tc_ofb07    |tc_ofb08    |tc_ofb09  |tc_ofb10    ]
+[tc_ofb02  |tc_ofb03      |ima02           |ima021          |tc_ofb04|tc_ofb05    |tc_ofb06    |tc_ofb07    |tc_ofb08    |tc_ofb09  |tc_ofb10    ]
+[tc_ofb02  |tc_ofb03      |ima02           |ima021          |tc_ofb04|tc_ofb05    |tc_ofb06    |tc_ofb07    |tc_ofb08    |tc_ofb09  |tc_ofb10    ]
+[tc_ofb02  |tc_ofb03      |ima02           |ima021          |tc_ofb04|tc_ofb05    |tc_ofb06    |tc_ofb07    |tc_ofb08    |tc_ofb09  |tc_ofb10    ]
+}
+END -- s_tc_ofb
+END -- Page2
+Page Page3(text=%"Page3")
+Table s_tc_oeb
+{
+[tc_oeb03    |tc_oeb031   |tc_oeb04        |ima02_1         |ima021_1        |tc_oeb05|tc_oeb12    |tc_oeb16  |tc_oeb24    |tc_oeb26    |tc_oeb70    |tc_oeb70d ]
+[tc_oeb03    |tc_oeb031   |tc_oeb04        |ima02_1         |ima021_1        |tc_oeb05|tc_oeb12    |tc_oeb16  |tc_oeb24    |tc_oeb26    |tc_oeb70    |tc_oeb70d ]
+[tc_oeb03    |tc_oeb031   |tc_oeb04        |ima02_1         |ima021_1        |tc_oeb05|tc_oeb12    |tc_oeb16  |tc_oeb24    |tc_oeb26    |tc_oeb70    |tc_oeb70d ]
+[tc_oeb03    |tc_oeb031   |tc_oeb04        |ima02_1         |ima021_1        |tc_oeb05|tc_oeb12    |tc_oeb16  |tc_oeb24    |tc_oeb26    |tc_oeb70    |tc_oeb70d ]
+[tc_oeb03    |tc_oeb031   |tc_oeb04        |ima02_1         |ima021_1        |tc_oeb05|tc_oeb12    |tc_oeb16  |tc_oeb24    |tc_oeb26    |tc_oeb70    |tc_oeb70d ]
+
+
+
+
+}
+END -- s_tc_oeb
+END -- Page3
+Page Page4(text=%"Page4")
+Table tc_ofc_file
+{
+[tc_ofc02  |tc_ofc03  |tc_ofc04        |ima02_2         |ima021_2        |tc_ofc05          |tc_ofc06  ]
+[tc_ofc02  |tc_ofc03  |tc_ofc04        |ima02_2         |ima021_2        |tc_ofc05          |tc_ofc06  ]
+[tc_ofc02  |tc_ofc03  |tc_ofc04        |ima02_2         |ima021_2        |tc_ofc05          |tc_ofc06  ]
+[tc_ofc02  |tc_ofc03  |tc_ofc04        |ima02_2         |ima021_2        |tc_ofc05          |tc_ofc06  ]
+[tc_ofc02  |tc_ofc03  |tc_ofc04        |ima02_2         |ima021_2        |tc_ofc05          |tc_ofc06  ]
+
+
+
+
+
+
+
+
+
+}
+END -- tc_ofc_file
+END -- Page4
+END -- Folder1
+Grid gr36
+{
+ ----------  Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+
+
+
+
+
+}
+END -- gr36
+END -- vb2
+END -- cxmt400
+
+ATTRIBUTES
+ButtonEdit tc_ofa01=formonly.tc_ofa01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom.png", picture="XXX-########";
+DateEdit tc_ofa02=formonly.tc_ofa02 type DATE, tabIndex=2, not null, required;
+ButtonEdit tc_ofa03=formonly.tc_ofa03 type VARCHAR, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Edit occ02=formonly.occ02, tabIndex=16;
+ButtonEdit tc_ofa04=formonly.tc_ofa04 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+Edit gen02=formonly.gen02, tabIndex=17;
+TextEdit tc_ofa11=formonly.tc_ofa11 type VARCHAR, tabIndex=5;
+ComboBox tc_ofa05=formonly.tc_ofa05 type VARCHAR, tabIndex=18, noEntry, items=(("0", "手工录入"));
+Edit tc_ofa06=formonly.tc_ofa06 type VARCHAR, tabIndex=19, noEntry;
+ComboBox tc_ofa07=formonly.tc_ofa07 type VARCHAR, tabIndex=20, noEntry, items=(("Y", "confirm"),("N", "unconfirm"),("X", "void"));
+DateEdit tc_ofa08=formonly.tc_ofa08 type DATE, tabIndex=21, noEntry;
+CheckBox tc_ofa09=formonly.tc_ofa09 type VARCHAR, tabIndex=23, text=%"tc_ofa09", noEntry, valueChecked = "Y", valueUnchecked = "N";
+DateEdit tc_ofa10=formonly.tc_ofa10 type DATE, tabIndex=22, noEntry;
+CheckBox tc_ofa12=formonly.tc_ofa12 type VARCHAR, tabIndex=51, text=%"tc_ofa12", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox tc_ofa13=formonly.tc_ofa13 type VARCHAR, tabIndex=52, noEntry, items=(("0", "开立"),("1", "已核准"),("S", "送签中"));
+Edit tc_ofauser=formonly.tc_ofauser, tabIndex=6, noEntry;
+Edit tc_ofamodu=formonly.tc_ofamodu, tabIndex=10, noEntry;
+Edit tc_ofagrup=formonly.tc_ofagrup, tabIndex=7, noEntry;
+DateEdit tc_ofadate=formonly.tc_ofadate, tabIndex=11, noEntry;
+Edit tc_ofaoriu=formonly.tc_ofaoriu, tabIndex=8, noEntry;
+Edit tc_ofaorig=formonly.tc_ofaorig, tabIndex=9, noEntry;
+Edit tc_ofb02=formonly.tc_ofb02 type INTEGER, tabIndex=30, title=%"tc_ofb02", not null, required;
+ButtonEdit tc_ofb03=formonly.tc_ofb03 type VARCHAR, action=controlp, tabIndex=29, title=%"tc_ofb03", not null, required, image="zoom";
+Edit ima02=formonly.ima02 type INTEGER, tabIndex=28, title=%"ima02", noEntry;
+Edit ima021=formonly.ima021 type INTEGER, tabIndex=27, title=%"ima021", noEntry;
+Edit tc_ofb04=formonly.tc_ofb04 type VARCHAR, tabIndex=26, title=%"tc_ofb04", noEntry;
+Edit tc_ofb05=formonly.tc_ofb05 type DECIMAL, tabIndex=25, title=%"tc_ofb05", not null, required;
+DateEdit tc_ofb06=formonly.tc_ofb06 type DATE, tabIndex=24, title=%"tc_ofb06";
+Edit tc_ofb07=formonly.tc_ofb07 type DECIMAL, tabIndex=31, title=%"tc_ofb07";
+Edit tc_ofb08=formonly.tc_ofb08 type DECIMAL, tabIndex=12, title=%"tc_ofb08";
+CheckBox tc_ofb09=formonly.tc_ofb09, tabIndex=32, default = "Y", title=%"tc_ofb09", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit tc_ofb10=formonly.tc_ofb10 type DATE, tabIndex=33, title=%"tc_ofb10";
+Edit tc_oeb03=formonly.tc_oeb03 type INTEGER, tabIndex=34, title=%"tc_oeb03", not null, required;
+Edit tc_oeb031=formonly.tc_oeb031 type INTEGER, tabIndex=13, title=%"tc_oeb031", not null, required;
+ButtonEdit tc_oeb04=formonly.tc_oeb04 type VARCHAR, action=controlp, tabIndex=35, title=%"tc_oeb04", not null, required, image="zoom";
+Edit ima02_1=formonly.ima02_1, tabIndex=36, title=%"ima02_1", noEntry;
+Edit ima021_1=formonly.ima021_1, tabIndex=37, title=%"ima021_1", noEntry;
+Edit tc_oeb05=formonly.tc_oeb05, tabIndex=38, title=%"tc_oeb05";
+Edit tc_oeb12=formonly.tc_oeb12 type DECIMAL, tabIndex=39, title=%"tc_oeb12", not null, required;
+DateEdit tc_oeb16=formonly.tc_oeb16 type DATE, tabIndex=40, title=%"tc_oeb16";
+Edit tc_oeb24=formonly.tc_oeb24 type DECIMAL, tabIndex=42, title=%"tc_oeb24", noEntry;
+Edit tc_oeb26=formonly.tc_oeb26 type DECIMAL, tabIndex=41, title=%"tc_oeb26", noEntry;
+CheckBox tc_oeb70=formonly.tc_oeb70, tabIndex=53, title=%"tc_oeb70", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+DateEdit tc_oeb70d=formonly.tc_oeb70d type DATE, tabIndex=43, title=%"tc_oeb70d", noEntry;
+Edit tc_ofc02=formonly.tc_ofc02 type INTEGER, tabIndex=44, title=%"tc_ofc02";
+Edit tc_ofc03=formonly.tc_ofc03 type INTEGER, tabIndex=45, title=%"tc_ofc03";
+ButtonEdit tc_ofc04=formonly.tc_ofc04, action=controlp, tabIndex=46, title=%"tc_ofc04", image="zoom";
+Edit ima02_2=formonly.ima02_2, tabIndex=47, title=%"ima02_2", noEntry;
+Edit ima021_2=formonly.ima021_2, tabIndex=48, title=%"ima021_2", noEntry;
+ButtonEdit tc_ofc05=formonly.tc_ofc05, action=controlp, tabIndex=49, title=%"tc_ofc05", image="zoom";
+Edit tc_ofc06=formonly.tc_ofc06 type INTEGER, tabIndex=50, title=%"tc_ofc06";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=14, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_ofa01,formonly.tc_ofa02,formonly.tc_ofa03,formonly.tc_ofa04,formonly.tc_ofa11,formonly.tc_ofadate,formonly.tc_ofamodu,formonly.tc_ofaorig,formonly.tc_ofaoriu,formonly.tc_ofagrup,formonly.tc_ofauser,formonly.cnt,formonly.cn2,formonly.occ02,formonly.gen02,formonly.tc_ofa05,formonly.tc_ofa06,formonly.tc_ofa07,formonly.tc_ofa08,formonly.tc_ofa10,formonly.tc_ofa09,formonly.tc_ofa12,formonly.tc_ofa13)
+SCREEN RECORD s_tc_ofb(formonly.tc_ofb02,formonly.tc_ofb03,formonly.ima02,formonly.ima021,formonly.tc_ofb04,formonly.tc_ofb05,formonly.tc_ofb06,formonly.tc_ofb07,formonly.tc_ofb08,formonly.tc_ofb09,formonly.tc_ofb10)
+SCREEN RECORD s_tc_oeb(formonly.tc_oeb03,formonly.tc_oeb031,formonly.tc_oeb04,formonly.ima02_1,formonly.ima021_1,formonly.tc_oeb05,formonly.tc_oeb12,formonly.tc_oeb16,formonly.tc_oeb24,formonly.tc_oeb26,formonly.tc_oeb70,formonly.tc_oeb70d)
+SCREEN RECORD s_tc_ofc(formonly.tc_ofc02,formonly.tc_ofc03,formonly.tc_ofc04,formonly.ima02_2,formonly.ima021_2,formonly.tc_ofc05,formonly.tc_ofc06)
+END -- INSTRUCTIONS
+

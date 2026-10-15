@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr520.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr520")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                        >
+  Work/Order No.      [sfb01                              ]
+  Item No.            [sfb05                              ]
+  Picking Batch ID    [sfb85                              ]
+  Order Sequence      [sfb40                              ]
+  Operating Date      [sfb13                              ]
+ <                                                                 >
+ <G group02                                                        >
+ [a                             ]
+ [b                             ]
+ <                                                                 >
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                           ]
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- asfr520
+
+TABLES
+sfb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit sfb05=formonly.sfb05 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit sfb85=sfb_file.sfb85, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit sfb40=sfb_file.sfb40, action=controlp, tabIndex=4, image="zoom";
+DateEdit sfb13=sfb_file.sfb13, tabIndex=5;
+Group group02:group02, text="INPUT";
+CheckBox a=formonly.a type VARCHAR, tabIndex=6, text="Include W/O Unallotted?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=7, text="Print Short Item only?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfb_file.sfb01,formonly.sfb05,sfb_file.sfb85,sfb_file.sfb40,sfb_file.sfb13,formonly.a,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

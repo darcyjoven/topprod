@@ -1,0 +1,119 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_tgr_base.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_tgr_base")
+VBox vb100
+Folder pc3
+Page page01(text="Main")
+VBox vb99
+Grid gr7
+{
+ Trigger Symbol    [gcq01   ]  Trigger Name [gcq02       ]  [gcq06 ]       tabname [gcq03    ]
+
+}
+END -- gr7
+Grid gr8
+{
+ difine new and old value [gcq13]
+
+
+
+
+}
+END -- gr8
+Grid gr9
+{
+ Before or After    [gcq08                                 ]
+                    [gcq09]    [gcq10]    [gcq11]    [gcq12]
+}
+END -- gr9
+Grid gr10
+{
+ Trigger Content   [gcq07                                                                    ]
+                   [                                                                         ]
+                   [                                                                         ]
+                   [                                                                         ]
+                   [                                                                         ]
+                   [                                                                         ]
+                   [                                                                         ]
+                   [                                                                         ]
+                   [                                                                         ]
+                   [                                                                         ]
+                   [                                                                         ]
+                   [                                                                         ]
+                   [                                                                         ]
+ Trigger Explain   [gcq04                                                                    ]
+                   [                                                                         ]
+                   [                                                                         ]
+                   [gcq05     ]
+}
+END -- gr10
+END -- vb99
+END -- page01
+Page page02(text="Explain")
+Grid gr11
+{
+  [forex                                                                                    ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+  [                                                                                         ]
+}
+END -- gr11
+END -- page02
+END -- pc3
+Grid gr12
+{
+ --------[cnt]-------
+
+}
+END -- gr12
+END -- vb100
+END -- p_tgr_base
+
+TABLES
+gcq_file
+ATTRIBUTES
+Edit gcq01=gcq_file.gcq01, tabIndex=1;
+Edit gcq02=gcq_file.gcq02, tabIndex=2, not null, required;
+CheckBox gcq06=gcq_file.gcq06, tabIndex=3, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit gcq03=gcq_file.gcq03, action=controlp, tabIndex=4, not null, required, image="zoom";
+ComboBox gcq13=gcq_file.gcq13, tabIndex=5, not null, required, items=(("1", "1:REFERENCING OLD AS old NEW AS new"),("2", "2:NULL"));
+RadioGroup gcq08=gcq_file.gcq08, tabIndex=6, orientation=horizontal, style="0", items=(("1", "before"),("2", "after"));
+CheckBox gcq09=gcq_file.gcq09, tabIndex=7, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gcq10=gcq_file.gcq10, tabIndex=8, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gcq11=gcq_file.gcq11, tabIndex=9, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gcq12=gcq_file.gcq12, tabIndex=10, not null, required, valueChecked = "Y", valueUnchecked = "N";
+TextEdit gcq07=gcq_file.gcq07, tabIndex=11, stretch=NONE;
+TextEdit gcq04=gcq_file.gcq04, tabIndex=12, not null, required, stretch=NONE;
+CheckBox gcq05=gcq_file.gcq05, tabIndex=13, not null, required, valueChecked = "Y", valueUnchecked = "N";
+TextEdit forex=formonly.forex type CHAR, tabIndex=14, noEntry, stretch=NONE;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gcq_file.gcq01,gcq_file.gcq02,gcq_file.gcq06,gcq_file.gcq03,gcq_file.gcq13,gcq_file.gcq08,gcq_file.gcq09,gcq_file.gcq10,gcq_file.gcq11,gcq_file.gcq12,gcq_file.gcq07,gcq_file.gcq04,gcq_file.gcq05,formonly.forex,formonly.cnt)
+END -- INSTRUCTIONS
+

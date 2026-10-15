@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapq107.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Table ds1
+{
+[b       |ome01               |ome02       |ome04       |occ02               |ome043                        |ome211     |ome59                 |ome59x                |ome59t                ]
+[b       |ome01               |ome02       |ome04       |occ02               |ome043                        |ome211     |ome59                 |ome59x                |ome59t                ]
+[b       |ome01               |ome02       |ome04       |occ02               |ome043                        |ome211     |ome59                 |ome59x                |ome59t                ]
+[b       |ome01               |ome02       |ome04       |occ02               |ome043                        |ome211     |ome59                 |ome59x                |ome59t                ]
+[b       |ome01               |ome02       |ome04       |occ02               |ome043                        |ome211     |ome59                 |ome59x                |ome59t                ]
+
+}
+END -- ds1
+Grid Grid1
+{
+
+ [label1      |sum1                ]        [label2      |sum2                ]        [label3      |sum3                ]
+ [label4      |amt1                ]        [label5      |amt2                ]        [label6      |amt3                ]
+}
+END -- Grid1
+Grid Grid2
+{
+ [label7      |cnt       ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+occ_file,
+ome_file
+ATTRIBUTES
+ComboBox b=formonly.b, tabIndex=1, title=%"b", items=(("1", "Sales"),("2", "Purchase"),("3", "ALL"));
+ButtonEdit ome01=ome_file.ome01, action=controlp, tabIndex=2, title=%"ome01", not null, image="zoom", scroll;
+DateEdit ome02=ome_file.ome02, tabIndex=3, title=%"ome02";
+ButtonEdit ome04=ome_file.ome04, action=controlp, tabIndex=4, title=%"ome04", image="zoom", scroll;
+Edit occ02=occ_file.occ02, tabIndex=5, title=%"occ02";
+Edit ome043=ome_file.ome043, tabIndex=6, title=%"ome043", scroll;
+Edit ome211=ome_file.ome211, tabIndex=7, title=%"ome211", scroll;
+Edit ome59=ome_file.ome59, tabIndex=8, title=%"ome59", not null, scroll;
+Edit ome59x=ome_file.ome59x, tabIndex=9, title=%"ome59x", not null, scroll;
+Edit ome59t=ome_file.ome59t, tabIndex=10, title=%"ome59t", not null, scroll;
+Label label1:Label1, text=%"Label1";
+Edit sum1=formonly.sum1, tabIndex=11;
+Label label2:Label2, text=%"Label1";
+Edit sum2=formonly.sum2, tabIndex=12;
+Label label3:Label3, text=%"Label1";
+Edit sum3=formonly.sum3, tabIndex=13;
+Label label4:Label4, text=%"Label1";
+Edit amt1=formonly.amt1, tabIndex=14;
+Label label5:Label5, text=%"Label1";
+Edit amt2=formonly.amt2, tabIndex=15;
+Label label6:Label6, text=%"Label1";
+Edit amt3=formonly.amt3, tabIndex=16;
+Label label7:Label7, text=%"Label1";
+Edit cnt=formonly.cnt, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ome(formonly.b,ome_file.ome01,ome_file.ome02,ome_file.ome04,occ_file.occ02,ome_file.ome043,ome_file.ome211,ome_file.ome59,ome_file.ome59x,ome_file.ome59t)
+SCREEN RECORD Undefined(formonly.sum1,formonly.sum2,formonly.sum3,formonly.amt1,formonly.amt2,formonly.amt3,formonly.cnt)
+END -- INSTRUCTIONS
+

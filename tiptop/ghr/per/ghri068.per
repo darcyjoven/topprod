@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri068.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+HBox HBox1
+Tree tree(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file")
+{
+[name             ]
+[name             ]
+[name             ]
+[name             ]
+[name             ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- tree
+Grid Grid1
+{
+ <G group1                                                                                    >
+   <T table1                                                                              >
+   [hrcya02 |hrcya03 |hrcyause|hrcyamod|hrcyadat]
+   [hrcya02 |hrcya03 |hrcyause|hrcyamod|hrcyadat]
+   [hrcya02 |hrcya03 |hrcyause|hrcyamod|hrcyadat]
+   [hrcya02 |hrcya03 |hrcyause|hrcyamod|hrcyadat]
+   [hrcya02 |hrcya03 |hrcyause|hrcyamod|hrcyadat]
+ <                                                                                            >
+ <G group2                                                                                    >
+  <T table2                                                                               >
+  [hrcyb03 |hrcyb04 |hrcyb05 |hrcyb06 |hrcyb07 |hrcyb08 |hrcyb09 ]
+  [hrcyb03 |hrcyb04 |hrcyb05 |hrcyb06 |hrcyb07 |hrcyb08 |hrcyb09 ]
+  [hrcyb03 |hrcyb04 |hrcyb05 |hrcyb06 |hrcyb07 |hrcyb08 |hrcyb09 ]
+  [hrcyb03 |hrcyb04 |hrcyb05 |hrcyb06 |hrcyb07 |hrcyb08 |hrcyb09 ]
+  [hrcyb03 |hrcyb04 |hrcyb05 |hrcyb06 |hrcyb07 |hrcyb08 |hrcyb09 ]
+ <                                                                                            >
+
+
+
+
+}
+END -- Grid1
+END -- HBox1
+END -- Form
+
+ATTRIBUTES
+Edit name=formonly.name, tabIndex=1, title=%"name";
+Phantom formonly.pid;
+Phantom formonly.id;
+Phantom formonly.has_children;
+Phantom formonly.expanded;
+Phantom formonly.level;
+Phantom formonly.treekey1;
+Phantom formonly.treekey2;
+Group group1:Group1, text=%"Group1";
+Table table1:Table1;
+Edit hrcya02=formonly.hrcya02 type VARCHAR, tabIndex=9, title=%"hrcya02", noEntry, invisible;
+Edit hrcya03=formonly.hrcya03 type VARCHAR, tabIndex=2, title=%"hrcya03", not null, required;
+Edit hrcyause=formonly.hrcyauser type VARCHAR, tabIndex=2, title=%"hrcyauser", noEntry;
+Edit hrcyamod=formonly.hrcyamodu type VARCHAR, tabIndex=3, title=%"hrcyamodu", noEntry;
+DateEdit hrcyadat=formonly.hrcyadate type DATE, tabIndex=4, title=%"hrcyadate", noEntry;
+Group group2:Group2, text=%"Group2";
+Table table2:Table2;
+Edit hrcyb03=formonly.hrcyb03 type INTEGER, tabIndex=10, title=%"hrcyb03", noEntry, invisible;
+Edit hrcyb04=formonly.hrcyb04 type VARCHAR, tabIndex=2, title=%"hrcyb04", noEntry;
+Edit hrcyb05=formonly.hrcyb05 type VARCHAR, tabIndex=2, title=%"hrcyb05", not null, required;
+Edit hrcyb06=formonly.hrcyb06 type DECIMAL, tabIndex=5, title=%"hrcyb06", not null, required;
+Edit hrcyb07=formonly.hrcyb07 type DECIMAL, tabIndex=6, title=%"hrcyb07", not null, required;
+Edit hrcyb08=formonly.hrcyb08 type DECIMAL, tabIndex=7, title=%"hrcyb08", not null, required;
+TextEdit hrcyb09=formonly.hrcyb09 type VARCHAR, tabIndex=8, title=%"hrcyb09";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.treekey1,formonly.treekey2)
+SCREEN RECORD s_hrcya(formonly.hrcya02,formonly.hrcya03,formonly.hrcyauser,formonly.hrcyamodu,formonly.hrcyadate)
+SCREEN RECORD s_hrcyb(formonly.hrcyb03,formonly.hrcyb04,formonly.hrcyb05,formonly.hrcyb06,formonly.hrcyb07,formonly.hrcyb08,formonly.hrcyb09)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gxr/42f/gxrp620.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gxrp620")
+VBox VBox1
+Folder pc839
+Page page01(text="Page01")
+Grid gr3644
+{
+ G/L Plant No.              [p_plant   ]
+ G/L No.                    [p_acc     ]
+ Orignal G/L Vou No.        [g_existno           ]
+ Second G/L No.             [p_acc1    ]
+ Second Orignal G/L Vou No. [g_existno1          ]
+}
+END -- gr3644
+END -- page01
+END -- pc839
+Grid gr3645
+{
+[g_bgjob                                                       ]
+
+}
+END -- gr3645
+END -- VBox1
+END -- gxrp620
+
+ATTRIBUTES
+ButtonEdit p_plant=formonly.p_plant type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit p_acc=formonly.p_acc type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit g_existno=formonly.g_existno type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Edit p_acc1=formonly.p_acc1 type VARCHAR, tabIndex=4, noEntry, not null, required;
+Edit g_existno1=formonly.g_existno1 type VARCHAR, tabIndex=5, noEntry, not null, required;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=6, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.p_plant,formonly.p_acc,formonly.g_existno,formonly.p_acc1,formonly.g_existno1,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

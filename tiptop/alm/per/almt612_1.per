@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt612_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almt612_1")
+Grid gr355
+{
+  <G group01                                            >
+   Coupon Bit   [lph32               ]
+   Fix Bit      [lph33               ]
+   Fix Code     [lph34               ]
+   Float Bit    [lph35               ]
+  <                                                     >
+  <G gb2                                             >
+    Begin No.   [beg_no              ]
+    End No.     [end_no              ]
+    Validity    [validity    ]
+  <                                                  >
+
+}
+END -- gr355
+END -- almt612_1
+
+ATTRIBUTES
+Group group01:group01, text="Card Data";
+Edit lph32=formonly.lph32 type VARCHAR, tabIndex=1, noEntry;
+Edit lph33=formonly.lph33 type VARCHAR, tabIndex=2, noEntry;
+Edit lph34=formonly.lph34 type VARCHAR, tabIndex=3, noEntry;
+Edit lph35=formonly.lph35 type VARCHAR, tabIndex=4, noEntry;
+Group gb2:gb2, text="Input Range";
+Edit beg_no=formonly.beg_no type VARCHAR, tabIndex=5, not null, required;
+Edit end_no=formonly.end_no type VARCHAR, tabIndex=6, not null, required;
+DateEdit validity=formonly.validity type CHAR, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.lph32,formonly.lph33,formonly.lph34,formonly.lph35,formonly.beg_no,formonly.end_no,formonly.validity)
+END -- INSTRUCTIONS
+

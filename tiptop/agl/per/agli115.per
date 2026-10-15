@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli115.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli115")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr2331
+{
+
+  Book No.        [tat01     ]
+  Year            [tat02     ]
+
+}
+END -- gr2331
+END -- page01
+END -- folder01
+Table s_tat
+{
+[tat03               |aag021              |tat04               |aag022              |tat05               |aag023              ]
+[tat03               |aag021              |tat04               |aag022              |tat05               |aag023              ]
+[tat03               |aag021              |tat04               |aag022              |tat05               |aag023              ]
+[tat03               |aag021              |tat04               |aag022              |tat05               |aag023              ]
+[tat03               |aag021              |tat04               |aag022              |tat05               |aag023              ]
+[tat03               |aag021              |tat04               |aag022              |tat05               |aag023              ]
+[tat03               |aag021              |tat04               |aag022              |tat05               |aag023              ]
+[tat03               |aag021              |tat04               |aag022              |tat05               |aag023              ]
+[tat03               |aag021              |tat04               |aag022              |tat05               |aag023              ]
+[tat03               |aag021              |tat04               |aag022              |tat05               |aag023              ]
+
+}
+END -- s_tat
+Grid gr2333
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2333
+END -- vb2
+END -- agli115
+
+TABLES
+tat_file
+ATTRIBUTES
+ButtonEdit tat01=tat_file.tat01, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Book#";
+Edit tat02=tat_file.tat02, tabIndex=1, not null, required;
+ButtonEdit tat03=tat_file.tat03, action=controlp, tabIndex=3, title="Account No.", not null, required, image="zoom", comment="<^P>Qry Company Data";
+Edit aag021=formonly.aag021 type CHAR, tabIndex=8, title="Account Name", noEntry;
+ButtonEdit tat04=tat_file.tat04, action=controlp, tabIndex=4, title="BS Account No.", not null, required, image="zoom", comment="<^P>Qry Book#";
+Edit aag022=formonly.aag022 type CHAR, tabIndex=9, title="BS Account Name", noEntry;
+ButtonEdit tat05=tat_file.tat05, action=controlp, tabIndex=5, title="IS Account No.", not null, required, image="zoom", comment="<^P>Qry Account No.";
+Edit aag023=formonly.aag023 type CHAR, tabIndex=10, title="IS Account Name", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tat(tat_file.tat03,formonly.aag021,tat_file.tat04,formonly.aag022,tat_file.tat05,formonly.aag023)
+SCREEN RECORD Undefined(tat_file.tat01,tat_file.tat02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

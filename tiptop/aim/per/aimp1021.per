@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp1021.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Transfer Plant")
+Grid gr3067
+{
+ <T s_azp                                                     >
+ [sure |azp01      |azp02               |azp03               ]
+ [sure |azp01      |azp02               |azp03               ]
+ [sure |azp01      |azp02               |azp03               ]
+ [sure |azp01      |azp02               |azp03               ]
+ [sure |azp01      |azp02               |azp03               ]
+ [sure |azp01      |azp02               |azp03               ]
+ [sure |azp01      |azp02               |azp03               ]
+ [sure |azp01      |azp02               |azp03               ]
+ [sure |azp01      |azp02               |azp03               ]
+ [sure |azp01      |azp02               |azp03               ]
+ <                                                            >
+
+}
+END -- gr3067
+END -- aimp1021
+
+ATTRIBUTES
+Table s_azp:s_azp;
+Edit sure=formonly.sure type CHAR, tabIndex=1, title="Sure", upShift;
+Edit azp01=formonly.azp01 type CHAR, tabIndex=2, title="Plant No.", noEntry;
+Edit azp02=formonly.azp02 type CHAR, tabIndex=3, title="Name", noEntry;
+Edit azp03=formonly.azp03 type CHAR, tabIndex=4, title="SCHEMA #", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azp(formonly.sure,formonly.azp01,formonly.azp02,formonly.azp03)
+END -- INSTRUCTIONS
+

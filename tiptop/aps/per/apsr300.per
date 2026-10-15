@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsr300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="apsr300")
+VBox vb4
+Grid gr29
+{
+ <G qbe                                              >
+    Last Modified On   [recent_date               ]
+ <                                                   >
+
+}
+END -- gr29
+Folder pc1
+Page Page1(text=%"Page0")
+Grid gr9
+{
+ <G input                                            >
+   [ch01      ]        [ch02                   ]
+   [ch03            ]  [ch04                     ]
+ <                                                   >
+
+}
+END -- gr9
+END -- Page1
+END -- pc1
+Grid gr30
+{
+ [more                                            ]
+
+}
+END -- gr30
+END -- vb4
+END -- apsr300
+
+ATTRIBUTES
+Group qbe:QBE, text="QBE";
+DateEdit recent_date=formonly.recent_date type CHAR, tabIndex=1, required;
+Group input:INPUT, text="INPUT";
+CheckBox ch01=formonly.ch01 type CHAR, tabIndex=3, text="chk Material Main", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ch02=formonly.ch02 type CHAR, tabIndex=4, text="chk Prduct/Displace RouteHR", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ch03=formonly.ch03 type CHAR, tabIndex=5, text="chk Prod Routing", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ch04=formonly.ch04 type CHAR, tabIndex=6, text="chk Product/Displace Routemach", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=2, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.recent_date,formonly.ch01,formonly.ch02,formonly.ch03,formonly.ch04,formonly.more)
+END -- INSTRUCTIONS
+

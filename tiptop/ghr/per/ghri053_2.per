@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri053_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+      hrcma04[hrcma04    |hrcma05          ] hrcma06[hrcma06   |hrcma07           ]
+      hrcma08[hrcma08                      ] hrcma09[hrcma09   |hrcma09_desc      ]
+      hrcma10[hrcma10                      ] [hrcma11   ][hrcma12   ] [hrcma15   ]
+
+      hrcma13[hrcma13                                                             ]
+             [                                                                    ]
+             [                                                                    ]
+
+
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table s_hrck
+{
+[hrckno  |hrck01     |hrck02      ]
+[hrckno  |hrck01     |hrck02      ]
+[hrckno  |hrck01     |hrck02      ]
+[hrckno  |hrck01     |hrck02      ]
+[hrckno  |hrck01     |hrck02      ]
+
+
+}
+END -- s_hrck
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+DateEdit hrcma04=formonly.hrcma04, tabIndex=1, not null, required;
+Edit hrcma05=formonly.hrcma05, tabIndex=1, not null, required, picture="XX:XX";
+DateEdit hrcma06=formonly.hrcma06, tabIndex=1, not null, required;
+Edit hrcma07=formonly.hrcma07, tabIndex=1, not null, required, picture="XX:XX";
+Edit hrcma08=formonly.hrcma08, tabIndex=1, not null, required;
+ButtonEdit hrcma09=formonly.hrcma09, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrcma09_desc=formonly.hrcma09_desc, tabIndex=1;
+Edit hrcma10=formonly.hrcma10, tabIndex=1;
+CheckBox hrcma11=formonly.hrcma11, tabIndex=1, default = "N", text=%"hrcma11", valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrcma12=formonly.hrcma12, tabIndex=1, default = "N", text=%"hrcma12", valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrcma15=formonly.hrcma15, tabIndex=1, default = "N", text=%"hrcma15", valueChecked = "Y", valueUnchecked = "N";
+TextEdit hrcma13=formonly.hrcma13, tabIndex=2;
+Edit hrckno=formonly.hrckno, tabIndex=3, title=%"hrckno", hidden;
+ButtonEdit hrck01=formonly.hrck01, action=controlp, tabIndex=1, title=%"hrck01", not null, required, image="zoom";
+Edit hrck02=formonly.hrck02, tabIndex=1, title=%"hrck02", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrcma05,formonly.hrcma08,formonly.hrcma10,formonly.hrcma09,formonly.hrcma09_desc,formonly.hrcma11,formonly.hrcma12,formonly.hrcma15,formonly.hrcma04,formonly.hrcma06,formonly.hrcma07,formonly.hrcma13)
+SCREEN RECORD s_hrck(formonly.hrckno,formonly.hrck01,formonly.hrck02)
+END -- INSTRUCTIONS
+

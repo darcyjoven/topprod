@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli931.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli931")
+VBox vb3_
+Folder folder01
+Page page01(text="Main")
+Grid gr2466
+{
+ Group No.          [gis05               ]
+ Company No.        [gis06               ]
+ Plant Name         [axz02               ]
+ Logistics code     [axz03               ]
+ Book No.           [gis00     ]
+ Group Code         [gis01     ]
+ Group Desc         [gir02                  ]
+}
+END -- gr2466
+END -- page01
+END -- folder01
+Table s_gis
+{
+[gis02                     |aag02                                             |gis03      |gis04    ]
+[gis02                     |aag02                                             |gis03      |gis04    ]
+[gis02                     |aag02                                             |gis03      |gis04    ]
+[gis02                     |aag02                                             |gis03      |gis04    ]
+[gis02                     |aag02                                             |gis03      |gis04    ]
+[gis02                     |aag02                                             |gis03      |gis04    ]
+[gis02                     |aag02                                             |gis03      |gis04    ]
+[gis02                     |aag02                                             |gis03      |gis04    ]
+[gis02                     |aag02                                             |gis03      |gis04    ]
+[gis02                     |aag02                                             |gis03      |gis04    ]
+
+}
+END -- s_gis
+Grid gr2467
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2467
+END -- vb3_
+END -- agli931
+
+TABLES
+aag_file,
+gis_file
+ATTRIBUTES
+ButtonEdit gis05=gis_file.gis05, action=controlp, tabIndex=11, not null, required, image="zoom";
+ButtonEdit gis06=gis_file.gis06, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P> Query";
+Edit axz02=formonly.axz02 type CHAR, tabIndex=12, noEntry;
+Edit axz03=formonly.axz03 type CHAR, tabIndex=13, noEntry;
+Edit gis00=formonly.gis00 type CHAR, tabIndex=9;
+ButtonEdit gis01=gis_file.gis01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Query Group Code";
+Edit gir02=formonly.gir02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit gis02=gis_file.gis02, action=controlp, tabIndex=3, title="Account No.", not null, required, image="zoom", comment="<^P>Qry Account # ";
+Edit aag02=aag_file.aag02, tabIndex=4, title="Account Title", noEntry;
+ComboBox gis03=gis_file.gis03, tabIndex=5, title="Add/Deduct", not null, required, queryEditable, items=(("+", %"Total(+)"),("-", %"Total(-)"));
+ComboBox gis04=gis_file.gis04, tabIndex=6, title="Tran.Type", not null, required, queryEditable, items=(("1", %"Variation"),("2", %"Beginning of Period"),("3", %"End of Period"),("4", %"Manually"),("5", %"Debit Transaction"),("6", %"Credit Transaction"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gis(gis_file.gis02,aag_file.aag02,gis_file.gis03,gis_file.gis04)
+SCREEN RECORD Undefined(gis_file.gis05,gis_file.gis06,formonly.axz02,formonly.axz03,formonly.gis00,gis_file.gis01,formonly.gir02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

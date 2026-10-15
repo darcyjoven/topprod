@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai1002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai1002")
+Folder pc332
+Page page01(text="Main")
+VBox VBox1
+Grid gr1839
+{
+ Depr.-Tax Method              [faj61     ][a1           ]
+ Depr.-Tax Home Curr.Cost      [faj62               ]
+ Depr.-Tax Charge Off Cost     [faj69               ]
+ Depr.-Tax Adjustment Cost     [faj63               ]
+ Charge Off Acc. Depr.-Tax     [faj70               ]
+ Depr.-Tax Life                [faj64     ]Month
+ Depr.-Tax Asset Status        [faj201    ]
+ Depr.-Tax Rest Life           [faj65     ]Month
+ Cur.Per Accumulated Depr.-Tax [faj205              ]
+ Depr.-Tax Residual            [faj66               ]
+ Cur.PerChargeOff Acc.Depr.Tax [faj206              ]
+ Depr-Tax Accumulation         [faj67               ]
+ Undepreciated-Tax Amount      [faj68               ]
+}
+END -- gr1839
+END -- VBox1
+END -- page01
+END -- pc332
+END -- afai1002
+
+TABLES
+faj_file
+ATTRIBUTES
+ComboBox faj61=faj_file.faj61, tabIndex=1, queryEditable, items=(("0", "No Depr "),("1", "Avg&Rsdl "),("2", "Avg No-Rsdl"),("3", "Fix% Dim "),("4", "Outp.Qt"),("5", "Othr"));
+Edit a1=formonly.a1 type CHAR, tabIndex=2, noEntry;
+Edit faj62=faj_file.faj62, tabIndex=3;
+Edit faj69=faj_file.faj69, tabIndex=4, noEntry;
+Edit faj63=faj_file.faj63, tabIndex=5;
+Edit faj70=faj_file.faj70, tabIndex=6, noEntry;
+Edit faj64=faj_file.faj64, tabIndex=7;
+Edit faj201=faj_file.faj201, tabIndex=8, noEntry;
+Edit faj65=faj_file.faj65, tabIndex=9;
+Edit faj205=faj_file.faj205, tabIndex=10, noEntry;
+Edit faj66=faj_file.faj66, tabIndex=11;
+Edit faj206=faj_file.faj206, tabIndex=12, noEntry;
+Edit faj67=faj_file.faj67, tabIndex=13;
+Edit faj68=faj_file.faj68, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(faj_file.faj61,formonly.a1,faj_file.faj62,faj_file.faj69,faj_file.faj63,faj_file.faj70,faj_file.faj64,faj_file.faj201,faj_file.faj65,faj_file.faj205,faj_file.faj66,faj_file.faj206,faj_file.faj67,faj_file.faj68)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfq018.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Table Table1
+{
+[sfa01       |sfa27       |ima02        |ima021       |sfa08       |ecd07       |eca02          |sfa06      |sfa161      |sum        |img10   ]
+[sfa01       |sfa27       |ima02        |ima021       |sfa08       |ecd07       |eca02          |sfa06      |sfa161      |sum        |img10   ]
+[sfa01       |sfa27       |ima02        |ima021       |sfa08       |ecd07       |eca02          |sfa06      |sfa161      |sum        |img10   ]
+[sfa01       |sfa27       |ima02        |ima021       |sfa08       |ecd07       |eca02          |sfa06      |sfa161      |sum        |img10   ]
+[sfa01       |sfa27       |ima02        |ima021       |sfa08       |ecd07       |eca02          |sfa06      |sfa161      |sum        |img10   ]
+}
+END -- Table1
+Grid Grid1
+{
+ - Rows [cnt       ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit sfa01=formonly.sfa01, action=controlp, tabIndex=1, title=%"sfa01", image="zoom";
+Edit sfa27=formonly.sfa27, tabIndex=11, title=%"sfa27";
+Edit ima02=formonly.ima02, tabIndex=3, title=%"ima02";
+Edit ima021=formonly.ima021, tabIndex=2, title=%"ima021";
+ButtonEdit sfa08=formonly.sfa08, action=controlp, tabIndex=4, title=%"sfa08", image="zoom";
+Edit ecd07=formonly.ecd07, tabIndex=5, title=%"ecd07";
+Edit eca02=formonly.eca02, tabIndex=6, title=%"eca02";
+Edit sfa06=formonly.sfa06 type DECIMAL, tabIndex=7, title=%"sfa06";
+Edit sfa161=formonly.sfa161 type DECIMAL, tabIndex=8, title=%"sfa161";
+Edit sum=formonly.sum type DECIMAL, tabIndex=9, title=%"sum";
+Edit img10=formonly.img10 type DECIMAL, tabIndex=12, title=%"img10";
+Edit cnt=formonly.cnt, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(formonly.sfa01,formonly.ima02,formonly.ima021,formonly.sfa27,formonly.sfa08,formonly.ecd07,formonly.eca02,formonly.sfa06,formonly.sfa161,formonly.sum,formonly.img10)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

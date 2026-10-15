@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmq302.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmq302")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1265
+{
+ Inventory Type      [tup11                 ]
+ Goods No.           [tup02                 ][ima02               ]
+ Patch               [tup03                 ]
+
+}
+END -- gr1265
+END -- page01
+END -- folder01
+Table s_tup
+{
+[tup01        |occ02          |tup12             |occ02b               |tup04          |tup05           |tup06            |tup07              ]
+[tup01        |occ02          |tup12             |occ02b               |tup04          |tup05           |tup06            |tup07              ]
+[tup01        |occ02          |tup12             |occ02b               |tup04          |tup05           |tup06            |tup07              ]
+[tup01        |occ02          |tup12             |occ02b               |tup04          |tup05           |tup06            |tup07              ]
+[tup01        |occ02          |tup12             |occ02b               |tup04          |tup05           |tup06            |tup07              ]
+[tup01        |occ02          |tup12             |occ02b               |tup04          |tup05           |tup06            |tup07              ]
+[tup01        |occ02          |tup12             |occ02b               |tup04          |tup05           |tup06            |tup07              ]
+[tup01        |occ02          |tup12             |occ02b               |tup04          |tup05           |tup06            |tup07              ]
+[tup01        |occ02          |tup12             |occ02b               |tup04          |tup05           |tup06            |tup07              ]
+[tup01        |occ02          |tup12             |occ02b               |tup04          |tup05           |tup06            |tup07              ]
+
+}
+END -- s_tup
+Grid gr1266
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr1266
+END -- VBox1
+END -- atmq302
+
+TABLES
+tup_file
+ATTRIBUTES
+ComboBox tup11=tup_file.tup11, tabIndex=1, not null, required, items=(("1", "Customer Inventory"),("2", "Consign Inventory"));
+Edit tup02=tup_file.tup02, tabIndex=2;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit tup03=tup_file.tup03, tabIndex=4;
+Edit tup01=tup_file.tup01, tabIndex=5, title="Customer No.", comment="Enter Customer No.";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=6, title="Abbreviate", noEntry;
+Edit tup12=tup_file.tup12, tabIndex=7, title="Ship Customer No.";
+Edit occ02b=formonly.occ02b type VARCHAR, tabIndex=8, title="Ship Cust.Abbreviate", noEntry;
+Edit tup04=tup_file.tup04, tabIndex=9, title="Inventory Unit";
+Edit tup05=tup_file.tup05, tabIndex=10, title="Inventory Qty";
+DateEdit tup06=tup_file.tup06, tabIndex=11, title="Effective Date";
+DateEdit tup07=tup_file.tup07, tabIndex=12, title="First Store-in Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tup(tup_file.tup01,formonly.occ02,tup_file.tup12,formonly.occ02b,tup_file.tup04,tup_file.tup05,tup_file.tup06,tup_file.tup07)
+SCREEN RECORD Undefined(tup_file.tup11,tup_file.tup02,formonly.ima02,tup_file.tup03,formonly.cnt)
+END -- INSTRUCTIONS
+

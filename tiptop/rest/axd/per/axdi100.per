@@ -1,0 +1,93 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi100.per created Wed Jan 23 05:30:28 2008
+-- File created from axdi100.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi100")
+-- GRID
+-- PAGE
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        GRID gr7731
+        {
+        <G group01                                              >
+         Upper Plant No.     [aa0       ][aa1                 ]
+         In-Transit Warehouse[aa2       ]
+
+        <                                                       >
+
+
+        }
+        END -- GRID
+      END -- PAGE
+      PAGE info( TEXT="Info")
+        GRID gr7732
+        {
+         Record Owner        [aa3       ]   Last Modified by    [aa4       ]   Data Valid Code     [aa5       ]
+         Department          [aa6       ]   Create/Modify Date  [aa7       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_adb
+    {
+    [aa8             |aa9                 |ab0              |ab1           |ab2                     |ab3            ]
+    [aa8             |aa9                 |ab0              |ab1           |ab2                     |ab3            ]
+    [aa8             |aa9                 |ab0              |ab1           |ab2                     |ab3            ]
+    [aa8             |aa9                 |ab0              |ab1           |ab2                     |ab3            ]
+    [aa8             |aa9                 |ab0              |ab1           |ab2                     |ab3            ]
+    [aa8             |aa9                 |ab0              |ab1           |ab2                     |ab3            ]
+    [aa8             |aa9                 |ab0              |ab1           |ab2                     |ab3            ]
+    [aa8             |aa9                 |ab0              |ab1           |ab2                     |ab3            ]
+    [aa8             |aa9                 |ab0              |ab1           |ab2                     |ab3            ]
+    [aa8             |aa9                 |ab0              |ab1           |ab2                     |ab3            ]
+    }
+    END -- TABLE
+    GRID gr7733
+    {
+     ---------- Rows [ab4   ] / [ab5   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES ada_file,adb_file
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  BUTTONEDIT aa0=ada_file.ada01, ACTION=controlp, COMMENT="<^P>Qry Plant No", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=1;
+  EDIT aa1=FORMONLY.azp02, NOENTRY, TABINDEX=2;
+  BUTTONEDIT aa2=ada_file.ada02, ACTION=controlp, COMMENT="<^P>Qry Warehouse Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=3;
+  EDIT aa3=ada_file.adauser, NOENTRY, TABINDEX=4;
+  EDIT aa4=ada_file.adamodu, NOENTRY, TABINDEX=5;
+  EDIT aa5=ada_file.adaacti, NOENTRY, UPSHIFT, TABINDEX=6;
+  EDIT aa6=ada_file.adagrup, NOENTRY, TABINDEX=7;
+  EDIT aa7=ada_file.adadate, NOENTRY, TABINDEX=8;
+  BUTTONEDIT aa8=adb_file.adb02, ACTION=controlp, COMMENT="<^P>Qry Plant No", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=9, TITLE="Sub-Plant No.";
+  EDIT aa9=FORMONLY.azp021, NOENTRY, TABINDEX=10, TITLE="Name";
+  DATEEDIT ab0=adb_file.adb03, TABINDEX=11, TITLE="Effective Date";
+  DATEEDIT ab1=adb_file.adb04, TABINDEX=12, TITLE="Expire Date";
+  COMBOBOX ab2=adb_file.adb05, NOT NULL, REQUIRED, TABINDEX=13, TITLE="Transfer Price Method", ITEMS=(("1","Cost Price Trsf"),("2","Ratio Defined Beforehand"),("3","Enter money while"),("4","Enter Ratio while Trsf"));
+  EDIT ab3=adb_file.adb06, TABINDEX=14, TITLE="Transfer Ratio";
+  EDIT ab4=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=15;
+  EDIT ab5=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=16;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adb (adb_file.adb02, FORMONLY.azp021, adb_file.adb03, adb_file.adb04, adb_file.adb05, adb_file.adb06)
+END

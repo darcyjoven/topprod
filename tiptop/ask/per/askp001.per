@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/askp001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="asfp001")
+VBox vb4
+Grid gr3
+{
+ <G group01                                                                 >
+  PBI No.      [a1                      ]
+  Style No     [a2                      ]    [a2_ima02             ]
+  work No.     [a6                      ]
+  Scope        [a3_b       ]  -   [a3_e       ]
+  Grips scope  [a4_b       ]  -   [a4_e       ]
+               [a5                    ]
+ <                                                                          >
+}
+END -- gr3
+Grid gr5
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr5
+END -- vb4
+END -- askp001
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+ButtonEdit a1=formonly.a1 type CHAR, action=controlp, tabIndex=1, not null, image="zoom.png";
+ButtonEdit a2=formonly.a2 type CHAR, action=controlp, tabIndex=2, not null, image="zoom.png";
+Edit a2_ima02=formonly.a2_ima02 type CHAR, tabIndex=3, noEntry;
+ButtonEdit a6=formonly.a6 type CHAR, action=controlp, tabIndex=10, image="zoom.png";
+Edit a3_b=formonly.a3_b type CHAR, tabIndex=4, not null;
+Edit a3_e=formonly.a3_e type CHAR, tabIndex=5, not null;
+Edit a4_b=formonly.a4_b type CHAR, tabIndex=6, not null;
+Edit a4_e=formonly.a4_e type CHAR, tabIndex=7, not null;
+CheckBox a5=formonly.a5 type CHAR, tabIndex=8, text="Group flytickets", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=9, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a1,formonly.a2,formonly.a2_ima02,formonly.a6,formonly.a3_b,formonly.a3_e,formonly.a4_b,formonly.a4_e,formonly.a5,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

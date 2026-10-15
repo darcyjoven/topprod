@@ -1,0 +1,563 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/4fd/axmi221.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi221")
+Folder pc31
+Page Page85(action=main, text=%"Page0")
+VBox VBox1
+Folder pc469
+Page page01(action=main_pg, text="Main")
+HBox hb1
+Grid gr2044
+{
+ Customer #          [occ01       ]
+ Cust Abbr.          [occ02                         ]
+ Company Name        [occ18                                   ]
+                     [occ19                                   ]
+ Uniform#            [occ11               ] [occ37               ]
+ In Chg              [occ28               ]
+ Cong.#              [occ34     ]
+ Agent Cust          [occ66     ][pmc03_1                     ]
+ Org code            [occ1005   ][tqb02                       ]
+ Data Source         [occ246              ]
+
+
+
+}
+END -- gr2044
+Grid gr2045
+{
+ Current Status      [occ1004   ]
+ Property            [occ06     ]
+ Shipping Cust       [occ09     ] [occ9_ds                       ]
+ Accounting Cust     [occ07     ] [occ7_ds                       ]
+ Cust Cate           [occ03     ] [oca02     ]
+ occpos              [occ04     ] [gen02     ]
+ [occ56              ]            [imgmksg]
+ [occ57              ]            [       ]
+ [occ31              ]
+ [occ65              ]
+ occpos              [occpos    ]
+
+
+}
+END -- gr2045
+END -- hb1
+END -- page01
+Page info(action=info_pg, text="Info")
+Grid gr2046
+{
+ Record Owner        [occuser   ] Last Modified by    [occmodu   ] Data Valid Code     [occacti   ]
+ Department          [occgrup   ] Create/Modify Date  [occdate     ]
+ Record Orig.        [occoriu   ]
+ Dept Orig.          [occorig   ]
+}
+END -- gr2046
+END -- info
+END -- pc469
+Folder pc470
+Page page02(text="Customer Information")
+Grid gr2047
+{
+ <G group02                                                  ><G group03                                                      >
+  Local               [occ22     ][occ22_desc          ]        ZIP Code      [occ35     ]
+  Country             [occ21     ][occ21_desc          ]        Invoice Addr  [occ231                                         ]
+  Area                [occ20     ][occ20_desc          ]                      [occ232                                         ]
+                                                                              [occ233                                         ]
+                                                                              [occ234                                         ]
+  TEL NO-1            [occ261              ]                                  [occ235                                         ]
+  TEL NO-2            [occ262              ]
+  TEL NO-3            [occ263              ]                    Shipping Adr  [occ241                                         ]
+  FAX NO-1            [occ271              ]                                  [occ242                                         ]
+  FAX NO-1            [occ272              ][dummy01   ]                      [occ243                                         ]
+  Sales               [occ29               ][occ292    ]                      [occ244                                         ]
+  Finance             [occ30               ][occ302    ]                      [occ245                                         ]
+
+
+
+
+
+ <                                                           ><                                                               >
+
+}
+END -- gr2047
+END -- page02
+Page page03(text="Account/Status")
+VBox vb16
+Grid gr2048
+{
+ <G group05                        > <G group06                       >
+ [occ40                          ]    1st Transactn       [occ16     ]
+  Month-end Date      [occ38      ]   Late Quotation      [occ171    ]
+  Payment Date        [occ39      ]   Late Ord Taken      [occ172    ]
+  [occ73                          ]   Last Delivery       [occ173    ]
+                                      Late Collection     [occ174    ]
+
+
+
+
+
+
+ <                                 > <                                >
+
+}
+END -- gr2048
+END -- vb16
+END -- page03
+Page page05(text="Default Terms of Transaction")
+HBox HBox1
+Grid gr2049
+{
+ <G group07                                                >
+  Currency       [occ42  ]
+  Tax            [occ41  ]
+                 [gec02        ]
+  Invoice        [occ08  ]
+  Price Terms    [occ44  ]
+                 [oah02                                   ]
+  Payment Terms  [occ45  ]
+                 [oag02                                   ]
+  Payment Term D [occ68  ]
+                 [oag02_1                                 ]
+  Payment Term C [occ69  ]
+                 [oag02_2                                 ]
+
+
+
+ <                                                         >
+
+}
+END -- gr2049
+Grid gr2050
+{
+ <G group08                                            >
+  Account Sub. Cate[occ67  ]
+                   [ool02       ]
+  Sales Class.     [occ43  ]
+                   [oab02  ]
+  Language         [occ55  ]
+  Shipping Type    [occ47        |occ47_desc          ]
+  Shipping-from    [occ48        |occ48_desc          ]
+  Shipping-to      [occ49        |occ49_desc          ]
+  Port of Unloading[occ50        |occ50_desc          ]
+
+
+
+
+
+
+ <                                                     >
+
+}
+END -- gr2050
+Grid gr2051
+{
+ <G group09                                                   >
+  Other Terms                               [occ46   ]
+  Commission %                              [occ53   ]
+  Discount Ratio                            [occ32   ]
+  FORWARDER                                 [occ51   ][pmc03  ]
+  NOTIFY                                    [occ52            ]
+  Memo                                      [occ701           ]
+                                            [occ702           ]
+                                            [occ703           ]
+                                            [occ704           ]
+  Futures discount rate                     [occ76   ]
+  Cash discount rate                        [occ77   ]
+
+
+
+
+ <                                                            >
+
+}
+END -- gr2051
+END -- HBox1
+END -- page05
+Page page06(text="Other")
+HBox hb8
+Group gb19
+Grid gr2052
+{
+ Initial Date         [occ12         ]
+ Capitalization Amt   [occ13         ]
+ Annual Revenue       [occ14         ]
+ Employees            [occ15         ]
+ Tran. Status         [occ05        ]
+                      [             ]
+                      [             ]
+
+}
+END -- gr2052
+END -- gb19
+Group gb21
+Grid gr30
+{
+ Mapped Org. Code    [occ930        |occ930_desc        ]
+ Customer Class.     [occ71         ]
+ Earnest Charge Ratio[occ72   |oc]
+
+
+
+
+
+}
+END -- gr30
+END -- gb21
+END -- hb8
+END -- page06
+Page page04(text="Creadit Check")
+VBox vb17
+Grid gr2053
+{
+ <G group04                                 >
+ [occ62                         ]
+  Creidt Line Cust    [occ33     ]
+  Cr.Ratg.            [occ61     ]
+  Extnd.Days          [occ36     ]
+  Expiry              [occ175    ]
+  Curr                [occ631    ]
+  Credit              [occ63               ]
+  Ovr-Limit% OK       [occ64     ]
+ [occud03         ]   [btnlock             ]
+
+
+
+
+
+ <                                          >
+
+}
+END -- gr2053
+END -- vb17
+END -- page04
+Page page07(text="Bonded Data")
+Grid gr2054
+{
+ Bond Out Reason Code[occ1706 ]
+ Reason Code Desc2   [reason2         ]
+ Return Reason Code  [occ1705 ]
+ Reason Code Desc1   [reason1         ]
+ Customs No.         [occ1707 ]
+ Bonded Sales        [occ1708 ]
+
+
+}
+END -- gr2054
+END -- page07
+Page Page1(text=%"Electronic invoice Set")
+Grid Grid1
+{
+
+  Main Store Number    [occ74            ]   [occ74_ds          ]
+
+  Buyer Plant Code     [occ75             ]
+
+}
+END -- Grid1
+END -- Page1
+Page userdefined_field(text="User Defined Field")
+Grid gr2055
+{
+ userdefined_field01         [occud01                                            ]
+                             [                                                   ]
+ userdefined_field02         [occud02           ]
+ userdefined_field03
+ userdefined_field04         [occud04           ]
+ userdefined_field05         [occud05           ]
+ userdefined_field06         [occud06           ]
+ userdefined_field07         [occud07           ]
+ userdefined_field08         [occud08           ]
+ userdefined_field09         [occud09           ]
+ userdefined_field10         [occud10           ]
+ userdefined_field11         [occud11           ]
+ userdefined_field12         [occud12           ]
+ userdefined_field13         [occud13           ]
+ userdefined_field14         [occud14           ]
+ userdefined_field15         [occud15           ]
+
+
+}
+END -- gr2055
+END -- userdefined_field
+Page customer(text="Customer Information")
+Grid gr2056
+{
+ Industry            [occ1003   ] [tqa02c                        ]       Actual Company Addr [occ1012                         ]
+ Channel             [occ1006   ] [tqa02                         ]       Market Area         [occ1013   ]
+ System Code         [occ1007   ] [tqa02a                        ]       Multiple Shop No.   [occ1014   ]
+ System Area code    [occ1008   ] [tqa02b                        ]       Shop Open date      [occ1015   ]
+ Province            [occ1009   ] [too02              ]                  Used Ship Warehouse [occ1016   ] [imd02              ]
+ City                [occ1010   ] [top02              ]                                      [occ1027   ]
+ County              [occ1011   ] [toq02              ]
+
+
+
+}
+END -- gr2056
+END -- customer
+END -- pc470
+Grid gr2057
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2057
+END -- VBox1
+END -- Page85
+Page page86(action=cust_list, text=%"page86")
+Table s_occ_l
+{
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+[occ01_l_1       |occ02_l_1             |occ03_l_1    |occ04_l_1|occ05_l_2    |occ06_l_1  |occ22_|occ21_|occ20_|occ11_l_1 |occ1004_l_1     |occacti_l_1      |occ246_l_1          ]
+
+}
+END -- s_occ_l
+END -- page86
+END -- pc31
+END -- axmi221
+
+TABLES
+occ_file
+ATTRIBUTES
+ButtonEdit occ01=occ_file.occ01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit occ02=occ_file.occ02, action=update_item, tabIndex=2, image="pen", comment="Maintain field data in Multi. Language";
+Edit occ18=occ_file.occ18, tabIndex=3;
+Edit occ19=occ_file.occ19, tabIndex=4;
+Edit occ11=occ_file.occ11, tabIndex=5;
+CheckBox occ37=occ_file.occ37, tabIndex=6, text="Affiliate", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit occ28=occ_file.occ28, tabIndex=7;
+ButtonEdit occ34=occ_file.occ34, action=controlp, tabIndex=8, image="zoom.png";
+ButtonEdit occ66=occ_file.occ66, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Agent Cust #";
+Edit pmc03_1=formonly.pmc03_1 type CHAR, tabIndex=10, noEntry;
+ButtonEdit occ1005=occ_file.occ1005, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Agent Cust #";
+Edit tqb02=formonly.tqb02 type CHAR, tabIndex=12, noEntry;
+ButtonEdit occ246=occ_file.occ246, action=controlp, tabIndex=13, noEntry, image="zoom.png", comment="<^P>Qry Logestic No.";
+ComboBox occ1004=occ_file.occ1004, tabIndex=14, noEntry, not null, required, items=(("0", "Issue"),("1", "Confirm"),("2", "Hung"),("3", "Stop"));
+ComboBox occ06=occ_file.occ06, tabIndex=15, not null, required, queryEditable, items=(("1", "Buyer"),("2", "Ship.Customer"),("3", "Accounting Customer"),("4", "Drawer"));
+ButtonEdit occ09=occ_file.occ09, action=controlp, tabIndex=16, not null, required, image="zoom";
+Edit occ9_ds=formonly.occ9_ds type VARCHAR, tabIndex=17, noEntry;
+ButtonEdit occ07=occ_file.occ07, action=controlp, tabIndex=18, not null, required, image="zoom";
+Edit occ7_ds=formonly.occ7_ds type VARCHAR, tabIndex=19, noEntry;
+ButtonEdit occ03=occ_file.occ03, action=controlp, tabIndex=20, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oca02=formonly.oca02 type CHAR, tabIndex=21;
+ButtonEdit occ04=occ_file.occ04, action=controlp, tabIndex=22, image="zoom", comment="<^P>Qry Details";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=23, noEntry;
+CheckBox occ56=occ_file.occ56, tabIndex=24, text="Delivery Advice", not null, required, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+CheckBox occ57=occ_file.occ57, tabIndex=25, text="Need Packing List", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox occ31=occ_file.occ31, tabIndex=26, text="Customer Inventory Manage", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox occ65=occ_file.occ65, tabIndex=27, text="POD Required", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox occpos=occ_file.occpos, tabIndex=28, noEntry, not null, required, items=(("1", "Add-No passed"),("2", "Modify-No passed"),("3", "Passed"),("4", "Modifying-No passed"));
+Edit occuser=occ_file.occuser, tabIndex=29, noEntry;
+Edit occmodu=occ_file.occmodu, tabIndex=31, noEntry;
+Edit occacti=occ_file.occacti, tabIndex=33, noEntry, upShift;
+Edit occgrup=occ_file.occgrup, tabIndex=30, noEntry;
+DateEdit occdate=occ_file.occdate, tabIndex=32, noEntry;
+Edit occoriu=occ_file.occoriu, tabIndex=176, noEntry;
+Edit occorig=occ_file.occorig, tabIndex=177, noEntry;
+Group group02:group02;
+ButtonEdit occ22=occ_file.occ22, action=controlp, tabIndex=34, image="zoom", comment="<^P>Qry Details";
+Edit occ22_desc=formonly.occ22_desc type CHAR, tabIndex=35, noEntry;
+ButtonEdit occ21=occ_file.occ21, action=controlp, tabIndex=36, image="zoom", comment="<^P>Qry Details";
+Edit occ21_desc=formonly.occ21_desc type CHAR, tabIndex=37, noEntry;
+ButtonEdit occ20=occ_file.occ20, action=controlp, tabIndex=38, image="zoom", comment="<^P>Qry Details";
+Edit occ20_desc=formonly.occ20_desc type CHAR, tabIndex=39, noEntry;
+Edit occ261=occ_file.occ261, tabIndex=40;
+Edit occ262=occ_file.occ262, tabIndex=41;
+Edit occ263=occ_file.occ263, tabIndex=42;
+Edit occ271=occ_file.occ271, tabIndex=43;
+Edit occ272=occ_file.occ272, tabIndex=44;
+Label dummy01:dummy01, text="Extension";
+Edit occ29=occ_file.occ29, tabIndex=45;
+Edit occ292=occ_file.occ292, tabIndex=46;
+Edit occ30=occ_file.occ30, tabIndex=47;
+Edit occ302=occ_file.occ302, tabIndex=48;
+Group group03:group03;
+Edit occ35=occ_file.occ35, tabIndex=49;
+Edit occ231=occ_file.occ231, tabIndex=50;
+Edit occ232=occ_file.occ232, tabIndex=51;
+Edit occ233=occ_file.occ233, tabIndex=52;
+Edit occ234=occ_file.occ234, tabIndex=53;
+Edit occ235=occ_file.occ235, tabIndex=54;
+Edit occ241=occ_file.occ241, tabIndex=55;
+Edit occ242=occ_file.occ242, tabIndex=56;
+Edit occ243=occ_file.occ243, tabIndex=57;
+Edit occ244=occ_file.occ244, tabIndex=58;
+Edit occ245=occ_file.occ245, tabIndex=59;
+Group group05:group05;
+CheckBox occ40=occ_file.occ40, tabIndex=60, text="Home Currency AR", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit occ38=occ_file.occ38, tabIndex=61;
+Edit occ39=occ_file.occ39, tabIndex=62;
+CheckBox occ73=occ_file.occ73, tabIndex=178, text="occ73", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group06:group06;
+DateEdit occ16=occ_file.occ16, tabIndex=63, noEntry;
+DateEdit occ171=occ_file.occ171, tabIndex=64, noEntry;
+DateEdit occ172=occ_file.occ172, tabIndex=65, noEntry;
+DateEdit occ173=occ_file.occ173, tabIndex=66, noEntry;
+DateEdit occ174=occ_file.occ174, tabIndex=67, noEntry;
+Group group07:group07;
+ButtonEdit occ42=occ_file.occ42, action=controlp, tabIndex=68, not null, required, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit occ41=occ_file.occ41, action=controlp, tabIndex=69, image="zoom", comment="<^P>Qry Details";
+Edit gec02=formonly.gec02 type CHAR, tabIndex=70, noEntry;
+ButtonEdit occ08=occ_file.occ08, action=controlp, tabIndex=71, not null, required, image="zoom.png";
+ButtonEdit occ44=occ_file.occ44, action=controlp, tabIndex=72, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oah02=formonly.oah02 type CHAR, tabIndex=73;
+ButtonEdit occ45=occ_file.occ45, action=controlp, tabIndex=74, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oag02=formonly.oag02 type CHAR, tabIndex=75;
+ButtonEdit occ68=occ_file.occ68, action=controlp, tabIndex=76, image="zoom", comment="<^P>Qry Details";
+Edit oag02_1=formonly.oag02_1 type CHAR, tabIndex=77;
+ButtonEdit occ69=occ_file.occ69, action=controlp, tabIndex=78, image="zoom", comment="<^P>Qry Details";
+Edit oag02_2=formonly.oag02_2 type CHAR, tabIndex=79;
+Group group08:group08;
+ButtonEdit occ67=occ_file.occ67, action=controlp, tabIndex=80, image="zoom", comment="<^P>Qry Account Type";
+Edit ool02=formonly.ool02 type CHAR, tabIndex=81;
+ButtonEdit occ43=occ_file.occ43, action=controlp, tabIndex=82, image="zoom", comment="<^P>Qry Details";
+Edit oab02=formonly.oab02 type CHAR, tabIndex=83, noEntry;
+ComboBox occ55=occ_file.occ55, tabIndex=84, not null, required, queryEditable, items=(("0", "Chinese"),("1", "English"),("2", "Other"));
+ButtonEdit occ47=occ_file.occ47, action=controlp, tabIndex=85, image="zoom", comment="<^P>Qry Details";
+Edit occ47_desc=formonly.occ47_desc type CHAR, tabIndex=172, noEntry;
+ButtonEdit occ48=occ_file.occ48, action=controlp, tabIndex=86, image="zoom", comment="<^P>Qry Shipping Location";
+Edit occ48_desc=formonly.occ48_desc type CHAR, tabIndex=173, noEntry;
+ButtonEdit occ49=occ_file.occ49, action=controlp, tabIndex=87, image="zoom", comment="<^P>Qry Shipping Location";
+Edit occ49_desc=formonly.occ49_desc type CHAR, tabIndex=174, noEntry;
+ButtonEdit occ50=occ_file.occ50, action=controlp, tabIndex=88, image="zoom", comment="<^P>Qry Details";
+Edit occ50_desc=formonly.occ50_desc type CHAR, tabIndex=175, noEntry;
+Group group09:group09;
+Edit occ46=occ_file.occ46, tabIndex=89;
+Edit occ53=occ_file.occ53, tabIndex=90;
+Edit occ32=occ_file.occ32, tabIndex=91;
+ButtonEdit occ51=occ_file.occ51, action=controlp, tabIndex=92, image="zoom", comment="<^P>Qry Details";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=93, noEntry;
+Edit occ52=occ_file.occ52, tabIndex=94;
+Edit occ701=occ_file.occ701, tabIndex=95;
+Edit occ702=occ_file.occ702, tabIndex=96;
+Edit occ703=occ_file.occ703, tabIndex=97;
+Edit occ704=occ_file.occ704, tabIndex=98;
+Edit occ76=occ_file.occ76, tabIndex=99;
+Edit occ77=occ_file.occ77, tabIndex=100;
+DateEdit occ12=occ_file.occ12, tabIndex=101;
+Edit occ13=occ_file.occ13, tabIndex=102;
+Edit occ14=occ_file.occ14, tabIndex=103;
+Edit occ15=occ_file.occ15, tabIndex=104;
+RadioGroup occ05=occ_file.occ05, tabIndex=105, items=(("1", "Permanent"),("2", "Temporary"));
+ButtonEdit occ930=occ_file.occ930, action=controlp, tabIndex=106, image="zoom";
+Edit occ930_desc=formonly.occ930_desc type VARCHAR, tabIndex=107, noEntry;
+ComboBox occ71=occ_file.occ71, tabIndex=108, not null, required, items=(("1", "Paynow Customer"),("2", "Account Customer"));
+Edit occ72=occ_file.occ72, tabIndex=109, not null, required;
+Label oc:occ72_1, text=%"%";
+Group group04:group04;
+CheckBox occ62=occ_file.occ62, tabIndex=110, text="Check credit", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit occ33=occ_file.occ33, action=controlp, tabIndex=111, image="zoom", comment="<^P>Qry Customer #";
+ButtonEdit occ61=occ_file.occ61, action=controlp, tabIndex=112, image="zoom", comment="<^P>Qry Details";
+Edit occ36=occ_file.occ36, tabIndex=113;
+DateEdit occ175=occ_file.occ175, tabIndex=114;
+ButtonEdit occ631=occ_file.occ631, action=controlp, tabIndex=115, image="zoom", comment="<^P>Qry Details";
+Edit occ63=occ_file.occ63, tabIndex=116;
+Edit occ64=occ_file.occ64, tabIndex=117;
+CheckBox occud03=formonly.occud03 type VARCHAR, tabIndex=182, text="Lock", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Button btnlock:btnLock, tabIndex=183, text=%"Lock";
+ButtonEdit occ1706=occ_file.occ1706, action=controlp, tabIndex=118, image="zoom", comment="<^P>Qry reason ";
+Edit reason2=formonly.reason2 type CHAR, tabIndex=119, noEntry;
+ButtonEdit occ1705=occ_file.occ1705, action=controlp, tabIndex=120, image="zoom", comment="<^P>Qry reason ";
+Edit reason1=formonly.reason1 type CHAR, tabIndex=121, noEntry;
+Edit occ1707=occ_file.occ1707, tabIndex=122;
+Edit occ1708=occ_file.occ1708, tabIndex=123;
+ButtonEdit occ74=occ_file.occ74, action=controlp, tabIndex=179, image="zoom";
+Edit occ74_ds=formonly.occ74_ds type VARCHAR, tabIndex=181, noEntry;
+Edit occ75=occ_file.occ75, tabIndex=180;
+TextEdit occud01=occ_file.occud01, tabIndex=124, stretch=NONE;
+Edit occud02=formonly.occud02 type VARCHAR, tabIndex=184;
+Edit occud04=occ_file.occud04, tabIndex=125;
+Edit occud05=occ_file.occud05, tabIndex=126;
+Edit occud06=occ_file.occud06, tabIndex=127;
+Edit occud07=occ_file.occud07, tabIndex=128, scroll;
+Edit occud08=occ_file.occud08, tabIndex=129, scroll;
+Edit occud09=occ_file.occud09, tabIndex=130, scroll;
+Edit occud10=occ_file.occud10, tabIndex=131, scroll;
+Edit occud11=occ_file.occud11, tabIndex=132, scroll;
+Edit occud12=occ_file.occud12, tabIndex=133, scroll;
+DateEdit occud13=occ_file.occud13, tabIndex=134;
+DateEdit occud14=occ_file.occud14, tabIndex=135;
+DateEdit occud15=occ_file.occud15, tabIndex=136;
+ButtonEdit occ1003=occ_file.occ1003, action=controlp, tabIndex=137, image="zoom";
+Edit tqa02c=formonly.tqa02c type CHAR, tabIndex=138, noEntry;
+Edit occ1012=occ_file.occ1012, tabIndex=151, not null, required;
+ButtonEdit occ1006=occ_file.occ1006, action=controlp, tabIndex=139, not null, required, image="zoom";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=140, noEntry;
+Edit occ1013=occ_file.occ1013, tabIndex=152;
+ButtonEdit occ1007=occ_file.occ1007, action=controlp, tabIndex=141, not null, required, image="zoom";
+Edit tqa02a=formonly.tqa02a type CHAR, tabIndex=142, noEntry;
+Edit occ1014=occ_file.occ1014, tabIndex=153;
+ButtonEdit occ1008=occ_file.occ1008, action=controlp, tabIndex=143, not null, required, image="zoom";
+Edit tqa02b=formonly.tqa02b type CHAR, tabIndex=144, noEntry;
+DateEdit occ1015=occ_file.occ1015, tabIndex=154;
+ButtonEdit occ1009=occ_file.occ1009, action=controlp, tabIndex=145, not null, required, image="zoom";
+Edit too02=formonly.too02 type CHAR, tabIndex=146, noEntry;
+ButtonEdit occ1016=occ_file.occ1016, action=controlp, tabIndex=155, not null, required, image="zoom";
+Edit imd02=formonly.imd02 type CHAR, tabIndex=156, noEntry;
+ButtonEdit occ1010=occ_file.occ1010, action=controlp, tabIndex=147, not null, required, image="zoom";
+Edit top02=formonly.top02 type CHAR, tabIndex=148, noEntry;
+CheckBox occ1027=occ_file.occ1027, tabIndex=157, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit occ1011=occ_file.occ1011, action=controlp, tabIndex=149, not null, required, image="zoom";
+Edit toq02=formonly.toq02 type CHAR, tabIndex=150, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=171, noEntry;
+Edit occ01_l_1=formonly.occ01_l_1 type VARCHAR, tabIndex=158, title="Customer #";
+Edit occ02_l_1=formonly.occ02_l_1 type VARCHAR, tabIndex=159, title="Cust Abbr.";
+Edit occ03_l_1=formonly.occ03_l_1 type VARCHAR, tabIndex=160, title="Cust Cate";
+Edit occ04_l_1=formonly.occ04_l_1 type VARCHAR, tabIndex=161, title="Salesman";
+ComboBox occ05_l_2=formonly.occ05_l_2 type VARCHAR, tabIndex=162, title="Tran. Status", items=(("1", "Permanent"),("2", "Temporary"));
+ComboBox occ06_l_1=formonly.occ06_l_1 type VARCHAR, tabIndex=163, title="Property", items=(("1", "Buyer"),("2", "Ship.Customer"),("3", "Accounting Customer"),("4", "Drawer"));
+Edit occ22_=formonly.occ22_l_1 type VARCHAR, tabIndex=164, title="Local";
+Edit occ21_=formonly.occ21_l_1 type VARCHAR, tabIndex=165, title="Country";
+Edit occ20_=formonly.occ20_l_1 type VARCHAR, tabIndex=166, title="Area";
+Edit occ11_l_1=formonly.occ11_l_1 type VARCHAR, tabIndex=167, title="Uniform#";
+ComboBox occ1004_l_1=formonly.occ1004_l_1 type VARCHAR, tabIndex=168, title="Current Status", items=(("0", %"Issue"),("3", %"Stop"),("2", %"Hung"),("1", %"Confirm"));
+Edit occacti_l_1=formonly.occacti_l_1 type VARCHAR, tabIndex=169, title="Data Valid Code";
+Edit occ246_l_1=formonly.occ246_l_1 type VARCHAR, tabIndex=170, title="Data Source";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_occ_l(formonly.occ01_l_1,formonly.occ02_l_1,formonly.occ03_l_1,formonly.occ04_l_1,formonly.occ05_l_2,formonly.occ06_l_1,formonly.occ22_l_1,formonly.occ21_l_1,formonly.occ20_l_1,formonly.occ11_l_1,formonly.occ1004_l_1,formonly.occacti_l_1,formonly.occ246_l_1)
+SCREEN RECORD Undefined(occ_file.occ01,occ_file.occ02,occ_file.occ18,occ_file.occ19,occ_file.occ11,occ_file.occ37,occ_file.occ28,occ_file.occ34,occ_file.occ66,formonly.pmc03_1,occ_file.occ1005,formonly.tqb02,occ_file.occ246,occ_file.occ1004,occ_file.occ06,occ_file.occ09,formonly.occ9_ds,occ_file.occ07,formonly.occ7_ds,occ_file.occ03,formonly.oca02,occ_file.occ04,formonly.gen02,occ_file.occ56,formonly.imgmksg,occ_file.occ57,occ_file.occ31,occ_file.occ65,occ_file.occpos,occ_file.occuser,occ_file.occmodu,occ_file.occacti,occ_file.occgrup,occ_file.occdate,occ_file.occoriu,occ_file.occorig,occ_file.occ22,formonly.occ22_desc,occ_file.occ21,formonly.occ21_desc,occ_file.occ20,formonly.occ20_desc,occ_file.occ261,occ_file.occ262,occ_file.occ263,occ_file.occ271,occ_file.occ272,occ_file.occ29,occ_file.occ292,occ_file.occ30,occ_file.occ302,occ_file.occ35,occ_file.occ231,occ_file.occ232,occ_file.occ233,occ_file.occ234,occ_file.occ235,occ_file.occ241,occ_file.occ242,occ_file.occ243,occ_file.occ244,occ_file.occ245,occ_file.occ40,occ_file.occ38,occ_file.occ39,occ_file.occ73,occ_file.occ16,occ_file.occ171,occ_file.occ172,occ_file.occ173,occ_file.occ174,occ_file.occ42,occ_file.occ41,formonly.gec02,occ_file.occ08,occ_file.occ44,formonly.oah02,occ_file.occ45,formonly.oag02,occ_file.occ68,formonly.oag02_1,occ_file.occ69,formonly.oag02_2,occ_file.occ67,formonly.ool02,occ_file.occ43,formonly.oab02,occ_file.occ55,occ_file.occ47,formonly.occ47_desc,occ_file.occ48,formonly.occ48_desc,occ_file.occ49,formonly.occ49_desc,occ_file.occ50,formonly.occ50_desc,occ_file.occ46,occ_file.occ53,occ_file.occ32,occ_file.occ51,formonly.pmc03,occ_file.occ52,occ_file.occ701,occ_file.occ702,occ_file.occ703,occ_file.occ704,occ_file.occ76,occ_file.occ77,occ_file.occ12,occ_file.occ13,occ_file.occ14,occ_file.occ15,occ_file.occ05,occ_file.occ930,formonly.occ930_desc,occ_file.occ71,occ_file.occ72,occ_file.occ62,occ_file.occ33,occ_file.occ61,occ_file.occ36,occ_file.occ175,occ_file.occ631,occ_file.occ63,occ_file.occ64,occ_file.occ1706,formonly.reason2,occ_file.occ1705,formonly.reason1,occ_file.occ1707,occ_file.occ1708,occ_file.occ74,formonly.occ74_ds,occ_file.occ75,occ_file.occud01,occ_file.occud04,occ_file.occud05,occ_file.occud06,occ_file.occud07,occ_file.occud08,occ_file.occud09,occ_file.occud10,occ_file.occud11,occ_file.occud12,occ_file.occud13,occ_file.occud14,occ_file.occud15,occ_file.occ1003,formonly.tqa02c,occ_file.occ1012,occ_file.occ1006,formonly.tqa02,occ_file.occ1013,occ_file.occ1007,formonly.tqa02a,occ_file.occ1014,occ_file.occ1008,formonly.tqa02b,occ_file.occ1015,occ_file.occ1009,formonly.too02,occ_file.occ1016,formonly.imd02,occ_file.occ1010,formonly.top02,occ_file.occ1027,occ_file.occ1011,formonly.toq02,formonly.cnt,formonly.occud03,formonly.occud02)
+END -- INSTRUCTIONS
+

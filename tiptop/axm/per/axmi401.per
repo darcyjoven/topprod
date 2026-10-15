@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"axmi401")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Basic Data")
+Table s_odl
+{
+[odl01              |odl02               |odl03         |odl04        |odl05       |odlacti     ]
+[odl01              |odl02               |odl03         |odl04        |odl05       |odlacti     ]
+[odl01              |odl02               |odl03         |odl04        |odl05       |odlacti     ]
+[odl01              |odl02               |odl03         |odl04        |odl05       |odlacti     ]
+[odl01              |odl02               |odl03         |odl04        |odl05       |odlacti     ]
+
+
+
+
+}
+END -- s_odl
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+ ----- [label1][cnt     ] ------
+
+
+
+
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- axmi401
+
+TABLES
+odl_file
+ATTRIBUTES
+Edit odl01=odl_file.odl01, tabIndex=1, title=%"Subcription No", not null, required;
+Edit odl02=odl_file.odl02, tabIndex=2, title=%"Subcription Name";
+DateEdit odl03=odl_file.odl03, tabIndex=3, title=%"Start Date", not null;
+DateEdit odl04=odl_file.odl04, tabIndex=4, title=%"Final Date", not null;
+Edit odl05=odl_file.odl05, tabIndex=5, title=%"Remark";
+CheckBox odlacti=odl_file.odlacti, tabIndex=6, default = "Y", title=%"Valid Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label1:Label1, text=%"Rows";
+Edit cnt=formonly.cnt type CHAR, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_odl(odl_file.odl01,odl_file.odl02,odl_file.odl03,odl_file.odl04,odl_file.odl05,odl_file.odlacti)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

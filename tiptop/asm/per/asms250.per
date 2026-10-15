@@ -1,0 +1,267 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asms250.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asms250")
+VBox vb2
+Folder pc206
+Page page01(text="Main")
+Grid gr924
+{
+
+  <G group01                                                                     >
+  [sma31                               ]
+  [sma44                               ]
+  [sma45                               ]
+  [dummy17                             ][sma904                ]
+  [label1                              ][sma146                ]
+  <                                                                              >
+  <G group02                            >
+  [sma32                               ]     <G group03                              >
+                                              [sma102                              ]
+  [dummy04                             ]
+  [sma33                            ]
+  [                                 ]
+  [dummy01                           ]
+    [label]               [sma341    ]
+    [labe1]               [sma342    ]
+    [labe2]               [sma343    ]
+
+
+  <                                     >
+                                             <                                       >
+
+
+}
+END -- gr924
+END -- page01
+Page page02(text="Receiving")
+Grid gr925
+{
+
+  <G group05                                     > <G group06                                 >
+  [sma108                              ]           [g_sma886_6                          ]
+  [label5              |sma110              ]      [g_sma886_8                          ]
+                                                   [g_sma886_7                          ]
+  [g_sma886_1                               ]
+  [g_sma886_2                               ]      <                                          >
+  [dummy07                                  ]      <G group07                                 >
+  [sma85                                 ]         [g_sma886_3                               ]
+  [                                      ]         [g_sma886_4                               ]
+  [dummy02                                  ]      [g_sma886_5                               ]
+    [la]                [sma401    ]               [sma111                                   ]
+    [l1]                [sma402    ]               [dummy03                                  ]
+    [l2]                [sma403    ]                [sma25                                 ]
+                                                    [                                      ]
+  [sma41                                    ]       [                                      ]
+  [dummy08                                  ]       [                                      ]
+   [sma103                                ]
+   [                                      ]        [sma91      ]
+   [                                      ]        [sma92      ]
+   [sma90                                    ]
+  [label9        ][sma134    ]                     <                                          >
+  [sma135                       ]
+  [sma140                                       ]
+  <                                              >
+
+
+}
+END -- gr925
+END -- page02
+Page page03(text="Pricing")
+Grid gr926
+{
+ <G group08                                          > <G group09                                         >
+ [label10                       ][sma84              ]   [dummy12                                       ]
+                                                         [sma843                                          ]
+                                                         [                                                ]
+                                                         [                                                ]
+ [dummy10                                           ]
+  [sma109                                         ]    [dummy13                                           ]
+  [                                               ]     [sma842                                          ]
+                                                        [                                                ]
+                                                        [                                                ]
+
+                                                       [dummy14                                           ]
+
+                                                       [sma844                                          ]
+                                                       [                                                ]
+ [dummy11                                           ]  [                                                ]
+   [sma113                                         ]
+   [                                               ]   [dummy15                                           ]
+   [                                               ]   [dummy16                                           ]
+
+                                                        [sma83                                          ]
+                                                        [                                               ]
+                                                        [                                               ]
+                                                       [sma114                                            ]
+ <                                                   > <                                                  >
+
+}
+END -- gr926
+END -- page03
+Page page4(text="Supplier Evaluation")
+VBox VBox1
+Grid gr27
+{
+
+ <G gb19                                                                                       >
+  [labe3]               [sma910        ]
+  [label12         ]    [sma911        ]
+  [label13]             [sma912        ]
+  [label14            ] [sma913        ]
+
+
+ <                                                                                             >
+}
+END -- gr27
+Grid gr26
+{
+
+ [label15                           ]                      [sma914    ][dummy99   ]
+ [label16                                               ]  [sma915    ] %
+
+
+
+
+}
+END -- gr26
+END -- VBox1
+END -- page4
+Page Page5(text=%"Auto Re-Order")
+Grid gr12
+{
+
+   [label17                     |sma136              ]
+   [label18   ]                 [sma137              ]
+   [sma138                        ]
+   [sma132                             ]
+   [label19               ]     [sma133              ]
+
+  <G gb20                                                      >
+   [dummy96                                                 ]
+   [dummy97                                                 ]
+   [dummy98                                                 ]
+  <                                                            >
+
+}
+END -- gr12
+END -- Page5
+END -- pc206
+END -- vb2
+END -- asms250
+
+TABLES
+sma_file
+ATTRIBUTES
+Group group01:group01, text="PR/PO";
+CheckBox sma31=sma_file.sma31, tabIndex=1, text="Activate P/R?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma44=sma_file.sma44, tabIndex=2, text="Dir-Enter PR?   ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma45=sma_file.sma45, tabIndex=3, text="Directly Enter P/O?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy17:dummy17, text="Triangle Trade Parament Setting";
+ComboBox sma904=sma_file.sma904, tabIndex=4, not null, required, queryEditable, comment="B:Bank Buy S:Sell M:Bank Average C:Customs Buy D:Sell ", items=(("B", "Bank Buying"),("S", "Bank Selling"),("M", "Bank Average ExRt"),("C", "Customs Buy"),("D", "Customs Sell"));
+Label label1:Label1, text=%"sma146";
+ComboBox sma146=sma_file.sma146, tabIndex=53, not null, scroll, items=(("1", "1"),("2", "2"));
+Group group02:group02, text="PR/PO Cross Check";
+CheckBox sma32=sma_file.sma32, tabIndex=5, text="P/R & P/O Cross-Checking?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy04:dummy04, text="Var Prcs Mtd for PR&PO Cross-Ckg";
+RadioGroup sma33=sma_file.sma33, tabIndex=6, not null, required, items=(("R", "Rejected"),("W", "Warning"));
+Label dummy01:dummy01, text="P/O Qty > P/R Qty Difference %";
+Label label:Label2, text=%"A(%)";
+Edit sma341=sma_file.sma341, tabIndex=7;
+Label labe1:Label3, text=%"B(%)";
+Edit sma342=sma_file.sma342, tabIndex=8;
+Label labe2:Label4, text=%"C(%)";
+Edit sma343=sma_file.sma343, tabIndex=9;
+Group group03:group03;
+CheckBox sma102=sma_file.sma102, tabIndex=10, text="Link AVL with QVL", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05, text="Receiving";
+CheckBox sma108=sma_file.sma108, tabIndex=11, text="Change Pur.U/P After Rcpt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label5:Label5, text=%"Max Saving Rcpt.Rows";
+Edit sma110=sma_file.sma110, tabIndex=12;
+CheckBox g_sma886_1=formonly.g_sma886_1 type CHAR, tabIndex=13, text="P/O Partial Del Def", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_sma886_2=formonly.g_sma886_2 type CHAR, tabIndex=14, text="P/O Advance Delivery Default", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy07:dummy07, text="Hand.Mtd for over Rcpt.Q";
+RadioGroup sma85=sma_file.sma85, tabIndex=15, not null, required, items=(("R", "Rejected"),("W", "Warning"));
+Label dummy02:dummy02, text="Pur.Rc O/S-Del Lm%";
+Label la:Label6, text=%"A";
+Edit sma401=sma_file.sma401, tabIndex=16;
+Label l1:Label7, text=%"B";
+Edit sma402=sma_file.sma402, tabIndex=17;
+Label l2:Label8, text=%"C";
+Edit sma403=sma_file.sma403, tabIndex=18;
+CheckBox sma41=sma_file.sma41, tabIndex=19, text="Check B/L # when Receive Foreign Purchase?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy08:dummy08, text="Rcpt Havn\'t Appral# Ctrl.Mtd";
+RadioGroup sma103=sma_file.sma103, tabIndex=20, not null, required, items=(("0", "None  "),("1", "Warn"),("2", "Reject"));
+CheckBox sma90=sma_file.sma90, tabIndex=19, text="Lot Control?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label9:Label9, text=%"Receving Times";
+Edit sma134=sma_file.sma134, tabIndex=43, not null;
+CheckBox sma135=sma_file.sma135, tabIndex=44, text="Re-Price After Receving?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma140=sma_file.sma140, tabIndex=50, text="Distribute based on Goods Receipt Posting", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group06:group06, text="IQC";
+CheckBox g_sma886_6=formonly.g_sma886_6 type CHAR, tabIndex=21, text="To-QC Rcpt must be QC  Cnfd 1st?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_sma886_8=formonly.g_sma886_8 type CHAR, tabIndex=22, text="Crs-Ck Q Alw to Rcv wth IQC", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="If no AQC, set N    ";
+CheckBox g_sma886_7=formonly.g_sma886_7 type CHAR, tabIndex=23, text="Drt St-in QC-Free Itm Rcvd", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group07:group07, text="Accounting";
+CheckBox g_sma886_3=formonly.g_sma886_3 type CHAR, tabIndex=24, text="Enter Invoice when Receive Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_sma886_4=formonly.g_sma886_4 type CHAR, tabIndex=25, text="Enter MISC Item Acct with P/R?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_sma886_5=formonly.g_sma886_5 type CHAR, tabIndex=26, text="Enter MISC Item Acct with P/O?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma111=sma_file.sma111, tabIndex=27, text="Use Weighted Moving Average", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy03:dummy03, text="Purd.Itm Costing Mtd";
+RadioGroup sma25=sma_file.sma25, tabIndex=28, not null, required, items=(("0", "No Cost Tran"),("1", "Wgt Avg Costg,Updt Stnd.Cost"),("2", "Updt Std.Cost by Last Pur Cost"));
+CheckBox sma91=sma_file.sma91, tabIndex=51, default = "N", text=%"When Stock-in No.Confirm,Auto Generate Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma92=sma_file.sma92, tabIndex=52, default = "N", text=%"When No Invoice Data,Produce Temp Estimates", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group08:group08, text="Price Default";
+Label label10:Label10, text=%"Pur.U/P > Last U/P Over-Limit%";
+Edit sma84=sma_file.sma84, tabIndex=29;
+Label dummy10:dummy10, text="Hand.Mtd for over Pur.U/P";
+RadioGroup sma109=sma_file.sma109, tabIndex=30, not null, required, items=(("R", "Rejected"),("W", "Warning"));
+Label dummy11:dummy11, text="Transferred Blanket PO U/P Set";
+RadioGroup sma113=sma_file.sma113, tabIndex=31, not null, required, items=(("1", "Use Blanket PO U/P"),("2", "Pur.U/P "),("3", "Take Lower"));
+Group group09:group09, text="Price Update";
+Label dummy12:dummy12, text="Update Item Master Last U/P when Rls P/O";
+RadioGroup sma843=sma_file.sma843, tabIndex=32, not null, required, items=(("1", "Update    "),("2", "Update when Lower"),("3", "No Update"));
+Label dummy13:dummy13, text="Update Item/Supplier Latest U/P Method When Issue PO";
+RadioGroup sma842=sma_file.sma842, tabIndex=33, not null, required, items=(("1", "Update    "),("2", "Update when Lower"),("3", "No Update"));
+Label dummy14:dummy14, text="Update Item Master Market Price when Release P/O";
+RadioGroup sma844=sma_file.sma844, tabIndex=34, not null, required, items=(("1", "Update    "),("2", "Update when Lower"),("3", "No Update"));
+Label dummy15:dummy15, text="Update Item/Supplier Latest U/P Method";
+Label dummy16:dummy16, text="Lower Price fr Appraisal Table and Supplier";
+RadioGroup sma83=sma_file.sma83, tabIndex=35, not null, required, items=(("1", "Update    "),("2", "Update when Lower"),("3", "No Update"));
+CheckBox sma114=sma_file.sma114, tabIndex=36, text="Sub.Pur.Affect Last Pur.U/P", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb19:gb19, text=" Evaluation Item Code";
+Label labe3:Label11, text=%"Price";
+ButtonEdit sma910=formonly.sma910 type VARCHAR, action=controlp, tabIndex=39, image="zoom";
+Label label12:Label12, text=%"Date of delivery";
+ButtonEdit sma911=formonly.sma911 type VARCHAR, action=controlp, tabIndex=40, image="zoom";
+Label label13:Label13, text=%"Quality";
+ButtonEdit sma912=formonly.sma912 type VARCHAR, action=controlp, tabIndex=41, image="zoom";
+Label label14:Label14, text=%"Cost of discrepancy";
+ButtonEdit sma913=formonly.sma913 type VARCHAR, action=controlp, tabIndex=42, image="zoom";
+Label label15:Label15, text=%"Allowable Overdue days of delivery";
+Edit sma914=formonly.sma914 type VARCHAR, tabIndex=37;
+Label dummy99:dummy99, text="Days\n";
+Label label16:Label16, text=%"Allowable rate of disposal cost of quality discrepancy";
+Edit sma915=formonly.sma915 type VARCHAR, tabIndex=38;
+Label label17:Label17, text=%"Auto Re-Order Calculate Mode";
+ComboBox sma136=sma_file.sma136, tabIndex=48, not null, items=(("1", "Shipping Period"),("2", "PO Period"));
+Label label18:Label18, text=%"DMS Period";
+Edit sma137=sma_file.sma137, tabIndex=45, not null;
+CheckBox sma138=sma_file.sma138, tabIndex=46, default = "Y", text="Safety Storage Calculate?", valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma132=sma_file.sma132, tabIndex=47, default = "Y", text="Quantity On The Way Calculate?", valueChecked = "Y", valueUnchecked = "N";
+Label label19:Label19, text=%"Distribute Exceed PR %";
+Edit sma133=sma_file.sma133, tabIndex=49;
+Group gb20:gb20, text="gb20";
+Label dummy96:dummy96, text="dummy96";
+Label dummy97:dummy97, text="dummy97";
+Label dummy98:dummy98, text="dummy98";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sma_file.sma31,sma_file.sma44,sma_file.sma45,sma_file.sma904,sma_file.sma32,sma_file.sma33,sma_file.sma341,sma_file.sma342,sma_file.sma343,sma_file.sma102,sma_file.sma108,sma_file.sma110,formonly.g_sma886_1,formonly.g_sma886_2,sma_file.sma85,sma_file.sma401,sma_file.sma402,sma_file.sma403,sma_file.sma41,sma_file.sma103,sma_file.sma90,sma_file.sma134,sma_file.sma135,sma_file.sma140,formonly.g_sma886_6,formonly.g_sma886_8,formonly.g_sma886_7,formonly.g_sma886_3,formonly.g_sma886_4,formonly.g_sma886_5,sma_file.sma111,sma_file.sma25,sma_file.sma91,sma_file.sma92,sma_file.sma84,sma_file.sma109,sma_file.sma113,sma_file.sma843,sma_file.sma842,sma_file.sma844,sma_file.sma83,sma_file.sma114,formonly.sma910,formonly.sma911,formonly.sma912,formonly.sma913,formonly.sma914,formonly.sma915,sma_file.sma136,sma_file.sma137,sma_file.sma138,sma_file.sma132,sma_file.sma133)
+SCREEN RECORD Record1(sma_file.sma146)
+END -- INSTRUCTIONS
+

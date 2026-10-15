@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi3012.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry W/O Allotment")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr463
+{
+ <G group01                                           >
+  Up Level Itme No.   [sfa29                         ]
+                      [ima02a                        ]
+ <                                                    >
+
+}
+END -- gr463
+END -- page01
+Page info(text="Info")
+Grid gr464
+{
+ <G grpinfo                       >
+  Line No.            [cn1       ]
+  Retrieve Rows       [cn2       ]
+  Detail Counts       [cn3       ]
+ <                                >
+
+}
+END -- gr464
+END -- info
+END -- folder01
+Table s_sfa
+{
+[sfa03               |sfa08    |sfa12        |sfa26           |ima02                         ]
+[sfa03               |sfa08    |sfa12        |sfa26           |ima02                         ]
+[sfa03               |sfa08    |sfa12        |sfa26           |ima02                         ]
+[sfa03               |sfa08    |sfa12        |sfa26           |ima02                         ]
+[sfa03               |sfa08    |sfa12        |sfa26           |ima02                         ]
+[sfa03               |sfa08    |sfa12        |sfa26           |ima02                         ]
+[sfa03               |sfa08    |sfa12        |sfa26           |ima02                         ]
+[sfa03               |sfa08    |sfa12        |sfa26           |ima02                         ]
+[sfa03               |sfa08    |sfa12        |sfa26           |ima02                         ]
+[sfa03               |sfa08    |sfa12        |sfa26           |ima02                         ]
+
+}
+END -- s_sfa
+END -- VBox1
+END -- asfi3012
+
+TABLES
+sfa_file
+ATTRIBUTES
+Group group01:group01;
+Edit sfa29=sfa_file.sfa29, tabIndex=1, noEntry;
+Edit ima02a=formonly.ima02a type CHAR, tabIndex=2, noEntry;
+Group grpinfo:grpinfo;
+Edit cn1=formonly.cn1 type CHAR, tabIndex=3, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4, noEntry;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=5, noEntry;
+Edit sfa03=sfa_file.sfa03, tabIndex=6, title="Item No.", noEntry;
+Edit sfa08=sfa_file.sfa08, tabIndex=7, title="Task No.", noEntry;
+Edit sfa12=sfa_file.sfa12, tabIndex=8, title="Issuing Unit", noEntry;
+Edit sfa26=sfa_file.sfa26, tabIndex=9, title="Substitute code", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=10, title="Part Name Specification", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfa(sfa_file.sfa03,sfa_file.sfa08,sfa_file.sfa12,sfa_file.sfa26,formonly.ima02)
+SCREEN RECORD Undefined(sfa_file.sfa29,formonly.ima02a,formonly.cn1,formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

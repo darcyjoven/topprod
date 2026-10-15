@@ -1,0 +1,80 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsi200.per created Wed Dec 31 05:29:35 2008
+-- File created from apsi200.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsi200")
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1047
+      PAGE page01( TEXT="Page01")
+        GRID gr5429
+        {
+        <G group01                                          >
+         Master Item No.     [aa0                           ]
+         Master Item S/P     [aa1                           ]
+        <                                                   >
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_aps
+    {
+    [aa2    |aa3                           |aa4      |aa5            |aa6          |aa7           |aa8           |aa9           |ab0           |ab1         |ab2           ]
+    [aa2    |aa3                           |aa4      |aa5            |aa6          |aa7           |aa8           |aa9           |ab0           |ab1         |ab2           ]
+    [aa2    |aa3                           |aa4      |aa5            |aa6          |aa7           |aa8           |aa9           |ab0           |ab1         |ab2           ]
+    [aa2    |aa3                           |aa4      |aa5            |aa6          |aa7           |aa8           |aa9           |ab0           |ab1         |ab2           ]
+    [aa2    |aa3                           |aa4      |aa5            |aa6          |aa7           |aa8           |aa9           |ab0           |ab1         |ab2           ]
+    [aa2    |aa3                           |aa4      |aa5            |aa6          |aa7           |aa8           |aa9           |ab0           |ab1         |ab2           ]
+    [aa2    |aa3                           |aa4      |aa5            |aa6          |aa7           |aa8           |aa9           |ab0           |ab1         |ab2           ]
+    [aa2    |aa3                           |aa4      |aa5            |aa6          |aa7           |aa8           |aa9           |ab0           |ab1         |ab2           ]
+    [aa2    |aa3                           |aa4      |aa5            |aa6          |aa7           |aa8           |aa9           |ab0           |ab1         |ab2           ]
+    [aa2    |aa3                           |aa4      |aa5            |aa6          |aa7           |aa8           |aa9           |ab0           |ab1         |ab2           ]
+    }
+    END -- TABLE
+    GRID gr5430
+    {
+     ---------- Rows [ab3   ] / [ab4   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES aps_bmb
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=FORMONLY.out_pid, NOENTRY, TABINDEX=1;
+  EDIT aa1=FORMONLY.ima02, NOENTRY, TABINDEX=2;
+  EDIT aa2=FORMONLY.seq_txt, NOENTRY, TABINDEX=3, TITLE="Ln No.";
+  EDIT aa3=FORMONLY.in_pid, NOENTRY, TABINDEX=4, TITLE="Component No.";
+  EDIT aa4=aps_bmb.p_aprio, TABINDEX=5, TITLE="Priority";
+  EDIT aa5=aps_bmb.g_acode, TABINDEX=6, TITLE="Group Sub Code";
+  COMBOBOX aa6=aps_bmb.is_used, COMMENT="0/1(If Inventory Been Used-up, No Longer Purchase)", QUERYEDITABLE, TABINDEX=7, TITLE="Used Up Part", ITEMS=(("0","False"),("1","True"));
+  COMBOBOX aa7=aps_bmb.is_sub_p, COMMENT="0/1(when 1?an not be mix part)", QUERYEDITABLE, TABINDEX=8, TITLE="Subsitute Part Is Issue", ITEMS=(("0","General SUB"),("1","Total SUB"));
+  COMBOBOX aa8=aps_bmb.is_issue, COMMENT="0/1", QUERYEDITABLE, TABINDEX=9, TITLE="", ITEMS=(("0","General Demand"),("1","No Item Expand Demand"));
+  COMBOBOX aa9=aps_bmb.is_cnsn, COMMENT="0/1", QUERYEDITABLE, TABINDEX=10, TITLE="Is Cnsn", ITEMS=(("0","False"),("1","True"));
+  COMBOBOX ab0=aps_bmb.is_altod, COMMENT="0/1", QUERYEDITABLE, TABINDEX=11, TITLE="Is Altod", ITEMS=(("0","False"),("1","True"));
+  COMBOBOX ab1=aps_bmb.cret_typ, COMMENT="0/1", QUERYEDITABLE, TABINDEX=12, TITLE="Create Type", ITEMS=(("0","For Master Item"),("1","For Alt Ratio"));
+  EDIT ab2=aps_bmb.al_ratio, TABINDEX=13, TITLE="Alt Ratio";
+  EDIT ab3=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=14;
+  EDIT ab4=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=15;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_aps (FORMONLY.seq_txt, FORMONLY.in_pid, aps_bmb.p_aprio, aps_bmb.g_acode, aps_bmb.is_used, aps_bmb.is_sub_p, aps_bmb.is_issue, aps_bmb.is_cnsn, aps_bmb.is_altod, aps_bmb.cret_typ, aps_bmb.al_ratio)
+END

@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abar101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abar101")
+VBox VBox1
+Grid gr2311
+{
+ <G group01                                      >
+  imd01              [imd01               ]
+  ime02              [ime02               ]
+
+
+
+ <                                               >
+}
+END -- gr2311
+Grid gr2312
+{
+[more                                            ]
+
+}
+END -- gr2312
+END -- VBox1
+END -- abar101
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit imd01=formonly.imd01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Who Reports";
+ButtonEdit ime02=formonly.ime02 type CHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P> Qry Who Reports";
+CheckBox more=formonly.more type CHAR, tabIndex=3, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.imd01,formonly.ime02,formonly.more)
+END -- INSTRUCTIONS
+

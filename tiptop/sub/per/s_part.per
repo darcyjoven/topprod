@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_part.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_part")
+Grid gr3912
+{
+ Account #   Digits Abbre Select Option
+ 1st Section  [aa] [aaz2] [a]  [f     ][f     ][f     ][f     ][f     ][f     ]
+ 2nd Section  [a1] [aaz1] [b]  [g     ][g     ][g     ][g     ][g     ][g     ]
+ 3rd Section  [a2] [aaz3] [c]  [h     ][h     ][h     ][h     ][h     ][h     ]
+ 4th Section  [a3] [aaz4] [d]  [i     ][i     ][i     ][i     ][i     ][i     ]
+ 5th section  [a4] [aaz5] [e]  [j     ][j     ][j     ][j     ][j     ][j     ]
+ Sections Closed [k]
+}
+END -- gr3912
+END -- s_part
+
+TABLES
+aaz_file
+ATTRIBUTES
+Edit aa=aaz_file.aaz21, tabIndex=1;
+Edit aaz2=aaz_file.aaz211, tabIndex=2;
+Edit a=formonly.a type VARCHAR, tabIndex=3, upShift;
+Edit f=formonly.f type CHAR, tabIndex=4;
+Edit a1=aaz_file.aaz22, tabIndex=5;
+Edit aaz1=aaz_file.aaz221, tabIndex=6;
+Edit b=formonly.b type VARCHAR, tabIndex=7, upShift;
+Edit g=formonly.g type CHAR, tabIndex=8;
+Edit a2=aaz_file.aaz23, tabIndex=9;
+Edit aaz3=aaz_file.aaz231, tabIndex=10;
+Edit c=formonly.c type VARCHAR, tabIndex=11, upShift;
+Edit h=formonly.h type CHAR, tabIndex=12;
+Edit a3=aaz_file.aaz24, tabIndex=13;
+Edit aaz4=aaz_file.aaz241, tabIndex=14;
+Edit d=formonly.d type VARCHAR, tabIndex=15, upShift;
+Edit i=formonly.i type CHAR, tabIndex=16;
+Edit a4=aaz_file.aaz25, tabIndex=17;
+Edit aaz5=aaz_file.aaz251, tabIndex=18;
+Edit e=formonly.e type VARCHAR, tabIndex=19, upShift;
+Edit j=formonly.j type CHAR, tabIndex=20;
+Edit k=aaz_file.aaz26, tabIndex=21;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aaz21(formonly.f)
+SCREEN RECORD s_aaz22(formonly.g)
+SCREEN RECORD s_aaz23(formonly.h)
+SCREEN RECORD s_aaz24(formonly.i)
+SCREEN RECORD s_aaz25(formonly.j)
+SCREEN RECORD Undefined(aaz_file.aaz21,aaz_file.aaz211,formonly.a,aaz_file.aaz22,aaz_file.aaz221,formonly.b,aaz_file.aaz23,aaz_file.aaz231,formonly.c,aaz_file.aaz24,aaz_file.aaz241,formonly.d,aaz_file.aaz25,aaz_file.aaz251,formonly.e,aaz_file.aaz26)
+END -- INSTRUCTIONS
+

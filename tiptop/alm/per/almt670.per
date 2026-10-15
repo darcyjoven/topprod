@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt670.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almt670")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr5382
+{
+                                                                                                                         [imgmksg]
+ Contract No.        [lpy01             ]                                              Confirmed Status    [lpy13     ]  [       ]
+ Note                [lpy02                 ]                                          Confirmed Person    [lpy14       ]
+ Sign Date           [lpy17       ]                                                    Confirmed Date      [lpy15       ]
+[lpy19_1   ]         [lpy19       |rtz13_2                       ]                     Memo                [lpy16                 ]
+ Note No.            [lpy18             ]                                                                  [                      ]
+ Shop No.            [lpyplant    |rtz13                         ]                                         [lpy11                         ]
+ legal               [lpylegal    |azt02                         ]                     Approved Status     [lpy12     ]
+
+}
+END -- gr5382
+END -- page01
+Page info(text="Info")
+Grid gr5383
+{
+ Record Owner        [lpyuser   ]  Created Date        [lpycrat   ] Data Valid Code     [lpyacti   ]
+ Department          [lpygrup   ]  Last Modified by    [lpymodu   ] Modify Date         [lpydate   ]
+ lpyoriu             [lpyoriu   ]
+ lpyorig             [lpyorig   ]
+
+
+}
+END -- gr5383
+END -- info
+END -- folder01
+Table s_lpz
+{
+[lpz05|lpz15     |lpz15_desc|lpz16           |lpz17   |lpz02           |lpz02_desc|lpz07     |lpz01|lpz03               |lpz04               |lpz08   |lpz09     |lpz10|lpz11     |lpz12     |lpz13     |lpz14     |lpzact|lpzp]
+[lpz05|lpz15     |lpz15_desc|lpz16           |lpz17   |lpz02           |lpz02_desc|lpz07     |lpz01|lpz03               |lpz04               |lpz08   |lpz09     |lpz10|lpz11     |lpz12     |lpz13     |lpz14     |lpzact|lpzp]
+[lpz05|lpz15     |lpz15_desc|lpz16           |lpz17   |lpz02           |lpz02_desc|lpz07     |lpz01|lpz03               |lpz04               |lpz08   |lpz09     |lpz10|lpz11     |lpz12     |lpz13     |lpz14     |lpzact|lpzp]
+[lpz05|lpz15     |lpz15_desc|lpz16           |lpz17   |lpz02           |lpz02_desc|lpz07     |lpz01|lpz03               |lpz04               |lpz08   |lpz09     |lpz10|lpz11     |lpz12     |lpz13     |lpz14     |lpzact|lpzp]
+[lpz05|lpz15     |lpz15_desc|lpz16           |lpz17   |lpz02           |lpz02_desc|lpz07     |lpz01|lpz03               |lpz04               |lpz08   |lpz09     |lpz10|lpz11     |lpz12     |lpz13     |lpz14     |lpzact|lpzp]
+[lpz05|lpz15     |lpz15_desc|lpz16           |lpz17   |lpz02           |lpz02_desc|lpz07     |lpz01|lpz03               |lpz04               |lpz08   |lpz09     |lpz10|lpz11     |lpz12     |lpz13     |lpz14     |lpzact|lpzp]
+[lpz05|lpz15     |lpz15_desc|lpz16           |lpz17   |lpz02           |lpz02_desc|lpz07     |lpz01|lpz03               |lpz04               |lpz08   |lpz09     |lpz10|lpz11     |lpz12     |lpz13     |lpz14     |lpzact|lpzp]
+[lpz05|lpz15     |lpz15_desc|lpz16           |lpz17   |lpz02           |lpz02_desc|lpz07     |lpz01|lpz03               |lpz04               |lpz08   |lpz09     |lpz10|lpz11     |lpz12     |lpz13     |lpz14     |lpzact|lpzp]
+[lpz05|lpz15     |lpz15_desc|lpz16           |lpz17   |lpz02           |lpz02_desc|lpz07     |lpz01|lpz03               |lpz04               |lpz08   |lpz09     |lpz10|lpz11     |lpz12     |lpz13     |lpz14     |lpzact|lpzp]
+
+}
+END -- s_lpz
+Grid gr5384
+{
+ ---------- Rows [idx    ]/[cnt    ] ------Item[cn2   ] ----------
+
+
+}
+END -- gr5384
+END -- VBox1
+END -- almt670
+
+TABLES
+lpz_file,
+lpy_file
+ATTRIBUTES
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ComboBox lpy01=lpy_file.lpy01, tabIndex=1, noEntry, items=(("0", "Register"),("1", "Put On Sale"),("2", "Withdrawl"),("3", "Cancel"),("4", "Text"),("5", "Text"),("6", "Text"));
+ComboBox lpy13=lpy_file.lpy13, tabIndex=11, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+ButtonEdit lpy02=lpy_file.lpy02, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+ButtonEdit lpy14=lpy_file.lpy14, action=controlp, tabIndex=12, noEntry, image="zoom.png";
+DateEdit lpy17=lpy_file.lpy17, tabIndex=3, not null, required;
+DateEdit lpy15=lpy_file.lpy15, tabIndex=13, noEntry;
+Label lpy19_1:lpy19_1, text="lpy19_1";
+ButtonEdit lpy19=lpy_file.lpy19, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit rtz13_2=formonly.rtz13_2 type CHAR, tabIndex=5;
+TextEdit lpy16=lpy_file.lpy16, tabIndex=14;
+Edit lpy18=lpy_file.lpy18, tabIndex=6, noEntry;
+ButtonEdit lpyplant=lpy_file.lpyplant, action=controlp, tabIndex=7, noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13 type VARCHAR, tabIndex=8, noEntry;
+CheckBox lpy11=lpy_file.lpy11, tabIndex=15, text="Approved ?", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit lpylegal=lpy_file.lpylegal, action=controlp, tabIndex=9, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=10;
+ComboBox lpy12=lpy_file.lpy12, tabIndex=16, noEntry, items=(("0", "Created"),("1", "Approved"),("S", "Approving"),("R", "Rejected"),("W", "Withdraw"));
+Edit lpyuser=lpy_file.lpyuser, tabIndex=17, noEntry;
+DateEdit lpycrat=lpy_file.lpycrat, tabIndex=21, noEntry;
+Edit lpyacti=lpy_file.lpyacti, tabIndex=23, noEntry;
+Edit lpygrup=lpy_file.lpygrup, tabIndex=18, noEntry;
+Edit lpymodu=lpy_file.lpymodu, tabIndex=22, noEntry;
+DateEdit lpydate=lpy_file.lpydate, tabIndex=24, noEntry;
+Edit lpyoriu=lpy_file.lpyoriu, tabIndex=19, noEntry;
+Edit lpyorig=lpy_file.lpyorig, tabIndex=20, noEntry;
+Edit lpz05=lpz_file.lpz05, tabIndex=25, title="lpz05", not null, required;
+ButtonEdit lpz15=lpz_file.lpz15, action=controlp, tabIndex=26, title="Sale Org", not null, image="zoom.png";
+Edit lpz15_desc=formonly.lpz15_desc type CHAR, tabIndex=27, title="Org Name", noEntry;
+ButtonEdit lpz16=lpz_file.lpz16, action=controlp, tabIndex=28, title="Order No.", not null, image="zoom.png";
+ButtonEdit lpz17=lpz_file.lpz17, action=controlp, tabIndex=29, title="Order Line No.", not null, image="zoom.png";
+ButtonEdit lpz02=lpz_file.lpz02, action=controlp, tabIndex=30, title="Coupon Type", not null, image="zoom.png";
+Edit lpz02_desc=formonly.lpz02_desc type CHAR, tabIndex=31, title="Coupon Name", noEntry;
+ButtonEdit lpz07=lpz_file.lpz07, action=controlp, tabIndex=32, title="Coupon Denomination", noEntry, image="zoom.png";
+Edit lpz01=formonly.lpz07_desc type VARCHAR, tabIndex=33, title="Denomination", noEntry;
+Edit lpz03=lpz_file.lpz03, tabIndex=34, title="Coupon No.", not null;
+Edit lpz04=lpz_file.lpz04, tabIndex=35, title="Discount Amount", not null;
+Edit lpz08=lpz_file.lpz08, tabIndex=36, title="Coupon Count", noEntry;
+Edit lpz09=lpz_file.lpz09, tabIndex=37, title="Total Account", noEntry;
+Edit lpz10=formonly.lpz10 type CHAR, tabIndex=38, title="Discount Rate";
+Edit lpz11=lpz_file.lpz11, tabIndex=39, title="Discount Account", noEntry;
+Edit lpz12=lpz_file.lpz12, tabIndex=40, title="Actual Sum", noEntry;
+DateEdit lpz13=lpz_file.lpz13, tabIndex=41, title="Start Date";
+DateEdit lpz14=lpz_file.lpz14, tabIndex=42, title="End Date", not null;
+CheckBox lpzact=lpz_file.lpzacti, tabIndex=43, default = "N", title="lpzacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lpzp=lpz_file.lpzpos, tabIndex=44, title="lpzpos", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=45, noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=46, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=47, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lpz(lpz_file.lpz05,lpz_file.lpz15,formonly.lpz15_desc,lpz_file.lpz16,lpz_file.lpz17,lpz_file.lpz02,formonly.lpz02_desc,lpz_file.lpz07,formonly.lpz07_desc,lpz_file.lpz03,lpz_file.lpz04,lpz_file.lpz08,lpz_file.lpz09,formonly.lpz10,lpz_file.lpz11,lpz_file.lpz12,lpz_file.lpz13,lpz_file.lpz14,lpz_file.lpzacti,lpz_file.lpzpos)
+SCREEN RECORD Undefined(lpy_file.lpyplant,formonly.rtz13,lpy_file.lpy11,lpy_file.lpylegal,formonly.azt02,lpy_file.lpy12,formonly.imgmksg,lpy_file.lpy01,lpy_file.lpy13,lpy_file.lpy02,lpy_file.lpy14,lpy_file.lpy17,lpy_file.lpy15,lpy_file.lpy18,lpy_file.lpy16,lpy_file.lpyuser,lpy_file.lpycrat,lpy_file.lpyacti,lpy_file.lpygrup,lpy_file.lpymodu,lpy_file.lpydate,lpy_file.lpyoriu,lpy_file.lpyorig,formonly.idx,formonly.cnt,formonly.cn2,lpy_file.lpy19,formonly.rtz13_2)
+END -- INSTRUCTIONS
+

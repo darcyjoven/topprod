@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr007.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr007")
+VBox vb10
+Group group01(text="INPUT")
+Grid gr2588
+{
+ <G group02                                                                          >
+  [rtype                                            ]
+ <                                                                                   >
+  <G group03                                                                         >
+   Group No.                            [axb01               ]
+   Parent Company                       [axb02               ]
+   Parent Company Acct                  [axb03               ]
+   Subsidiary Company                   [axb04               ]
+   Subsidiary Book No.                  [axb05               ]
+   Report Structure No.                 [a                   ]
+   Book No.                             [b                   ]
+   Enter Year                           [yy                  ]
+   axa06                                [axa06               ]
+   End Period                           [em                  ]
+   Quarter                              [q1                  ]
+   Half a Year                          [h1                  ]
+   Print Minimum Level#                 [f                   ]
+  <                                                                                  >
+  <G group04                                                       >
+   [d                             ]
+  <                                                                >
+  <G group05                                                      >
+   [c                             ]
+   [e                             ]
+  <                                                               >
+
+}
+END -- gr2588
+END -- group01
+Grid gr2589
+{
+
+[more                                                        ]
+
+}
+END -- gr2589
+END -- vb10
+END -- aglr007
+
+ATTRIBUTES
+Group group02:group02, text="Report Type";
+RadioGroup rtype=formonly.rtype type CHAR, tabIndex=1, items=(("1", "Balance Sheet"),("2", "Income statement"));
+Group group03:group03;
+ButtonEdit axb01=formonly.axb01 type CHAR, action=controlp, tabIndex=4, image="zoom";
+Edit axb02=formonly.axb02 type CHAR, tabIndex=17, not null, required;
+Edit axb03=formonly.axb03 type CHAR, tabIndex=18, noEntry;
+Edit axb04=formonly.axb04 type CHAR, tabIndex=5;
+Edit axb05=formonly.axb05 type CHAR, tabIndex=6, noEntry;
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=3, noEntry, image="zoom";
+Edit yy=formonly.yy type SMALLINT, tabIndex=7;
+ComboBox axa06=formonly.axa06 type VARCHAR, tabIndex=14, items=(("1", "Month"),("2", "Quarter"),("3", "Half a Year"),("4", "Year"));
+Edit em=formonly.em type SMALLINT, tabIndex=8, not null, required;
+ComboBox q1=formonly.q1 type VARCHAR, tabIndex=15, not null, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox h1=formonly.h1 type VARCHAR, tabIndex=16, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+Edit f=formonly.f type SMALLINT, tabIndex=9;
+Group group04:group04, text="Amount Unit";
+RadioGroup d=formonly.d type CHAR, tabIndex=10, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+Group group05:group05;
+CheckBox c=formonly.c type CHAR, tabIndex=11, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=12, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rtype,formonly.axb01,formonly.axb04,formonly.axb05,formonly.a,formonly.b,formonly.yy,formonly.axa06,formonly.em,formonly.q1,formonly.h1,formonly.f,formonly.d,formonly.c,formonly.e,formonly.more,formonly.axb02,formonly.axb03)
+END -- INSTRUCTIONS
+

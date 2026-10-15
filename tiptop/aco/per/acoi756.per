@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi756.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="acoi756")
+VBox vb4
+Folder pc4
+Page Page7(text=%"Page0")
+Grid gr16
+{
+ Segement            [ceg00           ]
+ Item No.            [ceg01           ]
+ preferential rate   [ceg03   ]           Common Tax Rate                [ceg04   ]             VAT Rate       [ceg05   ]
+ Consumption Tax Rate[ceg06   ]           Primary Customs Commodity Cate.[ceg09   |cev02  ]     Tax Refund Rate[ceg07   ]
+ Measure Unit        [ceg08   |gfe02  ]   Supervision Method             [ceg10   |cea02  ]
+ Unit of Measure     [ceg11   |gfe02_1]   Unit Conv Rate of Measure      [ceg12           ]
+ Unit of Measure2    [ceg13   |gfe02_2]   Unit Conv Rate of Measure 2    [ceg14           ]
+ Remark              [ceg02                                                       ]
+
+
+
+}
+END -- gr16
+END -- Page7
+Page Page8(text=%"Page1")
+Grid gr17
+{
+ Data Owner        [ceguser   ]  Modified by      [cegmodu   ]    Valid Code [cegac]
+ Data Owner (Dept) [ceggrup   ]  Last Modified On [cegdate   ]
+
+}
+END -- gr17
+END -- Page8
+END -- pc4
+Grid gr23
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr23
+END -- vb4
+END -- acoi756
+
+TABLES
+ceg_file
+ATTRIBUTES
+ComboBox ceg00=ceg_file.ceg00, tabIndex=1, not null, required, items=(("1", "Finished Goods"),("2", "Material"));
+ButtonEdit ceg01=ceg_file.ceg01, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit ceg03=ceg_file.ceg03, tabIndex=3, not null, required;
+Edit ceg04=ceg_file.ceg04, tabIndex=4, not null, required;
+Edit ceg05=ceg_file.ceg05, tabIndex=5, not null, required;
+Edit ceg06=ceg_file.ceg06, tabIndex=6, not null, required;
+ButtonEdit ceg09=ceg_file.ceg09, action=controlp, tabIndex=7, image="zoom.png";
+Edit cev02=formonly.cev02 type VARCHAR, tabIndex=26, noEntry;
+Edit ceg07=ceg_file.ceg07, tabIndex=15, not null, required;
+ButtonEdit ceg08=ceg_file.ceg08, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+Edit gfe02=formonly.gfe02 type VARCHAR, tabIndex=22, noEntry;
+ButtonEdit ceg10=ceg_file.ceg10, action=controlp, tabIndex=9, image="zoom.png";
+Edit cea02=formonly.cea02 type VARCHAR, tabIndex=25, noEntry;
+ButtonEdit ceg11=ceg_file.ceg11, action=controlp, tabIndex=10, image="zoom";
+Edit gfe02_1=formonly.gfe02_1 type VARCHAR, tabIndex=23, noEntry;
+Edit ceg12=ceg_file.ceg12, tabIndex=11, not null, required;
+ButtonEdit ceg13=ceg_file.ceg13, action=controlp, tabIndex=12, image="zoom";
+Edit gfe02_2=formonly.gfe02_2 type VARCHAR, tabIndex=24, noEntry;
+Edit ceg14=ceg_file.ceg14, tabIndex=13, not null, required;
+Edit ceg02=ceg_file.ceg02, tabIndex=14;
+Edit ceguser=ceg_file.ceguser, tabIndex=16, noEntry;
+Edit cegmodu=ceg_file.cegmodu, tabIndex=17, noEntry;
+Edit cegac=ceg_file.cegacti, tabIndex=18, noEntry;
+Edit ceggrup=ceg_file.ceggrup, tabIndex=19, noEntry;
+DateEdit cegdate=ceg_file.cegdate, tabIndex=20, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ceg_file.ceg00,ceg_file.ceg01,ceg_file.ceg03,ceg_file.ceg04,ceg_file.ceg05,ceg_file.ceg06,ceg_file.ceg09,formonly.cev02,ceg_file.ceg07,ceg_file.ceg08,formonly.gfe02,ceg_file.ceg10,formonly.cea02,ceg_file.ceg11,formonly.gfe02_1,ceg_file.ceg12,ceg_file.ceg13,formonly.gfe02_2,ceg_file.ceg14,ceg_file.ceg02,ceg_file.ceguser,ceg_file.cegmodu,ceg_file.cegacti,ceg_file.ceggrup,ceg_file.cegdate,formonly.cnt)
+END -- INSTRUCTIONS
+

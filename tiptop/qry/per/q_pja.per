@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_pja.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_pja")
+Grid gr3730
+{
+ <T s_apy                                                             >
+ [check |pja01      |pja02               |pja05           |pja09     ]
+ [check |pja01      |pja02               |pja05           |pja09     ]
+ [check |pja01      |pja02               |pja05           |pja09     ]
+ [check |pja01      |pja02               |pja05           |pja09     ]
+ [check |pja01      |pja02               |pja05           |pja09     ]
+ [check |pja01      |pja02               |pja05           |pja09     ]
+ [check |pja01      |pja02               |pja05           |pja09     ]
+ [check |pja01      |pja02               |pja05           |pja09     ]
+ [check |pja01      |pja02               |pja05           |pja09     ]
+ [check |pja01      |pja02               |pja05           |pja09     ]
+ <                                                                    >
+
+}
+END -- gr3730
+END -- q_pja
+
+TABLES
+pja_file
+ATTRIBUTES
+Table s_apy:s_apy;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pja01=pja_file.pja01, tabIndex=2, title="Project No.", noEntry;
+Edit pja02=pja_file.pja02, tabIndex=3, title="Project Name", noEntry;
+Edit pja05=pja_file.pja05, tabIndex=4, title="Project Date", noEntry;
+Edit pja09=pja_file.pja09, tabIndex=5, title="Department", comment="1.Serial Number 2.By Year and Month                                               3.By Year and Week 4.By Year,Month and Day";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pja(formonly.check,pja_file.pja01,pja_file.pja02,pja_file.pja05,pja_file.pja09)
+END -- INSTRUCTIONS
+

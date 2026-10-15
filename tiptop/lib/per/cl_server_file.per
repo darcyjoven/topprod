@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_server_file.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"File Browser")
+VBox VBox1
+Grid gr3705
+{
+ [path                                   ][up]
+
+}
+END -- gr3705
+Table s_list
+{
+[t |file                     |size           |date           |permission |owner     |group     ]
+[t |file                     |size           |date           |permission |owner     |group     ]
+[t |file                     |size           |date           |permission |owner     |group     ]
+[t |file                     |size           |date           |permission |owner     |group     ]
+[t |file                     |size           |date           |permission |owner     |group     ]
+[t |file                     |size           |date           |permission |owner     |group     ]
+[t |file                     |size           |date           |permission |owner     |group     ]
+[t |file                     |size           |date           |permission |owner     |group     ]
+[t |file                     |size           |date           |permission |owner     |group     ]
+[t |file                     |size           |date           |permission |owner     |group     ]
+
+}
+END -- s_list
+END -- VBox1
+END -- cl_server_file
+
+ATTRIBUTES
+Edit path=formonly.path type CHAR, tabIndex=1;
+Button up:updir, image="uplevel", comment="Up Directory";
+IMAGE t=formonly.t type CHAR, width = 2 characters;
+Edit file=formonly.file type CHAR, tabIndex=3, title="Name", noEntry;
+Edit size=formonly.size type CHAR, tabIndex=4, title="Size", noEntry;
+Edit date=formonly.date type CHAR, tabIndex=5, title="Date", noEntry;
+Edit permission=formonly.permission type CHAR, tabIndex=6, title="Permission", noEntry, hidden;
+Edit owner=formonly.owner type CHAR, tabIndex=7, title="Owner", noEntry, hidden;
+Edit group=formonly.group type CHAR, tabIndex=8, title="Group", noEntry, hidden;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_list(formonly.t,formonly.file,formonly.size,formonly.date,formonly.permission,formonly.owner,formonly.group)
+SCREEN RECORD Undefined(formonly.path)
+END -- INSTRUCTIONS
+

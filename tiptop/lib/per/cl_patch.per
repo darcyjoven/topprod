@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_patch.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"cl_patch")
+VBox vb9
+Group group01(text="Patch Data")
+Table s_pth_1
+{
+[pth03       |pth05   |pth04        |pth04_name     |pth06                         |pth07                         ]
+[pth03       |pth05   |pth04        |pth04_name     |pth06                         |pth07                         ]
+[pth03       |pth05   |pth04        |pth04_name     |pth06                         |pth07                         ]
+[pth03       |pth05   |pth04        |pth04_name     |pth06                         |pth07                         ]
+[pth03       |pth05   |pth04        |pth04_name     |pth06                         |pth07                         ]
+[pth03       |pth05   |pth04        |pth04_name     |pth06                         |pth07                         ]
+[pth03       |pth05   |pth04        |pth04_name     |pth06                         |pth07                         ]
+[pth03       |pth05   |pth04        |pth04_name     |pth06                         |pth07                         ]
+[pth03       |pth05   |pth04        |pth04_name     |pth06                         |pth07                         ]
+[pth03       |pth05   |pth04        |pth04_name     |pth06                         |pth07                         ]
+
+}
+END -- s_pth_1
+END -- group01
+Grid gr1
+{
+  ----------  Patch Rows     [patch_count  ]  ----------
+
+}
+END -- gr1
+Group group02(text="zl Data")
+Table s_pth_2
+{
+[pth_no  |pth02   |pth01     ]
+[pth_no  |pth02   |pth01     ]
+[pth_no  |pth02   |pth01     ]
+[pth_no  |pth02   |pth01     ]
+[pth_no  |pth02   |pth01     ]
+[pth_no  |pth02   |pth01     ]
+[pth_no  |pth02   |pth01     ]
+[pth_no  |pth02   |pth01     ]
+[pth_no  |pth02   |pth01     ]
+[pth_no  |pth02   |pth01     ]
+
+}
+END -- s_pth_2
+END -- group02
+Grid gr2
+{
+  ----------  zl Rows  [zl_count   ]  ----------
+
+ [close     ]       [zl_data   ]     [patch_data   ]
+
+}
+END -- gr2
+END -- vb9
+END -- cl_patch
+
+TABLES
+pth_file
+ATTRIBUTES
+DateEdit pth03=pth_file.pth03, tabIndex=5, title=%"Patch Date";
+Edit pth05=pth_file.pth05, tabIndex=6, title=%"Patch Time";
+Edit pth04=pth_file.pth04, tabIndex=7, title=%"Patch Employee";
+Edit pth04_name=formonly.pth04_name type CHAR, tabIndex=10, title=%"Patch Employee Name";
+Edit pth06=pth_file.pth06, tabIndex=8, title=%"Patch No";
+Edit pth07=pth_file.pth07, tabIndex=9, title=%"Patch File";
+Edit patch_count=formonly.patch_count type CHAR, tabIndex=2;
+Edit pth_no=formonly.pth_no type CHAR, tabIndex=65, title=%"No";
+Edit pth02=pth_file.pth02, tabIndex=3, title=%"zl Version";
+Edit pth01=pth_file.pth01, tabIndex=4, title=%"zl Work No";
+Edit zl_count=formonly.zl_count type SMALLINT, tabIndex=1, noEntry;
+Button close:close, text="Close";
+Button zl_data:zl_data, text="Check zl Data";
+Button patch_data:patch_data, text="Back to Patch Data";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pth_2(formonly.pth_no,pth_file.pth02,pth_file.pth01)
+SCREEN RECORD s_pth_1(pth_file.pth03,pth_file.pth05,pth_file.pth04,formonly.pth04_name,pth_file.pth06,pth_file.pth07)
+SCREEN RECORD Undefined(formonly.patch_count,formonly.zl_count)
+END -- INSTRUCTIONS
+

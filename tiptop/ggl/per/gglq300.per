@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglr301")
+VBox VBox1
+Folder folder01
+Page page01(text=%"Main")
+Grid gr5447
+{
+
+ Book.No[bookno       ]Year [yy           ]             [a                      ]          [e                          ]              Level  [y             ]
+ Period [m1           ]  -  [m2           ]                                                [h                          ]              status [u             ]  [b         ]
+
+
+
+
+
+
+}
+END -- gr5447
+END -- page01
+END -- folder01
+Table s_aah
+{
+[aah01      |aag02                |mm             |dd              |memo                        |aah04           |aah05          |dc      |bal             ]
+[aah01      |aag02                |mm             |dd              |memo                        |aah04           |aah05          |dc      |bal             ]
+[aah01      |aag02                |mm             |dd              |memo                        |aah04           |aah05          |dc      |bal             ]
+[aah01      |aag02                |mm             |dd              |memo                        |aah04           |aah05          |dc      |bal             ]
+[aah01      |aag02                |mm             |dd              |memo                        |aah04           |aah05          |dc      |bal             ]
+[aah01      |aag02                |mm             |dd              |memo                        |aah04           |aah05          |dc      |bal             ]
+[aah01      |aag02                |mm             |dd              |memo                        |aah04           |aah05          |dc      |bal             ]
+[aah01      |aag02                |mm             |dd              |memo                        |aah04           |aah05          |dc      |bal             ]
+[aah01      |aag02                |mm             |dd              |memo                        |aah04           |aah05          |dc      |bal             ]
+[aah01      |aag02                |mm             |dd              |memo                        |aah04           |aah05          |dc      |bal             ]
+
+}
+END -- s_aah
+Grid gr5449
+{
+ ----------- Rows [cnt   ] -----------
+
+
+}
+END -- gr5449
+END -- VBox1
+END -- gglq300
+
+TABLES
+aah_file
+ATTRIBUTES
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit yy=formonly.yy type VARCHAR, tabIndex=2;
+CheckBox a=formonly.a type CHAR, tabIndex=5, text=%"a", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=6, text=%"Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit y=formonly.y type SMALLINT, tabIndex=8;
+Edit m1=formonly.m1 type SMALLINT, tabIndex=3;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=4;
+CheckBox h=formonly.h type VARCHAR, tabIndex=7, text=%"Monetary Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox u=formonly.u type CHAR, tabIndex=9, items=(("1", "1"),("2", "2"));
+CheckBox b=formonly.b type VARCHAR, tabIndex=10, text=%"b", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit aah01=aah_file.aah01, action=controlp, tabIndex=11, title=%"aah01", image="zoom";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=12, title=%"aag02";
+Edit mm=formonly.mm type DATE, tabIndex=13, title=%"Month";
+Edit dd=formonly.dd type VARCHAR, tabIndex=14, title=%"Day";
+Edit memo=formonly.memo type VARCHAR, tabIndex=15, title=%"Memo";
+Edit aah04=aah_file.aah04, tabIndex=16, title=%"Debit Amount";
+Edit aah05=aah_file.aah05, tabIndex=17, title=%"Credit Amount";
+Edit dc=formonly.dc type VARCHAR, tabIndex=18, title=%"D/C";
+Edit bal=formonly.bal type VARCHAR, tabIndex=19, title=%"Balance L.C Amt";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aah(aah_file.aah01,formonly.aag02,formonly.mm,formonly.dd,formonly.memo,aah_file.aah04,aah_file.aah05,formonly.dc,formonly.bal)
+SCREEN RECORD Undefined(formonly.bookno,formonly.m1,formonly.m2,formonly.e,formonly.h,formonly.a,formonly.y,formonly.yy,formonly.cnt,formonly.u,formonly.b)
+END -- INSTRUCTIONS
+

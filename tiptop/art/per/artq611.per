@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq611.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid ds1
+{
+
+[label1  |luiplant            ] [label2 ][lui05               ]  [label4 ][lua34               ]
+[label9  |lmf03               ] [label3  |lui06               ]  [label5 ][lui12               ]
+[label10][lmf04               ] [label11 |lmf13               ]  [label6 ][lui11               ]
+[label12][lie04               ] [label7  |luj05               ]  [label8 ][lui03               ]
+
+
+
+
+}
+END -- ds1
+END -- Page1
+END -- Folder1
+Table s_lui
+{
+[luiplan1  |rtz13                         |lui01     |occ02                         |lui02               |lmf13_1                       |lui07               |lui04               |lui08               |luj02   |luj01     |oaj02                         |lui09     |luj06                 |lui13                         ]
+[luiplan1  |rtz13                         |lui01     |occ02                         |lui02               |lmf13_1                       |lui07               |lui04               |lui08               |luj02   |luj01     |oaj02                         |lui09     |luj06                 |lui13                         ]
+[luiplan1  |rtz13                         |lui01     |occ02                         |lui02               |lmf13_1                       |lui07               |lui04               |lui08               |luj02   |luj01     |oaj02                         |lui09     |luj06                 |lui13                         ]
+[luiplan1  |rtz13                         |lui01     |occ02                         |lui02               |lmf13_1                       |lui07               |lui04               |lui08               |luj02   |luj01     |oaj02                         |lui09     |luj06                 |lui13                         ]
+[luiplan1  |rtz13                         |lui01     |occ02                         |lui02               |lmf13_1                       |lui07               |lui04               |lui08               |luj02   |luj01     |oaj02                         |lui09     |luj06                 |lui13                         ]
+
+}
+END -- s_lui
+Grid Grid1
+{
+
+ ---------[label13   ][cnt       ] ----------
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+lua_file,
+oaj_file,
+luj_file1=luj_file,
+lmf_file,
+lui_file1=lui_file,
+luj_file,
+lui_file,
+occ_file,
+rtz_file,
+lie_file
+ATTRIBUTES
+Label label1:Label1, text=%"luiplant";
+ButtonEdit luiplant=lui_file.luiplant, action=controlp, tabIndex=1, image="zoom", scroll;
+Label label2:Label2, text=%"lui05";
+ButtonEdit lui05=lui_file.lui05, action=controlp, tabIndex=5, image="zoom", scroll;
+Label label4:Label4, text=%"lua34";
+DateEdit lua34=lua_file.lua34, tabIndex=9;
+Label label9:Label9, text=%"lmf03";
+ButtonEdit lmf03=lmf_file.lmf03, action=controlp, tabIndex=2, image="zoom", scroll;
+Label label3:Label3, text=%"lui06";
+ButtonEdit lui06=lui_file.lui06, action=controlp, tabIndex=6, image="zoom", scroll;
+Label label5:Label5, text=%"lui12";
+ButtonEdit lui12=lui_file.lui12, action=controlp, tabIndex=10, image="zoom", scroll;
+Label label10:Label10, text=%"lmf04";
+ButtonEdit lmf04=lmf_file.lmf04, action=controlp, tabIndex=3, image="zoom", scroll;
+Label label11:Label11, text=%"lmf13";
+TextEdit lmf13=lmf_file.lmf13, tabIndex=7;
+Label label6:Label6, text=%"lui11";
+ButtonEdit lui11=lui_file.lui11, action=controlp, tabIndex=11, image="zoom", scroll;
+Label label12:Label12, text=%"lie04";
+ButtonEdit lie04=lie_file.lie04, action=controlp, tabIndex=4, image="zoom";
+Label label7:Label7, text=%"luj05";
+ButtonEdit luj05=luj_file.luj05, action=controlp, tabIndex=8, image="zoom", scroll;
+Label label8:Label8, text=%"lui03";
+DateEdit lui03=lui_file.lui03, tabIndex=12;
+Edit luiplan1=lui_file1.luiplant, tabIndex=13, title=%"luiplant", not null, scroll;
+Edit rtz13=rtz_file.rtz13, tabIndex=14, title=%"rtz13", scroll;
+Edit lui01=lui_file1.lui05, tabIndex=15, title=%"lui05", scroll;
+Edit occ02=occ_file.occ02, tabIndex=16, title=%"occ02", scroll;
+Edit lui02=lui_file1.lui06, tabIndex=17, title=%"lui06", scroll;
+Edit lmf13_1=formonly.lmf13_1 type VARCHAR, tabIndex=18, title=%"lmf13_1", scroll;
+Edit lui07=lui_file.lui07, tabIndex=19, title=%"lui07", scroll;
+Edit lui04=lui_file.lui04, tabIndex=20, title=%"lui04", scroll;
+Edit lui08=lui_file.lui01, tabIndex=21, title=%"lui01", not null, scroll;
+Edit luj02=luj_file.luj02, tabIndex=22, title=%"luj02";
+Edit luj01=luj_file1.luj05, tabIndex=23, title=%"luj05", scroll;
+Edit oaj02=oaj_file.oaj02, tabIndex=24, title=%"oaj02", scroll;
+Edit lui09=lui_file1.lui03, tabIndex=25, title=%"lui03", scroll;
+Edit luj06=luj_file.luj06, tabIndex=26, title=%"luj06", scroll;
+Edit lui13=lui_file.lui13, tabIndex=27, title=%"lui13", scroll;
+Label label13:Label13, text=%"Label13";
+Edit cnt=formonly.cnt, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(lui_file.luiplant,lui_file.lui05,lui_file.lui06,lua_file.lua34,lui_file.lui12,lui_file.lui11,luj_file.luj05,lui_file.lui03,lmf_file.lmf03,lmf_file.lmf04,lmf_file.lmf13)
+SCREEN RECORD Undefined(lie_file.lie04,formonly.cnt)
+SCREEN RECORD s_lui(lui_file1.luiplant,rtz_file.rtz13,lui_file1.lui05,occ_file.occ02,lui_file1.lui06,formonly.lmf13_1,lui_file.lui07,lui_file.lui04,lui_file.lui01,luj_file.luj02,luj_file1.luj05,oaj_file.oaj02,lui_file1.lui03,luj_file.luj06,lui_file.lui13)
+END -- INSTRUCTIONS
+

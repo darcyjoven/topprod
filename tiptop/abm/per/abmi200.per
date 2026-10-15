@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi200")
+VBox VBox1
+Folder pc109
+Page page01(text="Main")
+VBox VBox2
+Table s_bmt
+{
+[bmt0|bmt06     |bmt07      ]
+[bmt0|bmt06     |bmt07      ]
+[bmt0|bmt06     |bmt07      ]
+[bmt0|bmt06     |bmt07      ]
+[bmt0|bmt06     |bmt07      ]
+[bmt0|bmt06     |bmt07      ]
+[bmt0|bmt06     |bmt07      ]
+[bmt0|bmt06     |bmt07      ]
+[bmt0|bmt06     |bmt07      ]
+[bmt0|bmt06     |bmt07      ]
+
+}
+END -- s_bmt
+Grid gr726
+{
+ <G group01                                 ><G group02                                 >
+  Inst.Loc Total      [bmb06               ]  QPA Total           [tot                 ]
+ <                                          ><                                          >
+
+}
+END -- gr726
+END -- VBox2
+END -- page01
+END -- pc109
+Grid gr727
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr727
+END -- VBox1
+END -- abmi200
+
+TABLES
+bmt_file,
+bmb_file
+ATTRIBUTES
+Edit bmt0=bmt_file.bmt05, tabIndex=1, title="Ln#";
+Edit bmt06=bmt_file.bmt06, tabIndex=2, title="Inst.Loc", not null, required;
+Edit bmt07=bmt_file.bmt07, tabIndex=3, title="QPA";
+Group group01:group01;
+Edit bmb06=bmb_file.bmb06, tabIndex=4;
+Group group02:group02;
+Edit tot=formonly.tot type DECIMAL, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmt(bmt_file.bmt05,bmt_file.bmt06,bmt_file.bmt07)
+SCREEN RECORD Undefined(bmb_file.bmb06,formonly.tot,formonly.cn2)
+END -- INSTRUCTIONS
+

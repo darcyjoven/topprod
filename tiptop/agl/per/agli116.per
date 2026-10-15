@@ -1,0 +1,119 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli116.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli116")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr2393
+{
+ Report No.          [mai01     ]                      [imgmksg]
+ Name                [mai02                         ]  [       ]
+ Book No             [mai00]
+ Report Property     [mai03                         ]   Mapped Book No    [mai04]
+}
+END -- gr2393
+END -- page01
+Page info(text="Info")
+Grid gr2394
+{
+ Record Owner        [maiuser   ]   Last Modified by    [maimodu   ]   Data Valid Code     [maiacti   ]
+ Department          [maigrup   ]   Create/Modify Date  [maidate     ]
+ Record Orig.        [maioriu   ]
+ Dept Orig.          [maiorig   ]
+
+}
+END -- gr2394
+END -- info
+END -- folder01
+Table s_maj
+{
+[maj02   |maj03     |ma|maj06  |maj04|maj05 |maj07                |maj26   |maj20                         |maj20e                                            |maj31   |maj21     |maj22     |maj24  |maj25  |m1|maj08     |maj23a|maj23b|maj27               |maj28               |maj32   |maj33   |maj34   |maj35   ]
+[maj02   |maj03     |ma|maj06  |maj04|maj05 |maj07                |maj26   |maj20                         |maj20e                                            |maj31   |maj21     |maj22     |maj24  |maj25  |m1|maj08     |maj23a|maj23b|maj27               |maj28               |maj32   |maj33   |maj34   |maj35   ]
+[maj02   |maj03     |ma|maj06  |maj04|maj05 |maj07                |maj26   |maj20                         |maj20e                                            |maj31   |maj21     |maj22     |maj24  |maj25  |m1|maj08     |maj23a|maj23b|maj27               |maj28               |maj32   |maj33   |maj34   |maj35   ]
+[maj02   |maj03     |ma|maj06  |maj04|maj05 |maj07                |maj26   |maj20                         |maj20e                                            |maj31   |maj21     |maj22     |maj24  |maj25  |m1|maj08     |maj23a|maj23b|maj27               |maj28               |maj32   |maj33   |maj34   |maj35   ]
+[maj02   |maj03     |ma|maj06  |maj04|maj05 |maj07                |maj26   |maj20                         |maj20e                                            |maj31   |maj21     |maj22     |maj24  |maj25  |m1|maj08     |maj23a|maj23b|maj27               |maj28               |maj32   |maj33   |maj34   |maj35   ]
+[maj02   |maj03     |ma|maj06  |maj04|maj05 |maj07                |maj26   |maj20                         |maj20e                                            |maj31   |maj21     |maj22     |maj24  |maj25  |m1|maj08     |maj23a|maj23b|maj27               |maj28               |maj32   |maj33   |maj34   |maj35   ]
+[maj02   |maj03     |ma|maj06  |maj04|maj05 |maj07                |maj26   |maj20                         |maj20e                                            |maj31   |maj21     |maj22     |maj24  |maj25  |m1|maj08     |maj23a|maj23b|maj27               |maj28               |maj32   |maj33   |maj34   |maj35   ]
+[maj02   |maj03     |ma|maj06  |maj04|maj05 |maj07                |maj26   |maj20                         |maj20e                                            |maj31   |maj21     |maj22     |maj24  |maj25  |m1|maj08     |maj23a|maj23b|maj27               |maj28               |maj32   |maj33   |maj34   |maj35   ]
+[maj02   |maj03     |ma|maj06  |maj04|maj05 |maj07                |maj26   |maj20                         |maj20e                                            |maj31   |maj21     |maj22     |maj24  |maj25  |m1|maj08     |maj23a|maj23b|maj27               |maj28               |maj32   |maj33   |maj34   |maj35   ]
+[maj02   |maj03     |ma|maj06  |maj04|maj05 |maj07                |maj26   |maj20                         |maj20e                                            |maj31   |maj21     |maj22     |maj24  |maj25  |m1|maj08     |maj23a|maj23b|maj27               |maj28               |maj32   |maj33   |maj34   |maj35   ]
+
+}
+END -- s_maj
+Grid gr2395
+{
+ <G group01                                                                      >
+  User Authorization [smu02_display                                            ]
+  Dept Authorization [smv02_display                                            ]
+ <                                                                               >
+}
+END -- gr2395
+Grid gr2396
+{
+
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2396
+END -- vb2
+END -- agli116
+
+TABLES
+maj_file,
+mai_file
+ATTRIBUTES
+Edit mai01=mai_file.mai01, tabIndex=1, comment="KEY Field, No Blank/Repeated!";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit mai02=mai_file.mai02, tabIndex=2;
+ButtonEdit mai00=mai_file.mai00, action=controlp, tabIndex=34, not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+ComboBox mai03=mai_file.mai03, tabIndex=3, not null, required, queryEditable, items=(("1", "Trial Balance"),("2", "Balance Sheet"),("3", "Income statement"),("4", "Other"),("5", "Balance Sheet(IFRS)"),("6", "Income statement(IFRS)"));
+ButtonEdit mai04=mai_file.mai04, action=controlp, tabIndex=41, not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+Edit maiuser=mai_file.maiuser, tabIndex=4, noEntry;
+Edit maimodu=mai_file.maimodu, tabIndex=5, noEntry;
+Edit maiacti=mai_file.maiacti, tabIndex=6, noEntry, upShift;
+Edit maigrup=mai_file.maigrup, tabIndex=7, noEntry;
+DateEdit maidate=mai_file.maidate, tabIndex=8, noEntry;
+Edit maioriu=mai_file.maioriu, tabIndex=35, noEntry;
+Edit maiorig=mai_file.maiorig, tabIndex=36, noEntry;
+Edit maj02=maj_file.maj02, tabIndex=9, title="Serial#", not null, required;
+ComboBox maj03=maj_file.maj03, tabIndex=10, title="Print Cd.", not null, required, queryEditable, items=(("0", %"No Print/Sum"),("1", %"Normal Print"),("2", %"Amount not 0"),("3", %"Underline"),("4", %"Horizontal line"),("5", %"Print&No Sum"),("9", %"Next Page before Print"),("H", %"head"),("%", %"%"));
+ComboBox ma=maj_file.maj09, tabIndex=11, title="+/-", not null, required, queryEditable, items=(("+", %"Total(+)"),("-", %"Total(-)"));
+ComboBox maj06=maj_file.maj06, tabIndex=12, title="Choice", not null, required, queryEditable, items=(("1", %"BoP Account (Debit-Credit)"),("2", %"Current Period Account Transaction"),("3", %"End of period of account(Debit - Credit"),("4", %"Current Period Account (Debit)"),("5", %"Current Period Account (Credit)"),("6", %"BoP Account (Debit)"),("7", %"BoP Account (Credit)"),("8", %"EoP Account (Debit)"),("9", %"EoP Account (Credit)"));
+Edit maj04=maj_file.maj04, tabIndex=13, title="Line";
+Edit maj05=maj_file.maj05, tabIndex=14, title="Space";
+ComboBox maj07=maj_file.maj07, tabIndex=15, title="Debit/Credit Balance", not null, required, items=(("1", %"Debit Balance"),("2", %"Credit Balance"));
+Edit maj26=maj_file.maj26, tabIndex=16, title="Line No. Account Title";
+ButtonEdit maj20=maj_file.maj20, action=controlp, tabIndex=17, image="zoom", comment="<^P>Qry Account No.  .####(Account Title)Display Name";
+Edit maj20e=maj_file.maj20e, tabIndex=18, title="Extra Name", comment="Enter Extra Account Title";
+ButtonEdit maj31=maj_file.maj31, action=controlp, tabIndex=19, title=%"XBRL", image="zoom";
+ButtonEdit maj21=maj_file.maj21, action=controlp, tabIndex=20, title="I Account", image="zoom", comment="<^P>Qry Account No.";
+ButtonEdit maj22=maj_file.maj22, action=controlp, tabIndex=21, title="E Account", image="zoom", comment="<^P>Qry Account No.";
+ButtonEdit maj24=maj_file.maj24, action=controlp, tabIndex=22, title="I Dept", image="zoom", comment="<^P>Qry  Department No.";
+ButtonEdit maj25=maj_file.maj25, action=controlp, tabIndex=23, title="E Dept", image="zoom", comment="<^P>Qry  Department No.";
+CheckBox m1=maj_file.maj11, tabIndex=24, title="%", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Percentage Base Account?";
+Edit maj08=maj_file.maj08, tabIndex=25, title="Tot Level";
+Edit maj23a=formonly.maj23a type CHAR, tabIndex=26, title="1BS", comment="1.Bal.Sheet 2.Income Statement ";
+Edit maj23b=formonly.maj23b type CHAR, tabIndex=27, title="2IS", comment=" 1.Left 2.Right";
+Edit maj27=maj_file.maj27, tabIndex=28, title="Formula-Month", comment="Maintain Formula For Current Account By Serail#. Ex: (37.000+5.000)/3 ";
+Edit maj28=maj_file.maj28, tabIndex=29, title="Formula-Year", comment="Maintain Formula For Current Account By Serail#. Ex: (37.000+5.000)/3 ";
+ButtonEdit maj32=maj_file.maj32, action=controlp, tabIndex=37, title=%"Mapped Account", image="zoom";
+Edit maj33=maj_file.maj33, tabIndex=38, title=%"Mapped Extra Name";
+ButtonEdit maj34=maj_file.maj34, action=controlp, tabIndex=39, title=%"Mapped I Account", image="zoom";
+ButtonEdit maj35=maj_file.maj35, action=controlp, tabIndex=40, title=%"Mapped E Account", image="zoom";
+Group group01:group01;
+Edit smu02_display=formonly.smu02_display type CHAR, tabIndex=30, noEntry;
+Edit smv02_display=formonly.smv02_display type CHAR, tabIndex=31, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=32, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_maj(maj_file.maj02,maj_file.maj03,maj_file.maj09,maj_file.maj06,maj_file.maj04,maj_file.maj05,maj_file.maj07,maj_file.maj26,maj_file.maj20,maj_file.maj20e,maj_file.maj31,maj_file.maj21,maj_file.maj22,maj_file.maj24,maj_file.maj25,maj_file.maj11,maj_file.maj08,formonly.maj23a,formonly.maj23b,maj_file.maj27,maj_file.maj28,maj_file.maj32,maj_file.maj33,maj_file.maj34,maj_file.maj35)
+SCREEN RECORD Undefined(mai_file.mai01,formonly.imgmksg,mai_file.mai02,mai_file.mai00,mai_file.mai03,mai_file.maiuser,mai_file.maimodu,mai_file.maiacti,mai_file.maigrup,mai_file.maidate,mai_file.maioriu,mai_file.maiorig,formonly.smu02_display,formonly.smv02_display,formonly.cnt,formonly.cn2,mai_file.mai04)
+END -- INSTRUCTIONS
+

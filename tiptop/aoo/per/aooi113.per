@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi113.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi113")
+VBox vb6
+Folder pc842
+Page page01(text="Page01")
+Table s_ryf
+{
+[ryf01        |ryf02          |ryf03        |ryf03_desc       |ryfac]
+[ryf01        |ryf02          |ryf03        |ryf03_desc       |ryfac]
+[ryf01        |ryf02          |ryf03        |ryf03_desc       |ryfac]
+[ryf01        |ryf02          |ryf03        |ryf03_desc       |ryfac]
+[ryf01        |ryf02          |ryf03        |ryf03_desc       |ryfac]
+[ryf01        |ryf02          |ryf03        |ryf03_desc       |ryfac]
+[ryf01        |ryf02          |ryf03        |ryf03_desc       |ryfac]
+[ryf01        |ryf02          |ryf03        |ryf03_desc       |ryfac]
+[ryf01        |ryf02          |ryf03        |ryf03_desc       |ryfac]
+[ryf01        |ryf02          |ryf03        |ryf03_desc       |ryfac]
+
+}
+END -- s_ryf
+END -- page01
+END -- pc842
+Grid gr4634
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4634
+END -- vb6
+END -- aooi113
+
+TABLES
+ryf_file
+ATTRIBUTES
+Edit ryf01=ryf_file.ryf01, tabIndex=1, title="ryf01", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit ryf02=ryf_file.ryf02, tabIndex=2, title="ryf02";
+ButtonEdit ryf03=ryf_file.ryf03, action=controlp, tabIndex=3, title="ryf03", image="zoom", comment="<^P> Query Local ";
+Edit ryf03_desc=formonly.ryf03_desc type CHAR, tabIndex=4, title="ryf03_desc", noEntry;
+CheckBox ryfac=ryf_file.ryfacti, tabIndex=5, title="ryfacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ryf(ryf_file.ryf01,ryf_file.ryf02,ryf_file.ryf03,formonly.ryf03_desc,ryf_file.ryfacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

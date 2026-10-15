@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr191.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group Group1(text=%"QBE")
+Grid Grid1
+{
+
+[label1          ][apa22                     ]
+[label2          ][apa21                     ]
+[label3          ][pmy01                     ]
+[label4          ][apa06                     ]
+[label5           |apa00                     ]
+
+
+}
+END -- Grid1
+END -- Group1
+Group Group2(text=%"INPUT")
+Grid Grid2
+{
+
+[aly01          |aly02         ]
+[aly1           |a                ]
+[aly2           |edate            ]
+[detail                        ]
+[zr                            ]
+[org                                    ]
+}
+END -- Grid2
+END -- Group2
+Grid Grid3
+{
+  [more                                    ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- aapr191
+
+TABLES
+apa_file,
+pmy_file
+ATTRIBUTES
+Label label1:Label1, text=%"Department No.";
+ButtonEdit apa22=apa_file.apa22, action=controlp, tabIndex=1, image="zoom", scroll;
+Label label2:Label2, text=%"Employee No.";
+ButtonEdit apa21=apa_file.apa21, action=controlp, tabIndex=2, image="zoom", scroll;
+Label label3:Label3, text=%"pmy01";
+ButtonEdit pmy01=pmy_file.pmy01, action=controlp, tabIndex=3, image="zoom", scroll;
+Label label4:Label4, text=%"apa06";
+ButtonEdit apa06=apa_file.apa06, action=controlp, tabIndex=4, image="zoom", scroll;
+Label label5:Label5, text=%"Accounts Property";
+ComboBox apa00=apa_file.apa00, tabIndex=11, queryEditable, items=(("11", "Purchase Invoice"),("12", "MISC Invoice"),("15", "Advance Payment Appl."),("16", "Temp. Store-in"),("21", "Allowance"),("22", "D.M."),("23", "Advance Payment"),("24", "Overpayment"),("26", "Temp. Store-out"));
+Label aly01:aly01, text=%"Aging Cate";
+ButtonEdit aly02=formonly.aly01 type CHAR, action=controlp, tabIndex=5, image="zoom";
+Label aly1:aly1, text=%"jzrqxz";
+ComboBox a=formonly.a type CHAR, tabIndex=6, not null, items=(("1", "En.Ac.Dt"),("2", "A/P Date"));
+Label aly2:aly2, text=%"jzrq";
+DateEdit edate=formonly.edate type CHAR, tabIndex=7;
+CheckBox detail=formonly.detail type CHAR, tabIndex=8, default = "N", text=%"Print Detailed Account?", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox zr=formonly.zr type CHAR, tabIndex=9, default = "N", text=%"Deduct Allowance Data", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox org=formonly.org type CHAR, tabIndex=12, default = "N", text=%"According to the org currency info", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=10, default = "N", text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(apa_file.apa22,apa_file.apa21,pmy_file.pmy01,apa_file.apa06)
+SCREEN RECORD Undefined(formonly.aly01,formonly.a,formonly.edate,formonly.detail,formonly.zr,formonly.more,apa_file.apa00,formonly.org)
+END -- INSTRUCTIONS
+

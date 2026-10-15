@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amm/42f/ammt200_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ammt200_a")
+Grid gr3797
+{
+ <G group01                       >
+  Default Wearhouse   [mma21     ]
+  Default Location    [mma211    ]
+ <                                >
+
+}
+END -- gr3797
+END -- ammt200_a
+
+TABLES
+mma_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit mma21=mma_file.mma21, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Warehouse";
+Edit mma211=mma_file.mma211, tabIndex=2, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(mma_file.mma21,mma_file.mma211)
+END -- INSTRUCTIONS
+

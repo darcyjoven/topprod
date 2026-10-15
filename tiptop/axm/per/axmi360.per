@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi360.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi360")
+VBox VBox1
+Folder pc491
+Page page01(text="Main")
+Grid gr2095
+{
+  Login user          [oqs01     ]
+ <G group01                                                                          >
+  Title               [oqs13                                   ]
+  Contents            [oqs141                                                      ]
+                      [oqs142                                                      ]
+                      [oqs143                                                      ]
+
+  PAYMENT             [oqs151                                                      ]
+                      [oqs152                                                      ]
+
+  SHIPMENT            [oqs161                                                      ]
+                      [oqs162                                                      ]
+
+  PACKING             [oqs171                                                      ]
+                      [oqs172                                                      ]
+                      [oqs173                                                      ]
+
+  INSURANCE           [oqs181                                                      ]
+                      [oqs182                                                      ]
+
+  VALIDITY            [oqs191                                                      ]
+                      [oqs192                                                      ]
+
+  Signature           [oqs20                                   ]
+ <                                                                                   >
+
+}
+END -- gr2095
+END -- page01
+Page info(text="Info")
+Grid gr2096
+{
+ Record Owner        [oqsuser   ] Last Modified by    [oqsmodu   ] Data Valid Code     [oqsacti   ]
+ Department          [oqsgrup   ] Create/Modify Date  [oqsdate     ]
+ Record Orig.        [oqsoriu   ]
+ Dept Orig.          [oqsorig   ]
+}
+END -- gr2096
+END -- info
+END -- pc491
+Grid gr2097
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2097
+END -- VBox1
+END -- axmi360
+
+TABLES
+oqs_file
+ATTRIBUTES
+ButtonEdit oqs01=oqs_file.oqs01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Group group01:group01;
+Edit oqs13=oqs_file.oqs13, tabIndex=2;
+Edit oqs141=oqs_file.oqs141, tabIndex=3;
+Edit oqs142=oqs_file.oqs142, tabIndex=4;
+Edit oqs143=oqs_file.oqs143, tabIndex=5;
+Edit oqs151=oqs_file.oqs151, tabIndex=6;
+Edit oqs152=oqs_file.oqs152, tabIndex=7;
+Edit oqs161=oqs_file.oqs161, tabIndex=8;
+Edit oqs162=oqs_file.oqs162, tabIndex=9;
+Edit oqs171=oqs_file.oqs171, tabIndex=10;
+Edit oqs172=oqs_file.oqs172, tabIndex=11;
+Edit oqs173=oqs_file.oqs173, tabIndex=12;
+Edit oqs181=oqs_file.oqs181, tabIndex=13;
+Edit oqs182=oqs_file.oqs182, tabIndex=14;
+Edit oqs191=oqs_file.oqs191, tabIndex=15;
+Edit oqs192=oqs_file.oqs192, tabIndex=16;
+Edit oqs20=oqs_file.oqs20, tabIndex=17;
+Edit oqsuser=oqs_file.oqsuser, tabIndex=18, noEntry;
+Edit oqsmodu=oqs_file.oqsmodu, tabIndex=19, noEntry;
+Edit oqsacti=oqs_file.oqsacti, tabIndex=20, noEntry;
+Edit oqsgrup=oqs_file.oqsgrup, tabIndex=21, noEntry;
+DateEdit oqsdate=oqs_file.oqsdate, tabIndex=22, noEntry;
+Edit oqsoriu=oqs_file.oqsoriu, tabIndex=501, noEntry;
+Edit oqsorig=oqs_file.oqsorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oqs_file.oqs01,oqs_file.oqs13,oqs_file.oqs141,oqs_file.oqs142,oqs_file.oqs143,oqs_file.oqs151,oqs_file.oqs152,oqs_file.oqs161,oqs_file.oqs162,oqs_file.oqs171,oqs_file.oqs172,oqs_file.oqs173,oqs_file.oqs181,oqs_file.oqs182,oqs_file.oqs191,oqs_file.oqs192,oqs_file.oqs20,oqs_file.oqsuser,oqs_file.oqsmodu,oqs_file.oqsacti,oqs_file.oqsgrup,oqs_file.oqsdate,oqs_file.oqsoriu,oqs_file.oqsorig,formonly.cnt)
+END -- INSTRUCTIONS
+

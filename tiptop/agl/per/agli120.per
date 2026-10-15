@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli120")
+VBox vb2
+Folder folder01
+Page page01(text="Page01")
+Grid gr2397
+{
+ Book No       [ahf00]
+ Account      [ahf01       ][aag02                                                                           ]
+}
+END -- gr2397
+END -- page01
+END -- folder01
+Table s_ahf
+{
+[ahf02       |gaz03                       |ahf03        |ahe02                 |ahf04         |gaq03             ]
+[ahf02       |gaz03                       |ahf03        |ahe02                 |ahf04         |gaq03             ]
+[ahf02       |gaz03                       |ahf03        |ahe02                 |ahf04         |gaq03             ]
+[ahf02       |gaz03                       |ahf03        |ahe02                 |ahf04         |gaq03             ]
+[ahf02       |gaz03                       |ahf03        |ahe02                 |ahf04         |gaq03             ]
+[ahf02       |gaz03                       |ahf03        |ahe02                 |ahf04         |gaq03             ]
+[ahf02       |gaz03                       |ahf03        |ahe02                 |ahf04         |gaq03             ]
+[ahf02       |gaz03                       |ahf03        |ahe02                 |ahf04         |gaq03             ]
+[ahf02       |gaz03                       |ahf03        |ahe02                 |ahf04         |gaq03             ]
+[ahf02       |gaz03                       |ahf03        |ahe02                 |ahf04         |gaq03             ]
+}
+END -- s_ahf
+Grid gr2398
+{
+ ---------- Rows [cnt   ] / [cn2   ] ---------------------------------------------------------------------------------
+[dummy01                                                                              ]
+
+}
+END -- gr2398
+END -- vb2
+END -- agli120
+
+TABLES
+ahf_file
+ATTRIBUTES
+ButtonEdit ahf00=ahf_file.ahf00, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Qry Book No.";
+ButtonEdit ahf01=ahf_file.ahf01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Account";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit ahf02=ahf_file.ahf02, action=controlp, tabIndex=3, title="Transaction", not null, required, image="zoom", comment="<^P>Qry Transaction";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=4, title="Transaction Maintain Name", noEntry;
+ComboBox ahf03=ahf_file.ahf03, tabIndex=5, title="Trans. Order", not null, required, queryEditable, items=(("1", "Transaction Code-1"),("2", "Transaction Code-2"),("3", "Transaction Code-3"),("4", "Transaction Code-4"),("5", "Transaction Code-5"),("6", "Transaction Code-6"),("7", "Transaction Code-7"),("8", "Transaction Code-8"),("9", "Transaction Code-9"),("10", "Transaction Code-10"),("99", "Affiliate Transaction Code"));
+Edit ahe02=formonly.ahe02 type CHAR, tabIndex=6, title="Transaction Code Name", noEntry;
+ButtonEdit ahf04=ahf_file.ahf04, action=controlp, tabIndex=7, title="Default Field", not null, required, image="zoom", comment="<^P>Qry Field";
+Edit gaq03=formonly.gaq03 type CHAR, tabIndex=8, title="Field Description", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=10, noEntry;
+Label dummy01:dummy01, text="Remark: When you use  Dimension - Affiliate , please use vender(customer) code for defult field !";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ahf(ahf_file.ahf02,formonly.gaz03,ahf_file.ahf03,formonly.ahe02,ahf_file.ahf04,formonly.gaq03)
+SCREEN RECORD Undefined(ahf_file.ahf00,ahf_file.ahf01,formonly.aag02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

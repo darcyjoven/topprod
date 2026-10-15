@@ -1,0 +1,60 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi115.per created Wed Jan 23 05:30:32 2008
+-- File created from axdi115.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi115")
+-- TABLE
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1561
+      PAGE page01( TEXT="Page01")
+        TABLE   s_obz
+        {
+        [aa0                |aa1                 |aa2                 |aa3                |aa4               |aa5   ]
+        [aa0                |aa1                 |aa2                 |aa3                |aa4               |aa5   ]
+        [aa0                |aa1                 |aa2                 |aa3                |aa4               |aa5   ]
+        [aa0                |aa1                 |aa2                 |aa3                |aa4               |aa5   ]
+        [aa0                |aa1                 |aa2                 |aa3                |aa4               |aa5   ]
+        [aa0                |aa1                 |aa2                 |aa3                |aa4               |aa5   ]
+        [aa0                |aa1                 |aa2                 |aa3                |aa4               |aa5   ]
+        [aa0                |aa1                 |aa2                 |aa3                |aa4               |aa5   ]
+        [aa0                |aa1                 |aa2                 |aa3                |aa4               |aa5   ]
+        [aa0                |aa1                 |aa2                 |aa3                |aa4               |aa5   ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr7758
+    {
+     ----------Rows [aa6   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES obz_file
+
+ATTRIBUTES
+  EDIT aa0=obz_file.obz01, COMMENT="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ", NOT NULL, REQUIRED, TABINDEX=1, TITLE="Vehicle Group No";
+  EDIT aa1=obz_file.obz02, TABINDEX=2, TITLE="Description";
+  EDIT aa2=obz_file.obz03, TABINDEX=3, TITLE="Vehcile Header";
+  EDIT aa3=obz_file.obz04, TABINDEX=4, TITLE="Contact Phone 1";
+  EDIT aa4=obz_file.obz05, TABINDEX=5, TITLE="Contact Phone 2";
+  CHECKBOX aa5=obz_file.obzacti, NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=6, TITLE="Valid";
+  EDIT aa6=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=7;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_obz (obz_file.obz01, obz_file.obz02, obz_file.obz03, obz_file.obz04, obz_file.obz05, obz_file.obzacti)
+END

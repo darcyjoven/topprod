@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqci102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqci102")
+Folder pc1
+Page page01(text="Main")
+VBox VBox1
+Table s_qce
+{
+[qce01        |qce03                         |qceac]
+[qce01        |qce03                         |qceac]
+[qce01        |qce03                         |qceac]
+[qce01        |qce03                         |qceac]
+[qce01        |qce03                         |qceac]
+[qce01        |qce03                         |qceac]
+[qce01        |qce03                         |qceac]
+[qce01        |qce03                         |qceac]
+[qce01        |qce03                         |qceac]
+[qce01        |qce03                         |qceac]
+[qce01        |qce03                         |qceac]
+
+}
+END -- s_qce
+Grid gr3
+{
+ --------- Rows [cn2   ] ----------
+
+}
+END -- gr3
+END -- VBox1
+END -- page01
+END -- pc1
+END -- aqci102
+
+TABLES
+qce_file
+ATTRIBUTES
+Edit qce01=qce_file.qce01, tabIndex=1, title="No-Good Code", not null, required, comment="Key Field, No Blank";
+Edit qce03=qce_file.qce03, tabIndex=2, title="Description";
+CheckBox qceac=qce_file.qceacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qce(qce_file.qce01,qce_file.qce03,qce_file.qceacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

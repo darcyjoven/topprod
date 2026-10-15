@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai550.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai550")
+VBox VBox1
+Folder pc345
+Page page01(text="Main")
+Grid gr1884
+{
+ Property No.        [fcx01               ][fcx011    ]
+ Chinese Name -1     [fak06                         ]
+                     [fak061                        ]
+ Data Year/Month     [fcx02     ][fcx03     ]
+
+ Begin Mon Accu Amt  [fcx04               ]             Captl. Voucher No.  [fcx11               ]
+ Curr. Month Expense [fcx05               ]             Voucher Date        [fcx12       ]
+ Interest Capt. Amt. [fcx06               ]             Trans.Fix Ass. Date [fcx13       ]
+ Interest by Cost    [fcx07               ]             Captl. Voucher No.  [fcx112              ]
+ Actual Interest     [fcx08               ]             Voucher Date        [fcx122      ]
+ Prepaid Equipment   [fcx09                         ]   Prepaid Equipment2  [fcx091                        ]
+ Inst. Expense Acct  [fcx10                         ]   Inst. Expense Acct2 [fcx101                        ]
+
+
+}
+END -- gr1884
+END -- page01
+Page info(text="Info")
+Grid gr1885
+{
+ Record Owner      [fcxuser   ] Last Modified By  [fcxmodu   ] Data Valid Code   [fcxacti   ]
+ Department        [fcxgrup   ] Create/MidifyDate [fcxdate   ]
+ Record Orig.      [fcxoriu   ]
+ Dept Orig.        [fcxorig   ]
+
+}
+END -- gr1885
+END -- info
+END -- pc345
+Grid gr1886
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1886
+END -- VBox1
+END -- afai550
+
+TABLES
+fcx_file
+ATTRIBUTES
+ButtonEdit fcx01=fcx_file.fcx01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Asset ";
+Edit fcx011=fcx_file.fcx011, tabIndex=2, not null, required;
+Edit fak06=formonly.fak06 type CHAR, tabIndex=3, noEntry;
+Edit fak061=formonly.fak061 type CHAR, tabIndex=4, noEntry;
+Edit fcx02=fcx_file.fcx02, tabIndex=5, not null, required, comment="KEY Field, No Blank/Repeated! ";
+Edit fcx03=fcx_file.fcx03, tabIndex=6, not null, required, comment="KEY Field, No Blank/Repeated! ";
+Edit fcx04=fcx_file.fcx04, tabIndex=7, format="---,---,---,--&";
+Edit fcx11=fcx_file.fcx11, tabIndex=8, noEntry;
+Edit fcx05=fcx_file.fcx05, tabIndex=9;
+DateEdit fcx12=fcx_file.fcx12, tabIndex=10, noEntry;
+Edit fcx06=fcx_file.fcx06, tabIndex=11;
+DateEdit fcx13=fcx_file.fcx13, tabIndex=12, noEntry;
+Edit fcx07=fcx_file.fcx07, tabIndex=13;
+Edit fcx112=fcx_file.fcx112, tabIndex=8, noEntry;
+Edit fcx08=fcx_file.fcx08, tabIndex=14;
+DateEdit fcx122=fcx_file.fcx122, tabIndex=10, noEntry;
+ButtonEdit fcx09=fcx_file.fcx09, action=controlp, tabIndex=15, image="zoom", comment="<^P> Qry Account";
+ButtonEdit fcx091=fcx_file.fcx091, action=controlp, tabIndex=16, image="zoom", comment="<^P> Qry Account";
+ButtonEdit fcx10=fcx_file.fcx10, action=controlp, tabIndex=17, image="zoom", comment="<^P> Qry Account";
+ButtonEdit fcx101=fcx_file.fcx101, action=controlp, tabIndex=18, image="zoom", comment="<^P> Qry Account";
+Edit fcxuser=fcx_file.fcxuser, tabIndex=19, noEntry;
+Edit fcxmodu=fcx_file.fcxmodu, tabIndex=20, noEntry;
+Edit fcxacti=fcx_file.fcxacti, tabIndex=21, noEntry, upShift;
+Edit fcxgrup=fcx_file.fcxgrup, tabIndex=22, noEntry;
+DateEdit fcxdate=fcx_file.fcxdate, tabIndex=23, noEntry;
+Edit fcxoriu=fcx_file.fcxoriu, tabIndex=26, noEntry;
+Edit fcxorig=fcx_file.fcxorig, tabIndex=25, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fcx_file.fcx01,fcx_file.fcx011,formonly.fak06,formonly.fak061,fcx_file.fcx02,fcx_file.fcx03,fcx_file.fcx04,fcx_file.fcx11,fcx_file.fcx05,fcx_file.fcx12,fcx_file.fcx06,fcx_file.fcx13,fcx_file.fcx07,fcx_file.fcx112,fcx_file.fcx08,fcx_file.fcx122,fcx_file.fcx09,fcx_file.fcx091,fcx_file.fcx10,fcx_file.fcx101,fcx_file.fcxuser,fcx_file.fcxmodu,fcx_file.fcxacti,fcx_file.fcxgrup,fcx_file.fcxdate,formonly.cnt,fcx_file.fcxorig,fcx_file.fcxoriu)
+END -- INSTRUCTIONS
+

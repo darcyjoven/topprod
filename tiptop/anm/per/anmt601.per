@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt601")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr4509
+{
+ Investment No.      [gsd01           ]
+
+}
+END -- gr4509
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_gsd
+{
+[gsd0|gsd03                                                       ]
+[gsd0|gsd03                                                       ]
+[gsd0|gsd03                                                       ]
+[gsd0|gsd03                                                       ]
+[gsd0|gsd03                                                       ]
+[gsd0|gsd03                                                       ]
+[gsd0|gsd03                                                       ]
+[gsd0|gsd03                                                       ]
+[gsd0|gsd03                                                       ]
+[gsd0|gsd03                                                       ]
+
+}
+END -- s_gsd
+Grid gr4510
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4510
+END -- VBox1
+END -- anmt601
+
+TABLES
+gsd_file
+ATTRIBUTES
+Edit gsd01=gsd_file.gsd01, tabIndex=1, comment="Key Field, No Blank/Repeated!    ";
+Edit gsd0=gsd_file.gsd02, tabIndex=2, title="Ln#", not null, required;
+Edit gsd03=gsd_file.gsd03, tabIndex=3, title="Description", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=4, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gsd(gsd_file.gsd02,gsd_file.gsd03)
+SCREEN RECORD Undefined(gsd_file.gsd01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

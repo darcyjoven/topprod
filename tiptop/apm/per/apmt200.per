@@ -1,0 +1,394 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt200")
+VBox VBox2
+Folder Folder2
+Page page_main(action=page_main, text=%"Page3")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr5247
+{
+ Goods RC No   [rva01             ]
+ Recpt Date    [rva06       ]
+ PO No.        [rva02             ]
+ Vender No.    [rva05       ][pmc03     ]
+               [rva99     ]
+
+
+
+}
+END -- gr5247
+Grid Grid1
+{
+ [rva04                              ]
+ Import D    [rva21           ]
+ Import Decl [rva08                   ]
+ Import No.  [rva09           ]
+ Pos No      [rva34           ]
+
+
+
+}
+END -- Grid1
+Grid Grid2
+{
+ Pur Pty     [rva10     |imgmksg]
+ Confirm     [rvaconf   |       ]
+ date        [rvacond   ]
+ Time        [rvacont ]
+ preson      [rvaconu   |rvacon1]
+ SPC Code    [rvaspc    ]
+ VMI No.     [rva117            ]
+
+}
+END -- Grid2
+Grid Grid3
+{
+ style    [rva29      ]
+ buy org  [rva30      |rva30_desc]
+ center   [rva31      |rva31_desc]
+ org      [rvaplant   |rvaplant_d]
+ Applicant[rva33      |gen02     ]
+[rvamksg   ]
+ Approval Status[rva32           ]
+
+}
+END -- Grid3
+END -- HBox1
+END -- page01
+Page Page4(text=%"Transaction Data")
+HBox hb5
+Grid gr24
+{
+ Payment Term(Purchase)    [rva111           ] [pma02                 ]
+ Trade Term                [rva112           ] [pnz02                 ]
+
+}
+END -- gr24
+Grid gr25
+{
+ Tax Code/Tax Rate      [rva115           ][rva116    ]%
+ Currency/Exch. Rate    [rva113           ][rva114               ]
+
+}
+END -- gr25
+END -- hb5
+END -- Page4
+Page info(text="Info")
+Grid gr5248
+{
+ Record Owner        [rvauser   ]  Last Modified by    [rvamodu   ]   Data Valid Code   [rvaacti   ]
+ Department          [rvagrup   ]  Create/Modify Date  [rvadate     ] create date       [rvacrat   ]
+ Record Orig.        [rvaoriu   ]
+ Dept Orig.          [rvaorig   ]
+
+
+}
+END -- gr5248
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[rvaud01                       ] userdefined_field07[rvaud07        ] userdefined_field13[rvaud13        ]
+                    [                              ] userdefined_field08[rvaud08        ] userdefined_field14[rvaud14        ]
+ userdefined_field02[rvaud02        ]                userdefined_field09[rvaud09        ] userdefined_field15[rvaud15        ]
+ userdefined_field03[rvaud03        ]                userdefined_field10[rvaud10        ]
+ userdefined_field04[rvaud04        ]                userdefined_field11[rvaud11        ]
+ userdefined_field05[rvaud05        ]                userdefined_field12[rvaud12        ]
+ userdefined_field06[rvaud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Folder Folder1
+Page Page1(text=%"Page1")
+Table s_rvb
+{
+[rvb02   |rvb22           |rvb04           |rvb03 |rvb34      |rvbiicd03 |rvb05               |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |rvb051                        |ima021                     |rvb05a    |rvb05b    |rvb05c    |rvb919              |rvbiicd14 |rvbiicd11 |rvb90|rvb42     |rvb43     |rvb44     |rvb45     |pmn20     |pmn50_55  |rvb30     |rvb29      |rvb89  |rvb35|rvbiicd06      |rvbiicd07      |rvb07     |rvbud13    |rvb83         |rvb84                    |rvb85        |rvb80             |rvb81                        |rvb82             |rvb86          |rvb87             |rvb36     |rvb37     |rvb38                 |rvb10               |rvb10t              |rvb25          |pmm21    |pmm43    |pmn123                  |pmn18       |mse02                         |rvb930      |gem02a      |rvb93     |rvbiicd08 |rvbiicd10 |rvbiicd12 |rvbiicd15 |rvbiicd16 |rvbud01   |rvbud02   |rvbud03    |rvbud04    |rvbud05    |rvbud06    |rvbud07    |rvbud08    |rvbud09    |rvbud10    |rvbud11   |rvbud12  |rvbud14   |rvbud15    |rvb39    |l_check ]
+[rvb02   |rvb22           |rvb04           |rvb03 |rvb34      |rvbiicd03 |rvb05               |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |rvb051                        |ima021                     |rvb05a    |rvb05b    |rvb05c    |rvb919              |rvbiicd14 |rvbiicd11 |rvb90|rvb42     |rvb43     |rvb44     |rvb45     |pmn20     |pmn50_55  |rvb30     |rvb29      |rvb89  |rvb35|rvbiicd06      |rvbiicd07      |rvb07     |rvbud13    |rvb83         |rvb84                    |rvb85        |rvb80             |rvb81                        |rvb82             |rvb86          |rvb87             |rvb36     |rvb37     |rvb38                 |rvb10               |rvb10t              |rvb25          |pmm21    |pmm43    |pmn123                  |pmn18       |mse02                         |rvb930      |gem02a      |rvb93     |rvbiicd08 |rvbiicd10 |rvbiicd12 |rvbiicd15 |rvbiicd16 |rvbud01   |rvbud02   |rvbud03    |rvbud04    |rvbud05    |rvbud06    |rvbud07    |rvbud08    |rvbud09    |rvbud10    |rvbud11   |rvbud12  |rvbud14   |rvbud15    |rvb39    |l_check ]
+[rvb02   |rvb22           |rvb04           |rvb03 |rvb34      |rvbiicd03 |rvb05               |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |rvb051                        |ima021                     |rvb05a    |rvb05b    |rvb05c    |rvb919              |rvbiicd14 |rvbiicd11 |rvb90|rvb42     |rvb43     |rvb44     |rvb45     |pmn20     |pmn50_55  |rvb30     |rvb29      |rvb89  |rvb35|rvbiicd06      |rvbiicd07      |rvb07     |rvbud13    |rvb83         |rvb84                    |rvb85        |rvb80             |rvb81                        |rvb82             |rvb86          |rvb87             |rvb36     |rvb37     |rvb38                 |rvb10               |rvb10t              |rvb25          |pmm21    |pmm43    |pmn123                  |pmn18       |mse02                         |rvb930      |gem02a      |rvb93     |rvbiicd08 |rvbiicd10 |rvbiicd12 |rvbiicd15 |rvbiicd16 |rvbud01   |rvbud02   |rvbud03    |rvbud04    |rvbud05    |rvbud06    |rvbud07    |rvbud08    |rvbud09    |rvbud10    |rvbud11   |rvbud12  |rvbud14   |rvbud15    |rvb39    |l_check ]
+[rvb02   |rvb22           |rvb04           |rvb03 |rvb34      |rvbiicd03 |rvb05               |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |rvb051                        |ima021                     |rvb05a    |rvb05b    |rvb05c    |rvb919              |rvbiicd14 |rvbiicd11 |rvb90|rvb42     |rvb43     |rvb44     |rvb45     |pmn20     |pmn50_55  |rvb30     |rvb29      |rvb89  |rvb35|rvbiicd06      |rvbiicd07      |rvb07     |rvbud13    |rvb83         |rvb84                    |rvb85        |rvb80             |rvb81                        |rvb82             |rvb86          |rvb87             |rvb36     |rvb37     |rvb38                 |rvb10               |rvb10t              |rvb25          |pmm21    |pmm43    |pmn123                  |pmn18       |mse02                         |rvb930      |gem02a      |rvb93     |rvbiicd08 |rvbiicd10 |rvbiicd12 |rvbiicd15 |rvbiicd16 |rvbud01   |rvbud02   |rvbud03    |rvbud04    |rvbud05    |rvbud06    |rvbud07    |rvbud08    |rvbud09    |rvbud10    |rvbud11   |rvbud12  |rvbud14   |rvbud15    |rvb39    |l_check ]
+[rvb02   |rvb22           |rvb04           |rvb03 |rvb34      |rvbiicd03 |rvb05               |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |rvb051                        |ima021                     |rvb05a    |rvb05b    |rvb05c    |rvb919              |rvbiicd14 |rvbiicd11 |rvb90|rvb42     |rvb43     |rvb44     |rvb45     |pmn20     |pmn50_55  |rvb30     |rvb29      |rvb89  |rvb35|rvbiicd06      |rvbiicd07      |rvb07     |rvbud13    |rvb83         |rvb84                    |rvb85        |rvb80             |rvb81                        |rvb82             |rvb86          |rvb87             |rvb36     |rvb37     |rvb38                 |rvb10               |rvb10t              |rvb25          |pmm21    |pmm43    |pmn123                  |pmn18       |mse02                         |rvb930      |gem02a      |rvb93     |rvbiicd08 |rvbiicd10 |rvbiicd12 |rvbiicd15 |rvbiicd16 |rvbud01   |rvbud02   |rvbud03    |rvbud04    |rvbud05    |rvbud06    |rvbud07    |rvbud08    |rvbud09    |rvbud10    |rvbud11   |rvbud12  |rvbud14   |rvbud15    |rvb39    |l_check ]
+[rvb02   |rvb22           |rvb04           |rvb03 |rvb34      |rvbiicd03 |rvb05               |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |rvb051                        |ima021                     |rvb05a    |rvb05b    |rvb05c    |rvb919              |rvbiicd14 |rvbiicd11 |rvb90|rvb42     |rvb43     |rvb44     |rvb45     |pmn20     |pmn50_55  |rvb30     |rvb29      |rvb89  |rvb35|rvbiicd06      |rvbiicd07      |rvb07     |rvbud13    |rvb83         |rvb84                    |rvb85        |rvb80             |rvb81                        |rvb82             |rvb86          |rvb87             |rvb36     |rvb37     |rvb38                 |rvb10               |rvb10t              |rvb25          |pmm21    |pmm43    |pmn123                  |pmn18       |mse02                         |rvb930      |gem02a      |rvb93     |rvbiicd08 |rvbiicd10 |rvbiicd12 |rvbiicd15 |rvbiicd16 |rvbud01   |rvbud02   |rvbud03    |rvbud04    |rvbud05    |rvbud06    |rvbud07    |rvbud08    |rvbud09    |rvbud10    |rvbud11   |rvbud12  |rvbud14   |rvbud15    |rvb39    |l_check ]
+[rvb02   |rvb22           |rvb04           |rvb03 |rvb34      |rvbiicd03 |rvb05               |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |rvb051                        |ima021                     |rvb05a    |rvb05b    |rvb05c    |rvb919              |rvbiicd14 |rvbiicd11 |rvb90|rvb42     |rvb43     |rvb44     |rvb45     |pmn20     |pmn50_55  |rvb30     |rvb29      |rvb89  |rvb35|rvbiicd06      |rvbiicd07      |rvb07     |rvbud13    |rvb83         |rvb84                    |rvb85        |rvb80             |rvb81                        |rvb82             |rvb86          |rvb87             |rvb36     |rvb37     |rvb38                 |rvb10               |rvb10t              |rvb25          |pmm21    |pmm43    |pmn123                  |pmn18       |mse02                         |rvb930      |gem02a      |rvb93     |rvbiicd08 |rvbiicd10 |rvbiicd12 |rvbiicd15 |rvbiicd16 |rvbud01   |rvbud02   |rvbud03    |rvbud04    |rvbud05    |rvbud06    |rvbud07    |rvbud08    |rvbud09    |rvbud10    |rvbud11   |rvbud12  |rvbud14   |rvbud15    |rvb39    |l_check ]
+[rvb02   |rvb22           |rvb04           |rvb03 |rvb34      |rvbiicd03 |rvb05               |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |rvb051                        |ima021                     |rvb05a    |rvb05b    |rvb05c    |rvb919              |rvbiicd14 |rvbiicd11 |rvb90|rvb42     |rvb43     |rvb44     |rvb45     |pmn20     |pmn50_55  |rvb30     |rvb29      |rvb89  |rvb35|rvbiicd06      |rvbiicd07      |rvb07     |rvbud13    |rvb83         |rvb84                    |rvb85        |rvb80             |rvb81                        |rvb82             |rvb86          |rvb87             |rvb36     |rvb37     |rvb38                 |rvb10               |rvb10t              |rvb25          |pmm21    |pmm43    |pmn123                  |pmn18       |mse02                         |rvb930      |gem02a      |rvb93     |rvbiicd08 |rvbiicd10 |rvbiicd12 |rvbiicd15 |rvbiicd16 |rvbud01   |rvbud02   |rvbud03    |rvbud04    |rvbud05    |rvbud06    |rvbud07    |rvbud08    |rvbud09    |rvbud10    |rvbud11   |rvbud12  |rvbud14   |rvbud15    |rvb39    |l_check ]
+[rvb02   |rvb22           |rvb04           |rvb03 |rvb34      |rvbiicd03 |rvb05               |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |rvb051                        |ima021                     |rvb05a    |rvb05b    |rvb05c    |rvb919              |rvbiicd14 |rvbiicd11 |rvb90|rvb42     |rvb43     |rvb44     |rvb45     |pmn20     |pmn50_55  |rvb30     |rvb29      |rvb89  |rvb35|rvbiicd06      |rvbiicd07      |rvb07     |rvbud13    |rvb83         |rvb84                    |rvb85        |rvb80             |rvb81                        |rvb82             |rvb86          |rvb87             |rvb36     |rvb37     |rvb38                 |rvb10               |rvb10t              |rvb25          |pmm21    |pmm43    |pmn123                  |pmn18       |mse02                         |rvb930      |gem02a      |rvb93     |rvbiicd08 |rvbiicd10 |rvbiicd12 |rvbiicd15 |rvbiicd16 |rvbud01   |rvbud02   |rvbud03    |rvbud04    |rvbud05    |rvbud06    |rvbud07    |rvbud08    |rvbud09    |rvbud10    |rvbud11   |rvbud12  |rvbud14   |rvbud15    |rvb39    |l_check ]
+[rvb02   |rvb22           |rvb04           |rvb03 |rvb34      |rvbiicd03 |rvb05               |att00       |att01 |att01_c |att02 |att02_c |att03 |att03_c |att04 |att04_c |att05 |att05_c |att06 |att06_c |att07 |att07_c |att08 |att08_c |att09 |att09_c |att10 |att10_c |rvb051                        |ima021                     |rvb05a    |rvb05b    |rvb05c    |rvb919              |rvbiicd14 |rvbiicd11 |rvb90|rvb42     |rvb43     |rvb44     |rvb45     |pmn20     |pmn50_55  |rvb30     |rvb29      |rvb89  |rvb35|rvbiicd06      |rvbiicd07      |rvb07     |rvbud13    |rvb83         |rvb84                    |rvb85        |rvb80             |rvb81                        |rvb82             |rvb86          |rvb87             |rvb36     |rvb37     |rvb38                 |rvb10               |rvb10t              |rvb25          |pmm21    |pmm43    |pmn123                  |pmn18       |mse02                         |rvb930      |gem02a      |rvb93     |rvbiicd08 |rvbiicd10 |rvbiicd12 |rvbiicd15 |rvbiicd16 |rvbud01   |rvbud02   |rvbud03    |rvbud04    |rvbud05    |rvbud06    |rvbud07    |rvbud08    |rvbud09    |rvbud10    |rvbud11   |rvbud12  |rvbud14   |rvbud15    |rvb39    |l_check ]
+}
+END -- s_rvb
+END -- Page1
+Page Page2(text=%"Page2")
+Table s_rvbs1
+{
+[rvbs02|rvbs021                       |ima02                         |ima022                        |rvbs01|rvbs04                        |rvbs03                        |rvbs05    |rvbs06           |rvbs10  |rvbs11  |rvbs12  |r|rvbs08              ]
+[rvbs02|rvbs021                       |ima02                         |ima022                        |rvbs01|rvbs04                        |rvbs03                        |rvbs05    |rvbs06           |rvbs10  |rvbs11  |rvbs12  |r|rvbs08              ]
+[rvbs02|rvbs021                       |ima02                         |ima022                        |rvbs01|rvbs04                        |rvbs03                        |rvbs05    |rvbs06           |rvbs10  |rvbs11  |rvbs12  |r|rvbs08              ]
+[rvbs02|rvbs021                       |ima02                         |ima022                        |rvbs01|rvbs04                        |rvbs03                        |rvbs05    |rvbs06           |rvbs10  |rvbs11  |rvbs12  |r|rvbs08              ]
+[rvbs02|rvbs021                       |ima02                         |ima022                        |rvbs01|rvbs04                        |rvbs03                        |rvbs05    |rvbs06           |rvbs10  |rvbs11  |rvbs12  |r|rvbs08              ]
+
+
+}
+END -- s_rvbs1
+END -- Page2
+END -- Folder1
+Grid gr5249
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5249
+END -- VBox1
+END -- page_main
+Page page_list(action=page_list, text=%"Page5")
+Table s_rva_l
+{
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+[rva01_l           |rva06_l     |rva02_l           |rva05_l     |pmc03_l   |rva04_l                   |rva21_l         |rva08_l                 |rva09_l         |rva10_l      |rvaconf_l |rvacond_l |rvaconu_l   |rvaconu_desc_|rva29_l      |rva33_l      |gen02_l   |rvamksg_l  |rva32_l            ]
+}
+END -- s_rva_l
+END -- page_list
+END -- Folder2
+END -- VBox2
+END -- apmt200
+
+TABLES
+rvb_file,
+rvbi_file,
+pmn_file,
+mse_file,
+ima_file1=ima_file,
+rva_file,
+ima_file,
+rvbs_file
+ATTRIBUTES
+ButtonEdit rva01=rva_file.rva01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!    , <^P>Qry Document Property";
+DateEdit rva06=rva_file.rva06, tabIndex=2, not null, required;
+ButtonEdit rva02=rva_file.rva02, action=controlp, tabIndex=3, image="zoom", comment="<^P>  Query P/O     ";
+ButtonEdit rva05=rva_file.rva05, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Vender #";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=5, noEntry;
+Edit rva99=rva_file.rva99, tabIndex=6, noEntry;
+CheckBox rva04=rva_file.rva04, tabIndex=7, text="L/CGoods Receipt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit rva21=rva_file.rva21, tabIndex=8;
+Edit rva08=rva_file.rva08, tabIndex=9;
+Edit rva09=rva_file.rva09, tabIndex=10;
+Edit rva34=rva_file.rva34, tabIndex=11, noEntry;
+ComboBox rva10=rva_file.rva10, tabIndex=12, not null, required, queryEditable, items=(("SUB", "Subcontracting"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ComboBox rvaconf=rva_file.rvaconf, tabIndex=13, noEntry, not null, required, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Void"));
+DateEdit rvacond=rva_file.rvacond, tabIndex=14, noEntry;
+TimeEdit rvacont=rva_file.rvacont, tabIndex=15, noEntry;
+ButtonEdit rvaconu=rva_file.rvaconu, action=controlp, tabIndex=16, noEntry, image="zoom";
+Edit rvacon1=formonly.rvaconu_desc type CHAR, tabIndex=17, noEntry;
+ComboBox rvaspc=rva_file.rvaspc, tabIndex=18, noEntry, not null, required, items=(("0", "Untransmit"),("1", "Transmit Success"),("2", "Transmit Failed"),("3", "Partial Transmit"));
+Edit rva117=rva_file.rva117, tabIndex=19, noEntry;
+ComboBox rva29=rva_file.rva29, tabIndex=20, items=(("1", "scale"),("2", "cost scale"),("3", "rate scale"));
+ButtonEdit rva30=rva_file.rva30, action=controlp, tabIndex=21, noEntry, image="zoom";
+Edit rva30_desc=formonly.rva30_desc type CHAR, tabIndex=22, noEntry;
+ButtonEdit rva31=rva_file.rva31, action=controlp, tabIndex=23, image="zoom";
+Edit rva31_desc=formonly.rva31_desc type CHAR, tabIndex=24, noEntry;
+ButtonEdit rvaplant=rva_file.rvaplant, action=controlp, tabIndex=25, noEntry, image="zoom";
+Edit rvaplant_d=formonly.rvaplant_desc type CHAR, tabIndex=26, noEntry;
+ButtonEdit rva33=rva_file.rva33, action=controlp, tabIndex=27, not null, required, image="zoom", comment="<^P>Qry Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=28;
+CheckBox rvamksg=rva_file.rvamksg, tabIndex=29, text="Approve?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rva32=rva_file.rva32, tabIndex=30, noEntry, not null, required, items=(("0", "Open"),("1", "Approved"),("9", "Void"),("S", "Approving"),("R", "Approving Return"),("W", "Cancel"));
+ButtonEdit rva111=rva_file.rva111, action=controlp, tabIndex=31, image="zoom";
+Edit pma02=formonly.pma02 type CHAR, tabIndex=32, noEntry;
+ButtonEdit rva112=rva_file.rva112, action=controlp, tabIndex=33, image="zoom";
+Edit pnz02=formonly.pnz02 type CHAR, tabIndex=34, noEntry;
+ButtonEdit rva115=rva_file.rva115, action=controlp, tabIndex=35, image="zoom";
+Edit rva116=rva_file.rva116, tabIndex=36;
+ButtonEdit rva113=rva_file.rva113, action=controlp, tabIndex=37, image="zoom";
+Edit rva114=rva_file.rva114, tabIndex=38;
+Edit rvauser=rva_file.rvauser, tabIndex=39, noEntry;
+Edit rvamodu=rva_file.rvamodu, tabIndex=43, noEntry;
+Edit rvaacti=rva_file.rvaacti, tabIndex=45, noEntry, upShift;
+Edit rvagrup=rva_file.rvagrup, tabIndex=40, noEntry;
+DateEdit rvadate=rva_file.rvadate, tabIndex=44, noEntry;
+DateEdit rvacrat=rva_file.rvacrat, tabIndex=46, noEntry;
+Edit rvaoriu=rva_file.rvaoriu, tabIndex=41, noEntry;
+Edit rvaorig=rva_file.rvaorig, tabIndex=42, noEntry;
+TextEdit rvaud01=rva_file.rvaud01, tabIndex=47, stretch=NONE;
+Edit rvaud07=rva_file.rvaud07, tabIndex=53;
+DateEdit rvaud13=rva_file.rvaud13, tabIndex=59;
+Edit rvaud08=rva_file.rvaud08, tabIndex=54;
+DateEdit rvaud14=rva_file.rvaud14, tabIndex=60;
+Edit rvaud02=rva_file.rvaud02, tabIndex=48;
+Edit rvaud09=rva_file.rvaud09, tabIndex=55;
+DateEdit rvaud15=rva_file.rvaud15, tabIndex=61;
+Edit rvaud03=rva_file.rvaud03, tabIndex=49;
+Edit rvaud10=rva_file.rvaud10, tabIndex=56;
+Edit rvaud04=rva_file.rvaud04, tabIndex=50;
+Edit rvaud11=rva_file.rvaud11, tabIndex=57;
+Edit rvaud05=rva_file.rvaud05, tabIndex=51;
+Edit rvaud12=rva_file.rvaud12, tabIndex=58;
+Edit rvaud06=rva_file.rvaud06, tabIndex=52;
+Edit rvb02=rvb_file.rvb02, tabIndex=62, title="Line No", not null, required, comment="<^Y> Mntn Other Data";
+Edit rvb22=rvb_file.rvb22, tabIndex=63, title="Invoice No", comment="If LC Receipts, Enter LC Arrival Notify No.! <^Y>Maintain Invoice";
+ButtonEdit rvb04=rvb_file.rvb04, action=controlp, tabIndex=64, title="PO No.", not null, required, image="zoom", comment="<^P> Query P/O  <^E>Cursor up ";
+ButtonEdit rvb03=rvb_file.rvb03, action=controlp, tabIndex=65, title="Ln No", not null, required, image="zoom", comment="<^P> Qry P/O Line # <^E>Cursor up";
+Edit rvb34=rvb_file.rvb34, tabIndex=66, title="SWO", noEntry;
+ButtonEdit rvbiicd03=rvbi_file.rvbiicd03, action=controlp, tabIndex=67, title="Pro No.", image="zoom";
+ButtonEdit rvb05=rvb_file.rvb05, action=controlp, tabIndex=68, title="Item No.", noEntry, not null, required, image="zoom";
+ButtonEdit att00=formonly.att00 type CHAR, tabIndex=69, title="att00", noEntry;
+Edit att01=formonly.att01 type CHAR, tabIndex=70, title="att01";
+ComboBox att01_c=formonly.att01_c type CHAR, tabIndex=71, title="att01_c", queryEditable;
+Edit att02=formonly.att02 type CHAR, tabIndex=72, title="att02";
+ComboBox att02_c=formonly.att02_c type CHAR, tabIndex=73, title="att02_c", queryEditable;
+Edit att03=formonly.att03 type CHAR, tabIndex=74, title="att03";
+ComboBox att03_c=formonly.att03_c type CHAR, tabIndex=75, title="att03_c", queryEditable;
+Edit att04=formonly.att04 type CHAR, tabIndex=76, title="att04";
+ComboBox att04_c=formonly.att04_c type CHAR, tabIndex=77, title="att04_c", queryEditable;
+Edit att05=formonly.att05 type CHAR, tabIndex=78, title="att05";
+ComboBox att05_c=formonly.att05_c type CHAR, tabIndex=79, title="att05_c", queryEditable;
+Edit att06=formonly.att06 type CHAR, tabIndex=80, title="att06";
+ComboBox att06_c=formonly.att06_c type CHAR, tabIndex=81, title="att06_c", queryEditable;
+Edit att07=formonly.att07 type CHAR, tabIndex=82, title="att07";
+ComboBox att07_c=formonly.att07_c type CHAR, tabIndex=83, title="att07_c", queryEditable;
+Edit att08=formonly.att08 type CHAR, tabIndex=84, title="att08";
+ComboBox att08_c=formonly.att08_c type CHAR, tabIndex=85, title="att08_c", queryEditable;
+Edit att09=formonly.att09 type CHAR, tabIndex=86, title="att09";
+ComboBox att09_c=formonly.att09_c type CHAR, tabIndex=87, title="att09_c", queryEditable;
+Edit att10=formonly.att10 type CHAR, tabIndex=88, title="att10";
+ComboBox att10_c=formonly.att10_c type CHAR, tabIndex=89, title="att10_c", queryEditable;
+Edit rvb051=rvb_file.rvb051, tabIndex=90, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=91, title="Specification", noEntry;
+Edit rvb05a=formonly.rvb05a type CHAR, tabIndex=129, title="rvb05a";
+Edit rvb05b=formonly.rvb05b type CHAR, tabIndex=130, title="rvb05b";
+Edit rvb05c=formonly.rvb05c type CHAR, tabIndex=131, title="rvb05c";
+Edit rvb919=rvb_file.rvb919, tabIndex=132, title=%"Lot Plan";
+ButtonEdit rvbiicd14=rvbi_file.rvbiicd14, action=controlp, tabIndex=92, title="ibody", noEntry, image="zoom";
+Edit rvbiicd11=rvbi_file.rvbiicd11, tabIndex=93, title="Tap Reel";
+Edit rvb90=rvb_file.rvb90, tabIndex=94, title="Unit", noEntry;
+ComboBox rvb42=rvb_file.rvb42, tabIndex=133, title="rvb42", noEntry, items=(("1", "add"),("2", "scale pro"),("3", "buy pro"),("4", "others"));
+Edit rvb43=rvb_file.rvb43, tabIndex=149, title="rvb43", noEntry;
+Edit rvb44=rvb_file.rvb44, tabIndex=150, title="rvb44", noEntry;
+Edit rvb45=rvb_file.rvb45, tabIndex=151, title="rvb45", noEntry;
+Edit pmn20=formonly.pmn20 type CHAR, tabIndex=95, title="Pur Qt", noEntry;
+Edit pmn50_55=formonly.pmn50_55 type CHAR, tabIndex=96, title="Deld Q", noEntry;
+Edit rvb30=rvb_file.rvb30, tabIndex=97, title="St-i Qty", noEntry, not null, required;
+Edit rvb29=rvb_file.rvb29, tabIndex=98, title="Q Retd", noEntry, not null, required;
+CheckBox rvb89=rvb_file.rvb89, tabIndex=148, title="VMI", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rvb35=rvb_file.rvb35, tabIndex=99, title="Smpl", not null, required, items=(("N", "Text"),("Y", "Text"),("P", "Text"));
+Edit rvbiicd06=rvbi_file.rvbiicd06, tabIndex=100, title="Defect Qty";
+Edit rvbiicd07=rvbi_file.rvbiicd07, tabIndex=101, title="Scrap Qty";
+Edit rvb07=rvb_file.rvb07, tabIndex=102, title="Rcvd.Qty", not null, required;
+DateEdit rvbud13=rvb_file.rvbud13, tabIndex=103, title="rvbud13";
+ButtonEdit rvb83=rvb_file.rvb83, action=controlp, tabIndex=104, title="Par/Ref Unit", noEntry, image="zoom", comment="<^P>Qry Details";
+Edit rvb84=rvb_file.rvb84, tabIndex=105, title="Par/Ref Conversion Rate", noEntry;
+Edit rvb85=rvb_file.rvb85, tabIndex=106, title="Par/Ref Qty";
+ButtonEdit rvb80=rvb_file.rvb80, action=controlp, tabIndex=107, title="Chi/Receive Unit", noEntry, image="zoom", comment="<^P>Qry Details";
+Edit rvb81=rvb_file.rvb81, tabIndex=108, title="Chi/Receive Conversion Rate", noEntry;
+Edit rvb82=rvb_file.rvb82, tabIndex=109, title="Chi/Receive Qty";
+ButtonEdit rvb86=rvb_file.rvb86, action=controlp, tabIndex=110, title="Valuation Unit", noEntry, image="zoom", comment="<^P>Qry Details";
+Edit rvb87=rvb_file.rvb87, tabIndex=111, title="Valuation Qty";
+ButtonEdit rvb36=rvb_file.rvb36, action=controlp, tabIndex=114, title="W/H", image="zoom", comment="<^P>Qry Inventory W/H <^T>Qry Item/Warehouse Default <^E>Qry Warehouse";
+ButtonEdit rvb37=rvb_file.rvb37, action=controlp, tabIndex=115, title="Loc", image="zoom", comment="<^P>Query Location   <^E>Qry Location";
+ButtonEdit rvb38=rvb_file.rvb38, action=controlp, tabIndex=116, title="Lot No.", image="zoom", comment="<^P>Qry Lot No.  ";
+Edit rvb10=rvb_file.rvb10, tabIndex=112, title="U/P", not null, required;
+Edit rvb10t=rvb_file.rvb10t, tabIndex=113, title="Tax U/P", not null, required;
+ButtonEdit rvb25=rvb_file.rvb25, action=controlp, tabIndex=117, title="Register Book#", image="zoom", comment="<^P>Qry Register Book No";
+Edit pmm21=formonly.pmm21 type CHAR, tabIndex=118, title="Tax Type", noEntry;
+Edit pmm43=formonly.pmm43 type CHAR, tabIndex=119, title="Tax Rate", noEntry;
+Edit pmn123=pmn_file.pmn123, tabIndex=167, title=%"Brand", scroll;
+Edit pmn18=formonly.pmn18, tabIndex=190, title=%"pmn18";
+Edit mse02=mse_file.mse02, tabIndex=168, title=%"Brand(Maker) Name", scroll;
+ButtonEdit rvb930=rvb_file.rvb930, action=controlp, tabIndex=120, title="Cost Center", noEntry, image="zoom", comment="<^P> Qry Cost Center";
+Edit gem02a=formonly.gem02a type CHAR, tabIndex=121, title="Center Desc", noEntry;
+Edit rvb93=rvb_file.rvb93, tabIndex=152, title="Electroric No.", noEntry;
+Edit rvbiicd08=rvbi_file.rvbiicd08, tabIndex=122, title="DateCode";
+CheckBox rvbiicd10=rvbi_file.rvbiicd10, tabIndex=123, title="metal layer", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rvbiicd12=rvbi_file.rvbiicd12, action=controlp, tabIndex=124, title="wafer site", noEntry, image="zoom";
+ButtonEdit rvbiicd15=rvbi_file.rvbiicd15, action=controlp, tabIndex=125, title="Last No.", noEntry, image="zoom";
+Edit rvbiicd16=rvbi_file.rvbiicd16, tabIndex=126, title="Mum No.";
+TextEdit rvbud01=rvb_file.rvbud01, tabIndex=134, title="rvbud01", stretch=NONE;
+CheckBox rvbud02=rvb_file.rvbud02, tabIndex=135, title="rvbud02", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rvbud03=rvb_file.rvbud03, tabIndex=136, title="rvbud03";
+Edit rvbud04=rvb_file.rvbud04, tabIndex=137, title="rvbud04";
+Edit rvbud05=rvb_file.rvbud05, tabIndex=138, title="rvbud05";
+Edit rvbud06=rvb_file.rvbud06, tabIndex=139, title="rvbud06";
+Edit rvbud07=rvb_file.rvbud07, tabIndex=140, title="rvbud07";
+Edit rvbud08=rvb_file.rvbud08, tabIndex=141, title="rvbud08";
+Edit rvbud09=rvb_file.rvbud09, tabIndex=142, title="rvbud09";
+Edit rvbud10=rvb_file.rvbud10, tabIndex=143, title="rvbud10";
+Edit rvbud11=rvb_file.rvbud11, tabIndex=144, title="rvbud11";
+Edit rvbud12=rvb_file.rvbud12, tabIndex=145, title="rvbud12";
+Edit rvbud14=rvb_file.rvbud14, tabIndex=146, title="rvbud14";
+Edit rvbud15=rvb_file.rvbud15, tabIndex=147, title="rvbud15";
+CheckBox rvb39=formonly.rvb39, tabIndex=188, title=%"rvb39", text=%"", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+Edit l_check=formonly.l_check, tabIndex=189, title=%"l_check";
+Edit rvbs02=rvbs_file.rvbs02, tabIndex=153, title=%"rvbs02", not null, scroll;
+Edit rvbs021=rvbs_file.rvbs021, tabIndex=154, title=%"rvbs021", scroll;
+Edit ima02=ima_file1.ima02, tabIndex=155, title=%"ima02", scroll;
+Edit ima022=ima_file1.ima021, tabIndex=156, title=%"ima021", scroll;
+Edit rvbs01=rvbs_file.rvbs022, tabIndex=157, title=%"rvbs022", not null, scroll;
+Edit rvbs04=rvbs_file.rvbs04, tabIndex=158, title=%"rvbs04", not null, scroll;
+Edit rvbs03=rvbs_file.rvbs03, tabIndex=159, title=%"rvbs03", not null, scroll;
+DateEdit rvbs05=rvbs_file.rvbs05, tabIndex=160, title=%"rvbs05";
+Edit rvbs06=rvbs_file.rvbs06, tabIndex=161, title=%"rvbs06", scroll;
+Edit rvbs10=rvbs_file.rvbs10, tabIndex=162, title=%"rvbs10";
+Edit rvbs11=rvbs_file.rvbs11, tabIndex=163, title=%"rvbs11";
+Edit rvbs12=rvbs_file.rvbs12, tabIndex=164, title=%"rvbs12";
+ComboBox r=rvbs_file.rvbs07, tabIndex=165, title=%"rvbs07", scroll, items=(("1", "dd"),("2", "gd"),("3", "za"));
+Edit rvbs08=rvbs_file.rvbs08, tabIndex=166, title=%"rvbs08", not null, scroll;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=127;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=128;
+ButtonEdit rva01_l=formonly.rva01_l type VARCHAR, action=controlp, tabIndex=169, title="rva01", not null, required, image="zoom", comment="Key Field, No Blank/Repeated!, <^P>Qry Document Property";
+DateEdit rva06_l=formonly.rva06_l type DATE, tabIndex=170, title="rva06", not null, required;
+ButtonEdit rva02_l=formonly.rva02_l type VARCHAR, action=controlp, tabIndex=171, title="rva02", image="zoom", comment="<^P>  Query P/O     ";
+ButtonEdit rva05_l=formonly.rva05_l type VARCHAR, action=controlp, tabIndex=172, title="rva05", not null, required, image="zoom", comment="<^P>Qry Vender #";
+Edit pmc03_l=formonly.pmc03_l type VARCHAR, tabIndex=173, title="pmc03", noEntry;
+CheckBox rva04_l=formonly.rva04_l type VARCHAR, tabIndex=174, title="rva04", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit rva21_l=formonly.rva21_l type DATE, tabIndex=175, title="rva21";
+Edit rva08_l=formonly.rva08_l type VARCHAR, tabIndex=176, title="rva08";
+Edit rva09_l=formonly.rva09_l type VARCHAR, tabIndex=177, title="rva09";
+ComboBox rva10_l=formonly.rva10_l type VARCHAR, tabIndex=178, title="rva10", not null, required, queryEditable, items=(("REG", "Regular"),("EXP", "Expense"),("CAP", "Capital"));
+ComboBox rvaconf_l=formonly.rvaconf_l type VARCHAR, tabIndex=179, title="rvaconf", noEntry, not null, required, items=(("Y", "Confirmed"),("N", "NOT Confirm"),("X", "Void"));
+DateEdit rvacond_l=formonly.rvacond_l type DATE, tabIndex=180, title=%"rvacond", noEntry;
+ButtonEdit rvaconu_l=formonly.rvaconu_l type VARCHAR, action=controlp, tabIndex=181, title=%"rvaconu", noEntry, image="zoom";
+Edit rvaconu_desc_=formonly.rvaconu_desc_l type CHAR, tabIndex=182, title=%"rvaconu_desc", noEntry;
+ComboBox rva29_l=formonly.rva29_l type VARCHAR, tabIndex=183, title=%"rva29", items=(("1", "scale"),("2", "cost scale"),("3", "rate scale"));
+ButtonEdit rva33_l=formonly.rva33_l type VARCHAR, action=controlp, tabIndex=184, title="rva33", not null, required, image="zoom", comment="<^P>Qry Employee";
+Edit gen02_l=formonly.gen02_l type CHAR, tabIndex=185, title="gen02";
+CheckBox rvamksg_l=formonly.rvamksg_l type VARCHAR, tabIndex=186, title="rvamksg", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rva32_l=formonly.rva32_l type VARCHAR, tabIndex=187, title="rva32", noEntry, not null, required, items=(("0", "Open"),("1", "Approved"),("9", "Void"),("S", "Approving"),("R", "Approving Return"),("W", "Cancel"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvb(rvb_file.rvb02,rvb_file.rvb22,rvb_file.rvb04,rvb_file.rvb03,rvb_file.rvb34,rvbi_file.rvbiicd03,rvb_file.rvb05,formonly.att00,formonly.att01,formonly.att01_c,formonly.att02,formonly.att02_c,formonly.att03,formonly.att03_c,formonly.att04,formonly.att04_c,formonly.att05,formonly.att05_c,formonly.att06,formonly.att06_c,formonly.att07,formonly.att07_c,formonly.att08,formonly.att08_c,formonly.att09,formonly.att09_c,formonly.att10,formonly.att10_c,rvb_file.rvb051,formonly.ima021,formonly.rvb05a,formonly.rvb05b,formonly.rvb05c,rvb_file.rvb919,rvbi_file.rvbiicd14,rvbi_file.rvbiicd11,rvb_file.rvb90,rvb_file.rvb42,rvb_file.rvb43,rvb_file.rvb44,rvb_file.rvb45,formonly.pmn20,formonly.pmn50_55,rvb_file.rvb30,rvb_file.rvb29,rvb_file.rvb89,rvb_file.rvb35,rvbi_file.rvbiicd06,rvbi_file.rvbiicd07,rvb_file.rvb07,rvb_file.rvbud13,rvb_file.rvb83,rvb_file.rvb84,rvb_file.rvb85,rvb_file.rvb80,rvb_file.rvb81,rvb_file.rvb82,rvb_file.rvb86,rvb_file.rvb87,rvb_file.rvb36,rvb_file.rvb37,rvb_file.rvb38,rvb_file.rvb10,rvb_file.rvb10t,rvb_file.rvb25,formonly.pmm21,formonly.pmm43,pmn_file.pmn123,formonly.pmn18,mse_file.mse02,rvb_file.rvb930,formonly.gem02a,rvb_file.rvb93,rvbi_file.rvbiicd08,rvbi_file.rvbiicd10,rvbi_file.rvbiicd12,rvbi_file.rvbiicd15,rvbi_file.rvbiicd16,rvb_file.rvbud01,rvb_file.rvbud02,rvb_file.rvbud03,rvb_file.rvbud04,rvb_file.rvbud05,rvb_file.rvbud06,rvb_file.rvbud07,rvb_file.rvbud08,rvb_file.rvbud09,rvb_file.rvbud10,rvb_file.rvbud11,rvb_file.rvbud12,rvb_file.rvbud14,rvb_file.rvbud15,formonly.rvb39,formonly.l_check)
+SCREEN RECORD Undefined(rva_file.rva01,rva_file.rva06,rva_file.rva02,rva_file.rva05,formonly.pmc03,rva_file.rva99,rva_file.rva04,rva_file.rva21,rva_file.rva08,rva_file.rva09,rva_file.rva34,rva_file.rva10,formonly.imgmksg,rva_file.rvaconf,rva_file.rvacond,rva_file.rvacont,rva_file.rvaconu,formonly.rvaconu_desc,rva_file.rvaspc,rva_file.rva117,rva_file.rva29,rva_file.rva30,formonly.rva30_desc,rva_file.rva31,formonly.rva31_desc,rva_file.rvaplant,formonly.rvaplant_desc,rva_file.rva33,formonly.gen02,rva_file.rvamksg,rva_file.rva32,rva_file.rva111,formonly.pma02,rva_file.rva112,formonly.pnz02,rva_file.rva115,rva_file.rva116,rva_file.rva113,rva_file.rva114,rva_file.rvauser,rva_file.rvamodu,rva_file.rvaacti,rva_file.rvagrup,rva_file.rvadate,rva_file.rvacrat,rva_file.rvaoriu,rva_file.rvaorig,rva_file.rvaud01,rva_file.rvaud07,rva_file.rvaud13,rva_file.rvaud08,rva_file.rvaud14,rva_file.rvaud02,rva_file.rvaud09,rva_file.rvaud15,rva_file.rvaud03,rva_file.rvaud10,rva_file.rvaud04,rva_file.rvaud11,rva_file.rvaud05,rva_file.rvaud12,rva_file.rvaud06,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_rvbs(rvbs_file.rvbs02,rvbs_file.rvbs021,ima_file1.ima02,ima_file1.ima021,rvbs_file.rvbs022,rvbs_file.rvbs04,rvbs_file.rvbs03,rvbs_file.rvbs05,rvbs_file.rvbs06,rvbs_file.rvbs10,rvbs_file.rvbs11,rvbs_file.rvbs12,rvbs_file.rvbs07,rvbs_file.rvbs08)
+SCREEN RECORD s_rva_l(formonly.rva01_l,formonly.rva06_l,formonly.rva02_l,formonly.rva05_l,formonly.pmc03_l,formonly.rva04_l,formonly.rva21_l,formonly.rva08_l,formonly.rva09_l,formonly.rva10_l,formonly.rvaconf_l,formonly.rvacond_l,formonly.rvaconu_l,formonly.rvaconu_desc_l,formonly.rva29_l,formonly.rva33_l,formonly.gen02_l,formonly.rvamksg_l,formonly.rva32_l)
+END -- INSTRUCTIONS
+

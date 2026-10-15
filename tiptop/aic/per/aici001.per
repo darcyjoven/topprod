@@ -1,0 +1,213 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aici001")
+VBox vb2
+Folder pc1
+Page page1(action=wafer, text="WAFER")
+Grid gr1
+{
+
+ Item No        [icb01           ]    Code Number  [icb02            ]
+ Body Item No.  [imaicd01        ]    ICD Group    [icb79            ]
+
+ <G gb1                                                                                                               >
+  CHIP SIZE(mm)     [icb04            ]                 STATUS                  [icb06           ]
+  GROSS DIE(ea)     [icb05            ]                 VENDER                  [icb08           ][icb08_desc     ]
+  PROCESS TYPE      [icb09            |icb09_desc     ] VENDER Site             [icb72           ]
+  MASK              [icb11            |icb11_desc     ] SCRIBE-LINE WIDTH(um)   [icb13           ]
+  WAFER SIZE(inch)  [icb12            |icb12_desc     ] TECHNOLOGY              [icb14           ][icb14_desc     ]
+  PURPOSE           [icb07            |icb07_desc     ] W/F THICKNESS           [icb15           ][icb15_desc     ]
+ <                                                                                                                    >
+ <G gb2                                                                                                               >
+  REASON FOR VERSION CHANGE WAFER      [icb10                                               ]
+ <                                                                                                                    >
+ <G gb3                                                                                                               >
+  STD YLD(%)         [icb16             ] FCST YIELD(%)       [icb19             ]
+  CLAIMED YIELD(%)   [icb17             ] ACT YIELD(%)        [icb20             ]
+  RETURN YIELD(%)    [icb18             ] HOLD YIELD(%)       [icb26             ]
+  [icb30              ]
+  DURATION           [icb32             ] VALID DATE(RP)      [icb33              ]
+  VALID DATE(HOLD)   [icb34             ] VALID DATE(CLOSE)   [icb35              ]
+  RD Body            [icb36             ] RD Body Ver         [icb37              ]
+
+
+ <                                                                                                                    >
+
+}
+END -- gr1
+END -- page1
+Page page2(action=cp, text="CP")
+Grid gr3
+{
+
+    CP PGM NAME     [icb21                ]
+    CP PGM VER      [icb22                ]
+    RELEASED DATE   [icb23                ]
+    ALARM BIN       [icb24                ]
+    ECN FILE        [icb25                ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr3
+END -- page2
+Page page4(action=info, text="INFO")
+Grid gr4
+{
+
+    icbuser      [icbuser          ]        icbmodu  [icbmodu          ]
+    icbgrup      [icbgrup          ]        icbdate  [icbdate          ]
+    icbacti      [icbacti          ]
+    Record Orig. [icboriu          ]
+    Dept Orig.   [icborig          ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr4
+END -- page4
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[icbud01                       ] userdefined_field07[icbud07        ] userdefined_field13[icbud13        ]
+                    [                              ] userdefined_field08[icbud08        ] userdefined_field14[icbud14        ]
+ userdefined_field02[icbud02        ]                userdefined_field09[icbud09        ] userdefined_field15[icbud15        ]
+ userdefined_field03[icbud03        ]                userdefined_field10[icbud10        ]
+ userdefined_field04[icbud04        ]                userdefined_field11[icbud11        ]
+ userdefined_field05[icbud05        ]                userdefined_field12[icbud12        ]
+ userdefined_field06[icbud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc1
+Grid gr2
+{
+
+ ---------- cn[cn2    ] ----------
+
+
+
+}
+END -- gr2
+END -- vb2
+END -- aici001
+
+TABLES
+icb_file
+ATTRIBUTES
+ButtonEdit icb01=icb_file.icb01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ButtonEdit icb02=icb_file.icb02, action=controlp, tabIndex=2, image="zoom.png";
+Edit imaicd01=formonly.imaicd01 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit icb79=icb_file.icb79, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Group gb1:gb1;
+Edit icb04=icb_file.icb04, tabIndex=5, not null, required;
+ComboBox icb06=icb_file.icb06, tabIndex=20, default = "1", not null, required, items=(("1", "RP"),("2", "HOLD"),("3", "ENG"),("4", "CLOSE"));
+Edit icb05=icb_file.icb05, tabIndex=6, default = "1.000", not null, required;
+ButtonEdit icb08=icb_file.icb08, action=controlp, tabIndex=19, not null, required, image="zoom.png";
+Edit icb08_desc=formonly.icb08_desc type VARCHAR, tabIndex=21, noEntry;
+ButtonEdit icb09=icb_file.icb09, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+Edit icb09_desc=formonly.icb09_desc type VARCHAR, tabIndex=11, noEntry;
+Edit icb72=icb_file.icb72, tabIndex=18;
+ButtonEdit icb11=icb_file.icb11, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+Edit icb11_desc=formonly.icb11_desc type VARCHAR, tabIndex=12, noEntry;
+Edit icb13=icb_file.icb13, tabIndex=17, not null, required;
+ButtonEdit icb12=icb_file.icb12, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Edit icb12_desc=formonly.icb12_desc type VARCHAR, tabIndex=13, noEntry;
+ButtonEdit icb14=icb_file.icb14, action=controlp, tabIndex=16, not null, required, image="zoom.png";
+Edit icb14_desc=formonly.icb14_desc type VARCHAR, tabIndex=22, noEntry;
+ButtonEdit icb07=icb_file.icb07, action=controlp, tabIndex=10, not null, required, image="zoom.png";
+Edit icb07_desc=formonly.icb07_desc type VARCHAR, tabIndex=14, noEntry;
+ButtonEdit icb15=icb_file.icb15, action=controlp, tabIndex=15, not null, required, image="zoom.png";
+Edit icb15_desc=formonly.icb15_desc type VARCHAR, tabIndex=23, noEntry;
+Group gb2:gb2;
+Edit icb10=icb_file.icb10, tabIndex=24;
+Group gb3:gb3;
+Edit icb16=icb_file.icb16, tabIndex=29, not null, required;
+Edit icb19=icb_file.icb19, tabIndex=35, not null, required;
+Edit icb17=icb_file.icb17, tabIndex=30, not null, required;
+Edit icb20=icb_file.icb20, tabIndex=34, not null, required;
+Edit icb18=icb_file.icb18, tabIndex=31, not null, required;
+Edit icb26=icb_file.icb26, tabIndex=36;
+CheckBox icb30=icb_file.icb30, tabIndex=25, default = "N", text="Transfer to Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit icb32=icb_file.icb32, tabIndex=32;
+DateEdit icb33=icb_file.icb33, tabIndex=28;
+DateEdit icb34=icb_file.icb34, tabIndex=26;
+DateEdit icb35=icb_file.icb35, tabIndex=27;
+Edit icb36=icb_file.icb36, tabIndex=33;
+Edit icb37=icb_file.icb37, tabIndex=37;
+Edit icb21=icb_file.icb21, tabIndex=39;
+Edit icb22=icb_file.icb22, tabIndex=40;
+DateEdit icb23=icb_file.icb23, tabIndex=42;
+ComboBox icb24=icb_file.icb24, tabIndex=43, default = "1", items=(("1", "MCU"),("2", "SPEECH"),("3", "VIEDO"),("4", "USB"));
+Edit icb25=icb_file.icb25, tabIndex=41;
+ButtonEdit icbuser=icb_file.icbuser, action=controlp, tabIndex=44, noEntry, image="zoom.png";
+ButtonEdit icbmodu=icb_file.icbmodu, action=controlp, tabIndex=45, noEntry, image="zoom.png";
+ButtonEdit icbgrup=icb_file.icbgrup, action=controlp, tabIndex=46, noEntry, image="zoom.png";
+DateEdit icbdate=icb_file.icbdate, tabIndex=47, noEntry;
+Edit icbacti=icb_file.icbacti, tabIndex=48, noEntry;
+Edit icboriu=icb_file.icboriu, tabIndex=64, noEntry;
+Edit icborig=icb_file.icborig, tabIndex=65, noEntry;
+TextEdit icbud01=icb_file.icbud01, tabIndex=49, stretch=NONE;
+Edit icbud07=icb_file.icbud07, tabIndex=50;
+DateEdit icbud13=icb_file.icbud13, tabIndex=51;
+Edit icbud08=icb_file.icbud08, tabIndex=52;
+DateEdit icbud14=icb_file.icbud14, tabIndex=53;
+Edit icbud02=icb_file.icbud02, tabIndex=54;
+Edit icbud09=icb_file.icbud09, tabIndex=55;
+DateEdit icbud15=icb_file.icbud15, tabIndex=56;
+Edit icbud03=icb_file.icbud03, tabIndex=57;
+Edit icbud10=icb_file.icbud10, tabIndex=58;
+Edit icbud04=icb_file.icbud04, tabIndex=59;
+Edit icbud11=icb_file.icbud11, tabIndex=60;
+Edit icbud05=icb_file.icbud05, tabIndex=61;
+Edit icbud12=icb_file.icbud12, tabIndex=62;
+Edit icbud06=icb_file.icbud06, tabIndex=63;
+Edit cn2=formonly.cn2 type VARCHAR, tabIndex=38, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(icb_file.icb01,icb_file.icb02,formonly.imaicd01,icb_file.icb79,icb_file.icb04,icb_file.icb06,icb_file.icb05,icb_file.icb08,formonly.icb08_desc,icb_file.icb09,formonly.icb09_desc,icb_file.icb72,icb_file.icb11,formonly.icb11_desc,icb_file.icb13,icb_file.icb12,formonly.icb12_desc,icb_file.icb14,formonly.icb14_desc,icb_file.icb07,formonly.icb07_desc,icb_file.icb15,formonly.icb15_desc,icb_file.icb10,icb_file.icb16,icb_file.icb19,icb_file.icb17,icb_file.icb20,icb_file.icb18,icb_file.icb26,icb_file.icb30,icb_file.icb32,icb_file.icb33,icb_file.icb34,icb_file.icb35,icb_file.icb36,icb_file.icb37,icb_file.icb21,icb_file.icb22,icb_file.icb23,icb_file.icb24,icb_file.icb25,icb_file.icbuser,icb_file.icbmodu,icb_file.icbgrup,icb_file.icbdate,icb_file.icbacti,icb_file.icboriu,icb_file.icborig,icb_file.icbud01,icb_file.icbud07,icb_file.icbud13,icb_file.icbud08,icb_file.icbud14,icb_file.icbud02,icb_file.icbud09,icb_file.icbud15,icb_file.icbud03,icb_file.icbud10,icb_file.icbud04,icb_file.icbud11,icb_file.icbud05,icb_file.icbud12,icb_file.icbud06,formonly.cn2)
+END -- INSTRUCTIONS
+

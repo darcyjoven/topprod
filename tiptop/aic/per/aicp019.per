@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aicp019.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aicp019")
+Grid gr1
+{
+
+ <G qbe                                                            >
+   Item No.     [ima01              ]
+ <                                                                 >
+
+ <G input                                                          >
+  Accounts Document 1     [doc1              ] [dummy1            ]
+
+  Accounts Document 2     [doc2              ] [dummy2            ]
+
+  Accounts Document 3     [doc3              ] [dummy3            ]
+ <                                                                 >
+ <G gb3                                                            >
+  Accounts Date      [rdate            ]
+ <                                                                 >
+
+}
+END -- gr1
+END -- aicp019
+
+ATTRIBUTES
+Group qbe:QBE, text="QBE";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Group input:INPUT, text="INPUT";
+ButtonEdit doc1=formonly.doc1 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Label dummy1:dummy1, text="1.Pre-receivables";
+ButtonEdit doc2=formonly.doc2 type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Label dummy2:dummy2, text="2.Reached Sum";
+ButtonEdit doc3=formonly.doc3 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Label dummy3:dummy3, text="3.Unreached Sum";
+Group gb3:gb3;
+DateEdit rdate=formonly.rdate type CHAR, tabIndex=6, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.doc1,formonly.doc2,formonly.doc3,formonly.rdate)
+END -- INSTRUCTIONS
+

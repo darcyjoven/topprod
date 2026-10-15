@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq003")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+HBox hb5
+Grid gr2523
+{
+
+
+ Group No.       [axk01       ]                Group Book No.     [axk00      ]
+ Upper Company   [axk02       ]                Upper Comp Book No [axk03      ]
+ Under Company   [axk04       ]                Under Comp Book No [axk041     ]
+ Year            [axk08       ]                Currency           [axk14      ]
+
+
+}
+END -- gr2523
+Grid gr2524
+{
+
+
+ Account No.         [axk05                         ]
+ Account Name        [aag02                                             ]
+ Trans.Code          [axk06     ]
+ Trans.Value         [axk07             ]
+
+
+}
+END -- gr2524
+END -- hb5
+END -- page01
+END -- folder01
+Table s_axk
+{
+[seq    |axk10               |axk11               |amt1                |axk18               |axk19               |amt2                |axk20               |axk21               |amt3                |axk16     |axk17     ]
+[seq    |axk10               |axk11               |amt1                |axk18               |axk19               |amt2                |axk20               |axk21               |amt3                |axk16     |axk17     ]
+[seq    |axk10               |axk11               |amt1                |axk18               |axk19               |amt2                |axk20               |axk21               |amt3                |axk16     |axk17     ]
+[seq    |axk10               |axk11               |amt1                |axk18               |axk19               |amt2                |axk20               |axk21               |amt3                |axk16     |axk17     ]
+[seq    |axk10               |axk11               |amt1                |axk18               |axk19               |amt2                |axk20               |axk21               |amt3                |axk16     |axk17     ]
+[seq    |axk10               |axk11               |amt1                |axk18               |axk19               |amt2                |axk20               |axk21               |amt3                |axk16     |axk17     ]
+[seq    |axk10               |axk11               |amt1                |axk18               |axk19               |amt2                |axk20               |axk21               |amt3                |axk16     |axk17     ]
+[seq    |axk10               |axk11               |amt1                |axk18               |axk19               |amt2                |axk20               |axk21               |amt3                |axk16     |axk17     ]
+[seq    |axk10               |axk11               |amt1                |axk18               |axk19               |amt2                |axk20               |axk21               |amt3                |axk16     |axk17     ]
+[seq    |axk10               |axk11               |amt1                |axk18               |axk19               |amt2                |axk20               |axk21               |amt3                |axk16     |axk17     ]
+
+}
+END -- s_axk
+Grid gr2525
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2525
+END -- vb4
+END -- aglq003
+
+TABLES
+axk_file
+ATTRIBUTES
+ButtonEdit axk01=axk_file.axk01, action=controlp, tabIndex=1, image="zoom";
+Edit axk00=axk_file.axk00, tabIndex=2, color = yellow;
+Edit axk02=axk_file.axk02, tabIndex=3;
+Edit axk03=axk_file.axk03, tabIndex=4;
+Edit axk04=axk_file.axk04, tabIndex=5;
+Edit axk041=axk_file.axk041, tabIndex=6;
+Edit axk08=axk_file.axk08, tabIndex=7;
+ButtonEdit axk14=axk_file.axk14, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Details";
+ButtonEdit axk05=axk_file.axk05, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Account # <^Y>Create Account  ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=10, noEntry;
+Edit axk06=axk_file.axk06, tabIndex=11;
+Edit axk07=axk_file.axk07, tabIndex=12;
+Edit seq=formonly.seq type CHAR, tabIndex=13, title="Period", noEntry;
+Edit axk10=axk_file.axk10, tabIndex=14, title="Debit Transaction Amt", noEntry;
+Edit axk11=axk_file.axk11, tabIndex=15, title="Credit", noEntry;
+Edit amt1=formonly.amt1 type CHAR, tabIndex=24, title=%"Balance";
+Edit axk18=axk_file.axk18, tabIndex=20, title="Subsidiary Debit Amt (Book Curr)";
+Edit axk19=axk_file.axk19, tabIndex=21, title="Subsidiary Credit Amt (Book Curr)";
+Edit amt2=formonly.amt2 type CHAR, tabIndex=25, title=%"Balance";
+Edit axk20=axk_file.axk20, tabIndex=22, title="Subsidiary Debit Amt (Functional Curr)";
+Edit axk21=axk_file.axk21, tabIndex=23, title="Subsidiary Credit Amt (Functional Curr)";
+Edit amt3=formonly.amt3 type CHAR, tabIndex=26, title=%"Balance";
+Edit axk16=axk_file.axk16, tabIndex=18, title="Function Currency Exch Rate";
+Edit axk17=axk_file.axk17, tabIndex=19, title="Combined Currency Exch Rate";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axk(formonly.seq,axk_file.axk10,axk_file.axk11,formonly.amt1,axk_file.axk18,axk_file.axk19,formonly.amt2,axk_file.axk20,axk_file.axk21,formonly.amt3,axk_file.axk16,axk_file.axk17)
+SCREEN RECORD Undefined(axk_file.axk01,axk_file.axk00,axk_file.axk02,axk_file.axk03,axk_file.axk04,axk_file.axk041,axk_file.axk08,axk_file.axk14,axk_file.axk05,formonly.aag02,axk_file.axk06,axk_file.axk07,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

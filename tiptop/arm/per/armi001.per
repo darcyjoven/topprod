@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armi001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armi001")
+Folder pc62
+Page page01(text="Main")
+VBox VBox1
+Table s_oay
+{
+[oaysli|oaydesc             |oayauno  |oayconf  |oayprnt |oaytype      |oay12           ]
+[oaysli|oaydesc             |oayauno  |oayconf  |oayprnt |oaytype      |oay12           ]
+[oaysli|oaydesc             |oayauno  |oayconf  |oayprnt |oaytype      |oay12           ]
+[oaysli|oaydesc             |oayauno  |oayconf  |oayprnt |oaytype      |oay12           ]
+[oaysli|oaydesc             |oayauno  |oayconf  |oayprnt |oaytype      |oay12           ]
+[oaysli|oaydesc             |oayauno  |oayconf  |oayprnt |oaytype      |oay12           ]
+[oaysli|oaydesc             |oayauno  |oayconf  |oayprnt |oaytype      |oay12           ]
+[oaysli|oaydesc             |oayauno  |oayconf  |oayprnt |oaytype      |oay12           ]
+[oaysli|oaydesc             |oayauno  |oayconf  |oayprnt |oaytype      |oay12           ]
+[oaysli|oaydesc             |oayauno  |oayconf  |oayprnt |oaytype      |oay12           ]
+
+}
+END -- s_oay
+Grid gr229
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr229
+END -- VBox1
+END -- page01
+END -- pc62
+END -- armi001
+
+TABLES
+oay_file
+ATTRIBUTES
+Edit oaysli=oay_file.oayslip, tabIndex=1, title="Doc", not null, required, upShift, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! <^Y>User Authorization <^U>Dept Authorization";
+Edit oaydesc=oay_file.oaydesc, tabIndex=2, title="Doc Name";
+CheckBox oayauno=oay_file.oayauno, tabIndex=3, title="Auto Num", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oayconf=oay_file.oayconf, tabIndex=4, title="Auto Cnf", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oayprnt=oay_file.oayprnt, tabIndex=5, title="Prt Now", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox oaytype=oay_file.oaytype, tabIndex=7, title="Doc Ptoperty", not null, required, queryEditable, comment="Enter   70 71 72 73 74 75 ", items=(("70", %"RMA DOC"),("71", %"RMARe-Delivery Note"),("72", %"No-Good Item Analysis Report"),("73", %"RMAScrap Note"),("74", %"RMA INVOICE"),("75", %"Servicing Confirmation"));
+CheckBox oay12=oay_file.oay12, tabIndex=8, title="Affect Idld Date", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oay(oay_file.oayslip,oay_file.oaydesc,oay_file.oayauno,oay_file.oayconf,oay_file.oayprnt,oay_file.oaytype,oay_file.oay12)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

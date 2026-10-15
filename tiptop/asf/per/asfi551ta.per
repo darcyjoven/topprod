@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi551ta.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="asfi501ta.4fd")
+Folder pc1
+Page Page4(text=%"AUTO_BODY")
+VBox vb3
+Table tb1
+{
+[ta1                                     |ta2                                     |ta3   |ta4       |ta5       |ta6       |ta7           |ta8                 ]
+[ta1                                     |ta2                                     |ta3   |ta4       |ta5       |ta6       |ta7           |ta8                 ]
+[ta1                                     |ta2                                     |ta3   |ta4       |ta5       |ta6       |ta7           |ta8                 ]
+[ta1                                     |ta2                                     |ta3   |ta4       |ta5       |ta6       |ta7           |ta8                 ]
+[ta1                                     |ta2                                     |ta3   |ta4       |ta5       |ta6       |ta7           |ta8                 ]
+[ta1                                     |ta2                                     |ta3   |ta4       |ta5       |ta6       |ta7           |ta8                 ]
+[ta1                                     |ta2                                     |ta3   |ta4       |ta5       |ta6       |ta7           |ta8                 ]
+[ta1                                     |ta2                                     |ta3   |ta4       |ta5       |ta6       |ta7           |ta8                 ]
+
+}
+END -- tb1
+Grid gr1
+{
+ ---------- Rows:[cn        ] ----------
+
+}
+END -- gr1
+END -- vb3
+END -- Page4
+END -- pc1
+END -- asfi501ta
+
+ATTRIBUTES
+ButtonEdit ta1=formonly.ta1 type VARCHAR, action=controlp, tabIndex=1, title="Item No.\n", not null, required, image="zoom.png";
+Edit ta2=formonly.ta2 type VARCHAR, tabIndex=2, title="Product Name\n";
+Edit ta3=formonly.ta3 type VARCHAR, tabIndex=3, title="Unit\n", noEntry, not null, required;
+ButtonEdit ta4=formonly.ta4 type VARCHAR, action=controlp, tabIndex=4, title="Work No.", image="zoom.png";
+ButtonEdit ta5=formonly.ta5 type VARCHAR, action=controlp, tabIndex=5, title="Warehouse", not null, required, image="zoom.png";
+ButtonEdit ta6=formonly.ta6 type VARCHAR, action=controlp, tabIndex=6, title="Store", image="zoom.png";
+ButtonEdit ta7=formonly.ta7 type VARCHAR, action=controlp, tabIndex=7, title="Lot No.", image="zoom.png";
+Edit ta8=formonly.ta8 type DECIMAL, tabIndex=8, title="Out/Back Quantity\n", not null, required;
+Edit cn=formonly.cn type CHAR, tabIndex=9, not null;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ta(formonly.ta1,formonly.ta2,formonly.ta3,formonly.ta4,formonly.ta5,formonly.ta6,formonly.ta7,formonly.ta8)
+SCREEN RECORD Undefined(formonly.cn)
+END -- INSTRUCTIONS
+

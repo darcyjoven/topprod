@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/4fd/abmi604.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi604")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr760
+{
+ Component No.       [bmd01                         ]
+ Part Name           [ima02_h                       ]
+ Specification       [ima021_h                      ]
+ Inv Unit            [ima25_h   ]
+ Src Cd              [ima08_h   ]
+ REP/SUB             [bmd02                         ] [base    |bmd10             ]
+}
+END -- gr760
+Grid gr761
+{
+ Master Item #       [bmd08                         ]
+ Part Name           [ima02_h2                      ]
+ Specification       [ima021_h2                     ]
+ Inv Unit            [ima25_h2  ]
+ Src Cd              [ima08_h2  ]
+
+}
+END -- gr761
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_bmd
+{
+[bmd|bmd04            |ima02_b                   |ima021_b               |bmd11   |bmd05   |bmd06    |bmd09      |bmd07          |ta_bmd01 |bmduser   |bmdgrup   |bmdmodu       |bmddate       |bmdacti   ]
+[bmd|bmd04            |ima02_b                   |ima021_b               |bmd11   |bmd05   |bmd06    |bmd09      |bmd07          |ta_bmd01 |bmduser   |bmdgrup   |bmdmodu       |bmddate       |bmdacti   ]
+[bmd|bmd04            |ima02_b                   |ima021_b               |bmd11   |bmd05   |bmd06    |bmd09      |bmd07          |ta_bmd01 |bmduser   |bmdgrup   |bmdmodu       |bmddate       |bmdacti   ]
+[bmd|bmd04            |ima02_b                   |ima021_b               |bmd11   |bmd05   |bmd06    |bmd09      |bmd07          |ta_bmd01 |bmduser   |bmdgrup   |bmdmodu       |bmddate       |bmdacti   ]
+[bmd|bmd04            |ima02_b                   |ima021_b               |bmd11   |bmd05   |bmd06    |bmd09      |bmd07          |ta_bmd01 |bmduser   |bmdgrup   |bmdmodu       |bmddate       |bmdacti   ]
+[bmd|bmd04            |ima02_b                   |ima021_b               |bmd11   |bmd05   |bmd06    |bmd09      |bmd07          |ta_bmd01 |bmduser   |bmdgrup   |bmdmodu       |bmddate       |bmdacti   ]
+[bmd|bmd04            |ima02_b                   |ima021_b               |bmd11   |bmd05   |bmd06    |bmd09      |bmd07          |ta_bmd01 |bmduser   |bmdgrup   |bmdmodu       |bmddate       |bmdacti   ]
+[bmd|bmd04            |ima02_b                   |ima021_b               |bmd11   |bmd05   |bmd06    |bmd09      |bmd07          |ta_bmd01 |bmduser   |bmdgrup   |bmdmodu       |bmddate       |bmdacti   ]
+[bmd|bmd04            |ima02_b                   |ima021_b               |bmd11   |bmd05   |bmd06    |bmd09      |bmd07          |ta_bmd01 |bmduser   |bmdgrup   |bmdmodu       |bmddate       |bmdacti   ]
+[bmd|bmd04            |ima02_b                   |ima021_b               |bmd11   |bmd05   |bmd06    |bmd09      |bmd07          |ta_bmd01 |bmduser   |bmdgrup   |bmdmodu       |bmddate       |bmdacti   ]
+
+}
+END -- s_bmd
+Grid gr762
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr762
+END -- VBox1
+END -- abmi604
+
+TABLES
+bmd_file
+ATTRIBUTES
+ButtonEdit bmd01=bmd_file.bmd01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Query Item   ";
+Edit ima02_h=formonly.ima02_h type CHAR, tabIndex=2, noEntry;
+Edit ima021_h=formonly.ima021_h type CHAR, tabIndex=3, noEntry;
+Edit ima25_h=formonly.ima25_h type CHAR, tabIndex=4, noEntry;
+Edit ima08_h=formonly.ima08_h type CHAR, tabIndex=5, noEntry;
+RadioGroup bmd02=bmd_file.bmd02, tabIndex=6, not null, required, orientation=horizontal, items=(("1", "UTE"),("2", "SUB"),("3", "SUB-Formula"));
+Label base:Base, text=%"Base";
+Edit bmd10=bmd_file.bmd10, tabIndex=7, scroll;
+ButtonEdit bmd08=bmd_file.bmd08, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P> Query Item,    Enter\'ALL\'for All Master Item!";
+Edit ima02_h2=formonly.ima02_h2 type CHAR, tabIndex=9, noEntry;
+Edit ima021_h2=formonly.ima021_h2 type CHAR, tabIndex=10, noEntry;
+Edit ima25_h2=formonly.ima25_h2 type CHAR, tabIndex=11, noEntry;
+Edit ima08_h2=formonly.ima08_h2 type CHAR, tabIndex=12, noEntry;
+Edit bmd=bmd_file.bmd03, tabIndex=13, title="Ln#", not null, required;
+ButtonEdit bmd04=bmd_file.bmd04, action=controlp, tabIndex=14, title="Substitute Item#", not null, required, image="zoom", comment="<^P> Query Item   ";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=15, title="Part Name", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=16, title="Specification", noEntry;
+CheckBox bmd11=bmd_file.bmd11, tabIndex=17, title=%"Rebate materials", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit bmd05=bmd_file.bmd05, tabIndex=18, title="Eff.Date";
+DateEdit bmd06=bmd_file.bmd06, tabIndex=19, title="Exp.Date";
+DateEdit bmd09=bmd_file.bmd09, tabIndex=20, title="REP/SUB Dt";
+Edit bmd07=bmd_file.bmd07, tabIndex=21, title="Substitute Qty";
+CheckBox ta_bmd01=formonly.ta_bmd01, tabIndex=22, title=%"ta_bmd01", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit bmduser=bmd_file.bmduser, tabIndex=23, title="Record Owner", noEntry;
+Edit bmdgrup=bmd_file.bmdgrup, tabIndex=24, title="Department", noEntry;
+Edit bmdmodu=bmd_file.bmdmodu, tabIndex=25, title="Last Modified by", noEntry;
+DateEdit bmddate=bmd_file.bmddate, tabIndex=26, title="Create/Modify Date";
+CheckBox bmdacti=bmd_file.bmdacti, tabIndex=27, title="Data Volid Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmd(bmd_file.bmd03,bmd_file.bmd04,formonly.ima02_b,formonly.ima021_b,bmd_file.bmd11,bmd_file.bmd05,bmd_file.bmd06,bmd_file.bmd09,bmd_file.bmd07,formonly.ta_bmd01,bmd_file.bmduser,bmd_file.bmdgrup,bmd_file.bmdmodu,bmd_file.bmddate,bmd_file.bmdacti)
+SCREEN RECORD Undefined(bmd_file.bmd01,formonly.ima02_h,formonly.ima021_h,formonly.ima25_h,formonly.ima08_h,bmd_file.bmd02,bmd_file.bmd08,formonly.ima02_h2,formonly.ima021_h2,formonly.ima25_h2,formonly.ima08_h2,formonly.cnt,formonly.cn2,bmd_file.bmd10)
+END -- INSTRUCTIONS
+

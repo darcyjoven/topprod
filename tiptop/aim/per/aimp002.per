@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aimp002")
+VBox vb2
+Grid gr1
+{
+
+     tlf01        [tlf01                   ]
+
+     tlf902       [tlf902                  ]
+
+     tlf903       [tlf903                  ]
+
+     tlf904       [tlf904                  ]
+
+     tlf61        [tlf61                   ]
+
+}
+END -- gr1
+Grid gr4
+{
+  [g_bgjob                                 ]
+
+}
+END -- gr4
+END -- vb2
+END -- aimp002
+
+TABLES
+tlf_file
+ATTRIBUTES
+ButtonEdit tlf01=tlf_file.tlf01, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit tlf902=tlf_file.tlf902, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit tlf903=tlf_file.tlf903, action=controlp, tabIndex=3, image="zoom.png";
+Edit tlf904=tlf_file.tlf904, tabIndex=4;
+Edit tlf61=tlf_file.tlf61, tabIndex=5;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=6, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(tlf_file.tlf01,tlf_file.tlf902,tlf_file.tlf903,tlf_file.tlf904,tlf_file.tlf61,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

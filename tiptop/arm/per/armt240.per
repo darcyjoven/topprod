@@ -1,0 +1,115 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armt240.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armt240")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr262
+{
+ Re-Del.No.          [rme01           ]            Document Date       [rme02     ]                              Confirm             [rmepack   ]   [imgmksg]
+ RMA No.             [rme011          ]            Customer Return     [rme03     ][rme04     ]                                                     [       ]
+
+}
+END -- gr262
+END -- page01
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[rmeud01                       ] userdefined_field07[rmeud07        ] userdefined_field13[rmeud13        ]
+                    [                              ] userdefined_field08[rmeud08        ] userdefined_field14[rmeud14        ]
+ userdefined_field02[rmeud02        ]                userdefined_field09[rmeud09        ] userdefined_field15[rmeud15        ]
+ userdefined_field03[rmeud03        ]                userdefined_field10[rmeud10        ]
+ userdefined_field04[rmeud04        ]                userdefined_field11[rmeud11        ]
+ userdefined_field05[rmeud05        ]                userdefined_field12[rmeud12        ]
+ userdefined_field06[rmeud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_rmq
+{
+[rmq0|rmq05|rmq06      |rmq07      |rmq1|rmq03  |rmq04      |rmqud01   |rmqud02   |rmqud03    |rmqud04    |rmqud05    |rmqud06    |rmqud07    |rmqud08    |rmqud09    |rmqud10    |rmqud11   |rmqud12  |rmqud13   |rmqud14   |rmqud15    ]
+[rmq0|rmq05|rmq06      |rmq07      |rmq1|rmq03  |rmq04      |rmqud01   |rmqud02   |rmqud03    |rmqud04    |rmqud05    |rmqud06    |rmqud07    |rmqud08    |rmqud09    |rmqud10    |rmqud11   |rmqud12  |rmqud13   |rmqud14   |rmqud15    ]
+[rmq0|rmq05|rmq06      |rmq07      |rmq1|rmq03  |rmq04      |rmqud01   |rmqud02   |rmqud03    |rmqud04    |rmqud05    |rmqud06    |rmqud07    |rmqud08    |rmqud09    |rmqud10    |rmqud11   |rmqud12  |rmqud13   |rmqud14   |rmqud15    ]
+[rmq0|rmq05|rmq06      |rmq07      |rmq1|rmq03  |rmq04      |rmqud01   |rmqud02   |rmqud03    |rmqud04    |rmqud05    |rmqud06    |rmqud07    |rmqud08    |rmqud09    |rmqud10    |rmqud11   |rmqud12  |rmqud13   |rmqud14   |rmqud15    ]
+[rmq0|rmq05|rmq06      |rmq07      |rmq1|rmq03  |rmq04      |rmqud01   |rmqud02   |rmqud03    |rmqud04    |rmqud05    |rmqud06    |rmqud07    |rmqud08    |rmqud09    |rmqud10    |rmqud11   |rmqud12  |rmqud13   |rmqud14   |rmqud15    ]
+[rmq0|rmq05|rmq06      |rmq07      |rmq1|rmq03  |rmq04      |rmqud01   |rmqud02   |rmqud03    |rmqud04    |rmqud05    |rmqud06    |rmqud07    |rmqud08    |rmqud09    |rmqud10    |rmqud11   |rmqud12  |rmqud13   |rmqud14   |rmqud15    ]
+[rmq0|rmq05|rmq06      |rmq07      |rmq1|rmq03  |rmq04      |rmqud01   |rmqud02   |rmqud03    |rmqud04    |rmqud05    |rmqud06    |rmqud07    |rmqud08    |rmqud09    |rmqud10    |rmqud11   |rmqud12  |rmqud13   |rmqud14   |rmqud15    ]
+[rmq0|rmq05|rmq06      |rmq07      |rmq1|rmq03  |rmq04      |rmqud01   |rmqud02   |rmqud03    |rmqud04    |rmqud05    |rmqud06    |rmqud07    |rmqud08    |rmqud09    |rmqud10    |rmqud11   |rmqud12  |rmqud13   |rmqud14   |rmqud15    ]
+[rmq0|rmq05|rmq06      |rmq07      |rmq1|rmq03  |rmq04      |rmqud01   |rmqud02   |rmqud03    |rmqud04    |rmqud05    |rmqud06    |rmqud07    |rmqud08    |rmqud09    |rmqud10    |rmqud11   |rmqud12  |rmqud13   |rmqud14   |rmqud15    ]
+[rmq0|rmq05|rmq06      |rmq07      |rmq1|rmq03  |rmq04      |rmqud01   |rmqud02   |rmqud03    |rmqud04    |rmqud05    |rmqud06    |rmqud07    |rmqud08    |rmqud09    |rmqud10    |rmqud11   |rmqud12  |rmqud13   |rmqud14   |rmqud15    ]
+
+}
+END -- s_rmq
+Grid gr263
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr263
+END -- VBox1
+END -- armt240
+
+TABLES
+rme_file,
+rmq_file
+ATTRIBUTES
+Edit rme01=rme_file.rme01, tabIndex=1, not null, required, upShift, comment="Enter Re-Delivery Note No.! ";
+DateEdit rme02=rme_file.rme02, tabIndex=2, noEntry;
+Edit rmepack=rme_file.rmepack, tabIndex=3, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit rme011=rme_file.rme011, tabIndex=5, noEntry;
+Edit rme03=rme_file.rme03, tabIndex=6, noEntry;
+Edit rme04=rme_file.rme04, tabIndex=7, noEntry;
+TextEdit rmeud01=rme_file.rmeud01, tabIndex=327, stretch=NONE;
+Edit rmeud07=rme_file.rmeud07, tabIndex=328;
+DateEdit rmeud13=rme_file.rmeud13, tabIndex=329;
+Edit rmeud08=rme_file.rmeud08, tabIndex=330;
+DateEdit rmeud14=rme_file.rmeud14, tabIndex=331;
+Edit rmeud02=rme_file.rmeud02, tabIndex=332;
+Edit rmeud09=rme_file.rmeud09, tabIndex=333;
+DateEdit rmeud15=rme_file.rmeud15, tabIndex=334;
+Edit rmeud03=rme_file.rmeud03, tabIndex=335;
+Edit rmeud10=rme_file.rmeud10, tabIndex=336;
+Edit rmeud04=rme_file.rmeud04, tabIndex=337;
+Edit rmeud11=rme_file.rmeud11, tabIndex=338;
+Edit rmeud05=rme_file.rmeud05, tabIndex=339;
+Edit rmeud12=rme_file.rmeud12, tabIndex=340;
+Edit rmeud06=rme_file.rmeud06, tabIndex=341;
+Edit rmq0=rmq_file.rmq02, tabIndex=8, title="Ln#", not null, required;
+Edit rmq05=rmq_file.rmq05, tabIndex=9, title="C/NO", not null, required;
+Edit rmq06=rmq_file.rmq06, tabIndex=10, title="DIMENSION", not null, required;
+Edit rmq07=rmq_file.rmq07, tabIndex=11, title="WEIGHT(KG)", not null, required;
+Edit rmq1=rmq_file.rmq08, tabIndex=12, title="QTY", noEntry;
+Edit rmq03=rmq_file.rmq03, tabIndex=13, title="PLT/NO", not null, required;
+Edit rmq04=rmq_file.rmq04, tabIndex=14, title="DIMENSION";
+TextEdit rmqud01=rmq_file.rmqud01, tabIndex=325, title="rmqud01", stretch=NONE;
+Edit rmqud02=rmq_file.rmqud02, tabIndex=342, title="rmqud02";
+Edit rmqud03=rmq_file.rmqud03, tabIndex=343, title="rmqud03";
+Edit rmqud04=rmq_file.rmqud04, tabIndex=344, title="rmqud04";
+Edit rmqud05=rmq_file.rmqud05, tabIndex=345, title="rmqud05";
+Edit rmqud06=rmq_file.rmqud06, tabIndex=346, title="rmqud06";
+Edit rmqud07=rmq_file.rmqud07, tabIndex=347, title="rmqud07";
+Edit rmqud08=rmq_file.rmqud08, tabIndex=348, title="rmqud08";
+Edit rmqud09=rmq_file.rmqud09, tabIndex=349, title="rmqud09";
+Edit rmqud10=rmq_file.rmqud10, tabIndex=350, title="rmqud10";
+Edit rmqud11=rmq_file.rmqud11, tabIndex=351, title="rmqud11";
+Edit rmqud12=rmq_file.rmqud12, tabIndex=352, title="rmqud12";
+Edit rmqud13=rmq_file.rmqud13, tabIndex=353, title="rmqud13";
+Edit rmqud14=rmq_file.rmqud14, tabIndex=354, title="rmqud14";
+Edit rmqud15=rmq_file.rmqud15, tabIndex=355, title="rmqud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rmq(rmq_file.rmq02,rmq_file.rmq05,rmq_file.rmq06,rmq_file.rmq07,rmq_file.rmq08,rmq_file.rmq03,rmq_file.rmq04,rmq_file.rmqud01,rmq_file.rmqud02,rmq_file.rmqud03,rmq_file.rmqud04,rmq_file.rmqud05,rmq_file.rmqud06,rmq_file.rmqud07,rmq_file.rmqud08,rmq_file.rmqud09,rmq_file.rmqud10,rmq_file.rmqud11,rmq_file.rmqud12,rmq_file.rmqud13,rmq_file.rmqud14,rmq_file.rmqud15)
+SCREEN RECORD Undefined(rme_file.rme01,rme_file.rme02,rme_file.rmepack,formonly.imgmksg,rme_file.rme011,rme_file.rme03,rme_file.rme04,rme_file.rmeud01,rme_file.rmeud07,rme_file.rmeud13,rme_file.rmeud08,rme_file.rmeud14,rme_file.rmeud02,rme_file.rmeud09,rme_file.rmeud15,rme_file.rmeud03,rme_file.rmeud10,rme_file.rmeud04,rme_file.rmeud11,rme_file.rmeud05,rme_file.rmeud12,rme_file.rmeud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,69 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsi100.per created Wed Dec 31 05:29:33 2008
+-- File created from apsi100.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsi100")
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Page01")
+        GRID gr5345
+        {
+        <G group01                                            >
+         Equipment Group Code [aa0                            ]
+        <                                                     >
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_aps
+    {
+    [aa1           |aa2             ]
+    [aa1           |aa2             ]
+    [aa1           |aa2             ]
+    [aa1           |aa2             ]
+    [aa1           |aa2             ]
+    [aa1           |aa2             ]
+    [aa1           |aa2             ]
+    [aa1           |aa2             ]
+    [aa1           |aa2             ]
+    [aa1           |aa2             ]
+    }
+    END -- TABLE
+    GRID gr5346
+    {
+     ---------- Rows [aa3   ] / [aa4   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES aps_saa
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=aps_saa.eqg_id, TABINDEX=1;
+  BUTTONEDIT aa1=aps_saa.eq_id, ACTION=controlp, COMMENT="<^P>Query Equipment No.", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=2, TITLE="Equipment No.";
+  EDIT aa2=FORMONLY.eci06 TYPE VARCHAR, NOENTRY, TABINDEX=3, TITLE="Name";
+  EDIT aa3=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=4;
+  EDIT aa4=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=5;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_aps (aps_saa.eq_id, FORMONLY.eci06)
+END

@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp520.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asfp520")
+Grid gr547
+{
+ <G group01                                                                                                               >
+  Source W/O          [sfb01               ]
+  Product#            [sfb05               ]
+ <                                                                                                                        >
+ <G group02                                                         ><G group03                                          >
+  Target W/O              [sfb01b              ]                      Material Return Note No.[sfp01a            ]
+  Item No.                [sfa03               ]                      Material Requisite#     [sfp01b            ]
+  Part Name Specification [ima02                                   ]  General W/H             [sfs07a            ]
+  Specification           [ima021                                  ]  Location                [sfs08a            ]
+  Unit                    [sfa12               ]                      Lot#                    [sfs09a                  ]
+  SMT                     [ima108              ]                      SMT W/H                 [sfs07b            ]
+  Process Section No      [sfa012              ]                      Location                [sfs08b            ]
+  Process No              [sfa013              ]                      Lot#                    [sfs09b                  ]
+  Task No.                [sfa08               ]
+  Requirement Qty         [needqty             ]
+ [a                        ]
+ [b                        ]
+
+ <                                                                  ><                                                   >
+
+
+
+}
+END -- gr547
+END -- asfp520
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfb01=formonly.sfb01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Item No.";
+ButtonEdit sfb05=formonly.sfb05 type CHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Item No.";
+Group group02:group02;
+ButtonEdit sfb01b=formonly.sfb01b type VARCHAR, action=controlp, tabIndex=3, image="zoom", comment="Please Input Target W/O <^P>Qry Target W/O<^T>Qry W/O Allotment";
+ButtonEdit sfa03=formonly.sfa03 type CHAR, action=controlp, tabIndex=4, image="zoom", comment="Please Input Item# <^P>Qry Item# <^T>Qry W/O Allotment";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=5, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=6, noEntry;
+ButtonEdit sfa12=formonly.sfa12 type CHAR, action=controlp, tabIndex=7, image="zoom", comment="Please Input Unit <^P>Qry  Unit <^T>Qry W/O Allotment";
+Edit ima108=formonly.ima108 type VARCHAR, tabIndex=8, noEntry;
+Edit sfa012=formonly.sfa012 type VARCHAR, tabIndex=21, not null, required;
+Edit sfa013=formonly.sfa013 type SMALLINT, tabIndex=22, not null, required;
+ButtonEdit sfa08=formonly.sfa08 type CHAR, action=controlp, tabIndex=9, image="zoom", comment="Please Input Task No. <^P>Qry Task No. <^T>Qry W/O Allotment";
+Edit needqty=formonly.needqty type DECIMAL, tabIndex=10, comment="Input  Transfer-out Qry";
+CheckBox a=formonly.a type VARCHAR, tabIndex=11, text="Print Sim Report", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Print Report";
+CheckBox b=formonly.b type VARCHAR, tabIndex=12, text="Auto Deduct Account", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Input Resolve Deduct Account,If No Will not bring Note";
+Group group03:group03;
+ButtonEdit sfp01a=formonly.sfp01a type VARCHAR, action=controlp, tabIndex=13, not null, required, image="zoom", comment="Enter Material Return Note or<^P>Qry Documents";
+ButtonEdit sfp01b=formonly.sfp01b type VARCHAR, action=controlp, tabIndex=14, not null, required, image="zoom", comment="Enter Material Requisite or<^P>Qry Documents";
+ButtonEdit sfs07a=formonly.sfs07a type VARCHAR, action=controlp, tabIndex=15, image="zoom", comment="Enter Mat.Ret/St-i WH,<^P>Qry Warehouse";
+ButtonEdit sfs08a=formonly.sfs08a type VARCHAR, action=controlp, tabIndex=16, image="zoom", comment="Enter Mat.Ret/St-i Loc,<^P>Qry Location";
+Edit sfs09a=formonly.sfs09a type VARCHAR, tabIndex=17, comment="Enter Mat.Ret/St-i Lot #";
+ButtonEdit sfs07b=formonly.sfs07b type VARCHAR, action=controlp, tabIndex=18, image="zoom", comment="Enter Mat.Ret/St-i WH,<^P>Qry Warehouse";
+ButtonEdit sfs08b=formonly.sfs08b type VARCHAR, action=controlp, tabIndex=19, image="zoom", comment="Enter Mat.Ret/St-i Loc,<^P>Qry Location";
+Edit sfs09b=formonly.sfs09b type VARCHAR, tabIndex=20, comment="Enter Mat.Ret/St-i Lot #";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfb01,formonly.sfb05,formonly.sfb01b,formonly.sfa03,formonly.ima02,formonly.ima021,formonly.sfa12,formonly.ima108,formonly.sfa012,formonly.sfa013,formonly.sfa08,formonly.needqty,formonly.a,formonly.b,formonly.sfp01a,formonly.sfp01b,formonly.sfs07a,formonly.sfs08a,formonly.sfs09a,formonly.sfs07b,formonly.sfs08b,formonly.sfs09b)
+END -- INSTRUCTIONS
+

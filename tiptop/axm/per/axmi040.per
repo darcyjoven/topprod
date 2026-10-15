@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi040.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi040")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1993
+{
+ Description Code    [oae01      ]
+ Brief Description   [oae02                                   ]
+}
+END -- gr1993
+END -- page01
+END -- folder01
+Table s_oaf
+{
+[oaf02 |oaf03                                                       ]
+[oaf02 |oaf03                                                       ]
+[oaf02 |oaf03                                                       ]
+[oaf02 |oaf03                                                       ]
+[oaf02 |oaf03                                                       ]
+[oaf02 |oaf03                                                       ]
+[oaf02 |oaf03                                                       ]
+[oaf02 |oaf03                                                       ]
+[oaf02 |oaf03                                                       ]
+[oaf02 |oaf03                                                       ]
+
+}
+END -- s_oaf
+Grid gr1994
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1994
+END -- VBox1
+END -- axmi040
+
+TABLES
+oaf_file,
+oae_file
+ATTRIBUTES
+Edit oae01=oae_file.oae01, tabIndex=1, not null, required;
+Edit oae02=oae_file.oae02, tabIndex=2;
+Edit oaf02=oaf_file.oaf02, tabIndex=3, title="Line#", not null, required, color = yellow;
+Edit oaf03=oaf_file.oaf03, tabIndex=4, title="Description", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oaf(oaf_file.oaf02,oaf_file.oaf03)
+SCREEN RECORD Undefined(oae_file.oae01,oae_file.oae02,formonly.cnt)
+END -- INSTRUCTIONS
+

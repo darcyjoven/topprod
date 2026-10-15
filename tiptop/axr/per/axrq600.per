@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrq600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrq600")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr2907
+{
+ Cust [occ01     ][occ02   ]                      H.C      [aza1]
+
+}
+END -- gr2907
+END -- page01
+END -- folder01
+Table s_oma
+{
+[plant      |oma02    |oma01      |oma23|oma54t              |amt_1               |amt_2               |oma10     |oma67      |oma00]
+[plant      |oma02    |oma01      |oma23|oma54t              |amt_1               |amt_2               |oma10     |oma67      |oma00]
+[plant      |oma02    |oma01      |oma23|oma54t              |amt_1               |amt_2               |oma10     |oma67      |oma00]
+[plant      |oma02    |oma01      |oma23|oma54t              |amt_1               |amt_2               |oma10     |oma67      |oma00]
+[plant      |oma02    |oma01      |oma23|oma54t              |amt_1               |amt_2               |oma10     |oma67      |oma00]
+[plant      |oma02    |oma01      |oma23|oma54t              |amt_1               |amt_2               |oma10     |oma67      |oma00]
+[plant      |oma02    |oma01      |oma23|oma54t              |amt_1               |amt_2               |oma10     |oma67      |oma00]
+[plant      |oma02    |oma01      |oma23|oma54t              |amt_1               |amt_2               |oma10     |oma67      |oma00]
+[plant      |oma02    |oma01      |oma23|oma54t              |amt_1               |amt_2               |oma10     |oma67      |oma00]
+[plant      |oma02    |oma01      |oma23|oma54t              |amt_1               |amt_2               |oma10     |oma67      |oma00]
+
+}
+END -- s_oma
+Grid gr2908
+{
+                                              Total [tot_1     ][tot_2     ]
+ ----------Rows [cnt   ] ----------
+}
+END -- gr2908
+END -- VBox1
+END -- axrq600
+
+TABLES
+oma_file
+ATTRIBUTES
+Edit occ01=formonly.occ01 type CHAR, tabIndex=1;
+Edit occ02=formonly.occ02 type CHAR, tabIndex=2;
+Edit aza1=formonly.aza17 type CHAR, tabIndex=3, noEntry;
+Edit plant=formonly.plant type CHAR, tabIndex=4, title="Plant #", noEntry;
+Edit oma02=oma_file.oma02, tabIndex=5, title="En.Ac.Dt";
+Edit oma01=oma_file.oma01, tabIndex=6, title="E.Ac.Nt#";
+Edit oma23=oma_file.oma23, tabIndex=7, title="Curr";
+Edit oma54t=oma_file.oma54t, tabIndex=8, title="O.C A/R", not null, required;
+Edit amt_1=formonly.amt_1 type CHAR, tabIndex=9, title="H.C A/R", noEntry;
+Edit amt_2=formonly.amt_2 type CHAR, tabIndex=10, title="H.C Cn\'d", noEntry;
+Edit oma10=oma_file.oma10, tabIndex=11, title="Invoice#";
+Edit oma67=oma_file.oma67, tabIndex=12, title="Invoice No.";
+Edit oma00=oma_file.oma00, tabIndex=13, title="Cate.";
+Edit tot_1=formonly.tot_1 type CHAR, tabIndex=14, noEntry;
+Edit tot_2=formonly.tot_2 type CHAR, tabIndex=15, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oma(formonly.plant,oma_file.oma02,oma_file.oma01,oma_file.oma23,oma_file.oma54t,formonly.amt_1,formonly.amt_2,oma_file.oma10,oma_file.oma67,oma_file.oma00)
+SCREEN RECORD Undefined(formonly.occ01,formonly.occ02,formonly.aza17,formonly.tot_1,formonly.tot_2,formonly.cnt)
+END -- INSTRUCTIONS
+

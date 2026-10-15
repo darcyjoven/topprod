@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artg100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                                            >
+    Item No.       [ima01                 ]
+    Shop Name      [ima02                 ]
+    Brand Class    [ima1004               ]
+    Brand          [ima1005               ]
+    Series         [ima1006               ]
+    Type           [ima1007               ]
+    Spec           [ima1008               ]
+    Attribute      [ima1009               ]
+    Product Class  [ima131                ]
+ <                                                                    >
+ <G group2                                                            >
+ [s1                  |s2                  |s3                  ]
+ <                                                                    >
+}
+END -- Grid1
+Grid gr132
+{
+[more                                     ]
+
+
+}
+END -- gr132
+END -- VBox1
+END -- Form
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group1:Group1, text=%"QBE";
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=2, image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=3;
+Edit ima1004=ima_file.ima1004, tabIndex=5;
+Edit ima1005=ima_file.ima1005, tabIndex=6;
+Edit ima1006=ima_file.ima1006, tabIndex=7;
+Edit ima1007=ima_file.ima1007, tabIndex=8;
+Edit ima1008=ima_file.ima1008, tabIndex=9;
+Edit ima1009=ima_file.ima1009, tabIndex=10;
+Edit ima131=ima_file.ima131, tabIndex=11;
+Group group2:Group2, text=%"Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=4, queryEditable, items=(("1", "Item No."),("2", "Shop Name"),("3", "Brand Class"),("4", "Brand"),("5", "Series"),("6", "Type"),("7", "Spec"),("8", "Attribute"),("9", "Product Class"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=12, queryEditable, items=(("1", "Item No."),("2", "Shop Name"),("3", "Brand Class"),("4", "Brand"),("5", "Series"),("6", "Type"),("7", "Spec"),("8", "Attribute"),("9", "Product Class"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=13, queryEditable, items=(("1", "Item No."),("2", "Shop Name"),("3", "Brand Class"),("4", "Brand"),("5", "Series"),("6", "Type"),("7", "Spec"),("8", "Attribute"),("9", "Product Class"));
+CheckBox more=formonly.more type CHAR, tabIndex=1, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima1004,ima_file.ima1005,ima_file.ima1006,ima_file.ima1007,ima_file.ima1008,ima_file.ima1009,ima_file.ima131,formonly.s1,formonly.s2,formonly.s3,formonly.more)
+END -- INSTRUCTIONS
+

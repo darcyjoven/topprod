@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt7204.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt7204")
+VBox vb2
+Folder pc1
+Page Main(text=%"Main")
+Grid gr1
+{
+
+ Pro.Doc.No.  [lqk01         ]
+ style        [lqk06         ]
+ tranches     [lqk02         ]
+
+}
+END -- gr1
+END -- Main
+END -- pc1
+Table s_lqk
+{
+[lqk03       |lqk04        |lqk05         ]
+[lqk03       |lqk04        |lqk05         ]
+[lqk03       |lqk04        |lqk05         ]
+[lqk03       |lqk04        |lqk05         ]
+[lqk03       |lqk04        |lqk05         ]
+
+}
+END -- s_lqk
+Table s_lql
+{
+[lql03     |lql04         |lql05         |lql06        ]
+[lql03     |lql04         |lql05         |lql06        ]
+[lql03     |lql04         |lql05         |lql06        ]
+[lql03     |lql04         |lql05         |lql06        ]
+[lql03     |lql04         |lql05         |lql06        ]
+
+}
+END -- s_lql
+Grid gr3
+{
+
+ ---Rows [idx  ]---row [cnt  ]---item [cn2   ]
+
+
+}
+END -- gr3
+END -- vb2
+END -- almt7204
+
+TABLES
+lql_file,
+lqk_file
+ATTRIBUTES
+ButtonEdit lqk01=lqk_file.lqk01, tabIndex=1, noEntry, not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+ComboBox lqk06=lqk_file.lqk06, tabIndex=12, noEntry, items=(("0", "z"),("1", "o"),("2", "t"),("3", "d"));
+Edit lqk02=lqk_file.lqk02, tabIndex=2, not null, required;
+ButtonEdit lqk03=lqk_file.lqk03, action=controlp, tabIndex=3, title="stall", not null, required, image="zoom.png";
+ComboBox lqk04=lqk_file.lqk04, tabIndex=4, title="app.style", not null, required, items=(("0", "z"),("1", "o"),("2", "t"),("3", "d"));
+ComboBox lqk05=lqk_file.lqk05, tabIndex=5, title="sort", not null, required, items=(("0", "z"),("1", "o"),("2", "t"),("3", "d"));
+Edit lql03=lql_file.lql03, tabIndex=6, title="Line No.", not null, required;
+Edit lql04=lql_file.lql04, tabIndex=7, title="money from", not null, required;
+Edit lql05=lql_file.lql05, tabIndex=8, title="money to", not null, required;
+Edit lql06=lql_file.lql06, tabIndex=9, title="ratio", not null, required;
+Edit idx=formonly.idx type SMALLINT, tabIndex=10, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lqk(lqk_file.lqk03,lqk_file.lqk04,lqk_file.lqk05)
+SCREEN RECORD s_lql(lql_file.lql03,lql_file.lql04,lql_file.lql05,lql_file.lql06)
+SCREEN RECORD Undefined(lqk_file.lqk01,lqk_file.lqk06,lqk_file.lqk02,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfg622.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr622")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                   >
+  Store-in Note No.   [sfu01               ]
+  Work/Order No.      [sfv11               ]
+  Store-in Date       [sfu02               ]
+ <                                            >
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                     ]
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- asfr622
+
+TABLES
+sfv_file,
+sfu_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit sfu01=sfu_file.sfu01, tabIndex=1;
+Edit sfv11=sfv_file.sfv11, tabIndex=2;
+DateEdit sfu02=sfu_file.sfu02, tabIndex=3;
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfu_file.sfu01,sfv_file.sfv11,sfu_file.sfu02,formonly.more)
+END -- INSTRUCTIONS
+

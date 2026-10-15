@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmt233_8.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmt233_8")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1089
+{
+  Promotion No.       [tqy01          ]
+  Cust. No.           [tqy03          ]
+
+}
+END -- gr1089
+Grid gr1090
+{
+  Cust. Seq           [tqy02    ]
+  Cust. Abbr.         [occ02                         ]
+
+}
+END -- gr1090
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_tsb
+{
+[tsb02    |tsb04          |tqa02_a             |tsb05    |oaj02               |tsb06          |tsb08          |tqa02_b             |tsb09       |tqa02_c             |tsb10     |tqa02_d             |tsb11     |tsb12     |tsb13     ]
+[tsb02    |tsb04          |tqa02_a             |tsb05    |oaj02               |tsb06          |tsb08          |tqa02_b             |tsb09       |tqa02_c             |tsb10     |tqa02_d             |tsb11     |tsb12     |tsb13     ]
+[tsb02    |tsb04          |tqa02_a             |tsb05    |oaj02               |tsb06          |tsb08          |tqa02_b             |tsb09       |tqa02_c             |tsb10     |tqa02_d             |tsb11     |tsb12     |tsb13     ]
+[tsb02    |tsb04          |tqa02_a             |tsb05    |oaj02               |tsb06          |tsb08          |tqa02_b             |tsb09       |tqa02_c             |tsb10     |tqa02_d             |tsb11     |tsb12     |tsb13     ]
+[tsb02    |tsb04          |tqa02_a             |tsb05    |oaj02               |tsb06          |tsb08          |tqa02_b             |tsb09       |tqa02_c             |tsb10     |tqa02_d             |tsb11     |tsb12     |tsb13     ]
+[tsb02    |tsb04          |tqa02_a             |tsb05    |oaj02               |tsb06          |tsb08          |tqa02_b             |tsb09       |tqa02_c             |tsb10     |tqa02_d             |tsb11     |tsb12     |tsb13     ]
+[tsb02    |tsb04          |tqa02_a             |tsb05    |oaj02               |tsb06          |tsb08          |tqa02_b             |tsb09       |tqa02_c             |tsb10     |tqa02_d             |tsb11     |tsb12     |tsb13     ]
+[tsb02    |tsb04          |tqa02_a             |tsb05    |oaj02               |tsb06          |tsb08          |tqa02_b             |tsb09       |tqa02_c             |tsb10     |tqa02_d             |tsb11     |tsb12     |tsb13     ]
+
+}
+END -- s_tsb
+Grid gr1091
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------Total [tqy14          ]
+
+}
+END -- gr1091
+END -- VBox1
+END -- atmt233_8
+
+TABLES
+tsb_file
+ATTRIBUTES
+Edit tqy01=formonly.tqy01 type CHAR, tabIndex=1, noEntry;
+Edit tqy03=formonly.tqy03 type CHAR, tabIndex=2, noEntry;
+Edit tqy02=formonly.tqy02 type CHAR, tabIndex=3, noEntry;
+Edit occ02=formonly.occ02 type CHAR, tabIndex=4, noEntry;
+Edit tsb02=tsb_file.tsb02, tabIndex=5, title="Seq", not null, required;
+ButtonEdit tsb04=tsb_file.tsb04, action=controlp, tabIndex=6, title="Item No.", not null, required, image="zoom";
+Edit tqa02_a=formonly.tqa02_a type CHAR, tabIndex=7, title="Item Description", noEntry;
+ButtonEdit tsb05=tsb_file.tsb05, action=controlp, tabIndex=8, title="Exp.Code", not null, required, image="zoom";
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=9, title="Exp. Description", noEntry;
+Edit tsb06=tsb_file.tsb06, tabIndex=10, title="Expense Amount", not null, required;
+ButtonEdit tsb08=tsb_file.tsb08, action=controlp, tabIndex=11, title="Exp. Reciever", not null, required, image="zoom";
+Edit tqa02_b=formonly.tqa02_b type CHAR, tabIndex=12, title="Rec. Description", noEntry;
+ButtonEdit tsb09=tsb_file.tsb09, action=controlp, tabIndex=13, title="Exp.Method", not null, required, image="zoom";
+Edit tqa02_c=formonly.tqa02_c type CHAR, tabIndex=14, title="Method Description", noEntry;
+ButtonEdit tsb10=tsb_file.tsb10, action=controlp, tabIndex=15, title="Exh. Type", not null, required, image="zoom";
+Edit tqa02_d=formonly.tqa02_d type CHAR, tabIndex=16, title="Type Description", noEntry;
+DateEdit tsb11=tsb_file.tsb11, tabIndex=17, title="Sta. Date";
+DateEdit tsb12=tsb_file.tsb12, tabIndex=18, title="End Date";
+Edit tsb13=tsb_file.tsb13, tabIndex=19, title="Mark";
+Edit cnt=formonly.cnt type CHAR, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=21, noEntry;
+Edit tqy14=formonly.tqy14 type CHAR, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tsb(tsb_file.tsb02,tsb_file.tsb04,formonly.tqa02_a,tsb_file.tsb05,formonly.oaj02,tsb_file.tsb06,tsb_file.tsb08,formonly.tqa02_b,tsb_file.tsb09,formonly.tqa02_c,tsb_file.tsb10,formonly.tqa02_d,tsb_file.tsb11,tsb_file.tsb12,tsb_file.tsb13)
+SCREEN RECORD Undefined(formonly.tqy01,formonly.tqy03,formonly.tqy02,formonly.occ02,formonly.cnt,formonly.cn2,formonly.tqy14)
+END -- INSTRUCTIONS
+

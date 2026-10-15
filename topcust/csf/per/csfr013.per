@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfr013.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+[label1          ][sfb01               |label9 ][sfb06             ]
+[label4          ][sfb81               |label6 ][sgm01                    ]
+[label8          ][sfb05               ]
+
+[label2          ][sgm04               ][ta_sgm06            ]
+[label5          ][sgm06               ]
+
+[more                                                  ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"Label1";
+ButtonEdit sfb01=formonly.sfb01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Label label9:Label9, text=%"Label1";
+Edit sfb06=formonly.sfb06 type VARCHAR, tabIndex=8;
+Label label4:Label4, text=%"Label2";
+DateEdit sfb81=formonly.sfb81 type DATE, tabIndex=2;
+Label label6:Label6, text=%"Label1";
+ButtonEdit sgm01=formonly.sgm01 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Label label8:Label8, text=%"Label2";
+ButtonEdit sfb05=formonly.sfb05 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Label label2:Label2, text=%"Label2";
+ButtonEdit sgm04=formonly.sgm04 type VARCHAR, action=controlp, tabIndex=7, image="zoom";
+ComboBox ta_sgm06=formonly.ta_sgm06 type VARCHAR, tabIndex=6, items=(("Y", "报工"),("N", "不报工"));
+Label label5:Label5, text=%"Label2";
+ButtonEdit sgm06=formonly.sgm06 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+CheckBox more=formonly.more type CHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfb01,formonly.sfb81,formonly.sfb05,formonly.sgm06,formonly.sgm01,formonly.ta_sgm06,formonly.sgm04,formonly.sfb06,formonly.more)
+END -- INSTRUCTIONS
+

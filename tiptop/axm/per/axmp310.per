@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmp310")
+VBox VBox1
+Grid gr2166
+{
+
+  Enter Estimate to Apportion [id                ]
+
+ <G group01                                                                    >
+ [a                   ]  Adjust Amt(Estimate Currency) [amta                ]
+ <                                                                             >
+ <G group02                                                                    >
+ [b                   ]  Adjust Amt(Estimate Currency) [amtb                ]
+                         Adjust Method [d                                   ]
+ <                                                                             >
+ <G group03                                                                    >
+ [c                   ]  Adjust Amt(Estimate Currency) [amtc                ]
+                         Adjust Method [e                                   ]
+
+ <                                                                             >
+
+}
+END -- gr2166
+Grid gr2167
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr2167
+END -- VBox1
+END -- axmp310
+
+ATTRIBUTES
+ButtonEdit id=formonly.id type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Documents";
+Group group01:group01, text="Material";
+CheckBox a=formonly.a type CHAR, tabIndex=2, text="Adjust?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit amta=formonly.amta type CHAR, tabIndex=3;
+Group group02:group02, text="Labor";
+CheckBox b=formonly.b type CHAR, tabIndex=4, text="Adjust?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit amtb=formonly.amtb type CHAR, tabIndex=5;
+ComboBox d=formonly.d type CHAR, tabIndex=6, not null, required, items=(("1", "Adjust Labor Hour"),("2", "Adjust Direct Labor Wage Rate"));
+Group group03:group03, text="Overhead";
+CheckBox c=formonly.c type CHAR, tabIndex=7, text="Adjust?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit amtc=formonly.amtc type CHAR, tabIndex=8;
+ComboBox e=formonly.e type CHAR, tabIndex=9, not null, required, items=(("1", "Adjust Machine Hour"),("2", "Adjust Indrt Overhd Apportmt Ratio"));
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=10, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.id,formonly.a,formonly.amta,formonly.b,formonly.amtb,formonly.d,formonly.c,formonly.amtc,formonly.e,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

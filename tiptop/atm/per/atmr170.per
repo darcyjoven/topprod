@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmr170.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"atmr170")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                             >
+  Dispatch NO.        [adk01           ]
+  Dispatch Date       [adk02     ]
+  Person of Dispatch  [adk13     ]
+  Vehicle No.         [adk08     ]
+ <                                                                      >
+ <G group02                                                 >
+  Status Code         [a         ]
+ <                                                          >
+
+}
+END -- Grid1
+Grid Grid2
+{
+ [more                    ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- atmr170
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit adk01=formonly.adk01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit adk02=formonly.adk02 type DATE, tabIndex=2;
+ButtonEdit adk13=formonly.adk13 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit adk08=formonly.adk08 type CHAR, action=controlp, tabIndex=4, image="zoom";
+Group group02:group02, text="INPUT";
+ComboBox a=formonly.a type CHAR, tabIndex=5, not null, required, queryEditable, comment="Please insert 0/1/2/3/4/5", items=(("0", %"Open"),("1", %"Approved"),("2", %"Appr Sent"),("3", %"Appr Rejected"),("4", %"Appr Withdrawn"),("5", %"All"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other condition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.adk01,formonly.adk02,formonly.adk13,formonly.adk08,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,106 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct311.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axct311")
+VBox VBox1
+Folder pc3
+Page Page3(text=%"Main")
+HBox hb3
+Grid gr3
+{
+ Cost Calculate Category  [cdb11             ]
+ Year/Month               [cdb01  ]/[cdb02   ]
+ Book No.                 [cdb00          ]
+
+}
+END -- gr3
+Grid gr10
+{
+ Total Labor Cost [ltot            ]
+ Total Overhead 1 [otot1           ]
+ Total Overhead 2 [otot2           ]
+
+}
+END -- gr10
+Grid gr11
+{
+ Total Overhead 3 [otot3          ]
+ Total Overhead 4 [otot4          ]
+ Total Overhead 5 [otot5          ]
+
+}
+END -- gr11
+END -- hb3
+END -- Page3
+Page Page4(text=%"Info")
+Grid gr4
+{
+ Data Owner   [cdbuser   ]                       Last Modified by    [cdbmodu   ]
+ Department   [cdbgrup   ]                       Last Modified On    [cdbdate   ]
+
+
+}
+END -- gr4
+END -- Page4
+END -- pc3
+Table s_cdb
+{
+[cdb03         |cdb04           |cdb08                  |cdb05           |cdb06         |cdb07        |cdb09     |cdb10          |cdb12       ]
+[cdb03         |cdb04           |cdb08                  |cdb05           |cdb06         |cdb07        |cdb09     |cdb10          |cdb12       ]
+[cdb03         |cdb04           |cdb08                  |cdb05           |cdb06         |cdb07        |cdb09     |cdb10          |cdb12       ]
+[cdb03         |cdb04           |cdb08                  |cdb05           |cdb06         |cdb07        |cdb09     |cdb10          |cdb12       ]
+[cdb03         |cdb04           |cdb08                  |cdb05           |cdb06         |cdb07        |cdb09     |cdb10          |cdb12       ]
+[cdb03         |cdb04           |cdb08                  |cdb05           |cdb06         |cdb07        |cdb09     |cdb10          |cdb12       ]
+[cdb03         |cdb04           |cdb08                  |cdb05           |cdb06         |cdb07        |cdb09     |cdb10          |cdb12       ]
+[cdb03         |cdb04           |cdb08                  |cdb05           |cdb06         |cdb07        |cdb09     |cdb10          |cdb12       ]
+
+}
+END -- s_cdb
+Grid gr20
+{
+ ----------  Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr20
+END -- VBox1
+END -- axct311
+
+TABLES
+cdb_file
+ATTRIBUTES
+ComboBox cdb11=cdb_file.cdb11, tabIndex=1, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+Edit cdb01=cdb_file.cdb01, tabIndex=2, not null, required;
+Edit cdb02=cdb_file.cdb02, tabIndex=3, not null, required;
+ButtonEdit cdb00=cdb_file.cdb00, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Department";
+Edit ltot=formonly.ltot type CHAR, tabIndex=5, noEntry;
+Edit otot1=formonly.otot1 type CHAR, tabIndex=6;
+Edit otot2=formonly.otot2 type CHAR, tabIndex=7;
+Edit otot3=formonly.otot3 type CHAR, tabIndex=8;
+Edit otot4=formonly.otot4 type CHAR, tabIndex=9;
+Edit otot5=formonly.otot5 type CHAR, tabIndex=10;
+Edit cdbuser=cdb_file.cdbuser, tabIndex=11, noEntry;
+Edit cdbmodu=cdb_file.cdbmodu, tabIndex=12, noEntry;
+Edit cdbgrup=cdb_file.cdbgrup, tabIndex=13, noEntry;
+DateEdit cdbdate=cdb_file.cdbdate, tabIndex=14, noEntry;
+ButtonEdit cdb03=cdb_file.cdb03, action=controlp, tabIndex=15, title="Cost Center", image="zoom.png";
+ComboBox cdb04=cdb_file.cdb04, tabIndex=16, title="Cost Article", not null, required, items=(("1", "Labor"),("2", "Overhead 1"),("3", "Overhead 2"),("4", "Overhead 3"),("5", "Overhead 4"),("6", "Overhead 5"));
+ComboBox cdb08=cdb_file.cdb08, tabIndex=17, title="Allocation Method", items=(("1", "Actual Labor Hours"),("2", "Standard Labor Hours"),("3", "Standard Machine Hours"),("4", "Output Qty * Distribution Ratio"),("5", "Actual Machine Hours"));
+Edit cdb05=cdb_file.cdb05, tabIndex=18, title="Amount", not null, required;
+Edit cdb06=cdb_file.cdb06, tabIndex=19, title="Target Total", noEntry, not null, required;
+Edit cdb07=cdb_file.cdb07, tabIndex=20, title="Unit Cost", noEntry, not null, required;
+ComboBox cdb09=formonly.cdb09 type VARCHAR, tabIndex=21, title="Type", items=(("1", "Fixed"),("2", "Variable"));
+Edit cdb10=formonly.cdb10 type CHAR, tabIndex=22, title="Capacity";
+ButtonEdit cdb12=cdb_file.cdb12, action=controlp, tabIndex=25, title=%"Subject No ", noEntry, image="zoom";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cdb(cdb_file.cdb03,cdb_file.cdb04,cdb_file.cdb08,cdb_file.cdb05,cdb_file.cdb06,cdb_file.cdb07,formonly.cdb09,formonly.cdb10,cdb_file.cdb12)
+SCREEN RECORD Undefined(cdb_file.cdb11,cdb_file.cdb01,cdb_file.cdb02,cdb_file.cdb00,formonly.ltot,formonly.otot1,formonly.otot2,formonly.otot3,formonly.otot4,formonly.otot5,cdb_file.cdbuser,cdb_file.cdbmodu,cdb_file.cdbgrup,cdb_file.cdbdate,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq130")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2530
+{
+ Plant               [npr08     ]        Book No.      [npr0]
+ Account Title       [npr00     ][aag02                     ]
+ Paying Vender       [npr01     ][npr02   ][query_cu]
+ Department          [npr03     ]
+ Currency            [npr11     ]        Year          [npr1]
+}
+END -- gr2530
+Grid gr2531
+{
+
+
+ Balance Sheet/Income Statament [aag04      ]
+
+
+}
+END -- gr2531
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_npr
+{
+[npr05  |npr06f    |npr07f     |balf        |npr06      |npr07      |bal        ]
+[npr05  |npr06f    |npr07f     |balf        |npr06      |npr07      |bal        ]
+[npr05  |npr06f    |npr07f     |balf        |npr06      |npr07      |bal        ]
+[npr05  |npr06f    |npr07f     |balf        |npr06      |npr07      |bal        ]
+[npr05  |npr06f    |npr07f     |balf        |npr06      |npr07      |bal        ]
+[npr05  |npr06f    |npr07f     |balf        |npr06      |npr07      |bal        ]
+[npr05  |npr06f    |npr07f     |balf        |npr06      |npr07      |bal        ]
+[npr05  |npr06f    |npr07f     |balf        |npr06      |npr07      |bal        ]
+[npr05  |npr06f    |npr07f     |balf        |npr06      |npr07      |bal        ]
+[npr05  |npr06f    |npr07f     |balf        |npr06      |npr07      |bal        ]
+
+}
+END -- s_npr
+Grid gr2532
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2532
+END -- VBox1
+END -- aglq130
+
+TABLES
+aag_file,
+npr_file
+ATTRIBUTES
+ButtonEdit npr08=npr_file.npr08, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit npr0=npr_file.npr09, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit npr00=npr_file.npr00, action=controlp, tabIndex=3, image="zoom";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=4;
+ButtonEdit npr01=npr_file.npr01, action=controlp, tabIndex=5, image="zoom";
+Edit npr02=npr_file.npr02, tabIndex=6, noEntry;
+Button query_cu:query_customer1, text="Query Customer";
+ButtonEdit npr03=npr_file.npr03, action=controlp, tabIndex=7, image="zoom";
+ButtonEdit npr11=npr_file.npr11, action=controlp, tabIndex=8, image="zoom";
+Edit npr1=npr_file.npr04, tabIndex=9;
+ComboBox aag04=aag_file.aag04, tabIndex=10, not null, required, queryEditable, items=(("1", "Balance Sheet"),("2", "Income Statement"));
+Edit npr05=npr_file.npr05, tabIndex=11, title="Period";
+Edit npr06f=npr_file.npr06f, tabIndex=12, title="O.C.Debit";
+Edit npr07f=npr_file.npr07f, tabIndex=13, title="O.C.Credit";
+Edit balf=formonly.balf type CHAR, tabIndex=14, title="O.C.Balance";
+Edit npr06=npr_file.npr06, tabIndex=15, title="H.C.Debit";
+Edit npr07=npr_file.npr07, tabIndex=16, title="H.C.Credit";
+Edit bal=formonly.bal type CHAR, tabIndex=17, title="H.C.Balance";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_npr(npr_file.npr05,npr_file.npr06f,npr_file.npr07f,formonly.balf,npr_file.npr06,npr_file.npr07,formonly.bal)
+SCREEN RECORD Undefined(npr_file.npr08,npr_file.npr09,npr_file.npr00,formonly.aag02,npr_file.npr01,npr_file.npr02,npr_file.npr03,npr_file.npr11,npr_file.npr04,aag_file.aag04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

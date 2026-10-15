@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft311.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft311")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr766
+{
+  Combination Note#   [shr01             ]
+  Date                [shr02       ]
+  Master Run Card     [shr03                ]
+
+
+}
+END -- gr766
+Grid gr767
+{
+  Pro.Rou.No.    [shr012         ]
+  Routing Seq.   [shr04             ]
+  Task No.       [shr05          ]
+  WIP Qty        [shr06          ]
+
+}
+END -- gr767
+Grid gr768
+{
+  Employee No.        [shr07     ]   [imgmksg]
+  Employee Name       [gen02     ]   [       ]
+  Time                [shrtime   ]
+  Confirm             [shrconf       ]
+
+}
+END -- gr768
+END -- hb2
+END -- page01
+Page info(text="Info")
+Grid gr769
+{
+ Record Owner        [shruser   ]   Last Modified by    [shrmodu   ]   Data Valid Code     [shracti   ]
+ Department          [shrgrup   ]   Create/Modify Date  [shrdate   ]
+ Record Orig.        [shroriu   ]
+ Dept Orig.          [shrorig   ]
+}
+END -- gr769
+END -- info
+END -- folder01
+Table s_shs
+{
+[shs011               |shs02              |shs03      |shs04      |shs05                     ]
+[shs011               |shs02              |shs03      |shs04      |shs05                     ]
+[shs011               |shs02              |shs03      |shs04      |shs05                     ]
+[shs011               |shs02              |shs03      |shs04      |shs05                     ]
+[shs011               |shs02              |shs03      |shs04      |shs05                     ]
+[shs011               |shs02              |shs03      |shs04      |shs05                     ]
+[shs011               |shs02              |shs03      |shs04      |shs05                     ]
+[shs011               |shs02              |shs03      |shs04      |shs05                     ]
+[shs011               |shs02              |shs03      |shs04      |shs05                     ]
+[shs011               |shs02              |shs03      |shs04      |shs05                     ]
+
+}
+END -- s_shs
+Grid gr770
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr770
+END -- vb2
+END -- asft311
+
+TABLES
+shs_file,
+shr_file
+ATTRIBUTES
+ButtonEdit shr01=shr_file.shr01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Document Property";
+DateEdit shr02=shr_file.shr02, tabIndex=2, not null, required;
+ButtonEdit shr03=shr_file.shr03, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Run Card";
+ButtonEdit shr012=shr_file.shr012, action=controlp, tabIndex=503, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+ButtonEdit shr04=shr_file.shr04, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Details";
+Edit shr05=shr_file.shr05, tabIndex=5, noEntry;
+Edit shr06=shr_file.shr06, tabIndex=6, noEntry;
+ButtonEdit shr07=shr_file.shr07, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Employee";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=9, noEntry;
+Edit shrtime=shr_file.shrtime, tabIndex=10, noEntry;
+ComboBox shrconf=shr_file.shrconf, tabIndex=11, noEntry, not null, required, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided
+"));
+Edit shruser=shr_file.shruser, tabIndex=12, noEntry;
+Edit shrmodu=shr_file.shrmodu, tabIndex=13, noEntry;
+Edit shracti=shr_file.shracti, tabIndex=14, noEntry, upShift;
+Edit shrgrup=shr_file.shrgrup, tabIndex=15, noEntry;
+DateEdit shrdate=shr_file.shrdate, tabIndex=16, noEntry;
+Edit shroriu=shr_file.shroriu, tabIndex=501, noEntry;
+Edit shrorig=shr_file.shrorig, tabIndex=502, noEntry;
+Edit shs011=shs_file.shs011, tabIndex=17, title="Combination Line No.", not null, required;
+ButtonEdit shs02=shs_file.shs02, action=controlp, tabIndex=18, title="Run Card NO.", not null, required, image="zoom", comment="<^P>Qry Run Card";
+Edit shs03=shs_file.shs03, tabIndex=19, title="WIP Qty", noEntry;
+Edit shs04=shs_file.shs04, tabIndex=20, title="Qty", not null, required;
+Edit shs05=shs_file.shs05, tabIndex=21, title="Memo";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=22, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_shs(shs_file.shs011,shs_file.shs02,shs_file.shs03,shs_file.shs04,shs_file.shs05)
+SCREEN RECORD Undefined(shr_file.shr01,shr_file.shr02,shr_file.shr03,shr_file.shr012,shr_file.shr04,shr_file.shr05,shr_file.shr06,shr_file.shr07,formonly.imgmksg,formonly.gen02,shr_file.shrtime,shr_file.shrconf,shr_file.shruser,shr_file.shrmodu,shr_file.shracti,shr_file.shrgrup,shr_file.shrdate,shr_file.shroriu,shr_file.shrorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

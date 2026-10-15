@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglr109.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gglr109")
+VBox VBox1
+Group INPUT1(text=%"INPUT1")
+Grid Grid1
+{
+   Book No.          [bookno          ]
+
+}
+END -- Grid1
+END -- INPUT1
+Grid gr3374
+{
+
+ <G group01                                           >
+  Account NO.        [abb03                         ]
+
+ <                                                    >
+ <G gb8                                               >
+
+  Voucher Date Period [b_date      ]-[e_date      ]
+ <                                                    >
+ <G group02                                           >
+ [d                                                  ]
+ [                                                   ]
+ [                                                   ]
+ <                                                    >
+ <G group03                                           >
+  [h                                               ]
+  [e                                                ]
+ <                                                    >
+}
+END -- gr3374
+Grid gr3375
+{
+
+   [g                                            ]
+
+
+}
+END -- gr3375
+END -- VBox1
+END -- gglr109
+
+ATTRIBUTES
+ButtonEdit bookno=formonly.bookno type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+Group group01:group01, text="QBE";
+ButtonEdit abb03=formonly.abb03 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Group gb8:gb8, text="INPUT";
+DateEdit b_date=formonly.b_date type DATE, tabIndex=3, color = yellow;
+DateEdit e_date=formonly.e_date type DATE, tabIndex=4, color = yellow;
+Group group02:group02, text="Data Option";
+RadioGroup d=formonly.d type CHAR, tabIndex=5, items=(("1", "Unposted"),("2", "Posted"),("3", "All"));
+Group group03:group03;
+CheckBox h=formonly.h type CHAR, tabIndex=6, text="Monetary Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=7, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,formonly.abb03,formonly.b_date,formonly.e_date,formonly.d,formonly.h,formonly.e,formonly.g)
+END -- INSTRUCTIONS
+

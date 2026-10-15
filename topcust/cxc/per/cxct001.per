@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cxc/4fd/cxct001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+   tc_omc01[tc_omc01             ]
+   tc_omc02[tc_omc02             ]
+
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table s_tc_aaa
+{
+[tc_omc04          |tc_omc03            |ima02           |ima021           |tc_omc05          |tc_omc06          |tc_omc07          |tc_omc08          |tc_omc09     |tc_omc10     |tc_omc11     ]
+[tc_omc04          |tc_omc03            |ima02           |ima021           |tc_omc05          |tc_omc06          |tc_omc07          |tc_omc08          |tc_omc09     |tc_omc10     |tc_omc11     ]
+[tc_omc04          |tc_omc03            |ima02           |ima021           |tc_omc05          |tc_omc06          |tc_omc07          |tc_omc08          |tc_omc09     |tc_omc10     |tc_omc11     ]
+[tc_omc04          |tc_omc03            |ima02           |ima021           |tc_omc05          |tc_omc06          |tc_omc07          |tc_omc08          |tc_omc09     |tc_omc10     |tc_omc11     ]
+[tc_omc04          |tc_omc03            |ima02           |ima021           |tc_omc05          |tc_omc06          |tc_omc07          |tc_omc08          |tc_omc09     |tc_omc10     |tc_omc11     ]
+
+
+}
+END -- s_tc_aaa
+Grid Grid3
+{
+
+     --------- cn1 [cn1     ] /  [cnt     ]  Rows  [cn2     ] ----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit tc_omc01=formonly.tc_omc01, tabIndex=1;
+Edit tc_omc02=formonly.tc_omc02, tabIndex=2;
+ComboBox tc_omc04=formonly.tc_omc04, tabIndex=3, title=%"tc_omc04", not null, items=(("1", "tc_omc04_1"),("2", "tc_omc04_2"),("3", "tc_omc04_3"));
+ButtonEdit tc_omc03=formonly.tc_omc03, action=controlp, tabIndex=4, title=%"tc_omc03", not null, required, image="zoom";
+Edit ima02=formonly.ima02, tabIndex=5, title=%"ima02", noEntry;
+Edit ima021=formonly.ima021, tabIndex=6, title=%"ima021", noEntry;
+Edit tc_omc05=formonly.tc_omc05, tabIndex=7, title=%"tc_omc05", noEntry;
+Edit tc_omc06=formonly.tc_omc06, tabIndex=8, title=%"tc_omc06";
+Edit tc_omc07=formonly.tc_omc07, tabIndex=9, title=%"tc_omc07";
+Edit tc_omc08=formonly.tc_omc08, tabIndex=10, title=%"tc_omc08";
+Edit tc_omc09=formonly.tc_omc09, tabIndex=11, title=%"tc_omc09";
+Edit tc_omc10=formonly.tc_omc10, tabIndex=12, title=%"tc_omc10";
+Edit tc_omc11=formonly.tc_omc11, tabIndex=13, title=%"tc_omc11";
+Edit cn1=formonly.cn1, tabIndex=14;
+Edit cnt=formonly.cnt, tabIndex=15;
+Edit cn2=formonly.cn2, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_omc01,formonly.tc_omc02,formonly.cn1,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_tc_omc(formonly.tc_omc04,formonly.tc_omc03,formonly.ima02,formonly.ima021,formonly.tc_omc05,formonly.tc_omc06,formonly.tc_omc07,formonly.tc_omc08,formonly.tc_omc09,formonly.tc_omc10,formonly.tc_omc11)
+END -- INSTRUCTIONS
+

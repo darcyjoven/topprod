@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai211.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai211")
+VBox VBox1
+Folder pc341
+Page page01(text="Main")
+Table s_fge
+{
+[fge01          |fge03               |fgeact]
+[fge01          |fge03               |fgeact]
+[fge01          |fge03               |fgeact]
+[fge01          |fge03               |fgeact]
+[fge01          |fge03               |fgeact]
+[fge01          |fge03               |fgeact]
+[fge01          |fge03               |fgeact]
+[fge01          |fge03               |fgeact]
+[fge01          |fge03               |fgeact]
+[fge01          |fge03               |fgeact]
+
+}
+END -- s_fge
+END -- page01
+END -- pc341
+Grid gr1876
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1876
+END -- VBox1
+END -- afai211
+
+TABLES
+fge_file
+ATTRIBUTES
+Edit fge01=fge_file.fge01, tabIndex=1, title="No-Good Code", not null, required, comment="Key Field, No Blank      ";
+Edit fge03=fge_file.fge03, tabIndex=2, title="Description";
+CheckBox fgeact=fge_file.fgeacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fge(fge_file.fge01,fge_file.fge03,fge_file.fgeacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

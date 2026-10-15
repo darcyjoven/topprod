@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq801.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq801")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2549
+{
+ Book No #             [aec00               ]
+ Account #             [aec01                         ]
+ Account Name          [aag02                                             ]
+
+}
+END -- gr2549
+Grid gr2550
+{
+ Trans.Seq.             [aec051    ]
+ Transaction Type       [aec052    ][ahe02   ]
+ Transaction Code       [aec05               ]
+ Transaction Desc       [aee04                         ]
+}
+END -- gr2550
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_aec
+{
+[aec02        |aec03       |abb07_1             |abb07_2             |abb99                ]
+[aec02        |aec03       |abb07_1             |abb07_2             |abb99                ]
+[aec02        |aec03       |abb07_1             |abb07_2             |abb99                ]
+[aec02        |aec03       |abb07_1             |abb07_2             |abb99                ]
+[aec02        |aec03       |abb07_1             |abb07_2             |abb99                ]
+[aec02        |aec03       |abb07_1             |abb07_2             |abb99                ]
+[aec02        |aec03       |abb07_1             |abb07_2             |abb99                ]
+[aec02        |aec03       |abb07_1             |abb07_2             |abb99                ]
+[aec02        |aec03       |abb07_1             |abb07_2             |abb99                ]
+[aec02        |aec03       |abb07_1             |abb07_2             |abb99                ]
+
+}
+END -- s_aec
+Grid gr2551
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2551
+END -- VBox1
+END -- aglq801
+
+TABLES
+aec_file
+ATTRIBUTES
+ButtonEdit aec00=formonly.aec00 type VARCHAR, action=controlp, tabIndex=15, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+ButtonEdit aec01=aec_file.aec01, action=controlp, tabIndex=1, image="zoom";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+Edit aec051=aec_file.aec051, tabIndex=3;
+ButtonEdit aec052=aec_file.aec052, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+Edit ahe02=formonly.ahe02 type CHAR, tabIndex=5, noEntry;
+Edit aec05=aec_file.aec05, tabIndex=6;
+Edit aee04=formonly.aee04 type CHAR, tabIndex=7, noEntry;
+DateEdit aec02=aec_file.aec02, tabIndex=8, title="Voucher Date";
+Edit aec03=formonly.aec03 type CHAR, tabIndex=9, title="Voucher#", noEntry;
+Edit abb07_1=formonly.abb07_1 type CHAR, tabIndex=10, title="Debit", noEntry;
+Edit abb07_2=formonly.abb07_2 type CHAR, tabIndex=11, title="Credit", noEntry;
+Edit abb99=formonly.abb99 type CHAR, tabIndex=12, title="Balance", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aec(aec_file.aec02,formonly.aec03,formonly.abb07_1,formonly.abb07_2,formonly.abb99)
+SCREEN RECORD Undefined(formonly.aec00,aec_file.aec01,formonly.aag02,aec_file.aec051,aec_file.aec052,formonly.ahe02,aec_file.aec05,formonly.aee04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

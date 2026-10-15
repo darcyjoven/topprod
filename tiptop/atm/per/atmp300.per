@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmp300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmp300")
+VBox VBox1
+Grid gr1282
+{
+ <G group01                                                         >
+  Customer No.        [tuq01     ]
+  Good No.            [tuq02               ]
+  Lot No.             [tuq03                         ]
+ <                                                                  >
+ <G group02                                                         >
+  Year                [yy  ]
+  Month               [mm  ]
+ [dummy01                                                       ]
+ <                                                                  >
+
+}
+END -- gr1282
+Grid gr1283
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr1283
+END -- VBox1
+END -- atmp300
+
+TABLES
+tuq_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit tuq01=tuq_file.tuq01, tabIndex=1;
+Edit tuq02=tuq_file.tuq02, tabIndex=2;
+Edit tuq03=tuq_file.tuq03, tabIndex=3;
+Group group02:group02, text="INPUT";
+Edit yy=formonly.yy type SMALLINT, tabIndex=4, not null, required;
+Edit mm=formonly.mm type SMALLINT, tabIndex=5, not null, required;
+Label dummy01:dummy01, text="ps. Total the Transformation Quantity of ADQ_FILE Corresponding to Customer Goods Patch, and Update ADR_FILE(adr06-adr09)";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=6, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(tuq_file.tuq01,tuq_file.tuq02,tuq_file.tuq03,formonly.yy,formonly.mm,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

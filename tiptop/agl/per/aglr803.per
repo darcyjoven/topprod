@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr803.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglr803")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                                           >
+    Book No.    [bookno              ]
+ <                                                                   >
+}
+END -- Grid1
+Grid gr2767
+{
+ <G group01                                                          >
+  Account NO.         [aec01               ]
+  Tran.Code Sequence  [aec051              ]
+  Tran. Code Type     [aec052              ]
+  Tran. Code          [aec05               ]
+ <                                                                   >
+}
+END -- gr2767
+Group group02(text="INPUT")
+Grid gr2768
+{
+
+  Initial Date        [bdate               ]
+  Ending Date         [edate               ]
+
+  [t                               ]
+  [y                             ]
+  [x                               ]
+  [e                               ]
+
+ <G group05                                                         >
+  [w                                                           ]
+ <                                                                  >
+
+}
+END -- gr2768
+END -- group02
+Grid gr2769
+{
+[more                                                        ]
+
+
+}
+END -- gr2769
+END -- VBox1
+END -- aglr803
+
+TABLES
+aec_file
+ATTRIBUTES
+Group group1:Group1, text=%"INPUT";
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+Group group01:group01, text="QBE";
+ButtonEdit aec01=aec_file.aec01, action=controlp, tabIndex=13, not null, required, image="zoom";
+Edit aec051=formonly.aec051 type VARCHAR, tabIndex=1;
+ButtonEdit aec052=formonly.aec052 type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+Edit aec05=formonly.aec05 type VARCHAR, tabIndex=3;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=4;
+DateEdit edate=formonly.edate type DATE, tabIndex=5;
+CheckBox t=formonly.t type CHAR, tabIndex=6, text="Next Page By Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox y=formonly.y type CHAR, tabIndex=7, text="Print Memo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox x=formonly.x type CHAR, tabIndex=8, text="Next Page By Account Class", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=9, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05, text="Sum by account class";
+RadioGroup w=formonly.w type CHAR, tabIndex=10, items=(("1", "Classificatoin Code 1"),("2", "Classification Code 2"),("3", "Classification Code 3"),("4", "Classification Code 4"),("5", "Classification Code 5"));
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,aec_file.aec01,formonly.aec051,formonly.aec052,formonly.aec05,formonly.bdate,formonly.edate,formonly.t,formonly.y,formonly.x,formonly.e,formonly.w,formonly.more)
+END -- INSTRUCTIONS
+

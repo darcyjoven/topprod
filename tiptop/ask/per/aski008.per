@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/aski008.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aski008")
+VBox vb2_
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr4
+{
+ PBI.No   [skh02                ]                          Proticket No [skh13                  ]
+ Style No [skh03                ][ima02                 ]  Work No.     [ecm04                  ]
+
+}
+END -- gr4
+END -- Page3
+END -- pc2
+Table s_skh1
+{
+[skh01       |skh09   |skh10   |skh11      |skh04        |skh05   |skh06       |skh07   |skh14     |skh08   |skh12     |skh100  ]
+[skh01       |skh09   |skh10   |skh11      |skh04        |skh05   |skh06       |skh07   |skh14     |skh08   |skh12     |skh100  ]
+[skh01       |skh09   |skh10   |skh11      |skh04        |skh05   |skh06       |skh07   |skh14     |skh08   |skh12     |skh100  ]
+[skh01       |skh09   |skh10   |skh11      |skh04        |skh05   |skh06       |skh07   |skh14     |skh08   |skh12     |skh100  ]
+[skh01       |skh09   |skh10   |skh11      |skh04        |skh05   |skh06       |skh07   |skh14     |skh08   |skh12     |skh100  ]
+
+}
+END -- s_skh1
+Grid gr7
+{
+----------  Rows [cnt   ] / [cnt2  ] ----------
+
+}
+END -- gr7
+END -- vb2_
+END -- aski008
+
+TABLES
+skh_file
+ATTRIBUTES
+ButtonEdit skh02=skh_file.skh02, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit skh13=skh_file.skh13, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit skh03=skh_file.skh03, action=controlp, tabIndex=17, image="zoom.png";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3;
+ButtonEdit ecm04=formonly.ecm04 type CHAR, action=controlp, tabIndex=19, image="zoom.png";
+Edit skh01=skh_file.skh01, tabIndex=4, title="Flyticket No.", noEntry;
+Edit skh09=skh_file.skh09, tabIndex=5, title="Atrribute1", noEntry;
+Edit skh10=skh_file.skh10, tabIndex=6, title="Atrribute2", noEntry;
+Edit skh11=skh_file.skh11, tabIndex=7, title="Atrribute3", noEntry;
+Edit skh04=skh_file.skh04, tabIndex=8, title="Machine No.", noEntry;
+Edit skh05=skh_file.skh05, tabIndex=9, title="Grips No.", noEntry;
+Edit skh06=skh_file.skh06, tabIndex=10, title="Worklist No.", noEntry;
+Edit skh07=skh_file.skh07, tabIndex=11, title="Working procedure", noEntry;
+Edit skh14=skh_file.skh14, tabIndex=18, title="Unit procedure", noEntry;
+Edit skh08=skh_file.skh08, tabIndex=13, title="Unit No", noEntry;
+Edit skh12=skh_file.skh12, tabIndex=12, title="Quantity", noEntry;
+Edit skh100=skh_file.skh100, tabIndex=14, title="Print code", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_skh1(skh_file.skh01,skh_file.skh09,skh_file.skh10,skh_file.skh11,skh_file.skh04,skh_file.skh05,skh_file.skh06,skh_file.skh07,skh_file.skh14,skh_file.skh08,skh_file.skh12,skh_file.skh100)
+SCREEN RECORD Undefined(skh_file.skh02,skh_file.skh13,skh_file.skh03,formonly.ima02,formonly.ecm04,formonly.cnt,formonly.cnt2)
+END -- INSTRUCTIONS
+

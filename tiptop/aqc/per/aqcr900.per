@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcr900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aqcr900")
+VBox vb9
+Grid gr13
+{
+ <G qbe                                                                    >
+    Quality Problem No. [qcr01            ]
+    Date                [qcr02                            ]
+    Department No.      [qcr03               |gem02                       ]
+    Employee No.        [qcr04               |gen02                       ]
+    Item No.            [qcr05                                            ]
+    Goods Name          [ima02                                            ]
+    NO-Good Qty         [qcr06     ]     Unit [qcr07     ]
+ <                                                                         >
+
+}
+END -- gr13
+Grid gr12
+{
+[more                                                            ]
+
+}
+END -- gr12
+END -- vb9
+END -- aqcr900
+
+ATTRIBUTES
+Group qbe:QBE, text="QBE";
+ButtonEdit qcr01=formonly.qcr01 type CHAR, action=controlp, tabIndex=1, required, image="zoom";
+DateEdit qcr02=formonly.qcr02 type CHAR, tabIndex=2;
+ButtonEdit qcr03=formonly.qcr03 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=10;
+ButtonEdit qcr04=formonly.qcr04 type CHAR, action=controlp, tabIndex=4, image="zoom";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=11;
+ButtonEdit qcr05=formonly.qcr05 type CHAR, action=controlp, tabIndex=5, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=6, noEntry;
+SpinEdit qcr06=formonly.qcr06 type CHAR, tabIndex=7;
+ButtonEdit qcr07=formonly.qcr07 type CHAR, action=controlp, tabIndex=8, image="zoom";
+CheckBox more=formonly.more type VARCHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.qcr01,formonly.qcr02,formonly.qcr03,formonly.gem02,formonly.qcr04,formonly.gen02,formonly.qcr05,formonly.ima02,formonly.qcr06,formonly.qcr07,formonly.more)
+END -- INSTRUCTIONS
+

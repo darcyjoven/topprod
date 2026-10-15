@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt501")
+VBox vb8
+Folder folder01
+Page Page1(text=%"Basic Data")
+Grid gr1
+{
+
+   Project NO.   [pjo01          |pja02                                   ][dummy01        ]      [imgmksg]
+   Director      [pja08          |gen02                                   ]                       [       ]
+   Department NO.[pja09          |gem02                                   ] Estimated Amt in Total[pja13                         ]
+                                                                            Confirm               [pjoconf         ]
+
+
+
+}
+END -- gr1
+END -- Page1
+Page Page2(text=%"Status")
+Grid gr15
+{
+
+      Record Owner[pjouser   ] Last Modified By  [pjomodu      ] Data Valid Code[pjoa]
+      Department  [pjogrup   ] Create/Modify Date[pjodate      ]
+
+
+
+
+
+}
+END -- gr15
+END -- Page2
+END -- folder01
+Table s_pjp
+{
+[pjp03   |pjp04       |pjp05       |pjp06        |pjn03                                   |pjn05                         |pjp07     |pjp08             |pjp09                                                  ]
+[pjp03   |pjp04       |pjp05       |pjp06        |pjn03                                   |pjn05                         |pjp07     |pjp08             |pjp09                                                  ]
+[pjp03   |pjp04       |pjp05       |pjp06        |pjn03                                   |pjn05                         |pjp07     |pjp08             |pjp09                                                  ]
+[pjp03   |pjp04       |pjp05       |pjp06        |pjn03                                   |pjn05                         |pjp07     |pjp08             |pjp09                                                  ]
+[pjp03   |pjp04       |pjp05       |pjp06        |pjn03                                   |pjn05                         |pjp07     |pjp08             |pjp09                                                  ]
+[pjp03   |pjp04       |pjp05       |pjp06        |pjn03                                   |pjn05                         |pjp07     |pjp08             |pjp09                                                  ]
+[pjp03   |pjp04       |pjp05       |pjp06        |pjn03                                   |pjn05                         |pjp07     |pjp08             |pjp09                                                  ]
+}
+END -- s_pjp
+Grid gr9
+{
+
+  ------ Rows[idx   ]/[cnt  ]---Item[cn2  ]-------
+
+
+
+
+}
+END -- gr9
+END -- vb8
+END -- apjt501
+
+ATTRIBUTES
+ButtonEdit pjo01=formonly.pjo01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit pja02=formonly.pja02 type CHAR, tabIndex=4, noEntry;
+Label dummy01:dummy01, text="Status";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit pja08=formonly.pja08 type CHAR, tabIndex=2, noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=5, noEntry;
+Edit pja09=formonly.pja09 type CHAR, tabIndex=3, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=6, noEntry;
+Edit pja13=formonly.pja13 type CHAR, tabIndex=7, noEntry;
+ComboBox pjoconf=formonly.pjoconf type CHAR, tabIndex=20, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+Edit pjouser=formonly.pjouser type VARCHAR, tabIndex=21, noEntry;
+Edit pjomodu=formonly.pjomodu type VARCHAR, tabIndex=22, noEntry;
+Edit pjoa=formonly.pjoacti type VARCHAR, tabIndex=23, noEntry;
+Edit pjogrup=formonly.pjogrup type VARCHAR, tabIndex=24, noEntry;
+DateEdit pjodate=formonly.pjodate type DATE, tabIndex=25, noEntry;
+Edit pjp03=formonly.pjp03 type VARCHAR, tabIndex=8, title="Step NO.", not null;
+ComboBox pjp04=formonly.pjp04 type VARCHAR, tabIndex=9, title="Payment Term\n", not null, items=(("1", "By Time"),("2", "By Milestone"));
+DateEdit pjp05=formonly.pjp05 type DATE, tabIndex=13, title="Expected Collection Days\n", not null;
+ButtonEdit pjp06=formonly.pjp06 type VARCHAR, action=controlp, tabIndex=14, title="Milestone NO.", not null, image="zoom.png";
+Edit pjn03=formonly.pjn03 type VARCHAR, tabIndex=15, title="Milestone Name", noEntry;
+Edit pjn05=formonly.pjn05 type CHAR, tabIndex=16, title="Activity/WBS", noEntry;
+ComboBox pjp07=formonly.pjp07 type VARCHAR, tabIndex=17, title="Transaction Method", not null, items=(("1", "By Ratio"),("2", "By Absolute Value"));
+Edit pjp08=formonly.pjp08 type DECIMAL(20,6), tabIndex=18, title="Amount/Percent", not null;
+Edit pjp09=formonly.pjp09 type VARCHAR, tabIndex=19, title="Memo";
+Edit idx=formonly.idx type CHAR, tabIndex=10, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjp(formonly.pjp03,formonly.pjp04,formonly.pjp05,formonly.pjp06,formonly.pjn03,formonly.pjn05,formonly.pjp07,formonly.pjp08,formonly.pjp09)
+SCREEN RECORD Undefined(formonly.pjo01,formonly.pja02,formonly.imgmksg,formonly.pjoconf,formonly.pja08,formonly.gen02,formonly.pja09,formonly.gem02,formonly.pja13,formonly.pjouser,formonly.pjomodu,formonly.pjoacti,formonly.pjogrup,formonly.pjodate,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,118 @@
+----------------------------------------------------------------------------------
+-- File created from /u53/tiptop/atm/42f/atmi303.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="atmi303")
+
+
+            VBox vb3
+            Folder pc1
+            Page main(text=%"main")
+
+              Grid gr6
+              {
+                  vim01    [vim01                  ]                                  vim03   [vim03                   ]
+                  vim02    [vim02                  ]
+
+              }
+              END
+            END -- Page
+            Page info(text=%"info")
+
+               Grid gr4
+               {
+
+                   Data Owner        [vimuser     ]   Data Modified By    [vimmodu      ] Data Valid Code  [vimact]
+                   Data of Department[vimgrup     ]   Latest Modified Date[vimdate      ]
+                   Recd Orig.        [vimoriu     ]
+                   Data of Dept Orig.[vimorig     ]
+               }
+               END
+            END -- Page
+            END -- Folder
+            Folder pc3
+            Page Page3(text=%"Page3")
+               Table s_vin
+               {
+               [vin02       |vin03       |vih02       |vih03       |vih04      |vih05       |vih06       |vih07       |vinacti    ]
+               [vin02       |vin03       |vih02       |vih03       |vih04      |vih05       |vih06       |vih07       |vinacti    ]
+               [vin02       |vin03       |vih02       |vih03       |vih04      |vih05       |vih06       |vih07       |vinacti    ]
+               [vin02       |vin03       |vih02       |vih03       |vih04      |vih05       |vih06       |vih07       |vinacti    ]
+
+               }
+               END -- Table
+            END -- Page
+            END -- Folder
+            Folder pc3_
+            Page Page4(text=%"Page4")
+             Table s_vio
+             {
+             [vio02        |vio03        |vii02         |vii03         |vii04         |vii05         |vioacti      ]
+             [vio02        |vio03        |vii02         |vii03         |vii04         |vii05         |vioacti      ]
+             [vio02        |vio03        |vii02         |vii03         |vii04         |vii05         |vioacti      ]
+             [vio02        |vio03        |vii02         |vii03         |vii04         |vii05         |vioacti      ]
+
+             }
+             END -- Table
+            END -- Page
+            END -- Folder
+            Grid gr17
+            {
+              ---------- Rows [cnt   ] / [cn2   ]-[cn4   ] ----------
+
+
+            }
+            END
+            END -- VBox
+END -- Form
+
+TABLES
+vim_file
+vin_file
+vih_file
+vio_file
+vii_file
+
+ATTRIBUTES
+Edit vim01=vim_file.vim01, tabIndex=1, not null;
+Edit vim03=vim_file.vim03, tabIndex=3, not null;
+Edit vim02=vim_file.vim02, tabIndex=2, not null;
+Edit vimuser=vim_file.vimuser, tabIndex=4, noEntry, not null;
+Edit vimmodu=vim_file.vimmodu, tabIndex=6, noEntry, not null;
+Edit vimact=vim_file.vimacti, tabIndex=8, noEntry, not null;
+Edit vimgrup=vim_file.vimgrup, tabIndex=5, noEntry, not null;
+DateEdit vimdate=vim_file.vimdate, tabIndex=7, noEntry, not null;
+Edit vimoriu=vim_file.vimoriu, tabIndex=501, noEntry, not null;
+Edit vimorig=vim_file.vimorig, tabIndex=502, noEntry, not null;
+Edit vin02=vin_file.vin02, tabIndex=9, title="vin02\n", not null;
+ButtonEdit vin03=vin_file.vin03, action=controlp, tabIndex=10, title="vin03", not null, image="zoom.png";
+Edit vih02=vih_file.vih02, tabIndex=11, title="vih02", noEntry, not null;
+DateEdit vih03=vih_file.vih03, tabIndex=12, title="vih03", noEntry, not null;
+DateEdit vih04=vih_file.vih04, tabIndex=13, title="vih04", noEntry;
+Edit vih05=vih_file.vih05, tabIndex=14, title="vih05", noEntry, not null;
+Edit vih06=vih_file.vih06, tabIndex=15, title="vih06", noEntry, not null;
+Edit vih07=vih_file.vih07, tabIndex=16, title="vih07", noEntry, not null;
+CheckBox vinacti=vin_file.vinacti, tabIndex=17, title="vihacti", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit vio02=vio_file.vio02, tabIndex=27, title="vio02", not null;
+ButtonEdit vio03=vio_file.vio03, action=controlp, tabIndex=28, title="vio03", not null, image="zoom.png";
+Edit vii02=vii_file.vii02, tabIndex=29, title="vii02", noEntry, not null;
+ComboBox vii03=vii_file.vii03, tabIndex=30, title="vii03", noEntry, not null, items=(("1", %"jifenhuanzengpin"));
+DateEdit vii04=vii_file.vii04, tabIndex=31, title="vii04", noEntry, not null;
+DateEdit vii05=vii_file.vii05, tabIndex=32, title="vii05", noEntry, not null;
+CheckBox vioacti=vio_file.vioacti, tabIndex=33, title="vioacti", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=34;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=35;
+Edit cn4=formonly.cn4 type INTEGER, tabIndex=36;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vio(vio_file.vio02, vio_file.vio03, vii_file.vii02, vii_file.vii03, vii_file.vii04, vii_file.vii05, vio_file.vioacti)
+SCREEN RECORD s_vin(vin_file.vin02, vin_file.vin03, vih_file.vih02, vih_file.vih03, vih_file.vih04, vih_file.vih05, vih_file.vih06, vih_file.vih07, vin_file.vinacti)
+SCREEN RECORD Undefined(vim_file.vim01, vim_file.vim03, vim_file.vim02, vim_file.vimuser, vim_file.vimmodu, vim_file.vimacti, vim_file.vimgrup, vim_file.vimdate, vim_file.vimoriu, vim_file.vimorig, formonly.cnt, formonly.cn2, formonly.cn4)
+END -- INSTRUCTIONS
+

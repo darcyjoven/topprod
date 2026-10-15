@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt6009.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt6009")
+Group Group1
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                 >
+ [only_one                          ]
+ <                                          >
+
+}
+END -- Grid1
+Grid Grid2
+{
+  [dummy                             ]
+ <G group02            ><G group03             >
+ [oga00       ]         [oga08       ]
+ <                     ><                      >
+ <G group04                                    >
+  Delivery Note No.   [oga01           ]
+  Delivery Date       [oga02       ]
+  Delivery Employee   [oga14     ]
+  Delivery Dept       [oga15     ]
+ <                                             >
+
+}
+END -- Grid2
+END -- VBox1
+END -- Group1
+END -- axmt6009
+
+TABLES
+oga_file
+ATTRIBUTES
+Group group01:group01;
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, items=(("1", %"Generate this Doc only"),("2", %"Generate by QBE Condition"));
+Label dummy:dummy, text="Entry Accounts Condition to Gen Entry Sheet";
+Group group02:group02;
+RadioGroup oga00=oga_file.oga00, tabIndex=2, items=(("1", %"Delivery"),("2", %"Exchange"));
+Group group03:group03;
+RadioGroup oga08=oga_file.oga08, tabIndex=3, items=(("1", %"Local"),("2", %"Overseas"));
+Group group04:group04, text="QBE";
+Edit oga01=oga_file.oga01, tabIndex=4;
+DateEdit oga02=oga_file.oga02, tabIndex=5;
+Edit oga14=oga_file.oga14, tabIndex=6;
+Edit oga15=oga_file.oga15, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,oga_file.oga00,oga_file.oga08,oga_file.oga01,oga_file.oga02,oga_file.oga14,oga_file.oga15)
+END -- INSTRUCTIONS
+

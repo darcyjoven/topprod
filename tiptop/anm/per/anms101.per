@@ -1,0 +1,287 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anms101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anms101")
+Folder pc2
+Page page01(text="Main")
+Grid gr11
+{
+[nmz01                                       ]
+[nmz02                                       ]
+ Plant # Where AGL is             [nmz02p    ]
+ General Ledger Default Book No.  [nmz02b    ]
+ General Ledger Default Book No.2 [nmz02c    ]
+[nmz11                                       ]
+[nmz05                                       ]
+[nmz06                                       ]
+ Account Locking Date             [nmz10     ]
+}
+END -- gr11
+END -- page01
+Page page02(text="General")
+VBox VBox1
+HBox HBox1
+Group group02(text="Credit Acct Type When Pay Demand Note")
+Grid gr12
+{
+
+[nmz04                                ]
+[                                     ]
+}
+END -- gr12
+END -- group02
+Group group14(text=%"Statement of cash flow")
+Grid gr21
+{
+[nmz71                            ]
+[dummy01                 ] [dummy02                        ]
+[nmz70                   ] [nmz72                          ]
+[                        ] [                               ]
+
+  nmz73[nmz73       ]
+}
+END -- gr21
+END -- group14
+END -- HBox1
+Grid gr13
+{
+[nmz03                                ]
+[nmz08                                ]
+[nmz07                                ]
+[nmz52                                ]
+ Batch Chk Payment Def Drawing Slip  [nmz51       ]
+ Batch Chk Payment Def Cash Var Code [nmz55       ]
+ Note Title Contact Type             [nmz54       ]
+}
+END -- gr13
+Grid gr14
+{
+ Single Time Deposit Interest \>           [nmz56     ]
+ Withhold Income Tax                      [nmz57     ]%
+ Time Deposit Income Tax Withholding Acct [nmz58                         ]
+ Time Deposit Income Tax Withholding Acct2[nmz581                        ]
+}
+END -- gr14
+END -- VBox1
+END -- page02
+Page page03(text="Transaction Code")
+Grid gr15
+{
+ <G group04                                        >
+  Cashing Tran Code                   [nmz31     ]
+  Returned Tran Code                  [nmz32     ]
+  Exchange Difference Adjustment Code [nmz37     ]
+ <                                                 >
+ <G group05                                        >
+  Cashing Tran Code                   [nmz33     ]
+  Returned Tran Code                  [nmz34     ]
+  Exchange Difference Adjustment Code [nmz36     ]
+ <                                                 >
+ <G group06                                        >
+  Exchange Difference Adjustment Cod1 [nmz35     ]
+  Exchange Difference Adjustment Cod2 [nmz53     ]
+ <                                                 >
+ <G group07                                        >
+  Exchange Delivery Fee Trans. Code   [nmz39     ]
+ <                                                 >
+
+}
+END -- gr15
+END -- page03
+Page page04(text="Cash Forecast")
+Grid gr16
+{
+ <G group08                              >
+  Unpaid Invoice      [nmz14     ]
+  Unbilled Receipt    [nmz15     ]
+  Unreceived Purchase [nmz16     ]
+ <                                       >
+ <G group09                              >
+  Uncollected Invoice [nmz17     ]
+  Uninvoiced Delivery [nmz18     ]
+  Ordered/Undelivered [nmz19     ]
+ <                                       >
+
+}
+END -- gr16
+END -- page04
+Page page05(text="Bad Debt List")
+Grid gr17
+{
+                     [dummy1      ]    [dummy2      ]    [dummy3      ]    [dummy4      ]
+
+ Days                [nmz23       ]    [nmz24       ]    [nmz25       ]    [nmz26       ]
+
+ Ratio               [nmz27       ]%   [nmz28       ]%   [nmz29       ]%   [nmz30       ]%
+
+}
+END -- gr17
+END -- page05
+Page page06(text="End of Month Revaluation")
+VBox vb45
+Grid gr19
+{
+ [nmz59                                                             ]
+  N/R Revaluation on End of Month Year/Month [nmz60     ][nmz61     ]
+
+ <G group12                                                          >
+ [nmz62                                                             ]
+ <                                                                   >
+
+}
+END -- gr19
+Grid gr20
+{
+ [nmz63                                                             ]
+  N/P Revaluation on End of Month Year/Month [nmz64     ][nmz65     ]
+
+ <G group13                                                          >
+ [nmz66                                                             ]
+ <                                                                   >
+
+}
+END -- gr20
+Grid gr18
+{
+ [nmz20                                                             ]
+  CIB Revaluation on End of Month Year/Month [nmz21     ][nmz22     ]
+
+ <G group11                                                          >
+ [nmz09                                                             ]
+ <                                                                   >
+
+}
+END -- gr18
+END -- vb45
+END -- page06
+Page userdefined_field(text=%"User Defined Field")
+Grid Grid1
+{
+
+ userdefined_field01[nmzud01                 ]userdefined_field09[nmzud09                ]
+                    [                        ]
+ userdefined_field02[nmzud02                 ]userdefined_field10[nmzud10                ]
+
+ userdefined_field03[nmzud03                 ]userdefined_field11[nmzud11                ]
+
+ userdefined_field04[nmzud04                 ]userdefined_field12[nmzud12                ]
+
+ userdefined_field05[nmzud05                 ]userdefined_field13[nmzud13                ]
+
+ userdefined_field06[nmzud06                 ]userdefined_field14[nmzud14                ]
+
+ userdefined_field07[nmzud07                 ]userdefined_field15[nmzud15                ]
+
+ userdefined_field08[nmzud08                 ]
+
+
+
+}
+END -- Grid1
+END -- userdefined_field
+END -- pc2
+END -- anms101
+
+TABLES
+nmz_file
+ATTRIBUTES
+CheckBox nmz01=nmz_file.nmz01, tabIndex=1, text="Open ANM Module to Users", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nmz02=nmz_file.nmz02, tabIndex=2, text="Link to AGL Moudle", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit nmz02p=nmz_file.nmz02p, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit nmz02b=nmz_file.nmz02b, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit nmz02c=nmz_file.nmz02c, action=controlp, tabIndex=5, image="zoom";
+CheckBox nmz11=nmz_file.nmz11, tabIndex=6, text="Separate Acct by Department", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nmz05=nmz_file.nmz05, tabIndex=7, text="Caary Payt.Slip to Vou to Gen Payb.Note", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nmz06=nmz_file.nmz06, tabIndex=8, text="Default Actg.Dt as Bank Dt when Cash N/P", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit nmz10=nmz_file.nmz10, tabIndex=9, noEntry;
+RadioGroup nmz04=nmz_file.nmz04, tabIndex=10, not null, required, items=(("1", "Moving Average Exchange Rate"),("2", "Daily/Month Exchange Rate"));
+CheckBox nmz71=nmz_file.nmz71, tabIndex=73, text=%"Cash Flow feature is enabled", valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text=%"Statement of cash flow";
+Label dummy02:dummy02, text=%"Change in cash code entry control";
+RadioGroup nmz70=nmz_file.nmz70, tabIndex=57, not null, required, items=(("1", "Bill funding system"),("2", "Ledger system"),("3", "Entry papers"));
+RadioGroup nmz72=nmz_file.nmz72, tabIndex=74, items=(("1", "Must enter words"),("2", "Prompt,and go on"),("3", "Can be left blank"));
+ButtonEdit nmz73=nmz_file.nmz73, action=controlp, tabIndex=75, image="zoom";
+CheckBox nmz03=nmz_file.nmz03, tabIndex=11, text="Check Negotiation Paid-in L/C Receipt No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nmz08=nmz_file.nmz08, tabIndex=12, text="Can N/R Department be blank", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nmz07=nmz_file.nmz07, tabIndex=13, text="Can N/P Department be blank", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox nmz52=nmz_file.nmz52, tabIndex=14, text="Interest of Financing Temporary Estimate Reverse Next Month", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit nmz51=nmz_file.nmz51, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry  Doc Type";
+ButtonEdit nmz55=nmz_file.nmz55, action=controlp, tabIndex=16, image="zoom", comment="<^P>Qry Cash Variation Code";
+Edit nmz54=nmz_file.nmz54, tabIndex=17;
+Edit nmz56=nmz_file.nmz56, tabIndex=18;
+Edit nmz57=nmz_file.nmz57, tabIndex=19;
+ButtonEdit nmz58=nmz_file.nmz58, action=controlp, tabIndex=20, image="zoom", comment="<^P>Qry Account  ";
+ButtonEdit nmz581=nmz_file.nmz581, action=controlp, tabIndex=21, image="zoom", comment="<^P>Qry Account  ";
+Group group04:group04, text="Notes Payable";
+ButtonEdit nmz31=nmz_file.nmz31, action=controlp, tabIndex=22, image="zoom", comment="Press<^P>Qry Transaction Code";
+ButtonEdit nmz32=nmz_file.nmz32, action=controlp, tabIndex=23, image="zoom", comment="Press<^P>Qry Transaction Code";
+ButtonEdit nmz37=nmz_file.nmz37, action=controlp, tabIndex=24, image="zoom", comment="Press<^P>Qry Transaction Code";
+Group group05:group05, text="Note Receivable";
+ButtonEdit nmz33=nmz_file.nmz33, action=controlp, tabIndex=25, image="zoom", comment="Press<^P>Qry Transaction Code";
+ButtonEdit nmz34=nmz_file.nmz34, action=controlp, tabIndex=26, image="zoom", comment="Press<^P>Qry Transaction Code";
+ButtonEdit nmz36=nmz_file.nmz36, action=controlp, tabIndex=27, image="zoom", comment="Press<^P>Qry Transaction Code";
+Group group06:group06, text="Cash In Bank";
+ButtonEdit nmz35=nmz_file.nmz35, action=controlp, tabIndex=28, image="zoom", comment="Press<^P>Qry Transaction Code";
+ButtonEdit nmz53=nmz_file.nmz53, action=controlp, tabIndex=56, image="zoom", comment="Press<^P>Qry Transaction Code";
+Group group07:group07, text="Exchange Delivery";
+ButtonEdit nmz39=nmz_file.nmz39, action=controlp, tabIndex=29, image="zoom", comment="Press<^P>Qry Transaction Code";
+Group group08:group08, text="Funds Forecast(-) Day";
+Edit nmz14=nmz_file.nmz14, tabIndex=30;
+Edit nmz15=nmz_file.nmz15, tabIndex=31;
+Edit nmz16=nmz_file.nmz16, tabIndex=32;
+Group group09:group09, text="Funds Forecast(+) Day";
+Edit nmz17=nmz_file.nmz17, tabIndex=33;
+Edit nmz18=nmz_file.nmz18, tabIndex=34;
+Edit nmz19=nmz_file.nmz19, tabIndex=35;
+Label dummy1:dummy1, text="1st Period";
+Label dummy2:dummy2, text="2nd Period";
+Label dummy3:dummy3, text="3nd Period";
+Label dummy4:dummy4, text="4nd Period";
+Edit nmz23=nmz_file.nmz23, tabIndex=36, not null, required;
+Edit nmz24=nmz_file.nmz24, tabIndex=37, not null, required;
+Edit nmz25=nmz_file.nmz25, tabIndex=38, not null, required;
+Edit nmz26=nmz_file.nmz26, tabIndex=39, not null, required;
+Edit nmz27=nmz_file.nmz27, tabIndex=40, not null, required;
+Edit nmz28=nmz_file.nmz28, tabIndex=41, not null, required;
+Edit nmz29=nmz_file.nmz29, tabIndex=42, not null, required;
+Edit nmz30=nmz_file.nmz30, tabIndex=43, not null, required;
+CheckBox nmz59=nmz_file.nmz59, tabIndex=48, text="N/R Spread Approved in End of Month Revaluation,Un-Reverse next Month.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nmz60=nmz_file.nmz60, tabIndex=49;
+Edit nmz61=nmz_file.nmz61, tabIndex=50;
+Group group12:group12, text="N/R Revaluation on End of Month Entry Sheet Generate Method";
+RadioGroup nmz62=nmz_file.nmz62, tabIndex=51, items=(("1", "detail"),("2", "Summary"),("3", "By Customer"));
+CheckBox nmz63=nmz_file.nmz63, tabIndex=52, text="N/P Spread Approved in End of Month Revaluation,Un-Reverse next Month.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nmz64=nmz_file.nmz64, tabIndex=53;
+Edit nmz65=nmz_file.nmz65, tabIndex=54;
+Group group13:group13, text="N/P Revaluation on End of Month Entry Sheet Generate Method";
+RadioGroup nmz66=nmz_file.nmz66, tabIndex=55, items=(("1", "detail"),("2", "Summary"),("3", "By Vender"));
+CheckBox nmz20=nmz_file.nmz20, tabIndex=44, text="CIB Spread Approved in End of Month Revaluation,Un-Reverse next Month.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nmz21=nmz_file.nmz21, tabIndex=45;
+Edit nmz22=nmz_file.nmz22, tabIndex=46;
+Group group11:group11, text="CIB Revaluation on End of Month Entry Sheet Generate Method";
+RadioGroup nmz09=nmz_file.nmz09, tabIndex=47, items=(("1", "detail"),("2", "Summary"));
+TextEdit nmzud01=nmz_file.nmzud01, tabIndex=58;
+Edit nmzud09=nmz_file.nmzud09, tabIndex=59;
+Edit nmzud02=nmz_file.nmzud02, tabIndex=60;
+Edit nmzud10=nmz_file.nmzud10, tabIndex=61;
+Edit nmzud03=nmz_file.nmzud03, tabIndex=62;
+Edit nmzud11=nmz_file.nmzud11, tabIndex=63;
+Edit nmzud04=nmz_file.nmzud04, tabIndex=64;
+Edit nmzud12=nmz_file.nmzud12, tabIndex=65;
+Edit nmzud05=nmz_file.nmzud05, tabIndex=66;
+DateEdit nmzud13=nmz_file.nmzud13, tabIndex=67;
+Edit nmzud06=nmz_file.nmzud06, tabIndex=68;
+DateEdit nmzud14=nmz_file.nmzud14, tabIndex=69;
+Edit nmzud07=nmz_file.nmzud07, tabIndex=70;
+DateEdit nmzud15=nmz_file.nmzud15, tabIndex=71;
+Edit nmzud08=nmz_file.nmzud08, tabIndex=72;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nmz_file.nmz01,nmz_file.nmz02,nmz_file.nmz02p,nmz_file.nmz02b,nmz_file.nmz02c,nmz_file.nmz11,nmz_file.nmz05,nmz_file.nmz06,nmz_file.nmz10,nmz_file.nmz04,nmz_file.nmz70,nmz_file.nmz03,nmz_file.nmz08,nmz_file.nmz07,nmz_file.nmz52,nmz_file.nmz51,nmz_file.nmz55,nmz_file.nmz54,nmz_file.nmz56,nmz_file.nmz57,nmz_file.nmz58,nmz_file.nmz581,nmz_file.nmz31,nmz_file.nmz32,nmz_file.nmz37,nmz_file.nmz33,nmz_file.nmz34,nmz_file.nmz36,nmz_file.nmz35,nmz_file.nmz53,nmz_file.nmz39,nmz_file.nmz14,nmz_file.nmz15,nmz_file.nmz16,nmz_file.nmz17,nmz_file.nmz18,nmz_file.nmz19,nmz_file.nmz23,nmz_file.nmz24,nmz_file.nmz25,nmz_file.nmz26,nmz_file.nmz27,nmz_file.nmz28,nmz_file.nmz29,nmz_file.nmz30,nmz_file.nmz59,nmz_file.nmz60,nmz_file.nmz61,nmz_file.nmz62,nmz_file.nmz63,nmz_file.nmz64,nmz_file.nmz65,nmz_file.nmz66,nmz_file.nmz20,nmz_file.nmz21,nmz_file.nmz22,nmz_file.nmz09,nmz_file.nmzud01,nmz_file.nmzud09,nmz_file.nmzud02,nmz_file.nmzud10,nmz_file.nmzud03,nmz_file.nmzud11,nmz_file.nmzud04,nmz_file.nmzud12,nmz_file.nmzud05,nmz_file.nmzud13,nmz_file.nmzud06,nmz_file.nmzud14,nmz_file.nmzud07,nmz_file.nmzud15,nmz_file.nmzud08,nmz_file.nmz71,nmz_file.nmz72,nmz_file.nmz73)
+END -- INSTRUCTIONS
+

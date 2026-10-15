@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi200_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aimi200_a")
+VBox vb8
+Folder Main
+Page Page4(text=%"Main")
+Table s_inc
+{
+[inc03       |zx02        ]
+[inc03       |zx02        ]
+[inc03       |zx02        ]
+[inc03       |zx02        ]
+[inc03       |zx02        ]
+[inc03       |zx02        ]
+[inc03       |zx02        ]
+[inc03       |zx02        ]
+[inc03       |zx02        ]
+[inc03       |zx02        ]
+
+}
+END -- s_inc
+END -- Page4
+END -- Main
+Grid gr3058
+{
+ ---------- Rows [cnt   ] ---------------
+
+}
+END -- gr3058
+END -- vb8
+END -- aimi200_a
+
+TABLES
+inc_file
+ATTRIBUTES
+ButtonEdit inc03=inc_file.inc03, action=controlp, tabIndex=1, title="User Code", not null, required, image="zoom.png";
+Edit zx02=formonly.zx02 type VARCHAR, tabIndex=2, title="User Name", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_inc(inc_file.inc03,formonly.zx02)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

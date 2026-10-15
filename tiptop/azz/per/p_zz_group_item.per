@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zz_group_item.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zz_group_item")
+VBox VBox1
+Grid grid01
+{
+ <G group01                               >
+  Group ID   [gaw01                       ]
+  Group Name [gaw02                       ]
+ <                                        >
+
+}
+END -- grid01
+Table s_gaz
+{
+[gaz01      |gaz03                       ]
+[gaz01      |gaz03                       ]
+[gaz01      |gaz03                       ]
+[gaz01      |gaz03                       ]
+[gaz01      |gaz03                       ]
+[gaz01      |gaz03                       ]
+[gaz01      |gaz03                       ]
+[gaz01      |gaz03                       ]
+[gaz01      |gaz03                       ]
+[gaz01      |gaz03                       ]
+
+}
+END -- s_gaz
+Grid gr3037
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3037
+END -- VBox1
+END -- p_zz_group_item
+
+TABLES
+gaz_file,
+gaw_file
+ATTRIBUTES
+Group group01:group01;
+Edit gaw01=gaw_file.gaw01, tabIndex=1;
+Edit gaw02=gaw_file.gaw02, tabIndex=2;
+ButtonEdit gaz01=gaz_file.gaz01, action=controlp, tabIndex=3, title="Program ID", not null, required, image="zoom";
+Edit gaz03=gaz_file.gaz03, tabIndex=4, title="Program Description";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gaz(gaz_file.gaz01,gaz_file.gaz03)
+SCREEN RECORD Undefined(gaw_file.gaw01,gaw_file.gaw02,formonly.cn2)
+END -- INSTRUCTIONS
+

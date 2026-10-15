@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq640.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq640")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr2238
+{
+ Borrow No           [oea01            ]
+ Borrow Date         [oea02            ]
+ Cus. No             [oea03            ]
+ Item No             [oeb04            ]
+ Borrow Back Date    [oeb30            ]
+
+
+}
+END -- gr2238
+END -- page01
+END -- folder01
+Table s_oeb
+{
+[oeb01             |oeb03|oeb02                         |oeb06       |ima021          |oeb05            |oeb24         |oeb25            |oeb29           |unqty            |oeb31             ]
+[oeb01             |oeb03|oeb02                         |oeb06       |ima021          |oeb05            |oeb24         |oeb25            |oeb29           |unqty            |oeb31             ]
+[oeb01             |oeb03|oeb02                         |oeb06       |ima021          |oeb05            |oeb24         |oeb25            |oeb29           |unqty            |oeb31             ]
+[oeb01             |oeb03|oeb02                         |oeb06       |ima021          |oeb05            |oeb24         |oeb25            |oeb29           |unqty            |oeb31             ]
+[oeb01             |oeb03|oeb02                         |oeb06       |ima021          |oeb05            |oeb24         |oeb25            |oeb29           |unqty            |oeb31             ]
+[oeb01             |oeb03|oeb02                         |oeb06       |ima021          |oeb05            |oeb24         |oeb25            |oeb29           |unqty            |oeb31             ]
+[oeb01             |oeb03|oeb02                         |oeb06       |ima021          |oeb05            |oeb24         |oeb25            |oeb29           |unqty            |oeb31             ]
+[oeb01             |oeb03|oeb02                         |oeb06       |ima021          |oeb05            |oeb24         |oeb25            |oeb29           |unqty            |oeb31             ]
+[oeb01             |oeb03|oeb02                         |oeb06       |ima021          |oeb05            |oeb24         |oeb25            |oeb29           |unqty            |oeb31             ]
+[oeb01             |oeb03|oeb02                         |oeb06       |ima021          |oeb05            |oeb24         |oeb25            |oeb29           |unqty            |oeb31             ]
+}
+END -- s_oeb
+Grid gr2239
+{
+ ---------- Rows [cnt   ] ----------
+
+
+
+
+}
+END -- gr2239
+END -- vb2
+END -- axmq640
+
+TABLES
+oeb_file
+ATTRIBUTES
+ButtonEdit oea01=formonly.oea01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit oea02=formonly.oea02 type CHAR, tabIndex=2;
+ButtonEdit oea03=formonly.oea03 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit oeb04=formonly.oeb04 type CHAR, action=controlp, tabIndex=4, image="zoom";
+DateEdit oeb30=formonly.oeb30 type CHAR, tabIndex=5;
+Edit oeb01=oeb_file.oeb01, tabIndex=6, title="Borrow No.", not null, required;
+Edit oeb03=oeb_file.oeb03, tabIndex=7, title="SN", not null, required;
+Edit oeb02=oeb_file.oeb04, tabIndex=8, title="Item No";
+Edit oeb06=oeb_file.oeb06, tabIndex=9, title="Part Name", not null, required;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=10, title="Specification", not null, required;
+Edit oeb05=oeb_file.oeb05, tabIndex=11, title="Unit", noEntry;
+Edit oeb24=oeb_file.oeb24, tabIndex=12, title="Delivered Qty", not null, required;
+Edit oeb25=oeb_file.oeb25, tabIndex=13, title="Sales/return Qty", not null, required;
+Edit oeb29=oeb_file.oeb29, tabIndex=14, title="Return Qty";
+Edit unqty=formonly.unqty type CHAR, tabIndex=15, title="Unreturn Qty", noEntry;
+DateEdit oeb31=oeb_file.oeb30, tabIndex=16, title="Borrow Date";
+Edit cnt=formonly.cnt type CHAR, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oeb(oeb_file.oeb01,oeb_file.oeb03,oeb_file.oeb04,oeb_file.oeb06,formonly.ima021,oeb_file.oeb05,oeb_file.oeb24,oeb_file.oeb25,oeb_file.oeb29,formonly.unqty,oeb_file.oeb30)
+SCREEN RECORD Undefined(formonly.oea01,formonly.oea02,formonly.oea03,formonly.oeb04,formonly.oeb30,formonly.cnt)
+END -- INSTRUCTIONS
+

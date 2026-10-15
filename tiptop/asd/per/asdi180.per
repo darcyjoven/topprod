@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdi180.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdi180")
+VBox VBox1
+Folder pc90
+Page page01(text="Main")
+Grid gr364
+{
+  Item No.            [stp02                         ]
+  Product Type        [stp021                        ]
+  Category            [stp01                         ]
+
+ <G group02                                 >  <G group03                                 >
+  End of Period Qty   [stp03               ]    Doc No.             [stp09     ]
+  Standard Unit Price [stp04               ]    Doc.Line No.        [stp10     ]
+  Standard Cost       [stp05               ]    Transaction Date    [stp11     ]
+  Diff. Apportionment [stp06               ]    Currency            [stp12     ]
+  Prod. Selling Price [stp07               ]    F.C U/P             [stp13               ]
+  Net Realiza. Value  [stp08               ]    Ex.Rate             [stp14               ]
+  LCM Cost            [stp15               ]
+ <                                          >  <                                          >
+ <G group04                                                                               >
+  Finished Prod.Item# [stp16               ]
+  Prod. Standard Cost [stp17               ]
+  Product Cost        [stp18               ]
+  Estima. Input Cost  [stp19               ]
+ <                                                                                        >
+
+}
+END -- gr364
+END -- page01
+END -- pc90
+Grid gr365
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr365
+END -- VBox1
+END -- asdi180
+
+TABLES
+stp1_file
+ATTRIBUTES
+ButtonEdit stp02=stp1_file.stp02, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit stp021=stp1_file.stp021, tabIndex=2, upShift;
+ComboBox stp01=stp1_file.stp01, tabIndex=3, noEntry, not null, required, queryEditable, items=(("1", "Material"),("2", "Finished Product"),("3", "Semi-Product"));
+Group group02:group02;
+Edit stp03=stp1_file.stp03, tabIndex=4;
+Edit stp04=stp1_file.stp04, tabIndex=5;
+Edit stp05=stp1_file.stp05, tabIndex=6;
+Edit stp06=stp1_file.stp06, tabIndex=7;
+Edit stp07=stp1_file.stp07, tabIndex=8;
+Edit stp08=stp1_file.stp08, tabIndex=9;
+Edit stp15=stp1_file.stp15, tabIndex=10;
+Group group03:group03;
+Edit stp09=stp1_file.stp09, tabIndex=11, upShift;
+Edit stp10=stp1_file.stp10, tabIndex=12;
+DateEdit stp11=stp1_file.stp11, tabIndex=13;
+ButtonEdit stp12=stp1_file.stp12, action=controlp, tabIndex=14, image="zoom", upShift;
+Edit stp13=stp1_file.stp13, tabIndex=15;
+ButtonEdit stp14=stp1_file.stp14, action=controlp, tabIndex=16, image="zoom";
+Group group04:group04;
+Edit stp16=stp1_file.stp16, tabIndex=17, upShift;
+Edit stp17=stp1_file.stp17, tabIndex=18;
+Edit stp18=stp1_file.stp18, tabIndex=19;
+Edit stp19=stp1_file.stp19, tabIndex=20;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(stp1_file.stp02,stp1_file.stp021,stp1_file.stp01,stp1_file.stp03,stp1_file.stp04,stp1_file.stp05,stp1_file.stp06,stp1_file.stp07,stp1_file.stp08,stp1_file.stp15,stp1_file.stp09,stp1_file.stp10,stp1_file.stp11,stp1_file.stp12,stp1_file.stp13,stp1_file.stp14,stp1_file.stp16,stp1_file.stp17,stp1_file.stp18,stp1_file.stp19,formonly.cnt)
+END -- INSTRUCTIONS
+

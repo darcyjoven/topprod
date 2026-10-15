@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_zly.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Qry Work Item")
+Grid gr1
+{
+ <T s_zly                                             >
+ [check |zly03           |zly01     |zly02           ]
+ [check |zly03           |zly01     |zly02           ]
+ [check |zly03           |zly01     |zly02           ]
+ [check |zly03           |zly01     |zly02           ]
+ [check |zly03           |zly01     |zly02           ]
+ [check |zly03           |zly01     |zly02           ]
+ [check |zly03           |zly01     |zly02           ]
+ [check |zly03           |zly01     |zly02           ]
+ [check |zly03           |zly01     |zly02           ]
+ [check |zly03           |zly01     |zly02           ]
+ <                                                    >
+
+}
+END -- gr1
+END -- q_zly
+
+ATTRIBUTES
+Table s_zly:s_zly;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox zly03=formonly.zly03 type CHAR, tabIndex=2, title="OUTPUT VALUE", queryEditable, items=(("1A", "1A(Support)"),("1B", "1B(Support)"),("2A", "Required Development"),("2B", "Reseach Development"),("2C", "System Development"),("2D", "Collect Item"),("3A", "Test"),("3B", "Product Doc."),("3C", "Release Doc."),("3D", "Beta Support"),("4A", "Internal Project Support"),("4B", "External Project Support"),("5A", "BUG Modify"),("5B", "Spec. BUG Modify"),("6A", "Function Handling"),("7A", "System Management"),("7B", "Routine work"),("7C", "Training"),("8", "Redevelop"),("9A", "Process Improvemen"),("9B", "Quality Assurance"),("9C", "File review"),("9D", "Quality control"),("A", "Ask for leave"),("B", "Training & Learning (Tainee)"),("C", "Regular Meeting"),("Z", "Other"));
+Edit zly01=formonly.zly01 type CHAR, tabIndex=3, title="WORK ITEM";
+Edit zly02=formonly.zly02 type CHAR, tabIndex=4, title="WORK ITEM NAME";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zly(formonly.check,formonly.zly03,formonly.zly01,formonly.zly02)
+END -- INSTRUCTIONS
+

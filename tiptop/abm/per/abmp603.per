@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp603.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmp603")
+Grid gr859
+{
+ [dummy01                                                      ]
+
+ <G group01                                                      >
+  Levels              [max_level ]
+  [sw                            ]
+  [g_bgjob                       ]
+
+ <                                                               >
+
+}
+END -- gr859
+END -- abmp603
+
+ATTRIBUTES
+Label dummy01:dummy01, text="It\'ll update all BOM Items,refer to by Highest Lv(L.L.Cd) to Item Master";
+Group group01:group01;
+Edit max_level=formonly.max_level type SMALLINT, tabIndex=1;
+CheckBox sw=formonly.sw type VARCHAR, tabIndex=2, text="Show that carries out course information", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=3, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.max_level,formonly.sw,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

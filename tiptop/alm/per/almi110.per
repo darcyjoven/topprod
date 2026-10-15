@@ -1,0 +1,119 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="slmi110")
+Folder Folder1
+Page basic(text=%"Page2")
+VBox VBox1
+Grid Grid1
+{
+
+ [label1     |lmbstore            |rtz13                         ]
+ [label2     |lmblegal            |azt02                         ]
+
+
+}
+END -- Grid1
+Table s_lmb_l
+{
+[lmb02          |lmb03                         |lmb07               |lmb08               |lmb05               |lmb09               |lmb04               |lmb06     ]
+[lmb02          |lmb03                         |lmb07               |lmb08               |lmb05               |lmb09               |lmb04               |lmb06     ]
+[lmb02          |lmb03                         |lmb07               |lmb08               |lmb05               |lmb09               |lmb04               |lmb06     ]
+[lmb02          |lmb03                         |lmb07               |lmb08               |lmb05               |lmb09               |lmb04               |lmb06     ]
+[lmb02          |lmb03                         |lmb07               |lmb08               |lmb05               |lmb09               |lmb04               |lmb06     ]
+[lmb02          |lmb03                         |lmb07               |lmb08               |lmb05               |lmb09               |lmb04               |lmb06     ]
+[lmb02          |lmb03                         |lmb07               |lmb08               |lmb05               |lmb09               |lmb04               |lmb06     ]
+[lmb02          |lmb03                         |lmb07               |lmb08               |lmb05               |lmb09               |lmb04               |lmb06     ]
+[lmb02          |lmb03                         |lmb07               |lmb08               |lmb05               |lmb09               |lmb04               |lmb06     ]
+
+
+}
+END -- s_lmb_l
+Grid gr3
+{
+
+   --------- indx [indx   ] / [cnt    ] --------- text3 [cn2    ] ---------
+
+}
+END -- gr3
+END -- VBox1
+END -- basic
+Page checklist(text=%"Page3")
+VBox VBox2
+Table s_lmb
+{
+[lmbstor1       |rtz11                         |lmblega1    |azt01               |lmb01          |lmb00                         |lmb0a               |lmb0b               |lmb0c               |lmb0d               |lmb0e               |lmb0f      ]
+[lmbstor1       |rtz11                         |lmblega1    |azt01               |lmb01          |lmb00                         |lmb0a               |lmb0b               |lmb0c               |lmb0d               |lmb0e               |lmb0f      ]
+[lmbstor1       |rtz11                         |lmblega1    |azt01               |lmb01          |lmb00                         |lmb0a               |lmb0b               |lmb0c               |lmb0d               |lmb0e               |lmb0f      ]
+[lmbstor1       |rtz11                         |lmblega1    |azt01               |lmb01          |lmb00                         |lmb0a               |lmb0b               |lmb0c               |lmb0d               |lmb0e               |lmb0f      ]
+[lmbstor1       |rtz11                         |lmblega1    |azt01               |lmb01          |lmb00                         |lmb0a               |lmb0b               |lmb0c               |lmb0d               |lmb0e               |lmb0f      ]
+[lmbstor1       |rtz11                         |lmblega1    |azt01               |lmb01          |lmb00                         |lmb0a               |lmb0b               |lmb0c               |lmb0d               |lmb0e               |lmb0f      ]
+[lmbstor1       |rtz11                         |lmblega1    |azt01               |lmb01          |lmb00                         |lmb0a               |lmb0b               |lmb0c               |lmb0d               |lmb0e               |lmb0f      ]
+[lmbstor1       |rtz11                         |lmblega1    |azt01               |lmb01          |lmb00                         |lmb0a               |lmb0b               |lmb0c               |lmb0d               |lmb0e               |lmb0f      ]
+[lmbstor1       |rtz11                         |lmblega1    |azt01               |lmb01          |lmb00                         |lmb0a               |lmb0b               |lmb0c               |lmb0d               |lmb0e               |lmb0f      ]
+
+}
+END -- s_lmb
+Grid gr2
+{
+ ---------- Rows [cn3   ]----------
+
+
+}
+END -- gr2
+END -- VBox2
+END -- checklist
+END -- Folder1
+END -- ami110
+
+TABLES
+aaa_file3=azt_file,
+aaa_file4=lmb_file,
+lmb_file,
+aaa_file2=lmb_file,
+azt_file,
+rtz_file,
+aaa_file1=rtz_file
+ATTRIBUTES
+Label label1:Label1, text=%"lmbstore";
+ButtonEdit lmbstore=lmb_file.lmbstore, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=3, noEntry;
+Label label2:Label2, text=%"lmblegal";
+ButtonEdit lmblegal=lmb_file.lmblegal, action=controlp, tabIndex=2, noEntry, not null, image="zoom";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit lmb02=lmb_file.lmb02, action=controlp, tabIndex=5, title=%"lmb02", noEntry, not null, required, image="zoom";
+Edit lmb03=lmb_file.lmb03, tabIndex=6, title=%"lmb03";
+Edit lmb07=lmb_file.lmb07, tabIndex=7, title=%"lmb07";
+Edit lmb08=lmb_file.lmb08, tabIndex=8, title=%"lmb08";
+Edit lmb05=lmb_file.lmb05, tabIndex=9, title=%"lmb05", noEntry;
+Edit lmb09=lmb_file.lmb09, tabIndex=10, title=%"lmb09", noEntry, not null;
+Edit lmb04=lmb_file.lmb04, tabIndex=11, title=%"lmb04", noEntry;
+CheckBox lmb06=lmb_file.lmb06, tabIndex=12, default = "Y", title=%"lmb06", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit indx=formonly.indx type CHAR, tabIndex=25;
+Edit cnt=formonly.cnt type CHAR, tabIndex=26;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=27;
+Edit lmbstor1=aaa_file4.lmbstore, tabIndex=13, title="Store No.", not null, required;
+Edit rtz11=aaa_file1.rtz13, tabIndex=14, title="Store Name", noEntry;
+Edit lmblega1=formonly.lmblegal type VARCHAR, tabIndex=15, title="Corporation", noEntry, not null;
+Edit azt01=aaa_file3.azt02, tabIndex=16, title="Corporation Name", noEntry;
+Edit lmb01=formonly.lmb02 type VARCHAR, tabIndex=17, title="Building No.", not null, required;
+Edit lmb00=aaa_file2.lmb03, tabIndex=18, title="Building Name";
+Edit lmb0a=formonly.lmb07 type DECIMAL(20,6), tabIndex=19, title=%"lmb07_1";
+Edit lmb0b=formonly.lmb08 type DECIMAL(20,6), tabIndex=20, title=%"lmb08_1";
+Edit lmb0c=formonly.lmb05 type DECIMAL(20,2), tabIndex=21, title="Business area", noEntry;
+Edit lmb0d=formonly.lmb09 type DECIMAL(20,6), tabIndex=22, title=%"lmb09_1", noEntry, not null;
+Edit lmb0e=formonly.lmb04 type DECIMAL(20,2), tabIndex=23, title="Construction area", noEntry;
+CheckBox lmb0f=formonly.lmb06 type VARCHAR, tabIndex=24, default = "Y", title="Validity?", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lmb(aaa_file4.lmbstore,aaa_file1.rtz13,formonly.lmblegal,aaa_file3.azt02,formonly.lmb02,aaa_file2.lmb03,formonly.lmb07,formonly.lmb08,formonly.lmb05,formonly.lmb09,formonly.lmb04,formonly.lmb06)
+SCREEN RECORD s_lmb_l(lmb_file.lmb02,lmb_file.lmb03,lmb_file.lmb07,lmb_file.lmb08,lmb_file.lmb05,lmb_file.lmb09,lmb_file.lmb04,lmb_file.lmb06)
+SCREEN RECORD Undefined(lmb_file.lmbstore,formonly.rtz13,lmb_file.lmblegal,formonly.azt02,formonly.cn3,formonly.indx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

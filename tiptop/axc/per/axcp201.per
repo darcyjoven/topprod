@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page01(text=%"Main")
+VBox VBox1
+Group Group01(text=%"QBE")
+Grid ds1
+{
+[cfb07  |cfb01                    ]
+[cfb11  |cfb12                    ]
+}
+END -- ds1
+END -- Group01
+Group Group1(text=%"Group1")
+Grid Grid1
+{
+[yy     |y1        ]
+[mm     |m1        ]
+}
+END -- Grid1
+END -- Group1
+Grid Grid2
+{
+[g_bgjob                         ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- Page01
+END -- Folder1
+END -- Form
+
+TABLES
+cfb_file
+ATTRIBUTES
+Label cfb07:cfb07, text=%"cfb07";
+ButtonEdit cfb01=cfb_file.cfb07, action=controlp, tabIndex=1, image="zoom.png", scroll;
+Label cfb11:cfb11, text=%"cfb11";
+ButtonEdit cfb12=cfb_file.cfb11, action=controlp, tabIndex=2, image="zoom.png", scroll;
+Label yy:yy, text=%"yy";
+Edit y1=formonly.yy, tabIndex=3, not null, required;
+Label mm:mm, text=%"mm";
+Edit m1=formonly.mm, tabIndex=4, not null, required;
+CheckBox g_bgjob=formonly.g_bgjob, tabIndex=5, default = "N", text=%"CheckBox1", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(cfb_file.cfb07,cfb_file.cfb11)
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr823.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr823")
+VBox VBox1
+Grid gr316
+{
+ <G group01                                                            >
+  Arriving Curr.      [alh11               ]
+  Date Payable        [alh08               ]
+  Credit Bank         [alh06               ]
+  Arriving No.        [alh01               ]
+  Vender No.          [alh05               ]
+  Open L/C Category   [alh10               ]
+ <                                                                     >
+ <G group02                                                            >
+  Ending Date         [g_edate     ]
+ <                                                                     >
+
+}
+END -- gr316
+Grid gr317
+{
+[more                                                        ]
+
+}
+END -- gr317
+END -- VBox1
+END -- aapr823
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit alh11=formonly.alh11 type VARCHAR, tabIndex=1;
+DateEdit alh08=formonly.alh08 type DATE, tabIndex=2;
+Edit alh06=formonly.alh06 type VARCHAR, tabIndex=3;
+Edit alh01=formonly.alh01 type VARCHAR, tabIndex=4;
+Edit alh05=formonly.alh05 type VARCHAR, tabIndex=5;
+Edit alh10=formonly.alh10 type VARCHAR, tabIndex=6;
+Group group02:group02, text="INPUT";
+DateEdit g_edate=formonly.g_edate type DATE, tabIndex=7;
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.alh11,formonly.alh08,formonly.alh06,formonly.alh01,formonly.alh05,formonly.alh10,formonly.g_edate,formonly.more)
+END -- INSTRUCTIONS
+

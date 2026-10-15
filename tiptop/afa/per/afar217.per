@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afar217.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"afar217")
+VBox VBox1
+Grid Grid1
+{
+ <G grpqbe                                  >
+  Asset Serial No.    [faj01               ]
+  Add.No.             [faj022              ]
+  Property No.        [faj02               ]
+  Asset Style         [faj021              ]
+  Keeping Department  [faj20               ]
+  Keeper              [faj19               ]
+  Date of Acquisition [faj25               ]
+
+ <                                          >
+
+}
+END -- Grid1
+Group group01(text="INPUT")
+Grid Grid2
+{
+ Lines per Label Prt.[a         ]
+ Asset State         [d                        ]
+}
+END -- Grid2
+END -- group01
+Grid Grid3
+{
+[more                                         ]
+
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- afar217
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+Edit faj01=formonly.faj01 type VARCHAR, tabIndex=1;
+Edit faj022=formonly.faj022 type VARCHAR, tabIndex=10;
+Edit faj02=formonly.faj02 type VARCHAR, tabIndex=2;
+ComboBox faj021=formonly.faj021 type VARCHAR, tabIndex=3, queryEditable, items=(("1", %"M.Item"),("2", %"Accessory"),("3", %"Surcharge"));
+Edit faj20=formonly.faj20 type VARCHAR, tabIndex=4;
+Edit faj19=formonly.faj19 type VARCHAR, tabIndex=5;
+DateEdit faj25=formonly.faj25 type DATE, tabIndex=6;
+Edit a=formonly.a type SMALLINT, tabIndex=7;
+ComboBox d=formonly.d type CHAR, tabIndex=8, queryEditable, items=(("0", %"Normal Use"),("1", %"Stoped"),("2", %"All"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.faj01,formonly.faj022,formonly.faj02,formonly.faj021,formonly.faj20,formonly.faj19,formonly.faj25,formonly.a,formonly.d,formonly.more)
+END -- INSTRUCTIONS
+

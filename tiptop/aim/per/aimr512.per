@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr512.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr512")
+VBox vb20
+Grid gr3290
+{
+ <G group01                                                             >
+  Transf.note No.     [imm01               ]
+  Transf.Date         [imm02               ]
+  Applicant           [immuser             ]
+ <                                                                      >
+
+}
+END -- gr3290
+Group group02(text="INPUT")
+VBox vb19
+Grid gr3291
+{
+ <G group03                                                           >
+ [a                              ]
+ <                                                                    >
+ <G group04                                                           >
+ [b                              ]
+ <                                                                    >
+ <G group05                                                           >
+ [s1                   ] [s2                   ] [s3                  ]
+ <                                                                    >
+}
+END -- gr3291
+Grid gr23
+{
+ [c                                         ]
+
+}
+END -- gr23
+END -- vb19
+END -- group02
+Grid gr3292
+{
+[more                             ]
+
+}
+END -- gr3292
+END -- vb20
+END -- aimr512
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit imm01=formonly.imm01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit imm02=formonly.imm02 type DATE, tabIndex=2;
+Edit immuser=formonly.immuser type CHAR, tabIndex=3;
+Group group03:group03, text="Transfer Note Category";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=4, items=(("1", "Warehouse Transfer"),("2", "2-Step Int-Warehouse"),("3", "Int-Plant Transfer"),("4", "2-Step Int-Plant"));
+Group group04:group04, text="Transfer Note Type";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=5, items=(("1", "Transfer-out Note"),("2", "Transfer-in Note"));
+Group group05:group05, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=6, queryEditable, items=(("1", "Trsfer note No."),("2", "Trsfer Date"),("3", "Applcant"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=7, queryEditable, items=(("1", "Trsfer note No."),("2", "Trsfer Date"),("3", "Applcant"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=8, queryEditable, items=(("1", "Trsfer note No."),("2", "Trsfer Date"),("3", "Applcant"));
+CheckBox c=formonly.c type VARCHAR, tabIndex=10, text="Print Lot/Serial No. Detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.imm01,formonly.imm02,formonly.immuser,formonly.a,formonly.b,formonly.s1,formonly.s2,formonly.s3,formonly.c,formonly.more)
+END -- INSTRUCTIONS
+

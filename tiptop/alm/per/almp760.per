@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almp760.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almp760")
+VBox vb3
+Folder pc1
+Page Main(text=%"Main")
+Table s_lqg
+{
+[sel   |lqg01     |lqg02      |lqg03      |lqf02       |lqf03       |lqg08    |lqg09       ]
+[sel   |lqg01     |lqg02      |lqg03      |lqf02       |lqf03       |lqg08    |lqg09       ]
+[sel   |lqg01     |lqg02      |lqg03      |lqf02       |lqf03       |lqg08    |lqg09       ]
+[sel   |lqg01     |lqg02      |lqg03      |lqf02       |lqf03       |lqg08    |lqg09       ]
+[sel   |lqg01     |lqg02      |lqg03      |lqf02       |lqf03       |lqg08    |lqg09       ]
+
+}
+END -- s_lqg
+END -- Main
+END -- pc1
+Grid gr1
+{
+
+ ------Rows [idx     ] -------
+
+}
+END -- gr1
+END -- vb3
+END -- almp760
+
+TABLES
+lqg_file
+ATTRIBUTES
+CheckBox sel=formonly.sel type CHAR, tabIndex=6, title="sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit lqg01=lqg_file.lqg01, action=controlp, tabIndex=1, title="ProDoc.No.", noEntry, not null, required, image="zoom.png";
+ComboBox lqg02=lqg_file.lqg02, tabIndex=2, title="Pro.Type", noEntry, not null, required, items=(("0", "z"),("1", "o"),("2", "t"),("3", "d"));
+ButtonEdit lqg03=lqg_file.lqg03, action=controlp, tabIndex=3, title="P.S.Do.No.", noEntry, not null, required, image="zoom.png";
+Edit lqf02=formonly.lqf02 type CHAR, tabIndex=7, title="Do.Name", noEntry;
+Edit lqf03=formonly.lqf03 type CHAR, tabIndex=8, title="Doc.Desc.", noEntry;
+Edit lqg08=lqg_file.lqg08, tabIndex=4, title="Approver", noEntry;
+DateEdit lqg09=lqg_file.lqg09, tabIndex=5, title="App.on", noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lqg(formonly.sel,lqg_file.lqg01,lqg_file.lqg02,lqg_file.lqg03,formonly.lqf02,formonly.lqf03,lqg_file.lqg08,lqg_file.lqg09)
+SCREEN RECORD Undefined(formonly.idx)
+END -- INSTRUCTIONS
+

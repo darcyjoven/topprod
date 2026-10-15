@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr900")
+Grid gr1
+{
+ <G group01                                         >
+    Date Range        [imm02                   ]
+    Item No.          [imn03                   ]
+ <                                                  >
+ <G gb42                                            >
+    Cost Calculation Method   [type            ]
+ <                                                  >
+
+}
+END -- gr1
+END -- axcr900
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit imm02=formonly.imm02 type DATE, tabIndex=2;
+ButtonEdit imn03=formonly.imn03 type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<P>";
+Group gb42:gb42, text="INPUT";
+ComboBox type=formonly.type type CHAR, tabIndex=3, not null, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.imm02,formonly.imn03,formonly.type)
+END -- INSTRUCTIONS
+

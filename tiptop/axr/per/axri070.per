@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axri070.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axri050")
+VBox vb2
+Folder pc2
+Page Page2(text=%"Main")
+Table s_oog
+{
+[oog01     |ood01_desc   |oog02     |ood02_desc     |oog03     |oog03_desc     ]
+[oog01     |ood01_desc   |oog02     |ood02_desc     |oog03     |oog03_desc     ]
+[oog01     |ood01_desc   |oog02     |ood02_desc     |oog03     |oog03_desc     ]
+[oog01     |ood01_desc   |oog02     |ood02_desc     |oog03     |oog03_desc     ]
+[oog01     |ood01_desc   |oog02     |ood02_desc     |oog03     |oog03_desc     ]
+
+}
+END -- s_oog
+END -- Page2
+END -- pc2
+Grid gr7
+{
+ ----------Rows[cn2   ]----------
+
+}
+END -- gr7
+END -- vb2
+END -- arti108
+
+TABLES
+oog_file
+ATTRIBUTES
+ButtonEdit oog01=oog_file.oog01, action=controlp, tabIndex=1, title="oog01", not null, required, image="zoom.png";
+Edit ood01_desc=formonly.ood01_desc type CHAR, tabIndex=7, title="oog01_desc", noEntry;
+ButtonEdit oog02=oog_file.oog02, action=controlp, tabIndex=2, title="oog02", image="zoom.png";
+Edit ood02_desc=formonly.ood02_desc type CHAR, tabIndex=3, title="oog02_desc", noEntry;
+ButtonEdit oog03=oog_file.oog03, action=controlp, tabIndex=4, title="oog03", image="zoom.png";
+Edit oog03_desc=formonly.oog03_desc type CHAR, tabIndex=5, title="oog03_desc", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oog(oog_file.oog01,formonly.ood01_desc,oog_file.oog02,formonly.ood02_desc,oog_file.oog03,formonly.oog03_desc)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi200")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox hb3
+Grid gr1275
+{
+ Goods No.           [com01               ]
+ Specification       [cob02_h                                 ]
+                     [cob021                                  ]
+}
+END -- gr1275
+Grid gr1276
+{
+ Version             [com02     ]
+ Unit                [cob04     ]
+ Customs No.         [com03     ]
+}
+END -- gr1276
+END -- hb3
+END -- page01
+Page info(text="Info")
+Grid gr1277
+{
+ Record Owner        [comuser   ] Last Modified by    [commodu   ]    Data Valid Code     [comacti   ]
+ Department          [comgrup   ] Create/Modify Date  [comdate     ]
+
+ Record Orig.        [comoriu   ] Dept Orig.          [comorig   ]
+}
+END -- gr1277
+END -- info
+END -- folder01
+Table s_con
+{
+[con02    |con03          |cob02                           |con04  |con05   |con06      |con061  |con062  |con07            ]
+[con02    |con03          |cob02                           |con04  |con05   |con06      |con061  |con062  |con07            ]
+[con02    |con03          |cob02                           |con04  |con05   |con06      |con061  |con062  |con07            ]
+[con02    |con03          |cob02                           |con04  |con05   |con06      |con061  |con062  |con07            ]
+[con02    |con03          |cob02                           |con04  |con05   |con06      |con061  |con062  |con07            ]
+[con02    |con03          |cob02                           |con04  |con05   |con06      |con061  |con062  |con07            ]
+[con02    |con03          |cob02                           |con04  |con05   |con06      |con061  |con062  |con07            ]
+[con02    |con03          |cob02                           |con04  |con05   |con06      |con061  |con062  |con07            ]
+[con02    |con03          |cob02                           |con04  |con05   |con06      |con061  |con062  |con07            ]
+[con02    |con03          |cob02                           |con04  |con05   |con06      |con061  |con062  |con07            ]
+
+}
+END -- s_con
+Grid gr1278
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1278
+END -- VBox1
+END -- acoi200
+
+TABLES
+com_file,
+con_file
+ATTRIBUTES
+ButtonEdit com01=com_file.com01, action=controlp, tabIndex=1, not null, required, image="zoom", comment=" <^P> Qry Goods No.";
+Edit cob02_h=formonly.cob02_h type CHAR, tabIndex=2, noEntry;
+Edit cob021=formonly.cob021 type CHAR, tabIndex=3, noEntry;
+Edit com02=com_file.com02, tabIndex=4;
+Edit cob04=formonly.cob04 type CHAR, tabIndex=5;
+ButtonEdit com03=com_file.com03, action=controlp, tabIndex=6, not null, required, image="zoom", comment=" <^P> Qry Details.";
+Edit comuser=com_file.comuser, tabIndex=7, noEntry;
+Edit commodu=com_file.commodu, tabIndex=8, noEntry;
+Edit comacti=com_file.comacti, tabIndex=9, noEntry, upShift;
+Edit comgrup=com_file.comgrup, tabIndex=10, noEntry;
+DateEdit comdate=com_file.comdate, tabIndex=11, noEntry;
+Edit comoriu=com_file.comoriu, tabIndex=501, noEntry;
+Edit comorig=com_file.comorig, tabIndex=502, noEntry;
+Edit con02=con_file.con02, tabIndex=12, title="Ln No.", not null, required;
+ButtonEdit con03=con_file.con03, action=controlp, tabIndex=13, title="Goods No.", not null, required, image="zoom", comment="<^P> Qry Goods No.";
+Edit cob02=formonly.cob02 type VARCHAR, tabIndex=14, title="P/N Spec.", noEntry;
+ButtonEdit con04=con_file.con04, action=controlp, tabIndex=15, title="Unit", not null, required, image="zoom", comment="<^P> Query Unit Code";
+Edit con05=con_file.con05, tabIndex=16, title="QPA", not null, required;
+Edit con06=con_file.con06, tabIndex=17, title="Wastage%", not null, required;
+Edit con061=formonly.con061 type DECIMAL, tabIndex=503, title=%"con061", not null, required;
+Edit con062=formonly.con062 type DECIMAL, tabIndex=504, title=%"con062", not null, required;
+ButtonEdit con07=con_file.con07, action=controlp, tabIndex=18, title="Country of Origin", not null, required, image="zoom", comment="<^P> Query Country";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_con(con_file.con02,con_file.con03,formonly.cob02,con_file.con04,con_file.con05,con_file.con06,formonly.con061,formonly.con062,con_file.con07)
+SCREEN RECORD Undefined(com_file.com01,formonly.cob02_h,formonly.cob021,com_file.com02,formonly.cob04,com_file.com03,com_file.comuser,com_file.commodu,com_file.comacti,com_file.comgrup,com_file.comdate,com_file.comoriu,com_file.comorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

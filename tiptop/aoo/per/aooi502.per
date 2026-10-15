@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi502.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi502")
+VBox VBox1
+Folder pc857
+Page page01(text="Main")
+Table s_get
+{
+[get01     |get02               ]
+[get01     |get02               ]
+[get01     |get02               ]
+[get01     |get02               ]
+[get01     |get02               ]
+[get01     |get02               ]
+[get01     |get02               ]
+[get01     |get02               ]
+[get01     |get02               ]
+[get01     |get02               ]
+
+}
+END -- s_get
+END -- page01
+END -- pc857
+Grid gr4662
+{
+  ----------Rows [cn2   ] ----------
+
+}
+END -- gr4662
+END -- VBox1
+END -- aooi502
+
+TABLES
+get_file
+ATTRIBUTES
+Edit get01=get_file.get01, tabIndex=1, title="Fml Code", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! ";
+Edit get02=get_file.get02, tabIndex=2, title="Fml Desc";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_get(get_file.get01,get_file.get02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

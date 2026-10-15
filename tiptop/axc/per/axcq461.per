@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq461.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group Group1(text=%"INPUT")
+Grid Grid1
+{
+
+      [label1    |by        |lab][bm        ]
+      [label2    |ey        |la1][em        ]
+
+}
+END -- Grid1
+END -- Group1
+Table s_ccc
+{
+[ima01     |ima02       |ima021      |imk02        |imd02     |ima25   |qcsl    |qcdj    |qcje    |rksl    |rkdj    |rkje    |cksl    |ckdj    |ckje    |qmsl    |qmdj    |qmje    ]
+[ima01     |ima02       |ima021      |imk02        |imd02     |ima25   |qcsl    |qcdj    |qcje    |rksl    |rkdj    |rkje    |cksl    |ckdj    |ckje    |qmsl    |qmdj    |qmje    ]
+[ima01     |ima02       |ima021      |imk02        |imd02     |ima25   |qcsl    |qcdj    |qcje    |rksl    |rkdj    |rkje    |cksl    |ckdj    |ckje    |qmsl    |qmdj    |qmje    ]
+[ima01     |ima02       |ima021      |imk02        |imd02     |ima25   |qcsl    |qcdj    |qcje    |rksl    |rkdj    |rkje    |cksl    |ckdj    |ckje    |qmsl    |qmdj    |qmje    ]
+[ima01     |ima02       |ima021      |imk02        |imd02     |ima25   |qcsl    |qcdj    |qcje    |rksl    |rkdj    |rkje    |cksl    |ckdj    |ckje    |qmsl    |qmdj    |qmje    ]
+
+
+
+}
+END -- s_ccc
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"by";
+Edit by=formonly.by type INTEGER, tabIndex=1, not null, required;
+Label lab:Label3, text=%"-";
+Edit bm=formonly.bm type INTEGER, tabIndex=2, not null, required;
+Label label2:Label2, text=%"ey";
+Edit ey=formonly.ey type INTEGER, tabIndex=3, not null, required;
+Label la1:Label4, text=%"-";
+Edit em=formonly.em type INTEGER, tabIndex=4, not null, required;
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=5, title=%"ima01", image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=6, title=%"ima02";
+Edit ima021=formonly.ima021 type CHAR, tabIndex=7, title=%"ima021";
+ButtonEdit imk02=formonly.imk02 type CHAR, action=controlp, tabIndex=8, title=%"imk02", image="zoom";
+Edit imd02=formonly.imd02 type CHAR, tabIndex=9, title=%"imd02";
+Edit ima25=formonly.ima25 type CHAR, tabIndex=10, title=%"ima25";
+Edit qcsl=formonly.qcsl type CHAR, tabIndex=11, title=%"qcsl";
+Edit qcdj=formonly.qcdj type CHAR, tabIndex=19, title=%"qcdj";
+Edit qcje=formonly.qcje type CHAR, tabIndex=12, title=%"qcje";
+Edit rksl=formonly.rksl type CHAR, tabIndex=13, title=%"rksl";
+Edit rkdj=formonly.rkdj type CHAR, tabIndex=20, title=%"rkdj";
+Edit rkje=formonly.rkje type CHAR, tabIndex=14, title=%"rkje";
+Edit cksl=formonly.cksl type CHAR, tabIndex=15, title=%"cksl";
+Edit ckdj=formonly.ckdj type CHAR, tabIndex=21, title=%"ckdj";
+Edit ckje=formonly.ckje type CHAR, tabIndex=16, title=%"ckje";
+Edit qmsl=formonly.qmsl type CHAR, tabIndex=17, title=%"qmsl";
+Edit qmdj=formonly.qmdj type CHAR, tabIndex=22, title=%"qmdj";
+Edit qmje=formonly.qmje type CHAR, tabIndex=18, title=%"qmje";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.by,formonly.bm,formonly.ey,formonly.em)
+SCREEN RECORD s_ccc(formonly.ima01,formonly.ima02,formonly.ima021,formonly.imk02,formonly.imd02,formonly.ima25,formonly.qcsl,formonly.qcdj,formonly.qcje,formonly.rksl,formonly.rkdj,formonly.rkje,formonly.cksl,formonly.ckdj,formonly.ckje,formonly.qmsl,formonly.qmdj,formonly.qmje)
+END -- INSTRUCTIONS
+

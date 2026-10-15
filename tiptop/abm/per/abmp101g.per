@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp101g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmp101g")
+VBox VBox1
+Grid grid01
+{
+ <G group01                                                  >
+  Master Item         [bmn01               ]
+                      [desc1                         ]
+  Version             [bmn011    ]
+ <                                                           >
+
+}
+END -- grid01
+Table s_bmn
+{
+[bmn02|bmn03                  |ima02                        |a      |sitem               ]
+[bmn02|bmn03                  |ima02                        |a      |sitem               ]
+[bmn02|bmn03                  |ima02                        |a      |sitem               ]
+[bmn02|bmn03                  |ima02                        |a      |sitem               ]
+[bmn02|bmn03                  |ima02                        |a      |sitem               ]
+[bmn02|bmn03                  |ima02                        |a      |sitem               ]
+[bmn02|bmn03                  |ima02                        |a      |sitem               ]
+[bmn02|bmn03                  |ima02                        |a      |sitem               ]
+[bmn02|bmn03                  |ima02                        |a      |sitem               ]
+[bmn02|bmn03                  |ima02                        |a      |sitem               ]
+
+}
+END -- s_bmn
+END -- VBox1
+END -- abmp101g
+
+TABLES
+bmn_file
+ATTRIBUTES
+Group group01:group01, text="Maintain Contact Product";
+Edit bmn01=formonly.bmn01 type CHAR, tabIndex=1, noEntry;
+Edit desc1=formonly.desc1 type VARCHAR, tabIndex=2, noEntry;
+Edit bmn011=formonly.bmn011 type VARCHAR, tabIndex=3, noEntry;
+Edit bmn02=bmn_file.bmn02, tabIndex=4, title="Line", noEntry;
+Edit bmn03=bmn_file.bmn03, tabIndex=5, title="Contact Product Item #", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=6, title="Specification", noEntry;
+CheckBox a=formonly.a type CHAR, tabIndex=7, title="Formal", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sitem=formonly.sitem type CHAR, action=controlp, tabIndex=8, title="Formal Item #", image="zoom", comment="<^P>Qry Item #";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmn(bmn_file.bmn02,bmn_file.bmn03,formonly.ima02,formonly.a,formonly.sitem)
+SCREEN RECORD Undefined(formonly.bmn01,formonly.desc1,formonly.bmn011)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi105.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi105")
+VBox VBox1
+Folder pc190
+Page page01(text="Main")
+Grid gr1270
+{
+ Duty Type Code        [cnc01 ]
+ Duty Type Description [cnc02               ]
+}
+END -- gr1270
+END -- page01
+Page info(text="Info")
+Grid gr1271
+{
+ Record Owner        [cncuser   ] Last Modified by    [cncmodu   ] Data Valid Code     [cncacti   ]
+ Department          [cncgrup   ] Create/Modify Date  [cncdate     ]
+ Record Orig.        [cncoriu   ]
+ Dept Orig.          [cncorig   ]
+}
+END -- gr1271
+END -- info
+END -- pc190
+Grid gr1272
+{
+  ----------Rows [cnt   ] ----------
+
+}
+END -- gr1272
+END -- VBox1
+END -- acoi105
+
+TABLES
+cnc_file
+ATTRIBUTES
+Edit cnc01=cnc_file.cnc01, tabIndex=1, not null, required, comment="KEYField,No Blank!";
+Edit cnc02=cnc_file.cnc02, tabIndex=2;
+Edit cncuser=cnc_file.cncuser, tabIndex=3, noEntry;
+Edit cncmodu=cnc_file.cncmodu, tabIndex=4, noEntry;
+Edit cncacti=cnc_file.cncacti, tabIndex=5, noEntry, upShift;
+Edit cncgrup=cnc_file.cncgrup, tabIndex=6, noEntry;
+DateEdit cncdate=cnc_file.cncdate, tabIndex=7, noEntry;
+Edit cncoriu=cnc_file.cncoriu, tabIndex=501, noEntry;
+Edit cncorig=cnc_file.cncorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cnc_file.cnc01,cnc_file.cnc02,cnc_file.cncuser,cnc_file.cncmodu,cnc_file.cncacti,cnc_file.cncgrup,cnc_file.cncdate,cnc_file.cncoriu,cnc_file.cncorig,formonly.cnt)
+END -- INSTRUCTIONS
+

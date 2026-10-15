@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_choose2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"s_choose2")
+HBox HBox1
+VBox VBox1
+Grid gr3877
+{
+ [btn01]
+
+}
+END -- gr3877
+Table sub_grp1(unsizableColumns, unmovableColumns, unhidableColumns)
+{
+[item01 ]
+
+}
+END -- sub_grp1
+END -- VBox1
+Grid gr3878
+{
+ [btn03]
+ [btn04]
+
+
+
+
+
+}
+END -- gr3878
+VBox VBox2
+Grid gr3879
+{
+ [btn02]
+
+}
+END -- gr3879
+Table sub_grp2(unsizableColumns, unmovableColumns, unhidableColumns)
+{
+[item02 ]
+
+}
+END -- sub_grp2
+END -- VBox2
+END -- HBox1
+END -- s_choose2
+
+ATTRIBUTES
+Button btn01:btn01;
+Edit item01=formonly.item01 type VARCHAR, tabIndex=1, unhidable, unsizable;
+Button btn03:btn03;
+Button btn04:btn04;
+Button btn02:btn02;
+Edit item02=formonly.item02 type VARCHAR, tabIndex=2, unhidable, unsizable;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD sub_grp1(formonly.item01)
+SCREEN RECORD sub_grp2(formonly.item02)
+END -- INSTRUCTIONS
+

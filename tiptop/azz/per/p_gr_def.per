@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_gr_def.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_gr_def")
+VBox VBox1
+Group gb3834
+ScrollGrid gr5417
+{
+
+[dummy01  ] [dummy02       ][dummy03         ][dummy04] [dummy05 ][dummy06      |dummy07 ][dummy08   ]
+[gft01     ][gft02         ][gft03           ][gft04  ] [gft05   ][gft06        |gft07   ][gft08     ]
+
+[gft01     ][gft02         ][gft03           ][gft04  ] [gft05   ][gft06        |gft07   ][gft08     ]
+
+[gft01     ][gft02         ][gft03           ][gft04  ] [gft05   ][gft06        |gft07   ][gft08     ]
+
+[gft01     ][gft02         ][gft03           ][gft04  ] [gft05   ][gft06        |gft07   ][gft08     ]
+
+[gft01     ][gft02         ][gft03           ][gft04  ] [gft05   ][gft06        |gft07   ][gft08     ]
+
+[gft01     ][gft02         ][gft03           ][gft04  ] [gft05   ][gft06        |gft07   ][gft08     ]
+
+[gft01     ][gft02         ][gft03           ][gft04  ] [gft05   ][gft06        |gft07   ][gft08     ]
+
+[gft01     ][gft02         ][gft03           ][gft04  ] [gft05   ][gft06        |gft07   ][gft08     ]
+
+[gft01     ][gft02         ][gft03           ][gft04  ] [gft05   ][gft06        |gft07   ][gft08     ]
+
+[gft01     ][gft02         ][gft03           ][gft04  ] [gft05   ][gft06        |gft07   ][gft08     ]
+
+}
+END -- gr5417
+END -- gb3834
+Grid gr5418
+{
+  ---- Rows[cn2   ]----
+
+
+
+}
+END -- gr5418
+END -- VBox1
+END -- p_gr_def
+
+TABLES
+gft_file
+ATTRIBUTES
+Label dummy01:dummy01, text="Language";
+Label dummy02:dummy02, text="Category";
+Label dummy03:dummy03, text="Font Name";
+Label dummy04:dummy04, text="Font Size";
+Label dummy05:dummy05, text="Font Bold";
+Label dummy06:dummy06, text="Font Color";
+Label dummy07:dummy07, text="RGB";
+Label dummy08:dummy08, text="Align";
+ComboBox gft01=gft_file.gft01, tabIndex=1, not null, required;
+ComboBox gft02=gft_file.gft02, tabIndex=2, not null, required, items=(("0", "LOGO"),("1", "Title1"),("2", "Title2"),("3", "Head Column Label"),("4", "Head Column Value(Character)"),("5", "Head Column Value(Numeric)"),("6", "Body Column Label"),("7", "Body Column Value((Character)"),("8", "Body Column Value(Numeric)"),("9", "Diff color in odd/even row"));
+Edit gft03=gft_file.gft03, tabIndex=3, not null, required;
+Edit gft04=gft_file.gft04, tabIndex=4, not null, required;
+CheckBox gft05=gft_file.gft05, tabIndex=5, text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox gft06=gft_file.gft06, tabIndex=6, not null, required, items=(("black", "Black"),("gray", "Gray"),("blue", "Blue"),("green", "Green"),("red", "Red"),("other", "Other"));
+Edit gft07=gft_file.gft07, tabIndex=7, not null, required;
+ComboBox gft08=gft_file.gft08, tabIndex=8, not null, required, items=(("1", "left"),("2", "right"),("3", "center"));
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gft(gft_file.gft01,gft_file.gft02,gft_file.gft03,gft_file.gft04,gft_file.gft05,gft_file.gft06,gft_file.gft07,gft_file.gft08)
+SCREEN RECORD undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

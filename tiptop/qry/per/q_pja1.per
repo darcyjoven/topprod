@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_pja1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_pja")
+Grid gr3714
+{
+ <T s_pja                                                                                                                              >
+ [check |pja01        |pja02               |pja08               |pja09              |pja13                         ]
+ [check |pja01        |pja02               |pja08               |pja09              |pja13                         ]
+ [check |pja01        |pja02               |pja08               |pja09              |pja13                         ]
+ [check |pja01        |pja02               |pja08               |pja09              |pja13                         ]
+ [check |pja01        |pja02               |pja08               |pja09              |pja13                         ]
+ [check |pja01        |pja02               |pja08               |pja09              |pja13                         ]
+ [check |pja01        |pja02               |pja08               |pja09              |pja13                         ]
+ [check |pja01        |pja02               |pja08               |pja09              |pja13                         ]
+ [check |pja01        |pja02               |pja08               |pja09              |pja13                         ]
+ [check |pja01        |pja02               |pja08               |pja09              |pja13                         ]
+ <                                                                                                                                     >
+
+}
+END -- gr3714
+END -- q_aac
+
+TABLES
+pja_file
+ATTRIBUTES
+Table s_pja:s_pja;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pja01=pja_file.pja01, tabIndex=2, title="Project No.", noEntry;
+Edit pja02=pja_file.pja02, tabIndex=3, title="Project Title", noEntry;
+Edit pja08=pja_file.pja08, tabIndex=4, title="Project Director", noEntry;
+Edit pja09=pja_file.pja09, tabIndex=5, title="Department No.", noEntry;
+Edit pja13=pja_file.pja13, tabIndex=6, title="Estimated Amt in Total", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pja(formonly.check,pja_file.pja01,pja_file.pja02,pja_file.pja08,pja_file.pja09,pja_file.pja13)
+END -- INSTRUCTIONS
+

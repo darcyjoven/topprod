@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr240.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr240")
+VBox VBox1
+Grid gr3244
+{
+ <G group01                                                            >
+  Transaction Note    [tlfs08              ]
+  Item No.            [tlfs01              ]
+  Manufacture Lot No. [tlfs06              ]
+  Serial No.          [tlfs05              ]
+ <                                                                     >
+
+}
+END -- gr3244
+Group group02(text="INPUT")
+Grid gr3245
+{
+ <G group03                                                          >
+  Warehouse No.       [tlfs02    ]
+  Location No.        [tlfs03    ]
+  Lot No.             [tlfs04                        ]
+  Document Date       [tlfs111_b   ] - [tlfs111_e   ]
+  Transaction Date    [tlfs12_b    ] - [tlfs12_e    ]
+ <                                                                   >
+ <G group04                                                          >
+ [s1                  ] [s2                  ] [s3                  ]
+ [t1                  ] [t2                  ] [t3                  ]
+ [u1                  ] [u2                  ] [u3                  ]
+ <                                                                   >
+ <G group05                                                         >
+ [a            ]
+ [             ]
+ <                                                                  >
+
+}
+END -- gr3245
+END -- group02
+Grid gr3246
+{
+[more                                    ]
+
+}
+END -- gr3246
+END -- VBox1
+END -- aimr240
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit tlfs08=formonly.tlfs08 type VARCHAR, tabIndex=1;
+ButtonEdit tlfs01=formonly.tlfs01 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit tlfs06=formonly.tlfs06 type VARCHAR, tabIndex=3;
+Edit tlfs05=formonly.tlfs05 type VARCHAR, tabIndex=4;
+Group group03:group03;
+Edit tlfs02=formonly.tlfs02 type VARCHAR, tabIndex=5;
+Edit tlfs03=formonly.tlfs03 type VARCHAR, tabIndex=6;
+Edit tlfs04=formonly.tlfs04 type VARCHAR, tabIndex=7;
+DateEdit tlfs111_b=formonly.tlfs111_b type DATE, tabIndex=8;
+DateEdit tlfs111_e=formonly.tlfs111_e type DATE, tabIndex=9;
+DateEdit tlfs12_b=formonly.tlfs12_b type DATE, tabIndex=10;
+DateEdit tlfs12_e=formonly.tlfs12_e type DATE, tabIndex=11;
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=12, queryEditable, items=(("1", "Doc No."),("2", "Date"),("3", "Item No."),("4", "WH"),("5", "Location"),("6", "Lot No."),("7", "Manufacture Lot No."),("8", "Serial No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=13, queryEditable, items=(("1", "Doc No."),("2", "Date"),("3", "Item No."),("4", "WH"),("5", "Location"),("6", "Lot No."),("7", "Manufacture Lot No."),("8", "Serial No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=14, queryEditable, items=(("1", "Doc No."),("2", "Date"),("3", "Item No."),("4", "WH"),("5", "Location"),("6", "Lot No."),("7", "Manufacture Lot No."),("8", "Serial No."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=15, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=16, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=17, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=18, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=19, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=20, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05, text="Print Data";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=21, items=(("1", "Document Date"),("2", "Transaction Date"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=22, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tlfs08,formonly.tlfs01,formonly.tlfs06,formonly.tlfs05,formonly.tlfs02,formonly.tlfs03,formonly.tlfs04,formonly.tlfs111_b,formonly.tlfs111_e,formonly.tlfs12_b,formonly.tlfs12_e,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

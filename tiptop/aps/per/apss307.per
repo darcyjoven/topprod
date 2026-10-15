@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apss307.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apss307")
+VBox vb3
+Folder pc10
+Page erp(action=erp, text="TIPTOP")
+Grid gr39
+{
+ <G group011                                                                       >
+  APS HD MODEL    [vln01               ]
+  APS DB          [vln02               ] [vzt02               ]
+  APS SERVER      [vln03               ] [vlm02               ] [vlm03        ]
+
+
+
+ <                                                                                 >
+}
+END -- gr39
+END -- erp
+END -- pc10
+Grid gr48
+{
+ Rows [idx   ]/[cnt   ]
+
+}
+END -- gr48
+END -- vb3
+END -- apss307
+
+TABLES
+vln_file,
+vlm_file,
+vzt_file
+ATTRIBUTES
+Group group011:group011;
+ButtonEdit vln01=vln_file.vln01, action=controlp, tabIndex=2, not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+ButtonEdit vln02=vln_file.vln02, action=controlp, tabIndex=5, not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit vzt02=vzt_file.vzt02, tabIndex=4, noEntry;
+ButtonEdit vln03=vln_file.vln03, action=controlp, tabIndex=7, not null, required, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit vlm02=vlm_file.vlm02, tabIndex=6, noEntry;
+Edit vlm03=vlm_file.vlm03, tabIndex=8, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=1;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vln_file.vln01,vln_file.vln02,vzt_file.vzt02,vln_file.vln03,vlm_file.vlm02,vlm_file.vlm03,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

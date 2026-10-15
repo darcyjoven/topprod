@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"artq700")
+VBox vb11
+Folder folder01
+Page page01(text="Main")
+HBox hb5
+Grid gr3150
+{
+ Product bar code                   [rta05                         ]
+ Item No.                           [ima01                         ]
+ Part Name Spec                     [ima02                         ]
+ Specification                      [ima021                        ]
+
+}
+END -- gr3150
+Grid gr3151
+{
+ Src Cd           [ima08     ]
+ Group Cd         [ima06     ]
+ ABC Cd           [ima07     ]
+ Ver              [ima05     ]
+
+}
+END -- gr3151
+Grid gr3152
+{
+  Available Inv      [avl_stk             ]
+  Unusable Inv Qty   [unavl_stk           ]
+
+
+
+}
+END -- gr3152
+END -- hb5
+END -- page01
+END -- folder01
+Table s_img
+{
+[img02     |img03     |img04       |img23 |img09|img10          |oeb905  |img21        |img37   |imgplant   ]
+[img02     |img03     |img04       |img23 |img09|img10          |oeb905  |img21        |img37   |imgplant   ]
+[img02     |img03     |img04       |img23 |img09|img10          |oeb905  |img21        |img37   |imgplant   ]
+[img02     |img03     |img04       |img23 |img09|img10          |oeb905  |img21        |img37   |imgplant   ]
+[img02     |img03     |img04       |img23 |img09|img10          |oeb905  |img21        |img37   |imgplant   ]
+[img02     |img03     |img04       |img23 |img09|img10          |oeb905  |img21        |img37   |imgplant   ]
+[img02     |img03     |img04       |img23 |img09|img10          |oeb905  |img21        |img37   |imgplant   ]
+[img02     |img03     |img04       |img23 |img09|img10          |oeb905  |img21        |img37   |imgplant   ]
+[img02     |img03     |img04       |img23 |img09|img10          |oeb905  |img21        |img37   |imgplant   ]
+[img02     |img03     |img04       |img23 |img09|img10          |oeb905  |img21        |img37   |imgplant   ]
+}
+END -- s_img
+Grid gr3153
+{
+  ---------- Rows [cnt   ] / [cn2   ] --------------------------------------------------------------------Inventory Qty Total [tot                 ]
+
+
+
+}
+END -- gr3153
+END -- vb11
+END -- artq700
+
+TABLES
+rta_file,
+img_file,
+ima_file
+ATTRIBUTES
+ButtonEdit rta05=rta_file.rta05, action=controlp, tabIndex=23, not null, required, image="zoom", comment="Please by QBE, Enter Item# to Query";
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Please by QBE, Enter Item# to Query";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=3, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=4, noEntry;
+Edit ima06=formonly.ima06 type CHAR, tabIndex=5, noEntry;
+Edit ima07=formonly.ima07 type CHAR, tabIndex=6, noEntry;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=22, noEntry;
+Edit avl_stk=formonly.avl_stk type CHAR, tabIndex=7;
+Edit unavl_stk=formonly.unavl_stk type CHAR, tabIndex=8;
+Edit img02=formonly.img02 type CHAR, tabIndex=9, title="Warehouse";
+Edit img03=formonly.img03 type CHAR, tabIndex=10, title="Location";
+Edit img04=formonly.img04 type CHAR, tabIndex=11, title="Lot#";
+Edit img23=formonly.img23 type CHAR, tabIndex=12, title="Usable";
+Edit img09=formonly.img09 type CHAR, tabIndex=13, title="Unit";
+Edit img10=formonly.img10 type CHAR, tabIndex=14, title="Inventory Qty";
+Edit oeb905=formonly.oeb905 type DECIMAL, tabIndex=21, title=%"Stocks Num", noEntry;
+Edit img21=formonly.img21 type CHAR, tabIndex=15, title="Conversion Rt";
+DateEdit img37=formonly.img37 type DATE, tabIndex=16, title="Idle Dt";
+ButtonEdit imgplant=img_file.imgplant, action=controlp, tabIndex=20, title="Org#", image="zoom";
+Edit cnt=formonly.cnt type CHAR, tabIndex=17;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=18;
+Edit tot=formonly.tot type CHAR, tabIndex=19;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(formonly.img02,formonly.img03,formonly.img04,formonly.img23,formonly.img09,formonly.img10,formonly.oeb905,formonly.img21,formonly.img37,img_file.imgplant)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,formonly.ima08,formonly.ima06,formonly.ima07,formonly.avl_stk,formonly.unavl_stk,formonly.cnt,formonly.cn2,formonly.tot,formonly.ima05,rta_file.rta05)
+END -- INSTRUCTIONS
+

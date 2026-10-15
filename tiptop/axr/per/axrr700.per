@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrr700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr700")
+VBox VBox1
+Grid gr1
+{
+ <G group01                                                              >
+  Customer No.        [oma03               ]
+  Department No.      [oma15               ]
+  Employee No.        [oma14               ]
+  Invoice Date        [oma09               ]
+
+ <                                                                       >
+
+}
+END -- gr1
+Group group02(text="INPUT")
+Grid gr2
+{
+
+ <G group1                                                               >
+  [dummy       ]  [plant_1   ]   [plant_2   ]   [plant_3   ]  [plant_4   ]
+                  [plant_5   ]   [plant_6   ]   [plant_7   ]  [plant_8   ]
+ <                                                                       >
+
+ <G group04                                                            >
+  Currency            [oma23     ]
+  Account Date Range  [bdate       ]-[edate       ]
+  Print Rows          [prno      ]
+  Print Amt \>         [pramt     ]
+ <                                                                     >
+
+}
+END -- gr2
+END -- group02
+Grid gr3
+{
+[more                                             ]
+
+}
+END -- gr3
+END -- VBox1
+END -- axrr700
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oma03=formonly.oma03 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit oma15=formonly.oma15 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit oma14=formonly.oma14 type CHAR, action=controlp, tabIndex=3, image="zoom";
+DateEdit oma09=formonly.oma09 type DATE, tabIndex=4;
+Group group1:Group1, text=%"";
+Label dummy:dummy, text=%"Plant No";
+ButtonEdit plant_1=formonly.plant_1 type CHAR, action=controlp, tabIndex=11, image="zoom";
+ButtonEdit plant_2=formonly.plant_2 type CHAR, action=controlp, tabIndex=14, image="zoom";
+ButtonEdit plant_3=formonly.plant_3 type CHAR, action=controlp, tabIndex=15, image="zoom";
+ButtonEdit plant_4=formonly.plant_4 type CHAR, action=controlp, tabIndex=18, image="zoom";
+ButtonEdit plant_5=formonly.plant_5 type CHAR, action=controlp, tabIndex=12, image="zoom";
+ButtonEdit plant_6=formonly.plant_6 type CHAR, action=controlp, tabIndex=13, image="zoom";
+ButtonEdit plant_7=formonly.plant_7 type CHAR, action=controlp, tabIndex=16, image="zoom";
+ButtonEdit plant_8=formonly.plant_8 type CHAR, action=controlp, tabIndex=17, image="zoom";
+Group group04:group04;
+ButtonEdit oma23=formonly.oma23 type CHAR, tabIndex=5, not null, required, image="zoom.png";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=6;
+DateEdit edate=formonly.edate type DATE, tabIndex=7;
+Edit prno=formonly.prno type SMALLINT, tabIndex=8;
+Edit pramt=formonly.pramt type DECIMAL, tabIndex=9;
+CheckBox more=formonly.more type CHAR, tabIndex=10, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oma03,formonly.oma15,formonly.oma14,formonly.oma09,formonly.oma23,formonly.bdate,formonly.edate,formonly.prno,formonly.pramt,formonly.more,formonly.plant_1,formonly.plant_5,formonly.plant_6,formonly.plant_2,formonly.plant_3,formonly.plant_7,formonly.plant_8,formonly.plant_4)
+END -- INSTRUCTIONS
+

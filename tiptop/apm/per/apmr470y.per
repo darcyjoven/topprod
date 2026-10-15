@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr470y.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr470y")
+VBox VBox1
+Grid gr5091
+{
+ <G group01                                                     >
+  P/R No.  [pmk01               ]
+  P/R Date [pmk04               ]
+  Item No. [pml04               ]
+ <                                                              >
+
+}
+END -- gr5091
+Grid gr5092
+{
+ <G group02                                                     >
+  [choice                                                 ]
+ <                                                              >
+
+}
+END -- gr5092
+Grid gr5093
+{
+ [more                                                   ]
+
+}
+END -- gr5093
+END -- VBox1
+END -- apmr470y
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit pmk01=formonly.pmk01 type VARCHAR, tabIndex=1;
+DateEdit pmk04=formonly.pmk04 type DATE, tabIndex=2;
+Edit pml04=formonly.pml04 type VARCHAR, tabIndex=3;
+Group group02:group02, text="INPUT";
+RadioGroup choice=formonly.choice type VARCHAR, tabIndex=4, items=(("1", "Summary"),("2", "Detail"),("3", "All"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmk01,formonly.pmk04,formonly.pml04,formonly.choice,formonly.more)
+END -- INSTRUCTIONS
+

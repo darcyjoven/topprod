@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asm/42f/asms112.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asms112")
+VBox VBox1
+Folder pc194
+Page page01(text="Main")
+Grid gr907
+{
+ <G group01                                                            >
+  Current System Working Day          [sma30       ]
+  Current Doc Enter Accounting Year   [sma51   ]
+  Current Doc Enter Accounting Period [sma52   ]
+  Cost Accounting Locking Date        [sma53   ]
+ [dummy01                                                             ]
+ <                                                                     >
+ <G group03                                                            >
+ [sma54                                                 ]
+ [sma58                                                 ]
+ [sma59                                                 ]
+ [sma79                                                 ]
+ [sma93                                                 ]
+ [sma94                                                 ]
+ [sma901                                                ]
+         APS Version     [sma916 ]
+         Resource Type   [sma917 ]
+       [sma918               ]
+
+
+ <                                                                     >
+
+
+
+
+}
+END -- gr907
+END -- page01
+END -- pc194
+END -- VBox1
+END -- asms112
+
+TABLES
+sma_file
+ATTRIBUTES
+Group group01:group01;
+DateEdit sma30=sma_file.sma30, tabIndex=1, not null, required;
+Edit sma51=sma_file.sma51, tabIndex=2, not null, required;
+Edit sma52=sma_file.sma52, tabIndex=3, not null, required;
+Edit sma53=sma_file.sma53, tabIndex=4, not null, required;
+Label dummy01:dummy01, text="NOTE:Document date must be > Closing Date,<= current YY and period";
+Group group03:group03;
+CheckBox sma54=sma_file.sma54, tabIndex=5, text="Use Routing?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma58=sma_file.sma58, tabIndex=6, text="Use Cost Structure?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma59=sma_file.sma59, tabIndex=7, text="Use Work Station Calendar?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma79=sma_file.sma79, tabIndex=8, text="Activate ABX?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma93=sma_file.sma93, tabIndex=9, text="Use VIM?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma94=sma_file.sma94, tabIndex=10, text="Use Features Ingredients", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sma901=sma_file.sma901, tabIndex=11, text="Connect with APS Module", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox sma916=sma_file.sma916, tabIndex=12, noEntry, items=(("1", "MP"),("2", "MCP"));
+ComboBox sma917=sma_file.sma917, tabIndex=13, noEntry, items=(("0", "WorkStation"),("1", "Machine"));
+CheckBox sma918=sma_file.sma918, tabIndex=14, text="30 STOP apsp702", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sma_file.sma30,sma_file.sma51,sma_file.sma52,sma_file.sma53,sma_file.sma54,sma_file.sma58,sma_file.sma59,sma_file.sma79,sma_file.sma93,sma_file.sma901,sma_file.sma916,sma_file.sma917,sma_file.sma918,sma_file.sma94)
+END -- INSTRUCTIONS
+

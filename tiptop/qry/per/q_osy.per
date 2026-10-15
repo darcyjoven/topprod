@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_osy.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Document Type")
+Grid gr3824
+{
+ <T s_osy                                                                         >
+ [check |osyslip    |osydesc             |osyauno         |osydmy1      |osytype ]
+ [check |osyslip    |osydesc             |osyauno         |osydmy1      |osytype ]
+ [check |osyslip    |osydesc             |osyauno         |osydmy1      |osytype ]
+ [check |osyslip    |osydesc             |osyauno         |osydmy1      |osytype ]
+ [check |osyslip    |osydesc             |osyauno         |osydmy1      |osytype ]
+ [check |osyslip    |osydesc             |osyauno         |osydmy1      |osytype ]
+ [check |osyslip    |osydesc             |osyauno         |osydmy1      |osytype ]
+ [check |osyslip    |osydesc             |osyauno         |osydmy1      |osytype ]
+ [check |osyslip    |osydesc             |osyauno         |osydmy1      |osytype ]
+ [check |osyslip    |osydesc             |osyauno         |osydmy1      |osytype ]
+ <                                                                                >
+
+}
+END -- gr3824
+END -- q_osy
+
+TABLES
+osy_file
+ATTRIBUTES
+Table s_osy:s_osy;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit osyslip=osy_file.osyslip, tabIndex=2, title="Document", not null, required;
+Edit osydesc=osy_file.osydesc, tabIndex=3, title="Document Name", not null, required;
+CheckBox osyauno=osy_file.osyauno, tabIndex=4, title="Automatic No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox osydmy1=osy_file.osydmy1, tabIndex=5, title="No. Method", queryEditable, items=(("1", %"Serial Number"),("2", %"By Year and Month"),("3", %"By Year and Week"),("4", %"By Year,Month and Day"));
+ComboBox osytype=osy_file.osytype, tabIndex=6, title="Property", queryEditable, items=(("1", %"Order"),("2", %"Delivery"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_osy(formonly.check,osy_file.osyslip,osy_file.osydesc,osy_file.osyauno,osy_file.osydmy1,osy_file.osytype)
+END -- INSTRUCTIONS
+

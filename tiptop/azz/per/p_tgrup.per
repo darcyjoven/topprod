@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_tgrup.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_tgrup")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3293
+{
+ <G group01                                                               >
+  Releative-Department Group ID          [zyw01       ]
+  Releative-Department Group Description [zyw02                           ]
+ <                                                                        >
+
+}
+END -- gr3293
+END -- page01
+END -- folder01
+Table s_zyw
+{
+[zyw03         |gem02                                   ]
+[zyw03         |gem02                                   ]
+[zyw03         |gem02                                   ]
+[zyw03         |gem02                                   ]
+[zyw03         |gem02                                   ]
+[zyw03         |gem02                                   ]
+[zyw03         |gem02                                   ]
+[zyw03         |gem02                                   ]
+[zyw03         |gem02                                   ]
+[zyw03         |gem02                                   ]
+
+}
+END -- s_zyw
+Grid gr3294
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3294
+END -- VBox1
+END -- p_tgrup
+
+TABLES
+zyw_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit zyw01=zyw_file.zyw01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Value";
+Edit zyw02=zyw_file.zyw02, tabIndex=2, not null, required, scroll;
+ButtonEdit zyw03=zyw_file.zyw03, action=controlp, tabIndex=3, title="Department ID", not null, required, image="zoom", scroll;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=4, title="Department\'s Description", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zyw(zyw_file.zyw03,formonly.gem02)
+SCREEN RECORD Undefined(zyw_file.zyw01,zyw_file.zyw02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

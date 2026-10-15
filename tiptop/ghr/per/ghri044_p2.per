@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri044_p2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+  [label1    |hrcd01    |hrcd01_name         ]
+  [label2    |hrcd02              |hrcd03    ]    [label3    |hrcd04              |hrcd05    ]
+  [label4    |hrcd06    |hrcd07              ]
+  [label5    |hrcd12                                                                         ]
+             [                                                                               ]
+             [                                                                               ]
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Group Group1(text=%"Group1")
+Table Table1
+{
+[hrat01      |hrat02        |hrat04        |hrat05        |hrat25     |hrat19        ]
+[hrat01      |hrat02        |hrat04        |hrat05        |hrat25     |hrat19        ]
+[hrat01      |hrat02        |hrat04        |hrat05        |hrat25     |hrat19        ]
+[hrat01      |hrat02        |hrat04        |hrat05        |hrat25     |hrat19        ]
+[hrat01      |hrat02        |hrat04        |hrat05        |hrat25     |hrat19        ]
+
+}
+END -- Table1
+END -- Group1
+Folder Folder2
+Page Page3(text=%"Page3")
+Table Table2
+{
+[hrcc04  |hrcc05  |hrcc03  |hrcc08  |hrcc09  |hrcc10  |hrcc06     |hrcc11               ]
+[hrcc04  |hrcc05  |hrcc03  |hrcc08  |hrcc09  |hrcc10  |hrcc06     |hrcc11               ]
+[hrcc04  |hrcc05  |hrcc03  |hrcc08  |hrcc09  |hrcc10  |hrcc06     |hrcc11               ]
+[hrcc04  |hrcc05  |hrcc03  |hrcc08  |hrcc09  |hrcc10  |hrcc06     |hrcc11               ]
+[hrcc04  |hrcc05  |hrcc03  |hrcc08  |hrcc09  |hrcc10  |hrcc06     |hrcc11               ]
+
+
+
+}
+END -- Table2
+END -- Page3
+END -- Folder2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"Label1";
+ButtonEdit hrcd01=formonly.hrcd01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrcd01_name=formonly.hrcd01_name, tabIndex=2, noEntry;
+Label label2:Label2, text=%"Label2";
+DateEdit hrcd02=formonly.hrcd02 type DATE, tabIndex=3, not null, required;
+Edit hrcd03=formonly.hrcd03, tabIndex=4, picture="XX:XX";
+Label label3:Label3, text=%"Label3";
+DateEdit hrcd04=formonly.hrcd04 type DATE, tabIndex=5, not null, required;
+Edit hrcd05=formonly.hrcd05, tabIndex=6, picture="XX:XX";
+Label label4:Label4, text=%"Label4";
+Edit hrcd06=formonly.hrcd06, tabIndex=7, not null, required;
+ComboBox hrcd07=formonly.hrcd07, tabIndex=8, noEntry, items=(("001", "001"),("002", "002"),("003", "003"),("004", "004"),("005", "005"));
+Label label5:Label5, text=%"Label5";
+TextEdit hrcd12=formonly.hrcd12, tabIndex=9;
+ButtonEdit hrat01=formonly.hrat01, action=controlp, tabIndex=10, title=%"Edit1", not null, required, image="zoom";
+Edit hrat02=formonly.hrat02, tabIndex=11, title=%"Edit2";
+ButtonEdit hrat04=formonly.hrat04, action=controlp, tabIndex=12, title=%"Edit1", image="zoom";
+ButtonEdit hrat05=formonly.hrat05, action=controlp, tabIndex=13, title=%"Edit2", image="zoom";
+Edit hrat25=formonly.hrat25, tabIndex=14, title=%"Edit3";
+ButtonEdit hrat19=formonly.hrat19, action=controlp, tabIndex=15, title=%"Edit4", image="zoom";
+DateEdit hrcc04=formonly.hrcc04 type DATE, tabIndex=16, title=%"Edit3";
+DateEdit hrcc05=formonly.hrcc05, tabIndex=17, title=%"Edit4";
+Edit hrcc03=formonly.hrcc03 type DATE, tabIndex=18, title=%"Edit35";
+Edit hrcc08=formonly.hrcc08, tabIndex=19, title=%"Edit36";
+Edit hrcc09=formonly.hrcc09, tabIndex=20, title=%"Edit37";
+Edit hrcc10=formonly.hrcc10, tabIndex=21, title=%"Edit38";
+CheckBox hrcc06=formonly.hrcc06, tabIndex=22, title=%"Edit39", text=%"", valueChecked = "Y", valueUnchecked = "N";
+TextEdit hrcc11=formonly.hrcc11, tabIndex=23, title=%"Edit1";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrcd01,formonly.hrcd01_name,formonly.hrcd02,formonly.hrcd03,formonly.hrcd04,formonly.hrcd05,formonly.hrcd06,formonly.hrcd07,formonly.hrcd12)
+SCREEN RECORD s_hrat(formonly.hrat01,formonly.hrat02,formonly.hrat04,formonly.hrat05,formonly.hrat25,formonly.hrat19)
+SCREEN RECORD s_hrcc(formonly.hrcc04,formonly.hrcc05,formonly.hrcc03,formonly.hrcc08,formonly.hrcc09,formonly.hrcc10,formonly.hrcc06,formonly.hrcc11)
+END -- INSTRUCTIONS
+

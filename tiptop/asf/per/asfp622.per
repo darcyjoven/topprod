@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp622.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asfp622")
+Grid gr4905
+{
+ <G group01                                           >
+  WO No.                    [part                ]
+  Default Store             [store               ]
+  Default Location          [location            ]
+  Production Qty            [qty                 ]
+ [a                                   ]
+ <                                                    >
+}
+END -- gr4905
+END -- asfp622
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit part=formonly.part type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit store=formonly.store type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit location=formonly.location type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Edit qty=formonly.qty type DECIMAL, tabIndex=4;
+CheckBox a=formonly.a type VARCHAR, tabIndex=5, text="Explode to Bottom Level?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.part,formonly.store,formonly.location,formonly.qty,formonly.a)
+END -- INSTRUCTIONS
+

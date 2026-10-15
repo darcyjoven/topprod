@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft711.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq540")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr5012
+{
+
+ Working No.         [ede01           ]
+ Transaction Date    [ede02       ]
+
+}
+END -- gr5012
+Grid gr5013
+{
+
+ Status  [edeconf   |imgmksg]
+                    [       ]
+
+}
+END -- gr5013
+END -- HBox1
+END -- page01
+END -- folder01
+Table Table1
+{
+[edf02   |edf03   |sfb81   |edf04   |ima02   |ima021  |edf05   |edf012  |edf06   |edf07   |ecd02   |edf08   |edf09   |gen02   |edf10    |edf11    |edf12    |edf13          |edf14          |edf15          ]
+[edf02   |edf03   |sfb81   |edf04   |ima02   |ima021  |edf05   |edf012  |edf06   |edf07   |ecd02   |edf08   |edf09   |gen02   |edf10    |edf11    |edf12    |edf13          |edf14          |edf15          ]
+[edf02   |edf03   |sfb81   |edf04   |ima02   |ima021  |edf05   |edf012  |edf06   |edf07   |ecd02   |edf08   |edf09   |gen02   |edf10    |edf11    |edf12    |edf13          |edf14          |edf15          ]
+[edf02   |edf03   |sfb81   |edf04   |ima02   |ima021  |edf05   |edf012  |edf06   |edf07   |ecd02   |edf08   |edf09   |gen02   |edf10    |edf11    |edf12    |edf13          |edf14          |edf15          ]
+[edf02   |edf03   |sfb81   |edf04   |ima02   |ima021  |edf05   |edf012  |edf06   |edf07   |ecd02   |edf08   |edf09   |gen02   |edf10    |edf11    |edf12    |edf13          |edf14          |edf15          ]
+[edf02   |edf03   |sfb81   |edf04   |ima02   |ima021  |edf05   |edf012  |edf06   |edf07   |ecd02   |edf08   |edf09   |gen02   |edf10    |edf11    |edf12    |edf13          |edf14          |edf15          ]
+[edf02   |edf03   |sfb81   |edf04   |ima02   |ima021  |edf05   |edf012  |edf06   |edf07   |ecd02   |edf08   |edf09   |gen02   |edf10    |edf11    |edf12    |edf13          |edf14          |edf15          ]
+[edf02   |edf03   |sfb81   |edf04   |ima02   |ima021  |edf05   |edf012  |edf06   |edf07   |ecd02   |edf08   |edf09   |gen02   |edf10    |edf11    |edf12    |edf13          |edf14          |edf15          ]
+[edf02   |edf03   |sfb81   |edf04   |ima02   |ima021  |edf05   |edf012  |edf06   |edf07   |ecd02   |edf08   |edf09   |gen02   |edf10    |edf11    |edf12    |edf13          |edf14          |edf15          ]
+[edf02   |edf03   |sfb81   |edf04   |ima02   |ima021  |edf05   |edf012  |edf06   |edf07   |ecd02   |edf08   |edf09   |gen02   |edf10    |edf11    |edf12    |edf13          |edf14          |edf15          ]
+}
+END -- Table1
+Grid gr5016
+{
+  ---------- Rows [cnt   ] / [cn2   ] --------------------------------------------
+
+}
+END -- gr5016
+END -- VBox1
+END -- apmq540
+
+TABLES
+gen_file,
+sfb_file,
+ima_file,
+edf_file,
+ede_file,
+ecd_file
+ATTRIBUTES
+ButtonEdit ede01=ede_file.ede01, action=controlp, tabIndex=1, image="zoom";
+DateEdit ede02=ede_file.ede02, tabIndex=2;
+ComboBox edeconf=ede_file.edeconf, tabIndex=3, noEntry, queryEditable, items=(("N", "Not Confirmed"),("Y", "Confirmed"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit edf02=edf_file.edf02, tabIndex=4, title=%"Ln#";
+ButtonEdit edf03=edf_file.edf03, action=controlp, tabIndex=5, title=%"W/O", not null, required, image="zoom";
+DateEdit sfb81=sfb_file.sfb81, tabIndex=6, title=%"W/O Date", noEntry;
+ButtonEdit edf04=edf_file.edf04, action=controlp, tabIndex=7, title=%"Item No.", noEntry, image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=8, title=%"Part Name", noEntry;
+Edit ima021=ima_file.ima021, tabIndex=9, title=%"Specification", noEntry;
+Edit edf05=edf_file.edf05, tabIndex=10, title=%"Cmoplete/Store-in Qty", not null, required;
+ButtonEdit edf012=edf_file.edf012, action=controlp, tabIndex=11, title=%"Process No.", not null, required, image="zoom";
+ButtonEdit edf06=edf_file.edf06, action=controlp, tabIndex=12, title=%"Task No.", not null, required, image="zoom";
+Edit edf07=edf_file.edf07, tabIndex=13, title=%"Routing Sequence", not null, required;
+Edit ecd02=ecd_file.ecd02, tabIndex=14, title=%"Task Name", noEntry;
+Edit edf08=edf_file.edf08, tabIndex=15, title=%"LibQty", not null, required;
+ButtonEdit edf09=edf_file.edf09, action=controlp, tabIndex=16, title=%"Employee", image="zoom";
+Edit gen02=gen_file.gen02, tabIndex=17, title=%"Employee Name", noEntry;
+Edit edf10=edf_file.edf10, tabIndex=18, title=%"Standard single working hours", not null;
+Edit edf11=edf_file.edf11, tabIndex=19, title=%"Actual single working hours", not null;
+Edit edf12=edf_file.edf12, tabIndex=20, title=%"Total working hours", not null;
+Edit edf13=edf_file.edf13, tabIndex=21, title=%"Standard single Machine hours", not null;
+Edit edf14=edf_file.edf14, tabIndex=22, title=%"Actual single Machine hours", not null;
+Edit edf15=edf_file.edf15, tabIndex=23, title=%"Total Machine hours", not null;
+Edit cnt=formonly.cnt type CHAR, tabIndex=24;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=25;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_edf(edf_file.edf02,edf_file.edf03,sfb_file.sfb81,edf_file.edf04,ima_file.ima02,ima_file.ima021,edf_file.edf05,edf_file.edf012,edf_file.edf06,edf_file.edf07,ecd_file.ecd02,edf_file.edf08,edf_file.edf09,gen_file.gen02,edf_file.edf10,edf_file.edf11,edf_file.edf12,edf_file.edf13,edf_file.edf14,edf_file.edf15)
+SCREEN RECORD Undefined(ede_file.ede01,ede_file.ede02,ede_file.edeconf,formonly.imgmksg,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

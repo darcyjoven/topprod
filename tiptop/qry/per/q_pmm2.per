@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_pmm2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Query P/O Head")
+Grid gr3829
+{
+ <T s_pmm                                                                                                      >
+ [check |pmm01            |pmn02   |pmm02          |pmm04       |pmm09          |pmm25       |pmn18            ]
+ [check |pmm01            |pmn02   |pmm02          |pmm04       |pmm09          |pmm25       |pmn18            ]
+ [check |pmm01            |pmn02   |pmm02          |pmm04       |pmm09          |pmm25       |pmn18            ]
+ [check |pmm01            |pmn02   |pmm02          |pmm04       |pmm09          |pmm25       |pmn18            ]
+ [check |pmm01            |pmn02   |pmm02          |pmm04       |pmm09          |pmm25       |pmn18            ]
+ [check |pmm01            |pmn02   |pmm02          |pmm04       |pmm09          |pmm25       |pmn18            ]
+ [check |pmm01            |pmn02   |pmm02          |pmm04       |pmm09          |pmm25       |pmn18            ]
+ [check |pmm01            |pmn02   |pmm02          |pmm04       |pmm09          |pmm25       |pmn18            ]
+ [check |pmm01            |pmn02   |pmm02          |pmm04       |pmm09          |pmm25       |pmn18            ]
+ [check |pmm01            |pmn02   |pmm02          |pmm04       |pmm09          |pmm25       |pmn18            ]
+ <                                                                                                             >
+
+}
+END -- gr3829
+END -- q_pmm2
+
+TABLES
+pmm_file
+ATTRIBUTES
+Table s_pmm:s_pmm;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmm01=pmm_file.pmm01, tabIndex=2, title="P/O No.", noEntry;
+Edit pmn02=formonly.pmn02, tabIndex=8, title=%"pmn02";
+Edit pmm02=pmm_file.pmm02, tabIndex=3, title="Doc Property", noEntry;
+Edit pmm04=pmm_file.pmm04, tabIndex=4, title="Doc Date", noEntry;
+Edit pmm09=pmm_file.pmm09, tabIndex=5, title="Supplier", noEntry;
+Edit pmm25=pmm_file.pmm25, tabIndex=6, title="Status Code", noEntry;
+Edit pmn18=formonly.pmn18, tabIndex=7, title=%"pmn18";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmm(formonly.check,pmm_file.pmm01,formonly.pmn02,pmm_file.pmm02,pmm_file.pmm04,pmm_file.pmm09,pmm_file.pmm25,formonly.pmn18)
+END -- INSTRUCTIONS
+

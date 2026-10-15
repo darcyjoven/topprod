@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci625.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci625")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr1665
+{
+ Task No.        [ecd01     ]
+ Task Desc       [ecd02                         ]
+}
+END -- gr1665
+END -- page01
+END -- folder01
+Table s_ecz
+{
+[ecz04|ecz05               ]
+[ecz04|ecz05               ]
+[ecz04|ecz05               ]
+[ecz04|ecz05               ]
+[ecz04|ecz05               ]
+[ecz04|ecz05               ]
+[ecz04|ecz05               ]
+[ecz04|ecz05               ]
+[ecz04|ecz05               ]
+[ecz04|ecz05               ]
+
+}
+END -- s_ecz
+Grid gr1666
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1666
+END -- VBox1
+END -- aeci625
+
+TABLES
+ecz_file,
+ecd_file
+ATTRIBUTES
+Edit ecd01=ecd_file.ecd01, tabIndex=1, not null, required, comment="Combine [Eff.Dt] as Key Field, No Blank/Repeated!";
+Edit ecd02=ecd_file.ecd02, tabIndex=2;
+Edit ecz04=ecz_file.ecz04, tabIndex=3, title="Line#", comment="Key Field, No Blank/Repeated!   ";
+Edit ecz05=ecz_file.ecz05, tabIndex=4, title="Description", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ecz(ecz_file.ecz04,ecz_file.ecz05)
+SCREEN RECORD Undefined(ecd_file.ecd01,ecd_file.ecd02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

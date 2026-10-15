@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt710t.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Carry GL")
+Grid gr4539
+{
+ <G group01                                 >
+ [dummy01                              ]
+  Document #          [npp01           ]
+  Date                [npp02           ]
+ <                                          >
+ <G group02                                      >
+  General Ledger Voucher No.  [l_no            ]
+  General Ledger Voucher Date [l_date          ]
+ <                                               >
+
+}
+END -- gr4539
+END -- anmt710t
+
+TABLES
+npp_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Label dummy01:dummy01, text="Enter Condition to Carry G/L Entry:";
+Edit npp01=npp_file.npp01, tabIndex=1;
+DateEdit npp02=npp_file.npp02, tabIndex=2;
+Group group02:group02, text="Input";
+Edit l_no=formonly.l_no type VARCHAR, tabIndex=3;
+DateEdit l_date=formonly.l_date type DATE, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(npp_file.npp01,npp_file.npp02,formonly.l_no,formonly.l_date)
+END -- INSTRUCTIONS
+

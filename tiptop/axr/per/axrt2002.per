@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt2002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt2002")
+VBox VBox1
+Folder pc666
+Page page01(text="Main")
+Table s_oga
+{
+[pdate            |ptype              |amt                 |net_amt             ]
+[pdate            |ptype              |amt                 |net_amt             ]
+[pdate            |ptype              |amt                 |net_amt             ]
+[pdate            |ptype              |amt                 |net_amt             ]
+[pdate            |ptype              |amt                 |net_amt             ]
+[pdate            |ptype              |amt                 |net_amt             ]
+[pdate            |ptype              |amt                 |net_amt             ]
+[pdate            |ptype              |amt                 |net_amt             ]
+[pdate            |ptype              |amt                 |net_amt             ]
+[pdate            |ptype              |amt                 |net_amt             ]
+
+}
+END -- s_oga
+END -- page01
+END -- pc666
+END -- VBox1
+END -- axrt2002
+
+ATTRIBUTES
+DateEdit pdate=formonly.pdate type CHAR, tabIndex=1, title="Transaction Date", noEntry;
+Edit ptype=formonly.ptype type CHAR, tabIndex=2, title="Transaction Type", noEntry;
+Edit amt=formonly.amt type CHAR, tabIndex=3, title="Amount", noEntry;
+Edit net_amt=formonly.net_amt type CHAR, tabIndex=4, title="Available Balance", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oga(formonly.pdate,formonly.ptype,formonly.amt,formonly.net_amt)
+END -- INSTRUCTIONS
+

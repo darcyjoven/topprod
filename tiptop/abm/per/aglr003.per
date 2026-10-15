@@ -1,0 +1,96 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/abm/4fd/aglr003.tmp.per created 2010-04-30T13:37:29
+-- File created from /u3/tiptop/abm/4fd/aglr003.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA formonly
+
+
+
+
+LAYOUT(spacing=normal, text=%"aglr003")
+      VBox vb25                                                                       
+      Group group01(text="INPUT")                                                     
+                                                                                      
+       VBox vb24                                                                      
+       Grid gr2576                                                                    
+       {                                                                              
+        <G group02                                                          >         
+        [rtype                                                       ]                
+        <                                                                   >         
+                                                                                      
+                                                                                      
+       }                                                                              
+       END                                                                            
+       Grid gr2577                                                                    
+       {                                                                              
+        <G group03                                                         >          
+                                                                                      
+         Group No.             [axa01               ]                                 
+         Parent Company        [axa02               ]                                 
+         Book No.              [axa03               ]                                 
+         Report Structure No.  [a                   ]                                 
+         Book No.              [b                   ]                                 
+         Enter Year            [yy                  ]                                 
+         Period (Initial-End)  [bm                  ]-[em                 ]           
+         Decimal Digits        [e                   ]                                 
+         Print Minimum Level#  [f                   ]                                 
+         Amount Unit           [d                   ]                                 
+         [c                             ]                                             
+         [h                             ]                                             
+        <                                                                  >          
+       }                                                                              
+       END                                                                            
+       Grid gr2578                                                                    
+       {                                                                              
+                                                                                      
+        <G group04                                                         >          
+          [o                                       ]                                  
+           G/L Curr.           [r                   ]                                 
+           Convert Curr.       [p                   ]                                 
+           * Ex.Rate           [q                   ]                                 
+        <                                                                  >          
+       }                                                                              
+       END                                                                            
+       END -- VBox                                                                    
+      END -- Group                                                                    
+      Grid gr2579                                                                     
+      {                                                                               
+      [more                                                        ]                  
+                                                                                      
+      }                                                                               
+      END                                                                             
+      END -- VBox                                                                     
+END -- Form
+
+
+ATTRIBUTES
+Group group02:group02, text="Report Type";
+RadioGroup rtype=formonly.rtype, tabIndex=1, items=(("1", "Balance Sheet"),("2", "Income statement"));
+Group group03:group03;
+ButtonEdit axa01=formonly.axa01, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit axa02=formonly.axa02, action=controlp, tabIndex=3, image="zoom";
+Edit axa03=formonly.axa03, tabIndex=4, noEntry;
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+Edit yy=formonly.yy type SMALLINT, tabIndex=7;
+Edit bm=formonly.bm type SMALLINT, tabIndex=8;
+Edit em=formonly.em type SMALLINT, tabIndex=9;
+Edit e=formonly.e, tabIndex=10;
+Edit f=formonly.f type SMALLINT, tabIndex=11;
+ComboBox d=formonly.d, tabIndex=12, not null, required, queryEditable, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+CheckBox c=formonly.c, tabIndex=13, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h, tabIndex=14, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="Convert Curr.";
+CheckBox o=formonly.o, tabIndex=15, text="Convert Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=16, noEntry;
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=17, image="zoom";
+Edit q=formonly.q type DECIMAL, tabIndex=18;
+CheckBox more=formonly.more, tabIndex=19, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

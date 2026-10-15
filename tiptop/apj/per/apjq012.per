@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjq012.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjq012")
+VBox vb4
+Folder pc3
+Page Page4(text=%"Basic Data")
+Grid gr5
+{
+
+ Year       [pjs01     ]   Month[pjs02     ]
+ Project No.[pjs03        |pja02                                   ]
+
+}
+END -- gr5
+END -- Page4
+END -- pc3
+Table s_pjs
+{
+[pjs04                           |pjb03                                                                           |pjs05       |azf03                                   |pjs10               |pjs11               |pjs12               |sum_pjs11           ]
+[pjs04                           |pjb03                                                                           |pjs05       |azf03                                   |pjs10               |pjs11               |pjs12               |sum_pjs11           ]
+[pjs04                           |pjb03                                                                           |pjs05       |azf03                                   |pjs10               |pjs11               |pjs12               |sum_pjs11           ]
+[pjs04                           |pjb03                                                                           |pjs05       |azf03                                   |pjs10               |pjs11               |pjs12               |sum_pjs11           ]
+[pjs04                           |pjb03                                                                           |pjs05       |azf03                                   |pjs10               |pjs11               |pjs12               |sum_pjs11           ]
+[pjs04                           |pjb03                                                                           |pjs05       |azf03                                   |pjs10               |pjs11               |pjs12               |sum_pjs11           ]
+[pjs04                           |pjb03                                                                           |pjs05       |azf03                                   |pjs10               |pjs11               |pjs12               |sum_pjs11           ]
+[pjs04                           |pjb03                                                                           |pjs05       |azf03                                   |pjs10               |pjs11               |pjs12               |sum_pjs11           ]
+
+}
+END -- s_pjs
+Grid gr9
+{
+
+ --------Rows[cnt    ]/[cn2   ]------
+
+}
+END -- gr9
+END -- vb4
+END -- apjq012
+
+TABLES
+pjs_file
+ATTRIBUTES
+Edit pjs01=pjs_file.pjs01, tabIndex=2, not null, required;
+Edit pjs02=pjs_file.pjs02, tabIndex=1, not null, required;
+ButtonEdit pjs03=pjs_file.pjs03, action=controlp, tabIndex=3, image="zoom.png";
+Edit pja02=formonly.pja02 type INTEGER, tabIndex=4, noEntry;
+ButtonEdit pjs04=pjs_file.pjs04, action=controlp, tabIndex=5, title="WBS No.", not null, required, image="zoom.png";
+Edit pjb03=formonly.pjb03 type CHAR, tabIndex=6, title="WBS Name", noEntry;
+ButtonEdit pjs05=pjs_file.pjs05, action=controlp, tabIndex=7, title="Expense Code", not null, required, image="zoom.png";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=8, title="Description", noEntry;
+Edit pjs10=pjs_file.pjs10, tabIndex=9, default = "0", title="Curr. Occured Amt", not null;
+Edit pjs11=pjs_file.pjs11, tabIndex=10, default = "0", title="Curr. Advance Withdrawal", not null;
+Edit pjs12=pjs_file.pjs12, tabIndex=11, default = "0", title="Curr. B/F Amt", not null;
+Edit sum_pjs11=formonly.sum_pjs11 type CHAR, tabIndex=12, default = "0", title="Accumulated Advance Withdrawal", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjs(pjs_file.pjs04,formonly.pjb03,pjs_file.pjs05,formonly.azf03,pjs_file.pjs10,pjs_file.pjs11,pjs_file.pjs12,formonly.sum_pjs11)
+SCREEN RECORD Undefined(pjs_file.pjs01,pjs_file.pjs02,pjs_file.pjs03,formonly.pja02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

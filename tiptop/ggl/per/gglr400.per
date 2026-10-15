@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglr400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglr400")
+VBox VBox1
+Group g02(text=%"INPUT1")
+Grid Grid1
+{
+ Book NO.      [a                   ]
+
+}
+END -- Grid1
+END -- g02
+Grid gr4
+{
+ <G group01                                                          >
+  Account Code        [tah01                         ]
+  Currency            [tah08                         ]
+
+ <                                                                   >
+}
+END -- gr4
+Group g01(text="INPUT")
+Grid gr5
+{
+ Ending Year-Mon     [yy             ]-[mm          ]
+ Ex.Rate Op          [rate_op        ]
+ [t                                         ]
+ [e                                         ]
+ [h                                              ]
+
+
+}
+END -- gr5
+END -- g01
+Grid gr6
+{
+[more                                                        ]
+
+
+}
+END -- gr6
+END -- VBox1
+END -- gglr400
+
+ATTRIBUTES
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=5, not null, required, image="zoom";
+Group group01:group01, text="QBE";
+ButtonEdit tah01=formonly.tah01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit tah08=formonly.tah08 type CHAR, tabIndex=2;
+Edit yy=formonly.yy type SMALLINT, tabIndex=3, not null, required;
+Edit mm=formonly.mm type SMALLINT, tabIndex=4, not null, required;
+ComboBox rate_op=formonly.rate_op type CHAR, tabIndex=6, not null, required, queryEditable, items=(("B", "Bank Buying"),("S", "Bank Selling"),("C", "Customs Buy"),("D", "Customs Sell"),("R", "EoM Rev Exate"),("M", "Bank Average Exchange Rate"));
+CheckBox t=formonly.t type CHAR, tabIndex=7, text="Next Page By Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=8, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=10, text="Monetary Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.tah01,formonly.tah08,formonly.yy,formonly.mm,formonly.rate_op,formonly.t,formonly.e,formonly.h,formonly.more)
+END -- INSTRUCTIONS
+

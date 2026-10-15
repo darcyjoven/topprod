@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_pjb.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_pjb")
+Grid gr3714
+{
+ <T s_pjb                                    >
+ [check |pjb02   |pjb03        |pja01        ]
+ [check |pjb02   |pjb03        |pja01        ]
+ [check |pjb02   |pjb03        |pja01        ]
+ [check |pjb02   |pjb03        |pja01        ]
+ [check |pjb02   |pjb03        |pja01        ]
+ [check |pjb02   |pjb03        |pja01        ]
+ [check |pjb02   |pjb03        |pja01        ]
+ [check |pjb02   |pjb03        |pja01        ]
+ [check |pjb02   |pjb03        |pja01        ]
+ [check |pjb02   |pjb03        |pja01        ]
+ <                                           >
+
+}
+END -- gr3714
+END -- q_aac
+
+TABLES
+pjb_file,
+pja_file
+ATTRIBUTES
+Table s_pjb:s_pjb;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pjb02=pjb_file.pjb02, tabIndex=4, title=%"WBS No.", noEntry;
+Edit pjb03=pjb_file.pjb03, tabIndex=3, title=%"WBS Name", noEntry;
+Edit pja01=pja_file.pja01, tabIndex=2, title="Project No.", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjb(formonly.check,pjb_file.pjb02,pjb_file.pjb03,pja_file.pja01)
+END -- INSTRUCTIONS
+

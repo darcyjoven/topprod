@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr603.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxr840")
+VBox VBox1
+Grid gr1209
+{
+ <G group01                                        >
+  Item No.          [ima01                         ]
+
+ <                                                 >
+
+}
+END -- gr1209
+Group g01
+VBox VBox2
+Grid gr1210
+{
+ <G group02                    >
+  Year               [g_yy]
+
+ <                             >
+}
+END -- gr1210
+Grid gr1211
+{
+
+[yn                   ]
+
+}
+END -- gr1211
+END -- VBox2
+END -- g01
+END -- VBox1
+END -- abxr603
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<P>Qry Item Master";
+Group group02:group02, text="INPUT";
+Edit g_yy=formonly.g_yy type SMALLINT, tabIndex=2;
+CheckBox yn=formonly.yn type CHAR, tabIndex=3, text="Print Bond Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,formonly.g_yy,formonly.yn)
+END -- INSTRUCTIONS
+

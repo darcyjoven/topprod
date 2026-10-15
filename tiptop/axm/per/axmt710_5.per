@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt710_5.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt710_5")
+VBox VBox1
+Folder pc52
+Page page01(text="Page01")
+Grid gr136
+{
+ <G group01                                      >
+  Auditing            [ohf04     ][gen02_2   ]
+ <                                               >
+
+}
+END -- gr136
+END -- page01
+END -- pc52
+Table s_ohg
+{
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+[ohg03    |ohg04                                                                 ]
+
+}
+END -- s_ohg
+END -- VBox1
+END -- axmt710_5
+
+TABLES
+ohg_file,
+ohf_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit ohf04=ohf_file.ohf04, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Employee";
+Edit gen02_2=formonly.gen02_2 type VARCHAR, tabIndex=2, noEntry;
+Edit ohg03=ohg_file.ohg03, tabIndex=3, title="Line No.";
+Edit ohg04=ohg_file.ohg04, tabIndex=4, title="Adjudicate";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ohg(ohg_file.ohg03,ohg_file.ohg04)
+SCREEN RECORD Undefined(ohf_file.ohf04,formonly.gen02_2)
+END -- INSTRUCTIONS
+

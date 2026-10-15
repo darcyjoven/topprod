@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi6001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi6001")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr745
+{
+ Part Number         [bma01                         ]
+ Part Name           [ima02_h                       ]
+ Specification       [ima021_h                      ]
+ Alternate Code      [bma06               ]
+}
+END -- gr745
+Grid gr746
+{
+ UOM                 [ima55     ]
+ Cur Vers            [ima05_h   ]
+ Source Code         [ima08_h   ]
+
+}
+END -- gr746
+Grid gr747
+{
+ Comb.Mod            [bma04       ]   [imgmksg]
+ Pay Date            [bma05       ]   [       ]
+ Effective Date      [vdate       ]
+
+}
+END -- gr747
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr748
+{
+ Record Owner        [bmauser   ] Last Modified by    [bmamodu   ] Data Valid Code     [bmaacti   ]
+ Department          [bmagrup   ] Create/Modify Date  [bmadate   ]
+ Record Orig.        [bmaoriu   ]
+ Dept Orig.          [bmaorig   ]
+}
+END -- gr748
+END -- info
+END -- folder01
+Table s_bmb
+{
+[bmb0|bmb30             |bmb03               |ima02_b                       |ima021_b                      |ima|bmb09 |bmb16 |bmb14|bmb04    |bmb05    |bmb06  |bmb07       |bmb10|bmb08   |bmb19          |bmb24           |bmb13                 ]
+[bmb0|bmb30             |bmb03               |ima02_b                       |ima021_b                      |ima|bmb09 |bmb16 |bmb14|bmb04    |bmb05    |bmb06  |bmb07       |bmb10|bmb08   |bmb19          |bmb24           |bmb13                 ]
+[bmb0|bmb30             |bmb03               |ima02_b                       |ima021_b                      |ima|bmb09 |bmb16 |bmb14|bmb04    |bmb05    |bmb06  |bmb07       |bmb10|bmb08   |bmb19          |bmb24           |bmb13                 ]
+[bmb0|bmb30             |bmb03               |ima02_b                       |ima021_b                      |ima|bmb09 |bmb16 |bmb14|bmb04    |bmb05    |bmb06  |bmb07       |bmb10|bmb08   |bmb19          |bmb24           |bmb13                 ]
+[bmb0|bmb30             |bmb03               |ima02_b                       |ima021_b                      |ima|bmb09 |bmb16 |bmb14|bmb04    |bmb05    |bmb06  |bmb07       |bmb10|bmb08   |bmb19          |bmb24           |bmb13                 ]
+[bmb0|bmb30             |bmb03               |ima02_b                       |ima021_b                      |ima|bmb09 |bmb16 |bmb14|bmb04    |bmb05    |bmb06  |bmb07       |bmb10|bmb08   |bmb19          |bmb24           |bmb13                 ]
+[bmb0|bmb30             |bmb03               |ima02_b                       |ima021_b                      |ima|bmb09 |bmb16 |bmb14|bmb04    |bmb05    |bmb06  |bmb07       |bmb10|bmb08   |bmb19          |bmb24           |bmb13                 ]
+[bmb0|bmb30             |bmb03               |ima02_b                       |ima021_b                      |ima|bmb09 |bmb16 |bmb14|bmb04    |bmb05    |bmb06  |bmb07       |bmb10|bmb08   |bmb19          |bmb24           |bmb13                 ]
+[bmb0|bmb30             |bmb03               |ima02_b                       |ima021_b                      |ima|bmb09 |bmb16 |bmb14|bmb04    |bmb05    |bmb06  |bmb07       |bmb10|bmb08   |bmb19          |bmb24           |bmb13                 ]
+[bmb0|bmb30             |bmb03               |ima02_b                       |ima021_b                      |ima|bmb09 |bmb16 |bmb14|bmb04    |bmb05    |bmb06  |bmb07       |bmb10|bmb08   |bmb19          |bmb24           |bmb13                 ]
+
+}
+END -- s_bmb
+Grid gr749
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr749
+END -- VBox1
+END -- abmi6001
+
+TABLES
+bmb_file,
+bma_file
+ATTRIBUTES
+ButtonEdit bma01=bma_file.bma01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Query Item,     <^Y> Create Item Master";
+Edit ima02_h=formonly.ima02_h type CHAR, tabIndex=2, noEntry;
+Edit ima021_h=formonly.ima021_h type CHAR, tabIndex=3, noEntry;
+Edit bma06=bma_file.bma06, tabIndex=4, not null, required;
+Edit ima55=formonly.ima55 type CHAR, tabIndex=5, noEntry;
+Edit ima05_h=formonly.ima05_h type CHAR, tabIndex=6, noEntry;
+ComboBox ima08_h=formonly.ima08_h type CHAR, tabIndex=7, noEntry, not null, required, items=(("C", "Configurable Product"),("T", "FAS Product"),("D", "Feture"),("A", "Family Product"),("M", "Make Product"),("P", "Purchase"),("X", "Phantom"),("K", "Kit"),("U", "Manufactured Mass Item"),("V", "Purchased Mass Item"),("R", "Routable"),("Z", "Miscellaneous"),("S", "Subcontract"));
+Edit bma04=bma_file.bma04, tabIndex=8;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+DateEdit bma05=bma_file.bma05, tabIndex=10, not null, required;
+DateEdit vdate=formonly.vdate type DATE, tabIndex=11;
+Edit bmauser=bma_file.bmauser, tabIndex=12, noEntry;
+Edit bmamodu=bma_file.bmamodu, tabIndex=13, noEntry;
+Edit bmaacti=bma_file.bmaacti, tabIndex=14, noEntry;
+Edit bmagrup=bma_file.bmagrup, tabIndex=15, noEntry;
+DateEdit bmadate=bma_file.bmadate, tabIndex=16, noEntry;
+Edit bmaoriu=bma_file.bmaoriu, tabIndex=501, noEntry;
+Edit bmaorig=bma_file.bmaorig, tabIndex=502, noEntry;
+Edit bmb0=bmb_file.bmb02, tabIndex=17, title="Seq", not null, required, comment="If \"Update\", press    <^Y>[BOM Desc],<^E>[Mtn REP/SUB],<^T>Insert Loc   ";
+ComboBox bmb30=bmb_file.bmb30, tabIndex=18, title="Calculation type", queryEditable, items=(("1", %"Fix"),("2", %"Variable"),("3", %"Formula"));
+ButtonEdit bmb03=bmb_file.bmb03, action=controlp, tabIndex=19, title="Component Part No", not null, required, image="zoom", comment="<^P> Query Item,     <^Y> Create Item   <^O>Crt Compo.Brand  ";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=20, title="Part Name", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=21, title="Specification", noEntry;
+Edit ima=formonly.ima08_b type CHAR, tabIndex=22, title="Src", noEntry;
+ButtonEdit bmb09=bmb_file.bmb09, action=controlp, tabIndex=23, title="Task#", image="zoom", comment="<^P>Qry Task No.!";
+ComboBox bmb16=bmb_file.bmb16, tabIndex=24, title="R/SUB", not null, required, queryEditable, items=(("0", %"No REP/SUB"),("1", %"New, with Old Itm(UTE)"),("2", %"M.Item, with Sub-Item(SUB)"),("5", %"M.Item Can To Do SUB With SET"));
+ComboBox bmb14=bmb_file.bmb14, tabIndex=25, title="Slct", not null, required, queryEditable, items=(("0", %"Required"),("1", %"Optional"));
+DateEdit bmb04=bmb_file.bmb04, tabIndex=26, title="Eff.Date", not null, required;
+DateEdit bmb05=bmb_file.bmb05, tabIndex=27, title="Exp.Date";
+Edit bmb06=bmb_file.bmb06, tabIndex=28, title="QPA", not null, required;
+Edit bmb07=bmb_file.bmb07, tabIndex=29, title="DQPA";
+ButtonEdit bmb10=bmb_file.bmb10, action=controlp, tabIndex=30, title="Unit", not null, required, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit  <^U>/<^T> Crt Item/ Unit Conv.  ";
+Edit bmb08=bmb_file.bmb08, tabIndex=31, title="Wastg.%", not null, required;
+ComboBox bmb19=bmb_file.bmb19, tabIndex=32, title="Open W/O", not null, required, queryEditable, items=(("1", %"No Exp"),("2", %"No Expl,Auto Open WO"),("3", %"Expl"),("4", %"Open Window and Qry to Expl?"));
+Edit bmb24=bmb_file.bmb24, tabIndex=33, title="ECN No", noEntry;
+Edit bmb13=bmb_file.bmb13, tabIndex=34, title="Inst.Loc", noEntry, comment="<^T>Mul-Insert Loc ";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=35, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=36, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmb(bmb_file.bmb02,bmb_file.bmb30,bmb_file.bmb03,formonly.ima02_b,formonly.ima021_b,formonly.ima08_b,bmb_file.bmb09,bmb_file.bmb16,bmb_file.bmb14,bmb_file.bmb04,bmb_file.bmb05,bmb_file.bmb06,bmb_file.bmb07,bmb_file.bmb10,bmb_file.bmb08,bmb_file.bmb19,bmb_file.bmb24,bmb_file.bmb13)
+SCREEN RECORD Undefined(bma_file.bma01,formonly.ima02_h,formonly.ima021_h,bma_file.bma06,formonly.ima55,formonly.ima05_h,formonly.ima08_h,bma_file.bma04,formonly.imgmksg,bma_file.bma05,formonly.vdate,bma_file.bmauser,bma_file.bmamodu,bma_file.bmaacti,bma_file.bmagrup,bma_file.bmadate,bma_file.bmaoriu,bma_file.bmaorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

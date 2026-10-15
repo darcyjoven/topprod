@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxp820.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxp820")
+VBox vb3
+Grid gr1083
+{
+ <G group01                                         >
+  Calculating Year/Month  [g_yy]/[g_]
+  Calculating Date        [g_bdate   ]-[g_edate   ]
+ <                                                  >
+}
+END -- gr1083
+Grid gr1084
+{
+[g_bgjob                                           ]
+
+
+}
+END -- gr1084
+END -- vb3
+END -- abxp820
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+Edit g_yy=formonly.g_yy type SMALLINT, tabIndex=1;
+Edit g_=formonly.g_mm type SMALLINT, tabIndex=2;
+DateEdit g_bdate=formonly.g_bdate type DATE, tabIndex=3;
+DateEdit g_edate=formonly.g_edate type DATE, tabIndex=4;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=5, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_yy,formonly.g_mm,formonly.g_bdate,formonly.g_edate,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

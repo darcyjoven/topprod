@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_8.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Variation Process")
+Group g01(text="Body Stock-in Amt not equal to Head Invoice Amt")
+Grid gr348
+{
+ <G group01                                                  >
+ [apa56                                            ]
+ [                                                 ]
+ [                                                 ]
+ [                                                 ]
+ [                                                 ]
+ [                                                 ]
+ [                                                 ]
+
+
+
+ <                                                           >
+  <G group02                                               >
+   Assign Account of Variation [apa53     ]
+                               [aag02                 ]
+   Assign Account of Variation [apa531    ]
+                               [aag01                 ]
+  <                                                        >
+
+}
+END -- gr348
+END -- g01
+END -- aapt110_8
+
+TABLES
+apa_file,
+aag_file
+ATTRIBUTES
+Group group01:group01, text="Assign Variation Process Method";
+RadioGroup apa56=apa_file.apa56, tabIndex=1, items=(("0", "Enter Body Data ,Until equal"),("1", "Retain"),("2", "Variation Counted to Purchase Difference"),("3", "Variation Counted to Allowance - A/P"),("4", "Apportion Head Amount to Body Detail"),("5", "Variation Counted to UNAP Difference"),("6", "Apportion Head Amount to Body Detail By User"));
+Group group02:group02;
+ButtonEdit apa53=apa_file.apa53, action=controlp, tabIndex=2, image="zoom";
+Edit aag02=aag_file.aag02, tabIndex=3;
+ButtonEdit apa531=apa_file.apa531, action=controlp, tabIndex=4, image="zoom";
+Edit aag01=formonly.aag02 type CHAR, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(apa_file.apa56,apa_file.apa53,aag_file.aag02,apa_file.apa531,formonly.aag02)
+END -- INSTRUCTIONS
+

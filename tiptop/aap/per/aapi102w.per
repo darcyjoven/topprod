@@ -1,0 +1,29 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapi102w.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapi102w")
+Grid gr11
+{
+ <G gb9                             >
+  Enter Calendar Year  [g_ye]
+  Initial Date         [g_bdate     ]
+ <                                  >
+
+}
+END -- gr11
+END -- aapi102w
+
+ATTRIBUTES
+Group gb9:gb9, text="group01";
+Edit g_ye=formonly.g_year type SMALLINT, tabIndex=1, comment="Enter Year";
+DateEdit g_bdate=formonly.g_bdate type DATE, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.g_year,formonly.g_bdate)
+END -- INSTRUCTIONS
+

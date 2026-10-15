@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfp310_p.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Table Table1
+{
+[sel        |sfb01       |sfb05        |sfb06        |sfb08        |num1        |num2        |sfb08_1    |imaud10    |imaud07 |sfb13        |sfb15       |sfb14      |sfb16       |sfb919      ]
+[sel        |sfb01       |sfb05        |sfb06        |sfb08        |num1        |num2        |sfb08_1    |imaud10    |imaud07 |sfb13        |sfb15       |sfb14      |sfb16       |sfb919      ]
+[sel        |sfb01       |sfb05        |sfb06        |sfb08        |num1        |num2        |sfb08_1    |imaud10    |imaud07 |sfb13        |sfb15       |sfb14      |sfb16       |sfb919      ]
+[sel        |sfb01       |sfb05        |sfb06        |sfb08        |num1        |num2        |sfb08_1    |imaud10    |imaud07 |sfb13        |sfb15       |sfb14      |sfb16       |sfb919      ]
+[sel        |sfb01       |sfb05        |sfb06        |sfb08        |num1        |num2        |sfb08_1    |imaud10    |imaud07 |sfb13        |sfb15       |sfb14      |sfb16       |sfb919      ]
+
+
+}
+END -- Table1
+END -- Form
+
+ATTRIBUTES
+CheckBox sel=formonly.sel, tabIndex=1, title=%"sel", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sfb01=formonly.sfb01, action=controlp, tabIndex=2, title=%"sfb01", noEntry, image="zoom";
+ButtonEdit sfb05=formonly.sfb05, action=controlp, tabIndex=3, title=%"sfb05", noEntry, image="zoom";
+Edit sfb06=formonly.sfb06, tabIndex=4, title=%"sfb06", noEntry;
+Edit sfb08=formonly.sfb08, tabIndex=5, title=%"sfb08", noEntry;
+Edit num1=formonly.num1 type DECIMAL, tabIndex=15, title=%"num1", noEntry;
+Edit num2=formonly.num2 type DECIMAL, tabIndex=14, title=%"num2";
+Edit sfb08_1=formonly.sfb08_1, tabIndex=11, title=%"sfb08_1", not null, required;
+Edit imaud10=formonly.imaud10, tabIndex=12, title=%"imaud10", noEntry;
+Edit imaud07=formonly.imaud07, tabIndex=13, title=%"imaud07";
+DateEdit sfb13=formonly.sfb13 type DATE, tabIndex=6, title=%"sfb13", noEntry;
+DateEdit sfb15=formonly.sfb15 type DATE, tabIndex=7, title=%"sfb15", noEntry;
+Edit sfb14=formonly.sfb14, tabIndex=8, title=%"sfb14", noEntry;
+Edit sfb16=formonly.sfb16, tabIndex=9, title=%"sfb16", noEntry;
+Edit sfb919=formonly.sfb919, tabIndex=10, title=%"sfb919", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(formonly.sel,formonly.sfb01,formonly.sfb05,formonly.sfb06,formonly.sfb08,formonly.num1,formonly.num2,formonly.sfb08_1,formonly.imaud10,formonly.imaud07,formonly.sfb13,formonly.sfb15,formonly.sfb14,formonly.sfb16,formonly.sfb919)
+END -- INSTRUCTIONS
+

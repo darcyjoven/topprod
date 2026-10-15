@@ -1,0 +1,104 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap910.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afap910")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1957
+{
+ Removal Doc No.     [fcf01     ]
+ Removal Date        [fcf02       ]
+
+}
+END -- gr1957
+Grid gr1958
+{
+ Application No.     [fcf03             ]
+ Removeal Amount     [fcf04               ]
+
+}
+END -- gr1958
+Grid gr1959
+{
+[fcfconf                        ]
+
+
+}
+END -- gr1959
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1960
+{
+ Record Owner       [fcfuser   ]   Last Modified by   [fcfmodu   ]
+ Department         [fcfgrup   ]   Create/Modify Date [fcfdate   ]
+ Record Orig.       [fcforiu   ]
+ Dept Orig.         [fcforig   ]
+}
+END -- gr1960
+END -- info
+END -- folder01
+Table s_fcg
+{
+[fcg02      |fcg04             |fcg041     |fcg03          |fcg031    |faj43    |faj432   |fcg05             |fcg06               |fcg07 ]
+[fcg02      |fcg04             |fcg041     |fcg03          |fcg031    |faj43    |faj432   |fcg05             |fcg06               |fcg07 ]
+[fcg02      |fcg04             |fcg041     |fcg03          |fcg031    |faj43    |faj432   |fcg05             |fcg06               |fcg07 ]
+[fcg02      |fcg04             |fcg041     |fcg03          |fcg031    |faj43    |faj432   |fcg05             |fcg06               |fcg07 ]
+[fcg02      |fcg04             |fcg041     |fcg03          |fcg031    |faj43    |faj432   |fcg05             |fcg06               |fcg07 ]
+[fcg02      |fcg04             |fcg041     |fcg03          |fcg031    |faj43    |faj432   |fcg05             |fcg06               |fcg07 ]
+[fcg02      |fcg04             |fcg041     |fcg03          |fcg031    |faj43    |faj432   |fcg05             |fcg06               |fcg07 ]
+[fcg02      |fcg04             |fcg041     |fcg03          |fcg031    |faj43    |faj432   |fcg05             |fcg06               |fcg07 ]
+[fcg02      |fcg04             |fcg041     |fcg03          |fcg031    |faj43    |faj432   |fcg05             |fcg06               |fcg07 ]
+[fcg02      |fcg04             |fcg041     |fcg03          |fcg031    |faj43    |faj432   |fcg05             |fcg06               |fcg07 ]
+}
+END -- s_fcg
+Grid gr1961
+{
+ ----------Rows [cnt   ] / [cn2   ]----------
+
+
+}
+END -- gr1961
+END -- VBox1
+END -- afap910
+
+TABLES
+fcg_file,
+fcf_file
+ATTRIBUTES
+Edit fcf01=fcf_file.fcf01, tabIndex=1;
+DateEdit fcf02=fcf_file.fcf02, tabIndex=2;
+ButtonEdit fcf03=fcf_file.fcf03, action=controlp, tabIndex=3, image="zoom", comment="<^P> Qry Asset Mortgage";
+Edit fcf04=fcf_file.fcf04, tabIndex=4;
+CheckBox fcfconf=fcf_file.fcfconf, tabIndex=5, text="Confirm", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fcfuser=fcf_file.fcfuser, tabIndex=6, noEntry;
+Edit fcfmodu=fcf_file.fcfmodu, tabIndex=7, noEntry;
+Edit fcfgrup=fcf_file.fcfgrup, tabIndex=8, noEntry;
+DateEdit fcfdate=fcf_file.fcfdate, tabIndex=9, noEntry;
+Edit fcforiu=fcf_file.fcforiu, tabIndex=501, noEntry;
+Edit fcforig=fcf_file.fcforig, tabIndex=502, noEntry;
+Edit fcg02=fcg_file.fcg02, tabIndex=10, title="Line No.";
+ButtonEdit fcg04=fcg_file.fcg04, action=controlp, tabIndex=11, title="Application No.", image="zoom", comment="<^P> Qry Asset Mortgage";
+Edit fcg041=fcg_file.fcg041, tabIndex=12, title="Line No.";
+Edit fcg03=fcg_file.fcg03, tabIndex=13, title="Property No.", noEntry;
+Edit fcg031=fcg_file.fcg031, tabIndex=14, title="Add No.", noEntry;
+Edit faj43=formonly.faj43 type CHAR, tabIndex=15, title="Status", noEntry;
+Edit faj432=formonly.faj432 type CHAR, tabIndex=503, title="Status 2", noEntry;
+Edit fcg05=fcg_file.fcg05, tabIndex=16, title="Mortgage Amount", noEntry;
+Edit fcg06=fcg_file.fcg06, tabIndex=17, title="Date of Clearance", noEntry;
+ButtonEdit fcg07=fcg_file.fcg07, action=controlp, tabIndex=18, title="Cause", image="zoom", comment="<^P>Qry Transaction Reason";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fcg(fcg_file.fcg02,fcg_file.fcg04,fcg_file.fcg041,fcg_file.fcg03,fcg_file.fcg031,formonly.faj43,formonly.faj432,fcg_file.fcg05,fcg_file.fcg06,fcg_file.fcg07)
+SCREEN RECORD Undefined(fcf_file.fcf01,fcf_file.fcf02,fcf_file.fcf03,fcf_file.fcf04,fcf_file.fcfconf,fcf_file.fcfuser,fcf_file.fcfmodu,fcf_file.fcfgrup,fcf_file.fcfdate,fcf_file.fcforiu,fcf_file.fcforig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

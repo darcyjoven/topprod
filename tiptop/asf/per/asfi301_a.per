@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi301_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfi301_a")
+VBox VBox1
+Grid gr1
+{
+  <G group02                                         >
+   PBI              [sfb85             ]
+   out country      [oeaslk01 ][geb02               ]
+   order NO.        [oea01             ]
+   Word No.         [bmb09_1  ][bmb09_2  ][bmb09_3  ]
+                    [bmb09_4  ][bmb09_5  ][bmb09_6  ]
+  <                                                  >
+  <G group01                                         >
+   Acti Date        [bmb04    ]
+  <                                                  >
+
+}
+END -- gr1
+END -- VBox1
+END -- asfi301_a
+
+ATTRIBUTES
+Group group02:group02;
+Edit sfb85=formonly.sfb85 type CHAR, tabIndex=1;
+ButtonEdit oeaslk01=formonly.oeaslk01 type CHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Details <^Y>Out. Cun.";
+Edit geb02=formonly.geb02 type CHAR, tabIndex=3, noEntry;
+ButtonEdit oea01=formonly.oea01 type CHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Details <^Y>Order.";
+Edit bmb09_1=formonly.bmb09_1 type CHAR, tabIndex=5;
+Edit bmb09_2=formonly.bmb09_2 type CHAR, tabIndex=6;
+Edit bmb09_3=formonly.bmb09_3 type CHAR, tabIndex=7;
+Edit bmb09_4=formonly.bmb09_4 type CHAR, tabIndex=8;
+Edit bmb09_5=formonly.bmb09_5 type CHAR, tabIndex=9;
+Edit bmb09_6=formonly.bmb09_6 type CHAR, tabIndex=10;
+Group group01:group01, text="Acti Date";
+Edit bmb04=formonly.bmb04 type CHAR, tabIndex=11, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfb85,formonly.oeaslk01,formonly.geb02,formonly.oea01,formonly.bmb09_1,formonly.bmb09_2,formonly.bmb09_3,formonly.bmb09_4,formonly.bmb09_5,formonly.bmb09_6,formonly.bmb04)
+END -- INSTRUCTIONS
+

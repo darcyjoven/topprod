@@ -1,0 +1,104 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri099.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ghri099")
+Folder pc39
+Page page(text=%"page")
+VBox vb11
+Folder pc10
+Page page01(text=%"page01")
+Grid gr39
+{
+
+  hreb00 [hreb00        ]
+  hreb03 [hreb03        ]
+
+
+
+
+}
+END -- gr39
+END -- page01
+Page page02(text=%"page02")
+Grid gr40
+{
+
+ hrebacti            [hrebacti  ]  hrebdate      [hrebdate  ]
+ hrebuser            [hrebuser  ]  hreboriu      [hreboriu  ]
+ hrebgrup            [hrebgrup  ]  hreborig      [hreborig  ]
+ hrebmodu            [hrebmodu  ]
+
+}
+END -- gr40
+END -- page02
+END -- pc10
+Folder pc11
+Page page03(action=page03, text=%"page03")
+Table s_hreb
+{
+[hreb01       |hrag07        |hreb02        |hreb04        ]
+[hreb01       |hrag07        |hreb02        |hreb04        ]
+[hreb01       |hrag07        |hreb02        |hreb04        ]
+[hreb01       |hrag07        |hreb02        |hreb04        ]
+[hreb01       |hrag07        |hreb02        |hreb04        ]
+[hreb01       |hrag07        |hreb02        |hreb04        ]
+[hreb01       |hrag07        |hreb02        |hreb04        ]
+[hreb01       |hrag07        |hreb02        |hreb04        ]
+[hreb01       |hrag07        |hreb02        |hreb04        ]
+}
+END -- s_hreb
+END -- page03
+Page page04(action=page04, text=%"page04")
+Table s_hreba
+{
+[hrag07_a  |hreba02     |hreba03      |hreba04    |hreba05     |hreba06     ]
+[hrag07_a  |hreba02     |hreba03      |hreba04    |hreba05     |hreba06     ]
+[hrag07_a  |hreba02     |hreba03      |hreba04    |hreba05     |hreba06     ]
+[hrag07_a  |hreba02     |hreba03      |hreba04    |hreba05     |hreba06     ]
+[hrag07_a  |hreba02     |hreba03      |hreba04    |hreba05     |hreba06     ]
+[hrag07_a  |hreba02     |hreba03      |hreba04    |hreba05     |hreba06     ]
+[hrag07_a  |hreba02     |hreba03      |hreba04    |hreba05     |hreba06     ]
+[hrag07_a  |hreba02     |hreba03      |hreba04    |hreba05     |hreba06     ]
+[hrag07_a  |hreba02     |hreba03      |hreba04    |hreba05     |hreba06     ]
+}
+END -- s_hreba
+END -- page04
+END -- pc11
+END -- vb11
+END -- page
+END -- pc39
+END -- ghri099
+
+ATTRIBUTES
+ComboBox hreb00=formonly.hreb00 type VARCHAR, tabIndex=1;
+Edit hreb03=formonly.hreb03 type DECIMAL, tabIndex=2, noEntry;
+Edit hrebacti=formonly.hrebacti type VARCHAR, tabIndex=3, noEntry;
+DateEdit hrebdate=formonly.hrebdate type DATE, tabIndex=8, noEntry;
+Edit hrebuser=formonly.hrebuser type VARCHAR, tabIndex=4, noEntry;
+Edit hreboriu=formonly.hreboriu type VARCHAR, tabIndex=7, noEntry;
+Edit hrebgrup=formonly.hrebgrup type VARCHAR, tabIndex=5, noEntry;
+Edit hreborig=formonly.hreborig type VARCHAR, tabIndex=9, noEntry, upShift;
+Edit hrebmodu=formonly.hrebmodu type VARCHAR, tabIndex=6, noEntry;
+ButtonEdit hreb01=formonly.hreb01 type VARCHAR, action=controlp, tabIndex=10, title=%"hreb01", not null, required, image="zoom";
+Edit hrag07=formonly.hrag07 type VARCHAR, tabIndex=11, title=%"hrag07", noEntry;
+Edit hreb02=formonly.hreb02 type DECIMAL, tabIndex=12, title=%"hreb02", not null, required;
+TextEdit hreb04=formonly.hreb04 type VARCHAR, tabIndex=13, title=%"hreb04";
+Edit hrag07_a=formonly.hrag07_a type VARCHAR, tabIndex=14, title=%"hrag07_a", noEntry;
+Edit hreba02=formonly.hreba02 type VARCHAR, tabIndex=15, title=%"hreba02", noEntry;
+Edit hreba03=formonly.hreba03 type DECIMAL, tabIndex=16, title=%"hreba03", noEntry;
+Edit hreba04=formonly.hreba04 type DECIMAL, tabIndex=17, title=%"hreba04", noEntry;
+Edit hreba05=formonly.hreba05 type DECIMAL, tabIndex=18, title=%"hreba05", noEntry;
+Edit hreba06=formonly.hreba06 type DECIMAL, tabIndex=19, title=%"hreba06", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD page01(formonly.hreb00,formonly.hreb03)
+SCREEN RECORD page02(formonly.hrebacti,formonly.hreboriu,formonly.hreborig,formonly.hrebuser,formonly.hrebdate,formonly.hrebgrup,formonly.hrebmodu)
+SCREEN RECORD s_hreb(formonly.hreb01,formonly.hrag07,formonly.hreb02,formonly.hreb04)
+SCREEN RECORD s_hreba(formonly.hrag07_a,formonly.hreba02,formonly.hreba03,formonly.hreba04,formonly.hreba05,formonly.hreba06)
+END -- INSTRUCTIONS
+

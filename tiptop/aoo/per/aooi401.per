@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi401")
+VBox VBox1
+Folder pc851
+Page page01(text="Page01")
+Table s_geh
+{
+[geh01     |geh02               |geh04     |geh03       |geh05       |gehacti]
+[geh01     |geh02               |geh04     |geh03       |geh05       |gehacti]
+[geh01     |geh02               |geh04     |geh03       |geh05       |gehacti]
+[geh01     |geh02               |geh04     |geh03       |geh05       |gehacti]
+[geh01     |geh02               |geh04     |geh03       |geh05       |gehacti]
+[geh01     |geh02               |geh04     |geh03       |geh05       |gehacti]
+[geh01     |geh02               |geh04     |geh03       |geh05       |gehacti]
+[geh01     |geh02               |geh04     |geh03       |geh05       |gehacti]
+[geh01     |geh02               |geh04     |geh03       |geh05       |gehacti]
+[geh01     |geh02               |geh04     |geh03       |geh05       |gehacti]
+
+}
+END -- s_geh
+END -- page01
+END -- pc851
+Grid gr4648
+{
+ ----------Rows [cn2   ] ----------
+
+
+}
+END -- gr4648
+END -- VBox1
+END -- aooi401
+
+TABLES
+geh_file
+ATTRIBUTES
+Edit geh01=geh_file.geh01, tabIndex=1, title="Property", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit geh02=geh_file.geh02, tabIndex=2, title="Description";
+ComboBox geh04=geh_file.geh04, tabIndex=3, title="Category", not null, required, queryEditable, items=(("1", %"Item No."),("2", %"Customer No."),("3", %"Supplier No."),("4", %"Fixed Asset No."),("5", %"Lot No."),("6", %"Serial No."),("7", %"Bar Code"),("8", %"Membership No"),("9", "Site Numbers
+"),("A", "Booth Numbers
+"),("B", "Merchant code
+"),("C", "Warehouse numbers"),("D", "Order packing slip"),("E", "abat630"),("F", "Barcode batch number-Materials and parts"),("G", "Barcode batch number-work order"),("H", "Package No."));
+Edit geh03=geh_file.geh03, tabIndex=4, title="Table Name", noEntry, not null;
+Edit geh05=geh_file.geh05, tabIndex=5, title="Index(KEY)", noEntry, not null;
+CheckBox gehacti=geh_file.gehacti, tabIndex=6, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_geh(geh_file.geh01,geh_file.geh02,geh_file.geh04,geh_file.geh03,geh_file.geh05,geh_file.gehacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

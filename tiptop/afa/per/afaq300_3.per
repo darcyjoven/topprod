@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afaq300_3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afaq300_3")
+Folder pc388
+Page page01(text="Main")
+Grid gr1988
+{
+ <G group1                                       >
+  Applying Mort. Amt. [faj86               ]
+  Amount to Mortgage  [faj87               ]
+  Removal Date        [faj91       ]
+  Mortgage Bank       [faj90               ]
+  Mortgage Date       [faj88               ]
+  Mortgage Doc No.    [faj89               ]
+ <                                               >
+
+}
+END -- gr1988
+END -- page01
+END -- pc388
+END -- afaq300_3
+
+TABLES
+faj_file
+ATTRIBUTES
+Group group1:group1;
+Edit faj86=faj_file.faj86, tabIndex=1;
+Edit faj87=faj_file.faj87, tabIndex=2;
+DateEdit faj91=faj_file.faj91, tabIndex=3;
+Edit faj90=faj_file.faj90, tabIndex=4;
+DateEdit faj88=faj_file.faj88, tabIndex=5;
+Edit faj89=faj_file.faj89, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(faj_file.faj86,faj_file.faj87,faj_file.faj91,faj_file.faj90,faj_file.faj88,faj_file.faj89)
+END -- INSTRUCTIONS
+

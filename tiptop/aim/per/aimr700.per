@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr700")
+VBox VBox1
+Grid gr3320
+{
+ <G group01                                                           >
+  Transfer Note No.   [imm01               ]
+  Transfer Date       [imm02               ]
+  Applicant           [imm09               ]
+  Item No.            [imn03               ]
+  Transfer-out W/H    [imn04               ]
+ <                                                                    >
+
+}
+END -- gr3320
+Group group02(text="INPUT")
+Grid gr3321
+{
+ <G group03                                                            >
+  Transfer-out Plant No. [imn041    ]
+  Transfer-In Plant No.  [imn151    ]
+ <                                                                     >
+ <G group04                                  >
+ [s1                  ] [s2                  ]
+ [t1                  ] [t2                  ]
+ <                                           >
+ <G group05                                                            >
+ [a                                       ]
+ [b                                       ]
+ [c                                       ]
+ <                                                                     >
+
+}
+END -- gr3321
+END -- group02
+Grid gr3322
+{
+[more                                  ]
+
+}
+END -- gr3322
+END -- VBox1
+END -- aimr700
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit imm01=formonly.imm01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit imm02=formonly.imm02 type DATE, tabIndex=2;
+ButtonEdit imm09=formonly.imm09 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit imn03=formonly.imn03 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit imn04=formonly.imn04 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Group group03:group03;
+ButtonEdit imn041=formonly.imn041 type VARCHAR, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Plant  ";
+ButtonEdit imn151=formonly.imn151 type VARCHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Plant  ";
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=8, queryEditable, items=(("1", "Transfer Note No."),("2", "Transfer Date"),("3", "Applicant"),("4", "Item No."),("5", "Transfer-out W/H"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=9, queryEditable, items=(("1", "Transfer Note No."),("2", "Transfer Date"),("3", "Applicant"),("4", "Item No."),("5", "Transfer-out W/H"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05, text="Unit Cost";
+CheckBox a=formonly.a type VARCHAR, tabIndex=12, text="Print Closed Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=13, text="Include UnTransfer Confirmation", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=14, text="Print if Transfer Difference Qty= 0?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=15, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.imm01,formonly.imm02,formonly.imm09,formonly.imn03,formonly.imn04,formonly.imn041,formonly.imn151,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.a,formonly.b,formonly.c,formonly.more)
+END -- INSTRUCTIONS
+

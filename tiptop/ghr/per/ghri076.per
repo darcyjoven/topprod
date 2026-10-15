@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghri076.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+ <G group1                                   >  <G group2                       >
+   hrdh02[hrdh02                         ]       hrdh06[hrdh06              ]
+   hrdh03[hrdh03                         ]       hrdh09[hrdh09              ]
+   hrdh07[hrdh07    |hrdh07_1            ]       hrdh08[hrdh08              ]
+   hrdh11[hrdh11                         ]
+         [                               ]
+ <                                           >  <                               >
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Grid Grid2
+{
+  -------- cnt [cnt]----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"";
+ComboBox hrdh02=formonly.hrdh02 type VARCHAR, tabIndex=2, noEntry;
+ComboBox hrdh03=formonly.hrdh03 type VARCHAR, tabIndex=3, not null, required;
+ButtonEdit hrdh07=formonly.hrdh07 type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+Edit hrdh07_1=formonly.hrdh07_1 type VARCHAR, tabIndex=5, noEntry;
+TextEdit hrdh11=formonly.hrdh11 type VARCHAR, tabIndex=9;
+Group group2:Group2, text=%"";
+Edit hrdh06=formonly.hrdh06 type VARCHAR, tabIndex=6, not null, required;
+Edit hrdh09=formonly.hrdh09 type VARCHAR, tabIndex=7;
+Edit hrdh08=formonly.hrdh08 type DECIMAL, tabIndex=8, not null, required;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cnt,formonly.hrdh02,formonly.hrdh03,formonly.hrdh07,formonly.hrdh07_1,formonly.hrdh06,formonly.hrdh09,formonly.hrdh08,formonly.hrdh11)
+END -- INSTRUCTIONS
+

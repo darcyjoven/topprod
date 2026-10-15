@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/acs/42f/acsp200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acsp200")
+Folder pc240
+Page page01(text="INPUT")
+VBox VBox1
+Grid gr1543
+{
+ <G group01                                               >
+  Expiry Date                   [effectiv  ]
+  Simulation Version            [version   ][dummy01   ]
+  Backflush Running Environment [x                       ]
+ <                                                        >
+ <G group02                                                      >
+ [free_stock                                               ]
+ [lab_bud                                                  ]
+ [e                                                        ]
+
+  Description [i                                                 ]
+
+ [f                                                        ]
+ <                                                               >
+
+}
+END -- gr1543
+Grid gr1544
+{
+[g_bgj]
+
+}
+END -- gr1544
+END -- VBox1
+END -- page01
+END -- pc240
+END -- acsp200
+
+ATTRIBUTES
+Group group01:group01;
+Edit effectiv=formonly.effectiv type DATE, tabIndex=1;
+ComboBox version=formonly.version type CHAR, tabIndex=2, not null, required, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"));
+Label dummy01:dummy01, text="(0~9)";
+RadioGroup x=formonly.x type VARCHAR, tabIndex=3, items=(("1", "Others Allowed"),("2", "Others NO"));
+Group group02:group02;
+CheckBox free_stock=formonly.free_stock type VARCHAR, tabIndex=4, text="Including Mass Mat. And MISC Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lab_bud=formonly.lab_bud type VARCHAR, tabIndex=5, text="Clear Labor/Ovhead of Purd And MISC Item?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=6, text="Include Wastage Ratio?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit i=formonly.i type VARCHAR, tabIndex=7;
+CheckBox f=formonly.f type VARCHAR, tabIndex=8, text="Print Cost Variation Report", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgj=formonly.g_bgjob type CHAR, tabIndex=9, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.effectiv,formonly.version,formonly.x,formonly.free_stock,formonly.lab_bud,formonly.e,formonly.i,formonly.f,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

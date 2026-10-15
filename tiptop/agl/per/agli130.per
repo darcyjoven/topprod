@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli130")
+VBox VBox1
+Folder pc456
+Page page01(text="Main")
+Grid gr2401
+{
+  Source              [npr10                         ]
+
+ <G group01                                                         >
+  Plant               [npr08     ]
+  Book No.            [npr09     ]
+
+  Account             [npr00                   ]
+                      [aag02                         ]
+  npr01               [npr01     ] [query_cu|query_us]
+  npr02               [npr02     ]
+  Department          [npr03     ] [gem02   ]
+  Currency            [npr11     ]
+  Year                [npr04     ]
+  Period              [npr05     ]
+ <                                                                  >
+ <G group02                                  ><G group03                                >
+  Debit H. Amount     [npr06               ]   Credit H.Amount    [npr07               ]
+  Debit O. Amount     [npr06f              ]   Credit O.Amount    [npr07f              ]
+
+
+ <                                           ><                                         >
+
+}
+END -- gr2401
+END -- page01
+END -- pc456
+Grid gr2402
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr2402
+END -- VBox1
+END -- agli130
+
+TABLES
+npr_file
+ATTRIBUTES
+RadioGroup npr10=npr_file.npr10, tabIndex=1, noEntry, items=(("0", "Open Account"),("1", "Monthly Closing"));
+Group group01:group01;
+Edit npr08=npr_file.npr08, tabIndex=2, not null, required;
+Edit npr09=npr_file.npr09, tabIndex=3, not null, required;
+ButtonEdit npr00=npr_file.npr00, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Account ";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=5, noEntry;
+ButtonEdit npr01=npr_file.npr01, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry npr02 #";
+Button query_cu:query_customer1, text="Query Customer";
+Button query_us:query_user, text="Query User";
+Edit npr02=npr_file.npr02, tabIndex=7, not null, required;
+ButtonEdit npr03=npr_file.npr03, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry Department Name";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=9, noEntry;
+ButtonEdit npr11=npr_file.npr11, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit npr04=npr_file.npr04, tabIndex=11;
+Edit npr05=npr_file.npr05, tabIndex=12, not null, required;
+Group group02:group02, text="Home Currency";
+Edit npr06=npr_file.npr06, tabIndex=13;
+Edit npr06f=npr_file.npr06f, tabIndex=14;
+Group group03:group03, text="Original Currency";
+Edit npr07=npr_file.npr07, tabIndex=15;
+Edit npr07f=npr_file.npr07f, tabIndex=16;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(npr_file.npr10,npr_file.npr08,npr_file.npr09,npr_file.npr00,formonly.aag02,npr_file.npr01,npr_file.npr02,npr_file.npr03,formonly.gem02,npr_file.npr11,npr_file.npr04,npr_file.npr05,npr_file.npr06,npr_file.npr06f,npr_file.npr07,npr_file.npr07f,formonly.cnt)
+END -- INSTRUCTIONS
+

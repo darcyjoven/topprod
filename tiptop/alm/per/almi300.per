@@ -1,0 +1,311 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almi300")
+VBox VBox1
+Folder pc1
+Page main(text="Main")
+Grid gr1
+{
+
+ [label1                    |lne01              ]                      [label13                      |lne12              ] [label26          |lne29          ]
+ [label36                   |lne67              |lne67_desc          ] [label14                      |lne13              ] [label71          |lne55          ]
+ [label2                    |lne02              ]                      [label15                      |lne14              ]                   [lne59          |imgmksg]
+ [label3                    |lne03              ]                      [label16                      |lne15              ] [label30          |lne36          |       ]
+ [label4                    |lne04              |rtz13               ] [label17                      |lne16              ] [label31          |lne37          ]
+ [label5                    |lne05              ]                      [label18                      |lne17              ] [label32          |lne38          ]
+ [label7                    |lne06                                   ] [label19                      |lne18              ] [label33          |lne39                  ]
+ [label6                    |lne07              ]                      [label20                      |lne19              ]                   [                       ]
+ [label8                    |lne61              |lne61_n             ] [label21                      |lne20              ] [label27          |lne32          ]
+ [label9                    |lne62              |lne62_n             ] [label22                      |lne21              ] [label28          |lne33          ]
+ [label10                   |lne08              |tqa02               ] [label23                      |lne22              ]                   [lne31          ]
+ [label37                   |lne68              |lne68_desc          ] [label40                      |lne28              ]                   [lne34          ]
+ [label11                   |lne09              |geo02               ] [label24                      |lne23              ] [label29          |lne35          ]
+ [label12                   |lne10              ]                      [label25                      |lne24              ]
+
+}
+END -- gr1
+END -- main
+Page kuaiji(text="Acco.Info")
+Grid gr2
+{
+
+ [label41             |lne40             |gec02                   ]  [label52             |lne48          ]
+ [label42             |gec04             ]                           [label53             |lne49                              ]
+                      [gec07             ]                                                [                                   ]
+ [label43             |lne41             ]                           [label54             |lne58          ]
+ [label44             |lne42             |oag02                   ]  [label55             |lne50          ]
+ [label45             |lne56             |ool02                   ]  [label56             |lne51          ]
+ [label46             |lne57             |azi02                   ]  [label57             |lne52          ]
+ [label47             |lne43             ]                           [label58             |lne53                              ]
+ [label48             |lne44             ]                           [label59             |lne63          ]
+ [label49             |lne45             ]                           [label60             |lne64          |lne64_n            ]
+ [label50             |lne46             ]                           [label61             |lne66          ]
+ [label51             |lne47                         ]               [label62             |lne54                              ]
+                      [                              ]                                    [                                   ]
+
+}
+END -- gr2
+END -- kuaiji
+Page info(text="Info")
+Grid gr3
+{
+
+ [label66    |lneuser       ]  [label64          |lnecrat       ]   [label63          |lnedate       ]
+ [label67    |lnegrup       ]  [label65          |lnemodu       ]
+ [label68    |lneoriu       ]
+ [label69    |lneorig       ]
+
+
+
+
+
+}
+END -- gr3
+END -- info
+END -- pc1
+Folder Folder1
+Page manage(text=%"Manage")
+Table s_lng
+{
+[lng03     |tqa02_3       |lng04     |lng05     |lng06         |lng07       ]
+[lng03     |tqa02_3       |lng04     |lng05     |lng06         |lng07       ]
+[lng03     |tqa02_3       |lng04     |lng05     |lng06         |lng07       ]
+[lng03     |tqa02_3       |lng04     |lng05     |lng06         |lng07       ]
+[lng03     |tqa02_3       |lng04     |lng05     |lng06         |lng07       ]
+
+}
+END -- s_lng
+END -- manage
+Page brand(text=%"Other Brand")
+Table s_lnf
+{
+[lnf03        |tqa02_2     |lnf04        |geo02_2   ]
+[lnf03        |tqa02_2     |lnf04        |geo02_2   ]
+[lnf03        |tqa02_2     |lnf04        |geo02_2   ]
+[lnf03        |tqa02_2     |lnf04        |geo02_2   ]
+[lnf03        |tqa02_2     |lnf04        |geo02_2   ]
+
+}
+END -- s_lnf
+END -- brand
+Page state(text=%"Store State")
+Table s_lnh
+{
+[lnhstore     |rtz13_2          |lnhlegal    |azt02     |lnh04         |lnh05        |lnh06     |lnh07      ]
+[lnhstore     |rtz13_2          |lnhlegal    |azt02     |lnh04         |lnh05        |lnh06     |lnh07      ]
+[lnhstore     |rtz13_2          |lnhlegal    |azt02     |lnh04         |lnh05        |lnh06     |lnh07      ]
+[lnhstore     |rtz13_2          |lnhlegal    |azt02     |lnh04         |lnh05        |lnh06     |lnh07      ]
+[lnhstore     |rtz13_2          |lnhlegal    |azt02     |lnh04         |lnh05        |lnh06     |lnh07      ]
+
+}
+END -- s_lnh
+END -- state
+END -- Folder1
+Grid gr4
+{
+
+ -----[label|idx    |la|cn2    ]  ------  [label38   |cn3       ]  ------  [label39   |cn4       ]  ------  [label70   |cn5       ]  ------
+
+}
+END -- gr4
+END -- VBox1
+END -- almi300
+
+TABLES
+lnh_file,
+lng_file,
+lnf_file,
+lne_file
+ATTRIBUTES
+Label label1:Label1, text=%"Corporation No.";
+ButtonEdit lne01=lne_file.lne01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Label label13:Label13, text=%"General Manager";
+Edit lne12=lne_file.lne12, tabIndex=11;
+Label label26:Label26, text=%"Reg";
+Edit lne29=lne_file.lne29, tabIndex=27;
+Label label36:Label36, text=%"Corporation level";
+ButtonEdit lne67=lne_file.lne67, action=controlp, tabIndex=91, not null, image="zoom", scroll;
+Edit lne67_desc=formonly.lne67_desc type CHAR, tabIndex=93, noEntry;
+Label label14:Label14, text=%"General Manager TEL";
+Edit lne13=lne_file.lne13, tabIndex=12;
+Label label71:Label71, text=%"Person";
+Edit lne55=lne_file.lne55, tabIndex=105;
+Label label2:Label2, text=%"Version No.";
+Edit lne02=lne_file.lne02, tabIndex=2, noEntry, not null, required;
+Label label15:Label15, text=%"Operating Responsible Person";
+Edit lne14=lne_file.lne14, tabIndex=13;
+CheckBox lne59=lne_file.lne59, tabIndex=103, default = "N", text="lne59", noEntry, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, width = 9 characters, height = 2 characters;
+Label label3:Label3, text=%"Potential Vendor Form No.";
+ButtonEdit lne03=lne_file.lne03, action=controlp, tabIndex=3, image="zoom.png";
+Label label16:Label16, text=%"Responsible Person TEL";
+Edit lne15=lne_file.lne15, tabIndex=17;
+Label label30:Label30, text=%"Confirmation";
+ComboBox lne36=lne_file.lne36, tabIndex=33, default = "N", noEntry, not null, required, items=(("N", "uncheckecd"),("Y", "checked"),("X", "abandon"));
+Label label4:Label4, text=%"Source Store No.";
+ButtonEdit lne04=lne_file.lne04, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=14, noEntry;
+Label label17:Label17, text=%"Corporation Representive";
+Edit lne16=lne_file.lne16, tabIndex=18;
+Label label31:Label31, text=%"Confirmed By";
+Edit lne37=lne_file.lne37, tabIndex=34, noEntry, not null, required;
+Label label5:Label5, text=%"Corporation Abbr.";
+Edit lne05=lne_file.lne05, tabIndex=5, not null, required;
+Label label18:Label18, text=%"Phone No.";
+Edit lne17=lne_file.lne17, tabIndex=19;
+Label label32:Label32, text=%"Confirmation Date";
+DateEdit lne38=lne_file.lne38, tabIndex=35, noEntry, not null, required;
+Label label7:Label7, text=%"Corporation Full Name";
+Edit lne06=lne_file.lne06, tabIndex=6;
+Label label19:Label19, text=%"Oper.";
+Edit lne18=lne_file.lne18, tabIndex=20;
+Label label33:Label33, text=%"Remark";
+TextEdit lne39=lne_file.lne39, tabIndex=36, stretch=NONE;
+Label label6:Label6, text=%"Business Nature";
+ComboBox lne07=lne_file.lne07, tabIndex=7, not null, required, items=(("1", "ming"),("2", "guo"),("3", "si"),("4", "he"),("5", "du"));
+Label label20:Label20, text=%"Oper.Tel";
+Edit lne19=lne_file.lne19, tabIndex=21;
+Label label8:Label8, text=%"Logistics";
+ButtonEdit lne61=lne_file.lne61, action=controlp, tabIndex=72, image="zoom";
+Edit lne61_n=formonly.lne61_n type CHAR, tabIndex=71, noEntry;
+Label label21:Label21, text=%"E-mail Box";
+Edit lne20=lne_file.lne20, tabIndex=22;
+Label label27:Label27, text=%"Current Store(s)";
+Edit lne32=lne_file.lne32, tabIndex=29, noEntry;
+Label label9:Label9, text=%"Corporation Category";
+ButtonEdit lne62=lne_file.lne62, action=controlp, tabIndex=73, image="zoom";
+Edit lne62_n=formonly.lne62_n type CHAR, tabIndex=70, noEntry;
+Label label22:Label22, text=%"Company Website";
+Edit lne21=lne_file.lne21, tabIndex=23;
+Label label28:Label28, text=%"Stall";
+Edit lne33=lne_file.lne33, tabIndex=30, noEntry;
+Label label10:Label10, text=%"Primary Brand";
+ButtonEdit lne08=lne_file.lne08, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=15, noEntry;
+Label label23:Label23, text=%"Fax";
+Edit lne22=lne_file.lne22, tabIndex=24;
+CheckBox lne31=lne_file.lne31, tabIndex=28, text="Ally?", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Label label37:Label37, text=%"Brand level";
+ButtonEdit lne68=lne_file.lne68, action=controlp, tabIndex=92, noEntry, image="zoom", scroll;
+Edit lne68_desc=formonly.lne68_desc type CHAR, tabIndex=94, noEntry;
+Label label40:Label40, text=%"O.Style";
+ComboBox lne28=lne_file.lne28, tabIndex=97, not null, required, items=(("0", "0"),("1", "1"));
+CheckBox lne34=lne_file.lne34, tabIndex=31, default = "N", text="Approval?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label11:Label11, text=%"The Place of Origin";
+ButtonEdit lne09=lne_file.lne09, action=controlp, tabIndex=9, image="zoom.png";
+Edit geo02=formonly.geo02 type CHAR, tabIndex=16, noEntry;
+Label label24:Label24, text=%"Regis.";
+Edit lne23=lne_file.lne23, tabIndex=25;
+Label label29:Label29, text=%"Status";
+ComboBox lne35=lne_file.lne35, tabIndex=32, default = "0", noEntry, not null, required, items=(("0", "kaili"),("1", "checked"),("S", "sending"),("W", "chodan"),("R", "back"));
+Label label12:Label12, text=%"Ope.Area";
+Edit lne10=lne_file.lne10, tabIndex=10;
+Label label25:Label25, text=%"HireA.";
+Edit lne24=lne_file.lne24, tabIndex=26;
+Label label41:Label41, text=%"Tax Type";
+ButtonEdit lne40=lne_file.lne40, action=controlp, tabIndex=37, not null, required, image="zoom.png";
+Edit gec02=formonly.gec02 type CHAR, tabIndex=45, noEntry;
+Label label52:Label52, text=%"Invoice Postal Code";
+Edit lne48=lne_file.lne48, tabIndex=47;
+Label label42:Label42, text=%"Tax Rate";
+Edit gec04=formonly.gec04 type CHAR, tabIndex=61, noEntry;
+Label label53:Label53, text=%"Invoice Address";
+TextEdit lne49=lne_file.lne49, tabIndex=48, stretch=NONE;
+CheckBox gec07=formonly.gec07 type CHAR, tabIndex=62, text="Unit Price with Tax?", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Label label43:Label43, text=%"Invoice Type";
+Edit lne41=lne_file.lne41, tabIndex=38;
+Label label54:Label54, text=%"Reserve Decimals";
+ComboBox lne58=lne_file.lne58, tabIndex=67, items=(("0", "0"),("1", "1"),("2", "2"));
+Label label44:Label44, text=%"Payment Term(Sales)";
+ButtonEdit lne42=lne_file.lne42, action=controlp, tabIndex=40, not null, required, image="zoom.png";
+Edit oag02=formonly.oag02 type CHAR, tabIndex=46, noEntry;
+Label label55:Label55, text=%"Bank Code";
+ButtonEdit lne50=lne_file.lne50, action=controlp, tabIndex=49, image="zoom.png";
+Label label45:Label45, text=%"Style";
+ButtonEdit lne56=lne_file.lne56, action=controlp, tabIndex=63, not null, required, image="zoom.png";
+Edit ool02=formonly.ool02 type CHAR, tabIndex=65, noEntry;
+Label label56:Label56, text=%"Bank Name";
+Edit lne51=lne_file.lne51, tabIndex=50, noEntry;
+Label label46:Label46, text=%"Bibei";
+ButtonEdit lne57=lne_file.lne57, action=controlp, tabIndex=64, not null, required, image="zoom.png";
+Edit azi02=formonly.azi02 type CHAR, tabIndex=66, noEntry;
+Label label57:Label57, text=%"Bank Account";
+Edit lne52=lne_file.lne52, tabIndex=51;
+Label label47:Label47, text=%"Contact Name";
+Edit lne43=lne_file.lne43, tabIndex=39;
+Label label58:Label58, text=%"Name of Account";
+Edit lne53=lne_file.lne53, tabIndex=52;
+Label label48:Label48, text=%"Contact TEL";
+Edit lne44=lne_file.lne44, tabIndex=41;
+Label label59:Label59, text=%"Customer Type";
+ComboBox lne63=lne_file.lne63, tabIndex=74, not null, required, items=(("1", "All"),("2", "Delivery customers"));
+Label label49:Label49, text=%"Contact E-mail";
+Edit lne45=lne_file.lne45, tabIndex=42;
+Label label60:Label60, text=%"Payer";
+ButtonEdit lne64=lne_file.lne64, action=controlp, tabIndex=76, not null, required, image="zoom";
+Edit lne64_n=formonly.lne64_n type CHAR, tabIndex=77, noEntry;
+Label label50:Label50, text=%"Mailing Code";
+Edit lne46=lne_file.lne46, tabIndex=43;
+Label label61:Label61, text=%"Default Language";
+ComboBox lne66=lne_file.lne66, tabIndex=75, not null, required;
+Label label51:Label51, text=%"Mailing Addr.";
+TextEdit lne47=lne_file.lne47, tabIndex=44, stretch=NONE;
+Label label62:Label62, text=%"Remark";
+TextEdit lne54=lne_file.lne54, tabIndex=53, stretch=NONE;
+Label label66:Label66, text=%"Data Owner";
+Edit lneuser=lne_file.lneuser, tabIndex=54, noEntry;
+Label label64:Label64, text=%"create on";
+DateEdit lnecrat=lne_file.lnecrat, tabIndex=56, noEntry;
+Label label63:Label63, text=%"Last modified on";
+DateEdit lnedate=lne_file.lnedate, tabIndex=58, noEntry;
+Label label67:Label67, text=%"Department";
+Edit lnegrup=lne_file.lnegrup, tabIndex=55, noEntry;
+Label label65:Label65, text=%"Last modified by";
+Edit lnemodu=lne_file.lnemodu, tabIndex=57, noEntry;
+Label label68:Label68, text=%"Rec. Orig.";
+Edit lneoriu=lne_file.lneoriu, tabIndex=68, noEntry;
+Label label69:Label69, text=%"Dept Orig.";
+Edit lneorig=lne_file.lneorig, tabIndex=69, noEntry;
+ButtonEdit lng03=lng_file.lng03, action=controlp, tabIndex=78, title="Cer.No", not null, required, image="zoom";
+Edit tqa02_3=formonly.tqa02_3 type CHAR, tabIndex=104, title=%"Cer.Name", noEntry;
+Edit lng04=lng_file.lng04, tabIndex=79, title="Cer.num.", not null, required;
+Edit lng05=lng_file.lng05, tabIndex=80, title="Operator";
+DateEdit lng06=lng_file.lng06, tabIndex=81, title="Val.dat.from";
+DateEdit lng07=lng_file.lng07, tabIndex=82, title="Val.dat.to";
+ButtonEdit lnf03=lnf_file.lnf03, action=controlp, tabIndex=98, title="Brand DocNo", not null, required, image="zoom.png";
+Edit tqa02_2=formonly.tqa02_2 type CHAR, tabIndex=99, title="Brand Name", noEntry;
+ButtonEdit lnf04=lnf_file.lnf04, action=controlp, tabIndex=100, title="Pla.O.DocNo", not null, required, image="zoom.png";
+Edit geo02_2=formonly.geo02_2 type CHAR, tabIndex=101, title="P.O.Name", noEntry;
+ButtonEdit lnhstore=lnh_file.lnhstore, action=controlp, tabIndex=83, title="Store No.", noEntry, image="zoom.png";
+Edit rtz13_2=formonly.rtz13_2 type CHAR, tabIndex=84, title="Store Name", noEntry;
+ButtonEdit lnhlegal=lnh_file.lnhlegal, tabIndex=85, title=%"Corporation", noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=86, title=%"Corporation Name", noEntry;
+ComboBox lnh04=lnh_file.lnh04, tabIndex=87, title="Corporation Initial Status", noEntry, not null, items=(("0", "unchecked"),("1", "keqianye"),("2", "clear"));
+ComboBox lnh05=lnh_file.lnh05, tabIndex=88, title="Expected Change Status", not null, required, items=(("0", "uncheck"),("1", "keqiny"),("2", "clear"));
+CheckBox lnh06=lnh_file.lnh06, tabIndex=89, default = "N", title="Confirmed Result", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox lnh07=lnh_file.lnh07, tabIndex=90, title="Corporation Status", noEntry, items=(("0", "uncheck"),("1", "keqiny"),("2", "clear"));
+Label label:Label34, text=%"Rows";
+Edit idx=formonly.idx type SMALLINT, tabIndex=59, noEntry;
+Label la:Label35, text=%"/";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=60, noEntry;
+Label label38:Label38, text=%"detail1";
+Edit cn3=formonly.cn3 type CHAR, tabIndex=95;
+Label label39:Label39, text=%"detail2";
+Edit cn4=formonly.cn4 type CHAR, tabIndex=96;
+Label label70:Label70, text=%"detail3";
+Edit cn5=formonly.cn5 type CHAR, tabIndex=102;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lne_file.lne01,lne_file.lne14,lne_file.lne02,lne_file.lne15,lne_file.lne03,lne_file.lne16,lne_file.lne04,formonly.rtz13,lne_file.lne17,lne_file.lne05,lne_file.lne18,lne_file.lne31,lne_file.lne06,lne_file.lne19,lne_file.lne32,lne_file.lne07,lne_file.lne20,lne_file.lne33,lne_file.lne61,formonly.lne61_n,lne_file.lne21,lne_file.lne34,lne_file.lne62,formonly.lne62_n,lne_file.lne22,lne_file.lne35,formonly.imgmksg,lne_file.lne08,formonly.tqa02,lne_file.lne23,lne_file.lne36,lne_file.lne09,formonly.geo02,lne_file.lne24,lne_file.lne37,lne_file.lne10,lne_file.lne38,lne_file.lne12,lne_file.lne13,lne_file.lne29,lne_file.lne55,lne_file.lne39,lne_file.lne40,formonly.gec02,lne_file.lne48,formonly.gec04,lne_file.lne49,formonly.gec07,lne_file.lne41,lne_file.lne58,lne_file.lne42,formonly.oag02,lne_file.lne50,lne_file.lne56,formonly.ool02,lne_file.lne51,lne_file.lne57,formonly.azi02,lne_file.lne52,lne_file.lne43,lne_file.lne53,lne_file.lne44,lne_file.lne63,lne_file.lne45,lne_file.lne64,formonly.lne64_n,lne_file.lne46,lne_file.lne66,lne_file.lne47,lne_file.lne54,lne_file.lneuser,lne_file.lnecrat,lne_file.lnedate,lne_file.lnegrup,lne_file.lnemodu,lne_file.lneoriu,lne_file.lneorig,formonly.idx,formonly.cn2,formonly.lne67_desc,formonly.lne68_desc,formonly.cn3,formonly.cn4,lne_file.lne28,formonly.cn5,lne_file.lne59)
+SCREEN RECORD s_lng(lng_file.lng03,formonly.tqa02_3,lng_file.lng04,lng_file.lng05,lng_file.lng06,lng_file.lng07)
+SCREEN RECORD s_lnh(lnh_file.lnhstore,formonly.rtz13_2,lnh_file.lnhlegal,formonly.azt02,lnh_file.lnh04,lnh_file.lnh05,lnh_file.lnh06,lnh_file.lnh07)
+SCREEN RECORD Record1(lne_file.lne67,lne_file.lne68)
+SCREEN RECORD s_lnf(lnf_file.lnf03,formonly.tqa02_2,lnf_file.lnf04,formonly.geo02_2)
+END -- INSTRUCTIONS
+

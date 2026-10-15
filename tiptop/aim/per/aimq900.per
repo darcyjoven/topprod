@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimq900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aimq900")
+VBox VBox1
+Group gb1(text=%"gb1")
+Table s_rvbs1
+{
+[rvbs021   |ima02     |ima021    |rvbs04    |rvbs03    ]
+[rvbs021   |ima02     |ima021    |rvbs04    |rvbs03    ]
+[rvbs021   |ima02     |ima021    |rvbs04    |rvbs03    ]
+[rvbs021   |ima02     |ima021    |rvbs04    |rvbs03    ]
+[rvbs021   |ima02     |ima021    |rvbs04    |rvbs03    ]
+
+}
+END -- s_rvbs1
+END -- gb1
+Group gb2(text=%"gb2")
+Table s_rvbs2
+{
+[rvbs00    |docname |rvbs01    |rvbs02 |date    |cust    |name    |rvbs06    |conf    |post    ]
+[rvbs00    |docname |rvbs01    |rvbs02 |date    |cust    |name    |rvbs06    |conf    |post    ]
+[rvbs00    |docname |rvbs01    |rvbs02 |date    |cust    |name    |rvbs06    |conf    |post    ]
+[rvbs00    |docname |rvbs01    |rvbs02 |date    |cust    |name    |rvbs06    |conf    |post    ]
+[rvbs00    |docname |rvbs01    |rvbs02 |date    |cust    |name    |rvbs06    |conf    |post    ]
+
+}
+END -- s_rvbs2
+END -- gb2
+Grid gr3431
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3431
+END -- VBox1
+END -- aimq900
+
+TABLES
+ima_file,
+rvbs_file
+ATTRIBUTES
+ButtonEdit rvbs021=rvbs_file.rvbs021, action=controlp, tabIndex=1, title="rvbs021", image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=4, title="ima02";
+Edit ima021=ima_file.ima021, tabIndex=5, title="ima021";
+Edit rvbs04=rvbs_file.rvbs04, tabIndex=2, title="rvbs04";
+Edit rvbs03=rvbs_file.rvbs03, tabIndex=3, title="rvbs03";
+Edit rvbs00=rvbs_file.rvbs00, tabIndex=6, title="rvbs00";
+Edit docname=formonly.docname type CHAR, tabIndex=10, title="docname";
+Edit rvbs01=rvbs_file.rvbs01, tabIndex=7, title="rvbs01";
+Edit rvbs02=rvbs_file.rvbs02, tabIndex=8, title="rvbs02";
+DateEdit date=formonly.date type DATE, tabIndex=11, title="date";
+Edit cust=formonly.cust type CHAR, tabIndex=12, title="cust";
+Edit name=formonly.name type CHAR, tabIndex=13, title="name";
+Edit rvbs06=rvbs_file.rvbs06, tabIndex=9, title="rvbs06";
+ComboBox conf=formonly.conf type CHAR, tabIndex=14, title="conf", not null, items=(("Y", "Yes"),("N", "No"),("X", "Void"));
+ComboBox post=formonly.post type CHAR, tabIndex=15, title="post", items=(("Y", "Yest"),("N", "No"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvbs1(rvbs_file.rvbs021,ima_file.ima02,ima_file.ima021,rvbs_file.rvbs04,rvbs_file.rvbs03)
+SCREEN RECORD s_rvbs2(rvbs_file.rvbs00,formonly.docname,rvbs_file.rvbs01,rvbs_file.rvbs02,formonly.date,formonly.cust,formonly.name,rvbs_file.rvbs06,formonly.conf,formonly.post)
+SCREEN RECORD Undefined(formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

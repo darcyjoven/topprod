@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr703.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr703")
+VBox VBox1
+Grid gr5186
+{
+ <G group01                                                     >
+  Vender No. [pmc01               ]
+ <                                                              >
+
+}
+END -- gr5186
+Group group02(text="INPUT")
+Grid gr5187
+{
+ Initialize Date [b_date      ] To  [e_date      ]
+[a                                                            ]
+[b                                                            ]
+[t                                                            ]
+}
+END -- gr5187
+END -- group02
+Grid gr5188
+{
+ [more                                                            ]
+
+}
+END -- gr5188
+END -- VBox1
+END -- apmr703
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmc01=formonly.pmc01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+DateEdit b_date=formonly.b_date type DATE, tabIndex=2;
+DateEdit e_date=formonly.e_date type DATE, tabIndex=3;
+CheckBox a=formonly.a type VARCHAR, tabIndex=4, text="Print St-in Data?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=5, text="Print Goods Returned?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t=formonly.t type VARCHAR, tabIndex=6, text="Next Page By Vender No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmc01,formonly.b_date,formonly.e_date,formonly.a,formonly.b,formonly.t,formonly.more)
+END -- INSTRUCTIONS
+

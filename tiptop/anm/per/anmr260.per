@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr260.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr260")
+VBox VBox1
+Group group01(text="QBE")
+Grid Grid1
+{
+ Remitting Bank                [nmh21               ] Note Receipt NO.              [nmh01               ]
+ Customer NO.                  [nmh11               ] Department No.                [nmh15               ]
+ Notes type 1                  [nmh10               ]
+ Notes type 2                  [nmh29               ]
+
+
+}
+END -- Grid1
+END -- group01
+Group group02(text="INPUT")
+Grid Grid2
+{
+  Base Date                     [sdate               ]
+  Base Currency                 [scur                ]
+  Base Exchange Rate            [sex                 ]
+  Spread Adjustment Account     [nmc04                         ]
+
+ [chg                          ]
+
+ <G group04                                                          >
+  [s1                  ][s2                  ][s3                   ]
+  [t1                  ][t2                  ][t3                   ]
+  [u1                  ][u2                  ][u3                   ]
+ <                                                                   >
+
+}
+END -- Grid2
+END -- group02
+Grid Grid3
+{
+[more                                                        ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- anmr260
+
+ATTRIBUTES
+Edit nmh21=formonly.nmh21 type VARCHAR, tabIndex=1;
+Edit nmh01=formonly.nmh01 type VARCHAR, tabIndex=2;
+Edit nmh11=formonly.nmh11 type VARCHAR, tabIndex=3;
+Edit nmh15=formonly.nmh15 type VARCHAR, tabIndex=4;
+Edit nmh10=formonly.nmh10 type VARCHAR, tabIndex=5;
+Edit nmh29=formonly.nmh29 type VARCHAR, tabIndex=6;
+DateEdit sdate=formonly.sdate type DATE, tabIndex=7;
+ButtonEdit scur=formonly.scur type DATE, action=controlp, tabIndex=8, image="zoom";
+Edit sex=formonly.sex type CHAR, tabIndex=9;
+ButtonEdit nmc04=formonly.nmc04 type VARCHAR, action=controlp, tabIndex=10, image="zoom";
+CheckBox chg=formonly.chg type CHAR, tabIndex=11, text="Generate Transaction Log?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=12, queryEditable, items=(("1", %"Remitting Bank"),("2", %"Customer NO."),("3", %"Note Type 1"),("4", %"Note Type 2"),("5", %"Note Receipt NO."),("6", %"Department No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=13, queryEditable, items=(("1", %"Remitting Bank"),("2", %"Customer NO."),("3", %"Note Type 1"),("4", %"Note Type 2"),("5", %"Note Receipt NO."),("6", %"Department No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=14, queryEditable, items=(("1", %"Remitting Bank"),("2", %"Customer NO."),("3", %"Note Type 1"),("4", %"Note Type 2"),("5", %"Note Receipt NO."),("6", %"Department No."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=15, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=16, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=17, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=18, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=19, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=20, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=21, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nmh21,formonly.nmh01,formonly.nmh11,formonly.nmh15,formonly.nmh10,formonly.nmh29,formonly.sdate,formonly.scur,formonly.sex,formonly.nmc04,formonly.chg,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.more)
+END -- INSTRUCTIONS
+

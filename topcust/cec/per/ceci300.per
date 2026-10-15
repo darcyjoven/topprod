@@ -1,0 +1,243 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cec/4fd/ceci300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ceci300")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1628
+{
+ Product No.         [ecu01                         ]
+ Product Name        [ima02                         ]
+ Specification       [ima021                        ]
+ imaud07             [imaud07                       ]
+ imaud10             [imaud10                       ]
+
+
+}
+END -- gr1628
+Grid gr1629
+{
+ Routing Code/Desc             [ecu02     |ecu03                   ]
+ Fr/To Rou#                    [ecu04     ]-[ecu05     ]
+ Process No./Desc              [ecu012    |ecu014                  ]
+ Under Pro. No./Desc           [ecu015    |ecr02                   ]
+
+
+
+}
+END -- gr1629
+Grid Grid1
+{
+  tc_ecn04    [tc_ecn04              ]
+  tc_ecn05    [tc_ecn05              ]
+  tc_ecn06    [tc_ecn06              ]
+  tc_ecn07    [tc_ecn07              ]
+  tc_ecnud06  [tc_ecnud06            ]
+  tc_ecn08    [tc_ecn08              ]
+
+}
+END -- Grid1
+Grid gr10
+{
+                 [ecu10     ]  [imgmksg]
+                 [ecuud02   ]  [       ]
+ Version         [ecu11     ]
+ imaud06         [imaud06                      ]
+                 [ecu06       ]
+
+
+}
+END -- gr10
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1630
+{
+ Record Owner        [ecuuser   ] Last Modified by    [ecumodu   ] Data Valid Code     [ecuacti   ]
+ Department          [ecugrup   ] Create/Modify Date  [ecudate     ]
+ Record Orig.        [ecuoriu   ]
+ Dept Orig.          [ecuorig   ]
+}
+END -- gr1630
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[ecuud01                       ] userdefined_field07[ecuud07             ]       userdefined_field13[ecuud13        ]
+                    [                              ] userdefined_field08[ecuud08             ]       userdefined_field14[ecuud14        ]
+                                                     userdefined_field09[ecuud09             ]       userdefined_field15[ecuud15        ]
+ userdefined_field03[ecuud03        ]                userdefined_field10[ecuud10             ]
+ userdefined_field04[ecuud04        ]                userdefined_field11[ecuud11             ]
+ userdefined_field05[ecuud05        ]                userdefined_field12[ecuud12             ]
+ userdefined_field06[ecuud06        ]
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+HBox HBox2(splitter)
+Tree tree(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file")
+{
+[name                             ]
+[name                             ]
+[name                             ]
+[name                             ]
+[name                             ]
+
+
+
+}
+END -- tree
+Table s_ecb
+{
+[ecb03    |ecb06      |ecb17         |ecb08        |eca02             |vmn081    |ecb07      |vmn08     |ecb38               |ecb04               |ecb19               |ecb18               |ecb21       |ecb20          |ecbslk05            |ecbslk04            |ecbslk02            |ecbslk01|ecb66   |ecb3|ecb25       |ecb4|ecbud02    |ecbud03     |ecbud04     |ecb41     |ecb42        |ecb43         |ecb45      |ecb46        |ecb51         |ecb14       |ecb52   |ecb53   |ecb48               |ecbud01   |ecbud05    |ecbud06    |ecbud07  |ecbud08  |ecbud09  |ecbud10    |ecbud11   |ecbud12  |ecbud13   |ecbud14   |ecbud15    |ecbud16    |ecbud17             ]
+[ecb03    |ecb06      |ecb17         |ecb08        |eca02             |vmn081    |ecb07      |vmn08     |ecb38               |ecb04               |ecb19               |ecb18               |ecb21       |ecb20          |ecbslk05            |ecbslk04            |ecbslk02            |ecbslk01|ecb66   |ecb3|ecb25       |ecb4|ecbud02    |ecbud03     |ecbud04     |ecb41     |ecb42        |ecb43         |ecb45      |ecb46        |ecb51         |ecb14       |ecb52   |ecb53   |ecb48               |ecbud01   |ecbud05    |ecbud06    |ecbud07  |ecbud08  |ecbud09  |ecbud10    |ecbud11   |ecbud12  |ecbud13   |ecbud14   |ecbud15    |ecbud16    |ecbud17             ]
+[ecb03    |ecb06      |ecb17         |ecb08        |eca02             |vmn081    |ecb07      |vmn08     |ecb38               |ecb04               |ecb19               |ecb18               |ecb21       |ecb20          |ecbslk05            |ecbslk04            |ecbslk02            |ecbslk01|ecb66   |ecb3|ecb25       |ecb4|ecbud02    |ecbud03     |ecbud04     |ecb41     |ecb42        |ecb43         |ecb45      |ecb46        |ecb51         |ecb14       |ecb52   |ecb53   |ecb48               |ecbud01   |ecbud05    |ecbud06    |ecbud07  |ecbud08  |ecbud09  |ecbud10    |ecbud11   |ecbud12  |ecbud13   |ecbud14   |ecbud15    |ecbud16    |ecbud17             ]
+[ecb03    |ecb06      |ecb17         |ecb08        |eca02             |vmn081    |ecb07      |vmn08     |ecb38               |ecb04               |ecb19               |ecb18               |ecb21       |ecb20          |ecbslk05            |ecbslk04            |ecbslk02            |ecbslk01|ecb66   |ecb3|ecb25       |ecb4|ecbud02    |ecbud03     |ecbud04     |ecb41     |ecb42        |ecb43         |ecb45      |ecb46        |ecb51         |ecb14       |ecb52   |ecb53   |ecb48               |ecbud01   |ecbud05    |ecbud06    |ecbud07  |ecbud08  |ecbud09  |ecbud10    |ecbud11   |ecbud12  |ecbud13   |ecbud14   |ecbud15    |ecbud16    |ecbud17             ]
+[ecb03    |ecb06      |ecb17         |ecb08        |eca02             |vmn081    |ecb07      |vmn08     |ecb38               |ecb04               |ecb19               |ecb18               |ecb21       |ecb20          |ecbslk05            |ecbslk04            |ecbslk02            |ecbslk01|ecb66   |ecb3|ecb25       |ecb4|ecbud02    |ecbud03     |ecbud04     |ecb41     |ecb42        |ecb43         |ecb45      |ecb46        |ecb51         |ecb14       |ecb52   |ecb53   |ecb48               |ecbud01   |ecbud05    |ecbud06    |ecbud07  |ecbud08  |ecbud09  |ecbud10    |ecbud11   |ecbud12  |ecbud13   |ecbud14   |ecbud15    |ecbud16    |ecbud17             ]
+[ecb03    |ecb06      |ecb17         |ecb08        |eca02             |vmn081    |ecb07      |vmn08     |ecb38               |ecb04               |ecb19               |ecb18               |ecb21       |ecb20          |ecbslk05            |ecbslk04            |ecbslk02            |ecbslk01|ecb66   |ecb3|ecb25       |ecb4|ecbud02    |ecbud03     |ecbud04     |ecb41     |ecb42        |ecb43         |ecb45      |ecb46        |ecb51         |ecb14       |ecb52   |ecb53   |ecb48               |ecbud01   |ecbud05    |ecbud06    |ecbud07  |ecbud08  |ecbud09  |ecbud10    |ecbud11   |ecbud12  |ecbud13   |ecbud14   |ecbud15    |ecbud16    |ecbud17             ]
+
+
+}
+END -- s_ecb
+END -- HBox2
+Grid gr1631
+{
+               Standard Labor Hour  [ecu19s         ]              Fixed Labor Time    [ecu18s         ]           Uint Labor           [ecu38s         ]
+               Standard Machine Hour[ecu21s         ]              Fixed Machine Time  [ecu20s         ]
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr1631
+END -- VBox1
+END -- ceci300
+
+TABLES
+ecb_file,
+vmn_file,
+ecu_file
+ATTRIBUTES
+ButtonEdit ecu01=formonly.ecu01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Query Item  ";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit imaud07=formonly.imaud07, tabIndex=91, not null, required;
+Edit imaud10=formonly.imaud10, tabIndex=92, not null, required;
+Edit ecu02=formonly.ecu02 type VARCHAR, tabIndex=4, not null, required, comment="Combine Product No. as Key Field,No Blank/Repeated!";
+Edit ecu03=formonly.ecu03 type VARCHAR, tabIndex=5;
+Edit ecu04=formonly.ecu04 type SMALLINT, tabIndex=6, noEntry;
+Edit ecu05=formonly.ecu05 type SMALLINT, tabIndex=7, noEntry;
+ButtonEdit ecu012=ecu_file.ecu012, action=controlp, tabIndex=8, not null, required, image="zoom";
+Edit ecu014=ecu_file.ecu014, tabIndex=9;
+ButtonEdit ecu015=ecu_file.ecu015, action=controlp, tabIndex=10, image="zoom";
+Edit ecr02=formonly.ecr02 type VARCHAR, tabIndex=11, noEntry;
+Edit tc_ecn04=formonly.tc_ecn04, tabIndex=94;
+Edit tc_ecn05=formonly.tc_ecn05, tabIndex=95;
+Edit tc_ecn06=formonly.tc_ecn06, tabIndex=96;
+Edit tc_ecn07=formonly.tc_ecn07, tabIndex=97;
+Edit tc_ecnud06=formonly.tc_ecnud06, tabIndex=98;
+Edit tc_ecn08=formonly.tc_ecn08, tabIndex=99;
+CheckBox ecu10=formonly.ecu10 type VARCHAR, tabIndex=12, text="Confirmation", not null, required, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+CheckBox ecuud02=formonly.ecuud02, tabIndex=93, text=%"ecuud02", valueChecked = "Y", valueUnchecked = "N";
+Edit ecu11=formonly.ecu11 type SMALLINT, tabIndex=13;
+Edit imaud06=formonly.imaud06 type VARCHAR, tabIndex=100;
+CheckBox ecu06=formonly.ecu06, tabIndex=101, default = "N", text=%"ecu06", valueChecked = "Y", valueUnchecked = "N";
+Edit ecuuser=formonly.ecuuser type VARCHAR, tabIndex=14, noEntry;
+Edit ecumodu=formonly.ecumodu type VARCHAR, tabIndex=15, noEntry;
+Edit ecuacti=formonly.ecuacti type VARCHAR, tabIndex=16, noEntry;
+Edit ecugrup=formonly.ecugrup type VARCHAR, tabIndex=17, noEntry;
+DateEdit ecudate=formonly.ecudate type DATE, tabIndex=18, noEntry;
+Edit ecuoriu=formonly.ecuoriu type VARCHAR, tabIndex=89, noEntry;
+Edit ecuorig=formonly.ecuorig type VARCHAR, tabIndex=90, noEntry;
+TextEdit ecuud01=formonly.ecuud01 type VARCHAR, tabIndex=75, stretch=NONE;
+Edit ecuud07=formonly.ecuud07 type DECIMAL, tabIndex=76;
+DateEdit ecuud13=formonly.ecuud13 type DATE, tabIndex=77;
+Edit ecuud08=formonly.ecuud08 type DECIMAL, tabIndex=78;
+DateEdit ecuud14=formonly.ecuud14 type DATE, tabIndex=79;
+Edit ecuud09=formonly.ecuud09 type DECIMAL, tabIndex=80;
+DateEdit ecuud15=formonly.ecuud15 type DATE, tabIndex=81;
+Edit ecuud03=formonly.ecuud03 type VARCHAR, tabIndex=82;
+Edit ecuud10=formonly.ecuud10 type INTEGER, tabIndex=83;
+Edit ecuud04=formonly.ecuud04 type VARCHAR, tabIndex=84;
+Edit ecuud11=formonly.ecuud11 type INTEGER, tabIndex=85;
+Edit ecuud05=formonly.ecuud05 type VARCHAR, tabIndex=86;
+Edit ecuud12=formonly.ecuud12 type INTEGER, tabIndex=87;
+Edit ecuud06=formonly.ecuud06 type VARCHAR, tabIndex=88;
+LABEL name=formonly.name type CHAR, title=%"stree";
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.desc type CHAR;
+Phantom formonly.chk type VARCHAR;
+Edit ecb03=formonly.ecb03 type SMALLINT, tabIndex=19, title="S/N", not null, required, comment="No Blank/Repeated Field";
+ButtonEdit ecb06=formonly.ecb06 type VARCHAR, action=controlp, tabIndex=20, title="TaskNo.", not null, required, image="zoom", comment="No Blank Field <^P>Open window to Qry";
+Edit ecb17=formonly.ecb17 type VARCHAR, tabIndex=21, title="Task Name", comment="<^T>Product Routing Desc";
+ButtonEdit ecb08=formonly.ecb08 type VARCHAR, action=controlp, tabIndex=22, title="W/C", not null, required, image="zoom", comment="<^P>Open window to Qry Workstation ";
+Edit eca02=formonly.eca02 type CHAR, tabIndex=23, title="Name", noEntry;
+ButtonEdit vmn081=vmn_file.vmn081, action=controlp, tabIndex=24, title="vmn081", image="zoom";
+ButtonEdit ecb07=formonly.ecb07 type VARCHAR, action=controlp, tabIndex=25, title="Machine#", image="zoom", comment="<^P>Query Machine No.";
+ButtonEdit vmn08=vmn_file.vmn08, action=controlp, tabIndex=26, title="vmn08", image="zoom";
+Edit ecb38=formonly.ecb38 type DECIMAL, tabIndex=27, title="Unit Labor";
+Edit ecb04=formonly.ecb04 type DECIMAL, tabIndex=28, title="Completion Ratio%", not null, required, comment="Enter Complete %";
+Edit ecb19=formonly.ecb19 type DECIMAL, tabIndex=29, title="Std.Labor";
+Edit ecb18=formonly.ecb18 type DECIMAL, tabIndex=30, title="Fixed Labor";
+Edit ecb21=formonly.ecb21 type DECIMAL, tabIndex=31, title="Std.Machine";
+Edit ecb20=formonly.ecb20 type DECIMAL, tabIndex=32, title="Fixed Machine";
+Edit ecbslk05=formonly.ecbslk05 type DECIMAL, tabIndex=33, title="Current Labor Cost";
+Edit ecbslk04=formonly.ecbslk04 type DECIMAL, tabIndex=34, title="Std. Labor Cost";
+Edit ecbslk02=formonly.ecbslk02 type DECIMAL, tabIndex=35, title="Current Labor Hour";
+CheckBox ecbslk01=formonly.ecbslk01 type VARCHAR, tabIndex=36, title=%"Pieces Management", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ecb66=formonly.ecb66 type VARCHAR, tabIndex=37, title="Reported work sites", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ecb3=formonly.ecb39 type VARCHAR, tabIndex=38, title="Sub", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ecb25=ecb_file.ecb25, action=controlp, tabIndex=39, title=%"Subcont Vender", image="zoom";
+CheckBox ecb4=formonly.ecb40 type VARCHAR, tabIndex=40, title="PQC", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ecbud02=formonly.ecbud02 type VARCHAR, tabIndex=41, title="ecbud02";
+Edit ecbud03=formonly.ecbud03 type VARCHAR, tabIndex=42, title="ecbud03";
+Edit ecbud04=formonly.ecbud04 type VARCHAR, tabIndex=43, title="ecbud04";
+CheckBox ecb41=formonly.ecb41 type VARCHAR, tabIndex=44, title="Check in", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ecb42=formonly.ecb42 type VARCHAR, action=controlp, tabIndex=45, title="Chk-in Hold", image="zoom", comment="<^P>Qry On-Hold Reason";
+ButtonEdit ecb43=formonly.ecb43 type VARCHAR, action=controlp, tabIndex=46, title="Chk-out Hold", image="zoom", comment="<^P>Qry On-Hold Reason";
+ButtonEdit ecb45=formonly.ecb45 type VARCHAR, action=controlp, tabIndex=47, title="Tr-o Unit", not null, required, image="zoom", comment="<^P>Qry Unit    ";
+Edit ecb46=formonly.ecb46 type DECIMAL, tabIndex=48, title="Conversion%", not null, required;
+Edit ecb51=ecb_file.ecb51, tabIndex=49, title=%"Denominator", not null, required;
+Edit ecb14=ecb_file.ecb14, tabIndex=50, title=%"Loss Change ", not null, required;
+Edit ecb52=ecb_file.ecb52, tabIndex=51, title=%"Loss Fixed", not null, required;
+Edit ecb53=ecb_file.ecb53, tabIndex=52, title=%"Loss Lot.", not null, required;
+Edit ecb48=ecb_file.ecb48, tabIndex=53, title="Unit Subcontract";
+TextEdit ecbud01=formonly.ecbud01 type VARCHAR, tabIndex=54, title="ecbud01", stretch=NONE;
+Edit ecbud05=formonly.ecbud05 type VARCHAR, tabIndex=55, title="ecbud05";
+CheckBox ecbud06=formonly.ecbud06 type VARCHAR, tabIndex=56, title="ecbud06", text=%"", valueChecked = "Y", valueUnchecked = "N";
+Edit ecbud07=formonly.ecbud07 type DECIMAL, tabIndex=57, title="ecbud07";
+Edit ecbud08=formonly.ecbud08 type DECIMAL, tabIndex=58, title="ecbud08";
+Edit ecbud09=formonly.ecbud09 type DECIMAL, tabIndex=59, title="ecbud09";
+Edit ecbud10=formonly.ecbud10 type INTEGER, tabIndex=60, title="ecbud10";
+Edit ecbud11=formonly.ecbud11 type INTEGER, tabIndex=61, title="ecbud11";
+Edit ecbud12=formonly.ecbud12 type INTEGER, tabIndex=62, title="ecbud12";
+Edit ecbud13=formonly.ecbud13 type DATE, tabIndex=63, title="ecbud13";
+Edit ecbud14=formonly.ecbud14 type DATE, tabIndex=64, title="ecbud14";
+Edit ecbud15=formonly.ecbud15 type DATE, tabIndex=65, title="ecbud15";
+Edit ecbud16=formonly.ecbud16, tabIndex=66, title=%"ecbud16";
+Edit ecbud17=formonly.ecbud17, tabIndex=67, title=%"ecbud17";
+Edit ecu19s=formonly.ecu19s type CHAR, tabIndex=68, noEntry;
+Edit ecu18s=formonly.ecu18s type CHAR, tabIndex=69, noEntry;
+Edit ecu38s=formonly.ecu38s type CHAR, tabIndex=70, noEntry;
+Edit ecu21s=formonly.ecu21s type CHAR, tabIndex=71, noEntry;
+Edit ecu20s=formonly.ecu20s type CHAR, tabIndex=72, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=73, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=74, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ecb(formonly.ecb03,formonly.ecb06,formonly.ecb17,formonly.ecb08,formonly.eca02,vmn_file.vmn081,formonly.ecb07,vmn_file.vmn08,formonly.ecb38,formonly.ecb04,formonly.ecb19,formonly.ecb18,formonly.ecb21,formonly.ecb20,formonly.ecbslk05,formonly.ecbslk04,formonly.ecbslk02,formonly.ecbslk01,formonly.ecb66,formonly.ecb39,ecb_file.ecb25,formonly.ecb40,formonly.ecbud02,formonly.ecbud03,formonly.ecbud04,formonly.ecb41,formonly.ecb42,formonly.ecb43,formonly.ecb45,formonly.ecb46,ecb_file.ecb51,ecb_file.ecb14,ecb_file.ecb52,ecb_file.ecb53,ecb_file.ecb48,formonly.ecbud01,formonly.ecbud05,formonly.ecbud06,formonly.ecbud07,formonly.ecbud08,formonly.ecbud09,formonly.ecbud10,formonly.ecbud11,formonly.ecbud12,formonly.ecbud13,formonly.ecbud14,formonly.ecbud15,formonly.ecbud16,formonly.ecbud17)
+SCREEN RECORD Undefined(formonly.ecu01,formonly.ima02,formonly.ima021,formonly.ecu02,formonly.ecu03,formonly.ecu04,formonly.ecu05,ecu_file.ecu012,ecu_file.ecu014,ecu_file.ecu015,formonly.ecr02,formonly.ecu10,formonly.imgmksg,formonly.ecu11,formonly.ecuuser,formonly.ecumodu,formonly.ecuacti,formonly.ecugrup,formonly.ecudate,formonly.ecuoriu,formonly.ecuorig,formonly.ecuud01,formonly.ecuud07,formonly.ecuud13,formonly.ecuud08,formonly.ecuud14,formonly.ecuud09,formonly.ecuud15,formonly.ecuud03,formonly.ecuud10,formonly.ecuud04,formonly.ecuud11,formonly.ecuud05,formonly.ecuud12,formonly.ecuud06,formonly.ecu19s,formonly.ecu18s,formonly.ecu38s,formonly.ecu21s,formonly.ecu20s,formonly.cnt,formonly.cn2,formonly.imaud07,formonly.imaud10,formonly.ecuud02,formonly.tc_ecn04,formonly.tc_ecn05,formonly.tc_ecn06,formonly.tc_ecn07,formonly.tc_ecnud06,formonly.tc_ecn08,formonly.imaud06,formonly.ecu06)
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.desc,formonly.chk)
+END -- INSTRUCTIONS
+

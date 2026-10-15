@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi930.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi930")
+Folder pc765
+Page page01(text="Main")
+Grid gr4070
+{
+ Funds Trans Account(Trnsf-out)     [nmq21                   ][aag02_1                       ]
+ Funds Trans Account(Trnsf-in )     [nmq22                   ][aag02_2                       ]
+ Funds Trans Account(Int.Trnsf-out) [nmq23                   ][aag02_3                       ]
+ Funds Trans Account(Int.Trnsf-in ) [nmq24                   ][aag02_4                       ]
+}
+END -- gr4070
+END -- page01
+Page page02(text="Main2")
+Grid gr4071
+{
+ Funds Trans Account 2(Trnsf-out)     [nmq211                  ][aag02_5                       ]
+ Funds Trans Account 2(Trnsf-in )     [nmq221                  ][aag02_6                       ]
+ Funds Trans Account 2(Int.Trnsf-out) [nmq231                  ][aag02_7                       ]
+ Funds Trans Account 2(Int.Trnsf-in ) [nmq241                  ][aag02_8                       ]
+}
+END -- gr4071
+END -- page02
+END -- pc765
+END -- anmi930
+
+TABLES
+nmq_file
+ATTRIBUTES
+ButtonEdit nmq21=nmq_file.nmq21, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=2;
+ButtonEdit nmq22=nmq_file.nmq22, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=4;
+ButtonEdit nmq23=nmq_file.nmq23, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_3=formonly.aag02_3 type CHAR, tabIndex=6;
+ButtonEdit nmq24=nmq_file.nmq24, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_4=formonly.aag02_4 type CHAR, tabIndex=8;
+ButtonEdit nmq211=nmq_file.nmq211, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_5=formonly.aag02_5 type CHAR, tabIndex=10;
+ButtonEdit nmq221=nmq_file.nmq221, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_6=formonly.aag02_6 type CHAR, tabIndex=12;
+ButtonEdit nmq231=nmq_file.nmq231, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_7=formonly.aag02_7 type CHAR, tabIndex=14;
+ButtonEdit nmq241=nmq_file.nmq241, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry Acc";
+Edit aag02_8=formonly.aag02_8 type CHAR, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nmq_file.nmq21,formonly.aag02_1,nmq_file.nmq22,formonly.aag02_2,nmq_file.nmq23,formonly.aag02_3,nmq_file.nmq24,formonly.aag02_4,nmq_file.nmq211,formonly.aag02_5,nmq_file.nmq221,formonly.aag02_6,nmq_file.nmq231,formonly.aag02_7,nmq_file.nmq241,formonly.aag02_8)
+END -- INSTRUCTIONS
+

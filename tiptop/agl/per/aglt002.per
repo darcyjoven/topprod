@@ -1,0 +1,135 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglt002")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr2850
+{
+ Transaction Date    [axc06       ]
+ Group Code          [axc01     ]
+
+
+
+}
+END -- gr2850
+Grid gr2851
+{
+ Parent Company      [axc02     ]
+ Company Name        [azp02               ]
+ Data Base Code      [azp03               ]
+
+
+}
+END -- gr2851
+Grid gr2852
+{
+ Book No             [axc03     ]
+ Confirm             [axcconf       ]
+ [imgmksg]
+ [       ]
+ [       ]
+}
+END -- gr2852
+END -- hb1
+END -- page01
+Page info(text="Info")
+Grid gr2853
+{
+ Record Owner        [axcuser   ]   Last Modified by    [axcmodu   ]
+ Department          [axcgrup   ]   Create/Modify Date  [axcdate     ]
+ Record Orig.        [axcoriu   ]
+ Dept Orig.          [axcorig   ]
+}
+END -- gr2853
+END -- info
+END -- folder01
+Group gb1909
+ScrollGrid gr2854
+{
+
+[dummy0]         [dummy02       ][dummy03             ][dummy04            ][dummy05 ][dummy06     ][dummy08       ][dummy10            ][dummy09         ][dummy07     ]
+[axd04 ][before ][axd04b        ][azp02b              ][azp03b             ][axd05b  ][axd07b      ][axd11b        ]                     [axd12b          ][axd08b      ]
+        [after  ][axd04a        ][azp02a              ][azp03a             ][axd05a  ][axd07a      ][axd11a        ][axd14b             ][axd12a          ][axd08a      ]
+[axd04 ][before ][axd04b        ][azp02b              ][azp03b             ][axd05b  ][axd07b      ][axd11b        ]                     [axd12b          ][axd08b      ]
+        [after  ][axd04a        ][azp02a              ][azp03a             ][axd05a  ][axd07a      ][axd11a        ][axd14b             ][axd12a          ][axd08a      ]
+[axd04 ][before ][axd04b        ][azp02b              ][azp03b             ][axd05b  ][axd07b      ][axd11b        ]                     [axd12b          ][axd08b      ]
+        [after  ][axd04a        ][azp02a              ][azp03a             ][axd05a  ][axd07a      ][axd11a        ][axd14b             ][axd12a          ][axd08a      ]
+[axd04 ][before ][axd04b        ][azp02b              ][azp03b             ][axd05b  ][axd07b      ][axd11b        ]                     [axd12b          ][axd08b      ]
+        [after  ][axd04a        ][azp02a              ][azp03a             ][axd05a  ][axd07a      ][axd11a        ][axd14b             ][axd12a          ][axd08a      ]
+
+}
+END -- gr2854
+END -- gb1909
+Grid gr2855
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2855
+END -- vb4
+END -- aglt002
+
+TABLES
+axd_file,
+axc_file
+ATTRIBUTES
+DateEdit axc06=axc_file.axc06, tabIndex=1, not null, required;
+ButtonEdit axc01=axc_file.axc01, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Query Group Data";
+ButtonEdit axc02=axc_file.axc02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Plant   ";
+Edit azp02=formonly.azp02 type VARCHAR, tabIndex=4, noEntry;
+Edit azp03=formonly.azp03 type VARCHAR, tabIndex=5, noEntry;
+Edit axc03=axc_file.axc03, tabIndex=6, noEntry;
+ComboBox axcconf=axc_file.axcconf, tabIndex=7, not null, required, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit axcuser=axc_file.axcuser, tabIndex=9, noEntry;
+Edit axcmodu=axc_file.axcmodu, tabIndex=10, noEntry;
+Edit axcgrup=axc_file.axcgrup, tabIndex=11, noEntry;
+DateEdit axcdate=axc_file.axcdate, tabIndex=12, noEntry;
+Edit axcoriu=axc_file.axcoriu, tabIndex=500, noEntry;
+Edit axcorig=axc_file.axcorig, tabIndex=501, noEntry;
+Label dummy0:dummy01, text="Line#";
+Label dummy02:dummy02, text="Parent Co.";
+Label dummy03:dummy03, text="Plant No.";
+Label dummy04:dummy04, text="Database Name";
+Label dummy05:dummy05, text="Book#";
+Label dummy06:dummy06, text="Hoding %";
+Label dummy08:dummy08, text="Investment";
+Label dummy10:dummy10, text="Account Code";
+Label dummy09:dummy09, text="Account Amt by Currency";
+Label dummy07:dummy07, text="Tran.Date";
+Edit axd04=axd_file.axd04, tabIndex=13, not null, required;
+ComboBox before=formonly.before type CHAR, tabIndex=14, noEntry, items=(("0", "Original:"));
+ButtonEdit axd04b=axd_file.axd04b, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry Plant   ";
+Edit azp02b=formonly.azp02b type VARCHAR, tabIndex=16, noEntry;
+Edit azp03b=formonly.azp03b type VARCHAR, tabIndex=17, noEntry;
+Edit axd05b=axd_file.axd05b, tabIndex=18, noEntry;
+Edit axd07b=axd_file.axd07b, tabIndex=19, noEntry;
+Edit axd11b=axd_file.axd11b, tabIndex=20, noEntry;
+Edit axd12b=axd_file.axd12b, tabIndex=21, noEntry;
+DateEdit axd08b=axd_file.axd08b, tabIndex=22, noEntry;
+ComboBox after=formonly.after type CHAR, tabIndex=23, noEntry, items=(("1", "Modify:"));
+ButtonEdit axd04a=axd_file.axd04a, action=controlp, tabIndex=24, not null, image="zoom", comment="<^P>Qry Plant   ";
+Edit azp02a=formonly.azp02a type VARCHAR, tabIndex=25, noEntry;
+Edit azp03a=formonly.azp03a type VARCHAR, tabIndex=26, noEntry;
+Edit axd05a=axd_file.axd05a, tabIndex=27, noEntry;
+Edit axd07a=axd_file.axd07a, tabIndex=28;
+Edit axd11a=axd_file.axd11a, tabIndex=29;
+ButtonEdit axd14b=axd_file.axd14b, action=controlp, tabIndex=34, image="zoom";
+Edit axd12a=axd_file.axd12a, tabIndex=30;
+DateEdit axd08a=axd_file.axd08a, tabIndex=31, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=32, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axd(axd_file.axd04,formonly.before,axd_file.axd04b,formonly.azp02b,formonly.azp03b,axd_file.axd05b,axd_file.axd08b,axd_file.axd07b,axd_file.axd11b,axd_file.axd12b,formonly.after,axd_file.axd04a,formonly.azp02a,formonly.azp03a,axd_file.axd05a,axd_file.axd07a,axd_file.axd08a,axd_file.axd11a,axd_file.axd14b,axd_file.axd12a)
+SCREEN RECORD Undefined(axc_file.axc06,axc_file.axc01,axc_file.axc02,formonly.azp02,formonly.azp03,axc_file.axc03,axc_file.axcconf,formonly.imgmksg,axc_file.axcuser,axc_file.axcmodu,axc_file.axcgrup,axc_file.axcdate,axc_file.axcoriu,axc_file.axcorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

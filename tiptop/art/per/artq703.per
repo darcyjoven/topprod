@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq703.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artq703")
+VBox VBox1
+Folder pc1
+Page main(text=%"Main")
+Grid g_rtz
+{
+
+  Plant        [rtz01                 ]    Operate State       [rtz12                 ]
+  Shop name    [rtz13                 ]    Operate Property    [rtz03                 ]
+
+}
+END -- g_rtz
+END -- main
+END -- pc1
+Table rxg1
+{
+[rxg17               |rxg01               |rxg09     |rxg10     |rxg11     |rxg08     |rxg07     |rtg05     |amt       ]
+[rxg17               |rxg01               |rxg09     |rxg10     |rxg11     |rxg08     |rxg07     |rtg05     |amt       ]
+[rxg17               |rxg01               |rxg09     |rxg10     |rxg11     |rxg08     |rxg07     |rtg05     |amt       ]
+[rxg17               |rxg01               |rxg09     |rxg10     |rxg11     |rxg08     |rxg07     |rtg05     |amt       ]
+[rxg17               |rxg01               |rxg09     |rxg10     |rxg11     |rxg08     |rxg07     |rtg05     |amt       ]
+[rxg17               |rxg01               |rxg09     |rxg10     |rxg11     |rxg08     |rxg07     |rtg05     |amt       ]
+[rxg17               |rxg01               |rxg09     |rxg10     |rxg11     |rxg08     |rxg07     |rtg05     |amt       ]
+[rxg17               |rxg01               |rxg09     |rxg10     |rxg11     |rxg08     |rxg07     |rtg05     |amt       ]
+[rxg17               |rxg01               |rxg09     |rxg10     |rxg11     |rxg08     |rxg07     |rtg05     |amt       ]
+[rxg17               |rxg01               |rxg09     |rxg10     |rxg11     |rxg08     |rxg07     |rtg05     |amt       ]
+
+
+}
+END -- rxg1
+Table rxg2
+{
+[rxg18               |rxg01_1             |rxg09_1   |rxg10_1   |rxg11_1   |rxg08_1   |rxg07_1   |rtg05_1   |amt_1     ]
+[rxg18               |rxg01_1             |rxg09_1   |rxg10_1   |rxg11_1   |rxg08_1   |rxg07_1   |rtg05_1   |amt_1     ]
+[rxg18               |rxg01_1             |rxg09_1   |rxg10_1   |rxg11_1   |rxg08_1   |rxg07_1   |rtg05_1   |amt_1     ]
+[rxg18               |rxg01_1             |rxg09_1   |rxg10_1   |rxg11_1   |rxg08_1   |rxg07_1   |rtg05_1   |amt_1     ]
+[rxg18               |rxg01_1             |rxg09_1   |rxg10_1   |rxg11_1   |rxg08_1   |rxg07_1   |rtg05_1   |amt_1     ]
+[rxg18               |rxg01_1             |rxg09_1   |rxg10_1   |rxg11_1   |rxg08_1   |rxg07_1   |rtg05_1   |amt_1     ]
+[rxg18               |rxg01_1             |rxg09_1   |rxg10_1   |rxg11_1   |rxg08_1   |rxg07_1   |rtg05_1   |amt_1     ]
+[rxg18               |rxg01_1             |rxg09_1   |rxg10_1   |rxg11_1   |rxg08_1   |rxg07_1   |rtg05_1   |amt_1     ]
+[rxg18               |rxg01_1             |rxg09_1   |rxg10_1   |rxg11_1   |rxg08_1   |rxg07_1   |rtg05_1   |amt_1     ]
+[rxg18               |rxg01_1             |rxg09_1   |rxg10_1   |rxg11_1   |rxg08_1   |rxg07_1   |rtg05_1   |amt_1     ]
+
+}
+END -- rxg2
+Grid gr3
+{
+
+ ---------   Rows [idx   ] /[cnt   ] -------  detail1[cn2   ]detail2 [cn3   ]----------
+
+}
+END -- gr3
+END -- VBox1
+END -- artq703
+
+TABLES
+rxg_file,
+rtz_file
+ATTRIBUTES
+ButtonEdit rtz01=rtz_file.rtz01, action=controlp, tabIndex=1, noEntry, image="zoom.png";
+ComboBox rtz12=rtz_file.rtz12, tabIndex=2, default = "1", noEntry, items=(("1", "store"),("2", "Retail stores"));
+Edit rtz13=rtz_file.rtz13, tabIndex=3;
+ComboBox rtz03=rtz_file.rtz03, tabIndex=4, default = "1", noEntry, items=(("1", "Direct store"),("2", "Join stores"),("3", "Department store"));
+ButtonEdit rxg17=rxg_file.rxg17, action=controlp, tabIndex=5, title=%"Plant No.", not null, required, image="zoom.png";
+ButtonEdit rxg01=rxg_file.rxg01, action=controlp, tabIndex=6, title="Product No.", not null, image="zoom.png";
+Edit rxg09=rxg_file.rxg09, tabIndex=7, title=%"Warehouse", noEntry;
+Edit rxg10=rxg_file.rxg10, tabIndex=8, title=%"Store";
+Edit rxg11=rxg_file.rxg11, tabIndex=9, title=%"Batch No.", noEntry;
+Edit rxg08=rxg_file.rxg08, tabIndex=10, title=%"Unit";
+Edit rxg07=rxg_file.rxg07, tabIndex=11, title=%"Num";
+Edit rtg05=formonly.rtg05 type DECIMAL(20,6), tabIndex=12, title=%"Unit price";
+Edit amt=formonly.amt type VARCHAR, tabIndex=13, title="Amount", not null;
+ButtonEdit rxg18=formonly.rxg18 type VARCHAR, action=controlp, tabIndex=18, title=%"Plant No.", not null, required, image="zoom.png";
+ButtonEdit rxg01_1=formonly.rxg01_1 type VARCHAR, action=controlp, tabIndex=19, title="Product No.", not null, image="zoom.png";
+Edit rxg09_1=formonly.rxg09_1 type VARCHAR, tabIndex=20, title=%"Warehouse", noEntry;
+Edit rxg10_1=formonly.rxg10_1 type VARCHAR, tabIndex=21, title=%"Store";
+Edit rxg11_1=formonly.rxg11_1 type VARCHAR, tabIndex=22, title=%"Batch No.", noEntry;
+Edit rxg08_1=formonly.rxg08_1 type VARCHAR, tabIndex=23, title=%"Unit";
+Edit rxg07_1=formonly.rxg07_1 type DECIMAL(20,6), tabIndex=24, title=%"Num";
+Edit rtg05_1=formonly.rtg05_1 type DECIMAL(20,6), tabIndex=25, title=%"Unit price";
+Edit amt_1=formonly.amt_1 type VARCHAR, tabIndex=26, title="Amount", not null;
+Edit idx=formonly.idx type SMALLINT, tabIndex=14, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=16, noEntry;
+Edit cn3=formonly.cn3 type CHAR, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rtz(rtz_file.rtz01,rtz_file.rtz12,rtz_file.rtz13,rtz_file.rtz03,formonly.idx,formonly.cnt,formonly.cn2,formonly.cn3)
+SCREEN RECORD s_rxg1(rxg_file.rxg17,rxg_file.rxg01,rxg_file.rxg09,rxg_file.rxg10,rxg_file.rxg11,rxg_file.rxg08,rxg_file.rxg07,formonly.rtg05,formonly.amt)
+SCREEN RECORD s_rxg2(formonly.rxg18,formonly.rxg01_1,formonly.rxg09_1,formonly.rxg10_1,formonly.rxg11_1,formonly.rxg08_1,formonly.rxg07_1,formonly.rtg05_1,formonly.amt_1)
+END -- INSTRUCTIONS
+

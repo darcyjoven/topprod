@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi230.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi230")
+VBox VBox1
+Folder pc486
+Page page01(text="Main")
+Grid gr2074
+{
+  Customer No.        [ocf01     ] [occ02                         ]
+  Mark Code           [ocf02     ]
+
+ <G group02                      ><G group03                      >
+ [ocf101                        ]  [ocf201                       ]
+ [ocf102                        ]  [ocf202                       ]
+ [ocf103                        ]  [ocf203                       ]
+ [ocf104                        ]  [ocf204                       ]
+ [ocf105                        ]  [ocf205                       ]
+ [ocf106                        ]  [ocf206                       ]
+ [ocf107                        ]  [ocf207                       ]
+ [ocf108                        ]  [ocf208                       ]
+ [ocf109                        ]  [ocf209                       ]
+ [ocf110                        ]  [ocf210                       ]
+ [ocf111                        ]  [ocf211                       ]
+ [ocf112                        ]  [ocf212                       ]
+ <                               ><                               >
+ <G group04                                                           >
+  [dummy01                                                           ]
+ <                                                                    >
+
+}
+END -- gr2074
+END -- page01
+END -- pc486
+Grid gr2075
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2075
+END -- VBox1
+END -- axmi230
+
+TABLES
+ocf_file,
+occ_file
+ATTRIBUTES
+ButtonEdit ocf01=ocf_file.ocf01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Customer";
+Edit occ02=occ_file.occ02, tabIndex=2, noEntry;
+Edit ocf02=ocf_file.ocf02, tabIndex=3, not null, required;
+Group group02:group02, text="Mark";
+Edit ocf101=ocf_file.ocf101, tabIndex=4;
+Edit ocf102=ocf_file.ocf102, tabIndex=5;
+Edit ocf103=ocf_file.ocf103, tabIndex=6;
+Edit ocf104=ocf_file.ocf104, tabIndex=7;
+Edit ocf105=ocf_file.ocf105, tabIndex=8;
+Edit ocf106=ocf_file.ocf106, tabIndex=9;
+Edit ocf107=ocf_file.ocf107, tabIndex=10;
+Edit ocf108=ocf_file.ocf108, tabIndex=11;
+Edit ocf109=ocf_file.ocf109, tabIndex=12;
+Edit ocf110=ocf_file.ocf110, tabIndex=13;
+Edit ocf111=ocf_file.ocf111, tabIndex=14;
+Edit ocf112=ocf_file.ocf112, tabIndex=15;
+Group group03:group03, text="Side Mark";
+Edit ocf201=ocf_file.ocf201, tabIndex=16;
+Edit ocf202=ocf_file.ocf202, tabIndex=17;
+Edit ocf203=ocf_file.ocf203, tabIndex=18;
+Edit ocf204=ocf_file.ocf204, tabIndex=19;
+Edit ocf205=ocf_file.ocf205, tabIndex=20;
+Edit ocf206=ocf_file.ocf206, tabIndex=21;
+Edit ocf207=ocf_file.ocf207, tabIndex=22;
+Edit ocf208=ocf_file.ocf208, tabIndex=23;
+Edit ocf209=ocf_file.ocf209, tabIndex=24;
+Edit ocf210=ocf_file.ocf210, tabIndex=25;
+Edit ocf211=ocf_file.ocf211, tabIndex=26;
+Edit ocf212=ocf_file.ocf212, tabIndex=27;
+Group group04:group04;
+Label dummy01:dummy01, text="NOTE:Enter \'PPPPPP\' for Cus.PO, \'CCCCCC\'& \'DDDDDD\'for Ctn No-1/2";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ocf_file.ocf01,occ_file.occ02,ocf_file.ocf02,ocf_file.ocf101,ocf_file.ocf102,ocf_file.ocf103,ocf_file.ocf104,ocf_file.ocf105,ocf_file.ocf106,ocf_file.ocf107,ocf_file.ocf108,ocf_file.ocf109,ocf_file.ocf110,ocf_file.ocf111,ocf_file.ocf112,ocf_file.ocf201,ocf_file.ocf202,ocf_file.ocf203,ocf_file.ocf204,ocf_file.ocf205,ocf_file.ocf206,ocf_file.ocf207,ocf_file.ocf208,ocf_file.ocf209,ocf_file.ocf210,ocf_file.ocf211,ocf_file.ocf212,formonly.cnt)
+END -- INSTRUCTIONS
+

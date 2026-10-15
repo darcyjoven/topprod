@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt8301.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt8301")
+VBox vb10
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+  Label No.           [pia01          |pia19     ][imgmksg]
+                      [p]                         [       ]
+
+ <G group01                                           >
+  Item No.            [pia02                         ]
+  Part Name           [ima02                         ]
+  Spec                [ima021                        ]
+  Warehouse           [pia03     ]
+  Location            [pia04     ]
+  Lot#                [pia05     ]
+  Inventory Class     [pia06     ]
+  Inventory Unit      [pia09     ]
+  Account             [pia07               ]
+  type                [pia931    ]
+ <                                                    >
+ <G group02                                           >
+   Inventory Qty       [qty                 ]
+   Inv Taking Date     [tagdate     ]
+   Inv Taking Employee [peo         ][gen02     ]
+   Cost Center         [pia930      ][gem02     ]
+   reason code         [pia70               ]
+   explain             [azf03               ]
+ <                                                    >
+}
+END -- gr1
+END -- page01
+END -- pc1
+Grid gr2
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2
+END -- vb10
+END -- aimt8301
+
+TABLES
+azf_file,
+pia_file
+ATTRIBUTES
+ButtonEdit pia01=pia_file.pia01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!";
+CheckBox pia19=pia_file.pia19, tabIndex=2, text="Post", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+CheckBox p=pia_file.pia16, tabIndex=3, text="Blank Tag", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Group group01:group01;
+ButtonEdit pia02=pia_file.pia02, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Item Master  ";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=5, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=6, noEntry;
+ButtonEdit pia03=pia_file.pia03, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Warehouse   <^T>Qry Warehouse/Location";
+ButtonEdit pia04=pia_file.pia04, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Location ";
+ButtonEdit pia05=pia_file.pia05, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Lot No.  ";
+Edit pia06=pia_file.pia06, tabIndex=10, noEntry;
+ButtonEdit pia09=pia_file.pia09, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit   <^U>/<^T>Create Item/ Unit conversion";
+ButtonEdit pia07=pia_file.pia07, action=controlp, tabIndex=12, noEntry, image="zoom", comment="<^P>Qry Account      ";
+ButtonEdit pia931=pia_file.pia931, action=controlp, tabIndex=22, noEntry, image="zoom.png";
+Group group02:group02;
+Edit qty=formonly.qty type DECIMAL, tabIndex=13;
+DateEdit tagdate=formonly.tagdate type DATE, tabIndex=14;
+ButtonEdit peo=formonly.peo type VARCHAR, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry  Employee    ";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=16, noEntry;
+ButtonEdit pia930=pia_file.pia930, action=controlp, tabIndex=20, image="zoom", comment="<^P>Qry  Employee    ";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=21, noEntry;
+ButtonEdit pia70=pia_file.pia70, action=controlp, tabIndex=17, image="zoom";
+Edit azf03=azf_file.azf03, tabIndex=18, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pia_file.pia01,pia_file.pia19,formonly.imgmksg,pia_file.pia16,pia_file.pia02,formonly.ima02,formonly.ima021,pia_file.pia03,pia_file.pia04,pia_file.pia05,pia_file.pia06,pia_file.pia09,pia_file.pia07,pia_file.pia931,formonly.qty,formonly.tagdate,formonly.peo,formonly.gen02,pia_file.pia930,formonly.gem02,formonly.cnt,pia_file.pia70,azf_file.azf03)
+END -- INSTRUCTIONS
+

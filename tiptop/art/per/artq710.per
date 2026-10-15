@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq710.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artq710")
+VBox vb4
+Group gb1(text="Counting Plan")
+Table s_rus
+{
+[rusplant |rusplant_|rus01   |rus02   |rus03   |rus04   |rus05   |rus06|rus07   |rus08   |rus09   |rus10   |rus11   |rus12   |rus13   |rus14   |rus15   |rus16   |rus900  |ruspos  |rusconf |ruscond |ruscont |rusconu   |rusconu_|ruscrat |rusdate |rusgrup |rusmodu |rususer    |rusacti ]
+[rusplant |rusplant_|rus01   |rus02   |rus03   |rus04   |rus05   |rus06|rus07   |rus08   |rus09   |rus10   |rus11   |rus12   |rus13   |rus14   |rus15   |rus16   |rus900  |ruspos  |rusconf |ruscond |ruscont |rusconu   |rusconu_|ruscrat |rusdate |rusgrup |rusmodu |rususer    |rusacti ]
+[rusplant |rusplant_|rus01   |rus02   |rus03   |rus04   |rus05   |rus06|rus07   |rus08   |rus09   |rus10   |rus11   |rus12   |rus13   |rus14   |rus15   |rus16   |rus900  |ruspos  |rusconf |ruscond |ruscont |rusconu   |rusconu_|ruscrat |rusdate |rusgrup |rusmodu |rususer    |rusacti ]
+[rusplant |rusplant_|rus01   |rus02   |rus03   |rus04   |rus05   |rus06|rus07   |rus08   |rus09   |rus10   |rus11   |rus12   |rus13   |rus14   |rus15   |rus16   |rus900  |ruspos  |rusconf |ruscond |ruscont |rusconu   |rusconu_|ruscrat |rusdate |rusgrup |rusmodu |rususer    |rusacti ]
+[rusplant |rusplant_|rus01   |rus02   |rus03   |rus04   |rus05   |rus06|rus07   |rus08   |rus09   |rus10   |rus11   |rus12   |rus13   |rus14   |rus15   |rus16   |rus900  |ruspos  |rusconf |ruscond |ruscont |rusconu   |rusconu_|ruscrat |rusdate |rusgrup |rusmodu |rususer    |rusacti ]
+[rusplant |rusplant_|rus01   |rus02   |rus03   |rus04   |rus05   |rus06|rus07   |rus08   |rus09   |rus10   |rus11   |rus12   |rus13   |rus14   |rus15   |rus16   |rus900  |ruspos  |rusconf |ruscond |ruscont |rusconu   |rusconu_|ruscrat |rusdate |rusgrup |rusmodu |rususer    |rusacti ]
+
+}
+END -- s_rus
+END -- gb1
+Group gb2(text="Counting Details")
+Table s_ruw
+{
+[ruw01        |ruw03       |ruw05         |ruw06      |ruw06_desc|ruwconf |ruwcond |ruwcont |ruwconu     |ruwconu_d|ruwpos  |ruw07                ]
+[ruw01        |ruw03       |ruw05         |ruw06      |ruw06_desc|ruwconf |ruwcond |ruwcont |ruwconu     |ruwconu_d|ruwpos  |ruw07                ]
+[ruw01        |ruw03       |ruw05         |ruw06      |ruw06_desc|ruwconf |ruwcond |ruwcont |ruwconu     |ruwconu_d|ruwpos  |ruw07                ]
+[ruw01        |ruw03       |ruw05         |ruw06      |ruw06_desc|ruwconf |ruwcond |ruwcont |ruwconu     |ruwconu_d|ruwpos  |ruw07                ]
+[ruw01        |ruw03       |ruw05         |ruw06      |ruw06_desc|ruwconf |ruwcond |ruwcont |ruwconu     |ruwconu_d|ruwpos  |ruw07                ]
+[ruw01        |ruw03       |ruw05         |ruw06      |ruw06_desc|ruwconf |ruwcond |ruwcont |ruwconu     |ruwconu_d|ruwpos  |ruw07                ]
+
+}
+END -- s_ruw
+END -- gb2
+Grid gr4
+{
+[view1    ][return   ]
+
+}
+END -- gr4
+Grid gr5
+{
+  -----------Rows[idx   ]/[cnt    ]---------- [cn2     ]
+
+}
+END -- gr5
+END -- vb4
+END -- artq710
+
+TABLES
+ruw_file,
+rus_file
+ATTRIBUTES
+ButtonEdit rusplant=rus_file.rusplant, action=controlp, tabIndex=1, title="Org#", image="zoom";
+Edit rusplant_=formonly.rusplant_desc type VARCHAR, tabIndex=2, title="org#desc", noEntry;
+Edit rus01=rus_file.rus01, tabIndex=3, title="Counting Plan No.";
+Edit rus02=rus_file.rus02, tabIndex=4, title="Counting Plan Name";
+DateEdit rus03=rus_file.rus03, tabIndex=5, title="Setting Date";
+DateEdit rus04=rus_file.rus04, tabIndex=6, title="Counting Date";
+ButtonEdit rus05=rus_file.rus05, action=controlp, tabIndex=7, title="Counting WH", image="zoom";
+CheckBox rus06=rus_file.rus06, tabIndex=8, title="Limited Brand Class.", valueChecked = "Y", valueUnchecked = "N";
+Edit rus07=rus_file.rus07, tabIndex=9, title="Brand Class.";
+CheckBox rus08=rus_file.rus08, tabIndex=10, title="Limited Brand", valueChecked = "Y", valueUnchecked = "N";
+Edit rus09=rus_file.rus09, tabIndex=11, title="Brand No.";
+CheckBox rus10=rus_file.rus10, tabIndex=12, title="Limited Vendor", valueChecked = "Y", valueUnchecked = "N";
+Edit rus11=rus_file.rus11, tabIndex=13, title="Vendor No.";
+CheckBox rus12=rus_file.rus12, tabIndex=14, title="Limited Goods", valueChecked = "Y", valueUnchecked = "N";
+Edit rus13=rus_file.rus13, tabIndex=15, title="Goods No.";
+Edit rus14=rus_file.rus14, tabIndex=16, title="Memo";
+CheckBox rus15=rus_file.rus15, tabIndex=17, title="Charges Generated \n", valueChecked = "Y", valueUnchecked = "N";
+CheckBox rus16=rus_file.rus16, tabIndex=18, title="Close Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rus900=rus_file.rus900, tabIndex=19, title="Status Code", items=(("0", "open"),("1", "confirm"),("2", "Generate"),("9", "void"),("S", "Approving"),("R", "Rejected"),("W", "Withdraw"));
+CheckBox ruspos=rus_file.ruspos, tabIndex=20, title="Pass POS?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rusconf=rus_file.rusconf, tabIndex=21, title="Confirmation", items=(("Y", "Confirm"),("N", "Un_comfirm"),("X", "void"));
+DateEdit ruscond=rus_file.ruscond, tabIndex=22, title="Confirmed Date";
+TimeEdit ruscont=rus_file.ruscont, tabIndex=23, title="Confirmed Time";
+ButtonEdit rusconu=rus_file.rusconu, action=controlp, tabIndex=24, title="Confirmed By", image="zoom";
+Edit rusconu_=formonly.rusconu_desc type VARCHAR, tabIndex=25, title="Name";
+DateEdit ruscrat=rus_file.ruscrat, tabIndex=26, title="Create Date";
+DateEdit rusdate=rus_file.rusdate, tabIndex=27, title="Modify Date";
+Edit rusgrup=rus_file.rusgrup, tabIndex=28, title="Dept.";
+ButtonEdit rusmodu=rus_file.rusmodu, action=controlp, tabIndex=29, title="Modify By", image="zoom";
+ButtonEdit rususer=rus_file.rususer, action=controlp, tabIndex=30, title="Data Owner", image="zoom";
+CheckBox rusacti=rus_file.rusacti, tabIndex=31, title="Data Valid Code", valueChecked = "Y", valueUnchecked = "N";
+Edit ruw01=ruw_file.ruw01, tabIndex=32, title="Note No.";
+Edit ruw03=ruw_file.ruw03, tabIndex=33, title="Counting/Counting Diff No.";
+ButtonEdit ruw05=ruw_file.ruw05, action=controlp, tabIndex=34, title="Counting WH", image="zoom";
+ButtonEdit ruw06=ruw_file.ruw06, action=controlp, tabIndex=35, title="Counting Employee", image="zoom";
+Edit ruw06_desc=formonly.ruw06_desc type VARCHAR, tabIndex=36, title="Name", noEntry;
+ComboBox ruwconf=ruw_file.ruwconf, tabIndex=37, title="Confirmation", items=(("Y", "Confirm"),("N", "UN_Confirm"),("X", "Void"));
+DateEdit ruwcond=ruw_file.ruwcond, tabIndex=38, title="Confirmed Date";
+TimeEdit ruwcont=ruw_file.ruwcont, tabIndex=39, title="Confirmed Time";
+ButtonEdit ruwconu=ruw_file.ruwconu, action=controlp, tabIndex=40, title="Confirmed By", image="zoom";
+Edit ruwconu_d=formonly.ruwconu_desc type VARCHAR, tabIndex=41, title="Name", noEntry;
+CheckBox ruwpos=ruw_file.ruwpos, tabIndex=42, title="Pass POS?", valueChecked = "Y", valueUnchecked = "N";
+Edit ruw07=ruw_file.ruw07, tabIndex=43, title="Memo";
+Button view1:view1, text="view1";
+Button return:return, text="return";
+Edit idx=formonly.idx type SMALLINT, tabIndex=44;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=45;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=46;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rus(rus_file.rusplant,formonly.rusplant_desc,rus_file.rus01,rus_file.rus02,rus_file.rus03,rus_file.rus04,rus_file.rus05,rus_file.rus06,rus_file.rus07,rus_file.rus08,rus_file.rus09,rus_file.rus10,rus_file.rus11,rus_file.rus12,rus_file.rus13,rus_file.rus14,rus_file.rus15,rus_file.rus16,rus_file.rus900,rus_file.ruspos,rus_file.rusconf,rus_file.ruscond,rus_file.ruscont,rus_file.rusconu,formonly.rusconu_desc,rus_file.ruscrat,rus_file.rusdate,rus_file.rusgrup,rus_file.rusmodu,rus_file.rususer,rus_file.rusacti)
+SCREEN RECORD s_ruw(ruw_file.ruw01,ruw_file.ruw03,ruw_file.ruw05,ruw_file.ruw06,formonly.ruw06_desc,ruw_file.ruwconf,ruw_file.ruwcond,ruw_file.ruwcont,ruw_file.ruwconu,formonly.ruwconu_desc,ruw_file.ruwpos,ruw_file.ruw07)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

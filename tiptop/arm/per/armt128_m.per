@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armt128_m.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armt128_m")
+Grid gr297
+{
+ <T s_rmr                             >
+ [rmr0|rmr04                         ]
+ [rmr0|rmr04                         ]
+ [rmr0|rmr04                         ]
+ [rmr0|rmr04                         ]
+ [rmr0|rmr04                         ]
+ [rmr0|rmr04                         ]
+ [rmr0|rmr04                         ]
+ [rmr0|rmr04                         ]
+ [rmr0|rmr04                         ]
+ [rmr0|rmr04                         ]
+ <                                    >
+
+}
+END -- gr297
+END -- armt128_m
+
+TABLES
+rmr_file
+ATTRIBUTES
+Table s_rmr:s_rmr;
+Edit rmr0=rmr_file.rmr03, tabIndex=1, title="Ln#", not null, required;
+Edit rmr04=rmr_file.rmr04, tabIndex=2, title="Description";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rmr(rmr_file.rmr03,rmr_file.rmr04)
+END -- INSTRUCTIONS
+

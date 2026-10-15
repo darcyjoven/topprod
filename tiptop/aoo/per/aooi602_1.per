@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi602_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi602_1")
+VBox vb3
+Folder folder01
+Page page01(text="Carry Conditions")
+Grid gr574
+{
+ Logestic    [gew04     ][azp02               ]
+
+}
+END -- gr574
+END -- page01
+END -- folder01
+Table s_cond
+{
+[field_no      |field_name                    |condition             |value               |data_type   ]
+[field_no      |field_name                    |condition             |value               |data_type   ]
+[field_no      |field_name                    |condition             |value               |data_type   ]
+[field_no      |field_name                    |condition             |value               |data_type   ]
+[field_no      |field_name                    |condition             |value               |data_type   ]
+[field_no      |field_name                    |condition             |value               |data_type   ]
+[field_no      |field_name                    |condition             |value               |data_type   ]
+[field_no      |field_name                    |condition             |value               |data_type   ]
+[field_no      |field_name                    |condition             |value               |data_type   ]
+[field_no      |field_name                    |condition             |value               |data_type   ]
+
+}
+END -- s_cond
+Grid gr22
+{
+[dummy07                                                                                   ]
+[dummy01                                                                                   ]
+[dummy02                                                                                   ]
+[dummy03                                                                                   ]
+[dummy04                                                                                   ]
+[dummy05                                                                                   ]
+[dummy06                                                                                   ]
+}
+END -- gr22
+END -- vb3
+END -- aooi602_1
+
+TABLES
+gew_file,
+azp_file
+ATTRIBUTES
+Edit gew04=gew_file.gew04, tabIndex=1;
+Edit azp02=azp_file.azp02, tabIndex=2;
+ButtonEdit field_no=formonly.field_no type VARCHAR, action=controlp, tabIndex=3, title="Field Code", image="zoom.png";
+Edit field_name=formonly.field_name type VARCHAR, tabIndex=4, title="Field Name", noEntry;
+ComboBox condition=formonly.condition type CHAR, tabIndex=5, title="Conditions", items=(("1", "Not Equal"),("2", "Bigger Than"),("3", "Bigger Or Equal"),("4", "Smaller Than"),("5", "Small Or Equal"),("6", "Begin With"),("7", "Not Begin With"),("8", "End With"),("9", "Not End With"),("10", "Include"),("11", "Not Include"));
+Edit value=formonly.value type CHAR, tabIndex=6, title="Value";
+ComboBox data_type=formonly.data_type type CHAR, tabIndex=7, title=%"Data Type", items=(("1", "VARCHAR"),("2", "NUMBER"),("3", "DATE"));
+Label dummy07:dummy07, text=" ";
+Label dummy01:dummy01, text="Error Characters:\' \" ) + > < =";
+Label dummy02:dummy02, text="Sample";
+Label dummy03:dummy03, text="Field Code:ima01    Conditions:6.Begin With     Value:0;1";
+Label dummy04:dummy04, text="Result:ima01 LIKE \'0%\' OR ima01 LIKE \'1%\'";
+Label dummy05:dummy05, text=" ";
+Label dummy06:dummy06, text="Notice:Line Conditions Will be combined with \'AND\'";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cond(formonly.field_no,formonly.field_name,formonly.condition,formonly.value,formonly.data_type)
+SCREEN RECORD Undefined(gew_file.gew04,azp_file.azp02)
+END -- INSTRUCTIONS
+

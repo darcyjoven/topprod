@@ -1,0 +1,150 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt121.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt121")
+VBox vb3
+Folder pc2
+Page Page3(text=%"Page0")
+Grid gr4
+{
+ Chanage No.[rti01                 ]Sale sc  [rti04      ]  confrim[rticonf      |imgmksg]             Status [rti900       ]
+ Acti Method[rti02             ]    scale    [rti05      ]  date   [rticond      |       ]             org sex[rtiplant     |rtiplant_desc  ]
+ Acti Date  [rti03             ]    min scale[rti06      ]  admin  [rticonu      ][rticonu_desc]       remark [rti07                        ]
+
+}
+END -- gr4
+END -- Page3
+Page Page4(text=%"Page1")
+Grid gr5
+{
+  owner       [rtiuser       ]  modify    [rtimodu        ]  acti  [rtiacti        ]
+  group       [rtigrup       ]  date      [rtidate        ]  create[rticrat        ]
+  Record Orig.[rtioriu       ]  Dept Orig.[rtiorig        ]
+
+}
+END -- gr5
+END -- Page4
+END -- pc2
+Folder pc3
+Page Page5(action=shop, text=%"Page0")
+VBox VBox1
+Table s_rtj
+{
+[rtj03   |rtj04         |rtj04_de|rtj21   |rtj21_des|rtj06   |rtj07   |rtj08   |rtj20   ]
+[rtj03   |rtj04         |rtj04_de|rtj21   |rtj21_des|rtj06   |rtj07   |rtj08   |rtj20   ]
+[rtj03   |rtj04         |rtj04_de|rtj21   |rtj21_des|rtj06   |rtj07   |rtj08   |rtj20   ]
+[rtj03   |rtj04         |rtj04_de|rtj21   |rtj21_des|rtj06   |rtj07   |rtj08   |rtj20   ]
+}
+END -- s_rtj
+Table s_rtk
+{
+[rtk03   |rtk04        |rtk04_desc      ]
+[rtk03   |rtk04        |rtk04_desc      ]
+}
+END -- s_rtk
+END -- VBox1
+END -- Page5
+Page Page6(action=price, text=%"Page1")
+VBox VBox2
+Table s_rtj_1
+{
+[rtj03_1 |rtj04_1      |rtj04_desc|rtj09  |rtj09_de|rtj10   |rtj11 |rtj12  |rtj13              |rtj14             |rtj15            |rtj16   |rtj17   |rtj18   |rtj1|rtj23   |rtj22]
+[rtj03_1 |rtj04_1      |rtj04_desc|rtj09  |rtj09_de|rtj10   |rtj11 |rtj12  |rtj13              |rtj14             |rtj15            |rtj16   |rtj17   |rtj18   |rtj1|rtj23   |rtj22]
+[rtj03_1 |rtj04_1      |rtj04_desc|rtj09  |rtj09_de|rtj10   |rtj11 |rtj12  |rtj13              |rtj14             |rtj15            |rtj16   |rtj17   |rtj18   |rtj1|rtj23   |rtj22]
+[rtj03_1 |rtj04_1      |rtj04_desc|rtj09  |rtj09_de|rtj10   |rtj11 |rtj12  |rtj13              |rtj14             |rtj15            |rtj16   |rtj17   |rtj18   |rtj1|rtj23   |rtj22]
+}
+END -- s_rtj_1
+Table s_rtk_1
+{
+[rtk03_1 |rtk05   |rtk05_de]
+[rtk03_1 |rtk05   |rtk05_de]
+}
+END -- s_rtk_1
+END -- VBox2
+END -- Page6
+END -- pc3
+Grid gr3
+{
+  -----------rows[cnt  ]/[cn2  ]--------------
+
+}
+END -- gr3
+END -- vb3
+END -- artt121
+
+TABLES
+rtk_file,
+rtj_file,
+rti_file
+ATTRIBUTES
+ButtonEdit rti01=rti_file.rti01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit rti04=rti_file.rti04, tabIndex=4;
+ComboBox rticonf=rti_file.rticonf, tabIndex=7, noEntry, items=(("N", "Unconfirm"),("Y", "Confirm"),("X", "void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ComboBox rti900=rti_file.rti900, tabIndex=61, noEntry, items=(("0", "0"),("1", "1"),("2", "2"));
+ComboBox rti02=rti_file.rti02, tabIndex=2, default = "1", items=(("1", "At Once"),("2", "Date"));
+Edit rti05=rti_file.rti05, tabIndex=5;
+DateEdit rticond=rti_file.rticond, tabIndex=8;
+ButtonEdit rtiplant=rti_file.rtiplant, action=controlp, tabIndex=11, noEntry, image="zoom";
+Edit rtiplant_desc=formonly.rtiplant_desc type VARCHAR, tabIndex=13, noEntry;
+DateEdit rti03=rti_file.rti03, tabIndex=3;
+Edit rti06=rti_file.rti06, tabIndex=6;
+ButtonEdit rticonu=rti_file.rticonu, action=controlp, tabIndex=9, image="zoom";
+Edit rticonu_desc=formonly.rticonu_desc type VARCHAR, tabIndex=10;
+Edit rti07=rti_file.rti07, tabIndex=12;
+Edit rtiuser=rti_file.rtiuser, tabIndex=14, noEntry;
+Edit rtimodu=rti_file.rtimodu, tabIndex=15, noEntry;
+Edit rtiacti=rti_file.rtiacti, tabIndex=16, noEntry;
+Edit rtigrup=rti_file.rtigrup, tabIndex=17, noEntry;
+DateEdit rtidate=rti_file.rtidate, tabIndex=18;
+DateEdit rticrat=rti_file.rticrat, tabIndex=19;
+Edit rtioriu=rti_file.rtioriu, tabIndex=58, noEntry;
+Edit rtiorig=rti_file.rtiorig, tabIndex=57, noEntry;
+Edit rtj03=rtj_file.rtj03, tabIndex=20, title="NO.", not null, required;
+ButtonEdit rtj04=rtj_file.rtj04, action=controlp, tabIndex=21, title="shop code", not null, required, image="zoom";
+Edit rtj04_de=formonly.rtj04_desc type VARCHAR, tabIndex=22, title="shop name", noEntry;
+ButtonEdit rtj21=rtj_file.rtj21, action=controlp, tabIndex=59, title="TaxCode", not null, image="zoom.png";
+Edit rtj21_des=formonly.rtj21_desc type CHAR, tabIndex=60, title="TaxType", noEntry;
+CheckBox rtj06=rtj_file.rtj06, tabIndex=23, default = "N", title="isstock", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rtj07=rtj_file.rtj07, tabIndex=24, title="issell", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rtj08=rtj_file.rtj08, tabIndex=25, title="exit", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rtj20=rtj_file.rtj20, tabIndex=26, title="isacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rtk03=rtk_file.rtk03, tabIndex=51, title="NO.", not null, required;
+ButtonEdit rtk04=rtk_file.rtk04, action=controlp, tabIndex=52, title="shopcode", not null, required, image="zoom";
+Edit rtk04_desc=formonly.rtk04_desc type VARCHAR, tabIndex=53, title="rtk04_desc", noEntry;
+Edit rtj03_1=formonly.rtj03_1 type INTEGER, tabIndex=27, title="No.", not null, required;
+ButtonEdit rtj04_1=formonly.rtj04_1 type VARCHAR, action=controlp, tabIndex=28, title="shop code", not null, required, image="zoom";
+Edit rtj04_desc=formonly.rtj04_desc1 type VARCHAR, tabIndex=29, title="shop name", noEntry;
+ButtonEdit rtj09=rtj_file.rtj09, action=controlp, tabIndex=30, title="price unit", not null, required, image="zoom";
+Edit rtj09_de=formonly.rtj09_desc type VARCHAR, tabIndex=31, title="unit name", noEntry;
+Edit rtj10=rtj_file.rtj10, tabIndex=32, title="standard price", noEntry;
+Edit rtj11=rtj_file.rtj11, tabIndex=33, title="member price", noEntry;
+Edit rtj12=rtj_file.rtj12, tabIndex=34, title="min price", noEntry;
+Edit rtj13=rtj_file.rtj13, tabIndex=35, title="sell scale";
+Edit rtj14=rtj_file.rtj14, tabIndex=36, title="member scale";
+Edit rtj15=rtj_file.rtj15, tabIndex=37, title="min scale";
+Edit rtj16=rtj_file.rtj16, tabIndex=38, title="new standard", not null, required;
+Edit rtj17=rtj_file.rtj17, tabIndex=39, title="new mem", not null, required;
+Edit rtj18=rtj_file.rtj18, tabIndex=40, title="new min", not null, required;
+CheckBox rtj1=rtj_file.rtj19, tabIndex=41, title="define", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rtj23=rtj_file.rtj23, tabIndex=62, title=%"rtj23", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rtj22=formonly.rtj20_1 type VARCHAR, tabIndex=42, title="acti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rtk03_1=formonly.rtk03_1 type SMALLINT, tabIndex=54, title="NO.", not null, required;
+ButtonEdit rtk05=rtk_file.rtk05, action=controlp, tabIndex=55, title="pricecode", not null, required, image="zoom";
+Edit rtk05_de=formonly.rtk05_desc type VARCHAR, tabIndex=56, title="rtk05_desc", noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=43;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=44;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rtj(rtj_file.rtj03,rtj_file.rtj04,formonly.rtj04_desc,rtj_file.rtj21,formonly.rtj21_desc,rtj_file.rtj06,rtj_file.rtj07,rtj_file.rtj08,rtj_file.rtj20)
+SCREEN RECORD s_rtj_1(formonly.rtj03_1,formonly.rtj04_1,formonly.rtj04_desc1,rtj_file.rtj09,formonly.rtj09_desc,rtj_file.rtj10,rtj_file.rtj11,rtj_file.rtj12,rtj_file.rtj13,rtj_file.rtj14,rtj_file.rtj15,rtj_file.rtj16,rtj_file.rtj17,rtj_file.rtj18,rtj_file.rtj19,rtj_file.rtj23,formonly.rtj20_1)
+SCREEN RECORD s_rtk(rtk_file.rtk03,rtk_file.rtk04,formonly.rtk04_desc)
+SCREEN RECORD s_rtk_1(formonly.rtk03_1,rtk_file.rtk05,formonly.rtk05_desc)
+SCREEN RECORD Undefined(rti_file.rti01,rti_file.rti04,rti_file.rticonf,formonly.imgmksg,rti_file.rti900,rti_file.rti02,rti_file.rti05,rti_file.rticond,rti_file.rtiplant,formonly.rtiplant_desc,rti_file.rti03,rti_file.rti06,rti_file.rticonu,formonly.rticonu_desc,rti_file.rti07,rti_file.rtiuser,rti_file.rtimodu,rti_file.rtiacti,rti_file.rtigrup,rti_file.rtidate,rti_file.rticrat,rti_file.rtioriu,rti_file.rtiorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

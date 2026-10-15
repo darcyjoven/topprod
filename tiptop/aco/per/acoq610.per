@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoq610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"acoq610")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1363
+{
+ Advance Application No.[cnu01               ]
+ Application Date       [cnu02       ]
+ Application No.        [cnu03               ]
+ Customs No.            [cnu07     ]
+}
+END -- gr1363
+Grid gr1364
+{
+ Type of Local Sale     [cnu04     ][desc    ]
+ Register Book No.      [cnu05               ]
+ Currency               [cnu06     ]
+
+}
+END -- gr1364
+END -- HBox1
+END -- page01
+END -- folder01
+Table tn_0
+{
+[cnv0|cnv03    |cnv04          |cob02                        |cnv041              |cnv06|cnv05     |cnv051          |tot        ]
+[cnv0|cnv03    |cnv04          |cob02                        |cnv041              |cnv06|cnv05     |cnv051          |tot        ]
+[cnv0|cnv03    |cnv04          |cob02                        |cnv041              |cnv06|cnv05     |cnv051          |tot        ]
+[cnv0|cnv03    |cnv04          |cob02                        |cnv041              |cnv06|cnv05     |cnv051          |tot        ]
+[cnv0|cnv03    |cnv04          |cob02                        |cnv041              |cnv06|cnv05     |cnv051          |tot        ]
+[cnv0|cnv03    |cnv04          |cob02                        |cnv041              |cnv06|cnv05     |cnv051          |tot        ]
+[cnv0|cnv03    |cnv04          |cob02                        |cnv041              |cnv06|cnv05     |cnv051          |tot        ]
+[cnv0|cnv03    |cnv04          |cob02                        |cnv041              |cnv06|cnv05     |cnv051          |tot        ]
+[cnv0|cnv03    |cnv04          |cob02                        |cnv041              |cnv06|cnv05     |cnv051          |tot        ]
+[cnv0|cnv03    |cnv04          |cob02                        |cnv041              |cnv06|cnv05     |cnv051          |tot        ]
+}
+END -- tn_0
+Grid gr1365
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr1365
+END -- VBox1
+END -- acoq610
+
+ATTRIBUTES
+Edit cnu01=formonly.cnu01 type CHAR, tabIndex=1;
+DateEdit cnu02=formonly.cnu02 type DATE, tabIndex=2;
+Edit cnu03=formonly.cnu03 type CHAR, tabIndex=3;
+Edit cnu07=formonly.cnu07 type CHAR, tabIndex=4;
+ComboBox cnu04=formonly.cnu04 type CHAR, tabIndex=5, queryEditable, items=(("1", "Finished Product"));
+Edit desc=formonly.desc type CHAR, tabIndex=6, noEntry;
+Edit cnu05=formonly.cnu05 type CHAR, tabIndex=7;
+Edit cnu06=formonly.cnu06 type CHAR, tabIndex=8;
+Edit cnv0=formonly.cnv02 type CHAR, tabIndex=9, title="Ln#";
+Edit cnv03=formonly.cnv03 type CHAR, tabIndex=10, title="Comp.S/N";
+Edit cnv04=formonly.cnv04 type CHAR, tabIndex=11, title="Goods No.";
+Edit cob02=formonly.cob02 type CHAR, tabIndex=12, title="Part Name", scroll;
+Edit cnv041=formonly.cnv041 type CHAR, tabIndex=13, title="Version";
+Edit cnv06=formonly.cnv06 type CHAR, tabIndex=14, title="Unit";
+Edit cnv05=formonly.cnv05 type CHAR, tabIndex=15, title="Apply Qty";
+Edit cnv051=formonly.cnv051 type CHAR, tabIndex=16, title="Local Sales Qty";
+Edit tot=formonly.tot type CHAR, tabIndex=17, title="Rest Qty";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cnv(formonly.cnv02,formonly.cnv03,formonly.cnv04,formonly.cob02,formonly.cnv041,formonly.cnv05,formonly.cnv051,formonly.cnv06,formonly.tot)
+SCREEN RECORD tn_0(formonly.cnv02,formonly.cnv03,formonly.cnv04,formonly.cob02,formonly.cnv041,formonly.cnv06,formonly.cnv05,formonly.cnv051,formonly.tot)
+SCREEN RECORD Undefined(formonly.cnu01,formonly.cnu02,formonly.cnu03,formonly.cnu07,formonly.cnu04,formonly.desc,formonly.cnu05,formonly.cnu06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

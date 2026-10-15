@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt112.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt112")
+VBox vb2
+Folder pc2
+Page Page2(text=%"Info")
+Grid gr5
+{
+ <G gb2                                                                                                                                                     >
+     WBS No.            [pji01                     ]                                               WBS Name     [pjb03                     ]
+     Project No.        [pjb01                     ]                                               Project Name [pja02                     ]
+     WBS Classifacation [pjb07       ][pjr02       ]                                               WBS Priority [pjb08                     ]
+
+     [pjb09              ]                                      [pjb10          ]                                          [pjb11         ]
+ <                                                                                                                                                          >
+ <G gb1                                                                                                                                                     >
+
+   Planned Start Date[pjb15   ]           Planned Complete Date[pjb16   ]
+   Reckon Start Date [pjb17   ]           Reckon Complete Date [pjb18   ]             Lastest Reckon Date[pjb24   ]
+   Real Start Date   [pjb19   ]           Real Complete Date   [pjb20   ]             Progress Conf User [pjb22     |gen02     ] Progress Conf Date[pjb23   ]
+ <                                                                                                                                                          >
+
+}
+END -- gr5
+END -- Page2
+END -- pc2
+Folder pc2_
+Page Page2_(text=%"Member Org")
+Table tb2
+{
+[pji02 |gen02_2 |cpk02         |cpf15        |cpf11                     |pji03                                                       ]
+[pji02 |gen02_2 |cpk02         |cpf15        |cpf11                     |pji03                                                       ]
+[pji02 |gen02_2 |cpk02         |cpf15        |cpf11                     |pji03                                                       ]
+[pji02 |gen02_2 |cpk02         |cpf15        |cpf11                     |pji03                                                       ]
+[pji02 |gen02_2 |cpk02         |cpf15        |cpf11                     |pji03                                                       ]
+[pji02 |gen02_2 |cpk02         |cpf15        |cpf11                     |pji03                                                       ]
+[pji02 |gen02_2 |cpk02         |cpf15        |cpf11                     |pji03                                                       ]
+
+}
+END -- tb2
+END -- Page2_
+END -- pc2_
+Grid gr4
+{
+
+ ------ Amount[amoun]/[cnt  ] ------
+
+}
+END -- gr4
+END -- vb2
+END -- apjt112
+
+TABLES
+pji_file,
+pjb_file
+ATTRIBUTES
+Group gb2:gb2;
+Edit pji01=pji_file.pji01, tabIndex=18;
+Edit pjb03=formonly.pjb03 type VARCHAR, tabIndex=21, noEntry;
+Edit pjb01=formonly.pjb01 type VARCHAR, tabIndex=19, noEntry;
+Edit pja02=formonly.pja02 type VARCHAR, tabIndex=22, noEntry;
+Edit pjb07=formonly.pjb07 type VARCHAR, tabIndex=20, noEntry;
+Edit pjr02=formonly.pjr02 type VARCHAR, tabIndex=24, noEntry;
+Edit pjb08=formonly.pjb08 type VARCHAR, tabIndex=23, noEntry;
+CheckBox pjb09=formonly.pjb09 type VARCHAR, tabIndex=27, text="Bottom Level WBS", valueChecked = "Y", valueUnchecked = "N";
+CheckBox pjb10=formonly.pjb10 type VARCHAR, tabIndex=26, text="Planned Cost", valueChecked = "Y", valueUnchecked = "N";
+CheckBox pjb11=formonly.pjb11 type VARCHAR, tabIndex=25, text="Cost Object", valueChecked = "Y", valueUnchecked = "N";
+Group gb1:gb1, text="Progress Info\n";
+DateEdit pjb15=formonly.pjb15 type DATE, tabIndex=10, noEntry;
+DateEdit pjb16=formonly.pjb16 type DATE, tabIndex=9;
+DateEdit pjb17=formonly.pjb17 type DATE, tabIndex=12, noEntry;
+DateEdit pjb18=formonly.pjb18 type DATE, tabIndex=11, noEntry;
+DateEdit pjb24=pjb_file.pjb24, tabIndex=34;
+DateEdit pjb19=formonly.pjb19 type DATE, tabIndex=17, noEntry;
+DateEdit pjb20=formonly.pjb20 type DATE, tabIndex=13, noEntry;
+Edit pjb22=formonly.pjb22 type VARCHAR, tabIndex=15, noEntry;
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=16, noEntry;
+DateEdit pjb23=formonly.pjb23 type DATE, tabIndex=14, noEntry;
+ButtonEdit pji02=pji_file.pji02, action=controlp, tabIndex=28, title="WBS Direct ", not null, image="zoom.png";
+Edit gen02_2=formonly.gen02_2 type VARCHAR, tabIndex=29, title="Name", noEntry;
+Edit cpk02=formonly.cpk02 type VARCHAR, tabIndex=30, title="Position", noEntry;
+Edit cpf15=formonly.cpf15 type VARCHAR, tabIndex=31, title="Telephone", noEntry;
+Edit cpf11=formonly.cpf11 type VARCHAR, tabIndex=32, title="EMAIL", noEntry;
+Edit pji03=pji_file.pji03, tabIndex=33, title="Event";
+Edit amoun=formonly.amount type INTEGER, tabIndex=7;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tb2(pji_file.pji02,formonly.gen02_2,formonly.cpk02,formonly.cpf15,formonly.cpf11,pji_file.pji03)
+SCREEN RECORD Undefined(pji_file.pji01,formonly.pjb03,formonly.pjb01,formonly.pja02,formonly.pjb07,formonly.pjr02,formonly.pjb08,formonly.pjb09,formonly.pjb10,formonly.pjb11,formonly.pjb15,formonly.pjb16,formonly.pjb17,formonly.pjb18,pjb_file.pjb24,formonly.pjb19,formonly.pjb20,formonly.pjb22,formonly.gen02,formonly.pjb23,formonly.amount,formonly.cnt)
+END -- INSTRUCTIONS
+

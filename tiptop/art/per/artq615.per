@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq615.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid ds1
+{
+
+[label1  |lucplant            ] [label2 ][luc03               ]  [label5 ][luc27               ]
+[label9  |lmf03               ] [label3  |luc05               ]  [label6 ][luc26               ]
+[label10][lmf04               ] [label11 |lmf13               ]  [label8 ][luc21               ]
+[label12][lie04               ] [label7  |lud05               ]
+
+
+
+
+}
+END -- ds1
+END -- Page1
+END -- Folder1
+Table s_luc
+{
+[lucplan1  |rtz13                         |luc01     |occ02                         |luc02               |lmf13_1                       |luc04               |luc10      |luc11             |luc06               |lud02   |lud01     |oaj02                         |luc22     |luc25     |lud07t                |luc08                         ]
+[lucplan1  |rtz13                         |luc01     |occ02                         |luc02               |lmf13_1                       |luc04               |luc10      |luc11             |luc06               |lud02   |lud01     |oaj02                         |luc22     |luc25     |lud07t                |luc08                         ]
+[lucplan1  |rtz13                         |luc01     |occ02                         |luc02               |lmf13_1                       |luc04               |luc10      |luc11             |luc06               |lud02   |lud01     |oaj02                         |luc22     |luc25     |lud07t                |luc08                         ]
+[lucplan1  |rtz13                         |luc01     |occ02                         |luc02               |lmf13_1                       |luc04               |luc10      |luc11             |luc06               |lud02   |lud01     |oaj02                         |luc22     |luc25     |lud07t                |luc08                         ]
+[lucplan1  |rtz13                         |luc01     |occ02                         |luc02               |lmf13_1                       |luc04               |luc10      |luc11             |luc06               |lud02   |lud01     |oaj02                         |luc22     |luc25     |lud07t                |luc08                         ]
+
+}
+END -- s_luc
+Grid Grid1
+{
+
+ ---------[label13   ][cnt       ] ----------
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+oaj_file,
+lud_file1=lud_file,
+lmf_file,
+occ_file,
+rtz_file,
+lud_file,
+luc_file,
+lie_file,
+luc_file1=luc_file
+ATTRIBUTES
+Label label1:Label1, text=%"lucplant";
+ButtonEdit lucplant=luc_file.lucplant, action=controlp, tabIndex=1, image="zoom", scroll;
+Label label2:Label2, text=%"luc03";
+ButtonEdit luc03=luc_file.luc03, action=controlp, tabIndex=5, image="zoom", scroll;
+Label label5:Label5, text=%"luc27";
+ButtonEdit luc27=luc_file.luc27, action=controlp, tabIndex=9, image="zoom", scroll;
+Label label9:Label9, text=%"lmf03";
+ButtonEdit lmf03=lmf_file.lmf03, action=controlp, tabIndex=2, image="zoom", scroll;
+Label label3:Label3, text=%"luc05";
+ButtonEdit luc05=luc_file.luc05, action=controlp, tabIndex=6, image="zoom", scroll;
+Label label6:Label6, text=%"luc26";
+ButtonEdit luc26=luc_file.luc26, action=controlp, tabIndex=10, image="zoom", scroll;
+Label label10:Label10, text=%"lmf04";
+ButtonEdit lmf04=lmf_file.lmf04, action=controlp, tabIndex=3, image="zoom", scroll;
+Label label11:Label11, text=%"lmf13";
+TextEdit lmf13=lmf_file.lmf13, tabIndex=7;
+Label label8:Label8, text=%"luc21";
+DateEdit luc21=luc_file.luc21, tabIndex=11;
+Label label12:Label12, text=%"lie04";
+ButtonEdit lie04=lie_file.lie04, action=controlp, tabIndex=4, image="zoom";
+Label label7:Label7, text=%"lud05";
+ButtonEdit lud05=lud_file.lud05, action=controlp, tabIndex=8, image="zoom", scroll;
+Edit lucplan1=luc_file1.lucplant, tabIndex=12, title=%"lucplant", not null, scroll;
+Edit rtz13=rtz_file.rtz13, tabIndex=13, title=%"rtz13", scroll;
+Edit luc01=luc_file1.luc03, tabIndex=14, title=%"luc03", scroll;
+Edit occ02=occ_file.occ02, tabIndex=15, title=%"occ02", scroll;
+Edit luc02=luc_file1.luc05, tabIndex=16, title=%"luc05", scroll;
+Edit lmf13_1=formonly.lmf13_1 type VARCHAR, tabIndex=17, title=%"lmf13_1", scroll;
+Edit luc04=luc_file.luc04, tabIndex=18, title=%"luc04", scroll;
+ComboBox luc10=luc_file.luc10, tabIndex=19, title=%"luc10", items=(("1", "ZhiChuChan"),("2", "End settlement"));
+Edit luc11=luc_file.luc11, tabIndex=20, title=%"luc11";
+Edit luc06=luc_file.luc01, tabIndex=21, title=%"luc01", not null, scroll;
+Edit lud02=lud_file.lud02, tabIndex=22, title=%"lud02";
+Edit lud01=lud_file1.lud05, tabIndex=23, title=%"lud05", scroll;
+Edit oaj02=oaj_file.oaj02, tabIndex=24, title=%"oaj02", scroll;
+Edit luc22=luc_file1.luc21, tabIndex=25, title=%"luc21", scroll;
+Edit luc25=luc_file.luc25, tabIndex=26, title=%"luc25", not null, scroll;
+Edit lud07t=lud_file.lud07t, tabIndex=27, title=%"lud07t", scroll;
+Edit luc08=luc_file.luc08, tabIndex=28, title=%"luc08", scroll;
+Label label13:Label13, text=%"Label13";
+Edit cnt=formonly.cnt, tabIndex=29;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(luc_file.lucplant,luc_file.luc03,luc_file.luc05,luc_file.luc27,luc_file.luc26,lud_file.lud05,luc_file.luc21,lmf_file.lmf03,lmf_file.lmf04,lmf_file.lmf13)
+SCREEN RECORD Undefined(lie_file.lie04,formonly.cnt)
+SCREEN RECORD s_luc(luc_file1.lucplant,rtz_file.rtz13,luc_file1.luc03,occ_file.occ02,luc_file1.luc05,formonly.lmf13_1,luc_file.luc04,luc_file.luc10,luc_file.luc11,luc_file.luc01,lud_file.lud02,lud_file1.lud05,oaj_file.oaj02,luc_file1.luc21,luc_file.luc25,lud_file.lud07t,luc_file.luc08)
+END -- INSTRUCTIONS
+

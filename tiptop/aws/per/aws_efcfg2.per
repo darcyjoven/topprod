@@ -1,0 +1,180 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_efcfg2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_efcfg2")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ <G group011                                                                        >
+  Program Code            [wsd01     ][gaz03                          ]
+  [wsd02                             ]
+ <                                                                                  >
+
+}
+END -- gr1
+END -- page01
+Page info(text="Info")
+Grid gr2
+{
+   Record Owner [wsduser   ] Last Modified by    [wsdmodu   ] Data Valid Code  [wsdacti   ]
+   Department   [wsdgrup   ] Create/Modify Date  [wsddate   ]
+   Record Orig. [wsdoriu   ]
+   Dept Orig.   [wsdorig   ]
+}
+END -- gr2
+END -- info
+END -- pc1
+Folder pc2
+Page page02(action=aws_master, text="Master")
+Grid gr3
+{
+ <G group012                                                                    >
+  Master                  [wse02          ][zz03                         ]
+  Master No #1            [wse03     ]
+  Master No #2            [wse04     ]
+  Master No #3            [wse05     ]
+  Master No #4            [wse06     ]
+  Master No #5            [wse07     ]
+  Appove of Master No.    [wse08     ]
+  Comfirm of Master No.   [wse09     ]
+  Status of Master No.    [wse10     ]
+  Valid Code of Master No.[wse11     ]
+  Form Creator ID         [wse12     ]
+  Form Owner ID           [wse13     ]
+ <                                                                              >
+
+}
+END -- gr3
+END -- page02
+Page page03(action=aws_detail, text="Detail")
+Grid gr4
+{
+ <G group013                                                                    >
+  Detail                  [wsf03          ][zz04                         ]
+  Detail No #1            [wsf04     ]
+  Detail No #2            [wsf05     ]
+  Detail No #3            [wsf06     ]
+  Detail No #4            [wsf07     ]
+  Detail No #5            [wsf08     ]
+  Status of Detail No.    [wsf09     ]
+ <                                                                              >
+
+}
+END -- gr4
+END -- page03
+Page page04(action=aws_document, text="Document")
+Grid gr5
+{
+ <G group014                                                                    >
+  Document Property       [wsg02          ][zz05                         ]
+  Document                [wsg03     ]
+  Document Name           [wsg04     ]
+  Module                  [wsg05     ]
+  Module Name             [wsg06]
+  Document Property       [wsg07     ]
+  Document Property Code  [wsg08             ]
+  Approval                [wsg09     ]
+  Confirm Now             [wsg10     ]
+ <                                                                              >
+
+}
+END -- gr5
+END -- page04
+Page page05(action=aws_memo, text="Memo")
+Grid gr6
+{
+ <G group015                                                                    >
+  Memo                    [wsq02          ][zz06                         ]
+  Memo No #1              [wsq03     ]
+  Memo No #2              [wsq04     ]
+  Memo No #3              [wsq05     ]
+  Memo No #4              [wsq06     ]
+  Memo No #5              [wsq07     ]
+ <                                                                              >
+
+}
+END -- gr6
+END -- page05
+END -- pc2
+Grid gr7
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr7
+END -- VBox1
+END -- aws_efcfg2
+
+TABLES
+wsg_file,
+wsf_file,
+wse_file,
+wsd_file,
+wsq_file
+ATTRIBUTES
+Group group011:group011;
+ButtonEdit wsd01=wsd_file.wsd01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=2, noEntry;
+CheckBox wsd02=formonly.wsd02 type CHAR, tabIndex=3, text="Is It a Hard-Coding Program?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit wsduser=wsd_file.wsduser, tabIndex=4, noEntry;
+Edit wsdmodu=wsd_file.wsdmodu, tabIndex=5, noEntry;
+Edit wsdacti=wsd_file.wsdacti, tabIndex=6, noEntry, upShift;
+Edit wsdgrup=wsd_file.wsdgrup, tabIndex=7, noEntry;
+Edit wsddate=wsd_file.wsddate, tabIndex=8, noEntry;
+Edit wsdoriu=wsd_file.wsdoriu, tabIndex=501, noEntry;
+Edit wsdorig=wsd_file.wsdorig, tabIndex=502, noEntry;
+Group group012:group012;
+ButtonEdit wse02=wse_file.wse02, action=controlp, tabIndex=9, not null, required, image="zoom";
+Edit zz03=formonly.zz03 type CHAR, tabIndex=10, noEntry;
+ComboBox wse03=wse_file.wse03, tabIndex=11, not null, required, downShift, queryEditable;
+ComboBox wse04=wse_file.wse04, tabIndex=12, downShift, queryEditable;
+ComboBox wse05=wse_file.wse05, tabIndex=13, downShift, queryEditable;
+ComboBox wse06=wse_file.wse06, tabIndex=14, downShift, queryEditable;
+ComboBox wse07=wse_file.wse07, tabIndex=15, downShift, queryEditable;
+ComboBox wse08=wse_file.wse08, tabIndex=16, not null, required, downShift, queryEditable;
+ComboBox wse09=wse_file.wse09, tabIndex=17, downShift, queryEditable;
+ComboBox wse10=wse_file.wse10, tabIndex=18, not null, required, downShift, queryEditable;
+ComboBox wse11=wse_file.wse11, tabIndex=19, downShift, queryEditable;
+ComboBox wse12=wse_file.wse12, tabIndex=20, not null, required, downShift, queryEditable;
+Edit wse13=wse_file.wse13, tabIndex=21, not null, required, downShift;
+Group group013:group013;
+ButtonEdit wsf03=wsf_file.wsf03, action=controlp, tabIndex=22, not null, required, image="zoom";
+Edit zz04=formonly.zz04 type CHAR, tabIndex=23, noEntry;
+ComboBox wsf04=wsf_file.wsf04, tabIndex=24, not null, required, queryEditable;
+ComboBox wsf05=wsf_file.wsf05, tabIndex=25, queryEditable;
+ComboBox wsf06=wsf_file.wsf06, tabIndex=26, queryEditable;
+ComboBox wsf07=wsf_file.wsf07, tabIndex=27, queryEditable;
+ComboBox wsf08=wsf_file.wsf08, tabIndex=28, queryEditable;
+ComboBox wsf09=wsf_file.wsf09, tabIndex=29, queryEditable;
+Group group014:group014;
+ButtonEdit wsg02=wsg_file.wsg02, action=controlp, tabIndex=30, not null, required, image="zoom";
+Edit zz05=formonly.zz05 type CHAR, tabIndex=31, noEntry;
+ComboBox wsg03=wsg_file.wsg03, tabIndex=32, not null, required, queryEditable;
+ComboBox wsg04=wsg_file.wsg04, tabIndex=33, not null, required, queryEditable;
+ComboBox wsg05=wsg_file.wsg05, tabIndex=34, queryEditable;
+ComboBox wsg06=wsg_file.wsg06, tabIndex=35, queryEditable;
+ComboBox wsg07=wsg_file.wsg07, tabIndex=36, not null, required, queryEditable;
+Edit wsg08=wsg_file.wsg08, tabIndex=37, not null, required, scroll;
+ComboBox wsg09=wsg_file.wsg09, tabIndex=38, not null, required, queryEditable;
+ComboBox wsg10=wsg_file.wsg10, tabIndex=39, queryEditable;
+Group group015:group015;
+ButtonEdit wsq02=wsq_file.wsq02, action=controlp, tabIndex=40, not null, required, image="zoom";
+Edit zz06=formonly.zz06 type CHAR, tabIndex=41, noEntry;
+ComboBox wsq03=wsq_file.wsq03, tabIndex=42, not null, required, downShift, queryEditable;
+ComboBox wsq04=wsq_file.wsq04, tabIndex=43, downShift, queryEditable;
+ComboBox wsq05=wsq_file.wsq05, tabIndex=44, downShift, queryEditable;
+ComboBox wsq06=wsq_file.wsq06, tabIndex=45, downShift, queryEditable;
+ComboBox wsq07=wsq_file.wsq07, tabIndex=46, downShift, queryEditable;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=47, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(wsd_file.wsd01,formonly.gaz03,formonly.wsd02,wsd_file.wsduser,wsd_file.wsdmodu,wsd_file.wsdacti,wsd_file.wsdgrup,wsd_file.wsddate,wsd_file.wsdoriu,wsd_file.wsdorig,wse_file.wse02,formonly.zz03,wse_file.wse03,wse_file.wse04,wse_file.wse05,wse_file.wse06,wse_file.wse07,wse_file.wse08,wse_file.wse09,wse_file.wse10,wse_file.wse11,wse_file.wse12,wse_file.wse13,wsf_file.wsf03,formonly.zz04,wsf_file.wsf04,wsf_file.wsf05,wsf_file.wsf06,wsf_file.wsf07,wsf_file.wsf08,wsf_file.wsf09,wsg_file.wsg02,formonly.zz05,wsg_file.wsg03,wsg_file.wsg04,wsg_file.wsg05,wsg_file.wsg06,wsg_file.wsg07,wsg_file.wsg08,wsg_file.wsg09,wsg_file.wsg10,wsq_file.wsq02,formonly.zz06,wsq_file.wsq03,wsq_file.wsq04,wsq_file.wsq05,wsq_file.wsq06,wsq_file.wsq07,formonly.cnt)
+END -- INSTRUCTIONS
+

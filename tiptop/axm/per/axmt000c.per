@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt000c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Copy")
+Folder Folder1
+Page page01(text="Page01")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                             >
+  Enter Original Order No. [old_no    ]
+  Enter New Order Date     [new_date    ]
+  Enter New Order#         [new_no    ]
+ <                                      >
+
+}
+END -- Grid1
+END -- VBox1
+END -- page01
+END -- Folder1
+END -- axmt000c
+
+ATTRIBUTES
+Group group01:group01;
+Edit old_no=formonly.old_no type CHAR, tabIndex=1;
+DateEdit new_date=formonly.new_date type DATE, tabIndex=2;
+Edit new_no=formonly.new_no type CHAR, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.old_no,formonly.new_date,formonly.new_no)
+END -- INSTRUCTIONS
+

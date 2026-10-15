@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_chooser.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"s_chooser")
+HBox HBox1
+Group group01(text="From")
+Table s_from
+{
+[col01        |col02               ]
+[col01        |col02               ]
+[col01        |col02               ]
+[col01        |col02               ]
+[col01        |col02               ]
+[col01        |col02               ]
+[col01        |col02               ]
+[col01        |col02               ]
+[col01        |col02               ]
+[col01        |col02               ]
+
+}
+END -- s_from
+END -- group01
+Grid gr3880
+{
+
+
+
+[change]
+
+
+[add   ]
+[remove]
+
+
+
+
+
+
+}
+END -- gr3880
+Group group02(text="To")
+Table s_to
+{
+[col03        |col04               ]
+[col03        |col04               ]
+[col03        |col04               ]
+[col03        |col04               ]
+[col03        |col04               ]
+[col03        |col04               ]
+[col03        |col04               ]
+[col03        |col04               ]
+[col03        |col04               ]
+[col03        |col04               ]
+
+}
+END -- s_to
+END -- group02
+END -- HBox1
+END -- s_chooser
+
+ATTRIBUTES
+Edit col01=formonly.col01 type CHAR, tabIndex=1, title="column01";
+Edit col02=formonly.col02 type CHAR, tabIndex=2, title="column02";
+Button change:change, text="Change Table";
+Button add:add, text="-->";
+Button remove:remove, text="<--";
+Edit col03=formonly.col03 type CHAR, tabIndex=3, title="column03";
+Edit col04=formonly.col04 type CHAR, tabIndex=4, title="column04";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_from(formonly.col01,formonly.col02)
+SCREEN RECORD s_to(formonly.col03,formonly.col04)
+END -- INSTRUCTIONS
+

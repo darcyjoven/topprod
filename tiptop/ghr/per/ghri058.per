@@ -1,0 +1,121 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri058.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+ <G main                                                                                              >
+  hrcr01 [hrcr01                    ]
+  hrcr03 [hrcr03                    ]    hrcr12 [hrcr12       |hrcr12_desc ]     [imgmksg]
+  hrcr04 [hrcr04                    ]    hrcr05 [hrcr05       |hrcr05_desc ]     [       ]
+  hrcr06 [hrcr06       |hrcr14      ]    hrcr07 [hrcr07       |hrcr15      ]     [hrcrconf  ]
+  hrcr08 [hrcr08       |hrcr16      ]    hrcr09 [hrcr09       |hrcr17      ]
+  hrcr10 [hrcr10       |hrcr18      ]    hrcr11 [hrcr11       |hrcr19      ]
+ <                                                                                                    >
+ <G hrcr13                                                                                            >
+ [hrcr1a                                                                                             ]
+ [                                                                                                   ]
+ [                                                                                                   ]
+ <                                                                                                    >
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid2
+{
+
+    hrcruser[hrcruser          ]     hrcrmodu[hrcrmodu            ]
+    hrcrgrup[hrcrgrup          ]     hrcrdate[hrcrdate            ]
+    hrcrorig[hrcrorig          ]
+    hrcroriu[hrcroriu          ]
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid2
+END -- Page2
+END -- Folder1
+Table s_hrcr
+{
+[hrcr02     |hrat02      |hrat03     |hrat03_nam|hrat04   |hrat04_name |hrat05      |hrat05_n|hrat25    ]
+[hrcr02     |hrat02      |hrat03     |hrat03_nam|hrat04   |hrat04_name |hrat05      |hrat05_n|hrat25    ]
+[hrcr02     |hrat02      |hrat03     |hrat03_nam|hrat04   |hrat04_name |hrat05      |hrat05_n|hrat25    ]
+[hrcr02     |hrat02      |hrat03     |hrat03_nam|hrat04   |hrat04_name |hrat05      |hrat05_n|hrat25    ]
+[hrcr02     |hrat02      |hrat03     |hrat03_nam|hrat04   |hrat04_name |hrat05      |hrat05_n|hrat25    ]
+}
+END -- s_hrcr
+Grid Grid3
+{
+  ---------- Rows  [idx       ] /  [cnt       ]----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group main:Main, text=%"Main";
+ButtonEdit hrcr01=formonly.hrcr01 type VARCHAR, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom";
+DateEdit hrcr03=formonly.hrcr03, tabIndex=7, not null, required;
+ButtonEdit hrcr12=formonly.hrcr12, action=controlp, tabIndex=5, image="zoom";
+Edit hrcr12_desc=formonly.hrcr12_desc, tabIndex=6;
+IMAGE imgmksg=formonly.imgmksg, autoScale;
+DateEdit hrcr04=formonly.hrcr04, tabIndex=4, not null, required;
+ButtonEdit hrcr05=formonly.hrcr05, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit hrcr05_desc=formonly.hrcr05_desc, tabIndex=3;
+Edit hrcr06=formonly.hrcr06, tabIndex=8, picture="XX:XX";
+ComboBox hrcr14=formonly.hrcr14, tabIndex=9, items=(("1", "Check"),("2", "On Work"),("3", "Off Work"),("4", "forbid"),("5", "Meal"),("6", "Common"));
+Edit hrcr07=formonly.hrcr07, tabIndex=10, picture="XX:XX";
+ComboBox hrcr15=formonly.hrcr15, tabIndex=11, items=(("1", "Check"),("2", "On Work"),("3", "Off Work"),("4", "forbid"),("5", "Meal"),("6", "Common"));
+CheckBox hrcrconf=formonly.hrcrconf, tabIndex=20, text=%"confirm", valueChecked = "Y", valueUnchecked = "N";
+Edit hrcr08=formonly.hrcr08, tabIndex=12, picture="XX:XX";
+ComboBox hrcr16=formonly.hrcr16, tabIndex=13, items=(("1", "Check"),("2", "On Work"),("3", "Off Work"),("4", "forbid"),("5", "Meal"),("6", "Common"));
+Edit hrcr09=formonly.hrcr09, tabIndex=14, picture="XX:XX";
+ComboBox hrcr17=formonly.hrcr17, tabIndex=15, items=(("1", "Check"),("2", "On Work"),("3", "Off Work"),("4", "forbid"),("5", "Meal"),("6", "Common"));
+Edit hrcr10=formonly.hrcr10, tabIndex=16, picture="XX:XX";
+ComboBox hrcr18=formonly.hrcr18, tabIndex=17, items=(("1", "Check"),("2", "On Work"),("3", "Off Work"),("4", "forbid"),("5", "Meal"),("6", "Common"));
+Edit hrcr11=formonly.hrcr11, tabIndex=18, picture="XX:XX";
+ComboBox hrcr19=formonly.hrcr19, tabIndex=19, items=(("1", "Check"),("2", "On Work"),("3", "Off Work"),("4", "forbid"),("5", "Meal"),("6", "Common"));
+Group hrcr13:hrcr13, text=%"hrcr13";
+TextEdit hrcr1a=formonly.hrcr13, tabIndex=21;
+Edit hrcruser=formonly.hrcruser, tabIndex=33;
+Edit hrcrmodu=formonly.hrcrmodu, tabIndex=34;
+Edit hrcrgrup=formonly.hrcrgrup, tabIndex=35;
+Edit hrcrdate=formonly.hrcrdate, tabIndex=36;
+Edit hrcrorig=formonly.hrcrorig, tabIndex=37;
+Edit hrcroriu=formonly.hrcroriu, tabIndex=38;
+ButtonEdit hrcr02=formonly.hrcr02, action=controlp, tabIndex=22, title=%"hrcr02", image="zoom";
+Edit hrat02=formonly.hrat02, tabIndex=23, title=%"hrat02", noEntry;
+Edit hrat03=formonly.hrat03, tabIndex=24, title=%"hrat03", noEntry;
+Edit hrat03_nam=formonly.hrat03_name, tabIndex=25, title=%"hrat03_name", noEntry;
+Edit hrat04=formonly.hrat04, tabIndex=26, title=%"hrat04", noEntry;
+Edit hrat04_name=formonly.hrat04_name, tabIndex=27, title=%"hrat04_name", noEntry;
+Edit hrat05=formonly.hrat05, tabIndex=28, title=%"hrat05", noEntry;
+Edit hrat05_n=formonly.hrat05_name, tabIndex=29, title=%"hrat05_name", noEntry;
+Edit hrat25=formonly.hrat25, tabIndex=30, title=%"hrat25", noEntry;
+Edit idx=formonly.idx, tabIndex=31;
+Edit cnt=formonly.cnt, tabIndex=32;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrcr01,formonly.hrcr04,formonly.hrcr03,formonly.imgmksg,formonly.hrcrconf,formonly.hrcr05,formonly.hrcr12,formonly.hrcr05_desc,formonly.hrcr12_desc,formonly.hrcr13,formonly.idx,formonly.cnt,formonly.hrcruser,formonly.hrcrgrup,formonly.hrcrorig,formonly.hrcroriu,formonly.hrcrmodu,formonly.hrcrdate,formonly.hrcr06,formonly.hrcr08,formonly.hrcr10,formonly.hrcr07,formonly.hrcr09,formonly.hrcr11,formonly.hrcr14,formonly.hrcr15,formonly.hrcr16,formonly.hrcr17,formonly.hrcr18,formonly.hrcr19)
+SCREEN RECORD s_hrcr(formonly.hrcr02,formonly.hrat02,formonly.hrat03,formonly.hrat03_name,formonly.hrat04,formonly.hrat04_name,formonly.hrat05,formonly.hrat05_name,formonly.hrat25)
+END -- INSTRUCTIONS
+

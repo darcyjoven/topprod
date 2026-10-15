@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi161_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi161_g")
+VBox vb1
+Folder pc329
+Page page01(text="Main")
+Grid gr1397
+{
+ <G group01                                     >
+  Forecast Ver.       [a                        ]
+                      [a_desc                   ]
+  Inst No.            [b                        ]
+                      [b_desc                   ]
+  Data Source         [c                        ]
+  Sales Hist.Period   [d1        ] - [d2        ]
+  Source Ver.         [e                        ]
+                      [e_desc                   ]
+  Source Inst No.     [f                        ]
+                      [f_desc                   ]
+  Unit Price Source   [g                        ]
+
+
+
+
+
+
+ <                                              >
+
+}
+END -- gr1397
+END -- page01
+END -- pc329
+END -- vb1
+END -- atmi161_g
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit a_desc=formonly.a_desc type CHAR, tabIndex=2, noEntry;
+ButtonEdit b=formonly.b type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit b_desc=formonly.b_desc type CHAR, tabIndex=4, noEntry;
+ComboBox c=formonly.c type CHAR, tabIndex=5, not null, required, items=(("1", "Prophase Sales History"),("2", "Prophase Forecast History"),("3", "Last Year Same Period Sales History"),("4", "Simulate"));
+DateEdit d1=formonly.d1 type CHAR, tabIndex=6, not null, required;
+DateEdit d2=formonly.d2 type CHAR, tabIndex=7, not null, required;
+ButtonEdit e=formonly.e type CHAR, action=controlp, tabIndex=8, not null, required, image="zoom";
+Edit e_desc=formonly.e_desc type CHAR, tabIndex=9, noEntry;
+ButtonEdit f=formonly.f type CHAR, action=controlp, tabIndex=10, not null, required, image="zoom";
+Edit f_desc=formonly.f_desc type CHAR, tabIndex=11, noEntry;
+ComboBox g=formonly.g type CHAR, tabIndex=12, not null, required, items=(("1", "Avg. Sales Price"),("2", "History Price"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.a_desc,formonly.b,formonly.b_desc,formonly.c,formonly.d1,formonly.d2,formonly.e,formonly.e_desc,formonly.f,formonly.f_desc,formonly.g)
+END -- INSTRUCTIONS
+

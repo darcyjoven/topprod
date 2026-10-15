@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli530.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli530")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2420
+{
+ <G group01                                               >
+  Budget No.     [gie01     ]
+                 [afa02                   ]
+  Equipment Name [gie05                         ]
+  Year           [gie04     ]
+  Main Category  [gie02     ] [fab05   ] [fab02          ]
+  Department No. [gie03     ] [gem02   ]
+ <                                                        >
+
+}
+END -- gr2420
+END -- page01
+END -- folder01
+Table s_gie
+{
+[gie06 |gie07        |gie08 |gie09      |gie10        ]
+[gie06 |gie07        |gie08 |gie09      |gie10        ]
+[gie06 |gie07        |gie08 |gie09      |gie10        ]
+[gie06 |gie07        |gie08 |gie09      |gie10        ]
+[gie06 |gie07        |gie08 |gie09      |gie10        ]
+[gie06 |gie07        |gie08 |gie09      |gie10        ]
+[gie06 |gie07        |gie08 |gie09      |gie10        ]
+[gie06 |gie07        |gie08 |gie09      |gie10        ]
+[gie06 |gie07        |gie08 |gie09      |gie10        ]
+[gie06 |gie07        |gie08 |gie09      |gie10        ]
+
+}
+END -- s_gie
+Grid gr2421
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2421
+END -- VBox1
+END -- agli530
+
+TABLES
+gie_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit gie01=gie_file.gie01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Budget No.  ";
+Edit afa02=formonly.afa02 type CHAR, tabIndex=2, noEntry;
+Edit gie05=gie_file.gie05, tabIndex=3, not null, required;
+Edit gie04=gie_file.gie04, tabIndex=4;
+ButtonEdit gie02=gie_file.gie02, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Main Category";
+Edit fab05=formonly.fab05 type VARCHAR, tabIndex=6, noEntry;
+Edit fab02=formonly.fab02 type VARCHAR, tabIndex=7, noEntry;
+ButtonEdit gie03=gie_file.gie03, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P> Query Department";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=9, noEntry;
+Edit gie06=gie_file.gie06, tabIndex=10, title="Month", not null, required;
+Edit gie07=gie_file.gie07, tabIndex=11, title="Unit Price", not null, required;
+ButtonEdit gie08=gie_file.gie08, action=controlp, tabIndex=12, title="Curr.", not null, required, image="zoom", comment="<^P> Qry Currency";
+Edit gie09=gie_file.gie09, tabIndex=13, title="Qty", not null, required;
+Edit gie10=gie_file.gie10, tabIndex=14, title="Amount", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gie(gie_file.gie06,gie_file.gie07,gie_file.gie08,gie_file.gie09,gie_file.gie10)
+SCREEN RECORD Undefined(gie_file.gie01,formonly.afa02,gie_file.gie05,gie_file.gie04,gie_file.gie02,formonly.fab05,formonly.fab02,gie_file.gie03,formonly.gem02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

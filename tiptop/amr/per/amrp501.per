@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amrp501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amrp501")
+Group g01
+VBox VBox1
+Grid gr3887
+{
+ Version Number         [ver_no    ]
+
+}
+END -- gr3887
+Grid gr3888
+{
+ <G group01                                                                      >
+  Simulation Item No. Source      [lot_type        ]
+  BOM Explosion Levels            [lot_bm    ]
+  Source Code                     [lot_no1         ][lot_no2             ]
+  Demand/Supply Date QBE          [bdate     ][edate     ]
+  Time Bucket Method              [buk_type  ][buk_code  ]
+  PR/PO Delivery in advance allowed (Reschedule) Adjust Days [po_days   ]
+  W/O   Delivery in advance allowed (Reschedule) Adjust Days [wo_days   ]
+ [incl_id                                                     ]
+ [incl_so                                                     ]
+ [msb_expl                                                    ]
+ [mss_expl                                                    ]
+ [sub_flag                                                    ]
+ [qvl_flag                                                    ]
+  Please Enter MRP Warehouse Version [g_msp01   ]
+ <                                                                               >
+
+}
+END -- gr3888
+END -- VBox1
+END -- g01
+END -- amrp501
+
+ATTRIBUTES
+Edit ver_no=formonly.ver_no type CHAR, tabIndex=1;
+Group group01:group01;
+ComboBox lot_type=formonly.lot_type type CHAR, tabIndex=2, not null, required, items=(("1", "MPSPlan"),("2", "Actual Work Order"),("3", "Customer Order"),("4", "Item#"),("5", "NetChange"));
+Edit lot_bm=formonly.lot_bm type CHAR, tabIndex=3, comment="0:No Exploding 1:Explode one Level 2:Explode two Levels ...";
+Edit lot_no1=formonly.lot_no1 type CHAR, tabIndex=4, comment="Use \'*\' or \'?\'  For any character matched!";
+Edit lot_no2=formonly.lot_no2 type CHAR, tabIndex=5, comment="Use \'*\' or \'?\'  For any character matched!";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=6;
+DateEdit edate=formonly.edate type DATE, tabIndex=7;
+ComboBox buk_type=formonly.buk_type type CHAR, tabIndex=8, not null, required, items=(("1", "By Time Bucket No."),("2", "Day"),("3", "Week"),("4", "10-Day"),("5", "Month"));
+Edit buk_code=formonly.buk_code type CHAR, tabIndex=9;
+Edit po_days=formonly.po_days type CHAR, tabIndex=10, comment="0:No Advance Delivery Date -1:Advance days by Item Master";
+Edit wo_days=formonly.wo_days type CHAR, tabIndex=11, comment="0:No Advance Delivery Date -1:Advance days by Item Master";
+CheckBox incl_id=formonly.incl_id type CHAR, tabIndex=12, text="Add to Independent Requirment Table", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox incl_so=formonly.incl_so type CHAR, tabIndex=13, text="Add to Actual Order Table", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox msb_expl=formonly.msb_expl type CHAR, tabIndex=14, text="Add to MPS(Unfilled W/O) D/L Material Demand", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox mss_expl=formonly.mss_expl type CHAR, tabIndex=15, text="Parts Required For PLM Parts", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sub_flag=formonly.sub_flag type CHAR, tabIndex=16, text="Handing REP/SUB Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox qvl_flag=formonly.qvl_flag type CHAR, tabIndex=17, text="Process Assigned Brand", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit g_msp01=formonly.g_msp01 type CHAR, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ver_no,formonly.lot_type,formonly.lot_bm,formonly.lot_no1,formonly.lot_no2,formonly.bdate,formonly.edate,formonly.buk_type,formonly.buk_code,formonly.po_days,formonly.wo_days,formonly.incl_id,formonly.incl_so,formonly.msb_expl,formonly.mss_expl,formonly.sub_flag,formonly.qvl_flag,formonly.g_msp01)
+END -- INSTRUCTIONS
+

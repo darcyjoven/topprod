@@ -1,0 +1,266 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aaps100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aaps100")
+Folder pc34
+Page page01(text="Main")
+VBox vb3
+Grid gr324
+{
+ <G group01                                                    >
+ [apz01                                                   ]
+ <                                                             >
+ <G group02                                                    >
+ [apz02                                                   ]
+  Plant # where AGL is                            [apz02p    ]
+  Carry Voucher to General Ledger Default Account [apz02b    ]
+  AGL Module Book No. 2                           [apz02c    ]
+ <                                                             >
+ <G group03                                                    >
+ [apz03                                                   ]
+ <                                                             >
+ <G group04                                                    >
+ [apz04                                                   ]
+  Plant No. where ANM Module is                   [apz04p    ]
+ <                                                             >
+ <G group05                                                    >
+ [apz07                                                   ]
+ <                                                             >
+ <G group06                                                    >
+  Closing Date [apz56       ]Account Locking Date [apz57       ]
+
+ <                                                             >
+
+}
+END -- gr324
+END -- vb3
+END -- page01
+Page page02(text="General")
+VBox VBox1
+Grid gr325
+{
+ <G group07                                              > <G group08                                       >
+  On-Hold Reason Code for Invo!=Receiving $ [apz12     ]   [apz08                               ]
+ <                                                       > <                                                >
+ <G group09                                              ><G group08_1                                     >
+ [apz13                                         ]         [apz61         ]
+ [apz14                                         ]         [              ]
+ [apz15                                         ]         [              ]
+ [apz16                                         ]         <                                                >
+ [label1                           |apz71             ]   <G group10                                       >
+ [label2                           |apz72             ]   [apz60                                         ]
+ [label3                           |apz73             ]   [apz06                                         ]
+                                                          [apz05                                         ]
+ <                                                       ><                                                >
+ <G group12                                              ><G group11                                       >
+  A/P Aging 1/2/3/4th Section Days [apz][ap1][ap2][ap3]   [apz27                                         ]
+ [apz59                                         ]          End of Month Revaluation Year/Period [apz2][ap]
+ [dummy04                         ][apz33             ]   [apz62                                         ]
+ <                                                       >[apz69                                         ]
+ <G group19                                              ><                                                >
+   Declaration No. [apz63          ]                      <G group3                                        >
+ <                                                       >[apz74                         ]
+ <G group1                                               ><                                                >
+   [apz68         ]
+    Transf Doc     [apz64          ]
+    Trans          [apz70          ]
+    Transf AP TYPE [apz65          ]
+    Transf DOC TYPE[apz66          ]
+    Return Doc     [apz67          ]
+ <                                                       >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr325
+END -- VBox1
+END -- page02
+Page page03(text="Entry")
+VBox vb5
+Grid gr326
+{
+ <G group13                                              >
+ [apz31                                              ]
+ [apz32                                              ]
+ [apz40                                              ]
+ <                                                       >
+ <G group14                                              >
+  Bank Outward Acct Def Transaction Code [a1]
+ <                                                       >
+ <G group2                                               >
+ [apz42                               ]
+ <                                                       >
+
+
+
+
+
+
+
+
+
+}
+END -- gr326
+END -- vb5
+END -- page03
+Page page04(text="Carry Voucher")
+VBox vb6
+Grid gr327
+{
+ <G group16                                              >
+ [dummy01                               ]
+  [apz43                                 ]
+ <                                                       >
+ <G group17                                              >
+ [dummy02                               ]
+  [apz44                                 ]
+ <                                                       >
+ <G group18                                              >
+ [dummy03                               ]
+  [apz52                                 ]
+
+ <                                                       >
+
+}
+END -- gr327
+END -- vb6
+END -- page04
+Page userdefined_field(text=%"User Defined Field")
+VBox VBox2
+Grid gr328
+{
+ userdefined_field01[apzud01                              ]userdefined_field07[apzud07              ] userdefined_field13[apzud13              ]
+                    [                                     ]userdefined_field08[apzud08              ] userdefined_field14[apzud14              ]
+ userdefined_field02[apzud02              ]                userdefined_field09[apzud09              ] userdefined_field15[apzud15              ]
+ userdefined_field03[apzud03              ]                userdefined_field10[apzud10              ]
+ userdefined_field04[apzud04              ]                userdefined_field11[apzud11              ]
+ userdefined_field05[apzud05              ]                userdefined_field12[apzud12              ]
+ userdefined_field06[apzud06              ]
+
+}
+END -- gr328
+END -- VBox2
+END -- userdefined_field
+END -- pc34
+END -- aaps100
+
+TABLES
+apz_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox apz01=apz_file.apz01, tabIndex=1, text="Open AAP module to users  ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02;
+CheckBox apz02=apz_file.apz02, tabIndex=2, text="Link to AGL Module ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit apz02p=apz_file.apz02p, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Plant";
+ButtonEdit apz02b=apz_file.apz02b, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Book No.";
+ButtonEdit apz02c=apz_file.apz02c, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Book No.";
+Group group03:group03;
+CheckBox apz03=apz_file.apz03, tabIndex=6, text="Link to MFG System", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04;
+CheckBox apz04=apz_file.apz04, tabIndex=7, text="Link to ANM Module", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit apz04p=apz_file.apz04p, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Plant ";
+Group group05:group05;
+CheckBox apz07=apz_file.apz07, tabIndex=9, text="Ck WdTk When Ent Invo", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Check WdTk When Enter Invoice ";
+Group group06:group06;
+Edit apz56=apz_file.apz56, tabIndex=10;
+DateEdit apz57=apz_file.apz57, tabIndex=11;
+Group group07:group07;
+ButtonEdit apz12=apz_file.apz12, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry On-Hold Code";
+Group group08:group08, text="Update Amt aft Multi-Invoice Entered";
+RadioGroup apz08=apz_file.apz08, tabIndex=13, items=(("1", "Update Now"),("2", "Query"),("3", "No Update"));
+Group group09:group09;
+CheckBox apz13=apz_file.apz13, tabIndex=14, text="Separate Default Acct by Department", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz14=apz_file.apz14, tabIndex=15, text="Check Business Uniform No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz15=apz_file.apz15, tabIndex=16, text="Receipt > Invoice Amt Allowed", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz16=apz_file.apz16, tabIndex=17, text="Modf Pur.U/P when Pur.Invo Billing", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label1:Label1, text=%"Petty Default Payment Condition";
+ButtonEdit apz71=formonly.apz71, action=controlp, tabIndex=63, image="zoom";
+Label label2:Label2, text=%"Petty Cash Reimburse Bank";
+ButtonEdit apz72=formonly.apz72, action=controlp, tabIndex=64, image="zoom";
+Label label3:Label3, text=%"Petty cash payments transaction codes";
+ButtonEdit apz73=formonly.apz73, action=controlp, tabIndex=65, image="zoom";
+Group group08_1:group08_1, text="Cross-check prepayment with that on PO";
+RadioGroup apz61=apz_file.apz61, tabIndex=37, items=(("1", "Yes"),("2", "No"),("3", "By Vendor"));
+Group group10:group10;
+CheckBox apz60=apz_file.apz60, tabIndex=18, text="Auto Generate Billing Allowance When Confirm Purchase Invoice", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz06=apz_file.apz06, tabIndex=19, text="When payment ,contra AP un-carry Voc.", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz05=apz_file.apz05, tabIndex=20, text="When payment ,contra the AP un-comfirm", not null, required, INCLUDE = ("Y", "N"), valueChecked = "Y", valueUnchecked = "N";
+Group group12:group12;
+Edit apz=apz_file.apz45, tabIndex=24;
+Edit ap1=apz_file.apz46, tabIndex=25;
+Edit ap2=apz_file.apz47, tabIndex=26;
+Edit ap3=apz_file.apz48, tabIndex=27;
+CheckBox apz59=apz_file.apz59, tabIndex=28, text="Enter MISC in Misc Billing Note Body", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy04:dummy04, text="Triangle Trade Parament Setting";
+ComboBox apz33=apz_file.apz33, tabIndex=29, not null, required, queryEditable, comment="B:Bank Buy S:Sell M:Bank Average C:Customs Buy D:Sell ", items=(("B", "Bank Buying"),("S", "Bank Selling"),("M", "Bank Average ExRt"),("C", "Customs Buy"),("D", "Customs Sell"));
+Group group11:group11;
+CheckBox apz27=apz_file.apz27, tabIndex=21, text="Spread Approved in End of Month Revaluation,Un-Next Month", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit apz2=apz_file.apz21, tabIndex=22;
+Edit ap=apz_file.apz22, tabIndex=23;
+CheckBox apz62=apz_file.apz62, tabIndex=38, text="No EoM Revaluation for Pre/Temp-Paid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz69=apz_file.apz69, tabIndex=60, text="Create rate by Doc Date", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group19:group19;
+ButtonEdit apz63=apz_file.apz63, action=controlp, tabIndex=39, not null, required, image="zoom";
+Group group3:Group3;
+CheckBox apz74=formonly.apz74, tabIndex=66, text=%"CUST_ACC", not null, valueChecked = "Y", valueUnchecked = "N";
+Group group1:Group1;
+CheckBox apz68=apz_file.apz68, tabIndex=44, text=%"Transf", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit apz64=apz_file.apz64, action=controlp, tabIndex=40, image="zoom";
+ButtonEdit apz70=apz_file.apz70, action=controlp, tabIndex=62, image="zoom", scroll;
+ButtonEdit apz65=apz_file.apz65, action=controlp, tabIndex=41, not null, image="zoom";
+ButtonEdit apz66=apz_file.apz66, action=controlp, tabIndex=42, image="zoom";
+ButtonEdit apz67=apz_file.apz67, action=controlp, tabIndex=43, image="zoom";
+Group group13:group13;
+CheckBox apz31=apz_file.apz31, tabIndex=30, text="Auto Gen Entry when Enter Pur.Invo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz32=apz_file.apz32, tabIndex=31, text="Auto Gen Entry when Ent MISC Invo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apz40=apz_file.apz40, tabIndex=32, text="Auto Gen Entry when Enter Payment", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group14:group14;
+ButtonEdit a1=apz_file.apz58, action=controlp, tabIndex=33, image="zoom";
+Group group2:Group2, text=%"Voucher Method for AP revaluation";
+RadioGroup apz42=apz_file.apz42, tabIndex=61, items=(("1", "1"),("2", "2"),("3", "3"));
+Group group16:group16;
+Label dummy01:dummy01, text="A/P Voucher Memo Format";
+RadioGroup apz43=apz_file.apz43, tabIndex=34, items=(("0", "Blank"),("1", "Vender"),("2", "Vender+Invoice/Accounts #"));
+Group group17:group17;
+Label dummy02:dummy02, text="Payment/Contra Voucher Memo Format";
+RadioGroup apz44=apz_file.apz44, tabIndex=35, items=(("0", "Blank"),("1", "Vender"),("2", "Vender+Note Due"));
+Group group18:group18;
+Label dummy03:dummy03, text="Credit Acct Type When Pay Demand Note";
+RadioGroup apz52=apz_file.apz52, tabIndex=36, items=(("1", "Notes Payable"),("2", "Cash In Bank"));
+TextEdit apzud01=apz_file.apzud01, tabIndex=45;
+Edit apzud07=apz_file.apzud07, tabIndex=51;
+DateEdit apzud13=apz_file.apzud13, tabIndex=56;
+Edit apzud08=apz_file.apzud08, tabIndex=46;
+DateEdit apzud14=apz_file.apzud14, tabIndex=57;
+Edit apzud02=apz_file.apzud02, tabIndex=59;
+Edit apzud09=apz_file.apzud09, tabIndex=52;
+DateEdit apzud15=apz_file.apzud15, tabIndex=58;
+Edit apzud03=apz_file.apzud03, tabIndex=47;
+Edit apzud10=apz_file.apzud10, tabIndex=53;
+Edit apzud04=apz_file.apzud04, tabIndex=48;
+Edit apzud11=apz_file.apzud11, tabIndex=54;
+Edit apzud05=apz_file.apzud05, tabIndex=49;
+Edit apzud12=apz_file.apzud12, tabIndex=55;
+Edit apzud06=apz_file.apzud06, tabIndex=50;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(apz_file.apz01,apz_file.apz02,apz_file.apz02p,apz_file.apz02b,apz_file.apz02c,apz_file.apz03,apz_file.apz04,apz_file.apz04p,apz_file.apz07,apz_file.apz56,apz_file.apz57,apz_file.apz12,apz_file.apz08,apz_file.apz13,apz_file.apz14,apz_file.apz15,apz_file.apz16,apz_file.apz61,apz_file.apz60,apz_file.apz06,apz_file.apz05,apz_file.apz45,apz_file.apz46,apz_file.apz47,apz_file.apz48,apz_file.apz59,apz_file.apz33,apz_file.apz27,apz_file.apz21,apz_file.apz22,apz_file.apz62,apz_file.apz63,apz_file.apz68,apz_file.apz64,apz_file.apz65,apz_file.apz66,apz_file.apz67,apz_file.apz31,apz_file.apz32,apz_file.apz40,apz_file.apz58,apz_file.apz43,apz_file.apz44,apz_file.apz52,apz_file.apzud01,apz_file.apzud08,apz_file.apzud03,apz_file.apzud04,apz_file.apzud05,apz_file.apzud06,apz_file.apzud07,apz_file.apzud09,apz_file.apzud10,apz_file.apzud11,apz_file.apzud12,apz_file.apzud13,apz_file.apzud14,apz_file.apzud15,apz_file.apzud02,apz_file.apz69,apz_file.apz42,apz_file.apz70,formonly.apz71,formonly.apz72,formonly.apz73,formonly.apz74)
+END -- INSTRUCTIONS
+

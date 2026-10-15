@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_connuser.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table ds1
+{
+[gbq05     |gbq03     |zx02        |gbq06  |gbq02                  |gbq11     |process ]
+[gbq05     |gbq03     |zx02        |gbq06  |gbq02                  |gbq11     |process ]
+[gbq05     |gbq03     |zx02        |gbq06  |gbq02                  |gbq11     |process ]
+[gbq05     |gbq03     |zx02        |gbq06  |gbq02                  |gbq11     |process ]
+[gbq05     |gbq03     |zx02        |gbq06  |gbq02                  |gbq11     |process ]
+[gbq05     |gbq03     |zx02        |gbq06  |gbq02                  |gbq11     |process ]
+[gbq05     |gbq03     |zx02        |gbq06  |gbq02                  |gbq11     |process ]
+[gbq05     |gbq03     |zx02        |gbq06  |gbq02                  |gbq11     |process ]
+[gbq05     |gbq03     |zx02        |gbq06  |gbq02                  |gbq11     |process ]
+[gbq05     |gbq03     |zx02        |gbq06  |gbq02                  |gbq11     |process ]
+
+
+}
+END -- ds1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+
+ ----------[label1   |cn2       ]----------
+
+
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+zx_file,
+gbq_file
+ATTRIBUTES
+Edit gbq05=gbq_file.gbq05, tabIndex=1, title=%"Dept";
+Edit gbq03=gbq_file.gbq03, tabIndex=1, title=%"User ID", not null;
+Edit zx02=zx_file.zx02, tabIndex=1, title=%"User Name";
+Edit gbq06=formonly.gbq06 type CHAR, tabIndex=1, title=%"GUI";
+Edit gbq02=gbq_file.gbq02, tabIndex=1, title=%"FGLSERVER", not null, scroll;
+Edit gbq11=gbq_file.gbq11, tabIndex=1, title=%"AP Server", scroll;
+Edit process=formonly.process type CHAR, tabIndex=2, title=%"Processes";
+Label label1:Label1, text=%"Row";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=1;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gbq(gbq_file.gbq02,gbq_file.gbq03,gbq_file.gbq05,formonly.gbq06,gbq_file.gbq11,zx_file.zx02,formonly.process)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

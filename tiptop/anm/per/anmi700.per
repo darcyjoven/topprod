@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi700")
+VBox VBox1
+Folder pc755
+Page page01(text="Main")
+Table s_nnn
+{
+[nnn01|nnn02               |nnn06 |nnn03    |nnn07          |nnn04                   |aag02                                             |nnn041                  |aag021                                            |nnn05         |nnnact]
+[nnn01|nnn02               |nnn06 |nnn03    |nnn07          |nnn04                   |aag02                                             |nnn041                  |aag021                                            |nnn05         |nnnact]
+[nnn01|nnn02               |nnn06 |nnn03    |nnn07          |nnn04                   |aag02                                             |nnn041                  |aag021                                            |nnn05         |nnnact]
+[nnn01|nnn02               |nnn06 |nnn03    |nnn07          |nnn04                   |aag02                                             |nnn041                  |aag021                                            |nnn05         |nnnact]
+[nnn01|nnn02               |nnn06 |nnn03    |nnn07          |nnn04                   |aag02                                             |nnn041                  |aag021                                            |nnn05         |nnnact]
+[nnn01|nnn02               |nnn06 |nnn03    |nnn07          |nnn04                   |aag02                                             |nnn041                  |aag021                                            |nnn05         |nnnact]
+[nnn01|nnn02               |nnn06 |nnn03    |nnn07          |nnn04                   |aag02                                             |nnn041                  |aag021                                            |nnn05         |nnnact]
+[nnn01|nnn02               |nnn06 |nnn03    |nnn07          |nnn04                   |aag02                                             |nnn041                  |aag021                                            |nnn05         |nnnact]
+[nnn01|nnn02               |nnn06 |nnn03    |nnn07          |nnn04                   |aag02                                             |nnn041                  |aag021                                            |nnn05         |nnnact]
+[nnn01|nnn02               |nnn06 |nnn03    |nnn07          |nnn04                   |aag02                                             |nnn041                  |aag021                                            |nnn05         |nnnact]
+
+}
+END -- s_nnn
+END -- page01
+END -- pc755
+Grid gr4043
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4043
+END -- VBox1
+END -- anmi700
+
+TABLES
+nnn_file
+ATTRIBUTES
+Edit nnn01=nnn_file.nnn01, tabIndex=1, title="Type", not null, required;
+Edit nnn02=nnn_file.nnn02, tabIndex=2, title="Name";
+ComboBox nnn06=nnn_file.nnn06, tabIndex=3, title="Cate.", not null, required, queryEditable, items=(("1", %"Purchase Loan"),("2", %"Issue Commercial Paper"),("3", %"Bank Acceptance Bill"),("4", %"Export Amount"),("5", %"Other"));
+ComboBox nnn03=nnn_file.nnn03, tabIndex=4, title="Interest", not null, required, queryEditable, items=(("0", %"No"),("1", %"Yes"));
+CheckBox nnn07=nnn_file.nnn07, tabIndex=5, title="Gent Bank Trn.", not null, valueChecked = "Y", valueUnchecked = "N", comment="Y:Yes   N:No    ";
+ButtonEdit nnn04=nnn_file.nnn04, action=controlp, tabIndex=6, title="Account", image="zoom", comment="<^P>Qry Account ";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=7, title="Account Title", noEntry;
+ButtonEdit nnn041=nnn_file.nnn041, action=controlp, tabIndex=8, title="Account2", image="zoom", comment="<^P>Qry Account ";
+Edit aag021=formonly.aag021 type VARCHAR, tabIndex=9, title="Account Title2", noEntry;
+CheckBox nnn05=nnn_file.nnn05, tabIndex=10, title="Generate Note", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y:Yes   N:No    ";
+CheckBox nnnact=nnn_file.nnnacti, tabIndex=11, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nnn(nnn_file.nnn01,nnn_file.nnn02,nnn_file.nnn06,nnn_file.nnn03,nnn_file.nnn07,nnn_file.nnn04,formonly.aag02,nnn_file.nnn041,formonly.aag021,nnn_file.nnn05,nnn_file.nnnacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

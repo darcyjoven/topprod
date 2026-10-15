@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt5002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmt5002")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+ <G group01                                                       >
+ [ofa71                            ]
+
+
+
+ <                                                                >
+ <G group02                                                       >
+ [ofa72                            ]
+ [ofa73                            ]
+ <                                                                >
+ <G group03                                                       >
+  Prt Freq Use Desc No [ofa741][ofa742][ofa743]
+ <                                                                >
+ <G group04                                                       >
+ [ofa75                            ]
+
+ <                                                                >
+
+}
+END -- Grid1
+END -- page01
+END -- Folder1
+END -- VBox1
+END -- axmt5002
+
+ATTRIBUTES
+Group group01:group01, text="Item # Printing Method";
+RadioGroup ofa71=formonly.ofa71 type CHAR, tabIndex=1, items=(("1", %"Company Item#"),("2", %"Customer Item No."),("3", %"Co. Item# & Customer Item#"));
+Group group02:group02, text="Print Data";
+CheckBox ofa72=formonly.ofa72 type CHAR, tabIndex=2, text="Print FCC", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="FCC#(Federal Communications Commission)";
+CheckBox ofa73=formonly.ofa73 type CHAR, tabIndex=3, text="Print Software Object", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03;
+Edit ofa741=formonly.ofa741 type CHAR, tabIndex=4;
+Edit ofa742=formonly.ofa742 type CHAR, tabIndex=5;
+Edit ofa743=formonly.ofa743 type CHAR, tabIndex=6;
+Group group04:group04, text="Packing Type";
+RadioGroup ofa75=formonly.ofa75 type CHAR, tabIndex=7, items=(("1", %"PLT"),("2", %"CTN"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ofa71,formonly.ofa72,formonly.ofa73,formonly.ofa741,formonly.ofa742,formonly.ofa743,formonly.ofa75)
+END -- INSTRUCTIONS
+

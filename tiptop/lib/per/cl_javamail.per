@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_javamail.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Enter JavaMail Receiver E-mail")
+Grid gr3683
+{
+ <T s_m                                                                >
+ [m03   |m01       |m02                                     |m07       ]
+ [m03   |m01       |m02                                     |m07       ]
+ [m03   |m01       |m02                                     |m07       ]
+ [m03   |m01       |m02                                     |m07       ]
+ [m03   |m01       |m02                                     |m07       ]
+ [m03   |m01       |m02                                     |m07       ]
+ [m03   |m01       |m02                                     |m07       ]
+ [m03   |m01       |m02                                     |m07       ]
+ [m03   |m01       |m02                                     |m07       ]
+ [m03   |m01       |m02                                     |m07       ]
+ <                                                                     >
+
+}
+END -- gr3683
+END -- cl_javamail
+
+ATTRIBUTES
+Table s_m:s_m;
+ComboBox m03=formonly.m03 type CHAR, tabIndex=1, title="Type", not null, required, items=(("1", %"Receiver"),("2", %"C.C."),("3", %"Secret C.C"));
+ButtonEdit m01=formonly.m01 type CHAR, action=controlp, tabIndex=2, title="Receiver", not null, required, image="zoom";
+Edit m02=formonly.m02 type CHAR, tabIndex=3, title="E-mail Address", not null, required;
+ComboBox m07=formonly.m07 type CHAR, tabIndex=4, title="Attachment", items=(("1", "Adobe Acrobat (*.pdf)"),("2", "Crystal Report (*.rpt)"),("3", "Microsoft Word (*.doc)"),("4", "Microsoft Excel(*.xls)"),("5", "Microsoft Excel - Print header and footer on each page (*.xls)"),("6", "Microsoft Excel - Data only (*.xls)"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_m(formonly.m03,formonly.m01,formonly.m02,formonly.m07)
+END -- INSTRUCTIONS
+

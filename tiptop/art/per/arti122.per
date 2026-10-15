@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti122.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="arti122")
+VBox VBox1
+Folder folder00
+Page Page2(text=%"Basic Data")
+Grid gr2
+{
+
+   Goods Code [rth01                                   ]   Series        [ima1006        ]
+   Goods Name [ima02                                   ]   Size          [ima1007        ]
+   Goods Spec.[ima021                                  ]   Fancy         [ima1009        ]
+   Brand Class[ima1004        ]                            Inventory Unit[ima25          |ima25_desc                              ]
+   Brand      [ima1005        ]                            Organization  [rthplant       |rthplant_desc                           ]
+
+
+}
+END -- gr2
+END -- Page2
+END -- folder00
+Table s_rth
+{
+[rth02          |rth02_desc                              |rth03           |rth04               |rth05               |rth06               |rth08               |rth09       |rth07   |rthacti |rthpos  ]
+[rth02          |rth02_desc                              |rth03           |rth04               |rth05               |rth06               |rth08               |rth09       |rth07   |rthacti |rthpos  ]
+[rth02          |rth02_desc                              |rth03           |rth04               |rth05               |rth06               |rth08               |rth09       |rth07   |rthacti |rthpos  ]
+[rth02          |rth02_desc                              |rth03           |rth04               |rth05               |rth06               |rth08               |rth09       |rth07   |rthacti |rthpos  ]
+[rth02          |rth02_desc                              |rth03           |rth04               |rth05               |rth06               |rth08               |rth09       |rth07   |rthacti |rthpos  ]
+
+
+}
+END -- s_rth
+Grid gr5
+{
+
+  ------ Rows[idx ]/[cnt ] --- Items[cn2 ] --------
+
+}
+END -- gr5
+END -- VBox1
+END -- arti122
+
+TABLES
+rth_file
+ATTRIBUTES
+ButtonEdit rth01=rth_file.rth01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit ima1006=formonly.ima1006 type CHAR, tabIndex=6, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima1007=formonly.ima1007 type CHAR, tabIndex=7, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit ima1009=formonly.ima1009 type CHAR, tabIndex=8, noEntry;
+Edit ima1004=formonly.ima1004 type CHAR, tabIndex=4, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=9, noEntry;
+Edit ima25_desc=formonly.ima25_desc type CHAR, tabIndex=11, noEntry;
+Edit ima1005=formonly.ima1005 type CHAR, tabIndex=5, noEntry;
+ButtonEdit rthplant=rth_file.rthplant, action=controlp, tabIndex=10, noEntry, image="zoom.png";
+Edit rthplant_desc=formonly.rthplant_desc type CHAR, tabIndex=12, noEntry;
+ButtonEdit rth02=rth_file.rth02, action=controlp, tabIndex=13, title="Pricing Unit", not null, required, image="zoom.png";
+Edit rth02_desc=formonly.rth02_desc type CHAR, tabIndex=14, title="Unit Name", noEntry;
+Edit rth03=rth_file.rth03, tabIndex=15, title="Unit Conversion Rate", noEntry;
+Edit rth04=rth_file.rth04, tabIndex=16, title="Self-defined Price", not null;
+Edit rth05=rth_file.rth05, tabIndex=17, title="Self-defined Member Price", not null;
+Edit rth06=rth_file.rth06, tabIndex=18, title="Self-defined Minimax Price", not null;
+Edit rth08=rth_file.rth08, tabIndex=19, title=%"rth08", not null;
+DateEdit rth09=rth_file.rth09, tabIndex=20, title=%"rth09", not null;
+CheckBox rth07=rth_file.rth07, tabIndex=21, title=%"rth07", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rthacti=rth_file.rthacti, tabIndex=22, title="Valid?", not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rthpos=rth_file.rthpos, tabIndex=23, title="Pass POS?", noEntry, not null, items=(("1", "Add-No passed"),("2", "Modify-No passed"),("3", "Passed"),("4", "Modifying-No passed"));
+Edit idx=formonly.idx type CHAR, tabIndex=24, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=25, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=26;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rth(rth_file.rth02,formonly.rth02_desc,rth_file.rth03,rth_file.rth04,rth_file.rth05,rth_file.rth06,rth_file.rth08,rth_file.rth09,rth_file.rth07,rth_file.rthacti,rth_file.rthpos)
+SCREEN RECORD Undefined(rth_file.rth01,formonly.ima1006,formonly.ima02,formonly.ima1007,formonly.ima021,formonly.ima1009,formonly.ima1004,formonly.ima25,formonly.ima25_desc,formonly.ima1005,rth_file.rthplant,formonly.rthplant_desc,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

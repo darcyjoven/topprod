@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr320.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr320")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                   >
+  Work/Order No.      [sfb01               ]
+  Work/Order Style    [sfb02               ]
+  Work/Order Status   [sfb04               ]
+ <                                            >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                     ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- asfr320
+
+TABLES
+sfb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit sfb01=sfb_file.sfb01, tabIndex=1;
+ComboBox sfb02=sfb_file.sfb02, tabIndex=2, comment="1.Gnrl 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm l 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm 13.Predic 15.Trial ", items=(("1", %"Gnrl"),("5", %"Rework"),("7", %"Sub."),("8", %"Rwr"),("11", %"Disasm"),("13", %"Predic"),("15", %"Trial"));
+Edit sfb04=sfb_file.sfb04, tabIndex=3;
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfb_file.sfb01,sfb_file.sfb02,sfb_file.sfb04,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1109.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat1109")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+Table s_fbf2
+{
+[fbf02      |fbf03          |fbf031    |faj06                    |faj18  |fbf04   |fbf06               |fbf072              |fbf082                   |fbf112                |fbf092               ]
+[fbf02      |fbf03          |fbf031    |faj06                    |faj18  |fbf04   |fbf06               |fbf072              |fbf082                   |fbf112                |fbf092               ]
+[fbf02      |fbf03          |fbf031    |faj06                    |faj18  |fbf04   |fbf06               |fbf072              |fbf082                   |fbf112                |fbf092               ]
+[fbf02      |fbf03          |fbf031    |faj06                    |faj18  |fbf04   |fbf06               |fbf072              |fbf082                   |fbf112                |fbf092               ]
+[fbf02      |fbf03          |fbf031    |faj06                    |faj18  |fbf04   |fbf06               |fbf072              |fbf082                   |fbf112                |fbf092               ]
+[fbf02      |fbf03          |fbf031    |faj06                    |faj18  |fbf04   |fbf06               |fbf072              |fbf082                   |fbf112                |fbf092               ]
+[fbf02      |fbf03          |fbf031    |faj06                    |faj18  |fbf04   |fbf06               |fbf072              |fbf082                   |fbf112                |fbf092               ]
+[fbf02      |fbf03          |fbf031    |faj06                    |faj18  |fbf04   |fbf06               |fbf072              |fbf082                   |fbf112                |fbf092               ]
+[fbf02      |fbf03          |fbf031    |faj06                    |faj18  |fbf04   |fbf06               |fbf072              |fbf082                   |fbf112                |fbf092               ]
+[fbf02      |fbf03          |fbf031    |faj06                    |faj18  |fbf04   |fbf06               |fbf072              |fbf082                   |fbf112                |fbf092               ]
+
+}
+END -- s_fbf2
+END -- page01
+END -- folder01
+Grid gr2250
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2250
+END -- vb1
+END -- afat1109
+
+TABLES
+fbf_file
+ATTRIBUTES
+Edit fbf02=formonly.fbf02 type SMALLINT, tabIndex=1, title="Line No.", noEntry;
+Edit fbf03=formonly.fbf03 type VARCHAR, tabIndex=2, title="Property No.", noEntry;
+Edit fbf031=formonly.fbf031 type VARCHAR, tabIndex=3, title="Add No.", noEntry;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=4, title="Chinese Name", noEntry;
+Edit faj18=formonly.faj18 type CHAR, tabIndex=5, title="Unit", noEntry;
+Edit fbf04=formonly.fbf04 type VARCHAR, tabIndex=6, title="Qty", noEntry;
+Edit fbf06=formonly.fbf06 type CHAR, tabIndex=12, title="Sale Amount(O.C)", noEntry;
+Edit fbf072=fbf_file.fbf072, tabIndex=7, title="Sale Amount(H.C)", not null, required;
+Edit fbf082=fbf_file.fbf082, tabIndex=8, title="Undepreciated Amount", not null, required;
+Edit fbf112=fbf_file.fbf112, tabIndex=9, title="Deduction Preparation", noEntry;
+Edit fbf092=fbf_file.fbf092, tabIndex=10, title="Settlement Profit/Loss", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fbf2(formonly.fbf02,formonly.fbf03,formonly.fbf031,formonly.faj06,formonly.faj18,formonly.fbf04,formonly.fbf06,fbf_file.fbf072,fbf_file.fbf082,fbf_file.fbf112,fbf_file.fbf092)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

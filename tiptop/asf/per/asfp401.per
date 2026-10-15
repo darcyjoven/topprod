@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/4fd/asfp401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp401")
+VBox vbox1
+Folder pc127
+Page page01(text=%"Main")
+VBox vbox2
+Table s_sfb
+{
+[sure   |sfb01           |sfb05                |ima02           |ima021          |sfb08     |sfb09    |sfb02|sfb04  |sfb28 |sfb15        |sfb82   |sfbud12  |sfbql     |sfb12     ]
+[sure   |sfb01           |sfb05                |ima02           |ima021          |sfb08     |sfb09    |sfb02|sfb04  |sfb28 |sfb15        |sfb82   |sfbud12  |sfbql     |sfb12     ]
+[sure   |sfb01           |sfb05                |ima02           |ima021          |sfb08     |sfb09    |sfb02|sfb04  |sfb28 |sfb15        |sfb82   |sfbud12  |sfbql     |sfb12     ]
+[sure   |sfb01           |sfb05                |ima02           |ima021          |sfb08     |sfb09    |sfb02|sfb04  |sfb28 |sfb15        |sfb82   |sfbud12  |sfbql     |sfb12     ]
+[sure   |sfb01           |sfb05                |ima02           |ima021          |sfb08     |sfb09    |sfb02|sfb04  |sfb28 |sfb15        |sfb82   |sfbud12  |sfbql     |sfb12     ]
+[sure   |sfb01           |sfb05                |ima02           |ima021          |sfb08     |sfb09    |sfb02|sfb04  |sfb28 |sfb15        |sfb82   |sfbud12  |sfbql     |sfb12     ]
+[sure   |sfb01           |sfb05                |ima02           |ima021          |sfb08     |sfb09    |sfb02|sfb04  |sfb28 |sfb15        |sfb82   |sfbud12  |sfbql     |sfb12     ]
+[sure   |sfb01           |sfb05                |ima02           |ima021          |sfb08     |sfb09    |sfb02|sfb04  |sfb28 |sfb15        |sfb82   |sfbud12  |sfbql     |sfb12     ]
+[sure   |sfb01           |sfb05                |ima02           |ima021          |sfb08     |sfb09    |sfb02|sfb04  |sfb28 |sfb15        |sfb82   |sfbud12  |sfbql     |sfb12     ]
+[sure   |sfb01           |sfb05                |ima02           |ima021          |sfb08     |sfb09    |sfb02|sfb04  |sfb28 |sfb15        |sfb82   |sfbud12  |sfbql     |sfb12     ]
+}
+END -- s_sfb
+END -- vbox2
+END -- page01
+END -- pc127
+Grid gr538
+{
+[select_all    ] [cancel_all  ] [compare         ]    Select Counts       [cn3       ]
+ ----------Rows [cn2   ] ----------
+}
+END -- gr538
+END -- vbox1
+END -- asfp401
+
+TABLES
+sfb_file
+ATTRIBUTES
+CheckBox sure=formonly.sure type VARCHAR, tabIndex=1, title=%"Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sfb01=sfb_file.sfb01, tabIndex=2, title=%"WO No.", noEntry, not null, required;
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=3, title=%"Pro.Item", noEntry, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, title=%"Item Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, title=%"Specifications", noEntry;
+Edit sfb08=sfb_file.sfb08, tabIndex=6, title=%"Pro.Qty", noEntry, not null, required;
+Edit sfb09=sfb_file.sfb09, tabIndex=7, title=%"Comp.Qty", noEntry, not null, required;
+ComboBox sfb02=sfb_file.sfb02, tabIndex=8, title=%"Styl", noEntry, comment=%"1.Gnrl 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm 13.Predic 15.Trial ", items=(("1", %"Gnrl"),("5", %"Rework"),("7", %"Sub."),("8", %"Rwrk SUB"),("11", %"Disasm"),("13", %"Predic"),("15", %"Trial"));
+ComboBox sfb04=sfb_file.sfb04, tabIndex=9, title=%"Status", noEntry, comment=%"1.Open 2.Rls 3.Prt 4.Iss.Mat 5.WIP 6.FQC 7.St-i 8.Clos", items=(("1", %"Gnrl"),("2", %"Rls"),("3", %"Prt"),("4", %"Iss.Mat"),("5", %"WIP"),("6", %"FQC"),("7", %"St-i"),("8", %"Clos"));
+Edit sfb28=sfb_file.sfb28, tabIndex=10, title=%"Close", noEntry;
+DateEdit sfb15=sfb_file.sfb15, tabIndex=11, title=%"Complete Date", noEntry;
+ButtonEdit sfb82=sfb_file.sfb82, action=controlp, tabIndex=12, title=%"Fabricator", image="zoom";
+Edit sfbud12=formonly.sfbud12 type DECIMAL(15,3), tabIndex=13, title=%"sfbud12", noEntry, not null, required;
+Edit sfbql=formonly.sfbql type DECIMAL(15,3), tabIndex=14, title=%"sfbql", noEntry, not null, required;
+Edit sfb12=formonly.sfb12 type DECIMAL, tabIndex=20, title=%"sfb12";
+Button select_all:select_all, tabIndex=15, comment=%"Select All";
+Button cancel_all:cancel_all, tabIndex=16, comment=%"Cancel All";
+Button compare:compare, tabIndex=17, comment=%"Cancel All";
+Edit cn3=formonly.cn3 type CHAR, tabIndex=18, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.cn3,formonly.cn2)
+SCREEN RECORD s_sfb(formonly.sure,sfb_file.sfb01,sfb_file.sfb05,formonly.ima02,formonly.ima021,sfb_file.sfb08,sfb_file.sfb09,sfb_file.sfb02,sfb_file.sfb04,sfb_file.sfb28,sfb_file.sfb15,sfb_file.sfb82,formonly.sfbud12,formonly.sfbql,formonly.sfb12)
+END -- INSTRUCTIONS
+

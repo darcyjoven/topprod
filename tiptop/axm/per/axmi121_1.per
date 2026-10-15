@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi121_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi121_1")
+VBox VBox1
+Folder pc455
+Page page01(text="Page01")
+Table s_imc
+{
+[imc02               |imc0|imc04                              ]
+[imc02               |imc0|imc04                              ]
+[imc02               |imc0|imc04                              ]
+[imc02               |imc0|imc04                              ]
+[imc02               |imc0|imc04                              ]
+[imc02               |imc0|imc04                              ]
+[imc02               |imc0|imc04                              ]
+[imc02               |imc0|imc04                              ]
+[imc02               |imc0|imc04                              ]
+[imc02               |imc0|imc04                              ]
+
+}
+END -- s_imc
+END -- page01
+END -- pc455
+END -- VBox1
+END -- axmi121_1
+
+TABLES
+imc_file
+ATTRIBUTES
+Edit imc02=imc_file.imc02, tabIndex=1, title="Category", comment="Part Name Specification Extra Desc Category";
+Edit imc0=imc_file.imc03, tabIndex=2, title="Ln#";
+Edit imc04=imc_file.imc04, tabIndex=3, title="Part Name Specification Extra Desc";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imc(imc_file.imc02,imc_file.imc03,imc_file.imc04)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfq360.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox3
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+  Label1 [sfu02                 ]
+
+  Label2 [sfv05                 ]      [l_nochk        ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Folder Folder2
+Page page3(action=page3, text=%"page3")
+VBox VBox1
+Table Table1
+{
+[ecb01            |name1   |ecb02             |ecb03        |ecb06   |ecb08              |eca03       |ecb19            |ecb21            |ecbud02         |ecb17         |ecb01max          |ecb02max           |ecb19max           |ecb21max          |ecb01min          |ecb02min       |ecb19min          |ecb21min         |ecbmark                          ]
+[ecb01            |name1   |ecb02             |ecb03        |ecb06   |ecb08              |eca03       |ecb19            |ecb21            |ecbud02         |ecb17         |ecb01max          |ecb02max           |ecb19max           |ecb21max          |ecb01min          |ecb02min       |ecb19min          |ecb21min         |ecbmark                          ]
+[ecb01            |name1   |ecb02             |ecb03        |ecb06   |ecb08              |eca03       |ecb19            |ecb21            |ecbud02         |ecb17         |ecb01max          |ecb02max           |ecb19max           |ecb21max          |ecb01min          |ecb02min       |ecb19min          |ecb21min         |ecbmark                          ]
+[ecb01            |name1   |ecb02             |ecb03        |ecb06   |ecb08              |eca03       |ecb19            |ecb21            |ecbud02         |ecb17         |ecb01max          |ecb02max           |ecb19max           |ecb21max          |ecb01min          |ecb02min       |ecb19min          |ecb21min         |ecbmark                          ]
+[ecb01            |name1   |ecb02             |ecb03        |ecb06   |ecb08              |eca03       |ecb19            |ecb21            |ecbud02         |ecb17         |ecb01max          |ecb02max           |ecb19max           |ecb21max          |ecb01min          |ecb02min       |ecb19min          |ecb21min         |ecbmark                          ]
+
+}
+END -- Table1
+Grid gr2
+{
+  ---------- Rows [cnt   ] ------------------------
+
+}
+END -- gr2
+END -- VBox1
+END -- page3
+END -- Folder2
+END -- VBox3
+END -- Form
+
+ATTRIBUTES
+DateEdit sfu02=formonly.sfu02 type DATE, tabIndex=1;
+ButtonEdit sfv05=formonly.sfv05, action=controlp, tabIndex=2, image="zoom";
+CheckBox l_nochk=formonly.l_nochk, tabIndex=3, text=%"CheckBox1", not null;
+Edit ecb01=formonly.ecb01 type VARCHAR, tabIndex=4, title=%"ecb01";
+Edit name1=formonly.name1, tabIndex=12, title=%"name1";
+Edit ecb02=formonly.ecb02 type VARCHAR, tabIndex=5, title=%"ecb02";
+Edit ecb03=formonly.ecb03 type VARCHAR, tabIndex=6, title=%"ecb03";
+Edit ecb06=formonly.ecb06 type VARCHAR, tabIndex=7, title=%"ecb06";
+Edit ecb08=formonly.ecb08 type VARCHAR, tabIndex=8, title=%"ecb08";
+Edit eca03=formonly.eca03 type VARCHAR, tabIndex=13, title=%"eca03";
+Edit ecb19=formonly.ecb19, tabIndex=9, title=%"ecb19";
+Edit ecb21=formonly.ecb21 type VARCHAR, tabIndex=10, title=%"ecb21";
+Edit ecbud02=formonly.ecbud02 type DECIMAL, tabIndex=14, title=%"ecbud02";
+Edit ecb17=formonly.ecb17 type DECIMAL, tabIndex=11, title=%"ecb17";
+Edit ecb01max=formonly.ecb01max type VARCHAR, tabIndex=15, title=%"ecb01max";
+Edit ecb02max=formonly.ecb02max type VARCHAR, tabIndex=16, title=%"ecb02max";
+Edit ecb19max=formonly.ecb19max type VARCHAR, tabIndex=17, title=%"ecb19max";
+Edit ecb21max=formonly.ecb21max type VARCHAR, tabIndex=18, title=%"ecb21max";
+Edit ecb01min=formonly.ecb01min type VARCHAR, tabIndex=19, title=%"ecb01min";
+Edit ecb02min=formonly.ecb02min type VARCHAR, tabIndex=20, title=%"ecb02min";
+Edit ecb19min=formonly.ecb19min type VARCHAR, tabIndex=21, title=%"ecb19min";
+Edit ecb21min=formonly.ecb21min type VARCHAR, tabIndex=22, title=%"ecb21min";
+Edit ecbmark=formonly.ecbmark type VARCHAR, tabIndex=23, title=%"ecbmark";
+Edit cnt=formonly.cnt type CHAR, tabIndex=24;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfu02,formonly.sfv05,formonly.cnt,formonly.l_nochk)
+SCREEN RECORD s_sfv(formonly.ecb01,formonly.name1,formonly.ecb02,formonly.ecb03,formonly.ecb06,formonly.ecb08,formonly.eca03,formonly.ecb19,formonly.ecb21,formonly.ecbud02,formonly.ecb17,formonly.ecb01max,formonly.ecb02max,formonly.ecb19max,formonly.ecb21max,formonly.ecb01min,formonly.ecb02min,formonly.ecb19min,formonly.ecb21min,formonly.ecbmark)
+END -- INSTRUCTIONS
+

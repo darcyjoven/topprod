@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_efcfg_qry.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aws_efcfg_qry")
+Grid gr1413
+{
+ <T efcfg_cq                        >
+ [cq01           |cq02             ]
+ [cq01           |cq02             ]
+ [cq01           |cq02             ]
+ [cq01           |cq02             ]
+ [cq01           |cq02             ]
+ [cq01           |cq02             ]
+ [cq01           |cq02             ]
+ [cq01           |cq02             ]
+ [cq01           |cq02             ]
+ [cq01           |cq02             ]
+ <                                  >
+
+}
+END -- gr1413
+END -- aws_efcfg_qry
+
+ATTRIBUTES
+Table efcfg_cq:efcfg_cq;
+Edit cq01=formonly.cq01 type CHAR, tabIndex=1, title="Code", noEntry;
+Edit cq02=formonly.cq02 type CHAR, tabIndex=2, title="Descriptive", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD efcfg_cq(formonly.cq01,formonly.cq02)
+END -- INSTRUCTIONS
+

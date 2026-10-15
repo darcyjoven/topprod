@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglp160.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gglp160")
+VBox VBox1
+Group group01(text="Info")
+HBox HBox1
+Grid gr3
+{
+ <G group04                                          >
+  Version                       [v                   ]
+  Property                      [p                   ]
+  Industry                      [w                   ]
+  Company Organization Code     [a                   ]
+  Accounting Year/Month         [year]/[mon ]
+  Book No.                      [bookn]
+ <                                                   >
+
+}
+END -- gr3
+Grid gr4
+{
+ <G group05                    >
+  1st level length [level1    ]
+  2nd level length [level2    ]
+  3rd level length [level3    ]
+  4th level length [level4    ]
+  5th level length [level5    ]
+  6th level length [level6    ]
+ <                             >
+
+}
+END -- gr4
+END -- HBox1
+END -- group01
+Group group02(text="Export Base data")
+Grid gr5
+{
+[b                                                 ]
+[c                                                 ]
+[d                                                 ]
+[e                                                 ]
+[f                                                 ]
+}
+END -- gr5
+END -- group02
+Group group03(text="Export Report data")
+Grid gr6
+{
+[g                                                 ] Report Structure[gg        ]
+[h                                                 ] Report Structure[hh        ]
+[i                                                 ]
+[j                                                 ] Report Structure[jj        ]
+[k                                                 ] Report Structure[kk        ]
+[l                                                 ] Report Structure[ll        ]
+[m                                                 ] Report Structure[mm        ]
+}
+END -- gr6
+END -- group03
+Grid gr7
+{
+ Path      [path                          ][browse   ]
+
+}
+END -- gr7
+END -- VBox1
+END -- gglp160
+
+ATTRIBUTES
+Group group04:group04, text="DZZB.TXT";
+Edit v=formonly.v type VARCHAR, tabIndex=1, comment="Enter the Vision ";
+ComboBox p=formonly.p type CHAR, tabIndex=2, not null, required, queryEditable, items=(("1", "Corporation"),("2", "State-owned"));
+Edit w=formonly.w type VARCHAR, tabIndex=3;
+Edit a=formonly.a type VARCHAR, tabIndex=4, comment="Enter the Company Organization Code ";
+Edit year=formonly.year type CHAR, tabIndex=5, not null, required, comment="Enter Accounting Year ";
+Edit mon=formonly.mon type CHAR, tabIndex=6, not null, required, comment="Enter Month";
+ButtonEdit bookn=formonly.bookno type CHAR, action=controlp, tabIndex=32, not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+Group group05:group05, text="KJKM.TXT";
+ComboBox level1=formonly.level1 type CHAR, tabIndex=7, not null, required, queryEditable, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"));
+ComboBox level2=formonly.level2 type CHAR, tabIndex=8, not null, required, queryEditable, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"));
+ComboBox level3=formonly.level3 type CHAR, tabIndex=9, not null, required, queryEditable, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"));
+ComboBox level4=formonly.level4 type CHAR, tabIndex=10, not null, required, queryEditable, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"));
+ComboBox level5=formonly.level5 type CHAR, tabIndex=11, not null, required, queryEditable, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"));
+ComboBox level6=formonly.level6 type CHAR, tabIndex=12, not null, required, queryEditable, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"));
+CheckBox b=formonly.b type CHAR, tabIndex=13, text="Format instruction document GSSM.TXT", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type CHAR, tabIndex=14, text="Electronic account book data document DZZB.TXT", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type CHAR, tabIndex=15, text="Account data document KJKM.TXT", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=16, text="Voucher data document JZPZ.TXT", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type CHAR, tabIndex=17, text="Account Balance KMYE.TXT", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type CHAR, tabIndex=18, text="Balance Sheet Q_ZCFZB.TXT", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit gg=formonly.gg type VARCHAR, action=controlp, tabIndex=19, image="zoom", comment="<^P> Qry Report No.";
+CheckBox h=formonly.h type CHAR, tabIndex=20, text="Profit Report Q_LRB.TXT", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit hh=formonly.hh type VARCHAR, action=controlp, tabIndex=21, image="zoom", comment="<^P> Qry Report No.";
+CheckBox i=formonly.i type CHAR, tabIndex=22, text="Cash Flow Statement Q_XJLLB.TXT", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox j=formonly.j type CHAR, tabIndex=23, text="Appreciate Tax Detail List Q_YJZZSMXB.TXT", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit jj=formonly.jj type VARCHAR, action=controlp, tabIndex=24, image="zoom", comment="<^P> Qry Report No.";
+CheckBox k=formonly.k type CHAR, tabIndex=25, text="Asset Value-Deduction Prepare Detail List Q_ZCJZZBMXB.TXT", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit kk=formonly.kk type VARCHAR, action=controlp, tabIndex=26, image="zoom", comment="<^P> Qry Report No.";
+CheckBox l=formonly.l type CHAR, tabIndex=27, text="Shareholder Equity Variation Report Q_GDQYZJBDB.TXT", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ll=formonly.ll type VARCHAR, action=controlp, tabIndex=28, image="zoom", comment="<^P> Qry Report No.";
+CheckBox m=formonly.m type CHAR, tabIndex=29, text="Profit Distribution Report Q_LRFPB.TXT", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit mm=formonly.mm type VARCHAR, action=controlp, tabIndex=30, image="zoom", comment="<^P> Qry Report No.";
+Edit path=formonly.path type CHAR, tabIndex=31, not null, required;
+Button browse:browse, text="Browse";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.v,formonly.p,formonly.w,formonly.a,formonly.year,formonly.mon,formonly.bookno,formonly.level1,formonly.level2,formonly.level3,formonly.level4,formonly.level5,formonly.level6,formonly.b,formonly.c,formonly.d,formonly.e,formonly.f,formonly.g,formonly.gg,formonly.h,formonly.hh,formonly.i,formonly.j,formonly.jj,formonly.k,formonly.kk,formonly.l,formonly.ll,formonly.m,formonly.mm,formonly.path)
+END -- INSTRUCTIONS
+

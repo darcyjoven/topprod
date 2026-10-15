@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi390.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi390")
+VBox vb2
+Folder pc9
+Page Page14(text=%"Main")
+Table s_lns
+{
+[lnsstore              |rtz13                         |lnslegal    |azt02               |lns02                 |lnr02               |lns03       |oaj02               |lns04     |lns05     |lns06   ]
+[lnsstore              |rtz13                         |lnslegal    |azt02               |lns02                 |lnr02               |lns03       |oaj02               |lns04     |lns05     |lns06   ]
+[lnsstore              |rtz13                         |lnslegal    |azt02               |lns02                 |lnr02               |lns03       |oaj02               |lns04     |lns05     |lns06   ]
+[lnsstore              |rtz13                         |lnslegal    |azt02               |lns02                 |lnr02               |lns03       |oaj02               |lns04     |lns05     |lns06   ]
+[lnsstore              |rtz13                         |lnslegal    |azt02               |lns02                 |lnr02               |lns03       |oaj02               |lns04     |lns05     |lns06   ]
+
+}
+END -- s_lns
+END -- Page14
+END -- pc9
+Grid gr19
+{
+ ------ Rows[cn2   ] ----------
+
+
+}
+END -- gr19
+END -- vb2
+END -- almi390
+
+TABLES
+lns_file
+ATTRIBUTES
+ButtonEdit lnsstore=lns_file.lnsstore, action=controlp, tabIndex=1, title="Store No.", not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=2, title="Store Name", noEntry;
+ButtonEdit lnslegal=lns_file.lnslegal, action=controlp, tabIndex=11, title="Corporation", noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=12, title="Corporate Title", noEntry;
+ButtonEdit lns02=lns_file.lns02, action=controlp, tabIndex=4, title="Pay Method No.", not null, required, image="zoom.png";
+Edit lnr02=formonly.lnr02 type CHAR, tabIndex=5, title="Pay Term Name", noEntry;
+ButtonEdit lns03=lns_file.lns03, action=controlp, tabIndex=6, title="lns03", not null, image="zoom.png";
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=7, title="Expense Description", noEntry;
+Edit lns04=lns_file.lns04, tabIndex=8, title="Discount Rate";
+Edit lns05=lns_file.lns05, tabIndex=9, title="Month(s) Deductible";
+CheckBox lns06=lns_file.lns06, tabIndex=10, default = "Y", title="Validity?", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lns(lns_file.lnsstore,formonly.rtz13,lns_file.lnslegal,formonly.azt02,lns_file.lns02,formonly.lnr02,lns_file.lns03,formonly.oaj02,lns_file.lns04,lns_file.lns05,lns_file.lns06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

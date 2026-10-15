@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr602.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmr602")
+VBox VBox1
+Group Group1
+Grid Grid1
+{
+ <G group01                                                          >
+  Investment Doc No.  [gse03               ]
+  Investment Type     [gsb05               ]
+  Investment Currency [gse06               ]
+ <                                                                   >
+ <G group02                                                          >
+  Year                [yy                  ]
+ <                                                                   >
+
+}
+END -- Grid1
+END -- Group1
+Grid Grid2
+{
+[more                                                        ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- anmr602
+
+TABLES
+gse_file,
+gsb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit gse03=gse_file.gse03, tabIndex=1;
+Edit gsb05=gsb_file.gsb05, tabIndex=2;
+Edit gse06=gse_file.gse06, tabIndex=3;
+Group group02:group02, text="INPUT";
+Edit yy=formonly.yy type SMALLINT, tabIndex=4;
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gse_file.gse03,gsb_file.gsb05,gse_file.gse06,formonly.yy,formonly.more)
+END -- INSTRUCTIONS
+

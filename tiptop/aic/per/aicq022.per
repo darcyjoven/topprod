@@ -1,0 +1,108 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aicq022.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aicq022")
+VBox vb1
+Folder pc1
+Page page01(text="Main")
+HBox hb2
+Grid gr1
+{
+ Item No.            [ima01                         ]
+ Part Name Spec      [ima02                         ]
+ Specification       [ima021                        ]
+ Ver                 [ima05     ]
+}
+END -- gr1
+Grid gr2
+{
+ Src Cd              [ima08     ]
+ Group Cd            [ima06     ]
+ ABC Cd              [ima07     ]
+
+}
+END -- gr2
+Grid gr3
+{
+  Inv.Ut             [ima25               ]
+  MRP Available Inv  [avl_stk_mpsmrp      ]
+  Available Inv      [avl_stk             ]
+  Unusable Inv Qty   [unavl_stk           ]
+}
+END -- gr3
+END -- hb2
+END -- page01
+END -- pc1
+Table s_idc
+{
+[idc02        |idc03        |idc04           |idc05         |idc06       |img23  |idc09              |idc10              |idc11   |idc07    |idc08       |idc12       |idc17  |idc21       |idb07       ]
+[idc02        |idc03        |idc04           |idc05         |idc06       |img23  |idc09              |idc10              |idc11   |idc07    |idc08       |idc12       |idc17  |idc21       |idb07       ]
+[idc02        |idc03        |idc04           |idc05         |idc06       |img23  |idc09              |idc10              |idc11   |idc07    |idc08       |idc12       |idc17  |idc21       |idb07       ]
+[idc02        |idc03        |idc04           |idc05         |idc06       |img23  |idc09              |idc10              |idc11   |idc07    |idc08       |idc12       |idc17  |idc21       |idb07       ]
+[idc02        |idc03        |idc04           |idc05         |idc06       |img23  |idc09              |idc10              |idc11   |idc07    |idc08       |idc12       |idc17  |idc21       |idb07       ]
+[idc02        |idc03        |idc04           |idc05         |idc06       |img23  |idc09              |idc10              |idc11   |idc07    |idc08       |idc12       |idc17  |idc21       |idb07       ]
+[idc02        |idc03        |idc04           |idc05         |idc06       |img23  |idc09              |idc10              |idc11   |idc07    |idc08       |idc12       |idc17  |idc21       |idb07       ]
+[idc02        |idc03        |idc04           |idc05         |idc06       |img23  |idc09              |idc10              |idc11   |idc07    |idc08       |idc12       |idc17  |idc21       |idb07       ]
+[idc02        |idc03        |idc04           |idc05         |idc06       |img23  |idc09              |idc10              |idc11   |idc07    |idc08       |idc12       |idc17  |idc21       |idb07       ]
+[idc02        |idc03        |idc04           |idc05         |idc06       |img23  |idc09              |idc10              |idc11   |idc07    |idc08       |idc12       |idc17  |idc21       |idb07       ]
+}
+END -- s_idc
+Grid gr4
+{
+  ---------- Rows [cnt   ] / [cn2   ] -------------------- Inventory Qty Total [tot                 ] ---- Ref Qty Total [tot1                 ]--
+
+
+
+
+}
+END -- gr4
+END -- vb1
+END -- aicq022
+
+TABLES
+img_file,
+idc_file,
+idb_file,
+ima_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Please by QBE, Enter Item# to Query";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=3, noEntry;
+Edit ima05=ima_file.ima05, tabIndex=4, noEntry;
+Edit ima08=ima_file.ima08, tabIndex=5, noEntry;
+Edit ima06=ima_file.ima06, tabIndex=6, noEntry;
+Edit ima07=ima_file.ima07, tabIndex=7, noEntry;
+Edit ima25=ima_file.ima25, tabIndex=8, noEntry;
+Edit avl_stk_mpsmrp=formonly.avl_stk_mpsmrp type DECIMAL, tabIndex=9;
+Edit avl_stk=formonly.avl_stk type DECIMAL, tabIndex=10;
+Edit unavl_stk=formonly.unavl_stk type DECIMAL, tabIndex=11;
+Edit idc02=idc_file.idc02, tabIndex=12, title="Warehouse";
+Edit idc03=idc_file.idc03, tabIndex=13, title="Location";
+Edit idc04=idc_file.idc04, tabIndex=14, title="Lot#";
+Edit idc05=idc_file.idc05, tabIndex=15, title="ID";
+Edit idc06=idc_file.idc06, tabIndex=16, title="BIN";
+CheckBox img23=img_file.img23, tabIndex=17, title="usable", valueChecked = "Y", valueUnchecked = "N";
+Edit idc09=idc_file.idc09, tabIndex=18, title="ibody";
+Edit idc10=idc_file.idc10, tabIndex=19, title="Lot1";
+Edit idc11=idc_file.idc11, tabIndex=20, title=%"Datecode";
+Edit idc07=idc_file.idc07, tabIndex=21, title="Unit";
+Edit idc08=idc_file.idc08, tabIndex=22, title="stock";
+Edit idc12=idc_file.idc12, tabIndex=23, title="ref-stock";
+CheckBox idc17=idc_file.idc17, tabIndex=24, title="Hold", valueChecked = "Y", valueUnchecked = "N";
+Edit idc21=idc_file.idc21, tabIndex=29, title="idc21", noEntry;
+Edit idb07=idb_file.idb07, tabIndex=30, title="idb07";
+Edit cnt=formonly.cnt type CHAR, tabIndex=25;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=26;
+Edit tot=formonly.tot type CHAR, tabIndex=27;
+Edit tot1=formonly.tot1 type CHAR, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_idc(idc_file.idc02,idc_file.idc03,idc_file.idc04,idc_file.idc05,idc_file.idc06,img_file.img23,idc_file.idc09,idc_file.idc10,idc_file.idc11,idc_file.idc07,idc_file.idc08,idc_file.idc12,idc_file.idc17,idc_file.idc21,idb_file.idb07)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,ima_file.ima05,ima_file.ima08,ima_file.ima06,ima_file.ima07,ima_file.ima25,formonly.avl_stk_mpsmrp,formonly.avl_stk,formonly.unavl_stk,formonly.cnt,formonly.cn2,formonly.tot,formonly.tot1)
+END -- INSTRUCTIONS
+

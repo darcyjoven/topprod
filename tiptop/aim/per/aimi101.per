@@ -1,0 +1,169 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/4fd/aimi101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi101")
+VBox vb1
+Folder pc520
+Page page01(text="Main")
+Grid gr2930
+{
+ <G group011                                             ><G group012                               >
+  Item No.               [ima01                         ]   [ima04                                 ]
+  Part Name              [ima02                         ]   [                                      ]
+  Specification          [ima021                        ]   [                                      ]
+  Source Code            [ima08     ]                       [                                      ]
+  Curr version           [ima05     ]                       [                                      ]
+  Inventory Unit         [ima25     ]                       [                                      ]
+  Menu No.               [ima03               ]             [                                      ]
+  Handling Status        [s         ]                       [imgmksg]
+                                                            [       ]
+
+ <                                                       ><                                         >
+
+}
+END -- gr2930
+END -- page01
+Page info(text="Info")
+Grid gr2931
+{
+ Record Owner        [imauser   ] Last Modified by    [imamodu   ] Data Valid Code     [imaacti   ]
+ Department          [imagrup   ] Create/Modify Date  [imadate   ]
+ Record Orig.        [imaoriu   ]
+ Dept Orig.          [imaorig   ]
+}
+END -- gr2931
+END -- info
+END -- pc520
+Folder pc521
+Page page02(text="W/H")
+HBox hb1
+Grid gr2932
+{
+ <G group021                                >
+  ABC Code               [ima07     ]
+ [ima15                             ]
+ [ima70                             ]
+  Warehouse Kpr          [ima23     ]
+                         [gen02     ]
+  Main Warehouse         [ima35     ]
+  Main Location          [ima36     ]
+ <                                          >
+
+}
+END -- gr2932
+Grid gr2933
+{
+ <G group023                                >
+  Storing Days   [ima71               ]
+  Max Inv Qty    [ima271              ]
+  Safety Inv     [ima27               ]
+  Safety Period  [ima28               ]
+ <                                          >
+
+
+
+
+}
+END -- gr2933
+Grid gr2934
+{
+ <G group024                                >
+  Issuing Unit       [ima63     ]
+  Unit Conversion Rt [ima63_fac ]
+  Issu. Unit Lot Qty [ima64                ]
+  Min Issue Qty      [ima641               ]
+ <                                          >
+
+
+
+
+}
+END -- gr2934
+END -- hb1
+END -- page02
+Page page03(text="Inventory Status")
+Grid gr2935
+{
+ <G group031                                             ><G group032                                >
+  MPS/MRP Aval. Inv        [avl_stk_mpsmrp      ]          Lst Transaction Dt       [ima29       ]
+  MPS/MRP Unusable Inv Qty [d2                  ]          Lst Inventory Tk Dt      [ima30       ]
+  Avail. Inv               [avl_stk             ]          Lst Store-in Dt          [ima73       ]
+  Unusable Inv Qty         [unavl_stk           ]          Lst Store-out Dt         [ima74       ]
+                                                           Idle Date                [ima902      ]
+ <                                                       ><                                          >
+
+}
+END -- gr2935
+END -- page03
+END -- pc521
+Grid gr2936
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2936
+END -- vb1
+END -- aimi101
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group011:group011;
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Assign Item No. to Query   (QBE)";
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=3, noEntry;
+Edit ima08=ima_file.ima08, tabIndex=4, noEntry;
+Edit ima05=ima_file.ima05, tabIndex=5, noEntry;
+ButtonEdit ima25=ima_file.ima25, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry  Unit  <^Y>Create Unit    <^U>/<^T>Create Item/Unit conversion";
+Edit ima03=ima_file.ima03, tabIndex=7, noEntry;
+Edit s=formonly.s type CHAR, tabIndex=8, upShift, comment="Check to Qry or press ENTER";
+Group group012:group012;
+IMAGE ima04=formonly.ima04 type CHAR, sizePolicy=fixed, width = 300 pixels, height = 140 pixels;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit imauser=ima_file.imauser, tabIndex=11, noEntry;
+Edit imamodu=ima_file.imamodu, tabIndex=12, noEntry;
+Edit imaacti=ima_file.imaacti, tabIndex=13, noEntry, upShift;
+Edit imagrup=ima_file.imagrup, tabIndex=14, noEntry;
+DateEdit imadate=ima_file.imadate, tabIndex=15, noEntry;
+Edit imaoriu=ima_file.imaoriu, tabIndex=38, noEntry;
+Edit imaorig=ima_file.imaorig, tabIndex=39, noEntry;
+Group group021:group021;
+ComboBox ima07=ima_file.ima07, tabIndex=16, not null, queryEditable, items=(("A", "A"),("B", "B"),("C", "C"));
+CheckBox ima15=ima_file.ima15, tabIndex=17, text="Bonded Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ima70=ima_file.ima70, tabIndex=18, text="Consumable Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ima23=ima_file.ima23, action=controlp, tabIndex=19, image="zoom", comment="<^P> Qry  Employee    ";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=20, noEntry;
+ButtonEdit ima35=ima_file.ima35, action=controlp, tabIndex=21, image="zoom", comment="<^P>Qry Warehouse  <^T>Qry Item /Warehouse Default   <^Y>Create Warehouse";
+ButtonEdit ima36=ima_file.ima36, action=controlp, tabIndex=22, image="zoom", comment="<^P> Qry Location    <^Y> Create Location";
+Group group023:group023;
+Edit ima71=ima_file.ima71, tabIndex=23, not null, required;
+Edit ima271=ima_file.ima271, tabIndex=24, not null, required;
+Edit ima27=ima_file.ima27, tabIndex=25, not null, required;
+Edit ima28=ima_file.ima28, tabIndex=26, not null, required;
+Group group024:group024;
+ButtonEdit ima63=ima_file.ima63, action=controlp, tabIndex=27, noEntry, not null, required, image="zoom", comment="<^P>Qry  Unit  <^Y>Create Unit    <^U>/<^T>Create Item/Unit conversion";
+Edit ima63_fac=ima_file.ima63_fac, tabIndex=28, noEntry, not null, required;
+Edit ima64=ima_file.ima64, tabIndex=29, not null, required;
+Edit ima641=ima_file.ima641, tabIndex=30, not null, required;
+Group group031:group031;
+Edit avl_stk_mpsmrp=formonly.avl_stk_mpsmrp type CHAR, tabIndex=40;
+Edit d2=formonly.d2 type DECIMAL, tabIndex=31, noEntry, not null, required;
+Edit avl_stk=formonly.avl_stk type CHAR, tabIndex=41;
+Edit unavl_stk=formonly.unavl_stk type CHAR, tabIndex=42;
+Group group032:group032;
+DateEdit ima29=ima_file.ima29, tabIndex=32, noEntry;
+DateEdit ima30=ima_file.ima30, tabIndex=33, noEntry;
+DateEdit ima73=ima_file.ima73, tabIndex=34, noEntry;
+DateEdit ima74=ima_file.ima74, tabIndex=35, noEntry;
+DateEdit ima902=ima_file.ima902, tabIndex=36, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=37;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima02,ima_file.ima021,ima_file.ima08,ima_file.ima05,ima_file.ima25,ima_file.ima03,formonly.s,formonly.ima04,formonly.imgmksg,ima_file.imauser,ima_file.imamodu,ima_file.imaacti,ima_file.imagrup,ima_file.imadate,ima_file.imaoriu,ima_file.imaorig,ima_file.ima07,ima_file.ima15,ima_file.ima70,ima_file.ima23,formonly.gen02,ima_file.ima35,ima_file.ima36,ima_file.ima71,ima_file.ima271,ima_file.ima27,ima_file.ima28,ima_file.ima63,ima_file.ima63_fac,ima_file.ima64,ima_file.ima641,formonly.avl_stk_mpsmrp,formonly.d2,formonly.avl_stk,formonly.unavl_stk,ima_file.ima29,ima_file.ima30,ima_file.ima73,ima_file.ima74,ima_file.ima902,formonly.cnt)
+END -- INSTRUCTIONS
+

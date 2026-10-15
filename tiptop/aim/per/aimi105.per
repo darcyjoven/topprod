@@ -1,0 +1,96 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi105.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi105")
+VBox vb2
+Folder pc526
+Page page01(text="Page01")
+Grid gr2949
+{
+ <G group01                                                                                      >
+  Item No.            [ima01                         ] Inv Unit            [ima25     ]
+  P/N                 [ima02                         ] Menu No.            [ima03               ]
+  Spec                [ima021                        ] Handling Status     [s         ]
+  Ver                 [ima05     ]
+  Src Cd              [ima08     ]
+ <                                                                                               >
+ <G group02                                                                         >
+  Cost Center            [ima34     ][gem02                         ]
+  Account                [ima39                   ]
+  Cost Group             [ima12     ]
+ <                                                                                  >
+ <G group03                                                                         >
+  Direct material Cost Items            [ima87     ][smg02_1                       ]
+  Indirect Material Apportionment Ratio [ima871    ]
+  Cost Items                            [ima872    ][smg02_2                       ]
+  Indirect labor Apportionment Ratio    [ima873    ]
+  Cost Items                            [ima874    ][smg02_3                       ]
+ <                                                                                  >
+
+}
+END -- gr2949
+END -- page01
+Page info(text="Info")
+Grid gr2950
+{
+ Record Owner        [imauser   ] Last Modified by    [imamodu   ] Data Valid Code     [imaacti   ]
+ Department          [imagrup   ] Create/Modify Date  [imadate   ]
+ Record Orig.        [imaoriu   ]
+ Dept Orig.          [imaorig   ]
+}
+END -- gr2950
+END -- info
+END -- pc526
+Grid gr2951
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2951
+END -- vb2
+END -- aimi105
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Assign Item No. to Query   (QBE)                                 ";
+Edit ima25=ima_file.ima25, tabIndex=2, noEntry;
+Edit ima02=ima_file.ima02, tabIndex=3, noEntry;
+Edit ima03=ima_file.ima03, tabIndex=4, noEntry;
+Edit ima021=ima_file.ima021, tabIndex=503, noEntry;
+Edit s=formonly.s type CHAR, tabIndex=6, upShift, comment="Enter Y/N to Qry or press ENTER";
+Edit ima05=ima_file.ima05, tabIndex=5, noEntry;
+Edit ima08=ima_file.ima08, tabIndex=7, noEntry;
+Group group02:group02;
+ButtonEdit ima34=ima_file.ima34, action=controlp, tabIndex=8, image="zoom", comment="<^P> Qry Cost center     <^Y> Create Cost Center";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=9, noEntry;
+ButtonEdit ima39=ima_file.ima39, action=controlp, tabIndex=10, image="zoom", comment="<^P> Qry Account      ";
+ButtonEdit ima12=ima_file.ima12, action=controlp, tabIndex=11, image="zoom", comment="<^P> Qry Group Code   <^U> Qry Item with other Group Code  <^Y> Create Grouping Code";
+Group group03:group03;
+ButtonEdit ima87=ima_file.ima87, action=controlp, tabIndex=12, image="zoom", comment="<^P> Qry Cost Items      <^Y> Create Cost Items";
+Edit smg02_1=formonly.smg02_1 type VARCHAR, tabIndex=13, noEntry;
+Edit ima871=ima_file.ima871, tabIndex=14, not null, required;
+ButtonEdit ima872=ima_file.ima872, action=controlp, tabIndex=15, image="zoom", comment="<^P> Qry Cost Items      <^Y> Create Cost Items";
+Edit smg02_2=formonly.smg02_2 type VARCHAR, tabIndex=16, noEntry;
+Edit ima873=ima_file.ima873, tabIndex=17, not null, required;
+ButtonEdit ima874=ima_file.ima874, action=controlp, tabIndex=18, image="zoom", comment="<^P> Qry Cost Items      <^Y> Create Cost Items";
+Edit smg02_3=formonly.smg02_3 type VARCHAR, tabIndex=19, noEntry;
+Edit imauser=ima_file.imauser, tabIndex=20, noEntry;
+Edit imamodu=ima_file.imamodu, tabIndex=21, noEntry;
+Edit imaacti=ima_file.imaacti, tabIndex=22, noEntry, upShift;
+Edit imagrup=ima_file.imagrup, tabIndex=23, noEntry;
+DateEdit imadate=ima_file.imadate, tabIndex=24, noEntry;
+Edit imaoriu=ima_file.imaoriu, tabIndex=501, noEntry;
+Edit imaorig=ima_file.imaorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima25,ima_file.ima02,ima_file.ima03,ima_file.ima021,formonly.s,ima_file.ima05,ima_file.ima08,ima_file.ima34,formonly.gem02,ima_file.ima39,ima_file.ima12,ima_file.ima87,formonly.smg02_1,ima_file.ima871,ima_file.ima872,formonly.smg02_2,ima_file.ima873,ima_file.ima874,formonly.smg02_3,ima_file.imauser,ima_file.imamodu,ima_file.imaacti,ima_file.imagrup,ima_file.imadate,ima_file.imaoriu,ima_file.imaorig,formonly.cnt)
+END -- INSTRUCTIONS
+

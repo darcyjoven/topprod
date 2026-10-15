@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi321.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi321")
+VBox vb5
+Folder pc1
+Page page01(text="Page01")
+Grid gr1
+{
+ <G group01                                           >
+  Workstation No.   [vmj01  ]
+  Weekly Calendar   [vmj02                 ]
+  Day Calendar      [vmj03                 ]
+ <                                                    >
+ <G group02                                           >
+ [vmj04                                              ]
+ [                                                   ]
+ <                                                    >
+ <G gb10                                             >
+  Continuous Lot Condition Code  [vmj07     ]
+  cpt_listing_seq                [vmj10     ]
+ <                                                   >
+
+}
+END -- gr1
+END -- page01
+END -- pc1
+Grid gr2
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2
+END -- vb5
+END -- apsi321
+
+TABLES
+vmj_file
+ATTRIBUTES
+Group group01:group01;
+Edit vmj01=vmj_file.vmj01, tabIndex=1, noEntry, not null, required;
+ButtonEdit vmj02=vmj_file.vmj02, action=controlp, tabIndex=5, image="zoom", comment=" <^P>Qry Work Center <^Y>Create Work Center";
+ButtonEdit vmj03=vmj_file.vmj03, action=controlp, tabIndex=6, image="zoom", comment=" <^P>Qry Work Center <^Y>Create Work Center";
+Group group02:group02, text="Capacity Type";
+RadioGroup vmj04=vmj_file.vmj04, tabIndex=2, not null, required, items=(("0", "Limited Capacity"),("1", "Limitless Capacity"));
+Group gb10:gb10;
+ComboBox vmj07=vmj_file.vmj07, tabIndex=4, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"));
+Edit vmj10=vmj_file.vmj10, tabIndex=7;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vmj_file.vmj01,vmj_file.vmj02,vmj_file.vmj03,vmj_file.vmj04,vmj_file.vmj07,vmj_file.vmj10,formonly.cnt)
+END -- INSTRUCTIONS
+

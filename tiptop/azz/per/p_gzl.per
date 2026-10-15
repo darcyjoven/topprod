@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_gzl.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_gzl")
+VBox VBox1
+Folder pc750
+Page page01(text="Page01")
+Grid gr3206
+{
+ Confirm No     [gzl00          ]          Item              [gzl01]            Version         [gzl17     ]
+ Job Order      [gzl02          ]          Custom Confirm No [gzl04          ]  Promised Date   [gzl06       ]
+ Forecast Date  [gzl09       ]             Forecast Hrs      [gzl07]            Charge Hrs      [gzl08]
+
+ Program Id     [gzl05          ]          Status Code       [gzl18 ]
+ Progarm Name   [zz02                                    ]
+ Programer      [gzl11     ][zx02     ]    Actuality Date    [gzl10       ]     Job Hrs         [gzl12]
+
+ Memo           [gzl16                                                                                       ]
+                [                                                                                            ]
+                [                                                                                            ]
+                [                                                                                            ]
+                [                                                                                            ]
+
+ Testing        [gzl13     ][zx02_2   ]    Testing Date   [gzl15       ]        Testing Hrs     [gzl14]
+
+ SC Confirm     [gzl19     ]               SC Confirm Date[gzl20       ]
+
+}
+END -- gr3206
+END -- page01
+END -- pc750
+Grid gr3207
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3207
+END -- VBox1
+END -- p_gzl
+
+TABLES
+gzl_file
+ATTRIBUTES
+Edit gzl00=gzl_file.gzl00, tabIndex=1, not null, required;
+Edit gzl01=gzl_file.gzl01, tabIndex=2, not null, required;
+Edit gzl17=gzl_file.gzl17, tabIndex=3, noEntry, not null, required;
+Edit gzl02=gzl_file.gzl02, tabIndex=4;
+Edit gzl04=gzl_file.gzl04, tabIndex=5;
+DateEdit gzl06=gzl_file.gzl06, tabIndex=6;
+DateEdit gzl09=gzl_file.gzl09, tabIndex=7;
+Edit gzl07=gzl_file.gzl07, tabIndex=8;
+Edit gzl08=gzl_file.gzl08, tabIndex=9;
+ButtonEdit gzl05=gzl_file.gzl05, action=controlp, tabIndex=10, not null, required, image="zoom", downShift, comment="<^P> Qry Program Code";
+ComboBox gzl18=gzl_file.gzl18, tabIndex=11, noEntry, not null, required, items=(("1", "Not Confirm"),("2", "TSD Confirmed"),("3", "SC Confirmed"),("4", "Packed"));
+Edit zz02=formonly.zz02 type CHAR, tabIndex=12, noEntry;
+ButtonEdit gzl11=gzl_file.gzl11, action=controlp, tabIndex=13, image="zoom", downShift, comment="<^P> Qry Process Employee";
+Edit zx02=formonly.zx02 type CHAR, tabIndex=14, noEntry;
+DateEdit gzl10=gzl_file.gzl10, tabIndex=15;
+Edit gzl12=gzl_file.gzl12, tabIndex=16;
+TextEdit gzl16=gzl_file.gzl16, tabIndex=17, stretch=both, scrollBars=both, style="fixedFont";
+ButtonEdit gzl13=gzl_file.gzl13, action=controlp, tabIndex=18, noEntry, image="zoom", comment="<^P> Qry Testing Employee";
+Edit zx02_2=formonly.zx02_2 type CHAR, tabIndex=19, noEntry;
+DateEdit gzl15=gzl_file.gzl15, tabIndex=20, noEntry;
+Edit gzl14=gzl_file.gzl14, tabIndex=21;
+Edit gzl19=gzl_file.gzl19, tabIndex=22, noEntry;
+DateEdit gzl20=gzl_file.gzl20, tabIndex=23, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gzl_file.gzl00,gzl_file.gzl01,gzl_file.gzl17,gzl_file.gzl02,gzl_file.gzl04,gzl_file.gzl06,gzl_file.gzl09,gzl_file.gzl07,gzl_file.gzl08,gzl_file.gzl05,gzl_file.gzl18,formonly.zz02,gzl_file.gzl11,formonly.zx02,gzl_file.gzl10,gzl_file.gzl12,gzl_file.gzl16,gzl_file.gzl13,formonly.zx02_2,gzl_file.gzl15,gzl_file.gzl14,gzl_file.gzl19,gzl_file.gzl20,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,96 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gap/42f/gapi120.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gapi120")
+VBox vb2
+Folder folder01
+Page page01(text="Page01")
+VBox vb1
+Grid gr3301
+{
+ <G group01                                     >
+  Transaction Cate     [g_type    ]
+  Transaction Note No. [rvu01           ]
+  Transaction Date     [rvu03     ]
+  Vender No.           [rvu04     ][rvu05     ]
+ <                                              >
+}
+END -- gr3301
+Table s_rvw
+{
+[rvw09    |rvw07        |rvw01           |rvw02       |rvw03    |rvw04    |rvw11  |rvw12               |rvw05f              |rvw06f                |sum1                 |rvw05                 |rvw06                 |sum2                    |rvw10     |part                |desc                          ]
+[rvw09    |rvw07        |rvw01           |rvw02       |rvw03    |rvw04    |rvw11  |rvw12               |rvw05f              |rvw06f                |sum1                 |rvw05                 |rvw06                 |sum2                    |rvw10     |part                |desc                          ]
+[rvw09    |rvw07        |rvw01           |rvw02       |rvw03    |rvw04    |rvw11  |rvw12               |rvw05f              |rvw06f                |sum1                 |rvw05                 |rvw06                 |sum2                    |rvw10     |part                |desc                          ]
+[rvw09    |rvw07        |rvw01           |rvw02       |rvw03    |rvw04    |rvw11  |rvw12               |rvw05f              |rvw06f                |sum1                 |rvw05                 |rvw06                 |sum2                    |rvw10     |part                |desc                          ]
+[rvw09    |rvw07        |rvw01           |rvw02       |rvw03    |rvw04    |rvw11  |rvw12               |rvw05f              |rvw06f                |sum1                 |rvw05                 |rvw06                 |sum2                    |rvw10     |part                |desc                          ]
+[rvw09    |rvw07        |rvw01           |rvw02       |rvw03    |rvw04    |rvw11  |rvw12               |rvw05f              |rvw06f                |sum1                 |rvw05                 |rvw06                 |sum2                    |rvw10     |part                |desc                          ]
+[rvw09    |rvw07        |rvw01           |rvw02       |rvw03    |rvw04    |rvw11  |rvw12               |rvw05f              |rvw06f                |sum1                 |rvw05                 |rvw06                 |sum2                    |rvw10     |part                |desc                          ]
+[rvw09    |rvw07        |rvw01           |rvw02       |rvw03    |rvw04    |rvw11  |rvw12               |rvw05f              |rvw06f                |sum1                 |rvw05                 |rvw06                 |sum2                    |rvw10     |part                |desc                          ]
+[rvw09    |rvw07        |rvw01           |rvw02       |rvw03    |rvw04    |rvw11  |rvw12               |rvw05f              |rvw06f                |sum1                 |rvw05                 |rvw06                 |sum2                    |rvw10     |part                |desc                          ]
+[rvw09    |rvw07        |rvw01           |rvw02       |rvw03    |rvw04    |rvw11  |rvw12               |rvw05f              |rvw06f                |sum1                 |rvw05                 |rvw06                 |sum2                    |rvw10     |part                |desc                          ]
+}
+END -- s_rvw
+Grid gr3302
+{
+ ---------- Rows [cnt  ]/[cn2  ]--------------   Tot Ori-Amo Bef-Tax [rvw05f_sum         ]Tot Tax amount [rvw06f_sum         ]   [label1               ]  [sum3                   ]
+                                                [label2              |rvw05_sum          |label3        ][rvw06_sum          ]   [label4               ]  [sum4                   ]
+
+
+}
+END -- gr3302
+END -- vb1
+END -- page01
+END -- folder01
+END -- vb2
+END -- gapi120
+
+TABLES
+rvw_file,
+rvu_file
+ATTRIBUTES
+Group group01:group01;
+ComboBox g_type=formonly.g_type type CHAR, tabIndex=1, not null, required, queryEditable, items=(("1", "Store-in"),("3", "Returns"));
+Edit rvu01=rvu_file.rvu01, tabIndex=2;
+DateEdit rvu03=rvu_file.rvu03, tabIndex=3;
+Edit rvu04=rvu_file.rvu04, tabIndex=4;
+Edit rvu05=rvu_file.rvu05, tabIndex=5, noEntry;
+Edit rvw09=rvw_file.rvw09, tabIndex=6, title="Ln No.";
+Edit rvw07=rvw_file.rvw07, tabIndex=7, title="Invoice Code";
+Edit rvw01=rvw_file.rvw01, tabIndex=8, title="Invoice No.", not null, required;
+DateEdit rvw02=rvw_file.rvw02, tabIndex=9, title="Invo.Date", not null, required;
+ButtonEdit rvw03=rvw_file.rvw03, action=controlp, tabIndex=10, title="Tax Tp", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit rvw04=rvw_file.rvw04, tabIndex=11, title="Tax Rt", noEntry;
+ButtonEdit rvw11=rvw_file.rvw11, action=controlp, tabIndex=12, title="Cur.", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit rvw12=rvw_file.rvw12, tabIndex=13, title="Ex. Rt", not null, required;
+Edit rvw05f=rvw_file.rvw05f, tabIndex=14, title="O.C. Amount", not null, required;
+Edit rvw06f=rvw_file.rvw06f, tabIndex=15, title="O.C.Tax Amount";
+Edit sum1=formonly.sum1, tabIndex=23, title=%"Ori-Amo Tax", noEntry;
+Edit rvw05=rvw_file.rvw05, tabIndex=16, title="H.C.Before Tax", not null, required;
+Edit rvw06=rvw_file.rvw06, tabIndex=17, title="H.C.Tax Amount", not null, required;
+Edit sum2=formonly.sum2, tabIndex=24, title=%"Loc-Amo Tax", noEntry;
+Edit rvw10=rvw_file.rvw10, tabIndex=18, title="Qty";
+Edit part=formonly.part type CHAR, tabIndex=19, title="part", noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=20, title="desc", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+Edit rvw05f_sum=formonly.rvw05f_sum type CHAR, tabIndex=25, noEntry;
+Edit rvw06f_sum=formonly.rvw06f_sum type CHAR, tabIndex=26, noEntry;
+Label label1:Label1, text=%"Tot curr-Tax amount";
+Edit sum3=formonly.sum3, tabIndex=27;
+Label label2:Label2, text=%"Tot Loc-Cur Bef-Tax ";
+Edit rvw05_sum=formonly.rvw05_sum, tabIndex=28;
+Label label3:Label3, text=%"Tot Tax Curr";
+Edit rvw06_sum=formonly.rvw06_sum, tabIndex=29;
+Label label4:Label4, text=%"Tot Local Curr-Tax ";
+Edit sum4=formonly.sum4, tabIndex=30;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvw(rvw_file.rvw09,rvw_file.rvw07,rvw_file.rvw01,rvw_file.rvw02,rvw_file.rvw03,rvw_file.rvw04,rvw_file.rvw11,rvw_file.rvw12,rvw_file.rvw05f,rvw_file.rvw06f,formonly.sum1,rvw_file.rvw05,rvw_file.rvw06,formonly.sum2,rvw_file.rvw10,formonly.part,formonly.desc)
+SCREEN RECORD Undefined(formonly.g_type,rvu_file.rvu01,rvu_file.rvu03,rvu_file.rvu04,rvu_file.rvu05,formonly.cnt,formonly.cn2,formonly.rvw05f_sum,formonly.rvw06f_sum,formonly.sum3,formonly.rvw05_sum,formonly.rvw06_sum,formonly.sum4)
+END -- INSTRUCTIONS
+

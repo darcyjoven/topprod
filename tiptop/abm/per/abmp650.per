@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmp650.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmp650")
+VBox VBox1
+Grid gr869
+{
+ <G group01                                    >
+  Master Item #       [bma01               ]
+  Alternate Code      [bma06               ]
+ <                                             >
+
+}
+END -- gr869
+Group g01(text="INPUT")
+VBox VBox2
+Grid gr870
+{
+ Re-Sort [seq            ]
+
+}
+END -- gr870
+Grid gr871
+{
+ Re-Sort Initial Ln# [a         ]
+ Intervals           [b         ]
+}
+END -- gr871
+END -- VBox2
+END -- g01
+Grid gr872
+{
+[dummy01                                ]
+[g_bgjob                                                      ]
+}
+END -- gr872
+END -- VBox1
+END -- abmp650
+
+TABLES
+bma_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit bma01=bma_file.bma01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit bma06=bma_file.bma06, tabIndex=2;
+RadioGroup seq=formonly.seq type CHAR, tabIndex=3, items=(("1", "Line No."),("2", "Item No."));
+Edit a=formonly.a type CHAR, tabIndex=4;
+Edit b=formonly.b type CHAR, tabIndex=5;
+Label dummy01:dummy01, text="NOTE:ECN will Re-Sort if by Item";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=6, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bma_file.bma01,bma_file.bma06,formonly.seq,formonly.a,formonly.b,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

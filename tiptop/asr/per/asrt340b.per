@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asrt340b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asrt340b")
+VBox VBox1
+Folder pc211
+Page page01(text="Main")
+Table s_srp
+{
+[srp02                         |ima02                         |ima021                        |srp06|srp07     |srp08     |srp12     |srp13           |srp14 |srp15                    |srp16     ]
+[srp02                         |ima02                         |ima021                        |srp06|srp07     |srp08     |srp12     |srp13           |srp14 |srp15                    |srp16     ]
+[srp02                         |ima02                         |ima021                        |srp06|srp07     |srp08     |srp12     |srp13           |srp14 |srp15                    |srp16     ]
+[srp02                         |ima02                         |ima021                        |srp06|srp07     |srp08     |srp12     |srp13           |srp14 |srp15                    |srp16     ]
+[srp02                         |ima02                         |ima021                        |srp06|srp07     |srp08     |srp12     |srp13           |srp14 |srp15                    |srp16     ]
+[srp02                         |ima02                         |ima021                        |srp06|srp07     |srp08     |srp12     |srp13           |srp14 |srp15                    |srp16     ]
+[srp02                         |ima02                         |ima021                        |srp06|srp07     |srp08     |srp12     |srp13           |srp14 |srp15                    |srp16     ]
+[srp02                         |ima02                         |ima021                        |srp06|srp07     |srp08     |srp12     |srp13           |srp14 |srp15                    |srp16     ]
+[srp02                         |ima02                         |ima021                        |srp06|srp07     |srp08     |srp12     |srp13           |srp14 |srp15                    |srp16     ]
+[srp02                         |ima02                         |ima021                        |srp06|srp07     |srp08     |srp12     |srp13           |srp14 |srp15                    |srp16     ]
+
+}
+END -- s_srp
+END -- page01
+END -- pc211
+END -- VBox1
+END -- asrt340b
+
+TABLES
+srp_file
+ATTRIBUTES
+ButtonEdit srp02=srp_file.srp02, action=controlp, tabIndex=1, title="Item No.", not null, required, image="zoom", comment="<^P>Qry Item No.";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, title="Desc.", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, title="Spec.", noEntry;
+ButtonEdit srp06=srp_file.srp06, action=controlp, tabIndex=4, title="Unit", not null, required, image="zoom", comment="<^P>Qry Unit";
+Edit srp07=srp_file.srp07, tabIndex=5, title="End Qty", noEntry;
+Edit srp08=srp_file.srp08, tabIndex=6, title="Inv Qty", not null, required;
+Edit srp12=srp_file.srp12, tabIndex=7, title="Dif Qty", not null, required;
+Edit srp13=srp_file.srp13, tabIndex=8, title="WB. NO.", noEntry;
+Edit srp14=srp_file.srp14, tabIndex=9, title="LN#", noEntry;
+Edit srp15=srp_file.srp15, tabIndex=10, title="Product No.", noEntry;
+Edit srp16=srp_file.srp16, tabIndex=11, title="WB. Qty", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_srp(srp_file.srp02,formonly.ima02,formonly.ima021,srp_file.srp06,srp_file.srp07,srp_file.srp08,srp_file.srp12,srp_file.srp13,srp_file.srp14,srp_file.srp15,srp_file.srp16)
+END -- INSTRUCTIONS
+

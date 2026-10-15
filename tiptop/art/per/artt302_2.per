@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt302_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artt302_2")
+VBox vb3
+Folder pc3
+Page Page4(text=%"MemberLevel")
+Table s_rap
+{
+[rap04   |rap05   |rap05_desc    |rap06     |rap07     |rap08    |rapacti ]
+[rap04   |rap05   |rap05_desc    |rap06     |rap07     |rap08    |rapacti ]
+[rap04   |rap05   |rap05_desc    |rap06     |rap07     |rap08    |rapacti ]
+[rap04   |rap05   |rap05_desc    |rap06     |rap07     |rap08    |rapacti ]
+[rap04   |rap05   |rap05_desc    |rap06     |rap07     |rap08    |rapacti ]
+
+
+
+
+
+
+
+
+
+
+}
+END -- s_rap
+END -- Page4
+END -- pc3
+Grid gr16
+{
+
+ --- Items[cn2 ] --------
+
+
+}
+END -- gr16
+END -- vb3
+END -- Form3
+
+TABLES
+rap_file
+ATTRIBUTES
+Edit rap04=rap_file.rap04, tabIndex=1, title="rap04", not null;
+ButtonEdit rap05=rap_file.rap05, action=controlp, tabIndex=2, title="rap05", not null, image="zoom.png";
+Edit rap05_desc=formonly.rap05_desc type CHAR, tabIndex=3, title="rap05_desc", noEntry;
+Edit rap06=rap_file.rap06, tabIndex=4, title="rap06", not null;
+Edit rap07=rap_file.rap07, tabIndex=5, title="rap07";
+Edit rap08=rap_file.rap08, tabIndex=6, title="rap08", not null;
+CheckBox rapacti=rap_file.rapacti, tabIndex=7, default = "Y", title="rapacti", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rap(rap_file.rap04,rap_file.rap05,formonly.rap05_desc,rap_file.rap06,rap_file.rap07,rap_file.rap08,rap_file.rapacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

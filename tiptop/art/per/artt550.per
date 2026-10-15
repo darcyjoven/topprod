@@ -1,0 +1,141 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt550.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt551")
+VBox vb3
+Folder pc1
+Page Page1(text=%"Page0")
+Grid gr1
+{
+
+ rvc01[rvc01                ]   rvc04[rvc04          ]                 rvcconf [rvcconf       |imgmksg ]
+ rvc02[rvc02                ]   rvc05[rvc05          ]                 rvccond [rvccond       |        ]
+ rvc03[rvc03                ]   rvc06[rvc06                   ]        rvcconu [rvcconu       |rvcconu_desc    ]
+      [rvc03_desc           ]        [                        ]        rvcplant[rvcplant      |rvcplant_desc   ]
+
+
+}
+END -- gr1
+END -- Page1
+Page Page2(text=%"Page1")
+Grid gr2
+{
+
+ rvcuser[rvcuser        ]     rvcmodu[rvcmodu       ]    rvcacti[rvcacti       ]
+ rvcgrup[rvcgrup        ]     rvcdate[rvcdate       ]    rvccrat[rvccrat       ]
+ rvcoriu[rvcoriu        ]     rvcorig[rvcorig       ]
+
+}
+END -- gr2
+END -- Page2
+END -- pc1
+Folder pc2
+Page in_store(action=in_store, text=%"in_store")
+Table s_rvf
+{
+[rvf02   |rvf03   |rvf03_desc  |rvf04   |rvf05   |rvf06   |rvv31   |rvv031  |rvv35   |rvv35_de|rvv38   |rvv38t  |rvv17   |rvv39   |rvv39t  |num_unch|rvf07   |rvf08   ]
+[rvf02   |rvf03   |rvf03_desc  |rvf04   |rvf05   |rvf06   |rvv31   |rvv031  |rvv35   |rvv35_de|rvv38   |rvv38t  |rvv17   |rvv39   |rvv39t  |num_unch|rvf07   |rvf08   ]
+[rvf02   |rvf03   |rvf03_desc  |rvf04   |rvf05   |rvf06   |rvv31   |rvv031  |rvv35   |rvv35_de|rvv38   |rvv38t  |rvv17   |rvv39   |rvv39t  |num_unch|rvf07   |rvf08   ]
+[rvf02   |rvf03   |rvf03_desc  |rvf04   |rvf05   |rvf06   |rvv31   |rvv031  |rvv35   |rvv35_de|rvv38   |rvv38t  |rvv17   |rvv39   |rvv39t  |num_unch|rvf07   |rvf08   ]
+[rvf02   |rvf03   |rvf03_desc  |rvf04   |rvf05   |rvf06   |rvv31   |rvv031  |rvv35   |rvv35_de|rvv38   |rvv38t  |rvv17   |rvv39   |rvv39t  |num_unch|rvf07   |rvf08   ]
+
+}
+END -- s_rvf
+END -- in_store
+Page Page7(action=feiyong, text=%"Page2")
+Table s_rve
+{
+[rve02 |rve03     |rve03_desc  |rve04     |rve05   |lub03   |oaj02   |lub09        |lub04   |lub04t  |lub14               |rve06       ]
+[rve02 |rve03     |rve03_desc  |rve04     |rve05   |lub03   |oaj02   |lub09        |lub04   |lub04t  |lub14               |rve06       ]
+[rve02 |rve03     |rve03_desc  |rve04     |rve05   |lub03   |oaj02   |lub09        |lub04   |lub04t  |lub14               |rve06       ]
+[rve02 |rve03     |rve03_desc  |rve04     |rve05   |lub03   |oaj02   |lub09        |lub04   |lub04t  |lub14               |rve06       ]
+[rve02 |rve03     |rve03_desc  |rve04     |rve05   |lub03   |oaj02   |lub09        |lub04   |lub04t  |lub14               |rve06       ]
+
+}
+END -- s_rve
+END -- Page7
+END -- pc2
+Grid gr6
+{
+    ----------Rows[idx  ]/[cnt   ]---------------
+
+
+
+}
+END -- gr6
+END -- vb3
+END -- artt550
+
+TABLES
+rvf_file,
+rvv_file,
+rve_file,
+rvc_file,
+lub_file
+ATTRIBUTES
+ButtonEdit rvc01=rvc_file.rvc01, action=controlp, tabIndex=1, not null, required, image="zoom";
+DateEdit rvc04=rvc_file.rvc04, tabIndex=5, not null, required;
+ComboBox rvcconf=rvc_file.rvcconf, tabIndex=8, noEntry, items=(("N", "un_confirm"),("Y", "confirm"),("X", "void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ComboBox rvc02=rvc_file.rvc02, tabIndex=2, not null, required, items=(("1", "scale"),("2", "cost scale"),("3", "rate scale"),("4", "union"));
+DateEdit rvc05=rvc_file.rvc05, tabIndex=6, not null, required;
+DateEdit rvccond=rvc_file.rvccond, tabIndex=9, noEntry;
+ButtonEdit rvc03=rvc_file.rvc03, action=controlp, tabIndex=3, not null, required, image="zoom";
+TextEdit rvc06=rvc_file.rvc06, tabIndex=7;
+ButtonEdit rvcconu=rvc_file.rvcconu, action=controlp, tabIndex=10, noEntry, image="zoom";
+Edit rvcconu_desc=formonly.rvcconu_desc type VARCHAR, tabIndex=13, noEntry;
+Edit rvc03_desc=formonly.rvc03_desc type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit rvcplant=rvc_file.rvcplant, action=controlp, tabIndex=11, noEntry, image="zoom.png";
+Edit rvcplant_desc=formonly.rvcplant_desc type VARCHAR, tabIndex=12, noEntry;
+Edit rvcuser=rvc_file.rvcuser, tabIndex=14, noEntry;
+Edit rvcmodu=rvc_file.rvcmodu, tabIndex=16, noEntry;
+Edit rvcacti=rvc_file.rvcacti, tabIndex=18, noEntry;
+Edit rvcgrup=rvc_file.rvcgrup, tabIndex=15, noEntry;
+DateEdit rvcdate=formonly.rvcdate type CHAR, tabIndex=17, noEntry;
+DateEdit rvccrat=rvc_file.rvccrat, tabIndex=19, noEntry;
+Edit rvcoriu=rvc_file.rvcoriu, tabIndex=67, noEntry;
+Edit rvcorig=rvc_file.rvcorig, tabIndex=68, noEntry;
+Edit rvf02=rvf_file.rvf02, tabIndex=37, title="rvf02", noEntry;
+ButtonEdit rvf03=rvf_file.rvf03, action=controlp, tabIndex=38, title="rvf03", noEntry, image="zoom";
+Edit rvf03_desc=formonly.rvf03_desc type VARCHAR, tabIndex=39, title="rvf03_desc", noEntry;
+ComboBox rvf04=rvf_file.rvf04, tabIndex=40, title="rvf04", noEntry, items=(("1", "IN"),("2", "RETURN"));
+ButtonEdit rvf05=rvf_file.rvf05, action=controlp, tabIndex=41, title="rvf05", noEntry, image="zoom";
+Edit rvf06=rvf_file.rvf06, tabIndex=42, title="rvf06", noEntry;
+Edit rvv31=rvv_file.rvv31, tabIndex=43, title="rvv31", noEntry;
+Edit rvv031=rvv_file.rvv031, tabIndex=44, title="rvv031", noEntry;
+Edit rvv35=rvv_file.rvv35, tabIndex=45, title="rvv35", noEntry;
+Edit rvv35_de=formonly.rvv35_desc type VARCHAR, tabIndex=46, title="rvv35_desc", noEntry;
+Edit rvv38=rvv_file.rvv38, tabIndex=47, title="rvv38", noEntry;
+Edit rvv38t=rvv_file.rvv38t, tabIndex=48, title="rvv38t", noEntry;
+Edit rvv17=rvv_file.rvv17, tabIndex=49, title="rvv17", noEntry;
+Edit rvv39=rvv_file.rvv39, tabIndex=50, title="rvv39", noEntry;
+Edit rvv39t=rvv_file.rvv39t, tabIndex=51, title="rvv39t", noEntry;
+Edit num_unch=formonly.num_uncheck type INTEGER, tabIndex=52, title="num_uncheck", noEntry;
+CheckBox rvf07=rvf_file.rvf07, tabIndex=53, title="rvf07", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rvf08=rvf_file.rvf08, tabIndex=54, title="rvf08", not null, required;
+Edit rve02=rve_file.rve02, tabIndex=55, title="rve02", noEntry;
+ButtonEdit rve03=rve_file.rve03, action=controlp, tabIndex=56, title="rve03", noEntry, image="zoom";
+Edit rve03_desc=formonly.rve03_desc type VARCHAR, tabIndex=60, title="rve03_desc", noEntry;
+ButtonEdit rve04=rve_file.rve04, action=controlp, tabIndex=57, title="rve04", noEntry, image="zoom";
+Edit rve05=rve_file.rve05, tabIndex=58, title="rve05", noEntry;
+Edit lub03=formonly.lub03 type VARCHAR, tabIndex=61, title="lub03", noEntry;
+Edit oaj02=formonly.oaj02 type VARCHAR, tabIndex=62, title="oaj02", noEntry;
+ComboBox lub09=lub_file.lub09, tabIndex=70, title=%"lub09", noEntry, items=(("01", "Deposit"),("02", "Income"),("10", "Expenditure alone"));
+Edit lub04=formonly.lub04 type DECIMAL, tabIndex=63, title="lub04", noEntry;
+Edit lub04t=formonly.lub04t type DECIMAL, tabIndex=64, title="lub04t", noEntry;
+Edit lub14=lub_file.lub14, tabIndex=69, title=%"lub14", noEntry;
+CheckBox rve06=rve_file.rve06, tabIndex=59, title="rve06", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type SMALLINT, tabIndex=65;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=66;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvf(rvf_file.rvf02,rvf_file.rvf03,formonly.rvf03_desc,rvf_file.rvf04,rvf_file.rvf05,rvf_file.rvf06,rvv_file.rvv31,rvv_file.rvv031,rvv_file.rvv35,formonly.rvv35_desc,rvv_file.rvv38,rvv_file.rvv38t,rvv_file.rvv17,rvv_file.rvv39,rvv_file.rvv39t,formonly.num_uncheck,rvf_file.rvf07,rvf_file.rvf08)
+SCREEN RECORD Undefined(rvc_file.rvc01,rvc_file.rvc04,rvc_file.rvcconf,formonly.imgmksg,rvc_file.rvc02,rvc_file.rvc05,rvc_file.rvccond,rvc_file.rvc03,rvc_file.rvc06,rvc_file.rvcconu,formonly.rvcconu_desc,formonly.rvc03_desc,rvc_file.rvcplant,formonly.rvcplant_desc,rvc_file.rvcuser,rvc_file.rvcmodu,rvc_file.rvcacti,rvc_file.rvcgrup,formonly.rvcdate,rvc_file.rvccrat,rvc_file.rvcoriu,rvc_file.rvcorig,formonly.idx,formonly.cnt)
+SCREEN RECORD s_rve(rve_file.rve02,rve_file.rve03,formonly.rve03_desc,rve_file.rve04,rve_file.rve05,formonly.lub03,formonly.oaj02,lub_file.lub09,formonly.lub04,formonly.lub04t,lub_file.lub14,rve_file.rve06)
+END -- INSTRUCTIONS
+

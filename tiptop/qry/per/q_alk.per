@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_alk.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Creadit Letter Arrival Query")
+VBox VBox1
+Grid gr3724
+{
+ L/C No.             [alk03               ]
+ Arrival Notify $ Sum[alk13_t   ]
+ Arriving Note $ Sum [alk33_t   ]
+}
+END -- gr3724
+Table s_alk
+{
+[check |alk01                |alk07                 |alk02          |alk13              |alk12                   |alk33          ]
+[check |alk01                |alk07                 |alk02          |alk13              |alk12                   |alk33          ]
+[check |alk01                |alk07                 |alk02          |alk13              |alk12                   |alk33          ]
+[check |alk01                |alk07                 |alk02          |alk13              |alk12                   |alk33          ]
+[check |alk01                |alk07                 |alk02          |alk13              |alk12                   |alk33          ]
+[check |alk01                |alk07                 |alk02          |alk13              |alk12                   |alk33          ]
+[check |alk01                |alk07                 |alk02          |alk13              |alk12                   |alk33          ]
+[check |alk01                |alk07                 |alk02          |alk13              |alk12                   |alk33          ]
+[check |alk01                |alk07                 |alk02          |alk13              |alk12                   |alk33          ]
+[check |alk01                |alk07                 |alk02          |alk13              |alk12                   |alk33          ]
+
+}
+END -- s_alk
+END -- VBox1
+END -- q_alk
+
+TABLES
+alk_file
+ATTRIBUTES
+Edit alk03=alk_file.alk03, tabIndex=1;
+Edit alk13_t=formonly.alk13_t type CHAR, tabIndex=2;
+Edit alk33_t=formonly.alk33_t type CHAR, tabIndex=3;
+CheckBox check=formonly.check type CHAR, tabIndex=4, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit alk01=alk_file.alk01, tabIndex=5, title="Arrival Notify No.";
+Edit alk07=alk_file.alk07, tabIndex=6, title="Arriving Notify No.";
+Edit alk02=alk_file.alk02, tabIndex=7, title="Arrival Date";
+Edit alk13=alk_file.alk13, tabIndex=8, title="Arrival Notify $";
+Edit alk12=alk_file.alk12, tabIndex=9, title="Arrival Exchange Rate";
+Edit alk33=alk_file.alk33, tabIndex=10, title="Arriving Note $";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_alk(formonly.check,alk_file.alk01,alk_file.alk07,alk_file.alk02,alk_file.alk13,alk_file.alk12,alk_file.alk33)
+SCREEN RECORD Undefined(alk_file.alk03,formonly.alk13_t,formonly.alk33_t)
+END -- INSTRUCTIONS
+

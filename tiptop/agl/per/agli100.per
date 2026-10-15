@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli100")
+VBox vb2
+Folder pc439
+Page page01(text="Main")
+Table s_aag
+{
+[aag00     |aag01       |aag02                                             |aag03        |aag04            |aag05 |aag07               |aag08     |aag24       |aagacti ]
+[aag00     |aag01       |aag02                                             |aag03        |aag04            |aag05 |aag07               |aag08     |aag24       |aagacti ]
+[aag00     |aag01       |aag02                                             |aag03        |aag04            |aag05 |aag07               |aag08     |aag24       |aagacti ]
+[aag00     |aag01       |aag02                                             |aag03        |aag04            |aag05 |aag07               |aag08     |aag24       |aagacti ]
+[aag00     |aag01       |aag02                                             |aag03        |aag04            |aag05 |aag07               |aag08     |aag24       |aagacti ]
+[aag00     |aag01       |aag02                                             |aag03        |aag04            |aag05 |aag07               |aag08     |aag24       |aagacti ]
+[aag00     |aag01       |aag02                                             |aag03        |aag04            |aag05 |aag07               |aag08     |aag24       |aagacti ]
+[aag00     |aag01       |aag02                                             |aag03        |aag04            |aag05 |aag07               |aag08     |aag24       |aagacti ]
+[aag00     |aag01       |aag02                                             |aag03        |aag04            |aag05 |aag07               |aag08     |aag24       |aagacti ]
+[aag00     |aag01       |aag02                                             |aag03        |aag04            |aag05 |aag07               |aag08     |aag24       |aagacti ]
+
+}
+END -- s_aag
+END -- page01
+END -- pc439
+Grid gr2358
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr2358
+END -- vb2
+END -- agli100
+
+TABLES
+aag_file
+ATTRIBUTES
+ButtonEdit aag00=aag_file.aag00, action=controlp, tabIndex=11, title=%"Book No", not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+Edit aag01=aag_file.aag01, tabIndex=1, title="Account #", not null, required, comment="Key Field, No Blank/Repeated! <^Y>Enter Account Detail";
+Edit aag02=aag_file.aag02, tabIndex=2, title="Account Title", comment="<^Y> Account Extra Description (FM)";
+ComboBox aag03=aag_file.aag03, tabIndex=3, title="Pty", queryEditable, items=(("2", %"Account"),("4", %"Carry Forward"));
+ComboBox aag04=aag_file.aag04, tabIndex=4, title="BS/IS", queryEditable, items=(("1", %"Balance Sheet"),("2", %"Income Statement"));
+CheckBox aag05=aag_file.aag05, tabIndex=5, title="Dept", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Account to Department Control?";
+ComboBox aag07=aag_file.aag07, tabIndex=6, title="Ctrl", not null, required, queryEditable, comment="Control Details ", items=(("1", %"Control Account"),("2", %"Detail account"),("3", %"Independent Account"));
+Edit aag08=aag_file.aag08, tabIndex=7, title="Ctrl.Acct";
+Edit aag24=aag_file.aag24, tabIndex=8, title="Acc. Level";
+CheckBox aagacti=aag_file.aagacti, tabIndex=9, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Checked:Valid UnChecked:Void";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aag(aag_file.aag00,aag_file.aag01,aag_file.aag02,aag_file.aag03,aag_file.aag04,aag_file.aag05,aag_file.aag07,aag_file.aag08,aag_file.aag24,aag_file.aagacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

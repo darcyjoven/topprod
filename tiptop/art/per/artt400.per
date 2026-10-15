@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt400")
+VBox vb2
+Folder folder01
+Page Page1(text=%"Page0")
+Grid gr2
+{
+ ruf01[ruf01               ]     rufconf[rufconf        ]
+ ruf02[ruf02        ]            rufcond[rufcond        |rufcont       ] [imgmksg]
+ ruf03[ruf03               ]     rufconu[rufconu        |rufconu_desc  ] [       ]
+      [                    ]     ruf930 [rufplant       |rufplant_desc ]
+
+}
+END -- gr2
+END -- Page1
+Page Page2(text=%"Page1")
+Grid gr4
+{
+
+ rufuser[rufuser       ]   rufmodu[rufmodu      ]    rufacti[rufacti        ]
+ rufgrup[rufgrup       ]   rufdate[rufdate      ]    rufcrat[rufcrat        ]
+ ruforiu[ruforiu       ]   ruforig[ruforig      ]
+
+}
+END -- gr4
+END -- Page2
+END -- folder01
+Table s_rug
+{
+[rug02   |rug09     |rug09_desc|rug03     |rug03_de|rug04 |rug04_de|rug05     |rug06     |rug07    |rug08     ]
+[rug02   |rug09     |rug09_desc|rug03     |rug03_de|rug04 |rug04_de|rug05     |rug06     |rug07    |rug08     ]
+[rug02   |rug09     |rug09_desc|rug03     |rug03_de|rug04 |rug04_de|rug05     |rug06     |rug07    |rug08     ]
+[rug02   |rug09     |rug09_desc|rug03     |rug03_de|rug04 |rug04_de|rug05     |rug06     |rug07    |rug08     ]
+[rug02   |rug09     |rug09_desc|rug03     |rug03_de|rug04 |rug04_de|rug05     |rug06     |rug07    |rug08     ]
+[rug02   |rug09     |rug09_desc|rug03     |rug03_de|rug04 |rug04_de|rug05     |rug06     |rug07    |rug08     ]
+
+}
+END -- s_rug
+Grid gr11
+{
+ ----------Rows[idx  ]/[cnt  ]----------Details[cn2   ]----------
+
+}
+END -- gr11
+END -- vb2
+END -- artt400
+
+TABLES
+ruf_file,
+rug_file
+ATTRIBUTES
+ButtonEdit ruf01=ruf_file.ruf01, action=controlp, tabIndex=3, not null, required, image="zoom";
+ComboBox rufconf=ruf_file.rufconf, tabIndex=6, noEntry, items=(("N", "Un_Confirm"),("Y", "Confirm"),("X", "VOID"));
+DateEdit ruf02=ruf_file.ruf02, tabIndex=1, not null, required;
+DateEdit rufcond=ruf_file.rufcond, tabIndex=2, noEntry;
+TimeEdit rufcont=ruf_file.rufcont, tabIndex=7, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+TextEdit ruf03=ruf_file.ruf03, tabIndex=4;
+ButtonEdit rufconu=ruf_file.rufconu, action=controlp, tabIndex=8, noEntry, image="zoom";
+Edit rufconu_desc=formonly.rufconu_desc type VARCHAR, tabIndex=10, noEntry;
+ButtonEdit rufplant=ruf_file.rufplant, action=controlp, tabIndex=5, noEntry, image="zoom.png";
+Edit rufplant_desc=formonly.rufplant_desc type VARCHAR, tabIndex=9, noEntry;
+Edit rufuser=ruf_file.rufuser, tabIndex=11, noEntry;
+Edit rufmodu=ruf_file.rufmodu, tabIndex=12, noEntry;
+Edit rufacti=ruf_file.rufacti, tabIndex=13, noEntry;
+Edit rufgrup=ruf_file.rufgrup, tabIndex=14, noEntry;
+DateEdit rufdate=ruf_file.rufdate, tabIndex=15, noEntry;
+DateEdit rufcrat=ruf_file.rufcrat, tabIndex=16, noEntry;
+Edit ruforiu=ruf_file.ruforiu, tabIndex=31, noEntry;
+Edit ruforig=ruf_file.ruforig, tabIndex=32, noEntry;
+Edit rug02=rug_file.rug02, tabIndex=17, title="rug02", not null, required;
+ButtonEdit rug09=rug_file.rug09, action=controlp, tabIndex=29, title="rug09", not null, image="zoom.png";
+Edit rug09_desc=formonly.rug09_desc type CHAR, tabIndex=30, title="rug09_desc", noEntry;
+ButtonEdit rug03=rug_file.rug03, action=controlp, tabIndex=18, title="rug03", not null, required, image="zoom";
+Edit rug03_de=formonly.rug03_desc type CHAR, tabIndex=24, title="rug03_desc", noEntry;
+ButtonEdit rug04=rug_file.rug04, action=controlp, tabIndex=19, title="rug04", not null, required, image="zoom";
+Edit rug04_de=formonly.rug04_desc type CHAR, tabIndex=25, title="rug04_desc", noEntry;
+Edit rug05=rug_file.rug05, tabIndex=20, title="rug05", not null, required;
+DateEdit rug06=rug_file.rug06, tabIndex=21, title="rug06", not null, required;
+TimeEdit rug07=rug_file.rug07, tabIndex=22, title="rug07", not null, required;
+Edit rug08=rug_file.rug08, tabIndex=23, title="rug08";
+Edit idx=formonly.idx type INTEGER, tabIndex=26;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=27;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rug(rug_file.rug02,rug_file.rug09,formonly.rug09_desc,rug_file.rug03,formonly.rug03_desc,rug_file.rug04,formonly.rug04_desc,rug_file.rug05,rug_file.rug06,rug_file.rug07,rug_file.rug08)
+SCREEN RECORD Undefined(ruf_file.ruf01,ruf_file.rufconf,ruf_file.ruf02,ruf_file.rufcond,ruf_file.rufcont,formonly.imgmksg,ruf_file.ruf03,ruf_file.rufconu,formonly.rufconu_desc,ruf_file.rufplant,formonly.rufplant_desc,ruf_file.rufuser,ruf_file.rufmodu,ruf_file.rufacti,ruf_file.rufgrup,ruf_file.rufdate,ruf_file.rufcrat,ruf_file.ruforiu,ruf_file.ruforig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

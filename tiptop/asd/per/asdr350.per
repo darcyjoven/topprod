@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdr350.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdr350")
+VBox VBox1
+Grid gr429
+{
+ <G group01                                                                             >
+  Product Class       [stn03               ]
+ <                                                                                      >
+
+}
+END -- gr429
+Group g01(text="INPUT")
+Grid gr430
+{
+ <G group02                                                                           >
+  Print Year          [yea ]
+ <                                                                                    >
+ <G group03                                                                           >
+ [type                                      ]
+ <                                                                                    >
+
+}
+END -- gr430
+END -- g01
+Grid gr431
+{
+[more                                               ]
+
+}
+END -- gr431
+END -- VBox1
+END -- asdr350
+
+TABLES
+stn_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit stn03=stn_file.stn03, tabIndex=1;
+Group group02:group02;
+Edit yea=formonly.yea type SMALLINT, tabIndex=2;
+Group group03:group03, text="Print";
+RadioGroup type=formonly.type type CHAR, tabIndex=3, items=(("1", "Including Re-Work"),("2", "Omit Re-Work"));
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(stn_file.stn03,formonly.yea,formonly.type,formonly.more)
+END -- INSTRUCTIONS
+

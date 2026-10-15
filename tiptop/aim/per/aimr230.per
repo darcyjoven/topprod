@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr230.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr230")
+VBox VBox1
+Grid gr3244
+{
+ <G group01                                                            >
+  Transaction Comnd   [tlf13               ]
+  Item No.            [tlf01               ]
+  Source Code         [ima08               ]
+  Group Code          [ima06               ]
+ <                                                                     >
+
+}
+END -- gr3244
+Group group02(text="INPUT")
+Grid gr3245
+{
+ <G group03                                                          >
+  Warehouse No.       [stock     ]
+  Location No         [ware      ]
+  Lot No.             [lot                           ]
+  Document Date       [tlf06_b     ] - [tlf06_e     ]
+  Generated Date      [tlf07_b     ] - [tlf07_e     ]
+ <                                                                   >
+ <G group04                                                          >
+ [s1                  ] [s2                  ] [s3                  ]
+ [t1                  ] [t2                  ] [t3                  ]
+ [u1                  ] [u2                  ] [u3                  ]
+ <                                                                   >
+ <G group05                                                          >
+ [a                             ]
+ <                                                                   >
+ <G group07                                                          >
+  Data Source         [tbname    ]
+ <                                                                   >
+
+}
+END -- gr3245
+END -- group02
+Grid gr3246
+{
+[more                                    ]
+
+}
+END -- gr3246
+END -- VBox1
+END -- aimr230
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit tlf13=formonly.tlf13 type VARCHAR, tabIndex=1;
+ButtonEdit tlf01=formonly.tlf01 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=3;
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=4;
+Group group03:group03;
+Edit stock=formonly.stock type VARCHAR, tabIndex=5;
+Edit ware=formonly.ware type VARCHAR, tabIndex=6;
+Edit lot=formonly.lot type VARCHAR, tabIndex=7;
+DateEdit tlf06_b=formonly.tlf06_b type DATE, tabIndex=8;
+DateEdit tlf06_e=formonly.tlf06_e type DATE, tabIndex=9;
+DateEdit tlf07_b=formonly.tlf07_b type DATE, tabIndex=10;
+DateEdit tlf07_e=formonly.tlf07_e type DATE, tabIndex=11;
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=12, queryEditable, items=(("1", "Document No."),("2", "Date"),("3", "Warehouse"),("4", "Location"),("5", "Item No."),("6", "Transaction Comnd"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=13, queryEditable, items=(("1", "Document No."),("2", "Date"),("3", "Warehouse"),("4", "Location"),("5", "Item No."),("6", "Transaction Comnd"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=14, queryEditable, items=(("1", "Document No."),("2", "Date"),("3", "Warehouse"),("4", "Location"),("5", "Item No."),("6", "Transaction Comnd"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=15, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=16, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=17, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=18, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=19, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=20, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05, text="Print Data";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=21, items=(("1", "Document Date"),("2", "Generated Date"));
+Group group07:group07;
+Edit tbname=formonly.tbname type VARCHAR, tabIndex=22, comment="Enter Table Name, <^Y>Select Table Name";
+CheckBox more=formonly.more type VARCHAR, tabIndex=23, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tlf13,formonly.tlf01,formonly.ima08,formonly.ima06,formonly.stock,formonly.ware,formonly.lot,formonly.tlf06_b,formonly.tlf06_e,formonly.tlf07_b,formonly.tlf07_e,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.a,formonly.tbname,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli003")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2334
+{
+  Group Code        [axf13       ] Merge Belong        [axf16       ]
+  Source Comp.ID    [axf09       ] Source Book No.     [axf00       ]
+  Contra\'d Comp.ID  [axf10       ] Contra\'d Book No.   [axf12       ]
+}
+END -- gr2334
+END -- page01
+END -- folder01
+Table s_axf
+{
+[axf19       |axf14     |axf15         |axf01               |axf01_desc          |axf17               |axf02               |axf02_desc              |ax|axf04                   |axf04_desc              |axf18                   |axf18_desc              |axfac]
+[axf19       |axf14     |axf15         |axf01               |axf01_desc          |axf17               |axf02               |axf02_desc              |ax|axf04                   |axf04_desc              |axf18                   |axf18_desc              |axfac]
+[axf19       |axf14     |axf15         |axf01               |axf01_desc          |axf17               |axf02               |axf02_desc              |ax|axf04                   |axf04_desc              |axf18                   |axf18_desc              |axfac]
+[axf19       |axf14     |axf15         |axf01               |axf01_desc          |axf17               |axf02               |axf02_desc              |ax|axf04                   |axf04_desc              |axf18                   |axf18_desc              |axfac]
+[axf19       |axf14     |axf15         |axf01               |axf01_desc          |axf17               |axf02               |axf02_desc              |ax|axf04                   |axf04_desc              |axf18                   |axf18_desc              |axfac]
+[axf19       |axf14     |axf15         |axf01               |axf01_desc          |axf17               |axf02               |axf02_desc              |ax|axf04                   |axf04_desc              |axf18                   |axf18_desc              |axfac]
+[axf19       |axf14     |axf15         |axf01               |axf01_desc          |axf17               |axf02               |axf02_desc              |ax|axf04                   |axf04_desc              |axf18                   |axf18_desc              |axfac]
+[axf19       |axf14     |axf15         |axf01               |axf01_desc          |axf17               |axf02               |axf02_desc              |ax|axf04                   |axf04_desc              |axf18                   |axf18_desc              |axfac]
+[axf19       |axf14     |axf15         |axf01               |axf01_desc          |axf17               |axf02               |axf02_desc              |ax|axf04                   |axf04_desc              |axf18                   |axf18_desc              |axfac]
+[axf19       |axf14     |axf15         |axf01               |axf01_desc          |axf17               |axf02               |axf02_desc              |ax|axf04                   |axf04_desc              |axf18                   |axf18_desc              |axfac]
+}
+END -- s_axf
+Grid gr2335
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2335
+END -- VBox1
+END -- agli003
+
+TABLES
+axf_file
+ATTRIBUTES
+ButtonEdit axf13=axf_file.axf13, action=controlp, tabIndex=15, image="zoom";
+ButtonEdit axf16=axf_file.axf16, action=controlp, tabIndex=18, not null, required, image="zoom";
+ButtonEdit axf09=axf_file.axf09, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Query Combined Report Company ID";
+ButtonEdit axf00=axf_file.axf00, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P>Query Book No.";
+ButtonEdit axf10=axf_file.axf10, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Query Combined Report Company ID";
+ButtonEdit axf12=axf_file.axf12, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P>Query Book No.";
+Edit axf19=axf_file.axf19, tabIndex=22, title=%"Charges Group";
+CheckBox axf14=axf_file.axf14, tabIndex=17, title="Capital Stock", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox axf15=axf_file.axf15, tabIndex=16, title="Source of Account Balance", not null, required, items=(("1", "Period Blance Before Combined"),("2", "Account Transaction Code Contra Balance Before Combined"));
+ButtonEdit axf01=axf_file.axf01, action=controlp, tabIndex=3, title="Source Acct Code", not null, required, image="zoom", comment="Key Field, No Blank/Repeated! <^P>Query Account Data";
+Edit axf01_desc=formonly.axf01_desc type CHAR, tabIndex=4, title="Descriptopn", noEntry;
+ComboBox axf17=axf_file.axf17, tabIndex=19, title=%"Source of Account Balance", not null, required, items=(("1", "Period Blance Before Combined(axg_file)"),("2", "Account Transaction Code Contra Balance Before Combined(axk_file)"));
+ButtonEdit axf02=axf_file.axf02, action=controlp, tabIndex=5, title="Contra\'d Acct.Code", not null, required, image="zoom", comment="<^P>Query Account Data";
+Edit axf02_desc=formonly.axf02_desc type CHAR, tabIndex=6, title="Description", noEntry;
+CheckBox ax=axf_file.axf03, tabIndex=7, title="%", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit axf04=axf_file.axf04, action=controlp, tabIndex=8, title="Debit Balance Acc.", image="zoom", comment="<^P>Query Account Data";
+Edit axf04_desc=formonly.axf04_desc type CHAR, tabIndex=9, title="Description", noEntry;
+ButtonEdit axf18=axf_file.axf18, action=controlp, tabIndex=20, title=%"Odds Homologous Acc.", image="zoom";
+Edit axf18_desc=formonly.axf18_desc, tabIndex=21, title=%"Description", noEntry;
+CheckBox axfac=axf_file.axfacti, tabIndex=10, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axf(axf_file.axf19,axf_file.axf14,axf_file.axf15,axf_file.axf01,formonly.axf01_desc,axf_file.axf17,axf_file.axf02,formonly.axf02_desc,axf_file.axf03,axf_file.axf04,formonly.axf04_desc,axf_file.axf18,formonly.axf18_desc,axf_file.axfacti)
+SCREEN RECORD Undefined(axf_file.axf13,axf_file.axf16,axf_file.axf09,axf_file.axf00,axf_file.axf10,axf_file.axf12,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

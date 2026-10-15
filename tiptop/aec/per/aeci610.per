@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci610")
+VBox VBox1
+Folder pc263
+Page page01(text="Page01")
+Grid gr1653
+{
+ <G group01                                           ><G group02                                            >
+  Item No.            [ecb01                         ]  Routing Code        [ecb02     ]
+  Task Serial Num     [ecb03     ]                      Process Code        [ecb012    ]
+  Task No.            [ecb06     ]                      Process Des         [ecu014                        ]
+  Configuration Item# [ecb36               ]            Task option         [ecb37     ]
+  Machine#            [ecb07     ]                      Workstation No.     [ecb08     ]
+ [ecb09                                    ]            Moving Time(Min)    [ecb10     ]
+  Task Overlap Level% [ecb11     ]                      Output Device       [ecb12     ]
+  Costing Base        [ecb13 ]  /[d01            ]      Fixed Loss          [ecb52     ]
+  Description         [ecb17               ]            Wastage%(%)         [ecb14     ]
+                                                        Patch Loss          [ecb53     ]
+                                                        Labor Qty           [ecb15     ]
+ <                                                    > Machine Qty         [ecb16     ]
+ <G group03                                           > Operation days      [ecbslk03  ]
+  Setup Time(Minute)  [ecb26     ]                     <                                                     >
+  Prod. Time(Minute)  [ecb27     ]                     <G group04                                            >
+  Subcont Time(Min)   [ecb28     ]                      Stnd Labor Setup Time(Sec)      [ecb18     ]
+                                                        Stnd Labor Production Time(Sec) [ecb19     ]
+  Subcont Cost        [ecb23               ]            Stnd Machine Setup Time(Sec)    [ecb20     ]
+  Subcont Vender      [ecb25     ]                      Stnd Machine Pro. Time(Sec)     [ecb21     ]
+ <                                                    > Stnd Subcont Time(Min)          [ecb22     ]
+                                                        Subcont Item                    [ecb24              ]
+                                                       <                                                     >
+
+}
+END -- gr1653
+END -- page01
+Page info(text="Info")
+Grid gr1654
+{
+ Record Owner        [ecbuser   ] Last Modified by    [ecbmodu   ] Data Valid Code     [ecbacti   ]
+ Department          [ecbgrup   ] Create/Modify Date  [ecbdate     ]
+ Record Orig.        [ecboriu   ]
+ Dept Orig.          [ecborig   ]
+}
+END -- gr1654
+END -- info
+END -- pc263
+Grid gr1655
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr1655
+END -- VBox1
+END -- aeci610
+
+TABLES
+ecb_file,
+ecu_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit ecb01=ecb_file.ecb01, action=controlp, tabIndex=1, image="zoom", comment="<^P> Query Item   <^Y> Add Item    ";
+ButtonEdit ecb03=ecb_file.ecb03, action=controlp, tabIndex=2, required, image="zoom", comment="No Blank/Negative,<^P>Qry Master Routing Task S/N";
+ButtonEdit ecb06=ecb_file.ecb06, action=controlp, tabIndex=3, not null, required, image="zoom", comment=" <^P> Qry Task     <^Y>Add Task    ";
+Edit ecb36=ecb_file.ecb36, tabIndex=4, noEntry;
+ButtonEdit ecb07=ecb_file.ecb07, action=controlp, tabIndex=5, image="zoom", comment=" <^P> Qry Production Machine <^Y>Add Production Machine";
+CheckBox ecb09=ecb_file.ecb09, tabIndex=6, text="Inventory Taking", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ecb11=ecb_file.ecb11, tabIndex=7;
+Edit ecb13=ecb_file.ecb13, tabIndex=8, not null, required, comment="(1).Hour/Unit (2).Unit/Hour ";
+Edit d01=formonly.d01 type VARCHAR, tabIndex=9;
+Edit ecb17=ecb_file.ecb17, tabIndex=10;
+Group group02:group02, text="Account Setting";
+Edit ecb02=ecb_file.ecb02, tabIndex=11, required, comment="No Blank/Negative";
+Edit ecb012=ecb_file.ecb012, tabIndex=503, not null, required, comment="No Blank/Negative";
+Edit ecu014=ecu_file.ecu014, tabIndex=504, comment="No Blank/Negative";
+Edit ecb37=ecb_file.ecb37, tabIndex=12, noEntry;
+ButtonEdit ecb08=ecb_file.ecb08, action=controlp, tabIndex=13, not null, required, image="zoom", comment="No Blank, <^P> Qry Workstation <^Y>Add Workstation";
+Edit ecb10=ecb_file.ecb10, tabIndex=14;
+Edit ecb12=ecb_file.ecb12, tabIndex=15;
+Edit ecb52=ecb_file.ecb52, tabIndex=505, not null;
+Edit ecb14=ecb_file.ecb14, tabIndex=16;
+Edit ecb53=ecb_file.ecb53, tabIndex=506, not null;
+Edit ecb15=ecb_file.ecb15, tabIndex=17;
+Edit ecb16=ecb_file.ecb16, tabIndex=18;
+Edit ecbslk03=ecb_file.ecbslk03, tabIndex=19, default = "0";
+Group group03:group03, text="Schedule";
+Edit ecb26=ecb_file.ecb26, tabIndex=20;
+Edit ecb27=ecb_file.ecb27, tabIndex=21;
+Edit ecb28=ecb_file.ecb28, tabIndex=22;
+Edit ecb23=ecb_file.ecb23, tabIndex=23;
+ButtonEdit ecb25=ecb_file.ecb25, action=controlp, tabIndex=24, image="zoom", comment=" <^P> Qry Supplier Common Data <^Y>Add Supplier Common Data";
+Group group04:group04, text="Capacity Planning";
+Edit ecb18=ecb_file.ecb18, tabIndex=25;
+Edit ecb19=ecb_file.ecb19, tabIndex=26;
+Edit ecb20=ecb_file.ecb20, tabIndex=27;
+Edit ecb21=ecb_file.ecb21, tabIndex=28;
+Edit ecb22=ecb_file.ecb22, tabIndex=29;
+ButtonEdit ecb24=ecb_file.ecb24, action=controlp, tabIndex=30, image="zoom", comment=" <^P> Qry Subcontracting Item <^Y>Add Item";
+Edit ecbuser=ecb_file.ecbuser, tabIndex=31, noEntry;
+Edit ecbmodu=ecb_file.ecbmodu, tabIndex=32, noEntry;
+Edit ecbacti=ecb_file.ecbacti, tabIndex=33, noEntry, upShift;
+Edit ecbgrup=ecb_file.ecbgrup, tabIndex=34, noEntry;
+DateEdit ecbdate=ecb_file.ecbdate, tabIndex=35, noEntry;
+Edit ecboriu=ecb_file.ecboriu, tabIndex=501, noEntry;
+Edit ecborig=ecb_file.ecborig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=36;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ecb_file.ecb01,ecb_file.ecb03,ecb_file.ecb06,ecb_file.ecb36,ecb_file.ecb07,ecb_file.ecb09,ecb_file.ecb11,ecb_file.ecb13,formonly.d01,ecb_file.ecb17,ecb_file.ecb02,ecb_file.ecb012,ecu_file.ecu014,ecb_file.ecb37,ecb_file.ecb08,ecb_file.ecb10,ecb_file.ecb12,ecb_file.ecb52,ecb_file.ecb14,ecb_file.ecb53,ecb_file.ecb15,ecb_file.ecb16,ecb_file.ecbslk03,ecb_file.ecb26,ecb_file.ecb27,ecb_file.ecb28,ecb_file.ecb23,ecb_file.ecb25,ecb_file.ecb18,ecb_file.ecb19,ecb_file.ecb20,ecb_file.ecb21,ecb_file.ecb22,ecb_file.ecb24,ecb_file.ecbuser,ecb_file.ecbmodu,ecb_file.ecbacti,ecb_file.ecbgrup,ecb_file.ecbdate,ecb_file.ecboriu,ecb_file.ecborig,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi226.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi226")
+VBox VBox1
+Folder pc485
+Page page01(text="Main")
+Table s_tuo
+{
+[tuo01      |tuo01_ds       |tuo02     |tuo02_ds        |tuo03     |tuo031    |tuo04       |tuo05      ]
+[tuo01      |tuo01_ds       |tuo02     |tuo02_ds        |tuo03     |tuo031    |tuo04       |tuo05      ]
+[tuo01      |tuo01_ds       |tuo02     |tuo02_ds        |tuo03     |tuo031    |tuo04       |tuo05      ]
+[tuo01      |tuo01_ds       |tuo02     |tuo02_ds        |tuo03     |tuo031    |tuo04       |tuo05      ]
+[tuo01      |tuo01_ds       |tuo02     |tuo02_ds        |tuo03     |tuo031    |tuo04       |tuo05      ]
+[tuo01      |tuo01_ds       |tuo02     |tuo02_ds        |tuo03     |tuo031    |tuo04       |tuo05      ]
+[tuo01      |tuo01_ds       |tuo02     |tuo02_ds        |tuo03     |tuo031    |tuo04       |tuo05      ]
+[tuo01      |tuo01_ds       |tuo02     |tuo02_ds        |tuo03     |tuo031    |tuo04       |tuo05      ]
+[tuo01      |tuo01_ds       |tuo02     |tuo02_ds        |tuo03     |tuo031    |tuo04       |tuo05      ]
+[tuo01      |tuo01_ds       |tuo02     |tuo02_ds        |tuo03     |tuo031    |tuo04       |tuo05      ]
+
+}
+END -- s_tuo
+END -- page01
+END -- pc485
+Grid gr2073
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr2073
+END -- VBox1
+END -- axmi226
+
+TABLES
+tuo_file
+ATTRIBUTES
+ButtonEdit tuo01=tuo_file.tuo01, action=controlp, tabIndex=1, title="Customer #", not null, required, image="zoom", comment="<^P> Qry Customer";
+Edit tuo01_ds=formonly.tuo01_ds type VARCHAR, tabIndex=2, title="Cust Abbr.", noEntry;
+ButtonEdit tuo02=tuo_file.tuo02, action=controlp, tabIndex=3, title="Ship.Cust", image="zoom";
+Edit tuo02_ds=formonly.tuo02_ds type VARCHAR, tabIndex=4, title="Ship.Cust Abbr.", noEntry;
+ButtonEdit tuo03=tuo_file.tuo03, action=controlp, tabIndex=5, title="Del. W/H", image="zoom", comment="<^P> Qry Delivery Warehouse";
+ButtonEdit tuo031=tuo_file.tuo031, action=controlp, tabIndex=6, title="Del. Loc", image="zoom", comment="<^T> Qry Delivery Location";
+ButtonEdit tuo04=tuo_file.tuo04, action=controlp, tabIndex=7, title="Consign W/H", image="zoom", comment="<^P> Qry Consign Warehouse";
+ButtonEdit tuo05=tuo_file.tuo05, action=controlp, tabIndex=8, title="Consign Loc", image="zoom", comment="<^T> Qry Consign Location";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tuo(tuo_file.tuo01,formonly.tuo01_ds,tuo_file.tuo02,formonly.tuo02_ds,tuo_file.tuo03,tuo_file.tuo031,tuo_file.tuo04,tuo_file.tuo05)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

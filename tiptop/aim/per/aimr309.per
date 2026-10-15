@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr309.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr309")
+VBox VBox1
+Grid gr3255
+{
+ <G group01                                                  >
+  Vender No.          [imo03               ]
+  Vender Abbreviation [imo04               ]
+  Date Borrowed       [imo02               ]
+  Borrowing Note No.  [imo01               ]
+  Borrower            [imo06               ]
+  Item No.            [imp03               ]
+  Anticipated Repay Dt[imp06               ]
+ <                                                           >
+
+}
+END -- gr3255
+Grid gr3256
+{
+[more                                    ]
+
+}
+END -- gr3256
+END -- VBox1
+END -- aimr309
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit imo03=formonly.imo03 type VARCHAR, tabIndex=1;
+Edit imo04=formonly.imo04 type VARCHAR, tabIndex=2;
+DateEdit imo02=formonly.imo02 type DATE, tabIndex=3;
+Edit imo01=formonly.imo01 type VARCHAR, tabIndex=4;
+Edit imo06=formonly.imo06 type VARCHAR, tabIndex=5;
+ButtonEdit imp03=formonly.imp03 type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+DateEdit imp06=formonly.imp06 type DATE, tabIndex=7;
+CheckBox more=formonly.more type VARCHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.imo03,formonly.imo04,formonly.imo02,formonly.imo01,formonly.imo06,formonly.imp03,formonly.imp06,formonly.more)
+END -- INSTRUCTIONS
+

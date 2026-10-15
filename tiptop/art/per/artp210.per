@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artp210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artp210")
+VBox vb2
+Group gb1(text="Basic Data")
+Grid gr2
+{
+ Plan Name     [rus02                              ]
+ Date          [rus03     ]
+ Inventory Date[rus04     ]
+ Inventory Org#[rusplant                           ]
+ Warehouse Type[type               ]
+               [                   ]
+               [                   ]
+  Warehouse    [rus05                              ]
+  Memo         [rus14                              ]
+               [                                   ]
+               [                                   ]
+
+}
+END -- gr2
+END -- gb1
+Group gb2(text="Range")
+Grid gr1
+{
+
+ [rus06            ]  Classification[rus07                         ]
+ [rus08            ]  Brand No.     [rus09                         ]
+ [rus10            ]  Provider No.  [rus11                         ]
+ [rus12            ]  Goods No.     [rus13                         ]
+
+}
+END -- gr1
+END -- gb2
+END -- vb2
+END -- artp210
+
+ATTRIBUTES
+Edit rus02=formonly.rus02 type CHAR, tabIndex=6, not null;
+DateEdit rus03=formonly.rus03 type CHAR, tabIndex=7;
+DateEdit rus04=formonly.rus04 type CHAR, tabIndex=8, not null;
+ButtonEdit rusplant=formonly.rusplant type CHAR, action=controlp, tabIndex=9, not null, image="zoom.png";
+RadioGroup type=formonly.type type CHAR, tabIndex=10, not null, items=(("0", "All"),("1", "Cost Store"),("2", "Non-Cost Store"));
+ButtonEdit rus05=formonly.rus05 type CHAR, action=controlp, tabIndex=11, not null, image="zoom.png";
+TextEdit rus14=formonly.rus14 type CHAR, tabIndex=12;
+CheckBox rus06=formonly.rus06 type CHAR, tabIndex=1, text="Limit Category", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rus07=formonly.rus07 type CHAR, action=controlp, tabIndex=5, noEntry, not null, image="zoom.png";
+CheckBox rus08=formonly.rus08 type CHAR, tabIndex=2, text="Limit Brand", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rus09=formonly.rus09 type CHAR, action=controlp, tabIndex=13, noEntry, not null, image="zoom.png";
+CheckBox rus10=formonly.rus10 type CHAR, tabIndex=3, text="Limit Provider", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rus11=formonly.rus11 type CHAR, action=controlp, tabIndex=14, noEntry, not null, image="zoom.png";
+CheckBox rus12=formonly.rus12 type CHAR, tabIndex=4, text="Limit Goods", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rus13=formonly.rus13 type CHAR, action=controlp, tabIndex=15, noEntry, not null, image="zoom.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rus02,formonly.rus03,formonly.rus04,formonly.rusplant,formonly.type,formonly.rus05,formonly.rus14,formonly.rus06,formonly.rus07,formonly.rus08,formonly.rus09,formonly.rus10,formonly.rus11,formonly.rus12,formonly.rus13)
+END -- INSTRUCTIONS
+

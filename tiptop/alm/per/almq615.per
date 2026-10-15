@@ -1,0 +1,115 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almq615.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almq042")
+VBox VBox1
+Folder pc3
+Page Page6(text=%"Basic Data")
+Grid gr10
+{
+
+ plant          [azw01       ]
+ Plan serial No.[lsl02       ]
+ Card plants No.[lph01       ]
+ Outset date    [date_sta            ]
+ Expiry date    [date_end            ]
+ Issued         [issued ]
+ Data Valid Code[data_va]
+
+}
+END -- gr10
+END -- Page6
+END -- pc3
+Folder Folder1
+Page Page1(action=fixup1, text=%"Integral to change things")
+VBox VBox2
+Table s_lpq
+{
+[lpqplant        |lpq01     |lpq14       |lpq03     |lph02               |lpq04     |lpq05               |lpr02     |lpr03               |ima02           |iam021          |lpr04       |gfe02               |lpr05           |lpq15   |lpqacti  ]
+[lpqplant        |lpq01     |lpq14       |lpq03     |lph02               |lpq04     |lpq05               |lpr02     |lpr03               |ima02           |iam021          |lpr04       |gfe02               |lpr05           |lpq15   |lpqacti  ]
+[lpqplant        |lpq01     |lpq14       |lpq03     |lph02               |lpq04     |lpq05               |lpr02     |lpr03               |ima02           |iam021          |lpr04       |gfe02               |lpr05           |lpq15   |lpqacti  ]
+[lpqplant        |lpq01     |lpq14       |lpq03     |lph02               |lpq04     |lpq05               |lpr02     |lpr03               |ima02           |iam021          |lpr04       |gfe02               |lpr05           |lpq15   |lpqacti  ]
+[lpqplant        |lpq01     |lpq14       |lpq03     |lph02               |lpq04     |lpq05               |lpr02     |lpr03               |ima02           |iam021          |lpr04       |gfe02               |lpr05           |lpq15   |lpqacti  ]
+}
+END -- s_lpq
+Grid gr8
+{
+ ---------- Rows [cn2   ]----------
+
+}
+END -- gr8
+END -- VBox2
+END -- Page1
+Page Page2(action=fixup2, text=%"Integral to change coupons")
+VBox VBox3
+Table s_lst
+{
+[lstplant      |lst01   |lst15           |lst03   |lph02_1     |lst04   |lst05   |lss02   |lss04   |lss05   |lst16   |lstacti ]
+[lstplant      |lst01   |lst15           |lst03   |lph02_1     |lst04   |lst05   |lss02   |lss04   |lss05   |lst16   |lstacti ]
+[lstplant      |lst01   |lst15           |lst03   |lph02_1     |lst04   |lst05   |lss02   |lss04   |lss05   |lst16   |lstacti ]
+[lstplant      |lst01   |lst15           |lst03   |lph02_1     |lst04   |lst05   |lss02   |lss04   |lss05   |lst16   |lstacti ]
+[lstplant      |lst01   |lst15           |lst03   |lph02_1     |lst04   |lst05   |lss02   |lss04   |lss05   |lst16   |lstacti ]
+}
+END -- s_lst
+Grid gr1
+{
+ ---------- Rows [cn3   ]----------
+
+}
+END -- gr1
+END -- VBox3
+END -- Page2
+END -- Folder1
+END -- VBox1
+END -- almq615
+
+ATTRIBUTES
+ButtonEdit azw01=formonly.azw01 type VARCHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit lsl02=formonly.lsl02 type VARCHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit lph01=formonly.lph01 type VARCHAR, action=controlp, tabIndex=1, image="zoom.png";
+DateEdit date_sta=formonly.date_sta type DATE, tabIndex=1;
+DateEdit date_end=formonly.date_end type DATE, tabIndex=1;
+ComboBox issued=formonly.Issued type CHAR, tabIndex=1, items=(("Y", "Y"),("N", "N"));
+ComboBox data_va=formonly.Data_Valid_Code type CHAR, tabIndex=1, items=(("Y", "Y"),("N", "N"));
+Edit lpqplant=formonly.lpqplant type CHAR, tabIndex=1, title="lpqplant", noEntry;
+Edit lpq01=formonly.lpq01 type CHAR, tabIndex=1, title="Plan serial No.", noEntry;
+Edit lpq14=formonly.lpq14 type CHAR, tabIndex=1, title="version", noEntry;
+Edit lpq03=formonly.lpq03 type CHAR, tabIndex=1, title="card plants No.", noEntry;
+Edit lph02=formonly.lph02 type CHAR, tabIndex=1, title="card plants name", noEntry;
+DateEdit lpq04=formonly.lpq04 type CHAR, tabIndex=1, title="Outset date", noEntry;
+DateEdit lpq05=formonly.lpq05 type CHAR, tabIndex=1, title="Expiry date", noEntry;
+Edit lpr02=formonly.lpr02 type CHAR, tabIndex=1, title="integral reaches", noEntry;
+Edit lpr03=formonly.lpr03 type CHAR, tabIndex=1, title="Complimentary No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=1, title="Complimentary name", noEntry;
+Edit iam021=formonly.iam021 type CHAR, tabIndex=1, title="Specification";
+Edit lpr04=formonly.lpr04 type CHAR, tabIndex=1, title="Unit", noEntry;
+Edit gfe02=formonly.gfe02 type CHAR, tabIndex=1, title="gfe02", noEntry;
+Edit lpr05=formonly.lpr05 type CHAR, tabIndex=1, title="Qty", noEntry;
+Edit lpq15=formonly.lpq15, tabIndex=2, title=%"Issued";
+Edit lpqacti=formonly.lpqacti, tabIndex=3, title=%"Data Valid Code";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=1;
+Edit lstplant=formonly.lstplant type VARCHAR, tabIndex=1, title=%"lstplant";
+Edit lst01=formonly.lst01 type VARCHAR, tabIndex=1, title=%"Plan serial No.";
+Edit lst15=formonly.lst15 type SMALLINT, tabIndex=1, title=%"version";
+Edit lst03=formonly.lst03 type VARCHAR, tabIndex=1, title=%"card plants No.";
+Edit lph02_1=formonly.lph02_1 type VARCHAR, tabIndex=1, title=%"card plants name";
+DateEdit lst04=formonly.lst04 type DATE, tabIndex=1, title=%"Outset date";
+DateEdit lst05=formonly.lst05 type DECIMAL(20,6), tabIndex=1, title=%"Expiry date";
+Edit lss02=formonly.lss02 type DECIMAL(20,6), tabIndex=1, title=%"Outset integral";
+Edit lss04=formonly.lss04, tabIndex=1, title=%"Exchange cardinal";
+Edit lss05=formonly.lss05, tabIndex=1, title=%"Exchange cardinal Amount";
+Edit lst16=formonly.lst16, tabIndex=4, title=%"Issued";
+Edit lstacti=formonly.lstacti, tabIndex=5, title=%"Data Valid Code";
+Edit cn3=formonly.cn3 type CHAR, tabIndex=1;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lpq(formonly.lpqplant,formonly.lpq01,formonly.lpq14,formonly.lpq03,formonly.lph02,formonly.lpq04,formonly.lpq05,formonly.lpr02,formonly.lpr03,formonly.ima02,formonly.iam021,formonly.lpr04,formonly.gfe02,formonly.lpr05,formonly.lpq15,formonly.lpqacti)
+SCREEN RECORD s_lst(formonly.lstplant,formonly.lst01,formonly.lst15,formonly.lst03,formonly.lph02_1,formonly.lst04,formonly.lst05,formonly.lss02,formonly.lss04,formonly.lss05,formonly.lst16,formonly.lstacti)
+SCREEN RECORD Undefined(formonly.azw01,formonly.lsl02,formonly.lph01,formonly.date_sta,formonly.date_end,formonly.cn2,formonly.cn3,formonly.Issued,formonly.Data_Valid_Code)
+END -- INSTRUCTIONS
+

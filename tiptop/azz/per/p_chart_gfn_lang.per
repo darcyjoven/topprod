@@ -1,0 +1,30 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_chart_gfn_lang.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Table Table1
+{
+[gfp03   |gfp04   ]
+[gfp03   |gfp04   ]
+[gfp03   |gfp04   ]
+[gfp03   |gfp04   ]
+[gfp03   |gfp04   ]
+}
+END -- Table1
+END -- Form
+
+ATTRIBUTES
+Phantom formonly.gfp01 type CHAR;
+Phantom formonly.gfp02 type CHAR;
+ComboBox gfp03=formonly.gfp03 type VARCHAR, tabIndex=1, title=%"gfp03";
+Edit gfp04=formonly.gfp04 type VARCHAR, tabIndex=2, title=%"gfp04", required, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gfp(formonly.gfp01,formonly.gfp02,formonly.gfp03,formonly.gfp04)
+END -- INSTRUCTIONS
+

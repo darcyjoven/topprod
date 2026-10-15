@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr311.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr311")
+VBox VBox1
+Group group01(text="INPUT")
+Grid Grid1
+{
+  Ending Date         [edate               ]
+ <G group02                                                          >
+  [detail_sw                                                   ]
+ <                                                                   >
+ <G group03                                                          >
+  [e                                                           ]
+  [f                                                           ]
+  [g                                                           ]
+  [h                                                           ]
+  [i                                                           ]
+ <                                                                   >
+
+}
+END -- Grid1
+END -- group01
+Grid Grid2
+{
+[more                                                        ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- anmr311
+
+ATTRIBUTES
+DateEdit edate=formonly.edate type DATE, tabIndex=1;
+Group group02:group02, text="Data Option";
+RadioGroup detail_sw=formonly.detail_sw type CHAR, tabIndex=2, items=(("1", %"detail"),("2", %"Daily"));
+Group group03:group03, text="Below included in Capital Forecast?";
+CheckBox e=formonly.e type CHAR, tabIndex=3, text="Unpaid Invoice", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type CHAR, tabIndex=4, text="Unbilled Receipt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type CHAR, tabIndex=5, text="Unreceived Purchase", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=6, text="Uncollected Invoice", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox i=formonly.i type CHAR, tabIndex=7, text="Uninvoiced Goods Received", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.edate,formonly.detail_sw,formonly.e,formonly.f,formonly.g,formonly.h,formonly.i,formonly.more)
+END -- INSTRUCTIONS
+

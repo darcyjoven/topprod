@@ -1,0 +1,134 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gis/42f/gisi200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gisi200")
+VBox VBox1
+Folder pc795
+Page page01(text="Main")
+VBox VBox2
+Grid gr3476
+{
+  Source              [ise00                 ]       Status              [ise07                  ]
+  Invoice No.         [ise01           ]             Invoice Date        [ise03     ] Invoice Code        [ise02       ]
+  Tax Type            [ise06     ][ise061    ][ise062               ]
+  Before-Tax Amount   [ise08     ]                   Tax                 [ise08x    ] Total               [ise08t    ]
+
+
+ <G group02                                                     ><G group03                                                >
+  Vender Tax No.      [ise051              ]                      Store-in Date       [ise09     ]
+  Vender Full Name    [ise052                                  ]  Transaction Note No.[ise18           ][ise19     ]
+                      [                                        ]  Item Name           [ise14                         ]
+   Accounts No.       [ise04           ][ise05     ]                    Qty                 [ise15     ]
+   Payment Slip No.   [ise11           ]                                Unit                [ise16     ]
+   Payment Date       [ise12     ]                                Vou Line            [ise10     ]
+   Payment Amount     [ise13     ]
+ <                                                              ><                                                         >
+ <G group04                                                                                                                >
+  Memo                [ise17                                                                 ]
+
+
+ <                                                                                                                         >
+
+}
+END -- gr3476
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr3477
+{
+ Record Owner        [iseuser   ]    Create/Modify Date  [isedate   ]    Last Modified Date  [isemodd   ]
+ Department          [isegrup   ]    Last Modified by    [isemodu   ]
+ Record Orig.        [iseoriu   ]
+ Dept Orig.          [iseorig   ]
+}
+END -- gr3477
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[iseud01                       ] userdefined_field07[iseud07        ] userdefined_field13[iseud13        ]
+                    [                              ] userdefined_field08[iseud08        ] userdefined_field14[iseud14        ]
+ userdefined_field02[iseud02        ]                userdefined_field09[iseud09        ] userdefined_field15[iseud15        ]
+ userdefined_field03[iseud03        ]                userdefined_field10[iseud10        ]
+ userdefined_field04[iseud04        ]                userdefined_field11[iseud11        ]
+ userdefined_field05[iseud05        ]                userdefined_field12[iseud12        ]
+ userdefined_field06[iseud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc795
+Grid gr3478
+{
+  ---------- Rows [cnt   ] ---------
+
+}
+END -- gr3478
+END -- VBox1
+END -- gisi200
+
+TABLES
+ise_file
+ATTRIBUTES
+ComboBox ise00=ise_file.ise00, tabIndex=1, noEntry, items=(("0", "Carry"),("1", "Manually"));
+ComboBox ise07=ise_file.ise07, tabIndex=2, noEntry, items=(("0", "unexpo"),("1", "export"));
+Edit ise01=ise_file.ise01, tabIndex=3, not null, required;
+Edit ise03=ise_file.ise03, tabIndex=4, not null, required;
+Edit ise02=ise_file.ise02, tabIndex=5;
+ButtonEdit ise06=ise_file.ise06, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit ise061=ise_file.ise061, tabIndex=10, noEntry;
+ComboBox ise062=ise_file.ise062, tabIndex=11, not null, required, queryEditable, items=(("S", "Dedu"),("N", "No Dedu"),("T", "Tran"),("A", "Agric"),("W", "Wastes"),("G", "Cus.Tax"),("Z", "Other"));
+Edit ise08=ise_file.ise08, tabIndex=6, not null, required;
+Edit ise08x=ise_file.ise08x, tabIndex=7, not null, required;
+Edit ise08t=ise_file.ise08t, tabIndex=8, not null, required;
+Group group02:group02;
+Edit ise051=ise_file.ise051, tabIndex=12, not null, required;
+TextEdit ise052=ise_file.ise052, tabIndex=13, stretch=NONE, wantNoReturns;
+Edit ise04=ise_file.ise04, tabIndex=14, noEntry, not null, required;
+Edit ise05=ise_file.ise05, tabIndex=15, noEntry, not null, required;
+Edit ise11=ise_file.ise11, tabIndex=16, not null, required;
+Edit ise12=ise_file.ise12, tabIndex=17, not null, required;
+Edit ise13=ise_file.ise13, tabIndex=18, not null, required;
+Group group03:group03;
+Edit ise09=ise_file.ise09, tabIndex=19, not null, required;
+Edit ise18=ise_file.ise18, tabIndex=20, noEntry;
+Edit ise19=ise_file.ise19, tabIndex=21, noEntry;
+Edit ise14=ise_file.ise14, tabIndex=22, not null, required;
+Edit ise15=ise_file.ise15, tabIndex=23;
+ButtonEdit ise16=ise_file.ise16, action=controlp, tabIndex=24, image="zoom", comment="<^P>Qry Details";
+Edit ise10=ise_file.ise10, tabIndex=25, not null, required;
+Group group04:group04;
+Edit ise17=ise_file.ise17, tabIndex=26;
+Edit iseuser=ise_file.iseuser, tabIndex=27, noEntry;
+DateEdit isedate=ise_file.isedate, tabIndex=28, noEntry;
+Edit isemodd=ise_file.isemodd, tabIndex=29, noEntry;
+Edit isegrup=ise_file.isegrup, tabIndex=30, noEntry;
+Edit isemodu=ise_file.isemodu, tabIndex=31, noEntry;
+Edit iseoriu=ise_file.iseoriu, tabIndex=501, noEntry;
+Edit iseorig=ise_file.iseorig, tabIndex=502, noEntry;
+TextEdit iseud01=ise_file.iseud01, tabIndex=33, stretch=NONE;
+Edit iseud07=ise_file.iseud07, tabIndex=34;
+DateEdit iseud13=ise_file.iseud13, tabIndex=35;
+Edit iseud08=ise_file.iseud08, tabIndex=36;
+DateEdit iseud14=ise_file.iseud14, tabIndex=37;
+Edit iseud02=ise_file.iseud02, tabIndex=38;
+Edit iseud09=ise_file.iseud09, tabIndex=39;
+DateEdit iseud15=ise_file.iseud15, tabIndex=40;
+Edit iseud03=ise_file.iseud03, tabIndex=41;
+Edit iseud10=ise_file.iseud10, tabIndex=42;
+Edit iseud04=ise_file.iseud04, tabIndex=43;
+Edit iseud11=ise_file.iseud11, tabIndex=44;
+Edit iseud05=ise_file.iseud05, tabIndex=45;
+Edit iseud12=ise_file.iseud12, tabIndex=46;
+Edit iseud06=ise_file.iseud06, tabIndex=47;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=32, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ise_file.ise00,ise_file.ise07,ise_file.ise01,ise_file.ise03,ise_file.ise02,ise_file.ise06,ise_file.ise061,ise_file.ise062,ise_file.ise08,ise_file.ise08x,ise_file.ise08t,ise_file.ise051,ise_file.ise052,ise_file.ise04,ise_file.ise05,ise_file.ise11,ise_file.ise12,ise_file.ise13,ise_file.ise09,ise_file.ise18,ise_file.ise19,ise_file.ise14,ise_file.ise15,ise_file.ise16,ise_file.ise10,ise_file.ise17,ise_file.iseuser,ise_file.isedate,ise_file.isemodd,ise_file.isegrup,ise_file.isemodu,ise_file.iseoriu,ise_file.iseorig,ise_file.iseud01,ise_file.iseud07,ise_file.iseud13,ise_file.iseud08,ise_file.iseud14,ise_file.iseud02,ise_file.iseud09,ise_file.iseud15,ise_file.iseud03,ise_file.iseud10,ise_file.iseud04,ise_file.iseud11,ise_file.iseud05,ise_file.iseud12,ise_file.iseud06,formonly.cnt)
+END -- INSTRUCTIONS
+

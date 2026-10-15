@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi327.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi327")
+VBox vb2
+Folder folder01
+Page page01(text="Page01")
+Grid gr5485
+{
+ vlj01  [vlj01          ]     ecm04  [ecm04          ]
+ vlj03  [vlj03          ]     ecm45  [ecm45          ]
+ vlj02  [vlj02          ]
+
+}
+END -- gr5485
+END -- page01
+END -- folder01
+Table s_vlj
+{
+[vlj05 |vlj06       |vlj13    |vlj14        |vlj15        |vlj16        |vlj49        |vlj50        |vlj51        |vlj311    |vlj312    |vlj313    |vlj314    |vlj315    |vlj316    |desc      ]
+[vlj05 |vlj06       |vlj13    |vlj14        |vlj15        |vlj16        |vlj49        |vlj50        |vlj51        |vlj311    |vlj312    |vlj313    |vlj314    |vlj315    |vlj316    |desc      ]
+[vlj05 |vlj06       |vlj13    |vlj14        |vlj15        |vlj16        |vlj49        |vlj50        |vlj51        |vlj311    |vlj312    |vlj313    |vlj314    |vlj315    |vlj316    |desc      ]
+[vlj05 |vlj06       |vlj13    |vlj14        |vlj15        |vlj16        |vlj49        |vlj50        |vlj51        |vlj311    |vlj312    |vlj313    |vlj314    |vlj315    |vlj316    |desc      ]
+[vlj05 |vlj06       |vlj13    |vlj14        |vlj15        |vlj16        |vlj49        |vlj50        |vlj51        |vlj311    |vlj312    |vlj313    |vlj314    |vlj315    |vlj316    |desc      ]
+[vlj05 |vlj06       |vlj13    |vlj14        |vlj15        |vlj16        |vlj49        |vlj50        |vlj51        |vlj311    |vlj312    |vlj313    |vlj314    |vlj315    |vlj316    |desc      ]
+[vlj05 |vlj06       |vlj13    |vlj14        |vlj15        |vlj16        |vlj49        |vlj50        |vlj51        |vlj311    |vlj312    |vlj313    |vlj314    |vlj315    |vlj316    |desc      ]
+[vlj05 |vlj06       |vlj13    |vlj14        |vlj15        |vlj16        |vlj49        |vlj50        |vlj51        |vlj311    |vlj312    |vlj313    |vlj314    |vlj315    |vlj316    |desc      ]
+[vlj05 |vlj06       |vlj13    |vlj14        |vlj15        |vlj16        |vlj49        |vlj50        |vlj51        |vlj311    |vlj312    |vlj313    |vlj314    |vlj315    |vlj316    |desc      ]
+[vlj05 |vlj06       |vlj13    |vlj14        |vlj15        |vlj16        |vlj49        |vlj50        |vlj51        |vlj311    |vlj312    |vlj313    |vlj314    |vlj315    |vlj316    |desc      ]
+
+}
+END -- s_vlj
+Grid gr5486
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5486
+END -- vb2
+END -- apsi327
+
+TABLES
+ecm_file,
+vlj_file
+ATTRIBUTES
+ButtonEdit vlj01=vlj_file.vlj01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank/Repeated! ,<^P>Qry Employee No.";
+Edit ecm04=ecm_file.ecm04, tabIndex=10, noEntry;
+Edit vlj03=vlj_file.vlj03, tabIndex=2, noEntry;
+Edit ecm45=ecm_file.ecm45, tabIndex=11, noEntry;
+ComboBox vlj02=vlj_file.vlj02, tabIndex=9, items=(("0", "0"),("1", "1"));
+Edit vlj05=vlj_file.vlj05, tabIndex=3, title="vlj05", not null, required;
+ButtonEdit vlj06=vlj_file.vlj06, action=controlp, tabIndex=4, title="vlj06", not null, required, image="zoom", comment="<^P>Qry Education Code";
+Edit vlj13=vlj_file.vlj13, tabIndex=5, title="vlj13";
+Edit vlj14=vlj_file.vlj14, tabIndex=6, title="vlj14";
+Edit vlj15=vlj_file.vlj15, tabIndex=12, title="vlj15";
+Edit vlj16=vlj_file.vlj16, tabIndex=13, title="vlj16";
+Edit vlj49=vlj_file.vlj49, tabIndex=14, title="vlj49";
+DateEdit vlj50=vlj_file.vlj50, tabIndex=15, title="vlj50";
+DateEdit vlj51=vlj_file.vlj51, tabIndex=16, title="vlj51";
+Edit vlj311=vlj_file.vlj311, tabIndex=18, title="vlj311", noEntry;
+Edit vlj312=vlj_file.vlj312, tabIndex=19, title="vlj312", noEntry;
+Edit vlj313=vlj_file.vlj313, tabIndex=20, title="vlj313", noEntry;
+Edit vlj314=vlj_file.vlj314, tabIndex=21, title="vlj314", noEntry;
+Edit vlj315=vlj_file.vlj315, tabIndex=22, title="vlj315", noEntry;
+Edit vlj316=vlj_file.vlj316, tabIndex=23, title="vlj316", noEntry;
+Edit desc=formonly.desc type CHAR, tabIndex=17, title="desc", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vlj(vlj_file.vlj05,vlj_file.vlj06,vlj_file.vlj13,vlj_file.vlj14,vlj_file.vlj15,vlj_file.vlj16,vlj_file.vlj49,vlj_file.vlj50,vlj_file.vlj51,vlj_file.vlj311,vlj_file.vlj312,vlj_file.vlj313,vlj_file.vlj314,vlj_file.vlj315,vlj_file.vlj316,formonly.desc)
+SCREEN RECORD Undefined(vlj_file.vlj01,ecm_file.ecm04,vlj_file.vlj03,ecm_file.ecm45,vlj_file.vlj02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

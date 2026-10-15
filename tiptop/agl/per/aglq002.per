@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq002")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr2520
+{
+
+
+ Group No.       [axh01       ]                  Group Book No.    [axh00     ]
+ Upper Company   [axh02       ]                  Upper Comp Book No[axh03     ]
+ Under Company   [axh04       ]                  Under Comp Book No[axh041    ]
+
+}
+END -- gr2520
+Grid gr2521
+{
+
+
+ Account No.         [axh05                   ]
+ Account Name        [aag02                                             ]
+ Year                [axh06     ]  Currency[axh12   ]
+
+}
+END -- gr2521
+END -- hb2
+END -- page01
+END -- folder01
+Table s_axh
+{
+[seq     |axh08               |axh09               |amt                 |axh10      |axh11       ]
+[seq     |axh08               |axh09               |amt                 |axh10      |axh11       ]
+[seq     |axh08               |axh09               |amt                 |axh10      |axh11       ]
+[seq     |axh08               |axh09               |amt                 |axh10      |axh11       ]
+[seq     |axh08               |axh09               |amt                 |axh10      |axh11       ]
+[seq     |axh08               |axh09               |amt                 |axh10      |axh11       ]
+[seq     |axh08               |axh09               |amt                 |axh10      |axh11       ]
+[seq     |axh08               |axh09               |amt                 |axh10      |axh11       ]
+[seq     |axh08               |axh09               |amt                 |axh10      |axh11       ]
+}
+END -- s_axh
+Grid gr2522
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr2522
+END -- vb2
+END -- aglq002
+
+TABLES
+axh_file
+ATTRIBUTES
+ButtonEdit axh01=axh_file.axh01, action=controlp, tabIndex=1, image="zoom";
+Edit axh00=axh_file.axh00, tabIndex=2, color = yellow;
+Edit axh02=axh_file.axh02, tabIndex=3;
+Edit axh03=axh_file.axh03, tabIndex=4;
+Edit axh04=axh_file.axh04, tabIndex=5;
+Edit axh041=axh_file.axh041, tabIndex=6;
+ButtonEdit axh05=axh_file.axh05, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Account # <^Y>Create Account  ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=8, noEntry;
+Edit axh06=axh_file.axh06, tabIndex=9;
+ButtonEdit axh12=axh_file.axh12, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Details";
+Edit seq=formonly.seq type VARCHAR, tabIndex=11, title="Period", noEntry;
+Edit axh08=axh_file.axh08, tabIndex=12, title="Debit Transaction Amt", noEntry, not null, required;
+Edit axh09=axh_file.axh09, tabIndex=13, title="Credit Transaction Amt", noEntry, not null, required;
+Edit amt=formonly.amt type CHAR, tabIndex=18, title=%"Balance";
+Edit axh10=axh_file.axh10, tabIndex=14, title="Debit Rows", noEntry;
+Edit axh11=axh_file.axh11, tabIndex=15, title="Credit Rows", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=17, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axh(formonly.seq,axh_file.axh08,axh_file.axh09,formonly.amt,axh_file.axh10,axh_file.axh11)
+SCREEN RECORD Undefined(axh_file.axh01,axh_file.axh00,axh_file.axh02,axh_file.axh03,axh_file.axh04,axh_file.axh041,axh_file.axh05,formonly.aag02,axh_file.axh06,axh_file.axh12,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

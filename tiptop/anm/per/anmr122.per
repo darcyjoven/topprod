@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr122.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr122")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                            >
+  Note Drawing Date   [nmd07               ]
+  Drawing Slip No.    [nmd01               ]
+  Paying Bank         [nmd03               ]
+  Note Type           [nmd06               ]
+  Vender No.          [nmd08               ]
+  Mail/Take           [nmd14               ]
+  Due Date            [nmd05               ]
+  Note Status         [nmd12               ]
+ <                                                                     >
+ <G group02                                                            >
+  [s1                              ][s2                               ]
+  [t1                              ][t2                               ]
+  [u1                              ][u2                               ]
+ <                                                                     >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                                        ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- anmr122
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit nmd07=formonly.nmd07 type DATE, tabIndex=1;
+Edit nmd01=formonly.nmd01 type VARCHAR, tabIndex=2;
+Edit nmd03=formonly.nmd03 type VARCHAR, tabIndex=3;
+Edit nmd06=formonly.nmd06 type VARCHAR, tabIndex=4;
+Edit nmd08=formonly.nmd08 type VARCHAR, tabIndex=5;
+Edit nmd14=formonly.nmd14 type VARCHAR, tabIndex=6;
+DateEdit nmd05=formonly.nmd05 type DATE, tabIndex=7;
+Edit nmd12=formonly.nmd12 type VARCHAR, tabIndex=8;
+Group group02:group02, text="INPUT";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=9, queryEditable, items=(("1", %"Note Drawing Date"),("2", %"Drawing Slip No."),("3", %"Paying Bank"),("4", %"Note Type"),("5", %"Vender No."),("6", %"Mail/Take"),("7", %"Due Date"),("8", %"Note Status"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=10, queryEditable, items=(("1", %"Note Drawing Date"),("2", %"Drawing Slip No."),("3", %"Paying Bank"),("4", %"Note Type"),("5", %"Vender No."),("6", %"Mail/Take"),("7", %"Due Date"),("8", %"Note Status"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=13, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=15, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nmd07,formonly.nmd01,formonly.nmd03,formonly.nmd06,formonly.nmd08,formonly.nmd14,formonly.nmd05,formonly.nmd12,formonly.s1,formonly.s2,formonly.t1,formonly.t2,formonly.u1,formonly.u2,formonly.more)
+END -- INSTRUCTIONS
+

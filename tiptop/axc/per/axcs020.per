@@ -1,0 +1,113 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcs020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcs020")
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+
+
+
+
+ <G group02                                                                 >
+  Material A Class U/P  [cmz03               ]     Idle Ratio  [cmz06    ] %
+  Material B Class U/P  [cmz04               ]     Idle Ratio  [cmz07    ] %
+  Material C Class U/P  [cmz05               ]     Idle Ratio  [cmz08    ] %
+ <                                                                          >
+ <G group03                             > <G group04                        >
+ [cmz09                            ]      [cmz10                           ]
+ <                                      > <                                 >
+ <G group06                                                                 >
+  1.[cmz20     ] - [cmz21     ]    [cmz22     ] %
+  2.[cmz30     ] - [cmz31     ]    [cmz32     ] %
+  3.[cmz40     ] - [cmz41     ]    [cmz42     ] %
+  4.[cmz50     ] - [cmz51     ]    [cmz52     ] %
+  5.[cmz60     ] - [cmz61     ]    [cmz62     ] %
+ <                                                                          >
+
+}
+END -- gr1
+END -- page01
+Page Page3(text=%"NRV setting")
+Grid gr10
+{
+ <G gb26                                                   >
+  Backstep finished price Ways [cmz25                    ]
+ [cmz17               ]
+
+ <                                                         >
+ <G gb22                                                   >
+  Rate          [cmz18            ]
+  Price Choice  [cmz19            ]
+                [cmz28            ]
+  Data Choice   [cmz26            ]
+  Item Type     [cmz24            ]
+  Start Date    [cmz27            ]
+ <                                                         >
+ <G group04_1                                              >
+ [s1             ][s2             ][s3              ]
+ <                                                         >
+
+
+}
+END -- gr10
+END -- Page3
+END -- pc1
+END -- axcs020
+
+TABLES
+cmz_file,
+tableAlias1=cmz_file
+ATTRIBUTES
+Group group02:group02;
+Edit cmz03=cmz_file.cmz03, tabIndex=1, not null, required;
+Edit cmz06=cmz_file.cmz06, tabIndex=2, not null, required;
+Edit cmz04=cmz_file.cmz04, tabIndex=3, not null, required;
+Edit cmz07=cmz_file.cmz07, tabIndex=4, not null, required;
+Edit cmz05=cmz_file.cmz05, tabIndex=5, not null, required;
+Edit cmz08=cmz_file.cmz08, tabIndex=6, not null, required;
+Group group03:group03, text="Goods Age Calculation Base";
+RadioGroup cmz09=cmz_file.cmz09, tabIndex=7, not null, required, items=(("1", "First In First Out"),("2", "Latest Transaction date"));
+Group group04:group04, text="Idle Calculation Base";
+RadioGroup cmz10=cmz_file.cmz10, tabIndex=8, not null, required, items=(("1", "Material Classification"),("2", "Section Idle %"));
+Group group06:group06, text="Goods Age Section/Idle Ratio";
+Edit cmz20=cmz_file.cmz20, tabIndex=9, not null, required;
+Edit cmz21=cmz_file.cmz21, tabIndex=10, not null, required;
+Edit cmz22=cmz_file.cmz22, tabIndex=11, not null, required;
+Edit cmz30=cmz_file.cmz30, tabIndex=12, not null, required;
+Edit cmz31=cmz_file.cmz31, tabIndex=13, not null, required;
+Edit cmz32=cmz_file.cmz32, tabIndex=14, not null, required;
+Edit cmz40=cmz_file.cmz40, tabIndex=15, not null, required;
+Edit cmz41=cmz_file.cmz41, tabIndex=16, not null, required;
+Edit cmz42=cmz_file.cmz42, tabIndex=17, not null, required;
+Edit cmz50=cmz_file.cmz50, tabIndex=18, not null, required;
+Edit cmz51=cmz_file.cmz51, tabIndex=19, not null, required;
+Edit cmz52=cmz_file.cmz52, tabIndex=20, not null, required;
+Edit cmz60=cmz_file.cmz60, tabIndex=21, not null, required;
+Edit cmz61=cmz_file.cmz61, tabIndex=22, not null, required;
+Edit cmz62=cmz_file.cmz62, tabIndex=23, not null, required;
+Group gb26:gb26, text="NRV count 1";
+RadioGroup cmz25=cmz_file.cmz25, tabIndex=24, not null, required, items=(("1", "Product No."),("2", "Product No.Average"));
+CheckBox cmz17=cmz_file.cmz17, tabIndex=25, text="NRV Price", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb22:gb22, text="NRV count 2";
+ComboBox cmz18=tableAlias1.cmz18, tabIndex=26, not null, required, queryEditable, items=(("1", "Main Group Code"),("2", "Other Group 1"),("3", "Other Group 2"),("4", "Other Group 3"),("5", "Cost Group"),("6", "Product Class"));
+ComboBox cmz19=cmz_file.cmz19, tabIndex=27, not null, required, queryEditable, items=(("1", "AP"),("2", "Average By Prouct"));
+CheckBox cmz28=cmz_file.cmz28, tabIndex=28, text="Calculate Product No. Backward?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox cmz26=cmz_file.cmz26, tabIndex=29, not null, required, queryEditable, items=(("1", "Max"),("2", "Min"),("3", "Average"));
+ComboBox cmz24=cmz_file.cmz24, tabIndex=30, not null, required, items=(("1", "1.Main Group Code"),("2", "2.Group Code 1"),("3", "3.Group Code 2"),("4", "4.Group Code 3"),("5", "5.Costing Group"),("6", "6.Product Classification"),("7", "item"));
+DateEdit cmz27=cmz_file.cmz27, tabIndex=31, not null, required;
+Group group04_1:group04_1, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=32, not null, required, queryEditable, items=(("1", "In Qty"),("2", "Qty"),("3", "Item No"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=33, not null, required, queryEditable, items=(("1", "In Qty"),("2", "Qty"),("3", "Item No"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=34, not null, required, queryEditable, items=(("1", "In Qty"),("2", "Qty"),("3", "Item No"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cmz_file.cmz03,cmz_file.cmz06,cmz_file.cmz04,cmz_file.cmz07,cmz_file.cmz05,cmz_file.cmz08,cmz_file.cmz09,cmz_file.cmz10,cmz_file.cmz20,cmz_file.cmz21,cmz_file.cmz22,cmz_file.cmz30,cmz_file.cmz31,cmz_file.cmz32,cmz_file.cmz40,cmz_file.cmz41,cmz_file.cmz42,cmz_file.cmz50,cmz_file.cmz51,cmz_file.cmz52,cmz_file.cmz60,cmz_file.cmz61,cmz_file.cmz62,cmz_file.cmz25,cmz_file.cmz17,tableAlias1.cmz18,cmz_file.cmz19,cmz_file.cmz28,cmz_file.cmz26,cmz_file.cmz24,cmz_file.cmz27,formonly.s1,formonly.s2,formonly.s3)
+END -- INSTRUCTIONS
+

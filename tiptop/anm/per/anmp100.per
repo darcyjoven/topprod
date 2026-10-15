@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmp100")
+VBox vb5
+Grid gr4073
+{
+ <G group01                                                                             >
+ [dummy01                                  ]
+  Cate QBE            [npp00               ]  Doc# QBE            [npp01               ]
+  Serial No. QBE      [npp011              ]  Date QBE            [npp02               ]
+ <                                                                                      >
+
+}
+END -- gr4073
+Group g01(text="INPUT")
+HBox hb2
+Grid gr4074
+{
+ General Ledger Plant No.      [p_plant   ]
+ General Ledger No.            [p_bookno  ]
+ General Ledger Voucher Type   [gl_no               ]
+ General Ledger No.2           [p_bookno1 ]
+ General Ledger Voucher Type 2 [gl_no1              ]
+ General Ledger Voucher Date   [gl_date     |dummy04               ]
+}
+END -- gr4074
+Grid gr4075
+{
+ [gl_tran              ]
+ <G group02                       >
+ [gl_seq                    ]
+ <                                >
+
+
+}
+END -- gr4075
+END -- hb2
+END -- g01
+Grid gr4076
+{
+[dummy02                                                     ]
+
+}
+END -- gr4076
+Grid gr4077
+{
+  glno  [chr2                                                                          ]
+[g_bgjob                                                      ]
+}
+END -- gr4077
+END -- vb5
+END -- anmp100
+
+TABLES
+npp_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Label dummy01:dummy01, text="Module QBE:(NM)";
+Edit npp00=npp_file.npp00, tabIndex=1, comment="4.Pledge 5.Remove Pledge 8.Delivery 9.Transaction 12.Certificate of Deposit 10.Interest Received Amount 11.Deposit Received Aomunt";
+Edit npp01=npp_file.npp01, tabIndex=2;
+Edit npp011=npp_file.npp011, tabIndex=3;
+DateEdit npp02=npp_file.npp02, tabIndex=4;
+Edit p_plant=formonly.p_plant type VARCHAR, tabIndex=5;
+Edit p_bookno=formonly.p_bookno type VARCHAR, tabIndex=6;
+ButtonEdit gl_no=formonly.gl_no type VARCHAR, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Documents";
+Edit p_bookno1=formonly.p_bookno1 type VARCHAR, tabIndex=8;
+ButtonEdit gl_no1=formonly.gl_no1 type VARCHAR, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Documents";
+DateEdit gl_date=formonly.gl_date type DATE, tabIndex=10;
+Label dummy04:dummy04, text="(by original entry date if blank)";
+CheckBox gl_tran=formonly.gl_tran type CHAR, tabIndex=11, text="Carry Memo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Voucher Summarizing Method";
+RadioGroup gl_seq=formonly.gl_seq type CHAR, tabIndex=12, items=(("0", "All"),("1", "By Document Number"),("2", "By Date"));
+Label dummy02:dummy02, text="NOTE:Carry only Confirmed Data to G/L Voucher";
+Edit chr2=formonly.chr2 type CHAR, tabIndex=14, noEntry;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=13, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(npp_file.npp00,npp_file.npp01,npp_file.npp011,npp_file.npp02,formonly.p_plant,formonly.p_bookno,formonly.gl_no,formonly.p_bookno1,formonly.gl_no1,formonly.gl_date,formonly.gl_tran,formonly.gl_seq,formonly.chr2,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

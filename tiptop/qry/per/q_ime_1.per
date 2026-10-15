@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_ime_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Warehouse")
+Grid gr3767
+{
+ <T s_ime_1                                                                                                          >
+ [check |ime01       |imd02               |ime02      |ime03    |ime04       |ime05    |ime06   |ime07   ]
+ [check |ime01       |imd02               |ime02      |ime03    |ime04       |ime05    |ime06   |ime07   ]
+ [check |ime01       |imd02               |ime02      |ime03    |ime04       |ime05    |ime06   |ime07   ]
+ [check |ime01       |imd02               |ime02      |ime03    |ime04       |ime05    |ime06   |ime07   ]
+ [check |ime01       |imd02               |ime02      |ime03    |ime04       |ime05    |ime06   |ime07   ]
+ [check |ime01       |imd02               |ime02      |ime03    |ime04       |ime05    |ime06   |ime07   ]
+ [check |ime01       |imd02               |ime02      |ime03    |ime04       |ime05    |ime06   |ime07   ]
+ [check |ime01       |imd02               |ime02      |ime03    |ime04       |ime05    |ime06   |ime07   ]
+ [check |ime01       |imd02               |ime02      |ime03    |ime04       |ime05    |ime06   |ime07   ]
+ [check |ime01       |imd02               |ime02      |ime03    |ime04       |ime05    |ime06   |ime07   ]
+ <                                                                                                                   >
+
+}
+END -- gr3767
+END -- q_ime
+
+TABLES
+ime_file,
+imd_file
+ATTRIBUTES
+Table s_ime_1:s_ime_1;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ime01=ime_file.ime01, tabIndex=2, title="Warehouse", noEntry;
+Edit imd02=imd_file.imd02, tabIndex=3, title="Name", noEntry;
+Edit ime02=ime_file.ime02, tabIndex=4, title="Location", noEntry;
+Edit ime03=ime_file.ime03, tabIndex=5, title="Name", noEntry;
+Edit ime04=ime_file.ime04, tabIndex=6, title="Category", noEntry;
+Edit ime05=ime_file.ime05, tabIndex=7, title="Available", noEntry;
+Edit ime06=ime_file.ime06, tabIndex=8, title="Available for MRP", noEntry;
+Edit ime07=ime_file.ime07, tabIndex=9, title=%"Bond";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ime_1(formonly.check,ime_file.ime01,imd_file.imd02,ime_file.ime02,ime_file.ime03,ime_file.ime04,ime_file.ime05,ime_file.ime06,ime_file.ime07)
+END -- INSTRUCTIONS
+

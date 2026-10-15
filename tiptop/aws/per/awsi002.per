@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/awsi002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"temp")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ ObjectID           [waa01              ]   Object Name  [waa02               ]
+ Object Description [waa03                                                    ]
+ [waa04     ]                      [waa06      ]
+ [waa05     ]
+}
+END -- gr1
+END -- page01
+END -- pc1
+Table wab_file
+{
+[wab09 |wab02     |wab03     |wab04               |wab05                  |wab07      |wab08    ]
+[wab09 |wab02     |wab03     |wab04               |wab05                  |wab07      |wab08    ]
+[wab09 |wab02     |wab03     |wab04               |wab05                  |wab07      |wab08    ]
+[wab09 |wab02     |wab03     |wab04               |wab05                  |wab07      |wab08    ]
+[wab09 |wab02     |wab03     |wab04               |wab05                  |wab07      |wab08    ]
+[wab09 |wab02     |wab03     |wab04               |wab05                  |wab07      |wab08    ]
+[wab09 |wab02     |wab03     |wab04               |wab05                  |wab07      |wab08    ]
+
+}
+END -- wab_file
+Table wam_file
+{
+[wam01              |wam02                |wam03                                         ]
+[wam01              |wam02                |wam03                                         ]
+[wam01              |wam02                |wam03                                         ]
+[wam01              |wam02                |wam03                                         ]
+[wam01              |wam02                |wam03                                         ]
+[wam01              |wam02                |wam03                                         ]
+[wam01              |wam02                |wam03                                         ]
+
+}
+END -- wam_file
+Grid gr2
+{
+  ---------- Rows [cnt      ]/[cn2       ]  -------------
+
+}
+END -- gr2
+END -- VBox1
+END -- temp
+
+TABLES
+wab_file,
+waa_file,
+wam_file
+ATTRIBUTES
+ButtonEdit waa01=waa_file.waa01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!    , <^P>";
+Edit waa02=waa_file.waa02, tabIndex=2;
+Edit waa03=waa_file.waa03, tabIndex=3;
+CheckBox waa04=waa_file.waa04, tabIndex=4, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox waa06=waa_file.waa06, tabIndex=5, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox waa05=waa_file.waa05, tabIndex=6, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit wab09=wab_file.wab09, tabIndex=7, title="No.", not null, required;
+ButtonEdit wab02=wab_file.wab02, action=controlp, tabIndex=8, title="Table", not null, required, image="zoom";
+Edit wab03=wab_file.wab03, tabIndex=9, title="Table Des";
+ButtonEdit wab04=wab_file.wab04, action=controlp, tabIndex=10, title="Mother Table", image="zoom";
+ButtonEdit wab05=wab_file.wab05, action=controlp, tabIndex=11, title="Child Table", image="zoom";
+Edit wab07=wab_file.wab07, tabIndex=12, title="relation";
+ComboBox wab08=wab_file.wab08, tabIndex=13, title="type", not null, required, items=(("Head", %"Head"),("Body", %"Body"),("Detail", %"Detail"),("Subdetail", %"Subdetail"));
+Edit wam01=wam_file.wam01, tabIndex=14, noEntry, not null, required;
+ComboBox wam02=wam_file.wam02, tabIndex=15, not null, required, items=(("INSERT", %"INSERT"),("UPDATE", %"UPDATE"),("DELETE", %"DELETE"),("ADJUST", %"ADJUST"),("BeforeOperate", %"BeforeOperate"),("AfterOperate", %"AfterOperate"));
+Edit wam03=wam_file.wam03, tabIndex=16, not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wab(wab_file.wab09,wab_file.wab02,wab_file.wab03,wab_file.wab04,wab_file.wab05,wab_file.wab07,wab_file.wab08)
+SCREEN RECORD s_wam(wam_file.wam01,wam_file.wam02,wam_file.wam03)
+SCREEN RECORD Undefined(waa_file.waa01,waa_file.waa02,waa_file.waa03,waa_file.waa04,waa_file.waa06,waa_file.waa05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

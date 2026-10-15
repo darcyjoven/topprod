@@ -1,0 +1,79 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_purpose.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_purpose")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr3267
+{
+ <G group01                                               >
+  Program ID [gaz01       ]
+ <                                                        >
+
+}
+END -- gr3267
+END -- page01
+Page info(text="Info")
+Grid gr3268
+{
+ Record Owner        [gazuser   ]   Last Modified By    [gazmodu   ]
+ Department          [gazgrup   ]   Create/Modify Date  [gazdate   ]
+ Record Orig.        [gazoriu   ]
+ Dept Orig.          [gazorig   ]
+}
+END -- gr3268
+END -- info
+END -- folder01
+Table s_gaz
+{
+[gaz02      |gaz03                   |gaz04                                                 |gaz05        ]
+[gaz02      |gaz03                   |gaz04                                                 |gaz05        ]
+[gaz02      |gaz03                   |gaz04                                                 |gaz05        ]
+[gaz02      |gaz03                   |gaz04                                                 |gaz05        ]
+[gaz02      |gaz03                   |gaz04                                                 |gaz05        ]
+[gaz02      |gaz03                   |gaz04                                                 |gaz05        ]
+[gaz02      |gaz03                   |gaz04                                                 |gaz05        ]
+[gaz02      |gaz03                   |gaz04                                                 |gaz05        ]
+[gaz02      |gaz03                   |gaz04                                                 |gaz05        ]
+[gaz02      |gaz03                   |gaz04                                                 |gaz05        ]
+[gaz02      |gaz03                   |gaz04                                                 |gaz05        ]
+
+}
+END -- s_gaz
+Grid gr3269
+{
+ ---------- Rows [cnt       ] ----------
+
+}
+END -- gr3269
+END -- VBox1
+END -- p_purpose
+
+TABLES
+gaz_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit gaz01=gaz_file.gaz01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit gazuser=gaz_file.gazuser, tabIndex=2, noEntry;
+Edit gazmodu=gaz_file.gazmodu, tabIndex=3, noEntry;
+Edit gazgrup=gaz_file.gazgrup, tabIndex=4, noEntry;
+DateEdit gazdate=gaz_file.gazdate, tabIndex=5, noEntry;
+Edit gazoriu=gaz_file.gazoriu, tabIndex=501, noEntry;
+Edit gazorig=gaz_file.gazorig, tabIndex=502, noEntry;
+ComboBox gaz02=gaz_file.gaz02, tabIndex=6, title="Language", noEntry, queryEditable;
+Edit gaz03=gaz_file.gaz03, tabIndex=7, title="Program Name", noEntry;
+Edit gaz04=gaz_file.gaz04, tabIndex=8, title="Task Purpose", scroll;
+CheckBox gaz05=gaz_file.gaz05, tabIndex=9, title="Customized", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gaz(gaz_file.gaz02,gaz_file.gaz03,gaz_file.gaz04,gaz_file.gaz05)
+SCREEN RECORD Undefined(gaz_file.gaz01,gaz_file.gazuser,gaz_file.gazmodu,gaz_file.gazgrup,gaz_file.gazdate,gaz_file.gazoriu,gaz_file.gazorig,formonly.cnt)
+END -- INSTRUCTIONS
+

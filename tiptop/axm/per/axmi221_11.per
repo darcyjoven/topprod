@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi221_11.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi221_11")
+VBox VBox1
+Folder pc472
+Page page01(text="Page01")
+Table s_ocd
+{
+[ocd02         |ocd03       |ocd04      |ocd221     |ocd222     |ocd223     |ocd230     |ocd231     |ocd224    |ocd225     |ocd226     |ocd227     |ocd228     |ocd229          ]
+[ocd02         |ocd03       |ocd04      |ocd221     |ocd222     |ocd223     |ocd230     |ocd231     |ocd224    |ocd225     |ocd226     |ocd227     |ocd228     |ocd229          ]
+[ocd02         |ocd03       |ocd04      |ocd221     |ocd222     |ocd223     |ocd230     |ocd231     |ocd224    |ocd225     |ocd226     |ocd227     |ocd228     |ocd229          ]
+[ocd02         |ocd03       |ocd04      |ocd221     |ocd222     |ocd223     |ocd230     |ocd231     |ocd224    |ocd225     |ocd226     |ocd227     |ocd228     |ocd229          ]
+[ocd02         |ocd03       |ocd04      |ocd221     |ocd222     |ocd223     |ocd230     |ocd231     |ocd224    |ocd225     |ocd226     |ocd227     |ocd228     |ocd229          ]
+[ocd02         |ocd03       |ocd04      |ocd221     |ocd222     |ocd223     |ocd230     |ocd231     |ocd224    |ocd225     |ocd226     |ocd227     |ocd228     |ocd229          ]
+[ocd02         |ocd03       |ocd04      |ocd221     |ocd222     |ocd223     |ocd230     |ocd231     |ocd224    |ocd225     |ocd226     |ocd227     |ocd228     |ocd229          ]
+[ocd02         |ocd03       |ocd04      |ocd221     |ocd222     |ocd223     |ocd230     |ocd231     |ocd224    |ocd225     |ocd226     |ocd227     |ocd228     |ocd229          ]
+[ocd02         |ocd03       |ocd04      |ocd221     |ocd222     |ocd223     |ocd230     |ocd231     |ocd224    |ocd225     |ocd226     |ocd227     |ocd228     |ocd229          ]
+[ocd02         |ocd03       |ocd04      |ocd221     |ocd222     |ocd223     |ocd230     |ocd231     |ocd224    |ocd225     |ocd226     |ocd227     |ocd228     |ocd229          ]
+
+}
+END -- s_ocd
+END -- page01
+END -- pc472
+Grid gr2060
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2060
+END -- VBox1
+END -- axmi221_11
+
+TABLES
+ocd_file
+ATTRIBUTES
+Edit ocd02=ocd_file.ocd02, tabIndex=1, title="Address Code", not null, required;
+Edit ocd03=ocd_file.ocd03, tabIndex=2, title="Description";
+Edit ocd04=ocd_file.ocd04, tabIndex=3, title="ZIP Code";
+Edit ocd221=ocd_file.ocd221, tabIndex=4, title="Address";
+Edit ocd222=ocd_file.ocd222, tabIndex=5, title="Address2";
+Edit ocd223=ocd_file.ocd223, tabIndex=6, title="Address3";
+Edit ocd230=ocd_file.ocd230, tabIndex=7, title="Address4";
+Edit ocd231=ocd_file.ocd231, tabIndex=8, title="Address5";
+Edit ocd224=ocd_file.ocd224, tabIndex=9, title="Tel";
+Edit ocd225=ocd_file.ocd225, tabIndex=10, title="Tel2";
+Edit ocd226=ocd_file.ocd226, tabIndex=11, title="Fax";
+Edit ocd227=ocd_file.ocd227, tabIndex=12, title="Fax2";
+Edit ocd228=ocd_file.ocd228, tabIndex=13, title="Man";
+Edit ocd229=ocd_file.ocd229, tabIndex=14, title="Man2";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=15, noEntry, color = yellow;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ocd(ocd_file.ocd02,ocd_file.ocd03,ocd_file.ocd04,ocd_file.ocd221,ocd_file.ocd222,ocd_file.ocd223,ocd_file.ocd230,ocd_file.ocd231,ocd_file.ocd224,ocd_file.ocd225,ocd_file.ocd226,ocd_file.ocd227,ocd_file.ocd228,ocd_file.ocd229)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci616.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci616")
+Folder pc266
+Page page01(text="Page01")
+Grid gr1661
+{
+ <G group01                                          ><G group02                                        >
+  Adjust Earliest Initial Lead Time(Day) [ecm07     ]  Adjust Last Initial Lead Time(Day)   [ecm08     ]
+  Adjust 1st Completed Lead Time(Day)    [ecm09     ]  Adjust Last Completed Lead Time(Day) [ecm10     ]
+ <                                                   ><                                                 >
+ <G group03                                          ><G group04                                        >
+  Stnd Labor Setup Time(Sec)             [ecm13     ]  Actual Labor Setup Time(Min)         [ecm20     ]
+  Stnd Labor Production Time(Sec)        [ecm14     ]  Actual Labor Production Time(Min)    [ecm21     ]
+  Stnd Machine Setup Time(Sec)           [ecm15     ]  Actual Machine Setup Time(Min)       [ecm22     ]
+  Stnd Machine Pro. Time(Sec)            [ecm16     ]  Actual Machine Pro. Time(Min)        [ecm23     ]
+  Stnd Subcontracting Time(Min)          [ecm17     ]  Actual Subcontracting Time(Min)      [ecm24     ]
+  Stnd Moving Time(Min)                  [ecm18     ]
+  Stnd Waiting Time(Min)                 [ecm19     ]
+ <                                                   ><                                                 >
+ <G group05                                          ><G group06                                        >
+  Gained Stnd Labor Setup Time(Min)      [ecm25     ]  Sche Labor Setup Time(Min)           [ecm37     ]
+  Gained Stnd Labor Pro. Time(Min)       [ecm26     ]  Sche Labor Pro. Time(Min)            [ecm38     ]
+  Gained Stnd Machine Setup Time(Min)    [ecm27     ]  Sche Labor Subcont. Time(Min)        [ecm39     ]
+  Gained Stnd Machine Pro. Time(Min)     [ecm28     ]
+
+ <                                                   ><                                                 >
+
+}
+END -- gr1661
+END -- page01
+END -- pc266
+END -- aeci616
+
+TABLES
+ecm_file
+ATTRIBUTES
+Group group01:group01;
+Edit ecm07=ecm_file.ecm07, tabIndex=1;
+Edit ecm09=ecm_file.ecm09, tabIndex=2;
+Group group02:group02;
+Edit ecm08=ecm_file.ecm08, tabIndex=3;
+Edit ecm10=ecm_file.ecm10, tabIndex=4;
+Group group03:group03, text="Capacity Planning";
+Edit ecm13=ecm_file.ecm13, tabIndex=5;
+Edit ecm14=ecm_file.ecm14, tabIndex=6;
+Edit ecm15=ecm_file.ecm15, tabIndex=7;
+Edit ecm16=ecm_file.ecm16, tabIndex=8;
+Edit ecm17=ecm_file.ecm17, tabIndex=9;
+Edit ecm18=ecm_file.ecm18, tabIndex=10;
+Edit ecm19=ecm_file.ecm19, tabIndex=11;
+Group group04:group04, text="Actual Capacity";
+Edit ecm20=ecm_file.ecm20, tabIndex=12;
+Edit ecm21=ecm_file.ecm21, tabIndex=13;
+Edit ecm22=ecm_file.ecm22, tabIndex=14;
+Edit ecm23=ecm_file.ecm23, tabIndex=15;
+Edit ecm24=ecm_file.ecm24, tabIndex=16;
+Group group05:group05, text="Earned Time";
+Edit ecm25=ecm_file.ecm25, tabIndex=17;
+Edit ecm26=ecm_file.ecm26, tabIndex=18;
+Edit ecm27=ecm_file.ecm27, tabIndex=19;
+Edit ecm28=ecm_file.ecm28, tabIndex=20;
+Group group06:group06, text="Schedule Time";
+Edit ecm37=ecm_file.ecm37, tabIndex=21;
+Edit ecm38=ecm_file.ecm38, tabIndex=22;
+Edit ecm39=ecm_file.ecm39, tabIndex=23;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ecm_file.ecm07,ecm_file.ecm09,ecm_file.ecm08,ecm_file.ecm10,ecm_file.ecm13,ecm_file.ecm14,ecm_file.ecm15,ecm_file.ecm16,ecm_file.ecm17,ecm_file.ecm18,ecm_file.ecm19,ecm_file.ecm20,ecm_file.ecm21,ecm_file.ecm22,ecm_file.ecm23,ecm_file.ecm24,ecm_file.ecm25,ecm_file.ecm26,ecm_file.ecm27,ecm_file.ecm28,ecm_file.ecm37,ecm_file.ecm38,ecm_file.ecm39)
+END -- INSTRUCTIONS
+

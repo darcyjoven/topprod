@@ -1,0 +1,130 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci102")
+VBox vb2
+Folder folder01
+Page page01(text="Page01")
+HBox hb3
+Grid gr1637
+{
+  Product No.         [ecu01                         ]
+  P/N                 [ima02                         ]
+  P/N Desc.           [ima021                        ]
+  Routing Code        [ecu02     ]
+  Process Code        [ecu012    ]
+                      [ecu014                       ]
+  Routing S/N         [ecb03     ]
+
+}
+END -- gr1637
+Grid gr1638
+{
+  S/N Desc.           [ecb17               ]
+  Workstation         [ecb08     ]
+  W/S Desc.           [b08_name            ]
+  Standard Labor Hour [ecb19     ]
+  Machine Time        [ecb21     ]
+  Uint Labor          [ecb38     ]
+
+
+}
+END -- gr1638
+Grid gr12
+{
+  Unit Version        [ecb47     ] [imgmksg]
+                      [ecu10     ] [       ]
+  Current Labor Price [ecbslk05  ]
+  Std. Labor Cost     [ecbslk04  ]
+  Current Labor Hour  [ecbslk02  ]
+
+
+
+}
+END -- gr12
+END -- hb3
+END -- page01
+END -- folder01
+Table s_sgc
+{
+[sgc05 |sga02         |sga03             |sgc06      |sgc07            |sgc08            |sgc10            |sgc11            |sgc09      |sgcslk05  |sgcslk04            |sgcslk03            |sgcslk02       |sgc13     |sgc14     ]
+[sgc05 |sga02         |sga03             |sgc06      |sgc07            |sgc08            |sgc10            |sgc11            |sgc09      |sgcslk05  |sgcslk04            |sgcslk03            |sgcslk02       |sgc13     |sgc14     ]
+[sgc05 |sga02         |sga03             |sgc06      |sgc07            |sgc08            |sgc10            |sgc11            |sgc09      |sgcslk05  |sgcslk04            |sgcslk03            |sgcslk02       |sgc13     |sgc14     ]
+[sgc05 |sga02         |sga03             |sgc06      |sgc07            |sgc08            |sgc10            |sgc11            |sgc09      |sgcslk05  |sgcslk04            |sgcslk03            |sgcslk02       |sgc13     |sgc14     ]
+[sgc05 |sga02         |sga03             |sgc06      |sgc07            |sgc08            |sgc10            |sgc11            |sgc09      |sgcslk05  |sgcslk04            |sgcslk03            |sgcslk02       |sgc13     |sgc14     ]
+[sgc05 |sga02         |sga03             |sgc06      |sgc07            |sgc08            |sgc10            |sgc11            |sgc09      |sgcslk05  |sgcslk04            |sgcslk03            |sgcslk02       |sgc13     |sgc14     ]
+[sgc05 |sga02         |sga03             |sgc06      |sgc07            |sgc08            |sgc10            |sgc11            |sgc09      |sgcslk05  |sgcslk04            |sgcslk03            |sgcslk02       |sgc13     |sgc14     ]
+[sgc05 |sga02         |sga03             |sgc06      |sgc07            |sgc08            |sgc10            |sgc11            |sgc09      |sgcslk05  |sgcslk04            |sgcslk03            |sgcslk02       |sgc13     |sgc14     ]
+[sgc05 |sga02         |sga03             |sgc06      |sgc07            |sgc08            |sgc10            |sgc11            |sgc09      |sgcslk05  |sgcslk04            |sgcslk03            |sgcslk02       |sgc13     |sgc14     ]
+[sgc05 |sga02         |sga03             |sgc06      |sgc07            |sgc08            |sgc10            |sgc11            |sgc09      |sgcslk05  |sgcslk04            |sgcslk03            |sgcslk02       |sgc13     |sgc14     ]
+}
+END -- s_sgc
+Grid gr1639
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+
+
+
+
+}
+END -- gr1639
+END -- vb2
+END -- aeci102
+
+TABLES
+ecb_file,
+sgc_file,
+sga_file,
+ecu_file
+ATTRIBUTES
+Edit ecu01=ecu_file.ecu01, tabIndex=1;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit ecu02=ecu_file.ecu02, tabIndex=4, comment="No Blank Field";
+Edit ecu012=ecu_file.ecu012, tabIndex=34, comment="No Blank Field";
+Edit ecu014=ecu_file.ecu014, tabIndex=35, comment="No Blank Field";
+Edit ecb03=ecb_file.ecb03, tabIndex=5;
+Edit ecb17=ecb_file.ecb17, tabIndex=6;
+Edit ecb08=ecb_file.ecb08, tabIndex=7;
+Edit b08_name=formonly.b08_name type CHAR, tabIndex=8;
+Edit ecb19=ecb_file.ecb19, tabIndex=9;
+Edit ecb21=ecb_file.ecb21, tabIndex=10;
+Edit ecb38=ecb_file.ecb38, tabIndex=11;
+Edit ecb47=ecb_file.ecb47, tabIndex=12, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale;
+CheckBox ecu10=ecu_file.ecu10, tabIndex=13, text="Confirmation", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ecbslk05=ecb_file.ecbslk05, tabIndex=14, noEntry;
+Edit ecbslk04=ecb_file.ecbslk04, tabIndex=15, noEntry;
+Edit ecbslk02=ecb_file.ecbslk02, tabIndex=16, noEntry;
+ButtonEdit sgc05=sgc_file.sgc05, action=controlp, tabIndex=17, title="Cell#", not null, required, image="zoom", comment="No Blank/Repeated Field <^P>Open window Qry Cell No.";
+Edit sga02=sga_file.sga02, tabIndex=18, title="Name", noEntry;
+Edit sga03=sga_file.sga03, tabIndex=19, title="Specification", noEntry;
+Edit sgc06=sgc_file.sgc06, tabIndex=20, title="Parts Qty", not null, required;
+Edit sgc07=sgc_file.sgc07, tabIndex=21, title="Unit Labor Time", noEntry;
+Edit sgc08=sgc_file.sgc08, tabIndex=22, title="Cell Labor Hour", noEntry;
+Edit sgc10=sgc_file.sgc10, tabIndex=23, title="Unit Machine Tm", noEntry;
+Edit sgc11=sgc_file.sgc11, tabIndex=24, title="Cell Machine Hr", noEntry;
+Edit sgc09=sgc_file.sgc09, tabIndex=25, title="Uint Labor", not null, required;
+Edit sgcslk05=sgc_file.sgcslk05, tabIndex=26, title="Unit Sequence";
+Edit sgcslk04=sgc_file.sgcslk04, tabIndex=27, title="Unit Current Labor Cost";
+Edit sgcslk03=sgc_file.sgcslk03, tabIndex=28, title="Unit Std. Labor Cost";
+Edit sgcslk02=sgc_file.sgcslk02, tabIndex=29, title="Unit Current Labor Hour";
+CheckBox sgc13=sgc_file.sgc13, tabIndex=30, title="Subcontracting", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sgc14=sgc_file.sgc14, tabIndex=31, title="Reportable", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=32, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sgc(sgc_file.sgc05,sga_file.sga02,sga_file.sga03,sgc_file.sgc06,sgc_file.sgc07,sgc_file.sgc08,sgc_file.sgc10,sgc_file.sgc11,sgc_file.sgc09,sgc_file.sgcslk05,sgc_file.sgcslk04,sgc_file.sgcslk03,sgc_file.sgcslk02,sgc_file.sgc13,sgc_file.sgc14)
+SCREEN RECORD Undefined(ecu_file.ecu01,formonly.ima02,formonly.ima021,ecu_file.ecu02,ecu_file.ecu012,ecu_file.ecu014,ecb_file.ecb03,ecb_file.ecb17,ecb_file.ecb08,formonly.b08_name,ecb_file.ecb19,ecb_file.ecb21,ecb_file.ecb38,ecb_file.ecb47,formonly.imgmksg,ecu_file.ecu10,ecb_file.ecbslk05,ecb_file.ecbslk04,ecb_file.ecbslk02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxp113.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxp113")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1072
+{
+ <G group01                                      >
+  Master Item     [bnd01                         ]
+  Secondery Item  [bne05                         ]
+ <                                               >
+
+
+
+}
+END -- gr1072
+Grid gr1073
+{
+ <G group02                                      >
+  Inactive Date[bnd02     ] - [bnd03     ]
+  head         [head                ]
+  body         [body                ]
+  Loss Qty     [bne11     ]
+ <                                               >
+
+}
+END -- gr1073
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_bne
+{
+[choice |bnd01_b                       |ima02_01                      |ima021_01                     |bnd02_b |bnd03_b |bne03 |bne05_b                       |ima02_02                      |ima021_02                     |bne11_b   |new       ]
+[choice |bnd01_b                       |ima02_01                      |ima021_01                     |bnd02_b |bnd03_b |bne03 |bne05_b                       |ima02_02                      |ima021_02                     |bne11_b   |new       ]
+[choice |bnd01_b                       |ima02_01                      |ima021_01                     |bnd02_b |bnd03_b |bne03 |bne05_b                       |ima02_02                      |ima021_02                     |bne11_b   |new       ]
+[choice |bnd01_b                       |ima02_01                      |ima021_01                     |bnd02_b |bnd03_b |bne03 |bne05_b                       |ima02_02                      |ima021_02                     |bne11_b   |new       ]
+[choice |bnd01_b                       |ima02_01                      |ima021_01                     |bnd02_b |bnd03_b |bne03 |bne05_b                       |ima02_02                      |ima021_02                     |bne11_b   |new       ]
+[choice |bnd01_b                       |ima02_01                      |ima021_01                     |bnd02_b |bnd03_b |bne03 |bne05_b                       |ima02_02                      |ima021_02                     |bne11_b   |new       ]
+[choice |bnd01_b                       |ima02_01                      |ima021_01                     |bnd02_b |bnd03_b |bne03 |bne05_b                       |ima02_02                      |ima021_02                     |bne11_b   |new       ]
+[choice |bnd01_b                       |ima02_01                      |ima021_01                     |bnd02_b |bnd03_b |bne03 |bne05_b                       |ima02_02                      |ima021_02                     |bne11_b   |new       ]
+[choice |bnd01_b                       |ima02_01                      |ima021_01                     |bnd02_b |bnd03_b |bne03 |bne05_b                       |ima02_02                      |ima021_02                     |bne11_b   |new       ]
+[choice |bnd01_b                       |ima02_01                      |ima021_01                     |bnd02_b |bnd03_b |bne03 |bne05_b                       |ima02_02                      |ima021_02                     |bne11_b   |new       ]
+
+}
+END -- s_bne
+Grid gr1074
+{
+  ----------Rows [cn3   ] ----------
+
+}
+END -- gr1074
+END -- VBox1
+END -- abxp113
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit bnd01=formonly.bnd01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Item";
+ButtonEdit bne05=formonly.bne05 type CHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P> Qry Item";
+Group group02:group02, text="INPUT";
+DateEdit bnd02=formonly.bnd02 type CHAR, tabIndex=3, not null, required;
+DateEdit bnd03=formonly.bnd03 type CHAR, tabIndex=4, not null, required;
+ButtonEdit head=formonly.head type CHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P> Qry Item Group Code";
+ButtonEdit body=formonly.body type CHAR, action=controlp, tabIndex=6, image="zoom", comment="<^P> Qry Item Group Code";
+Edit bne11=formonly.bne11 type CHAR, tabIndex=7;
+CheckBox choice=formonly.choice type CHAR, tabIndex=8, title="choice", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit bnd01_b=formonly.bnd01_b type CHAR, tabIndex=9, title="Mas.Item", noEntry;
+Edit ima02_01=formonly.ima02_01 type CHAR, tabIndex=10, title="Desc", noEntry;
+Edit ima021_01=formonly.ima021_01 type CHAR, tabIndex=11, title="Spec", noEntry;
+Edit bnd02_b=formonly.bnd02_b type CHAR, tabIndex=12, title="Act.Date Ina.Date Line#", noEntry;
+Edit bnd03_b=formonly.bnd03_b type CHAR, tabIndex=13, noEntry;
+Edit bne03=formonly.bne03 type CHAR, tabIndex=14, noEntry;
+Edit bne05_b=formonly.bne05_b type CHAR, tabIndex=15, title="Item Master", noEntry;
+Edit ima02_02=formonly.ima02_02 type CHAR, tabIndex=16, title="Desc", noEntry;
+Edit ima021_02=formonly.ima021_02 type CHAR, tabIndex=17, title="Spec", noEntry;
+Edit bne11_b=formonly.bne11_b type CHAR, tabIndex=18, title="Loss Qty", noEntry;
+Edit new=formonly.new type CHAR, tabIndex=19, title="NewLossQty", not null, required;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bne(formonly.choice,formonly.bnd01_b,formonly.ima02_01,formonly.ima021_01,formonly.bnd02_b,formonly.bnd03_b,formonly.bne03,formonly.bne05_b,formonly.ima02_02,formonly.ima021_02,formonly.bne11_b,formonly.new)
+SCREEN RECORD Undefined(formonly.bnd01,formonly.bne05,formonly.bnd02,formonly.bnd03,formonly.head,formonly.body,formonly.bne11,formonly.cn3)
+END -- INSTRUCTIONS
+

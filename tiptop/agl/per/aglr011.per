@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr011")
+VBox vb15
+Group group01(text="INPUT")
+VBox vb14
+Grid gr2626
+{
+ Group No.           [axa01               ]
+ Parent Company      [axa02               ]
+ Book No.            [b                   ]
+ Report Structure No.[a                   ]
+ Combine Book        [aaz641              ]
+ Enter Year          [yy                  ]
+ axa06               [axa06               ]
+ End Period          [em                  ]
+ Quarter             [q1                  ]
+ Half a Year         [h1                  ]
+ Decimal Digits      [e                   ]
+ Print Minimum Level#[f                   ]
+}
+END -- gr2626
+Grid gr2627
+{
+
+ <G group03                                                         >
+ [d           ]
+ [            ]
+ [            ]
+ <                                                                  >
+}
+END -- gr2627
+Grid gr2628
+{
+ [c                            ]
+ [h                            ]
+
+
+}
+END -- gr2628
+Grid gr2629
+{
+
+ <G group05                                                         >
+  [o                                       ]
+  G/L Curr.           [r                   ]
+  Convert Curr.       [p                   ]
+  * Ex.Rate           [q                   ]
+ <                                                                  >
+}
+END -- gr2629
+END -- vb14
+END -- group01
+Grid gr2630
+{
+
+[more                                                        ]
+
+}
+END -- gr2630
+END -- vb15
+END -- aglr011
+
+ATTRIBUTES
+ButtonEdit axa01=formonly.axa01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit axa02=formonly.axa02 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit b=formonly.b type VARCHAR, tabIndex=3, noEntry;
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+ButtonEdit aaz641=formonly.aaz641 type VARCHAR, action=controlp, tabIndex=5, noEntry, not null, required, image="zoom";
+Edit yy=formonly.yy type SMALLINT, tabIndex=6, not null, required;
+ComboBox axa06=formonly.axa06 type VARCHAR, tabIndex=18, not null, required, items=(("1", "Month"),("2", "Quarter"),("3", "Half a Year"),("4", "Year"));
+Edit em=formonly.em type SMALLINT, tabIndex=7, not null, required;
+ComboBox q1=formonly.q1 type VARCHAR, tabIndex=19, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox h1=formonly.h1 type VARCHAR, tabIndex=20, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+Edit e=formonly.e type SMALLINT, tabIndex=8;
+Edit f=formonly.f type SMALLINT, tabIndex=9;
+Group group03:group03, text="amount unit";
+RadioGroup d=formonly.d type CHAR, tabIndex=10, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+CheckBox c=formonly.c type CHAR, tabIndex=11, text="Print Balance For Zero", valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=12, text="Print Other Name", valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05;
+CheckBox o=formonly.o type CHAR, tabIndex=13, text="Convert Currency", valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=14, noEntry;
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=15, image="zoom";
+Edit q=formonly.q type DECIMAL, tabIndex=16;
+CheckBox more=formonly.more type CHAR, tabIndex=17, text="Other codition to print", valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.axa01,formonly.axa02,formonly.b,formonly.a,formonly.aaz641,formonly.yy,formonly.axa06,formonly.em,formonly.q1,formonly.h1,formonly.e,formonly.f,formonly.d,formonly.c,formonly.h,formonly.o,formonly.r,formonly.p,formonly.q,formonly.more)
+END -- INSTRUCTIONS
+

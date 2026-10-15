@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_auth_filter.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_auth_filter")
+VBox vb6
+Folder folder01
+Page page01(text="Page01")
+VBox vb5
+Grid gr4675
+{
+ <G group01                                                                                                   >
+  Program Source   [gfg10          ]
+  Program Code     [gfg01          ][gaz03                               ]
+  Maintain Table   [gfg02          ][gat03                               ]
+  Combine Condition[gfg07    ]      [gfg08                                                               ]
+ <                                                                                                            >
+ <G memo                                                                                                      >
+ [memo_ze                                                                                                   ]
+ [                                                                                                          ]
+ <                                                                                                            >
+
+}
+END -- gr4675
+Grid gr20
+{
+
+ <T s_gfj                                                                                                 >
+ [gfj02   |gfj03          |gfj04                   |gfj05        |gfh03                         |gfh05   ]
+ [gfj02   |gfj03          |gfj04                   |gfj05        |gfh03                         |gfh05   ]
+ [gfj02   |gfj03          |gfj04                   |gfj05        |gfh03                         |gfh05   ]
+ [gfj02   |gfj03          |gfj04                   |gfj05        |gfh03                         |gfh05   ]
+ [gfj02   |gfj03          |gfj04                   |gfj05        |gfh03                         |gfh05   ]
+ [gfj02   |gfj03          |gfj04                   |gfj05        |gfh03                         |gfh05   ]
+ [gfj02   |gfj03          |gfj04                   |gfj05        |gfh03                         |gfh05   ]
+ [gfj02   |gfj03          |gfj04                   |gfj05        |gfh03                         |gfh05   ]
+ [gfj02   |gfj03          |gfj04                   |gfj05        |gfh03                         |gfh05   ]
+ <                                                                                                        >
+
+}
+END -- gr20
+Grid gr19
+{
+ Filter Condition
+[l_gfh05                                                                                                   ]
+[                                                                                                          ]
+[                                                                                                          ]
+[                                                                                                          ]
+[                                                                                                          ]
+[                                                                                                          ]
+
+}
+END -- gr19
+END -- vb5
+END -- page01
+END -- folder01
+Grid gr_cnt
+{
+  ---------- Rows [idx   ]/[cnt   ]  ---  Details [cn2   ] ----------
+
+}
+END -- gr_cnt
+END -- vb6
+END -- p_auth_filter
+
+TABLES
+gfj_file,
+gfg_file
+ATTRIBUTES
+Group group01:group01;
+ComboBox gfg10=gfg_file.gfg10, tabIndex=1, default = "1", not null, required, items=(("1", "Program Data"),("2", "Maintain Self-defined Query Report"),("3", "Dynamic Query Function"));
+ButtonEdit gfg01=gfg_file.gfg01, action=controlp, tabIndex=2, not null, required, image="zoom", downShift, comment="KEY Field, No Blank/Repeated!, <^P>Qry Program Name";
+Edit gaz03=formonly.gaz03 type VARCHAR, tabIndex=3, noEntry;
+ButtonEdit gfg02=gfg_file.gfg02, action=controlp, tabIndex=4, not null, required, image="zoom", downShift, comment="KEY Field, No Blank/Repeated!, <^P>Qry Program Name";
+Edit gat03=formonly.gat03 type VARCHAR, tabIndex=5, noEntry;
+ComboBox gfg07=gfg_file.gfg07, tabIndex=17, not null, required, items=(("1", "AND"),("2", "OR"));
+Edit gfg08=gfg_file.gfg08, tabIndex=6;
+Group memo:Memo, text="Memo";
+TextEdit memo_ze=formonly.memo_ze type CHAR, tabIndex=18, required;
+Table s_gfj:s_gfj;
+Edit gfj02=gfj_file.gfj02, tabIndex=7, title="Serial No.", not null, required;
+ComboBox gfj03=gfj_file.gfj03, tabIndex=8, title="Filter Type", not null, required, items=(("1", "By User"),("2", "By Auth Class"),("3", "By Dept"),("4", "Default"));
+ButtonEdit gfj04=gfj_file.gfj04, action=controlp, tabIndex=9, title="Code", not null, required, image="zoom", comment="Enter Receiver Name";
+ButtonEdit gfj05=gfj_file.gfj05, action=controlp, tabIndex=10, title="Filter Code", not null, required, image="zoom";
+Edit gfh03=formonly.gfh03 type VARCHAR, tabIndex=11, title="Filter Desc", noEntry;
+Edit gfh05=formonly.gfh05 type CHAR, tabIndex=12, title="gfh05", hidden;
+TextEdit l_gfh05=formonly.l_gfh05 type VARCHAR, tabIndex=13, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=14, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gfj(gfj_file.gfj02,gfj_file.gfj03,gfj_file.gfj04,gfj_file.gfj05,formonly.gfh03,formonly.gfh05)
+SCREEN RECORD Undefined(gfg_file.gfg10,gfg_file.gfg01,formonly.gaz03,gfg_file.gfg02,formonly.gat03,gfg_file.gfg07,gfg_file.gfg08,formonly.memo_ze,formonly.l_gfh05,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

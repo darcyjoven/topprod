@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi710c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi710c")
+VBox VBox1
+Table s_bmw
+{
+[bmw04     |bmw05           ]
+[bmw04     |bmw05           ]
+[bmw04     |bmw05           ]
+[bmw04     |bmw05           ]
+[bmw04     |bmw05           ]
+[bmw04     |bmw05           ]
+[bmw04     |bmw05           ]
+[bmw04     |bmw05           ]
+[bmw04     |bmw05           ]
+[bmw04     |bmw05           ]
+
+}
+END -- s_bmw
+Grid gr815
+{
+ <G group01                       >
+  Total               [tot       ]
+ <                                >
+
+}
+END -- gr815
+END -- VBox1
+END -- abmi710c
+
+TABLES
+bmw_file
+ATTRIBUTES
+Edit bmw04=bmw_file.bmw04, tabIndex=1, title="Inst.Loc", comment="<^Y>Access Original Insert Location";
+Edit bmw05=bmw_file.bmw05, tabIndex=2, title="Qty";
+Group group01:group01;
+Edit tot=formonly.tot type CHAR, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmw(bmw_file.bmw04,bmw_file.bmw05)
+SCREEN RECORD Undefined(formonly.tot)
+END -- INSTRUCTIONS
+

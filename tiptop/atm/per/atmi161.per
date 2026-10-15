@@ -1,0 +1,364 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi161.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi161")
+VBox VBox4
+Folder folder01
+Page page01(text="Main")
+Grid gr1391
+{
+ Forecast Ver. [odc01     ][odb02               ]           Employee   [odc07     ][gen02     ]           Target Amt   [odc11       ][imgmksg]
+ Inst No.      [odc02     ][tqb02               ]           Department [odc08     ][gem02     ]           Fore.Tot.Amt [ode14_1     ][       ]
+ Time Bucket   [odc04     ]                                 Currency   [odc09     ]                       [odc12                    ]
+ For.Init.Date [odc05     ]                                 Ex.Rate    [odc10               ]             [odc121                   ]
+ For.End Date  [odc06     ]                                 Data source[odc27     ]                       [odc13                    ]
+                                                                                                          [odc131                   ]
+
+
+
+}
+END -- gr1391
+END -- page01
+Page info(text="Info")
+Grid gr1392
+{
+ Record Owner        [odcuser   ] Last Modified by    [odcmodu   ]
+ Department          [odcgrup   ] Create/Modify Date  [odcdate   ]
+ Record Orig.        [odcoriu   ]
+ Dept Orig.          [odcorig   ]
+
+}
+END -- gr1392
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[odcud01                       ] userdefined_field07[odcud07        ] userdefined_field13[odcud13        ]
+                    [                              ] userdefined_field08[odcud08        ] userdefined_field14[odcud14        ]
+ userdefined_field02[odcud02        ]                userdefined_field09[odcud09        ] userdefined_field15[odcud15        ]
+ userdefined_field03[odcud03        ]                userdefined_field10[odcud10        ]
+ userdefined_field04[odcud04        ]                userdefined_field11[odcud11        ]
+ userdefined_field05[odcud05        ]                userdefined_field12[odcud12        ]
+ userdefined_field06[odcud06        ]
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_odd1
+{
+[odd03 |odd04                         |odd07                         |odd08                         |odd09     ]
+[odd03 |odd04                         |odd07                         |odd08                         |odd09     ]
+[odd03 |odd04                         |odd07                         |odd08                         |odd09     ]
+[odd03 |odd04                         |odd07                         |odd08                         |odd09     ]
+[odd03 |odd04                         |odd07                         |odd08                         |odd09     ]
+[odd03 |odd04                         |odd07                         |odd08                         |odd09     ]
+[odd03 |odd04                         |odd07                         |odd08                         |odd09     ]
+[odd03 |odd04                         |odd07                         |odd08                         |odd09     ]
+
+
+
+
+
+
+
+
+
+
+}
+END -- s_odd1
+Folder pc327
+Page page02(action=bucket_detail, text="Bucket Detail")
+VBox VBox3
+Table s_ode(wantFixedPageSize)
+{
+[ode04    |ode05       |ode06       |ode07         |ode071      |ode08       |ode09        |ode10       |ode14       |ode15          ]
+[ode04    |ode05       |ode06       |ode07         |ode071      |ode08       |ode09        |ode10       |ode14       |ode15          ]
+[ode04    |ode05       |ode06       |ode07         |ode071      |ode08       |ode09        |ode10       |ode14       |ode15          ]
+[ode04    |ode05       |ode06       |ode07         |ode071      |ode08       |ode09        |ode10       |ode14       |ode15          ]
+[ode04    |ode05       |ode06       |ode07         |ode071      |ode08       |ode09        |ode10       |ode14       |ode15          ]
+[ode04    |ode05       |ode06       |ode07         |ode071      |ode08       |ode09        |ode10       |ode14       |ode15          ]
+[ode04    |ode05       |ode06       |ode07         |ode071      |ode08       |ode09        |ode10       |ode14       |ode15          ]
+[ode04    |ode05       |ode06       |ode07         |ode071      |ode08       |ode09        |ode10       |ode14       |ode15          ]
+}
+END -- s_ode
+Grid gr1393
+{
+ ---------- Rows [cnt   ] / [cn2   ] / [cn3   ] -----Total Qty [tqty        ]-----Total Amount [tamt        ]
+
+
+}
+END -- gr1393
+END -- VBox3
+END -- page02
+Page page03(action=forecast_total_qty_detail, text="Forecast Total Qty Detail")
+VBox VBox2
+Table s_odd2(wantFixedPageSize)
+{
+[d03_1 |d04_1               |d07_1               |d08_1               |d09_1      |qty1a       |qty2a       |qty3a       |qty4a       |qty5a       |qty6a       |qty7a       |qty8a       |qty9a       |qty10a      |qty11a      |qty12a      |qty13a      |qty14a      |qty15a      |qty16a      |qty17a      |qty18a      |qty19a      |qty20a      |qty21a      |qty22a      |qty23a      |qty24a      |qty25a      |qty26a      |qty27a      |qty28a      |qty29a      |qty30a      |qty31a      |qty32a      ]
+[d03_1 |d04_1               |d07_1               |d08_1               |d09_1      |qty1a       |qty2a       |qty3a       |qty4a       |qty5a       |qty6a       |qty7a       |qty8a       |qty9a       |qty10a      |qty11a      |qty12a      |qty13a      |qty14a      |qty15a      |qty16a      |qty17a      |qty18a      |qty19a      |qty20a      |qty21a      |qty22a      |qty23a      |qty24a      |qty25a      |qty26a      |qty27a      |qty28a      |qty29a      |qty30a      |qty31a      |qty32a      ]
+[d03_1 |d04_1               |d07_1               |d08_1               |d09_1      |qty1a       |qty2a       |qty3a       |qty4a       |qty5a       |qty6a       |qty7a       |qty8a       |qty9a       |qty10a      |qty11a      |qty12a      |qty13a      |qty14a      |qty15a      |qty16a      |qty17a      |qty18a      |qty19a      |qty20a      |qty21a      |qty22a      |qty23a      |qty24a      |qty25a      |qty26a      |qty27a      |qty28a      |qty29a      |qty30a      |qty31a      |qty32a      ]
+[d03_1 |d04_1               |d07_1               |d08_1               |d09_1      |qty1a       |qty2a       |qty3a       |qty4a       |qty5a       |qty6a       |qty7a       |qty8a       |qty9a       |qty10a      |qty11a      |qty12a      |qty13a      |qty14a      |qty15a      |qty16a      |qty17a      |qty18a      |qty19a      |qty20a      |qty21a      |qty22a      |qty23a      |qty24a      |qty25a      |qty26a      |qty27a      |qty28a      |qty29a      |qty30a      |qty31a      |qty32a      ]
+[d03_1 |d04_1               |d07_1               |d08_1               |d09_1      |qty1a       |qty2a       |qty3a       |qty4a       |qty5a       |qty6a       |qty7a       |qty8a       |qty9a       |qty10a      |qty11a      |qty12a      |qty13a      |qty14a      |qty15a      |qty16a      |qty17a      |qty18a      |qty19a      |qty20a      |qty21a      |qty22a      |qty23a      |qty24a      |qty25a      |qty26a      |qty27a      |qty28a      |qty29a      |qty30a      |qty31a      |qty32a      ]
+[d03_1 |d04_1               |d07_1               |d08_1               |d09_1      |qty1a       |qty2a       |qty3a       |qty4a       |qty5a       |qty6a       |qty7a       |qty8a       |qty9a       |qty10a      |qty11a      |qty12a      |qty13a      |qty14a      |qty15a      |qty16a      |qty17a      |qty18a      |qty19a      |qty20a      |qty21a      |qty22a      |qty23a      |qty24a      |qty25a      |qty26a      |qty27a      |qty28a      |qty29a      |qty30a      |qty31a      |qty32a      ]
+[d03_1 |d04_1               |d07_1               |d08_1               |d09_1      |qty1a       |qty2a       |qty3a       |qty4a       |qty5a       |qty6a       |qty7a       |qty8a       |qty9a       |qty10a      |qty11a      |qty12a      |qty13a      |qty14a      |qty15a      |qty16a      |qty17a      |qty18a      |qty19a      |qty20a      |qty21a      |qty22a      |qty23a      |qty24a      |qty25a      |qty26a      |qty27a      |qty28a      |qty29a      |qty30a      |qty31a      |qty32a      ]
+[d03_1 |d04_1               |d07_1               |d08_1               |d09_1      |qty1a       |qty2a       |qty3a       |qty4a       |qty5a       |qty6a       |qty7a       |qty8a       |qty9a       |qty10a      |qty11a      |qty12a      |qty13a      |qty14a      |qty15a      |qty16a      |qty17a      |qty18a      |qty19a      |qty20a      |qty21a      |qty22a      |qty23a      |qty24a      |qty25a      |qty26a      |qty27a      |qty28a      |qty29a      |qty30a      |qty31a      |qty32a      ]
+}
+END -- s_odd2
+Grid gr1394
+{
+ ---------- Rows [cn4   ] -------------------------------------------------- Total[tot1a       |tot2a       |tot3a       |tot4a       |tot5a       |tot6a       |tot7a       |tot8a       |tot9a       |tot10a      |tot11a      |tot12a      |tot13a      |tot14a      |tot15a      |tot16a      |tot17a      |tot18a      |tot19a      |tot20a      |tot21a      |tot22a      |tot23a      |tot24a      |tot25a      |tot26a      |tot27a      |tot28a      |tot29a      |tot30a      |tot31a      |tot32a      ]
+
+
+}
+END -- gr1394
+END -- VBox2
+END -- page03
+Page page04(action=forecast_total_amt_detail, text="Forecast Total Amt Detail")
+VBox VBox1
+Table s_odd3(wantFixedPageSize)
+{
+[d03_2 |d04_2               |d07_2               |d08_2               |d09_2      |amt1b       |amt2b       |amt3b       |amt4b       |amt5b       |amt6b       |amt7b       |amt8b       |amt9b       |amt10b      |amt11b      |amt12b      |amt13b      |amt14b      |amt15b      |amt16b      |amt17b      |amt18b      |amt19b      |amt20b      |amt21b      |amt22b      |amt23b      |amt24b      |amt25b      |amt26b      |amt27b      |amt28b      |amt29b      |amt30b      |amt31b      |amt32b      ]
+[d03_2 |d04_2               |d07_2               |d08_2               |d09_2      |amt1b       |amt2b       |amt3b       |amt4b       |amt5b       |amt6b       |amt7b       |amt8b       |amt9b       |amt10b      |amt11b      |amt12b      |amt13b      |amt14b      |amt15b      |amt16b      |amt17b      |amt18b      |amt19b      |amt20b      |amt21b      |amt22b      |amt23b      |amt24b      |amt25b      |amt26b      |amt27b      |amt28b      |amt29b      |amt30b      |amt31b      |amt32b      ]
+[d03_2 |d04_2               |d07_2               |d08_2               |d09_2      |amt1b       |amt2b       |amt3b       |amt4b       |amt5b       |amt6b       |amt7b       |amt8b       |amt9b       |amt10b      |amt11b      |amt12b      |amt13b      |amt14b      |amt15b      |amt16b      |amt17b      |amt18b      |amt19b      |amt20b      |amt21b      |amt22b      |amt23b      |amt24b      |amt25b      |amt26b      |amt27b      |amt28b      |amt29b      |amt30b      |amt31b      |amt32b      ]
+[d03_2 |d04_2               |d07_2               |d08_2               |d09_2      |amt1b       |amt2b       |amt3b       |amt4b       |amt5b       |amt6b       |amt7b       |amt8b       |amt9b       |amt10b      |amt11b      |amt12b      |amt13b      |amt14b      |amt15b      |amt16b      |amt17b      |amt18b      |amt19b      |amt20b      |amt21b      |amt22b      |amt23b      |amt24b      |amt25b      |amt26b      |amt27b      |amt28b      |amt29b      |amt30b      |amt31b      |amt32b      ]
+[d03_2 |d04_2               |d07_2               |d08_2               |d09_2      |amt1b       |amt2b       |amt3b       |amt4b       |amt5b       |amt6b       |amt7b       |amt8b       |amt9b       |amt10b      |amt11b      |amt12b      |amt13b      |amt14b      |amt15b      |amt16b      |amt17b      |amt18b      |amt19b      |amt20b      |amt21b      |amt22b      |amt23b      |amt24b      |amt25b      |amt26b      |amt27b      |amt28b      |amt29b      |amt30b      |amt31b      |amt32b      ]
+[d03_2 |d04_2               |d07_2               |d08_2               |d09_2      |amt1b       |amt2b       |amt3b       |amt4b       |amt5b       |amt6b       |amt7b       |amt8b       |amt9b       |amt10b      |amt11b      |amt12b      |amt13b      |amt14b      |amt15b      |amt16b      |amt17b      |amt18b      |amt19b      |amt20b      |amt21b      |amt22b      |amt23b      |amt24b      |amt25b      |amt26b      |amt27b      |amt28b      |amt29b      |amt30b      |amt31b      |amt32b      ]
+[d03_2 |d04_2               |d07_2               |d08_2               |d09_2      |amt1b       |amt2b       |amt3b       |amt4b       |amt5b       |amt6b       |amt7b       |amt8b       |amt9b       |amt10b      |amt11b      |amt12b      |amt13b      |amt14b      |amt15b      |amt16b      |amt17b      |amt18b      |amt19b      |amt20b      |amt21b      |amt22b      |amt23b      |amt24b      |amt25b      |amt26b      |amt27b      |amt28b      |amt29b      |amt30b      |amt31b      |amt32b      ]
+[d03_2 |d04_2               |d07_2               |d08_2               |d09_2      |amt1b       |amt2b       |amt3b       |amt4b       |amt5b       |amt6b       |amt7b       |amt8b       |amt9b       |amt10b      |amt11b      |amt12b      |amt13b      |amt14b      |amt15b      |amt16b      |amt17b      |amt18b      |amt19b      |amt20b      |amt21b      |amt22b      |amt23b      |amt24b      |amt25b      |amt26b      |amt27b      |amt28b      |amt29b      |amt30b      |amt31b      |amt32b      ]
+}
+END -- s_odd3
+Grid gr1395
+{
+ ---------- Rows [cn5   ] -------------------------------------------------- Total[tot1b       |tot2b       |tot3b       |tot4b       |tot5b       |tot6b       |tot7b       |tot8b       |tot9b       |tot10b      |tot11b      |tot12b      |tot13b      |tot14b      |tot15b      |tot16b      |tot17b      |tot18b      |tot19b      |tot20b      |tot21b      |tot22b      |tot23b      |tot24b      |tot25b      |tot26b      |tot27b      |tot28b      |tot29b      |tot30b      |tot31b      |tot32b      ]
+
+
+
+}
+END -- gr1395
+END -- VBox1
+END -- page04
+END -- pc327
+END -- VBox4
+END -- atmi161
+
+TABLES
+ode_file,
+odd_file,
+odc_file
+ATTRIBUTES
+ButtonEdit odc01=odc_file.odc01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank/Repeated! <^P>Qry Forecast Version";
+Edit odb02=formonly.odb02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit odc07=odc_file.odc07, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=9, noEntry;
+Edit odc11=odc_file.odc11, tabIndex=15, not null, required;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit odc02=odc_file.odc02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="Key Field, No Blank/Repeated! <^P>Qry Inst No.";
+Edit tqb02=formonly.tqb02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit odc08=odc_file.odc08, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=11, noEntry;
+Edit ode14_1=formonly.ode14_1 type CHAR, tabIndex=16, noEntry;
+ComboBox odc04=odc_file.odc04, tabIndex=5, noEntry, items=(("1", "Quarter"),("2", "Month"),("3", "10-Day"),("4", "Week"),("5", "Day"));
+ButtonEdit odc09=odc_file.odc09, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Currency";
+CheckBox odc12=odc_file.odc12, tabIndex=17, text="Forecast Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit odc05=odc_file.odc05, tabIndex=6, noEntry;
+Edit odc10=odc_file.odc10, tabIndex=13, not null, required;
+CheckBox odc121=odc_file.odc121, tabIndex=18, text="Upper Adjust Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit odc06=odc_file.odc06, tabIndex=7, noEntry;
+ComboBox odc27=odc_file.odc27, tabIndex=14, noEntry, items=(("1", "Last sale history"),("2", "Last forcaste history"),("3", "Last priod sale history"),("4", "Simulate"));
+CheckBox odc13=odc_file.odc13, tabIndex=19, text="Target Amt Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox odc131=odc_file.odc131, tabIndex=20, text="Target Qty Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit odcuser=odc_file.odcuser, tabIndex=21, noEntry;
+Edit odcmodu=odc_file.odcmodu, tabIndex=22, noEntry;
+Edit odcgrup=odc_file.odcgrup, tabIndex=23, noEntry;
+DateEdit odcdate=odc_file.odcdate, tabIndex=24, noEntry;
+Edit odcoriu=odc_file.odcoriu, tabIndex=501, noEntry;
+Edit odcorig=odc_file.odcorig, tabIndex=502, noEntry;
+TextEdit odcud01=odc_file.odcud01, tabIndex=186, stretch=NONE;
+Edit odcud07=odc_file.odcud07, tabIndex=187;
+DateEdit odcud13=odc_file.odcud13, tabIndex=188;
+Edit odcud08=odc_file.odcud08, tabIndex=189;
+DateEdit odcud14=odc_file.odcud14, tabIndex=190;
+Edit odcud02=odc_file.odcud02, tabIndex=191;
+Edit odcud09=odc_file.odcud09, tabIndex=192;
+DateEdit odcud15=odc_file.odcud15, tabIndex=193;
+Edit odcud03=odc_file.odcud03, tabIndex=194;
+Edit odcud10=odc_file.odcud10, tabIndex=195;
+Edit odcud04=odc_file.odcud04, tabIndex=196;
+Edit odcud11=odc_file.odcud11, tabIndex=197;
+Edit odcud05=odc_file.odcud05, tabIndex=198;
+Edit odcud12=odc_file.odcud12, tabIndex=199;
+Edit odcud06=odc_file.odcud06, tabIndex=200;
+Edit odd03=odd_file.odd03, tabIndex=25, title="Ln#", not null, required;
+ButtonEdit odd04=odd_file.odd04, action=controlp, tabIndex=26, title="Forecast Item No.", not null, required, image="zoom", comment="<^P>Qry Forecast Item No.";
+Edit odd07=odd_file.odd07, tabIndex=27, title="P/N";
+Edit odd08=odd_file.odd08, tabIndex=28, title="Spec";
+ButtonEdit odd09=odd_file.odd09, action=controlp, tabIndex=29, title="Sales Unit", not null, required, image="zoom", comment="<^P>Qry Sales Unit";
+DateEdit ode04=ode_file.ode04, tabIndex=30, title="Buc.Date", noEntry, not null, required;
+Edit ode05=ode_file.ode05, tabIndex=31, title="Hist.Qty", noEntry, not null, required;
+Edit ode06=ode_file.ode06, tabIndex=32, title="Fore.Qty", not null, required;
+Edit ode07=ode_file.ode07, tabIndex=33, title="Upper Adj.Qty", noEntry, not null, required;
+Edit ode071=ode_file.ode071, tabIndex=34, title="Lower Qty", noEntry, not null, required;
+Edit ode08=ode_file.ode08, tabIndex=35, title="Tar.Adj.Qty", not null, required;
+Edit ode09=ode_file.ode09, tabIndex=36, title="Fore.Tot.Qty", noEntry, not null, required;
+Edit ode10=ode_file.ode10, tabIndex=37, title="Unit Price", not null, required;
+Edit ode14=ode_file.ode14, tabIndex=38, title="Fore.Tot.Amt", noEntry, not null, required;
+Edit ode15=ode_file.ode15, tabIndex=39, title="History Mny", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=114, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=115, noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=116, noEntry;
+Edit tqty=formonly.tqty type CHAR, tabIndex=117, noEntry;
+Edit tamt=formonly.tamt type CHAR, tabIndex=118, noEntry;
+Edit d03_1=formonly.d03_1 type CHAR, tabIndex=40, title="Ln#", not null, required;
+ButtonEdit d04_1=formonly.d04_1 type CHAR, action=controlp, tabIndex=41, title="Forecast Item No.", not null, required, image="zoom", comment="<^P>Qry Forecast Item No.";
+Edit d07_1=formonly.d07_1 type CHAR, tabIndex=42, title="P/N";
+Edit d08_1=formonly.d08_1 type CHAR, tabIndex=43, title="Spec";
+ButtonEdit d09_1=formonly.d09_1 type CHAR, action=controlp, tabIndex=44, title="Sales Unit", not null, required, image="zoom", comment="<^P>Qry Sales Unit";
+Edit qty1a=formonly.qty1a type CHAR, tabIndex=45, title="col1a", noEntry;
+Edit qty2a=formonly.qty2a type CHAR, tabIndex=46, title="col2a", noEntry;
+Edit qty3a=formonly.qty3a type CHAR, tabIndex=47, title="col3a", noEntry;
+Edit qty4a=formonly.qty4a type CHAR, tabIndex=48, title="col4a", noEntry;
+Edit qty5a=formonly.qty5a type CHAR, tabIndex=49, title="col5a", noEntry;
+Edit qty6a=formonly.qty6a type CHAR, tabIndex=50, title="col6a", noEntry;
+Edit qty7a=formonly.qty7a type CHAR, tabIndex=51, title="col7a", noEntry;
+Edit qty8a=formonly.qty8a type CHAR, tabIndex=52, title="col8a", noEntry;
+Edit qty9a=formonly.qty9a type CHAR, tabIndex=53, title="col9a", noEntry;
+Edit qty10a=formonly.qty10a type CHAR, tabIndex=54, title="col10a", noEntry;
+Edit qty11a=formonly.qty11a type CHAR, tabIndex=55, title="col11a", noEntry;
+Edit qty12a=formonly.qty12a type CHAR, tabIndex=56, title="col12a", noEntry;
+Edit qty13a=formonly.qty13a type CHAR, tabIndex=57, title="col13a", noEntry;
+Edit qty14a=formonly.qty14a type CHAR, tabIndex=58, title="col14a", noEntry;
+Edit qty15a=formonly.qty15a type CHAR, tabIndex=59, title="col15a", noEntry;
+Edit qty16a=formonly.qty16a type CHAR, tabIndex=60, title="col16a", noEntry;
+Edit qty17a=formonly.qty17a type CHAR, tabIndex=61, title="col17a", noEntry;
+Edit qty18a=formonly.qty18a type CHAR, tabIndex=62, title="col18a", noEntry;
+Edit qty19a=formonly.qty19a type CHAR, tabIndex=63, title="col19a", noEntry;
+Edit qty20a=formonly.qty20a type CHAR, tabIndex=64, title="col20a", noEntry;
+Edit qty21a=formonly.qty21a type CHAR, tabIndex=65, title="col21a", noEntry;
+Edit qty22a=formonly.qty22a type CHAR, tabIndex=66, title="col22a", noEntry;
+Edit qty23a=formonly.qty23a type CHAR, tabIndex=67, title="col23a", noEntry;
+Edit qty24a=formonly.qty24a type CHAR, tabIndex=68, title="col24a", noEntry;
+Edit qty25a=formonly.qty25a type CHAR, tabIndex=69, title="col25a", noEntry;
+Edit qty26a=formonly.qty26a type CHAR, tabIndex=70, title="col26a", noEntry;
+Edit qty27a=formonly.qty27a type CHAR, tabIndex=71, title="col27a", noEntry;
+Edit qty28a=formonly.qty28a type CHAR, tabIndex=72, title="col28a", noEntry;
+Edit qty29a=formonly.qty29a type CHAR, tabIndex=73, title="col29a", noEntry;
+Edit qty30a=formonly.qty30a type CHAR, tabIndex=74, title="col30a", noEntry;
+Edit qty31a=formonly.qty31a type CHAR, tabIndex=75, title="col31a", noEntry;
+Edit qty32a=formonly.qty32a type CHAR, tabIndex=76, title="Total", noEntry;
+Edit cn4=formonly.cn4 type SMALLINT, tabIndex=119, noEntry;
+Edit tot1a=formonly.tot1a type CHAR, tabIndex=120, noEntry;
+Edit tot2a=formonly.tot2a type CHAR, tabIndex=121, noEntry;
+Edit tot3a=formonly.tot3a type CHAR, tabIndex=122, noEntry;
+Edit tot4a=formonly.tot4a type CHAR, tabIndex=123, noEntry;
+Edit tot5a=formonly.tot5a type CHAR, tabIndex=124, noEntry;
+Edit tot6a=formonly.tot6a type CHAR, tabIndex=125, noEntry;
+Edit tot7a=formonly.tot7a type CHAR, tabIndex=126, noEntry;
+Edit tot8a=formonly.tot8a type CHAR, tabIndex=127, noEntry;
+Edit tot9a=formonly.tot9a type CHAR, tabIndex=128, noEntry;
+Edit tot10a=formonly.tot10a type CHAR, tabIndex=129, noEntry;
+Edit tot11a=formonly.tot11a type CHAR, tabIndex=130, noEntry;
+Edit tot12a=formonly.tot12a type CHAR, tabIndex=131, noEntry;
+Edit tot13a=formonly.tot13a type CHAR, tabIndex=132, noEntry;
+Edit tot14a=formonly.tot14a type CHAR, tabIndex=133, noEntry;
+Edit tot15a=formonly.tot15a type CHAR, tabIndex=134, noEntry;
+Edit tot16a=formonly.tot16a type CHAR, tabIndex=135, noEntry;
+Edit tot17a=formonly.tot17a type CHAR, tabIndex=136, noEntry;
+Edit tot18a=formonly.tot18a type CHAR, tabIndex=137, noEntry;
+Edit tot19a=formonly.tot19a type CHAR, tabIndex=138, noEntry;
+Edit tot20a=formonly.tot20a type CHAR, tabIndex=139, noEntry;
+Edit tot21a=formonly.tot21a type CHAR, tabIndex=140, noEntry;
+Edit tot22a=formonly.tot22a type CHAR, tabIndex=141, noEntry;
+Edit tot23a=formonly.tot23a type CHAR, tabIndex=142, noEntry;
+Edit tot24a=formonly.tot24a type CHAR, tabIndex=143, noEntry;
+Edit tot25a=formonly.tot25a type CHAR, tabIndex=144, noEntry;
+Edit tot26a=formonly.tot26a type CHAR, tabIndex=145, noEntry;
+Edit tot27a=formonly.tot27a type CHAR, tabIndex=146, noEntry;
+Edit tot28a=formonly.tot28a type CHAR, tabIndex=147, noEntry;
+Edit tot29a=formonly.tot29a type CHAR, tabIndex=148, noEntry;
+Edit tot30a=formonly.tot30a type CHAR, tabIndex=149, noEntry;
+Edit tot31a=formonly.tot31a type CHAR, tabIndex=150, noEntry;
+Edit tot32a=formonly.tot32a type CHAR, tabIndex=151, noEntry;
+Edit d03_2=formonly.d03_2 type CHAR, tabIndex=77, title="Ln#", not null, required;
+ButtonEdit d04_2=formonly.d04_2 type CHAR, action=controlp, tabIndex=78, title="Forecast Item No.", not null, required, image="zoom", comment="<^P>Qry Forecast Item No.";
+Edit d07_2=formonly.d07_2 type CHAR, tabIndex=79, title="P/N";
+Edit d08_2=formonly.d08_2 type CHAR, tabIndex=80, title="Spec";
+ButtonEdit d09_2=formonly.d09_2 type CHAR, action=controlp, tabIndex=81, title="Sales Unit", not null, required, image="zoom", comment="<^P>Qry Sales Unit";
+Edit amt1b=formonly.amt1b type CHAR, tabIndex=82, title="col1b", noEntry;
+Edit amt2b=formonly.amt2b type CHAR, tabIndex=83, title="col2b", noEntry;
+Edit amt3b=formonly.amt3b type CHAR, tabIndex=84, title="col3b", noEntry;
+Edit amt4b=formonly.amt4b type CHAR, tabIndex=85, title="col4b", noEntry;
+Edit amt5b=formonly.amt5b type CHAR, tabIndex=86, title="col5b", noEntry;
+Edit amt6b=formonly.amt6b type CHAR, tabIndex=87, title="col6b", noEntry;
+Edit amt7b=formonly.amt7b type CHAR, tabIndex=88, title="col7b", noEntry;
+Edit amt8b=formonly.amt8b type CHAR, tabIndex=89, title="col8b", noEntry;
+Edit amt9b=formonly.amt9b type CHAR, tabIndex=90, title="col9b", noEntry;
+Edit amt10b=formonly.amt10b type CHAR, tabIndex=91, title="col10b", noEntry;
+Edit amt11b=formonly.amt11b type CHAR, tabIndex=92, title="col11b", noEntry;
+Edit amt12b=formonly.amt12b type CHAR, tabIndex=93, title="col12b", noEntry;
+Edit amt13b=formonly.amt13b type CHAR, tabIndex=94, title="col13b", noEntry;
+Edit amt14b=formonly.amt14b type CHAR, tabIndex=95, title="col14b", noEntry;
+Edit amt15b=formonly.amt15b type CHAR, tabIndex=96, title="col15b", noEntry;
+Edit amt16b=formonly.amt16b type CHAR, tabIndex=97, title="col16b", noEntry;
+Edit amt17b=formonly.amt17b type CHAR, tabIndex=98, title="col17b", noEntry;
+Edit amt18b=formonly.amt18b type CHAR, tabIndex=99, title="col18b", noEntry;
+Edit amt19b=formonly.amt19b type CHAR, tabIndex=100, title="col19b", noEntry;
+Edit amt20b=formonly.amt20b type CHAR, tabIndex=101, title="col20b", noEntry;
+Edit amt21b=formonly.amt21b type CHAR, tabIndex=102, title="col21b", noEntry;
+Edit amt22b=formonly.amt22b type CHAR, tabIndex=103, title="col22b", noEntry;
+Edit amt23b=formonly.amt23b type CHAR, tabIndex=104, title="col23b", noEntry;
+Edit amt24b=formonly.amt24b type CHAR, tabIndex=105, title="col24b", noEntry;
+Edit amt25b=formonly.amt25b type CHAR, tabIndex=106, title="col25b", noEntry;
+Edit amt26b=formonly.amt26b type CHAR, tabIndex=107, title="col26b", noEntry;
+Edit amt27b=formonly.amt27b type CHAR, tabIndex=108, title="col27b", noEntry;
+Edit amt28b=formonly.amt28b type CHAR, tabIndex=109, title="col28b", noEntry;
+Edit amt29b=formonly.amt29b type CHAR, tabIndex=110, title="col29b", noEntry;
+Edit amt30b=formonly.amt30b type CHAR, tabIndex=111, title="col30b", noEntry;
+Edit amt31b=formonly.amt31b type CHAR, tabIndex=112, title="col31b", noEntry;
+Edit amt32b=formonly.amt32b type CHAR, tabIndex=113, title="Total", noEntry;
+Edit cn5=formonly.cn5 type SMALLINT, tabIndex=152, noEntry;
+Edit tot1b=formonly.tot1b type CHAR, tabIndex=153, noEntry;
+Edit tot2b=formonly.tot2b type CHAR, tabIndex=154, noEntry;
+Edit tot3b=formonly.tot3b type CHAR, tabIndex=155, noEntry;
+Edit tot4b=formonly.tot4b type CHAR, tabIndex=156, noEntry;
+Edit tot5b=formonly.tot5b type CHAR, tabIndex=157, noEntry;
+Edit tot6b=formonly.tot6b type CHAR, tabIndex=158, noEntry;
+Edit tot7b=formonly.tot7b type CHAR, tabIndex=159, noEntry;
+Edit tot8b=formonly.tot8b type CHAR, tabIndex=160, noEntry;
+Edit tot9b=formonly.tot9b type CHAR, tabIndex=161, noEntry;
+Edit tot10b=formonly.tot10b type CHAR, tabIndex=162, noEntry;
+Edit tot11b=formonly.tot11b type CHAR, tabIndex=163, noEntry;
+Edit tot12b=formonly.tot12b type CHAR, tabIndex=164, noEntry;
+Edit tot13b=formonly.tot13b type CHAR, tabIndex=165, noEntry;
+Edit tot14b=formonly.tot14b type CHAR, tabIndex=166, noEntry;
+Edit tot15b=formonly.tot15b type CHAR, tabIndex=167, noEntry;
+Edit tot16b=formonly.tot16b type CHAR, tabIndex=168, noEntry;
+Edit tot17b=formonly.tot17b type CHAR, tabIndex=169, noEntry;
+Edit tot18b=formonly.tot18b type CHAR, tabIndex=170, noEntry;
+Edit tot19b=formonly.tot19b type CHAR, tabIndex=171, noEntry;
+Edit tot20b=formonly.tot20b type CHAR, tabIndex=172, noEntry;
+Edit tot21b=formonly.tot21b type CHAR, tabIndex=173, noEntry;
+Edit tot22b=formonly.tot22b type CHAR, tabIndex=174, noEntry;
+Edit tot23b=formonly.tot23b type CHAR, tabIndex=175, noEntry;
+Edit tot24b=formonly.tot24b type CHAR, tabIndex=176, noEntry;
+Edit tot25b=formonly.tot25b type CHAR, tabIndex=177, noEntry;
+Edit tot26b=formonly.tot26b type CHAR, tabIndex=178, noEntry;
+Edit tot27b=formonly.tot27b type CHAR, tabIndex=179, noEntry;
+Edit tot28b=formonly.tot28b type CHAR, tabIndex=180, noEntry;
+Edit tot29b=formonly.tot29b type CHAR, tabIndex=181, noEntry;
+Edit tot30b=formonly.tot30b type CHAR, tabIndex=182, noEntry;
+Edit tot31b=formonly.tot31b type CHAR, tabIndex=183, noEntry;
+Edit tot32b=formonly.tot32b type CHAR, tabIndex=184, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_odd1(odd_file.odd03,odd_file.odd04,odd_file.odd07,odd_file.odd08,odd_file.odd09)
+SCREEN RECORD s_ode(ode_file.ode04,ode_file.ode05,ode_file.ode06,ode_file.ode07,ode_file.ode071,ode_file.ode08,ode_file.ode09,ode_file.ode10,ode_file.ode14,ode_file.ode15)
+SCREEN RECORD s_odd2(formonly.d03_1,formonly.d04_1,formonly.d07_1,formonly.d08_1,formonly.d09_1,formonly.qty1a,formonly.qty2a,formonly.qty3a,formonly.qty4a,formonly.qty5a,formonly.qty6a,formonly.qty7a,formonly.qty8a,formonly.qty9a,formonly.qty10a,formonly.qty11a,formonly.qty12a,formonly.qty13a,formonly.qty14a,formonly.qty15a,formonly.qty16a,formonly.qty17a,formonly.qty18a,formonly.qty19a,formonly.qty20a,formonly.qty21a,formonly.qty22a,formonly.qty23a,formonly.qty24a,formonly.qty25a,formonly.qty26a,formonly.qty27a,formonly.qty28a,formonly.qty29a,formonly.qty30a,formonly.qty31a,formonly.qty32a)
+SCREEN RECORD s_odd3(formonly.d03_2,formonly.d04_2,formonly.d07_2,formonly.d08_2,formonly.d09_2,formonly.amt1b,formonly.amt2b,formonly.amt3b,formonly.amt4b,formonly.amt5b,formonly.amt6b,formonly.amt7b,formonly.amt8b,formonly.amt9b,formonly.amt10b,formonly.amt11b,formonly.amt12b,formonly.amt13b,formonly.amt14b,formonly.amt15b,formonly.amt16b,formonly.amt17b,formonly.amt18b,formonly.amt19b,formonly.amt20b,formonly.amt21b,formonly.amt22b,formonly.amt23b,formonly.amt24b,formonly.amt25b,formonly.amt26b,formonly.amt27b,formonly.amt28b,formonly.amt29b,formonly.amt30b,formonly.amt31b,formonly.amt32b)
+SCREEN RECORD Undefined(odc_file.odc01,formonly.odb02,odc_file.odc07,formonly.gen02,odc_file.odc11,formonly.imgmksg,odc_file.odc02,formonly.tqb02,odc_file.odc08,formonly.gem02,formonly.ode14_1,odc_file.odc04,odc_file.odc09,odc_file.odc12,odc_file.odc05,odc_file.odc10,odc_file.odc121,odc_file.odc06,odc_file.odc27,odc_file.odc13,odc_file.odc131,odc_file.odcuser,odc_file.odcmodu,odc_file.odcgrup,odc_file.odcdate,odc_file.odcoriu,odc_file.odcorig,odc_file.odcud01,odc_file.odcud07,odc_file.odcud13,odc_file.odcud08,odc_file.odcud14,odc_file.odcud02,odc_file.odcud09,odc_file.odcud15,odc_file.odcud03,odc_file.odcud10,odc_file.odcud04,odc_file.odcud11,odc_file.odcud05,odc_file.odcud12,odc_file.odcud06,formonly.cnt,formonly.cn2,formonly.cn3,formonly.tqty,formonly.tamt,formonly.cn4,formonly.tot1a,formonly.tot2a,formonly.tot3a,formonly.tot4a,formonly.tot5a,formonly.tot6a,formonly.tot7a,formonly.tot8a,formonly.tot9a,formonly.tot10a,formonly.tot11a,formonly.tot12a,formonly.tot13a,formonly.tot14a,formonly.tot15a,formonly.tot16a,formonly.tot17a,formonly.tot18a,formonly.tot19a,formonly.tot20a,formonly.tot21a,formonly.tot22a,formonly.tot23a,formonly.tot24a,formonly.tot25a,formonly.tot26a,formonly.tot27a,formonly.tot28a,formonly.tot29a,formonly.tot30a,formonly.tot31a,formonly.tot32a,formonly.cn5,formonly.tot1b,formonly.tot2b,formonly.tot3b,formonly.tot4b,formonly.tot5b,formonly.tot6b,formonly.tot7b,formonly.tot8b,formonly.tot9b,formonly.tot10b,formonly.tot11b,formonly.tot12b,formonly.tot13b,formonly.tot14b,formonly.tot15b,formonly.tot16b,formonly.tot17b,formonly.tot18b,formonly.tot19b,formonly.tot20b,formonly.tot21b,formonly.tot22b,formonly.tot23b,formonly.tot24b,formonly.tot25b,formonly.tot26b,formonly.tot27b,formonly.tot28b,formonly.tot29b,formonly.tot30b,formonly.tot31b,formonly.tot32b)
+END -- INSTRUCTIONS
+

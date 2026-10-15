@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglg806.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglr806")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                                          >
+    Book               [aed00               ]
+ <                                                                  >
+
+}
+END -- Grid1
+Grid gr2776
+{
+ <G group01                                                          >
+  Account NO.         [aed01               ]
+  Tran.Code Sequence  [aed011              ]
+  Tran. Code Type     [aed012              ]
+  Tran. Code          [aed02               ]
+ <                                                                   >
+}
+END -- gr2776
+Group group02(text="INPUT")
+Grid gr2777
+{
+ Year                [aed03               ]
+ Period              [aed04_b             ]-[aed04_e            ]
+
+
+[t                               ]
+[e                               ]
+}
+END -- gr2777
+END -- group02
+Grid gr2778
+{
+[more                                                        ]
+
+
+}
+END -- gr2778
+END -- VBox1
+END -- aglr806
+
+TABLES
+aed_file
+ATTRIBUTES
+Group group1:Group1, text=%"INPUT";
+ButtonEdit aed00=formonly.aed00 type VARCHAR, action=controlp, tabIndex=8, image="zoom";
+Group group01:group01, text="QBE";
+ButtonEdit aed01=aed_file.aed01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit aed011=aed_file.aed011, tabIndex=2;
+ButtonEdit aed012=aed_file.aed012, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Transaction Type";
+Edit aed02=aed_file.aed02, tabIndex=4;
+Edit aed03=formonly.aed03 type SMALLINT, tabIndex=5;
+Edit aed04_b=formonly.aed04_b type SMALLINT, tabIndex=6;
+Edit aed04_e=formonly.aed04_e type SMALLINT, tabIndex=7;
+CheckBox t=formonly.t type CHAR, tabIndex=9, text="Next Page By Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=10, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aed00,aed_file.aed01,aed_file.aed011,aed_file.aed012,aed_file.aed02,formonly.aed03,formonly.aed04_b,formonly.aed04_e,formonly.t,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

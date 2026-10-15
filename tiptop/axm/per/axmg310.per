@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmg310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr310")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                                 >
+  Estimate No.         [oqa01               ]    Dept No.             [oqa05               ]
+  Est.Date             [oqa02               ]    Customer No.         [oqa06               ]
+  Product No.          [oqa03               ]    Slsman No.           [oqa07               ]
+ <                                                                                          >
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                              ]
+
+
+}
+END -- Grid2
+END -- VBox1
+END -- axmr310
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit oqa01=formonly.oqa01 type CHAR, tabIndex=1;
+Edit oqa05=formonly.oqa05 type CHAR, tabIndex=2;
+DateEdit oqa02=formonly.oqa02 type DATE, tabIndex=3;
+Edit oqa06=formonly.oqa06 type CHAR, tabIndex=4;
+Edit oqa03=formonly.oqa03 type CHAR, tabIndex=5;
+Edit oqa07=formonly.oqa07 type CHAR, tabIndex=6;
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oqa01,formonly.oqa05,formonly.oqa02,formonly.oqa06,formonly.oqa03,formonly.oqa07,formonly.more)
+END -- INSTRUCTIONS
+

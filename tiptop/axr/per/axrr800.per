@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrr800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+   <G group1                                          >
+
+     [label1    ]    [omf05               ]
+     [label2    ]    [omf10              ]
+     [label3    ]    [omf11              ]
+     [label4    ]    [omf03               ]
+     [label5    ]    [omf01              ]
+
+      [flag                    ]
+   <                                                  >
+
+    [more                        ]
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"QBE条件";
+Label label1:Label1, text=%"Label1";
+ButtonEdit omf05=formonly.omf05 type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+Label label2:Label2, text=%"Label2";
+ComboBox omf10=formonly.omf10 type VARCHAR, tabIndex=3, items=(("1", "Text"),("2", "Text"));
+Label label3:Label3, text=%"Label3";
+ButtonEdit omf11=formonly.omf11, action=controlp, tabIndex=1, image="zoom";
+Label label4:Label4, text=%"Label4";
+DateEdit omf03=formonly.omf03 type DATE, tabIndex=4;
+Label label5:Label5, text=%"Label5";
+ButtonEdit omf01=formonly.omf01 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+CheckBox flag=formonly.flag, tabIndex=6, text=%"CheckBox1", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more, tabIndex=7, text=%"CheckBox2", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.omf05,formonly.omf10,formonly.omf11,formonly.omf03,formonly.omf01,formonly.flag,formonly.more)
+END -- INSTRUCTIONS
+

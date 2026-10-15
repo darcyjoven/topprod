@@ -1,0 +1,90 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxi800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxi800")
+VBox vb5
+Folder pc166
+Page page01(text="Main")
+VBox vb4
+Grid gr1054
+{
+  Transaction Reason Code [bxr01     ]
+  Description             [bxr02               ]
+
+ <G group01                                   > <G group04                                   > <G group03                                  > <G group05                       >
+  Inventory +/- Method           [bxr04     ]    Plant Porduction Withdrawal Qty [bxr21     ]   Finished Product Store-in Qty  [bxr51     ]   [bxr91                         ]
+ <                                            >  Subcontracting Withdrawal Qty   [bxr22     ]   Finished Product Store-out Qty [bxr60     ]   [bxr92                         ]
+ <G group02                                   >  Qty Sent                        [bxr23     ]   Directly Export Qty            [bxr61     ]   [bxr93                         ]
+  Bonded Import qty              [bxr11     ]    Other Qty Withdrawn             [bxr24     ]   Regarded as Export Qty         [bxr62     ]   [bxr94                         ]
+  Regarded as Import Qty         [bxr12     ]    Material Local Sales Qty        [bxr25     ]   Local Sales Qty                [bxr63     ]   [bxr95                         ]
+  Non-Bonded Import Qty          [bxr13     ]    Material Export Qty             [bxr26     ]   Other Store-out Qty            [bxr64     ]
+                                                 Production Returns              [bxr31     ]
+                                                 Approved Scrap Qty              [bxr41     ]
+                                                 Adjust Qty                      [bxr42     ]
+
+
+
+
+
+
+ <                                            > <                                            > <                                           > <                                >
+
+}
+END -- gr1054
+END -- vb4
+END -- page01
+END -- pc166
+Grid gr1055
+{
+  ----------Rows [cnt   ] ----------
+
+}
+END -- gr1055
+END -- vb5
+END -- abxi800
+
+TABLES
+bxr_file
+ATTRIBUTES
+Edit bxr01=bxr_file.bxr01, tabIndex=1, not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit bxr02=bxr_file.bxr02, tabIndex=2;
+Group group01:group01;
+ComboBox bxr04=bxr_file.bxr04, tabIndex=3, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+Group group04:group04;
+ComboBox bxr21=bxr_file.bxr21, tabIndex=4, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr22=bxr_file.bxr22, tabIndex=5, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr23=bxr_file.bxr23, tabIndex=6, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr24=bxr_file.bxr24, tabIndex=7, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr25=bxr_file.bxr25, tabIndex=8, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr26=bxr_file.bxr26, tabIndex=9, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr31=bxr_file.bxr31, tabIndex=10, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr41=bxr_file.bxr41, tabIndex=11, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr42=bxr_file.bxr42, tabIndex=12, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+Group group03:group03;
+ComboBox bxr51=bxr_file.bxr51, tabIndex=13, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr60=bxr_file.bxr60, tabIndex=14, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr61=bxr_file.bxr61, tabIndex=15, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr62=bxr_file.bxr62, tabIndex=16, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr63=bxr_file.bxr63, tabIndex=17, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr64=bxr_file.bxr64, tabIndex=18, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+Group group05:group05;
+CheckBox bxr91=bxr_file.bxr91, tabIndex=19, text="Enter Declaration No.", not null, required, valueChecked = "Y", valueUnchecked = "N", comment=" Y:Enter ";
+CheckBox bxr92=bxr_file.bxr92, tabIndex=20, text="Enter Internal-Use #", not null, required, valueChecked = "Y", valueUnchecked = "N", comment=" Y:Enter ";
+CheckBox bxr93=bxr_file.bxr93, tabIndex=21, text="Enter Release Order #", not null, required, valueChecked = "Y", valueUnchecked = "N", comment=" Y:Enter ";
+CheckBox bxr94=bxr_file.bxr94, tabIndex=22, text="Enter Release Date", not null, required, valueChecked = "Y", valueUnchecked = "N", comment=" Y:Enter ";
+CheckBox bxr95=bxr_file.bxr95, tabIndex=23, text="Enter Amount", not null, required, valueChecked = "Y", valueUnchecked = "N", comment=" Y:Enter ";
+Group group02:group02;
+ComboBox bxr11=bxr_file.bxr11, tabIndex=24, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr12=bxr_file.bxr12, tabIndex=25, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+ComboBox bxr13=bxr_file.bxr13, tabIndex=26, not null, required, queryEditable, items=(("1", "Plus"),("-1", "Minus"),("0", "No Action"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bxr_file.bxr01,bxr_file.bxr02,bxr_file.bxr04,bxr_file.bxr21,bxr_file.bxr22,bxr_file.bxr23,bxr_file.bxr24,bxr_file.bxr25,bxr_file.bxr26,bxr_file.bxr31,bxr_file.bxr41,bxr_file.bxr42,bxr_file.bxr51,bxr_file.bxr60,bxr_file.bxr61,bxr_file.bxr62,bxr_file.bxr63,bxr_file.bxr64,bxr_file.bxr91,bxr_file.bxr92,bxr_file.bxr93,bxr_file.bxr94,bxr_file.bxr95,bxr_file.bxr11,bxr_file.bxr12,bxr_file.bxr13,formonly.cnt)
+END -- INSTRUCTIONS
+

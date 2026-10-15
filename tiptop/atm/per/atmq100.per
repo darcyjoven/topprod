@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmq100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmq100")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1276
+{
+ <G group01                                                  >
+  Vehicle No.         [obw01     ]
+  Level               [obw05     ]
+  Category            [obw02     ]
+  Brand               [obw03               ]
+  Model               [obw04               ]
+ <                                                           >
+
+}
+END -- gr1276
+Grid gr1277
+{
+ <G group02                                                 >
+  Ownership           [obw06     ] [desc      ]
+  Driver              [obw16     ] [gen02     ]
+  Vehicle Group       [obw20     ]
+  Date Scope          [bdate     ]-[edate     ]
+ <                                                          >
+
+
+}
+END -- gr1277
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_sr
+{
+[r         |adk01                     |adk02              |adk03                |adk15           |adk04        |adk05        |adk06                  |adk07               ]
+[r         |adk01                     |adk02              |adk03                |adk15           |adk04        |adk05        |adk06                  |adk07               ]
+[r         |adk01                     |adk02              |adk03                |adk15           |adk04        |adk05        |adk06                  |adk07               ]
+[r         |adk01                     |adk02              |adk03                |adk15           |adk04        |adk05        |adk06                  |adk07               ]
+[r         |adk01                     |adk02              |adk03                |adk15           |adk04        |adk05        |adk06                  |adk07               ]
+[r         |adk01                     |adk02              |adk03                |adk15           |adk04        |adk05        |adk06                  |adk07               ]
+[r         |adk01                     |adk02              |adk03                |adk15           |adk04        |adk05        |adk06                  |adk07               ]
+[r         |adk01                     |adk02              |adk03                |adk15           |adk04        |adk05        |adk06                  |adk07               ]
+[r         |adk01                     |adk02              |adk03                |adk15           |adk04        |adk05        |adk06                  |adk07               ]
+[r         |adk01                     |adk02              |adk03                |adk15           |adk04        |adk05        |adk06                  |adk07               ]
+
+}
+END -- s_sr
+Grid gr1278
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr1278
+END -- VBox1
+END -- atmq100
+
+TABLES
+adk_file,
+obw_file
+ATTRIBUTES
+Group group01:group01;
+Edit obw01=obw_file.obw01, tabIndex=1;
+Edit obw05=obw_file.obw05, tabIndex=2;
+Edit obw02=obw_file.obw02, tabIndex=3;
+Edit obw03=obw_file.obw03, tabIndex=4;
+Edit obw04=obw_file.obw04, tabIndex=5;
+Group group02:group02;
+Edit obw06=obw_file.obw06, tabIndex=6;
+Edit desc=formonly.desc type CHAR, tabIndex=7, noEntry;
+Edit obw16=obw_file.obw16, tabIndex=8;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=9, noEntry;
+Edit obw20=obw_file.obw20, tabIndex=10;
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=11, not null, required;
+DateEdit edate=formonly.edate type CHAR, tabIndex=12, not null, required;
+Edit r=formonly.r type SMALLINT, tabIndex=13, title="Line No";
+Edit adk01=adk_file.adk01, tabIndex=14, title="Vehicle Dispatching No.";
+DateEdit adk02=adk_file.adk02, tabIndex=15, title="Dispatching Date";
+Edit adk03=adk_file.adk03, tabIndex=16, title="Dispatching Reason";
+Edit adk15=adk_file.adk15, tabIndex=17, title="Transfer Flow";
+DateEdit adk04=adk_file.adk04, tabIndex=18, title="Leave Date";
+Edit adk05=adk_file.adk05, tabIndex=19, title="Leave Time";
+DateEdit adk06=adk_file.adk06, tabIndex=20, title="Estimate Return Date";
+Edit adk07=adk_file.adk07, tabIndex=21, title="Estimate Return Time";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sr(formonly.r,adk_file.adk01,adk_file.adk02,adk_file.adk03,adk_file.adk15,adk_file.adk04,adk_file.adk05,adk_file.adk06,adk_file.adk07)
+SCREEN RECORD Undefined(obw_file.obw01,obw_file.obw05,obw_file.obw02,obw_file.obw03,obw_file.obw04,obw_file.obw06,formonly.desc,obw_file.obw16,formonly.gen02,obw_file.obw20,formonly.bdate,formonly.edate,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmg228.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"atmr228")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                        >
+  Cust Code            [tqo01               ]
+  Price Code           [tqo02               ]
+ <                                                 >
+ <G group02                                        >
+  [a                                        ]
+
+ <                                                 >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                              ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- atmr228
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit tqo01=formonly.tqo01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit tqo02=formonly.tqo02 type CHAR, action=controlp, tabIndex=2, image="zoom";
+Group group02:group02, text="INPUT";
+CheckBox a=formonly.a type VARCHAR, tabIndex=3, text="Print Price detail?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tqo01,formonly.tqo02,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

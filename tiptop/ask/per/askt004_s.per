@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/askt004_s.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"askt004_s")
+VBox VBox1
+Grid gr1
+{
+ <G group02                                                  >
+ [mod_act                            ]
+ <                                                           >
+
+}
+END -- gr1
+Grid grid_columns
+{
+ <G group01                                                  >
+  SIZE NO        [size_no   ] [size_desc      ]
+ <                                                           >
+
+}
+END -- grid_columns
+END -- VBox1
+END -- askt004_s
+
+ATTRIBUTES
+Group group02:group02, text="Option";
+RadioGroup mod_act=formonly.mod_act type VARCHAR, tabIndex=1, items=(("1", "Add"),("2", "Delete"));
+Group group01:group01, text="SIZE";
+ButtonEdit size_no=formonly.size_no type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit size_desc=formonly.size_desc type VARCHAR, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.mod_act,formonly.size_no,formonly.size_desc)
+END -- INSTRUCTIONS
+

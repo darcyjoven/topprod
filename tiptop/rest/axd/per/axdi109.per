@@ -1,0 +1,65 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi109.per created Wed Jan 23 05:30:30 2008
+-- File created from axdi109.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi109")
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        GRID gr7744
+        {
+         Vehicle Brand    [aa0             ][aa1                           ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_obt
+    {
+    [aa2                 |aa3                           ]
+    [aa2                 |aa3                           ]
+    [aa2                 |aa3                           ]
+    [aa2                 |aa3                           ]
+    [aa2                 |aa3                           ]
+    [aa2                 |aa3                           ]
+    [aa2                 |aa3                           ]
+    [aa2                 |aa3                           ]
+    [aa2                 |aa3                           ]
+    [aa2                 |aa3                           ]
+    }
+    END -- TABLE
+    GRID gr7745
+    {
+     ----------Rows [aa4   ]----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES obt_file,obs_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=obt_file.obt01, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=1;
+  EDIT aa1=obs_file.obs02, NOENTRY, TABINDEX=2;
+  EDIT aa2=obt_file.obt02, NOT NULL, REQUIRED, TABINDEX=3, TITLE="Vehicle Model";
+  EDIT aa3=obt_file.obt03, TABINDEX=4, TITLE="Description";
+  EDIT aa4=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=5;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_obt (obt_file.obt02, obt_file.obt03)
+END

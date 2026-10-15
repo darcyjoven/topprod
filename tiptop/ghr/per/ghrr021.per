@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrr021.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+HBox HBox1
+Grid Grid1
+{
+
+    <G group1                                                >
+            hrat03[hrat03       |hrat03_name          ]
+
+            hrat04[hrat04       ]
+
+            syear [syear        ]
+
+
+    <                                                        >
+       [more              ]
+
+
+
+}
+END -- Grid1
+END -- HBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+ButtonEdit hrat03=formonly.hrat03 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrat03_name=formonly.hrat03_name, tabIndex=4, not null;
+ButtonEdit hrat04=formonly.hrat04 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+Edit syear=formonly.syear, tabIndex=5;
+CheckBox more=formonly.more type VARCHAR, tabIndex=2, default = "N", text=%" ", valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrat03,formonly.more,formonly.hrat04,formonly.hrat03_name,formonly.syear)
+END -- INSTRUCTIONS
+

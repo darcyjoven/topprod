@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapp400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapp400")
+VBox vb5
+Grid gr88
+{
+ <G group01                                                                              >
+ [dummy01                  ]
+  Category            [npp00               ]  Document No.        [npp01               ]
+  Serial No.          [npp011              ]  Date                [npp02               ]
+ <                                                                                       >
+
+}
+END -- gr88
+Group g01(text="INPUT")
+VBox vb3
+HBox hb2
+Grid gr89
+{
+ Enter user QBE              [b_user    ] -[e_user    ]
+ Gen Ledger Plant No.        [p_plant         ]
+ Gen Ledger No.              [p_bookno        ]
+ Gen. Ledger Voucher Type    [gl_no           ]
+ Gen Ledger No.2             [p_bookno1       ]
+ Gen. Ledger Voucher Type 2  [gl_no1          ]
+ Gen. Ledger Voucher Date    [gl_date         ][dummy04                           ]
+[gl_tran                    ]        [gl_summary                      ]
+}
+END -- gr89
+Grid gr90
+{
+ <G group02                  >
+ [gl_seq               ]
+ <                           >
+
+
+
+
+
+}
+END -- gr90
+END -- hb2
+Grid gr91
+{
+[dummy02                                              ]
+
+}
+END -- gr91
+END -- vb3
+END -- g01
+Grid gr92
+{
+
+  glno  [chr2                                                                                                      ]
+
+ [g_bgjob                                                      ]
+
+}
+END -- gr92
+END -- vb5
+END -- aapp400
+
+TABLES
+npp_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Label dummy01:dummy01, text="System:(AP)";
+ComboBox npp00=npp_file.npp00, tabIndex=1, comment="1.Billing 3.Payment 4.Cost Apportion", items=(("1", "Billing"),("3", "Payment"),("4", "Cost Apportion"));
+ButtonEdit npp01=npp_file.npp01, action=controlp, tabIndex=2, image="zoom";
+Edit npp011=npp_file.npp011, tabIndex=3;
+DateEdit npp02=npp_file.npp02, tabIndex=4;
+Edit b_user=formonly.b_user type CHAR, tabIndex=5, not null, required;
+Edit e_user=formonly.e_user type CHAR, tabIndex=6, not null, required;
+Edit p_plant=formonly.p_plant type VARCHAR, tabIndex=7;
+Edit p_bookno=formonly.p_bookno type VARCHAR, tabIndex=8, not null, required;
+ButtonEdit gl_no=formonly.gl_no type VARCHAR, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Documents";
+Edit p_bookno1=formonly.p_bookno1 type VARCHAR, tabIndex=10, not null, required;
+ButtonEdit gl_no1=formonly.gl_no1 type VARCHAR, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Qry Documents";
+DateEdit gl_date=formonly.gl_date type DATE, tabIndex=12;
+Label dummy04:dummy04, text="(by original entry date if blank)";
+CheckBox gl_tran=formonly.gl_tran type CHAR, tabIndex=13, text="Carry Memo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gl_summary=formonly.gl_summary type CHAR, tabIndex=16, text="Subject Summary", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group02:group02, text="Voc. Summarizing Method";
+RadioGroup gl_seq=formonly.gl_seq type CHAR, tabIndex=14, not null, required, items=(("0", "All"),("1", "By Document Number"),("2", "By Date"),("3", "By Vender"));
+Label dummy02:dummy02, text="NOTE:Carry only Confirmed Accts to G/L Voucher";
+Edit chr2=formonly.chr2 type CHAR, tabIndex=17, noEntry;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=15, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(npp_file.npp00,npp_file.npp01,npp_file.npp011,npp_file.npp02,formonly.b_user,formonly.e_user,formonly.p_plant,formonly.p_bookno,formonly.gl_no,formonly.p_bookno1,formonly.gl_no1,formonly.gl_date,formonly.gl_tran,formonly.gl_summary,formonly.gl_seq,formonly.chr2,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

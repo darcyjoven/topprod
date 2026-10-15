@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri020_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrbdb02  |hrbdb03  |hrbdb04 |hrbdb05 |hrbdb06         ]
+[hrbdb02  |hrbdb03  |hrbdb04 |hrbdb05 |hrbdb06         ]
+[hrbdb02  |hrbdb03  |hrbdb04 |hrbdb05 |hrbdb06         ]
+[hrbdb02  |hrbdb03  |hrbdb04 |hrbdb05 |hrbdb06         ]
+[hrbdb02  |hrbdb03  |hrbdb04 |hrbdb05 |hrbdb06         ]
+
+
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+  ---------- cn2[cn2]-----------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit hrbdb02=formonly.hrbdb02 type INTEGER, tabIndex=1, title=%"hrbdb02", noEntry;
+Edit hrbdb03=formonly.hrbdb03 type VARCHAR, tabIndex=2, title=%"hrbdb03", not null, required;
+DateEdit hrbdb04=formonly.hrbdb04 type DATE, tabIndex=3, title=%"hrbdb04", not null, required;
+ComboBox hrbdb05=formonly.hrbdb05 type VARCHAR, tabIndex=4, title=%"hrbdb05", not null, required, items=(("1", "gongsi"),("2", "geren"));
+Edit hrbdb06=formonly.hrbdb06 type DECIMAL, tabIndex=5, title=%"hrbdb06", not null, required;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrbdb(formonly.hrbdb02,formonly.hrbdb03,formonly.hrbdb04,formonly.hrbdb05,formonly.hrbdb06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

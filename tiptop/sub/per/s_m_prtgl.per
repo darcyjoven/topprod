@@ -1,0 +1,33 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_m_prtgl.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Voucher No.")
+Grid gr3909
+{
+ <G group01                                                                                                         >
+  Gen Ledger No.                    [p_bookno                                                                     ]
+  Initial Voucher No. carried to G/L[gl_no_b                                                                      ]
+  Ending Voucher No.                [gl_no_e                                                                      ]
+ [prt_sw                                         ]
+ <                                                                                                                  >
+
+}
+END -- gr3909
+END -- s_m_prtgl
+
+ATTRIBUTES
+Group group01:group01;
+Edit p_bookno=formonly.p_bookno type VARCHAR, tabIndex=1;
+Edit gl_no_b=formonly.gl_no_b type VARCHAR, tabIndex=2;
+Edit gl_no_e=formonly.gl_no_e type VARCHAR, tabIndex=3;
+CheckBox prt_sw=formonly.prt_sw type VARCHAR, tabIndex=4, text="Now Print Carry Voucher", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.p_bookno,formonly.gl_no_b,formonly.gl_no_e,formonly.prt_sw)
+END -- INSTRUCTIONS
+

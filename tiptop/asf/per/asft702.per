@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft702.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asft702")
+Folder pc165
+Page page01(text="Page01")
+VBox VBox1
+Table s_shi
+{
+[shi02           |shi03      |ecm45               |shi04        |shi05       ]
+[shi02           |shi03      |ecm45               |shi04        |shi05       ]
+[shi02           |shi03      |ecm45               |shi04        |shi05       ]
+[shi02           |shi03      |ecm45               |shi04        |shi05       ]
+[shi02           |shi03      |ecm45               |shi04        |shi05       ]
+[shi02           |shi03      |ecm45               |shi04        |shi05       ]
+[shi02           |shi03      |ecm45               |shi04        |shi05       ]
+[shi02           |shi03      |ecm45               |shi04        |shi05       ]
+[shi02           |shi03      |ecm45               |shi04        |shi05       ]
+[shi02           |shi03      |ecm45               |shi04        |shi05       ]
+
+}
+END -- s_shi
+END -- VBox1
+END -- page01
+END -- pc165
+END -- asft702
+
+TABLES
+shi_file
+ATTRIBUTES
+ButtonEdit shi02=shi_file.shi02, action=controlp, tabIndex=1, title="Trans-in W/O", not null, required, image="zoom", comment="<^P>Query W/O   ";
+ButtonEdit shi03=shi_file.shi03, action=controlp, tabIndex=2, title="Task No.", not null, required, image="zoom", comment="<^P>Qry W/O Task No.";
+Edit ecm45=formonly.ecm45 type CHAR, tabIndex=3, title="Description", noEntry;
+Edit shi04=shi_file.shi04, tabIndex=4, title="Routing S/N", noEntry;
+Edit shi05=shi_file.shi05, tabIndex=5, title="Qty", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_shi(shi_file.shi02,shi_file.shi03,formonly.ecm45,shi_file.shi04,shi_file.shi05)
+END -- INSTRUCTIONS
+

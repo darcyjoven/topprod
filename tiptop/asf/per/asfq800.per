@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfq800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+HBox HBox1(splitter)
+Table s_sfb
+{
+[sfb01        |sfb02       |sfb81     |sfb05   |ima02       ]
+[sfb01        |sfb02       |sfb81     |sfb05   |ima02       ]
+[sfb01        |sfb02       |sfb81     |sfb05   |ima02       ]
+[sfb01        |sfb02       |sfb81     |sfb05   |ima02       ]
+[sfb01        |sfb02       |sfb81     |sfb05   |ima02       ]
+[sfb01        |sfb02       |sfb81     |sfb05   |ima02       ]
+[sfb01        |sfb02       |sfb81     |sfb05   |ima02       ]
+[sfb01        |sfb02       |sfb81     |sfb05   |ima02       ]
+[sfb01        |sfb02       |sfb81     |sfb05   |ima02       ]
+[sfb01        |sfb02       |sfb81     |sfb05   |ima02       ]
+}
+END -- s_sfb
+Grid Grid1
+{
+ <TREE tree                                            >
+ [name                      ]
+ [name                      ]
+ [name                      ]
+ [name                      ]
+ [name                      ]
+
+
+
+ <                                                     >
+
+}
+END -- Grid1
+END -- HBox1
+Grid Grid2
+{
+
+ ------- Rows[cn2    ]-------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+sfb_file,
+ima_file
+ATTRIBUTES
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=1, title=%"Edit2", image="zoom";
+ComboBox sfb02=sfb_file.sfb02, tabIndex=1, title=%"Edit1", items=(("1", "一般工號"),("5", "再加工工單"),("7", "委外工單"),("8", "重工委外工單"),("11", "拆件式工單"),("13", "預測工單"),("15", "試產工單"));
+DateEdit sfb81=sfb_file.sfb81, tabIndex=1, title=%"Edit1";
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=1, title=%"Edit1", image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=1, title=%"Edit1";
+Tree tree:tree, parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file";
+LABEL name=formonly.name type CHAR, unsortable;
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.path type CHAR;
+Phantom formonly.treekey1 type CHAR;
+Phantom formonly.treekey2 type CHAR;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=2;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(sfb_file.sfb01,sfb_file.sfb02,sfb_file.sfb81,sfb_file.sfb05,ima_file.ima02)
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.path,formonly.treekey1,formonly.treekey2)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri108.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ghri108")
+VBox VBox1
+Folder pc833
+Page page01(text="Main")
+Table s_azi
+{
+[azi01    |azi02               |azi03           |azi04               |azi05                |azi07            |azi10              |aziact]
+[azi01    |azi02               |azi03           |azi04               |azi05                |azi07            |azi10              |aziact]
+[azi01    |azi02               |azi03           |azi04               |azi05                |azi07            |azi10              |aziact]
+[azi01    |azi02               |azi03           |azi04               |azi05                |azi07            |azi10              |aziact]
+[azi01    |azi02               |azi03           |azi04               |azi05                |azi07            |azi10              |aziact]
+[azi01    |azi02               |azi03           |azi04               |azi05                |azi07            |azi10              |aziact]
+[azi01    |azi02               |azi03           |azi04               |azi05                |azi07            |azi10              |aziact]
+[azi01    |azi02               |azi03           |azi04               |azi05                |azi07            |azi10              |aziact]
+[azi01    |azi02               |azi03           |azi04               |azi05                |azi07            |azi10              |aziact]
+[azi01    |azi02               |azi03           |azi04               |azi05                |azi07            |azi10              |aziact]
+
+}
+END -- s_azi
+END -- page01
+END -- pc833
+Grid gr4619
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4619
+END -- VBox1
+END -- ghri108
+
+TABLES
+azi_file
+ATTRIBUTES
+Edit azi01=azi_file.azi01, tabIndex=1, title="Currency", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit azi02=azi_file.azi02, tabIndex=2, title="Description";
+Edit azi03=azi_file.azi03, tabIndex=3, title="Unit Cost(0-6)";
+Edit azi04=azi_file.azi04, tabIndex=4, title="Decimal Amount(0-6)";
+Edit azi05=azi_file.azi05, tabIndex=5, title="Digits Subtotal(0-6)";
+Edit azi07=azi_file.azi07, tabIndex=6, title="Sum 1/ExRt(0-10)";
+ComboBox azi10=azi_file.azi10, tabIndex=7, title="Calculation Method", not null, required, queryEditable, items=(("1", %"Multiplication"),("2", %"Division"));
+CheckBox aziact=azi_file.aziacti, tabIndex=8, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azi(azi_file.azi01,azi_file.azi02,azi_file.azi03,azi_file.azi04,azi_file.azi05,azi_file.azi07,azi_file.azi10,azi_file.aziacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmp611.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmp611")
+VBox VBox1
+HBox HBox1
+Grid grid01
+{
+ Delivery Date       [g_date      ]
+ Place of Dispatch   [g_dest    ]
+
+}
+END -- grid01
+Grid grid02
+{
+ Ship Sequence       [order_sw          ]
+
+
+}
+END -- grid02
+END -- HBox1
+Table s_oga
+{
+[oga17    |oga01            |oga032   |oga41   |oga42   |qty       ]
+[oga17    |oga01            |oga032   |oga41   |oga42   |qty       ]
+[oga17    |oga01            |oga032   |oga41   |oga42   |qty       ]
+[oga17    |oga01            |oga032   |oga41   |oga42   |qty       ]
+[oga17    |oga01            |oga032   |oga41   |oga42   |qty       ]
+[oga17    |oga01            |oga032   |oga41   |oga42   |qty       ]
+[oga17    |oga01            |oga032   |oga41   |oga42   |qty       ]
+[oga17    |oga01            |oga032   |oga41   |oga42   |qty       ]
+[oga17    |oga01            |oga032   |oga41   |oga42   |qty       ]
+[oga17    |oga01            |oga032   |oga41   |oga42   |qty       ]
+
+}
+END -- s_oga
+END -- VBox1
+END -- axmp611
+
+ATTRIBUTES
+DateEdit g_date=formonly.g_date type DATE, tabIndex=1;
+Edit g_dest=formonly.g_dest type CHAR, tabIndex=2;
+ComboBox order_sw=formonly.order_sw type CHAR, tabIndex=3, items=(("1", "Document No."),("2", "Location"),("3", "Ori.Seq"));
+Edit oga17=formonly.oga17 type CHAR, tabIndex=4, title="Sequence", comment="<^N>Re-Sort by Sequence";
+Edit oga01=formonly.oga01 type CHAR, tabIndex=5, title="Dlivery Note No.", noEntry;
+Edit oga032=formonly.oga032 type CHAR, tabIndex=6, title="Customer", noEntry;
+Edit oga41=formonly.oga41 type CHAR, tabIndex=7, title="From", noEntry;
+Edit oga42=formonly.oga42 type CHAR, tabIndex=8, title="To", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=9, title="Total Qty", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oga(formonly.oga17,formonly.oga01,formonly.oga032,formonly.oga41,formonly.oga42,formonly.qty)
+SCREEN RECORD Undefined(formonly.g_date,formonly.g_dest,formonly.order_sw)
+END -- INSTRUCTIONS
+

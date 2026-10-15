@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt1015_s.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglt1015_s")
+VBox vb1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ Year      [asy01     ]
+ Period    [asy02     ]
+ Group No. [asy03     ]
+ Parent Co.[asy031    ][asg02              ]
+}
+END -- gr1
+END -- page01
+END -- pc1
+Table s_asy
+{
+[asy04|asy05      |asy06        |asy07               |asy08               |asy09           ]
+[asy04|asy05      |asy06        |asy07               |asy08               |asy09           ]
+[asy04|asy05      |asy06        |asy07               |asy08               |asy09           ]
+[asy04|asy05      |asy06        |asy07               |asy08               |asy09           ]
+[asy04|asy05      |asy06        |asy07               |asy08               |asy09           ]
+[asy04|asy05      |asy06        |asy07               |asy08               |asy09           ]
+[asy04|asy05      |asy06        |asy07               |asy08               |asy09           ]
+[asy04|asy05      |asy06        |asy07               |asy08               |asy09           ]
+[asy04|asy05      |asy06        |asy07               |asy08               |asy09           ]
+[asy04|asy05      |asy06        |asy07               |asy08               |asy09           ]
+
+}
+END -- s_asy
+Grid gr2
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2
+END -- vb1
+END -- gglt1015_s
+
+TABLES
+asy_file
+ATTRIBUTES
+Edit asy01=asy_file.asy01, tabIndex=1, not null, required;
+Edit asy02=asy_file.asy02, tabIndex=2, not null, required;
+ButtonEdit asy03=asy_file.asy03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Group No.";
+ButtonEdit asy031=asy_file.asy031, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Parent Company";
+Edit asg02=formonly.asg02 type CHAR, tabIndex=5, noEntry;
+Edit asy04=asy_file.asy04, tabIndex=6, title="Ln#", not null, required;
+Edit asy05=asy_file.asy05, tabIndex=7, title="Share Year";
+Edit asy06=asy_file.asy06, tabIndex=8, title="Share Period";
+Edit asy07=asy_file.asy07, tabIndex=9, title="Share Amount";
+Edit asy08=asy_file.asy08, tabIndex=10, title="Combine Curr. Amount";
+Edit asy09=asy_file.asy09, tabIndex=13, title=%"asj081";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asy(asy_file.asy04,asy_file.asy05,asy_file.asy06,asy_file.asy07,asy_file.asy08,asy_file.asy09)
+SCREEN RECORD Undefined(asy_file.asy01,asy_file.asy02,asy_file.asy03,asy_file.asy031,formonly.asg02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

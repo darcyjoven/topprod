@@ -1,0 +1,165 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli102")
+HBox HBox1(splitter)
+Tree Tree(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file")
+{
+[name                                                           ]
+[name                                                           ]
+[name                                                           ]
+[name                                                           ]
+[name                                                           ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Tree
+Folder pc441
+Page page01(action=main_pg, text="Main")
+VBox VBox1
+Grid gr2363
+{
+ Book No        [aag00      ]
+ Account Code   [aag01                   ]                                       [imgmksg]
+ Account Name   [aag02                                                           |       ]
+ Extra Name     [aag13                                                           ]
+ Data Source    [aag39                 ]
+
+
+}
+END -- gr2363
+Grid gr22
+{
+ <G gb28                                 ><G gb27                           >
+  Property                      [aag03   ] Control Details        [aag07    ]
+  Balance Sheet/Income Statament[aag04   ] Control Account Code   [aag08    ]
+  Balance                       [aag06   ] Account Level          [aag24    ]
+  [aag09               ]                   [aag05                          ]
+  Counting Unit                 [aag12   ] [aag21              ]
+  [aag38               ]                   [aag23              ]
+ <                                       > [aag42                         ]
+ <G gb25                                 > [aag43                      ]
+  Expense Gategory             [aag221   ] [aag44                    ]
+  Account Gategory 1           [aag223   ]<                                 >
+  Account Gategory 2           [aag224   ]<G gb26                           >
+  Account Gategory 3           [aag225   ] Memo   [aag14                ]
+  Account Gategory 4           [aag226   ]
+  Financial Analysis Category  [aag19    ]
+  Cash VarCd                   [aag41    ]
+ <                                       ><                                 >
+
+}
+END -- gr22
+Grid gr2366
+{
+  ---------- Rows [cnt   ] ----------
+
+
+}
+END -- gr2366
+END -- VBox1
+END -- page01
+Page info(text="Info")
+Grid gr2365
+{
+ Record Owner       [aaguser   ]     Last Modified by  [aagmodu   ]
+ Department         [aaggrup   ]     Data Valid Code   [aagacti   ]
+ Create/Modify Date [aagdate     ]   Record Orig.      [aagoriu   ]
+ Dept Orig.         [aagorig   ]
+}
+END -- gr2365
+END -- info
+END -- pc441
+END -- HBox1
+END -- agli102
+
+TABLES
+aag_file
+ATTRIBUTES
+LABEL name=formonly.name type CHAR, unsortable;
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.path type CHAR;
+Phantom formonly.treekey1 type CHAR;
+Phantom formonly.treekey2 type CHAR;
+ButtonEdit aag00=aag_file.aag00, action=controlp, tabIndex=1, not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+Edit aag01=aag_file.aag01, tabIndex=1, not null, required, comment="Key Field, No Blank/Repeated";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit aag02=aag_file.aag02, action=update_name, tabIndex=1, not null, required, image="pen", comment="<^Y> Account Extra Description (FM)";
+ButtonEdit aag13=aag_file.aag13, action=update_name, tabIndex=1, image="pen", comment="Report Structure Extra Desc";
+ButtonEdit aag39=aag_file.aag39, action=controlp, tabIndex=1, noEntry, image="zoom.png";
+Group gb28:gb28, text="Attribute";
+ComboBox aag03=aag_file.aag03, tabIndex=1, not null, required, queryEditable, items=(("2", "Account"),("4", "Carry Forward"));
+ComboBox aag04=aag_file.aag04, tabIndex=1, not null, required, queryEditable, items=(("1", "Balance Sheet"),("2", "Income Statement"));
+ComboBox aag06=aag_file.aag06, tabIndex=1, not null, required, queryEditable, items=(("1", "Debit Balance"),("2", "Credit Balance"));
+CheckBox aag09=aag_file.aag09, tabIndex=1, text="Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit aag12=aag_file.aag12, tabIndex=1;
+CheckBox aag38=aag_file.aag38, tabIndex=1, text="Inter Income Account No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb27:gb27, text="Control";
+ComboBox aag07=aag_file.aag07, tabIndex=1, not null, required, queryEditable, items=(("1", "Control Account"),("2", "Detail Account"),("3", "Independent Account"));
+ButtonEdit aag08=aag_file.aag08, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Account No. ";
+Edit aag24=aag_file.aag24, tabIndex=1, comment="99:Last Level";
+CheckBox aag05=aag_file.aag05, tabIndex=1, text="Department Management", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag21=aag_file.aag21, tabIndex=1, text="Budget Control", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag23=aag_file.aag23, tabIndex=1, text="Project Control", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag42=aag_file.aag42, tabIndex=1, text="Generate Entry By Account Balance Type", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag43=aag_file.aag43, tabIndex=2, default = "N", text=%"Business management", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag44=aag_file.aag44, tabIndex=3, text=%"Control of accounting", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb25:gb25, text="Category";
+ComboBox aag221=aag_file.aag221, tabIndex=1, queryEditable, items=(("F", "Fixed"),("V", "Variable"));
+ButtonEdit aag223=aag_file.aag223, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Account Class.";
+ButtonEdit aag224=aag_file.aag224, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Account Class.";
+ButtonEdit aag225=aag_file.aag225, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Account Class.";
+ButtonEdit aag226=aag_file.aag226, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Account Class.";
+ComboBox aag19=aag_file.aag19, tabIndex=1, not null, required, queryEditable, items=(("1", "Current Assets-Cash"),("2", "Current Assets-Short-Term Investments"),("3", "Current Assets-Accounts Receivable"),("4", "Current Liabilities-Allowance for Uncollectible Accounts-Accounts Receivable"),("5", "Current Assets-Inventory"),("6", "Current Liabilities-Allowance for Reduction of Inventory to Market"),("7", "Current Assets-Prepaid Expenses"),("8", "Current Assets-Others"),("9", "Funds and Long-term Investments-Funds"),("10", "Funds and Long-term Investments-Long-term Investments"),("11", "Funds and Long-term Investments-Long-term Receivables"),("12", "Property, Plant, and Equipments"),("13", "Other Assets"),("14", "Current Liabilities-Short-Term Borrowings"),("15", "Current Liabilities-Accounts Payable"),("16", "Current Liabilities-Advance Receipts"),("17", "Long-Term Liabilities"),("18", "Current Liabilities-Others"),("19", "Capital"),("20", "Surplus From Assets"),("21", "Retained Earnings"),("22", "Cumulative Transation Adjustment"),("23", "Sales Revenue"),("24", "Other Income"),("25", "Cost of Goods Sold"),("26", "Cost of Goods Sold-Other"),("27", "Operation Expenses"),("28", "Non-Operation Revenue and Expenses, Other Income"),("29", "Income Taxes"),("30", "Other"),("31", "Interest Expense"),("32", "Intangible Asset"),("33", "Other Liabilities"),("34", "Unrealize Revaluate Appreciate"),("35", "Long_term Investments"),("36", "Stock"),("37", "Expense"));
+ButtonEdit aag41=aag_file.aag41, action=controlp, tabIndex=1, image="zoom";
+Group gb26:gb26, text="Memo";
+Edit aag14=aag_file.aag14, tabIndex=1;
+Edit cnt=formonly.cnt type CHAR, tabIndex=1, noEntry;
+Edit aaguser=aag_file.aaguser, tabIndex=1, noEntry;
+Edit aagmodu=aag_file.aagmodu, tabIndex=1, noEntry;
+Edit aaggrup=aag_file.aaggrup, tabIndex=1, noEntry;
+Edit aagacti=aag_file.aagacti, tabIndex=1, noEntry;
+DateEdit aagdate=aag_file.aagdate, tabIndex=1, noEntry;
+Edit aagoriu=aag_file.aagoriu, tabIndex=1, noEntry;
+Edit aagorig=aag_file.aagorig, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.path,formonly.treekey1,formonly.treekey2)
+SCREEN RECORD Undefined(aag_file.aag00,aag_file.aag01,formonly.imgmksg,aag_file.aag02,aag_file.aag13,aag_file.aag39,aag_file.aag03,aag_file.aag04,aag_file.aag06,aag_file.aag09,aag_file.aag12,aag_file.aag38,aag_file.aag07,aag_file.aag08,aag_file.aag24,aag_file.aag05,aag_file.aag21,aag_file.aag23,aag_file.aag42,aag_file.aag221,aag_file.aag223,aag_file.aag224,aag_file.aag225,aag_file.aag226,aag_file.aag19,aag_file.aag41,aag_file.aag14,formonly.cnt,aag_file.aaguser,aag_file.aagmodu,aag_file.aaggrup,aag_file.aagacti,aag_file.aagdate,aag_file.aagoriu,aag_file.aagorig,aag_file.aag43,aag_file.aag44)
+END -- INSTRUCTIONS
+

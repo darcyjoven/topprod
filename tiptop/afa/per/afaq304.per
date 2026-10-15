@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afaq304.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afaq304")
+Folder folder01
+Page page01(text="Main")
+VBox VBox1
+Grid grid01
+{
+ Account             [foo01               ][aag02                         ]
+ Department No.      [foo02     ]    PLANT    [foo07     ]
+ Year                [foo03     ]    Book No. [foo08     ]
+}
+END -- grid01
+Table s_foo
+{
+[foo03b |foo04    |foo05d              |foo06c              |bal                 |dc ]
+[foo03b |foo04    |foo05d              |foo06c              |bal                 |dc ]
+[foo03b |foo04    |foo05d              |foo06c              |bal                 |dc ]
+[foo03b |foo04    |foo05d              |foo06c              |bal                 |dc ]
+[foo03b |foo04    |foo05d              |foo06c              |bal                 |dc ]
+[foo03b |foo04    |foo05d              |foo06c              |bal                 |dc ]
+[foo03b |foo04    |foo05d              |foo06c              |bal                 |dc ]
+[foo03b |foo04    |foo05d              |foo06c              |bal                 |dc ]
+[foo03b |foo04    |foo05d              |foo06c              |bal                 |dc ]
+[foo03b |foo04    |foo05d              |foo06c              |bal                 |dc ]
+
+}
+END -- s_foo
+Grid grig02
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- grig02
+END -- VBox1
+END -- page01
+END -- folder01
+END -- afaq304
+
+TABLES
+foo_file
+ATTRIBUTES
+Edit foo01=foo_file.foo01, tabIndex=1;
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2;
+Edit foo02=foo_file.foo02, tabIndex=3;
+Edit foo07=foo_file.foo07, tabIndex=4, not null, required;
+Edit foo03=foo_file.foo03, tabIndex=5;
+Edit foo08=foo_file.foo08, tabIndex=6, not null, required;
+Edit foo03b=formonly.foo03b type CHAR, tabIndex=7, title="Year";
+Edit foo04=foo_file.foo04, tabIndex=8, title="Period";
+Edit foo05d=foo_file.foo05d, tabIndex=9, title="Debit", not null, required;
+Edit foo06c=foo_file.foo06c, tabIndex=10, title="Credit", not null, required;
+Edit bal=formonly.bal type CHAR, tabIndex=11, title="Balance";
+Edit dc=formonly.dc type CHAR, tabIndex=12, title="Dc";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_foo(formonly.foo03b,foo_file.foo04,foo_file.foo05d,foo_file.foo06c,formonly.bal,formonly.dc)
+SCREEN RECORD Undefined(foo_file.foo01,formonly.aag02,foo_file.foo02,foo_file.foo07,foo_file.foo03,foo_file.foo08,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

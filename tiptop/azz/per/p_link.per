@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_link.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_link")
+VBox VBox1
+Folder folder01
+Page page01(text="page01")
+Grid gr567
+{
+ <G group01                                                    >
+  Link File [gak01     ][zz02                                ]
+  Module ID [zz011    ]
+ <                                                             >
+
+}
+END -- gr567
+END -- page01
+Page info(text="Info")
+Grid gr568
+{
+
+ Record Owner        [gakuser   ] Last Modified by    [gakmodu   ]
+ Department          [gakgrup   ] Create/Modify Date  [gakdate   ]
+ Record Orig.        [gakoriu   ]
+ Dept Orig.          [gakorig   ]
+}
+END -- gr568
+END -- info
+END -- folder01
+Table s_gal
+{
+[gal02  |gal03                                   |path                                                        |gal04     |ver             ]
+[gal02  |gal03                                   |path                                                        |gal04     |ver             ]
+[gal02  |gal03                                   |path                                                        |gal04     |ver             ]
+[gal02  |gal03                                   |path                                                        |gal04     |ver             ]
+[gal02  |gal03                                   |path                                                        |gal04     |ver             ]
+[gal02  |gal03                                   |path                                                        |gal04     |ver             ]
+[gal02  |gal03                                   |path                                                        |gal04     |ver             ]
+[gal02  |gal03                                   |path                                                        |gal04     |ver             ]
+[gal02  |gal03                                   |path                                                        |gal04     |ver             ]
+[gal02  |gal03                                   |path                                                        |gal04     |ver             ]
+
+}
+END -- s_gal
+Grid gr569
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr569
+END -- VBox1
+END -- p_link
+
+TABLES
+gal_file,
+gak_file
+ATTRIBUTES
+Group group01:group01, text="Program";
+ButtonEdit gak01=gak_file.gak01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Program ID";
+Edit zz02=formonly.zz02 type CHAR, tabIndex=2, noEntry;
+Edit zz011=formonly.zz011 type CHAR, tabIndex=3, noEntry;
+Edit gakuser=gak_file.gakuser, tabIndex=4, noEntry;
+Edit gakmodu=gak_file.gakmodu, tabIndex=5, noEntry;
+Edit gakgrup=gak_file.gakgrup, tabIndex=6, noEntry;
+DateEdit gakdate=gak_file.gakdate, tabIndex=7, noEntry;
+Edit gakoriu=gak_file.gakoriu, tabIndex=501, noEntry;
+Edit gakorig=gak_file.gakorig, tabIndex=502, noEntry;
+ComboBox gal02=gal_file.gal02, tabIndex=8, title="Module", not null, required;
+Edit gal03=gal_file.gal03, tabIndex=9, title="Program ID", not null, required;
+Edit path=formonly.path type VARCHAR, tabIndex=10, title="Full Path", noEntry;
+ComboBox gal04=gal_file.gal04, tabIndex=11, title="Linked?", not null, required, queryEditable, items=(("Y", %"Y"),("N", %"N"));
+Edit ver=formonly.ver type VARCHAR, tabIndex=12, title="Version", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gal(gal_file.gal02,gal_file.gal03,formonly.path,gal_file.gal04,formonly.ver)
+SCREEN RECORD Undefined(gak_file.gak01,formonly.zz02,formonly.zz011,gak_file.gakuser,gak_file.gakmodu,gak_file.gakgrup,gak_file.gakdate,gak_file.gakoriu,gak_file.gakorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

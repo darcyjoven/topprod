@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq041.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq041")
+Folder pc831
+Page page01(text="Page01")
+VBox vb2
+Grid gr1
+{
+  Report Structure No.  [maj01               ][mai02                 ]
+  Year                  [yy        ]           Month [mm        ]    Currency [azi01     ]  Unit [unit         ]
+
+}
+END -- gr1
+Table s_aag
+{
+[aag01_l        |line_l   |sum2_l           |sum1_l           |aag01_r   |line_r  |sum2_r               |sum1_r           ]
+[aag01_l        |line_l   |sum2_l           |sum1_l           |aag01_r   |line_r  |sum2_r               |sum1_r           ]
+[aag01_l        |line_l   |sum2_l           |sum1_l           |aag01_r   |line_r  |sum2_r               |sum1_r           ]
+[aag01_l        |line_l   |sum2_l           |sum1_l           |aag01_r   |line_r  |sum2_r               |sum1_r           ]
+[aag01_l        |line_l   |sum2_l           |sum1_l           |aag01_r   |line_r  |sum2_r               |sum1_r           ]
+[aag01_l        |line_l   |sum2_l           |sum1_l           |aag01_r   |line_r  |sum2_r               |sum1_r           ]
+[aag01_l        |line_l   |sum2_l           |sum1_l           |aag01_r   |line_r  |sum2_r               |sum1_r           ]
+[aag01_l        |line_l   |sum2_l           |sum1_l           |aag01_r   |line_r  |sum2_r               |sum1_r           ]
+[aag01_l        |line_l   |sum2_l           |sum1_l           |aag01_r   |line_r  |sum2_r               |sum1_r           ]
+[aag01_l        |line_l   |sum2_l           |sum1_l           |aag01_r   |line_r  |sum2_r               |sum1_r           ]
+
+}
+END -- s_aag
+END -- vb2
+END -- page01
+END -- pc831
+END -- gglq041
+
+ATTRIBUTES
+Edit maj01=formonly.maj01 type CHAR, tabIndex=9;
+Edit mai02=formonly.mai02 type CHAR, tabIndex=13;
+Edit yy=formonly.yy type CHAR, tabIndex=11;
+Edit mm=formonly.mm type CHAR, tabIndex=12;
+Edit azi01=formonly.azi01 type CHAR, tabIndex=10;
+ComboBox unit=formonly.unit type CHAR, tabIndex=14, items=(("1", "DR"),("2", "TH"),("3", "Ten Thousand"),("4", "Million"));
+Edit aag01_l=formonly.aag01_l type VARCHAR, tabIndex=1, title="Account Name", comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit line_l=formonly.line_l type CHAR, tabIndex=2, title="Line#";
+Edit sum2_l=formonly.sum2_l type CHAR, tabIndex=4, title="Sum After Period";
+Edit sum1_l=formonly.sum1_l type CHAR, tabIndex=3, title="Sum Before Year";
+Edit aag01_r=formonly.aag01_r type CHAR, tabIndex=5, title="Accout Name";
+Edit line_r=formonly.line_r type CHAR, tabIndex=6, title="Line#";
+Edit sum2_r=formonly.sum2_r type CHAR, tabIndex=8, title="Sum After Period";
+Edit sum1_r=formonly.sum1_r type CHAR, tabIndex=7, title="Sum Before Year";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aag(formonly.aag01_l,formonly.line_l,formonly.sum2_l,formonly.sum1_l,formonly.aag01_r,formonly.line_r,formonly.sum2_r,formonly.sum1_r)
+SCREEN RECORD Undefined(formonly.maj01,formonly.mai02,formonly.yy,formonly.mm,formonly.azi01,formonly.unit)
+END -- INSTRUCTIONS
+

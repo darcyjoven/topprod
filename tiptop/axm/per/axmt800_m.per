@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt800_m.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt800_m")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr2619
+{
+  Order No.      [oepa01             ]
+  Version        [oepa011      ]
+  Type           [oepa02       ]
+  Amount         [p_amt        ]
+
+}
+END -- gr2619
+END -- page01
+END -- folder01
+Group gb1884
+ScrollGrid gr2621
+{
+
+[dummy01]         [dummy02     ][dummy03          ][dummy04 ][dummy05  ][dummy06  ][dummy07       ]
+[oepa03 ][before ][oepa04b     ][oag02b           ][oepa05b ][oepa06b  ][oepa07b  ][oepa08b       ]
+         [after  ][oepa04a     ][oag02a           ][oepa05a ][oepa06a  ][oepa07a  ][oepa08a       ]
+[oepa03 ][before ][oepa04b     ][oag02b           ][oepa05b ][oepa06b  ][oepa07b  ][oepa08b       ]
+         [after  ][oepa04a     ][oag02a           ][oepa05a ][oepa06a  ][oepa07a  ][oepa08a       ]
+[oepa03 ][before ][oepa04b     ][oag02b           ][oepa05b ][oepa06b  ][oepa07b  ][oepa08b       ]
+         [after  ][oepa04a     ][oag02a           ][oepa05a ][oepa06a  ][oepa07a  ][oepa08a       ]
+[oepa03 ][before ][oepa04b     ][oag02b           ][oepa05b ][oepa06b  ][oepa07b  ][oepa08b       ]
+         [after  ][oepa04a     ][oag02a           ][oepa05a ][oepa06a  ][oepa07a  ][oepa08a       ]
+
+}
+END -- gr2621
+END -- gb1884
+END -- vb2
+END -- axmt800_m
+
+TABLES
+oepa_file
+ATTRIBUTES
+ButtonEdit oepa01=formonly.oepa01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Enter Order # to Qry, <^P> Qry Order # ";
+Edit oepa011=formonly.oepa011 type SMALLINT, tabIndex=2, not null, required;
+ComboBox oepa02=formonly.oepa02 type VARCHAR, tabIndex=3, not null, required, queryEditable, items=(("1", %"Deposit"),("2", %"Balance"));
+Edit p_amt=formonly.p_amt type VARCHAR, tabIndex=4, noEntry;
+Label dummy01:dummy01, text="Line#";
+Label dummy02:dummy02, text="Collection Terms";
+Label dummy03:dummy03, text="Description";
+Label dummy04:dummy04, text="Rec. Date";
+Label dummy05:dummy05, text="Note Date";
+Label dummy06:dummy06, text="Exchange Rate";
+Label dummy07:dummy07, text="Ori Curr Rece W-Tax";
+Edit oepa03=oepa_file.oepa03, tabIndex=5, not null, required;
+ComboBox before=formonly.before type VARCHAR, tabIndex=6, noEntry, items=(("0", %"Original:"));
+ButtonEdit oepa04b=oepa_file.oepa04b, action=controlp, tabIndex=7, noEntry, image="zoom", comment="Qry Collection Terms No. ";
+Edit oag02b=formonly.oag02b type VARCHAR, tabIndex=8, noEntry;
+DateEdit oepa05b=oepa_file.oepa05b, tabIndex=9, noEntry;
+DateEdit oepa06b=oepa_file.oepa06b, tabIndex=10, noEntry;
+Edit oepa07b=oepa_file.oepa07b, tabIndex=11, noEntry;
+Edit oepa08b=oepa_file.oepa08b, tabIndex=12, noEntry;
+ComboBox after=formonly.after type VARCHAR, tabIndex=13, noEntry, items=(("1", %"Modify:"));
+ButtonEdit oepa04a=oepa_file.oepa04a, action=controlp, tabIndex=14, image="zoom", comment="Qry Collection Terms No. ";
+Edit oag02a=formonly.oag02a type VARCHAR, tabIndex=15, noEntry;
+DateEdit oepa05a=oepa_file.oepa05a, tabIndex=16;
+DateEdit oepa06a=oepa_file.oepa06a, tabIndex=17;
+Edit oepa07a=oepa_file.oepa07a, tabIndex=18, noEntry;
+Edit oepa08a=oepa_file.oepa08a, tabIndex=19;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oepa(oepa_file.oepa03,formonly.before,oepa_file.oepa04b,formonly.oag02b,oepa_file.oepa05b,oepa_file.oepa06b,oepa_file.oepa07b,oepa_file.oepa08b,formonly.after,oepa_file.oepa04a,formonly.oag02a,oepa_file.oepa05a,oepa_file.oepa06a,oepa_file.oepa07a,oepa_file.oepa08a)
+SCREEN RECORD Undefined(formonly.oepa01,formonly.oepa011,formonly.oepa02,formonly.p_amt)
+END -- INSTRUCTIONS
+

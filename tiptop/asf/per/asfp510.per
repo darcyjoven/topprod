@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asfp510")
+Grid gr545
+{
+ <G group01                                 ><G group02                                 >
+  WO No.             [sfb01a              ]   WO No.             [sfb01b              ]
+  Pro.Qty            [sfb08a              ]   Pro.Qty            [sfb08b              ]
+  Issud Sets         [sfb081a             ]   Issud Sets         [sfb081b             ]
+  Stored-in          [sfb09a              ]   Stored-in          [sfb09b              ]
+  Sets T-Tro         [outqty              ]
+ <                                          ><                                          >
+ <G group03                                                                             >
+ [b                    ]
+ [c                    ]
+  MR # [sfp01a            ]
+  MQ # [sfp01b            ]
+ <                                                                                      >
+ <G group04                                                                             >
+  Gnrl.W/H            [sfs07a      ] Location[sfs08a      ] Lot#[sfs09a                ]
+  SMT W/H             [sfs07b      ] Location[sfs08b      ] Lot#[sfs09b                ]
+ <                                                                                      >
+
+}
+END -- gr545
+END -- asfp510
+
+ATTRIBUTES
+Group group01:group01, text="Src W/O";
+ButtonEdit sfb01a=formonly.sfb01a type CHAR, action=controlp, tabIndex=1, image="zoom", comment="Enter Source W/O # or <^P> to Qry";
+Edit sfb08a=formonly.sfb08a type DECIMAL, tabIndex=2, noEntry;
+Edit sfb081a=formonly.sfb081a type DECIMAL, tabIndex=3, noEntry;
+Edit sfb09a=formonly.sfb09a type DECIMAL, tabIndex=4, noEntry;
+Edit outqty=formonly.outqty type DECIMAL, tabIndex=5, comment="Enter Sets to Trsf-out";
+Group group02:group02, text="Tgt W/O";
+ButtonEdit sfb01b=formonly.sfb01b type VARCHAR, action=controlp, tabIndex=6, image="zoom", comment="Enter Target WO# or None <^P> to Qry";
+Edit sfb08b=formonly.sfb08b type DECIMAL, tabIndex=7, noEntry;
+Edit sfb081b=formonly.sfb081b type DECIMAL, tabIndex=8, noEntry;
+Edit sfb09b=formonly.sfb09b type DECIMAL, tabIndex=9, noEntry;
+Group group03:group03;
+CheckBox b=formonly.b type VARCHAR, tabIndex=10, text="Print Sim Report", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Print Report";
+CheckBox c=formonly.c type VARCHAR, tabIndex=11, text="Auto Deduct Account", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Input Resolve Deduct Account,If No Will not bring Note";
+ButtonEdit sfp01a=formonly.sfp01a type VARCHAR, action=controlp, tabIndex=12, not null, required, image="zoom", comment="Enter Material Return Note or<^P>Qry Documents";
+ButtonEdit sfp01b=formonly.sfp01b type VARCHAR, action=controlp, tabIndex=13, not null, required, image="zoom", comment="Enter Material Requisite or<^P>Qry Documents";
+Group group04:group04;
+ButtonEdit sfs07a=formonly.sfs07a type VARCHAR, action=controlp, tabIndex=14, image="zoom", comment="Enter Mat.Ret/St-i WH,<^P>Qry Warehouse";
+ButtonEdit sfs08a=formonly.sfs08a type VARCHAR, action=controlp, tabIndex=15, image="zoom", comment="Enter Mat.Ret/St-i Loc,<^P>Qry Location";
+Edit sfs09a=formonly.sfs09a type VARCHAR, tabIndex=16, comment="Enter Mat.Ret/St-i Lot #";
+ButtonEdit sfs07b=formonly.sfs07b type VARCHAR, action=controlp, tabIndex=17, image="zoom", comment="Enter Mat.Ret/St-i WH,<^P>Qry Warehouse";
+ButtonEdit sfs08b=formonly.sfs08b type VARCHAR, action=controlp, tabIndex=18, image="zoom", comment="Enter Mat.Ret/St-i Loc,<^P>Qry Location";
+Edit sfs09b=formonly.sfs09b type VARCHAR, tabIndex=19, comment="Enter Mat.Ret/St-i Lot #";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sfb01a,formonly.sfb08a,formonly.sfb081a,formonly.sfb09a,formonly.outqty,formonly.sfb01b,formonly.sfb08b,formonly.sfb081b,formonly.sfb09b,formonly.b,formonly.c,formonly.sfp01a,formonly.sfp01b,formonly.sfs07a,formonly.sfs08a,formonly.sfs09a,formonly.sfs07b,formonly.sfs08b,formonly.sfs09b)
+END -- INSTRUCTIONS
+

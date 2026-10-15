@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr771.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr771")
+VBox VBox1
+Grid gr16
+{
+ <G group01                                                                             >
+  Cost Group          [ima12               ]  Cost Levels         [ima57               ]
+  Source Code         [ima08               ]  Item No.            [ima01               ]
+  W/O No.             [tlf62               ]
+ <                                                                                      >
+ <G group02                                                                             >
+  Date Range          [bdate       ]-[edate       ]
+  Type                [type                                ]
+ [stock                      ]
+ [                           ]
+ [                           ]
+ [                           ]
+ [a                               ]
+ <                                                                                      >
+
+}
+END -- gr16
+Grid gr17
+{
+[more                                                               ]
+
+}
+END -- gr17
+END -- VBox1
+END -- axcr771
+
+ATTRIBUTES
+Group group01:group01, text=%"QBE";
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=1;
+Edit ima57=formonly.ima57 type VARCHAR, tabIndex=2;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=3;
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=4, image="zoom", comment=%"<P>";
+Edit tlf62=formonly.tlf62 type CHAR, tabIndex=5;
+Group group02:group02, text=%"INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=6;
+DateEdit edate=formonly.edate type DATE, tabIndex=7;
+ComboBox type=formonly.type type CHAR, tabIndex=10, not null, required, items=(("1", %"Monthly Weighted Unit Cost"),("2", %"FIFO Cost"),("3", %"Identify Manually???Batch Cost"),("4", %"Identify Manually???Item Cost"),("5", %"Identify Manually???Store Profit Center"));
+RadioGroup stock=formonly.stock type CHAR, tabIndex=11, not null, required, items=(("1", "Not Include Direct Suspend"),("2", "Include Direct Suspend"),("3", "Only Direct Suspend"));
+CheckBox a=formonly.a type VARCHAR, tabIndex=8, text=%"Print Detail?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=9, text=%"Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.ima12,formonly.ima57,formonly.ima08,formonly.ima01,formonly.tlf62,formonly.bdate,formonly.edate,formonly.type,formonly.stock,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

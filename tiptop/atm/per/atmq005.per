@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmq005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[imgb01       |imgb02     |imgb03     |imgb04    |imgb05    |imgblegal  |imgbplant  ]
+[imgb01       |imgb02     |imgb03     |imgb04    |imgb05    |imgblegal  |imgbplant  ]
+[imgb01       |imgb02     |imgb03     |imgb04    |imgb05    |imgblegal  |imgbplant  ]
+[imgb01       |imgb02     |imgb03     |imgb04    |imgb05    |imgblegal  |imgbplant  ]
+[imgb01       |imgb02     |imgb03     |imgb04    |imgb05    |imgblegal  |imgbplant  ]
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+  ----------- row   [cn2       ] ---------------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit imgb01=formonly.imgb01, action=controlp, tabIndex=1, title=%"imgb01", image="zoom";
+ButtonEdit imgb02=formonly.imgb02, action=controlp, tabIndex=2, title=%"imgb02", image="zoom";
+Edit imgb03=formonly.imgb03, tabIndex=3, title=%"imgb03";
+Edit imgb04=formonly.imgb04, tabIndex=4, title=%"imgb04";
+Edit imgb05=formonly.imgb05, tabIndex=5, title=%"imgb05";
+Edit imgblegal=formonly.imgblegal, tabIndex=6, title=%"imgblegal";
+Edit imgbplant=formonly.imgbplant, tabIndex=7, title=%"imgbplant";
+Edit cn2=formonly.cn2, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imgb(formonly.imgb01,formonly.imgb02,formonly.imgb03,formonly.imgb04,formonly.imgb05,formonly.imgblegal,formonly.imgbplant)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt110_x.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt110_x")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr5241
+{
+ Receipt#            [rva01           ]
+
+}
+END -- gr5241
+END -- page01
+END -- folder01
+Table s_rvb
+{
+[rvb0|rvb05               |pmn041                        |ima021                    |pmn07|rvb3|rvb40   |rvb41     |rvb07     |rvb83         |rvb85        |rvb80             |rvb82            |rvb33            |rvb332             |rvb331                 |rvb30     |rvb29       ]
+[rvb0|rvb05               |pmn041                        |ima021                    |pmn07|rvb3|rvb40   |rvb41     |rvb07     |rvb83         |rvb85        |rvb80             |rvb82            |rvb33            |rvb332             |rvb331                 |rvb30     |rvb29       ]
+[rvb0|rvb05               |pmn041                        |ima021                    |pmn07|rvb3|rvb40   |rvb41     |rvb07     |rvb83         |rvb85        |rvb80             |rvb82            |rvb33            |rvb332             |rvb331                 |rvb30     |rvb29       ]
+[rvb0|rvb05               |pmn041                        |ima021                    |pmn07|rvb3|rvb40   |rvb41     |rvb07     |rvb83         |rvb85        |rvb80             |rvb82            |rvb33            |rvb332             |rvb331                 |rvb30     |rvb29       ]
+[rvb0|rvb05               |pmn041                        |ima021                    |pmn07|rvb3|rvb40   |rvb41     |rvb07     |rvb83         |rvb85        |rvb80             |rvb82            |rvb33            |rvb332             |rvb331                 |rvb30     |rvb29       ]
+[rvb0|rvb05               |pmn041                        |ima021                    |pmn07|rvb3|rvb40   |rvb41     |rvb07     |rvb83         |rvb85        |rvb80             |rvb82            |rvb33            |rvb332             |rvb331                 |rvb30     |rvb29       ]
+[rvb0|rvb05               |pmn041                        |ima021                    |pmn07|rvb3|rvb40   |rvb41     |rvb07     |rvb83         |rvb85        |rvb80             |rvb82            |rvb33            |rvb332             |rvb331                 |rvb30     |rvb29       ]
+[rvb0|rvb05               |pmn041                        |ima021                    |pmn07|rvb3|rvb40   |rvb41     |rvb07     |rvb83         |rvb85        |rvb80             |rvb82            |rvb33            |rvb332             |rvb331                 |rvb30     |rvb29       ]
+[rvb0|rvb05               |pmn041                        |ima021                    |pmn07|rvb3|rvb40   |rvb41     |rvb07     |rvb83         |rvb85        |rvb80             |rvb82            |rvb33            |rvb332             |rvb331                 |rvb30     |rvb29       ]
+[rvb0|rvb05               |pmn041                        |ima021                    |pmn07|rvb3|rvb40   |rvb41     |rvb07     |rvb83         |rvb85        |rvb80             |rvb82            |rvb33            |rvb332             |rvb331                 |rvb30     |rvb29       ]
+
+}
+END -- s_rvb
+Grid gr5242
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5242
+END -- VBox1
+END -- apmt110_x
+
+TABLES
+rvb_file,
+rva_file
+ATTRIBUTES
+Edit rva01=rva_file.rva01, tabIndex=1, noEntry;
+Edit rvb0=rvb_file.rvb02, tabIndex=2, title="Ln#", noEntry;
+Edit rvb05=rvb_file.rvb05, tabIndex=3, title="Item No.", noEntry;
+Edit pmn041=formonly.pmn041 type CHAR, tabIndex=4, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, title="Specification", noEntry;
+Edit pmn07=formonly.pmn07 type CHAR, tabIndex=6, title="Unit", noEntry;
+CheckBox rvb3=rvb_file.rvb39, tabIndex=7, title="QC?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit rvb40=rvb_file.rvb40, tabIndex=8, title="QC Date";
+Edit rvb41=rvb_file.rvb41, tabIndex=9, title="QC Result";
+Edit rvb07=rvb_file.rvb07, tabIndex=10, title="Actual", noEntry, not null, required;
+Edit rvb83=rvb_file.rvb83, tabIndex=11, title="Par/Ref Unit", noEntry;
+Edit rvb85=rvb_file.rvb85, tabIndex=12, title="Par/Ref Qty", noEntry;
+Edit rvb80=rvb_file.rvb80, tabIndex=13, title="Chi/Receive Unit", noEntry;
+Edit rvb82=rvb_file.rvb82, tabIndex=14, title="Chi/Receive Qty", noEntry;
+Edit rvb33=rvb_file.rvb33, tabIndex=15, title="Acceptable";
+Edit rvb332=rvb_file.rvb332, tabIndex=16, title="Par/Ref Acceptable";
+Edit rvb331=rvb_file.rvb331, tabIndex=17, title="Chi/Receive Acceptable";
+Edit rvb30=rvb_file.rvb30, tabIndex=18, title="Store-in", noEntry, not null, required;
+Edit rvb29=rvb_file.rvb29, tabIndex=19, title="Qty Returned", noEntry, not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvb(rvb_file.rvb02,rvb_file.rvb05,formonly.pmn041,formonly.ima021,formonly.pmn07,rvb_file.rvb39,rvb_file.rvb40,rvb_file.rvb41,rvb_file.rvb07,rvb_file.rvb83,rvb_file.rvb85,rvb_file.rvb80,rvb_file.rvb82,rvb_file.rvb33,rvb_file.rvb332,rvb_file.rvb331,rvb_file.rvb30,rvb_file.rvb29)
+SCREEN RECORD Undefined(rva_file.rva01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt310")
+VBox VBox1
+Folder pc596
+Page page01(text="Main")
+Grid gr3426
+{
+ <G group01                                                        >
+  Adjustment Note No.     [adjno             ]
+  Transfer-out Note#      [img05             ]
+  Date of Adjustment      [img16       ]
+  Adjust Account          [debit                   ]
+ <                                                                 >
+ <G group02                                                                                                                >
+  Item No.                [img01                         ]     Inventory Unit          [img09     ]
+  Part Name               [ima02                         ]     Transfer-out Qty        [img08               ]
+  Cur Vers                [ima05     ]                         Actual Transfer-out Qty [adjqty              ]
+  Src Cd                  [ima08     ]                         Reason code             [azf01     ]
+  Warehouse #             [img02     ]                         Reason Desc             [azf03                         ]
+  Location                [img03     ]
+  Lot#                    [img04                         ]
+  Inventory Class         [img19     ]
+  Look Code               [img36     ]
+ <                                                                                                                         >
+
+}
+END -- gr3426
+END -- page01
+END -- pc596
+END -- VBox1
+END -- aimt310
+
+TABLES
+img_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit adjno=formonly.adjno type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Document Property";
+ButtonEdit img05=img_file.img05, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Transfer Note#";
+DateEdit img16=img_file.img16, tabIndex=3;
+ButtonEdit debit=formonly.debit type CHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Account ";
+Group group02:group02;
+ButtonEdit img01=img_file.img01, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Item No. <^T>Qry Transfer-Out Item ";
+Edit img09=img_file.img09, tabIndex=6, noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=7;
+Edit img08=img_file.img08, tabIndex=8;
+Edit ima05=formonly.ima05 type VARCHAR, tabIndex=9;
+Edit adjqty=formonly.adjqty type CHAR, tabIndex=10, not null, required;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=11;
+ButtonEdit azf01=formonly.azf01 type CHAR, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Reason    <^Y> Create Reason";
+ButtonEdit img02=img_file.img02, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P>Qry Warehouse, <^T>Qry Item/Warehouse Default";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=14, noEntry;
+ButtonEdit img03=formonly.img03 type VARCHAR, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry Location, <^Y>Qry Inventory Class/Look Code    ";
+ButtonEdit img04=formonly.img04 type VARCHAR, action=controlp, tabIndex=16, image="zoom", comment="<^P>Qry Lot No. ";
+Edit img19=img_file.img19, tabIndex=17, noEntry;
+Edit img36=img_file.img36, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.adjno,img_file.img05,img_file.img16,formonly.debit,img_file.img01,img_file.img09,formonly.ima02,img_file.img08,formonly.ima05,formonly.adjqty,formonly.ima08,formonly.azf01,img_file.img02,formonly.azf03,formonly.img03,formonly.img04,img_file.img19,img_file.img36)
+END -- INSTRUCTIONS
+

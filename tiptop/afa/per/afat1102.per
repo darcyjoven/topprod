@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat1102")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Table s_fbf
+{
+[fbf02      |fbf03          |faj06                    |fbf031     |faj18  |fbf07                   |fbf04   |fbf05               |fbf11                 |fbf08                  |fbf09      |fbf12               |fbf10                   ]
+[fbf02      |fbf03          |faj06                    |fbf031     |faj18  |fbf07                   |fbf04   |fbf05               |fbf11                 |fbf08                  |fbf09      |fbf12               |fbf10                   ]
+[fbf02      |fbf03          |faj06                    |fbf031     |faj18  |fbf07                   |fbf04   |fbf05               |fbf11                 |fbf08                  |fbf09      |fbf12               |fbf10                   ]
+[fbf02      |fbf03          |faj06                    |fbf031     |faj18  |fbf07                   |fbf04   |fbf05               |fbf11                 |fbf08                  |fbf09      |fbf12               |fbf10                   ]
+[fbf02      |fbf03          |faj06                    |fbf031     |faj18  |fbf07                   |fbf04   |fbf05               |fbf11                 |fbf08                  |fbf09      |fbf12               |fbf10                   ]
+[fbf02      |fbf03          |faj06                    |fbf031     |faj18  |fbf07                   |fbf04   |fbf05               |fbf11                 |fbf08                  |fbf09      |fbf12               |fbf10                   ]
+[fbf02      |fbf03          |faj06                    |fbf031     |faj18  |fbf07                   |fbf04   |fbf05               |fbf11                 |fbf08                  |fbf09      |fbf12               |fbf10                   ]
+[fbf02      |fbf03          |faj06                    |fbf031     |faj18  |fbf07                   |fbf04   |fbf05               |fbf11                 |fbf08                  |fbf09      |fbf12               |fbf10                   ]
+[fbf02      |fbf03          |faj06                    |fbf031     |faj18  |fbf07                   |fbf04   |fbf05               |fbf11                 |fbf08                  |fbf09      |fbf12               |fbf10                   ]
+[fbf02      |fbf03          |faj06                    |fbf031     |faj18  |fbf07                   |fbf04   |fbf05               |fbf11                 |fbf08                  |fbf09      |fbf12               |fbf10                   ]
+
+}
+END -- s_fbf
+END -- page01
+Page info(text="Info")
+Grid gr2263
+{
+ Record Owner       [fbeuser   ] Last Modified by   [fbemodu   ] Confirm            [fbeconf   ] Depr-Tax           [fbepost2  ]
+ Department         [fbegrup   ] Create/Modify Date [fbedate   ] Depreciation       [fbepost   ]
+ Record Orig.       [fbeoriu   ]
+ Dept Orig.         [fbeorig   ]
+}
+END -- gr2263
+END -- info
+END -- folder01
+Grid gr2264
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2264
+END -- VBox1
+END -- afat1102
+
+TABLES
+fbf_file,
+fbe_file
+ATTRIBUTES
+Edit fbf02=fbf_file.fbf02, tabIndex=1, title="Line No.", noEntry;
+Edit fbf03=fbf_file.fbf03, tabIndex=2, title="Property No.", noEntry;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=3, title="Chinese Name", noEntry;
+Edit fbf031=fbf_file.fbf031, tabIndex=4, title="Add. No.", noEntry;
+Edit faj18=formonly.faj18 type CHAR, tabIndex=5, title="Unit", noEntry;
+Edit fbf07=fbf_file.fbf07, tabIndex=6, title="Sale Amount(Original)", noEntry;
+Edit fbf04=fbf_file.fbf04, tabIndex=7, title="Qty", noEntry;
+Edit fbf05=fbf_file.fbf05, tabIndex=8, title="Cause", noEntry;
+Edit fbf11=fbf_file.fbf11, tabIndex=9, title="Deduction Preparation", noEntry;
+Edit fbf08=fbf_file.fbf08, tabIndex=10, title="Undepreciated Amount", noEntry;
+Edit fbf09=fbf_file.fbf09, tabIndex=11, title="Sttl.P/L", noEntry;
+Edit fbf12=fbf_file.fbf12, tabIndex=12, title="Depr-Tax Val-Deduct";
+Edit fbf10=fbf_file.fbf10, tabIndex=13, title="Undepreciated-Tax Amount";
+Edit fbeuser=fbe_file.fbeuser, tabIndex=14, noEntry;
+Edit fbemodu=fbe_file.fbemodu, tabIndex=15, noEntry;
+Edit fbeconf=fbe_file.fbeconf, tabIndex=16, noEntry;
+Edit fbepost2=fbe_file.fbepost2, tabIndex=17, noEntry;
+Edit fbegrup=fbe_file.fbegrup, tabIndex=18, noEntry;
+DateEdit fbedate=fbe_file.fbedate, tabIndex=19, noEntry;
+Edit fbepost=fbe_file.fbepost, tabIndex=20, noEntry;
+Edit fbeoriu=fbe_file.fbeoriu, tabIndex=501, noEntry;
+Edit fbeorig=fbe_file.fbeorig, tabIndex=502, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fbf(fbf_file.fbf02,fbf_file.fbf03,formonly.faj06,fbf_file.fbf031,formonly.faj18,fbf_file.fbf07,fbf_file.fbf04,fbf_file.fbf05,fbf_file.fbf11,fbf_file.fbf08,fbf_file.fbf09,fbf_file.fbf12,fbf_file.fbf10)
+SCREEN RECORD Undefined(fbe_file.fbeuser,fbe_file.fbemodu,fbe_file.fbeconf,fbe_file.fbepost2,fbe_file.fbegrup,fbe_file.fbedate,fbe_file.fbepost,fbe_file.fbeoriu,fbe_file.fbeorig,formonly.cn2)
+END -- INSTRUCTIONS
+

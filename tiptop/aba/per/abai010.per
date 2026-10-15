@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abai010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abai010")
+VBox vb1
+Folder pc689
+Page page01(text="Main")
+Table s_osy
+{
+[ibesl|ibedesc             |ibemxno    |ibetype        |ibeud01        |ibeud02       |ibeud03       |ibeud04       |ibeud05        |ibeud06        |ibeud07          |ibeud08          |ibeud09          |ibeud10    |ibeud11    |ibeud12     |ibeud13   |ibeud14    |ibeud15    ]
+[ibesl|ibedesc             |ibemxno    |ibetype        |ibeud01        |ibeud02       |ibeud03       |ibeud04       |ibeud05        |ibeud06        |ibeud07          |ibeud08          |ibeud09          |ibeud10    |ibeud11    |ibeud12     |ibeud13   |ibeud14    |ibeud15    ]
+[ibesl|ibedesc             |ibemxno    |ibetype        |ibeud01        |ibeud02       |ibeud03       |ibeud04       |ibeud05        |ibeud06        |ibeud07          |ibeud08          |ibeud09          |ibeud10    |ibeud11    |ibeud12     |ibeud13   |ibeud14    |ibeud15    ]
+[ibesl|ibedesc             |ibemxno    |ibetype        |ibeud01        |ibeud02       |ibeud03       |ibeud04       |ibeud05        |ibeud06        |ibeud07          |ibeud08          |ibeud09          |ibeud10    |ibeud11    |ibeud12     |ibeud13   |ibeud14    |ibeud15    ]
+[ibesl|ibedesc             |ibemxno    |ibetype        |ibeud01        |ibeud02       |ibeud03       |ibeud04       |ibeud05        |ibeud06        |ibeud07          |ibeud08          |ibeud09          |ibeud10    |ibeud11    |ibeud12     |ibeud13   |ibeud14    |ibeud15    ]
+[ibesl|ibedesc             |ibemxno    |ibetype        |ibeud01        |ibeud02       |ibeud03       |ibeud04       |ibeud05        |ibeud06        |ibeud07          |ibeud08          |ibeud09          |ibeud10    |ibeud11    |ibeud12     |ibeud13   |ibeud14    |ibeud15    ]
+[ibesl|ibedesc             |ibemxno    |ibetype        |ibeud01        |ibeud02       |ibeud03       |ibeud04       |ibeud05        |ibeud06        |ibeud07          |ibeud08          |ibeud09          |ibeud10    |ibeud11    |ibeud12     |ibeud13   |ibeud14    |ibeud15    ]
+[ibesl|ibedesc             |ibemxno    |ibetype        |ibeud01        |ibeud02       |ibeud03       |ibeud04       |ibeud05        |ibeud06        |ibeud07          |ibeud08          |ibeud09          |ibeud10    |ibeud11    |ibeud12     |ibeud13   |ibeud14    |ibeud15    ]
+[ibesl|ibedesc             |ibemxno    |ibetype        |ibeud01        |ibeud02       |ibeud03       |ibeud04       |ibeud05        |ibeud06        |ibeud07          |ibeud08          |ibeud09          |ibeud10    |ibeud11    |ibeud12     |ibeud13   |ibeud14    |ibeud15    ]
+[ibesl|ibedesc             |ibemxno    |ibetype        |ibeud01        |ibeud02       |ibeud03       |ibeud04       |ibeud05        |ibeud06        |ibeud07          |ibeud08          |ibeud09          |ibeud10    |ibeud11    |ibeud12     |ibeud13   |ibeud14    |ibeud15    ]
+
+}
+END -- s_osy
+END -- page01
+END -- pc689
+Grid gr3003
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr3003
+END -- vb1
+END -- abai010
+
+TABLES
+ibe_file
+ATTRIBUTES
+Edit ibesl=ibe_file.ibeslip, tabIndex=1, title="Doc", not null, required, upShift, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! <^Y>User Authorization <^U>Dept Authorization";
+Edit ibedesc=ibe_file.ibedesc, tabIndex=2, title="Doc Name";
+Edit ibemxno=ibe_file.ibemxno, tabIndex=3, title=%"ibemxno";
+ComboBox ibetype=ibe_file.ibetype, tabIndex=4, title="Doc Pty", not null, required, queryEditable;
+Edit ibeud01=ibe_file.ibeud01, tabIndex=5, title=%"ibeud01", scroll;
+Edit ibeud02=ibe_file.ibeud02, tabIndex=6, title=%"ibeud02", scroll;
+Edit ibeud03=ibe_file.ibeud03, tabIndex=7, title=%"ibeud03", scroll;
+Edit ibeud04=ibe_file.ibeud04, tabIndex=8, title=%"ibeud04", scroll;
+Edit ibeud05=ibe_file.ibeud05, tabIndex=9, title=%"ibeud05", scroll;
+Edit ibeud06=ibe_file.ibeud06, tabIndex=10, title=%"ibeud06", scroll;
+Edit ibeud07=ibe_file.ibeud07, tabIndex=11, title=%"ibeud07", scroll;
+Edit ibeud08=ibe_file.ibeud08, tabIndex=12, title=%"ibeud08", scroll;
+Edit ibeud09=ibe_file.ibeud09, tabIndex=13, title=%"ibeud09", scroll;
+Edit ibeud10=ibe_file.ibeud10, tabIndex=14, title=%"ibeud10", scroll;
+Edit ibeud11=ibe_file.ibeud11, tabIndex=15, title=%"ibeud11", scroll;
+Edit ibeud12=ibe_file.ibeud12, tabIndex=16, title=%"ibeud12", scroll;
+DateEdit ibeud13=ibe_file.ibeud13, tabIndex=17, title=%"ibeud13";
+DateEdit ibeud14=ibe_file.ibeud14, tabIndex=18, title=%"ibeud14";
+DateEdit ibeud15=ibe_file.ibeud15, tabIndex=19, title=%"ibeud15";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ibe(ibe_file.ibeslip,ibe_file.ibedesc,ibe_file.ibemxno,ibe_file.ibetype,ibe_file.ibeud01,ibe_file.ibeud02,ibe_file.ibeud03,ibe_file.ibeud04,ibe_file.ibeud05,ibe_file.ibeud06,ibe_file.ibeud07,ibe_file.ibeud08,ibe_file.ibeud09,ibe_file.ibeud10,ibe_file.ibeud11,ibe_file.ibeud12,ibe_file.ibeud13,ibe_file.ibeud14,ibe_file.ibeud15)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

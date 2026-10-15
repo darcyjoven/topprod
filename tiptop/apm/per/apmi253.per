@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi253.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi253")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4836
+{
+ Item No.            [pmq01                         ]
+ Vender Item#        [pmq03                         ]
+ Supplier#           [pmq02     ][pmc03             ]
+[pmh03                            ]
+}
+END -- gr4836
+END -- page01
+END -- folder01
+Table s_pmq
+{
+[pmq04 |pmq05                                                       ]
+[pmq04 |pmq05                                                       ]
+[pmq04 |pmq05                                                       ]
+[pmq04 |pmq05                                                       ]
+[pmq04 |pmq05                                                       ]
+[pmq04 |pmq05                                                       ]
+[pmq04 |pmq05                                                       ]
+[pmq04 |pmq05                                                       ]
+[pmq04 |pmq05                                                       ]
+[pmq04 |pmq05                                                       ]
+
+}
+END -- s_pmq
+Grid gr4837
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4837
+END -- VBox1
+END -- apmi253
+
+TABLES
+pmq_file
+ATTRIBUTES
+Edit pmq01=pmq_file.pmq01, tabIndex=1;
+Edit pmq03=pmq_file.pmq03, tabIndex=2;
+ButtonEdit pmq02=pmq_file.pmq02, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Vender   ";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=4;
+CheckBox pmh03=formonly.pmh03 type VARCHAR, tabIndex=5, text="Main Supplier", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pmq04=pmq_file.pmq04, tabIndex=6, title="Line#", not null, required;
+Edit pmq05=pmq_file.pmq05, tabIndex=7, title="Vender Item No. P/N Spec. Extra Desc", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmq(pmq_file.pmq04,pmq_file.pmq05)
+SCREEN RECORD Undefined(pmq_file.pmq01,pmq_file.pmq03,pmq_file.pmq02,formonly.pmc03,formonly.pmh03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

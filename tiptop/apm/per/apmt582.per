@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt582.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt582")
+Folder pc1020
+Page page01(text="Page01")
+Grid gr5342
+{
+ <G group01                            > <G group02                                 >
+  Supplier     [pom09     ][pmc03     ]   Full Name [pmc081                        ]
+  Shp.Address  [pom10     ]                         [pmc082                        ]
+  Bill Address [pom11     ]               Address   [pmc091                        ]
+  Vender TEL   [pmc10               ]               [pmc092                        ]
+  Vender FAX   [pmc11               ]               [pmc093                        ]
+  Vender Telex [pmc12               ]               [pmc094                        ]
+                                                    [pmc095                        ]
+ <                                     > <                                          >
+
+}
+END -- gr5342
+END -- page01
+END -- pc1020
+END -- apmt582
+
+TABLES
+pom_file
+ATTRIBUTES
+Group group01:group01;
+Edit pom09=pom_file.pom09, tabIndex=1, comment="<^Y>Create Vender,<^T>Qry Vender/Item     <^U>Qry Item/Vender  ";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit pom10=pom_file.pom10, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Shipping Address";
+ButtonEdit pom11=pom_file.pom11, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Bill Address ";
+Edit pmc10=formonly.pmc10 type VARCHAR, tabIndex=5, noEntry;
+Edit pmc11=formonly.pmc11 type VARCHAR, tabIndex=6, noEntry;
+Edit pmc12=formonly.pmc12 type VARCHAR, tabIndex=7, noEntry;
+Group group02:group02;
+Edit pmc081=formonly.pmc081 type VARCHAR, tabIndex=8;
+Edit pmc082=formonly.pmc082 type VARCHAR, tabIndex=9;
+Edit pmc091=formonly.pmc091 type VARCHAR, tabIndex=10;
+Edit pmc092=formonly.pmc092 type VARCHAR, tabIndex=11;
+Edit pmc093=formonly.pmc093 type VARCHAR, tabIndex=12;
+Edit pmc094=formonly.pmc094 type VARCHAR, tabIndex=13;
+Edit pmc095=formonly.pmc095 type VARCHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pom_file.pom09,formonly.pmc03,pom_file.pom10,pom_file.pom11,formonly.pmc10,formonly.pmc11,formonly.pmc12,formonly.pmc081,formonly.pmc082,formonly.pmc091,formonly.pmc092,formonly.pmc093,formonly.pmc094,formonly.pmc095)
+END -- INSTRUCTIONS
+

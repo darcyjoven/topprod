@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt600_6.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Confirm")
+Grid gr136
+{
+ <G group01                                 >
+ [only_one                               ]
+ <                                          >
+ <G group02                                 >
+  Receive Slip# QBE       [aqe01           ]
+  Receive Date QBE        [aqe02       ]
+  Account Employee QBE    [aqe04     ]
+  Accounts Department QBE [aqe05     ]
+ <                                          >
+ <G group03                                    >
+  Confirmed Total Payment [l_amt               ]
+
+ <                                             >
+
+}
+END -- gr136
+END -- axrt600_6
+
+TABLES
+aqe_file
+ATTRIBUTES
+Group group01:group01, text="Confirm Condition";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, items=(("1", "Confirm this Accounts only"),("2", "Confirm by QBE Condition"));
+Group group02:group02, text="Enter Accounts Condition to Confirm:";
+ButtonEdit aqe01=aqe_file.aqe01, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Qry Details ";
+DateEdit aqe02=aqe_file.aqe02, tabIndex=3;
+ButtonEdit aqe04=aqe_file.aqe04, action=controlp, tabIndex=4, image="zoom", comment="<^P> Qry Details ";
+ButtonEdit aqe05=aqe_file.aqe05, action=controlp, tabIndex=5, image="zoom", comment="<^P> Qry Details ";
+Group group03:group03;
+Edit l_amt=formonly.l_amt type DECIMAL, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,aqe_file.aqe01,aqe_file.aqe02,aqe_file.aqe04,aqe_file.aqe05,formonly.l_amt)
+END -- INSTRUCTIONS
+

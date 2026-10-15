@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmx761.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr761")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                               >
+  Cust Complt Nt       [ohc01                    ]
+  Customer No.         [ohc06                    ]
+ <                                                                                        >
+ <G group02                                                                               >
+  C-Com Date Range     [bdate       ]-[edate       ]
+
+ <                                                                                        >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                              ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- axmr761
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ohc01=formonly.ohc01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit ohc06=formonly.ohc06 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=3;
+DateEdit edate=formonly.edate type DATE, tabIndex=4;
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ohc01,formonly.ohc06,formonly.bdate,formonly.edate,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,27 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_rptchk.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"p_rptchk")
+Grid gr1
+{
+
+  Select check area[path                                                 ]
+ [lb1                                                                    ]
+
+}
+END -- gr1
+END -- Form1
+
+ATTRIBUTES
+ButtonEdit path=formonly.path type CHAR, action=controlp, tabIndex=1, image="zoom";
+Label lb1:lb1, text="Ex. D:/tiptop_cr/topprod";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.path)
+END -- INSTRUCTIONS
+

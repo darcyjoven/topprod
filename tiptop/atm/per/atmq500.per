@@ -1,0 +1,129 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmq500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmq500")
+VBox vb3
+Grid gr3
+{
+
+  Forecast No. [odg01              ][odb02              ]
+  Organize No. [odg02              ][tqb02              ]
+
+}
+END -- gr3
+Group group01(text="Sheet")
+Table s_odg
+{
+[odh03            |col148          |ima021            ]
+[odh03            |col148          |ima021            ]
+[odh03            |col148          |ima021            ]
+[odh03            |col148          |ima021            ]
+[odh03            |col148          |ima021            ]
+
+}
+END -- s_odg
+END -- group01
+Folder pc3
+Page Page5(text=%"Detail")
+Grid gr7
+{
+ <T s_odh                                                                                         >
+ [odh04        |odh05         |so_qty        |del_qty      |odh06       |so_amt     |del_amt      ]
+ [odh04        |odh05         |so_qty        |del_qty      |odh06       |so_amt     |del_amt      ]
+ [odh04        |odh05         |so_qty        |del_qty      |odh06       |so_amt     |del_amt      ]
+ [odh04        |odh05         |so_qty        |del_qty      |odh06       |so_amt     |del_amt      ]
+ [odh04        |odh05         |so_qty        |del_qty      |odh06       |so_amt     |del_amt      ]
+ [odh04        |odh05         |so_qty        |del_qty      |odh06       |so_amt     |del_amt      ]
+ [odh04        |odh05         |so_qty        |del_qty      |odh06       |so_amt     |del_amt      ]
+ [odh04        |odh05         |so_qty        |del_qty      |odh06       |so_amt     |del_amt      ]
+ [odh04        |odh05         |so_qty        |del_qty      |odh06       |so_amt     |del_amt      ]
+ <                                                                                                >
+
+
+}
+END -- gr7
+END -- Page5
+Page page01(action=page01, text=%"page01")
+Grid gr9
+{
+[c01                                                                                                                               ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+}
+END -- gr9
+END -- page01
+Page page02(action=page02, text=%"page02")
+Grid gr10
+{
+[c02                                                                                                                               ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+[                                                                                                                                  ]
+}
+END -- gr10
+END -- page02
+END -- pc3
+Grid gr2187
+{
+  ---------- Rows  [cn    ]-[cn2   ]-[cn3   ] ----------
+
+}
+END -- gr2187
+END -- vb3
+END -- atmq500
+
+TABLES
+odh_file,
+odg_file
+ATTRIBUTES
+ButtonEdit odg01=odg_file.odg01, action=controlp, tabIndex=7, image="zoom";
+Edit odb02=formonly.odb02 type VARCHAR, tabIndex=9, noEntry;
+ButtonEdit odg02=odg_file.odg02, action=controlp, tabIndex=8, image="zoom";
+Edit tqb02=formonly.tqb02 type VARCHAR, tabIndex=10, noEntry;
+ButtonEdit odh03=odh_file.odh03, action=controlp, tabIndex=3, title="Item No", image="zoom";
+Edit col148=formonly.Col148 type CHAR, tabIndex=4, title="Item Name", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=11, title="Spec", noEntry;
+Table s_odh:s_odh;
+Edit odh04=formonly.odh04 type CHAR, tabIndex=5, title="Period", noEntry;
+Edit odh05=formonly.odh05 type DECIMAL, tabIndex=6, title="Forecast Qty", noEntry;
+Edit so_qty=formonly.so_qty type DECIMAL, tabIndex=12, title="S/O Qty", noEntry;
+Edit del_qty=formonly.del_qty type DECIMAL, tabIndex=13, title="Delivery Qty", noEntry;
+Edit odh06=formonly.odh06 type DECIMAL, tabIndex=14, title="Forecast Amount";
+Edit so_amt=formonly.so_amt type CHAR, tabIndex=15, title="S/O Amount", noEntry;
+Edit del_amt=formonly.del_amt type DECIMAL, tabIndex=16, title="Del Amount", noEntry;
+Canvas c01:c01;
+Canvas c02:c02;
+Edit cn=formonly.cn type INTEGER, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=1, noEntry;
+Edit cn3=formonly.cn3 type INTEGER, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_odg(odh_file.odh03,formonly.Col148,formonly.ima021)
+SCREEN RECORD s_odh(formonly.odh04,formonly.odh05,formonly.so_qty,formonly.del_qty,formonly.odh06,formonly.so_amt,formonly.del_amt)
+SCREEN RECORD Undefined(odg_file.odg01,formonly.odb02,odg_file.odg02,formonly.tqb02,formonly.cn,formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

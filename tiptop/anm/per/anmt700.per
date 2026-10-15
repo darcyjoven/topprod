@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt700")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr4519
+{
+ Related Doc No.     [nnb01           ]
+
+}
+END -- gr4519
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_nnb
+{
+[nnb03|nnb04                                                       ]
+[nnb03|nnb04                                                       ]
+[nnb03|nnb04                                                       ]
+[nnb03|nnb04                                                       ]
+[nnb03|nnb04                                                       ]
+[nnb03|nnb04                                                       ]
+[nnb03|nnb04                                                       ]
+[nnb03|nnb04                                                       ]
+[nnb03|nnb04                                                       ]
+[nnb03|nnb04                                                       ]
+
+}
+END -- s_nnb
+Grid gr4520
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4520
+END -- VBox1
+END -- anmt700
+
+TABLES
+nnb_file
+ATTRIBUTES
+Edit nnb01=nnb_file.nnb01, tabIndex=1, comment="Key Field, No Blank/Repeated!    ";
+Edit nnb03=nnb_file.nnb03, tabIndex=2, title="Ln#", not null, required;
+Edit nnb04=nnb_file.nnb04, tabIndex=3, title="Description", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=4, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nnb(nnb_file.nnb03,nnb_file.nnb04)
+SCREEN RECORD Undefined(nnb_file.nnb01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

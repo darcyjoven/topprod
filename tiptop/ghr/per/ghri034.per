@@ -1,0 +1,112 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghri034.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder2
+Page Page3(action=main, text=%"Page3")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+ <G group1                                                    >
+   hrbp01[hrbp01    |hraa12              ]
+   hrbp02[hrbp02                         ]
+   hrbp03[hrbp03                         ]
+   hrbp05[hrbp05                         ]
+   hrbp04[hrbp04                         ]
+         [                               ]
+ <                                                            >
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid2
+{
+ <G group2                  >    <G group3                  >
+  hrbpuser[hrbpuser  ]            hrbpmodu[hrbpmodu  ]
+  hrbpgrup[hrbpgrup  ]            hrbpdate[hrbpdate  ]
+  hrbporiu[hrbporiu  ]
+  hrbporig[hrbporig  ]
+
+ <                          >    <                          >
+}
+END -- Grid2
+END -- Page2
+END -- Folder1
+Table Table1
+{
+[hrbpa01 |hrbpa02 |hrbpa03 |hrbpa04 ]
+[hrbpa01 |hrbpa02 |hrbpa03 |hrbpa04 ]
+[hrbpa01 |hrbpa02 |hrbpa03 |hrbpa04 ]
+[hrbpa01 |hrbpa02 |hrbpa03 |hrbpa04 ]
+[hrbpa01 |hrbpa02 |hrbpa03 |hrbpa04 ]
+}
+END -- Table1
+Grid Grid3
+{
+  ---------- cnt[cnt ]cn2[cn2 ]-----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- Page3
+Page Page4(action=iten_list, text=%"Page4")
+Table Table2
+{
+[hrbp01a |hraa12a |hrbp02a |hrbp03a |hrbp05a |hrbp04a ]
+[hrbp01a |hraa12a |hrbp02a |hrbp03a |hrbp05a |hrbp04a ]
+[hrbp01a |hraa12a |hrbp02a |hrbp03a |hrbp05a |hrbp04a ]
+[hrbp01a |hraa12a |hrbp02a |hrbp03a |hrbp05a |hrbp04a ]
+[hrbp01a |hraa12a |hrbp02a |hrbp03a |hrbp05a |hrbp04a ]
+
+
+
+
+
+}
+END -- Table2
+END -- Page4
+END -- Folder2
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"";
+ButtonEdit hrbp01=formonly.hrbp01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hraa12=formonly.hraa12 type VARCHAR, tabIndex=2, noEntry;
+Edit hrbp02=formonly.hrbp02 type VARCHAR, tabIndex=3, not null, required;
+Edit hrbp03=formonly.hrbp03 type VARCHAR, tabIndex=4, not null, required;
+ComboBox hrbp05=formonly.hrbp05 type VARCHAR, tabIndex=18, not null, required, items=(("1", "banci"),("2", "banzu"));
+TextEdit hrbp04=formonly.hrbp04 type VARCHAR, tabIndex=5;
+Group group2:Group2, text=%"";
+Edit hrbpuser=formonly.hrbpuser type VARCHAR, tabIndex=6, noEntry;
+Edit hrbpgrup=formonly.hrbpgrup type VARCHAR, tabIndex=7, noEntry;
+Edit hrbporiu=formonly.hrbporiu type VARCHAR, tabIndex=8, noEntry;
+Edit hrbporig=formonly.hrbporig type VARCHAR, tabIndex=9, noEntry;
+Group group3:Group3, text=%"";
+Edit hrbpmodu=formonly.hrbpmodu type VARCHAR, tabIndex=10, noEntry;
+DateEdit hrbpdate=formonly.hrbpdate type DATE, tabIndex=11, noEntry;
+Edit hrbpa01=formonly.hrbpa01 type INTEGER, tabIndex=12, title=%"hrbpa01", not null, required;
+ButtonEdit hrbpa02=formonly.hrbpa02 type VARCHAR, action=controlp, tabIndex=13, title=%"hrbpa02", not null, required, image="zoom";
+Edit hrbpa03=formonly.hrbpa03 type VARCHAR, tabIndex=14, title=%"hrbpa03", noEntry;
+TextEdit hrbpa04=formonly.hrbpa04 type VARCHAR, tabIndex=15, title=%"hrbpa04";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=16, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=17, noEntry;
+Edit hrbp01a=formonly.hrbp01a type VARCHAR, tabIndex=19, title=%"hrbp01_1";
+Edit hraa12a=formonly.hraa12a type VARCHAR, tabIndex=20, title=%"hraa12_1";
+Edit hrbp02a=formonly.hrbp02a type VARCHAR, tabIndex=21, title=%"hrbp02_1";
+Edit hrbp03a=formonly.hrbp03a, tabIndex=22, title=%"hrbp03_1";
+ComboBox hrbp05a=formonly.hrbp05a type VARCHAR, tabIndex=23, title=%"hrbp05_1", items=(("1", "banci"),("2", "banzu"));
+TextEdit hrbp04a=formonly.hrbp04a type VARCHAR, tabIndex=24, title=%"hrbp04_1";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrbp01,formonly.hraa12,formonly.hrbp02,formonly.hrbp03,formonly.hrbp04,formonly.hrbpuser,formonly.hrbpgrup,formonly.hrbporiu,formonly.hrbporig,formonly.hrbpmodu,formonly.hrbpdate,formonly.cnt,formonly.cn2,formonly.hrbp05)
+SCREEN RECORD s_hrbpa(formonly.hrbpa01,formonly.hrbpa02,formonly.hrbpa03,formonly.hrbpa04)
+SCREEN RECORD s_hrbp(formonly.hrbp01a,formonly.hraa12a,formonly.hrbp02a,formonly.hrbp03a,formonly.hrbp05a,formonly.hrbp04a)
+END -- INSTRUCTIONS
+

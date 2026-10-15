@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri025_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrbhb01 |hrbhb03   |hrat02     |hrbhb04 |hrbhb05                 |hrbhb06 |hrbhb07   |hrbhb08    ]
+[hrbhb01 |hrbhb03   |hrat02     |hrbhb04 |hrbhb05                 |hrbhb06 |hrbhb07   |hrbhb08    ]
+[hrbhb01 |hrbhb03   |hrat02     |hrbhb04 |hrbhb05                 |hrbhb06 |hrbhb07   |hrbhb08    ]
+[hrbhb01 |hrbhb03   |hrat02     |hrbhb04 |hrbhb05                 |hrbhb06 |hrbhb07   |hrbhb08    ]
+[hrbhb01 |hrbhb03   |hrat02     |hrbhb04 |hrbhb05                 |hrbhb06 |hrbhb07   |hrbhb08    ]
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+  ---------- cn2[cn2 ]----------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit hrbhb01=formonly.hrbhb01 type INTEGER, tabIndex=1, title=%"hrbhb01", noEntry, not null, required;
+ButtonEdit hrbhb03=formonly.hrbhb03 type VARCHAR, action=controlp, tabIndex=2, title=%"hrbhb03", not null, required, image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=3, title=%"hrat02", noEntry;
+DateEdit hrbhb04=formonly.hrbhb04 type DATE, tabIndex=4, title=%"hrbhb04", not null, required;
+Edit hrbhb05=formonly.hrbhb05 type VARCHAR, tabIndex=5, title=%"hrbhb05", not null, required;
+CheckBox hrbhb06=formonly.hrbhb06 type VARCHAR, tabIndex=6, title=%"hrbhb06", text=%"", valueChecked = "Y", valueUnchecked = "N";
+Edit hrbhb07=formonly.hrbhb07 type VARCHAR, tabIndex=7, title=%"hrbhb07";
+Edit hrbhb08=formonly.hrbhb08 type VARCHAR, tabIndex=8, title=%"hrbhb08";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrbhb(formonly.hrbhb01,formonly.hrbhb03,formonly.hrat02,formonly.hrbhb04,formonly.hrbhb05,formonly.hrbhb06,formonly.hrbhb07,formonly.hrbhb08)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

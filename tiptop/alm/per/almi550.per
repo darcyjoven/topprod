@@ -1,0 +1,163 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi550.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi550")
+VBox VBox1
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr4
+{
+
+  lph01    [lph01       ]                                 lph24       [lph24       ] [imgmksg]
+  lph02    [lph02                         ]               lph25       [lph25       ] [       ]
+ [label1 ] [lphpos    ]                                   lph26       [lph26       ]
+
+ <G gb1                                             >  <G gb2                                >
+  [lph04     ]                                           lph09     [lph09       ]
+  [lph06     ]                                           lph10     [lph10       ]
+  [lph37     ]   lph38     [lph38               ]        lph11     [lph11               ]
+                 lph39     [lph39               ]                  [lph12       ]
+  [lph03       ]                                         lph13     [lph13       ]
+  [lph36    ]    lph30     [lph30               ]        lph14     [lph14               ]
+  [lph46    ]                                            lph15     [lph15               ]
+ <                                                  >    lph16     [lph16               ]
+ <G gb6                                             >  <                                     >
+    lph43                  [lph43               ]      <G gb7                                >
+    lph44                  [lph44               ]        lph32     [lph32               ]
+   [lph05     ]  lph08     [lph08               ]        lph33     [lph33               ]
+   [lph07     ]                                          lph34     [lph34               ]
+   [lph40    ]   lph41     [lph41               ]        lph35     [lph35               ]
+                 lph42     [lph42               ]
+ <                                                  >  <                                     >
+ <G gb3                                             >  <G gb4                                >
+   lph28     [lph28               ]                      lph21     [lph21     ]
+   lph29     [lph29               ]                      lph22     [lph22               ]
+             [lph17     ]                                lph23     [lph23               ]
+             [          ]                                lph45     [lph45               ]
+             [          ]                                lph47     [lph47       |lph47_desc ]
+             [          ]                                lph48     [lph48       |lph48_desc ]
+   lph18     [lph18               ]
+   lph19     [lph19               ]                    <                                     >
+   lph31     [lph31    ][lph311   ]
+   lph20     [lph20               ]
+ <                                                  >
+
+}
+END -- gr4
+END -- Page3
+Page info(text=%"Info")
+Grid gr9
+{
+
+ Data User   [lphuser   ]  crat  [lphcrat     ]  acti       [lphacti   ]
+ Data Group  [lphgrup   ]  Modify[lphmodu     ]  Modify Date[lphdate     ]
+ Record Orig.[lphoriu   ]
+ Dept Orig.  [lphorig   ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- gr9
+END -- info
+END -- pc2
+Grid gr8
+{
+  -------Rows[idx   ]/[cnt    ]------
+
+}
+END -- gr8
+END -- VBox1
+END -- almi550
+
+TABLES
+lph_file
+ATTRIBUTES
+ButtonEdit lph01=lph_file.lph01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ComboBox lph24=lph_file.lph24, tabIndex=29, noEntry, not null, items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+Edit lph02=lph_file.lph02, tabIndex=2;
+Edit lph25=lph_file.lph25, tabIndex=30, noEntry;
+Label label1:Label1, text=%"POS";
+ComboBox lphpos=lph_file.lphpos, tabIndex=3, not null, items=(("1", "Add-No passed"),("2", "Modify-No passed"),("3", "Passed"));
+DateEdit lph26=lph_file.lph26, tabIndex=31, noEntry;
+Group gb1:gb1, text="Card Options";
+CheckBox lph04=lph_file.lph04, tabIndex=4, default = "N", text="lph04", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lph06=lph_file.lph06, tabIndex=5, default = "N", text="lph06", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lph37=lph_file.lph37, tabIndex=6, default = "N", text=%"lph37", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit lph38=lph_file.lph38, tabIndex=7, not null;
+Edit lph39=lph_file.lph39, tabIndex=8, not null;
+CheckBox lph03=lph_file.lph03, tabIndex=9, default = "N", text=%"lph03", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lph36=lph_file.lph36, tabIndex=10, default = "N", text="lph36", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit lph30=lph_file.lph30, tabIndex=11;
+CheckBox lph46=lph_file.lph46, tabIndex=12, default = "N", text="lph46", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb2:gb2, text="Effective date";
+ComboBox lph09=lph_file.lph09, tabIndex=32, not null, items=(("0", "Indefinitely"),("1", "Appointed Date"),("2", "Specified length"));
+DateEdit lph10=lph_file.lph10, tabIndex=33;
+Edit lph11=lph_file.lph11, tabIndex=34;
+CheckBox lph12=lph_file.lph12, tabIndex=35, default = "N", text="lph12", not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox lph13=lph_file.lph13, tabIndex=36, not null, items=(("0", "Integral"),("1", "Consumption limit"),("2", "Consumer number"));
+Edit lph14=lph_file.lph14, tabIndex=37;
+Edit lph15=lph_file.lph15, tabIndex=38;
+Edit lph16=lph_file.lph16, tabIndex=39;
+Group gb6:gb6, text="Store Set";
+Edit lph43=lph_file.lph43, tabIndex=13, not null;
+Edit lph44=lph_file.lph44, tabIndex=14, not null;
+CheckBox lph05=lph_file.lph05, tabIndex=15, default = "N", text="lph05", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit lph08=lph_file.lph08, tabIndex=16, not null;
+CheckBox lph07=lph_file.lph07, tabIndex=17, default = "N", text="lph07", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lph40=lph_file.lph40, tabIndex=18, default = "N", text="lph40", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit lph41=lph_file.lph41, tabIndex=19, not null;
+Edit lph42=lph_file.lph42, tabIndex=20, not null;
+Group gb7:gb7, text="Encoding Rules";
+Edit lph32=lph_file.lph32, tabIndex=40, not null, required;
+Edit lph33=lph_file.lph33, tabIndex=41, not null, required;
+Edit lph34=lph_file.lph34, tabIndex=42, not null, required;
+Edit lph35=lph_file.lph35, tabIndex=43, not null, required;
+Group gb3:gb3, text="Integral set";
+Edit lph28=lph_file.lph28, tabIndex=21, not null;
+Edit lph29=lph_file.lph29, tabIndex=22, not null;
+RadioGroup lph17=lph_file.lph17, tabIndex=23, not null, items=(("0", "no"),("1", "Month"),("2", "Date"),("3", "Date Assigned"));
+Edit lph18=lph_file.lph18, tabIndex=24;
+Edit lph19=lph_file.lph19, tabIndex=25;
+Edit lph31=lph_file.lph31, tabIndex=26;
+Edit lph311=lph_file.lph311, tabIndex=27;
+Edit lph20=lph_file.lph20, tabIndex=28;
+Group gb4:gb4, text="Card-issuing rules";
+ComboBox lph21=lph_file.lph21, tabIndex=44, not null, items=(("0", "Consumer comes with"),("1", "Card sales"));
+Edit lph22=lph_file.lph22, tabIndex=45, not null;
+Edit lph23=lph_file.lph23, tabIndex=46, not null;
+Edit lph45=lph_file.lph45, tabIndex=57, not null;
+ButtonEdit lph47=lph_file.lph47, action=controlp, tabIndex=59, not null, image="zoom.png";
+Edit lph47_desc=formonly.lph47_desc type DECIMAL(20,2), tabIndex=60, noEntry;
+ButtonEdit lph48=lph_file.lph48, action=controlp, tabIndex=58, image="zoom.png";
+Edit lph48_desc=formonly.lph48_desc type DECIMAL(20,2), tabIndex=61, noEntry;
+Edit lphuser=formonly.lphuser type VARCHAR, tabIndex=49, noEntry;
+DateEdit lphcrat=formonly.lphcrat type CHAR, tabIndex=54, noEntry;
+Edit lphacti=formonly.lphacti type VARCHAR, tabIndex=51, noEntry;
+Edit lphgrup=formonly.lphgrup type VARCHAR, tabIndex=52, noEntry;
+Edit lphmodu=formonly.lphmodu type VARCHAR, tabIndex=50, noEntry;
+DateEdit lphdate=formonly.lphdate type DATE, tabIndex=53, noEntry;
+Edit lphoriu=lph_file.lphoriu, tabIndex=56, noEntry;
+Edit lphorig=lph_file.lphorig, tabIndex=55, noEntry;
+Edit idx=formonly.idx type CHAR, tabIndex=47;
+Edit cnt=formonly.cnt type CHAR, tabIndex=48;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lph_file.lph01,lph_file.lph24,formonly.imgmksg,lph_file.lph02,lph_file.lph25,lph_file.lphpos,lph_file.lph26,lph_file.lph04,lph_file.lph06,lph_file.lph03,lph_file.lph36,lph_file.lph30,lph_file.lph09,lph_file.lph10,lph_file.lph11,lph_file.lph12,lph_file.lph13,lph_file.lph14,lph_file.lph15,lph_file.lph16,lph_file.lph05,lph_file.lph08,lph_file.lph07,lph_file.lph32,lph_file.lph33,lph_file.lph34,lph_file.lph35,lph_file.lph28,lph_file.lph29,lph_file.lph17,lph_file.lph18,lph_file.lph19,lph_file.lph31,lph_file.lph311,lph_file.lph20,lph_file.lph21,lph_file.lph22,lph_file.lph23,formonly.lphuser,formonly.lphcrat,formonly.lphacti,formonly.lphgrup,formonly.lphmodu,formonly.lphdate,lph_file.lphoriu,lph_file.lphorig,formonly.idx,formonly.cnt,lph_file.lph37,lph_file.lph38,lph_file.lph39,lph_file.lph40,lph_file.lph41,lph_file.lph42,lph_file.lph43,lph_file.lph44,lph_file.lph45,lph_file.lph46,lph_file.lph48,lph_file.lph47,formonly.lph47_desc,formonly.lph48_desc)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq530.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq530")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2269
+{
+ Delivery Note #    [oga01           ]
+ Delivery Date      [oga02       ]
+ Modified Version   [oga06       ]
+ Accounts Customer  [oga03       ][oga032    ]
+}
+END -- gr2269
+Grid gr2270
+{
+ Shipping Customer  [oga04       ][occ02     ]
+ Employee           [oga14       ]
+ Department         [oga15       ]
+[ogaconf                      ]
+}
+END -- gr2270
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_oem
+{
+[oem0|oem1|oem04             |oem06       |oem07  |oem10n               |oem11n   |oem12n       ]
+[oem0|oem1|oem04             |oem06       |oem07  |oem10n               |oem11n   |oem12n       ]
+[oem0|oem1|oem04             |oem06       |oem07  |oem10n               |oem11n   |oem12n       ]
+[oem0|oem1|oem04             |oem06       |oem07  |oem10n               |oem11n   |oem12n       ]
+[oem0|oem1|oem04             |oem06       |oem07  |oem10n               |oem11n   |oem12n       ]
+[oem0|oem1|oem04             |oem06       |oem07  |oem10n               |oem11n   |oem12n       ]
+[oem0|oem1|oem04             |oem06       |oem07  |oem10n               |oem11n   |oem12n       ]
+[oem0|oem1|oem04             |oem06       |oem07  |oem10n               |oem11n   |oem12n       ]
+[oem0|oem1|oem04             |oem06       |oem07  |oem10n               |oem11n   |oem12n       ]
+[oem0|oem1|oem04             |oem06       |oem07  |oem10n               |oem11n   |oem12n       ]
+
+}
+END -- s_oem
+Grid gr2271
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2271
+END -- VBox1
+END -- axmq530
+
+TABLES
+oem_file,
+oga_file
+ATTRIBUTES
+Edit oga01=oga_file.oga01, tabIndex=1;
+DateEdit oga02=oga_file.oga02, tabIndex=2;
+Edit oga06=oga_file.oga06, tabIndex=3;
+ButtonEdit oga03=formonly.oga03 type CHAR, action=controlp, tabIndex=4, image="zoom";
+Edit oga032=oga_file.oga032, tabIndex=5, noEntry;
+ButtonEdit oga04=formonly.oga04 type CHAR, action=controlp, tabIndex=6, image="zoom";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=7, noEntry;
+ButtonEdit oga14=formonly.oga14 type CHAR, action=controlp, tabIndex=8, image="zoom";
+ButtonEdit oga15=formonly.oga15 type CHAR, action=controlp, tabIndex=9, image="zoom";
+CheckBox ogaconf=oga_file.ogaconf, tabIndex=10, text="Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oem0=oem_file.oem03, tabIndex=11, title="Ln";
+Edit oem1=oem_file.oem08, tabIndex=12, title="Ver";
+DateEdit oem04=oem_file.oem04, tabIndex=13, title="Date of Amendment";
+Edit oem06=oem_file.oem06, tabIndex=14, title="Modified By";
+Edit oem07=oem_file.oem07, tabIndex=15, title="Action";
+Edit oem10n=oem_file.oem10n, tabIndex=16, title="Product No.";
+Edit oem11n=oem_file.oem11n, tabIndex=17, title="Lot#";
+Edit oem12n=oem_file.oem12n, tabIndex=18, title="Qty";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oem(oem_file.oem03,oem_file.oem08,oem_file.oem04,oem_file.oem06,oem_file.oem07,oem_file.oem10n,oem_file.oem11n,oem_file.oem12n)
+SCREEN RECORD Undefined(oga_file.oga01,oga_file.oga02,oga_file.oga06,formonly.oga03,oga_file.oga032,formonly.oga04,formonly.occ02,formonly.oga14,formonly.oga15,oga_file.ogaconf,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

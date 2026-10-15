@@ -1,0 +1,137 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi201")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+HBox hb3
+Grid gr3046
+{
+ Warehouse           [imd01       ]
+ Warehouse Name      [imd02               ]
+ In Charge           [imd06               ]
+ Phone               [imd07               ]
+ Address             [imd03                               ]
+                     [                                    ]
+                     [                                    ]
+                     [                                    ]
+ <G group1                                               >
+ [dummy01       ]
+ <                                                       >
+
+}
+END -- gr3046
+Grid gr3047
+{
+  Stock/Wip               [imd10        ][imgmksg]
+  Used?                   [imd11        ][       ]
+  Bonded?                 [imd13        ]
+  MRP?                    [imd12        ]
+  W/O Issuing Priority    [imd14        ]
+  Sales Delivery Priority [imd15        ]
+  Inventory account       [imd08        ]
+  Inventory Account 2     [imd081       ]
+  Inventory account       [imd21        ]
+  Inventory Account 2     [imd211       ]
+  Cost W/H                [imd09        ]
+
+}
+END -- gr3047
+END -- hb3
+END -- page01
+Page info(text="Info")
+Grid gr3048
+{
+ Record Owner        [imduser   ] Last Modified by    [imdmodu   ] Data Valid Code     [imdacti   ]
+ Department          [imdgrup   ] Create/Modify Date  [imddate   ]
+ Record Orig.        [imdoriu   ]
+ Dept Orig.          [imdorig   ]
+}
+END -- gr3048
+END -- info
+END -- folder01
+Table s_ime
+{
+[ime02     |ime03     |ime04|ime05  |ime0|ime07  |ime12     |ime08  |ime09             |ime091              |ime13           |ime131          |ime10                       |ime11             |ime17     |imeacti]
+[ime02     |ime03     |ime04|ime05  |ime0|ime07  |ime12     |ime08  |ime09             |ime091              |ime13           |ime131          |ime10                       |ime11             |ime17     |imeacti]
+[ime02     |ime03     |ime04|ime05  |ime0|ime07  |ime12     |ime08  |ime09             |ime091              |ime13           |ime131          |ime10                       |ime11             |ime17     |imeacti]
+[ime02     |ime03     |ime04|ime05  |ime0|ime07  |ime12     |ime08  |ime09             |ime091              |ime13           |ime131          |ime10                       |ime11             |ime17     |imeacti]
+[ime02     |ime03     |ime04|ime05  |ime0|ime07  |ime12     |ime08  |ime09             |ime091              |ime13           |ime131          |ime10                       |ime11             |ime17     |imeacti]
+[ime02     |ime03     |ime04|ime05  |ime0|ime07  |ime12     |ime08  |ime09             |ime091              |ime13           |ime131          |ime10                       |ime11             |ime17     |imeacti]
+[ime02     |ime03     |ime04|ime05  |ime0|ime07  |ime12     |ime08  |ime09             |ime091              |ime13           |ime131          |ime10                       |ime11             |ime17     |imeacti]
+[ime02     |ime03     |ime04|ime05  |ime0|ime07  |ime12     |ime08  |ime09             |ime091              |ime13           |ime131          |ime10                       |ime11             |ime17     |imeacti]
+[ime02     |ime03     |ime04|ime05  |ime0|ime07  |ime12     |ime08  |ime09             |ime091              |ime13           |ime131          |ime10                       |ime11             |ime17     |imeacti]
+[ime02     |ime03     |ime04|ime05  |ime0|ime07  |ime12     |ime08  |ime09             |ime091              |ime13           |ime131          |ime10                       |ime11             |ime17     |imeacti]
+[ime02     |ime03     |ime04|ime05  |ime0|ime07  |ime12     |ime08  |ime09             |ime091              |ime13           |ime131          |ime10                       |ime11             |ime17     |imeacti]
+
+}
+END -- s_ime
+Grid gr3049
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3049
+END -- vb4
+END -- aimi201
+
+TABLES
+ime_file,
+imd_file
+ATTRIBUTES
+ButtonEdit imd01=imd_file.imd01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Assign ";
+Edit imd02=imd_file.imd02, tabIndex=2;
+Edit imd06=imd_file.imd06, tabIndex=3;
+Edit imd07=imd_file.imd07, tabIndex=4;
+TextEdit imd03=imd_file.imd03, tabIndex=5, stretch=NONE, wantNoReturns;
+Group group1:Group1, text=%"";
+Label dummy01:dummy01, text=%"dummy01";
+ComboBox imd10=imd_file.imd10, tabIndex=6, not null, required, items=(("S", "STORE W/H"),("I", "Invoices W/H"),("W", "WIP W/H"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ComboBox imd11=imd_file.imd11, tabIndex=7, not null, required, items=(("Y", "Usable W/H"),("N", "Unusable W/H"));
+ComboBox imd13=imd_file.imd13, tabIndex=8, not null, required, items=(("Y", "Bonded"),("N", "Non Bonded"));
+ComboBox imd12=imd_file.imd12, tabIndex=9, not null, required, items=(("Y", "MPS/MRP Usable"),("N", "MPS/MRP Unusable"));
+Edit imd14=imd_file.imd14, tabIndex=10, not null, required;
+Edit imd15=imd_file.imd15, tabIndex=11, not null, required;
+ButtonEdit imd08=imd_file.imd08, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Inv.Acct";
+ButtonEdit imd081=imd_file.imd081, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Inv.Acct";
+ButtonEdit imd21=imd_file.imd21, action=controlp, tabIndex=36, image="zoom", comment="<^P>Qry Inv.Acct";
+ButtonEdit imd211=imd_file.imd211, action=controlp, tabIndex=37, image="zoom", comment="<^P>Qry Inv.Acct";
+Edit imd09=imd_file.imd09, tabIndex=35;
+Edit imduser=imd_file.imduser, tabIndex=14, noEntry;
+Edit imdmodu=imd_file.imdmodu, tabIndex=15, noEntry;
+Edit imdacti=imd_file.imdacti, tabIndex=16, noEntry;
+Edit imdgrup=imd_file.imdgrup, tabIndex=33, noEntry;
+DateEdit imddate=imd_file.imddate, tabIndex=34, noEntry;
+Edit imdoriu=imd_file.imdoriu, tabIndex=40, noEntry;
+Edit imdorig=imd_file.imdorig, tabIndex=41, noEntry;
+Edit ime02=formonly.ime02 type CHAR, tabIndex=17, title="Location", comment="Assign Location No. of W/H No.";
+Edit ime03=ime_file.ime03, tabIndex=18, title="Name", scroll;
+Edit ime04=ime_file.ime04, tabIndex=19, title="Cate", noEntry;
+CheckBox ime05=ime_file.ime05, tabIndex=20, title="Usable", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ime0=ime_file.ime06, tabIndex=21, title="MRP", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ime07=ime_file.ime07, tabIndex=22, title="Bonded", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox ime12=ime_file.ime12, tabIndex=23, title="VIM", items=(("0", "Not VIM"),("1", "VIM Keep Location"),("2", "VIM Account Location"));
+ComboBox ime08=ime_file.ime08, tabIndex=24, title="Method", items=(("0", %"Temporary Enter"),("1", %"Use Item [ima] Acct.Title"),("2", %"user location [ime] account title[ime]Account"));
+ButtonEdit ime09=ime_file.ime09, action=controlp, tabIndex=25, title="Inventory Account", image="zoom", comment="<^P> Qry Account      ";
+ButtonEdit ime091=ime_file.ime091, action=controlp, tabIndex=26, title="Inventory Account 2", image="zoom", comment="<^P> Qry Account      ";
+ButtonEdit ime13=ime_file.ime13, action=controlp, tabIndex=38, title="controlp", image="zoom";
+ButtonEdit ime131=ime_file.ime131, action=controlp, tabIndex=39, title="controlp", image="zoom";
+Edit ime10=ime_file.ime10, tabIndex=27, title="Pro Material Iss Proiority";
+Edit ime11=ime_file.ime11, tabIndex=28, title="Sale St-o Priority";
+CheckBox ime17=ime_file.ime17, tabIndex=29, title="ime17", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox imeacti=ime_file.imeacti, tabIndex=30, title=%"Valid Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=31;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=32, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ime(formonly.ime02,ime_file.ime03,ime_file.ime04,ime_file.ime05,ime_file.ime06,ime_file.ime07,ime_file.ime12,ime_file.ime08,ime_file.ime09,ime_file.ime091,ime_file.ime13,ime_file.ime131,ime_file.ime10,ime_file.ime11,ime_file.ime17,ime_file.imeacti)
+SCREEN RECORD Undefined(imd_file.imd01,imd_file.imd02,imd_file.imd06,imd_file.imd07,imd_file.imd03,imd_file.imd10,formonly.imgmksg,imd_file.imd11,imd_file.imd13,imd_file.imd12,imd_file.imd14,imd_file.imd15,imd_file.imd08,imd_file.imd081,imd_file.imd21,imd_file.imd211,imd_file.imd09,imd_file.imduser,imd_file.imdmodu,imd_file.imdacti,imd_file.imdgrup,imd_file.imddate,imd_file.imdoriu,imd_file.imdorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

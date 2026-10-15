@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri088_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(action=pg, text=%"Page1")
+VBox VBox1
+Group Group5(text=%" ")
+HBox HBox1
+Grid Grid6
+{
+
+   [hrdu02    ][hrdu01               ]
+               [hrdu02_name          ]
+
+}
+END -- Grid6
+Grid Grid1
+{
+
+ [chkhrdta04           ]
+ [chkhrdta04_007       ]
+
+}
+END -- Grid1
+Grid Grid7
+{
+
+[hrdta04_l |hrdta04              ]
+[hrdta04_00|hrdta04_007          ]
+
+}
+END -- Grid7
+END -- HBox1
+END -- Group5
+Table Table1
+{
+[x       |hrat01  |hrat02  |hrao02  |hras04  |hrat25  |hrdu04  |hratid  ]
+[x       |hrat01  |hrat02  |hrao02  |hras04  |hrat25  |hrdu04  |hratid  ]
+[x       |hrat01  |hrat02  |hrao02  |hras04  |hrat25  |hrdu04  |hratid  ]
+[x       |hrat01  |hrat02  |hrao02  |hras04  |hrat25  |hrdu04  |hratid  ]
+[x       |hrat01  |hrat02  |hrao02  |hras04  |hrat25  |hrdu04  |hratid  ]
+[x       |hrat01  |hrat02  |hrao02  |hras04  |hrat25  |hrdu04  |hratid  ]
+[x       |hrat01  |hrat02  |hrao02  |hras04  |hrat25  |hrdu04  |hratid  ]
+[x       |hrat01  |hrat02  |hrao02  |hras04  |hrat25  |hrdu04  |hratid  ]
+[x       |hrat01  |hrat02  |hrao02  |hras04  |hrat25  |hrdu04  |hratid  ]
+[x       |hrat01  |hrat02  |hrao02  |hras04  |hrat25  |hrdu04  |hratid  ]
+
+
+
+
+}
+END -- Table1
+Grid Grid4
+{
+   -------- [label|idx  |lab|cnt  ]-------[label1|cn2  ]
+
+
+
+
+}
+END -- Grid4
+END -- VBox1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Label hrdu02:hrdu02, text=%"hrdu02";
+ButtonEdit hrdu01=formonly.hrdu02, action=controlp, tabIndex=10, not null, required, image="zoom";
+Edit hrdu02_name=formonly.hrdu02_name, tabIndex=13;
+CheckBox chkhrdta04=formonly.chkhrdta04, tabIndex=14, default = "N", text=%"调整统筹基数", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox chkhrdta04_007=formonly.chkhrdta04_007, tabIndex=15, default = "N", text=%"调整公积金基数", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label hrdta04_l:hrdta04_l, text=%" ";
+Edit hrdta04=formonly.hrdta04, tabIndex=11;
+Label hrdta04_00:hrdta04_007_l, text=%" ";
+Edit hrdta04_007=formonly.hrdta04_007, tabIndex=16;
+CheckBox x=formonly.X, tabIndex=17, title=%" ", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit hrat01=formonly.hrat01, tabIndex=1, title=%"hrat01", noEntry, not null, required;
+Edit hrat02=formonly.hrat02, tabIndex=2, title=%"hrat02", noEntry;
+Edit hrao02=formonly.hrao02, tabIndex=3, title=%"hrao02", noEntry;
+Edit hras04=formonly.hras04, tabIndex=4, title=%"hras04", noEntry;
+Edit hrat25=formonly.hrat25, tabIndex=5, title=%"hrat25", noEntry, not null, required;
+Edit hrdu04=formonly.hrdu04, tabIndex=12, title=%"hrdu04", noEntry, not null, required;
+Edit hratid=formonly.hratid, tabIndex=6, title=%"hratid", noEntry, not null, required;
+Label label:Label11, text=%"Label10";
+Edit idx=formonly.idx, tabIndex=7;
+Label lab:Label10, text=%"/";
+Edit cnt=formonly.cnt, tabIndex=8;
+Label label1:Label12, text=%"Label12";
+Edit cn2=formonly.cn2, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2,formonly.hrdu02,formonly.hrdta04,formonly.hrdu02_name,formonly.chkhrdta04,formonly.chkhrdta04_007,formonly.hrdta04_007)
+SCREEN RECORD s_sch(formonly.X,formonly.hrat01,formonly.hrat02,formonly.hrao02,formonly.hras04,formonly.hrat25,formonly.hrdu04,formonly.hratid)
+END -- INSTRUCTIONS
+

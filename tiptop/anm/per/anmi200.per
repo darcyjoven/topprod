@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi200")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Group gb2127
+Grid gr2918
+{
+ Media No.   [nsa01               ]    Media File Name [nsa04     ]
+ Media Name  [nsa02               ]    Export Type     [nsa06     ]
+ Media Type  [nsa03               ]    Remark          [nsa05                     ]
+
+
+}
+END -- gr2918
+END -- gb2127
+END -- page01
+END -- folder01
+Table tb3
+{
+[nsb02   |nsb03   |nsb04          |nsb05         |gat03     |nsb06      |nsb07   |nsb08   |nsb09   |nsb10   |nsb16      |nsb18    |nsb21     |nsb11   |nsb12   |nsb13   |nsb14   |nsb15   |nsb19   |nsb22     |nsb20   |nsb17   |nsb23     ]
+[nsb02   |nsb03   |nsb04          |nsb05         |gat03     |nsb06      |nsb07   |nsb08   |nsb09   |nsb10   |nsb16      |nsb18    |nsb21     |nsb11   |nsb12   |nsb13   |nsb14   |nsb15   |nsb19   |nsb22     |nsb20   |nsb17   |nsb23     ]
+[nsb02   |nsb03   |nsb04          |nsb05         |gat03     |nsb06      |nsb07   |nsb08   |nsb09   |nsb10   |nsb16      |nsb18    |nsb21     |nsb11   |nsb12   |nsb13   |nsb14   |nsb15   |nsb19   |nsb22     |nsb20   |nsb17   |nsb23     ]
+[nsb02   |nsb03   |nsb04          |nsb05         |gat03     |nsb06      |nsb07   |nsb08   |nsb09   |nsb10   |nsb16      |nsb18    |nsb21     |nsb11   |nsb12   |nsb13   |nsb14   |nsb15   |nsb19   |nsb22     |nsb20   |nsb17   |nsb23     ]
+[nsb02   |nsb03   |nsb04          |nsb05         |gat03     |nsb06      |nsb07   |nsb08   |nsb09   |nsb10   |nsb16      |nsb18    |nsb21     |nsb11   |nsb12   |nsb13   |nsb14   |nsb15   |nsb19   |nsb22     |nsb20   |nsb17   |nsb23     ]
+
+}
+END -- tb3
+Grid gr2920
+{
+ ---------- Rows [cnt   ]  ----------
+
+
+}
+END -- gr2920
+END -- VBox1
+END -- anmi200
+
+TABLES
+nsb_file,
+gat_file,
+nsa_file
+ATTRIBUTES
+Edit nsa01=nsa_file.nsa01, tabIndex=2, not null, required;
+Edit nsa04=nsa_file.nsa04, tabIndex=5, not null, required;
+Edit nsa02=nsa_file.nsa02, tabIndex=3;
+ComboBox nsa06=nsa_file.nsa06, tabIndex=6, default = "1", not null, required, items=(("1", "Fixed Column Width"),("2", "Separated by Comma"),("3", "Separated by '|'"));
+ComboBox nsa03=nsa_file.nsa03, tabIndex=4, not null, required, items=(("2", "Bank Deposit/Withdrawal"));
+Edit nsa05=nsa_file.nsa05, tabIndex=7;
+Edit nsb02=nsb_file.nsb02, tabIndex=8, title="Serial No.", not null, required;
+ComboBox nsb03=nsb_file.nsb03, tabIndex=9, title="Division Code", not null, required, items=(("1", "First record"),("2", "Trans."),("3", "Detail"),("4", "Last record"));
+ComboBox nsb04=nsb_file.nsb04, tabIndex=10, default = "2", title="Source", not null, required, items=(("1", "Fixed Value"),("2", "Table"),("3", "System Date"),("4", "Line-break Symbol"),("41", "Line-break (Not for the last)"),("5", "Last line-break symbol"),("6", "Cathay Check Code"),("61", "JIH SUN Check Code"),("62", "Taiwan Business Bank Check Code"),("63", "ChinaTrust Check Code"),("7", "Date entered"),("8", "8"),("91", "Total of No.1"),("92", "Total of No.2"),("93", "Total of No.3"),("94", "Total of No.4"),("95", "Total of No.5"),("9A", "String Link Value"));
+ButtonEdit nsb05=nsb_file.nsb05, action=CONTROLP, tabIndex=11, title="File No.", image="zoom";
+Edit gat03=gat_file.gat03, tabIndex=12, title="Table Name", noEntry;
+ButtonEdit nsb06=nsb_file.nsb06, action=CONTROLP, tabIndex=13, title="Field Code", image="zoom";
+Edit nsb07=nsb_file.nsb07, tabIndex=14, title="Field Name", noEntry;
+ComboBox nsb08=nsb_file.nsb08, tabIndex=15, title="Attribute", not null, required, items=(("C", "Char"),("N", "Numeric"),("D", "Datetime"),("L", "Line-break Symbol"));
+Edit nsb09=nsb_file.nsb09, tabIndex=16, title="Fixed Value";
+Edit nsb10=nsb_file.nsb10, tabIndex=17, title="Fixed Text";
+Edit nsb16=nsb_file.nsb16, tabIndex=18, title="Length transferred";
+Edit nsb18=nsb_file.nsb18, tabIndex=19, title="Decimal Places";
+CheckBox nsb21=nsb_file.nsb21, tabIndex=28, default = "N", title="With decimal point", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox nsb11=nsb_file.nsb11, tabIndex=20, title="Total Level 1", items=(("+", "+"),("-", "-"),("0", "0"),("Item1", ""));
+ComboBox nsb12=nsb_file.nsb12, tabIndex=21, title="Total Level 2", items=(("+", "+"),("-", "-"),("0", "0"));
+ComboBox nsb13=nsb_file.nsb13, tabIndex=22, title="Total Level 3", items=(("+", "+"),("-", "-"),("0", "0"));
+ComboBox nsb14=nsb_file.nsb14, tabIndex=23, title="Total Level 4", items=(("+", "+"),("-", "-"),("0", "0"));
+ComboBox nsb15=nsb_file.nsb15, tabIndex=24, title="Total Level 5", items=(("+", "+"),("-", "-"),("0", "0"));
+ComboBox nsb19=nsb_file.nsb19, tabIndex=25, title="Filling in Blank", not null, required, items=(("1", "Left aligned with blanks in right"),("2", "Right aligned with zeros in left"),("3", "Right aligned with blanks in left"),("4", "Left aligned with zeros in right"),("5", "Left aligned with no blanks in right
+"));
+ComboBox nsb22=nsb_file.nsb22, tabIndex=29, title="nsb22", items=(("+", "+"),("-", "-"),("0", "0"));
+CheckBox nsb20=nsb_file.nsb20, tabIndex=26, default = "Y", title="Blank allowed", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nsb17=nsb_file.nsb17, tabIndex=27, title="Remark";
+ComboBox nsb23=nsb_file.nsb23, tabIndex=30, title=%"nsb23", items=(("1", "Holomorph"),("2", "Half size"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nsb(nsb_file.nsb02,nsb_file.nsb03,nsb_file.nsb04,nsb_file.nsb05,gat_file.gat03,nsb_file.nsb06,nsb_file.nsb07,nsb_file.nsb08,nsb_file.nsb09,nsb_file.nsb10,nsb_file.nsb16,nsb_file.nsb18,nsb_file.nsb21,nsb_file.nsb11,nsb_file.nsb12,nsb_file.nsb13,nsb_file.nsb14,nsb_file.nsb15,nsb_file.nsb19,nsb_file.nsb22,nsb_file.nsb20,nsb_file.nsb17,nsb_file.nsb23)
+SCREEN RECORD Undefined(nsa_file.nsa01,nsa_file.nsa04,nsa_file.nsa02,nsa_file.nsa06,nsa_file.nsa03,nsa_file.nsa05,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjr400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apjr400")
+VBox VBox1
+Grid gr4677
+{
+ <G grpqbe                                     >
+  Project No.         [imgs11              ]
+  Item No.            [imgs01              ]
+  WH                  [imgs02              ]
+  Location            [imgs03              ]
+  Lot No.             [imgs04              ]
+ <                                             >
+
+}
+END -- gr4677
+Grid gr4678
+{
+ [more                                 ]
+
+}
+END -- gr4678
+END -- VBox1
+END -- apjr400
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+ButtonEdit imgs11=formonly.imgs11 type VARCHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit imgs01=formonly.imgs01 type VARCHAR, action=controlp, tabIndex=2, image="zoom.png";
+Edit imgs02=formonly.imgs02 type VARCHAR, tabIndex=3;
+Edit imgs03=formonly.imgs03 type VARCHAR, tabIndex=4;
+Edit imgs04=formonly.imgs04 type VARCHAR, tabIndex=5;
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.imgs11,formonly.imgs01,formonly.imgs02,formonly.imgs03,formonly.imgs04,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi002")
+VBox VBox1
+Folder pc740
+Page page01(text="Main")
+VBox VBox2
+Table s_nad
+{
+[nad01     |azi02       |nad02          |nad03          |nadacti   ]
+[nad01     |azi02       |nad02          |nad03          |nadacti   ]
+[nad01     |azi02       |nad02          |nad03          |nadacti   ]
+[nad01     |azi02       |nad02          |nad03          |nadacti   ]
+[nad01     |azi02       |nad02          |nad03          |nadacti   ]
+[nad01     |azi02       |nad02          |nad03          |nadacti   ]
+[nad01     |azi02       |nad02          |nad03          |nadacti   ]
+[nad01     |azi02       |nad02          |nad03          |nadacti   ]
+[nad01     |azi02       |nad02          |nad03          |nadacti   ]
+[nad01     |azi02       |nad02          |nad03          |nadacti   ]
+
+}
+END -- s_nad
+END -- VBox2
+END -- page01
+END -- pc740
+Grid gr4016
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4016
+END -- VBox1
+END -- anmi002
+
+TABLES
+nad_file
+ATTRIBUTES
+ButtonEdit nad01=nad_file.nad01, action=controlp, tabIndex=1, title="Currency", not null, required, image="zoom", comment="<^P>Qry Approval Level";
+Edit azi02=formonly.azi02 type VARCHAR, tabIndex=2, title="Show", noEntry;
+ComboBox nad02=nad_file.nad02, tabIndex=3, title="Interest Type", not null, required, queryEditable, items=(("0", %"Current"),("1", %"Airliner a year"),("2", %"Airliner two years"),("3", %"Airliner three years"),("4", %"Airliner five years"),("5", %"others"));
+Edit nad03=nad_file.nad03, tabIndex=4, title="Interest Rate", not null, required;
+CheckBox nadacti=nad_file.nadacti, tabIndex=5, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nad(nad_file.nad01,formonly.azi02,nad_file.nad02,nad_file.nad03,nad_file.nadacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

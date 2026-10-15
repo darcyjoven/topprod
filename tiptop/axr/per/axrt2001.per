@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt2001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrt2001")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2762
+{
+ L/C No.             [ola04               ]
+
+}
+END -- gr2762
+END -- page01
+END -- folder01
+Table s_ofa
+{
+[ofa02    |ofa01          |ofa50               |ofaconf |olc12            |olcconf  |olc20        ]
+[ofa02    |ofa01          |ofa50               |ofaconf |olc12            |olcconf  |olc20        ]
+[ofa02    |ofa01          |ofa50               |ofaconf |olc12            |olcconf  |olc20        ]
+[ofa02    |ofa01          |ofa50               |ofaconf |olc12            |olcconf  |olc20        ]
+[ofa02    |ofa01          |ofa50               |ofaconf |olc12            |olcconf  |olc20        ]
+[ofa02    |ofa01          |ofa50               |ofaconf |olc12            |olcconf  |olc20        ]
+[ofa02    |ofa01          |ofa50               |ofaconf |olc12            |olcconf  |olc20        ]
+[ofa02    |ofa01          |ofa50               |ofaconf |olc12            |olcconf  |olc20        ]
+[ofa02    |ofa01          |ofa50               |ofaconf |olc12            |olcconf  |olc20        ]
+[ofa02    |ofa01          |ofa50               |ofaconf |olc12            |olcconf  |olc20        ]
+
+}
+END -- s_ofa
+Grid gr2763
+{
+ -- Total [tot1                ] --- Total [tot2                ] - Total [tot3                ]-
+
+}
+END -- gr2763
+END -- VBox1
+END -- axrt2001
+
+TABLES
+olc_file,
+ofa_file
+ATTRIBUTES
+Edit ola04=formonly.ola04 type CHAR, tabIndex=1, noEntry;
+DateEdit ofa02=ofa_file.ofa02, tabIndex=2, title="INV.Date", noEntry;
+Edit ofa01=ofa_file.ofa01, tabIndex=3, title="INVOICE NO", noEntry;
+Edit ofa50=ofa_file.ofa50, tabIndex=4, title="NV.Amount", noEntry, not null, required;
+CheckBox ofaconf=ofa_file.ofaconf, tabIndex=5, title="Confirm", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit olc12=olc_file.olc12, tabIndex=6, title="Negotiation Date", noEntry;
+CheckBox olcconf=olc_file.olcconf, tabIndex=7, title="Confirm", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit olc20=olc_file.olc20, tabIndex=8, title="Date Recorded", noEntry;
+Edit tot1=formonly.tot1 type CHAR, tabIndex=9, noEntry;
+Edit tot2=formonly.tot2 type CHAR, tabIndex=10, noEntry;
+Edit tot3=formonly.tot3 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ofa(ofa_file.ofa02,ofa_file.ofa01,ofa_file.ofa50,ofa_file.ofaconf,olc_file.olc12,olc_file.olcconf,olc_file.olc20)
+SCREEN RECORD Undefined(formonly.ola04,formonly.tot1,formonly.tot2,formonly.tot3)
+END -- INSTRUCTIONS
+

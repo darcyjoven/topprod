@@ -1,0 +1,137 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri044_p1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+  [label1    |hrcd01    |hrcd01_name         ]
+  [label2    |hrcd02              |hrcd03    ]    [label3    |hrcd04              |hrcd05    ]
+  [label4    |hrcd06    |hrcd07              ]               [hrcd08              ]
+  [label5    |hrcd12                                                                         ]
+             [                                                                               ]
+             [                                                                               ]
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Group Group1(text=%"Group1")
+Table Table1
+{
+[hrat01      |hrat02        |hrat04        |hrat05        |hrat25     |hrat19        ]
+[hrat01      |hrat02        |hrat04        |hrat05        |hrat25     |hrat19        ]
+[hrat01      |hrat02        |hrat04        |hrat05        |hrat25     |hrat19        ]
+[hrat01      |hrat02        |hrat04        |hrat05        |hrat25     |hrat19        ]
+[hrat01      |hrat02        |hrat04        |hrat05        |hrat25     |hrat19        ]
+
+}
+END -- Table1
+END -- Group1
+Folder Folder2
+Page Page3(text=%"Page3")
+Table Table2
+{
+[mhrcda05|mhrcda06|mhrcda07|mhrcda08|mhrcda09|mhrcda10|mhrcda15                 ]
+[mhrcda05|mhrcda06|mhrcda07|mhrcda08|mhrcda09|mhrcda10|mhrcda15                 ]
+[mhrcda05|mhrcda06|mhrcda07|mhrcda08|mhrcda09|mhrcda10|mhrcda15                 ]
+[mhrcda05|mhrcda06|mhrcda07|mhrcda08|mhrcda09|mhrcda10|mhrcda15                 ]
+[mhrcda05|mhrcda06|mhrcda07|mhrcda08|mhrcda09|mhrcda10|mhrcda15                 ]
+
+
+
+}
+END -- Table2
+END -- Page3
+Page Page4(text=%"Page4")
+Table Table4
+{
+[shrcda05|shrcda06|shrcda07|shrcda08|shrcda09|shrcda10|shrcda15                 ]
+[shrcda05|shrcda06|shrcda07|shrcda08|shrcda09|shrcda10|shrcda15                 ]
+[shrcda05|shrcda06|shrcda07|shrcda08|shrcda09|shrcda10|shrcda15                 ]
+[shrcda05|shrcda06|shrcda07|shrcda08|shrcda09|shrcda10|shrcda15                 ]
+[shrcda05|shrcda06|shrcda07|shrcda08|shrcda09|shrcda10|shrcda15                 ]
+
+
+
+}
+END -- Table4
+END -- Page4
+Page Page5(text=%"Page5")
+Table Table5
+{
+[yhrcda05|yhrcda06|yhrcda07|yhrcda08|yhrcda09|yhrcda10|yhrcda15                 ]
+[yhrcda05|yhrcda06|yhrcda07|yhrcda08|yhrcda09|yhrcda10|yhrcda15                 ]
+[yhrcda05|yhrcda06|yhrcda07|yhrcda08|yhrcda09|yhrcda10|yhrcda15                 ]
+[yhrcda05|yhrcda06|yhrcda07|yhrcda08|yhrcda09|yhrcda10|yhrcda15                 ]
+[yhrcda05|yhrcda06|yhrcda07|yhrcda08|yhrcda09|yhrcda10|yhrcda15                 ]
+
+
+
+}
+END -- Table5
+END -- Page5
+END -- Folder2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"Label1";
+ButtonEdit hrcd01=formonly.hrcd01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrcd01_name=formonly.hrcd01_name, tabIndex=2, noEntry;
+Label label2:Label2, text=%"Label2";
+DateEdit hrcd02=formonly.hrcd02 type DATE, tabIndex=3, not null, required;
+Edit hrcd03=formonly.hrcd03, tabIndex=4, picture="XX:XX";
+Label label3:Label3, text=%"Label3";
+DateEdit hrcd04=formonly.hrcd04 type DATE, tabIndex=5, not null, required;
+Edit hrcd05=formonly.hrcd05, tabIndex=6, picture="XX:XX";
+Label label4:Label4, text=%"Label4";
+Edit hrcd06=formonly.hrcd06, tabIndex=7, not null, required;
+ComboBox hrcd07=formonly.hrcd07, tabIndex=8, noEntry, items=(("001", "001"),("002", "002"),("003", "003"),("004", "004"),("005", "005"));
+CheckBox hrcd08=formonly.hrcd08, tabIndex=9, text=%"CheckBox1", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label5:Label5, text=%"Label5";
+TextEdit hrcd12=formonly.hrcd12, tabIndex=10;
+ButtonEdit hrat01=formonly.hrat01, action=controlp, tabIndex=11, title=%"Edit1", not null, required, image="zoom";
+Edit hrat02=formonly.hrat02, tabIndex=12, title=%"Edit2";
+ButtonEdit hrat04=formonly.hrat04, action=controlp, tabIndex=13, title=%"Edit1", image="zoom";
+ButtonEdit hrat05=formonly.hrat05, action=controlp, tabIndex=14, title=%"Edit2", image="zoom";
+Edit hrat25=formonly.hrat25, tabIndex=15, title=%"Edit3";
+ButtonEdit hrat19=formonly.hrat19, action=controlp, tabIndex=16, title=%"Edit4", image="zoom";
+DateEdit mhrcda05=formonly.mhrcda05 type DATE, tabIndex=17, title=%"Edit3";
+Edit mhrcda06=formonly.mhrcda06, tabIndex=18, title=%"Edit4";
+DateEdit mhrcda07=formonly.mhrcda07 type DATE, tabIndex=19, title=%"Edit35";
+Edit mhrcda08=formonly.mhrcda08, tabIndex=20, title=%"Edit36";
+Edit mhrcda09=formonly.mhrcda09, tabIndex=21, title=%"Edit37";
+Edit mhrcda10=formonly.mhrcda10, tabIndex=22, title=%"Edit38";
+TextEdit mhrcda15=formonly.mhrcda15, tabIndex=23, title=%"Edit39";
+DateEdit shrcda05=formonly.shrcda05 type DATE, tabIndex=24, title=%"Edit33";
+Edit shrcda06=formonly.shrcda06, tabIndex=25, title=%"Edit34";
+DateEdit shrcda07=formonly.shrcda07 type DATE, tabIndex=26, title=%"Edit40";
+Edit shrcda08=formonly.shrcda08, tabIndex=27, title=%"Edit41";
+Edit shrcda09=formonly.shrcda09, tabIndex=28, title=%"Edit42";
+Edit shrcda10=formonly.shrcda10, tabIndex=29, title=%"Edit43";
+TextEdit shrcda15=formonly.shrcda15, tabIndex=30, title=%"Edit44";
+DateEdit yhrcda05=formonly.yhrcda05 type DATE, tabIndex=31, title=%"Edit45";
+Edit yhrcda06=formonly.yhrcda06, tabIndex=32, title=%"Edit46";
+DateEdit yhrcda07=formonly.yhrcda07 type DATE, tabIndex=33, title=%"Edit47";
+Edit yhrcda08=formonly.yhrcda08, tabIndex=34, title=%"Edit48";
+Edit yhrcda09=formonly.yhrcda09, tabIndex=35, title=%"Edit49";
+Edit yhrcda10=formonly.yhrcda10, tabIndex=36, title=%"Edit50";
+TextEdit yhrcda15=formonly.yhrcda15, tabIndex=37, title=%"Edit51";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrcd01,formonly.hrcd01_name,formonly.hrcd02,formonly.hrcd03,formonly.hrcd04,formonly.hrcd05,formonly.hrcd06,formonly.hrcd07,formonly.hrcd08,formonly.hrcd12)
+SCREEN RECORD s_hrat(formonly.hrat01,formonly.hrat02,formonly.hrat04,formonly.hrat05,formonly.hrat25,formonly.hrat19)
+SCREEN RECORD s_mhrcda(formonly.mhrcda05,formonly.mhrcda06,formonly.mhrcda07,formonly.mhrcda08,formonly.mhrcda09,formonly.mhrcda10,formonly.mhrcda15)
+SCREEN RECORD s_shrcda(formonly.shrcda05,formonly.shrcda06,formonly.shrcda07,formonly.shrcda08,formonly.shrcda09,formonly.shrcda10,formonly.shrcda15)
+SCREEN RECORD s_yhrcda(formonly.yhrcda05,formonly.yhrcda06,formonly.yhrcda07,formonly.yhrcda08,formonly.yhrcda09,formonly.yhrcda10,formonly.yhrcda15)
+END -- INSTRUCTIONS
+

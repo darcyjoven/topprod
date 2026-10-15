@@ -1,0 +1,96 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi370.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi210")
+VBox vb13
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr4
+{
+
+ Store No.  [lnnstore    |rtz13                         ] lmm07  [lnn07        ][imgmksg]
+ Corporation[lnnlegal    |azt02                         ] lmm08  [lnn08        ][       ]
+ lnn02      [lnn02       ]                                lmm09  [lnn09        ]
+ lnn03      [lnn03                 |azp02               ]
+ lnn04      [lnn04       ]
+ lnn05      [lnn05       ]
+ lnn06      [lnn06       ]
+
+}
+END -- gr4
+END -- Page3
+Page info(text=%"Info")
+Grid gr5
+{
+
+ Data User   [lnnuser   ]  crat  [lnncrat     ] acti       [lnnacti   ]
+ Data Group  [lnngrup   ]  Modify[lnnmodu     ] Modify Date[lnndate     ]
+ Record Orig.[lnnoriu   ]
+ Dept Orig.  [lnnorig   ]
+
+}
+END -- gr5
+END -- info
+END -- pc2
+Table s_lno
+{
+[lno03     |lno04     ]
+[lno03     |lno04     ]
+[lno03     |lno04     ]
+[lno03     |lno04     ]
+[lno03     |lno04     ]
+}
+END -- s_lno
+Grid gr8
+{
+ --------Rows[idx   ]/[cnt    ]  ---Details[cn2   ]------
+
+
+
+}
+END -- gr8
+END -- vb13
+END -- almi370
+
+TABLES
+lno_file,
+lnn_file
+ATTRIBUTES
+ButtonEdit lnnstore=lnn_file.lnnstore, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=20, noEntry;
+ComboBox lnn07=lnn_file.lnn07, tabIndex=15, default = "N", noEntry, not null, items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit lnnlegal=lnn_file.lnnlegal, action=controlp, tabIndex=23, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=24, noEntry;
+Edit lnn08=lnn_file.lnn08, tabIndex=16, noEntry, not null;
+ComboBox lnn02=lnn_file.lnn02, tabIndex=14, not null, required, items=(("0", "Open"),("1", "Strategic Alliance"));
+DateEdit lnn09=lnn_file.lnn09, tabIndex=12, noEntry, not null;
+ButtonEdit lnn03=lnn_file.lnn03, action=controlp, tabIndex=9, not null, image="zoom.png";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=21, noEntry;
+Edit lnn04=lnn_file.lnn04, tabIndex=11, not null;
+Edit lnn05=lnn_file.lnn05, tabIndex=13, not null;
+Edit lnn06=lnn_file.lnn06, tabIndex=10, not null;
+Edit lnnuser=formonly.lnnuser type VARCHAR, tabIndex=1, noEntry;
+DateEdit lnncrat=formonly.lnncrat type CHAR, tabIndex=22, noEntry;
+Edit lnnacti=formonly.lnnacti type VARCHAR, tabIndex=3, noEntry;
+Edit lnngrup=formonly.lnngrup type VARCHAR, tabIndex=4, noEntry;
+Edit lnnmodu=formonly.lnnmodu type VARCHAR, tabIndex=2, noEntry;
+DateEdit lnndate=formonly.lnndate type DATE, tabIndex=5, noEntry;
+Edit lnnoriu=lnn_file.lnnoriu, tabIndex=26, noEntry;
+Edit lnnorig=lnn_file.lnnorig, tabIndex=25, noEntry;
+Edit lno03=lno_file.lno03, tabIndex=6, title="lno03", not null, required;
+Edit lno04=lno_file.lno04, tabIndex=7, title="lno04", not null;
+Edit idx=formonly.idx type CHAR, tabIndex=17;
+Edit cnt=formonly.cnt type CHAR, tabIndex=19;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lno(lno_file.lno03,lno_file.lno04)
+SCREEN RECORD Undefined(lnn_file.lnnstore,formonly.rtz13,lnn_file.lnn07,formonly.imgmksg,lnn_file.lnnlegal,formonly.azt02,lnn_file.lnn08,lnn_file.lnn02,lnn_file.lnn09,lnn_file.lnn03,formonly.azp02,lnn_file.lnn04,lnn_file.lnn05,lnn_file.lnn06,formonly.lnnuser,formonly.lnncrat,formonly.lnnacti,formonly.lnngrup,formonly.lnnmodu,formonly.lnndate,lnn_file.lnnoriu,lnn_file.lnnorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt695.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt695")
+VBox vb3
+Folder pc1
+Page Page1(text=%"main")
+Grid gr1
+{
+
+    lqn01   [lqn01                ]                        lqn08    [lqn08                   ]
+    lqnplant[lqnplant             ][rtz13                ] lqn09    [lqn09                   ]
+    lqnlegal[lqnlegal             ][azt02                ] lqn10    [lqn10                   ] [imgmksg ]
+    lqn02   [lqn02                ]                        lqn11    [lqn11                   ] [        ]
+    lqn03   [lqn03                ]                        lqn12    [lqn12                   ]
+    lqn04   [lqn04                ]                                 [                        ]
+    lqn05   [lqn05                ]                                 [                        ]
+    lqn06   [lqn06                ]
+    lqn07   [lqn07                ]
+    lqn071  [lqn071               ]
+}
+END -- gr1
+END -- Page1
+Page info(text=%"Info")
+Grid gr5
+{
+ Record Owner              [lqnuser   ]  Create Date             [lqncrat     ]      Modify Date         [lqndate   ]
+ Department                [lqngrup   ]  Last Modified by        [lqnmodu     ]
+ Record Orig.              [lqnoriu   ]
+ Dept Orig.                [lqnorig   ]
+
+
+}
+END -- gr5
+END -- info
+END -- pc1
+Table s_lqs
+{
+[lqs02                   |lqe02                   |lpx02                      |lqe03                  |lrz02                     ]
+[lqs02                   |lqe02                   |lpx02                      |lqe03                  |lrz02                     ]
+[lqs02                   |lqe02                   |lpx02                      |lqe03                  |lrz02                     ]
+[lqs02                   |lqe02                   |lpx02                      |lqe03                  |lrz02                     ]
+[lqs02                   |lqe02                   |lpx02                      |lqe03                  |lrz02                     ]
+[lqs02                   |lqe02                   |lpx02                      |lqe03                  |lrz02                     ]
+}
+END -- s_lqs
+Grid gr6
+{
+ --------Rows[idx   ]/[cnt    ]  ---Details[cn2   ]------
+
+
+
+}
+END -- gr6
+END -- vb3
+END -- almt695
+
+TABLES
+lqn_file,
+lqs_file
+ATTRIBUTES
+ButtonEdit lqn01=lqn_file.lqn01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit lqn08=lqn_file.lqn08, tabIndex=13;
+ButtonEdit lqnplant=lqn_file.lqnplant, action=controlp, tabIndex=2, noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=3;
+ComboBox lqn09=lqn_file.lqn09, tabIndex=14, noEntry, not null, required, items=(("N", "Unconfirm"),("Y", "Confirm"),("X", "Void"));
+ButtonEdit lqnlegal=lqn_file.lqnlegal, action=controlp, tabIndex=4, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=5;
+Edit lqn10=lqn_file.lqn10, tabIndex=15, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit lqn02=lqn_file.lqn02, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+DateEdit lqn11=lqn_file.lqn11, tabIndex=16, noEntry;
+Edit lqn03=lqn_file.lqn03, tabIndex=7, noEntry, not null, required;
+TextEdit lqn12=lqn_file.lqn12, tabIndex=17;
+Edit lqn04=lqn_file.lqn04, tabIndex=8, noEntry, not null, required;
+Edit lqn05=lqn_file.lqn05, tabIndex=9, noEntry, not null, required;
+DateEdit lqn06=lqn_file.lqn06, tabIndex=10, noEntry;
+Edit lqn07=lqn_file.lqn07, tabIndex=11;
+Edit lqn071=lqn_file.lqn071, tabIndex=12, noEntry;
+Edit lqnuser=lqn_file.lqnuser, tabIndex=18, noEntry;
+DateEdit lqncrat=lqn_file.lqncrat, tabIndex=21, noEntry;
+DateEdit lqndate=lqn_file.lqndate, tabIndex=22, noEntry;
+Edit lqngrup=lqn_file.lqngrup, tabIndex=20, noEntry;
+Edit lqnmodu=lqn_file.lqnmodu, tabIndex=19, noEntry;
+Edit lqnoriu=lqn_file.lqnoriu, tabIndex=31, noEntry;
+Edit lqnorig=lqn_file.lqnorig, tabIndex=32, noEntry;
+ButtonEdit lqs02=lqs_file.lqs02, action=controlp, tabIndex=23, title="lqs02", not null, required, image="zoom.png";
+Edit lqe02=formonly.lqe02 type CHAR, tabIndex=24, title="lqe02", noEntry;
+Edit lpx02=formonly.lpx02 type CHAR, tabIndex=25, title="lpx02", noEntry;
+Edit lqe03=formonly.lqe03 type CHAR, tabIndex=26, title="lqe03", noEntry;
+Edit lrz02=formonly.lrz02 type CHAR, tabIndex=27, title="lrz02", noEntry;
+Edit idx=formonly.idx type CHAR, tabIndex=28, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=30, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lqs(lqs_file.lqs02,formonly.lqe02,formonly.lpx02,formonly.lqe03,formonly.lrz02)
+SCREEN RECORD Undefined(lqn_file.lqn01,lqn_file.lqn08,lqn_file.lqnplant,formonly.rtz13,lqn_file.lqn09,lqn_file.lqnlegal,formonly.azt02,lqn_file.lqn10,formonly.imgmksg,lqn_file.lqn02,lqn_file.lqn11,lqn_file.lqn03,lqn_file.lqn12,lqn_file.lqn04,lqn_file.lqn05,lqn_file.lqn06,lqn_file.lqn07,lqn_file.lqn071,lqn_file.lqnuser,lqn_file.lqncrat,lqn_file.lqndate,lqn_file.lqngrup,lqn_file.lqnmodu,lqn_file.lqnoriu,lqn_file.lqnorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

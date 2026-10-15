@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfr324.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+
+  [sfu01           ]    [tc_sna01            ]
+
+  [sfu02           ]    [tc_sna02            ]
+
+  [sfv20           ]    [tc_snb20            ]
+
+  [sfvuser         ]    [tc_snb11            ]
+
+  [sfuuser        ]     [tc_snauser          ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Label sfu01:sfu01, text=%"Label1";
+ButtonEdit tc_sna01=formonly.tc_sna01, action=controlp, tabIndex=1, image="zoom";
+Label sfu02:sfu02, text=%"Label2";
+DateEdit tc_sna02=formonly.tc_sna02, tabIndex=2;
+Label sfv20:sfv20, text=%"Label3";
+ButtonEdit tc_snb20=formonly.tc_snb20, action=controlp, tabIndex=3, image="zoom";
+Label sfvuser:sfvuser, text=%"Label4";
+ButtonEdit tc_snb11=formonly.tc_snb11, action=controlp, tabIndex=4, image="zoom";
+Label sfuuser:sfuuser, text=%"Label5";
+ButtonEdit tc_snauser=formonly.tc_snauser, action=controlp, tabIndex=5, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_sna01,formonly.tc_sna02,formonly.tc_snb20,formonly.tc_snb11,formonly.tc_snauser)
+END -- INSTRUCTIONS
+

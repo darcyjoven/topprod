@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi613.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi613")
+VBox vb4
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr731
+{
+ Host design         [boc01                        ][boc01_ima02                       ]
+ Attribute group     [boc01_imaag                  ][boc01_imaag_aga02                 ]
+ Host attribute      [boc03                        ][boc03_agc02                       ]
+}
+END -- gr731
+Grid gr732
+{
+ Part design         [boc02     ][boc02_ima02             ]
+ Attribute group     [boc02_imaa][boc02_imaag_aga02       ]
+ Part attribute      [boc04     ][boc04_agc02             ]
+}
+END -- gr732
+END -- hb2
+END -- page01
+Page Page4(text=%"Info")
+Grid gr7
+{
+ Record Owner        [bocuser   ]  Last Modified by    [bocmodu   ]  Data Valid Code     [bocacti   ]
+ Department          [bocgrup   ]  Create/Modify Date  [bocdate   ]
+ Record Orig.        [bocoriu   ]
+ Dept Orig.          [bocorig   ]
+
+}
+END -- gr7
+END -- Page4
+END -- folder01
+Table s_bod
+{
+[bod05                 |bod08                   |bod06     |bod06_bol02     |bod07                |bod09                                          ]
+[bod05                 |bod08                   |bod06     |bod06_bol02     |bod07                |bod09                                          ]
+[bod05                 |bod08                   |bod06     |bod06_bol02     |bod07                |bod09                                          ]
+[bod05                 |bod08                   |bod06     |bod06_bol02     |bod07                |bod09                                          ]
+[bod05                 |bod08                   |bod06     |bod06_bol02     |bod07                |bod09                                          ]
+[bod05                 |bod08                   |bod06     |bod06_bol02     |bod07                |bod09                                          ]
+[bod05                 |bod08                   |bod06     |bod06_bol02     |bod07                |bod09                                          ]
+[bod05                 |bod08                   |bod06     |bod06_bol02     |bod07                |bod09                                          ]
+[bod05                 |bod08                   |bod06     |bod06_bol02     |bod07                |bod09                                          ]
+[bod05                 |bod08                   |bod06     |bod06_bol02     |bod07                |bod09                                          ]
+
+}
+END -- s_bod
+Grid gr733
+{
+  ---------- Rows [cnt   ] / [cnt2  ] ----------
+
+}
+END -- gr733
+END -- vb4
+END -- abmi613
+
+TABLES
+bod_file,
+boc_file
+ATTRIBUTES
+ButtonEdit boc01=boc_file.boc01, action=controlp, tabIndex=1, required, image="zoom", comment="<^P> Query Item   ";
+Edit boc01_ima02=formonly.boc01_ima02 type CHAR, tabIndex=14, noEntry;
+Edit boc01_imaag=formonly.boc01_imaag type CHAR, tabIndex=2, noEntry;
+Edit boc01_imaag_aga02=formonly.boc01_imaag_aga02 type CHAR, tabIndex=15, noEntry;
+ButtonEdit boc03=boc_file.boc03, action=controlp, tabIndex=3, image="zoom.png";
+Edit boc03_agc02=formonly.boc03_agc02 type CHAR, tabIndex=16, noEntry;
+ButtonEdit boc02=formonly.boc02 type CHAR, action=controlp, tabIndex=4, not null, image="zoom.png";
+Edit boc02_ima02=formonly.boc02_ima02 type CHAR, tabIndex=17, noEntry, not null;
+Edit boc02_imaa=formonly.boc02_imaag type CHAR, tabIndex=5, noEntry, not null;
+Edit boc02_imaag_aga02=formonly.boc02_imaag_aga02 type CHAR, tabIndex=18, noEntry, not null;
+ButtonEdit boc04=boc_file.boc04, action=controlp, tabIndex=6, image="zoom.png";
+Edit boc04_agc02=formonly.boc04_agc02 type CHAR, tabIndex=19, noEntry, not null;
+Edit bocuser=boc_file.bocuser, tabIndex=21, noEntry;
+Edit bocmodu=boc_file.bocmodu, tabIndex=22, noEntry;
+Edit bocacti=boc_file.bocacti, tabIndex=23, noEntry, upShift;
+Edit bocgrup=boc_file.bocgrup, tabIndex=24, noEntry;
+DateEdit bocdate=boc_file.bocdate, tabIndex=25, noEntry;
+Edit bocoriu=boc_file.bocoriu, tabIndex=26, noEntry;
+Edit bocorig=boc_file.bocorig, tabIndex=27, noEntry;
+ButtonEdit bod05=bod_file.bod05, action=controlp, tabIndex=7, title="Host attribute value", not null, image="zoom.png", comment="<^P>Qry Maker      <^Y>Create Brand";
+Edit bod08=bod_file.bod08, tabIndex=8, title="Host attribute value description", comment="<^Y>Crt Vend Item Ext.Data";
+ButtonEdit bod06=bod_file.bod06, action=controlp, tabIndex=9, title="Spot ", image="zoom.png";
+Edit bod06_bol02=formonly.bod06_bol02 type VARCHAR, tabIndex=20, title="Spot description ", noEntry;
+ButtonEdit bod07=bod_file.bod07, action=controlp, tabIndex=10, title="Part attribute value ", image="zoom.png";
+Edit bod09=bod_file.bod09, tabIndex=11, title="Part attribute value description", not null;
+Edit cnt=formonly.cnt type CHAR, tabIndex=12, noEntry;
+Edit cnt2=formonly.cnt2 type CHAR, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bod(bod_file.bod05,bod_file.bod08,bod_file.bod06,formonly.bod06_bol02,bod_file.bod07,bod_file.bod09)
+SCREEN RECORD Undefined(boc_file.boc01,formonly.boc01_ima02,formonly.boc01_imaag,formonly.boc01_imaag_aga02,boc_file.boc03,formonly.boc03_agc02,formonly.boc02,formonly.boc02_ima02,formonly.boc02_imaag,formonly.boc02_imaag_aga02,boc_file.boc04,formonly.boc04_agc02,boc_file.bocuser,boc_file.bocmodu,boc_file.bocacti,boc_file.bocgrup,boc_file.bocdate,boc_file.bocoriu,boc_file.bocorig,formonly.cnt,formonly.cnt2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,244 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi152.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi152")
+VBox VBox1
+Folder pc546
+Page page01(text="Main")
+Grid gr3013
+{
+ <G group01                                                ><G group011                                        >
+  Apply Type              [imaa00     ]                      [imaa04                                ]
+  Apply No.               [imaano                        ]   [                                      ]
+  Product No.             [imaa01                        ]   [                                      ]
+  Part Name               [imaa02                        ]   [                                      ]
+  Specification           [imaa021                       ]   [                                      ]
+  Source Code             [imaa08    ]                       [                                      ]
+  Main group code         [imaa06    ][imz02             ]   [                                      ]
+  Inventory Unit          [imaa25    ]                       [                                      ]
+  Sales Unit              [imaa31    ]                       Current Status    [imaa1010   ][imgmksg]
+  Invent Conversion %     [imaa31_fac]                       [imaa92                       ][       ]
+  Menu No.                [imaa03              ]
+
+
+
+ <                                                         ><                                                  >
+
+}
+END -- gr3013
+END -- page01
+Page info(text="Info")
+Grid gr3014
+{
+ Record Owner        [imaauser  ] Last Modified by    [imaamodu  ] Data Valid Code     [imaaacti  ]
+ Department          [imaagrup  ] Create/Modify Date  [imaadate  ]
+ Record Orig.        [imaaoriu  ]
+ Dept Orig.          [imaaorig  ]
+}
+END -- gr3014
+END -- info
+END -- pc546
+Folder pc547
+Page page06(text="Bar Code/Product Type")
+HBox HBox1
+Group gb2073
+Grid gr3015
+{
+ Product Type #1     [imaa1004][tqa02               ]
+ Product Type #2     [imaa1005][tqa02a              ]
+ Product Type #3     [imaa1006][tqa02b              ]
+}
+END -- gr3015
+END -- gb2073
+Group gb2074
+Grid gr3016
+{
+ Product Type #4     [imaa1007][tqa02c              ]
+ Product Type #5     [imaa1008][tqa02d              ]
+ Product Type #6     [imaa1009][tqa02e              ]
+}
+END -- gr3016
+END -- gb2074
+END -- HBox1
+END -- page06
+Page page02(text="Sale Info")
+Grid gr3017
+{
+ <G group021                                          ><G group023                                >
+  Sales Feature    [imaa130  ]                          Forecast Item   [imaa133                 ]
+  Prodt Class Code [imaa131  ]                          Expense Account [imaa132       ]
+  Group Code123    [imaa09   ][imaa10    ][imaa11    ]  Expense Account2[imaa1321      ]
+  Unit net weight  [imaa18   ]                          FCC             [imaa138       ]
+  Packing Type     [imaa134      ][obe02             ]  Margin Day      [imaa148   ]
+                                                        Main Ware/Loc   [imaa35    ][imaa36    ]
+ <                                                    ><                                          >
+
+}
+END -- gr3017
+END -- page02
+Page page03(text="Pricing")
+Grid gr3018
+{
+ <G group031                                        ><G group032                                        >
+  Unit Material Cost          [imaa121             ]  Basic Profit Margin         [imaa126   ]
+  Unit Labor Cost             [imaa122             ]  Home Curr Price without Tax [imaa127             ]
+  Unit Overhead               [imaa123             ]  Home Curr Price With Tax    [imaa128             ]
+  Unit Sales Administrat Cost [imaa124             ]
+  Unit Cost Total             [imaa125             ]
+ <                                                  ><                                                  >
+
+}
+END -- gr3018
+END -- page03
+Page page04(text="Bar Code")
+Grid gr3019
+{
+ Product bar code            [imaa135       ]
+ Control Method of serial No.[imaa141   ]
+ Serial No. Fixed Length     [imaa142   ]
+ S/N Prefix Fixed Length     [imaa143   ]
+ Fixed prefix of serial No.  [imaa144   ]
+[imaa145                                    ]
+}
+END -- gr3019
+END -- page04
+Page page07(text="Unit Weight/Cubage")
+HBox HBox2
+Group gb2079
+Grid gr3020
+{
+ Goods Length        [imaa1024     ]m
+ Goods Width         [imaa1025     ]m
+ Goods high          [imaa1026     ]m
+ Goods net weight    [imaa1028     ]kg
+ Goods net cubage    [imaa1027     ]m3
+}
+END -- gr3020
+END -- gb2079
+Group gb2080
+Grid gr3021
+{
+ Unit Length         [imaa1019     ]m
+ Unit Width          [imaa1020     ]m
+ Unit high           [imaa1021     ]m
+ Unit net weight     [imaa1023     ]kg
+ Unit net cubage     [imaa1022     ]m3
+}
+END -- gr3021
+END -- gb2080
+Group gb2081
+Grid gr3022
+{
+ Std. Width          [imaa1017  ]
+ Std. Cap            [imaa1018  ]
+}
+END -- gr3022
+END -- gb2081
+END -- HBox2
+END -- page07
+END -- pc547
+Grid gr3023
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3023
+END -- VBox1
+END -- aimi152
+
+TABLES
+imaa_file
+ATTRIBUTES
+Group group01:group01;
+ComboBox imaa00=imaa_file.imaa00, tabIndex=1, noEntry, not null, required, queryEditable, items=(("I", "Insert"),("U", "Update"));
+ButtonEdit imaano=imaa_file.imaano, action=controlp, tabIndex=2, noEntry, not null, required, image="zoom", comment="<^P>Qry Documents";
+Edit imaa01=imaa_file.imaa01, tabIndex=3, not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit imaa02=imaa_file.imaa02, tabIndex=4, not null, required;
+Edit imaa021=imaa_file.imaa021, tabIndex=5;
+ComboBox imaa08=imaa_file.imaa08, tabIndex=6, not null, required, queryEditable, items=(("C", "Configurable Product"),("T", "FAS Product"),("D", "Feture"),("A", "Family Product"),("M", "Make Product"),("P", "Purchase"),("X", "Phantom"),("K", "Kit"),("U", "Manufactured Mass Item"),("V", "Purchased Mass Item"),("R", "Routable"),("Z", "Miscellaneous"),("S", "Subcontract"));
+ButtonEdit imaa06=imaa_file.imaa06, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit imz02=formonly.imz02 type CHAR, tabIndex=8, noEntry;
+ButtonEdit imaa25=imaa_file.imaa25, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit imaa31=imaa_file.imaa31, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit imaa31_fac=imaa_file.imaa31_fac, tabIndex=11, not null, required;
+Edit imaa03=imaa_file.imaa03, tabIndex=12, noEntry;
+Group group011:group011;
+IMAGE imaa04=formonly.imaa04 type CHAR, width = 300 pixels, height = 140 pixels;
+ComboBox imaa1010=imaa_file.imaa1010, tabIndex=14, noEntry, not null, required, items=(("0", "Issue"),("1", "Approved"),("2", "Carried"),("S", "Approving"),("R", "Approval rejected!"),("W", "Withdraw"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+CheckBox imaa92=imaa_file.imaa92, tabIndex=16, text="Approve?", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit imaauser=imaa_file.imaauser, tabIndex=17, noEntry;
+Edit imaamodu=imaa_file.imaamodu, tabIndex=18, noEntry;
+Edit imaaacti=imaa_file.imaaacti, tabIndex=19, noEntry, upShift;
+Edit imaagrup=imaa_file.imaagrup, tabIndex=20, noEntry;
+DateEdit imaadate=imaa_file.imaadate, tabIndex=21, noEntry;
+Edit imaaoriu=imaa_file.imaaoriu, tabIndex=501, noEntry;
+Edit imaaorig=imaa_file.imaaorig, tabIndex=502, noEntry;
+ButtonEdit imaa1004=imaa_file.imaa1004, action=controlp, tabIndex=22, not null, required, image="zoom";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=23, noEntry;
+ButtonEdit imaa1005=imaa_file.imaa1005, action=controlp, tabIndex=24, not null, required, image="zoom";
+Edit tqa02a=formonly.tqa02a type CHAR, tabIndex=25, noEntry;
+ButtonEdit imaa1006=imaa_file.imaa1006, action=controlp, tabIndex=26, not null, required, image="zoom";
+Edit tqa02b=formonly.tqa02b type CHAR, tabIndex=27, noEntry;
+ButtonEdit imaa1007=imaa_file.imaa1007, action=controlp, tabIndex=28, not null, required, image="zoom";
+Edit tqa02c=formonly.tqa02c type CHAR, tabIndex=29, noEntry;
+ButtonEdit imaa1008=imaa_file.imaa1008, action=controlp, tabIndex=30, not null, required, image="zoom";
+Edit tqa02d=formonly.tqa02d type CHAR, tabIndex=31, noEntry;
+ButtonEdit imaa1009=imaa_file.imaa1009, action=controlp, tabIndex=32, not null, required, image="zoom";
+Edit tqa02e=formonly.tqa02e type CHAR, tabIndex=33, noEntry;
+Group group021:group021;
+ComboBox imaa130=imaa_file.imaa130, tabIndex=34, not null, required, queryEditable, items=(("0", "Not for Sale"),("1", "General Product"),("2", "MISC"),("3", "CSD"));
+ButtonEdit imaa131=imaa_file.imaa131, action=controlp, tabIndex=35, not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit imaa09=imaa_file.imaa09, action=controlp, tabIndex=36, image="zoom", comment="<^P>Qry Details";
+ButtonEdit imaa10=imaa_file.imaa10, action=controlp, tabIndex=37, image="zoom", comment="<^P>Qry Details";
+ButtonEdit imaa11=imaa_file.imaa11, action=controlp, tabIndex=38, image="zoom", comment="<^P>Qry Details";
+Edit imaa18=imaa_file.imaa18, tabIndex=39, not null, required, comment="Unit : Kg";
+ButtonEdit imaa134=imaa_file.imaa134, action=controlp, tabIndex=40, image="zoom", comment="<^P>Qry Details";
+Edit obe02=formonly.obe02 type CHAR, tabIndex=41, noEntry;
+Group group023:group023;
+ButtonEdit imaa133=imaa_file.imaa133, action=controlp, tabIndex=42, image="zoom", comment="<^P>Qry Items ";
+ButtonEdit imaa132=imaa_file.imaa132, action=controlp, tabIndex=43, image="zoom", comment="<^P>Qry Details";
+ButtonEdit imaa1321=imaa_file.imaa1321, action=controlp, tabIndex=44, image="zoom", comment="<^P>Qry Details";
+Edit imaa138=imaa_file.imaa138, tabIndex=45, comment="FCC#(Federal Communications Commission)";
+Edit imaa148=imaa_file.imaa148, tabIndex=46, not null, required;
+Edit imaa35=imaa_file.imaa35, tabIndex=47, noEntry;
+Edit imaa36=imaa_file.imaa36, tabIndex=48, noEntry;
+Group group031:group031;
+Edit imaa121=imaa_file.imaa121, tabIndex=49, not null, required;
+Edit imaa122=imaa_file.imaa122, tabIndex=50, not null, required;
+Edit imaa123=imaa_file.imaa123, tabIndex=51, not null, required;
+Edit imaa124=imaa_file.imaa124, tabIndex=52, not null, required;
+Edit imaa125=imaa_file.imaa125, tabIndex=53, noEntry;
+Group group032:group032;
+Edit imaa126=imaa_file.imaa126, tabIndex=54, not null, required;
+Edit imaa127=imaa_file.imaa127, tabIndex=55, not null, required;
+Edit imaa128=imaa_file.imaa128, tabIndex=56, not null, required;
+Edit imaa135=imaa_file.imaa135, tabIndex=57;
+ComboBox imaa141=imaa_file.imaa141, tabIndex=58, not null, required, queryEditable, items=(("0", "None"),("1", "The Product with same Product Serial No."),("2", "Prod S/N for every Delivery"));
+Edit imaa142=imaa_file.imaa142, tabIndex=59;
+Edit imaa143=imaa_file.imaa143, tabIndex=60;
+Edit imaa144=imaa_file.imaa144, tabIndex=61;
+CheckBox imaa145=imaa_file.imaa145, tabIndex=62, text="Product Serial No. Length Fixed ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit imaa1024=imaa_file.imaa1024, tabIndex=63, comment="Goods Length";
+Edit imaa1025=imaa_file.imaa1025, tabIndex=64, comment="Goods Width";
+Edit imaa1026=imaa_file.imaa1026, tabIndex=65, comment="Goods high";
+Edit imaa1028=imaa_file.imaa1028, tabIndex=66, comment="Goods net cubage";
+Edit imaa1027=imaa_file.imaa1027, tabIndex=67, comment="Goods net weight";
+Edit imaa1019=imaa_file.imaa1019, tabIndex=68, comment="Unit Length";
+Edit imaa1020=imaa_file.imaa1020, tabIndex=69, comment="Unit Width";
+Edit imaa1021=imaa_file.imaa1021, tabIndex=70, comment="Unit high";
+Edit imaa1023=imaa_file.imaa1023, tabIndex=71, comment="Unit net cubage";
+Edit imaa1022=imaa_file.imaa1022, tabIndex=72, comment="Unit net weight";
+Edit imaa1017=imaa_file.imaa1017, tabIndex=73;
+Edit imaa1018=imaa_file.imaa1018, tabIndex=74;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=75, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(imaa_file.imaa00,imaa_file.imaano,imaa_file.imaa01,imaa_file.imaa02,imaa_file.imaa021,imaa_file.imaa08,imaa_file.imaa06,formonly.imz02,imaa_file.imaa25,imaa_file.imaa31,imaa_file.imaa31_fac,imaa_file.imaa03,formonly.imaa04,imaa_file.imaa1010,formonly.imgmksg,imaa_file.imaa92,imaa_file.imaauser,imaa_file.imaamodu,imaa_file.imaaacti,imaa_file.imaagrup,imaa_file.imaadate,imaa_file.imaaoriu,imaa_file.imaaorig,imaa_file.imaa1004,formonly.tqa02,imaa_file.imaa1005,formonly.tqa02a,imaa_file.imaa1006,formonly.tqa02b,imaa_file.imaa1007,formonly.tqa02c,imaa_file.imaa1008,formonly.tqa02d,imaa_file.imaa1009,formonly.tqa02e,imaa_file.imaa130,imaa_file.imaa131,imaa_file.imaa09,imaa_file.imaa10,imaa_file.imaa11,imaa_file.imaa18,imaa_file.imaa134,formonly.obe02,imaa_file.imaa133,imaa_file.imaa132,imaa_file.imaa1321,imaa_file.imaa138,imaa_file.imaa148,imaa_file.imaa35,imaa_file.imaa36,imaa_file.imaa121,imaa_file.imaa122,imaa_file.imaa123,imaa_file.imaa124,imaa_file.imaa125,imaa_file.imaa126,imaa_file.imaa127,imaa_file.imaa128,imaa_file.imaa135,imaa_file.imaa141,imaa_file.imaa142,imaa_file.imaa143,imaa_file.imaa144,imaa_file.imaa145,imaa_file.imaa1024,imaa_file.imaa1025,imaa_file.imaa1026,imaa_file.imaa1028,imaa_file.imaa1027,imaa_file.imaa1019,imaa_file.imaa1020,imaa_file.imaa1021,imaa_file.imaa1023,imaa_file.imaa1022,imaa_file.imaa1017,imaa_file.imaa1018,formonly.cnt)
+END -- INSTRUCTIONS
+

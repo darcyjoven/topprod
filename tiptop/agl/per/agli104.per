@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli104.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli104")
+VBox vb2
+Folder pc445
+Page page01(text="Main")
+Table s_aab
+{
+[aab00  |aab01                   |aag02                                             |aab02 |gem02   |aab03     ]
+[aab00  |aab01                   |aag02                                             |aab02 |gem02   |aab03     ]
+[aab00  |aab01                   |aag02                                             |aab02 |gem02   |aab03     ]
+[aab00  |aab01                   |aag02                                             |aab02 |gem02   |aab03     ]
+[aab00  |aab01                   |aag02                                             |aab02 |gem02   |aab03     ]
+[aab00  |aab01                   |aag02                                             |aab02 |gem02   |aab03     ]
+[aab00  |aab01                   |aag02                                             |aab02 |gem02   |aab03     ]
+[aab00  |aab01                   |aag02                                             |aab02 |gem02   |aab03     ]
+[aab00  |aab01                   |aag02                                             |aab02 |gem02   |aab03     ]
+[aab00  |aab01                   |aag02                                             |aab02 |gem02   |aab03     ]
+[aab00  |aab01                   |aag02                                             |aab02 |gem02   |aab03     ]
+[aab00  |aab01                   |aag02                                             |aab02 |gem02   |aab03     ]
+
+}
+END -- s_aab
+END -- page01
+END -- pc445
+Grid gr2372
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr2372
+END -- vb2
+END -- agli104
+
+TABLES
+aab_file
+ATTRIBUTES
+ButtonEdit aab00=aab_file.aab00, action=controlp, tabIndex=7, title="Book No", not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+ButtonEdit aab01=aab_file.aab01, action=controlp, tabIndex=1, title="Account Code", not null, required, image="zoom", comment="<^P>Qry Account";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, title="Account Title", noEntry;
+ButtonEdit aab02=aab_file.aab02, action=controlp, tabIndex=3, title="Dept", not null, required, image="zoom", comment="<^P>Qry Department #";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=4, title="Desc.", noEntry;
+Edit aab03=aab_file.aab03, tabIndex=5, title="Memo";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aab(aab_file.aab00,aab_file.aab01,formonly.aag02,aab_file.aab02,formonly.gem02,aab_file.aab03)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

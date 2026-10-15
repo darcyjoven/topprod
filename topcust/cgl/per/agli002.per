@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topstd/topcust/cgl/4fd/agli002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli002")
+VBox vbox1
+Folder folder01
+Page page01(text=%"Main")
+VBox vbox2
+Grid gr2331
+{
+ Group No.           [axa01              ]         [axa04                                             ]
+ Parent Company      [axa02               ]        <G gb1                                                     >
+ Plant Name          [axz02               ]         [axa09                                ]
+ Logistics code      [axz03               ]          Avg. Exchange Rate [axa05                                ]
+ Book No.            [axa03     ]                    Conbine Month      [axa06              ]
+                                                   <                                                          >
+}
+END -- gr2331
+END -- vbox2
+END -- page01
+Page info(text=%"Info")
+Grid gr2332
+{
+ Record Owner        [axauser   ]   Last Modified by    [axamodu   ]
+ Department          [axagrup   ]   Create/Modify Date  [axadate     ]
+
+
+}
+END -- gr2332
+END -- info
+END -- folder01
+Table s_axb
+{
+[axb04       |axz02b              |axb05 |axb07    |axb11       |axb12                      |axb13                      |aag02                      |axb08     ]
+[axb04       |axz02b              |axb05 |axb07    |axb11       |axb12                      |axb13                      |aag02                      |axb08     ]
+[axb04       |axz02b              |axb05 |axb07    |axb11       |axb12                      |axb13                      |aag02                      |axb08     ]
+[axb04       |axz02b              |axb05 |axb07    |axb11       |axb12                      |axb13                      |aag02                      |axb08     ]
+[axb04       |axz02b              |axb05 |axb07    |axb11       |axb12                      |axb13                      |aag02                      |axb08     ]
+[axb04       |axz02b              |axb05 |axb07    |axb11       |axb12                      |axb13                      |aag02                      |axb08     ]
+[axb04       |axz02b              |axb05 |axb07    |axb11       |axb12                      |axb13                      |aag02                      |axb08     ]
+[axb04       |axz02b              |axb05 |axb07    |axb11       |axb12                      |axb13                      |aag02                      |axb08     ]
+[axb04       |axz02b              |axb05 |axb07    |axb11       |axb12                      |axb13                      |aag02                      |axb08     ]
+[axb04       |axz02b              |axb05 |axb07    |axb11       |axb12                      |axb13                      |aag02                      |axb08     ]
+}
+END -- s_axb
+Grid gr2333
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2333
+END -- vbox1
+END -- agli002
+
+TABLES
+axb_file,
+axa_file
+ATTRIBUTES
+ButtonEdit axa01=axa_file.axa01, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+CheckBox axa04=axa_file.axa04, tabIndex=21, text=%"IS topest Company", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit axa02=axa_file.axa02, action=controlp, tabIndex=2, not null, required, image="zoom", comment=%"<^P>Qry Company Data";
+Group gb1:gb1;
+CheckBox axa09=axa_file.axa09, tabIndex=22, text=%"Combination of Separate Accounts", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox axa05=axa_file.axa05, tabIndex=23, not null, required, items=(("1", %"NewText"),("2", %"NewText"),("3", %"Text"));
+ComboBox axa06=axa_file.axa06, tabIndex=24, not null, required, items=(("1", %"Month"),("2", %"Quarter"),("3", %"Half A Year"),("4", %"Yer"));
+Edit axz02=formonly.axz02 type VARCHAR, tabIndex=3, noEntry;
+Edit axz03=formonly.axz03 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit axa03=axa_file.axa03, action=controlp, tabIndex=5, noEntry, not null, required, image="zoom", comment=%"<^P>Qry Book#";
+Edit axauser=axa_file.axauser, tabIndex=8, noEntry;
+Edit axamodu=axa_file.axamodu, tabIndex=9, noEntry;
+Edit axagrup=axa_file.axagrup, tabIndex=1, noEntry;
+DateEdit axadate=axa_file.axadate, tabIndex=10, noEntry;
+ButtonEdit axb04=axb_file.axb04, action=controlp, tabIndex=11, title=%"Daughter Co", not null, required, image="zoom", comment=%"<^P>Qry Company Data";
+Edit axz02b=formonly.axz02b type VARCHAR, tabIndex=12, title=%"Co.Name", noEntry;
+ButtonEdit axb05=axb_file.axb05, action=controlp, tabIndex=13, title=%"Book#", not null, required, image="zoom", comment=%"<^P>Qry Book#";
+Edit axb07=axb_file.axb07, tabIndex=14, title=%"Hoding%", not null, required;
+Edit axb11=axb_file.axb11, tabIndex=15, title=%"Investment", not null, required;
+Edit axb12=axb_file.axb12, tabIndex=16, title=%"Stock", not null, required;
+ButtonEdit axb13=axb_file.axb13, action=controlp, tabIndex=17, title=%"Account No.", not null, required, image="zoom", comment=%"<^P>Qry Account No.";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=6, title=%"Account Title", noEntry;
+DateEdit axb08=axb_file.axb08, tabIndex=18, title=%"Tran.Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(axa_file.axa01,axa_file.axa04,axa_file.axa02,axa_file.axa09,axa_file.axa05,axa_file.axa06,formonly.axz02,formonly.axz03,axa_file.axa03,axa_file.axauser,axa_file.axamodu,axa_file.axagrup,axa_file.axadate,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_axb(axb_file.axb04,formonly.axz02b,axb_file.axb05,axb_file.axb07,axb_file.axb11,axb_file.axb12,axb_file.axb13,formonly.aag02,axb_file.axb08)
+END -- INSTRUCTIONS
+

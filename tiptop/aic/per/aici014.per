@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici014.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aici014")
+VBox vb5
+Folder folder01
+Page page01(text="Main")
+Grid gr4850
+{
+ ico01###            [ico01               ]                   ico02###    [ico02     ]
+ ico03###            [ico03     ]
+
+}
+END -- gr4850
+END -- page01
+END -- folder01
+Table s_ico
+{
+[ico04     |ico05     |ico06                    ]
+[ico04     |ico05     |ico06                    ]
+[ico04     |ico05     |ico06                    ]
+[ico04     |ico05     |ico06                    ]
+[ico04     |ico05     |ico06                    ]
+[ico04     |ico05     |ico06                    ]
+[ico04     |ico05     |ico06                    ]
+[ico04     |ico05     |ico06                    ]
+[ico04     |ico05     |ico06                    ]
+[ico04     |ico05     |ico06                    ]
+
+}
+END -- s_ico
+Grid gr4852
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4852
+END -- vb5
+END -- aici014
+
+TABLES
+tableAlias1=ico_file,
+ico_file
+ATTRIBUTES
+Edit ico01=ico_file.ico01, tabIndex=1, noEntry, not null, required;
+Edit ico02=tableAlias1.ico02, tabIndex=2, noEntry, not null;
+ComboBox ico03=ico_file.ico03, tabIndex=3, not null, items=(("1", "ico03_1"),("2", "ico03_2"),("3", "ico03_3"),("4", "ico03_4"),("5", "ico03_5"),("6", "ico03_6"),("7", "ico03_7"),("9", "ico03_9"));
+Edit ico04=ico_file.ico04, tabIndex=4, title="ico04", not null;
+CheckBox ico05=ico_file.ico05, tabIndex=5, title="ico05", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit ico06=ico_file.ico06, tabIndex=6, title="ico06", not null;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=7;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ico(ico_file.ico04,ico_file.ico05,ico_file.ico06)
+SCREEN RECORD Undefined(ico_file.ico01,tableAlias1.ico02,ico_file.ico03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

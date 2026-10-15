@@ -1,0 +1,206 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt290.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almt290")
+VBox VBox1
+Folder pc7
+Page main(text="Main")
+Grid gr19
+{
+
+  Hid.BillNo              [lnb01                 ]                      Director[lnb14                 ]   Appr.No. [lnb33                ][imgmksg]
+  Pre-registration order  [lnb02                 ]                      DTel.   [lnb15                 ]   Approver [lnb34                ][       ]
+  Sou.S.D.N               [lnb03                 |rtz13              ]  Repr.   [lnb16                 ]   Appr.on  [lnb35                ]
+  Mer.No.                 [lnb04                 ]                      Repr.Tel[lnb17                 ]   memo     [lnb36                ]
+  for short               [lnb05                 ]                      Oper.   [lnb18                 ]            [                     ]
+  for full                [lnb06                                     ]  Oper.Tel[lnb19                 ]
+  quality                 [lnb07                 ]                      email   [lnb20                 ]
+  MainBrand               [lnb08                 |tqa02              ]  website [lnb21                 ]
+  Place                   [lnb09                 |geo02              ]  fax     [lnb22                 ]
+  Area                    [lnb10                 ]                      O.Style [lnb28                 ]
+  Manager                 [lnb12                 ]                      Regis.  [lnb23                 ]
+  Tel.                    [lnb13                 ]                      hireA.  [lnb24                 ]
+
+
+
+
+
+
+}
+END -- gr19
+END -- main
+Page kuaiji(text="Acco.Info")
+Grid gr20
+{
+
+ Tax Code[lnb37                    |gec02               ] Addr.    [lnb44             ]
+ Tax l   [gec04                    ]                               [                  ]
+         [gec07             ]                             Inv.Code [lnb45             ]
+ Inv.Type[lnb38                    ]                      Inv.Add. [lnb46             ]
+ Pay.Term[lnb39                    |oag02               ]          [                  ]
+ Acc.Cate[lnb52                    |ool02               ] BankCode [lnb47             ]
+ De.Curr.[lnb53                    |azi02               ] BankName [lnb48             ]
+ Name    [lnb40                    ]                      BankACC. [lnb49             ]
+ Tel.    [lnb41                    ]                      Acc.Name [lnb50                              ]
+ Email   [lnb42                    ]                      Memo     [lnb51             ]
+ ZipCode [lnb43                    ]                               [                  ]
+
+
+
+}
+END -- gr20
+END -- kuaiji
+Page info(text="Info")
+Grid gr21
+{
+
+  Data Owner  [lnbuser   ]   create on       [lnbcrat     ]    Last modified on[lnbdate     ]
+  Department  [lnbgrup   ]   Last modified by[lnbmodu     ]
+  Recd Orig.  [lnboriu   ]
+  Dept Orig.  [lnborig   ]
+
+
+
+
+
+
+
+}
+END -- gr21
+END -- info
+END -- pc7
+Folder Folder1
+Page Page1(text=%"Manage")
+Table s_lnd
+{
+[lnd02   |tqa02_1   |lnd03     |lnd04     |lnd05         |lnd06       ]
+[lnd02   |tqa02_1   |lnd03     |lnd04     |lnd05         |lnd06       ]
+[lnd02   |tqa02_1   |lnd03     |lnd04     |lnd05         |lnd06       ]
+[lnd02   |tqa02_1   |lnd03     |lnd04     |lnd05         |lnd06       ]
+[lnd02   |tqa02_1   |lnd03     |lnd04     |lnd05         |lnd06       ]
+
+}
+END -- s_lnd
+END -- Page1
+Page Page2(text=%"Other Brand")
+Table s_lnc
+{
+[lnc02        |tqa02_2     |lnc03        |geo02_1   ]
+[lnc02        |tqa02_2     |lnc03        |geo02_1   ]
+[lnc02        |tqa02_2     |lnc03        |geo02_1   ]
+[lnc02        |tqa02_2     |lnc03        |geo02_1   ]
+[lnc02        |tqa02_2     |lnc03        |geo02_1   ]
+
+}
+END -- s_lnc
+END -- Page2
+END -- Folder1
+Grid gr4
+{
+
+ -----[label|idx    |la|cn2    ]  ------  [label38   |cn3       ]  ------  [label39   |cn4       ]  ------
+
+}
+END -- gr4
+END -- VBox1
+END -- almt290
+
+TABLES
+lnd_file,
+lnc_file,
+lnb_file
+ATTRIBUTES
+ButtonEdit lnb01=lnb_file.lnb01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit lnb14=lnb_file.lnb14, tabIndex=16;
+ComboBox lnb33=lnb_file.lnb33, tabIndex=28, default = "N", noEntry, not null, required, items=(("N", "uncheck"),("Y", "edcheck"),("X", "abandon"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, width = 10 characters, height = 2 characters;
+ButtonEdit lnb02=lnb_file.lnb02, action=controlp, tabIndex=2, not null, image="zoom", comment=%"";
+Edit lnb15=lnb_file.lnb15, tabIndex=17;
+Edit lnb34=lnb_file.lnb34, tabIndex=29, noEntry, not null, required;
+ButtonEdit lnb03=lnb_file.lnb03, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=4, noEntry;
+Edit lnb16=lnb_file.lnb16, tabIndex=18;
+DateEdit lnb35=lnb_file.lnb35, tabIndex=30, noEntry, not null, required;
+ButtonEdit lnb04=lnb_file.lnb04, action=controlp, tabIndex=5, image="zoom.png";
+Edit lnb17=lnb_file.lnb17, tabIndex=19;
+TextEdit lnb36=lnb_file.lnb36, tabIndex=31, stretch=NONE;
+Edit lnb05=lnb_file.lnb05, tabIndex=6, not null, required;
+Edit lnb18=lnb_file.lnb18, tabIndex=20;
+Edit lnb06=lnb_file.lnb06, tabIndex=7;
+Edit lnb19=lnb_file.lnb19, tabIndex=21;
+ComboBox lnb07=lnb_file.lnb07, tabIndex=8, not null, required, items=(("1", "ming"),("2", "guo"),("3", "si"),("4", "he"),("5", "du"));
+Edit lnb20=lnb_file.lnb20, tabIndex=22;
+ButtonEdit lnb08=lnb_file.lnb08, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=14, noEntry;
+Edit lnb21=lnb_file.lnb21, tabIndex=23;
+ButtonEdit lnb09=lnb_file.lnb09, action=controlp, tabIndex=10, image="zoom.png";
+Edit geo02=formonly.geo02 type CHAR, tabIndex=15, noEntry;
+Edit lnb22=lnb_file.lnb22, tabIndex=24;
+Edit lnb10=lnb_file.lnb10, tabIndex=11;
+ComboBox lnb28=lnb_file.lnb28, tabIndex=25, not null, required, items=(("0", "self-supporting
+"),("1", "agent
+"));
+Edit lnb12=lnb_file.lnb12, tabIndex=12;
+Edit lnb23=lnb_file.lnb23, tabIndex=26;
+Edit lnb13=lnb_file.lnb13, tabIndex=13;
+Edit lnb24=lnb_file.lnb24, tabIndex=27;
+ButtonEdit lnb37=lnb_file.lnb37, action=controlp, tabIndex=32, not null, required, image="zoom.png";
+Edit gec02=formonly.gec02 type CHAR, tabIndex=33, noEntry;
+TextEdit lnb44=lnb_file.lnb44, tabIndex=47, stretch=NONE;
+Edit gec04=formonly.gec04 type CHAR, tabIndex=34, noEntry;
+CheckBox gec07=formonly.gec07 type CHAR, tabIndex=35, text="ch8", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit lnb45=lnb_file.lnb45, tabIndex=48;
+Edit lnb38=lnb_file.lnb38, tabIndex=36;
+TextEdit lnb46=lnb_file.lnb46, tabIndex=49, stretch=NONE;
+ButtonEdit lnb39=lnb_file.lnb39, action=controlp, tabIndex=37, not null, required, image="zoom.png";
+Edit oag02=formonly.oag02 type CHAR, tabIndex=38, noEntry;
+ButtonEdit lnb52=lnb_file.lnb52, action=controlp, tabIndex=39, not null, required, image="zoom.png";
+Edit ool02=formonly.ool02 type CHAR, tabIndex=40, noEntry;
+ButtonEdit lnb47=lnb_file.lnb47, action=controlp, tabIndex=50, image="zoom.png";
+ButtonEdit lnb53=lnb_file.lnb53, action=controlp, tabIndex=41, not null, required, image="zoom.png";
+Edit azi02=formonly.azi02 type CHAR, tabIndex=42, noEntry;
+Edit lnb48=lnb_file.lnb48, tabIndex=51, noEntry;
+Edit lnb40=lnb_file.lnb40, tabIndex=43;
+Edit lnb49=lnb_file.lnb49, tabIndex=52;
+Edit lnb41=lnb_file.lnb41, tabIndex=44;
+Edit lnb50=lnb_file.lnb50, tabIndex=53;
+Edit lnb42=lnb_file.lnb42, tabIndex=45;
+TextEdit lnb51=lnb_file.lnb51, tabIndex=54, stretch=NONE;
+Edit lnb43=lnb_file.lnb43, tabIndex=46;
+Edit lnbuser=lnb_file.lnbuser, tabIndex=55, noEntry;
+DateEdit lnbcrat=lnb_file.lnbcrat, tabIndex=59, noEntry;
+DateEdit lnbdate=lnb_file.lnbdate, tabIndex=61, noEntry;
+Edit lnbgrup=lnb_file.lnbgrup, tabIndex=56, noEntry;
+Edit lnbmodu=lnb_file.lnbmodu, tabIndex=60, noEntry;
+Edit lnboriu=lnb_file.lnboriu, tabIndex=57, noEntry;
+Edit lnborig=lnb_file.lnborig, tabIndex=58, noEntry;
+ButtonEdit lnd02=lnd_file.lnd02, action=controlp, tabIndex=62, title=%"Certificate Numbers", not null, required, image="zoom";
+Edit tqa02_1=formonly.tqa02_1 type VARCHAR, tabIndex=63, title="Cer.Name", noEntry;
+Edit lnd03=lnd_file.lnd03, tabIndex=64, title="Cer.num.", not null, required;
+Edit lnd04=lnd_file.lnd04, tabIndex=65, title="Operator";
+DateEdit lnd05=lnd_file.lnd05, tabIndex=66, title="Val.dat.from";
+DateEdit lnd06=lnd_file.lnd06, tabIndex=67, title="Val.dat.to";
+ButtonEdit lnc02=lnc_file.lnc02, action=controlp, tabIndex=68, title="Brand DocNo", not null, required, image="zoom";
+Edit tqa02_2=formonly.tqa02_2 type VARCHAR, tabIndex=69, title="Brand Name", noEntry;
+ButtonEdit lnc03=lnc_file.lnc03, action=controlp, tabIndex=70, title="Pla.O.DocNo", not null, required, image="zoom";
+Edit geo02_1=formonly.geo02_1 type VARCHAR, tabIndex=71, title="P.O.Name", noEntry;
+Label label:Label34, text=%"Rows";
+Edit idx=formonly.idx type SMALLINT, tabIndex=72, noEntry;
+Label la:Label35, text=%"/";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=73, noEntry;
+Label label38:Label38, text=%"detail1";
+Edit cn3=formonly.cn3 type CHAR, tabIndex=74;
+Label label39:Label39, text=%"detail2";
+Edit cn4=formonly.cn4 type CHAR, tabIndex=75;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lnb_file.lnb01,lnb_file.lnb14,lnb_file.lnb28,lnb_file.lnb15,lnb_file.lnb03,formonly.rtz13,lnb_file.lnb16,lnb_file.lnb04,lnb_file.lnb17,lnb_file.lnb05,lnb_file.lnb18,lnb_file.lnb06,lnb_file.lnb19,lnb_file.lnb33,formonly.imgmksg,lnb_file.lnb07,lnb_file.lnb20,lnb_file.lnb34,lnb_file.lnb08,formonly.tqa02,lnb_file.lnb21,lnb_file.lnb35,lnb_file.lnb09,formonly.geo02,lnb_file.lnb22,lnb_file.lnb36,lnb_file.lnb10,lnb_file.lnb23,lnb_file.lnb12,lnb_file.lnb24,lnb_file.lnb13,lnb_file.lnb37,formonly.gec02,lnb_file.lnb44,formonly.gec04,formonly.gec07,lnb_file.lnb45,lnb_file.lnb38,lnb_file.lnb46,lnb_file.lnb39,formonly.oag02,lnb_file.lnb52,formonly.ool02,lnb_file.lnb47,lnb_file.lnb53,formonly.azi02,lnb_file.lnb48,lnb_file.lnb40,lnb_file.lnb49,lnb_file.lnb41,lnb_file.lnb50,lnb_file.lnb42,lnb_file.lnb51,lnb_file.lnb43,lnb_file.lnbuser,lnb_file.lnbcrat,lnb_file.lnbdate,lnb_file.lnbgrup,lnb_file.lnbmodu,lnb_file.lnboriu,lnb_file.lnborig,lnb_file.lnb02,formonly.idx,formonly.cn2,formonly.cn3,formonly.cn4)
+SCREEN RECORD s_lnd(lnd_file.lnd02,formonly.tqa02_1,lnd_file.lnd03,lnd_file.lnd04,lnd_file.lnd05,lnd_file.lnd06)
+SCREEN RECORD s_lnc(lnc_file.lnc02,formonly.tqa02_2,lnc_file.lnc03,formonly.geo02_1)
+END -- INSTRUCTIONS
+

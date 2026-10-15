@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi102")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4820
+{
+ Frequently Used Special Description # [pms01     ]
+ Memo                                  [pms02               ]
+}
+END -- gr4820
+END -- page01
+END -- folder01
+Table s_pmt
+{
+[pmt03 |pmt04                                                       ]
+[pmt03 |pmt04                                                       ]
+[pmt03 |pmt04                                                       ]
+[pmt03 |pmt04                                                       ]
+[pmt03 |pmt04                                                       ]
+[pmt03 |pmt04                                                       ]
+[pmt03 |pmt04                                                       ]
+[pmt03 |pmt04                                                       ]
+[pmt03 |pmt04                                                       ]
+[pmt03 |pmt04                                                       ]
+
+}
+END -- s_pmt
+Grid gr4821
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4821
+END -- VBox1
+END -- apmi102
+
+TABLES
+pms_file,
+pmt_file
+ATTRIBUTES
+Edit pms01=pms_file.pms01, tabIndex=1, not null, required, comment="Key Field, No Blank/Repeated!    ";
+Edit pms02=pms_file.pms02, tabIndex=2;
+Edit pmt03=pmt_file.pmt03, tabIndex=3, title="Line#", not null, required;
+Edit pmt04=pmt_file.pmt04, tabIndex=4, title="Description", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=5, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmt(pmt_file.pmt03,pmt_file.pmt04)
+SCREEN RECORD Undefined(pms_file.pms01,pms_file.pms02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

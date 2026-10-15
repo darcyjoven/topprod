@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt410.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artt410")
+VBox vb2
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr5
+{
+
+ rua01    [rua01                 ]         rua06    [rua06               ]        [imgmksg  ]
+ rua02    [rua02           ]               ruaconf  [ruaconf      ]               [         ]
+ rua03    [rua03           |rua03_desc    ]ruacond  [ruacond      ]
+ rua04    [rua04           ]               ruaconu  [ruaconu      ][ruaconu_desc     ]
+ rua05    [rua05           ]               ruaplant [ruaplant     ][ruaplant_desc    ]
+
+}
+END -- gr5
+END -- Page3
+Page info(text=%"Info")
+Grid gr6
+{
+
+ Record Owner [ruauser    ]   Last Modified by   [ruamodu     ]   Data Valid Code [ruaacti    ]    Record Orig. [ruaoriu      ]
+ Department   [ruagrup    ]   Create/Modify Date [ruadate     ]   Create Date     [ruacrat     ]   Dept Orig.   [ruaorig      ]
+
+}
+END -- gr6
+END -- info
+END -- pc2
+Table s_rub
+{
+[rub02|rub03    |col9     |rub11    |rub11_desc  |rub04      |rub04_de|rub05     |rub06    |rub07    |rub08    |rub09    |rub10      ]
+[rub02|rub03    |col9     |rub11    |rub11_desc  |rub04      |rub04_de|rub05     |rub06    |rub07    |rub08    |rub09    |rub10      ]
+[rub02|rub03    |col9     |rub11    |rub11_desc  |rub04      |rub04_de|rub05     |rub06    |rub07    |rub08    |rub09    |rub10      ]
+[rub02|rub03    |col9     |rub11    |rub11_desc  |rub04      |rub04_de|rub05     |rub06    |rub07    |rub08    |rub09    |rub10      ]
+[rub02|rub03    |col9     |rub11    |rub11_desc  |rub04      |rub04_de|rub05     |rub06    |rub07    |rub08    |rub09    |rub10      ]
+}
+END -- s_rub
+Grid gr7
+{
+
+  --------- Rows [cnt  ] / [cn2  ] ---------
+
+
+
+}
+END -- gr7
+END -- vb2
+END -- Form1
+
+TABLES
+rub_file,
+rua_file
+ATTRIBUTES
+ButtonEdit rua01=rua_file.rua01, action=controlp, tabIndex=1, noEntry, image="zoom.png";
+Edit rua06=rua_file.rua06, tabIndex=7, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+DateEdit rua02=rua_file.rua02, tabIndex=3, noEntry;
+ComboBox ruaconf=rua_file.ruaconf, tabIndex=21, noEntry, items=(("N", "Unconfirmed"),("Y", "Confirmed"),("X", "Voided"));
+ButtonEdit rua03=rua_file.rua03, action=controlp, tabIndex=2, noEntry, image="zoom.png";
+Edit rua03_desc=formonly.rua03_desc type CHAR, tabIndex=4, noEntry;
+DateEdit ruacond=rua_file.ruacond, tabIndex=8, noEntry;
+Edit rua04=rua_file.rua04, tabIndex=5, noEntry;
+ButtonEdit ruaconu=rua_file.ruaconu, action=controlp, tabIndex=9, noEntry, image="zoom.png";
+Edit ruaconu_desc=formonly.ruaconu_desc type CHAR, tabIndex=11, noEntry;
+Edit rua05=rua_file.rua05, tabIndex=6, noEntry;
+ButtonEdit ruaplant=rua_file.ruaplant, action=controlp, tabIndex=10, noEntry, image="zoom.png";
+Edit ruaplant_desc=formonly.ruaplant_desc type CHAR, tabIndex=12, noEntry;
+Edit ruauser=formonly.ruauser type like rua_file.ruauser, tabIndex=13, noEntry;
+Edit ruamodu=rua_file.ruamodu, tabIndex=15, noEntry;
+Edit ruaacti=rua_file.ruaacti, tabIndex=16, noEntry;
+Edit ruaoriu=rua_file.ruaoriu, tabIndex=17, noEntry;
+Edit ruagrup=rua_file.ruagrup, tabIndex=14, noEntry;
+DateEdit ruadate=rua_file.ruadate, tabIndex=19, noEntry;
+DateEdit ruacrat=rua_file.ruacrat, tabIndex=20, noEntry;
+Edit ruaorig=rua_file.ruaorig, tabIndex=18, noEntry;
+Edit rub02=rub_file.rub02, tabIndex=22, title="Sequence", noEntry;
+ButtonEdit rub03=rub_file.rub03, action=controlp, tabIndex=23, title="Item No.", noEntry, image="zoom.png";
+Edit col9=formonly.Col9 type CHAR, tabIndex=24, title="Item Name", noEntry;
+ButtonEdit rub11=rub_file.rub11, action=controlp, tabIndex=35, title="Vendor No.", noEntry, image="zoom.png";
+Edit rub11_desc=formonly.rub11_desc type CHAR, tabIndex=36, title="Vendor Name", noEntry;
+ButtonEdit rub04=rub_file.rub04, action=controlp, tabIndex=25, title="Inventory Unit", noEntry, image="zoom.png";
+Edit rub04_de=formonly.rub04_desc type CHAR, tabIndex=26, title="Unit Name", noEntry;
+Edit rub05=rub_file.rub05, tabIndex=27, title="Rub05", noEntry;
+Edit rub06=rub_file.rub06, tabIndex=28, title="Stock", noEntry;
+Edit rub07=rub_file.rub07, tabIndex=29, title="Available Stock", noEntry;
+Edit rub08=rub_file.rub08, tabIndex=30, title="In-transit Qty", noEntry;
+Edit rub09=rub_file.rub09, tabIndex=31, title="Rub09", noEntry;
+Edit rub10=rub_file.rub10, tabIndex=32, title="PR Qty", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=33, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=34, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rub(rub_file.rub02,rub_file.rub03,formonly.Col9,rub_file.rub11,formonly.rub11_desc,rub_file.rub04,formonly.rub04_desc,rub_file.rub05,rub_file.rub06,rub_file.rub07,rub_file.rub08,rub_file.rub09,rub_file.rub10)
+SCREEN RECORD Undefined(rua_file.rua01,rua_file.rua06,formonly.imgmksg,rua_file.rua02,rua_file.ruaconf,rua_file.rua03,formonly.rua03_desc,rua_file.ruacond,rua_file.rua04,rua_file.ruaconu,formonly.ruaconu_desc,rua_file.rua05,rua_file.ruaplant,formonly.ruaplant_desc,formonly.ruauser,rua_file.ruamodu,rua_file.ruaacti,rua_file.ruaoriu,rua_file.ruagrup,rua_file.ruadate,rua_file.ruacrat,rua_file.ruaorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

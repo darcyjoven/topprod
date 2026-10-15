@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi614.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="abmi614")
+VBox vb5
+Folder pc3
+Page Page6(text=%"Main")
+HBox hb4
+Grid gr20
+{
+ Host design    [boe01      ][boe01_ima02                ]
+ Attribute group[boe01_imaag][boe01_imaag_aga02          ]
+
+}
+END -- gr20
+Grid gr22
+{
+ Part design      [boe02        ][boe02_ima02             ]
+ Attribute group  [boe02_imaag  ][boe02_imaag_aga02       ]
+
+}
+END -- gr22
+END -- hb4
+END -- Page6
+END -- pc3
+Table s_boe
+{
+[boe03            |boe04             |boe05          |boe06         |bol02          |boe07        |boe08                 ]
+[boe03            |boe04             |boe05          |boe06         |bol02          |boe07        |boe08                 ]
+[boe03            |boe04             |boe05          |boe06         |bol02          |boe07        |boe08                 ]
+[boe03            |boe04             |boe05          |boe06         |bol02          |boe07        |boe08                 ]
+[boe03            |boe04             |boe05          |boe06         |bol02          |boe07        |boe08                 ]
+[boe03            |boe04             |boe05          |boe06         |bol02          |boe07        |boe08                 ]
+[boe03            |boe04             |boe05          |boe06         |bol02          |boe07        |boe08                 ]
+[boe03            |boe04             |boe05          |boe06         |bol02          |boe07        |boe08                 ]
+[boe03            |boe04             |boe05          |boe06         |bol02          |boe07        |boe08                 ]
+
+}
+END -- s_boe
+Grid gr18
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr18
+END -- vb5
+END -- abmi614
+
+TABLES
+bol_file,
+boe_file
+ATTRIBUTES
+ButtonEdit boe01=boe_file.boe01, action=controlp, tabIndex=17, image="zoom.png";
+Edit boe01_ima02=formonly.boe01_ima02 type VARCHAR, tabIndex=10, noEntry;
+Edit boe01_imaag=formonly.boe01_imaag type VARCHAR, tabIndex=11, noEntry;
+Edit boe01_imaag_aga02=formonly.boe01_imaag_aga02 type VARCHAR, tabIndex=12, noEntry;
+ButtonEdit boe02=boe_file.boe02, action=controlp, tabIndex=13, not null, image="zoom.png";
+Edit boe02_ima02=formonly.boe02_ima02 type VARCHAR, tabIndex=15, noEntry;
+Edit boe02_imaag=formonly.boe02_imaag type VARCHAR, tabIndex=14, noEntry;
+Edit boe02_imaag_aga02=formonly.boe02_imaag_aga02 type VARCHAR, tabIndex=16, noEntry;
+ButtonEdit boe03=boe_file.boe03, action=controlp, tabIndex=1, title="Host attribute value one ", not null, image="zoom.png";
+ButtonEdit boe04=boe_file.boe04, action=controlp, tabIndex=2, title="Host attribute value two", not null, image="zoom.png";
+ButtonEdit boe05=boe_file.boe05, action=controlp, tabIndex=5, title="Host attribute value three ", not null, image="zoom.png";
+ButtonEdit boe06=boe_file.boe06, action=controlp, tabIndex=6, title="Spot", image="zoom.png";
+Edit bol02=bol_file.bol02, tabIndex=7, title="Spot description ", noEntry, not null;
+Edit boe07=boe_file.boe07, tabIndex=8, title="Amount scale formula";
+Edit boe08=boe_file.boe08, tabIndex=9, title="Attrition rate scale formula ";
+Edit cnt=formonly.cnt type CHAR, tabIndex=3, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_boe(boe_file.boe03,boe_file.boe04,boe_file.boe05,boe_file.boe06,bol_file.bol02,boe_file.boe07,boe_file.boe08)
+SCREEN RECORD Undefined(boe_file.boe01,formonly.boe01_ima02,formonly.boe01_imaag,formonly.boe01_imaag_aga02,boe_file.boe02,formonly.boe02_ima02,formonly.boe02_imaag,formonly.boe02_imaag_aga02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

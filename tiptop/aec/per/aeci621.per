@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci621.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci621")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr4
+{
+ Styple           [eck00           ]
+ Item No&Group    [eck01               ] [ima02                           ]
+ Resource No.     [eck02               ] [rpf02                           ]
+ Work No.         [eck03               ] [ecb17                           ]
+
+}
+END -- gr4
+END -- page01
+Page Page2(text=%"Info")
+Grid gr5
+{
+ Data Owner   [eckuser   ] Modified by     [eckmodu   ]     Valid Code  [eckacti   ]
+ Owner Dept.  [eckgrup   ] Last Modi. On   [eckdate        ]
+
+
+}
+END -- gr5
+END -- Page2
+END -- folder01
+Table s_eck
+{
+[eck04        |eck05          |eck06             |eck07             ]
+[eck04        |eck05          |eck06             |eck07             ]
+[eck04        |eck05          |eck06             |eck07             ]
+[eck04        |eck05          |eck06             |eck07             ]
+[eck04        |eck05          |eck06             |eck07             ]
+[eck04        |eck05          |eck06             |eck07             ]
+[eck04        |eck05          |eck06             |eck07             ]
+[eck04        |eck05          |eck06             |eck07             ]
+[eck04        |eck05          |eck06             |eck07             ]
+[eck04        |eck05          |eck06             |eck07             ]
+
+}
+END -- s_eck
+Grid gr1692
+{
+      ------ Rows [cnt   ]/ [cn2   ] ---------
+
+}
+END -- gr1692
+END -- vb2
+END -- aeci621
+
+TABLES
+eck_file
+ATTRIBUTES
+ComboBox eck00=eck_file.eck00, tabIndex=13, not null, required, items=(("1", "Item No."),("2", "Group"));
+ButtonEdit eck01=eck_file.eck01, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=16, noEntry;
+ButtonEdit eck02=eck_file.eck02, action=controlp, tabIndex=6, image="zoom.png";
+Edit rpf02=formonly.rpf02 type VARCHAR, tabIndex=17, noEntry;
+ButtonEdit eck03=eck_file.eck03, action=controlp, tabIndex=7, image="zoom.png";
+Edit ecb17=formonly.ecb17 type VARCHAR, tabIndex=18, noEntry;
+Edit eckuser=eck_file.eckuser, tabIndex=8, noEntry;
+Edit eckmodu=eck_file.eckmodu, tabIndex=10, noEntry;
+Edit eckacti=eck_file.eckacti, tabIndex=12, noEntry;
+Edit eckgrup=eck_file.eckgrup, tabIndex=9, noEntry;
+DateEdit eckdate=eck_file.eckdate, tabIndex=11, noEntry;
+Edit eck04=eck_file.eck04, tabIndex=14, title="Start Mount.", not null, required;
+Edit eck05=eck_file.eck05, tabIndex=1, title="End Mount.", not null, required;
+Edit eck06=eck_file.eck06, tabIndex=2, title="Fixed Loss Rate%", not null, required;
+Edit eck07=eck_file.eck07, tabIndex=15, title="Change Loss Rate%", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=3, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_eck(eck_file.eck04,eck_file.eck05,eck_file.eck06,eck_file.eck07)
+SCREEN RECORD Undefined(eck_file.eck00,eck_file.eck01,formonly.ima02,eck_file.eck02,formonly.rpf02,eck_file.eck03,formonly.ecb17,eck_file.eckuser,eck_file.eckmodu,eck_file.eckacti,eck_file.eckgrup,eck_file.eckdate,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

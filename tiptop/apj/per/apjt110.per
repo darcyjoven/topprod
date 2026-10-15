@@ -1,0 +1,118 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt110")
+VBox vb2
+Folder pc3
+Page Page5(text=%"main")
+HBox hb2
+Grid gr25
+{
+ Project No.          [pja01                    ] Current Version  [pja03     ]
+ Project Name         [pja02                                                  ]
+ Current Level Code   [pja04               ]
+ Project Created Date [pja05           ]
+ Project Property     [pja06               ]
+ Project Leader       [pja08               |gen02            ]
+ Begin From           [pja10               ]
+
+[pja12           ]    [pjaconf            ]
+
+}
+END -- gr25
+Grid gr26
+{
+  Description     [pja091                                  ]
+                  [pja092                                  ]
+                  [pja093                                  ]
+                  [pja094                                  ]
+  Project Type    [pja07            ]
+  Depart No       [pja09            ][gem02            ]
+  Intend End Data [pja11            ]
+
+  [pjaclose       ]      Close Date   [pja21           ]
+
+}
+END -- gr26
+END -- hb2
+END -- Page5
+END -- pc3
+Table s_pjb
+{
+[pjb04   |pjb05       |pjb06      |pjb02   |pjb03      |pjb07    |pjb08     |pjb09        |pjb25           |pjb10          |pjb11       |pjb12               |pjb13              |pjb14              |pjb21   |pjbacti   ]
+[pjb04   |pjb05       |pjb06      |pjb02   |pjb03      |pjb07    |pjb08     |pjb09        |pjb25           |pjb10          |pjb11       |pjb12               |pjb13              |pjb14              |pjb21   |pjbacti   ]
+[pjb04   |pjb05       |pjb06      |pjb02   |pjb03      |pjb07    |pjb08     |pjb09        |pjb25           |pjb10          |pjb11       |pjb12               |pjb13              |pjb14              |pjb21   |pjbacti   ]
+[pjb04   |pjb05       |pjb06      |pjb02   |pjb03      |pjb07    |pjb08     |pjb09        |pjb25           |pjb10          |pjb11       |pjb12               |pjb13              |pjb14              |pjb21   |pjbacti   ]
+[pjb04   |pjb05       |pjb06      |pjb02   |pjb03      |pjb07    |pjb08     |pjb09        |pjb25           |pjb10          |pjb11       |pjb12               |pjb13              |pjb14              |pjb21   |pjbacti   ]
+[pjb04   |pjb05       |pjb06      |pjb02   |pjb03      |pjb07    |pjb08     |pjb09        |pjb25           |pjb10          |pjb11       |pjb12               |pjb13              |pjb14              |pjb21   |pjbacti   ]
+[pjb04   |pjb05       |pjb06      |pjb02   |pjb03      |pjb07    |pjb08     |pjb09        |pjb25           |pjb10          |pjb11       |pjb12               |pjb13              |pjb14              |pjb21   |pjbacti   ]
+[pjb04   |pjb05       |pjb06      |pjb02   |pjb03      |pjb07    |pjb08     |pjb09        |pjb25           |pjb10          |pjb11       |pjb12               |pjb13              |pjb14              |pjb21   |pjbacti   ]
+[pjb04   |pjb05       |pjb06      |pjb02   |pjb03      |pjb07    |pjb08     |pjb09        |pjb25           |pjb10          |pjb11       |pjb12               |pjb13              |pjb14              |pjb21   |pjbacti   ]
+[pjb04   |pjb05       |pjb06      |pjb02   |pjb03      |pjb07    |pjb08     |pjb09        |pjb25           |pjb10          |pjb11       |pjb12               |pjb13              |pjb14              |pjb21   |pjbacti   ]
+}
+END -- s_pjb
+Grid gr36
+{
+ ----------  Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr36
+END -- vb2
+END -- apjt110
+
+TABLES
+pjb_file,
+pja_file
+ATTRIBUTES
+ButtonEdit pja01=pja_file.pja01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Edit pja03=pja_file.pja03, tabIndex=2, noEntry;
+Edit pja02=pja_file.pja02, tabIndex=7, noEntry;
+Edit pja04=pja_file.pja04, tabIndex=8, noEntry;
+DateEdit pja05=pja_file.pja05, tabIndex=9, noEntry;
+ComboBox pja06=pja_file.pja06, tabIndex=10, noEntry, items=(("1", "STANDARD PROJECT"),("2", "ACTUAL PROJECT"));
+ButtonEdit pja08=pja_file.pja08, action=controlp, tabIndex=12, noEntry, image="zoom.png";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=13, noEntry;
+DateEdit pja10=pja_file.pja10, tabIndex=16;
+CheckBox pja12=pja_file.pja12, tabIndex=20, default = "N", text="Net Active?", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pjaconf=pja_file.pjaconf, tabIndex=18, text="Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pja091=formonly.pja091 type VARCHAR, tabIndex=3, noEntry;
+Edit pja092=formonly.pja092 type VARCHAR, tabIndex=4, noEntry;
+Edit pja093=formonly.pja093 type VARCHAR, tabIndex=5, noEntry;
+Edit pja094=formonly.pja094 type VARCHAR, tabIndex=6, noEntry;
+ButtonEdit pja07=pja_file.pja07, action=controlp, tabIndex=11, noEntry, image="zoom.png";
+ButtonEdit pja09=pja_file.pja09, action=controlp, tabIndex=14, noEntry, image="zoom.png";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=15, noEntry;
+DateEdit pja11=pja_file.pja11, tabIndex=17;
+CheckBox pjaclose=pja_file.pjaclose, tabIndex=19, text="Close", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit pja21=pja_file.pja21, tabIndex=21;
+Edit pjb04=pjb_file.pjb04, tabIndex=22, title="Level", not null, required;
+Edit pjb05=pjb_file.pjb05, tabIndex=22, title="Current No.", not null, required;
+ButtonEdit pjb06=pjb_file.pjb06, action=controlp, tabIndex=23, title="Parent No.", not null, image="zoom.png";
+Edit pjb02=pjb_file.pjb02, tabIndex=24, title="WBS No.", noEntry, not null, required;
+Edit pjb03=pjb_file.pjb03, tabIndex=25, title="WBS Name", not null, required;
+ButtonEdit pjb07=pjb_file.pjb07, action=controlp, tabIndex=26, title="WBS Sort", not null, required, image="zoom.png";
+ComboBox pjb08=pjb_file.pjb08, tabIndex=27, default = "3", title="Priority", not null, required, items=(("0", "Top Priority"),("1", "High Priority"),("2", "Priority"),("3", "Commonly"));
+CheckBox pjb09=pjb_file.pjb09, tabIndex=28, default = "Y", title="Bottom Level", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pjb25=pjb_file.pjb25, tabIndex=37, default = "N", title="Have Promotion?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pjb10=pjb_file.pjb10, tabIndex=29, default = "Y", title="Planning Cost", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox pjb11=pjb_file.pjb11, tabIndex=30, default = "Y", title="Cost Party", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit pjb12=pjb_file.pjb12, tabIndex=31, title="Actual Working Time", noEntry;
+ComboBox pjb13=pjb_file.pjb13, tabIndex=32, default = "0", title="Progress Conf Type", noEntry, not null, required, items=(("0", "Human Maintenance"));
+Edit pjb14=pjb_file.pjb14, tabIndex=33, default = "0", title="Conf Complet Rate", noEntry;
+ComboBox pjb21=pjb_file.pjb21, tabIndex=34, default = "0", title="Status", noEntry, not null, required, items=(("0", "Create"),("1", "Approved"),("2", "Frozen"),("3", "Finished"),("4", "Closing"));
+CheckBox pjbacti=pjb_file.pjbacti, tabIndex=38, default = "Y", title="Valid?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=35, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=36, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjb(pjb_file.pjb04,pjb_file.pjb05,pjb_file.pjb06,pjb_file.pjb02,pjb_file.pjb03,pjb_file.pjb07,pjb_file.pjb08,pjb_file.pjb09,pjb_file.pjb25,pjb_file.pjb10,pjb_file.pjb11,pjb_file.pjb12,pjb_file.pjb13,pjb_file.pjb14,pjb_file.pjb21,pjb_file.pjbacti)
+SCREEN RECORD Undefined(pja_file.pja01,pja_file.pja03,pja_file.pja02,pja_file.pja04,pja_file.pja05,pja_file.pja06,pja_file.pja08,formonly.gen02,pja_file.pja10,pja_file.pja12,pja_file.pjaconf,formonly.pja091,formonly.pja092,formonly.pja093,formonly.pja094,pja_file.pja07,pja_file.pja09,formonly.gem02,pja_file.pja11,pja_file.pjaclose,pja_file.pja21,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

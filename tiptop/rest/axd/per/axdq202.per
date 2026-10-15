@@ -1,0 +1,111 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdq202.per created Wed Jan 23 05:30:37 2008
+-- File created from axdq202.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdq202")
+-- GRID
+-- GRID
+-- HBOX
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        HBOX 
+          GRID gr7800
+          {
+          <G group01                                           >
+           Trans-Out No.       [aa0             ] [aa1        ]
+           Date                [aa2       ]
+           Item No.            [aa3                           ]
+           S/P Name            [aa4                           ]
+          <                                                    >
+
+
+          }
+          END -- GRID
+          GRID gr7801
+          {
+          <G gruop02                                      >
+           Tran-in Plant       [aa5       ]
+           Tran-in Warehouse   [aa6       ]
+           Unit                [aa7       ]
+           Tran-Out Qty        [aa8                 ]
+          <                                               >
+
+
+          }
+          END -- GRID
+        END -- HBOX
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_sr
+    {
+    [aa9       |ab0                       |ab1       |ab2            |ab3          |ab4          |ab5                      |ab6                      |ab7         ]
+    [aa9       |ab0                       |ab1       |ab2            |ab3          |ab4          |ab5                      |ab6                      |ab7         ]
+    [aa9       |ab0                       |ab1       |ab2            |ab3          |ab4          |ab5                      |ab6                      |ab7         ]
+    [aa9       |ab0                       |ab1       |ab2            |ab3          |ab4          |ab5                      |ab6                      |ab7         ]
+    [aa9       |ab0                       |ab1       |ab2            |ab3          |ab4          |ab5                      |ab6                      |ab7         ]
+    [aa9       |ab0                       |ab1       |ab2            |ab3          |ab4          |ab5                      |ab6                      |ab7         ]
+    [aa9       |ab0                       |ab1       |ab2            |ab3          |ab4          |ab5                      |ab6                      |ab7         ]
+    [aa9       |ab0                       |ab1       |ab2            |ab3          |ab4          |ab5                      |ab6                      |ab7         ]
+    [aa9       |ab0                       |ab1       |ab2            |ab3          |ab4          |ab5                      |ab6                      |ab7         ]
+    [aa9       |ab0                       |ab1       |ab2            |ab3          |ab4          |ab5                      |ab6                      |ab7         ]
+    }
+    END -- TABLE
+    GRID gr7802
+    {
+     ["                                                                                                                                "]---------- Total [ab8         ] ----------
+
+    }
+    END -- GRID
+    GRID gr7803
+    {
+     ---------- Rows [ab9   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adf_file,adg_file,adl_file,adk_file
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=adf_file.adf01, TABINDEX=1;
+  EDIT aa1=adg_file.adg02, TABINDEX=2;
+  DATEEDIT aa2=adf_file.adf02, TABINDEX=3;
+  EDIT aa3=adg_file.adg05, TABINDEX=4;
+  EDIT aa4=FORMONLY.ima02, NOENTRY, TABINDEX=5;
+  GROUP gruop02 : gruop02;
+  EDIT aa5=adg_file.adg09, TABINDEX=6;
+  EDIT aa6=adg_file.adg10, TABINDEX=7;
+  EDIT aa7=adg_file.adg11, TABINDEX=8;
+  EDIT aa8=adg_file.adg12, TABINDEX=9;
+  EDIT aa9=FORMONLY.r TYPE SMALLINT, TABINDEX=10, TITLE="Line No";
+  EDIT ab0=adl_file.adl01, TABINDEX=11, TITLE="Vehicle Dispatching No.";
+  EDIT ab1=adl_file.adl02, TABINDEX=12, TITLE="Line No";
+  EDIT ab2=adk_file.adk08, TABINDEX=13, TITLE="Vehicle No.";
+  DATEEDIT ab3=adk_file.adk04, TABINDEX=14, TITLE="Leave Date";
+  EDIT ab4=adk_file.adk05, TABINDEX=15, TITLE="Leave Time";
+  DATEEDIT ab5=adl_file.adl07, TABINDEX=16, TITLE="Estimate Arriving Date";
+  EDIT ab6=adl_file.adl08, TABINDEX=17, TITLE="Estimate Arriving Time";
+  EDIT ab7=adl_file.adl05, TABINDEX=18, TITLE="Dispatch Qty";
+  EDIT ab8=FORMONLY.adl05_t TYPE SMALLINT, TABINDEX=19;
+  EDIT ab9=FORMONLY.cnt TYPE SMALLINT, TABINDEX=20;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_sr (FORMONLY.r, adl_file.adl01, adl_file.adl02, adk_file.adk08, adk_file.adk04, adk_file.adk05, adl_file.adl07, adl_file.adl08, adl_file.adl05)
+END

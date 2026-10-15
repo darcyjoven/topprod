@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoq510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoq510")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+HBox HBox1
+Grid gr1340
+{
+ Goods No.           [cod03               ]
+ P/N Spec.           [cob02               ]
+ HS Code             [cob09               ]
+}
+END -- gr1340
+Grid gr1341
+{
+ Register Book No.   [coc03          ]
+ Customs No.         [coc10          ]
+ Unit                [cod06          ]
+}
+END -- gr1341
+Grid gr1342
+{
+ Qty Applied         [cod05       ]
+ Additional Qty      [cod10       ]
+
+}
+END -- gr1342
+END -- HBox1
+Group group01
+Grid gr1343
+{
+   Year / Period     [yy  ]/[mm]
+
+}
+END -- gr1343
+END -- group01
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_cnk
+{
+[cnk0|cnk04  |cnk05     |cnk06           |cnk07           |cnk08           |cnk09                |cnk10              |cnk12                ]
+[cnk0|cnk04  |cnk05     |cnk06           |cnk07           |cnk08           |cnk09                |cnk10              |cnk12                ]
+[cnk0|cnk04  |cnk05     |cnk06           |cnk07           |cnk08           |cnk09                |cnk10              |cnk12                ]
+[cnk0|cnk04  |cnk05     |cnk06           |cnk07           |cnk08           |cnk09                |cnk10              |cnk12                ]
+[cnk0|cnk04  |cnk05     |cnk06           |cnk07           |cnk08           |cnk09                |cnk10              |cnk12                ]
+[cnk0|cnk04  |cnk05     |cnk06           |cnk07           |cnk08           |cnk09                |cnk10              |cnk12                ]
+[cnk0|cnk04  |cnk05     |cnk06           |cnk07           |cnk08           |cnk09                |cnk10              |cnk12                ]
+[cnk0|cnk04  |cnk05     |cnk06           |cnk07           |cnk08           |cnk09                |cnk10              |cnk12                ]
+[cnk0|cnk04  |cnk05     |cnk06           |cnk07           |cnk08           |cnk09                |cnk10              |cnk12                ]
+[cnk0|cnk04  |cnk05     |cnk06           |cnk07           |cnk08           |cnk09                |cnk10              |cnk12                ]
+
+}
+END -- s_cnk
+Grid gr1344
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1344
+END -- VBox1
+END -- acoq510
+
+TABLES
+cnk_file,
+cod_file
+ATTRIBUTES
+Edit cod03=cod_file.cod03, tabIndex=1;
+Edit cob02=formonly.cob02 type CHAR, tabIndex=2, noEntry;
+Edit cob09=formonly.cob09 type CHAR, tabIndex=3;
+Edit coc03=formonly.coc03 type CHAR, tabIndex=4;
+Edit coc10=formonly.coc10 type CHAR, tabIndex=5;
+Edit cod06=cod_file.cod06, tabIndex=6, noEntry;
+Edit cod05=cod_file.cod05, tabIndex=7, noEntry;
+Edit cod10=cod_file.cod10, tabIndex=8, noEntry;
+Edit yy=formonly.yy type CHAR, tabIndex=9;
+Edit mm=formonly.mm type CHAR, tabIndex=10;
+Edit cnk0=cnk_file.cnk03, tabIndex=11, title="Year";
+Edit cnk04=cnk_file.cnk04, tabIndex=12, title="Period";
+Edit cnk05=cnk_file.cnk05, tabIndex=13, title="Export";
+Edit cnk06=cnk_file.cnk06, tabIndex=14, title="Overseas/Retrun";
+Edit cnk07=cnk_file.cnk07, tabIndex=15, title="Transfer/Export";
+Edit cnk08=cnk_file.cnk08, tabIndex=16, title="Transfer/Return";
+Edit cnk09=cnk_file.cnk09, tabIndex=17, title="Local Sales Delivery";
+Edit cnk10=cnk_file.cnk10, tabIndex=18, title="Local Sales Retrun";
+Edit cnk12=cnk_file.cnk12, tabIndex=19, title="End of Period Balance";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cnk(cnk_file.cnk03,cnk_file.cnk04,cnk_file.cnk05,cnk_file.cnk06,cnk_file.cnk07,cnk_file.cnk08,cnk_file.cnk09,cnk_file.cnk10,cnk_file.cnk12)
+SCREEN RECORD Undefined(cod_file.cod03,formonly.cob02,formonly.cob09,formonly.coc03,formonly.coc10,cod_file.cod06,cod_file.cod05,cod_file.cod10,formonly.yy,formonly.mm,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

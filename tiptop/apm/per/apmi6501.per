@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi6501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Generate Budget Data")
+Grid gr4880
+{
+ <G group01                                  >
+  Dept. Budget Book#  [afb00               ]
+  Budget No.          [afb01               ]
+  Account #           [afb02               ]
+  Department No.      [afb04               ]
+  Accounting Year     [afb03               ]
+ <                                           >
+
+}
+END -- gr4880
+END -- apmi6501
+
+TABLES
+afb_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit afb00=afb_file.afb00, tabIndex=1;
+Edit afb01=afb_file.afb01, tabIndex=2;
+Edit afb02=afb_file.afb02, tabIndex=3;
+Edit afb04=afb_file.afb04, tabIndex=4;
+Edit afb03=afb_file.afb03, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(afb_file.afb00,afb_file.afb01,afb_file.afb02,afb_file.afb04,afb_file.afb03)
+END -- INSTRUCTIONS
+

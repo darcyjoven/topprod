@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri037.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(action=page1, text=%"Page1")
+Table ds1
+{
+[chk     |hrbw01            |hrbw01_n|hrat04  |hrat04_n    |hrat05  |hrat05_n|hrbw02       |hrbw05       |hrbw06     |hrbw03  |hrbw04         |hrbw04_n|hrbw08           |hrbw09  |hrbw10  |hrbw07             ]
+[chk     |hrbw01            |hrbw01_n|hrat04  |hrat04_n    |hrat05  |hrat05_n|hrbw02       |hrbw05       |hrbw06     |hrbw03  |hrbw04         |hrbw04_n|hrbw08           |hrbw09  |hrbw10  |hrbw07             ]
+[chk     |hrbw01            |hrbw01_n|hrat04  |hrat04_n    |hrat05  |hrat05_n|hrbw02       |hrbw05       |hrbw06     |hrbw03  |hrbw04         |hrbw04_n|hrbw08           |hrbw09  |hrbw10  |hrbw07             ]
+[chk     |hrbw01            |hrbw01_n|hrat04  |hrat04_n    |hrat05  |hrat05_n|hrbw02       |hrbw05       |hrbw06     |hrbw03  |hrbw04         |hrbw04_n|hrbw08           |hrbw09  |hrbw10  |hrbw07             ]
+[chk     |hrbw01            |hrbw01_n|hrat04  |hrat04_n    |hrat05  |hrat05_n|hrbw02       |hrbw05       |hrbw06     |hrbw03  |hrbw04         |hrbw04_n|hrbw08           |hrbw09  |hrbw10  |hrbw07             ]
+
+}
+END -- ds1
+END -- Page1
+Page Page2(action=page2, text=%"Page2")
+Table ds2
+{
+[chk2    |hrbw00            |hrbw01_1|hrat01  |hrat04_n1   |hrat02  |hrat05_1|hrbw0a       |hrbw0b    |hrbw0c    |hrbw0d    |hrbw0e          |hrbw04_1|hrbw0f               ]
+[chk2    |hrbw00            |hrbw01_1|hrat01  |hrat04_n1   |hrat02  |hrat05_1|hrbw0a       |hrbw0b    |hrbw0c    |hrbw0d    |hrbw0e          |hrbw04_1|hrbw0f               ]
+[chk2    |hrbw00            |hrbw01_1|hrat01  |hrat04_n1   |hrat02  |hrat05_1|hrbw0a       |hrbw0b    |hrbw0c    |hrbw0d    |hrbw0e          |hrbw04_1|hrbw0f               ]
+[chk2    |hrbw00            |hrbw01_1|hrat01  |hrat04_n1   |hrat02  |hrat05_1|hrbw0a       |hrbw0b    |hrbw0c    |hrbw0d    |hrbw0e          |hrbw04_1|hrbw0f               ]
+[chk2    |hrbw00            |hrbw01_1|hrat01  |hrat04_n1   |hrat02  |hrat05_1|hrbw0a       |hrbw0b    |hrbw0c    |hrbw0d    |hrbw0e          |hrbw04_1|hrbw0f               ]
+
+}
+END -- ds2
+END -- Page2
+END -- Folder1
+Grid Grid1
+{
+
+ ---------- [label1    |cnt1      ] ---------- [pbar                ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+hrbw_file,
+hrat_file,
+hrat_file1=hrat_file,
+hrbw_file1=hrbw_file
+ATTRIBUTES
+CheckBox chk=formonly.chk, tabIndex=28, title=%"Edit1", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit hrbw01=hrbw_file.hrbw01, action=controlp, tabIndex=1, title=%"hrbw01", not null, image="zoom.png", scroll;
+Edit hrbw01_n=formonly.hrbw01_n, tabIndex=5, title=%"Name", noEntry;
+Edit hrat04=hrat_file.hrat04, tabIndex=6, title=%"hrat04", noEntry, hidden;
+Edit hrat04_n=formonly.hrat04_n, tabIndex=7, title=%"Dep Name";
+Edit hrat05=hrat_file.hrat05, tabIndex=8, title=%"hrat05", noEntry, hidden;
+Edit hrat05_n=formonly.hrat05_n, tabIndex=9, title=%"Post Name";
+Edit hrbw02=hrbw_file.hrbw02, tabIndex=2, title=%"hrbw02", not null, scroll;
+DateEdit hrbw05=hrbw_file.hrbw05, tabIndex=25, title=%"hrbw05";
+DateEdit hrbw06=hrbw_file.hrbw06, tabIndex=26, title=%"hrbw06";
+DateEdit hrbw03=hrbw_file.hrbw03, tabIndex=27, title=%"hrbw03";
+ButtonEdit hrbw04=hrbw_file.hrbw04, action=controlp, tabIndex=3, title=%"hrbw04", image="zoom.png", scroll;
+Edit hrbw04_n=formonly.hrbw04_n, tabIndex=23, title=%"Name", noEntry;
+ComboBox hrbw08=formonly.hrbw08, tabIndex=30, title=%"hrbw08", not null, required, items=(("0", "0"),("1", "1"),("2", "2"));
+ButtonEdit hrbw09=formonly.hrbw09, action=controlp, tabIndex=32, title=%"hrbw09", not null, required, image="zoom";
+Edit hrbw10=formonly.hrbw10, tabIndex=31, title=%"hrbw10", invisible;
+TextEdit hrbw07=hrbw_file.hrbw07, tabIndex=4, title=%"hrbw07";
+CheckBox chk2=formonly.chk2, tabIndex=29, title=%"Edit1", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit hrbw00=hrbw_file1.hrbw01, tabIndex=10, title=%"hrbw01", noEntry, scroll;
+Edit hrbw01_1=formonly.hrbw01_n1, tabIndex=11, title=%"Name", noEntry;
+Edit hrat01=hrat_file1.hrat04, tabIndex=12, title=%"hrat04", noEntry, hidden;
+Edit hrat04_n1=formonly.hrat04_n1, tabIndex=13, title=%"Dep Name", noEntry;
+Edit hrat02=hrat_file1.hrat05, tabIndex=14, title=%"hrat05", noEntry, hidden;
+Edit hrat05_1=formonly.hrat05_n1, tabIndex=15, title=%"Post Name", noEntry;
+Edit hrbw0a=hrbw_file1.hrbw02, tabIndex=16, title=%"hrbw02", noEntry, scroll;
+DateEdit hrbw0b=hrbw_file1.hrbw05, tabIndex=17, title=%"hrbw05", noEntry, format="", validate like hrbw_file.hrbw05;
+DateEdit hrbw0c=hrbw_file1.hrbw06, tabIndex=18, title=%"hrbw06", noEntry;
+DateEdit hrbw0d=hrbw_file1.hrbw03, tabIndex=19, title=%"hrbw03", noEntry, format="", validate like hrbw_file.hrbw03;
+ButtonEdit hrbw0e=hrbw_file1.hrbw04, tabIndex=20, title=%"hrbw04", noEntry, scroll;
+Edit hrbw04_1=formonly.hrbw04_n1, tabIndex=24, title=%"Name", noEntry;
+TextEdit hrbw0f=hrbw_file1.hrbw07, tabIndex=21, title=%"hrbw07", noEntry;
+Label label1:Label1, text=%"Count", sizePolicy=initial;
+Edit cnt1=formonly.cnt1, tabIndex=22;
+ProgressBar pbar=formonly.pbar, valueMin=0, color = black, hidden, sizePolicy=initial;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrbw_a(formonly.chk,hrbw_file.hrbw01,formonly.hrbw01_n,hrat_file.hrat04,formonly.hrat04_n,hrat_file.hrat05,formonly.hrat05_n,hrbw_file.hrbw02,hrbw_file.hrbw05,hrbw_file.hrbw06,hrbw_file.hrbw03,hrbw_file.hrbw04,formonly.hrbw04_n,formonly.hrbw08,formonly.hrbw09,formonly.hrbw10,hrbw_file.hrbw07)
+SCREEN RECORD s_hrbw_b(formonly.chk2,hrbw_file1.hrbw01,formonly.hrbw01_n1,hrat_file1.hrat04,formonly.hrat04_n1,hrat_file1.hrat05,formonly.hrat05_n1,hrbw_file1.hrbw02,hrbw_file1.hrbw05,hrbw_file1.hrbw06,hrbw_file1.hrbw03,hrbw_file1.hrbw04,formonly.hrbw04_n1,hrbw_file1.hrbw07)
+SCREEN RECORD Undefined(formonly.cnt1,formonly.pbar)
+END -- INSTRUCTIONS
+

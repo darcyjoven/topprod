@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcq414.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aqcq414")
+Folder pc22
+Page page01(text="Page01")
+VBox VBox1
+Grid gr51
+{
+ <G group01                                        >
+  Customer #          [occ01     ] [occ02     ]
+  QC Date             [bdate       ]-[edate       ]
+ <                                                 >
+ <G group02                                    >
+  Lots Sent           [lot       ]
+  Qty Sent to QC      [qcf22     ]
+  Qty Passed          [stkqty    ]
+ <                                             >
+ <G group03                                    >
+  NO-Good Qty         [crqty     ]
+  NO-Good %           [crrate    ]
+
+ <                                             >
+ <G group04                                    >
+  Lots Rejected       [rejqty    ]
+  Lot Rejected%       [rejrate   ]%
+ <                                             >
+
+}
+END -- gr51
+Grid gr52
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr52
+END -- VBox1
+END -- page01
+END -- pc22
+END -- aqcq414
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit occ01=formonly.occ01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=2, noEntry;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=3;
+DateEdit edate=formonly.edate type DATE, tabIndex=4;
+Group group02:group02;
+Edit lot=formonly.lot type CHAR, tabIndex=5;
+Edit qcf22=formonly.qcf22 type CHAR, tabIndex=6;
+Edit stkqty=formonly.stkqty type CHAR, tabIndex=7;
+Group group03:group03;
+Edit crqty=formonly.crqty type CHAR, tabIndex=8;
+Edit crrate=formonly.crrate type CHAR, tabIndex=9;
+Group group04:group04;
+Edit rejqty=formonly.rejqty type CHAR, tabIndex=10;
+Edit rejrate=formonly.rejrate type CHAR, tabIndex=11;
+Edit cnt=formonly.cnt type CHAR, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.occ01,formonly.occ02,formonly.bdate,formonly.edate,formonly.lot,formonly.qcf22,formonly.stkqty,formonly.crqty,formonly.crrate,formonly.rejqty,formonly.rejrate,formonly.cnt)
+END -- INSTRUCTIONS
+

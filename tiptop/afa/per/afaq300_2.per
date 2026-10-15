@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afaq300_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afaq300_2")
+Folder pc387
+Page page01(text="Main")
+VBox VBox1
+Group gb1281
+Grid gr1987
+{
+  Credit Ratio        [faj80     ]%
+  Credit code         [faj42     ][g1                  ]
+  Reason for No Credit[faj813              ]
+  Tax Revamped Life   [faj423    ]Month
+  Credited Amount     [faj811              ]
+  Credited Year       [faj812    ]
+  Due Date            [duedate   ]
+
+ <G group1                                  ><G group2                                   >
+  Approval Date       [faj82       ]          Approval Date       [faj84       ]
+  Approval No.        [faj83               ]  Approval No.        [faj85               ]
+ <                                          ><                                           >
+
+}
+END -- gr1987
+END -- gb1281
+END -- VBox1
+END -- page01
+END -- pc387
+END -- afaq300_2
+
+TABLES
+faj_file
+ATTRIBUTES
+Edit faj80=faj_file.faj80, tabIndex=1;
+Edit faj42=faj_file.faj42, tabIndex=2;
+Edit g1=formonly.g1 type CHAR, tabIndex=3;
+Edit faj813=faj_file.faj813, tabIndex=4;
+Edit faj423=faj_file.faj423, tabIndex=5;
+Edit faj811=faj_file.faj811, tabIndex=6;
+Edit faj812=faj_file.faj812, tabIndex=7;
+DateEdit duedate=formonly.duedate type DATE, tabIndex=8;
+Group group1:group1, text="Authority";
+DateEdit faj82=faj_file.faj82, tabIndex=9;
+Edit faj83=faj_file.faj83, tabIndex=10;
+Group group2:group2, text="IRA";
+DateEdit faj84=faj_file.faj84, tabIndex=11;
+Edit faj85=faj_file.faj85, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(faj_file.faj80,faj_file.faj42,formonly.g1,faj_file.faj813,faj_file.faj423,faj_file.faj811,faj_file.faj812,formonly.duedate,faj_file.faj82,faj_file.faj83,faj_file.faj84,faj_file.faj85)
+END -- INSTRUCTIONS
+

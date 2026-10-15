@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_update_key.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_update_key")
+VBox VBox1
+Table s_key
+{
+[check |table_name       |col_name        |index_name       ]
+[check |table_name       |col_name        |index_name       ]
+[check |table_name       |col_name        |index_name       ]
+[check |table_name       |col_name        |index_name       ]
+[check |table_name       |col_name        |index_name       ]
+[check |table_name       |col_name        |index_name       ]
+[check |table_name       |col_name        |index_name       ]
+[check |table_name       |col_name        |index_name       ]
+[check |table_name       |col_name        |index_name       ]
+[check |table_name       |col_name        |index_name       ]
+
+}
+END -- s_key
+Grid gr3142
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr3142
+END -- VBox1
+END -- p_update_key
+
+ATTRIBUTES
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit table_name=formonly.table_name type CHAR, tabIndex=2, title="Table Name", noEntry;
+Edit col_name=formonly.col_name type CHAR, tabIndex=3, title="Key Column", noEntry;
+Edit index_name=formonly.index_name type CHAR, tabIndex=4, title="Key Index", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_key(formonly.check,formonly.table_name,formonly.col_name,formonly.index_name)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

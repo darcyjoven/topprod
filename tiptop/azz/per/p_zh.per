@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zh.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zh")
+VBox vb6
+Folder folder01
+Page page01(text="Page01")
+Grid gr3098
+{
+ <G group01                                                    >
+  Program ID          [gam01     ][gaz03                      ]
+  Customerization Name[gam02     ]
+
+
+
+ <                                                             >
+
+}
+END -- gr3098
+END -- page01
+END -- folder01
+Table s_gan
+{
+[gan01    |ganmodu    |gandate       |gan03                 ]
+[gan01    |ganmodu    |gandate       |gan03                 ]
+[gan01    |ganmodu    |gandate       |gan03                 ]
+[gan01    |ganmodu    |gandate       |gan03                 ]
+[gan01    |ganmodu    |gandate       |gan03                 ]
+[gan01    |ganmodu    |gandate       |gan03                 ]
+[gan01    |ganmodu    |gandate       |gan03                 ]
+[gan01    |ganmodu    |gandate       |gan03                 ]
+[gan01    |ganmodu    |gandate       |gan03                 ]
+[gan01    |ganmodu    |gandate       |gan03                 ]
+
+}
+END -- s_gan
+Grid gr3099
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3099
+END -- vb6
+END -- p_zh
+
+TABLES
+gam_file,
+gan_file
+ATTRIBUTES
+Group group01:group01;
+Edit gam01=gam_file.gam01, tabIndex=1;
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=2, noEntry;
+Edit gam02=gam_file.gam02, tabIndex=3;
+Edit gan01=gan_file.gan01, tabIndex=4, title="Line No.", noEntry;
+Edit ganmodu=gan_file.ganmodu, tabIndex=5, title="Modifier", noEntry;
+DateEdit gandate=gan_file.gandate, tabIndex=6, title="Modified Date", noEntry;
+Edit gan03=gan_file.gan03, tabIndex=7, title="Memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gan(gan_file.gan01,gan_file.ganmodu,gan_file.gandate,gan_file.gan03)
+SCREEN RECORD Undefined(gam_file.gam01,formonly.gaz03,gam_file.gam02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

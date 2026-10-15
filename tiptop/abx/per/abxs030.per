@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxs030.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxs030")
+Folder pc175
+Page page01(text="Main")
+Grid gr1224
+{
+ Store-in Note not        [bnz01           ]
+ Store-in Note is Receipt [bnz02           ]
+ Store-out Note is        [bnz03           ]
+ Get Release Order        [bnz04           ]
+}
+END -- gr1224
+END -- page01
+END -- pc175
+END -- abxs030
+
+TABLES
+bnz_file
+ATTRIBUTES
+Edit bnz01=bnz_file.bnz01, tabIndex=1, upShift;
+Edit bnz02=bnz_file.bnz02, tabIndex=2, upShift;
+Edit bnz03=bnz_file.bnz03, tabIndex=3, upShift;
+Edit bnz04=bnz_file.bnz04, tabIndex=4, upShift;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bnz_file.bnz01,bnz_file.bnz02,bnz_file.bnz03,bnz_file.bnz04)
+END -- INSTRUCTIONS
+

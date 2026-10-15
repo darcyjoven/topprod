@@ -1,0 +1,136 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csft001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+  tc_sfp01     [tc_sfp01         ]          tc_sfp02 [tc_sfp02      ]       tc_sfpconf   [tc_sfpconf  ]    [imgmksg]
+  tc_sfp11     [tc_sfp11         ]          tc_sfp12 [tc_sfp12      ]       tc_sfp00     [tc_sfp00    ]    [       ]
+  tc_sfp03     [tc_sfp03         ]          tc_sfp04 [tc_sfp04      ]       tc_sfp13     [tc_sfp13    ]
+  tc_sfp05     [tc_sfp05         ] [pmc03             ]
+  tc_sfp06     [tc_sfp06         ]          tc_sfp07 [tc_sfp07      ]
+  tc_sfp08     [tc_sfp08         ]          tc_sfp09 [tc_sfp09      ]
+  tc_sfp10     [tc_sfp10         ]
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid2
+{
+
+     tc_sfpuser   [tc_sfpuser]               tc_sfpgrup    [tc_sfpgrup]       tc_sfpdate    [tc_sfpdate]
+     tc_sfpmodu   [tc_sfpmodu]
+
+
+}
+END -- Grid2
+END -- Page2
+Page Page3(text=%"Page3")
+Grid Grid3
+{
+
+       tc_sfpud01     [tc_sfpud01   ]        tc_sfpud05   [tc_sfpud05   ]         tc_sfpud09  [tc_sfpud09   ]   tc_sfpud13   [tc_sfpud13   ]
+       tc_sfpud02     [tc_sfpud02   ]        tc_sfpud06   [tc_sfpud06   ]         tc_sfpud10  [tc_sfpud10   ]   tc_sfpud14   [tc_sfpud14   ]
+       tc_sfpud03     [tc_sfpud03   ]        tc_sfpud07   [tc_sfpud07   ]         tc_sfpud11  [tc_sfpud11   ]   tc_sfpud15   [tc_sfpud15   ]
+       tc_sfpud04     [tc_sfpud04   ]        tc_sfpud08   [tc_sfpud08   ]         tc_sfpud12  [tc_sfpud12   ]
+
+}
+END -- Grid3
+END -- Page3
+END -- Folder1
+Table s_tc_gyy
+{
+[tc_sfs02       |tc_sfs03       |ima02        |ima021        |tc_sfs04      |tc_sfs05       |tc_sfs06     |tc_sfsud0|tc_sfsud|tc_sfsu1|tc_sfsu2|tc_sfsu3|tc_sfsu4|tc_sfsu5|tc_sfsu6|tc_sfsu7|tc_sfsu8|tc_sfsu9|tc_sfsu0|tc_sfsua|tc_sfsub|tc_sfsuc]
+[tc_sfs02       |tc_sfs03       |ima02        |ima021        |tc_sfs04      |tc_sfs05       |tc_sfs06     |tc_sfsud0|tc_sfsud|tc_sfsu1|tc_sfsu2|tc_sfsu3|tc_sfsu4|tc_sfsu5|tc_sfsu6|tc_sfsu7|tc_sfsu8|tc_sfsu9|tc_sfsu0|tc_sfsua|tc_sfsub|tc_sfsuc]
+[tc_sfs02       |tc_sfs03       |ima02        |ima021        |tc_sfs04      |tc_sfs05       |tc_sfs06     |tc_sfsud0|tc_sfsud|tc_sfsu1|tc_sfsu2|tc_sfsu3|tc_sfsu4|tc_sfsu5|tc_sfsu6|tc_sfsu7|tc_sfsu8|tc_sfsu9|tc_sfsu0|tc_sfsua|tc_sfsub|tc_sfsuc]
+[tc_sfs02       |tc_sfs03       |ima02        |ima021        |tc_sfs04      |tc_sfs05       |tc_sfs06     |tc_sfsud0|tc_sfsud|tc_sfsu1|tc_sfsu2|tc_sfsu3|tc_sfsu4|tc_sfsu5|tc_sfsu6|tc_sfsu7|tc_sfsu8|tc_sfsu9|tc_sfsu0|tc_sfsua|tc_sfsub|tc_sfsuc]
+[tc_sfs02       |tc_sfs03       |ima02        |ima021        |tc_sfs04      |tc_sfs05       |tc_sfs06     |tc_sfsud0|tc_sfsud|tc_sfsu1|tc_sfsu2|tc_sfsu3|tc_sfsu4|tc_sfsu5|tc_sfsu6|tc_sfsu7|tc_sfsu8|tc_sfsu9|tc_sfsu0|tc_sfsua|tc_sfsub|tc_sfsuc]
+
+}
+END -- s_tc_gyy
+Grid gr4835
+{
+  ---------- /  [cnt   ]   ---  Details [cn2   ] ----------
+
+}
+END -- gr4835
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit tc_sfp01=formonly.tc_sfp01, action=controlp, tabIndex=1, noEntry, image="zoom";
+DateEdit tc_sfp02=formonly.tc_sfp02, tabIndex=2;
+ComboBox tc_sfpconf=formonly.tc_sfpconf, tabIndex=14, items=(("Y", "Y"),("N", "N"),("X", "X"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit tc_sfp11=formonly.tc_sfp11, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit tc_sfp12=formonly.tc_sfp12, tabIndex=4, not null, required;
+ComboBox tc_sfp00=formonly.tc_sfp00, tabIndex=15, not null, required, items=(("1", "1"),("2", "2"),("3", "3"));
+ButtonEdit tc_sfp03=formonly.tc_sfp03, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit tc_sfp04=formonly.tc_sfp04, tabIndex=6, not null, required;
+Edit tc_sfp13=formonly.tc_sfp13, tabIndex=59;
+Edit tc_sfp05=formonly.tc_sfp05, tabIndex=7, noEntry;
+Edit pmc03=formonly.pmc03, tabIndex=8;
+Edit tc_sfp06=formonly.tc_sfp06, tabIndex=9, noEntry;
+Edit tc_sfp07=formonly.tc_sfp07, tabIndex=10, noEntry;
+Edit tc_sfp08=formonly.tc_sfp08, tabIndex=11, noEntry;
+Edit tc_sfp09=formonly.tc_sfp09, tabIndex=12, noEntry;
+Edit tc_sfp10=formonly.tc_sfp10, tabIndex=13, noEntry;
+Edit tc_sfpuser=formonly.tc_sfpuser, tabIndex=16;
+Edit tc_sfpgrup=formonly.tc_sfpgrup, tabIndex=17;
+DateEdit tc_sfpdate=formonly.tc_sfpdate, tabIndex=18;
+Edit tc_sfpmodu=formonly.tc_sfpmodu, tabIndex=19;
+Edit tc_sfpud01=formonly.tc_sfpud01, tabIndex=20;
+Edit tc_sfpud05=formonly.tc_sfpud05, tabIndex=24;
+Edit tc_sfpud09=formonly.tc_sfpud09, tabIndex=28;
+DateEdit tc_sfpud13=formonly.tc_sfpud13 type DATE, tabIndex=32;
+Edit tc_sfpud02=formonly.tc_sfpud02, tabIndex=21;
+Edit tc_sfpud06=formonly.tc_sfpud06, tabIndex=25;
+Edit tc_sfpud10=formonly.tc_sfpud10, tabIndex=29;
+DateEdit tc_sfpud14=formonly.tc_sfpud14 type DATE, tabIndex=33;
+Edit tc_sfpud03=formonly.tc_sfpud03, tabIndex=22;
+Edit tc_sfpud07=formonly.tc_sfpud07, tabIndex=26;
+Edit tc_sfpud11=formonly.tc_sfpud11, tabIndex=30;
+DateEdit tc_sfpud15=formonly.tc_sfpud15 type DATE, tabIndex=34;
+Edit tc_sfpud04=formonly.tc_sfpud04, tabIndex=23;
+Edit tc_sfpud08=formonly.tc_sfpud08, tabIndex=27;
+Edit tc_sfpud12=formonly.tc_sfpud12, tabIndex=31;
+Edit tc_sfs02=formonly.tc_sfs02, tabIndex=35, title=%"tc_sfs02", noEntry;
+ButtonEdit tc_sfs03=formonly.tc_sfs03, action=controlp, tabIndex=36, title=%"tc_sfs03", noEntry, image="zoom";
+Edit ima02=formonly.ima02, tabIndex=37, title=%"ima02", noEntry;
+Edit ima021=formonly.ima021, tabIndex=38, title=%"ima021", noEntry;
+Edit tc_sfs04=formonly.tc_sfs04, tabIndex=39, title=%"tc_sfs04", noEntry;
+Edit tc_sfs05=formonly.tc_sfs05, tabIndex=40, title=%"tc_sfs05";
+Edit tc_sfs06=formonly.tc_sfs06, tabIndex=41, title=%"tc_sfs06", noEntry;
+Edit tc_sfsud0=formonly.tc_sfsud01, tabIndex=42, title=%"tc_sfsud01";
+Edit tc_sfsud=formonly.tc_sfsud02, tabIndex=43, title=%"tc_sfsud02";
+Edit tc_sfsu1=formonly.tc_sfsud03, tabIndex=44, title=%"tc_sfsud03";
+Edit tc_sfsu2=formonly.tc_sfsud04, tabIndex=45, title=%"tc_sfsud04";
+Edit tc_sfsu3=formonly.tc_sfsud05, tabIndex=46, title=%"tc_sfsud05";
+Edit tc_sfsu4=formonly.tc_sfsud06, tabIndex=47, title=%"tc_sfsud06";
+Edit tc_sfsu5=formonly.tc_sfsud07, tabIndex=48, title=%"tc_sfsud07";
+Edit tc_sfsu6=formonly.tc_sfsud08, tabIndex=49, title=%"tc_sfsud08";
+Edit tc_sfsu7=formonly.tc_sfsud09, tabIndex=50, title=%"tc_sfsud09";
+Edit tc_sfsu8=formonly.tc_sfsud10, tabIndex=51, title=%"tc_sfsud10";
+Edit tc_sfsu9=formonly.tc_sfsud11, tabIndex=52, title=%"tc_sfsud11";
+Edit tc_sfsu0=formonly.tc_sfsud12, tabIndex=53, title=%"tc_sfsud12";
+DateEdit tc_sfsua=formonly.tc_sfsud13 type DATE, tabIndex=54, title=%"tc_sfsud13";
+DateEdit tc_sfsub=formonly.tc_sfsud14 type DATE, tabIndex=55, title=%"tc_sfsud14";
+DateEdit tc_sfsuc=formonly.tc_sfsud15 type DATE, tabIndex=56, title=%"tc_sfsud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=57, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=58, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tc_sfp01,formonly.tc_sfp02,formonly.tc_sfpuser,formonly.tc_sfpgrup,formonly.tc_sfpdate,formonly.tc_sfpmodu,formonly.cnt,formonly.cn2,formonly.tc_sfp03,formonly.tc_sfp04,formonly.tc_sfp05,formonly.pmc03,formonly.tc_sfp06,formonly.tc_sfp07,formonly.tc_sfp08,formonly.tc_sfp09,formonly.tc_sfp10,formonly.tc_sfpconf,formonly.tc_sfpud01,formonly.tc_sfpud02,formonly.tc_sfpud03,formonly.tc_sfpud04,formonly.tc_sfpud05,formonly.tc_sfpud06,formonly.tc_sfpud07,formonly.tc_sfpud08,formonly.tc_sfpud09,formonly.tc_sfpud10,formonly.tc_sfpud11,formonly.tc_sfpud12,formonly.tc_sfpud13,formonly.tc_sfpud14,formonly.tc_sfpud15,formonly.tc_sfp00,formonly.tc_sfp11,formonly.tc_sfp12,formonly.tc_sfp13,formonly.imgmksg)
+SCREEN RECORD s_tc_sfs(formonly.tc_sfs02,formonly.tc_sfs03,formonly.ima02,formonly.ima021,formonly.tc_sfs04,formonly.tc_sfs05,formonly.tc_sfs06,formonly.tc_sfsud01,formonly.tc_sfsud02,formonly.tc_sfsud03,formonly.tc_sfsud04,formonly.tc_sfsud05,formonly.tc_sfsud06,formonly.tc_sfsud07,formonly.tc_sfsud08,formonly.tc_sfsud09,formonly.tc_sfsud10,formonly.tc_sfsud11,formonly.tc_sfsud12,formonly.tc_sfsud13,formonly.tc_sfsud14,formonly.tc_sfsud15)
+END -- INSTRUCTIONS
+

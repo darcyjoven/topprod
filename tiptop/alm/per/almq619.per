@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almq619.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almq619")
+VBox VBox1
+Table lsn
+{
+[lsn01        |lsn10        |lsn02        |lsn03       |lsn05       |lsn04        |lsn06        |lsn09       |lsn07       |lsnstore  ]
+[lsn01        |lsn10        |lsn02        |lsn03       |lsn05       |lsn04        |lsn06        |lsn09       |lsn07       |lsnstore  ]
+[lsn01        |lsn10        |lsn02        |lsn03       |lsn05       |lsn04        |lsn06        |lsn09       |lsn07       |lsnstore  ]
+[lsn01        |lsn10        |lsn02        |lsn03       |lsn05       |lsn04        |lsn06        |lsn09       |lsn07       |lsnstore  ]
+[lsn01        |lsn10        |lsn02        |lsn03       |lsn05       |lsn04        |lsn06        |lsn09       |lsn07       |lsnstore  ]
+
+}
+END -- lsn
+Grid gr2
+{
+ ---------- Rows [cn2   ] ----------
+
+
+}
+END -- gr2
+END -- VBox1
+END -- almq619
+
+TABLES
+lsn_file
+ATTRIBUTES
+ButtonEdit lsn01=lsn_file.lsn01, action=controlp, tabIndex=1, title="lsn01", image="zoom.png";
+ComboBox lsn10=lsn_file.lsn10, tabIndex=11, title=%"lsn10", items=(("1", "ERP"),("2", "POS"),("3", "CYTZ"));
+ComboBox lsn02=lsn_file.lsn02, tabIndex=2, title="lsn02", items=(("1", "Remittance Note"),("2", "Sales Return No."),("3", "Card"),("4", "Value Stored"),("5", "Stored Value Card Balance"),("6", "SO"),("7", "Shipping Order"),("8", "Sales Return No."),("9", "Amt Returnable"),("A", "Pledge Receiving"),("B", "Pledge Returning"),("C", "Expense"),("D", "Expense"),("E", "ERP Order"),("F", "ERP Ship"));
+ButtonEdit lsn03=lsn_file.lsn03, action=controlp, tabIndex=3, title="lsn03", image="zoom.png";
+DateEdit lsn05=lsn_file.lsn05, tabIndex=5, title="lsn05";
+Edit lsn04=lsn_file.lsn04, tabIndex=4, title="lsn04";
+DateEdit lsn06=lsn_file.lsn06, tabIndex=6, title="lsn06";
+Edit lsn09=lsn_file.lsn09, tabIndex=9, title=%"lsn09";
+Edit lsn07=lsn_file.lsn07, tabIndex=7, title="lsn07";
+Edit lsnstore=lsn_file.lsnstore, tabIndex=10, title=%"lsnstore";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lsn(lsn_file.lsn01,lsn_file.lsn10,lsn_file.lsn02,lsn_file.lsn03,lsn_file.lsn05,lsn_file.lsn04,lsn_file.lsn06,lsn_file.lsn09,lsn_file.lsn07,lsn_file.lsnstore)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

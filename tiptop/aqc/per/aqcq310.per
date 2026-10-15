@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcq310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aqcq310")
+VBox vb2
+Folder folder01
+Page page01(text="Page01")
+Grid gr23
+{
+ <G group01                                       >
+  Vender No.          [qcs03     ] [pmc03     ]
+  QC Date Range       [bdate       ]-[edate       ]
+ <                                                >
+
+}
+END -- gr23
+END -- page01
+END -- folder01
+Table s_qcs1
+{
+[qcs04   |qcs01            |qcs021              |ima02               |ima021              |qcs22          |qcs091         |qty         |rate      |desc  |cr  |ma  |mi  ]
+[qcs04   |qcs01            |qcs021              |ima02               |ima021              |qcs22          |qcs091         |qty         |rate      |desc  |cr  |ma  |mi  ]
+[qcs04   |qcs01            |qcs021              |ima02               |ima021              |qcs22          |qcs091         |qty         |rate      |desc  |cr  |ma  |mi  ]
+[qcs04   |qcs01            |qcs021              |ima02               |ima021              |qcs22          |qcs091         |qty         |rate      |desc  |cr  |ma  |mi  ]
+[qcs04   |qcs01            |qcs021              |ima02               |ima021              |qcs22          |qcs091         |qty         |rate      |desc  |cr  |ma  |mi  ]
+[qcs04   |qcs01            |qcs021              |ima02               |ima021              |qcs22          |qcs091         |qty         |rate      |desc  |cr  |ma  |mi  ]
+[qcs04   |qcs01            |qcs021              |ima02               |ima021              |qcs22          |qcs091         |qty         |rate      |desc  |cr  |ma  |mi  ]
+[qcs04   |qcs01            |qcs021              |ima02               |ima021              |qcs22          |qcs091         |qty         |rate      |desc  |cr  |ma  |mi  ]
+[qcs04   |qcs01            |qcs021              |ima02               |ima021              |qcs22          |qcs091         |qty         |rate      |desc  |cr  |ma  |mi  ]
+[qcs04   |qcs01            |qcs021              |ima02               |ima021              |qcs22          |qcs091         |qty         |rate      |desc  |cr  |ma  |mi  ]
+}
+END -- s_qcs1
+Grid gr24
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+}
+END -- gr24
+END -- vb2
+END -- aqcq310
+
+ATTRIBUTES
+Group group01:group01;
+Edit qcs03=formonly.qcs03 type VARCHAR, tabIndex=1;
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=2, noEntry;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=3;
+DateEdit edate=formonly.edate type DATE, tabIndex=4;
+DateEdit qcs04=formonly.qcs04 type VARCHAR, tabIndex=5, title="QC Date";
+ButtonEdit qcs01=formonly.qcs01 type VARCHAR, action=controlp, tabIndex=6, title="Receipt No", image="zoom", comment="<^P>Qry Received Data";
+ButtonEdit qcs021=formonly.qcs021 type VARCHAR, action=controlp, tabIndex=7, title="Item No.", image="zoom", comment="<^P>Qry Item No.";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=8, title="Part Name";
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=9, title="Part Desc";
+Edit qcs22=formonly.qcs22 type VARCHAR, tabIndex=10, title="Qty Sent to QC";
+Edit qcs091=formonly.qcs091 type VARCHAR, tabIndex=18, title=%"Qty Passed";
+Edit qty=formonly.qty type VARCHAR, tabIndex=11, title="NO-Good Qty";
+Edit rate=formonly.rate type VARCHAR, tabIndex=12, title="NO-Good %";
+Edit desc=formonly.desc type VARCHAR, tabIndex=13, title="Judge";
+Edit cr=formonly.cr type VARCHAR, tabIndex=14, title="CR";
+Edit ma=formonly.ma type VARCHAR, tabIndex=15, title="MA";
+Edit mi=formonly.mi type VARCHAR, tabIndex=16, title="MI";
+Edit cnt=formonly.cnt type VARCHAR, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcs1(formonly.qcs04,formonly.qcs01,formonly.qcs021,formonly.ima02,formonly.ima021,formonly.qcs22,formonly.qcs091,formonly.qty,formonly.rate,formonly.desc,formonly.cr,formonly.ma,formonly.mi)
+SCREEN RECORD Undefined(formonly.qcs03,formonly.pmc03,formonly.bdate,formonly.edate,formonly.cnt)
+END -- INSTRUCTIONS
+

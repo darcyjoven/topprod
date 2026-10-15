@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armr340.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armr340")
+VBox VBox1
+Grid gr317
+{
+ <G group01                                             >
+  Doc No.             [rmn01               ]
+  Date of Issue       [rmn06               ]
+  Customer No.        [rmn02               ]
+ <                                                      >
+
+}
+END -- gr317
+Grid gr318
+{
+[more                                     ]
+
+}
+END -- gr318
+END -- VBox1
+END -- armr340
+
+TABLES
+rmn_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit rmn01=rmn_file.rmn01, tabIndex=1, upShift;
+DateEdit rmn06=rmn_file.rmn06, tabIndex=2;
+ButtonEdit rmn02=rmn_file.rmn02, action=controlp, tabIndex=3, image="zoom", upShift;
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rmn_file.rmn01,rmn_file.rmn06,rmn_file.rmn02,formonly.more)
+END -- INSTRUCTIONS
+

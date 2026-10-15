@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi902.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi902")
+VBox VBox1
+Folder pc861
+Page page01(text="Page01")
+Table s_azr
+{
+[azr01           |azr02           |azr03           |azr04           ]
+[azr01           |azr02           |azr03           |azr04           ]
+[azr01           |azr02           |azr03           |azr04           ]
+[azr01           |azr02           |azr03           |azr04           ]
+[azr01           |azr02           |azr03           |azr04           ]
+[azr01           |azr02           |azr03           |azr04           ]
+[azr01           |azr02           |azr03           |azr04           ]
+[azr01           |azr02           |azr03           |azr04           ]
+[azr01           |azr02           |azr03           |azr04           ]
+[azr01           |azr02           |azr03           |azr04           ]
+
+}
+END -- s_azr
+END -- page01
+END -- pc861
+END -- VBox1
+END -- aooi902
+
+TABLES
+azr_file
+ATTRIBUTES
+Edit azr01=azr_file.azr01, tabIndex=1, title="(FROM)Plant No.";
+Edit azr02=azr_file.azr02, tabIndex=2, title="(FROM)Module", not null, required;
+Edit azr03=azr_file.azr03, tabIndex=3, title="(TO)Plant No.";
+Edit azr04=azr_file.azr04, tabIndex=4, title="(TO)Module", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azr(azr_file.azr01,azr_file.azr02,azr_file.azr03,azr_file.azr04)
+END -- INSTRUCTIONS
+

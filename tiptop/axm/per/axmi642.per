@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi642.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi642")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+VBox VBox2
+Grid Grid1
+{
+
+  Commission No.#     [ofv01     ]
+  Commission Desc     [ofs02                         ]
+  Item No.#           [ofv02                         ]
+  Item Name           [ima02                         ]
+  Specification       [ima021                        ]
+
+
+ <G group02                                  >
+  Calculation Base    [ofv03          ]
+  Rate                [ofv04               ]
+
+ <                                           >
+
+}
+END -- Grid1
+Group group03(text="Rate")
+Grid Grid2
+{
+ Base 1              [ofv05               ]              Rate 1              [ofv06               ]
+ Base 2              [ofv07               ]              Rate 2              [ofv08               ]
+ Base 3              [ofv09               ]              Rate 3              [ofv10               ]
+ Base 4              [ofv11               ]              Rate 4              [ofv12               ]
+ Base 5              [ofv13               ]              Rate 5              [ofv14               ]
+}
+END -- Grid2
+END -- group03
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid Grid3
+{
+ Record Owner        [ofvuser   ] Last Modified by    [ofvmodu     ]
+ Department          [ofvgrup   ] Create/Modify Date  [ofvdate     ]
+ Record Orig.        [ofvoriu   ]
+ Dept Orig.          [ofvorig   ]
+}
+END -- Grid3
+END -- info
+END -- Folder1
+Grid Grid4
+{
+ ---------- Rows [cnt   ] ---------
+
+}
+END -- Grid4
+END -- VBox1
+END -- axmi642
+
+TABLES
+ofv_file
+ATTRIBUTES
+ButtonEdit ofv01=ofv_file.ofv01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Details";
+Edit ofs02=formonly.ofs02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit ofv02=ofv_file.ofv02, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Details";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, noEntry;
+Group group02:group02;
+ComboBox ofv03=ofv_file.ofv03, tabIndex=6, not null, required, items=(("1", %"Sales Qty"),("2", %"Sales Amount"),("3", %"Standard Selling Price"),("4", %"Profit"));
+Edit ofv04=ofv_file.ofv04, tabIndex=7, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofv05=ofv_file.ofv05, tabIndex=8, comment="Calculation Base 1 = Exceed Quantity 1   2/3/4 = Exceed Amount 1";
+Edit ofv06=ofv_file.ofv06, tabIndex=9, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofv07=ofv_file.ofv07, tabIndex=10, comment="Calculation Base 1 = Exceed Quantity 2   2/3/4 = Exceed Amount 2";
+Edit ofv08=ofv_file.ofv08, tabIndex=11, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofv09=ofv_file.ofv09, tabIndex=12, comment="Calculation Base 1 = Exceed Quantity 3   2/3/4 = Exceed Amount 3";
+Edit ofv10=ofv_file.ofv10, tabIndex=13, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofv11=ofv_file.ofv11, tabIndex=14, comment="Calculation Base 1 = Exceed Quantity 4   2/3/4 = Exceed Amount 4";
+Edit ofv12=ofv_file.ofv12, tabIndex=15, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofv13=ofv_file.ofv13, tabIndex=16, comment="Calculation Base 1 = Exceed Quantity 5   2/3/4 = Exceed Amount 5";
+Edit ofv14=ofv_file.ofv14, tabIndex=17, comment="Calculation Base 1 = Fixed Amount  2/3/4 = Commission Rate";
+Edit ofvuser=ofv_file.ofvuser, tabIndex=18, noEntry;
+Edit ofvmodu=ofv_file.ofvmodu, tabIndex=19, noEntry;
+Edit ofvgrup=ofv_file.ofvgrup, tabIndex=20, noEntry;
+DateEdit ofvdate=ofv_file.ofvdate, tabIndex=21, noEntry;
+Edit ofvoriu=ofv_file.ofvoriu, tabIndex=501, noEntry;
+Edit ofvorig=ofv_file.ofvorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ofv_file.ofv01,formonly.ofs02,ofv_file.ofv02,formonly.ima02,formonly.ima021,ofv_file.ofv03,ofv_file.ofv04,ofv_file.ofv05,ofv_file.ofv06,ofv_file.ofv07,ofv_file.ofv08,ofv_file.ofv09,ofv_file.ofv10,ofv_file.ofv11,ofv_file.ofv12,ofv_file.ofv13,ofv_file.ofv14,ofv_file.ofvuser,ofv_file.ofvmodu,ofv_file.ofvgrup,ofv_file.ofvdate,ofv_file.ofvoriu,ofv_file.ofvorig,formonly.cnt)
+END -- INSTRUCTIONS
+

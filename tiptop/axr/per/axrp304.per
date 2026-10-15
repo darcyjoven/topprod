@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrp304.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrp304")
+VBox VBox2
+Grid gr47
+{
+ <G group05                                     >
+  Plant      [azw01      ]
+ <                                              >
+
+}
+END -- gr47
+Grid gr14
+{
+ <G group01                                     >
+  Sales/Return Note# QBE [oha01               ]
+  Sales/Return Date QBE  [oha02               ]
+  Tax Type QBE           [oha21               ]
+  Invoice QBE            [oha05               ]
+  Department # QBE       [oha15               ]
+ <                                              >
+
+}
+END -- gr14
+Grid Grid1
+{
+ <G group04                                                         >
+ [label1 ] [omf00               ]
+ [omf01  ] [omf02               ]
+ [omf03  ] [omf04               ]
+ <                                                                  >
+}
+END -- Grid1
+Group g01(text="INPUT")
+VBox VBox1
+Grid gr16
+{
+ Account Category    [g_way     ]
+[dummy03                                                           ]
+
+
+}
+END -- gr16
+Grid gr15
+{
+  Date                   [g_date      ][dummy01                       ]
+  Returne/Allowance Note [g_no1     ]  [dummy02                       ]
+  bill1                  [g_no2     ]
+ <G group02                                                >
+ [g_type                                         ]
+ <                                                         >
+}
+END -- gr15
+END -- VBox1
+END -- g01
+Grid gr17
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr17
+END -- VBox2
+END -- axrp304
+
+TABLES
+azw_file,
+omf_file,
+oha_file
+ATTRIBUTES
+Group group05:group05, text="QBE1";
+ButtonEdit azw01=azw_file.azw01, action=controlp, tabIndex=11, image="zoom", comment="<^P> Qry Documents";
+Group group01:group01, text="QBE2";
+ButtonEdit oha01=formonly.oha01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit oha02=oha_file.oha02, tabIndex=2;
+ButtonEdit oha21=formonly.oha21 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ComboBox oha05=formonly.oha05 type CHAR, tabIndex=4, queryEditable, items=(("1", "1"),("4", "4"),("5", "5"));
+ButtonEdit oha15=formonly.oha15 type CHAR, action=controlp, tabIndex=5, image="zoom";
+Group group04:group04, text=%"QBE3";
+Label label1:Label1, text=%"omf00 ";
+ButtonEdit omf00=formonly.omf00, action=controlp, tabIndex=15, not null, required, image="zoom";
+Label omf01:omf01, text=%"omf01";
+ButtonEdit omf02=omf_file.omf01, action=controlp, tabIndex=13, not null, required, image="zoom.png", scroll;
+Label omf03:omf02, text=%"omf02";
+ButtonEdit omf04=omf_file.omf02, action=controlp, tabIndex=14, not null, required, image="zoom.png", scroll;
+ButtonEdit g_way=formonly.g_way type CHAR, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Account ";
+Label dummy03:dummy03, text="It\'ll read Confd SR but Untransfered to Allow. in Sls/Ret Table,Transfer to sales/return allowance";
+DateEdit g_date=formonly.g_date type DATE, tabIndex=6;
+Label dummy01:dummy01, text="(Blank:by Original Date)";
+ButtonEdit g_no1=formonly.g_no1 type CHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Documents";
+Label dummy02:dummy02, text="(Blank:by Original Doc #)";
+ButtonEdit g_no2=formonly.g_no2 type CHAR, action=controlp, tabIndex=12, image="zoom";
+Group group02:group02, text="Sales/Return Type";
+RadioGroup g_type=formonly.g_type type VARCHAR, tabIndex=8, items=(("1", "Sales/Return Allowance"),("4", "Allowance by Original Order Delivery"),("5", "Allowance"));
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=10, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(azw_file.azw01,formonly.oha01,oha_file.oha02,formonly.oha21,formonly.oha05,formonly.oha15,formonly.g_way,formonly.g_date,formonly.g_no1,formonly.g_no2,formonly.g_type,formonly.g_bgjob,omf_file.omf01,omf_file.omf02,formonly.omf00)
+END -- INSTRUCTIONS
+

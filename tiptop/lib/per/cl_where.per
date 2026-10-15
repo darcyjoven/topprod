@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_where.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"cl_where")
+VBox VBox1
+VBox VBox2
+Group group01(text="Please input the conditions:")
+Grid gr1
+{
+ fieldname[fieldname  ][description1                          ]
+                       [                                      ]
+ operator [operator   ][description2                          ]
+                       [                                      ]
+ values   [values                                             ]
+          [                                                   ]
+ logicope [logicope   ]                            [makecond  ]
+}
+END -- gr1
+END -- group01
+Group group02(text="Where Conditions")
+Grid gr2
+{
+ [conditions                                                   ]
+ [                                                             ]
+ [                                                             ]
+ [                                                             ]
+}
+END -- gr2
+END -- group02
+END -- VBox2
+END -- VBox1
+END -- cl_where
+
+ATTRIBUTES
+ComboBox fieldname=formonly.fieldname type CHAR, tabIndex=1, not null, required, comment="Choose the field";
+TextEdit description1=formonly.description1 type CHAR, tabIndex=2, noEntry, stretch=NONE, wantNoReturns;
+ComboBox operator=formonly.operator type CHAR, tabIndex=3, not null, required, comment="Choose the operator", items=(("=", "="),("<>", "<>"),("<", "<"),(">", ">"),("<=", "<="),(">=", ">="),("BETWEEN", "BETWEEN"),("IN", "IN"),("LIKE", "LIKE"),("IS NULL", "IS NULL"),("IS NOT NULL", "IS NOT NULL"));
+TextEdit description2=formonly.description2 type CHAR, tabIndex=4, noEntry, stretch=NONE, wantNoReturns;
+TextEdit values=formonly.values type CHAR, tabIndex=5, not null, required, stretch=NONE;
+RadioGroup logicope=formonly.logicope type CHAR, tabIndex=6, not null, required, orientation=horizontal, comment="Choose the logic operator", items=(("AND", "AND"),("OR", "OR"));
+Button makecond:makecond, text="Make the conditions";
+TextEdit conditions=formonly.conditions type CHAR, tabIndex=7, stretch=NONE, wantNoReturns;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.fieldname,formonly.description1,formonly.operator,formonly.description2,formonly.values,formonly.logicope,formonly.conditions)
+END -- INSTRUCTIONS
+

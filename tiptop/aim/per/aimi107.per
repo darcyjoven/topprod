@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi107.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimi107")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2963
+{
+ Item #              [iml01                         ]
+ P/N Spec            [ima02                         ]
+ Spec                [ima021                        ]
+ Src.Cd              [ima08     ]
+ Ver                 [ima05     ]
+ Hndl.Sts            [s         ]
+
+}
+END -- gr2963
+Grid gr2964
+{
+ Inv.Ut              [ima25     ]
+                     [imgmksg]
+                     [       ]
+
+
+
+
+}
+END -- gr2964
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr2965
+{
+ Record Owner        [imauser   ] Last Modified by    [imamodu   ] Data Valid Code     [imaacti   ]
+ Department          [imagrup   ] Create/Modify Date  [imadate   ]
+ Record Orig.        [imaoriu   ]
+ Dept Orig.          [imaorig   ]
+}
+END -- gr2965
+END -- info
+END -- folder01
+Table s_iml
+{
+[iml02   |smg02               |smg03|iml031      |iml032      |iml033    ]
+[iml02   |smg02               |smg03|iml031      |iml032      |iml033    ]
+[iml02   |smg02               |smg03|iml031      |iml032      |iml033    ]
+[iml02   |smg02               |smg03|iml031      |iml032      |iml033    ]
+[iml02   |smg02               |smg03|iml031      |iml032      |iml033    ]
+[iml02   |smg02               |smg03|iml031      |iml032      |iml033    ]
+[iml02   |smg02               |smg03|iml031      |iml032      |iml033    ]
+[iml02   |smg02               |smg03|iml031      |iml032      |iml033    ]
+[iml02   |smg02               |smg03|iml031      |iml032      |iml033    ]
+[iml02   |smg02               |smg03|iml031      |iml032      |iml033    ]
+
+}
+END -- s_iml
+Grid gr2966
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2966
+END -- VBox1
+END -- aimi107
+
+TABLES
+iml_file,
+ima_file
+ATTRIBUTES
+ButtonEdit iml01=iml_file.iml01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Assign Item No. of Item Cost Element to Add/ (QBE)";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=4, noEntry;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=5, noEntry;
+Edit s=formonly.s type CHAR, tabIndex=6, upShift, comment="Enter Y/N to Qry or press ENTER";
+Edit ima25=formonly.ima25 type CHAR, tabIndex=7, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit imauser=ima_file.imauser, tabIndex=9, noEntry;
+Edit imamodu=ima_file.imamodu, tabIndex=10, noEntry;
+Edit imaacti=ima_file.imaacti, tabIndex=11, noEntry, upShift;
+Edit imagrup=ima_file.imagrup, tabIndex=12, noEntry;
+DateEdit imadate=ima_file.imadate, tabIndex=13, noEntry;
+Edit imaoriu=ima_file.imaoriu, tabIndex=501, noEntry;
+Edit imaorig=ima_file.imaorig, tabIndex=502, noEntry;
+ButtonEdit iml02=iml_file.iml02, action=controlp, tabIndex=14, title="Cost Itm", not null, required, image="zoom", comment="<^P> Qry Cost Items";
+Edit smg02=formonly.smg02 type VARCHAR, tabIndex=15, title="Desc", noEntry;
+Edit smg03=formonly.smg03 type VARCHAR, tabIndex=16, title="Cate", noEntry;
+Edit iml031=iml_file.iml031, tabIndex=17, title="Std.Cost";
+Edit iml032=iml_file.iml032, tabIndex=18, title="Cur.Cost";
+Edit iml033=iml_file.iml033, tabIndex=19, title="Def.Cost";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=20;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_iml(iml_file.iml02,formonly.smg02,formonly.smg03,iml_file.iml031,iml_file.iml032,iml_file.iml033)
+SCREEN RECORD Undefined(iml_file.iml01,formonly.ima02,formonly.ima021,formonly.ima08,formonly.ima05,formonly.s,formonly.ima25,formonly.imgmksg,ima_file.imauser,ima_file.imamodu,ima_file.imaacti,ima_file.imagrup,ima_file.imadate,ima_file.imaoriu,ima_file.imaorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

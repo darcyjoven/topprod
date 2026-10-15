@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmp500_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"apmp500_a")
+VBox vb2
+Grid gr4
+{
+ <G gb3                                                                 >
+   S/O No.      [oeb01             ]   S/O No. Line  [oeb03         ]
+
+   Custmor No.  [oea03             ]   Salesman      [oea14          ]
+ <                                                                      >
+}
+END -- gr4
+Grid gr5
+{
+ Supply Ending Date    [sudate         ]
+ <G gb4                                                                 >
+   [a                              ] [b                               ]
+   [c                              ] [d                               ]
+   [e                              ] [f                               ]
+ <                                                                      >
+
+}
+END -- gr5
+Grid gr6
+{
+[g                                                          ]
+
+}
+END -- gr6
+END -- vb2
+END -- Form3
+
+TABLES
+oeb_file,
+oea_file
+ATTRIBUTES
+Group gb3:gb3, text="QBE";
+ButtonEdit oeb01=oeb_file.oeb01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit oeb03=oeb_file.oeb03, tabIndex=2, not null, required;
+ButtonEdit oea03=oea_file.oea03, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit oea14=oea_file.oea14, action=controlp, tabIndex=4, image="zoom";
+DateEdit sudate=formonly.sudate type DATE, tabIndex=5, century="";
+Group gb4:gb4, text="Print Data";
+CheckBox a=formonly.a type VARCHAR, tabIndex=6, text="Available Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=7, text="QC Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type VARCHAR, tabIndex=8, text="P/R Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type VARCHAR, tabIndex=9, text="Purchase Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type VARCHAR, tabIndex=10, text="WIP Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type VARCHAR, tabIndex=11, text="Allotted Qty", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type VARCHAR, tabIndex=12, text="Suggested amount include safety stock?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oeb_file.oeb01,oeb_file.oeb03,oea_file.oea03,oea_file.oea14,formonly.sudate,formonly.a,formonly.b,formonly.c,formonly.d,formonly.e,formonly.f,formonly.g)
+END -- INSTRUCTIONS
+

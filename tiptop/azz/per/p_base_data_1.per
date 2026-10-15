@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_base_data_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_base_data_1")
+Folder pc707
+Page page01(text="Download")
+Grid gr3063
+{
+
+ <G group02                                                   >
+   Logistics Code  [indus]
+                   [     ]
+                   [     ]
+
+
+   Logistics Code  [logistics      ]
+ <                                                            >
+
+}
+END -- gr3063
+END -- page01
+END -- pc707
+END -- p_base_data_1
+
+ATTRIBUTES
+Group group02:group02;
+RadioGroup indus=formonly.industry type CHAR, tabIndex=2, not null, required, items=(("1", "std"),("2", "icd"),("3", "slk"));
+ButtonEdit logistics=formonly.logistics type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry Plant Code";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.industry,formonly.logistics)
+END -- INSTRUCTIONS
+

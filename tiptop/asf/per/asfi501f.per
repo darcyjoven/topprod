@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi501f.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfi501f")
+Table s_sfs27
+{
+[sfa26     |sfa27       |sfa03       |sfa05   |sfa06   ]
+[sfa26     |sfa27       |sfa03       |sfa05   |sfa06   ]
+[sfa26     |sfa27       |sfa03       |sfa05   |sfa06   ]
+[sfa26     |sfa27       |sfa03       |sfa05   |sfa06   ]
+[sfa26     |sfa27       |sfa03       |sfa05   |sfa06   ]
+[sfa26     |sfa27       |sfa03       |sfa05   |sfa06   ]
+[sfa26     |sfa27       |sfa03       |sfa05   |sfa06   ]
+[sfa26     |sfa27       |sfa03       |sfa05   |sfa06   ]
+[sfa26     |sfa27       |sfa03       |sfa05   |sfa06   ]
+[sfa26     |sfa27       |sfa03       |sfa05   |sfa06   ]
+
+}
+END -- s_sfs27
+END -- asfi501f
+
+TABLES
+sfa_file
+ATTRIBUTES
+ComboBox sfa26=sfa_file.sfa26, tabIndex=1, title="Substitute", noEntry, items=(("0", "No REP/SUB"),("1", "Old"),("2", "M.It"),("3", "Old(with New)"),("4", "M.It(Sb-Itm)"),("5", "M.It,SUB with SE"),("6", "M.It,SET SUB"),("7", "M.Rule Sub."),("8", "M.Rule Su."),("9", "M.Coor.Sub."),("A", "M.Coor.Su."),("B", "SUB.Coor.Item"),("C", "SUB Rebate Item"),("S", "SUB Item"),("T", "SET SUB Item"),("U", "REP Item"),("Z", "Rule Sub."));
+Edit sfa27=sfa_file.sfa27, tabIndex=1, title="BOM Item No.", noEntry;
+Edit sfa03=sfa_file.sfa03, tabIndex=1, title="Issuing Item No.", noEntry;
+Edit sfa05=sfa_file.sfa05, tabIndex=1, title="Qty To Issue", noEntry;
+Edit sfa06=sfa_file.sfa06, tabIndex=1, title=%"Issued Qty", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfs27(sfa_file.sfa26,sfa_file.sfa27,sfa_file.sfa03,sfa_file.sfa05,sfa_file.sfa06)
+END -- INSTRUCTIONS
+

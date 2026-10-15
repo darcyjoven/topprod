@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt202.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt202")
+VBox vb2
+Folder folder01
+Page Page1(text=%"Basci Data\n")
+Grid gr19
+{
+
+ Network NO.       [pjl01        ][pjj02                        ]Project NO.            [pjj04        |pja02                        ]
+ Planned Start Date[pjj05        ]                               Planned Completion Date[pjj06        ]
+
+
+
+
+}
+END -- gr19
+END -- Page1
+END -- folder01
+Table s_pjl
+{
+[pjl02       |pjk03                         |pjl03       |pjk03_2                       |pjl04                 |pjl05               ]
+[pjl02       |pjk03                         |pjl03       |pjk03_2                       |pjl04                 |pjl05               ]
+[pjl02       |pjk03                         |pjl03       |pjk03_2                       |pjl04                 |pjl05               ]
+[pjl02       |pjk03                         |pjl03       |pjk03_2                       |pjl04                 |pjl05               ]
+[pjl02       |pjk03                         |pjl03       |pjk03_2                       |pjl04                 |pjl05               ]
+
+}
+END -- s_pjl
+Grid gr10
+{
+
+  ------Rows[idx   ]/[cnt  ]---Item[cn2  ]-------
+
+}
+END -- gr10
+END -- vb2
+END -- apjt202
+
+TABLES
+pjl_file
+ATTRIBUTES
+ButtonEdit pjl01=pjl_file.pjl01, action=controlp, tabIndex=14, not null, required, image="zoom.png";
+Edit pjj02=formonly.pjj02 type CHAR, tabIndex=10, noEntry;
+ButtonEdit pjj04=formonly.pjj04 type CHAR, action=controlp, tabIndex=15, noEntry, image="zoom.png";
+Edit pja02=formonly.pja02 type CHAR, tabIndex=13, noEntry;
+DateEdit pjj05=formonly.pjj05 type CHAR, tabIndex=11, noEntry;
+DateEdit pjj06=formonly.pjj06 type CHAR, tabIndex=12, noEntry;
+ButtonEdit pjl02=pjl_file.pjl02, action=controlp, tabIndex=1, title="Previous Activity NO.", not null, required, image="zoom.png";
+Edit pjk03=formonly.pjk03 type CHAR, tabIndex=2, title="Promotion Name", noEntry;
+ButtonEdit pjl03=pjl_file.pjl03, action=controlp, tabIndex=6, title="Activity NO.", not null, required, image="zoom.png";
+Edit pjk03_2=formonly.pjk03_2 type CHAR, tabIndex=7, title="Promotion Name", noEntry;
+ComboBox pjl04=pjl_file.pjl04, tabIndex=8, title="Relationship Type", not null, items=(("1", "FS(FININSH-START)
+"),("2", "SS(START-START)"),("3", "FF(FININSH-FININSH)"),("4", "SF(START-FININSH)"));
+Edit pjl05=pjl_file.pjl05, tabIndex=9, title="Relaxation Days", not null;
+Edit idx=formonly.idx type CHAR, tabIndex=3, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=4, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjl(pjl_file.pjl02,formonly.pjk03,pjl_file.pjl03,formonly.pjk03_2,pjl_file.pjl04,pjl_file.pjl05)
+SCREEN RECORD Undefined(pjl_file.pjl01,formonly.pjj02,formonly.pjj04,formonly.pja02,formonly.pjj05,formonly.pjj06,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

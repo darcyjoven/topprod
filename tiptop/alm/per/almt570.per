@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt570.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almt570")
+VBox vb2
+Folder pc2
+Page Main(text="Main")
+Grid gr5
+{
+ Doc No.       [lpm01              ]     Reason type    [lpm06              ]
+ Shop No.      [lpmplant           ]     Mini money     [lpm07              ]
+ Shop name     [rtz13              ]     card prices    [lpm08              ]
+ Legal         [lpmlegal           ]     Reason No.     [lpm05              ]
+ legal name    [azt02              ]     Reason         [azf03              ]
+ Member No.    [lpm03              ]     Member card    [lpm09              ]
+ Member name   [lpk04              ]     status         [lpm10              |imgmksg   ]
+ Cedula type   [lpk02              ]     checker        [lpm11              |          ]
+ Cedula No.    [lpk03              ]     checkda        [lpm12              ]
+ phone         [lpk18              ]     Expiry date     [lpm14              ]
+ address       [lpk15              ]     memo           [lpm13              ]
+               [                   ]                    [                   ]
+ Card No.      [lpm04              ]
+ Card Name     [lph02              ]
+ card kind      [lph03              ]
+
+}
+END -- gr5
+END -- Main
+Page Info(text="Info")
+Grid gr4
+{
+
+ owner   [lpmuser   ]            modu [lpmmodu       ]       acti [lpmacti   ]
+ grup    [lpmgrup   ]            date [lpmdate       ]       crat [lpmcrat   ]
+ lpmoriu [lpmoriu   ]
+ lpmorig [lpmorig   ]
+
+
+
+
+
+
+}
+END -- gr4
+END -- Info
+END -- pc2
+Grid gr9
+{
+ ---------- Rows[idx   ]/[cnt   ]----------
+
+
+}
+END -- gr9
+END -- vb2
+END -- almt570
+
+TABLES
+lpm_file
+ATTRIBUTES
+ButtonEdit lpm01=lpm_file.lpm01, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+ComboBox lpm06=lpm_file.lpm06, tabIndex=22, noEntry, items=(("0", "present"),("1", "consume"));
+ButtonEdit lpmplant=lpm_file.lpmplant, action=controlp, tabIndex=10, noEntry, image="zoom.png";
+Edit lpm07=lpm_file.lpm07, tabIndex=23, noEntry;
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=11, noEntry;
+Edit lpm08=lpm_file.lpm08, tabIndex=24, noEntry;
+ButtonEdit lpmlegal=lpm_file.lpmlegal, action=controlp, tabIndex=33, noEntry, image="zoom.png";
+ButtonEdit lpm05=lpm_file.lpm05, action=controlp, tabIndex=20, not null, required, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=32, noEntry;
+Edit azf03=formonly.azf03 type CHAR, tabIndex=21, noEntry;
+ButtonEdit lpm03=lpm_file.lpm03, action=controlp, tabIndex=12, not null, required, image="zoom.png";
+ButtonEdit lpm09=lpm_file.lpm09, action=controlp, tabIndex=25, not null, required, image="zoom.png";
+Edit lpk04=formonly.lpk04 type CHAR, tabIndex=13, noEntry;
+ComboBox lpm10=lpm_file.lpm10, tabIndex=26, default = "N", noEntry, not null, required, items=(("Y", "checked"),("N", "unchecked"),("X", "void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, width = 10 characters, height = 2 characters;
+ComboBox lpk02=formonly.lpk02 type CHAR, tabIndex=14, noEntry, items=(("0", "id"),("1", "officer"),("2", "other"));
+Edit lpm11=lpm_file.lpm11, tabIndex=27, noEntry, not null, required;
+Edit lpk03=formonly.lpk03 type CHAR, tabIndex=15, noEntry;
+DateEdit lpm12=lpm_file.lpm12, tabIndex=28, noEntry, not null, required;
+Edit lpk18=formonly.lpk18 type CHAR, tabIndex=16, noEntry;
+DateEdit lpm14=lpm_file.lpm14, tabIndex=29, noEntry;
+TextEdit lpk15=formonly.lpk15 type CHAR, tabIndex=17, noEntry, stretch=NONE;
+TextEdit lpm13=lpm_file.lpm13, tabIndex=30;
+ButtonEdit lpm04=lpm_file.lpm04, action=controlp, tabIndex=18, not null, required, image="zoom.png";
+Edit lph02=formonly.lph02 type CHAR, tabIndex=19, noEntry;
+ComboBox lph03=formonly.lph03 type CHAR, tabIndex=31, noEntry, items=(("0", "Member Card"),("1", "Stored Value"));
+Edit lpmuser=lpm_file.lpmuser, tabIndex=1, noEntry;
+Edit lpmmodu=lpm_file.lpmmodu, tabIndex=2, noEntry;
+Edit lpmacti=lpm_file.lpmacti, tabIndex=3, default = "Y", noEntry;
+Edit lpmgrup=lpm_file.lpmgrup, tabIndex=4, noEntry;
+DateEdit lpmdate=lpm_file.lpmdate, tabIndex=5, noEntry;
+DateEdit lpmcrat=lpm_file.lpmcrat, tabIndex=6, noEntry;
+Edit lpmoriu=formonly.lpmoriu type CHAR, tabIndex=34, noEntry;
+Edit lpmorig=formonly.lpmorig type CHAR, tabIndex=35, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=7, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lpm_file.lpm01,lpm_file.lpm06,lpm_file.lpmplant,lpm_file.lpm07,formonly.rtz13,lpm_file.lpm08,lpm_file.lpmlegal,lpm_file.lpm05,formonly.azt02,formonly.azf03,lpm_file.lpm03,lpm_file.lpm09,formonly.lpk04,lpm_file.lpm10,formonly.imgmksg,formonly.lpk02,lpm_file.lpm11,formonly.lpk03,lpm_file.lpm12,formonly.lpk18,lpm_file.lpm14,formonly.lpk15,lpm_file.lpm13,lpm_file.lpm04,formonly.lph02,formonly.lph03,lpm_file.lpmuser,lpm_file.lpmmodu,lpm_file.lpmacti,lpm_file.lpmgrup,lpm_file.lpmdate,lpm_file.lpmcrat,formonly.lpmoriu,formonly.lpmorig,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

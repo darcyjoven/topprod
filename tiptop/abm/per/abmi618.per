@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi618.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi618")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+HBox hb3
+Grid gr751
+{
+ Sheet Number  [bok31           ]
+ Sheet No.     [bok32     ]
+ Master Item#  [bok01                         ]
+ Part Name     [ima02                         ]
+ Specification [ima021                        ]
+ Unit          [ima25     ]
+ Alternate BOM [bok29               ]
+ Eff.Date      [bok04       ]
+ Exp.Date      [bok05       ]
+}
+END -- gr751
+Grid gr752
+{
+ Component No. [bok03                         ]
+ Part Name     [ima02b                        ]
+ Specification [ima021b                       ]
+ Unit          [ima25b    ]   Ln#    [bok02   ]
+ QPA           [bok06     ]
+ DQPA          [bok07     ]
+
+
+
+}
+END -- gr752
+END -- hb3
+END -- page01
+END -- folder01
+Table s_bmh
+{
+[bmh|bmh06     |bmh07          ]
+[bmh|bmh06     |bmh07          ]
+[bmh|bmh06     |bmh07          ]
+[bmh|bmh06     |bmh07          ]
+[bmh|bmh06     |bmh07          ]
+[bmh|bmh06     |bmh07          ]
+[bmh|bmh06     |bmh07          ]
+[bmh|bmh06     |bmh07          ]
+[bmh|bmh06     |bmh07          ]
+[bmh|bmh06     |bmh07          ]
+
+}
+END -- s_bmh
+Grid gr753
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------                               Total        [tot             ]
+
+}
+END -- gr753
+END -- vb3
+END -- abmi618
+
+TABLES
+bok_file,
+bmh_file
+ATTRIBUTES
+ButtonEdit bok31=bok_file.bok31, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom", comment="<^P> Query Item,     <^Y> Create Item Master";
+Edit bok32=bok_file.bok32, tabIndex=2, noEntry, not null, required;
+ButtonEdit bok01=bok_file.bok01, action=controlp, tabIndex=3, noEntry, not null, required, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=4, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=6, noEntry;
+Edit bok29=bok_file.bok29, tabIndex=7, noEntry;
+DateEdit bok04=bok_file.bok04, tabIndex=8, noEntry;
+DateEdit bok05=bok_file.bok05, tabIndex=9, noEntry;
+Edit bok03=bok_file.bok03, tabIndex=10, noEntry;
+Edit ima02b=formonly.ima02b type CHAR, tabIndex=11, noEntry;
+Edit ima021b=formonly.ima021b type CHAR, tabIndex=12, noEntry;
+Edit ima25b=formonly.ima25b type CHAR, tabIndex=13, noEntry;
+Edit bok02=bok_file.bok02, tabIndex=14, noEntry;
+Edit bok06=bok_file.bok06, tabIndex=15, noEntry;
+Edit bok07=bok_file.bok07, tabIndex=16, noEntry;
+Edit bmh=bmh_file.bmh05, tabIndex=17, title="Ln#", not null, required;
+ButtonEdit bmh06=bmh_file.bmh06, action=controlp, tabIndex=18, title="Loc.Inst", image="zoom.png";
+Edit bmh07=bmh_file.bmh07, tabIndex=19, title="Qty";
+Edit cnt=formonly.cnt type CHAR, tabIndex=20, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=21, noEntry;
+Edit tot=formonly.tot type CHAR, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmh(bmh_file.bmh05,bmh_file.bmh06,bmh_file.bmh07)
+SCREEN RECORD Undefined(bok_file.bok31,bok_file.bok32,bok_file.bok01,formonly.ima02,formonly.ima021,formonly.ima25,bok_file.bok29,bok_file.bok04,bok_file.bok05,bok_file.bok03,formonly.ima02b,formonly.ima021b,formonly.ima25b,bok_file.bok02,bok_file.bok06,bok_file.bok07,formonly.cnt,formonly.cn2,formonly.tot)
+END -- INSTRUCTIONS
+

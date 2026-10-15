@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_cross_list.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_crosscfg")
+VBox VBox1
+Folder Folder1
+Page page_ProdList(action=prod_list, text=%"ProdList")
+Table s_prod
+{
+[name           |ver       |ip          |id        |wsdl                                                        ]
+[name           |ver       |ip          |id        |wsdl                                                        ]
+[name           |ver       |ip          |id        |wsdl                                                        ]
+[name           |ver       |ip          |id        |wsdl                                                        ]
+[name           |ver       |ip          |id        |wsdl                                                        ]
+[name           |ver       |ip          |id        |wsdl                                                        ]
+[name           |ver       |ip          |id        |wsdl                                                        ]
+[name           |ver       |ip          |id        |wsdl                                                        ]
+[name           |ver       |ip          |id        |wsdl                                                        ]
+[name           |ver       |ip          |id        |wsdl                                                        ]
+[name           |ver       |ip          |id        |wsdl                                                        ]
+[name           |ver       |ip          |id        |wsdl                                                        ]
+[name           |ver       |ip          |id        |wsdl                                                        ]
+[name           |ver       |ip          |id        |wsdl                                                        ]
+[name           |ver       |ip          |id        |wsdl                                                        ]
+
+
+}
+END -- s_prod
+END -- page_ProdList
+END -- Folder1
+END -- VBox1
+END -- aws_cross_list
+
+TABLES
+wap_file
+ATTRIBUTES
+Edit name=formonly.name type VARCHAR, tabIndex=1, title=%"name", noEntry;
+Edit ver=formonly.ver type VARCHAR, tabIndex=2, title=%"ver", noEntry;
+Edit ip=formonly.ip type VARCHAR, tabIndex=3, title=%"ip", noEntry;
+Edit id=formonly.id type VARCHAR, tabIndex=4, title=%"id", noEntry;
+Edit wsdl=formonly.wsdl type like wap_file.wap03, tabIndex=5, title=%"wsdl", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_prod(formonly.name,formonly.ver,formonly.ip,formonly.id,formonly.wsdl)
+END -- INSTRUCTIONS
+

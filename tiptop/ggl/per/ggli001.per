@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli001")
+VBox vb10
+Folder folder01
+Page page01(text="Main")
+Grid gr2327
+{
+ Group No.           [ash13               ]
+ Company No.         [ash01          ]
+ Plant Name          [asg02               ]
+ Logistics code      [asg03               ]
+ Book No             [ash00               ]
+
+}
+END -- gr2327
+END -- page01
+END -- folder01
+Table s_ash
+{
+[ash04             |ash05                         |ash06             |aag02                                             |ash11                |ash12                ]
+[ash04             |ash05                         |ash06             |aag02                                             |ash11                |ash12                ]
+[ash04             |ash05                         |ash06             |aag02                                             |ash11                |ash12                ]
+[ash04             |ash05                         |ash06             |aag02                                             |ash11                |ash12                ]
+[ash04             |ash05                         |ash06             |aag02                                             |ash11                |ash12                ]
+[ash04             |ash05                         |ash06             |aag02                                             |ash11                |ash12                ]
+[ash04             |ash05                         |ash06             |aag02                                             |ash11                |ash12                ]
+[ash04             |ash05                         |ash06             |aag02                                             |ash11                |ash12                ]
+[ash04             |ash05                         |ash06             |aag02                                             |ash11                |ash12                ]
+[ash04             |ash05                         |ash06             |aag02                                             |ash11                |ash12                ]
+
+}
+END -- s_ash
+Grid gr2328
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2328
+END -- vb10
+END -- ggli001
+
+TABLES
+ash_file
+ATTRIBUTES
+ButtonEdit ash13=ash_file.ash13, action=controlp, tabIndex=13, not null, required, image="zoom";
+ButtonEdit ash01=ash_file.ash01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Query";
+Edit asg02=formonly.asg02 type CHAR, tabIndex=2, noEntry;
+Edit asg03=formonly.asg03 type CHAR, tabIndex=3, noEntry;
+ButtonEdit ash00=ash_file.ash00, action=controlp, tabIndex=12, noEntry, not null, required, image="zoom";
+ButtonEdit ash04=ash_file.ash04, action=controlp, tabIndex=4, title="Account #", not null, required, image="zoom", comment="<^P> Qry Account";
+Edit ash05=ash_file.ash05, tabIndex=5, title="Account Name";
+ButtonEdit ash06=ash_file.ash06, action=controlp, tabIndex=6, title="After Combine Acct", not null, required, image="zoom", comment="<^P> Qry Account";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=7, title="Account Name", noEntry;
+ComboBox ash11=ash_file.ash11, tabIndex=8, title="Revalue Ex.Rate Type", not null, required, items=(("1", %"Now Ex.Rate"),("2", %"Hist Ex.Rate"),("3", %"Avg Ex.Rate"));
+ComboBox ash12=ash_file.ash12, tabIndex=9, title="Convert Ex.Rate Type", not null, required, items=(("1", %"Now Ex.Rate"),("2", %"Hist Ex.Rate"),("3", %"Avg Ex.Rate"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ash(ash_file.ash04,ash_file.ash05,ash_file.ash06,formonly.aag02,ash_file.ash11,ash_file.ash12)
+SCREEN RECORD Undefined(ash_file.ash13,ash_file.ash01,formonly.asg02,formonly.asg03,ash_file.ash00,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

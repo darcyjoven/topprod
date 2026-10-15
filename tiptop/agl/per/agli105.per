@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli105.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli105")
+VBox VBox1
+Folder pc446
+Page page01(text="Main")
+Table s_aad
+{
+[aad01 |aad02                         |aadac]
+[aad01 |aad02                         |aadac]
+[aad01 |aad02                         |aadac]
+[aad01 |aad02                         |aadac]
+[aad01 |aad02                         |aadac]
+[aad01 |aad02                         |aadac]
+[aad01 |aad02                         |aadac]
+[aad01 |aad02                         |aadac]
+[aad01 |aad02                         |aadac]
+[aad01 |aad02                         |aadac]
+
+}
+END -- s_aad
+END -- page01
+END -- pc446
+Grid gr2375
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr2375
+END -- VBox1
+END -- agli105
+
+TABLES
+aad_file
+ATTRIBUTES
+Edit aad01=aad_file.aad01, tabIndex=1, title="Memo#", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit aad02=aad_file.aad02, tabIndex=2, title="Memo", not null, required;
+CheckBox aadac=aad_file.aadacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aad(aad_file.aad01,aad_file.aad02,aad_file.aadacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

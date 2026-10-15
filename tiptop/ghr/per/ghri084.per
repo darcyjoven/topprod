@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri084.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"ghri084")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Main")
+Grid Gird1
+{
+
+[label1    |hrdq02        ]
+[label3    |bdate         ]  [label4    |edate         ]
+[label2    |hrdq03        ]
+}
+END -- Gird1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid2
+{
+
+[label5    |hrdquser       ]   [label8    ][hrdqdate       ]
+[label6    |hrdqgrup       ]   [label9    ][hrdqoriu       ]
+[label7    |hrdqmodu       ]   [label10   ][hrdqorig       ]
+}
+END -- Grid2
+END -- Page2
+END -- Folder1
+Table s_hrdq
+{
+[hrdq03_a       |hrdq04      |hrdq05      |hrdq12      |hrdq13        |hrdq06       |hrdq07      |hrdq08  |hrdq09       |hrdq10      ]
+[hrdq03_a       |hrdq04      |hrdq05      |hrdq12      |hrdq13        |hrdq06       |hrdq07      |hrdq08  |hrdq09       |hrdq10      ]
+[hrdq03_a       |hrdq04      |hrdq05      |hrdq12      |hrdq13        |hrdq06       |hrdq07      |hrdq08  |hrdq09       |hrdq10      ]
+[hrdq03_a       |hrdq04      |hrdq05      |hrdq12      |hrdq13        |hrdq06       |hrdq07      |hrdq08  |hrdq09       |hrdq10      ]
+[hrdq03_a       |hrdq04      |hrdq05      |hrdq12      |hrdq13        |hrdq06       |hrdq07      |hrdq08  |hrdq09       |hrdq10      ]
+
+
+
+}
+END -- s_hrdq
+Grid Grid1
+{
+  ----------[cnt   ]-----------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- ghri084
+
+ATTRIBUTES
+Label label1:Label1, text=%"hrdq02";
+ComboBox hrdq02=formonly.hrdq02 type VARCHAR, tabIndex=1, items=(("1", %"1"),("2", %"2"),("3", %"3"),("4", %"4"));
+Label label3:Label3, text=%"bdate";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=2;
+Label label4:Label4, text=%"edate";
+DateEdit edate=formonly.edate type DATE, tabIndex=3;
+Label label2:Label2, text=%"hrdq03";
+ButtonEdit hrdq03=formonly.hrdq03 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+Label label5:Label5, text=%"hrdquser";
+Edit hrdquser=formonly.hrdquser type VARCHAR, tabIndex=11, noEntry;
+Label label8:Label8, text=%"hrdqdate";
+DateEdit hrdqdate=formonly.hrdqdate type DATE, tabIndex=14, noEntry;
+Label label6:Label6, text=%"hrdqgrup";
+Edit hrdqgrup=formonly.hrdqgrup type VARCHAR, tabIndex=12, noEntry;
+Label label9:Label9, text=%"hrdqoriu";
+Edit hrdqoriu=formonly.hrdqoriu type VARCHAR, tabIndex=15, noEntry;
+Label label7:Label7, text=%"hrdqmodu";
+Edit hrdqmodu=formonly.hrdqmodu type VARCHAR, tabIndex=13, noEntry;
+Label label10:Label10, text=%"hrdqorig";
+Edit hrdqorig=formonly.hrdqorig type VARCHAR, tabIndex=16, noEntry;
+Edit hrdq03_a=formonly.hrdq03_a type VARCHAR, tabIndex=5, title=%"hrdq03_a", noEntry;
+Edit hrdq04=formonly.hrdq04 type VARCHAR, tabIndex=6, title=%"hrdq04", noEntry;
+DateEdit hrdq05=formonly.hrdq05 type DATE, tabIndex=7, title=%"hrdq05", noEntry;
+ComboBox hrdq12=formonly.hrdq12 type VARCHAR, tabIndex=8, title=%"hrdq12", noEntry, items=(("001", %"001"),("002", %"002"),("003", %"003"));
+ComboBox hrdq13=formonly.hrdq13 type VARCHAR, tabIndex=9, title=%"hrdq13", noEntry, items=(("1", %"1"),("2", %"2"),("3", %"3"),("4", %"4"),("5", %"5"),("6", %"6"),("7", %"7"));
+Edit hrdq06=formonly.hrdq06 type VARCHAR, tabIndex=17, title=%"hrdq06", noEntry;
+Edit hrdq07=formonly.hrdq07 type VARCHAR, tabIndex=18, title=%"hrdq07", noEntry;
+CheckBox hrdq08=formonly.hrdq08 type VARCHAR, tabIndex=19, title=%"hrdq08", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit hrdq09=formonly.hrdq09 type VARCHAR, tabIndex=20, title=%"hrdq09", noEntry;
+Edit hrdq10=formonly.hrdq10 type VARCHAR, tabIndex=21, title=%"hrdq10", noEntry;
+Edit cnt=formonly.cnt type DECIMAL, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrdq(formonly.hrdq03_a,formonly.hrdq04,formonly.hrdq05,formonly.hrdq12,formonly.hrdq13,formonly.hrdq06,formonly.hrdq07,formonly.hrdq08,formonly.hrdq09,formonly.hrdq10)
+SCREEN RECORD Undefined(formonly.hrdq02,formonly.hrdq03,formonly.cnt,formonly.bdate,formonly.edate,formonly.hrdquser,formonly.hrdqgrup,formonly.hrdqmodu,formonly.hrdqdate,formonly.hrdqoriu,formonly.hrdqorig)
+END -- INSTRUCTIONS
+

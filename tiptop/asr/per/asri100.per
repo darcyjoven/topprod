@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asri100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asri100")
+VBox VBox1
+Folder pc225
+Page page01(text="Main")
+Table s_srb
+{
+[srb01    |srb02       |eci06                 |srb03 |srb04 |srb05   |srb06   |gen02           |srbacti]
+[srb01    |srb02       |eci06                 |srb03 |srb04 |srb05   |srb06   |gen02           |srbacti]
+[srb01    |srb02       |eci06                 |srb03 |srb04 |srb05   |srb06   |gen02           |srbacti]
+[srb01    |srb02       |eci06                 |srb03 |srb04 |srb05   |srb06   |gen02           |srbacti]
+[srb01    |srb02       |eci06                 |srb03 |srb04 |srb05   |srb06   |gen02           |srbacti]
+[srb01    |srb02       |eci06                 |srb03 |srb04 |srb05   |srb06   |gen02           |srbacti]
+[srb01    |srb02       |eci06                 |srb03 |srb04 |srb05   |srb06   |gen02           |srbacti]
+[srb01    |srb02       |eci06                 |srb03 |srb04 |srb05   |srb06   |gen02           |srbacti]
+[srb01    |srb02       |eci06                 |srb03 |srb04 |srb05   |srb06   |gen02           |srbacti]
+[srb01    |srb02       |eci06                 |srb03 |srb04 |srb05   |srb06   |gen02           |srbacti]
+
+}
+END -- s_srb
+END -- page01
+END -- pc225
+Grid gr997
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr997
+END -- VBox1
+END -- asri100
+
+TABLES
+srb_file
+ATTRIBUTES
+DateEdit srb01=srb_file.srb01, tabIndex=1, title="M.Day", not null, required;
+ButtonEdit srb02=srb_file.srb02, action=controlp, tabIndex=2, title="Machin Line", not null, required, image="zoom", comment="Key Field, No Blank/Repeated!    <^Y>Enter Item Detail";
+Edit eci06=formonly.eci06 type CHAR, tabIndex=3, title="Machine name", noEntry;
+Edit srb03=srb_file.srb03, tabIndex=4, title="start", not null, required, picture="XX:XX";
+Edit srb04=srb_file.srb04, tabIndex=5, title="end", not null, required, picture="XX:XX";
+Edit srb05=srb_file.srb05, tabIndex=6, title="M.time", not null, required;
+ButtonEdit srb06=srb_file.srb06, action=controlp, tabIndex=7, title="Mtainer", image="zoom", comment="<^P> Qry Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=8, title="Employee", noEntry;
+CheckBox srbacti=srb_file.srbacti, tabIndex=9, title="Void", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_srb(srb_file.srb01,srb_file.srb02,formonly.eci06,srb_file.srb03,srb_file.srb04,srb_file.srb05,srb_file.srb06,formonly.gen02,srb_file.srbacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

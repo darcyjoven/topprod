@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_abh.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Entering/Contra Account")
+VBox VBox1
+HBox HBox1
+Grid grid01
+{
+ Contra Voucher      [abb01        ]
+ Contra Voucher Seq  [abb0]
+ Contra Amount       [abb07      ]
+ Memo                [abb04                         ]
+
+}
+END -- grid01
+Grid grid02
+{
+ Transaction Code 1  [abb11               ]   Transaction Code 6  [abb32               ]
+ Transcation Code 2  [abb12               ]   Transaction Code 7  [abb33               ]
+ Transcation Code 3  [abb13               ]   Transaction Code 8  [abb34               ]
+ Transcation Code 4  [abb14               ]   Transaction Code 9  [abb35               ]
+ Transcation Code 5  [abb31               ]   Transaction Code 10 [abb36               ]
+}
+END -- grid02
+END -- HBox1
+Table s_abh
+{
+[abh0|abh07        |abh08   |abg06        |abg071           |abg073        |abg072       |amt1           |abh09          |abg04                         ]
+[abh0|abh07        |abh08   |abg06        |abg071           |abg073        |abg072       |amt1           |abh09          |abg04                         ]
+[abh0|abh07        |abh08   |abg06        |abg071           |abg073        |abg072       |amt1           |abh09          |abg04                         ]
+[abh0|abh07        |abh08   |abg06        |abg071           |abg073        |abg072       |amt1           |abh09          |abg04                         ]
+[abh0|abh07        |abh08   |abg06        |abg071           |abg073        |abg072       |amt1           |abh09          |abg04                         ]
+[abh0|abh07        |abh08   |abg06        |abg071           |abg073        |abg072       |amt1           |abh09          |abg04                         ]
+[abh0|abh07        |abh08   |abg06        |abg071           |abg073        |abg072       |amt1           |abh09          |abg04                         ]
+[abh0|abh07        |abh08   |abg06        |abg071           |abg073        |abg072       |amt1           |abh09          |abg04                         ]
+[abh0|abh07        |abh08   |abg06        |abg071           |abg073        |abg072       |amt1           |abh09          |abg04                         ]
+[abh0|abh07        |abh08   |abg06        |abg071           |abg073        |abg072       |amt1           |abh09          |abg04                         ]
+
+}
+END -- s_abh
+Grid gr3860
+{
+ Contra\'d Amt Total   [tot                      ]
+
+}
+END -- gr3860
+END -- VBox1
+END -- s_abh
+
+TABLES
+abh_file
+ATTRIBUTES
+Edit abb01=formonly.abb01 type CHAR, tabIndex=1, noEntry;
+Edit abb0=formonly.abb02 type CHAR, tabIndex=2, noEntry;
+Edit abb07=formonly.abb07 type CHAR, tabIndex=3, noEntry;
+Edit abb04=formonly.abb04 type CHAR, tabIndex=4, noEntry;
+Edit abb11=formonly.abb11 type CHAR, tabIndex=5, noEntry;
+Edit abb32=formonly.abb32 type CHAR, tabIndex=6, noEntry;
+Edit abb12=formonly.abb12 type CHAR, tabIndex=7, noEntry;
+Edit abb33=formonly.abb33 type CHAR, tabIndex=8, noEntry;
+Edit abb13=formonly.abb13 type CHAR, tabIndex=9, noEntry;
+Edit abb34=formonly.abb34 type CHAR, tabIndex=10, noEntry;
+Edit abb14=formonly.abb14 type CHAR, tabIndex=11, noEntry;
+Edit abb35=formonly.abb35 type CHAR, tabIndex=12, noEntry;
+Edit abb31=formonly.abb31 type CHAR, tabIndex=13, noEntry;
+Edit abb36=formonly.abb36 type CHAR, tabIndex=14, noEntry;
+Edit abh0=abh_file.abh06, tabIndex=15, title="Ln#";
+Edit abh07=abh_file.abh07, tabIndex=16, title="Acct.Voucher";
+Edit abh08=abh_file.abh08, tabIndex=17, title="Voc.Ln#";
+DateEdit abg06=formonly.abg06 type CHAR, tabIndex=18, title="Voucher Date", noEntry;
+Edit abg071=formonly.abg071 type CHAR, tabIndex=19, title="Entering Acc.Amt", noEntry;
+Edit abg073=formonly.abg073 type CHAR, tabIndex=20, title="To-Contra Amt", noEntry;
+Edit abg072=formonly.abg072 type CHAR, tabIndex=21, title="Contra\'d Amt", noEntry;
+Edit amt1=formonly.amt1 type CHAR, tabIndex=22, title="UnContra\'d Amt", noEntry;
+Edit abh09=abh_file.abh09, tabIndex=23, title="Contra\'d Amt", not null, required;
+Edit abg04=formonly.abg04 type CHAR, tabIndex=24, title="Memo", noEntry;
+Edit tot=formonly.tot type CHAR, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abh(abh_file.abh06,abh_file.abh07,abh_file.abh08,formonly.abg06,formonly.abg071,formonly.abg073,formonly.abg072,formonly.amt1,abh_file.abh09,formonly.abg04)
+SCREEN RECORD Undefined(formonly.abb01,formonly.abb02,formonly.abb07,formonly.abb04,formonly.abb11,formonly.abb32,formonly.abb12,formonly.abb33,formonly.abb13,formonly.abb34,formonly.abb14,formonly.abb35,formonly.abb31,formonly.abb36,formonly.tot)
+END -- INSTRUCTIONS
+

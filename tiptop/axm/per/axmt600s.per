@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt600s.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt600s")
+VBox VBox1
+Folder pc601
+Page page01(text="Page01")
+Grid gr2584
+{
+ <G group01                                 >
+  Delivery Note No.   [ogb01           ]
+  Line No.            [ogb03     ]
+ <                                          >
+
+}
+END -- gr2584
+END -- page01
+END -- pc601
+Table s_ogbb
+{
+[ogbb02         ]
+[ogbb02         ]
+[ogbb02         ]
+[ogbb02         ]
+[ogbb02         ]
+[ogbb02         ]
+[ogbb02         ]
+[ogbb02         ]
+[ogbb02         ]
+[ogbb02         ]
+
+}
+END -- s_ogbb
+END -- VBox1
+END -- axmt600s
+
+TABLES
+ogbb_file
+ATTRIBUTES
+Group group01:group01;
+Edit ogb01=formonly.ogb01 type CHAR, tabIndex=1, noEntry;
+Edit ogb03=formonly.ogb03 type CHAR, tabIndex=2, noEntry;
+Edit ogbb02=ogbb_file.ogbb02, tabIndex=3, title="Serial No.", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogbb(ogbb_file.ogbb02)
+SCREEN RECORD Undefined(formonly.ogb01,formonly.ogb03)
+END -- INSTRUCTIONS
+

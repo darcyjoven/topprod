@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt900")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr4582
+{
+ Logistics No.        [nqe01     ][azp02     ]
+ Logistics Curr       [nqe02     ][azi02     ]
+}
+END -- gr4582
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_nqe
+{
+[nqe03  |nqe04           |nqe05        |nqd02          |nqe13       |nmt02           |nqe06                            |nqe07 |nqe08 |nqe09           |nqe10            |nqe11             |nqe12  ]
+[nqe03  |nqe04           |nqe05        |nqd02          |nqe13       |nmt02           |nqe06                            |nqe07 |nqe08 |nqe09           |nqe10            |nqe11             |nqe12  ]
+[nqe03  |nqe04           |nqe05        |nqd02          |nqe13       |nmt02           |nqe06                            |nqe07 |nqe08 |nqe09           |nqe10            |nqe11             |nqe12  ]
+[nqe03  |nqe04           |nqe05        |nqd02          |nqe13       |nmt02           |nqe06                            |nqe07 |nqe08 |nqe09           |nqe10            |nqe11             |nqe12  ]
+[nqe03  |nqe04           |nqe05        |nqd02          |nqe13       |nmt02           |nqe06                            |nqe07 |nqe08 |nqe09           |nqe10            |nqe11             |nqe12  ]
+[nqe03  |nqe04           |nqe05        |nqd02          |nqe13       |nmt02           |nqe06                            |nqe07 |nqe08 |nqe09           |nqe10            |nqe11             |nqe12  ]
+[nqe03  |nqe04           |nqe05        |nqd02          |nqe13       |nmt02           |nqe06                            |nqe07 |nqe08 |nqe09           |nqe10            |nqe11             |nqe12  ]
+[nqe03  |nqe04           |nqe05        |nqd02          |nqe13       |nmt02           |nqe06                            |nqe07 |nqe08 |nqe09           |nqe10            |nqe11             |nqe12  ]
+[nqe03  |nqe04           |nqe05        |nqd02          |nqe13       |nmt02           |nqe06                            |nqe07 |nqe08 |nqe09           |nqe10            |nqe11             |nqe12  ]
+[nqe03  |nqe04           |nqe05        |nqd02          |nqe13       |nmt02           |nqe06                            |nqe07 |nqe08 |nqe09           |nqe10            |nqe11             |nqe12  ]
+
+}
+END -- s_nqe
+Grid gr4583
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4583
+END -- VBox1
+END -- anmt900
+
+TABLES
+nqe_file
+ATTRIBUTES
+ButtonEdit nqe01=nqe_file.nqe01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit nqe02=nqe_file.nqe02, action=controlp, tabIndex=3, noEntry, image="zoom";
+Edit azi02=formonly.azi02 type CHAR, tabIndex=4, noEntry;
+DateEdit nqe03=nqe_file.nqe03, tabIndex=5, title="Date", not null, required;
+ComboBox nqe04=nqe_file.nqe04, tabIndex=6, title="Variance Class", noEntry, not null, required, queryEditable, items=(("1", %"Business Activity"),("2", %"Investment"),("3", %"Financial Activity"));
+ButtonEdit nqe05=nqe_file.nqe05, action=controlp, tabIndex=7, title="Category No", not null, required, image="zoom";
+Edit nqd02=formonly.nqd02 type CHAR, tabIndex=8, title="Category Name", noEntry;
+ButtonEdit nqe13=nqe_file.nqe13, action=controlp, tabIndex=9, title="Bank No.", image="zoom";
+Edit nmt02=formonly.nmt02 type CHAR, tabIndex=10, title="Bank Name", noEntry;
+Edit nqe06=nqe_file.nqe06, tabIndex=11, title="Memo";
+ButtonEdit nqe07=nqe_file.nqe07, action=controlp, tabIndex=12, title="Curr", not null, required, image="zoom";
+Edit nqe08=nqe_file.nqe08, tabIndex=13, title="Rate", not null, required;
+ComboBox nqe09=nqe_file.nqe09, tabIndex=14, title="D/W Trans.Code", not null, required, queryEditable, items=(("1", %"Deposit"),("2", %"Withdraw"));
+Edit nqe10=nqe_file.nqe10, tabIndex=15, title="Debit O. Amount", not null, required;
+Edit nqe11=nqe_file.nqe11, tabIndex=16, title="Logistics Amount", not null, required;
+CheckBox nqe12=nqe_file.nqe12, tabIndex=17, title="Realize", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type CHAR, tabIndex=18, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nqe(nqe_file.nqe03,nqe_file.nqe04,nqe_file.nqe05,formonly.nqd02,nqe_file.nqe13,formonly.nmt02,nqe_file.nqe06,nqe_file.nqe07,nqe_file.nqe08,nqe_file.nqe09,nqe_file.nqe10,nqe_file.nqe11,nqe_file.nqe12)
+SCREEN RECORD Undefined(nqe_file.nqe01,formonly.azp02,nqe_file.nqe02,formonly.azi02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

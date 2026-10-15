@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr931.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr931")
+VBox VBox1
+Group group01(text="INPUT")
+Grid gr2835
+{
+ Enter original Book No.       [o_aba00            ]
+ Enter Original Doc            [o_aba01            ]
+ Enter Carrying Book No.       [n_aba00            ]
+ Enter Carrying Doc            [n_aba01            ]
+ Initial voucher date          [b_aba02            ]
+ Ending Voucher Date           [e_aba02            ]
+ Initial voucher number        [b_aba01            ]
+ Ending Voucher No.            [e_aba01            ]
+
+ Entered By                    [pers               ]
+}
+END -- gr2835
+END -- group01
+Grid gr2836
+{
+[more                                                        ]
+
+}
+END -- gr2836
+END -- VBox1
+END -- aglr931
+
+ATTRIBUTES
+ButtonEdit o_aba00=formonly.o_aba00 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit o_aba01=formonly.o_aba01 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+ButtonEdit n_aba00=formonly.n_aba00 type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+ButtonEdit n_aba01=formonly.n_aba01 type CHAR, action=controlp, tabIndex=4, not null, required, image="zoom";
+DateEdit b_aba02=formonly.b_aba02 type DATE, tabIndex=5, not null, required;
+DateEdit e_aba02=formonly.e_aba02 type DATE, tabIndex=6, not null, required;
+Edit b_aba01=formonly.b_aba01 type CHAR, tabIndex=7;
+Edit e_aba01=formonly.e_aba01 type CHAR, tabIndex=8;
+Edit pers=formonly.pers type CHAR, tabIndex=9;
+CheckBox more=formonly.more type CHAR, tabIndex=10, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.o_aba00,formonly.o_aba01,formonly.n_aba00,formonly.n_aba01,formonly.b_aba02,formonly.e_aba02,formonly.b_aba01,formonly.e_aba01,formonly.pers,formonly.more)
+END -- INSTRUCTIONS
+

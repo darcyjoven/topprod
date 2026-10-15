@@ -1,0 +1,27 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi501e.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="asfi501d")
+Grid gr1
+{
+
+   text2      [a1                ]
+   text3      [a2                ]
+
+}
+END -- gr1
+END -- asfi501e
+
+ATTRIBUTES
+ButtonEdit a1=formonly.a1 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ButtonEdit a2=formonly.a2 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a1,formonly.a2)
+END -- INSTRUCTIONS
+

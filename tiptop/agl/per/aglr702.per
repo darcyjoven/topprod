@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr702.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglr702")
+VBox VBox1
+Grid Grid1
+{
+
+ <G group1                                                           >
+  Book NO.            [bookno              ]
+ <                                                                   >
+}
+END -- Grid1
+Grid gr2735
+{
+ <G group01                                                          >
+  Project NO.         [aeg05               ]
+  Voucher Date        [aeg02               ]
+  Account NO.         [aeg01               ]
+ <                                                                   >
+}
+END -- gr2735
+Group group02(text="INPUT")
+Grid gr2736
+{
+ <G group03                                                          >
+  [s1                            ][s2                            ]
+ <                                                                   >
+ <G group04                                                          >
+  [t                                                 ]
+  [                                                  ]
+ <                                                                   >
+ <G group05                                                          >
+  [u                                                 ]
+  [a                                                 ]
+ <                                                                   >
+
+}
+END -- gr2736
+END -- group02
+Grid gr2737
+{
+[more                                                        ]
+
+
+}
+END -- gr2737
+END -- VBox1
+END -- aglr702
+
+TABLES
+aeg_file
+ATTRIBUTES
+Group group1:Group1, text=%"INPUT";
+ButtonEdit bookno=formonly.bookno type VARCHAR, action=controlp, tabIndex=10, not null, required, image="zoom.png";
+Group group01:group01, text="QBE";
+Edit aeg05=aeg_file.aeg05, tabIndex=1;
+DateEdit aeg02=aeg_file.aeg02, tabIndex=2;
+ButtonEdit aeg01=aeg_file.aeg01, action=controlp, tabIndex=3, required, image="zoom.png";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=4, queryEditable, items=(("2", "Voucher Date"),("3", "Account NO."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=5, queryEditable, items=(("2", "Voucher Date"),("3", "Account NO."));
+Group group04:group04, text="Data Option";
+RadioGroup t=formonly.t type CHAR, tabIndex=6, items=(("1", "Ctrl & Independent Account"),("2", "Classification Item"));
+Group group05:group05;
+CheckBox u=formonly.u type CHAR, tabIndex=7, text="Next Page After Project", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox a=formonly.a type CHAR, tabIndex=8, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,aeg_file.aeg05,aeg_file.aeg02,aeg_file.aeg01,formonly.s1,formonly.s2,formonly.t,formonly.u,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

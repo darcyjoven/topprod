@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri042_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder p2
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrat01        |hrat02        |hrat04_dec      |hrat05_dec     |hrad03       |hrat25       ]
+[hrat01        |hrat02        |hrat04_dec      |hrat05_dec     |hrad03       |hrat25       ]
+[hrat01        |hrat02        |hrat04_dec      |hrat05_dec     |hrad03       |hrat25       ]
+[hrat01        |hrat02        |hrat04_dec      |hrat05_dec     |hrad03       |hrat25       ]
+[hrat01        |hrat02        |hrat04_dec      |hrat05_dec     |hrad03       |hrat25       ]
+
+
+
+
+
+}
+END -- Table1
+END -- Page1
+END -- p2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit hrat01=formonly.hrat01 type CHAR, tabIndex=1, title=%"hrat01";
+Edit hrat02=formonly.hrat02 type CHAR, tabIndex=2, title=%"hrat02";
+Edit hrat04_dec=formonly.hrat04_dec type CHAR, tabIndex=3, title=%"hrat04_dec";
+Edit hrat05_dec=formonly.hrat05_dec type CHAR, tabIndex=4, title=%"hrat05_dec";
+Edit hrad03=formonly.hrad03 type CHAR, tabIndex=5, title=%"hrad03";
+Edit hrat25=formonly.hrat25 type CHAR, tabIndex=6, title=%"hrat25";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrat1(formonly.hrat01,formonly.hrat02,formonly.hrat04_dec,formonly.hrat05_dec,formonly.hrad03,formonly.hrat25)
+END -- INSTRUCTIONS
+

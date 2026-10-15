@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_needproc.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_needproc")
+VBox VBox1
+Folder pc755
+Page page01(text="Page01")
+Grid gr3231
+{
+ <G group01               >
+  User ID [user           ]
+ <                        >
+
+}
+END -- gr3231
+END -- page01
+END -- pc755
+Grid gr3232
+{
+ Row[cnt       ]--------------------[dummy01                  ]--------------------
+
+}
+END -- gr3232
+Table s_gah
+{
+[gah03       |gah08    |gah01              |gah04 |gah05               |gah06                 |gah07       ]
+[gah03       |gah08    |gah01              |gah04 |gah05               |gah06                 |gah07       ]
+[gah03       |gah08    |gah01              |gah04 |gah05               |gah06                 |gah07       ]
+[gah03       |gah08    |gah01              |gah04 |gah05               |gah06                 |gah07       ]
+[gah03       |gah08    |gah01              |gah04 |gah05               |gah06                 |gah07       ]
+[gah03       |gah08    |gah01              |gah04 |gah05               |gah06                 |gah07       ]
+[gah03       |gah08    |gah01              |gah04 |gah05               |gah06                 |gah07       ]
+
+}
+END -- s_gah
+Grid gr3233
+{
+ Row[cn2       ]--------------------[dummy02                  ]--------------------
+
+}
+END -- gr3233
+Table s_gdn
+{
+[gah03_dn    |gah09_dn      |gah01_dn           |gah04_dn |gah05_dn            |gah06_dn              ]
+[gah03_dn    |gah09_dn      |gah01_dn           |gah04_dn |gah05_dn            |gah06_dn              ]
+[gah03_dn    |gah09_dn      |gah01_dn           |gah04_dn |gah05_dn            |gah06_dn              ]
+
+}
+END -- s_gdn
+END -- VBox1
+END -- p_needproc
+
+TABLES
+gah_file
+ATTRIBUTES
+Group group01:group01;
+Edit user=formonly.user type VARCHAR, tabIndex=1;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=2, noEntry;
+Label dummy01:dummy01, text="Waiting for Deal Part";
+Edit gah03=gah_file.gah03, tabIndex=3, title="Create Date";
+Edit gah08=gah_file.gah08, tabIndex=4, title="Deadline";
+Edit gah01=gah_file.gah01, tabIndex=5, title="Message Number", scroll;
+Edit gah04=gah_file.gah04, tabIndex=6, title="Class";
+Edit gah05=gah_file.gah05, tabIndex=7, title="Book Number";
+Edit gah06=gah_file.gah06, tabIndex=8, title="Message", scroll;
+Edit gah07=gah_file.gah07, tabIndex=9, title="Run Program";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+Label dummy02:dummy02, text="Finished Part";
+Edit gah03_dn=formonly.gah03_dn type DATE, tabIndex=11, title="Create Date";
+Edit gah09_dn=formonly.gah09_dn type DATE, tabIndex=12, title="Finished Date";
+Edit gah01_dn=formonly.gah01_dn type VARCHAR, tabIndex=13, title="Message Number", scroll;
+Edit gah04_dn=formonly.gah04_dn type VARCHAR, tabIndex=14, title="Class", scroll;
+Edit gah05_dn=formonly.gah05_dn type VARCHAR, tabIndex=15, title="Book Number", scroll;
+Edit gah06_dn=formonly.gah06_dn type VARCHAR, tabIndex=16, title="Message", scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gah(gah_file.gah03,gah_file.gah08,gah_file.gah01,gah_file.gah04,gah_file.gah05,gah_file.gah06,gah_file.gah07)
+SCREEN RECORD s_gdn(formonly.gah03_dn,formonly.gah09_dn,formonly.gah01_dn,formonly.gah04_dn,formonly.gah05_dn,formonly.gah06_dn)
+SCREEN RECORD Undefined(formonly.user,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

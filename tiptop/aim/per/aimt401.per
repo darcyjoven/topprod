@@ -1,0 +1,121 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimt401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimt401")
+Folder pc602
+Page page01(text="Page01")
+Grid gr3456
+{
+ <G group01                                ><G group02                                >
+  Transfer Note No.[imm01     ]              Approve             [i]
+  Transfer Date    [imm02       ]            Approval Level      [imm0]
+  Applicant        [imm09 ] [gen02   ]       To Approve/Approved [im]/[i1]
+  Department       [gen03 ] [gem02   ]       Print Times/Date    [imm]/[imm08       ]
+ <                                         ><                                         >
+ <G group03                                ><G group04                                        >
+  Line No.         [imn02]                   Item No. [imn03                         ] [i2][a]
+                                                      [ima02                         ]
+ <                                         ><                                                 >
+ <G group05                                ><G group06                                >
+  Warehouse No.  [imn04     ]                Warehouse No.  [imn15     ]
+  Location No.   [imn05     ]                Location No.   [imn16     ]
+  Lot No.        [imn06                   ]  Lot No.        [imn17                   ]
+  Inventory Class[imn091    ]                Inventory Class[imn201    ]
+  Look Code      [imn092    ]                Look Code      [imn2]
+  Account        [imn07                   ]  Account        [imn18                   ]
+  Project No.    [imn08     ]                Project No.    [imn19     ]
+  Inventory Unit [imn0]                      Inventory Unit [imn1]
+  Transfer Qty   [imn10       ]              Transfer Qty   [imn22       ]
+  Confirmed Date [imn14       ]              Confirmed Date [imn26       ]
+ <                                         ><                                         >
+ <G gb2567                                                                            >
+  Conversion Rate [imn21    ]
+ <                                                                                    >
+
+}
+END -- gr3456
+END -- page01
+Page info(text="Info")
+Grid gr3457
+{
+
+ Data Rows           [cnt  ]
+                     [cn2]
+ Record Owner        [immuser   ] Last Modified by    [immmodu   ] Data Valid Code     [b]
+ Department          [immgru]     Create/Modify Date  [immdate ]
+ Record Orig         [immoriu   ]
+ Dept Orig           [immori]
+}
+END -- gr3457
+END -- info
+END -- pc602
+END -- aimt401
+
+TABLES
+imn_file,
+imm_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit imm01=imm_file.imm01, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Documents, <^Y>Create Doc Property ";
+DateEdit imm02=imm_file.imm02, tabIndex=2, not null, required;
+ButtonEdit imm09=imm_file.imm09, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Employee ";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=4, noEntry;
+Edit gen03=formonly.gen03 type CHAR, tabIndex=5, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=6, noEntry;
+Group group02:group02;
+CheckBox i=imm_file.imm03, tabIndex=7, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit imm0=imm_file.imm04, tabIndex=8;
+Edit im=imm_file.imm06, tabIndex=9;
+Edit i1=imm_file.imm05, tabIndex=10;
+Edit imm=imm_file.imm07, tabIndex=11;
+DateEdit imm08=imm_file.imm08, tabIndex=12;
+Group group03:group03;
+Edit imn02=imn_file.imn02, tabIndex=13;
+Group group04:group04;
+Edit imn03=imn_file.imn03, tabIndex=14;
+Edit i2=formonly.ima05 type CHAR, tabIndex=15, noEntry;
+Edit a=formonly.ima08 type CHAR, tabIndex=16, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=17, noEntry;
+Group group05:group05, text="Transfer-out";
+ButtonEdit imn04=imn_file.imn04, action=controlp, tabIndex=18, image="zoom", comment="<^P>Qry Warehouse <^C>Qry Inventory Class/Look Code   ";
+ButtonEdit imn05=imn_file.imn05, action=controlp, tabIndex=19, image="zoom", comment="<^P>Qry Location  <^C>Qry Inventory Class/Look Code   ";
+ButtonEdit imn06=imn_file.imn06, action=controlp, tabIndex=20, image="zoom", comment="<^P>Qry Lot No.   <^C>Qry Inventory Class/Look Code   ";
+Edit imn091=formonly.imn091 type CHAR, tabIndex=21, noEntry;
+Edit imn092=formonly.imn092 type CHAR, tabIndex=22, noEntry;
+Edit imn07=imn_file.imn07, tabIndex=23, noEntry;
+Edit imn08=imn_file.imn08, tabIndex=24, noEntry;
+Edit imn0=imn_file.imn09, tabIndex=25, noEntry;
+Edit imn10=imn_file.imn10, tabIndex=26;
+DateEdit imn14=imn_file.imn14, tabIndex=27, noEntry;
+Group group06:group06, text="Transfer-In";
+ButtonEdit imn15=imn_file.imn15, action=controlp, tabIndex=28, image="zoom", comment="<^P>Qry Warehouse <^T>Qry Item/Warehouse Default <^Y>Create Warehouse";
+ButtonEdit imn16=imn_file.imn16, action=controlp, tabIndex=29, image="zoom", comment="<^P>Qry Location <^Y>Create Location <^C>Qry Inventory Class/Look Code   ";
+ButtonEdit imn17=imn_file.imn17, action=controlp, tabIndex=30, image="zoom", comment="<^P>Qry Lot No.   <^C>Qry Inventory Class/Look Code   ";
+Edit imn201=formonly.imn201 type CHAR, tabIndex=31, noEntry;
+Edit imn2=formonly.imn202 type CHAR, tabIndex=32, noEntry;
+ButtonEdit imn18=imn_file.imn18, action=controlp, tabIndex=33, image="zoom", comment="<^P>Qry Account";
+ButtonEdit imn19=imn_file.imn19, action=controlp, tabIndex=34, image="zoom", comment="<^P>Qry Project No.   <^Y>Create Project No.";
+ButtonEdit imn1=imn_file.imn20, action=controlp, tabIndex=35, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit  <^U>/<^T>Create Item/ Unit conversion";
+Edit imn22=imn_file.imn22, tabIndex=36;
+DateEdit imn26=imn_file.imn26, tabIndex=37, noEntry;
+Group gb2567:gb2567, text="group07";
+Edit imn21=imn_file.imn21, tabIndex=38;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=39, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=40, noEntry;
+Edit immuser=imm_file.immuser, tabIndex=41, noEntry;
+Edit immmodu=imm_file.immmodu, tabIndex=43, noEntry;
+Edit b=imm_file.immacti, tabIndex=45, noEntry, upShift;
+Edit immgru=imm_file.immgrup, tabIndex=42, noEntry;
+DateEdit immdate=imm_file.immdate, tabIndex=44, noEntry;
+Edit immoriu=imm_file.immoriu, tabIndex=501, noEntry;
+Edit immori=imm_file.immorig, tabIndex=502, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(imm_file.imm01,imm_file.imm02,imm_file.imm09,formonly.gen02,formonly.gen03,formonly.gem02,imm_file.imm03,imm_file.imm04,imm_file.imm06,imm_file.imm05,imm_file.imm07,imm_file.imm08,imn_file.imn02,imn_file.imn03,formonly.ima05,formonly.ima08,formonly.ima02,imn_file.imn04,imn_file.imn05,imn_file.imn06,formonly.imn091,formonly.imn092,imn_file.imn07,imn_file.imn08,imn_file.imn09,imn_file.imn10,imn_file.imn14,imn_file.imn15,imn_file.imn16,imn_file.imn17,formonly.imn201,formonly.imn202,imn_file.imn18,imn_file.imn19,imn_file.imn20,imn_file.imn22,imn_file.imn26,imn_file.imn21,formonly.cnt,formonly.cn2,imm_file.immuser,imm_file.immmodu,imm_file.immacti,imm_file.immgrup,imm_file.immdate,imm_file.immoriu,imm_file.immorig)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,204 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/4fd/anmt100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt100")
+VBox VBox1
+Folder pc785
+Page page01(text="Main")
+HBox hb7
+Grid gr4437
+{
+ Drawing Slip No.    [nmd01             ]
+ Drawing Date        [nmd07       ]
+ Paying Bank         [nmd03              ]Paying Bank[nmdud02            ]
+ Bank Name           [nma02              ]Bank Name  [nma02_1            ]
+ Check Book No.      [nmd31              ]
+ Date of Note Taken  [nmd54       ]
+ Note No.            [nmd02       ]
+ Currency/Ex.Rate    [nmd21   ][nmd19               ]
+ Original Curr. Amt  [nmd04               ]
+ Home Curr. Amt      [nmd26               ]
+
+}
+END -- gr4437
+Grid gr4438
+{
+ Due Date            [nmd05       ]                 [imgmksg]
+ Notes type 1        [nmd06       ][nmo02 ]         [       ]
+ Notes type 2        [nmd20       ][nmo02_]
+ Cash Variation      [nmd25       ][nml02         ]
+ Department No.      [nmd18       ][gem02         ]
+ type                [nmd40           ]
+ Vender No.          [nmd08       ][nmd24         ]
+ Note Title          [nmd09                                   ]
+ Confirm             [nmd30       ]
+
+
+}
+END -- gr4438
+END -- hb7
+END -- page01
+Page info(text="Info")
+Grid gr4439
+{
+ Record Owner        [nmduser   ] Last Modified by    [nmdmodu   ]
+ Department          [nmdgrup   ] Create/Modify Date  [nmddate   ]
+ Record Orig.        [nmdoriu   ]
+ Dept Orig.          [nmdorig   ]
+}
+END -- gr4439
+END -- info
+END -- pc785
+Folder pc786
+Page page02(text="General")
+HBox HBox1
+Grid gr4440
+{
+ Payment Slip No     [nmd10                               ][nmd101             ]
+ Payment Slip Plant  [nmd34        ]
+ Reason for Payment  [nmd17        ] [azf03               ]
+ Memo                [nmd11                               ]
+
+
+
+}
+END -- gr4440
+Grid gr4441
+{
+ Note Status         [nmd12               ]
+ Drawing Voucher     [nmd27               ]
+ Transaction Date    [nmd13       ]
+ Closing Date        [nmd29       ]
+ nmd55               [nmd55               ]
+[nmd32                          ]
+
+}
+END -- gr4441
+END -- HBox1
+END -- page02
+Page page03(text="Sent/Taken")
+Grid gr4442
+{
+ Mail/Take          [nmd14               ]
+ Vender Recipie     [nmd22               ]
+ Mail/Take Date     [nmd15       ]
+ Staff              [nmd16     ]
+
+}
+END -- gr4442
+END -- page03
+Page page04(text="Account")
+Grid gr4443
+{
+    Note Account        [nmd23               ]
+    Note Account2       [nmd231              ]
+
+}
+END -- gr4443
+END -- page04
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[nmdud01                       ] userdefined_field07[nmdud07        ] userdefined_field13[nmdud13        ]
+                    [                              ] userdefined_field08[nmdud08        ] userdefined_field14[nmdud14        ]
+ userdefined_field02                                 userdefined_field09[nmdud09        ] userdefined_field15[nmdud15        ]
+ userdefined_field03[nmdud03        ]                userdefined_field10[nmdud10        ]
+ userdefined_field04[nmdud04        ]                userdefined_field11[nmdud11        ]
+ userdefined_field05[nmdud05        ]                userdefined_field12[nmdud12        ]
+ userdefined_field06[nmdud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc786
+Grid gr4444
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr4444
+END -- VBox1
+END -- anmt100
+
+TABLES
+nmd_file,
+azf_file
+ATTRIBUTES
+ButtonEdit nmd01=nmd_file.nmd01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry  Doc Type";
+DateEdit nmd07=nmd_file.nmd07, tabIndex=2, not null, required;
+ButtonEdit nmd03=nmd_file.nmd03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Bank No. <^Y>Create Bank Basic";
+ButtonEdit nmdud02=nmd_file.nmdud02, action=controlp, tabIndex=53, image="zoom";
+Edit nma02=formonly.nma02 type CHAR, tabIndex=4, noEntry;
+Edit nma02_1=formonly.nma02_1 type CHAR, tabIndex=505, noEntry;
+ButtonEdit nmd31=nmd_file.nmd31, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+DateEdit nmd54=nmd_file.nmd54, tabIndex=503, not null, required;
+Edit nmd02=nmd_file.nmd02, tabIndex=6;
+ButtonEdit nmd21=nmd_file.nmd21, action=controlp, tabIndex=7, noEntry, not null, required, image="zoom";
+ButtonEdit nmd19=nmd_file.nmd19, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry Rate";
+Edit nmd04=nmd_file.nmd04, tabIndex=9, not null, required;
+Edit nmd26=nmd_file.nmd26, tabIndex=10, not null, required;
+DateEdit nmd05=nmd_file.nmd05, tabIndex=11, not null, required;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit nmd06=nmd_file.nmd06, action=controlp, tabIndex=13, not null, required, image="zoom", comment="<^P> Qry Notes";
+Edit nmo02=formonly.nmo02 type CHAR, tabIndex=14, noEntry;
+ButtonEdit nmd20=nmd_file.nmd20, action=controlp, tabIndex=15, image="zoom", comment="<^P> Qry Notes";
+Edit nmo02_=formonly.nmo02_1 type CHAR, tabIndex=16, noEntry;
+ButtonEdit nmd25=nmd_file.nmd25, action=controlp, tabIndex=17, image="zoom", comment="<^P> Query Cash Variation Code";
+Edit nml02=formonly.nml02 type CHAR, tabIndex=18, noEntry;
+ButtonEdit nmd18=nmd_file.nmd18, action=controlp, tabIndex=19, image="zoom", comment="<^P> Qry Department";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=20, noEntry;
+ComboBox nmd40=nmd_file.nmd40, tabIndex=63, not null, required, queryEditable, items=(("1", "Draw"),("2", "Withdraw"));
+ButtonEdit nmd08=nmd_file.nmd08, action=controlp, tabIndex=21, not null, required, image="zoom", comment="<^P>Qry Vender #, Enter MISC for Misc Vender, EMPL for Employee";
+Edit nmd24=nmd_file.nmd24, tabIndex=22, not null, required, comment="For Employee, enter EMPL  , Enter .#### Employee No.";
+Edit nmd09=nmd_file.nmd09, tabIndex=23;
+ComboBox nmd30=nmd_file.nmd30, tabIndex=24, noEntry, not null, required, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Cancelled"));
+Edit nmduser=nmd_file.nmduser, tabIndex=25, noEntry;
+Edit nmdmodu=nmd_file.nmdmodu, tabIndex=26, noEntry;
+Edit nmdgrup=nmd_file.nmdgrup, tabIndex=27, noEntry;
+DateEdit nmddate=nmd_file.nmddate, tabIndex=28, noEntry;
+Edit nmdoriu=nmd_file.nmdoriu, tabIndex=501, noEntry;
+Edit nmdorig=nmd_file.nmdorig, tabIndex=502, noEntry;
+ButtonEdit nmd10=nmd_file.nmd10, action=controlp, tabIndex=29, image="zoom";
+Edit nmd101=nmd_file.nmd101, tabIndex=30;
+ButtonEdit nmd34=nmd_file.nmd34, action=controlp, tabIndex=31, image="zoom";
+ButtonEdit nmd17=nmd_file.nmd17, action=controlp, tabIndex=32, image="zoom", comment="<^P> Qry Reason Code";
+Edit azf03=azf_file.azf03, tabIndex=33, noEntry;
+Edit nmd11=nmd_file.nmd11, tabIndex=34;
+ComboBox nmd12=nmd_file.nmd12, tabIndex=35, noEntry, not null, required, queryEditable, items=(("1", "Draw"),("6", "Withdraw"),("7", "Return"),("8", "Cash"),("9", "Void"),("X", "Atuo Open"));
+Edit nmd27=nmd_file.nmd27, tabIndex=36;
+DateEdit nmd13=nmd_file.nmd13, tabIndex=37, noEntry;
+DateEdit nmd29=nmd_file.nmd29, tabIndex=38, noEntry;
+Edit nmd55=nmd_file.nmd55, tabIndex=504, noEntry;
+CheckBox nmd32=nmd_file.nmd32, tabIndex=39, text="Generate Paid-for", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox nmd14=nmd_file.nmd14, tabIndex=40, not null, required, queryEditable, comment="1:Mail  2:Take  3:Other", items=(("1", "Mail"),("2", "Take"),("3", "Other"));
+ButtonEdit nmd22=nmd_file.nmd22, action=controlp, tabIndex=41, image="zoom", comment="<^P>Qry Contact   ";
+DateEdit nmd15=nmd_file.nmd15, tabIndex=42;
+Edit nmd16=nmd_file.nmd16, tabIndex=43, noEntry;
+ButtonEdit nmd23=nmd_file.nmd23, action=controlp, tabIndex=44, image="zoom", comment="<^P> Qry Account     ";
+ButtonEdit nmd231=nmd_file.nmd231, action=controlp, tabIndex=45, image="zoom", comment="<^P> Qry Account     ";
+TextEdit nmdud01=nmd_file.nmdud01, tabIndex=48, stretch=NONE;
+Edit nmdud07=nmd_file.nmdud07, tabIndex=49;
+DateEdit nmdud13=nmd_file.nmdud13, tabIndex=50;
+Edit nmdud08=nmd_file.nmdud08, tabIndex=51;
+DateEdit nmdud14=nmd_file.nmdud14, tabIndex=52;
+Edit nmdud09=nmd_file.nmdud09, tabIndex=54;
+DateEdit nmdud15=nmd_file.nmdud15, tabIndex=55;
+Edit nmdud03=nmd_file.nmdud03, tabIndex=56;
+Edit nmdud10=nmd_file.nmdud10, tabIndex=57;
+Edit nmdud04=nmd_file.nmdud04, tabIndex=58;
+Edit nmdud11=nmd_file.nmdud11, tabIndex=59;
+Edit nmdud05=nmd_file.nmdud05, tabIndex=60;
+Edit nmdud12=nmd_file.nmdud12, tabIndex=61;
+Edit nmdud06=nmd_file.nmdud06, tabIndex=62;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=46, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nmd_file.nmd01,nmd_file.nmd07,nmd_file.nmd03,formonly.nma02,nmd_file.nmd31,nmd_file.nmd54,nmd_file.nmd02,nmd_file.nmd21,nmd_file.nmd19,nmd_file.nmd04,nmd_file.nmd26,nmd_file.nmd05,formonly.imgmksg,nmd_file.nmd06,formonly.nmo02,nmd_file.nmd20,formonly.nmo02_1,nmd_file.nmd25,formonly.nml02,nmd_file.nmd18,formonly.gem02,nmd_file.nmd08,nmd_file.nmd24,nmd_file.nmd09,nmd_file.nmd30,nmd_file.nmduser,nmd_file.nmdmodu,nmd_file.nmdgrup,nmd_file.nmddate,nmd_file.nmdoriu,nmd_file.nmdorig,nmd_file.nmd40,nmd_file.nmd10,nmd_file.nmd101,nmd_file.nmd34,nmd_file.nmd17,azf_file.azf03,nmd_file.nmd11,nmd_file.nmd12,nmd_file.nmd27,nmd_file.nmd13,nmd_file.nmd29,nmd_file.nmd32,nmd_file.nmd14,nmd_file.nmd22,nmd_file.nmd15,nmd_file.nmd16,nmd_file.nmd23,nmd_file.nmd231,nmd_file.nmdud01,nmd_file.nmdud07,nmd_file.nmdud13,nmd_file.nmdud08,nmd_file.nmdud14,nmd_file.nmdud02,nmd_file.nmdud09,nmd_file.nmdud15,nmd_file.nmdud03,nmd_file.nmdud10,nmd_file.nmdud04,nmd_file.nmdud11,nmd_file.nmdud05,nmd_file.nmdud12,nmd_file.nmdud06,formonly.cnt,nmd_file.nmd55,formonly.nma02_1)
+END -- INSTRUCTIONS
+

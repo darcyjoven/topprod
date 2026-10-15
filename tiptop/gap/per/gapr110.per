@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gap/42f/gapr110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gapr110")
+VBox vb5
+Grid gr776
+{
+ <G group01                           >
+  Account No.      [apk01            ]
+  Vender No.       [apk04            ]
+  Invoice Date     [apk05            ]
+  Invoice No.      [apk03            ]
+  Tax              [apk11            ]
+ <                                    >
+
+}
+END -- gr776
+Group g01(text="INPUT")
+VBox VBox1
+Grid gr777
+{
+ <G group02                                                              >
+  [s1                  ] [s2                   ] [s3                    ]
+  [t1                  ] [t2                   ] [t3                    ]
+  [u1                  ] [u2                   ] [u3                    ]
+
+
+ <                                                                       >
+
+}
+END -- gr777
+END -- VBox1
+END -- g01
+Grid gr778
+{
+[more                                              ]
+
+}
+END -- gr778
+END -- vb5
+END -- gapr110
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit apk01=formonly.apk01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit apk04=formonly.apk04 type CHAR, action=controlp, tabIndex=2, image="zoom";
+DateEdit apk05=formonly.apk05 type DATE, tabIndex=3;
+Edit apk03=formonly.apk03 type CHAR, tabIndex=15;
+ButtonEdit apk11=formonly.apk11 type CHAR, action=controlp, tabIndex=4, image="zoom";
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=5, queryEditable, items=(("1", "Ac. No"),("2", "Vender"),("3", "Invoice Date"),("4", "Invoice No"),("5", "Tax"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=6, queryEditable, items=(("1", "Ac. No"),("2", "Vender"),("3", "Invoice Date"),("4", "Invoice No"),("5", "Tax"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=7, queryEditable, items=(("1", "Ac. No"),("2", "Vender"),("3", "Invoice Date"),("4", "Invoice No"),("5", "Tax"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=8, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=11, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=12, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=13, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apk01,formonly.apk04,formonly.apk05,formonly.apk03,formonly.apk11,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.more)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_replang_paper.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zaw_gcw")
+Grid gr3119
+{
+
+        [chk1       ]    [chk2       ]
+ Type   [type1          ][type2          ]
+ Paper  [paper1         ][paper2         ]
+ Orient [orient1        ][orient2        ]
+ Width  [width1         ][width2         ]
+ Length [length1        ][length2        ]
+ Unit   [unit1          ][unit2          ]
+
+}
+END -- gr3119
+END -- p_zaw
+
+ATTRIBUTES
+CheckBox chk1=formonly.chk1 type VARCHAR, tabIndex=1, default = "Y", text="", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox chk2=formonly.chk2 type VARCHAR, tabIndex=2, default = "Y", text="", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox type1=formonly.type1 type VARCHAR, tabIndex=3, noEntry, items=(("1", "Suggest"),("2", "User Input"));
+ComboBox type2=formonly.type2 type VARCHAR, tabIndex=4, noEntry, items=(("1", "Suggest"),("2", "User Input"));
+Edit paper1=formonly.paper1 type VARCHAR, tabIndex=5, noEntry;
+Edit paper2=formonly.paper2 type VARCHAR, tabIndex=6, noEntry;
+ComboBox orient1=formonly.orient1 type VARCHAR, tabIndex=7, noEntry, items=(("P", "Portrait"),("L", "Landscape"));
+ComboBox orient2=formonly.orient2 type VARCHAR, tabIndex=8, noEntry, items=(("P", "Portrait"),("L", "Landscape"));
+Edit width1=formonly.width1 type VARCHAR, tabIndex=9, noEntry;
+Edit width2=formonly.width2 type VARCHAR, tabIndex=10, noEntry;
+Edit length1=formonly.length1 type VARCHAR, tabIndex=11, noEntry;
+Edit length2=formonly.length2 type VARCHAR, tabIndex=12, noEntry;
+ComboBox unit1=formonly.unit1 type VARCHAR, tabIndex=13, noEntry, items=(("C", "cm"),("I", "inch"));
+ComboBox unit2=formonly.unit2 type VARCHAR, tabIndex=14, noEntry, items=(("C", "cm"),("I", "inch"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.paper1,formonly.type1,formonly.chk1,formonly.chk2,formonly.width1,formonly.orient1,formonly.length1,formonly.type2,formonly.paper2,formonly.orient2,formonly.width2,formonly.length2,formonly.unit1,formonly.unit2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli901.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="agli901")
+VBox vb1
+Folder pc1
+Page Page1(text=%"Page0")
+Grid gr1
+{
+
+ abq01    [abq01            ]
+ abq02    [abq02                           ]
+ abq00    [abq00            ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table s_tc_ffb
+{
+[abq03   |abq04   |abq05     |abq06    |abq07    |abq08    |abq09     |abq10     |abq11     |abq12     |abq15      |abq16      |abq17    |abq18    |abq19    |abq13     |abq14     ]
+[abq03   |abq04   |abq05     |abq06    |abq07    |abq08    |abq09     |abq10     |abq11     |abq12     |abq15      |abq16      |abq17    |abq18    |abq19    |abq13     |abq14     ]
+[abq03   |abq04   |abq05     |abq06    |abq07    |abq08    |abq09     |abq10     |abq11     |abq12     |abq15      |abq16      |abq17    |abq18    |abq19    |abq13     |abq14     ]
+
+}
+END -- s_tc_ffb
+Grid gr2
+{
+
+   ---------- cnt [cnt       ]  /  [cn2       ]  ----------
+
+}
+END -- gr2
+END -- vb1
+END -- cgli901
+
+TABLES
+abq_file
+ATTRIBUTES
+ButtonEdit abq01=abq_file.abq01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit abq02=abq_file.abq02, tabIndex=3;
+ButtonEdit abq00=abq_file.abq00, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit abq03=abq_file.abq03, tabIndex=4, title="abq03", not null, required;
+Edit abq04=abq_file.abq04, tabIndex=5, title="abq04";
+ComboBox abq05=abq_file.abq05, tabIndex=6, title=%"abq05", not null, required, items=(("1", "1"),("2", "2"),("3", "3"));
+Edit abq06=abq_file.abq06, tabIndex=7, title=%"abq06";
+ButtonEdit abq07=abq_file.abq07, action=controlp, tabIndex=8, title=%"abq07", image="zoom";
+Edit abq08=abq_file.abq08, tabIndex=9, title=%"abq08";
+ComboBox abq09=abq_file.abq09, tabIndex=10, title=%"abq09", items=(("1", "1"),("2", "2"),("3", "3"));
+Edit abq10=abq_file.abq10, tabIndex=11, title=%"abq10";
+CheckBox abq11=abq_file.abq11, tabIndex=12, default = "N", title=%"abq11", valueChecked = "Y", valueUnchecked = "N";
+ComboBox abq12=abq_file.abq12, tabIndex=13, title=%"abq12", not null, required, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("9", "9"));
+Edit abq15=abq_file.abq15, tabIndex=14, title=%"abq15";
+Edit abq16=abq_file.abq16, tabIndex=15, title=%"abq16";
+Edit abq17=abq_file.abq17, tabIndex=16, title=%"abq17";
+Edit abq18=abq_file.abq18, tabIndex=17, title=%"abq18";
+Edit abq19=abq_file.abq19, tabIndex=18, title=%"abq19";
+CheckBox abq13=abq_file.abq13, tabIndex=21, default = "N", title=%"abq13", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox abq14=abq_file.abq14, tabIndex=22, default = "N", title=%"abq14", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type CHAR, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abq(abq_file.abq03,abq_file.abq04,abq_file.abq05,abq_file.abq06,abq_file.abq07,abq_file.abq08,abq_file.abq09,abq_file.abq10,abq_file.abq11,abq_file.abq12,abq_file.abq15,abq_file.abq16,abq_file.abq17,abq_file.abq18,abq_file.abq19,abq_file.abq13,abq_file.abq14)
+SCREEN RECORD Undefined(abq_file.abq01,abq_file.abq02,abq_file.abq00,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

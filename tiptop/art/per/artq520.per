@@ -1,0 +1,115 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq520.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"artq520")
+VBox vb16
+Group gb1(text="Rcpt")
+Table s_rvu
+{
+[rvuplant    |rvuplant_d|rvu00   |rvu01           |rvu03 |rvu02           |rvu04     |rvu04_de|style |rvu08 |rvu07   |rvu07_de|rvu06   |rvu06_de|rvu20   |rvu99          |rvu21 |rv|rvucon|rvucond |rvucont |rvuconu |rvuconu_]
+[rvuplant    |rvuplant_d|rvu00   |rvu01           |rvu03 |rvu02           |rvu04     |rvu04_de|style |rvu08 |rvu07   |rvu07_de|rvu06   |rvu06_de|rvu20   |rvu99          |rvu21 |rv|rvucon|rvucond |rvucont |rvuconu |rvuconu_]
+[rvuplant    |rvuplant_d|rvu00   |rvu01           |rvu03 |rvu02           |rvu04     |rvu04_de|style |rvu08 |rvu07   |rvu07_de|rvu06   |rvu06_de|rvu20   |rvu99          |rvu21 |rv|rvucon|rvucond |rvucont |rvuconu |rvuconu_]
+[rvuplant    |rvuplant_d|rvu00   |rvu01           |rvu03 |rvu02           |rvu04     |rvu04_de|style |rvu08 |rvu07   |rvu07_de|rvu06   |rvu06_de|rvu20   |rvu99          |rvu21 |rv|rvucon|rvucond |rvucont |rvuconu |rvuconu_]
+[rvuplant    |rvuplant_d|rvu00   |rvu01           |rvu03 |rvu02           |rvu04     |rvu04_de|style |rvu08 |rvu07   |rvu07_de|rvu06   |rvu06_de|rvu20   |rvu99          |rvu21 |rv|rvucon|rvucond |rvucont |rvuconu |rvuconu_]
+
+}
+END -- s_rvu
+END -- gb1
+Group gb2(text="Rcpt Detail")
+VBox vb15
+Grid gr17
+{
+[view1     |return    ]
+
+
+}
+END -- gr17
+Table s_rvv
+{
+[rvv0|rvv04     |rvv05       |rvv31                 |rvv031                        |ima021                        |rvv35 |rvv35_de|rvv32|rvv17       |rvv33     |rvv32_desc|rvv38               |rvv38t              |rvv39               |rvv39t              |pmm2|pmm43|pmm909  |rvv36           |rvv37  |pmn24    |pmn25    |rvv12           |rvv13]
+[rvv0|rvv04     |rvv05       |rvv31                 |rvv031                        |ima021                        |rvv35 |rvv35_de|rvv32|rvv17       |rvv33     |rvv32_desc|rvv38               |rvv38t              |rvv39               |rvv39t              |pmm2|pmm43|pmm909  |rvv36           |rvv37  |pmn24    |pmn25    |rvv12           |rvv13]
+[rvv0|rvv04     |rvv05       |rvv31                 |rvv031                        |ima021                        |rvv35 |rvv35_de|rvv32|rvv17       |rvv33     |rvv32_desc|rvv38               |rvv38t              |rvv39               |rvv39t              |pmm2|pmm43|pmm909  |rvv36           |rvv37  |pmn24    |pmn25    |rvv12           |rvv13]
+[rvv0|rvv04     |rvv05       |rvv31                 |rvv031                        |ima021                        |rvv35 |rvv35_de|rvv32|rvv17       |rvv33     |rvv32_desc|rvv38               |rvv38t              |rvv39               |rvv39t              |pmm2|pmm43|pmm909  |rvv36           |rvv37  |pmn24    |pmn25    |rvv12           |rvv13]
+[rvv0|rvv04     |rvv05       |rvv31                 |rvv031                        |ima021                        |rvv35 |rvv35_de|rvv32|rvv17       |rvv33     |rvv32_desc|rvv38               |rvv38t              |rvv39               |rvv39t              |pmm2|pmm43|pmm909  |rvv36           |rvv37  |pmn24    |pmn25    |rvv12           |rvv13]
+}
+END -- s_rvv
+END -- vb15
+END -- gb2
+Grid gr5367
+{
+   ----------Rows[idx     ]/[cnt       ]-----Items[cn2     ]----------
+
+}
+END -- gr5367
+END -- vb16
+END -- artq520
+
+TABLES
+rvv_file,
+rvu_file
+ATTRIBUTES
+ButtonEdit rvuplant=rvu_file.rvuplant, action=controlp, tabIndex=27, title="Org#", image="zoom.png";
+Edit rvuplant_d=formonly.rvuplant_desc type CHAR, tabIndex=28, title="Org#Name", noEntry;
+ComboBox rvu00=rvu_file.rvu00, tabIndex=29, title="Trs.Type", items=(("1", "Store-in"),("2", "QC/Return"),("3", "WH Return"),("4", "Non-Store-in"),("5", "Non-WH Return"));
+Edit rvu01=rvu_file.rvu01, tabIndex=30, title="Note No.";
+DateEdit rvu03=rvu_file.rvu03, tabIndex=31, title="Date";
+Edit rvu02=rvu_file.rvu02, tabIndex=32, title="Receipt No.";
+ButtonEdit rvu04=rvu_file.rvu04, action=controlp, tabIndex=33, title="Vender", image="zoom.png";
+Edit rvu04_de=formonly.rvu04_desc type CHAR, tabIndex=34, title="Vender Name", noEntry;
+ComboBox style=formonly.style type CHAR, tabIndex=35, title="Vender Style", items=(("1", "Ext-Vender"),("2", "In-Vender"));
+ComboBox rvu08=rvu_file.rvu08, tabIndex=36, title="Property", items=(("REG", "Regular"),("EXP", "Expense"),("CAP", "Capital"));
+ButtonEdit rvu07=rvu_file.rvu07, action=controlp, tabIndex=37, title="Employee", image="zoom.png";
+Edit rvu07_de=formonly.rvu07_desc type CHAR, tabIndex=38, title="Employee Name", noEntry;
+ButtonEdit rvu06=rvu_file.rvu06, action=controlp, tabIndex=39, title="Department", image="zoom.png";
+Edit rvu06_de=formonly.rvu06_desc type CHAR, tabIndex=40, title="Department Name", noEntry;
+CheckBox rvu20=rvu_file.rvu20, tabIndex=41, title="Mti-Trade?", valueChecked = "Y", valueUnchecked = "N";
+Edit rvu99=rvu_file.rvu99, tabIndex=42, title="Mti-Trade S/N";
+ComboBox rvu21=rvu_file.rvu21, tabIndex=43, title="Business Way", items=(("1", "Sell"),("2", "Cost Sell"),("3", "Discount Rate Sell"),("4", "Unite Sell"));
+CheckBox rv=rvu_file.rvupos, tabIndex=44, title="Pass POS?", valueChecked = "Y", valueUnchecked = "N";
+ComboBox rvucon=rvu_file.rvuconf, tabIndex=45, title="Confirmed?", items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "Void"));
+DateEdit rvucond=rvu_file.rvucond, tabIndex=46, title="Allowance Date";
+TimeEdit rvucont=rvu_file.rvucont, tabIndex=47, title="Allowance Time";
+ButtonEdit rvuconu=rvu_file.rvuconu, action=controlp, tabIndex=48, title="Allowance User", image="zoom.png";
+Edit rvuconu_=formonly.rvuconu_desc type CHAR, tabIndex=49, title="Name", noEntry;
+Button view1:view1, text="view1";
+Button return:return, text="return";
+Edit rvv0=rvv_file.rvv02, tabIndex=1, title="Ln#";
+Edit rvv04=rvv_file.rvv04, tabIndex=23, title="Rcpt No#";
+Edit rvv05=rvv_file.rvv05, tabIndex=2, title="Rcpt Ln#";
+ButtonEdit rvv31=rvv_file.rvv31, action=controlp, tabIndex=3, title="Item No", image="zoom", comment="<^P>Qry Item #";
+Edit rvv031=rvv_file.rvv031, tabIndex=4, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=5, title="Specification", noEntry;
+ButtonEdit rvv35=rvv_file.rvv35, action=controlp, tabIndex=6, title="Unit", image="zoom", comment="<^P>Qry Unit    ";
+Edit rvv35_de=formonly.rvv35_desc type CHAR, tabIndex=51, title="Unit Name", noEntry;
+Edit rvv32=rvv_file.rvv35_fac, tabIndex=7, title="Rate", noEntry;
+Edit rvv17=rvv_file.rvv17, tabIndex=13, title="Qty";
+ButtonEdit rvv33=rvv_file.rvv32, action=controlp, tabIndex=14, title="WH", image="zoom", comment="<^P>Qry Inventory W/H <^T>Qry Item/Warehouse Default <^E>Qry Warehouse";
+Edit rvv32_desc=formonly.rvv32_desc type CHAR, tabIndex=24, title="WH Name", noEntry;
+Edit rvv38=rvv_file.rvv38, tabIndex=15, title="Unit Price";
+Edit rvv38t=rvv_file.rvv38t, tabIndex=16, title="Unit Tax Price";
+Edit rvv39=rvv_file.rvv39, tabIndex=17, title="Amount";
+Edit rvv39t=rvv_file.rvv39t, tabIndex=18, title="Tax Amount";
+Edit pmm2=formonly.pmm21 type CHAR, tabIndex=19, title="Tax", noEntry;
+Edit pmm43=formonly.pmm43 type CHAR, tabIndex=20, title="Rate", noEntry;
+ComboBox pmm909=formonly.pmm909 type CHAR, tabIndex=10, title="DataSource", noEntry, queryEditable, items=(("1", "INPUT"),("2", "From P/R"),("3", "From S/O"),("4", "Transfer"),("5", "Distribution"),("6", "P/R"));
+Edit rvv36=rvv_file.rvv36, tabIndex=8, title="P/O NO", noEntry;
+Edit rvv37=rvv_file.rvv37, tabIndex=9, title="Serial#", noEntry;
+Edit pmn24=formonly.pmn24 type CHAR, tabIndex=11, title="P/R No";
+Edit pmn25=formonly.pmn25 type CHAR, tabIndex=12, title="PR Ln#";
+Edit rvv12=rvv_file.rvv12, tabIndex=25, title="Source No#";
+Edit rvv13=rvv_file.rvv13, tabIndex=26, title="Source Ln#";
+Edit idx=formonly.idx type CHAR, tabIndex=50;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvv(rvv_file.rvv02,rvv_file.rvv04,rvv_file.rvv05,rvv_file.rvv31,rvv_file.rvv031,formonly.ima021,rvv_file.rvv35,formonly.rvv35_desc,rvv_file.rvv35_fac,rvv_file.rvv17,rvv_file.rvv32,formonly.rvv32_desc,rvv_file.rvv38,rvv_file.rvv38t,rvv_file.rvv39,rvv_file.rvv39t,formonly.pmm21,formonly.pmm43,formonly.pmm909,rvv_file.rvv36,rvv_file.rvv37,formonly.pmn24,formonly.pmn25,rvv_file.rvv12,rvv_file.rvv13)
+SCREEN RECORD s_rvu(rvu_file.rvuplant,formonly.rvuplant_desc,rvu_file.rvu00,rvu_file.rvu01,rvu_file.rvu03,rvu_file.rvu02,rvu_file.rvu04,formonly.rvu04_desc,formonly.style,rvu_file.rvu08,rvu_file.rvu07,formonly.rvu07_desc,rvu_file.rvu06,formonly.rvu06_desc,rvu_file.rvu20,rvu_file.rvu99,rvu_file.rvu21,rvu_file.rvupos,rvu_file.rvuconf,rvu_file.rvucond,rvu_file.rvucont,rvu_file.rvuconu,formonly.rvuconu_desc)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

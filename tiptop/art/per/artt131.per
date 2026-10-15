@@ -1,0 +1,146 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt131.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt131")
+VBox vb4
+Folder pc1
+Page Page1(text=%"Page0")
+Grid gr1
+{
+
+   NO.   [rtw01              ]           ActiDate[rtw08        ] suitrate  [rtw12        ]                             status   [rtw900      |imgmksg]
+   plant [rtw02         |rtw02_desc  ]   stopdate[rtw09        ] footrate  [rtw13        ]                             confirm  [rtwconf     |       ]
+   PNO.  [rtw03              ]           wrtidate[rtw10        ][label1    |rts06        |gec04         |gec07        ]confdate [rtwcond     ]
+   BNO.  [rtw04         ]                voiddate[rtw11        ] victualer [rtw14        ]                             conperson[rtwconu     |rtwconu_desc  ]
+   HTNO  [rtw05         ]                ActiDate[rtw17        ] person    [rtw15        |rtw15_desc    ]              memo     [rtw16                      ]
+   GNO.  [rtw06         |rtw06_desc  ]   End Date[rtw18        ] curplant  [rtwplant     |rtwplant_desc ]                       [                           ]
+   method[rtw07         ]                                                                                                       [                           ]
+
+}
+END -- gr1
+END -- Page1
+Page Page2(text=%"Page1")
+Grid gr5
+{
+
+ Author      [rtwuser       ]  datamodu  [rtwmodu        ]    Acti  [rtwacti       ]
+ group       [rtwgrup       ]  ModuDate  [rtwdate        ]    create[rtwcrat       ]
+ Record Orig.[rtworiu       ]  Dept Orig.[rtworig        ]
+
+
+
+
+}
+END -- gr5
+END -- Page2
+END -- pc1
+Table s_rtx
+{
+[rtx03   |rtx04   |ima02   |ima021  |ima1004 |ima1005 |ima1009 |ima1007 |rtx05   |rtx05_de|rtx06   |rtx07   |rtx08   |rtx09   |rtx10   |rtx11   |rtx12   |rtx13   |rtx14   |rtx15   |rtx16   |rtx17   |rtx18   |rtx19   |rtx20   ]
+[rtx03   |rtx04   |ima02   |ima021  |ima1004 |ima1005 |ima1009 |ima1007 |rtx05   |rtx05_de|rtx06   |rtx07   |rtx08   |rtx09   |rtx10   |rtx11   |rtx12   |rtx13   |rtx14   |rtx15   |rtx16   |rtx17   |rtx18   |rtx19   |rtx20   ]
+[rtx03   |rtx04   |ima02   |ima021  |ima1004 |ima1005 |ima1009 |ima1007 |rtx05   |rtx05_de|rtx06   |rtx07   |rtx08   |rtx09   |rtx10   |rtx11   |rtx12   |rtx13   |rtx14   |rtx15   |rtx16   |rtx17   |rtx18   |rtx19   |rtx20   ]
+[rtx03   |rtx04   |ima02   |ima021  |ima1004 |ima1005 |ima1009 |ima1007 |rtx05   |rtx05_de|rtx06   |rtx07   |rtx08   |rtx09   |rtx10   |rtx11   |rtx12   |rtx13   |rtx14   |rtx15   |rtx16   |rtx17   |rtx18   |rtx19   |rtx20   ]
+[rtx03   |rtx04   |ima02   |ima021  |ima1004 |ima1005 |ima1009 |ima1007 |rtx05   |rtx05_de|rtx06   |rtx07   |rtx08   |rtx09   |rtx10   |rtx11   |rtx12   |rtx13   |rtx14   |rtx15   |rtx16   |rtx17   |rtx18   |rtx19   |rtx20   ]
+
+
+
+
+}
+END -- s_rtx
+Grid gr9
+{
+ --------------rows[idx  ]/[cnt  ]---------------Details[cn2   ]-------------
+
+
+
+
+
+}
+END -- gr9
+END -- vb4
+END -- artt131
+
+TABLES
+rtx_file,
+rtw_file
+ATTRIBUTES
+ButtonEdit rtw01=rtw_file.rtw01, action=controlp, tabIndex=1, not null, required, image="zoom";
+DateEdit rtw08=rtw_file.rtw08, tabIndex=10, noEntry;
+Edit rtw12=rtw_file.rtw12, tabIndex=14;
+ComboBox rtw900=rtw_file.rtw900, tabIndex=65, items=(("0", "new"),("1", "confirm"),("2", "send"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit rtw02=rtw_file.rtw02, action=controlp, tabIndex=2, noEntry, image="zoom";
+Edit rtw02_desc=formonly.rtw02_desc type VARCHAR, tabIndex=5, noEntry;
+DateEdit rtw09=rtw_file.rtw09, tabIndex=11, noEntry;
+Edit rtw13=rtw_file.rtw13, tabIndex=15;
+ComboBox rtwconf=rtw_file.rtwconf, tabIndex=19, noEntry, items=(("N", "OPEN"),("Y", "Confirm"),("X", "UnConfirm"));
+ButtonEdit rtw03=rtw_file.rtw03, action=controlp, tabIndex=3, not null, required, image="zoom";
+DateEdit rtw10=rtw_file.rtw10, tabIndex=12, noEntry;
+Label label1:Label1, text=%"Tax Type";
+ButtonEdit rts06=formonly.rts06 type CHAR, action=controlp, tabIndex=62, noEntry, image="zoom";
+Edit gec04=formonly.gec04 type CHAR, tabIndex=63, noEntry;
+CheckBox gec07=formonly.gec07 type CHAR, tabIndex=64, text=%"With Tax", noEntry, valueChecked = "Y", valueUnchecked = "N";
+DateEdit rtwcond=rtw_file.rtwcond, tabIndex=20, noEntry;
+Edit rtw04=rtw_file.rtw04, tabIndex=4, noEntry;
+DateEdit rtw11=rtw_file.rtw11, tabIndex=13, noEntry;
+Edit rtw14=rtw_file.rtw14, tabIndex=17;
+ButtonEdit rtwconu=rtw_file.rtwconu, action=controlp, tabIndex=21, noEntry, image="zoom";
+Edit rtwconu_desc=formonly.rtwconu_desc type VARCHAR, tabIndex=24, noEntry;
+Edit rtw05=rtw_file.rtw05, tabIndex=6, noEntry;
+DateEdit rtw17=rtw_file.rtw17, tabIndex=67, not null;
+ButtonEdit rtw15=rtw_file.rtw15, action=controlp, tabIndex=18, image="zoom";
+Edit rtw15_desc=formonly.rtw15_desc type VARCHAR, tabIndex=23, noEntry;
+TextEdit rtw16=rtw_file.rtw16, tabIndex=22;
+Edit rtw06=rtw_file.rtw06, tabIndex=7, noEntry;
+Edit rtw06_desc=formonly.rtw06_desc type VARCHAR, tabIndex=9, noEntry;
+DateEdit rtw18=rtw_file.rtw18, tabIndex=66, noEntry;
+ButtonEdit rtwplant=rtw_file.rtwplant, action=controlp, tabIndex=16, noEntry, image="zoom.png";
+Edit rtwplant_desc=formonly.rtwplant_desc type VARCHAR, tabIndex=56;
+ComboBox rtw07=rtw_file.rtw07, tabIndex=8, noEntry, items=(("1", "sale"),("2", "instand_sale"),("3", "deduct_sale"),("4", "union_sale"));
+Edit rtwuser=rtw_file.rtwuser, tabIndex=25, noEntry;
+Edit rtwmodu=rtw_file.rtwmodu, tabIndex=26, noEntry;
+Edit rtwacti=rtw_file.rtwacti, tabIndex=27, noEntry;
+Edit rtwgrup=rtw_file.rtwgrup, tabIndex=28, noEntry;
+DateEdit rtwdate=rtw_file.rtwdate, tabIndex=29, noEntry;
+DateEdit rtwcrat=rtw_file.rtwcrat, tabIndex=30, noEntry;
+Edit rtworiu=rtw_file.rtworiu, tabIndex=61, noEntry;
+Edit rtworig=rtw_file.rtworig, tabIndex=60, noEntry;
+Edit rtx03=rtx_file.rtx03, tabIndex=31, title="rtx03", not null, required;
+ButtonEdit rtx04=rtx_file.rtx04, action=controlp, tabIndex=32, title="rtx04", not null, required, image="zoom";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=33, title="ima02", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=34, title="ima021", noEntry;
+Edit ima1004=formonly.ima1004 type VARCHAR, tabIndex=38, title="ima1004", noEntry;
+Edit ima1005=formonly.ima1005 type VARCHAR, tabIndex=37, title="ima1005", noEntry;
+Edit ima1009=formonly.ima1009 type VARCHAR, tabIndex=36, title="ima1009", noEntry;
+Edit ima1007=formonly.ima1007 type VARCHAR, tabIndex=35, title="ima1007", noEntry;
+ButtonEdit rtx05=rtx_file.rtx05, action=controlp, tabIndex=39, title="rtx05", noEntry, image="zoom";
+Edit rtx05_de=formonly.rtx05_desc type VARCHAR, tabIndex=40, title="rtx05_desc", noEntry;
+Edit rtx06=rtx_file.rtx06, tabIndex=41, title="rtx06", noEntry, not null, required;
+Edit rtx07=rtx_file.rtx07, tabIndex=42, title="rtx07";
+Edit rtx08=rtx_file.rtx08, tabIndex=43, title="rtx08", not null, required;
+Edit rtx09=rtx_file.rtx09, tabIndex=44, title="rtx09";
+Edit rtx10=rtx_file.rtx10, tabIndex=45, title="rtx10";
+Edit rtx11=rtx_file.rtx11, tabIndex=50, title="rtx11";
+Edit rtx12=rtx_file.rtx12, tabIndex=49, title="rtx12";
+Edit rtx13=rtx_file.rtx13, tabIndex=48, title="rtx13", noEntry, not null, required;
+Edit rtx14=rtx_file.rtx14, tabIndex=47, title="rtx14", not null, required;
+Edit rtx15=rtx_file.rtx15, tabIndex=46, title="rtx15", noEntry;
+Edit rtx16=rtx_file.rtx16, tabIndex=53, title="rtx16", not null, required;
+Edit rtx17=rtx_file.rtx17, tabIndex=52, title="rtx17", noEntry;
+Edit rtx18=rtx_file.rtx18, tabIndex=51, title="rtx18", not null, required;
+CheckBox rtx19=rtx_file.rtx19, tabIndex=54, default = "N", title="rtx19", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rtx20=rtx_file.rtx20, tabIndex=55, title="rtx20", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type INTEGER, tabIndex=57;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=58;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=59;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rtx(rtx_file.rtx03,rtx_file.rtx04,formonly.ima02,formonly.ima021,formonly.ima1004,formonly.ima1005,formonly.ima1009,formonly.ima1007,rtx_file.rtx05,formonly.rtx05_desc,rtx_file.rtx06,rtx_file.rtx07,rtx_file.rtx08,rtx_file.rtx09,rtx_file.rtx10,rtx_file.rtx11,rtx_file.rtx12,rtx_file.rtx13,rtx_file.rtx14,rtx_file.rtx15,rtx_file.rtx16,rtx_file.rtx17,rtx_file.rtx18,rtx_file.rtx19,rtx_file.rtx20)
+SCREEN RECORD Undefined(rtw_file.rtw01,rtw_file.rtw08,formonly.rts06,formonly.gec04,formonly.gec07,rtw_file.rtw02,formonly.rtw02_desc,rtw_file.rtw09,rtw_file.rtw14,rtw_file.rtw03,rtw_file.rtw10,rtw_file.rtw15,formonly.rtw15_desc,rtw_file.rtw04,rtw_file.rtw11,rtw_file.rtwconf,formonly.imgmksg,rtw_file.rtw05,rtw_file.rtw12,rtw_file.rtwcond,rtw_file.rtw06,formonly.rtw06_desc,rtw_file.rtw13,rtw_file.rtwconu,formonly.rtwconu_desc,rtw_file.rtw07,rtw_file.rtwplant,formonly.rtwplant_desc,rtw_file.rtw16,rtw_file.rtwuser,rtw_file.rtwmodu,rtw_file.rtwacti,rtw_file.rtwgrup,rtw_file.rtwdate,rtw_file.rtwcrat,rtw_file.rtworiu,rtw_file.rtworig,formonly.idx,formonly.cnt,formonly.cn2,rtw_file.rtw900,rtw_file.rtw18,rtw_file.rtw17)
+END -- INSTRUCTIONS
+

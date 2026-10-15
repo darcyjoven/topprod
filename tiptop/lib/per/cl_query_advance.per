@@ -1,0 +1,130 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_query_advance.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="cl_query_advance")
+Folder pc1
+Page Page1(action=dis_zal, text=%"Display")
+Table s_dis_zal
+{
+[check   |zal04               |zal05                    ]
+[check   |zal04               |zal05                    ]
+[check   |zal04               |zal05                    ]
+[check   |zal04               |zal05                    ]
+[check   |zal04               |zal05                    ]
+[check   |zal04               |zal05                    ]
+[check   |zal04               |zal05                    ]
+[check   |zal04               |zal05                    ]
+[check   |zal04               |zal05                    ]
+[check   |zal04               |zal05                    ]
+
+}
+END -- s_dis_zal
+END -- Page1
+Page Page2(action=option, text=%"Option")
+Grid gr2
+{
+ <G gb1                                                           >
+  [s1                ] [s2                ] [s3                ]
+  [t1        ]         [t2        ]         [t3        ]
+  [u1              ]   [u2              ]   [u3              ]
+ <                                                                >
+
+}
+END -- gr2
+END -- Page2
+Page Page3(action=sum1, text=%"Sum(1)")
+Table s_
+{
+[nzal04_1            |nzal05_1       |zan03_1        |zan07_1             ]
+[nzal04_1            |nzal05_1       |zan03_1        |zan07_1             ]
+[nzal04_1            |nzal05_1       |zan03_1        |zan07_1             ]
+[nzal04_1            |nzal05_1       |zan03_1        |zan07_1             ]
+[nzal04_1            |nzal05_1       |zan03_1        |zan07_1             ]
+[nzal04_1            |nzal05_1       |zan03_1        |zan07_1             ]
+[nzal04_1            |nzal05_1       |zan03_1        |zan07_1             ]
+[nzal04_1            |nzal05_1       |zan03_1        |zan07_1             ]
+[nzal04_1            |nzal05_1       |zan03_1        |zan07_1             ]
+[nzal04_1            |nzal05_1       |zan03_1        |zan07_1             ]
+
+}
+END -- s_
+END -- Page3
+Page Page4(action=sum2, text=%"Sum(2)")
+Table s_zan2
+{
+[nzal04_2            |nzal05_2       |zan03_2        |zan07_2             ]
+[nzal04_2            |nzal05_2       |zan03_2        |zan07_2             ]
+[nzal04_2            |nzal05_2       |zan03_2        |zan07_2             ]
+[nzal04_2            |nzal05_2       |zan03_2        |zan07_2             ]
+[nzal04_2            |nzal05_2       |zan03_2        |zan07_2             ]
+[nzal04_2            |nzal05_2       |zan03_2        |zan07_2             ]
+[nzal04_2            |nzal05_2       |zan03_2        |zan07_2             ]
+[nzal04_2            |nzal05_2       |zan03_2        |zan07_2             ]
+[nzal04_2            |nzal05_2       |zan03_2        |zan07_2             ]
+[nzal04_2            |nzal05_2       |zan03_2        |zan07_2             ]
+
+}
+END -- s_zan2
+END -- Page4
+Page Page5(action=sum3, text=%"Sum(3)")
+Table s_zan3
+{
+[nzal04_3            |nzal05_3       |zan03_3        |zan07_3             ]
+[nzal04_3            |nzal05_3       |zan03_3        |zan07_3             ]
+[nzal04_3            |nzal05_3       |zan03_3        |zan07_3             ]
+[nzal04_3            |nzal05_3       |zan03_3        |zan07_3             ]
+[nzal04_3            |nzal05_3       |zan03_3        |zan07_3             ]
+[nzal04_3            |nzal05_3       |zan03_3        |zan07_3             ]
+[nzal04_3            |nzal05_3       |zan03_3        |zan07_3             ]
+[nzal04_3            |nzal05_3       |zan03_3        |zan07_3             ]
+[nzal04_3            |nzal05_3       |zan03_3        |zan07_3             ]
+[nzal04_3            |nzal05_3       |zan03_3        |zan07_3             ]
+
+}
+END -- s_zan3
+END -- Page5
+END -- pc1
+END -- cl_query_advance
+
+TABLES
+zal_file
+ATTRIBUTES
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit zal04=zal_file.zal04, tabIndex=2, title="Field ID", noEntry;
+Edit zal05=zal_file.zal05, tabIndex=3, title="Field Name", noEntry;
+Group gb1:gb1, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=4, queryEditable;
+ComboBox s2=formonly.s2 type CHAR, tabIndex=5, queryEditable;
+ComboBox s3=formonly.s3 type CHAR, tabIndex=6, queryEditable;
+CheckBox t1=formonly.t1 type CHAR, tabIndex=7, default = "N", text="Next Page", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=8, default = "N", text="Next Page", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=9, default = "N", text="Next Page", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=10, default = "N", text="Field Aggregate Method", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=11, default = "N", text="Field Aggregate Method", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=12, default = "N", text="Field Aggregate Method", not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox nzal04_1=formonly.nzal04_1 type VARCHAR, tabIndex=13, title="Field ID", not null, required, queryEditable;
+Edit nzal05_1=formonly.nzal05_1 type VARCHAR, tabIndex=14, title="Field Name", noEntry;
+ComboBox zan03_1=formonly.zan03_1 type VARCHAR, tabIndex=15, title="Aggr.", not null, required, items=(("A", "Subtotal"),("B", "Grand total"),("C", "Subtotal & Grand total"),("D", "Sub average"),("E", "Grand average"),("F", "Sub average & Grand average"));
+ComboBox zan07_1=formonly.zan07_1 type VARCHAR, tabIndex=16, title="Display", not null, required, items=(("1", "Field Name + Aggr."),("2", "Only Aggr."),("3", "Not Display"));
+ComboBox nzal04_2=formonly.nzal04_2 type VARCHAR, tabIndex=17, title="Field ID", not null, required, queryEditable;
+Edit nzal05_2=formonly.nzal05_2 type VARCHAR, tabIndex=18, title="Field Name", noEntry;
+ComboBox zan03_2=formonly.zan03_2 type VARCHAR, tabIndex=19, title="Aggr.", not null, required, items=(("A", "Subtotal"),("B", "Grand total"),("C", "Subtotal & Grand total"),("D", "Sub average"),("E", "Grand average"),("F", "Sub average & Grand average"));
+ComboBox zan07_2=formonly.zan07_2 type VARCHAR, tabIndex=20, title="Display", not null, required, items=(("1", "Field Name + Aggr."),("2", "Only Aggr."),("3", "Not Display"));
+ComboBox nzal04_3=formonly.nzal04_3 type VARCHAR, tabIndex=21, title="Field ID", not null, required, queryEditable;
+Edit nzal05_3=formonly.nzal05_3 type VARCHAR, tabIndex=22, title="Field Name", noEntry;
+ComboBox zan03_3=formonly.zan03_3 type VARCHAR, tabIndex=23, title="Aggr.", not null, required, items=(("A", "Subtotal"),("B", "Grand total"),("C", "Subtotal & Grand total"),("D", "Sub average"),("E", "Grand average"),("F", "Sub average & Grand average"));
+ComboBox zan07_3=formonly.zan07_3 type VARCHAR, tabIndex=24, title="Display", not null, required, items=(("1", "Field Name + Aggr."),("2", "Only Aggr."),("3", "Not Display"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_dis_zal(formonly.check,zal_file.zal04,zal_file.zal05)
+SCREEN RECORD s_zan1(formonly.nzal04_1,formonly.nzal05_1,formonly.zan03_1,formonly.zan07_1)
+SCREEN RECORD s_zan2(formonly.nzal04_2,formonly.nzal05_2,formonly.zan03_2,formonly.zan07_2)
+SCREEN RECORD s_zan3(formonly.nzal04_3,formonly.nzal05_3,formonly.zan03_3,formonly.zan07_3)
+SCREEN RECORD Undefined(formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3)
+END -- INSTRUCTIONS
+

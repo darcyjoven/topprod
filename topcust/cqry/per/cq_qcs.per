@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cqry/4fd/cq_qcs.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Delivery Note")
+VBox VBox1
+Table s_qcs
+{
+[check|rvb05         |ima02              |ima021             |rvb01           |rva06     |rva05         |pmc03          |rvb02 |rvb04        |rvb03 |rvb07           ]
+[check|rvb05         |ima02              |ima021             |rvb01           |rva06     |rva05         |pmc03          |rvb02 |rvb04        |rvb03 |rvb07           ]
+[check|rvb05         |ima02              |ima021             |rvb01           |rva06     |rva05         |pmc03          |rvb02 |rvb04        |rvb03 |rvb07           ]
+[check|rvb05         |ima02              |ima021             |rvb01           |rva06     |rva05         |pmc03          |rvb02 |rvb04        |rvb03 |rvb07           ]
+[check|rvb05         |ima02              |ima021             |rvb01           |rva06     |rva05         |pmc03          |rvb02 |rvb04        |rvb03 |rvb07           ]
+[check|rvb05         |ima02              |ima021             |rvb01           |rva06     |rva05         |pmc03          |rvb02 |rvb04        |rvb03 |rvb07           ]
+[check|rvb05         |ima02              |ima021             |rvb01           |rva06     |rva05         |pmc03          |rvb02 |rvb04        |rvb03 |rvb07           ]
+[check|rvb05         |ima02              |ima021             |rvb01           |rva06     |rva05         |pmc03          |rvb02 |rvb04        |rvb03 |rvb07           ]
+[check|rvb05         |ima02              |ima021             |rvb01           |rva06     |rva05         |pmc03          |rvb02 |rvb04        |rvb03 |rvb07           ]
+[check|rvb05         |ima02              |ima021             |rvb01           |rva06     |rva05         |pmc03          |rvb02 |rvb04        |rvb03 |rvb07           ]
+
+
+
+}
+END -- s_qcs
+END -- VBox1
+END -- cq_qcs
+
+ATTRIBUTES
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rvb05=formonly.rvb05 type VARCHAR, action=controlp, tabIndex=2, title="rvb05", noEntry, image="zoom";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=3, title=%"ima02", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=4, title=%"ima021", noEntry;
+ButtonEdit rvb01=formonly.rvb01 type VARCHAR, action=controlp, tabIndex=5, title=%"rvb01", noEntry, image="zoom";
+DateEdit rva06=formonly.rva06 type DATE, tabIndex=6, title=%"rva06", noEntry;
+Edit rva05=formonly.rva05, tabIndex=7, title=%"rva05", noEntry;
+Edit pmc03=formonly.pmc03, tabIndex=8, title=%"pmc03", noEntry;
+Edit rvb02=formonly.rvb02 type INTEGER, tabIndex=9, title=%"rvb02", noEntry;
+ButtonEdit rvb04=formonly.rvb04, action=controlp, tabIndex=10, title=%"rvb04", noEntry, image="zoom";
+Edit rvb03=formonly.rvb03, tabIndex=11, title=%"rvb03", noEntry;
+Edit rvb07=formonly.rvb07 type DECIMAL, tabIndex=12, title=%"rvb07", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcs(formonly.check,formonly.rvb05,formonly.ima02,formonly.ima021,formonly.rvb01,formonly.rva06,formonly.rva05,formonly.pmc03,formonly.rvb02,formonly.rvb04,formonly.rvb03,formonly.rvb07)
+END -- INSTRUCTIONS
+

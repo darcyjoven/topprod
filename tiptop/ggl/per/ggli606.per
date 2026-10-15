@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli606.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli606")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2343
+{
+ Book No.[atr12         ]
+ Year    [atr01    ]
+ Month   [atr02    ]
+
+}
+END -- gr2343
+END -- page01
+END -- folder01
+Table s_atr
+{
+[atr14   |ats02           |atr04           |atr15   |atn02           ]
+[atr14   |ats02           |atr04           |atr15   |atn02           ]
+[atr14   |ats02           |atr04           |atr15   |atn02           ]
+[atr14   |ats02           |atr04           |atr15   |atn02           ]
+[atr14   |ats02           |atr04           |atr15   |atn02           ]
+[atr14   |ats02           |atr04           |atr15   |atn02           ]
+[atr14   |ats02           |atr04           |atr15   |atn02           ]
+[atr14   |ats02           |atr04           |atr15   |atn02           ]
+[atr14   |ats02           |atr04           |atr15   |atn02           ]
+[atr14   |ats02           |atr04           |atr15   |atn02           ]
+}
+END -- s_atr
+Grid gr2344
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr2344
+END -- VBox1
+END -- ggli606
+
+TABLES
+atr_file
+ATTRIBUTES
+ButtonEdit atr12=atr_file.atr12, action=controlp, tabIndex=1, required, image="zoom";
+Edit atr01=atr_file.atr01, tabIndex=2, not null, required;
+Edit atr02=atr_file.atr02, tabIndex=3, not null, required;
+ButtonEdit atr14=atr_file.atr14, action=controlp, tabIndex=4, title="Flow Category Code", not null, required, image="zoom", comment="<^P>Flow Category Code";
+Edit ats02=formonly.ats02 type CHAR, tabIndex=5, title="Description", noEntry;
+Edit atr04=atr_file.atr04, tabIndex=6, title="Transaction Amount", not null, required;
+ButtonEdit atr15=atr_file.atr15, action=controlp, tabIndex=7, title="Group Code", not null, required, image="zoom", comment="<^P>Flow Category Code";
+Edit atn02=formonly.atn02 type CHAR, tabIndex=8, title="Description", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_atr(atr_file.atr14,formonly.ats02,atr_file.atr04,atr_file.atr15,formonly.atn02)
+SCREEN RECORD Undefined(atr_file.atr01,atr_file.atr12,atr_file.atr02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asrt340.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asrt340")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr933
+{
+ Inventory Taking Date [sro01     ]           Year [sro09] Month [sro10]      confirm [sro11     ][imgmksg ]
+ Warehouse             [sro03     ]                                                               [        ]
+ Loc.                  [sro04     ]
+ Lot.                  [sro05               ]
+}
+END -- gr933
+END -- page01
+END -- folder01
+Table s_sro
+{
+[sro02                         |ima02                         |ima021                        |sro06|sro07     |sro08     |sro12     |sro13           ]
+[sro02                         |ima02                         |ima021                        |sro06|sro07     |sro08     |sro12     |sro13           ]
+[sro02                         |ima02                         |ima021                        |sro06|sro07     |sro08     |sro12     |sro13           ]
+[sro02                         |ima02                         |ima021                        |sro06|sro07     |sro08     |sro12     |sro13           ]
+[sro02                         |ima02                         |ima021                        |sro06|sro07     |sro08     |sro12     |sro13           ]
+[sro02                         |ima02                         |ima021                        |sro06|sro07     |sro08     |sro12     |sro13           ]
+[sro02                         |ima02                         |ima021                        |sro06|sro07     |sro08     |sro12     |sro13           ]
+[sro02                         |ima02                         |ima021                        |sro06|sro07     |sro08     |sro12     |sro13           ]
+[sro02                         |ima02                         |ima021                        |sro06|sro07     |sro08     |sro12     |sro13           ]
+[sro02                         |ima02                         |ima021                        |sro06|sro07     |sro08     |sro12     |sro13           ]
+
+}
+END -- s_sro
+Grid gr934
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr934
+END -- VBox1
+END -- asrt340
+
+TABLES
+sro_file
+ATTRIBUTES
+DateEdit sro01=sro_file.sro01, tabIndex=1, not null, required;
+Edit sro09=sro_file.sro09, tabIndex=2, noEntry;
+Edit sro10=sro_file.sro10, tabIndex=3, noEntry;
+ComboBox sro11=sro_file.sro11, tabIndex=4, not null, required, items=(("N", "Not Confirm"),("Y", "Confirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 8 characters, height = 2 characters;
+ButtonEdit sro03=sro_file.sro03, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Warehouse";
+Edit sro04=sro_file.sro04, tabIndex=7;
+Edit sro05=sro_file.sro05, tabIndex=8;
+ButtonEdit sro02=sro_file.sro02, action=controlp, tabIndex=9, title="Item No.", not null, required, image="zoom", comment="<^P>Qry Item No.";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=10, title="Desc.", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=11, title="Spec.", noEntry;
+ButtonEdit sro06=sro_file.sro06, action=controlp, tabIndex=12, title="Unit", not null, required, image="zoom", comment="<^P>Qry Unit";
+Edit sro07=sro_file.sro07, tabIndex=13, title="End Qty", noEntry;
+Edit sro08=sro_file.sro08, tabIndex=14, title="Inv Qty", not null, required;
+Edit sro12=sro_file.sro12, tabIndex=15, title="Dif Qty", not null, required;
+Edit sro13=sro_file.sro13, tabIndex=16, title="WB. NO.", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=17, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sro(sro_file.sro02,formonly.ima02,formonly.ima021,sro_file.sro06,sro_file.sro07,sro_file.sro08,sro_file.sro12,sro_file.sro13)
+SCREEN RECORD Undefined(sro_file.sro01,sro_file.sro09,sro_file.sro10,sro_file.sro11,formonly.imgmksg,sro_file.sro03,sro_file.sro04,sro_file.sro05,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

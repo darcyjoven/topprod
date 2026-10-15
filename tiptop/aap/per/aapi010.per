@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapi010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapi010")
+VBox VBox1
+Folder pc3
+Page page01(text="Main")
+Grid gr4
+{
+  Document Property   [apykind                                ]   [imgmksg]
+  Document            [apyslip   ]                                [       ]
+  Document Name       [apydesc             ]
+
+ [apyauno            ]
+
+
+
+ <G group02                                 >   <G group03                               >
+  Corresponding Document Type[apydmy4    ]      [apyapr                     ]
+ [dummy01                                ]      [apyprint                   ]
+ <                                          >   [apydmy1                    ]
+                                                [apydmy3                    ]
+ <G gb10                                    >   [apyglcr                    ]
+  Declaration No.   [apyvcode          ]         Account Typt   [apygslp                ]
+                                                 Account Typt #2[apygslp1               ]
+                                                [apydmy5                    ]
+                                                [apydmy6                    ]
+ <                                          >   [apydmy7                    ]
+                                                <                                        >
+
+ <G group04                                                                      >
+  User Authorization [smu02_display                                            ]
+  Dept Authorization [smv02_display                                            ]
+ <                                                                               >
+
+}
+END -- gr4
+END -- page01
+Page info(text="Info")
+Grid gr5
+{
+ Record Owner        [apyuser   ]  Last Modified by    [apymodu   ] Data Valid Code     [apyacti   ]
+ Department          [apygrup   ]  Create/Modify Date  [apydate     ]
+ Record Orig.        [apyoriu   ]
+ Dept Orig.          [apyorig   ]
+}
+END -- gr5
+END -- info
+END -- pc3
+Grid gr6
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr6
+END -- VBox1
+END -- aapi010
+
+TABLES
+apy_file
+ATTRIBUTES
+ComboBox apykind=apy_file.apykind, tabIndex=1, not null, required, queryEditable, items=(("13", "13.Misc Invoice"),("17", "17.Suspense Debit/Prepay Application"),("25", "25.To-Offset Prepaid"),("34", "34.Payment"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit apyslip=apy_file.apyslip, tabIndex=3, upShift, comment="Key Field, No Blank/Repeated!";
+Edit apydesc=apy_file.apydesc, tabIndex=4;
+CheckBox apyauno=apy_file.apyauno, tabIndex=5, text="Auto Numbering", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Document Serial Number Given by System Automatically.";
+Group group02:group02;
+ButtonEdit apydmy4=apy_file.apydmy4, action=controlp, tabIndex=7, image="zoom", comment="Only when Document Property is\'15\'or\'33\' Must Enter";
+Label dummy01:dummy01, text="25.loanTo-Offset";
+Group group03:group03;
+CheckBox apyapr=apy_file.apyapr, tabIndex=8, text="Approval", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Document to Approve";
+CheckBox apyprint=apy_file.apyprint, tabIndex=9, text="Print Now", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Auto Print After Doc Entered";
+CheckBox apydmy1=apy_file.apydmy1, tabIndex=10, text="Confirm Now", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Module Auto Confirmed After Document Entered";
+CheckBox apydmy3=apy_file.apydmy3, tabIndex=11, text="Carry Voucher", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apyglcr=apy_file.apyglcr, tabIndex=12, text="Carry Account Or Not", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit apygslp=apy_file.apygslp, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry, Approval Level";
+ButtonEdit apygslp1=apy_file.apygslp1, action=controlp, tabIndex=14, image="zoom", comment="<^P>Qry, Approval Level";
+CheckBox apydmy5=apy_file.apydmy5, tabIndex=15, text="Project Control", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apydmy6=formonly.apydmy6 type CHAR, tabIndex=16, text="Minus", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox apydmy7=apy_file.apydmy7, tabIndex=17, text="Auto Generate the Data Of the Bank Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb10:gb10;
+ButtonEdit apyvcode=apy_file.apyvcode, action=controlp, tabIndex=503, image="zoom", comment="<^P>Qry, Approval Level";
+Group group04:group04;
+Edit smu02_display=formonly.smu02_display type CHAR, tabIndex=18, noEntry;
+Edit smv02_display=formonly.smv02_display type CHAR, tabIndex=19, noEntry;
+Edit apyuser=apy_file.apyuser, tabIndex=20, noEntry;
+Edit apymodu=apy_file.apymodu, tabIndex=21, noEntry;
+Edit apyacti=apy_file.apyacti, tabIndex=22, noEntry;
+Edit apygrup=apy_file.apygrup, tabIndex=23, noEntry;
+DateEdit apydate=apy_file.apydate, tabIndex=24, noEntry;
+Edit apyoriu=apy_file.apyoriu, tabIndex=501, noEntry;
+Edit apyorig=apy_file.apyorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(apy_file.apykind,formonly.imgmksg,apy_file.apyslip,apy_file.apydesc,apy_file.apyauno,apy_file.apydmy4,apy_file.apyapr,apy_file.apyprint,apy_file.apydmy1,apy_file.apydmy3,apy_file.apyglcr,apy_file.apygslp,apy_file.apygslp1,apy_file.apydmy5,formonly.apydmy6,apy_file.apydmy7,apy_file.apyvcode,formonly.smu02_display,formonly.smv02_display,apy_file.apyuser,apy_file.apymodu,apy_file.apyacti,apy_file.apygrup,apy_file.apydate,apy_file.apyoriu,apy_file.apyorig,formonly.cnt)
+END -- INSTRUCTIONS
+

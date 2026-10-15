@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxp100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxp100")
+VBox vb3
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr1066
+{
+ <G group01                                      >
+  Transaction Date     [oga02               ]
+  Transaction Note No. [oga01               ]
+ <                                               >
+
+}
+END -- gr1066
+Grid gr1067
+{
+ <G group02                                      >
+ [a           ] pmc01/occ01   [c              ]
+ [b                       ]   [display        ]
+ <                                               >
+
+}
+END -- gr1067
+END -- hb1
+END -- page01
+END -- folder01
+Table s_rva
+{
+[rva01      |rva06         |rva05           |rva08                |rva21            |rva100         |bxr02                |rvb05               |ima02                         |rvb08          |ima25 ]
+[rva01      |rva06         |rva05           |rva08                |rva21            |rva100         |bxr02                |rvb05               |ima02                         |rvb08          |ima25 ]
+[rva01      |rva06         |rva05           |rva08                |rva21            |rva100         |bxr02                |rvb05               |ima02                         |rvb08          |ima25 ]
+[rva01      |rva06         |rva05           |rva08                |rva21            |rva100         |bxr02                |rvb05               |ima02                         |rvb08          |ima25 ]
+[rva01      |rva06         |rva05           |rva08                |rva21            |rva100         |bxr02                |rvb05               |ima02                         |rvb08          |ima25 ]
+[rva01      |rva06         |rva05           |rva08                |rva21            |rva100         |bxr02                |rvb05               |ima02                         |rvb08          |ima25 ]
+[rva01      |rva06         |rva05           |rva08                |rva21            |rva100         |bxr02                |rvb05               |ima02                         |rvb08          |ima25 ]
+[rva01      |rva06         |rva05           |rva08                |rva21            |rva100         |bxr02                |rvb05               |ima02                         |rvb08          |ima25 ]
+[rva01      |rva06         |rva05           |rva08                |rva21            |rva100         |bxr02                |rvb05               |ima02                         |rvb08          |ima25 ]
+[rva01      |rva06         |rva05           |rva08                |rva21            |rva100         |bxr02                |rvb05               |ima02                         |rvb08          |ima25 ]
+
+}
+END -- s_rva
+Grid gr1068
+{
+  ----------Rows [cn3   ] ----------
+
+}
+END -- gr1068
+END -- vb3
+END -- abxp100
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit oga02=formonly.oga02 type DATE, tabIndex=1, comment="Query by QBE   ";
+Edit oga01=formonly.oga01 type CHAR, tabIndex=2, comment="Query by QBE   ";
+Group group02:group02, text="DATA Source";
+ComboBox a=formonly.a type VARCHAR, tabIndex=3, items=(("1", "Receiving Report"),("2", "Delivery Note"),("3", "STK-Back Note"),("4", "STK-Chg Note"),("5", "Sale-Back Note"),("6", "Stock-in Note"));
+ButtonEdit c=formonly.c type VARCHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P> Qry Vender/Custom No.";
+CheckBox b=formonly.b type CHAR, tabIndex=5, text="Qry Blank Declaration only?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit display=formonly.display type CHAR, tabIndex=6, noEntry;
+Edit rva01=formonly.rva01 type CHAR, tabIndex=7, title="Doc No.", noEntry;
+DateEdit rva06=formonly.rva06 type CHAR, tabIndex=8, title="Document Date", noEntry;
+Edit rva05=formonly.rva05 type CHAR, tabIndex=9, title="Vender/Customer", noEntry;
+Edit rva08=formonly.rva08 type CHAR, tabIndex=10, title="Declaration No";
+DateEdit rva21=formonly.rva21 type DATE, tabIndex=11, title="Declaration Date";
+ButtonEdit rva100=formonly.rva100 type CHAR, action=controlp, tabIndex=12, title="Reason", image="zoom", comment="<^P> Qry Bond Reason Code";
+Edit bxr02=formonly.bxr02 type CHAR, tabIndex=13, title="Explain", noEntry;
+Edit rvb05=formonly.rvb05 type CHAR, tabIndex=14, title="Item No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=15, title="Part Name", noEntry;
+Edit rvb08=formonly.rvb08 type CHAR, tabIndex=16, title="Qty", noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=17, title="Unit", noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rva(formonly.rva01,formonly.rva06,formonly.rva05,formonly.rva08,formonly.rva21,formonly.rva100,formonly.bxr02,formonly.rvb05,formonly.ima02,formonly.rvb08,formonly.ima25)
+SCREEN RECORD Undefined(formonly.oga02,formonly.oga01,formonly.a,formonly.c,formonly.b,formonly.display,formonly.cn3)
+END -- INSTRUCTIONS
+

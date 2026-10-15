@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_lrk.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Document Property")
+Grid gr1235
+{
+ <T s_lrk                                                           >
+ [check |lrkslip    |lrkdesc             |lrkauno         |lrkkind ]
+ [check |lrkslip    |lrkdesc             |lrkauno         |lrkkind ]
+ [check |lrkslip    |lrkdesc             |lrkauno         |lrkkind ]
+ [check |lrkslip    |lrkdesc             |lrkauno         |lrkkind ]
+ [check |lrkslip    |lrkdesc             |lrkauno         |lrkkind ]
+ [check |lrkslip    |lrkdesc             |lrkauno         |lrkkind ]
+ [check |lrkslip    |lrkdesc             |lrkauno         |lrkkind ]
+ [check |lrkslip    |lrkdesc             |lrkauno         |lrkkind ]
+ [check |lrkslip    |lrkdesc             |lrkauno         |lrkkind ]
+ [check |lrkslip    |lrkdesc             |lrkauno         |lrkkind ]
+ <                                                                  >
+
+}
+END -- gr1235
+END -- q_lrk
+
+TABLES
+lrk_file
+ATTRIBUTES
+Table s_lrk:s_lrk;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit lrkslip=lrk_file.lrkslip, tabIndex=2, title="Document", noEntry;
+Edit lrkdesc=lrk_file.lrkdesc, tabIndex=3, title="Document Name", noEntry;
+Edit lrkauno=lrk_file.lrkauno, tabIndex=4, title="Automatic No.", noEntry;
+Edit lrkkind=lrk_file.lrkkind, tabIndex=5, title="Property", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lrk(formonly.check,lrk_file.lrkslip,lrk_file.lrkdesc,lrk_file.lrkauno,lrk_file.lrkkind)
+END -- INSTRUCTIONS
+

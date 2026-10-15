@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapg111.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr111")
+VBox vb2
+Grid gr186
+{
+  <G group01                                                                              >
+   Accounts NO.        [apa01               ]  Account Employee    [apa21               ]
+   Account Date        [apa02               ]  Accounts Department [apa22               ]
+   Paying Vender       [apa06               ]  Accounts Category   [apa36               ]
+  <                                                                                       >
+}
+END -- gr186
+Group group04(text="INPUT")
+HBox hb2
+Grid gr187
+{
+ <G group02             ><G group03                     >
+  [f                ]     [h                           ]
+  [                 ]     [                            ]
+  [                 ]     [                            ]
+  [                 ]
+  [                 ]
+  [                 ]
+  [                 ]
+  [                 ]
+  [                 ]
+ <                      ><                              >
+}
+END -- gr187
+Grid gr188
+{
+ [b                               ]
+ [d                               ]
+ [g                               ]
+ [e                               ]
+ [c                               ]
+
+
+
+
+
+
+}
+END -- gr188
+END -- hb2
+END -- group04
+Grid gr189
+{
+[more                                                        ]
+
+
+}
+END -- gr189
+END -- vb2
+END -- aapr111
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit apa01=formonly.apa01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit apa21=formonly.apa21 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+DateEdit apa02=formonly.apa02 type DATE, tabIndex=3;
+ButtonEdit apa22=formonly.apa22 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit apa06=formonly.apa06 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit apa36=formonly.apa36 type VARCHAR, action=controlp, tabIndex=6, image="zoom";
+Group group02:group02, text="Data Option 1";
+RadioGroup f=formonly.f type CHAR, tabIndex=7, default = "1", items=(("1", "Pur. Invoice  "),("2", "Misc Invoice"),("3", "Prepay"),("4", "Apply"),("5", "Restitute"),("6", "Temp. Store-in"),("7", "Allowance Application"),("8", "D.M Application"),("9", "Temp Returns"));
+Group group03:group03, text="Data Option 2";
+RadioGroup h=formonly.h type CHAR, tabIndex=8, default = "3", items=(("1", "Confirmed"),("2", "UnConfirmed"),("3", "All "));
+CheckBox b=formonly.b type CHAR, tabIndex=9, default = "N", text="Print Printed Again?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox d=formonly.d type CHAR, tabIndex=10, default = "N", text="Print Extra Memo", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type CHAR, tabIndex=11, default = "N", text="Print muti-invoice", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=12, default = "N", text="Print Part No. Part Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox c=formonly.c type CHAR, tabIndex=13, default = "N", text="Print voucher entry", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apa01,formonly.apa21,formonly.apa02,formonly.apa22,formonly.apa06,formonly.apa36,formonly.f,formonly.h,formonly.b,formonly.d,formonly.g,formonly.e,formonly.c,formonly.more)
+END -- INSTRUCTIONS
+

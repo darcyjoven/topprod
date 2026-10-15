@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi611.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi611")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr790
+{
+ Up.Lv.Itm           [bob01                         ]
+ Part Name           [ima02                         ]
+ Specification       [ima021                        ]
+
+}
+END -- gr790
+Grid gr791
+{
+ Ver.                [ima05     ]
+ Src Cd              [ima08     ]
+
+
+}
+END -- gr791
+Grid gr792
+{
+ Component Group     [bob02     ]
+ SUB Group           [bob03     ]
+ SUB Qty             [bob07     ]
+ Desc                [bob14                         ]
+}
+END -- gr792
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_bob
+{
+[bob04               |ima02b                        |ima021b                       |bob05 |bob06   |bob08   |bob09   |bob10   |bob11    |bob12       |bob13      ]
+[bob04               |ima02b                        |ima021b                       |bob05 |bob06   |bob08   |bob09   |bob10   |bob11    |bob12       |bob13      ]
+[bob04               |ima02b                        |ima021b                       |bob05 |bob06   |bob08   |bob09   |bob10   |bob11    |bob12       |bob13      ]
+[bob04               |ima02b                        |ima021b                       |bob05 |bob06   |bob08   |bob09   |bob10   |bob11    |bob12       |bob13      ]
+[bob04               |ima02b                        |ima021b                       |bob05 |bob06   |bob08   |bob09   |bob10   |bob11    |bob12       |bob13      ]
+[bob04               |ima02b                        |ima021b                       |bob05 |bob06   |bob08   |bob09   |bob10   |bob11    |bob12       |bob13      ]
+[bob04               |ima02b                        |ima021b                       |bob05 |bob06   |bob08   |bob09   |bob10   |bob11    |bob12       |bob13      ]
+[bob04               |ima02b                        |ima021b                       |bob05 |bob06   |bob08   |bob09   |bob10   |bob11    |bob12       |bob13      ]
+[bob04               |ima02b                        |ima021b                       |bob05 |bob06   |bob08   |bob09   |bob10   |bob11    |bob12       |bob13      ]
+[bob04               |ima02b                        |ima021b                       |bob05 |bob06   |bob08   |bob09   |bob10   |bob11    |bob12       |bob13      ]
+
+}
+END -- s_bob
+Grid gr793
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr793
+END -- VBox1
+END -- abmi611
+
+TABLES
+bob_file
+ATTRIBUTES
+ButtonEdit bob01=bob_file.bob01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Query Item <^T>Qry Up.Lv.Master Item";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=4, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=5, noEntry;
+Edit bob02=bob_file.bob02, tabIndex=6, not null, required;
+Edit bob03=bob_file.bob03, tabIndex=7, not null, required;
+Edit bob07=bob_file.bob07, tabIndex=8, not null, required;
+Edit bob14=bob_file.bob14, tabIndex=9, not null, required;
+ButtonEdit bob04=bob_file.bob04, action=controlp, tabIndex=10, title="Substitute Item No.", not null, required, image="zoom", comment="<^P> Query Item   ";
+Edit ima02b=formonly.ima02b type CHAR, tabIndex=11, title="Part Name", noEntry;
+Edit ima021b=formonly.ima021b type CHAR, tabIndex=12, title="Specification", noEntry;
+ButtonEdit bob05=bob_file.bob05, action=controlp, tabIndex=13, title="Task#", image="zoom", comment="<^P>Qry Task No.";
+ButtonEdit bob06=bob_file.bob06, action=controlp, tabIndex=14, title="Iss.Unit", not null, required, image="zoom", comment="<^P>Qry  Unit";
+Edit bob08=bob_file.bob08, tabIndex=15, title="QPA", not null, required;
+Edit bob09=bob_file.bob09, tabIndex=16, title="Denm", not null, required;
+DateEdit bob10=bob_file.bob10, tabIndex=17, title="Eff.Date", not null, required;
+DateEdit bob11=bob_file.bob11, tabIndex=18, title="Exp.Date";
+DateEdit bob12=bob_file.bob12, tabIndex=19, title="LastSubDate";
+Edit bob13=bob_file.bob13, tabIndex=20, title="Tol.Diff %", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bob(bob_file.bob04,formonly.ima02b,formonly.ima021b,bob_file.bob05,bob_file.bob06,bob_file.bob08,bob_file.bob09,bob_file.bob10,bob_file.bob11,bob_file.bob12,bob_file.bob13)
+SCREEN RECORD Undefined(bob_file.bob01,formonly.ima02,formonly.ima021,formonly.ima05,formonly.ima08,bob_file.bob02,bob_file.bob03,bob_file.bob07,bob_file.bob14,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

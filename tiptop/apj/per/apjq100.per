@@ -1,0 +1,179 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjq100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjq100")
+VBox vb6_1
+Folder pc2_
+Page Page1(text=%"Main")
+Grid gr1
+{
+
+  Project No.  [pjb01           ][pja02                ]    Currency [pja14       ]  Ex.Rate  [pja15             ]
+  WBS No.      [pjb02           ][pjb03                ]
+
+
+
+}
+END -- gr1
+END -- Page1
+END -- pc2_
+Folder pc2
+Page Page3(action=material, text=%"Material Requirement")
+Table s_pjf
+{
+[pjf02         |pjf03         |pjf04              |ima25              |pjf05            |pjf06               ]
+[pjf02         |pjf03         |pjf04              |ima25              |pjf05            |pjf06               ]
+[pjf02         |pjf03         |pjf04              |ima25              |pjf05            |pjf06               ]
+[pjf02         |pjf03         |pjf04              |ima25              |pjf05            |pjf06               ]
+[pjf02         |pjf03         |pjf04              |ima25              |pjf05            |pjf06               ]
+[pjf02         |pjf03         |pjf04              |ima25              |pjf05            |pjf06               ]
+[pjf02         |pjf03         |pjf04              |ima25              |pjf05            |pjf06               ]
+
+}
+END -- s_pjf
+END -- Page3
+Page Page4(action=human, text=%"Labors Requirement")
+VBox vb5
+Table s_pjh
+{
+[pjh02        |cpi02             |pjx02        |pjx03            |pjh03              |amt                        ]
+[pjh02        |cpi02             |pjx02        |pjx03            |pjh03              |amt                        ]
+[pjh02        |cpi02             |pjx02        |pjx03            |pjh03              |amt                        ]
+[pjh02        |cpi02             |pjx02        |pjx03            |pjh03              |amt                        ]
+[pjh02        |cpi02             |pjx02        |pjx03            |pjh03              |amt                        ]
+[pjh02        |cpi02             |pjx02        |pjx03            |pjh03              |amt                        ]
+[pjh02        |cpi02             |pjx02        |pjx03            |pjh03              |amt                        ]
+}
+END -- s_pjh
+Grid gr3
+{
+[lb2                                                                                                                 ] Total: [tot                        ]
+
+
+}
+END -- gr3
+END -- vb5
+END -- Page4
+Page Page5(action=equipment, text=%"Equipment Requirement")
+VBox vb6
+Table s_pjm
+{
+[pjm02          |pjy02          |pjm03          |pjy03         |pjy04         |pjm04           |amt_2                 ]
+[pjm02          |pjy02          |pjm03          |pjy03         |pjy04         |pjm04           |amt_2                 ]
+[pjm02          |pjy02          |pjm03          |pjy03         |pjy04         |pjm04           |amt_2                 ]
+[pjm02          |pjy02          |pjm03          |pjy03         |pjy04         |pjm04           |amt_2                 ]
+[pjm02          |pjy02          |pjm03          |pjy03         |pjy04         |pjm04           |amt_2                 ]
+[pjm02          |pjy02          |pjm03          |pjy03         |pjy04         |pjm04           |amt_2                 ]
+[pjm02          |pjy02          |pjm03          |pjy03         |pjy04         |pjm04           |amt_2                 ]
+}
+END -- s_pjm
+Grid gr4
+{
+[lb3                                                                                                                     ] Total: [tot_2                 ]
+
+
+}
+END -- gr4
+END -- vb6
+END -- Page5
+Page Page6(action=estimated, text=%"Estimated Expense")
+VBox vb7
+Table s_pjd
+{
+[pjd02          |azf03                 |pjd03          |aag02          |pjd04           |aag02_2         |pjd05              ]
+[pjd02          |azf03                 |pjd03          |aag02          |pjd04           |aag02_2         |pjd05              ]
+[pjd02          |azf03                 |pjd03          |aag02          |pjd04           |aag02_2         |pjd05              ]
+[pjd02          |azf03                 |pjd03          |aag02          |pjd04           |aag02_2         |pjd05              ]
+[pjd02          |azf03                 |pjd03          |aag02          |pjd04           |aag02_2         |pjd05              ]
+[pjd02          |azf03                 |pjd03          |aag02          |pjd04           |aag02_2         |pjd05              ]
+[pjd02          |azf03                 |pjd03          |aag02          |pjd04           |aag02_2         |pjd05              ]
+}
+END -- s_pjd
+Grid gr5
+{
+[lb4                                                                                                                           ] Total:[tot_3              ]
+
+
+}
+END -- gr5
+END -- vb7
+END -- Page6
+END -- pc2
+Grid gr8
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+
+
+
+}
+END -- gr8
+END -- vb6_1
+END -- apjq100
+
+TABLES
+pjm_file,
+pjh_file,
+pjy_file,
+pjx_file,
+pjf_file,
+pjd_file,
+pjb_file
+ATTRIBUTES
+ButtonEdit pjb01=pjb_file.pjb01, action=controlp, tabIndex=1, image="zoom.png";
+Edit pja02=formonly.pja02 type CHAR, tabIndex=2;
+Edit pja14=formonly.pja14 type CHAR, tabIndex=5;
+Edit pja15=formonly.pja15 type CHAR, tabIndex=6;
+ButtonEdit pjb02=pjb_file.pjb02, action=controlp, tabIndex=3, image="zoom.png";
+Edit pjb03=pjb_file.pjb03, tabIndex=4;
+Edit pjf02=pjf_file.pjf02, tabIndex=7, title="Line#";
+Edit pjf03=pjf_file.pjf03, tabIndex=8, title="Item No.";
+Edit pjf04=pjf_file.pjf04, tabIndex=15, title="Item Description";
+Edit ima25=formonly.ima25 type CHAR, tabIndex=16, title="Inventory Unit";
+Edit pjf05=pjf_file.pjf05, tabIndex=17, title="Requirement Qty";
+DateEdit pjf06=pjf_file.pjf06, tabIndex=18, title="Requirement Date";
+Edit pjh02=pjh_file.pjh02, tabIndex=9, title="Skill Code";
+Edit cpi02=formonly.cpi02 type CHAR, tabIndex=10, title="Description";
+Edit pjx02=pjx_file.pjx02, tabIndex=19, title="Unit";
+Edit pjx03=pjx_file.pjx03, tabIndex=20, title="Unit Expense";
+Edit pjh03=pjh_file.pjh03, tabIndex=21, title="Requirement Qty";
+Edit amt=formonly.amt type CHAR, tabIndex=22, title="Requirement Amount";
+Label lb2:lb2;
+Edit tot=formonly.tot type CHAR, tabIndex=33;
+Edit pjm02=pjm_file.pjm02, tabIndex=11, title="Equipment Type";
+Edit pjy02=pjy_file.pjy02, tabIndex=12, title="Equipment Name";
+Edit pjm03=pjm_file.pjm03, tabIndex=23, title="Equipment Qty";
+Edit pjy03=pjy_file.pjy03, tabIndex=24, title="Pricing Unit";
+Edit pjy04=pjy_file.pjy04, tabIndex=25, title="Unit Expense";
+Edit pjm04=pjm_file.pjm04, tabIndex=26, title="Requirement Qty";
+Edit amt_2=formonly.amt_2 type CHAR, tabIndex=27, title="Requirement Amount";
+Label lb3:lb3;
+Edit tot_2=formonly.tot_2 type CHAR, tabIndex=34;
+Edit pjd02=pjd_file.pjd02, tabIndex=13, title="Expense Code";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=14, title="Expense Description";
+Edit pjd03=pjd_file.pjd03, tabIndex=28, title="Account Code";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=29, title="Account Name";
+Edit pjd04=pjd_file.pjd04, tabIndex=36, title="Account Code2";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=37, title="Account2 Name";
+Edit pjd05=pjd_file.pjd05, tabIndex=30, title="Expected Amount";
+Label lb4:lb4;
+Edit tot_3=formonly.tot_3 type CHAR, tabIndex=35;
+Edit cnt=formonly.cnt type CHAR, tabIndex=31, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=32, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjf(pjf_file.pjf02,pjf_file.pjf03,pjf_file.pjf04,formonly.ima25,pjf_file.pjf05,pjf_file.pjf06)
+SCREEN RECORD s_pjh(pjh_file.pjh02,formonly.cpi02,pjx_file.pjx02,pjx_file.pjx03,pjh_file.pjh03,formonly.amt)
+SCREEN RECORD s_pjm(pjm_file.pjm02,pjy_file.pjy02,pjm_file.pjm03,pjy_file.pjy03,pjy_file.pjy04,pjm_file.pjm04,formonly.amt_2)
+SCREEN RECORD s_pjd(pjd_file.pjd02,formonly.azf03,pjd_file.pjd03,formonly.aag02,pjd_file.pjd04,formonly.aag02_2,pjd_file.pjd05)
+SCREEN RECORD Undefined(pjb_file.pjb01,formonly.pja02,formonly.pja14,formonly.pja15,pjb_file.pjb02,pjb_file.pjb03,formonly.tot,formonly.tot_2,formonly.tot_3,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

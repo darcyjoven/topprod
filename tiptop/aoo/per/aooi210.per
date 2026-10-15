@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi210")
+VBox vb5
+Folder pc848
+Page page01(text="Page01")
+Table s_azh
+{
+[azh01          |azh02                               ]
+[azh01          |azh02                               ]
+[azh01          |azh02                               ]
+[azh01          |azh02                               ]
+[azh01          |azh02                               ]
+[azh01          |azh02                               ]
+[azh01          |azh02                               ]
+[azh01          |azh02                               ]
+[azh01          |azh02                               ]
+[azh01          |azh02                               ]
+
+}
+END -- s_azh
+END -- page01
+END -- pc848
+Grid gr4
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4
+END -- vb5
+END -- aooi210
+
+TABLES
+azh_file
+ATTRIBUTES
+Edit azh01=azh_file.azh01, tabIndex=1, title="Title Number", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit azh02=azh_file.azh02, tabIndex=2, title="Name", not null, required, comment="No blank Field!";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azh(azh_file.azh01,azh_file.azh02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

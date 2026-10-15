@@ -1,0 +1,100 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_efcfg.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_efcfg")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ <G group011                                                                    >
+  Program Code            [wsa01     ][zz02                              ]
+ <                                                                              >
+ <G group012                                                                    >
+  Master                  [wsa02          ][zz03                               ]
+  Document No.            [wsa03     ]
+  Status of Document No.  [wsa04     ]
+ <                                                                              >
+ <G group013                                                                    >
+  Detail                  [wsa05          ][zz04                               ]
+  Document No.            [wsa06     ]
+  Status of Document No.  [wsa07     ]
+ <                                                                              >
+ <G group014                                                                    >
+  Document Property       [wsa08          ][zz05                         ]
+  Document                [wsa09     ]
+  Document Name           [wsa10     ]
+  Module                  [wsa11     ]
+  Module Name             [wsa15]
+  Document Property       [wsa12     ]
+  Document Property Code  [ws]
+  Approval                [wsa14     ]
+ <                                                                              >
+
+}
+END -- gr1
+END -- page01
+Page info(text="Info")
+Grid gr2
+{
+   Record Owner [wsauser   ] Last Modified by    [wsamodu   ] Data Valid Code  [wsaacti   ]
+   Department   [wsagrup   ] Create/Modify Date  [wsadate   ]
+   Record Orig. [wsaoriu   ]
+   Dept Orig.   [wsaorig   ]
+}
+END -- gr2
+END -- info
+END -- pc1
+Grid gr3
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3
+END -- VBox1
+END -- aws_efcfg
+
+TABLES
+wsa_file
+ATTRIBUTES
+Group group011:group011;
+ButtonEdit wsa01=wsa_file.wsa01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="The KEY filed,No Blank/Repeated! <^P>Query Program Data. Ex: apmt420";
+Edit zz02=formonly.zz02 type CHAR, tabIndex=2, noEntry;
+Group group012:group012, text="Master Info";
+ButtonEdit wsa02=wsa_file.wsa02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="Enter the Head of this program,blank isn\'t allowed!. Ex: pmk_file";
+Edit zz03=formonly.zz03 type CHAR, tabIndex=4, noEntry;
+ButtonEdit wsa03=wsa_file.wsa03, action=controlp, tabIndex=5, not null, required, image="zoom", comment="Enter Head # field, blank isn\'t allowed! Ex: pmk01";
+ButtonEdit wsa04=wsa_file.wsa04, action=controlp, tabIndex=6, not null, required, image="zoom", comment="Enter Head status field, blank isn\'t allowed!. Ex: pmk25";
+Group group013:group013, text="Detail Info";
+ButtonEdit wsa05=wsa_file.wsa05, action=controlp, tabIndex=7, image="zoom", comment="Enter Program Body. Ex: pml_file";
+Edit zz04=formonly.zz04 type CHAR, tabIndex=8, noEntry;
+ButtonEdit wsa06=wsa_file.wsa06, action=controlp, tabIndex=9, image="zoom", comment="Enter Body # field. Ex: pml01";
+ButtonEdit wsa07=wsa_file.wsa07, action=controlp, tabIndex=10, image="zoom", comment="Enter Body status field. Ex: pml16";
+Group group014:group014, text="Document Info";
+ButtonEdit wsa08=wsa_file.wsa08, action=controlp, tabIndex=11, not null, required, image="zoom", comment="Enter Program Doc Pty,blank isn\'t allowed!. Ex: smy_file";
+Edit zz05=formonly.zz05 type CHAR, tabIndex=12, noEntry;
+ButtonEdit wsa09=wsa_file.wsa09, action=controlp, tabIndex=13, not null, required, image="zoom", comment="Enter Doc Tb type field,blank isn\'t allowed!. Ex: smyslip";
+ButtonEdit wsa10=wsa_file.wsa10, action=controlp, tabIndex=14, not null, required, image="zoom", comment="Enter Doc Tb Doc Name field,blank isn\'t allowed!. Ex: smydesc";
+ButtonEdit wsa11=wsa_file.wsa11, action=controlp, tabIndex=15, image="zoom", comment="Enter Doc Tb Module field. Ex: smysys";
+ComboBox wsa15=wsa_file.wsa15, tabIndex=16, queryEditable, comment="Enter Module Name,blank isn\'t allowed!";
+ButtonEdit wsa12=wsa_file.wsa12, action=controlp, tabIndex=17, not null, required, image="zoom", comment="Enter Doc Tb Doc Pty. field,blank isn\'t allowed!. Ex: smykind";
+Edit ws=wsa_file.wsa13, tabIndex=18, not null, required, comment="Enter Program Doc Pty. #,blank isn\'t allowed!";
+ButtonEdit wsa14=wsa_file.wsa14, action=controlp, tabIndex=19, not null, required, image="zoom", comment="Enter Program Approval field,blank isn\'t allowed!. Ex: smyapr";
+Edit wsauser=wsa_file.wsauser, tabIndex=20, noEntry;
+Edit wsamodu=wsa_file.wsamodu, tabIndex=21, noEntry;
+Edit wsaacti=wsa_file.wsaacti, tabIndex=22, noEntry, upShift;
+Edit wsagrup=wsa_file.wsagrup, tabIndex=23, noEntry;
+Edit wsadate=wsa_file.wsadate, tabIndex=24, noEntry;
+Edit wsaoriu=wsa_file.wsaoriu, tabIndex=501, noEntry;
+Edit wsaorig=wsa_file.wsaorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(wsa_file.wsa01,formonly.zz02,wsa_file.wsa02,formonly.zz03,wsa_file.wsa03,wsa_file.wsa04,wsa_file.wsa05,formonly.zz04,wsa_file.wsa06,wsa_file.wsa07,wsa_file.wsa08,formonly.zz05,wsa_file.wsa09,wsa_file.wsa10,wsa_file.wsa11,wsa_file.wsa15,wsa_file.wsa12,wsa_file.wsa13,wsa_file.wsa14,wsa_file.wsauser,wsa_file.wsamodu,wsa_file.wsaacti,wsa_file.wsagrup,wsa_file.wsadate,wsa_file.wsaoriu,wsa_file.wsaorig,formonly.cnt)
+END -- INSTRUCTIONS
+

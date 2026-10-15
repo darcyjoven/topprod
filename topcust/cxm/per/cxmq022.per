@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cxm/4fd/cxmq022.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+    Label1       [tc_xme00                          ]
+    Label1       [tc_xme03             ]
+    Label1       [tc_xmf03                          ]
+
+
+
+
+}
+END -- Grid1
+Table s_xme
+{
+[tc_xmf00        |tc_xmf01|tc_xmf03_1    |ima02           |ima021          |tc_xmf05    |tc_xmfdate|tc_xmf11    |latest_dat|price_diff  |bmb01         |bmb03         |ima02_1         |ima021_1        |bmb10   |pmj07       |pmj09     |pmj06       |pmj08     |price_diff2 ]
+[tc_xmf00        |tc_xmf01|tc_xmf03_1    |ima02           |ima021          |tc_xmf05    |tc_xmfdate|tc_xmf11    |latest_dat|price_diff  |bmb01         |bmb03         |ima02_1         |ima021_1        |bmb10   |pmj07       |pmj09     |pmj06       |pmj08     |price_diff2 ]
+[tc_xmf00        |tc_xmf01|tc_xmf03_1    |ima02           |ima021          |tc_xmf05    |tc_xmfdate|tc_xmf11    |latest_dat|price_diff  |bmb01         |bmb03         |ima02_1         |ima021_1        |bmb10   |pmj07       |pmj09     |pmj06       |pmj08     |price_diff2 ]
+[tc_xmf00        |tc_xmf01|tc_xmf03_1    |ima02           |ima021          |tc_xmf05    |tc_xmfdate|tc_xmf11    |latest_dat|price_diff  |bmb01         |bmb03         |ima02_1         |ima021_1        |bmb10   |pmj07       |pmj09     |pmj06       |pmj08     |price_diff2 ]
+[tc_xmf00        |tc_xmf01|tc_xmf03_1    |ima02           |ima021          |tc_xmf05    |tc_xmfdate|tc_xmf11    |latest_dat|price_diff  |bmb01         |bmb03         |ima02_1         |ima021_1        |bmb10   |pmj07       |pmj09     |pmj06       |pmj08     |price_diff2 ]
+
+
+
+
+
+}
+END -- s_xme
+END -- VBox1
+END -- cxmq022
+
+ATTRIBUTES
+ButtonEdit tc_xme00=formonly.tc_xme00, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit tc_xme03=formonly.tc_xme03, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit tc_xmf03=formonly.tc_xmf03, action=controlp, tabIndex=3, image="zoom";
+Edit tc_xmf00=formonly.tc_xmf00, tabIndex=4, title=%"Edit2";
+Edit tc_xmf01=formonly.tc_xmf01 type INTEGER, tabIndex=5, title=%"Edit1";
+Edit tc_xmf03_1=formonly.tc_xmf03_1, tabIndex=6, title=%"tc_xmf03";
+Edit ima02=formonly.ima02, tabIndex=7, title=%"ima02";
+Edit ima021=formonly.ima021, tabIndex=8, title=%"ima021";
+Edit tc_xmf05=formonly.tc_xmf05 type DECIMAL, tabIndex=9, title=%"tc_xmf05";
+DateEdit tc_xmfdate=formonly.tc_xmfdate type DATE, tabIndex=10, title=%"tc_xmfdate";
+Edit tc_xmf11=formonly.tc_xmf11 type DECIMAL, tabIndex=11, title=%"tc_xmf11";
+DateEdit latest_dat=formonly.latest_date, tabIndex=12, title=%"last_date";
+Edit price_diff=formonly.price_diff type DECIMAL, tabIndex=13, title=%"price_diff";
+Edit bmb01=formonly.bmb01, tabIndex=14, title=%"bmb01";
+Edit bmb03=formonly.bmb03, tabIndex=15, title=%"bmb03";
+Edit ima02_1=formonly.ima02_1, tabIndex=16, title=%"ima02_1";
+Edit ima021_1=formonly.ima021_1, tabIndex=17, title=%"ima021_1";
+Edit bmb10=formonly.bmb10, tabIndex=18, title=%"bmb10";
+Edit pmj07=formonly.pmj07 type DECIMAL, tabIndex=20, title=%"pmj07";
+DateEdit pmj09=formonly.pmj09 type DATE, tabIndex=21, title=%"pmj09";
+Edit pmj06=formonly.pmj06 type DECIMAL, tabIndex=22, title=%"pmj06";
+DateEdit pmj08=formonly.pmj08 type DATE, tabIndex=23, title=%"pmj08";
+Edit price_diff2=formonly.price_diff2 type DECIMAL, tabIndex=19, title=%"price_diff2";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_xme(formonly.tc_xmf00,formonly.tc_xmf01,formonly.tc_xmf03_1,formonly.ima02,formonly.ima021,formonly.tc_xmf05,formonly.tc_xmfdate,formonly.tc_xmf11,formonly.latest_date,formonly.price_diff,formonly.bmb01,formonly.bmb03,formonly.ima02_1,formonly.ima021_1,formonly.bmb10,formonly.pmj07,formonly.pmj09,formonly.pmj06,formonly.pmj08,formonly.price_diff2)
+SCREEN RECORD Undefined(formonly.tc_xme00,formonly.tc_xme03,formonly.tc_xmf03)
+END -- INSTRUCTIONS
+

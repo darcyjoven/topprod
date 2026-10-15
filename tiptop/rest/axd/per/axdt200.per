@@ -1,0 +1,100 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdt200.per created Wed Jan 23 05:30:45 2008
+-- File created from axdt200.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdt200")
+-- GRID
+-- PAGE
+-- GRID
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        GRID gr7857
+        {
+         Slip Type           [aa0       ] [aa1       ]
+         Transfer-Out No.    [aa2             ]
+                             [aa3       ]
+         Post Date           [aa4       ]
+         WIP                 [aa5       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+      PAGE info( TEXT="Info")
+        GRID gr7858
+        {
+         Record Owner        [aa6       ]   Last Modified by    [aa7       ]
+         Department          [aa8       ]   Create/Modify Date  [aa9       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_adg
+    {
+    [ab0       |ab1                 |ab2         |ab3          |ab4       |ab5        |ab6                     |ab7      |ab8                |ab9            |ac0     |ac1          |ac2       ]
+    [ab0       |ab1                 |ab2         |ab3          |ab4       |ab5        |ab6                     |ab7      |ab8                |ab9            |ac0     |ac1          |ac2       ]
+    [ab0       |ab1                 |ab2         |ab3          |ab4       |ab5        |ab6                     |ab7      |ab8                |ab9            |ac0     |ac1          |ac2       ]
+    [ab0       |ab1                 |ab2         |ab3          |ab4       |ab5        |ab6                     |ab7      |ab8                |ab9            |ac0     |ac1          |ac2       ]
+    [ab0       |ab1                 |ab2         |ab3          |ab4       |ab5        |ab6                     |ab7      |ab8                |ab9            |ac0     |ac1          |ac2       ]
+    [ab0       |ab1                 |ab2         |ab3          |ab4       |ab5        |ab6                     |ab7      |ab8                |ab9            |ac0     |ac1          |ac2       ]
+    [ab0       |ab1                 |ab2         |ab3          |ab4       |ab5        |ab6                     |ab7      |ab8                |ab9            |ac0     |ac1          |ac2       ]
+    [ab0       |ab1                 |ab2         |ab3          |ab4       |ab5        |ab6                     |ab7      |ab8                |ab9            |ac0     |ac1          |ac2       ]
+    [ab0       |ab1                 |ab2         |ab3          |ab4       |ab5        |ab6                     |ab7      |ab8                |ab9            |ac0     |ac1          |ac2       ]
+    [ab0       |ab1                 |ab2         |ab3          |ab4       |ab5        |ab6                     |ab7      |ab8                |ab9            |ac0     |ac1          |ac2       ]
+    }
+    END -- TABLE
+    GRID gr7859
+    {
+     ---------- Rows [ac3   ] / [ac4   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES adf_file,adg_file
+
+ATTRIBUTES
+  COMBOBOX aa0=adf_file.adf00, NOT NULL, REQUIRED, TABINDEX=1, ITEMS=(("1","In Tran"),("2","Out Tran"),("3","Out Retn"));
+  EDIT aa1=FORMONLY.e, NOENTRY, TABINDEX=2;
+  EDIT aa2=adf_file.adf01, TABINDEX=3;
+  CHECKBOX aa3=adf_file.adfpost, TEXT="Post", NOENTRY, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=4;
+  EDIT aa4=adf_file.adf09, NOENTRY, TABINDEX=5;
+  EDIT aa5=adf_file.adf07, NOENTRY, TABINDEX=6;
+  EDIT aa6=adf_file.adfuser, NOENTRY, TABINDEX=7;
+  EDIT aa7=adf_file.adfmodu, NOENTRY, TABINDEX=8;
+  EDIT aa8=adf_file.adfgrup, NOENTRY, TABINDEX=9;
+  DATEEDIT aa9=adf_file.adfdate, NOENTRY, TABINDEX=10;
+  EDIT ab0=adg_file.adg02, NOENTRY, TABINDEX=11, TITLE="Line No";
+  EDIT ab1=adg_file.adg05, NOENTRY, TABINDEX=12, TITLE="Item No.";
+  EDIT ab2=adg_file.adg08, NOENTRY, TABINDEX=13, TITLE="Lot No.";
+  EDIT ab3=adg_file.adg06, NOENTRY, TABINDEX=14, TITLE="Warehouse";
+  EDIT ab4=adg_file.adg07, NOENTRY, TABINDEX=15, TITLE="Loc";
+  EDIT ab5=adg_file.adg09, NOENTRY, TABINDEX=16, TITLE="In-plant";
+  EDIT ab6=adg_file.adg10, NOENTRY, TABINDEX=17, TITLE="Transfer-In Warehouse";
+  EDIT ab7=adg_file.adg11, NOENTRY, TABINDEX=18, TITLE="Unit";
+  EDIT ab8=adg_file.adg12, NOENTRY, TABINDEX=19, TITLE="Transfer-Out Qty";
+  COMBOBOX ab9=adg_file.adg13, NOT NULL, REQUIRED, TABINDEX=20, TITLE="Price Method", ITEMS=(("1","Cst Prc Tr"),("2","Rat Def In Adv"),("3","Ent Sum bef Tr"),("4","Est rat While Tr"));
+  EDIT ac0=adg_file.adg14, TABINDEX=21, TITLE="Ratio";
+  EDIT ac1=adg_file.adg15, TABINDEX=22, TITLE="Unit Price";
+  EDIT ac2=adg_file.adg16, NOENTRY, TABINDEX=23, TITLE="Amount";
+  EDIT ac3=FORMONLY.cnt, NOENTRY, TABINDEX=24;
+  EDIT ac4=FORMONLY.cn2, NOENTRY, TABINDEX=25;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_adg (adg_file.adg02, adg_file.adg05, adg_file.adg08, adg_file.adg06, adg_file.adg07, adg_file.adg09, adg_file.adg10, adg_file.adg11, adg_file.adg12, adg_file.adg13, adg_file.adg14, adg_file.adg15, adg_file.adg16)
+END

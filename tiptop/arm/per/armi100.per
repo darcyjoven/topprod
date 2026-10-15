@@ -1,0 +1,116 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armi100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armi100")
+VBox VBox1
+Folder pc65
+Page page01(text="Main")
+Grid gr232
+{
+                           [dummy01     ]
+  RMA No.                  [rma01             ]         Handling Method     [rma09     ]
+  Customer Complaint NO.   [rma22             ]
+
+ <G group02                                      ><G group03                                   >
+  Customer #               [rma03     ]               [rma08                         ]
+  Customer Abbreviation    [rma04     ]
+  Customer Uniform #       [rma05               ]
+  Customer Tel#            [rma23               ]
+ <                                               ><                                            >
+ <G group04                                      ><G group05                                   >
+  Entry Date               [rma02     ]            Salesman            [rma13     ][gen02     ]
+  Anticipated Arrival Date [rma06     ]            Department No.      [rma14     ][gem02     ]
+
+ <                                               ><                                            >
+
+}
+END -- gr232
+END -- page01
+Page info(text="Info")
+Grid gr233
+{
+ Record Owner        [rmauser   ]  Last Modified by    [rmamodu   ]
+ Department          [rmagrup   ]  Create/Modify Date  [rmadate   ]
+ Record Orig.        [rmaoriu   ]
+ Dept Orig.          [rmaorig   ]
+}
+END -- gr233
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[rmaud01                       ] userdefined_field07[rmaud07        ] userdefined_field13[rmaud13        ]
+                    [                              ] userdefined_field08[rmaud08        ] userdefined_field14[rmaud14        ]
+ userdefined_field02[rmaud02        ]                userdefined_field09[rmaud09        ] userdefined_field15[rmaud15        ]
+ userdefined_field03[rmaud03        ]                userdefined_field10[rmaud10        ]
+ userdefined_field04[rmaud04        ]                userdefined_field11[rmaud11        ]
+ userdefined_field05[rmaud05        ]                userdefined_field12[rmaud12        ]
+ userdefined_field06[rmaud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc65
+Grid gr234
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr234
+END -- VBox1
+END -- armi100
+
+TABLES
+rma_file
+ATTRIBUTES
+Label dummy01:dummy01;
+ButtonEdit rma01=rma_file.rma01, action=controlp, tabIndex=1, not null, required, image="zoom", upShift, comment="KEY Field, No Blank/Repeated! <^P>Qry Documents";
+ComboBox rma09=rma_file.rma09, tabIndex=2, noEntry, items=(("6", "cancel"));
+ButtonEdit rma22=rma_file.rma22, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Customer Complaint NO";
+Group group02:group02;
+ButtonEdit rma03=rma_file.rma03, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Customer";
+Edit rma04=rma_file.rma04, tabIndex=5;
+Edit rma05=rma_file.rma05, tabIndex=6;
+Edit rma23=rma_file.rma23, tabIndex=36;
+Group group03:group03, text="Sales Classification";
+RadioGroup rma08=rma_file.rma08, tabIndex=7, not null, required, items=(("1", "Local Sales"),("2", "Export"));
+Group group04:group04;
+DateEdit rma02=rma_file.rma02, tabIndex=8, not null, required;
+DateEdit rma06=rma_file.rma06, tabIndex=9, not null, required;
+Group group05:group05;
+ButtonEdit rma13=rma_file.rma13, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry Employee";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=11, noEntry;
+ButtonEdit rma14=rma_file.rma14, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Query Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=13, noEntry;
+Edit rmauser=rma_file.rmauser, tabIndex=14, noEntry;
+Edit rmamodu=rma_file.rmamodu, tabIndex=15, noEntry;
+Edit rmagrup=rma_file.rmagrup, tabIndex=16, noEntry;
+DateEdit rmadate=rma_file.rmadate, tabIndex=17, noEntry;
+Edit rmaoriu=rma_file.rmaoriu, tabIndex=34, noEntry;
+Edit rmaorig=rma_file.rmaorig, tabIndex=35, noEntry;
+TextEdit rmaud01=rma_file.rmaud01, tabIndex=19, stretch=NONE;
+Edit rmaud07=rma_file.rmaud07, tabIndex=20;
+DateEdit rmaud13=rma_file.rmaud13, tabIndex=21;
+Edit rmaud08=rma_file.rmaud08, tabIndex=22;
+DateEdit rmaud14=rma_file.rmaud14, tabIndex=23;
+Edit rmaud02=rma_file.rmaud02, tabIndex=24;
+Edit rmaud09=rma_file.rmaud09, tabIndex=25;
+DateEdit rmaud15=rma_file.rmaud15, tabIndex=26;
+Edit rmaud03=rma_file.rmaud03, tabIndex=27;
+Edit rmaud10=rma_file.rmaud10, tabIndex=28;
+Edit rmaud04=rma_file.rmaud04, tabIndex=29;
+Edit rmaud11=rma_file.rmaud11, tabIndex=30;
+Edit rmaud05=rma_file.rmaud05, tabIndex=31;
+Edit rmaud12=rma_file.rmaud12, tabIndex=32;
+Edit rmaud06=rma_file.rmaud06, tabIndex=33;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rma_file.rma01,rma_file.rma09,rma_file.rma22,rma_file.rma03,rma_file.rma04,rma_file.rma05,rma_file.rma08,rma_file.rma02,rma_file.rma06,rma_file.rma13,formonly.gen02,rma_file.rma14,formonly.gem02,rma_file.rmauser,rma_file.rmamodu,rma_file.rmagrup,rma_file.rmadate,rma_file.rmaoriu,rma_file.rmaorig,rma_file.rmaud01,rma_file.rmaud07,rma_file.rmaud13,rma_file.rmaud08,rma_file.rmaud14,rma_file.rmaud02,rma_file.rmaud09,rma_file.rmaud15,rma_file.rmaud03,rma_file.rmaud10,rma_file.rmaud04,rma_file.rmaud11,rma_file.rmaud05,rma_file.rmaud12,rma_file.rmaud06,formonly.cnt,rma_file.rma23)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmrx01.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmrx01")
+VBox VBox1
+Grid gr5231
+{
+ <G group01                      >
+  P/R No.  [pmk01               ]
+  P/R Date [pmk04               ]
+ <                               >
+
+}
+END -- gr5231
+Grid gr5232
+{
+[more                                         ]
+
+}
+END -- gr5232
+END -- VBox1
+END -- apmrx01
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit pmk01=formonly.pmk01 type CHAR, tabIndex=1;
+DateEdit pmk04=formonly.pmk04 type DATE, tabIndex=2;
+CheckBox more=formonly.more type VARCHAR, tabIndex=3, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmk01,formonly.pmk04,formonly.more)
+END -- INSTRUCTIONS
+

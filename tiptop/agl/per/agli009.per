@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli009.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli009")
+VBox vb1
+Folder pc437
+Page page01(text="Page01")
+Table s_axz
+{
+[axz01      |axz02                |axz04      |axz03               |axz05   |axz06      |axz07      |axz08          |axz09                    |axz10   ]
+[axz01      |axz02                |axz04      |axz03               |axz05   |axz06      |axz07      |axz08          |axz09                    |axz10   ]
+[axz01      |axz02                |axz04      |axz03               |axz05   |axz06      |axz07      |axz08          |axz09                    |axz10   ]
+[axz01      |axz02                |axz04      |axz03               |axz05   |axz06      |axz07      |axz08          |axz09                    |axz10   ]
+[axz01      |axz02                |axz04      |axz03               |axz05   |axz06      |axz07      |axz08          |axz09                    |axz10   ]
+[axz01      |axz02                |axz04      |axz03               |axz05   |axz06      |axz07      |axz08          |axz09                    |axz10   ]
+[axz01      |axz02                |axz04      |axz03               |axz05   |axz06      |axz07      |axz08          |axz09                    |axz10   ]
+[axz01      |axz02                |axz04      |axz03               |axz05   |axz06      |axz07      |axz08          |axz09                    |axz10   ]
+[axz01      |axz02                |axz04      |axz03               |axz05   |axz06      |axz07      |axz08          |axz09                    |axz10   ]
+[axz01      |axz02                |axz04      |axz03               |axz05   |axz06      |axz07      |axz08          |axz09                    |axz10   ]
+
+}
+END -- s_axz
+END -- page01
+END -- pc437
+Grid gr2347
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2347
+END -- vb1
+END -- agli009
+
+TABLES
+axz_file
+ATTRIBUTES
+Edit axz01=axz_file.axz01, tabIndex=1, title="Company No", not null, required;
+Edit axz02=axz_file.axz02, tabIndex=2, title="Name", not null, required;
+CheckBox axz04=axz_file.axz04, tabIndex=3, title="Use Tiptop", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit axz03=axz_file.axz03, action=controlp, tabIndex=4, title="Logistics code", image="zoom", comment="<^P>Qry Details";
+ButtonEdit axz05=axz_file.axz05, action=controlp, tabIndex=5, title="Book No", not null, required, image="zoom", comment="<^P>Qry Book#";
+ButtonEdit axz06=axz_file.axz06, action=controlp, tabIndex=6, title="Curr On Ac", not null, required, image="zoom", comment="<^P>Qry Details";
+ButtonEdit axz07=axz_file.axz07, action=controlp, tabIndex=7, title="Fun. Curr", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit axz08=axz_file.axz08, tabIndex=8, title="Affiliate Code", not null, required;
+Edit axz09=axz_file.axz09, tabIndex=10, title=%"Listed (OTC) Company Code";
+CheckBox axz10=axz_file.axz10, tabIndex=11, title=%"Department Management", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axz(axz_file.axz01,axz_file.axz02,axz_file.axz04,axz_file.axz03,axz_file.axz05,axz_file.axz06,axz_file.axz07,axz_file.axz08,axz_file.axz09,axz_file.axz10)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

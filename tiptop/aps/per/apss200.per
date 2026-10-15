@@ -1,0 +1,162 @@
+----------------------------------------------------------------------------------
+-- $Id:  apss200.per created Wed Dec 31 05:30:16 2008
+-- File created from apss200.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apss200")
+-- GRID
+-- PAGE
+-- GRID
+-- PAGE
+-- GRID
+-- PAGE
+-- GRID
+-- GRID
+-- VBOX
+-- GROUP
+-- PAGE
+-- GRID
+-- PAGE
+-- GRID
+-- PAGE
+-- GRID
+-- PAGE
+-- GRID
+-- PAGE
+-- FOLDER
+-- VBOX
+-- LAYOUT
+-- 
+
+  FOLDER pc873
+    PAGE page01( TEXT="Basic Setting")
+      GRID gr10
+      {
+
+        <G group02                                                                                              >
+         CaseCode   [aa0                          ]                 Starttime  [aa1                          ]
+        <                                                                                                       >
+        <G gb41                                               ><G gb40                                          >
+          Pur rule                  [aa2                ]        Ini Time Flag           [ab5                ]
+          Peg Lock                  [aa3                ]        Supplier Unit Flag      [ab6                ]
+          Inv Assign Lock           [aa4                ]        Chk Item Flag           [ab7                ]
+          Critical Part             [aa5                ]        Save Vo Flag            [ab8                ]
+          Lot Pst                   [aa6                ]        Combine Lot Flag        [ab9                ]
+          Fix Lead Time             [aa7                ]        Combine Rate            [ac0                ]
+          Op Item Flag              [aa8                ]        Del Po Flag             [ac1                ]
+          Mrp Model Flag            [aa9                ]        Planning Days           [ac2                ]
+          Priority Flag             [ab0                ]        Inventory First         [ac3                ]
+          Del Wo Flag               [ab1                ]        Bom Loop Check          [ac4                ]
+          Safety Stock Flag         [ab2                ]        Po Supply Seq By Status [ac5                ]
+          Multi Alc Flag            [ab3                ]        Old Po Excption         [ac6                ]
+          Load Altpart Flag         [ab4                ]        Alt Part Input Qty Rule [ac7                ]
+        <                                                     ><                                                >
+
+
+
+
+
+
+
+
+
+
+      }
+      END -- GRID
+    END -- PAGE
+    PAGE Consume( TEXT="Consume")
+      GRID gr20
+      {
+      <G gb43                                            >
+        Order Consume             [ac8                ]
+        Rel remfcst Flag          [ac9                ]
+        Cons Period               [ad0                ]
+        Cons Period Repeat        [ad1                ]
+        Cons Period Rept Date     [ad2                ]
+        Cons Period Rept Week     [ad3                ]
+        Forecast Horizontolerance [ad4                ]
+      <                                                  >
+
+
+      }
+      END -- GRID
+    END -- PAGE
+    PAGE Page24( TEXT="MRP")
+      GRID gr22
+      {
+      <G gb44                                            >
+        Plan Horizon Startdate    [ad5                ]
+        MRP Period1               [ad6                ]
+        MRP Period2               [ad7                ]
+        MRP Period3               [ad8                ]
+        MRP Period4               [ad9                ]
+        MRP Period Repeat1        [ae0                ]
+        MRP Period Repeat2        [ae1                ]
+        MRP Period Repeat3        [ae2                ]
+        MRP Period Repeat4        [ae3                ]
+      <                                                  >
+
+
+
+      }
+      END -- GRID
+    END -- PAGE
+  END -- FOLDER
+END
+TABLES aps_cim
+
+ATTRIBUTES
+  GROUP group02 : group02;
+  EDIT aa0=aps_cim.casecode, TABINDEX=44;
+  DATEEDIT aa1=aps_cim.starttm, TABINDEX=1;
+  GROUP gb41 : gb41;
+  GROUP gb40 : gb40;
+  COMBOBOX aa2=aps_cim.purrule, NOT NULL, REQUIRED, TABINDEX=2, ITEMS=(("0"," Item Master"),("1","Supplier"));
+  COMBOBOX ab5=aps_cim.initime, NOT NULL, REQUIRED, TABINDEX=15, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX aa3=aps_cim.peglock, NOT NULL, REQUIRED, TABINDEX=3, ITEMS=(("0","All Lock"),("1","All Unlock"),("2","By Set"));
+  COMBOBOX ab6=aps_cim.supunit, NOT NULL, REQUIRED, TABINDEX=16, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX aa4=aps_cim.invlock, NOT NULL, REQUIRED, TABINDEX=4, ITEMS=(("0","All Lock"),("1","All Unlock"),("2","By Set"));
+  COMBOBOX ab7=aps_cim.chkitem, NOT NULL, REQUIRED, TABINDEX=17, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX aa5=aps_cim.cripart, NOT NULL, REQUIRED, TABINDEX=5, ITEMS=(("0","All Critical"),("1","All Not"),("2","By Set"));
+  COMBOBOX ab8=aps_cim.savevo, NOT NULL, REQUIRED, TABINDEX=18, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX aa6=aps_cim.lotpst, NOT NULL, REQUIRED, TABINDEX=6, ITEMS=(("0","EPST"),("1","LPST"));
+  COMBOBOX ab9=aps_cim.comblot, NOT NULL, REQUIRED, TABINDEX=19, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX aa7=aps_cim.fixtime, NOT NULL, REQUIRED, TABINDEX=7, ITEMS=(("0","Fixed Lead Time"),("1","Ideal Cycle Time"));
+  EDIT ac0=aps_cim.combrat, TABINDEX=20;
+  COMBOBOX aa8=aps_cim.opitmfl, NOT NULL, REQUIRED, TABINDEX=8, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX ac1=aps_cim.depoflg, NOT NULL, REQUIRED, TABINDEX=21, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX aa9=aps_cim.mrpmode, NOT NULL, REQUIRED, TABINDEX=9, ITEMS=(("0","False"),("1","True"));
+  EDIT ac2=aps_cim.mrpdays, TABINDEX=22;
+  COMBOBOX ab0=aps_cim.priflag, NOT NULL, REQUIRED, TABINDEX=10, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX ac3=aps_cim.invfrst, NOT NULL, REQUIRED, TABINDEX=23, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX ab1=aps_cim.dewoflg, NOT NULL, REQUIRED, TABINDEX=11, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX ac4=aps_cim.bomlchk, NOT NULL, REQUIRED, TABINDEX=24, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX ab2=aps_cim.sastock, NOT NULL, REQUIRED, TABINDEX=12, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX ac5=aps_cim.pospseq, NOT NULL, REQUIRED, TABINDEX=25, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX ab3=aps_cim.mulalc, NOT NULL, REQUIRED, TABINDEX=13, ITEMS=(("0","False"),("1","True"));
+  EDIT ac6=aps_cim.poexcpt, TABINDEX=26;
+  COMBOBOX ab4=aps_cim.loaltpt, NOT NULL, REQUIRED, TABINDEX=14, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX ac7=aps_cim.altprul, NOT NULL, REQUIRED, TABINDEX=27, ITEMS=(("0","Up Level Item"),("1","Master Item "));
+  GROUP gb43 : gb43;
+  COMBOBOX ac8=aps_cim.ordcons, NOT NULL, REQUIRED, TABINDEX=28, ITEMS=(("0","Requirement"),("1","Forecast "),("2","Item Setting"));
+  COMBOBOX ac9=aps_cim.relfcst, NOT NULL, REQUIRED, TABINDEX=29, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX ad0=aps_cim.consper, NOT NULL, REQUIRED, TABINDEX=30, ITEMS=(("0","Mrp "),("1","Month"),("2","Week"));
+  EDIT ad1=aps_cim.conrept, TABINDEX=31;
+  EDIT ad2=aps_cim.conrepd, TABINDEX=32;
+  COMBOBOX ad3=aps_cim.conrptw, NOT NULL, REQUIRED, TABINDEX=33, ITEMS=(("0","SUN"),("1","MON"),("2","TUE"),("3","WED"),("4","THU"),("5","FRI"),("6","SAT"));
+  EDIT ad4=aps_cim.fcsttor, TABINDEX=34;
+  GROUP gb44 : gb44;
+  DATEEDIT ad5=aps_cim.phsdate, TABINDEX=35;
+  EDIT ad6=aps_cim.mrppr1, TABINDEX=36;
+  EDIT ad7=aps_cim.mrpper2, TABINDEX=37;
+  EDIT ad8=aps_cim.mrpper3, TABINDEX=38;
+  EDIT ad9=aps_cim.mrpper4, TABINDEX=39;
+  EDIT ae0=aps_cim.mrpprr1, TABINDEX=40;
+  EDIT ae1=aps_cim.mrpprr2, TABINDEX=41;
+  EDIT ae2=aps_cim.mrpprr3, TABINDEX=42;
+  EDIT ae3=aps_cim.mrpprr4, TABINDEX=43;
+END

@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapx165.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr165")
+VBox VBox1
+Grid gr229
+{
+ <G group01                                                                            >
+  Paying Vender       [apa06               ] Accounts Currency   [apa13               ]
+  Accounts NO.        [apa01               ] Accounts Category   [apa36               ]
+  Credit Account      [apa54               ] Paying Date         [apa12               ]
+  Invoice NO.         [apa08               ] Billing Employee    [apa21               ]
+ <                                                                                     >
+
+}
+END -- gr229
+Group group02(text="INPUT")
+Grid gr230
+{
+  Account Slip        [apyslip   ]
+
+
+  Accounts Base Date  [b_date      ]           Ex.Rate Op [rate_op       ]
+
+ <G group04                                                                           >
+  [h                                                                                 ]
+ <                                                                                    >
+ <G group05                                                                           >
+  [s1           ]     [s2            ]     [s3             ]
+
+ <                                                                                    >
+
+}
+END -- gr230
+END -- group02
+Grid gr231
+{
+[more                                                        ]
+
+}
+END -- gr231
+END -- VBox1
+END -- aapr165
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit apa06=formonly.apa06 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit apa13=formonly.apa13 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit apa01=formonly.apa01 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit apa36=formonly.apa36 type CHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit apa54=formonly.apa54 type CHAR, action=controlp, tabIndex=5, image="zoom", comment="";
+DateEdit apa12=formonly.apa12 type DATE, tabIndex=6;
+ButtonEdit apa08=formonly.apa08 type CHAR, action=controlp, tabIndex=7, image="zoom", comment="";
+ButtonEdit apa21=formonly.apa21 type CHAR, action=controlp, tabIndex=8, image="zoom";
+Edit apyslip=formonly.apyslip type CHAR, tabIndex=9;
+DateEdit b_date=formonly.b_date type DATE, tabIndex=10, not null, required;
+ComboBox rate_op=formonly.rate_op type CHAR, tabIndex=11, queryEditable, items=(("B", "Bank Buying"),("S", "Bank Selling"),("C", "Customs Buy"),("D", "Customs Sell"),("R", "EoM Rev Exate"));
+Group group04:group04, text="Data Option 1";
+RadioGroup h=formonly.h type CHAR, tabIndex=12, default = "3", not null, required, items=(("1", "Confirmed"),("2", "UnConfirmed"),("3", "All "));
+Group group05:group05, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=13, queryEditable, items=(("1", "Pay.Vend"),("2", "Pay.Curr"),("3", "Acct No."),("4", "Acct.Cat"),("5", "Credit  "),("6", "Pay Day "),("7", "Invoice NO."),("8", "Bill.Emp"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=14, queryEditable, items=(("1", "Pay.Vend"),("2", "Pay.Curr"),("3", "Acct No."),("4", "Acct.Cat"),("5", "Credit  "),("6", "Pay Day "),("7", "Invoice NO."),("8", "Bill.Emp"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=15, queryEditable, items=(("1", "Pay.Vend"),("2", "Pay.Curr"),("3", "Acct No."),("4", "Acct.Cat"),("5", "Credit  "),("6", "Pay Day "),("7", "Invoice NO."),("8", "Bill.Emp"));
+CheckBox more=formonly.more type CHAR, tabIndex=16, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apa06,formonly.apa13,formonly.apa01,formonly.apa36,formonly.apa54,formonly.apa12,formonly.apa08,formonly.apa21,formonly.apyslip,formonly.b_date,formonly.rate_op,formonly.h,formonly.s1,formonly.s2,formonly.s3,formonly.more)
+END -- INSTRUCTIONS
+

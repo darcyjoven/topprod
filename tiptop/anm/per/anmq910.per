@@ -1,0 +1,163 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq910.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmq910")
+VBox VBox1
+Grid grid01
+{
+ Simulation Version   [nqg01     ]
+ Logistics No.        [nqg02     ]
+ Logistics Curr       [nqg03     ]
+ Coffer Curr          [nqa01     ]
+ Curr                 [cur_type  ][cur_code   ]
+ Detail               [detail    ]
+}
+END -- grid01
+HBox HBox1
+Grid grid02
+{
+[dummy01   ]
+    Cash        [nqg_000             ]
+    Sales Order [nqg_100             ]
+    S/O         [nqg_101             ]
+    A/R         [nqg_102             ]
+    N/R         [nqg_103             ]
+    P/O         [nqg_104             ]
+    Store_in No [nqg_105             ]
+    A/P         [nqg_106             ]
+    N/P         [nqg_107             ]
+    LC          [nqg_108             ]
+
+
+
+}
+END -- grid02
+Grid grid03
+{
+
+ Labor          [nqg_109             ]
+ Overhead       [nqg_110             ]
+ Administration [nqg_111             ]
+ Sales Expense  [nqg_112             ]
+ Research       [nqg_113             ]
+ Other          [nqg_114             ]
+
+
+
+
+
+
+
+}
+END -- grid03
+Grid grid04
+{
+[dummy02   ]
+    Budget           [nqg_200             ]
+    Investments      [nqg_201             ]
+    Case Inves       [nqg_202             ]
+    Exchange         [nqg_203             ]
+    Investment       [nqg_204             ]
+    Other            [nqg_205             ]
+
+[dummy03   ]
+    Receivable       [nqg_300             ]
+    Short Financing  [nqg_301             ]
+    Extend Financing [nqg_302             ]
+    Payable          [nqg_303             ]
+    Other            [nqg_304             ]
+}
+END -- grid04
+END -- HBox1
+Table s_nqg
+{
+[nqg04  |nqg05           |nqg06        |nqd02         |nqg16       |nmt02            |nqg07   |nqg17          |nqg08      |nqg09   |nqg10 |nqg11 |nqg12            |nqg13             |nqg14          |lbal              |cbal         ]
+[nqg04  |nqg05           |nqg06        |nqd02         |nqg16       |nmt02            |nqg07   |nqg17          |nqg08      |nqg09   |nqg10 |nqg11 |nqg12            |nqg13             |nqg14          |lbal              |cbal         ]
+[nqg04  |nqg05           |nqg06        |nqd02         |nqg16       |nmt02            |nqg07   |nqg17          |nqg08      |nqg09   |nqg10 |nqg11 |nqg12            |nqg13             |nqg14          |lbal              |cbal         ]
+[nqg04  |nqg05           |nqg06        |nqd02         |nqg16       |nmt02            |nqg07   |nqg17          |nqg08      |nqg09   |nqg10 |nqg11 |nqg12            |nqg13             |nqg14          |lbal              |cbal         ]
+[nqg04  |nqg05           |nqg06        |nqd02         |nqg16       |nmt02            |nqg07   |nqg17          |nqg08      |nqg09   |nqg10 |nqg11 |nqg12            |nqg13             |nqg14          |lbal              |cbal         ]
+[nqg04  |nqg05           |nqg06        |nqd02         |nqg16       |nmt02            |nqg07   |nqg17          |nqg08      |nqg09   |nqg10 |nqg11 |nqg12            |nqg13             |nqg14          |lbal              |cbal         ]
+[nqg04  |nqg05           |nqg06        |nqd02         |nqg16       |nmt02            |nqg07   |nqg17          |nqg08      |nqg09   |nqg10 |nqg11 |nqg12            |nqg13             |nqg14          |lbal              |cbal         ]
+[nqg04  |nqg05           |nqg06        |nqd02         |nqg16       |nmt02            |nqg07   |nqg17          |nqg08      |nqg09   |nqg10 |nqg11 |nqg12            |nqg13             |nqg14          |lbal              |cbal         ]
+[nqg04  |nqg05           |nqg06        |nqd02         |nqg16       |nmt02            |nqg07   |nqg17          |nqg08      |nqg09   |nqg10 |nqg11 |nqg12            |nqg13             |nqg14          |lbal              |cbal         ]
+[nqg04  |nqg05           |nqg06        |nqd02         |nqg16       |nmt02            |nqg07   |nqg17          |nqg08      |nqg09   |nqg10 |nqg11 |nqg12            |nqg13             |nqg14          |lbal              |cbal         ]
+
+}
+END -- s_nqg
+Grid gr4179
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4179
+END -- VBox1
+END -- anmq910
+
+ATTRIBUTES
+Edit nqg01=formonly.nqg01 type CHAR, tabIndex=1, not null, required;
+ButtonEdit nqg02=formonly.nqg02 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment="enter ALL means all plants";
+Edit nqg03=formonly.nqg03 type CHAR, tabIndex=3, noEntry;
+Edit nqa01=formonly.nqa01 type CHAR, tabIndex=4, noEntry;
+ComboBox cur_type=formonly.cur_type type CHAR, tabIndex=5, not null, required, items=(("1", "curr"),("2", "log curr"),("3", "coffer curr"));
+ButtonEdit cur_code=formonly.cur_code type CHAR, action=controlp, tabIndex=6, image="zoom";
+ComboBox detail=formonly.detail type CHAR, tabIndex=7, not null, required, items=(("000", "Cash"),("100", "Sales Order"),("101", "S/O"),("102", "A/R"),("103", "N/R"),("104", "P/O"),("105", "Store_in No"),("106", "A/P"),("107", "N/P"),("108", "LC"),("109", "Labor"),("110", "Overhead"),("111", "Administration"),("112", "Sales Expense"),("113", "Research"),("114", "Other"),("200", "Budget"),("201", "Investments"),("202", "Case Inves"),("203", "Exchange"),("204", "Investment"),("205", "Other"),("300", "Receivable"),("301", "Short Financing"),("302", "Extend Financing"),("303", "Payable"),("304", "Other"));
+Label dummy01:dummy01, text="Business Activity";
+Edit nqg_000=formonly.nqg_000 type CHAR, tabIndex=8, noEntry, sample="0";
+Edit nqg_100=formonly.nqg_100 type CHAR, tabIndex=9, noEntry, sample="0";
+Edit nqg_101=formonly.nqg_101 type CHAR, tabIndex=10, noEntry, sample="0";
+Edit nqg_102=formonly.nqg_102 type CHAR, tabIndex=11, noEntry, sample="0";
+Edit nqg_103=formonly.nqg_103 type CHAR, tabIndex=12, noEntry, sample="0";
+Edit nqg_104=formonly.nqg_104 type CHAR, tabIndex=13, noEntry, sample="0";
+Edit nqg_105=formonly.nqg_105 type CHAR, tabIndex=14, noEntry, sample="0";
+Edit nqg_106=formonly.nqg_106 type CHAR, tabIndex=15, noEntry, sample="0";
+Edit nqg_107=formonly.nqg_107 type CHAR, tabIndex=16, noEntry, sample="0";
+Edit nqg_108=formonly.nqg_108 type CHAR, tabIndex=17, noEntry, sample="0";
+Edit nqg_109=formonly.nqg_109 type CHAR, tabIndex=18, noEntry, sample="0";
+Edit nqg_110=formonly.nqg_110 type CHAR, tabIndex=19, noEntry, sample="0";
+Edit nqg_111=formonly.nqg_111 type CHAR, tabIndex=20, noEntry, sample="0";
+Edit nqg_112=formonly.nqg_112 type CHAR, tabIndex=21, noEntry, sample="0";
+Edit nqg_113=formonly.nqg_113 type CHAR, tabIndex=22, noEntry, sample="0";
+Edit nqg_114=formonly.nqg_114 type CHAR, tabIndex=23, noEntry, sample="0";
+Label dummy02:dummy02, text="Investment Activity";
+Edit nqg_200=formonly.nqg_200 type CHAR, tabIndex=24, noEntry, sample="0";
+Edit nqg_201=formonly.nqg_201 type CHAR, tabIndex=25, noEntry, sample="0";
+Edit nqg_202=formonly.nqg_202 type CHAR, tabIndex=26, noEntry, sample="0";
+Edit nqg_203=formonly.nqg_203 type CHAR, tabIndex=27, noEntry, sample="0";
+Edit nqg_204=formonly.nqg_204 type CHAR, tabIndex=28, noEntry, sample="0";
+Edit nqg_205=formonly.nqg_205 type CHAR, tabIndex=29, noEntry, sample="0";
+Label dummy03:dummy03, text="Financial Activity";
+Edit nqg_300=formonly.nqg_300 type CHAR, tabIndex=30, noEntry, sample="0";
+Edit nqg_301=formonly.nqg_301 type CHAR, tabIndex=31, noEntry, sample="0";
+Edit nqg_302=formonly.nqg_302 type CHAR, tabIndex=32, noEntry, sample="0";
+Edit nqg_303=formonly.nqg_303 type CHAR, tabIndex=33, noEntry, sample="0";
+Edit nqg_304=formonly.nqg_304 type CHAR, tabIndex=34, noEntry, sample="0";
+Edit nqg04=formonly.nqg04 type CHAR, tabIndex=35, title="Date", noEntry;
+ComboBox nqg05=formonly.nqg05 type CHAR, tabIndex=36, title="Variance Class", noEntry, items=(("1", %"Business Activity"),("2", %"Investment"),("3", %"Financial Activity"));
+Edit nqg06=formonly.nqg06 type CHAR, tabIndex=37, title="Category No", noEntry;
+Edit nqd02=formonly.nqd02 type CHAR, tabIndex=38, title="Category Name", noEntry;
+Edit nqg16=formonly.nqg16 type CHAR, tabIndex=39, title="Bank No.", noEntry;
+Edit nmt02=formonly.nmt02 type CHAR, tabIndex=40, title="Bank Name", noEntry;
+Edit nqg07=formonly.nqg07 type CHAR, tabIndex=41, title="Verder", noEntry;
+Edit nqg17=formonly.nqg17 type CHAR, tabIndex=42, title="Company Name", noEntry;
+Edit nqg08=formonly.nqg08 type CHAR, tabIndex=43, title="Source No", noEntry;
+Edit nqg09=formonly.nqg09 type CHAR, tabIndex=44, title="SN", noEntry;
+Edit nqg10=formonly.nqg10 type CHAR, tabIndex=45, title="Curr", noEntry;
+Edit nqg11=formonly.nqg11 type CHAR, tabIndex=46, title="Rate", noEntry;
+Edit nqg12=formonly.nqg12 type CHAR, tabIndex=47, title="Amount", noEntry;
+Edit nqg13=formonly.nqg13 type CHAR, tabIndex=48, title="Logistics Amount", noEntry;
+Edit nqg14=formonly.nqg14 type CHAR, tabIndex=49, title="Coffer Amount", noEntry;
+Edit lbal=formonly.lbal type CHAR, tabIndex=50, title="Logistics banlce", noEntry;
+Edit cbal=formonly.cbal type CHAR, tabIndex=51, title="Coffer banlce", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=52, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=53, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nqg(formonly.nqg04,formonly.nqg05,formonly.nqg06,formonly.nqd02,formonly.nqg16,formonly.nmt02,formonly.nqg07,formonly.nqg17,formonly.nqg08,formonly.nqg09,formonly.nqg10,formonly.nqg11,formonly.nqg12,formonly.nqg13,formonly.nqg14,formonly.lbal,formonly.cbal)
+SCREEN RECORD Undefined(formonly.nqg01,formonly.nqg02,formonly.nqg03,formonly.nqa01,formonly.cur_type,formonly.cur_code,formonly.detail,formonly.nqg_000,formonly.nqg_100,formonly.nqg_101,formonly.nqg_102,formonly.nqg_103,formonly.nqg_104,formonly.nqg_105,formonly.nqg_106,formonly.nqg_107,formonly.nqg_108,formonly.nqg_109,formonly.nqg_110,formonly.nqg_111,formonly.nqg_112,formonly.nqg_113,formonly.nqg_114,formonly.nqg_200,formonly.nqg_201,formonly.nqg_202,formonly.nqg_203,formonly.nqg_204,formonly.nqg_205,formonly.nqg_300,formonly.nqg_301,formonly.nqg_302,formonly.nqg_303,formonly.nqg_304,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

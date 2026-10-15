@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri022_b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Table Table1
+{
+[chk   |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      ]
+[chk   |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      ]
+[chk   |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      ]
+[chk   |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      ]
+[chk   |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      ]
+[chk   |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      ]
+[chk   |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      ]
+[chk   |hratid  |hrat03      |hrat01      |hrat02      |hrat17      |hrat04      |hrat05      |hrat25      |hrat19      |hrat22      |hrat42      ]
+
+
+}
+END -- Table1
+Grid Grid1
+{
+--------[label|cn2  ]---------
+
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+CheckBox chk=formonly.chk, tabIndex=1, title=%"chk", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit hratid=formonly.hratid, tabIndex=2, title=%"hratid", noEntry;
+ButtonEdit hrat03=formonly.hrat03, action=controlp, tabIndex=3, title=%"hrat03", noEntry, image="zoom";
+ButtonEdit hrat01=formonly.hrat01, action=controlp, tabIndex=4, title=%"hrat01", noEntry, image="zoom";
+Edit hrat02=formonly.hrat02, tabIndex=5, title=%"hrat02", noEntry;
+ButtonEdit hrat17=formonly.hrat17, action=controlp, tabIndex=6, title=%"hrat17", noEntry, image="zoom";
+ButtonEdit hrat04=formonly.hrat04, action=controlp, tabIndex=7, title=%"hrat04", noEntry, image="zoom";
+ButtonEdit hrat05=formonly.hrat05, action=controlp, tabIndex=8, title=%"hrat05", noEntry, image="zoom";
+DateEdit hrat25=formonly.hrat25 type DATE, tabIndex=9, title=%"hrat25", noEntry;
+ButtonEdit hrat19=formonly.hrat19 type DATE, action=controlp, tabIndex=10, title=%"hrat19", noEntry, image="zoom";
+ButtonEdit hrat22=formonly.hrat22, action=controlp, tabIndex=11, title=%"hrat22", noEntry, image="zoom";
+ButtonEdit hrat42=formonly.hrat42, action=controlp, tabIndex=12, title=%"hrat42", noEntry, image="zoom";
+Label label:Label1, text=%"Label1";
+Edit cn2=formonly.cn2, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrat(formonly.chk,formonly.hratid,formonly.hrat03,formonly.hrat01,formonly.hrat02,formonly.hrat17,formonly.hrat04,formonly.hrat05,formonly.hrat25,formonly.hrat19,formonly.hrat22,formonly.hrat42)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

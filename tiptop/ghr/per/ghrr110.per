@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrr110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder folder1
+Page page1(text=%"Page1")
+Grid grid1
+{
+
+  hrat03   [hrat03       ][hraa12                ]
+  hrat04   [hrat04       ][hrao02                ]
+  hrat01   [hrat01       ][hrat02                ]
+  hrat01   [hrat19       ]
+  hrat01   [hraoud02     ]
+[qj                ]
+
+
+
+}
+END -- grid1
+END -- page1
+END -- folder1
+END -- ghrr111
+
+ATTRIBUTES
+ButtonEdit hrat03=formonly.hrat03 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit hraa12=formonly.hraa12 type VARCHAR, tabIndex=5;
+ButtonEdit hrat04=formonly.hrat04 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+Edit hrao02=formonly.hrao02 type VARCHAR, tabIndex=6;
+ButtonEdit hrat01=formonly.hrat01 type VARCHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=7;
+ButtonEdit hrat19=formonly.hrat19 type VARCHAR, action=controlp, tabIndex=8, not null, required, image="zoom";
+ComboBox hraoud02=formonly.hraoud02 type VARCHAR, tabIndex=9, items=(("001", "001"),("002", "002"),("003", "003"));
+CheckBox qj=formonly.qj type VARCHAR, tabIndex=2, text=%"qj";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.hrat03,formonly.qj,formonly.hrat01,formonly.hrat04,formonly.hraa12,formonly.hrao02,formonly.hrat02,formonly.hrat19,formonly.hraoud02)
+END -- INSTRUCTIONS
+

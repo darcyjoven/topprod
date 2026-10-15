@@ -1,0 +1,167 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_crosscfg.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_crosscfg")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Grid gr6
+{
+ <G group01                                                                                         >
+ [wap02                            ]
+ [tiptopwsdlposition      |wap03                                                                   ]
+  CROSS WSDL Position     [wap04                                                                   ]
+ [times                   |wap05          ]
+ [label1                  |wap06          ]
+ [label2                  |wap07          ]
+ [wap09       ]
+ <                                                                                                  >
+
+}
+END -- gr6
+END -- page01
+Page info(text="Info")
+Grid gr7
+{
+ Record Owner [wapuser   ] Last Modified by    [wapmodu   ]
+ Department   [wapgrup   ] Create/Modify Date  [wapdate   ]
+ Record Orig. [waporiu   ]
+ Dept Orig.   [waporig   ]
+
+
+}
+END -- gr7
+END -- info
+END -- pc1
+Folder Folder1
+Page page_tp(action=tp_list, text=%"TIPTOP Services List")
+Table s_wsr
+{
+[tp_chk  |wsr01                         |wsr03                                             ]
+[tp_chk  |wsr01                         |wsr03                                             ]
+[tp_chk  |wsr01                         |wsr03                                             ]
+[tp_chk  |wsr01                         |wsr03                                             ]
+[tp_chk  |wsr01                         |wsr03                                             ]
+[tp_chk  |wsr01                         |wsr03                                             ]
+[tp_chk  |wsr01                         |wsr03                                             ]
+[tp_chk  |wsr01                         |wsr03                                             ]
+[tp_chk  |wsr01                         |wsr03                                             ]
+[tp_chk  |wsr01                         |wsr03                                             ]
+
+
+
+
+
+
+
+}
+END -- s_wsr
+END -- page_tp
+Page page_ef(action=ef_list, text=%"EasyFlow Services List")
+Table s_wao
+{
+[ef_chk  |wao02                         |wao03                                             ]
+[ef_chk  |wao02                         |wao03                                             ]
+[ef_chk  |wao02                         |wao03                                             ]
+[ef_chk  |wao02                         |wao03                                             ]
+[ef_chk  |wao02                         |wao03                                             ]
+[ef_chk  |wao02                         |wao03                                             ]
+[ef_chk  |wao02                         |wao03                                             ]
+[ef_chk  |wao02                         |wao03                                             ]
+[ef_chk  |wao02                         |wao03                                             ]
+[ef_chk  |wao02                         |wao03                                             ]
+
+
+
+
+
+
+
+}
+END -- s_wao
+END -- page_ef
+Page page_prod(action=prod_list, text=%"Settings for Products Site")
+Table s_war
+{
+[war01   |war02     |war03       |war04     |war05       |war06     |war07                                                  ]
+[war01   |war02     |war03       |war04     |war05       |war06     |war07                                                  ]
+[war01   |war02     |war03       |war04     |war05       |war06     |war07                                                  ]
+[war01   |war02     |war03       |war04     |war05       |war06     |war07                                                  ]
+[war01   |war02     |war03       |war04     |war05       |war06     |war07                                                  ]
+[war01   |war02     |war03       |war04     |war05       |war06     |war07                                                  ]
+[war01   |war02     |war03       |war04     |war05       |war06     |war07                                                  ]
+[war01   |war02     |war03       |war04     |war05       |war06     |war07                                                  ]
+[war01   |war02     |war03       |war04     |war05       |war06     |war07                                                  ]
+[war01   |war02     |war03       |war04     |war05       |war06     |war07                                                  ]
+
+
+
+
+
+
+
+}
+END -- s_war
+END -- page_prod
+END -- Folder1
+Grid gr8
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr8
+END -- VBox1
+END -- aws_crosscfg
+
+TABLES
+wsr_file,
+wap_file,
+wao_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox wap02=wap_file.wap02, tabIndex=468, text=%"start using", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label tiptopwsdlposition:TIPTOPWSDLPosition, text=%"TIPTOP WSDL Position\n", hidden;
+Edit wap03=wap_file.wap03, tabIndex=1, hidden;
+Edit wap04=wap_file.wap04, tabIndex=1;
+Label times:times, text=%"times", hidden;
+Edit wap05=wap_file.wap05, tabIndex=1, hidden;
+Label label1:Label1, text=%"interval", hidden;
+Edit wap06=wap_file.wap06, tabIndex=468, hidden;
+Label label2:Label2, text=%"connection", hidden;
+Edit wap07=wap_file.wap07, tabIndex=468, hidden;
+CheckBox wap09=wap_file.wap09, tabIndex=508, text=%"start coding", valueChecked = "Y", valueUnchecked = "N";
+Edit wapuser=wap_file.wapuser, tabIndex=1, noEntry;
+Edit wapmodu=wap_file.wapmodu, tabIndex=1, noEntry;
+Edit wapgrup=wap_file.wapgrup, tabIndex=1, noEntry;
+Edit wapdate=wap_file.wapdate, tabIndex=1, noEntry;
+Edit waporiu=wap_file.waporiu, tabIndex=468, noEntry;
+Edit waporig=wap_file.waporig, tabIndex=468, noEntry;
+CheckBox tp_chk=formonly.tp_chk type VARCHAR, tabIndex=501, default = "N", title=%"reg", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit wsr01=wsr_file.wsr01, tabIndex=502, title=%"wsr_file.wsr01", noEntry;
+Edit wsr03=wsr_file.wsr03, tabIndex=505, title=%"wsr_file.wsr03", noEntry;
+CheckBox ef_chk=formonly.ef_chk type VARCHAR, tabIndex=503, default = "N", title=%"reg", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit wao02=wao_file.wao02, tabIndex=504, title=%"wao02", noEntry;
+Edit wao03=wao_file.wao03, tabIndex=506, title=%"wao03", noEntry;
+ComboBox war01=formonly.war01 type VARCHAR, tabIndex=507, title=%"war01", not null, required;
+ButtonEdit war02=formonly.war02 type VARCHAR, action=controlp, tabIndex=507, title=%"war02", not null, required, image="zoom";
+ButtonEdit war03=formonly.war03 type VARCHAR, action=controlp, tabIndex=507, title=%"war03", not null, required, image="zoom";
+Edit war04=formonly.war04 type VARCHAR, tabIndex=507, title=%"war04", noEntry;
+Edit war05=formonly.war05 type VARCHAR, tabIndex=507, title=%"war05", noEntry;
+Edit war06=formonly.war06 type VARCHAR, tabIndex=507, title=%"war06", noEntry;
+Edit war07=formonly.war07 type VARCHAR, tabIndex=507, title=%"war07", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(wap_file.wap03,wap_file.wap04,wap_file.wap05,wap_file.wapuser,wap_file.wapmodu,wap_file.wapgrup,wap_file.wapdate,wap_file.waporiu,wap_file.waporig,formonly.cnt,formonly.cn2,wap_file.wap02,wap_file.wap06,wap_file.wap07,wap_file.wap09)
+SCREEN RECORD s_wsr(formonly.tp_chk,wsr_file.wsr01,wsr_file.wsr03)
+SCREEN RECORD s_wao(formonly.ef_chk,wao_file.wao02,wao_file.wao03)
+SCREEN RECORD s_war(formonly.war01,formonly.war02,formonly.war03,formonly.war04,formonly.war05,formonly.war06,formonly.war07)
+END -- INSTRUCTIONS
+

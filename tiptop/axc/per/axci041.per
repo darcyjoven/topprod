@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci041.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axci041")
+VBox VBox1
+Folder pc3
+Page Page3(text=%"Main")
+Table s_cda
+{
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+[cda01       |cda02      |cda04     |cda05        |aag02        |cda06         |cda07      |cda08     |cda09     |cda10     |gem02               ]
+
+}
+END -- s_cda
+END -- Page3
+END -- pc3
+Grid gr5
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr5
+END -- VBox1
+END -- axci041
+
+TABLES
+cda_file
+ATTRIBUTES
+ButtonEdit cda01=cda_file.cda01, action=controlp, tabIndex=7, title="Cost Center", not null, required, image="zoom.png";
+ComboBox cda02=cda_file.cda02, tabIndex=7, title="Cost Article", not null, required, items=(("1", "Labor"),("2", "Overhead 1"),("3", "Overhead 2"),("4", "Overhead 3"),("5", "Overhead 4"),("6", "Overhead 5"));
+ComboBox cda04=cda_file.cda04, tabIndex=7, title="Category", not null, required, items=(("1", "One Departement"),("2", "Multi. Departments"));
+ButtonEdit cda05=cda_file.cda05, action=controlp, tabIndex=8, title="Account Code", not null, required, image="zoom.png";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=7, title="Acct Title", noEntry;
+ComboBox cda06=cda_file.cda06, tabIndex=7, title="Allocation Method", not null, required, items=(("1", "Actual Labor Hours"),("2", "Standard Labor Hours"),("3", "Standard Machine Hours"),("4", "Output Qty * Distribution Ratio"),("5", "Actual Machine Hours"));
+Edit cda07=cda_file.cda07, tabIndex=7, default = "0", title="Distribution Ratio";
+ComboBox cda08=cda_file.cda08, tabIndex=7, title="cda08", items=(("1", "Fixed"),("2", "Vraiable"));
+Edit cda09=cda_file.cda09, tabIndex=7, title="cda09";
+ButtonEdit cda10=cda_file.cda10, action=controlp, tabIndex=7, title="Dept", image="zoom.png";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=7, title="Dept name", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cda(cda_file.cda01,cda_file.cda02,cda_file.cda04,cda_file.cda05,formonly.aag02,cda_file.cda06,cda_file.cda07,cda_file.cda08,cda_file.cda09,cda_file.cda10,formonly.gem02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

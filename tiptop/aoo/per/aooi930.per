@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi930.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aooi700")
+VBox VBox1
+Folder pc1
+Page Page1(text=%"Page0")
+Table s_azt
+{
+[azt01          |azt02         |azt03         |azt02_t              |aztacti        ]
+[azt01          |azt02         |azt03         |azt02_t              |aztacti        ]
+[azt01          |azt02         |azt03         |azt02_t              |aztacti        ]
+[azt01          |azt02         |azt03         |azt02_t              |aztacti        ]
+[azt01          |azt02         |azt03         |azt02_t              |aztacti        ]
+[azt01          |azt02         |azt03         |azt02_t              |aztacti        ]
+[azt01          |azt02         |azt03         |azt02_t              |aztacti        ]
+[azt01          |azt02         |azt03         |azt02_t              |aztacti        ]
+[azt01          |azt02         |azt03         |azt02_t              |aztacti        ]
+
+}
+END -- s_azt
+END -- Page1
+END -- pc1
+Grid grid_tree
+{
+
+  <TREE tree                                                                              >
+  [name                         ]
+  [name                         ]
+  [name                         ]
+  [name                         ]
+  [name                         ]
+
+
+}
+END -- grid_tree
+Grid gr5
+{
+ ----------Rows [cn2   ] ----------
+
+
+
+
+
+
+
+
+}
+END -- gr5
+END -- VBox1
+END -- aooi910
+
+TABLES
+azt_file
+ATTRIBUTES
+Edit azt01=azt_file.azt01, tabIndex=1, title="azt01", not null, required, upShift;
+Edit azt02=azt_file.azt02, tabIndex=2, title="azt02", not null, required;
+ButtonEdit azt03=azt_file.azt03, action=controlp, tabIndex=3, title="azt03", not null, required, image="zoom.png";
+Edit azt02_t=formonly.azt02_t type CHAR, tabIndex=4, title="azt02_t", noEntry;
+CheckBox aztacti=azt_file.aztacti, tabIndex=5, title="aztacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Tree tree:tree, parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file";
+LABEL name=formonly.name type CHAR, unsortable;
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.path type CHAR;
+Phantom formonly.treekey1 type CHAR;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azt(azt_file.azt01,azt_file.azt02,azt_file.azt03,formonly.azt02_t,azt_file.aztacti)
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.expanded,formonly.has_children,formonly.level,formonly.path,formonly.treekey1)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

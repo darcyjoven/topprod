@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asri030.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asri030")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr998
+{
+ <G group01                                                                                                               >
+  Machine Line [sra01          ] [eci06                        ]         Labor Ratio[sra07   ]         Mat. Ratio[sra08   ]
+ <                                                                                                                        >
+
+}
+END -- gr998
+END -- page01
+END -- folder01
+Table s_sra
+{
+[sra02                         |ima02                         |ima021                        |sra03  |sra04          |sra05       |sra06       |sraacti]
+[sra02                         |ima02                         |ima021                        |sra03  |sra04          |sra05       |sra06       |sraacti]
+[sra02                         |ima02                         |ima021                        |sra03  |sra04          |sra05       |sra06       |sraacti]
+[sra02                         |ima02                         |ima021                        |sra03  |sra04          |sra05       |sra06       |sraacti]
+[sra02                         |ima02                         |ima021                        |sra03  |sra04          |sra05       |sra06       |sraacti]
+[sra02                         |ima02                         |ima021                        |sra03  |sra04          |sra05       |sra06       |sraacti]
+[sra02                         |ima02                         |ima021                        |sra03  |sra04          |sra05       |sra06       |sraacti]
+[sra02                         |ima02                         |ima021                        |sra03  |sra04          |sra05       |sra06       |sraacti]
+[sra02                         |ima02                         |ima021                        |sra03  |sra04          |sra05       |sra06       |sraacti]
+[sra02                         |ima02                         |ima021                        |sra03  |sra04          |sra05       |sra06       |sraacti]
+
+}
+END -- s_sra
+Grid gr999
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr999
+END -- VBox1
+END -- asri030
+
+TABLES
+sra_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit sra01=sra_file.sra01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!    <^Y>Enter Item Detail";
+Edit eci06=formonly.eci06 type CHAR, tabIndex=2, noEntry;
+Edit sra07=sra_file.sra07, tabIndex=3, not null, required;
+Edit sra08=sra_file.sra08, tabIndex=4, not null, required;
+ButtonEdit sra02=sra_file.sra02, action=controlp, tabIndex=5, title="Item No.", not null, required, image="zoom", comment="Key Field, No Blank/Repeated!    <^Y>Enter Item Detail";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=6, title="Desc", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=7, title="SPEC", noEntry;
+ButtonEdit sra03=sra_file.sra03, action=controlp, tabIndex=8, title="Unit", not null, required, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit   <^U>/<^T>Create Item/ Unit conversion";
+Edit sra04=sra_file.sra04, tabIndex=9, title="Pro.Qty", not null, required;
+Edit sra05=sra_file.sra05, tabIndex=10, title="Labor Price", not null, required;
+Edit sra06=sra_file.sra06, tabIndex=11, title="Mat.Price", not null, required;
+CheckBox sraacti=sra_file.sraacti, tabIndex=12, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type CHAR, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sra(sra_file.sra02,formonly.ima02,formonly.ima021,sra_file.sra03,sra_file.sra04,sra_file.sra05,sra_file.sra06,sra_file.sraacti)
+SCREEN RECORD Undefined(sra_file.sra01,formonly.eci06,sra_file.sra07,sra_file.sra08,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemq100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemq100")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1730
+{
+ Device No.         [fia01     ]
+ Name               [fia02     ]
+}
+END -- gr1730
+END -- page01
+END -- folder01
+Table s_fil
+{
+[fil01           |fil02           |fil00     |desc        |fil04 |fje02       |fil05 |d5          |fil06    |fil10      |fil11      |fil12                |fil13                 |fil14           |fil141          |fil15            |fil151           |c         |fil16           |fia12       |fil17          |fil18                  |fil19     |fil20          ]
+[fil01           |fil02           |fil00     |desc        |fil04 |fje02       |fil05 |d5          |fil06    |fil10      |fil11      |fil12                |fil13                 |fil14           |fil141          |fil15            |fil151           |c         |fil16           |fia12       |fil17          |fil18                  |fil19     |fil20          ]
+[fil01           |fil02           |fil00     |desc        |fil04 |fje02       |fil05 |d5          |fil06    |fil10      |fil11      |fil12                |fil13                 |fil14           |fil141          |fil15            |fil151           |c         |fil16           |fia12       |fil17          |fil18                  |fil19     |fil20          ]
+[fil01           |fil02           |fil00     |desc        |fil04 |fje02       |fil05 |d5          |fil06    |fil10      |fil11      |fil12                |fil13                 |fil14           |fil141          |fil15            |fil151           |c         |fil16           |fia12       |fil17          |fil18                  |fil19     |fil20          ]
+[fil01           |fil02           |fil00     |desc        |fil04 |fje02       |fil05 |d5          |fil06    |fil10      |fil11      |fil12                |fil13                 |fil14           |fil141          |fil15            |fil151           |c         |fil16           |fia12       |fil17          |fil18                  |fil19     |fil20          ]
+[fil01           |fil02           |fil00     |desc        |fil04 |fje02       |fil05 |d5          |fil06    |fil10      |fil11      |fil12                |fil13                 |fil14           |fil141          |fil15            |fil151           |c         |fil16           |fia12       |fil17          |fil18                  |fil19     |fil20          ]
+[fil01           |fil02           |fil00     |desc        |fil04 |fje02       |fil05 |d5          |fil06    |fil10      |fil11      |fil12                |fil13                 |fil14           |fil141          |fil15            |fil151           |c         |fil16           |fia12       |fil17          |fil18                  |fil19     |fil20          ]
+[fil01           |fil02           |fil00     |desc        |fil04 |fje02       |fil05 |d5          |fil06    |fil10      |fil11      |fil12                |fil13                 |fil14           |fil141          |fil15            |fil151           |c         |fil16           |fia12       |fil17          |fil18                  |fil19     |fil20          ]
+[fil01           |fil02           |fil00     |desc        |fil04 |fje02       |fil05 |d5          |fil06    |fil10      |fil11      |fil12                |fil13                 |fil14           |fil141          |fil15            |fil151           |c         |fil16           |fia12       |fil17          |fil18                  |fil19     |fil20          ]
+[fil01           |fil02           |fil00     |desc        |fil04 |fje02       |fil05 |d5          |fil06    |fil10      |fil11      |fil12                |fil13                 |fil14           |fil141          |fil15            |fil151           |c         |fil16           |fia12       |fil17          |fil18                  |fil19     |fil20          ]
+
+}
+END -- s_fil
+Grid gr1731
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1731
+END -- VBox1
+END -- aemq100
+
+TABLES
+fia_file,
+fil_file
+ATTRIBUTES
+Edit fia01=fia_file.fia01, tabIndex=1;
+Edit fia02=fia_file.fia02, tabIndex=2;
+Edit fil01=fil_file.fil01, tabIndex=3, title="Work Order No.";
+Edit fil02=fil_file.fil02, tabIndex=4, title="Check No.";
+Edit fil00=fil_file.fil00, tabIndex=5, title="Note Type";
+Edit desc=formonly.desc type CHAR, tabIndex=6, title="Description";
+Edit fil04=fil_file.fil04, tabIndex=7, title="Form";
+Edit fje02=formonly.fje02 type CHAR, tabIndex=8, title="Description";
+Edit fil05=fil_file.fil05, tabIndex=9, title="State";
+Edit d5=formonly.d5 type CHAR, tabIndex=10, title="Description";
+Edit fil06=fil_file.fil06, tabIndex=11, title="Priority";
+DateEdit fil10=fil_file.fil10, tabIndex=12, title="Apply Date";
+Edit fil11=fil_file.fil11, tabIndex=13, title="Apply Time";
+DateEdit fil12=fil_file.fil12, tabIndex=14, title="Estimated Start Date";
+DateEdit fil13=fil_file.fil13, tabIndex=15, title="Estimated Finish Date";
+DateEdit fil14=fil_file.fil14, tabIndex=16, title="Real Start Date";
+Edit fil141=fil_file.fil141, tabIndex=17, title="Real Start Time";
+DateEdit fil15=fil_file.fil15, tabIndex=18, title="Real Finish Date";
+Edit fil151=fil_file.fil151, tabIndex=19, title="Real Finish Time";
+Edit c=formonly.c type CHAR, tabIndex=20, title="Stop Time";
+CheckBox fil16=fil_file.fil16, tabIndex=21, title="Maintain Period", valueChecked = "Y", valueUnchecked = "N";
+Edit fia12=formonly.fia12 type CHAR, tabIndex=22, title="Description";
+Edit fil17=fil_file.fil17, tabIndex=23, title="Spare Part Fee";
+Edit fil18=fil_file.fil18, tabIndex=24, title="Accessory Material Fee";
+Edit fil19=fil_file.fil19, tabIndex=25, title="Labor Fee";
+Edit fil20=fil_file.fil20, tabIndex=26, title="Service Fee";
+Edit cnt=formonly.cnt type CHAR, tabIndex=27;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fil(fil_file.fil01,fil_file.fil02,fil_file.fil00,formonly.desc,fil_file.fil04,formonly.fje02,fil_file.fil05,formonly.d5,fil_file.fil06,fil_file.fil10,fil_file.fil11,fil_file.fil12,fil_file.fil13,fil_file.fil14,fil_file.fil141,fil_file.fil15,fil_file.fil151,formonly.c,fil_file.fil16,formonly.fia12,fil_file.fil17,fil_file.fil18,fil_file.fil19,fil_file.fil20)
+SCREEN RECORD Undefined(fia_file.fia01,fia_file.fia02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

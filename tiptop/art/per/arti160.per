@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti160.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="arti160")
+VBox vb2
+Folder pc2
+Page Page2(text=%"Main")
+Table s_rvi
+{
+[rvi01   |rvi02   |rviacti ]
+[rvi01   |rvi02   |rviacti ]
+[rvi01   |rvi02   |rviacti ]
+[rvi01   |rvi02   |rviacti ]
+
+}
+END -- s_rvi
+END -- Page2
+END -- pc2
+Grid gr2
+{
+ ----------Rows[cn2   ]----------
+
+}
+END -- gr2
+END -- vb2
+END -- arti160
+
+TABLES
+rvi_file
+ATTRIBUTES
+Edit rvi01=rvi_file.rvi01, tabIndex=1, title="rvi01", not null, required;
+Edit rvi02=rvi_file.rvi02, tabIndex=2, title="rvi02";
+CheckBox rviacti=rvi_file.rviacti, tabIndex=3, default = "Y", title="rviacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvi(rvi_file.rvi01,rvi_file.rvi02,rvi_file.rviacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

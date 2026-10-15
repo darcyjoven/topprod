@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfq036.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table s_sfv
+{
+[sfu01             |sfu02       |sfv03   |sfv20                   |sfv04         |ima02           |ima021          |sfv08     |sfv09       |sfv05   |sfv06   |sfv07       |sfv12           ]
+[sfu01             |sfu02       |sfv03   |sfv20                   |sfv04         |ima02           |ima021          |sfv08     |sfv09       |sfv05   |sfv06   |sfv07       |sfv12           ]
+[sfu01             |sfu02       |sfv03   |sfv20                   |sfv04         |ima02           |ima021          |sfv08     |sfv09       |sfv05   |sfv06   |sfv07       |sfv12           ]
+[sfu01             |sfu02       |sfv03   |sfv20                   |sfv04         |ima02           |ima021          |sfv08     |sfv09       |sfv05   |sfv06   |sfv07       |sfv12           ]
+[sfu01             |sfu02       |sfv03   |sfv20                   |sfv04         |ima02           |ima021          |sfv08     |sfv09       |sfv05   |sfv06   |sfv07       |sfv12           ]
+
+
+
+
+
+
+}
+END -- s_sfv
+END -- Page1
+END -- Folder1
+Grid gr3162
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------                 [amt                    ]
+
+
+}
+END -- gr3162
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit sfu01=formonly.sfu01, action=controlp, tabIndex=1, title=%"sfu01", image="zoom";
+DateEdit sfu02=formonly.sfu02 type DATE, tabIndex=2, title=%"sfu02";
+Edit sfv03=formonly.sfv03 type INTEGER, tabIndex=3, title=%"sfv03";
+ButtonEdit sfv20=formonly.sfv20, action=controlp, tabIndex=4, title=%"sfv20", image="zoom";
+ButtonEdit sfv04=formonly.sfv04, action=controlp, tabIndex=5, title=%"sfv04", image="zoom";
+Edit ima02=formonly.ima02, tabIndex=6, title=%"ima02";
+Edit ima021=formonly.ima021, tabIndex=7, title=%"ima021";
+Edit sfv08=formonly.sfv08, tabIndex=8, title=%"sfv08";
+Edit sfv09=formonly.sfv09 type DECIMAL, tabIndex=9, title=%"sfv09";
+Edit sfv05=formonly.sfv05, tabIndex=10, title=%"sfv05";
+Edit sfv06=formonly.sfv06, tabIndex=11, title=%"sfv06";
+Edit sfv07=formonly.sfv07, tabIndex=12, title=%"sfv07";
+Edit sfv12=formonly.sfv12, tabIndex=13, title=%"sfv12";
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=15;
+Edit amt=formonly.amt type DECIMAL, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfv(formonly.sfu01,formonly.sfu02,formonly.sfv03,formonly.sfv20,formonly.sfv04,formonly.ima02,formonly.ima021,formonly.sfv09,formonly.sfv08,formonly.sfv05,formonly.sfv06,formonly.sfv07,formonly.sfv12)
+SCREEN RECORD Undefined(formonly.cnt,formonly.cn2,formonly.amt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi400")
+VBox vb2
+Folder folder01
+Page page01(text="Basic Data")
+Grid gr5423
+{
+ <G group01                                            >
+  APS version        [vmu01             ]
+  Save Version       [vmu02             ]
+ <                                                     >
+}
+END -- gr5423
+END -- page01
+END -- folder01
+Table s_vmu
+{
+[vmu10 |vmu22     |vmu18 |vmu03       |vmu23 |vmu24        |l_qty       |vmu04     |vmu06     |vmu08  |vmu09         |vmu25        |vmu11       |vmu12     |vmu13        |vmu14     |vmu15     |vmu16     |vmu17     |vmu19     |vmu21     ]
+[vmu10 |vmu22     |vmu18 |vmu03       |vmu23 |vmu24        |l_qty       |vmu04     |vmu06     |vmu08  |vmu09         |vmu25        |vmu11       |vmu12     |vmu13        |vmu14     |vmu15     |vmu16     |vmu17     |vmu19     |vmu21     ]
+[vmu10 |vmu22     |vmu18 |vmu03       |vmu23 |vmu24        |l_qty       |vmu04     |vmu06     |vmu08  |vmu09         |vmu25        |vmu11       |vmu12     |vmu13        |vmu14     |vmu15     |vmu16     |vmu17     |vmu19     |vmu21     ]
+[vmu10 |vmu22     |vmu18 |vmu03       |vmu23 |vmu24        |l_qty       |vmu04     |vmu06     |vmu08  |vmu09         |vmu25        |vmu11       |vmu12     |vmu13        |vmu14     |vmu15     |vmu16     |vmu17     |vmu19     |vmu21     ]
+[vmu10 |vmu22     |vmu18 |vmu03       |vmu23 |vmu24        |l_qty       |vmu04     |vmu06     |vmu08  |vmu09         |vmu25        |vmu11       |vmu12     |vmu13        |vmu14     |vmu15     |vmu16     |vmu17     |vmu19     |vmu21     ]
+[vmu10 |vmu22     |vmu18 |vmu03       |vmu23 |vmu24        |l_qty       |vmu04     |vmu06     |vmu08  |vmu09         |vmu25        |vmu11       |vmu12     |vmu13        |vmu14     |vmu15     |vmu16     |vmu17     |vmu19     |vmu21     ]
+[vmu10 |vmu22     |vmu18 |vmu03       |vmu23 |vmu24        |l_qty       |vmu04     |vmu06     |vmu08  |vmu09         |vmu25        |vmu11       |vmu12     |vmu13        |vmu14     |vmu15     |vmu16     |vmu17     |vmu19     |vmu21     ]
+[vmu10 |vmu22     |vmu18 |vmu03       |vmu23 |vmu24        |l_qty       |vmu04     |vmu06     |vmu08  |vmu09         |vmu25        |vmu11       |vmu12     |vmu13        |vmu14     |vmu15     |vmu16     |vmu17     |vmu19     |vmu21     ]
+[vmu10 |vmu22     |vmu18 |vmu03       |vmu23 |vmu24        |l_qty       |vmu04     |vmu06     |vmu08  |vmu09         |vmu25        |vmu11       |vmu12     |vmu13        |vmu14     |vmu15     |vmu16     |vmu17     |vmu19     |vmu21     ]
+[vmu10 |vmu22     |vmu18 |vmu03       |vmu23 |vmu24        |l_qty       |vmu04     |vmu06     |vmu08  |vmu09         |vmu25        |vmu11       |vmu12     |vmu13        |vmu14     |vmu15     |vmu16     |vmu17     |vmu19     |vmu21     ]
+}
+END -- s_vmu
+Grid gr881
+{
+ ----------  Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr881
+END -- vb2
+END -- apsi400
+
+TABLES
+vmu_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit vmu01=formonly.vmu01 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit vmu02=formonly.vmu02 type CHAR, action=controlp, tabIndex=25, image="zoom";
+Edit vmu10=vmu_file.vmu10, tabIndex=1, title="Priority";
+ComboBox vmu22=vmu_file.vmu22, tabIndex=12, title="Strict Delivery Date", not null, required, items=(("0", "0.No"),("1", "1.Yes"));
+Edit vmu18=formonly.vmu18 type VARCHAR, tabIndex=2, title="Issue Date", noEntry;
+Edit vmu03=formonly.vmu03 type CHAR, tabIndex=4, title="Demand Order No.", noEntry;
+Edit vmu23=formonly.vmu23 type CHAR, tabIndex=5, title="Item No.", noEntry;
+Edit vmu24=formonly.vmu24 type CHAR, tabIndex=6, title="Order Qty", noEntry;
+Edit l_qty=formonly.l_qty type CHAR, tabIndex=23, title="l_qty", noEntry;
+DateEdit vmu04=formonly.vmu04 type CHAR, tabIndex=7, title="Delivery Date", noEntry;
+Edit vmu06=formonly.vmu06 type CHAR, tabIndex=8, title="Customer No.", noEntry;
+ComboBox vmu08=formonly.vmu08 type CHAR, tabIndex=9, title="SO Type", items=(("R", "order"),("F", "forcast"));
+Edit vmu09=formonly.vmu09 type CHAR, tabIndex=10, title="Product Group No.", noEntry;
+ComboBox vmu25=vmu_file.vmu25, tabIndex=24, title="NeedSourceType", items=(("0", "contract order"),("1", "General SO"),("2", "Independent Demand"),("3", "Forecast"));
+Edit vmu11=formonly.vmu11 type CHAR, tabIndex=11, title="Sales Order No.", noEntry;
+Edit vmu12=formonly.vmu12 type CHAR, tabIndex=13, title="Customer PO No.", noEntry;
+Edit vmu13=formonly.vmu13 type CHAR, tabIndex=14, title="Shipped Qty", noEntry;
+Edit vmu14=formonly.vmu14 type CHAR, tabIndex=15, title="Unit", noEntry;
+Edit vmu15=formonly.vmu15 type CHAR, tabIndex=16, title="Cust. Group Code", noEntry;
+Edit vmu16=formonly.vmu16 type CHAR, tabIndex=17, title="Owner", noEntry;
+Edit vmu17=formonly.vmu17 type CHAR, tabIndex=18, title="Conversion Rate", noEntry;
+Edit vmu19=formonly.vmu19 type CHAR, tabIndex=19, title="Allocation Rule", noEntry;
+Edit vmu21=formonly.vmu21 type CHAR, tabIndex=20, title="Cust. Item No.", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vmu(vmu_file.vmu10,vmu_file.vmu22,formonly.vmu18,formonly.vmu03,formonly.vmu23,formonly.vmu24,formonly.l_qty,formonly.vmu04,formonly.vmu06,formonly.vmu08,formonly.vmu09,vmu_file.vmu25,formonly.vmu11,formonly.vmu12,formonly.vmu13,formonly.vmu14,formonly.vmu15,formonly.vmu16,formonly.vmu17,formonly.vmu19,formonly.vmu21)
+SCREEN RECORD Undefined(formonly.vmu01,formonly.vmu02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

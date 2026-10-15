@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artg450.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+ <G group3                                     >
+   Logistics Code  [azp01                     ]
+                   [dummy1                    ]
+ <                                             >
+ <G group1                                     >
+   Product Class   [ima131                    ]
+   Item No.        [ogb04                     ]
+   Customer No.    [oga03                     ]
+   Member No.      [lpk01                     ]
+   Selling Date    [oga02                     ]
+ <                                             >
+ <G group2                                     >
+    [a                                       ]
+    [                                        ]
+    [                                        ]
+ <                                             >
+}
+END -- Grid1
+Grid gr132
+{
+[more                                     ]
+
+}
+END -- gr132
+END -- VBox1
+END -- Form
+
+TABLES
+lpk_file,
+ima_file,
+ogb_file,
+azp_file,
+oga_file
+ATTRIBUTES
+Group group3:Group3, text=%"QBE1";
+ButtonEdit azp01=azp_file.azp01, action=controlp, tabIndex=8, not null, required, image="zoom";
+Label dummy1:dummy1, text="LRDMDS,QY\'|\'H\';\'GK";
+Group group1:Group1, text=%"QBE2";
+ButtonEdit ima131=ima_file.ima131, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ogb04=ogb_file.ogb04, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit oga03=oga_file.oga03, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit lpk01=lpk_file.lpk01, action=controlp, tabIndex=5, image="zoom";
+DateEdit oga02=oga_file.oga02, tabIndex=2;
+Group group2:Group2, text=%"Print Option";
+RadioGroup a=formonly.a type CHAR, tabIndex=6, items=(("1", "Operations Center Summary"),("2", "Operations Center + Sort"),("3", "Operations Center + Product"));
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(azp_file.azp01,ima_file.ima131,ogb_file.ogb04,oga_file.oga03,lpk_file.lpk01,oga_file.oga02,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

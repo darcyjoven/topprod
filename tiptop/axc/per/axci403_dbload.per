@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci403_dbload.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglt003_l")
+Folder folder01
+Page page01(text="Page01")
+Grid gr2858
+{
+ <G group01                                       >
+  Source Data Name    [file                       ]
+
+  [label1                                         ]
+  [label2                                         ]
+  [label3                                         ]
+ <                                                >
+}
+END -- gr2858
+END -- page01
+END -- folder01
+END -- axci403_dbload
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit file=formonly.file type CHAR, tabIndex=1, not null, required;
+Label label1:Label1, text=%"1.请输入C:\\tiptop 目录下excel文件名称";
+Label label2:Label2, text=%"2.汇出的格式是xls";
+Label label3:Label3, text=%"3.资料存放在excel表格Sheet1中";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.file)
+END -- INSTRUCTIONS
+

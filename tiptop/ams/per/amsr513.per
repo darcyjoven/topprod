@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsr513.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amsr513")
+VBox VBox1
+Grid gr117
+{
+ <G group01                                                                              >
+  Item No.            [mps01               ]   Planner             [ima67               ]
+  Source Code         [ima08               ]   Buyer               [ima43               ]
+ <                                                                                       >
+ <G group02                                                                              >
+  Version                 [ver_no      ]
+  Time Bucket Ending Date [edate       ]
+ <                                                                                       >
+
+}
+END -- gr117
+Grid gr118
+{
+[more                                             ]
+
+}
+END -- gr118
+END -- VBox1
+END -- amsr513
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit mps01=formonly.mps01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima67=formonly.ima67 type CHAR, tabIndex=2;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=3;
+Edit ima43=formonly.ima43 type CHAR, tabIndex=4;
+Group group02:group02, text="INPUT";
+Edit ver_no=formonly.ver_no type CHAR, tabIndex=5;
+DateEdit edate=formonly.edate type DATE, tabIndex=6;
+CheckBox more=formonly.more type CHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.mps01,formonly.ima67,formonly.ima08,formonly.ima43,formonly.ver_no,formonly.edate,formonly.more)
+END -- INSTRUCTIONS
+

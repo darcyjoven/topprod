@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli0171.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"agli017")
+VBox vb1
+Grid gr1
+{
+
+   Account No  [aai00            ]
+}
+END -- gr1
+Grid gr2
+{
+
+ <T tb1                                                                  >
+ [aai01   |aag02   |aai05   |aai02   |aya02   |aai03   |axl02   |aai04   ]
+ [aai01   |aag02   |aai05   |aai02   |aya02   |aai03   |axl02   |aai04   ]
+ [aai01   |aag02   |aai05   |aai02   |aya02   |aai03   |axl02   |aai04   ]
+ [aai01   |aag02   |aai05   |aai02   |aya02   |aai03   |axl02   |aai04   ]
+ [aai01   |aag02   |aai05   |aai02   |aya02   |aai03   |axl02   |aai04   ]
+ <                                                                       >
+}
+END -- gr2
+Grid gr3
+{
+
+  ----------[cnt   ] Rows [cn2   ]  ----------
+}
+END -- gr3
+END -- vb1
+END -- agli0171
+
+TABLES
+aai_file
+ATTRIBUTES
+ButtonEdit aai00=aai_file.aai00, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+Table tb1:tb1, width = 64 characters;
+ButtonEdit aai01=aai_file.aai01, action=controlp, tabIndex=2, title=%"aai01", not null, required, image="zoom.png";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=3, title=%"aag02", noEntry;
+ComboBox aai05=aai_file.aai05, tabIndex=11, default = "+", title=%"aai05", not null, required, items=(("+", "+"),("-", "-"));
+ButtonEdit aai02=aai_file.aai02, action=controlp, tabIndex=4, title=%"aai02", not null, required, image="zoom.png";
+Edit aya02=formonly.aya02 type CHAR, tabIndex=5, title=%"aya02", noEntry;
+ButtonEdit aai03=aai_file.aai03, action=controlp, tabIndex=6, title=%"aai03", not null, required, image="zoom.png";
+Edit axl02=formonly.axl02 type CHAR, tabIndex=10, title=%"axl02", noEntry;
+Edit aai04=aai_file.aai04, tabIndex=7, title=%"aai04", not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=8;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aai(aai_file.aai01,formonly.aag02,aai_file.aai05,aai_file.aai02,formonly.aya02,aai_file.aai03,formonly.axl02,aai_file.aai04)
+SCREEN RECORD Undefined(aai_file.aai00,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

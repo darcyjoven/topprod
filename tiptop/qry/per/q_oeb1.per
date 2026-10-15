@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_oeb1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Order")
+VBox VBox1
+Grid gr3813
+{
+ Accounts Customer [oea03     ]
+
+}
+END -- gr3813
+Table s_oeb
+{
+[check|oea01            |oea02   |oeb03 |oeb04          |oeb091   |oeb917    |oeb24        ]
+[check|oea01            |oea02   |oeb03 |oeb04          |oeb091   |oeb917    |oeb24        ]
+[check|oea01            |oea02   |oeb03 |oeb04          |oeb091   |oeb917    |oeb24        ]
+[check|oea01            |oea02   |oeb03 |oeb04          |oeb091   |oeb917    |oeb24        ]
+[check|oea01            |oea02   |oeb03 |oeb04          |oeb091   |oeb917    |oeb24        ]
+[check|oea01            |oea02   |oeb03 |oeb04          |oeb091   |oeb917    |oeb24        ]
+[check|oea01            |oea02   |oeb03 |oeb04          |oeb091   |oeb917    |oeb24        ]
+[check|oea01            |oea02   |oeb03 |oeb04          |oeb091   |oeb917    |oeb24        ]
+[check|oea01            |oea02   |oeb03 |oeb04          |oeb091   |oeb917    |oeb24        ]
+[check|oea01            |oea02   |oeb03 |oeb04          |oeb091   |oeb917    |oeb24        ]
+
+}
+END -- s_oeb
+END -- VBox1
+END -- q_oeb1
+
+TABLES
+oeb_file,
+oea_file
+ATTRIBUTES
+Edit oea03=formonly.oea03 type VARCHAR, tabIndex=1;
+CheckBox check=formonly.check type CHAR, tabIndex=2, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oea01=oea_file.oea01, tabIndex=3, title="Order No.", noEntry;
+DateEdit oea02=oea_file.oea02, tabIndex=4, title="Date", noEntry;
+Edit oeb03=oeb_file.oeb03, tabIndex=5, title="Line#", noEntry;
+Edit oeb04=oeb_file.oeb04, tabIndex=6, title="Product No.", noEntry;
+Edit oeb091=oeb_file.oeb091, tabIndex=7, title="Location", noEntry;
+Edit oeb917=oeb_file.oeb917, tabIndex=8, title="Order qty", noEntry, not null, required;
+Edit oeb24=oeb_file.oeb24, tabIndex=9, title="Delivered Qty", noEntry, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oeb(formonly.check,oea_file.oea01,oea_file.oea02,oeb_file.oeb03,oeb_file.oeb04,oeb_file.oeb091,oeb_file.oeb917,oeb_file.oeb24)
+SCREEN RECORD Undefined(formonly.oea03)
+END -- INSTRUCTIONS
+

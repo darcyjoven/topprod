@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq420.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcq420")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1542
+{
+ W/O#                [sfb01                   ]
+ Master Item#        [sfb05                         ]
+ Order#              [sfb22                   |sfb]
+ Closing Date        [sfb38     ]
+ BMActive Date       [sfb071    ]
+}
+END -- gr1542
+Grid gr1543
+{
+ Estma.Prod. Qty     [sfb08     ]
+ Sets of Issue       [sfb081    ]
+ Complete/Store-in   [sfb09     ]
+ Status              [sfb04     ]
+ [sfb99                         ]
+}
+END -- gr1543
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_sfa
+{
+[sfa012  |ecu014  |sfa013  |sfa27       |sfa|sfa03          |sfa161 |sfa05  |sfa06       |qty_out        |qty_bal  ]
+[sfa012  |ecu014  |sfa013  |sfa27       |sfa|sfa03          |sfa161 |sfa05  |sfa06       |qty_out        |qty_bal  ]
+[sfa012  |ecu014  |sfa013  |sfa27       |sfa|sfa03          |sfa161 |sfa05  |sfa06       |qty_out        |qty_bal  ]
+[sfa012  |ecu014  |sfa013  |sfa27       |sfa|sfa03          |sfa161 |sfa05  |sfa06       |qty_out        |qty_bal  ]
+[sfa012  |ecu014  |sfa013  |sfa27       |sfa|sfa03          |sfa161 |sfa05  |sfa06       |qty_out        |qty_bal  ]
+[sfa012  |ecu014  |sfa013  |sfa27       |sfa|sfa03          |sfa161 |sfa05  |sfa06       |qty_out        |qty_bal  ]
+[sfa012  |ecu014  |sfa013  |sfa27       |sfa|sfa03          |sfa161 |sfa05  |sfa06       |qty_out        |qty_bal  ]
+[sfa012  |ecu014  |sfa013  |sfa27       |sfa|sfa03          |sfa161 |sfa05  |sfa06       |qty_out        |qty_bal  ]
+[sfa012  |ecu014  |sfa013  |sfa27       |sfa|sfa03          |sfa161 |sfa05  |sfa06       |qty_out        |qty_bal  ]
+[sfa012  |ecu014  |sfa013  |sfa27       |sfa|sfa03          |sfa161 |sfa05  |sfa06       |qty_out        |qty_bal  ]
+}
+END -- s_sfa
+Grid gr1544
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+
+}
+END -- gr1544
+END -- VBox1
+END -- axcq420
+
+TABLES
+sfb_file,
+sfa_file
+ATTRIBUTES
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=23, image="zoom";
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit sfb22=sfb_file.sfb22, action=controlp, tabIndex=24, image="zoom";
+Edit sfb=sfb_file.sfb221, tabIndex=2;
+DateEdit sfb38=sfb_file.sfb38, tabIndex=3;
+DateEdit sfb071=sfb_file.sfb071, tabIndex=4;
+Edit sfb08=sfb_file.sfb08, tabIndex=5, not null, required;
+Edit sfb081=sfb_file.sfb081, tabIndex=6, not null, required;
+Edit sfb09=sfb_file.sfb09, tabIndex=7, not null, required;
+ComboBox sfb04=sfb_file.sfb04, tabIndex=8, not null, required, items=(("1", "Open"),("2", "Rls"),("3", "Prt"),("4", "Iss.Mat"),("5", "WIP"),("6", "FQC"),("7", "St-i"),("8", "Clos"));
+CheckBox sfb99=sfb_file.sfb99, tabIndex=9, text="Rework", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sfa012=sfa_file.sfa012, action=controlp, tabIndex=22, title=%"sfa012", not null, required, image="zoom";
+Edit ecu014=formonly.ecu014 type CHAR, tabIndex=21, title=%"ecu014", noEntry;
+Edit sfa013=sfa_file.sfa013, tabIndex=20, title=%"sfa013", not null, required;
+ButtonEdit sfa27=sfa_file.sfa27, action=controlp, tabIndex=10, title="BOM Item#", not null, required, image="zoom";
+Edit sfa=sfa_file.sfa26, tabIndex=11, title="SUB";
+Edit sfa03=sfa_file.sfa03, tabIndex=12, title="Issuing Item#";
+Edit sfa161=sfa_file.sfa161, tabIndex=13, title="QPA";
+Edit sfa05=sfa_file.sfa05, tabIndex=14, title="Qty", not null, required;
+Edit sfa06=sfa_file.sfa06, tabIndex=15, title="Issued Qty", not null, required;
+Edit qty_out=formonly.qty_out type CHAR, tabIndex=16, title="Trans-Out Qty";
+Edit qty_bal=formonly.qty_bal type CHAR, tabIndex=17, title="WIP Qty";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfa(sfa_file.sfa012,formonly.ecu014,sfa_file.sfa013,sfa_file.sfa27,sfa_file.sfa26,sfa_file.sfa03,sfa_file.sfa161,sfa_file.sfa05,sfa_file.sfa06,formonly.qty_out,formonly.qty_bal)
+SCREEN RECORD Undefined(sfb_file.sfb05,sfb_file.sfb221,sfb_file.sfb38,sfb_file.sfb071,sfb_file.sfb08,sfb_file.sfb081,sfb_file.sfb09,sfb_file.sfb04,sfb_file.sfb99,formonly.cnt,formonly.cn2,sfb_file.sfb01,sfb_file.sfb22)
+END -- INSTRUCTIONS
+

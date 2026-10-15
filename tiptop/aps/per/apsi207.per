@@ -1,0 +1,51 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsi207.per created Wed Dec 31 05:29:38 2008
+-- File created from apsi207.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsi207")
+-- GRID
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1050
+      PAGE page01( TEXT="Page01")
+        GRID gr5434
+        {
+        <G group01                                           >
+         Warehouse No.     [aa0                             ]
+         Stk_Location      [aa1                             ]
+         Is_cnsn           [aa2       ]
+        <                                                    >
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    GRID gr5435
+    {
+     ----------Rows [aa3   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES aps_ime
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=FORMONLY.wh_id, NOENTRY, TABINDEX=1;
+  EDIT aa1=FORMONLY.stk_loc, NOENTRY, TABINDEX=2;
+  COMBOBOX aa2=aps_ime.is_cnsn, QUERYEDITABLE, TABINDEX=3, ITEMS=(("0","False"),("1","True"));
+  EDIT aa3=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=4;
+END

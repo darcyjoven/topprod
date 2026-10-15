@@ -1,0 +1,80 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/top/aoo/4fd/aooi901a.tmp.per created 2010-09-25T17:26:02
+-- File created from /u3/top/aoo/4fd/aooi901a.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="aooi901a")
+                                                                                                                                             
+    VBox vb4                                                                                                                                 
+    Folder page0                                                                                                                             
+    Page Page3(text=%"Main")                                                                                                                 
+        Grid gr5                                                                                                                             
+        {                                                                                                                                    
+                                                                                                                                             
+            Org. No.           [rtz01     ][rtz01_desc              ]                                                                        
+            Org. Type          [rtz02     ][rtz02_desc              ]                                                                        
+            Org. Attribute     [rtz03     ]                                                                                                  
+            Oper Type          [rtz12     ]                                                                                                  
+            Merchandise No.    [rtz04     ][rtz04_desc              ]                                                                        
+            Price No.          [rtz05     ][rtz05_desc              ]                                                                        
+            Custom No.         [rtz06     ][rtz06_desc              ]                                                                        
+            Cost Depot         [rtz07     ][rtz07_desc              ]                                                                        
+            Not Cost Depot     [rtz08     ][rtz08_desc              ]                                                                        
+            Transport Days     [rtz09     ]                                                                                                  
+            The City Zone      [rtz10     ][rtz10_desc              ]                                                                        
+                                           [rtz10_desc1             ]                                                                        
+           [rtz11     ]                                                                                                                      
+           [rtzpos              ]                                                                                                            
+                                                                                                                                             
+        }                                                                                                                                    
+        END                                                                                                                                  
+    END -- Page                                                                                                                              
+    END -- Folder                                                                                                                            
+    Grid gr6                                                                                                                                 
+    {                                                                                                                                        
+       ----------Rows[cn2     ]----------                                                                                                    
+                                                                                                                                             
+    }                                                                                                                                        
+    END                                                                                                                                      
+    END -- VBox                                                                                                                              
+END -- Form
+
+TABLES
+rtz_file
+
+ATTRIBUTES
+Edit rtz01=formonly.rtz01 type VARCHAR, tabIndex=1, noEntry, not null, required;
+Edit rtz01_desc=formonly.rtz01_desc, tabIndex=18, noEntry, not null;
+ButtonEdit rtz02=rtz_file.rtz02, action=controlp, tabIndex=2, not null, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rtz02_desc=formonly.rtz02_desc, tabIndex=3, noEntry;
+ComboBox rtz03=rtz_file.rtz03, tabIndex=4, not null, items=(("1", "ziying"),("2", "jiameng"));
+ComboBox rtz12=rtz_file.rtz12, tabIndex=23, default = "1", not null, required, items=(("1", "Supper Market"),("2", "Market"),("3", "Supper Market + Market"));
+ButtonEdit rtz04=rtz_file.rtz04, action=controlp, tabIndex=6, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rtz04_desc=formonly.rtz04_desc, tabIndex=12, noEntry;
+ButtonEdit rtz05=rtz_file.rtz05, action=controlp, tabIndex=7, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rtz05_desc=formonly.rtz05_desc, tabIndex=13, noEntry;
+ButtonEdit rtz06=rtz_file.rtz06, action=controlp, tabIndex=8, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rtz06_desc=formonly.rtz06_desc, tabIndex=14, noEntry;
+ButtonEdit rtz07=rtz_file.rtz07, action=controlp, tabIndex=9, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rtz07_desc=formonly.rtz07_desc, tabIndex=15, noEntry;
+ButtonEdit rtz08=rtz_file.rtz08, action=controlp, tabIndex=10, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rtz08_desc=formonly.rtz08_desc, tabIndex=16, noEntry;
+Edit rtz09=rtz_file.rtz09, tabIndex=5;
+ButtonEdit rtz10=rtz_file.rtz10, action=controlp, tabIndex=11, image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit rtz10_desc=formonly.rtz10_desc, tabIndex=17, noEntry;
+Edit rtz10_desc1=formonly.rtz10_desc1, tabIndex=19, noEntry;
+CheckBox rtz11=rtz_file.rtz11, tabIndex=22, text="rtz11", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rtzpos=rtz_file.rtzpos, tabIndex=21, text="POS Passed?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

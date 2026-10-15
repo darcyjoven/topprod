@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr420.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmr420")
+VBox vb2
+Group gb1
+Grid gr1
+{
+ <G group01                                                         >
+  Accepting Date      [gxc03               ]
+  Buying Currency     [gxc05               ]
+  Accepting Bank      [gxc07               ]
+
+ <                                                                  >
+
+}
+END -- gr1
+END -- gb1
+Group group04(text="INPUT")
+Grid gr2
+{
+ <G group05                                                           >
+  Value Date          [gxc04               ]
+ <                                                                    >
+ <G group02                                                           >
+  Year Period         [yy                  ][mm                 ]
+ <                                                                    >
+ <G group03                                                           >
+  [a                                             ]
+  [                                              ]
+
+ <                                                                    >
+
+}
+END -- gr2
+END -- group04
+Grid gr3
+{
+[more                                                        ]
+
+}
+END -- gr3
+END -- vb2
+END -- anmr420
+
+TABLES
+gxc_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit gxc03=gxc_file.gxc03, tabIndex=1;
+Edit gxc05=gxc_file.gxc05, tabIndex=2;
+Edit gxc07=gxc_file.gxc07, tabIndex=3;
+Group group05:group05;
+DateEdit gxc04=gxc_file.gxc04, tabIndex=4;
+Group group02:group02, text="Sequence";
+Edit yy=formonly.yy type SMALLINT, tabIndex=5;
+Edit mm=formonly.mm type SMALLINT, tabIndex=6;
+Group group03:group03, text="Transaction Property";
+RadioGroup a=formonly.a type CHAR, tabIndex=7, items=(("1", "6Period"),("2", "12Period"));
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gxc_file.gxc03,gxc_file.gxc05,gxc_file.gxc07,gxc_file.gxc04,formonly.yy,formonly.mm,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

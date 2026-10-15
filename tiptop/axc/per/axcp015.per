@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp015.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcp015")
+VBox VBox1
+Folder pc359
+Page page01(text="Main")
+Table s_oba
+{
+[oba01                      |oba02                          |oba07  ]
+[oba01                      |oba02                          |oba07  ]
+[oba01                      |oba02                          |oba07  ]
+[oba01                      |oba02                          |oba07  ]
+[oba01                      |oba02                          |oba07  ]
+[oba01                      |oba02                          |oba07  ]
+[oba01                      |oba02                          |oba07  ]
+[oba01                      |oba02                          |oba07  ]
+[oba01                      |oba02                          |oba07  ]
+[oba01                      |oba02                          |oba07  ]
+
+}
+END -- s_oba
+END -- page01
+END -- pc359
+Grid gr1479
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr1479
+END -- VBox1
+END -- axcp015
+
+TABLES
+oba_file
+ATTRIBUTES
+Edit oba01=oba_file.oba01, tabIndex=1, title="Product Class Code", noEntry;
+Edit oba02=oba_file.oba02, tabIndex=2, title="Class Name", noEntry;
+Edit oba07=oba_file.oba07, tabIndex=3, title="Markup%";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oba(oba_file.oba01,oba_file.oba02,oba_file.oba07)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

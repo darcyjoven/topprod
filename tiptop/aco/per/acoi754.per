@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi754.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi754")
+VBox vb2
+Folder pc883
+Page page01(text="Main")
+Table s_cee
+{
+[cee01         |gfe02              |cee02       |cee03                |ceeacti  ]
+[cee01         |gfe02              |cee02       |cee03                |ceeacti  ]
+[cee01         |gfe02              |cee02       |cee03                |ceeacti  ]
+[cee01         |gfe02              |cee02       |cee03                |ceeacti  ]
+[cee01         |gfe02              |cee02       |cee03                |ceeacti  ]
+[cee01         |gfe02              |cee02       |cee03                |ceeacti  ]
+[cee01         |gfe02              |cee02       |cee03                |ceeacti  ]
+[cee01         |gfe02              |cee02       |cee03                |ceeacti  ]
+[cee01         |gfe02              |cee02       |cee03                |ceeacti  ]
+[cee01         |gfe02              |cee02       |cee03                |ceeacti  ]
+
+}
+END -- s_cee
+END -- page01
+END -- pc883
+Grid gr4740
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4740
+END -- vb2
+END -- acoi754
+
+TABLES
+cee_file,
+gfe_file
+ATTRIBUTES
+ButtonEdit cee01=cee_file.cee01, action=controlp, tabIndex=1, title="Corporation Unit", noEntry, image="zoom";
+Edit gfe02=gfe_file.gfe02, tabIndex=2, title=%"Description", noEntry;
+Edit cee02=cee_file.cee02, tabIndex=3, title=%"Customs Unit";
+Edit cee03=cee_file.cee03, tabIndex=4, title="Description";
+CheckBox ceeacti=cee_file.ceeacti, tabIndex=5, title="Valid Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cee(cee_file.cee01,gfe_file.gfe02,cee_file.cee02,cee_file.cee03,cee_file.ceeacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

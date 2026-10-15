@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr110.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxr110")
+VBox VBox1
+Grid gr1139
+{
+ <G group01                                           >
+  ECN Period           [bdate       ] - [edate       ]
+ <                                                    >
+ <G group02                                           >
+ [a                    ]
+
+ <                                                    >
+
+}
+END -- gr1139
+Grid gr1140
+{
+[more                          ]
+
+}
+END -- gr1140
+END -- VBox1
+END -- abxr110
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=1;
+DateEdit edate=formonly.edate type DATE, tabIndex=2;
+Group group02:group02, text="Print Data";
+CheckBox a=formonly.a type CHAR, tabIndex=3, text="Print Bond Item", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bdate,formonly.edate,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

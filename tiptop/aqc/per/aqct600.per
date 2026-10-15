@@ -1,0 +1,118 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqct600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqct600")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr216
+{
+ <G group01                                              > <G group02                                >
+  Data Source         [qdb00     ]                          Samples             [qdb03     ][imgmksg]
+  QC Document No.     [qdb01             ][qdb][qd1]-[qd]   Groups              [qdb04     ][       ]
+  Item No.            [qdb02                         ]      XbarTotal           [qdb05     ]
+  Part Name           [ima02                         ]      RTotal              [qdb06     ]
+                      [ima021                        ]      Confirm             [qdbconf   ]
+  QC Items            [qdb09     ][azf03             ]
+ <                                                       > <                                         >
+ <G group03                                              > <G group04                                >
+  Xbar Control Line CL [qdb07     ]                         R Control Line CL   [qdb08     ]
+  UCL                  [qdb071    ]                         UCL                 [qdb081    ]
+  LCL                  [qdb072    ]                         LCL                 [qdb082    ]
+ <                                                       > <                                         >
+
+}
+END -- gr216
+END -- page01
+Page info(text="Info")
+Grid gr217
+{
+ Record Owner        [qdbuser   ]  Last Modified by    [qdbmodu   ]  Data Valid Code     [qdbacti   ]
+ Department          [qdbgrup   ]  Create/Modify Date  [qdbdate   ]
+ Record Orig.        [qdboriu   ]
+ Dept Orig.          [qdborig   ]
+}
+END -- gr217
+END -- info
+END -- folder01
+Table s_qdc
+{
+[qdc02     |qdc03   |qdc04   |qdc0|qdc06   |qdc07 |qdc08 ]
+[qdc02     |qdc03   |qdc04   |qdc0|qdc06   |qdc07 |qdc08 ]
+[qdc02     |qdc03   |qdc04   |qdc0|qdc06   |qdc07 |qdc08 ]
+[qdc02     |qdc03   |qdc04   |qdc0|qdc06   |qdc07 |qdc08 ]
+[qdc02     |qdc03   |qdc04   |qdc0|qdc06   |qdc07 |qdc08 ]
+[qdc02     |qdc03   |qdc04   |qdc0|qdc06   |qdc07 |qdc08 ]
+[qdc02     |qdc03   |qdc04   |qdc0|qdc06   |qdc07 |qdc08 ]
+[qdc02     |qdc03   |qdc04   |qdc0|qdc06   |qdc07 |qdc08 ]
+[qdc02     |qdc03   |qdc04   |qdc0|qdc06   |qdc07 |qdc08 ]
+[qdc02     |qdc03   |qdc04   |qdc0|qdc06   |qdc07 |qdc08 ]
+
+}
+END -- s_qdc
+Grid gr218
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr218
+END -- VBox1
+END -- aqct600
+
+TABLES
+qdc_file,
+qdb_file
+ATTRIBUTES
+Group group01:group01;
+ComboBox qdb00=qdb_file.qdb00, tabIndex=1, not null, required, queryEditable, comment="1:IQC  2:FQC  3:PQC  4:OQC  5:W/H QC", items=(("1", "IQC"),("2", "FQC"),("3", "PQC"),("4", "OQC"),("5", "W/H QC"));
+ButtonEdit qdb01=qdb_file.qdb01, action=controlp, tabIndex=2, not null, required, image="zoom", upShift, comment="Key Field, No Blank/Repeated!    , <P>Qry Received Data";
+Edit qdb=qdb_file.qdb011, tabIndex=3, not null, required, comment="Key Field, No Blank/Repeated!    ";
+Edit qd1=qdb_file.qdb012, tabIndex=4, not null, required, comment="Key Field, No Blank/Repeated!    ";
+Edit qd=qdb_file.qdb013, tabIndex=5, not null, required, comment="Key Field, No Blank/Repeated!    ";
+Edit qdb02=qdb_file.qdb02, tabIndex=6, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=7, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=8, noEntry;
+Edit qdb09=qdb_file.qdb09, tabIndex=9, noEntry;
+Edit azf03=formonly.azf03 type CHAR, tabIndex=10, noEntry;
+Group group02:group02;
+Edit qdb03=qdb_file.qdb03, tabIndex=11, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit qdb04=qdb_file.qdb04, tabIndex=13, noEntry;
+Edit qdb05=qdb_file.qdb05, tabIndex=14, noEntry;
+Edit qdb06=qdb_file.qdb06, tabIndex=15, noEntry;
+Edit qdbconf=qdb_file.qdbconf, tabIndex=16, noEntry;
+Group group03:group03;
+Edit qdb07=qdb_file.qdb07, tabIndex=17, noEntry;
+Edit qdb071=qdb_file.qdb071, tabIndex=18, noEntry;
+Edit qdb072=qdb_file.qdb072, tabIndex=19, noEntry;
+Group group04:group04;
+Edit qdb08=qdb_file.qdb08, tabIndex=20, noEntry;
+Edit qdb081=qdb_file.qdb081, tabIndex=21, noEntry;
+Edit qdb082=qdb_file.qdb082, tabIndex=22, noEntry;
+Edit qdbuser=qdb_file.qdbuser, tabIndex=23, noEntry;
+Edit qdbmodu=qdb_file.qdbmodu, tabIndex=24, noEntry;
+Edit qdbacti=qdb_file.qdbacti, tabIndex=25, noEntry, upShift;
+Edit qdbgrup=qdb_file.qdbgrup, tabIndex=26, noEntry;
+DateEdit qdbdate=qdb_file.qdbdate, tabIndex=27, noEntry;
+Edit qdboriu=qdb_file.qdboriu, tabIndex=501, noEntry;
+Edit qdborig=qdb_file.qdborig, tabIndex=502, noEntry;
+Edit qdc02=qdc_file.qdc02, tabIndex=28, title="Group No.", not null, required, comment="Key Field, No Blank/Repeated!    ";
+DateEdit qdc03=qdc_file.qdc03, tabIndex=29, title="Date", not null, required;
+Edit qdc04=qdc_file.qdc04, tabIndex=30, title="Time", not null, required;
+Edit qdc0=qdc_file.qdc05, tabIndex=31, title="Qty", noEntry;
+Edit qdc06=qdc_file.qdc06, tabIndex=32, title="Total", noEntry;
+Edit qdc07=qdc_file.qdc07, tabIndex=33, title="Xbar", noEntry;
+Edit qdc08=qdc_file.qdc08, tabIndex=34, title="R", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=35, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=36, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qdc(qdc_file.qdc02,qdc_file.qdc03,qdc_file.qdc04,qdc_file.qdc05,qdc_file.qdc06,qdc_file.qdc07,qdc_file.qdc08)
+SCREEN RECORD Undefined(qdb_file.qdb00,qdb_file.qdb01,qdb_file.qdb011,qdb_file.qdb012,qdb_file.qdb013,qdb_file.qdb02,formonly.ima02,formonly.ima021,qdb_file.qdb09,formonly.azf03,qdb_file.qdb03,formonly.imgmksg,qdb_file.qdb04,qdb_file.qdb05,qdb_file.qdb06,qdb_file.qdbconf,qdb_file.qdb07,qdb_file.qdb071,qdb_file.qdb072,qdb_file.qdb08,qdb_file.qdb081,qdb_file.qdb082,qdb_file.qdbuser,qdb_file.qdbmodu,qdb_file.qdbacti,qdb_file.qdbgrup,qdb_file.qdbdate,qdb_file.qdboriu,qdb_file.qdborig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

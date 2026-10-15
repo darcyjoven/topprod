@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zm.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_zm")
+VBox VBox1
+Grid grid01
+{
+ <G group01                                    >
+  Module Menu Program ID  [zm01                ]
+  Module MENU Description [gaz03h              ]
+ <                                             >
+
+}
+END -- grid01
+Table s_zm
+{
+[zm03   |zm04              |gaz03                         ]
+[zm03   |zm04              |gaz03                         ]
+[zm03   |zm04              |gaz03                         ]
+[zm03   |zm04              |gaz03                         ]
+[zm03   |zm04              |gaz03                         ]
+[zm03   |zm04              |gaz03                         ]
+[zm03   |zm04              |gaz03                         ]
+[zm03   |zm04              |gaz03                         ]
+[zm03   |zm04              |gaz03                         ]
+[zm03   |zm04              |gaz03                         ]
+
+}
+END -- s_zm
+Grid gr3087
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3087
+END -- VBox1
+END -- p_zm
+
+TABLES
+gaz_file,
+zm_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit zm01=zm_file.zm01, action=controlp, tabIndex=1, not null, required, image="zoom", downShift, comment="Key Field, No Blank/Repeated";
+Edit gaz03h=formonly.gaz03h type VARCHAR, tabIndex=2, noEntry;
+Edit zm03=zm_file.zm03, tabIndex=3, title="Serial", not null, required, comment="<^U>Add 1 to Below All, <^Y>Re-Sort Line ID From 1";
+ButtonEdit zm04=zm_file.zm04, action=controlp, tabIndex=4, title="Program Code", not null, required, image="zoom", downShift, comment="<^P>Qry Program, <^Y>Create Program";
+Edit gaz03=gaz_file.gaz03, tabIndex=5, title="Program Name", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zm(zm_file.zm03,zm_file.zm04,gaz_file.gaz03)
+SCREEN RECORD Undefined(zm_file.zm01,formonly.gaz03h,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

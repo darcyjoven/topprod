@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_ods_db.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_ods_db")
+VBox vb3
+Folder pc753
+Page page01(text="Main")
+Table s_azwd
+{
+[azwd01        ]
+[azwd01        ]
+[azwd01        ]
+[azwd01        ]
+[azwd01        ]
+[azwd01        ]
+[azwd01        ]
+[azwd01        ]
+[azwd01        ]
+[azwd01        ]
+
+}
+END -- s_azwd
+END -- page01
+END -- pc753
+Grid gr3219
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3219
+END -- vb3
+END -- p_ods_db
+
+TABLES
+azwd_file
+ATTRIBUTES
+ButtonEdit azwd01=azwd_file.azwd01, action=controlp, tabIndex=2, title="azwd01", not null, image="zoom";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_azwd(azwd_file.azwd01)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

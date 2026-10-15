@@ -1,0 +1,124 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt700")
+VBox vb4
+Folder pc2
+Page Page2(text=%"Page0")
+Grid gr5
+{
+
+  return no[rxa01             ]                  money  [sum1           ]  confirm[rxaconf      ][imgmksg ]
+  Doc Date [rxa09             ]                  cheque [sum2           ]  rxacond[rxacond      ][        ]
+  NO       [rxa02             ]                  bank   [sum3           ]  rxaconu[rxaconu      ][rvaconu_desc  ]
+  guest    [rxa03             |rxa03_desc     ]  paper  [sum4           ]  rxacont[rxacont   ]
+  OrderDate[oea02             ]                  save   [sum5           ]  plant  [rxaplant     ][rxaplant_desc ]
+  confdate [oea72             ]                  union  [sum6           ]  Memo   [rxa07                        ]
+  person   [oeaconu           |oeaconu_desc   ]  tran   [sum7           ]         [                             ]
+  Fa NO    [oea92             ]                  c-money[rxa04          ]  Pos    [rxa08          ]
+  Rtn NO   [oea93             ]                  r-money[rxa05          ]
+  Card No  [oea87             ]                  return [rxa06          ]
+
+}
+END -- gr5
+END -- Page2
+Page Page3(text=%"Page1")
+Grid gr6
+{
+
+  user[rxauser        ]   moduuser[rxamodu       ]   acti[rxaacti        ]
+  grup[rxagrup        ]   date    [rxadate       ]   crat[rxacrat        ]
+  oriu[rxaoriu        ]   orig    [rxaorig       ]
+
+
+
+
+}
+END -- gr6
+END -- Page3
+END -- pc2
+Table s_rxb
+{
+[rxb02     |rxb03       |rxb04        |rxb05          |rxb05_desc   |rxb06       ]
+[rxb02     |rxb03       |rxb04        |rxb05          |rxb05_desc   |rxb06       ]
+[rxb02     |rxb03       |rxb04        |rxb05          |rxb05_desc   |rxb06       ]
+[rxb02     |rxb03       |rxb04        |rxb05          |rxb05_desc   |rxb06       ]
+[rxb02     |rxb03       |rxb04        |rxb05          |rxb05_desc   |rxb06       ]
+}
+END -- s_rxb
+Grid gr6_
+{
+
+ ------------------rows[idx  ]/[cnt  ]---------------detail[cn2   ]---------------
+
+
+}
+END -- gr6_
+END -- vb4
+END -- artt700
+
+TABLES
+rxb_file,
+rxa_file,
+oea_file
+ATTRIBUTES
+ButtonEdit rxa01=rxa_file.rxa01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit sum1=formonly.sum1 type DECIMAL, tabIndex=12, noEntry;
+ComboBox rxaconf=rxa_file.rxaconf, tabIndex=20, noEntry, items=(("N", "UnConfirm"),("Y", "Confirm"),("X", "void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+DateEdit rxa09=rxa_file.rxa09, tabIndex=2, not null;
+Edit sum2=formonly.sum2 type DECIMAL, tabIndex=13, noEntry;
+DateEdit rxacond=rxa_file.rxacond, tabIndex=21, noEntry;
+ButtonEdit rxa02=rxa_file.rxa02, action=controlp, tabIndex=3, not null, required, image="zoom";
+Edit sum3=formonly.sum3 type DECIMAL, tabIndex=14, noEntry;
+ButtonEdit rxaconu=rxa_file.rxaconu, action=controlp, tabIndex=22, noEntry, image="zoom";
+Edit rvaconu_desc=formonly.rvaconu_desc type VARCHAR, tabIndex=23, noEntry;
+ButtonEdit rxa03=rxa_file.rxa03, action=controlp, tabIndex=4, noEntry, image="zoom";
+Edit rxa03_desc=formonly.rxa03_desc type VARCHAR, tabIndex=6, noEntry;
+Edit sum4=formonly.sum4 type DECIMAL, tabIndex=15, noEntry;
+TimeEdit rxacont=rxa_file.rxacont, tabIndex=44, noEntry;
+DateEdit oea02=oea_file.oea02, tabIndex=48, noEntry;
+Edit sum5=formonly.sum5 type DECIMAL, tabIndex=16, noEntry;
+Edit rxaplant=rxa_file.rxaplant, tabIndex=24, noEntry;
+Edit rxaplant_desc=formonly.rxaplant_desc type VARCHAR, tabIndex=25, noEntry;
+DateEdit oea72=oea_file.oea72, tabIndex=5, noEntry;
+Edit sum6=formonly.sum6 type DECIMAL, tabIndex=42, noEntry;
+TextEdit rxa07=rxa_file.rxa07, tabIndex=26;
+ButtonEdit oeaconu=oea_file.oeaconu, action=controlp, tabIndex=7, noEntry, image="zoom";
+Edit oeaconu_desc=formonly.oeaconu_desc type VARCHAR, tabIndex=8, noEntry;
+Edit sum7=formonly.sum7 type DECIMAL, tabIndex=43, noEntry;
+Edit oea92=oea_file.oea92, tabIndex=9, noEntry;
+Edit rxa04=rxa_file.rxa04, tabIndex=17, noEntry;
+Edit rxa08=rxa_file.rxa08, tabIndex=47, noEntry;
+Edit oea93=oea_file.oea93, tabIndex=10, noEntry;
+Edit rxa05=rxa_file.rxa05, tabIndex=18, noEntry;
+Edit oea87=oea_file.oea87, tabIndex=11, noEntry;
+Edit rxa06=rxa_file.rxa06, tabIndex=19, noEntry;
+Edit rxauser=rxa_file.rxauser, tabIndex=27, noEntry;
+Edit rxamodu=rxa_file.rxamodu, tabIndex=28, noEntry;
+Edit rxaacti=rxa_file.rxaacti, tabIndex=29, noEntry;
+Edit rxagrup=rxa_file.rxagrup, tabIndex=30, noEntry;
+DateEdit rxadate=rxa_file.rxadate, tabIndex=31, noEntry;
+DateEdit rxacrat=rxa_file.rxacrat, tabIndex=32, noEntry;
+Edit rxaoriu=rxa_file.rxaoriu, tabIndex=45, noEntry;
+Edit rxaorig=rxa_file.rxaorig, tabIndex=46, noEntry;
+Edit rxb02=rxb_file.rxb02, tabIndex=33, title="rxb02", not null, required;
+ButtonEdit rxb03=rxb_file.rxb03, action=controlp, tabIndex=34, title="rxb03", image="zoom";
+DateEdit rxb04=rxb_file.rxb04, tabIndex=35, title="rxb04";
+ButtonEdit rxb05=rxb_file.rxb05, action=controlp, tabIndex=36, title="rxb05", image="zoom";
+Edit rxb05_desc=formonly.rxb05_desc type VARCHAR, tabIndex=37, title="rxb05_desc";
+Edit rxb06=rxb_file.rxb06, tabIndex=38, title="rxb06";
+Edit idx=formonly.idx type INTEGER, tabIndex=39;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=40;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=41;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rxb(rxb_file.rxb02,rxb_file.rxb03,rxb_file.rxb04,rxb_file.rxb05,formonly.rxb05_desc,rxb_file.rxb06)
+SCREEN RECORD Undefined(rxa_file.rxa01,formonly.sum1,rxa_file.rxaconf,formonly.imgmksg,rxa_file.rxa02,formonly.sum2,rxa_file.rxacond,rxa_file.rxa03,formonly.rxa03_desc,formonly.sum3,rxa_file.rxaconu,formonly.rvaconu_desc,oea_file.oea72,formonly.sum4,rxa_file.rxacont,oea_file.oeaconu,formonly.oeaconu_desc,formonly.sum5,oea_file.oea92,formonly.sum6,oea_file.oea93,formonly.sum7,rxa_file.rxaplant,formonly.rxaplant_desc,oea_file.oea87,rxa_file.rxa04,rxa_file.rxa07,rxa_file.rxa05,rxa_file.rxa06,rxa_file.rxa08,rxa_file.rxauser,rxa_file.rxamodu,rxa_file.rxaacti,rxa_file.rxagrup,rxa_file.rxadate,rxa_file.rxacrat,rxa_file.rxaoriu,rxa_file.rxaorig,formonly.idx,formonly.cnt,formonly.cn2,rxa_file.rxa09,oea_file.oea02)
+END -- INSTRUCTIONS
+

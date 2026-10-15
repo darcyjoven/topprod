@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli0071_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"agli0071_g")
+Folder pc329
+Page page01(text=%"Main")
+Grid gr1397
+{
+ <G group01                             >
+  Book No.     [axo12          ]
+  Year         [yy             ]
+  Period       [mm             ]
+
+
+ <                                      >
+
+
+}
+END -- gr1397
+END -- page01
+END -- pc329
+END -- agli0071_g
+
+TABLES
+axo_file
+ATTRIBUTES
+Group group01:group01, text=%"INPUT";
+ButtonEdit axo12=axo_file.axo12, action=controlp, tabIndex=1, not null, required, image="zoom", comment=%"<^P>Qry Parent Company";
+Edit yy=formonly.yy type SMALLINT, tabIndex=2, not null, required;
+Edit mm=formonly.mm type SMALLINT, tabIndex=3, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(axo_file.axo12,formonly.yy,formonly.mm)
+END -- INSTRUCTIONS
+

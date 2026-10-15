@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_adz.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Document Property")
+Grid gr3720
+{
+ <T s_adz                                                                           >
+ [check |adzslip    |adzdesc             |adzauno         |adzdmy6        |adztype ]
+ [check |adzslip    |adzdesc             |adzauno         |adzdmy6        |adztype ]
+ [check |adzslip    |adzdesc             |adzauno         |adzdmy6        |adztype ]
+ [check |adzslip    |adzdesc             |adzauno         |adzdmy6        |adztype ]
+ [check |adzslip    |adzdesc             |adzauno         |adzdmy6        |adztype ]
+ [check |adzslip    |adzdesc             |adzauno         |adzdmy6        |adztype ]
+ [check |adzslip    |adzdesc             |adzauno         |adzdmy6        |adztype ]
+ [check |adzslip    |adzdesc             |adzauno         |adzdmy6        |adztype ]
+ [check |adzslip    |adzdesc             |adzauno         |adzdmy6        |adztype ]
+ [check |adzslip    |adzdesc             |adzauno         |adzdmy6        |adztype ]
+ <                                                                                  >
+
+}
+END -- gr3720
+END -- q_adz
+
+TABLES
+adz_file
+ATTRIBUTES
+Table s_adz:s_adz;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit adzslip=adz_file.adzslip, tabIndex=2, title="Document", not null, required;
+Edit adzdesc=adz_file.adzdesc, tabIndex=3, title="Document Name", not null, required;
+Edit adzauno=adz_file.adzauno, tabIndex=4, title="Automatic No.", not null, required;
+Edit adzdmy6=adz_file.adzdmy6, tabIndex=5, title="Number Method", not null, required, comment="1.Serial Number 2.By Year and Month                                               3.By Year and Week 4.By Year,Month and Day";
+Edit adztype=adz_file.adztype, tabIndex=6, title="Property", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_adz(formonly.check,adz_file.adzslip,adz_file.adzdesc,adz_file.adzauno,adz_file.adzdmy6,adz_file.adztype)
+END -- INSTRUCTIONS
+

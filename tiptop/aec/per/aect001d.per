@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aect001d.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aect001d")
+VBox VBox1
+Grid gr7
+{
+ <G group01                                                              >
+  PBI NO            [sfb85              ]
+  WORK NO           [sfb01              ]
+  Routing Code      [ecm03              ]
+ <                                                                       >
+
+}
+END -- gr7
+Table s_new2
+{
+[x    |sgdslk05 |sgd05     |sga02   |sgdslk02   |sgdslk04  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgdslk02   |sgdslk04  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgdslk02   |sgdslk04  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgdslk02   |sgdslk04  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgdslk02   |sgdslk04  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgdslk02   |sgdslk04  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgdslk02   |sgdslk04  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgdslk02   |sgdslk04  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgdslk02   |sgdslk04  ]
+[x    |sgdslk05 |sgd05     |sga02   |sgdslk02   |sgdslk04  ]
+
+}
+END -- s_new2
+END -- VBox1
+END -- aect001d
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit sfb85=formonly.sfb85 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit sfb01=formonly.sfb01 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit ecm03=formonly.ecm03 type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom";
+CheckBox x=formonly.x type CHAR, tabIndex=4, title="Trans", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sgdslk05=formonly.sgdslk05 type CHAR, tabIndex=5, title="Ln#", noEntry;
+Edit sgd05=formonly.sgd05 type CHAR, tabIndex=6, title="R-Detail", noEntry;
+Edit sga02=formonly.sga02 type CHAR, tabIndex=7, title="sga02", noEntry;
+Edit sgdslk02=formonly.sgdslk02 type CHAR, tabIndex=8, title="R-Hour", noEntry;
+Edit sgdslk04=formonly.sgdslk04 type CHAR, tabIndex=9, title="R-Price", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_new2(formonly.x,formonly.sgdslk05,formonly.sgd05,formonly.sga02,formonly.sgdslk02,formonly.sgdslk04)
+SCREEN RECORD Undefined(formonly.sfb85,formonly.sfb01,formonly.ecm03)
+END -- INSTRUCTIONS
+

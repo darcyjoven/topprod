@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrr380.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr380")
+VBox vb2
+Grid gr1
+{
+ <G group01                                                                             >
+  Bill No.            [oma01               ] Invoice No.         [oma10               ]
+  Item No.            [ogb04               ] Customer No.        [oma03               ]
+  Accounts Category   [oma00               ] Entered By          [omauser             ]
+  Account No.         [oma18               ] Salesman            [oma14               ]
+ <                                                                                      >
+
+}
+END -- gr1
+Group group03(text="INPUT")
+Grid gr2
+{
+  Account Date   [bdate       ]-[edate       ]
+  Ex.Rate Op     [rate_op       ]
+ <G group05                                ><G group06                                 >
+ [type                ]                     [sort                          ]
+ <                                         ><                                          >
+
+}
+END -- gr2
+END -- group03
+Grid gr3
+{
+[more                                  ]
+
+}
+END -- gr3
+END -- vb2
+END -- axrr380
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit oma01=formonly.oma01 type CHAR, tabIndex=1;
+Edit oma10=formonly.oma10 type CHAR, tabIndex=2;
+Edit ogb04=formonly.ogb04 type CHAR, tabIndex=3;
+Edit oma03=formonly.oma03 type CHAR, tabIndex=4;
+Edit oma00=formonly.oma00 type CHAR, tabIndex=5;
+Edit omauser=formonly.omauser type CHAR, tabIndex=6;
+Edit oma18=formonly.oma18 type CHAR, tabIndex=7;
+Edit oma14=formonly.oma14 type CHAR, tabIndex=8;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=9, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=10, not null, required;
+ComboBox rate_op=formonly.rate_op type CHAR, tabIndex=11, queryEditable, items=(("B", "Bank Buying"),("S", "Bank Selling"),("C", "Customs Buy"),("D", "Customs Sell"),("R", "EoM Rev Exate"));
+Group group05:group05, text="Data Contents";
+RadioGroup type=formonly.type type VARCHAR, tabIndex=12, not null, required, items=(("1", "Affiliate"),("2", "Not Affiliate"),("3", "All "));
+Group group06:group06, text="Sequence";
+RadioGroup sort=formonly.sort type VARCHAR, tabIndex=13, not null, required, items=(("1", "By Customer"),("2", "By Business"),("3", "By Currency"));
+CheckBox more=formonly.more type CHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oma01,formonly.oma10,formonly.ogb04,formonly.oma03,formonly.oma00,formonly.omauser,formonly.oma18,formonly.oma14,formonly.bdate,formonly.edate,formonly.rate_op,formonly.type,formonly.sort,formonly.more)
+END -- INSTRUCTIONS
+

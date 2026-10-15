@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt583.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt583")
+Folder pc1021
+Page page01(text="Page01")
+Grid gr5343
+{
+ <G group01                                            >
+  Goods Received Department [pom14     ][gem02_2   ]
+  Confirmed By              [pom15     ][gen02_2   ]
+  Shipping Method           [pom16     ]
+  Agent                     [pom17     ][pmc03     ]
+ <                                                     >
+ <G group02                                            >
+ [pom30                                         ]
+ <                                                     >
+ <G group03                                            >
+ [pom44                                     ]
+
+ <                                                     >
+
+}
+END -- gr5343
+END -- page01
+END -- pc1021
+END -- apmt583
+
+TABLES
+pom_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit pom14=pom_file.pom14, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry  Department";
+Edit gem02_2=formonly.gem02_2 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit pom15=pom_file.pom15, action=controlp, tabIndex=3, image="zoom", comment="<^P> Qry  Employee    ";
+Edit gen02_2=formonly.gen02_2 type VARCHAR, tabIndex=4, noEntry;
+Edit pom16=pom_file.pom16, tabIndex=5;
+ButtonEdit pom17=pom_file.pom17, action=controlp, tabIndex=6, image="zoom", comment="<^P> Qry  Vender Common Data";
+Edit pmc03=formonly.pmc03 type VARCHAR, tabIndex=7, noEntry;
+Group group02:group02;
+CheckBox pom30=pom_file.pom30, tabIndex=8, text="Received Goods and Print Receipt", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Tax Process";
+RadioGroup pom44=pom_file.pom44, tabIndex=9, items=(("1", "Deduct Cost & Expense"),("2", "Deduct Asset"),("3", "No-Deduct Cost and Expense"),("4", "No Deduct Asset"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pom_file.pom14,formonly.gem02_2,pom_file.pom15,formonly.gen02_2,pom_file.pom16,pom_file.pom17,formonly.pmc03,pom_file.pom30,pom_file.pom44)
+END -- INSTRUCTIONS
+

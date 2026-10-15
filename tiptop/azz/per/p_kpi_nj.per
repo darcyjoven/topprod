@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_kpi_nj.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_kpi_nj")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr5447
+{
+ Year         [kpi01     ]           Month [kpi02     ]
+ Employee     [kpi04       ][gen02                                   ]
+ Department   [kpi03       ][gem02                                   ]
+ On Duty Days [kpi17  ]
+
+
+
+}
+END -- gr5447
+Grid gr10
+{
+  Hours Accounted Total  [kpi12_t             ]         cr Hours           [slk_hr              ]
+  Actual Hours Total     [kpi13_t             ]         msv Hours          [alm_hr              ]
+                                                        GP5.2 Hours        [art_hr              ]
+                                                        cust Hours         [axr_hr              ]
+                                                        funenh Hours       [pkg_hr              ]
+                                                        othpack Hours      [pos_hr              ]
+                                                        other Hours        [oth_hr              ]
+}
+END -- gr10
+END -- hb2
+END -- page01
+END -- folder01
+Table s_kpi
+{
+[kpi05     |kpi16     |kpo02          |kpi18        |kpi06                  |kpi07                 |kpi08         |kpi09            |kpi10       |kpi11     |kpi12           |kpi13          |kpi14       |gen02_pm  |kpi15                               ]
+[kpi05     |kpi16     |kpo02          |kpi18        |kpi06                  |kpi07                 |kpi08         |kpi09            |kpi10       |kpi11     |kpi12           |kpi13          |kpi14       |gen02_pm  |kpi15                               ]
+[kpi05     |kpi16     |kpo02          |kpi18        |kpi06                  |kpi07                 |kpi08         |kpi09            |kpi10       |kpi11     |kpi12           |kpi13          |kpi14       |gen02_pm  |kpi15                               ]
+[kpi05     |kpi16     |kpo02          |kpi18        |kpi06                  |kpi07                 |kpi08         |kpi09            |kpi10       |kpi11     |kpi12           |kpi13          |kpi14       |gen02_pm  |kpi15                               ]
+[kpi05     |kpi16     |kpo02          |kpi18        |kpi06                  |kpi07                 |kpi08         |kpi09            |kpi10       |kpi11     |kpi12           |kpi13          |kpi14       |gen02_pm  |kpi15                               ]
+[kpi05     |kpi16     |kpo02          |kpi18        |kpi06                  |kpi07                 |kpi08         |kpi09            |kpi10       |kpi11     |kpi12           |kpi13          |kpi14       |gen02_pm  |kpi15                               ]
+[kpi05     |kpi16     |kpo02          |kpi18        |kpi06                  |kpi07                 |kpi08         |kpi09            |kpi10       |kpi11     |kpi12           |kpi13          |kpi14       |gen02_pm  |kpi15                               ]
+[kpi05     |kpi16     |kpo02          |kpi18        |kpi06                  |kpi07                 |kpi08         |kpi09            |kpi10       |kpi11     |kpi12           |kpi13          |kpi14       |gen02_pm  |kpi15                               ]
+[kpi05     |kpi16     |kpo02          |kpi18        |kpi06                  |kpi07                 |kpi08         |kpi09            |kpi10       |kpi11     |kpi12           |kpi13          |kpi14       |gen02_pm  |kpi15                               ]
+[kpi05     |kpi16     |kpo02          |kpi18        |kpi06                  |kpi07                 |kpi08         |kpi09            |kpi10       |kpi11     |kpi12           |kpi13          |kpi14       |gen02_pm  |kpi15                               ]
+
+}
+END -- s_kpi
+Grid gr5
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr5
+END -- vb6
+END -- p_kpi_nj
+
+ATTRIBUTES
+Edit kpi01=formonly.kpi01 type VARCHAR, tabIndex=1, not null, required;
+Edit kpi02=formonly.kpi02 type VARCHAR, tabIndex=2, not null, required;
+ButtonEdit kpi04=formonly.kpi04 type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=4, noEntry;
+ButtonEdit kpi03=formonly.kpi03 type CHAR, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=6, noEntry;
+Edit kpi17=formonly.kpi17 type CHAR, tabIndex=29, not null, required;
+Edit kpi12_t=formonly.kpi12_t type CHAR, tabIndex=21;
+Edit slk_hr=formonly.slk_hr type CHAR, tabIndex=23;
+Edit kpi13_t=formonly.kpi13_t type CHAR, tabIndex=22;
+Edit alm_hr=formonly.alm_hr type CHAR, tabIndex=24;
+Edit art_hr=formonly.art_hr type CHAR, tabIndex=25;
+Edit axr_hr=formonly.axr_hr type CHAR, tabIndex=26;
+Edit pkg_hr=formonly.pkg_hr type CHAR, tabIndex=27;
+Edit pos_hr=formonly.pos_hr type CHAR, tabIndex=28;
+Edit oth_hr=formonly.oth_hr type CHAR, tabIndex=31;
+Edit kpi05=formonly.kpi05 type VARCHAR, tabIndex=7, title="Line#", not null, required;
+ButtonEdit kpi16=formonly.kpi16 type CHAR, action=controlp, tabIndex=33, title=%"Category", not null, required, image="zoom.png";
+Edit kpo02=formonly.kpo02 type VARCHAR, tabIndex=32, title="Description", noEntry;
+ButtonEdit kpi18=formonly.kpi18 type CHAR, action=controlp, tabIndex=30, title="Project No.", image="zoom.png";
+Edit kpi06=formonly.kpi06 type CHAR, tabIndex=8, title="FUN/BUG Note";
+ComboBox kpi07=formonly.kpi07 type CHAR, tabIndex=9, title="Version No.", items=(("1", "3.0"),("2", "5.0"),("3", "5.1"),("4", "5.2"));
+Edit kpi08=formonly.kpi08 type CHAR, tabIndex=10, title="Program No.", not null, required;
+Edit kpi09=formonly.kpi09 type CHAR, tabIndex=11, title="Standard Hours";
+ComboBox kpi10=formonly.kpi10 type CHAR, tabIndex=12, title="Status", not null, required, items=(("1", "unprocessing"),("2", "processing"),("3", "finished"));
+Edit kpi11=formonly.kpi11 type CHAR, tabIndex=13, title="Finish %", not null, required;
+Edit kpi12=formonly.kpi12 type CHAR, tabIndex=14, title="Hours Accounted", noEntry;
+Edit kpi13=formonly.kpi13 type CHAR, tabIndex=15, title="Actual Hours", not null, required;
+ButtonEdit kpi14=formonly.kpi14 type CHAR, action=controlp, tabIndex=16, title="PM", not null, required, image="zoom.png";
+Edit gen02_pm=formonly.gen02_pm type CHAR, tabIndex=17, title="PM Name", noEntry;
+TextEdit kpi15=formonly.kpi15 type CHAR, tabIndex=20, title="Memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_kpi(formonly.kpi05,formonly.kpi16,formonly.kpo02,formonly.kpi18,formonly.kpi06,formonly.kpi07,formonly.kpi08,formonly.kpi09,formonly.kpi10,formonly.kpi11,formonly.kpi12,formonly.kpi13,formonly.kpi14,formonly.gen02_pm,formonly.kpi15)
+SCREEN RECORD Undefined(formonly.kpi01,formonly.kpi02,formonly.kpi04,formonly.gen02,formonly.kpi03,formonly.gem02,formonly.kpi17,formonly.kpi12_t,formonly.slk_hr,formonly.kpi13_t,formonly.alm_hr,formonly.art_hr,formonly.axr_hr,formonly.pkg_hr,formonly.pos_hr,formonly.oth_hr,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

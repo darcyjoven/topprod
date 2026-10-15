@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aic/42f/aici020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aici020")
+VBox vb8
+Folder pc1
+Page Page1(text=%"Population Data Maintain")
+Grid gr1
+{
+  Population No.  [icu01                                   ]  Routing No.  [icu02          ]
+  Item Descript.  [ima02                                   ] [icu03      ]
+  Standards       [ima021                                  ]
+
+
+}
+END -- gr1
+END -- Page1
+Page Page2(text=%"Code Type Maintain")
+Grid gr6
+{
+ <G gb3                          > <G gb4                          >
+  Fixed Value    [icu04     ]       Fixed Value    [icu09     ]
+  Lead/Behind    [icu05     ]       Lead/Behind    [icu10     ]
+  Start No.      [icu06     ]       Start No.      [icu11     ]
+  Ending No.     [icu07     ]       Ending No.     [icu12     ]
+  Curr.Used No.  [icu08     ]       Curr.Used No.  [icu13     ]
+ <                               > <                               >
+}
+END -- gr6
+END -- Page2
+END -- pc1
+Table tb1
+{
+[icv03       |icv04          |ecd02               |icv05               |icv06               |icv07   |icv08               |icv09               |icv10          ]
+[icv03       |icv04          |ecd02               |icv05               |icv06               |icv07   |icv08               |icv09               |icv10          ]
+[icv03       |icv04          |ecd02               |icv05               |icv06               |icv07   |icv08               |icv09               |icv10          ]
+[icv03       |icv04          |ecd02               |icv05               |icv06               |icv07   |icv08               |icv09               |icv10          ]
+[icv03       |icv04          |ecd02               |icv05               |icv06               |icv07   |icv08               |icv09               |icv10          ]
+[icv03       |icv04          |ecd02               |icv05               |icv06               |icv07   |icv08               |icv09               |icv10          ]
+}
+END -- tb1
+Grid gr7
+{
+ --------Rows[idx     ]/[cnt     ]--detail[cn2     ]--------
+
+
+
+}
+END -- gr7
+END -- vb8
+END -- aici020
+
+TABLES
+icv_file,
+icu_file,
+ima_file,
+ecd_file
+ATTRIBUTES
+ButtonEdit icu01=icu_file.icu01, action=CONTROLP, tabIndex=1, not null, required, image="zoom.png";
+Edit icu02=icu_file.icu02, tabIndex=4;
+Edit ima02=ima_file.ima02, tabIndex=2, noEntry;
+CheckBox icu03=icu_file.icu03, tabIndex=5, text="Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ima021=ima_file.ima021, tabIndex=3, noEntry;
+Group gb3:gb3, text="Total Code\n";
+Edit icu04=icu_file.icu04, tabIndex=6;
+ComboBox icu05=icu_file.icu05, tabIndex=7, items=(("1", "Lead"),("2", "Behind"));
+Edit icu06=icu_file.icu06, tabIndex=8, not null, required;
+Edit icu07=icu_file.icu07, tabIndex=9, not null, required;
+Edit icu08=icu_file.icu08, tabIndex=10, noEntry;
+Group gb4:gb4, text="Sub Code\n";
+Edit icu09=icu_file.icu09, tabIndex=11;
+ComboBox icu10=icu_file.icu10, tabIndex=12, items=(("1", "Lead"),("2", "Behind"));
+Edit icu11=icu_file.icu11, tabIndex=13, not null, required;
+Edit icu12=icu_file.icu12, tabIndex=14, not null, required;
+Edit icu13=icu_file.icu13, tabIndex=15, noEntry;
+Edit icv03=icv_file.icv03, tabIndex=16, title="Routing No.\n", not null, required;
+ButtonEdit icv04=icv_file.icv04, action=CONTROLP, tabIndex=17, title="Operat. No.\n", image="zoom.png";
+Edit ecd02=ecd_file.ecd02, tabIndex=19, title="Operat.desc.\n", noEntry;
+ComboBox icv05=icv_file.icv05, tabIndex=18, title="Routing Feature\n", not null, required, items=(("1", "Untest Wafer"),("2", "Tested Wafer"),("3", "Untest IC(DS)"),("4", "Untest IC"),("5", "Tested IC"));
+ButtonEdit icv06=icv_file.icv06, action=CONTROLP, tabIndex=20, title="Encode Standards", image="zoom.png";
+ButtonEdit icv07=icv_file.icv07, action=controlp, tabIndex=21, title=%"Main Group Code", image="zoom";
+Edit icv08=icv_file.icv08, tabIndex=25, title="Item Name";
+Edit icv09=icv_file.icv09, tabIndex=26, title="Item Desc";
+Edit icv10=icv_file.icv10, tabIndex=27, title="Off Item";
+Edit idx=formonly.idx type SMALLINT, tabIndex=22, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=24;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_icv(icv_file.icv03,icv_file.icv04,ecd_file.ecd02,icv_file.icv05,icv_file.icv06,icv_file.icv07,icv_file.icv08,icv_file.icv09,icv_file.icv10)
+SCREEN RECORD Undefined(icu_file.icu01,icu_file.icu02,ima_file.ima02,icu_file.icu03,ima_file.ima021,icu_file.icu04,icu_file.icu05,icu_file.icu06,icu_file.icu07,icu_file.icu08,icu_file.icu09,icu_file.icu10,icu_file.icu11,icu_file.icu12,icu_file.icu13,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

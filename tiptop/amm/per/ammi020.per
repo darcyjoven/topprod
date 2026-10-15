@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amm/42f/ammi020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ammi020")
+VBox VBox1
+Folder pc692
+Page page01(text="Main")
+Table s_mmi
+{
+[mmi01|mmi02               |mmi03|mmiac]
+[mmi01|mmi02               |mmi03|mmiac]
+[mmi01|mmi02               |mmi03|mmiac]
+[mmi01|mmi02               |mmi03|mmiac]
+[mmi01|mmi02               |mmi03|mmiac]
+[mmi01|mmi02               |mmi03|mmiac]
+[mmi01|mmi02               |mmi03|mmiac]
+[mmi01|mmi02               |mmi03|mmiac]
+[mmi01|mmi02               |mmi03|mmiac]
+[mmi01|mmi02               |mmi03|mmiac]
+
+}
+END -- s_mmi
+END -- page01
+END -- pc692
+Grid gr3741
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3741
+END -- VBox1
+END -- ammi020
+
+TABLES
+mmi_file
+ATTRIBUTES
+Edit mmi01=mmi_file.mmi01, tabIndex=1, title="Code", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit mmi02=mmi_file.mmi02, tabIndex=2, title="Name";
+Edit mmi03=mmi_file.mmi03, tabIndex=3, title="Area", noEntry;
+CheckBox mmiac=mmi_file.mmiacti, tabIndex=4, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_mmi(mmi_file.mmi01,mmi_file.mmi02,mmi_file.mmi03,mmi_file.mmiacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

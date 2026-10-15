@@ -1,0 +1,60 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi114.per created Wed Jan 23 05:30:32 2008
+-- File created from axdi114.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi114")
+-- TABLE
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1560
+      PAGE page01( TEXT="Page01")
+        TABLE   s_oby
+        {
+        [aa0          |aa1            |aa2    |aa3           |aa4    |aa5                           ]
+        [aa0          |aa1            |aa2    |aa3           |aa4    |aa5                           ]
+        [aa0          |aa1            |aa2    |aa3           |aa4    |aa5                           ]
+        [aa0          |aa1            |aa2    |aa3           |aa4    |aa5                           ]
+        [aa0          |aa1            |aa2    |aa3           |aa4    |aa5                           ]
+        [aa0          |aa1            |aa2    |aa3           |aa4    |aa5                           ]
+        [aa0          |aa1            |aa2    |aa3           |aa4    |aa5                           ]
+        [aa0          |aa1            |aa2    |aa3           |aa4    |aa5                           ]
+        [aa0          |aa1            |aa2    |aa3           |aa4    |aa5                           ]
+        [aa0          |aa1            |aa2    |aa3           |aa4    |aa5                           ]
+        }
+        END -- TABLE
+      END -- PAGE
+    END -- FOLDER
+    GRID gr7757
+    {
+     ----------Rows [aa6   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES oby_file
+
+ATTRIBUTES
+  BUTTONEDIT aa0=oby_file.oby01, ACTION=controlp, COMMENT="KEY Field, No Blank/Repeated! <^P>Qry Detail <^O>Copy Previous Record! ", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=1, TITLE="Vehicle No";
+  DATEEDIT aa1=oby_file.oby02, NOT NULL, REQUIRED, TABINDEX=2, TITLE="Initial Date";
+  EDIT aa2=oby_file.oby03, NOT NULL, REQUIRED, TABINDEX=3, TITLE="Time";
+  DATEEDIT aa3=oby_file.oby04, NOT NULL, REQUIRED, TABINDEX=4, TITLE="Expire Date";
+  EDIT aa4=oby_file.oby05, NOT NULL, REQUIRED, TABINDEX=5, TITLE="Time";
+  EDIT aa5=oby_file.oby06, TABINDEX=6, TITLE="Memo";
+  EDIT aa6=FORMONLY.cn2 TYPE SMALLINT, NOENTRY, TABINDEX=7;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_oby (oby_file.oby01, oby_file.oby02, oby_file.oby03, oby_file.oby04, oby_file.oby05, oby_file.oby06)
+END

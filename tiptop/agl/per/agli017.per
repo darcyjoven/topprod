@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli017.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"agli017")
+VBox vb2
+Grid gr1
+{
+
+  Group Code          [aaj01            ]
+  Parent Company      [aaj02            ]
+  Account No          [aaj00            ]
+}
+END -- gr1
+Grid gr2
+{
+
+  <T tb1                                                                                                      >
+  [aaj03   |aag02                         |aaj06   |aaj04   |aya02        |aaj05      |axl02                  ]
+  [aaj03   |aag02                         |aaj06   |aaj04   |aya02        |aaj05      |axl02                  ]
+  [aaj03   |aag02                         |aaj06   |aaj04   |aya02        |aaj05      |axl02                  ]
+  [aaj03   |aag02                         |aaj06   |aaj04   |aya02        |aaj05      |axl02                  ]
+  [aaj03   |aag02                         |aaj06   |aaj04   |aya02        |aaj05      |axl02                  ]
+  <                                                                                                           >
+}
+END -- gr2
+Grid gr3
+{
+
+  ----------[cnt   ] Rows [cn2   ]  ----------
+}
+END -- gr3
+END -- vb2
+END -- agli017
+
+TABLES
+aag_file,
+aya_file,
+axl_file,
+aaj_file
+ATTRIBUTES
+ButtonEdit aaj01=aaj_file.aaj01, action=controlp, tabIndex=10, not null, required, image="zoom.png";
+ButtonEdit aaj02=aaj_file.aaj02, action=controlp, tabIndex=11, not null, required, image="zoom.png";
+Edit aaj00=formonly.aaj00 type VARCHAR, tabIndex=1, noEntry, not null, required;
+Table tb1:tb1, width = 104 characters;
+ButtonEdit aaj03=aaj_file.aaj03, action=controlp, tabIndex=2, title=%"aaj03", not null, required, image="zoom.png";
+Edit aag02=aag_file.aag02, tabIndex=3, title=%"aag02", noEntry;
+ComboBox aaj06=aaj_file.aaj06, tabIndex=12, default = "+", title=%"aaj06", not null, required, items=(("+", "+"),("-", "-"));
+ButtonEdit aaj04=aaj_file.aaj04, action=controlp, tabIndex=4, title=%"aaj04", not null, required, image="zoom.png";
+Edit aya02=aya_file.aya02, tabIndex=5, title=%"aya02", noEntry;
+ButtonEdit aaj05=aaj_file.aaj05, action=controlp, tabIndex=6, title=%"aaj05", not null, required, image="zoom.png";
+Edit axl02=axl_file.axl02, tabIndex=9, title=%"axl02", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=7;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aaj(aaj_file.aaj03,aag_file.aag02,aaj_file.aaj06,aaj_file.aaj04,aya_file.aya02,aaj_file.aaj05,axl_file.axl02)
+SCREEN RECORD Undefined(aaj_file.aaj01,aaj_file.aaj02,formonly.aaj00,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

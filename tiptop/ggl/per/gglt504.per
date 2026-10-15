@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt504.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglt504")
+Folder pc831
+Page page01(text="Page01")
+VBox vb2
+Grid gr1
+{
+  Year [yy        ]     Month [mm1  ] - [mm2  ]           Currency [azi01     ]        Unit [unit         ]
+
+
+}
+END -- gr1
+Table s_aag
+{
+[nml02                                                   |nml05    |tia08a                 |tia08b                       ]
+[nml02                                                   |nml05    |tia08a                 |tia08b                       ]
+[nml02                                                   |nml05    |tia08a                 |tia08b                       ]
+[nml02                                                   |nml05    |tia08a                 |tia08b                       ]
+[nml02                                                   |nml05    |tia08a                 |tia08b                       ]
+[nml02                                                   |nml05    |tia08a                 |tia08b                       ]
+[nml02                                                   |nml05    |tia08a                 |tia08b                       ]
+[nml02                                                   |nml05    |tia08a                 |tia08b                       ]
+[nml02                                                   |nml05    |tia08a                 |tia08b                       ]
+[nml02                                                   |nml05    |tia08a                 |tia08b                       ]
+
+}
+END -- s_aag
+END -- vb2
+END -- page01
+END -- pc831
+END -- gglt504
+
+ATTRIBUTES
+Edit yy=formonly.yy type CHAR, tabIndex=7;
+Edit mm1=formonly.mm1 type CHAR, tabIndex=8;
+Edit mm2=formonly.mm2 type CHAR, tabIndex=9;
+Edit azi01=formonly.azi01 type CHAR, tabIndex=5;
+ComboBox unit=formonly.unit type CHAR, tabIndex=6, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+Edit nml02=formonly.nml02 type VARCHAR, tabIndex=1, title="Account Name", comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit nml05=formonly.nml05 type CHAR, tabIndex=2, title="Line#";
+Edit tia08a=formonly.tia08a type CHAR, tabIndex=3, title="col1_sum";
+Edit tia08b=formonly.tia08b type CHAR, tabIndex=4, title="col2_sum";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nml(formonly.nml02,formonly.nml05,formonly.tia08a,formonly.tia08b)
+SCREEN RECORD Undefined(formonly.yy,formonly.mm1,formonly.mm2,formonly.azi01,formonly.unit)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp100_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="axcp100_1")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Table cap
+{
+[cap01   |cap02    |cap03               |ima02            |ima021  |cap04   |cap05   |cap06   |cap07   |cap08   |cap09   |cap18   |cap10   |cap19   |cap11   |cap12   |cap13   |cap14   |cap15   |cap16   |cap17   ]
+[cap01   |cap02    |cap03               |ima02            |ima021  |cap04   |cap05   |cap06   |cap07   |cap08   |cap09   |cap18   |cap10   |cap19   |cap11   |cap12   |cap13   |cap14   |cap15   |cap16   |cap17   ]
+[cap01   |cap02    |cap03               |ima02            |ima021  |cap04   |cap05   |cap06   |cap07   |cap08   |cap09   |cap18   |cap10   |cap19   |cap11   |cap12   |cap13   |cap14   |cap15   |cap16   |cap17   ]
+[cap01   |cap02    |cap03               |ima02            |ima021  |cap04   |cap05   |cap06   |cap07   |cap08   |cap09   |cap18   |cap10   |cap19   |cap11   |cap12   |cap13   |cap14   |cap15   |cap16   |cap17   ]
+[cap01   |cap02    |cap03               |ima02            |ima021  |cap04   |cap05   |cap06   |cap07   |cap08   |cap09   |cap18   |cap10   |cap19   |cap11   |cap12   |cap13   |cap14   |cap15   |cap16   |cap17   ]
+
+}
+END -- cap
+END -- page01
+END -- folder01
+Grid gr3
+{
+
+   tot_cap10   [tot_cap10           ]
+   tot_cap11   [tot_cap11           ]
+   tot_cap13   [tot_cap13           ]
+  ----------------------------------
+  rows[cn        ]/[cnt       ]
+
+
+}
+END -- gr3
+END -- VBox1
+END -- axcp100_1
+
+TABLES
+cap_file
+ATTRIBUTES
+Edit cap01=cap_file.cap01, tabIndex=1, title="cap01";
+Edit cap02=cap_file.cap02, tabIndex=2, title="cap02";
+Edit cap03=cap_file.cap03, tabIndex=3, title=%"cap03";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=4, title=%"ima02";
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=5, title=%"ima021";
+Edit cap04=cap_file.cap04, tabIndex=6, title=%"cap04";
+Edit cap05=cap_file.cap05, tabIndex=7, title=%"cap05";
+Edit cap06=cap_file.cap06, tabIndex=8, title=%"cap06";
+Edit cap07=cap_file.cap07, tabIndex=9, title=%"cap07";
+Edit cap08=cap_file.cap08, tabIndex=10, title=%"cap08";
+Edit cap09=cap_file.cap09, tabIndex=11, title=%"cap09";
+Edit cap18=cap_file.cap18, tabIndex=25, title=%"cap18";
+Edit cap10=cap_file.cap10, tabIndex=12, title=%"cap10";
+Edit cap19=cap_file.cap19, tabIndex=26, title=%"cap19";
+Edit cap11=cap_file.cap11, tabIndex=13, title=%"cap11";
+Edit cap12=cap_file.cap12, tabIndex=14, title=%"cap12";
+Edit cap13=cap_file.cap13, tabIndex=15, title=%"cap13";
+Edit cap14=cap_file.cap14, tabIndex=16, title=%"cap14";
+Edit cap15=cap_file.cap15, tabIndex=17, title=%"cap15";
+Edit cap16=cap_file.cap16, tabIndex=18, title=%"cap16";
+Edit cap17=cap_file.cap17, tabIndex=19, title=%"cap17";
+Edit tot_cap10=formonly.tot_cap10 type DECIMAL, tabIndex=22;
+Edit tot_cap11=formonly.tot_cap11 type DECIMAL, tabIndex=23;
+Edit tot_cap13=formonly.tot_cap13 type DECIMAL, tabIndex=24;
+Edit cn=formonly.cn type INTEGER, tabIndex=20;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=21;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cap(cap_file.cap01,cap_file.cap02,cap_file.cap03,formonly.ima02,formonly.ima021,cap_file.cap04,cap_file.cap05,cap_file.cap06,cap_file.cap07,cap_file.cap08,cap_file.cap09,cap_file.cap18,cap_file.cap10,cap_file.cap19,cap_file.cap11,cap_file.cap12,cap_file.cap13,cap_file.cap14,cap_file.cap15,cap_file.cap16,cap_file.cap17)
+SCREEN RECORD Undefined(formonly.tot_cap10,formonly.tot_cap11,formonly.tot_cap13,formonly.cn,formonly.cnt)
+END -- INSTRUCTIONS
+

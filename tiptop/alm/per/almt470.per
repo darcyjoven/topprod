@@ -1,0 +1,208 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/alm/4fd/almt470.tmp.per created 2010-10-25T17:54:23
+-- File created from /u3/tiptop/alm/4fd/almt470.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almt470")
+                                                                                                                                                                    
+    VBox vb8                                                                                                                                                        
+    Folder pc5                                                                                                                                                      
+    Page Page9(text=%"Basic Date")                                                                                                                                  
+    Grid gr17                                                                                                                                                       
+    {                                                                                                                                                               
+                                                                                                                                                                    
+     Return Type      [lrd02             ]                     Return Total Amt. [lrd12               ] Confirmation  [lrd33       |imgmksg]                        
+     Return No.       [lrd01             ]                     Return Amt.?      [lrd13               ] Confirmed By  [lrd34       |       ]                        
+     Sales No.        [lrd03             ]                     Deduct Amt.       [lrd14               ] Confirmed Date[lrd35       ]                                
+     Voucher No.      [lrd04                 ]                 Return Amt.       [lrd15               ] Remark        [lrd32                         ]              
+     Sale Contract No.[lra03           ]                       Discount Amt      [lrd16               ]               [                              ]              
+     Contract No.     [lrd05             ]                     Return Amt.       [lrd17               ]                                                             
+     Business No.     [lrd06       |lne05                     ]Payment direction [lrd18     ]                                                                       
+     Stall No.        [lrd07             ]                     Recovery Note Amt.[lrd22               ]                                                             
+     Sales Total Amt. [lra04               ]                   Recovery Note Amt.[lrd23               ]                                                             
+     Paid Amount      [lra10               ]                   Overflow Amt.     [lrd41               ]                                                             
+     Payable Amt      [lra11               ]                                                                                                                        
+                                                                                                                                                                    
+    }                                                                                                                                                               
+    END                                                                                                                                                             
+    END -- Page                                                                                                                                                     
+    Page Page4(text=%"Stall Info")                                                                                                                                  
+     Grid gr4                                                                                                                                                       
+     {                                                                                                                                                              
+                                                                                                                                                                    
+      Market Director [lrd25       ]                                                                                                                                
+      Director Phones [lrd26               ]                                                                                                                        
+      Store No.       [lrdplant    |lma02                     ]                                                                                                     
+      Corporation     [lrdlegal    |azt02                     ]                                                                                                     
+      Building        [lrd38       |lmb03                     ]                                                                                                     
+      Floor           [lrd39       |lmc04                     ]                                                                                                     
+      Brand No.       [lrd08       |tqa02                     ]                                                                                                     
+                                                                                                                                                                    
+                                                                                                                                                                    
+     }                                                                                                                                                              
+     END                                                                                                                                                            
+    END -- Page                                                                                                                                                     
+    Page Page17(text=%"Return Info")                                                                                                                                
+    Grid gr9                                                                                                                                                        
+    {                                                                                                                                                               
+                                                                                                                                                                    
+     Return Date       [lrd24       |lrd241    ]                                                                                                                    
+     Return Reason     [lrd31       ]                                                                                                                               
+     Return Description[azf03_1                                           ]                                                                                         
+     Member Card No.   [lrd27               ]                                                                                                                       
+     Customer Name     [lrd28               ]                                                                                                                       
+     Customer Phone    [lrd29               ]                                                                                                                       
+     Delivery Address  [lrd30                         ]                                                                                                             
+                       [                              ]                                                                                                             
+                                                                                                                                                                    
+                                                                                                                                                                    
+    }                                                                                                                                                               
+    END                                                                                                                                                             
+    END -- Page                                                                                                                                                     
+    Page info(text=%"Info")                                                                                                                                         
+    Grid gr16                                                                                                                                                       
+    {                                                                                                                                                               
+                                                                                                                                                                    
+     Data User    [lrduser   ] crat  [lrdcrat     ] acti       [lrdacti     ]                                                                                       
+     Data Group   [lrdgrup   ] Modify[lrdmodu     ] Modify Date[lrddate     ]                                                                                       
+     Record Orig. [lrdoriu   ]                                                                                                                                      
+     Dept Orig.   [lrdorig   ]                                                                                                                                      
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+    }                                                                                                                                                               
+    END                                                                                                                                                             
+    END -- Page                                                                                                                                                     
+    END -- Folder                                                                                                                                                   
+    Folder pc2                                                                                                                                                      
+    Page Page5(action=fixup1, text=%"Commodities Info")                                                                                                             
+     Table s_lre                                                                                                                                                    
+     {                                                                                                                                                              
+     [lre02                 |lmu02                         |lrb03     |lrb04               |lrb05               |lrb06               |lre03               ]         
+     [lre02                 |lmu02                         |lrb03     |lrb04               |lrb05               |lrb06               |lre03               ]         
+     [lre02                 |lmu02                         |lrb03     |lrb04               |lrb05               |lrb06               |lre03               ]         
+     [lre02                 |lmu02                         |lrb03     |lrb04               |lrb05               |lrb06               |lre03               ]         
+     [lre02                 |lmu02                         |lrb03     |lrb04               |lrb05               |lrb06               |lre03               ]         
+                                                                                                                                                                    
+     }                                                                                                                                                              
+     END -- Table                                                                                                                                                   
+    END -- Page                                                                                                                                                     
+    Page Page6(action=fixup2, text=%"Payment Info")                                                                                                                 
+     Table s_lsy                                                                                                                                                    
+     {                                                                                                                                                              
+     [lsy02             |lrc03               |lrc04               |lrc05               |lrc06               |lrc14               |lsy03               ]             
+     [lsy02             |lrc03               |lrc04               |lrc05               |lrc06               |lrc14               |lsy03               ]             
+     [lsy02             |lrc03               |lrc04               |lrc05               |lrc06               |lrc14               |lsy03               ]             
+     [lsy02             |lrc03               |lrc04               |lrc05               |lrc06               |lrc14               |lsy03               ]             
+     [lsy02             |lrc03               |lrc04               |lrc05               |lrc06               |lrc14               |lsy03               ]             
+                                                                                                                                                                    
+     }                                                                                                                                                              
+     END -- Table                                                                                                                                                   
+    END -- Page                                                                                                                                                     
+    END -- Folder                                                                                                                                                   
+    Grid gr15                                                                                                                                                       
+    {                                                                                                                                                               
+     --------Rows[idx   ]/[cnt    ]  ---Details[cn2   ]------                                                                                                       
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+    }                                                                                                                                                               
+    END                                                                                                                                                             
+    END -- VBox                                                                                                                                                     
+END -- Form
+
+TABLES
+lrd_file
+lre_file
+lsy_file
+
+ATTRIBUTES
+ComboBox lrd02=lrd_file.lrd02, tabIndex=40, not null, items=(("0", "Normal Return"),("1", "Adjustment Return"));
+Edit lrd12=lrd_file.lrd12, tabIndex=26, noEntry, not null;
+ComboBox lrd33=lrd_file.lrd33, tabIndex=37, noEntry, not null, items=(("Y", "Confirmed"),("N", "UnConfirmed"));
+Image imgmksg=formonly.imgmksg;
+ButtonEdit lrd01=lrd_file.lrd01, action=controlp, tabIndex=15, not null, required, image="zoom.png";
+Edit lrd13=lrd_file.lrd13, tabIndex=27, noEntry, not null;
+Edit lrd34=lrd_file.lrd34, tabIndex=35, noEntry;
+ButtonEdit lrd03=lrd_file.lrd03, action=controlp, tabIndex=16, not null, image="zoom.png";
+Edit lrd14=lrd_file.lrd14, tabIndex=28, noEntry, not null;
+DateEdit lrd35=lrd_file.lrd35, tabIndex=36, noEntry;
+ButtonEdit lrd04=lrd_file.lrd04, action=controlp, tabIndex=17, not null, image="zoom.png";
+Edit lrd15=lrd_file.lrd15, tabIndex=29, noEntry, not null;
+TextEdit lrd32=lrd_file.lrd32, tabIndex=38;
+Edit lra03=formonly.lra03, tabIndex=18, noEntry;
+Edit lrd16=lrd_file.lrd16, tabIndex=30, noEntry, not null;
+ButtonEdit lrd05=lrd_file.lrd05, action=controlp, tabIndex=19, noEntry, image="zoom.png";
+Edit lrd17=lrd_file.lrd17, tabIndex=31, noEntry, not null;
+ButtonEdit lrd06=lrd_file.lrd06, action=controlp, tabIndex=20, noEntry, image="zoom.png";
+Edit lne05=formonly.lne05, tabIndex=22, noEntry;
+ComboBox lrd18=lrd_file.lrd18, tabIndex=32, not null, items=(("T", "Return"),("S", "Pay"));
+ButtonEdit lrd07=lrd_file.lrd07, action=controlp, tabIndex=21, noEntry, image="zoom.png";
+Edit lrd22=lrd_file.lrd22, tabIndex=33, noEntry, not null;
+Edit lra04=formonly.lra04, tabIndex=23, noEntry;
+Edit lrd23=lrd_file.lrd23, tabIndex=34, noEntry, not null;
+Edit lra10=formonly.lra10, tabIndex=24, noEntry;
+Edit lrd41=lrd_file.lrd41, tabIndex=65, noEntry;
+Edit lra11=formonly.lra11, tabIndex=25, noEntry;
+Edit lrd25=lrd_file.lrd25, tabIndex=59, noEntry;
+Edit lrd26=lrd_file.lrd26, tabIndex=60, noEntry;
+ButtonEdit lrdplant=lrd_file.lrdplant, action=controlp, tabIndex=66, noEntry, image="zoom.png";
+Edit lma02=formonly.lma02, tabIndex=68, noEntry;
+ButtonEdit lrdlegal=lrd_file.lrdlegal, action=controlp, tabIndex=67, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02, tabIndex=69, noEntry;
+ButtonEdit lrd38=lrd_file.lrd38, action=controlp, tabIndex=43, noEntry, image="zoom.png";
+Edit lmb03=formonly.lmb03, tabIndex=45, noEntry;
+ButtonEdit lrd39=lrd_file.lrd39, action=controlp, tabIndex=44, noEntry, image="zoom.png";
+Edit lmc04=formonly.lmc04, tabIndex=46, noEntry;
+ButtonEdit lrd08=lrd_file.lrd08, action=controlp, tabIndex=47, noEntry, image="zoom.png";
+Edit tqa02=formonly.tqa02, tabIndex=42, noEntry;
+DateEdit lrd24=lrd_file.lrd24, tabIndex=55, noEntry, not null;
+Edit lrd241=lrd_file.lrd241, tabIndex=58, noEntry;
+ButtonEdit lrd31=lrd_file.lrd31, action=controlp, tabIndex=56, image="zoom.png";
+Edit azf03_1=formonly.azf03_1, tabIndex=57, noEntry;
+Edit lrd27=lrd_file.lrd27, tabIndex=52, noEntry;
+Edit lrd28=lrd_file.lrd28, tabIndex=53, noEntry;
+Edit lrd29=lrd_file.lrd29, tabIndex=54, noEntry;
+TextEdit lrd30=lrd_file.lrd30, tabIndex=61;
+Edit lrduser=formonly.lrduser type VARCHAR, tabIndex=6, noEntry;
+DateEdit lrdcrat=formonly.lrdcrat type DATE, tabIndex=11, noEntry;
+Edit lrdacti=formonly.lrdacti type VARCHAR, tabIndex=8, noEntry;
+Edit lrdgrup=formonly.lrdgrup type VARCHAR, tabIndex=9, noEntry;
+Edit lrdmodu=formonly.lrdmodu type VARCHAR, tabIndex=7, noEntry;
+DateEdit lrddate=formonly.lrddate type VARCHAR, tabIndex=10, noEntry;
+Edit lrdoriu=formonly.lrdoriu type VARCHAR, tabIndex=70, noEntry;
+Edit lrdorig=formonly.lrdorig type VARCHAR, tabIndex=71, noEntry;
+ButtonEdit lre02=lre_file.lre02, action=controlp, tabIndex=4, title="Commodities No.", noEntry, not null, required, image="zoom.png";
+Edit lmu02=formonly.lmu02, tabIndex=5, title="Commodities Name", noEntry;
+Edit lrb03=formonly.lrb03, tabIndex=12, title="Quantity", noEntry;
+Edit lrb04=formonly.lrb04, tabIndex=13, title="Unit Price", noEntry;
+Edit lrb05=formonly.lrb05, tabIndex=39, title="Amount", noEntry;
+Edit lrb06=formonly.lrb06, tabIndex=41, title="Amt.", noEntry;
+Edit lre03=lre_file.lre03, tabIndex=14, title="Return Amt.", not null;
+ButtonEdit lsy02=lsy_file.lsy02, action=controlp, tabIndex=48, title="Payment No.", noEntry, not null, image="zoom.png";
+Edit lrc03=formonly.lrc03 type DECIMAL, tabIndex=49, title="Payment Voucher No.", noEntry;
+Edit lrc04=formonly.lrc04 type DECIMAL, tabIndex=50, title="Payment Amt.", noEntry;
+Edit lrc05=formonly.lrc05, tabIndex=62, title="Discount Amt.", noEntry;
+Edit lrc06=formonly.lrc06, tabIndex=63, title="Paymented Amt.", noEntry;
+Edit lrc14=formonly.lrc14 type DECIMAL, tabIndex=51, title="Retuen Amt.?", noEntry;
+Edit lsy03=lsy_file.lsy03, tabIndex=64, title="Return Amt.", not null;
+Edit idx=formonly.idx, tabIndex=1, noEntry;
+Edit cnt=formonly.cnt, tabIndex=3, noEntry;
+Edit cn2=formonly.cn2, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lre(lre_file.lre02, formonly.lmu02, formonly.lrb03, formonly.lrb04, formonly.lrb05, formonly.lrb06, lre_file.lre03)
+SCREEN RECORD s_lsy(lsy_file.lsy02, formonly.lrc03, formonly.lrc04, formonly.lrc05, formonly.lrc06, formonly.lrc14, lsy_file.lsy03)
+END -- INSTRUCTIONS
+

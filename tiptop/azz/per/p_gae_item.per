@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_gae_item.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_gae_item")
+VBox VBox1
+Grid gr3200
+{
+ <G group01                                      >
+  Program ID       [gae01                       ]
+  Field ID         [gae02                       ]
+  Industry         [gae12                       ]
+ [gae11                                         ]
+ <                                               >
+}
+END -- gr3200
+Table sub_gae
+{
+[gae03|gae04                                  |gae05         ]
+[gae03|gae04                                  |gae05         ]
+[gae03|gae04                                  |gae05         ]
+[gae03|gae04                                  |gae05         ]
+[gae03|gae04                                  |gae05         ]
+
+}
+END -- sub_gae
+END -- VBox1
+END -- p_gae_item
+
+TABLES
+gae_file
+ATTRIBUTES
+Group group01:group01;
+Edit gae01=gae_file.gae01, tabIndex=1, noEntry;
+Edit gae02=gae_file.gae02, tabIndex=2, noEntry;
+Edit gae12=gae_file.gae12, tabIndex=7, noEntry;
+CheckBox gae11=gae_file.gae11, tabIndex=3, text="Editing a Customized PER-File Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox gae03=gae_file.gae03, tabIndex=4, title="Lang", not null, required;
+Edit gae04=gae_file.gae04, tabIndex=5, title="UI Description", scroll;
+Edit gae05=gae_file.gae05, tabIndex=6, title="Comment", scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD sub_gae(gae_file.gae03,gae_file.gae04,gae_file.gae05)
+SCREEN RECORD Undefined(gae_file.gae01,gae_file.gae02,gae_file.gae12,gae_file.gae11)
+END -- INSTRUCTIONS
+

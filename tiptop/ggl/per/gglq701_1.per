@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq701_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq701_1")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr5447
+{
+ Book No.[o             ] Year [yy        ] Period[m1  ]-[m2 ]  [label1         ][a           ] [label2    |b          ][g            |e            |f               ][i               ]
+
+
+}
+END -- gr5447
+END -- page01
+END -- folder01
+Table s_aed
+{
+[aed01       |aag02       |aed02                     |aed02_d                     |ted09     |pb_dc     |pb_balf               |abb25_pb       |pb_bal                |df                         |abb25_d        |d                          |cf                          |abb25_c        |c                           |dc      |balf            |abb25_bal |bal             ]
+[aed01       |aag02       |aed02                     |aed02_d                     |ted09     |pb_dc     |pb_balf               |abb25_pb       |pb_bal                |df                         |abb25_d        |d                          |cf                          |abb25_c        |c                           |dc      |balf            |abb25_bal |bal             ]
+[aed01       |aag02       |aed02                     |aed02_d                     |ted09     |pb_dc     |pb_balf               |abb25_pb       |pb_bal                |df                         |abb25_d        |d                          |cf                          |abb25_c        |c                           |dc      |balf            |abb25_bal |bal             ]
+[aed01       |aag02       |aed02                     |aed02_d                     |ted09     |pb_dc     |pb_balf               |abb25_pb       |pb_bal                |df                         |abb25_d        |d                          |cf                          |abb25_c        |c                           |dc      |balf            |abb25_bal |bal             ]
+[aed01       |aag02       |aed02                     |aed02_d                     |ted09     |pb_dc     |pb_balf               |abb25_pb       |pb_bal                |df                         |abb25_d        |d                          |cf                          |abb25_c        |c                           |dc      |balf            |abb25_bal |bal             ]
+[aed01       |aag02       |aed02                     |aed02_d                     |ted09     |pb_dc     |pb_balf               |abb25_pb       |pb_bal                |df                         |abb25_d        |d                          |cf                          |abb25_c        |c                           |dc      |balf            |abb25_bal |bal             ]
+[aed01       |aag02       |aed02                     |aed02_d                     |ted09     |pb_dc     |pb_balf               |abb25_pb       |pb_bal                |df                         |abb25_d        |d                          |cf                          |abb25_c        |c                           |dc      |balf            |abb25_bal |bal             ]
+[aed01       |aag02       |aed02                     |aed02_d                     |ted09     |pb_dc     |pb_balf               |abb25_pb       |pb_bal                |df                         |abb25_d        |d                          |cf                          |abb25_c        |c                           |dc      |balf            |abb25_bal |bal             ]
+[aed01       |aag02       |aed02                     |aed02_d                     |ted09     |pb_dc     |pb_balf               |abb25_pb       |pb_bal                |df                         |abb25_d        |d                          |cf                          |abb25_c        |c                           |dc      |balf            |abb25_bal |bal             ]
+[aed01       |aag02       |aed02                     |aed02_d                     |ted09     |pb_dc     |pb_balf               |abb25_pb       |pb_bal                |df                         |abb25_d        |d                          |cf                          |abb25_c        |c                           |dc      |balf            |abb25_bal |bal             ]
+}
+END -- s_aed
+Grid gr5449
+{
+ ----------- Rows [cnt   ] -----------
+
+}
+END -- gr5449
+END -- VBox1
+END -- gglq701_1
+
+ATTRIBUTES
+ButtonEdit o=formonly.o type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit yy=formonly.yy type VARCHAR, tabIndex=2;
+Edit m1=formonly.m1 type SMALLINT, tabIndex=3;
+Edit m2=formonly.m2 type SMALLINT, tabIndex=4;
+Label label1:Label1, text=%"Dimension Sequence";
+ComboBox a=formonly.a type CHAR, tabIndex=5, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"),("10", "10"),("99", "99"));
+Label label2:Label2, text=%"Document status";
+ComboBox b=formonly.b type CHAR, tabIndex=6, items=(("1", "ALL"),("2", "Posted"));
+CheckBox g=formonly.g type CHAR, tabIndex=7, text="Unaudited", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=8, text="Aggregated By Curr.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type CHAR, tabIndex=9, text="Print Foreign Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox i=formonly.i type CHAR, tabIndex=30, text="include the transfer certificate", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit aed01=formonly.aed01 type VARCHAR, action=controlp, tabIndex=10, title=%"aed01", image="zoom";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=11, title=%"aag02";
+ButtonEdit aed02=formonly.aed02 type VARCHAR, action=controlp, tabIndex=12, title="Dimension Code", image="zoom";
+Edit aed02_d=formonly.aed02_d type VARCHAR, tabIndex=13, title="Dimension Description";
+ButtonEdit ted09=formonly.ted09 type CHAR, action=controlp, tabIndex=14, title=%"Currency", image="zoom";
+Edit pb_dc=formonly.pb_dc type CHAR, tabIndex=15, title="DC(BOP)";
+Edit pb_balf=formonly.pb_balf type CHAR, tabIndex=16, title="Initial Balance(T.C)";
+Edit abb25_pb=formonly.abb25_pb type CHAR, tabIndex=17, title=%"Exchange Rate";
+Edit pb_bal=formonly.pb_bal type CHAR, tabIndex=18, title="Beginning";
+Edit df=formonly.df type CHAR, tabIndex=19, title=%"Debit Amount(T.C)";
+Edit abb25_d=formonly.abb25_d type CHAR, tabIndex=20, title=%"Exchange Rate";
+Edit d=formonly.d type CHAR, tabIndex=21, title="Debit Amount";
+Edit cf=formonly.cf type CHAR, tabIndex=22, title=%"Credit Amount(T.C)";
+Edit abb25_c=formonly.abb25_c type CHAR, tabIndex=23, title=%"Exchange Rate";
+Edit c=formonly.c type CHAR, tabIndex=24, title="Credit Amount";
+Edit dc=formonly.dc type CHAR, tabIndex=25, title="D/C";
+Edit balf=formonly.balf type CHAR, tabIndex=26, title=%"Balance T.C";
+Edit abb25_bal=formonly.abb25_bal type CHAR, tabIndex=27, title=%"Exchange Rate";
+Edit bal=formonly.bal type CHAR, tabIndex=28, title="Balance";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aed(formonly.aed01,formonly.aag02,formonly.aed02,formonly.aed02_d,formonly.ted09,formonly.pb_dc,formonly.pb_balf,formonly.abb25_pb,formonly.pb_bal,formonly.df,formonly.abb25_d,formonly.d,formonly.cf,formonly.abb25_c,formonly.c,formonly.dc,formonly.balf,formonly.abb25_bal,formonly.bal)
+SCREEN RECORD Undefined(formonly.yy,formonly.cnt,formonly.o,formonly.m1,formonly.m2,formonly.f,formonly.e,formonly.a,formonly.b,formonly.g,formonly.i)
+END -- INSTRUCTIONS
+

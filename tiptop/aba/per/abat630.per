@@ -1,0 +1,135 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abat630.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Main")
+Grid Grid1
+{
+
+ ibf01  [ibf01                 ]  ibf03  [ibf03        ]        ibf07 [ibf07              ]
+ ibf04  [ibf04        ]           ibf05  [ibf05             ]         [ima02               ]
+[ibf02           ]                ibf06  [ibf06             ]         [ima021              ]
+                                                                ibf08 [ibf08     ]
+
+}
+END -- Grid1
+END -- Page1
+Page info(text=%"Info")
+Grid gr40
+{
+ Record Owner        [ibfuser   ] Last Modified by    [ibfmodu   ] Data Valid Code     [ibfacti   ]
+ Department          [ibfgrup   ] Create/Modify Date  [ibfdate   ]
+ Record Orig.        [ibforiu   ]
+ Dept Orig.          [ibforig   ]
+
+}
+END -- gr40
+END -- info
+Page userdefined_field(text=%"User Defined Field")
+Grid gru47
+{
+ userdefined_field01[ibfud01                       ] userdefined_field07[ibfud07        ] userdefined_field13[ibfud13        ]
+                    [                              ] userdefined_field08[ibfud08        ] userdefined_field14[ibfud14        ]
+ userdefined_field02[ibfud02        ]                userdefined_field09[ibfud09        ] userdefined_field15[ibfud15        ]
+ userdefined_field03[ibfud03        ]                userdefined_field10[ibfud10        ]
+ userdefined_field04[ibfud04        ]                userdefined_field11[ibfud11        ]
+ userdefined_field05[ibfud05        ]                userdefined_field12[ibfud12        ]
+ userdefined_field06[ibfud06        ]
+
+
+}
+END -- gru47
+END -- userdefined_field
+END -- Folder1
+Table s_ibg
+{
+[ibg02   |ibg04               |ibg05          |ibgud01 |ibgud02 |ibgud03 |ibgud04 |ibgud05 |ibgud06 |ibgud07 |ibgud08 |ibgud09 |ibgud10 |ibgud11 |ibgud12 |ibgud13 |ibgud14 |ibgud15 ]
+[ibg02   |ibg04               |ibg05          |ibgud01 |ibgud02 |ibgud03 |ibgud04 |ibgud05 |ibgud06 |ibgud07 |ibgud08 |ibgud09 |ibgud10 |ibgud11 |ibgud12 |ibgud13 |ibgud14 |ibgud15 ]
+[ibg02   |ibg04               |ibg05          |ibgud01 |ibgud02 |ibgud03 |ibgud04 |ibgud05 |ibgud06 |ibgud07 |ibgud08 |ibgud09 |ibgud10 |ibgud11 |ibgud12 |ibgud13 |ibgud14 |ibgud15 ]
+[ibg02   |ibg04               |ibg05          |ibgud01 |ibgud02 |ibgud03 |ibgud04 |ibgud05 |ibgud06 |ibgud07 |ibgud08 |ibgud09 |ibgud10 |ibgud11 |ibgud12 |ibgud13 |ibgud14 |ibgud15 ]
+[ibg02   |ibg04               |ibg05          |ibgud01 |ibgud02 |ibgud03 |ibgud04 |ibgud05 |ibgud06 |ibgud07 |ibgud08 |ibgud09 |ibgud10 |ibgud11 |ibgud12 |ibgud13 |ibgud14 |ibgud15 ]
+[ibg02   |ibg04               |ibg05          |ibgud01 |ibgud02 |ibgud03 |ibgud04 |ibgud05 |ibgud06 |ibgud07 |ibgud08 |ibgud09 |ibgud10 |ibgud11 |ibgud12 |ibgud13 |ibgud14 |ibgud15 ]
+[ibg02   |ibg04               |ibg05          |ibgud01 |ibgud02 |ibgud03 |ibgud04 |ibgud05 |ibgud06 |ibgud07 |ibgud08 |ibgud09 |ibgud10 |ibgud11 |ibgud12 |ibgud13 |ibgud14 |ibgud15 ]
+[ibg02   |ibg04               |ibg05          |ibgud01 |ibgud02 |ibgud03 |ibgud04 |ibgud05 |ibgud06 |ibgud07 |ibgud08 |ibgud09 |ibgud10 |ibgud11 |ibgud12 |ibgud13 |ibgud14 |ibgud15 ]
+[ibg02   |ibg04               |ibg05          |ibgud01 |ibgud02 |ibgud03 |ibgud04 |ibgud05 |ibgud06 |ibgud07 |ibgud08 |ibgud09 |ibgud10 |ibgud11 |ibgud12 |ibgud13 |ibgud14 |ibgud15 ]
+[ibg02   |ibg04               |ibg05          |ibgud01 |ibgud02 |ibgud03 |ibgud04 |ibgud05 |ibgud06 |ibgud07 |ibgud08 |ibgud09 |ibgud10 |ibgud11 |ibgud12 |ibgud13 |ibgud14 |ibgud15 ]
+
+}
+END -- s_ibg
+Grid Grid3
+{
+
+  ---------  cnt[idx  ]/[cnt  ] ---  cn2 [cn2  ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- abat630
+
+ATTRIBUTES
+ButtonEdit ibf01=formonly.ibf01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ibf03=formonly.ibf03 type CHAR, tabIndex=4;
+ButtonEdit ibf07=formonly.ibf07 type CHAR, action=controlp, tabIndex=7, image="zoom";
+DateEdit ibf04=formonly.ibf04 type DATE, tabIndex=2, not null;
+ButtonEdit ibf05=formonly.ibf05 type CHAR, action=controlp, tabIndex=5, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=8;
+CheckBox ibf02=formonly.ibf02 type CHAR, tabIndex=3, text=%"ibf02", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ibf06=formonly.ibf06 type CHAR, action=controlp, tabIndex=6, image="zoom";
+Edit ima021=formonly.ima021 type CHAR, tabIndex=9;
+Edit ibf08=formonly.ibf08 type CHAR, tabIndex=10, noEntry;
+Edit ibfuser=formonly.ibfuser type VARCHAR, tabIndex=11, noEntry;
+Edit ibfmodu=formonly.ibfmodu type VARCHAR, tabIndex=15, noEntry;
+Edit ibfacti=formonly.ibfacti type VARCHAR, tabIndex=17, noEntry, upShift;
+Edit ibfgrup=formonly.ibfgrup type VARCHAR, tabIndex=12, noEntry;
+DateEdit ibfdate=formonly.ibfdate type DATE, tabIndex=16, noEntry;
+Edit ibforiu=formonly.ibforiu type VARCHAR, tabIndex=13, noEntry;
+Edit ibforig=formonly.ibforig type VARCHAR, tabIndex=14, noEntry;
+TextEdit ibfud01=formonly.ibfud01 type VARCHAR, tabIndex=18, stretch=NONE;
+Edit ibfud07=formonly.ibfud07 type DECIMAL(15,3), tabIndex=24;
+DateEdit ibfud13=formonly.ibfud13 type DATE, tabIndex=30;
+Edit ibfud08=formonly.ibfud08 type DECIMAL(15,3), tabIndex=25;
+DateEdit ibfud14=formonly.ibfud14 type DATE, tabIndex=31;
+Edit ibfud02=formonly.ibfud02 type VARCHAR, tabIndex=19;
+Edit ibfud09=formonly.ibfud09 type DECIMAL(15,3), tabIndex=26;
+DateEdit ibfud15=formonly.ibfud15 type DATE, tabIndex=32;
+Edit ibfud03=formonly.ibfud03 type VARCHAR, tabIndex=20;
+Edit ibfud10=formonly.ibfud10 type INTEGER, tabIndex=27;
+Edit ibfud04=formonly.ibfud04 type VARCHAR, tabIndex=21;
+Edit ibfud11=formonly.ibfud11 type INTEGER, tabIndex=28;
+Edit ibfud05=formonly.ibfud05 type VARCHAR, tabIndex=22;
+Edit ibfud12=formonly.ibfud12 type INTEGER, tabIndex=29;
+Edit ibfud06=formonly.ibfud06 type VARCHAR, tabIndex=23;
+Edit ibg02=formonly.ibg02 type CHAR, tabIndex=33, title=%"ibg02", not null, required;
+ButtonEdit ibg04=formonly.ibg04 type CHAR, action=controlp, tabIndex=34, title=%"ibg04", not null, required, image="zoom";
+Edit ibg05=formonly.ibg05 type DECIMAL(15,3), tabIndex=35, title=%"ibg05", not null, required;
+TextEdit ibgud01=formonly.ibgud01 type CHAR, tabIndex=36, title=%"ibgud01";
+Edit ibgud02=formonly.ibgud02 type VARCHAR, tabIndex=37, title=%"ibgud02";
+Edit ibgud03=formonly.ibgud03 type VARCHAR, tabIndex=38, title=%"ibgud03";
+Edit ibgud04=formonly.ibgud04 type VARCHAR, tabIndex=39, title=%"ibgud04";
+Edit ibgud05=formonly.ibgud05 type VARCHAR, tabIndex=40, title=%"ibgud05";
+Edit ibgud06=formonly.ibgud06 type VARCHAR, tabIndex=41, title=%"ibgud06";
+Edit ibgud07=formonly.ibgud07 type DECIMAL(15,3), tabIndex=42, title=%"ibgud07";
+Edit ibgud08=formonly.ibgud08 type DECIMAL(15,3), tabIndex=43, title=%"ibgud08";
+Edit ibgud09=formonly.ibgud09 type DECIMAL(15,3), tabIndex=44, title=%"ibgud09";
+Edit ibgud10=formonly.ibgud10 type DECIMAL(10), tabIndex=45, title=%"ibgud10";
+Edit ibgud11=formonly.ibgud11 type DECIMAL(10), tabIndex=46, title=%"ibgud11";
+Edit ibgud12=formonly.ibgud12 type DECIMAL(10), tabIndex=47, title=%"ibgud12";
+DateEdit ibgud13=formonly.ibgud13 type DATE, tabIndex=48, title=%"ibgud13";
+DateEdit ibgud14=formonly.ibgud14 type DATE, tabIndex=49, title=%"ibgud14";
+DateEdit ibgud15=formonly.ibgud15 type DATE, tabIndex=50, title=%"ibgud15";
+Edit idx=formonly.idx type CHAR, tabIndex=51;
+Edit cnt=formonly.cnt type CHAR, tabIndex=52;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=53;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ibf01,formonly.ibf02,formonly.ibf03,formonly.ibf04,formonly.ibf05,formonly.ibf06,formonly.ibf07,formonly.ima02,formonly.ima021,formonly.ibf08,formonly.ibfuser,formonly.ibfmodu,formonly.ibfacti,formonly.ibfgrup,formonly.ibfdate,formonly.ibforiu,formonly.ibforig,formonly.idx,formonly.cnt,formonly.cn2,formonly.ibfud01,formonly.ibfud07,formonly.ibfud13,formonly.ibfud08,formonly.ibfud14,formonly.ibfud02,formonly.ibfud09,formonly.ibfud15,formonly.ibfud03,formonly.ibfud10,formonly.ibfud04,formonly.ibfud11,formonly.ibfud05,formonly.ibfud12,formonly.ibfud06)
+SCREEN RECORD s_ibg(formonly.ibg02,formonly.ibg04,formonly.ibg05,formonly.ibgud01,formonly.ibgud02,formonly.ibgud03,formonly.ibgud04,formonly.ibgud05,formonly.ibgud06,formonly.ibgud07,formonly.ibgud08,formonly.ibgud09,formonly.ibgud10,formonly.ibgud11,formonly.ibgud12,formonly.ibgud13,formonly.ibgud14,formonly.ibgud15)
+END -- INSTRUCTIONS
+

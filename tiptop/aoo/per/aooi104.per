@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi104.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi104")
+VBox vb6
+Folder pc839
+Page page01(text="Page01")
+Table s_gfo
+{
+[gfo01  |gfo02       |gfoacti  ]
+[gfo01  |gfo02       |gfoacti  ]
+[gfo01  |gfo02       |gfoacti  ]
+[gfo01  |gfo02       |gfoacti  ]
+[gfo01  |gfo02       |gfoacti  ]
+[gfo01  |gfo02       |gfoacti  ]
+[gfo01  |gfo02       |gfoacti  ]
+[gfo01  |gfo02       |gfoacti  ]
+[gfo01  |gfo02       |gfoacti  ]
+[gfo01  |gfo02       |gfoacti  ]
+
+}
+END -- s_gfo
+END -- page01
+END -- pc839
+Grid gr4628
+{
+ ----------Rows    [cn2   ] ----------
+
+
+}
+END -- gr4628
+END -- vb6
+END -- aooi104
+
+TABLES
+gfo_file
+ATTRIBUTES
+Edit gfo01=gfo_file.gfo01, tabIndex=1, title="Unit", not null, required, comment="Enter Unit to Add/Query                 ";
+Edit gfo02=gfo_file.gfo02, tabIndex=2, title="Description";
+CheckBox gfoacti=gfo_file.gfoacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gfo(gfo_file.gfo01,gfo_file.gfo02,gfo_file.gfoacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmp311.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmp311")
+VBox VBox1
+Grid gr1280
+{
+ <G group01                                   >
+  Customer              [tus03             ]
+  Delivery Customer     [tus09             ]
+  Adjustment Date       [tus02             ]
+
+ <                                            >
+
+}
+END -- gr1280
+Group group02(text="INPUT")
+Grid gr1281
+{
+ <G group03                                 >
+  Shipment No.          [oga01             ]
+  Delivery Date         [oga02             ]
+  Start No              [start_no1         ]
+  End No                [end_no1           ]
+ <                                          >
+ <G group04                                 >
+  Sales/Return Note No. [oha01             ]
+  Sales/Return Date     [oha02             ]
+  Start No              [start_no2         ]
+  End No                [end_no2           ]
+
+ <                                          >
+
+}
+END -- gr1281
+END -- group02
+END -- VBox1
+END -- atmp311
+
+TABLES
+tus_file,
+oga_file,
+oha_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit tus03=tus_file.tus03, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Detail";
+ButtonEdit tus09=tus_file.tus09, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Detail";
+DateEdit tus02=tus_file.tus02, tabIndex=3, not null, required;
+Group group03:group03, gridChildrenInParent;
+ButtonEdit oga01=oga_file.oga01, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P> Qry Documents";
+DateEdit oga02=oga_file.oga02, tabIndex=5, not null, required;
+Edit start_no1=formonly.start_no1 type CHAR, tabIndex=6, noEntry;
+Edit end_no1=formonly.end_no1 type CHAR, tabIndex=7, noEntry;
+Group group04:group04, gridChildrenInParent;
+ButtonEdit oha01=oha_file.oha01, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P> Qry Documents";
+DateEdit oha02=oha_file.oha02, tabIndex=9, not null, required;
+Edit start_no2=formonly.start_no2 type CHAR, tabIndex=10, noEntry;
+Edit end_no2=formonly.end_no2 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(tus_file.tus03,tus_file.tus09,tus_file.tus02,oga_file.oga01,oga_file.oga02,formonly.start_no1,formonly.end_no1,oha_file.oha01,oha_file.oha02,formonly.start_no2,formonly.end_no2)
+END -- INSTRUCTIONS
+

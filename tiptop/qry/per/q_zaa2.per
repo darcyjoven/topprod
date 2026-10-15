@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_zaa2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Query Report Format")
+Grid gr1
+{
+ <T tb1                                                                >
+ [zaa04      |zaa17               |zaa11               |gae04          ]
+ [zaa04      |zaa17               |zaa11               |gae04          ]
+ [zaa04      |zaa17               |zaa11               |gae04          ]
+ [zaa04      |zaa17               |zaa11               |gae04          ]
+ [zaa04      |zaa17               |zaa11               |gae04          ]
+ [zaa04      |zaa17               |zaa11               |gae04          ]
+ [zaa04      |zaa17               |zaa11               |gae04          ]
+ [zaa04      |zaa17               |zaa11               |gae04          ]
+ [zaa04      |zaa17               |zaa11               |gae04          ]
+ [zaa04      |zaa17               |zaa11               |gae04          ]
+ <                                                                     >
+
+}
+END -- gr1
+END -- q_zaa2
+
+TABLES
+zaa_file
+ATTRIBUTES
+Table tb1:tb1;
+Edit zaa04=zaa_file.zaa04, tabIndex=1, title="User", noEntry;
+Edit zaa17=zaa_file.zaa17, tabIndex=2, title="Authorization Cate.", noEntry;
+Edit zaa11=zaa_file.zaa11, tabIndex=3, title="Report Templae", noEntry;
+Edit gae04=formonly.gae04 type CHAR, tabIndex=4, title="Field Name", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zaa(zaa_file.zaa04,zaa_file.zaa17,zaa_file.zaa11,formonly.gae04)
+END -- INSTRUCTIONS
+

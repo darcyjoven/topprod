@@ -1,0 +1,196 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi820.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi820")
+VBox VBox1
+Folder pc761
+Page page01(text="Main")
+Group gb2947
+Grid gr4054
+{
+ Application #           [gxf011            ]               Status              [gxf11          ]     [imgmksg]
+ Certificate of Depost # [gxf01           ]                [gxf41          ]                          [       ]
+ Deposit Type            [gxf38     ]                       Confirm             [gxfconf        ]
+ Original Bank           [gxf02     ]                       Interest Type       [gxf04          ]
+                         [nma02_1             ]             Tran. Cd            [gxf07     ] [nmc02     ]
+ Date of Deposit         [gxf03     ]                       Memo                [gxf12                        ]
+ Due Date                [gxf05     ]                       Depoist Voc.        [gxf13               ]
+ Currency/Exchange Rate  [gxf24     ][gxf25               ] Voucher Date        [gxf14               ]
+ Original Amount         [gxf021              ]             Matured Vou         [gxf29               ]
+ Home Currency Amount    [gxf26               ]             Voucher Due Date    [gxf30               ]
+ Interest Rate           [gxf06         ]%                  Receipt O.Curr      [gxf27               ]
+                                                            Receipt H.Curr      [gxf28               ]
+-----------------------------------------------------------------------------------------------------------------
+ Bank Outward Account    [gxf32     ]                       Currency / ExRate   [gxf35     ] [gxf36            ]
+                         [nma02_2                ]          Otwd Acc Trans.Cd   [gxf34     ] [nmc02_2   ]
+ Otwd Amount             [gxf33f              ]             Memo                [gxf37                         ]
+ Home Curr Amt           [gxf33               ]
+
+}
+END -- gr4054
+END -- gb2947
+END -- page01
+Page info(text="Info")
+Grid gr4055
+{
+ Record Owner        [gxfuser   ] Last Modified by    [gxfmodu   ] Data Valid Code     [gxfacti   ]
+ Department          [gxfgrup   ] Create/Modify Date  [gxfdate   ]
+ Record Orig.        [gxforiu   ]
+ Dept Orig.          [gxforig   ]
+}
+END -- gr4055
+END -- info
+END -- pc761
+Folder pc762
+Page page011(text="Deposit to Cancel")
+Grid gr4056
+{
+ Date of Cancellation    [gxf23     ]
+ Cancellation Voucher    [gxf15               ]
+ Cancel Voc. Date        [gxf16     ]
+
+}
+END -- gr4056
+END -- page011
+Page page02(text="Certificate of Deposit Pledge")
+HBox HBox1
+Grid gr4057
+{
+ Pledged To              [gxf08     ]
+ Pledge Amount           [gxf09               ]
+ Date of Pledge          [gxf21     ]
+ Transaction Serial      [gxg02_1   ]
+
+}
+END -- gr4057
+Grid gr4058
+{
+ Pledge Description      [gxf10                         ]
+ Pledge Voucher          [gxf17               ]
+ Pledge Voc. Date        [gxf18     ]
+
+
+}
+END -- gr4058
+END -- HBox1
+END -- page02
+Page page03(text="Remove Pledge")
+Grid gr4059
+{
+ Removal Date            [gxf22     ]
+ Removal Voucher         [gxf19               ]
+ Removal Voc. Date       [gxf20     ]
+ Transaction Serial      [gxg02_2   ]
+
+}
+END -- gr4059
+END -- page03
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[gxfud01                       ] userdefined_field07[gxfud07        ] userdefined_field13[gxfud13        ]
+                    [                              ] userdefined_field08[gxfud08        ] userdefined_field14[gxfud14        ]
+ userdefined_field02[gxfud02        ]                userdefined_field09[gxfud09        ] userdefined_field15[gxfud15        ]
+ userdefined_field03[gxfud03        ]                userdefined_field10[gxfud10        ]
+ userdefined_field04[gxfud04        ]                userdefined_field11[gxfud11        ]
+ userdefined_field05[gxfud05        ]                userdefined_field12[gxfud12        ]
+ userdefined_field06[gxfud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc762
+Grid gr4060
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4060
+END -- VBox1
+END -- anmi820
+
+TABLES
+gxf_file
+ATTRIBUTES
+ButtonEdit gxf011=gxf_file.gxf011, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!  <^P> Qry Doc Type";
+ComboBox gxf11=gxf_file.gxf11, tabIndex=2, noEntry, not null, required, queryEditable, items=(("0", "Deposit"),("1", "Pledge"),("2", "Remove"),("3", "Cancel"),("4", "Due"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit gxf01=gxf_file.gxf01, tabIndex=4, upShift;
+CheckBox gxf41=gxf_file.gxf41, tabIndex=6, text="Open Account", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox gxf38=gxf_file.gxf38, tabIndex=7, noEntry, not null, required, queryEditable, items=(("1", "Normal"),("2", "Continue"));
+ComboBox gxfconf=gxf_file.gxfconf, tabIndex=5, noEntry, not null, required, items=(("Y", "Y"),("N", "N"),("X", "X"));
+ButtonEdit gxf02=gxf_file.gxf02, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P> Qry Bank    ";
+ComboBox gxf04=gxf_file.gxf04, tabIndex=8, not null, required, queryEditable, items=(("1", "Monthly Pay"),("2", "All on Due"));
+Edit nma02_1=formonly.nma02_1 type VARCHAR, tabIndex=12, noEntry;
+ButtonEdit gxf07=gxf_file.gxf07, action=controlp, tabIndex=10, not null, required, image="zoom", comment="<^P>Qry Withdraw/Deposit Transation";
+Edit nmc02=formonly.nmc02 type CHAR, tabIndex=11, noEntry;
+DateEdit gxf03=gxf_file.gxf03, tabIndex=14, not null, required;
+Edit gxf12=gxf_file.gxf12, tabIndex=13;
+DateEdit gxf05=gxf_file.gxf05, tabIndex=16, not null, required;
+Edit gxf13=gxf_file.gxf13, tabIndex=15, noEntry;
+ButtonEdit gxf24=gxf_file.gxf24, action=controlp, tabIndex=18, noEntry, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit gxf25=gxf_file.gxf25, action=controlp, tabIndex=19, not null, required, image="zoom", comment="<^P>Qry Rate";
+DateEdit gxf14=gxf_file.gxf14, tabIndex=17, noEntry;
+Edit gxf021=gxf_file.gxf021, tabIndex=21, not null, required;
+Edit gxf29=gxf_file.gxf29, tabIndex=20, noEntry;
+Edit gxf26=gxf_file.gxf26, tabIndex=23, noEntry;
+DateEdit gxf30=gxf_file.gxf30, tabIndex=22, noEntry;
+Edit gxf06=gxf_file.gxf06, tabIndex=25, not null, required;
+Edit gxf27=gxf_file.gxf27, tabIndex=24, noEntry;
+Edit gxf28=gxf_file.gxf28, tabIndex=26, noEntry;
+ButtonEdit gxf32=gxf_file.gxf32, action=controlp, tabIndex=27, not null, required, image="zoom", comment="<^P> QRY Bank ";
+ButtonEdit gxf35=gxf_file.gxf35, action=controlp, tabIndex=28, not null, required, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit gxf36=gxf_file.gxf36, action=controlp, tabIndex=29, not null, required, image="zoom", comment="<^P>Rate Currency";
+Edit nma02_2=formonly.nma02_2 type VARCHAR, tabIndex=30;
+ButtonEdit gxf34=gxf_file.gxf34, action=controlp, tabIndex=31, not null, required, image="zoom", comment="<^P>Qry Transation Code";
+Edit nmc02_2=formonly.nmc02_2 type CHAR, tabIndex=32, noEntry;
+Edit gxf33f=gxf_file.gxf33f, tabIndex=33, not null, required;
+Edit gxf37=gxf_file.gxf37, tabIndex=34;
+Edit gxf33=gxf_file.gxf33, tabIndex=35, not null, required;
+Edit gxfuser=gxf_file.gxfuser, tabIndex=36, noEntry;
+Edit gxfmodu=gxf_file.gxfmodu, tabIndex=37, noEntry;
+Edit gxfacti=gxf_file.gxfacti, tabIndex=38, noEntry;
+Edit gxfgrup=gxf_file.gxfgrup, tabIndex=39, noEntry;
+DateEdit gxfdate=gxf_file.gxfdate, tabIndex=40, noEntry;
+Edit gxforiu=gxf_file.gxforiu, tabIndex=501, noEntry;
+Edit gxforig=gxf_file.gxforig, tabIndex=502, noEntry;
+DateEdit gxf23=gxf_file.gxf23, tabIndex=41, noEntry;
+Edit gxf15=gxf_file.gxf15, tabIndex=42, noEntry;
+DateEdit gxf16=gxf_file.gxf16, tabIndex=43, noEntry;
+Edit gxf08=gxf_file.gxf08, tabIndex=44, noEntry;
+Edit gxf09=gxf_file.gxf09, tabIndex=45, noEntry;
+DateEdit gxf21=gxf_file.gxf21, tabIndex=46, noEntry;
+Edit gxg02_1=formonly.gxg02_1 type CHAR, tabIndex=47, noEntry;
+Edit gxf10=gxf_file.gxf10, tabIndex=48, noEntry;
+Edit gxf17=gxf_file.gxf17, tabIndex=49, noEntry;
+DateEdit gxf18=gxf_file.gxf18, tabIndex=50, noEntry;
+DateEdit gxf22=gxf_file.gxf22, tabIndex=51, noEntry;
+Edit gxf19=gxf_file.gxf19, tabIndex=52, noEntry;
+DateEdit gxf20=gxf_file.gxf20, tabIndex=53, noEntry;
+Edit gxg02_2=formonly.gxg02_2 type CHAR, tabIndex=54, noEntry;
+TextEdit gxfud01=gxf_file.gxfud01, tabIndex=57, stretch=NONE;
+Edit gxfud07=gxf_file.gxfud07, tabIndex=58;
+DateEdit gxfud13=gxf_file.gxfud13, tabIndex=59;
+Edit gxfud08=gxf_file.gxfud08, tabIndex=60;
+DateEdit gxfud14=gxf_file.gxfud14, tabIndex=61;
+Edit gxfud02=gxf_file.gxfud02, tabIndex=62;
+Edit gxfud09=gxf_file.gxfud09, tabIndex=63;
+DateEdit gxfud15=gxf_file.gxfud15, tabIndex=64;
+Edit gxfud03=gxf_file.gxfud03, tabIndex=65;
+Edit gxfud10=gxf_file.gxfud10, tabIndex=66;
+Edit gxfud04=gxf_file.gxfud04, tabIndex=67;
+Edit gxfud11=gxf_file.gxfud11, tabIndex=68;
+Edit gxfud05=gxf_file.gxfud05, tabIndex=69;
+Edit gxfud12=gxf_file.gxfud12, tabIndex=70;
+Edit gxfud06=gxf_file.gxfud06, tabIndex=71;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=55;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gxf_file.gxf011,gxf_file.gxf11,formonly.imgmksg,gxf_file.gxf01,gxf_file.gxfconf,gxf_file.gxf41,gxf_file.gxf38,gxf_file.gxf04,gxf_file.gxf02,gxf_file.gxf07,formonly.nmc02,formonly.nma02_1,gxf_file.gxf12,gxf_file.gxf03,gxf_file.gxf13,gxf_file.gxf05,gxf_file.gxf14,gxf_file.gxf24,gxf_file.gxf25,gxf_file.gxf29,gxf_file.gxf021,gxf_file.gxf30,gxf_file.gxf26,gxf_file.gxf27,gxf_file.gxf06,gxf_file.gxf28,gxf_file.gxf32,gxf_file.gxf35,gxf_file.gxf36,formonly.nma02_2,gxf_file.gxf34,formonly.nmc02_2,gxf_file.gxf33f,gxf_file.gxf37,gxf_file.gxf33,gxf_file.gxfuser,gxf_file.gxfmodu,gxf_file.gxfacti,gxf_file.gxfgrup,gxf_file.gxfdate,gxf_file.gxforiu,gxf_file.gxforig,gxf_file.gxf23,gxf_file.gxf15,gxf_file.gxf16,gxf_file.gxf08,gxf_file.gxf09,gxf_file.gxf21,formonly.gxg02_1,gxf_file.gxf10,gxf_file.gxf17,gxf_file.gxf18,gxf_file.gxf22,gxf_file.gxf19,gxf_file.gxf20,formonly.gxg02_2,gxf_file.gxfud01,gxf_file.gxfud07,gxf_file.gxfud13,gxf_file.gxfud08,gxf_file.gxfud14,gxf_file.gxfud02,gxf_file.gxfud09,gxf_file.gxfud15,gxf_file.gxfud03,gxf_file.gxfud10,gxf_file.gxfud04,gxf_file.gxfud11,gxf_file.gxfud05,gxf_file.gxfud12,gxf_file.gxfud06,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cqry/4fd/cq_nmh.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Grid gr3755
+{
+ <T s_nmh                                                                                                                                          >
+ [check |nmh01         |nmh06          |nmh31             |nmh04        |nmh05         |nmh02         |npo04         |aph05f        |nmh42         ]
+ [check |nmh01         |nmh06          |nmh31             |nmh04        |nmh05         |nmh02         |npo04         |aph05f        |nmh42         ]
+ [check |nmh01         |nmh06          |nmh31             |nmh04        |nmh05         |nmh02         |npo04         |aph05f        |nmh42         ]
+ [check |nmh01         |nmh06          |nmh31             |nmh04        |nmh05         |nmh02         |npo04         |aph05f        |nmh42         ]
+ [check |nmh01         |nmh06          |nmh31             |nmh04        |nmh05         |nmh02         |npo04         |aph05f        |nmh42         ]
+ [check |nmh01         |nmh06          |nmh31             |nmh04        |nmh05         |nmh02         |npo04         |aph05f        |nmh42         ]
+ [check |nmh01         |nmh06          |nmh31             |nmh04        |nmh05         |nmh02         |npo04         |aph05f        |nmh42         ]
+ [check |nmh01         |nmh06          |nmh31             |nmh04        |nmh05         |nmh02         |npo04         |aph05f        |nmh42         ]
+ [check |nmh01         |nmh06          |nmh31             |nmh04        |nmh05         |nmh02         |npo04         |aph05f        |nmh42         ]
+ [check |nmh01         |nmh06          |nmh31             |nmh04        |nmh05         |nmh02         |npo04         |aph05f        |nmh42         ]
+ <                                                                                                                                                 >
+
+}
+END -- gr3755
+END -- Form
+
+ATTRIBUTES
+Table s_nmh:s_nmh;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit nmh01=formonly.nmh01 type VARCHAR, tabIndex=2, title="nmh01", noEntry;
+Edit nmh06=formonly.nmh06 type VARCHAR, tabIndex=3, title="nmh06", noEntry;
+Edit nmh31=formonly.nmh31, tabIndex=4, title=%"nmh31";
+DateEdit nmh04=formonly.nmh04 type DATE, tabIndex=5, title=%"nmh04";
+DateEdit nmh05=formonly.nmh05 type DATE, tabIndex=6, title=%"nmh05";
+Edit nmh02=formonly.nmh02 type DECIMAL, tabIndex=7, title=%"nmh02";
+Edit npo04=formonly.npo04 type DECIMAL, tabIndex=8, title=%"npo04";
+Edit aph05f=formonly.aph05f type DECIMAL, tabIndex=9, title=%"aph05f";
+Edit nmh42=formonly.nmh42 type DECIMAL, tabIndex=10, title=%"nmh42";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmh(formonly.check,formonly.nmh01,formonly.nmh06,formonly.nmh31,formonly.nmh04,formonly.nmh05,formonly.nmh02,formonly.npo04,formonly.aph05f,formonly.nmh42)
+END -- INSTRUCTIONS
+

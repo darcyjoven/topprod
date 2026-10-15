@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/r_zm.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"r_zm")
+VBox VBox1
+Table s_zm
+{
+[x  |zm01     |zz02m                         |zm03           |zm04        |zz02                         |zzuser     |zz09    ]
+[x  |zm01     |zz02m                         |zm03           |zm04        |zz02                         |zzuser     |zz09    ]
+[x  |zm01     |zz02m                         |zm03           |zm04        |zz02                         |zzuser     |zz09    ]
+[x  |zm01     |zz02m                         |zm03           |zm04        |zz02                         |zzuser     |zz09    ]
+[x  |zm01     |zz02m                         |zm03           |zm04        |zz02                         |zzuser     |zz09    ]
+[x  |zm01     |zz02m                         |zm03           |zm04        |zz02                         |zzuser     |zz09    ]
+[x  |zm01     |zz02m                         |zm03           |zm04        |zz02                         |zzuser     |zz09    ]
+[x  |zm01     |zz02m                         |zm03           |zm04        |zz02                         |zzuser     |zz09    ]
+[x  |zm01     |zz02m                         |zm03           |zm04        |zz02                         |zzuser     |zz09    ]
+[x  |zm01     |zz02m                         |zm03           |zm04        |zz02                         |zzuser     |zz09    ]
+
+}
+END -- s_zm
+END -- VBox1
+END -- r_zm
+
+TABLES
+zm_file,
+zz_file
+ATTRIBUTES
+Edit x=formonly.x type SMALLINT, tabIndex=1;
+Edit zm01=zm_file.zm01, tabIndex=2, title="Menu Code Menu Name", not null, required;
+Edit zz02m=formonly.zz02m type VARCHAR, tabIndex=3;
+Edit zm03=zm_file.zm03, tabIndex=4, title="Menu No.", not null, required;
+Edit zm04=zm_file.zm04, tabIndex=5, title="Program Code Program Name", not null, required;
+Edit zz02=zz_file.zz02, tabIndex=6;
+Edit zzuser=zz_file.zzuser, tabIndex=7, title="Designed";
+Edit zz09=zz_file.zz09, tabIndex=8, title="Date";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zm(formonly.x,zm_file.zm01,formonly.zz02m,zm_file.zm03,zm_file.zm04,zz_file.zz02,zz_file.zzuser,zz_file.zz09)
+END -- INSTRUCTIONS
+

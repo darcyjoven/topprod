@@ -1,0 +1,131 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi590.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almi590")
+VBox VBox1
+Folder pc3
+Page page4(text="Main")
+Grid gr10
+{
+
+ Created Logistics     [lst14                 |lst14_desc          ]  Confirmation   [lst09                ][imgmksg]
+ Exchange source       [lst00                 ]                       Conf Name      [lst10                ][       ]
+ Plan serial No.       [lst01                 ]                       Conf Date      [lst11                ]
+ Program narrative     [lsl03                 ]                      [lst16               ]
+                       [                      ]                       Issued Date    [lst17                ]
+ version               [lst15                 ]                       memo           [lst12                                ]
+ card plants No.       [lst03                 ]                                      [                                     ]
+ card plants name      [lph02                 ]                                      [                                     ]
+ Outset date           [lst04                 ]                       lstplant       [lstplant            ][rtz13          ]
+ Expiry date           [lst05                 ]                       lstlegal       [lstlegal            ][azt02          ]
+ Returns ticket way    [lst06                 ]                      [lstpos              ]
+ Accumulative total way[lst13                 ]
+ Exchange restrictions [lst18                 ]
+ times                 [lst19                 ]
+
+}
+END -- gr10
+END -- page4
+Page info(text="Info")
+Grid gr10_
+{
+ Record Owner[lstuser   ]   Material foundation date[lstcrat        ]Data Valid Code   [lstacti   ]
+ Department  [lstgrup   ]   Last Modified by        [lstmodu   ]     Create/Modify Date[lstdate   ]
+ Record Orig.[lstoriu   ]
+ Dept Orig.  [lstorig   ]
+
+
+}
+END -- gr10_
+END -- info
+END -- pc3
+Table s_lss
+{
+[lss02            |lss03            |lss04                 |lss05              ]
+[lss02            |lss03            |lss04                 |lss05              ]
+[lss02            |lss03            |lss04                 |lss05              ]
+[lss02            |lss03            |lss04                 |lss05              ]
+[lss02            |lss03            |lss04                 |lss05              ]
+[lss02            |lss03            |lss04                 |lss05              ]
+}
+END -- s_lss
+Table lsr
+{
+[lsr02            |lpx02_1           ]
+[lsr02            |lpx02_1           ]
+[lsr02            |lpx02_1           ]
+[lsr02            |lpx02_1           ]
+[lsr02            |lpx02_1           ]
+
+}
+END -- lsr
+Grid gr12
+{
+---------- Rows [cnt   ] / [cn2   ][cn3   ] ----------
+
+
+}
+END -- gr12
+END -- VBox1
+END -- almi590
+
+TABLES
+lst_file,
+lss_file,
+lsr_file
+ATTRIBUTES
+ButtonEdit lst14=lst_file.lst14, action=controlp, tabIndex=36, not null, required, image="zoom";
+Edit lst14_desc=formonly.lst14_desc, tabIndex=37, noEntry;
+ComboBox lst09=lst_file.lst09, tabIndex=12, noEntry, items=(("N", "Has not verified "),("Y", "Has verified "));
+IMAGE imgmksg=formonly.imgmksg;
+ComboBox lst00=lst_file.lst00, tabIndex=33, noEntry, items=(("0", "Integral to change coupons"),("1", "Cumulative change coupons"));
+ButtonEdit lst10=lst_file.lst10, action=controlp, tabIndex=13, noEntry, image="zoom";
+ButtonEdit lst01=lst_file.lst01, action=controlp, tabIndex=5, not null, required, image="zoom";
+DateEdit lst11=lst_file.lst11, tabIndex=14, noEntry;
+TextEdit lsl03=formonly.lsl03 type VARCHAR, tabIndex=6;
+CheckBox lst16=lst_file.lst16, tabIndex=39, text=%"Issued?", noEntry, valueChecked = "Y", valueUnchecked = "N";
+DateEdit lst17=lst_file.lst17, tabIndex=40, noEntry;
+Edit lst15=lst_file.lst15, tabIndex=38, noEntry;
+TextEdit lst12=lst_file.lst12, tabIndex=15, stretch=NONE;
+ButtonEdit lst03=lst_file.lst03, action=controlp, tabIndex=7, not null, image="zoom";
+Edit lph02=formonly.lph02, tabIndex=8, noEntry;
+DateEdit lst04=lst_file.lst04, tabIndex=9, not null;
+ButtonEdit lstplant=lst_file.lstplant, action=controlp, tabIndex=1, noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13, tabIndex=2, noEntry;
+DateEdit lst05=lst_file.lst05, tabIndex=10, not null;
+ButtonEdit lstlegal=lst_file.lstlegal, action=controlp, tabIndex=3, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02, tabIndex=4, noEntry;
+ComboBox lst06=lst_file.lst06, tabIndex=11, not null, items=(("0", "0"),("1", "1"));
+CheckBox lstpos=lst_file.lstpos, tabIndex=32, text=%"POS", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ComboBox lst13=lst_file.lst13, tabIndex=34, not null, items=(("0", "Consumption day"),("1", "Member accumulative total spending"),("2", "During the period"));
+ComboBox lst18=lst_file.lst18, tabIndex=41, not null, items=(("1", "No Limit"),("2", "During the period Once"),("3", "Everyday Once"));
+Edit lst19=lst_file.lst19, tabIndex=42, not null;
+Edit lstuser=lst_file.lstuser, tabIndex=23, noEntry;
+DateEdit lstcrat=lst_file.lstcrat, tabIndex=24, noEntry;
+Edit lstacti=lst_file.lstacti, tabIndex=25, noEntry, upShift;
+Edit lstgrup=lst_file.lstgrup, tabIndex=26, noEntry;
+Edit lstmodu=lst_file.lstmodu, tabIndex=27, noEntry;
+DateEdit lstdate=lst_file.lstdate, tabIndex=28, noEntry;
+Edit lstoriu=lst_file.lstoriu, tabIndex=29, noEntry;
+Edit lstorig=lst_file.lstorig, tabIndex=30, noEntry;
+Edit lss02=lss_file.lss02, tabIndex=16, title="Outset integral", not null, required;
+Edit lss03=lss_file.lss03, tabIndex=35, title=%"Accumulative total", not null;
+Edit lss04=lss_file.lss04, tabIndex=17, title="Exchange cardinal\n\n", not null;
+Edit lss05=lss_file.lss05, tabIndex=18, title="Exchange cardinal Amount", not null;
+ButtonEdit lsr02=lsr_file.lsr02, action=controlp, tabIndex=19, title="lsr02", not null, required, image="zoom.png";
+Edit lpx02_1=formonly.lpx02_1, tabIndex=19, title="lpx02_1", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=22;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=31;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lss(lss_file.lss02,lss_file.lss03,lss_file.lss04,lss_file.lss05)
+SCREEN RECORD s_lsr(lsr_file.lsr02,formonly.lpx02_1)
+SCREEN RECORD Undefined(lst_file.lstplant,formonly.rtz13,lst_file.lstpos,lst_file.lstlegal,formonly.azt02,lst_file.lst09,formonly.imgmksg,lst_file.lst01,lst_file.lst10,formonly.lsl03,lst_file.lst11,lst_file.lst12,lst_file.lst03,formonly.lph02,lst_file.lst04,lst_file.lst05,lst_file.lst06,lst_file.lstuser,lst_file.lstcrat,lst_file.lstacti,lst_file.lstgrup,lst_file.lstmodu,lst_file.lstdate,lst_file.lstoriu,lst_file.lstorig,formonly.cnt,formonly.cn2,formonly.cn3,lst_file.lst00,lst_file.lst13,lst_file.lst14,formonly.lst14_desc,lst_file.lst15,lst_file.lst16,lst_file.lst17,lst_file.lst18,lst_file.lst19)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr833.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxr833")
+VBox VBox1
+Grid gr1193
+{
+ <G group01                                       >
+  Finished Product [bwb03                         ]
+  Fin GP Code      [ima1916a                      ]
+  Mat Item No.     [bwe03                         ]
+  Raw Materials    [ima1916b                      ]
+
+ <                                                >
+
+}
+END -- gr1193
+Group g01(text="INPUT")
+VBox VBox2
+Grid gr1194
+{
+ <G group05                             >
+  [s1               ][s2               ]
+  [u1               ][u2               ]
+
+ <                                      >
+
+}
+END -- gr1194
+Grid grid
+{
+  Year                [yy  ]
+ <G group02                             >
+  [ima15            ]
+ <                                      >
+ <G group04                             >
+  Rep type [rname                      ]
+  [detail                              ]
+
+ <                                      >
+
+}
+END -- grid
+END -- VBox2
+END -- g01
+END -- VBox1
+END -- abxr833
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit bwb03=formonly.bwb03 type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Finished Product";
+ButtonEdit ima1916a=formonly.ima1916a type VARCHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Finished Product GP Code";
+ButtonEdit bwe03=formonly.bwe03 type VARCHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Raw Materials Product";
+ButtonEdit ima1916b=formonly.ima1916b type VARCHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Raw Materials Product GP Code";
+Group group05:group05, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=5, items=(("1", "Item No."),("2", "Bond Group Code"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=6, items=(("1", "Item No."),("2", "Bond Group Code"));
+CheckBox u1=formonly.u1 type CHAR, tabIndex=7, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=8, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit yy=formonly.yy type CHAR, tabIndex=9;
+Group group02:group02, text="Bonded";
+RadioGroup ima15=ima_file.ima15, tabIndex=10, not null, required, items=(("1", "Bonded"),("2", "Not Bonded"),("3", "All"));
+Group group04:group04, text="Print Data";
+ComboBox rname=formonly.rname type CHAR, tabIndex=11, not null, required, items=(("1", "Meterial Analysis"),("2", "Meterial Statistics"));
+CheckBox detail=formonly.detail type CHAR, tabIndex=12, text="Print UnBond", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bwb03,formonly.ima1916a,formonly.bwe03,formonly.ima1916b,formonly.s1,formonly.s2,formonly.u1,formonly.u2,formonly.yy,ima_file.ima15,formonly.rname,formonly.detail)
+END -- INSTRUCTIONS
+

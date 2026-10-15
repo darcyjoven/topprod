@@ -1,0 +1,35 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrr043.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Group Group1(text=%"Group1")
+Grid Grid1
+{
+
+        [label1   ][bdate            ]
+        [label2   ][hrat03              ]
+        [label3   ][hrat04              ]
+
+
+}
+END -- Grid1
+END -- Group1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"bdate";
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=1;
+Label label2:Label2, text=%"hrat03";
+ButtonEdit hrat03=formonly.hrat03 type CHAR, tabIndex=2;
+Label label3:Label3, text=%"hrat04";
+ButtonEdit hrat04=formonly.hrat04 type CHAR, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bdate,formonly.hrat03,formonly.hrat04)
+END -- INSTRUCTIONS
+

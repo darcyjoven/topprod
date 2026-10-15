@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri020_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrbda02 |hrbda03   |hrbda04 |hrbda05 |hrbda06     ]
+[hrbda02 |hrbda03   |hrbda04 |hrbda05 |hrbda06     ]
+[hrbda02 |hrbda03   |hrbda04 |hrbda05 |hrbda06     ]
+[hrbda02 |hrbda03   |hrbda04 |hrbda05 |hrbda06     ]
+[hrbda02 |hrbda03   |hrbda04 |hrbda05 |hrbda06     ]
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+  ---------- cn2[cn2  ]-------------
+
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit hrbda02=formonly.hrbda02 type INTEGER, tabIndex=1, title=%"hrbda02", noEntry;
+ComboBox hrbda03=formonly.hrbda03, tabIndex=2, title=%"hrbda03", not null, required, items=(("1", "mediation"),("2", "arbitration"),("3", "lawsuit"));
+DateEdit hrbda04=formonly.hrbda04 type DATE, tabIndex=3, title=%"hrbda04";
+DateEdit hrbda05=formonly.hrbda05 type DATE, tabIndex=4, title=%"hrbda05";
+Edit hrbda06=formonly.hrbda06 type VARCHAR, tabIndex=5, title=%"hrbda06", not null, required;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrbda(formonly.hrbda02,formonly.hrbda03,formonly.hrbda04,formonly.hrbda05,formonly.hrbda06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

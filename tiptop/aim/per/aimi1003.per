@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi1003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimi1003")
+VBox VBox1
+Group g01(text="Please Entry Plant Code")
+Table s_plant
+{
+[plant       ]
+[plant       ]
+[plant       ]
+[plant       ]
+[plant       ]
+[plant       ]
+[plant       ]
+[plant       ]
+[plant       ]
+[plant       ]
+
+}
+END -- s_plant
+END -- g01
+END -- VBox1
+END -- aimi1003
+
+ATTRIBUTES
+ButtonEdit plant=formonly.plant type CHAR, action=controlp, tabIndex=1, title="Plant Code", image="zoom", comment="Press<^P>Qry Plant No.";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_plant(formonly.plant)
+END -- INSTRUCTIONS
+

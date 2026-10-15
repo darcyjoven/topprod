@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr621.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr621")
+VBox VBox1
+Grid gr5157
+{
+ <G group01                                                     >
+  P/O No.      [pmn01           ]
+  Item No.     [pmn04           ]
+  Group Code   [ima06           ]
+  Group Code 1 [ima09           ]
+  Group Code 2 [ima10           ]
+  Group Code 3 [ima11           ]
+  Group Code 4 [ima12           ]
+ <                                                              >
+
+}
+END -- gr5157
+Group group02(text="INPUT")
+Grid gr5158
+{
+ Delivery Date [sdate       ] To [edate       ]
+ Sequence      [a                             ]
+}
+END -- gr5158
+END -- group02
+Grid gr5159
+{
+ [more                                                            ]
+
+}
+END -- gr5159
+END -- VBox1
+END -- apmr621
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit pmn01=formonly.pmn01 type VARCHAR, tabIndex=1;
+ButtonEdit pmn04=formonly.pmn04 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=3;
+Edit ima09=formonly.ima09 type VARCHAR, tabIndex=4;
+Edit ima10=formonly.ima10 type VARCHAR, tabIndex=5;
+Edit ima11=formonly.ima11 type VARCHAR, tabIndex=6;
+Edit ima12=formonly.ima12 type VARCHAR, tabIndex=7;
+DateEdit sdate=formonly.sdate type DATE, tabIndex=8;
+DateEdit edate=formonly.edate type DATE, tabIndex=9;
+RadioGroup a=formonly.a type VARCHAR, tabIndex=10, items=(("1", "By Item"),("2", "By P/O"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmn01,formonly.pmn04,formonly.ima06,formonly.ima09,formonly.ima10,formonly.ima11,formonly.ima12,formonly.sdate,formonly.edate,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

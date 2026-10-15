@@ -1,0 +1,64 @@
+----------------------------------------------------------------------------------
+-- File created from /u53/tiptop/alm/42f/almt460_1_3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almt460_1_3")
+
+    VBox vb4
+    Folder pc2
+    Page Page2(text=%"Main")
+    Grid gr4
+    {
+
+      balance  [lrc08               ]
+      amt      [amt                 ]
+    }
+    END
+    END -- Page
+    END -- Folder
+    Table s_rxy
+    {
+    [rxy02|rxy14             |rxy12           |lpx02               |rxy13       |lrz02               |rxy05               ]
+    [rxy02|rxy14             |rxy12           |lpx02               |rxy13       |lrz02               |rxy05               ]
+    [rxy02|rxy14             |rxy12           |lpx02               |rxy13       |lrz02               |rxy05               ]
+    [rxy02|rxy14             |rxy12           |lpx02               |rxy13       |lrz02               |rxy05               ]
+    [rxy02|rxy14             |rxy12           |lpx02               |rxy13       |lrz02               |rxy05               ]
+
+    }
+    END -- Table
+    Grid gr3
+    {
+     ----------Rows[idx   ]----------
+
+    }
+    END
+    END -- VBox
+END -- Form
+
+TABLES
+lrc_file
+rxy_file
+
+ATTRIBUTES
+Edit lrc08=lrc_file.lrc08, tabIndex=4, noEntry;
+Edit amt=formonly.amt, tabIndex=5, noEntry;
+Edit rxy02=rxy_file.rxy02, tabIndex=9, title="Line No.", not null, required;
+ButtonEdit rxy14=rxy_file.rxy14, action=controlp, tabIndex=10, title="Note No.", not null, required, image="zoom.png";
+Edit rxy12=rxy_file.rxy12, tabIndex=2, title="Note type No.", noEntry;
+Edit lpx02=formonly.lpx02, tabIndex=3, title="Note Type Name", noEntry;
+ButtonEdit rxy13=rxy_file.rxy13, action=controlp, tabIndex=6, title="Note of units No.", noEntry, not null, image="zoom.png";
+Edit lrz02=formonly.lrz02, tabIndex=7, title="Note Amount", noEntry;
+Edit rxy05=rxy_file.rxy05, tabIndex=8, title="Note Amount", not null;
+Edit idx=formonly.idx type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rxy(rxy_file.rxy02, rxy_file.rxy14, rxy_file.rxy12, formonly.lpx02, rxy_file.rxy13, formonly.lrz02, rxy_file.rxy05)
+SCREEN RECORD Undefined(lrc_file.lrc08, formonly.amt, formonly.idx)
+END -- INSTRUCTIONS
+

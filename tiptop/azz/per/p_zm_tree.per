@@ -1,0 +1,101 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_zm_tree.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+HBox HBox1
+VBox VBox1
+Grid Grid1
+{
+
+ [label1      |zz01              |query_zz  ]
+ [label2      |gaz03             ]
+
+}
+END -- Grid1
+Tree Tree2(parentIdColumn=opid, idColumn=oid, expandedColumn=olayer, isNodeColumn=ohasChildren, imageExpanded="minus", imageCollapsed="plus", imageLeaf="textjustify")
+{
+[oname                    |odescription   ]
+[oname                    |odescription   ]
+[oname                    |odescription   ]
+[oname                    |odescription   ]
+[oname                    |odescription   ]
+[oname                    |odescription   ]
+[oname                    |odescription   ]
+[oname                    |odescription   ]
+[oname                    |odescription   ]
+[oname                    |odescription   ]
+
+
+
+}
+END -- Tree2
+END -- VBox1
+VBox VBox2
+Grid Grid2
+{
+
+ [label3    |zm01              |query_zm  ]
+
+}
+END -- Grid2
+Tree Tree1(parentIdColumn=pid, idColumn=id, expandedColumn=layer, isNodeColumn=hasChildren, imageLeaf="textjustify")
+{
+[name                     |description   ]
+[name                     |description   ]
+[name                     |description   ]
+[name                     |description   ]
+[name                     |description   ]
+[name                     |description   ]
+[name                     |description   ]
+[name                     |description   ]
+[name                     |description   ]
+[name                     |description   ]
+[name                     |description   ]
+[name                     |description   ]
+[name                     |description   ]
+[name                     |description   ]
+}
+END -- Tree1
+END -- VBox2
+END -- HBox1
+END -- Form
+
+TABLES
+gaz_file,
+zm_file,
+zz_file
+ATTRIBUTES
+Label label1:Label1, text=%"Menu ID";
+ButtonEdit zz01=zz_file.zz01, action=controlp, tabIndex=3, image="zoom", scroll, picture="zoom";
+Button query_zz:query_zz, tabIndex=8, text=%"Query Source";
+Label label2:Label2, text=%"Menu Description", hidden;
+Edit gaz03=gaz_file.gaz03, tabIndex=4, hidden, scroll;
+Edit oname=formonly.oname type CHAR, tabIndex=5, title=%"Edit1";
+Edit odescription=formonly.odescription type CHAR, tabIndex=6, title=%"Edit2";
+Phantom formonly.opid type CHAR;
+Phantom formonly.oid type CHAR;
+Phantom formonly.ohasChildren type CHAR;
+Phantom formonly.olayer type CHAR;
+Label label3:Label3, text=%"Menu ID";
+ButtonEdit zm01=zm_file.zm01, action=controlp, tabIndex=7, image="zoom", picture="";
+Button query_zm:query_zm, tabIndex=7, text=%"Query Target";
+Edit name=formonly.name type CHAR, tabIndex=1, title=%"Name";
+Edit description=formonly.description type CHAR, tabIndex=2, title=%"description";
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.hasChildren type CHAR;
+Phantom formonly.layer type CHAR;
+Phantom formonly.code type CHAR;
+Phantom formonly.pcode type CHAR;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zm_tree(formonly.name,formonly.description,formonly.pid,formonly.id,formonly.hasChildren,formonly.layer,formonly.code,formonly.pcode)
+SCREEN RECORD Undefined(zz_file.zz01,gaz_file.gaz03,zm_file.zm01)
+SCREEN RECORD s_zmo_tree(formonly.oname,formonly.odescription,formonly.opid,formonly.oid,formonly.olayer,formonly.ohasChildren)
+END -- INSTRUCTIONS
+

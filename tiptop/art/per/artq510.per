@@ -1,0 +1,108 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq510.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"artq510")
+VBox vb20
+Group gb1(text="P/R")
+Table s_pmk
+{
+[pmkplant  |pmkplant_d|pmk46   |pmk01               |pmk04   |pmk48   |pmk12   |pmk12_de|pmk13   |pmk13_de|pmk02       |pmk09   |pmk09_de|pmk18  |pmkcond |pmkcont |pmkconu |pmkconu_]
+[pmkplant  |pmkplant_d|pmk46   |pmk01               |pmk04   |pmk48   |pmk12   |pmk12_de|pmk13   |pmk13_de|pmk02       |pmk09   |pmk09_de|pmk18  |pmkcond |pmkcont |pmkconu |pmkconu_]
+[pmkplant  |pmkplant_d|pmk46   |pmk01               |pmk04   |pmk48   |pmk12   |pmk12_de|pmk13   |pmk13_de|pmk02       |pmk09   |pmk09_de|pmk18  |pmkcond |pmkcont |pmkconu |pmkconu_]
+[pmkplant  |pmkplant_d|pmk46   |pmk01               |pmk04   |pmk48   |pmk12   |pmk12_de|pmk13   |pmk13_de|pmk02       |pmk09   |pmk09_de|pmk18  |pmkcond |pmkcont |pmkconu |pmkconu_]
+[pmkplant  |pmkplant_d|pmk46   |pmk01               |pmk04   |pmk48   |pmk12   |pmk12_de|pmk13   |pmk13_de|pmk02       |pmk09   |pmk09_de|pmk18  |pmkcond |pmkcont |pmkconu |pmkconu_]
+
+}
+END -- s_pmk
+END -- gb1
+Group gb2(text="P/R Detail")
+VBox vb18
+Table s_pml
+{
+[pml0|pml47               |pml04             |pml041  |ima021                      |pml07 |pml07_de|pml20       |pml21      |pml33     |pml35      |pml48         |pml48_desc          |rty04   |rty04_desc|pml49   |pml50   |pml56   |pml06               |pml24           |pml25]
+[pml0|pml47               |pml04             |pml041  |ima021                      |pml07 |pml07_de|pml20       |pml21      |pml33     |pml35      |pml48         |pml48_desc          |rty04   |rty04_desc|pml49   |pml50   |pml56   |pml06               |pml24           |pml25]
+[pml0|pml47               |pml04             |pml041  |ima021                      |pml07 |pml07_de|pml20       |pml21      |pml33     |pml35      |pml48         |pml48_desc          |rty04   |rty04_desc|pml49   |pml50   |pml56   |pml06               |pml24           |pml25]
+[pml0|pml47               |pml04             |pml041  |ima021                      |pml07 |pml07_de|pml20       |pml21      |pml33     |pml35      |pml48         |pml48_desc          |rty04   |rty04_desc|pml49   |pml50   |pml56   |pml06               |pml24           |pml25]
+[pml0|pml47               |pml04             |pml041  |ima021                      |pml07 |pml07_de|pml20       |pml21      |pml33     |pml35      |pml48         |pml48_desc          |rty04   |rty04_desc|pml49   |pml50   |pml56   |pml06               |pml24           |pml25]
+
+}
+END -- s_pml
+Grid gr17
+{
+[view1     |return    ]
+
+}
+END -- gr17
+END -- vb18
+END -- gb2
+Grid gr5265
+{
+ -----Rows[idx     ]/[cnt       ] -----[cn2       ] -----
+
+
+}
+END -- gr5265
+END -- vb20
+END -- artq510
+
+TABLES
+pml_file,
+pmk_file,
+rty_file
+ATTRIBUTES
+ButtonEdit pmkplant=pmk_file.pmkplant, action=controlp, tabIndex=17, title="Org", image="zoom.png";
+Edit pmkplant_d=formonly.pmkplant_desc type VARCHAR, tabIndex=18, title="Org Name", noEntry;
+ComboBox pmk46=formonly.pmk46 type VARCHAR, tabIndex=19, title="Source Type", items=(("1", "Manual Entry"),("2", "Replenish Advice"),("3", "Sales Order"),("4", "purchase"),("5", "POS Required"),("6", "Store Carry"));
+Edit pmk01=formonly.pmk01 type VARCHAR, tabIndex=20, title="P/R No.";
+DateEdit pmk04=pmk_file.pmk04, tabIndex=21, title="Date";
+TimeEdit pmk48=pmk_file.pmk48, tabIndex=22, title="Time";
+ButtonEdit pmk12=pmk_file.pmk12, action=controlp, tabIndex=23, title="P/R Employee", image="zoom.png";
+Edit pmk12_de=formonly.pmk12_desc type VARCHAR, tabIndex=24, title="Employee Name", noEntry;
+ButtonEdit pmk13=pmk_file.pmk13, action=controlp, tabIndex=25, title="Department", image="zoom.png";
+Edit pmk13_de=formonly.pmk13_desc type VARCHAR, tabIndex=26, title="Department Name", noEntry;
+ComboBox pmk02=pmk_file.pmk02, tabIndex=27, title="Property", items=(("REG", "Regular"),("EXP", "Expense"),("CAP", "Capital"),("TAP", "Tri P/O"));
+ButtonEdit pmk09=pmk_file.pmk09, action=controlp, tabIndex=28, title="Supplier", image="zoom.png";
+Edit pmk09_de=formonly.pmk09_desc type VARCHAR, tabIndex=29, title="Supplier Name", noEntry;
+ComboBox pmk18=pmk_file.pmk18, tabIndex=30, title="Confirm", items=(("Y", "Confirmed"),("N", "UnConfirmed"),("X", "Void"));
+DateEdit pmkcond=pmk_file.pmkcond, tabIndex=31, title="Confirm Date";
+TimeEdit pmkcont=pmk_file.pmkcont, tabIndex=32, title="Confirm Time";
+ButtonEdit pmkconu=pmk_file.pmkconu, action=controlp, tabIndex=33, title="Confirm Staff", image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png";
+Edit pmkconu_=formonly.pmkconu_desc type VARCHAR, tabIndex=34, title="Name", noEntry;
+Edit pml0=formonly.pml02 type SMALLINT, tabIndex=1, title="Ln#";
+Edit pml47=pml_file.pml47, tabIndex=2, title="Bar";
+ButtonEdit pml04=pml_file.pml04, action=controlp, tabIndex=3, title="Item No.", image="zoom.png", comment="MISC:MISC P/R <^P>Query Item";
+Edit pml041=pml_file.pml041, tabIndex=42, title="Part Name";
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=4, title="Specification", noEntry;
+ButtonEdit pml07=pml_file.pml07, action=controlp, tabIndex=5, title="Unit", image="C:\\Program Files\\FourJs\\gdc\\pics\\zoom.png", comment="<^P> Qry  Unit";
+Edit pml07_de=formonly.pml07_desc type VARCHAR, tabIndex=36, title="Unit Name";
+Edit pml20=pml_file.pml20, tabIndex=10, title="P/R Qty";
+Edit pml21=pml_file.pml21, tabIndex=11, title="To P/O Qty";
+DateEdit pml33=pml_file.pml33, tabIndex=13, title="Deli Date";
+DateEdit pml35=pml_file.pml35, tabIndex=12, title="Store Date";
+ButtonEdit pml48=pml_file.pml48, action=controlp, tabIndex=6, title="Supplier No.", image="zoom.png";
+Edit pml48_desc=formonly.pml48_desc type VARCHAR, tabIndex=7, title="Supplier Name", noEntry;
+Edit rty04=rty_file.rty04, tabIndex=40, title="rty04", noEntry;
+Edit rty04_desc=formonly.rty04_desc type VARCHAR, tabIndex=41, title="rty04_desc", noEntry;
+ComboBox pml49=pml_file.pml49, tabIndex=8, title="Business Way", items=(("1", "Distribution"),("2", "Cost of sales "),("3", "Deduction rate of sales "),("4", "Joint Venture"));
+ComboBox pml50=pml_file.pml50, tabIndex=9, title="Purchase Type", items=(("1", "Since orders"),("2", "EC-Zhi Gong"),("3", "EC-EC allocation"),("4", "Monopoly Purchase and Purchase"));
+ComboBox pml56=pml_file.pml56, tabIndex=37, title="Carry Status", items=(("1", "Uncarry"),("2", "Carry"),("3", "Cancel"));
+Edit pml06=pml_file.pml06, tabIndex=14, title="Memo";
+Edit pml24=pml_file.pml24, tabIndex=38, title="Source No.";
+Edit pml25=pml_file.pml25, tabIndex=39, title="Source SN";
+Button view1:view1, text="view1";
+Button return:return, text="return";
+Edit idx=formonly.idx type SMALLINT, tabIndex=35;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pml(formonly.pml02,pml_file.pml47,pml_file.pml04,pml_file.pml041,formonly.ima021,pml_file.pml07,formonly.pml07_desc,pml_file.pml20,pml_file.pml21,pml_file.pml33,pml_file.pml35,pml_file.pml48,formonly.pml48_desc,rty_file.rty04,formonly.rty04_desc,pml_file.pml49,pml_file.pml50,pml_file.pml56,pml_file.pml06,pml_file.pml24,pml_file.pml25)
+SCREEN RECORD s_pmk(pmk_file.pmkplant,formonly.pmkplant_desc,formonly.pmk46,formonly.pmk01,pmk_file.pmk04,pmk_file.pmk48,pmk_file.pmk12,formonly.pmk12_desc,pmk_file.pmk13,formonly.pmk13_desc,pmk_file.pmk02,pmk_file.pmk09,formonly.pmk09_desc,pmk_file.pmk18,pmk_file.pmkcond,pmk_file.pmkcont,pmk_file.pmkconu,formonly.pmkconu_desc)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

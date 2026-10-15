@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afag103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"afar103")
+VBox VBox1
+Grid Grid1
+{
+ <G grpqbe                                                                                             >
+  Sending Note No.    [fau01               ]
+  Sending Date        [fau02               ]
+  Applicant           [fau03               ]
+  Applying Department [fau04               ]
+  Applying Date       [fau05               ]
+ <                                                                                                     >
+
+}
+END -- Grid1
+Group group1(text="INPUT")
+Grid Grid2
+{
+ <G group02                                       > <G group03                                       >
+ [a                                             ]   [b                                             ]
+ <                                                > <                                                >
+
+}
+END -- Grid2
+END -- group1
+Grid Grid3
+{
+[more                                         ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- afar103
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+ButtonEdit fau01=formonly.fau01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit fau02=formonly.fau02 type DATE, tabIndex=2;
+ButtonEdit fau03=formonly.fau03 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit fau04=formonly.fau04 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+DateEdit fau05=formonly.fau05 type DATE, tabIndex=5;
+Group group02:group02, text="Data Option";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=6, items=(("1", %"Confirmed"),("2", %"UnConfirmed"),("3", %"All"));
+Group group03:group03, text="Data Option";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=7, items=(("1", %"Confirmed"),("2", %"UnConfirmed"),("3", %"All"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.fau01,formonly.fau02,formonly.fau03,formonly.fau04,formonly.fau05,formonly.a,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

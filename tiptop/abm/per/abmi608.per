@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi608.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi608")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr784
+{
+ Master Item No.     [bmm01                         ]
+ Part Name           [ima02                         ]
+ Specification       [ima021                        ]
+ Unit                [ima55     ]
+}
+END -- gr784
+END -- page01
+END -- folder01
+Table s_bmm
+{
+[bmm0|bmm03                   |ima02s                        |ima021s                       |bm|bmm1]
+[bmm0|bmm03                   |ima02s                        |ima021s                       |bm|bmm1]
+[bmm0|bmm03                   |ima02s                        |ima021s                       |bm|bmm1]
+[bmm0|bmm03                   |ima02s                        |ima021s                       |bm|bmm1]
+[bmm0|bmm03                   |ima02s                        |ima021s                       |bm|bmm1]
+[bmm0|bmm03                   |ima02s                        |ima021s                       |bm|bmm1]
+[bmm0|bmm03                   |ima02s                        |ima021s                       |bm|bmm1]
+[bmm0|bmm03                   |ima02s                        |ima021s                       |bm|bmm1]
+[bmm0|bmm03                   |ima02s                        |ima021s                       |bm|bmm1]
+[bmm0|bmm03                   |ima02s                        |ima021s                       |bm|bmm1]
+
+}
+END -- s_bmm
+Grid gr785
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr785
+END -- VBox1
+END -- abmi608
+
+TABLES
+bmm_file
+ATTRIBUTES
+Edit bmm01=bmm_file.bmm01, tabIndex=1, noEntry, not null, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Edit ima55=formonly.ima55 type CHAR, tabIndex=4, noEntry;
+Edit bmm0=bmm_file.bmm02, tabIndex=5, title="Ln#", not null, required;
+ButtonEdit bmm03=bmm_file.bmm03, action=controlp, tabIndex=6, title="Corelation Prod.Item No.", not null, required, image="zoom", comment="<^P>Qry Item No.";
+Edit ima02s=formonly.ima02s type CHAR, tabIndex=7, title="Part Name", noEntry;
+Edit ima021s=formonly.ima021s type CHAR, tabIndex=8, title="Specification", noEntry;
+ButtonEdit bm=bmm_file.bmm04, action=controlp, tabIndex=9, title="Unit", noEntry, not null, required, image="zoom", comment="<^P>Qry Unit";
+CheckBox bmm1=bmm_file.bmm05, tabIndex=10, title="Vld", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bmm(bmm_file.bmm02,bmm_file.bmm03,formonly.ima02s,formonly.ima021s,bmm_file.bmm04,bmm_file.bmm05)
+SCREEN RECORD Undefined(bmm_file.bmm01,formonly.ima02,formonly.ima021,formonly.ima55,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri098.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ghri098")
+VBox VBox1
+Folder pc10
+Page page01(text=%"page01")
+Grid gr39
+{
+
+  hrea00 [hrea00        ]
+
+
+
+}
+END -- gr39
+END -- page01
+Page page02(text=%"page02")
+Grid gr40
+{
+
+ hreaacti            [hreaacti  ]  hreadate      [hreadate  ]
+ hreauser            [hreauser  ]  hreaoriu      [hreaoriu  ]
+ hreagrup            [hreagrup  ]  hreaorig      [hreaorig  ]
+ hreamodu            [hreamodu  ]
+}
+END -- gr40
+END -- page02
+END -- pc10
+Table s_hrea
+{
+[hrea01       |hrag07        |hrea02        |hrdk03        |hrea03       ]
+[hrea01       |hrag07        |hrea02        |hrdk03        |hrea03       ]
+[hrea01       |hrag07        |hrea02        |hrdk03        |hrea03       ]
+[hrea01       |hrag07        |hrea02        |hrdk03        |hrea03       ]
+[hrea01       |hrag07        |hrea02        |hrdk03        |hrea03       ]
+[hrea01       |hrag07        |hrea02        |hrdk03        |hrea03       ]
+[hrea01       |hrag07        |hrea02        |hrdk03        |hrea03       ]
+[hrea01       |hrag07        |hrea02        |hrdk03        |hrea03       ]
+[hrea01       |hrag07        |hrea02        |hrdk03        |hrea03       ]
+
+}
+END -- s_hrea
+END -- VBox1
+END -- ghri098
+
+ATTRIBUTES
+ComboBox hrea00=formonly.hrea00 type VARCHAR, tabIndex=1;
+Edit hreaacti=formonly.hreaacti type VARCHAR, tabIndex=2, noEntry;
+DateEdit hreadate=formonly.hreadate type DATE, tabIndex=7, noEntry;
+Edit hreauser=formonly.hreauser type VARCHAR, tabIndex=3, noEntry;
+Edit hreaoriu=formonly.hreaoriu type VARCHAR, tabIndex=6, noEntry;
+Edit hreagrup=formonly.hreagrup type VARCHAR, tabIndex=4, noEntry;
+Edit hreaorig=formonly.hreaorig type VARCHAR, tabIndex=8, noEntry, upShift;
+Edit hreamodu=formonly.hreamodu type VARCHAR, tabIndex=5, noEntry;
+ButtonEdit hrea01=formonly.hrea01 type VARCHAR, action=controlp, tabIndex=9, title=%"hrea01", not null, required, image="zoom";
+Edit hrag07=formonly.hrag07 type VARCHAR, tabIndex=10, title=%"hrag07", noEntry;
+ButtonEdit hrea02=formonly.hrea02 type DECIMAL, action=controlp, tabIndex=11, title=%"hrea02", not null, required, image="zoom";
+Edit hrdk03=formonly.hrdk03 type VARCHAR, tabIndex=12, title=%"hrdk03", noEntry;
+TextEdit hrea03=formonly.hrea03 type VARCHAR, tabIndex=13, title=%"hrea03";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD page01(formonly.hrea00)
+SCREEN RECORD page02(formonly.hreaacti,formonly.hreaoriu,formonly.hreaorig,formonly.hreauser,formonly.hreadate,formonly.hreagrup,formonly.hreamodu)
+SCREEN RECORD s_hrea(formonly.hrea01,formonly.hrag07,formonly.hrea02,formonly.hrdk03,formonly.hrea03)
+END -- INSTRUCTIONS
+

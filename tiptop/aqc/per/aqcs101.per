@@ -1,0 +1,137 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcs101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqcs101")
+VBox VBox3
+Folder pc46
+Page page01(text="Main")
+VBox VBox1
+Grid gr183
+{
+ <G group01                                                                    >
+ [qcz05                                                       ]
+  To-Exchange Warehouse No. [qcz051    ]
+  To-Exchange Location      [qcz052    ]
+ <                                                                             >
+ <G group02                                                                        >
+                                    CR          MA         MI
+  No-Good Qty Base Numerator   [qcz02     ][qcz03     ][qcz04     ]
+  No-Good Qty Base Denominator [qcz021    ][qcz031    ][qcz041    ]
+ <                                                                                 >
+ <G group03                             ><G group05                                >
+ [qcz13                                 ][qcz14                                   ]
+ [qcz01                               ]
+ <                                      ><                                         >
+ <G group04                                                                          >
+ [qcz12                ]
+  Serial    [qcz06     ] [dumm]
+            [qcz061    ] [dummy01                         ]
+  If Serial [qcz07     ] [dummy02]
+  If Serial [qcz08     ] [dummy03]
+  If Serial [qcz09     ] [dummy04]
+  If Serlal [qcz10     ] [dummy05]
+  If Serial [qcz11     ] [dummy06]
+ <                                                                                   >
+
+}
+END -- gr183
+END -- VBox1
+END -- page01
+Page userdefined_field(text=%"User Defined Field")
+VBox VBox2
+Grid Grid1
+{
+ userdefined_field01[qczud01                              ]
+                    [                                     ]
+                    [                                     ]
+ userdefined_field02[qczud02              ]
+ userdefined_field03[qczud03              ]
+ userdefined_field04[qczud04              ]
+ userdefined_field05[qczud05              ]
+ userdefined_field06[qczud06              ]
+ userdefined_field07[qczud07              ]
+ userdefined_field08[qczud08              ]
+ userdefined_field09[qczud09              ]
+ userdefined_field10[qczud10              ]
+ userdefined_field11[qczud11              ]
+ userdefined_field12[qczud12              ]
+ userdefined_field13[qczud13              ]
+ userdefined_field14[qczud14              ]
+ userdefined_field15[qczud15              ]
+
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- VBox2
+END -- userdefined_field
+END -- pc46
+END -- VBox3
+END -- aqcs101
+
+TABLES
+qcz_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox qcz05=qcz_file.qcz05, tabIndex=1, text="Put IQC NG Itm to To-Ex W/H", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit qcz051=qcz_file.qcz051, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Warehouse <^Y>Create Warehouse";
+ButtonEdit qcz052=qcz_file.qcz052, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Warehouse/Location <^Y>Create Warehouse/Loctaion";
+Group group02:group02;
+Edit qcz02=qcz_file.qcz02, tabIndex=4;
+Edit qcz03=qcz_file.qcz03, tabIndex=5;
+Edit qcz04=qcz_file.qcz04, tabIndex=6;
+Edit qcz021=qcz_file.qcz021, tabIndex=7;
+Edit qcz031=qcz_file.qcz031, tabIndex=8;
+Edit qcz041=qcz_file.qcz041, tabIndex=9;
+Group group03:group03;
+CheckBox qcz13=qcz_file.qcz13, tabIndex=10, text="QC needs QC Ctrl Apprl No.(AVL)", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox qcz01=qcz_file.qcz01, tabIndex=11, text="Input QC Qty Detail", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05;
+CheckBox qcz14=qcz_file.qcz14, tabIndex=35, default = "N", text=%"QC materials and parts to determine whether", not null, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04;
+CheckBox qcz12=qcz_file.qcz12, tabIndex=12, text="Start QC Level Change Rule", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit qcz06=qcz_file.qcz06, tabIndex=13;
+Label dumm:dummy00, text="with";
+Edit qcz061=qcz_file.qcz061, tabIndex=14;
+Label dummy01:dummy01, text="Lots Retd, Change to Strict";
+Edit qcz07=qcz_file.qcz07, tabIndex=15;
+Label dummy02:dummy02, text="Passed, Change from Strict to Normal";
+Edit qcz08=qcz_file.qcz08, tabIndex=16;
+Label dummy03:dummy03, text="Lots Passed, Change from Normal to Reduce-Qty QC";
+Edit qcz09=qcz_file.qcz09, tabIndex=17;
+Label dummy04:dummy04, text="Returned, Change from Reduce-Qty to Normal QC";
+Edit qcz10=qcz_file.qcz10, tabIndex=18;
+Label dummy05:dummy05, text="Reduce-Qty, Chagne from Reduce-Qty to Skip";
+Edit qcz11=qcz_file.qcz11, tabIndex=19;
+Label dummy06:dummy06, text="Lots Strict, Change from Strict to Delete";
+TextEdit qczud01=qcz_file.qczud01, tabIndex=20;
+Edit qczud02=qcz_file.qczud02, tabIndex=21;
+Edit qczud03=qcz_file.qczud03, tabIndex=22;
+Edit qczud04=qcz_file.qczud04, tabIndex=23;
+Edit qczud05=qcz_file.qczud05, tabIndex=24;
+Edit qczud06=qcz_file.qczud06, tabIndex=25;
+Edit qczud07=qcz_file.qczud07, tabIndex=26;
+Edit qczud08=qcz_file.qczud08, tabIndex=27;
+Edit qczud09=qcz_file.qczud09, tabIndex=28;
+Edit qczud10=qcz_file.qczud10, tabIndex=29;
+Edit qczud11=qcz_file.qczud11, tabIndex=30;
+Edit qczud12=qcz_file.qczud12, tabIndex=31;
+DateEdit qczud13=qcz_file.qczud13, tabIndex=32;
+DateEdit qczud14=qcz_file.qczud14, tabIndex=34;
+DateEdit qczud15=qcz_file.qczud15, tabIndex=33;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(qcz_file.qcz05,qcz_file.qcz051,qcz_file.qcz052,qcz_file.qcz02,qcz_file.qcz03,qcz_file.qcz04,qcz_file.qcz021,qcz_file.qcz031,qcz_file.qcz041,qcz_file.qcz13,qcz_file.qcz01,qcz_file.qcz12,qcz_file.qcz06,qcz_file.qcz061,qcz_file.qcz07,qcz_file.qcz08,qcz_file.qcz09,qcz_file.qcz10,qcz_file.qcz11,qcz_file.qczud01,qcz_file.qczud02,qcz_file.qczud03,qcz_file.qczud04,qcz_file.qczud05,qcz_file.qczud06,qcz_file.qczud07,qcz_file.qczud08,qcz_file.qczud09,qcz_file.qczud10,qcz_file.qczud11,qcz_file.qczud12,qcz_file.qczud13,qcz_file.qczud15,qcz_file.qczud14,qcz_file.qcz14)
+END -- INSTRUCTIONS
+

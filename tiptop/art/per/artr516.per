@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr516.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"artr516")
+VBox VBox1
+Grid Grid4
+{
+ <G group3                                                 >
+    Logistics Code          [azp01                    ]
+                           [dummy1                         ]
+ <                                                         >
+}
+END -- Grid4
+Grid Grid1
+{
+ <G group1                                               >
+    Product Classification[ima131                   ]
+    Item No.              [ima01                    ]
+ <                                                       >
+}
+END -- Grid1
+Group Group2(text=%"Input")
+Grid Grid2
+{
+
+ Turnover Rate            [rate1     ]~[rate2     ]
+ Date QBE                 [bdate     ]~[edate     ]
+ Cost calculation category[type                   ]
+
+}
+END -- Grid2
+END -- Group2
+Grid Grid3
+{
+[more                                        ]
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- artr516
+
+ATTRIBUTES
+Group group3:Group3, text=%"QBE1";
+ButtonEdit azp01=formonly.azp01 type CHAR, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Label dummy1:dummy1, text="LRDMDS,QY\'|\'H\';\'GK";
+Group group1:Group1, text=%"QBE2";
+ButtonEdit ima131=formonly.ima131 type CHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=2, image="zoom.png";
+Edit rate1=formonly.rate1 type CHAR, tabIndex=3;
+Edit rate2=formonly.rate2 type CHAR, tabIndex=4;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=5;
+DateEdit edate=formonly.edate type DATE, tabIndex=6;
+ComboBox type=formonly.type type CHAR, tabIndex=7, not null, items=(("1", "1:Monthly weighted average cost"),("2", "2:FIFO Cost"),("3", "3:Specific-Batch Cost"),("4", "4:Specific-Project Cost"),("5", "5:Individual-Cost by Store (Profit Center)"));
+CheckBox more=formonly.more type CHAR, tabIndex=8, text=%"Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.ima131,formonly.ima01,formonly.rate1,formonly.rate2,formonly.bdate,formonly.edate,formonly.type,formonly.more)
+END -- INSTRUCTIONS
+

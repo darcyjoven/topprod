@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci620.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci620")
+VBox VBox1
+Folder pc267
+Page page01(text="Main")
+Grid gr1662
+{
+[gummy01                        ]
+ Task No.            [ecd01     ]
+ Task Description    [ecd02               ]
+ Task Style          [ecd05               ]
+ Work Center         [ecd07     ]
+ Task Overlap Level% [ecd09     ]
+ Task Memo           [ecd15               ]
+ Operation Group      [ecdicd01            ]                       [ta_ecd07       ]
+ ta_ecd01            [ta_ecd01             ]
+[ta_ecd02         ]      [ta_ecd03         ]    [ta_ecd04       ]  [ta_ecd05       ]
+
+}
+END -- gr1662
+END -- page01
+Page info(text="Info")
+Grid gr1663
+{
+ Record Owner        [ecduser   ] Last Modified by    [ecdmodu   ] Data Valid Code     [ecdacti   ]
+ Department          [ecdgrup   ] Create/Modify Date  [ecddate     ]
+ Record Orig.        [ecdoriu   ]
+ Dept Orig.          [ecdorig   ]
+}
+END -- gr1663
+END -- info
+END -- pc267
+Grid gr1664
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1664
+END -- VBox1
+END -- aeci620
+
+TABLES
+ecd_file
+ATTRIBUTES
+Label gummy01:gummy01;
+Edit ecd01=ecd_file.ecd01, tabIndex=1, not null, required, comment="Key Field, No Blank/Repeated";
+Edit ecd02=ecd_file.ecd02, tabIndex=2, not null, required;
+ComboBox ecd05=ecd_file.ecd05, tabIndex=3, items=(("1", "Manual Operation"),("2", "Machine Operation"),("3", "Indirect Manual"),("4", "Idle Labor"));
+ButtonEdit ecd07=ecd_file.ecd07, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P> Qry Work Center";
+Edit ecd09=ecd_file.ecd09, tabIndex=5;
+Edit ecd15=ecd_file.ecd15, tabIndex=6;
+ComboBox ecdicd01=ecd_file.ecdicd01, tabIndex=13, default = "1", items=(("1", "1:WB"),("2", "2:CP"),("3", "3:DS"),("4", "4:AS"),("5", "5:FT"),("6", "6:Turnkey"),("7", "7:Other"));
+CheckBox ta_ecd07=formonly.ta_ecd07, tabIndex=21, text=%"ta_ecd07", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ta_ecd01=formonly.ta_ecd01, tabIndex=16;
+CheckBox ta_ecd02=formonly.ta_ecd02, tabIndex=17, text=%"ta_ecd02", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ta_ecd03=formonly.ta_ecd03, tabIndex=18, text=%"ta_ecd03", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ta_ecd04=formonly.ta_ecd04, tabIndex=19, text=%"ta_ecd04", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox ta_ecd05=formonly.ta_ecd05, tabIndex=20, text=%"ta_ecd05", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ecduser=ecd_file.ecduser, tabIndex=7, noEntry;
+Edit ecdmodu=ecd_file.ecdmodu, tabIndex=8, noEntry;
+Edit ecdacti=ecd_file.ecdacti, tabIndex=9, noEntry, upShift;
+Edit ecdgrup=ecd_file.ecdgrup, tabIndex=10, noEntry;
+DateEdit ecddate=ecd_file.ecddate, tabIndex=11, noEntry;
+Edit ecdoriu=ecd_file.ecdoriu, tabIndex=14, noEntry;
+Edit ecdorig=ecd_file.ecdorig, tabIndex=15, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ecd_file.ecd01,ecd_file.ecd02,ecd_file.ecd05,ecd_file.ecd07,ecd_file.ecd09,ecd_file.ecd15,ecd_file.ecdicd01,ecd_file.ecduser,ecd_file.ecdmodu,ecd_file.ecdacti,ecd_file.ecdgrup,ecd_file.ecddate,ecd_file.ecdoriu,ecd_file.ecdorig,formonly.cnt,formonly.ta_ecd01,formonly.ta_ecd02,formonly.ta_ecd03,formonly.ta_ecd04,formonly.ta_ecd05,formonly.ta_ecd07)
+END -- INSTRUCTIONS
+

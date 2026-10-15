@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr504.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr504")
+VBox VBox1
+Grid gr3280
+{
+ <G group01                                                     >
+  Item No.            [img01             ]
+  Warehouse No.       [img02             ]
+  Location            [img03             ]
+  Lot No.             [img04             ]
+  Warehouse Keeper    [ima23             ]
+  Source code         [ima08             ]
+ <                                                              >
+ <G group02                                                     >
+  Document Date       [b_date      ]-[e_date      ]
+  Data Source         [tbname    ]
+                      [page_skip                               ]
+ <                                                              >
+
+}
+END -- gr3280
+Grid gr3281
+{
+[more                                         ]
+
+}
+END -- gr3281
+END -- VBox1
+END -- aimr504
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit img01=formonly.img01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit img02=formonly.img02 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit img03=formonly.img03 type VARCHAR, tabIndex=3;
+Edit img04=formonly.img04 type VARCHAR, tabIndex=4;
+Edit ima23=formonly.ima23 type VARCHAR, tabIndex=5;
+Edit ima08=formonly.ima08 type VARCHAR, tabIndex=6;
+Group group02:group02, text="INPUT";
+DateEdit b_date=formonly.b_date type DATE, tabIndex=7;
+DateEdit e_date=formonly.e_date type DATE, tabIndex=8;
+Edit tbname=formonly.tbname type VARCHAR, tabIndex=9, comment="Enter Table Name, <^Z>Select Table Name";
+CheckBox page_skip=formonly.page_skip type VARCHAR, tabIndex=10, text="Next Page if different Item No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.img01,formonly.img02,formonly.img03,formonly.img04,formonly.ima23,formonly.ima08,formonly.b_date,formonly.e_date,formonly.tbname,formonly.page_skip,formonly.more)
+END -- INSTRUCTIONS
+

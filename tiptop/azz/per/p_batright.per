@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_batright.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_batright")
+VBox vb7
+Folder folder01
+Page page01(text="Main")
+Group QBE(text="QBE")
+HBox hb1
+Grid gr12
+{
+ [price     ]
+ [amount    ]
+ [cost      ]
+
+
+}
+END -- gr12
+Group module(text="module")
+Grid gr14
+{
+  [allmodule ]
+   Module ID  [modules                                ]
+
+}
+END -- gr14
+END -- module
+END -- hb1
+END -- QBE
+END -- page01
+END -- folder01
+Table s_gaz
+{
+[chk1      |gaz01                |gaz03                                          ]
+[chk1      |gaz01                |gaz03                                          ]
+[chk1      |gaz01                |gaz03                                          ]
+[chk1      |gaz01                |gaz03                                          ]
+[chk1      |gaz01                |gaz03                                          ]
+[chk1      |gaz01                |gaz03                                          ]
+[chk1      |gaz01                |gaz03                                          ]
+[chk1      |gaz01                |gaz03                                          ]
+
+}
+END -- s_gaz
+Grid gr4852
+{
+  ---------- Rows [cnt   ] ----------
+
+
+}
+END -- gr4852
+END -- vb7
+END -- p_batright
+
+ATTRIBUTES
+CheckBox price=formonly.price type CHAR, tabIndex=1, default = "N", text="price", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox amount=formonly.amount type CHAR, tabIndex=2, default = "N", text="amount", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox cost=formonly.cost type CHAR, tabIndex=3, default = "N", text="cost", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox allmodule=formonly.allmodule type CHAR, tabIndex=4, default = "N", text="allmodule", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit modules=formonly.modules type VARCHAR, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Qry Vender    <^Y>Create Vender,Key Field, No Blank/Repeated!    ,";
+CheckBox chk1=formonly.chk1 type CHAR, tabIndex=6, default = "Y", title="select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gaz01=formonly.gaz01 type CHAR, tabIndex=7, title="Program Code", noEntry;
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=8, title="Program Name";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gaz(formonly.chk1,formonly.gaz01,formonly.gaz03)
+SCREEN RECORD Undefined(formonly.price,formonly.amount,formonly.cost,formonly.allmodule,formonly.modules,formonly.cnt)
+END -- INSTRUCTIONS
+

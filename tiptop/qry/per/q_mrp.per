@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_mrp.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Sub-Plant MRP Version")
+Grid gr3802
+{
+ <T s_msr                                                                              >
+ [check |msr_v      |msr01           |bdate        |edate         |buk_type           ]
+ [check |msr_v      |msr01           |bdate        |edate         |buk_type           ]
+ [check |msr_v      |msr01           |bdate        |edate         |buk_type           ]
+ [check |msr_v      |msr01           |bdate        |edate         |buk_type           ]
+ [check |msr_v      |msr01           |bdate        |edate         |buk_type           ]
+ [check |msr_v      |msr01           |bdate        |edate         |buk_type           ]
+ [check |msr_v      |msr01           |bdate        |edate         |buk_type           ]
+ [check |msr_v      |msr01           |bdate        |edate         |buk_type           ]
+ [check |msr_v      |msr01           |bdate        |edate         |buk_type           ]
+ [check |msr_v      |msr01           |bdate        |edate         |buk_type           ]
+ <                                                                                     >
+
+}
+END -- gr3802
+END -- q_mrp
+
+TABLES
+msr_file
+ATTRIBUTES
+Table s_msr:s_msr;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit msr_v=msr_file.msr_v, tabIndex=2, title="Version", noEntry;
+Edit msr01=msr_file.msr01, tabIndex=3, title="Execute Date", noEntry;
+Edit bdate=msr_file.bdate, tabIndex=4, title="Initial Time", noEntry;
+Edit edate=msr_file.edate, tabIndex=5, title="Ending Time", noEntry;
+Edit buk_type=msr_file.buk_type, tabIndex=6, title="Time Bucket Method", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_msr(formonly.check,msr_file.msr_v,msr_file.msr01,msr_file.bdate,msr_file.edate,msr_file.buk_type)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi181.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi181")
+VBox VBox1
+Folder pc313
+Page page01(text="Page01")
+Table s_oby
+{
+[oby01        |oby02          |oby03  |oby04         |oby05  |oby06                         ]
+[oby01        |oby02          |oby03  |oby04         |oby05  |oby06                         ]
+[oby01        |oby02          |oby03  |oby04         |oby05  |oby06                         ]
+[oby01        |oby02          |oby03  |oby04         |oby05  |oby06                         ]
+[oby01        |oby02          |oby03  |oby04         |oby05  |oby06                         ]
+[oby01        |oby02          |oby03  |oby04         |oby05  |oby06                         ]
+[oby01        |oby02          |oby03  |oby04         |oby05  |oby06                         ]
+[oby01        |oby02          |oby03  |oby04         |oby05  |oby06                         ]
+[oby01        |oby02          |oby03  |oby04         |oby05  |oby06                         ]
+[oby01        |oby02          |oby03  |oby04         |oby05  |oby06                         ]
+
+}
+END -- s_oby
+END -- page01
+END -- pc313
+Grid gr1367
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1367
+END -- VBox1
+END -- atmi181
+
+TABLES
+oby_file
+ATTRIBUTES
+ButtonEdit oby01=oby_file.oby01, action=controlp, tabIndex=1, title="Vehicle No", not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Detail <^O>Copy Previous Record! ";
+DateEdit oby02=oby_file.oby02, tabIndex=2, title="Initial Date", not null, required;
+Edit oby03=oby_file.oby03, tabIndex=3, title="Time", not null, required;
+DateEdit oby04=oby_file.oby04, tabIndex=4, title="Expire Date", not null, required;
+Edit oby05=oby_file.oby05, tabIndex=5, title="Time", not null, required;
+Edit oby06=oby_file.oby06, tabIndex=6, title="Memo";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oby(oby_file.oby01,oby_file.oby02,oby_file.oby03,oby_file.oby04,oby_file.oby05,oby_file.oby06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

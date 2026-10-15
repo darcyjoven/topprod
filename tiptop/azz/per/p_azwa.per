@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_azwa.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"p_azwa")
+VBox vb7
+Folder folder01
+Page page01(text=%"Main")
+VBox vb6
+Grid gr2387
+{
+ User Code [azwa01        ][zx02          ]
+
+
+}
+END -- gr2387
+Grid grid_tree
+{
+ <TREE tree1         >
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ [name               ]
+ <                   >
+
+}
+END -- grid_tree
+END -- vb6
+END -- page01
+END -- folder01
+Grid gr2388
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2388
+END -- vb7
+END -- p_azwa
+
+TABLES
+azwa_file
+ATTRIBUTES
+ButtonEdit azwa01=azwa_file.azwa01, action=controlp, tabIndex=1, not null, required, image="zoom", comment=%"<^P>Query Department";
+Edit zx02=formonly.zx02 type CHAR, tabIndex=2, noEntry;
+Tree tree1:Tree1, parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="folder_i932", imageCollapsed="folder_i932", imageLeaf="leaf_i932", width = 21 characters;
+LABEL name=formonly.name type CHAR, title=%"Tree";
+Phantom formonly.pid type CHAR;
+Phantom formonly.id type CHAR;
+Phantom formonly.has_children type CHAR;
+Phantom formonly.expanded type CHAR;
+Phantom formonly.level type CHAR;
+Phantom formonly.treekey1 type CHAR;
+Phantom formonly.treekey2 type CHAR;
+Phantom formonly.treekey3 type CHAR;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=3, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.treekey1,formonly.treekey2,formonly.treekey3)
+SCREEN RECORD Undefined(azwa_file.azwa01,formonly.zx02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

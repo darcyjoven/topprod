@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_spccfg_basic.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Form Integration Field Config")
+VBox VBox1
+Table s_wcd
+{
+[wcd01      |wcd02      |gae04        ]
+[wcd01      |wcd02      |gae04        ]
+[wcd01      |wcd02      |gae04        ]
+[wcd01      |wcd02      |gae04        ]
+[wcd01      |wcd02      |gae04        ]
+[wcd01      |wcd02      |gae04        ]
+[wcd01      |wcd02      |gae04        ]
+[wcd01      |wcd02      |gae04        ]
+[wcd01      |wcd02      |gae04        ]
+[wcd01      |wcd02      |gae04        ]
+
+}
+END -- s_wcd
+Grid gr1432
+{
+ ----------Rows [cn2] ----------
+
+}
+END -- gr1432
+END -- VBox1
+END -- aws_spccfg_basic
+
+TABLES
+wcd_file
+ATTRIBUTES
+ButtonEdit wcd01=wcd_file.wcd01, action=controlp, tabIndex=1, title="Table Name", not null, required, image="zoom";
+Edit wcd02=wcd_file.wcd02, tabIndex=2, title="Field Name", not null, required;
+Edit gae04=formonly.gae04 type CHAR, tabIndex=3, title="Field Memo", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wcd(wcd_file.wcd01,wcd_file.wcd02,formonly.gae04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

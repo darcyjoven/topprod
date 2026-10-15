@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmr261.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"atmr261")
+VBox VBox1
+Grid gr1185
+{
+ <G group01                              >
+  Repack No.   [tse01               ]
+  Date         [tse02               ]
+  Item No.     [tse03               ]
+  Department   [tse15               ]
+  Employee     [tse16               ]
+  Reason       [tse17               ]
+ <                                       >
+
+}
+END -- gr1185
+Grid gr1186
+{
+ [more                                 ]
+
+}
+END -- gr1186
+END -- VBox1
+END -- atmr261
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit tse01=formonly.tse01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+DateEdit tse02=formonly.tse02 type DATE, tabIndex=2;
+ButtonEdit tse03=formonly.tse03 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit tse15=formonly.tse15 type CHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit tse16=formonly.tse16 type CHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit tse17=formonly.tse17 type CHAR, action=controlp, tabIndex=6, image="zoom";
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tse01,formonly.tse02,formonly.tse03,formonly.tse15,formonly.tse16,formonly.tse17,formonly.more)
+END -- INSTRUCTIONS
+

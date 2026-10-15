@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglp802.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglp802")
+VBox vb3
+Group g01(text="INPUT")
+Grid gr2514
+{
+ Original Book No.            [o_abg00   ]
+ Carry to Book No.            [n_abg00   ]
+ yy                           [yy        ]
+ mm                           [mm        ]
+[opening                                              ]
+ Stock Balance Date           [abg06       ]
+
+}
+END -- gr2514
+END -- g01
+Grid gr2515
+{
+
+ [more                                                     ]
+
+}
+END -- gr2515
+END -- vb3
+END -- aglp802
+
+ATTRIBUTES
+ButtonEdit o_abg00=formonly.o_abg00 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit n_abg00=formonly.n_abg00 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit yy=formonly.yy type CHAR, tabIndex=4, not null, required;
+Edit mm=formonly.mm, tabIndex=7, not null, required;
+CheckBox opening=formonly.opening type CHAR, tabIndex=5, default = "N", text="ch1", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit abg06=formonly.abg06 type DATE, tabIndex=6, not null, required;
+CheckBox more=formonly.more type CHAR, tabIndex=3, default = "N", text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.o_abg00,formonly.n_abg00,formonly.yy,formonly.opening,formonly.abg06,formonly.more,formonly.mm)
+END -- INSTRUCTIONS
+

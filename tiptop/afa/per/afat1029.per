@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1029.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="afat1029")
+Folder pc6
+Page Page12(text=%"Main")
+Table s_fat2
+{
+[fat02      |fat03          |fat031    |faj06                    |fat04         |fat05                |fat06              |fat071          |fat081                     |fat092     |fat102       |fat111                 ]
+[fat02      |fat03          |fat031    |faj06                    |fat04         |fat05                |fat06              |fat071          |fat081                     |fat092     |fat102       |fat111                 ]
+[fat02      |fat03          |fat031    |faj06                    |fat04         |fat05                |fat06              |fat071          |fat081                     |fat092     |fat102       |fat111                 ]
+[fat02      |fat03          |fat031    |faj06                    |fat04         |fat05                |fat06              |fat071          |fat081                     |fat092     |fat102       |fat111                 ]
+[fat02      |fat03          |fat031    |faj06                    |fat04         |fat05                |fat06              |fat071          |fat081                     |fat092     |fat102       |fat111                 ]
+[fat02      |fat03          |fat031    |faj06                    |fat04         |fat05                |fat06              |fat071          |fat081                     |fat092     |fat102       |fat111                 ]
+[fat02      |fat03          |fat031    |faj06                    |fat04         |fat05                |fat06              |fat071          |fat081                     |fat092     |fat102       |fat111                 ]
+[fat02      |fat03          |fat031    |faj06                    |fat04         |fat05                |fat06              |fat071          |fat081                     |fat092     |fat102       |fat111                 ]
+[fat02      |fat03          |fat031    |faj06                    |fat04         |fat05                |fat06              |fat071          |fat081                     |fat092     |fat102       |fat111                 ]
+[fat02      |fat03          |fat031    |faj06                    |fat04         |fat05                |fat06              |fat071          |fat081                     |fat092     |fat102       |fat111                 ]
+
+}
+END -- s_fat2
+END -- Page12
+END -- pc6
+END -- afat1029
+
+TABLES
+fat_file
+ATTRIBUTES
+Edit fat02=fat_file.fat02, tabIndex=1, title="Line No.", noEntry;
+ButtonEdit fat03=fat_file.fat03, action=controlp, tabIndex=2, title="Property No.", noEntry, image="zoom", comment="<^P>Qry Asset ";
+Edit fat031=fat_file.fat031, tabIndex=3, title="Add No.", noEntry;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=4, title="Chinese Name", noEntry;
+ButtonEdit fat04=fat_file.fat04, action=controlp, tabIndex=5, title="Keeper(New)", noEntry, image="zoom", comment="<^P>Qry Employee";
+ButtonEdit fat05=fat_file.fat05, action=controlp, tabIndex=6, title="Keeping Department", noEntry, image="zoom", comment="<^P>Query Department";
+ButtonEdit fat06=fat_file.fat06, action=controlp, tabIndex=7, title="Storing Location", noEntry, image="zoom", comment="<^P>Qry Storing Location";
+ButtonEdit fat071=fat_file.fat071, action=controlp, tabIndex=8, title="Asset Account2", not null, required, image="zoom", comment="<^P>Qry Account";
+ButtonEdit fat081=fat_file.fat081, action=controlp, tabIndex=9, title="Accumulated Depr.Account2", image="zoom", comment="<^P>Qry Account";
+ComboBox fat092=fat_file.fat092, tabIndex=10, title="Appo.Mtd", not null, required, queryEditable, items=(("1", %"Single Department Apportionment"),("2", %"Multi-Department Apportionment"));
+ButtonEdit fat102=fat_file.fat102, action=controlp, tabIndex=11, title="Department", not null, required, image="zoom", comment="<^P>Query Department <^T>Qry Apportionment Category <^Y>Apportionment Category";
+ButtonEdit fat111=fat_file.fat111, action=controlp, tabIndex=12, title="Depreciation Expense Account2", image="zoom", comment="<^P>Qry Account";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fat2(fat_file.fat02,fat_file.fat03,fat_file.fat031,formonly.faj06,fat_file.fat04,fat_file.fat05,fat_file.fat06,fat_file.fat071,fat_file.fat081,fat_file.fat092,fat_file.fat102,fat_file.fat111)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimr522.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aimr522")
+VBox VBox1
+Grid gr3299
+{
+ <G group01                                ><G group02                                         >
+  Item No.           [ima01               ]  ABC Code           [ima07               ]
+  Group Code         [ima06               ]  Other group code 1 [ima09               ]
+  Other group code 2 [ima10               ]  Other group code 3 [ima11               ]
+  Other group code 4 [ima12               ]  Warehouse No.      [img02               ]
+  Location           [img03               ]
+ <                                         ><                                                  >
+
+}
+END -- gr3299
+Group group03(text="INPUT")
+Grid gr3300
+{
+ <G group04                              ><G group05                                         >
+ [b                   ]                   [c                                                 ]
+ <                                       ><                                                  >
+ <G group06                                                            ><G group07           >
+ [s1                  ]  [s2                  ]  [s3                  ] [y                   ]
+ [t1                  ]  [t2                  ]  [t3                  ]
+ [u1                  ]  [u2                  ]  [u3                  ]
+ <                                                                     >
+ <G group08                                                            >
+ [zero                                                        ]
+ <                                                                     ><                    >
+
+}
+END -- gr3300
+END -- group03
+Grid gr3301
+{
+[more                                    ]
+
+}
+END -- gr3301
+END -- VBox1
+END -- aimr522
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima06=formonly.ima06 type VARCHAR, tabIndex=2;
+Edit ima10=formonly.ima10 type CHAR, tabIndex=3;
+Edit ima12=formonly.ima12 type CHAR, tabIndex=4;
+Edit img03=formonly.img03 type VARCHAR, tabIndex=5, upShift;
+Group group02:group02, text="QBE";
+Edit ima07=formonly.ima07 type VARCHAR, tabIndex=6;
+Edit ima09=formonly.ima09 type CHAR, tabIndex=7;
+Edit ima11=formonly.ima11 type CHAR, tabIndex=8;
+Edit img02=formonly.img02 type VARCHAR, tabIndex=9, upShift;
+Group group04:group04, text="Unit Cost";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=10, items=(("1", "Standard Cost"),("2", "Curr Cost"),("3", "Default Cost"));
+Group group05:group05, text="Inventory Qty";
+RadioGroup c=formonly.c type VARCHAR, tabIndex=11, items=(("1", "MPS/MRP Available Qty"),("2", "Inventory Qty(Excluding unusable inventory)"),("3", "Inventory Qty(Include Unusuable Inventory)"));
+Group group06:group06, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=12, queryEditable, items=(("1", "Item No."),("2", "ABC Code"),("3", "Group Code"),("4", "Warehouse"),("5", "Location"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=13, queryEditable, items=(("1", "Item No."),("2", "ABC Code"),("3", "Group Code"),("4", "Warehouse"),("5", "Location"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=14, queryEditable, items=(("1", "Item No."),("2", "ABC Code"),("3", "Group Code"),("4", "Warehouse"),("5", "Location"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=15, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=16, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=17, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=18, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=19, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=20, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group07:group07, text="Group Code Order";
+RadioGroup y=formonly.y type VARCHAR, tabIndex=21, items=(("0", "Group Code"),("1", "Other group code 1"),("2", "Other group code 2"),("3", "Other group code 3"),("4", "Other group code 4"));
+Group group08:group08;
+CheckBox zero=formonly.zero type VARCHAR, tabIndex=22, text="Print if QOH = 0   ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=23, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima06,formonly.ima10,formonly.ima12,formonly.img03,formonly.ima07,formonly.ima09,formonly.ima11,formonly.img02,formonly.b,formonly.c,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.y,formonly.zero,formonly.more)
+END -- INSTRUCTIONS
+

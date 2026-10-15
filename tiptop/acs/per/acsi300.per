@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/acs/42f/acsi300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acsi300")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1532
+{
+ <G group01                                           >
+  Item Group Code     [csd01                         ]
+                      [ima02                         ]
+  Current Ver.        [ima05     ]
+  Source Code         [ima08     ]
+ <                                                    >
+ <G group02                                             >
+  Add. Cost Items     [csd02     ]
+  Cost Categorization [csd03     ][d01                 ]
+  Cost Desc.          [smg02               ]
+  Add. Cost           [csd05               ]
+  Add.Ratio           [csd04     ][dummy01   ]
+ <                                                      >
+
+}
+END -- gr1532
+END -- page01
+END -- folder01
+Table s_cse
+{
+[cse03              |smg02_t             |smg03  |d02           ]
+[cse03              |smg02_t             |smg03  |d02           ]
+[cse03              |smg02_t             |smg03  |d02           ]
+[cse03              |smg02_t             |smg03  |d02           ]
+[cse03              |smg02_t             |smg03  |d02           ]
+[cse03              |smg02_t             |smg03  |d02           ]
+[cse03              |smg02_t             |smg03  |d02           ]
+[cse03              |smg02_t             |smg03  |d02           ]
+[cse03              |smg02_t             |smg03  |d02           ]
+[cse03              |smg02_t             |smg03  |d02           ]
+
+}
+END -- s_cse
+Grid gr1533
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1533
+END -- VBox1
+END -- acsi300
+
+TABLES
+smg_file,
+ima_file,
+cse_file,
+csd_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit csd01=csd_file.csd01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima02=ima_file.ima02, tabIndex=2;
+Edit ima05=ima_file.ima05, tabIndex=3;
+Edit ima08=ima_file.ima08, tabIndex=4;
+Group group02:group02;
+ButtonEdit csd02=csd_file.csd02, action=controlp, tabIndex=5, not null, required, image="zoom";
+Edit csd03=csd_file.csd03, tabIndex=6, noEntry;
+Edit d01=formonly.d01 type CHAR, tabIndex=7, noEntry;
+Edit smg02=smg_file.smg02, tabIndex=8, noEntry;
+Edit csd05=csd_file.csd05, tabIndex=9;
+Edit csd04=csd_file.csd04, tabIndex=10;
+Label dummy01:dummy01, text="%";
+ButtonEdit cse03=cse_file.cse03, action=controlp, tabIndex=11, title="Ratio Cost Items", not null, required, image="zoom";
+Edit smg02_t=formonly.smg02_t type VARCHAR, tabIndex=12, title="Description", noEntry;
+Edit smg03=smg_file.smg03, tabIndex=13, title="Cost", noEntry;
+Edit d02=formonly.d02 type VARCHAR, tabIndex=14, title="Categorization", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cse(cse_file.cse03,formonly.smg02_t,smg_file.smg03,formonly.d02)
+SCREEN RECORD Undefined(csd_file.csd01,ima_file.ima02,ima_file.ima05,ima_file.ima08,csd_file.csd02,csd_file.csd03,formonly.d01,smg_file.smg02,csd_file.csd05,csd_file.csd04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,177 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapi202.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapi202")
+VBox vb2
+Folder pc12
+Page page01(text="Main")
+Grid gr23
+{
+  Accounts Department [aps01     ][gem02     ]            [imgmksg]
+                                                          [       ]
+
+ <G group01                                        ><G group02                                                     >
+  Cash Acct.                [aps11               ]   Uninvoiced A/P                         [aps21               ]
+  Advance Payment Acct.     [aps12               ]   Acct Payable                           [aps22               ]
+  Suspense Debit Acct.      [aps13               ]   Accrued Expense Payable                [aps23               ]
+  Prepayment                [aps14               ]   Estimated Premium Payable              [aps231              ]
+  Purchase/Returned Acct.   [aps40               ]   Estimated Customs Clearance Fee Payable[aps232              ]
+  Receipt Allowance Acct.   [aps41               ]   Paid-for Expense Acct                  [aps233              ]
+  Exchange Loss Acct.       [aps42               ]   Inventory In-Transit Acct              [aps234              ]
+  Exchange Profit Acct.     [aps43               ]   Note Payable Acct                      [aps24               ]
+  Price Difference Acct.    [aps44               ]   Current Loan Acct                      [aps25               ]
+  Inventory Acct.           [aps45               ]   Paid-for Draft Acct                    [aps56               ]
+  Charges Acct.             [aps46               ]   Postage Acct                           [aps47               ]
+  T.T Charge Acct.          [aps57               ]   A/P TT Acct                            [aps58               ]
+  Return Acct.              [aps61               ]
+ <                                                 ><                                                              >
+
+}
+END -- gr23
+END -- page01
+Page page02(text="Main2")
+Grid gr24
+{
+
+ <G group03                                        ><G group04                                                        >
+  Cash Acct. 2              [aps111              ]   Uninvoiced A/P 2                          [aps211              ]
+  Advance Payment Acct. 2   [aps121              ]   Acct Payable 2                            [aps221              ]
+  Suspense Debit Acct. 2    [aps131              ]   Accrued Expense Payable 2                 [aps235              ]
+  Prepayment 2              [aps141              ]   Estimated Premium Payable 2               [aps236              ]
+  Purchase/Returned Acct. 2 [aps401              ]   Estimated Customs Clearance Fee Payable 2 [aps237              ]
+  Receipt Allowance Acct. 2 [aps411              ]   Paid-for Expense Acct 2                   [aps238              ]
+  Exchange Loss Acct. 2     [aps421              ]   Inventory In-Transit Acct 2               [aps239              ]
+  Exchange Profit Acct. 2   [aps431              ]   Note Payable Acct 2                       [aps241              ]
+  Price Difference Acct. 2  [aps441              ]   Current Loan Acct 2                       [aps251              ]
+  Inventory Acct. 2         [aps451              ]   Paid-for Draft Acct 2                     [aps561              ]
+  Charges Acct. 2           [aps461              ]   Postage Acct 2                            [aps471              ]
+  T.T Charge Acct. 2        [aps571              ]   A/P TT Acct 2                             [aps581              ]
+  Return Acct. 2            [aps611              ]
+ <                                                 ><                                                                 >
+
+}
+END -- gr24
+END -- page02
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+ [label1        ][aps02               ]
+ [label2        ][aps03               ]
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- Page1
+Page info(text="Info")
+Grid gr25
+{
+ Record Owner       [apsuser   ] Last Modified by   [apsmodu   ] Data Valid Code     [apsacti   ]
+ Department         [apsgrup   ] Create/Modify Date [apsdate     ]
+ Record Orig.       [apsoriu   ]
+ Dept Orig.         [apsorig   ]
+}
+END -- gr25
+END -- info
+END -- pc12
+Grid gr26
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr26
+END -- vb2
+END -- aapi202
+
+TABLES
+aps_file
+ATTRIBUTES
+ButtonEdit aps01=aps_file.aps01, action=controlp, tabIndex=1, image="zoom", upShift, comment="KEY Field, No Blank/Repeated! <^P>Qry Department name";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=2, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Group group01:group01;
+ButtonEdit aps11=aps_file.aps11, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps12=aps_file.aps12, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps13=aps_file.aps13, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps14=aps_file.aps14, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps40=aps_file.aps40, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps41=aps_file.aps41, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps42=aps_file.aps42, action=controlp, tabIndex=10, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps43=aps_file.aps43, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps44=aps_file.aps44, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps45=aps_file.aps45, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps46=aps_file.aps46, action=controlp, tabIndex=14, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps57=aps_file.aps57, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps61=aps_file.aps61, action=controlp, tabIndex=503, image="zoom", comment="<^P>Qry Account ";
+Group group02:group02;
+ButtonEdit aps21=aps_file.aps21, action=controlp, tabIndex=16, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps22=aps_file.aps22, action=controlp, tabIndex=17, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps23=aps_file.aps23, action=controlp, tabIndex=18, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps231=aps_file.aps231, action=controlp, tabIndex=19, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps232=aps_file.aps232, action=controlp, tabIndex=20, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps233=aps_file.aps233, action=controlp, tabIndex=21, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps234=aps_file.aps234, action=controlp, tabIndex=22, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps24=aps_file.aps24, action=controlp, tabIndex=23, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps25=aps_file.aps25, action=controlp, tabIndex=24, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps56=aps_file.aps56, action=controlp, tabIndex=25, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps47=aps_file.aps47, action=controlp, tabIndex=26, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps58=aps_file.aps58, action=controlp, tabIndex=27, image="zoom", comment="<^P>Qry Account ";
+Group group03:group03;
+ButtonEdit aps111=aps_file.aps111, action=controlp, tabIndex=28, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps121=aps_file.aps121, action=controlp, tabIndex=29, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps131=aps_file.aps131, action=controlp, tabIndex=30, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps141=aps_file.aps141, action=controlp, tabIndex=31, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps401=aps_file.aps401, action=controlp, tabIndex=32, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps411=aps_file.aps411, action=controlp, tabIndex=33, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps421=aps_file.aps421, action=controlp, tabIndex=34, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps431=aps_file.aps431, action=controlp, tabIndex=35, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps441=aps_file.aps441, action=controlp, tabIndex=36, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps451=aps_file.aps451, action=controlp, tabIndex=37, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps461=aps_file.aps461, action=controlp, tabIndex=38, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps571=aps_file.aps571, action=controlp, tabIndex=39, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps611=aps_file.aps611, action=controlp, tabIndex=504, image="zoom", comment="<^P>Qry Account ";
+Group group04:group04;
+ButtonEdit aps211=aps_file.aps211, action=controlp, tabIndex=40, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps221=aps_file.aps221, action=controlp, tabIndex=41, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps235=aps_file.aps235, action=controlp, tabIndex=42, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps236=aps_file.aps236, action=controlp, tabIndex=43, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps237=aps_file.aps237, action=controlp, tabIndex=44, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps238=aps_file.aps238, action=controlp, tabIndex=45, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps239=aps_file.aps239, action=controlp, tabIndex=46, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps241=aps_file.aps241, action=controlp, tabIndex=47, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps251=aps_file.aps251, action=controlp, tabIndex=48, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps561=aps_file.aps561, action=controlp, tabIndex=49, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps471=aps_file.aps471, action=controlp, tabIndex=50, image="zoom", comment="<^P>Qry Account ";
+ButtonEdit aps581=aps_file.aps581, action=controlp, tabIndex=51, image="zoom", comment="<^P>Qry Account ";
+Label label1:Label1, text=%"Provision Tax";
+ButtonEdit aps02=formonly.aps02, action=controlp, tabIndex=505, image="zoom";
+Label label2:Label2, text=%"Prepaid Tax";
+ButtonEdit aps03=formonly.aps03, action=controlp, tabIndex=506, image="zoom";
+Edit apsuser=aps_file.apsuser, tabIndex=52, noEntry;
+Edit apsmodu=aps_file.apsmodu, tabIndex=53, noEntry;
+Edit apsacti=aps_file.apsacti, tabIndex=54, noEntry;
+Edit apsgrup=aps_file.apsgrup, tabIndex=55, noEntry;
+DateEdit apsdate=aps_file.apsdate, tabIndex=56, noEntry;
+Edit apsoriu=aps_file.apsoriu, tabIndex=501, noEntry;
+Edit apsorig=aps_file.apsorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=57, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(aps_file.aps01,formonly.gem02,formonly.imgmksg,aps_file.aps11,aps_file.aps12,aps_file.aps13,aps_file.aps14,aps_file.aps40,aps_file.aps41,aps_file.aps42,aps_file.aps43,aps_file.aps44,aps_file.aps45,aps_file.aps46,aps_file.aps57,aps_file.aps61,aps_file.aps21,aps_file.aps22,aps_file.aps23,aps_file.aps231,aps_file.aps232,aps_file.aps233,aps_file.aps234,aps_file.aps24,aps_file.aps25,aps_file.aps56,aps_file.aps47,aps_file.aps58,aps_file.aps111,aps_file.aps121,aps_file.aps131,aps_file.aps141,aps_file.aps401,aps_file.aps411,aps_file.aps421,aps_file.aps431,aps_file.aps441,aps_file.aps451,aps_file.aps461,aps_file.aps571,aps_file.aps611,aps_file.aps211,aps_file.aps221,aps_file.aps235,aps_file.aps236,aps_file.aps237,aps_file.aps238,aps_file.aps239,aps_file.aps241,aps_file.aps251,aps_file.aps561,aps_file.aps471,aps_file.aps581,aps_file.apsuser,aps_file.apsmodu,aps_file.apsacti,aps_file.apsgrup,aps_file.apsdate,aps_file.apsoriu,aps_file.apsorig,formonly.cnt,formonly.aps02,formonly.aps03)
+END -- INSTRUCTIONS
+

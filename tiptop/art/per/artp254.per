@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artp254.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder p1
+Page p01(text=%"Page1")
+Grid gr01
+{
+
+[ruc01        |ruc02                ]
+[ruc28        |ruc21                ]
+[ruc27        |ruc22                ]
+[ruc32        |ruc31                ]
+
+}
+END -- gr01
+END -- p01
+END -- p1
+Grid gr02
+{
+
+ <T s_ruc                                                                                                                                                                                                                                                                                                    >
+ [sel     |ruc03             |ruc06             |ruc23             |ruc04               |ruc05     |ruc07          |ruc24          |ruc08               |ima02               |ima131              |ruc16     |ruc18     |ruc25     |ruc09               |ruc00     |ruc33               |ruc34               ]
+ [sel     |ruc03             |ruc06             |ruc23             |ruc04               |ruc05     |ruc07          |ruc24          |ruc08               |ima02               |ima131              |ruc16     |ruc18     |ruc25     |ruc09               |ruc00     |ruc33               |ruc34               ]
+ [sel     |ruc03             |ruc06             |ruc23             |ruc04               |ruc05     |ruc07          |ruc24          |ruc08               |ima02               |ima131              |ruc16     |ruc18     |ruc25     |ruc09               |ruc00     |ruc33               |ruc34               ]
+ [sel     |ruc03             |ruc06             |ruc23             |ruc04               |ruc05     |ruc07          |ruc24          |ruc08               |ima02               |ima131              |ruc16     |ruc18     |ruc25     |ruc09               |ruc00     |ruc33               |ruc34               ]
+ [sel     |ruc03             |ruc06             |ruc23             |ruc04               |ruc05     |ruc07          |ruc24          |ruc08               |ima02               |ima131              |ruc16     |ruc18     |ruc25     |ruc09               |ruc00     |ruc33               |ruc34               ]
+ [sel     |ruc03             |ruc06             |ruc23             |ruc04               |ruc05     |ruc07          |ruc24          |ruc08               |ima02               |ima131              |ruc16     |ruc18     |ruc25     |ruc09               |ruc00     |ruc33               |ruc34               ]
+ [sel     |ruc03             |ruc06             |ruc23             |ruc04               |ruc05     |ruc07          |ruc24          |ruc08               |ima02               |ima131              |ruc16     |ruc18     |ruc25     |ruc09               |ruc00     |ruc33               |ruc34               ]
+ [sel     |ruc03             |ruc06             |ruc23             |ruc04               |ruc05     |ruc07          |ruc24          |ruc08               |ima02               |ima131              |ruc16     |ruc18     |ruc25     |ruc09               |ruc00     |ruc33               |ruc34               ]
+ [sel     |ruc03             |ruc06             |ruc23             |ruc04               |ruc05     |ruc07          |ruc24          |ruc08               |ima02               |ima131              |ruc16     |ruc18     |ruc25     |ruc09               |ruc00     |ruc33               |ruc34               ]
+ [sel     |ruc03             |ruc06             |ruc23             |ruc04               |ruc05     |ruc07          |ruc24          |ruc08               |ima02               |ima131              |ruc16     |ruc18     |ruc25     |ruc09               |ruc00     |ruc33               |ruc34               ]
+
+}
+END -- gr02
+Grid gr03
+{
+ ---------- Rows [cnt   ]  ----------
+
+
+}
+END -- gr03
+END -- VBox1
+END -- artp254
+
+TABLES
+ruc_file
+ATTRIBUTES
+Label ruc01:ruc01, text=%"ruc01";
+ButtonEdit ruc02=formonly.ruc01 type VARCHAR, action=controlp, tabIndex=1, not null, image="zoom";
+Label ruc28:ruc28, text=%"ruc28";
+ComboBox ruc21=formonly.ruc28 type VARCHAR, tabIndex=2, default = "2", noEntry, items=(("1", "1"),("2", "2"));
+Label ruc27:ruc27, text=%"ruc27";
+DateEdit ruc22=formonly.ruc27 type DATE, tabIndex=3;
+Label ruc32:ruc32, text=%"ruc32";
+ButtonEdit ruc31=formonly.ruc32 type VARCHAR, action=controlp, tabIndex=4, noEntry, image="zoom";
+Table s_ruc:s_ruc;
+CheckBox sel=formonly.sel, tabIndex=5, default = "Y", title=%"sel", text=%"", valueChecked = "Y", valueUnchecked = "N";
+Edit ruc03=ruc_file.ruc01, tabIndex=6, title=%"ruc01", noEntry;
+Edit ruc06=ruc_file.ruc06, tabIndex=7, title=%"ruc06", noEntry;
+ComboBox ruc23=ruc_file.ruc28, tabIndex=8, default = "2", title=%"ruc28", noEntry, items=(("1", "1"),("2", "2"));
+Edit ruc04=ruc_file.ruc02, tabIndex=9, title=%"ruc02", noEntry;
+Edit ruc05=ruc_file.ruc03, tabIndex=10, title=%"ruc03", noEntry;
+DateEdit ruc07=ruc_file.ruc05, tabIndex=11, title=%"ruc05", noEntry;
+DateEdit ruc24=ruc_file.ruc27, tabIndex=12, title=%"ruc27", noEntry;
+Edit ruc08=ruc_file.ruc04, tabIndex=13, title=%"ruc04", noEntry;
+Edit ima02=formonly.ima02, tabIndex=14, title=%"ima02", noEntry;
+Edit ima131=formonly.ima131, tabIndex=15, title=%"ima131", noEntry;
+Edit ruc16=ruc_file.ruc16, tabIndex=16, title=%"ruc16", noEntry;
+Edit ruc18=ruc_file.ruc18, tabIndex=17, title=%"ruc18", noEntry;
+Edit ruc25=ruc_file.ruc21, tabIndex=18, title=%"ruc21", noEntry;
+Edit ruc09=ruc_file.ruc08, tabIndex=19, title=%"ruc08", noEntry;
+Edit ruc00=ruc_file.ruc09, tabIndex=20, title=%"ruc09", noEntry;
+ComboBox ruc33=ruc_file.ruc33, tabIndex=21, default = "2", title=%"ruc33", noEntry, items=(("1", "1"),("2", "2"));
+Edit ruc34=ruc_file.ruc34, tabIndex=22, title=%"ruc34", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ruc01,formonly.ruc28,formonly.ruc27,formonly.ruc32,formonly.cnt)
+SCREEN RECORD s_ruc(formonly.sel,ruc_file.ruc01,ruc_file.ruc06,ruc_file.ruc28,ruc_file.ruc02,ruc_file.ruc03,ruc_file.ruc05,ruc_file.ruc27,ruc_file.ruc04,formonly.ima02,formonly.ima131,ruc_file.ruc16,ruc_file.ruc18,ruc_file.ruc21,ruc_file.ruc08,ruc_file.ruc09,ruc_file.ruc33,ruc_file.ruc34)
+END -- INSTRUCTIONS
+

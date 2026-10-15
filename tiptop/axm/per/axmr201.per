@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmr201.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axmr201")
+VBox vb3
+Grid gr2320
+{
+ <G group01                                                                               >
+  Customer No.         [occ01               ]
+  Cust cate            [occ03               ]
+  Local No.            [occ22               ]
+  Country Code         [occ21               ]
+  Area Code            [occ20               ]
+  Contct Category      [oce02               ]
+
+ <                                                                                        >
+
+}
+END -- gr2320
+Group g01(text="INPUT")
+Grid gr2321
+{
+ <G group02                                   >    <G group03                      >
+  Columns per Page   [c   ]                         [d                         ]
+  Address selection  [b                    ]         IF assign,Greeting   [e   ]
+
+
+ <                                            >    <                               >
+
+}
+END -- gr2321
+END -- g01
+Grid gr2322
+{
+[more                                                        ]
+
+}
+END -- gr2322
+END -- vb3
+END -- axmr201
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit occ01=formonly.occ01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit occ03=formonly.occ03 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit occ22=formonly.occ22 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit occ21=formonly.occ21 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit occ20=formonly.occ20 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+Edit oce02=formonly.oce02 type VARCHAR, tabIndex=6;
+Group group02:group02;
+ComboBox c=formonly.c type SMALLINT, tabIndex=7, not null, required, queryEditable, items=(("1", "1"),("2", "2"),("3", "3"));
+RadioGroup b=formonly.b type VARCHAR, tabIndex=8, items=(("1", "Shipping Address"),("2", "Invoice Address"));
+Group group03:group03, text="Greeting";
+RadioGroup d=formonly.d type VARCHAR, tabIndex=9, items=(("1", "Receipt"),("2", "Dear"),("3", "Open"),("4", "Assigned"));
+Edit e=formonly.e type VARCHAR, tabIndex=10;
+CheckBox more=formonly.more type VARCHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.occ01,formonly.occ03,formonly.occ22,formonly.occ21,formonly.occ20,formonly.oce02,formonly.c,formonly.b,formonly.d,formonly.e,formonly.more)
+END -- INSTRUCTIONS
+

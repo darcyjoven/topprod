@@ -1,0 +1,82 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsi203.per created Wed Dec 31 05:29:36 2008
+-- File created from apsi203.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsi203")
+-- GRID
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1
+      PAGE page01( TEXT="Page01")
+        GRID gr1
+        {
+        <G group01                                           >
+         Machine No.       [aa0    ]
+         Week Calendar No. [aa1                             ]
+         Day Calendar NO.  [aa2                             ]
+        <                                                    >
+        <G group02                                           >
+        [aa3                                                ]
+        <                                                    >
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    GRID gr2
+    {
+     ----------Rows [aa4   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES aps_eci
+
+ATTRIBUTES
+-- --------------------------------------------------------------
+--   Per_version = '3.10.06-10.04.29(00003)'   #
+-- ç¤ç?ç¤Wç¹?
+-- apsi203 ?·ç¹©?·ç?ç¹¡ç?ç°?ç¹ç¾¶?@ç¦®@ç¹~
+-- .
+-- ç°ç¹­ç¤ç?ç«ç¾¹?¼O
+-- apsi203
+-- .
+-- ç¦®@ç¹~??ç© ç?
+-- ç¹ç¾¶?@ APS ç«??ç¹¹ç¹¡ç¤ç°§?(ERP aeci670)
+-- .
+-- ??ç?ç©«ç??ç©¢ç¹??ç???ç??ç©¡??·ç£ç¿»sç¹?
+-- ??ç½?ç¤sç¤b Day_Calendar_Table(aps_sad)
+-- ç¿»dç³§ç°·
+-- ??ç¤?ç¤ç??¶ç??»J
+-- Â¯?æ°¸?´æ??¯å»?
+-- ??ç¤?ç¤ç??¶ç??»J
+-- ?ç??¼ç½ç°??»ç?
+-- ??ç¤?ç¤ç??¶ç??»J
+-- ???»ç¿?¼i<??ç°??»ç?
+-- ?ç?ç°¡ç¿ç°?ç«ç?ç¹A
+-- ??0:ç¤ç³§ç°«ç°«ç°¡ç¿ç°?
+-- 1:ç¹Lç°«ç°«ç°¡ç¿ç°?
+-- .
+-- 
+
+  GROUP group01 : group01;
+  EDIT aa0=FORMONLY.eq_id, NOENTRY, TABINDEX=1;
+  EDIT aa1=aps_eci.wcaln_id, TABINDEX=2;
+  EDIT aa2=aps_eci.dcaln_id, TABINDEX=3;
+  GROUP group02 : group02, TEXT="Capacity Type";
+  RADIOGROUP aa3=aps_eci.eq_type, TABINDEX=4, ITEMS=(("0","Limited Capacity"),("1","Limitless Capacity"));
+  EDIT aa4=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=5;
+END

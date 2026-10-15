@@ -1,0 +1,148 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmt300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmt300")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1005
+{
+ Inventory Type      [tus08             ]
+ Adjustment No.      [tus01             ]             Version             [tus11     ]                     Confirm [tusconf   ][imgmksg]
+ Original No.        [tus10             ]             Employee            [tus04     ] [gen02   ]          [tuspost   ]        [       ]
+ Adjustment Date     [tus02     ]                     Department          [tus05     ] [gem02   ]          [tus12     ]
+ Customer            [tus03     ] [occ02   ]          Memo                [tus06                ]
+ Delivery Customer   [tus09     ] [occ02_2 ]
+
+}
+END -- gr1005
+END -- page01
+Page info(text="Info")
+Grid gr1006
+{
+ Record Owner        [tususer   ]   Last Modified by    [tusmodu   ]   Data Valid Code     [tusacti   ]
+ Department          [tusgrup   ]   Create/Modify Date  [tusdate   ]
+ Record Orig.        [tusoriu   ]
+ Dept Orig.          [tusorig   ]
+}
+END -- gr1006
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[tusud01                       ] userdefined_field07[tusud07        ] userdefined_field13[tusud13        ]
+                    [                              ] userdefined_field08[tusud08        ] userdefined_field14[tusud14        ]
+ userdefined_field02[tusud02        ]                userdefined_field09[tusud09        ] userdefined_field15[tusud15        ]
+ userdefined_field03[tusud03        ]                userdefined_field10[tusud10        ]
+ userdefined_field04[tusud04        ]                userdefined_field11[tusud11        ]
+ userdefined_field05[tusud05        ]                userdefined_field12[tusud12        ]
+ userdefined_field06[tusud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- folder01
+Table s_tut
+{
+[tut02     |tut08     |tut03                    |ima02                     |tut05  |tut06          |tut04               |tut07               |tutud01   |tutud02   |tutud03    |tutud04    |tutud05    |tutud06    |tutud07    |tutud08    |tutud09    |tutud10    |tutud11   |tutud12  |tutud13   |tutud14   |tutud15    ]
+[tut02     |tut08     |tut03                    |ima02                     |tut05  |tut06          |tut04               |tut07               |tutud01   |tutud02   |tutud03    |tutud04    |tutud05    |tutud06    |tutud07    |tutud08    |tutud09    |tutud10    |tutud11   |tutud12  |tutud13   |tutud14   |tutud15    ]
+[tut02     |tut08     |tut03                    |ima02                     |tut05  |tut06          |tut04               |tut07               |tutud01   |tutud02   |tutud03    |tutud04    |tutud05    |tutud06    |tutud07    |tutud08    |tutud09    |tutud10    |tutud11   |tutud12  |tutud13   |tutud14   |tutud15    ]
+[tut02     |tut08     |tut03                    |ima02                     |tut05  |tut06          |tut04               |tut07               |tutud01   |tutud02   |tutud03    |tutud04    |tutud05    |tutud06    |tutud07    |tutud08    |tutud09    |tutud10    |tutud11   |tutud12  |tutud13   |tutud14   |tutud15    ]
+[tut02     |tut08     |tut03                    |ima02                     |tut05  |tut06          |tut04               |tut07               |tutud01   |tutud02   |tutud03    |tutud04    |tutud05    |tutud06    |tutud07    |tutud08    |tutud09    |tutud10    |tutud11   |tutud12  |tutud13   |tutud14   |tutud15    ]
+[tut02     |tut08     |tut03                    |ima02                     |tut05  |tut06          |tut04               |tut07               |tutud01   |tutud02   |tutud03    |tutud04    |tutud05    |tutud06    |tutud07    |tutud08    |tutud09    |tutud10    |tutud11   |tutud12  |tutud13   |tutud14   |tutud15    ]
+[tut02     |tut08     |tut03                    |ima02                     |tut05  |tut06          |tut04               |tut07               |tutud01   |tutud02   |tutud03    |tutud04    |tutud05    |tutud06    |tutud07    |tutud08    |tutud09    |tutud10    |tutud11   |tutud12  |tutud13   |tutud14   |tutud15    ]
+[tut02     |tut08     |tut03                    |ima02                     |tut05  |tut06          |tut04               |tut07               |tutud01   |tutud02   |tutud03    |tutud04    |tutud05    |tutud06    |tutud07    |tutud08    |tutud09    |tutud10    |tutud11   |tutud12  |tutud13   |tutud14   |tutud15    ]
+[tut02     |tut08     |tut03                    |ima02                     |tut05  |tut06          |tut04               |tut07               |tutud01   |tutud02   |tutud03    |tutud04    |tutud05    |tutud06    |tutud07    |tutud08    |tutud09    |tutud10    |tutud11   |tutud12  |tutud13   |tutud14   |tutud15    ]
+[tut02     |tut08     |tut03                    |ima02                     |tut05  |tut06          |tut04               |tut07               |tutud01   |tutud02   |tutud03    |tutud04    |tutud05    |tutud06    |tutud07    |tutud08    |tutud09    |tutud10    |tutud11   |tutud12  |tutud13   |tutud14   |tutud15    ]
+
+}
+END -- s_tut
+Grid gr1007
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1007
+END -- VBox1
+END -- atmt300
+
+TABLES
+tus_file,
+tut_file
+ATTRIBUTES
+ComboBox tus08=tus_file.tus08, tabIndex=1, noEntry, items=(("1", "Customer Inventory"),("2", "Consign Inventory"));
+ButtonEdit tus01=tus_file.tus01, action=controlp, tabIndex=2, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!,<^P>Qry Chan No.";
+Edit tus11=tus_file.tus11, tabIndex=3, noEntry;
+ComboBox tusconf=tus_file.tusconf, tabIndex=4, noEntry, not null, required, queryEditable, items=(("Y", "Yes"),("N", "No"),("X", "Void)"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit tus10=tus_file.tus10, action=controlp, tabIndex=6, image="zoom", comment="KEY Field, No Blank/Repeated!,<^P>Qry Chan No.";
+ButtonEdit tus04=tus_file.tus04, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=8, noEntry;
+CheckBox tuspost=tus_file.tuspost, tabIndex=9, text="Post", noEntry, valueChecked = "Y", valueUnchecked = "N";
+DateEdit tus02=tus_file.tus02, tabIndex=10, not null, required;
+ButtonEdit tus05=tus_file.tus05, action=controlp, tabIndex=11, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=12, noEntry;
+CheckBox tus12=tus_file.tus12, tabIndex=13, text="Transferred Delivery", noEntry, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit tus03=tus_file.tus03, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=15, noEntry;
+Edit tus06=tus_file.tus06, tabIndex=16;
+ButtonEdit tus09=tus_file.tus09, action=controlp, tabIndex=17, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit occ02_2=formonly.occ02_2 type CHAR, tabIndex=18, noEntry;
+Edit tususer=tus_file.tususer, tabIndex=19, noEntry;
+Edit tusmodu=tus_file.tusmodu, tabIndex=20, noEntry;
+Edit tusacti=tus_file.tusacti, tabIndex=21, noEntry, upShift;
+Edit tusgrup=tus_file.tusgrup, tabIndex=22, noEntry;
+DateEdit tusdate=tus_file.tusdate, tabIndex=23;
+Edit tusoriu=tus_file.tusoriu, tabIndex=501, noEntry;
+Edit tusorig=tus_file.tusorig, tabIndex=502, noEntry;
+TextEdit tusud01=tus_file.tusud01, tabIndex=327, stretch=NONE;
+Edit tusud07=tus_file.tusud07, tabIndex=328;
+DateEdit tusud13=tus_file.tusud13, tabIndex=329;
+Edit tusud08=tus_file.tusud08, tabIndex=330;
+DateEdit tusud14=tus_file.tusud14, tabIndex=331;
+Edit tusud02=tus_file.tusud02, tabIndex=332;
+Edit tusud09=tus_file.tusud09, tabIndex=333;
+DateEdit tusud15=tus_file.tusud15, tabIndex=334;
+Edit tusud03=tus_file.tusud03, tabIndex=335;
+Edit tusud10=tus_file.tusud10, tabIndex=336;
+Edit tusud04=tus_file.tusud04, tabIndex=337;
+Edit tusud11=tus_file.tusud11, tabIndex=338;
+Edit tusud05=tus_file.tusud05, tabIndex=339;
+Edit tusud12=tus_file.tusud12, tabIndex=340;
+Edit tusud06=tus_file.tusud06, tabIndex=341;
+Edit tut02=tut_file.tut02, tabIndex=24, title="Line No", not null, required;
+ComboBox tut08=tut_file.tut08, tabIndex=25, title="Tran.type", not null, required, items=(("1", %"Customer Sales"),("2", %"Customer Disposal"),("3", %"Adjustment"));
+ButtonEdit tut03=tut_file.tut03, action=controlp, tabIndex=26, title="Item No.", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=27, title="Part Name Specification", noEntry;
+Edit tut05=tut_file.tut05, tabIndex=28, title="Unit", noEntry;
+Edit tut06=tut_file.tut06, tabIndex=29, title="Qty", not null, required;
+Edit tut04=tut_file.tut04, tabIndex=30, title="Lot No.";
+Edit tut07=tut_file.tut07, tabIndex=31, title="Memo";
+TextEdit tutud01=tut_file.tutud01, tabIndex=325, title="tutud01", stretch=NONE;
+Edit tutud02=tut_file.tutud02, tabIndex=342, title="tutud02";
+Edit tutud03=tut_file.tutud03, tabIndex=343, title="tutud03";
+Edit tutud04=tut_file.tutud04, tabIndex=344, title="tutud04";
+Edit tutud05=tut_file.tutud05, tabIndex=345, title="tutud05";
+Edit tutud06=tut_file.tutud06, tabIndex=346, title="tutud06";
+Edit tutud07=tut_file.tutud07, tabIndex=347, title="tutud07";
+Edit tutud08=tut_file.tutud08, tabIndex=348, title="tutud08";
+Edit tutud09=tut_file.tutud09, tabIndex=349, title="tutud09";
+Edit tutud10=tut_file.tutud10, tabIndex=350, title="tutud10";
+Edit tutud11=tut_file.tutud11, tabIndex=351, title="tutud11";
+Edit tutud12=tut_file.tutud12, tabIndex=352, title="tutud12";
+Edit tutud13=tut_file.tutud13, tabIndex=353, title="tutud13";
+Edit tutud14=tut_file.tutud14, tabIndex=354, title="tutud14";
+Edit tutud15=tut_file.tutud15, tabIndex=355, title="tutud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=32, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tut(tut_file.tut02,tut_file.tut08,tut_file.tut03,formonly.ima02,tut_file.tut05,tut_file.tut06,tut_file.tut04,tut_file.tut07,tut_file.tutud01,tut_file.tutud02,tut_file.tutud03,tut_file.tutud04,tut_file.tutud05,tut_file.tutud06,tut_file.tutud07,tut_file.tutud08,tut_file.tutud09,tut_file.tutud10,tut_file.tutud11,tut_file.tutud12,tut_file.tutud13,tut_file.tutud14,tut_file.tutud15)
+SCREEN RECORD Undefined(tus_file.tus08,tus_file.tus01,tus_file.tus11,tus_file.tusconf,formonly.imgmksg,tus_file.tus10,tus_file.tus04,formonly.gen02,tus_file.tuspost,tus_file.tus02,tus_file.tus05,formonly.gem02,tus_file.tus12,tus_file.tus03,formonly.occ02,tus_file.tus06,tus_file.tus09,formonly.occ02_2,tus_file.tususer,tus_file.tusmodu,tus_file.tusacti,tus_file.tusgrup,tus_file.tusdate,tus_file.tusoriu,tus_file.tusorig,tus_file.tusud01,tus_file.tusud07,tus_file.tusud13,tus_file.tusud08,tus_file.tusud14,tus_file.tusud02,tus_file.tusud09,tus_file.tusud15,tus_file.tusud03,tus_file.tusud10,tus_file.tusud04,tus_file.tusud11,tus_file.tusud05,tus_file.tusud12,tus_file.tusud06,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt100_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form1")
+VBox VBox1
+Group gb1(text="QBE")
+Grid gr1
+{
+
+  rtf01   [rtf01                 ]
+  ima01   [ima01                 ]
+  ima131  [ima131                ]
+  ima1005 [ima1005               ]
+  ima1006 [ima1006               ]
+
+}
+END -- gr1
+END -- gb1
+Group gb2(text="INPUT")
+Grid gr2
+{
+
+  rtj09  [rtj09                 ]
+  rtj16  [rtj16                 ]
+  rtj17  [rtj17                 ]
+  rtj18  [rtj18                 ]
+         [rtj19                 ]
+         [rtj23                 ]
+         [rtj20                 ]
+
+}
+END -- gr2
+END -- gb2
+END -- VBox1
+END -- Form1
+
+TABLES
+ima_file,
+rtj_file,
+rtf_file
+ATTRIBUTES
+ButtonEdit rtf01=rtf_file.rtf01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit ima131=ima_file.ima131, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ima1005=ima_file.ima1005, action=controlp, tabIndex=4, not null, required, image="zoom";
+ButtonEdit ima1006=ima_file.ima1006, action=controlp, tabIndex=5, not null, required, image="zoom";
+ButtonEdit rtj09=rtj_file.rtj09, action=controlp, tabIndex=6, not null, image="zoom";
+Edit rtj16=rtj_file.rtj16, tabIndex=7, not null;
+Edit rtj17=rtj_file.rtj17, tabIndex=8, not null;
+Edit rtj18=rtj_file.rtj18, tabIndex=9, not null;
+CheckBox rtj19=rtj_file.rtj19, tabIndex=10, default = "N", text=%"rtj_file.rtj19", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rtj23=rtj_file.rtj23, tabIndex=11, default = "N", text=%"rtj_file.rtj23", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox rtj20=rtj_file.rtj20, tabIndex=12, default = "Y", text=%"rtj_file.rtj20", not null, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rtf_file.rtf01,ima_file.ima01,ima_file.ima131,ima_file.ima1005,ima_file.ima1006,rtj_file.rtj09,rtj_file.rtj16,rtj_file.rtj17,rtj_file.rtj18,rtj_file.rtj19,rtj_file.rtj23,rtj_file.rtj20)
+END -- INSTRUCTIONS
+

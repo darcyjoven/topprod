@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt701")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr4521
+{
+ Document No.       [nnr01           ]
+
+}
+END -- gr4521
+END -- VBox2
+END -- page01
+END -- folder01
+Table s_nnr
+{
+[nnr0|nnr03           |nnr04     |nnr041    |nnr05      |nnr06       |nnr07           |nnr08               |nnr09               |nnr10 |nnr11               |nnr12               |nnr13             ]
+[nnr0|nnr03           |nnr04     |nnr041    |nnr05      |nnr06       |nnr07           |nnr08               |nnr09               |nnr10 |nnr11               |nnr12               |nnr13             ]
+[nnr0|nnr03           |nnr04     |nnr041    |nnr05      |nnr06       |nnr07           |nnr08               |nnr09               |nnr10 |nnr11               |nnr12               |nnr13             ]
+[nnr0|nnr03           |nnr04     |nnr041    |nnr05      |nnr06       |nnr07           |nnr08               |nnr09               |nnr10 |nnr11               |nnr12               |nnr13             ]
+[nnr0|nnr03           |nnr04     |nnr041    |nnr05      |nnr06       |nnr07           |nnr08               |nnr09               |nnr10 |nnr11               |nnr12               |nnr13             ]
+[nnr0|nnr03           |nnr04     |nnr041    |nnr05      |nnr06       |nnr07           |nnr08               |nnr09               |nnr10 |nnr11               |nnr12               |nnr13             ]
+[nnr0|nnr03           |nnr04     |nnr041    |nnr05      |nnr06       |nnr07           |nnr08               |nnr09               |nnr10 |nnr11               |nnr12               |nnr13             ]
+[nnr0|nnr03           |nnr04     |nnr041    |nnr05      |nnr06       |nnr07           |nnr08               |nnr09               |nnr10 |nnr11               |nnr12               |nnr13             ]
+[nnr0|nnr03           |nnr04     |nnr041    |nnr05      |nnr06       |nnr07           |nnr08               |nnr09               |nnr10 |nnr11               |nnr12               |nnr13             ]
+[nnr0|nnr03           |nnr04     |nnr041    |nnr05      |nnr06       |nnr07           |nnr08               |nnr09               |nnr10 |nnr11               |nnr12               |nnr13             ]
+
+}
+END -- s_nnr
+Grid gr4522
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4522
+END -- VBox1
+END -- anmt701
+
+TABLES
+nnr_file
+ATTRIBUTES
+Edit nnr01=nnr_file.nnr01, tabIndex=1, noEntry;
+Edit nnr0=nnr_file.nnr02, tabIndex=2, title="Ln#", not null, required;
+ButtonEdit nnr03=nnr_file.nnr03, action=controlp, tabIndex=3, title="Bill No.", not null, required, image="zoom", comment="<^P>Qry Data";
+ButtonEdit nnr04=nnr_file.nnr04, action=controlp, tabIndex=4, title="Customer#", not null, required, image="zoom", comment="<^P>Qry Data";
+Edit nnr041=nnr_file.nnr041, tabIndex=5, title="Cus.Name", noEntry;
+DateEdit nnr05=nnr_file.nnr05, tabIndex=6, title="Bill Date", not null, required;
+Edit nnr06=nnr_file.nnr06, tabIndex=7, title="Payment Due", not null, required;
+Edit nnr07=nnr_file.nnr07, tabIndex=8, title="INVOICE";
+Edit nnr08=nnr_file.nnr08, tabIndex=9, title="INVOICE Amt";
+Edit nnr09=nnr_file.nnr09, tabIndex=10, title="L/C No.";
+Edit nnr10=nnr_file.nnr10, tabIndex=11, title="Curr.", noEntry;
+Edit nnr11=nnr_file.nnr11, tabIndex=12, title="Ex.Rate", noEntry;
+Edit nnr12=nnr_file.nnr12, tabIndex=13, title="O.C A/R", noEntry;
+Edit nnr13=nnr_file.nnr13, tabIndex=14, title="H.C A/R", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nnr(nnr_file.nnr02,nnr_file.nnr03,nnr_file.nnr04,nnr_file.nnr041,nnr_file.nnr05,nnr_file.nnr06,nnr_file.nnr07,nnr_file.nnr08,nnr_file.nnr09,nnr_file.nnr10,nnr_file.nnr11,nnr_file.nnr12,nnr_file.nnr13)
+SCREEN RECORD Undefined(nnr_file.nnr01,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

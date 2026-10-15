@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi601")
+VBox vb6
+Folder folder01
+Page page01(text="Main")
+Grid gr574
+{
+ Data Type [gev01       ]
+
+}
+END -- gr574
+END -- page01
+END -- folder01
+Table s_gev
+{
+[gev02       |gev03        |gev04           |geu02            ]
+[gev02       |gev03        |gev04           |geu02            ]
+[gev02       |gev03        |gev04           |geu02            ]
+[gev02       |gev03        |gev04           |geu02            ]
+[gev02       |gev03        |gev04           |geu02            ]
+[gev02       |gev03        |gev04           |geu02            ]
+}
+END -- s_gev
+Table s_gey
+{
+[gey03       |gaq03                         |gey04                 |gey05                                  ]
+[gey03       |gaq03                         |gey04                 |gey05                                  ]
+[gey03       |gaq03                         |gey04                 |gey05                                  ]
+[gey03       |gaq03                         |gey04                 |gey05                                  ]
+[gey03       |gaq03                         |gey04                 |gey05                                  ]
+}
+END -- s_gey
+Grid gr6
+{
+[dummy01                                 ]
+[dummy02                                                                                   ]
+[dummy03                                                                                   ]
+[dummy04                                                                                   ]
+[dummy05                                                                                   ]
+
+}
+END -- gr6
+Grid gr5
+{
+ ---------- Rows [cnt   ] / [cn2   ] / [cn3   ] ----------
+
+
+}
+END -- gr5
+END -- vb6
+END -- aooi601
+
+TABLES
+gey_file,
+gev_file,
+geu_file,
+gaq_file
+ATTRIBUTES
+ComboBox gev01=gev_file.gev01, tabIndex=1, not null, required, items=(("0", "Basic Data"),("1", "Item"),("2", "BOM"),("3", "ECN"),("4", "Customer"),("5", "Vendor"),("6", "Account"),("7", "Price"));
+ButtonEdit gev02=gev_file.gev02, action=controlp, tabIndex=2, title="Logestic", not null, required, image="zoom.png", comment="<^P>Qry Logesitc";
+CheckBox gev03=gev_file.gev03, tabIndex=3, title="Data Center?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit gev04=gev_file.gev04, action=controlp, tabIndex=4, title="Data Center No.", noEntry, image="zoom.png";
+Edit geu02=geu_file.geu02, tabIndex=5, title="Data Center Name", noEntry;
+ComboBox gey03=gey_file.gey03, tabIndex=6, title="Field Code";
+Edit gaq03=gaq_file.gaq03, tabIndex=7, title="Field Name", noEntry;
+ComboBox gey04=gey_file.gey04, tabIndex=8, title="Conditions To Insert", items=(("1", "Not Equal"),("2", "Bigger Than"),("3", "Bigger Or Equal"),("4", "Smaller Than"),("5", "Small Or Equal"),("6", "Bigin With"),("7", "Not Begin With"),("8", "End With"),("9", "Not End With"),("10", "Include"),("11", "Not Include"));
+Edit gey05=gey_file.gey05, tabIndex=9, title="Value";
+Label dummy01:dummy01, text="Error Characters:\' \" ) + > < =";
+Label dummy02:dummy02, text="Sample";
+Label dummy03:dummy03, text="Field Code:ima01    Conditions:6.Begin With     Value:0;1";
+Label dummy04:dummy04, text="Character ;  -- means \'or\'";
+Label dummy05:dummy05, text=" ";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gev(gev_file.gev02,gev_file.gev03,gev_file.gev04,geu_file.geu02)
+SCREEN RECORD s_gey(gey_file.gey03,gaq_file.gaq03,gey_file.gey04,gey_file.gey05)
+SCREEN RECORD Undefined(gev_file.gev01,formonly.cnt,formonly.cn2,formonly.cn3)
+END -- INSTRUCTIONS
+

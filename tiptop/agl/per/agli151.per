@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli151.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli151")
+VBox vb2
+Folder pc1
+Page page1(text="Main")
+Grid gr1
+{
+  Group No.          [ayb05               ]
+  Company No.        [ayb06               ]
+  Plant Name         [axz02               ]
+  Logistics code     [axz03               ]
+  Book No.           [ayb07               ]
+  Flow Category Code [ayb01          ] [aya02             ]
+
+}
+END -- gr1
+END -- page1
+END -- pc1
+Table s_ayb
+{
+[ayb02            |aag02                ]
+[ayb02            |aag02                ]
+[ayb02            |aag02                ]
+[ayb02            |aag02                ]
+[ayb02            |aag02                ]
+[ayb02            |aag02                ]
+[ayb02            |aag02                ]
+[ayb02            |aag02                ]
+[ayb02            |aag02                ]
+[ayb02            |aag02                ]
+[ayb02            |aag02                ]
+
+}
+END -- s_ayb
+Grid gr4
+{
+
+ ---------- Rows[cnt  ]/[cn2  ] ----------
+
+
+}
+END -- gr4
+END -- vb2
+END -- agli151
+
+TABLES
+ayb_file
+ATTRIBUTES
+ButtonEdit ayb05=ayb_file.ayb05, action=controlp, tabIndex=8, not null, required, image="zoom";
+ButtonEdit ayb06=ayb_file.ayb06, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P> Query";
+Edit axz02=formonly.axz02 type CHAR, tabIndex=9, noEntry;
+Edit axz03=formonly.axz03 type CHAR, tabIndex=10, noEntry;
+Edit ayb07=formonly.ayb07 type CHAR, tabIndex=11, noEntry;
+ButtonEdit ayb01=ayb_file.ayb01, action=controlp, tabIndex=1, image="zoom";
+Edit aya02=formonly.aya02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit ayb02=ayb_file.ayb02, action=controlp, tabIndex=3, title="Account Code", not null, required, image="zoom.png";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=4, title="Account Name", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=5;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ayb(ayb_file.ayb02,formonly.aag02)
+SCREEN RECORD Undefined(ayb_file.ayb05,ayb_file.ayb06,formonly.axz02,formonly.axz03,formonly.ayb07,ayb_file.ayb01,formonly.aya02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

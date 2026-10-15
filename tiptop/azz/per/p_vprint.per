@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_vprint.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_vprint")
+VBox VBox1
+Folder pc1
+Page page01(text="Page01")
+Grid gr1
+{
+ <G group01                                                                     >
+  User ID       [zaz01       ] [zx02                          ]
+  Category Code [zaz02       ] [zw02                          ]
+
+
+ <                                                                              >
+
+}
+END -- gr1
+END -- page01
+END -- pc1
+Table tb1
+{
+[zaz03       |gaz03                         |zaz04               |zaz07          |zaz05                         |zaz06                                  ]
+[zaz03       |gaz03                         |zaz04               |zaz07          |zaz05                         |zaz06                                  ]
+[zaz03       |gaz03                         |zaz04               |zaz07          |zaz05                         |zaz06                                  ]
+[zaz03       |gaz03                         |zaz04               |zaz07          |zaz05                         |zaz06                                  ]
+[zaz03       |gaz03                         |zaz04               |zaz07          |zaz05                         |zaz06                                  ]
+[zaz03       |gaz03                         |zaz04               |zaz07          |zaz05                         |zaz06                                  ]
+[zaz03       |gaz03                         |zaz04               |zaz07          |zaz05                         |zaz06                                  ]
+[zaz03       |gaz03                         |zaz04               |zaz07          |zaz05                         |zaz06                                  ]
+[zaz03       |gaz03                         |zaz04               |zaz07          |zaz05                         |zaz06                                  ]
+[zaz03       |gaz03                         |zaz04               |zaz07          |zaz05                         |zaz06                                  ]
+
+}
+END -- tb1
+Grid gr3
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr3
+END -- VBox1
+END -- p_vprint
+
+TABLES
+zaz_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit zaz01=zaz_file.zaz01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!";
+Edit zx02=formonly.zx02 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit zaz02=zaz_file.zaz02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!";
+Edit zw02=formonly.zw02 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit zaz03=zaz_file.zaz03, action=controlp, tabIndex=5, title="Program ID", not null, required, image="zoom", downShift, comment="KEYField,No Blank/Repeated!";
+Edit gaz03=formonly.gaz03 type VARCHAR, tabIndex=6, title="Program Name", noEntry;
+ButtonEdit zaz04=zaz_file.zaz04, action=controlp, tabIndex=7, title="Report Template", not null, required, image="zoom", comment="KEYField,No Blank/Repeated!";
+CheckBox zaz07=zaz_file.zaz07, tabIndex=8, title="Print Immediately", not null, required, comment="Print Immediately and Auto close window.";
+Edit zaz05=zaz_file.zaz05, tabIndex=9, title="Printer Name";
+ComboBox zaz06=zaz_file.zaz06, tabIndex=10, title="Compact Print Option", queryEditable, items=(("0", %"Standard Print(A4:78 Letter:80 US SF:132 A3:162)"),("1", %"ET code Compact Print(A4:117 Letter:125 US SF:204 A3:243)"),("2", %"ET code Compact Print(A4:156 Letter:165 US SF:272 A3:324)"),("3", %"ET code Compact Print(A4:234 Letter:250 US SF:408 A3:486)"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zaz(zaz_file.zaz03,formonly.gaz03,zaz_file.zaz04,zaz_file.zaz07,zaz_file.zaz05,zaz_file.zaz06)
+SCREEN RECORD Undefined(zaz_file.zaz01,formonly.zx02,zaz_file.zaz02,formonly.zw02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

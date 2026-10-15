@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi551d.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfi501d")
+VBox VBox1
+Grid gr496
+{
+ <G group01                                                         >
+  Range        [sre06b   ] ~ [sre06e   ]
+  Machine Line [sre03        ][eci06                              ]
+  Class        [sre05        ][ecg02                              ]
+  ItemNo       [sre04                                             ]
+ <                                                                  >
+
+}
+END -- gr496
+END -- VBox1
+END -- asfi501d
+
+TABLES
+sre_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit sre06b=formonly.sre06b type DATE, tabIndex=1, not null, required;
+DateEdit sre06e=formonly.sre06e type DATE, tabIndex=2, not null, required;
+ButtonEdit sre03=sre_file.sre03, action=controlp, tabIndex=3, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!    <^Y>Enter Machine Line";
+Edit eci06=formonly.eci06 type CHAR, tabIndex=4, noEntry;
+ButtonEdit sre05=sre_file.sre05, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Class";
+Edit ecg02=formonly.ecg02 type CHAR, tabIndex=6, noEntry;
+ButtonEdit sre04=sre_file.sre04, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Item No.";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.sre06b,formonly.sre06e,sre_file.sre03,formonly.eci06,sre_file.sre05,formonly.ecg02,sre_file.sre04)
+END -- INSTRUCTIONS
+

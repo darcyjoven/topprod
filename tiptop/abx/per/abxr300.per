@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abxr300")
+VBox VBox1
+Grid gr1164
+{
+ <G group01                                                   >
+  Item No.                     [ima01                         ]
+  Bond Group Code              [ima1916                       ]
+ <                                                            >
+
+}
+END -- gr1164
+Group group02(text="INPUT")
+Grid gr1165
+{
+                                    <G group03                                   >
+ Begin Date  [bdate     ]            [s1                  ] [s2                  ]
+ End Date    [edate     ]            [u1                  ] [u2                  ]
+ Date        [mdate     ]            [t1                  ] [t2                  ]
+ Page        [a    ]
+ Print Kind  [b                   ]
+ [d                               ]
+ [e                               ]
+ [f                               ]
+ [g                               ]
+                                    <                                            >
+
+}
+END -- gr1165
+END -- group02
+Grid gr1166
+{
+[more                          ]
+
+}
+END -- gr1166
+END -- VBox1
+END -- abxr300
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment=" <^P> Qry Item No";
+ButtonEdit ima1916=formonly.ima1916 type CHAR, action=controlp, tabIndex=2, image="zoom", comment=" <^P> Qry Bond Group Code";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=3, queryEditable, items=(("1", "Item No."),("2", "Bond Group Code"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=4, queryEditable, items=(("1", "Item No."),("2", "Bond Group Code"));
+CheckBox u1=formonly.u1 type CHAR, tabIndex=5, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=6, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t1=formonly.t1 type CHAR, tabIndex=7, text="Jump", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=8, text="Jump", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=9, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=10, not null, required;
+DateEdit mdate=formonly.mdate type DATE, tabIndex=11, not null, required;
+Edit a=formonly.a type SMALLINT, tabIndex=12;
+ComboBox b=formonly.b type CHAR, tabIndex=13, not null, required, queryEditable, items=(("1", "Item No."),("2", "Bond Group Code"));
+CheckBox d=formonly.d type CHAR, tabIndex=14, text="Print Bond Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=15, text="Print No Trans Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type CHAR, tabIndex=16, text="Print Balance = 0", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type CHAR, tabIndex=17, text="Print List Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=18, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima1916,formonly.s1,formonly.s2,formonly.u1,formonly.u2,formonly.t1,formonly.t2,formonly.bdate,formonly.edate,formonly.mdate,formonly.a,formonly.b,formonly.d,formonly.e,formonly.f,formonly.g,formonly.more)
+END -- INSTRUCTIONS
+

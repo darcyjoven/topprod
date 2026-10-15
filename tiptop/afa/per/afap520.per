@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afap520.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"afap520")
+Folder pc364
+Page page01(text="Main")
+VBox VBox1
+Grid gr1931
+{
+ <G group01                                 >
+  Property No.        [fdd02               ]
+  Additional No.      [fdd022              ]
+  Policy No.          [fdd01               ]
+ <                                          >
+ <G group02                                 >
+  Year                [fdd03     ]
+  Month               [fdd033    ]
+  Document No.        [v_no            ]
+ <                                          >
+
+}
+END -- gr1931
+Grid gr1932
+{
+[g_bgjob                                                       ]
+
+}
+END -- gr1932
+END -- VBox1
+END -- page01
+END -- pc364
+END -- afap520
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit fdd02=formonly.fdd02 type CHAR, tabIndex=1;
+Edit fdd022=formonly.fdd022 type CHAR, tabIndex=2;
+Edit fdd01=formonly.fdd01 type CHAR, tabIndex=3;
+Group group02:group02, text="Input";
+Edit fdd03=formonly.fdd03 type CHAR, tabIndex=4;
+Edit fdd033=formonly.fdd033 type CHAR, tabIndex=5;
+Edit v_no=formonly.v_no type CHAR, tabIndex=6;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=7, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.fdd02,formonly.fdd022,formonly.fdd01,formonly.fdd03,formonly.fdd033,formonly.v_no,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

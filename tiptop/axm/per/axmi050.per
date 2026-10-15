@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi050.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi050")
+VBox VBox1
+Folder pc442
+Page page01(text="Main")
+Table s_oag
+{
+[oag01                   |oag02                         |oag03          |oag041      |oag04   |oag06     |oag071      |oag07 ]
+[oag01                   |oag02                         |oag03          |oag041      |oag04   |oag06     |oag071      |oag07 ]
+[oag01                   |oag02                         |oag03          |oag041      |oag04   |oag06     |oag071      |oag07 ]
+[oag01                   |oag02                         |oag03          |oag041      |oag04   |oag06     |oag071      |oag07 ]
+[oag01                   |oag02                         |oag03          |oag041      |oag04   |oag06     |oag071      |oag07 ]
+[oag01                   |oag02                         |oag03          |oag041      |oag04   |oag06     |oag071      |oag07 ]
+[oag01                   |oag02                         |oag03          |oag041      |oag04   |oag06     |oag071      |oag07 ]
+[oag01                   |oag02                         |oag03          |oag041      |oag04   |oag06     |oag071      |oag07 ]
+[oag01                   |oag02                         |oag03          |oag041      |oag04   |oag06     |oag071      |oag07 ]
+[oag01                   |oag02                         |oag03          |oag041      |oag04   |oag06     |oag071      |oag07 ]
+
+}
+END -- s_oag
+END -- page01
+END -- pc442
+Grid gr1995
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1995
+END -- VBox1
+END -- axmi050
+
+TABLES
+oag_file
+ATTRIBUTES
+Edit oag01=oag_file.oag01, tabIndex=1, title="Sales Payment Terms No.", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit oag02=oag_file.oag02, tabIndex=2, title="Description";
+ComboBox oag03=oag_file.oag03, tabIndex=3, title="A/R Base Date", not null, required, queryEditable, items=(("1", %"Delivery Date "),("2", %"Invoice Date"),("3", %"Order date"),("4", %"Beginning of next month of Delivery date"),("5", %"Beginning of Next Month of Invoice Date"),("6", %"Beginning of next month of Order date"));
+Edit oag041=oag_file.oag041, tabIndex=4, title="PlusMonths";
+Edit oag04=oag_file.oag04, tabIndex=5, title="+-Days";
+ComboBox oag06=oag_file.oag06, tabIndex=6, title="Note Due", not null, required, queryEditable, items=(("1", %"Delivery Date"),("2", %"Invoice Date"),("3", %"A/R Date"),("4", %"Beginning of next month of Delivery date"),("5", %"Beginning of Next Month of Invoice Date"),("6", %"A/R Date Beginning of Next Month"));
+Edit oag071=oag_file.oag071, tabIndex=7, title="PlusMonths";
+Edit oag07=oag_file.oag07, tabIndex=8, title="+-Days";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oag(oag_file.oag01,oag_file.oag02,oag_file.oag03,oag_file.oag041,oag_file.oag04,oag_file.oag06,oag_file.oag071,oag_file.oag07)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

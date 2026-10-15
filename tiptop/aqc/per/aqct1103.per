@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqct1103.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqct1103")
+Folder pc50
+Page page01(text="Page01")
+Table s_qcv
+{
+[qcv04                                   ]
+[qcv04                                   ]
+[qcv04                                   ]
+[qcv04                                   ]
+[qcv04                                   ]
+[qcv04                                   ]
+[qcv04                                   ]
+[qcv04                                   ]
+[qcv04                                   ]
+[qcv04                                   ]
+
+}
+END -- s_qcv
+END -- page01
+Page info(text="Info")
+Grid gr191
+{
+ <G grpinfo                       >
+  Detail Counts       [cn2       ]
+ <                                >
+
+}
+END -- gr191
+END -- info
+END -- pc50
+END -- aqct1103
+
+ATTRIBUTES
+Edit qcv04=formonly.qcv04 type CHAR, tabIndex=1, title="Memo";
+Group grpinfo:grpinfo;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=2, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcv(formonly.qcv04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

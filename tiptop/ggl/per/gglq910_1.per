@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq910_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq910")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr5447
+{
+ Book No.  [o           ]  [label2      ][bdate     ] [b               ]   [e                    ]   [g                       ]
+[label1    |a           ]   Ending Date  [edate     ] [f               ]                             [h                        ]
+
+
+}
+END -- gr5447
+END -- page01
+END -- folder01
+Table s_npq
+{
+[npq21         |npq22         |npq03       |aag02       |npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npq21         |npq22         |npq03       |aag02       |npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npq21         |npq22         |npq03       |aag02       |npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npq21         |npq22         |npq03       |aag02       |npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npq21         |npq22         |npq03       |aag02       |npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npq21         |npq22         |npq03       |aag02       |npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npq21         |npq22         |npq03       |aag02       |npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npq21         |npq22         |npq03       |aag02       |npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npq21         |npq22         |npq03       |aag02       |npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+[npq21         |npq22         |npq03       |aag02       |npp02          |npp01           |npp00  |nppsys |nppglno            |npq04                      |npq24     |df                         |npq25_d        |d                          |cf                           |npq25_c        |c                           |dc      |balf             |npq25_bal     |bal             ]
+}
+END -- s_npq
+Grid gr5449
+{
+ ----------- Rows [cnt   ] -----------
+
+}
+END -- gr5449
+END -- VBox1
+END -- gglq910_1
+
+TABLES
+aag_file
+ATTRIBUTES
+ButtonEdit o=formonly.o type CHAR, action=controlp, tabIndex=1, image="zoom.png";
+Label label2:Label2, text=%"Enter Account Start Date";
+DateEdit bdate=formonly.bdate type CHAR, tabIndex=3;
+CheckBox b=formonly.b type CHAR, tabIndex=5, text="Print Original Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=7, text="Print BoP=0 and Have no changed Vender in current period", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type CHAR, tabIndex=30, text=%"CheckBox1", not null, valueChecked = "Y", valueUnchecked = "N";
+Label label1:Label1, text=%"Document status";
+ComboBox a=formonly.a type CHAR, tabIndex=2, items=(("1", "Confirmed"),("2", "UnConfirmed"),("3", "All"));
+DateEdit edate=formonly.edate type CHAR, tabIndex=4;
+CheckBox f=formonly.f type CHAR, tabIndex=6, text="Page-Break by Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type CHAR, tabIndex=31, text=%"CheckBox2", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit npq21=formonly.npq21 type CHAR, action=controlp, tabIndex=8, title=%"npq21", image="zoom";
+Edit npq22=formonly.npq22 type VARCHAR, tabIndex=9, title=%"npq22";
+ButtonEdit npq03=formonly.npq03 type VARCHAR, action=controlp, tabIndex=10, title=%"npq03", image="zoom";
+Edit aag02=aag_file.aag02, tabIndex=11, title=%"aag02\n";
+DateEdit npp02=formonly.npp02 type DATE, tabIndex=12, title="Voucher Date";
+ButtonEdit npp01=formonly.npp01 type VARCHAR, action=controlp, tabIndex=13, title="Voucher No.", image="zoom";
+Edit npp00=formonly.npp00 type CHAR, tabIndex=14, title="npp00";
+Edit nppsys=formonly.nppsys type CHAR, tabIndex=15, title="nppsys";
+Edit nppglno=formonly.nppglno type VARCHAR, tabIndex=16, title="Carried Voucher No.";
+Edit npq04=formonly.npq04 type CHAR, tabIndex=17, title="Memo";
+ButtonEdit npq24=formonly.npq24 type VARCHAR, action=controlp, tabIndex=18, title="Currency", image="zoom";
+Edit df=formonly.df type CHAR, tabIndex=19, title="Debit Amount (Trans. Curr.)";
+Edit npq25_d=formonly.npq25_d type DECIMAL, tabIndex=20, title="Exchange Rate";
+Edit d=formonly.d type CHAR, tabIndex=21, title="Debit Amount (Local. Curr.)";
+Edit cf=formonly.cf type CHAR, tabIndex=22, title="Credit Amount (Trans. Curr.)";
+Edit npq25_c=formonly.npq25_c type CHAR, tabIndex=23, title="Exchange Rate";
+Edit c=formonly.c type CHAR, tabIndex=24, title="Credit Amount (Local. Curr.)";
+Edit dc=formonly.dc type CHAR, tabIndex=25, title="D/C";
+Edit balf=formonly.balf type CHAR, tabIndex=26, title="Balance T.C Amt";
+Edit npq25_bal=formonly.npq25_bal type CHAR, tabIndex=27, title="Exchange Rate";
+Edit bal=formonly.bal type CHAR, tabIndex=28, title="Balance L.C Amt";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_npq(formonly.npq21,formonly.npq22,formonly.npq03,aag_file.aag02,formonly.npp02,formonly.npp01,formonly.npp00,formonly.nppsys,formonly.nppglno,formonly.npq04,formonly.npq24,formonly.df,formonly.npq25_d,formonly.d,formonly.cf,formonly.npq25_c,formonly.c,formonly.dc,formonly.balf,formonly.npq25_bal,formonly.bal)
+SCREEN RECORD Undefined(formonly.cnt,formonly.bdate,formonly.edate,formonly.o,formonly.b,formonly.f,formonly.a,formonly.e,formonly.g,formonly.h)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrq210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrq210")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2916
+{
+ Plant                [source    ][azp02               ]
+ Period               [b_date      ]-[e_date      ]
+}
+END -- gr2916
+END -- page01
+END -- folder01
+Table s_ola
+{
+[ola04            |oga01             |oga02         |oga50               |ogaconf  |ogapost     |x               |olc141                           ]
+[ola04            |oga01             |oga02         |oga50               |ogaconf  |ogapost     |x               |olc141                           ]
+[ola04            |oga01             |oga02         |oga50               |ogaconf  |ogapost     |x               |olc141                           ]
+[ola04            |oga01             |oga02         |oga50               |ogaconf  |ogapost     |x               |olc141                           ]
+[ola04            |oga01             |oga02         |oga50               |ogaconf  |ogapost     |x               |olc141                           ]
+[ola04            |oga01             |oga02         |oga50               |ogaconf  |ogapost     |x               |olc141                           ]
+[ola04            |oga01             |oga02         |oga50               |ogaconf  |ogapost     |x               |olc141                           ]
+[ola04            |oga01             |oga02         |oga50               |ogaconf  |ogapost     |x               |olc141                           ]
+[ola04            |oga01             |oga02         |oga50               |ogaconf  |ogapost     |x               |olc141                           ]
+[ola04            |oga01             |oga02         |oga50               |ogaconf  |ogapost     |x               |olc141                           ]
+}
+END -- s_ola
+Grid gr2917
+{
+ ---------- Rows [cnt       ] ----------
+
+
+}
+END -- gr2917
+END -- VBox1
+END -- axrq210
+
+ATTRIBUTES
+ButtonEdit source=formonly.source type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Documents";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=2, noEntry;
+DateEdit b_date=formonly.b_date type DATE, tabIndex=3;
+DateEdit e_date=formonly.e_date type DATE, tabIndex=4;
+Edit ola04=formonly.ola04 type CHAR, tabIndex=5, title="L/C No#";
+Edit oga01=formonly.oga01 type CHAR, tabIndex=6, title="Delivery Note No.";
+DateEdit oga02=formonly.oga02 type CHAR, tabIndex=7, title="Delivery Date";
+Edit oga50=formonly.oga50 type CHAR, tabIndex=8, title="Delivery Amount";
+Edit ogaconf=formonly.ogaconf type CHAR, tabIndex=9, title="Confirm", upShift;
+CheckBox ogapost=formonly.ogapost type CHAR, tabIndex=10, title="Deduct Acc", valueChecked = "Y", valueUnchecked = "N";
+CheckBox x=formonly.x type CHAR, tabIndex=11, title="No-Negotiation", valueChecked = "Y", valueUnchecked = "N";
+Edit olc141=formonly.olc141 type CHAR, tabIndex=12, title="No-Negotiation Reason";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ola(formonly.ola04,formonly.oga01,formonly.oga02,formonly.oga50,formonly.ogaconf,formonly.ogapost,formonly.x,formonly.olc141)
+SCREEN RECORD Undefined(formonly.source,formonly.azp02,formonly.b_date,formonly.e_date,formonly.cnt)
+END -- INSTRUCTIONS
+

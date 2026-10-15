@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq631.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq631")
+VBox VBox1
+Folder pc542
+Page page01(text="Main")
+VBox VBox2
+Grid grid01
+{
+  Product S/N         [she02                         ]
+  Down Level Item#    [sfa03                         ]
+  P/N Spec.           [ima02                         ][ima021                        ]
+
+ <G group02                                                                                                                    >
+  W/O No.             [sfb01           ]             Version             [sfb07     ]         Routing Code        [sfb06     ]
+ <                                                                                                                             >
+
+}
+END -- grid01
+Table s_sfe
+{
+[sfe08      |sfe09      |sfe10                   ]
+[sfe08      |sfe09      |sfe10                   ]
+[sfe08      |sfe09      |sfe10                   ]
+[sfe08      |sfe09      |sfe10                   ]
+[sfe08      |sfe09      |sfe10                   ]
+
+}
+END -- s_sfe
+Table s_rvu
+{
+[rvu01      |rvu02 |rvu03    |rvu04       |pmc03      ]
+[rvu01      |rvu02 |rvu03    |rvu04       |pmc03      ]
+[rvu01      |rvu02 |rvu03    |rvu04       |pmc03      ]
+[rvu01      |rvu02 |rvu03    |rvu04       |pmc03      ]
+[rvu01      |rvu02 |rvu03    |rvu04       |pmc03      ]
+
+}
+END -- s_rvu
+Table s_rvb
+{
+[rvb04      |pmm04    |gen02      |rvu02_q    |rva06    |stat    |gen02_q   ]
+[rvb04      |pmm04    |gen02      |rvu02_q    |rva06    |stat    |gen02_q   ]
+[rvb04      |pmm04    |gen02      |rvu02_q    |rva06    |stat    |gen02_q   ]
+[rvb04      |pmm04    |gen02      |rvu02_q    |rva06    |stat    |gen02_q   ]
+[rvb04      |pmm04    |gen02      |rvu02_q    |rva06    |stat    |gen02_q   ]
+
+}
+END -- s_rvb
+END -- VBox2
+END -- page01
+END -- pc542
+Grid gr2288
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2288
+END -- VBox1
+END -- axmq631
+
+TABLES
+she_file,
+sfa_file
+ATTRIBUTES
+Edit she02=she_file.she02, tabIndex=1;
+Edit sfa03=sfa_file.sfa03, tabIndex=2;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=4, noEntry;
+Group group02:group02;
+Edit sfb01=formonly.sfb01 type CHAR, tabIndex=5, noEntry;
+Edit sfb07=formonly.sfb07 type CHAR, tabIndex=6, noEntry;
+Edit sfb06=formonly.sfb06 type CHAR, tabIndex=7, noEntry;
+Edit sfe08=formonly.sfe08 type CHAR, tabIndex=8, title="Warehouse", noEntry;
+Edit sfe09=formonly.sfe09 type CHAR, tabIndex=9, title="location", noEntry;
+Edit sfe10=formonly.sfe10 type CHAR, tabIndex=10, title="Lot No.", noEntry;
+Edit rvu01=formonly.rvu01 type CHAR, tabIndex=11, title="Note #", noEntry;
+Edit rvu02=formonly.rvu02 type CHAR, tabIndex=12, title="Ln#", noEntry;
+DateEdit rvu03=formonly.rvu03 type CHAR, tabIndex=13, title="Date", noEntry;
+Edit rvu04=formonly.rvu04 type CHAR, tabIndex=14, title="Vender No.", noEntry;
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=15, title="Vender Abbr", noEntry;
+Edit rvb04=formonly.rvb04 type CHAR, tabIndex=16, title="P/O No.", noEntry;
+DateEdit pmm04=formonly.pmm04 type CHAR, tabIndex=17, title="Pur Date", noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=18, title="Buyer", noEntry;
+Edit rvu02_q=formonly.rvu02_q type CHAR, tabIndex=19, title="Receipt#", noEntry;
+DateEdit rva06=formonly.rva06 type CHAR, tabIndex=20, title="Date", noEntry;
+Edit stat=formonly.stat type CHAR, tabIndex=21, title="QCJudge", noEntry;
+Edit gen02_q=formonly.gen02_q type CHAR, tabIndex=22, title="Inspector", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfe(formonly.sfe08,formonly.sfe09,formonly.sfe10)
+SCREEN RECORD s_rvu(formonly.rvu01,formonly.rvu02,formonly.rvu03,formonly.rvu04,formonly.pmc03)
+SCREEN RECORD s_rvb(formonly.rvb04,formonly.pmm04,formonly.gen02,formonly.rvu02_q,formonly.rva06,formonly.stat,formonly.gen02_q)
+SCREEN RECORD Undefined(she_file.she02,sfa_file.sfa03,formonly.ima02,formonly.ima021,formonly.sfb01,formonly.sfb07,formonly.sfb06,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq101")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2526
+{
+ Account #           [aah01                         ]
+ Account Title       [aag02                                             ]
+ Year                [aah02       ]
+ Book No.            [aah00       ]
+}
+END -- gr2526
+END -- page01
+END -- folder01
+Table s_aah(unsortableColumns)
+{
+[seq    |aah04                 |aah05                  |aah06      |aah07        |l_tot               ]
+[seq    |aah04                 |aah05                  |aah06      |aah07        |l_tot               ]
+[seq    |aah04                 |aah05                  |aah06      |aah07        |l_tot               ]
+[seq    |aah04                 |aah05                  |aah06      |aah07        |l_tot               ]
+[seq    |aah04                 |aah05                  |aah06      |aah07        |l_tot               ]
+[seq    |aah04                 |aah05                  |aah06      |aah07        |l_tot               ]
+[seq    |aah04                 |aah05                  |aah06      |aah07        |l_tot               ]
+[seq    |aah04                 |aah05                  |aah06      |aah07        |l_tot               ]
+[seq    |aah04                 |aah05                  |aah06      |aah07        |l_tot               ]
+[seq    |aah04                 |aah05                  |aah06      |aah07        |l_tot               ]
+}
+END -- s_aah
+Grid gr2527
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr2527
+END -- VBox1
+END -- aglq101
+
+TABLES
+aah_file
+ATTRIBUTES
+ButtonEdit aah01=aah_file.aah01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Account # ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+Edit aah02=aah_file.aah02, tabIndex=3, not null, required;
+Edit aah00=formonly.aah00 type VARCHAR, tabIndex=4, color = black;
+Edit seq=formonly.seq type VARCHAR, tabIndex=5, title="Period", noEntry;
+Edit aah04=aah_file.aah04, tabIndex=6, title="Debit Transaction Amt", noEntry, not null, required;
+Edit aah05=aah_file.aah05, tabIndex=7, title="Credit Transaction Amt", noEntry, not null, required;
+Edit aah06=aah_file.aah06, tabIndex=8, title="Debit Rows", noEntry;
+Edit aah07=aah_file.aah07, tabIndex=9, title="Credit Rows", noEntry;
+Edit l_tot=formonly.l_tot type DECIMAL, tabIndex=10, title="Accumulated Balance", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aah(formonly.seq,aah_file.aah04,aah_file.aah05,aah_file.aah06,aah_file.aah07,formonly.l_tot)
+SCREEN RECORD Undefined(aah_file.aah01,formonly.aag02,aah_file.aah02,formonly.aah00,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

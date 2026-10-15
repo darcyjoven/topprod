@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt110_w.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Direct Debit")
+VBox vb1
+Grid grid01
+{
+                                  <G group01                >    <G group02                >
+ [dummy       ]                    [apg05f              ]         [apg05               ]
+
+                                  <                         >    <                         >
+
+}
+END -- grid01
+Table s_aph
+{
+[aph|aph03|aph08    |aph04      |aph17     |aph16          |nmc02           |aph07    |ap1|aph13|aph14               |aph05f              |aph05               |aph18           |aph19          |aph20           ]
+[aph|aph03|aph08    |aph04      |aph17     |aph16          |nmc02           |aph07    |ap1|aph13|aph14               |aph05f              |aph05               |aph18           |aph19          |aph20           ]
+[aph|aph03|aph08    |aph04      |aph17     |aph16          |nmc02           |aph07    |ap1|aph13|aph14               |aph05f              |aph05               |aph18           |aph19          |aph20           ]
+[aph|aph03|aph08    |aph04      |aph17     |aph16          |nmc02           |aph07    |ap1|aph13|aph14               |aph05f              |aph05               |aph18           |aph19          |aph20           ]
+[aph|aph03|aph08    |aph04      |aph17     |aph16          |nmc02           |aph07    |ap1|aph13|aph14               |aph05f              |aph05               |aph18           |aph19          |aph20           ]
+[aph|aph03|aph08    |aph04      |aph17     |aph16          |nmc02           |aph07    |ap1|aph13|aph14               |aph05f              |aph05               |aph18           |aph19          |aph20           ]
+[aph|aph03|aph08    |aph04      |aph17     |aph16          |nmc02           |aph07    |ap1|aph13|aph14               |aph05f              |aph05               |aph18           |aph19          |aph20           ]
+[aph|aph03|aph08    |aph04      |aph17     |aph16          |nmc02           |aph07    |ap1|aph13|aph14               |aph05f              |aph05               |aph18           |aph19          |aph20           ]
+[aph|aph03|aph08    |aph04      |aph17     |aph16          |nmc02           |aph07    |ap1|aph13|aph14               |aph05f              |aph05               |aph18           |aph19          |aph20           ]
+[aph|aph03|aph08    |aph04      |aph17     |aph16          |nmc02           |aph07    |ap1|aph13|aph14               |aph05f              |aph05               |aph18           |aph19          |aph20           ]
+
+}
+END -- s_aph
+Grid gr367
+{
+                                             F.C Total   [aph05f_t            ]       H.C Total  [aph05_t             ]
+
+}
+END -- gr367
+END -- vb1
+END -- aapt110_w
+
+TABLES
+aph_file,
+apg_file
+ATTRIBUTES
+Group group01:group01, text="F.C.";
+Edit apg05f=apg_file.apg05f, tabIndex=1, not null, required;
+Group group02:group02, text="H.C.";
+Edit apg05=apg_file.apg05, tabIndex=2, not null, required;
+Label dummy:dummy, text="This Payment";
+Edit aph=aph_file.aph02, tabIndex=3, title="Ln", not null, required, comment="<^T>Qry D/W Transaction Code";
+ComboBox aph03=aph_file.aph03, tabIndex=4, title="Cate", not null, required, comment="1.Ck.   2.Trsf 3.Pstg 4.Ex.P 5.Ex.L 6.Cn. ATO 7.D.M 8.Prepay 9.Sus. Debit <^P>Qry Freq.Ac  <^Y>Mntn";
+ButtonEdit aph08=aph_file.aph08, action=controlp, tabIndex=5, title="Bank", image="zoom", comment="<^P> Qry Bank    ";
+ButtonEdit aph04=aph_file.aph04, action=controlp, tabIndex=6, title="Title/Acct", not null, required, image="zoom", comment="<^P> Qry Title or Account #";
+Edit aph17=aph_file.aph17, tabIndex=7, title="Line No.", noEntry;
+ButtonEdit aph16=aph_file.aph16, action=controlp, tabIndex=8, title="CIB.Trans.Code", not null, required, image="zoom", comment="<^P> Qry CIB Trans Code    ";
+Edit nmc02=formonly.nmc02 type CHAR, tabIndex=9, title="CIB.Trans.Name", noEntry;
+DateEdit aph07=aph_file.aph07, tabIndex=10, title="Due Date";
+Edit ap1=aph_file.aph09, tabIndex=11, title="Tr", noEntry;
+Edit aph13=aph_file.aph13, tabIndex=12, title="Curr", not null, required;
+ButtonEdit aph14=aph_file.aph14, action=controlp, tabIndex=13, title="ExRt", not null, required, image="zoom";
+Edit aph05f=aph_file.aph05f, tabIndex=14, title="F.C Payt", not null, required;
+Edit aph05=aph_file.aph05, tabIndex=15, title="H.C Payt", not null, required;
+ButtonEdit aph18=aph_file.aph18, action=controlp, tabIndex=18, title="Import/Export", image="zoom";
+ComboBox aph19=aph_file.aph19, tabIndex=19, title="Charge Type", required, items=(("1", "SHA"),("2", "BEN"),("3", "OUR"));
+ComboBox aph20=aph_file.aph20, tabIndex=20, title="aph20", items=(("1", "Y"));
+Edit aph05f_t=formonly.aph05f_t type CHAR, tabIndex=16;
+Edit aph05_t=formonly.aph05_t type CHAR, tabIndex=17;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aph(aph_file.aph02,aph_file.aph03,aph_file.aph08,aph_file.aph04,aph_file.aph17,aph_file.aph16,formonly.nmc02,aph_file.aph07,aph_file.aph09,aph_file.aph13,aph_file.aph14,aph_file.aph05f,aph_file.aph05,aph_file.aph18,aph_file.aph19,aph_file.aph20)
+SCREEN RECORD Undefined(apg_file.apg05f,apg_file.apg05,formonly.aph05f_t,formonly.aph05_t)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_biy.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_biy")
+VBox VBox1
+Table s_gcj
+{
+[gcj01    |gcj02                     |zw02                           |gcj03      |gaz03       |gcj04        ]
+[gcj01    |gcj02                     |zw02                           |gcj03      |gaz03       |gcj04        ]
+[gcj01    |gcj02                     |zw02                           |gcj03      |gaz03       |gcj04        ]
+[gcj01    |gcj02                     |zw02                           |gcj03      |gaz03       |gcj04        ]
+[gcj01    |gcj02                     |zw02                           |gcj03      |gaz03       |gcj04        ]
+[gcj01    |gcj02                     |zw02                           |gcj03      |gaz03       |gcj04        ]
+[gcj01    |gcj02                     |zw02                           |gcj03      |gaz03       |gcj04        ]
+[gcj01    |gcj02                     |zw02                           |gcj03      |gaz03       |gcj04        ]
+[gcj01    |gcj02                     |zw02                           |gcj03      |gaz03       |gcj04        ]
+[gcj01    |gcj02                     |zw02                           |gcj03      |gaz03       |gcj04        ]
+
+}
+END -- s_gcj
+Grid gr3159
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3159
+END -- VBox1
+END -- p_biy
+
+TABLES
+gcj_file
+ATTRIBUTES
+ComboBox gcj01=gcj_file.gcj01, tabIndex=1, title="Class", not null, required, items=(("1", %"Authorization Category"),("2", %"User"));
+ButtonEdit gcj02=gcj_file.gcj02, action=controlp, tabIndex=2, title="User ID/Authoriz Category", not null, required, image="zoom", scroll;
+Edit zw02=formonly.zw02 type CHAR, tabIndex=3, title="User Name/Authoriz Description", noEntry;
+ButtonEdit gcj03=gcj_file.gcj03, action=controlp, tabIndex=4, title="Report ID", not null, required, image="zoom", scroll;
+Edit gaz03=formonly.gaz03 type CHAR, tabIndex=5, title="Report Name", noEntry;
+CheckBox gcj04=gcj_file.gcj04, tabIndex=6, title="Run Program?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gcj(gcj_file.gcj01,gcj_file.gcj02,formonly.zw02,gcj_file.gcj03,formonly.gaz03,gcj_file.gcj04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asr/42f/asrt3002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asrt3002")
+VBox VBox1
+Folder pc216
+Page page01(text="Main")
+Table s_sri
+{
+[sri01    |sri02 |sri03 |srg03                         |ima02                         |ima021                        |sri04   |azf03               |sri05     |sri06                                   ]
+[sri01    |sri02 |sri03 |srg03                         |ima02                         |ima021                        |sri04   |azf03               |sri05     |sri06                                   ]
+[sri01    |sri02 |sri03 |srg03                         |ima02                         |ima021                        |sri04   |azf03               |sri05     |sri06                                   ]
+[sri01    |sri02 |sri03 |srg03                         |ima02                         |ima021                        |sri04   |azf03               |sri05     |sri06                                   ]
+[sri01    |sri02 |sri03 |srg03                         |ima02                         |ima021                        |sri04   |azf03               |sri05     |sri06                                   ]
+[sri01    |sri02 |sri03 |srg03                         |ima02                         |ima021                        |sri04   |azf03               |sri05     |sri06                                   ]
+
+}
+END -- s_sri
+END -- page01
+END -- pc216
+Grid gr943
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr943
+END -- VBox1
+END -- asrt3002
+
+TABLES
+sri_file
+ATTRIBUTES
+ButtonEdit sri01=sri_file.sri01, action=controlp, tabIndex=1, title="Rep No.", not null, required, image="zoom", comment="<^P> Qry Labor Report No.";
+Edit sri02=sri_file.sri02, tabIndex=2, title="Item", not null, required;
+ButtonEdit sri03=sri_file.sri03, action=controlp, tabIndex=3, title="Ln#", not null, required, image="zoom", comment="<^P> Qry Labor Report No.";
+Edit srg03=formonly.srg03 type CHAR, tabIndex=4, title="Product No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=5, title="Desc", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=6, title="Spec", noEntry;
+ButtonEdit sri04=sri_file.sri04, action=controlp, tabIndex=7, title="Def No.", not null, required, image="zoom", comment="<^P> Qry Def No.";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=8, title="Def Desc", noEntry;
+Edit sri05=sri_file.sri05, tabIndex=9, title="Bad Qty", not null, required;
+Edit sri06=sri_file.sri06, tabIndex=10, title="Remark";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sri(sri_file.sri01,sri_file.sri02,sri_file.sri03,formonly.srg03,formonly.ima02,formonly.ima021,sri_file.sri04,formonly.azf03,sri_file.sri05,sri_file.sri06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

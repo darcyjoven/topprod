@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_efsrv2_list.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aws_crosscfg")
+VBox VBox1
+Folder Folder1
+Page page_tp(action=tp_list, text=%"TIPTOP")
+Table s_wao1
+{
+[tp_wao02                      |tp_wao03                                          ]
+[tp_wao02                      |tp_wao03                                          ]
+[tp_wao02                      |tp_wao03                                          ]
+[tp_wao02                      |tp_wao03                                          ]
+[tp_wao02                      |tp_wao03                                          ]
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- s_wao1
+END -- page_tp
+Page page_ef(action=ef_list, text=%"EasyFlow")
+Table s_wao2
+{
+[ef_wao02                      |ef_wao03                                          ]
+[ef_wao02                      |ef_wao03                                          ]
+[ef_wao02                      |ef_wao03                                          ]
+[ef_wao02                      |ef_wao03                                          ]
+[ef_wao02                      |ef_wao03                                          ]
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- s_wao2
+END -- page_ef
+END -- Folder1
+END -- VBox1
+END -- aws_efsrv2_list
+
+TABLES
+wao_file
+ATTRIBUTES
+Edit tp_wao02=formonly.tp_wao02 type like wao_file.wao02, tabIndex=1, title=%"wao02";
+ButtonEdit tp_wao03=formonly.tp_wao03 type VARCHAR, action=update_name_tp, tabIndex=2, title=%"wao03", image="pen.png";
+Edit ef_wao02=formonly.ef_wao02 type like wao_file.wao02, tabIndex=3, title=%"wao02";
+ButtonEdit ef_wao03=formonly.ef_wao03 type VARCHAR, action=update_name_ef, tabIndex=4, title=%"wao03", image="pen.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_wao1(formonly.tp_wao02,formonly.tp_wao03)
+SCREEN RECORD s_wao2(formonly.ef_wao02,formonly.ef_wao03)
+END -- INSTRUCTIONS
+

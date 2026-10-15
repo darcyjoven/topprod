@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli142_d.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli142_d")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr2411
+{
+ Sales Cost Center  [dept     ][gem02           ]
+ Year               [yy       ]
+ Month              [mm       ]
+ Type               [a        ][a_desc          ]
+}
+END -- gr2411
+END -- page01
+END -- folder01
+Table s_npq2
+{
+[tlf06   |tlf905          |tlf906   |tlf01                |ima02               |ima021              |ima25|qty         |tlf902    |tlf903    |tlf904    |ahi04       |ahi04a      |ahi05       |ahi05a      |tlf14   |azf03       ]
+[tlf06   |tlf905          |tlf906   |tlf01                |ima02               |ima021              |ima25|qty         |tlf902    |tlf903    |tlf904    |ahi04       |ahi04a      |ahi05       |ahi05a      |tlf14   |azf03       ]
+[tlf06   |tlf905          |tlf906   |tlf01                |ima02               |ima021              |ima25|qty         |tlf902    |tlf903    |tlf904    |ahi04       |ahi04a      |ahi05       |ahi05a      |tlf14   |azf03       ]
+[tlf06   |tlf905          |tlf906   |tlf01                |ima02               |ima021              |ima25|qty         |tlf902    |tlf903    |tlf904    |ahi04       |ahi04a      |ahi05       |ahi05a      |tlf14   |azf03       ]
+[tlf06   |tlf905          |tlf906   |tlf01                |ima02               |ima021              |ima25|qty         |tlf902    |tlf903    |tlf904    |ahi04       |ahi04a      |ahi05       |ahi05a      |tlf14   |azf03       ]
+[tlf06   |tlf905          |tlf906   |tlf01                |ima02               |ima021              |ima25|qty         |tlf902    |tlf903    |tlf904    |ahi04       |ahi04a      |ahi05       |ahi05a      |tlf14   |azf03       ]
+[tlf06   |tlf905          |tlf906   |tlf01                |ima02               |ima021              |ima25|qty         |tlf902    |tlf903    |tlf904    |ahi04       |ahi04a      |ahi05       |ahi05a      |tlf14   |azf03       ]
+[tlf06   |tlf905          |tlf906   |tlf01                |ima02               |ima021              |ima25|qty         |tlf902    |tlf903    |tlf904    |ahi04       |ahi04a      |ahi05       |ahi05a      |tlf14   |azf03       ]
+[tlf06   |tlf905          |tlf906   |tlf01                |ima02               |ima021              |ima25|qty         |tlf902    |tlf903    |tlf904    |ahi04       |ahi04a      |ahi05       |ahi05a      |tlf14   |azf03       ]
+[tlf06   |tlf905          |tlf906   |tlf01                |ima02               |ima021              |ima25|qty         |tlf902    |tlf903    |tlf904    |ahi04       |ahi04a      |ahi05       |ahi05a      |tlf14   |azf03       ]
+
+}
+END -- s_npq2
+Grid gr2412
+{
+ ---------- Rows [cnt   ] / [cn2   ] ---------- Total Amt [amt1        ][amt2        ]
+
+}
+END -- gr2412
+END -- VBox1
+END -- agli142_d
+
+TABLES
+tlf_file
+ATTRIBUTES
+Edit dept=formonly.dept type CHAR, tabIndex=1, noEntry;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=2, noEntry;
+Edit yy=formonly.yy type CHAR, tabIndex=3, noEntry;
+Edit mm=formonly.mm type CHAR, tabIndex=4, noEntry;
+Edit a=formonly.a type CHAR, tabIndex=5, noEntry;
+Edit a_desc=formonly.a_desc type CHAR, tabIndex=6, noEntry;
+Edit tlf06=tlf_file.tlf06, tabIndex=7, title="Date", noEntry;
+Edit tlf905=tlf_file.tlf905, tabIndex=8, title="Document No.", noEntry;
+Edit tlf906=tlf_file.tlf906, tabIndex=9, title="Line No.", noEntry;
+Edit tlf01=tlf_file.tlf01, tabIndex=10, title="Item No.", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=11, title="Product Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=12, title="Specification", noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=13, title="Unit", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=14, title="Qty", noEntry;
+Edit tlf902=tlf_file.tlf902, tabIndex=15, title="Warehouse", noEntry;
+Edit tlf903=tlf_file.tlf903, tabIndex=16, title="Location", noEntry;
+Edit tlf904=tlf_file.tlf904, tabIndex=17, title="Lot No.", noEntry;
+Edit ahi04=formonly.ahi04 type CHAR, tabIndex=18, title="Cost Price", noEntry;
+Edit ahi04a=formonly.ahi04a type CHAR, tabIndex=19, title="Cost Amt", noEntry;
+Edit ahi05=formonly.ahi05 type CHAR, tabIndex=20, title="Inter Price", noEntry;
+Edit ahi05a=formonly.ahi05a type CHAR, tabIndex=21, title="Inter Amt", noEntry;
+Edit tlf14=tlf_file.tlf14, tabIndex=22, title="Cause", noEntry;
+Edit azf03=formonly.azf03 type CHAR, tabIndex=23, title="Cause Desc", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+Edit amt1=formonly.amt1 type CHAR, tabIndex=26, noEntry;
+Edit amt2=formonly.amt2 type CHAR, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_npq2(tlf_file.tlf06,tlf_file.tlf905,tlf_file.tlf906,tlf_file.tlf01,formonly.ima02,formonly.ima021,formonly.ima25,formonly.qty,tlf_file.tlf902,tlf_file.tlf903,tlf_file.tlf904,formonly.ahi04,formonly.ahi04a,formonly.ahi05,formonly.ahi05a,tlf_file.tlf14,formonly.azf03)
+SCREEN RECORD Undefined(formonly.dept,formonly.gem02,formonly.yy,formonly.mm,formonly.a,formonly.a_desc,formonly.cnt,formonly.cn2,formonly.amt1,formonly.amt2)
+END -- INSTRUCTIONS
+

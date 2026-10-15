@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmt2528.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmt2528")
+Group Group1(text="QBE")
+VBox VBox1
+Grid Grid1
+{
+ Sls/Rn Note#        [oha01               ]
+ Sls/Rn Date         [oha02               ]
+ Customer No.        [oha03               ]
+}
+END -- Grid1
+Group Group2
+Grid Grid2
+{
+ Exchange order      [oayslip   ][oaydesc   ][oaymxno   ]
+
+}
+END -- Grid2
+END -- Group2
+END -- VBox1
+END -- Group1
+END -- atmt2528
+
+TABLES
+oay_file,
+oha_file
+ATTRIBUTES
+Edit oha01=oha_file.oha01, tabIndex=1;
+DateEdit oha02=oha_file.oha02, tabIndex=2;
+Edit oha03=oha_file.oha03, tabIndex=3;
+ButtonEdit oayslip=oay_file.oayslip, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit oaydesc=oay_file.oaydesc, tabIndex=5;
+Edit oaymxno=oay_file.oaymxno, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oha_file.oha01,oha_file.oha02,oha_file.oha03,oay_file.oayslip,oay_file.oaydesc,oay_file.oaymxno)
+END -- INSTRUCTIONS
+

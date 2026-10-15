@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_tgr.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_tgr")
+VBox VBox1
+Grid gr5
+{
+    Table name   [gcp01         ]
+
+}
+END -- gr5
+Folder pc2
+Page page01(action=page2, text="log")
+VBox VBox2
+Table s_gco
+{
+[gco01               |gco02             |gco03          |gco04          |gco05     |gco06          |gco07  ]
+
+}
+END -- s_gco
+END -- VBox2
+END -- page01
+Page page02(action=page1, text="trigger")
+Table s_gcp
+{
+[gcp02                         |gcp03                   |gcp04                     |gcp05               |gcp07      ]
+
+}
+END -- s_gcp
+END -- page02
+END -- pc2
+Grid gr6
+{
+  ---------- Rows [idx   ]/[cnt   ] Log Rows[cn2   ]----------
+
+}
+END -- gr6
+END -- VBox1
+END -- p_tgr
+
+TABLES
+gco_file,
+gcp_file
+ATTRIBUTES
+ButtonEdit gcp01=gcp_file.gcp01, action=controlp, tabIndex=1, image="zoom";
+Edit gco01=gco_file.gco01, tabIndex=2, title="tab_name";
+Edit gco02=gco_file.gco02, tabIndex=3, title="colname";
+Edit gco03=gco_file.gco03, tabIndex=4, title="newvalues";
+Edit gco04=gco_file.gco04, tabIndex=5, title="oldvalues";
+Edit gco05=gco_file.gco05, tabIndex=6, title="uesr";
+Edit gco06=gco_file.gco06, tabIndex=7, title="operate type";
+Edit gco07=gco_file.gco07, tabIndex=8, title="date";
+Edit gcp02=gcp_file.gcp02, tabIndex=9, title="Trigger Name";
+Edit gcp03=gcp_file.gcp03, tabIndex=10, title="Trigger Information";
+Edit gcp04=gcp_file.gcp04, tabIndex=11, title="Other Parameter";
+CheckBox gcp05=gcp_file.gcp05, tabIndex=12, title="Already Created", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gcp07=gcp_file.gcp07, tabIndex=13, title="Public", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=14, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gco(gco_file.gco01,gco_file.gco02,gco_file.gco03,gco_file.gco04,gco_file.gco05,gco_file.gco06,gco_file.gco07)
+SCREEN RECORD s_gcp(gcp_file.gcp02,gcp_file.gcp03,gcp_file.gcp04,gcp_file.gcp05,gcp_file.gcp07)
+SCREEN RECORD Undefined(gcp_file.gcp01,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

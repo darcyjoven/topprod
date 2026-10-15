@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr220.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"anmr220")
+VBox vb1
+Grid gr1
+{
+ <G group01                                                          >
+  Received Date       [nmh04               ]
+  Due Date            [nmh05               ]
+  Anticiptd Cashing Dt[nmh09               ]
+  Customer NO.        [nmh11               ]
+  Note Receipt NO.    [nmh01               ]
+  Notes type 1        [nmh10               ]
+  Notes type 2        [nmh29               ]
+  Note Status         [nmh24               ]
+  Collection Date     [nmh20               ]
+  Remitting Bank      [nmh21               ]
+ <                                                                   >
+ <G group02                                                          >
+  [s1                  ][s2                  ][s3                   ]
+  [t1                  ][t2                  ][t3                   ]
+  [u1                  ][u2                  ][u3                   ]
+ <                                                                   >
+
+}
+END -- gr1
+Grid gr2
+{
+[more                                                        ]
+
+}
+END -- gr2
+END -- vb1
+END -- anmr220
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit nmh04=formonly.nmh04 type DATE, tabIndex=1;
+DateEdit nmh05=formonly.nmh05 type DATE, tabIndex=2;
+DateEdit nmh09=formonly.nmh09 type DATE, tabIndex=3;
+Edit nmh11=formonly.nmh11 type VARCHAR, tabIndex=4;
+Edit nmh01=formonly.nmh01 type VARCHAR, tabIndex=5;
+Edit nmh10=formonly.nmh10 type VARCHAR, tabIndex=6;
+Edit nmh29=formonly.nmh29 type VARCHAR, tabIndex=7;
+Edit nmh24=formonly.nmh24 type VARCHAR, tabIndex=8;
+DateEdit nmh20=formonly.nmh20 type DATE, tabIndex=9;
+Edit nmh21=formonly.nmh21 type VARCHAR, tabIndex=10;
+Group group02:group02, text="INPUT";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=11, queryEditable, items=(("1", "Received Date"),("2", "Due Date"),("3", "Antici.Cash.Date"),("4", "Customer NO."),("5", "Note Receipt NO."),("6", "Note Type 1"),("7", "Note Type 2"),("8", "Note Status"),("9", "Collection Date"),("A", "Remitting Bank"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=12, queryEditable, items=(("1", "Received Date"),("2", "Due Date"),("3", "Antici.Cash.Date"),("4", "Customer NO."),("5", "Note Receipt NO."),("6", "Note Type 1"),("7", "Note Type 2"),("8", "Note Status"),("9", "Collection Date"),("A", "Remitting Bank"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=13, queryEditable, items=(("1", "Received Date"),("2", "Due Date"),("3", "Antici.Cash.Date"),("4", "Customer NO."),("5", "Note Receipt NO."),("6", "Note Type 1"),("7", "Note Type 2"),("8", "Note Status"),("9", "Collection Date"),("A", "Remitting Bank"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=14, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=15, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=16, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=17, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=18, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=19, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=20, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.nmh04,formonly.nmh05,formonly.nmh09,formonly.nmh11,formonly.nmh01,formonly.nmh10,formonly.nmh29,formonly.nmh24,formonly.nmh20,formonly.nmh21,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.more)
+END -- INSTRUCTIONS
+

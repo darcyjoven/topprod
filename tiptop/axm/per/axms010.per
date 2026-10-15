@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axms010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axms010")
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+ <G group01                                                       >
+ [oaz01                                                          ]
+ <                                                                >
+ <G group02                       ><G group03                     >
+ [oaz02                          ]
+  Plant# where AGL Is [oaz02p    ] [oaz102                       ]
+  AGL Module Book No. [oaz02b    ] [oaz103                       ]
+ [oaz03                          ] [oaz104                       ]
+ [oaz04                          ] <                              >
+ [oaz05                          ] <G group04                       >
+ [oaz06                          ]  Accnt Lock Date   [oaz09       ]
+
+ <                                ><                                >
+
+}
+END -- Grid1
+END -- page01
+END -- Folder1
+END -- axms010
+
+TABLES
+oaz_file
+ATTRIBUTES
+Group group01:group01;
+CheckBox oaz01=oaz_file.oaz01, tabIndex=1, text="Open AXM Module to Users?         ", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y: Normal use N: For Qry Printing only, No Add, Modify, Delete, Qry";
+Group group02:group02, text="Linking Set";
+CheckBox oaz02=oaz_file.oaz02, tabIndex=2, text="Link to AGL Module", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oaz02p=oaz_file.oaz02p, tabIndex=3;
+Edit oaz02b=oaz_file.oaz02b, tabIndex=4;
+CheckBox oaz03=oaz_file.oaz03, tabIndex=5, text="Link to MFG System", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz04=oaz_file.oaz04, tabIndex=6, text="Link to ANM Module", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz05=oaz_file.oaz05, tabIndex=7, text="Link to AXR Module", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz06=oaz_file.oaz06, tabIndex=8, text="Generate MPS Transaction Log", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Store out Set";
+CheckBox oaz102=oaz_file.oaz102, tabIndex=9, text="Multi-Warehouse Store-out", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz103=oaz_file.oaz103, tabIndex=10, text="Multi-location Store-out", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz104=oaz_file.oaz104, tabIndex=11, text="Multi-Lot No. Store-out", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group04:group04;
+DateEdit oaz09=oaz_file.oaz09, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oaz_file.oaz01,oaz_file.oaz02,oaz_file.oaz02p,oaz_file.oaz02b,oaz_file.oaz03,oaz_file.oaz04,oaz_file.oaz05,oaz_file.oaz06,oaz_file.oaz102,oaz_file.oaz103,oaz_file.oaz104,oaz_file.oaz09)
+END -- INSTRUCTIONS
+

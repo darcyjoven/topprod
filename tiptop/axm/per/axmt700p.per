@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt700p.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt700p")
+VBox VBox2
+Folder pc700
+Page page01(text="Page01")
+VBox VBox1
+Table s_ohb
+{
+[ohb03 |ohb31             |ohb32 |ohb04              |ohb06                          |ohb05|ohb12     |ohb913        |ohb914                   |ohb915       |ohb910            |ohb911                       |ohb912            |ohb916         |ohb917            |ohb37_1             |ohb13      |ohb14      |ohb14t    ]
+[ohb03 |ohb31             |ohb32 |ohb04              |ohb06                          |ohb05|ohb12     |ohb913        |ohb914                   |ohb915       |ohb910            |ohb911                       |ohb912            |ohb916         |ohb917            |ohb37_1             |ohb13      |ohb14      |ohb14t    ]
+[ohb03 |ohb31             |ohb32 |ohb04              |ohb06                          |ohb05|ohb12     |ohb913        |ohb914                   |ohb915       |ohb910            |ohb911                       |ohb912            |ohb916         |ohb917            |ohb37_1             |ohb13      |ohb14      |ohb14t    ]
+[ohb03 |ohb31             |ohb32 |ohb04              |ohb06                          |ohb05|ohb12     |ohb913        |ohb914                   |ohb915       |ohb910            |ohb911                       |ohb912            |ohb916         |ohb917            |ohb37_1             |ohb13      |ohb14      |ohb14t    ]
+[ohb03 |ohb31             |ohb32 |ohb04              |ohb06                          |ohb05|ohb12     |ohb913        |ohb914                   |ohb915       |ohb910            |ohb911                       |ohb912            |ohb916         |ohb917            |ohb37_1             |ohb13      |ohb14      |ohb14t    ]
+[ohb03 |ohb31             |ohb32 |ohb04              |ohb06                          |ohb05|ohb12     |ohb913        |ohb914                   |ohb915       |ohb910            |ohb911                       |ohb912            |ohb916         |ohb917            |ohb37_1             |ohb13      |ohb14      |ohb14t    ]
+[ohb03 |ohb31             |ohb32 |ohb04              |ohb06                          |ohb05|ohb12     |ohb913        |ohb914                   |ohb915       |ohb910            |ohb911                       |ohb912            |ohb916         |ohb917            |ohb37_1             |ohb13      |ohb14      |ohb14t    ]
+[ohb03 |ohb31             |ohb32 |ohb04              |ohb06                          |ohb05|ohb12     |ohb913        |ohb914                   |ohb915       |ohb910            |ohb911                       |ohb912            |ohb916         |ohb917            |ohb37_1             |ohb13      |ohb14      |ohb14t    ]
+[ohb03 |ohb31             |ohb32 |ohb04              |ohb06                          |ohb05|ohb12     |ohb913        |ohb914                   |ohb915       |ohb910            |ohb911                       |ohb912            |ohb916         |ohb917            |ohb37_1             |ohb13      |ohb14      |ohb14t    ]
+[ohb03 |ohb31             |ohb32 |ohb04              |ohb06                          |ohb05|ohb12     |ohb913        |ohb914                   |ohb915       |ohb910            |ohb911                       |ohb912            |ohb916         |ohb917            |ohb37_1             |ohb13      |ohb14      |ohb14t    ]
+}
+END -- s_ohb
+Grid gr2583
+{
+ <G group01                                                                                                                                                                                                                                                                                             >
+  [label|cn3       ][label3     ][oha50               ][label2    |oha50_1             ]
+ <                                                                                                                                                                                                                                                                                                      >
+
+
+}
+END -- gr2583
+END -- VBox1
+END -- page01
+END -- pc700
+END -- VBox2
+END -- axmt700p
+
+TABLES
+oha_file
+ATTRIBUTES
+Edit ohb03=formonly.ohb03 type CHAR, tabIndex=1, title="Line#", noEntry;
+Edit ohb31=formonly.ohb31 type CHAR, tabIndex=2, title="Order No.", noEntry;
+Edit ohb32=formonly.ohb32 type CHAR, tabIndex=3, title="Line#", noEntry;
+Edit ohb04=formonly.ohb04 type CHAR, tabIndex=4, title="Product No.", noEntry;
+Edit ohb06=formonly.ohb06 type CHAR, tabIndex=5, title="P/N Specification", noEntry;
+Edit ohb05=formonly.ohb05 type CHAR, tabIndex=6, title="Unit", noEntry;
+Edit ohb12=formonly.ohb12 type CHAR, tabIndex=7, title="Qty", noEntry;
+Edit ohb913=formonly.ohb913 type CHAR, tabIndex=8, title="Par/Ref Unit", noEntry;
+Edit ohb914=formonly.ohb914 type CHAR, tabIndex=9, title="Par/Ref Conversion Rate", noEntry;
+Edit ohb915=formonly.ohb915 type CHAR, tabIndex=10, title="Par/Ref Qty", noEntry;
+Edit ohb910=formonly.ohb910 type CHAR, tabIndex=11, title="Chi/Deliver Unit", noEntry;
+Edit ohb911=formonly.ohb911 type CHAR, tabIndex=12, title="Chi/Deliver Conversion Rate", noEntry;
+Edit ohb912=formonly.ohb912 type CHAR, tabIndex=13, title="Chi/Deliver Qty", noEntry;
+Edit ohb916=formonly.ohb916 type CHAR, tabIndex=14, title="Valuation Unit", noEntry;
+Edit ohb917=formonly.ohb917 type CHAR, tabIndex=15, title="Valuation Qty", noEntry;
+Edit ohb37_1=formonly.ohb37_1 type CHAR, tabIndex=20, title=%"base price", noEntry;
+Edit ohb13=formonly.ohb13 type CHAR, tabIndex=16, title="Unit Price", not null, required;
+Edit ohb14=formonly.ohb14 type CHAR, tabIndex=17, title="Amount", not null, required;
+Edit ohb14t=formonly.ohb14t type CHAR, tabIndex=18, title="Amount", not null, required;
+Group group01:group01;
+Label label:Label1, text=%"Label1";
+Edit cn3=formonly.cn3 type DECIMAL, tabIndex=22;
+Label label3:Label3, text=%"Before-Tax Amt Total";
+Edit oha50=oha_file.oha50, tabIndex=19, not null, required;
+Label label2:Label2, text=%"After-Tax Amt Total";
+Edit oha50_1=formonly.oha50_1 type DECIMAL, tabIndex=21;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ohb(formonly.ohb03,formonly.ohb31,formonly.ohb32,formonly.ohb04,formonly.ohb06,formonly.ohb05,formonly.ohb12,formonly.ohb913,formonly.ohb914,formonly.ohb915,formonly.ohb910,formonly.ohb911,formonly.ohb912,formonly.ohb916,formonly.ohb917,formonly.ohb37_1,formonly.ohb13,formonly.ohb14,formonly.ohb14t)
+SCREEN RECORD Undefined(oha_file.oha50,formonly.oha50_1,formonly.cn3)
+END -- INSTRUCTIONS
+

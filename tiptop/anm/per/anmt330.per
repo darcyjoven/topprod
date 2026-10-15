@@ -1,0 +1,57 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt330.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt330")
+VBox VBox1
+Folder pc795
+Page page01(text="Main")
+Grid gr4498
+{
+ Bank No.                             [npg01        ]
+ Bank Name                            [nma02               ]
+
+ Currency                             [nma10     ]
+ Year                                 [npg02     ]
+ Period                               [npg03     ]
+
+ Cashier Balance Total(Original Curr) [npg06               ]
+ Cashier Balance Total(Home Curr)     [npg09               ]
+
+ Ledger Balance Total(Original Curr)  [npg16               ]
+ Ledger Balance Total(Home Curr)      [npg19               ]
+}
+END -- gr4498
+END -- page01
+END -- pc795
+Grid gr4499
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4499
+END -- VBox1
+END -- anmt330
+
+TABLES
+npg_file
+ATTRIBUTES
+ButtonEdit npg01=npg_file.npg01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Qry  Bank No. ";
+Edit nma02=formonly.nma02 type CHAR, tabIndex=2, noEntry;
+Edit nma10=formonly.nma10 type CHAR, tabIndex=3, noEntry;
+Edit npg02=npg_file.npg02, tabIndex=4, not null, required;
+Edit npg03=npg_file.npg03, tabIndex=5, not null, required;
+Edit npg06=npg_file.npg06, tabIndex=6, not null, required;
+Edit npg09=npg_file.npg09, tabIndex=7, not null, required;
+Edit npg16=npg_file.npg16, tabIndex=8, not null, required;
+Edit npg19=npg_file.npg19, tabIndex=9, not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(npg_file.npg01,formonly.nma02,formonly.nma10,npg_file.npg02,npg_file.npg03,npg_file.npg06,npg_file.npg09,npg_file.npg16,npg_file.npg19,formonly.cnt)
+END -- INSTRUCTIONS
+

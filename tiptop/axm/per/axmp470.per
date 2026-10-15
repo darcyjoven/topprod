@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/4fd/axmp470.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmp470")
+VBox vb3
+Grid grid01
+{
+ Delivery Date       [oga02           ]    Client              [oga03     ]     Estimated Receipt Date   [oga72         ]
+ Delivery No         [oga01           ]    Client Name         [oga032    ]    [a                ]
+
+}
+END -- grid01
+Table s_oga
+{
+[sure    |b       |c               |oga03b     |oga032b                |oga01b          |oga02b         |oga16          |oga011         |oga04         |occ02        ]
+[sure    |b       |c               |oga03b     |oga032b                |oga01b          |oga02b         |oga16          |oga011         |oga04         |occ02        ]
+[sure    |b       |c               |oga03b     |oga032b                |oga01b          |oga02b         |oga16          |oga011         |oga04         |occ02        ]
+[sure    |b       |c               |oga03b     |oga032b                |oga01b          |oga02b         |oga16          |oga011         |oga04         |occ02        ]
+[sure    |b       |c               |oga03b     |oga032b                |oga01b          |oga02b         |oga16          |oga011         |oga04         |occ02        ]
+[sure    |b       |c               |oga03b     |oga032b                |oga01b          |oga02b         |oga16          |oga011         |oga04         |occ02        ]
+[sure    |b       |c               |oga03b     |oga032b                |oga01b          |oga02b         |oga16          |oga011         |oga04         |occ02        ]
+[sure    |b       |c               |oga03b     |oga032b                |oga01b          |oga02b         |oga16          |oga011         |oga04         |occ02        ]
+[sure    |b       |c               |oga03b     |oga032b                |oga01b          |oga02b         |oga16          |oga011         |oga04         |occ02        ]
+[sure    |b       |c               |oga03b     |oga032b                |oga01b          |oga02b         |oga16          |oga011         |oga04         |occ02        ]
+}
+END -- s_oga
+Grid gr2184
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2184
+END -- vb3
+END -- axmp470
+
+TABLES
+oga_file
+ATTRIBUTES
+DateEdit oga02=oga_file.oga02, tabIndex=1;
+ButtonEdit oga03=oga_file.oga03, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Client No.";
+DateEdit oga72=oga_file.oga72, tabIndex=3;
+ButtonEdit oga01=oga_file.oga01, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Delivery No.";
+Edit oga032=oga_file.oga032, tabIndex=5;
+CheckBox a=formonly.a type CHAR, tabIndex=6, text="Checked", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sure=formonly.sure, tabIndex=7, title=%"sure", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type CHAR, tabIndex=8, title="Checked", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit c=formonly.c type CHAR, tabIndex=9, title="Check No.", noEntry;
+Edit oga03b=formonly.oga03b type CHAR, tabIndex=10, title="Client", noEntry;
+Edit oga032b=formonly.oga032b type CHAR, tabIndex=11, title="Client Name", noEntry;
+Edit oga01b=formonly.oga01b type CHAR, tabIndex=12, title="Delivery No.", noEntry;
+Edit oga02b=formonly.oga02b type CHAR, tabIndex=13, title="Delivery Date", noEntry;
+Edit oga16=formonly.oga16 type CHAR, tabIndex=14, title="Order No.", noEntry;
+Edit oga011=formonly.oga011 type CHAR, tabIndex=15, title="Advice No.", noEntry;
+Edit oga04=formonly.oga04 type CHAR, tabIndex=16, title="Shipping Cust", noEntry;
+Edit occ02=formonly.occ02 type CHAR, tabIndex=17, title="Cust Name", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oga(formonly.sure,formonly.b,formonly.c,formonly.oga03b,formonly.oga032b,formonly.oga01b,formonly.oga02b,formonly.oga16,formonly.oga011,formonly.oga04,formonly.occ02)
+SCREEN RECORD Undefined(oga_file.oga02,oga_file.oga03,oga_file.oga72,oga_file.oga01,oga_file.oga032,formonly.a,formonly.cnt)
+END -- INSTRUCTIONS
+

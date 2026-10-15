@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri096.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(action=main, text=%"Page1")
+Grid Grid1
+{
+
+  hrdz00           [hrdz00        ]
+  hrdz01           [hrdz01           ]           hrdz04            [hrdz04           ]
+  hrdz02           [hrdz02           ]           hrdz05            [hrdz05           ]
+  hrdz03           [hrdz03           ]           hrdz06            [hrdz06           ]
+  fqs1             [fqs1             ]           fqs2              [fqs2             ]
+
+  hrdz07           [hrdz07           ]           hrdz10            [hrdz10           ]
+  hrdz08           [hrdz08           ]           hrdz11            [hrdz11           ]
+  hrdz09           [hrdz09           ]           hrdz12            [hrdz12           ]
+  fqs3             [fqs3             ]           fqs4              [fqs4             ]
+
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Page2")
+Grid Grid2
+{
+
+  hrdzuser[hrdzuser     ]       hrdzmodu [hrdzmodu     ]     hrdzacti  [hrdzacti     ]
+  hrdzgrup[hrdzgrup     ]       hrdzdate [hrdzdate     ]
+  hrdzoriu[hrdzoriu     ]
+  hrdzorig[hrdzorig     ]
+
+
+
+
+
+
+
+}
+END -- Grid2
+END -- Page2
+Page Page3(action=item_list, text=%"Page3")
+Table Table1
+{
+[hrdz00_b  |hrdz01_b   |hrdz02_b  |hrdz03_b  |fqs1_b    |hrdz04_b  |hrdz05_b  |hrdz06_b   |fqs2_b    |hrdz07_b  |hrdz08_b|hrdz09_b|fqs3_b  |hrdz10_b|hrdz11_b|hrdz12_b|fqs4_b  ]
+[hrdz00_b  |hrdz01_b   |hrdz02_b  |hrdz03_b  |fqs1_b    |hrdz04_b  |hrdz05_b  |hrdz06_b   |fqs2_b    |hrdz07_b  |hrdz08_b|hrdz09_b|fqs3_b  |hrdz10_b|hrdz11_b|hrdz12_b|fqs4_b  ]
+[hrdz00_b  |hrdz01_b   |hrdz02_b  |hrdz03_b  |fqs1_b    |hrdz04_b  |hrdz05_b  |hrdz06_b   |fqs2_b    |hrdz07_b  |hrdz08_b|hrdz09_b|fqs3_b  |hrdz10_b|hrdz11_b|hrdz12_b|fqs4_b  ]
+[hrdz00_b  |hrdz01_b   |hrdz02_b  |hrdz03_b  |fqs1_b    |hrdz04_b  |hrdz05_b  |hrdz06_b   |fqs2_b    |hrdz07_b  |hrdz08_b|hrdz09_b|fqs3_b  |hrdz10_b|hrdz11_b|hrdz12_b|fqs4_b  ]
+[hrdz00_b  |hrdz01_b   |hrdz02_b  |hrdz03_b  |fqs1_b    |hrdz04_b  |hrdz05_b  |hrdz06_b   |fqs2_b    |hrdz07_b  |hrdz08_b|hrdz09_b|fqs3_b  |hrdz10_b|hrdz11_b|hrdz12_b|fqs4_b  ]
+
+
+}
+END -- Table1
+END -- Page3
+END -- Folder1
+Grid Grid3
+{
+
+ ---------- rows [idx   ] / [cnt   ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ComboBox hrdz00=formonly.hrdz00 type VARCHAR, tabIndex=1, not null, required;
+Edit hrdz01=formonly.hrdz01 type DECIMAL, tabIndex=2, not null, required;
+Edit hrdz04=formonly.hrdz04 type DECIMAL, tabIndex=21, not null, required;
+Edit hrdz02=formonly.hrdz02 type DECIMAL, tabIndex=23, not null, required;
+Edit hrdz05=formonly.hrdz05 type DECIMAL, tabIndex=20, not null, required;
+Edit hrdz03=formonly.hrdz03 type DECIMAL, tabIndex=22, not null, required;
+Edit hrdz06=formonly.hrdz06 type DECIMAL, tabIndex=19, not null, required;
+Edit fqs1=formonly.fqs1 type DECIMAL, tabIndex=6;
+Edit fqs2=formonly.fqs2 type DECIMAL, tabIndex=5;
+Edit hrdz07=formonly.hrdz07 type DECIMAL, tabIndex=18, not null, required;
+Edit hrdz10=formonly.hrdz10 type DECIMAL, tabIndex=15, not null, required;
+Edit hrdz08=formonly.hrdz08 type DECIMAL, tabIndex=17, not null, required;
+Edit hrdz11=formonly.hrdz11 type DECIMAL, tabIndex=14, not null, required;
+Edit hrdz09=formonly.hrdz09 type DECIMAL, tabIndex=16, not null, required;
+Edit hrdz12=formonly.hrdz12 type DECIMAL, tabIndex=13, not null, required;
+Edit fqs3=formonly.fqs3 type DECIMAL, tabIndex=4;
+Edit fqs4=formonly.fqs4 type DECIMAL, tabIndex=3;
+Edit hrdzuser=formonly.hrdzuser, tabIndex=7;
+Edit hrdzmodu=formonly.hrdzmodu, tabIndex=9;
+Edit hrdzacti=formonly.hrdzacti, tabIndex=8;
+Edit hrdzgrup=formonly.hrdzgrup, tabIndex=12;
+DateEdit hrdzdate=formonly.hrdzdate type DATE, tabIndex=24;
+Edit hrdzoriu=formonly.hrdzoriu, tabIndex=11;
+Edit hrdzorig=formonly.hrdzorig, tabIndex=10;
+Edit hrdz00_b=formonly.hrdz00_b type VARCHAR, tabIndex=27, title=%"hrdz00_b";
+Edit hrdz01_b=formonly.hrdz01_b type VARCHAR, tabIndex=28, title=%"hrdz01_b";
+Edit hrdz02_b=formonly.hrdz02_b type VARCHAR, tabIndex=29, title=%"hrdz02_b";
+Edit hrdz03_b=formonly.hrdz03_b type VARCHAR, tabIndex=30, title=%"hrdz03_b";
+Edit fqs1_b=formonly.fqs1_b type VARCHAR, tabIndex=31, title=%"fqs1_b";
+Edit hrdz04_b=formonly.hrdz04_b type VARCHAR, tabIndex=32, title=%"hrdz04_b";
+Edit hrdz05_b=formonly.hrdz05_b type VARCHAR, tabIndex=33, title=%"hrdz05_b";
+Edit hrdz06_b=formonly.hrdz06_b type VARCHAR, tabIndex=34, title=%"hrdz06_b";
+Edit fqs2_b=formonly.fqs2_b type VARCHAR, tabIndex=35, title=%"fqs2_b";
+Edit hrdz07_b=formonly.hrdz07_b type VARCHAR, tabIndex=36, title=%"hrdz07_b";
+Edit hrdz08_b=formonly.hrdz08_b, tabIndex=37, title=%"hrdz08_b";
+Edit hrdz09_b=formonly.hrdz09_b, tabIndex=38, title=%"hrdz09_b";
+Edit fqs3_b=formonly.fqs3_b, tabIndex=39, title=%"fqs3_b";
+Edit hrdz10_b=formonly.hrdz10_b, tabIndex=40, title=%"hrdz10_b";
+Edit hrdz11_b=formonly.hrdz11_b, tabIndex=41, title=%"hrdz11_b";
+Edit hrdz12_b=formonly.hrdz12_b, tabIndex=42, title=%"hrdz12_b";
+Edit fqs4_b=formonly.fqs4_b, tabIndex=43, title=%"fqs4_b";
+Edit idx=formonly.idx, tabIndex=25;
+Edit cnt=formonly.cnt, tabIndex=26;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrdz00,formonly.hrdz01,formonly.fqs4,formonly.fqs3,formonly.fqs2,formonly.fqs1,formonly.hrdzuser,formonly.hrdzacti,formonly.hrdzmodu,formonly.hrdzorig,formonly.hrdzoriu,formonly.hrdzgrup,formonly.hrdz12,formonly.hrdz11,formonly.hrdz10,formonly.hrdz09,formonly.hrdz08,formonly.hrdz07,formonly.hrdz06,formonly.hrdz05,formonly.hrdz04,formonly.hrdz03,formonly.hrdz02,formonly.hrdzdate,formonly.idx,formonly.cnt)
+SCREEN RECORD s_hrdz_b(formonly.hrdz00_b,formonly.hrdz01_b,formonly.hrdz02_b,formonly.hrdz03_b,formonly.fqs1_b,formonly.hrdz04_b,formonly.hrdz05_b,formonly.hrdz06_b,formonly.fqs2_b,formonly.hrdz07_b,formonly.hrdz08_b,formonly.hrdz09_b,formonly.fqs3_b,formonly.hrdz10_b,formonly.hrdz11_b,formonly.hrdz12_b,formonly.fqs4_b)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u53/tiptop/aap/42f/aapp100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aapp100")
+Grid gr1
+{
+
+  <G gb2                                                                  >
+    source date [bdate     ]-[edate      ]
+  <                                                                       >
+  <G gb3                                                                  >
+     tr type    [trtype    ]
+     tr date    [apa02     ]
+  <                                                                       >
+  <G gb5                                                                  >
+     start no   [star_no           ]- end_no[end_no            ]
+  <                                                                       >
+
+}
+END -- gr1
+END -- aapp100
+
+TABLES
+apa_file
+ATTRIBUTES
+Group gb2:gb2;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=1, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=6;
+Group gb3:gb3;
+ButtonEdit trtype=formonly.trtype type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+DateEdit apa02=apa_file.apa02, tabIndex=3, not null, required;
+Group gb5:gb5, text="date range";
+Edit star_no=formonly.star_no type VARCHAR, tabIndex=4;
+Edit end_no=formonly.end_no type VARCHAR, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bdate,formonly.trtype,apa_file.apa02,formonly.star_no,formonly.end_no,formonly.edate)
+END -- INSTRUCTIONS
+

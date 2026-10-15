@@ -1,0 +1,138 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi171.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi171")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr2034
+{
+ Forecasting Item    [opc01                         ]
+ Item Name           [ima02                         ]
+ Specification       [ima021                        ]
+ Customer #          [opc02       ]
+ Customer Name       [occ02                        ]
+ Plan.Date           [opc03       ]
+
+}
+END -- gr2034
+Grid gr2035
+{
+ Salesman            [opc04       ]
+ Name                [gen02       ]
+ Department No.      [opc05       ]
+ Name                [gem02       ]
+ Listing Method      [opc06     ]
+ Time Bucket         [opc10     ]
+
+}
+END -- gr2035
+Grid gr2036
+{
+ Generat Periods     [opc07     ]
+ Currency            [opc08     ]
+ Exchg Rt            [opc09             ]
+ [opc11       ]
+ [opc12       ]
+ WO No.              [opcslk01          ]
+
+}
+END -- gr2036
+END -- hb1
+END -- page01
+Page Info(text="Info")
+Grid Grid1
+{
+ [label2    |opcuser        ]      [label5    ] [opcmodu        ]
+ [label1    |opcgrup        ]      [label6    ] [opcdate        ]
+ [label3    |opcoriu        ]
+ [label4    |opcorig        ]
+
+
+
+}
+END -- Grid1
+END -- Info
+END -- folder01
+Table s_opd
+{
+[opd05      |opd06          |opd07         |opd08          |opd10               |opd11               |opd09              ]
+[opd05      |opd06          |opd07         |opd08          |opd10               |opd11               |opd09              ]
+[opd05      |opd06          |opd07         |opd08          |opd10               |opd11               |opd09              ]
+[opd05      |opd06          |opd07         |opd08          |opd10               |opd11               |opd09              ]
+[opd05      |opd06          |opd07         |opd08          |opd10               |opd11               |opd09              ]
+[opd05      |opd06          |opd07         |opd08          |opd10               |opd11               |opd09              ]
+[opd05      |opd06          |opd07         |opd08          |opd10               |opd11               |opd09              ]
+[opd05      |opd06          |opd07         |opd08          |opd10               |opd11               |opd09              ]
+[opd05      |opd06          |opd07         |opd08          |opd10               |opd11               |opd09              ]
+[opd05      |opd06          |opd07         |opd08          |opd10               |opd11               |opd09              ]
+
+}
+END -- s_opd
+Grid gr2037
+{
+ ---------- Rows [cnt   ] / [cn2   ] ---- Total [opd08t       ] ---- Amount Total [opd11t              ] ---- Comfirmed Quantity Total [opd09t        ]
+
+}
+END -- gr2037
+END -- VBox1
+END -- axmi171
+
+TABLES
+opc_file,
+opd_file
+ATTRIBUTES
+ButtonEdit opc01=opc_file.opc01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=3, noEntry;
+ButtonEdit opc02=opc_file.opc02, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Details";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=5, noEntry;
+DateEdit opc03=opc_file.opc03, tabIndex=6, not null, required;
+ButtonEdit opc04=opc_file.opc04, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=8, noEntry;
+ButtonEdit opc05=opc_file.opc05, action=controlp, tabIndex=9, not null, required, image="zoom", comment="<^P>Qry Details";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=10, noEntry;
+ComboBox opc06=opc_file.opc06, tabIndex=11, not null, required, queryEditable, items=(("1", "By Time Bucket"),("2", "Day"),("3", "Week"),("4", "10-Day"),("5", "Month"));
+ButtonEdit opc10=opc_file.opc10, action=controlp, tabIndex=12, image="zoom", comment="<^P>Time Bucket # QBE";
+Edit opc07=opc_file.opc07, tabIndex=13, not null, required;
+ButtonEdit opc08=opc_file.opc08, action=controlp, tabIndex=14, not null, required, image="zoom", comment="<^P>Qry Currency";
+ButtonEdit opc09=opc_file.opc09, action=controlp, tabIndex=15, not null, required, image="zoom";
+CheckBox opc11=opc_file.opc11, tabIndex=16, text="Sales", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox opc12=opc_file.opc12, tabIndex=17, text="Production Management", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit opcslk01=opc_file.opcslk01, action=controlp, tabIndex=30, image="zoom.png";
+Label label2:Label2, text=%"opcuser";
+Edit opcuser=opc_file.opcuser, tabIndex=31;
+Label label5:Label5, text=%"opcmodu";
+Edit opcmodu=opc_file.opcmodu, tabIndex=35;
+Label label1:Label1, text=%"opcgrup";
+Edit opcgrup=opc_file.opcgrup, tabIndex=32;
+Label label6:Label6, text=%"opcdate";
+DateEdit opcdate=opc_file.opcdate, tabIndex=36;
+Label label3:Label3, text=%"opcoriu";
+Edit opcoriu=opc_file.opcoriu, tabIndex=33;
+Label label4:Label4, text=%"opcorig";
+Edit opcorig=opc_file.opcorig, tabIndex=34;
+Edit opd05=opd_file.opd05, tabIndex=18, title="Serial No.", not null, required;
+DateEdit opd06=opd_file.opd06, tabIndex=19, title="Initial Date", not null, required;
+DateEdit opd07=opd_file.opd07, tabIndex=20, title="Ending Date", not null, required;
+Edit opd08=opd_file.opd08, tabIndex=21, title="Planning Qty", not null, required;
+Edit opd10=opd_file.opd10, tabIndex=22, title="Unit Price";
+Edit opd11=opd_file.opd11, tabIndex=23, title="Amount", noEntry;
+Edit opd09=opd_file.opd09, tabIndex=24, title="Comfirmed Quantity";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=26, noEntry;
+Edit opd08t=formonly.opd08t type CHAR, tabIndex=27, noEntry;
+Edit opd11t=formonly.opd11t type CHAR, tabIndex=28, noEntry;
+Edit opd09t=formonly.opd09t type CHAR, tabIndex=29, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_opd(opd_file.opd05,opd_file.opd06,opd_file.opd07,opd_file.opd08,opd_file.opd10,opd_file.opd11,opd_file.opd09)
+SCREEN RECORD Undefined(opc_file.opc01,formonly.ima02,formonly.ima021,opc_file.opc02,formonly.occ02,opc_file.opc03,opc_file.opc04,formonly.gen02,opc_file.opc05,formonly.gem02,opc_file.opc06,opc_file.opc10,opc_file.opc07,opc_file.opc08,opc_file.opc09,opc_file.opc11,opc_file.opc12,opc_file.opcslk01,formonly.cnt,formonly.cn2,formonly.opd08t,formonly.opd11t,formonly.opd09t,opc_file.opcuser,opc_file.opcgrup,opc_file.opcoriu,opc_file.opcorig,opc_file.opcmodu,opc_file.opcdate)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmt229_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmt229_1")
+Group gb875
+VBox VBox1
+Grid gr1147
+{
+  Plant Name      [azp01          ]
+  Custom No.      [occ01          ]
+  Sys Cd.         [occ1007        ]
+  Sys. Reg. Cd.   [occ1008        ]
+}
+END -- gr1147
+END -- VBox1
+END -- gb875
+END -- atmt229_1
+
+TABLES
+occ_file,
+azp_file
+ATTRIBUTES
+ButtonEdit azp01=azp_file.azp01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit occ01=occ_file.occ01, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Custom Data";
+ButtonEdit occ1007=occ_file.occ1007, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit occ1008=occ_file.occ1008, action=controlp, tabIndex=4, image="zoom";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(azp_file.azp01,occ_file.occ01,occ_file.occ1007,occ_file.occ1008)
+END -- INSTRUCTIONS
+

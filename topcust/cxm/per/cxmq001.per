@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cxm/4fd/cxmq001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Table Table1
+{
+[oea01       |oeb03        |oea03       |occ02       |oeb04       |oeb06       |ima021         |oeb12      |oeb24       |oebud07    |oebud08    |oebud09    |oebud04       |oebud11      |oea10   ]
+[oea01       |oeb03        |oea03       |occ02       |oeb04       |oeb06       |ima021         |oeb12      |oeb24       |oebud07    |oebud08    |oebud09    |oebud04       |oebud11      |oea10   ]
+[oea01       |oeb03        |oea03       |occ02       |oeb04       |oeb06       |ima021         |oeb12      |oeb24       |oebud07    |oebud08    |oebud09    |oebud04       |oebud11      |oea10   ]
+[oea01       |oeb03        |oea03       |occ02       |oeb04       |oeb06       |ima021         |oeb12      |oeb24       |oebud07    |oebud08    |oebud09    |oebud04       |oebud11      |oea10   ]
+[oea01       |oeb03        |oea03       |occ02       |oeb04       |oeb06       |ima021         |oeb12      |oeb24       |oebud07    |oebud08    |oebud09    |oebud04       |oebud11      |oea10   ]
+}
+END -- Table1
+Grid Grid1
+{
+ - Rows [cnt       ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit oea01=formonly.oea01, action=controlp, tabIndex=1, title=%"oea01", image="zoom";
+Edit oeb03=formonly.oeb03, tabIndex=3, title=%"oeb03";
+ButtonEdit oea03=formonly.oea03, action=controlp, tabIndex=2, title=%"oea03", image="zoom";
+Edit occ02=formonly.occ02, tabIndex=11, title=%"occ02";
+ButtonEdit oeb04=formonly.oeb04, action=controlp, tabIndex=4, title=%"oeb04", image="zoom";
+Edit oeb06=formonly.oeb06, tabIndex=5, title=%"oeb06";
+Edit ima021=formonly.ima021, tabIndex=6, title=%"ima021";
+Edit oeb12=formonly.oeb12, tabIndex=7, title=%"oeb12";
+Edit oeb24=formonly.oeb24, tabIndex=8, title=%"oeb24";
+Edit oebud07=formonly.oebud07, tabIndex=9, title=%"oebud07";
+Edit oebud08=formonly.oebud08, tabIndex=12, title=%"oebud08";
+Edit oebud09=formonly.oebud09, tabIndex=13, title=%"oebud09";
+Edit oebud04=formonly.oebud04, tabIndex=14, title=%"oebud04";
+Edit oebud11=formonly.oebud11, tabIndex=15, title=%"oebud11";
+Edit oea10=formonly.oea10, tabIndex=16, title=%"oea10";
+Edit cnt=formonly.cnt, tabIndex=10;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oea(formonly.oea01,formonly.oeb03,formonly.oea03,formonly.occ02,formonly.oeb04,formonly.oeb06,formonly.ima021,formonly.oeb12,formonly.oeb24,formonly.oebud07,formonly.oebud08,formonly.oebud09,formonly.oebud04,formonly.oebud11,formonly.oea10)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

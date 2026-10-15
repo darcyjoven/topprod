@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt203.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt203")
+VBox vb7
+Folder folder01
+Page Page4(text=%"Basic Data\n")
+Grid gr7
+{
+
+   Network No.       [pjfb01         ]    Network Name           [pjj02                                   ]
+   Activity NO.      [pjfb02         ]    Activity Name          [pjk03                                   ]
+   Planned Start Date[pjk16          ]    Planned Completion Date[pjk17          ]
+
+
+
+}
+END -- gr7
+END -- Page4
+END -- folder01
+Table s_pjfb
+{
+[pjfb0|pjfb04                        |pjfb05                                  |ima021                                  |ima25               |pjfb06             |pjfb07         |pjfbac]
+[pjfb0|pjfb04                        |pjfb05                                  |ima021                                  |ima25               |pjfb06             |pjfb07         |pjfbac]
+[pjfb0|pjfb04                        |pjfb05                                  |ima021                                  |ima25               |pjfb06             |pjfb07         |pjfbac]
+[pjfb0|pjfb04                        |pjfb05                                  |ima021                                  |ima25               |pjfb06             |pjfb07         |pjfbac]
+[pjfb0|pjfb04                        |pjfb05                                  |ima021                                  |ima25               |pjfb06             |pjfb07         |pjfbac]
+[pjfb0|pjfb04                        |pjfb05                                  |ima021                                  |ima25               |pjfb06             |pjfb07         |pjfbac]
+[pjfb0|pjfb04                        |pjfb05                                  |ima021                                  |ima25               |pjfb06             |pjfb07         |pjfbac]
+[pjfb0|pjfb04                        |pjfb05                                  |ima021                                  |ima25               |pjfb06             |pjfb07         |pjfbac]
+[pjfb0|pjfb04                        |pjfb05                                  |ima021                                  |ima25               |pjfb06             |pjfb07         |pjfbac]
+[pjfb0|pjfb04                        |pjfb05                                  |ima021                                  |ima25               |pjfb06             |pjfb07         |pjfbac]
+
+}
+END -- s_pjfb
+Grid gr23
+{
+
+------Rows[idx   ]/[cnt  ]---Item[cn2  ]-------
+
+}
+END -- gr23
+END -- vb7
+END -- apjt203
+
+TABLES
+pjfb_file
+ATTRIBUTES
+ButtonEdit pjfb01=pjfb_file.pjfb01, action=controlp, tabIndex=7, not null, required, image="zoom.png";
+Edit pjj02=formonly.pjj02 type VARCHAR, tabIndex=12, noEntry;
+ButtonEdit pjfb02=pjfb_file.pjfb02, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+Edit pjk03=formonly.pjk03 type VARCHAR, tabIndex=11, noEntry;
+DateEdit pjk16=formonly.pjk16 type DATETIME YEAR TO YEAR, tabIndex=9, noEntry;
+DateEdit pjk17=formonly.pjk17 type DATETIME YEAR TO YEAR, tabIndex=10, noEntry;
+Edit pjfb0=pjfb_file.pjfb03, tabIndex=15, title="Line No.", not null, required;
+ButtonEdit pjfb04=pjfb_file.pjfb04, action=controlp, tabIndex=16, title="Parts NO.\n", not null, image="zoom.png";
+Edit pjfb05=pjfb_file.pjfb05, tabIndex=17, title="Item Description", noEntry, not null;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=18, title="Item Specification", noEntry;
+ButtonEdit ima25=formonly.ima25 type DECIMAL, action=controlp, tabIndex=20, title="Unit", noEntry, image="zoom.png";
+Edit pjfb06=pjfb_file.pjfb06, tabIndex=19, title="Requirement Qty", not null;
+DateEdit pjfb07=pjfb_file.pjfb07, tabIndex=21, title="Requirement Date\n", not null;
+CheckBox pjfbac=pjfb_file.pjfbacti, tabIndex=23, title="Valid", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=13, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=14, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=22;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pjfb(pjfb_file.pjfb03,pjfb_file.pjfb04,pjfb_file.pjfb05,formonly.ima021,formonly.ima25,pjfb_file.pjfb06,pjfb_file.pjfb07,pjfb_file.pjfbacti)
+SCREEN RECORD Undefined(pjfb_file.pjfb01,formonly.pjj02,pjfb_file.pjfb02,formonly.pjk03,formonly.pjk16,formonly.pjk17,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

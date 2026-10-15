@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt2501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Generate Detail")
+VBox VBox1
+Grid gr4478
+{
+ <G group01                                        >
+ [dummy                                          ]
+  Note Received Date        [nmh04               ]
+  Note Receipt No           [nmh01               ]
+  Note No.                  [nmh31               ]
+  Due Date                  [nmh05               ]
+  Anticipated Cashing Date  [nmh09               ]
+  Notes type(1 )            [nmh10               ]
+  Notes type(2 )            [nmh29               ]
+  Remitting Bank            [nmh21               ]
+ <                                                 >
+
+}
+END -- gr4478
+END -- VBox1
+END -- anmt2501
+
+TABLES
+nmh_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Label dummy:dummy, text="Enter Condition to Generate Body:";
+DateEdit nmh04=nmh_file.nmh04, tabIndex=1;
+Edit nmh01=nmh_file.nmh01, tabIndex=2;
+Edit nmh31=nmh_file.nmh31, tabIndex=3;
+DateEdit nmh05=nmh_file.nmh05, tabIndex=4;
+DateEdit nmh09=nmh_file.nmh09, tabIndex=5;
+Edit nmh10=nmh_file.nmh10, tabIndex=6;
+Edit nmh29=nmh_file.nmh29, tabIndex=7;
+Edit nmh21=nmh_file.nmh21, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nmh_file.nmh04,nmh_file.nmh01,nmh_file.nmh31,nmh_file.nmh05,nmh_file.nmh09,nmh_file.nmh10,nmh_file.nmh29,nmh_file.nmh21)
+END -- INSTRUCTIONS
+

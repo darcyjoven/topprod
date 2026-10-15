@@ -1,0 +1,108 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt140.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"main")
+Grid ds1
+{
+
+[label1  |rwv01                 ]          [label4  |rwv04                         ]
+[label2  |rwv02             ]              [label6  |rwvconf           ]
+[label3  |rwv03             ]              [label5  |rwvcond           ]
+[label7  |distributed       ]              [label8  |rwvconu           ]
+[label12 |undistributed     ]              [label16 |rwvplant          |rwvplant_desc     ]
+
+}
+END -- ds1
+END -- Page1
+Page Page2(text=%"status")
+Grid Grid1
+{
+
+[label17 |rwvuser   |label10 |rwvdate   ][label9  |rwvcrat   ]
+[label11 |rwvgrup   |label13 |rwvmodu   ]
+[label15 |rwvoriu   ]
+[label14 |rwvorig   ]
+
+}
+END -- Grid1
+END -- Page2
+END -- Folder1
+Table ds2
+{
+[rww02    |rww03               |rww03_desc  |rww04                 |distribution        ]
+[rww02    |rww03               |rww03_desc  |rww04                 |distribution        ]
+[rww02    |rww03               |rww03_desc  |rww04                 |distribution        ]
+[rww02    |rww03               |rww03_desc  |rww04                 |distribution        ]
+[rww02    |rww03               |rww03_desc  |rww04                 |distribution        ]
+}
+END -- ds2
+Grid gr3
+{
+  -----Rows[idx  ]/[cnt  ]-----  Details[cn2   ]----------
+
+}
+END -- gr3
+END -- VBox1
+END -- Form
+
+TABLES
+rww_file,
+rwv_file
+ATTRIBUTES
+Label label1:Label1, text=%"rwv01";
+ButtonEdit rwv01=rwv_file.rwv01, action=controlp, tabIndex=1, not null, required, image="zoom", scroll;
+Label label4:Label4, text=%"rwv04";
+Edit rwv04=rwv_file.rwv04, tabIndex=2, scroll;
+Label label2:Label2, text=%"rwv02";
+DateEdit rwv02=rwv_file.rwv02, tabIndex=3, not null, required;
+Label label6:Label6, text=%"rwvconf";
+ComboBox rwvconf=rwv_file.rwvconf, tabIndex=4, not null, scroll, items=(("Y", "Y"),("N", "N"),("X", "Voided"));
+Label label3:Label3, text=%"rwv03";
+Edit rwv03=rwv_file.rwv03, tabIndex=5, noEntry, scroll;
+Label label5:Label5, text=%"rwvcond";
+DateEdit rwvcond=rwv_file.rwvcond, tabIndex=6;
+Label label7:Label7, text=%"distributed";
+Edit distributed=formonly.distributed type CHAR, tabIndex=25, noEntry;
+Label label8:Label8, text=%"rwvconu";
+ButtonEdit rwvconu=rwv_file.rwvconu, action=controlp, tabIndex=9, image="zoom", scroll;
+Label label12:Label12, text=%"undistributed";
+Edit undistributed=formonly.undistributed type CHAR, tabIndex=26, noEntry;
+Label label16:Label16, text=%"rwvplant";
+ButtonEdit rwvplant=rwv_file.rwvplant, action=controlp, tabIndex=7, noEntry, image="zoom", scroll;
+Edit rwvplant_desc=formonly.rwvplant_desc type CHAR, tabIndex=8, noEntry;
+Label label17:Label17, text=%"rwvuser";
+Edit rwvuser=rwv_file.rwvuser, tabIndex=11, scroll;
+Label label10:Label10, text=%"rwvdate";
+Edit rwvdate=rwv_file.rwvdate, tabIndex=12, scroll;
+Label label9:Label9, text=%"rwvcrat";
+Edit rwvcrat=rwv_file.rwvcrat, tabIndex=15, scroll;
+Label label11:Label11, text=%"rwvgrup";
+Edit rwvgrup=rwv_file.rwvgrup, tabIndex=10, scroll;
+Label label13:Label13, text=%"rwvmodu";
+Edit rwvmodu=rwv_file.rwvmodu, tabIndex=13, scroll;
+Label label15:Label15, text=%"rwvoriu";
+Edit rwvoriu=rwv_file.rwvoriu, tabIndex=14, scroll;
+Label label14:Label14, text=%"rwvorig";
+Edit rwvorig=rwv_file.rwvorig, tabIndex=16, scroll;
+Edit rww02=rww_file.rww02, tabIndex=17, title=%"rww02", not null, scroll;
+ButtonEdit rww03=rww_file.rww03, action=controlp, tabIndex=18, title=%"rww03", not null, image="zoom", scroll;
+Edit rww03_desc=formonly.rww03_desc type CHAR, tabIndex=24, title=%"rww03_desc", noEntry;
+Edit rww04=rww_file.rww04, tabIndex=19, title=%"rww04", not null, required, scroll;
+Edit distribution=formonly.distribution type CHAR, tabIndex=20, title=%"distribution";
+Edit idx=formonly.idx type SMALLINT, tabIndex=21, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rwv_file.rwv01,rwv_file.rwv04,rwv_file.rwv02,rwv_file.rwvconf,rwv_file.rwv03,rwv_file.rwvcond,rwv_file.rwvplant,formonly.rwvplant_desc,rwv_file.rwvconu,rwv_file.rwvgrup,rwv_file.rwvuser,rwv_file.rwvdate,rwv_file.rwvmodu,rwv_file.rwvoriu,rwv_file.rwvcrat,rwv_file.rwvorig,formonly.idx,formonly.cnt,formonly.cn2,formonly.distributed,formonly.undistributed)
+SCREEN RECORD s_rww(rww_file.rww02,rww_file.rww03,formonly.rww03_desc,rww_file.rww04,formonly.distribution)
+END -- INSTRUCTIONS
+

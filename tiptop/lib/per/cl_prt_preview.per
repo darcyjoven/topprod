@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_prt_preview.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="cl_prt_preview")
+VBox vb3_
+Grid gr3045
+{
+ <G group08                                                                                                                    >
+ [option                           |lb1                                                                                       ]
+ [                                 ]
+
+ [lb1_1                                                                                                                       ]
+ [cancel_cr                      ]
+ <                                                                                                                             >
+}
+END -- gr3045
+Folder pc7
+Page page01(text=%"page01")
+VBox vb3
+Grid gr18
+{
+
+ Category/User[template                 |save_as   ]
+
+
+}
+END -- gr18
+HBox hb2
+Table tb1(wantFixedPageSize)
+{
+[gcz05|gcz07          |gcz08               |gcz10     |gcz11     |gcz12   ]
+[gcz05|gcz07          |gcz08               |gcz10     |gcz11     |gcz12   ]
+[gcz05|gcz07          |gcz08               |gcz10     |gcz11     |gcz12   ]
+[gcz05|gcz07          |gcz08               |gcz10     |gcz11     |gcz12   ]
+[gcz05|gcz07          |gcz08               |gcz10     |gcz11     |gcz12   ]
+[gcz05|gcz07          |gcz08               |gcz10     |gcz11     |gcz12   ]
+[gcz05|gcz07          |gcz08               |gcz10     |gcz11     |gcz12   ]
+[gcz05|gcz07          |gcz08               |gcz10     |gcz11     |gcz12   ]
+[gcz05|gcz07          |gcz08               |gcz10     |gcz11     |gcz12   ]
+[gcz05|gcz07          |gcz08               |gcz10     |gcz11     |gcz12   ]
+
+}
+END -- tb1
+Grid gr6017
+{
+
+
+
+
+[up  ]
+
+
+[down]
+
+
+
+
+}
+END -- gr6017
+END -- hb2
+END -- vb3
+END -- page01
+END -- pc7
+END -- vb3_
+END -- cl_prt_preview
+
+TABLES
+gcz_file
+ATTRIBUTES
+Group group08:group08;
+RadioGroup option=formonly.option type CHAR, tabIndex=1, not null, required, items=(("O", "Open Crystal Report"),("P", "CR data export to Excel"));
+Label lb1:lb1;
+Label lb1_1:lb1_1;
+CheckBox cancel_cr=formonly.cancel_cr type CHAR, tabIndex=9, text="Close Crystal Reports Data Function ?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox template=formonly.template type CHAR, tabIndex=5, not null, required, queryEditable;
+Button save_as:save_as, text="Save as";
+Edit gcz05=gcz_file.gcz05, tabIndex=7, title="No.", noEntry;
+Edit gcz07=gcz_file.gcz07, tabIndex=2, title="Field ID", noEntry;
+Edit gcz08=gcz_file.gcz08, tabIndex=3, title="Field Name";
+Edit gcz10=gcz_file.gcz10, tabIndex=4, title="Width", not null, required;
+ComboBox gcz11=gcz_file.gcz11, tabIndex=8, title="Attribute", not null, required, hidden, items=(("A", %"Unit Price"),("B", %"Amount"),("C", %"Exchange rate"),("D", %"Total"),("E", %"Quantity"),("F", %"Number"),("G", %"Other"),("J", %"Char"),("K", %"Document No."),("L", %"Multi-Unit"),("M", %"Alternate BOM"),("N", %"Item No."),("O", %"Employee No."),("P", %"Dept. No."),("Q", %"Date"),("R", %"Acct. No."),("S", %"Item Description"),("T", %"Specification"));
+CheckBox gcz12=gcz_file.gcz12, tabIndex=6, title="Hidden", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Button up:up, image="arrup";
+Button down:down, image="arrdown";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gcz(gcz_file.gcz05,gcz_file.gcz07,gcz_file.gcz08,gcz_file.gcz10,gcz_file.gcz11,gcz_file.gcz12)
+SCREEN RECORD Undefined(formonly.option,formonly.cancel_cr,formonly.template)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft7002_tch.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"asft7002_tch", windowStyle="touch1")
+VBox vb12(style="touch-font5")
+Group gb8
+Grid gr11_
+{
+
+ Work No. [shb05       ]                                   Made Qty [sfb08              ]
+ Item No. [sfb05                    ]                      OK Qty   [sfb081             ]
+ P/N      [ima021                                    ]     Stock Qty[sfb09              ]
+
+
+}
+END -- gr11_
+END -- gb8
+Grid gr14
+{
+ <T s_sfa                                                                         >
+ [sfa03     |ima02                   |sfa05     |sfa06      |sfa567    |ima262    ]
+ [sfa03     |ima02                   |sfa05     |sfa06      |sfa567    |ima262    ]
+ [sfa03     |ima02                   |sfa05     |sfa06      |sfa567    |ima262    ]
+ [sfa03     |ima02                   |sfa05     |sfa06      |sfa567    |ima262    ]
+ [sfa03     |ima02                   |sfa05     |sfa06      |sfa567    |ima262    ]
+ [sfa03     |ima02                   |sfa05     |sfa06      |sfa567    |ima262    ]
+ <                                                                                >
+
+}
+END -- gr14
+END -- vb12
+END -- asft7002_tch
+
+TABLES
+shb_file
+ATTRIBUTES
+Edit shb05=shb_file.shb05, tabIndex=13, noEntry;
+Edit sfb08=formonly.sfb08 type CHAR, tabIndex=16, noEntry;
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=15, noEntry;
+Edit sfb081=formonly.sfb081 type CHAR, tabIndex=17, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=14, noEntry;
+Edit sfb09=formonly.sfb09 type CHAR, tabIndex=18, noEntry;
+Table s_sfa:s_sfa, width = 82 characters;
+Edit sfa03=formonly.sfa03 type CHAR, tabIndex=8, title=%"sfa03";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=9, title=%"ima02";
+Edit sfa05=formonly.sfa05 type CHAR, tabIndex=10, title=%"sfa05";
+Edit sfa06=formonly.sfa06 type CHAR, tabIndex=11, title=%"sfa06";
+Edit sfa567=formonly.sfa567 type CHAR, tabIndex=19, title=%"sfa567";
+Edit ima262=formonly.ima262 type CHAR, tabIndex=12, title=%"ima262";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfa(formonly.sfa03,formonly.ima02,formonly.sfa05,formonly.sfa06,formonly.sfa567,formonly.ima262)
+SCREEN RECORD Undefined(shb_file.shb05,formonly.sfb08,formonly.sfb05,formonly.sfb081,formonly.ima021,formonly.sfb09)
+END -- INSTRUCTIONS
+

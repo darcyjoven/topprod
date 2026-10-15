@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmp011.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmp011")
+VBox VBox1
+Table ds1
+{
+[chk      |nme22               |nme13          |nme01             |nma02         |nma04         |nme02         |nme04       |nme08           |nme12        |nme24              |nme05          |nme27         ]
+[chk      |nme22               |nme13          |nme01             |nma02         |nma04         |nme02         |nme04       |nme08           |nme12        |nme24              |nme05          |nme27         ]
+[chk      |nme22               |nme13          |nme01             |nma02         |nma04         |nme02         |nme04       |nme08           |nme12        |nme24              |nme05          |nme27         ]
+[chk      |nme22               |nme13          |nme01             |nma02         |nma04         |nme02         |nme04       |nme08           |nme12        |nme24              |nme05          |nme27         ]
+[chk      |nme22               |nme13          |nme01             |nma02         |nma04         |nme02         |nme04       |nme08           |nme12        |nme24              |nme05          |nme27         ]
+
+
+}
+END -- ds1
+Grid gr4618
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr4618
+END -- VBox1
+END -- anmp011
+
+TABLES
+nme_file,
+nma_file
+ATTRIBUTES
+CheckBox chk=formonly.chk type VARCHAR, tabIndex=11, title="check", text="", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox nme22=nme_file.nme22, tabIndex=12, title="nme22", noEntry, not null, required, queryEditable, items=(("01", "Payment"),("02", "Spent Payment"),("03", "Pay Direct"),("04", "Spent Pay Direct"),("05", "Pay for Company Transfer"),("06", "Pay Principal And Interest of Group"),("07", "Bank Income/Expense"));
+Edit nme13=nme_file.nme13, tabIndex=2, title=%"nme13", noEntry, not null, required, scroll;
+Edit nme01=nme_file.nme01, tabIndex=3, title=%"nme01", noEntry, not null, required, scroll;
+Edit nma02=nma_file.nma02, tabIndex=4, title=%"nma02", noEntry, scroll;
+Edit nma04=nma_file.nma04, tabIndex=5, title=%"nma04", noEntry, scroll;
+DateEdit nme02=nme_file.nme02, tabIndex=6, title=%"nme02", noEntry;
+Edit nme04=nme_file.nme04, tabIndex=7, title=%"nme04", noEntry, not null, required, scroll;
+Edit nme08=nme_file.nme08, tabIndex=8, title=%"nme08", noEntry, not null, required, scroll;
+Edit nme12=nme_file.nme12, tabIndex=9, title=%"nme12", noEntry, scroll;
+ComboBox nme24=nme_file.nme24, tabIndex=13, title="nme24", noEntry, not null, required, queryEditable, items=(("0", "Landing Sucessful"),("1", "Internet Bank payment Defeat"),("2", "Internet Bank Payment Had Not Determined"),("3", "Internet Bank Submits Successful"),("4", "Internet Bank Transfers Accounts Successful"),("9", "No Pay"));
+Edit nme05=nme_file.nme05, tabIndex=10, title=%"nme05", noEntry, scroll;
+Edit nme27=nme_file.nme27, tabIndex=14, title=%"nme00", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cnt)
+SCREEN RECORD s_nme(formonly.chk,nme_file.nme22,nme_file.nme13,nme_file.nme01,nma_file.nma02,nma_file.nma04,nme_file.nme02,nme_file.nme04,nme_file.nme08,nme_file.nme12,nme_file.nme24,nme_file.nme05,nme_file.nme27)
+END -- INSTRUCTIONS
+

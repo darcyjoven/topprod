@@ -1,0 +1,93 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq420.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq420")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr2258
+{
+ Order No.           [oea01             ]                      Employee   [oea14     |gen02    ] Price Terms        [oea31     |oah02    ] On-Hold [oeahold   ] [oak02    ]
+ Order Date          [oea02     ]                              Department [oea15     |gem02    ] Collection Terms   [oea32     |oag02    ][oeaconf          ]
+ Accounts Customer   [oea03     |oea032             ]          Currency   [oea23     ]           Bef-Tax Amount     [oea61               ]
+ Shipping Customer   [oea04     |occ02              ]          Tax Type   [oea21     |gec02    ] Delivery Amount    [oea62               ]
+}
+END -- gr2258
+END -- page01
+END -- folder01
+Table s_oga
+{
+[oga02         |oga01             |oga50               |oma10            |oma54               |oma11    |oma55              |oga10       ]
+[oga02         |oga01             |oga50               |oma10            |oma54               |oma11    |oma55              |oga10       ]
+[oga02         |oga01             |oga50               |oma10            |oma54               |oma11    |oma55              |oga10       ]
+[oga02         |oga01             |oga50               |oma10            |oma54               |oma11    |oma55              |oga10       ]
+[oga02         |oga01             |oga50               |oma10            |oma54               |oma11    |oma55              |oga10       ]
+[oga02         |oga01             |oga50               |oma10            |oma54               |oma11    |oma55              |oga10       ]
+[oga02         |oga01             |oga50               |oma10            |oma54               |oma11    |oma55              |oga10       ]
+[oga02         |oga01             |oga50               |oma10            |oma54               |oma11    |oma55              |oga10       ]
+[oga02         |oga01             |oga50               |oma10            |oma54               |oma11    |oma55              |oga10       ]
+[oga02         |oga01             |oga50               |oma10            |oma54               |oma11    |oma55              |oga10       ]
+}
+END -- s_oga
+Grid gr2259
+{
+ ---- Rows [cnt   ] / [cn2   ] ---- Delivery Amt Subttl [oga50_t           ] ---- Invoice Amt Subttl [oma54_t           ] ---- Received Amt Subttl [oma55_t           ] ----
+
+
+
+}
+END -- gr2259
+END -- vb2
+END -- axmq420
+
+TABLES
+oea_file,
+oga_file,
+oma_file
+ATTRIBUTES
+Edit oea01=oea_file.oea01, tabIndex=1;
+ButtonEdit oea14=oea_file.oea14, action=controlp, tabIndex=2, image="zoom";
+Edit gen02=formonly.gen02, tabIndex=33;
+ButtonEdit oea31=oea_file.oea31, action=controlp, tabIndex=3, image="zoom";
+Edit oah02=formonly.oah02, tabIndex=30;
+ButtonEdit oeahold=oea_file.oeahold, action=controlp, tabIndex=29, image="zoom";
+Edit oak02=formonly.oak02, tabIndex=32;
+DateEdit oea02=oea_file.oea02, tabIndex=5;
+ButtonEdit oea15=oea_file.oea15, action=controlp, tabIndex=6, image="zoom";
+Edit gem02=formonly.gem02, tabIndex=34;
+ButtonEdit oea32=oea_file.oea32, action=controlp, tabIndex=7, image="zoom";
+Edit oag02=formonly.oag02, tabIndex=31;
+CheckBox oeaconf=oea_file.oeaconf, tabIndex=4, text="Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oea03=oea_file.oea03, action=controlp, tabIndex=8, image="zoom";
+Edit oea032=oea_file.oea032, tabIndex=9, noEntry;
+Edit oea23=oea_file.oea23, tabIndex=10;
+Edit oea61=oea_file.oea61, tabIndex=11, not null, required;
+ButtonEdit oea04=oea_file.oea04, action=controlp, tabIndex=12, image="zoom";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=13, noEntry;
+ButtonEdit oea21=oea_file.oea21, action=controlp, tabIndex=14, image="zoom";
+Edit gec02=formonly.gec02, tabIndex=35;
+Edit oea62=oea_file.oea62, tabIndex=15, not null, required;
+DateEdit oga02=oga_file.oga02, tabIndex=16, title="Delivery Date";
+Edit oga01=oga_file.oga01, tabIndex=17, title="Delivery Note No.";
+Edit oga50=oga_file.oga50, tabIndex=18, title="Delivery Amount", not null, required;
+Edit oma10=oma_file.oma10, tabIndex=19, title="Invoice Number";
+Edit oma54=oma_file.oma54, tabIndex=20, title="Invoice Amount", not null, required;
+Edit oma11=oma_file.oma11, tabIndex=21, title="A/R Date";
+Edit oma55=oma_file.oma55, tabIndex=22, title="Received Amount", not null, required;
+Edit oga10=oga_file.oga10, tabIndex=23, title="Bill No.";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+Edit oga50_t=formonly.oga50_t type DECIMAL, tabIndex=26;
+Edit oma54_t=formonly.oma54_t type DECIMAL, tabIndex=27;
+Edit oma55_t=formonly.oma55_t type DECIMAL, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oga(oga_file.oga02,oga_file.oga01,oga_file.oga50,oma_file.oma10,oma_file.oma54,oma_file.oma11,oma_file.oma55,oga_file.oga10)
+SCREEN RECORD Undefined(oea_file.oea01,oea_file.oea14,formonly.gen02,oea_file.oea31,formonly.oah02,oea_file.oeahold,formonly.oak02,oea_file.oea02,oea_file.oea15,formonly.gem02,oea_file.oea32,formonly.oag02,oea_file.oeaconf,oea_file.oea03,oea_file.oea032,oea_file.oea23,oea_file.oea61,oea_file.oea04,formonly.occ02,oea_file.oea21,formonly.gec02,oea_file.oea62,formonly.cnt,formonly.cn2,formonly.oga50_t,formonly.oma54_t,formonly.oma55_t)
+END -- INSTRUCTIONS
+

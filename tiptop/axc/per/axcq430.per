@@ -1,0 +1,155 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcq430.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axcq430")
+VBox vb18
+Folder pc365
+Page page01(text="Main")
+VBox vb17
+Grid gr1545
+{
+ Master Item#            [ccg04                         ]       Unit                [ima25     ]
+                         [ima02                         ]       Cost Level          [ima57     ]
+ WO No.                  [cch01           ]                     Closing Date        [sfb38     ]
+ YY/MM                   [cch0]/[cc]
+ Cost Calculation Method [cch06     ]   Category No.   [cch07                                   ]
+}
+END -- gr1545
+Group group02
+HBox HBox1
+Grid gr1546
+{
+ Component#          [cch04                         ]
+                     [ima02b                        ]
+ Unit                [ima25b    ]
+ Cost Level          [ima57b    ]
+}
+END -- gr1546
+Grid gr1547
+{
+ Componenet Category [cch05     ]
+ Substitute          [sf][sfa27               ][s1]
+ QPA                 [sfa16     ][sfa161    ]
+
+}
+END -- gr1547
+END -- HBox1
+END -- group02
+Grid gr1548
+{
+
+ <G group03                                                                                                                   >
+                       [dummy01            ]  [dummy02                  ]  [dummy03            ] [dummy04                    ]
+     Qty              [cch51               ] [cch55                     ] [cch53               ] [cch57                      ]
+  -  Material         [cch52a              ] [cch56a                    ] [cch54a              ] [cch58a                     ]
+  -  Labor            [cch52b              ] [cch56b                    ] [cch54b              ] [cch58b                     ]
+  -  Overhead 1       [cch52c              ] [cch56c                    ] [cch54c              ] [cch58c                     ]
+  -  Processing       [cch52d              ] [cch56d                    ] [cch54d              ] [cch58d                     ]
+  -  Overhead 2       [cch52e              ] [cch56e                    ] [cch54e              ] [cch58e                     ]
+  -  Overhead 3       [cch52f              ] [cch56f                    ] [cch54f              ] [cch58f                     ]
+  -  Overhead 4       [cch52g              ] [cch56g                    ] [cch54g              ] [cch58g                     ]
+  -  Overhead 5       [cch52h              ] [cch56h                    ] [cch54h              ] [cch58h                     ]
+  ----------------------------------------------------------------------------------------------------------------------------
+     Cost Subtotal    [cch52               ] [cch56                     ] [cch54               ] [cch58                      ]
+     AVG unit price   [cch52u              ] [cch56u                    ] [cch54u              ] [cch58u                     ]
+ <                                                                                                                            >
+}
+END -- gr1548
+END -- vb17
+END -- page01
+END -- pc365
+Grid gr1549
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr1549
+END -- vb18
+END -- axcq430
+
+TABLES
+sfb_file,
+sfa_file,
+cch_file,
+ccg_file
+ATTRIBUTES
+ButtonEdit ccg04=ccg_file.ccg04, action=controlp, tabIndex=1, noEntry, not null, required, image="zoom";
+Edit ima25=formonly.ima25 type CHAR, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit ima57=formonly.ima57 type CHAR, tabIndex=4, noEntry;
+Edit cch01=cch_file.cch01, tabIndex=5, not null, required;
+Edit sfb38=sfb_file.sfb38, tabIndex=6;
+Edit cch0=cch_file.cch02, tabIndex=7, not null, required;
+Edit cc=cch_file.cch03, tabIndex=8, not null, required;
+ComboBox cch06=cch_file.cch06, tabIndex=64, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually��蝧餌�蝪∠高atch Cost"),("4", "Identify Manually��蝧餌�蝪∠�tem Cost"),("5", "Identify Manually��蝧餌�蝟抒�tore Profit Center"));
+ButtonEdit cch07=cch_file.cch07, action=controlp, tabIndex=65, default = "' '", not null, required, image="zoom.png";
+Edit cch04=cch_file.cch04, tabIndex=9, not null, required;
+Edit ima02b=formonly.ima02b type CHAR, tabIndex=10, noEntry;
+Edit ima25b=formonly.ima25b type CHAR, tabIndex=11, noEntry;
+Edit ima57b=formonly.ima57b type CHAR, tabIndex=12, noEntry;
+Edit cch05=cch_file.cch05, tabIndex=13, not null, required;
+Edit sf=sfa_file.sfa26, tabIndex=14;
+Edit sfa27=sfa_file.sfa27, tabIndex=15, not null, required;
+Edit s1=sfa_file.sfa28, tabIndex=16, not null, required;
+Edit sfa16=sfa_file.sfa16, tabIndex=17;
+Edit sfa161=sfa_file.sfa161, tabIndex=18;
+Group group03:group03;
+Label dummy01:dummy01, text="Accu. Input";
+Label dummy02:dummy02, text="Accu. Over-Withdraw/Ret.";
+Label dummy03:dummy03, text="Accu. Trans-out";
+Label dummy04:dummy04, text="Curr.Prd Over-Withdrawn/Ret.";
+Edit cch51=cch_file.cch51, tabIndex=19;
+Edit cch55=cch_file.cch55, tabIndex=20;
+Edit cch53=cch_file.cch53, tabIndex=21;
+Edit cch57=cch_file.cch57, tabIndex=22;
+Edit cch52a=cch_file.cch52a, tabIndex=23;
+Edit cch56a=cch_file.cch56a, tabIndex=24;
+Edit cch54a=cch_file.cch54a, tabIndex=25;
+Edit cch58a=cch_file.cch58a, tabIndex=26;
+Edit cch52b=cch_file.cch52b, tabIndex=27;
+Edit cch56b=cch_file.cch56b, tabIndex=28;
+Edit cch54b=cch_file.cch54b, tabIndex=29;
+Edit cch58b=cch_file.cch58b, tabIndex=30;
+Edit cch52c=cch_file.cch52c, tabIndex=31, not null, required;
+Edit cch56c=cch_file.cch56c, tabIndex=32, not null, required;
+Edit cch54c=cch_file.cch54c, tabIndex=33, not null, required;
+Edit cch58c=cch_file.cch58c, tabIndex=34, not null, required;
+Edit cch52d=cch_file.cch52d, tabIndex=35;
+Edit cch56d=cch_file.cch56d, tabIndex=36;
+Edit cch54d=cch_file.cch54d, tabIndex=37;
+Edit cch58d=cch_file.cch58d, tabIndex=38;
+Edit cch52e=cch_file.cch52e, tabIndex=39, not null, required;
+Edit cch56e=cch_file.cch56e, tabIndex=40, not null, required;
+Edit cch54e=cch_file.cch54e, tabIndex=41, not null, required;
+Edit cch58e=cch_file.cch58e, tabIndex=42, not null, required;
+Edit cch52f=cch_file.cch52f, tabIndex=52, default = "0", not null, required;
+Edit cch56f=cch_file.cch56f, tabIndex=53, default = "0", not null, required;
+Edit cch54f=cch_file.cch54f, tabIndex=54, default = "0", not null, required;
+Edit cch58f=cch_file.cch58f, tabIndex=55, default = "0", not null, required;
+Edit cch52g=cch_file.cch52g, tabIndex=56, default = "0", not null, required;
+Edit cch56g=cch_file.cch56g, tabIndex=57, default = "0", not null, required;
+Edit cch54g=cch_file.cch54g, tabIndex=58, default = "0", not null, required;
+Edit cch58g=cch_file.cch58g, tabIndex=59, default = "0", not null, required;
+Edit cch52h=cch_file.cch52h, tabIndex=60, default = "0", not null, required;
+Edit cch56h=cch_file.cch56h, tabIndex=61, default = "0", not null, required;
+Edit cch54h=cch_file.cch54h, tabIndex=62, default = "0", not null, required;
+Edit cch58h=cch_file.cch58h, tabIndex=63, default = "0", not null, required;
+Edit cch52=cch_file.cch52, tabIndex=43, noEntry;
+Edit cch56=cch_file.cch56, tabIndex=44, noEntry;
+Edit cch54=cch_file.cch54, tabIndex=45, noEntry;
+Edit cch58=cch_file.cch58, tabIndex=46, noEntry;
+Edit cch52u=formonly.cch52u type CHAR, tabIndex=47, noEntry;
+Edit cch56u=formonly.cch56u type CHAR, tabIndex=48, noEntry;
+Edit cch54u=formonly.cch54u type CHAR, tabIndex=49, noEntry;
+Edit cch58u=formonly.cch58u type CHAR, tabIndex=50, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=51, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ccg_file.ccg04,formonly.ima25,formonly.ima02,formonly.ima57,cch_file.cch01,sfb_file.sfb38,cch_file.cch02,cch_file.cch03,cch_file.cch06,cch_file.cch07,cch_file.cch04,formonly.ima02b,formonly.ima25b,formonly.ima57b,cch_file.cch05,sfa_file.sfa26,sfa_file.sfa27,sfa_file.sfa28,sfa_file.sfa16,sfa_file.sfa161,cch_file.cch51,cch_file.cch55,cch_file.cch53,cch_file.cch57,cch_file.cch52a,cch_file.cch56a,cch_file.cch54a,cch_file.cch58a,cch_file.cch52b,cch_file.cch56b,cch_file.cch54b,cch_file.cch58b,cch_file.cch52c,cch_file.cch56c,cch_file.cch54c,cch_file.cch58c,cch_file.cch52d,cch_file.cch56d,cch_file.cch54d,cch_file.cch58d,cch_file.cch52e,cch_file.cch56e,cch_file.cch54e,cch_file.cch58e,cch_file.cch52f,cch_file.cch56f,cch_file.cch54f,cch_file.cch58f,cch_file.cch52g,cch_file.cch56g,cch_file.cch54g,cch_file.cch58g,cch_file.cch52h,cch_file.cch56h,cch_file.cch54h,cch_file.cch58h,cch_file.cch52,cch_file.cch56,cch_file.cch54,cch_file.cch58,formonly.cch52u,formonly.cch56u,formonly.cch54u,formonly.cch58u,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt600_s.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt600_s")
+Grid gr4508
+{
+ <T s_gsg                                                                           >
+ [gsg0|gsg03    |gsf02               |gsg05               |gsg06                   ]
+ [gsg0|gsg03    |gsf02               |gsg05               |gsg06                   ]
+ [gsg0|gsg03    |gsf02               |gsg05               |gsg06                   ]
+ [gsg0|gsg03    |gsf02               |gsg05               |gsg06                   ]
+ [gsg0|gsg03    |gsf02               |gsg05               |gsg06                   ]
+ [gsg0|gsg03    |gsf02               |gsg05               |gsg06                   ]
+ [gsg0|gsg03    |gsf02               |gsg05               |gsg06                   ]
+ [gsg0|gsg03    |gsf02               |gsg05               |gsg06                   ]
+ [gsg0|gsg03    |gsf02               |gsg05               |gsg06                   ]
+ [gsg0|gsg03    |gsf02               |gsg05               |gsg06                   ]
+ <                                                                                  >
+
+}
+END -- gr4508
+END -- anmt600_s
+
+TABLES
+gsg_file
+ATTRIBUTES
+Table s_gsg:s_gsg;
+Edit gsg0=gsg_file.gsg02, tabIndex=1, title="Ln#", not null, required;
+ButtonEdit gsg03=gsg_file.gsg03, action=controlp, tabIndex=2, title="Expense#", image="zoom", comment="<^P>Qry Expense No.";
+Edit gsf02=formonly.gsf02 type VARCHAR, tabIndex=3, title="Name", noEntry;
+Edit gsg05=gsg_file.gsg05, tabIndex=4, title="Expense Amount";
+ButtonEdit gsg06=gsg_file.gsg06, action=controlp, tabIndex=5, title="Account", image="zoom", comment="<^P>Qry Account ";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gsg(gsg_file.gsg02,gsg_file.gsg03,formonly.gsf02,gsg_file.gsg05,gsg_file.gsg06)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/adm/42f/admi202.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"admi202")
+VBox VBox1
+Folder pc248
+Page page01(text="Page01")
+VBox VBox2
+Grid gr1582
+{
+ <G group01                                                                     >
+  Category            [dmc01     ] [dma02                                      ]
+  Version             [dmc02     ] [dmb02                                      ]
+ <                                                                              >
+ <G group02                            ><G group03                              >
+  Total Asset Rewards%     [dmc03     ]  Current Ratio              [dmc12     ]
+  A Equities Rest          [dmc04     ]  Acidity.ratio              [dmc13     ]
+  Complete A Equities Rest [dmc05     ]  A/R Ternover Times         [dmc14     ]
+  DPS/EPS                  [dmc06     ]  AVG.Receives Money The Time[dmc15     ]
+  Paid Out Ratio           [dmc07     ]  Inventory Turnover         [dmc16     ]
+  Paid Income Ratio        [dmc08     ]  Inventory Sale Period      [dmc17     ]
+  Com.Share Stock Leads    [dmc09     ]  Interest Safeguard Doubles [dmc18     ]
+  Each. Face Value         [dmc10     ]  Liab./Equity %             [dmc19     ]
+  With. Gold               [dmc11     ]  Labor Average.Interest rate[dmc20     ]
+                                         Abor Equally Lives Leads   [dmc21     ]
+ <                                     ><                                       >
+
+}
+END -- gr1582
+END -- VBox2
+END -- page01
+END -- pc248
+Grid gr1583
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1583
+END -- VBox1
+END -- admi202
+
+TABLES
+dmc_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit dmc01=dmc_file.dmc01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEYField,No Blank <^P>Qry Category";
+Edit dma02=formonly.dma02 type VARCHAR, tabIndex=2, noEntry;
+ButtonEdit dmc02=dmc_file.dmc02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="KEYField,No Blank <^P>Qry Version";
+Edit dmb02=formonly.dmb02 type VARCHAR, tabIndex=4, noEntry;
+Group group02:group02;
+Edit dmc03=dmc_file.dmc03, tabIndex=5;
+Edit dmc04=dmc_file.dmc04, tabIndex=6;
+Edit dmc05=dmc_file.dmc05, tabIndex=7;
+Edit dmc06=dmc_file.dmc06, tabIndex=8;
+Edit dmc07=dmc_file.dmc07, tabIndex=9;
+Edit dmc08=dmc_file.dmc08, tabIndex=10;
+Edit dmc09=dmc_file.dmc09, tabIndex=11;
+Edit dmc10=dmc_file.dmc10, tabIndex=12;
+Edit dmc11=dmc_file.dmc11, tabIndex=13;
+Group group03:group03;
+Edit dmc12=dmc_file.dmc12, tabIndex=14;
+Edit dmc13=dmc_file.dmc13, tabIndex=15;
+Edit dmc14=dmc_file.dmc14, tabIndex=16;
+Edit dmc15=dmc_file.dmc15, tabIndex=17;
+Edit dmc16=dmc_file.dmc16, tabIndex=18;
+Edit dmc17=dmc_file.dmc17, tabIndex=19;
+Edit dmc18=dmc_file.dmc18, tabIndex=20;
+Edit dmc19=dmc_file.dmc19, tabIndex=21;
+Edit dmc20=dmc_file.dmc20, tabIndex=22;
+Edit dmc21=dmc_file.dmc21, tabIndex=23;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(dmc_file.dmc01,formonly.dma02,dmc_file.dmc02,formonly.dmb02,dmc_file.dmc03,dmc_file.dmc04,dmc_file.dmc05,dmc_file.dmc06,dmc_file.dmc07,dmc_file.dmc08,dmc_file.dmc09,dmc_file.dmc10,dmc_file.dmc11,dmc_file.dmc12,dmc_file.dmc13,dmc_file.dmc14,dmc_file.dmc15,dmc_file.dmc16,dmc_file.dmc17,dmc_file.dmc18,dmc_file.dmc19,dmc_file.dmc20,dmc_file.dmc21,formonly.cnt)
+END -- INSTRUCTIONS
+

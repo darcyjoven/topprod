@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_icm.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+Table ds1
+{
+[icm02          |ima02               |ima021              ]
+[icm02          |ima02               |ima021              ]
+[icm02          |ima02               |ima021              ]
+[icm02          |ima02               |ima021              ]
+[icm02          |ima02               |ima021              ]
+
+
+}
+END -- ds1
+END -- Form
+
+TABLES
+ima_file,
+icm_file
+ATTRIBUTES
+Edit icm02=icm_file.icm02, tabIndex=1, title="icm02";
+Edit ima02=ima_file.ima02, tabIndex=2, title="ima02";
+Edit ima021=ima_file.ima021, tabIndex=3, title="ima021";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_icm(icm_file.icm02,ima_file.ima02,ima_file.ima021)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxi077.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxi077")
+VBox VBox1
+Folder pc156
+Page page01(text="Main")
+Table s_bxe
+{
+[bxe01            |bxe06              |bxe07            |bxe02            |bxe03            |bxe04 |bxe05            |bxeacti  ]
+[bxe01            |bxe06              |bxe07            |bxe02            |bxe03            |bxe04 |bxe05            |bxeacti  ]
+[bxe01            |bxe06              |bxe07            |bxe02            |bxe03            |bxe04 |bxe05            |bxeacti  ]
+[bxe01            |bxe06              |bxe07            |bxe02            |bxe03            |bxe04 |bxe05            |bxeacti  ]
+[bxe01            |bxe06              |bxe07            |bxe02            |bxe03            |bxe04 |bxe05            |bxeacti  ]
+[bxe01            |bxe06              |bxe07            |bxe02            |bxe03            |bxe04 |bxe05            |bxeacti  ]
+[bxe01            |bxe06              |bxe07            |bxe02            |bxe03            |bxe04 |bxe05            |bxeacti  ]
+[bxe01            |bxe06              |bxe07            |bxe02            |bxe03            |bxe04 |bxe05            |bxeacti  ]
+[bxe01            |bxe06              |bxe07            |bxe02            |bxe03            |bxe04 |bxe05            |bxeacti  ]
+[bxe01            |bxe06              |bxe07            |bxe02            |bxe03            |bxe04 |bxe05            |bxeacti  ]
+
+}
+END -- s_bxe
+END -- page01
+END -- pc156
+Grid gr1022
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1022
+END -- VBox1
+END -- abxi077
+
+TABLES
+bxe_file
+ATTRIBUTES
+Edit bxe01=bxe_file.bxe01, tabIndex=1, title="Bond Group Code", not null, required;
+Edit bxe06=bxe_file.bxe06, tabIndex=2, title="Industrial EN Name";
+Edit bxe07=bxe_file.bxe07, tabIndex=3, title="CCCCODE";
+Edit bxe02=bxe_file.bxe02, tabIndex=4, title="Bond Group Name";
+Edit bxe03=bxe_file.bxe03, tabIndex=5, title="Bond Group Spec";
+ButtonEdit bxe04=bxe_file.bxe04, action=controlp, tabIndex=6, title="Unit", not null, required, image="zoom", comment="<^P>Qry  Unit ";
+Edit bxe05=bxe_file.bxe05, tabIndex=7, title="Group Card No.";
+CheckBox bxeacti=bxe_file.bxeacti, tabIndex=8, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bxe(bxe_file.bxe01,bxe_file.bxe06,bxe_file.bxe07,bxe_file.bxe02,bxe_file.bxe03,bxe_file.bxe04,bxe_file.bxe05,bxe_file.bxeacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

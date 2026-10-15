@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_plant_list.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_plant_list")
+VBox VBox1
+Folder Folder1
+Page page_Plant(action=prod_list, text=%"PlantList")
+Table s_plant
+{
+[azw02_old |azw01_old |azw05_old |azw02_new |azw01_new |azw05_new ]
+[azw02_old |azw01_old |azw05_old |azw02_new |azw01_new |azw05_new ]
+[azw02_old |azw01_old |azw05_old |azw02_new |azw01_new |azw05_new ]
+[azw02_old |azw01_old |azw05_old |azw02_new |azw01_new |azw05_new ]
+[azw02_old |azw01_old |azw05_old |azw02_new |azw01_new |azw05_new ]
+[azw02_old |azw01_old |azw05_old |azw02_new |azw01_new |azw05_new ]
+[azw02_old |azw01_old |azw05_old |azw02_new |azw01_new |azw05_new ]
+[azw02_old |azw01_old |azw05_old |azw02_new |azw01_new |azw05_new ]
+[azw02_old |azw01_old |azw05_old |azw02_new |azw01_new |azw05_new ]
+[azw02_old |azw01_old |azw05_old |azw02_new |azw01_new |azw05_new ]
+
+
+
+
+}
+END -- s_plant
+END -- page_Plant
+END -- Folder1
+END -- VBox1
+END -- p_plant_list
+
+ATTRIBUTES
+Edit azw02_old=formonly.azw02_old type VARCHAR, tabIndex=1, title="azw02_old";
+Edit azw01_old=formonly.azw01_old type VARCHAR, tabIndex=2, title="azw01_old";
+Edit azw05_old=formonly.azw05_old type VARCHAR, tabIndex=3, title="azw05_old";
+Edit azw02_new=formonly.azw02_new type VARCHAR, tabIndex=4, title="azw02_new";
+ButtonEdit azw01_new=formonly.azw01_new type VARCHAR, action=controlp, tabIndex=5, title="azw01_new", not null, required, image="zoom", comment="<^P>Query Group Data";
+Edit azw05_new=formonly.azw05_new type VARCHAR, tabIndex=6, title="azw05_new";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_plant(formonly.azw02_old,formonly.azw01_old,formonly.azw05_old,formonly.azw02_new,formonly.azw01_new,formonly.azw05_new)
+END -- INSTRUCTIONS
+

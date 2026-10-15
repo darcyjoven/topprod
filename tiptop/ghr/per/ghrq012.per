@@ -1,0 +1,112 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghrq012.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder folder1
+Page page1(action=p1, text=%"Page1")
+VBox vbox1
+Grid gird1
+{
+  begin     [bdate          ]   --------   [edate          ]
+ hrca02     [hrca02         ]     hrat01   [hrat01         ]
+
+}
+END -- gird1
+Table s_cch
+{
+[ghrca02   |ghrat01       |ghrat02         |ghrca04         |ghrbo03           |gdate           |ghrcp06             |autorank            |rankgrup            |restday             |daytype             |atttype             ]
+[ghrca02   |ghrat01       |ghrat02         |ghrca04         |ghrbo03           |gdate           |ghrcp06             |autorank            |rankgrup            |restday             |daytype             |atttype             ]
+[ghrca02   |ghrat01       |ghrat02         |ghrca04         |ghrbo03           |gdate           |ghrcp06             |autorank            |rankgrup            |restday             |daytype             |atttype             ]
+[ghrca02   |ghrat01       |ghrat02         |ghrca04         |ghrbo03           |gdate           |ghrcp06             |autorank            |rankgrup            |restday             |daytype             |atttype             ]
+[ghrca02   |ghrat01       |ghrat02         |ghrca04         |ghrbo03           |gdate           |ghrcp06             |autorank            |rankgrup            |restday             |daytype             |atttype             ]
+[ghrca02   |ghrat01       |ghrat02         |ghrca04         |ghrbo03           |gdate           |ghrcp06             |autorank            |rankgrup            |restday             |daytype             |atttype             ]
+[ghrca02   |ghrat01       |ghrat02         |ghrca04         |ghrbo03           |gdate           |ghrcp06             |autorank            |rankgrup            |restday             |daytype             |atttype             ]
+[ghrca02   |ghrat01       |ghrat02         |ghrca04         |ghrbo03           |gdate           |ghrcp06             |autorank            |rankgrup            |restday             |daytype             |atttype             ]
+[ghrca02   |ghrat01       |ghrat02         |ghrca04         |ghrbo03           |gdate           |ghrcp06             |autorank            |rankgrup            |restday             |daytype             |atttype             ]
+[ghrca02   |ghrat01       |ghrat02         |ghrca04         |ghrbo03           |gdate           |ghrcp06             |autorank            |rankgrup            |restday             |daytype             |atttype             ]
+
+}
+END -- s_cch
+Grid gird2
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gird2
+END -- vbox1
+END -- page1
+Page page2(action=p2, text=%"Page2")
+Grid grid3
+{
+ <G group6                                                                   >
+     [cb_pre  |cb_name                                     |cb_next ]
+     [dummy1  |dummy2  |dummy3  |dummy4  |dummy5  |dummy6  |dummy7  ]
+     [sch     |sch     |sch     |sch     |sch     |sch     |sch     ]
+     [        |        |        |        |        |        |        ]
+
+     [sch     |sch     |sch     |sch     |sch     |sch     |sch     ]
+     [        |        |        |        |        |        |        ]
+
+     [sch     |sch     |sch     |sch     |sch     |sch     |sch     ]
+     [        |        |        |        |        |        |        ]
+
+     [sch     |sch     |sch     |sch     |sch     |sch     |sch     ]
+     [        |        |        |        |        |        |        ]
+
+     [sch     |sch     |sch     |sch     |sch     |sch     |sch     ]
+     [        |        |        |        |        |        |        ]
+
+     [sch     |sch     |sch     |sch     |sch     |sch     |sch     ]
+     [        |        |        |        |        |        |        ]
+ <                                                                           >
+
+}
+END -- grid3
+END -- page2
+END -- folder1
+END -- ghrq012
+
+ATTRIBUTES
+DateEdit bdate=formonly.bdate type DATE, tabIndex=5, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=6, not null, required;
+ComboBox hrca02=formonly.hrca02 type VARCHAR, tabIndex=7, not null, required, items=(("1", %"1"),("2", "2"));
+ButtonEdit hrat01=formonly.hrat01 type VARCHAR, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+Edit ghrca02=formonly.ghrca02 type VARCHAR, tabIndex=9, title=%"ghrca02", noEntry;
+Edit ghrat01=formonly.ghrat01 type VARCHAR, tabIndex=10, title=%"ghrat01", noEntry;
+Edit ghrat02=formonly.ghrat02 type VARCHAR, tabIndex=11, title=%"ghrat02", noEntry;
+Edit ghrca04=formonly.ghrca04 type VARCHAR, tabIndex=12, title=%"ghrca04", noEntry;
+Edit ghrbo03=formonly.ghrbo03 type VARCHAR, tabIndex=13, title=%"ghrbo03", noEntry;
+DateEdit gdate=formonly.gdate type DATE, tabIndex=14, title=%"gdate", noEntry;
+Edit ghrcp06=formonly.ghrcp06 type VARCHAR, tabIndex=15, title=%"ghrcp06", noEntry;
+ComboBox autorank=formonly.autorank type VARCHAR, tabIndex=16, title=%"autorank", noEntry, items=(("Y", "智能配班"),("N", "指定班次"));
+Edit rankgrup=formonly.rankgrup type VARCHAR, tabIndex=17, title=%"rankgrup", noEntry;
+ComboBox restday=formonly.restday type VARCHAR, tabIndex=18, title=%"restday", noEntry, items=(("Y", "休息"),("N", "上班"));
+ComboBox daytype=formonly.daytype type VARCHAR, tabIndex=19, title=%"daytype", noEntry, items=(("001", "工作日"),("002", "假日"),("003", "节日"));
+ComboBox atttype=formonly.atttype type VARCHAR, tabIndex=20, title=%"atttype", noEntry, items=(("001", "不考勤"),("002", "手工考勤"),("003", "机器考勤"));
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=21, noEntry;
+Group group6:group6, text=%"";
+Button cb_pre:cb_pre, tabIndex=2, text=%"<";
+Edit cb_name=formonly.cb_name type CHAR, tabIndex=3, justify=center;
+Button cb_next:cb_next, tabIndex=4, text=%">";
+Label dummy1:dummy1, text=%"Label3";
+Label dummy2:dummy2, text=%"Label3";
+Label dummy3:dummy3, text=%"Label3";
+Label dummy4:dummy4, text=%"Label3";
+Label dummy5:dummy5, text=%"Label3";
+Label dummy6:dummy6, text=%"Label3";
+Label dummy7:dummy7, text=%"Label3";
+TextEdit sch=formonly.sch type CHAR, tabIndex=1, fontPitch=variable, justify=right, scrollBars=none;
+Phantom formonly.sch1 type DATE;
+Phantom formonly.sch2 type CHAR;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sch(formonly.sch,formonly.sch1,formonly.sch2)
+SCREEN RECORD Undefined(formonly.bdate,formonly.edate,formonly.hrca02,formonly.hrat01,formonly.cnt,formonly.cb_name)
+SCREEN RECORD s_cch(formonly.ghrca02,formonly.ghrat01,formonly.ghrat02,formonly.ghrca04,formonly.ghrbo03,formonly.gdate,formonly.ghrcp06,formonly.autorank,formonly.rankgrup,formonly.restday,formonly.daytype,formonly.atttype)
+END -- INSTRUCTIONS
+

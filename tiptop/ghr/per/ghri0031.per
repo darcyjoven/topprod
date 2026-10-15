@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/42f/ghri0031.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Table Table1
+{
+[hraqa0|hraqa02     |hraqa06 |hraqa03     |hraqa04 |hrag07      |hraqa05             |hraqaact]
+[hraqa0|hraqa02     |hraqa06 |hraqa03     |hraqa04 |hrag07      |hraqa05             |hraqaact]
+[hraqa0|hraqa02     |hraqa06 |hraqa03     |hraqa04 |hrag07      |hraqa05             |hraqaact]
+[hraqa0|hraqa02     |hraqa06 |hraqa03     |hraqa04 |hrag07      |hraqa05             |hraqaact]
+[hraqa0|hraqa02     |hraqa06 |hraqa03     |hraqa04 |hrag07      |hraqa05             |hraqaact]
+[hraqa0|hraqa02     |hraqa06 |hraqa03     |hraqa04 |hrag07      |hraqa05             |hraqaact]
+[hraqa0|hraqa02     |hraqa06 |hraqa03     |hraqa04 |hrag07      |hraqa05             |hraqaact]
+[hraqa0|hraqa02     |hraqa06 |hraqa03     |hraqa04 |hrag07      |hraqa05             |hraqaact]
+
+
+}
+END -- Table1
+Grid Grid1
+{
+--------[label|cnt  ]---------
+
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit hraqa0=formonly.hraqa01 type SMALLINT, action=controlp, tabIndex=1, title=%"hraqa01", noEntry, not null, required, image="zoom";
+ButtonEdit hraqa02=formonly.hraqa02, action=controlp, tabIndex=2, title=%"hraqa02", not null, required, image="zoom";
+Edit hraqa06=formonly.hraqa06 type VARCHAR, tabIndex=3, title=%"hraqa06", not null, required;
+Edit hraqa03=formonly.hraqa03, tabIndex=4, title=%"hraqa03", not null, required;
+ButtonEdit hraqa04=formonly.hraqa04, action=controlp, tabIndex=5, title=%"hraqa04", not null, required, image="zoom";
+Edit hrag07=formonly.hrag07, tabIndex=6, title=%"hrag07", noEntry;
+TextEdit hraqa05=formonly.hraqa05, tabIndex=7, title=%"hraqa05";
+CheckBox hraqaact=formonly.hraqaacti, tabIndex=8, title=%"hrba01", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label label:Label1, text=%"Label1";
+Edit cnt=formonly.cnt, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hraqa(formonly.hraqa01,formonly.hraqa02,formonly.hraqa06,formonly.hraqa03,formonly.hraqa04,formonly.hrag07,formonly.hraqa05,formonly.hraqaacti)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

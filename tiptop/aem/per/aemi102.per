@@ -1,0 +1,181 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aem/42f/aemi102.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aemi102")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr1770
+{
+ Project No.         [fio01     ]
+                     [fio02               ]
+ Prepared Work Time  [fio03     ][dummy1  ]
+ Standard Work Time  [fio04     ]
+}
+END -- gr1770
+Grid gr1771
+{
+ Maintain Type       [fio05     ]
+ Maintain Cycle      [fio06     ][fiu02     ]
+ Maintain Scope      [fio07     ][fja02     ]
+                     [fio08                 ]
+}
+END -- gr1771
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1772
+{
+  Record Owner        [fiouser   ]   Last Modified by    [fiomodu   ]   Data Valid Code     [fioacti   ]
+  Department          [fiogrup   ]   Create/Modify Date  [fiodate   ]
+  Record Orig.        [fiooriu   ]
+  Dept Orig.          [fioorig   ]
+}
+END -- gr1772
+END -- info
+END -- folder01
+Folder folder02
+Page page02(action=task_main, text="Task Maintain")
+VBox VBox2
+Table s_fip
+{
+[fip02      |fip03      |fid02               |fid03                |fid04               ]
+[fip02      |fip03      |fid02               |fid03                |fid04               ]
+[fip02      |fip03      |fid02               |fid03                |fid04               ]
+[fip02      |fip03      |fid02               |fid03                |fid04               ]
+[fip02      |fip03      |fid02               |fid03                |fid04               ]
+[fip02      |fip03      |fid02               |fid03                |fid04               ]
+[fip02      |fip03      |fid02               |fid03                |fid04               ]
+[fip02      |fip03      |fid02               |fid03                |fid04               ]
+[fip02      |fip03      |fid02               |fid03                |fid04               ]
+[fip02      |fip03      |fid02               |fid03                |fid04               ]
+
+}
+END -- s_fip
+Grid gr1773
+{
+                                                                                                             ---------- Rows [cn2   ] ----------
+
+}
+END -- gr1773
+END -- VBox2
+END -- page02
+Page page03(action=user_main, text="User Maintain")
+VBox VBox3
+Table s_fix
+{
+[fix02      |fix03          |geq02         |fix04                 |fix05     |fix06   ]
+[fix02      |fix03          |geq02         |fix04                 |fix05     |fix06   ]
+[fix02      |fix03          |geq02         |fix04                 |fix05     |fix06   ]
+[fix02      |fix03          |geq02         |fix04                 |fix05     |fix06   ]
+[fix02      |fix03          |geq02         |fix04                 |fix05     |fix06   ]
+[fix02      |fix03          |geq02         |fix04                 |fix05     |fix06   ]
+[fix02      |fix03          |geq02         |fix04                 |fix05     |fix06   ]
+[fix02      |fix03          |geq02         |fix04                 |fix05     |fix06   ]
+[fix02      |fix03          |geq02         |fix04                 |fix05     |fix06   ]
+[fix02      |fix03          |geq02         |fix04                 |fix05     |fix06   ]
+
+}
+END -- s_fix
+Grid gr1774
+{
+                                                                                                             ---------- Rows [cn4   ] ----------
+
+}
+END -- gr1774
+END -- VBox3
+END -- page03
+Page page04(action=sparepart_main, text="Spare Part Maintain")
+VBox VBox4
+Table s_fiy
+{
+[fiy02      |fiy03               |ima02                         |fiy04  |fiy05          |fiy06 ]
+[fiy02      |fiy03               |ima02                         |fiy04  |fiy05          |fiy06 ]
+[fiy02      |fiy03               |ima02                         |fiy04  |fiy05          |fiy06 ]
+[fiy02      |fiy03               |ima02                         |fiy04  |fiy05          |fiy06 ]
+[fiy02      |fiy03               |ima02                         |fiy04  |fiy05          |fiy06 ]
+[fiy02      |fiy03               |ima02                         |fiy04  |fiy05          |fiy06 ]
+[fiy02      |fiy03               |ima02                         |fiy04  |fiy05          |fiy06 ]
+[fiy02      |fiy03               |ima02                         |fiy04  |fiy05          |fiy06 ]
+[fiy02      |fiy03               |ima02                         |fiy04  |fiy05          |fiy06 ]
+[fiy02      |fiy03               |ima02                         |fiy04  |fiy05          |fiy06 ]
+
+}
+END -- s_fiy
+Grid gr1775
+{
+                                                                                                             ---------- Rows [cn6   ] ----------
+
+}
+END -- gr1775
+END -- VBox4
+END -- page04
+END -- folder02
+Grid gr1776
+{
+  ---------- Rows [cnt   ] ----------
+
+}
+END -- gr1776
+END -- VBox1
+END -- aemi102
+
+TABLES
+fip_file,
+fio_file,
+fiy_file,
+fix_file
+ATTRIBUTES
+Edit fio01=fio_file.fio01, tabIndex=1, not null, required, comment="KEY Field,No Blank/Repeated!";
+Edit fio02=fio_file.fio02, tabIndex=2;
+Edit fio03=fio_file.fio03, tabIndex=3, noEntry;
+Label dummy1:dummy1, text="Hours";
+Edit fio04=fio_file.fio04, tabIndex=4, noEntry;
+ComboBox fio05=fio_file.fio05, tabIndex=5, items=(("1", "Maintain"),("2", "Repair"));
+ButtonEdit fio06=fio_file.fio06, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit fiu02=formonly.fiu02 type CHAR, tabIndex=7, noEntry;
+ButtonEdit fio07=fio_file.fio07, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit fja02=formonly.fja02 type CHAR, tabIndex=9, noEntry;
+CheckBox fio08=fio_file.fio08, tabIndex=10, text="Stop Machine", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fiouser=fio_file.fiouser, tabIndex=11, noEntry;
+Edit fiomodu=fio_file.fiomodu, tabIndex=12, noEntry;
+Edit fioacti=fio_file.fioacti, tabIndex=13, noEntry, upShift;
+Edit fiogrup=fio_file.fiogrup, tabIndex=14, noEntry;
+DateEdit fiodate=fio_file.fiodate, tabIndex=15, noEntry;
+Edit fiooriu=fio_file.fiooriu, tabIndex=501, noEntry;
+Edit fioorig=fio_file.fioorig, tabIndex=502, noEntry;
+Edit fip02=fip_file.fip02, tabIndex=16, title="Line No.", not null, required;
+ButtonEdit fip03=fip_file.fip03, action=controlp, tabIndex=17, title="Task No.", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit fid02=formonly.fid02 type CHAR, tabIndex=18, title="Description", noEntry;
+Edit fid03=formonly.fid03 type CHAR, tabIndex=19, title="Prepared Work Time", noEntry;
+Edit fid04=formonly.fid04 type CHAR, tabIndex=20, title="Standard Work Time", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=21;
+Edit fix02=fix_file.fix02, tabIndex=22, title="Line No.", not null, required;
+ButtonEdit fix03=fix_file.fix03, action=controlp, tabIndex=23, title="Type of Work", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit geq02=formonly.geq02 type CHAR, tabIndex=24, title="Description", noEntry;
+Edit fix04=fix_file.fix04, tabIndex=25, title="Estimated Work Time";
+Edit fix05=fix_file.fix05, tabIndex=26, title="Persons", not null, required;
+Edit fix06=fix_file.fix06, tabIndex=27, title="Priority";
+Edit cn4=formonly.cn4 type SMALLINT, tabIndex=28;
+Edit fiy02=fiy_file.fiy02, tabIndex=29, title="Line No.", not null, required;
+ButtonEdit fiy03=fiy_file.fiy03, action=controlp, tabIndex=30, title="Spare Part No.", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=31, title="Part Name Specification", noEntry;
+ButtonEdit fiy04=fiy_file.fiy04, action=controlp, tabIndex=32, title="Unit", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit fiy05=fiy_file.fiy05, tabIndex=33, title="Quantity", not null, required;
+CheckBox fiy06=fiy_file.fiy06, tabIndex=34, title="Need", valueChecked = "Y", valueUnchecked = "N";
+Edit cn6=formonly.cn6 type SMALLINT, tabIndex=35;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=36;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fip(fip_file.fip02,fip_file.fip03,formonly.fid02,formonly.fid03,formonly.fid04)
+SCREEN RECORD s_fix(fix_file.fix02,fix_file.fix03,formonly.geq02,fix_file.fix04,fix_file.fix05,fix_file.fix06)
+SCREEN RECORD s_fiy(fiy_file.fiy02,fiy_file.fiy03,formonly.ima02,fiy_file.fiy04,fiy_file.fiy05,fiy_file.fiy06)
+SCREEN RECORD Undefined(fio_file.fio01,fio_file.fio02,fio_file.fio03,fio_file.fio04,fio_file.fio05,fio_file.fio06,formonly.fiu02,fio_file.fio07,formonly.fja02,fio_file.fio08,fio_file.fiouser,fio_file.fiomodu,fio_file.fioacti,fio_file.fiogrup,fio_file.fiodate,fio_file.fiooriu,fio_file.fioorig,formonly.cn2,formonly.cn4,formonly.cn6,formonly.cnt)
+END -- INSTRUCTIONS
+

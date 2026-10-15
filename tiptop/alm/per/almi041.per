@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi041.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi041")
+VBox vb1
+Folder pc2
+Page Main(text=%"Main")
+Table s_lto
+{
+[ltostore    |rtz13   |ltolegal    |azt02       |lto02    |lto03    |lto04               ]
+[ltostore    |rtz13   |ltolegal    |azt02       |lto02    |lto03    |lto04               ]
+[ltostore    |rtz13   |ltolegal    |azt02       |lto02    |lto03    |lto04               ]
+[ltostore    |rtz13   |ltolegal    |azt02       |lto02    |lto03    |lto04               ]
+[ltostore    |rtz13   |ltolegal    |azt02       |lto02    |lto03    |lto04               ]
+
+}
+END -- s_lto
+END -- Main
+END -- pc2
+Grid gr2
+{
+
+ -----Rows [cnt  ]-----
+
+
+}
+END -- gr2
+END -- vb1
+END -- almi041
+
+TABLES
+lto_file
+ATTRIBUTES
+ButtonEdit ltostore=lto_file.ltostore, action=controlp, tabIndex=1, title="Doc No.", noEntry, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=5, title="Name", noEntry;
+ButtonEdit ltolegal=lto_file.ltolegal, action=controlp, tabIndex=7, title=%"Corporation", noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=8, title=%"azt02", noEntry;
+Edit lto02=lto_file.lto02, tabIndex=2, title="Year", noEntry, not null, required;
+ComboBox lto03=lto_file.lto03, tabIndex=3, title="Month", not null, required, items=(("01", "one"),("02", "two"),("03", "three"),("04", "four"),("05", "five"),("06", "six"),("07", "seven"),("08", "eight"),("09", "nine"),("10", "ten"),("11", "elv"),("12", "twelve"));
+Edit lto04=lto_file.lto04, tabIndex=4, title="Money", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lto(lto_file.ltostore,formonly.rtz13,lto_file.ltolegal,formonly.azt02,lto_file.lto02,lto_file.lto03,lto_file.lto04)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

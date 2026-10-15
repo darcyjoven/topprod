@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi301b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfi301b")
+Folder pc103
+Page page01(text="Page01")
+VBox VBox1
+Table s_sfa
+{
+[sfa03                |sfa27                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa08     |sfa26            |sfa28              |sfa161     |sfa100                   |sfa05        |sfa06      |sfa062             |sfa065             |sfa07     |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa03                |sfa27                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa08     |sfa26            |sfa28              |sfa161     |sfa100                   |sfa05        |sfa06      |sfa062             |sfa065             |sfa07     |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa03                |sfa27                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa08     |sfa26            |sfa28              |sfa161     |sfa100                   |sfa05        |sfa06      |sfa062             |sfa065             |sfa07     |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa03                |sfa27                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa08     |sfa26            |sfa28              |sfa161     |sfa100                   |sfa05        |sfa06      |sfa062             |sfa065             |sfa07     |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa03                |sfa27                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa08     |sfa26            |sfa28              |sfa161     |sfa100                   |sfa05        |sfa06      |sfa062             |sfa065             |sfa07     |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa03                |sfa27                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa08     |sfa26            |sfa28              |sfa161     |sfa100                   |sfa05        |sfa06      |sfa062             |sfa065             |sfa07     |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa03                |sfa27                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa08     |sfa26            |sfa28              |sfa161     |sfa100                   |sfa05        |sfa06      |sfa062             |sfa065             |sfa07     |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa03                |sfa27                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa08     |sfa26            |sfa28              |sfa161     |sfa100                   |sfa05        |sfa06      |sfa062             |sfa065             |sfa07     |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa03                |sfa27                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa08     |sfa26            |sfa28              |sfa161     |sfa100                   |sfa05        |sfa06      |sfa062             |sfa065             |sfa07     |sfa063    |sfa064             |sfa30            |sfa31           ]
+[sfa03                |sfa27                |ima02_b                  |ima021_b               |ima08_b      |sfa12         |sfa13               |sfa11                      |sfa08     |sfa26            |sfa28              |sfa161     |sfa100                   |sfa05        |sfa06      |sfa062             |sfa065             |sfa07     |sfa063    |sfa064             |sfa30            |sfa31           ]
+
+}
+END -- s_sfa
+END -- VBox1
+END -- page01
+Page info(text="Info")
+Grid gr471
+{
+ <G grpinfo                       >
+  Detail Counts       [cn2       ]
+ <                                >
+
+}
+END -- gr471
+END -- info
+END -- pc103
+END -- asfi301b
+
+ATTRIBUTES
+ButtonEdit sfa03=formonly.sfa03 type CHAR, action=controlp, tabIndex=1, title="Issuing Item No.", image="zoom", comment="<^P>Qry Item No.";
+ButtonEdit sfa27=formonly.sfa27 type CHAR, action=controlp, tabIndex=2, title="BOM Item No.", image="zoom", comment="<^P>Qry Item No.";
+Edit ima02_b=formonly.ima02_b type CHAR, tabIndex=3, title="Part Name", noEntry;
+Edit ima021_b=formonly.ima021_b type CHAR, tabIndex=4, title="Specification", noEntry;
+Edit ima08_b=formonly.ima08_b type CHAR, tabIndex=5, title="Source Code", noEntry;
+Edit sfa12=formonly.sfa12 type CHAR, tabIndex=6, title="Issuing Unit";
+Edit sfa13=formonly.sfa13 type CHAR, tabIndex=7, title="Conversion Rate";
+ComboBox sfa11=formonly.sfa11 type CHAR, tabIndex=8, title="Flag", not null, required, queryEditable, items=(("N", %"General Item"),("E", %"Consumable Item"),("V", %"Mass Manufactured-Item"),("U", %"Mass Manufactured-Item"),("R", %"WIP Item"));
+Edit sfa08=formonly.sfa08 type CHAR, tabIndex=9, title="Task No.", comment="Enter Task Serial No.";
+ComboBox sfa26=formonly.sfa26 type CHAR, tabIndex=10, title="Substitute code", not null, required, queryEditable, items=(("0", %"No REP/SUB"),("1", %"Old"),("2", %"M.It"),("3", %"Old(with New)"),("4", %"M.It(Sb-Itm)"),("5", %"M.It,SUB with SE"),("6", %"M.It,SET SUB"),("U", %"REP Item"),("S", %"SUB Item"),("T", %"SET SUB Item"));
+Edit sfa28=formonly.sfa28 type CHAR, tabIndex=11, title="Substitution Ratio", comment="Ori Mstr.Itm to SUB Itm Conv.R!(Enter Only if Code=\'S/U\'    )";
+Edit sfa161=formonly.sfa161 type CHAR, tabIndex=12, title="Actual QPA";
+Edit sfa100=formonly.sfa100 type CHAR, tabIndex=13, title="Issuing difference ratio", comment="Issuing difference ratio";
+Edit sfa05=formonly.sfa05 type CHAR, tabIndex=14, title="Qty To Issue";
+Edit sfa06=formonly.sfa06 type CHAR, tabIndex=15, title="Issued Qty", noEntry;
+Edit sfa062=formonly.sfa062 type CHAR, tabIndex=16, title="Qty Over-withdrawn", noEntry;
+Edit sfa065=formonly.sfa065 type CHAR, tabIndex=17, title="Inventory Loss Qty";
+Edit sfa07=formonly.sfa07 type CHAR, tabIndex=18, title="Short Qty", noEntry;
+Edit sfa063=formonly.sfa063 type CHAR, tabIndex=19, title="Scrap Qty", noEntry;
+Edit sfa064=formonly.sfa064 type CHAR, tabIndex=20, title="Inventory Loss Qty", noEntry;
+Edit sfa30=formonly.sfa30 type CHAR, tabIndex=21, title="Assign Warehouse";
+Edit sfa31=formonly.sfa31 type CHAR, tabIndex=22, title="Assign Location";
+Group grpinfo:grpinfo;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=23;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfa(formonly.sfa03,formonly.sfa27,formonly.ima02_b,formonly.ima021_b,formonly.ima08_b,formonly.sfa12,formonly.sfa13,formonly.sfa11,formonly.sfa08,formonly.sfa26,formonly.sfa28,formonly.sfa161,formonly.sfa100,formonly.sfa05,formonly.sfa06,formonly.sfa062,formonly.sfa065,formonly.sfa07,formonly.sfa063,formonly.sfa064,formonly.sfa30,formonly.sfa31)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

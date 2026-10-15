@@ -1,0 +1,119 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almi600")
+VBox VBox1
+Folder pc3
+Page page4(text="Main")
+Grid gr10
+{
+ Created Logistics        [lqx10                ][lqx10_desc      ]          Confirmation       [lqx05                   |imgmksg]
+ Exchange source          [lqx00                ]                            Conf Name          [lqx06                   |       ]
+ Plan serial No.          [lqx01                ]                            Conf Date          [lqx07                   ]
+ Program narrative        [lqx01_desc           ]                            memo               [lqx08                          ]
+                          [                     ]                                               [                               ]
+                          [                     ]                                               [                               ]
+ version                  [lqx11                ]                            lpqplant           [lqxplant                ][rtz13               ]
+ card plants No.          [lqx02                ]                            lpqlegal           [lqxlegal                ][azt02               ]
+ card plants name         [lph02                ]
+ Outset date              [lqx03                ]
+ Expiry date              [lqx04                ]
+ Accumulative total way   [lqx09                ]
+ Exchange restrictions    [lqx12                ]
+ times                    [lqx13                ]
+
+}
+END -- gr10
+END -- page4
+Page info(text="Info")
+Grid gr10_
+{
+ Record Owner   [lqxuser   ]   Material foundation date   [lqxcrat         ]     Data Valid Code     [lqxacti   ]
+ Department     [lqxgrup   ]   Last Modified by           [lqxmodu         ]     Create/Modify Date  [lqxdate   ]
+ Record Orig.   [lqxoriu   ]
+ Dept Orig.     [lqxorig   ]
+
+
+}
+END -- gr10_
+END -- info
+END -- pc3
+Table s_lpr
+{
+[lqy06 |lqy02                |lqy07            |lqy03                 |ima02                |ima021            |lqy04     |gfe02   |lqy05          ]
+[lqy06 |lqy02                |lqy07            |lqy03                 |ima02                |ima021            |lqy04     |gfe02   |lqy05          ]
+[lqy06 |lqy02                |lqy07            |lqy03                 |ima02                |ima021            |lqy04     |gfe02   |lqy05          ]
+[lqy06 |lqy02                |lqy07            |lqy03                 |ima02                |ima021            |lqy04     |gfe02   |lqy05          ]
+[lqy06 |lqy02                |lqy07            |lqy03                 |ima02                |ima021            |lqy04     |gfe02   |lqy05          ]
+[lqy06 |lqy02                |lqy07            |lqy03                 |ima02                |ima021            |lqy04     |gfe02   |lqy05          ]
+[lqy06 |lqy02                |lqy07            |lqy03                 |ima02                |ima021            |lqy04     |gfe02   |lqy05          ]
+[lqy06 |lqy02                |lqy07            |lqy03                 |ima02                |ima021            |lqy04     |gfe02   |lqy05          ]
+[lqy06 |lqy02                |lqy07            |lqy03                 |ima02                |ima021            |lqy04     |gfe02   |lqy05          ]
+[lqy06 |lqy02                |lqy07            |lqy03                 |ima02                |ima021            |lqy04     |gfe02   |lqy05          ]
+}
+END -- s_lpr
+Grid gr12
+{
+----------  Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr12
+END -- VBox1
+END -- almi600
+
+TABLES
+lqy_file,
+lqx_file
+ATTRIBUTES
+ButtonEdit lqx10=lqx_file.lqx10, action=controlp, tabIndex=13, noEntry, image="zoom.png";
+Edit lqx10_desc=formonly.lqx10_desc type CHAR, tabIndex=14, noEntry;
+ComboBox lqx05=lqx_file.lqx05, tabIndex=9, noEntry, items=(("N", "Has not verified "),("Y", "Has verified "),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ComboBox lqx00=lqx_file.lqx00, tabIndex=1, items=(("0", "Integral to change things"),("1", "Accumulative total"));
+ButtonEdit lqx06=lqx_file.lqx06, action=controlp, tabIndex=10, noEntry, image="zoom";
+ButtonEdit lqx01=lqx_file.lqx01, action=controlp, tabIndex=2, not null, required, image="zoom";
+DateEdit lqx07=lqx_file.lqx07, tabIndex=11, noEntry;
+TextEdit lqx01_desc=formonly.lqx01_desc type VARCHAR, tabIndex=3, noEntry;
+TextEdit lqx08=lqx_file.lqx08, tabIndex=12, stretch=NONE;
+Edit lqx11=lqx_file.lqx11, tabIndex=36, noEntry;
+ButtonEdit lqxplant=lqx_file.lqxplant, action=controlp, tabIndex=39, noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=40, noEntry;
+ButtonEdit lqx02=lqx_file.lqx02, action=controlp, tabIndex=4, not null, image="zoom";
+ButtonEdit lqxlegal=lqx_file.lqxlegal, action=controlp, tabIndex=15, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=16, noEntry;
+Edit lph02=formonly.lph02 type CHAR, tabIndex=5, noEntry;
+DateEdit lqx03=lqx_file.lqx03, tabIndex=6, not null;
+DateEdit lqx04=lqx_file.lqx04, tabIndex=7, not null;
+ComboBox lqx09=lqx_file.lqx09, tabIndex=8, not null, items=(("0", "Consumption day"),("1", "Member accumulative total spending"),("2", "during the peroid"));
+ComboBox lqx12=lqx_file.lqx12, tabIndex=37, not null, items=(("1", "No Limit"),("2", "During the period"),("3", "Everyday "));
+Edit lqx13=lqx_file.lqx13, tabIndex=38, noEntry;
+Edit lqxuser=lqx_file.lqxuser, tabIndex=17, noEntry;
+DateEdit lqxcrat=lqx_file.lqxcrat, tabIndex=21, noEntry;
+Edit lqxacti=lqx_file.lqxacti, tabIndex=23, noEntry, upShift;
+Edit lqxgrup=lqx_file.lqxgrup, tabIndex=18, noEntry;
+Edit lqxmodu=lqx_file.lqxmodu, tabIndex=22, noEntry;
+DateEdit lqxdate=lqx_file.lqxdate, tabIndex=24, noEntry;
+Edit lqxoriu=lqx_file.lqxoriu, tabIndex=19, noEntry;
+Edit lqxorig=lqx_file.lqxorig, tabIndex=20, noEntry;
+Edit lqy06=lqy_file.lqy06, tabIndex=25, title=%"Line No.", not null, scroll;
+Edit lqy02=lqy_file.lqy02, tabIndex=26, title="integral reaches", not null, required;
+Edit lqy07=lqy_file.lqy07, tabIndex=27, title=%"Accumulative total", not null;
+ButtonEdit lqy03=lqy_file.lqy03, action=controlp, tabIndex=28, title="Complimentary No.", not null, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=29, title="Complimentary name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=30, title="Specification", noEntry;
+ButtonEdit lqy04=lqy_file.lqy04, action=controlp, tabIndex=31, title="Unit", not null, image="zoom";
+Edit gfe02=formonly.gfe02 type CHAR, tabIndex=32, title=%"gfe02", noEntry;
+Edit lqy05=lqy_file.lqy05, tabIndex=33, title=%"Qty", not null;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=34;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=35;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lqy(lqy_file.lqy06,lqy_file.lqy02,lqy_file.lqy07,lqy_file.lqy03,formonly.ima02,formonly.ima021,lqy_file.lqy04,formonly.gfe02,lqy_file.lqy05)
+SCREEN RECORD Undefined(lqx_file.lqx10,formonly.lqx10_desc,lqx_file.lqxlegal,formonly.azt02,lqx_file.lqx05,formonly.imgmksg,lqx_file.lqx01,lqx_file.lqx06,formonly.lqx01_desc,lqx_file.lqx07,lqx_file.lqx08,lqx_file.lqx02,formonly.lph02,lqx_file.lqx03,lqx_file.lqx04,lqx_file.lqxuser,lqx_file.lqxcrat,lqx_file.lqxacti,lqx_file.lqxgrup,lqx_file.lqxmodu,lqx_file.lqxdate,lqx_file.lqxoriu,lqx_file.lqxorig,formonly.cnt,formonly.cn2,lqx_file.lqx00,lqx_file.lqx09,lqx_file.lqx11,lqx_file.lqx12,lqx_file.lqx13,lqx_file.lqxplant,formonly.rtz13)
+END -- INSTRUCTIONS
+

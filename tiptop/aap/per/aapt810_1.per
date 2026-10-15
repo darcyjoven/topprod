@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt810_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Accounting Entry Mandatory Account")
+Grid gr544
+{
+ <G group01                                                                     >
+  Inventory Equipment     [alk44               ][aag02_4                       ]
+  Enter Account Variation [alk45               ][aag02_5                       ]
+ <                                                                              >
+ <G group03                                                                     >
+  Inventory Equipment2    [alk441              ][aag02_10                      ]
+  Enter Account Variation2[alk451              ][aag02_11                      ]
+ <                                                                              >
+ <G group02                                                                     >
+  Advance Payment Account [alk40               ][aag02_0                       ]
+  A/P                     [alk41               ][aag02_1                       ]
+  Paid-for Expense        [alk42               ][aag02_2                       ]
+  Accrued Expense Payable [alk43               ][aag02_3                       ]
+ <                                                                              >
+ <G group04                                                                     >
+  Advance Payment Account2[alk401              ][aag02_6                       ]
+  A/P2                    [alk411              ][aag02_7                       ]
+  Paid-for Expense2       [alk421              ][aag02_8                       ]
+  Accrued Expense Payable2[alk431              ][aag02_9                       ]
+
+ <                                                                              >
+
+}
+END -- gr544
+END -- aapt810_1
+
+TABLES
+alk_file
+ATTRIBUTES
+Group group01:group01, text="Debit";
+ButtonEdit alk44=alk_file.alk44, action=controlp, tabIndex=1, image="zoom", comment="Enter STOCK by Item master account,or by P/O to assign MISC Account";
+Edit aag02_4=formonly.aag02_4 type CHAR, tabIndex=2;
+ButtonEdit alk45=alk_file.alk45, action=controlp, tabIndex=3, image="zoom";
+Edit aag02_5=formonly.aag02_5 type CHAR, tabIndex=4;
+Group group03:group03, text="Debit";
+ButtonEdit alk441=alk_file.alk441, action=controlp, tabIndex=5, image="zoom", comment="Enter STOCK by Item master account,or by P/O to assign MISC Account";
+Edit aag02_10=formonly.aag02_10 type CHAR, tabIndex=6;
+ButtonEdit alk451=alk_file.alk451, action=controlp, tabIndex=7, image="zoom";
+Edit aag02_11=formonly.aag02_11 type CHAR, tabIndex=8;
+Group group02:group02, text="Credit";
+ButtonEdit alk40=alk_file.alk40, action=controlp, tabIndex=9, image="zoom";
+Edit aag02_0=formonly.aag02_0 type CHAR, tabIndex=10;
+ButtonEdit alk41=alk_file.alk41, action=controlp, tabIndex=11, image="zoom", comment="If Arriving Notify First Received, Enter Inventory In-Transit ";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=12;
+ButtonEdit alk42=alk_file.alk42, action=controlp, tabIndex=13, image="zoom";
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=14;
+ButtonEdit alk43=alk_file.alk43, action=controlp, tabIndex=15, image="zoom";
+Edit aag02_3=formonly.aag02_3 type CHAR, tabIndex=16;
+Group group04:group04, text="Credit";
+ButtonEdit alk401=alk_file.alk401, action=controlp, tabIndex=17, image="zoom";
+Edit aag02_6=formonly.aag02_6 type CHAR, tabIndex=18;
+ButtonEdit alk411=alk_file.alk411, action=controlp, tabIndex=19, image="zoom", comment="If Arriving Notify First Received, Enter Inventory In-Transit ";
+Edit aag02_7=formonly.aag02_7 type CHAR, tabIndex=20;
+ButtonEdit alk421=alk_file.alk421, action=controlp, tabIndex=21, image="zoom";
+Edit aag02_8=formonly.aag02_8 type CHAR, tabIndex=22;
+ButtonEdit alk431=alk_file.alk431, action=controlp, tabIndex=23, image="zoom";
+Edit aag02_9=formonly.aag02_9 type CHAR, tabIndex=24;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(alk_file.alk44,formonly.aag02_4,alk_file.alk45,formonly.aag02_5,alk_file.alk441,formonly.aag02_10,alk_file.alk451,formonly.aag02_11,alk_file.alk40,formonly.aag02_0,alk_file.alk41,formonly.aag02_1,alk_file.alk42,formonly.aag02_2,alk_file.alk43,formonly.aag02_3,alk_file.alk401,formonly.aag02_6,alk_file.alk411,formonly.aag02_7,alk_file.alk421,formonly.aag02_8,alk_file.alk431,formonly.aag02_9)
+END -- INSTRUCTIONS
+

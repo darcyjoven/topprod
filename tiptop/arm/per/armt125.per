@@ -1,0 +1,156 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armt125.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armt125")
+VBox VBox1
+Folder pc80
+Page page01(text="Main")
+VBox VBox2
+HBox HBox1
+Grid gr300
+{
+ RMA No.           [rma01           ]
+ Est. Re-Del.Date  [rma12     ]
+ Memo              [rma18                        ]
+}
+END -- gr300
+Grid gr301
+{
+ Customer Return   [rma03     ][rma04     ] [imgmksg]
+ Receipt Date      [rma20     ]             [       ]
+ Confirm           [rmaconf   ]
+}
+END -- gr301
+END -- HBox1
+Group group01(text="INVOICE Qty")
+HBox HBox2
+Grid gr302
+{
+ Invo.Item       [b02       ]
+ Unit            [mb04      ]
+ Qty             [rmb12     ]
+}
+END -- gr302
+Grid gr303
+{
+ Item#           [rmc04                         ]
+ Desc.           [rmb05                         ]
+                 [rmb06                         ]
+}
+END -- gr303
+END -- HBox2
+END -- group01
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr304
+{
+ Record Owner        [rmauser   ] Last Modified by    [rmamodu   ] Data Valid Code     [rmavoid   ]
+ Department          [rmagrup   ] Create/Modify Date  [rmadate   ]
+ Record Orig.        [rmaoriu   ]
+ Dept Orig.          [rmaorig   ]
+}
+END -- gr304
+END -- info
+END -- pc80
+Group group06(text="RMA Data")
+VBox VBox3
+Grid gr305
+{
+                                                                                [previous] [next_row]
+
+}
+END -- gr305
+Grid gr306
+{
+ <G group02                            > <G group03                     ><G group04                                        >
+  Ret#        [rmc02     ]                Date of Issue     [rmc29     ]  Charge Off Date    [rmc22     ]
+  S/N         [rmc07               ]      Date of Reply     [rmc30     ]  Charge Off Ref Doc#[rmc23           ][rmc24     ]
+  Model       [rmc25     ]                Org. Delivery Date[rmc17     ]  Charge Off Reason  [rmc21     ]
+  Guarantee   [rmc18     ][dummy01   ]                                   <                                                 >
+ [rmc16    ]  [rmc09       ]                                             <G group05                                  >
+                                                                          Labor hour         [rmc10               ]
+  Qty         [rmc31     ]                                                Material Cost      [rmc13               ]
+  Date of Fix [rmc08     ]                                                Wage Rate          [rmc11               ]
+  Fix Status  [rmc14     ]                                                Cost               [rmc12               ]
+                                                                          Extra Description  [rmc32                 ]
+ <                                     > <                              ><                                           >
+
+}
+END -- gr306
+END -- VBox3
+END -- group06
+Grid gr307
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr307
+END -- VBox1
+END -- armt125
+
+TABLES
+rmc_file,
+rma_file
+ATTRIBUTES
+ButtonEdit rma01=rma_file.rma01, action=controlp, tabIndex=1, image="zoom.png";
+DateEdit rma12=rma_file.rma12, tabIndex=2;
+Edit rma18=rma_file.rma18, tabIndex=3;
+ButtonEdit rma03=rma_file.rma03, action=controlp, tabIndex=4, image="zoom.png";
+Edit rma04=rma_file.rma04, tabIndex=5;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+DateEdit rma20=rma_file.rma20, tabIndex=7;
+Edit rmaconf=rma_file.rmaconf, tabIndex=8, noEntry, upShift;
+Edit b02=formonly.b02 type CHAR, tabIndex=9, noEntry;
+Edit mb04=formonly.mb04 type CHAR, tabIndex=10, noEntry;
+Edit rmb12=formonly.rmb12 type CHAR, tabIndex=11, noEntry;
+ButtonEdit rmc04=rmc_file.rmc04, action=controlp, tabIndex=12, image="zoom.png";
+Edit rmb05=formonly.rmb05 type CHAR, tabIndex=13, noEntry;
+Edit rmb06=formonly.rmb06 type CHAR, tabIndex=14, noEntry;
+Edit rmauser=rma_file.rmauser, tabIndex=15, noEntry;
+Edit rmamodu=rma_file.rmamodu, tabIndex=16, noEntry;
+Edit rmavoid=rma_file.rmavoid, tabIndex=17, noEntry;
+Edit rmagrup=rma_file.rmagrup, tabIndex=18, noEntry;
+DateEdit rmadate=rma_file.rmadate, tabIndex=19, noEntry;
+Edit rmaoriu=rma_file.rmaoriu, tabIndex=501, noEntry;
+Edit rmaorig=rma_file.rmaorig, tabIndex=502, noEntry;
+Button previous:previous_row, text="Previous Row", image="prev";
+Button next_row:next_row, text="Next Row", image="next";
+Group group02:group02;
+Edit rmc02=rmc_file.rmc02, tabIndex=20, noEntry;
+Edit rmc07=rmc_file.rmc07, tabIndex=21;
+Edit rmc25=rmc_file.rmc25, tabIndex=22;
+Edit rmc18=rmc_file.rmc18, tabIndex=23;
+Label dummy01:dummy01, text="DAYS";
+CheckBox rmc16=rmc_file.rmc16, tabIndex=24, text="Guarantee?", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Guarantee?";
+CheckBox rmc09=rmc_file.rmc09, tabIndex=25, text="Charge?", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Charge?";
+Edit rmc31=rmc_file.rmc31, tabIndex=26;
+DateEdit rmc08=rmc_file.rmc08, tabIndex=27;
+ComboBox rmc14=rmc_file.rmc14, tabIndex=28, queryEditable, comment="0.Unfix 1.Fix 2.No Fix 3.Tr to S/R 4.Scrp 5.Unfix&Packd 6.Fixd&Packd", items=(("0", "Unfix"),("1", "Fix"),("2", "No Fix"),("3", "Tr to S/R"),("4", "Scrp"),("5", "Unfix&Packd"),("6", "Fixd&Packd"));
+Group group03:group03;
+DateEdit rmc29=rmc_file.rmc29, tabIndex=29;
+DateEdit rmc30=rmc_file.rmc30, tabIndex=30;
+DateEdit rmc17=rmc_file.rmc17, tabIndex=31;
+Group group04:group04;
+DateEdit rmc22=rmc_file.rmc22, tabIndex=32;
+Edit rmc23=rmc_file.rmc23, tabIndex=33;
+Edit rmc24=rmc_file.rmc24, tabIndex=34;
+ComboBox rmc21=rmc_file.rmc21, tabIndex=35, queryEditable, comment="0.Unch.Off 1.R-Del Ch.O 2.Tr to S/R Ch.O 3.Scrp Ch.O", items=(("0", "Unch.Off"),("1", "R-Del Ch.O"),("2", "Tr to S/R Ch.O"),("3", "Scrp Ch.O"));
+Group group05:group05;
+Edit rmc10=rmc_file.rmc10, tabIndex=36;
+Edit rmc13=rmc_file.rmc13, tabIndex=37, noEntry;
+Edit rmc11=rmc_file.rmc11, tabIndex=38, noEntry;
+Edit rmc12=rmc_file.rmc12, tabIndex=39;
+Edit rmc32=rmc_file.rmc32, tabIndex=40;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=41, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=42, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rma_file.rma01,rma_file.rma12,rma_file.rma18,rma_file.rma03,rma_file.rma04,formonly.imgmksg,rma_file.rma20,rma_file.rmaconf,formonly.b02,formonly.mb04,formonly.rmb12,rmc_file.rmc04,formonly.rmb05,formonly.rmb06,rma_file.rmauser,rma_file.rmamodu,rma_file.rmavoid,rma_file.rmagrup,rma_file.rmadate,rma_file.rmaoriu,rma_file.rmaorig,rmc_file.rmc02,rmc_file.rmc07,rmc_file.rmc25,rmc_file.rmc18,rmc_file.rmc16,rmc_file.rmc09,rmc_file.rmc31,rmc_file.rmc08,rmc_file.rmc14,rmc_file.rmc29,rmc_file.rmc30,rmc_file.rmc17,rmc_file.rmc22,rmc_file.rmc23,rmc_file.rmc24,rmc_file.rmc21,rmc_file.rmc10,rmc_file.rmc13,rmc_file.rmc11,rmc_file.rmc12,rmc_file.rmc32,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

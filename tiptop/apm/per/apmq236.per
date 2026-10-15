@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq236.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq236")
+VBox VBox1
+Folder pc957
+Page page01(text="Main")
+VBox VBox2
+Table s_rvb
+{
+[rva06   |rva01           |rva05     |pmc03   |rvb|rvb05              |rv1|rvb07    |rvb33     |rvb30    |rvb29    ]
+[rva06   |rva01           |rva05     |pmc03   |rvb|rvb05              |rv1|rvb07    |rvb33     |rvb30    |rvb29    ]
+[rva06   |rva01           |rva05     |pmc03   |rvb|rvb05              |rv1|rvb07    |rvb33     |rvb30    |rvb29    ]
+[rva06   |rva01           |rva05     |pmc03   |rvb|rvb05              |rv1|rvb07    |rvb33     |rvb30    |rvb29    ]
+[rva06   |rva01           |rva05     |pmc03   |rvb|rvb05              |rv1|rvb07    |rvb33     |rvb30    |rvb29    ]
+[rva06   |rva01           |rva05     |pmc03   |rvb|rvb05              |rv1|rvb07    |rvb33     |rvb30    |rvb29    ]
+[rva06   |rva01           |rva05     |pmc03   |rvb|rvb05              |rv1|rvb07    |rvb33     |rvb30    |rvb29    ]
+[rva06   |rva01           |rva05     |pmc03   |rvb|rvb05              |rv1|rvb07    |rvb33     |rvb30    |rvb29    ]
+[rva06   |rva01           |rva05     |pmc03   |rvb|rvb05              |rv1|rvb07    |rvb33     |rvb30    |rvb29    ]
+[rva06   |rva01           |rva05     |pmc03   |rvb|rvb05              |rv1|rvb07    |rvb33     |rvb30    |rvb29    ]
+
+}
+END -- s_rvb
+END -- VBox2
+END -- page01
+END -- pc957
+Grid gr4984
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4984
+END -- VBox1
+END -- apmq236
+
+ATTRIBUTES
+DateEdit rva06=formonly.rva06 type DATE, tabIndex=1, title="Rcpt.Dt";
+Edit rva01=formonly.rva01 type CHAR, tabIndex=2, title="Receipt#";
+Edit rva05=formonly.rva05 type CHAR, tabIndex=3, title="Vender#";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=4, title="Abbr.";
+Edit rvb=formonly.rvb02 type CHAR, tabIndex=5, title="Ln#";
+Edit rvb05=formonly.rvb05 type CHAR, tabIndex=6, title="Item No.";
+Edit rv1=formonly.rvb39 type CHAR, tabIndex=7, title="QC";
+Edit rvb07=formonly.rvb07 type CHAR, tabIndex=8, title="Received";
+Edit rvb33=formonly.rvb33 type CHAR, tabIndex=9, title="Acpt St-in";
+Edit rvb30=formonly.rvb30 type CHAR, tabIndex=10, title="St-in";
+Edit rvb29=formonly.rvb29 type CHAR, tabIndex=11, title="Returned";
+Edit cnt=formonly.cnt type CHAR, tabIndex=12;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvb(formonly.rva06,formonly.rva01,formonly.rva05,formonly.pmc03,formonly.rvb02,formonly.rvb05,formonly.rvb39,formonly.rvb07,formonly.rvb33,formonly.rvb30,formonly.rvb29)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

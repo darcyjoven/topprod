@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almp559.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Group g1(text=%"Group1")
+Grid ds1
+{
+
+ [lqt03     ]  [lpj01     ]
+ [lqt04     ]  [lpc01     ]
+
+}
+END -- ds1
+END -- g1
+Group g2(text=%"Group2")
+Grid Grid1
+{
+ [lqr03     ]  [lqr01     ]
+ [lqt08     ]  [lqt01     ]
+ [lpr01     ]  [lqr02     ]
+}
+END -- Grid1
+END -- g2
+Grid Grid2
+{
+ [g_bgjob                 ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+TABLES
+lpj_file,
+lpc_file,
+lqt_file,
+lqr_file
+ATTRIBUTES
+Label lqt03:lqt03, text=%"Member No.";
+ButtonEdit lpj01=lpj_file.lpj01, action=controlp, tabIndex=1, image="zoom";
+Label lqt04:lqt04, text=%"Member Level";
+ButtonEdit lpc01=lpc_file.lpc01, action=controlp, tabIndex=2, image="zoom";
+Label lqr03:lqr03, text=%"Change Resson";
+ButtonEdit lqr01=lqr_file.lqr03, action=controlp, tabIndex=3, not null, required, image="zoom";
+Label lqt08:lqt08, text=%"Up Level";
+ButtonEdit lqt01=lqt_file.lqt08, action=controlp, tabIndex=4, image="zoom";
+Label lpr01:lpr01, text=%"Level";
+ButtonEdit lqr02=lqr_file.lqr01, action=controlp, tabIndex=5, image="zoom";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=6, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lpj_file.lpj01,lpc_file.lpc01,lqr_file.lqr03,lqt_file.lqt08,lqr_file.lqr01,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

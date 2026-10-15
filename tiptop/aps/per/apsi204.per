@@ -1,0 +1,93 @@
+----------------------------------------------------------------------------------
+-- $Id:  apsi204.per created Wed Dec 31 05:29:36 2008
+-- File created from apsi204.4fd by Genero Studio 11401
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="apsi204")
+-- GRID
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX vb7
+    FOLDER pc4
+      PAGE page01( TEXT="Page01")
+        GRID gr7
+        {
+         <G group01                                       >
+          Item No.               [aa0                 ]
+          Lot Sizing Rule        [aa1                 ]
+          Used Up Part           [aa2                 ]
+          Integer Type           [aa3                 ]
+          Max of Lot Qty         [aa4            ]
+          Key Meterial           [aa5                 ]
+          Consolidated           [aa6                 ]
+          MO Late Toleranc       [aa7            ]
+          PO late Tolerance      [aa8            ]
+          Feature Part           [aa9                 ]
+          Con type               [ab0                 ]
+          Rel Refo               [ab1                 ]
+          Lst Cmb                [ab2                 ]
+          Lst Cblm               [ab3                 ]
+          Is Cnsn                [ab4                 ]
+          Sfixed Lead Time       [ab5            ]
+          Supply Rule Id         [ab6                  ]
+          Cons-bucket size       [ab7                  ]
+          Alt Ratio              [ab8            ]
+          Origin Place Id        [ab9            ]
+          Production Line Id     [ac0            ]
+          Production Line Name   [ac1            ]
+          Is Break Point         [ac2                 ]
+          Is Phantom Del         [ac3                 ]
+         <                                                >
+
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    GRID gr8
+    {
+     ----------Rows [ac4   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES aps_ima
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=FORMONLY.pid, NOT NULL, NOENTRY, REQUIRED, TABINDEX=1;
+  COMBOBOX aa1=FORMONLY.lot_rule, QUERYEDITABLE, TABINDEX=2, ITEMS=(("0","lot-fot-lot"),("1","max_lot_size????????lot_size?????????????ot_size"),("2","Other"));
+  COMBOBOX aa2=FORMONLY.is_used, COMMENT="0/1(If Inventory Been Used-up, No Longer Purchase)", QUERYEDITABLE, TABINDEX=3, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX aa3=FORMONLY.is_int, COMMENT="Enter  0/1", QUERYEDITABLE, TABINDEX=4, ITEMS=(("0","False"),("1","True"));
+  EDIT aa4=aps_ima.max_lot, NOT NULL, REQUIRED, TABINDEX=5;
+  COMBOBOX aa5=FORMONLY.is_ctl, COMMENT="Enter  0/1", QUERYEDITABLE, TABINDEX=6, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX aa6=FORMONLY.is_cons, COMMENT="Enter  0/1", QUERYEDITABLE, TABINDEX=7, ITEMS=(("0","False"),("1","True"));
+  EDIT aa7=aps_ima.mo_tol, TABINDEX=9;
+  EDIT aa8=aps_ima.po_tol, TABINDEX=10;
+  COMBOBOX aa9=aps_ima.is_feat, COMMENT="Enter  0/1", QUERYEDITABLE, TABINDEX=17, ITEMS=(("0","Not Feature"),("1","Yes,Accessory Child Lv Must Choice Option part   "),("2","Yes,Accessory Child Lv  NOT limits Must Choice Option part  "));
+  COMBOBOX ab0=FORMONLY.con_type, QUERYEDITABLE, TABINDEX=11, ITEMS=(("0","Consume For General Order"),("1","Consume FOR SO Forcast"));
+  COMBOBOX ab1=FORMONLY.rel_refo, COMMENT="Enter  0/1", QUERYEDITABLE, TABINDEX=12, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX ab2=FORMONLY.lst_cmb, COMMENT="Enter  0/1", QUERYEDITABLE, TABINDEX=13, ITEMS=(("0","False"),("1","True"));
+  EDIT ab3=FORMONLY.lst_cblm, TABINDEX=14;
+  COMBOBOX ab4=FORMONLY.is_cnsn, COMMENT="Enter  0/1", QUERYEDITABLE, TABINDEX=15, ITEMS=(("0","False"),("1","True"));
+  EDIT ab5=aps_ima.sfx_lt, TABINDEX=18;
+  EDIT ab6=aps_ima.sply_rid, TABINDEX=25;
+  EDIT ab7=aps_ima.cons_bs, TABINDEX=8;
+  EDIT ab8=aps_ima.al_ratio, TABINDEX=19;
+  EDIT ab9=aps_ima.orip_id, TABINDEX=20;
+  EDIT ac0=aps_ima.pro_line_id, TABINDEX=21;
+  EDIT ac1=aps_ima.pro_line_nm, TABINDEX=22;
+  COMBOBOX ac2=aps_ima.is_b_point, QUERYEDITABLE, TABINDEX=23, ITEMS=(("0","False"),("1","True"));
+  COMBOBOX ac3=aps_ima.is_phan_del, QUERYEDITABLE, TABINDEX=24, ITEMS=(("0","False"),("1","True"));
+  EDIT ac4=FORMONLY.cnt, NOENTRY, TABINDEX=16;
+END

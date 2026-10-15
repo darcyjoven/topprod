@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmt233_5.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmt233_5")
+VBox VBox1
+Grid gr1104
+{
+ <G group01                                          >
+   Item#                      [ima01          ]
+   Bar Code                   [ima135         ]
+   Main Grp Cd.               [ima06          ]
+   Product Clas               [ima1004        ]
+   Brand                      [ima1005        ]
+   Series                     [ima1006        ]
+   Type                       [ima1007        ]
+   Specification              [ima1008        ]
+   Attribute                  [ima1009        ]
+ <                                                   >
+ <G group02                                           >
+   Pro. SDate                 [a              ]
+   Pro. EDate                 [b              ]
+ <                                                    >
+
+}
+END -- gr1104
+END -- VBox1
+END -- atmt233_5
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:group01, text="Item Query";
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima135=ima_file.ima135, tabIndex=2;
+ButtonEdit ima06=ima_file.ima06, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit ima1004=ima_file.ima1004, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit ima1005=ima_file.ima1005, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit ima1006=ima_file.ima1006, action=controlp, tabIndex=6, image="zoom";
+ButtonEdit ima1007=ima_file.ima1007, action=controlp, tabIndex=7, image="zoom";
+ButtonEdit ima1008=ima_file.ima1008, action=controlp, tabIndex=8, image="zoom";
+ButtonEdit ima1009=ima_file.ima1009, action=controlp, tabIndex=9, image="zoom";
+Group group02:group02, text="Price";
+DateEdit a=formonly.a type CHAR, tabIndex=10, not null, required;
+DateEdit b=formonly.b type CHAR, tabIndex=11, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima135,ima_file.ima06,ima_file.ima1004,ima_file.ima1005,ima_file.ima1006,ima_file.ima1007,ima_file.ima1008,ima_file.ima1009,formonly.a,formonly.b)
+END -- INSTRUCTIONS
+

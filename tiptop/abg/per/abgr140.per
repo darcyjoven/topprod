@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgr140.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abgr140")
+Grid gr13
+{
+ <G group01                                                              >
+  Book No.               [b         ]
+  Report Type            [rtype     ]
+  Report Structure No.   [a         ]
+ <                                                                       >
+ <G group02                                                              >
+                [dummy01   ]  [dummy02   ]  [dummy03   ]  [dummy04   ]
+  Enter Name    [title1    ]  [title2    ]  [title3    ]  [title4    ]
+  Enter Year    [yy1       ]  [yy2       ]  [yy3       ]  [yy4       ]
+  Initial Period[bm1       ]  [bm2       ]  [bm3       ]  [bm4       ]
+  Ending Period [em1       ]  [em2       ]  [em3       ]  [em4       ]
+
+  Budget Item           [budget    ]
+  Decimal Digits        [e         ]  Print Minimum Level#[f         ]
+  amount unit           [d         ]
+                        [o         ]
+  G/L Curr.             [r         ]
+  Convert Curr.         [p         ]  * Ex.Rate [q         ]
+ <                                                                       >
+ <G group03                                                              >
+  [c                             ]
+  [h                             ]
+  [more                                    ]
+ <                                                                       >
+
+}
+END -- gr13
+END -- abgr140
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P> Query Book No.";
+ComboBox rtype=formonly.rtype type VARCHAR, tabIndex=1, comment="blank or zero means All", items=(("1", "Balance Sheet"),("2", "Income statement"));
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P> Qry Report No.";
+Group group02:group02;
+Label dummy01:dummy01, text="1st Period";
+Label dummy02:dummy02, text="2nd Period";
+Label dummy03:dummy03, text="3rd Period";
+Label dummy04:dummy04, text="4th Period";
+Edit title1=formonly.title1 type CHAR, tabIndex=4;
+Edit title2=formonly.title2 type CHAR, tabIndex=5;
+Edit title3=formonly.title3 type CHAR, tabIndex=6;
+Edit title4=formonly.title4 type CHAR, tabIndex=7;
+Edit yy1=formonly.yy1 type SMALLINT, tabIndex=8, not null, required;
+Edit yy2=formonly.yy2 type SMALLINT, tabIndex=9;
+Edit yy3=formonly.yy3 type SMALLINT, tabIndex=10;
+Edit yy4=formonly.yy4 type SMALLINT, tabIndex=11;
+Edit bm1=formonly.bm1 type SMALLINT, tabIndex=12;
+Edit bm2=formonly.bm2 type SMALLINT, tabIndex=13;
+Edit bm3=formonly.bm3 type SMALLINT, tabIndex=14;
+Edit bm4=formonly.bm4 type SMALLINT, tabIndex=15;
+Edit em1=formonly.em1 type SMALLINT, tabIndex=16, not null, required;
+Edit em2=formonly.em2 type SMALLINT, tabIndex=17;
+Edit em3=formonly.em3 type SMALLINT, tabIndex=18;
+Edit em4=formonly.em4 type SMALLINT, tabIndex=19;
+ButtonEdit budget=formonly.budget type CHAR, action=controlp, tabIndex=30, image="zoom.png";
+Edit e=formonly.e type CHAR, tabIndex=20;
+Edit f=formonly.f type SMALLINT, tabIndex=21, not null, required;
+ComboBox d=formonly.d type VARCHAR, tabIndex=22, not null, required, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+CheckBox o=formonly.o type VARCHAR, tabIndex=23, text="Convert Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=24, noEntry;
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=25, not null, required, image="zoom", comment="<^P> Qry Currency";
+Edit q=formonly.q type DECIMAL, tabIndex=26;
+Group group03:group03;
+CheckBox c=formonly.c type VARCHAR, tabIndex=27, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox h=formonly.h type VARCHAR, tabIndex=28, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=29, text="Ohter conditionto print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.b,formonly.rtype,formonly.a,formonly.title1,formonly.title2,formonly.title3,formonly.title4,formonly.yy1,formonly.yy2,formonly.yy3,formonly.yy4,formonly.bm1,formonly.bm2,formonly.bm3,formonly.bm4,formonly.em1,formonly.em2,formonly.em3,formonly.em4,formonly.budget,formonly.e,formonly.f,formonly.d,formonly.o,formonly.r,formonly.p,formonly.q,formonly.c,formonly.h,formonly.more)
+END -- INSTRUCTIONS
+

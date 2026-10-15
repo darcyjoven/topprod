@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr340.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr340")
+VBox vb1
+Grid gr261
+{
+ <G group01                                                                                 >
+  Pay.Vend            [apa06              ]    Acct Dt             [apa02              ]
+  Account Empl        [apa21              ]    Acct No.            [apa01              ]
+  Payt.Mtd            [apa11              ]    Curr                [apa13              ]
+  Tenr                [apa24              ]    Acct Pty            [apa00              ]
+  A/P Date            [apa12              ]    Acct.Cat            [apa36              ]
+  Note Due Date       [apa64              ]    Voucher No.         [apa44              ]
+ <                                                                                          >
+
+}
+END -- gr261
+Group group02(text="INPUT")
+Grid gr262
+{
+
+
+  [sw_21                         ]   Data Status [h                     ]
+  [sw_23                         ]               [                      ]
+  [sw_22                         ]               [                      ]
+  [z                             ]
+
+ <G group03                                                                         >
+  [s1           ]     [s2            ]     [s3             ]
+  [t1           ]     [t2            ]     [t3             ]
+  [u1           ]     [u2            ]     [u3             ]
+
+ <                                                                                  >
+
+}
+END -- gr262
+END -- group02
+Grid gr263
+{
+[more                                                        ]
+
+}
+END -- gr263
+END -- vb1
+END -- aapr340
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit apa06=formonly.apa06 type VARCHAR, action=controlp, tabIndex=1, image="zoom.png";
+DateEdit apa02=formonly.apa02 type DATE, tabIndex=2;
+ButtonEdit apa21=formonly.apa21 type VARCHAR, action=controlp, tabIndex=3, image="zoom.png";
+ButtonEdit apa01=formonly.apa01 type VARCHAR, action=controlp, tabIndex=4, image="zoom.png";
+ButtonEdit apa11=formonly.apa11 type VARCHAR, action=controlp, tabIndex=5, image="zoom.png";
+ButtonEdit apa13=formonly.apa13 type VARCHAR, action=controlp, tabIndex=6, image="zoom.png";
+ButtonEdit apa24=formonly.apa24 type SMALLINT, action=controlp, tabIndex=7, image="zoom";
+ComboBox apa00=formonly.apa00 type VARCHAR, tabIndex=8, queryEditable, items=(("11", "Purchase Invoice"),("12", "MISC Invoice"),("13", "Apply&Restore"),("15", "Advance Payment Appl."),("16", "Temp. Store-in"),("17", "Defray"),("21", "Allowance"),("22", "D.M."),("23", "Advance Payment"),("24", "Overpayment"),("25", "Defray to offset"),("26", "Temp. Store-out"));
+DateEdit apa12=formonly.apa12 type DATE, tabIndex=9;
+ButtonEdit apa36=formonly.apa36 type VARCHAR, action=controlp, tabIndex=10, image="zoom.png";
+DateEdit apa64=formonly.apa64 type DATE, tabIndex=25;
+ButtonEdit apa44=formonly.apa44 type VARCHAR, action=controlp, tabIndex=27, image="zoom";
+CheckBox sw_21=formonly.sw_21 type CHAR, tabIndex=11, text="Contra Return/Allowance", not null, required, valueChecked = "Y", valueUnchecked = "N";
+RadioGroup h=formonly.h type CHAR, tabIndex=26, default = "3", items=(("1", "Confirmed"),("2", "UnConfirmed"),("3", "All "));
+CheckBox sw_23=formonly.sw_23 type CHAR, tabIndex=12, text="Contra Advance Payment?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sw_22=formonly.sw_22 type CHAR, tabIndex=13, text="Contra?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox z=formonly.z type CHAR, tabIndex=14, text="Print UNAP", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=15, queryEditable, items=(("1", "Pay.Vend"),("2", "Ac.Empl "),("3", "Payt.Mtd"),("4", "Tenr"),("5", "A/P Date"),("6", "Note Due Date"),("7", "Acct.Dt"),("8", "Acct NO."),("9", "Curr "),("a", "Acct Pty"),("b", "Acct.Cat"),("c", "Voucher No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=16, queryEditable, items=(("1", "Pay.Vend"),("2", "Ac.Empl "),("3", "Payt.Mtd"),("4", "Tenr"),("5", "A/P Date"),("6", "Note Due Date"),("7", "Acct.Dt"),("8", "Acct NO."),("9", "Curr "),("a", "Acct Pty"),("b", "Acct.Cat"),("c", "Voucher No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=17, queryEditable, items=(("1", "Pay.Vend"),("2", "Ac.Empl "),("3", "Payt.Mtd"),("4", "Tenr"),("5", "A/P Date"),("6", "Note Due Date"),("7", "Acct.Dt"),("8", "Acct NO."),("9", "Curr "),("a", "Acct Pty"),("b", "Acct.Cat"),("c", "Voucher No."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=18, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=19, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=20, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=21, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=22, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=23, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=24, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apa06,formonly.apa02,formonly.apa21,formonly.apa01,formonly.apa11,formonly.apa13,formonly.apa24,formonly.apa00,formonly.apa12,formonly.apa36,formonly.apa64,formonly.apa44,formonly.sw_21,formonly.h,formonly.sw_23,formonly.sw_22,formonly.z,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.more)
+END -- INSTRUCTIONS
+

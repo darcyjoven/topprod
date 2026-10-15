@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcq413.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aqcq413")
+VBox vb11
+Folder folder01
+Page page01(text="Page01")
+Grid gr49
+{
+ <G group01                                                           ><G group03                                                           >
+  Item No.            [qcf021                        ]                  QC Lots             [lot       ]
+  Part Name           [ima02                         ]                  Lots Rejected       [rejlot    ]
+  Specification       [ima021                        ]                  Lot Rejected%       [rejrate   ] %
+ <                                                                    >
+ <G group02                                                           >
+  QC Date             [bdate       ]-[edate       ]
+ <                                                                    ><                                                                    >
+
+}
+END -- gr49
+END -- page01
+END -- folder01
+Table s_qcf1
+{
+[qcf04       |sfb22            |qcf02            |qcf22          |qcf091         |qty         |rate      |desc  |cr     |ma     |mi     ]
+[qcf04       |sfb22            |qcf02            |qcf22          |qcf091         |qty         |rate      |desc  |cr     |ma     |mi     ]
+[qcf04       |sfb22            |qcf02            |qcf22          |qcf091         |qty         |rate      |desc  |cr     |ma     |mi     ]
+[qcf04       |sfb22            |qcf02            |qcf22          |qcf091         |qty         |rate      |desc  |cr     |ma     |mi     ]
+[qcf04       |sfb22            |qcf02            |qcf22          |qcf091         |qty         |rate      |desc  |cr     |ma     |mi     ]
+[qcf04       |sfb22            |qcf02            |qcf22          |qcf091         |qty         |rate      |desc  |cr     |ma     |mi     ]
+[qcf04       |sfb22            |qcf02            |qcf22          |qcf091         |qty         |rate      |desc  |cr     |ma     |mi     ]
+[qcf04       |sfb22            |qcf02            |qcf22          |qcf091         |qty         |rate      |desc  |cr     |ma     |mi     ]
+[qcf04       |sfb22            |qcf02            |qcf22          |qcf091         |qty         |rate      |desc  |cr     |ma     |mi     ]
+[qcf04       |sfb22            |qcf02            |qcf22          |qcf091         |qty         |rate      |desc  |cr     |ma     |mi     ]
+
+}
+END -- s_qcf1
+Grid gr50
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr50
+END -- vb11
+END -- aqcq413
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit qcf021=formonly.qcf021 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=3, noEntry;
+Group group03:group03;
+Edit lot=formonly.lot type CHAR, tabIndex=4;
+Edit rejlot=formonly.rejlot type CHAR, tabIndex=5;
+Edit rejrate=formonly.rejrate type CHAR, tabIndex=6;
+Group group02:group02, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=7, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=8, not null, required;
+DateEdit qcf04=formonly.qcf04 type CHAR, tabIndex=9, title="QC Date";
+Edit sfb22=formonly.sfb22 type CHAR, tabIndex=10, title="Order No.";
+Edit qcf02=formonly.qcf02 type CHAR, tabIndex=11, title="W/O No.";
+Edit qcf22=formonly.qcf22 type CHAR, tabIndex=12, title="Qty Sent to QC";
+Edit qcf091=formonly.qcf091 type CHAR, tabIndex=20, title=%"Qty Passed";
+Edit qty=formonly.qty type CHAR, tabIndex=13, title="NO-Good Qty";
+Edit rate=formonly.rate type CHAR, tabIndex=14, title="NO-Good %";
+Edit desc=formonly.desc type CHAR, tabIndex=15, title="Judge";
+Edit cr=formonly.cr type CHAR, tabIndex=16, title="CR";
+Edit ma=formonly.ma type CHAR, tabIndex=17, title="MA";
+Edit mi=formonly.mi type CHAR, tabIndex=18, title="MI";
+Edit cnt=formonly.cnt type CHAR, tabIndex=19;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qcf1(formonly.qcf04,formonly.sfb22,formonly.qcf02,formonly.qcf22,formonly.qcf091,formonly.qty,formonly.rate,formonly.desc,formonly.cr,formonly.ma,formonly.mi)
+SCREEN RECORD Undefined(formonly.qcf021,formonly.ima02,formonly.ima021,formonly.lot,formonly.rejlot,formonly.rejrate,formonly.bdate,formonly.edate,formonly.cnt)
+END -- INSTRUCTIONS
+

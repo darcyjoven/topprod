@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi751.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi751")
+VBox vb2
+Folder pc883
+Page page01(text="Main")
+Table s_ceb
+{
+[ceb01               |ceb02               |cebacti  ]
+[ceb01               |ceb02               |cebacti  ]
+[ceb01               |ceb02               |cebacti  ]
+[ceb01               |ceb02               |cebacti  ]
+[ceb01               |ceb02               |cebacti  ]
+[ceb01               |ceb02               |cebacti  ]
+[ceb01               |ceb02               |cebacti  ]
+[ceb01               |ceb02               |cebacti  ]
+[ceb01               |ceb02               |cebacti  ]
+[ceb01               |ceb02               |cebacti  ]
+
+}
+END -- s_ceb
+END -- page01
+END -- pc883
+Grid gr4740
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4740
+END -- vb2
+END -- acoi751
+
+TABLES
+ceb_file
+ATTRIBUTES
+Edit ceb01=ceb_file.ceb01, tabIndex=1, title="Duty-Free Method Code";
+Edit ceb02=ceb_file.ceb02, tabIndex=2, title="Duty-Free Method Description", not null, required;
+CheckBox cebacti=ceb_file.cebacti, tabIndex=3, title="Valid Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ceb(ceb_file.ceb01,ceb_file.ceb02,ceb_file.cebacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

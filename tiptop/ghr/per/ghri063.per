@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri063.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(action=main, text=%"Page1")
+Grid Grid1
+{
+ <G group1                                                                                                            >
+   hrcw02[hrcw02                         ]
+   hrcw03[hrcw03                         ]
+   hrcw04[hrcw04                         ]
+   hrcw05[hrcw05                         ]
+   hrcw06[hrcw06    ]   hrcw07[hrcw07    ]
+         [hrcw08                         ]
+   hrcw09[hrcw09                                                                                              ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+         [                                                                                                    ]
+
+
+ <                                                                                                                    >
+}
+END -- Grid1
+END -- Page1
+Page Page2(action=item_list, text=%"Page2")
+Table Table1
+{
+[hrcw01_b|hrcw05_b|hrcw02_b|hrcw03_b|hrcw04_b|hrcw06_b|hrcw07_b]
+[hrcw01_b|hrcw05_b|hrcw02_b|hrcw03_b|hrcw04_b|hrcw06_b|hrcw07_b]
+[hrcw01_b|hrcw05_b|hrcw02_b|hrcw03_b|hrcw04_b|hrcw06_b|hrcw07_b]
+[hrcw01_b|hrcw05_b|hrcw02_b|hrcw03_b|hrcw04_b|hrcw06_b|hrcw07_b]
+[hrcw01_b|hrcw05_b|hrcw02_b|hrcw03_b|hrcw04_b|hrcw06_b|hrcw07_b]
+
+
+
+
+}
+END -- Table1
+END -- Page2
+END -- Folder1
+Grid Grid2
+{
+  ---------- cnt[cnt]----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"";
+Edit hrcw02=formonly.hrcw02 type VARCHAR, tabIndex=1, not null, required;
+Edit hrcw03=formonly.hrcw03 type VARCHAR, tabIndex=2;
+Edit hrcw04=formonly.hrcw04 type VARCHAR, tabIndex=3, not null, required;
+ComboBox hrcw05=formonly.hrcw05 type VARCHAR, tabIndex=4, not null, required;
+DateEdit hrcw06=formonly.hrcw06 type DATE, tabIndex=5, not null, required;
+DateEdit hrcw07=formonly.hrcw07 type DATE, tabIndex=6, not null, required;
+CheckBox hrcw08=formonly.hrcw08 type VARCHAR, tabIndex=8, text=%"hrcw08", not null, required, valueChecked = "Y", valueUnchecked = "N";
+TextEdit hrcw09=formonly.hrcw09 type VARCHAR, tabIndex=7;
+Edit hrcw01_b=formonly.hrcw01_b type VARCHAR, tabIndex=16, title=%"hrcw01_b", noEntry;
+ComboBox hrcw05_b=formonly.hrcw05_b type VARCHAR, tabIndex=9, title=%"hrcw05_b", noEntry;
+Edit hrcw02_b=formonly.hrcw02_b type VARCHAR, tabIndex=10, title=%"hrcw02_b", noEntry;
+Edit hrcw03_b=formonly.hrcw03_b type VARCHAR, tabIndex=12, title=%"hrcw03_b", noEntry;
+Edit hrcw04_b=formonly.hrcw04_b type VARCHAR, tabIndex=13, title=%"hrcw04_b", noEntry;
+DateEdit hrcw06_b=formonly.hrcw06_b type VARCHAR, tabIndex=14, title=%"hrcw06_b", noEntry;
+DateEdit hrcw07_b=formonly.hrcw07_b type VARCHAR, tabIndex=15, title=%"hrcw07_b", noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrcw02,formonly.hrcw03,formonly.hrcw04,formonly.hrcw05,formonly.hrcw06,formonly.hrcw07,formonly.hrcw09,formonly.hrcw08,formonly.cnt)
+SCREEN RECORD s_hrcw(formonly.hrcw01_b,formonly.hrcw05_b,formonly.hrcw02_b,formonly.hrcw03_b,formonly.hrcw04_b,formonly.hrcw06_b,formonly.hrcw07_b)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_sfaimg2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"s_sfaimg2")
+VBox VBox1
+Grid gr3919
+{
+ <G gb2821                                  >
+  Down Level Item No. [sfa03               ]
+  Current Qty Consumed[pqty         ]/[sfa1]
+  Unissued Qty        [pqty1        ]
+  Unallocated Qty     [sfa25        ]
+  Shortage Qty        [sfa07        ]
+ <                                          >
+
+}
+END -- gr3919
+Table tn_0
+{
+[su|img02         |img03          |img04                   |img09|img19           |factor              |img10        |pqty11                ]
+[su|img02         |img03          |img04                   |img09|img19           |factor              |img10        |pqty11                ]
+[su|img02         |img03          |img04                   |img09|img19           |factor              |img10        |pqty11                ]
+[su|img02         |img03          |img04                   |img09|img19           |factor              |img10        |pqty11                ]
+
+}
+END -- tn_0
+END -- VBox1
+END -- s_sfaimg2
+
+ATTRIBUTES
+Group gb2821:gb2821, text="group01";
+Edit sfa03=formonly.sfa03 type CHAR, tabIndex=1, noEntry;
+Edit pqty=formonly.pqty type CHAR, tabIndex=2, noEntry;
+Edit sfa1=formonly.sfa12 type CHAR, tabIndex=3, noEntry;
+Edit pqty1=formonly.pqty1 type CHAR, tabIndex=4, noEntry;
+Edit sfa25=formonly.sfa25 type CHAR, tabIndex=5, noEntry;
+Edit sfa07=formonly.sfa07 type CHAR, tabIndex=6, noEntry;
+Edit su=formonly.sure type CHAR, tabIndex=7, title="X", noEntry;
+Edit img02=formonly.img02 type CHAR, tabIndex=8, title="Warehouse No.", noEntry;
+Edit img03=formonly.img03 type CHAR, tabIndex=9, title="Storing Locate", noEntry;
+Edit img04=formonly.img04 type CHAR, tabIndex=10, title="Lot No.", noEntry;
+Edit img09=formonly.img09 type CHAR, tabIndex=11, title="Unit", noEntry;
+Edit img19=formonly.img19 type CHAR, tabIndex=12, title="Inventory Class", noEntry;
+Edit factor=formonly.factor type DECIMAL, tabIndex=13, title="Convert Rate";
+Edit img10=formonly.img10 type CHAR, tabIndex=14, title="Available", noEntry;
+Edit pqty11=formonly.pqty11 type DECIMAL, tabIndex=15, title="Inventory Consumed Qty";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(formonly.sure,formonly.img02,formonly.img03,formonly.img19,formonly.img09,formonly.img10,formonly.pqty11,formonly.img04,formonly.factor)
+SCREEN RECORD tn_0(formonly.sure,formonly.img02,formonly.img03,formonly.img04,formonly.img09,formonly.img19,formonly.factor,formonly.img10,formonly.pqty11)
+SCREEN RECORD Undefined(formonly.sfa03,formonly.pqty,formonly.sfa12,formonly.pqty1,formonly.sfa25,formonly.sfa07)
+END -- INSTRUCTIONS
+

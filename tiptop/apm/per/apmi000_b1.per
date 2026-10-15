@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi000_b1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi000_b1")
+Grid gr4796
+{
+ <T finance                                                                                                                                                   >
+ [poy02_1   |poy03_1    |pmc03_1     |poy18   |poy19   |poy12   |poy07            |poy06         |poy08 |poy09 |poy16   |poy17   |poy46          |poy45      ]
+ [poy02_1   |poy03_1    |pmc03_1     |poy18   |poy19   |poy12   |poy07            |poy06         |poy08 |poy09 |poy16   |poy17   |poy46          |poy45      ]
+ [poy02_1   |poy03_1    |pmc03_1     |poy18   |poy19   |poy12   |poy07            |poy06         |poy08 |poy09 |poy16   |poy17   |poy46          |poy45      ]
+ [poy02_1   |poy03_1    |pmc03_1     |poy18   |poy19   |poy12   |poy07            |poy06         |poy08 |poy09 |poy16   |poy17   |poy46          |poy45      ]
+ [poy02_1   |poy03_1    |pmc03_1     |poy18   |poy19   |poy12   |poy07            |poy06         |poy08 |poy09 |poy16   |poy17   |poy46          |poy45      ]
+ [poy02_1   |poy03_1    |pmc03_1     |poy18   |poy19   |poy12   |poy07            |poy06         |poy08 |poy09 |poy16   |poy17   |poy46          |poy45      ]
+ <                                                                                                                                                            >
+
+}
+END -- gr4796
+END -- apmi000_b1
+
+TABLES
+poy_file
+ATTRIBUTES
+Table finance:finance;
+Edit poy02_1=formonly.poy02_1 type CHAR, tabIndex=1, title="Flow No.", noEntry;
+Edit poy03_1=formonly.poy03_1 type CHAR, tabIndex=2, title="Vender No.", noEntry;
+Edit pmc03_1=formonly.pmc03_1 type CHAR, tabIndex=3, title="Vender Name", noEntry;
+ButtonEdit poy18=poy_file.poy18, action=controlp, tabIndex=4, title="AR Dep.", image="zoom", comment="<^P>Qry A/R Department Code";
+ButtonEdit poy19=poy_file.poy19, action=controlp, tabIndex=5, title="AP Dep.", image="zoom", comment="<^P>Qry A/P Department Code";
+ButtonEdit poy12=poy_file.poy12, action=controlp, tabIndex=6, title="Invoice", image="zoom.png";
+ButtonEdit poy07=poy_file.poy07, action=controlp, tabIndex=7, title="Collection Terms", image="zoom", comment="<^P>Qry Collection Terms";
+ButtonEdit poy06=poy_file.poy06, action=controlp, tabIndex=8, title="Payment Terms", image="zoom", comment="<^P>Qry Payment Terms";
+ButtonEdit poy08=poy_file.poy08, action=controlp, tabIndex=9, title="SOTax", image="zoom", upShift, comment="<^P>Qry Tax Type";
+ButtonEdit poy09=poy_file.poy09, action=controlp, tabIndex=10, title="POTax", image="zoom", upShift, comment="<^P>Qry Tax Type";
+ButtonEdit poy16=poy_file.poy16, action=controlp, tabIndex=11, title="AR Cate", image="zoom", comment="<^P>Qry AR Cat";
+ButtonEdit poy17=poy_file.poy17, action=controlp, tabIndex=12, title="AP Cate", image="zoom", comment="<^P>Qry AP Cat";
+ButtonEdit poy46=poy_file.poy46, action=controlp, tabIndex=13, title="Purchase C.Ctr", image="zoom", comment="<^P>Qry Plant";
+ButtonEdit poy45=poy_file.poy45, action=controlp, tabIndex=14, title="Order C.Ctr", image="zoom", comment="<^P>Qry Plant";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_poy1(formonly.poy02_1,formonly.poy03_1,formonly.pmc03_1,poy_file.poy18,poy_file.poy19,poy_file.poy12,poy_file.poy07,poy_file.poy06,poy_file.poy08,poy_file.poy09,poy_file.poy16,poy_file.poy17,poy_file.poy46,poy_file.poy45)
+END -- INSTRUCTIONS
+

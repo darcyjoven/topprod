@@ -1,0 +1,119 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq307.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"gglq307")
+VBox VBox2
+Group g02(text=%"INPUT1")
+Grid Grid1
+{
+ Book No.            [bookno              ]
+
+}
+END -- Grid1
+END -- g02
+Group group01(text="QBE")
+VBox VBox1
+Grid gr5
+{
+ Account NO.  [aag01                           ]
+
+
+}
+END -- gr5
+Grid gr6
+{
+
+ Department No.    [aeh02                           ]        Dimension - Affiliate  [aeh37                           ]
+ Dimension - 1     [aeh04                           ]        Dimension - 2          [aeh05                           ]
+ Dimension - 3     [aeh06                           ]        Dimension - 4          [aeh07                           ]
+ Dimension - 5     [aeh31                           ]        Dimension - 6          [aeh32                           ]
+ Dimension - 7     [aeh33                           ]        Dimension - 8          [aeh34                           ]
+ Dimension - 9     [aeh35                           ]        Dimension - 10         [aeh36                           ]
+}
+END -- gr6
+END -- VBox1
+END -- group01
+Group g01(text="INPUT")
+VBox vb7
+Grid gr2
+{
+
+ Year                [yy        ]
+ Month               [m1        ]-[m2        ]
+
+}
+END -- gr2
+Grid gr6_
+{
+  <G gb6                                                                                                                      >
+   Sort 1  [s1                         ]     Sort 2  [s2                         ]     Sort 3  [s3                         ]
+  <                                                                                                                           >
+
+}
+END -- gr6_
+Grid gr7
+{
+ <G gb12                                                            >   <G group06            >
+   [a                                                             ]     [g             ]
+   [b                                                             ]     [              ]
+   [e                                                             ]     [              ]
+   [f                                                             ]     [              ]
+   [i                                                             ]     [              ]
+    Level To print      [lvl         ]                                  [              ]
+ <                                                                  >   <                     >
+}
+END -- gr7
+Grid gr4
+{
+[more                                ]
+
+
+}
+END -- gr4
+END -- vb7
+END -- g01
+END -- VBox2
+END -- gglq307
+
+ATTRIBUTES
+ButtonEdit bookno=formonly.bookno type CHAR, action=controlp, tabIndex=14, not null, required, image="zoom.png";
+ButtonEdit aag01=formonly.aag01 type VARCHAR, action=controlp, tabIndex=1, image="zoom.png";
+ButtonEdit aeh02=formonly.aeh02 type VARCHAR, action=controlp, tabIndex=2, image="zoom.png";
+ButtonEdit aeh37=formonly.aeh37 type VARCHAR, action=controlp, tabIndex=3, image="zoom.png";
+ButtonEdit aeh04=formonly.aeh04 type VARCHAR, action=controlp, tabIndex=4, image="zoom.png";
+ButtonEdit aeh05=formonly.aeh05 type VARCHAR, action=controlp, tabIndex=5, image="zoom.png";
+ButtonEdit aeh06=formonly.aeh06 type VARCHAR, action=controlp, tabIndex=6, image="zoom.png";
+ButtonEdit aeh07=formonly.aeh07 type VARCHAR, action=controlp, tabIndex=7, image="zoom.png";
+ButtonEdit aeh31=formonly.aeh31 type VARCHAR, action=controlp, tabIndex=8, image="zoom.png";
+ButtonEdit aeh32=formonly.aeh32 type VARCHAR, action=controlp, tabIndex=9, image="zoom.png";
+ButtonEdit aeh33=formonly.aeh33 type VARCHAR, action=controlp, tabIndex=10, image="zoom.png";
+ButtonEdit aeh34=formonly.aeh34 type VARCHAR, action=controlp, tabIndex=11, image="zoom.png";
+ButtonEdit aeh35=formonly.aeh35 type VARCHAR, action=controlp, tabIndex=12, image="zoom.png";
+ButtonEdit aeh36=formonly.aeh36 type VARCHAR, action=controlp, tabIndex=13, image="zoom.png";
+Edit yy=formonly.yy type CHAR, tabIndex=15;
+Edit m1=formonly.m1 type CHAR, tabIndex=16;
+Edit m2=formonly.m2 type CHAR, tabIndex=17;
+Group gb6:gb6, text="Sort";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=18, items=(("1", "Department"),("2", "Dimension - 1"),("3", "Dimension - 2"),("4", "Dimension - 3"),("5", "Dimension - 4"),("6", "Dimension - 5"),("7", "Dimension - 6"),("8", "Dimension - 7"),("9", "Dimension - 8"),("A", "Dimension - 9"),("B", "Dimension - 10"),("C", "Dimension - Affliate"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=19, items=(("1", "Department"),("2", "Dimension - 1"),("3", "Dimension - 2"),("4", "Dimension - 3"),("5", "Dimension - 4"),("6", "Dimension - 5"),("7", "Dimension - 6"),("8", "Dimension - 7"),("9", "Dimension - 8"),("A", "Dimension - 9"),("B", "Dimension - 10"),("C", "Dimension - Affliate"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=20, items=(("1", "Department"),("2", "Dimension - 1"),("3", "Dimension - 2"),("4", "Dimension - 3"),("5", "Dimension - 4"),("6", "Dimension - 5"),("7", "Dimension - 6"),("8", "Dimension - 7"),("9", "Dimension - 8"),("A", "Dimension - 9"),("B", "Dimension - 10"),("C", "Dimension - Affliate"));
+Group gb12:gb12, text="Option 1";
+CheckBox a=formonly.a type CHAR, tabIndex=21, text="Include All Account No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type CHAR, tabIndex=22, text="Include accumulated amount in current year", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=23, text="Include Invalid ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type CHAR, tabIndex=24, text="Print Extra Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox i=formonly.i type CHAR, tabIndex=25, text="Print Trans. Curr.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit lvl=formonly.lvl type SMALLINT, tabIndex=28;
+Group group06:group06, text="Option 2";
+RadioGroup g=formonly.g type CHAR, tabIndex=26, items=(("1", "ALL"),("2", "Confirmed"),("3", "Posted"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=27, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,formonly.aag01,formonly.aeh02,formonly.aeh37,formonly.aeh04,formonly.aeh05,formonly.aeh06,formonly.aeh07,formonly.aeh31,formonly.aeh32,formonly.aeh33,formonly.aeh34,formonly.aeh35,formonly.aeh36,formonly.yy,formonly.m1,formonly.m2,formonly.s1,formonly.s2,formonly.s3,formonly.a,formonly.b,formonly.e,formonly.f,formonly.i,formonly.lvl,formonly.g,formonly.more)
+END -- INSTRUCTIONS
+

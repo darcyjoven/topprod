@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ckb")
+Folder pc721
+Page page01(text=%"Main")
+Table s_ckb
+{
+[ckb01        |ckb02           |ckb03           |aag02           |ckb04         ]
+[ckb01        |ckb02           |ckb03           |aag02           |ckb04         ]
+[ckb01        |ckb02           |ckb03           |aag02           |ckb04         ]
+[ckb01        |ckb02           |ckb03           |aag02           |ckb04         ]
+[ckb01        |ckb02           |ckb03           |aag02           |ckb04         ]
+[ckb01        |ckb02           |ckb03           |aag02           |ckb04         ]
+[ckb01        |ckb02           |ckb03           |aag02           |ckb04         ]
+[ckb01        |ckb02           |ckb03           |aag02           |ckb04         ]
+[ckb01        |ckb02           |ckb03           |aag02           |ckb04         ]
+[ckb01        |ckb02           |ckb03           |aag02           |ckb04         ]
+
+
+
+
+
+
+
+}
+END -- s_ckb
+END -- page01
+END -- pc721
+END -- axci004
+
+TABLES
+aag_file
+ATTRIBUTES
+ButtonEdit ckb01=formonly.ckb01 type VARCHAR, action=controlp, tabIndex=1, title=%"1", not null, required, image="zoom", comment=%"This Field & Language are Key,No Blank/Repeated!";
+ComboBox ckb02=formonly.ckb02 type VARCHAR, tabIndex=2, title=%"2", not null, required, items=(("1", %"搴撳瓨"),("2", %"鍦ㄥ埗"));
+ButtonEdit ckb03=formonly.ckb03 type VARCHAR, action=controlp, tabIndex=3, title=%"3", not null, required, image="zoom";
+Edit aag02=aag_file.aag02, tabIndex=5, title=%"aag02", noEntry;
+CheckBox ckb04=formonly.ckb04 type VARCHAR, tabIndex=4, title=%"4", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ckb(formonly.ckb01,formonly.ckb02,formonly.ckb03,aag_file.aag02,formonly.ckb04)
+END -- INSTRUCTIONS
+

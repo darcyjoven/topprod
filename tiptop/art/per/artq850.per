@@ -1,0 +1,108 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq850.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"artq850")
+VBox vb6
+Group gb1(text="Transfer")
+Table s_tsk
+{
+[tskplant  |tskplan1|tsk01   |tsk02 |tsk18 |tsk19 |tsk03     |tsk17     |tsk06   |tsk07   |tsk08   |tsk08_de|tsk09   |tsk09_de|tsk10   |tsk24   |tsk23   |tsk25   |tsk26   |tsk05   |tskacti |tskuser |tskgrup |tskmodu |tskdate ]
+[tskplant  |tskplan1|tsk01   |tsk02 |tsk18 |tsk19 |tsk03     |tsk17     |tsk06   |tsk07   |tsk08   |tsk08_de|tsk09   |tsk09_de|tsk10   |tsk24   |tsk23   |tsk25   |tsk26   |tsk05   |tskacti |tskuser |tskgrup |tskmodu |tskdate ]
+[tskplant  |tskplan1|tsk01   |tsk02 |tsk18 |tsk19 |tsk03     |tsk17     |tsk06   |tsk07   |tsk08   |tsk08_de|tsk09   |tsk09_de|tsk10   |tsk24   |tsk23   |tsk25   |tsk26   |tsk05   |tskacti |tskuser |tskgrup |tskmodu |tskdate ]
+[tskplant  |tskplan1|tsk01   |tsk02 |tsk18 |tsk19 |tsk03     |tsk17     |tsk06   |tsk07   |tsk08   |tsk08_de|tsk09   |tsk09_de|tsk10   |tsk24   |tsk23   |tsk25   |tsk26   |tsk05   |tskacti |tskuser |tskgrup |tskmodu |tskdate ]
+[tskplant  |tskplan1|tsk01   |tsk02 |tsk18 |tsk19 |tsk03     |tsk17     |tsk06   |tsk07   |tsk08   |tsk08_de|tsk09   |tsk09_de|tsk10   |tsk24   |tsk23   |tsk25   |tsk26   |tsk05   |tskacti |tskuser |tskgrup |tskmodu |tskdate ]
+
+}
+END -- s_tsk
+END -- gb1
+Group gb2(text="Transfer Detail")
+Table s_tsl
+{
+[tsl02|tsl13|tsl03               |ima02               |tsl04 |tsl04_desc|tsl05       |tsl06     |tsl07 |tsl07_desc|tsl08       |tsl09       |tsl10 |tls10_desc|tsl11       |tsl12       ]
+[tsl02|tsl13|tsl03               |ima02               |tsl04 |tsl04_desc|tsl05       |tsl06     |tsl07 |tsl07_desc|tsl08       |tsl09       |tsl10 |tls10_desc|tsl11       |tsl12       ]
+[tsl02|tsl13|tsl03               |ima02               |tsl04 |tsl04_desc|tsl05       |tsl06     |tsl07 |tsl07_desc|tsl08       |tsl09       |tsl10 |tls10_desc|tsl11       |tsl12       ]
+[tsl02|tsl13|tsl03               |ima02               |tsl04 |tsl04_desc|tsl05       |tsl06     |tsl07 |tsl07_desc|tsl08       |tsl09       |tsl10 |tls10_desc|tsl11       |tsl12       ]
+[tsl02|tsl13|tsl03               |ima02               |tsl04 |tsl04_desc|tsl05       |tsl06     |tsl07 |tsl07_desc|tsl08       |tsl09       |tsl10 |tls10_desc|tsl11       |tsl12       ]
+
+}
+END -- s_tsl
+END -- gb2
+Grid gr17
+{
+
+[view1     |return    ]
+
+}
+END -- gr17
+Grid gr5265
+{
+
+ -----Rows[idx     ]/[cnt       ] -----[cn2       ]
+
+}
+END -- gr5265
+END -- vb6
+END -- artq850
+
+TABLES
+tsl_file,
+tsk_file
+ATTRIBUTES
+ButtonEdit tskplant=tsk_file.tskplant, action=controlp, tabIndex=49, title="Org#", image="zoom.png";
+Edit tskplan1=formonly.tskplant_desc type CHAR, tabIndex=50, title="Org#Name", noEntry;
+Edit tsk01=formonly.tsk01 type CHAR, tabIndex=15, title="Application No";
+DateEdit tsk02=formonly.tsk02 type CHAR, tabIndex=51, title="Application Date";
+DateEdit tsk18=formonly.tsk18 type CHAR, tabIndex=52, title="Anticipated Date";
+DateEdit tsk19=formonly.tsk19 type CHAR, tabIndex=53, title="Actual Date";
+ButtonEdit tsk03=formonly.tsk03 type CHAR, action=controlp, tabIndex=54, title="Request Plant", image="zoom.png";
+ButtonEdit tsk17=formonly.tsk17 type CHAR, action=controlp, tabIndex=55, title="Request Store", image="zoom.png";
+Edit tsk06=formonly.tsk06 type CHAR, tabIndex=56, title="Mutliple";
+ButtonEdit tsk07=formonly.tsk07 type CHAR, action=controlp, tabIndex=57, title="Mutliple No", image="zoom.png";
+ButtonEdit tsk08=formonly.tsk08 type CHAR, action=controlp, tabIndex=58, title="Employee", image="zoom.png";
+Edit tsk08_de=formonly.tsk08_desc type CHAR, tabIndex=59, title="Name";
+ButtonEdit tsk09=formonly.tsk09 type CHAR, action=controlp, tabIndex=60, title="Department", image="zoom.png";
+Edit tsk09_de=formonly.tsk09_desc type CHAR, tabIndex=61, title="Dept#Desc";
+Edit tsk10=formonly.tsk10 type CHAR, tabIndex=62, title="Memo";
+ButtonEdit tsk24=formonly.tsk24 type CHAR, action=controlp, tabIndex=63, title="Requirment Org.", image="zoom.png";
+ComboBox tsk23=formonly.tsk23 type CHAR, tabIndex=64, title="Data From", items=(("1", "Input"),("2", "Distribution"));
+ButtonEdit tsk25=formonly.tsk25 type CHAR, action=controlp, tabIndex=65, title="Source Org.", image="zoom.png";
+Edit tsk26=formonly.tsk26 type CHAR, tabIndex=72, title="Source No.";
+ComboBox tsk05=formonly.tsk05 type CHAR, tabIndex=66, title="Status", items=(("1", "UnConfirmed"),("2", "Confirmed"),("3", "Closed"),("4", "Closing"),("X", "Voided"));
+Edit tskacti=formonly.tskacti type CHAR, tabIndex=67, title="Data Valid Code";
+ButtonEdit tskuser=formonly.tskuser type CHAR, action=controlp, tabIndex=68, title="Record Owner", image="zoom.png";
+ButtonEdit tskgrup=formonly.tskgrup type CHAR, action=controlp, tabIndex=69, title="Department", image="zoom.png";
+ButtonEdit tskmodu=formonly.tskmodu type CHAR, action=controlp, tabIndex=70, title="Last Modified by", image="zoom.png";
+Edit tskdate=formonly.tskdate type CHAR, tabIndex=71, title="Create/Modify Date";
+Edit tsl02=tsl_file.tsl02, tabIndex=1, title="Ln#";
+Edit tsl13=tsl_file.tsl13, tabIndex=44, title="Source No.", noEntry;
+ButtonEdit tsl03=tsl_file.tsl03, action=controlp, tabIndex=2, title="Item No.", image="zoom", comment="<^P>Qry Detail";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, title="S/P Name", noEntry;
+ButtonEdit tsl04=tsl_file.tsl04, action=controlp, tabIndex=4, title="Unit", image="zoom";
+Edit tsl04_desc=formonly.tsl04_desc type CHAR, tabIndex=45, title="Unit Name", noEntry;
+Edit tsl05=tsl_file.tsl05, tabIndex=5, title="Qty Applied";
+Edit tsl06=formonly.tsl06 type CHAR, tabIndex=46, title="Qty";
+ButtonEdit tsl07=tsl_file.tsl07, action=controlp, tabIndex=9, title="Unit1", image="zoom";
+Edit tsl07_desc=formonly.tsl07_desc type CHAR, tabIndex=47, title="Unit Name";
+Edit tsl08=tsl_file.tsl08, tabIndex=10, title="Unit1 Rate", noEntry;
+Edit tsl09=tsl_file.tsl09, tabIndex=11, title="Unit1 Qty";
+ButtonEdit tsl10=tsl_file.tsl10, action=controlp, tabIndex=6, title="Unit2", image="zoom";
+Edit tls10_desc=formonly.tls10_desc type CHAR, tabIndex=48, title="Unit Name";
+Edit tsl11=tsl_file.tsl11, tabIndex=7, title="Unit2 Rate", noEntry;
+Edit tsl12=tsl_file.tsl12, tabIndex=8, title="Unit2 Qty";
+Button view1:view1, text="view1";
+Button return:return, text="return";
+Edit idx=formonly.idx type CHAR, tabIndex=14;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tsl(tsl_file.tsl02,tsl_file.tsl13,tsl_file.tsl03,formonly.ima02,tsl_file.tsl04,formonly.tsl04_desc,tsl_file.tsl05,formonly.tsl06,tsl_file.tsl07,formonly.tsl07_desc,tsl_file.tsl08,tsl_file.tsl09,tsl_file.tsl10,formonly.tls10_desc,tsl_file.tsl11,tsl_file.tsl12)
+SCREEN RECORD s_tsk(tsk_file.tskplant,formonly.tskplant_desc,formonly.tsk01,formonly.tsk02,formonly.tsk18,formonly.tsk19,formonly.tsk03,formonly.tsk17,formonly.tsk06,formonly.tsk07,formonly.tsk08,formonly.tsk08_desc,formonly.tsk09,formonly.tsk09_desc,formonly.tsk10,formonly.tsk24,formonly.tsk23,formonly.tsk25,formonly.tsk26,formonly.tsk05,formonly.tskacti,formonly.tskuser,formonly.tskgrup,formonly.tskmodu,formonly.tskdate)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

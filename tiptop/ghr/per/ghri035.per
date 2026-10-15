@@ -1,0 +1,156 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri035.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text="ghri035")
+VBox VBox2
+Folder pc1
+Page Page1(text=%"Page0")
+VBox VBox1
+Grid gr1
+{
+
+   <G gb1                                                        >
+       [label1  ]             [hrbu01                         ]
+           [labe]             [hrbu02                         ]
+   [label19     ]             [hrbu23    ]
+   <                                                             >
+
+}
+END -- gr1
+Grid gr5
+{
+   <G gb2                                                                                             >
+    [label26     |hrbu30    ]                        [label4           ]    [hrbu04    |hrbu05    ]
+    [label20     |hrbu24    ]                           [label5        ]    [hrbu06    |hrbu07    ]
+    [label21     |hrbu25    ]                           [label6        ]    [hrbu08    |hrbu09    ]
+    [label22     |hrbu26    ]                          [label7         ]    [hrbu10    |hrbu11    ]
+    [label23     |hrbu27    ]                           [label8        ]    [hrbu12    |hrbu13    ]
+    [label24     |hrbu28    ]                           [label9        ]    [hrbu14    |hrbu15    ]
+    [label27     |hrbu31    ]                         [label10         ]    [hrbu16    |hrbu17    ]
+    [label28     |hrbu32    ]                         [label11         ]    [hrbu18    |hrbu19    ]
+    [label29     |hrbu33    ]                         [label12         ]    [hrbu20    |hrbu21    ]
+    [label25     |hrbu29    ]                          [label3         ]    [hrbu03               ]
+   <                                                                                                  >
+
+}
+END -- gr5
+Grid gr6
+{
+     <G gb3                                                        >
+         [hrbu22                                                ]
+         [                                                      ]
+     <                                                             >
+
+}
+END -- gr6
+END -- VBox1
+END -- Page1
+Page Page2(text=%"Page1")
+Grid gr3
+{
+
+        [lab1] [hrbuuser                       ]    [label2]     [hrbumodu                       ]
+       [label] [hrbugrup                       ]  [label16 ]     [hrbudate  ]
+       [labe1] [hrbuoriu                       ]  [hrbuacti  ]
+  [label18   ] [hrbuorig                       ]
+
+}
+END -- gr3
+END -- Page2
+END -- pc1
+Grid Grid1
+{
+
+   ---------- ROWS [idx   ]/[cnt     ]----------
+
+
+}
+END -- Grid1
+END -- VBox2
+END -- ghri035
+
+ATTRIBUTES
+Group gb1:gb1, text="Inform";
+Label label1:Label1, text=%"Type No.", justify=right;
+ButtonEdit hrbu01=formonly.hrbu01 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Label labe:Label2, text=%"Name", justify=right;
+Edit hrbu02=formonly.hrbu02 type VARCHAR, tabIndex=2, not null, required;
+Label label19:Label19, text=%"hrbu23", justify=right;
+ComboBox hrbu23=formonly.hrbu23, tabIndex=32, not null, required, items=(("1", "1"),("2", "2"));
+Group gb2:gb2, text="Select Data";
+Label label26:Label26, text=%"hrbu30", justify=right;
+ComboBox hrbu30=formonly.hrbu30, tabIndex=39, not null, required, items=(("1", "1"),("2", "2"));
+Label label4:Label4, text=%"Machine Start&End", justify=right;
+SpinEdit hrbu04=formonly.hrbu04 type SMALLINT, tabIndex=3, default = "", not null, required, valueMin=1;
+SpinEdit hrbu05=formonly.hrbu05 type SMALLINT, tabIndex=4, default = "", not null, required, valueMin=1;
+Label label20:Label20, text=%"hrbu24", justify=right;
+SpinEdit hrbu24=formonly.hrbu24 type SMALLINT, tabIndex=33, default = "", not null, required, valueMin=1;
+Label label5:Label5, text=%"Card Start&End", justify=right;
+SpinEdit hrbu06=formonly.hrbu06 type SMALLINT, tabIndex=5, default = "", not null, required, valueMin=1;
+SpinEdit hrbu07=formonly.hrbu07 type SMALLINT, tabIndex=6, default = "", not null, required, valueMin=1;
+Label label21:Label21, text=%"hrbu25", justify=right;
+SpinEdit hrbu25=formonly.hrbu25 type SMALLINT, tabIndex=34, default = "", not null, required, valueMin=1;
+Label label6:Label6, text=%"Year Start&End", justify=right;
+SpinEdit hrbu08=formonly.hrbu08 type SMALLINT, tabIndex=7, not null, required, valueMin=1;
+SpinEdit hrbu09=formonly.hrbu09 type SMALLINT, tabIndex=8, default = "", not null, required, valueMin=1;
+Label label22:Label22, text=%"hrbu26", justify=right;
+SpinEdit hrbu26=formonly.hrbu26 type SMALLINT, tabIndex=35, default = "", not null, required, valueMin=1;
+Label label7:Label7, text=%"Month Start&End", justify=right;
+SpinEdit hrbu10=formonly.hrbu10 type SMALLINT, tabIndex=9, not null, required, valueMin=1;
+SpinEdit hrbu11=formonly.hrbu11 type SMALLINT, tabIndex=10, not null, required, valueMin=1;
+Label label23:Label23, text=%"hrbu27", justify=right;
+SpinEdit hrbu27=formonly.hrbu27 type SMALLINT, tabIndex=36, default = "", not null, required, valueMin=1;
+Label label8:Label8, text=%"Date Start&End", justify=right;
+SpinEdit hrbu12=formonly.hrbu12 type SMALLINT, tabIndex=11, not null, required, valueMin=1;
+SpinEdit hrbu13=formonly.hrbu13 type SMALLINT, tabIndex=12, not null, required, valueMin=1;
+Label label24:Label24, text=%"hrbu28", justify=right;
+SpinEdit hrbu28=formonly.hrbu28 type SMALLINT, tabIndex=37, default = "", not null, required, valueMin=1;
+Label label9:Label9, text=%"Hour Start&End", justify=right;
+SpinEdit hrbu14=formonly.hrbu14 type SMALLINT, tabIndex=13, not null, required, valueMin=1;
+SpinEdit hrbu15=formonly.hrbu15 type SMALLINT, tabIndex=14, not null, required, valueMin=1;
+Label label27:Label27, text=%"hrbu31", justify=right;
+SpinEdit hrbu31=formonly.hrbu31 type SMALLINT, tabIndex=40, default = "", not null, required, valueMin=1;
+Label label10:Label10, text=%"Minute Start&End", justify=right;
+SpinEdit hrbu16=formonly.hrbu16 type SMALLINT, tabIndex=15, not null, required, valueMin=1;
+SpinEdit hrbu17=formonly.hrbu17 type SMALLINT, tabIndex=16, not null, required, valueMin=1;
+Label label28:Label28, text=%"hrbu32", justify=right;
+SpinEdit hrbu32=formonly.hrbu32 type SMALLINT, tabIndex=41, default = "", not null, required, valueMin=1;
+Label label11:Label11, text=%"Second Start&End", justify=right;
+SpinEdit hrbu18=formonly.hrbu18 type SMALLINT, tabIndex=17, valueMin=-1;
+SpinEdit hrbu19=formonly.hrbu19 type SMALLINT, tabIndex=18, valueMin=-1;
+Label label29:Label29, text=%"hrbu33", justify=right;
+SpinEdit hrbu33=formonly.hrbu33 type SMALLINT, tabIndex=42, default = "", not null, required, valueMin=1;
+Label label12:Label12, text=%"Button Start&End", justify=right;
+SpinEdit hrbu20=formonly.hrbu20 type SMALLINT, tabIndex=19, valueMin=-1;
+SpinEdit hrbu21=formonly.hrbu21 type SMALLINT, tabIndex=20, valueMin=-1;
+Label label25:Label25, text=%"hrbu29", justify=right;
+SpinEdit hrbu29=formonly.hrbu29 type SMALLINT, tabIndex=38, default = "", not null, required, valueMin=1;
+Label label3:Label3, text=%"Length", justify=right;
+Edit hrbu03=formonly.hrbu03 type SMALLINT, tabIndex=31, not null, required;
+Group gb3:gb3, text="PS";
+TextEdit hrbu22=formonly.hrbu22 type VARCHAR, tabIndex=21;
+Label lab1:Label13, text=%"User", justify=right;
+Edit hrbuuser=formonly.hrbuuser type VARCHAR, tabIndex=22;
+Label label2:Label14, text=%"Modify", justify=right;
+Edit hrbumodu=formonly.hrbumodu type VARCHAR, tabIndex=23;
+Label label:Label15, text=%"Group", justify=right;
+Edit hrbugrup=formonly.hrbugrup type VARCHAR, tabIndex=24;
+Label label16:Label16, text=%"Mod Date", justify=right;
+DateEdit hrbudate=formonly.hrbudate type DATE, tabIndex=25;
+Label labe1:Label17, text=%"Build", justify=right;
+Edit hrbuoriu=formonly.hrbuoriu type VARCHAR, tabIndex=26;
+CheckBox hrbuacti=formonly.hrbuacti type VARCHAR, tabIndex=27, text="hrbuacti", not null, valueChecked = "Y", valueUnchecked = "N";
+Label label18:Label18, text=%"Departmant", justify=right;
+Edit hrbuorig=formonly.hrbuorig type VARCHAR, tabIndex=28;
+Edit idx=formonly.idx type CHAR, tabIndex=29;
+Edit cnt=formonly.cnt type CHAR, tabIndex=30;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrbu01,formonly.hrbu02,formonly.hrbu04,formonly.hrbu05,formonly.hrbu06,formonly.hrbu07,formonly.hrbu08,formonly.hrbu09,formonly.hrbu10,formonly.hrbu11,formonly.hrbu12,formonly.hrbu13,formonly.hrbu14,formonly.hrbu15,formonly.hrbu16,formonly.hrbu17,formonly.hrbu18,formonly.hrbu19,formonly.hrbu20,formonly.hrbu21,formonly.hrbu22,formonly.hrbuuser,formonly.hrbumodu,formonly.hrbugrup,formonly.hrbudate,formonly.hrbuoriu,formonly.hrbuacti,formonly.hrbuorig,formonly.idx,formonly.cnt,formonly.hrbu03,formonly.hrbu23,formonly.hrbu24,formonly.hrbu25,formonly.hrbu26,formonly.hrbu27,formonly.hrbu28,formonly.hrbu29,formonly.hrbu30,formonly.hrbu31,formonly.hrbu32,formonly.hrbu33)
+END -- INSTRUCTIONS
+

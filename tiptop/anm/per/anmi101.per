@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmi101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmi101")
+VBox vb2
+Folder pc750
+Page page01(text="Main")
+Table s_nmw
+{
+[nmw01      |nma03                           |nmw03                |nmw06  |nmw04       |nmw05     |cnt2           |cnt3          |cnt       |cnt4      ]
+[nmw01      |nma03                           |nmw03                |nmw06  |nmw04       |nmw05     |cnt2           |cnt3          |cnt       |cnt4      ]
+[nmw01      |nma03                           |nmw03                |nmw06  |nmw04       |nmw05     |cnt2           |cnt3          |cnt       |cnt4      ]
+[nmw01      |nma03                           |nmw03                |nmw06  |nmw04       |nmw05     |cnt2           |cnt3          |cnt       |cnt4      ]
+[nmw01      |nma03                           |nmw03                |nmw06  |nmw04       |nmw05     |cnt2           |cnt3          |cnt       |cnt4      ]
+[nmw01      |nma03                           |nmw03                |nmw06  |nmw04       |nmw05     |cnt2           |cnt3          |cnt       |cnt4      ]
+[nmw01      |nma03                           |nmw03                |nmw06  |nmw04       |nmw05     |cnt2           |cnt3          |cnt       |cnt4      ]
+[nmw01      |nma03                           |nmw03                |nmw06  |nmw04       |nmw05     |cnt2           |cnt3          |cnt       |cnt4      ]
+[nmw01      |nma03                           |nmw03                |nmw06  |nmw04       |nmw05     |cnt2           |cnt3          |cnt       |cnt4      ]
+[nmw01      |nma03                           |nmw03                |nmw06  |nmw04       |nmw05     |cnt2           |cnt3          |cnt       |cnt4      ]
+
+}
+END -- s_nmw
+END -- page01
+END -- pc750
+Grid gr4035
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4035
+END -- vb2
+END -- anmi101
+
+TABLES
+nmw_file
+ATTRIBUTES
+ButtonEdit nmw01=nmw_file.nmw01, action=controlp, tabIndex=1, title="Bank No.", image="zoom", comment="<^P>Qry Bank No.";
+Edit nma03=formonly.nma03 type VARCHAR, tabIndex=2, title="Name", noEntry;
+DateEdit nmw03=nmw_file.nmw03, tabIndex=3, title="Date of Note Taken";
+Edit nmw06=nmw_file.nmw06, tabIndex=4, title="Book#", not null, required;
+Edit nmw04=nmw_file.nmw04, tabIndex=5, title="Initial No.", not null, required;
+Edit nmw05=nmw_file.nmw05, tabIndex=6, title="Ending No", not null, required;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=7, title="Withdraw Pages", noEntry;
+Edit cnt3=formonly.cnt3 type VARCHAR, tabIndex=8, title="Note # Issued", noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=9, title="Pages Used", noEntry;
+Edit cnt4=formonly.cnt4 type INTEGER, tabIndex=11, title=%"Pages Void", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nmw(nmw_file.nmw01,formonly.nma03,nmw_file.nmw03,nmw_file.nmw06,nmw_file.nmw04,nmw_file.nmw05,formonly.cnt2,formonly.cnt3,formonly.cnt,formonly.cnt4)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

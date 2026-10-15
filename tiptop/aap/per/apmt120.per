@@ -1,0 +1,139 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/aap/4fd/apmt120.tmp.per created 2010-04-30T13:30:47
+-- File created from /u3/tiptop/aap/4fd/apmt120.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text=%"apmt120")
+VBox VBox1                                                                                                                                        
+Folder folder01                                                                                                                                   
+Page page01(text="Main")                                                                                                                          
+Grid gr568                                                                                                                                        
+{                                                                                                                                                 
+ Approve No.         [aqa01             ]        Appo. Tot Amt       [aqa03       ]     Voucher             [aqa05               ]  [imgmksg]     
+ Approve Date        [aqa02       ]              Input Date          [aqainpd     ]    [aqa04      ]        [aqaconf   ]            [       ]     
+                                                                                                                                                  
+}                                                                                                                                                 
+END                                                                                                                                               
+END -- Page                                                                                                                                       
+Page info(text="Info")                                                                                                                            
+Grid gr569                                                                                                                                        
+{                                                                                                                                                 
+ Record Owner        [aqauser   ] Last Modified by    [aqamodu     ]   Data Valid Code     [aqaacti   ]                                           
+ Department          [aqagrup   ] Create/Modify Date  [aqadate     ]                                                                              
+ Record Orig.        [aqaoriu   ]                                                                                                                 
+ Dept Orig.          [aqaorig   ]                                                                                                                 
+}                                                                                                                                                 
+END                                                                                                                                               
+END -- Page                                                                                                                                       
+END -- Folder                                                                                                                                     
+Group g01(text="Source")                                                                                                                          
+                                                                                                                                                  
+ VBox VBox2                                                                                                                                       
+ Grid gr570                                                                                                                                       
+ {                                                                                                                                                
+  Estimate(12)        [tot5                ]    DM(22)         [tot6                   ]Prepay(23)          [tot4                 ]               
+                                                                                                                                                  
+                                                                                                                                                  
+ }                                                                                                                                                
+ END                                                                                                                                              
+ Table s_aqb                                                                                                                                      
+ {                                                                                                                                                
+ [aqb02           |apa02    |apa51      |apa511     |apa06     |apa07     |aqb03               |aqb04               ]                             
+ [aqb02           |apa02    |apa51      |apa511     |apa06     |apa07     |aqb03               |aqb04               ]                             
+ [aqb02           |apa02    |apa51      |apa511     |apa06     |apa07     |aqb03               |aqb04               ]                             
+ [aqb02           |apa02    |apa51      |apa511     |apa06     |apa07     |aqb03               |aqb04               ]                             
+ [aqb02           |apa02    |apa51      |apa511     |apa06     |apa07     |aqb03               |aqb04               ]                             
+ }                                                                                                                                                
+ END -- Table                                                                                                                                     
+ END -- VBox                                                                                                                                      
+END -- Group                                                                                                                                      
+Group g02(text="Opject")                                                                                                                          
+                                                                                                                                                  
+ VBox VBox3                                                                                                                                       
+ Grid gr571                                                                                                                                       
+ {                                                                                                                                                
+  A/P     (11)        [tot1                 ]-[tot2                ]=[tot3                  ]                                                     
+                                                                                                                                                  
+                                                                                                                                                  
+ }                                                                                                                                                
+ END                                                                                                                                              
+ Table s_aqc                                                                                                                                      
+ {                                                                                                                                                
+ [aqc02           |aqc03|aqc04               |aqc05    |aqc06                |aqc07               |aqc08               ]                          
+ [aqc02           |aqc03|aqc04               |aqc05    |aqc06                |aqc07               |aqc08               ]                          
+ [aqc02           |aqc03|aqc04               |aqc05    |aqc06                |aqc07               |aqc08               ]                          
+ [aqc02           |aqc03|aqc04               |aqc05    |aqc06                |aqc07               |aqc08               ]                          
+ [aqc02           |aqc03|aqc04               |aqc05    |aqc06                |aqc07               |aqc08               ]                          
+ }                                                                                                                                                
+ END -- Table                                                                                                                                     
+ END -- VBox                                                                                                                                      
+END -- Group                                                                                                                                      
+Grid gr572                                                                                                                                        
+{                                                                                                                                                 
+ ---------- Rows [cnt   ] / [cn2   ]-[cn4   ] ----------                                                                                          
+                                                                                                                                                  
+}                                                                                                                                                 
+END                                                                                                                                               
+END -- VBox                                                                                                                                       
+END -- Form
+
+TABLES
+aqa_file
+aqb_file
+apa_file
+aqc_file
+
+ATTRIBUTES
+ButtonEdit aqa01=aqa_file.aqa01, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Appo.Doc";
+Edit aqa03=aqa_file.aqa03, tabIndex=2, noEntry;
+Edit aqa05=aqa_file.aqa05, tabIndex=3, noEntry;
+Image imgmksg=formonly.imgmksg, autoScale;
+DateEdit aqa02=aqa_file.aqa02, tabIndex=5;
+DateEdit aqainpd=aqa_file.aqainpd, tabIndex=6, noEntry;
+CheckBox aqa04=aqa_file.aqa04, tabIndex=7, text="Apportion", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aqaconf=aqa_file.aqaconf, tabIndex=8, text="Confirm", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit aqauser=aqa_file.aqauser, tabIndex=9, noEntry;
+Edit aqamodu=aqa_file.aqamodu, tabIndex=10, noEntry;
+Edit aqaacti=aqa_file.aqaacti, tabIndex=11, noEntry, upShift;
+Edit aqagrup=aqa_file.aqagrup, tabIndex=12, noEntry;
+DateEdit aqadate=aqa_file.aqadate, tabIndex=13, noEntry;
+Edit aqaoriu=aqa_file.aqaoriu, tabIndex=501, noEntry;
+Edit aqaorig=aqa_file.aqaorig, tabIndex=502, noEntry;
+Edit tot5=formonly.tot5 type INTEGER, tabIndex=14, noEntry;
+Edit tot6=formonly.tot6 type INTEGER, tabIndex=15, noEntry;
+Edit tot4=formonly.tot4 type INTEGER, tabIndex=16, noEntry;
+ButtonEdit aqb02=aqb_file.aqb02, action=controlp, tabIndex=17, title="Accounts #", not null, required, image="zoom", comment="<^P> Qry MISC Doc";
+DateEdit apa02=apa_file.apa02, tabIndex=18, title="Acc.Date", noEntry;
+Edit apa51=apa_file.apa51, tabIndex=19, title="Debit Acc.", noEntry;
+Edit apa511=apa_file.apa511, tabIndex=20, title="Debit Acc.2 Vender", noEntry;
+Edit apa06=apa_file.apa06, tabIndex=21, noEntry;
+Edit apa07=apa_file.apa07, tabIndex=22, title="Names", noEntry;
+Edit aqb03=aqb_file.aqb03, tabIndex=23, title="H.C Acct.(B-Tax)", noEntry;
+Edit aqb04=aqb_file.aqb04, tabIndex=24, title="Appo. H.C.";
+Edit tot1=formonly.tot1 type INTEGER, tabIndex=25, noEntry;
+Edit tot2=formonly.tot2 type INTEGER, tabIndex=26, noEntry;
+Edit tot3=formonly.tot3 type INTEGER, tabIndex=27, noEntry;
+ButtonEdit aqc02=aqc_file.aqc02, action=controlp, tabIndex=28, title="Accounts #", not null, required, image="zoom", comment="<^P> Qry A/P Doc no. ";
+Edit aqc03=aqc_file.aqc03, tabIndex=29, title="Ln #", not null, required;
+Edit aqc04=aqc_file.aqc04, tabIndex=30, title="Before-Appo. U/P", noEntry;
+Edit aqc05=aqc_file.aqc05, tabIndex=31, title="Qty", noEntry;
+Edit aqc06=aqc_file.aqc06, tabIndex=32, title="Before Appo. Amt", noEntry;
+Edit aqc07=aqc_file.aqc07, tabIndex=33, title="Appo. U/P", noEntry;
+Edit aqc08=aqc_file.aqc08, tabIndex=34, title="Appo. Amt", noEntry;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=35;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=36;
+Edit cn4=formonly.cn4 type INTEGER, tabIndex=37;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aqb(aqb_file.aqb02, apa_file.apa02, apa_file.apa51, apa_file.apa511, apa_file.apa06, apa_file.apa07, aqb_file.aqb03, aqb_file.aqb04)
+SCREEN RECORD s_aqc(aqc_file.aqc02, aqc_file.aqc03, aqc_file.aqc04, aqc_file.aqc05, aqc_file.aqc06, aqc_file.aqc07, aqc_file.aqc08)
+END -- INSTRUCTIONS
+

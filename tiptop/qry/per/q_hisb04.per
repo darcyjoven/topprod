@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_hisb04.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"Choose the Database")
+Grid gr4
+{
+ <G group01               ><G group02                                                              >
+  [dateopt   ]              Date field[datefield  ]
+  [          ]             <                                                                       >
+  [          ]             <G group03                                                              >
+  [          ]              Year field[yearfield  ] Month field[monthfield ] Day field[dayfield   ]
+ <                        ><                                                                       >
+
+}
+END -- gr4
+END -- q_hisb04
+
+ATTRIBUTES
+Group group01:group01, text="Basic option";
+RadioGroup dateopt=formonly.dateopt type CHAR, tabIndex=1, not null, required, comment="Choose the option", items=(("1", "Date yes"),("2", "Date no"));
+Group group02:group02, text="Date Yes";
+ComboBox datefield=formonly.datefield type CHAR, tabIndex=2, comment="Choose the field";
+Group group03:group03, text="Date No";
+ComboBox yearfield=formonly.yearfield type CHAR, tabIndex=3, comment="Choose the year field";
+ComboBox monthfield=formonly.monthfield type CHAR, tabIndex=4, comment="Choose the month field";
+ComboBox dayfield=formonly.dayfield type CHAR, tabIndex=5, comment="Choose the day field";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.dateopt,formonly.datefield,formonly.yearfield,formonly.monthfield,formonly.dayfield)
+END -- INSTRUCTIONS
+

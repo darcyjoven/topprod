@@ -1,0 +1,97 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt580.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"almt580")
+VBox vb5
+Folder pc2
+Page main(text="Main")
+Grid gr4
+{
+ Doc No.       [lpo01               ]         Name          [lpk04           ]
+ Shop No.      [lpoplant            ]         Birthdate     [lpk05           ]
+ Shop name     [rtz13               ]         integral      [lpo04           ]
+ Legal.        [lpolegal            ]         invoice No    [lpo11           ]
+ Legal name    [azt02               ]         Ded integral  [lpo06           ]
+ Member No.    [lpo02               ]         status        [lpo07           ][imgmksg   ]
+ Card No.      [lpj02               ]         checker       [lpo08           ][          ]
+ Card Name     [lph02               ]         checkdate     [lpo09           ]
+ Member No.    [lpo03               ]         end date      [lpo10           ]
+ Cedula type   [lpk02               ]
+ Cedula No.    [lpk03               ]
+}
+END -- gr4
+END -- main
+Page info(text="Info")
+Grid gr5
+{
+
+ owner [lpouser   ]              modu[lpomodu       ]        acti [lpoacti   ]
+ grup  [lpogrup   ]              date[lpodate       ]        crat [lpocrat   ]
+ Oriu. [lpooriu   ]
+ Orig  [lpoorig   ]
+
+
+
+
+
+
+
+}
+END -- gr5
+END -- info
+END -- pc2
+Grid gr6
+{
+ ---------- Rows[idx   ]/[cnt   ]----------
+
+
+
+}
+END -- gr6
+END -- vb5
+END -- almt580
+
+TABLES
+lpo_file
+ATTRIBUTES
+ButtonEdit lpo01=lpo_file.lpo01, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Edit lpk04=formonly.lpk04 type CHAR, tabIndex=16, noEntry;
+ButtonEdit lpoplant=lpo_file.lpoplant, action=controlp, tabIndex=30, noEntry, image="zoom.png";
+Edit lpk05=formonly.lpk05 type CHAR, tabIndex=17, noEntry;
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=31, noEntry;
+Edit lpo04=lpo_file.lpo04, tabIndex=18, noEntry;
+ButtonEdit lpolegal=lpo_file.lpolegal, action=controlp, tabIndex=33, noEntry, image="zoom.png";
+Edit lpo11=lpo_file.lpo11, tabIndex=503;
+Edit azt02=formonly.azt02 type CHAR, tabIndex=32, noEntry;
+Edit lpo06=lpo_file.lpo06, tabIndex=19, not null;
+ButtonEdit lpo02=lpo_file.lpo02, action=controlp, tabIndex=10, not null, required, image="zoom.png";
+ComboBox lpo07=lpo_file.lpo07, tabIndex=20, default = "N", noEntry, not null, required, items=(("Y", "checked"),("N", "unchecked"),("X", "void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, width = 10 characters, height = 2 characters;
+Edit lpj02=formonly.lpj02 type CHAR, tabIndex=11, noEntry;
+Edit lpo08=lpo_file.lpo08, tabIndex=21, noEntry, not null, required;
+Edit lph02=formonly.lph02 type CHAR, tabIndex=12, noEntry;
+DateEdit lpo09=lpo_file.lpo09, tabIndex=22, noEntry, not null, required;
+ButtonEdit lpo03=lpo_file.lpo03, action=controlp, tabIndex=13, image="zoom.png";
+DateEdit lpo10=lpo_file.lpo10, tabIndex=502;
+ComboBox lpk02=formonly.lpk02 type CHAR, tabIndex=14, noEntry, items=(("0", "ID card"),("1", "Officer card"),("2", "other"));
+Edit lpk03=formonly.lpk03 type CHAR, tabIndex=15, noEntry;
+Edit lpouser=lpo_file.lpouser, tabIndex=1, noEntry;
+Edit lpomodu=lpo_file.lpomodu, tabIndex=2, noEntry;
+Edit lpoacti=lpo_file.lpoacti, tabIndex=3, default = "Y", noEntry;
+Edit lpogrup=lpo_file.lpogrup, tabIndex=4, noEntry;
+DateEdit lpodate=lpo_file.lpodate, tabIndex=5, noEntry;
+DateEdit lpocrat=lpo_file.lpocrat, tabIndex=6, noEntry;
+Edit lpooriu=lpo_file.lpooriu, tabIndex=500, noEntry;
+Edit lpoorig=lpo_file.lpoorig, tabIndex=501, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=7, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lpo_file.lpo01,formonly.lpk04,lpo_file.lpoplant,formonly.lpk05,formonly.rtz13,lpo_file.lpo04,lpo_file.lpolegal,formonly.azt02,lpo_file.lpo06,lpo_file.lpo02,lpo_file.lpo10,formonly.lpj02,lpo_file.lpo07,formonly.imgmksg,formonly.lph02,lpo_file.lpo08,lpo_file.lpo03,lpo_file.lpo09,formonly.lpk02,formonly.lpk03,lpo_file.lpouser,lpo_file.lpomodu,lpo_file.lpoacti,lpo_file.lpogrup,lpo_file.lpodate,lpo_file.lpocrat,lpo_file.lpooriu,lpo_file.lpoorig,formonly.idx,formonly.cnt,lpo_file.lpo11)
+END -- INSTRUCTIONS
+

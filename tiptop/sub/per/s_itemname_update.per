@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_itemname_update.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_itemname_update")
+VBox VBox1
+Grid gr1491
+{
+ <G group01                                   >
+  Table ID       [gbc01                       ]
+  Field ID       [gbc02                       ]
+  KEY Series     [gbc03                       ]
+ <                                            >
+
+}
+END -- gr1491
+Table sub_gbc
+{
+[gbc04    |gbc05                             ]
+[gbc04    |gbc05                             ]
+[gbc04    |gbc05                             ]
+[gbc04    |gbc05                             ]
+[gbc04    |gbc05                             ]
+
+}
+END -- sub_gbc
+END -- VBox1
+END -- s_itemname_update
+
+TABLES
+gbc_file
+ATTRIBUTES
+Group group01:group01;
+Edit gbc01=gbc_file.gbc01, tabIndex=1, noEntry;
+Edit gbc02=gbc_file.gbc02, tabIndex=2, noEntry;
+Edit gbc03=gbc_file.gbc03, tabIndex=3, noEntry;
+ComboBox gbc04=gbc_file.gbc04, tabIndex=4, title="Language", not null, required;
+Edit gbc05=gbc_file.gbc05, tabIndex=5, title="Item Name", scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD sub_gbc(gbc_file.gbc04,gbc_file.gbc05)
+SCREEN RECORD Undefined(gbc_file.gbc01,gbc_file.gbc02,gbc_file.gbc03)
+END -- INSTRUCTIONS
+

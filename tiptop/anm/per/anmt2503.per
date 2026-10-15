@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt2503.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Confirm")
+VBox VBox1
+Grid gr4480
+{
+ <G group01                                  >
+ [only_one                                  ]
+ <                                           >
+ <G group02                                  >
+ [dummy                                     ]
+  Document No.        [npn01               ]
+  Document date       [npn02               ]
+ <                                           >
+
+}
+END -- gr4480
+END -- VBox1
+END -- anmt2503
+
+TABLES
+npn_file
+ATTRIBUTES
+Group group01:group01, text="Confirm Condition";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, items=(("1", "Confirm this Accounts only"),("2", "Confirm by QBE Condition"));
+Group group02:group02, text="QBE";
+Label dummy:dummy, text="Enter Accounts Condition to Confirmation:";
+Edit npn01=npn_file.npn01, tabIndex=2;
+DateEdit npn02=npn_file.npn02, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,npn_file.npn01,npn_file.npn02)
+END -- INSTRUCTIONS
+

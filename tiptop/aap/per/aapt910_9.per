@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt910_9.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapt900_9")
+Grid gr567
+{
+ <G group01                                 >
+ [only_one                            ]
+ <                                          >
+ <G group02                                 >
+   Approve No. QBE [aqa01           ]
+      Appo.Dat.QBE [aqa02       ]
+
+ <                                          >
+
+}
+END -- gr567
+END -- aapt900_9
+
+TABLES
+aqa_file
+ATTRIBUTES
+Group group01:group01, text="Condition";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, items=(("1", "Generate this Accounts only"),("2", "Generate by QBE Condition"));
+Group group02:group02, text="Enter Accounts Condition to Confirm:";
+Edit aqa01=aqa_file.aqa01, tabIndex=2;
+DateEdit aqa02=aqa_file.aqa02, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,aqa_file.aqa01,aqa_file.aqa02)
+END -- INSTRUCTIONS
+

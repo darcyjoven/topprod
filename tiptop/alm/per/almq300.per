@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almq300.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Main(text=%"Main")
+Grid ds1
+{
+
+[label1    |lntplant              ][label5    |lnt04                 |label6    |lnt17          ]
+[label2    |lnt08                 ][label8    |lne62                 |label7    |lnt18          ]
+[label3    |lnt09                 ][label9    |lne67                 ]
+[label4    |lnt60                 ][label10   |lne08                 ]
+
+}
+END -- ds1
+END -- Main
+END -- Folder1
+Table s_lnt
+{
+[lnt01     |lne05               |lne07     |lne61     |oca02               |lne14               |lne15          |lne28     |lntplan1  |rtz13   |lnt02               ]
+[lnt01     |lne05               |lne07     |lne61     |oca02               |lne14               |lne15          |lne28     |lntplan1  |rtz13   |lnt02               ]
+[lnt01     |lne05               |lne07     |lne61     |oca02               |lne14               |lne15          |lne28     |lntplan1  |rtz13   |lnt02               ]
+[lnt01     |lne05               |lne07     |lne61     |oca02               |lne14               |lne15          |lne28     |lntplan1  |rtz13   |lnt02               ]
+[lnt01     |lne05               |lne07     |lne61     |oca02               |lne14               |lne15          |lne28     |lntplan1  |rtz13   |lnt02               ]
+[lnt01     |lne05               |lne07     |lne61     |oca02               |lne14               |lne15          |lne28     |lntplan1  |rtz13   |lnt02               ]
+[lnt01     |lne05               |lne07     |lne61     |oca02               |lne14               |lne15          |lne28     |lntplan1  |rtz13   |lnt02               ]
+[lnt01     |lne05               |lne07     |lne61     |oca02               |lne14               |lne15          |lne28     |lntplan1  |rtz13   |lnt02               ]
+[lnt01     |lne05               |lne07     |lne61     |oca02               |lne14               |lne15          |lne28     |lntplan1  |rtz13   |lnt02               ]
+[lnt01     |lne05               |lne07     |lne61     |oca02               |lne14               |lne15          |lne28     |lntplan1  |rtz13   |lnt02               ]
+}
+END -- s_lnt
+Grid Grid1
+{
+
+ ---------[label13   ][cnt       ] ----------
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+lne_file1=lne_file,
+lne_file,
+lnt_file,
+oca_file,
+rtz_file,
+lnt_file1=lnt_file
+ATTRIBUTES
+Label label1:Label1, text=%"lntplant";
+ButtonEdit lntplant=lnt_file.lntplant, action=controlp, tabIndex=1, image="zoom.png", scroll;
+Label label5:Label5, text=%"lnt04";
+ButtonEdit lnt04=lnt_file.lnt04, action=controlp, tabIndex=5, image="zoom.png", scroll;
+Label label6:Label6, text=%"lnt17";
+DateEdit lnt17=lnt_file.lnt17, tabIndex=9;
+Label label2:Label2, text=%"lnt08";
+ButtonEdit lnt08=lnt_file.lnt08, action=controlp, tabIndex=2, image="zoom.png", scroll;
+Label label8:Label8, text=%"lne62";
+ButtonEdit lne62=lne_file.lne62, action=controlp, tabIndex=6, image="zoom.png", scroll;
+Label label7:Label7, text=%"lnt18";
+DateEdit lnt18=lnt_file.lnt18, tabIndex=10;
+Label label3:Label3, text=%"lnt09";
+ButtonEdit lnt09=lnt_file.lnt09, action=controlp, tabIndex=3, image="zoom.png", scroll;
+Label label9:Label9, text=%"lne67";
+ButtonEdit lne67=lne_file.lne67, action=controlp, tabIndex=7, image="zoom.png", scroll;
+Label label4:Label4, text=%"lnt60";
+ButtonEdit lnt60=lnt_file.lnt60, action=controlp, tabIndex=4, image="zoom.png", scroll;
+Label label10:Label10, text=%"lne08";
+ButtonEdit lne08=lne_file.lne08, action=controlp, tabIndex=8, image="zoom.png", scroll;
+Edit lnt01=lnt_file1.lnt04, tabIndex=11, title=%"lnt04", scroll;
+Edit lne05=lne_file.lne05, tabIndex=12, title=%"lne05", scroll;
+ComboBox lne07=lne_file.lne07, tabIndex=13, title=%"lne07", not null, scroll, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"));
+Edit lne61=lne_file1.lne62, tabIndex=14, title=%"lne62", scroll;
+Edit oca02=oca_file.oca02, tabIndex=15, title=%"oca02";
+Edit lne14=lne_file.lne14, tabIndex=16, title=%"lne14", scroll;
+Edit lne15=lne_file.lne15, tabIndex=17, title=%"lne15", scroll;
+ComboBox lne28=lne_file.lne28, tabIndex=18, title=%"lne28", not null, scroll, items=(("0", "0"),("1", "1"));
+Edit lntplan1=lnt_file1.lntplant, tabIndex=19, title=%"lntplant", not null, scroll;
+Edit rtz13=rtz_file.rtz13, tabIndex=20, title=%"rtz13";
+Edit lnt02=lnt_file.lnt01, tabIndex=21, title=%"lnt01", not null, scroll;
+Label label13:Label13, text=%"Label13";
+Edit cnt=formonly.cnt, tabIndex=22;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(lnt_file.lntplant,lnt_file.lnt08,lnt_file.lnt09,lnt_file.lnt60,lnt_file.lnt04,lnt_file.lnt17,lnt_file.lnt18,lne_file.lne62,lne_file.lne67,lne_file.lne08)
+SCREEN RECORD s_lnt(lnt_file1.lnt04,lne_file.lne05,lne_file.lne07,lne_file1.lne62,oca_file.oca02,lne_file.lne14,lne_file.lne15,lne_file.lne28,lnt_file1.lntplant,rtz_file.rtz13,lnt_file.lnt01)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

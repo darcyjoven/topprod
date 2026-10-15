@@ -1,0 +1,162 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi605.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi605")
+VBox VBox1
+Folder pc122
+Page page01(text="Main")
+VBox vb5
+HBox HBox1
+Grid gr769
+{
+ M.Item #            [bmb01                         ]
+ Part Name           [ima02_h1                      ]
+ Spec                [ima021_h1                     ]
+ Src.Cd              [ima08_1   ]
+ Cmpo.Ln#            [bmb02     ]
+ Alternate Code      [bmb29               ]
+}
+END -- gr769
+Grid gr770
+{
+ Compo.No            [bmb03                         ]
+ Part Name           [ima02_h2                      ]
+ Spec                [ima021_h2                     ]
+ Src.Cd              [ima08_2   ]
+ Eff.Date            [bmb04       ]
+ Exp.Date            [bmb05       ]
+}
+END -- gr770
+END -- HBox1
+HBox HBox2
+Group gb534
+Grid gr771
+{
+ Iss.Unit            [bmb10     ]
+ Conv.R(Issu/Unit)   [bmb10_fac ]
+ Conv.R(Issu/Cost)   [bmb10_fac2]
+ QPA                 [bmb06     ]
+ DQPA                [bmb07     ]
+ Wast.%              [bmb08     ]%
+ Chosn%              [bmb23     ]%
+ Eng.Drw#            [bmb11               ]
+ Inst.Loc            [bmb13     ]
+}
+END -- gr771
+END -- gb534
+VBox VBox2
+Group gb535
+Grid gr772
+{
+ Task No.            [bmb09     ]
+ Inpt T.B(DD)        [bmb18     ]
+ diff ratio          [bmb28     ]%
+ WO Open/Expl Opt    [bmb19               ]
+}
+END -- gr772
+END -- gb535
+Group group05(text="Usg.Feat")
+Grid gr773
+{
+[bmb14             ]
+[                  ]
+[                  ]
+[                  ]
+}
+END -- gr773
+END -- group05
+END -- VBox2
+END -- HBox2
+END -- vb5
+END -- page01
+Page info(text="Info")
+Grid gr776
+{
+ Last Modified by    [bmbmodu   ] Modify command from [bmbcomm   ]
+ Create/Modify Date  [bmbdate   ]
+}
+END -- gr776
+END -- info
+END -- pc122
+VBox VBox3
+VBox VBox4
+HBox HBox3
+Group gb537
+Grid gr774
+{
+ SUB Feat[bmb16             ]
+[bmb27                      ]
+[bmb15                      ]
+}
+END -- gr774
+END -- gb537
+Group gb538
+Grid gr775
+{
+ Wharehouse          [bmb25     ]
+ Location            [bmb26     ]
+ ECN No.             [bmb24           ]
+}
+END -- gr775
+END -- gb538
+END -- HBox3
+END -- VBox4
+END -- VBox3
+Grid gr777
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr777
+END -- VBox1
+END -- abmi605
+
+TABLES
+bmb_file
+ATTRIBUTES
+ButtonEdit bmb01=bmb_file.bmb01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ";
+Edit ima02_h1=formonly.ima02_h1 type VARCHAR, tabIndex=2, noEntry;
+Edit ima021_h1=formonly.ima021_h1 type VARCHAR, tabIndex=3, noEntry;
+Edit ima08_1=formonly.ima08_1 type VARCHAR, tabIndex=4, noEntry;
+Edit bmb02=bmb_file.bmb02, tabIndex=5, required;
+Edit bmb29=bmb_file.bmb29, tabIndex=6;
+ButtonEdit bmb03=bmb_file.bmb03, action=controlp, tabIndex=7, required, color = green, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ,<^O>Maintian Brand";
+Edit ima02_h2=formonly.ima02_h2 type VARCHAR, tabIndex=8, noEntry;
+Edit ima021_h2=formonly.ima021_h2 type VARCHAR, tabIndex=9, noEntry;
+Edit ima08_2=formonly.ima08_2 type VARCHAR, tabIndex=10, noEntry;
+DateEdit bmb04=bmb_file.bmb04, tabIndex=11, not null, required;
+DateEdit bmb05=bmb_file.bmb05, tabIndex=12, comment="Modifying,<^P>BOM Description";
+ButtonEdit bmb10=bmb_file.bmb10, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit  <^U>/<^T>Crt Item/ Unit Conv.  ";
+Edit bmb10_fac=bmb_file.bmb10_fac, tabIndex=14, noEntry;
+Edit bmb10_fac2=bmb_file.bmb10_fac2, tabIndex=15, noEntry;
+Edit bmb06=bmb_file.bmb06, tabIndex=16;
+Edit bmb07=bmb_file.bmb07, tabIndex=17;
+Edit bmb08=bmb_file.bmb08, tabIndex=18;
+Edit bmb23=bmb_file.bmb23, tabIndex=19, not null, required;
+Edit bmb11=bmb_file.bmb11, tabIndex=20;
+Edit bmb13=bmb_file.bmb13, tabIndex=21, comment="Chng,Press<^T>M-Insert Loc ";
+ButtonEdit bmb09=bmb_file.bmb09, action=controlp, tabIndex=22, image="zoom", comment="<^P> Qry Task No.";
+Edit bmb18=bmb_file.bmb18, tabIndex=23, not null, required;
+Edit bmb28=bmb_file.bmb28, tabIndex=24;
+ComboBox bmb19=bmb_file.bmb19, tabIndex=25, not null, required, items=(("1", "No Exp"),("2", "No Expl, Auto Open WO"),("3", "Expl"),("4", "Open Window and Qry to Expl"));
+RadioGroup bmb14=bmb_file.bmb14, tabIndex=26, not null, required, items=(("0", "required"),("1", "optional"),("2", "Recovery item"),("3", "Guest Supply"));
+Edit bmbmodu=bmb_file.bmbmodu, tabIndex=33, noEntry;
+Edit bmbcomm=bmb_file.bmbcomm, tabIndex=34, noEntry;
+DateEdit bmbdate=bmb_file.bmbdate, tabIndex=35, noEntry;
+ComboBox bmb16=bmb_file.bmb16, tabIndex=27, not null, required, comment="<^Y>Create REP or SUB   ", items=(("0", "No REP/SUB"),("1", "OK REPd"),("2", "OK SUBd"),("5", "SUB wth SET"),("7", "Rule."));
+CheckBox bmb27=bmb_file.bmb27, tabIndex=28, text="Software object", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox bmb15=bmb_file.bmb15, tabIndex=29, text="Consumption Feature", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit bmb25=bmb_file.bmb25, action=controlp, tabIndex=30, image="zoom", comment="<^P> Qry W/H Table ,<^Y> Crt W/H Table ";
+ButtonEdit bmb26=bmb_file.bmb26, action=controlp, tabIndex=31, image="zoom", comment="<^P> Qry Location    ,<^Y> Create Location ";
+Edit bmb24=bmb_file.bmb24, tabIndex=32, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=36, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(bmb_file.bmb01,formonly.ima02_h1,formonly.ima021_h1,formonly.ima08_1,bmb_file.bmb02,bmb_file.bmb29,bmb_file.bmb03,formonly.ima02_h2,formonly.ima021_h2,formonly.ima08_2,bmb_file.bmb04,bmb_file.bmb05,bmb_file.bmb10,bmb_file.bmb10_fac,bmb_file.bmb10_fac2,bmb_file.bmb06,bmb_file.bmb07,bmb_file.bmb08,bmb_file.bmb23,bmb_file.bmb11,bmb_file.bmb13,bmb_file.bmb09,bmb_file.bmb18,bmb_file.bmb28,bmb_file.bmb19,bmb_file.bmb14,bmb_file.bmbmodu,bmb_file.bmbcomm,bmb_file.bmbdate,bmb_file.bmb16,bmb_file.bmb27,bmb_file.bmb15,bmb_file.bmb25,bmb_file.bmb26,bmb_file.bmb24,formonly.cnt)
+END -- INSTRUCTIONS
+

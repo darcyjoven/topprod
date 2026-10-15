@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt110_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"apmt110_a")
+VBox vb1
+Grid gr1
+{
+
+ <G gb1                                                                           >
+  [dummy1   ]   [order                       ]
+  [dummy2   ]   [type                                      ]
+ <                                                                                >
+}
+END -- gr1
+Grid gr2
+{
+ <T s_pmn1                                                                        >
+ [pmn04                  |pmn041                                  |pmn50_55      ]
+ [pmn04                  |pmn041                                  |pmn50_55      ]
+ [pmn04                  |pmn041                                  |pmn50_55      ]
+ [pmn04                  |pmn041                                  |pmn50_55      ]
+ [pmn04                  |pmn041                                  |pmn50_55      ]
+ <                                                                                >
+
+}
+END -- gr2
+END -- vb1
+END -- Form1
+
+TABLES
+pmn_file
+ATTRIBUTES
+Group gb1:gb1, text="deal order";
+Label dummy1:dummy1, text="sort";
+RadioGroup order=formonly.order type VARCHAR, tabIndex=1, not null, required, orientation=horizontal, items=(("1", "by order"),("2", "by reverse"));
+Label dummy2:dummy2, text="type";
+RadioGroup type=formonly.type type VARCHAR, tabIndex=2, not null, required, orientation=horizontal, items=(("1", "Purchase Date"),("2", "Orig. Arrival  Date"));
+Table s_pmn1:s_pmn1;
+ButtonEdit pmn04=pmn_file.pmn04, action=controlp, tabIndex=3, title="Item No.", not null, required, image="zoom";
+Edit pmn041=pmn_file.pmn041, tabIndex=5, title="Item Description", noEntry;
+Edit pmn50_55=formonly.pmn50_55 type DECIMAL, tabIndex=4, title=" Qty", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmn1(pmn_file.pmn04,pmn_file.pmn041,formonly.pmn50_55)
+SCREEN RECORD Undefined(formonly.order,formonly.type)
+END -- INSTRUCTIONS
+

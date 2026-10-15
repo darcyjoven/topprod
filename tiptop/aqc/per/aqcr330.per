@@ -1,0 +1,66 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqcr330.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"aqcr330")
+VBox VBox1
+Group group01(text="QBE")
+Grid Grid1
+{
+ Date Range     [qcs04               ]
+ Item No.       [qcs021              ]
+ Vender No.     [qcs03               ]
+ Inspector      [qcs13               ]
+ QC Items       [qct04               ]
+ Itm Judg       [qct08               ]
+
+}
+END -- Grid1
+END -- group01
+Group group02(text="INPUT")
+Grid Grid2
+{
+ <G group1                    >
+ [type             ]
+ [                 ]
+ [                 ]
+ [                 ]
+ [                 ]
+ [                 ]
+
+ <                            >
+}
+END -- Grid2
+END -- group02
+Grid gr124
+{
+[more                                     ]
+
+}
+END -- gr124
+END -- VBox1
+END -- aqcr330
+
+TABLES
+qct_file,
+qcs_file
+ATTRIBUTES
+DateEdit qcs04=qcs_file.qcs04, tabIndex=1;
+ButtonEdit qcs021=qcs_file.qcs021, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit qcs03=qcs_file.qcs03, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit qcs13=qcs_file.qcs13, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit qct04=qct_file.qct04, action=controlp, tabIndex=2, image="zoom";
+ComboBox qct08=qct_file.qct08, tabIndex=3, items=(("1", "Qualification"),("2", "QC Reject"));
+Group group1:Group1, text=%"type";
+RadioGroup type=formonly.type type VARCHAR, tabIndex=4, default = "IQC", not null, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"));
+CheckBox more=formonly.more type CHAR, tabIndex=1, text="Other Printing Conditions", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD ScreenRecord1(formonly.type)
+SCREEN RECORD Undefined(qcs_file.qcs04,qcs_file.qcs021,qcs_file.qcs03,qcs_file.qcs13,qct_file.qct04,qct_file.qct08,formonly.more)
+END -- INSTRUCTIONS
+

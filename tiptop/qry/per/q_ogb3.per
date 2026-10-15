@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_ogb3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Delivery Note")
+VBox VBox1
+Grid gr3816
+{
+ Accounts Customer [oga03     ]
+
+}
+END -- gr3816
+Table s_ogb
+{
+[check|oga01             |oga02   |ogb03 |ogb1007      |ogb14             |ogb14t       |ogb1013            ]
+[check|oga01             |oga02   |ogb03 |ogb1007      |ogb14             |ogb14t       |ogb1013            ]
+[check|oga01             |oga02   |ogb03 |ogb1007      |ogb14             |ogb14t       |ogb1013            ]
+[check|oga01             |oga02   |ogb03 |ogb1007      |ogb14             |ogb14t       |ogb1013            ]
+[check|oga01             |oga02   |ogb03 |ogb1007      |ogb14             |ogb14t       |ogb1013            ]
+[check|oga01             |oga02   |ogb03 |ogb1007      |ogb14             |ogb14t       |ogb1013            ]
+[check|oga01             |oga02   |ogb03 |ogb1007      |ogb14             |ogb14t       |ogb1013            ]
+[check|oga01             |oga02   |ogb03 |ogb1007      |ogb14             |ogb14t       |ogb1013            ]
+[check|oga01             |oga02   |ogb03 |ogb1007      |ogb14             |ogb14t       |ogb1013            ]
+[check|oga01             |oga02   |ogb03 |ogb1007      |ogb14             |ogb14t       |ogb1013            ]
+
+}
+END -- s_ogb
+END -- VBox1
+END -- q_ogb3
+
+TABLES
+ogb_file,
+oga_file
+ATTRIBUTES
+Edit oga03=formonly.oga03 type VARCHAR, tabIndex=1;
+CheckBox check=formonly.check type CHAR, tabIndex=2, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oga01=oga_file.oga01, tabIndex=3, title="Delivery Note No.", noEntry;
+DateEdit oga02=oga_file.oga02, tabIndex=4, title="Date", noEntry;
+Edit ogb03=ogb_file.ogb03, tabIndex=5, title="Line#", noEntry;
+Edit ogb1007=ogb_file.ogb1007, tabIndex=6, title="Discount No";
+Edit ogb14=ogb_file.ogb14, tabIndex=7, title="Before-Tax Amount", not null, required;
+Edit ogb14t=ogb_file.ogb14t, tabIndex=8, title="With-Tax Amt", not null, required;
+Edit ogb1013=ogb_file.ogb1013, tabIndex=9, title="Before-Tax Invoiced";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogb(formonly.check,oga_file.oga01,oga_file.oga02,ogb_file.ogb03,ogb_file.ogb1007,ogb_file.ogb14,ogb_file.ogb14t,ogb_file.ogb1013)
+SCREEN RECORD Undefined(formonly.oga03)
+END -- INSTRUCTIONS
+

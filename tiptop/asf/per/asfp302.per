@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp302.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asfp302")
+Folder pc124
+Page page01(text="Main")
+VBox VBox1
+HBox HBox1
+Grid grid01
+{
+ Advice#             [sfb01                 ]
+ Line No.            [sfb92       ]
+ Issue Date          [sfb81       ]
+ Prod.Item #         [sfb05               ]
+ Part Name           [ima02_t                       ]
+ Specification       [ima021_t                      ]
+}
+END -- grid01
+Grid grid02
+{
+ Expiry Date         [sfb071      ]
+ Esitma.Prod.Qty     [sfb08          ]
+ Prod Begin Date     [sfb13       ]
+ Prod End Date       [sfb15       ]
+ W/O Exploded Level  [sfb42     ]
+
+}
+END -- grid02
+Grid grid03
+{
+[sfc_sw                       ]
+ Lots                [lot       ]
+ LotQty              [lota      ]
+[g_sw                         ]
+ Dept/Vender         [sfb82     ]
+
+}
+END -- grid03
+END -- HBox1
+Table s_new
+{
+[new_part              |ima02                    |ima021                 |sfb95         |new_qty      |b_date         |e_date        |new_no      |wo_type  |ven_no           ]
+[new_part              |ima02                    |ima021                 |sfb95         |new_qty      |b_date         |e_date        |new_no      |wo_type  |ven_no           ]
+[new_part              |ima02                    |ima021                 |sfb95         |new_qty      |b_date         |e_date        |new_no      |wo_type  |ven_no           ]
+[new_part              |ima02                    |ima021                 |sfb95         |new_qty      |b_date         |e_date        |new_no      |wo_type  |ven_no           ]
+[new_part              |ima02                    |ima021                 |sfb95         |new_qty      |b_date         |e_date        |new_no      |wo_type  |ven_no           ]
+[new_part              |ima02                    |ima021                 |sfb95         |new_qty      |b_date         |e_date        |new_no      |wo_type  |ven_no           ]
+[new_part              |ima02                    |ima021                 |sfb95         |new_qty      |b_date         |e_date        |new_no      |wo_type  |ven_no           ]
+[new_part              |ima02                    |ima021                 |sfb95         |new_qty      |b_date         |e_date        |new_no      |wo_type  |ven_no           ]
+[new_part              |ima02                    |ima021                 |sfb95         |new_qty      |b_date         |e_date        |new_no      |wo_type  |ven_no           ]
+[new_part              |ima02                    |ima021                 |sfb95         |new_qty      |b_date         |e_date        |new_no      |wo_type  |ven_no           ]
+
+}
+END -- s_new
+Grid gr524
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr524
+END -- VBox1
+END -- page01
+END -- pc124
+END -- asfp302
+
+ATTRIBUTES
+ButtonEdit sfb01=formonly.sfb01 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Advice#";
+Edit sfb92=formonly.sfb92 type CHAR, tabIndex=2, not null, required;
+DateEdit sfb81=formonly.sfb81 type CHAR, tabIndex=3, not null, required;
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=4, noEntry;
+Edit ima02_t=formonly.ima02_t type CHAR, tabIndex=5, noEntry;
+Edit ima021_t=formonly.ima021_t type CHAR, tabIndex=6, noEntry;
+DateEdit sfb071=formonly.sfb071 type DATE, tabIndex=7, not null, required;
+Edit sfb08=formonly.sfb08 type CHAR, tabIndex=8, not null, required;
+DateEdit sfb13=formonly.sfb13 type DATE, tabIndex=9, not null, required;
+DateEdit sfb15=formonly.sfb15 type DATE, tabIndex=10, not null, required;
+Edit sfb42=formonly.sfb42 type CHAR, tabIndex=11, not null, required;
+CheckBox sfc_sw=formonly.sfc_sw type CHAR, tabIndex=12, text="Generate PBI?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit lot=formonly.lot type CHAR, tabIndex=13, not null, required;
+Edit lota=formonly.lota type CHAR, tabIndex=14, not null, required;
+CheckBox g_sw=formonly.g_sw type CHAR, tabIndex=15, text="Explode To Bottom Level", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sfb82=formonly.sfb82 type CHAR, action=controlp, tabIndex=16, image="zoom", comment="<^P>Qry Department";
+ButtonEdit new_part=formonly.new_part type CHAR, action=controlp, tabIndex=17, title="Production Item#", image="zoom", comment="<^P> Query Item  ";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=18, title="Part Name", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=19, title="Specification", noEntry;
+Edit sfb95=formonly.sfb95 type CHAR, tabIndex=20, title="Alternate Code";
+ButtonEdit new_qty=formonly.new_qty type CHAR, action=controlp, tabIndex=21, title="Produced Qty", image="zoom", comment="<^P> Qry Dynamic Data";
+DateEdit b_date=formonly.b_date type DATE, tabIndex=22, title="Operating Date";
+DateEdit e_date=formonly.e_date type DATE, tabIndex=23, title="Complete Date";
+ButtonEdit new_no=formonly.new_no type CHAR, action=controlp, tabIndex=24, title="W/O#", not null, required, image="zoom", comment="<^P> Qry Doc Data";
+ComboBox wo_type=formonly.wo_type type CHAR, tabIndex=25, title="Category", not null, required, comment="1.Plant General W/O  7.Subcontracting W/O", items=(("1", %"Plant General W/O"),("7", %"Subcontraction W/O"));
+ButtonEdit ven_no=formonly.ven_no type CHAR, action=controlp, tabIndex=26, title="Department/Vender", image="zoom", comment="<^P> Qry Department <^T>Qry Vender";
+Phantom formonly.rid type INTEGER;
+Edit cnt=formonly.cnt type CHAR, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_new(formonly.new_part,formonly.ima02,formonly.ima021,formonly.sfb95,formonly.new_qty,formonly.b_date,formonly.e_date,formonly.new_no,formonly.wo_type,formonly.ven_no,formonly.rid)
+SCREEN RECORD Undefined(formonly.sfb01,formonly.sfb92,formonly.sfb81,formonly.sfb05,formonly.ima02_t,formonly.ima021_t,formonly.sfb071,formonly.sfb08,formonly.sfb13,formonly.sfb15,formonly.sfb42,formonly.sfc_sw,formonly.lot,formonly.lota,formonly.g_sw,formonly.sfb82,formonly.cnt)
+END -- INSTRUCTIONS
+

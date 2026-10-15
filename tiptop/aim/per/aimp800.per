@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimp800.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aimp800")
+VBox vb4
+Grid gr3
+{
+ <G group01                                                    > <G group04                                                     >
+ [stk                              ]                             [wip                              ]
+  Label Type    [tag1            ][smydesc1                   ]   Label Type    [tag2            ][smydesc3                   ]
+  type          [type                  ]
+
+ <                                                             > <                                                              >
+ <G group02                                                    > <G group05                                                     >
+ [noinv1                           ]
+ [spcg1                            ]                             [spcg2                            ]
+  Label Type    [spc1            ][smydesc2                   ]   Label Type    [spc2            ][smydesc4                   ]
+  Generating Pages    [qty1      ]                                Generating Pages    [qty2      ]
+ <                                                             > <                                                              >
+ <G group03                                                    > <G group06                                                     >
+ [a1                     ]                                       [k1                     ]
+ [a2                     ]                                       [k2                     ]
+ [a3                     ]                                       [k3                     ]
+ [a4                     ]                                       [k4                     ]
+ [a5                     ]                                       [k5                     ]
+ [a6                     ]                                       [k6                     ]
+  Group Code Option   [class1    ]
+ [stk_q]                                                         [wip_q]
+ <                                                             > <                                                              >
+}
+END -- gr3
+Grid gr4
+{
+ <G group07                       >
+  Date                [exedate   ]
+ <                                >
+
+}
+END -- gr4
+Grid gr5
+{
+[sw                                      ]
+[g_bgjob                                 ]
+
+
+}
+END -- gr5
+END -- vb4
+END -- aimp800
+
+ATTRIBUTES
+Group group01:group01, text="Generate";
+CheckBox stk=formonly.stk type VARCHAR, tabIndex=1, text="(Qty On Hand) Inv Taking Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit tag1=formonly.tag1 type VARCHAR, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry  Label  <^Y>Create Label Type";
+Edit smydesc1=formonly.smydesc1 type VARCHAR, tabIndex=3, noEntry, comment="By Year/Month No. , Example:\'5A0001\'/\'500001\'";
+ComboBox type=formonly.type type VARCHAR, tabIndex=32, not null, required, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"));
+Group group04:group04, text="Generate";
+CheckBox wip=formonly.wip type VARCHAR, tabIndex=4, text="(IP W/O) Inv Taking Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit tag2=formonly.tag2 type VARCHAR, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry  Label  <^Y>Create Label Type";
+Edit smydesc3=formonly.smydesc3 type VARCHAR, tabIndex=6, noEntry, comment="By Year/Month No. , Example:\'5A0001\'/\'500001\'";
+Group group02:group02;
+CheckBox noinv1=formonly.noinv1 type VARCHAR, tabIndex=7, text="Include (None QOH) Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox spcg1=formonly.spcg1 type VARCHAR, tabIndex=8, text="Generate Blank Label", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit spc1=formonly.spc1 type VARCHAR, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry  Label  <^Y>Create Label Type";
+Edit smydesc2=formonly.smydesc2 type VARCHAR, tabIndex=10, noEntry;
+Edit qty1=formonly.qty1 type INTEGER, tabIndex=11;
+Group group05:group05;
+CheckBox spcg2=formonly.spcg2 type VARCHAR, tabIndex=12, text="Generate Blank Label", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit spc2=formonly.spc2 type VARCHAR, action=controlp, tabIndex=13, image="zoom", comment="<^P>Qry  Label  <^Y>Create Label Type";
+Edit smydesc4=formonly.smydesc4 type VARCHAR, tabIndex=14, noEntry;
+Edit qty2=formonly.qty2 type INTEGER, tabIndex=15;
+Group group03:group03, text="STOCK ORDER";
+ComboBox a1=formonly.a1 type CHAR, tabIndex=16, queryEditable, items=(("1", "WH-Kpr"),("2", "W/H"),("3", "Loc"),("4", "Lot#"),("5", "Item No."),("6", "Group Code"));
+ComboBox a2=formonly.a2 type CHAR, tabIndex=17, queryEditable, items=(("1", "WH-Kpr"),("2", "W/H"),("3", "Loc"),("4", "Lot#"),("5", "Item No."),("6", "Group Code"));
+ComboBox a3=formonly.a3 type VARCHAR, tabIndex=18, queryEditable, items=(("1", "WH-Kpr"),("2", "W/H"),("3", "Loc"),("4", "Lot#"),("5", "Item No."),("6", "Group Code"));
+ComboBox a4=formonly.a4 type VARCHAR, tabIndex=19, queryEditable, items=(("1", "WH-Kpr"),("2", "W/H"),("3", "Loc"),("4", "Lot#"),("5", "Item No."),("6", "Group Code"));
+ComboBox a5=formonly.a5 type VARCHAR, tabIndex=20, queryEditable, items=(("1", "WH-Kpr"),("2", "W/H"),("3", "Loc"),("4", "Lot#"),("5", "Item No."),("6", "Group Code"));
+ComboBox a6=formonly.a6 type VARCHAR, tabIndex=21, queryEditable, items=(("1", "WH-Kpr"),("2", "W/H"),("3", "Loc"),("4", "Lot#"),("5", "Item No."),("6", "Group Code"));
+ComboBox class1=formonly.class1 type VARCHAR, tabIndex=22, queryEditable, items=(("0", "0"),("1", "1"),("2", "2"),("3", "3"),("4", "4"));
+Button stk_q:stk_qbe, text="INPUT QBE";
+Group group06:group06, text="WIP ORDER";
+ComboBox k1=formonly.k1 type CHAR, tabIndex=23, queryEditable, items=(("1", "Pro.Item No."),("2", "Comp.Dt"),("3", "Sts."),("4", "Style"),("5", "W/O No."),("6", "Manufacturing Dept"));
+ComboBox k2=formonly.k2 type CHAR, tabIndex=24, queryEditable, items=(("1", "Pro.Item No."),("2", "Comp.Dt"),("3", "Sts."),("4", "Style"),("5", "W/O No."),("6", "Manufacturing Dept"));
+ComboBox k3=formonly.k3 type CHAR, tabIndex=25, queryEditable, items=(("1", "Pro.Item No."),("2", "Comp.Dt"),("3", "Sts."),("4", "Style"),("5", "W/O No."),("6", "Manufacturing Dept"));
+ComboBox k4=formonly.k4 type CHAR, tabIndex=26, queryEditable, items=(("1", "Pro.Item No."),("2", "Comp.Dt"),("3", "Sts."),("4", "Style"),("5", "W/O No."),("6", "Manufacturing Dept"));
+ComboBox k5=formonly.k5 type CHAR, tabIndex=27, queryEditable, items=(("1", "Pro.Item No."),("2", "Comp.Dt"),("3", "Sts."),("4", "Style"),("5", "W/O No."),("6", "Manufacturing Dept"));
+ComboBox k6=formonly.k6 type CHAR, tabIndex=28, queryEditable, items=(("1", "Pro.Item No."),("2", "Comp.Dt"),("3", "Sts."),("4", "Style"),("5", "W/O No."),("6", "Manufacturing Dept"));
+Button wip_q:wip_qbe, text="INPUT QBE";
+Group group07:group07;
+DateEdit exedate=formonly.exedate type DATE, tabIndex=29, noEntry;
+CheckBox sw=formonly.sw type VARCHAR, tabIndex=30, text="Show that carries out course information", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=31, text="Background job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.stk,formonly.tag1,formonly.smydesc1,formonly.type,formonly.wip,formonly.tag2,formonly.smydesc3,formonly.noinv1,formonly.spcg1,formonly.spc1,formonly.smydesc2,formonly.qty1,formonly.spcg2,formonly.spc2,formonly.smydesc4,formonly.qty2,formonly.a1,formonly.a2,formonly.a3,formonly.a4,formonly.a5,formonly.a6,formonly.class1,formonly.k1,formonly.k2,formonly.k3,formonly.k4,formonly.k5,formonly.k6,formonly.exedate,formonly.sw,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

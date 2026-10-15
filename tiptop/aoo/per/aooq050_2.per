@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooq050_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooq050")
+VBox VBox1
+Folder pc870
+Page page01(text="Main")
+Table s_zz
+{
+[zz01         |gaz03                              |cnt   ]
+[zz01         |gaz03                              |cnt   ]
+[zz01         |gaz03                              |cnt   ]
+[zz01         |gaz03                              |cnt   ]
+[zz01         |gaz03                              |cnt   ]
+[zz01         |gaz03                              |cnt   ]
+[zz01         |gaz03                              |cnt   ]
+[zz01         |gaz03                              |cnt   ]
+[zz01         |gaz03                              |cnt   ]
+[zz01         |gaz03                              |cnt   ]
+
+}
+END -- s_zz
+END -- page01
+END -- pc870
+END -- VBox1
+END -- aooq050_2
+
+TABLES
+zz_file
+ATTRIBUTES
+Edit zz01=zz_file.zz01, tabIndex=1, title="Program Code", noEntry;
+Edit gaz03=formonly.gaz03 type VARCHAR, tabIndex=2, title="Program Name", noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=3, title="Copies", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zz(zz_file.zz01,formonly.gaz03,formonly.cnt)
+END -- INSTRUCTIONS
+

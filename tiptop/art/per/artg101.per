@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artg101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"artr101")
+VBox VBox1
+Grid Grid2
+{
+
+   <G group8                                                                 >
+     Logistics Code             [azp01               ]
+                            [dummy4                          ]
+   <                                                                         >
+}
+END -- Grid2
+Grid Grid1
+{
+
+   <G group1                                                                >
+
+         [label3         ]       [ima131            ]
+         [label2         ]       [rte03             ]
+   <                                                                        >
+}
+END -- Grid1
+Group Group4(text=%"INPUT")
+VBox VBox2
+Grid Grid4
+{
+
+  <G group2                                                   >
+     [rte04                                                  ]
+     [rte05                                                 ]
+     [rte06                                                 ]
+     [rte07                                                 ]
+  <                                                           >
+  <G group3                                                   >
+     [s1               ]         [s2                ]
+  <                                                           >
+
+}
+END -- Grid4
+END -- VBox2
+END -- Group4
+Grid Grid3
+{
+ [more                                   ]
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- artr101
+
+ATTRIBUTES
+Group group8:Group8, text=%"QBE1";
+ButtonEdit azp01=formonly.azp01 type CHAR, action=controlp, tabIndex=10, not null, required, image="zoom";
+Label dummy4:dummy4, text="LRDMDS,QY\'|\'H\';\'GK";
+Group group1:Group1, text=%"QBE 2";
+Label label3:Label3, text=%"Product Group";
+ButtonEdit ima131=formonly.ima131 type CHAR, action=controlp, tabIndex=8, image="zoom";
+Label label2:Label2, text=%"Product Barcode";
+ButtonEdit rte03=formonly.rte03 type CHAR, action=controlp, tabIndex=9, image="zoom";
+Group group2:Group2, text=%"Data Option";
+RadioGroup rte04=formonly.rte04 type CHAR, tabIndex=1, orientation=horizontal, items=(("1", "all"),("2", "Geological"),("3", "Not Geological "));
+RadioGroup rte05=formonly.rte05 type CHAR, tabIndex=2, orientation=horizontal, items=(("1", "all"),("2", "Availabe"),("3", "Not Availabe"));
+RadioGroup rte06=formonly.rte06 type CHAR, tabIndex=3, orientation=horizontal, items=(("1", "all"),("2", "Return"),("3", "Not Return"));
+RadioGroup rte07=formonly.rte07 type CHAR, tabIndex=4, orientation=horizontal, items=(("1", "all"),("2", "effective "),("3", "invalid"));
+Group group3:Group3, text=%"Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=5, queryEditable, items=(("1", "Item No."),("2", "Product Group"),("3", "Product Barcode"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=6, queryEditable, items=(("1", "Item No."),("2", "Product Group"),("3", "Product Barcode"));
+CheckBox more=formonly.more type CHAR, tabIndex=7, text=%"Other codition to print";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD ScreenRecord1(formonly.rte04)
+SCREEN RECORD Undefined(formonly.azp01,formonly.ima131,formonly.rte03,formonly.rte05,formonly.rte06,formonly.rte07,formonly.s1,formonly.s2,formonly.more)
+END -- INSTRUCTIONS
+

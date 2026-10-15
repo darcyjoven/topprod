@@ -1,0 +1,33 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcp332.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"axcp332")
+Group Group1(text=%"Group1")
+Grid gr1
+{
+ Book No.  [b            ]
+ YEAR      [yy           ]
+ MONTH     [mm           ]
+ No:       [type         ]
+
+
+}
+END -- gr1
+END -- Group1
+END -- Form1
+
+ATTRIBUTES
+ButtonEdit b=formonly.b type CHAR, action=controlp, tabIndex=3, image="zoom";
+Edit yy=formonly.yy type SMALLINT, tabIndex=1;
+Edit mm=formonly.mm type SMALLINT, tabIndex=2;
+ButtonEdit type=formonly.type type VARCHAR, action=controlp, tabIndex=4, image="zoom.png", comment=%"";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.b,formonly.type)
+END -- INSTRUCTIONS
+

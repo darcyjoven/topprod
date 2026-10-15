@@ -1,0 +1,137 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci010")
+VBox VBox1
+Folder pc341
+Page page01(text="Main")
+HBox HBox1
+Grid gr1440
+{
+ Document          [smyslip   ]
+ Document Name     [smydesc             ]
+ Module            [smysys      ]
+ Document Property [smykind    ]       [ename0                ]
+
+}
+END -- gr1440
+Grid gr1441
+{
+[smydmy1                       ]
+ Cost Accounting [smydmy2                     ]
+ Cost Center     [smy60     ]      Department Name [gem02     ]
+
+
+}
+END -- gr1441
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1442
+{
+ Record Owner        [smyuser   ]   Last Modified by    [smymodu   ]
+ Department          [smygrup   ]   Create/Modify Date  [smydate   ]
+ Record Orig.        [smyoriu   ]
+ Dept Orig.          [smyorig   ]
+}
+END -- gr1442
+END -- info
+END -- pc341
+Group g01(text="Debit")
+VBox VBox3
+Grid gr1443
+{
+ Debit Type Source       [cxg03     ]
+
+
+}
+END -- gr1443
+Table s_cxg
+{
+[cxg04     |azf03               |cxg05                   |aag02                                             |cxg051                  |aag021                                            ]
+[cxg04     |azf03               |cxg05                   |aag02                                             |cxg051                  |aag021                                            ]
+[cxg04     |azf03               |cxg05                   |aag02                                             |cxg051                  |aag021                                            ]
+[cxg04     |azf03               |cxg05                   |aag02                                             |cxg051                  |aag021                                            ]
+[cxg04     |azf03               |cxg05                   |aag02                                             |cxg051                  |aag021                                            ]
+}
+END -- s_cxg
+END -- VBox3
+END -- g01
+Group g02(text="Credit")
+VBox VBox4
+Grid gr1444
+{
+ Credit Type Source      [cxg03c    ]
+
+
+}
+END -- gr1444
+Table s_cxgc
+{
+[cxg04c    |azf03c              |cxg05c                  |aag02c                                            |cxg051c                 |aag021c                                           ]
+[cxg04c    |azf03c              |cxg05c                  |aag02c                                            |cxg051c                 |aag021c                                           ]
+[cxg04c    |azf03c              |cxg05c                  |aag02c                                            |cxg051c                 |aag021c                                           ]
+[cxg04c    |azf03c              |cxg05c                  |aag02c                                            |cxg051c                 |aag021c                                           ]
+[cxg04c    |azf03c              |cxg05c                  |aag02c                                            |cxg051c                 |aag021c                                           ]
+}
+END -- s_cxgc
+END -- VBox4
+END -- g02
+Grid gr1445
+{
+ ----------  Rows [cnt   ] / [cn2   ]-[cn4   ] ----------
+
+
+}
+END -- gr1445
+END -- VBox1
+END -- axci010
+
+TABLES
+smy_file,
+cxg_file
+ATTRIBUTES
+ButtonEdit smyslip=smy_file.smyslip, action=controlp, tabIndex=1, noEntry, image="zoom", comment="Enter Doc No, <^P>Qry Doc No.";
+Edit smydesc=smy_file.smydesc, tabIndex=2, noEntry;
+ComboBox smysys=smy_file.smysys, tabIndex=3, noEntry, queryEditable, items=(("abm", "ABM(BOM Module)"),("aim", "AIM-INV Module"),("apm", "APM Module"),("asf", "ASF Module"));
+ButtonEdit smykind=smy_file.smykind, action=controlp, tabIndex=503, not null, required, image="zoom", upShift, comment="<^P>Qry Document Property";
+Edit ename0=formonly.ename0 type CHAR, tabIndex=504, noEntry;
+CheckBox smydmy1=smy_file.smydmy1, tabIndex=4, text="Cost Accounting PUR", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Cost Accounting PUR ";
+ComboBox smydmy2=smy_file.smydmy2, tabIndex=5, not null, required, items=(("1", "Store-in(Purchase,Manufactured,Subcontracting)"),("2", "Sales"),("3", "Withdraw(W/O,MISC Issue)"),("4", "Transfer"),("5", "Adjust(MISC Issue,Inventory Taking)"),("X", "Un-Inventory Transaction"));
+ButtonEdit smy60=smy_file.smy60, action=controlp, tabIndex=6, image="zoom", comment="Enter Department No, <^P>Qry Department No.";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=7, noEntry;
+Edit smyuser=smy_file.smyuser, tabIndex=8, noEntry;
+Edit smymodu=smy_file.smymodu, tabIndex=9, noEntry;
+Edit smygrup=smy_file.smygrup, tabIndex=10, noEntry;
+DateEdit smydate=smy_file.smydate, tabIndex=11, noEntry;
+Edit smyoriu=smy_file.smyoriu, tabIndex=501, noEntry;
+Edit smyorig=smy_file.smyorig, tabIndex=502, noEntry;
+RadioGroup cxg03=cxg_file.cxg03, tabIndex=12, not null, required, orientation=horizontal, items=(("0", "Single Account"),("1", "Cost Group"),("2", "Main Group Code"),("3", "Product Class"),("4", "By Cost Parameter Setting"));
+ButtonEdit cxg04=cxg_file.cxg04, action=controlp, tabIndex=13, title="Type No.", image="zoom", comment="Enter Type code, <^P>Qry Type Code";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=14, title="Type Title", noEntry;
+ButtonEdit cxg05=cxg_file.cxg05, action=controlp, tabIndex=15, title="Account No.", image="zoom", comment="Enter Account Code, <^P>Qry Account Code";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=16, title="Account Title", noEntry;
+ButtonEdit cxg051=cxg_file.cxg051, action=controlp, tabIndex=17, title="Account No.2", image="zoom", comment="Enter Account Code, <^P>Qry Account Code";
+Edit aag021=formonly.aag021 type CHAR, tabIndex=18, title="Account Title 2", noEntry;
+RadioGroup cxg03c=formonly.cxg03c type CHAR, tabIndex=19, not null, required, orientation=horizontal, items=(("0", "Single Account"),("1", "Cost Group"),("2", "Main Group Code"),("3", "Product Class"),("4", "By Cost Parameter Setting"));
+ButtonEdit cxg04c=formonly.cxg04c type CHAR, action=controlp, tabIndex=20, title="Type No.", image="zoom", comment="Enter Type code, <^P>Qry Type Code";
+Edit azf03c=formonly.azf03c type CHAR, tabIndex=21, title="Type Title", noEntry;
+ButtonEdit cxg05c=formonly.cxg05c type CHAR, action=controlp, tabIndex=22, title="Account No.", image="zoom", comment="Enter Account Code, <^P>Qry Account Code";
+Edit aag02c=formonly.aag02c type CHAR, tabIndex=23, title="Account Title", noEntry;
+ButtonEdit cxg051c=formonly.cxg051c type CHAR, action=controlp, tabIndex=24, title="Account No.2", image="zoom", comment="Enter Account Code, <^P>Qry Account Code";
+Edit aag021c=formonly.aag021c type CHAR, tabIndex=25, title="Account Title 2", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=26, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=27, noEntry;
+Edit cn4=formonly.cn4 type SMALLINT, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cxg(cxg_file.cxg04,formonly.azf03,cxg_file.cxg05,formonly.aag02,cxg_file.cxg051,formonly.aag021)
+SCREEN RECORD s_cxgc(formonly.cxg04c,formonly.azf03c,formonly.cxg05c,formonly.aag02c,formonly.cxg051c,formonly.aag021c)
+SCREEN RECORD Undefined(smy_file.smyslip,smy_file.smydesc,smy_file.smysys,smy_file.smykind,formonly.ename0,smy_file.smydmy1,smy_file.smydmy2,smy_file.smy60,formonly.gem02,smy_file.smyuser,smy_file.smymodu,smy_file.smygrup,smy_file.smydate,smy_file.smyoriu,smy_file.smyorig,cxg_file.cxg03,formonly.cxg03c,formonly.cnt,formonly.cn2,formonly.cn4)
+END -- INSTRUCTIONS
+

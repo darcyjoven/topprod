@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfi5501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+HBox HBox1
+Table ds1
+{
+[ibj02   |ima02      |ima021    |ibj03  |ibj04  |sfs05_s|ibj05  ]
+[ibj02   |ima02      |ima021    |ibj03  |ibj04  |sfs05_s|ibj05  ]
+[ibj02   |ima02      |ima021    |ibj03  |ibj04  |sfs05_s|ibj05  ]
+[ibj02   |ima02      |ima021    |ibj03  |ibj04  |sfs05_s|ibj05  ]
+[ibj02   |ima02      |ima021    |ibj03  |ibj04  |sfs05_s|ibj05  ]
+
+}
+END -- ds1
+Table ds2
+{
+[sfs04    |sfs02 |sfs03        |sfs07  |sfs08 |sfs05  |sfs05_2 ]
+[sfs04    |sfs02 |sfs03        |sfs07  |sfs08 |sfs05  |sfs05_2 ]
+[sfs04    |sfs02 |sfs03        |sfs07  |sfs08 |sfs05  |sfs05_2 ]
+[sfs04    |sfs02 |sfs03        |sfs07  |sfs08 |sfs05  |sfs05_2 ]
+[sfs04    |sfs02 |sfs03        |sfs07  |sfs08 |sfs05  |sfs05_2 ]
+
+}
+END -- ds2
+END -- HBox1
+END -- Form
+
+TABLES
+ibj_file,
+sfs_file,
+ima_file
+ATTRIBUTES
+Edit ibj02=ibj_file.ibj02, tabIndex=1, title=%"ibj02", noEntry, not null, scroll;
+Edit ima02=ima_file.ima02, tabIndex=1, title=%"ima02", noEntry, scroll;
+Edit ima021=ima_file.ima021, tabIndex=1, title=%"ima021", noEntry, scroll;
+Edit ibj03=ibj_file.ibj03, tabIndex=1, title=%"ibj03", noEntry, scroll;
+Edit ibj04=ibj_file.ibj04, tabIndex=1, title=%"ibj04", noEntry, scroll;
+Edit sfs05_s=formonly.sfs05_sum type like sfs_file.sfs05, tabIndex=1, title=%"sfs05", noEntry, scroll;
+Edit ibj05=ibj_file.ibj05, tabIndex=1, title=%"ibj05", noEntry, not null, scroll;
+Edit sfs04=sfs_file.sfs04, tabIndex=4, title=%"sfs04", noEntry, scroll;
+Edit sfs02=sfs_file.sfs02, tabIndex=2, title=%"sfs02", noEntry, not null, scroll;
+Edit sfs03=sfs_file.sfs03, tabIndex=3, title=%"sfs03", noEntry, scroll;
+Edit sfs07=sfs_file.sfs07, tabIndex=7, title=%"sfs07";
+Edit sfs08=sfs_file.sfs08, tabIndex=8, title=%"sfs08";
+Edit sfs05=sfs_file.sfs05, tabIndex=5, title=%"sfs05", noEntry, scroll;
+Edit sfs05_2=formonly.sfs05_2 type like sfs_file.sfs05, tabIndex=6, title=%"sfs05_2", scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ibj(ibj_file.ibj02,ima_file.ima02,ima_file.ima021,ibj_file.ibj03,ibj_file.ibj04,ibj_file.ibj05,formonly.sfs05_sum)
+SCREEN RECORD s_sfs(sfs_file.sfs04,sfs_file.sfs02,sfs_file.sfs03,sfs_file.sfs07,sfs_file.sfs08,sfs_file.sfs05,formonly.sfs05_2)
+END -- INSTRUCTIONS
+

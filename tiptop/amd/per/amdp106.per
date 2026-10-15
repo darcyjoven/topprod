@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdp106.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"amdp106")
+Group g01(text="INPUT")
+VBox VBox1
+Grid gr3617
+{
+ Declaring Department  [ama01     ]
+ Declaring Country     [cty       ]
+ Data Year/Month       [byy        ]/[bmm       ]-[emm       ][dummy01             ]
+ Media File Name(.TXT) [rep       ]
+}
+END -- gr3617
+Grid gr3618
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr3618
+END -- VBox1
+END -- g01
+END -- amdp106
+
+ATTRIBUTES
+ButtonEdit ama01=formonly.ama01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+ComboBox cty=formonly.cty type CHAR, tabIndex=2, not null, required, items=(("A", "Taipei City"),("B", "Taichung City"),("C", "Keelung City"),("D", "Tainan City"),("E", "Kaohsiung City"),("F", "Taipei County"),("G", "Yilan County"),("H", "Taoyuan County"),("I", "Chiayi City"),("J", "Hsinchu County"),("K", "Miaoli County"),("L", "Taichung County"),("M", "Nantou County"),("N", "Changhuan County"),("O", "Hsinchu City"),("P", "Yunlin County"),("Q", "Chiayi County"),("R", "Tainan County"),("S", "Kaohsiung County"),("T", "Pingtung County"),("U", "Hualien County"),("V", "Taitung County"),("W", "Kinmen County"),("X", "Penghu County"),("Z", "Lienchiang County"));
+Edit byy=formonly.byy type SMALLINT, tabIndex=3;
+Edit bmm=formonly.bmm type SMALLINT, tabIndex=4;
+Edit emm=formonly.emm type SMALLINT, tabIndex=5;
+Label dummy01:dummy01, text="(Century Year)";
+Edit rep=formonly.rep type VARCHAR, tabIndex=6;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=7, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ama01,formonly.cty,formonly.byy,formonly.bmm,formonly.emm,formonly.rep,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

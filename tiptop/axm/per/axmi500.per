@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi500.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi500")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2102
+{
+ Price Terms         [xmb01       ]
+ Terms Desc          [oah02                         ]
+ Eff.Date            [xmb03       ]
+ Exp.Date            [xmb06       ]
+ Cust.No.            [xmb04       ]
+ Customer Name       [occ02       ]
+}
+END -- gr2102
+Grid gr2103
+{
+ Currency            [xmb02       ]
+ Collection Terms    [xmb05       ]
+ Terms Desc          [oag02                         ]
+ Memo                [xmb10                         ]
+                     [                              ]
+
+}
+END -- gr2103
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr2104
+{
+ Record Owner        [xmbuser   ] Last Modified by    [xmbmodu   ]
+ Department          [xmbgrup   ] Create/Modify Date  [xmbdate     ]
+ Record Orig.        [xmboriu   ]
+ Dept Orig.          [xmborig   ]
+}
+END -- gr2104
+END -- info
+END -- folder01
+Table s_xmc
+{
+[xmc06               |ima02               |ima021                 |xmc07      |ima908      |xmc08               |xmc09   ]
+[xmc06               |ima02               |ima021                 |xmc07      |ima908      |xmc08               |xmc09   ]
+[xmc06               |ima02               |ima021                 |xmc07      |ima908      |xmc08               |xmc09   ]
+[xmc06               |ima02               |ima021                 |xmc07      |ima908      |xmc08               |xmc09   ]
+[xmc06               |ima02               |ima021                 |xmc07      |ima908      |xmc08               |xmc09   ]
+[xmc06               |ima02               |ima021                 |xmc07      |ima908      |xmc08               |xmc09   ]
+[xmc06               |ima02               |ima021                 |xmc07      |ima908      |xmc08               |xmc09   ]
+[xmc06               |ima02               |ima021                 |xmc07      |ima908      |xmc08               |xmc09   ]
+[xmc06               |ima02               |ima021                 |xmc07      |ima908      |xmc08               |xmc09   ]
+[xmc06               |ima02               |ima021                 |xmc07      |ima908      |xmc08               |xmc09   ]
+
+}
+END -- s_xmc
+Grid gr2105
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2105
+END -- VBox1
+END -- axmi500
+
+TABLES
+xmc_file,
+xmb_file
+ATTRIBUTES
+ButtonEdit xmb01=xmb_file.xmb01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>QRY Price Iterms";
+Edit oah02=formonly.oah02 type CHAR, tabIndex=2, noEntry;
+DateEdit xmb03=xmb_file.xmb03, tabIndex=3, not null, required;
+DateEdit xmb06=xmb_file.xmb06, tabIndex=4, not null, required;
+ButtonEdit xmb04=xmb_file.xmb04, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Details";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=6, noEntry;
+ButtonEdit xmb02=xmb_file.xmb02, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>QRY Currency";
+ButtonEdit xmb05=xmb_file.xmb05, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Details";
+Edit oag02=formonly.oag02 type CHAR, tabIndex=9, noEntry;
+TextEdit xmb10=xmb_file.xmb10, tabIndex=10, stretch=NONE, wantNoReturns;
+Edit xmbuser=xmb_file.xmbuser, tabIndex=11, noEntry;
+Edit xmbmodu=xmb_file.xmbmodu, tabIndex=12, noEntry;
+Edit xmbgrup=xmb_file.xmbgrup, tabIndex=13, noEntry;
+DateEdit xmbdate=xmb_file.xmbdate, tabIndex=14, noEntry;
+Edit xmboriu=xmb_file.xmboriu, tabIndex=501, noEntry;
+Edit xmborig=xmb_file.xmborig, tabIndex=502, noEntry;
+ButtonEdit xmc06=xmc_file.xmc06, action=controlp, tabIndex=15, title="Item No.", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=16, title="P/N", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=17, title="Spec", noEntry;
+ButtonEdit xmc07=xmc_file.xmc07, action=controlp, tabIndex=18, title="Sales Unit", not null, required, image="zoom", comment="<^P>Qry Details";
+Edit ima908=formonly.ima908 type CHAR, tabIndex=19, title="Price Unit", noEntry;
+Edit xmc08=xmc_file.xmc08, tabIndex=20, title="Discount$", not null, required, comment="<^Y>Under Field Modified the same this Discount$";
+Edit xmc09=xmc_file.xmc09, tabIndex=21, title="Discount", not null, required, comment="<^Y>Under Field Modified the same this Discount";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_xmc(xmc_file.xmc06,formonly.ima02,formonly.ima021,xmc_file.xmc07,formonly.ima908,xmc_file.xmc08,xmc_file.xmc09)
+SCREEN RECORD Undefined(xmb_file.xmb01,formonly.oah02,xmb_file.xmb03,xmb_file.xmb06,xmb_file.xmb04,formonly.occ02,xmb_file.xmb02,xmb_file.xmb05,formonly.oag02,xmb_file.xmb10,xmb_file.xmbuser,xmb_file.xmbmodu,xmb_file.xmbgrup,xmb_file.xmbdate,xmb_file.xmboriu,xmb_file.xmborig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

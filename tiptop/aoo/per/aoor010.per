@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aoor010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aoor010")
+VBox VBox1
+Grid gr4689
+{
+ <G group01                                                                             >
+  Program#            [zu01      ]
+ <                                                                                      >
+
+}
+END -- gr4689
+Group g01(text="INPUT")
+Grid gr4690
+{
+ Date of Use         [b_date      ] - [e_date      ]
+ Min. Time Use       [a    ]
+ Min.Times           [b   ]
+[t                         ]
+
+ <G group03                                                                          >
+ [s                         ]
+
+ <                                                                                   >
+
+}
+END -- gr4690
+END -- g01
+Grid gr4691
+{
+[more                          ]
+
+}
+END -- gr4691
+END -- VBox1
+END -- aoor010
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit zu01=formonly.zu01 type VARCHAR, tabIndex=1;
+DateEdit b_date=formonly.b_date type DATE, tabIndex=2;
+DateEdit e_date=formonly.e_date type DATE, tabIndex=3;
+Edit a=formonly.a type SMALLINT, tabIndex=4;
+Edit b=formonly.b type SMALLINT, tabIndex=5;
+CheckBox t=formonly.t type CHAR, tabIndex=6, text="Collect with User ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Sequence";
+RadioGroup s=formonly.s type VARCHAR, tabIndex=7, default = "3", items=(("1", "Program#"),("2", "user  "),("3", "Time    "),("4", "Times Used"));
+CheckBox more=formonly.more type CHAR, tabIndex=8, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.zu01,formonly.b_date,formonly.e_date,formonly.a,formonly.b,formonly.t,formonly.s,formonly.more)
+END -- INSTRUCTIONS
+

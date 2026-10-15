@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapi204.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapi204")
+VBox VBox1
+Folder pc14
+Page page01(text="Main")
+Table s_apw
+{
+[apw01    |apw02         |apw03     |aag02             |apw031     |aag021                          ]
+[apw01    |apw02         |apw03     |aag02             |apw031     |aag021                          ]
+[apw01    |apw02         |apw03     |aag02             |apw031     |aag021                          ]
+[apw01    |apw02         |apw03     |aag02             |apw031     |aag021                          ]
+[apw01    |apw02         |apw03     |aag02             |apw031     |aag021                          ]
+[apw01    |apw02         |apw03     |aag02             |apw031     |aag021                          ]
+[apw01    |apw02         |apw03     |aag02             |apw031     |aag021                          ]
+[apw01    |apw02         |apw03     |aag02             |apw031     |aag021                          ]
+[apw01    |apw02         |apw03     |aag02             |apw031     |aag021                          ]
+[apw01    |apw02         |apw03     |aag02             |apw031     |aag021                          ]
+
+}
+END -- s_apw
+END -- page01
+END -- pc14
+Grid gr30
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr30
+END -- VBox1
+END -- aapi204
+
+TABLES
+aag_file,
+apw_file
+ATTRIBUTES
+Edit apw01=apw_file.apw01, tabIndex=1, title="Category", not null, required, comment="Enter a-z or A-Z  A:Charge  B:Transfer  C:Paying T.T  Z:Suspense Debit";
+Edit apw02=apw_file.apw02, tabIndex=2, title="Category Desc";
+ButtonEdit apw03=apw_file.apw03, action=controlp, tabIndex=3, title="Acct.Code", image="zoom", comment="<^P> Qry Account #";
+Edit aag02=aag_file.aag02, tabIndex=4, title="Account Title", noEntry;
+ButtonEdit apw031=apw_file.apw031, action=controlp, tabIndex=5, title="Acct2.Code", image="zoom", comment="<^P> Qry Account #";
+Edit aag021=formonly.aag021 type CHAR, tabIndex=6, title="Account2 Title", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apw(apw_file.apw01,apw_file.apw02,apw_file.apw03,aag_file.aag02,apw_file.apw031,formonly.aag021)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

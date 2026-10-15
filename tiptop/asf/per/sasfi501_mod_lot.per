@@ -1,0 +1,95 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/sasfi501_mod_lot.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"sasfi501_mod_lot")
+VBox VBox1
+Folder Main
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+[label1         |rvbs021                       ] [rvbs_ounit     |rvbs_ouni1          ]
+[rvbs_ima02     |rvbs_ima01                    ] [rvbs_oqty      |rvbs_oqt1           ]
+[rvbs_ima021    |rvbs_ima022                   ] [rvbs_sunit     |rvbs_suni1          ]
+                                                 [rvbs_fac       |rvbs_fa1            ]
+                                                 [rvbs_sqty      |rvbs_sqt1           ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Main
+Table s_lot_rvbs
+{
+[sel     |rvbs03                        |rvbs04                        |rvbs05    |imgs08           |rvbs07  |rvbs08              |rvbs06           |rvbs_eqt|att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[sel     |rvbs03                        |rvbs04                        |rvbs05    |imgs08           |rvbs07  |rvbs08              |rvbs06           |rvbs_eqt|att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[sel     |rvbs03                        |rvbs04                        |rvbs05    |imgs08           |rvbs07  |rvbs08              |rvbs06           |rvbs_eqt|att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[sel     |rvbs03                        |rvbs04                        |rvbs05    |imgs08           |rvbs07  |rvbs08              |rvbs06           |rvbs_eqt|att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[sel     |rvbs03                        |rvbs04                        |rvbs05    |imgs08           |rvbs07  |rvbs08              |rvbs06           |rvbs_eqt|att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[sel     |rvbs03                        |rvbs04                        |rvbs05    |imgs08           |rvbs07  |rvbs08              |rvbs06           |rvbs_eqt|att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[sel     |rvbs03                        |rvbs04                        |rvbs05    |imgs08           |rvbs07  |rvbs08              |rvbs06           |rvbs_eqt|att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+[sel     |rvbs03                        |rvbs04                        |rvbs05    |imgs08           |rvbs07  |rvbs08              |rvbs06           |rvbs_eqt|att01   |att02   |att03   |att04   |att05   |att06   |att07   |att08   |att09   |att10   ]
+
+}
+END -- s_lot_rvbs
+Grid Grid2
+{
+                                                                                                         -------[detail_t][rvbs_srvbs06     ][rvbs_seqty     ]----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- mod_lot
+
+TABLES
+imgs_file,
+rvbs_file
+ATTRIBUTES
+Label label1:Label1, text=%"rvbs021";
+Edit rvbs021=rvbs_file.rvbs021, tabIndex=1, noEntry, scroll;
+Label rvbs_ounit:rvbs_ounit, text=%"rvbs_ounit";
+Edit rvbs_ouni1=formonly.rvbs_ounit type CHAR, tabIndex=4, noEntry;
+Label rvbs_ima02:rvbs_ima02, text=%"rvbs_ima02";
+Edit rvbs_ima01=formonly.rvbs_ima02 type VARCHAR, tabIndex=2, noEntry, scroll;
+Label rvbs_oqty:rvbs_oqty, text=%"rvbs_oqty";
+Edit rvbs_oqt1=formonly.rvbs_oqty type CHAR, tabIndex=5, noEntry;
+Label rvbs_ima021:rvbs_ima021, text=%"rvbs_ima02";
+Edit rvbs_ima022=formonly.rvbs_ima021 type VARCHAR, tabIndex=3, noEntry, scroll;
+Label rvbs_sunit:rvbs_sunit, text=%"rvbs_sunit";
+Edit rvbs_suni1=formonly.rvbs_sunit type CHAR, tabIndex=6, noEntry;
+Label rvbs_fac:rvbs_fac, text=%"rvbs_fac";
+Edit rvbs_fa1=formonly.rvbs_fac type CHAR, tabIndex=7, noEntry;
+Label rvbs_sqty:rvbs_sqty, text=%"rvbs_sqty";
+Edit rvbs_sqt1=formonly.rvbs_sqty type CHAR, tabIndex=8, noEntry;
+CheckBox sel=formonly.sel type CHAR, tabIndex=9, title=%"sel", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit rvbs03=rvbs_file.rvbs03, tabIndex=10, title=%"rvbs03", noEntry, not null, scroll;
+Edit rvbs04=rvbs_file.rvbs04, tabIndex=11, title=%"rvbs04", noEntry, not null, scroll;
+DateEdit rvbs05=rvbs_file.rvbs05, tabIndex=12, title=%"rvbs05", noEntry;
+Edit imgs08=imgs_file.imgs08, tabIndex=17, title=%"imgs08", noEntry, scroll;
+ComboBox rvbs07=rvbs_file.rvbs07, tabIndex=13, title=%"rvbs07", noEntry, scroll, items=(("1", "order"),("2", "work order"),("3", "project"));
+Edit rvbs08=rvbs_file.rvbs08, tabIndex=14, title=%"rvbs08", noEntry, not null, scroll;
+Edit rvbs06=rvbs_file.rvbs06, tabIndex=15, title=%"rvbs06", not null, scroll;
+Edit rvbs_eqt=formonly.rvbs_eqty type CHAR, tabIndex=16, title=%"rvbs_eqty", noEntry;
+Edit att01=formonly.att01 type CHAR, tabIndex=18, title=%"att01";
+Edit att02=formonly.att02 type CHAR, tabIndex=19, title=%"att02";
+Edit att03=formonly.att03 type CHAR, tabIndex=20, title=%"att03";
+Edit att04=formonly.att04 type CHAR, tabIndex=21, title=%"att04";
+Edit att05=formonly.att05 type CHAR, tabIndex=22, title=%"att05";
+Edit att06=formonly.att06 type CHAR, tabIndex=23, title=%"att06";
+Edit att07=formonly.att07 type CHAR, tabIndex=24, title=%"att07";
+Edit att08=formonly.att08 type CHAR, tabIndex=25, title=%"att08";
+Edit att09=formonly.att09 type CHAR, tabIndex=26, title=%"att09";
+Edit att10=formonly.att10 type CHAR, tabIndex=27, title=%"att10";
+Label detail_t:detail_total, text=%"detail_total";
+Edit rvbs_srvbs06=formonly.rvbs_srvbs06 type CHAR, tabIndex=28, noEntry;
+Edit rvbs_seqty=formonly.rvbs_seqty type CHAR, tabIndex=29;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rvbs_file.rvbs021,formonly.rvbs_ima02,formonly.rvbs_ima021,formonly.rvbs_ounit,formonly.rvbs_oqty,formonly.rvbs_sunit,formonly.rvbs_fac,formonly.rvbs_sqty,formonly.rvbs_srvbs06,formonly.rvbs_seqty)
+SCREEN RECORD s_lot_rvbs(formonly.sel,rvbs_file.rvbs03,rvbs_file.rvbs04,rvbs_file.rvbs05,imgs_file.imgs08,rvbs_file.rvbs07,rvbs_file.rvbs08,rvbs_file.rvbs06,formonly.rvbs_eqty,formonly.att01,formonly.att02,formonly.att03,formonly.att04,formonly.att05,formonly.att06,formonly.att07,formonly.att08,formonly.att09,formonly.att10)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr002")
+VBox VBox1
+Group group01(text="INPUT")
+Grid gr2574
+{
+ <G group02                                                       >
+  [rtype                                            ]
+ <                                                                >
+  <G group03                                                       >
+   Group No.            [axa01               ]
+   Company No.          [axa02               ]
+   Book No.             [axa03               ]
+   Report Structure No. [a                   ]
+   Book No.             [b                   ]
+   Enter Year           [yy                  ]
+   axa06                [axa06               ]
+   End Period           [em                  ]
+   Quarter              [q1                  ]
+   Half a Year          [h1                  ]
+   Print Minimum Level# [f                   ]
+  <                                                                >
+  <G group04                      >  <G group1                     >
+   [d                             ]   [p                       ]
+   [                              ]   [                        ]
+   [                              ]
+  <                               >  <                             >
+
+  <G group05                                                       >
+   [c                             ]
+   [e                             ]
+  <                                                                >
+
+}
+END -- gr2574
+END -- group01
+Grid gr2575
+{
+
+[more                                                        ]
+}
+END -- gr2575
+END -- VBox1
+END -- aglr002
+
+ATTRIBUTES
+Group group02:group02, text="Report Type";
+RadioGroup rtype=formonly.rtype type CHAR, tabIndex=1, items=(("1", "Balance Sheet"),("2", "Income statement"));
+Group group03:group03;
+ButtonEdit axa01=formonly.axa01 type CHAR, action=controlp, tabIndex=4, image="zoom";
+Edit axa02=formonly.axa02 type CHAR, tabIndex=12;
+Edit axa03=formonly.axa03 type CHAR, tabIndex=13;
+ButtonEdit a=formonly.a type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=3, noEntry, image="zoom";
+Edit yy=formonly.yy type SMALLINT, tabIndex=5;
+ComboBox axa06=formonly.axa06 type VARCHAR, tabIndex=14, items=(("1", "Month"),("2", "Quarter"),("3", "Half a Year"),("4", "Year"));
+Edit em=formonly.em type SMALLINT, tabIndex=6;
+ComboBox q1=formonly.q1 type VARCHAR, tabIndex=15, not null, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox h1=formonly.h1 type VARCHAR, tabIndex=16, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+Edit f=formonly.f type SMALLINT, tabIndex=7;
+Group group04:group04, text="Amount Unit";
+RadioGroup d=formonly.d type CHAR, tabIndex=8, items=(("1", "DR"),("2", "TH"),("3", "Million"));
+Group group1:Group1, text=%"Print";
+RadioGroup p=formonly.p type CHAR, tabIndex=17, not null, required, items=(("1", "1"),("2", "2"));
+Group group05:group05;
+CheckBox c=formonly.c type CHAR, tabIndex=9, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox e=formonly.e type CHAR, tabIndex=10, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rtype,formonly.axa01,formonly.axa02,formonly.axa03,formonly.a,formonly.b,formonly.yy,formonly.axa06,formonly.em,formonly.q1,formonly.h1,formonly.f,formonly.d,formonly.c,formonly.e,formonly.more,formonly.p)
+END -- INSTRUCTIONS
+

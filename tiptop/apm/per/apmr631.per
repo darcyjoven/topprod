@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr631.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr631")
+VBox VBox1
+Grid gr5166
+{
+ <G group01                                                     >
+  Document No.   [rvu01               ]
+  Date           [rvu03               ]
+  Vender No.     [rvu04               ]
+  Department No. [rvu06               ]
+  Employee No.   [rvu07               ]
+ <                                                              >
+
+}
+END -- gr5166
+Group group02(text="INPUT")
+Grid gr5167
+{
+[a                                                            ]
+
+}
+END -- gr5167
+END -- group02
+Grid gr5168
+{
+ [more                                                            ]
+
+}
+END -- gr5168
+END -- VBox1
+END -- apmr631
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit rvu01=formonly.rvu01 type VARCHAR, tabIndex=1;
+DateEdit rvu03=formonly.rvu03 type DATE, tabIndex=2;
+Edit rvu04=formonly.rvu04 type VARCHAR, tabIndex=3;
+Edit rvu06=formonly.rvu06 type VARCHAR, tabIndex=4;
+Edit rvu07=formonly.rvu07 type VARCHAR, tabIndex=5;
+RadioGroup a=formonly.a type VARCHAR, tabIndex=6, items=(("1", "Confirmed"),("2", "UnConfirmed"),("3", "All "));
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.rvu01,formonly.rvu03,formonly.rvu04,formonly.rvu06,formonly.rvu07,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

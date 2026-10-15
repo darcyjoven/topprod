@@ -1,0 +1,108 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsp830.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apsp830")
+VBox vb4
+Folder pc12
+Page Page15(text="Page0")
+Grid gr22
+{
+
+  APS Version   [vol01        ]        Version [vol02        ]
+
+}
+END -- gr22
+END -- Page15
+END -- pc12
+Group gb5(text="sug_result")
+Table s_arr1
+{
+[vol11     |vol12    |vol08     |vol09     |vol03   |vol10     |vol04      |vol05     |vol05_2   |vol06     |vol06_2   |vol07|vol11a|vol00|vol0a|vol05c|vol0b|vol0c|vol0d|vol|vol0]
+[vol11     |vol12    |vol08     |vol09     |vol03   |vol10     |vol04      |vol05     |vol05_2   |vol06     |vol06_2   |vol07|vol11a|vol00|vol0a|vol05c|vol0b|vol0c|vol0d|vol|vol0]
+[vol11     |vol12    |vol08     |vol09     |vol03   |vol10     |vol04      |vol05     |vol05_2   |vol06     |vol06_2   |vol07|vol11a|vol00|vol0a|vol05c|vol0b|vol0c|vol0d|vol|vol0]
+
+}
+END -- s_arr1
+END -- gb5
+Folder pc7
+Page Page7(text=%"over_work_info")
+VBox vb3
+Group gb3
+Table s_arr2
+{
+[vnc06      |vnc07       |vnc01       |vnc02      |vnc08       |vnc031      |vnc041    |vnc05     ]
+[vnc06      |vnc07       |vnc01       |vnc02      |vnc08       |vnc031      |vnc041    |vnc05     ]
+[vnc06      |vnc07       |vnc01       |vnc02      |vnc08       |vnc031      |vnc041    |vnc05     ]
+
+}
+END -- s_arr2
+END -- gb3
+Grid gr26
+{
+ -------------- Rows[cn2   ] ------------   [view|retu]
+
+}
+END -- gr26
+END -- vb3
+END -- Page7
+END -- pc7
+Grid gr571
+{
+ ---------- Rows [cnt   ]----------
+
+}
+END -- gr571
+END -- vb4
+END -- apsp830
+
+TABLES
+vnc_file,
+vol_file
+ATTRIBUTES
+ButtonEdit vol01=vol_file.vol01, action=controlp, tabIndex=32, not null, required, image="zoom";
+Edit vol02=vol_file.vol02, tabIndex=33, not null, required;
+CheckBox vol11=vol_file.vol11, tabIndex=14, title="IsUpdsate", not null, required;
+ComboBox vol12=vol_file.vol12, tabIndex=15, title="adj_code", items=(("0", "nochange"),("1", "insert"),("2", "delete"),("3", "modify"));
+ComboBox vol08=vol_file.vol08, tabIndex=16, title="Is Outsource", noEntry, items=(("0", "Not Outsource"),("1", "Outsource"));
+ComboBox vol09=vol_file.vol09, tabIndex=17, title="Resource Type", noEntry, items=(("1", "Machine"),("2", "Outsource Factory"),("0", "Product Line"));
+Edit vol03=vol_file.vol03, tabIndex=18, title="equip_id", noEntry;
+ComboBox vol10=vol_file.vol10, tabIndex=19, title="overtime Type", noEntry, items=(("0", "Overtime"),("1", "Repair"));
+Edit vol04=vol_file.vol04, tabIndex=20, title="calendar_date", noEntry;
+Edit vol05=vol_file.vol05, tabIndex=21, title="start_time", noEntry;
+Edit vol05_2=formonly.vol05_2 type VARCHAR, tabIndex=22, title="vol05_2", noEntry;
+Edit vol06=vol_file.vol06, tabIndex=23, title="end_time", noEntry;
+Edit vol06_2=formonly.vol06_2 type VARCHAR, tabIndex=24, title="vol06_2", noEntry;
+Edit vol07=formonly.vol07 type CHAR, tabIndex=35, title="vol07";
+Edit vol11a=formonly.vol11a type CHAR, tabIndex=25, title="vol11a";
+Edit vol00=formonly.vol05a type VARCHAR, tabIndex=26, title="vol05a", noEntry;
+Edit vol0a=formonly.vol05b type VARCHAR, tabIndex=27, title="vol05b", noEntry;
+Edit vol05c=formonly.vol05c type VARCHAR, tabIndex=28, title="vol05c", noEntry;
+Edit vol0b=formonly.vol06a type VARCHAR, tabIndex=29, title="vol06a", noEntry;
+Edit vol0c=formonly.vol06b type VARCHAR, tabIndex=30, title="vol06b", noEntry;
+Edit vol0d=formonly.vol06c type VARCHAR, tabIndex=31, title="vol06c", noEntry;
+Edit vol=formonly.vol04_1 type CHAR, tabIndex=36, title=%"vol04_1";
+Edit vol0=formonly.vol04_2 type CHAR, tabIndex=37, title=%"vol04_2";
+ComboBox vnc06=vnc_file.vnc06, tabIndex=6, title="vnc06", items=(("0", "Not Outsource"),("1", "Outsource"));
+ComboBox vnc07=vnc_file.vnc07, tabIndex=7, title="vnc07", items=(("0", "WORKSTATION"),("1", "Machine"),("2", "Outsource Factory"));
+Edit vnc01=vnc_file.vnc01, tabIndex=8, title="vnc01", noEntry;
+Edit vnc02=vnc_file.vnc02, tabIndex=9, title="vnc02", noEntry;
+ComboBox vnc08=vnc_file.vnc08, tabIndex=10, title="vnc08", items=(("0", "Overtime"),("1", "Repair"));
+Edit vnc031=vnc_file.vnc031, tabIndex=11, title="vnc031", noEntry, format="XX:XX:XX", picture="XX:XX:XX";
+Edit vnc041=vnc_file.vnc041, tabIndex=12, title="vnc041", noEntry, format="XX:XX:XX", picture="XX:XX:XX";
+CheckBox vnc05=vnc_file.vnc05, tabIndex=13, title="vnc05";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=34, noEntry;
+Button view:view1, text="View1";
+Button retu:return, text="RETURN";
+Edit cnt=formonly.cnt type CHAR, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_arr2(vnc_file.vnc06,vnc_file.vnc07,vnc_file.vnc01,vnc_file.vnc02,vnc_file.vnc08,vnc_file.vnc031,vnc_file.vnc041,vnc_file.vnc05)
+SCREEN RECORD s_arr1(vol_file.vol11,vol_file.vol12,vol_file.vol08,vol_file.vol09,vol_file.vol03,vol_file.vol10,vol_file.vol04,vol_file.vol05,formonly.vol05_2,vol_file.vol06,formonly.vol06_2,formonly.vol07,formonly.vol11a,formonly.vol05a,formonly.vol05b,formonly.vol05c,formonly.vol06a,formonly.vol06b,formonly.vol06c,formonly.vol04_1,formonly.vol04_2)
+SCREEN RECORD Undefined(vol_file.vol01,vol_file.vol02,formonly.cn2,formonly.cnt)
+END -- INSTRUCTIONS
+

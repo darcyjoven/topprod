@@ -1,0 +1,175 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi505.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi505")
+VBox VBox5
+Folder pc122
+Page page01(text="Main")
+VBox VBox2
+HBox HBox1
+Grid gr769
+{
+ M.Item #            [brb01                         ]
+ Part Name           [ima02_h1                      ]
+ Spec                [ima021_h1                     ]
+ Src.Cd              [ima08_1   ]
+ Process No.         [brb011          |ecu03               ]
+ Process Section No. [brb012          |ecu014              ]
+ System procedures   [brb013          ]
+ Cmpo.Ln#            [brb02     ]
+ Alternate Code      [brb29               ]
+}
+END -- gr769
+Grid gr770
+{
+ Compo.No            [brb03                         ]
+ Part Name           [ima02_h2                      ]
+ Spec                [ima021_h2                     ]
+ Src.Cd              [ima08_2   ]
+ Eff.Date            [brb04       ]
+ Exp.Date            [brb05       ]
+
+
+
+}
+END -- gr770
+END -- HBox1
+HBox HBox2
+Group gb534
+Grid gr771
+{
+ Iss.Unit            [brb10     ]
+ Conv.R(Issu/Unit)   [brb10_fac ]
+ Conv.R(Issu/Cost)   [brb10_fac2]
+ QPA                 [brb06     ]
+ DQPA                [brb07     ]
+ Wast.%              [brb08     ]%
+ Chosn%              [brb23     ]%
+ Eng.Drw#            [brb11               ]
+ Inst.Loc            [brb13     ]
+}
+END -- gr771
+END -- gb534
+VBox VBox1
+Group gb535
+Grid gr772
+{
+ Task No.            [brb09     ]
+ Inpt T.B(DD)        [brb18     ]
+ diff ratio          [brb28     ]%
+ WO Open/Expl Opt    [brb19               ]
+}
+END -- gr772
+END -- gb535
+Group group05(text="Usg.Feat")
+Grid gr773
+{
+[brb14                                    ]
+[                                         ]
+[                                         ]
+[                                         ]
+}
+END -- gr773
+END -- group05
+END -- VBox1
+END -- HBox2
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr776
+{
+ Last Modified by    [brbmodu   ] Modify command from [brbcomm   ]
+ Create/Modify Date  [brbdate   ]
+}
+END -- gr776
+END -- info
+END -- pc122
+VBox VBox3
+VBox VBox4
+HBox HBox3
+Group gb537
+Grid gr774
+{
+ SUB Feat[brb16             ]
+[brb27                      ]
+[brb15                      ]
+}
+END -- gr774
+END -- gb537
+Group gb538
+Grid gr775
+{
+ Wharehouse          [brb25     ]
+ Location            [brb26     ]
+ ECN No.             [brb24           ]
+}
+END -- gr775
+END -- gb538
+END -- HBox3
+END -- VBox4
+END -- VBox3
+Grid gr777
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+}
+END -- gr777
+END -- VBox5
+END -- abmi505
+
+TABLES
+brb_file
+ATTRIBUTES
+ButtonEdit brb01=brb_file.brb01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ";
+Edit ima02_h1=formonly.ima02_h1 type VARCHAR, tabIndex=2, noEntry;
+Edit ima021_h1=formonly.ima021_h1 type VARCHAR, tabIndex=3, noEntry;
+Edit ima08_1=formonly.ima08_1 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit brb011=brb_file.brb011, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ";
+Edit ecu03=formonly.ecu03 type CHAR, tabIndex=40, noEntry;
+ButtonEdit brb012=brb_file.brb012, action=controlp, tabIndex=6, not null, required, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ";
+Edit ecu014=formonly.ecu014 type CHAR, tabIndex=41, noEntry;
+ButtonEdit brb013=brb_file.brb013, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ";
+Edit brb02=brb_file.brb02, tabIndex=8, required;
+Edit brb29=brb_file.brb29, tabIndex=9;
+ButtonEdit brb03=brb_file.brb03, action=controlp, tabIndex=10, required, color = green, image="zoom", comment="<^P> Query Item,   <^Y> Create Item  ,<^O>Maintian Brand";
+Edit ima02_h2=formonly.ima02_h2 type VARCHAR, tabIndex=11, noEntry;
+Edit ima021_h2=formonly.ima021_h2 type VARCHAR, tabIndex=12, noEntry;
+Edit ima08_2=formonly.ima08_2 type VARCHAR, tabIndex=13, noEntry;
+DateEdit brb04=brb_file.brb04, tabIndex=14, not null, required;
+DateEdit brb05=brb_file.brb05, tabIndex=15, comment="Modifying,<^P>BOM Description";
+ButtonEdit brb10=brb_file.brb10, action=controlp, tabIndex=16, image="zoom", comment="<^P>Qry Unit <^Y>Create Unit  <^U>/<^T>Crt Item/ Unit Conv.  ";
+Edit brb10_fac=brb_file.brb10_fac, tabIndex=17, noEntry;
+Edit brb10_fac2=brb_file.brb10_fac2, tabIndex=18, noEntry;
+Edit brb06=brb_file.brb06, tabIndex=19;
+Edit brb07=brb_file.brb07, tabIndex=20;
+Edit brb08=brb_file.brb08, tabIndex=21;
+Edit brb23=brb_file.brb23, tabIndex=22, not null, required;
+Edit brb11=brb_file.brb11, tabIndex=23;
+Edit brb13=brb_file.brb13, tabIndex=24, comment="Chng,Press<^T>M-Insert Loc ";
+ButtonEdit brb09=brb_file.brb09, action=controlp, tabIndex=25, image="zoom", comment="<^P> Qry Task No.";
+Edit brb18=brb_file.brb18, tabIndex=26, not null, required;
+Edit brb28=brb_file.brb28, tabIndex=27;
+ComboBox brb19=brb_file.brb19, tabIndex=28, not null, required, items=(("1", "No Exp"),("2", "No Expl, Auto Open WO"),("3", "Expl"),("4", "Open Window and Qry to Expl"));
+RadioGroup brb14=brb_file.brb14, tabIndex=29, not null, required, items=(("0", "required"),("1", "optional"),("2", "Recovery item"),("3", "Guest Supply"));
+Edit brbmodu=brb_file.brbmodu, tabIndex=36, noEntry;
+Edit brbcomm=brb_file.brbcomm, tabIndex=37, noEntry;
+DateEdit brbdate=brb_file.brbdate, tabIndex=38, noEntry;
+ComboBox brb16=brb_file.brb16, tabIndex=30, not null, required, comment="<^Y>Create REP or SUB   ", items=(("0", "No REP/SUB"),("1", "OK REPd"),("2", "OK SUBd"),("5", "SUB wth SET"),("7", "Rule."));
+CheckBox brb27=brb_file.brb27, tabIndex=31, text="Software object", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox brb15=brb_file.brb15, tabIndex=32, text="Consumption Feature", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit brb25=brb_file.brb25, action=controlp, tabIndex=33, image="zoom", comment="<^P> Qry W/H Table ,<^Y> Crt W/H Table ";
+ButtonEdit brb26=brb_file.brb26, action=controlp, tabIndex=34, image="zoom", comment="<^P> Qry Location    ,<^Y> Create Location ";
+Edit brb24=brb_file.brb24, tabIndex=35, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=39, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(brb_file.brb01,formonly.ima02_h1,formonly.ima021_h1,formonly.ima08_1,brb_file.brb011,formonly.ecu03,brb_file.brb012,formonly.ecu014,brb_file.brb013,brb_file.brb02,brb_file.brb29,brb_file.brb03,formonly.ima02_h2,formonly.ima021_h2,formonly.ima08_2,brb_file.brb04,brb_file.brb05,brb_file.brb10,brb_file.brb10_fac,brb_file.brb10_fac2,brb_file.brb06,brb_file.brb07,brb_file.brb08,brb_file.brb23,brb_file.brb11,brb_file.brb13,brb_file.brb09,brb_file.brb18,brb_file.brb28,brb_file.brb19,brb_file.brb14,brb_file.brbmodu,brb_file.brbcomm,brb_file.brbdate,brb_file.brb16,brb_file.brb27,brb_file.brb15,brb_file.brb25,brb_file.brb26,brb_file.brb24,formonly.cnt)
+END -- INSTRUCTIONS
+

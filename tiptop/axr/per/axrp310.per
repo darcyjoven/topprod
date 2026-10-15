@@ -1,0 +1,124 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrp310.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrp310")
+VBox VBox1
+Grid gr5
+{
+ <G gb4                                                 >
+  Plant     [azp01     ]
+
+ <                                                      >
+
+}
+END -- gr5
+Grid gr2953
+{
+ <G group01                                              >
+  Order/Delivery Note No. QBE [oga01               ]
+  Date QBE                    [oga02               ]
+  Tax Type QBE                [oga21               ]
+  Invoice QBE                 [oga05               ]
+  Department # QBE            [oga15               ]
+  plant.QBE                   [ogaplant            ]
+ <                                                       >
+
+}
+END -- gr2953
+Grid Grid1
+{
+ <G group04                                                         >
+ [label1 |omf00               ]
+ [omf01  |omf02               ]
+ [omf03  |omf04               ]
+ <                                                                  >
+}
+END -- Grid1
+Grid gr2954
+{
+ <G group02                                                                      >
+  Type            [ar_type                            ]
+  Oreder Account Date   [s_date      ] ~ [e_date      ]
+  Bill                                   [ar_slip     ][dummy01               ]
+  Bill1                                  [ar_slip1    ]
+  Accounts Receivable Enter Account Date [g_date      ][dummy02               ]
+ [conf_sw                                             ]
+ [open_sw                                             ]
+  Issue Invoice Date                     [g_date2     ]
+  Invoice                                [g_oma05     ]
+ [noin_sw                                             ]
+ [g_enter_account                                     ]
+ [amt0_sw                                             ]
+ <                                                                               >
+
+}
+END -- gr2954
+Grid gr2952
+{
+ <G group03                                              >
+  Plant      [source    ] [azp02               ]
+
+ <                                                       >
+
+}
+END -- gr2952
+Grid gr2955
+{
+[g_bgjob                                                      ]
+
+
+}
+END -- gr2955
+END -- VBox1
+END -- axrp310
+
+TABLES
+omf_file,
+oga_file
+ATTRIBUTES
+Group gb4:gb4, text="QBE1";
+ButtonEdit azp01=formonly.azp01 type CHAR, action=controlp, tabIndex=19, not null, required, image="zoom.png", comment="<^P> Qry Documents";
+Group group01:group01, text="QBE2";
+ButtonEdit oga01=oga_file.oga01, action=controlp, tabIndex=3, not null, required, image="zoom";
+DateEdit oga02=formonly.oga02 type DATE, tabIndex=4;
+Edit oga21=formonly.oga21 type CHAR, tabIndex=5;
+Edit oga05=formonly.oga05 type CHAR, tabIndex=6;
+Edit oga15=formonly.oga15 type CHAR, tabIndex=7;
+ButtonEdit ogaplant=formonly.ogaplant type CHAR, action=controlp, tabIndex=18;
+Group group04:group04, text=%"QBE3";
+Label label1:Label1, text=%"omf00";
+ButtonEdit omf00=formonly.omf00, action=controlp, tabIndex=24, not null, required, image="zoom";
+Label omf01:omf01, text=%"omf01";
+ButtonEdit omf02=omf_file.omf01, action=controlp, tabIndex=22, not null, image="zoom.png", scroll;
+Label omf03:omf02, text=%"omf02";
+ButtonEdit omf04=omf_file.omf02, action=controlp, tabIndex=23, not null, image="zoom.png", scroll;
+Group group02:group02, text="INPUT";
+ComboBox ar_type=formonly.ar_type type VARCHAR, tabIndex=8, not null, required, items=(("1", "Deposit"),("2", "Delivery"),("3", "Balance"));
+DateEdit s_date=formonly.s_date type DATE, tabIndex=9;
+DateEdit e_date=formonly.e_date type DATE, tabIndex=10;
+ButtonEdit ar_slip=formonly.ar_slip type CHAR, action=controlp, tabIndex=11, image="zoom", comment="<^P> Qry Documents";
+Label dummy01:dummy01, text="(by original document if blank)";
+ButtonEdit ar_slip1=formonly.ar_slip1 type CHAR, action=controlp, tabIndex=20, image="zoom", comment="<^P> Qry Documents";
+DateEdit g_date=formonly.g_date type DATE, tabIndex=12;
+Label dummy02:dummy02, text="(by original doc date if blank)";
+CheckBox conf_sw=formonly.conf_sw type CHAR, tabIndex=13, text="Auto Confirm once A/R Generated?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox open_sw=formonly.open_sw type CHAR, tabIndex=14, text="Auto Issue Invoice after A/R confirmed?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit g_date2=formonly.g_date2 type DATE, tabIndex=15;
+Edit g_oma05=formonly.g_oma05 type CHAR, tabIndex=16, upShift;
+CheckBox noin_sw=formonly.noin_sw type CHAR, tabIndex=17, text="Allow to Generate A/P without INVOICE?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_enter_account=formonly.g_enter_account type CHAR, tabIndex=18, text="Transactions When Unit Price = 0", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox amt0_sw=formonly.amt0_sw type CHAR, tabIndex=19, text="Transactions When Shipping Amount = 0", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="INPUT";
+ButtonEdit source=formonly.source type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Documents";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=2, noEntry;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=21, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.source,formonly.azp02,oga_file.oga01,formonly.oga02,formonly.oga21,formonly.oga05,formonly.oga15,formonly.ogaplant,formonly.ar_type,formonly.s_date,formonly.e_date,formonly.ar_slip,formonly.ar_slip1,formonly.g_date,formonly.conf_sw,formonly.open_sw,formonly.g_date2,formonly.g_oma05,formonly.noin_sw,formonly.g_enter_account,formonly.amt0_sw,formonly.g_bgjob,omf_file.omf01,omf_file.omf02,formonly.omf00)
+END -- INSTRUCTIONS
+

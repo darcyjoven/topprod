@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aws/42f/aws_efcfg_detail.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Detail")
+Grid gr1411
+{
+ <G group01                                                                    >
+  Detail                  [wsf03          ][detail01                     ]
+  Detail No #1            [wsf04     ]
+  Detail No #2            [wsf05     ]
+  Detail No #3            [wsf06     ]
+  Detail No #4            [wsf07     ]
+  Detail No #5            [wsf08     ]
+  Status of Detail No.    [wsf09     ]
+ <                                                                             >
+
+}
+END -- gr1411
+END -- aws_efcfg_detail
+
+TABLES
+wsf_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit wsf03=wsf_file.wsf03, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit detail01=formonly.detail01 type CHAR, tabIndex=2;
+ComboBox wsf04=wsf_file.wsf04, tabIndex=3, not null, required, queryEditable;
+ComboBox wsf05=wsf_file.wsf05, tabIndex=4, queryEditable;
+ComboBox wsf06=wsf_file.wsf06, tabIndex=5, queryEditable;
+ComboBox wsf07=wsf_file.wsf07, tabIndex=6, queryEditable;
+ComboBox wsf08=wsf_file.wsf08, tabIndex=7, queryEditable;
+ComboBox wsf09=wsf_file.wsf09, tabIndex=8, queryEditable;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(wsf_file.wsf03,formonly.detail01,wsf_file.wsf04,wsf_file.wsf05,wsf_file.wsf06,wsf_file.wsf07,wsf_file.wsf08,wsf_file.wsf09)
+END -- INSTRUCTIONS
+

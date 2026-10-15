@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gis/42f/gisi1001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gisi1001")
+Folder pc794
+Page page01(text="Main")
+Grid gr3475
+{
+ <G group01                                       >
+  Confirmer            [isa11     ][gen02_1   ]
+  Receiver             [isa12     ][gen02_2   ]
+  VAT Bill Bank        [isa14                 ]
+  Bank Name/Account    [isa15                 ]
+                       [                      ]
+                       [                      ]
+  Bill Date            [isa13     ]
+  Comment              [isa10                 ]
+                       [                      ]
+                       [                      ]
+
+ <                                                >
+
+}
+END -- gr3475
+END -- page01
+END -- pc794
+END -- gisi1001
+
+TABLES
+isa_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit isa11=isa_file.isa11, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Employee No.";
+Edit gen02_1=formonly.gen02_1 type CHAR, tabIndex=2;
+ButtonEdit isa12=isa_file.isa12, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Employee No.";
+Edit gen02_2=formonly.gen02_2 type CHAR, tabIndex=4;
+ButtonEdit isa14=isa_file.isa14, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry All Bank No.";
+TextEdit isa15=isa_file.isa15, tabIndex=6, stretch=NONE, wantNoReturns;
+DateEdit isa13=isa_file.isa13, tabIndex=7;
+TextEdit isa10=isa_file.isa10, tabIndex=8, stretch=NONE;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(isa_file.isa11,formonly.gen02_1,isa_file.isa12,formonly.gen02_2,isa_file.isa14,isa_file.isa15,isa_file.isa13,isa_file.isa10)
+END -- INSTRUCTIONS
+

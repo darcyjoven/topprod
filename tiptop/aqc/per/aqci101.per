@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqci101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqci101")
+VBox vb4
+Folder pc7
+Page Page12(text=%"Page01")
+Table s_qch
+{
+[qch01           |qch02          |qch07 |qch03       |qch04                |qch05                |qch06                    ]
+[qch01           |qch02          |qch07 |qch03       |qch04                |qch05                |qch06                    ]
+[qch01           |qch02          |qch07 |qch03       |qch04                |qch05                |qch06                    ]
+[qch01           |qch02          |qch07 |qch03       |qch04                |qch05                |qch06                    ]
+[qch01           |qch02          |qch07 |qch03       |qch04                |qch05                |qch06                    ]
+[qch01           |qch02          |qch07 |qch03       |qch04                |qch05                |qch06                    ]
+[qch01           |qch02          |qch07 |qch03       |qch04                |qch05                |qch06                    ]
+[qch01           |qch02          |qch07 |qch03       |qch04                |qch05                |qch06                    ]
+[qch01           |qch02          |qch07 |qch03       |qch04                |qch05                |qch06                    ]
+[qch01           |qch02          |qch07 |qch03       |qch04                |qch05                |qch06                    ]
+
+}
+END -- s_qch
+END -- Page12
+END -- pc7
+Grid gr6
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr6
+END -- vb4
+END -- aqci101
+
+TABLES
+qch_file
+ATTRIBUTES
+Edit qch01=qch_file.qch01, tabIndex=1, title="Initial Lot Qty", not null, required;
+Edit qch02=qch_file.qch02, tabIndex=2, title="Ending Lot Qty", not null, required;
+ComboBox qch07=qch_file.qch07, tabIndex=3, title="Level", not null, required, queryEditable, comment="Enter  1/2/3/4", items=(("1", %"1"),("2", %"2"),("3", %"3"),("4", %"4"));
+Edit qch03=qch_file.qch03, tabIndex=4, title="Sample Code", not null, required, upShift;
+Edit qch04=qch_file.qch04, tabIndex=5, title="Normal QC Sample Qty", not null, required;
+Edit qch05=qch_file.qch05, tabIndex=6, title="Strict QC Sample Qty", not null, required;
+Edit qch06=qch_file.qch06, tabIndex=7, title="Reduced-Qty QC Sample Qty", not null, required;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qch(qch_file.qch01,qch_file.qch02,qch_file.qch07,qch_file.qch03,qch_file.qch04,qch_file.qch05,qch_file.qch06)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi4003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apsi4003 業務員優先序制定")
+Folder pc5
+Page Page7(text=%"Page0")
+Grid gr8
+{
+
+ <T sales_w                                                           >
+ [seq   |gen01         |gen02         |gen03          |gem02          ]
+ [seq   |gen01         |gen02         |gen03          |gem02          ]
+ [seq   |gen01         |gen02         |gen03          |gem02          ]
+ [seq   |gen01         |gen02         |gen03          |gem02          ]
+ [seq   |gen01         |gen02         |gen03          |gem02          ]
+ [seq   |gen01         |gen02         |gen03          |gem02          ]
+ [seq   |gen01         |gen02         |gen03          |gem02          ]
+ <                                                                    >
+
+}
+END -- gr8
+END -- Page7
+END -- pc5
+END -- apsi4003
+
+TABLES
+gen_file,
+gem_file
+ATTRIBUTES
+Table sales_w:sales_w;
+Edit seq=formonly.seq type INTEGER, tabIndex=1, title="seq", not null, required;
+Edit gen01=gen_file.gen01, tabIndex=2, title="gen01", noEntry;
+Edit gen02=gen_file.gen02, tabIndex=4, title="gen02", noEntry;
+Edit gen03=gen_file.gen03, tabIndex=3, title="gen03", noEntry;
+Edit gem02=gem_file.gem02, tabIndex=5, title="gem02", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD sales_w(formonly.seq,gen_file.gen01,gen_file.gen02,gen_file.gen03,gem_file.gem02)
+END -- INSTRUCTIONS
+

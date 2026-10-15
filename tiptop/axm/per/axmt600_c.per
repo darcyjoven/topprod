@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt600_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt600_c")
+VBox VBox1
+Folder pc38
+Page page01(text="Main")
+Table s_ogb1
+{
+[ogb04           |ima02      |ima021     |ogb09               |ogb091              |ogb092              |img09              |qty                    ]
+[ogb04           |ima02      |ima021     |ogb09               |ogb091              |ogb092              |img09              |qty                    ]
+[ogb04           |ima02      |ima021     |ogb09               |ogb091              |ogb092              |img09              |qty                    ]
+[ogb04           |ima02      |ima021     |ogb09               |ogb091              |ogb092              |img09              |qty                    ]
+[ogb04           |ima02      |ima021     |ogb09               |ogb091              |ogb092              |img09              |qty                    ]
+[ogb04           |ima02      |ima021     |ogb09               |ogb091              |ogb092              |img09              |qty                    ]
+[ogb04           |ima02      |ima021     |ogb09               |ogb091              |ogb092              |img09              |qty                    ]
+[ogb04           |ima02      |ima021     |ogb09               |ogb091              |ogb092              |img09              |qty                    ]
+[ogb04           |ima02      |ima021     |ogb09               |ogb091              |ogb092              |img09              |qty                    ]
+[ogb04           |ima02      |ima021     |ogb09               |ogb091              |ogb092              |img09              |qty                    ]
+
+}
+END -- s_ogb1
+END -- page01
+END -- pc38
+Grid gr361
+{
+ ----------Rows [cnk   ] ----------
+
+}
+END -- gr361
+END -- VBox1
+END -- axmt600_c
+
+ATTRIBUTES
+ButtonEdit ogb04=formonly.ogb04 type VARCHAR, action=controlp, tabIndex=1, title="ogb04", not null, required, image="zoom";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=2, title="ima02", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=3, title="ima021", noEntry;
+ButtonEdit ogb09=formonly.ogb09 type VARCHAR, action=controlp, tabIndex=4, title="ogb09", not null, required, image="zoom";
+ButtonEdit ogb091=formonly.ogb091 type VARCHAR, action=controlp, tabIndex=5, title="ogb091", not null, required, image="zoom";
+ButtonEdit ogb092=formonly.ogb092 type VARCHAR, action=controlp, tabIndex=6, title="ogb092", not null, required, image="zoom";
+Edit img09=formonly.img09 type DECIMAL, tabIndex=7, title="img09", noEntry;
+Edit qty=formonly.qty type DECIMAL, tabIndex=8, title="qty", not null, required;
+Edit cnk=formonly.cnk type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ogb1(formonly.ogb04,formonly.ima02,formonly.ima021,formonly.ogb09,formonly.ogb091,formonly.ogb092,formonly.img09,formonly.qty)
+SCREEN RECORD Undefined(formonly.cnk)
+END -- INSTRUCTIONS
+

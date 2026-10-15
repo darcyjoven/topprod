@@ -1,0 +1,104 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acoi104.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acoi104")
+VBox VBox1
+Folder pc189
+Page page01(text="Main")
+HBox HBox1
+Grid gr1266
+{
+ Company Code        [cnb01     ]
+ Establish Date      [cnb03       ]
+ Co. Abbreviation    [cnb04               ]
+ Customs No.         [cnb05     ]
+ Company Name        [cnb06                                   ]
+                     [cnb061                                  ]
+
+ Company Address     [cnb07                                   ]
+                     [cnb071                                  ]
+
+ Company Name(HK)    [cnb08                                   ]
+ Company Add.(HK)    [cnb081                                  ]
+}
+END -- gr1266
+Grid gr1267
+{
+ Reg. Capital       [cnb09               ]
+ Reg. Capital Curr. [cnb10               ]
+ Invenstment Amt    [cnb11               ]
+ InEquip.DutyFreeCrd[cnb12               ]
+ Company License No.[cnb13     ]
+ Approval Cert. No. [cnb14     ]
+ Cust.Declarat RegNo[cnb15               ]
+ Tax Register No.   [cnb16               ]
+ Business Nature    [cnb17               ]
+ Juristic Represent [cnb18     ]
+ Representative Code[cnb19     ]
+
+}
+END -- gr1267
+END -- HBox1
+END -- page01
+Page info(text="Info")
+Grid gr1268
+{
+ Record Owner        [cnbuser   ] Last Modified by    [cnbmodu   ]   Data Valid Code     [cnbacti   ]
+ Department          [cnbgrup   ] Create/Modify Date  [cnbdate     ]
+ Record Orig.        [cnboriu   ]
+ Dept Orig.          [cnborig   ]
+}
+END -- gr1268
+END -- info
+END -- pc189
+Grid gr1269
+{
+  ----------Rows [cnt   ] ----------
+
+}
+END -- gr1269
+END -- VBox1
+END -- acoi104
+
+TABLES
+cnb_file
+ATTRIBUTES
+Edit cnb01=cnb_file.cnb01, tabIndex=1, not null, required, comment="KEYField,No Blank!";
+DateEdit cnb03=cnb_file.cnb03, tabIndex=2;
+Edit cnb04=cnb_file.cnb04, tabIndex=3;
+ButtonEdit cnb05=cnb_file.cnb05, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Query Customs No.";
+Edit cnb06=cnb_file.cnb06, tabIndex=5;
+Edit cnb061=cnb_file.cnb061, tabIndex=6;
+Edit cnb07=cnb_file.cnb07, tabIndex=7;
+Edit cnb071=cnb_file.cnb071, tabIndex=8;
+Edit cnb08=cnb_file.cnb08, tabIndex=9;
+Edit cnb081=cnb_file.cnb081, tabIndex=10;
+Edit cnb09=cnb_file.cnb09, tabIndex=11;
+ButtonEdit cnb10=cnb_file.cnb10, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<^P>Qry Currency";
+Edit cnb11=cnb_file.cnb11, tabIndex=13;
+Edit cnb12=cnb_file.cnb12, tabIndex=14;
+Edit cnb13=cnb_file.cnb13, tabIndex=15;
+Edit cnb14=cnb_file.cnb14, tabIndex=16;
+Edit cnb15=cnb_file.cnb15, tabIndex=17;
+Edit cnb16=cnb_file.cnb16, tabIndex=18;
+Edit cnb17=cnb_file.cnb17, tabIndex=19;
+Edit cnb18=cnb_file.cnb18, tabIndex=20;
+Edit cnb19=cnb_file.cnb19, tabIndex=21;
+Edit cnbuser=cnb_file.cnbuser, tabIndex=22, noEntry;
+Edit cnbmodu=cnb_file.cnbmodu, tabIndex=23, noEntry;
+Edit cnbacti=cnb_file.cnbacti, tabIndex=24, noEntry, upShift;
+Edit cnbgrup=cnb_file.cnbgrup, tabIndex=25, noEntry;
+DateEdit cnbdate=cnb_file.cnbdate, tabIndex=26, noEntry;
+Edit cnboriu=cnb_file.cnboriu, tabIndex=501, noEntry;
+Edit cnborig=cnb_file.cnborig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=27, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cnb_file.cnb01,cnb_file.cnb03,cnb_file.cnb04,cnb_file.cnb05,cnb_file.cnb06,cnb_file.cnb061,cnb_file.cnb07,cnb_file.cnb071,cnb_file.cnb08,cnb_file.cnb081,cnb_file.cnb09,cnb_file.cnb10,cnb_file.cnb11,cnb_file.cnb12,cnb_file.cnb13,cnb_file.cnb14,cnb_file.cnb15,cnb_file.cnb16,cnb_file.cnb17,cnb_file.cnb18,cnb_file.cnb19,cnb_file.cnbuser,cnb_file.cnbmodu,cnb_file.cnbacti,cnb_file.cnbgrup,cnb_file.cnbdate,cnb_file.cnboriu,cnb_file.cnborig,formonly.cnt)
+END -- INSTRUCTIONS
+

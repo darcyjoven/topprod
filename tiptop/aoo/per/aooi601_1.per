@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi601_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi600")
+Folder pc859
+Page page01(text="Add Conditions")
+Table s_geu
+{
+[field_code  |field_name                    |insert_condition      ]
+[field_code  |field_name                    |insert_condition      ]
+[field_code  |field_name                    |insert_condition      ]
+[field_code  |field_name                    |insert_condition      ]
+[field_code  |field_name                    |insert_condition      ]
+[field_code  |field_name                    |insert_condition      ]
+[field_code  |field_name                    |insert_condition      ]
+[field_code  |field_name                    |insert_condition      ]
+[field_code  |field_name                    |insert_condition      ]
+[field_code  |field_name                    |insert_condition      ]
+
+}
+END -- s_geu
+END -- page01
+END -- pc859
+END -- aooi601_1
+
+ATTRIBUTES
+ComboBox field_code=formonly.field_code type VARCHAR, tabIndex=1, title="Field Code", items=(("ima01", "Item No."),("ima06", "Main Group Code"),("ima109", "Material Category"),("bma01", "Master Item No."),("bmx01", "ECN No."),("occ01", "Customer No."),("occ03", "Customer Class."),("pmc01", "Vendor No."),("pmc14", "Data Type"),("aag01", "Account Code"),("aag24", "Account Level"),("tqm01", "Pricing Code"),("tqm06", "Price type"));
+Edit field_name=formonly.field_name type VARCHAR, tabIndex=2, title="Field Name", noEntry;
+ComboBox insert_condition=formonly.insert_condition type CHAR, tabIndex=3, title="Conditions To Insert";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_geu(formonly.field_code,formonly.field_name,formonly.insert_condition)
+END -- INSTRUCTIONS
+

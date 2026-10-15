@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmt563.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmt563")
+Folder pc1012
+Page page01(text="Page01")
+Grid gr5316
+{
+ <G group01                             >
+  H.C U/P         [pmn44               ]
+  Standard U/P    [pmn30               ]
+  P/O Price Diff. [num                 ]
+  Latest U/P      [ima53               ]
+  Market Price    [ima531              ]
+
+ <                                      >
+
+}
+END -- gr5316
+END -- page01
+END -- pc1012
+END -- apmt563
+
+TABLES
+pmn_file
+ATTRIBUTES
+Group group01:group01;
+Edit pmn44=pmn_file.pmn44, tabIndex=1;
+Edit pmn30=pmn_file.pmn30, tabIndex=2;
+Edit num=formonly.num type CHAR, tabIndex=3;
+Edit ima53=formonly.ima53 type CHAR, tabIndex=4, noEntry;
+Edit ima531=formonly.ima531 type CHAR, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pmn_file.pmn44,pmn_file.pmn30,formonly.num,formonly.ima53,formonly.ima531)
+END -- INSTRUCTIONS
+

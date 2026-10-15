@@ -1,0 +1,102 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/alm/4fd/almi220.tmp.per created 2010-10-25T17:50:55
+-- File created from /u3/tiptop/alm/4fd/almi220.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="almi220")
+                                                                                                                                          
+   VBox vb9                                                                                                                               
+   Folder pc2                                                                                                                             
+   Page Main(text=%"Main")                                                                                                                
+   HBox hb4                                                                                                                               
+   Grid gr10                                                                                                                              
+   {                                                                                                                                      
+     Doc No.        [lmo01             ]                                                                                                  
+     Store No.     [lmostore          |lma02           ]                                                                                  
+     Corporate     [lmolegal          |azt02           ]                                                                                  
+     Contract No.   [lmo02             ]                                                                                                  
+     Business       [lmo03             |lne05           ]                                                                                 
+     Booth No       [lmo04             ]                                                                                                  
+     Area           [lmo05             ]                                                                                                  
+                                                                                                                                          
+   }                                                                                                                                      
+   END                                                                                                                                    
+   Grid gr28                                                                                                                              
+   {                                                                                                                                      
+    Invoice amt     [lmo06             ]                                                                                                  
+    Taxes           [lmo07             ]                                                                                                  
+    checkst         [lmo08             ][imgmks]                                                                                          
+    checker         [lmo09             ][      ]                                                                                          
+    checkda         [lmo10             ]                                                                                                  
+                                                                                                                                          
+                                                                                                                                          
+                                                                                                                                          
+   }                                                                                                                                      
+   END                                                                                                                                    
+   END -- HBox                                                                                                                            
+   END -- Page                                                                                                                            
+   Page info(text=%"Info")                                                                                                                
+   Grid gr4                                                                                                                               
+   {                                                                                                                                      
+                                                                                                                                          
+    owner       [lmouser   ]      modify  [lmomodu        ]        acti [lmoacti   ]                                                      
+    grup        [lmogrup   ]      modate  [lmodate        ]        crat [lmocrat   ]                                                      
+    Record Orig.[lmooriu   ]                                                                                                              
+    Dept Orig.  [lmoorig     ]                                                                                                            
+                                                                                                                                          
+   }                                                                                                                                      
+   END                                                                                                                                    
+   END -- Page                                                                                                                            
+   END -- Folder                                                                                                                          
+   Grid gr9                                                                                                                               
+   {                                                                                                                                      
+    ---------- Rows [idx   ]/[cnt   ] ----------                                                                                          
+                                                                                                                                          
+                                                                                                                                          
+   }                                                                                                                                      
+   END                                                                                                                                    
+   END -- VBox                                                                                                                            
+END -- Form
+
+TABLES
+lmo_file
+
+ATTRIBUTES
+ButtonEdit lmo01=lmo_file.lmo01, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+ButtonEdit lmostore=lmo_file.lmostore, action=controlp, tabIndex=15, noEntry, not null, required, image="zoom.png";
+Edit lma02=formonly.lma02, tabIndex=17, noEntry;
+ButtonEdit lmolegal=lmo_file.lmolegal, action=controlp, tabIndex=16, noEntry, not null, required, image="zoom.png";
+Edit azt02=formonly.azt02, tabIndex=18, noEntry;
+ButtonEdit lmo02=lmo_file.lmo02, action=controlp, tabIndex=10, not null, required, image="zoom.png";
+ButtonEdit lmo03=lmo_file.lmo03, action=controlp, tabIndex=11, noEntry, image="zoom.png";
+Edit lne05=formonly.lne05, tabIndex=12, noEntry;
+ButtonEdit lmo04=lmo_file.lmo04, action=controlp, tabIndex=13, noEntry, image="zoom.png";
+Edit lmo05=lmo_file.lmo05, tabIndex=14, noEntry;
+Edit lmo06=lmo_file.lmo06, tabIndex=21, not null, required;
+Edit lmo07=lmo_file.lmo07, tabIndex=20, not null, required;
+ComboBox lmo08=lmo_file.lmo08, tabIndex=19, default = "N", noEntry, not null, required, items=(("Y", "CHECK"),("N", "uncheck"));
+Image imgmks=formonly.imgmksg;
+Edit lmo09=lmo_file.lmo09, tabIndex=22, noEntry, not null, required;
+DateEdit lmo10=lmo_file.lmo10, tabIndex=23, noEntry, not null, required;
+Edit lmouser=lmo_file.lmouser, tabIndex=1, noEntry;
+Edit lmomodu=lmo_file.lmomodu, tabIndex=2, noEntry;
+Edit lmoacti=lmo_file.lmoacti, tabIndex=3, default = "Y", noEntry;
+Edit lmogrup=lmo_file.lmogrup, tabIndex=4, noEntry;
+DateEdit lmodate=lmo_file.lmodate, tabIndex=5, noEntry;
+DateEdit lmocrat=lmo_file.lmocrat, tabIndex=6, noEntry;
+Edit lmooriu=lmo_file.lmooriu, tabIndex=25, noEntry;
+Edit lmoorig=lmo_file.lmoorig, tabIndex=24, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=7, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+END -- INSTRUCTIONS
+

@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt110_b.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt110_b")
+VBox vb8
+Folder Page0
+Page Page3(text=%"More Info")
+VBox vb7
+Grid gr3
+{
+ <G gb4                                                                                                                                                       >
+     WBS No.            [pjb02                     ]                                               WBS Name     [pjb03                     ]
+     Project No.        [pjb01                     ]                                               Project Name [pja02                     ]
+ <                                                                                                                                                            >
+
+}
+END -- gr3
+Grid gr11
+{
+ <G gb3                                                                                                                                                      >
+
+  Planned Start Date [pjb15   ]           Planned Complete Date [pjb16   ]
+  Reckon Start Date  [pjb17   ]           Reckon Complete Date  [pjb18   ]          Lastest Reckon Date  [pjb24   ]
+  Real Start Date    [pjb19   ]           Real Complete Date    [pjb20   ]           Progress Conf User  [pjb22     |gen02     ] Progress Conf Date[pjb23   ]
+ <                                                                                                                                                           >
+}
+END -- gr11
+END -- vb7
+END -- Page3
+END -- Page0
+Grid gr7
+{
+ ---------- Rows [idx   ]/[cnt   ] ----------
+
+}
+END -- gr7
+END -- vb8
+END -- apjt110_b
+
+ATTRIBUTES
+Group gb4:gb4;
+Edit pjb02=formonly.pjb02 type VARCHAR, tabIndex=10;
+Edit pjb03=formonly.pjb03 type VARCHAR, tabIndex=12, noEntry;
+Edit pjb01=formonly.pjb01 type VARCHAR, tabIndex=11, noEntry;
+Edit pja02=formonly.pja02 type VARCHAR, tabIndex=13, noEntry;
+Group gb3:gb3, text="Progress Info\n";
+DateEdit pjb15=formonly.pjb15 type DATE, tabIndex=16, not null, required;
+DateEdit pjb16=formonly.pjb16 type DATE, tabIndex=1, not null, required;
+DateEdit pjb17=formonly.pjb17 type DATE, tabIndex=3, noEntry;
+DateEdit pjb18=formonly.pjb18 type DATE, tabIndex=2, noEntry;
+DateEdit pjb24=formonly.pjb24 type DATE, tabIndex=9;
+DateEdit pjb19=formonly.pjb19 type DATE, tabIndex=8, noEntry;
+DateEdit pjb20=formonly.pjb20 type DATE, tabIndex=4, noEntry;
+Edit pjb22=formonly.pjb22 type VARCHAR, tabIndex=6, noEntry;
+Edit gen02=formonly.gen02 type VARCHAR, tabIndex=7, noEntry;
+DateEdit pjb23=formonly.pjb23 type DATE, tabIndex=5, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=14, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pjb02,formonly.pjb03,formonly.pjb01,formonly.pja02,formonly.pjb15,formonly.pjb16,formonly.pjb17,formonly.pjb18,formonly.pjb24,formonly.pjb19,formonly.pjb20,formonly.pjb22,formonly.gen02,formonly.pjb23,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

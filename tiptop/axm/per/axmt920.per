@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt920.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt920")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2611
+{
+ Delivery Date        [oga02             ]
+ Advice No.           [ogb01             ]
+ Line No.             [ogb03             ]
+}
+END -- gr2611
+Grid gr2612
+{
+ Customer No.         [oga03     ]
+ Shipping Cust        [oga04     ]
+ Product No.          [ogb04               ]
+}
+END -- gr2612
+Grid gr2613
+{
+ Shipping Type        [oga43     ]
+ Salesman             [oga14     ]
+
+}
+END -- gr2613
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_oze
+{
+[oze03 |oze04               |oze05        |oze06               |oze07             |oze08             ]
+[oze03 |oze04               |oze05        |oze06               |oze07             |oze08             ]
+[oze03 |oze04               |oze05        |oze06               |oze07             |oze08             ]
+[oze03 |oze04               |oze05        |oze06               |oze07             |oze08             ]
+[oze03 |oze04               |oze05        |oze06               |oze07             |oze08             ]
+[oze03 |oze04               |oze05        |oze06               |oze07             |oze08             ]
+[oze03 |oze04               |oze05        |oze06               |oze07             |oze08             ]
+[oze03 |oze04               |oze05        |oze06               |oze07             |oze08             ]
+[oze03 |oze04               |oze05        |oze06               |oze07             |oze08             ]
+[oze03 |oze04               |oze05        |oze06               |oze07             |oze08             ]
+
+}
+END -- s_oze
+Grid gr2614
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2614
+END -- VBox1
+END -- axmt920
+
+TABLES
+oze_file
+ATTRIBUTES
+DateEdit oga02=formonly.oga02 type DATE, tabIndex=1;
+ButtonEdit ogb01=formonly.ogb01 type CHAR, action=controlp, tabIndex=2, image="zoom";
+Edit ogb03=formonly.ogb03 type CHAR, tabIndex=3;
+ButtonEdit oga03=formonly.oga03 type CHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit oga04=formonly.oga04 type CHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit ogb04=formonly.ogb04 type CHAR, action=controlp, tabIndex=6, image="zoom";
+Edit oga43=formonly.oga43 type CHAR, tabIndex=7;
+ButtonEdit oga14=formonly.oga14 type CHAR, action=controlp, tabIndex=8, image="zoom";
+Edit oze03=oze_file.oze03, tabIndex=9, title="S/N", not null, required;
+ComboBox oze04=oze_file.oze04, tabIndex=10, title="Transportation Type", not null, required, queryEditable, items=(("O", %"Ocean"),("C", %"Container"),("H", %"House"),("A", %"Air"),("E", %"Express"));
+Edit oze05=oze_file.oze05, tabIndex=11, title="Freight Code", not null, required;
+ButtonEdit oze06=oze_file.oze06, action=controlp, tabIndex=12, title="Transportation Code", not null, required, image="zoom";
+Edit oze07=oze_file.oze07, tabIndex=13, title="Port of Departure", not null, required;
+Edit oze08=oze_file.oze08, tabIndex=14, title="Port of Unloading", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=16, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oze(oze_file.oze03,oze_file.oze04,oze_file.oze05,oze_file.oze06,oze_file.oze07,oze_file.oze08)
+SCREEN RECORD Undefined(formonly.oga02,formonly.ogb01,formonly.ogb03,formonly.oga03,formonly.oga04,formonly.ogb04,formonly.oga43,formonly.oga14,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,136 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct001")
+VBox vb8
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ Item No.                 [cca01                                       ]
+                          [ima02                                       ]
+ Unit                     [ima25     ]
+ Year/Month               [cca0]       / [cc]
+ Cost Calculation Method  [cca06     ] Category No. [cca07                           ]
+  <G group02                                                                          >
+      Current End of Month Qty    [cca11               ]
+     [dummy01                     ]                            [dummy02            ]
+   -  Material                    [cca12a              ]      [cca23a              ]
+   -  Labor                       [cca12b              ]      [cca23b              ]
+   -  Overhead 1                  [cca12c              ]      [cca23c              ]
+   -  Processing                  [cca12d              ]      [cca23d              ]
+   -  Overhead 2                  [cca12e              ]      [cca23e              ]
+   -  Overhead 3                  [cca12f              ]      [cca23f              ]
+   -  Overhead 4                  [cca12g              ]      [cca23g              ]
+   -  Overhead 5                  [cca12h              ]      [cca23h              ]
+    ---------------------------------------------------------------------------------
+      Total Amount                [cca12               ]      [cca23               ]
+      Average cost                [u_cost              ]
+
+
+
+  <                                                                                   >
+
+}
+END -- gr1
+END -- page01
+Page info(text="Info")
+Grid gr2
+{
+ Record Owner        [ccauser   ]   Last Modified by    [ccamodu   ]
+ Department          [ccagrup   ]   Create/Modify Date  [ccadate   ]
+ Record Orig         [ccaoriu     ] Dept Orig           [ccaorig  ]
+
+
+}
+END -- gr2
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[ccaud01                       ] userdefined_field07[ccaud07        ] userdefined_field13[ccaud13        ]
+                    [                              ] userdefined_field08[ccaud08        ] userdefined_field14[ccaud14        ]
+ userdefined_field02[ccaud02        ]                userdefined_field09[ccaud09        ] userdefined_field15[ccaud15        ]
+ userdefined_field03[ccaud03        ]                userdefined_field10[ccaud10        ]
+ userdefined_field04[ccaud04        ]                userdefined_field11[ccaud11        ]
+ userdefined_field05[ccaud05        ]                userdefined_field12[ccaud12        ]
+ userdefined_field06[ccaud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc1
+Grid gr3
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr3
+END -- vb8
+END -- axct001
+
+TABLES
+cca_file
+ATTRIBUTES
+ButtonEdit cca01=cca_file.cca01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=3, noEntry;
+Edit cca0=cca_file.cca02, tabIndex=4, not null, required;
+Edit cc=cca_file.cca03, tabIndex=5, not null, required;
+ComboBox cca06=cca_file.cca06, tabIndex=25, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually??????????¯???tch Cost"),("4", "Identify Manually?????????????μem Cost"),("5", "Identify Manually??????????????ore Profit Center"),("6", "Moving weighted average cost"));
+ButtonEdit cca07=cca_file.cca07, action=controlp, tabIndex=26, not null, required, image="zoom.png";
+Group group02:group02;
+Edit cca11=cca_file.cca11, tabIndex=6;
+Label dummy01:dummy01, text="Current End of Month Amount:";
+Label dummy02:dummy02, text="Average unit price";
+Edit cca12a=cca_file.cca12a, tabIndex=7;
+Edit cca23a=cca_file.cca23a, tabIndex=8;
+Edit cca12b=cca_file.cca12b, tabIndex=9;
+Edit cca23b=cca_file.cca23b, tabIndex=10;
+Edit cca12c=cca_file.cca12c, tabIndex=11;
+Edit cca23c=cca_file.cca23c, tabIndex=12;
+Edit cca12d=cca_file.cca12d, tabIndex=13;
+Edit cca23d=cca_file.cca23d, tabIndex=14;
+Edit cca12e=cca_file.cca12e, tabIndex=15;
+Edit cca23e=cca_file.cca23e, tabIndex=16;
+Edit cca12f=cca_file.cca12f, tabIndex=27, default = "0", not null, required;
+Edit cca23f=cca_file.cca23f, tabIndex=30, not null, required;
+Edit cca12g=cca_file.cca12g, tabIndex=28, default = "0", not null, required;
+Edit cca23g=cca_file.cca23g, tabIndex=31, not null, required;
+Edit cca12h=cca_file.cca12h, tabIndex=29, default = "0", not null, required;
+Edit cca23h=cca_file.cca23h, tabIndex=32, not null, required;
+Edit cca12=cca_file.cca12, tabIndex=17, noEntry;
+Edit cca23=cca_file.cca23, tabIndex=18, noEntry;
+Edit u_cost=formonly.u_cost type CHAR, tabIndex=19, noEntry;
+Edit ccauser=cca_file.ccauser, tabIndex=20, noEntry;
+Edit ccamodu=cca_file.ccamodu, tabIndex=21, noEntry;
+Edit ccagrup=cca_file.ccagrup, tabIndex=22, noEntry;
+DateEdit ccadate=cca_file.ccadate, tabIndex=23, noEntry;
+Edit ccaoriu=cca_file.ccaoriu, tabIndex=49, noEntry;
+Edit ccaorig=cca_file.ccaorig, tabIndex=48, noEntry;
+TextEdit ccaud01=cca_file.ccaud01, tabIndex=33, stretch=NONE;
+Edit ccaud07=cca_file.ccaud07, tabIndex=34;
+DateEdit ccaud13=cca_file.ccaud13, tabIndex=35;
+Edit ccaud08=cca_file.ccaud08, tabIndex=36;
+DateEdit ccaud14=cca_file.ccaud14, tabIndex=37;
+Edit ccaud02=cca_file.ccaud02, tabIndex=38;
+Edit ccaud09=cca_file.ccaud09, tabIndex=39;
+DateEdit ccaud15=cca_file.ccaud15, tabIndex=40;
+Edit ccaud03=cca_file.ccaud03, tabIndex=41;
+Edit ccaud10=cca_file.ccaud10, tabIndex=42;
+Edit ccaud04=cca_file.ccaud04, tabIndex=43;
+Edit ccaud11=cca_file.ccaud11, tabIndex=44;
+Edit ccaud05=cca_file.ccaud05, tabIndex=45;
+Edit ccaud12=cca_file.ccaud12, tabIndex=46;
+Edit ccaud06=cca_file.ccaud06, tabIndex=47;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cca_file.cca01,formonly.ima02,formonly.ima25,cca_file.cca02,cca_file.cca03,cca_file.cca06,cca_file.cca07,cca_file.cca11,cca_file.cca12a,cca_file.cca23a,cca_file.cca12b,cca_file.cca23b,cca_file.cca12c,cca_file.cca23c,cca_file.cca12d,cca_file.cca23d,cca_file.cca12e,cca_file.cca23e,cca_file.cca12f,cca_file.cca23f,cca_file.cca12g,cca_file.cca23g,cca_file.cca12h,cca_file.cca23h,cca_file.cca12,cca_file.cca23,formonly.u_cost,cca_file.ccauser,cca_file.ccamodu,cca_file.ccagrup,cca_file.ccadate,cca_file.ccaoriu,cca_file.ccaorig,cca_file.ccaud01,cca_file.ccaud07,cca_file.ccaud13,cca_file.ccaud08,cca_file.ccaud14,cca_file.ccaud02,cca_file.ccaud09,cca_file.ccaud15,cca_file.ccaud03,cca_file.ccaud10,cca_file.ccaud04,cca_file.ccaud11,cca_file.ccaud05,cca_file.ccaud12,cca_file.ccaud06,formonly.cnt)
+END -- INSTRUCTIONS
+

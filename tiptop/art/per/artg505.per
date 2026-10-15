@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artg505.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"artr505")
+VBox vb2
+Grid gr1
+{
+ <G group01                                                                               >
+  Logistics Code       [azp01               ]
+ [dummy1                                    ]
+  Product Class        [ima131              ]
+  Item No.             [ima01               ]
+  Warehouse No.        [imk02               ]
+ <                                                                                        >
+ <G group02                                                                              >
+   Date Scope     [yy01      ]~[yy02       ]
+   Cost Method    [type                    ]
+ <                                                                                       >
+}
+END -- gr1
+Grid gr2
+{
+[more                                              ]
+
+}
+END -- gr2
+END -- vb2
+END -- axmr760
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit azp01=formonly.azp01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Label dummy1:dummy1, text="LRDMDS,QY\'|\'H\';\'GK";
+ButtonEdit ima131=formonly.ima131 type CHAR, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=3, image="zoom";
+Edit imk02=formonly.imk02 type VARCHAR, tabIndex=8;
+Group group02:group02, text="INPUT";
+DateEdit yy01=formonly.yy01 type INTEGER, tabIndex=6, century="";
+DateEdit yy02=formonly.yy02 type INTEGER, tabIndex=7, century="";
+ComboBox type=formonly.type type SMALLINT, tabIndex=4, default = "1", items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.ima131,formonly.ima01,formonly.imk02,formonly.yy01,formonly.yy02,formonly.type,formonly.more)
+END -- INSTRUCTIONS
+

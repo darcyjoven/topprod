@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almp038.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almp038")
+VBox vb2
+Folder pc3
+Page Page4(text=%"Basic Data")
+Grid gr6
+{
+
+  Store No.  [ltmstore    |rtz13    ]
+  Corporation[ltmlegal    |azt02               ]
+  Date       [ltm02       ]
+
+}
+END -- gr6
+END -- Page4
+END -- pc3
+Grid gr5
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr5
+END -- vb2
+END -- almp038
+
+TABLES
+ltm_file
+ATTRIBUTES
+ButtonEdit ltmstore=ltm_file.ltmstore, action=controlp, tabIndex=3, noEntry, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=6, noEntry;
+ButtonEdit ltmlegal=ltm_file.ltmlegal, action=controlp, tabIndex=4, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=5, noEntry;
+DateEdit ltm02=ltm_file.ltm02, tabIndex=2, not null;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ltm_file.ltmstore,formonly.rtz13,ltm_file.ltmlegal,formonly.azt02,ltm_file.ltm02,formonly.cnt)
+END -- INSTRUCTIONS
+

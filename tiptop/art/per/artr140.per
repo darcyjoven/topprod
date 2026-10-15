@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artr140.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid7
+{
+ <G group7                                                 >
+    Logistics Code            [azp01               ]
+                          [dummy4                          ]
+ <                                                         >
+
+}
+END -- Grid7
+Grid Grid1
+{
+   <G group1                                                         >
+     [label2             ]  [ima131            ]
+     [label3             ]  [ima01             ]
+
+   <                                                                 >
+}
+END -- Grid1
+Group Group3(text=%"Sequence")
+Grid Grid2
+{
+  [b                              ]
+  [w         ]
+
+  <G group5                                                   >
+  [d                                                 ]
+  [                                                  ]
+  [                                                  ]
+  [                                                  ]
+  <                                                           >
+
+
+}
+END -- Grid2
+END -- Group3
+Grid Grid3
+{
+
+  [more                          ]
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group7:Group7, text=%"QBE1";
+ButtonEdit azp01=formonly.azp01 type CHAR, action=controlp, tabIndex=6, not null, required, image="zoom.png";
+Label dummy4:dummy4, text="LRDMDS,QY\'|\'H\';\'GK";
+Group group1:Group1, text=%"QBE2";
+Label label2:Label2, text=%"Product Group";
+ButtonEdit ima131=formonly.ima131 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Label label3:Label3, text=%"Product Barcode";
+ButtonEdit ima01=formonly.ima01 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+CheckBox b=formonly.b type VARCHAR, tabIndex=3, text=%"Y/N next page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox w=formonly.w type CHAR, tabIndex=7, text=%"Dimension list", not null, valueChecked = "Y", valueUnchecked = "N";
+Group group5:Group5, text=%"Print Option";
+RadioGroup d=formonly.d type VARCHAR, tabIndex=5, items=(("1", "Operations Center Summary"),("2", "Sort"),("3", "Product"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=4, text=%"Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.ima131,formonly.ima01,formonly.b,formonly.d,formonly.more,formonly.w)
+END -- INSTRUCTIONS
+

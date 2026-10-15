@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri043_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(action=main, text=%"Page1")
+VBox VBox1
+Grid Grid3
+{
+ <G group3                                     >   <G group4                                      >
+   hrcc02[hrcc02    |hrbm04              ]           hrcc04[hrcc04    ]
+   hrcc03[hrcc03    |hrcc10              ]           hrcc05[hrcc05    ]
+   hrcc11[hrcc11                         ]          [hrcc06           ]
+         [                               ]
+ <                                             >   <                                              >
+
+}
+END -- Grid3
+Group Group1(text=%"Group1")
+Table Table1
+{
+[hrcc01  |hrcc07  |hrat02  |hrao02  |hras04  |hrcc08  |hrcc09  ]
+[hrcc01  |hrcc07  |hrat02  |hrao02  |hras04  |hrcc08  |hrcc09  ]
+[hrcc01  |hrcc07  |hrat02  |hrao02  |hras04  |hrcc08  |hrcc09  ]
+[hrcc01  |hrcc07  |hrat02  |hrao02  |hras04  |hrcc08  |hrcc09  ]
+[hrcc01  |hrcc07  |hrat02  |hrao02  |hras04  |hrcc08  |hrcc09  ]
+}
+END -- Table1
+END -- Group1
+Group Group2(text=%"Group2")
+Table Table3
+{
+[hrcd02  |hrcd03  |hrcd04  |hrcd05  |hrbm05  |hrbm06  |hrcd12  ]
+[hrcd02  |hrcd03  |hrcd04  |hrcd05  |hrbm05  |hrbm06  |hrcd12  ]
+[hrcd02  |hrcd03  |hrcd04  |hrcd05  |hrbm05  |hrbm06  |hrcd12  ]
+[hrcd02  |hrcd03  |hrcd04  |hrcd05  |hrbm05  |hrbm06  |hrcd12  ]
+[hrcd02  |hrcd03  |hrcd04  |hrcd05  |hrbm05  |hrbm06  |hrcd12  ]
+}
+END -- Table3
+END -- Group2
+Grid Grid4
+{
+ ---------- cnt[cnt]/[cn2]--[cn3]----------
+
+
+}
+END -- Grid4
+END -- VBox1
+END -- Page1
+Page Page2(action=item_list, text=%"Page2")
+Table Table2
+{
+[hrcc02_1|hrcc07_1|hrat02_1|hrao02_1|hras04_1|hrcc04_1|hrcc05_1|hrcc03_1|hrcc08_1|hrcc09_1|hrcc10_1|hrcc06_1|hrcc11_1]
+[hrcc02_1|hrcc07_1|hrat02_1|hrao02_1|hras04_1|hrcc04_1|hrcc05_1|hrcc03_1|hrcc08_1|hrcc09_1|hrcc10_1|hrcc06_1|hrcc11_1]
+[hrcc02_1|hrcc07_1|hrat02_1|hrao02_1|hras04_1|hrcc04_1|hrcc05_1|hrcc03_1|hrcc08_1|hrcc09_1|hrcc10_1|hrcc06_1|hrcc11_1]
+[hrcc02_1|hrcc07_1|hrat02_1|hrao02_1|hras04_1|hrcc04_1|hrcc05_1|hrcc03_1|hrcc08_1|hrcc09_1|hrcc10_1|hrcc06_1|hrcc11_1]
+[hrcc02_1|hrcc07_1|hrat02_1|hrao02_1|hras04_1|hrcc04_1|hrcc05_1|hrcc03_1|hrcc08_1|hrcc09_1|hrcc10_1|hrcc06_1|hrcc11_1]
+}
+END -- Table2
+END -- Page2
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Group group3:Group3, text=%"";
+ButtonEdit hrcc02=formonly.hrcc02 type VARCHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrbm04=formonly.hrbm04 type VARCHAR, tabIndex=1, noEntry;
+Edit hrcc03=formonly.hrcc03 type DECIMAL, tabIndex=1, not null, required;
+ComboBox hrcc10=formonly.hrcc10 type VARCHAR, tabIndex=1, noEntry;
+TextEdit hrcc11=formonly.hrcc11 type VARCHAR, tabIndex=1;
+Group group4:Group4, text=%"";
+DateEdit hrcc04=formonly.hrcc04 type DATE, tabIndex=1, not null, required;
+DateEdit hrcc05=formonly.hrcc05 type DATE, tabIndex=1, not null, required;
+CheckBox hrcc06=formonly.hrcc06 type VARCHAR, tabIndex=1, text=%"hrcc06", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit hrcc01=formonly.hrcc01 type INTEGER, tabIndex=31, title=%"hrcc01", noEntry;
+ButtonEdit hrcc07=formonly.hrcc07 type VARCHAR, action=controlp, tabIndex=2, title=%"hrcc07", not null, required, image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=3, title=%"hrat02", noEntry;
+Edit hrao02=formonly.hrao02 type VARCHAR, tabIndex=4, title=%"hrao02", noEntry;
+Edit hras04=formonly.hras04 type VARCHAR, tabIndex=5, title=%"hras04", noEntry;
+Edit hrcc08=formonly.hrcc08 type DECIMAL, tabIndex=6, title=%"hrcc08", noEntry;
+Edit hrcc09=formonly.hrcc09 type DECIMAL, tabIndex=7, title=%"hrcc09", noEntry;
+DateEdit hrcd02=formonly.hrcd02 type DATE, tabIndex=8, title=%"hrcd02";
+Edit hrcd03=formonly.hrcd03 type VARCHAR, tabIndex=9, title=%"hrcd03", picture="XX:XX";
+Edit hrcd04=formonly.hrcd04 type DATE, tabIndex=10, title=%"hrcd04";
+Edit hrcd05=formonly.hrcd05 type VARCHAR, tabIndex=11, title=%"hrcd05", picture="XX:XX";
+Edit hrbm05=formonly.hrbm05 type DECIMAL, tabIndex=12, title=%"hrbm05";
+ComboBox hrbm06=formonly.hrbm06, tabIndex=13, title=%"hrbm06";
+TextEdit hrcd12=formonly.hrcd12 type VARCHAR, tabIndex=14, title=%"hrcd12";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=15, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=16, noEntry;
+Edit cn3=formonly.cn3 type INTEGER, tabIndex=17, noEntry;
+Edit hrcc02_1=formonly.hrcc02_1 type VARCHAR, tabIndex=18, title=%"hrcc02_1";
+Edit hrcc07_1=formonly.hrcc07_1 type VARCHAR, tabIndex=19, title=%"hrcc07_1";
+Edit hrat02_1=formonly.hrat02_1 type VARCHAR, tabIndex=20, title=%"hrat02_1";
+Edit hrao02_1=formonly.hrao02_1 type VARCHAR, tabIndex=21, title=%"hrao02_1";
+Edit hras04_1=formonly.hras04_1 type VARCHAR, tabIndex=22, title=%"hras04_1";
+DateEdit hrcc04_1=formonly.hrcc04_1 type DATE, tabIndex=23, title=%"hrcc04_1";
+DateEdit hrcc05_1=formonly.hrcc05_1 type DATE, tabIndex=24, title=%"hrcc05_1";
+Edit hrcc03_1=formonly.hrcc03_1 type DECIMAL, tabIndex=25, title=%"hrcc03_1";
+Edit hrcc08_1=formonly.hrcc08_1 type DECIMAL, tabIndex=26, title=%"hrcc08_1";
+Edit hrcc09_1=formonly.hrcc09_1 type DECIMAL, tabIndex=27, title=%"hrcc09_1";
+ComboBox hrcc10_1=formonly.hrcc10_1 type VARCHAR, tabIndex=28, title=%"hrcc10_1";
+CheckBox hrcc06_1=formonly.hrcc06_1, tabIndex=29, title=%"hrcc06_1", text=%"", valueChecked = "Y", valueUnchecked = "N";
+TextEdit hrcc11_1=formonly.hrcc11_1 type VARCHAR, tabIndex=30, title=%"hrcc11_1";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.hrcc02,formonly.hrbm04,formonly.hrcc03,formonly.hrcc10,formonly.hrcc11,formonly.hrcc04,formonly.hrcc05,formonly.hrcc06,formonly.cnt,formonly.cn2,formonly.cn3)
+SCREEN RECORD s_hrcc(formonly.hrcc01,formonly.hrcc07,formonly.hrat02,formonly.hrao02,formonly.hras04,formonly.hrcc08,formonly.hrcc09)
+SCREEN RECORD s_hrcd(formonly.hrcd02,formonly.hrcd03,formonly.hrcd04,formonly.hrcd05,formonly.hrbm05,formonly.hrbm06,formonly.hrcd12)
+SCREEN RECORD s_hrcc_1(formonly.hrcc02_1,formonly.hrcc07_1,formonly.hrat02_1,formonly.hrao02_1,formonly.hras04_1,formonly.hrcc04_1,formonly.hrcc05_1,formonly.hrcc03_1,formonly.hrcc08_1,formonly.hrcc09_1,formonly.hrcc10_1,formonly.hrcc06_1,formonly.hrcc11_1)
+END -- INSTRUCTIONS
+

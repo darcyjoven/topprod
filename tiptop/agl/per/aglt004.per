@@ -1,0 +1,103 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglt004")
+VBox vb2_
+HBox hb2_
+Grid gr1
+{
+
+ Year          [aen01           ]
+ Month         [aen02           ]
+ Group Code    [aen03           ]
+ comp          [aen05           ]
+
+}
+END -- gr1
+Grid gr3
+{
+
+  bibie      [aen09              ]
+  topest     [aen04              ]
+  Book No.   [aen11              ]
+  No.        [aen10              ]
+
+}
+END -- gr3
+END -- hb2_
+Table s_aen
+{
+[aen06        |aen07       |aen08             ]
+[aen06        |aen07       |aen08             ]
+[aen06        |aen07       |aen08             ]
+[aen06        |aen07       |aen08             ]
+[aen06        |aen07       |aen08             ]
+
+}
+END -- s_aen
+Table s_aeo
+{
+[aeo06      |aeo06_desc|aeo08      |aeo07     |aeo09   |aeo10           |aeo19          |aeo11   |aeo12   |aeo13           |aeo20           |aeo14_1   |aeo14   |aeo15      |aeo16             |aeo21            |aeo17      |aeo22     ]
+[aeo06      |aeo06_desc|aeo08      |aeo07     |aeo09   |aeo10           |aeo19          |aeo11   |aeo12   |aeo13           |aeo20           |aeo14_1   |aeo14   |aeo15      |aeo16             |aeo21            |aeo17      |aeo22     ]
+[aeo06      |aeo06_desc|aeo08      |aeo07     |aeo09   |aeo10           |aeo19          |aeo11   |aeo12   |aeo13           |aeo20           |aeo14_1   |aeo14   |aeo15      |aeo16             |aeo21            |aeo17      |aeo22     ]
+[aeo06      |aeo06_desc|aeo08      |aeo07     |aeo09   |aeo10           |aeo19          |aeo11   |aeo12   |aeo13           |aeo20           |aeo14_1   |aeo14   |aeo15      |aeo16             |aeo21            |aeo17      |aeo22     ]
+[aeo06      |aeo06_desc|aeo08      |aeo07     |aeo09   |aeo10           |aeo19          |aeo11   |aeo12   |aeo13           |aeo20           |aeo14_1   |aeo14   |aeo15      |aeo16             |aeo21            |aeo17      |aeo22     ]
+
+}
+END -- s_aeo
+Grid gr3_
+{
+
+  ---------- Rows [cnt       ]
+
+}
+END -- gr3_
+END -- vb2_
+END -- aglt004
+
+TABLES
+aeo_file,
+aen_file
+ATTRIBUTES
+Edit aen01=aen_file.aen01, tabIndex=1, not null, required;
+Edit aen02=aen_file.aen02, tabIndex=2, not null, required;
+ButtonEdit aen03=aen_file.aen03, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+ButtonEdit aen05=aen_file.aen05, action=controlp, tabIndex=23, not null, required, image="zoom.png";
+Edit aen09=aen_file.aen09, tabIndex=24, noEntry;
+ButtonEdit aen04=aen_file.aen04, action=controlp, tabIndex=5, not null, required, image="zoom.png";
+Edit aen11=aen_file.aen11, tabIndex=21, noEntry;
+Edit aen10=aen_file.aen10, tabIndex=3, noEntry;
+ButtonEdit aen06=aen_file.aen06, action=controlp, tabIndex=6, title="aen06", not null, required, image="zoom.png";
+ButtonEdit aen07=aen_file.aen07, action=controlp, tabIndex=7, title="aen07", not null, required, image="zoom.png";
+Edit aen08=aen_file.aen08, tabIndex=8, title="aen08", not null, required;
+ButtonEdit aeo06=aeo_file.aeo06, action=controlp, tabIndex=9, title="aeo06", not null, required, image="zoom.png";
+Edit aeo06_desc=formonly.aeo06_desc type VARCHAR, tabIndex=22, title="aeo06_desc", noEntry;
+ButtonEdit aeo08=aeo_file.aeo08, action=controlp, tabIndex=10, title="aeo08", image="zoom.png";
+ButtonEdit aeo07=aeo_file.aeo07, action=controlp, tabIndex=11, title="aeo07", image="zoom.png";
+Edit aeo09=aeo_file.aeo09, tabIndex=12, title="aeo09", noEntry;
+Edit aeo10=aeo_file.aeo10, tabIndex=13, title="aeo10", noEntry;
+Edit aeo19=aeo_file.aeo19, tabIndex=26, title="aeo19", noEntry;
+Edit aeo11=aeo_file.aeo11, tabIndex=14, title="aeo11";
+Edit aeo12=aeo_file.aeo12, tabIndex=15, title="aeo12";
+Edit aeo13=aeo_file.aeo13, tabIndex=16, title="aeo13", noEntry;
+Edit aeo20=aeo_file.aeo20, tabIndex=27, title="aeo20", noEntry;
+Edit aeo14_1=formonly.aeo14_1 type DECIMAL, tabIndex=30, title=%"aeo14_1", noEntry;
+Edit aeo14=aeo_file.aeo14, tabIndex=17, title="aeo14";
+ButtonEdit aeo15=aeo_file.aeo15, action=controlp, tabIndex=18, title="aeo15", image="zoom.png";
+Edit aeo16=aeo_file.aeo16, tabIndex=19, title="aeo16", noEntry;
+Edit aeo21=aeo_file.aeo21, tabIndex=28, title="aeo21", noEntry;
+ButtonEdit aeo17=aeo_file.aeo17, action=controlp, tabIndex=20, title="aeo17", image="zoom.png";
+ButtonEdit aeo22=aeo_file.aeo22, action=controlp, tabIndex=29, title="aeo22", image="zoom.png";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aen(aen_file.aen06,aen_file.aen07,aen_file.aen08)
+SCREEN RECORD s_aeo(aeo_file.aeo06,formonly.aeo06_desc,aeo_file.aeo08,aeo_file.aeo07,aeo_file.aeo09,aeo_file.aeo10,aeo_file.aeo19,aeo_file.aeo11,aeo_file.aeo12,aeo_file.aeo13,aeo_file.aeo20,formonly.aeo14_1,aeo_file.aeo14,aeo_file.aeo15,aeo_file.aeo16,aeo_file.aeo21,aeo_file.aeo17,aeo_file.aeo22)
+SCREEN RECORD Undefined(aen_file.aen01,aen_file.aen02,aen_file.aen03,aen_file.aen05,aen_file.aen09,aen_file.aen04,aen_file.aen11,aen_file.aen10,formonly.cnt)
+END -- INSTRUCTIONS
+

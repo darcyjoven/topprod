@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/sasfi501_replace.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"sasfi501_replace")
+VBox VBox1
+Folder Folder1
+Page Main(text=%"Page1")
+Grid Grid1
+{
+
+ old_item       [old_item                      ]sfs03          [old_sfs03                     ]
+ old_ima02      [old_ima02                     ]sfs10          [old_sfs10                     ]
+ old_ima02      [old_ima021                    ]sfs05          [old_sfs05                     ][old_sfs06      ]
+
+
+
+}
+END -- Grid1
+END -- Main
+END -- Folder1
+Table s_new_sfs
+{
+[sfs02   |ima01                         |ima02                         |ima021                        |bmd10   |bmd11   |bmd07            |sfs07       |sfs08       |sfs09                     |sqty    |qty     |eqty    |img10             ]
+[sfs02   |ima01                         |ima02                         |ima021                        |bmd10   |bmd11   |bmd07            |sfs07       |sfs08       |sfs09                     |sqty    |qty     |eqty    |img10             ]
+[sfs02   |ima01                         |ima02                         |ima021                        |bmd10   |bmd11   |bmd07            |sfs07       |sfs08       |sfs09                     |sqty    |qty     |eqty    |img10             ]
+[sfs02   |ima01                         |ima02                         |ima021                        |bmd10   |bmd11   |bmd07            |sfs07       |sfs08       |sfs09                     |sqty    |qty     |eqty    |img10             ]
+[sfs02   |ima01                         |ima02                         |ima021                        |bmd10   |bmd11   |bmd07            |sfs07       |sfs08       |sfs09                     |sqty    |qty     |eqty    |img10             ]
+
+}
+END -- s_new_sfs
+END -- VBox1
+END -- sasfi501_replace
+
+TABLES
+sfs_file,
+img_file,
+ima_file,
+bmd_file
+ATTRIBUTES
+Edit old_item=formonly.old_item type VARCHAR, tabIndex=1, noEntry, not null, scroll;
+Edit old_sfs03=formonly.old_sfs03 type VARCHAR, tabIndex=4, noEntry, scroll;
+Edit old_ima02=formonly.old_ima02 type VARCHAR, tabIndex=2, noEntry, scroll;
+Edit old_sfs10=formonly.old_sfs10 type VARCHAR, tabIndex=5, noEntry, scroll;
+Edit old_ima021=formonly.old_ima021 type VARCHAR, tabIndex=3, noEntry, scroll;
+Edit old_sfs05=formonly.old_sfs05 type DECIMAL(15,3), tabIndex=6, noEntry, scroll;
+Edit old_sfs06=formonly.old_sfs06 type VARCHAR, tabIndex=7, noEntry, scroll;
+Edit sfs02=sfs_file.sfs02, tabIndex=8, title=%"sfs02";
+Edit ima01=ima_file.ima01, tabIndex=9, title=%"new_item", noEntry, not null, scroll;
+Edit ima02=ima_file.ima02, tabIndex=10, title=%"ima02", noEntry, scroll;
+Edit ima021=ima_file.ima021, tabIndex=11, title=%"ima021", noEntry, scroll;
+Edit bmd10=bmd_file.bmd10, tabIndex=12, title=%"bmd10", noEntry;
+CheckBox bmd11=bmd_file.bmd11, tabIndex=13, title=%"bmd11", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit bmd07=bmd_file.bmd07, tabIndex=14, title=%"bmd07", noEntry, scroll;
+ButtonEdit sfs07=sfs_file.sfs07, action=controlp, tabIndex=15, title=%"new_sfs07", image="zoom", scroll;
+ButtonEdit sfs08=sfs_file.sfs08, action=controlp, tabIndex=16, title=%"new_sfs08", image="zoom", scroll;
+ButtonEdit sfs09=sfs_file.sfs09, action=controlp, tabIndex=17, title=%"new_sfs09", image="zoom", scroll;
+Edit sqty=formonly.sqty type CHAR, tabIndex=18, title=%"sqty", noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=19, title=%"qty";
+Edit eqty=formonly.eqty type CHAR, tabIndex=20, title=%"eqty", noEntry;
+Edit img10=img_file.img10, tabIndex=21, title=%"img10", noEntry, not null, scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.old_item,formonly.old_ima02,formonly.old_ima021,formonly.old_sfs03,formonly.old_sfs10,formonly.old_sfs05,formonly.old_sfs06)
+SCREEN RECORD s_new_sfs(sfs_file.sfs02,ima_file.ima01,ima_file.ima02,ima_file.ima021,bmd_file.bmd10,bmd_file.bmd11,bmd_file.bmd07,sfs_file.sfs07,sfs_file.sfs08,sfs_file.sfs09,formonly.sqty,formonly.qty,formonly.eqty,img_file.img10)
+END -- INSTRUCTIONS
+

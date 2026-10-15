@@ -1,0 +1,50 @@
+----------------------------------------------------------------------------------
+-- $Id:  artp252.per created 2010-01-11T12:13:03
+-- File created from artp252.4fd by Genero Studio 15a01
+-- Copyright (c) 2002-2009  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="artp255")
+  VBOX vb1
+    GROUP gb1( TEXT="QBE")
+
+      GRID gr6
+      {
+
+        Book Date       [aa0       ]
+        Delivery Group  [aa1            ]
+        Requirement Date[aa2       ]
+        Line Gategories [aa3            ]
+        Requirement Type[aa4       ]
+        Confirmed Date  [aa5       ]
+        Confirmed By    [aa6            ]
+
+
+
+      }
+      END -- GRID
+
+    END -- GROUP
+    GRID gr3
+    {
+
+      [aa7               ]
+
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  DATEEDIT aa0=FORMONLY.rvm02, TABINDEX=1;
+  BUTTONEDIT aa1=FORMONLY.rvm03, ACTION=controlp, IMAGE="zoom.png", TABINDEX=2;
+  DATEEDIT aa2=FORMONLY.rvm04, NOT NULL, TABINDEX=3;
+  BUTTONEDIT aa3=FORMONLY.rvm05, ACTION=controlp, IMAGE="zoom.png", TABINDEX=4;
+  COMBOBOX aa4=FORMONLY.rvm13, TABINDEX=5, ITEMS=(("1","Replenishment"),("2","Order"),("3","All"));
+  DATEEDIT aa5=FORMONLY.rvmcond, TABINDEX=6;
+  BUTTONEDIT aa6=FORMONLY.rvmconu, ACTION=controlp, IMAGE="zoom.png", TABINDEX=7;
+  CHECKBOX aa7=FORMONLY.g_bgjob, TEXT="Background Job", NOT NULL, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=8;
+END

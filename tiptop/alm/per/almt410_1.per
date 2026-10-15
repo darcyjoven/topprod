@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt410_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt410_1")
+VBox vb11
+Folder pc1
+Page Main(text=%"Contract Fare Standard")
+Table s_loc
+{
+[loc03  |loc04       |oaj02               |loc05  |loc06  |loc07               |loc08     |loc09               |loc10                 |loc12               |loc11               |loc15               |loc13            |loc16              |loc17              |loc14                         ]
+[loc03  |loc04       |oaj02               |loc05  |loc06  |loc07               |loc08     |loc09               |loc10                 |loc12               |loc11               |loc15               |loc13            |loc16              |loc17              |loc14                         ]
+[loc03  |loc04       |oaj02               |loc05  |loc06  |loc07               |loc08     |loc09               |loc10                 |loc12               |loc11               |loc15               |loc13            |loc16              |loc17              |loc14                         ]
+[loc03  |loc04       |oaj02               |loc05  |loc06  |loc07               |loc08     |loc09               |loc10                 |loc12               |loc11               |loc15               |loc13            |loc16              |loc17              |loc14                         ]
+[loc03  |loc04       |oaj02               |loc05  |loc06  |loc07               |loc08     |loc09               |loc10                 |loc12               |loc11               |loc15               |loc13            |loc16              |loc17              |loc14                         ]
+
+}
+END -- s_loc
+END -- Main
+END -- pc1
+Grid gr1
+{
+  ---- Rows [cnt   ] ------
+
+}
+END -- gr1
+END -- vb11
+END -- almt410_1
+
+TABLES
+oaj_file,
+loc_file
+ATTRIBUTES
+Edit loc03=loc_file.loc03, tabIndex=1, title="Line#", not null, required;
+ButtonEdit loc04=loc_file.loc04, action=controlp, tabIndex=2, title="Fare No.", not null, required, image="zoom.png";
+Edit oaj02=oaj_file.oaj02, tabIndex=3, title="Fare Name", noEntry;
+Edit loc05=loc_file.loc05, tabIndex=4, title="Year";
+Edit loc06=loc_file.loc06, tabIndex=5, title="Month";
+Edit loc07=loc_file.loc07, tabIndex=6, title="Standare Fare", noEntry;
+Edit loc08=loc_file.loc08, tabIndex=7, title="Persons";
+Edit loc09=loc_file.loc09, tabIndex=8, title="Total Fare", noEntry;
+Edit loc10=loc_file.loc10, tabIndex=14, title="Original Adjusted Fare", noEntry;
+Edit loc12=loc_file.loc12, tabIndex=9, title="Base Sum", not null, required;
+Edit loc11=loc_file.loc11, tabIndex=10, title="Adjusted Fare", not null, required;
+ComboBox loc15=loc_file.loc15, tabIndex=15, title="Amount Belongs to", noEntry, items=(("0", "Accrual System"),("1", "Receipt & Payment System "));
+ComboBox loc13=loc_file.loc13, tabIndex=12, title="Charge Type", not null, required, items=(("0", "one-off"),("1", "By Month"));
+DateEdit loc16=loc_file.loc16, tabIndex=17, title="Effective Initial Date", not null, required;
+DateEdit loc17=loc_file.loc17, tabIndex=16, title="Effective End Date";
+Edit loc14=loc_file.loc14, tabIndex=11, title="Memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_loc(loc_file.loc03,loc_file.loc04,oaj_file.oaj02,loc_file.loc05,loc_file.loc06,loc_file.loc07,loc_file.loc08,loc_file.loc09,loc_file.loc10,loc_file.loc12,loc_file.loc11,loc_file.loc15,loc_file.loc13,loc_file.loc16,loc_file.loc17,loc_file.loc14)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ams/42f/amsi610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amsi610")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr3937
+{
+ Resource#           [rqa01     ]
+ Desc.               [rpf02               ]
+ Version             [rqa02     ]
+
+}
+END -- gr3937
+Grid gr3938
+{
+ Daily Max Capacity  [rpf05               ]
+ Capacity/Hour       [rpf04               ]
+ Capacity Unit       [rpf03               ]
+[rpf07                                    ]
+}
+END -- gr3938
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_rqa
+{
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+[rqa03        |rqa04             |rqa05              |rqa06     |rqa07               ]
+
+}
+END -- s_rqa
+Grid gr3939
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr3939
+END -- VBox1
+END -- amsi610
+
+TABLES
+rqa_file
+ATTRIBUTES
+ButtonEdit rqa01=rqa_file.rqa01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Press<^P>Qry Resource No.";
+Edit rpf02=formonly.rpf02 type VARCHAR, tabIndex=2;
+Edit rqa02=rqa_file.rqa02, tabIndex=3;
+Edit rpf05=formonly.rpf05 type VARCHAR, tabIndex=4;
+Edit rpf04=formonly.rpf04 type VARCHAR, tabIndex=5;
+ComboBox rpf03=formonly.rpf03 type CHAR, tabIndex=6, items=(("1", "Labor hour"),("2", "Unit Machine Time"));
+CheckBox rpf07=formonly.rpf07 type VARCHAR, tabIndex=7, text="Rough Capacity Include", valueChecked = "Y", valueUnchecked = "N";
+DateEdit rqa03=rqa_file.rqa03, tabIndex=8, title="Initial Date";
+DateEdit rqa04=rqa_file.rqa04, tabIndex=9, title="Capacity End.Date";
+Edit rqa05=rqa_file.rqa05, tabIndex=10, title="Capacity Available", not null, required;
+Edit rqa06=rqa_file.rqa06, tabIndex=11, title="Used", noEntry;
+Edit rqa07=rqa_file.rqa07, tabIndex=12, title="Memo";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rqa(rqa_file.rqa03,rqa_file.rqa04,rqa_file.rqa05,rqa_file.rqa06,rqa_file.rqa07)
+SCREEN RECORD Undefined(rqa_file.rqa01,formonly.rpf02,rqa_file.rqa02,formonly.rpf05,formonly.rpf04,formonly.rpf03,formonly.rpf07,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

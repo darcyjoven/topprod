@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq402.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq402")
+VBox vbox1
+Folder folder01
+Page page01(text=%"Main")
+HBox hbox1
+Grid gr2253
+{
+ Contract No.        [oea01             ]
+ Contract Datet      [oea02       ]
+ Accounts Customer   [oea03       ][oea032    ]
+ Shipping Customer   [oea04       ][occ02     ]
+}
+END -- gr2253
+Grid gr2254
+{
+ Employee            [oea14     ]
+ Department          [oea15     ]
+ On-Hold Reason      [oeahold   ]
+ [oeaconf                        ]
+}
+END -- gr2254
+END -- hbox1
+END -- page01
+END -- folder01
+Table s_oeb
+{
+[oeb03|oeb04              |oeb09|oeb32      |oeb05 |oeb12        |oeb913        |oeb915       |oeb910          |oeb912         |oeb24      |unqty              |oeb15         |oeb70     ]
+[oeb03|oeb04              |oeb09|oeb32      |oeb05 |oeb12        |oeb913        |oeb915       |oeb910          |oeb912         |oeb24      |unqty              |oeb15         |oeb70     ]
+[oeb03|oeb04              |oeb09|oeb32      |oeb05 |oeb12        |oeb913        |oeb915       |oeb910          |oeb912         |oeb24      |unqty              |oeb15         |oeb70     ]
+[oeb03|oeb04              |oeb09|oeb32      |oeb05 |oeb12        |oeb913        |oeb915       |oeb910          |oeb912         |oeb24      |unqty              |oeb15         |oeb70     ]
+[oeb03|oeb04              |oeb09|oeb32      |oeb05 |oeb12        |oeb913        |oeb915       |oeb910          |oeb912         |oeb24      |unqty              |oeb15         |oeb70     ]
+[oeb03|oeb04              |oeb09|oeb32      |oeb05 |oeb12        |oeb913        |oeb915       |oeb910          |oeb912         |oeb24      |unqty              |oeb15         |oeb70     ]
+[oeb03|oeb04              |oeb09|oeb32      |oeb05 |oeb12        |oeb913        |oeb915       |oeb910          |oeb912         |oeb24      |unqty              |oeb15         |oeb70     ]
+[oeb03|oeb04              |oeb09|oeb32      |oeb05 |oeb12        |oeb913        |oeb915       |oeb910          |oeb912         |oeb24      |unqty              |oeb15         |oeb70     ]
+[oeb03|oeb04              |oeb09|oeb32      |oeb05 |oeb12        |oeb913        |oeb915       |oeb910          |oeb912         |oeb24      |unqty              |oeb15         |oeb70     ]
+[oeb03|oeb04              |oeb09|oeb32      |oeb05 |oeb12        |oeb913        |oeb915       |oeb910          |oeb912         |oeb24      |unqty              |oeb15         |oeb70     ]
+}
+END -- s_oeb
+Grid gr2255
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2255
+END -- vbox1
+END -- axmq402
+
+TABLES
+oeb_file,
+oea_file
+ATTRIBUTES
+Edit oea01=oea_file.oea01, tabIndex=1, not null, required;
+DateEdit oea02=oea_file.oea02, tabIndex=2;
+ButtonEdit oea03=oea_file.oea03, action=controlp, tabIndex=3, image="zoom";
+Edit oea032=oea_file.oea032, tabIndex=4, noEntry;
+ButtonEdit oea04=oea_file.oea04, action=controlp, tabIndex=5, image="zoom";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=6, noEntry;
+ButtonEdit oea14=oea_file.oea14, action=controlp, tabIndex=7, image="zoom";
+ButtonEdit oea15=oea_file.oea15, action=controlp, tabIndex=8, image="zoom";
+Edit oeahold=oea_file.oeahold, tabIndex=9;
+CheckBox oeaconf=oea_file.oeaconf, tabIndex=10, text=%"Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oeb03=oeb_file.oeb03, tabIndex=11, title=%"Ln #", not null, required;
+Edit oeb04=oeb_file.oeb04, tabIndex=12, title=%"Product No.";
+Edit oeb09=oeb_file.oeb092, tabIndex=13, title=%"Lot#";
+DateEdit oeb32=oeb_file.oeb32, tabIndex=26, title=%"Dead Line";
+Edit oeb05=oeb_file.oeb05, tabIndex=14, title=%"Unit";
+Edit oeb12=oeb_file.oeb12, tabIndex=15, title=%"Contract Qty", not null, required;
+Edit oeb913=oeb_file.oeb913, tabIndex=16, title=%"Par/Ref Unit";
+Edit oeb915=oeb_file.oeb915, tabIndex=17, title=%"Par/Ref Qty";
+Edit oeb910=oeb_file.oeb910, tabIndex=18, title=%"Chi/Sales Unit";
+Edit oeb912=oeb_file.oeb912, tabIndex=19, title=%"Chi/Sales Qty";
+Edit oeb24=oeb_file.oeb24, tabIndex=20, title=%"Accepted", not null, required;
+Edit unqty=formonly.unqty type DECIMAL, tabIndex=21, title=%"Order Not Accepted";
+DateEdit oeb15=oeb_file.oeb15, tabIndex=22, title=%"Delivery Date";
+Edit oeb70=oeb_file.oeb70, tabIndex=23, title=%"Close";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oeb(oeb_file.oeb03,oeb_file.oeb04,oeb_file.oeb092,oeb_file.oeb32,oeb_file.oeb05,oeb_file.oeb12,oeb_file.oeb913,oeb_file.oeb915,oeb_file.oeb910,oeb_file.oeb912,oeb_file.oeb24,formonly.unqty,oeb_file.oeb15,oeb_file.oeb70)
+SCREEN RECORD Undefined(oea_file.oea01,oea_file.oea02,oea_file.oea03,oea_file.oea032,oea_file.oea04,formonly.occ02,oea_file.oea14,oea_file.oea15,oea_file.oeahold,oea_file.oeaconf,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

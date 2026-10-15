@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi170.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi170")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr613
+{
+ Version   [bgv01     ]
+ Year      [bgv02     ]
+ Month     [bgv03     ]
+ Dept.no   [bgv04     ][gem02     ]
+}
+END -- gr613
+END -- page01
+END -- folder01
+Table s_bgv
+{
+[bgv05   |bgs02     |bgv11    |bgv06   |bgv10               ]
+[bgv05   |bgs02     |bgv11    |bgv06   |bgv10               ]
+[bgv05   |bgs02     |bgv11    |bgv06   |bgv10               ]
+[bgv05   |bgs02     |bgv11    |bgv06   |bgv10               ]
+[bgv05   |bgs02     |bgv11    |bgv06   |bgv10               ]
+[bgv05   |bgs02     |bgv11    |bgv06   |bgv10               ]
+[bgv05   |bgs02     |bgv11    |bgv06   |bgv10               ]
+[bgv05   |bgs02     |bgv11    |bgv06   |bgv10               ]
+[bgv05   |bgs02     |bgv11    |bgv06   |bgv10               ]
+[bgv05   |bgs02     |bgv11    |bgv06   |bgv10               ]
+
+}
+END -- s_bgv
+Grid gr614
+{
+           Total Amount [tot                 ]
+
+}
+END -- gr614
+Grid gr615
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr615
+END -- VBox1
+END -- abgi170
+
+TABLES
+bgv_file
+ATTRIBUTES
+Edit bgv01=bgv_file.bgv01, tabIndex=1;
+Edit bgv02=bgv_file.bgv02, tabIndex=2, not null, required;
+Edit bgv03=bgv_file.bgv03, tabIndex=3, not null, required;
+ButtonEdit bgv04=bgv_file.bgv04, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Department";
+Edit gem02=formonly.gem02 type VARCHAR, tabIndex=5, noEntry;
+ButtonEdit bgv05=bgv_file.bgv05, action=controlp, tabIndex=6, title="Cost", not null, required, image="zoom", comment="<^P>Qry Cost Item";
+Edit bgs02=formonly.bgs02 type VARCHAR, tabIndex=7, title="Item", noEntry;
+Edit bgv11=bgv_file.bgv11, tabIndex=8, title="Detail";
+ComboBox bgv06=bgv_file.bgv06, tabIndex=9, title="Dir/Ind", not null, required, items=(("1", %"Direct"),("2", %"Indirect"));
+Edit bgv10=bgv_file.bgv10, tabIndex=10, title="Amount";
+Edit tot=formonly.tot type DECIMAL, tabIndex=11;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry, color = yellow;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_bgv(bgv_file.bgv05,formonly.bgs02,bgv_file.bgv11,bgv_file.bgv06,bgv_file.bgv10)
+SCREEN RECORD Undefined(bgv_file.bgv01,bgv_file.bgv02,bgv_file.bgv03,bgv_file.bgv04,formonly.gem02,formonly.tot,formonly.cnt)
+END -- INSTRUCTIONS
+

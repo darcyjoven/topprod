@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq812.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglr112")
+Folder pc831
+Page page01(text="Page01")
+VBox VBox1
+Grid gr1
+{
+  Book No.[b         ]  [label|title1    |title2    ][c                 ] [o                    ]
+ [report  |a         ]   Year [yy1       |yy2       ][g                 ]  G/L Currency[r         ]
+  Currency[azi01     ]  [initi|bm1       |bm2       ][h                 ] [convert   ] [p         ]
+ [label1  |d         ]  [endin|em1       |em2       ]                      Ex.Rate     [q         ]
+ [decimal |e         ]  [print|f         ]
+
+
+}
+END -- gr1
+Table s_aag
+{
+[aag01                                                   |line     |sum1                   |sum2                         ]
+[aag01                                                   |line     |sum1                   |sum2                         ]
+[aag01                                                   |line     |sum1                   |sum2                         ]
+[aag01                                                   |line     |sum1                   |sum2                         ]
+[aag01                                                   |line     |sum1                   |sum2                         ]
+[aag01                                                   |line     |sum1                   |sum2                         ]
+[aag01                                                   |line     |sum1                   |sum2                         ]
+[aag01                                                   |line     |sum1                   |sum2                         ]
+[aag01                                                   |line     |sum1                   |sum2                         ]
+[aag01                                                   |line     |sum1                   |sum2                         ]
+
+}
+END -- s_aag
+END -- VBox1
+END -- page01
+END -- pc831
+END -- gglq812
+
+ATTRIBUTES
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Query Book No.";
+Label label:Label2, text=%"Enter Name";
+Edit title1=formonly.title1 type CHAR, tabIndex=6;
+Edit title2=formonly.title2 type CHAR, tabIndex=11;
+CheckBox c=formonly.c type VARCHAR, tabIndex=15, text="Print Balance For Zero", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox o=formonly.o type VARCHAR, tabIndex=18, text="Convert Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label report:Report, text=%"Report";
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit yy1=formonly.yy1 type SMALLINT, tabIndex=7;
+Edit yy2=formonly.yy2 type SMALLINT, tabIndex=12;
+CheckBox g=formonly.g type VARCHAR, tabIndex=16, text="Is Include Audit Adjustment", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit r=formonly.r type VARCHAR, tabIndex=19, noEntry;
+Edit azi01=formonly.azi01 type CHAR, tabIndex=3;
+Label initi:Initial, text=%"Initial";
+Edit bm1=formonly.bm1 type SMALLINT, tabIndex=8;
+Edit bm2=formonly.bm2 type SMALLINT, tabIndex=13;
+CheckBox h=formonly.h type VARCHAR, tabIndex=17, text="Print by Acct Extra Desc", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label convert:Convert, text=%"Convert";
+ButtonEdit p=formonly.p type VARCHAR, action=controlp, tabIndex=20, image="zoom", comment="<^P> Qry Currency";
+Label label1:Label1, text=%"d";
+ComboBox d=formonly.d type CHAR, tabIndex=4, items=(("1", "DR"),("2", "TH"),("3", "Ten Thousand"),("4", "Million"));
+Label endin:Ending, text=%"Ending";
+Edit em1=formonly.em1 type SMALLINT, tabIndex=9;
+Edit em2=formonly.em2 type SMALLINT, tabIndex=14;
+Edit q=formonly.q type DECIMAL, tabIndex=21;
+Label decimal:Decimal, text=%"Decimal", hidden;
+Edit e=formonly.e type CHAR, tabIndex=5, hidden;
+Label print:Print, text=%"Print", hidden;
+Edit f=formonly.f type SMALLINT, tabIndex=10, hidden;
+Edit aag01=formonly.aag01 type VARCHAR, tabIndex=22, title="Account Name", comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit line=formonly.line type CHAR, tabIndex=23, title="Line#";
+Edit sum1=formonly.sum1 type CHAR, tabIndex=24, title="col1_sum";
+Edit sum2=formonly.sum2 type CHAR, tabIndex=25, title="col2_sum";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aag(formonly.aag01,formonly.line,formonly.sum1,formonly.sum2)
+SCREEN RECORD Undefined(formonly.a,formonly.azi01,formonly.d,formonly.b,formonly.yy2,formonly.yy1,formonly.e,formonly.f,formonly.c,formonly.g,formonly.h,formonly.o,formonly.r,formonly.p,formonly.q,formonly.bm1,formonly.bm2,formonly.em2,formonly.em1,formonly.title2,formonly.title1)
+END -- INSTRUCTIONS
+

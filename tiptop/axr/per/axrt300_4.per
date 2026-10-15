@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrt300_4.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrt300_4")
+VBox VBox1
+Table s_ape
+{
+[no              |sq  |amtf                |amt                 ]
+[no              |sq  |amtf                |amt                 ]
+[no              |sq  |amtf                |amt                 ]
+[no              |sq  |amtf                |amt                 ]
+[no              |sq  |amtf                |amt                 ]
+[no              |sq  |amtf                |amt                 ]
+[no              |sq  |amtf                |amt                 ]
+[no              |sq  |amtf                |amt                 ]
+[no              |sq  |amtf                |amt                 ]
+[no              |sq  |amtf                |amt                 ]
+
+}
+END -- s_ape
+Grid gr2741
+{
+ <G group01                >    <G group02                >
+  [totf      ]                   [tot       ]
+
+ <                         >    <                         >
+
+}
+END -- gr2741
+END -- VBox1
+END -- axrt300_4
+
+ATTRIBUTES
+Edit no=formonly.no type CHAR, tabIndex=1, title="Doc#";
+Edit sq=formonly.sq type CHAR, tabIndex=2, title="Ln#";
+Edit amtf=formonly.amtf type CHAR, tabIndex=3, title="Cn. O.C.";
+Edit amt=formonly.amt type CHAR, tabIndex=4, title="Cn. H.C.";
+Group group01:group01, text="Cn. O.C Tot.";
+Edit totf=formonly.totf type CHAR, tabIndex=5;
+Group group02:group02, text="Cn. H.C Tot.";
+Edit tot=formonly.tot type CHAR, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ape(formonly.no,formonly.sq,formonly.amtf,formonly.amt)
+SCREEN RECORD Undefined(formonly.totf,formonly.tot)
+END -- INSTRUCTIONS
+

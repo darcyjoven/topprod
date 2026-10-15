@@ -1,0 +1,133 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdi112.per created Wed Jan 23 05:30:31 2008
+-- File created from axdi112.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdi112")
+-- GRID
+-- GRID
+-- HBOX
+-- PAGE
+-- GRID
+-- PAGE
+-- FOLDER
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER pc1558
+      PAGE page01( TEXT="Main")
+        HBOX 
+          GRID gr7751
+          {
+          <G group01                                                     >
+           Vehcile No.                   [aa0       ]
+           Level                         [aa1       ]
+           Category                      [aa2       ]
+           Brand                         [aa3                 ]
+           Model                         [aa4                 ]
+           Car No.                       [aa5                 ]
+           Engine No.                    [aa6                 ]
+           Chassis No.                   [aa7                 ]
+           ["                                                          "]
+
+           Ownership                     [aa8       ]
+           State                         [aa9       ]
+           lately vechile maintain date  [ab0       ]
+           Memo                          [ab1                           ]
+
+          <                                                              >
+
+
+          }
+          END -- GRID
+          GRID gr7752
+          {
+          <G group02                                                         >
+           Leave Fact. Date              [ab2       ]
+           Purchase Date                 [ab3       ]
+           Mileage Drived                [ab4       ]
+           Custos                        [ab5       ] [ab6       ]
+           Driver                        [ab7       ] [ab8       ]
+           Accompanyist                  [ab9       ] [ac0       ]
+                                         [ac1       ] [ac2       ]
+                                         [ac3       ] [ac4       ]
+
+           Price Meth.Of Vehicle Leased  [ac5       ]
+           Unit Price Of Vehicle Leased  [ac6                    ]
+
+           Assets No.                    [ac7       ] [ac8       ]
+           Vehicle Group No.             [ac9       ]
+          <                                                                  >
+
+
+          }
+          END -- GRID
+        END -- HBOX
+      END -- PAGE
+      PAGE info( TEXT="Info")
+        GRID gr7753
+        {
+         Record Owner        [ad0       ] Last Modified by    [ad1       ] Data Valid Code     [ad2       ]
+         Department          [ad3       ] Create/Modify Date  [ad4       ]
+
+        }
+        END -- GRID
+      END -- PAGE
+    END -- FOLDER
+    GRID gr7754
+    {
+     ----------Rows [ad5   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES obw_file
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=obw_file.obw01, COMMENT="KEY Field, No Blank/Repeated!", NOT NULL, REQUIRED, TABINDEX=1;
+  BUTTONEDIT aa1=obw_file.obw05, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=2;
+  BUTTONEDIT aa2=obw_file.obw02, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=3;
+  BUTTONEDIT aa3=obw_file.obw03, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=4;
+  BUTTONEDIT aa4=obw_file.obw04, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=5;
+  EDIT aa5=obw_file.obw08, NOT NULL, REQUIRED, TABINDEX=6;
+  EDIT aa6=obw_file.obw09, NOT NULL, REQUIRED, TABINDEX=7;
+  EDIT aa7=obw_file.obw10, TABINDEX=8;
+  COMBOBOX aa8=obw_file.obw06, NOT NULL, REQUIRED, TABINDEX=9, ITEMS=(("1","Possess"),("2","Lease"));
+  COMBOBOX aa9=obw_file.obw07, NOT NULL, REQUIRED, TABINDEX=10, ITEMS=(("1","Usable"),("2","Unusable"));
+  EDIT ab0=obw_file.obw26, NOENTRY, TABINDEX=11;
+  EDIT ab1=obw_file.obw25, TABINDEX=12;
+  GROUP group02 : group02;
+  EDIT ab2=obw_file.obw11, TABINDEX=13;
+  EDIT ab3=obw_file.obw12, TABINDEX=14;
+  EDIT ab4=obw_file.obw13, NOT NULL, REQUIRED, TABINDEX=15;
+  BUTTONEDIT ab5=obw_file.obw14, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=16;
+  EDIT ab6=FORMONLY.gen02, NOENTRY, TABINDEX=17;
+  BUTTONEDIT ab7=obw_file.obw16, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", TABINDEX=18;
+  EDIT ab8=FORMONLY.gen02a, NOENTRY, TABINDEX=19;
+  BUTTONEDIT ab9=obw_file.obw17, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", TABINDEX=20;
+  EDIT ac0=FORMONLY.gen02b, NOENTRY, TABINDEX=21;
+  BUTTONEDIT ac1=obw_file.obw18, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", TABINDEX=22;
+  EDIT ac2=FORMONLY.gen02c, NOENTRY, TABINDEX=23;
+  BUTTONEDIT ac3=obw_file.obw19, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", TABINDEX=24;
+  EDIT ac4=FORMONLY.gen02d, NOENTRY, TABINDEX=25;
+  COMBOBOX ac5=obw_file.obw21, TABINDEX=26, ITEMS=(("1","Monthly Fixed Sum"),("2","Daily Fixed Sum"),("3","Computed By Mileage"));
+  EDIT ac6=obw_file.obw22, TABINDEX=27;
+  BUTTONEDIT ac7=obw_file.obw23, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", TABINDEX=28;
+  EDIT ac8=obw_file.obw24, TABINDEX=29;
+  BUTTONEDIT ac9=obw_file.obw20, ACTION=controlp, COMMENT="<^P>Qry Detail", IMAGE="zoom", NOT NULL, REQUIRED, TABINDEX=30;
+  EDIT ad0=obw_file.obwuser, NOENTRY, TABINDEX=31;
+  EDIT ad1=obw_file.obwmodu, NOENTRY, TABINDEX=32;
+  EDIT ad2=obw_file.obwacti, NOENTRY, TABINDEX=33;
+  EDIT ad3=obw_file.obwgrup, NOENTRY, TABINDEX=34;
+  EDIT ad4=obw_file.obwdate, NOENTRY, TABINDEX=35;
+  EDIT ad5=FORMONLY.cnt TYPE SMALLINT, NOENTRY, TABINDEX=36;
+END

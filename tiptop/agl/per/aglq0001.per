@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq0001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglq0001")
+VBox vb4
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+
+  Group Code           [aek01         ]  Group Book No.                [aek00         ]  Acct No.        [aek04         ]
+  Merger of individual [aek02         ]  Merger of individual Book No. [aek03         ]  Acct Title      [aag02                      ]
+  Year                 [aek06         ]  Currency                      [aek12         ]  Dimension Value [aek05         ]
+
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table tb1
+{
+[aek07   |aek08               |aek09               |amt                 |aek10       |aek11       ]
+[aek07   |aek08               |aek09               |amt                 |aek10       |aek11       ]
+[aek07   |aek08               |aek09               |amt                 |aek10       |aek11       ]
+[aek07   |aek08               |aek09               |amt                 |aek10       |aek11       ]
+[aek07   |aek08               |aek09               |amt                 |aek10       |aek11       ]
+}
+END -- tb1
+Grid gr2
+{
+
+ Rows [idx ] / [cnt   ] --- item [cn2  ]
+
+
+
+}
+END -- gr2
+END -- vb4
+END -- aglq0001
+
+TABLES
+aek_file
+ATTRIBUTES
+ButtonEdit aek01=aek_file.aek01, action=controlp, tabIndex=1, image="zoom";
+Edit aek00=aek_file.aek00, tabIndex=4;
+ButtonEdit aek04=aek_file.aek04, action=controlp, tabIndex=7, image="zoom";
+Edit aek02=aek_file.aek02, tabIndex=2;
+Edit aek03=aek_file.aek03, tabIndex=5;
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=8;
+Edit aek06=aek_file.aek06, tabIndex=3;
+ButtonEdit aek12=aek_file.aek12, action=controlp, tabIndex=6, image="zoom";
+Edit aek05=aek_file.aek05, tabIndex=10;
+Edit aek07=aek_file.aek07, tabIndex=9, title="Period";
+Edit aek08=aek_file.aek08, tabIndex=11, title="Debit Amt";
+Edit aek09=aek_file.aek09, tabIndex=12, title="Credit Amount";
+Edit amt=formonly.amt type CHAR, tabIndex=18, title=%"Balance";
+Edit aek10=aek_file.aek10, tabIndex=13, title="Debit Rows";
+Edit aek11=aek_file.aek11, tabIndex=14, title="Credit Rows";
+Edit idx=formonly.idx type INTERVAL YEAR(2) TO YEAR, tabIndex=17;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=15;
+Edit cn2=formonly.cn2 type INTERVAL YEAR(2) TO YEAR, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aek(aek_file.aek07,aek_file.aek08,aek_file.aek09,formonly.amt,aek_file.aek10,aek_file.aek11)
+SCREEN RECORD Undefined(aek_file.aek01,aek_file.aek00,aek_file.aek04,aek_file.aek02,aek_file.aek03,formonly.aag02,aek_file.aek06,aek_file.aek12,aek_file.aek05,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aec/42f/aeci020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aeci020")
+VBox VBox1
+Folder pc250
+Page page01(text="Main")
+Table s_sgb
+{
+[sgb01 |sgb05              |sgb04      |sgf02        |sgb06                   |aag02                                             ]
+[sgb01 |sgb05              |sgb04      |sgf02        |sgb06                   |aag02                                             ]
+[sgb01 |sgb05              |sgb04      |sgf02        |sgb06                   |aag02                                             ]
+[sgb01 |sgb05              |sgb04      |sgf02        |sgb06                   |aag02                                             ]
+[sgb01 |sgb05              |sgb04      |sgf02        |sgb06                   |aag02                                             ]
+[sgb01 |sgb05              |sgb04      |sgf02        |sgb06                   |aag02                                             ]
+[sgb01 |sgb05              |sgb04      |sgf02        |sgb06                   |aag02                                             ]
+[sgb01 |sgb05              |sgb04      |sgf02        |sgb06                   |aag02                                             ]
+[sgb01 |sgb05              |sgb04      |sgf02        |sgb06                   |aag02                                             ]
+[sgb01 |sgb05              |sgb04      |sgf02        |sgb06                   |aag02                                             ]
+
+}
+END -- s_sgb
+END -- page01
+END -- pc250
+Grid gr1625
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1625
+END -- VBox1
+END -- aeci020
+
+TABLES
+aag_file,
+sgb_file
+ATTRIBUTES
+Edit sgb01=sgb_file.sgb01, tabIndex=1, title="Error#", not null, required, comment="No blank Field!";
+Edit sgb05=sgb_file.sgb05, tabIndex=2, title="Error Description";
+ButtonEdit sgb04=sgb_file.sgb04, action=controlp, tabIndex=3, title="Attribute", image="zoom", comment="<^P> Query Attribute";
+Edit sgf02=formonly.sgf02 type CHAR, tabIndex=4, title="Description", noEntry;
+ButtonEdit sgb06=sgb_file.sgb06, action=controlp, tabIndex=5, title="Account", image="zoom", comment="No blank Field! <^P> Qry Account ";
+Edit aag02=aag_file.aag02, tabIndex=6, title="Account Title", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sgb(sgb_file.sgb01,sgb_file.sgb05,sgb_file.sgb04,formonly.sgf02,sgb_file.sgb06,aag_file.aag02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

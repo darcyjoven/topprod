@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artg610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr911")
+VBox VBox1
+Grid gr2815
+{
+ <G group01                                                                        >
+  Store No.        [luaplant            ]   Apartment        [lua06               ]
+  Storied build No.[lmf03               ]   Cost sheet No.   [lub03               ]
+  Floor No.        [lmf04               ]   Outpost date     [lua34               ]
+  Regional No.     [lie04               ]   Post date        [lub10               ]
+  Customer No.     [lua07               ]   Department       [lua38               ]
+  Booth No.        [lmf13               ]   Business person  [lua39               ]
+
+
+ <                                                                                 >
+}
+END -- gr2815
+Group group02(text="INPUT")
+Grid gr2816
+{
+
+ <G group04                                                                      >
+  [d1                           ]   [d2                          ]
+ <                                                                               >
+ <G group03                                                                      >
+  [s1                  ][s2                  ][s3                  ]
+  [t1                  ][t2                  ][t3                  ]
+  [u1                  ][u2                  ][u3                  ]
+ <                                                                               >
+}
+END -- gr2816
+END -- group02
+Grid gr2817
+{
+[m                                                           ]
+
+}
+END -- gr2817
+END -- VBox1
+END -- artg610
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit luaplant=formonly.luaplant type VARCHAR, action=controlp, tabIndex=1, image="zoom", scroll;
+ButtonEdit lua06=formonly.lua06 type VARCHAR, action=controlp, tabIndex=7, image="zoom", scroll;
+ButtonEdit lmf03=formonly.lmf03 type VARCHAR, action=controlp, tabIndex=2, image="zoom", scroll;
+ButtonEdit lub03=formonly.lub03 type VARCHAR, action=controlp, tabIndex=8, image="zoom", scroll;
+ButtonEdit lmf04=formonly.lmf04 type VARCHAR, action=controlp, tabIndex=3, image="zoom", scroll;
+DateEdit lua34=formonly.lua34 type DATE, tabIndex=9;
+ButtonEdit lie04=formonly.lie04 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+DateEdit lub10=formonly.lub10 type DATE, tabIndex=10;
+ButtonEdit lua07=formonly.lua07 type VARCHAR, action=controlp, tabIndex=5, image="zoom", scroll;
+ButtonEdit lua38=formonly.lua38 type VARCHAR, action=controlp, tabIndex=11, image="zoom", scroll;
+TextEdit lmf13=formonly.lmf13 type VARCHAR, tabIndex=6;
+ButtonEdit lua39=formonly.lua39 type VARCHAR, action=controlp, tabIndex=12, image="zoom", scroll;
+Group group04:group04, text="Data Option";
+RadioGroup d1=formonly.d1 type CHAR, tabIndex=13, items=(("1", "Unposted"),("2", "Posted"),("3", "All "));
+RadioGroup d2=formonly.d2, tabIndex=14, items=(("1", "confirm"),("2", "unconfim"),("3", "all"));
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=15, queryEditable, items=(("1", "Store No."),("2", "Storied build No."),("3", "Floor No."),("4", "Regional No."),("5", "Customer No."),("6", "Booth No."),("7", "Apartment"),("8", "Cost sheet No."),("9", "Outpost date"),("10", "Post date"),("11", "Department"),("12", "Business person"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=16, queryEditable, items=(("1", "Store No."),("2", "Storied build No."),("3", "Floor No."),("4", "Regional No."),("5", "Customer No."),("6", "Booth No."),("7", "Apartment"),("8", "Cost sheet No."),("9", "Outpost date"),("10", "Post date"),("11", "Department"),("12", "Business person"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=17, queryEditable, items=(("1", "Store No."),("2", "Storied build No."),("3", "Floor No."),("4", "Regional No."),("5", "Customer No."),("6", "Booth No."),("7", "Apartment"),("8", "Cost sheet No."),("9", "Outpost date"),("10", "Post date"),("11", "Department"),("12", "Business person"));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=18, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=19, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=20, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=21, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=22, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=23, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox m=formonly.m type CHAR, tabIndex=24, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.d1,formonly.d2,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.m,formonly.luaplant,formonly.lua06,formonly.lua34,formonly.lmf03,formonly.lua07,formonly.lua39,formonly.lmf04,formonly.lmf13,formonly.lua38,formonly.lie04,formonly.lub03,formonly.lub10)
+END -- INSTRUCTIONS
+

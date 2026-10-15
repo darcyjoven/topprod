@@ -1,0 +1,129 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi020")
+VBox vb6
+Folder pc3
+Page Page5(text=%"main")
+Grid gr5
+{
+ Payment Doc NO.    [luc01           ]             aggregate spending [luc06           ]                 check          [luc14           ][imgmksg]
+ Cotract Num        [luc04           ]             af_tax spend amt   [luc06t          ]                 checker        [luc15           ][       ]
+ source of marchent [luc02           ]             sum payable        [luc17           ]                 check date     [luc16           ]
+ marchent NO.       [luc03           ]             af_tax pay amt     [luc17t          ]                 remarks        [luc08           ]
+ marchent name      [luc031          ]             receipts date      [luc07           ]
+ stall item         [luc05           ]                                [luc09           ]
+ Tax Type           [luc18           ]             origin prog        [luc10           ]
+ Tax Rate           [luc181          ]             reciepts NO.       [luc11           ]
+[luc182               ]                                               [luc12           ]
+                                                   approved state     [luc13           ]
+
+}
+END -- gr5
+END -- Page5
+Page Page6(text=%"info")
+Grid gr15
+{
+ recored owner       [lucuser   ]  create date        [luccrat     ]   data valid code   [lucacti     ]
+ department          [lucgrup   ]  last modified by   [lucmodu     ]   last modified date[lucdate     ]
+ lucoriu             [lucoriu   ]
+ lucorig             [lucorig   ]
+
+
+
+
+
+}
+END -- gr15
+END -- Page6
+END -- pc3
+Table s_lud
+{
+[lud02|lud03          |lud04   |lud05        |oaj02   |oaj031  |lnj02   |oaj04   |aag02_1 |oaj041  |aag02_2 |oaj05   |oaj06   |lud06   |lud07   |lud07t  |lud08 ]
+[lud02|lud03          |lud04   |lud05        |oaj02   |oaj031  |lnj02   |oaj04   |aag02_1 |oaj041  |aag02_2 |oaj05   |oaj06   |lud06   |lud07   |lud07t  |lud08 ]
+[lud02|lud03          |lud04   |lud05        |oaj02   |oaj031  |lnj02   |oaj04   |aag02_1 |oaj041  |aag02_2 |oaj05   |oaj06   |lud06   |lud07   |lud07t  |lud08 ]
+[lud02|lud03          |lud04   |lud05        |oaj02   |oaj031  |lnj02   |oaj04   |aag02_1 |oaj041  |aag02_2 |oaj05   |oaj06   |lud06   |lud07   |lud07t  |lud08 ]
+[lud02|lud03          |lud04   |lud05        |oaj02   |oaj031  |lnj02   |oaj04   |aag02_1 |oaj041  |aag02_2 |oaj05   |oaj06   |lud06   |lud07   |lud07t  |lud08 ]
+[lud02|lud03          |lud04   |lud05        |oaj02   |oaj031  |lnj02   |oaj04   |aag02_1 |oaj041  |aag02_2 |oaj05   |oaj06   |lud06   |lud07   |lud07t  |lud08 ]
+[lud02|lud03          |lud04   |lud05        |oaj02   |oaj031  |lnj02   |oaj04   |aag02_1 |oaj041  |aag02_2 |oaj05   |oaj06   |lud06   |lud07   |lud07t  |lud08 ]
+[lud02|lud03          |lud04   |lud05        |oaj02   |oaj031  |lnj02   |oaj04   |aag02_1 |oaj041  |aag02_2 |oaj05   |oaj06   |lud06   |lud07   |lud07t  |lud08 ]
+[lud02|lud03          |lud04   |lud05        |oaj02   |oaj031  |lnj02   |oaj04   |aag02_1 |oaj041  |aag02_2 |oaj05   |oaj06   |lud06   |lud07   |lud07t  |lud08 ]
+
+}
+END -- s_lud
+Grid gr22
+{
+ --------Rows[idx   ]/[cnt   ]   ---Details[cn2   ]--------
+
+}
+END -- gr22
+END -- vb6
+END -- almi020
+
+TABLES
+lud_file,
+luc_file
+ATTRIBUTES
+ButtonEdit luc01=luc_file.luc01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit luc06=luc_file.luc06, tabIndex=10, noEntry, not null, required;
+ComboBox luc14=luc_file.luc14, tabIndex=20, default = "N", noEntry, not null, queryEditable, items=(("N", "UnConfirmed"),("Y", "Confirmed"),("X", "Void"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit luc04=luc_file.luc04, action=controlp, tabIndex=2, image="zoom";
+Edit luc06t=luc_file.luc06t, tabIndex=11, noEntry, not null, required;
+Edit luc15=luc_file.luc15, tabIndex=21, noEntry;
+ComboBox luc02=luc_file.luc02, tabIndex=3, not null, required, queryEditable, items=(("1", "latent marchent"),("2", "normal marchent"));
+Edit luc17=luc_file.luc17, tabIndex=12, noEntry, not null;
+DateEdit luc16=luc_file.luc16, tabIndex=22, noEntry;
+ButtonEdit luc03=luc_file.luc03, action=controlp, tabIndex=4, not null, required, image="zoom";
+Edit luc17t=luc_file.luc17t, tabIndex=13, noEntry, not null;
+Edit luc08=luc_file.luc08, tabIndex=23;
+Edit luc031=luc_file.luc031, tabIndex=5, noEntry;
+DateEdit luc07=luc_file.luc07, tabIndex=14, not null, required;
+ButtonEdit luc05=luc_file.luc05, action=controlp, tabIndex=6, image="zoom";
+CheckBox luc09=luc_file.luc09, tabIndex=15, default = "N", text="automatic generation", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit luc18=luc_file.luc18, action=controlp, tabIndex=7, not null, required, image="zoom";
+ComboBox luc10=luc_file.luc10, tabIndex=16, noEntry, queryEditable, items=(("0", "latent marchent prog"),("1", "contact prog"));
+Edit luc181=luc_file.luc181, tabIndex=8, noEntry;
+Edit luc11=luc_file.luc11, tabIndex=17, noEntry;
+CheckBox luc182=luc_file.luc182, tabIndex=9, text="With Tax", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox luc12=luc_file.luc12, tabIndex=18, default = "N", text="approved", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox luc13=luc_file.luc13, tabIndex=19, default = "0", noEntry, not null, queryEditable, items=(("0", "Open"),("1", "Approved"),("S", "Approving"),("W", "Cansel"),("R", "Approving Return"));
+Edit lucuser=luc_file.lucuser, tabIndex=24;
+DateEdit luccrat=luc_file.luccrat, tabIndex=26;
+Edit lucacti=luc_file.lucacti, tabIndex=28;
+Edit lucgrup=luc_file.lucgrup, tabIndex=25;
+Edit lucmodu=luc_file.lucmodu, tabIndex=27;
+DateEdit lucdate=luc_file.lucdate, tabIndex=29;
+Edit lucoriu=luc_file.lucoriu, tabIndex=49, noEntry;
+Edit lucorig=luc_file.lucorig, tabIndex=50, noEntry;
+Edit lud02=lud_file.lud02, tabIndex=30, title="lud02", not null, required;
+ButtonEdit lud03=lud_file.lud03, action=controlp, tabIndex=31, title="lud03", image="zoom";
+Edit lud04=lud_file.lud04, tabIndex=32, title="lud04";
+ButtonEdit lud05=lud_file.lud05, action=controlp, tabIndex=33, title="lud05", not null, required, image="zoom";
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=34, title="oaj02", noEntry;
+Edit oaj031=formonly.oaj031 type CHAR, tabIndex=35, title="oaj031", noEntry;
+Edit lnj02=formonly.lnj02 type CHAR, tabIndex=36, title="lnj02", noEntry;
+Edit oaj04=formonly.oaj04 type CHAR, tabIndex=37, title="oaj04", noEntry;
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=38, title="aag02_1", noEntry;
+Edit oaj041=formonly.oaj041 type CHAR, tabIndex=24, title="oaj041", noEntry;
+Edit aag02_2=formonly.aag02_2 type CHAR, tabIndex=39, title="aag02_2", noEntry;
+ComboBox oaj05=formonly.oaj05 type CHAR, tabIndex=40, title="oaj05", noEntry, items=(("01", "Deposit"),("02", "Income"),("10", "Payment"));
+ComboBox oaj06=formonly.oaj06 type CHAR, tabIndex=41, title="oaj06", noEntry, items=(("0", "Rent"),("1", "Property management fees"),("2", "Advertising"),("3", "Performance bond"),("4", "Quality margin"),("5", "Market management fees"),("6", "Equipment market management fees"),("7", "Air-conditioning costs"),("8", "Equipment costs"),("9", "Business Administration fees"),("A", "Other fees"));
+Edit lud06=lud_file.lud06, tabIndex=42, title="lud06", noEntry;
+Edit lud07=lud_file.lud07, tabIndex=43, title="lud07", not null, required;
+Edit lud07t=lud_file.lud07t, tabIndex=44, title="lud07t", not null, required;
+Edit lud08=lud_file.lud08, tabIndex=45, title="lud08";
+Edit idx=formonly.idx type CHAR, tabIndex=46, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=47, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=48, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lud(lud_file.lud02,lud_file.lud03,lud_file.lud04,lud_file.lud05,formonly.oaj02,formonly.oaj031,formonly.lnj02,formonly.oaj04,formonly.aag02_1,formonly.oaj041,formonly.aag02_2,formonly.oaj05,formonly.oaj06,lud_file.lud06,lud_file.lud07,lud_file.lud07t,lud_file.lud08)
+SCREEN RECORD Undefined(luc_file.luc01,luc_file.luc06,luc_file.luc14,formonly.imgmksg,luc_file.luc04,luc_file.luc06t,luc_file.luc15,luc_file.luc02,luc_file.luc17,luc_file.luc16,luc_file.luc03,luc_file.luc17t,luc_file.luc08,luc_file.luc031,luc_file.luc07,luc_file.luc05,luc_file.luc09,luc_file.luc18,luc_file.luc10,luc_file.luc181,luc_file.luc11,luc_file.luc182,luc_file.luc12,luc_file.luc13,luc_file.lucuser,luc_file.luccrat,luc_file.lucacti,luc_file.lucgrup,luc_file.lucmodu,luc_file.lucdate,luc_file.lucoriu,luc_file.lucorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

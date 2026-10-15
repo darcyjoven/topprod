@@ -1,0 +1,158 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq001")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox hb2
+Grid gr2517
+{
+
+
+ Group No.       [axg01       ]                Group Book No.     [axg00     ]
+ Upper Company   [axg02       ]                Upper Comp Book No [axg03     ]
+ Under Company   [axg04       ]                Under Comp Book No [axg041    ]
+
+}
+END -- gr2517
+Grid gr2518
+{
+
+
+ Year                [axg06     ]
+ Period              [axg07     ]
+ Currency            [axg12     ]
+
+}
+END -- gr2518
+Grid gr11
+{
+
+ Balance Sheet/Income Statament   [aag04      ]
+
+
+
+
+}
+END -- gr11
+END -- hb2
+END -- page01
+END -- folder01
+Folder pc4
+Page page1(action=page1, text=%"Period Blance Before Combined")
+VBox vb5
+Table s_axg
+{
+[axg05               |aag02                                   |axg13               |axg14               |amt1                |axg18     |axg15               |axg16               |amt2                |axg19     |axg08               |axg09               |amt3                |axg10      |axg11        ]
+[axg05               |aag02                                   |axg13               |axg14               |amt1                |axg18     |axg15               |axg16               |amt2                |axg19     |axg08               |axg09               |amt3                |axg10      |axg11        ]
+[axg05               |aag02                                   |axg13               |axg14               |amt1                |axg18     |axg15               |axg16               |amt2                |axg19     |axg08               |axg09               |amt3                |axg10      |axg11        ]
+[axg05               |aag02                                   |axg13               |axg14               |amt1                |axg18     |axg15               |axg16               |amt2                |axg19     |axg08               |axg09               |amt3                |axg10      |axg11        ]
+[axg05               |aag02                                   |axg13               |axg14               |amt1                |axg18     |axg15               |axg16               |amt2                |axg19     |axg08               |axg09               |amt3                |axg10      |axg11        ]
+[axg05               |aag02                                   |axg13               |axg14               |amt1                |axg18     |axg15               |axg16               |amt2                |axg19     |axg08               |axg09               |amt3                |axg10      |axg11        ]
+[axg05               |aag02                                   |axg13               |axg14               |amt1                |axg18     |axg15               |axg16               |amt2                |axg19     |axg08               |axg09               |amt3                |axg10      |axg11        ]
+}
+END -- s_axg
+Grid gr9
+{
+  --- Rows [cnt3 ] ---
+
+
+}
+END -- gr9
+END -- vb5
+END -- page1
+Page page2(action=page2, text=%"Account Transaction Code Contra Balance Before Combined")
+VBox vb6
+Table tb4
+{
+[axk05               |aag02_1                                 |axk06     |axk07               |axk18               |axk19               |amt4                |axk16     |axk20               |axk21               |amt5                |axk17     |axk10               |axk11               |amt6                |axk12               |axk13               ]
+[axk05               |aag02_1                                 |axk06     |axk07               |axk18               |axk19               |amt4                |axk16     |axk20               |axk21               |amt5                |axk17     |axk10               |axk11               |amt6                |axk12               |axk13               ]
+[axk05               |aag02_1                                 |axk06     |axk07               |axk18               |axk19               |amt4                |axk16     |axk20               |axk21               |amt5                |axk17     |axk10               |axk11               |amt6                |axk12               |axk13               ]
+[axk05               |aag02_1                                 |axk06     |axk07               |axk18               |axk19               |amt4                |axk16     |axk20               |axk21               |amt5                |axk17     |axk10               |axk11               |amt6                |axk12               |axk13               ]
+[axk05               |aag02_1                                 |axk06     |axk07               |axk18               |axk19               |amt4                |axk16     |axk20               |axk21               |amt5                |axk17     |axk10               |axk11               |amt6                |axk12               |axk13               ]
+}
+END -- tb4
+Grid gr9_1
+{
+  --- Rows [cnt4 ] ---
+
+
+}
+END -- gr9_1
+END -- vb6
+END -- page2
+END -- pc4
+Grid gr2519
+{
+ ---------- Rows [cnt   ] ----------                                 Debit Amount        [sumaxg08            ]                          Credit Amount       [sumaxg09            ]
+
+
+}
+END -- gr2519
+END -- VBox1
+END -- aglq001
+
+TABLES
+axg_file,
+axk_file
+ATTRIBUTES
+ButtonEdit axg01=axg_file.axg01, action=controlp, tabIndex=1, image="zoom";
+Edit axg00=axg_file.axg00, tabIndex=2, color = yellow;
+Edit axg02=axg_file.axg02, tabIndex=3;
+Edit axg03=axg_file.axg03, tabIndex=4;
+Edit axg04=axg_file.axg04, tabIndex=5;
+Edit axg041=axg_file.axg041, tabIndex=6;
+Edit axg06=axg_file.axg06, tabIndex=7;
+Edit axg07=axg_file.axg07, tabIndex=8;
+ButtonEdit axg12=axg_file.axg12, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Details";
+ComboBox aag04=formonly.aag04 type VARCHAR, tabIndex=19, not null, required, queryEditable, items=(("1", "Balance Sheet"),("2", "Income Statement"));
+ButtonEdit axg05=axg_file.axg05, action=controlp, tabIndex=10, title="Account No.", image="zoom", comment="<^P>Qry Account # <^Y>Create Account  ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=11, title="Account Name", noEntry;
+Edit axg13=axg_file.axg13, tabIndex=28, title="Subsidiary Debit Amt (Book Curr)";
+Edit axg14=axg_file.axg14, tabIndex=29, title="Subsidiary Credit Amt (Book Curr)";
+Edit amt1=formonly.amt1 type CHAR, tabIndex=40, title="Balance";
+Edit axg18=formonly.axg18 type CHAR, tabIndex=41, title="Function Currency Exch Rate";
+Edit axg15=axg_file.axg15, tabIndex=30, title="Subsidiary Debit Amt (Functional Curr)";
+Edit axg16=axg_file.axg16, tabIndex=31, title="Subsidiary Credit Amt (Functional Curr)";
+Edit amt2=formonly.amt2 type CHAR, tabIndex=55, title="Balance";
+Edit axg19=formonly.axg19 type CHAR, tabIndex=36, title="Combined Currency Exch Rate";
+Edit axg08=axg_file.axg08, tabIndex=12, title="Debit Transaction Amt", noEntry, not null, required;
+Edit axg09=axg_file.axg09, tabIndex=13, title="Credit Transaction Amt", noEntry, not null, required;
+Edit amt3=formonly.amt3 type CHAR, tabIndex=53, title="Balance";
+Edit axg10=axg_file.axg10, tabIndex=14, title="Debit Rows", noEntry;
+Edit axg11=axg_file.axg11, tabIndex=15, title="Credit Rows", noEntry;
+Edit cnt3=formonly.cnt3 type SMALLINT, tabIndex=20;
+Edit axk05=axk_file.axk05, tabIndex=22, title="Account Code";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=23, title="Account Name\n";
+Edit axk06=axk_file.axk06, tabIndex=25, title=%"Dimension Sequence";
+Edit axk07=axk_file.axk07, tabIndex=44, title=%"Dimension Value";
+Edit axk18=axk_file.axk18, tabIndex=43, title=%"Subsidiary Debit Amt (Trans Curr)";
+Edit axk19=axk_file.axk19, tabIndex=42, title=%"Subsidiary Credit Amt (Trans Curr)";
+Edit amt4=formonly.amt4 type CHAR, tabIndex=39, title=%"Balance";
+Edit axk16=axk_file.axk16, tabIndex=38, title=%"Function Currency Exch Rate";
+Edit axk20=axk_file.axk20, tabIndex=37, title=%"Subsidiary Debit Amt (Functional Curr)";
+Edit axk21=axk_file.axk21, tabIndex=35, title=%"Subsidiary Credit Amt (Functional Curr)";
+Edit amt5=formonly.amt5 type CHAR, tabIndex=34, title=%"Balance";
+Edit axk17=axk_file.axk17, tabIndex=33, title=%"Combined Currency Exch Rate";
+Edit axk10=axk_file.axk10, tabIndex=32, title=%"Total lender sum";
+Edit axk11=axk_file.axk11, tabIndex=27, title=%"Credit Amt.";
+Edit amt6=formonly.amt6 type CHAR, tabIndex=56, title=%"Balance";
+Edit axk12=axk_file.axk12, tabIndex=26, title=%"Total lender lots";
+Edit axk13=axk_file.axk13, tabIndex=24, title=%"Total Credit Counts";
+Edit cnt4=formonly.cnt4 type SMALLINT, tabIndex=21;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=16, noEntry;
+Edit sumaxg08=formonly.sumaxg08 type DECIMAL, tabIndex=17, noEntry;
+Edit sumaxg09=formonly.sumaxg09 type DECIMAL, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axk(axk_file.axk05,formonly.aag02_1,axk_file.axk06,axk_file.axk07,axk_file.axk18,axk_file.axk19,formonly.amt4,axk_file.axk16,axk_file.axk20,axk_file.axk21,formonly.amt5,axk_file.axk17,axk_file.axk10,axk_file.axk11,formonly.amt6,axk_file.axk12,axk_file.axk13)
+SCREEN RECORD s_axg(axg_file.axg05,formonly.aag02,axg_file.axg13,axg_file.axg14,formonly.amt1,formonly.axg18,axg_file.axg15,axg_file.axg16,formonly.amt2,formonly.axg19,axg_file.axg08,axg_file.axg09,formonly.amt3,axg_file.axg10,axg_file.axg11)
+SCREEN RECORD Undefined(axg_file.axg01,axg_file.axg00,axg_file.axg02,axg_file.axg03,axg_file.axg04,axg_file.axg041,axg_file.axg06,axg_file.axg07,axg_file.axg12,formonly.aag04,formonly.cnt3,formonly.cnt4,formonly.cnt,formonly.sumaxg08,formonly.sumaxg09)
+END -- INSTRUCTIONS
+

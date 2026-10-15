@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrp402.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrp402")
+VBox VBox1
+Group g01
+VBox VBox2
+Grid gr2936
+{
+ <G group01                                            >
+  Contra No.         [ooa01               ]
+  Applied Date       [ooa02               ]
+  Customer No.       [ooa03               ]
+
+ <                                                     >
+}
+END -- gr2936
+Grid gr2937
+{
+ Rows                [g_cnt     ]
+
+
+
+}
+END -- gr2937
+END -- VBox2
+END -- g01
+Grid gr2938
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr2938
+END -- VBox1
+END -- axrp402
+
+TABLES
+ooa_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ooa01=ooa_file.ooa01, action=CONTROLP, tabIndex=3, image="zoom";
+DateEdit ooa02=ooa_file.ooa02, tabIndex=4;
+ButtonEdit ooa03=ooa_file.ooa03, action=CONTROLP, tabIndex=5, image="zoom";
+Edit g_cnt=formonly.g_cnt type CHAR, tabIndex=1;
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=2, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ooa_file.ooa01,ooa_file.ooa02,ooa_file.ooa03,formonly.g_cnt,formonly.g_bgjob)
+END -- INSTRUCTIONS
+

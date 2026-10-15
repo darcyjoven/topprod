@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ask/42f/aski005.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aski005")
+VBox vb2
+Folder folder01
+Page page01(text="Main")
+Grid gr6425
+{
+ Style No.          [skp01             ]
+ Product Name       [ima02                            ]
+ Specification      [ima021            ]
+
+}
+END -- gr6425
+END -- page01
+END -- folder01
+Table s_skp
+{
+[skp02    |skp03                |ima02a               |ima021a              |skp04               |bol02     |skp05     ]
+[skp02    |skp03                |ima02a               |ima021a              |skp04               |bol02     |skp05     ]
+[skp02    |skp03                |ima02a               |ima021a              |skp04               |bol02     |skp05     ]
+[skp02    |skp03                |ima02a               |ima021a              |skp04               |bol02     |skp05     ]
+[skp02    |skp03                |ima02a               |ima021a              |skp04               |bol02     |skp05     ]
+[skp02    |skp03                |ima02a               |ima021a              |skp04               |bol02     |skp05     ]
+[skp02    |skp03                |ima02a               |ima021a              |skp04               |bol02     |skp05     ]
+[skp02    |skp03                |ima02a               |ima021a              |skp04               |bol02     |skp05     ]
+[skp02    |skp03                |ima02a               |ima021a              |skp04               |bol02     |skp05     ]
+[skp02    |skp03                |ima02a               |ima021a              |skp04               |bol02     |skp05     ]
+
+}
+END -- s_skp
+Grid gr6426
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr6426
+END -- vb2
+END -- aski005
+
+TABLES
+skp_file
+ATTRIBUTES
+ButtonEdit skp01=skp_file.skp01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^Y>Create department No.";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=8, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=10, noEntry;
+Edit skp02=skp_file.skp02, tabIndex=2, title="Pics No", not null;
+ButtonEdit skp03=skp_file.skp03, action=controlp, tabIndex=3, title="basic No", not null, image="zoom.png";
+Edit ima02a=formonly.ima02a type VARCHAR, tabIndex=4, title="Product No", noEntry;
+Edit ima021a=formonly.ima021a type VARCHAR, tabIndex=9, title="Specification", noEntry;
+ButtonEdit skp04=skp_file.skp04, action=controlp, tabIndex=5, title="Spot", not null, image="zoom.png";
+Edit bol02=formonly.bol02 type CHAR, tabIndex=11, title="Spot explanation", noEntry;
+Edit skp05=skp_file.skp05, tabIndex=12, title="Single pics", not null;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_skp(skp_file.skp02,skp_file.skp03,formonly.ima02a,formonly.ima021a,skp_file.skp04,formonly.bol02,skp_file.skp05)
+SCREEN RECORD Undefined(skp_file.skp01,formonly.ima02,formonly.ima021,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

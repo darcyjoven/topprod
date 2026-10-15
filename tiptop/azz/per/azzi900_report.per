@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/4fd/azzi900_report.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Table s_report
+{
+[seq     |col         |table       |type            |search        |default         |rpt     |qry             ]
+[seq     |col         |table       |type            |search        |default         |rpt     |qry             ]
+[seq     |col         |table       |type            |search        |default         |rpt     |qry             ]
+[seq     |col         |table       |type            |search        |default         |rpt     |qry             ]
+[seq     |col         |table       |type            |search        |default         |rpt     |qry             ]
+
+
+
+
+
+
+
+
+
+}
+END -- s_report
+Grid Grid1
+{
+
+[sql                                                                                                                                                                                                             ]
+[                                                                                                                                                                                                                ]
+[                                                                                                                                                                                                                ]
+[                                                                                                                                                                                                                ]
+[                                                                                                                                                                                                                ]
+[                                                                                                                                                                                                                ]
+[                                                                                                                                                                                                                ]
+[                                                                                                                                                                                                                ]
+[                                                                                                                                                                                                                ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit seq=formonly.seq type INTEGER, tabIndex=1, title=%"seq", not null;
+Edit col=formonly.col, tabIndex=2, title=%"col", not null, required;
+Edit table=formonly.table, tabIndex=8, title=%"table";
+Edit type=formonly.type type VARCHAR, tabIndex=3, title=%"type", not null, required;
+ComboBox search=formonly.search, tabIndex=4, title=%"search", items=(("construct", "construct"),("input", "input"));
+Edit default=formonly.default type VARCHAR, tabIndex=5, title=%"default";
+CheckBox rpt=formonly.rpt, tabIndex=6, title=%"rpt", text=%"";
+ButtonEdit qry=formonly.qry, tabIndex=7, title=%"qry";
+TextEdit sql=formonly.sql, tabIndex=9, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_report(formonly.seq,formonly.col,formonly.table,formonly.type,formonly.search,formonly.default,formonly.rpt,formonly.qry)
+SCREEN RECORD Undefined(formonly.sql)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsq450.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsq450")
+VBox vb2
+Folder folder01
+Page page01(text="Basic Data")
+Grid gr5423
+{
+ <G group01                                                                                                         >
+   Model              [vlc00             ]
+   APS Version        [vlc01             ]            Creater            [vlc11             ][gen02        ]
+   Save Version       [vlc02             ]            Create Date        [vlc03             ]
+ <                                                                                                                  >
+}
+END -- gr5423
+END -- page01
+END -- folder01
+Table s_vlc
+{
+[vlc05   |gat03       |vlc10   |gaz03        |vlc09   |vlc07                               |vlc08   |vlc06                                                                     ]
+[vlc05   |gat03       |vlc10   |gaz03        |vlc09   |vlc07                               |vlc08   |vlc06                                                                     ]
+[vlc05   |gat03       |vlc10   |gaz03        |vlc09   |vlc07                               |vlc08   |vlc06                                                                     ]
+[vlc05   |gat03       |vlc10   |gaz03        |vlc09   |vlc07                               |vlc08   |vlc06                                                                     ]
+[vlc05   |gat03       |vlc10   |gaz03        |vlc09   |vlc07                               |vlc08   |vlc06                                                                     ]
+[vlc05   |gat03       |vlc10   |gaz03        |vlc09   |vlc07                               |vlc08   |vlc06                                                                     ]
+[vlc05   |gat03       |vlc10   |gaz03        |vlc09   |vlc07                               |vlc08   |vlc06                                                                     ]
+[vlc05   |gat03       |vlc10   |gaz03        |vlc09   |vlc07                               |vlc08   |vlc06                                                                     ]
+[vlc05   |gat03       |vlc10   |gaz03        |vlc09   |vlc07                               |vlc08   |vlc06                                                                     ]
+[vlc05   |gat03       |vlc10   |gaz03        |vlc09   |vlc07                               |vlc08   |vlc06                                                                     ]
+
+}
+END -- s_vlc
+Grid gr881
+{
+ ----------  Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr881
+END -- vb2
+END -- apsq450
+
+TABLES
+vlc_file,
+gen_file,
+gaz_file,
+gat_file
+ATTRIBUTES
+Group group01:group01;
+RadioGroup vlc00=vlc_file.vlc00, tabIndex=1, orientation=horizontal, items=(("1", "Prechk"),("2", "Formal"));
+ButtonEdit vlc01=vlc_file.vlc01, action=controlp, tabIndex=4, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+ButtonEdit vlc11=vlc_file.vlc11, action=controlp, tabIndex=6, image="zoom", comment="KEY Field, No Blank/Repeated!, <^P>Qry Employee";
+Edit gen02=gen_file.gen02, tabIndex=16, noEntry;
+Edit vlc02=vlc_file.vlc02, tabIndex=5;
+DateEdit vlc03=vlc_file.vlc03, tabIndex=7, noEntry;
+Edit vlc05=vlc_file.vlc05, tabIndex=8, title="vlc05";
+Edit gat03=gat_file.gat03, tabIndex=9, title="gat03";
+Edit vlc10=vlc_file.vlc10, tabIndex=14, title="vlc10";
+Edit gaz03=gaz_file.gaz03, tabIndex=13, title="gaz03";
+ComboBox vlc09=vlc_file.vlc09, tabIndex=12, title="vlc09", items=(("0", "schg"),("1", "cchg"),("2", "echg"),("3", "chkerr"));
+Edit vlc07=vlc_file.vlc07, tabIndex=11, title="vlc07";
+Edit vlc08=vlc_file.vlc08, tabIndex=10, title="vlc08";
+Edit vlc06=vlc_file.vlc06, tabIndex=15, title="vlc06";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=2, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_vlc(vlc_file.vlc05,gat_file.gat03,vlc_file.vlc10,gaz_file.gaz03,vlc_file.vlc09,vlc_file.vlc07,vlc_file.vlc08,vlc_file.vlc06)
+SCREEN RECORD Undefined(vlc_file.vlc00,vlc_file.vlc01,vlc_file.vlc11,gen_file.gen02,vlc_file.vlc02,vlc_file.vlc03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

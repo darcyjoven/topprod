@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsi311.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apsi311")
+VBox vb3
+Folder pc4
+Page page01(text="Page01")
+Grid gr7
+{
+
+  <G group01                                              >
+     MO No.                   [vnd01           ]
+     Routing No.              [vnd02           ]
+     Subcontract S/N          [vnd03           ]
+     Operation No.            [vnd04           ]
+     Resource No.             [vnd05           ]
+     Process No.              [vnd012          ]
+     Lock Code Setting        [vnd06           ]
+     Start(Date)              [vnd07           ]
+     End(Date)                [vnd08           ]
+     Schedule                 [vnd09           ]
+     Task of Parallel Machine [vnd10           ]
+     Outsource Time           [vnd11           ]
+
+  <                                                       >
+
+}
+END -- gr7
+END -- page01
+END -- pc4
+Grid gr8
+{
+ ----------Rows [cnt   ] ----------
+
+
+
+}
+END -- gr8
+END -- vb3
+END -- apsi311
+
+TABLES
+vnd_file
+ATTRIBUTES
+Group group01:group01;
+Edit vnd01=vnd_file.vnd01, tabIndex=2;
+Edit vnd02=vnd_file.vnd02, tabIndex=3;
+Edit vnd03=vnd_file.vnd03, tabIndex=4;
+Edit vnd04=vnd_file.vnd04, tabIndex=5;
+Edit vnd05=vnd_file.vnd05, tabIndex=6;
+Edit vnd012=vnd_file.vnd012, tabIndex=13;
+ComboBox vnd06=vnd_file.vnd06, tabIndex=7, not null, items=(("0", "NewText"),("1", "NewText"),("2", "NewText"),("3", "NewText"));
+Edit vnd07=vnd_file.vnd07, tabIndex=11, format="yyyy-mm-dd hh24:mi", picture="XXXX-XX-XX XX:XX";
+Edit vnd08=vnd_file.vnd08, tabIndex=12, format="yyyy-mm-dd hh24:mi", picture="XXXX-XX-XX XX:XX";
+ComboBox vnd09=vnd_file.vnd09, tabIndex=8, noEntry, not null, items=(("0", "Unscheduled, without limitation"),("1", "Scheduled, with limitation"));
+ComboBox vnd10=vnd_file.vnd10, tabIndex=9, noEntry, not null, items=(("0", "FALSE"),("1", "TURE"));
+Edit vnd11=vnd_file.vnd11, tabIndex=10, not null, required;
+Edit cnt=formonly.cnt type CHAR, tabIndex=1, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(vnd_file.vnd01,vnd_file.vnd02,vnd_file.vnd03,vnd_file.vnd04,vnd_file.vnd05,vnd_file.vnd06,vnd_file.vnd07,vnd_file.vnd08,vnd_file.vnd09,vnd_file.vnd10,vnd_file.vnd11,formonly.cnt,vnd_file.vnd012)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli111.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli111")
+VBox VBox1
+Folder pc449
+Page page01(text="Main")
+Table s_aae
+{
+[aae01               |aae02               |aae03               |aaeacti   ]
+[aae01               |aae02               |aae03               |aaeacti   ]
+[aae01               |aae02               |aae03               |aaeacti   ]
+[aae01               |aae02               |aae03               |aaeacti   ]
+[aae01               |aae02               |aae03               |aaeacti   ]
+[aae01               |aae02               |aae03               |aaeacti   ]
+[aae01               |aae02               |aae03               |aaeacti   ]
+[aae01               |aae02               |aae03               |aaeacti   ]
+[aae01               |aae02               |aae03               |aaeacti   ]
+[aae01               |aae02               |aae03               |aaeacti   ]
+
+}
+END -- s_aae
+END -- page01
+END -- pc449
+Grid gr2386
+{
+  ---------- Rows [cn2   ] ----------
+
+}
+END -- gr2386
+END -- VBox1
+END -- agli111
+
+TABLES
+aae_file
+ATTRIBUTES
+Edit aae01=formonly.aae01 type CHAR, tabIndex=1, title="Account Class. No.", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit aae02=aae_file.aae02, tabIndex=2, title="Account Class. Name";
+Edit aae03=aae_file.aae03, tabIndex=3, title="Memo";
+CheckBox aaeacti=aae_file.aaeacti, tabIndex=4, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_aae(formonly.aae01,aae_file.aae02,aae_file.aae03,aae_file.aaeacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

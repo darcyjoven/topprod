@@ -1,0 +1,153 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt720.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt720")
+VBox vb4
+Folder pc1
+Page Main(text=%"Main")
+VBox vb3
+HBox hb3
+Group cxrule(text="Sale Rule")
+Grid gr6
+{
+ Compute Met.  [lqg12           ]
+ RTicket Sort  [lqg13           ]
+ TicSort Name  [lpx02           ]
+ Days          [lqg14           ]
+ Money         [lqg15           ]
+ Denomination  [lrz02           ]
+ Direction     [lqg16           ]
+               [lqg17            ]
+               [lqg18           ]
+ Line.Sales    [lqg19           ]
+               [lqg20           ]
+}
+END -- gr6
+END -- cxrule
+Group fentanrule(text="Share Rule")
+Grid gr4
+{
+      [lqg21          ]
+ Mode [lqg22          ]
+ Sort [lqg23          ]
+
+
+
+
+
+
+
+
+}
+END -- gr4
+END -- fentanrule
+END -- hb3
+HBox hb2
+Group gb3
+Grid gr6_
+{
+ S.P.Billno  [lqg01               ]
+ style       [lqg02               ]
+ Topics No   [lqg03               ]
+ Topi.Name   [lqf02               ]
+ T.Desc      [lqf03               ]
+ Sponsor     [lqg04               ]
+ Spo.Name    [gen02               ]
+
+}
+END -- gr6_
+END -- gb3
+Group gb4
+Grid gr7
+{
+           [lqg05         ]
+ Approval  [lqg06          ]
+ Appr.No.  [lqg07          ]
+ Approver  [lqg08          ][imgmksg  ]
+ Appr.on   [lqg09          ][         ]
+ Ter.      [lqg10          ]
+ Ter.Date  [lqg11          ]
+
+}
+END -- gr7
+END -- gb4
+END -- hb2
+END -- vb3
+END -- Main
+Page info(text=%"Info")
+Grid gr2
+{
+
+ Data Owner  [lqguser      ] create on    [lqgcrat       ] Valid code   [lqgacti      ]
+ Department  [lqggrup      ] Last Mod.by  [lqgmodu       ] Last Mod.on  [lqgdate      ]
+ Record Orig.[lqgoriu      ]
+ Dept Orig.  [lqgorig      ]
+
+
+
+}
+END -- gr2
+END -- info
+END -- pc1
+Grid gr3
+{
+
+ -----Rows [idx   ]/ [cn2   ] --------
+
+}
+END -- gr3
+END -- vb4
+END -- almt720
+
+TABLES
+lqg_file
+ATTRIBUTES
+ComboBox lqg12=lqg_file.lqg12, tabIndex=19, not null, required, items=(("0", "w"),("1", "t"),("2", "a"),("3", "b"));
+ButtonEdit lqg13=lqg_file.lqg13, action=controlp, tabIndex=20, not null, required, image="zoom.png";
+Edit lpx02=formonly.lpx02 type CHAR, tabIndex=21, noEntry;
+Edit lqg14=lqg_file.lqg14, tabIndex=22;
+ButtonEdit lqg15=lqg_file.lqg15, action=controlp, tabIndex=23, not null, required, image="zoom.png";
+Edit lrz02=formonly.lrz02 type CHAR, tabIndex=24, noEntry;
+ComboBox lqg16=lqg_file.lqg16, tabIndex=25, not null, required, items=(("0", "z"),("1", "af"));
+CheckBox lqg17=lqg_file.lqg17, tabIndex=26, text="Not for sales?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lqg18=lqg_file.lqg18, tabIndex=27, text="S.Sales?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit lqg19=lqg_file.lqg19, tabIndex=28;
+CheckBox lqg20=lqg_file.lqg20, tabIndex=29, default = "N", text="integral ?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lqg21=lqg_file.lqg21, tabIndex=15, default = "N", text="Share?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox lqg22=lqg_file.lqg22, tabIndex=16, items=(("0", "o"),("1", "z"),("2", "t"),("3", "d"));
+ComboBox lqg23=lqg_file.lqg23, tabIndex=17, items=(("0", "z"),("1", "o"),("2", "t"),("3", "d"));
+ButtonEdit lqg01=lqg_file.lqg01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ComboBox lqg02=lqg_file.lqg02, tabIndex=2, noEntry, not null, required, items=(("0", "z"),("1", "o"),("2", "t"),("3", "th"));
+ButtonEdit lqg03=lqg_file.lqg03, action=controlp, tabIndex=3, not null, required, image="zoom.png";
+Edit lqf02=formonly.lqf02 type CHAR, tabIndex=4, noEntry;
+Edit lqf03=formonly.lqf03 type CHAR, tabIndex=5, noEntry;
+ButtonEdit lqg04=lqg_file.lqg04, action=controlp, tabIndex=6, image="zoom.png";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=7, noEntry;
+CheckBox lqg05=lqg_file.lqg05, tabIndex=8, text="Approval?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox lqg06=lqg_file.lqg06, tabIndex=9, noEntry, not null, required, items=(("0", "a"),("1", "b"),("S", "c"),("W", "d"),("R", "e"));
+ComboBox lqg07=lqg_file.lqg07, tabIndex=10, default = "N", noEntry, not null, required, items=(("N", "n"),("Y", "y"),("X", "x"),("S", "s"));
+Edit lqg08=lqg_file.lqg08, tabIndex=11, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+DateEdit lqg09=lqg_file.lqg09, tabIndex=12, noEntry;
+Edit lqg10=lqg_file.lqg10, tabIndex=13, noEntry;
+DateEdit lqg11=lqg_file.lqg11, tabIndex=14, noEntry;
+Edit lqguser=lqg_file.lqguser, tabIndex=30, noEntry, not null, required;
+DateEdit lqgcrat=lqg_file.lqgcrat, tabIndex=32, noEntry, not null, required;
+Edit lqgacti=lqg_file.lqgacti, tabIndex=34, default = "Y", noEntry, not null, required;
+Edit lqggrup=lqg_file.lqggrup, tabIndex=31, noEntry, not null, required;
+Edit lqgmodu=lqg_file.lqgmodu, tabIndex=33, noEntry;
+DateEdit lqgdate=lqg_file.lqgdate, tabIndex=35, noEntry;
+Edit lqgoriu=lqg_file.lqgoriu, tabIndex=38, noEntry;
+Edit lqgorig=lqg_file.lqgorig, tabIndex=39, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=36, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=37, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lqg_file.lqg12,lqg_file.lqg13,formonly.lpx02,lqg_file.lqg14,lqg_file.lqg15,formonly.lrz02,lqg_file.lqg16,lqg_file.lqg17,lqg_file.lqg18,lqg_file.lqg19,lqg_file.lqg20,lqg_file.lqg21,lqg_file.lqg22,lqg_file.lqg23,lqg_file.lqg01,lqg_file.lqg02,lqg_file.lqg03,formonly.lqf02,formonly.lqf03,lqg_file.lqg04,formonly.gen02,lqg_file.lqg05,lqg_file.lqg06,lqg_file.lqg07,lqg_file.lqg08,formonly.imgmksg,lqg_file.lqg09,lqg_file.lqg10,lqg_file.lqg11,lqg_file.lqguser,lqg_file.lqgcrat,lqg_file.lqgacti,lqg_file.lqggrup,lqg_file.lqgmodu,lqg_file.lqgdate,lqg_file.lqgoriu,lqg_file.lqgorig,formonly.idx,formonly.cn2)
+END -- INSTRUCTIONS
+

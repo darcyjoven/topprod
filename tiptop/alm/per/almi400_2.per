@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi400_2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almi400_2")
+VBox vb3
+Folder pc1
+Page Main(text=%"Other Fare Standard")
+Table s_lnw
+{
+[lnw03       |oaj02               |lnw04                   |aag02_1                |lnw041              |aag02_2             |lnw06               |lnw10              |lnw07           |lnw08          |lnw09        ]
+[lnw03       |oaj02               |lnw04                   |aag02_1                |lnw041              |aag02_2             |lnw06               |lnw10              |lnw07           |lnw08          |lnw09        ]
+[lnw03       |oaj02               |lnw04                   |aag02_1                |lnw041              |aag02_2             |lnw06               |lnw10              |lnw07           |lnw08          |lnw09        ]
+[lnw03       |oaj02               |lnw04                   |aag02_1                |lnw041              |aag02_2             |lnw06               |lnw10              |lnw07           |lnw08          |lnw09        ]
+[lnw03       |oaj02               |lnw04                   |aag02_1                |lnw041              |aag02_2             |lnw06               |lnw10              |lnw07           |lnw08          |lnw09        ]
+
+}
+END -- s_lnw
+END -- Main
+END -- pc1
+Grid gr1
+{
+  ---- Rows [cnt   ] ------
+
+
+}
+END -- gr1
+END -- vb3
+END -- almi400_2
+
+TABLES
+lnw_file
+ATTRIBUTES
+ButtonEdit lnw03=lnw_file.lnw03, action=controlp, tabIndex=1, title="Fare No.", not null, required, image="zoom.png";
+Edit oaj02=formonly.oaj02 type VARCHAR, tabIndex=2, title="Fare Name", noEntry;
+Edit lnw04=lnw_file.lnw04, tabIndex=3, title="Account No.", noEntry;
+Edit aag02_1=formonly.aag02_1 type VARCHAR, tabIndex=4, title="Account Name", noEntry;
+Edit lnw041=lnw_file.lnw041, tabIndex=5, title="Account No. 2", noEntry;
+Edit aag02_2=formonly.aag02_2 type INTEGER, tabIndex=6, title="Account 2 Name", noEntry;
+Edit lnw06=lnw_file.lnw06, tabIndex=7, title="Sum", not null, required;
+ComboBox lnw10=lnw_file.lnw10, tabIndex=12, title=%"Amount Belongs To", noEntry, items=(("0", "Accrual System"),("1", "Receipt & Payment System "));
+ComboBox lnw07=lnw_file.lnw07, tabIndex=10, title="Charge Type", items=(("0", "Once"),("1", "Monthly"));
+DateEdit lnw08=lnw_file.lnw08, tabIndex=8, title="Effect Date";
+DateEdit lnw09=lnw_file.lnw09, tabIndex=11, title="Expire Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lnw(lnw_file.lnw03,formonly.oaj02,lnw_file.lnw04,formonly.aag02_1,lnw_file.lnw041,formonly.aag02_2,lnw_file.lnw06,lnw_file.lnw10,lnw_file.lnw07,lnw_file.lnw08,lnw_file.lnw09)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

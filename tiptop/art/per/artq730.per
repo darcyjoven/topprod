@@ -1,0 +1,96 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq730.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artq730")
+VBox vb5
+Group gb1(text="Counting Note")
+Table s_ruw
+{
+[ruwplant|ruwplan1|ruw02   |ruw01   |ruw03   |ruw04   |ruw05   |imd02   |jce02   |ruw06   |ruw06_de|ruwconf |ruwcond |ruwcont |ruwconu |ruwconu_|ruwpos  |ruw07   |ruw08   |ruw09     ]
+[ruwplant|ruwplan1|ruw02   |ruw01   |ruw03   |ruw04   |ruw05   |imd02   |jce02   |ruw06   |ruw06_de|ruwconf |ruwcond |ruwcont |ruwconu |ruwconu_|ruwpos  |ruw07   |ruw08   |ruw09     ]
+[ruwplant|ruwplan1|ruw02   |ruw01   |ruw03   |ruw04   |ruw05   |imd02   |jce02   |ruw06   |ruw06_de|ruwconf |ruwcond |ruwcont |ruwconu |ruwconu_|ruwpos  |ruw07   |ruw08   |ruw09     ]
+[ruwplant|ruwplan1|ruw02   |ruw01   |ruw03   |ruw04   |ruw05   |imd02   |jce02   |ruw06   |ruw06_de|ruwconf |ruwcond |ruwcont |ruwconu |ruwconu_|ruwpos  |ruw07   |ruw08   |ruw09     ]
+[ruwplant|ruwplan1|ruw02   |ruw01   |ruw03   |ruw04   |ruw05   |imd02   |jce02   |ruw06   |ruw06_de|ruwconf |ruwcond |ruwcont |ruwconu |ruwconu_|ruwpos  |ruw07   |ruw08   |ruw09     ]
+[ruwplant|ruwplan1|ruw02   |ruw01   |ruw03   |ruw04   |ruw05   |imd02   |jce02   |ruw06   |ruw06_de|ruwconf |ruwcond |ruwcont |ruwconu |ruwconu_|ruwpos  |ruw07   |ruw08   |ruw09     ]
+
+}
+END -- s_ruw
+END -- gb1
+Group gb2(text="Counting Details")
+Table s_rux
+{
+[rux02   |rux03   |rux03_de|rux04   |rux04_de|rux05   |rux06   |rux07   |rux08   |rux09   ]
+[rux02   |rux03   |rux03_de|rux04   |rux04_de|rux05   |rux06   |rux07   |rux08   |rux09   ]
+[rux02   |rux03   |rux03_de|rux04   |rux04_de|rux05   |rux06   |rux07   |rux08   |rux09   ]
+[rux02   |rux03   |rux03_de|rux04   |rux04_de|rux05   |rux06   |rux07   |rux08   |rux09   ]
+[rux02   |rux03   |rux03_de|rux04   |rux04_de|rux05   |rux06   |rux07   |rux08   |rux09   ]
+
+}
+END -- s_rux
+END -- gb2
+Grid gr7
+{
+[view1   ][return  ]
+
+}
+END -- gr7
+Grid gr8
+{
+  ----------Rows[idx    ]/[cnt    ]--------------[cn2    ]
+
+}
+END -- gr8
+END -- vb5
+END -- artq730
+
+TABLES
+ruw_file,
+rux_file
+ATTRIBUTES
+ButtonEdit ruwplant=ruw_file.ruwplant, action=controlp, tabIndex=1, title="Org#", image="zoom";
+Edit ruwplan1=formonly.ruwplant_desc type VARCHAR, tabIndex=2, title="Org#desc", noEntry;
+Edit ruw02=ruw_file.ruw02, tabIndex=3, title="Counting Plan";
+Edit ruw01=ruw_file.ruw01, tabIndex=4, title="Note No.";
+Edit ruw03=ruw_file.ruw03, tabIndex=5, title="Counting/Counting Diff No.";
+DateEdit ruw04=ruw_file.ruw04, tabIndex=6, title="Counting Date";
+ButtonEdit ruw05=ruw_file.ruw05, action=controlp, tabIndex=7, title="Counting WH", image="zoom";
+Edit imd02=formonly.imd02 type VARCHAR, tabIndex=8, title="WH Name", noEntry;
+CheckBox jce02=formonly.jce02 type VARCHAR, tabIndex=9, default = "N", title="WH No.", valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit ruw06=ruw_file.ruw06, action=controlp, tabIndex=10, title="Counting Employee", image="zoom";
+Edit ruw06_de=formonly.ruw06_desc type VARCHAR, tabIndex=11, title="Name", noEntry;
+ComboBox ruwconf=ruw_file.ruwconf, tabIndex=12, title="Confirmation", items=(("Y", "confirm"),("N", "UN_confirm"),("X", "Void"));
+DateEdit ruwcond=ruw_file.ruwcond, tabIndex=13, title="Confirmed Date";
+TimeEdit ruwcont=ruw_file.ruwcont, tabIndex=14, title="Confirmed Time";
+ButtonEdit ruwconu=ruw_file.ruwconu, action=controlp, tabIndex=15, title="Confirmed By", image="zoom";
+Edit ruwconu_=formonly.ruwconu_desc type VARCHAR, tabIndex=16, title="Name", noEntry;
+CheckBox ruwpos=ruw_file.ruwpos, tabIndex=17, title="Pass POS?", valueChecked = "Y", valueUnchecked = "N";
+Edit ruw07=ruw_file.ruw07, tabIndex=18, title="Memo";
+CheckBox ruw08=formonly.ruw08 type CHAR, tabIndex=32, title="Inventory Adjust?", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit ruw09=formonly.ruw09 type CHAR, tabIndex=33, title="Adjusted Date";
+Edit rux02=rux_file.rux02, tabIndex=19, title="Line NO.";
+ButtonEdit rux03=rux_file.rux03, action=controlp, tabIndex=20, title="Goods No.", image="zoom";
+Edit rux03_de=formonly.rux03_desc type VARCHAR, tabIndex=21, title="Goods Name\n", noEntry;
+ButtonEdit rux04=rux_file.rux04, action=controlp, tabIndex=22, title="Inventory Unit", image="zoom";
+Edit rux04_de=formonly.rux04_desc type VARCHAR, tabIndex=23, title="Unit Name", noEntry;
+Edit rux05=rux_file.rux05, tabIndex=24, title="Book Balance";
+Edit rux06=rux_file.rux06, tabIndex=25, title="Actual Count Qty";
+Edit rux07=rux_file.rux07, tabIndex=26, title="Change Number";
+Edit rux08=rux_file.rux08, tabIndex=27, title="Diff.Number";
+Edit rux09=rux_file.rux09, tabIndex=28, title="Memo";
+Button view1:view1, text="view1";
+Button return:return, text="return";
+Edit idx=formonly.idx type INTEGER, tabIndex=29;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=30;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=31;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ruw(ruw_file.ruwplant,formonly.ruwplant_desc,ruw_file.ruw02,ruw_file.ruw01,ruw_file.ruw03,ruw_file.ruw04,ruw_file.ruw05,formonly.imd02,formonly.jce02,ruw_file.ruw06,formonly.ruw06_desc,ruw_file.ruwconf,ruw_file.ruwcond,ruw_file.ruwcont,ruw_file.ruwconu,formonly.ruwconu_desc,ruw_file.ruwpos,ruw_file.ruw07,formonly.ruw08,formonly.ruw09)
+SCREEN RECORD s_rux(rux_file.rux02,rux_file.rux03,formonly.rux03_desc,rux_file.rux04,formonly.rux04_desc,rux_file.rux05,rux_file.rux06,rux_file.rux07,rux_file.rux08,rux_file.rux09)
+SCREEN RECORD Undefined(formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

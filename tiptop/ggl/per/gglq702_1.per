@@ -1,0 +1,92 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq702_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglq702_1")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr5447
+{
+ Book.No[bookno      ][label2 |bdate       |label3 |edate       |label1   |a           |label4    |f          ][m            |b           ][e             ][g               |i               ]
+
+
+
+
+}
+END -- gr5447
+END -- page01
+END -- folder01
+Table s_abb
+{
+[aag01       |aag02       |ted02       |ted02_d     |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01       |aag02       |ted02       |ted02_d     |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01       |aag02       |ted02       |ted02_d     |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01       |aag02       |ted02       |ted02_d     |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01       |aag02       |ted02       |ted02_d     |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01       |aag02       |ted02       |ted02_d     |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01       |aag02       |ted02       |ted02_d     |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01       |aag02       |ted02       |ted02_d     |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01       |aag02       |ted02       |ted02_d     |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+[aag01       |aag02       |ted02       |ted02_d     |aba02          |aba01           |abb04                       |abb24     |df                         |abb25_d        |d                          |cf                           |abb25_c        |c                           |dc      |balf             |abb25_bal     |bal             ]
+
+}
+END -- s_abb
+Grid gr5449
+{
+ ----------- Rows [cnt   ] -----------
+
+}
+END -- gr5449
+END -- VBox1
+END -- gglq702_1
+
+TABLES
+aag_file,
+abb_file,
+aba_file,
+ted_file
+ATTRIBUTES
+ButtonEdit bookno=formonly.bookno type CHAR, action=controlp, tabIndex=1, image="zoom.png";
+Label label2:Label2, text=%"Initial Date";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=2, comment="Enter Initial Date !!";
+Label label3:Label3, text=%"Ending Date";
+DateEdit edate=formonly.edate type DATE, tabIndex=3;
+Label label1:Label1, text=%"Dimension Sequence";
+ComboBox a=formonly.a type CHAR, tabIndex=4, items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"),("10", "10"),("99", "99"));
+Label label4:Label4, text=%"Document status";
+ComboBox f=formonly.f type CHAR, tabIndex=5, items=(("1", "ALL"),("2", "Posted"));
+CheckBox m=formonly.m type CHAR, tabIndex=6, text="Unaudited", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type CHAR, tabIndex=7, text="Print Foreign Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit e=formonly.e type CHAR, action=controlp, tabIndex=8, image="zoom";
+CheckBox g=formonly.g type CHAR, tabIndex=9, text="Page-Break by Currency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox i=formonly.i type CHAR, tabIndex=29, text="include the transfer certificate", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit aag01=aag_file.aag01, action=controlp, tabIndex=10, title=%"aag01", image="zoom";
+Edit aag02=aag_file.aag02, tabIndex=11, title=%"aag02";
+ButtonEdit ted02=ted_file.ted02, action=controlp, tabIndex=12, title=%"ted02", image="zoom";
+Edit ted02_d=formonly.ted02_d type VARCHAR, tabIndex=13, title=%"ted02_d";
+DateEdit aba02=aba_file.aba02, tabIndex=14, title="Voucher Date";
+Edit aba01=aba_file.aba01, tabIndex=15, title="Voucher No.";
+Edit abb04=abb_file.abb04, tabIndex=16, title="Memo";
+Edit abb24=abb_file.abb24, tabIndex=17, title="Currency";
+Edit df=formonly.df type CHAR, tabIndex=18, title="Debit Amount (Trans. Curr.)";
+Edit abb25_d=formonly.abb25_d type DECIMAL, tabIndex=19, title="Exchange Rate";
+Edit d=formonly.d type CHAR, tabIndex=20, title="Debit Amount (Local. Curr.)";
+Edit cf=formonly.cf type CHAR, tabIndex=21, title="Credit Amount (Trans. Curr.)";
+Edit abb25_c=formonly.abb25_c type CHAR, tabIndex=22, title="Exchange Rate";
+Edit c=formonly.c type CHAR, tabIndex=23, title="Credit Amount (Local. Curr.)";
+Edit dc=formonly.dc type CHAR, tabIndex=24, title="D/C";
+Edit balf=formonly.balf type CHAR, tabIndex=25, title="Balance T.C Amt";
+Edit abb25_bal=formonly.abb25_bal type CHAR, tabIndex=26, title="Exchange Rate";
+Edit bal=formonly.bal type CHAR, tabIndex=27, title="Balance L.C Amt";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abb(aag_file.aag01,aag_file.aag02,ted_file.ted02,formonly.ted02_d,aba_file.aba02,aba_file.aba01,abb_file.abb04,abb_file.abb24,formonly.df,formonly.abb25_d,formonly.d,formonly.cf,formonly.abb25_c,formonly.c,formonly.dc,formonly.balf,formonly.abb25_bal,formonly.bal)
+SCREEN RECORD Undefined(formonly.cnt,formonly.bookno,formonly.bdate,formonly.edate,formonly.b,formonly.e,formonly.g,formonly.a,formonly.f,formonly.m,formonly.i)
+END -- INSTRUCTIONS
+

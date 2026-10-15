@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr506.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"apmr506")
+VBox vb2
+Grid gr5108
+{
+ <G group01                                                     >
+  P/O No.        [pmm01               ]
+  Purchase Date  [pmm04               ]
+  Buyer          [pmm12               ]
+  Pur.Department [pmm13               ]
+  Item No.       [pmn04               ]
+  Status Code    [pmn16               ]
+ <                                                              >
+
+}
+END -- gr5108
+Group group02(text="INPUT")
+Grid gr5109
+{
+ [s1                 ] [s2                  ]  [s3                  ]
+ [t1                 ] [t2                  ]  [t3                  ]
+ [a                                                               ]
+
+}
+END -- gr5109
+END -- group02
+Grid gr5110
+{
+ [more                                                            ]
+
+}
+END -- gr5110
+END -- vb2
+END -- apmr506
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit pmm01=formonly.pmm01 type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit pmm04=formonly.pmm04 type DATE, tabIndex=2;
+ButtonEdit pmm12=formonly.pmm12 type VARCHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit pmm13=formonly.pmm13 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit pmn04=formonly.pmn04 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+ComboBox pmn16=formonly.pmn16 type CHAR, tabIndex=6, items=(("X", "Planning Order Enter"),("0", "Open"),("1", "Approved"),("2", "Issueed P/O"),("6", "Close-Normal"),("7", "Close-OverReceived"),("8", "Close-Shortage"),("9", "Cancel"));
+ComboBox s1=formonly.s1 type CHAR, tabIndex=7, items=(("1", "P/O No."),("2", "Pur. Date"),("3", "Buyer"),("4", "Purchase Dept."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=8, items=(("1", "P/O No."),("2", "Pur. Date"),("3", "Buyer"),("4", "Purchase Dept."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=9, items=(("1", "P/O No."),("2", "Pur. Date"),("3", "Buyer"),("4", "Purchase Dept."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=12, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox a=formonly.a type VARCHAR, tabIndex=14, text="Print undelivered qty=0?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=13, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pmm01,formonly.pmm04,formonly.pmm12,formonly.pmm13,formonly.pmn04,formonly.pmn16,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

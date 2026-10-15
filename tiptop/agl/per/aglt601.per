@@ -1,0 +1,123 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt601.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="aglt601")
+VBox vb8
+Folder pc1
+Page Page1(text=%"Basic Data")
+Grid gr5
+{
+
+ Shift Date  [pnt01       ]       [pntconf          ]
+ Line No.    [pnt02  ]
+ <G gb8                                                              > <G gb9                                                              >
+  Book No.    [pnt03]                                                   Book No.    [pnt06]
+  Account Code[pnt032                  |aag02                       ]   Account Code[pnt042                  |aag02_1                     ]
+  Budget Dept.[pnt033      |gem02                         ]             Budget Dept.[pnt043      |gem02_1                       ]
+  Budget Item [pnt031      |azf03                         ]             Budget Item [pnt041      |azf03_1                       ]
+  Project No. [pnt038      |pja02                                   ]   Project No. [pnt048      |pja02_1                                 ]
+  WBS No.     [pnt036                        ]                          WBS No.     [pnt046                        ]
+  Year        [pnt04]                                                   Year        [pnt07]
+  Period      [pnt05]                                                   Period      [pnt08]
+ <                                                                   > <                                                                   >
+ <G gb7                                                                                                                                    >
+   Shift Amount     [pnt09               ]
+ <                                                                                                                                         >
+ <G gb5                                                              > <G gb6                                                              >
+  Orig. Budget Amount[afc06_1             ]                             Total Budget Amount[afc06_2             ]
+  Addition Budget    [afc08_1             ]                             Addition Budget    [afc08_2             ]
+  Shift Budget       [afc09_1             ]                             Shift Budget       [afc09_2             ]
+  Total Budget Amount[afc_tot_1           ]                             Orig. Budget Amount[afc_tot_2           ]
+
+ <                                                                   > <                                                                   >
+
+}
+END -- gr5
+END -- Page1
+Page Page2(text=%"Status")
+Grid gr4
+{
+
+ Data User [pntuser   ] Modify     [pntmodu     ]  acti[pntacti   ]
+ Data Group[pntgrup   ] Modify Date[pntdate     ]
+ Record Orig.   [pntoriu   ]
+ Dept Orig.     [pntorig   ]
+
+}
+END -- gr4
+END -- Page2
+END -- pc1
+Grid gr6
+{
+
+     ------Rows[idx   ]/[cnt    ]---------
+
+}
+END -- gr6
+END -- vb8
+END -- aglt601
+
+TABLES
+pnt_file,
+tableAlias1=pnt_file
+ATTRIBUTES
+DateEdit pnt01=pnt_file.pnt01, tabIndex=8, not null, required;
+CheckBox pntconf=pnt_file.pntconf, tabIndex=10, text="Confirmation", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit pnt02=pnt_file.pnt02, tabIndex=9, not null, required;
+Group gb8:gb8, text="Source";
+Edit pnt03=pnt_file.pnt037, tabIndex=31, not null;
+ButtonEdit pnt032=pnt_file.pnt032, action=controlp, tabIndex=30, not null, image="zoom";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=23, noEntry;
+ButtonEdit pnt033=pnt_file.pnt033, action=controlp, tabIndex=29, image="zoom";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=22, noEntry;
+ButtonEdit pnt031=pnt_file.pnt031, action=controlp, tabIndex=28, not null, image="zoom";
+Edit azf03=formonly.azf03 type CHAR, tabIndex=21, noEntry;
+ButtonEdit pnt038=pnt_file.pnt038, action=controlp, tabIndex=27, image="zoom";
+Edit pja02=formonly.pja02 type CHAR, tabIndex=20, noEntry;
+ButtonEdit pnt036=pnt_file.pnt036, action=controlp, tabIndex=26, image="zoom";
+Edit pnt04=pnt_file.pnt034, tabIndex=24, not null;
+Edit pnt05=pnt_file.pnt035, tabIndex=25, not null;
+Group gb9:gb9, text="Destination";
+Edit pnt06=pnt_file.pnt047, tabIndex=43, not null;
+ButtonEdit pnt042=pnt_file.pnt042, action=controlp, tabIndex=42, not null, image="zoom";
+Edit aag02_1=formonly.aag02_1 type CHAR, tabIndex=35, noEntry;
+ButtonEdit pnt043=pnt_file.pnt043, action=controlp, tabIndex=41, image="zoom";
+Edit gem02_1=formonly.gem02_1 type CHAR, tabIndex=34, noEntry;
+ButtonEdit pnt041=pnt_file.pnt041, action=controlp, tabIndex=40, not null, image="zoom";
+Edit azf03_1=formonly.azf03_1 type CHAR, tabIndex=33, noEntry;
+ButtonEdit pnt048=pnt_file.pnt048, action=controlp, tabIndex=39, image="zoom";
+Edit pja02_1=formonly.pja02_1 type CHAR, tabIndex=32, noEntry;
+ButtonEdit pnt046=pnt_file.pnt046, action=controlp, tabIndex=38, image="zoom";
+Edit pnt07=pnt_file.pnt044, tabIndex=37, not null;
+Edit pnt08=pnt_file.pnt045, tabIndex=36, not null;
+Group gb7:gb7;
+Edit pnt09=tableAlias1.pnt05, tabIndex=19, not null;
+Group gb5:gb5, text="Source";
+Edit afc06_1=formonly.afc06_1 type CHAR, tabIndex=11, noEntry;
+Edit afc08_1=formonly.afc08_1 type CHAR, tabIndex=12, noEntry;
+Edit afc09_1=formonly.afc09_1 type CHAR, tabIndex=13, noEntry;
+Edit afc_tot_1=formonly.afc_tot_1 type CHAR, tabIndex=14, noEntry;
+Group gb6:gb6, text="Destination";
+Edit afc06_2=formonly.afc06_2 type CHAR, tabIndex=15, noEntry;
+Edit afc08_2=formonly.afc08_2 type CHAR, tabIndex=16, noEntry;
+Edit afc09_2=formonly.afc09_2 type CHAR, tabIndex=17, noEntry;
+Edit afc_tot_2=formonly.afc_tot_2 type CHAR, tabIndex=18, noEntry;
+Edit pntuser=pnt_file.pntuser, tabIndex=1;
+Edit pntmodu=pnt_file.pntmodu, tabIndex=2;
+Edit pntacti=pnt_file.pntacti, tabIndex=3;
+Edit pntgrup=pnt_file.pntgrup, tabIndex=4;
+DateEdit pntdate=pnt_file.pntdate, tabIndex=5;
+Edit pntoriu=pnt_file.pntoriu, tabIndex=44, noEntry;
+Edit pntorig=pnt_file.pntorig, tabIndex=45, noEntry;
+Edit idx=formonly.idx type CHAR, tabIndex=6;
+Edit cnt=formonly.cnt type CHAR, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(pnt_file.pnt01,pnt_file.pntconf,pnt_file.pnt02,pnt_file.pnt037,pnt_file.pnt032,formonly.aag02,pnt_file.pnt033,formonly.gem02,pnt_file.pnt031,formonly.azf03,pnt_file.pnt038,formonly.pja02,pnt_file.pnt036,pnt_file.pnt034,pnt_file.pnt035,pnt_file.pnt047,pnt_file.pnt042,formonly.aag02_1,pnt_file.pnt043,formonly.gem02_1,pnt_file.pnt041,formonly.azf03_1,pnt_file.pnt048,formonly.pja02_1,pnt_file.pnt046,pnt_file.pnt044,pnt_file.pnt045,tableAlias1.pnt05,formonly.afc06_1,formonly.afc08_1,formonly.afc09_1,formonly.afc_tot_1,formonly.afc06_2,formonly.afc08_2,formonly.afc09_2,formonly.afc_tot_2,pnt_file.pntuser,pnt_file.pntmodu,pnt_file.pntacti,pnt_file.pntgrup,pnt_file.pntdate,pnt_file.pntoriu,pnt_file.pntorig,formonly.idx,formonly.cnt)
+END -- INSTRUCTIONS
+

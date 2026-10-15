@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asd/42f/asdr100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asdr100")
+VBox VBox1
+Grid gr391
+{
+ <G group01                                                                             >
+  Cost Group          [ima12              ]  Item No.            [tlf01              ]
+  Cost Group          [ima06              ]  Product Class       [ima131             ]
+  Source Code         [ima08              ]
+ <                                                                                      >
+
+}
+END -- gr391
+Group g01(text="INPUT")
+Grid gr392
+{
+ <G group02                                                                           >
+  Date Range          [bdate       ]-[edate       ]
+  Cost year/month     [yea ]/[mo]
+ <                                                                                    >
+ <G group03                                                                           >
+ [a                                                 ]
+ <                                                                                    >
+
+}
+END -- gr392
+END -- g01
+Grid gr393
+{
+[more                                                  ]
+[dummy01                                               ]
+}
+END -- gr393
+END -- VBox1
+END -- asdr100
+
+TABLES
+tlf_file,
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ima12=ima_file.ima12, tabIndex=1;
+ButtonEdit tlf01=tlf_file.tlf01, action=controlp, tabIndex=2, image="zoom", comment="<P>";
+Edit ima06=ima_file.ima06, tabIndex=3;
+Edit ima131=ima_file.ima131, tabIndex=4;
+Edit ima08=ima_file.ima08, tabIndex=5;
+Group group02:group02;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=6, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=7, not null, required;
+Edit yea=formonly.yea type SMALLINT, tabIndex=8, not null, required;
+Edit mo=formonly.mo type SMALLINT, tabIndex=9, not null, required;
+Group group03:group03, text="Printing Option";
+RadioGroup a=formonly.a type CHAR, tabIndex=10, not null, required, items=(("1", "Store-in"),("2", "Warehouse Return"),("3", "All "));
+CheckBox more=formonly.more type CHAR, tabIndex=11, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="NOTE:\'*\' STI not Recordd Billed";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima12,tlf_file.tlf01,ima_file.ima06,ima_file.ima131,ima_file.ima08,formonly.bdate,formonly.edate,formonly.yea,formonly.mo,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

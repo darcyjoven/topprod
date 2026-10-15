@@ -1,0 +1,146 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almi555.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"almi555")
+VBox VBox1
+Folder pc1
+Page Main(text=%"Main")
+Grid gr1
+{
+
+  Work Plant                [lrp06          |azp02              ]             [label1            ]       [lrppos         ]
+  Rule Types                [lrp00          ]                                  Confirmation              [lrpconf        |imgmksg]
+  Rule Slip Number/Version  [lrp07                       ][lrp08]              Confirmed By              [lrpconu        |       ]
+  Card Kinds                [lrp01          |lph02              ]              Confirmation Date         [lrpcond        ]
+  Effective Date            [lrp04          ]                                                            [lrp09          ]
+  Expiration Date           [lrp05          ]                                  Released Date             [lrp10          ]
+  Rule Method               [lrp02          ]
+  Exclusive Method          [lrp03          ]
+  Discount Type             [lrp11          ]
+
+}
+END -- gr1
+END -- Main
+Page Info(text=%"Info")
+Grid Grid1
+{
+
+  Data User [lrpuser            ]           Modify User[lrpmodu            ]           Data Valid Code[lrpacti            ]
+  Data Group[lrpgrup            ]           Modify Date[lrpdate            ]           Data Created By[lrpcrat            ]
+  Department[lrporiu            ]           Dept Orig. [lrporig            ]
+
+
+}
+END -- Grid1
+END -- Info
+END -- pc1
+Table s_lrq
+{
+[lrq02   |lrq02_1   |lrq03     |lrq04         |lrq05       |lrq06     |lrq07               |lrq08                |lrq09   |lrqacti     ]
+[lrq02   |lrq02_1   |lrq03     |lrq04         |lrq05       |lrq06     |lrq07               |lrq08                |lrq09   |lrqacti     ]
+[lrq02   |lrq02_1   |lrq03     |lrq04         |lrq05       |lrq06     |lrq07               |lrq08                |lrq09   |lrqacti     ]
+[lrq02   |lrq02_1   |lrq03     |lrq04         |lrq05       |lrq06     |lrq07               |lrq08                |lrq09   |lrqacti     ]
+[lrq02   |lrq02_1   |lrq03     |lrq04         |lrq05       |lrq06     |lrq07               |lrq08                |lrq09   |lrqacti     ]
+
+}
+END -- s_lrq
+Folder Folder1
+Page Page1(text=%"Advance Setting")
+Table s_lth
+{
+[lth05     |lth05_de|lth06     |lth11   |lth12   |lth15       |lth16       |lth17       |lth18       |lth19       |lth20       |lth07                 |lth08                 |lth09                 |lth10 |lthacti     ]
+[lth05     |lth05_de|lth06     |lth11   |lth12   |lth15       |lth16       |lth17       |lth18       |lth19       |lth20       |lth07                 |lth08                 |lth09                 |lth10 |lthacti     ]
+[lth05     |lth05_de|lth06     |lth11   |lth12   |lth15       |lth16       |lth17       |lth18       |lth19       |lth20       |lth07                 |lth08                 |lth09                 |lth10 |lthacti     ]
+[lth05     |lth05_de|lth06     |lth11   |lth12   |lth15       |lth16       |lth17       |lth18       |lth19       |lth20       |lth07                 |lth08                 |lth09                 |lth10 |lthacti     ]
+[lth05     |lth05_de|lth06     |lth11   |lth12   |lth15       |lth16       |lth17       |lth18       |lth19       |lth20       |lth07                 |lth08                 |lth09                 |lth10 |lthacti     ]
+}
+END -- s_lth
+END -- Page1
+END -- Folder1
+Grid gr5384
+{
+ ---------- Rows [idx   ] / [cnt   ] ---------- [label3  |cn2   ]----------[label2 |cn3   ]----------
+
+}
+END -- gr5384
+END -- VBox1
+END -- Form2
+
+TABLES
+lth_file,
+lrq_file,
+lrp_file
+ATTRIBUTES
+ButtonEdit lrp06=lrp_file.lrp06, action=controlp, tabIndex=42, noEntry, not null, required, image="zoom";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=41, noEntry;
+Label label1:Label1, text=%"POS";
+ComboBox lrppos=lrp_file.lrppos, tabIndex=8, noEntry, items=(("1", "Add-No passed"),("2", "Modify-No passed"),("3", "Passed"),("4", "Modifying-No passed"));
+ComboBox lrp00=lrp_file.lrp00, tabIndex=1, noEntry, items=(("1", "Points"),("2", "Discount"),("3", "Prepaid value-added"));
+ComboBox lrpconf=lrp_file.lrpconf, tabIndex=45, default = "N", noEntry, not null, required, items=(("Y", "Confirmed"),("N", "Unconfirmed"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit lrp07=lrp_file.lrp07, action=controlp, tabIndex=43, not null, required, image="zoom";
+Edit lrp08=lrp_file.lrp08, tabIndex=44, noEntry, not null, required;
+ButtonEdit lrpconu=lrp_file.lrpconu, action=controlp, tabIndex=46, noEntry, image="zoom";
+ButtonEdit lrp01=lrp_file.lrp01, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Edit lph02=formonly.lph02 type CHAR, tabIndex=3, noEntry;
+DateEdit lrpcond=lrp_file.lrpcond, tabIndex=47, noEntry;
+DateEdit lrp04=lrp_file.lrp04, tabIndex=4, not null;
+CheckBox lrp09=lrp_file.lrp09, tabIndex=48, default = "N", text=%"Issue", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit lrp05=lrp_file.lrp05, tabIndex=5, not null;
+DateEdit lrp10=lrp_file.lrp10, tabIndex=49, noEntry;
+ComboBox lrp02=lrp_file.lrp02, tabIndex=6, default = "1", not null, required, items=(("1", "Member Level"),("2", "Products kind"),("3", "Brand"),("4", "Goods"));
+ComboBox lrp03=lrp_file.lrp03, tabIndex=7, default = "1", not null, required, items=(("1", "Not exclude"),("2", "By product"),("3", "By Category"));
+ComboBox lrp11=lrp_file.lrp11, tabIndex=56, default = "1", not null, required, items=(("1", "Minimum Price"),("2", "Discount Twice"));
+Edit lrpuser=lrp_file.lrpuser, tabIndex=33, noEntry;
+Edit lrpmodu=lrp_file.lrpmodu, tabIndex=36, noEntry;
+Edit lrpacti=lrp_file.lrpacti, tabIndex=40, noEntry;
+Edit lrpgrup=lrp_file.lrpgrup, tabIndex=34, noEntry;
+DateEdit lrpdate=lrp_file.lrpdate, tabIndex=37, noEntry;
+DateEdit lrpcrat=lrp_file.lrpcrat, tabIndex=39, noEntry;
+Edit lrporiu=lrp_file.lrporiu, tabIndex=35, noEntry;
+Edit lrporig=lrp_file.lrporig, tabIndex=38, noEntry;
+ButtonEdit lrq02=lrq_file.lrq02, action=controlp, tabIndex=9, title="Code", not null, required, image="zoom.png";
+Edit lrq02_1=formonly.lrq02_1 type CHAR, tabIndex=10, title=%"Code Name", noEntry;
+Edit lrq03=lrq_file.lrq03, tabIndex=11, title="Scoring Base", not null, required;
+Edit lrq04=lrq_file.lrq04, tabIndex=12, title="Scores of The Unit", not null, required;
+Edit lrq05=lrq_file.lrq05, tabIndex=13, title="Discount Rate", not null, required;
+Edit lrq06=lrq_file.lrq06, tabIndex=14, title=%"Stored Base", not null, required;
+Edit lrq07=lrq_file.lrq07, tabIndex=15, title=%"Value-added Preference", not null, required;
+Edit lrq08=lrq_file.lrq08, tabIndex=16, title=%"Value-added Preference %", not null, required;
+CheckBox lrq09=lrq_file.lrq09, tabIndex=17, title=%"Multiple", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox lrqacti=lrq_file.lrqacti, tabIndex=31, title=%"Valid or Not", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit lth05=lth_file.lth05, action=controlp, tabIndex=18, title=%"Member Field Day Code", not null, image="zoom", scroll;
+Edit lth05_de=formonly.lth05_desc type CHAR, tabIndex=19, title=%"Code Name", noEntry;
+ComboBox lth06=lth_file.lth06, tabIndex=20, title="Feedback Conditions", not null, scroll, items=(("1", "Anniversary is on the same day"),("2", "Anniversary is on the same month"),("3", "Before or after anniversary"),("4", "Appointment"));
+Edit lth11=lth_file.lth11, tabIndex=29, title=%"Befault Anniversary(Date)";
+Edit lth12=lth_file.lth12, tabIndex=30, title=%"After Anniversary(Date)";
+DateEdit lth15=lth_file.lth15, tabIndex=50, title=%"Start Date-time";
+DateEdit lth16=lth_file.lth16, tabIndex=51, title=%"End Date-time";
+TimeEdit lth17=lth_file.lth17, tabIndex=52, title=%"Start Timing";
+TimeEdit lth18=lth_file.lth18, tabIndex=53, title=%"End Timing";
+ComboBox lth19=lth_file.lth19, tabIndex=54, title=%"Periodical\nfor Date", items=(("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"),("6", "6"),("7", "7"),("8", "8"),("9", "9"),("10", "10"),("11", "11"),("12", "12"),("13", "13"),("14", "14"),("15", "15"),("16", "16"),("17", "17"),("18", "18"),("19", "19"),("20", "20"),("21", "21"),("22", "22"),("23", "23"),("24", "24"),("25", "25"),("26", "26"),("27", "27"),("28", "28"),("29", "29"),("30", "30"),("31", "31"));
+ComboBox lth20=lth_file.lth20, tabIndex=55, title=%"Periodical\n for Week", items=(("1", "Monday"),("2", "Tuesday"),("3", "Wednesday
+"),("4", "Thursday"),("5", "Friday"),("6", "Saturday"),("7", "Sunday"));
+Edit lth07=lth_file.lth07, tabIndex=21, title=%"Feedback From Scoring Base", not null, scroll;
+Edit lth08=lth_file.lth08, tabIndex=22, title=%"Scoring Multiple", not null, scroll;
+Edit lth09=lth_file.lth09, tabIndex=23, title=%"Value-added Scoring", not null, scroll;
+Edit lth10=lth_file.lth10, tabIndex=24, title=%"Discount Rate", not null;
+CheckBox lthacti=lth_file.lthacti, tabIndex=32, title=%"Valid or Not", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type CHAR, tabIndex=25;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=26;
+Label label3:Label3, text=%"Label3";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=27;
+Label label2:Label2, text=%"Label2";
+Edit cn3=formonly.cn3 type CHAR, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lrq(lrq_file.lrq02,formonly.lrq02_1,lrq_file.lrq03,lrq_file.lrq04,lrq_file.lrq05,lrq_file.lrq06,lrq_file.lrq07,lrq_file.lrq08,lrq_file.lrq09,lrq_file.lrqacti)
+SCREEN RECORD Undefined(lrp_file.lrp06,formonly.azp02,lrp_file.lrppos,lrp_file.lrp00,lrp_file.lrp07,lrp_file.lrp08,lrp_file.lrp01,formonly.lph02,lrp_file.lrp04,lrp_file.lrp05,lrp_file.lrp02,lrp_file.lrp03,lrp_file.lrp11,lrp_file.lrpconf,lrp_file.lrpconu,lrp_file.lrpcond,lrp_file.lrp09,lrp_file.lrp10,lrp_file.lrpuser,lrp_file.lrpmodu,lrp_file.lrpacti,lrp_file.lrpgrup,lrp_file.lrpdate,lrp_file.lrpcrat,lrp_file.lrporiu,lrp_file.lrporig,formonly.cnt,formonly.cn2,formonly.cn3,formonly.idx,formonly.imgmksg)
+SCREEN RECORD s_lth(lth_file.lth05,formonly.lth05_desc,lth_file.lth06,lth_file.lth11,lth_file.lth12,lth_file.lth15,lth_file.lth16,lth_file.lth17,lth_file.lth18,lth_file.lth19,lth_file.lth20,lth_file.lth07,lth_file.lth08,lth_file.lth09,lth_file.lth10,lth_file.lthacti)
+END -- INSTRUCTIONS
+

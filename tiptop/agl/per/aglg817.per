@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglg817.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr817")
+VBox vb4
+Group g01(text="INPUT")
+Grid gr2514
+{
+ Original Book No.      [o_aba00   ]
+ Carry to Book No.      [n_aba00   ]
+ Original Document Type [o_aba01   ]
+ Initial voucher date   [b_aba02     ]
+ Ending Voucher Date    [e_aba02     ]
+ Initial voucher No.    [b_aba01             ]
+ Ending Voucher No.     [e_aba01             ]
+
+}
+END -- gr2514
+END -- g01
+Grid gr2515
+{
+[more                                                        ]
+
+}
+END -- gr2515
+END -- vb4
+END -- aglr817
+
+ATTRIBUTES
+Edit o_aba00=formonly.o_aba00 type CHAR, tabIndex=806294, not null, required;
+Edit n_aba00=formonly.n_aba00 type CHAR, tabIndex=806295, not null, required;
+Edit o_aba01=formonly.o_aba01 type CHAR, tabIndex=806296, not null, required;
+DateEdit b_aba02=formonly.b_aba02 type DATE, tabIndex=806297;
+DateEdit e_aba02=formonly.e_aba02 type DATE, tabIndex=806298;
+Edit b_aba01=formonly.b_aba01 type CHAR, tabIndex=806299;
+Edit e_aba01=formonly.e_aba01 type CHAR, tabIndex=806300;
+CheckBox more=formonly.more type CHAR, tabIndex=1, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.o_aba00,formonly.n_aba00,formonly.o_aba01,formonly.b_aba02,formonly.e_aba02,formonly.b_aba01,formonly.e_aba01,formonly.more)
+END -- INSTRUCTIONS
+

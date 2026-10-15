@@ -1,0 +1,137 @@
+----------------------------------------------------------------------------------
+-- $Id:  /u3/tiptop/art/4fd/artt305.tmp.per created 2010-08-03T05:23:35
+-- File created from /u3/tiptop/art/4fd/artt305.4fd by Genero Studio 21403
+-- Copyright (c) 2002-2010  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+
+
+
+LAYOUT(spacing=normal, text="artt305")
+   VBox vb4                                                                                                                                                                                                                                                                                                 
+   Folder folder01                                                                                                                                                                                                                                                                                          
+   Page Page3(text=%"Basic Data")                                                                                                                                                                                                                                                                           
+    Grid gr4                                                                                                                                                                                                                                                                                                
+    {                                                                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                                                                            
+     Org.No.       [rwf01               |rwf01_desc          ]Price Type     [rwf10     ]     Comb Type[rwf11     ]               Status           [rwf900         ]           Memo[rwf20               ]                                                                                                   
+     Activity Code [rwf02               |rwf02_desc          ]Price          [rwf12          ]Total Qty[rwf16     ]               Confirmation     [rwfconf        ]  [imgmksg]    [                    ]                                                                                                   
+     Promotion Type[rwf03          ]                          Member Price   [rwf13          ]         [rwfmksg       ]           Confirmation Date[rwfcond   ]       [       ]    [                    ]                                                                                                   
+     Promotion No. [rwf04               ]                     Discount Ratio%[rwf14     ]              [rwf17              ]      Confirmed By     [rwfconu        |rwfconu_de]    [                    ]                                                                                                   
+     Promotion Name[rwf05                                    ]Member Ratio%  [rwf15     ]              [rwf18         ]           Organization     [rwfplant       |rwfplant_d]    [                    ]                                                                                                   
+     Start Date    [rwf06     ]  Start Time[rwf08      ]      Growth Method  [rwf21     ]              [rwf19            ]                                                         [                    ]                                                                                                   
+     End Date      [rwf07     ]  End Time  [rwf09      ]      Growth Limited [rwf22     ]              [rwfpos       ]                                                                                                                                                                                      
+                                                              Realization    [rwf23     ]                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+    }                                                                                                                                                                                                                                                                                                       
+    END                                                                                                                                                                                                                                                                                                     
+   END -- Page                                                                                                                                                                                                                                                                                              
+   Page Page4(text=%"Info")                                                                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                                                                            
+        Grid gr8                                                                                                                                                                                                                                                                                            
+        {                                                                                                                                                                                                                                                                                                   
+         Record Owner        [rwfuser   ] Last Modified by    [rwfmodu   ] Data Valid Code     [rwfacti   ]                                                                                                                                                                                                 
+         Department          [rwfgrup   ] Modify Date         [rwfdate   ] Create Date         [rwfcrat   ]                                                                                                                                                                                                 
+         Record Orig.        [rwforiu   ] Dept Orig.          [rwforig   ]                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                                            
+        }                                                                                                                                                                                                                                                                                                   
+        END                                                                                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+   END -- Page                                                                                                                                                                                                                                                                                              
+   END -- Folder                                                                                                                                                                                                                                                                                            
+   Table s_rwg                                                                                                                                                                                                                                                                                              
+   {                                                                                                                                                                                                                                                                                                        
+   [rwg05|rwg08                |rwg06               |rwg06_desc          |rwg07     |rwg07_desc|rwg09     |rwg09_de|rwg10     |rwg11               ]                                                                                                                                                        
+   [rwg05|rwg08                |rwg06               |rwg06_desc          |rwg07     |rwg07_desc|rwg09     |rwg09_de|rwg10     |rwg11               ]                                                                                                                                                        
+   [rwg05|rwg08                |rwg06               |rwg06_desc          |rwg07     |rwg07_desc|rwg09     |rwg09_de|rwg10     |rwg11               ]                                                                                                                                                        
+   [rwg05|rwg08                |rwg06               |rwg06_desc          |rwg07     |rwg07_desc|rwg09     |rwg09_de|rwg10     |rwg11               ]                                                                                                                                                        
+   [rwg05|rwg08                |rwg06               |rwg06_desc          |rwg07     |rwg07_desc|rwg09     |rwg09_de|rwg10     |rwg11               ]                                                                                                                                                        
+   }                                                                                                                                                                                                                                                                                                        
+   END -- Table                                                                                                                                                                                                                                                                                             
+   Grid gr15                                                                                                                                                                                                                                                                                                
+   {                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                            
+     ------ Rows[idx       ]/[cnt       ]----Items[cn2       ]--------                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+   }                                                                                                                                                                                                                                                                                                        
+   END                                                                                                                                                                                                                                                                                                      
+   END -- VBox                                                                                                                                                                                                                                                                                              
+END -- Form
+
+TABLES
+rwf_file
+rwg_file
+
+ATTRIBUTES
+ButtonEdit rwf01=rwf_file.rwf01, action=controlp, tabIndex=7, noEntry, image="zoom.png";
+Edit rwf01_desc=formonly.rwf01_desc, tabIndex=8;
+ComboBox rwf10=rwf_file.rwf10, tabIndex=17, not null, items=(("1", "Price"),("2", "Discount"),("5", "Add_Price"));
+ComboBox rwf11=rwf_file.rwf11, tabIndex=43, not null, items=(("0", "Changed"),("1", "Fixed"));
+ComboBox rwf900=rwf_file.rwf900, tabIndex=22, noEntry, items=(("0", "Open
+"),("1", "Confirmed"),("9", "Void"),("S", "Approving"),("R", "Rejected"),("W", "Withdraw"));
+TextEdit rwf20=rwf_file.rwf20, tabIndex=27;
+ButtonEdit rwf02=rwf_file.rwf02, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+Edit rwf02_desc=formonly.rwf02_desc, tabIndex=10;
+Edit rwf12=rwf_file.rwf12, tabIndex=44, not null;
+Edit rwf16=rwf_file.rwf16, tabIndex=18, not null;
+ComboBox rwfconf=rwf_file.rwfconf, tabIndex=25, noEntry, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Void"));
+Image imgmksg=formonly.imgmksg;
+ComboBox rwf03=rwf_file.rwf03, tabIndex=42, noEntry, items=(("4", "Comb Promotion"));
+Edit rwf13=rwf_file.rwf13, tabIndex=45, not null;
+CheckBox rwfmksg=rwf_file.rwfmksg, tabIndex=21, text="Approval?", not null, valueChecked = "Y", valueUnchecked = "N";
+DateEdit rwfcond=rwf_file.rwfcond, tabIndex=24, noEntry;
+ButtonEdit rwf04=rwf_file.rwf04, action=controlp, tabIndex=11, not null, image="zoom.png";
+Edit rwf14=rwf_file.rwf14, tabIndex=46, not null;
+CheckBox rwf17=rwf_file.rwf17, tabIndex=49, text="By Member Level?", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rwfconu=rwf_file.rwfconu, action=controlp, tabIndex=23, noEntry, image="zoom.png";
+Edit rwfconu_de=formonly.rwfconu_desc, tabIndex=28;
+Edit rwf05=rwf_file.rwf05, tabIndex=12;
+Edit rwf15=rwf_file.rwf15, tabIndex=47, not null;
+CheckBox rwf18=rwf_file.rwf18, tabIndex=19, text="Get Points?", not null, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit rwfplant=rwf_file.rwfplant, action=controlp, tabIndex=26, noEntry, image="zoom.png";
+Edit rwfplant_d=formonly.rwfplant_desc, tabIndex=29;
+DateEdit rwf06=rwf_file.rwf06, tabIndex=13, not null;
+TimeEdit rwf08=rwf_file.rwf08, tabIndex=15;
+ComboBox rwf21=rwf_file.rwf21, tabIndex=51, not null, items=(("1", "Multiple"),("2", "Incremental"));
+CheckBox rwf19=rwf_file.rwf19, tabIndex=20, text="Full Amt Calc?", not null, valueChecked = "Y", valueUnchecked = "N";
+DateEdit rwf07=rwf_file.rwf07, tabIndex=14, not null;
+TimeEdit rwf09=rwf_file.rwf09, tabIndex=16;
+ComboBox rwf22=rwf_file.rwf22, tabIndex=52, not null, items=(("1", "Radio"),("2", "Multiple-choice"));
+CheckBox rwfpos=rwf_file.rwfpos, tabIndex=48, text="rwfpos", noEntry, not null, valueChecked = "Y", valueUnchecked = "N";
+ComboBox rwf23=rwf_file.rwf23, tabIndex=53, not null, items=(("1", "On Trans"),("2", "After Trans"));
+Edit rwfuser=rwf_file.rwfuser, tabIndex=5, noEntry;
+Edit rwfmodu=rwf_file.rwfmodu, tabIndex=4, noEntry;
+Edit rwfacti=rwf_file.rwfacti, tabIndex=3, noEntry, upShift;
+Edit rwfgrup=rwf_file.rwfgrup, tabIndex=2, noEntry;
+DateEdit rwfdate=rwf_file.rwfdate, tabIndex=1, noEntry;
+DateEdit rwfcrat=rwf_file.rwfcrat, tabIndex=6, noEntry;
+Edit rwforiu=rwf_file.rwforiu, tabIndex=54, noEntry;
+Edit rwforig=rwf_file.rwforig, tabIndex=55, noEntry;
+Edit rwg05=rwg_file.rwg05, tabIndex=30, title="Line No.", not null;
+ButtonEdit rwg08=rwg_file.rwg08, action=controlp, tabIndex=41, title="Bar Code", image="zoom.png";
+ButtonEdit rwg06=rwg_file.rwg06, action=controlp, tabIndex=31, title="Goods Code", not null, image="zoom.png";
+Edit rwg06_desc=formonly.rwg06_desc, tabIndex=32, title="Goods Name", noEntry;
+ButtonEdit rwg07=rwg_file.rwg07, action=controlp, tabIndex=33, title="Unit", noEntry, image="zoom.png";
+Edit rwg07_desc=formonly.rwg07_desc, tabIndex=34, title="Unit Name", noEntry;
+ButtonEdit rwg09=rwg_file.rwg09, action=controlp, tabIndex=39, title="Promotion Unit", not null, image="zoom.png";
+Edit rwg09_de=formonly.rwg09_desc, tabIndex=40, title="Unit Name", noEntry;
+Edit rwg10=rwg_file.rwg10, tabIndex=35, title="Conversion Rate", noEntry;
+Edit rwg11=rwg_file.rwg11, tabIndex=50, title="Qty", not null;
+Edit idx=formonly.idx, tabIndex=37, noEntry;
+Edit cnt=formonly.cnt, tabIndex=36, noEntry;
+Edit cn2=formonly.cn2, tabIndex=38;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rwg(rwg_file.rwg05, rwg_file.rwg08, rwg_file.rwg06, formonly.rwg06_desc, rwg_file.rwg07, formonly.rwg07_desc, rwg_file.rwg09, formonly.rwg09_desc, rwg_file.rwg10, rwg_file.rwg11)
+END -- INSTRUCTIONS
+

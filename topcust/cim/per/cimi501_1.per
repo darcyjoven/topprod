@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cim/4fd/cimi501_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+HBox HBox1
+Grid Grid1
+{
+
+    Label1        [yy                  ]
+    Label1        [mm                  ]
+    Label1        [dat                ]
+    Label1        [typ1                ]
+    Label1        [typ2                ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid1
+END -- HBox1
+END -- Form
+
+ATTRIBUTES
+Edit yy=formonly.yy type INTEGER, tabIndex=1;
+Edit mm=formonly.mm type INTEGER, tabIndex=2;
+DateEdit dat=formonly.dat type DATE, tabIndex=3;
+Edit typ1=formonly.typ1 type INTEGER, tabIndex=4;
+Edit typ2=formonly.typ2 type INTEGER, tabIndex=5;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.mm,formonly.dat,formonly.typ1,formonly.typ2)
+END -- INSTRUCTIONS
+

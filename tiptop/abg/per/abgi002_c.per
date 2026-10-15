@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abg/42f/abgi002_c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abgi002_c")
+Grid gr576
+{
+ <G group01                                                >
+  Original Version    [old_ver   ]
+  Year                [oyy       ]
+  Month               [om        ]
+ <                                                         >
+ <G group02                                                >
+  New Version         [new_ver   ]
+  Year                [nyy       ]
+  Month               [nm        ]
+ <                                                         >
+
+}
+END -- gr576
+END -- abgi002_c
+
+ATTRIBUTES
+Group group01:group01;
+Edit old_ver=formonly.old_ver type CHAR, tabIndex=1;
+Edit oyy=formonly.oyy type CHAR, tabIndex=2;
+Edit om=formonly.om type CHAR, tabIndex=3;
+Group group02:group02;
+Edit new_ver=formonly.new_ver type CHAR, tabIndex=4;
+Edit nyy=formonly.nyy type CHAR, tabIndex=5;
+Edit nm=formonly.nm type CHAR, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.old_ver,formonly.oyy,formonly.om,formonly.new_ver,formonly.nyy,formonly.nm)
+END -- INSTRUCTIONS
+

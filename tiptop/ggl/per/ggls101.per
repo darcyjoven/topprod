@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggls101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agls103")
+Folder pc505
+Page page04(text="Merge Financial Statement")
+Grid gr2843
+{
+
+ Consolidated Report A/C                  [asz01     ]
+ Re-Measure Exchange Gain                 [asz02     ]
+ Re-Measure Exchange Loss                 [asz03     ]
+ Translation Adjustment AccountingCode    [asz04     ]
+ Current Period Profit(IS)                [asz05     ]
+ Current Period Profit(BS)                [asz06     ]
+
+
+[dummy01                  ]
+ Combination Sales-in Account             [asz07     ]
+ Combination Assets Exchange Account      [asz08     ]
+ asz09                                    [asz09     ]
+ Unrealized Sales Loss                    [asz10     ]
+ asz11                                    [asz11     ]
+ Deferred Credits                         [asz12     ]
+ Combination Current Profit & Loss Acc.   [asz13     ]
+ Combination Investment Profit Acc.       [asz14     ]
+
+}
+END -- gr2843
+END -- page04
+END -- pc505
+END -- ggls101
+
+TABLES
+asz_file
+ATTRIBUTES
+ButtonEdit asz01=asz_file.asz01, action=controlp, tabIndex=7, not null, required, image="zoom";
+ButtonEdit asz02=asz_file.asz02, action=controlp, tabIndex=1, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+ButtonEdit asz03=asz_file.asz03, action=controlp, tabIndex=14, image="zoom";
+ButtonEdit asz04=asz_file.asz04, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+ButtonEdit asz05=formonly.asz05 type CHAR, action=controlp, tabIndex=12, image="zoom";
+ButtonEdit asz06=formonly.asz06 type CHAR, action=controlp, tabIndex=13, image="zoom";
+Label dummy01:dummy01, text="A Permanent Investment:";
+ButtonEdit asz07=asz_file.asz07, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+ButtonEdit asz08=asz_file.asz08, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+ButtonEdit asz09=asz_file.asz09, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+ButtonEdit asz10=asz_file.asz10, action=controlp, tabIndex=10, image="zoom.png";
+ButtonEdit asz11=asz_file.asz11, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+ButtonEdit asz12=asz_file.asz12, action=controlp, tabIndex=11, image="zoom.png";
+ButtonEdit asz13=asz_file.asz13, action=controlp, tabIndex=5, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+ButtonEdit asz14=asz_file.asz14, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Account No. <^Y>Create Title";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(asz_file.asz01,asz_file.asz02,asz_file.asz03,asz_file.asz04,formonly.asz05,formonly.asz06,asz_file.asz07,asz_file.asz08,asz_file.asz09,asz_file.asz10,asz_file.asz11,asz_file.asz12,asz_file.asz13,asz_file.asz14)
+END -- INSTRUCTIONS
+

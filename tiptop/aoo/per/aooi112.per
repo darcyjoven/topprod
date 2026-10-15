@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi112.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi112")
+VBox vb6
+Folder pc842
+Page page01(text="Page01")
+Table s_ryb
+{
+[ryb01        |ryb02          |ryb03        |ryb03_desc       |rybac]
+[ryb01        |ryb02          |ryb03        |ryb03_desc       |rybac]
+[ryb01        |ryb02          |ryb03        |ryb03_desc       |rybac]
+[ryb01        |ryb02          |ryb03        |ryb03_desc       |rybac]
+[ryb01        |ryb02          |ryb03        |ryb03_desc       |rybac]
+[ryb01        |ryb02          |ryb03        |ryb03_desc       |rybac]
+[ryb01        |ryb02          |ryb03        |ryb03_desc       |rybac]
+[ryb01        |ryb02          |ryb03        |ryb03_desc       |rybac]
+[ryb01        |ryb02          |ryb03        |ryb03_desc       |rybac]
+[ryb01        |ryb02          |ryb03        |ryb03_desc       |rybac]
+
+}
+END -- s_ryb
+END -- page01
+END -- pc842
+Grid gr4634
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr4634
+END -- vb6
+END -- aooi112
+
+TABLES
+ryb_file
+ATTRIBUTES
+Edit ryb01=ryb_file.ryb01, tabIndex=1, title="ryb01", not null, required, comment="KEY Field, No Blank/Repeated!";
+Edit ryb02=ryb_file.ryb02, tabIndex=2, title="ryb02";
+ButtonEdit ryb03=ryb_file.ryb03, action=controlp, tabIndex=3, title="ryb03", not null, required, image="zoom", comment="<^P> Query Local ";
+Edit ryb03_desc=formonly.ryb03_desc type CHAR, tabIndex=4, title="ryb03_desc", noEntry;
+CheckBox rybac=ryb_file.rybacti, tabIndex=5, title="rybacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ryb(ryb_file.ryb01,ryb_file.ryb02,ryb_file.ryb03,formonly.ryb03_desc,ryb_file.rybacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

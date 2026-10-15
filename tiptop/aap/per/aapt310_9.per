@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapt310_9.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Generate Entry")
+Grid gr460
+{
+ <G group01                                 >
+ [only_one                                  ]
+ <                                          >
+ <G group02                                 >
+  Accounts# QBE           [apf01     ]
+  Account Date QBE        [apf02       ]
+  Account Employee QBE    [apf04     ]
+  Accounts Department QBE [apf05     ]
+  Paying Vender QBE       [apf03     ]
+
+ <                                          >
+
+}
+END -- gr460
+END -- aapt310_9
+
+TABLES
+apf_file
+ATTRIBUTES
+Group group01:group01, text="Generate Entry Condition";
+RadioGroup only_one=formonly.only_one type CHAR, tabIndex=1, items=(("1", "Generate this Accounts only"),("2", "Generate by QBE Condition"));
+Group group02:group02, text="Input Gen Entry Bill Condition:";
+Edit apf01=apf_file.apf01, tabIndex=2;
+DateEdit apf02=apf_file.apf02, tabIndex=3;
+Edit apf04=apf_file.apf04, tabIndex=4;
+Edit apf05=apf_file.apf05, tabIndex=5;
+Edit apf03=apf_file.apf03, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.only_one,apf_file.apf01,apf_file.apf02,apf_file.apf04,apf_file.apf05,apf_file.apf03)
+END -- INSTRUCTIONS
+

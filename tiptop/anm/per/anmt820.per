@@ -1,0 +1,132 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt820.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt820")
+VBox VBox1
+Folder pc2
+Page page01(text="Main")
+Grid gr5
+{
+ Property            [gxg021              ]  Confirm                 [gxgconf   ]            [imgmksg]
+ Application No.     [gxg011              ]  Certificate of Deposit# [gxg01           ]      [       ]
+ Original Bank       [gxf02     ]            Status                  [gxf11     ][sts       ]
+                     [nma02_1             ]  Original Deposit Date   [gxf03       ]
+ Original Amount     [gxf26               ]  Due Date                [gxf05       ]
+ -----------------------------------------------------------------------------------------------------
+ Transaction Serial  [gxg02     ]
+
+}
+END -- gr5
+END -- page01
+Page info(text="Info")
+Grid gr6
+{
+ Record Owner        [gxguser   ] Last Modified by    [gxgmodu   ] Data Valid Code     [gxgacti   ]
+ Department          [gxggrup   ] Create/Modify Date  [gxgdate   ]
+ Record Orig.        [gxgoriu   ]
+ Dept Orig.          [gxgorig   ]
+}
+END -- gr6
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[gxgud01                       ] userdefined_field07[gxgud07        ] userdefined_field13[gxgud13        ]
+                    [                              ] userdefined_field08[gxgud08        ] userdefined_field14[gxgud14        ]
+ userdefined_field02[gxgud02        ]                userdefined_field09[gxgud09        ] userdefined_field15[gxgud15        ]
+ userdefined_field03[gxgud03        ]                userdefined_field10[gxgud10        ]
+ userdefined_field04[gxgud04        ]                userdefined_field11[gxgud11        ]
+ userdefined_field05[gxgud05        ]                userdefined_field12[gxgud12        ]
+ userdefined_field06[gxgud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc2
+Group g01(text="Pledge")
+Grid gr7
+{
+ Date of Pledge      [gxg03        ]         Pledge Voucher No.      [gxg07               ]
+ Pledged To          [gxg04      ]           Voucher Date            [gxg08       ]
+ Pledge Amount       [gxg05                ]
+ Pledge Description  [gxg06                         ]
+
+}
+END -- gr7
+END -- g01
+Group g02(text="Remove Pledge")
+Grid gr8
+{
+ Removal Date        [gxg09       ]          Removal Voucher No.     [gxg10               ]
+                                             Voucher Date            [gxg11       ]
+
+}
+END -- gr8
+END -- g02
+Grid gr9
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr9
+END -- VBox1
+END -- anmt820
+
+TABLES
+gxg_file
+ATTRIBUTES
+ComboBox gxg021=gxg_file.gxg021, tabIndex=1, not null, required, items=(("1", "Certificate of Deposit Pledge"),("2", "Remove Pledge"));
+Edit gxgconf=gxg_file.gxgconf, tabIndex=2, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit gxg011=gxg_file.gxg011, action=controlp, tabIndex=4, not null, required, image="zoom", comment="Key Field, No Blank/Repeated!     <^P>Qry Certificate of Deposit";
+Edit gxg01=gxg_file.gxg01, tabIndex=5, noEntry, upShift;
+Edit gxf02=formonly.gxf02 type CHAR, tabIndex=6, noEntry;
+Edit gxf11=formonly.gxf11 type CHAR, tabIndex=7, noEntry;
+Edit sts=formonly.sts type CHAR, tabIndex=8, noEntry;
+Edit nma02_1=formonly.nma02_1 type VARCHAR, tabIndex=9, noEntry;
+DateEdit gxf03=formonly.gxf03 type DATE, tabIndex=10, noEntry;
+Edit gxf26=formonly.gxf26 type CHAR, tabIndex=11, noEntry;
+DateEdit gxf05=formonly.gxf05 type DATE, tabIndex=12, noEntry;
+Edit gxg02=gxg_file.gxg02, tabIndex=13, noEntry, not null, required;
+Edit gxguser=gxg_file.gxguser, tabIndex=14, noEntry;
+Edit gxgmodu=gxg_file.gxgmodu, tabIndex=15, noEntry;
+Edit gxgacti=gxg_file.gxgacti, tabIndex=16, noEntry;
+Edit gxggrup=gxg_file.gxggrup, tabIndex=17, noEntry;
+DateEdit gxgdate=gxg_file.gxgdate, tabIndex=18, noEntry;
+Edit gxgoriu=gxg_file.gxgoriu, tabIndex=501, noEntry;
+Edit gxgorig=gxg_file.gxgorig, tabIndex=502, noEntry;
+TextEdit gxgud01=gxg_file.gxgud01, tabIndex=30, stretch=NONE;
+Edit gxgud07=gxg_file.gxgud07, tabIndex=31;
+DateEdit gxgud13=gxg_file.gxgud13, tabIndex=32;
+Edit gxgud08=gxg_file.gxgud08, tabIndex=33;
+DateEdit gxgud14=gxg_file.gxgud14, tabIndex=34;
+Edit gxgud02=gxg_file.gxgud02, tabIndex=35;
+Edit gxgud09=gxg_file.gxgud09, tabIndex=36;
+DateEdit gxgud15=gxg_file.gxgud15, tabIndex=37;
+Edit gxgud03=gxg_file.gxgud03, tabIndex=38;
+Edit gxgud10=gxg_file.gxgud10, tabIndex=39;
+Edit gxgud04=gxg_file.gxgud04, tabIndex=40;
+Edit gxgud11=gxg_file.gxgud11, tabIndex=41;
+Edit gxgud05=gxg_file.gxgud05, tabIndex=42;
+Edit gxgud12=gxg_file.gxgud12, tabIndex=43;
+Edit gxgud06=gxg_file.gxgud06, tabIndex=44;
+DateEdit gxg03=gxg_file.gxg03, tabIndex=19;
+Edit gxg07=gxg_file.gxg07, tabIndex=20, noEntry;
+Edit gxg04=gxg_file.gxg04, tabIndex=21;
+DateEdit gxg08=gxg_file.gxg08, tabIndex=22, noEntry;
+Edit gxg05=gxg_file.gxg05, tabIndex=23;
+Edit gxg06=gxg_file.gxg06, tabIndex=24;
+DateEdit gxg09=gxg_file.gxg09, tabIndex=25;
+Edit gxg10=gxg_file.gxg10, tabIndex=26, noEntry;
+DateEdit gxg11=gxg_file.gxg11, tabIndex=27, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=28;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gxg_file.gxg021,gxg_file.gxgconf,formonly.imgmksg,gxg_file.gxg011,gxg_file.gxg01,formonly.gxf02,formonly.gxf11,formonly.sts,formonly.nma02_1,formonly.gxf03,formonly.gxf26,formonly.gxf05,gxg_file.gxg02,gxg_file.gxguser,gxg_file.gxgmodu,gxg_file.gxgacti,gxg_file.gxggrup,gxg_file.gxgdate,gxg_file.gxgoriu,gxg_file.gxgorig,gxg_file.gxgud01,gxg_file.gxgud07,gxg_file.gxgud13,gxg_file.gxgud08,gxg_file.gxgud14,gxg_file.gxgud02,gxg_file.gxgud09,gxg_file.gxgud15,gxg_file.gxgud03,gxg_file.gxgud10,gxg_file.gxgud04,gxg_file.gxgud11,gxg_file.gxgud05,gxg_file.gxgud12,gxg_file.gxgud06,gxg_file.gxg03,gxg_file.gxg07,gxg_file.gxg04,gxg_file.gxg08,gxg_file.gxg05,gxg_file.gxg06,gxg_file.gxg09,gxg_file.gxg10,gxg_file.gxg11,formonly.cnt)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_hisa02.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Choose the Database")
+Grid gr1
+{
+ <T tb1                                    >
+ [state        |zxy03                      ]
+ [state        |zxy03                      ]
+ [state        |zxy03                      ]
+ [state        |zxy03                      ]
+ [state        |zxy03                      ]
+ [state        |zxy03                      ]
+ [state        |zxy03                      ]
+ [state        |zxy03                      ]
+ [state        |zxy03                      ]
+ [state        |zxy03                      ]
+ <                                         >
+
+}
+END -- gr1
+END -- q_hisa02
+
+TABLES
+zxy_file
+ATTRIBUTES
+Table tb1:tb1;
+CheckBox state=formonly.state type CHAR, tabIndex=1, title="STATE", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit zxy03=zxy_file.zxy03, tabIndex=2, title="Database Name", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hisa02(formonly.state,zxy_file.zxy03)
+END -- INSTRUCTIONS
+

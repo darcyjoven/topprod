@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_perlang.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_perlang")
+VBox VBox1
+Folder folder01
+Page page01(text="Page01")
+Grid gr3257
+{
+ <G group01                                               >
+  Form ID      [gae01               ]
+  Window Title [gaz03                            ][modif]
+  Industry     [gae12            ]
+ [gae11                                 ]
+ <                                                        >
+}
+END -- gr3257
+END -- page01
+END -- folder01
+Table s_gae
+{
+[gae02  |gae03      |gae04                           |gae10                           |gbs06                          ]
+[gae02  |gae03      |gae04                           |gae10                           |gbs06                          ]
+[gae02  |gae03      |gae04                           |gae10                           |gbs06                          ]
+[gae02  |gae03      |gae04                           |gae10                           |gbs06                          ]
+[gae02  |gae03      |gae04                           |gae10                           |gbs06                          ]
+[gae02  |gae03      |gae04                           |gae10                           |gbs06                          ]
+[gae02  |gae03      |gae04                           |gae10                           |gbs06                          ]
+[gae02  |gae03      |gae04                           |gae10                           |gbs06                          ]
+[gae02  |gae03      |gae04                           |gae10                           |gbs06                          ]
+[gae02  |gae03      |gae04                           |gae10                           |gbs06                          ]
+
+}
+END -- s_gae
+Grid gr3258
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------[dummy01                                                               ]
+
+}
+END -- gr3258
+END -- VBox1
+END -- p_perlang
+
+TABLES
+gaz_file,
+gae_file,
+gbs_file
+ATTRIBUTES
+Group group01:group01, text="Program";
+ButtonEdit gae01=gae_file.gae01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Enter Program ID";
+Edit gaz03=gaz_file.gaz03, tabIndex=2, noEntry;
+Button modif:modify_program_name, text="Update";
+ComboBox gae12=gae_file.gae12, tabIndex=11, not null, required;
+CheckBox gae11=gae_file.gae11, tabIndex=3, text="Editing a Customized PER-File Data", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gae02=gae_file.gae02, tabIndex=4, title="Field", not null, required, scroll;
+ComboBox gae03=gae_file.gae03, tabIndex=5, title="Language", not null, required, queryEditable;
+Edit gae04=gae_file.gae04, tabIndex=6, title="Description", scroll, comment="IF Field Name is \'wintitle\', Then This Field is \'NO Entry\'! Using \'Update\' Function!";
+DateEdit gae10=gae_file.gae10, tabIndex=7, title="Modi date", noEntry;
+Edit gbs06=gbs_file.gbs06, tabIndex=8, title="Comments", scroll;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=9, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=10, noEntry;
+Label dummy01:dummy01, text="Warning : IF Field Name is \'wintitle\', Then This Field is \'NO Entry\'! Using \'Update\' Function!";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gae(gae_file.gae02,gae_file.gae03,gae_file.gae04,gae_file.gae10,gbs_file.gbs06)
+SCREEN RECORD Undefined(gae_file.gae01,gaz_file.gaz03,gae_file.gae12,gae_file.gae11,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

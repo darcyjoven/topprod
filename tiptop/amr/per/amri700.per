@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amr/42f/amri700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"amri700")
+VBox VBox1
+Folder pc712
+Page page01(text="Main")
+Table s_msm
+{
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+[msm01               |ima02               |msm02               |msm03                |msm06               |msm07                   ]
+
+}
+END -- s_msm
+END -- page01
+END -- pc712
+Grid gr3893
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr3893
+END -- VBox1
+END -- amri700
+
+TABLES
+ima_file,
+msm_file
+ATTRIBUTES
+ButtonEdit msm01=formonly.msm01 type CHAR, action=controlp, tabIndex=1, title="Item No.", not null, required, image="zoom", comment="<^P>Qry Item #";
+Edit ima02=ima_file.ima02, tabIndex=2, title="Part Name Spec.", noEntry;
+ButtonEdit msm02=formonly.msm02 type CHAR, action=controlp, tabIndex=3, title="Delivery Address", not null, required, image="zoom", comment="<^P>Qry Delivers Address,Enters the material Production Plant which Purchase deliver address";
+ButtonEdit msm03=formonly.msm03 type CHAR, action=controlp, tabIndex=4, title="Warehouse Vender No.", not null, required, image="zoom", comment="<^P>Qry Warehouse";
+ButtonEdit msm06=formonly.msm06 type CHAR, action=controlp, tabIndex=5, title="Production Plant", not null, required, image="zoom", comment="<^P>Qry Prod Dept,Input Item Prod.Plant";
+Edit msm07=msm_file.msm07, tabIndex=6, title="Memo", comment="Enter Memo";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=7, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_msm(formonly.msm01,ima_file.ima02,formonly.msm02,formonly.msm03,formonly.msm06,msm_file.msm07)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

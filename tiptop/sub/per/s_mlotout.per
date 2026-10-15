@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_mlotout.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_mlotout")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4614
+{
+ Stock-in No. [rvbs01                        ]   O_Unit [ounit          ]
+ Line No.     [rvbs02                        ]   O_Qty  [oqty           ]
+ Seq          [rvbs13                        ]   s_Unit [sunit          ]
+ Item No.     [rvbs021                       ]   Fac    [fac            ]
+ Desc         [ima02                         ]
+ Spec         [ima021                        ]   s_Qty  [sqty           ]
+
+
+
+
+
+
+
+
+
+}
+END -- gr4614
+END -- page01
+END -- folder01
+Table s_rvbs
+{
+[rvbs022|sel      |rvbs03       |rvbs04   |rvbs05       |imgs08       |rvbs07      |rvbs08   |rvbs06   |rvbs10   |rvbs11   |rvbs12   ]
+[rvbs022|sel      |rvbs03       |rvbs04   |rvbs05       |imgs08       |rvbs07      |rvbs08   |rvbs06   |rvbs10   |rvbs11   |rvbs12   ]
+[rvbs022|sel      |rvbs03       |rvbs04   |rvbs05       |imgs08       |rvbs07      |rvbs08   |rvbs06   |rvbs10   |rvbs11   |rvbs12   ]
+[rvbs022|sel      |rvbs03       |rvbs04   |rvbs05       |imgs08       |rvbs07      |rvbs08   |rvbs06   |rvbs10   |rvbs11   |rvbs12   ]
+[rvbs022|sel      |rvbs03       |rvbs04   |rvbs05       |imgs08       |rvbs07      |rvbs08   |rvbs06   |rvbs10   |rvbs11   |rvbs12   ]
+[rvbs022|sel      |rvbs03       |rvbs04   |rvbs05       |imgs08       |rvbs07      |rvbs08   |rvbs06   |rvbs10   |rvbs11   |rvbs12   ]
+[rvbs022|sel      |rvbs03       |rvbs04   |rvbs05       |imgs08       |rvbs07      |rvbs08   |rvbs06   |rvbs10   |rvbs11   |rvbs12   ]
+[rvbs022|sel      |rvbs03       |rvbs04   |rvbs05       |imgs08       |rvbs07      |rvbs08   |rvbs06   |rvbs10   |rvbs11   |rvbs12   ]
+[rvbs022|sel      |rvbs03       |rvbs04   |rvbs05       |imgs08       |rvbs07      |rvbs08   |rvbs06   |rvbs10   |rvbs11   |rvbs12   ]
+[rvbs022|sel      |rvbs03       |rvbs04   |rvbs05       |imgs08       |rvbs07      |rvbs08   |rvbs06   |rvbs10   |rvbs11   |rvbs12   ]
+
+}
+END -- s_rvbs
+END -- VBox1
+END -- s_mlotout
+
+TABLES
+rvbs_file
+ATTRIBUTES
+Edit rvbs01=rvbs_file.rvbs01, tabIndex=1, noEntry, not null, required;
+Edit ounit=formonly.ounit type CHAR, tabIndex=9, noEntry;
+Edit rvbs02=rvbs_file.rvbs02, tabIndex=2, noEntry, not null, required;
+Edit oqty=formonly.oqty type CHAR, tabIndex=9, noEntry;
+Edit rvbs13=rvbs_file.rvbs13, tabIndex=2, noEntry, not null, required;
+Edit sunit=formonly.sunit type CHAR, tabIndex=9, noEntry;
+Edit rvbs021=formonly.rvbs021 type CHAR, tabIndex=9, noEntry;
+Edit fac=formonly.fac type CHAR, tabIndex=9, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=9, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=9, noEntry;
+Edit sqty=formonly.sqty type CHAR, tabIndex=9, noEntry;
+Edit rvbs022=rvbs_file.rvbs022, tabIndex=2, title="Serial No.", not null, required;
+CheckBox sel=formonly.sel type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rvbs03=rvbs_file.rvbs03, tabIndex=3, title="Serial No.", noEntry, not null, required;
+Edit rvbs04=rvbs_file.rvbs04, tabIndex=4, title="External Lot No.", noEntry, not null, required;
+DateEdit rvbs05=rvbs_file.rvbs05, tabIndex=5, title="Manufactured on", noEntry, not null, required;
+Edit imgs08=formonly.imgs08 type CHAR, tabIndex=6, title="Qty", noEntry;
+ComboBox rvbs07=rvbs_file.rvbs07, tabIndex=7, title="Type", noEntry, queryEditable, items=(("1", %"Order"),("2", %"Work Order"),("3", %"Project"));
+Edit rvbs08=rvbs_file.rvbs08, tabIndex=8, title="Document No.", noEntry, not null, required;
+Edit rvbs06=rvbs_file.rvbs06, tabIndex=9, title="Qty";
+Edit rvbs10=rvbs_file.rvbs10, tabIndex=10, title="Qty", noEntry;
+Edit rvbs11=rvbs_file.rvbs11, tabIndex=11, title="Qty", noEntry;
+Edit rvbs12=rvbs_file.rvbs12, tabIndex=12, title="Qty", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvbs(rvbs_file.rvbs022,formonly.sel,rvbs_file.rvbs03,rvbs_file.rvbs04,rvbs_file.rvbs05,formonly.imgs08,rvbs_file.rvbs07,rvbs_file.rvbs08,rvbs_file.rvbs06,rvbs_file.rvbs10,rvbs_file.rvbs11,rvbs_file.rvbs12)
+SCREEN RECORD Undefined(rvbs_file.rvbs01,formonly.ounit,rvbs_file.rvbs02,formonly.oqty,rvbs_file.rvbs13,formonly.sunit,formonly.rvbs021,formonly.fac,formonly.ima02,formonly.ima021,formonly.sqty)
+END -- INSTRUCTIONS
+

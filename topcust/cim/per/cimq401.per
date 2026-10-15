@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cim/4fd/cimq401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"cimq401")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr3161
+{
+ Warehouse #         [imd01     ]
+ Name                [imd02               ]
+}
+END -- gr3161
+END -- page01
+END -- folder01
+Table s_img
+{
+[img01               |ima02               |ima021               |imaud10       |img09|img10          |oeb13      |oea24     |oeb14                 ]
+[img01               |ima02               |ima021               |imaud10       |img09|img10          |oeb13      |oea24     |oeb14                 ]
+[img01               |ima02               |ima021               |imaud10       |img09|img10          |oeb13      |oea24     |oeb14                 ]
+[img01               |ima02               |ima021               |imaud10       |img09|img10          |oeb13      |oea24     |oeb14                 ]
+[img01               |ima02               |ima021               |imaud10       |img09|img10          |oeb13      |oea24     |oeb14                 ]
+[img01               |ima02               |ima021               |imaud10       |img09|img10          |oeb13      |oea24     |oeb14                 ]
+[img01               |ima02               |ima021               |imaud10       |img09|img10          |oeb13      |oea24     |oeb14                 ]
+[img01               |ima02               |ima021               |imaud10       |img09|img10          |oeb13      |oea24     |oeb14                 ]
+[img01               |ima02               |ima021               |imaud10       |img09|img10          |oeb13      |oea24     |oeb14                 ]
+[img01               |ima02               |ima021               |imaud10       |img09|img10          |oeb13      |oea24     |oeb14                 ]
+
+}
+END -- s_img
+Grid gr3162
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------                                                            Amount [cn1                   ]
+
+}
+END -- gr3162
+END -- VBox1
+END -- cimq401
+
+TABLES
+img_file,
+imd_file,
+ima_file
+ATTRIBUTES
+ButtonEdit imd01=imd_file.imd01, action=controlp, tabIndex=1, image="zoom.png";
+Edit imd02=imd_file.imd02, tabIndex=2, noEntry;
+ButtonEdit img01=img_file.img01, action=controlp, tabIndex=3, title="Item No.", not null, required, image="zoom", comment="Please by QBE, Enter Item# to Query";
+Edit ima02=ima_file.ima02, tabIndex=4, title="P/N";
+Edit ima021=ima_file.ima021, tabIndex=5, title="Spec.";
+Edit imaud10=formonly.imaud10, tabIndex=10, title=%"imaud10";
+Edit img09=img_file.img09, tabIndex=6, title="Unit";
+Edit img10=img_file.img10, tabIndex=7, title="Inventory Qty", not null, required;
+Edit oeb13=formonly.oeb13, tabIndex=11, title=%"oeb13";
+Edit oea24=formonly.oea24, tabIndex=12, title=%"oea24";
+Edit oeb14=formonly.oeb14, tabIndex=13, title=%"oeb14";
+Edit cnt=formonly.cnt type CHAR, tabIndex=8;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=9;
+Edit cn1=formonly.cn1 type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_img(img_file.img01,ima_file.ima02,ima_file.ima021,formonly.imaud10,img_file.img09,img_file.img10,formonly.oeb13,formonly.oea24,formonly.oeb14)
+SCREEN RECORD Undefined(imd_file.imd01,imd_file.imd02,formonly.cnt,formonly.cn2,formonly.cn1)
+END -- INSTRUCTIONS
+

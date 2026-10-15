@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct004.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axct004")
+VBox vb3
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ Item No.            [cao01                                       ]
+                     [ima02                                       ]
+ Date                [cao02       ]
+ Cost Method         [cao07                      ]
+ Category No.        [cao08                         ]
+ Quantity            [cao03               ]
+
+}
+END -- gr1
+END -- page01
+Page info(text="Info")
+Grid gr2
+{
+ Record Owner [caouser   ]   Last Modified by   [caomodu     ]   Data Valid Code [caoacti   ]
+ Department   [caogrup   ]   Create/Modify Date [caodate     ]
+ Record Orig. [caooriu   ]
+ Dept Orig.   [caoorig   ]
+
+}
+END -- gr2
+END -- info
+END -- pc1
+Grid gr3
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr3
+END -- vb3
+END -- axct004
+
+TABLES
+cao_file
+ATTRIBUTES
+ButtonEdit cao01=cao_file.cao01, action=controlp, tabIndex=1, image="zoom";
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2, noEntry;
+DateEdit cao02=cao_file.cao02, tabIndex=3;
+ComboBox cao07=cao_file.cao07, tabIndex=5, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually Batch Cost"),("4", "Identify Manually Item Cost"),("5", "Identify Manually Store Profit Center"));
+ButtonEdit cao08=cao_file.cao08, action=controlp, tabIndex=4, not null, required, image="zoom.png";
+Edit cao03=cao_file.cao03, tabIndex=5;
+Edit caouser=cao_file.caouser, tabIndex=6, noEntry;
+Edit caomodu=cao_file.caomodu, tabIndex=7, noEntry;
+Edit caoacti=cao_file.caoacti, tabIndex=8, noEntry, upShift;
+Edit caogrup=cao_file.caogrup, tabIndex=9, noEntry;
+DateEdit caodate=cao_file.caodate, tabIndex=10, noEntry;
+Edit caooriu=cao_file.caooriu, tabIndex=11, noEntry;
+Edit caoorig=cao_file.caoorig, tabIndex=12, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cao_file.cao01,formonly.ima02,cao_file.cao02,cao_file.cao07,cao_file.cao08,cao_file.cao03,cao_file.caouser,cao_file.caomodu,cao_file.caoacti,cao_file.caogrup,cao_file.caodate,cao_file.caooriu,cao_file.caoorig,formonly.cnt)
+END -- INSTRUCTIONS
+

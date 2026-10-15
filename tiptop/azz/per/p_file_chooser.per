@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_file_chooser.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"p_file_chooser")
+Group gb2333
+VBox VBox1
+Grid gr3196
+{
+ Dir [dir                                               ][go  ][home]
+
+}
+END -- gr3196
+Table s_dir(unsizableColumns)
+{
+[file                                    ]
+[file                                    ]
+[file                                    ]
+[file                                    ]
+[file                                    ]
+[file                                    ]
+[file                                    ]
+[file                                    ]
+[file                                    ]
+[file                                    ]
+
+}
+END -- s_dir
+END -- VBox1
+END -- gb2333
+END -- p_file_chooser
+
+ATTRIBUTES
+Edit dir=formonly.dir type CHAR, tabIndex=1;
+Button go:go, text="go";
+Button home:home, text="home";
+Edit file=formonly.file type CHAR, tabIndex=2, title="File name";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_dir(formonly.file)
+SCREEN RECORD Undefined(formonly.dir)
+END -- INSTRUCTIONS
+

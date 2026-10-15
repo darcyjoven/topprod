@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi228.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi228")
+VBox vb13
+Folder folder01
+Page page01(text="Main")
+Grid gr1291
+{
+ Cust Code           [tqo01           ]  Customer Abbreviation [occ02               ]
+
+}
+END -- gr1291
+END -- page01
+Page Page7(text=%"Info")
+Grid gr8
+{
+ Record Owner        [tqouser   ] Last Modified by    [tqomodu   ] Data Valid Code     [tqoacti   ]
+ Department          [tqogrup   ] Create/Modify Date  [tqodate   ]
+}
+END -- gr8
+END -- Page7
+END -- folder01
+Table s_tqo
+{
+[tqo03     |tqo02      |tqm02               |tqm03     |tqa02                         |tqo04           |tqoud01   |tqoud02   |tqoud03    |tqoud04    |tqoud05    |tqoud06    |tqoud07    |tqoud08    |tqoud09    |tqoud10    |tqoud11   |tqoud12  |tqoud13   |tqoud14   |tqoud15    ]
+[tqo03     |tqo02      |tqm02               |tqm03     |tqa02                         |tqo04           |tqoud01   |tqoud02   |tqoud03    |tqoud04    |tqoud05    |tqoud06    |tqoud07    |tqoud08    |tqoud09    |tqoud10    |tqoud11   |tqoud12  |tqoud13   |tqoud14   |tqoud15    ]
+[tqo03     |tqo02      |tqm02               |tqm03     |tqa02                         |tqo04           |tqoud01   |tqoud02   |tqoud03    |tqoud04    |tqoud05    |tqoud06    |tqoud07    |tqoud08    |tqoud09    |tqoud10    |tqoud11   |tqoud12  |tqoud13   |tqoud14   |tqoud15    ]
+[tqo03     |tqo02      |tqm02               |tqm03     |tqa02                         |tqo04           |tqoud01   |tqoud02   |tqoud03    |tqoud04    |tqoud05    |tqoud06    |tqoud07    |tqoud08    |tqoud09    |tqoud10    |tqoud11   |tqoud12  |tqoud13   |tqoud14   |tqoud15    ]
+[tqo03     |tqo02      |tqm02               |tqm03     |tqa02                         |tqo04           |tqoud01   |tqoud02   |tqoud03    |tqoud04    |tqoud05    |tqoud06    |tqoud07    |tqoud08    |tqoud09    |tqoud10    |tqoud11   |tqoud12  |tqoud13   |tqoud14   |tqoud15    ]
+[tqo03     |tqo02      |tqm02               |tqm03     |tqa02                         |tqo04           |tqoud01   |tqoud02   |tqoud03    |tqoud04    |tqoud05    |tqoud06    |tqoud07    |tqoud08    |tqoud09    |tqoud10    |tqoud11   |tqoud12  |tqoud13   |tqoud14   |tqoud15    ]
+[tqo03     |tqo02      |tqm02               |tqm03     |tqa02                         |tqo04           |tqoud01   |tqoud02   |tqoud03    |tqoud04    |tqoud05    |tqoud06    |tqoud07    |tqoud08    |tqoud09    |tqoud10    |tqoud11   |tqoud12  |tqoud13   |tqoud14   |tqoud15    ]
+[tqo03     |tqo02      |tqm02               |tqm03     |tqa02                         |tqo04           |tqoud01   |tqoud02   |tqoud03    |tqoud04    |tqoud05    |tqoud06    |tqoud07    |tqoud08    |tqoud09    |tqoud10    |tqoud11   |tqoud12  |tqoud13   |tqoud14   |tqoud15    ]
+[tqo03     |tqo02      |tqm02               |tqm03     |tqa02                         |tqo04           |tqoud01   |tqoud02   |tqoud03    |tqoud04    |tqoud05    |tqoud06    |tqoud07    |tqoud08    |tqoud09    |tqoud10    |tqoud11   |tqoud12  |tqoud13   |tqoud14   |tqoud15    ]
+[tqo03     |tqo02      |tqm02               |tqm03     |tqa02                         |tqo04           |tqoud01   |tqoud02   |tqoud03    |tqoud04    |tqoud05    |tqoud06    |tqoud07    |tqoud08    |tqoud09    |tqoud10    |tqoud11   |tqoud12  |tqoud13   |tqoud14   |tqoud15    ]
+
+}
+END -- s_tqo
+Grid gr1292
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr1292
+END -- vb13
+END -- atmi228
+
+TABLES
+tqo_file
+ATTRIBUTES
+ButtonEdit tqo01=tqo_file.tqo01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="Key Field, No Blank/Repeated! ";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=2, noEntry;
+Edit tqouser=tqo_file.tqouser, tabIndex=340, noEntry;
+Edit tqomodu=tqo_file.tqomodu, tabIndex=341, noEntry;
+Edit tqoacti=tqo_file.tqoacti, tabIndex=342, noEntry;
+Edit tqogrup=tqo_file.tqogrup, tabIndex=343, noEntry;
+DateEdit tqodate=tqo_file.tqodate, tabIndex=344, noEntry;
+Edit tqo03=tqo_file.tqo03, tabIndex=3, title="Sequence", not null, required, comment="KEY Field, No Blank/Repeated!";
+ButtonEdit tqo02=tqo_file.tqo02, action=controlp, tabIndex=4, title="Price Code", not null, required, image="zoom";
+Edit tqm02=formonly.tqm02 type CHAR, tabIndex=5, title="Price Name", noEntry;
+Edit tqm03=formonly.tqm03 type CHAR, tabIndex=6, title="Channel", noEntry;
+Edit tqa02=formonly.tqa02 type CHAR, tabIndex=7, title="Channel Name", noEntry;
+ButtonEdit tqo04=tqo_file.tqo04, action=controlp, tabIndex=10, title="Data Source", noEntry, not null, required, image="zoom.png", comment="<^P>Qry Logestics";
+TextEdit tqoud01=tqo_file.tqoud01, tabIndex=325, title="tqoud01", stretch=NONE;
+Edit tqoud02=tqo_file.tqoud02, tabIndex=326, title="tqoud02";
+Edit tqoud03=tqo_file.tqoud03, tabIndex=327, title="tqoud03";
+Edit tqoud04=tqo_file.tqoud04, tabIndex=328, title="tqoud04";
+Edit tqoud05=tqo_file.tqoud05, tabIndex=329, title="tqoud05";
+Edit tqoud06=tqo_file.tqoud06, tabIndex=330, title="tqoud06";
+Edit tqoud07=tqo_file.tqoud07, tabIndex=331, title="tqoud07";
+Edit tqoud08=tqo_file.tqoud08, tabIndex=332, title="tqoud08";
+Edit tqoud09=tqo_file.tqoud09, tabIndex=333, title="tqoud09";
+Edit tqoud10=tqo_file.tqoud10, tabIndex=334, title="tqoud10";
+Edit tqoud11=tqo_file.tqoud11, tabIndex=335, title="tqoud11";
+Edit tqoud12=tqo_file.tqoud12, tabIndex=336, title="tqoud12";
+Edit tqoud13=tqo_file.tqoud13, tabIndex=337, title="tqoud13";
+Edit tqoud14=tqo_file.tqoud14, tabIndex=338, title="tqoud14";
+Edit tqoud15=tqo_file.tqoud15, tabIndex=339, title="tqoud15";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=9, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_tqo(tqo_file.tqo03,tqo_file.tqo02,formonly.tqm02,formonly.tqm03,formonly.tqa02,tqo_file.tqo04,tqo_file.tqoud01,tqo_file.tqoud02,tqo_file.tqoud03,tqo_file.tqoud04,tqo_file.tqoud05,tqo_file.tqoud06,tqo_file.tqoud07,tqo_file.tqoud08,tqo_file.tqoud09,tqo_file.tqoud10,tqo_file.tqoud11,tqo_file.tqoud12,tqo_file.tqoud13,tqo_file.tqoud14,tqo_file.tqoud15)
+SCREEN RECORD Undefined(tqo_file.tqo01,formonly.occ02,tqo_file.tqouser,tqo_file.tqomodu,tqo_file.tqoacti,tqo_file.tqogrup,tqo_file.tqodate,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmi704.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmi704")
+VBox VBox1
+Folder pc511
+Page page01(text="Main")
+VBox VBox2
+Grid gr2150
+{
+ Vender No.          [ofr01        ] [ofr02           ]                [imgmksg]
+ Company Name        [ofr03                               ]            [       ]
+                     [ofr031                              ]
+ Mail Address        [ofr04                               ]   Phone    [ofr13               ]
+                     [ofr05                               ]   Fax      [ofr14               ]
+                     [ofr06                               ]
+                     [ofr07                               ]
+}
+END -- gr2150
+HBox HBox1
+Group gb1492
+Grid gr2151
+{
+ In Charge           [ofr08               ]
+ Employees           [ofr09     ]
+ Establish Date      [ofr10       ]
+}
+END -- gr2151
+END -- gb1492
+Group gb1493
+Grid gr2152
+{
+ Capital             [ofr11               ]
+ Annual Revenue      [ofr12               ]
+}
+END -- gr2152
+END -- gb1493
+END -- HBox1
+Grid gr2153
+{
+ Product Description [ofr15                                                       ]
+                     [ofr151                                                      ]
+                     [ofr152                                                      ]
+ Memo                [ofr16                                                       ]
+                     [ofr161                                                      ]
+                     [ofr162                                                      ]
+                     [ofr163                                                      ]
+                     [ofr164                                                      ]
+}
+END -- gr2153
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr2154
+{
+ Record Owner        [ofruser   ] Last Modified by    [ofrmodu   ] Data Valid Code     [ofracti   ]
+ Department          [ofrgrup   ] Create/Modify Date  [ofrdate     ]
+ Record Orig.        [ofroriu   ]
+ Dept Orig.          [ofrorig   ]
+}
+END -- gr2154
+END -- info
+END -- pc511
+Grid gr2155
+{
+ ---------- Rows [cnt   ] ----------
+
+}
+END -- gr2155
+END -- VBox1
+END -- axmi704
+
+TABLES
+ofr_file
+ATTRIBUTES
+ButtonEdit ofr01=ofr_file.ofr01, action=controlp, tabIndex=1, image="zoom";
+Edit ofr02=ofr_file.ofr02, tabIndex=2;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit ofr03=ofr_file.ofr03, tabIndex=4;
+Edit ofr031=ofr_file.ofr031, tabIndex=5;
+Edit ofr04=ofr_file.ofr04, tabIndex=6;
+Edit ofr13=ofr_file.ofr13, tabIndex=7;
+Edit ofr05=ofr_file.ofr05, tabIndex=8;
+Edit ofr14=ofr_file.ofr14, tabIndex=9;
+Edit ofr06=ofr_file.ofr06, tabIndex=10;
+Edit ofr07=ofr_file.ofr07, tabIndex=11;
+Edit ofr08=ofr_file.ofr08, tabIndex=12;
+Edit ofr09=ofr_file.ofr09, tabIndex=13;
+DateEdit ofr10=ofr_file.ofr10, tabIndex=14;
+Edit ofr11=ofr_file.ofr11, tabIndex=15;
+Edit ofr12=ofr_file.ofr12, tabIndex=16;
+Edit ofr15=ofr_file.ofr15, tabIndex=17;
+Edit ofr151=ofr_file.ofr151, tabIndex=18;
+Edit ofr152=ofr_file.ofr152, tabIndex=19;
+Edit ofr16=ofr_file.ofr16, tabIndex=20;
+Edit ofr161=ofr_file.ofr161, tabIndex=21;
+Edit ofr162=ofr_file.ofr162, tabIndex=22;
+Edit ofr163=ofr_file.ofr163, tabIndex=23;
+Edit ofr164=ofr_file.ofr164, tabIndex=24;
+Edit ofruser=ofr_file.ofruser, tabIndex=25, noEntry;
+Edit ofrmodu=ofr_file.ofrmodu, tabIndex=26, noEntry;
+Edit ofracti=ofr_file.ofracti, tabIndex=27, noEntry, upShift;
+Edit ofrgrup=ofr_file.ofrgrup, tabIndex=28, noEntry;
+DateEdit ofrdate=ofr_file.ofrdate, tabIndex=29, noEntry;
+Edit ofroriu=ofr_file.ofroriu, tabIndex=501, noEntry;
+Edit ofrorig=ofr_file.ofrorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=30, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ofr_file.ofr01,ofr_file.ofr02,formonly.imgmksg,ofr_file.ofr03,ofr_file.ofr031,ofr_file.ofr04,ofr_file.ofr13,ofr_file.ofr05,ofr_file.ofr14,ofr_file.ofr06,ofr_file.ofr07,ofr_file.ofr08,ofr_file.ofr09,ofr_file.ofr10,ofr_file.ofr11,ofr_file.ofr12,ofr_file.ofr15,ofr_file.ofr151,ofr_file.ofr152,ofr_file.ofr16,ofr_file.ofr161,ofr_file.ofr162,ofr_file.ofr163,ofr_file.ofr164,ofr_file.ofruser,ofr_file.ofrmodu,ofr_file.ofracti,ofr_file.ofrgrup,ofr_file.ofrdate,ofr_file.ofroriu,ofr_file.ofrorig,formonly.cnt)
+END -- INSTRUCTIONS
+

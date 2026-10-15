@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq233.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq233")
+VBox vb15
+Folder folder01
+Page page01(text="Main")
+Grid gr4978
+{
+ Vender No.          [pmc01            ][pmc03      ]
+ Price Type          [pmh22              ]
+                     [                   ]
+}
+END -- gr4978
+END -- page01
+END -- folder01
+Table s_pmh
+{
+[pmh01              |pmh04               |pmh|pmh09     |pmh06        |pmh13 |pmh21     |pmh17|pmh18|ima44   |pmh12               |pmh19              |pmh11 |pmh05 ]
+[pmh01              |pmh04               |pmh|pmh09     |pmh06        |pmh13 |pmh21     |pmh17|pmh18|ima44   |pmh12               |pmh19              |pmh11 |pmh05 ]
+[pmh01              |pmh04               |pmh|pmh09     |pmh06        |pmh13 |pmh21     |pmh17|pmh18|ima44   |pmh12               |pmh19              |pmh11 |pmh05 ]
+[pmh01              |pmh04               |pmh|pmh09     |pmh06        |pmh13 |pmh21     |pmh17|pmh18|ima44   |pmh12               |pmh19              |pmh11 |pmh05 ]
+[pmh01              |pmh04               |pmh|pmh09     |pmh06        |pmh13 |pmh21     |pmh17|pmh18|ima44   |pmh12               |pmh19              |pmh11 |pmh05 ]
+[pmh01              |pmh04               |pmh|pmh09     |pmh06        |pmh13 |pmh21     |pmh17|pmh18|ima44   |pmh12               |pmh19              |pmh11 |pmh05 ]
+[pmh01              |pmh04               |pmh|pmh09     |pmh06        |pmh13 |pmh21     |pmh17|pmh18|ima44   |pmh12               |pmh19              |pmh11 |pmh05 ]
+[pmh01              |pmh04               |pmh|pmh09     |pmh06        |pmh13 |pmh21     |pmh17|pmh18|ima44   |pmh12               |pmh19              |pmh11 |pmh05 ]
+[pmh01              |pmh04               |pmh|pmh09     |pmh06        |pmh13 |pmh21     |pmh17|pmh18|ima44   |pmh12               |pmh19              |pmh11 |pmh05 ]
+[pmh01              |pmh04               |pmh|pmh09     |pmh06        |pmh13 |pmh21     |pmh17|pmh18|ima44   |pmh12               |pmh19              |pmh11 |pmh05 ]
+
+}
+END -- s_pmh
+Grid gr4979
+{
+ ----------Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4979
+END -- vb15
+END -- apmq233
+
+TABLES
+pmh_file
+ATTRIBUTES
+ButtonEdit pmc01=formonly.pmc01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=2, noEntry;
+RadioGroup pmh22=pmh_file.pmh22, tabIndex=19, noEntry, items=(("1", "General"),("2", "Subcontracting"));
+ButtonEdit pmh01=formonly.pmh01 type CHAR, action=controlp, tabIndex=3, title="Item No.", image="zoom";
+Edit pmh04=formonly.pmh04 type CHAR, tabIndex=4, title="Vender Item#";
+CheckBox pmh=formonly.pmh08 type CHAR, tabIndex=5, title="QC", valueChecked = "Y", valueUnchecked = "N";
+ComboBox pmh09=formonly.pmh09 type CHAR, tabIndex=6, title="QC Degree", noEntry, queryEditable, items=(("N", %"Normal QC"),("T", %"Strict QC"),("R", %"Reduced-Qty QC"));
+DateEdit pmh06=formonly.pmh06 type CHAR, tabIndex=7, title="Approval Dat";
+Edit pmh13=formonly.pmh13 type CHAR, tabIndex=8, title="Curr.";
+Edit pmh21=pmh_file.pmh21, tabIndex=17, title="pmh21";
+Edit pmh17=formonly.pmh17 type CHAR, tabIndex=9, title="Tax";
+Edit pmh18=formonly.pmh18 type CHAR, tabIndex=10, title="Rat";
+Edit ima44=formonly.ima44 type CHAR, tabIndex=11, title="Pur Unit Unit Price";
+Edit pmh12=formonly.pmh12 type CHAR, tabIndex=12;
+Edit pmh19=formonly.pmh19 type CHAR, tabIndex=13, title="Unit Tax Price";
+Edit pmh11=formonly.pmh11 type CHAR, tabIndex=14, title="Ratio";
+ComboBox pmh05=formonly.pmh05 type CHAR, tabIndex=15, title="Appr.", noEntry, queryEditable, items=(("0", %"Approved"),("1", %"Approving"),("2", %"UnApprove"));
+Edit cnt=formonly.cnt type CHAR, tabIndex=16;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=18, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmh(formonly.pmh01,formonly.pmh04,formonly.pmh08,formonly.pmh09,formonly.pmh06,formonly.pmh13,pmh_file.pmh21,formonly.pmh17,formonly.pmh18,formonly.ima44,formonly.pmh12,formonly.pmh19,formonly.pmh11,formonly.pmh05)
+SCREEN RECORD Undefined(formonly.pmc01,formonly.pmc03,pmh_file.pmh22,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

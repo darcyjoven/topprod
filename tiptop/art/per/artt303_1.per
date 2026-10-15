@@ -1,0 +1,81 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt303_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"artt303_1")
+VBox vb5
+Grid gr6
+{
+
+
+      rae28             [rae28          ]
+      rae29             [rae29          ]
+      rae31             [rae31          ]
+
+}
+END -- gr6
+Table s_rar
+{
+[rar04    |rar05     |rar06      |rar07      |rar08      |raracti ]
+[rar04    |rar05     |rar06      |rar07      |rar08      |raracti ]
+[rar04    |rar05     |rar06      |rar07      |rar08      |raracti ]
+[rar04    |rar05     |rar06      |rar07      |rar08      |raracti ]
+[rar04    |rar05     |rar06      |rar07      |rar08      |raracti ]
+}
+END -- s_rar
+Table s_ras
+{
+[ras04    |ras05     |ras06      |ras07        |ras07_desc  |ras08       |ras08_desc |ras09        |rasacti  ]
+[ras04    |ras05     |ras06      |ras07        |ras07_desc  |ras08       |ras08_desc |ras09        |rasacti  ]
+[ras04    |ras05     |ras06      |ras07        |ras07_desc  |ras08       |ras08_desc |ras09        |rasacti  ]
+[ras04    |ras05     |ras06      |ras07        |ras07_desc  |ras08       |ras08_desc |ras09        |rasacti  ]
+[ras04    |ras05     |ras06      |ras07        |ras07_desc  |ras08       |ras08_desc |ras09        |rasacti  ]
+}
+END -- s_ras
+Grid gr16
+{
+
+
+
+
+ --- Items[cn2 ] --------
+}
+END -- gr16
+END -- vb5
+END -- Form3
+
+TABLES
+rae_file,
+ras_file,
+rar_file
+ATTRIBUTES
+ComboBox rae28=rae_file.rae28, tabIndex=16, not null, required, items=(("1", "1"),("2", "2"));
+ComboBox rae29=rae_file.rae29, tabIndex=17, not null, required, items=(("1", "1"),("2", "2"));
+Edit rae31=rae_file.rae31, tabIndex=18, not null;
+Edit rar04=rar_file.rar04, tabIndex=1, title="rar04", not null, required;
+Edit rar05=rar_file.rar05, tabIndex=2, title="rar05", not null, required;
+Edit rar06=rar_file.rar06, tabIndex=5, title=%"rar06", not null, required;
+Edit rar07=rar_file.rar07, tabIndex=6, title=%"rar07", not null, required;
+Edit rar08=rar_file.rar08, tabIndex=7, title=%"rar08", not null, required;
+CheckBox raracti=rar_file.raracti, tabIndex=8, default = "Y", title=%"raracti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ras04=ras_file.ras04, tabIndex=14, title=%"ras04", not null, required;
+Edit ras05=ras_file.ras05, tabIndex=13, title=%"ras05", not null, required;
+ComboBox ras06=ras_file.ras06, tabIndex=3, title="ras06", not null, required, items=(("01", "Product"),("02", "Product Classification"),("03", "Category"),("04", "Brand"),("05", "Series"),("06", "Model"),("07", "Item Specification"),("08", "Attribute"),("09", "Price"),("10", "10"),("11", "11"));
+ButtonEdit ras07=ras_file.ras07, action=controlp, tabIndex=4, title="ras07", not null, required, image="zoom.png";
+Edit ras07_desc=formonly.ras07_desc type CHAR, tabIndex=9, title=%"ras07_desc", noEntry;
+ButtonEdit ras08=ras_file.ras08, action=controlp, tabIndex=10, title=%"ras08", not null, required, image="zoom.png";
+Edit ras08_desc=formonly.ras08_desc type CHAR, tabIndex=11, title=%"ras08_desc", noEntry;
+Edit ras09=ras_file.ras09, tabIndex=19, title=%"ras09";
+CheckBox rasacti=ras_file.rasacti, tabIndex=12, default = "Y", title=%"rasacti", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rar(rar_file.rar04,rar_file.rar05,rar_file.rar06,rar_file.rar07,rar_file.rar08,rar_file.raracti)
+SCREEN RECORD s_ras(ras_file.ras04,ras_file.ras05,ras_file.ras06,ras_file.ras07,formonly.ras07_desc,ras_file.ras08,formonly.ras08_desc,ras_file.ras09,ras_file.rasacti)
+SCREEN RECORD Undefined(formonly.cn2,rae_file.rae28,rae_file.rae29,rae_file.rae31)
+END -- INSTRUCTIONS
+

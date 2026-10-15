@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_qbe_save.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"cl_qbe_save")
+VBox VBox1
+Grid gr3698
+{
+ Program Code   [gbm03     ]
+ Condition Code [gbm04                                             ]
+[gbm06                                                             ]
+[gbm07                                                             ]
+[gbm08                                                             ]
+ Memo           [gbm05                                             ]
+                [                                                  ]
+                [                                                  ]
+                [                                                  ]
+                [                                                  ]
+[detail_modify  ]
+}
+END -- gr3698
+Table s_gbn
+{
+[gbn05   |gbn09  |gbn03     |gae04          |gbn04                  |date]
+[gbn05   |gbn09  |gbn03     |gae04          |gbn04                  |date]
+[gbn05   |gbn09  |gbn03     |gae04          |gbn04                  |date]
+[gbn05   |gbn09  |gbn03     |gae04          |gbn04                  |date]
+[gbn05   |gbn09  |gbn03     |gae04          |gbn04                  |date]
+
+}
+END -- s_gbn
+END -- VBox1
+END -- cl_qbe_save
+
+TABLES
+gbn_file,
+gbm_file
+ATTRIBUTES
+LABEL gbm03=gbm_file.gbm03;
+Edit gbm04=gbm_file.gbm04, tabIndex=2, not null, required;
+CheckBox gbm06=gbm_file.gbm06, tabIndex=3, text="Default QBE", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gbm07=gbm_file.gbm07, tabIndex=4, text="Set Immediately", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox gbm08=gbm_file.gbm08, tabIndex=5, text="Share with Everyone", not null, required, valueChecked = "Y", valueUnchecked = "N";
+TextEdit gbm05=gbm_file.gbm05, tabIndex=6, stretch=NONE;
+Button detail_modify:detail_modify, text="Detail";
+ComboBox gbn05=gbn_file.gbn05, tabIndex=7, title="Convert", not null, required, items=(("0", %"No Change"),("1", %"Today"),("2", %"The First Day of Month"),("3", %"The Last Day of Month"),("4", %"Increase of ? Days"),("5", %"Decrease of ? Days"));
+Edit gbn09=gbn_file.gbn09, tabIndex=8, title="Days";
+Edit gbn03=gbn_file.gbn03, tabIndex=9, title="Field", noEntry;
+Edit gae04=formonly.gae04 type CHAR, tabIndex=10, title="Field Name", noEntry;
+Edit gbn04=gbn_file.gbn04, tabIndex=11, title="Condition";
+CheckBox date=formonly.date type CHAR, tabIndex=12, title="Date", noEntry, hidden;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gbn(gbn_file.gbn05,gbn_file.gbn09,gbn_file.gbn03,formonly.gae04,gbn_file.gbn04,formonly.date)
+SCREEN RECORD Undefined(gbm_file.gbm03,gbm_file.gbm04,gbm_file.gbm06,gbm_file.gbm07,gbm_file.gbm08,gbm_file.gbm05)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli002.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"ggli002")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+VBox VBox2
+Grid gr2331
+{
+ Group No.           [asa01               ]        [asa04                                             ]
+ Parent Company      [asa02               ]        [asa07                                             ]
+ Plant Name          [asg02               ]        <G gb1                                                     >
+ Logistics code      [asg03               ]         [asa09                                ]
+ Book No.            [asa03         ]                Avg. Exchange Rate [asa05                                ]
+                                                     Conbine Month      [asa06              ]
+                                                   <                                                          >
+
+}
+END -- gr2331
+END -- VBox2
+END -- page01
+Page info(text="Info")
+Grid gr2332
+{
+ Record Owner        [asauser   ]   Last Modified by    [asamodu   ]
+ Department          [asagrup   ]   Create/Modify Date  [asadate     ]
+
+
+}
+END -- gr2332
+END -- info
+END -- folder01
+Table s_asb
+{
+[asb04       |asg02b              |asb05 |asb07    |asb06     |asb11       |asb12                      |asb13                      |aag02                      |asb08     ]
+[asb04       |asg02b              |asb05 |asb07    |asb06     |asb11       |asb12                      |asb13                      |aag02                      |asb08     ]
+[asb04       |asg02b              |asb05 |asb07    |asb06     |asb11       |asb12                      |asb13                      |aag02                      |asb08     ]
+[asb04       |asg02b              |asb05 |asb07    |asb06     |asb11       |asb12                      |asb13                      |aag02                      |asb08     ]
+[asb04       |asg02b              |asb05 |asb07    |asb06     |asb11       |asb12                      |asb13                      |aag02                      |asb08     ]
+[asb04       |asg02b              |asb05 |asb07    |asb06     |asb11       |asb12                      |asb13                      |aag02                      |asb08     ]
+[asb04       |asg02b              |asb05 |asb07    |asb06     |asb11       |asb12                      |asb13                      |aag02                      |asb08     ]
+[asb04       |asg02b              |asb05 |asb07    |asb06     |asb11       |asb12                      |asb13                      |aag02                      |asb08     ]
+[asb04       |asg02b              |asb05 |asb07    |asb06     |asb11       |asb12                      |asb13                      |aag02                      |asb08     ]
+[asb04       |asg02b              |asb05 |asb07    |asb06     |asb11       |asb12                      |asb13                      |aag02                      |asb08     ]
+}
+END -- s_asb
+Grid gr2333
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2333
+END -- VBox1
+END -- ggli002
+
+TABLES
+asb_file,
+asa_file
+ATTRIBUTES
+ButtonEdit asa01=asa_file.asa01, action=controlp, tabIndex=7, image="zoom.png";
+CheckBox asa04=asa_file.asa04, tabIndex=21, text="IS topest Company", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit asa02=asa_file.asa02, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Qry Company Data";
+CheckBox asa07=asa_file.asa07, tabIndex=25, text="Layered merger", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit asg02=formonly.asg02 type VARCHAR, tabIndex=3, noEntry;
+Group gb1:gb1;
+CheckBox asa09=asa_file.asa09, tabIndex=22, text="Combination of Separate Accounts", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox asa05=asa_file.asa05, tabIndex=23, not null, required, items=(("1", "NewText"),("2", "NewText"));
+ComboBox asa06=asa_file.asa06, tabIndex=24, not null, required, items=(("1", "Month"),("2", "Quarter"),("3", "Half A Year"),("4", "Yer"));
+Edit asg03=formonly.asg03 type VARCHAR, tabIndex=4, noEntry;
+ButtonEdit asa03=asa_file.asa03, action=controlp, tabIndex=5, noEntry, not null, required, image="zoom", comment="<^P>Qry Book#";
+Edit asauser=asa_file.asauser, tabIndex=8, noEntry;
+Edit asamodu=asa_file.asamodu, tabIndex=9, noEntry;
+Edit asagrup=asa_file.asagrup, tabIndex=1, noEntry;
+DateEdit asadate=asa_file.asadate, tabIndex=10, noEntry;
+ButtonEdit asb04=asb_file.asb04, action=controlp, tabIndex=11, title="Daughter Co", not null, required, image="zoom", comment="<^P>Qry Company Data";
+Edit asg02b=formonly.asg02b type VARCHAR, tabIndex=12, title="Co.Name", noEntry;
+ButtonEdit asb05=asb_file.asb05, action=controlp, tabIndex=13, title="Book#", not null, required, image="zoom", comment="<^P>Qry Book#";
+Edit asb07=asb_file.asb07, tabIndex=14, title="Hoding%", not null, required;
+CheckBox asb06=asb_file.asb06, tabIndex=26, title="Into the merger", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit asb11=asb_file.asb11, tabIndex=15, title="Investment", not null, required;
+Edit asb12=asb_file.asb12, tabIndex=16, title="Stock", not null, required;
+ButtonEdit asb13=asb_file.asb13, action=controlp, tabIndex=17, title="Account No.", not null, required, image="zoom", comment="<^P>Qry Account No.";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=6, title="Account Title", noEntry;
+DateEdit asb08=asb_file.asb08, tabIndex=18, title="Tran.Date";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asb(asb_file.asb04,formonly.asg02b,asb_file.asb05,asb_file.asb07,asb_file.asb06,asb_file.asb11,asb_file.asb12,asb_file.asb13,formonly.aag02,asb_file.asb08)
+SCREEN RECORD Undefined(asa_file.asa01,asa_file.asa04,asa_file.asa02,asa_file.asa09,asa_file.asa05,asa_file.asa06,formonly.asg02,formonly.asg03,asa_file.asa03,asa_file.asauser,asa_file.asamodu,asa_file.asagrup,asa_file.asadate,formonly.cnt,formonly.cn2,asa_file.asa07)
+END -- INSTRUCTIONS
+

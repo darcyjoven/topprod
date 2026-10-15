@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/acs/42f/acsi200.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acsi200")
+VBox VBox1
+Folder pc1
+Page page01(text="Main")
+Grid gr1
+{
+ <G group01                                           ><G group02                                                  >
+  Item No.            [csa01                         ]  Source Code                         [ima08               ]
+                      [ima02                         ]  Inv.Unit                            [ima25               ]
+  Simulation Version  [csa02     ]                      Cost Unit                           [ima86               ]
+  Version             [ima05     ]                      Cost/Inventory Unit Conversion Rate [ima86_fac           ]
+
+ [csa03     ]
+ <                                                    ><                                                           >
+ <G group03                                                >
+                              [dummy01   ]   [dummy02   ]
+  Material Cost              [csa0301      ][csa0321      ]
+  Material Overhead Cost     [csa0302      ][csa0322      ]
+  Labor Cost                 [csa0303      ][csa0323      ]
+  Labor Overhead Cost        [csa0304      ][csa0324      ]
+  Fixed Overhead Cost        [csa0305      ][csa0325      ]
+  Variable Overhead Cost     [csa0306      ][csa0326      ]
+  Sub Cost                   [csa0307      ][csa0327      ]
+  Sub Fixed Overhead Cost    [csa0308      ][csa0328      ]
+  Sub Variable Overhead Cost [csa0309      ][csa0329      ]
+  Machine Cost               [csa0310      ][csa0330      ]
+  Additional Cost            [csa0312      ][csa0331      ]
+  Purchase Cost              [csa0311      ]
+ <                                                         >
+
+}
+END -- gr1
+END -- page01
+Page info(text="Info")
+Grid gr2
+{
+ Record Owner        [csauser   ] Last Modified by    [csamodu   ] Data Valid Code     [csaacti   ]
+ Department          [csagrup   ] Create/Modify Date  [csadate   ]
+ Record Orig.        [csaoriu   ]
+ Dept Orig.          [csaorig   ]
+}
+END -- gr2
+END -- info
+END -- pc1
+Grid gr3
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3
+END -- VBox1
+END -- acsi200
+
+TABLES
+csa_file
+ATTRIBUTES
+Group group01:group01;
+Edit csa01=csa_file.csa01, tabIndex=1, required;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=2;
+Edit csa02=csa_file.csa02, tabIndex=3;
+Edit ima05=formonly.ima05 type CHAR, tabIndex=4;
+Edit csa03=formonly.csa03 type CHAR, tabIndex=5;
+Group group02:group02;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=6;
+Edit ima25=formonly.ima25 type CHAR, tabIndex=7;
+Edit ima86=formonly.ima86 type VARCHAR, tabIndex=8;
+Edit ima86_fac=formonly.ima86_fac type DECIMAL, tabIndex=9;
+Group group03:group03, text="INPUT";
+Label dummy01:dummy01, text=" C.L Cost";
+Label dummy02:dummy02, text=" D.L Cost";
+Edit csa0301=csa_file.csa0301, tabIndex=10;
+Edit csa0321=csa_file.csa0321, tabIndex=11;
+Edit csa0302=csa_file.csa0302, tabIndex=12;
+Edit csa0322=csa_file.csa0322, tabIndex=13;
+Edit csa0303=csa_file.csa0303, tabIndex=14;
+Edit csa0323=csa_file.csa0323, tabIndex=15;
+Edit csa0304=csa_file.csa0304, tabIndex=16;
+Edit csa0324=csa_file.csa0324, tabIndex=17;
+Edit csa0305=csa_file.csa0305, tabIndex=18;
+Edit csa0325=csa_file.csa0325, tabIndex=19;
+Edit csa0306=csa_file.csa0306, tabIndex=20;
+Edit csa0326=csa_file.csa0326, tabIndex=21;
+Edit csa0307=csa_file.csa0307, tabIndex=22;
+Edit csa0327=csa_file.csa0327, tabIndex=23;
+Edit csa0308=csa_file.csa0308, tabIndex=24;
+Edit csa0328=csa_file.csa0328, tabIndex=25;
+Edit csa0309=csa_file.csa0309, tabIndex=26;
+Edit csa0329=csa_file.csa0329, tabIndex=27;
+Edit csa0310=csa_file.csa0310, tabIndex=28;
+Edit csa0330=csa_file.csa0330, tabIndex=29;
+Edit csa0312=csa_file.csa0312, tabIndex=30;
+Edit csa0331=csa_file.csa0331, tabIndex=31;
+Edit csa0311=csa_file.csa0311, tabIndex=32;
+Edit csauser=csa_file.csauser, tabIndex=33, noEntry;
+Edit csamodu=csa_file.csamodu, tabIndex=34, noEntry;
+Edit csaacti=csa_file.csaacti, tabIndex=35, noEntry, upShift;
+Edit csagrup=csa_file.csagrup, tabIndex=36, noEntry;
+DateEdit csadate=csa_file.csadate, tabIndex=37, noEntry;
+Edit csaoriu=csa_file.csaoriu, tabIndex=501, noEntry;
+Edit csaorig=csa_file.csaorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=38, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(csa_file.csa01,formonly.ima02,csa_file.csa02,formonly.ima05,formonly.csa03,formonly.ima08,formonly.ima25,formonly.ima86,formonly.ima86_fac,csa_file.csa0301,csa_file.csa0321,csa_file.csa0302,csa_file.csa0322,csa_file.csa0303,csa_file.csa0323,csa_file.csa0304,csa_file.csa0324,csa_file.csa0305,csa_file.csa0325,csa_file.csa0306,csa_file.csa0326,csa_file.csa0307,csa_file.csa0327,csa_file.csa0308,csa_file.csa0328,csa_file.csa0309,csa_file.csa0329,csa_file.csa0310,csa_file.csa0330,csa_file.csa0312,csa_file.csa0331,csa_file.csa0311,csa_file.csauser,csa_file.csamodu,csa_file.csaacti,csa_file.csagrup,csa_file.csadate,csa_file.csaoriu,csa_file.csaorig,formonly.cnt)
+END -- INSTRUCTIONS
+

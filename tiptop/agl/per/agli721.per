@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli721.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Amount Source account")
+Grid gr2452
+{
+ <T s_ahd                                                                           >
+ [ahd0|ahd03          |ahd04    |aag02                                             ]
+ [ahd0|ahd03          |ahd04    |aag02                                             ]
+ [ahd0|ahd03          |ahd04    |aag02                                             ]
+ [ahd0|ahd03          |ahd04    |aag02                                             ]
+ [ahd0|ahd03          |ahd04    |aag02                                             ]
+ [ahd0|ahd03          |ahd04    |aag02                                             ]
+ <                                                                                  >
+
+}
+END -- gr2452
+END -- agli721
+
+TABLES
+aag_file,
+ahd_file
+ATTRIBUTES
+Table s_ahd:s_ahd;
+Edit ahd0=ahd_file.ahd02, tabIndex=1, title="Ln#", not null, required, comment="KEY Field, No Blank/Repeated!";
+ButtonEdit ahd03=ahd_file.ahd03, action=controlp, tabIndex=2, title="Source Account", not null, required, image="zoom", comment="<^P> (IQ)";
+ButtonEdit ahd04=ahd_file.ahd04, action=controlp, tabIndex=3, title="Dept.", image="zoom", comment="<^P> Query Dept.";
+Edit aag02=aag_file.aag02, tabIndex=4, title="Account Title", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_ahd(ahd_file.ahd02,ahd_file.ahd03,ahd_file.ahd04,aag_file.aag02)
+END -- INSTRUCTIONS
+

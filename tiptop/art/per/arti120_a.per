@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti120_a.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form1")
+VBox vb3
+Folder pc2
+Page Page3(text=%"Tax Code Detail")
+Table s_rvy
+{
+[rvy02   |rte03   |rte03_n  |rvy03   |rvy04     |gec02   |gec04   |rvy06   ]
+[rvy02   |rte03   |rte03_n  |rvy03   |rvy04     |gec02   |gec04   |rvy06   ]
+[rvy02   |rte03   |rte03_n  |rvy03   |rvy04     |gec02   |gec04   |rvy06   ]
+[rvy02   |rte03   |rte03_n  |rvy03   |rvy04     |gec02   |gec04   |rvy06   ]
+[rvy02   |rte03   |rte03_n  |rvy03   |rvy04     |gec02   |gec04   |rvy06   ]
+[rvy02   |rte03   |rte03_n  |rvy03   |rvy04     |gec02   |gec04   |rvy06   ]
+
+}
+END -- s_rvy
+END -- Page3
+END -- pc2
+Grid gr7
+{
+------ Rows [cnt  ] -------
+
+}
+END -- gr7
+END -- vb3
+END -- Form1
+
+TABLES
+rvy_file
+ATTRIBUTES
+Edit rvy02=rvy_file.rvy02, tabIndex=1, title="rvy02";
+Edit rte03=formonly.rte03 type CHAR, tabIndex=2, title="rte03", noEntry;
+Edit rte03_n=formonly.rte03_n type CHAR, tabIndex=4, title="rte03_n", noEntry;
+Edit rvy03=rvy_file.rvy03, tabIndex=5, title="rvy03";
+ButtonEdit rvy04=rvy_file.rvy04, action=controlp, tabIndex=6, title="rvy04", not null, image="zoom.png";
+Edit gec02=formonly.gec02 type CHAR, tabIndex=7, title="gec02", noEntry;
+Edit gec04=formonly.gec04 type CHAR, tabIndex=8, title="gec04", noEntry;
+Edit rvy06=rvy_file.rvy06, tabIndex=9, title="rvy06", not null;
+Edit cnt=formonly.cnt type CHAR, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvy(rvy_file.rvy02,formonly.rte03,formonly.rte03_n,rvy_file.rvy03,rvy_file.rvy04,formonly.gec02,formonly.gec04,rvy_file.rvy06)
+SCREEN RECORD Undefined(formonly.cnt)
+END -- INSTRUCTIONS
+

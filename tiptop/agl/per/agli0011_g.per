@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli0011_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Batch Generate Account")
+VBox vb3
+Grid gr2329
+{
+ <G group01                                    >
+  Account Title Range [aag01               ]
+
+ <                                             >
+
+}
+END -- gr2329
+Grid gr2330
+{
+ <G group02                                   >
+  Group No.           [axee13              ]
+  Company No.         [axee01              ]
+  Plant Name          [axz02               ]
+  Logistics code      [axz03               ]
+  Book No             [axee00     ]
+ [y                   ]
+                      [dummy01               ]
+ <                                            >
+}
+END -- gr2330
+END -- vb3
+END -- agli0011_g
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit aag01=formonly.aag01 type CHAR, tabIndex=1;
+Group group02:group02;
+ButtonEdit axee13=formonly.axee13 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+ButtonEdit axee01=formonly.axee01 type CHAR, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Query";
+Edit axz02=formonly.axz02 type CHAR, tabIndex=4, noEntry;
+Edit axz03=formonly.axz03 type CHAR, tabIndex=5, noEntry;
+Edit axee00=formonly.axee00 type CHAR, tabIndex=6;
+CheckBox y=formonly.y type CHAR, tabIndex=8, text="Default Account Title", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="Assert don\'t Update";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.aag01,formonly.axee13,formonly.axee01,formonly.axz02,formonly.axz03,formonly.axee00,formonly.y)
+END -- INSTRUCTIONS
+

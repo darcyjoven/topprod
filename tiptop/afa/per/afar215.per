@@ -1,0 +1,72 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afar215.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"afar215")
+VBox VBox1
+Grid Grid1
+{
+ <G grpqbe                                                                                >
+  Asset Category      [faj04               ]  Recall Note No.     [faw01               ]
+  Property No.        [fax05               ]  Date Recalled       [faw02               ]
+                                              Sending Note No.    [faw03               ]
+
+ <                                                                                        >
+
+}
+END -- Grid1
+Group group01(text="INPUT")
+Grid Grid2
+{
+ <G group02                                                                               >
+ [s1                  ] [s2                  ] [s3                  ]
+ [t1                  ] [t2                  ] [t3                  ]
+ [u1                  ] [u2                  ] [u3                  ]
+ <                                                                                        >
+ <G group03                                  ><G group05                                  >
+ [a                                        ]  [b                                        ]
+ <                                           ><                                           >
+
+}
+END -- Grid2
+END -- group01
+Grid Grid3
+{
+[more                                         ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- afar215
+
+ATTRIBUTES
+Group grpqbe:grpqbe, text="QBE";
+Edit faj04=formonly.faj04 type CHAR, tabIndex=1;
+Edit faw01=formonly.faw01 type CHAR, tabIndex=2;
+Edit fax05=formonly.fax05 type CHAR, tabIndex=3;
+DateEdit faw02=formonly.faw02 type DATE, tabIndex=4;
+Edit faw03=formonly.faw03 type CHAR, tabIndex=5;
+Group group02:group02, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=6, queryEditable, items=(("1", %"Asset Category"),("2", %"Property No."),("3", %"Recall Note#"),("4", %"Date Recalled"),("5", %"Sending Note#"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=7, queryEditable, items=(("1", %"Asset Category"),("2", %"Property No."),("3", %"Recall Note#"),("4", %"Date Recalled"),("5", %"Sending Note#"));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=8, queryEditable, items=(("1", %"Asset Category"),("2", %"Property No."),("3", %"Recall Note#"),("4", %"Date Recalled"),("5", %"Sending Note#"));
+CheckBox t1=formonly.t1 type VARCHAR, tabIndex=9, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type VARCHAR, tabIndex=10, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type VARCHAR, tabIndex=11, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type VARCHAR, tabIndex=12, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type VARCHAR, tabIndex=13, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type VARCHAR, tabIndex=14, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group03:group03, text="Data Option";
+RadioGroup a=formonly.a type VARCHAR, tabIndex=15, items=(("1", %"Confirmed"),("2", %"UnConfirmed"),("3", %"All"));
+Group group05:group05, text="Data Option";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=16, items=(("1", %"Posted"),("2", %"Unposted"),("3", %"All"));
+CheckBox more=formonly.more type VARCHAR, tabIndex=17, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.faj04,formonly.faw01,formonly.fax05,formonly.faw02,formonly.faw03,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.a,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

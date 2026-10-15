@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfq020.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[sfb01       |sfb81       |sfb05   |ima02   |ima021  |sfb38        |azf03   |ta_azf01   |tc_shb14      |postdate      |tdate          |cdate          |sfbud05     |edit1           ]
+[sfb01       |sfb81       |sfb05   |ima02   |ima021  |sfb38        |azf03   |ta_azf01   |tc_shb14      |postdate      |tdate          |cdate          |sfbud05     |edit1           ]
+[sfb01       |sfb81       |sfb05   |ima02   |ima021  |sfb38        |azf03   |ta_azf01   |tc_shb14      |postdate      |tdate          |cdate          |sfbud05     |edit1           ]
+[sfb01       |sfb81       |sfb05   |ima02   |ima021  |sfb38        |azf03   |ta_azf01   |tc_shb14      |postdate      |tdate          |cdate          |sfbud05     |edit1           ]
+[sfb01       |sfb81       |sfb05   |ima02   |ima021  |sfb38        |azf03   |ta_azf01   |tc_shb14      |postdate      |tdate          |cdate          |sfbud05     |edit1           ]
+
+
+
+
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid gr3162
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr3162
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit sfb01=formonly.sfb01, action=controlp, tabIndex=1, title=%"sfb01", image="zoom";
+DateEdit sfb81=formonly.sfb81, tabIndex=2, title=%"sfb81";
+ButtonEdit sfb05=formonly.sfb05, action=controlp, tabIndex=3, title=%"sfb05", image="zoom";
+Edit ima02=formonly.ima02, tabIndex=4, title=%"ima02";
+Edit ima021=formonly.ima021, tabIndex=5, title=%"ima021";
+DateEdit sfb38=formonly.sfb38, tabIndex=6, title=%"sfb38";
+Edit azf03=formonly.azf03, tabIndex=7, title=%"sfbud09";
+Edit ta_azf01=formonly.ta_azf01, tabIndex=8, title=%"sfb08";
+Edit tc_shb14=formonly.tc_shb14, tabIndex=9, title=%"sfb081";
+Edit postdate=formonly.postdate, tabIndex=10, title=%"sfb09";
+Edit tdate=formonly.tdate, tabIndex=11, title=%"sfb12";
+Edit cdate=formonly.cdate, tabIndex=12, title=%"dyby";
+Edit sfbud05=formonly.sfbud05, tabIndex=13, title=%"dj";
+Edit edit1=formonly.Edit1, tabIndex=16, title=%"jine";
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(formonly.sfb01,formonly.sfb81,formonly.sfb05,formonly.ima02,formonly.ima021,formonly.sfb38,formonly.azf03,formonly.ta_azf01,formonly.tc_shb14,formonly.postdate,formonly.tdate,formonly.cdate,formonly.sfbud05,formonly.Edit1)
+SCREEN RECORD Undefined(formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

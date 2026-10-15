@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aoo/42f/aooi403.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aooi403")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr4652
+{
+ Indep Seg No.       [gej01               ]
+ Desc                [gej02               ]
+ Length              [gej03     ]
+}
+END -- gr4652
+END -- page01
+Page info(text="Info")
+Grid gr4653
+{
+ Record Owner        [gejuser   ] Last Modified by    [gejmodu   ] Data Valid Code     [gejacti   ]
+ Department          [gejgrup   ] Create/Modify Date  [gejdate   ]
+ Record Orig.        [gejoriu   ]
+ Dept Orig.          [gejorig   ]
+}
+END -- gr4653
+END -- info
+END -- folder01
+Table s_gek
+{
+[gek02     |gek03                         |gek04                         ]
+[gek02     |gek03                         |gek04                         ]
+[gek02     |gek03                         |gek04                         ]
+[gek02     |gek03                         |gek04                         ]
+[gek02     |gek03                         |gek04                         ]
+[gek02     |gek03                         |gek04                         ]
+[gek02     |gek03                         |gek04                         ]
+[gek02     |gek03                         |gek04                         ]
+[gek02     |gek03                         |gek04                         ]
+[gek02     |gek03                         |gek04                         ]
+}
+END -- s_gek
+Grid gr4654
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr4654
+END -- VBox1
+END -- aooi403
+
+TABLES
+gek_file,
+gej_file
+ATTRIBUTES
+ButtonEdit gej01=gej_file.gej01, action=controlp, tabIndex=1, image="zoom";
+Edit gej02=gej_file.gej02, tabIndex=2;
+Edit gej03=gej_file.gej03, tabIndex=3, not null, required;
+Edit gejuser=gej_file.gejuser, tabIndex=4, noEntry;
+Edit gejmodu=gej_file.gejmodu, tabIndex=5, noEntry;
+Edit gejacti=gej_file.gejacti, tabIndex=6, noEntry;
+Edit gejgrup=gej_file.gejgrup, tabIndex=7, noEntry;
+DateEdit gejdate=gej_file.gejdate, tabIndex=8, noEntry;
+Edit gejoriu=gej_file.gejoriu, tabIndex=501, noEntry;
+Edit gejorig=gej_file.gejorig, tabIndex=502, noEntry;
+Edit gek02=gek_file.gek02, tabIndex=9, title="Line No.", not null, required;
+Edit gek03=gek_file.gek03, tabIndex=10, title="Code No.", not null, required, comment="Ought not to be System Symbol,ex *,_,%,?";
+Edit gek04=gek_file.gek04, tabIndex=11, title="Code Description";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gek(gek_file.gek02,gek_file.gek03,gek_file.gek04)
+SCREEN RECORD Undefined(gej_file.gej01,gej_file.gej02,gej_file.gej03,gej_file.gejuser,gej_file.gejmodu,gej_file.gejacti,gej_file.gejgrup,gej_file.gejdate,gej_file.gejoriu,gej_file.gejorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

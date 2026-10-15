@@ -1,0 +1,149 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri072_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Folder Folder1
+Page Page1(action=pg1, text=%"Page1")
+VBox VBox1
+Grid Grid1
+{
+ <G group1                                                                                            >
+   hrde01[hrde01                         ]     hrde02[hrde02                         ]
+   hrde08[hrde08    |hraa12              ]    [hrde09                                ]
+   hrde04[hrde04                         ]     hrde10[hrde10    ]
+   hrde03[hrde03    |hrde03_desc         ]     hrde11[hrde11    ]
+   hrde07[hrde07                                                                     ]
+         [                                                                           ]
+ <                                                                                                    >
+
+}
+END -- Grid1
+Table Table1
+{
+[hrde05  |hrde06  ]
+[hrde05  |hrde06  ]
+[hrde05  |hrde06  ]
+[hrde05  |hrde06  ]
+[hrde05  |hrde06  ]
+
+}
+END -- Table1
+Grid Grid3
+{
+ ---------- cnt [cnt ]cn2 [cn2 ]----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- Page1
+Page Page2(action=pg2, text=%"Page2")
+HBox HBox1(splitter)
+Tree tree(parentIdColumn=pid, idColumn=id, expandedColumn=expanded, isNodeColumn=has_children, imageExpanded="open", imageCollapsed="folder", imageLeaf="file")
+{
+[name                               ]
+[name                               ]
+[name                               ]
+[name                               ]
+[name                               ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- tree
+Table Table2
+{
+[col1    |col2    |col3    |col4    |col5    |col6    |col7    |col8    |col9    |col10   |col11   |col12   |col13   |col14   |col15   |col16   |col17   |col18   |col19   |col20   ]
+[col1    |col2    |col3    |col4    |col5    |col6    |col7    |col8    |col9    |col10   |col11   |col12   |col13   |col14   |col15   |col16   |col17   |col18   |col19   |col20   ]
+[col1    |col2    |col3    |col4    |col5    |col6    |col7    |col8    |col9    |col10   |col11   |col12   |col13   |col14   |col15   |col16   |col17   |col18   |col19   |col20   ]
+[col1    |col2    |col3    |col4    |col5    |col6    |col7    |col8    |col9    |col10   |col11   |col12   |col13   |col14   |col15   |col16   |col17   |col18   |col19   |col20   ]
+[col1    |col2    |col3    |col4    |col5    |col6    |col7    |col8    |col9    |col10   |col11   |col12   |col13   |col14   |col15   |col16   |col17   |col18   |col19   |col20   ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Table2
+END -- HBox1
+END -- Page2
+END -- Folder1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+Edit hrde01=formonly.hrde01 type VARCHAR, tabIndex=26, not null, required;
+Edit hrde02=formonly.hrde02 type VARCHAR, tabIndex=28, not null, required;
+ButtonEdit hrde08=formonly.hrde08 type VARCHAR, action=controlp, tabIndex=31, not null, required, image="zoom";
+Edit hraa12=formonly.hraa12 type VARCHAR, tabIndex=32, noEntry;
+CheckBox hrde09=formonly.hrde09, tabIndex=33, text=%"CheckBox1", not null, required, valueChecked = "Y", valueUnchecked = "N";
+RadioGroup hrde04=formonly.hrde04, tabIndex=27, not null, required, orientation=horizontal, items=(("0", "zhiwu"),("1", "zhiwei"),("2", "qita"));
+DateEdit hrde10=formonly.hrde10 type DATE, tabIndex=34, not null, required;
+ButtonEdit hrde03=formonly.hrde03 type VARCHAR, action=controlp, tabIndex=29, not null, required, image="zoom";
+Edit hrde03_desc=formonly.hrde03_desc type VARCHAR, tabIndex=30, noEntry;
+DateEdit hrde11=formonly.hrde11 type DATE, tabIndex=35, not null, required;
+TextEdit hrde07=formonly.hrde07 type VARCHAR, tabIndex=36;
+ComboBox hrde05=formonly.hrde05 type VARCHAR, tabIndex=1, title=%"hrde05", noEntry;
+Edit hrde06=formonly.hrde06 type DECIMAL, tabIndex=2, title=%"hrde06", not null, required;
+Edit cnt=formonly.cnt type INTEGER, tabIndex=3, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=4, noEntry;
+Edit name=formonly.name, tabIndex=5, title=%"name";
+Phantom formonly.pid;
+Phantom formonly.id;
+Phantom formonly.has_children;
+Phantom formonly.expanded;
+Phantom formonly.level;
+Phantom formonly.treekey1;
+Phantom formonly.treekey2;
+Edit col1=formonly.col1 type VARCHAR, tabIndex=6, title=%"col1";
+Edit col2=formonly.col2 type DECIMAL, tabIndex=7, title=%"col2";
+Edit col3=formonly.col3 type DECIMAL, tabIndex=8, title=%"col3";
+Edit col4=formonly.col4 type DECIMAL, tabIndex=9, title=%"col4";
+Edit col5=formonly.col5 type DECIMAL, tabIndex=10, title=%"col5";
+Edit col6=formonly.col6 type DECIMAL, tabIndex=11, title=%"col6";
+Edit col7=formonly.col7 type DECIMAL, tabIndex=12, title=%"col7";
+Edit col8=formonly.col8 type DECIMAL, tabIndex=13, title=%"col8";
+Edit col9=formonly.col9 type DECIMAL, tabIndex=14, title=%"col9";
+Edit col10=formonly.col10 type DECIMAL, tabIndex=15, title=%"col10";
+Edit col11=formonly.col11 type DECIMAL, tabIndex=16, title=%"col11";
+Edit col12=formonly.col12 type DECIMAL, tabIndex=17, title=%"col12";
+Edit col13=formonly.col13 type DECIMAL, tabIndex=18, title=%"col13";
+Edit col14=formonly.col14 type DECIMAL, tabIndex=19, title=%"col14";
+Edit col15=formonly.col15 type DECIMAL, tabIndex=20, title=%"col15";
+Edit col16=formonly.col16 type DECIMAL, tabIndex=21, title=%"col16";
+Edit col17=formonly.col17 type DECIMAL, tabIndex=22, title=%"col17";
+Edit col18=formonly.col18 type DECIMAL, tabIndex=23, title=%"col18";
+Edit col19=formonly.col19 type DECIMAL, tabIndex=24, title=%"col19";
+Edit col20=formonly.col20 type DECIMAL, tabIndex=25, title=%"col20";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.cnt,formonly.cn2,formonly.hrde01,formonly.hrde04,formonly.hrde02,formonly.hrde03,formonly.hrde03_desc,formonly.hrde08,formonly.hraa12,formonly.hrde09,formonly.hrde10,formonly.hrde11,formonly.hrde07)
+SCREEN RECORD s_hrde(formonly.hrde05,formonly.hrde06)
+SCREEN RECORD tree(formonly.name,formonly.pid,formonly.id,formonly.has_children,formonly.expanded,formonly.level,formonly.treekey1,formonly.treekey2)
+SCREEN RECORD s_col(formonly.col1,formonly.col2,formonly.col3,formonly.col4,formonly.col5,formonly.col6,formonly.col7,formonly.col8,formonly.col9,formonly.col10,formonly.col11,formonly.col12,formonly.col13,formonly.col14,formonly.col15,formonly.col16,formonly.col17,formonly.col18,formonly.col19,formonly.col20)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrr130.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr130")
+VBox vb27
+Grid gr20
+{
+ <G group01                                                           >
+  Accounts Customer   [oma03                      ]
+ <                                                                    >
+
+}
+END -- gr20
+Group group02(text="INPUT")
+VBox vb26
+Grid gr21
+{
+
+
+
+
+
+  <G group04                                                           >
+  [s                                       ]
+  <                                                                    >
+
+}
+END -- gr21
+Grid gr22
+{
+ <G group05                                                           >
+  Invoice Ending Date [rdate               ]
+  Data Ending Date    [sdate               ]
+ <                                                                    >
+
+}
+END -- gr22
+END -- vb26
+END -- group02
+Grid gr23
+{
+[more                                                        ]
+
+}
+END -- gr23
+END -- vb27
+END -- axrr130
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit oma03=formonly.oma03 type CHAR, action=controlp, tabIndex=1, image="zoom";
+Group group04:group04, text="Sequence";
+RadioGroup s=formonly.s type VARCHAR, tabIndex=3, items=(("1", "Actg  "),("2", "Crediting"),("3", "Business"));
+Group group05:group05;
+DateEdit rdate=formonly.rdate type DATE, tabIndex=4;
+DateEdit sdate=formonly.sdate type DATE, tabIndex=5;
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.oma03,formonly.s,formonly.rdate,formonly.sdate,formonly.more)
+END -- INSTRUCTIONS
+

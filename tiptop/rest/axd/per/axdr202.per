@@ -1,0 +1,61 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdr202.per created Wed Jan 23 05:30:39 2008
+-- File created from axdr202.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdr202")
+-- GRID
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    GRID gr7819
+    {
+     <G group01                                                               >
+      Application No.               [aa0             ]
+      Application Date              [aa1       ]
+      Application Employee          [aa2       ]
+      Item No.                      [aa3       ]
+     <                                                                        >
+     <G group02                                                               >
+      Out-Plant                     [aa4       ]
+      Transfer category             [aa5       ]
+                                    [aa6                                     ]
+                                    [aa7                                     ]
+                                    [aa8                                     ]
+                                    [aa9                                     ]
+
+     <                                                                        >
+
+
+    }
+    END -- GRID
+    GRID gr7820
+    {
+     [ab0                     ]
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+ATTRIBUTES
+  GROUP group01 : group01, TEXT="QBE";
+  EDIT aa0=FORMONLY.add01, TABINDEX=1;
+  DATEEDIT aa1=FORMONLY.add02 TYPE DATE, TABINDEX=2;
+  EDIT aa2=FORMONLY.add03, TABINDEX=3;
+  BUTTONEDIT aa3=FORMONLY.ade03, ACTION=controlp, IMAGE="zoom", TABINDEX=4;
+  GROUP group02 : group02, TEXT="INPUT";
+  EDIT aa4=FORMONLY.ada01, COMMENT="<^P>Qry Plant", TABINDEX=5;
+  COMBOBOX aa5=FORMONLY.a, COMMENT="Please insert 1/2/3/4", NOT NULL, REQUIRED, QUERYEDITABLE, TABINDEX=6, ITEMS=(("1","In Tran"),("2","Out Tran"),("3","Out Retn"),("4","All"));
+  CHECKBOX aa6=FORMONLY.b TYPE VARCHAR, TEXT="Print Closed?", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=7;
+  CHECKBOX aa7=FORMONLY.c TYPE VARCHAR, TEXT="Print In/Out Tran Diff Qty Zero?", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=8;
+  CHECKBOX aa8=FORMONLY.d TYPE VARCHAR, TEXT="Print Pre-tran/out-tran Diff Qty Zero?", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=9;
+  CHECKBOX aa9=FORMONLY.e TYPE VARCHAR, TEXT="Print Details?", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=10;
+  CHECKBOX ab0=FORMONLY.more TYPE VARCHAR, TEXT="Other condition to print", NOT NULL, REQUIRED, VALUECHECKED="Y", VALUEUNCHECKED="N", TABINDEX=11;
+END

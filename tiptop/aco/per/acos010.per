@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acos010.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acos010")
+Folder pc217
+Page page01(text="Main")
+Grid gr1453
+{
+ [coz01                    ]
+ [coz03                    ]
+    Custom No.  [coz02     ]
+}
+END -- gr1453
+END -- page01
+Page userdefined_field(text=%"User Defined Field")
+Grid Grid2
+{
+ userdefined_field01[cozud01                              ] userdefined_field08[cozud08              ]
+                    [                                     ] userdefined_field09[cozud09              ]
+ userdefined_field02[cozud02              ]                 userdefined_field10[cozud10              ]
+ userdefined_field03[cozud03              ]                 userdefined_field11[cozud11              ]
+ userdefined_field04[cozud04              ]                 userdefined_field12[cozud12              ]
+ userdefined_field05[cozud05              ]                 userdefined_field13[cozud13              ]
+ userdefined_field06[cozud06              ]                 userdefined_field14[cozud14              ]
+ userdefined_field07[cozud07              ]                 userdefined_field15[cozud15              ]
+
+}
+END -- Grid2
+END -- userdefined_field
+END -- pc217
+END -- acos010
+
+TABLES
+coz_file
+ATTRIBUTES
+CheckBox coz01=coz_file.coz01, tabIndex=1, text="ACO Module Open To Use For User", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox coz03=coz_file.coz03, tabIndex=2, text="Default Custom No.?   ", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit coz02=coz_file.coz02, action=controlp, tabIndex=3, image="zoom", comment=" <^P>Qry Custom No.";
+TextEdit cozud01=coz_file.cozud01, tabIndex=4;
+Edit cozud08=coz_file.cozud08, tabIndex=5;
+Edit cozud09=coz_file.cozud09, tabIndex=6;
+Edit cozud02=coz_file.cozud02, tabIndex=7;
+Edit cozud10=coz_file.cozud10, tabIndex=8;
+Edit cozud03=coz_file.cozud03, tabIndex=9;
+Edit cozud11=coz_file.cozud11, tabIndex=10;
+Edit cozud04=coz_file.cozud04, tabIndex=11;
+Edit cozud12=coz_file.cozud12, tabIndex=12;
+Edit cozud05=coz_file.cozud05, tabIndex=13;
+DateEdit cozud13=coz_file.cozud13, tabIndex=14;
+Edit cozud06=coz_file.cozud06, tabIndex=15;
+DateEdit cozud14=coz_file.cozud14, tabIndex=16;
+Edit cozud07=coz_file.cozud07, tabIndex=17;
+DateEdit cozud15=coz_file.cozud15, tabIndex=18;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(coz_file.coz01,coz_file.coz03,coz_file.coz02,coz_file.cozud01,coz_file.cozud08,coz_file.cozud09,coz_file.cozud02,coz_file.cozud10,coz_file.cozud03,coz_file.cozud11,coz_file.cozud04,coz_file.cozud12,coz_file.cozud05,coz_file.cozud13,coz_file.cozud06,coz_file.cozud14,coz_file.cozud07,coz_file.cozud15)
+END -- INSTRUCTIONS
+

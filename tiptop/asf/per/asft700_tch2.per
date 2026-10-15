@@ -1,0 +1,113 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asft700_tch2.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"asft700_tch2", windowStyle="touch1")
+VBox vb17
+HBox hb5
+Group gb5(style="touch-bg1")
+Grid gr11_(style="touch-font")
+{
+              [re]
+
+ User ID.   [shb04       ][gen02       ]
+ Workstation[shb07       ][eca02       ]     Routing Sequence[shb06     ]
+ Work No.   [shb05       ]                   Routing NO.     [sfb06     ]
+
+
+
+}
+END -- gr11_
+END -- gb5
+Group gb22(style="touch-bg2")
+Grid gr21
+{
+[ima04                      ]
+[                           ]
+[                           ]
+[                           ]
+[                           ]
+[                           ]
+[                           ]
+
+}
+END -- gr21
+END -- gb22
+END -- hb5
+Folder pc1
+Page page01(text=%"Routing", style="touch-bg3")
+Group flowchar(style="touch-bg3")
+Grid gr60
+{
+
+
+}
+END -- gr60
+END -- flowchar
+END -- page01
+Page page02(text=%"WorkData", style="touch-bg3")
+VBox vb16
+Grid gr14(style="touch-font1")
+{
+ <T s_sfb                                                                                                     >
+ [col2      |col3      |col4      |col6      |col7     |col1     |col9      |col11     |col10     |col5       ]
+ [col2      |col3      |col4      |col6      |col7     |col1     |col9      |col11     |col10     |col5       ]
+ [col2      |col3      |col4      |col6      |col7     |col1     |col9      |col11     |col10     |col5       ]
+ [col2      |col3      |col4      |col6      |col7     |col1     |col9      |col11     |col10     |col5       ]
+ [col2      |col3      |col4      |col6      |col7     |col1     |col9      |col11     |col10     |col5       ]
+ [col2      |col3      |col4      |col6      |col7     |col1     |col9      |col11     |col10     |col5       ]
+ <                                                                                                            >
+}
+END -- gr14
+Group gb7(style="touch-bg1")
+Grid gr22(style="touch-font4")
+{
+ ProductNO[sfb05            ]    ProdDesc.[ima02                 ]   MadeQty[sfb08     ]   OK Qty.[sfb09     ]
+
+
+}
+END -- gr22
+END -- gb7
+END -- vb16
+END -- page02
+END -- pc1
+END -- vb17
+END -- asft700_tch2
+
+TABLES
+shb_file
+ATTRIBUTES
+Button re:report_start, tabIndex=7602292, image="", sizePolicy=dynamic, style="touch-btn1";
+Edit shb04=shb_file.shb04, tabIndex=12;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=8, noEntry;
+Edit shb07=shb_file.shb07, tabIndex=9, not null, required;
+Edit eca02=formonly.eca02 type CHAR, tabIndex=10, noEntry;
+Edit shb06=shb_file.shb06, tabIndex=13, noEntry;
+Edit shb05=shb_file.shb05, tabIndex=11;
+Edit sfb06=formonly.sfb06 type CHAR, tabIndex=14, noEntry;
+IMAGE ima04=formonly.ima04 type CHAR, sizePolicy=fixed, width = 300 characters, height = 140 characters;
+Table s_sfb:s_sfb, style="touch-font1", width = 110 characters;
+Edit col2=formonly.col2 type CHAR, tabIndex=7602282, title=%"Work No.";
+Edit col3=formonly.col3 type CHAR, tabIndex=7602283, title=%"Product No.";
+Edit col4=formonly.col4 type CHAR, tabIndex=7602284, title=%"Prod Desc.";
+Edit col6=formonly.col6 type CHAR, tabIndex=7602285, title=%"Made Qty.";
+Edit col7=formonly.col7 type CHAR, tabIndex=7602286, title=%"OK Qty";
+Edit col1=formonly.col1 type CHAR, tabIndex=7602287, title=%"Routing Seq.";
+Edit col9=formonly.col9 type CHAR, tabIndex=7602288, title=%"WipQty";
+Edit col11=formonly.col11 type CHAR, tabIndex=7602289, title=%"InQty";
+Edit col10=formonly.col10 type CHAR, tabIndex=7602290, title=%"OutQty";
+Edit col5=formonly.col5 type CHAR, tabIndex=7602291, title=%"OK Date.";
+Edit sfb05=formonly.sfb05 type CHAR, tabIndex=7602278, noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=7602279, noEntry;
+Edit sfb08=formonly.sfb08 type CHAR, tabIndex=7602280, noEntry;
+Edit sfb09=formonly.sfb09 type CHAR, tabIndex=7602281, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(formonly.col2,formonly.col3,formonly.col4,formonly.col6,formonly.col7,formonly.col1,formonly.col9,formonly.col11,formonly.col10,formonly.col5)
+SCREEN RECORD Undefined(shb_file.shb04,formonly.gen02,shb_file.shb07,formonly.eca02,shb_file.shb06,shb_file.shb05,formonly.sfb06,formonly.ima04,formonly.sfb05,formonly.ima02,formonly.sfb08,formonly.sfb09)
+END -- INSTRUCTIONS
+

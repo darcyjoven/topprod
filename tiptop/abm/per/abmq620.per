@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmq620.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"abmq620")
+VBox VBox1
+Grid gr907
+{
+ <G group01                                       >
+  Master Item No. [item                          ]
+  Group Code      [class               ]
+  Alternate Code  [acode               ]
+ <                                                >
+ <G group02                             >
+  Version         [revi]
+  Exp.Date        [effective   ]
+  Sort by         [arrange     ]
+  Price Option    [pur                 ]
+ [tot                                  ]
+ <                                      >
+
+}
+END -- gr907
+Grid gr908
+{
+ [more                                 ]
+
+}
+END -- gr908
+END -- VBox1
+END -- abmq620
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit item=formonly.item type VARCHAR, action=controlp, tabIndex=1, image="zoom";
+Edit class=formonly.class type VARCHAR, tabIndex=2;
+Edit acode=formonly.acode type VARCHAR, tabIndex=3;
+Group group02:group02, text="INPUT";
+Edit revi=formonly.revision type VARCHAR, tabIndex=4;
+DateEdit effective=formonly.effective type DATE, tabIndex=5;
+ComboBox arrange=formonly.arrange type VARCHAR, tabIndex=6, not null, required, comment="1 \"by Component No.\" 2 \"by Line No.\"", items=(("1", "by Component No."),("2", "by Line No."));
+ComboBox pur=formonly.pur type VARCHAR, tabIndex=7, not null, required, comment="1 \"Item Cost\" 2 \"The Latest Pur price\" 3 \"Market Price\"", items=(("1", "Item Cost"),("2", "The Latest Pur price"),("3", "Market Price"));
+CheckBox tot=formonly.tot type VARCHAR, tabIndex=8, text="Print Total", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=9, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.item,formonly.class,formonly.acode,formonly.revision,formonly.effective,formonly.arrange,formonly.pur,formonly.tot,formonly.more)
+END -- INSTRUCTIONS
+

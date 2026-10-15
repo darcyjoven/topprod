@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_nnp01.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="q_nnp01")
+Table s_nnp
+{
+[check |nnp01    |nno02   |alg02           |nnp02 |nnp03     |nnn02           |nnp07 |nnp09     ]
+[check |nnp01    |nno02   |alg02           |nnp02 |nnp03     |nnn02           |nnp07 |nnp09     ]
+[check |nnp01    |nno02   |alg02           |nnp02 |nnp03     |nnn02           |nnp07 |nnp09     ]
+[check |nnp01    |nno02   |alg02           |nnp02 |nnp03     |nnn02           |nnp07 |nnp09     ]
+[check |nnp01    |nno02   |alg02           |nnp02 |nnp03     |nnn02           |nnp07 |nnp09     ]
+[check |nnp01    |nno02   |alg02           |nnp02 |nnp03     |nnn02           |nnp07 |nnp09     ]
+[check |nnp01    |nno02   |alg02           |nnp02 |nnp03     |nnn02           |nnp07 |nnp09     ]
+[check |nnp01    |nno02   |alg02           |nnp02 |nnp03     |nnn02           |nnp07 |nnp09     ]
+[check |nnp01    |nno02   |alg02           |nnp02 |nnp03     |nnn02           |nnp07 |nnp09     ]
+[check |nnp01    |nno02   |alg02           |nnp02 |nnp03     |nnn02           |nnp07 |nnp09     ]
+
+}
+END -- s_nnp
+END -- q_nnp01
+
+TABLES
+alg_file,
+nnp_file,
+nno_file,
+nnn_file
+ATTRIBUTES
+CheckBox check=formonly.check type CHAR, tabIndex=9, title="Sel", not null, valueChecked = "Y", valueUnchecked = "N";
+Edit nnp01=nnp_file.nnp01, tabIndex=1, title="Contract No.";
+Edit nno02=nno_file.nno02, tabIndex=7, title="Credit Bank";
+Edit alg02=alg_file.alg02, tabIndex=8, title="Credit Bank Abbreviation";
+Edit nnp02=nnp_file.nnp02, tabIndex=2, title="Line No.";
+Edit nnp03=nnp_file.nnp03, tabIndex=3, title="Financing Type";
+Edit nnn02=nnn_file.nnn02, tabIndex=6, title="Financing Type Name";
+Edit nnp07=nnp_file.nnp07, tabIndex=4, title="Currency";
+Edit nnp09=nnp_file.nnp09, tabIndex=5, title="Credit Amt";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_nnp(formonly.check,nnp_file.nnp01,nno_file.nno02,alg_file.alg02,nnp_file.nnp02,nnp_file.nnp03,nnn_file.nnn02,nnp_file.nnp07,nnp_file.nnp09)
+END -- INSTRUCTIONS
+

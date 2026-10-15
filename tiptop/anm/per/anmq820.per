@@ -1,0 +1,96 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmq820.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmq820")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr4166
+{
+ Application #       [gxf011       ]
+ Original Bank       [gxf02        ]
+ Bank Abbreviation   [nma02               ]
+ Original Amount     [gxf021              ]
+ Interest Rate       [gxf06        ]%
+}
+END -- gr4166
+Grid gr4167
+{
+ Certificate of Deposit#[gxf01           ]
+ Status                 [gxf11        ]
+ Original Deposit Date  [gxf03        ]
+ Due Date               [gxf05        ]
+ Memo                   [gxf12                         ]
+}
+END -- gr4167
+Grid gr4168
+{
+ Interest Type          [gxf04        ]
+
+
+
+
+}
+END -- gr4168
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_gxg
+{
+[gxg0|date1            |gxg04      |gxg05               |num             |date2        |status  ]
+[gxg0|date1            |gxg04      |gxg05               |num             |date2        |status  ]
+[gxg0|date1            |gxg04      |gxg05               |num             |date2        |status  ]
+[gxg0|date1            |gxg04      |gxg05               |num             |date2        |status  ]
+[gxg0|date1            |gxg04      |gxg05               |num             |date2        |status  ]
+[gxg0|date1            |gxg04      |gxg05               |num             |date2        |status  ]
+[gxg0|date1            |gxg04      |gxg05               |num             |date2        |status  ]
+[gxg0|date1            |gxg04      |gxg05               |num             |date2        |status  ]
+[gxg0|date1            |gxg04      |gxg05               |num             |date2        |status  ]
+[gxg0|date1            |gxg04      |gxg05               |num             |date2        |status  ]
+
+}
+END -- s_gxg
+Grid gr4169
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr4169
+END -- VBox1
+END -- anmq820
+
+TABLES
+gxf_file
+ATTRIBUTES
+Edit gxf011=gxf_file.gxf011, tabIndex=1, comment="Key Field, No Blank/Repeated!";
+ButtonEdit gxf02=gxf_file.gxf02, action=controlp, tabIndex=2, image="zoom", comment="<^P> Qry Bank";
+Edit nma02=formonly.nma02 type VARCHAR, tabIndex=3, noEntry;
+Edit gxf021=gxf_file.gxf021, tabIndex=4;
+Edit gxf06=gxf_file.gxf06, tabIndex=5;
+Edit gxf01=gxf_file.gxf01, tabIndex=6, upShift;
+ComboBox gxf11=gxf_file.gxf11, tabIndex=7, noEntry, not null, required, queryEditable, items=(("0", "Deposit"),("1", "Pledge"),("2", "Remove"),("3", "Cancel"),("4", "Due"));
+DateEdit gxf03=gxf_file.gxf03, tabIndex=8;
+DateEdit gxf05=gxf_file.gxf05, tabIndex=9;
+Edit gxf12=gxf_file.gxf12, tabIndex=10;
+ComboBox gxf04=gxf_file.gxf04, tabIndex=11, not null, required, queryEditable, items=(("1", "Monthly Pay"),("2", "All on Due"));
+Edit gxg0=formonly.gxg02 type CHAR, tabIndex=12, title="S/N";
+DateEdit date1=formonly.date1 type CHAR, tabIndex=13, title="Transaction Date";
+Edit gxg04=formonly.gxg04 type CHAR, tabIndex=14, title="Pledged To";
+Edit gxg05=formonly.gxg05 type CHAR, tabIndex=15, title="Pledge Amount";
+Edit num=formonly.num type CHAR, tabIndex=16, title="Voucher#";
+DateEdit date2=formonly.date2 type CHAR, tabIndex=17, title="Voucher Date";
+Edit status=formonly.status type CHAR, tabIndex=18, title="Status";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=20;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gxg(formonly.gxg02,formonly.date1,formonly.gxg04,formonly.gxg05,formonly.num,formonly.date2,formonly.status)
+SCREEN RECORD Undefined(gxf_file.gxf011,gxf_file.gxf02,formonly.nma02,gxf_file.gxf021,gxf_file.gxf06,gxf_file.gxf01,gxf_file.gxf11,gxf_file.gxf03,gxf_file.gxf05,gxf_file.gxf12,gxf_file.gxf04,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

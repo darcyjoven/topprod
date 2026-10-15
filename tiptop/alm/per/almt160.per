@@ -1,0 +1,105 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt160.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt160")
+VBox vb8
+Folder pc1
+Page Main(text=%"Main")
+Grid gr1
+{
+ Rea.Num    [lmg01                 ]                 Appr No   [lmg08           |imgmksg ]
+ Sta.DocNo. [lmg02             ]                     Approve   [lmg09           |        ]
+ Store No.  [lmgstore          |rtz13             ]  Appr.on   [lmg10           ]
+ Corporation[lmglegal          |azt02             ]  Stopman   [lmg12           ]
+ Bui.DocNo. [lmg04             |lmb03             ]  Stoptim   [lmg13           ]
+ Flo.DocNo. [lmg05             |lmc04             ]  Memo      [lmg11                            ]
+ SBusi.area [lmg06             ]                               [                                 ]
+ SCons.area [lmg07             ]
+
+}
+END -- gr1
+END -- Main
+Page info(text=%"Info")
+Grid gr3
+{
+
+ Data Owner  [lmguser   ] Last Modified by   [lmgmodu       ]    create on   [lmgcrat   ]
+ Department  [lmggrup   ] Last Modified on   [lmgdate       ]
+ Record Orig.[lmgoriu   ]
+ Dept Orig.  [lmgorig   ]
+
+
+
+}
+END -- gr3
+END -- info
+END -- pc1
+Table s_lmh
+{
+[lmh03         |lmh04        |lmh05       |lmh06            ]
+[lmh03         |lmh04        |lmh05       |lmh06            ]
+[lmh03         |lmh04        |lmh05       |lmh06            ]
+[lmh03         |lmh04        |lmh05       |lmh06            ]
+[lmh03         |lmh04        |lmh05       |lmh06            ]
+}
+END -- s_lmh
+Grid gr4
+{
+
+ ------- Rows [idx ]/ [cnt  ]---item [cn2   ]-------
+
+
+
+}
+END -- gr4
+END -- vb8
+END -- almt160
+
+TABLES
+lmh_file,
+lmg_file
+ATTRIBUTES
+ButtonEdit lmg01=lmg_file.lmg01, action=controlp, tabIndex=1, not null, required, image="zoom.png";
+ComboBox lmg08=lmg_file.lmg08, tabIndex=14, default = "N", noEntry, not null, required, items=(("Y", "checked"),("N", "unchecked"),("X", "zuofei"),("E", "time"),("S", "over"));
+IMAGE imgmksg=formonly.imgmksg type CHAR;
+ButtonEdit lmg02=lmg_file.lmg02, action=controlp, tabIndex=2, not null, required, image="zoom.png";
+Edit lmg09=lmg_file.lmg09, tabIndex=13, noEntry, not null, required;
+ButtonEdit lmgstore=lmg_file.lmgstore, action=controlp, tabIndex=3, noEntry, not null, required, image="zoom.png";
+Edit rtz13=formonly.rtz13 type CHAR, tabIndex=8, noEntry;
+DateEdit lmg10=lmg_file.lmg10, tabIndex=12, noEntry, not null, required;
+ButtonEdit lmglegal=lmg_file.lmglegal, action=controlp, tabIndex=29, noEntry, not null, image="zoom.png";
+Edit azt02=formonly.azt02 type CHAR, tabIndex=30, noEntry;
+Edit lmg12=lmg_file.lmg12, tabIndex=28;
+ButtonEdit lmg04=lmg_file.lmg04, action=controlp, tabIndex=4, noEntry, not null, required, image="zoom.png";
+Edit lmb03=formonly.lmb03 type CHAR, tabIndex=9, noEntry;
+DateEdit lmg13=lmg_file.lmg13, tabIndex=27, noEntry;
+ButtonEdit lmg05=lmg_file.lmg05, action=controlp, tabIndex=5, noEntry, not null, required, image="zoom.png";
+Edit lmc04=formonly.lmc04 type CHAR, tabIndex=10, noEntry;
+TextEdit lmg11=lmg_file.lmg11, tabIndex=11;
+Edit lmg06=lmg_file.lmg06, tabIndex=6, noEntry, not null, required;
+Edit lmg07=lmg_file.lmg07, tabIndex=7, noEntry, not null, required;
+Edit lmguser=lmg_file.lmguser, tabIndex=15, noEntry;
+Edit lmgmodu=lmg_file.lmgmodu, tabIndex=17, noEntry;
+DateEdit lmgcrat=lmg_file.lmgcrat, tabIndex=26, noEntry;
+Edit lmggrup=lmg_file.lmggrup, tabIndex=16, noEntry;
+DateEdit lmgdate=lmg_file.lmgdate, tabIndex=18, noEntry;
+Edit lmgoriu=lmg_file.lmgoriu, tabIndex=31, noEntry;
+Edit lmgorig=lmg_file.lmgorig, tabIndex=32, noEntry;
+ButtonEdit lmh03=lmh_file.lmh03, action=controlp, tabIndex=19, title="Fie.DocNo.", not null, required, image="zoom.png";
+Edit lmh04=formonly.lmh04 type DECIMAL, tabIndex=20, title="Busi.area", noEntry;
+Edit lmh05=formonly.lmh05 type DECIMAL, tabIndex=21, title="Const.area", noEntry;
+CheckBox lmh06=lmh_file.lmh06, tabIndex=24, default = "Y", title="VALID", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type SMALLINT, tabIndex=22, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=23, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_lmh(lmh_file.lmh03,formonly.lmh04,formonly.lmh05,lmh_file.lmh06)
+SCREEN RECORD Undefined(lmg_file.lmg01,lmg_file.lmg08,formonly.imgmksg,lmg_file.lmg02,lmg_file.lmg09,lmg_file.lmgstore,formonly.rtz13,lmg_file.lmg10,lmg_file.lmglegal,formonly.azt02,lmg_file.lmg12,lmg_file.lmg04,formonly.lmb03,lmg_file.lmg13,lmg_file.lmg05,formonly.lmc04,lmg_file.lmg11,lmg_file.lmg06,lmg_file.lmg07,lmg_file.lmguser,lmg_file.lmgmodu,lmg_file.lmgcrat,lmg_file.lmggrup,lmg_file.lmgdate,lmg_file.lmgoriu,lmg_file.lmgorig,formonly.idx,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

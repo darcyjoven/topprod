@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_sgm.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"RUN CARD Qry Routing ")
+Grid gr3843
+{
+ <T s_sgm                                                                      >
+ [check  |sgm03       |sgm04       |sgm45            |wipqty    |sgm53|qcm22   ]
+ [check  |sgm03       |sgm04       |sgm45            |wipqty    |sgm53|qcm22   ]
+ [check  |sgm03       |sgm04       |sgm45            |wipqty    |sgm53|qcm22   ]
+ [check  |sgm03       |sgm04       |sgm45            |wipqty    |sgm53|qcm22   ]
+ [check  |sgm03       |sgm04       |sgm45            |wipqty    |sgm53|qcm22   ]
+ [check  |sgm03       |sgm04       |sgm45            |wipqty    |sgm53|qcm22   ]
+ [check  |sgm03       |sgm04       |sgm45            |wipqty    |sgm53|qcm22   ]
+ [check  |sgm03       |sgm04       |sgm45            |wipqty    |sgm53|qcm22   ]
+ [check  |sgm03       |sgm04       |sgm45            |wipqty    |sgm53|qcm22   ]
+ [check  |sgm03       |sgm04       |sgm45            |wipqty    |sgm53|qcm22   ]
+ <                                                                             >
+
+}
+END -- gr3843
+END -- q_sgm
+
+TABLES
+sgm_file,
+qcm_file
+ATTRIBUTES
+Table s_sgm:s_sgm;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sgm03=sgm_file.sgm03, tabIndex=2, title="Routing S/N", noEntry;
+Edit sgm04=sgm_file.sgm04, tabIndex=3, title="Task No.", noEntry;
+Edit sgm45=sgm_file.sgm45, tabIndex=4, title="Task Name", noEntry;
+Edit wipqty=formonly.wipqty type CHAR, tabIndex=5, title="WIP Qty", noEntry;
+Edit sgm53=sgm_file.sgm53, tabIndex=6, title="PQC?", noEntry;
+Edit qcm22=qcm_file.qcm22, tabIndex=7, title=%"Qty";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sgm(formonly.check,sgm_file.sgm03,sgm_file.sgm04,sgm_file.sgm45,formonly.wipqty,sgm_file.sgm53,qcm_file.qcm22)
+END -- INSTRUCTIONS
+

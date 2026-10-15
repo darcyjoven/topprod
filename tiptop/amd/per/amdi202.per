@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/amd/42f/amdi202.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (minWidth=1, minHeight=1, spacing=normal, text=%"aooi300")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Main")
+Grid Grid1
+{
+
+ Customer No.         [ami01          ] [ami012           ]
+
+ Effective Date       [ami02       ]                      Expired Date  [ami03       ]
+
+ Promotion Barcode    [ami04            ]                 Memo           [ami05                                     ]
+
+}
+END -- Grid1
+END -- Page1
+Page Page2(text=%"Info")
+Grid gr2511
+{
+ Record Owner        [amiuser   ]   Last Modified by    [amimodu   ]
+ Department          [amigrup   ]   Create/Modify Date  [amidate     ]
+ Record Orig.        [amioriu   ]
+ Dept Orig.          [amiorig   ]
+
+}
+END -- gr2511
+END -- Page2
+END -- Folder1
+Table s_amj
+{
+[amj05                         |ima02                         |ima021                        ]
+[amj05                         |ima02                         |ima021                        ]
+[amj05                         |ima02                         |ima021                        ]
+[amj05                         |ima02                         |ima021                        ]
+[amj05                         |ima02                         |ima021                        ]
+[amj05                         |ima02                         |ima021                        ]
+[amj05                         |ima02                         |ima021                        ]
+[amj05                         |ima02                         |ima021                        ]
+[amj05                         |ima02                         |ima021                        ]
+[amj05                         |ima02                         |ima021                        ]
+}
+END -- s_amj
+Grid gr4644
+{
+
+  ---------- ROWS [cnt   ]/[cn2   ] ----------
+
+
+}
+END -- gr4644
+END -- VBox1
+END -- amdi202
+
+TABLES
+amj_file,
+ami_file
+ATTRIBUTES
+ButtonEdit ami01=ami_file.ami01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ami012=formonly.ami012 type VARCHAR, tabIndex=2, noEntry;
+DateEdit ami02=ami_file.ami02, tabIndex=3, not null, required;
+DateEdit ami03=ami_file.ami03, tabIndex=5;
+Edit ami04=ami_file.ami04, tabIndex=4, not null, required;
+Edit ami05=ami_file.ami05, tabIndex=6;
+Edit amiuser=ami_file.amiuser, tabIndex=12, noEntry;
+Edit amimodu=ami_file.amimodu, tabIndex=16, noEntry;
+Edit amigrup=ami_file.amigrup, tabIndex=13, noEntry;
+DateEdit amidate=ami_file.amidate, tabIndex=17, noEntry;
+Edit amioriu=ami_file.amioriu, tabIndex=14, noEntry;
+Edit amiorig=ami_file.amiorig, tabIndex=15, noEntry;
+ButtonEdit amj05=amj_file.amj05, action=controlp, tabIndex=7, title=%"Product No.", image="zoom";
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=8, default = "Y", title=%"Item Name", noEntry;
+Edit ima021=formonly.ima021 type VARCHAR, tabIndex=9, title=%"Item Specification", noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_amj(amj_file.amj05,formonly.ima02,formonly.ima021)
+SCREEN RECORD Undefined(ami_file.ami01,formonly.ami012,ami_file.ami02,ami_file.ami03,ami_file.ami04,ami_file.ami05,ami_file.amiuser,ami_file.amimodu,ami_file.amigrup,ami_file.amidate,ami_file.amioriu,ami_file.amiorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

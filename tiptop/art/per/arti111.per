@@ -1,0 +1,87 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/arti111.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="arti111")
+VBox VBox1
+Folder pc1
+Page Page1(text=%"Page0")
+Grid gr1
+{
+ Shop Code[rta01             ]   Spec  [ima1008            ]
+ Shop Name[ima02             ]   Color [ima1009            ]
+ Shop Sort[ima1004           ]   Size  [ima1007            ]
+ Size up  [ima1005           ]   Catena[ima1006            ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Table s_rta
+{
+[rta02  |rta06   |rta07   |rta08   |rta09   |rta10   |rta11   |agd03_a |agd03_b |rta03     |rta03_desc   |rta04        |rta05      |rtaacti       |rtaud01 |rtaud02 |rtaud03 |rtaud04 |rtaud05 |rtaud06 |rtaud07 |rtaud08 |rtaud09 |rtaud10 ]
+[rta02  |rta06   |rta07   |rta08   |rta09   |rta10   |rta11   |agd03_a |agd03_b |rta03     |rta03_desc   |rta04        |rta05      |rtaacti       |rtaud01 |rtaud02 |rtaud03 |rtaud04 |rtaud05 |rtaud06 |rtaud07 |rtaud08 |rtaud09 |rtaud10 ]
+[rta02  |rta06   |rta07   |rta08   |rta09   |rta10   |rta11   |agd03_a |agd03_b |rta03     |rta03_desc   |rta04        |rta05      |rtaacti       |rtaud01 |rtaud02 |rtaud03 |rtaud04 |rtaud05 |rtaud06 |rtaud07 |rtaud08 |rtaud09 |rtaud10 ]
+[rta02  |rta06   |rta07   |rta08   |rta09   |rta10   |rta11   |agd03_a |agd03_b |rta03     |rta03_desc   |rta04        |rta05      |rtaacti       |rtaud01 |rtaud02 |rtaud03 |rtaud04 |rtaud05 |rtaud06 |rtaud07 |rtaud08 |rtaud09 |rtaud10 ]
+[rta02  |rta06   |rta07   |rta08   |rta09   |rta10   |rta11   |agd03_a |agd03_b |rta03     |rta03_desc   |rta04        |rta05      |rtaacti       |rtaud01 |rtaud02 |rtaud03 |rtaud04 |rtaud05 |rtaud06 |rtaud07 |rtaud08 |rtaud09 |rtaud10 ]
+[rta02  |rta06   |rta07   |rta08   |rta09   |rta10   |rta11   |agd03_a |agd03_b |rta03     |rta03_desc   |rta04        |rta05      |rtaacti       |rtaud01 |rtaud02 |rtaud03 |rtaud04 |rtaud05 |rtaud06 |rtaud07 |rtaud08 |rtaud09 |rtaud10 ]
+[rta02  |rta06   |rta07   |rta08   |rta09   |rta10   |rta11   |agd03_a |agd03_b |rta03     |rta03_desc   |rta04        |rta05      |rtaacti       |rtaud01 |rtaud02 |rtaud03 |rtaud04 |rtaud05 |rtaud06 |rtaud07 |rtaud08 |rtaud09 |rtaud10 ]
+}
+END -- s_rta
+Grid gr2
+{
+ --------  Rows[cnt  ]/[cn2  ]  ----------
+
+
+}
+END -- gr2
+END -- VBox1
+END -- arti111
+
+TABLES
+rta_file
+ATTRIBUTES
+ButtonEdit rta01=rta_file.rta01, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit ima1008=formonly.ima1008 type VARCHAR, tabIndex=2, noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=3, noEntry;
+Edit ima1009=formonly.ima1009 type VARCHAR, tabIndex=4, noEntry;
+Edit ima1004=formonly.ima1004 type VARCHAR, tabIndex=5, noEntry;
+Edit ima1007=formonly.ima1007 type VARCHAR, tabIndex=6, noEntry;
+Edit ima1005=formonly.ima1005 type VARCHAR, tabIndex=7, noEntry;
+Edit ima1006=formonly.ima1006 type VARCHAR, tabIndex=8, noEntry;
+Edit rta02=rta_file.rta02, tabIndex=9, title="No.", not null, required;
+Edit rta06=rta_file.rta06, tabIndex=17, title=%"rta06", not null, required;
+Edit rta07=rta_file.rta07, tabIndex=18, title=%"rta07";
+Edit rta08=rta_file.rta08, tabIndex=19, title=%"rta08";
+Edit rta09=rta_file.rta09, tabIndex=20, title=%"rta09";
+Edit rta10=rta_file.rta10, tabIndex=21, title=%"rta10";
+ButtonEdit rta11=rta_file.rta11, action=controlp, tabIndex=22, title=%"rta11", image="zoom";
+Edit agd03_a=formonly.agd03_a type VARCHAR, tabIndex=23, title=%"agd03_a", noEntry;
+Edit agd03_b=formonly.agd03_b type CHAR, tabIndex=24, title=%"agd03_b", noEntry;
+ButtonEdit rta03=rta_file.rta03, action=controlp, tabIndex=10, title="Unit Code", not null, required, image="zoom";
+Edit rta03_desc=formonly.rta03_desc type VARCHAR, tabIndex=11, title="Unit Name", noEntry;
+ComboBox rta04=rta_file.rta04, tabIndex=12, default = "1", title="Code Type", not null, required, items=(("1", "Former Code"),("2", "Owner Code"));
+Edit rta05=rta_file.rta05, tabIndex=13, title="Code", not null, required;
+CheckBox rtaacti=rta_file.rtaacti, tabIndex=14, default = "Y", title="Efficiency", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit rtaud01=rta_file.rtaud01, tabIndex=25, title=%"rtaud01";
+Edit rtaud02=rta_file.rtaud02, tabIndex=26, title=%"rtaud02";
+Edit rtaud03=rta_file.rtaud03, tabIndex=27, title=%"rtaud03";
+Edit rtaud04=rta_file.rtaud04, tabIndex=28, title=%"rtaud04";
+Edit rtaud05=rta_file.rtaud05, tabIndex=29, title=%"rtaud05";
+Edit rtaud06=rta_file.rtaud06, tabIndex=30, title=%"rtaud06";
+Edit rtaud07=rta_file.rtaud07, tabIndex=31, title=%"rtaud07";
+Edit rtaud08=rta_file.rtaud08, tabIndex=32, title=%"rtaud08";
+Edit rtaud09=rta_file.rtaud09, tabIndex=33, title=%"rtaud09";
+Edit rtaud10=rta_file.rtaud10, tabIndex=34, title=%"rtaud10";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=15;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=16;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rta(rta_file.rta02,rta_file.rta06,rta_file.rta07,rta_file.rta08,rta_file.rta09,rta_file.rta10,rta_file.rta11,formonly.agd03_a,formonly.agd03_b,rta_file.rta03,formonly.rta03_desc,rta_file.rta04,rta_file.rta05,rta_file.rtaacti,rta_file.rtaud01,rta_file.rtaud02,rta_file.rtaud03,rta_file.rtaud04,rta_file.rtaud05,rta_file.rtaud06,rta_file.rtaud07,rta_file.rtaud08,rta_file.rtaud09,rta_file.rtaud10)
+SCREEN RECORD Undefined(rta_file.rta01,formonly.ima1008,formonly.ima02,formonly.ima1009,formonly.ima1004,formonly.ima1007,formonly.ima1005,formonly.ima1006,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

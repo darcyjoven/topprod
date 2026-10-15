@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapr900.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aapr900")
+VBox VBox1
+Grid gr318
+{
+ <G group01                                                      >
+  Payment Date        [apf02               ]
+  Paying Empl.        [apf04               ]
+  Payment Slip NO.    [apf01               ]
+  Currency            [apf06               ]
+  Paying Bank         [aph08               ]
+ <                                                               >
+
+}
+END -- gr318
+Grid gr319
+{
+[more                                                        ]
+
+}
+END -- gr319
+END -- VBox1
+END -- aapr900
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+DateEdit apf02=formonly.apf02 type DATE, tabIndex=1;
+Edit apf04=formonly.apf04 type VARCHAR, tabIndex=2;
+Edit apf01=formonly.apf01 type VARCHAR, tabIndex=3;
+Edit apf06=formonly.apf06 type VARCHAR, tabIndex=4;
+Edit aph08=formonly.aph08 type VARCHAR, tabIndex=5;
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.apf02,formonly.apf04,formonly.apf01,formonly.apf06,formonly.aph08,formonly.more)
+END -- INSTRUCTIONS
+

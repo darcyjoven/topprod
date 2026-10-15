@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aqc/42f/aqci6001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aqci6001")
+Grid gr19
+{
+ <T s_qda                                     >
+ [qda01   |qda031|qda032|qda033|qda034|qda035]
+ [qda01   |qda031|qda032|qda033|qda034|qda035]
+ [qda01   |qda031|qda032|qda033|qda034|qda035]
+ [qda01   |qda031|qda032|qda033|qda034|qda035]
+ [qda01   |qda031|qda032|qda033|qda034|qda035]
+ [qda01   |qda031|qda032|qda033|qda034|qda035]
+ [qda01   |qda031|qda032|qda033|qda034|qda035]
+ [qda01   |qda031|qda032|qda033|qda034|qda035]
+ [qda01   |qda031|qda032|qda033|qda034|qda035]
+ [qda01   |qda031|qda032|qda033|qda034|qda035]
+ <                                            >
+
+}
+END -- gr19
+END -- aqci6001
+
+TABLES
+qda_file
+ATTRIBUTES
+Table s_qda:s_qda;
+Edit qda01=qda_file.qda01, tabIndex=1, title="Samples", not null, required, autoNext;
+Edit qda031=qda_file.qda031, tabIndex=2, title="b", not null, required;
+Edit qda032=qda_file.qda032, tabIndex=3, title="B1", not null, required;
+Edit qda033=qda_file.qda033, tabIndex=4, title="B2", not null, required;
+Edit qda034=qda_file.qda034, tabIndex=5, title="B3", not null, required;
+Edit qda035=qda_file.qda035, tabIndex=6, title="B4", not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_qda(qda_file.qda01,qda_file.qda031,qda_file.qda032,qda_file.qda033,qda_file.qda034,qda_file.qda035)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,85 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat1052.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat1052")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Table s_faz
+{
+[faz02      |faz03          |faj06           |faz031    |faz04                   |faz08      |faz05     |faz09   |faz06      |faz10      |faz12   |faz13                         |faz14                   |faz15                            |faz17                    |faz18                          |faz19                                ]
+[faz02      |faz03          |faj06           |faz031    |faz04                   |faz08      |faz05     |faz09   |faz06      |faz10      |faz12   |faz13                         |faz14                   |faz15                            |faz17                    |faz18                          |faz19                                ]
+[faz02      |faz03          |faj06           |faz031    |faz04                   |faz08      |faz05     |faz09   |faz06      |faz10      |faz12   |faz13                         |faz14                   |faz15                            |faz17                    |faz18                          |faz19                                ]
+[faz02      |faz03          |faj06           |faz031    |faz04                   |faz08      |faz05     |faz09   |faz06      |faz10      |faz12   |faz13                         |faz14                   |faz15                            |faz17                    |faz18                          |faz19                                ]
+[faz02      |faz03          |faj06           |faz031    |faz04                   |faz08      |faz05     |faz09   |faz06      |faz10      |faz12   |faz13                         |faz14                   |faz15                            |faz17                    |faz18                          |faz19                                ]
+[faz02      |faz03          |faj06           |faz031    |faz04                   |faz08      |faz05     |faz09   |faz06      |faz10      |faz12   |faz13                         |faz14                   |faz15                            |faz17                    |faz18                          |faz19                                ]
+[faz02      |faz03          |faj06           |faz031    |faz04                   |faz08      |faz05     |faz09   |faz06      |faz10      |faz12   |faz13                         |faz14                   |faz15                            |faz17                    |faz18                          |faz19                                ]
+[faz02      |faz03          |faj06           |faz031    |faz04                   |faz08      |faz05     |faz09   |faz06      |faz10      |faz12   |faz13                         |faz14                   |faz15                            |faz17                    |faz18                          |faz19                                ]
+[faz02      |faz03          |faj06           |faz031    |faz04                   |faz08      |faz05     |faz09   |faz06      |faz10      |faz12   |faz13                         |faz14                   |faz15                            |faz17                    |faz18                          |faz19                                ]
+[faz02      |faz03          |faj06           |faz031    |faz04                   |faz08      |faz05     |faz09   |faz06      |faz10      |faz12   |faz13                         |faz14                   |faz15                            |faz17                    |faz18                          |faz19                                ]
+
+}
+END -- s_faz
+END -- page01
+Page info(text="Info")
+Grid gr2223
+{
+ Record Owner       [fayuser   ] Last Modified by   [faymodu   ] Confirm            [fayconf   ] Depr-Tax           [faypost2  ]
+ Department         [faygrup   ] Create/Modify Date [faydate   ] Depreciation       [faypost   ]
+ Record Orig.       [fayoriu   ]
+ Dept Orig.         [fayorig   ]
+}
+END -- gr2223
+END -- info
+END -- folder01
+Grid gr2224
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr2224
+END -- VBox1
+END -- afat1052
+
+TABLES
+faz_file,
+fay_file
+ATTRIBUTES
+Edit faz02=faz_file.faz02, tabIndex=1, title="Line No.", noEntry;
+Edit faz03=faz_file.faz03, tabIndex=2, title="Property No.", noEntry;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=3, title="Chinese Name", noEntry;
+Edit faz031=faz_file.faz031, tabIndex=4, title="Add No.", noEntry;
+Edit faz04=faz_file.faz04, tabIndex=5, title="Undepreciated Balance", noEntry;
+Edit faz08=faz_file.faz08, tabIndex=6, title="Impv.Cst", noEntry;
+Edit faz05=faz_file.faz05, tabIndex=7, title="Rest Lf", noEntry;
+Edit faz09=faz_file.faz09, tabIndex=8, title="After", noEntry;
+Edit faz06=faz_file.faz06, tabIndex=9, title="Est.Rsdl", noEntry;
+Edit faz10=faz_file.faz10, tabIndex=10, title="After", noEntry;
+Edit faz12=faz_file.faz12, tabIndex=11, title="Cause", noEntry;
+Edit faz13=faz_file.faz13, tabIndex=12, title="Deprec.-Tax Uncred. Balance", noEntry;
+Edit faz14=faz_file.faz14, tabIndex=13, title="Deprec.-Tax Rest Life", noEntry;
+Edit faz15=faz_file.faz15, tabIndex=14, title="Deprec.-Tax Estimated Residual", noEntry;
+Edit faz17=faz_file.faz17, tabIndex=15, title="Deprec.-Tax Improv. Cost";
+Edit faz18=faz_file.faz18, tabIndex=16, title="Rest Life after Deprec.-Tax";
+Edit faz19=faz_file.faz19, tabIndex=17, title="Estimated Residual aft Depr-Tax Tran";
+Edit fayuser=fay_file.fayuser, tabIndex=18, noEntry;
+Edit faymodu=fay_file.faymodu, tabIndex=19, noEntry;
+Edit fayconf=fay_file.fayconf, tabIndex=20, noEntry;
+Edit faypost2=fay_file.faypost2, tabIndex=21, noEntry;
+Edit faygrup=fay_file.faygrup, tabIndex=22, noEntry;
+DateEdit faydate=fay_file.faydate, tabIndex=23, noEntry;
+Edit faypost=fay_file.faypost, tabIndex=24, noEntry;
+Edit fayoriu=fay_file.fayoriu, tabIndex=501, noEntry;
+Edit fayorig=fay_file.fayorig, tabIndex=502, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_faz(faz_file.faz02,faz_file.faz03,formonly.faj06,faz_file.faz031,faz_file.faz04,faz_file.faz08,faz_file.faz05,faz_file.faz09,faz_file.faz06,faz_file.faz10,faz_file.faz12,faz_file.faz13,faz_file.faz14,faz_file.faz15,faz_file.faz17,faz_file.faz18,faz_file.faz19)
+SCREEN RECORD Undefined(fay_file.fayuser,fay_file.faymodu,fay_file.fayconf,fay_file.faypost2,fay_file.faygrup,fay_file.faydate,fay_file.faypost,fay_file.fayoriu,fay_file.fayorig,formonly.cn2)
+END -- INSTRUCTIONS
+

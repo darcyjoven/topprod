@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmr250.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"atmr250")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                               >
+  Promotion No.          [tqx01               ]
+  Promotion Date         [tqx02               ]
+  Promotion Type         [tqx03               ]
+  Promotion Period Type  [tqx04               ]
+  Institute Code         [tqx12               ]
+  Credit code            [tqx13               ]
+
+ <                                                                                        >
+
+}
+END -- Grid1
+Grid Grid2
+{
+[more                                              ]
+
+}
+END -- Grid2
+END -- VBox1
+END -- atmr250
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit tqx01=formonly.tqx01 type CHAR, action=controlp, tabIndex=1, image="zoom";
+DateEdit tqx02=formonly.tqx02 type DATE, tabIndex=2;
+ButtonEdit tqx03=formonly.tqx03 type CHAR, action=controlp, tabIndex=3, image="zoom";
+ButtonEdit tqx04=formonly.tqx04 type CHAR, action=controlp, tabIndex=4, image="zoom";
+ButtonEdit tqx12=formonly.tqx12 type CHAR, action=controlp, tabIndex=5, image="zoom";
+ButtonEdit tqx13=formonly.tqx13 type CHAR, action=controlp, tabIndex=6, image="zoom";
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.tqx01,formonly.tqx02,formonly.tqx03,formonly.tqx04,formonly.tqx12,formonly.tqx13,formonly.more)
+END -- INSTRUCTIONS
+

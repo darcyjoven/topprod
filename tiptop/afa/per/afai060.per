@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai060.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai060")
+VBox VBox1
+Folder pc323
+Page page01(text="Main")
+Table s_fah
+{
+[fahslip     |fahdesc             |fahauno          |fahtype         |fahfa1          |fahfa2          |fahprt          |fahconf            |fahpost         |fahdmy3          |fahdmy32         |fahglcr               |fahgslp        |fahgslp1       |fahapr   ]
+[fahslip     |fahdesc             |fahauno          |fahtype         |fahfa1          |fahfa2          |fahprt          |fahconf            |fahpost         |fahdmy3          |fahdmy32         |fahglcr               |fahgslp        |fahgslp1       |fahapr   ]
+[fahslip     |fahdesc             |fahauno          |fahtype         |fahfa1          |fahfa2          |fahprt          |fahconf            |fahpost         |fahdmy3          |fahdmy32         |fahglcr               |fahgslp        |fahgslp1       |fahapr   ]
+[fahslip     |fahdesc             |fahauno          |fahtype         |fahfa1          |fahfa2          |fahprt          |fahconf            |fahpost         |fahdmy3          |fahdmy32         |fahglcr               |fahgslp        |fahgslp1       |fahapr   ]
+[fahslip     |fahdesc             |fahauno          |fahtype         |fahfa1          |fahfa2          |fahprt          |fahconf            |fahpost         |fahdmy3          |fahdmy32         |fahglcr               |fahgslp        |fahgslp1       |fahapr   ]
+[fahslip     |fahdesc             |fahauno          |fahtype         |fahfa1          |fahfa2          |fahprt          |fahconf            |fahpost         |fahdmy3          |fahdmy32         |fahglcr               |fahgslp        |fahgslp1       |fahapr   ]
+[fahslip     |fahdesc             |fahauno          |fahtype         |fahfa1          |fahfa2          |fahprt          |fahconf            |fahpost         |fahdmy3          |fahdmy32         |fahglcr               |fahgslp        |fahgslp1       |fahapr   ]
+[fahslip     |fahdesc             |fahauno          |fahtype         |fahfa1          |fahfa2          |fahprt          |fahconf            |fahpost         |fahdmy3          |fahdmy32         |fahglcr               |fahgslp        |fahgslp1       |fahapr   ]
+[fahslip     |fahdesc             |fahauno          |fahtype         |fahfa1          |fahfa2          |fahprt          |fahconf            |fahpost         |fahdmy3          |fahdmy32         |fahglcr               |fahgslp        |fahgslp1       |fahapr   ]
+[fahslip     |fahdesc             |fahauno          |fahtype         |fahfa1          |fahfa2          |fahprt          |fahconf            |fahpost         |fahdmy3          |fahdmy32         |fahglcr               |fahgslp        |fahgslp1       |fahapr   ]
+
+}
+END -- s_fah
+END -- page01
+END -- pc323
+Grid gr1807
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1807
+END -- VBox1
+END -- afai060
+
+TABLES
+fah_file
+ATTRIBUTES
+Edit fahslip=fah_file.fahslip, tabIndex=1, title="Doccument", not null, required, upShift, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record! <^Y>User Authorization  <^U>Dept Authorization";
+Edit fahdesc=fah_file.fahdesc, tabIndex=2, title="Document Name";
+CheckBox fahauno=fah_file.fahauno, tabIndex=3, title="Auto Numbering", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ComboBox fahtype=fah_file.fahtype, tabIndex=4, title="Doc. Property", not null, required, queryEditable, items=(("1", %"Capitalization"),("3", %"Transfer"),("4", %"Sale"),("5", %"Retire"),("6", %"Charge off"),("7", %"Improve"),("8", %"Revaluate"),("9", %"Adjust"),("A", %"Send"),("B", %"Recall"),("C", %"Transfer"),("D", %"Withdraw Mold"),("E", %"Return Mold"),("F", %"Re-Amortize after Depreciated"),("H", %"Deduction Preparation"),("I", %"Group Change"),("J", %"Stops Using"),("K", %"Category Trans."));
+CheckBox fahfa1=fah_file.fahfa1, tabIndex=5, title="Finance Voucher", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox fahfa2=fah_file.fahfa2, tabIndex=5, title="Finance Voucher2", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox fahprt=fah_file.fahprt, tabIndex=5, title="Print Directly", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox fahconf=fah_file.fahconf, tabIndex=6, title="Confirm Directly", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox fahpost=fah_file.fahpost, tabIndex=7, title="Post Directly", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox fahdmy3=fah_file.fahdmy3, tabIndex=8, title="Carry Voucher", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox fahdmy32=fah_file.fahdmy32, tabIndex=14, title="Carry Voucher2", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox fahglcr=fah_file.fahglcr, tabIndex=9, title="Carry Account Or Not", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit fahgslp=fah_file.fahgslp, action=controlp, tabIndex=10, title="Account Type", image="zoom";
+ButtonEdit fahgslp1=fah_file.fahgslp1, action=controlp, tabIndex=11, title="Account Type#2", image="zoom";
+CheckBox fahapr=fah_file.fahapr, tabIndex=12, title="Approve", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=13, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fah(fah_file.fahslip,fah_file.fahdesc,fah_file.fahauno,fah_file.fahtype,fah_file.fahfa1,fah_file.fahfa2,fah_file.fahprt,fah_file.fahconf,fah_file.fahpost,fah_file.fahdmy3,fah_file.fahdmy32,fah_file.fahglcr,fah_file.fahgslp,fah_file.fahgslp1,fah_file.fahapr)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

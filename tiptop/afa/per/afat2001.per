@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat2001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat2001")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Table s_for
+{
+[for02 |for03     |fgd02             |for04                         ]
+[for02 |for03     |fgd02             |for04                         ]
+[for02 |for03     |fgd02             |for04                         ]
+[for02 |for03     |fgd02             |for04                         ]
+[for02 |for03     |fgd02             |for04                         ]
+[for02 |for03     |fgd02             |for04                         ]
+[for02 |for03     |fgd02             |for04                         ]
+[for02 |for03     |fgd02             |for04                         ]
+[for02 |for03     |fgd02             |for04                         ]
+[for02 |for03     |fgd02             |for04                         ]
+
+}
+END -- s_for
+END -- page01
+END -- folder01
+Grid gr2276
+{
+ ----------Rows [cn4   ] ----------
+
+}
+END -- gr2276
+END -- VBox1
+END -- afat2001
+
+TABLES
+for_file
+ATTRIBUTES
+Edit for02=for_file.for02, tabIndex=1, title="Line#", noEntry;
+Edit for03=for_file.for03, tabIndex=2, title="Calib. No.", noEntry;
+Edit fgd02=formonly.fgd02 type VARCHAR, tabIndex=3, title="Calib Items Name", noEntry;
+Edit for04=for_file.for04, tabIndex=4, title="Result";
+Edit cn4=formonly.cn4 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_for(for_file.for02,for_file.for03,formonly.fgd02,for_file.for04)
+SCREEN RECORD Undefined(formonly.cn4)
+END -- INSTRUCTIONS
+

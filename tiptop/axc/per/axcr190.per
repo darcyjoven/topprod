@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr190.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr190")
+VBox vb25
+Grid gr31
+{
+ <G group01                                                                            >
+  Item No.            [ima01               ]  Account             [ima39               ]
+  Cost Levels         [ima57               ]  Source              [ima08               ]
+  Main Grp Code       [ima06               ]  Grp Code 1          [ima09               ]
+  Group Code 2        [ima10               ]  Grp Code 3          [ima11               ]
+  Group Code 4        [ima12               ]
+ <                                                                                     >
+ <G group02                                                                            >
+  Year/Month             [yy        ][mm        ]
+  Cost Calculation Method[type          ]
+ [d_sw                           ]
+ [yn                              ]
+ <                                                                                     >
+
+}
+END -- gr31
+Grid gr32
+{
+[more                                                                ]
+
+}
+END -- gr32
+END -- vb25
+END -- axcr190
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+ButtonEdit ima01=formonly.ima01 type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<P>";
+Edit ima39=formonly.ima39 type CHAR, tabIndex=2;
+Edit ima57=formonly.ima57 type CHAR, tabIndex=3;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=4;
+Edit ima06=formonly.ima06 type CHAR, tabIndex=5;
+Edit ima09=formonly.ima09 type CHAR, tabIndex=6;
+Edit ima10=formonly.ima10 type CHAR, tabIndex=7;
+Edit ima11=formonly.ima11 type CHAR, tabIndex=8;
+Edit ima12=formonly.ima12 type CHAR, tabIndex=9;
+Group group02:group02, text="INPUT";
+Edit yy=formonly.yy type CHAR, tabIndex=10;
+Edit mm=formonly.mm type CHAR, tabIndex=11;
+ComboBox type=formonly.type type CHAR, tabIndex=15, not null, required, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+CheckBox d_sw=formonly.d_sw type CHAR, tabIndex=12, text="Print difference only ?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox yn=formonly.yn type CHAR, tabIndex=13, text="Print WH/Loc/Lot Details", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=14, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima01,formonly.ima39,formonly.ima57,formonly.ima08,formonly.ima06,formonly.ima09,formonly.ima10,formonly.ima11,formonly.ima12,formonly.yy,formonly.mm,formonly.type,formonly.d_sw,formonly.yn,formonly.more)
+END -- INSTRUCTIONS
+

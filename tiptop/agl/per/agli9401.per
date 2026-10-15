@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli9401.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli9401")
+VBox vb3
+Folder pc476
+Page page01(text="Main")
+Table s_giqq
+{
+[giqq01     |giqq02                   |giqq03    |giqq0]
+[giqq01     |giqq02                   |giqq03    |giqq0]
+[giqq01     |giqq02                   |giqq03    |giqq0]
+[giqq01     |giqq02                   |giqq03    |giqq0]
+[giqq01     |giqq02                   |giqq03    |giqq0]
+[giqq01     |giqq02                   |giqq03    |giqq0]
+[giqq01     |giqq02                   |giqq03    |giqq0]
+[giqq01     |giqq02                   |giqq03    |giqq0]
+[giqq01     |giqq02                   |giqq03    |giqq0]
+[giqq01     |giqq02                   |giqq03    |giqq0]
+
+}
+END -- s_giqq
+END -- page01
+END -- pc476
+Grid gr2465
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr2465
+END -- vb3
+END -- agli9401
+
+TABLES
+giqq_file
+ATTRIBUTES
+Edit giqq01=giqq_file.giqq01, tabIndex=1, title="Group Code", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit giqq02=giqq_file.giqq02, tabIndex=2, title="Description";
+ComboBox giqq03=giqq_file.giqq03, tabIndex=3, title="Var.Class", not null, required, queryEditable, items=(("1", "Business Activity"),("2", "Investment"),("3", "Financial Activity"),("4", "Beginning Of Period Amount"),("5", "Ending Of Period Amount"));
+Edit giqq0=giqq_file.giqq04, tabIndex=4, title="Line";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_giqq(giqq_file.giqq01,giqq_file.giqq02,giqq_file.giqq03,giqq_file.giqq04)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

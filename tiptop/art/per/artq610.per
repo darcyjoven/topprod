@@ -1,0 +1,104 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artq610.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid ds1
+{
+
+[label1  |luaplant            ] [label2 ][lua06               ]  [label4 ][lua34               ]
+[label9  |lmf03               ] [label3  |lua07               ]  [label5 ][lua39               ]
+[label10][lmf04               ] [label11 |lmf13               ]  [label6 ][lua38               ]
+[label12][lie04               ] [label7  |lub03               ]  [label8 ][lub10               ]
+
+
+
+
+}
+END -- ds1
+END -- Page1
+END -- Folder1
+Table ds2
+{
+[luaplan1  |rtz13        |lua01               |lua061              |lua02               |lmf13_1                       |lua03               |lub02   |lub01     |oaj02                         |lub04t                |lub11                 |amt_2                 |lub12                 ]
+[luaplan1  |rtz13        |lua01               |lua061              |lua02               |lmf13_1                       |lua03               |lub02   |lub01     |oaj02                         |lub04t                |lub11                 |amt_2                 |lub12                 ]
+[luaplan1  |rtz13        |lua01               |lua061              |lua02               |lmf13_1                       |lua03               |lub02   |lub01     |oaj02                         |lub04t                |lub11                 |amt_2                 |lub12                 ]
+[luaplan1  |rtz13        |lua01               |lua061              |lua02               |lmf13_1                       |lua03               |lub02   |lub01     |oaj02                         |lub04t                |lub11                 |amt_2                 |lub12                 ]
+[luaplan1  |rtz13        |lua01               |lua061              |lua02               |lmf13_1                       |lua03               |lub02   |lub01     |oaj02                         |lub04t                |lub11                 |amt_2                 |lub12                 ]
+
+}
+END -- ds2
+Grid Grid1
+{
+
+ ---------[label13   ][cnt       ] ----------
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+TABLES
+lua_file,
+oaj_file,
+lmf_file,
+lmf_file2=lmf_file,
+lua_file1=lua_file,
+rtz_file,
+lie_file,
+lub_file,
+lub_file1=lub_file
+ATTRIBUTES
+Label label1:Label1, text=%"luaplant";
+ButtonEdit luaplant=lua_file.luaplant, action=controlp, tabIndex=1, image="zoom", scroll;
+Label label2:Label2, text=%"lua06";
+ButtonEdit lua06=lua_file.lua06, action=controlp, tabIndex=5, image="zoom", scroll;
+Label label4:Label4, text=%"lua34";
+DateEdit lua34=lua_file.lua34, tabIndex=9;
+Label label9:Label9, text=%"lmf03";
+ButtonEdit lmf03=lmf_file.lmf03, action=controlp, tabIndex=2, image="zoom", scroll;
+Label label3:Label3, text=%"lua07";
+ButtonEdit lua07=lua_file.lua07, action=controlp, tabIndex=6, image="zoom", scroll;
+Label label5:Label5, text=%"lua39";
+ButtonEdit lua39=lua_file.lua39, action=controlp, tabIndex=10, image="zoom", scroll;
+Label label10:Label10, text=%"lmf04";
+ButtonEdit lmf04=lmf_file.lmf04, action=controlp, tabIndex=3, image="zoom", scroll;
+Label label11:Label11, text=%"lmf13";
+TextEdit lmf13=lmf_file2.lmf13, tabIndex=7;
+Label label6:Label6, text=%"lua38";
+ButtonEdit lua38=lua_file.lua38, action=controlp, tabIndex=11, image="zoom", scroll;
+Label label12:Label12, text=%"lie04";
+ButtonEdit lie04=lie_file.lie04, action=controlp, tabIndex=4, image="zoom";
+Label label7:Label7, text=%"lub03";
+ButtonEdit lub03=lub_file.lub03, action=controlp, tabIndex=8, image="zoom", scroll;
+Label label8:Label8, text=%"lub10";
+DateEdit lub10=lub_file.lub10, tabIndex=12;
+Edit luaplan1=lua_file1.luaplant, tabIndex=13, title=%"luaplant", not null, scroll;
+Edit rtz13=rtz_file.rtz13, tabIndex=14, title=%"rtz13";
+Edit lua01=lua_file1.lua06, tabIndex=15, title=%"lua06", scroll;
+Edit lua061=lua_file.lua061, tabIndex=16, title=%"lua061", scroll;
+Edit lua02=lua_file1.lua07, tabIndex=17, title=%"lua07", scroll;
+Edit lmf13_1=formonly.lmf13_1 type CHAR, tabIndex=18, title=%"lmf13_1", scroll;
+Edit lua03=lua_file.lua01, tabIndex=19, title=%"lua01", not null, scroll;
+Edit lub02=lub_file.lub02, tabIndex=20, title=%"lub02";
+Edit lub01=lub_file1.lub03, tabIndex=21, title=%"lub03", scroll;
+Edit oaj02=oaj_file.oaj02, tabIndex=22, title=%"oaj02", scroll;
+Edit lub04t=lub_file.lub04t, tabIndex=23, title=%"lub04t", scroll;
+Edit lub11=lub_file.lub11, tabIndex=24, title=%"lub11", scroll;
+Edit amt_2=formonly.amt_2, tabIndex=25, title=%"amt_2";
+Edit lub12=lub_file.lub12, tabIndex=26, title=%"lub12", scroll;
+Label label13:Label13, text=%"Label13";
+Edit cnt=formonly.cnt, tabIndex=27;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Record1(lua_file.luaplant,lua_file.lua06,lua_file.lua07,lua_file.lua34,lua_file.lua39,lua_file.lua38,lub_file.lub03,lub_file.lub10,lmf_file.lmf03,lmf_file.lmf04,lmf_file2.lmf13)
+SCREEN RECORD s_lua(lua_file1.luaplant,rtz_file.rtz13,lua_file1.lua06,lua_file.lua061,lua_file1.lua07,formonly.lmf13_1,lua_file.lua01,lub_file.lub02,lub_file1.lub03,oaj_file.oaj02,lub_file.lub04t,lub_file.lub11,formonly.amt_2,lub_file.lub12)
+SCREEN RECORD Undefined(lie_file.lie04,formonly.cnt)
+END -- INSTRUCTIONS
+

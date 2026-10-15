@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp304.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asfp304")
+VBox VBox1
+Folder pc125
+Page page01(text=%"Main")
+Grid gr525
+{
+ <G gb1                                        > <G gb3                  > <G gb2                                                         >
+  W/O Date        [sfb81       ]                  [mac_opt               ]   Order No.           [oea01                       ]
+  Dept No.        [gem01      ] [gem02     ]                                 Order Date          [oea02       ]
+                                                                             Salesman            [oea14     ]
+                                                                             Customer            [oea03     ]
+ <                                             > <                       > <                                                              >
+
+}
+END -- gr525
+END -- page01
+END -- pc125
+Table s_new
+{
+[x         |oeb01           |oeb0|oebud04     |oebud11     |new_part             |ima02                |ima021           |sfb93   |sfb06     |edc01               |edc02   |ima910          |new_qty  |sfb08_s   |sfb08_1       |imaud10    |sfb919          |b_date         |e_date        |sfb02    |new_no      |ven_no            |a      |costcenter  |gem02c     ]
+[x         |oeb01           |oeb0|oebud04     |oebud11     |new_part             |ima02                |ima021           |sfb93   |sfb06     |edc01               |edc02   |ima910          |new_qty  |sfb08_s   |sfb08_1       |imaud10    |sfb919          |b_date         |e_date        |sfb02    |new_no      |ven_no            |a      |costcenter  |gem02c     ]
+[x         |oeb01           |oeb0|oebud04     |oebud11     |new_part             |ima02                |ima021           |sfb93   |sfb06     |edc01               |edc02   |ima910          |new_qty  |sfb08_s   |sfb08_1       |imaud10    |sfb919          |b_date         |e_date        |sfb02    |new_no      |ven_no            |a      |costcenter  |gem02c     ]
+[x         |oeb01           |oeb0|oebud04     |oebud11     |new_part             |ima02                |ima021           |sfb93   |sfb06     |edc01               |edc02   |ima910          |new_qty  |sfb08_s   |sfb08_1       |imaud10    |sfb919          |b_date         |e_date        |sfb02    |new_no      |ven_no            |a      |costcenter  |gem02c     ]
+[x         |oeb01           |oeb0|oebud04     |oebud11     |new_part             |ima02                |ima021           |sfb93   |sfb06     |edc01               |edc02   |ima910          |new_qty  |sfb08_s   |sfb08_1       |imaud10    |sfb919          |b_date         |e_date        |sfb02    |new_no      |ven_no            |a      |costcenter  |gem02c     ]
+[x         |oeb01           |oeb0|oebud04     |oebud11     |new_part             |ima02                |ima021           |sfb93   |sfb06     |edc01               |edc02   |ima910          |new_qty  |sfb08_s   |sfb08_1       |imaud10    |sfb919          |b_date         |e_date        |sfb02    |new_no      |ven_no            |a      |costcenter  |gem02c     ]
+[x         |oeb01           |oeb0|oebud04     |oebud11     |new_part             |ima02                |ima021           |sfb93   |sfb06     |edc01               |edc02   |ima910          |new_qty  |sfb08_s   |sfb08_1       |imaud10    |sfb919          |b_date         |e_date        |sfb02    |new_no      |ven_no            |a      |costcenter  |gem02c     ]
+[x         |oeb01           |oeb0|oebud04     |oebud11     |new_part             |ima02                |ima021           |sfb93   |sfb06     |edc01               |edc02   |ima910          |new_qty  |sfb08_s   |sfb08_1       |imaud10    |sfb919          |b_date         |e_date        |sfb02    |new_no      |ven_no            |a      |costcenter  |gem02c     ]
+[x         |oeb01           |oeb0|oebud04     |oebud11     |new_part             |ima02                |ima021           |sfb93   |sfb06     |edc01               |edc02   |ima910          |new_qty  |sfb08_s   |sfb08_1       |imaud10    |sfb919          |b_date         |e_date        |sfb02    |new_no      |ven_no            |a      |costcenter  |gem02c     ]
+[x         |oeb01           |oeb0|oebud04     |oebud11     |new_part             |ima02                |ima021           |sfb93   |sfb06     |edc01               |edc02   |ima910          |new_qty  |sfb08_s   |sfb08_1       |imaud10    |sfb919          |b_date         |e_date        |sfb02    |new_no      |ven_no            |a      |costcenter  |gem02c     ]
+}
+END -- s_new
+END -- VBox1
+END -- asfp304
+
+ATTRIBUTES
+Group gb1:gb1, text=%"INPUT";
+DateEdit sfb81=formonly.sfb81 type DATE, tabIndex=1, not null, required;
+ButtonEdit gem01=formonly.gem01 type CHAR, action=controlp, tabIndex=2, image="zoom", comment=%"<^P> Qry Dept No.";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=3, noEntry;
+Group gb3:gb3, text=%"Machine";
+CheckBox mac_opt=formonly.mac_opt type CHAR, tabIndex=4, text=%"Machine Option", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group gb2:gb2, text=%"QBE";
+ButtonEdit oea01=formonly.oea01 type CHAR, action=controlp, tabIndex=5, not null, required, image="zoom", comment=%"<^P>Query";
+DateEdit oea02=formonly.oea02 type DATE, tabIndex=6, noEntry;
+ButtonEdit oea14=formonly.oea14 type CHAR, action=controlp, tabIndex=7, image="zoom.png";
+ButtonEdit oea03=formonly.oea03 type CHAR, action=controlp, tabIndex=8, image="zoom.png";
+CheckBox x=formonly.x type CHAR, tabIndex=9, title=%"Translate", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit oeb01=formonly.oeb01 type CHAR, tabIndex=10, title=%"Order No.";
+Edit oeb0=formonly.oeb03 type CHAR, tabIndex=11, title=%"Ln#", noEntry;
+Edit oebud04=formonly.oebud04, tabIndex=32, title=%"oebud04", noEntry;
+Edit oebud11=formonly.oebud11, tabIndex=33, title=%"oebud11", noEntry;
+Edit new_part=formonly.new_part type CHAR, tabIndex=12, title=%"Item", noEntry;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=13, title=%"Specification", noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=29, title=%"Specifications", noEntry;
+CheckBox sfb93=formonly.sfb93 type CHAR, tabIndex=14, title=%"Routing ?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit sfb06=formonly.sfb06 type CHAR, action=controlp, tabIndex=15, title=%"Routing No.", image="zoom";
+ButtonEdit edc01=formonly.edc01 type CHAR, action=controlp, tabIndex=16, title=%"Combined Version No", image="zoom";
+ButtonEdit edc02=formonly.edc02 type SMALLINT, action=controlp, tabIndex=17, title=%"Combined S/N", image="zoom";
+ButtonEdit ima910=formonly.ima910 type CHAR, action=controlp, tabIndex=18, title=%"Alternate Code", image="zoom.png";
+ButtonEdit new_qty=formonly.new_qty type CHAR, action=controlp, tabIndex=19, title=%"Prod.Qty", image="zoom", comment=%"<^P> Qry Dynamic Data";
+Edit sfb08_s=formonly.sfb08_s, tabIndex=30, title=%"sfb08_s";
+Edit sfb08_1=formonly.sfb08_1, tabIndex=34, title=%"sfb08_1", noEntry;
+Edit imaud10=formonly.imaud10, tabIndex=31, title=%"imaud10", noEntry;
+Edit sfb919=formonly.sfb919 type CHAR, tabIndex=20, title=%"Plan Lot No.";
+DateEdit b_date=formonly.b_date type DATE, tabIndex=21, title=%"Operating Date";
+DateEdit e_date=formonly.e_date type DATE, tabIndex=22, title=%"Complete Date";
+ComboBox sfb02=formonly.sfb02 type CHAR, tabIndex=23, title=%"WO Type", not null, required, comment=%"1.Gnrl 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm 13.Predic 15.Trial ", items=(("1", %"Gnrl"),("5", %"Rework"),("7", %"Sub."),("8", %"Rwrk SUB"),("11", %"Disasm"),("13", %"Predic"),("15", %"Trial"));
+ButtonEdit new_no=formonly.new_no type CHAR, action=controlp, tabIndex=24, title=%"W/O#", image="zoom", upShift, comment=%"<^P> Qry Doc Data";
+ButtonEdit ven_no=formonly.ven_no type CHAR, action=controlp, tabIndex=25, title=%"Department/Vender", image="zoom", comment=%"<^P> Qry Department/Vender";
+CheckBox a=formonly.a type CHAR, tabIndex=26, title=%"Explode Cost Center", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit costcenter=formonly.costcenter type CHAR, action=controlp, tabIndex=27, not null, required, image="zoom", comment=%"<^P> Qry Cost Center";
+Edit gem02c=formonly.gem02c type CHAR, tabIndex=28, title=%"Desc", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_new(formonly.x,formonly.oeb01,formonly.oeb03,formonly.oebud04,formonly.oebud11,formonly.new_part,formonly.ima02,formonly.ima021,formonly.sfb93,formonly.sfb06,formonly.edc01,formonly.edc02,formonly.ima910,formonly.new_qty,formonly.sfb08_s,formonly.sfb08_1,formonly.imaud10,formonly.sfb919,formonly.b_date,formonly.e_date,formonly.sfb02,formonly.new_no,formonly.ven_no,formonly.a,formonly.costcenter,formonly.gem02c)
+SCREEN RECORD Undefined(formonly.sfb81,formonly.gem01,formonly.gem02,formonly.mac_opt,formonly.oea01,formonly.oea02,formonly.oea14,formonly.oea03)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u53/tiptop/qry/4fd/q_asa4.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Company Basic Data Query")
+Grid gr3735
+{
+ <T q_asa4                                                                       >
+ [check|asa02          |asa03            |asb04            |asb05                ]
+ [check|asa02          |asa03            |asb04            |asb05                ]
+ [check|asa02          |asa03            |asb04            |asb05                ]
+ [check|asa02          |asa03            |asb04            |asb05                ]
+ [check|asa02          |asa03            |asb04            |asb05                ]
+ [check|asa02          |asa03            |asb04            |asb05                ]
+ [check|asa02          |asa03            |asb04            |asb05                ]
+ [check|asa02          |asa03            |asb04            |asb05                ]
+ [check|asa02          |asa03            |asb04            |asb05                ]
+ [check|asa02          |asa03            |asb04            |asb05                ]
+ <                                                                               >
+
+}
+END -- gr3735
+END -- q_asa4
+
+TABLES
+asb_file,
+asa_file
+ATTRIBUTES
+Table q_asa4:q_asa4;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit asa02=asa_file.asa02, tabIndex=2, title="Parent Company", noEntry;
+Edit asa03=asa_file.asa03, tabIndex=3, title="Parent Company A/C", noEntry;
+Edit asb04=asb_file.asb04, tabIndex=4, title=%"Subsidiary Company";
+Edit asb05=asb_file.asb05, tabIndex=5, title=%"Subsidiary Company A/C";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asa4(formonly.check,asa_file.asa02,asa_file.asa03,asb_file.asb04,asb_file.asb05)
+END -- INSTRUCTIONS
+

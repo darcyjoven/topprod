@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmi171.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmi171")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr1387
+{
+ Shipping Method No. [obp01     ][obm02               ]
+
+}
+END -- gr1387
+END -- page01
+END -- folder01
+Table s_obp
+{
+[obp02                 |oac02               |obp03                  |oac02a              |obp04       |obp05      |obp06                |obp07                  ]
+[obp02                 |oac02               |obp03                  |oac02a              |obp04       |obp05      |obp06                |obp07                  ]
+[obp02                 |oac02               |obp03                  |oac02a              |obp04       |obp05      |obp06                |obp07                  ]
+[obp02                 |oac02               |obp03                  |oac02a              |obp04       |obp05      |obp06                |obp07                  ]
+[obp02                 |oac02               |obp03                  |oac02a              |obp04       |obp05      |obp06                |obp07                  ]
+[obp02                 |oac02               |obp03                  |oac02a              |obp04       |obp05      |obp06                |obp07                  ]
+[obp02                 |oac02               |obp03                  |oac02a              |obp04       |obp05      |obp06                |obp07                  ]
+[obp02                 |oac02               |obp03                  |oac02a              |obp04       |obp05      |obp06                |obp07                  ]
+[obp02                 |oac02               |obp03                  |oac02a              |obp04       |obp05      |obp06                |obp07                  ]
+[obp02                 |oac02               |obp03                  |oac02a              |obp04       |obp05      |obp06                |obp07                  ]
+
+}
+END -- s_obp
+Grid gr1388
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr1388
+END -- VBox1
+END -- atmi171
+
+TABLES
+obp_file
+ATTRIBUTES
+ButtonEdit obp01=obp_file.obp01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field,No Blank/Repeated!,<^P>Qry Detail";
+Edit obm02=formonly.obm02 type CHAR, tabIndex=2, noEntry;
+ButtonEdit obp02=obp_file.obp02, action=controlp, tabIndex=3, title="Init Transfer Site", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit oac02=formonly.oac02 type CHAR, tabIndex=4, title="Name", noEntry;
+ButtonEdit obp03=obp_file.obp03, action=controlp, tabIndex=5, title="Dest Transfer Site", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit oac02a=formonly.oac02a type CHAR, tabIndex=6, title="Name", noEntry;
+Edit obp04=obp_file.obp04, tabIndex=7, title="Day Used", not null, required;
+ButtonEdit obp05=obp_file.obp05, action=controlp, tabIndex=8, title="Currency", not null, required, image="zoom", comment="<^P>Qry Detail";
+Edit obp06=obp_file.obp06, tabIndex=9, title="Unit Shipping Cost", not null, required;
+Edit obp07=obp_file.obp07, tabIndex=10, title="Unit Shipp Cost(Return)", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_obp(obp_file.obp02,formonly.oac02,obp_file.obp03,formonly.oac02a,obp_file.obp04,obp_file.obp05,obp_file.obp06,obp_file.obp07)
+SCREEN RECORD Undefined(obp_file.obp01,formonly.obm02,formonly.cnt)
+END -- INSTRUCTIONS
+

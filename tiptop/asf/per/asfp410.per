@@ -1,0 +1,56 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp410.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp410")
+VBox VBox1
+Table s_sfb
+{
+[sure   |sfb01           |sfb02     |sfb05                |sfb08    |sfb09         |sfb04      |sfb28 |sfb15        ]
+[sure   |sfb01           |sfb02     |sfb05                |sfb08    |sfb09         |sfb04      |sfb28 |sfb15        ]
+[sure   |sfb01           |sfb02     |sfb05                |sfb08    |sfb09         |sfb04      |sfb28 |sfb15        ]
+[sure   |sfb01           |sfb02     |sfb05                |sfb08    |sfb09         |sfb04      |sfb28 |sfb15        ]
+[sure   |sfb01           |sfb02     |sfb05                |sfb08    |sfb09         |sfb04      |sfb28 |sfb15        ]
+[sure   |sfb01           |sfb02     |sfb05                |sfb08    |sfb09         |sfb04      |sfb28 |sfb15        ]
+[sure   |sfb01           |sfb02     |sfb05                |sfb08    |sfb09         |sfb04      |sfb28 |sfb15        ]
+[sure   |sfb01           |sfb02     |sfb05                |sfb08    |sfb09         |sfb04      |sfb28 |sfb15        ]
+[sure   |sfb01           |sfb02     |sfb05                |sfb08    |sfb09         |sfb04      |sfb28 |sfb15        ]
+[sure   |sfb01           |sfb02     |sfb05                |sfb08    |sfb09         |sfb04      |sfb28 |sfb15        ]
+
+}
+END -- s_sfb
+Grid gr539
+{
+   [select_all    ] [cancel_all  ] Select Counts[cn3]
+   ----------Rows [cn2   ] ----------
+}
+END -- gr539
+END -- VBox1
+END -- asfp410
+
+TABLES
+sfb_file
+ATTRIBUTES
+CheckBox sure=formonly.sure type CHAR, tabIndex=1, title="Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sfb01=sfb_file.sfb01, tabIndex=2, title="W/O #", noEntry;
+ComboBox sfb02=sfb_file.sfb02, tabIndex=3, title="W/O Style", noEntry, comment="1.Gnrl 5.Rework 7.Sub. 8.Rwrk SUB 11.Disasm 13.Predic 15.Trial ", items=(("1", %"Gnrl"),("5", %"Rework"),("7", %"Sub."),("8", %"Rwrk SUB"),("11", %"Disasm"),("13", %"Predic"),("15", %"Trial"));
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=4, title="Item No.", noEntry, image="zoom";
+Edit sfb08=sfb_file.sfb08, tabIndex=5, title="Prod.Qty", noEntry, not null, required;
+Edit sfb09=sfb_file.sfb09, tabIndex=6, title="Completed Qty", noEntry, not null, required;
+ComboBox sfb04=sfb_file.sfb04, tabIndex=7, title="W/O Status", noEntry, comment="1.Open 2.Rls 3.Prt 4.Iss.Mat 5.WIP 6.FQC 7.St-i 8.Clos", items=(("1", %"Gnrl"),("2", %"Rls"),("3", %"Prt"),("4", %"Iss.Mat"),("5", %"WIP"),("6", %"FQC"),("7", %"St-i"),("8", %"Clos"));
+Edit sfb28=sfb_file.sfb28, tabIndex=8, title="Close", noEntry;
+DateEdit sfb15=sfb_file.sfb15, tabIndex=9, title="Complete Date", noEntry;
+Button select_all:select_all, comment="Select All";
+Button cancel_all:cancel_all, comment="Cancel All";
+Edit cn3=formonly.cn3 type CHAR, tabIndex=10, noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=11, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(formonly.sure,sfb_file.sfb01,sfb_file.sfb02,sfb_file.sfb05,sfb_file.sfb08,sfb_file.sfb09,sfb_file.sfb04,sfb_file.sfb28,sfb_file.sfb15)
+SCREEN RECORD Undefined(formonly.cn3,formonly.cn2)
+END -- INSTRUCTIONS
+

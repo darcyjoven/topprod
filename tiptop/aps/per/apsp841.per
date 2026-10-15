@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aps/42f/apsp841.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apsp841")
+VBox vb9
+HBox hb3
+Folder pc4
+Page Page26(text=%"Quary")
+Grid gr7
+{
+
+ APS  [vop01           ]         Adjusts[hstatus           ]
+ Save [vop02  ]
+
+
+}
+END -- gr7
+END -- Page26
+END -- pc4
+Grid gr6
+{
+
+
+
+
+
+
+
+}
+END -- gr6
+END -- hb3
+Folder pc3
+Page Page1(action=lock_sys, text=%"lock_sys")
+Table s_arr1
+{
+[vop16 |vop15   |vop03   |vop04   |vop05   |vop06   |vop08 |vop09                 |vop10                 |vop11     |vop12  |vop07     ]
+[vop16 |vop15   |vop03   |vop04   |vop05   |vop06   |vop08 |vop09                 |vop10                 |vop11     |vop12  |vop07     ]
+[vop16 |vop15   |vop03   |vop04   |vop05   |vop06   |vop08 |vop09                 |vop10                 |vop11     |vop12  |vop07     ]
+
+}
+END -- s_arr1
+END -- Page1
+END -- pc3
+Grid gr571
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr571
+END -- vb9
+END -- apsp841
+
+TABLES
+vop_file
+ATTRIBUTES
+ButtonEdit vop01=vop_file.vop01, action=controlp, tabIndex=16, not null, required, image="zoom", comment="<^P>Query Vender Classification Code";
+ComboBox hstatus=formonly.hstatus type CHAR, tabIndex=19, not null, required, items=(("A", "Adjust"),("B", "Subreturing unadj"));
+Edit vop02=vop_file.vop02, tabIndex=17, noEntry, not null;
+CheckBox vop16=vop_file.vop16, tabIndex=18, title="vop16", noEntry;
+ComboBox vop15=vop_file.vop15, tabIndex=137, title="vop15", noEntry, items=(("0", "Unchg"),("1", "ADD"),("2", "DEL"),("3", "UPD"));
+Edit vop03=vop_file.vop03, tabIndex=11, title="vop03", noEntry;
+Edit vop04=vop_file.vop04, tabIndex=10, title="vop04", noEntry;
+Edit vop05=vop_file.vop05, tabIndex=9, title="vop05", noEntry;
+Edit vop06=vop_file.vop06, tabIndex=8, title="vop06", noEntry;
+ComboBox vop08=vop_file.vop08, tabIndex=7, title="vop09", noEntry, items=(("0", "UnLock Time"),("1", "Lock Start time"),("2", "Lock End Time"),("3", "Lock Start and End time"));
+Edit vop09=vop_file.vop09, tabIndex=6, title="vop09", noEntry;
+Edit vop10=vop_file.vop10, tabIndex=12, title="vop10", noEntry;
+Edit vop11=vop_file.vop11, tabIndex=20, title="vop11";
+ComboBox vop12=vop_file.vop12, tabIndex=13, title="vop12", noEntry, items=(("0", "Unscheduled, the limit not considered"),("1", "Scheduled, with limitation"));
+Edit vop07=vop_file.vop07, tabIndex=138, title=%"vop07";
+Edit cnt=formonly.cnt type CHAR, tabIndex=14;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_arr1(vop_file.vop16,vop_file.vop15,vop_file.vop03,vop_file.vop04,vop_file.vop05,vop_file.vop06,vop_file.vop08,vop_file.vop09,vop_file.vop10,vop_file.vop11,vop_file.vop12,vop_file.vop07)
+SCREEN RECORD Undefined(vop_file.vop01,formonly.hstatus,vop_file.vop02,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

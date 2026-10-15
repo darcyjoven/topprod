@@ -1,0 +1,138 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglt001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglt001")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox hb1
+Grid gr2850
+{
+ Transaction Date    [asc06       ]
+ Group Code          [asc01       ]
+
+
+
+}
+END -- gr2850
+Grid gr2851
+{
+ Parent Company      [asc02     ]
+ Company Name        [azp02               ]
+ Data Base Code      [azp03               ]
+
+
+}
+END -- gr2851
+Grid gr2852
+{
+ Book No             [asc03     ]
+ Confirm             [ascconf       ]
+ [imgmksg]
+ [       ]
+ [       ]
+}
+END -- gr2852
+END -- hb1
+END -- page01
+Page info(text="Info")
+Grid gr2853
+{
+ Record Owner        [ascuser   ]   Last Modified by    [ascmodu   ]
+ Department          [ascgrup   ]   Create/Modify Date  [ascdate     ]
+ Record Orig.        [ascoriu   ]
+ Dept Orig.          [ascorig   ]
+}
+END -- gr2853
+END -- info
+END -- folder01
+Group gb1909
+ScrollGrid gr2854
+{
+
+[dummy0]         [dummy02       ][dummy03             ][dummy04            ][dummy05 ]             [dummy06     ]            [dummy08       ][dummy10            ][dummy09         ][dummy07     ]
+[asd04 ][before ][asd04b        ][azp02b              ][azp03b             ][asd05b  ]             [asd07b      |asd06b     ][asd11b        ]                     [asd12b          ][asd08b      ]
+        [after  ][asd04a        ][azp02a              ][azp03a             ][asd05a  ][asd13b     ][asd07a      |asd06a     ][asd11a        ][asd14b             ][asd12a          ][asd08a      ]
+[asd04 ][before ][asd04b        ][azp02b              ][azp03b             ][asd05b  ]             [asd07b      |asd06b     ][asd11b        ]                     [asd12b          ][asd08b      ]
+        [after  ][asd04a        ][azp02a              ][azp03a             ][asd05a  ][asd13b     ][asd07a      |asd06a     ][asd11a        ][asd14b             ][asd12a          ][asd08a      ]
+[asd04 ][before ][asd04b        ][azp02b              ][azp03b             ][asd05b  ]             [asd07b      |asd06b     ][asd11b        ]                     [asd12b          ][asd08b      ]
+        [after  ][asd04a        ][azp02a              ][azp03a             ][asd05a  ][asd13b     ][asd07a      |asd06a     ][asd11a        ][asd14b             ][asd12a          ][asd08a      ]
+[asd04 ][before ][asd04b        ][azp02b              ][azp03b             ][asd05b  ]             [asd07b      |asd06b     ][asd11b        ]                     [asd12b          ][asd08b      ]
+        [after  ][asd04a        ][azp02a              ][azp03a             ][asd05a  ][asd13b     ][asd07a      |asd06a     ][asd11a        ][asd14b             ][asd12a          ][asd08a      ]
+
+}
+END -- gr2854
+END -- gb1909
+Grid gr2855
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2855
+END -- VBox1
+END -- gglt001
+
+TABLES
+asd_file,
+asc_file
+ATTRIBUTES
+DateEdit asc06=asc_file.asc06, tabIndex=1, not null, required;
+ButtonEdit asc01=asc_file.asc01, action=controlp, tabIndex=2, not null, required, image="zoom", comment="<^P>Query Group Data";
+ButtonEdit asc02=asc_file.asc02, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Qry Plant   ";
+Edit azp02=formonly.azp02 type VARCHAR, tabIndex=4, noEntry;
+Edit azp03=formonly.azp03 type VARCHAR, tabIndex=5, noEntry;
+Edit asc03=asc_file.asc03, tabIndex=6, noEntry;
+ComboBox ascconf=asc_file.ascconf, tabIndex=7, not null, required, items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit ascuser=asc_file.ascuser, tabIndex=9, noEntry;
+Edit ascmodu=asc_file.ascmodu, tabIndex=10, noEntry;
+Edit ascgrup=asc_file.ascgrup, tabIndex=11, noEntry;
+DateEdit ascdate=asc_file.ascdate, tabIndex=12, noEntry;
+Edit ascoriu=asc_file.ascoriu, tabIndex=501, noEntry;
+Edit ascorig=asc_file.ascorig, tabIndex=502, noEntry;
+Label dummy0:dummy01, text="Line#";
+Label dummy02:dummy02, text="Parent Co.";
+Label dummy03:dummy03, text="Plant No.";
+Label dummy04:dummy04, text="Database Name";
+Label dummy05:dummy05, text="Book#";
+Label dummy06:dummy06, text="Hoding %";
+Label dummy08:dummy08, text="Investment";
+Label dummy10:dummy10, text="Account Code";
+Label dummy09:dummy09, text="Account Amt by Currency";
+Label dummy07:dummy07, text="Tran.Date";
+Edit asd04=asd_file.asd04, tabIndex=13, not null, required;
+ComboBox before=formonly.before type CHAR, tabIndex=14, noEntry, items=(("0", "Oriatkal:"));
+ButtonEdit asd04b=asd_file.asd04b, action=controlp, tabIndex=15, image="zoom", comment="<^P>Qry Plant   ";
+Edit azp02b=formonly.azp02b type VARCHAR, tabIndex=16, noEntry;
+Edit azp03b=formonly.azp03b type VARCHAR, tabIndex=17, noEntry;
+Edit asd05b=asd_file.asd05b, tabIndex=18, noEntry;
+Edit asd07b=asd_file.asd07b, tabIndex=19, noEntry;
+CheckBox asd06b=asd_file.asd06b, tabIndex=504, text="Reshuffled former into mergers", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit asd11b=asd_file.asd11b, tabIndex=20, noEntry;
+Edit asd12b=asd_file.asd12b, tabIndex=21, noEntry;
+DateEdit asd08b=asd_file.asd08b, tabIndex=22, noEntry;
+ComboBox after=formonly.after type CHAR, tabIndex=23, noEntry, items=(("1", "Modify:"));
+ButtonEdit asd04a=asd_file.asd04a, action=controlp, tabIndex=24, not null, image="zoom", comment="<^P>Qry Plant   ";
+Edit azp02a=formonly.azp02a type VARCHAR, tabIndex=25, noEntry;
+Edit azp03a=formonly.azp03a type VARCHAR, tabIndex=26, noEntry;
+Edit asd05a=asd_file.asd05a, tabIndex=27, noEntry;
+CheckBox asd13b=asd_file.asd13b, tabIndex=34, text="Capital Stock?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit asd07a=asd_file.asd07a, tabIndex=28;
+CheckBox asd06a=asd_file.asd06a, tabIndex=503, text="After reshuffled into mergers", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit asd11a=asd_file.asd11a, tabIndex=29;
+ButtonEdit asd14b=asd_file.asd14b, action=controlp, tabIndex=35, image="zoom";
+Edit asd12a=asd_file.asd12a, tabIndex=30;
+DateEdit asd08a=asd_file.asd08a, tabIndex=31, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=32, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=33, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asd(asd_file.asd04,formonly.before,asd_file.asd04b,formonly.azp02b,formonly.azp03b,asd_file.asd05b,asd_file.asd07b,asd_file.asd06b,asd_file.asd08b,asd_file.asd11b,asd_file.asd12b,formonly.after,asd_file.asd04a,formonly.azp02a,formonly.azp03a,asd_file.asd05a,asd_file.asd13b,asd_file.asd07a,asd_file.asd06a,asd_file.asd08a,asd_file.asd11a,asd_file.asd14b,asd_file.asd12a)
+SCREEN RECORD Undefined(asc_file.asc06,asc_file.asc01,asc_file.asc02,formonly.azp02,formonly.azp03,asc_file.asc03,asc_file.ascconf,formonly.imgmksg,asc_file.ascuser,asc_file.ascmodu,asc_file.ascgrup,asc_file.ascdate,asc_file.ascoriu,asc_file.ascorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

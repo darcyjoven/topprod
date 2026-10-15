@@ -1,0 +1,54 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmr132.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmr132")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                          >
+  Bank No.            [nma01               ]
+ <                                                                   >
+
+}
+END -- Grid1
+Group group02(text="INPUT")
+Grid Grid2
+{
+ Initial Date        [bdate               ]
+ Ending Date         [edate               ]
+
+ Currency Option     [c                   ]
+
+ [d                                                 ]
+}
+END -- Grid2
+END -- group02
+Grid Grid3
+{
+[more                                                        ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- anmr132
+
+TABLES
+nma_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit nma01=nma_file.nma01, tabIndex=1;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=2;
+DateEdit edate=formonly.edate type DATE, tabIndex=3;
+ComboBox c=formonly.c type CHAR, tabIndex=4, not null, required, items=(("1", %"Original Currency"),("2", %"Home Currency"));
+CheckBox d=formonly.d type CHAR, tabIndex=5, text="Next Page after Bank Printed?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nma_file.nma01,formonly.bdate,formonly.edate,formonly.c,formonly.d,formonly.more)
+END -- INSTRUCTIONS
+

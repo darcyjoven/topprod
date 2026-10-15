@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aim/42f/aimi100_prt.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Table s_imac
+{
+[imac02    |imac03    |imac04         |ini02               |ini03     |imac05              ]
+[imac02    |imac03    |imac04         |ini02               |ini03     |imac05              ]
+[imac02    |imac03    |imac04         |ini02               |ini03     |imac05              ]
+[imac02    |imac03    |imac04         |ini02               |ini03     |imac05              ]
+[imac02    |imac03    |imac04         |ini02               |ini03     |imac05              ]
+[imac02    |imac03    |imac04         |ini02               |ini03     |imac05              ]
+[imac02    |imac03    |imac04         |ini02               |ini03     |imac05              ]
+[imac02    |imac03    |imac04         |ini02               |ini03     |imac05              ]
+
+}
+END -- s_imac
+END -- VBox1
+END -- Form
+
+TABLES
+imac_file,
+ini_file
+ATTRIBUTES
+Edit imac02=imac_file.imac02, tabIndex=1, title=%"Item", not null, required, scroll;
+ComboBox imac03=imac_file.imac03, tabIndex=2, default = "1", title=%"Ownership level", not null, required, scroll, items=(("1", %"料号"),("2", %"制造批号"));
+ButtonEdit imac04=imac_file.imac04, action=controlp, tabIndex=3, title=%"Feature code", not null, required, image="zoom", scroll;
+Edit ini02=ini_file.ini02, tabIndex=5, title=%"Feature Name", noEntry, scroll;
+ComboBox ini03=ini_file.ini03, tabIndex=6, default = "1", title=%"Field Properties", noEntry, scroll, items=(("1", %"字元"),("2", %"数值"));
+Edit imac05=imac_file.imac05, tabIndex=4, title=%"Property values", scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_imac(imac_file.imac02,imac_file.imac03,imac_file.imac04,ini_file.ini02,ini_file.ini03,imac_file.imac05)
+END -- INSTRUCTIONS
+

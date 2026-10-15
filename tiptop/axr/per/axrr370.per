@@ -1,0 +1,45 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrr370.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axrr370")
+VBox VBox1
+Group QBE(text="QBE")
+Grid Grid1
+{
+ Invoice               [oma05     ]
+
+}
+END -- Grid1
+END -- QBE
+Group group01(text="INPUT")
+Grid gr5
+{
+
+ Enter Account Date  [bdate               ]-[edate               ]
+}
+END -- gr5
+END -- group01
+Grid gr6
+{
+[more                                                           ]
+
+}
+END -- gr6
+END -- VBox1
+END -- axrr370
+
+ATTRIBUTES
+ButtonEdit oma05=formonly.oma05 type VARCHAR, action=controlp, tabIndex=4, image="zoom";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=1;
+DateEdit edate=formonly.edate type DATE, tabIndex=2;
+CheckBox more=formonly.more type CHAR, tabIndex=3, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bdate,formonly.edate,formonly.more,formonly.oma05)
+END -- INSTRUCTIONS
+

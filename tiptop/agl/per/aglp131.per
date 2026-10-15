@@ -1,0 +1,28 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglp131.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglp131")
+Grid gr2492
+{
+ <G group01                                  >
+  Book No.                 [bookn]
+  Enter Carry Forward Year [yy        ]
+ <                                           >
+}
+END -- gr2492
+END -- aglp131
+
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit bookn=formonly.bookno type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom.png", comment="<^P> Qry Book No.";
+Edit yy=formonly.yy type SMALLINT, tabIndex=1;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.bookno,formonly.yy)
+END -- INSTRUCTIONS
+

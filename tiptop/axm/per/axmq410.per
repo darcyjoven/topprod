@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmq410.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmq410")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2256
+{
+  Order No.           [oea01               ]               Employee        [oea14     ]      [oeaconf         ]
+  Order Date          [oea02     ]                         Department      [oea15     ]      [oeb70           ]
+  Accounts Customer   [oea03     ][oea032  ]               On-Hold Reason  [oeahold   ]
+  Shipping Customer   [oea04     ][occ02   ]
+
+ <G group01                                           ><G group03                         >          <G group02                                     >
+  Line No.            [oeb03     ]                      Par/Ref Unit          [oeb913    ]            WH/Loc./Lot         [oeb09][oeb01][oeb092    ]
+  Product No.         [oeb04               ]            Par/Ref Qty           [oeb915    ]            Deliver Date        [oeb16     ]
+  Part Name Spec.     [oeb06                        ]   Par/Ref Ck/Acpt Qty   [acd_q2    ]            Check/Accept Qty    [acd_q     ]
+  Unit                [oeb05     ]                      Chi/Sales Unit        [oeb910    ]            Delivery Qty        [oeb24     ]
+  Order Qty           [oeb12     ]                      Chi/Sales Qty         [oeb912    ]            Sales/return Qty    [oeb25     ]
+  Delivery Date       [oeb15     ]                      Chi/Sales Ck/Acpt Qty [acd_q1    ]            Undelivered Qty     [unqty     ]
+ <                                                    ><                                  >          <                                              >
+
+}
+END -- gr2256
+END -- page01
+END -- folder01
+Table s_oga
+{
+[oga02         |ogb01             |ogb03|oga10            |acc_q               |ogb12        |ogb913        |ogb915       |acc_q2                |ogb910            |ogb912           |acc_q1                       |ogb63            |ogb08     |ogb09     |ogb091    |ogb092              ]
+[oga02         |ogb01             |ogb03|oga10            |acc_q               |ogb12        |ogb913        |ogb915       |acc_q2                |ogb910            |ogb912           |acc_q1                       |ogb63            |ogb08     |ogb09     |ogb091    |ogb092              ]
+[oga02         |ogb01             |ogb03|oga10            |acc_q               |ogb12        |ogb913        |ogb915       |acc_q2                |ogb910            |ogb912           |acc_q1                       |ogb63            |ogb08     |ogb09     |ogb091    |ogb092              ]
+[oga02         |ogb01             |ogb03|oga10            |acc_q               |ogb12        |ogb913        |ogb915       |acc_q2                |ogb910            |ogb912           |acc_q1                       |ogb63            |ogb08     |ogb09     |ogb091    |ogb092              ]
+[oga02         |ogb01             |ogb03|oga10            |acc_q               |ogb12        |ogb913        |ogb915       |acc_q2                |ogb910            |ogb912           |acc_q1                       |ogb63            |ogb08     |ogb09     |ogb091    |ogb092              ]
+[oga02         |ogb01             |ogb03|oga10            |acc_q               |ogb12        |ogb913        |ogb915       |acc_q2                |ogb910            |ogb912           |acc_q1                       |ogb63            |ogb08     |ogb09     |ogb091    |ogb092              ]
+[oga02         |ogb01             |ogb03|oga10            |acc_q               |ogb12        |ogb913        |ogb915       |acc_q2                |ogb910            |ogb912           |acc_q1                       |ogb63            |ogb08     |ogb09     |ogb091    |ogb092              ]
+[oga02         |ogb01             |ogb03|oga10            |acc_q               |ogb12        |ogb913        |ogb915       |acc_q2                |ogb910            |ogb912           |acc_q1                       |ogb63            |ogb08     |ogb09     |ogb091    |ogb092              ]
+[oga02         |ogb01             |ogb03|oga10            |acc_q               |ogb12        |ogb913        |ogb915       |acc_q2                |ogb910            |ogb912           |acc_q1                       |ogb63            |ogb08     |ogb09     |ogb091    |ogb092              ]
+[oga02         |ogb01             |ogb03|oga10            |acc_q               |ogb12        |ogb913        |ogb915       |acc_q2                |ogb910            |ogb912           |acc_q1                       |ogb63            |ogb08     |ogb09     |ogb091    |ogb092              ]
+}
+END -- s_oga
+Grid gr2257
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr2257
+END -- VBox1
+END -- axmq410
+
+TABLES
+oeb_file,
+oea_file,
+ogb_file,
+oga_file
+ATTRIBUTES
+ButtonEdit oea01=oea_file.oea01, action=controlp, tabIndex=1, not null, required, image="zoom";
+ButtonEdit oea14=oea_file.oea14, action=controlp, tabIndex=2, image="zoom";
+CheckBox oeaconf=oea_file.oeaconf, tabIndex=3, text="Confirm", not null, required, valueChecked = "Y", valueUnchecked = "N";
+DateEdit oea02=oea_file.oea02, tabIndex=4;
+ButtonEdit oea15=oea_file.oea15, action=controlp, tabIndex=5, image="zoom";
+CheckBox oeb70=oeb_file.oeb70, tabIndex=6, text="Close", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit oea03=oea_file.oea03, action=controlp, tabIndex=7, image="zoom";
+Edit oea032=oea_file.oea032, tabIndex=8, noEntry;
+Edit oeahold=oea_file.oeahold, tabIndex=9;
+ButtonEdit oea04=oea_file.oea04, action=controlp, tabIndex=10, image="zoom";
+Edit occ02=formonly.occ02 type VARCHAR, tabIndex=11, noEntry;
+Group group01:group01;
+Edit oeb03=oeb_file.oeb03, tabIndex=12;
+ButtonEdit oeb04=oeb_file.oeb04, action=controlp, tabIndex=13, image="zoom";
+Edit oeb06=oeb_file.oeb06, tabIndex=14;
+Edit oeb05=oeb_file.oeb05, tabIndex=15;
+Edit oeb12=oeb_file.oeb12, tabIndex=16, not null, required;
+DateEdit oeb15=oeb_file.oeb15, tabIndex=17;
+Group group03:group03;
+Edit oeb913=oeb_file.oeb913, tabIndex=18;
+Edit oeb915=oeb_file.oeb915, tabIndex=19;
+Edit acd_q2=formonly.acd_q2 type DECIMAL, tabIndex=20;
+Edit oeb910=oeb_file.oeb910, tabIndex=21;
+Edit oeb912=oeb_file.oeb912, tabIndex=22;
+Edit acd_q1=formonly.acd_q1 type DECIMAL, tabIndex=23;
+Group group02:group02;
+Edit oeb09=oeb_file.oeb09, tabIndex=24;
+Edit oeb01=oeb_file.oeb091, tabIndex=25;
+Edit oeb092=oeb_file.oeb092, tabIndex=26;
+DateEdit oeb16=oeb_file.oeb16, tabIndex=27;
+Edit acd_q=formonly.acd_q type DECIMAL, tabIndex=28;
+Edit oeb24=oeb_file.oeb24, tabIndex=29, not null, required;
+Edit oeb25=oeb_file.oeb25, tabIndex=30, not null, required;
+Edit unqty=formonly.unqty type DECIMAL, tabIndex=31;
+DateEdit oga02=oga_file.oga02, tabIndex=32, title="Delivery Date";
+Edit ogb01=ogb_file.ogb01, tabIndex=33, title="Delivery Note No.";
+Edit ogb03=ogb_file.ogb03, tabIndex=34, title="Ln #";
+Edit oga10=oga_file.oga10, tabIndex=35, title="Bill No.";
+Edit acc_q=formonly.acc_q type DECIMAL, tabIndex=36, title="Check/Accept Qty";
+Edit ogb12=ogb_file.ogb12, tabIndex=37, title="Delivery Qty", not null, required;
+Edit ogb913=ogb_file.ogb913, tabIndex=38, title="Par/Ref Unit";
+Edit ogb915=ogb_file.ogb915, tabIndex=39, title="Par/Ref Qty";
+Edit acc_q2=formonly.acc_q2 type DECIMAL, tabIndex=40, title="Par/Ref Check/Accpet Qty";
+Edit ogb910=ogb_file.ogb910, tabIndex=41, title="Chi/Deliver Unit";
+Edit ogb912=ogb_file.ogb912, tabIndex=42, title="Chi/Deliver Qty";
+Edit acc_q1=formonly.acc_q1 type DECIMAL, tabIndex=43, title="Chi/Deliver Check/Accept Qty";
+Edit ogb63=ogb_file.ogb63, tabIndex=44, title="Sales/return Qty", not null, required;
+Edit ogb08=ogb_file.ogb08, tabIndex=45, title="Plant";
+Edit ogb09=ogb_file.ogb09, tabIndex=46, title="Warehouse";
+Edit ogb091=ogb_file.ogb091, tabIndex=47, title="Location";
+Edit ogb092=ogb_file.ogb092, tabIndex=48, title="Lot";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=49, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=50, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oga(oga_file.oga02,ogb_file.ogb01,ogb_file.ogb03,oga_file.oga10,formonly.acc_q,ogb_file.ogb12,ogb_file.ogb913,ogb_file.ogb915,formonly.acc_q2,ogb_file.ogb910,ogb_file.ogb912,formonly.acc_q1,ogb_file.ogb63,ogb_file.ogb08,ogb_file.ogb09,ogb_file.ogb091,ogb_file.ogb092)
+SCREEN RECORD Undefined(oea_file.oea01,oea_file.oea14,oea_file.oeaconf,oea_file.oea02,oea_file.oea15,oeb_file.oeb70,oea_file.oea03,oea_file.oea032,oea_file.oeahold,oea_file.oea04,formonly.occ02,oeb_file.oeb03,oeb_file.oeb04,oeb_file.oeb06,oeb_file.oeb05,oeb_file.oeb12,oeb_file.oeb15,oeb_file.oeb913,oeb_file.oeb915,formonly.acd_q2,oeb_file.oeb910,oeb_file.oeb912,formonly.acd_q1,oeb_file.oeb09,oeb_file.oeb091,oeb_file.oeb092,oeb_file.oeb16,formonly.acd_q,oeb_file.oeb24,oeb_file.oeb25,formonly.unqty,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

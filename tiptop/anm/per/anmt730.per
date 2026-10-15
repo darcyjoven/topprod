@@ -1,0 +1,129 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt730.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt730")
+VBox VBox1
+Folder pc813
+Page page01(text="Main")
+Group group01
+Grid gr4549
+{
+  Financing Doc# (Contract Number) [nnm01           ]    Confirm[nnmconf     ] [imgmksg]
+  Year                             [nnm02     ]                                [       ]
+  Month                            [nnm03     ]
+  Doc Category                     [nnm04     ]
+  Temporary Estimate category      [nnm15     ]
+  Credit Bank                      [nnm14     ][alg02                         ]
+  Voucher#                         [nnmglno             ]
+  Interest Payment Slip #          [nnm13           ]
+ <G group02                                                                                           >
+  Initial Date                     [nnm05       ]
+  Ending Date                      [nnm06       ]
+  Days                             [nnm07     ]
+  Interest Rate                    [nnm08               ]
+  Currency                         [nnm09               ]    Exchange Rate     [nnm10               ]
+  Original Curr Temporary Estimate [nnm11               ]    Original Curr     [nne12               ]
+  Temp Estimate Local Curr         [nnm12               ]    Local Curr        [nne19               ]
+  Financial Fee Temporary Estimate [nnm17               ]
+
+
+
+ <                                                                                                    >
+
+}
+END -- gr4549
+END -- group01
+END -- page01
+Page info(text="Info")
+Grid gr4550
+{
+ Record Owner        [nnmuser   ] Last Modified by    [nnmmodu   ]
+ Department          [nnmgrup   ] Create/Modify Date  [nnmdate   ]
+ Record Orig.        [nnmoriu   ]
+ Dept Orig.          [nnmorig   ]
+}
+END -- gr4550
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[nnmud01                       ] userdefined_field07[nnmud07        ] userdefined_field13[nnmud13        ]
+                    [                              ] userdefined_field08[nnmud08        ] userdefined_field14[nnmud14        ]
+ userdefined_field02[nnmud02        ]                userdefined_field09[nnmud09        ] userdefined_field15[nnmud15        ]
+ userdefined_field03[nnmud03        ]                userdefined_field10[nnmud10        ]
+ userdefined_field04[nnmud04        ]                userdefined_field11[nnmud11        ]
+ userdefined_field05[nnmud05        ]                userdefined_field12[nnmud12        ]
+ userdefined_field06[nnmud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc813
+Grid gr4551
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr4551
+END -- VBox1
+END -- anmt730
+
+TABLES
+nne_file,
+nnm_file
+ATTRIBUTES
+Edit nnm01=nnm_file.nnm01, tabIndex=1, not null, required;
+ComboBox nnmconf=nnm_file.nnmconf, tabIndex=2, noEntry, not null, required, items=(("Y", "Y"),("N", "N"),("X", "X"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit nnm02=nnm_file.nnm02, tabIndex=3, not null, required;
+Edit nnm03=nnm_file.nnm03, tabIndex=4, not null, required;
+ComboBox nnm04=nnm_file.nnm04, tabIndex=5, not null, required, items=(("1", %"Financing"),("2", %"Contract"));
+ComboBox nnm15=nnm_file.nnm15, tabIndex=6, not null, required, items=(("1", %"Short-Term"),("2", %"Medium-Term Loan"));
+ButtonEdit nnm14=nnm_file.nnm14, action=controlp, tabIndex=7, noEntry, image="zoom", comment="<^P>Qry Credit Bank";
+Edit alg02=formonly.alg02 type CHAR, tabIndex=8, noEntry;
+Edit nnmglno=nnm_file.nnmglno, tabIndex=9, noEntry;
+Edit nnm13=nnm_file.nnm13, tabIndex=10, noEntry;
+Group group02:group02;
+DateEdit nnm05=nnm_file.nnm05, tabIndex=11;
+DateEdit nnm06=nnm_file.nnm06, tabIndex=12;
+Edit nnm07=nnm_file.nnm07, tabIndex=13;
+Edit nnm08=nnm_file.nnm08, tabIndex=14;
+Edit nnm09=nnm_file.nnm09, tabIndex=15;
+ButtonEdit nnm10=nnm_file.nnm10, action=controlp, tabIndex=16, image="zoom";
+Edit nnm11=nnm_file.nnm11, tabIndex=17;
+Edit nne12=nne_file.nne12, tabIndex=42;
+Edit nnm12=nnm_file.nnm12, tabIndex=18;
+Edit nne19=nne_file.nne19, tabIndex=43;
+Edit nnm17=nnm_file.nnm17, tabIndex=19;
+Edit nnmuser=nnm_file.nnmuser, tabIndex=20, noEntry;
+Edit nnmmodu=nnm_file.nnmmodu, tabIndex=21, noEntry;
+Edit nnmgrup=nnm_file.nnmgrup, tabIndex=22, noEntry;
+Edit nnmdate=nnm_file.nnmdate, tabIndex=23, noEntry;
+Edit nnmoriu=nnm_file.nnmoriu, tabIndex=40, noEntry;
+Edit nnmorig=nnm_file.nnmorig, tabIndex=41, noEntry;
+TextEdit nnmud01=nnm_file.nnmud01, tabIndex=25, stretch=NONE;
+Edit nnmud07=nnm_file.nnmud07, tabIndex=26;
+DateEdit nnmud13=nnm_file.nnmud13, tabIndex=27;
+Edit nnmud08=nnm_file.nnmud08, tabIndex=28;
+DateEdit nnmud14=nnm_file.nnmud14, tabIndex=29;
+Edit nnmud02=nnm_file.nnmud02, tabIndex=30;
+Edit nnmud09=nnm_file.nnmud09, tabIndex=31;
+DateEdit nnmud15=nnm_file.nnmud15, tabIndex=32;
+Edit nnmud03=nnm_file.nnmud03, tabIndex=33;
+Edit nnmud10=nnm_file.nnmud10, tabIndex=34;
+Edit nnmud04=nnm_file.nnmud04, tabIndex=35;
+Edit nnmud11=nnm_file.nnmud11, tabIndex=36;
+Edit nnmud05=nnm_file.nnmud05, tabIndex=37;
+Edit nnmud12=nnm_file.nnmud12, tabIndex=38;
+Edit nnmud06=nnm_file.nnmud06, tabIndex=39;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(nnm_file.nnm01,formonly.imgmksg,nnm_file.nnm02,nnm_file.nnm03,nnm_file.nnm04,nnm_file.nnm15,nnm_file.nnm14,formonly.alg02,nnm_file.nnmglno,nnm_file.nnm13,nnm_file.nnm05,nnm_file.nnm06,nnm_file.nnm07,nnm_file.nnm08,nnm_file.nnm09,nnm_file.nnm10,nnm_file.nnm11,nnm_file.nnm12,nnm_file.nnm17,nnm_file.nnmuser,nnm_file.nnmmodu,nnm_file.nnmgrup,nnm_file.nnmdate,nnm_file.nnmoriu,nnm_file.nnmorig,nnm_file.nnmud01,nnm_file.nnmud07,nnm_file.nnmud13,nnm_file.nnmud08,nnm_file.nnmud14,nnm_file.nnmud02,nnm_file.nnmud09,nnm_file.nnmud15,nnm_file.nnmud03,nnm_file.nnmud10,nnm_file.nnmud04,nnm_file.nnmud11,nnm_file.nnmud05,nnm_file.nnmud12,nnm_file.nnmud06,formonly.cnt,nne_file.nne12,nne_file.nne19,nnm_file.nnmconf)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/ggli018.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="ggli018")
+VBox vb1
+Folder pc1
+Page Page1(text=%"Page0")
+Table s_atg
+{
+[atg01       |atg02       |atg03       |atg05       |atgacti     ]
+[atg01       |atg02       |atg03       |atg05       |atgacti     ]
+[atg01       |atg02       |atg03       |atg05       |atgacti     ]
+[atg01       |atg02       |atg03       |atg05       |atgacti     ]
+[atg01       |atg02       |atg03       |atg05       |atgacti     ]
+[atg01       |atg02       |atg03       |atg05       |atgacti     ]
+[atg01       |atg02       |atg03       |atg05       |atgacti     ]
+[atg01       |atg02       |atg03       |atg05       |atgacti     ]
+[atg01       |atg02       |atg03       |atg05       |atgacti     ]
+[atg01       |atg02       |atg03       |atg05       |atgacti     ]
+
+}
+END -- s_atg
+END -- Page1
+END -- pc1
+Grid gr2
+{
+   ---------- Rows  [cn2   ] ----------
+
+}
+END -- gr2
+END -- vb1
+END -- ggli018
+
+TABLES
+atg_file
+ATTRIBUTES
+Edit atg01=atg_file.atg01, tabIndex=1, title="atg01", not null, required;
+Edit atg02=atg_file.atg02, tabIndex=2, title="atg02";
+ComboBox atg03=atg_file.atg03, tabIndex=3, title=%"atg03", not null, required, items=(("10", %"Business Activity Income"),("11", %"Business Activity Expenditure"),("20", %"Investment Income"),("21", %"Investment Expenditure"),("30", %"Financial Activity Income"),("31", %"Financial Activity Expenditure"),("40", %"Influence"));
+Edit atg05=atg_file.atg05, tabIndex=4, title=%"atg05";
+CheckBox atgacti=atg_file.atgacti, tabIndex=5, title=%"atgacti", valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type VARCHAR, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_atg(atg_file.atg01,atg_file.atg02,atg_file.atg03,atg_file.atg05,atg_file.atgacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

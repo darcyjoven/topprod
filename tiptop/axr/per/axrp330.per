@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axr/42f/axrp330.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axrp330")
+VBox VBox1
+Grid gr5
+{
+ <G gb4                                                 >
+  Plant     [azp01       ]
+ <                                                      >
+
+}
+END -- gr5
+Grid gr2943
+{
+ <G group03                                              >
+  Plant      [source      |azp02               ]
+ <                                                       >
+
+}
+END -- gr2943
+Grid gr2944
+{
+ <G group01                                           >
+  Customer #          [oga03               ]
+  Collect Customer #  [oga18               ]
+  Invoice             [oga05               ]
+  Tax Type            [oga21               ]
+  Department No.      [oga15               ]
+  Salesman            [oga14               ]
+  Currency            [oga23               ]
+  Date                [oga02               ]
+  Delivery Note No.   [oga01               ]
+  Order No.           [ogb31               ]
+  Plant               [ogaplant            ]
+ <                                                    >
+
+}
+END -- gr2944
+Grid Grid1
+{
+ <G group04                                                         >
+ [label1 |omf00               ]
+ [omf01  |omf02               ]
+ [omf03  |omf04               ]
+ <                                                                  >
+}
+END -- Grid1
+Grid gr2945
+{
+  <G group02                                                        >
+   sum item [s1                     ] [s2                      ]
+   Accounts Receivable Enter Account Date [g_date      ]
+   [noin_sw                                                        ]
+   [g_enter_account                                                ]
+   Accounts Receivable Bill               [g_no1     ]
+   bill1                                  [g_no2     ]
+   [dummy01                                                        ]
+  <                                                                 >
+}
+END -- gr2945
+Grid gr2946
+{
+[g_bgjob                                                      ]
+
+}
+END -- gr2946
+END -- VBox1
+END -- axrp330
+
+TABLES
+omf_file
+ATTRIBUTES
+Group gb4:gb4, text="QBE1";
+ButtonEdit azp01=formonly.azp01 type CHAR, action=controlp, tabIndex=20, not null, required, image="zoom.png", comment="<^P> Qry Documents";
+Group group03:group03, text="INPUT";
+ButtonEdit source=formonly.source type CHAR, action=controlp, tabIndex=1, image="zoom", comment="<^P> Qry Documents";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=2, noEntry;
+Group group01:group01, text="QBE2";
+ButtonEdit oga03=formonly.oga03 type CHAR, action=controlp, tabIndex=3, image="zoom", comment="<^P>Qry Documents";
+Edit oga18=formonly.oga18 type CHAR, tabIndex=4;
+Edit oga05=formonly.oga05 type CHAR, tabIndex=5;
+ButtonEdit oga21=formonly.oga21 type CHAR, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Documents";
+ButtonEdit oga15=formonly.oga15 type CHAR, action=controlp, tabIndex=7, image="zoom", comment="<^P>Qry Documents";
+ButtonEdit oga14=formonly.oga14 type CHAR, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Documents";
+ButtonEdit oga23=formonly.oga23 type CHAR, action=controlp, tabIndex=9, image="zoom", comment="<^P>Qry Documents";
+DateEdit oga02=formonly.oga02 type DATE, tabIndex=10;
+ButtonEdit oga01=formonly.oga01 type CHAR, action=controlp, tabIndex=11, image="zoom", comment="<^P>Qry Documents";
+ButtonEdit ogb31=formonly.ogb31 type CHAR, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Documents";
+ButtonEdit ogaplant=formonly.ogaplant type CHAR, action=controlp, tabIndex=19, image="zoom", comment="<^P>Qry Documents";
+Group group04:group04, text=%"QBE3";
+Label label1:Label1, text=%"omf00";
+ButtonEdit omf00=formonly.omf00, action=controlp, tabIndex=24, not null, required, image="zoom";
+Label omf01:omf01, text=%"omf01";
+ButtonEdit omf02=omf_file.omf01, action=controlp, tabIndex=23, not null, image="zoom.png", scroll;
+Label omf03:omf02, text=%"omf02";
+ButtonEdit omf04=omf_file.omf02, action=controlp, tabIndex=23, not null, image="zoom.png", scroll;
+Group group02:group02, text="INPUT";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=13, queryEditable, items=(("1", "Department No."),("2", "Salesman"),("3", "Order No."),("4", "Plant"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=14, queryEditable, items=(("1", "Department No."),("2", "Salesman"),("3", "Order No."),("4", "Plant"));
+DateEdit g_date=formonly.g_date type DATE, tabIndex=15;
+CheckBox noin_sw=formonly.noin_sw type CHAR, tabIndex=16, text="Allow to Generate A/P without INVOICE?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g_enter_account=formonly.g_enter_account type CHAR, tabIndex=21, text="Transactions When Unit Price = 0", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit g_no1=formonly.g_no1 type CHAR, action=controlp, tabIndex=17, not null, required, image="zoom", comment="<^P>Qry Documents";
+ButtonEdit g_no2=formonly.g_no2 type CHAR, action=controlp, tabIndex=22, image="zoom", comment="<^P>Qry Documents";
+Label dummy01:dummy01, text="It\'ll read confirmed uninvoiced in Delivery Table,Generate A/R";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=18, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.azp01,formonly.source,formonly.azp02,formonly.oga03,formonly.oga18,formonly.oga05,formonly.oga21,formonly.oga15,formonly.oga14,formonly.oga23,formonly.oga02,formonly.oga01,formonly.ogb31,formonly.ogaplant,formonly.s1,formonly.s2,formonly.g_date,formonly.noin_sw,formonly.g_enter_account,formonly.g_no1,formonly.g_no2,formonly.g_bgjob,omf_file.omf01,omf_file.omf02,formonly.omf00)
+END -- INSTRUCTIONS
+

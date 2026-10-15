@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/gis/42f/gisp100.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gisp100")
+Folder pc796
+Page page01(text="Main")
+Grid gr3479
+{
+ <G group01                                       >
+  Accounts Category    [oma00     ]
+  Bill No.             [oma01           ]
+  Enter Account Date   [oma02     ]
+  Customer No.         [oma03     ]
+  Item No.             [omb04               ]
+ <                                                >
+ <G group02                                       >
+  [plant     ][plant     ][plant     ][plant     ]
+  [plant     ][plant     ][plant     ][plant     ]
+  [plant     ][plant     ][plant     ][plant     ]
+ [a                                              ]
+ <                                                >
+
+}
+END -- gr3479
+END -- page01
+END -- pc796
+END -- gisp100
+
+TABLES
+omb_file,
+oma_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit oma00=oma_file.oma00, tabIndex=1;
+Edit oma01=oma_file.oma01, tabIndex=2;
+Edit oma02=oma_file.oma02, tabIndex=3;
+Edit oma03=oma_file.oma03, tabIndex=4;
+Edit omb04=omb_file.omb04, tabIndex=5;
+Group group02:group02, text="Plant No.";
+Edit plant=formonly.plant type CHAR, tabIndex=6, comment="Press <ESC> when done";
+CheckBox a=formonly.a type CHAR, tabIndex=7, text="Exist,Re-Generate?", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_plant(formonly.plant)
+SCREEN RECORD Undefined(oma_file.oma00,oma_file.oma01,oma_file.oma02,oma_file.oma03,omb_file.omb04,formonly.a)
+END -- INSTRUCTIONS
+

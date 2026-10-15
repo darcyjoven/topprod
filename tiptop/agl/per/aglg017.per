@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglg017.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglr017")
+Grid gr2472
+{
+ <G group01                                 >
+  Group No.            [axa01     ]
+  Parent Company       [axa02     ]
+  Book No.             [axa03     ]
+  Inward Finscal Year  [yy        ]
+  axa06                [axa06     ]
+  Ending Period        [em        ]
+  Quarter              [q1        ]
+  Half a Year          [h1        ]
+ [t                                     ]
+ [                                      ]
+ <                                          >
+
+}
+END -- gr2472
+END -- aglr017
+
+TABLES
+axa_file
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+ButtonEdit axa01=axa_file.axa01, action=controlp, tabIndex=3, not null, required, image="zoom", comment="<^P>Query Group Data";
+ButtonEdit axa02=axa_file.axa02, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Query ";
+Edit axa03=axa_file.axa03, tabIndex=5, noEntry, not null, required;
+Edit yy=formonly.yy type CHAR, tabIndex=1, not null, required;
+ComboBox axa06=formonly.axa06 type CHAR, tabIndex=6, not null, required, items=(("1", %"Month"),("2", "Quarter"),("3", "Half a Year"),("4", "Year"));
+Edit em=formonly.em type CHAR, tabIndex=2, not null, required;
+ComboBox q1=formonly.q1 type CHAR, tabIndex=7, not null, required, items=(("1", "Quarter 1"),("2", "Quarter 2"),("3", "Quarter 3"),("4", "Quarter 4"));
+ComboBox h1=formonly.h1 type CHAR, tabIndex=8, not null, required, items=(("1", "First Half Year"),("2", "Second Half Year"));
+RadioGroup t=formonly.t type CHAR, tabIndex=9, items=(("1", "A/C Balance Check List After Exchange Rate"),("2", "Dimension A/C Balance Check List After Exchange Rate"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(axa_file.axa01,axa_file.axa02,axa_file.axa03,formonly.yy,formonly.axa06,formonly.em,formonly.q1,formonly.h1,formonly.t)
+END -- INSTRUCTIONS
+

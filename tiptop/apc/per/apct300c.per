@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apc/42f/apct300c.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+Group Group1(text=%"QBE")
+Grid ds1
+{
+
+ shop  [shop             ]
+ mach  [mach             ]
+ rdate [rdate            ]
+
+}
+END -- ds1
+END -- Group1
+END -- Form
+
+ATTRIBUTES
+ButtonEdit shop=formonly.shop type VARCHAR, action=controlp, tabIndex=1, not null, image="zoom", scroll;
+ButtonEdit mach=formonly.mach type VARCHAR, action=controlp, tabIndex=2, image="zoom", scroll;
+DateEdit rdate=formonly.rdate, tabIndex=3, format="yyyymmdd";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.shop,formonly.mach,formonly.rdate)
+END -- INSTRUCTIONS
+

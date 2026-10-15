@@ -1,0 +1,94 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglq812.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglq812")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2565
+{
+ Book No             [abi00                         ]
+ Account #           [abi05                         ]
+ Account Name        [aag02                                            ]
+ Voucher#            [abi01               ]-[abi02  ]
+ Voucher Date        [abi06       ]
+ Department          [abi07     ][gem02             ]
+}
+END -- gr2565
+Grid gr2566
+{
+ Trans.Code 1    [abi11          ]  Trans.Code 6    [abi32          ]
+ Trans.Code 2    [abi12          ]  Trans.Code 7    [abi33          ]
+ Trans.Code 3    [abi13          ]  Trans.Code 8    [abi34          ]
+ Trans.Code 4    [abi14          ]  Trans.Code 9    [abi35          ]
+ Trans.Code 5    [abi31          ]  Trans.Code 10   [abi36          ]
+ Year            [abi03     ]
+}
+END -- gr2566
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_abi
+{
+[seq    |abi08               |abi09               ]
+[seq    |abi08               |abi09               ]
+[seq    |abi08               |abi09               ]
+[seq    |abi08               |abi09               ]
+[seq    |abi08               |abi09               ]
+[seq    |abi08               |abi09               ]
+[seq    |abi08               |abi09               ]
+[seq    |abi08               |abi09               ]
+[seq    |abi08               |abi09               ]
+[seq    |abi08               |abi09               ]
+
+}
+END -- s_abi
+Grid gr2567
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+}
+END -- gr2567
+END -- VBox1
+END -- aglq812
+
+TABLES
+abi_file
+ATTRIBUTES
+ButtonEdit abi00=abi_file.abi00, action=controlp, tabIndex=24, image="zoom.png";
+ButtonEdit abi05=abi_file.abi05, action=controlp, tabIndex=1, image="zoom";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=2, noEntry;
+Edit abi01=abi_file.abi01, tabIndex=3;
+Edit abi02=abi_file.abi02, tabIndex=4, color = yellow;
+DateEdit abi06=abi_file.abi06, tabIndex=5;
+Edit abi07=abi_file.abi07, tabIndex=6;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=7, noEntry;
+Edit abi11=abi_file.abi11, tabIndex=8;
+Edit abi32=abi_file.abi32, tabIndex=9;
+Edit abi12=abi_file.abi12, tabIndex=10;
+Edit abi33=abi_file.abi33, tabIndex=11;
+Edit abi13=abi_file.abi13, tabIndex=12;
+Edit abi34=abi_file.abi34, tabIndex=13;
+Edit abi14=abi_file.abi14, tabIndex=14;
+Edit abi35=abi_file.abi35, tabIndex=15;
+Edit abi31=abi_file.abi31, tabIndex=16;
+Edit abi36=abi_file.abi36, tabIndex=17;
+Edit abi03=abi_file.abi03, tabIndex=18;
+Edit seq=formonly.seq type VARCHAR, tabIndex=19, title="Period", noEntry;
+Edit abi08=abi_file.abi08, tabIndex=20, title="BOP Amt";
+Edit abi09=abi_file.abi09, tabIndex=21, title="Contra\'d Amt";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=22, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=23, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_abi(formonly.seq,abi_file.abi08,abi_file.abi09)
+SCREEN RECORD Undefined(abi_file.abi00,abi_file.abi05,formonly.aag02,abi_file.abi01,abi_file.abi02,abi_file.abi06,abi_file.abi07,formonly.gem02,abi_file.abi11,abi_file.abi32,abi_file.abi12,abi_file.abi33,abi_file.abi13,abi_file.abi34,abi_file.abi14,abi_file.abi35,abi_file.abi31,abi_file.abi36,abi_file.abi03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri033_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+[label1  |hrbob09   |hrbo03              ]
+[label2  |hrbob10                        ]
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+Table Table2
+{
+[hrbob01  |hrbob02  |hrbob03 |hrbob04 |hrbob05 |hrbob06 |hrbob07 |hrbob08       ]
+[hrbob01  |hrbob02  |hrbob03 |hrbob04 |hrbob05 |hrbob06 |hrbob07 |hrbob08       ]
+[hrbob01  |hrbob02  |hrbob03 |hrbob04 |hrbob05 |hrbob06 |hrbob07 |hrbob08       ]
+[hrbob01  |hrbob02  |hrbob03 |hrbob04 |hrbob05 |hrbob06 |hrbob07 |hrbob08       ]
+[hrbob01  |hrbob02  |hrbob03 |hrbob04 |hrbob05 |hrbob06 |hrbob07 |hrbob08       ]
+
+}
+END -- Table2
+Grid Grid2
+{
+
+   --------[label3  |cnt   |label4  |cn2   ]--------
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"Label1";
+ButtonEdit hrbob09=formonly.hrbob09 type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit hrbo03=formonly.hrbo03 type CHAR, tabIndex=11;
+Label label2:Label2, text=%"Label2";
+ButtonEdit hrbob10=formonly.hrbob10 type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit hrbob01=formonly.hrbob01 type CHAR, tabIndex=3, title=%"hrbob01", not null, required;
+CheckBox hrbob02=formonly.hrbob02 type CHAR, tabIndex=4, title=%"hrbob02", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrbob03=formonly.hrbob03 type CHAR, tabIndex=5, title=%"hrbob03", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrbob04=formonly.hrbob04 type CHAR, tabIndex=6, title=%"hrbob04", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit hrbob05=formonly.hrbob05 type CHAR, tabIndex=7, title=%"hrbob05", not null, required;
+Edit hrbob06=formonly.hrbob06 type CHAR, tabIndex=8, title=%"hrbob06", not null, required;
+Edit hrbob07=formonly.hrbob07 type CHAR, tabIndex=9, title=%"hrbob07", not null, required;
+Edit hrbob08=formonly.hrbob08 type CHAR, tabIndex=10, title=%"hrbob08";
+Label label3:Label3, text=%"Label3";
+Edit cnt=formonly.cnt type CHAR, tabIndex=12;
+Label label4:Label4, text=%"Label4";
+Edit cn2=formonly.cn2 type CHAR, tabIndex=13;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrbob(formonly.hrbob01,formonly.hrbob02,formonly.hrbob03,formonly.hrbob04,formonly.hrbob05,formonly.hrbob06,formonly.hrbob07,formonly.hrbob08)
+SCREEN RECORD Undefined(formonly.hrbob09,formonly.hrbob10,formonly.hrbo03,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

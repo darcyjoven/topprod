@@ -1,0 +1,77 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afat600.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afat600")
+VBox vb10
+Folder pc415
+Page page01(text="Main")
+VBox vb5
+Grid gr2293
+{
+ Inventory Taking No.      [fca01     ]                                     [fca15               ]
+ Inventory Taking S/N      [fca02     ]                                     [imgmksg]
+ Property No.              [fca03        ][fca031       ]                   [       ]
+ Chinese Name              [faj06                    ]
+ Keeper                    [fca06     ]
+ Keeping Department        [fca05     ]
+ Storing Location          [fca07     ]                  Group               [fca21     ]
+ Unit                      [fca08     ]
+ Book Qty                  [qty       ]                  Qty Outside         [out_qty   ]
+ ----------------------------------------------------------------------------------------------------
+ Inventory Qty             [fca09     ]                  Actual Keeper       [fca11     ][gen02_2   ]
+ Inventory Taking Date     [fca13       ]                Actual Keeping Dept [fca10     ][gem02     ]
+ Inventory Taking Employee [fca14     ]                  Actual Location     [fca12     ][faf02     ]
+                           [gen02     ]
+
+}
+END -- gr2293
+END -- vb5
+END -- page01
+END -- pc415
+Grid gr2294
+{
+  ----------Rows [cnt   ] ----------
+
+}
+END -- gr2294
+END -- vb10
+END -- afat600
+
+TABLES
+fca_file
+ATTRIBUTES
+Edit fca01=fca_file.fca01, tabIndex=1, comment="KEY Field, No Blank/Repeated!";
+CheckBox fca15=fca_file.fca15, tabIndex=2, text="Post", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit fca02=fca_file.fca02, tabIndex=3, comment="KEY Field, No Blank/Repeated!";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit fca03=fca_file.fca03, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry  Property No.";
+Edit fca031=fca_file.fca031, tabIndex=5;
+Edit faj06=formonly.faj06 type CHAR, tabIndex=6;
+Edit fca06=fca_file.fca06, tabIndex=7, noEntry;
+Edit fca05=fca_file.fca05, tabIndex=8, noEntry;
+Edit fca07=fca_file.fca07, tabIndex=9, noEntry;
+Edit fca21=fca_file.fca21, tabIndex=12;
+Edit fca08=fca_file.fca08, tabIndex=10, noEntry;
+Edit qty=formonly.qty type CHAR, tabIndex=11, noEntry;
+Edit out_qty=formonly.out_qty type CHAR, tabIndex=13, noEntry;
+Edit fca09=fca_file.fca09, tabIndex=14;
+ButtonEdit fca11=fca_file.fca11, action=controlp, tabIndex=18, not null, required, image="zoom", comment="<^P>Qry  Employee";
+Edit gen02_2=formonly.gen02_2 type CHAR, tabIndex=21, noEntry;
+DateEdit fca13=fca_file.fca13, tabIndex=15;
+ButtonEdit fca10=fca_file.fca10, action=controlp, tabIndex=19, not null, required, image="zoom", comment="<^P>Qry  Department";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=22, noEntry;
+ButtonEdit fca14=fca_file.fca14, action=controlp, tabIndex=16, not null, required, image="zoom", comment="<^P>Qry  Employee";
+ButtonEdit fca12=fca_file.fca12, action=controlp, tabIndex=20, not null, required, image="zoom", comment="<^P>Qry Location";
+Edit faf02=formonly.faf02 type CHAR, tabIndex=23, noEntry;
+Edit gen02=formonly.gen02 type CHAR, tabIndex=17;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(fca_file.fca01,fca_file.fca15,fca_file.fca02,formonly.imgmksg,fca_file.fca03,fca_file.fca031,formonly.faj06,fca_file.fca06,fca_file.fca05,fca_file.fca07,fca_file.fca21,fca_file.fca08,formonly.qty,formonly.out_qty,fca_file.fca09,fca_file.fca11,formonly.gen02_2,fca_file.fca13,fca_file.fca10,formonly.gem02,fca_file.fca14,fca_file.fca12,formonly.faf02,formonly.gen02,formonly.cnt)
+END -- INSTRUCTIONS
+

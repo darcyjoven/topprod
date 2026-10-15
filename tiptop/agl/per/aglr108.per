@@ -1,0 +1,86 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglr108.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"aglr108")
+VBox VBox2
+Grid Grid1
+{
+
+ <G group1                                                          >
+  Book No.            [b                   ]
+ <                                                                  >
+}
+END -- Grid1
+Grid gr2614
+{
+ <G group01                                                          >
+  Voc. Account        [abb03               ]
+  Voc. Dept           [abb05               ]
+ <                                                                   >
+}
+END -- gr2614
+Group group02(text="INPUT")
+VBox VBox1
+Grid gr2615
+{
+
+ Voucher Date        [b_date               ]-[e_date              ]
+
+
+}
+END -- gr2615
+Grid gr2616
+{
+
+ <G group04                                                         >
+
+  [d                                                            ]
+  [                                                             ]
+ <                                                                  >
+}
+END -- gr2616
+Grid gr2617
+{
+ [e                                                           ]
+ [f                                                           ]
+ [aag38                                                        ]
+
+}
+END -- gr2617
+END -- VBox1
+END -- group02
+Grid gr2618
+{
+
+ [g                                                            ]
+
+
+}
+END -- gr2618
+END -- VBox2
+END -- aglr108
+
+ATTRIBUTES
+Group group1:Group1, text=%"INPUT";
+ButtonEdit b=formonly.b type CHAR, action=controlp, tabIndex=8, not null, required, image="zoom.png";
+Group group01:group01, text="QBE";
+ButtonEdit abb03=formonly.abb03 type CHAR, action=controlp, tabIndex=9, required, image="zoom.png";
+Edit abb05=formonly.abb05 type CHAR, tabIndex=9;
+DateEdit b_date=formonly.b_date type DATE, tabIndex=2;
+DateEdit e_date=formonly.e_date type DATE, tabIndex=2;
+Group group04:group04, text="Control/Classification Item";
+RadioGroup d=formonly.d type CHAR, tabIndex=3, items=(("1", "Control Account"),("2", "Classification Item"));
+CheckBox e=formonly.e type CHAR, tabIndex=4, text="Print Account Sum", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox f=formonly.f type CHAR, tabIndex=5, text="Print Other Name", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox aag38=formonly.aag38 type CHAR, tabIndex=7, text="Inter Income Account No.", not null, valueChecked = "Y", valueUnchecked = "N";
+CheckBox g=formonly.g type CHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.b,formonly.abb03,formonly.abb05,formonly.b_date,formonly.e_date,formonly.d,formonly.e,formonly.f,formonly.aag38,formonly.g)
+END -- INSTRUCTIONS
+

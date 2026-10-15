@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axct900_g.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axct900_g")
+VBox vb3
+Grid gr1403
+{
+ <G group01                                             >
+  Date         [bdate     ]-[edate     ]
+  Data Source  [s                     ]
+               [                      ]
+               [                      ]
+               [                      ]
+               [                      ]
+               [                      ]
+
+ [dummy01            ]Year[yy   ]Month[mm   ]
+
+  Markup       [a                                  ]
+ <                                                      >
+}
+END -- gr1403
+Group group02(text="Data Source Plant")
+ScrollGrid gr6
+{
+
+[dummy02     |dummy03     ] [dummy021    |dummy031       ]
+[azp01       |azp02       ] [azp01       |azp02       ]
+
+}
+END -- gr6
+END -- group02
+END -- vb3
+END -- axct900_g
+
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+DateEdit bdate=formonly.bdate type DATE, tabIndex=1, not null, required;
+DateEdit edate=formonly.edate type DATE, tabIndex=2, not null, required;
+RadioGroup s=formonly.s type CHAR, tabIndex=3, items=(("1", "Standard Cost"),("2", "Actual Cost"),("3", "Market U/P"),("4", "Mothly Weigthed Average U/P"),("5", "Last Selling U/P"),("6", "Avg. Purchase U/P"));
+Label dummy01:dummy01, text="m. Weighted Avg. U/P Source:";
+Edit yy=formonly.yy type CHAR, tabIndex=4;
+Edit mm=formonly.mm type CHAR, tabIndex=5;
+RadioGroup a=formonly.a type CHAR, tabIndex=6, orientation=horizontal, items=(("1", "No Markup"),("2", "By Product Class."),("3", "By Product"));
+Label dummy02:dummy02, text="Source Plant";
+Label dummy03:dummy03, text="Logestic Name";
+Label dummy021:dummy021, text="Source Plant";
+Label dummy031:dummy031, text="Logestic Name";
+ButtonEdit azp01=formonly.azp01 type CHAR, action=controlp, tabIndex=7, image="zoom";
+Edit azp02=formonly.azp02 type CHAR, tabIndex=8, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_plant(formonly.azp01,formonly.azp02)
+SCREEN RECORD Undefined(formonly.bdate,formonly.edate,formonly.s,formonly.yy,formonly.mm,formonly.a)
+END -- INSTRUCTIONS
+

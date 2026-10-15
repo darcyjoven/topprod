@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/arm/42f/armg141.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"armr141")
+VBox VBox1
+Grid gr337
+{
+ <G group01                                             >
+  RMA Re-Delivery No. [rme01               ]
+  Document Date       [rme02               ]
+  Customer No.        [rme03               ]
+ <                                                      >
+
+}
+END -- gr337
+Grid gr338
+{
+[more                                     ]
+
+}
+END -- gr338
+END -- VBox1
+END -- armr141
+
+TABLES
+rme_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit rme01=rme_file.rme01, tabIndex=1, upShift;
+Edit rme02=rme_file.rme02, tabIndex=2;
+Edit rme03=rme_file.rme03, tabIndex=3;
+CheckBox more=formonly.more type CHAR, tabIndex=4, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(rme_file.rme01,rme_file.rme02,rme_file.rme03,formonly.more)
+END -- INSTRUCTIONS
+

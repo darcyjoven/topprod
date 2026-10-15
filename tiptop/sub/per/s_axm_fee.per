@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/sub/42f/s_axm_fee.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"s_axm_fee")
+Grid gr3872
+{
+ <T s_oef                                                            >
+ [oef|oef04    |oaj02     |oef05               |oef06               ]
+ [oef|oef04    |oaj02     |oef05               |oef06               ]
+ [oef|oef04    |oaj02     |oef05               |oef06               ]
+ [oef|oef04    |oaj02     |oef05               |oef06               ]
+ [oef|oef04    |oaj02     |oef05               |oef06               ]
+ [oef|oef04    |oaj02     |oef05               |oef06               ]
+ <                                                                   >
+
+}
+END -- gr3872
+END -- s_axm_fee
+
+TABLES
+oef_file
+ATTRIBUTES
+Table s_oef:s_oef;
+Edit oef=oef_file.oef03, tabIndex=1, title="Ln#", comment="0 :Page Expense,123...Body Expense";
+ButtonEdit oef04=oef_file.oef04, action=controlp, tabIndex=2, title="Expense#", image="zoom", comment="<^P>Qry Expense No.";
+Edit oaj02=formonly.oaj02 type CHAR, tabIndex=3, title="Desc.", noEntry;
+Edit oef05=oef_file.oef05, tabIndex=4, title="Exp.Amt";
+Edit oef06=oef_file.oef06, tabIndex=5, title="Desc";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oef(oef_file.oef03,oef_file.oef04,formonly.oaj02,oef_file.oef05,oef_file.oef06)
+END -- INSTRUCTIONS
+

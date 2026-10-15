@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfp400.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfp400")
+VBox vb2
+Grid gr536
+{
+ <G group01                                            >   <G group02                                     >
+  W/O No.             [sfb01                         ]       Operating Date      [sfb13                   ]
+  Production Item     [sfb05                         ]       Complete Date       [sfb15                   ]
+  Version             [ima05     ]                           Issuing Date        [sfb25       ][sfb26     ]
+  Source Code         [ima08     ]                           Last Scrap Date     [sfk02       ]
+  Specification       [ima02                         ]       Task S/N            [sfb17                   ]
+  W/O Style           [sfb02     ][d1                  ]     Completed Date      [sfb18       ][sfb19     ]
+                                                             W/O Status          [sfb04     ][d2          ]
+ <                                                     >   <                                              >
+ <G group03                                            >   <G group04                                     >
+  Prod.Qty            [sfb08               ]                 Issuing Ending Date         [sfb36           ]
+  Completed Qty       [sfb09               ]                 Issue and Hours Ending date [sfb37           ]
+  Rework Qty          [sfb10               ]                 Cost Accounting Ending Date [sfb38           ]
+  Scrap Qty           [sfb12               ]                 Closing Status              [sfb28           ]
+  F.Q.C Qty           [sfb11               ]
+ <                                                     >   <                                              >
+
+}
+END -- gr536
+Grid gr4
+{
+
+  ------ Rows [cn     ]/ [cn2    ]
+
+}
+END -- gr4
+END -- vb2
+END -- asfp400
+
+TABLES
+sfb_file,
+sfk_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit sfb01=sfb_file.sfb01, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit sfb05=sfb_file.sfb05, action=controlp, tabIndex=2, image="zoom";
+Edit ima05=formonly.ima05 type CHAR, tabIndex=3, noEntry;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=4, noEntry;
+Edit ima02=formonly.ima02 type VARCHAR, tabIndex=5, noEntry;
+Edit sfb02=sfb_file.sfb02, tabIndex=6;
+Edit d1=formonly.d1 type VARCHAR, tabIndex=7;
+Group group02:group02;
+DateEdit sfb13=sfb_file.sfb13, tabIndex=8, noEntry;
+DateEdit sfb15=sfb_file.sfb15, tabIndex=9, noEntry;
+DateEdit sfb25=sfb_file.sfb25, tabIndex=10, noEntry;
+Edit sfb26=sfb_file.sfb26, tabIndex=11, noEntry;
+DateEdit sfk02=sfk_file.sfk02, tabIndex=12, noEntry;
+Edit sfb17=sfb_file.sfb17, tabIndex=13, noEntry;
+DateEdit sfb18=sfb_file.sfb18, tabIndex=14, noEntry;
+Edit sfb19=sfb_file.sfb19, tabIndex=15, noEntry;
+Edit sfb04=sfb_file.sfb04, tabIndex=16, noEntry;
+Edit d2=formonly.d2 type VARCHAR, tabIndex=17, noEntry;
+Group group03:group03;
+Edit sfb08=sfb_file.sfb08, tabIndex=18, noEntry, not null, required;
+Edit sfb09=sfb_file.sfb09, tabIndex=19, noEntry, not null, required;
+Edit sfb10=sfb_file.sfb10, tabIndex=20, noEntry, not null, required;
+Edit sfb12=sfb_file.sfb12, tabIndex=21, noEntry, not null, required;
+Edit sfb11=sfb_file.sfb11, tabIndex=22, noEntry, not null, required;
+Group group04:group04;
+DateEdit sfb36=sfb_file.sfb36, tabIndex=23, noEntry;
+DateEdit sfb37=sfb_file.sfb37, tabIndex=24, noEntry;
+DateEdit sfb38=sfb_file.sfb38, tabIndex=25, noEntry;
+Edit sfb28=sfb_file.sfb28, tabIndex=26, noEntry;
+Edit cn=formonly.cn type SMALLINT, tabIndex=27, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(sfb_file.sfb01,sfb_file.sfb05,formonly.ima05,formonly.ima08,formonly.ima02,sfb_file.sfb02,formonly.d1,sfb_file.sfb13,sfb_file.sfb15,sfb_file.sfb25,sfb_file.sfb26,sfk_file.sfk02,sfb_file.sfb17,sfb_file.sfb18,sfb_file.sfb19,sfb_file.sfb04,formonly.d2,sfb_file.sfb08,sfb_file.sfb09,sfb_file.sfb10,sfb_file.sfb12,sfb_file.sfb11,sfb_file.sfb36,sfb_file.sfb37,sfb_file.sfb38,sfb_file.sfb28,formonly.cn,formonly.cn2)
+END -- INSTRUCTIONS
+

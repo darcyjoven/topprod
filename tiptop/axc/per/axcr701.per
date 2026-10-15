@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axcr701.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"axcr701")
+VBox vb11
+Grid gr12
+{
+ <G group01                                                                                        >
+  Cost Group          [ima12               ]  Store-in/Return#    [tlf905          ][tlf906  ]
+  Cost Levels         [ima57               ]  Vender#             [tlf19               ]
+  Source Code         [ima08               ]  Voucher#            [tlf65               ]
+  Item No.            [tlf01               ]
+
+ <                                                                                                 >
+
+}
+END -- gr12
+Group g01(text="INPUT")
+Grid gr13
+{
+ <G group02                                                ><G group03                           >
+  Date QBE                 [bdate       ]-[edate       ]        [b                          ]
+  Cost Calculation Method  [type                       ]
+ [n                           ]
+  Account#                 [abb03                      ]
+ <                                                         ><                                    >
+
+ <G group04                                                                                      >
+ [s1              ]     [s2               ]     [s3                ]
+ [t1              ]     [t2               ]     [t3                ]
+ [u1              ]     [u2               ]     [u3                ]
+ <                                                                                               >
+}
+END -- gr13
+END -- g01
+Grid gr14
+{
+[more                                                                    ]
+
+}
+END -- gr14
+END -- vb11
+END -- axcr701
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ima12=formonly.ima12 type CHAR, tabIndex=1;
+Edit tlf905=formonly.tlf905 type CHAR, tabIndex=2;
+Edit tlf906=formonly.tlf906 type CHAR, tabIndex=3;
+Edit ima57=formonly.ima57 type CHAR, tabIndex=4;
+Edit tlf19=formonly.tlf19 type CHAR, tabIndex=5;
+Edit ima08=formonly.ima08 type CHAR, tabIndex=6;
+Edit tlf65=formonly.tlf65 type CHAR, tabIndex=7;
+ButtonEdit tlf01=formonly.tlf01 type CHAR, action=controlp, tabIndex=8, image="zoom", comment="<P>";
+Group group02:group02;
+DateEdit bdate=formonly.bdate type DATE, tabIndex=9;
+DateEdit edate=formonly.edate type DATE, tabIndex=10;
+ComboBox type=formonly.type type VARCHAR, tabIndex=24, not null, items=(("1", "Monthly Weighted Unit Cost"),("2", "FIFO Cost"),("3", "Identify Manually-Batch Cost"),("4", "Identify Manually-Item Cost"),("5", "Identify Manually-Store Profit Center"));
+CheckBox n=formonly.n type VARCHAR, tabIndex=11, text="Print Difference only", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit abb03=formonly.abb03 type CHAR, action=controlp, tabIndex=12, not null, required, image="zoom", comment="<P> Qry Account ";
+Group group03:group03, text="Data Sequence Option";
+RadioGroup b=formonly.b type VARCHAR, tabIndex=13, items=(("1", "Cost Group"),("2", "Cost Levels"),("3", "Source Code"),("4", "Item No."));
+Group group04:group04, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=14, queryEditable, items=(("1", "Cost Group"),("2", "Cost Levels"),("3", "Source Code"),("4", "Item No."));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=15, queryEditable, items=(("1", "Cost Group"),("2", "Cost Levels"),("3", "Source Code"),("4", "Item No."));
+ComboBox s3=formonly.s3 type CHAR, tabIndex=16, queryEditable, items=(("1", "Cost Group"),("2", "Cost Levels"),("3", "Source Code"),("4", "Item No."));
+CheckBox t1=formonly.t1 type CHAR, tabIndex=17, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t2=formonly.t2 type CHAR, tabIndex=18, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox t3=formonly.t3 type CHAR, tabIndex=19, text="Next Page", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u1=formonly.u1 type CHAR, tabIndex=20, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=21, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox u3=formonly.u3 type CHAR, tabIndex=22, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type CHAR, tabIndex=23, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.ima12,formonly.tlf905,formonly.tlf906,formonly.ima57,formonly.tlf19,formonly.ima08,formonly.tlf65,formonly.tlf01,formonly.bdate,formonly.edate,formonly.type,formonly.n,formonly.abb03,formonly.b,formonly.s1,formonly.s2,formonly.s3,formonly.t1,formonly.t2,formonly.t3,formonly.u1,formonly.u2,formonly.u3,formonly.more)
+END -- INSTRUCTIONS
+

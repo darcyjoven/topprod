@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr706.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfr706")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                                                 >
+  Production No.      [ima01               ]
+  Production Class    [ima131              ]
+ <                                                                          >
+
+}
+END -- Grid1
+Group group011(text="INPUT")
+VBox VBox2
+Grid Grid2
+{
+ <G group02                                                                 >
+ [dummy01           ] [a01       ]
+                      [a01       ]
+
+  Routing Code        [b         ]
+ <                                                                          >
+
+}
+END -- Grid2
+END -- VBox2
+END -- group011
+Grid Grid3
+{
+[more                                     ]
+
+}
+END -- Grid3
+END -- VBox1
+END -- asfr706
+
+TABLES
+ima_file
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit ima01=ima_file.ima01, tabIndex=1, not null, required;
+Edit ima131=ima_file.ima131, tabIndex=2;
+Group group02:group02;
+Label dummy01:dummy01, text="Task No.";
+ButtonEdit a01=formonly.a01 type SMALLINT, action=controlp, tabIndex=3, image="zoom", comment="<^P>to Qry Task # ";
+ButtonEdit b=formonly.b type VARCHAR, action=controlp, tabIndex=4, image="zoom", comment="<^P>Qry Routing No.";
+CheckBox more=formonly.more type CHAR, tabIndex=5, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_a01(formonly.a01)
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima131,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

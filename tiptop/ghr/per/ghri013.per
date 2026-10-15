@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri013.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox vbox1
+Folder folder1
+Page page1(text=%"Page1")
+Grid grid2
+{
+ hrav01 [hrav01              ]
+
+}
+END -- grid2
+END -- page1
+END -- folder1
+Table s_hrav
+{
+[hrav02  |hrav03    |hrat02         |hrav04    |hrav05    |hrau03         |hrav06  |hrav06_n|str1    |str2    |str3    |hrav07    |hrav07_n |hrav08      |hrav09            |hrav10   ]
+[hrav02  |hrav03    |hrat02         |hrav04    |hrav05    |hrau03         |hrav06  |hrav06_n|str1    |str2    |str3    |hrav07    |hrav07_n |hrav08      |hrav09            |hrav10   ]
+[hrav02  |hrav03    |hrat02         |hrav04    |hrav05    |hrau03         |hrav06  |hrav06_n|str1    |str2    |str3    |hrav07    |hrav07_n |hrav08      |hrav09            |hrav10   ]
+[hrav02  |hrav03    |hrat02         |hrav04    |hrav05    |hrau03         |hrav06  |hrav06_n|str1    |str2    |str3    |hrav07    |hrav07_n |hrav08      |hrav09            |hrav10   ]
+[hrav02  |hrav03    |hrat02         |hrav04    |hrav05    |hrau03         |hrav06  |hrav06_n|str1    |str2    |str3    |hrav07    |hrav07_n |hrav08      |hrav09            |hrav10   ]
+[hrav02  |hrav03    |hrat02         |hrav04    |hrav05    |hrau03         |hrav06  |hrav06_n|str1    |str2    |str3    |hrav07    |hrav07_n |hrav08      |hrav09            |hrav10   ]
+[hrav02  |hrav03    |hrat02         |hrav04    |hrav05    |hrau03         |hrav06  |hrav06_n|str1    |str2    |str3    |hrav07    |hrav07_n |hrav08      |hrav09            |hrav10   ]
+[hrav02  |hrav03    |hrat02         |hrav04    |hrav05    |hrau03         |hrav06  |hrav06_n|str1    |str2    |str3    |hrav07    |hrav07_n |hrav08      |hrav09            |hrav10   ]
+[hrav02  |hrav03    |hrat02         |hrav04    |hrav05    |hrau03         |hrav06  |hrav06_n|str1    |str2    |str3    |hrav07    |hrav07_n |hrav08      |hrav09            |hrav10   ]
+[hrav02  |hrav03    |hrat02         |hrav04    |hrav05    |hrau03         |hrav06  |hrav06_n|str1    |str2    |str3    |hrav07    |hrav07_n |hrav08      |hrav09            |hrav10   ]
+}
+END -- s_hrav
+Grid grid1
+{
+ ----------  cnt[cnt       ]cn2[cn2       ]----------
+
+}
+END -- grid1
+END -- vbox1
+END -- ghri013
+
+ATTRIBUTES
+ButtonEdit hrav01=formonly.hrav01 type VARCHAR, action=controlp, tabIndex=8, not null, required, image="zoom";
+Edit hrav02=formonly.hrav02 type INTEGER, tabIndex=1, title=%"hrav02", not null, required;
+ButtonEdit hrav03=formonly.hrav03 type VARCHAR, action=controlp, tabIndex=2, title=%"hrav03", noEntry, image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=9, title=%"hrat02", noEntry;
+ButtonEdit hrav04=formonly.hrav04 type VARCHAR, action=controlp, tabIndex=12, title=%"hrav04", not null, required, image="zoom";
+ButtonEdit hrav05=formonly.hrav05 type VARCHAR, action=controlp, tabIndex=3, title=%"hrav05", not null, required, image="zoom";
+Edit hrau03=formonly.hrau03 type VARCHAR, tabIndex=10, title=%"hrau03", noEntry;
+Edit hrav06=formonly.hrav06 type VARCHAR, tabIndex=4, title=%"hrav06";
+Edit hrav06_n=formonly.hrav06_n type CHAR, tabIndex=18, title=%"hrav06_n";
+ButtonEdit str1=formonly.str1 type CHAR, action=controlp, tabIndex=15, title=%"str1", image="zoom";
+Edit str2=formonly.str2 type CHAR, tabIndex=16, title=%"str2";
+DateEdit str3=formonly.str3 type CHAR, tabIndex=17, title=%"str3";
+Edit hrav07=formonly.hrav07 type VARCHAR, tabIndex=5, title=%"hrav07";
+Edit hrav07_n=formonly.hrav07_n type CHAR, tabIndex=19, title=%"hrav07_n";
+DateEdit hrav08=formonly.hrav08 type DATE, tabIndex=6, title=%"hrav08";
+Edit hrav09=formonly.hrav09 type VARCHAR, tabIndex=7, title=%"hrav09";
+CheckBox hrav10=formonly.hrav10 type VARCHAR, tabIndex=11, default = "N", title=%"hrav10", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cnt=formonly.cnt type CHAR, tabIndex=13;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=14;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD undefined(formonly.hrav01,formonly.cnt,formonly.cn2)
+SCREEN RECORD s_hrav(formonly.hrav02,formonly.hrav03,formonly.hrat02,formonly.hrav04,formonly.hrav05,formonly.hrau03,formonly.hrav06,formonly.hrav06_n,formonly.str1,formonly.str2,formonly.str3,formonly.hrav07,formonly.hrav07_n,formonly.hrav08,formonly.hrav09,formonly.hrav10)
+END -- INSTRUCTIONS
+

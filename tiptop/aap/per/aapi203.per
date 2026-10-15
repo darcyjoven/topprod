@@ -1,0 +1,118 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aap/42f/aapi203.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aapi203")
+VBox VBox1
+Folder pc13
+Page page01(text="Main")
+Grid gr27
+{
+ Acct Category [apt01     ][apr02                         ]              [imgmksg]
+ Dept. No.     [apt02     ][gem02     ]                                  [       ]
+ Debit Acct    [apt03                   ][aag02_a                       ]
+ Dai Acct      [apt06                   ][aag02_c                       ]
+ Credit Acct   [apt04                   ][aag02_b                       ]
+ Debit Acct 2  [apt031                  ][aag02_a1                      ]
+ Dai Acct 2    [apt061                  ][aag02_c1                      ]
+ Credit Acct 2 [apt041                  ][aag02_b1                      ]
+ <G group2                                             >
+   Category         [apt07     ][pmc03     ]
+   AP Document      [apt08     ][apydesc   ]
+ <                                                     >
+
+}
+END -- gr27
+END -- page01
+Page info(text="Info")
+Grid gr28
+{
+ Record Owner        [aptuser   ] Last Modified by    [aptmodu   ] Data Valid Code     [aptacti   ]
+ Department          [aptgrup   ] Create/Modify Date  [aptdate     ]
+ Record Orig.        [aptoriu   ]
+ Dept Orig.          [aptorig   ]
+}
+END -- gr28
+END -- info
+Page userdefined_field(text="User Defined Field")
+Grid gru47
+{
+ userdefined_field01[aptud01                       ] userdefined_field07[aptud07        ] userdefined_field13[aptud13        ]
+                    [                              ] userdefined_field08[aptud08        ] userdefined_field14[aptud14        ]
+ userdefined_field02[aptud02        ]                userdefined_field09[aptud09        ] userdefined_field15[aptud15        ]
+ userdefined_field03[aptud03        ]                userdefined_field10[aptud10        ]
+ userdefined_field04[aptud04        ]                userdefined_field11[aptud11        ]
+ userdefined_field05[aptud05        ]                userdefined_field12[aptud12        ]
+ userdefined_field06[aptud06        ]
+
+}
+END -- gru47
+END -- userdefined_field
+END -- pc13
+Grid gr29
+{
+ ----------Rows [cnt   ] ----------
+
+
+}
+END -- gr29
+END -- VBox1
+END -- aapi203
+
+TABLES
+apt_file
+ATTRIBUTES
+ButtonEdit apt01=apt_file.apt01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated!  <^P>Qry Account Cate";
+Edit apr02=formonly.apr02 type CHAR, tabIndex=2, noEntry;
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+ButtonEdit apt02=apt_file.apt02, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Qry Department name";
+Edit gem02=formonly.gem02 type CHAR, tabIndex=5, noEntry;
+ButtonEdit apt03=apt_file.apt03, action=controlp, tabIndex=6, image="zoom", comment="MISC : Multi-Debit  <^P>Qry Account  ";
+Edit aag02_a=formonly.aag02_a type CHAR, tabIndex=7, noEntry;
+ButtonEdit apt06=apt_file.apt06, action=controlp, tabIndex=36, image="zoom";
+Edit aag02_c=formonly.aag02_c type CHAR, tabIndex=37, noEntry;
+ButtonEdit apt04=apt_file.apt04, action=controlp, tabIndex=8, image="zoom", comment="<^P>Qry Account ";
+Edit aag02_b=formonly.aag02_b type CHAR, tabIndex=9, noEntry;
+ButtonEdit apt031=apt_file.apt031, action=controlp, tabIndex=10, image="zoom", comment="MISC : Multi-Debit  <^P>Qry Account  ";
+Edit aag02_a1=formonly.aag02_a1 type CHAR, tabIndex=11, noEntry;
+ButtonEdit apt061=apt_file.apt061, action=controlp, tabIndex=39, image="zoom";
+Edit aag02_c1=formonly.aag02_c1 type CHAR, tabIndex=38, noEntry;
+ButtonEdit apt041=apt_file.apt041, action=controlp, tabIndex=12, image="zoom", comment="<^P>Qry Account ";
+Edit aag02_b1=formonly.aag02_b1 type CHAR, tabIndex=13, noEntry;
+Group group2:Group2, text=%"HRM";
+ButtonEdit apt07=apt_file.apt07, action=controlp, tabIndex=503, image="zoom", comment="<^P>Qry Account Cate";
+Edit pmc03=formonly.pmc03 type CHAR, tabIndex=504, noEntry;
+ButtonEdit apt08=apt_file.apt08, action=controlp, tabIndex=505, image="zoom", comment="<^P>Qry Account Cate";
+Edit apydesc=formonly.apydesc type CHAR, tabIndex=506, noEntry;
+Edit aptuser=apt_file.aptuser, tabIndex=14, noEntry;
+Edit aptmodu=apt_file.aptmodu, tabIndex=15, noEntry;
+Edit aptacti=apt_file.aptacti, tabIndex=16, noEntry;
+Edit aptgrup=apt_file.aptgrup, tabIndex=17, noEntry;
+DateEdit aptdate=apt_file.aptdate, tabIndex=18, noEntry;
+Edit aptoriu=apt_file.aptoriu, tabIndex=501, noEntry;
+Edit aptorig=apt_file.aptorig, tabIndex=502, noEntry;
+TextEdit aptud01=apt_file.aptud01, tabIndex=21, stretch=NONE;
+Edit aptud07=apt_file.aptud07, tabIndex=22;
+DateEdit aptud13=apt_file.aptud13, tabIndex=23;
+Edit aptud08=apt_file.aptud08, tabIndex=24;
+DateEdit aptud14=apt_file.aptud14, tabIndex=25;
+Edit aptud02=apt_file.aptud02, tabIndex=26;
+Edit aptud09=apt_file.aptud09, tabIndex=27;
+DateEdit aptud15=apt_file.aptud15, tabIndex=28;
+Edit aptud03=apt_file.aptud03, tabIndex=29;
+Edit aptud10=apt_file.aptud10, tabIndex=30;
+Edit aptud04=apt_file.aptud04, tabIndex=31;
+Edit aptud11=apt_file.aptud11, tabIndex=32;
+Edit aptud05=apt_file.aptud05, tabIndex=33;
+Edit aptud12=apt_file.aptud12, tabIndex=34;
+Edit aptud06=apt_file.aptud06, tabIndex=35;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=19, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(apt_file.apt01,formonly.apr02,formonly.imgmksg,apt_file.apt02,formonly.gem02,apt_file.apt03,formonly.aag02_a,apt_file.apt06,formonly.aag02_c,apt_file.apt04,formonly.aag02_b,apt_file.apt031,formonly.aag02_a1,apt_file.apt061,formonly.aag02_c1,apt_file.apt041,formonly.aag02_b1,apt_file.apt07,formonly.pmc03,apt_file.aptuser,apt_file.aptmodu,apt_file.aptacti,apt_file.aptgrup,apt_file.aptdate,apt_file.aptoriu,apt_file.aptorig,apt_file.aptud01,apt_file.aptud07,apt_file.aptud13,apt_file.aptud08,apt_file.aptud14,apt_file.aptud02,apt_file.aptud09,apt_file.aptud15,apt_file.aptud03,apt_file.aptud10,apt_file.aptud04,apt_file.aptud11,apt_file.aptud05,apt_file.aptud12,apt_file.aptud06,formonly.cnt,apt_file.apt08,formonly.apydesc)
+END -- INSTRUCTIONS
+

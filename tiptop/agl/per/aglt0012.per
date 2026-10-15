@@ -1,0 +1,138 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/aglt0012.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"aglt0012")
+VBox vb1
+Folder folder01
+Page page01(text="Main")
+HBox hb2_
+Grid gr2845
+{
+
+ Data Source         [axi08               ]
+ Contra Type        [axi081                   ]
+ Adjustment No.     [axi01               ]
+ Adjustment Date    [axi02       ]
+ Year/Period        [axi0]  [ax]
+
+
+
+
+
+
+
+}
+END -- gr2845
+Grid gr2846
+{
+
+ Group Code           [axi05      ]
+ Parent Company       [axi06      ]
+ Book No.             [axi07      ]
+ Curr On Ac           [axz06      ]
+ Memo                 [axi10                         ]
+
+
+
+
+
+
+
+}
+END -- gr2846
+Grid gr2847
+{
+
+ [axi09             ]
+  Confirm          [axiconf        ]
+ [imgmksg]
+ [       ]
+
+
+
+
+
+
+
+
+}
+END -- gr2847
+END -- hb2_
+END -- page01
+Page info(text="Info")
+Grid gr2848
+{
+ Record Owner        [axiuser   ]   Last Modified by    [aximodu   ]
+ Department          [axigrup   ]   Create/Modify Date  [axidate     ]
+}
+END -- gr2848
+END -- info
+END -- folder01
+Table s_axj
+{
+[axj0|axj03       |aag02                                             |axj04                         |axj05            |a1|axj07               ]
+[axj0|axj03       |aag02                                             |axj04                         |axj05            |a1|axj07               ]
+[axj0|axj03       |aag02                                             |axj04                         |axj05            |a1|axj07               ]
+[axj0|axj03       |aag02                                             |axj04                         |axj05            |a1|axj07               ]
+[axj0|axj03       |aag02                                             |axj04                         |axj05            |a1|axj07               ]
+[axj0|axj03       |aag02                                             |axj04                         |axj05            |a1|axj07               ]
+[axj0|axj03       |aag02                                             |axj04                         |axj05            |a1|axj07               ]
+[axj0|axj03       |aag02                                             |axj04                         |axj05            |a1|axj07               ]
+[axj0|axj03       |aag02                                             |axj04                         |axj05            |a1|axj07               ]
+[axj0|axj03       |aag02                                             |axj04                         |axj05            |a1|axj07               ]
+
+}
+END -- s_axj
+Grid gr2849
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------                          Debit Amount        [axi11               ]                     Credit Amount       [axi12               ]
+
+}
+END -- gr2849
+END -- vb1
+END -- aglt0012
+
+TABLES
+axi_file,
+axj_file
+ATTRIBUTES
+ComboBox axi08=axi_file.axi08, tabIndex=5, noEntry, not null, required, queryEditable, items=(("1", "Manually"));
+RadioGroup axi081=axi_file.axi081, tabIndex=6, noEntry, items=(("V", "Other Adjustment"));
+ButtonEdit axi01=axi_file.axi01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="KEY Field, No Blank/Repeated! <^P>Qry Documents";
+DateEdit axi02=axi_file.axi02, tabIndex=2, not null, required;
+Edit axi0=axi_file.axi03, tabIndex=3;
+Edit ax=axi_file.axi04, tabIndex=4;
+ButtonEdit axi05=axi_file.axi05, action=controlp, tabIndex=7, not null, required, image="zoom", comment="<^P>Query Group Company Data";
+ButtonEdit axi06=axi_file.axi06, action=controlp, tabIndex=8, not null, required, image="zoom", comment="<^P>Query Group Upper Company";
+Edit axi07=axi_file.axi07, tabIndex=9, noEntry;
+Edit axz06=formonly.axz06 type CHAR, tabIndex=10, noEntry;
+Edit axi10=axi_file.axi10, tabIndex=11;
+CheckBox axi09=axi_file.axi09, tabIndex=12, text="Adjust Spread", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y:Adjust Spread";
+ComboBox axiconf=axi_file.axiconf, tabIndex=13, noEntry, not null, required, comment="Y:Adjust Spread", items=(("Y", "Confirmed"),("N", "Unconfirmed"),("X", "Voided"));
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit axiuser=axi_file.axiuser, tabIndex=14, noEntry;
+Edit aximodu=axi_file.aximodu, tabIndex=15, noEntry;
+Edit axigrup=axi_file.axigrup, tabIndex=16, noEntry;
+DateEdit axidate=axi_file.axidate, tabIndex=17, noEntry;
+Edit axj0=axj_file.axj02, tabIndex=18, title="Ln#", not null, required, comment="<^O>Copy Previous Row Body";
+ButtonEdit axj03=axj_file.axj03, action=controlp, tabIndex=19, title="Account No.", not null, required, image="zoom", comment="<^P>Qry Account # ";
+Edit aag02=formonly.aag02 type CHAR, tabIndex=20, title="Account Title", noEntry;
+ButtonEdit axj04=axj_file.axj04, action=controlp, tabIndex=21, title="Memo", image="zoom", comment="<^P>Qry Frequently Used Memo<.####>Dir Access Memo<^O>Copy Prev.Memo";
+Edit axj05=axj_file.axj05, tabIndex=22, title="Affil.(Cust/Ven)";
+ComboBox a1=axj_file.axj06, tabIndex=23, title="1/2", queryEditable, comment=" 1:Debit , 2:Credit", items=(("1", %"Debit"),("2", %"Credit"));
+Edit axj07=formonly.axj07 type INTEGER, tabIndex=24, title="Amount", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=25, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=26, noEntry;
+Edit axi11=axi_file.axi11, tabIndex=27, noEntry;
+Edit axi12=axi_file.axi12, tabIndex=28, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_axj(axj_file.axj02,axj_file.axj03,formonly.aag02,axj_file.axj04,axj_file.axj05,axj_file.axj06,formonly.axj07)
+SCREEN RECORD Undefined(axi_file.axi08,axi_file.axi081,axi_file.axi01,axi_file.axi02,axi_file.axi03,axi_file.axi04,axi_file.axi05,axi_file.axi06,axi_file.axi07,formonly.axz06,axi_file.axi10,axi_file.axi09,axi_file.axiconf,formonly.imgmksg,axi_file.axiuser,axi_file.aximodu,axi_file.axigrup,axi_file.axidate,formonly.cnt,formonly.cn2,axi_file.axi11,axi_file.axi12)
+END -- INSTRUCTIONS
+

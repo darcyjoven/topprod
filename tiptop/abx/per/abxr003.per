@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abx/42f/abxr003.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abxr003")
+VBox VBox1
+Group g02(text="QBE")
+Grid gr1091
+{
+ Item No.          [ima01               ]
+ ima1916           [ima1916           ]
+}
+END -- gr1091
+END -- g02
+Group g01(text="INPUT")
+Grid gr1092
+{
+ Inventory Taking Year [yy  ]
+ Book Year             [yy2 ]         Book Month     [mm  ]
+ <G group01                     >  <G group03                           >
+  [kk                     ]         [s1              ][s2             ]
+ <                              >   [u1              ][u2             ]
+ <G group02                     >
+  [ima15                  ]
+ <                              >  <                                    >
+
+}
+END -- gr1092
+END -- g01
+END -- VBox1
+END -- abxr003
+
+TABLES
+ima_file
+ATTRIBUTES
+ButtonEdit ima01=ima_file.ima01, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<P>Qry Item Master";
+ButtonEdit ima1916=ima_file.ima1916, action=controlp, tabIndex=2, image="zoom", comment="<P>Qry Bonded Group";
+Edit yy=formonly.yy type CHAR, tabIndex=3;
+Edit yy2=formonly.yy2 type CHAR, tabIndex=4;
+Edit mm=formonly.mm type CHAR, tabIndex=5;
+Group group01:group01, text="Item";
+RadioGroup kk=formonly.kk type VARCHAR, tabIndex=6, not null, required, items=(("1", "Material"),("2", "Product"),("3", "Stockage"),("4", "Transport-Product"),("5", "Semi-Product"),("6", "Semi-Product+Product"));
+Group group03:group03, text="Sequence";
+ComboBox s1=formonly.s1 type CHAR, tabIndex=7, items=(("1", "Item No."),("2", "Bonded Group Code"));
+ComboBox s2=formonly.s2 type CHAR, tabIndex=8, items=(("1", "Item No."),("2", "Bonded Group Code"));
+CheckBox u1=formonly.u1 type CHAR, tabIndex=9, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y:Print Subtotal   N:Do\'nt Print";
+CheckBox u2=formonly.u2 type CHAR, tabIndex=10, text="Subtotal", not null, required, valueChecked = "Y", valueUnchecked = "N", comment="Y:Print Subtotal   N:Do\'nt Print";
+Group group02:group02, text="Bond Date";
+RadioGroup ima15=formonly.ima15 type VARCHAR, tabIndex=11, not null, required, items=(("1", "Bonded"),("2", "All"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(ima_file.ima01,ima_file.ima1916,formonly.yy,formonly.yy2,formonly.mm,formonly.kk,formonly.s1,formonly.s2,formonly.u1,formonly.u2,formonly.ima15)
+END -- INSTRUCTIONS
+

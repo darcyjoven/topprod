@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai050.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai050")
+VBox VBox1
+Folder pc322
+Page page01(text="Main")
+Table s_fag
+{
+[fag01         |fag02    |fag03               |fagact]
+[fag01         |fag02    |fag03               |fagact]
+[fag01         |fag02    |fag03               |fagact]
+[fag01         |fag02    |fag03               |fagact]
+[fag01         |fag02    |fag03               |fagact]
+[fag01         |fag02    |fag03               |fagact]
+[fag01         |fag02    |fag03               |fagact]
+[fag01         |fag02    |fag03               |fagact]
+[fag01         |fag02    |fag03               |fagact]
+[fag01         |fag02    |fag03               |fagact]
+
+}
+END -- s_fag
+END -- page01
+END -- pc322
+Grid gr1806
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1806
+END -- VBox1
+END -- afai050
+
+TABLES
+fag_file
+ATTRIBUTES
+Edit fag01=fag_file.fag01, tabIndex=1, title="Reason Code", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+ComboBox fag02=fag_file.fag02, tabIndex=2, title="Pty", not null, required, queryEditable, items=(("1", "Capitalization"),("2", "Inventory Taking"),("3", "Transfer"),("4", "Sale"),("5", "Retire"),("6", "Charge off"),("7", "Improve"),("8", "Revaluate"),("9", "Adj"),("A", "Snd"),("B", "Rcall"),("C", "Re-Amortize"),("D", "Transfer Place"),("E", "Deduction Preparation"),("F", "Removal"));
+Edit fag03=fag_file.fag03, tabIndex=3, title="Reason Des.";
+CheckBox fagact=fag_file.fagacti, tabIndex=4, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=5, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fag(fag_file.fag01,fag_file.fag02,fag_file.fag03,fag_file.fagacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

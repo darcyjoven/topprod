@@ -1,0 +1,88 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axmt642.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axmt642")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+HBox HBox1
+Grid gr2673
+{
+ Commission Object  [oft17     ]
+ Agency/Agent Cust  [oft03     ][oft_desc           ]
+ Commission YY/MM   [oft18]/[oft19]
+}
+END -- gr2673
+Grid gr2674
+{
+ Employee     [oft04     ][gen02       ]
+ Accounts No  [oft21           ]
+
+}
+END -- gr2674
+END -- HBox1
+END -- page01
+END -- folder01
+Table s_oft
+{
+[oft05      |occ02     |oft02   |oft01           |oft06 |oft07               |oft08      |oft09      |oft10     |oft11     |oft12     |oft13   |oft14 |oft15     |oft16     ]
+[oft05      |occ02     |oft02   |oft01           |oft06 |oft07               |oft08      |oft09      |oft10     |oft11     |oft12     |oft13   |oft14 |oft15     |oft16     ]
+[oft05      |occ02     |oft02   |oft01           |oft06 |oft07               |oft08      |oft09      |oft10     |oft11     |oft12     |oft13   |oft14 |oft15     |oft16     ]
+[oft05      |occ02     |oft02   |oft01           |oft06 |oft07               |oft08      |oft09      |oft10     |oft11     |oft12     |oft13   |oft14 |oft15     |oft16     ]
+[oft05      |occ02     |oft02   |oft01           |oft06 |oft07               |oft08      |oft09      |oft10     |oft11     |oft12     |oft13   |oft14 |oft15     |oft16     ]
+[oft05      |occ02     |oft02   |oft01           |oft06 |oft07               |oft08      |oft09      |oft10     |oft11     |oft12     |oft13   |oft14 |oft15     |oft16     ]
+[oft05      |occ02     |oft02   |oft01           |oft06 |oft07               |oft08      |oft09      |oft10     |oft11     |oft12     |oft13   |oft14 |oft15     |oft16     ]
+[oft05      |occ02     |oft02   |oft01           |oft06 |oft07               |oft08      |oft09      |oft10     |oft11     |oft12     |oft13   |oft14 |oft15     |oft16     ]
+[oft05      |occ02     |oft02   |oft01           |oft06 |oft07               |oft08      |oft09      |oft10     |oft11     |oft12     |oft13   |oft14 |oft15     |oft16     ]
+[oft05      |occ02     |oft02   |oft01           |oft06 |oft07               |oft08      |oft09      |oft10     |oft11     |oft12     |oft13   |oft14 |oft15     |oft16     ]
+
+}
+END -- s_oft
+Grid gr2675
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2675
+END -- VBox1
+END -- axmt642
+
+TABLES
+oft_file
+ATTRIBUTES
+ComboBox oft17=oft_file.oft17, tabIndex=1, not null, required, items=(("1", "Agent"),("2", "Agent Cust"));
+ButtonEdit oft03=oft_file.oft03, action=controlp, tabIndex=2, image="zoom", comment="<^P>Qry Details";
+Edit oft_desc=formonly.oft_desc type CHAR, tabIndex=3, noEntry;
+Edit oft18=oft_file.oft18, tabIndex=4;
+Edit oft19=oft_file.oft19, tabIndex=5;
+ButtonEdit oft04=oft_file.oft04, action=controlp, tabIndex=6, image="zoom", comment="<^P>Qry Details";
+Edit gen02=formonly.gen02 type CHAR, tabIndex=7, noEntry;
+Edit oft21=oft_file.oft21, tabIndex=8, noEntry;
+ButtonEdit oft05=oft_file.oft05, action=controlp, tabIndex=9, title="Customer #", image="zoom", comment="<^P>Qry Details";
+Edit occ02=formonly.occ02 type CHAR, tabIndex=10, title="Cust Abbr", noEntry;
+DateEdit oft02=oft_file.oft02, tabIndex=11, title="Del.Dt";
+ButtonEdit oft01=oft_file.oft01, action=controlp, tabIndex=12, title="Del. Note No.", image="zoom", comment="<^P>Qry Documents";
+Edit oft06=oft_file.oft06, tabIndex=13, title="Line#";
+ButtonEdit oft07=oft_file.oft07, action=controlp, tabIndex=14, title="Item No.", image="zoom", comment="<^P>Qry Product No.";
+Edit oft08=oft_file.oft08, tabIndex=15, title="Del.Qty";
+Edit oft09=oft_file.oft09, tabIndex=16, title="Del.Amt";
+Edit oft10=oft_file.oft10, tabIndex=17, title="Std Price";
+Edit oft11=oft_file.oft11, tabIndex=18, title="Cost";
+Edit oft12=oft_file.oft12, tabIndex=19, title="Profit";
+Edit oft13=oft_file.oft13, tabIndex=20, title="Commi #";
+ButtonEdit oft14=oft_file.oft14, action=controlp, tabIndex=21, title="Curr", image="zoom", comment="<^P>Qry Currency";
+Edit oft15=oft_file.oft15, tabIndex=22, title="Ex.Rate";
+Edit oft16=oft_file.oft16, tabIndex=23, title="Commi Pay";
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=24, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=25, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_oft(oft_file.oft05,formonly.occ02,oft_file.oft02,oft_file.oft01,oft_file.oft06,oft_file.oft07,oft_file.oft08,oft_file.oft09,oft_file.oft10,oft_file.oft11,oft_file.oft12,oft_file.oft13,oft_file.oft14,oft_file.oft15,oft_file.oft16)
+SCREEN RECORD Undefined(oft_file.oft17,oft_file.oft03,formonly.oft_desc,oft_file.oft18,oft_file.oft19,oft_file.oft04,formonly.gen02,oft_file.oft21,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

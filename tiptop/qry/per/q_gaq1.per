@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_gaq1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Qry Frequently Used Memo")
+VBox VBox1
+Table s_gaq
+{
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+[check|gat01     |gaq01      |gaq03                         ]
+
+}
+END -- s_gaq
+END -- VBox1
+END -- q_gaq1
+
+TABLES
+gat_file,
+gaq_file
+ATTRIBUTES
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit gat01=gat_file.gat01, tabIndex=2, title="Table", noEntry;
+Edit gaq01=gaq_file.gaq01, tabIndex=3, title="No.", noEntry;
+Edit gaq03=gaq_file.gaq03, tabIndex=4, title="Memo", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gaq(formonly.check,gat_file.gat01,gaq_file.gaq01,gaq_file.gaq03)
+END -- INSTRUCTIONS
+

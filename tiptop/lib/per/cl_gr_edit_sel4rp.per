@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_gr_edit_sel4rp.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form", style="reportViewer")
+VBox VBox1
+Table s_gdw
+{
+[sel     |gdw07   |gdw09   |gfs03   |gdwdate |gdwgrup |gdwmodu |gdworig |gdwuser |gdworiu ]
+[sel     |gdw07   |gdw09   |gfs03   |gdwdate |gdwgrup |gdwmodu |gdworig |gdwuser |gdworiu ]
+[sel     |gdw07   |gdw09   |gfs03   |gdwdate |gdwgrup |gdwmodu |gdworig |gdwuser |gdworiu ]
+[sel     |gdw07   |gdw09   |gfs03   |gdwdate |gdwgrup |gdwmodu |gdworig |gdwuser |gdworiu ]
+[sel     |gdw07   |gdw09   |gfs03   |gdwdate |gdwgrup |gdwmodu |gdworig |gdwuser |gdworiu ]
+
+
+}
+END -- s_gdw
+Grid Grid1
+{
+
+ [edit_4rp ]
+
+}
+END -- Grid1
+END -- VBox1
+END -- cl_gr_edit_sel4rp
+
+ATTRIBUTES
+CheckBox sel=formonly.sel type CHAR, tabIndex=1, default = "N", title=%"sel", text=%"", not null, valueChecked = "Y", valueUnchecked = "N";
+Phantom formonly.gdw01 type CHAR;
+Phantom formonly.gdw02 type CHAR;
+Phantom formonly.gdw03 type CHAR;
+LABEL gdw07=formonly.gdw07 type CHAR, title=%"gdw07";
+Phantom formonly.gdw08 type CHAR;
+LABEL gdw09=formonly.gdw09 type CHAR, title=%"gdw09";
+LABEL gfs03=formonly.gfs03 type CHAR, title=%"gfs03";
+LABEL gdwdate=formonly.gdwdate type CHAR, title=%"gdwdate";
+LABEL gdwgrup=formonly.gdwgrup type CHAR, title=%"gdwgrup";
+LABEL gdwmodu=formonly.gdwmodu type CHAR, title=%"gdwmodu";
+LABEL gdworig=formonly.gdworig type CHAR, title=%"gdworig";
+LABEL gdwuser=formonly.gdwuser type CHAR, title=%"gdwuser";
+LABEL gdworiu=formonly.gdworiu type CHAR, title=%"gdworiu";
+Button edit_4rp:edit_4rp, tabIndex=2, text=%"Edit 4rp";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_gdw(formonly.sel,formonly.gdw01,formonly.gdw02,formonly.gdw03,formonly.gdw07,formonly.gdw08,formonly.gdw09,formonly.gfs03,formonly.gdwdate,formonly.gdwgrup,formonly.gdwmodu,formonly.gdworig,formonly.gdwuser,formonly.gdworiu)
+END -- INSTRUCTIONS
+

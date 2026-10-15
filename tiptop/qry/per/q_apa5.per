@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_apa5.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"Query A/P")
+Grid gr3729
+{
+ <T s_apa                                                                                               >
+ [check |apa01          |apa06        |apa07                   |apa35_u             |apa25             ]
+ [check |apa01          |apa06        |apa07                   |apa35_u             |apa25             ]
+ [check |apa01          |apa06        |apa07                   |apa35_u             |apa25             ]
+ [check |apa01          |apa06        |apa07                   |apa35_u             |apa25             ]
+ [check |apa01          |apa06        |apa07                   |apa35_u             |apa25             ]
+ [check |apa01          |apa06        |apa07                   |apa35_u             |apa25             ]
+ [check |apa01          |apa06        |apa07                   |apa35_u             |apa25             ]
+ [check |apa01          |apa06        |apa07                   |apa35_u             |apa25             ]
+ [check |apa01          |apa06        |apa07                   |apa35_u             |apa25             ]
+ [check |apa01          |apa06        |apa07                   |apa35_u             |apa25             ]
+ <                                                                                                      >
+
+}
+END -- gr3729
+END -- q_apa5
+
+TABLES
+apa_file
+ATTRIBUTES
+Table s_apa:s_apa;
+CheckBox check=formonly.check type CHAR, tabIndex=1, title="Sel", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit apa01=apa_file.apa01, tabIndex=2, title="Accounts No.", noEntry;
+Edit apa06=apa_file.apa06, tabIndex=3, title="Vender No.", noEntry;
+Edit apa07=apa_file.apa07, tabIndex=4, title="Vender A Abbreviation", noEntry;
+Edit apa35_u=formonly.apa35_u type CHAR, tabIndex=5, title="UnContra\'d Amount", noEntry;
+Edit apa25=formonly.apa25 type CHAR, tabIndex=6, title="Memo", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_apa(formonly.check,apa_file.apa01,apa_file.apa06,apa_file.apa07,formonly.apa35_u,formonly.apa25)
+END -- INSTRUCTIONS
+

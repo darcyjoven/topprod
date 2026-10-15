@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglp101.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"gglp101")
+VBox VBox1
+Grid gr2472
+{
+ <G group01                                 >
+
+  Inward Finscal Year  [yy            ]
+  Initial Period       [bm            ]
+  Ending Period        [em            ]
+  Group No.            [asa01         ]
+  Doc No.              [aac01         ]
+ <                                          >
+ <G gb3                                     >
+  Parent Company       [asg01         ]
+ <                                          >
+
+}
+END -- gr2472
+Grid grid
+{
+ [g_bgjob                  ]
+
+
+}
+END -- grid
+END -- VBox1
+END -- gglp101
+
+TABLES
+asa_file,
+aac_file,
+asg_file
+ATTRIBUTES
+Group group01:group01, text="INPUT";
+Edit yy=formonly.yy type CHAR, tabIndex=1, not null, required;
+Edit bm=formonly.bm type CHAR, tabIndex=2, noEntry, not null, required;
+Edit em=formonly.em type CHAR, tabIndex=3, not null, required;
+ButtonEdit asa01=asa_file.asa01, action=controlp, tabIndex=4, not null, required, image="zoom", comment="<^P>Query Group Data";
+ButtonEdit aac01=aac_file.aac01, action=controlp, tabIndex=7, not null, required, image="zoom", picture="";
+Group gb3:gb3, text="QBE";
+ButtonEdit asg01=asg_file.asg01, action=controlp, tabIndex=5, not null, required, image="zoom", comment="<^P>Query ";
+CheckBox g_bgjob=formonly.g_bgjob type CHAR, tabIndex=6, text="Background Job", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.yy,formonly.bm,formonly.em,asa_file.asa01,asg_file.asg01,formonly.g_bgjob,aac_file.aac01)
+END -- INSTRUCTIONS
+

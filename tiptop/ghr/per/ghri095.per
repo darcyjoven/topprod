@@ -1,0 +1,152 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri095.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(action=main, text=%"Page1")
+Grid Grid1
+{
+ <G group1                                                                                                          >
+   hrdy01[hrdy01              ]    hrat02[hrat02              ]     hrat17 [hrat17              ]
+   hrat04[hrat04              ]    hrat05[hrat05              ]     hrat22 [hrat22              ]
+   hrat42[hrat42              ]    hrat06[hrat06              ]     hrat25 [hrat25              ]
+ <                                                                                                                  >
+ <G group2                                                                                                          >
+   hrdy04[hrdy04              ]    hrdxa9[hrdxa09             ]
+   hrdxa2[hrdxa12             ]    hrdxa4[hrdxa14             ]
+ <                                                                                                                  >
+ <G group3                                                                                                          >
+   hrdy02[hrdy02              ]    hrdy07[hrdy07              ]    [hrdy05                         ]
+   hrdy06[hrdy06              ]    hrdy08[hrdy08              ]     hrdy09 [hrdy09              ]
+ <                                                                                                                  >
+ <G group7                                                                                                          >
+ [hrdy10                                                                                   ]
+ [                                                                                         ]
+ <                                                                                                                  >
+}
+END -- Grid1
+END -- Page1
+Page Page2(action=info, text=%"Page2")
+Grid Grid3
+{
+ <G group4                       >  <G group5                       > <G group6                          >
+   hrdyuser [hrdyuser  ]              hrdymodu [hrdymodu  ]              hrdyacti [hrdyacti  ]
+   hrdygrup [hrdygrup  ]              hrdydate [hrdydate  ]
+   hrdyoriu [hrdyoriu  ]
+   hrdyorig [hrdyorig  ]
+
+
+
+
+
+
+
+ <                               >  <                               > <                                  >
+
+}
+END -- Grid3
+END -- Page2
+Page Page3(action=item_list, text=%"Page3")
+Table Table2
+{
+[hrdy01_b|hrat02_b|hrdy02_b|hrdy03_b|hrdy04_b|hrdy05_b|hrdy06_b|hrdy07_b|hrdy08_b|hrdy09_b|hrdy10_b]
+[hrdy01_b|hrat02_b|hrdy02_b|hrdy03_b|hrdy04_b|hrdy05_b|hrdy06_b|hrdy07_b|hrdy08_b|hrdy09_b|hrdy10_b]
+[hrdy01_b|hrat02_b|hrdy02_b|hrdy03_b|hrdy04_b|hrdy05_b|hrdy06_b|hrdy07_b|hrdy08_b|hrdy09_b|hrdy10_b]
+[hrdy01_b|hrat02_b|hrdy02_b|hrdy03_b|hrdy04_b|hrdy05_b|hrdy06_b|hrdy07_b|hrdy08_b|hrdy09_b|hrdy10_b]
+[hrdy01_b|hrat02_b|hrdy02_b|hrdy03_b|hrdy04_b|hrdy05_b|hrdy06_b|hrdy07_b|hrdy08_b|hrdy09_b|hrdy10_b]
+
+
+
+
+
+
+
+}
+END -- Table2
+END -- Page3
+END -- Folder1
+Table Table1
+{
+[hrdya03 |hrdya04 |hrdya05 |hrdya06 ]
+[hrdya03 |hrdya04 |hrdya05 |hrdya06 ]
+[hrdya03 |hrdya04 |hrdya05 |hrdya06 ]
+[hrdya03 |hrdya04 |hrdya05 |hrdya06 ]
+[hrdya03 |hrdya04 |hrdya05 |hrdya06 ]
+
+
+}
+END -- Table1
+Grid Grid2
+{
+  ---------- cnt[cnt ]/[cn2 ] ----------
+
+}
+END -- Grid2
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Group group1:Group1, text=%"Group1";
+ButtonEdit hrdy01=formonly.hrdy01 type VARCHAR, action=controlp, tabIndex=16, not null, required, image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=17, noEntry;
+Edit hrat17=formonly.hrat17 type VARCHAR, tabIndex=18, noEntry;
+Edit hrat04=formonly.hrat04 type VARCHAR, tabIndex=19, noEntry;
+Edit hrat05=formonly.hrat05 type VARCHAR, tabIndex=20, noEntry;
+Edit hrat22=formonly.hrat22 type VARCHAR, tabIndex=21, noEntry;
+Edit hrat42=formonly.hrat42 type VARCHAR, tabIndex=22, noEntry;
+Edit hrat06=formonly.hrat06 type VARCHAR, tabIndex=23, noEntry;
+DateEdit hrat25=formonly.hrat25 type DATE, tabIndex=24, noEntry;
+Group group2:Group2, text=%"Group2";
+ButtonEdit hrdy04=formonly.hrdy04 type VARCHAR, action=controlp, tabIndex=25, not null, required, image="zoom";
+Edit hrdxa09=formonly.hrdxa09 type DECIMAL, tabIndex=26, noEntry;
+Edit hrdxa12=formonly.hrdxa12 type DECIMAL, tabIndex=27, noEntry;
+Edit hrdxa14=formonly.hrdxa14 type DECIMAL, tabIndex=28, noEntry;
+Group group3:Group3, text=%"Group3";
+ComboBox hrdy02=formonly.hrdy02 type VARCHAR, tabIndex=29, not null, required;
+Edit hrdy07=formonly.hrdy07 type DECIMAL, tabIndex=30, noEntry;
+CheckBox hrdy05=formonly.hrdy05 type VARCHAR, tabIndex=31, text=%"hrdy05", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit hrdy06=formonly.hrdy06 type DECIMAL, tabIndex=32, not null, required;
+Edit hrdy08=formonly.hrdy08 type DECIMAL, tabIndex=33, noEntry;
+Edit hrdy09=formonly.hrdy09 type DECIMAL, tabIndex=34, noEntry;
+Group group7:Group7, text=%"Group7";
+TextEdit hrdy10=formonly.hrdy10 type VARCHAR, tabIndex=43;
+Group group4:Group4, text=%"";
+Edit hrdyuser=formonly.hrdyuser type VARCHAR, tabIndex=35, noEntry;
+Edit hrdygrup=formonly.hrdygrup type VARCHAR, tabIndex=36, noEntry;
+Edit hrdyoriu=formonly.hrdyoriu type VARCHAR, tabIndex=37, noEntry;
+Edit hrdyorig=formonly.hrdyorig type VARCHAR, tabIndex=38, noEntry;
+Group group5:Group5, text=%"";
+Edit hrdymodu=formonly.hrdymodu type VARCHAR, tabIndex=39, noEntry;
+DateEdit hrdydate=formonly.hrdydate type DATE, tabIndex=40, noEntry;
+Group group6:Group6, text=%"";
+Edit hrdyacti=formonly.hrdyacti type VARCHAR, tabIndex=41, noEntry;
+Edit hrdy01_b=formonly.hrdy01_b type VARCHAR, tabIndex=6, title=%"hrdy01_b", noEntry;
+Edit hrat02_b=formonly.hrat02_b type VARCHAR, tabIndex=42, title=%"hrat02_b", noEntry;
+Edit hrdy02_b=formonly.hrdy02_b type VARCHAR, tabIndex=7, title=%"hrdy02_b", noEntry;
+Edit hrdy03_b=formonly.hrdy03_b type VARCHAR, tabIndex=8, title=%"hrdy03_b", noEntry;
+Edit hrdy04_b=formonly.hrdy04_b type VARCHAR, tabIndex=9, title=%"hrdy04_b", noEntry;
+CheckBox hrdy05_b=formonly.hrdy05_b type VARCHAR, tabIndex=10, title=%"hrdy05_b", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit hrdy06_b=formonly.hrdy06_b type DECIMAL, tabIndex=11, title=%"hrdy06_b", noEntry;
+Edit hrdy07_b=formonly.hrdy07_b type DECIMAL, tabIndex=12, title=%"hrdy07_b", noEntry;
+Edit hrdy08_b=formonly.hrdy08_b type DECIMAL, tabIndex=13, title=%"hrdy08_b", noEntry;
+Edit hrdy09_b=formonly.hrdy09_b type DECIMAL, tabIndex=14, title=%"hrdy09_b", noEntry;
+TextEdit hrdy10_b=formonly.hrdy10_b type VARCHAR, tabIndex=15, title=%"hrdy10_b", noEntry;
+Edit hrdya03=formonly.hrdya03 type INTEGER, tabIndex=1, title=%"hrdya03", noEntry;
+ButtonEdit hrdya04=formonly.hrdya04 type VARCHAR, action=controlp, tabIndex=2, title=%"hrdya04", not null, required, image="zoom";
+Edit hrdya05=formonly.hrdya05 type DECIMAL, tabIndex=4, title=%"hrdya05", not null, required;
+TextEdit hrdya06=formonly.hrdya06 type VARCHAR, tabIndex=5, title=%"hrdya06";
+Edit cnt=formonly.cnt type INTEGER, tabIndex=3, noEntry;
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=44, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrdya(formonly.hrdya03,formonly.hrdya04,formonly.hrdya05,formonly.hrdya06)
+SCREEN RECORD Undefined(formonly.cnt,formonly.hrdy01,formonly.hrat02,formonly.hrat17,formonly.hrat04,formonly.hrat05,formonly.hrat22,formonly.hrat42,formonly.hrat06,formonly.hrat25,formonly.hrdy04,formonly.hrdxa09,formonly.hrdxa12,formonly.hrdxa14,formonly.hrdy02,formonly.hrdy07,formonly.hrdy05,formonly.hrdy06,formonly.hrdy08,formonly.hrdy09,formonly.hrdyuser,formonly.hrdygrup,formonly.hrdyoriu,formonly.hrdyorig,formonly.hrdymodu,formonly.hrdydate,formonly.hrdyacti,formonly.hrdy10,formonly.cn2)
+SCREEN RECORD s_hrdy(formonly.hrdy01_b,formonly.hrat02_b,formonly.hrdy02_b,formonly.hrdy03_b,formonly.hrdy04_b,formonly.hrdy05_b,formonly.hrdy06_b,formonly.hrdy07_b,formonly.hrdy08_b,formonly.hrdy09_b,formonly.hrdy10_b)
+END -- INSTRUCTIONS
+

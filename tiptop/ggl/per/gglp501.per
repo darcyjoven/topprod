@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglp501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="gglp501")
+Grid gr1
+{
+    <G gb1                                         >
+       Group number   [a                      ]
+       Top Companies  [b                      ]
+       Set of books   [c                      ]
+       Source Company [d                      ]
+       Year           [y                      ]
+       Month          [m                      ]
+    <                                              >
+    <G gb2                                         >
+       Comp No.       [asg01          ]
+
+    <                                              >
+
+
+
+}
+END -- gr1
+END -- gglp501
+
+TABLES
+asg_file
+ATTRIBUTES
+Group gb1:gb1, text="gb1";
+ButtonEdit a=formonly.a type CHAR, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit b=formonly.b type CHAR, tabIndex=4;
+Edit c=formonly.c type CHAR, tabIndex=3;
+ButtonEdit d=formonly.d type CHAR, action=controlp, tabIndex=2, not null, required, image="zoom";
+Edit y=formonly.y type CHAR, tabIndex=5, not null, required;
+Edit m=formonly.m type CHAR, tabIndex=6, not null, required;
+Group gb2:gb2, text="QBE";
+ButtonEdit asg01=asg_file.asg01, action=controlp, tabIndex=7, image="zoom.png";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.a,formonly.b,formonly.c,formonly.d,formonly.y,formonly.m,asg_file.asg01)
+END -- INSTRUCTIONS
+

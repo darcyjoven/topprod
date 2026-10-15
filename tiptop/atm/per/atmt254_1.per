@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/atm/42f/atmt254_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"atmt254_1")
+Folder pc234
+Page page01(text="Page01")
+Grid gr1019
+{
+ <G group01                                        >
+  Flow Code    [tsk07     ]
+               [poz02                             ]
+  Downstream # [poy31     ][poy32     ][poy33     ]
+               [poy34     ][poy35     ][poy36     ]
+  Customer No. [tsk11     ][tsk12     ][tsk13     ]
+               [tsk14     ][tsk15     ][tsk16     ]
+ <                                                 >
+
+}
+END -- gr1019
+END -- page01
+END -- pc234
+END -- atmt254_1
+
+TABLES
+tsk_file
+ATTRIBUTES
+Group group01:group01;
+ButtonEdit tsk07=tsk_file.tsk07, action=controlp, tabIndex=1, not null, required, image="zoom", comment="<^P>Qry Flow Code";
+Edit poz02=formonly.poz02 type CHAR, tabIndex=2, noEntry;
+Edit poy31=formonly.poy31 type CHAR, tabIndex=3, noEntry;
+Edit poy32=formonly.poy32 type CHAR, tabIndex=4, noEntry;
+Edit poy33=formonly.poy33 type CHAR, tabIndex=5, noEntry;
+Edit poy34=formonly.poy34 type CHAR, tabIndex=6, noEntry;
+Edit poy35=formonly.poy35 type CHAR, tabIndex=7, noEntry;
+Edit poy36=formonly.poy36 type CHAR, tabIndex=8, noEntry;
+ButtonEdit tsk11=tsk_file.tsk11, action=controlp, tabIndex=9, noEntry, image="zoom", comment="<^P>Qry Customer Code";
+ButtonEdit tsk12=tsk_file.tsk12, action=controlp, tabIndex=10, noEntry, image="zoom", comment="<^P>Qry Customer Code";
+ButtonEdit tsk13=tsk_file.tsk13, action=controlp, tabIndex=11, noEntry, image="zoom", comment="<^P>Qry Customer Code";
+ButtonEdit tsk14=tsk_file.tsk14, action=controlp, tabIndex=12, noEntry, image="zoom", comment="<^P>Qry Customer Code";
+ButtonEdit tsk15=tsk_file.tsk15, action=controlp, tabIndex=13, noEntry, image="zoom", comment="<^P>Qry Customer Code";
+ButtonEdit tsk16=tsk_file.tsk16, action=controlp, tabIndex=14, noEntry, image="zoom", comment="<^P>Qry Customer Code";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(tsk_file.tsk07,formonly.poz02,formonly.poy31,formonly.poy32,formonly.poy33,formonly.poy34,formonly.poy35,formonly.poy36,tsk_file.tsk11,tsk_file.tsk12,tsk_file.tsk13,tsk_file.tsk14,tsk_file.tsk15,tsk_file.tsk16)
+END -- INSTRUCTIONS
+

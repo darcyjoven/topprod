@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aco/42f/acor210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"acor210")
+VBox VBox1
+Grid gr1400
+{
+ <G group01                                   >
+  Bonded Register Book   [coc03          ]
+  Custom No.             [coc10          ]
+  Goods No.              [cod03          ]
+
+ <                                            >
+
+}
+END -- gr1400
+Group group02(text="INPUT")
+Grid gr1401
+{
+ [a                                   ]
+ [b                                   ]
+}
+END -- gr1401
+END -- group02
+Grid gr1402
+{
+ [more                                                        ]
+
+}
+END -- gr1402
+END -- VBox1
+END -- acor210
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit coc03=formonly.coc03 type CHAR, tabIndex=1;
+Edit coc10=formonly.coc10 type CHAR, tabIndex=2;
+Edit cod03=formonly.cod03 type CHAR, tabIndex=3;
+CheckBox a=formonly.a type VARCHAR, tabIndex=4, text="Convert HS Code", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox b=formonly.b type VARCHAR, tabIndex=5, text="Skip To Another Page When Diferent Register Book No.", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=6, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.coc03,formonly.coc10,formonly.cod03,formonly.a,formonly.b,formonly.more)
+END -- INSTRUCTIONS
+

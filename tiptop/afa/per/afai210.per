@@ -1,0 +1,51 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/afa/42f/afai210.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"afai210")
+VBox VBox1
+Folder pc340
+Page page01(text="Main")
+Table s_fgd
+{
+[fgd01             |fgd02                |fgdact]
+[fgd01             |fgd02                |fgdact]
+[fgd01             |fgd02                |fgdact]
+[fgd01             |fgd02                |fgdact]
+[fgd01             |fgd02                |fgdact]
+[fgd01             |fgd02                |fgdact]
+[fgd01             |fgd02                |fgdact]
+[fgd01             |fgd02                |fgdact]
+[fgd01             |fgd02                |fgdact]
+[fgd01             |fgd02                |fgdact]
+
+}
+END -- s_fgd
+END -- page01
+END -- pc340
+Grid gr1875
+{
+ ----------Rows [cn2   ] ----------
+
+}
+END -- gr1875
+END -- VBox1
+END -- afai210
+
+TABLES
+fgd_file
+ATTRIBUTES
+Edit fgd01=fgd_file.fgd01, tabIndex=1, title="Calibration No.", not null, required, comment="KEY Field, No Blank/Repeated! <^O>Copy Previous Record!";
+Edit fgd02=fgd_file.fgd02, tabIndex=2, title="Item Description";
+CheckBox fgdact=fgd_file.fgdacti, tabIndex=3, title="Valid", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=4, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_fgd(fgd_file.fgd01,fgd_file.fgd02,fgd_file.fgdacti)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

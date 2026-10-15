@@ -1,0 +1,53 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmr582.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmr582")
+VBox VBox1
+Grid gr5134
+{
+ <G group01                                                     >
+  P/O No.       [pom01               ]
+  Purchase Date [pom04               ]
+  Buyer         [pom12               ]
+  Vender No.    [pom09               ]
+  Item No.      [pon04               ]
+ <                                                              >
+
+}
+END -- gr5134
+Group group02(text="INPUT")
+Grid gr5135
+{
+[a                                                            ]
+
+}
+END -- gr5135
+END -- group02
+Grid gr5136
+{
+ [more                                                            ]
+
+}
+END -- gr5136
+END -- VBox1
+END -- apmr582
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit pom01=formonly.pom01 type VARCHAR, tabIndex=1;
+DateEdit pom04=formonly.pom04 type DATE, tabIndex=2;
+Edit pom12=formonly.pom12 type VARCHAR, tabIndex=3;
+Edit pom09=formonly.pom09 type VARCHAR, tabIndex=4;
+ButtonEdit pon04=formonly.pon04 type VARCHAR, action=controlp, tabIndex=5, image="zoom";
+CheckBox a=formonly.a type VARCHAR, tabIndex=6, text="Print not Fully Transfered Blanket PO only", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox more=formonly.more type VARCHAR, tabIndex=7, text="Other codition to print", not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.pom01,formonly.pom04,formonly.pom12,formonly.pom09,formonly.pon04,formonly.a,formonly.more)
+END -- INSTRUCTIONS
+

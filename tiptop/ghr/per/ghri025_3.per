@@ -1,0 +1,58 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ghr/4fd/ghri025_3.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Folder Folder1
+Page Page1(text=%"Page1")
+Table Table1
+{
+[hrbhc01 |hrbhc03  |hrat02    |hrbhc04 |hrbhc05 |hrbhc06 |hrbhc07 |hrbhc07_de|hrbhc08  |hrbhc08_des|hrbhc09      |hrbhc10    |hrbhc11     |hrbhc12     ]
+[hrbhc01 |hrbhc03  |hrat02    |hrbhc04 |hrbhc05 |hrbhc06 |hrbhc07 |hrbhc07_de|hrbhc08  |hrbhc08_des|hrbhc09      |hrbhc10    |hrbhc11     |hrbhc12     ]
+[hrbhc01 |hrbhc03  |hrat02    |hrbhc04 |hrbhc05 |hrbhc06 |hrbhc07 |hrbhc07_de|hrbhc08  |hrbhc08_des|hrbhc09      |hrbhc10    |hrbhc11     |hrbhc12     ]
+[hrbhc01 |hrbhc03  |hrat02    |hrbhc04 |hrbhc05 |hrbhc06 |hrbhc07 |hrbhc07_de|hrbhc08  |hrbhc08_des|hrbhc09      |hrbhc10    |hrbhc11     |hrbhc12     ]
+[hrbhc01 |hrbhc03  |hrat02    |hrbhc04 |hrbhc05 |hrbhc06 |hrbhc07 |hrbhc07_de|hrbhc08  |hrbhc08_des|hrbhc09      |hrbhc10    |hrbhc11     |hrbhc12     ]
+
+
+
+}
+END -- Table1
+END -- Page1
+END -- Folder1
+Grid Grid1
+{
+  ---------- cn2[cn2  ]-----------
+
+
+}
+END -- Grid1
+END -- VBox1
+END -- Form
+
+ATTRIBUTES
+Edit hrbhc01=formonly.hrbhc01 type INTEGER, tabIndex=1, title=%"hrbhc01", noEntry, not null, required;
+ButtonEdit hrbhc03=formonly.hrbhc03 type VARCHAR, action=controlp, tabIndex=2, title=%"hrbhc03", not null, required, image="zoom";
+Edit hrat02=formonly.hrat02 type VARCHAR, tabIndex=3, title=%"hrat02", noEntry;
+DateEdit hrbhc04=formonly.hrbhc04 type DATE, tabIndex=4, title=%"hrbhc04", not null, required;
+CheckBox hrbhc05=formonly.hrbhc05 type VARCHAR, tabIndex=5, title=%"hrbhc05", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox hrbhc06=formonly.hrbhc06 type VARCHAR, tabIndex=6, title=%"hrbhc06", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+ButtonEdit hrbhc07=formonly.hrbhc07 type VARCHAR, action=controlp, tabIndex=7, title=%"hrbhc07", not null, required, image="zoom";
+Edit hrbhc07_de=formonly.hrbhc07_desc type VARCHAR, tabIndex=8, title=%"hrbhc07_desc", noEntry;
+ButtonEdit hrbhc08=formonly.hrbhc08 type VARCHAR, action=controlp, tabIndex=9, title=%"hrhbc08", not null, required, image="zoom";
+Edit hrbhc08_des=formonly.hrbhc08_desc type VARCHAR, tabIndex=10, title=%"hrbhc08_desc", noEntry;
+Edit hrbhc09=formonly.hrbhc09 type VARCHAR, tabIndex=11, title=%"hrbhc09", not null, required;
+Edit hrbhc10=formonly.hrbhc10 type VARCHAR, tabIndex=12, title=%"hrbhc10";
+Edit hrbhc11=formonly.hrbhc11 type VARCHAR, tabIndex=13, title=%"hrbhc11";
+Edit hrbhc12=formonly.hrbhc12 type VARCHAR, tabIndex=14, title=%"hrbhc12";
+Edit cn2=formonly.cn2 type INTEGER, tabIndex=15, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_hrbhc(formonly.hrbhc01,formonly.hrbhc03,formonly.hrat02,formonly.hrbhc04,formonly.hrbhc05,formonly.hrbhc06,formonly.hrbhc07,formonly.hrbhc07_desc,formonly.hrbhc08,formonly.hrbhc08_desc,formonly.hrbhc09,formonly.hrbhc10,formonly.hrbhc11,formonly.hrbhc12)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,102 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/alm/42f/almt620.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="almt620")
+VBox vb2
+Folder pc2
+Page Page3(text=%"Main")
+Grid gr5
+{
+
+ lpu01   [lpu01               ]                                   lpu14        [lpu14       ]
+ lpuplant[lpuplant            |rtz13              ]               lpu08        [lpu08       |imgmksg    ]
+ lpulegal[lpulegal            |azt02              ]               lpu09        [lpu09       |           ]
+ lpu03   [lpu03               ]                                   lpu10        [lpu10       |           ]
+ lpj02   [lpj02               |lph02              ]               Accounts No. [lpu13       ]
+ lpu04   [lpu04               ]                                   Delivery No. [lpu16               ]
+ lpu05   [lpu05               ] lpu15     [lpu15               ]  Pos no.      [lpu17               ]
+ lpu071  [lpu071              ] lpu07     [lpu07               ]  lpu11        [lpu11                        ]
+----------------------------------------------------------------               [                             ]
+ lpu06   [lpu06               ] total_amt [total_amt           ]               [                             ]
+ lpu12   [lpu12               ]
+
+
+
+}
+END -- gr5
+END -- Page3
+Page info(text=%"Info")
+Grid gr6
+{
+
+ Data User   [lpuuser   ]  crat  [lpucrat     ] acti        [lpuacti   ]
+ Data Group  [lpugrup   ]  Modify[lpumodu     ] Modify Date [lpudate     ]
+ Record Orig.[lpuoriu   ]
+ Dept Orig.  [lpuorig   ]
+
+
+
+
+
+}
+END -- gr6
+END -- info
+END -- pc2
+Grid gr7
+{
+  -------Rows[idx   ]/[cnt    ]------
+
+}
+END -- gr7
+END -- vb2
+END -- almt620
+
+TABLES
+lpu_file
+ATTRIBUTES
+ButtonEdit lpu01=lpu_file.lpu01, action=controlp, tabIndex=9, not null, required, image="zoom.png";
+DateEdit lpu14=lpu_file.lpu14, tabIndex=29;
+ButtonEdit lpuplant=lpu_file.lpuplant, action=controlp, tabIndex=23, noEntry, image="zoom.png";
+Edit rtz13=formonly.rtz13, tabIndex=25, noEntry;
+ComboBox lpu08=lpu_file.lpu08, tabIndex=17, noEntry, items=(("Y", "Confirmed"),("N", "UnConfirmed"));
+IMAGE imgmksg=formonly.imgmksg;
+ButtonEdit lpulegal=lpu_file.lpulegal, action=controlp, tabIndex=24, noEntry, image="zoom.png";
+Edit azt02=formonly.azt02, tabIndex=26, noEntry;
+Edit lpu09=lpu_file.lpu09, tabIndex=18, noEntry;
+ButtonEdit lpu03=lpu_file.lpu03, action=controlp, tabIndex=10, not null, image="zoom.png";
+DateEdit lpu10=lpu_file.lpu10, tabIndex=19, noEntry;
+Edit lpj02=formonly.lpj02, tabIndex=11, noEntry;
+Edit lph02=formonly.lph02, tabIndex=12, noEntry;
+Edit lpu13=lpu_file.lpu13, tabIndex=22, noEntry;
+Edit lpu04=lpu_file.lpu04, tabIndex=13, noEntry;
+Edit lpu16=lpu_file.lpu16, tabIndex=32, noEntry;
+Edit lpu05=lpu_file.lpu05, tabIndex=14;
+Edit lpu15=lpu_file.lpu15, tabIndex=31, noEntry;
+Edit lpu17=lpu_file.lpu17, tabIndex=34, noEntry, scroll;
+Edit lpu071=lpu_file.lpu071, tabIndex=21, noEntry;
+Edit lpu07=lpu_file.lpu07, tabIndex=16, noEntry;
+TextEdit lpu11=lpu_file.lpu11, tabIndex=20;
+Edit lpu06=lpu_file.lpu06, tabIndex=15, noEntry;
+Edit total_amt=formonly.total_amt, tabIndex=33;
+Edit lpu12=lpu_file.lpu12, tabIndex=30, noEntry;
+Edit lpuuser=formonly.lpuuser type VARCHAR, tabIndex=1, noEntry;
+DateEdit lpucrat=formonly.lpucrat, tabIndex=6, noEntry;
+Edit lpuacti=formonly.lpuacti type VARCHAR, tabIndex=3, noEntry;
+Edit lpugrup=formonly.lpugrup type VARCHAR, tabIndex=4, noEntry;
+Edit lpumodu=formonly.lpumodu type VARCHAR, tabIndex=2, noEntry;
+DateEdit lpudate=formonly.lpudate type DATE, tabIndex=5, noEntry;
+Edit lpuoriu=formonly.lpuoriu type VARCHAR, tabIndex=27, noEntry;
+Edit lpuorig=formonly.lpuorig type VARCHAR, tabIndex=28, noEntry;
+Edit idx=formonly.idx, tabIndex=7;
+Edit cnt=formonly.cnt, tabIndex=8;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(lpu_file.lpu01,lpu_file.lpu14,lpu_file.lpuplant,formonly.rtz13,lpu_file.lpu08,formonly.imgmksg,lpu_file.lpulegal,formonly.azt02,lpu_file.lpu09,lpu_file.lpu03,lpu_file.lpu10,formonly.lpj02,formonly.lph02,lpu_file.lpu13,lpu_file.lpu04,lpu_file.lpu11,lpu_file.lpu05,lpu_file.lpu071,lpu_file.lpu07,lpu_file.lpu15,lpu_file.lpu06,lpu_file.lpu12,formonly.lpuuser,formonly.lpucrat,formonly.lpuacti,formonly.lpugrup,formonly.lpumodu,formonly.lpudate,formonly.lpuoriu,formonly.lpuorig,formonly.idx,formonly.cnt,lpu_file.lpu16,formonly.total_amt)
+SCREEN RECORD Record1(lpu_file.lpu17)
+END -- INSTRUCTIONS
+

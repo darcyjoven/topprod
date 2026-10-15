@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmq650.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmq650")
+VBox vb9
+Folder pc968
+Page page01(text="Main")
+Grid gr5021
+{
+ <G group01                                                                  >
+  Book No.            [afb00     ]
+  Year                [afb03     ]
+  Budget No.          [afb01     ][azf03     ]
+  Account Code        [afb02     ][aag02                                 ]
+  Department Code     [afb041    ][gem02     ]
+  Ad hoc No.          [afb042    ]
+  Wbs No.             [afb04     ]
+ <                                                                           >
+  <G group02                                                                  >
+   Yearly Total Budget                   [afb10               ]
+  <                                                                           >
+  <G group03                                                                  >
+   -(1)PR UnClos,Confd,UnTr to PO        [amt1                ]
+   -(2)PR Trsd to PO,PO UnClos,UnConf    [amt2                ]
+   -(3)PO Confd,UnClos,UnEnter AP        [amt3                ]
+   -(4)PO AP Entered, UnCarried to GL    [amt4                ]
+   -(5)AP Carried to GL and GL UnPosted  [amt5                ]
+   -(6)GL Posted                         [amt6                ]
+  <                                                                           >
+  <G group04                                                                  >
+   =Yearly Available Balance             [res_amt             ]
+  <                                                                           >
+
+}
+END -- gr5021
+END -- page01
+END -- pc968
+Grid gr5022
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr5022
+END -- vb9
+END -- apmq650
+
+TABLES
+afb_file
+ATTRIBUTES
+Group group01:group01;
+Edit afb00=afb_file.afb00, tabIndex=17;
+Edit afb03=afb_file.afb03, tabIndex=5;
+Edit afb01=afb_file.afb01, tabIndex=1;
+Edit azf03=formonly.azf03 type CHAR, tabIndex=2, noEntry;
+Edit afb02=afb_file.afb02, tabIndex=18;
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=19;
+Edit afb041=afb_file.afb041, tabIndex=21;
+Edit gem02=formonly.gem02 type CHAR, tabIndex=20, noEntry;
+Edit afb042=afb_file.afb042, tabIndex=16;
+Edit afb04=afb_file.afb04, tabIndex=15;
+Group group02:group02, text="Add";
+Edit afb10=afb_file.afb10, tabIndex=6, noEntry;
+Group group03:group03, text="Minus";
+Edit amt1=formonly.amt1 type CHAR, tabIndex=7, noEntry;
+Edit amt2=formonly.amt2 type CHAR, tabIndex=8, noEntry;
+Edit amt3=formonly.amt3 type CHAR, tabIndex=9, noEntry;
+Edit amt4=formonly.amt4 type CHAR, tabIndex=10, noEntry;
+Edit amt5=formonly.amt5 type CHAR, tabIndex=11, noEntry;
+Edit amt6=formonly.amt6 type CHAR, tabIndex=12, noEntry;
+Group group04:group04;
+Edit res_amt=formonly.res_amt type CHAR, tabIndex=13, noEntry;
+Edit cnt=formonly.cnt type CHAR, tabIndex=14, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(afb_file.afb00,afb_file.afb03,afb_file.afb01,formonly.azf03,afb_file.afb02,formonly.aag02,afb_file.afb041,formonly.gem02,afb_file.afb042,afb_file.afb04,afb_file.afb10,formonly.amt1,formonly.amt2,formonly.amt3,formonly.amt4,formonly.amt5,formonly.amt6,formonly.res_amt,formonly.cnt)
+END -- INSTRUCTIONS
+

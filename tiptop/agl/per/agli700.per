@@ -1,0 +1,80 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/agl/42f/agli700.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"agli700")
+VBox VBox1
+Folder folder01
+Page page01(text="Main")
+Grid gr2432
+{
+ Apportionment Category [aca01 ]                             [imgmksg]
+ Name                   [aca02                         ]     [       ]
+ Generation Sequence    [aca03 ]
+}
+END -- gr2432
+END -- page01
+Page info(text="Info")
+Grid gr2433
+{
+ Record Owner     [acauser   ]   Last Modified by    [acamodu   ]   Data Valid Code  [acaacti   ]
+ Department       [acagrup   ]   Create/Modify Date  [acadate   ]
+ Record Orig.     [acaoriu   ]
+ Dept Orig.       [acaorig   ]
+}
+END -- gr2433
+END -- info
+END -- folder01
+Table s_acb
+{
+[acb0|acb03                         ]
+[acb0|acb03                         ]
+[acb0|acb03                         ]
+[acb0|acb03                         ]
+[acb0|acb03                         ]
+[acb0|acb03                         ]
+[acb0|acb03                         ]
+[acb0|acb03                         ]
+[acb0|acb03                         ]
+[acb0|acb03                         ]
+
+}
+END -- s_acb
+Grid gr2434
+{
+  ---------- Rows [cnt   ] / [cn2   ] ----------
+
+}
+END -- gr2434
+END -- VBox1
+END -- agli700
+
+TABLES
+acb_file,
+aca_file
+ATTRIBUTES
+Edit aca01=aca_file.aca01, tabIndex=1, comment="KEY Field, No Blank/Repeated!";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit aca02=aca_file.aca02, tabIndex=3;
+Edit aca03=aca_file.aca03, tabIndex=4;
+Edit acauser=aca_file.acauser, tabIndex=5, noEntry;
+Edit acamodu=aca_file.acamodu, tabIndex=6, noEntry;
+Edit acaacti=aca_file.acaacti, tabIndex=13, noEntry, upShift;
+Edit acagrup=aca_file.acagrup, tabIndex=7, noEntry;
+DateEdit acadate=aca_file.acadate, tabIndex=8, noEntry;
+Edit acaoriu=aca_file.acaoriu, tabIndex=501, noEntry;
+Edit acaorig=aca_file.acaorig, tabIndex=502, noEntry;
+Edit acb0=acb_file.acb02, tabIndex=9, title="Ln#", not null, required;
+Edit acb03=acb_file.acb03, tabIndex=10, title="Extra Description", not null, required;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=11, noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_acb(acb_file.acb02,acb_file.acb03)
+SCREEN RECORD Undefined(aca_file.aca01,formonly.imgmksg,aca_file.aca02,aca_file.aca03,aca_file.acauser,aca_file.acamodu,aca_file.acaacti,aca_file.acagrup,aca_file.acadate,aca_file.acaoriu,aca_file.acaorig,formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+

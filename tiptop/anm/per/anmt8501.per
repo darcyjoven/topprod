@@ -1,0 +1,29 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/anm/42f/anmt8501.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"anmt8501")
+Grid gr4581
+{
+ New Due Date         [gxl19       ]
+ Interest Rate        [gxl20     ]
+ Amount               [gxl21               ]
+}
+END -- gr4581
+END -- anmt8501
+
+TABLES
+gxl_file
+ATTRIBUTES
+DateEdit gxl19=gxl_file.gxl19, tabIndex=1, not null, required;
+Edit gxl20=gxl_file.gxl20, tabIndex=2, not null, required;
+Edit gxl21=gxl_file.gxl21, tabIndex=3, not null, required;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gxl_file.gxl19,gxl_file.gxl20,gxl_file.gxl21)
+END -- INSTRUCTIONS
+

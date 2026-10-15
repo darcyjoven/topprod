@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/asf/42f/asfr710.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"asfr710")
+VBox VBox1
+Grid Grid1
+{
+ <G group01                                    >
+  Reason No.          [shg04               ]
+  Item No.            [shg08               ]
+  Work/Order No.      [shg06               ]
+  Line/Shift          [shg021              ]
+  Department          [shg10               ]
+ <                                             >
+ <G group02                                    >
+  Statistic YY/MM     [yy        ]/[mm        ]
+ <                                             >
+
+}
+END -- Grid1
+END -- VBox1
+END -- asfr710
+
+ATTRIBUTES
+Group group01:group01, text="QBE";
+Edit shg04=formonly.shg04 type VARCHAR, tabIndex=1, upShift;
+ButtonEdit shg08=formonly.shg08 type VARCHAR, action=controlp, tabIndex=2, image="zoom";
+Edit shg06=formonly.shg06 type VARCHAR, tabIndex=3, upShift;
+Edit shg021=formonly.shg021 type VARCHAR, tabIndex=4, upShift;
+Edit shg10=formonly.shg10 type VARCHAR, tabIndex=5, upShift;
+Group group02:group02, text="INPUT";
+Edit yy=formonly.yy type SMALLINT, tabIndex=6;
+Edit mm=formonly.mm type SMALLINT, tabIndex=7;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.shg04,formonly.shg08,formonly.shg06,formonly.shg021,formonly.shg10,formonly.yy,formonly.mm)
+END -- INSTRUCTIONS
+

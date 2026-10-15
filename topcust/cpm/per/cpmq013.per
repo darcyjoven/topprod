@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/cpm/4fd/cpmq013.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox1
+Grid Grid1
+{
+
+     Label1              [pmi01q                          ]
+     Label1              [pmi03q                 ]
+     Label1              [pmj03q                          ]
+     Label1              [pmi02q                 ]
+
+
+
+}
+END -- Grid1
+Table s_pmj
+{
+[pmi01           |pmj02       |pmj03           |ima02           |ima021          |ima44   |pmj07         |pmj09       |pmj06         |pmj08       |diff1         |ima01       |ima02_1         |ima021_1        |tc_xmf05      |tc_xmedate  |tc_xmf11      |previous    |diff2         ]
+[pmi01           |pmj02       |pmj03           |ima02           |ima021          |ima44   |pmj07         |pmj09       |pmj06         |pmj08       |diff1         |ima01       |ima02_1         |ima021_1        |tc_xmf05      |tc_xmedate  |tc_xmf11      |previous    |diff2         ]
+[pmi01           |pmj02       |pmj03           |ima02           |ima021          |ima44   |pmj07         |pmj09       |pmj06         |pmj08       |diff1         |ima01       |ima02_1         |ima021_1        |tc_xmf05      |tc_xmedate  |tc_xmf11      |previous    |diff2         ]
+[pmi01           |pmj02       |pmj03           |ima02           |ima021          |ima44   |pmj07         |pmj09       |pmj06         |pmj08       |diff1         |ima01       |ima02_1         |ima021_1        |tc_xmf05      |tc_xmedate  |tc_xmf11      |previous    |diff2         ]
+[pmi01           |pmj02       |pmj03           |ima02           |ima021          |ima44   |pmj07         |pmj09       |pmj06         |pmj08       |diff1         |ima01       |ima02_1         |ima021_1        |tc_xmf05      |tc_xmedate  |tc_xmf11      |previous    |diff2         ]
+
+
+
+
+
+}
+END -- s_pmj
+END -- VBox1
+END -- cpmq013
+
+ATTRIBUTES
+ButtonEdit pmi01q=formonly.pmi01q, action=controlp, tabIndex=1, image="zoom";
+ButtonEdit pmi03q=formonly.pmi03q, action=controlp, tabIndex=2, image="zoom";
+ButtonEdit pmj03q=formonly.pmj03q, action=controlp, tabIndex=3, image="zoom";
+DateEdit pmi02q=formonly.pmi02q type DATE, tabIndex=4;
+Edit pmi01=formonly.pmi01, tabIndex=5, title=%"pmi01";
+Edit pmj02=formonly.pmj02 type INTEGER, tabIndex=6, title=%"pmj02";
+Edit pmj03=formonly.pmj03 type VARCHAR, tabIndex=7, title=%"pmj03";
+Edit ima02=formonly.ima02, tabIndex=8, title=%"ima02";
+Edit ima021=formonly.ima021, tabIndex=9, title=%"ima021";
+Edit ima44=formonly.ima44, tabIndex=23, title=%"ima44";
+Edit pmj07=formonly.pmj07 type DECIMAL, tabIndex=10, title=%"pmi07";
+DateEdit pmj09=formonly.pmj09 type DATE, tabIndex=11, title=%"pmj09";
+Edit pmj06=formonly.pmj06 type DECIMAL, tabIndex=12, title=%"pmj06";
+DateEdit pmj08=formonly.pmj08 type DATE, tabIndex=13, title=%"pmj08";
+Edit diff1=formonly.diff1 type DECIMAL, tabIndex=14, title=%"diff1";
+Edit ima01=formonly.ima01, tabIndex=15, title=%"ima01";
+Edit ima02_1=formonly.ima02_1, tabIndex=16, title=%"ima02_1";
+Edit ima021_1=formonly.ima021_1, tabIndex=17, title=%"ima021_1";
+Edit tc_xmf05=formonly.tc_xmf05 type DECIMAL, tabIndex=18, title=%"tc_xme05";
+DateEdit tc_xmedate=formonly.tc_xmedate type DATE, tabIndex=19, title=%"tc_xmedate";
+Edit tc_xmf11=formonly.tc_xmf11 type DECIMAL, tabIndex=20, title=%"tc_xme11";
+DateEdit previous=formonly.previous type DATE, tabIndex=21, title=%"previous";
+Edit diff2=formonly.diff2 type DECIMAL, tabIndex=22, title=%"diff2";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_pmj(formonly.pmi01,formonly.pmj02,formonly.pmj03,formonly.ima02,formonly.ima021,formonly.ima44,formonly.pmj07,formonly.pmj09,formonly.pmj06,formonly.pmj08,formonly.diff1,formonly.ima01,formonly.ima02_1,formonly.ima021_1,formonly.tc_xmf05,formonly.tc_xmedate,formonly.tc_xmf11,formonly.previous,formonly.diff2)
+SCREEN RECORD Undefined(formonly.pmi01q,formonly.pmj03q,formonly.pmi03q,formonly.pmi02q)
+END -- INSTRUCTIONS
+

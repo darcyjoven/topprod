@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axm/42f/axms050.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axms050")
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+ <G group01                                         ><G group05                                     >
+  Order Maint. Default Initial Version# [oaz41     ] [oaz52                        ]
+ [oaz46                                        ]
+ [oaz44                                        ]
+ <                                                  >
+ <G group03                                         ><                                              >
+  Local Order Body Max.Rows             [oaz681    ] <G group06                                     >
+  Overseas Order Body Max.Rows          [oaz682    ] [oaz70                        ]
+  Routing Data of Estimate S/N Interval [oaz25     ]
+  Default Order Over-Delivery Ratio%    [oaz201    ] <                                              >
+ [oax03                                        ]     <G group07                                     >
+ <                                                  >[oax02                                        ]
+ <G group04                                         >
+ [oaz184                                ]
+                                                     [dummy01                                      ]
+                                                        [oax01                          ]
+
+  Rate                [oaz185     ]
+ <                                                  ><                                              >
+
+}
+END -- Grid1
+END -- page01
+Page userdefined_field(text=%"User Defined Field")
+Grid Grid2
+{
+ userdefined_field01[oazud01                              ] userdefined_field08[oazud08              ]
+                    [                                     ] userdefined_field09[oazud09              ]
+ userdefined_field02[oazud02              ]                 userdefined_field10[oazud10              ]
+ userdefined_field03[oazud03              ]                 userdefined_field11[oazud11              ]
+ userdefined_field04[oazud04              ]                 userdefined_field12[oazud12              ]
+ userdefined_field05[oazud05              ]                 userdefined_field13[oazud13              ]
+ userdefined_field06[oazud06              ]                 userdefined_field14[oazud14              ]
+ userdefined_field07[oazud07              ]                 userdefined_field15[oazud15              ]
+
+
+
+
+
+
+
+
+
+
+
+
+}
+END -- Grid2
+END -- userdefined_field
+END -- Folder1
+END -- axms050
+
+TABLES
+oaz_file,
+oax_file
+ATTRIBUTES
+Group group01:group01;
+Edit oaz41=oaz_file.oaz41, tabIndex=1;
+CheckBox oaz46=oaz_file.oaz46, tabIndex=2, text="Ent Ord Itm#,Conv by Cust Pt#", not null, required, valueChecked = "Y", valueUnchecked = "N";
+CheckBox oaz44=oaz_file.oaz44, tabIndex=3, text="Upd Cust Tab once Conf Od", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group05:group05, text="Ex.Rate for Local Sales";
+RadioGroup oaz52=oaz_file.oaz52, tabIndex=4, items=(("B", %"Bank Buying"),("S", %"Bank Selling"),("C", %"Customs Buy"),("D", %"Customs Sell"));
+Group group03:group03;
+Edit oaz681=oaz_file.oaz681, tabIndex=5;
+Edit oaz682=oaz_file.oaz682, tabIndex=6;
+Edit oaz25=oaz_file.oaz25, tabIndex=7, upShift;
+Edit oaz201=oaz_file.oaz201, tabIndex=8;
+CheckBox oax03=oax_file.oax03, tabIndex=9, text="R-Cal U/P when Del (for Triangle Trade)", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Group group06:group06, text="Ex.Rate for Export";
+RadioGroup oaz70=oaz_file.oaz70, tabIndex=10, items=(("B", %"Bank Buying"),("S", %"Bank Selling"),("C", %"Customs Buy"),("D", %"Customs Sell"));
+Group group07:group07, text="Tri.Trade";
+CheckBox oax02=oax_file.oax02, tabIndex=11, text="AlowOrder U/P= 0 (for Triangle Trade)", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Label dummy01:dummy01, text="Ex.Rate for Tri.Trade";
+RadioGroup oax01=oax_file.oax01, tabIndex=12, items=(("B", %"Bank Buying"),("S", %"Bank Selling"),("C", %"Customs Buy"),("D", %"Customs Sell"));
+Group group04:group04, text="S/O  U/P < First U/P Handling Method";
+RadioGroup oaz184=oaz_file.oaz184, tabIndex=13, items=(("R", %"Reject"),("W", %"Warn"),("N", %"NO Checking"));
+Edit oaz185=oaz_file.oaz185, tabIndex=14, upShift;
+TextEdit oazud01=oaz_file.oazud01, tabIndex=21;
+Edit oazud08=oaz_file.oazud08, tabIndex=29;
+Edit oazud09=oaz_file.oazud09, tabIndex=28;
+Edit oazud02=oaz_file.oazud02, tabIndex=20;
+Edit oazud10=oaz_file.oazud10, tabIndex=27;
+Edit oazud03=oaz_file.oazud03, tabIndex=19;
+Edit oazud11=oaz_file.oazud11, tabIndex=26;
+Edit oazud04=oaz_file.oazud04, tabIndex=18;
+Edit oazud12=oaz_file.oazud12, tabIndex=25;
+Edit oazud05=oaz_file.oazud05, tabIndex=17;
+DateEdit oazud13=oaz_file.oazud13, tabIndex=24;
+Edit oazud06=oaz_file.oazud06, tabIndex=16;
+DateEdit oazud14=oaz_file.oazud14, tabIndex=23;
+Edit oazud07=oaz_file.oazud07, tabIndex=15;
+DateEdit oazud15=oaz_file.oazud15, tabIndex=22;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(oaz_file.oaz41,oaz_file.oaz46,oaz_file.oaz44,oaz_file.oaz52,oaz_file.oaz681,oaz_file.oaz682,oaz_file.oaz25,oaz_file.oaz201,oax_file.oax03,oaz_file.oaz70,oax_file.oax02,oax_file.oax01,oaz_file.oaz184,oaz_file.oaz185,oaz_file.oazud07,oaz_file.oazud06,oaz_file.oazud05,oaz_file.oazud04,oaz_file.oazud03,oaz_file.oazud02,oaz_file.oazud01,oaz_file.oazud15,oaz_file.oazud14,oaz_file.oazud13,oaz_file.oazud12,oaz_file.oazud11,oaz_file.oazud10,oaz_file.oazud09,oaz_file.oazud08)
+END -- INSTRUCTIONS
+

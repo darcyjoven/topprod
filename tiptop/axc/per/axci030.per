@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/axc/42f/axci030.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"axci030")
+VBox VBox1
+Folder pc344
+Page page01(text="Main")
+Table s_cab
+{
+[cab01   |cab02               ]
+[cab01   |cab02               ]
+[cab01   |cab02               ]
+[cab01   |cab02               ]
+[cab01   |cab02               ]
+[cab01   |cab02               ]
+[cab01   |cab02               ]
+[cab01   |cab02               ]
+[cab01   |cab02               ]
+[cab01   |cab02               ]
+
+}
+END -- s_cab
+END -- page01
+END -- pc344
+Grid gr1448
+{
+ ---------- Rows [cn2   ] ----------
+
+}
+END -- gr1448
+END -- VBox1
+END -- axci030
+
+TABLES
+cab_file
+ATTRIBUTES
+Edit cab01=cab_file.cab01, tabIndex=1, title="Cost Itm", not null, required, comment="<^O>Copy Previous Record!";
+Edit cab02=cab_file.cab02, tabIndex=2, title="Cost Item Desc";
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=3, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_cab(cab_file.cab01,cab_file.cab02)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

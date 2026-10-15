@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/42f/p_klock.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"p_klock")
+VBox VBox1
+Table tb1
+{
+[select  |locked_table   |tiptop_user    |process  |terminal   |sid   |serial     |machine  ]
+[select  |locked_table   |tiptop_user    |process  |terminal   |sid   |serial     |machine  ]
+[select  |locked_table   |tiptop_user    |process  |terminal   |sid   |serial     |machine  ]
+[select  |locked_table   |tiptop_user    |process  |terminal   |sid   |serial     |machine  ]
+[select  |locked_table   |tiptop_user    |process  |terminal   |sid   |serial     |machine  ]
+[select  |locked_table   |tiptop_user    |process  |terminal   |sid   |serial     |machine  ]
+[select  |locked_table   |tiptop_user    |process  |terminal   |sid   |serial     |machine  ]
+[select  |locked_table   |tiptop_user    |process  |terminal   |sid   |serial     |machine  ]
+[select  |locked_table   |tiptop_user    |process  |terminal   |sid   |serial     |machine  ]
+[select  |locked_table   |tiptop_user    |process  |terminal   |sid   |serial     |machine  ]
+
+}
+END -- tb1
+END -- VBox1
+END -- p_klock
+
+ATTRIBUTES
+CheckBox select=formonly.select type CHAR, tabIndex=1, title="Select", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit locked_table=formonly.locked_table type CHAR, tabIndex=2, title="Locked_Table", noEntry;
+Edit tiptop_user=formonly.tiptop_user type CHAR, tabIndex=3, title="Tiptop_User", noEntry;
+Edit process=formonly.process type CHAR, tabIndex=4, title="Process", noEntry;
+Edit terminal=formonly.terminal type CHAR, tabIndex=5, title="Terminal", noEntry;
+Edit sid=formonly.sid type CHAR, tabIndex=6, title="SID", noEntry;
+Edit serial=formonly.serial type CHAR, tabIndex=7, title="SERIAL#", noEntry;
+Edit machine=formonly.machine type CHAR, tabIndex=8, title="MACHINE", noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_table_data(formonly.select,formonly.locked_table,formonly.tiptop_user,formonly.process,formonly.terminal,formonly.sid,formonly.serial,formonly.machine)
+END -- INSTRUCTIONS
+

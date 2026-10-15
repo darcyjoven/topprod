@@ -1,0 +1,91 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apj/42f/apjt123.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="apjt123")
+VBox vb3
+Folder pc2
+Page Page4(text=%"main")
+Grid gr7
+{
+
+        aa1     [pjb01             ]                                          aa2       [pja02               ]
+        aa3     [pjda01                        ]                              aa4       [pjb03               ]
+        aa5     [pjb15                    ]                                   aa6       [pjb16               ]
+        aa7     [pja14              ]                                         aa8       [pja15               ]
+
+
+}
+END -- gr7
+END -- Page4
+Page Page5(text=%"info")
+Grid gr9
+{
+
+    Data Owner        [pjdauser    ]   Data Modified By    [pjdamodu     ] Data Valid Code  [pjdaac]
+    Data of Department[pjdagrup    ]   Latest Modified Date[pjdadate     ]
+
+}
+END -- gr9
+END -- Page5
+END -- pc2
+Table tb4
+{
+[pjda02         |azf03          |pjda03            |aag02          |pjda04          |aag13           |pjda05           ]
+[pjda02         |azf03          |pjda03            |aag02          |pjda04          |aag13           |pjda05           ]
+[pjda02         |azf03          |pjda03            |aag02          |pjda04          |aag13           |pjda05           ]
+[pjda02         |azf03          |pjda03            |aag02          |pjda04          |aag13           |pjda05           ]
+[pjda02         |azf03          |pjda03            |aag02          |pjda04          |aag13           |pjda05           ]
+[pjda02         |azf03          |pjda03            |aag02          |pjda04          |aag13           |pjda05           ]
+[pjda02         |azf03          |pjda03            |aag02          |pjda04          |aag13           |pjda05           ]
+[pjda02         |azf03          |pjda03            |aag02          |pjda04          |aag13           |pjda05           ]
+[pjda02         |azf03          |pjda03            |aag02          |pjda04          |aag13           |pjda05           ]
+[pjda02         |azf03          |pjda03            |aag02          |pjda04          |aag13           |pjda05           ]
+
+}
+END -- tb4
+Grid gr8
+{
+ ---------- Rows [cnt   ] / [idx   ] ---------- details  [cnt2      ]
+
+}
+END -- gr8
+END -- vb3
+END -- apjt123
+
+TABLES
+pjda_file
+ATTRIBUTES
+Edit pjb01=formonly.pjb01 type VARCHAR, tabIndex=17;
+Edit pja02=formonly.pja02 type VARCHAR, tabIndex=19, noEntry;
+ButtonEdit pjda01=pjda_file.pjda01, action=controlp, tabIndex=18, not null, image="zoom.png";
+Edit pjb03=formonly.pjb03 type VARCHAR, tabIndex=16;
+DateEdit pjb15=formonly.pjb15 type DATE, tabIndex=22;
+DateEdit pjb16=formonly.pjb16 type DATE, tabIndex=23;
+Edit pja14=formonly.pja14 type VARCHAR, tabIndex=20;
+Edit pja15=formonly.pja15 type DECIMAL, tabIndex=21;
+Edit pjdauser=pjda_file.pjdauser, tabIndex=10, noEntry, not null;
+Edit pjdamodu=pjda_file.pjdamodu, tabIndex=12, noEntry, not null;
+Edit pjdaac=pjda_file.pjdaacti, tabIndex=14, noEntry, not null;
+Edit pjdagrup=pjda_file.pjdagrup, tabIndex=11, noEntry, not null;
+DateEdit pjdadate=pjda_file.pjdadate, tabIndex=13, noEntry, not null;
+ButtonEdit pjda02=pjda_file.pjda02, action=controlp, tabIndex=1, title="pjda02", not null, image="zoom.png";
+Edit azf03=formonly.azf03 type VARCHAR, tabIndex=2, title="azf03", noEntry;
+ButtonEdit pjda03=pjda_file.pjda03, action=controlp, tabIndex=3, title="pjda03", not null, image="zoom.png";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=4, title="aag02", noEntry;
+ButtonEdit pjda04=pjda_file.pjda04, action=controlp, tabIndex=6, title="pjda04", not null, image="zoom.png";
+Edit aag13=formonly.aag13 type VARCHAR, tabIndex=7, title="aag13", noEntry;
+Edit pjda05=pjda_file.pjda05, tabIndex=5, title="pjda05", not null;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=8, noEntry;
+Edit idx=formonly.idx type SMALLINT, tabIndex=9, noEntry;
+Edit cnt2=formonly.cnt2 type SMALLINT, tabIndex=15;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD tb4(pjda_file.pjda02,formonly.azf03,pjda_file.pjda03,formonly.aag02,pjda_file.pjda04,formonly.aag13,pjda_file.pjda05)
+SCREEN RECORD Undefined(formonly.pjb01,formonly.pja02,pjda_file.pjda01,formonly.pjb03,formonly.pjb15,formonly.pjb16,formonly.pja14,formonly.pja15,pjda_file.pjdauser,pjda_file.pjdamodu,pjda_file.pjdaacti,pjda_file.pjdagrup,pjda_file.pjdadate,formonly.cnt,formonly.idx,formonly.cnt2)
+END -- INSTRUCTIONS
+

@@ -1,0 +1,98 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/abm/42f/abmi641.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abmi641")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+  Configuration Item  [cbacon              ]          [imgmksg]
+  Part Name           [ima02                         ][       ]
+  Specification       [ima021                        ]
+  Description         [cbades                        ]
+
+ <G group02                                                                    >
+   1th Sec Dgt         [cba01     ] [dummy01] 11th Sec Dgt         [cba11     ]
+   2th Sec Dgt         [cba02     ]           12th Sec Dgt         [cba12     ]
+   3th Sec Dgt         [cba03     ]           13th Sec Dgt         [cba13     ]
+   4th Sec Dgt         [cba04     ]           14th Sec Dgt         [cba14     ]
+   5th Sec Dgt         [cba05     ]           15th Sec Dgt         [cba15     ]
+   6th Sec Dgt         [cba06     ]           16th Sec Dgt         [cba16     ]
+   7th Sec Dgt         [cba07     ]           17th Sec Dgt         [cba17     ]
+   8th Sec Dgt         [cba08     ]           18th Sec Dgt         [cba18     ]
+   9th Sec Dgt         [cba09     ]           19th Sec Dgt         [cba19     ]
+  10th Sec Dgt         [cba10     ]           20th Sec Dgt         [cba20     ]
+ <                                                                             >
+
+}
+END -- Grid1
+END -- page01
+Page info(text="Info")
+Grid Grid2
+{
+ Record Owner        [cbauser   ] Last Modified by    [cbamodu   ] Data Valid Code     [cbaacti   ]
+ Department          [cbagrup   ] Create/Modify Date  [cbadate   ]
+ Record Orig.        [cbaoriu   ]
+ Dept Orig.          [cbaorig   ]
+}
+END -- Grid2
+END -- info
+END -- Folder1
+Grid Grid3
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- Grid3
+END -- VBox1
+END -- abmi641
+
+TABLES
+cba_file
+ATTRIBUTES
+ButtonEdit cbacon=cba_file.cbacon, action=controlp, tabIndex=1, image="zoom", comment="<^P>Query Item  ";
+IMAGE imgmksg=formonly.imgmksg type CHAR, autoScale, width = 7 characters, height = 2 characters;
+Edit ima02=formonly.ima02 type CHAR, tabIndex=3, noEntry;
+Edit ima021=formonly.ima021 type CHAR, tabIndex=4, noEntry;
+Edit cbades=cba_file.cbades, tabIndex=5;
+Group group02:group02;
+Edit cba01=cba_file.cba01, tabIndex=6, comment="<^I>Create FAS Code ";
+Label dummy01:dummy01;
+Edit cba11=cba_file.cba11, tabIndex=7, comment="<^I>Create FAS Code ";
+Edit cba02=cba_file.cba02, tabIndex=8, comment="<^I>Create FAS Code ";
+Edit cba12=cba_file.cba12, tabIndex=9, comment="<^I>Create FAS Code ";
+Edit cba03=cba_file.cba03, tabIndex=10, comment="<^I>Create FAS Code ";
+Edit cba13=cba_file.cba13, tabIndex=11, comment="<^I>Create FAS Code ";
+Edit cba04=cba_file.cba04, tabIndex=12, comment="<^I>Create FAS Code ";
+Edit cba14=cba_file.cba14, tabIndex=13, comment="<^I>Create FAS Code ";
+Edit cba05=cba_file.cba05, tabIndex=14, comment="<^I>Create FAS Code ";
+Edit cba15=cba_file.cba15, tabIndex=15, comment="<^I>Create FAS Code ";
+Edit cba06=cba_file.cba06, tabIndex=16, comment="<^I>Create FAS Code ";
+Edit cba16=cba_file.cba16, tabIndex=17, comment="<^I>Create FAS Code ";
+Edit cba07=cba_file.cba07, tabIndex=18, comment="<^I>Create FAS Code ";
+Edit cba17=cba_file.cba17, tabIndex=19, comment="<^I>Create FAS Code ";
+Edit cba08=cba_file.cba08, tabIndex=20, comment="<^I>Create FAS Code ";
+Edit cba18=cba_file.cba18, tabIndex=21, comment="<^I>Create FAS Code ";
+Edit cba09=cba_file.cba09, tabIndex=22, comment="<^I>Create FAS Code ";
+Edit cba19=cba_file.cba19, tabIndex=23, comment="<^I>Create FAS Code ";
+Edit cba10=cba_file.cba10, tabIndex=24, comment="<^I>Create FAS Code ";
+Edit cba20=cba_file.cba20, tabIndex=25, comment="<^I>Create FAS Code ";
+Edit cbauser=cba_file.cbauser, tabIndex=26, noEntry;
+Edit cbamodu=cba_file.cbamodu, tabIndex=27, noEntry;
+Edit cbaacti=cba_file.cbaacti, tabIndex=28, noEntry, upShift;
+Edit cbagrup=cba_file.cbagrup, tabIndex=29, noEntry;
+DateEdit cbadate=cba_file.cbadate, tabIndex=30, noEntry;
+Edit cbaoriu=cba_file.cbaoriu, tabIndex=501, noEntry;
+Edit cbaorig=cba_file.cbaorig, tabIndex=502, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=31;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(cba_file.cbacon,formonly.imgmksg,formonly.ima02,formonly.ima021,cba_file.cbades,cba_file.cba01,cba_file.cba11,cba_file.cba02,cba_file.cba12,cba_file.cba03,cba_file.cba13,cba_file.cba04,cba_file.cba14,cba_file.cba05,cba_file.cba15,cba_file.cba06,cba_file.cba16,cba_file.cba07,cba_file.cba17,cba_file.cba08,cba_file.cba18,cba_file.cba09,cba_file.cba19,cba_file.cba10,cba_file.cba20,cba_file.cbauser,cba_file.cbamodu,cba_file.cbaacti,cba_file.cbagrup,cba_file.cbadate,cba_file.cbaoriu,cba_file.cbaorig,formonly.cnt)
+END -- INSTRUCTIONS
+

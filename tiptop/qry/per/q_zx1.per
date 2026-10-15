@@ -1,0 +1,33 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_zx1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"q_zx1")
+Table s_apg
+{
+[check   |zx01          |zx02         |zx03         |online  ]
+[check   |zx01          |zx02         |zx03         |online  ]
+[check   |zx01          |zx02         |zx03         |online  ]
+[check   |zx01          |zx02         |zx03         |online  ]
+
+}
+END -- s_apg
+END -- q_zx1
+
+TABLES
+zx_file
+ATTRIBUTES
+CheckBox check=formonly.check type VARCHAR, tabIndex=31, default = "N", title=%"check", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit zx01=zx_file.zx01, tabIndex=28, title="zx01";
+Edit zx02=zx_file.zx02, tabIndex=29, title="zx02", not null, required;
+Edit zx03=zx_file.zx03, tabIndex=30, title="zx03";
+CheckBox online=formonly.online type VARCHAR, tabIndex=32, default = "N", title=%"online", noEntry, not null, required, valueChecked = "Y", valueUnchecked = "N";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_zx(formonly.check,zx_file.zx01,zx_file.zx02,zx_file.zx03,formonly.online)
+END -- INSTRUCTIONS
+

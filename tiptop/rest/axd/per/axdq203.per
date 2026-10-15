@@ -1,0 +1,107 @@
+----------------------------------------------------------------------------------
+-- $Id:  axdq203.per created Wed Jan 23 05:30:37 2008
+-- File created from axdq203.4fd by Genero Studio 11500
+-- Copyright (c) 2002-2007  Four J's Development Tools.  All rights reserved.
+----------------------------------------------------------------------------------
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+SCHEMA ds
+
+LAYOUT( TEXT="axdq203")
+-- GRID
+-- GRID
+-- HBOX
+-- PAGE
+-- FOLDER
+-- TABLE
+-- GRID
+-- VBOX
+-- LAYOUT
+-- 
+
+  VBOX 
+    FOLDER folder01
+      PAGE page01( TEXT="Main")
+        HBOX 
+          GRID gr7804
+          {
+           <G group01                                                  >
+            Vehicle No.         [aa0       ]
+            Level               [aa1       ]
+            Category            [aa2       ]
+            Brand               [aa3                 ]
+            Model               [aa4                 ]
+           <                                                           >
+
+
+          }
+          END -- GRID
+          GRID gr7805
+          {
+           <G group02                                                 >
+            Ownership           [aa5       ] [aa6       ]
+            Driver              [aa7       ] [aa8       ]
+            Vehicle Group       [aa9       ]
+            Date Scope          [ab0       ]-[ab1       ]
+           <                                                          >
+
+
+          }
+          END -- GRID
+        END -- HBOX
+      END -- PAGE
+    END -- FOLDER
+    TABLE   s_sr
+    {
+    [ab2       |ab3                       |ab4                |ab5                  |ab6             |ab7          |ab8          |ab9                    |ac0                 ]
+    [ab2       |ab3                       |ab4                |ab5                  |ab6             |ab7          |ab8          |ab9                    |ac0                 ]
+    [ab2       |ab3                       |ab4                |ab5                  |ab6             |ab7          |ab8          |ab9                    |ac0                 ]
+    [ab2       |ab3                       |ab4                |ab5                  |ab6             |ab7          |ab8          |ab9                    |ac0                 ]
+    [ab2       |ab3                       |ab4                |ab5                  |ab6             |ab7          |ab8          |ab9                    |ac0                 ]
+    [ab2       |ab3                       |ab4                |ab5                  |ab6             |ab7          |ab8          |ab9                    |ac0                 ]
+    [ab2       |ab3                       |ab4                |ab5                  |ab6             |ab7          |ab8          |ab9                    |ac0                 ]
+    [ab2       |ab3                       |ab4                |ab5                  |ab6             |ab7          |ab8          |ab9                    |ac0                 ]
+    [ab2       |ab3                       |ab4                |ab5                  |ab6             |ab7          |ab8          |ab9                    |ac0                 ]
+    [ab2       |ab3                       |ab4                |ab5                  |ab6             |ab7          |ab8          |ab9                    |ac0                 ]
+    }
+    END -- TABLE
+    GRID gr7806
+    {
+     ---------- Rows [ac1   ] ----------
+
+    }
+    END -- GRID
+  END -- VBOX
+END
+TABLES obw_file,adk_file
+
+ATTRIBUTES
+  GROUP group01 : group01;
+  EDIT aa0=obw_file.obw01, TABINDEX=1;
+  EDIT aa1=obw_file.obw05, TABINDEX=2;
+  EDIT aa2=obw_file.obw02, TABINDEX=3;
+  EDIT aa3=obw_file.obw03, TABINDEX=4;
+  EDIT aa4=obw_file.obw04, TABINDEX=5;
+  GROUP group02 : group02;
+  EDIT aa5=obw_file.obw06, TABINDEX=6;
+  EDIT aa6=FORMONLY.desc, NOENTRY, TABINDEX=7;
+  EDIT aa7=obw_file.obw16, TABINDEX=8;
+  EDIT aa8=FORMONLY.gen02, NOENTRY, TABINDEX=9;
+  EDIT aa9=obw_file.obw20, TABINDEX=10;
+  DATEEDIT ab0=FORMONLY.bdate, NOT NULL, REQUIRED, TABINDEX=11;
+  DATEEDIT ab1=FORMONLY.edate, NOT NULL, REQUIRED, TABINDEX=12;
+  EDIT ab2=FORMONLY.r TYPE SMALLINT, TABINDEX=13, TITLE="Line No";
+  EDIT ab3=adk_file.adk01, TABINDEX=14, TITLE="Vehicle Dispatching No.";
+  DATEEDIT ab4=adk_file.adk02, TABINDEX=15, TITLE="Dispatching Date";
+  EDIT ab5=adk_file.adk03, TABINDEX=16, TITLE="Dispatching Reason";
+  EDIT ab6=adk_file.adk15, TABINDEX=17, TITLE="Transfer Flow";
+  DATEEDIT ab7=adk_file.adk04, TABINDEX=18, TITLE="Leave Date";
+  EDIT ab8=adk_file.adk05, TABINDEX=19, TITLE="Leave Time";
+  DATEEDIT ab9=adk_file.adk06, TABINDEX=20, TITLE="Estimate Return Date";
+  EDIT ac0=adk_file.adk07, TABINDEX=21, TITLE="Estimate Return Time";
+  EDIT ac1=FORMONLY.cnt TYPE SMALLINT, TABINDEX=22;
+END
+
+INSTRUCTIONS
+  SCREEN RECORD s_sr (FORMONLY.r, adk_file.adk01, adk_file.adk02, adk_file.adk03, adk_file.adk15, adk_file.adk04, adk_file.adk05, adk_file.adk06, adk_file.adk07)
+END

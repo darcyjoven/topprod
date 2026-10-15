@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/apm/42f/apmi0001.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"apmi0001")
+Grid gr4800
+{
+ <T s_poy                                                                                                       >
+ [poy02    |poy03             |poy10        |poy11     |poy1|poy16  |poy17  |poy18    |poy19    |poy20         ]
+ [poy02    |poy03             |poy10        |poy11     |poy1|poy16  |poy17  |poy18    |poy19    |poy20         ]
+ [poy02    |poy03             |poy10        |poy11     |poy1|poy16  |poy17  |poy18    |poy19    |poy20         ]
+ [poy02    |poy03             |poy10        |poy11     |poy1|poy16  |poy17  |poy18    |poy19    |poy20         ]
+ [poy02    |poy03             |poy10        |poy11     |poy1|poy16  |poy17  |poy18    |poy19    |poy20         ]
+ [poy02    |poy03             |poy10        |poy11     |poy1|poy16  |poy17  |poy18    |poy19    |poy20         ]
+ [poy02    |poy03             |poy10        |poy11     |poy1|poy16  |poy17  |poy18    |poy19    |poy20         ]
+ [poy02    |poy03             |poy10        |poy11     |poy1|poy16  |poy17  |poy18    |poy19    |poy20         ]
+ [poy02    |poy03             |poy10        |poy11     |poy1|poy16  |poy17  |poy18    |poy19    |poy20         ]
+ [poy02    |poy03             |poy10        |poy11     |poy1|poy16  |poy17  |poy18    |poy19    |poy20         ]
+ <                                                                                                              >
+
+}
+END -- gr4800
+END -- apmi0001
+
+TABLES
+poy_file
+ATTRIBUTES
+Table s_poy:s_poy;
+Edit poy02=poy_file.poy02, tabIndex=1, title="Flow No.", noEntry, not null, required;
+Edit poy03=poy_file.poy03, tabIndex=2, title="Downstream Vender", noEntry;
+ButtonEdit poy10=poy_file.poy10, action=controlp, tabIndex=3, title="Sales Class.", image="zoom", comment="<^P>Qry Sale Class";
+ButtonEdit poy11=poy_file.poy11, action=controlp, tabIndex=4, title="Warehouse", not null, required, image="zoom", comment="<^P>Qry Warehouse";
+Edit poy1=poy_file.poy12, tabIndex=5, title="Inv";
+ButtonEdit poy16=poy_file.poy16, action=controlp, tabIndex=6, title="AR Cat", not null, required, image="zoom", comment="<^P>Qry AR Cate";
+ButtonEdit poy17=poy_file.poy17, action=controlp, tabIndex=7, title="AP Cat", not null, required, image="zoom", comment="<^P>Qry AP Cate";
+ButtonEdit poy18=poy_file.poy18, action=controlp, tabIndex=8, title="AR Dept.", not null, required, image="zoom", comment="<^P>Qry AR Dept # ";
+ButtonEdit poy19=poy_file.poy19, action=controlp, tabIndex=9, title="AP Dept.", not null, required, image="zoom", comment="<^P>Qry AP Dept # ";
+ComboBox poy20=poy_file.poy20, tabIndex=10, title="Declare Method", not null, required, queryEditable, items=(("1", %"1.Total"),("2", %"2.Diff"),("3", %"3.Zero"));
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_poy(poy_file.poy02,poy_file.poy03,poy_file.poy10,poy_file.poy11,poy_file.poy12,poy_file.poy16,poy_file.poy17,poy_file.poy18,poy_file.poy19,poy_file.poy20)
+END -- INSTRUCTIONS
+

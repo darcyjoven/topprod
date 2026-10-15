@@ -1,0 +1,47 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/art/42f/artt551_1.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="artt551_1")
+VBox vb6
+Folder pc6
+Page Page11(text=%"Basic Data")
+Table s_rvd
+{
+[rvd02    |rvd03          |rvd03_desc          ]
+[rvd02    |rvd03          |rvd03_desc          ]
+[rvd02    |rvd03          |rvd03_desc          ]
+[rvd02    |rvd03          |rvd03_desc          ]
+[rvd02    |rvd03          |rvd03_desc          ]
+
+}
+END -- s_rvd
+END -- Page11
+END -- pc6
+Grid gr16
+{
+
+ --- Items[cn2 ] --------
+
+}
+END -- gr16
+END -- vb6
+END -- artt551_1
+
+TABLES
+rvd_file
+ATTRIBUTES
+Edit rvd02=rvd_file.rvd02, tabIndex=1, title="Line No.", not null, required;
+ButtonEdit rvd03=rvd_file.rvd03, action=controlp, tabIndex=2, title="Effective Org.", not null, required, image="zoom.png";
+Edit rvd03_desc=formonly.rvd03_desc type VARCHAR, tabIndex=3, title="Org.Name", noEntry;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=4;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_rvd(rvd_file.rvd02,rvd_file.rvd03,formonly.rvd03_desc)
+SCREEN RECORD Undefined(formonly.cn2)
+END -- INSTRUCTIONS
+

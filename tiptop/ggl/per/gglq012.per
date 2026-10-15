@@ -1,0 +1,129 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/ggl/42f/gglq012.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text="gglq012")
+VBox vb12
+Folder pc1
+Page Page1(text=%"Main")
+Grid gr1
+{
+
+  Group Code                     [asm01         ]      Year                           [asm05         ]
+  Group Book No.                 [asm00         ]      Period                         [asm06         ]
+  Merger of individual           [asm02         ]      Currency                       [asm11         ]
+  Merger of individual Book No.  [asm03         ]      Balance Sheet/Income Statament [aag04         ]
+
+}
+END -- gr1
+END -- Page1
+END -- pc1
+Folder pc2
+Page Page2(action=page2, text=%"Combined Entity A/C Balance")
+VBox vb9
+Table s_asm
+{
+[aah01          |aag02               |aah04               |aah05               |amt1                |asm04               |aag02_1             |asm07               |asm08               |amt2                ]
+[aah01          |aag02               |aah04               |aah05               |amt1                |asm04               |aag02_1             |asm07               |asm08               |amt2                ]
+[aah01          |aag02               |aah04               |aah05               |amt1                |asm04               |aag02_1             |asm07               |asm08               |amt2                ]
+[aah01          |aag02               |aah04               |aah05               |amt1                |asm04               |aag02_1             |asm07               |asm08               |amt2                ]
+[aah01          |aag02               |aah04               |aah05               |amt1                |asm04               |aag02_1             |asm07               |asm08               |amt2                ]
+[aah01          |aag02               |aah04               |aah05               |amt1                |asm04               |aag02_1             |asm07               |asm08               |amt2                ]
+}
+END -- s_asm
+Grid gr8
+{
+ --- Rows [cn2  ] ---
+
+
+
+
+}
+END -- gr8
+END -- vb9
+END -- Page2
+Page Page3(action=page3, text=%"A/C Balance of Combined Entity Dimension Codes")
+VBox vb7
+Table tb2
+{
+[aed01     |aag01               |aed0|aed02          |aed05               |aed06               |amt3                |asn04     |aag02_3             |asn05          |asn08               |asn09               |amt4                ]
+[aed01     |aag01               |aed0|aed02          |aed05               |aed06               |amt3                |asn04     |aag02_3             |asn05          |asn08               |asn09               |amt4                ]
+[aed01     |aag01               |aed0|aed02          |aed05               |aed06               |amt3                |asn04     |aag02_3             |asn05          |asn08               |asn09               |amt4                ]
+[aed01     |aag01               |aed0|aed02          |aed05               |aed06               |amt3                |asn04     |aag02_3             |asn05          |asn08               |asn09               |amt4                ]
+[aed01     |aag01               |aed0|aed02          |aed05               |aed06               |amt3                |asn04     |aag02_3             |asn05          |asn08               |asn09               |amt4                ]
+[aed01     |aag01               |aed0|aed02          |aed05               |aed06               |amt3                |asn04     |aag02_3             |asn05          |asn08               |asn09               |amt4                ]
+}
+END -- tb2
+Grid gr7
+{
+ ---  Rows[cn3  ] ---
+
+
+}
+END -- gr7
+END -- vb7
+END -- Page3
+END -- pc2
+Grid gr8_
+{
+      ---------- Rows [cnt   ] ----------
+
+
+
+}
+END -- gr8_
+END -- vb12
+END -- gglq012
+
+TABLES
+aah_file,
+aag_file,
+asn_file,
+asm_file,
+aed_file
+ATTRIBUTES
+ButtonEdit asm01=asm_file.asm01, action=controlp, tabIndex=1, image="zoom";
+Edit asm05=asm_file.asm05, tabIndex=5;
+Edit asm00=asm_file.asm00, tabIndex=2;
+Edit asm06=asm_file.asm06, tabIndex=6;
+Edit asm02=asm_file.asm02, tabIndex=3;
+ButtonEdit asm11=asm_file.asm11, action=controlp, tabIndex=7, image="zoom";
+Edit asm03=asm_file.asm03, tabIndex=4;
+ComboBox aag04=formonly.aag04 type VARCHAR, tabIndex=41, not null, required, queryEditable, items=(("1", "Balance Sheet"),("2", "Income Statement"));
+Edit aah01=aah_file.aah01, tabIndex=18, title="Account Code";
+Edit aag02=formonly.aag02 type VARCHAR, tabIndex=31, title="Account Name\n", noEntry;
+Edit aah04=aah_file.aah04, tabIndex=19, title="Debit Amt.";
+Edit aah05=aah_file.aah05, tabIndex=20, title="Credit Amount";
+Edit amt1=formonly.amt1 type CHAR, tabIndex=28, title="Balance", noEntry;
+Edit asm04=asm_file.asm04, tabIndex=8, title="Acct No.";
+Edit aag02_1=formonly.aag02_1 type VARCHAR, tabIndex=23, title="Account Name\n", noEntry;
+Edit asm07=asm_file.asm07, tabIndex=9, title="Debit Amt";
+Edit asm08=asm_file.asm08, tabIndex=10, title="Credit Amount";
+Edit amt2=formonly.amt2 type CHAR, tabIndex=21, title="Balance", noEntry;
+Edit cn2=formonly.cn2 type SMALLINT, tabIndex=11;
+Edit aed01=aed_file.aed01, tabIndex=22, title="Account Code", noEntry;
+Edit aag01=aag_file.aag02, tabIndex=22, title="Account Name\n", noEntry;
+Edit aed0=aed_file.aed011, tabIndex=38, title="Dimension Sequence", noEntry;
+Edit aed02=aed_file.aed02, tabIndex=37, title="Dimension Value", noEntry;
+Edit aed05=aed_file.aed05, tabIndex=36, title="Total Debit Amount", noEntry;
+Edit aed06=aed_file.aed06, tabIndex=35, title="Credit Amt.", noEntry;
+Edit amt3=formonly.amt3 type CHAR, tabIndex=34, title="Balance", noEntry;
+Edit asn04=asn_file.asn04, tabIndex=33, title="Acct No.", noEntry;
+Edit aag02_3=formonly.aag02_3 type VARCHAR, tabIndex=32, title="Account Name\n", noEntry;
+Edit asn05=asn_file.asn05, tabIndex=31, title="Dimension Value", noEntry;
+Edit asn08=asn_file.asn08, tabIndex=29, title="Debit Amt", noEntry;
+Edit asn09=asn_file.asn09, tabIndex=26, title="Credit Amount", noEntry;
+Edit amt4=formonly.amt4 type CHAR, tabIndex=24, title="Balance", noEntry;
+Edit cn3=formonly.cn3 type SMALLINT, tabIndex=39;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=40, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_asn(aed_file.aed01,aag_file.aag02,aed_file.aed011,aed_file.aed02,aed_file.aed05,aed_file.aed06,formonly.amt3,asn_file.asn04,formonly.aag02_3,asn_file.asn05,asn_file.asn08,asn_file.asn09,formonly.amt4)
+SCREEN RECORD s_asm(aah_file.aah01,formonly.aag02,aah_file.aah04,aah_file.aah05,formonly.amt1,asm_file.asm04,formonly.aag02_1,asm_file.asm07,asm_file.asm08,formonly.amt2)
+SCREEN RECORD Undefined(asm_file.asm01,asm_file.asm05,asm_file.asm00,asm_file.asm06,asm_file.asm02,asm_file.asm11,asm_file.asm03,formonly.aag04,formonly.cn2,formonly.cn3,formonly.cnt)
+END -- INSTRUCTIONS
+

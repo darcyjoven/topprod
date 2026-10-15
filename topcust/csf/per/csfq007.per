@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/topcust/csf/4fd/csfq007.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"Form")
+VBox VBox3
+VBox VBox2
+Folder Folder1
+Page Page1(text=%"Page1")
+Grid Grid1
+{
+
+[label1           ][date1            ]         [label2             ][date2             ]
+
+
+}
+END -- Grid1
+END -- Page1
+END -- Folder1
+END -- VBox2
+Folder Folder2
+Page Page2(text=%"Page2")
+VBox VBox1
+Table Table1
+{
+[sfb01   |sfb05   |ima02   |ima021  |sfb08   |imaud09 |sjll    |sfs03    |sfa05   |ctype   |sfb01_b   ]
+[sfb01   |sfb05   |ima02   |ima021  |sfb08   |imaud09 |sjll    |sfs03    |sfa05   |ctype   |sfb01_b   ]
+[sfb01   |sfb05   |ima02   |ima021  |sfb08   |imaud09 |sjll    |sfs03    |sfa05   |ctype   |sfb01_b   ]
+[sfb01   |sfb05   |ima02   |ima021  |sfb08   |imaud09 |sjll    |sfs03    |sfa05   |ctype   |sfb01_b   ]
+[sfb01   |sfb05   |ima02   |ima021  |sfb08   |imaud09 |sjll    |sfs03    |sfa05   |ctype   |sfb01_b   ]
+}
+END -- Table1
+Grid gr2
+{
+  ---------- Rows [cnt   ]----------
+
+}
+END -- gr2
+END -- VBox1
+END -- Page2
+END -- Folder2
+END -- VBox3
+END -- Form
+
+ATTRIBUTES
+Label label1:Label1, text=%"date1";
+DateEdit date1=formonly.date1, tabIndex=1;
+Label label2:Label2, text=%"date2";
+DateEdit date2=formonly.date2, tabIndex=2;
+ButtonEdit sfb01=formonly.sfb01, action=controlp, tabIndex=3, title=%"sfb01", image="zoom";
+ButtonEdit sfb05=formonly.sfb05, action=controlp, tabIndex=4, title=%"sfb05", image="zoom";
+Edit ima02=formonly.ima02, tabIndex=5, title=%"ima02";
+Edit ima021=formonly.ima021, tabIndex=6, title=%"ima021";
+Edit sfb08=formonly.sfb08, tabIndex=7, title=%"sfb08";
+Edit imaud09=formonly.imaud09, tabIndex=8, title=%"imaud09";
+Edit sjll=formonly.sjll, tabIndex=9, title=%"sjll";
+Edit sfs03=formonly.sfs03, tabIndex=10, title=%"sfs03";
+Edit sfa05=formonly.sfa05, tabIndex=12, title=%"sfa05";
+Edit ctype=formonly.ctype, tabIndex=13, title=%"ctype";
+Edit sfb01_b=formonly.sfb01_b, tabIndex=14, title=%"sfb01_b";
+Edit cnt=formonly.cnt type CHAR, tabIndex=11;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.date1,formonly.date2,formonly.cnt)
+SCREEN RECORD s_sfb(formonly.sfb01,formonly.sfb05,formonly.ima02,formonly.ima021,formonly.sfb08,formonly.imaud09,formonly.sjll,formonly.sfs03,formonly.sfa05,formonly.ctype,formonly.sfb01_b)
+END -- INSTRUCTIONS
+

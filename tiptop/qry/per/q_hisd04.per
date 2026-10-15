@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/qry/42f/q_hisd04.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (spacing=normal, text=%"q_hisd04")
+VBox VBox1
+VBox VBox2
+Group group01(text="Please input the conditions:")
+Grid gr5
+{
+ Table1  [fieldname1 ]  = Table2  [fieldname2 ]
+ logicope[logicope   ]            [makecond   ]
+}
+END -- gr5
+END -- group01
+Group group02(text="Relateing Conditions")
+Grid gr6
+{
+ [conditions                                        ]
+ [                                                  ]
+ [                                                  ]
+ [                                                  ]
+}
+END -- gr6
+END -- group02
+END -- VBox2
+END -- VBox1
+END -- q_hisd04
+
+ATTRIBUTES
+ComboBox fieldname1=formonly.fieldname1 type CHAR, tabIndex=1, not null, required, comment="Choose the field";
+ComboBox fieldname2=formonly.fieldname2 type CHAR, tabIndex=2, not null, required, comment="Choose the field";
+RadioGroup logicope=formonly.logicope type CHAR, tabIndex=3, not null, required, orientation=horizontal, comment="Choose the logic operator", items=(("AND", "AND"),("OR", "OR"));
+Button makecond:makecond, text="Make the conditions";
+TextEdit conditions=formonly.conditions type CHAR, tabIndex=4, stretch=NONE, wantNoReturns;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.fieldname1,formonly.fieldname2,formonly.logicope,formonly.conditions)
+END -- INSTRUCTIONS
+

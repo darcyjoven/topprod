@@ -1,0 +1,89 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/lib/42f/cl_fldhelp.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"cl_fldhelp")
+VBox VBox1
+Group group05
+Grid gr3674
+{
+ Form ID                                  [gae01     ]
+ Language                                 [gae03     ]
+ Field                                    [gae02     ]
+}
+END -- gr3674
+END -- group05
+HBox HBox1
+Group group01
+Grid gr3675
+{
+ Description                              [gae04                     ]
+ Sample File                              [gae09                     ]
+ <G group02                                                          >
+ [gbs07                                                              ]
+ [                                                                   ]
+ [                                                                   ]
+ [                                                                   ]
+ [                                                                   ]
+ [gae08                                                              ]
+ [gae07                                                              ]
+ <                                                                   >
+
+}
+END -- gr3675
+END -- group01
+Group group04
+Grid gr3676
+{
+ Table Field Name         [gaq03                     ]
+ Extra TABLE Field Memo   [gaq05                     ]
+ <G group03                                          >
+ [gaq04                                              ]
+ [                                                   ]
+ [                                                   ]
+ [                                                   ]
+ [                                                   ]
+
+
+ <                                                   >
+
+}
+END -- gr3676
+END -- group04
+END -- HBox1
+Grid gr3677
+{
+ ----------Rows [cnt   ] ----------
+
+}
+END -- gr3677
+END -- VBox1
+END -- cl_fldhelp
+
+TABLES
+gae_file,
+gbs_file
+ATTRIBUTES
+ButtonEdit gae01=gae_file.gae01, action=controlp, tabIndex=1, noEntry, image="zoom", comment="Enter Program ID";
+ComboBox gae03=gae_file.gae03, tabIndex=2, noEntry;
+Edit gae02=gae_file.gae02, tabIndex=3, noEntry, scroll;
+Edit gae04=gae_file.gae04, tabIndex=4, noEntry, scroll;
+Edit gae09=gae_file.gae09, tabIndex=5;
+Group group02:group02, text="Description Use in Help";
+TextEdit gbs07=gbs_file.gbs07, tabIndex=6, stretch=NONE;
+CheckBox gae08=gae_file.gae08, tabIndex=7, text="Important Field", valueChecked = "Y", valueUnchecked = "N";
+CheckBox gae07=gae_file.gae07, tabIndex=8, text="Confirm", valueChecked = "Y", valueUnchecked = "N";
+Edit gaq03=formonly.gaq03 type CHAR, tabIndex=9, noEntry;
+Edit gaq05=formonly.gaq05 type CHAR, tabIndex=10, noEntry;
+Group group03:group03, text="TABLE Description";
+TextEdit gaq04=formonly.gaq04 type CHAR, tabIndex=11, noEntry, stretch=NONE;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=12, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(gae_file.gae01,gae_file.gae03,gae_file.gae02,gae_file.gae04,gae_file.gae09,gbs_file.gbs07,gae_file.gae08,gae_file.gae07,formonly.gaq03,formonly.gaq05,formonly.gaq04,formonly.cnt)
+END -- INSTRUCTIONS
+

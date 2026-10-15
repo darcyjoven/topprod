@@ -1,0 +1,50 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/aba/42f/abai150.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"abai150")
+VBox VBox1
+Folder Folder1
+Page page01(text="Main")
+Grid Grid1
+{
+ smybslip            [smybslip     ][smydesc     ]
+ smyb01              [smyb01       ]
+ smyb02              [smyb02       ]
+[smyb03    ]
+
+
+
+}
+END -- Grid1
+END -- page01
+END -- Folder1
+Grid Grid3
+{
+ ---------- Rows [idx   ]/[cnt   ] ----------
+
+
+}
+END -- Grid3
+END -- VBox1
+END -- abai150
+
+TABLES
+smyb_file
+ATTRIBUTES
+ButtonEdit smybslip=smyb_file.smybslip, action=controlp, tabIndex=1, not null, required, image="zoom";
+Edit smydesc=formonly.smydesc type CHAR, tabIndex=2, noEntry;
+ComboBox smyb01=smyb_file.smyb01, tabIndex=3, not null, required, queryEditable, items=(("1", "Non-barcode"),("2", "Barcode"));
+ButtonEdit smyb02=smyb_file.smyb02, action=controlp, tabIndex=4, not null, required, image="zoom";
+CheckBox smyb03=smyb_file.smyb03, tabIndex=7, text=%"smyb03", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit idx=formonly.idx type SMALLINT, tabIndex=5, noEntry;
+Edit cnt=formonly.cnt type SMALLINT, tabIndex=6, noEntry;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(smyb_file.smyb01,formonly.smydesc,formonly.idx,formonly.cnt,smyb_file.smybslip,smyb_file.smyb02,smyb_file.smyb03)
+END -- INSTRUCTIONS
+

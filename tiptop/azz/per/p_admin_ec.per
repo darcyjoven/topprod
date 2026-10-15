@@ -1,0 +1,290 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/topprod/tiptop/azz/4fd/p_admin_ec.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA ds
+
+LAYOUT (spacing=normal, text=%"asfq301")
+VBox vb4
+Group group01
+HBox hb2
+Grid gr570
+{
+
+    [btn_pre_mon    ]
+    [btn_ins        ]
+    [btn_aeci100    ]
+
+
+
+
+}
+END -- gr570
+END -- hb2
+END -- group01
+Folder pc135
+Page page01(action=allotment, text="Allotment")
+Table s_ecb
+{
+[checke|ecb01                   |ecb02    |ecb03        |ecb06           |ecb08           |ecb19              |ecb21              ]
+
+}
+END -- s_ecb
+END -- page01
+Page page02(action=routing, text="Routing", hidden)
+Table s_sfa
+{
+[checks|sfa01                |sfa03                   |ima02sfa        |ima021sfa       |sfa27                  |sfa26           |sfa28           |sfa08        |ima08sfa       |sfa12   |sfa11           |sfa16           |sfa161          |sfa05           |sfa06           |sfa065          |sfa062          |sfa063          |sfa064          |sfa100          |sfaud08         ]
+
+}
+END -- s_sfa
+END -- page02
+Page page03(action=sub_po, text="Sub.P/O", hidden)
+Table s_sgm
+{
+[check1|sgm01                     |sgm02                |sgm11       |sgm03_par            |ima02sgm          |ima021sgm         |sgm03          |sgm04             |sgm45                              |sgm05             |sgm06             |sgm14             |sgm15             |sgm16             |sgm65             |sgm301            |sgm302            |sgm303            |sgm304            |sgm311            |sgm312            |sgm313            |sgm314            |sgm315            |sgm316            |sgm317            |sgm321            |sgm322            |sgm52    |sgm53      |sgm54    |ta_sgm01                           |ta_sgm02                           |ta_sgm03                           |ta_sgm06]
+
+}
+END -- s_sgm
+END -- page03
+Page page04(action=issue, text="Issue", hidden)
+Table s_tc_shb
+{
+[checkt|tc_shb03                  |tc_shb06   |tc_shb08            |tc_shb01       |tc_shb02                  |tc_shb14            |tc_shb15          |tc_shb04                  |tc_shb07|tc_shb05                |tc_shb16   |ima02tc_shb             |ima021tc_shb            |tc_shb09     |tc_shb10  |tc_shb11       |gen02tc_shb      |tc_shb12              |tc_shbud09              |tc_shb121               |tc_shb122               |tc_shb1   |tc_shb17                        ]
+
+}
+END -- s_tc_shb
+END -- page04
+Page page05(action=fqc, text="FQC", hidden)
+Table s_tc_shb_2
+{
+[check2|tc_shb03_2                |tc_shb06_2 |tc_shb08_2          |tc_shb01_2|tc_shb02_2                |tc_shb14_2          |tc_shb15_2        |tc_shb04_2                |tc_shb00|tc_shb05_2              |tc_shb16_2 |ima02tc_shb_2           |ima021tc_shb_2          |tc_shb09_2   |tc_shb10_2|tc_shb11_2     |gen02tc_shb_2    |tc_shb12_2            |tc_shbud09_2            |tc_shb121_2             |tc_shb122_2             |tc_shb13_2|tc_shb17_2                      ]
+
+}
+END -- s_tc_shb_2
+END -- page05
+Page page06(action=store_in, text="Store-in", hidden)
+Table s_arr6
+{
+[f1      ]
+
+}
+END -- s_arr6
+END -- page06
+Page page07(action=sub_wo, text="SUB W/O", hidden)
+Table s_arr7
+{
+[g1              ]
+
+}
+END -- s_arr7
+END -- page07
+Page page08(action=substitute, text="Substitute", hidden)
+Table s_arr8
+{
+[h1                  ]
+
+}
+END -- s_arr8
+END -- page08
+Page page09(action=qvl, text="QVL", hidden)
+Table s_arr9
+{
+[i1                  ]
+
+}
+END -- s_arr9
+END -- page09
+Page page10(action=runcard, text="RunCard", hidden)
+Table s_arr10
+{
+[j1                 ]
+
+}
+END -- s_arr10
+END -- page10
+Page Page11(action=report_no, text="Report", hidden)
+Table s_arr11
+{
+[k1             ]
+
+}
+END -- s_arr11
+END -- Page11
+Page Page13(action=Routing_Reportable, text=%"Routing Reportable", hidden)
+Table s_arr13
+{
+[m1              ]
+[m1              ]
+
+}
+END -- s_arr13
+END -- Page13
+Page Page14(action=off_line, text="Direct Off-Line", hidden)
+Table s_arr14
+{
+[n01         ]
+
+}
+END -- s_arr14
+END -- Page14
+END -- pc135
+Grid gr571
+{
+ ---------- Rows [cnt   ] / [cn2   ] ----------
+
+
+
+}
+END -- gr571
+END -- vb4
+END -- p_admin
+
+ATTRIBUTES
+Button btn_pre_mon:btn_pre_mon, tabIndex=125, text=%"btn_pre_mon";
+Button btn_ins:btn_ins, tabIndex=127, text=%"btn_ins";
+Button btn_aeci100:btn_aeci100, tabIndex=126, text=%"btn_pre_aeci100";
+CheckBox checke=formonly.checkecb type CHAR, tabIndex=1, title="checkecb", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit ecb01=formonly.ecb01 type VARCHAR, tabIndex=2, title=%"ecb01", noEntry;
+Edit ecb02=formonly.ecb02 type INTEGER, tabIndex=3, title=%"ecb02", noEntry;
+Edit ecb03=formonly.ecb03 type INTEGER, tabIndex=4, title=%"ecb03", noEntry;
+Edit ecb06=formonly.ecb06 type VARCHAR, tabIndex=5, title=%"ecb06", noEntry;
+Edit ecb08=formonly.ecb08 type VARCHAR, tabIndex=6, title=%"ecb08", noEntry;
+Edit ecb19=formonly.ecb19 type DECIMAL, tabIndex=7, title=%"ecb19", noEntry;
+Edit ecb21=formonly.ecb21 type DECIMAL, tabIndex=8, title=%"ecb21", noEntry;
+CheckBox checks=formonly.checksfa type CHAR, tabIndex=9, title="checksfa", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sfa01=formonly.sfa01, tabIndex=10, title=%"sfa01", noEntry;
+Edit sfa03=formonly.sfa03, tabIndex=11, title=%"sfa03", noEntry;
+Edit ima02sfa=formonly.ima02sfa, tabIndex=12, title=%"ima02sfa", noEntry;
+Edit ima021sfa=formonly.ima021sfa, tabIndex=13, title=%"ima021sfa", noEntry;
+Edit sfa27=formonly.sfa27, tabIndex=14, title=%"sfa27", noEntry;
+ComboBox sfa26=formonly.sfa26, tabIndex=15, title=%"sfa26", noEntry, items=(("0", "不可取替代"),("1", "旧料"),("2", "主料"),("3", "旧料(有新料)"),("4", "主料(有辅料)"),("5", "主料,可做SET替代"),("7", "主料可规格替代"),("8", "主料被规格替代"),("9", "主料可做配方替代"),("A", "主料，已做配方替代"),("B", "副料，（配方替代料件）"),("C", "副料，（配方回扣料件)"),("U", "旧料(取代料件)"),("S", "副料(替代料件)"),("T", "SET替代料"),("6", "主料,已做SET替代"));
+Edit sfa28=formonly.sfa28 type DECIMAL, tabIndex=16, title=%"sfa28", noEntry;
+Edit sfa08=formonly.sfa08, tabIndex=17, title=%"sfa08", noEntry;
+Edit ima08sfa=formonly.ima08sfa, tabIndex=18, title=%"ima08sfa", noEntry;
+Edit sfa12=formonly.sfa12, tabIndex=19, title=%"sfa12", noEntry;
+ComboBox sfa11=formonly.sfa11, tabIndex=20, title=%"sfa11", noEntry, items=(("N", "一般料件"),("E", "消耗性料件"),("V", "大宗采购料件"),("U", "大宗自制料件"),("R", "在制料件"),("X", "资讯参考"),("S", "回收料"),("C", "客供料"));
+Edit sfa16=formonly.sfa16 type DECIMAL, tabIndex=21, title=%"sfa16", noEntry;
+Edit sfa161=formonly.sfa161 type DECIMAL, tabIndex=22, title=%"sfa161", noEntry;
+Edit sfa05=formonly.sfa05 type DECIMAL, tabIndex=23, title=%"sfa05", noEntry;
+Edit sfa06=formonly.sfa06 type DECIMAL, tabIndex=24, title=%"sfa06", noEntry;
+Edit sfa065=formonly.sfa065 type DECIMAL, tabIndex=25, title=%"sfa065", noEntry;
+Edit sfa062=formonly.sfa062 type DECIMAL, tabIndex=26, title=%"sfa062", noEntry;
+Edit sfa063=formonly.sfa063 type DECIMAL, tabIndex=27, title=%"sfa063", noEntry;
+Edit sfa064=formonly.sfa064 type DECIMAL, tabIndex=28, title=%"sfa064", noEntry;
+Edit sfa100=formonly.sfa100 type DECIMAL, tabIndex=29, title=%"sfa100", noEntry;
+Edit sfaud08=formonly.sfaud08 type DECIMAL, tabIndex=30, title=%"sfaud08", noEntry;
+CheckBox check1=formonly.checksgm type CHAR, tabIndex=31, title="checksgm", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit sgm01=formonly.sgm01, tabIndex=32, title=%"sgm01", noEntry;
+Edit sgm02=formonly.sgm02, tabIndex=33, title=%"sgm02", noEntry;
+Edit sgm11=formonly.sgm11, tabIndex=34, title=%"sgm11", noEntry;
+Edit sgm03_par=formonly.sgm03_par, tabIndex=35, title=%"sgm03_par", noEntry;
+Edit ima02sgm=formonly.ima02sgm, tabIndex=36, title=%"ima02sgm", noEntry;
+Edit ima021sgm=formonly.ima021sgm, tabIndex=37, title=%"ima021sgm", noEntry;
+Edit sgm03=formonly.sgm03, tabIndex=38, title=%"sgm03", noEntry;
+Edit sgm04=formonly.sgm04, tabIndex=39, title=%"sgm04", noEntry;
+Edit sgm45=formonly.sgm45, tabIndex=40, title=%"sgm45", noEntry;
+Edit sgm05=formonly.sgm05, tabIndex=41, title=%"sgm05", noEntry;
+Edit sgm06=formonly.sgm06, tabIndex=42, title=%"sgm06", noEntry;
+Edit sgm14=formonly.sgm14 type DECIMAL, tabIndex=43, title=%"sgm14", noEntry;
+Edit sgm15=formonly.sgm15 type DECIMAL, tabIndex=44, title=%"sgm15", noEntry;
+Edit sgm16=formonly.sgm16 type DECIMAL, tabIndex=45, title=%"sgm16", noEntry;
+Edit sgm65=formonly.sgm65 type DECIMAL, tabIndex=46, title=%"sgm65", noEntry;
+Edit sgm301=formonly.sgm301 type DECIMAL, tabIndex=47, title=%"sgm301", noEntry;
+Edit sgm302=formonly.sgm302 type DECIMAL, tabIndex=48, title=%"sgm302", noEntry;
+Edit sgm303=formonly.sgm303 type DECIMAL, tabIndex=49, title=%"sgm303", noEntry;
+Edit sgm304=formonly.sgm304 type DECIMAL, tabIndex=50, title=%"sgm304", noEntry;
+Edit sgm311=formonly.sgm311 type DECIMAL, tabIndex=51, title=%"sgm311", noEntry;
+Edit sgm312=formonly.sgm312 type DECIMAL, tabIndex=52, title=%"sgm312", noEntry;
+Edit sgm313=formonly.sgm313 type DECIMAL, tabIndex=53, title=%"sgm313", noEntry;
+Edit sgm314=formonly.sgm314 type DECIMAL, tabIndex=54, title=%"sgm314", noEntry;
+Edit sgm315=formonly.sgm315 type DECIMAL, tabIndex=55, title=%"sgm315", noEntry;
+Edit sgm316=formonly.sgm316 type DECIMAL, tabIndex=56, title=%"sgm316", noEntry;
+Edit sgm317=formonly.sgm317 type DECIMAL, tabIndex=57, title=%"sgm317", noEntry;
+Edit sgm321=formonly.sgm321 type DECIMAL, tabIndex=58, title=%"sgm321", noEntry;
+Edit sgm322=formonly.sgm322 type DECIMAL, tabIndex=59, title=%"sgm322", noEntry;
+CheckBox sgm52=formonly.sgm52 type VARCHAR, tabIndex=60, title=%"sgm52", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sgm53=formonly.sgm53 type VARCHAR, tabIndex=61, title=%"sgm53", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox sgm54=formonly.sgm54 type DECIMAL, tabIndex=62, title=%"sgm54", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit ta_sgm01=formonly.ta_sgm01, tabIndex=63, title=%"ta_sgm01", noEntry;
+Edit ta_sgm02=formonly.ta_sgm02, tabIndex=64, title=%"ta_sgm02", noEntry;
+Edit ta_sgm03=formonly.ta_sgm03, tabIndex=65, title=%"ta_sgm03", noEntry;
+CheckBox ta_sgm06=formonly.ta_sgm06, tabIndex=66, title=%"ta_sgm06", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+CheckBox checkt=formonly.checktc_shb type CHAR, tabIndex=67, title="checktc_shb2", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_shb03=formonly.tc_shb03, tabIndex=68, title=%"tc_shb03", noEntry;
+Edit tc_shb06=formonly.tc_shb06, tabIndex=69, title=%"tc_shb06", noEntry;
+Edit tc_shb08=formonly.tc_shb08, tabIndex=70, title=%"tc_shb08", noEntry;
+ComboBox tc_shb01=formonly.tc_shb01, tabIndex=71, title=%"tc_shb01", noEntry, items=(("1", "开工"),("2", "报工"));
+Edit tc_shb02=formonly.tc_shb02, tabIndex=72, title=%"tc_shb02", noEntry;
+DateEdit tc_shb14=formonly.tc_shb14 type DATE, tabIndex=73, title=%"tc_shb14", noEntry;
+Edit tc_shb15=formonly.tc_shb15, tabIndex=74, title=%"tc_shb15", noEntry;
+Edit tc_shb04=formonly.tc_shb04, tabIndex=75, title=%"tc_shb04", noEntry;
+Edit tc_shb07=formonly.tc_shb07, tabIndex=76, title=%"tc_shb07", noEntry;
+Edit tc_shb05=formonly.tc_shb05, tabIndex=77, title=%"tc_shb05", noEntry;
+Edit tc_shb16=formonly.tc_shb16, tabIndex=78, title=%"tc_shb16", noEntry;
+Edit ima02tc_shb=formonly.ima02tc_shb, tabIndex=79, title=%"ima02tc_shb", noEntry;
+Edit ima021tc_shb=formonly.ima021tc_shb, tabIndex=80, title=%"ima021tc_shb", noEntry;
+Edit tc_shb09=formonly.tc_shb09, tabIndex=81, title=%"tc_shb09", noEntry;
+CheckBox tc_shb10=formonly.tc_shb10, tabIndex=82, title=%"tc_shb10", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_shb11=formonly.tc_shb11, tabIndex=83, title=%"tc_shb11", noEntry;
+Edit gen02tc_shb=formonly.gen02tc_shb, tabIndex=84, title=%"gen02tc_shb", noEntry;
+Edit tc_shb12=formonly.tc_shb12 type DECIMAL, tabIndex=85, title=%"tc_shb12", noEntry;
+Edit tc_shbud09=formonly.tc_shbud09 type DECIMAL, tabIndex=86, title=%"tc_shbud09", noEntry;
+Edit tc_shb121=formonly.tc_shb121 type DECIMAL, tabIndex=87, title=%"tc_shb121", noEntry;
+Edit tc_shb122=formonly.tc_shb122 type DECIMAL, tabIndex=88, title=%"tc_shb122", noEntry;
+Edit tc_shb1=formonly.tc_shb1 type VARCHAR, tabIndex=89, title=%"tc_shb13", noEntry;
+Edit tc_shb17=formonly.tc_shb17 type VARCHAR, tabIndex=90, title=%"tc_shb17", noEntry;
+CheckBox check2=formonly.checktc_shb_2 type CHAR, tabIndex=91, title="checktc_shb", text=%"", not null, required, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_shb03_2=formonly.tc_shb03_2, tabIndex=92, title=%"tc_shb03", noEntry;
+Edit tc_shb06_2=formonly.tc_shb06_2, tabIndex=93, title=%"tc_shb06", noEntry;
+Edit tc_shb08_2=formonly.tc_shb08_2, tabIndex=94, title=%"tc_shb08", noEntry;
+ComboBox tc_shb01_2=formonly.tc_shb01_2, tabIndex=95, title=%"tc_shb01", noEntry, items=(("1", "开工"),("2", "报工"));
+Edit tc_shb02_2=formonly.tc_shb02_2, tabIndex=96, title=%"tc_shb02", noEntry;
+DateEdit tc_shb14_2=formonly.tc_shb14_2 type DATE, tabIndex=97, title=%"tc_shb14", noEntry;
+Edit tc_shb15_2=formonly.tc_shb15_2, tabIndex=98, title=%"tc_shb15", noEntry;
+Edit tc_shb04_2=formonly.tc_shb04_2, tabIndex=99, title=%"tc_shb04", noEntry;
+Edit tc_shb00=formonly.tc_shb07_2, tabIndex=100, title=%"tc_shb07", noEntry;
+Edit tc_shb05_2=formonly.tc_shb05_2, tabIndex=101, title=%"tc_shb05", noEntry;
+Edit tc_shb16_2=formonly.tc_shb16_2, tabIndex=102, title=%"tc_shb16", noEntry;
+Edit ima02tc_shb_2=formonly.ima02tc_shb_2, tabIndex=103, title=%"ima02tc_shb", noEntry;
+Edit ima021tc_shb_2=formonly.ima021tc_shb_2, tabIndex=104, title=%"ima021tc_shb", noEntry;
+Edit tc_shb09_2=formonly.tc_shb09_2, tabIndex=105, title=%"tc_shb09", noEntry;
+CheckBox tc_shb10_2=formonly.tc_shb10_2, tabIndex=106, title=%"tc_shb10", text=%"", noEntry, valueChecked = "Y", valueUnchecked = "N";
+Edit tc_shb11_2=formonly.tc_shb11_2, tabIndex=107, title=%"tc_shb11", noEntry;
+Edit gen02tc_shb_2=formonly.gen02tc_shb_2, tabIndex=108, title=%"gen02tc_shb", noEntry;
+Edit tc_shb12_2=formonly.tc_shb12_2 type DECIMAL, tabIndex=109, title=%"tc_shb12", noEntry;
+Edit tc_shbud09_2=formonly.tc_shbud09_2 type DECIMAL, tabIndex=110, title=%"tc_shbud09", noEntry;
+Edit tc_shb121_2=formonly.tc_shb121_2 type DECIMAL, tabIndex=111, title=%"tc_shb121", noEntry;
+Edit tc_shb122_2=formonly.tc_shb122_2 type DECIMAL, tabIndex=112, title=%"tc_shb122", noEntry;
+Edit tc_shb13_2=formonly.tc_shb13_2 type VARCHAR, tabIndex=113, title=%"tc_shb13", noEntry;
+Edit tc_shb17_2=formonly.tc_shb17_2 type VARCHAR, tabIndex=114, title=%"tc_shb17", noEntry;
+Edit f1=formonly.f1 type CHAR, tabIndex=117, title="Date";
+Edit g1=formonly.g1 type CHAR, tabIndex=118, title="SUB W/O No.";
+Edit h1=formonly.h1 type CHAR, tabIndex=119, title="BOM Item No.";
+Edit i1=formonly.i1 type CHAR, tabIndex=120, title="Issuing Item No.";
+Edit j1=formonly.j1 type CHAR, tabIndex=121, title="Run Card";
+Edit k1=formonly.k1 type CHAR, tabIndex=122, title="Report No. ";
+Edit m1=formonly.m1 type CHAR, tabIndex=123, title="Transfer Doc.";
+Edit n01=formonly.n01 type CHAR, tabIndex=124, title="Transfer No.";
+Edit cnt=formonly.cnt type CHAR, tabIndex=115;
+Edit cn2=formonly.cn2 type CHAR, tabIndex=116;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD s_sfb(formonly.checkecb,formonly.ecb01,formonly.ecb02,formonly.ecb03,formonly.ecb06,formonly.ecb08,formonly.ecb19,formonly.ecb21)
+SCREEN RECORD s_sfa(formonly.checksfa,formonly.sfa01,formonly.sfa03,formonly.ima02sfa,formonly.ima021sfa,formonly.sfa27,formonly.sfa26,formonly.sfa28,formonly.sfa08,formonly.ima08sfa,formonly.sfa12,formonly.sfa11,formonly.sfa16,formonly.sfa161,formonly.sfa05,formonly.sfa06,formonly.sfa065,formonly.sfa062,formonly.sfa063,formonly.sfa064,formonly.sfa100,formonly.sfaud08)
+SCREEN RECORD s_sgm(formonly.checksgm,formonly.sgm01,formonly.sgm02,formonly.sgm11,formonly.sgm03_par,formonly.ima02sgm,formonly.ima021sgm,formonly.sgm03,formonly.sgm04,formonly.sgm45,formonly.sgm05,formonly.sgm06,formonly.sgm14,formonly.sgm15,formonly.sgm16,formonly.sgm65,formonly.sgm301,formonly.sgm302,formonly.sgm303,formonly.sgm304,formonly.sgm311,formonly.sgm312,formonly.sgm313,formonly.sgm314,formonly.sgm315,formonly.sgm316,formonly.sgm317,formonly.sgm321,formonly.sgm322,formonly.sgm52,formonly.sgm53,formonly.sgm54,formonly.ta_sgm01,formonly.ta_sgm02,formonly.ta_sgm03,formonly.ta_sgm06)
+SCREEN RECORD s_tc_shb(formonly.checktc_shb,formonly.tc_shb03,formonly.tc_shb06,formonly.tc_shb08,formonly.tc_shb01,formonly.tc_shb02,formonly.tc_shb14,formonly.tc_shb15,formonly.tc_shb04,formonly.tc_shb07,formonly.tc_shb05,formonly.tc_shb16,formonly.ima02tc_shb,formonly.ima021tc_shb,formonly.tc_shb09,formonly.tc_shb10,formonly.tc_shb11,formonly.gen02tc_shb,formonly.tc_shb12,formonly.tc_shbud09,formonly.tc_shb121,formonly.tc_shb122,formonly.tc_shb1,formonly.tc_shb17)
+SCREEN RECORD s_tc_shb_2(formonly.checktc_shb_2,formonly.tc_shb03_2,formonly.tc_shb06_2,formonly.tc_shb08_2,formonly.tc_shb01_2,formonly.tc_shb02_2,formonly.tc_shb14_2,formonly.tc_shb15_2,formonly.tc_shb04_2,formonly.tc_shb07_2,formonly.tc_shb05_2,formonly.tc_shb16_2,formonly.ima02tc_shb_2,formonly.ima021tc_shb_2,formonly.tc_shb09_2,formonly.tc_shb10_2,formonly.tc_shb11_2,formonly.gen02tc_shb_2,formonly.tc_shb12_2,formonly.tc_shbud09_2,formonly.tc_shb121_2,formonly.tc_shb122_2,formonly.tc_shb13_2,formonly.tc_shb17_2)
+SCREEN RECORD s_arr6(formonly.f1)
+SCREEN RECORD s_arr7(formonly.g1)
+SCREEN RECORD s_arr8(formonly.h1)
+SCREEN RECORD s_arr9(formonly.i1)
+SCREEN RECORD s_arr10(formonly.j1)
+SCREEN RECORD s_arr11(formonly.k1)
+SCREEN RECORD s_arr13(formonly.m1)
+SCREEN RECORD s_arr14(formonly.n01)
+SCREEN RECORD Undefined(formonly.cnt,formonly.cn2)
+END -- INSTRUCTIONS
+
